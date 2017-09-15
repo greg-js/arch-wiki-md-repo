@@ -25,7 +25,6 @@ These components combine to the init *system*. Some inits include the service ma
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 systemd-nspawn](#systemd-nspawn)
     *   [6.2 Replacing udev](#Replacing_udev)
-    *   [6.3 Replacing the systemd package](#Replacing_the_systemd_package)
 *   [7 See also](#See_also)
 
 ## Inits (integrated)
@@ -113,7 +112,7 @@ $ systemctl list-units --state=running "*.service" > daemons.list
 
 and configure the [#Init scripts](#Init_scripts) accordingly. See also [[2]](http://unix.stackexchange.com/questions/175380/how-to-list-all-running-daemons).
 
-Temporary files (*systemd-tmpfiles*), [kernel modules](/index.php/Kernel_modules "Kernel modules") and [sysctl](/index.php/Sysctl "Sysctl") may also need configuration.
+**Note:** [systemd-tmpfiles(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8), [kernel modules](/index.php/Kernel_modules "Kernel modules") and [sysctl](/index.php/Sysctl "Sysctl") may also need configuration.
 
 ### logind
 
@@ -196,15 +195,6 @@ To setup a chroot with a new PID namespace you can use jchroot.[[8]](http://vinc
 *   **smdev** — smdev is a simple program to manage device nodes. It is mostly compatible with mdev but doesn't have all of its features.
 
 	[http://git.suckless.org/smdev/](http://git.suckless.org/smdev/) || [smdev-git](https://aur.archlinux.org/packages/smdev-git/)
-
-### Replacing the systemd package
-
-The *systemd* packages include several components besides the init system and *systemd-udev*:
-
-*   Libraries [linked](https://en.wikipedia.org/wiki/Dynamic_linker "wikipedia:Dynamic linker") other software such as [Xorg](/index.php/Xorg "Xorg") may link against. See [libsystemd-standalone](https://aur.archlinux.org/packages/libsystemd-standalone/) and [systemd-dummy](https://aur.archlinux.org/packages/systemd-dummy/) to satisfy the missing systemd dependency.
-*   *systemd-tmpfiles* to create temporary files on system startup. See [opentmpfiles](https://aur.archlinux.org/packages/opentmpfiles/).
-*   *systemd-sysusers* to allocate system users and groups in [pacman](/index.php/Pacman "Pacman") `.install` files.
-*   Files in `/etc/sysctl.d/`.
 
 ## See also
 

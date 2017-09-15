@@ -125,6 +125,8 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [kubernetes](https://aur.archlinux.org/packages/kubernetes/) | kubernetes | 205 |
 | [kibana](https://www.archlinux.org/packages/?name=kibana) | kibana | 206 |
 | [grafana](https://www.archlinux.org/packages/?name=grafana) | grafana | 207 |
+| [consul](https://www.archlinux.org/packages/?name=consul) | consul | 208 |
+| [amavisd-new](https://www.archlinux.org/packages/?name=amavisd-new) | amavis | 333 |
  ldap | 439 |
  oprofile | 492 |
  alias | 7790 |
@@ -281,6 +283,8 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [kubernetes](https://aur.archlinux.org/packages/kubernetes/) | kubernetes | 205 |
 | [kibana](https://www.archlinux.org/packages/?name=kibana) | kibana | 206 |
 | [grafana](https://www.archlinux.org/packages/?name=grafana) | grafana | 207 |
+| [consul](https://www.archlinux.org/packages/?name=consul) | consul | 208 |
+| [amavisd-new](https://www.archlinux.org/packages/?name=amavisd-new) | amavis | 333 |
  ldap | 439 |
  oprofile | 492 |
  qmail | 2107 |

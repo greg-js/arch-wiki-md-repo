@@ -1290,6 +1290,10 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 	[http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin](http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin) || [evolution-rss](https://www.archlinux.org/packages/?name=evolution-rss)
 
+*   **FeedReader** — Modern desktop application designed to complement existing web-based RSS accounts.
+
+	[http://jangernert.github.io/FeedReader/](http://jangernert.github.io/FeedReader/) || [feedreader](https://aur.archlinux.org/packages/feedreader/)
+
 *   **[Liferea](https://en.wikipedia.org/wiki/Liferea "wikipedia:Liferea")** — GTK+ news aggregator for online news feeds and weblogs.
 
 	[http://liferea.sourceforge.net](http://liferea.sourceforge.net) || [liferea](https://www.archlinux.org/packages/?name=liferea)

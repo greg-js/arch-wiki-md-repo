@@ -20,7 +20,7 @@ There are alternatives written in Python such as [gunicorn](https://aur.archlinu
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [uwsgi](https://www.archlinux.org/packages/?name=uwsgi) from the [official repositories](/index.php/Official_repositories "Official repositories"). Note, that the package does not come with plugins. They have to be installed separately:
+[Install](/index.php/Install "Install") the [uwsgi](https://www.archlinux.org/packages/?name=uwsgi) package. Note that plugins have to be installed separately:
 
 *   [uwsgi-plugin-cgi](https://www.archlinux.org/packages/?name=uwsgi-plugin-cgi) for CGI support
 *   [uwsgi-plugin-jvm](https://www.archlinux.org/packages/?name=uwsgi-plugin-jvm) for [Java](/index.php/Java "Java") support
@@ -36,13 +36,15 @@ There are alternatives written in Python such as [gunicorn](https://aur.archlinu
 
 ## Configuration
 
-Web applications (e.g. [Wordpress](/index.php/Wordpress "Wordpress"), [Nextcloud](/index.php/Nextcloud "Nextcloud"), [Mailman](/index.php/Mailman "Mailman"), [cgit](/index.php/Cgit "Cgit")) served by uWSGI are configured in `/etc/uwsgi/`, where each of them requires its own configuration file (ini-style). Details can be found [in the uWSGI documentation](http://uwsgi-docs.readthedocs.org/en/latest/).
+[Web applications](/index.php/Web_applications "Web applications") served by uWSGI are configured in `/etc/uwsgi/`, where each of them requires its own configuration file (ini-style). Details can be found [in the uWSGI documentation](http://uwsgi-docs.readthedocs.org/en/latest/).
 
 Alternatively, you can run uWSGI in [Emperor mode](http://uwsgi-docs.readthedocs.org/en/latest/Emperor.html) (configured in `/etc/uwsgi/emperor.ini`). It enables a single uWSGI instance to run a set of different apps (called vassals) using a single main supervisor (called emperor).
 
+**Note:** The plugins must be explicitly loaded before their options can be used, otherwise the options will not be recognized. This can be done with the `--plugins` command-line option or with the `plugins` variable in the config file.
+
 ### Web applications
 
-uWSGI supports many different languages and thus also many web applications. As an example the configuration file `/etc/uwsgi/example.ini` and the prior installation of the plugin needed for your web application is assumed. For further common configuration examples, have a look at this [blog post](https://sleepmap.de/2016/securely-serving-webapps-using-uwsgi/).
+uWSGI supports many different languages and thus also many web applications. As an example the configuration file `/etc/uwsgi/example.ini` and the prior installation of the plugin needed for your web application is assumed.
 
 #### Python
 
@@ -51,9 +53,9 @@ The following is a simple example for a [Python](/index.php/Python "Python") app
  `/etc/uwsgi/example.ini` 
 ```
 [uwsgi]
- chdir = /srv/http/example
- module = example
- plugins = python
+chdir = /srv/http/example
+module = example
+plugins = python
 ```
 
 It is also possible to run uWSGI separately with the following syntax for instance:
@@ -95,6 +97,8 @@ vacuum = true
 
 uWSGI can be the backend to many web servers, that support the forwarding of access. The following are examples for configurations.
 
+**Note:** It is recommended to read through the uWSGI documentation to understand the configuration from both performance and security point of view.
+
 #### Nginx
 
 [nginx](/index.php/Nginx "Nginx") can redirect access towards unix sockets or ports (on localhost or remote machine), depending on your web application.
@@ -122,11 +126,7 @@ location / {
 
 #### Nginx (in chroot)
 
-**Note:** Please refer to the below tips if you have deployed Nginx as described here: [Nginx#Installation in a chroot](/index.php/Nginx#Installation_in_a_chroot "Nginx")
-
-**Note:** It is assumed your Nginx chroot is located within `/srv/http`
-
-**Note:** You will most likely want to read through uWSGI documentation to understand your configuration from both performance and security point of view
+**Note:** This section assumes that you have deployed Nginx as described in [Nginx#Installation in a chroot](/index.php/Nginx#Installation_in_a_chroot "Nginx"). It is assumed that the Nginx chroot is located in `/srv/http`.
 
 First create ini file that will point to your application:
 
@@ -148,9 +148,10 @@ vacuum = true
 
 Since we are chrooting to `/srv/http` above configuration will result in following unix socket being created `/srv/http/run/application1.sock`
 
-**Note:** Your application must be placed within `/srv/http/www/application1` before service is started. Depending on configuration your application may be cached so you may need to restart the service when you modify it
+**Note:**
 
-**Note:** If you are deploying python application you may need to copy standard python libraries - if you develop under python 3 then you can copy them from `/lib/python3.4` to `/srv/http/lib/python3.4`
+*   Your application must be placed within `/srv/http/www/application1` before service is started. Depending on configuration your application may be cached so you may need to restart the service when you modify it.
+*   If you are deploying python application you may need to copy standard python libraries - if you develop under python 3 then you can copy them from `/lib/python3.4` to `/srv/http/lib/python3.4`.
 
 You can try to run following:
 
@@ -231,7 +232,7 @@ To use socket activation of this mode [start](/index.php/Start "Start") and [ena
 
 ## Tips and tricks
 
-Some functionality, that uWSGI offers is not accessible by using the [systemd](/index.php/Systemd "Systemd") service files provided in the [official repositories](/index.php/Official_repositories "Official repositories"). Changes to them are explained in the following sections. For further information about this, [read this blog post](https://sleepmap.de/2016/securely-serving-webapps-using-uwsgi/).
+Some functionality, that uWSGI offers is not accessible by using the [systemd](/index.php/Systemd "Systemd") service files provided in the [official repositories](/index.php/Official_repositories "Official repositories"). Changes to them are explained in the following sections. For further information see [[2]](https://sleepmap.de/2016/securely-serving-webapps-using-uwsgi/).
 
 ### Socket activation
 
@@ -257,7 +258,7 @@ kill-on-idle = true
 
 ```
 
-The current `uwsgi@.service` file however doesn't allow this, because [systemd](/index.php/Systemd "Systemd") treats non-zero exit codes as failure and thereby marking the unit as failed and additionally the `Restart=always` directive makes a closing after idle time useless. A fix for this is to add the exit codes, that uWSGI may provide after closing an application by itself to a list, that [systemd](/index.php/Systemd "Systemd") will treat as success by using the `SuccessExitStatus` directive (for further information [read this blog post](https://sleepmap.de/2016/securely-serving-webapps-using-uwsgi/))
+The current `uwsgi@.service` file however does not allow this, because [systemd](/index.php/Systemd "Systemd") treats non-zero exit codes as failure and thereby marking the unit as failed and additionally the `Restart=always` directive makes a closing after idle time useless. A fix for this is to add the exit codes, that uWSGI may provide after closing an application by itself to a list, that [systemd](/index.php/Systemd "Systemd") will treat as success by using the `SuccessExitStatus` directive (for further information see [[3]](https://sleepmap.de/2016/securely-serving-webapps-using-uwsgi/)).
 
  `/etc/systemd/system/uwsgi-socket@.service` 
 ```
@@ -284,7 +285,7 @@ This will allow for proper socket activation with kill-after-idle functionality.
 
 ### Hardening uWSGI
 
-Web applications are exposed to the wild and depending on their quality and the security of their underlying languages, some are more dangerous to run, than others. A good way to start dealing with possible unsafe web applications is to jail them. [systemd](/index.php/Systemd "Systemd") has some functionality, that can be put to use. Have a look at the following example (and for further information read the [systemd.exec manual](https://www.freedesktop.org/software/systemd/man/systemd.exec.html) and [this blog post](https://sleepmap.de/2016/securely-serving-webapps-using-uwsgi/)):
+Web applications are exposed to the wild and depending on their quality and the security of their underlying languages, some are more dangerous to run, than others. A good way to start dealing with possible unsafe web applications is to jail them. [systemd](/index.php/Systemd "Systemd") has some functionality, that can be put to use. Have a look at the following example (and for further information see [systemd.exec(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.exec.5) and [[4]](https://sleepmap.de/2016/securely-serving-webapps-using-uwsgi/)):
 
  `/etc/systemd/system/uwsgi-secure@.service` 
 ```
@@ -313,9 +314,10 @@ WantedBy=multi-user.target
 
 ```
 
-**Note:** Using `NoNewPrivileges=yes` doesn't work with [Mailman](/index.php/Mailman "Mailman")'s cgi frontend! Remove this setting, if you want to use it in conjunction with it.
+**Note:**
 
-**Note:** If you want to harden your uWSGI app further, the use of namespaces is advisable. You can get a first glance on that topic in the [uWSGI namespaces documentation](http://uwsgi-docs.readthedocs.io/en/latest/Namespaces.html).
+*   Using `NoNewPrivileges=yes` does not work with [Mailman](/index.php/Mailman "Mailman")'s cgi frontend! Remove this setting, if you want to use it in conjunction with it.
+*   If you want to harden your uWSGI app further, the use of namespaces is advisable. You can get a first glance on that topic in the [uWSGI namespaces documentation](http://uwsgi-docs.readthedocs.io/en/latest/Namespaces.html).
 
 ## See also
 

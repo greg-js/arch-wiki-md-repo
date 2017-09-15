@@ -1,3 +1,7 @@
+Related articles
+
+*   [Security](/index.php/Security "Security")
+
 [Firejail](https://firejail.wordpress.com/) is an easy to use SUID sandbox program that reduces the risk of security breaches by restricting the running environment of untrusted applications using Linux namespaces, seccomp-bpf and Linux capabilities.
 
 ## Contents
@@ -20,7 +24,7 @@
 
 ## Installation
 
-**Note:** The User-namespace (`CONFIG_USER_NS=Y`) is not set in the [kernel](/index.php/Kernel "Kernel") configuration, but may be required for Firejail to function properly. See [FS#36969](https://bugs.archlinux.org/task/36969) for details why this namespace is disabled by default. User-namespaces are [enabled](/index.php/Security#Sandboxing_applications "Security") by default in [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package.
+**Note:** The User-namespace (`CONFIG_USER_NS=Y`) is not set in the [kernel](/index.php/Kernel "Kernel") configuration. Impact on Firejail users is [deemed negligable](https://github.com/netblue30/firejail/issues/1347). See [FS#36969](https://bugs.archlinux.org/task/36969) for details why this namespace is disabled by default. User-namespaces are [enabled](/index.php/Security#Sandboxing_applications "Security") by default in [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package.
 
 [Install](/index.php/Install "Install") the [firejail](https://www.archlinux.org/packages/?name=firejail) or [firejail-git](https://aur.archlinux.org/packages/firejail-git/) package which provide all of the requirements out of the box.
 

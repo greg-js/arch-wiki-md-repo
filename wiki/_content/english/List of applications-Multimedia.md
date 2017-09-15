@@ -306,6 +306,10 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 	[http://inkscape.org/](http://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
 
+*   **Mockingbot** — Prototyping & collaboration design tool .
+
+	[http://http://mockingbot.com/](http://http://mockingbot.com/) || [mockingbot](https://aur.archlinux.org/packages/mockingbot/)
+
 *   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Vector graphics editor, part of the Calligra Suite.
 
 	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra](https://www.archlinux.org/packages/?name=calligra)

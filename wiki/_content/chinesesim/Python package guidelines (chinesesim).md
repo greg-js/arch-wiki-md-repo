@@ -4,7 +4,7 @@
 
 [CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Node.js](/index.php/Node.js_package_guidelines "Node.js package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
 
-**翻译状态：** 本文是英文页面 [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-08，点击[这里](https://wiki.archlinux.org/index.php?title=Python+package+guidelines&diff=0&oldid=488822)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-13，点击[这里](https://wiki.archlinux.org/index.php?title=Python+package+guidelines&diff=0&oldid=488822)可以查看翻译后英文页面的改动。
 
 本文档描述了如何基于标准 [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") 来为 [Python](/index.php/Python "Python") 程序进行打包.
 
@@ -33,7 +33,7 @@ Python 3 的包应该使用 `python-*modulename*` 进行命名。如果软件包
 
 Python 的包通常使用 Python 语言自带的工具来安装, 例如 [pip](https://pip.pypa.io/) 或者 [easy_install](https://setuptools.readthedocs.io/en/latest/easy_install.html), 这些工具就像是能从在线源 (通常是 [PyPI](https://pypi.python.org/), Python 包索引 (Python Package Index) ) 获取源文件的软件包管理器一样，而且还能跟踪相关的文件状态。 (如需这两个工具的详细比较，请参见 [pip vs easy_install](https://packaging.python.org/pip_easy_install/#pip-vs-easy-install)).
 
-然而，如果要想从 PKGBUILD 文件内管理 Python 软件包的话，标准化的 [distutils](http://docs.python.org/library/distutils.html) 可以说是最方便的了。它会使用已下载源码包里面的 `setup.py` 接着就能很轻松地将文件安装到 `*$pkgdir*/usr/lib/python*<python 版本>*/site-packages/*$pkgname*` 这个文件夹下面了。
+然而，如果要想使用 PKGBUILD 文件来帮助安装 Python 软件包的话，标准化的 [distutils](http://docs.python.org/library/distutils.html) 可以说是最方便的了。它会使用已下载源码包里面的 `setup.py` 接着就能很轻松地将文件安装到 `*$pkgdir*/usr/lib/python*<python 版本>*/site-packages/*$pkgname*` 这个文件夹下面了。
 
 ### distutils
 
@@ -101,6 +101,6 @@ PyPI 中像是这种格式 `https://pypi.python.org/packages/source/${_name:0:1}
 
 	特定架构的 wheel 包
 
-	in this example for `source_x86_64=('...')`. Also `_py=py36` can be used to not repeat the python version:
+	对于特定架构的 wheel 包，可以使用 `source_x86_64=('...')` 来表示 x86_64 架构的下载地址。与此同时可以使用 `_py=py36` 来避免重复书写 Python 版本:
 
 	`https://files.pythonhosted.org/packages/$_py/${_name::1}/$_name/$_name-$pkgver-$_py-${_py}m-manylinux1_x86_64.whl`

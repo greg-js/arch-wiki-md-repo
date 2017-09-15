@@ -210,7 +210,7 @@ There are few tools that can access/modify the UEFI variables, namely
 
 To add a new boot option using *efibootmgr* you need to know three things:
 
-1.  The disk containing the ESP: `/dev/sd*X*`
+1.  The disk containing the EFI System Partition (ESP): `/dev/sd*X*`
 2.  The partition number of the ESP on that disk: the `*Y*` in `/dev/sdX*Y*`
 3.  The path to the UEFI application (relative to the root of the ESP)
 

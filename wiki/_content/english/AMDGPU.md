@@ -167,6 +167,7 @@ Setting the screen's depth under Xorg to 16 or 32 will cause problems/crash. To 
 
 ```
 Section "Screen"
+       Identifier     "Screen"
        DefaultDepth    24
        SubSection      "Display"
                Depth   24

@@ -14,7 +14,7 @@
             *   [1.2.1.2 图形环境](#.E5.9B.BE.E5.BD.A2.E7.8E.AF.E5.A2.83)
         *   [1.2.2 图形和图像处理](#.E5.9B.BE.E5.BD.A2.E5.92.8C.E5.9B.BE.E5.83.8F.E5.A4.84.E7.90.86)
             *   [1.2.2.1 位图编辑器](#.E4.BD.8D.E5.9B.BE.E7.BC.96.E8.BE.91.E5.99.A8)
-            *   [1.2.2.2 矢量图处理 - 绘画](#.E7.9F.A2.E9.87.8F.E5.9B.BE.E5.A4.84.E7.90.86_-_.E7.BB.98.E7.94.BB)
+            *   [1.2.2.2 Vector graphics - illustration](#Vector_graphics_-_illustration)
             *   [1.2.2.3 矢量图处理 - CAD](#.E7.9F.A2.E9.87.8F.E5.9B.BE.E5.A4.84.E7.90.86_-_CAD)
             *   [1.2.2.4 三维建模与渲染](#.E4.B8.89.E7.BB.B4.E5.BB.BA.E6.A8.A1.E4.B8.8E.E6.B8.B2.E6.9F.93)
         *   [1.2.3 截取屏幕](#.E6.88.AA.E5.8F.96.E5.B1.8F.E5.B9.95)
@@ -242,19 +242,53 @@ pacman -Ss gimp
 
 	[http://www.digikam.org/](http://www.digikam.org/) || [digikam](https://www.archlinux.org/packages/?name=digikam)
 
-##### 矢量图处理 - 绘画
+##### Vector graphics - illustration
+
+See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.org/wiki/Comparison_of_vector_graphics_editors "wikipedia:Comparison of vector graphics editors").
+
+*   **[Asymptote](https://en.wikipedia.org/wiki/Asymptote_(vector_graphics_language) "wikipedia:Asymptote (vector graphics language)")** — 一个描述性的矢量图形语言(比如PGF / TikZ和Metapost)，具有类c语法和LaTex支持。
+
+	[http://asymptote.sourceforge.net](http://asymptote.sourceforge.net) || [asymptote](https://www.archlinux.org/packages/?name=asymptote)
+
+*   **Dia** — 一个基于GTK+的创意软件。
+
+	[http://live.gnome.org/Dia](http://live.gnome.org/Dia) || [dia](https://www.archlinux.org/packages/?name=dia)
+
+*   **[Graphviz](https://en.wikipedia.org/wiki/Graphviz "wikipedia:Graphviz")** — 使用描述性的DOT语言绘图。
+
+	[http://www.graphviz.org](http://www.graphviz.org) || [graphviz](https://www.archlinux.org/packages/?name=graphviz)
+
+*   **Gravit** — 专业的矢量图形设计工具。
+
+	[https://gravit.io/](https://gravit.io/) || [gravit-git](https://aur.archlinux.org/packages/gravit-git/)
 
 *   **[Inkscape](https://en.wikipedia.org/wiki/Inkscape "wikipedia:Inkscape")** — 一个开源的矢量图编辑器，功能类似于Illustrator、CorelDraw以及Xara X。它使用W3C标准可放大矢量图格式（SVG）。Inkscape支持众多的高级SVG功能（如标记、克隆、Alpha通道混合等）。并且具有一套认真设计的基于工作流程的界面。它可以很方便地编辑节点，执行复杂的路径操作，描绘位图等等等等。其开发者以其社区维护的开发方法致力于维护一个正在发展中的用户与开发者社区。
 
 	[http://inkscape.org/](http://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
 
-*   **Xara** — 一个高级矢量图软件。
+*   **Mockingbot** — 中文名：墨刀，一个可协作的原型图设计工具。
 
-	[http://www.xaraxtreme.org/](http://www.xaraxtreme.org/) || [xaralx](https://aur.archlinux.org/packages/xaralx/)
+	[http://http://mockingbot.com/](http://http://mockingbot.com/) || [mockingbot](https://aur.archlinux.org/packages/mockingbot/)
 
-*   **Dia** — 一个基于GTK+的创意软件。
+*   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — 矢量图形设计工具，Calligra套件的一部分。
 
-	[http://live.gnome.org/Dia](http://live.gnome.org/Dia) || [dia](https://www.archlinux.org/packages/?name=dia)
+	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
+
+*   **[Pencil Project](https://en.wikipedia.org/wiki/Pencil2D "wikipedia:Pencil2D")** — 开源的原型设计工具。
+
+	[http://pencil.evolus.vn/](http://pencil.evolus.vn/) || [pencil](https://aur.archlinux.org/packages/pencil/)
+
+*   **qasm2circ** — latex的量子电路生成工具
+
+	[http://www.media.mit.edu/quanta/qasm2circ/](http://www.media.mit.edu/quanta/qasm2circ/) || [qasm2circ](https://aur.archlinux.org/packages/qasm2circ/)
+
+*   **[sK1](https://en.wikipedia.org/wiki/SK1_(program) "wikipedia:SK1 (program)")** — .替代Adobe Illustrator或绘图软件。
+
+	[http://sk1project.net/](http://sk1project.net/) || [sk1](https://www.archlinux.org/packages/?name=sk1)
+
+*   **[yEd](https://en.wikipedia.org/wiki/yEd "wikipedia:yEd")** — 通用绘图程序流程图、网络图、UML图,BPMN图、思维导图、组织图、实体关系图。
+
+	[http://www.yworks.com/en/products_yed_about.html](http://www.yworks.com/en/products_yed_about.html) || [yed](https://aur.archlinux.org/packages/yed/)
 
 ##### 矢量图处理 - CAD
 

@@ -74,7 +74,7 @@ Installation media has not been checked with USB-C but works with USB 3.1 and US
 
 **Doesn't Work:**
 
-*   Ambient Light Sensor
+*   Ambient Light Sensor (There may be a fix for this here:[https://wiki.archlinux.org/index.php/ASUS_Zenbook_Prime_UX31A#Ambient_Light_Sensor_.28ALS.29](https://wiki.archlinux.org/index.php/ASUS_Zenbook_Prime_UX31A#Ambient_Light_Sensor_.28ALS.29))
 
 ## Post Installation Steps and Microcode Updates
 
@@ -92,14 +92,34 @@ Check out the [Hardware Acceleration](/index.php/Hardware_video_acceleration "Ha
 
 ## Configuring Audio
 
-When using Audio, the speakers on this Ultrabook are loud and ultra clear. You may notice though that the audio through the Headphones is extremely low. In order to combat this, simply add the following to /etc/modprobe.d/alsa-base.conf:
+When using Audio, the speakers on this Ultrabook are loud and ultra clear. You may notice though that the audio through the Headphones is extremely low. Information pulled from: [https://bugs.launchpad.net/ubuntu/+source/alsa-driver/+bug/1648183](https://bugs.launchpad.net/ubuntu/+source/alsa-driver/+bug/1648183)
+
+Create and save a script in /usr/local/bin:
 
 ```
-options snd-hda-intel mode=Laptop
+#!/bin/bash
+hda-verb /dev/snd/hwC0D0 0x20 SET_COEF_INDEX 0x67
+hda-verb /dev/snd/hwC0D0 0x20 SET_PROC_COEF 0x3000
 
 ```
 
-The [ALSA](/index.php/ALSA "ALSA") page can help with this, and it is highly recommended to install [PulseAudio](/index.php/PulseAudio "PulseAudio") though Environments such as KDE come with this by default.
+Run the script as root in a terminal to immediately fix the problem.
+
+To run the script on startup, use cron with the @reboot command:
+
+```
+sudo crontab -e
+
+```
+
+and then add line in crontab:
+
+```
+@reboot [full path to script]
+
+```
+
+To run script on resume from suspend, copy the script to /lib/systemd/system-sleep
 
 ## Battery Life
 

@@ -21,9 +21,10 @@ Also be warned that even over USB 3.0, a DisplayLink monitor may exhibit noticea
     *   [3.4 Slow redraw/Unresponsiveness in Google Chrome and Webkit2-based Applications](#Slow_redraw.2FUnresponsiveness_in_Google_Chrome_and_Webkit2-based_Applications)
     *   [3.5 Impossible to activate displaylink's screen](#Impossible_to_activate_displaylink.27s_screen)
     *   [3.6 Suspend problem](#Suspend_problem)
-    *   [3.7 DisplayLink driver does not work with Intel GPUs after recent X upgrades](#DisplayLink_driver_does_not_work_with_Intel_GPUs_after_recent_X_upgrades)
-        *   [3.7.1 Workaround 1: Use older intel driver as a fallback](#Workaround_1:_Use_older_intel_driver_as_a_fallback)
-        *   [3.7.2 Workaround 2: Temporarily disable PageFlip for modesetting](#Workaround_2:_Temporarily_disable_PageFlip_for_modesetting)
+    *   [3.7 DisplayLink is not working when usb hot plugged](#DisplayLink_is_not_working_when_usb_hot_plugged)
+    *   [3.8 DisplayLink driver does not work with Intel GPUs after recent X upgrades](#DisplayLink_driver_does_not_work_with_Intel_GPUs_after_recent_X_upgrades)
+        *   [3.8.1 Workaround 1: Use older intel driver as a fallback](#Workaround_1:_Use_older_intel_driver_as_a_fallback)
+        *   [3.8.2 Workaround 2: Temporarily disable PageFlip for modesetting](#Workaround_2:_Temporarily_disable_PageFlip_for_modesetting)
 *   [4 See Also](#See_Also)
 
 ## Installation
@@ -243,6 +244,10 @@ options nouveau modeset=0
 ### Suspend problem
 
 Displaylink is not working after suspend. Reboot your system and then you are able to use displaylink again.
+
+### DisplayLink is not working when usb hot plugged
+
+To be able to use DisplayLink monitors, its usb cable should be attached to laptop during boot time. Otherwise it can behave like they are available and mouse can be moved there, but its picture is frozen, even with correct configuration (see workaround 1). If it was not attached at boot time, attach it and reboot.
 
 ### DisplayLink driver does not work with Intel GPUs after recent X upgrades
 

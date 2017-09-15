@@ -53,14 +53,6 @@ Shadowsocks configuration may be done with a JSON formatted file. The following 
 | fast_open | use [TCP-Fast-Open](https://github.com/clowwindy/shadowsocks/wiki/TCP-Fast-Open), true / false |
 | workers | number of workers |
 
-To adjust the logging level, the option `"verbose": *value*` may be added, with one of the following value:
-
-*   2: full logging
-*   1: debug
-*   0: default
-*   -1: warnings
-*   -2: errors
-
 ### Client
 
 **Warning:** The [udns](https://www.archlinux.org/packages/?name=udns) package is used as a stub resolver for DNS. In order to prevent DNS request leaking of client applications (like browsers), further applications must be employed. For example, [privoxy](/index.php/Privoxy "Privoxy") or a full DNS resolver on the client.[[2]](https://github.com/shadowsocks/shadowsocks-libev/issues/1542) [[3]](https://github.com/shadowsocks/shadowsocks-libev/issues/1641)
@@ -78,6 +70,13 @@ Alternatively, the configuration may be specified directly on the command:
 
 ```
 $ ss-local -s *server_address* -p *server_port* -l *local_port* -k *password* -m *encryption_method*
+
+```
+
+To use verbose log, add `-v` to the command:
+
+```
+$ ss-local -s *server_address* -p *server_port* -l *local_port* -k *password* -m *encryption_method* -v
 
 ```
 

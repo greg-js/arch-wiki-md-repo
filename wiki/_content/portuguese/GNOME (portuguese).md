@@ -467,17 +467,17 @@ Para *hinting*, RGBA provavelmente é melhor por atender a maioria dos tipos de 
 
 #### Inicialização de aplicativos
 
-To start certain applications on login, copy the relevant `.desktop` file from `/usr/share/applications/` to `~/.config/autostart/`.
+Para iniciar certos aplicativos no início da sessão, copie o arquivo `.desktop` relevante do `/usr/share/applications/` para `~/.config/autostart/`.
 
-The [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) allows managing autostart-entries.
+A Ferramenta de Ajustes, [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool), permite gerenciar entradas de de "autostart".
 
-**Tip:** If the plus sign button in the Tweak Tool's Startup Applications section is unresponsive, try start the Tweak Tool from the terminal using the following command: `gnome-tweak-tool`. See the following [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
+**Dica:** Se o botão de sinal de mais na seção de inicialização da Ferramenta de Ajustes não estiver responsivo, tente iniciá-la a partir do terminal usando o seguinte comando: `gnome-tweak-tool`. Veja o seguinte [tópico de fórum](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
 
-**Note:** The deprecated *gnome-session-properties* dialog can be added by [installing](/index.php/Install "Install") the [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) package.
+**Nota:** O diálogo obsoleto *gnome-session-properties* pode ser adicionado [instalando](/index.php/Instala "Instala") o pacote [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/).
 
 #### Energia
 
-When you are using a laptop you might want to alter the following settings:
+Quando você está usando um notebook, você pode querer alterar as seguintes configurações:
 
 ```
 $ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout *3600*
@@ -489,14 +489,14 @@ $ gsettings set org.gnome.desktop.lockdown disable-lock-screen *true*
 
 ```
 
-To keep the monitor active when the lid is closed:
+Para manter o monitor ativo quando a tampa está fechada:
 
 ```
 $ gsettings set org.gnome.settings-daemon.plugins.xrandr default-monitors-setup do-nothing
 
 ```
 
-GNOME 3.24 deprecated the following settings:
+GNOME 3.24 tornou obsoletas as seguintes configurações:
 
 ```
 org.gnome.settings-daemon.plugins.power button-hibernate
@@ -509,13 +509,13 @@ org.gnome.settings-daemon.plugins.power critical-battery-action
 
 ##### Configurar o comportamento do fechamento da tela de notebook
 
-The GNOME Tweak Tool can optionally *inhibit* the *systemd* setting for the lid close ACPI event.[[4]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To *inhibit* the setting, start the tweak tool and, under the power tab, check the *Don't suspend on lid close* option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweak Tool's inhibitor.
+A Ferramenta de Ajustes do GNOME pode opcionalmente *inibir* a configuração do *systemd* para o evento de ACPI de fechar a tampa.[[4]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) Para *inibir* a configuração, inicie a ferramenta de ajustes e, sob a aba energia, marque a opção *Suspender quando a tampa do notebook é fechada*. Isso significa que o ssitema fará nada ao fechar a tampa do notebook em vez de suspender - o comportamento padrão. Marcando essa configuração, cria `~/.config/autostart/ignore-lid-switch-tweak.desktop` que vai iniciar automaticamente o inibor da Ferramenta de Ajustes.
 
-If you do not want the system to suspend or do nothing on lid close, you will need to ensure that the setting described above is **not** checked and then configure *systemd* with `HandleLidSwitch=*preferred_behaviour*` as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
+Se você não deseja suspender ou fazer nada ao fechar a tampa do notebook, você precisará se certificar de que a configuração acima **não** esteja marcada e, então, configure *systemd* com `HandleLidSwitch=*preferred_behaviour*` como descrito em [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
 
 ##### Alterar ação de nível crítico da bateria
 
-The settings panel does not provide an option for changing the critical battery level action. These settings have been removed from dconf as well. They are now managed by upower. Edit the upower settings in `/etc/UPower/UPower.conf`. Find these settings and adjust to your needs.
+O painel de configurações não fornece uma opção para alterar a ação de nível crítico de bateria. Essas configurações foram removidas também do dconf. Eles agora são gerenciados pelo upower. Edite as configurações do upower em `/etc/UPower/UPower.conf`. Encontre essas configurações e ajuste a suas necessidades.
 
  `/etc/UPower/UPower.conf` 
 ```
@@ -527,58 +527,58 @@ CriticalPowerAction=HybridSleep
 
 #### Ordenar aplicativos em pastas de aplicativo (app)
 
-**Tip:** The [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)) script allows you to manage folders through the creation of files in `~/.local/share/applications-categories` named after each category and containing a list of the desktop files belonging to apps you would like to have inside. Optionally, you can have it cycle through each app without a folder and input the desired category until you ctrl-c or run out of apps.
+**Dica:** O script [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)) permite que você gerencie as pastas por meio da criação de arquivos nos `~/.local/share/applications-categories` nomeados após cada categoria e contendo uma lista de arquivos desktop pertencendo aos aplicativos que você gostaria de ter dentro. Opcionalmente, você pode fazê-lo passar por cada aplicativo sem uma pasta e inserir a categoria desejada até pressionar Ctrl+C ou acabarem os aplicativos.
 
-In the **dconf-editor** navigate to `org.gnome.desktop.app-folders` and set the value of `folder-children` to an array of comma separated folder names:
+No **dconf-editor**, navegue para `org.gnome.desktop.app-folders` e defina o valor de `folder-children` para um vetor de nomes de pastas separados por vírgula:
 
 ```
 ['Utilities', 'Sundry']
 
 ```
 
-Add applications using `gsettings`:
+Adicione aplicativos usando `gsettings`:
 
 ```
 $ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ apps "['alacarte.desktop', 'dconf-editor.desktop']"
 
 ```
 
-This adds the applications `alacarte.desktop` and `dconf-editor.desktop` to the Sundry folder. This will also create the folder `org.gnome.desktop.app-folders.folders.Sundry`.
+Isso adiciona os aplicativos `alacarte.desktop` e `dconf-editor.desktop` à pasta Sundry. Isso também vai criar a pasta `org.gnome.desktop.app-folders.folders.Sundry`.
 
-To name the folder (if it has no name that appears at the top of the applications):
+Para nomear a pasta (se ela não tiver um nome que aparece no topo dos aplicativos):
 
 ```
 $ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ name "Sundry"
 
 ```
 
-Applications can also be sorted by their category (specified in their *.desktop* file):
+Aplicativos também podem ser ordenados por sua categoria (especificado em seus arquivos *.desktop*):
 
 ```
 $ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ categories "['Office']"
 
 ```
 
-If certain applications matching a category are not wanted in a certain folder, exclusions can be set:
+Se certos aplicativos correspondendo a uma categoria não forem desejados em certa pasta, exclusões podem ser definidas:
 
 ```
 $ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ excluded-apps "['libreoffice-draw.desktop']"
 
 ```
 
-For further information, refer to the [app-folders schema](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in).
+Para mais informações, veja o [esquema app-folders](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in).
 
 ## Veja também
 
-*   [The Official Website of GNOME](https://www.gnome.org/)
-*   [Extensions for GNOME-shell](https://extensions.gnome.org/)
-*   [GNOME Shell Cheat Sheet](https://wiki.gnome.org/Projects/GnomeShell/CheatSheet), commands, keyboard shortcuts and other tips for using GNOME Shell.
-*   Themes, icons, and backgrounds:
+*   [O site oficial do GNOME](https://www.gnome.org/)
+*   [Extensões para o GNOME Shell](https://extensions.gnome.org/)
+*   [Folha de dicas do GNOME Shell](https://wiki.gnome.org/Projects/GnomeShell/CheatSheet), comandos, atalhos de teclados e outras dicas para o uso do GNOME Shell.
+*   Temas, ícones e planos de fundo:
     *   [Personalize GNOME](https://wiki.gnome.org/Personalization)
     *   [GNOME Look](https://www.gnome-look.org/)
-*   GTK+/GNOME programs:
-    *   [GNOME Apps Index](https://wiki.gnome.org/Apps)
+*   Programas GTK+/GNOME:
+    *   [Índice dos aplicativos do GNOME](https://wiki.gnome.org/Apps)
 *   [Customizing the GNOME Shell](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html)
-*   GNOME Source/Mirrors:
-    *   [GNOME Git Repository](https://git.gnome.org/browse/)
-    *   [GNOME Github Mirror](https://github.com/GNOME)
+*   Código-fonte/Espelhos do GNOME:
+    *   [Repositório Git do GNOME](https://git.gnome.org/browse/)
+    *   [Espelho do GNOME no Github](https://github.com/GNOME)

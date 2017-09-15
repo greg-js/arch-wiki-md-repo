@@ -1,6 +1,6 @@
-Bootchart 是一个分析Linux启动流程的方便工具，结果可以用来优化启动速度。包含 bootchartd 服务和负责生成分析结果的 bootchart-render 两部分。
+使用 Bootchart 可以很方便地分析 Linux 启动流程，分析结果可以用来优化启动速度。包含的 bootchartd 服务负责记录及展示分析结果。
 
-**注意:** Bootchart 已经成为 systemd 的一部分，请参考 [Systemd#Optimization](/index.php/Systemd#Optimization "Systemd") 页面。
+**注意:** Bootchart 已经成为 systemd 的一部分，请参考 [Improve boot performance#Analyzing the boot process](/index.php/Improve_boot_performance#Analyzing_the_boot_process "Improve boot performance") 页面。本文介绍的是合并之前的老版本和bootchart2。
 
 ## Contents
 
@@ -13,13 +13,11 @@ Bootchart 是一个分析Linux启动流程的方便工具，结果可以用来�
 
 ## 安装Bootchart
 
-[bootchart](https://www.archlinux.org/packages/?name=bootchart)可以在源里找到.
-
-**注意:** 另外一个可供选择的是 [bootchart2](https://github.com/mmeeks/bootchart).它使用python来生成最终的图表而不是JVM.
+安装 [bootchart](https://www.archlinux.org/packages/?name=bootchart)。
 
 ## 运行Bootchart
 
-要使bootchart运行，你需要将他添加到引导器的初始化进程选项，或者手动在init脚本（通常是rc.sysinit）中手动添加。不过需要注意的是，如果你是手动添加到init脚本的，那么也要手动停止它，总之，这种情况需要特别留意！
+要运行 bootchart，需要将他添加到引导器的初始化进程选项，或者手动在init脚本（通常是rc.sysinit）中手动添加。不过需要注意的是，如果你是手动添加到init脚本的，那么也要手动停止它，总之，这种情况需要特别留意！
 
 ### 启动引导器设置
 

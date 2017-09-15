@@ -744,13 +744,15 @@ As a workaround, add `pcie_port_pm=off` to your [Kernel parameters](/index.php/K
 
 Alternatively, if you are only interested in power saving (and perhaps use of external monitors), remove bbswitch and rely on [Nouveau](/index.php/Nouveau "Nouveau") runtime power-management (which supports the new method).
 
+**Note:** Some tools such as `powertop --auto-tune` automatically enable power management on PCI devices, which leads to the same problem [[2]](https://github.com/Bumblebee-Project/bbswitch/issues/159). Use the same workaround or do not use the all-in-one tools.
+
 ### Lockup issue (lspci hangs)
 
 See [NVIDIA Optimus#Lockup issue (lspci hangs)](/index.php/NVIDIA_Optimus#Lockup_issue_.28lspci_hangs.29 "NVIDIA Optimus")] for an issue that affects new laptops with a GTX 965M (or alike).
 
 ### Discrete card always on and acpi warnings
 
-Add `acpi_osi=Linux` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). See [[2]](https://github.com/Bumblebee-Project/Bumblebee/issues/592) and [[3]](https://github.com/Bumblebee-Project/bbswitch/issues/112) for more information.
+Add `acpi_osi=Linux` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). See [[3]](https://github.com/Bumblebee-Project/Bumblebee/issues/592) and [[4]](https://github.com/Bumblebee-Project/bbswitch/issues/112) for more information.
 
 ## See also
 

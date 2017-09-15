@@ -40,7 +40,7 @@ Fan control can bring various benefits to your system, such as quieter working s
 There are multiple working solutions for fan control for both desktops and notebooks. Depending on your needs:
 
 *   [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29) - General tool to configure fan speeds. Most suitable for desktops.
-*   [NoteBook Fan Control (NBFC)](#NBFC) - Cross-platform solution for laptop fan control. Supports wide variety of laptops, including the latest ones.
+*   [NoteBook Fan Control (NBFC)](#NBFC) - Cross-platform solution for laptop fan control. Supports wide variety of laptops, including the latest ones. Should be first choice for laptop users.
 *   [Dell laptops](#Dell_laptops) - Alternative fan control daemon for some Dell laptops.
 *   [ThinkPad laptops](#ThinkPad_laptops) - Fan configuration for some ThinkPad laptops.
 *   [Asus laptops](#Asus_laptops) - Configure some Asus laptops for [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29) or manual control.
@@ -121,7 +121,7 @@ Once sensors are properly configured, use `pwmconfig` to test and configure fan 
 
 **Note:** On several systems, the included script may report errors as it tries to calibrate fans to the respective pulse-width modulation (PWM). Users may safely ignore these errors. The problem is that the script does not wait long enough before ramping up or down the PWM.
 
-Users wishing more more control may need to tweak the generated configuration. Here is a sample configuration file:
+Users wishing more control may need to tweak the generated configuration. Here is a sample configuration file:
 
 ```
 INTERVAL=10
@@ -195,11 +195,11 @@ NBFC is a cross-platform fan control solution for notebooks. It comes with a pow
 
 ## Installation
 
-NBFC can be installed as [nbfc](https://aur.archlinux.org/packages/nbfc/). Also start & enable `nbfc.service`.
+NBFC can be installed as [nbfc](https://aur.archlinux.org/packages/nbfc/). Also start and enable `nbfc.service`.
 
 ## Configuration
 
-NBFC comes with pre-made profiles. You can find them in `/opt/nbfc/Configs/` directory.
+NBFC comes with pre-made profiles. You can find them in `/opt/nbfc/Configs/` directory. When applying them, use exact profile name without extension (e.g. `some profile.xml` becomes `"some profile"`).
 
 **Tip:** Profiles are being updated more frequently in [NBFC git repository](https://github.com/hirschmann/nbfc/tree/master/Configs) rather than together with releases. You may want to download some profiles directly to `/opt/nbfc/Configs/`.
 
@@ -219,7 +219,7 @@ $ nbfc config -a "Asus Zenbook UX430UA"
 
 If there are no recommended models, go to [NBFC git repository](https://github.com/hirschmann/nbfc/tree/master/Configs) and check if there are any similar models available from the same manufacturer. If there is - download directly to `/opt/nbfc/Configs/` directory. For example, on **Asus Zenbook UX430UQ**, the configuration **Asus Zenbook UX430UA** did not work well (fans completelly stopped all the time), but **Asus Zenbook UX410UQ** worked fantastically.
 
-Run `nbfc` to see all options. More information is available at [first steps](https://github.com/hirschmann/nbfc/wiki/First-steps#linux) from NBFC GIT wiki.
+Run `nbfc` to see all options. More information is available at [NBFC GIT wiki](https://github.com/hirschmann/nbfc/wiki/First-steps#linux).
 
 # Dell laptops
 

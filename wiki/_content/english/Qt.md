@@ -1,3 +1,9 @@
+Related articles
+
+*   [KDE](/index.php/KDE "KDE")
+*   [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")
+*   [GTK+](/index.php/GTK%2B "GTK+")
+
 [Qt](http://qt-project.org/) is a cross-platform application and widget toolkit that uses standard C++ but makes extensive use of a special code generator (called the [Meta Object Compiler](http://qt-project.org/doc/qt-4.8/moc.html), or *moc*) together with several macros to enrich the language. Some of its more important features include:
 
 *   Running on the major desktop platforms and some of the mobile platforms.
@@ -195,7 +201,16 @@ Qt supports most platforms that are available today, even some of the more obscu
 
 #### Android
 
-Use the [Qt for Android installer](http://download.qt.io/official_releases/qt/5.5/5.5.1/qt-opensource-linux-x64-android-5.5.1.run).
+First of all you need an [Android SDK](/index.php/Android "Android") and NDK. Install SDK [android-sdk](https://aur.archlinux.org/packages/android-sdk/) (some tools have been removed) or [android-sdk-25.2.5](https://aur.archlinux.org/packages/android-sdk-25.2.5/) and NDK [android-ndk-10e](https://aur.archlinux.org/packages/android-ndk-10e/) from [AUR](/index.php/AUR "AUR") or using [Android Studio](/index.php/Android#Android_Studio "Android"). It is highly recommended to install NDK version [10e](https://developer.android.com/ndk/downloads/older_releases.html#ndk-10c-downloads) because of some [known issues](https://wiki.qt.io/Qt_for_Android_known_issues). Next you are going to need QT 5 for Android. You can install it from [AUR](/index.php/AUR "AUR") as described bellow or build it yourself, you can find build instructions on QT [wiki](http://wiki.qt.io/Android) page.
+
+*   [android-qt5-arm64-v8a](https://aur.archlinux.org/packages/android-qt5-arm64-v8a/) - arm64-v8a [ABI](https://developer.android.com/ndk/guides/abis.html)
+*   [android-qt5-armeabi](https://aur.archlinux.org/packages/android-qt5-armeabi/) - armeabi
+*   [android-qt5-armeabi-v7a](https://aur.archlinux.org/packages/android-qt5-armeabi-v7a/) - armeabi-v7a
+*   [android-qt5-mips](https://aur.archlinux.org/packages/android-qt5-mips/) - mips
+*   [android-qt5-x86](https://aur.archlinux.org/packages/android-qt5-x86/) - x86
+*   [android-qt5-x86_64](https://aur.archlinux.org/packages/android-qt5-x86_64/) - x86_64
+
+Or you can use [QT Installer](http://download.qt.io/official_releases/qt/5.9/5.9.1/qt-opensource-linux-x64-5.9.1.run).
 
 ### Tools
 

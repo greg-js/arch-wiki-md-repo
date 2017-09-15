@@ -243,32 +243,12 @@ See [Makepkg#Build 32-bit packages on a 64-bit system](/index.php/Makepkg#Build_
 
 #### Arch Linux ARM
 
-When building on an Arch Linux ARM device, the developers *highly* recommend using the official project toolchains.
+When building on an Arch Linux ARM device, the developers *highly* recommend using the official project [toolchains](https://archlinuxarm.org/wiki/Distcc_Cross-Compiling) which should be installed on the x86_64 slave machine(s). Rather than manually managing these, the [AUR](/index.php/AUR "AUR") provides all four toolchains as well as simple systemd service units:
 
-*   [ARMv8](https://archlinuxarm.org/builder/xtools/x-tools8.tar.xz)
-*   [ARMv7l hard](https://archlinuxarm.org/builder/xtools/x-tools7h.tar.xz)
-*   [ARMv6l hard](https://archlinuxarm.org/builder/xtools/x-tools6h.tar.xz)
-*   [ARMv5te soft](https://archlinuxarm.org/builder/xtools/x-tools.tar.xz)
-
-Extract the toolchain corresponding to the requisite architecture somewhere on the **slave filesystem** and edit `/etc/conf.d/distccd` adjusting the PATH to allow the toolchain to be used.
-
-Example with the toolchain extracted to `/mnt/data`:
-
-```
-PATH=/mnt/data/x-tools8/aarch64-unknown-linux-gnueabi/bin:$PATH
-
-```
-
-To read in the configuration file, [restart](/index.php/Restart "Restart") `distcc.service`.
-
-Optionally link it to your user's homedir if planning to build without makepkg. Example:
-
-```
-$ ln -s /mnt/data/x-tools8 x-tools8
-
-```
-
-There is also a provided [distccd-alarm](https://github.com/WarheadsSE/PKGs/tree/master/distccd-alarm) package that can be used for pacman-controlled versioning and included distccd configuration.
+*   [distccd-alarm-armv5](https://aur.archlinux.org/packages/distccd-alarm-armv5/)
+*   [distccd-alarm-armv6h](https://aur.archlinux.org/packages/distccd-alarm-armv6h/)
+*   [distccd-alarm-armv7h](https://aur.archlinux.org/packages/distccd-alarm-armv7h/)
+*   [distccd-alarm-armv8](https://aur.archlinux.org/packages/distccd-alarm-armv8/)
 
 #### Additional toolchains
 

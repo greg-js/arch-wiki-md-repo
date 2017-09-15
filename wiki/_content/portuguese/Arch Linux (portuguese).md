@@ -7,13 +7,13 @@ O Arch Linux é uma distribuição GNU/Linux x86_64 de uso geral desenvolvida in
     *   [1.2 Modernidade](#Modernidade)
     *   [1.3 Pragmatismo](#Pragmatismo)
     *   [1.4 Centrado no usuário](#Centrado_no_usu.C3.A1rio)
-    *   [1.5 Versatility](#Versatility)
+    *   [1.5 Versatilidade](#Versatilidade)
 *   [2 História](#Hist.C3.B3ria)
     *   [2.1 Os primeiros anos](#Os_primeiros_anos)
     *   [2.2 Os anos médios](#Os_anos_m.C3.A9dios)
     *   [2.3 Nascimento do ArchWiki](#Nascimento_do_ArchWiki)
     *   [2.4 O alvorecer da era A. Griffin](#O_alvorecer_da_era_A._Griffin)
-    *   [2.5 Arch Install Scripts](#Arch_Install_Scripts)
+    *   [2.5 Scripts de instalação do Arch](#Scripts_de_instala.C3.A7.C3.A3o_do_Arch)
     *   [2.6 A era do systemd](#A_era_do_systemd)
     *   [2.7 Fim do suporte a i686](#Fim_do_suporte_a_i686)
 
@@ -43,7 +43,7 @@ Enquanto muitas distribuições GNU/Linux tentam ser mais *user-friendly*, o Arc
 
 Todos os usuários são incentivados a [participar](/index.php/Getting_involved_(Portugu%C3%AAs) "Getting involved (Português)") e contribuir com a distribuição. Relatar e ajudar a corrigir [falhas](https://bugs.archlinux.org/) é muito valioso e patches que aprimorem pacotes ou os [projetos](https://projects.archlinux.org/) centrais são muito bem-vindos: desenvolvedores do Arch são voluntários e contribuidores ativos frequentemente se verão se tornando parte da equipe. *Archers* podem contribuir livremente com pacotes para o [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)"), melhroar a [documentação do ArchWiki](/index.php/Main_page_(Portugu%C3%AAs) "Main page (Português)"), fornecer assistência técnica para outros ou apenas trocar opiniões nos [fóruns](https://bbs.archlinux.org/), [listas de discussões](https://mailman.archlinux.org/mailman/listinfo/) ou [canais IRC](/index.php/IRC_channels "IRC channels"). Arch Linux é o sistema operacional de escolha para muitos pacotes pelo mundo, e há várias [comunidades internacionais](/index.php/International_communities "International communities") que oferecem ajuda e fornecem documentação em muitos idiomas diferentes.
 
-### Versatility
+### Versatilidade
 
 Arch Linux é uma distribuição de propósito geral. Na instalação, apenas um ambiente de linha de comando é fornecido: em vez de separar pacotes desnecessários e indesejados, ao usuário é oferecido a habilidade de compilar um sistema personalizado escolhendo entre milhares de pacotes de alta qualidade fornecidos nos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") para a arquitetura [x86-64](https://en.wikipedia.org/wiki/pt:AMD64 "wikipedia:pt:AMD64"). Suporte para [i686](https://en.wikipedia.org/wiki/pt:I686 "wikipedia:pt:I686") será [cessado](http://www.archlinux-br.org/noticias/254/) em Novembro de 2017.
 
@@ -71,9 +71,9 @@ Com o passar dos anos, a comunidade do Arch continuou a crescer e amadurecer, e 
 
 Os desenvolvedores do Arch continuam a ser voluntários não-pagos e de meio expediente, e não existem expectativas de monetizar o Arch Linux, de modo que ele continuará a ser livre em todos os sentidos da palavra. Aqueles curiosos para ler mais detalhes sobre a história do desenvolvimento do Arch podem navegar na [entrada sobre o Arch na Internet Archive Wayback Machine](http://web.archive.org/web/*/archlinux.org).
 
-### Arch Install Scripts
+### Scripts de instalação do Arch
 
-O lançamento de 2012-07-15 da imagem de instalação tornou [obsoleto](http://www.archlinux-br.org/noticias/192/) o sistema de menus Arch Installation Framework em favor do Arch Install Scripts.
+O lançamento de 2012-07-15 da imagem de instalação tornou [obsoleto](http://www.archlinux-br.org/noticias/192/) o sistema de menus Arch Installation Framework em favor dos Scripts de Instalação do Arch.
 
 ### A era do systemd
 

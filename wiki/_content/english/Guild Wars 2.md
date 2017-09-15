@@ -1,4 +1,4 @@
-*Guild Wars 2* is a game developed by NC Soft. Currently a native client is only available for Windows and Mac systems. It is runnable through wine though.
+*Guild Wars 2* is a game developed by ArenaNet and published by NC Soft. Currently a native client is only available for Windows and Mac systems. It is runnable through wine though.
 
 ## Contents
 

@@ -15,6 +15,8 @@ For general instructions see [Laptop](/index.php/Laptop "Laptop") and comparable
 
 Install [bumblebee along with Nvidia and Intel drivers](/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNVIDIA "Bumblebee").
 
+**Note:** Nvidia GPU does not work after laptop is suspended and waked up. Temporary fix is to reboot system. Permanent fix is unknown.
+
 ## Audio
 
 Install [PulseAudio](/index.php/PulseAudio "PulseAudio").
@@ -60,9 +62,7 @@ See [Fan_speed_control](/index.php/Fan_speed_control "Fan speed control"). There
 As advertised by Asus, this laptop's battery lasts up to 9 hours on battery. On Linux, it is likely to last the way shorter, but with some tweaks you can go beyond 9 hours on battery:
 
 *   [ASUS_Zenbook_UX430UQ#Fan](/index.php/ASUS_Zenbook_UX430UQ#Fan "ASUS Zenbook UX430UQ") - Fan is completely stopped when CPU is not in use or in low workload.
-*   [Power_management#Power_saving](/index.php/Power_management#Power_saving "Power management") - General power saving tweaks.
+*   [Power_management](/index.php/Power_management "Power management") - General power management tweaks.
 *   [Improving_performance#Watchdogs](/index.php/Improving_performance#Watchdogs "Improving performance") - Watchdogs are not needed for non-server, especially portable devices like this.
-*   [Powertop](/index.php/Powertop "Powertop") - Automatically enable power saving features for supported hardware (on boot).
-*   [TLP](/index.php/TLP "TLP") - Popular "install & forget" solution for power saving.
 
 It is also worth noting that [Btrfs](/index.php/Btrfs "Btrfs") file system with LZO compression algorithm increases read/write performance, but also "increases" your SSD space. Also 7th generation Intel processors have high performance of ZLIB compression/decompression, so using this algorithm is likely to save even more space on SSD while keeping nearly the same performance as LZO.

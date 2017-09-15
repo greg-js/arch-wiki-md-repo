@@ -9,7 +9,7 @@ The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-use
 ## Contents
 
 *   [1 TODO list for new Trusted Users](#TODO_list_for_new_Trusted_Users)
-*   [2 The TU and [unsupported]](#The_TU_and_.5Bunsupported.5D)
+*   [2 The TU and the AUR](#The_TU_and_the_AUR)
 *   [3 The TU and [community], Guidelines for Package Maintenance](#The_TU_and_.5Bcommunity.5D.2C_Guidelines_for_Package_Maintenance)
     *   [3.1 Rules for Packages Entering the [community] Repo](#Rules_for_Packages_Entering_the_.5Bcommunity.5D_Repo)
     *   [3.2 Accessing and Updating the Repository](#Accessing_and_Updating_the_Repository)
@@ -45,9 +45,9 @@ The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-use
 15.  If you are not upgraded to a Trusted User group on bug tracker in two days, report this as a bug to arch-dev-public.
 16.  Start contributing!
 
-## The TU and [unsupported]
+## The TU and the AUR
 
-The TUs should also make an effort to check package submissions in UNSUPPORTED for malicious code and good PKGBUILDing standards. In around 80% of cases the PKGBUILDs in the UNSUPPORTED are very simple and can be quickly checked for sanity and malicious code by the TU team.
+The TUs should also make an effort to check package submissions in the [AUR](/index.php/AUR "AUR") for malicious code and good PKGBUILDing standards. In around 80% of cases the PKGBUILDs in the UNSUPPORTED are very simple and can be quickly checked for sanity and malicious code by the TU team.
 
 TUs should also check PKGBUILDs for minor mistakes, suggest corrections and improvements. The TU should endeavor to confirm that all pkgs follow the Arch Packaging Guidelines/Standards and in doing so share their skills with other package builders in an effort to raise the standard of package building across the distro.
 
@@ -158,7 +158,8 @@ When a TU resigns the following list has be followed, these steps do not apply w
 1.  All packages packaged by the retiree should be resigned (so rebuild). Packages packaged by the retiree can be found in Archweb [https://www.archlinux.org/packages/?sort=&q=&packager=$packager&flagged=](https://www.archlinux.org/packages/?sort=&q=&packager=$packager&flagged=) where packager is the username on Archweb.
 2.  The account of the retiree should be disabled on Archweb and added to the 'Retired Trusted users' group. The retiree should be removed from the 'Trusted Users' and the repository permissions should be reduced to none.
 3.  The shell access to our servers should be disabled. (notably repos.archlinux.org, pkgbuild.com)
-4.  The GPG key should be removed and a new archlinux-keyring package should be pushed to the repos.
+4.  The GPG key should be removed and a new archlinux-keyring package should be pushed to the repos. Create bug reports in the keyring project to remove the keys of the retired Trusted Users.
+5.  Remove the TU group from their AUR account.
 
 ## See also
 

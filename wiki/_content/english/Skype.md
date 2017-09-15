@@ -38,6 +38,7 @@ Alternatively, you can use the web version at [web.skype.com](https://web.skype.
         *   [2.4.11 Empty white screen window](#Empty_white_screen_window)
         *   [2.4.12 Skype doesn't output any sound after upgrading PulseAudio](#Skype_doesn.27t_output_any_sound_after_upgrading_PulseAudio)
         *   [2.4.13 Skype outputs only UI sounds, but no voice/microphone](#Skype_outputs_only_UI_sounds.2C_but_no_voice.2Fmicrophone)
+        *   [2.4.14 Skype does not remember credentials/freezes after entering password](#Skype_does_not_remember_credentials.2Ffreezes_after_entering_password)
 *   [3 Skype plugin for Pidgin](#Skype_plugin_for_Pidgin)
 
 ## Skype for Linux
@@ -829,6 +830,12 @@ Currently, Skype doesn't work PulseAudio 9.0 `enable-memfd` option, you have to 
 #### Skype outputs only UI sounds, but no voice/microphone
 
 This might be caused by the wrong sound card being selected for [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/). Try *Tools > Audio & Video settings* and choose 'Default device'. (You can make a test call there as well to verify the settings). Also, make sure you have pulseaudio installed.
+
+#### Skype does not remember credentials/freezes after entering password
+
+The "new" Skype ([skypeforlinux](https://aur.archlinux.org/packages/skypeforlinux/) and [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/)) stores the user name/password in a [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), so make sure you have it properly set up.
+
+Note also that skype cannot work with [libsecret](https://www.archlinux.org/packages/?name=libsecret), it instead relies on the (deprecated) [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) library. If it is not installed, the UI will just freeze after the login page.
 
 ## Skype plugin for Pidgin
 

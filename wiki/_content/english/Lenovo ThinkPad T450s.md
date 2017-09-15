@@ -135,9 +135,22 @@ sudo pacman -S tlp; sudo systemctl enable tlp.service; sudo systemctl start tlp.
 
 ### SSD
 
-If you have an SSD installed be sure to install fstrim and enable it.
+If you have an SSD installed, either add the discard option in the [fstab](/index.php/Fstab "Fstab") for all partitions,
 
-sudo systemctl enable fstrim.timer sudo systemctl start fstrim.timer
+```
+/dev/sda1       /boot   vfat    relatime,discard,errors=remount-ro 0 1
+/dev/sda2       /       ext4    relatime,discard,errors=remount-ro 0 2
+/sev/sda3       none    swap    sw,discard                         0 0
+
+```
+
+or use fstrim.
+
+```
+sudo systemctl enable fstrim.timer;
+sudo systemctl start fstrim.timer
+
+```
 
 ### LEDs
 

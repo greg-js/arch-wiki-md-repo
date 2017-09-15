@@ -53,15 +53,16 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
     *   [3.5 Manually reinstalling pacman](#Manually_reinstalling_pacman)
     *   [3.6 pacman crashes during an upgrade](#pacman_crashes_during_an_upgrade)
     *   [3.7 "Unable to find root device" error after rebooting](#.22Unable_to_find_root_device.22_error_after_rebooting)
-    *   [3.8 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)
+    *   [3.8 Signature from "User <email@example.org>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40example.org.3E.22_is_unknown_trust.2C_installation_failed)
     *   [3.9 Request on importing PGP keys](#Request_on_importing_PGP_keys)
-    *   [3.10 Signature from "User <email@archlinux.org>" is invalid, installation failed](#Signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.2C_installation_failed)
-    *   [3.11 "Warning: current locale is invalid; using default "C" locale" error](#.22Warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.22_error)
-    *   [3.12 pacman does not honor proxy settings](#pacman_does_not_honor_proxy_settings)
-    *   [3.13 How do I reinstall all packages, retaining information on whether something was explicitly installed or as a dependency?](#How_do_I_reinstall_all_packages.2C_retaining_information_on_whether_something_was_explicitly_installed_or_as_a_dependency.3F)
-    *   [3.14 "Cannot open shared object file" error](#.22Cannot_open_shared_object_file.22_error)
-    *   [3.15 Freeze of package downloads](#Freeze_of_package_downloads)
-    *   [3.16 Failed retrieving file 'core.db' from mirror](#Failed_retrieving_file_.27core.db.27_from_mirror)
+    *   [3.10 Error: key "0123456789ABCDEF" could not be looked up remotely](#Error:_key_.220123456789ABCDEF.22_could_not_be_looked_up_remotely)
+    *   [3.11 Signature from "User <email@archlinux.org>" is invalid, installation failed](#Signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.2C_installation_failed)
+    *   [3.12 "Warning: current locale is invalid; using default "C" locale" error](#.22Warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.22_error)
+    *   [3.13 pacman does not honor proxy settings](#pacman_does_not_honor_proxy_settings)
+    *   [3.14 How do I reinstall all packages, retaining information on whether something was explicitly installed or as a dependency?](#How_do_I_reinstall_all_packages.2C_retaining_information_on_whether_something_was_explicitly_installed_or_as_a_dependency.3F)
+    *   [3.15 "Cannot open shared object file" error](#.22Cannot_open_shared_object_file.22_error)
+    *   [3.16 Freeze of package downloads](#Freeze_of_package_downloads)
+    *   [3.17 Failed retrieving file 'core.db' from mirror](#Failed_retrieving_file_.27core.db.27_from_mirror)
 *   [4 See also](#See_also)
 
 ## Usage
@@ -331,7 +332,7 @@ $ pactree -r *package_name*
 
 ```
 
-See [pacman tips](/index.php/Pacman_tips "Pacman tips") for more examples.
+See [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") for more examples.
 
 #### Database structure
 
@@ -693,17 +694,21 @@ Reinstalling the kernel (the [linux](https://www.archlinux.org/packages/?name=li
 
 Afterwards, it is recommended that you run `exit`, `umount /mnt/{boot,}` and `reboot`.
 
-### Signature from "User <email@gmail.com>" is unknown trust, installation failed
+### Signature from "User <email@example.org>" is unknown trust, installation failed
 
 You can try to either:
 
 *   update the known keys, i.e. `pacman-key --refresh-keys`
-*   manually upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) package first, i.e. `pacman -S archlinux-keyring`
+*   manually upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) package first, i.e. `pacman -Sy archlinux-keyring && pacman -Su`
 *   follow [pacman-key#Resetting all the keys](/index.php/Pacman-key#Resetting_all_the_keys "Pacman-key")
 
 ### Request on importing PGP keys
 
-If [installing](/index.php/Installation_guide "Installation guide") Arch with an outdated ISO, you are likely prompted to import PGP keys. Agree to download the key to proceed. If you are unable to add the PGP key successfully, update the keyring or upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) (see [above](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)).
+If [installing](/index.php/Installation_guide "Installation guide") Arch with an outdated ISO, you are likely prompted to import PGP keys. Agree to download the key to proceed. If you are unable to add the PGP key successfully, update the keyring or upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) (see [above](#Signature_from_.22User_.3Cemail.40example.org.3E.22_is_unknown_trust.2C_installation_failed)).
+
+### Error: key "0123456789ABCDEF" could not be looked up remotely
+
+If packages are signed with new keys, which were only recently added to [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring), these keys are not locally available during update (chicken-egg-problem). The installed [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) does not contain the key, until it is updated. Pacman tries to bypass this by a lookup through a key-server, which might not be possible e.g. behind proxys or firewalls and results in the stated error. Upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) first as shown [above](#Signature_from_.22User_.3Cemail.40example.org.3E.22_is_unknown_trust.2C_installation_failed).
 
 ### Signature from "User <email@archlinux.org>" is invalid, installation failed
 

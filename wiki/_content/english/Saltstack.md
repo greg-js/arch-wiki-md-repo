@@ -43,7 +43,7 @@ The Salt master needs to bind to 2 TCP network ports on the system, these ports 
 
 ### Salt Minion
 
-The Salt Minion can operate with or without a Salt Master. This wiki assumes that the minion will be connected to the master. for information on how to run a master-less minion please see the masterless quickstart guide: [http://docs.saltstack.com/topics/tutorials/quickstart.html](http://docs.saltstack.com/topics/tutorials/quickstart.html)
+The Salt Minion can operate with or without a Salt Master. This wiki assumes that the minion will be connected to the master. For information on how to run a master-less minion please see the masterless quickstart guide: [http://docs.saltstack.com/topics/tutorials/quickstart.html](http://docs.saltstack.com/topics/tutorials/quickstart.html)
 
 The Salt minion only needs to be aware of one piece of information to run, the network location of the master. By default the minion will look for the DNS name **salt** for the master, making the easiest approach to set internal DNS to resolve the name salt back to the Salt Master IP. Otherwise the minion configuration file will need to be edited, edit the configuration option **master** to point to the DNS name or the IP of the Salt Master.
 

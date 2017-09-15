@@ -38,7 +38,7 @@ To start the timer which periodically refreshes snaps when a new version is push
 
 ## Removal
 
-Uninstalling the [snapd](https://www.archlinux.org/packages/?name=snapd) package will not remove directories and files created while using *snap*. It's best to remove your snaps with *snap remove* before uninstalling the [snapd](https://www.archlinux.org/packages/?name=snapd) package. At this time it is not possible to remove the ubuntu-core snap through the *snap* command. To remove the state, snap package cache and mount unit files completely, you can follow the instructions below.
+Uninstalling the [snapd](https://www.archlinux.org/packages/?name=snapd) package will not remove directories and files created while using *snap*. It's best to remove your snaps with *snap remove* before uninstalling the [snapd](https://www.archlinux.org/packages/?name=snapd) package. At this time it is not possible to remove the core snap through the *snap* command. To remove the state, snap package cache and mount unit files completely, you can follow the instructions below.
 
 1\. We unmount any currently active snap that is mounted to `/var/lib/snapd/snap/`.
 
@@ -99,7 +99,7 @@ $ snap list
 You can also sideload snaps from your local hard drive with:
 
 ```
-# snap install --devmode */path/to/snap*
+# snap install --dangerous */path/to/snap*
 
 ```
 

@@ -22,6 +22,7 @@
     *   [4.8 Evaluate ssh-agent](#Evaluate_ssh-agent)
     *   [4.9 The "command not found" hook](#The_.22command_not_found.22_hook)
     *   [4.10 Remove a process from the list of jobs](#Remove_a_process_from_the_list_of_jobs)
+    *   [4.11 Quickly set a persistent alias](#Quickly_set_a_persistent_alias)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -212,6 +213,18 @@ In fish, `eval (ssh-agent)` generate errors due to how variables are set. To wor
 ```
 
 This means firefox will not be closed when the fish process is closed. See disown(1) in *fish* for more details.
+
+### Quickly set a persistent alias
+
+To quickly make a persistent alias, one can simply open up fish shell and use the following method:
+
+```
+$ alias FooAliasName "foo"
+$ funcsave FooAliasName
+
+```
+
+This will set you alias as a persistent fish shell function. if you wish to see all functions and/or edit them, one can simply use `fish_config)` to view or edit all functions under the **Function** tab in the resulting web configuration page.
 
 ## See also
 

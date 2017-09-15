@@ -1,7 +1,13 @@
+相关文章
+
+*   [Opera](/index.php/Opera "Opera")
+*   [Firefox (简体中文)](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")
+*   [Chromium (简体中文)](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)")
+
 根据插件 API 的不同，浏览器的插件可以分为两种：
 
-*   Netscape plugin API (NPAPI): 可以在 [Firefox](/index.php/Firefox "Firefox") 和一些浏览器中使用(**不能** 在 Chromium 和 Opera 中使用).
-*   Pepper plugin API (PPAPI): 仅能在 [Chromium](/index.php/Chromium "Chromium")，Chrome 和 [Opera](/index.php/Opera "Opera") 中使用.
+*   Netscape plugin API (NPAPI): 可以在一些小的浏览器中使用 ([仅支持 Flash Player plugin](/index.php/Firefox#Plugins "Firefox"), Chromium and Opera do **not** support these plugins).,**不能** 在 Chromium 和 Opera **不**支持这些插件).
+*   Pepper plugin API (PPAPI): 仅能在 [Chromium](/index.php/Chromium "Chromium")，Chrome, [Opera](/index.php/Opera "Opera") 和 [Vivaldi](/index.php/Vivaldi "Vivaldi")中使用.
 
 除非明确说明，本页中的插件都只支持 NPAPI。
 
@@ -12,9 +18,8 @@
         *   [1.1.1 Installation](#Installation)
         *   [1.1.2 更新](#.E6.9B.B4.E6.96.B0)
         *   [1.1.3 配置](#.E9.85.8D.E7.BD.AE)
-        *   [1.1.4 Disable the "Press ESC to exit full screen mode" message](#Disable_the_.22Press_ESC_to_exit_full_screen_mode.22_message)
-        *   [1.1.5 Multiple monitor full-screen fix](#Multiple_monitor_full-screen_fix)
-        *   [1.1.6 Playing DRM-protected content](#Playing_DRM-protected_content)
+        *   [1.1.4 Multiple monitor full-screen fix](#Multiple_monitor_full-screen_fix)
+        *   [1.1.5 Playing DRM-protected content](#Playing_DRM-protected_content)
     *   [1.2 Shumway](#Shumway)
     *   [1.3 Gnash](#Gnash)
     *   [1.4 Lightspark](#Lightspark)
@@ -30,7 +35,6 @@
 *   [8 其他](#.E5.85.B6.E4.BB.96)
     *   [8.1 Hangouts](#Hangouts)
     *   [8.2 MozPlugger](#MozPlugger)
-    *   [8.3 kpartsplugin](#kpartsplugin)
 *   [9 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
     *   [9.1 Flash无声音](#Flash.E6.97.A0.E5.A3.B0.E9.9F.B3)
     *   [9.2 Flash独占了声音设备](#Flash.E7.8B.AC.E5.8D.A0.E4.BA.86.E5.A3.B0.E9.9F.B3.E8.AE.BE.E5.A4.87)
@@ -49,9 +53,9 @@
 
 不同的浏览器需要安装不同的插件。
 
-*   NPAPI 插件可以通过软件包 [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) 进行 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装")，[Adobe 曾表示要停止开发此插件](https://blogs.adobe.com/flashplayer/2012/02/adobe-and-google-partnering-for-flash-player-on-linux.html)，但是在2016年9月，Adobe 宣布将继续为其提供支持。
+*   NPAPI 插件可以通过软件包 [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) 进行 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装")。
 
-*   PPAPI 版本和 Google Chrome 一起发布. 详情参考 [Chromium#Flash Player plugin](/index.php/Chromium#Flash_Player_plugin "Chromium").
+*   PPAPI 版本可以通过 [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash) 进行 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装")。
 
 **Note:**
 
@@ -81,28 +85,6 @@ It might also be required to add/uncomment the following line:
 OverrideGPUValidation = 1
 
 ```
-
-#### Disable the "Press ESC to exit full screen mode" message
-
-There is no solution other than patching the Flash plugin. Please note only the NPAPI plugin is supported. Install [flash-fullscreen-patcher](https://aur.archlinux.org/packages/flash-fullscreen-patcher/) which provides wine as a required dependency since the patch has been initially made for Windows.
-
-After the package has been installed, backup `libflashplayer.so`:
-
-```
-# cp /usr/lib/mozilla/plugins/libflashplayer.so /usr/lib/mozilla/plugins/libflashplayer.so.backup 
-
-```
-
-Then, patch `libflashplayer.so`:
-
-```
-# flash-fullscreen-patcher.sh -f /usr/lib/mozilla/plugins/libflashplayer.so
-
-```
-
-If you use Firefox and want to remove the message *Press ESC to exit full screen mode in HTML5 videos* too, go to about:config and set `full-screen-api.warning.timeout` to `0`.
-
-Alternatively, install Firefox extension [Disable HTML5 Fullscreen Alert](https://addons.mozilla.org/firefox/addon/disable-html5-fullscreen-alert/), which will suppress full screen warnings for HTML5 content.
 
 #### Multiple monitor full-screen fix
 
@@ -136,17 +118,13 @@ See [Flash DRM content](/index.php/Flash_DRM_content "Flash DRM content").
 
 ### Shumway
 
-[Shumway](http://mozilla.github.io/shumway/) 尝试直接使用 HTML5 技术而不是本地代码处理和显示 SWF 文件。可以通过 [Mozilla's github.io 网页](http://mozilla.github.io/shumway/)直接安装. 根据 [Shumway wiki](https://github.com/mozilla/shumway/wiki), "如果实验成功，这个功能有机会整合进 Firef。"
-
-Firefox Nightly/Aurora 编译版本包含了 Shumway.
+[Shumway](http://mozilla.github.io/shumway/) 尝试直接使用 HTML5 技术而不是本地代码处理和显示 SWF 文件，已经 [停止开发](https://github.com/mozilla/shumway/issues/2420)。
 
 ### Gnash
 
-参考 [Wikipedia:Gnash](https://en.wikipedia.org/wiki/Gnash "wikipedia:Gnash"). [GNU Gnash](http://www.gnu.org/software/gnash/) 是 Adobe Flash Player 的自由软件替代。可以作为单独的播放器，也可以嵌入浏览器。支持 SWF v7 和 80% 的 ActionScript 2.0。
+[Gnash](https://en.wikipedia.org/wiki/Gnash_(software) 是 Adobe Flash Player 的自由软件替代。可以作为单独的播放器，也可以嵌入浏览器。支持 SWF v7 和 80% 的 ActionScript 2.0。
 
 可以通过软件包[gnash](https://aur.archlinux.org/packages/gnash/), [gnash-kde4](https://aur.archlinux.org/packages/gnash-kde4/), [gnash-git](https://aur.archlinux.org/packages/gnash-git/).
-
-**Note:** 如果发现 Gnash 无法工作，可能需要先 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [gstreamer0.10-ffmpeg](https://aur.archlinux.org/packages/gstreamer0.10-ffmpeg/).
 
 ### Lightspark
 
@@ -166,7 +144,7 @@ For [Chromium](/index.php/Chromium "Chromium") and Google Chrome it is available
 
 ### External PDF viewers
 
-To use an external PDF viewer you need [#MozPlugger](#MozPlugger) or [#kpartsplugin](#kpartsplugin).
+To use an external PDF viewer you need [#MozPlugger](#MozPlugger).
 
 If you want to use MozPlugger with Evince, for example, you have to find the lines containing `pdf` in the `/etc/mozpluggerrc` file and modify the corresponding line after `GV()` as below:
 
@@ -313,12 +291,6 @@ define(MP_AUDIO_STREAM,[controls stream noisy ignore_errors: mpv -really-quiet $
 ```
 
 For a more complete list of MozPlugger options see [this page](http://www.linuxmanpages.com/man7/mozplugger.7.php).
-
-### kpartsplugin
-
-[The KParts plugin](http://www.unix-ag.uni-kl.de/~fischer/kpartsplugin/) is a plugin that uses KDE's KPart technology to embed different file viewers in the browser, such as Okular (for PDF), Ark (for different archives), Calligra Words (for ODF), etc. It cannot use applications that are not based on the KPart technology.
-
-The KParts plugin can be installed with the package [kpartsplugin](https://www.archlinux.org/packages/?name=kpartsplugin).
 
 ## 疑难解答
 
