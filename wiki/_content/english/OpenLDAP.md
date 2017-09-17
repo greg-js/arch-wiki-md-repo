@@ -24,6 +24,9 @@ This page is a starting point for a basic OpenLDAP installation and a sanity che
         *   [2.5.2 Configure slapd for SSL](#Configure_slapd_for_SSL)
         *   [2.5.3 Start slapd with SSL](#Start_slapd_with_SSL)
 *   [3 Next steps](#Next_steps)
+    *   [3.1 Backup LDAP](#Backup_LDAP)
+        *   [3.1.1 Export Database](#Export_Database)
+        *   [3.1.2 Export Configuration](#Export_Configuration)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 slapd configuration checking](#slapd_configuration_checking)
     *   [4.2 Client authentication checking](#Client_authentication_checking)
@@ -231,7 +234,7 @@ Now that the certificate files have been created copy them to `/etc/openldap/ssl
 
 Edit the daemon configuration file (`/etc/openldap/slapd.conf`) to tell LDAP where the certificate files reside by adding the following lines:
 
-**Note:**Current versions of OpenLDAP appear to use GnuTLS and don't know how to handle the DEFAULT TLSCipherSuite, failing to start with an obscure error message `TLS init def ctx failed: -1`. A similar directive for GnuTLS appears to be `NORMAL`.
+**Note:** The latest version of OpenLDAP (2.4.45) uses OpenSSL and <u>not</u> GnuTLS. This means that current versions of OpenLDAP **do** in fact know how to handle the [DEFAULT TLSCipherSuite](https://www.openssl.org/docs/man1.1.0/apps/ciphers.html#CIPHER-STRINGS). To prove this one could run `ldd /usr/bin/slapd`
 
 ```
 # Certificate/SSL Section
@@ -250,6 +253,15 @@ TLSCertificateFile /etc/letsencrypt/live/ldap.my-domain.com/cert.pem
 TLSCertificateKeyFile /etc/letsencrypt/live/ldap.my-domain.com/privkey.pem
 TLSCACertificateFile /etc/letsencrypt/live/ldap.my-domain.com/chain.pem
 TLSCACertificatePath /usr/share/ca-certificates/trust-source
+
+```
+
+**SSLv2/v3**
+
+Disable SSLv2/v3 and use strong ciphers.
+
+```
+TLSCipherSuite HIGH:MEDIUM:-SSLv2:-SSLv3
 
 ```
 
@@ -297,6 +309,24 @@ You now have a basic LDAP installation. The next step is to design your director
 A directory for system authentication is the [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication") article.
 
 A nice web frontend is [phpLDAPadmin](/index.php/PhpLDAPadmin "PhpLDAPadmin").
+
+### Backup LDAP
+
+It is imperative that we have a backup of our LDAP database and configuration in case we ever need to restore for any number of reasons.
+
+#### Export Database
+
+```
+$ slapcat -F /etc/openldap/slapd.d -n 0 -l "$(hostname)-ldap-mdb-database-$(date '+%F').ldif"
+
+```
+
+#### Export Configuration
+
+```
+$ slapcat -l "$(hostname)-ldap-config-$(date '+%F').ldif"
+
+```
 
 ## Troubleshooting
 

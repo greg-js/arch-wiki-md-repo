@@ -33,19 +33,19 @@ Fan control can bring various benefits to your system, such as quieter working s
     *   [6.3 asus_fan](#asus_fan)
     *   [6.4 Generate config file with pmwconfig](#Generate_config_file_with_pmwconfig)
 
-# Overview
+## Overview
 
-**Note:** Laptop users should be aware about how cooling system works in their hardware. Some laptops have single fan for both CPU and GPU and cools both at the same time. Some laptops have two fans for CPU and GPU, but the first fan cools down CPU and GPU at the same time, while the other one cools CPU only. By using [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29) tool, you might need to monitor highest temperature of both CPU and GPU, which cannot be achieved with [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29) without modifications to `fancontrol` script. [Here](https://github.com/daringer/asus-fan/issues/47#issue-232063547) is some more information about this topic.
+**Note:** Laptop users should be aware about how cooling system works in their hardware. Some laptops have single fan for both CPU and GPU and cools both at the same time. Some laptops have two fans for CPU and GPU, but the first fan cools down CPU and GPU at the same time, while the other one cools CPU only. In some cases, you will not be able to use [Fancontrol](#Fancontrol_.28lm-sensors.29) script, because it is not capable to adjust fan speeds according to both CPU and GPU temperatures. [Here](https://github.com/daringer/asus-fan/issues/47#issue-232063547) is some more information about this topic.
 
 There are multiple working solutions for fan control for both desktops and notebooks. Depending on your needs:
 
-*   [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29) - General tool to configure fan speeds. Most suitable for desktops.
-*   [NoteBook Fan Control (NBFC)](#NBFC) - Cross-platform solution for laptop fan control. Supports wide variety of laptops, including the latest ones. Should be first choice for laptop users.
+*   [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29) - Script (written in Bash) to configure fan speeds. Most suitable for desktops and laptops with a single fan and without discrete graphics card.
+*   [NoteBook Fan Control (NBFC)](#NBFC) - Cross-platform solution for laptop fan control, written in C# and works under [Mono](/index.php/Mono "Mono") runtime. Most suitable for latest, unsupported by [Fancontrol](#Fancontrol_.28lm-sensors.29) laptops.
 *   [Dell laptops](#Dell_laptops) - Alternative fan control daemon for some Dell laptops.
 *   [ThinkPad laptops](#ThinkPad_laptops) - Fan configuration for some ThinkPad laptops.
-*   [Asus laptops](#Asus_laptops) - Configure some Asus laptops for [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29) or manual control.
+*   [Asus laptops](#Asus_laptops) - Configure some Asus laptops for [Fancontrol](#Fancontrol_.28lm-sensors.29) or manual control.
 
-# Fancontrol (lm-sensors)
+## Fancontrol (lm-sensors)
 
 `fancontrol` is a part of [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors), which can be used to control the speed of CPU/case fans.
 
@@ -55,7 +55,7 @@ It is recommended not to use `lm_sensors.service` to load the needed modules for
 
 In `/etc/conf.d/lm_sensors` you find the modules. If not there, run as root `sensors-detect` accepting the defaults. In the `modules-load.d` file place one module name per line. Specifying them like this will create a reproducible order. Another alternative is to use absolute device names in the configuration file.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1415552#p1415552)
 
-## lm-sensors
+### lm-sensors
 
 Set up [lm_sensors](/index.php/Lm_sensors "Lm sensors").
 
@@ -81,7 +81,7 @@ temp2:       +25.0°C  (low  = +127.0°C, high = +127.0°C)  sensor = thermal di
 
 If the output does not display an RPM value for the CPU fan, one may need to increase the fan divisor. If fan speed is shown and higher than 0, skip the next step.
 
-### Increasing fan_div
+#### Increasing fan_div
 
 The first line of the sensors output is the chipset used by the motherboard for readings of temperatures and voltages.
 
@@ -106,7 +106,7 @@ which will reload the configuration files.
 
 Run `sensors` again, and check if there is an RPM readout. If not, increase the divisor to 8, 16, or 32\. YMMV!
 
-## Configuration
+### Configuration
 
 **Note:** Advanced users may want to skip this section and write `/etc/fancontrol` on their own, which also saves them from hearing all of the fans at full speed.
 
@@ -117,7 +117,7 @@ Once sensors are properly configured, use `pwmconfig` to test and configure fan 
 
 ```
 
-### Tweaking
+#### Tweaking
 
 **Note:** On several systems, the included script may report errors as it tries to calibrate fans to the respective pulse-width modulation (PWM). Users may safely ignore these errors. The problem is that the script does not wait long enough before ramping up or down the PWM.
 
@@ -172,7 +172,7 @@ $ sed -e 's/[[:space:]=]/_/g' /sys/class/hwmon/*[your-hwmon-device]*/device/name
 ```
 and correct your config file accordingly.
 
-## fancontrol
+### fancontrol
 
 **Note:** Upon upgrading/changing the kernel, running `fancontrol` may result in an error regarding changed device paths. This issue may be fixed by running `sensors-detect` again and restarting the system.
 
@@ -189,19 +189,19 @@ To enable starting *fancontrol* automatically on every boot, [enable](/index.php
 
 For an unofficial GUI [install](/index.php/Install "Install") [fancontrol-gui](https://aur.archlinux.org/packages/fancontrol-gui/) or [fancontrol-kcm](https://aur.archlinux.org/packages/fancontrol-kcm/).
 
-# NBFC
+## NBFC
 
 NBFC is a cross-platform fan control solution for notebooks. It comes with a powerful configuration system, which allows to adjust it to many different notebook models, including some of the latest ones.
 
-## Installation
+### Installation
 
-NBFC can be installed as [nbfc](https://aur.archlinux.org/packages/nbfc/). Also start and enable `nbfc.service`.
+NBFC can be installed as [nbfc](https://aur.archlinux.org/packages/nbfc/) or [nbfc-git](https://aur.archlinux.org/packages/nbfc-git/). Also start and enable `nbfc.service`.
 
-## Configuration
+**Tip:** Development version ([nbfc-git](https://aur.archlinux.org/packages/nbfc-git/)) is recommended as it brings the latest configuration profiles, which are often outdated or missing in [nbfc](https://aur.archlinux.org/packages/nbfc/) releases.
+
+### Configuration
 
 NBFC comes with pre-made profiles. You can find them in `/opt/nbfc/Configs/` directory. When applying them, use exact profile name without extension (e.g. `some profile.xml` becomes `"some profile"`).
-
-**Tip:** Profiles are being updated more frequently in [NBFC git repository](https://github.com/hirschmann/nbfc/tree/master/Configs) rather than together with releases. You may want to download some profiles directly to `/opt/nbfc/Configs/`.
 
 Check if there is anything NBFC can recommend:
 
@@ -217,22 +217,22 @@ $ nbfc config -a "Asus Zenbook UX430UA"
 
 ```
 
-If there are no recommended models, go to [NBFC git repository](https://github.com/hirschmann/nbfc/tree/master/Configs) and check if there are any similar models available from the same manufacturer. If there is - download directly to `/opt/nbfc/Configs/` directory. For example, on **Asus Zenbook UX430UQ**, the configuration **Asus Zenbook UX430UA** did not work well (fans completelly stopped all the time), but **Asus Zenbook UX410UQ** worked fantastically.
+If there are no recommended models, go to [NBFC git repository](https://github.com/hirschmann/nbfc/tree/master/Configs) or `/opt/nbfc/Configs/` and check if there are any similar models available from the same manufacturer. For example, on **Asus Zenbook UX430UQ**, the configuration **Asus Zenbook UX430UA** did not work well (fans completelly stopped all the time), but **Asus Zenbook UX410UQ** worked fantastically.
 
-Run `nbfc` to see all options. More information is available at [NBFC GIT wiki](https://github.com/hirschmann/nbfc/wiki/First-steps#linux).
+Run `nbfc` to see all options. More information is available at [upstream](https://github.com/hirschmann/nbfc/wiki/First-steps#linux) page.
 
-# Dell laptops
+## Dell laptops
 
 `i8kutils` is a daemon to configure fan speed according to CPU temperatures on some Dell Inspiron and Latitude laptops. It uses of the `/proc/i8k` interface provided by the `dell_smm_hwmon` driver (formerly `i8k`). Results will vary depending on the exact model of laptop.
 
-## Installation
+### Installation
 
 [i8kutils](https://aur.archlinux.org/packages/i8kutils/) is the main package to control fan speed. Additionally, you might want to install these:
 
 *   [tcl](https://www.archlinux.org/packages/?name=tcl) - must be installed in order to run `i8kmon` as a background service (using the `--daemon` option).
 *   [tk](https://www.archlinux.org/packages/?name=tk) - must be installed together with [tcl](https://www.archlinux.org/packages/?name=tcl) to run as X11 desktop applet.
 
-## Configuration
+### Configuration
 
 By default, `i8kmon` only monitors the CPU temperature and fan speed passively. To enable its fan speed control, either run it with the `--auto` option or enable the option permanently in `/etc/i8kutils/i8kmon.conf`:
 
@@ -252,7 +252,7 @@ set config(2)  {{2 2}  65 128  65 128}
 
 This example starts the fan at low speed when the CPU temperature reaches 55 °C, switching to high speed at 75 °C. The fan will switch back to low speed once the temperature drops to 65 °C, and turns off completely at 45 °C.
 
-## Disable BIOS fan speed control
+### Disable BIOS fan speed control
 
 It may be necessary to turn off control of the fan speed by the BIOS to prevent it from "fighting" with `i8kmon`. On some laptops, this can be done using the `smm` utility. **This utility is extremely dangerous as it writes directly to an I/O port to invoke the processor's [System Management Mode](https://en.wikipedia.org/wiki/System_Management_Mode "wikipedia:System Management Mode"). Use it at your own risk.**
 
@@ -279,7 +279,7 @@ To enable it again:
 
 **Note:** This method may disable other power management features of the BIOS as well, such as notifying Linux when the power button is pressed.
 
-## Installation as a service
+### Installation as a service
 
 `i8kmon` can be started automatically as a [systemd](/index.php/Systemd "Systemd") service using a unit file similar to the following:
 
@@ -299,17 +299,13 @@ RestartSec=5
 WantedBy=multi-user.target
 ```
 
-# ThinkPad laptops
+## ThinkPad laptops
 
-By default, the embedded controller (EC) regulates fan speed. If it's too conservative/loud for your taste, you might want a daemon to take over control. But this is risky: you take responsibility for temperature control. Excessive temperatures can damage or shorten the lifespan of components in your laptop.
-
-From the [http://www.thinkwiki.org/wiki/How_to_control_fan_speed](http://www.thinkwiki.org/wiki/How_to_control_fan_speed):
-
-	*Fan control operations are disabled by default for safety reasons. To enable fan control, the module parameter fan_control=1 must be given to thinkpad-acpi.*
+The embedded controller (EC) regulates fan speed. However, in order to take control over it, add `fan_control=1` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 Current fan control daemons available in the [AUR](/index.php/AUR "AUR") are [simpfand-git](https://aur.archlinux.org/packages/simpfand-git/) and [thinkfan](https://aur.archlinux.org/packages/thinkfan/).
 
-## Installation
+### Installation
 
 Install [thinkfan](https://aur.archlinux.org/packages/thinkfan/). Then have a look at the files:
 
@@ -345,7 +341,7 @@ hwmon /sys/devices/virtual/thermal/thermal_zone0/temp
 
 to use generic hwmon sensors instead of thinkpad-specific ones.
 
-## Running
+### Running
 
 You can test your configuration first by running thinkfan manually (as root):
 
@@ -370,9 +366,9 @@ or by automatically loading it on system startup:
 
 ```
 
-## Old packages which have gone missing
+### Old packages which have gone missing
 
-[tpfand](https://aur.archlinux.org/packages/tpfand/) and a version that doesn't require [HAL](/index.php/HAL "HAL") [tpfand-no-hal](https://aur.archlinux.org/packages/tpfand-no-hal/) are not actively developed anymore, and no longer available. An additional GTK+ frontend was provided in the [tpfan-admin](https://aur.archlinux.org/packages/tpfan-admin/) package in the [AUR](/index.php/AUR "AUR") which enables the monitoring of temperatures as well as the graphical adjustment of trigger points.
+[tpfand](https://aur.archlinux.org/packages/tpfand/) and a version that does not require [HAL](/index.php/HAL "HAL") [tpfand-no-hal](https://aur.archlinux.org/packages/tpfand-no-hal/) are not actively developed anymore, and no longer available. An additional GTK+ frontend was provided in the [tpfan-admin](https://aur.archlinux.org/packages/tpfan-admin/) package in the [AUR](/index.php/AUR "AUR") which enables the monitoring of temperatures as well as the graphical adjustment of trigger points.
 
 Due to tpfand not beeing actively developed anymore, there was a fork called tpfanco (which in fact uses the same names for the executables as tpfand): [tpfanco-svn](https://aur.archlinux.org/packages/tpfanco-svn/).
 
@@ -380,18 +376,18 @@ The configuration file for tpfand (same for tpfanco) was `/etc/tpfand.conf`.
 
 Additionally, the [tpfand-profiles](https://aur.archlinux.org/packages/tpfand-profiles/) package in the [AUR](/index.php/AUR "AUR") provided the latest fan profiles for various thinkpad models.
 
-# Asus laptops
+## Asus laptops
 
-This topic will cover drivers configuration on Asus laptops **for [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29)**. If possible, use [#NBFC](#NBFC).
+This topic will cover drivers configuration on Asus laptops **for [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29)**.
 
-## Kernel modules overview
+### Kernel modules overview
 
 *   [#asus-nb-wmi](#asus-nb-wmi) is a kernel module, which is included in mainstream Linux kernel and is loaded automatically in Asus laptops. It will only allow to control a single fan and if there is a second fan - you will not have any controls over it. Blacklisting this module will prevent keyboard backlight to work.
-*   [#asus_fan](#asus_fan) is a kernel module, which allows to control both fans on some older Asus laptops. Does not work with the most recent models.
+*   [#asus fan](#asus_fan) is a kernel module, which allows to control both fans on some older Asus laptops. Does not work with the most recent models.
 
 In configuration files, we are going to use full paths to sysfs files (e.g. `/sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1`). This is because hwmon**1** might change to any other number after reboot. [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29) is written in [Bash](/index.php/Bash "Bash"), so using these paths in configuration file is completely acceptable. You can find complete `/etc/fancontrol` configuration file examples at [ASUS_N550JV#Fan_control](/index.php/ASUS_N550JV#Fan_control "ASUS N550JV").
 
-## asus-nb-wmi
+### asus-nb-wmi
 
 Kernel module `asus-nb-wmi` is already included in Linux kernel and should already be loaded to your kernel.
 
@@ -405,9 +401,9 @@ Below are the commands to control it. Check if you have any controls over your f
 
 ```
 
-If you were able to modify fan speed with above commands, then continue with [#Generate_config_file_with_pmwconfig](#Generate_config_file_with_pmwconfig).
+If you were able to modify fan speed with above commands, then continue with [#Generate config file with pmwconfig](#Generate_config_file_with_pmwconfig).
 
-## asus_fan
+### asus_fan
 
 Install [asus-fan-dkms-git](https://aur.archlinux.org/packages/asus-fan-dkms-git/). Load kernel module:
 
@@ -442,9 +438,9 @@ asus_fan
 
 ```
 
-Continue with [#Generate_config_file_with_pmwconfig](#Generate_config_file_with_pmwconfig).
+Continue with [#Generate config file with pmwconfig](#Generate_config_file_with_pmwconfig).
 
-## Generate config file with pmwconfig
+### Generate config file with pmwconfig
 
 If you get an error `There are no working fan sensors, all readings are 0` while generating config file with `pwmconfig`, open first console and execute:
 

@@ -1,4 +1,4 @@
-[Smokeping](http://oss.oetiker.ch/smokeping/index.en.html) allows you to probe a list of servers, store that data using RRDtool, and generate statistical charts based on RRDtool's output. Smokeping consists of two parts. A daemon runs in the background pinging and collecting data at set intervals. A web interface displays that data in the form of graphs.
+[Smokeping](https://oss.oetiker.ch/smokeping/index.en.html) allows you to probe a list of servers, store that data using RRDtool, and generate statistical charts based on RRDtool's output. Smokeping consists of two parts. A daemon runs in the background pinging and collecting data at set intervals. A web interface displays that data in the form of graphs.
 
 This wiki page covers a basic setup of the smokeping daemon and the CGI webinterface.
 
@@ -12,6 +12,8 @@ This wiki page covers a basic setup of the smokeping daemon and the CGI webinter
     *   [2.2 Setup the rest of the system](#Setup_the_rest_of_the_system)
     *   [2.3 Start and enable daemon](#Start_and_enable_daemon)
 *   [3 Setup web frontend](#Setup_web_frontend)
+    *   [3.1 Apache](#Apache)
+    *   [3.2 Nginx](#Nginx)
 *   [4 Advanced Configuration](#Advanced_Configuration)
 *   [5 Troubleshooting](#Troubleshooting)
 *   [6 Notes](#Notes)
@@ -19,7 +21,7 @@ This wiki page covers a basic setup of the smokeping daemon and the CGI webinter
 
 ## Installation
 
-This section covers the installation of [Smokeping](http://oss.oetiker.ch/smokeping/index.en.html) using the [smokeping](https://www.archlinux.org/packages/?name=smokeping) package. FastCGI will be setup as described in [Apache and FastCGI](/index.php/Apache_and_FastCGI "Apache and FastCGI").
+This section covers the installation of [Smokeping](https://oss.oetiker.ch/smokeping/index.en.html) using the [smokeping](https://www.archlinux.org/packages/?name=smokeping) package. FastCGI on Apache will be setup as described in [Apache and FastCGI](/index.php/Apache_and_FastCGI "Apache and FastCGI").
 
 The smokeping package consists of two parts:
 
@@ -29,7 +31,8 @@ The smokeping package consists of two parts:
 In addition to the [smokeping](https://www.archlinux.org/packages/?name=smokeping) package, you will need:
 
 *   A tool that smokeping can use for monitoring. [fping](https://www.archlinux.org/packages/?name=fping) is the simplest and default method for simple ping probes.
-*   [apache](https://www.archlinux.org/packages/?name=apache) and [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) for the web interface.
+*   [apache](https://www.archlinux.org/packages/?name=apache) and [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) for the web interface if you're using Apache.
+*   [fcgiwrap](https://www.archlinux.org/packages/?name=fcgiwrap) and start and enable fcgiwrap.socket if you're using Nginx
 *   An image cache directory that the FastCGI script can write to, e.g. `/srv/smokeping/imgcache`
 *   A data directory that the smokeping daemon can write to, and the FastCGI script can read, e.g. `/srv/smokeping/data`
 *   To ensure that the main config file is readable by the smokeping daemon.
@@ -236,6 +239,8 @@ Since the smokeping configuration is read by both the smokeping daemon and the F
 
 ## Setup web frontend
 
+### Apache
+
 Edit `/etc/httpd/conf/httpd.conf` so that it includes:
 
 ```
@@ -265,6 +270,36 @@ Alias /smokeping /srv/http/smokeping
 Check that [http://localhost/smokeping/smokeping.fcgi](http://localhost/smokeping/smokeping.fcgi) loads. The first data should appear after a couple of minutes.
 
 If the fonts in the graphs are unreadable, you may need to install the [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) package.
+
+### Nginx
+
+Ensure that `fcgiwrap.socket` and `nginx.service` are both running via systemctl.
+
+Add a server block for smokeping to `/etc/nginx/nginx.conf`, following is an example for a TLS enabled block.
+
+```
+   server {
+       server_name smokeping.example.com;
+       listen 443 ssl http2;
+       listen [::]:443 ssl http2;
+       root /srv/http/smokeping/;
+       index smokeping.fcgi;
+       gzip off;
+       location ~ \.fcgi$ {
+           fastcgi_intercept_errors on;
+           include /etc/nginx/fastcgi_params;
+           fastcgi_param SCRIPT_FILENAME /srv/http/smokeping/smokeping.fcgi;
+           fastcgi_pass unix:/var/run/fcgiwrap.sock;
+       }
+       location ^~ /smokeping/imgcache {
+           alias /srv/smokeping/imgcache;
+           gzip off;
+       }
+   }
+
+```
+
+Verify that your config is fine via `# nginx -t` and reload the configuration via `# nginx -s reload`.
 
 ## Advanced Configuration
 

@@ -5,8 +5,7 @@ Related articles
 *   [NVIDIA#Multiple monitors](/index.php/NVIDIA#Multiple_monitors "NVIDIA")
 *   [Nouveau#Dual Head](/index.php/Nouveau#Dual_Head "Nouveau")
 *   [AMD Catalyst#Double Screen (Dual Head / Dual Screen / Xinerama)](/index.php/AMD_Catalyst#Double_Screen_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29 "AMD Catalyst")
-*   [ATI#Dual Head setup](/index.php/ATI#Dual_Head_setup "ATI")
-
+*   [ATI#Multihead setup](/index.php/ATI#Multihead_setup "ATI")
 *   [Extreme Multihead](/index.php/Extreme_Multihead "Extreme Multihead")
 
 **Multi-head**, **multi-screen**, **multi-display** or **multi-monitor** represent a setup when multiple display devices are attached to a computer. This article provides general description of multiple multi-head setup methods, and provides some examples of configuration.

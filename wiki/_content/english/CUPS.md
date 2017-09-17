@@ -342,6 +342,8 @@ See [CUPS/Printer sharing](/index.php/CUPS/Printer_sharing "CUPS/Printer sharing
 
 [PolicyKit](/index.php/PolicyKit "PolicyKit") can be configured to allow users to configure printers using a GUI without the admin password.
 
+**Note:** You may need to install [cups-pk-helper](https://www.archlinux.org/packages/?name=cups-pk-helper) for working this rules.
+
 Here's an example that allows members of the wheel [group](/index.php/Group "Group") to administer printers without a password:
 
  `/etc/polkit-1/rules.d/49-allow-passwordless-printer-admin.rules` 

@@ -85,7 +85,6 @@ En el afán de trasladar ese esfuerzo colectivo a los usuarios de habla hispana,
 ### Activos
 
 *   [Arlesy](/index.php/User:Arlesy "User:Arlesy") - [enviar email](/index.php/Special:EmailUser/Arlesy "Special:EmailUser/Arlesy")
-*   [Hen](/index.php/User:Hen "User:Hen") - [enviar mensaje](/index.php/Special:EmailUser/Hen "Special:EmailUser/Hen")
 *   [icemodding](/index.php/User:Icemodding "User:Icemodding") - [enviar email](/index.php/Special:EmailUser/icemodding "Special:EmailUser/icemodding")
 *   [Knight](/index.php/User:DKS "User:DKS")
 *   [SignoSN](/index.php/User:SignoSN "User:SignoSN") - Traducción cada Domingo y Miércoles (*en principio*)

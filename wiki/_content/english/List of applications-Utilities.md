@@ -508,6 +508,10 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[http://docs.xfce.org/xfce/thunar/start](http://docs.xfce.org/xfce/thunar/start) || [thunar](https://www.archlinux.org/packages/?name=thunar)
 
+*   **trolCommander** — Lightweight, cross-platform file manager written in Java (Successor of muCommander)
+
+	[https://github.com/trol73/mucommander](https://github.com/trol73/mucommander) || [trolcommander](https://aur.archlinux.org/packages/trolcommander/)
+
 *   **Tux Commander** — Windowed file manager with two panels side by side similar to popular Total Commander or Midnight Commander file managers.
 
 	[http://tuxcmd.sourceforge.net/description.php](http://tuxcmd.sourceforge.net/description.php) || [tuxcmd](https://www.archlinux.org/packages/?name=tuxcmd)

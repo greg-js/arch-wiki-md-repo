@@ -460,6 +460,8 @@ There are a number of useful programs, but they may need to have packages create
         nt pipe support = no
 ```
 
+**Warning:** nt pipe support = no breaks some windows functionality.
+
 TODO: Add explanations.
 
 ### Disable printer share

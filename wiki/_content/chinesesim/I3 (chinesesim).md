@@ -82,7 +82,7 @@ exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
 
 ## 使用
 
-可在 [official documentation](http://i3wm.org/docs) 获取更多细节 [i3 User’s Guide](http://i3wm.org/docs/userguide.html).
+可在 [official documentation](http://i3wm.org/docs) 获取更多细节 [i3 User's Guide](http://i3wm.org/docs/userguide.html).
 
 ## 键盘映射
 
@@ -100,7 +100,7 @@ i3 以树形结构的方式管理窗口，容器是最小的单位。这种结�
 
 i3 使用 [dmenu](/index.php/Dmenu "Dmenu") 作为首席程序启动器，键绑定默认为 `$Mod+d`.
 
-[i3-wm](https://www.archlinux.org/packages/?name=i3-wm) 包含了 i3-dmenu-desktop ——— 一个 "dmenu" 的[Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") 包装器，它通过现成的所有程序 .desktop 文件，生成名单。 不或者 [j4-dmenu-desktop-git](https://aur.archlinux.org/packages/j4-dmenu-desktop-git/) 软件包也是一个不错的选择。
+[i3-wm](https://www.archlinux.org/packages/?name=i3-wm) 包含了 i3-dmenu-desktop ——— 一个 "dmenu" 的[Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") 包装器，它通过现成的所有程序 .desktop 文件，生成名单。 [j4-dmenu-desktop-git](https://aur.archlinux.org/packages/j4-dmenu-desktop-git/) 软件包也是一个不错的选择。
 
 ## 设置
 

@@ -19,7 +19,7 @@ Distcc is a program to distribute builds of C, C++, Objective C or Objective C++
     *   [4.2 Without makepkg](#Without_makepkg)
 *   [5 Monitoring progress](#Monitoring_progress)
 *   [6 "Cross Compiling" with distcc](#.22Cross_Compiling.22_with_distcc)
-    *   [6.1 X86](#X86)
+    *   [6.1 32-bit x86 (i686)](#32-bit_x86_.28i686.29)
         *   [6.1.1 Chroot method (preferred)](#Chroot_method_.28preferred.29)
             *   [6.1.1.1 Add port numbers to DISTCC_HOSTS on the i686 chroot](#Add_port_numbers_to_DISTCC_HOSTS_on_the_i686_chroot)
             *   [6.1.1.2 Invoke makepkg from the Native Environment](#Invoke_makepkg_from_the_Native_Environment)
@@ -72,7 +72,7 @@ A nice tool for converting address ranges to CIDR format can be found here: [CID
 
 Edit `/etc/makepkg.conf` in the following three sections:
 
-1.  BUILDENV has distcc unbanged i.e. without exclamation point.
+1.  The BUILDENV array will need to have *distcc* unbanged i.e. without exclamation point.
 2.  Uncomment the *DISTCC_HOSTS* line and add the IP addresses of the slaves then a slash and the number of threads they are to use. The subsequent IP address/threads should be separated by a white space. This list is ordered from most powerful to least powerful (processing power).
 3.  Adjust the MAKEFLAGS variable to correspond to the number of sum of the number of individual values specified for the max threads per server. In the example below, this is 5+3+3=11\. If users specify more than this sum, the extra theoretical thread(s) will be blocked by distcc and appear as such in monitoring utils such as *distccmon-text* described below.
 
@@ -201,7 +201,7 @@ One can also simply tail `systemd journal log` on daemon:
 
 ## "Cross Compiling" with distcc
 
-### X86
+### 32-bit x86 (i686)
 
 There are currently two methods from which to select to have the ability of distcc distribution of tasks over a cluster building i686 packages from a native x86_64 environment. Neither is ideal, but to date, there are the only two methods documented on the wiki.
 
@@ -249,6 +249,10 @@ When building on an Arch Linux ARM device, the developers *highly* recommend usi
 *   [distccd-alarm-armv6h](https://aur.archlinux.org/packages/distccd-alarm-armv6h/)
 *   [distccd-alarm-armv7h](https://aur.archlinux.org/packages/distccd-alarm-armv7h/)
 *   [distccd-alarm-armv8](https://aur.archlinux.org/packages/distccd-alarm-armv8/)
+
+Setup on the slave machine containing the toolchain is identical to [Distcc#Slaves](/index.php/Distcc#Slaves "Distcc") except that the name of the configuration file matches that of the respective package. For example, `/etc/conf.d/distccd-armv7h`.
+
+A systemd service unit is provided for each respective package. For example, `distccd-armv7h.service`.
 
 #### Additional toolchains
 

@@ -1,3 +1,9 @@
+Related articles
+
+*   [Samba](/index.php/Samba "Samba")
+*   [Samba/Active Directory domain controller](/index.php/Samba/Active_Directory_domain_controller "Samba/Active Directory domain controller")
+*   [SOGo](/index.php/SOGo "SOGo")
+
 A key challenge for system administrators of any datacenter is trying to coexisting in Heterogeneous environments. By this we mean the mixing of different server operating system technologies (typically Microsoft Windows & Unix/Linux). User management and authentication is by far the most difficult of these to solve. The most common way of solving this problem is to use a Directory Server. There are a number of open-source and commercial solutions for the various flavors of *NIX; however, few solve the problem of interoperating with Windows. Active Directory (AD) is a directory service created by Microsoft for Windows domain networks. It is included in most Windows Server operating systems. Server computers on which Active Directory is running are called domain controllers.
 
 [Active Directory](https://en.wikipedia.org/wiki/Active_Directory "wikipedia:Active Directory") serves as a central location for network administration and security. It is responsible for authenticating and authorizing all users and computers within a network of Windows domain type, assigning and enforcing security policies for all computers in a network and installing or updating software on network computers. For example, when a user logs into a computer that is part of a Windows domain, it is Active Directory that verifies his or her password and specifies whether he or she is a system administrator or normal user.

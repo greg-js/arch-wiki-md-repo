@@ -163,9 +163,21 @@ Avoid placing these commands in `~/.xprofile` as this breaks the display configu
 
 #### Switching between displaylink and nvidia/nouveau driver
 
-Currently (displaylink version 1.3.54-1) it is not possible to use displaylink device and nvidia/nouveau driver simultaniously on optimus based laptops. Currently to be able to use displaylink device on intel GPU, you should create config file (see troubleshooting section below). However, with that config file it is not possible to use primusrun. Bumblebee service is running, but it cannot work. Also, laptop's fans are becoming very noisy and laptop's temperature becomes very high.
+Currently (displaylink version 1.3.54-1) it is not possible to use displaylink device and nvidia/nouveau driver simultaniously on optimus based laptops. Currently to be able to use displaylink device on intel GPU, you should create config file (see troubleshooting section below). However, with that config file it is not possible to use primusrun. Bumblebee service is running, but it cannot work. Also, laptop's fans are becoming very noisy and laptop's temperature becomes very high. When you want to switch back to activate nvidia driver, comment everything in that file and reboot.
 
-When you want to switch back to activate nvidia driver, comment everything in that file and reboot.
+To simplify process of switching, you can install [dl-switch](https://aur.archlinux.org/packages/dl-switch/) package and add additional menu entry to your bootloader with kernel parameter activating displaylink workaround. For rEFInd bootloader it will look like this:
+
+ `/boot/EFI/refind/refind.conf` 
+```
+...
+submenuentry "Boot with DisplayLink workaround" {
+    add_options "systemd.unit=displaylink.target"
+}
+...
+
+```
+
+When booting, your are able to choose: boot using default options or boot with displaylink working.
 
 To check which driver is used for your discrete video card, run `lspci -nnk -s xx:xx.x` (replace xx:xx.x with your nvidia gpu pci id).
 

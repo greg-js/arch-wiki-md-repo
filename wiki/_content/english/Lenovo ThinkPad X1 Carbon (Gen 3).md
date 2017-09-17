@@ -1,3 +1,10 @@
+Related articles
+
+*   [Lenovo ThinkPad X1 Carbon](/index.php/Lenovo_ThinkPad_X1_Carbon "Lenovo ThinkPad X1 Carbon")
+*   [Lenovo ThinkPad X1 Carbon (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_2) "Lenovo ThinkPad X1 Carbon (Gen 2)")
+*   [Lenovo ThinkPad X1 Carbon (Gen 4)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_4) "Lenovo ThinkPad X1 Carbon (Gen 4)")
+*   [Lenovo ThinkPad X1 Carbon (Gen 5)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5) "Lenovo ThinkPad X1 Carbon (Gen 5)")
+
 **Tip:** A great resource for thinkpads is [http://www.thinkwiki.org/wiki/ThinkWiki](http://www.thinkwiki.org/wiki/ThinkWiki)
 
 ## Contents
@@ -5,7 +12,7 @@
 *   [1 Model description](#Model_description)
     *   [1.1 Support](#Support)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Trackpad](#Trackpad)
+    *   [2.1 Touchpad](#Touchpad)
     *   [2.2 Audio](#Audio)
     *   [2.3 Display](#Display)
         *   [2.3.1 HDMI](#HDMI)
@@ -54,7 +61,7 @@ Options:
 
 ## Configuration
 
-### Trackpad
+### Touchpad
 
 Install [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) and see [libinput](/index.php/Libinput "Libinput") for configuration.
 

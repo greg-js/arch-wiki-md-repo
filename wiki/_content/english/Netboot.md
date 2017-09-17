@@ -6,6 +6,7 @@ Netboot images are small (<1MB) images that can be used to download the latest A
     *   [1.1 Using ipxe.lkrn](#Using_ipxe.lkrn)
     *   [1.2 Using ipxe.pxe](#Using_ipxe.pxe)
 *   [2 UEFI](#UEFI)
+    *   [2.1 Installation with efibootmgr](#Installation_with_efibootmgr)
 
 ## BIOS
 
@@ -29,3 +30,22 @@ The ipxe.pxe image is a PXE image. It can be chainloaded from an existing PXE en
 ## UEFI
 
 The ipxe.efi image can be used to launch Arch Linux netboot in UEFI mode. Only 64 Bit UEFI is supported. The ipxe.efi image can be added as a boot option via efibootmgr, chainloaded from a boot manager like systemd-boot or launched directly from the UEFI shell.
+
+### Installation with efibootmgr
+
+First install the [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) package, then download the [UEFI netboot image](https://www.archlinux.org/releng/netboot/).
+
+Assuming your EFI System Partition (ESP) is mounted under `/boot/efi`, you should move it as follows - let's also give it a more friendly name:
+
+```
+   mkdir /boot/efi/EFI/arch_netboot
+   mv ipxe.*.efi /boot/efi/EFI/arch_netboot/arch_netboot.efi
+
+```
+
+Then you can create a boot entry as follows:
+
+```
+   efibootmgr --create --disk /dev/sda --part 1 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot"
+
+```

@@ -10,6 +10,7 @@ For general instructions see [Laptop](/index.php/Laptop "Laptop") and comparable
 *   [4 Touchpad](#Touchpad)
 *   [5 Fan](#Fan)
 *   [6 Battery & performance](#Battery_.26_performance)
+*   [7 TSC_DEADLINE message during boot](#TSC_DEADLINE_message_during_boot)
 
 ## Video
 
@@ -66,3 +67,7 @@ As advertised by Asus, this laptop's battery lasts up to 9 hours on battery. On 
 *   [Improving_performance#Watchdogs](/index.php/Improving_performance#Watchdogs "Improving performance") - Watchdogs are not needed for non-server, especially portable devices like this.
 
 It is also worth noting that [Btrfs](/index.php/Btrfs "Btrfs") file system with LZO compression algorithm increases read/write performance, but also "increases" your SSD space. Also 7th generation Intel processors have high performance of ZLIB compression/decompression, so using this algorithm is likely to save even more space on SSD while keeping nearly the same performance as LZO.
+
+## TSC_DEADLINE message during boot
+
+During boot you might notice message `TSC_DEADLINE disabled due to Erra...`. See [Intel microcode](/index.php/Microcode "Microcode") for solution.

@@ -54,6 +54,7 @@
     *   [8.1 mg](#mg)
     *   [8.2 zile](#zile)
     *   [8.3 uemacs](#uemacs)
+    *   [8.4 remacs](#remacs)
 *   [9 资源](#.E8.B5.84.E6.BA.90)
 
 ## 安装
@@ -1028,33 +1029,25 @@ But, this will break other key combinations. To fix them, put the following in y
 
 ### mg
 
-mg（原来叫MicroGnuEmacs)，是用C语言实现的轻量级Emacs。
+**mg**（原来叫MicroGnuEmacs)，是用C语言实现的轻量级Emacs。
 
-可以从{{ic|community}中安装mg
-
-```
-# pacman -S mg
-
-```
-
-或者从官方网站[page](http://homepage.boetes.org/software/mg/)中下载源代码。
+[mg](https://www.archlinux.org/packages/?name=mg) 在 [official repositories](/index.php/Official_repositories "Official repositories") 中，也可以从上游下载源码[page](http://homepage.boetes.org/software/mg/)。注意，**mg** 没有UTF-8支持。
 
 ### zile
 
-引用官方网站[page](https://www.gnu.org/software/zile/)的描述，"GNU Zile is a lightweight Emacs clone. Zile is short for Zile Is Lossy Emacs. Zile has been written to be as similar as possible to Emacs; every Emacs user should feel at home.",意思是'GNU Zile'是一个轻量级的Emacs的克隆。Zile是'Zile Is Lossy Emacs'的缩写。 Zile的实现与Emacs如此相似以至于每个Emacs用户使用Zile一定会有一种宾至如归的感觉。
+引用官方网站[page](https://www.gnu.org/software/zile/)的描述，"GNU Zile is a lightweight Emacs clone. Zile is short for Zile Is Lossy Emacs. Zile has been written to be as similar as possible to Emacs; every Emacs user should feel at home."，意思是'GNU Zile'是一个轻量级的Emacs的克隆。Zile是'Zile Is Lossy Emacs'的缩写。 Zile的实现与Emacs如此相似以至于每个Emacs用户使用Zile一定会有一种宾至如归的感觉。
 
-zile 可以在`extra`中找到
-
-```
-# pacman -S zile
-
-```
+[zile](https://www.archlinux.org/packages/?name=zile) 可以在官方仓库中找到。
 
 最新的tarball可以在GNU的官方源[mirrors](http://ftp.sh.cvut.cz/MIRRORS/gnu/pub/gnu/zile/)中找到。
 
 ### uemacs
 
-uemacs 是由Linus Torvalds定制的微型Emacs版本。 它可以在 [AUR](https://aur.archlinux.org/) 的 [uemacs](https://aur.archlinux.org/packages.php?ID=31502)中找到。
+**uemacs** 是由Linus Torvalds定制的微型Emacs版本。在 [AUR](/index.php/AUR "AUR") 中名为[uemacs-git](https://aur.archlinux.org/packages/uemacs-git/)。
+
+### remacs
+
+**remacs** 是一个用Rust写成的社区驱动的Emacs移植版。在 [AUR](/index.php/AUR "AUR") 中名为 [remacs-git](https://aur.archlinux.org/packages/remacs-git/)。
 
 ## 资源
 

@@ -10,6 +10,8 @@
     *   [3.1 Changed hostname](#Changed_hostname)
     *   [3.2 Upgraded RabbitMQ to latest version and cannot start](#Upgraded_RabbitMQ_to_latest_version_and_cannot_start)
     *   [3.3 Erlang cookie error](#Erlang_cookie_error)
+    *   [3.4 can't establish TCP connection](#can.27t_establish_TCP_connection)
+*   [4 References](#References)
 
 ## Installation
 
@@ -89,3 +91,13 @@ HOME=/var/lib/rabbitmq
 ...
 
 ```
+
+### can't establish TCP connection
+
+If you see this error then make sure first entry with your host name within `/etc/hosts` contains the same IP address as specified within `/etc/rabbitmq/rabbitmq-env.conf` (this error is common if you configure rabbitmq to bind to speciffic interface).
+
+## References
+
+[erlang kernel parameters](http://erlang.org/doc/man/kernel_app.html) - kernel parameters for advanced configuration
+
+[rabbitmq.config example](https://github.com/rabbitmq/rabbitmq-server/blob/master/docs/rabbitmq.config.example) - rabbitmq.config example (not included with rabbitmq package)

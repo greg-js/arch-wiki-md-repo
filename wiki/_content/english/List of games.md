@@ -135,6 +135,10 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[http://www.nongnu.org/crack-attack/](http://www.nongnu.org/crack-attack/) || [crack-attack](https://aur.archlinux.org/packages/crack-attack/)
 
+*   **DDNet** — DDraceNetwork, a mod of Teeworlds
+
+	[https://ddnet.tw/](https://ddnet.tw/) || [ddnet](https://aur.archlinux.org/packages/ddnet/)
+
 *   **[Frozen Bubble](https://en.wikipedia.org/wiki/Frozen_Bubble "wikipedia:Frozen Bubble")** — Arcade game with colorful animated penguin eyecandy
 
 	[http://frozen-bubble.org](http://frozen-bubble.org) || [frozen-bubble](https://www.archlinux.org/packages/?name=frozen-bubble)

@@ -1,3 +1,8 @@
+Related articles
+
+*   [dtach](/index.php/Dtach "Dtach")
+*   [GNU Screen](/index.php/GNU_Screen "GNU Screen")
+
 [tmux](http://tmux.github.io/) is a "terminal multiplexer: it enables a number of terminals (or windows), each running a separate program, to be created, accessed, and controlled from a single screen. tmux may be detached from a screen and continue running in the background, then later reattached."
 
 tmux is an ISC-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Although similar, there are many differences between the programs, as noted on the [tmux FAQ page](https://github.com/tmux/tmux/wiki/FAQ).
@@ -296,7 +301,7 @@ It is possible to copy tmux selection to X clipboard (and to X primary/secondary
 
 ```
 # Emacs style
-bind-key -T copy-mode y send-key -X copy-pipe-and-cancel "xsel -i -p && xsel -o -p | xsel -i -b"
+bind-key -T copy-mode y send-keys -X copy-pipe-and-cancel "xsel -i -p && xsel -o -p | xsel -i -b"
 bind-key C-y run "xsel -o | tmux load-buffer - ; tmux paste-buffer"
 
 ```

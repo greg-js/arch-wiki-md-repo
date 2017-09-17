@@ -13,9 +13,9 @@
 | <small>2.2.</small> [Shells de órdenes](/index.php/Category:Command_shells_(Espa%C3%B1ol) "Category:Command shells (Español)") <small>(4)</small> |
 | <small>2.3.</small> [Compresión y almacenamiendo de datos](/index.php/Category:Data_compression_and_archiving_(Espa%C3%B1ol) "Category:Data compression and archiving (Español)") <small>(1)</small> |
 | <small>2.4.</small> [Sistemas de gestión de bases de datos](/index.php/Category:Database_management_systems_(Espa%C3%B1ol) "Category:Database management systems (Español)") <small>(1)</small> |
-| <small>2.5.</small> [Emuladores](/index.php/Category:Emulators_(Espa%C3%B1ol) "Category:Emulators (Español)") <small>(4)</small> |
+| <small>2.5.</small> [Emuladores](/index.php/Category:Emulators_(Espa%C3%B1ol) "Category:Emulators (Español)") <small>(5)</small> |
 | <small>2.6.</small> [Gestores de archivos](/index.php/Category:File_managers_(Espa%C3%B1ol) "Category:File managers (Español)") <small>(2)</small> |
-| <small>2.7.</small> [Juegos](/index.php/Category:Gaming_(Espa%C3%B1ol) "Category:Gaming (Español)") <small>(5)</small> |
+| <small>2.7.</small> [Juegos](/index.php/Category:Gaming_(Espa%C3%B1ol) "Category:Gaming (Español)") <small>(6)</small> |
 | <small>2.8.</small> [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)") <small>(7) (también en [Gestión de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>2.8.1.</small> [Clientes de correo electrónico](/index.php/Category:Email_clients_(Espa%C3%B1ol) "Category:Email clients (Español)") <small>(1)</small> |
 | <small>2.8.2.</small> [Internet Relay Chat (IRC)](/index.php/Category:Internet_Relay_Chat_(Espa%C3%B1ol) "Category:Internet Relay Chat (Español)") <small>(3)</small> |

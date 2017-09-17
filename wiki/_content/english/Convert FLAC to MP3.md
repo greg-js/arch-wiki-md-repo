@@ -1,3 +1,7 @@
+Related articles
+
+*   [Convert any Movie to DVD Video](/index.php/Convert_any_Movie_to_DVD_Video "Convert any Movie to DVD Video")
+
 This article presents ways of doing audio transcoding between FLAC and MP3 audio files using command line/scripted tools, and suggest a few graphical utilities to do the same and more.
 
 ## Contents
@@ -34,7 +38,7 @@ done
 
 #### Parallel version
 
-Since LAME is a single-threaded encoder, conversion can be accelerated by encoding multiple files concurrently on multiple cores. To do this, install the [parallel](https://www.archlinux.org/packages/?name=parallel) package, and run:
+Since LAME is a single-threaded encoder, conversion can be accelerated by encoding multiple files concurrently on multiple cores. To do this, [install](/index.php/Install "Install") the [parallel](https://www.archlinux.org/packages/?name=parallel) package, and run:
 
 ```
 parallel ffmpeg -i {} -qscale:a 0 {.}.mp3 ::: ./*.flac

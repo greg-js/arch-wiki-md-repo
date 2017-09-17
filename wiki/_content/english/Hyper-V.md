@@ -1,4 +1,4 @@
-Hyper-V is a hypervisor that is included with some versions of Microsoft Windows. It is capable of running an Arch Linux virtual machine. Hyper-V is generally oriented toward enterprise rather than desktop use, and doesn't provide as convenient and simple of an interface as consumer VM programs like [VirtualBox](https://www.virtualbox.org/), [Parallels](https://www.parallels.com/), or [VMWare](http://www.vmware.com/). Nevertheless, it is a convenient, native way to run Arch Linux on top of Windows.
+Hyper-V is a hypervisor that is included with some versions of Microsoft Windows. It is capable of running an Arch Linux virtual machine. Hyper-V is generally oriented toward enterprise rather than desktop use, and doesn't provide as convenient and simple of an interface as consumer VM programs like [VirtualBox](https://www.virtualbox.org/), [Parallels](https://www.parallels.com/), or [VMWare](http://www.vmware.com/). However more recent versions and builds of Windows 10 and Windows Server 2016 include easier configuration options and better compatibility for Arch Linux. Networking features such as NAT for internal switches, multiple NATs and port forwarding have been added without the need to set up Internet Connection Sharing (ICS). Generation 2 virtual machines also now work properly for Arch Linux.
 
 ## Contents
 
@@ -29,21 +29,93 @@ First, you must configure a new virtual switch so that your virtual machine will
 
 ### Set up a virtual switch
 
-In order to connect your virtual machine to an existing network, either use an internal or external network switch. An external switch will assign the VM an IP address, and will give it total external access on the network, which not be possible on some networks with high security; the host machine will lose internet access as a result. An internal switch can be used for simple internet access.
+In order to connect your virtual machine to an existing network, either use an internal or external network switch (virtual network adapter). An external switch must be bound (bridged) to one of the host's existing network adapters (e.g. Ethernet or Wi-Fi). An internal switch can be used for network communication between the host and VM, without the VMs having access to the external network. Adding NAT functionality to an internal switch makes the host act as a router for the VMs, enabling the VMs access to the external network.
+
+Not all networking features (e.g. NAT configuration) can be set up through the Hyper-V Manager GUI. Using PowerShell, run as an Administrator, permits better control over configuration.
 
 #### External switch
 
-To create an external switch, in the right sidebar, select "Virtual Switch Manager...". In the left sidebar of the dialog that opens, choose "New virtual network switch". Under "What type of virtual switch do you want to create?", select "External", then "Create Virtual Switch". You will be prompted about network disruption; continue and your network will be briefly disconnected as the switch is configured.
+To create an external switch, in the right sidebar, select "Virtual Switch Manager...". In the left sidebar of the dialog that opens, choose "New virtual network switch". Under "What type of virtual switch do you want to create?", select "External", then "Create Virtual Switch". Type a new name for the virtual switch. Under "External network", choose the network adapter to bind with the external switch.
+
+You will be prompted about network disruption; continue and your network will be briefly disconnected as the switch is configured.
+
+Using PowerShell (run as Administrator), the above steps can be done with the following:
+
+```
+# Get a list of the network adapters in the host. In a laptop you should typically see 'Ethernet' and 'Wi-Fi'
+PS C:\WINDOWS\system32> Get-NetAdapter
+
+# Create the external switch with a name of VM-External-Switch, bound to the network adapter named `Wi-Fi` retrieved from the previous command
+PS C:\WINDOWS\system32> New-VMSwitch -Name "VM-External-Switch" -AllowManagementOS $True -NetAdapterName "Wi-Fi"
+
+```
+
+On an Arch Linux VM, choosing the external switch as the VM network adapter effectively bridges the Windows host's network adapter with the VM's `eth0` interface. The interface can then be set up in Arch Linux through the usual ways (systemd-networkd, netctl, etc.) with a static IP address or with DHCP. The VM will act just like another host in the external network.
+
+For example, if you want the Arch Linux VM to use a static IP, and the Windows host is configured as `192.168.0.100/24`, then the Arch Linux VM interface should be configured like `192.168.0.101/24`, with the same gateway and DNS servers as set up in the host.
+
+If using DHCP for the VM, the IP address will be assigned by the DHCP server in the external network.
 
 #### Internal switch
 
-To create an internal switch, follow the same steps as the external switch, however replace the relevant choices for 'internal switch'. Then open Network and Sharing Settings, and Adapter Settings, where you will need to enable internet connection sharing for your internet adapter that you normally use. Once the connection can be shared, add it to a bridge together with the virtual switch that you created in the previous step.
+To create an internal switch, follow the same steps as the external switch, however replace the relevant choices for 'internal switch'. Starting with Windows 10 Anniversary Update (Version 1607, OS Build 14393), native NAT support for internal switches was added to Hyper-V. For earlier versions, Internet Connection Sharing (ICS) can be used to enable network access for virtual machines on internal switches.
+
+To find out which version and build of Windows you are using, on a command prompt or PowerShell, run:
+
+```
+> winver
+
+```
+
+Using PowerShell (run as Administrator), an internal switch can be created with the following commands:
+
+```
+# Create the internal switch with a name of VM-Internal-Switch
+PS C:\WINDOWS\system32> New-VMSwitch -Name "VM-Internal-Switch" -SwitchType Internal
+
+# Verify that the internal switch was created
+PS C:\WINDOWS\system32> Get-VMSwitch
+
+# Get the ifIndex of the newly created internal switch, usually named 'vEthernet (name)'
+PS C:\WINDOWS\system32> Get-NetAdapter
+
+# Set the IP address of the internal switch, noting the ifIndex retrieved from the previous command.
+# In this example, the network address of the internal switch is 192.168.3.0/24, and the ifIndex is 50.
+PS C:\WINDOWS\system32> New-NetIPAddress -IPAddress 192.168.3.1 -PrefixLength 24 -InterfaceIndex 50
+
+# The VMs using the internal switch must use static IP addresses, such as 192.168.3.2/24.
+# Support for DHCP in internal switches is not included in current Windows versions (as of Version 1703, OS Build 15063).
+
+```
+
+With the above steps, the host and VMs can already communicate with each other since they will be on the same virtual network (192.168.3.0/24). The VMs however will not be able to access the external network until NAT or ICS is configured.
+
+On Windows 10 build 14393 or later, internal switches can be configured for NAT and port forwarding:
+
+```
+# Create the NAT with IP address of the internal switch
+PS C:\WINDOWS\system32> New-NetNat -Name "VM-NAT-Network" -InternalIPInterfaceAddressPrefix 192.168.3.1/24
+
+# Verify that the NAT was created
+PS C:\WINDOWS\system32> Get-NetNat
+
+# Enable SSH port forwarding on port 2222 of any interface on the host, to a VM with an IP address of 192.168.3.2/24
+PS C:\WINDOWS\system32> Add-NetNatStaticMapping -NatName "VM-NAT-Network" -Protocol TCP -ExternalIPAddress 0.0.0.0 -ExternalPort 2222 -InternalIPAddress 192.168.3.2 -InternalPort 22
+
+# Verify that the port forward is active
+PS C:\WINDOWS\system32> Get-NetNatStaticMapping
+
+```
+
+Consult Microsoft's [NetNat](https://docs.microsoft.com/en-us/powershell/module/netnat/) documentation for a complete list of commands.
+
+For earlier versions and builds of Windows, Internet Connection Sharing can be used. Open Network and Sharing Settings, and Adapter Settings, where you will need to enable internet connection sharing for your internet adapter that you normally use. Once the connection can be shared, add it to a bridge together with the virtual switch that you created in the previous step.
 
 ## Virtual machine creation
 
-In the left sidebar, select "PC" under "Hyper-V Manager". In the right sidebar, select "New" > "Virtual Machine...". In New Virtual Machine Wizard, you may in general specify whichever settings you like, but some must be specifically configured.
+In the left sidebar, select your computer under "Hyper-V Manager". In the right sidebar, select "New" > "Virtual Machine...". In New Virtual Machine Wizard, you may in general specify whichever settings you like, but some must be specifically configured.
 
-Under "Specify Generation", you must choose "Generation 1", as Arch does not work properly in Generation 2 Hyper-V VMs.
+Under "Specify Generation", you may choose "Generation 1" or "Generation 2". Generation 1 virtual machines emulate a BIOS-based machine and legacy ports. Generation 2 provides a UEFI-based machine. In general, use Generation 2 unless for compatibility or portability reasons you need to use Generation 1\. Also, when using Generation 2 for an Arch Linux VM, make sure to disable Secure Boot in the VM's settings under Hardware -> Security.
 
 For "Startup memory" under Assign Memory, choose enough to ensure Arch and any programs will run properly.
 
@@ -51,7 +123,7 @@ For "Connection" under "Configure Networking", choose the virtual switch you cre
 
 For "Connect Virtual Hard Disk", choose "Create a virtual hard disk", and make sure the "Size" is appropriate for your use case. The virtual hard disk is sparse, so the virtual hard disk will only use as much real storage as is necessary to store what the virtual OS has written to it.
 
-For "Installation Options", choose "Install an operating system from a bootable CD/DVD-ROM". If you are installing Arch from a disc or USB device, choose "Physical CD/DVD drive" under "Media", and select the appropriate letter. If you are installing Arch from an ISO file, select "Image file (.iso)", and select the file in the "Browse..." dialog.
+For "Installation Options", choose "Install an operating system from a bootable CD/DVD-ROM". If you are installing Arch from a disc or USB device, choose "Physical CD/DVD drive" under "Media", and select the appropriate letter. If you are installing Arch from an ISO file, select "Image file (.iso)", and select the file in the "Browse..." dialog. For Generation 2 machines, booting from a physical CD/DVD drive is not supported.
 
 ## Virtual machine configuration
 

@@ -9,6 +9,7 @@ The barebone kits consist of the board, in a plastic case with a fan, an externa
     *   [1.2 Graphics](#Graphics)
         *   [1.2.1 Skylake](#Skylake)
     *   [1.3 Wireless](#Wireless)
+    *   [1.4 LEDs](#LEDs)
 *   [2 Performance](#Performance)
     *   [2.1 Boot](#Boot)
     *   [2.2 4K](#4K)
@@ -44,6 +45,10 @@ Skylake support is stable on recent kernels, no further action should be require
 
 Most NUC wireless adapters should work out of the box. Make sure relevant firmware is loaded. See [Wireless network configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") for details.
 
+### LEDs
+
+Some NUCs have LEDs which can be controlled by software by installing a kernel driver [[1]](http://nucblog.net/2017/05/linux-kernel-driver-for-nuc-led-control/) [[2]](https://github.com/milesp20/intel_nuc_led). To use this, Software Control must be enabled in the BIOS *Power* settings.
+
 ## Performance
 
 ### Boot
@@ -68,7 +73,7 @@ The [PulseAudio#Switch on connect](/index.php/PulseAudio#Switch_on_connect "Puls
 
 ### TPM
 
-NUC devices have [TPM](/index.php/TPM "TPM") capabilites that are currently blocked due to a few bugs in `tpm_crb`[[1]](https://bugzilla.kernel.org/show_bug.cgi?id=98181)[[2]](https://bugzilla.kernel.org/show_bug.cgi?id=111511). 4.6 Kernel still has no solution for Haswell TPMs but a relevant patch is work in progress[[3]](https://lkml.org/lkml/2016/4/19/46).
+NUC devices have [TPM](/index.php/TPM "TPM") capabilites that are currently blocked due to a few bugs in `tpm_crb`[[3]](https://bugzilla.kernel.org/show_bug.cgi?id=98181)[[4]](https://bugzilla.kernel.org/show_bug.cgi?id=111511). 4.6 Kernel still has no solution for Haswell TPMs but a relevant patch is work in progress[[5]](https://lkml.org/lkml/2016/4/19/46).
 
 ### Poweroff
 

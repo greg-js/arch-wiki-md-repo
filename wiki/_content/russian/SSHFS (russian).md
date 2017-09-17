@@ -102,7 +102,7 @@ Match User "someuser"
 
 **Примечание:** Владельцем chroot директории **должен** быть суперпользователь, иначе вы не сможете подключиться.
 
-Смотрите [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot"). Также обратите внимание в [sshd_config(5)](http://man7.org/linux/man-pages/man5/sshd_config.5.html) на `Match`, `ChrootDirectory` и `ForceCommand`.
+Смотрите [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot"). Также обратите внимание в [sshd_config(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5) на `Match`, `ChrootDirectory` и `ForceCommand`.
 
 ## Автомонтирование
 

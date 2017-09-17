@@ -214,7 +214,7 @@ $ cargo install clippy
 
 #### Atom
 
-Atom supports Rust programming with the available [Tokamak IDE](https://vertexclique.github.io/tokamak/) plugin.
+Atom supports Rust programming when both of the next plugins installed: [language-rust](https://atom.io/packages/language-rust) and [linter-rust](https://atom.io/packages/linter-rust).
 
 #### IntelliJ IDEA
 

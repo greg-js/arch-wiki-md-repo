@@ -29,15 +29,15 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
 
 ## 使用虚拟机
 
-简单方便，不用解决各种依赖、字体等问题。这里建议使用virtualbox。
+简单方便，不用解决各种依赖、字体等问题。这里建议使用 VirtualBox。
 
-1\. 安装[virtualbox](https://www.archlinux.org/packages/?name=virtualbox)，可参看[VirtualBox (简体中文)](/index.php/VirtualBox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox (简体中文)") 。 2\. 下载[Microsoft提供的正版虚拟机专用系统](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)(选择virtualbox格式的下载）。
+1\. 安装[virtualbox](https://www.archlinux.org/packages/?name=virtualbox)，可参看[VirtualBox (简体中文)](/index.php/VirtualBox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox (简体中文)") 。 2\. 下载[Microsoft 提供的正版虚拟机专用系统](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)(选择 VirtualBox 格式的下载）。
 
-3\. 从虚拟机导入系统（根据使用需求设置虚拟机要使用的cpu和内存配置）；
+3\. 从虚拟机导入系统（根据使用需求设置虚拟机要使用的 CPU 和内存配置）；
 
-4\. 在虚拟机中的windows系统中安装腾讯QQ。
+4\. 在虚拟机中的 Windows 系统中安装腾讯 QQ。
 
-技巧：virtualbox的**无缝模式**（默认案件ctrl+l)开启后，虚拟机系统中开启的窗口就如同在宿主机中的原生窗口一样，使用体验大大提升。
+技巧：VirtualBox 的**无缝模式**（默认按键 CTRL + L)开启后，虚拟机系统中开启的窗口就如同在宿主机中的原生窗口一样，使用体验大大提升。
 
 ## 基于 WebQQ
 
@@ -129,13 +129,15 @@ AUR：[libqq-svn](https://aur.archlinux.org/packages/libqq-svn/)、[libqq-pidgin
 
 ### Wine QQ
 
-目前较为成熟的 Wine 模拟方案为[deepinwine-qq](https://aur.archlinux.org/packages/deepinwine-qq/)。
+目前较为成熟的 Wine 模拟方案为[deepinwine-qq](https://aur.archlinux.org/packages/deepinwine-qq/)，也可以从 [ArchLinux CN 源](https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/) 安装 deepin-qq-im。
 
 之前比较好的解决方案有 [清风老师](http://phpcj.org/wineqq/) 提供的 Wine QQ 方案等。
 
 **注意:** 如果系统默认不是中文环境可能无法输入中文,解决方法是修改启动文件的`Exec`: `$HOME/.local/share/applications/wine-QQ.desktop`  `Exec=env LC_ALL=zh_CN.UTF-8 wine ".wine/drive_c/Program Files/QQ/Bin/QQ.exe"` 
 
-**注意:** 此方案只需要安装[wine](https://www.archlinux.org/packages/?name=wine)即可，安装其它的Wine库可能造成干扰。第一次启动的时候会自动下载安装`Mono`库。如果安装失败，可以首先删除`$HOME/.wine`并卸载所有Wine相关的包后重启系统，得到一个相对干净的环境再尝试按上面博客的步骤进行安装
+**注意:** 此方案只需要安装[wine](https://www.archlinux.org/packages/?name=wine)即可，安装其它的 Wine 库可能造成干扰。第一次启动的时候会自动下载安装`Mono`库。如果安装失败，可以首先删除`$HOME/.wine`并卸载所有 Wine 相关的包后重启系统，得到一个相对干净的环境再尝试按上面博客的步骤进行安装。
+
+**注意:** 安装成功之后要取消勾选 QQ 的自动更新，以免自动更新导致不可用。
 
 ### Wine QQ 轻聊版
 
@@ -285,6 +287,8 @@ $ winetricks riched20
 ```
 
 其中comment是程序介绍，Exec是执行命令，Icon是要显示的图表，可以根据实际情况进行修改。（自带的ico图表不太清晰，可下载[该图标文件](https://sqimg.qq.com/qq_product_operations/eim/site/img/share.png)更换） 将tim.desktop移动到~/.local/share/applications或/usr/share/applications文件夹下即可。
+
+**注意:** desktop entry 有时无法使用，需要将里面的相对路径改成绝对路径。
 
 #### 相关问题解决
 

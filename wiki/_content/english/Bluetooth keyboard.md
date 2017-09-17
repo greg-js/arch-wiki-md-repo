@@ -1,4 +1,4 @@
-This article describes how to set up a [Bluetooth](/index.php/Bluetooth "Bluetooth") HID keyboard with Arch Linux, bluez version 5.
+This article describes how to set up a [Bluetooth](/index.php/Bluetooth "Bluetooth") HID keyboard with Arch Linux, [bluez](https://www.archlinux.org/packages/?name=bluez) version 5.
 
 ## Contents
 
@@ -25,7 +25,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 The above output is from a Raspberry-Pi revision 'B' with archlinux-arm and a Keysonic BT Dongle.
 
-Start bluetooth service with *systemctl*, or even better, enable it permanently in the start up process. See [systemd](/index.php/Systemd "Systemd").
+[Start](/index.php/Start "Start") `bluetooth` service from [bluez](https://www.archlinux.org/packages/?name=bluez) with *systemctl*, or even better, [enable](/index.php/Enable "Enable") it permanently in the start up process.
 
 Three items worth remembering:
 
@@ -33,21 +33,21 @@ Three items worth remembering:
 *   The BT controller needs to be powered up after every boot.
 *   The BT controller needs to be told to connect to the keyboard after every boot.
 
-*Pairing* is a one time process, required only once. There are BT keyboards sold with a BT dongle which come already paired, but that's not certain. We will use the `bluetoothctl` command from bluez5 to pair our dongle and the keyboard.
+*Pairing* is a one time process, required only once. There are BT keyboards sold with a BT dongle which come already paired, but that's not certain. We will use the `bluetoothctl` command from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) to pair our dongle and the keyboard.
 
 *Power up* can be done with `bluetoothctl`, or with `hciconfig` which is more suitable for scripting. See below.
 
 Same for *connecting*, either `bluetoothctl` or `hcitool` can be used, the latter is more useful for scripting.
 
-We will use `bluetoothctl` for the pairing process:
+We will use `bluetoothctl` for the pairing process. Run the command to get at the `[bluetooth]#` prompt.
 
- `# bluetoothctl -a` 
+ `# bluetoothctl` 
 ```
 [bluetooth]#
 
 ```
 
-puts you at the `[bluetooth]#` prompt. If you are on a colour console: the word "bluetooth" is in the default colour as long as no devices are available, and blue as soon as required devices and/or controllers have been found.
+**Note:** If you are on a color console: the word "bluetooth" is in the default color as long as no devices are available, and blue as soon as required devices and/or controllers have been found.
 
 While in *bluetoothctl* power up the controller:
 
@@ -211,13 +211,42 @@ ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"
 
 ## Troubleshooting
 
-*   What if the BT controller does not show up in `lsusb` ?
-*   What if the BT controller is not visible in `bluetoothctl` ?
-*   My BT keyboard still does not work. What to do?
-    *   Check: Does it have power?
-    *   Check: Did it connect to the BT controller? If not, try with another controller or your smart phone.
-*   All went fine but when I type I'm getting "Bluetooth: hci0 ACL packet for unknown connection handle 4"
-    *   Try reset: hciconfig hci0 reset
+What if the BT controller does not show up in `lsusb` ?
+
+*   Load generic bluetooth driver:
+
+```
+# modprobe btusb
+
+```
+
+*   Is it an USB adapter or integral to the system? Use `lspci` for integral adapters
+
+What if the BT controller is not visible in `bluetoothctl` ?
+
+*   Check: `bluetoothctl` is started:
+
+```
+systemctl start bluetooth
+
+```
+
+*   Check: You run the command with superuser privileges using `su` or `sudo`. Otherwise you have blue *[bluetooth]#* prompt and get the following message when powering on the controller:
+
+```
+[bluetooth]# power on
+No default controller available
+
+```
+
+My BT keyboard still does not work. What to do?
+
+*   Check: Does it have power?
+*   Check: Did it connect to the BT controller? If not, try with another controller or your smart phone.
+
+All went fine but when I type I'm getting "Bluetooth: hci0 ACL packet for unknown connection handle 4"
+
+*   Try reset: hciconfig hci0 reset
 
 ## Xorg
 

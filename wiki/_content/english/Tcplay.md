@@ -1,3 +1,9 @@
+Related articles
+
+*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
+*   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
+*   [Tomb](/index.php/Tomb "Tomb")
+
 *tcplay* is a free, fully featured and stable TrueCrypt implementation including multiple keyfiles and cipher cascades.
 
 Source: [github project home](https://github.com/bwalex/tc-play)
@@ -127,4 +133,4 @@ Finally, to close the container this command does the trick.
 *   [HOWTO: Truecrypt Gentoo wiki](http://www.gentoo-wiki.info/HOWTO_Truecrypt)
 *   [Truecrypt Tutorial on HowToForge](http://www.howtoforge.com/truecrypt_data_encryption)
 *   [There is a good chance the CIA has a backdoor?](http://www.privacylover.com/encryption/analysis-is-there-a-backdoor-in-truecrypt-is-truecrypt-a-cia-honeypot/) (via [wp](https://secure.wikimedia.org/wikipedia/en/wiki/Truecrypt))
-*   [tcplay-helper documentation](https://github.com/Zyg0te/tcplay-helper)
+*   [tcplay-helper documentation](https://github.com/robertmuil/tcplay-helper)

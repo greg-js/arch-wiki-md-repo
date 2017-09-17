@@ -24,7 +24,7 @@
         *   [1.4.1 安装字体](#.E5.AE.89.E8.A3.85.E5.AD.97.E4.BD.93)
         *   [1.4.2 中文字体配置](#.E4.B8.AD.E6.96.87.E5.AD.97.E4.BD.93.E9.85.8D.E7.BD.AE)
             *   [1.4.2.1 修正简体中文显示为异体（日文）字形](#.E4.BF.AE.E6.AD.A3.E7.AE.80.E4.BD.93.E4.B8.AD.E6.96.87.E6.98.BE.E7.A4.BA.E4.B8.BA.E5.BC.82.E4.BD.93.EF.BC.88.E6.97.A5.E6.96.87.EF.BC.89.E5.AD.97.E5.BD.A2)
-        *   [1.4.3 fontconfig设置](#fontconfig.E8.AE.BE.E7.BD.AE)
+            *   [1.4.2.2 fontconfig设置](#fontconfig.E8.AE.BE.E7.BD.AE)
     *   [1.5 中文输入法](#.E4.B8.AD.E6.96.87.E8.BE.93.E5.85.A5.E6.B3.95)
 *   [2 终端中文支持](#.E7.BB.88.E7.AB.AF.E4.B8.AD.E6.96.87.E6.94.AF.E6.8C.81)
     *   [2.1 引导中文支持](#.E5.BC.95.E5.AF.BC.E4.B8.AD.E6.96.87.E6.94.AF.E6.8C.81)
@@ -193,7 +193,7 @@ export LC_CTYPE=en_US.UTF-8
 
 ```
 
-#### fontconfig设置
+##### fontconfig设置
 
 fontconfig的设置文件是`~/.fonts.conf`（用户）或者`/etc/fonts/conf.d`（全局）。推荐修改前者。
 
@@ -326,20 +326,22 @@ xine也可以显示中文字幕，但需要制作自己的中文字体。具体�
 *   文件名乱码：安装 [convmv](https://www.archlinux.org/packages/?name=convmv)，使用`convmv`命令转换编码格式。示例：
 
 ```
-convmv -f gbk -t utf8 file
+convmv -f GBK -t UTF-8 --notest --nosmart file
 
 ```
+
+`-f`指定原始编码，`-t`指定输出编码。使用`convmv --list`可查询所有支持的编码。 `--notest`表示非测试而是要进行转码（如果不使用该参数只会打印出转换结果而不会实际转码），`--smart`表示如果已经是UTF-8则忽略。
 
 -f指定原编码格式，-t指定要转换成的编码格式。
 
 *   文件内容乱码：使用`iconv`命令转换格式。示例：
 
 ```
-iconv -f gbk -t utf8 file
+iconv -f GBK -t UTF-8 -o new-file origin-file
 
 ```
 
--f指定原编码格式，-t指定要转换成的编码格式。
+`-f`指定原始编码，`-t`指定输出编码。使用`iconv -l`可查询所有支持的编码。`-o`指定输出文件。
 
 ### zip压缩包乱码
 

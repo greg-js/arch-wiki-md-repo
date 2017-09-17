@@ -1,4 +1,14 @@
-**翻译状态：** 本文是英文页面 [Xfce](/index.php/Xfce "Xfce") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-02-24，点击[这里](https://wiki.archlinux.org/index.php?title=Xfce&diff=0&oldid=468608)可以查看翻译后英文页面的改动。
+相关文章
+
+*   [桌面环境](/index.php/Desktop_Environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop Environment (简体中文)")
+*   [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Xfwm](/index.php/Xfwm "Xfwm")
+*   [Thunar](/index.php/Thunar "Thunar")
+*   [LXDE](/index.php/LXDE "LXDE")
+*   [GNOME](/index.php/GNOME "GNOME")
+
+**翻译状态：** 本文是英文页面 [Xfce](/index.php/Xfce "Xfce") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-07-16，点击[这里](https://wiki.archlinux.org/index.php?title=Xfce&diff=0&oldid=468608)可以查看翻译后英文页面的改动。
 
 [Xfce](http://www.xfce.org) 是一个基于 GTK+2 的轻量级模块化的 [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")。为了提供完整的用户体验，它包含窗口管理器、文件管理器、桌面和面板。
 
@@ -19,9 +29,9 @@
         *   [3.3.1 自启动程序](#.E8.87.AA.E5.90.AF.E5.8A.A8.E7.A8.8B.E5.BA.8F)
             *   [3.3.1.1 延迟应用程序启动](#.E5.BB.B6.E8.BF.9F.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E5.90.AF.E5.8A.A8)
         *   [3.3.2 锁定屏幕](#.E9.94.81.E5.AE.9A.E5.B1.8F.E5.B9.95)
-        *   [3.3.3 用户切换](#.E7.94.A8.E6.88.B7.E5.88.87.E6.8D.A2)
-        *   [3.3.4 禁用保存的会话](#.E7.A6.81.E7.94.A8.E4.BF.9D.E5.AD.98.E7.9A.84.E4.BC.9A.E8.AF.9D)
-        *   [3.3.5 默认窗口管理器](#.E9.BB.98.E8.AE.A4.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
+            *   [3.3.2.1 面板的锁定按钮](#.E9.9D.A2.E6.9D.BF.E7.9A.84.E9.94.81.E5.AE.9A.E6.8C.89.E9.92.AE)
+        *   [3.3.3 禁用保存的会话](#.E7.A6.81.E7.94.A8.E4.BF.9D.E5.AD.98.E7.9A.84.E4.BC.9A.E8.AF.9D)
+        *   [3.3.4 默认窗口管理器](#.E9.BB.98.E8.AE.A4.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
     *   [3.4 更换主题](#.E6.9B.B4.E6.8D.A2.E4.B8.BB.E9.A2.98)
     *   [3.5 声音](#.E5.A3.B0.E9.9F.B3)
         *   [3.5.1 键盘音量键](#.E9.94.AE.E7.9B.98.E9.9F.B3.E9.87.8F.E9.94.AE)
@@ -192,7 +202,7 @@ $ xdotool getwindowfocus windowkill
 也可以：
 
 ```
-$ xkill -id "$(xprop -root -notype | sed -n '/^_NET_ACTIVE_WINDOW/ s/^.*# *\|\,.*$//g p')"
+$ sh -c "xkill -id $(xprop -root -notype | sed -n '/^_NET_ACTIVE_WINDOW/ s/^.*# *\|\,.*$//g p')"
 
 ```
 
@@ -237,14 +247,14 @@ $ xfconf-query -c xfce4-session -p /general/LockCommand -s "light-locker-command
 
 **提示：** [light-locker](https://www.archlinux.org/packages/?name=light-locker) 是和 [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager) 相整合的。安装 light-locker 后,电源管理设定中会出现*安全*标签页。现有的*系统休眠时锁定屏幕*选项会集成到*安全*标签页中。
 
-#### 用户切换
+##### 面板的锁定按钮
 
-当与具有用户切换功能的[显示管理器](/index.php/Display_manager "Display manager")一起使用时，Xfce4支持用户切换 - 例如 [LightDM](/index.php/LightDM "LightDM") 和 [GDM](/index.php/GDM "GDM") 。有关详细信息，请参阅您的显示管理器的Wiki页面。当您安装并正确配置了显示管理器时，您可以从面板中的'action buttons'菜单项切换用户。
+活动按钮面板的锁定按钮直接执行 `/usr/bin/xflock4`，就忽略了上面的 `/general/LockCommand` 设置和[这里](https://bbs.archlinux.org/viewtopic.php?id=189484)阐述的设置别名的方法。
 
-要想要用 GDM 以外的显示管理器切换用户, 需要额外的步骤:
+使用 [light-locker](https://www.archlinux.org/packages/?name=light-locker) 有两种方法：
 
-*   LXDM - [LXDM#Simultaneous users and switching users](/index.php/LXDM#Simultaneous_users_and_switching_users "LXDM").
-*   LightDM - [LightDM (简体中文)#Xfce4 下多用户切换](/index.php/LightDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Xfce4_.E4.B8.8B.E5.A4.9A.E7.94.A8.E6.88.B7.E5.88.87.E6.8D.A2 "LightDM (简体中文)").
+*   编辑 `/usr/bin/xflock4` 来直接执行 `light-locker-command -l`。这不应该被用于多用户系统，而且更新软件包的时候不能被覆写。
+*   用自定义启动器替换活动按钮提供的锁定按钮. 在活动按钮设置里移除锁定按钮，再向面板中添加一个启动器，把 *Command* 设置为 `light-locker-command -l`，还可以把图标设置成 `system-lock-screen`。
 
 #### 禁用保存的会话
 

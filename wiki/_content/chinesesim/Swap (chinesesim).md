@@ -1,4 +1,9 @@
-*Linux 将物理内存分为内存段，叫做页面。交换是指内存页面被复制到预先设定好的硬盘空间(叫做交换空间)的过程，目的是释放对于页面的内存。物理内存和交换空间的总大小是可用的虚拟内存的总量。*
+相关文章
+
+*   [Swap on video ram](/index.php/Swap_on_video_ram "Swap on video ram")
+*   [fstab](/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fstab (简体中文)")
+
+	*Linux 将物理内存分为内存段，叫做页面。交换是指内存页面被复制到预先设定好的硬盘空间(叫做交换空间)的过程，目的是释放对于页面的内存。物理内存和交换空间的总大小是可用的虚拟内存的总量。*
 
 	- Linux.com, [关于 Linux Swap 空间](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space)。
 
@@ -7,9 +12,11 @@
 *   [1 交换空间](#.E4.BA.A4.E6.8D.A2.E7.A9.BA.E9.97.B4)
 *   [2 交换分区](#.E4.BA.A4.E6.8D.A2.E5.88.86.E5.8C.BA)
 *   [3 交换文件](#.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6)
-    *   [3.1 建立交换文件](#.E5.BB.BA.E7.AB.8B.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6)
-    *   [3.2 删除交换文件](#.E5.88.A0.E9.99.A4.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6)
-    *   [3.3 恢复交换文件](#.E6.81.A2.E5.A4.8D.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6)
+    *   [3.1 手动方式](#.E6.89.8B.E5.8A.A8.E6.96.B9.E5.BC.8F)
+        *   [3.1.1 建立交换文件](#.E5.BB.BA.E7.AB.8B.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6)
+        *   [3.1.2 删除交换文件](#.E5.88.A0.E9.99.A4.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6)
+        *   [3.1.3 恢复交换文件](#.E6.81.A2.E5.A4.8D.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6)
+    *   [3.2 systemd-swap](#systemd-swap)
 *   [4 使用 USB 设备交换](#.E4.BD.BF.E7.94.A8_USB_.E8.AE.BE.E5.A4.87.E4.BA.A4.E6.8D.A2)
 *   [5 交换测试](#.E4.BA.A4.E6.8D.A2.E6.B5.8B.E8.AF.95)
 *   [6 性能优化](#.E6.80.A7.E8.83.BD.E4.BC.98.E5.8C.96)
@@ -63,13 +70,15 @@ $ free -m
 
 ## 交换文件
 
-As an alternative to creating an entire partition, a swap file offers the ability to vary its size on-the-fly, and is more easily removed altogether. This may be especially desirable if disk space is at a premium (e.g. a modestly-sized SSD).
+相比于使用一个磁盘分区作为交换空间，使用交换文件可以更方便地随时调整大小或者移除。当磁盘空间有限（例如常规大小的SSD）时，使用交换文件更加理想。
 
 **注意:** BTRFS 文件系统暂时不支持交换文件。
 
-### 建立交换文件
+### 手动方式
 
-As root use `fallocate` to create a swap file the size of your choosing (M = Megabytes, G = Gigabytes) (`dd` can also be used but will take longer). For example, creating a 512 MB swap file:
+#### 建立交换文件
+
+作为root，利用`fallocate`来创建一个所需大小的交换文件（也可以使用`dd`来创建，但这会花费更多时间）。例如，创建一个512 MB的交换文件：
 
 ```
 # fallocate -l 512M /swapfile
@@ -78,53 +87,53 @@ As root use `fallocate` to create a swap file the size of your choosing (M = Meg
 
 ```
 
-Set the right permissions (a world-readable swap file is a huge local vulnerability)
+为交换文件设置权限：（出于安全考虑，交换文件不应被用户可读）
 
 ```
 # chmod 600 /swapfile
 
 ```
 
-After creating the correctly-sized file, format it to swap:
+创建好交换文件后，将其格式化：
 
 ```
 # mkswap /swapfile
 
 ```
 
-Activate the swapfile:
+启用交换文件：
 
 ```
 # swapon /swapfile
 
 ```
 
-Edit `/etc/fstab` and add an entry for the swap file:
+为了开机自动挂载，还需要在`/etc/fstab`中添加如下的一行：
 
 ```
 /swapfile none swap defaults 0 0
 
 ```
 
-### 删除交换文件
+#### 删除交换文件
 
-To remove a swap file, the current swap file must be turned off.
+如果要删除一个交换文件，必须先停用它。
 
-As root:
+作为root运行：
 
 ```
 # swapoff -a
 
 ```
 
-Remove swapfile:
+然后即可删除它：
 
 ```
 # rm -rf /swapfile
 
 ```
 
-### 恢复交换文件
+#### 恢复交换文件
 
 Resuming the system from a swap file after hibernation requires an addition parameter to the kernel compared to resuming from a swap partition. The additional parameter is `resume_offset=<Swap File Offset>`.
 
@@ -145,6 +154,10 @@ ext logical  physical  expected  length flags
 From the example `<Swap FIle Offset>` is `7546880`.
 
 **Note:** Please note that in kernel `resume` parameter you still have to type path to partition (e.g. `resume=/dev/sda1`) not to swapfile explicitly! Parameter `resume_offset` is for informing system where swapfile starts on hard disk.
+
+### systemd-swap
+
+[Install](/index.php/Install "Install") the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package. Set `swapfu_enabled=1` in the *Swap File Universal* section of `/etc/systemd/swap.conf`. [Start/enable](/index.php/Start/enable "Start/enable") the `systemd-swap` service. Visit the [authors GitHub](https://github.com/Nefelim4ag/systemd-swap) page for more information and setting up the [recommend configuration](https://github.com/Nefelim4ag/systemd-swap/blob/master/README.md#about-configuration).
 
 ## 使用 USB 设备交换
 

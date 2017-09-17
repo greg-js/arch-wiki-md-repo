@@ -852,6 +852,10 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 	[http://www.gnomesubtitles.org/](http://www.gnomesubtitles.org/) || [gnome-subtitles](https://www.archlinux.org/packages/?name=gnome-subtitles)
 
+*   **Jubler** — Open-source multiplatform subtitle editor written in Java.
+
+	[http://www.jubler.org](http://www.jubler.org) || [jubler](https://aur.archlinux.org/packages/jubler/)
+
 *   **Penguin Subtitle Player** — Penguin Subtitle Player is an open-source, cross-platform standalone subtitle player, as an alternative to Greenfish Subtitle Player, SrtViewer (Mac), SRTPlayer, JustSubsPlayer and Free Subtitle Player.
 
 	[https://github.com/carsonip/Penguin-Subtitle-Player](https://github.com/carsonip/Penguin-Subtitle-Player) || [penguin-subtitle-player-git](https://aur.archlinux.org/packages/penguin-subtitle-player-git/)

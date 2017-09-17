@@ -16,9 +16,9 @@
 | <small>2.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(13)</small> |
 | <small>2.5.</small> [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems") <small>(16)</small> |
 | <small>2.6.</small> [Dictionaries](/index.php/Category:Dictionaries "Category:Dictionaries") <small>(4)</small> |
-| <small>2.7.</small> [Emulators](/index.php/Category:Emulators "Category:Emulators") <small>(12)</small> |
+| <small>2.7.</small> [Emulators](/index.php/Category:Emulators "Category:Emulators") <small>(11)</small> |
 | <small>2.8.</small> [File managers](/index.php/Category:File_managers "Category:File managers") <small>(10)</small> |
-| <small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(45)</small> |
+| <small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(44)</small> |
 | <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(35)</small> |
 | <small>2.10.1.</small> [BitTorrent clients](/index.php/Category:BitTorrent_clients "Category:BitTorrent clients") <small>(6)</small> |
 | <small>2.10.2.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(3)</small> |
@@ -56,7 +56,7 @@
 | <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(6)</small> |
 | <small>4.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(9)</small> |
 | <small>4.4.</small> [Displays](/index.php/Category:Displays "Category:Displays") <small>(3)</small> |
-| <small>4.5.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(33)</small> |
+| <small>4.5.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(34)</small> |
 | <small>4.6.</small> [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting") <small>(8)</small> |
 | <small>4.7.</small> [Imaging](/index.php/Category:Imaging "Category:Imaging") <small>(7)</small> |
 | <small>4.8.</small> [Input devices](/index.php/Category:Input_devices "Category:Input devices") <small>(14)</small> |

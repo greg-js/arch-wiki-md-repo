@@ -53,7 +53,7 @@ Aunque un sistema Arch basado en SysVinit no utiliza init, la mayor parte del tr
 1.  Instale [systemd](https://www.archlinux.org/packages/?name=systemd) y añada a la [línea de órdenes del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") lo siguiente: `init=/usr/lib/systemd/systemd`
 2.  Una vez hecho, puede habilitar los servicios deseados mediente el uso de `systemctl enable <nombre_del_servicio>` (los cuales equivalen aproximadamente a los demonios incluidos en la matriz `DAEMONS` con [nombres diferentes](/index.php/Daemons_List "Daemons List")).
 3.  Reinicie el sistema y compruebe que `systemd` está realmente activo mediante la orden siguiente: `cat /proc/1/comm`. Esta debería devolver la salida: `systemd`.
-4.  Asegúrese de que el nombre del equipo está configurado correctamente en systemd: `hostnamectl set-hostname elnombredemiequipo` o `/etc/hostnam`.
+4.  Asegúrese de que el nombre del equipo está configurado correctamente en systemd: `hostnamectl set-hostname elnombredemiequipo` o `/etc/hostname`.
 5.  Proceda a eliminar [initscripts](https://www.archlinux.org/packages/?name=initscripts) y [sysvinit](https://aur.archlinux.org/packages/sysvinit/) del sistema e instale [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat).
 6.  Opcionalmente, retire el parámetro `init=/usr/lib/systemd/systemd` en cuanto que ya no es necesario. [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) proporciona un enlace simbólico a init de *systemd* cuando *sysvinit* es usado
 
