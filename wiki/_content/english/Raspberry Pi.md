@@ -421,12 +421,12 @@ To enable the `/dev/spidev*` devices, uncomment the following line:
 
 ### I2C
 
-Install *i2c-tools* and *lm_sensors* packages.
+Install the *i2c-tools* package.
 
 Configure the bootloader to enable the i2c hardware by appending `/boot/config.txt`:
 
 ```
- dtparam=i2c_arm=on
+dtparam=i2c_arm=on
 
 ```
 
@@ -441,7 +441,7 @@ i2c-bcm2708
 Reboot the Raspberry Pi and issue the following command to get the hardware address:
 
 ```
- i2cdetect -y 0
+# i2cdetect -y 0
 
 ```
 
@@ -450,23 +450,18 @@ Reboot the Raspberry Pi and issue the following command to get the hardware addr
 Now we need to tell Linux to instantiate the device. Change the hardware address to the address found in the previous step with '0x' as prefix (e.g. 0x48) and choose a device name:
 
 ```
- echo <devicename> <hardware address> >/sys/class/i2c-adapter/i2c-0/new_device
+# echo <devicename> <hardware address> >/sys/class/i2c-adapter/i2c-0/new_device
 
 ```
 
 Check the dmesg command for a new entry:
 
 ```
- i2c-0: new_device: Instantiated device ds1621 at 0x48
+i2c-0: new_device: Instantiated device ds1621 at 0x48
 
 ```
 
-Finally, read the sensor output:
-
-```
- sensors
-
-```
+Now you can use the device with a program like [lm_sensors](/index.php/Lm_sensors "Lm sensors").
 
 ## Compiling on the RPi
 

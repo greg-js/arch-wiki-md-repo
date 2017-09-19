@@ -5,7 +5,7 @@ Related articles
 *   [Firefox](/index.php/Firefox "Firefox")
 *   [Opera](/index.php/Opera "Opera")
 
-[Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) is an open-source graphical web browser from "The Chromium Project", based on the [Blink](https://en.wikipedia.org/wiki/Blink_(web_engine) rendering engine.
+[Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) is an open-source graphical web browser based on the [Blink](https://en.wikipedia.org/wiki/Blink_(web_engine) rendering engine. It is the basis for the proprietary Google Chrome browser.
 
 ## Contents
 

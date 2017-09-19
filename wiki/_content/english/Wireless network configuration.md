@@ -61,7 +61,7 @@ Configuring wireless is a two-part process; the first part is to identify and en
     *   [6.2 Realtek](#Realtek)
         *   [6.2.1 rtl8192cu](#rtl8192cu)
         *   [6.2.2 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
-        *   [6.2.3 rtl8811au/rtl8812au/rtl8814au/rtl8821au](#rtl8811au.2Frtl8812au.2Frtl8814au.2Frtl8821au)
+        *   [6.2.3 rtl88xxau](#rtl88xxau)
     *   [6.3 Atheros](#Atheros)
         *   [6.3.1 ath5k](#ath5k)
         *   [6.3.2 ath9k](#ath9k)
@@ -683,16 +683,16 @@ or
 
 If you have very poor signal maybe your device has only one antenna connected and auto mode does not work. You can force the antenna with `ant_sel=1` or `ant_sel=2` kernel option.
 
-#### rtl8811au/rtl8812au/rtl8814au/rtl8821au
+#### rtl88xxau
 
-These are Realtek chipsets designed for AC600/AC1200/1750/1900 USB adapters.
+Realtek chipsets rtl8811au/rtl8812au/rtl8814au/rtl8821au designed for various USB adapters ranging from AC600 to AC1900.
 
 Several packages provide the kernel drivers:
 
-| Chipset | Driver version | [AUR](/index.php/AUR "AUR") package |
-| rtl8812au only | 5.2.9 | [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/) |
-| rtl8811au, rtl8812au and rtl8821au | 5.1.5 | [rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8821au-dkms-git/) |
-| rtl8814au | 4.3.21 | [edimax_ac1750_8814au-dkms](https://aur.archlinux.org/packages/edimax_ac1750_8814au-dkms/) |
+| Chipset | Driver version | [AUR](/index.php/AUR "AUR") package | Notes |
+| rtl8812au | 5.2.9 | [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/) | Latest driver version for rtl8812au only |
+| rtl8811au, rtl8812au and rtl8821au | 5.1.5 | [rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8821au-dkms-git/) | This driver works for rtl8812au but driver v5.2.9 is recommended |
+| rtl8814au | 4.3.21 | [rtl8814au-dkms-git](https://aur.archlinux.org/packages/rtl8814au-dkms-git/) | Possibly works for rtl8813au too |
 
 These require [DKMS](/index.php/DKMS "DKMS") so make sure you have your proper kernel headers installed.
 

@@ -462,8 +462,6 @@ There are a number of useful programs, but they may need to have packages create
 
 **Warning:** nt pipe support = no breaks some windows functionality.
 
-TODO: Add explanations.
-
 ### Disable printer share
 
 If you do not have printers to be shared, use the following setting to save some resources:

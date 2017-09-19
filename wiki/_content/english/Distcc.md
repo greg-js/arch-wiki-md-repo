@@ -3,7 +3,7 @@ Related articles
 *   [TORQUE](/index.php/TORQUE "TORQUE")
 *   [Slurm](/index.php/Slurm "Slurm")
 
-Distcc is a program to distribute builds of C, C++, Objective C or Objective C++ code across several machines on a network. It should always generate the same results as a local build, is simple to install and use, and is usually much faster than a local compile. The cool part is one can use it together with native Arch build tools such as makepkg.
+Distcc is a program to distribute builds of C, C++, Objective C or Objective C++ code across several machines on a network to speed up building. It should always generate the same results as a local build, is simple to install and use, and is usually much faster than a local compile. Further, one can use it together with native Arch build tools such as makepkg.
 
 ## Contents
 
@@ -39,42 +39,38 @@ Distcc is a program to distribute builds of C, C++, Objective C or Objective C++
 
 	The master is the computer which initiates the compilation.
 
-	slaves
+	slave
 
-	The slave(s) accept compilation requests send by the master.
-
-**Note:** Both master and slave(s) machines need to be running distcc.
+	The slave accepts compilation requests send by the master. One can setup multiple slave systems or just a single one.
 
 ## Getting started
 
-[Install](/index.php/Install "Install") the [distcc](https://www.archlinux.org/packages/?name=distcc) package on all PCs in the cluster:
-
-For other distros, or even OSes including Windows through using Cygwin, refer to the [distcc docs](http://distcc.samba.org/doc.html).
+[Install](/index.php/Install "Install") the [distcc](https://www.archlinux.org/packages/?name=distcc) package on all participating PCs in the distcc cluster. For other distros, or even operating systems including Windows through using Cygwin, refer to the [distcc docs](http://distcc.samba.org/doc.html).
 
 ## Configuration
 
 ### Slaves
 
-The configuration for the slaves is stored in `/etc/conf.d/distccd`. The available command line options are listed in [distcc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/distcc.1). At a minimum, configure the allowed address ranges in [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") format:
+The configuration for the slave machine is stored in `/etc/conf.d/distccd`. At a minimum, configure the allowed address ranges in [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") format:
 
 ```
 DISTCC_ARGS="--allow 192.168.0.0/24"
 
 ```
 
-A nice tool for converting address ranges to CIDR format can be found here: [CIDR Utility Tool](http://www.ipaddressguide.com/cidr).
+A nice tool for converting address ranges to CIDR format can be found here: [CIDR Utility Tool](http://www.ipaddressguide.com/cidr). Other commandline options can be defined as well. Refer to [distcc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/distcc.1).
 
-[Start](/index.php/Start "Start") `distccd.service` on every participating slave. To have `distccd.service` start at boot-up, [enable](/index.php/Enable "Enable") it on every participating machine.
+[Start](/index.php/Start "Start") `distccd.service` on every participating slave. To have `distccd.service` start at boot-up, [enable](/index.php/Enable "Enable") it.
 
 ### Master
 
 #### For use with makepkg
 
-Edit `/etc/makepkg.conf` in the following three sections:
+Edit `/etc/makepkg.conf` in the following sections:
 
-1.  The BUILDENV array will need to have *distcc* unbanged i.e. without exclamation point.
+1.  The BUILDENV array will need to have *distcc* unbanged i.e. list it without exclamation point.
 2.  Uncomment the *DISTCC_HOSTS* line and add the IP addresses of the slaves then a slash and the number of threads they are to use. The subsequent IP address/threads should be separated by a white space. This list is ordered from most powerful to least powerful (processing power).
-3.  Adjust the MAKEFLAGS variable to correspond to the number of sum of the number of individual values specified for the max threads per server. In the example below, this is 5+3+3=11\. If users specify more than this sum, the extra theoretical thread(s) will be blocked by distcc and appear as such in monitoring utils such as *distccmon-text* described below.
+3.  Adjust the MAKEFLAGS variable to correspond to the number of sum of the number of individual values specified for the max threads per server. In the example below, this is 5+3+3=11.
 
 **Note:** The number of threads is commonly set as the number of cores plus 1\. Do this on a per-server basis, *not* in the `MAKEFLAGS` variable.
 
@@ -87,9 +83,7 @@ DISTCC_HOSTS="192.168.0.2/5 192.168.0.3/3 192.168.0.4/3"
 
 ```
 
-If users wish to use distcc through SSH, add an "@" symbol in front of the IP address in this section. If key-based auth is not set up on the systems, set the `DISTCC_SSH` variable to ignore checking for authenticated hosts, e.g. `DISTCC_SSH="ssh -i"`.
-
-**Warning:** The `-march=native` flag cannot be used in the `CFLAGS` and `CXXFLAGS` variables, otherwise distccd will not distribute work to other machines.
+**Note:** The `-march=native` flag cannot be used in the `CFLAGS` and `CXXFLAGS` variables, otherwise distccd will not distribute work to other machines.
 
 #### For use without makepkg
 

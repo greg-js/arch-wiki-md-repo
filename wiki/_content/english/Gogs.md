@@ -1,3 +1,7 @@
+Related articles
+
+*   [Gitea](/index.php/Gitea "Gitea")
+
 [Gogs](http://gogs.io/) (Go Git Service) is a Self Hosted Git service, which was written in the [Go](/index.php/Go "Go") programming language.
 
 ## Contents
@@ -22,7 +26,7 @@
 *   [gogs-git](https://aur.archlinux.org/packages/gogs-git/) - Git `master` branch package [GitHub master branch](https://github.com/gogits/gogs)
 *   [gogs-dev-git](https://aur.archlinux.org/packages/gogs-dev-git/) - Git `dev` branch package [GitHub dev branch](https://github.com/gogits/gogs/tree/develop)
 
-In all three package is sqlite, redis and memcache activate for compile. To use it, you need to edit the configuration file `app.ini` (see [#Configuration](#Configuration)).
+Each package provides multiple options for configuring the backend/storage for the service, see [#Configuration](#Configuration)
 
 ## Installation
 
@@ -38,17 +42,17 @@ If you plan to use SSH to interact with your repositories, make sure to add the 
 
 ## First start
 
-After [starting](/index.php/Start "Start") `gogs.service`, you can access the running service over the url `http://[server]:3000`. At the first execute, you will redirect to the installation page. Here you can configure some minor configuration options. In the configuration file `/srv/gogs/conf/app.ini`, you can change more values (for example the port number).
+After [starting](/index.php/Start "Start") `gogs.service`, you can access the running service over the url `http://[server]:3000`. At first load, you will be redirected to the installation page where you can configure some options. In the configuration file `/srv/gogs/conf/app.ini`, you can change more values (for example the port number).
 
 ## Configuration
 
-After the first start, Gogs created a own configuration file in the directory `/srv/gogs/config`. When you want to edit a configuration option, you need to edit this file.
+After the first start, Gogs has created a configuration file in the directory `/srv/gogs/config`. When you want to edit a configuration option, you need to edit this file.
 
 ### .gitignore and license files
 
-Add the files into the directory `/srv/gogs/conf/gitignore` or `/srv/gogs/conf/license`. When the directory not exist, you need to created it in the first step.
+Add the files into the directory `/srv/gogs/conf/gitignore` or `/srv/gogs/conf/license`. This directory is created during the [#First start](#First_start)
 
-You can get or create own .gitignore files on this [page](http://www.gitignore.io/).
+You can get or create your own .gitignore files [here](http://www.gitignore.io/).
 
 ### Database
 
@@ -86,7 +90,7 @@ The current package (gogs-git* and gogs>=0.4.2) support custom themes. The locat
 
 ## Restart after Upgrade
 
-Gogs needs to be restarted after every upgrade because the paths of javascript/css assets will change and therefor break the website. To automate this the following pacman hook can be inserted to `/etc/pacman.d/hooks/gogs.hook`:
+Gogs needs to be restarted after every upgrade because the paths of javascript/css assets will change and therefore break the website. To automate this the following pacman hook can be inserted at `/etc/pacman.d/hooks/gogs.hook`:
 
 ```
 [Trigger]

@@ -2,7 +2,6 @@ Related articles
 
 *   [Installation guide](/index.php/Installation_guide "Installation guide")
 *   [General recommendations](/index.php/General_recommendations "General recommendations")
-*   [MacBook4,2 (late 2008)](/index.php/MacBook4,2_(late_2008) "MacBook4,2 (late 2008)")
 *   [MacBook5,2 (early-mid 2009)](/index.php/MacBook5,2_(early-mid_2009) "MacBook5,2 (early-mid 2009)")
 *   [MacBookPro7,1](/index.php/MacBookPro7,1 "MacBookPro7,1")
 *   [MacBookPro8,1/8,2/8,3 (2011)](/index.php/MacBookPro8,1/8,2/8,3_(2011) "MacBookPro8,1/8,2/8,3 (2011)")

@@ -55,33 +55,11 @@ Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ## Installation
 
-You can follow the [Installation guide](/index.php/Installation_guide "Installation guide") to get yourself up and running. I simply transfered a 7mm SSD drive on my previous laptop to this one and the Arch Linux on it boots without errors.
+You can follow the [Installation guide](/index.php/Installation_guide "Installation guide") to get yourself up and running.
 
 ## Drivers
 
-*   [Intel graphics](/index.php/Intel_graphics "Intel graphics") for HD4400 graphics card. ===> MAJOR PERFORMANCE IMPACT:
-
-After a very long research and several tens of reboots I came up with the conclusion that if you power on the laptop without having AC connected the overall GPU performance will be WAY worse than if you did with the AC connected. It does not matter whatsoever if you connect AC afterwards - GPU/OpenGL/drawing _IS_ going to be slow once you've started it without AC.
-
-As a benchmark I've used the redraw time of pidgin GTK windows and the mouse moving speed of maps.google.com. Google maps should be very responsive and not laggy at all.
-
-Tested on: i3-git, mesa-full-i965 and xf86-video-intel-git 2.99.911-1 but this was reproducing on the stable versions of mesa and i915 driver.
-
-Laptop bios version A05\. ~~Meanwhile I've upgraded to bios version A08 and this issue seems to have been fixed.~~ Nope, it's still not fixed. If you want the video card to perform at full speed it is my impression you need to boot with the AC connected.
-
-*I believe this issue is caused by the combination of speedstep and intel_pstate driver. I disabled the driver in grub, falling back to the previous method for cpu control, and it seems to have improved things*
-
-*To disable, append your kernel options with:*
-
-```
-intel_pstate=disable
-
-```
-
-The above is a confirmed bug pertaining to Dell machines only, a workaround is being attempted in the kernel: [https://bugzilla.kernel.org/show_bug.cgi?id=90041](https://bugzilla.kernel.org/show_bug.cgi?id=90041)
-
-This is actually a "feature" called Intel SpeedStep, that reduces performance in order to extend battery life. It can be disabled in BIOS. The linux kernel seems to support it so it should be possible to configure this on OS level.
-
+*   [Intel graphics](/index.php/Intel_graphics "Intel graphics") for HD4400 graphics card.
 *   [Wireless#iwlwifi](/index.php/Wireless#iwlwifi "Wireless") for Intel 7260 wifi card.
 *   [Synaptics](/index.php/Synaptics "Synaptics") for Touchpad
 *   [Fan speed control#i8kutils](/index.php/Fan_speed_control#i8kutils "Fan speed control") to control fan speed. There is only one fan on this laptop, detected on the right. Don't forget to [disable BIOS fan speed control](/index.php/Fan_speed_control#Disable_BIOS_fan_speed_control "Fan speed control") to use custom fan speed config.
@@ -89,20 +67,12 @@ This is actually a "feature" called Intel SpeedStep, that reduces performance in
 ## What does not work
 
 *   The touchpad is not usable (the pointer jumps & clicks randomly), the keyboard inputs are randomly repeated. This problem is described in the [bug #1258837 on ubuntu launchpad](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1258837).
-    *   I have never experienced the issue with touchpad, however, it can be a bit too sensitive. BIOS version A14 should fix the keyboard issue --[Tachy](/index.php/User:Tachy "User:Tachy") ([talk](/index.php?title=User_talk:Tachy&action=edit&redlink=1 "User talk:Tachy (page does not exist)")) 09:02, 9 February 2015 (UTC)
+    *   I have never experienced the issue with touchpad, however, it can be a bit too sensitive. BIOS version A14 should fix the keyboard issue
         *   BIOS A14 does appear to fix the repeated key press issue on my E7440
-
-*   The O2 Micro SD-card reader may only work with linux>=3.14.
-
-*   ~~It seems that bluetooth on Intel 7260 is not working out of the box, but I don't know how to test it further. *Tested and seems to be working. Bluetooth is usable with "gnome-control-center bluetooth".*~~
-
 *   Webcam does not work with Virtualbox (as of community/virtualbox 4.3.6-1), but it works with native programs such as skype.
-
 *   There is no driver for the fingerprint sensor.
-
 *   Occassionally crashes/freezes/hangs when docked and then changing display modes
     *   Tested with Dell E-Port Plus II, using two external monitors together with the laptop display (three displays total)
-    *   Some of my Windows-using colleagues have also experienced this issue, so maybe it's a hardware/firmware bug --[Tachy](/index.php/User:Tachy "User:Tachy") ([talk](/index.php?title=User_talk:Tachy&action=edit&redlink=1 "User talk:Tachy (page does not exist)")) 14:15, 9 March 2015 (UTC)
 
 ## Troubleshooting
 

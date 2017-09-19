@@ -17,6 +17,7 @@ Related articles
     *   [3.2 OpenGL not using direct rendering / Steam crashes Xorg](#OpenGL_not_using_direct_rendering_.2F_Steam_crashes_Xorg)
     *   [3.3 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
     *   [3.4 Games crash immediately](#Games_crash_immediately)
+    *   [3.5 Version `CURL_OPENSSL_3` not found](#Version_.60CURL_OPENSSL_3.60_not_found)
 *   [4 Audio issues](#Audio_issues)
     *   [4.1 Configure PulseAudio](#Configure_PulseAudio)
     *   [4.2 No audio or 756 Segmentation fault](#No_audio_or_756_Segmentation_fault)
@@ -191,6 +192,30 @@ And finally, if those don't work, you should check Steam's output for any error 
 *   free(): invalid pointer
 
 In these cases, try replacing the libsteam_api.so file from the problematic game with one of a game that works. This error usually happens for games that were not updated recently when Steam runtime is disabled. This error has been encountered with AYIM, Bastion and Monaco.
+
+### Version `CURL_OPENSSL_3` not found
+
+This is because [curl](https://www.archlinux.org/packages/?name=curl) alone is not compatible with previous versions. You need to install the compatibility libraries:
+
+One of the following messages may show up:
+
+```
+# Nuclear Throne
+./nuclearthrone: /usr/lib32/libcurl.so.4: version `CURL_OPENSSL_3' not found (required by ./nuclearthrone)
+
+# Devil Daggers
+./devildaggers: /usr/lib/libcurl.so.4: version `CURL_OPENSSL_3' not found (required by ./devildaggers)
+```
+
+You need to install either [libcurl-compat](https://www.archlinux.org/packages/?name=libcurl-compat) or [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat) and link the compatibility library manually:
+
+```
+# Nuclear Throne
+$ ln -s /usr/lib32/libcurl-compat.so.4.4.0 $HOME/.steam/steam/steamapps/common/Nuclear Throne/lib/libcurl.so.4
+
+# Devil Daggers
+$ ln -s /usr/lib/libcurl-compat.so.4.4.0 $HOME/.steam/steam/steamapps/common/devildaggers/lib64/libcurl.so.4
+```
 
 ## Audio issues
 

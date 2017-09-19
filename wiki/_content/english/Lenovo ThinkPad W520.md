@@ -1,17 +1,12 @@
 ## Contents
 
-*   [1 Note](#Note)
-*   [2 GPT / MBR Partition Table](#GPT_.2F_MBR_Partition_Table)
-*   [3 Wifi issues](#Wifi_issues)
-*   [4 Nvidia Optimus Setup](#Nvidia_Optimus_Setup)
-    *   [4.1 Bumblebee](#Bumblebee)
-    *   [4.2 Multimonitor](#Multimonitor)
-*   [5 Ultranav - Trackpoint and Touchpad](#Ultranav_-_Trackpoint_and_Touchpad)
-*   [6 Other](#Other)
-
-## Note
-
-I am also maintaining this content at [GitHub](https://github.com/kportertx/ArchTPw520) and it may be more up to date.
+*   [1 GPT / MBR Partition Table](#GPT_.2F_MBR_Partition_Table)
+*   [2 Wifi issues](#Wifi_issues)
+*   [3 Nvidia Optimus Setup](#Nvidia_Optimus_Setup)
+    *   [3.1 Bumblebee](#Bumblebee)
+    *   [3.2 Multimonitor](#Multimonitor)
+*   [4 Ultranav - Trackpoint and Touchpad](#Ultranav_-_Trackpoint_and_Touchpad)
+*   [5 Other](#Other)
 
 ## GPT / MBR Partition Table
 
@@ -21,15 +16,7 @@ I was unable to get the most recent version of the BIOS to boot from a GPT parti
 
 *   Random Disconnection
     *   check "dmesg | grep wlan0" will probably be complaining about "wlan0: deauthenticating from MAC by local choice (reason=3)"
-    *   Arch wiki hints at solution: [Wicd#Random disconnecting](/index.php/Wicd#Random_disconnecting "Wicd")
-    *   My Solution:
-        *   Disable power management of pci-express in BIOS
-*   Wicd cannot obtain IP address
-    *   [Wicd#Failed to get IP address](/index.php/Wicd#Failed_to_get_IP_address "Wicd")
-    *   Use dhclient instead of dhcpcd:
-        *   pacman -S dhclient
-        *   Set wicd to use dhclient:
-        *   in wicd-curse press 'P', select external sources, and then select dhclient
+    *   Disable power management of pci-express in BIOS
 
 ## Nvidia Optimus Setup
 

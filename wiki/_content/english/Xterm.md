@@ -31,9 +31,8 @@
     *   [4.3 Font tips](#Font_tips)
         *   [4.3.1 Use color in place of bold and italics](#Use_color_in_place_of_bold_and_italics)
         *   [4.3.2 Adjust line spacing](#Adjust_line_spacing)
-    *   [4.4 Remove black border](#Remove_black_border)
-    *   [4.5 Tek 4014 demonstration](#Tek_4014_demonstration)
-    *   [4.6 Protect against X11 input snooping](#Protect_against_X11_input_snooping)
+    *   [4.4 Tek 4014 demonstration](#Tek_4014_demonstration)
+    *   [4.5 Protect against X11 input snooping](#Protect_against_X11_input_snooping)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Flickering on scroll](#Flickering_on_scroll)
 *   [6 See also](#See_also)
@@ -391,15 +390,6 @@ XTerm.scaleHeight: 1.01
 ```
 
 Valid values for range from `0.9` to `1.5`, with `1.0` being the default.
-
-### Remove black border
-
-Xterm has a black border in some cases, you can disable this by adding the following line to your `~/.Xresources` file.
-
-```
-xterm*borderWidth: 0
-
-```
 
 ### Tek 4014 demonstration
 

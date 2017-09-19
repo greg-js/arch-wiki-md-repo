@@ -1,3 +1,9 @@
+相关文章
+
+*   [常见问题](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")
+*   [安装指南](/index.php/Installation_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation Guide (简体中文)")
+*   [软件列表](/index.php/List_of_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of applications (简体中文)")
+
 **翻译状态：** 本文是英文页面 [General_Recommendations](/index.php/General_Recommendations "General Recommendations") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-25，点击[这里](https://wiki.archlinux.org/index.php?title=General_Recommendations&diff=0&oldid=447656)可以查看翻译后英文页面的改动。
 
 本文是各种重要或常用的文章的详细索引。阅读本文前，读者应该先通过 [官方安装指南](/index.php/%E5%AE%98%E6%96%B9%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97 "官方安装指南") 安装 Arch Linux 基本系统。
@@ -437,17 +443,19 @@ Emacs除了用作编辑器，其高级功能更为出名，其中一项就是把
 
 即科学上网。
 
-*   [GoAgent (简体中文)](/index.php/GoAgent_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GoAgent (简体中文)") 一直免费且广为流行。
-*   [Shadowsocks (简体中文)](/index.php/Shadowsocks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Shadowsocks (简体中文)") 也不错。
-*   [XX-Net (简体中文)](/index.php/XX-Net_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "XX-Net (简体中文)")：全新GoAgent/GoGotest一体化集成软件XX-Net
-*   hosts github上有一些hosts项目例如[racaljk/hosts](https://github.com/racaljk/hosts)，更改/etc/hosts文件即可，以[racaljk/hosts](https://github.com/racaljk/hosts)的hosts文件为例，执行以下命令即可更新hosts文件：
+*   [Shadowsocks (简体中文)](/index.php/Shadowsocks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Shadowsocks (简体中文)")
+*   Lantern（蓝灯）：安装[lantern](https://aur.archlinux.org/packages/lantern/)（如安装有archlinuxcn源可直接使用`pacman -S lantern`安装）即可。
+*   [XX-Net (简体中文)](/index.php/XX-Net_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "XX-Net (简体中文)")
+*   更改hosts： 获取可以科学上网的hosts文件，修改或替换`/etc/hosts`即可。
 
- `sudo wget [https://raw.githubusercontent.com/racaljk/hosts/master/hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) -O /etc/hosts` 
+示例：从[[1]](https://github.com/googlehosts/hosts)项目获取[hosts](https://raw.githubusercontent.com/googlehosts/hosts/master/hosts-files/hosts)文件，将其内容加入`/etc/hosts`（如原hosts文件无需使用，也可直接覆盖）即可。也可执行更新hosts文件：
+
+ `sudo wget [https://raw.githubusercontent.com/googlehosts/hosts/master/hosts-files/hosts](https://raw.githubusercontent.com/googlehosts/hosts/master/hosts-files/hosts) -O /etc/hosts` 
 
 为方便起见，可将其使用alias别名方式写入.bashrc，首先编辑~/.bashrc，在其中添加：
 
 ```
-alias hosts='sudo wget [https://raw.githubusercontent.com/racaljk/hosts/master/hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) -O /etc/hosts'
+alias hosts='sudo wget [https://raw.githubusercontent.com/googlehosts/hosts/master/hosts-files/hosts](https://raw.githubusercontent.com/googlehosts/hosts/master/hosts-files/hosts) -O /etc/hosts'
 
 ```
 
@@ -461,40 +469,9 @@ alias hosts='sudo wget [https://raw.githubusercontent.com/racaljk/hosts/master/h
 
 即可。
 
-现有一个racaljk提供的方便更新的hosts小工具[lhosts](https://raw.githubusercontent.com/racaljk/hosts/master/tools/lhosts)
+**提示：** 可以使用 [crontab](/index.php/Crontab "Crontab") 定时执行脚本 (root 身份运行或 sudo 免密码)
 
-```
-提示:
-  1\. 可以使用 crontab 定时执行脚本 (root 身份运行或 sudo 免密码);
-
-  2\. 使用 $myname 下载的 hosts 会被加上范围标记，每次更新**仅保留范围外**的
-     全部内容 (请勿在标记范围内添加自定义内容)。
-
-  3\. 更新前，本地 hosts 备份至 $BACKUP_FILE
-
-用法: $myname [选项]...
-
-选项:
-  -m, --mirror           从镜像仓库获取 hosts (下载更快)
-  -q, --quiet            静默模式
-  -r, --range <range>    范围模式 (无视范围标记)
-  -u, --url <url>        自定义 hosts 源地址
-  -h, --help             显示帮助信息并退出
-
-退出状态：
-  0  正常
-  1  命令行参数错误
-  2  文件下载失败
-
-范围模式：
-    将本地 hosts 指定范围的内容，保存到下载的 hosts 内，例如：
-
-    $myname -mr "1,20"  更新时，本地 hosts 1~20 行保存到下载的 hosts 中
-
-自定义源：
-    $myname -u $MIRROR
-
-```
+**提示：** 除hosts方法外，你可能还需要进行相应的代理设置，如对程序单独设置代理或者使用工具设置临时代理（如使用[proxchains](https://www.archlinux.org/packages/?name=proxchains)工具，配置好代理和proxychains的配置文件后，使用`proxchians 程序名`使该程序从代理进行联网）或者全局代理（如桌面环境的设置中可能提供该选项），可参考各工具的相应文档进行设置，或者参考[Proxy_settings](/index.php/Proxy_settings "Proxy settings")一文。
 
 ### 即时通讯工具
 

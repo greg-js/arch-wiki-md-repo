@@ -1,6 +1,6 @@
-[tmpfs](https://en.wikipedia.org/wiki/Tmpfs "wikipedia:Tmpfs") is a temporary filesystem that resides in memory and/or your swap partition(s), depending on how much you fill it up. Mounting directories as tmpfs can be an effective way of speeding up accesses to their files, or to ensure that their contents are automatically cleared upon reboot.
+[tmpfs](https://en.wikipedia.org/wiki/Tmpfs "wikipedia:Tmpfs") is a temporary filesystem that resides in memory and/or swap partition(s). Mounting directories as tmpfs can be an effective way of speeding up accesses to their files, or to ensure that their contents are automatically cleared upon reboot.
 
-**Note:** When using [systemd](/index.php/Systemd "Systemd"), temporary files in tmpfs directories can be recreated at boot by using [tmpfiles.d](/index.php/Systemd#Temporary_files "Systemd").
+**Tip:** When using [systemd](/index.php/Systemd "Systemd"), temporary files in tmpfs directories can be recreated at boot by using [tmpfiles.d](/index.php/Systemd#Temporary_files "Systemd").
 
 ## Contents
 
@@ -23,21 +23,23 @@ Generally, I/O intensive tasks and programs that run frequent read/write operati
 
 ## Examples
 
-By default, a tmpfs partition has its maximum size set to half your total RAM, but this can be customized. Note that the actual memory/swap consumption depends on how much you fill it up, as tmpfs partitions do not consume any memory until it is actually needed.
+**Note:** The actual memory/swap consumption depends on how much is used, as tmpfs partitions do not consume any memory until it is actually needed.
+
+By default, a tmpfs partition has its maximum size set to half of the available RAM, however it is possible to overrule this value.
 
 To explicitly set a maximum size, in this example to override the default `/tmp` mount, use the `size` mount option:
 
  `/etc/fstab`  `tmpfs   /tmp         tmpfs   rw,nodev,nosuid,size=2G          0  0` 
 
-Here is a more advanced example showing how to add tmpfs mounts for users. This is useful for websites, mysql tmp files, `~/.vim/`, and more. It's important to try and get the ideal mount options for what you are trying to accomplish. The goal is to have as secure settings as possible to prevent abuse. Limiting the size, and specifying uid and gid + mode is very secure. For more information on this subject, follow the links listed in the [#See also](#See_also) section.
+To specify a more secure mounting, specify the following mount option:
 
- `/etc/fstab`  `tmpfs   /www/cache    tmpfs  rw,size=1G,nr_inodes=5k,noexec,nodev,nosuid,uid=648,gid=648,mode=1700   0  0` 
+ `/etc/fstab`  `tmpfs   /www/cache    tmpfs  rw,size=1G,nr_inodes=5k,noexec,nodev,nosuid,uid=*user*,gid=*group*,mode=1700 0 0` 
 
-See the `mount` command man page for more information. One useful mount option in the man page is the `default` option. At least understand that.
+See the `mount` man page and [#Security#File systems](#Security.23File_systems) for more information.
 
 Reboot for the changes to take effect. Note that although it may be tempting to simply run `mount -a` to make the changes effective immediately, this will make any files currently residing in these directories inaccessible (this is especially problematic for running programs with lockfiles, for example). However, if all of them are empty, it should be safe to run `mount -a` instead of rebooting (or mount them individually).
 
-After applying changes, you may want to verify that they took effect by looking at `/proc/mounts` and using `findmnt`:
+After applying changes, verify that they took effect by looking at `/proc/mounts` and using `findmnt`:
 
  `$ findmnt --target /tmp` 
 ```
@@ -45,7 +47,7 @@ TARGET SOURCE FSTYPE OPTIONS
 /tmp   tmpfs  tmpfs  rw,nosuid,nodev,relatime
 ```
 
-The tmpfs can also be temporarily resized without the need to reboot, for example when a large compile job needs to run soon. In this case, you can run:
+The tmpfs can also be temporarily resized without the need to reboot, for example when a large compile job needs to run soon. In this case, run:
 
 ```
 # mount -o remount,size=4G,noatime /tmp
@@ -54,7 +56,7 @@ The tmpfs can also be temporarily resized without the need to reboot, for exampl
 
 ## Disable automatic mount
 
-Under [systemd](/index.php/Systemd "Systemd"), `/tmp` may be automatically mounted as a tmpfs even though you have no entry for that in your `/etc/fstab`.
+Under [systemd](/index.php/Systemd "Systemd"), `/tmp` is automatically mounted as a tmpfs even though no entry is specified in `/etc/fstab`.
 
 To disable the automatic mount, run:
 
@@ -63,7 +65,7 @@ To disable the automatic mount, run:
 
 ```
 
-Files will no longer be stored in a tmpfs, but your block device instead. The `/tmp` contents will now be preserved between reboots, which you might not want. To regain the previous behavior and clean the `/tmp` folder automatically when restarting your machine, consider using `tmpfiles.d(5)`:
+Files will no longer be stored in a tmpfs, but on the block device instead. The `/tmp` contents will now be preserved between reboots, which might not be the desired behavior. To regain the previous behavior and clean the `/tmp` folder automatically when restarting, consider using `tmpfiles.d(5)`:
 
  `/etc/tmpfiles.d/tmp.conf` 
 ```
@@ -85,11 +87,11 @@ X /var/tmp/systemd-private-*/tmp
 
 ### Opening symlinks in tmpfs as root fails
 
-Considering `/tmp` is using tmpfs, change the current directory to `/tmp`, then create a file and create a symlink to that file in the same `/tmp` directory. If you try to open the file you created via the symlink, you will get a permission denied error. This is expected as `/tmp` [has the sticky bit set](https://wiki.ubuntu.com/Security/Features#Symlink_restrictions).
+Considering `/tmp` is using tmpfs, change the current directory to `/tmp`, then create a file and create a symlink to that file in the same `/tmp` directory. Permission denied errors are to be expected when attempting to read the symlink due to `/tmp` [https://wiki.ubuntu.com/Security/Features#Symlink_restrictions](https://wiki.ubuntu.com/Security/Features#Symlink_restrictions) has the sticky bit set].
 
-This behaviour can be controlled via `/proc/sys/fs/protected_symlinks` or simply via sysctl: `sysctl -w fs.protected_symlinks=0`. See [Sysctl#Configuration](/index.php/Sysctl#Configuration "Sysctl") to make this permanent.
+This behavior can be controlled via `/proc/sys/fs/protected_symlinks` or simply via sysctl: `sysctl -w fs.protected_symlinks=0`. See [Sysctl#Configuration](/index.php/Sysctl#Configuration "Sysctl") to make this permanent.
 
-**Warning:** Changing this behaviour can lead to security issues! Disable it only if you know what you are doing.
+**Warning:** Changing this behavior can lead to security issues!
 
 ## See also
 

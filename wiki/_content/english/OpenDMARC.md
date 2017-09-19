@@ -7,8 +7,7 @@ Domain-based Message Authentication, Reporting and Conformance (DMARC) is a poli
 *   [3 Postfix integration](#Postfix_integration)
 *   [4 DMARC Record](#DMARC_Record)
     *   [4.1 DMARC options in detail](#DMARC_options_in_detail)
-*   [5 Security](#Security)
-*   [6 Weblinks](#Weblinks)
+*   [5 Weblinks](#Weblinks)
 
 ## Installation
 
@@ -18,27 +17,19 @@ Domain-based Message Authentication, Reporting and Conformance (DMARC) is a poli
 
 Main configuration file is `/etc/opendmarc/opendmarc.conf`
 
-Copy/move the sample configuration file
-
-```
-# cp /etc/opendmarc/opendmarc.conf.sample /etc/opendmarc/opendmarc.conf 
-
-```
-
-and change the following options:
+Change the following options:
 
  `/etc/opendmarc/opendmarc.conf` 
 ```
 Socket                  unix:/run/opendmarc/opendmarc.sock
-UserID                  opendmarc
 
 ```
 
-Add the socket directory and set its credentials:
+Add the socket directory and set its credentials to be accessible to the STMP server user (likely `postfix` or `mail`:
 
 ```
 # mkdir /run/opendmarc
-# chown opendmarc:mail /run/opendmarc
+# chown opendmarc:postfix /run/opendmarc
 
 ```
 
@@ -101,51 +92,6 @@ The forensic report options are:
 *   "1" to generate reports if any mechanisms fail
 *   "d" to generate report if the DKIM signature failed to verify
 *   "s" if SPF failed.
-
-## Security
-
-The daemon can drop privileges on its own (as configured in the [#Configuration](#Configuration) section with `UserID`). However, as the daemon does not need root privileges, it can be started as a non-privileged user with systemd.
-
-To accomplish this, add a new user `opendmarc` to your system:
-
-```
-# useradd -r -s /usr/bin/nologin opendmarc
-
-```
-
-Then use the following systemd unit file:
-
- `/etc/systemd/system/opendmarc.service` 
-```
-[Unit]
-Description=OpenDMARC daemon
-After=network.target remote-fs.target nss-lookup.target
-
-[Service]
-Type=forking
-User=opendmarc
-Group=postfix
-ExecStart=/usr/bin/opendmarc -c /etc/opendmarc/opendmarc.conf
-RuntimeDirectory=opendmarc
-RuntimeDirectoryMode=0750
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-Additionally, comment out the "UserID" option and activate/change "Umask=002" in your opendmarc config file to allow socket creation and writing:
-
- `/etc/opendmarc/opendmarc.conf` 
-```
-...
-UMask 002
-# UserID=opendmarc
-...
-
-```
-
-then restart `opendmarc.service`.
 
 ## Weblinks
 

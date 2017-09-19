@@ -19,6 +19,7 @@
     *   [4.2 The CLI way](#The_CLI_way)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Cannot access the daemon over the network](#Cannot_access_the_daemon_over_the_network)
+    *   [5.2 Web interface cannot be reached](#Web_interface_cannot_be_reached)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -228,6 +229,8 @@ Now you are ready to launch the web interface by either clicking on the **Open w
 
 If you haven't changed the listening port, the default one is 9091\. In this case, the link is `[http://localhost:9091](http://localhost:9091)`
 
+**Note:** Keep in mind that [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) must be installed
+
 ### The CLI way
 
 You don't need a graphical interface to set up the web interface, the daemon offers the very same options. You can reach the web interface without specifing any flags. See [#Starting and stopping the daemon](#Starting_and_stopping_the_daemon)
@@ -247,6 +250,20 @@ The daemon is started after `network.service` was initialised. However, if you e
 [Unit]
 Requires=network.target
 ```
+
+#### Web interface cannot be reached
+
+```
+404: Not Found
+
+Couldn't find Transmission's web interface files!
+
+Users: to tell Transmission where to look, set the TRANSMISSION_WEB_HOME environment variable to the folder where the web interface's index.html is located.
+
+Package Builders: to set a custom default at compile time, #define PACKAGE_DATA_DIR in libtransmission/platform.c or tweak tr_getClutchDir () by hand.
+```
+
+Even if you use the graphical interface, you still need to install [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) in order for web interface to work.
 
 ## See also
 

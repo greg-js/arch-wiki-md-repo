@@ -18,7 +18,7 @@ Because data placed therein cannot survive a shutdown, a script responsible for 
     *   [3.1 Before you start](#Before_you_start)
     *   [3.2 The script](#The_script)
     *   [3.3 Automation](#Automation)
-        *   [3.3.1 SystemD](#SystemD)
+        *   [3.3.1 systemd](#systemd)
         *   [3.3.2 cron job](#cron_job)
         *   [3.3.3 Sync at login/logout](#Sync_at_login.2Flogout)
 *   [4 See also](#See_also)
@@ -111,7 +111,7 @@ Run Firefox again to gauge the results. The second time the script runs, it will
 
 Seeing that forgetting to sync the profile can lead to disastrous results, automating the process seems like a logical course of action.
 
-#### SystemD
+#### systemd
 
 Save the following script as `~/.config/systemd/user/firefox-profile@.service`
 

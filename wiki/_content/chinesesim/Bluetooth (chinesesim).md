@@ -7,8 +7,7 @@
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 通过命令行工具配置蓝牙](#.E9.80.9A.E8.BF.87.E5.91.BD.E4.BB.A4.E8.A1.8C.E5.B7.A5.E5.85.B7.E9.85.8D.E7.BD.AE.E8.93.9D.E7.89.99)
     *   [2.1 Bluetoothctl](#Bluetoothctl)
-        *   [2.1.1 Auto power-on after boot](#Auto_power-on_after_boot)
-        *   [2.1.2 Deprecated method using hciconfig](#Deprecated_method_using_hciconfig)
+        *   [2.1.1 引导后蓝牙自动上电](#.E5.BC.95.E5.AF.BC.E5.90.8E.E8.93.9D.E7.89.99.E8.87.AA.E5.8A.A8.E4.B8.8A.E7.94.B5)
 *   [3 图形化前端](#.E5.9B.BE.E5.BD.A2.E5.8C.96.E5.89.8D.E7.AB.AF)
     *   [3.1 GNOME Bluetooth](#GNOME_Bluetooth)
     *   [3.2 Bluedevil](#Bluedevil)
@@ -101,46 +100,15 @@ Connection successful
 
 ```
 
-#### Auto power-on after boot
+#### 引导后蓝牙自动上电
 
-By default, your Bluetooth adapter will not power on after a reboot. The former method by using `hciconfig hci0 up` is deprecated, see the [release note](http://www.bluez.org/release-of-bluez-5-35/). Now you just need to add the line `AutoEnable=true` in `/etc/bluetooth/main.conf` at the bottom in the `[Policy]` section:
+引导后蓝牙适配器默认不上电。以前的通过 `hciconfig hci0 up` 上电方式已不再推荐使用(参阅 [release note](http://www.bluez.org/release-of-bluez-5-35/) )。现在只需在 `/etc/bluetooth/main.conf` 文件的 `[Policy]` 一节最后加上一行 `AutoEnable=true`：
 
  `/etc/bluetooth/main.conf` 
 ```
 [Policy]
 AutoEnable=true
 ```
-
-#### Deprecated method using hciconfig
-
-为使系统重启后激活设备，需添加一条 udev 规则：
-
- `/etc/udev/rules.d/10-local.rules` 
-```
-# Set bluetooth power up
-ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"
-```
-
-为使设备在系统挂起后唤醒时自动上电，应使用如下例所示 *systemd* 服务：
-
- `/etc/systemd/system/bluetooth-auto-power@.service` 
-```
-[Unit]
-Description=Bluetooth auto power on
-After=bluetooth.service sys-subsystem-bluetooth-devices-%i.device suspend.target
-
-[Service]
-Type=oneshot
-#We could also do a 200 char long call to bluez via dbus. Except this does not work since bluez does not react to dbus at this point of the resume sequence and I do not know how I get this service to run at a time it does. So we just ignore bluez and force %i up using hciconfig. Welcome to the 21st century.
-#ExecStart=/usr/bin/dbus-send --system --type=method_call --dest=org.bluez /org/bluez/%I org.freedesktop.DBus.Properties.Set string:org.bluez.Adapter1 string:Powered variant:boolean:true
-ExecStart=/usr/bin/hciconfig %i up
-
-[Install]
-WantedBy=suspend.target
-
-```
-
-使用你的蓝牙设备的设备名来启用一个此服务的实例，例如 bluetooth-auto-power@hci0.service。
 
 ## 图形化前端
 

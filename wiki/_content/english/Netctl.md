@@ -30,8 +30,7 @@ Related articles
     *   [4.6 Using hooks](#Using_hooks)
         *   [4.6.1 Examples](#Examples)
             *   [4.6.1.1 Execute commands on established connection](#Execute_commands_on_established_connection)
-            *   [4.6.1.2 Activate network-online.target](#Activate_network-online.target)
-            *   [4.6.1.3 Set default DHCP client](#Set_default_DHCP_client)
+            *   [4.6.1.2 Set default DHCP client](#Set_default_DHCP_client)
     *   [4.7 Minimal WPAConfigSection](#Minimal_WPAConfigSection)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Job for netctl@wlan(...).service failed](#Job_for_netctl.40wlan.28....29.service_failed)
@@ -39,10 +38,9 @@ Related articles
     *   [5.3 DHCP timeout issues](#DHCP_timeout_issues)
     *   [5.4 Connection timeout issues](#Connection_timeout_issues)
     *   [5.5 Problems with netctl-auto on resume](#Problems_with_netctl-auto_on_resume)
-    *   [5.6 netctl-auto suddenly stopped working for WiFi adapters](#netctl-auto_suddenly_stopped_working_for_WiFi_adapters)
-    *   [5.7 netctl-auto does not automatically unblock a wireless card to use an interface](#netctl-auto_does_not_automatically_unblock_a_wireless_card_to_use_an_interface)
-    *   [5.8 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_.28with_multiple_NICs.29)
-    *   [5.9 Problems with eduroam and other MSCHAPv2 connections](#Problems_with_eduroam_and_other_MSCHAPv2_connections)
+    *   [5.6 netctl-auto does not automatically unblock a wireless card to use an interface](#netctl-auto_does_not_automatically_unblock_a_wireless_card_to_use_an_interface)
+    *   [5.7 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_.28with_multiple_NICs.29)
+    *   [5.8 Problems with eduroam and other MSCHAPv2 connections](#Problems_with_eduroam_and_other_MSCHAPv2_connections)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -404,18 +402,6 @@ ExecDownPre="systemctl stop crashplan.service; systemctl stop dropbox@<username>
 
 ```
 
-##### Activate network-online.target
-
- `/etc/netctl/hooks/status` 
-```
-#!/bin/sh
-ExecUpPost="systemctl start network-online.target"
-ExecDownPre="systemctl stop network-online.target"
-
-```
-
-Using this, systemd services requiring an active network connection can be [ordered](/index.php/Systemd#Handling_dependencies "Systemd") to start only after the `network-online.target` is reached, and can be stopped before the connection is brought down.
-
 ##### Set default DHCP client
 
 To set or change the DHCP client used for all profiles:
@@ -574,18 +560,6 @@ After=sleep.target sys-subsystem-net-devices-%i.device
 ...
 
 ```
-
-### netctl-auto suddenly stopped working for WiFi adapters
-
-This problem seems to be related to a recent wpa_supplicant update (see [FS#44731](https://bugs.archlinux.org/task/44731)), but a work-around is quite trivial. Just create a file for your interface (e.g. wlp3s0) in /etc/netctl/interfaces with the following content and make it executable:
-
- `/etc/netctl/interfaces/wlp3s0` 
-```
-WPAOptions="-m ''"
-
-```
-
-After that, try to restart your netctl-auto service and WiFi auto detection should work well again.
 
 ### netctl-auto does not automatically unblock a wireless card to use an interface
 

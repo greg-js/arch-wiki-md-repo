@@ -34,7 +34,7 @@ The **hardware clock** (a.k.a. the Real Time Clock (RTC) or CMOS clock) stores t
 ### Read hardware clock
 
 ```
-# hwclock
+# hwclock --show
 
 ```
 

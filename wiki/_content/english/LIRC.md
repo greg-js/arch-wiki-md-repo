@@ -2,8 +2,6 @@ This article covers setup and usage of [LIRC](http://lirc.org/) "Linux Infrared 
 
 LIRC is a daemon that can translate key presses on a supported remote into program specific commands. In this context, the term, "program specific" means that a key press can do different things depending on which program is running and taking commands from LIRC.
 
-The Central Dogma of LIRC (an allusion to the [flow of information](http://www.ncbi.nlm.nih.gov/Class/MLACourse/Modules/MolBioReview/central_dogma.html) in biological systems) is summarized below wherein the flow of information from the remote to the application is summarized with LIRC at the center of it all:
-
 *   User hits a button on the remote causing it to transmit an IR or RF signal.
 *   The signal is received by the receiver connected to the Linux box.
 *   The kernel (via the correct module) use presents pulse data from the remote on a device like /dev/lirc0, /dev/input/eventX, /dev/ttyUSBX or /dev/ttyS0.

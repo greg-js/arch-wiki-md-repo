@@ -414,7 +414,7 @@ The first three following points comes from [this outdated VirtualBox wiki page]
 
 ### Using Disk2vhd to clone Windows partition
 
-Boot into Windows, clean up the installation (with [CCleaner](http://www.piriform.com/ccleaner) for example), use [disk2vhd](https://technet.microsoft.com/en-us/library/ee656415.aspx) tool to create a VHD image. Include a reserved system partition (if present) and the actual Windows partition (usually disk C:). The size of Disk2vhd-created image will be the sum of the actual files on the partition (used space), not the size of a whole partition. If all goes well, the image should just boot in a VM and you won't have to go through the hassle with MBR and Windows bootloader, as in the case of cloning an entire partition.
+Boot into Windows, clean up the installation (with [CCleaner](http://www.piriform.com/ccleaner) for example), use [disk2vhd](https://technet.microsoft.com/en-us/library/ee656415.aspx) tool to create a VHD image. Include a reserved system partition (if present) and the actual Windows partition (usually disk C:). The size of Disk2vhd-created image will be the sum of the actual files on the partition (used space), not the size of a whole partition. If all goes well, the image should just boot in a VM and you will not have to go through the hassle with MBR and Windows bootloader, as in the case of cloning an entire partition.
 
 ### Tasks on GNU/Linux
 
@@ -450,7 +450,7 @@ Boot into Windows, clean up the installation (with [CCleaner](http://www.pirifor
 
 *   You should finally have a working Windows virtual machine. Do not forget to read the [#Known limitations](#Known_limitations).
 
-*   Performance tip: according to [VirtualBox manual](http://www.virtualbox.org/manual/ch05.html#harddiskcontrollers), SATA controller has a better performance than IDE. If you can't boot Windows off virtual SATA controller right away, it is probably due to the lack of SATA drivers. Attach virtual disk to IDE controller, create an empty SATA controller and boot the VM - Windows should automatically install SATA drivers for the controller. You can then shutdown VM, detach virtual disk from IDE controller and attach it to SATA controller instead.
+*   Performance tip: according to [VirtualBox manual](http://www.virtualbox.org/manual/ch05.html#harddiskcontrollers), SATA controller has a better performance than IDE. If you cannot boot Windows off virtual SATA controller right away, it is probably due to the lack of SATA drivers. Attach virtual disk to IDE controller, create an empty SATA controller and boot the VM - Windows should automatically install SATA drivers for the controller. You can then shutdown VM, detach virtual disk from IDE controller and attach it to SATA controller instead.
 
 ### Fix MBR and Microsoft bootloader
 

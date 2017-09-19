@@ -11,25 +11,24 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [7 Cannot change settings in dconf-editor](#Cannot_change_settings_in_dconf-editor)
 *   [8 When an extension breaks the shell](#When_an_extension_breaks_the_shell)
 *   [9 Extensions do not work after GNOME 3 update](#Extensions_do_not_work_after_GNOME_3_update)
-*   [10 Extensions disabled at every system startup](#Extensions_disabled_at_every_system_startup)
-*   [11 Keyboard shortcut do not work with only conky running](#Keyboard_shortcut_do_not_work_with_only_conky_running)
-*   [12 Unable to apply stored configuration for monitors](#Unable_to_apply_stored_configuration_for_monitors)
-*   [13 Consistent cursor theme](#Consistent_cursor_theme)
-*   [14 Windows cannot be modified with Alt-Key + mouse-button](#Windows_cannot_be_modified_with_Alt-Key_.2B_mouse-button)
-*   [15 Slow loading of system icons/slow GDM login](#Slow_loading_of_system_icons.2Fslow_GDM_login)
-*   [16 Artifacts when maximizing windows](#Artifacts_when_maximizing_windows)
-*   [17 Tear-free video with Intel HD Graphics](#Tear-free_video_with_Intel_HD_Graphics)
-*   [18 Window opens behind other windows when using multiple monitors](#Window_opens_behind_other_windows_when_using_multiple_monitors)
-*   [19 Lock button fails to re-enable touchpad](#Lock_button_fails_to_re-enable_touchpad)
-*   [20 GNOME Shell keyboard sources menu not visible](#GNOME_Shell_keyboard_sources_menu_not_visible)
-*   [21 Mouse cursor missing](#Mouse_cursor_missing)
-*   [22 No restart button in session menu when screen is locked](#No_restart_button_in_session_menu_when_screen_is_locked)
-*   [23 PulseAudio system-wide causes delay in GNOME and GDM](#PulseAudio_system-wide_causes_delay_in_GNOME_and_GDM)
-*   [24 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
-*   [25 Gnome Crashes while installing gnome-extra](#Gnome_Crashes_while_installing_gnome-extra)
-*   [26 No H264 Video in Gnome Video Player (Totem)](#No_H264_Video_in_Gnome_Video_Player_.28Totem.29)
-*   [27 No suspend on LID closure](#No_suspend_on_LID_closure)
-*   [28 gnome-shell / gnome-session crashes on session startup](#gnome-shell_.2F_gnome-session_crashes_on_session_startup)
+*   [10 Keyboard shortcut do not work with only conky running](#Keyboard_shortcut_do_not_work_with_only_conky_running)
+*   [11 Unable to apply stored configuration for monitors](#Unable_to_apply_stored_configuration_for_monitors)
+*   [12 Consistent cursor theme](#Consistent_cursor_theme)
+*   [13 Windows cannot be modified with Alt-Key + mouse-button](#Windows_cannot_be_modified_with_Alt-Key_.2B_mouse-button)
+*   [14 Slow loading of system icons/slow GDM login](#Slow_loading_of_system_icons.2Fslow_GDM_login)
+*   [15 Artifacts when maximizing windows](#Artifacts_when_maximizing_windows)
+*   [16 Tear-free video with Intel HD Graphics](#Tear-free_video_with_Intel_HD_Graphics)
+*   [17 Window opens behind other windows when using multiple monitors](#Window_opens_behind_other_windows_when_using_multiple_monitors)
+*   [18 Lock button fails to re-enable touchpad](#Lock_button_fails_to_re-enable_touchpad)
+*   [19 GNOME Shell keyboard sources menu not visible](#GNOME_Shell_keyboard_sources_menu_not_visible)
+*   [20 Mouse cursor missing](#Mouse_cursor_missing)
+*   [21 No restart button in session menu when screen is locked](#No_restart_button_in_session_menu_when_screen_is_locked)
+*   [22 PulseAudio system-wide causes delay in GNOME and GDM](#PulseAudio_system-wide_causes_delay_in_GNOME_and_GDM)
+*   [23 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
+*   [24 Gnome Crashes while installing gnome-extra](#Gnome_Crashes_while_installing_gnome-extra)
+*   [25 No H264 Video in Gnome Video Player (Totem)](#No_H264_Video_in_Gnome_Video_Player_.28Totem.29)
+*   [26 No suspend on LID closure](#No_suspend_on_LID_closure)
+*   [27 gnome-shell / gnome-session crashes on session startup](#gnome-shell_.2F_gnome-session_crashes_on_session_startup)
 
 ## Shell freezes
 
@@ -194,31 +193,6 @@ Edit each occurrence of `metadata.json` which appears in each extension sub-fold
 
 `"3.x"` indicates the extension works with every shell version. If it breaks, you will know to change it back.
 
-## Extensions disabled at every system startup
-
-This is a known bug [[1]](https://bugs.launchpad.net/ubuntu/+source/gnome-shell/+bug/1236749). Until it is fixed, the following workaround can be helpful.
-
-Get the active extensions:
-
-```
-$ gsettings get org.gnome.shell enabled-extensions
-
-```
-
-Create a [desktop entry](/index.php/Desktop_entry "Desktop entry") in `~/.config/autostart/restore-extensions.desktop`, replacing `active_extensions` with the output from the above command:
-
-```
-[Desktop Entry]
-Type=Application
-Exec=gsettings set org.gnome.shell enabled-extensions *active_extensions*
-Hidden=false
-NoDisplay=false
-X-GNOME-Autostart-enabled=true
-Name=Restore Extensions
-Comment=Restore enabled extensions on login
-
-```
-
 ## Keyboard shortcut do not work with only conky running
 
 The GNOME shell keyboard shortcuts like `Alt+F2`, `Alt+F1`, and the media key shortcuts do not work if conky is the only program running. However, if another application like *gedit* is running, then the keyboard shortcuts work.
@@ -280,7 +254,7 @@ Maximizing windows may cause artifacts as of GNOME 3.12.0 - see the following [f
 
 	DRI3
 
-According to [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=711028#c2), DRI3 includes the `buffer_age` extension that allows GNOME Shell's Mutter compositor to sync windows to vblank in an efficient way. Since version `1:2.99.917+682+g4eaab17-1`, DRI3 is enabled by default in [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) [[2]](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/xf86-video-intel&id=cd3de9bb45a9ab84383541ed45ee6f0c10ea8798).
+According to [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=711028#c2), DRI3 includes the `buffer_age` extension that allows GNOME Shell's Mutter compositor to sync windows to vblank in an efficient way. Since version `1:2.99.917+682+g4eaab17-1`, DRI3 is enabled by default in [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) [[1]](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/xf86-video-intel&id=cd3de9bb45a9ab84383541ed45ee6f0c10ea8798).
 
 	Intel TearFree
 

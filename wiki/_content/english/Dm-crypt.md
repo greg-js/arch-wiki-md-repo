@@ -3,8 +3,9 @@ Related articles
 *   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
 *   [Removing System Encryption](/index.php/Removing_System_Encryption "Removing System Encryption")
 
-> Device-mapper is infrastructure in the Linux 2.6 and 3.x kernel that provides a generic way to create virtual layers of block devices. **Device-mapper crypt target provides transparent encryption** of block devices using the kernel crypto API. The user can basically specify one of the symmetric ciphers, an encryption mode, a key (of any allowed size), an iv generation mode and then the user can create a new block device in /dev. Writes to this device will be encrypted and reads decrypted. You can mount your filesystem on it as usual or stack dm-crypt device with another device like RAID or LVM volume. Basic documentation of dm-crypt mapping table comes with kernel source and the latest version is available in git repository.
-> — from the [cryptsetup project's wiki](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMcrypt)
+From the cryptsetup project's [wiki](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt):
+
+	Device-mapper is infrastructure in the Linux 2.6 and 3.x kernel that provides a generic way to create virtual layers of block devices. Device-mapper crypt target provides transparent encryption of block devices using the kernel crypto API. The user can basically specify one of the symmetric ciphers, an encryption mode, a key (of any allowed size), an iv generation mode and then the user can create a new block device in /dev. Writes to this device will be encrypted and reads decrypted. You can mount your filesystem on it as usual or stack dm-crypt device with another device like RAID or LVM volume. Basic documentation of dm-crypt mapping table comes with kernel source and the latest version is available in git repository.
 
 ## Contents
 

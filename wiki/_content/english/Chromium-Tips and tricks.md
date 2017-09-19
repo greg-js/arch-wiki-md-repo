@@ -119,7 +119,7 @@ $ chromium --user-data-dir=<PATH TO A PROFILE>
 
 For example, if you copied the Default folder to `~/Downloads`:
 
- `$ chromium --user-data-dir=~/Downloads` 
+ `$ chromium --user-data-dir=$HOME/Downloads` 
 
 ### Directly open *.torrent files and magnet links with a torrent client
 

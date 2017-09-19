@@ -60,7 +60,6 @@ This article details the installation and configuration process of the ***Synapt
     *   [4.14 Synaptics loses multitouch detection after rebooting from Windows](#Synaptics_loses_multitouch_detection_after_rebooting_from_Windows)
     *   [4.15 Touchpad not recognized after shutdown from Arch](#Touchpad_not_recognized_after_shutdown_from_Arch)
     *   [4.16 Trackpoint and Clickpad](#Trackpoint_and_Clickpad)
-    *   [4.17 ASUS Touchpads only recognised as PS/2 FocalTech emulated mouse](#ASUS_Touchpads_only_recognised_as_PS.2F2_FocalTech_emulated_mouse)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -912,19 +911,6 @@ Certain touchpads (elantech in particular) will fail to be recognized as a devic
 ### Trackpoint and Clickpad
 
 Newer Thinkpads do not have physical buttons for their Trackpoint anymore and instead use the upper area of the Clickpad for buttons (Left, Middle, Right). Apart from the ergonomic viewpoint this works quite well with current Xorg. Unfortunately mouse wheel emulation using the middle button is not supported yet. Install [xf86-input-evdev-trackpoint](https://aur.archlinux.org/packages/xf86-input-evdev-trackpoint/) from the AUR for a patched and properly configured version if you intend to use the Trackpoint.
-
-### ASUS Touchpads only recognised as PS/2 FocalTech emulated mouse
-
-Linux kernel 4.10 included a fix for this issue. See the [bug](https://bugzilla.kernel.org/show_bug.cgi?id=120181) report for information. If you still experience it on your model, the [hid-asus-dkms-git](https://aur.archlinux.org/packages/hid-asus-dkms-git/) package may be helpful.
-
-See, if the [hid-asus-dkms-git](https://aur.archlinux.org/packages/hid-asus-dkms-git/) package could be used.
-
-1.  Install the linux header for your kernel
-2.  Install the focaltech-dkms from [https://github.com/hanipouspilot/focaltech-dkms](https://github.com/hanipouspilot/focaltech-dkms)
-3.  Restart your computer
-4.  Edit your settings in the "Mouse and Trackpad" settings.
-5.  If the above does not work, the dkms from [https://github.com/vlasenko/hid-asus-dkms](https://github.com/vlasenko/hid-asus-dkms) or [hid-asus-dkms-git](https://aur.archlinux.org/packages/hid-asus-dkms-git/) could be used.
-6.  For more informations see [https://bugzilla.kernel.org/show_bug.cgi?id=120181](https://bugzilla.kernel.org/show_bug.cgi?id=120181)
 
 ## See also
 

@@ -7,7 +7,6 @@ The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") can be
 *   [1 Getting the Ingredients](#Getting_the_Ingredients)
 *   [2 Modifying the PKGBUILD](#Modifying_the_PKGBUILD)
     *   [2.1 Changing prepare()](#Changing_prepare.28.29)
-        *   [2.1.1 Load existing .config](#Load_existing_.config)
     *   [2.2 Generate new checksums](#Generate_new_checksums)
 *   [3 Compiling](#Compiling)
 *   [4 Installing](#Installing)
@@ -70,12 +69,6 @@ Or you can use GUI tool to tweak the options. Uncomment one of the possibilities
 ```
 
 **Warning:** systemd has a number of kernel configuration requirements for general use, for specific usecases (e.g., UEFI) and for specific systemd functionality (e.g., bootchart). Failure to meet these requirements can result in your system being degraded or unusable. The list of required and recommended kernel CONFIGs can be found in `/usr/share/doc/systemd/README`. Check them before you compile.These requirements also change over time. Because Arch assumes you are using the official kernel, there will be no announcement of these changes. Before you install a new version of systemd, check the version release notes to make sure your current custom kernel meets any new systemd requirements.
-
-#### Load existing .config
-
-If you have already a kernel `.config` file, uncommenting one of the interactive config tools, such as `nconfig`, and loading your `.config` from there avoids any problems with kernel naming that may otherwise occur - except in the case of at least make menuconfig. See note.
-
-**Note:** If you uncomment and use 'make menuconfig' in prepare(), then use the menuconfig gui to load your existing config, you will run into problems with conflicting files in the end package. This is because you will overwrite the default config that PKGBUILD has modified to provide a unique install path, specifically the LOCALVERSION and LOCALVERSION_AUTO config options. To fix this, simply re-set LOCALVERSION to your custom kernel naming and LOCALVERSION_AUTO=n while still in menuconfig. For details, see [BBS#173504](https://bbs.archlinux.org/viewtopic.php?id=173504)
 
 ### Generate new checksums
 

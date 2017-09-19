@@ -1,3 +1,7 @@
+Related articles
+
+*   [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives")
+
 NVM Express (NVMe) is a specification for accessing SSDs attached through the PCI Express bus. As a logical device interface, NVM Express has been designed from the ground up, capitalizing on the low latency and parallelism of PCI Express SSDs, and mirroring the parallelism of contemporary CPUs, platforms and applications.
 
 ## Contents
@@ -55,13 +59,13 @@ Raw device performance tests can be run with [hdparm](https://www.archlinux.org/
 
 Andy Lutomirski has created a patchset which fixes powersaving for NVME devices in linux. The patch has been merged into mainline kernel v4.11\. For older kernels you can use: **Linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME powersaving APST.
 
-	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/)
+	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/).
 
-To test if NVME Power Management is working, install [nvme-cli](https://aur.archlinux.org/packages/nvme-cli/) if running an older kernel, and run `nvme get-feature -f 0x0c -H /dev/nvme`
+To test if NVME Power Management is working, install [nvme-cli](https://aur.archlinux.org/packages/nvme-cli/) if running an older kernel, and run `# nvme get-feature -f 0x0c -H /dev/nvme[0-9]`.
 
 When ASPT is enabled the output should contain "Autonomous Power State Transition Enable (APSTE): Enabled" and there should be non-zero entries in the table below indicating the idle time before transitioning into each of the available states.
 
-If ASPT is enabled but no non-zero states appear in the table, the latencies might be too high for any states to be enabled by default. The output of `nvme id-ctrl /dev/nvme` should show the available non-operational power states of the NVME controller. If the total latency of any state (enlat + xlat) is greater than 25000 (25ms) then to enable it you must pass a value at least that high to the `default_ps_max_latency_us` option for the `nvme_core` module in the boot parameters. This should enable ASPT and make the table in `nvme get-feature` show the entries.
+If ASPT is enabled but no non-zero states appear in the table, the latencies might be too high for any states to be enabled by default. The output of `# nvme id-ctrl /dev/nvme[0-9]` should show the available non-operational power states of the NVME controller. If the total latency of any state (enlat + xlat) is greater than 25000 (25ms) then to enable it you must pass a value at least that high to the `default_ps_max_latency_us` option for the `nvme_core` module in the boot parameters. This should enable ASPT and make the table in `# nvme get-feature` show the entries.
 
 ## References
 

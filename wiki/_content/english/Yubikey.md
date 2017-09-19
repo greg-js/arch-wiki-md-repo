@@ -119,7 +119,7 @@ It transforms these INPUTS into ***OUTPUTS*** in the form of:
 
 ### The Button
 
-The button works by slightly touching. Sometimes it even reacts when you are very close, but aren't touching it yet.
+The button works by slightly touching. Sometimes it even reacts when you are very close, but are not touching it yet.
 
 #### Effects of pressing the button
 
@@ -162,7 +162,7 @@ Yubikeys support up to 3 different USB connection/transport modes (depending on 
 
 A mode defines:
 
-*   how the YubiKey is accessed (e.g. if the CCID mode is activated, then `ykman` will access the YubiKey in CCID mode, meaning if you don't have `pcscd` running, then even a `ykman info` will fail) and
+*   how the YubiKey is accessed (e.g. if the CCID mode is activated, then `ykman` will access the YubiKey in CCID mode, meaning if you do not have `pcscd` running, then even a `ykman info` will fail) and
 *   what functionality is available or not (e.g. if you deactivate the U2F mode, then your YubiKey will not handle any U2F requests anymore)
 
 These modes can be activated/deactivated independently from each other.
@@ -239,7 +239,7 @@ The possible messages are:
 *   *rapid blinking*: Error, configuring driver (TODO explain)
 
 **Note:** If the CCID mode is turned on, then the LED of the key is always shortly flashing every two-three seconds once inserted.
-You can turn the blinking off by disabling the CCID mode. This slow blinking just shows that the device has power, alternatively it shows a need for a button press. On Windows this behavior will typically stop once drivers are installed and it's ready for use. Mac and Linux systems will keep blinking; here [the best current workaround](https://github.com/Yubico/yubikey-manager/issues/20#issuecomment-326496204) to get the LED to blink less is to disable CCID.
+You can turn the blinking off by disabling the CCID mode. This slow blinking just shows that the device has power, alternatively it shows a need for a button press. On Windows this behavior will typically stop once drivers are installed and it is ready for use. Mac and Linux systems will keep blinking; here [the best current workaround](https://github.com/Yubico/yubikey-manager/issues/20#issuecomment-326496204) to get the LED to blink less is to disable CCID.
 
 ### The Initial configuration
 
@@ -279,7 +279,7 @@ The initial configuration and AES key stored in slot 1 can of course be overwrit
 
 Yubikey's authentication protocol is based on [symmetric cryptography](https://en.wikipedia.org/wiki/Symmetric_cryptography "wikipedia:Symmetric cryptography"). More specifically, each Yubikey contains a 128-bit [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "wikipedia:Advanced Encryption Standard") key unique to that device. It is used to encrypt a token made of different fields such as the ID of the key, a counter, a random number, etc. The OTP is made from concatenating the ID of the key with this encrypted token.
 
-This OTP is sent to the target system to which we want to authenticate. This target system asks a validation server if the OTP is good. The validation server has a mapping of Yubikey IDs -> AES key. Using the key ID in the OTP, it can thus retrieve the AES key and decrypt the other part of the OTP. If it looks OK (plain-text ID and encrypted ID are the same, the counter is bigger than the last seen one to prevent [replay attacks](https://en.wikipedia.org/wiki/Replay_attack "wikipedia:Replay attack")...), then authentication is successful.
+This OTP is sent to the target system to which we want to authenticate. This target system asks a validation server if the OTP is good. The validation server has a mapping of Yubikey IDs -> AES key. Using the key ID in the OTP, it can thus retrieve the AES key and decrypt the other part of the OTP. If it looks OK (plain-text ID and encrypted ID are the same, the counter is bigger than the last seen one to prevent [replay attacks](https://en.wikipedia.org/wiki/Replay_attack "wikipedia:Replay attack"), then authentication is successful.
 
 The validation server sends that authentication status back to the target system, which grants access or not based on that response.
 
@@ -311,8 +311,6 @@ So you can either:
 *   **with HTTPS**: the validation server's certificate is signed by GoDaddy, and is thus trusted by default in Arch installs (at least if you have package ca-certificates)
 
 ### OATH-HOTP mode (RFC 4226)
-
-...
 
 ## Challenge-Response
 
@@ -357,8 +355,6 @@ To use a Challenge-Response slot (no matter which mode):
 
 ## U2F
 
-...
-
 ### Enabling U2F in the browser
 
 #### Chromium/Chrome
@@ -371,11 +367,7 @@ To enable U2F support in Firefox, you need to install [this addon](https://githu
 
 ## Static Password
 
-...
-
 ## CCID Smartcard
-
-...
 
 ### Enable the CCID mode
 
@@ -424,7 +416,7 @@ Install [yubico-pam](https://www.archlinux.org/packages/?name=yubico-pam).
 
 **Note:** If you are configuring a distant server to use Yubikey, you should open at least one additional, rescue SSH session, so that you are not locked out of your server if the configuration does not work and you exit your main session inadvertently
 
-**Note:** The following assumes you're using the default Yubico servers. See the [yubico-pam documentation](https://github.com/Yubico/yubico-pam) for options relevant to using your own server.
+**Note:** The following assumes you are using the default Yubico servers. See the [yubico-pam documentation](https://github.com/Yubico/yubico-pam) for options relevant to using your own server.
 
 #### Configuration
 
@@ -485,14 +477,14 @@ auth            required      pam_yubico.so id=CLIENTID authfile=/etc/yubico/aut
 
 ```
 
-if you're using a central authorization mapping file, or
+if you are using a central authorization mapping file, or
 
 ```
 auth            required      pam_yubico.so id=CLIENTID
 
 ```
 
-if you're using per-user authorization mapping, where `CLIENTID`} is your Client ID. This method utilizes your ID and the server's certificate to authenticate the connection.
+if you are using per-user authorization mapping, where `CLIENTID`} is your Client ID. This method utilizes your ID and the server's certificate to authenticate the connection.
 
 **Note:** This will authenticate via Yubico's free YubiCloud servers. If you want to use a different server, add it via the `urllist` parameter.
 
@@ -538,7 +530,7 @@ You should not need to restart anything if you did not change the SSHD config fi
 
 To log in, at the `Password:` prompt of SSH, you have to type your password **without pressing enter** and touch the Yubikey's button. The Yubikey should send a return at the end of the OTP so you do not need to touch the enter key at all.
 
-You can display information about the login data generated by `pam_yubico` by adding the `debug` option to the auth line in`/etc/pam.d/sshd`. However, if you're using a central authorization file, you should remove that option once finished testing, as it causes `pam_yubico` to display the entire content of the central file to every user who logs in using a Yubikey.
+You can display information about the login data generated by `pam_yubico` by adding the `debug` option to the auth line in`/etc/pam.d/sshd`. However, if you are using a central authorization file, you should remove that option once finished testing, as it causes `pam_yubico` to display the entire content of the central file to every user who logs in using a Yubikey.
 
 #### Explanation
 

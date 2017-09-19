@@ -3,17 +3,16 @@ Razer Blade is Razer's line of gaming laptops. There is currently a 12" model (R
 ## Contents
 
 *   [1 2016 version (Razer Blade & Razer Blade Stealth)](#2016_version_.28Razer_Blade_.26_Razer_Blade_Stealth.29)
-    *   [1.1 Killer Wireless Network Adapter](#Killer_Wireless_Network_Adapter)
-    *   [1.2 Touchpad](#Touchpad)
-    *   [1.3 Touchscreen](#Touchscreen)
-    *   [1.4 Graphics Drivers](#Graphics_Drivers)
-    *   [1.5 Hybrid graphics](#Hybrid_graphics)
-    *   [1.6 Suspend Loop](#Suspend_Loop)
-        *   [1.6.1 GRUB](#GRUB)
-    *   [1.7 Tweaking](#Tweaking)
-    *   [1.8 Audio](#Audio)
-    *   [1.9 Webcam](#Webcam)
-    *   [1.10 Keyboard](#Keyboard)
+    *   [1.1 Touchpad](#Touchpad)
+    *   [1.2 Touchscreen](#Touchscreen)
+    *   [1.3 Graphics Drivers](#Graphics_Drivers)
+    *   [1.4 Hybrid graphics](#Hybrid_graphics)
+    *   [1.5 Suspend Loop](#Suspend_Loop)
+        *   [1.5.1 GRUB](#GRUB)
+    *   [1.6 Tweaking](#Tweaking)
+    *   [1.7 Audio](#Audio)
+    *   [1.8 Webcam](#Webcam)
+    *   [1.9 Keyboard](#Keyboard)
 *   [2 2014 version](#2014_version)
     *   [2.1 Problems](#Problems)
     *   [2.2 Possible trackpad solution](#Possible_trackpad_solution)
@@ -25,45 +24,6 @@ Razer Blade is Razer's line of gaming laptops. There is currently a 12" model (R
 # 2016 version (Razer Blade & Razer Blade Stealth)
 
 The normal installation process works in general with the exceptions enumerated below.
-
-## Killer Wireless Network Adapter
-
-Killer Wireless adapters no longer require special firmware to function, and will work right out of the box.
-
-Blade 2016 with Killer 1535 will, however, drop connection upon heavy load. A possible solution is to use the [git](https://github.com/kvalo/ath10k-firmware/) version of ath10k as following:
-
-Remove the included firmware:
-
-```
-# rm -r /lib/firmware/ath10k/QCA6174/
-
-```
-
-Download the latest firmware using [wget](https://www.archlinux.org/packages/?name=wget) or your favorite browser:
-
-```
-$ wget https://github.com/kvalo/ath10k-firmware/archive/master.zip
-
-```
-
-Unzip the downloaded file using your preferred method and copy to /lib/firmware/ath10k/:
-
-```
-# cp -r ath10k-firmware-master/QCA6174/ /lib/firmware/ath10k/
-
-```
-
-Rename some files:
-
-```
-# cd /lib/firmware/ath10k/QCA6174/hw2.1/
-# mv firmware-5.bin_SW_RM.1.1.1-00157-QCARMSWPZ-1 firmware-5.bin
-# cd /lib/firmware/ath10k/QCA6174/hw3.0/
-# mv firmware-4.bin_WLAN.RM.2.0-00180-QCARMSWPZ-1 firmware-4.bin
-
-```
-
-Reboot and test.
 
 ## Touchpad
 

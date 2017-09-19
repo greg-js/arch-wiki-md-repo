@@ -1,3 +1,7 @@
+Related articles
+
+*   [XDG Base Directory support](/index.php/XDG_Base_Directory_support "XDG Base Directory support")
+
 This article collects user repositories with custom configuration files, commonly known as *dotfiles*.
 
 ## Contents
@@ -16,9 +20,9 @@ Managing dotfiles with version control software such as [Git](/index.php/Git "Gi
 
 ### Using gitignore
 
-Keeping a [git directory](https://git-scm.com/blog/2010/04/11/environment.html) inside the home folder allows to directly keep track of changes. It is recommended to selectively add file contents to the index with [git-add(1)](http://man7.org/linux/man-pages/man1/git-add.1.html).
+Keeping a [git directory](https://git-scm.com/blog/2010/04/11/environment.html) inside the home folder allows to directly keep track of changes. It is recommended to selectively add file contents to the index with [git-add(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/git-add.1).
 
-To prevent untracked files (appearing in commits and removed by [git-clean(1)](http://man7.org/linux/man-pages/man1/git-clean.1.html)), first exclude all files with [gitignore(5)](http://man7.org/linux/man-pages/man5/gitignore.5.html):
+To prevent untracked files (appearing in commits and removed by [git-clean(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/git-clean.1)), first exclude all files with [gitignore(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gitignore.5):
 
  `~/.git/info/exclude`  `*` 
 
@@ -29,7 +33,7 @@ $ git add -f ~/.config/*
 
 ```
 
-And commit the changes with [git-commit(1)](http://man7.org/linux/man-pages/man1/git-commit.1.html):
+And commit the changes with [git-commit(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/git-commit.1):
 
 ```
 $ git commit -a
@@ -145,6 +149,7 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 | [OK100](https://github.com/ok100/configs) | bash | dwm | vim | rxvt-unicode | cmus | conky, dzen | mutt | weechat |
 | [pid1](https://github.com/pid1/dotfiles) | zsh | dwm | neovim | st | tmux | custom | mutt | weechat |
 | [polyzen](https://github.com/polyzen/dotfiles) | zsh | i3 | vim | termite | tmux | i3status | weechat |
+| [sistematico](https://github.com/sistematico/majestic) | zsh/fish/bash | [i3 Gaps](https://github.com/Airblader/i3) | vim/nano | termite | tmux | ncmpcpp | i3blocks | mutt | weechat |
 | [swalladge](https://github.com/swalladge/dotfiles) | zsh/bash | i3 | neovim/vim | termite | tmux | cmus | i3pystatus | mutt |
 | [thiagowfx](https://github.com/thiagowfx/dotfiles) | bash/zsh | i3 | vim/emacs | rxvt-unicode | ncmpcpp | i3blocks |
 | [unexist](http://hg.subtle.de/dotfiles/file) | zsh | subtle | vim | rxvt-unicode | ncmpcpp | mutt | irssi |

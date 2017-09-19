@@ -44,12 +44,13 @@
         *   [3.8.3 gstreamer](#gstreamer)
     *   [3.9 LaTeX](#LaTeX)
 *   [4 乱码问题](#.E4.B9.B1.E7.A0.81.E9.97.AE.E9.A2.98)
-    *   [4.1 乱码文件和文件名的转码](#.E4.B9.B1.E7.A0.81.E6.96.87.E4.BB.B6.E5.92.8C.E6.96.87.E4.BB.B6.E5.90.8D.E7.9A.84.E8.BD.AC.E7.A0.81)
-    *   [4.2 zip压缩包乱码](#zip.E5.8E.8B.E7.BC.A9.E5.8C.85.E4.B9.B1.E7.A0.81)
-    *   [4.3 MP3文件标签乱码](#MP3.E6.96.87.E4.BB.B6.E6.A0.87.E7.AD.BE.E4.B9.B1.E7.A0.81)
-    *   [4.4 Windows分区下的中文文件名乱码](#Windows.E5.88.86.E5.8C.BA.E4.B8.8B.E7.9A.84.E4.B8.AD.E6.96.87.E6.96.87.E4.BB.B6.E5.90.8D.E4.B9.B1.E7.A0.81)
-    *   [4.5 Samba乱码](#Samba.E4.B9.B1.E7.A0.81)
-    *   [4.6 ftp乱码](#ftp.E4.B9.B1.E7.A0.81)
+    *   [4.1 文件名乱码](#.E6.96.87.E4.BB.B6.E5.90.8D.E4.B9.B1.E7.A0.81)
+    *   [4.2 文件内容乱码](#.E6.96.87.E4.BB.B6.E5.86.85.E5.AE.B9.E4.B9.B1.E7.A0.81)
+    *   [4.3 zip压缩包乱码](#zip.E5.8E.8B.E7.BC.A9.E5.8C.85.E4.B9.B1.E7.A0.81)
+    *   [4.4 MP3文件标签乱码](#MP3.E6.96.87.E4.BB.B6.E6.A0.87.E7.AD.BE.E4.B9.B1.E7.A0.81)
+    *   [4.5 Windows分区下的中文文件名乱码](#Windows.E5.88.86.E5.8C.BA.E4.B8.8B.E7.9A.84.E4.B8.AD.E6.96.87.E6.96.87.E4.BB.B6.E5.90.8D.E4.B9.B1.E7.A0.81)
+    *   [4.6 Samba乱码](#Samba.E4.B9.B1.E7.A0.81)
+    *   [4.7 ftp乱码](#ftp.E4.B9.B1.E7.A0.81)
 *   [5 翻译软件](#.E7.BF.BB.E8.AF.91.E8.BD.AF.E4.BB.B6)
 
 ## 基本中文支持
@@ -321,9 +322,9 @@ xine也可以显示中文字幕，但需要制作自己的中文字体。具体�
 
 避免乱码基本原则：使用utf-8代替gbk/gb2312。
 
-### 乱码文件和文件名的转码
+### 文件名乱码
 
-*   文件名乱码：安装 [convmv](https://www.archlinux.org/packages/?name=convmv)，使用`convmv`命令转换编码格式。示例：
+安装 [convmv](https://www.archlinux.org/packages/?name=convmv)，使用`convmv`命令转换编码格式。示例：
 
 ```
 convmv -f GBK -t UTF-8 --notest --nosmart file
@@ -332,9 +333,9 @@ convmv -f GBK -t UTF-8 --notest --nosmart file
 
 `-f`指定原始编码，`-t`指定输出编码。使用`convmv --list`可查询所有支持的编码。 `--notest`表示非测试而是要进行转码（如果不使用该参数只会打印出转换结果而不会实际转码），`--smart`表示如果已经是UTF-8则忽略。
 
--f指定原编码格式，-t指定要转换成的编码格式。
+### 文件内容乱码
 
-*   文件内容乱码：使用`iconv`命令转换格式。示例：
+使用`iconv`命令转换格式。示例：
 
 ```
 iconv -f GBK -t UTF-8 -o new-file origin-file

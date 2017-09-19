@@ -4,6 +4,8 @@ Related articles
 
 [FVWM](http://fvwm.org/) is an ICCCM-compliant multiple virtual desktop window manager for the X Window system. It is configured by editing text-based configuration files. Although using FVWM does not require any knowledge of programming languages, it is possible to extend FVWM with [M4](http://www.fvwm.org/documentation/manpages/stable/FvwmM4.php), [C](http://www.fvwm.org/documentation/manpages/stable/FvwmCpp.php), and [Perl](http://www.fvwm.org/documentation/manpages/stable/FvwmPerl.php) preprocessing. FVWM also has a [Perl library](http://www.fvwm.org/documentation/perllib/) which allows one to create [modules](#Modules). FVWM stands for F Virtual Window Manager. The official stance is that the F does not stand for anything in particular [[1]](http://fvwm.org/documentation/faq/#what-does-fvwm-stand-for).
 
+**Note:** As of November 2016 there are plans to switch the development focus to [FVWM3](https://github.com/fvwmorg/fvwm3), a successor to FVWM2 which will have new features but will not be compatible with FVWM2\. [[2]](https://www.mail-archive.com/fvwm-workers@fvwm.org/msg04516.html)
+
 ## Contents
 
 *   [1 Installing](#Installing)
@@ -41,7 +43,7 @@ Related articles
 
 ## Installing
 
-[Install](/index.php/Install "Install") [fvwm](https://www.archlinux.org/packages/?name=fvwm) or [fvwm-cvs](https://aur.archlinux.org/packages/fvwm-cvs/) (for the development version). Alternatively, you can install [fvwm+](https://aur.archlinux.org/packages/fvwm%2B/) which provides a patched version of FVWM.
+[Install](/index.php/Install "Install") [fvwm](https://www.archlinux.org/packages/?name=fvwm) or [fvwm-git](https://aur.archlinux.org/packages/fvwm-git/) (for the development version). Alternatively, you can install [fvwm+](https://aur.archlinux.org/packages/fvwm%2B/) which provides a patched version of FVWM.
 
 The following packages provide themes and icons for FVWM: [fvwm-crystal](https://www.archlinux.org/packages/?name=fvwm-crystal), [fvwm-icons](https://aur.archlinux.org/packages/fvwm-icons/), [fvwm-themes](https://aur.archlinux.org/packages/fvwm-themes/), [fvwm-themes-extra](https://aur.archlinux.org/packages/fvwm-themes-extra/). FVWM Crystal provides a separate session for a desktop environment like experience.
 
@@ -101,7 +103,7 @@ As of version 2.6.7, FVWM ships with a new default configuration, located in `/u
 
 ### The virtual desktop
 
-For its virtual desktop, FVWM implements both workspaces (used by window managers such as Metacity and [Openbox](/index.php/Openbox "Openbox")) and viewports (used by window managers such as Compiz). See [[2]](http://www.circuitousroot.com/artifice/programming/useful/fvwm/viewports/index.html) for a description of the differences between workspaces and viewports. FVWM refers to workspaces as desks and viewports as pages.
+For its virtual desktop, FVWM implements both workspaces (used by window managers such as Metacity and [Openbox](/index.php/Openbox "Openbox")) and viewports (used by window managers such as Compiz). See [[3]](http://www.circuitousroot.com/artifice/programming/useful/fvwm/viewports/index.html) for a description of the differences between workspaces and viewports. FVWM refers to workspaces as desks and viewports as pages.
 
 Pages in FVWM are arranged in a grid. The number of pages used can be defined with the `DesktopSize` command. For instance, adding `DesktopSize 3x3` to your configuration file will give you 9 pages, arranged in a 3x3 grid. Pages can be navigated using the [pager module](#FvwmPager) or with the `GoToPage` command which could be mapped to a keyboard shortcut or menu entry. For instance, the command `GoToPage -1p +0p` will move the viewport 1 page to the left of the current page.
 
@@ -272,7 +274,7 @@ AddToFunc MyFunc
 
 ### Modules
 
-**Note:** A number of older FVWM modules have been removed as of version 2.6.7\. [[3]](https://github.com/fvwmorg/fvwm/releases/tag/2.6.7)
+**Note:** A number of older FVWM modules have been removed as of version 2.6.7\. [[4]](https://github.com/fvwmorg/fvwm/releases/tag/2.6.7) Those who wish to continue using these modules should use [fvwm2-stable](https://github.com/fvwmorg/fvwm/archive/fvwm2-stable.zip) which is an LTS release representing the version prior to 2.6.7.
 
 Modules are separate programs, spawned by FVWM that can add extra functionality. Modules can be spawned using the following syntax: `Module *ModuleName* (*identifier*) *ModuleArgs*`.
 
@@ -339,6 +341,10 @@ Set the number of rows and columns:
 
 ```
 
+Note that items are added by filling each row from left to right, from the top row to the bottom one.
+
+**Tip:** For debugging purposes, you might wish to set the `BoxSize` option to `fixed`. This ensures that only the specified number of rows and columns are used. Specifying an impossible layout (such as adding 5 buttons to a panel that has 4 columns and 1 row) will mean that the buttons panel fails to start. More lenient BoxSize algorithms such as `smart` will add extra rows to try and accommodate all elements which could make the configuration error harder to spot.
+
 Create a button (this example creates a button with a title and an icon which launches an XTerm when left clicked):
 
 ```
@@ -369,6 +375,8 @@ Containers are spaces defined which can span multiple rows and columns or subdiv
 ```
 
 Note that a container is created by defining a certain number of columns and rows and then using the keyword container. Elements inside the container are defined underneath this line and the container is then closed with the *End* command.
+
+**Tip:** To define containers in terms of pixel dimensions, ensure that the number of rows and columns in the buttons panel is equal to the pixel height and width respectively of the panel. So for a 300x200 panel set 300 columns and 200 rows.
 
 For a full list of options, see [FvwmButtons(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmButtons.1).
 
@@ -411,7 +419,7 @@ The following [styles](#Style_command) might be useful:
 
 Colorsets in FVWM are a set of four colors (a foreground color, a background color, a shadow color and a highlight color) as well as an optional background pixmap. Any part of FVWM that uses a particular colorset will be affected if that colorset is changed.
 
-All colorsets are identified by a number. Any numbering convention can be used; the fvwm-themes project documents one such convention that uses the first 40 colorsets (0-39). See [[4]](http://fvwm-themes.sourceforge.net/doc/colorsets).
+All colorsets are identified by a number. Any numbering convention can be used; the fvwm-themes project documents one such convention that uses the first 40 colorsets (0-39). See [[5]](http://fvwm-themes.sourceforge.net/doc/colorsets).
 
 Colorsets can be created with the `ColorSet` command - syntax: `ColorSet *number* *options*`. See [fvwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) - the Colorsets section - for more information.
 

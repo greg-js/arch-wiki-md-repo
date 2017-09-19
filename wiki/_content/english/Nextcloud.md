@@ -20,15 +20,16 @@ For differences between Nextcloud and ownCloud see [wikipedia:Nextcloud#Differen
 *   [1 Prerequisites](#Prerequisites)
 *   [2 Installation](#Installation)
 *   [3 Setup](#Setup)
-    *   [3.1 PHP setup](#PHP_setup)
-    *   [3.2 Database setup](#Database_setup)
-        *   [3.2.1 MariaDB](#MariaDB)
-        *   [3.2.2 PostgreSQL](#PostgreSQL)
-    *   [3.3 Webserver setup](#Webserver_setup)
-        *   [3.3.1 Apache](#Apache)
-            *   [3.3.1.1 WebDAV](#WebDAV)
-        *   [3.3.2 Nginx](#Nginx)
-            *   [3.3.2.1 PHP-FPM configuration](#PHP-FPM_configuration)
+    *   [3.1 Pre-install](#Pre-install)
+    *   [3.2 PHP setup](#PHP_setup)
+    *   [3.3 Database setup](#Database_setup)
+        *   [3.3.1 MariaDB](#MariaDB)
+        *   [3.3.2 PostgreSQL](#PostgreSQL)
+    *   [3.4 Webserver setup](#Webserver_setup)
+        *   [3.4.1 Apache](#Apache)
+            *   [3.4.1.1 WebDAV](#WebDAV)
+        *   [3.4.2 Nginx](#Nginx)
+            *   [3.4.2.1 PHP-FPM configuration](#PHP-FPM_configuration)
 *   [4 Initialize](#Initialize)
 *   [5 Security Hardening](#Security_Hardening)
     *   [5.1 Let's Encrypt](#Let.27s_Encrypt)
@@ -55,9 +56,10 @@ For differences between Nextcloud and ownCloud see [wikipedia:Nextcloud#Differen
     *   [8.7 GUI sync client fails to connect](#GUI_sync_client_fails_to_connect)
     *   [8.8 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload.2C_but_give_an_error_.27Integrity_constraint_violation....27)
     *   [8.9 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
-    *   [8.10 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
-    *   [8.11 "Reading from keychain failed with error: 'No keychain service available'"](#.22Reading_from_keychain_failed_with_error:_.27No_keychain_service_available.27.22)
-    *   [8.12 FolderSync: "Method Not Allowed"](#FolderSync:_.22Method_Not_Allowed.22)
+    *   [8.10 Installed apps get blocked because of MIME type error](#Installed_apps_get_blocked_because_of_MIME_type_error)
+    *   [8.11 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
+    *   [8.12 "Reading from keychain failed with error: 'No keychain service available'"](#.22Reading_from_keychain_failed_with_error:_.27No_keychain_service_available.27.22)
+    *   [8.13 FolderSync: "Method Not Allowed"](#FolderSync:_.22Method_Not_Allowed.22)
 *   [9 Tips and tricks](#Tips_and_tricks)
     *   [9.1 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
     *   [9.2 Docker](#Docker)
@@ -85,6 +87,43 @@ Make sure the required components are installed before proceeding.
 ## Setup
 
 As stated above, in order to setup Nextcloud, you must set up the appropriate PHP requirements; additionally, you must configure a database and a webserver.
+
+### Pre-install
+
+Arch packages Nextcloud in a way where the *apps* folder only has the webserver as a group without web permissions and the *data* folder is nonexistent.
+
+The easiest non-conflicting way is to create a new writable folder for apps and also create a writable data folder. Replace the http group with the group your webserver uses if needed.
+
+```
+# mkdir -p /usr/share/webapps/nextcloud/data
+# mkdir -p /usr/share/webapps/nextcloud/apps2
+# chown http:http /usr/share/webapps/nextcloud/data
+# chown http:http /usr/share/webapps/nextcloud/apps2
+# chmod 700 /usr/share/webapps/nextcloud/data
+# chmod 700 /usr/share/webapps/nextcloud/apps2
+
+```
+
+Next edit the configuration file and add following lines to the $CONFIG array.
+
+```
+ 'apps_paths' => 
+ array (
+   0 => 
+   array (
+     'path' => '/usr/share/webapps/nextcloud/apps',
+     'url' => '/apps',
+     'writable' => false,
+   ),
+   1 => 
+   array (
+     'path' => '/usr/share/webapps/nextcloud/apps2',
+     'url' => '/apps2',
+     'writable' => true,
+   ),
+ ),
+
+```
 
 ### PHP setup
 
@@ -186,23 +225,12 @@ include conf.d/*.conf;
 
 ```
 
-Create a config file `/etc/nginx/conf.d/nextcloud.conf` according to the [documentation](https://docs.nextcloud.com/server/12/admin_manual/installation/nginx.html). You will likely have to change the `root` location, as the arch package installs to `/usr/share/webapps/` instead of `/var/www/`.
+Create a config file `/etc/nginx/conf.d/nextcloud.conf` according to the [documentation](https://docs.nextcloud.com/server/12/admin_manual/installation/nginx.html). You will have to change the `root` location, as the Arch package installs to `/usr/share/webapps/nextcloud` instead of `/var/www/nextcloud`.
 
-Addtitionally, you should change
-
-```
-upstream php-handler {
-   server 127.0.0.1:9000;
-   #server unix:/var/run/php5-fpm.sock;
-}
-
-```
-
-to
+Addtitionally, you change the php-handler block so it looks like this one
 
 ```
 upstream php-handler {
-   #server 127.0.0.1:9000;
    server unix:/run/php-fpm/php-fpm.sock;
 }
 
@@ -686,44 +714,19 @@ If everything is working, you should see 'Transactional File Locking Enabled' un
 
 ### "Cannot write into apps directory"
 
-As mentioned in the [official admin manual](https://doc.owncloud.org/server/latest/admin_manual/installation/apps_management_installation.html), either you need an apps directory that is writable by the http user, or you need to set `appstoreenabled` to `false`.
+As mentioned in the [official admin manual](https://docs.nextcloud.com/server/12/admin_manual/installation/apps_management_installation.html), either you need an apps directory that is writable by the http user, or you need to set `appstoreenabled` to `false`.
 
-*Also*, not mentioned there, the directory needs to be in the `open_basedir` line in `/etc/php/php.ini`.
+### Installed apps get blocked because of MIME type error
 
-One clean method is to have the package-installed directory at `/usr/share/webapps/owncloud/apps` stay owned by root, and have the user-installed apps go into e.g. `/var/www/owncloud/apps`, which is owned by http. Then you can set `appstoreenabled` to `true` and package upgrades of apps should work fine as well. Relevant lines from `/etc/webapps/owncloud/config/config.php`:
+If you're putting your apps folder outside of the nextcloud installation directory make sure your webserver serves it properly.
 
-```
-  'apps_paths' => 
-  array (
-    0 => 
-    array (
-      'path' => '/usr/share/webapps/owncloud/apps',
-      'url' => '/apps',
-      'writable' => false,
-    ),
-    1 => 
-    array (
-      'path' => '/var/www/owncloud/apps',
-      'url' => '/wapps',
-      'writable' => true,
-    ),
-  ),
+In nginx this is accomplished by adding a location block to the nginx configuration as the folder will not be included in it by default.
 
 ```
+location ~ /apps2/(.*)$ {
+    alias /var/www/nextcloud/apps/$1;
+}
 
-Example `open_basedir` line from `/etc/php/php.ini` (you might have other directories in there as well):
-
-```
-open_basedir = /srv/http/:/usr/share/webapps/:/var/www/owncloud/apps/
-
-```
-
-Directory permissions:
-
- `$ ls -ld /usr/share/webapps/owncloud/apps /var/www/owncloud/apps/` 
-```
- drwxr-xr-x 26 root root 4096 des.  14 20:48 /usr/share/webapps/owncloud/apps
- drwxr-xr-x  2 http http   48 jan.  20 20:01 /var/www/owncloud/apps/
 ```
 
 ### Security warnings even though the recommended settings have been included in nginx.conf
@@ -889,7 +892,7 @@ See the [ownCloud](https://hub.docker.com/_/owncloud/) or [Nextcloud](https://gi
 
 ### Defining Background Jobs
 
-Nextcloud requires scheduled execution of some tasks, and by default it archives this by using AJAX, however AJAX is the least reliable method, and it is recommended to use [Cron](/index.php/Cron "Cron") instead. However, ArchLinux ships with [systemd](https://www.archlinux.org/packages/?name=systemd), so the preferred way of executing scheduled tasks is a[systemd timer](/index.php/Systemd#Timers "Systemd").
+Nextcloud requires scheduled execution of some tasks, and by default it archives this by using AJAX, however AJAX is the least reliable method, and it is recommended to use [Cron](/index.php/Cron "Cron") instead. However, ArchLinux ships with [systemd](https://www.archlinux.org/packages/?name=systemd), so the preferred way of executing scheduled tasks is a [systemd timer](/index.php/Systemd#Timers "Systemd").
 
 First create a service:
 

@@ -1,6 +1,17 @@
+Related articles
+
+*   [List of applications/Internet#FTP clients](/index.php/List_of_applications/Internet#FTP_clients "List of applications/Internet")
+
 **Note:** As of February 2015, curlftpfs is reported to be extremely slow, see for example [a Ubuntu bug report](https://bugs.launchpad.net/ubuntu/+source/curlftpfs/+bug/1267749) and a [stackoverflow.com question](http://stackoverflow.com/questions/24360479/ftp-with-curlftpfs-is-extremely-slow-to-the-point-it-is-impossible-to-work-with).
 
 [CurlFtpFS](http://curlftpfs.sourceforge.net/) is a filesystem for accessing FTP hosts based on FUSE and libcurl.
+
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Mount FTP folder as root](#Mount_FTP_folder_as_root)
+*   [3 Mount FTP folder as normal user](#Mount_FTP_folder_as_normal_user)
+*   [4 Connect to encrypted server](#Connect_to_encrypted_server)
 
 ## Installation
 
@@ -84,3 +95,28 @@ To unmount:
 $ fusermount -u ~/my-server
 
 ```
+
+## Connect to encrypted server
+
+In it's default settings, CurlFtpFS will authenticate in cleartext when connecting to a non encrypted connection port. If the remote server is configured to refuse non encrypted authentification method / force encrypted authentification, CurlFtpFS will return a
+
+```
+# Error connecting to ftp: Access denied: 530
+
+```
+
+To authenticate to the ftp server using explicit encrypted authentification, you must specify the ssl or tsl option.
+
+```
+# curlftpfs ftp.yourserver.com /mnt/ftp/ -o ssl,user=username:password
+
+```
+
+If your server uses a self-generated certificate not thrusted by your computer, you can specify to ignore it
+
+```
+# curlftpfs ftp.yourserver.com /mnt/ftp/ -o ssl,no_verify_peer,no_verify_hostname,user=username:password
+
+```
+
+An implicit tsl mode is also available. For more details, check the manual page.

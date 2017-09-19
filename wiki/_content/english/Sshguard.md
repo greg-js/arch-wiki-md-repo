@@ -1,8 +1,13 @@
+Related articles
+
+*   [fail2ban](/index.php/Fail2ban "Fail2ban")
+*   [ssh](/index.php/Ssh "Ssh")
+
 **Warning:** Using an IP blacklist will stop trivial attacks but it relies on an additional daemon and successful logging (the partition containing /var can become full, especially if an attacker is pounding on the server). Additionally, if the attacker knows your IP address, they can send packets with a spoofed source header and get you locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to the problem of brute forcing without these problems.
 
 [sshguard](http://www.sshguard.net) is a daemon that protects [SSH](/index.php/SSH "SSH") and other services against brute-force attacks, similar to [fail2ban](/index.php/Fail2ban "Fail2ban").
 
-sshguard is different from the other two in that it is written in C, is lighter and simpler to use with fewer features while performing its core function equally well.
+sshguard is different from the latter in that it is written in C, is lighter and simpler to use with fewer features while performing its core function equally well.
 
 sshguard is not vulnerable to most (or maybe any) of the log analysis [vulnerabilities](https://web.archive.org/web/20120625102244/http://www.ossec.net/main/attacking-log-analysis-tools) that have caused problems for similar tools.
 

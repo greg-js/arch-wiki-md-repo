@@ -1,3 +1,5 @@
+**警告:** goagent已经停止维护，本页面内容失效，请使用其他代理方法，参考[General recommendations (简体中文)](/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General recommendations (简体中文)")一文中的[中国大陆用户的推荐解决方案-代理](https://wiki.archlinux.org/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BB.A3.E7.90.86)，选择其他工具。
+
 GoAgent 是使用 [Python](/index.php/Python "Python") 和 Google App Engine SDK 编写的免费代理软件，利用 Google App Engine 充当代理服务器。
 
 GoAgent 的运行原理于其他代理工具基本相同，其借由 Google App Engine 的服务器作为中传，将数据数据包后传送至 Google 服务器，再由 Google 服务器转发至目的服务器，接收数据时方法也类似。相对其他代理工具而言 GoAgent 要稳定许多。

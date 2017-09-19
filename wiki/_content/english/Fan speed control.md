@@ -35,7 +35,7 @@ Fan control can bring various benefits to your system, such as quieter working s
 
 ## Overview
 
-**Note:** Laptop users should be aware about how cooling system works in their hardware. Some laptops have single fan for both CPU and GPU and cools both at the same time. Some laptops have two fans for CPU and GPU, but the first fan cools down CPU and GPU at the same time, while the other one cools CPU only. In some cases, you will not be able to use [Fancontrol](#Fancontrol_.28lm-sensors.29) script, because it is not capable to adjust fan speeds according to both CPU and GPU temperatures. [Here](https://github.com/daringer/asus-fan/issues/47#issue-232063547) is some more information about this topic.
+**Note:** Laptop users should be aware about how cooling system works in their hardware. Some laptops have single fan for both CPU and GPU and cools both at the same time. Some laptops have two fans for CPU and GPU, but the first fan cools down CPU and GPU at the same time, while the other one cools CPU only. In some cases, you will not be able to use [Fancontrol](#Fancontrol_.28lm-sensors.29) script due to incompatible cooling architecture (e.g. one fan for both GPU and CPU). [Here](https://github.com/daringer/asus-fan/issues/47#issue-232063547) is some more information about this topic.
 
 There are multiple working solutions for fan control for both desktops and notebooks. Depending on your needs:
 

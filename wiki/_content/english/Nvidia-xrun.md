@@ -30,7 +30,7 @@ If you down nvidia-xrun form [nvidia-xrun github repo],perhaps you should set th
 check your display device's bus id
 
 ```
- lspci | grep NVIDIA
+ $ lspci | grep NVIDIA
 
 ```
 
@@ -80,40 +80,40 @@ When do not need to use nvidia , use bbswitch to turn off it , and run applicati
 *   Load bbswitch module when boot
 
 ```
- sudo echo 'bbswitch ' > /etc/modules-load.d/bbswitch
+ # echo 'bbswitch ' > /etc/modules-load.d/bbswitch
 
 ```
 
 *   Disable the nvidia on boot time.
 
 ```
- sudo echo 'options bbswitch load_state=0' > /etc/modprobe.d/bbswitch.conf 
+ # echo 'options bbswitch load_state=0' > /etc/modprobe.d/bbswitch.conf 
 
 ```
 
 *   Blacklisting nvidia modules
 
 ```
-lsmod | grep nvidia | cut -d ' ' -f 1 > /tmp/nvidia
-lsmod | grep  nouveau | cut -d ' ' -f 1 > > /tmp/nvidia
-sort -n /tmp/nvidia | uniq >  /tmp/nvidia.conf
-sed -i 's/^\w*$/blacklist &/g' /tmp/nvidia.conf
-sudo cp /tmp/nvidia.conf /etc/modprobe.d/nvidia.conf
+$ lsmod | grep nvidia | cut -d ' ' -f 1 > /tmp/nvidia
+$ lsmod | grep  nouveau | cut -d ' ' -f 1 > > /tmp/nvidia
+$ sort -n /tmp/nvidia | uniq >  /tmp/nvidia.conf
+$ sed -i 's/^\w*$/blacklist &/g' /tmp/nvidia.conf
+# cp /tmp/nvidia.conf /etc/modprobe.d/nvidia.conf
 
 ```
 
 Reboot system , nvidia will be off , you can geet the status:
 
 ```
- cat /proc/acpi/bbswitch  
+ $ cat /proc/acpi/bbswitch  
 
 ```
 
 turn the card off, respectively on:
 
 ```
- sudo tee /proc/acpi/bbswitch <<<OFF
- sudo tee /proc/acpi/bbswitch <<<ON
+ # tee /proc/acpi/bbswitch <<<OFF
+ # tee /proc/acpi/bbswitch <<<ON
 
 ```
 
@@ -121,11 +121,9 @@ more about bbswitch see [Bumblebee-Project/bbswitch](https://github.com/Bumblebe
 
 ## usage
 
-1\. switch to free tty
-
-2\. login
-
-3\. run `nvidia-xrun [app]`
+1.  switch to free tty
+2.  login
+3.  run `nvidia-xrun [app]`
 
 ## Troubleshooting
 

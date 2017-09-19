@@ -1,3 +1,12 @@
+Related articles
+
+*   [NVIDIA/Tips and tricks](/index.php/NVIDIA/Tips_and_tricks "NVIDIA/Tips and tricks")
+*   [NVIDIA/Troubleshooting](/index.php/NVIDIA/Troubleshooting "NVIDIA/Troubleshooting")
+*   [Nouveau](/index.php/Nouveau "Nouveau")
+*   [Bumblebee](/index.php/Bumblebee "Bumblebee")
+*   [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
+*   [Xorg](/index.php/Xorg "Xorg")
+
 This article covers the proprietary [NVIDIA](http://www.nvidia.com) graphics card driver. For the open-source driver, see [Nouveau](/index.php/Nouveau "Nouveau"). If you have a laptop with hybrid Intel/NVIDIA graphics, see [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") instead.
 
 ## Contents
@@ -24,7 +33,6 @@ This article covers the proprietary [NVIDIA](http://www.nvidia.com) graphics car
             *   [2.4.4.1 Base Mosaic](#Base_Mosaic)
             *   [2.4.4.2 SLI Mosaic](#SLI_Mosaic)
     *   [2.5 Driver persistence](#Driver_persistence)
-    *   [2.6 Custom resolution](#Custom_resolution)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -434,48 +442,6 @@ $ nvidia-xconfig --sli=Mosaic --metamodes="GPU-0.DFP-0: 1920x1024+0+0, GPU-0.DFP
 Nvidia has a daemon that is to be run at boot. See the [Driver Persistence](http://docs.nvidia.com/deploy/driver-persistence/index.html) section of the Nvidia documentation for more details.
 
 To start the persistence daemon at boot, [enable](/index.php/Enable "Enable") the `nvidia-persistenced.service`. For manual usage see the [upstream documentation](http://docs.nvidia.com/deploy/driver-persistence/index.html#usage).
-
-### Custom resolution
-
-You can let the Nvidia driver use a custom resolution without relying on any EDID information about timings etc. This can for example be useful when you want to overclock your display to get a higher refreshrate than usually supported (might harm your display). To get the timings and modeline for your desired custom resolution, use `gtf` or `cvt`. You have to make use of quite some [X config options](http://us.download.nvidia.com/XFree86/Linux-x86/381.09/README/xconfigoptions.html) to make the driver ignore the reported EDID data and you have to add your resolution and options to `/etc/X11/xorg.conf`. You can find naming information about your display device via `nvidia-settings`. An example custom resolution 2560x1440x75Hz for a Qnix QX2710 (without internal scaler) looks like the following:
-
- `/etc/X11/xorg.conf` 
-```
-Section "Monitor"
-    Identifier     "Monitor0"
-    VendorName     "Unknown"
-    ModelName      "HYO DUAL-DVI"
-    HorizSync       112.73
-    VertRefresh     75
-    Option         "DPMS"
-    Modeline       "2560x1440_75.00"  396.79  2560 2760 3040 3520  1440 1441 1444 1503  -HSync +Vsync
-EndSection
-
-Section "Device"
-    Identifier     "Device0"
-    Driver         "nvidia"
-    VendorName     "NVIDIA Corporation"
-    BoardName      "GeForce GTX 1070"
-    Option         "UseEDIDFreqs" "false"
-EndSection
-
-Section "Screen"
-    Identifier     "Screen0"
-    Device         "Device0"
-    Monitor        "Monitor0"
-    DefaultDepth    24
-    Option         "ModeValidation"   "AllowNonEdidModes,NoEdidMaxPClkCheck,NoMaxPClkCheck"
-    Option         "Stereo" "0"
-    Option         "nvidiaXineramaInfoOrder" "DFP-0"
-    Option         "SLI" "Off"
-    Option         "MultiGPU" "Off"
-    Option         "BaseMosaic" "off"
-    SubSection     "Display"
-        Depth       24
-    EndSubSection
-EndSection
-
-```
 
 ## See also
 

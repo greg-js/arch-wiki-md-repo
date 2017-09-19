@@ -1,3 +1,11 @@
+Related articles
+
+*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
+*   [Compile kernel module](/index.php/Compile_kernel_module "Compile kernel module")
+*   [Kernel Panics](/index.php/Kernel_Panics "Kernel Panics")
+*   [Linux-ck](/index.php/Linux-ck "Linux-ck")
+*   [sysctl](/index.php/Sysctl "Sysctl")
+
 According to [Wikipedia](https://en.wikipedia.org/wiki/Kernel_(computing) "wikipedia:Kernel (computing)"):
 
 	The kernel is a computer program that constitutes the central core of a computer's operating system. It has complete control over everything that occurs in the system. As such, it is the first program loaded on startup, and then manages the remainder of the startup, as well as input/output requests from software, translating them into data processing instructions for the central processing unit. It is also responsible for managing memory, and for managing and communicating with computing peripherals, like printers, speakers, etc. The kernel is a fundamental part of a modern computer's operating system.
@@ -107,7 +115,7 @@ Note for [AUR](/index.php/AUR "AUR") packages, "pre-compiled" means the packages
 
 	[linux-kpatch](https://aur.archlinux.org/packages/linux-kpatch/)
 
-	The Linux kernel with live patching support.
+	The Linux kernel with [live patching](/index.php/Kernel_live_patching "Kernel live patching") support.
 
 ## Patches and Patchsets
 

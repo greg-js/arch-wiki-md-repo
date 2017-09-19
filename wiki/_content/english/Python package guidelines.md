@@ -16,6 +16,7 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
     *   [2.3 pip](#pip)
 *   [3 Notes](#Notes)
     *   [3.1 PyPI download URLs](#PyPI_download_URLs)
+    *   [3.2 Automatic conversion](#Automatic_conversion)
 
 ## Package naming
 
@@ -102,3 +103,7 @@ Note that a custom `$_name` variable is used instead of `$pkgname` since python 
 	in this example for `source_x86_64=('...')`. Also `_py=py36` can be used to not repeat the python version:
 
 	`https://files.pythonhosted.org/packages/$_py/${_name::1}/$_name/$_name-$pkgver-$_py-${_py}m-manylinux1_x86_64.whl`
+
+### Automatic conversion
+
+When the package is intended for personal use, consider using one of the tools that automatically create PKGBUILDs for PyPI packages: [PyPI2PKGBUILD](https://github.com/anntzer/pypi2pkgbuild), [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/).

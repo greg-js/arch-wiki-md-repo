@@ -215,8 +215,8 @@ A command line frontend, *nmcli*, is included with [networkmanager](https://www.
 
 For usage information, see [nmcli(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1). Examples:
 
-*   To connect to a wifi network: `nmcli dev wifi connect <name> password <password>` 
-*   To connect to a wifi on the `wlan1` wifi interface: `nmcli dev wifi connect <name> password <password> iface wlan1 [profile name]` 
+*   To connect to a wifi network: `nmcli dev wifi connect <SSID> password <password>` 
+*   To connect to a wifi on the `wlan1` wifi interface: `nmcli dev wifi connect <SSID> password <password> iface wlan1 [profile name]` 
 *   To disconnect an interface: `nmcli dev disconnect iface eth0` 
 *   To reconnect an interface marked as disconnected: `nmcli con up uuid <uuid>` 
 *   To get a list of UUIDs: `nmcli con show` 

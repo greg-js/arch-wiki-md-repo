@@ -13,7 +13,7 @@ This article introduces the Arch CVE Monitoring Team (ACMT) and describes best p
     *   [5.3 Other Distributions](#Other_Distributions)
     *   [5.4 Other](#Other)
     *   [5.5 More](#More)
-*   [6 Package Categories and Team Members](#Package_Categories_and_Team_Members)
+*   [6 Team Members](#Team_Members)
 
 ## Introduction
 
@@ -179,76 +179,14 @@ NVD and Mitre do not necessarily fill their CVE entry immediately after attribut
 
 For more resources, please see the OpenWall's [Open Source Software Security Wiki](http://oss-security.openwall.org/wiki/).
 
-## Package Categories and Team Members
+## Team Members
 
-Below is a list of general package categories. Should you like, you are welcome to add a new category. Please remember the KISS philosophy when editing the list.
+**Note:** Run `/msg phrik pingsec` on freenode for a listing of security team members.
 
-*   Global
-
-	[Billy Wayne McCann](/index.php/User:Bwayne "User:Bwayne")
-
-	[HegemoOn](/index.php/User:Netmonk "User:Netmonk")
-
-	[Timothée Ravier](/index.php/User:Siosm "User:Siosm")
-
-	[Remi Gacogne](/index.php/User:Rgacogne "User:Rgacogne")
-
-	[Levente Polyak](/index.php/User:Anthraxx "User:Anthraxx")
-
-	[Christian Rebischke](/index.php/User:Shibumi "User:Shibumi")
-
-	[Santiago Torres-Arias](/index.php/User:Sangy "User:Sangy")
-
-	[Your Name Here]
-
-*   Kernel
-
-	Mark Lee
-
-*   Filesystems
-
-	[Your Name Here]
-
-*   GNU userland
-
-	[Your Name Here]
-
-*   Xorg
-
-	[Your Name Here]
-
-*   Systemd
-
-	[Your Name Here]
-
-*   Perl and associated software
-
-	[Your Name Here]
-
-*   Python and associated software
-
-	[Scott Lawrence](/index.php/User:Srl "User:Srl")
-
-	[Your Name Here]
-
-*   Java and associated software
-
-	[Your Name Here]
-
-*   Ruby and associated software
-
-	[Your Name Here]
-
-*   Gtk/Gnome and associated software
-
-	[Your Name Here]
-
-*   QT/KDE and associated software
-
-	[Billy Wayne McCann](/index.php/User:Bwayne "User:Bwayne") (KDE)
-
-	[Your Name Here]
-
-*   Various Windows Managers (please include which WM along with your name)
-
-	[Your Name Here]
+*   [Levente Polyak](/index.php/User:Anthraxx "User:Anthraxx")
+*   [Remi Gacogne](/index.php/User:Rgacogne "User:Rgacogne")
+*   [Christian Rebischke](/index.php/User:Shibumi "User:Shibumi")
+*   [Jelle van der Waa](/index.php/User:Jelly "User:Jelly")
+*   [Santiago Torres-Arias](/index.php/User:Sangy "User:Sangy")
+*   [Jonathan Roemer](/index.php/User:Pid1 "User:Pid1")
+*   [Morten Linderud](/index.php/User:Foxboron "User:Foxboron")

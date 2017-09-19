@@ -1,6 +1,9 @@
-[pam_mount](http://pam-mount.sourceforge.net/) can be used to automatically mount an encrypted home partition (encrypted with, for example, [LUKS](/index.php/LUKS "LUKS") or [ECryptfs](/index.php/ECryptfs "ECryptfs")) on user log in. It will mount your /home (or whatever mount point you like) when you log in using your login manager or when logging in on console. The encrypted drive's passphrase should be the same as your linux user's password, so you do not have to type in two different passphrases to login.
+Related articles
 
-**Warning:**Pam_mount can also unmount your partitions when you close your last session but this is currently not working due to the use of pam_systemd.so in the pam stack.
+*   [dm-crypt/Mounting at login](/index.php/Dm-crypt/Mounting_at_login "Dm-crypt/Mounting at login")
+*   [PAM](/index.php/PAM "PAM")
+
+[pam_mount](http://pam-mount.sourceforge.net/) can be used to automatically mount an encrypted home partition (encrypted with, for example, [LUKS](/index.php/LUKS "LUKS") or [ECryptfs](/index.php/ECryptfs "ECryptfs")) on user log in. It will mount your /home (or whatever mount point you like) when you log in using your login manager or when logging in on console. The encrypted drive's passphrase should be the same as your linux user's password, so you do not have to type in two different passphrases to login.
 
 ## Contents
 

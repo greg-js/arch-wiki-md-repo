@@ -58,13 +58,12 @@ According to the [official website](http://www.gnupg.org):
     *   [9.2 su](#su)
     *   [9.3 Agent complains end of file](#Agent_complains_end_of_file)
     *   [9.4 KGpg configuration permissions](#KGpg_configuration_permissions)
-    *   [9.5 Conflicts between gnome-keyring and gpg-agent](#Conflicts_between_gnome-keyring_and_gpg-agent)
-    *   [9.6 GNOME on Wayland overrides SSH agent socket](#GNOME_on_Wayland_overrides_SSH_agent_socket)
-    *   [9.7 mutt and gpg](#mutt_and_gpg)
-    *   [9.8 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
-    *   [9.9 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
-    *   [9.10 Smartcard not detected](#Smartcard_not_detected)
-    *   [9.11 gpg: WARNING: server 'gpg-agent' is older than us (x < y)](#gpg:_WARNING:_server_.27gpg-agent.27_is_older_than_us_.28x_.3C_y.29)
+    *   [9.5 GNOME on Wayland overrides SSH agent socket](#GNOME_on_Wayland_overrides_SSH_agent_socket)
+    *   [9.6 mutt and gpg](#mutt_and_gpg)
+    *   [9.7 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
+    *   [9.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
+    *   [9.9 Smartcard not detected](#Smartcard_not_detected)
+    *   [9.10 gpg: WARNING: server 'gpg-agent' is older than us (x < y)](#gpg:_WARNING:_server_.27gpg-agent.27_is_older_than_us_.28x_.3C_y.29)
 *   [10 See also](#See_also)
 
 ## Installation
@@ -756,21 +755,6 @@ Alternatively, you can use `pinentry-qt`. See [#pinentry](#pinentry).
 ### KGpg configuration permissions
 
 There have been issues with [kgpg](https://www.archlinux.org/packages/?name=kgpg) being able to access the `~/.gnupg/` options. One issue might be a result of a deprecated *options* file, see the [bug](https://bugs.kde.org/show_bug.cgi?id=290221) report.
-
-### Conflicts between gnome-keyring and gpg-agent
-
-Although the Gnome keyring implements a GPG agent component, GnuPG ignores the `GPG_AGENT_INFO` environment variable, so that Gnome keyring can no longer be used as a GPG agent.
-
-However, the package [pinentry](https://www.archlinux.org/packages/?name=pinentry) provides the `pinentry-gnome3` program. You may set the following option in your `gpg-agent.conf` file
-
-```
- pinentry-program /usr/bin/pinentry-gnome3
-
-```
-
-in order to make use of that pinentry program.
-
-All pinentry programs can be configured to optionally save a passphrase with libsecret. For example, when the user is asked for a passphrase via `pinentry-gnome3`, a checkbox is shown whether to save the passphrase using a password manager.
 
 ### GNOME on Wayland overrides SSH agent socket
 

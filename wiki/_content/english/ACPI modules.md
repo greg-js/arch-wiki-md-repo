@@ -1,3 +1,8 @@
+Related articles
+
+*   [acpid](/index.php/Acpid "Acpid")
+*   [DSDT](/index.php/DSDT "DSDT")
+
 From [ACPI site](http://www.acpi.info/):
 
 	*ACPI (Advanced Configuration and Power Interface) is an open industry specification co-developed by Hewlett-Packard, Intel, Microsoft, Phoenix, and Toshiba.*
@@ -112,22 +117,20 @@ If problems with power management persist despite having loaded the proper modul
 
 ### ACPI fix for notebooks
 
-Sometimes you see "ACPI: EC: input buffer is not empty, aborting transaction". This is a problem with ACPI, more specifically an incompatibility of the BIOS. There are four ways to solve this:
+Sometimes you see "ACPI: EC: input buffer is not empty, aborting transaction". This is a problem with ACPI, more specifically an incompatibility of the BIOS. There may be four ways to solve this issue:
 
-1\. Update your BIOS.
+*   If available, update the BIOS.
 
-2\. "Easy" Put `acpi=off` in the kernel line in your bootloader's configuration file, but that will kill all ACPI functionality like battery charging and power saving.
+*   Use `acpi=off` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), however this will kill all ACPI functionality like battery charging and power saving.
 
-3\. In some cases (such as [here](http://ubuntuforums.org/showthread.php?p=8030130#10)) the following has been reported to solve the issue. However, screen brightness may no longer be fully controllable.
+*   In some cases disabeling [DPMS](/index.php/DPMS "DPMS") has been reported to solve the issue [[1]](https://ubuntuforums.org/showthread.php?p=8030130#10). However, screen brightness may no longer be fully controllable:
 
 ```
 $ xset dpms force off
 
 ```
 
-4\. "Hard" build your kernel with patch [bugs.launchpad.net](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/578506).
-
-If notebook does not start, just remove the AC adapter and battery for 5 seconds and start without AC!
+*   Build a custom [kernel](/index.php/Kernel "Kernel") with patches of [bugs.launchpad.net](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/578506).
 
 ## See also
 

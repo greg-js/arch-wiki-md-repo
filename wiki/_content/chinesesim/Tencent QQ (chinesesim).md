@@ -296,6 +296,10 @@ $ winetricks riched20
 
 打开进程管理器，搜索tx、qq、tim等关键字，杀掉这些进程（如tim.exe、TXPlatform.exe、QQExternal.exe、QQProctect.exe等等）即可。 原因是退出tim后，某些相关进程仍然在后台运行。
 
+*   xfce4(xfwm4)下无法输入表情
+
+打开设置管理器-窗口管理器微调-焦点，取消勾选激活焦点防窃取和遵照标准的ICCCM焦点提示即可。 原因是表情窗口获取焦点时会发生不兼容现象。
+
 ### CrossOver TM2013
 
 关于 [CrossOver](/index.php/CrossOver "CrossOver") 版本的 TM2013 相关信息参见[此处](http://www.codeweavers.com/support/forums/general/?t=37;msg=151682)。除了更加稳定之外，和自行 Wine 的版本没有明显区别。

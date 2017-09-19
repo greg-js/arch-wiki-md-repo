@@ -133,7 +133,7 @@ For a brief history and feature comparison between the two, see [pip vs easy_ins
 
 If you must use *pip*, use a [virtual environment](#Virtual_environment) or with `pip install --user` to avoid conflicting with packages in `/usr`. It is always preferred to [use pacman to install software](/index.php/System_maintenance#Use_the_package_manager_to_install_software "System maintenance").
 
-**Note:** There are also tools integrating *pip* with *pacman* by automatically generating PKGBUILDs for specified pip-packages: [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/)
+**Note:** There are also tools integrating *pip* with *pacman* by automatically generating PKGBUILDs for specified pip-packages: [PyPI2PKGBUILD](https://github.com/anntzer/pypi2pkgbuild), [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/)
 
 ## Widget bindings
 

@@ -110,27 +110,24 @@ hosts = US East, US West, Japan, UK London, UK Southampton
 
 In order to use the NetworkManager applet to connect:
 
-```
-   - Right click the Network Manager icon in the system tray
-   - and click "Configure Network Connections..."
-   - then click "Add"
-   - choose "Import VPN..."
-   - browse to "/etc/openvpn/client/CA_Toronto.conf" or whichever configuration you would like to use
-   - then click "Open"
-   - Remove only the ":1198" from the "Gateway:" ( if present ) as only the domain name should be in this box
-   - for the "Username:" type in your "p1234567" username
-   - for the "Password:" type in the password that goes with your "p-xxxxx" username
-   - then click "Advanced..."
-   - set "Custom gateway port:" and set it to "1198"
-   - click on the "Security" tab
-   - set the "Cipher:" to "AES-128-CBC"
-   - set the "HMAC Authentication:" to "SHA-1"
-   - click "OK"
-   - click "OK" again
+1.  Right click the NetworkManager icon in the system tray
+2.  and click *Configure Network Connections...*
+3.  then click *Add*
+4.  choose *Import VPN...*
+5.  browse to `/etc/openvpn/client/CA_Toronto.conf` or whichever configuration you would like to use
+6.  then click *Open*
+7.  Remove only the `:1198` from the `Gateway:` (if present) as only the domain name should be in this box
+8.  for the `Username:` type in your `p1234567` username
+9.  for the `Password:` type in the password that goes with your `p-xxxxx` username
+10.  then click *Advanced...*
+11.  set `Custom gateway port:` and set it to `1198`
+12.  click on the *Security* tab
+13.  set the `Cipher:` to `AES-128-CBC`
+14.  set the `HMAC Authentication:` to `SHA-1`
+15.  click *OK*
+16.  click *OK* again
 
-```
-
-Concerning DNS Leaks (See: [python-pia/#13](https://github.com/flamusdiu/python-pia/issues/13)), Network Manager leak information due to how /etc/resolv.conf is setup. The script below is a work around posted by [@maximbaz](https://github.com/maximbaz) to work around the problem. You may need to [disable IPv6](/index.php/IPv6#Disable_IPv6 "IPv6") if you continue to get leaks.
+Concerning DNS Leaks (see [python-pia/#13](https://github.com/flamusdiu/python-pia/issues/13)), NetworkManager leaks information due to how `/etc/resolv.conf` is setup. The script below was posted by [@maximbaz](https://github.com/maximbaz) to work around the problem. You may need to [disable IPv6](/index.php/IPv6#Disable_IPv6 "IPv6") if you continue to get leaks.
 
  `/etc/NetworkManager/dispatcher.d/pia-vpn` 
 ```

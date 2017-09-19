@@ -1,3 +1,7 @@
+Related articles
+
+*   [USB storage devices](/index.php/USB_storage_devices "USB storage devices")
+
 [MTP](https://en.wikipedia.org/wiki/Media_Transfer_Protocol "wikipedia:Media Transfer Protocol"), or the *Media Transfer Protocol*, is a USB device class which is used by many mobile phones (all Windows Phone 7/8/10 devices, most newer Android devices) and media players (e.g. Creative Zen).
 
 ## Contents
@@ -16,7 +20,6 @@
     *   [2.8 gvfs-mtp](#gvfs-mtp)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 libmtp](#libmtp_2)
-        *   [3.1.1 Unable to enumerate USB device](#Unable_to_enumerate_USB_device)
     *   [3.2 jmtpfs](#jmtpfs_2)
         *   [3.2.1 Input/output error upon first access](#Input.2Foutput_error_upon_first_access)
     *   [3.3 kio-mtp](#kio-mtp)
@@ -266,34 +269,6 @@ The file managers with support for [gvfs](/index.php/Gvfs "Gvfs") will be able t
 ## Troubleshooting
 
 ### libmtp
-
-#### Unable to enumerate USB device
-
-If you see a message like this in system log (`journalctl`)
-
-```
- usb usb4-port2: unable to enumerate USB device
-
-```
-
-You can try following temporary [workaround](https://bbs.archlinux.org/viewtopic.php?pid=1087323#p1087323)
-
-```
- # modprobe -vr uhci_hcd
- # modprobe -va ohci_hcd
- # modprobe -va uhci_hcd
-
-```
-
-If it works you should create `/etc/modprobe.d/usb_hci_order.conf` with following content
-
-```
- # create a dependency on ohci for uhci, which fixes problems
- # with external usb devices not showing up
- #
- softdep uhci_hcd pre: ohci_hcd
-
-```
 
 ### jmtpfs
 

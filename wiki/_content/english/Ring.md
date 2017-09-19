@@ -25,9 +25,3 @@ $ ring.cx
 ```
 
 It will detect which client is installed (Gnome or KDE) and run it. The daemon is launched automatically by the clients.
-
-## Upgrading
-
-**Important note:** to upgrade, please make sure that you upgrade **all** dependencies from the AUR at the same time! Otherwise, things will certainly break (API/ABI change).
-
-That is, to upgrade ring-gnome-git or ring-kde-git, also upgrade libringclient-git, ring-daemon-git, and opendht-git.

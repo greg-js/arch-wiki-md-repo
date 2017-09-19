@@ -87,7 +87,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [6.6.5 Screen tearing with Nvidia](#Screen_tearing_with_Nvidia)
         *   [6.6.6 Plasma cursor sometimes shown incorrecty](#Plasma_cursor_sometimes_shown_incorrecty)
     *   [6.7 Sound problems under Plasma 5](#Sound_problems_under_Plasma_5)
-        *   [6.7.1 No sound after suspend in KDE](#No_sound_after_suspend_in_KDE)
+        *   [6.7.1 No sound after suspend](#No_sound_after_suspend)
         *   [6.7.2 ALSA related problems](#ALSA_related_problems)
             *   [6.7.2.1 "Falling back to default" messages when trying to listen to any sound](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound)
             *   [6.7.2.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
@@ -736,7 +736,7 @@ $ ln -s /usr/share/icons/breeze_cursors/cursors ~/.icons/default/cursors
 
 ### Sound problems under Plasma 5
 
-#### No sound after suspend in KDE
+#### No sound after suspend
 
 If there is no sound after suspending and if KMix doesn't show audio devices which should be there, restarting plasmeshell and pulseaudio may help:
 

@@ -5,7 +5,6 @@
 *   [1 Получение необходимых пакетов](#.D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D0.BE.D0.B1.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
 *   [2 Редактирование PKGBUILD](#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_PKGBUILD)
     *   [2.1 Изменение prepare()](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_prepare.28.29)
-        *   [2.1.1 Load existing .config](#Load_existing_.config)
     *   [2.2 Пересоздание контрольных сумм](#.D0.9F.D0.B5.D1.80.D0.B5.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BD.D1.82.D1.80.D0.BE.D0.BB.D1.8C.D0.BD.D1.8B.D1.85_.D1.81.D1.83.D0.BC.D0.BC)
 *   [3 Компиляция](#.D0.9A.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.86.D0.B8.D1.8F)
 *   [4 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
@@ -77,12 +76,6 @@ CONFIG_FOO=n
 ```
 
 **Важно:** У systemd есть несколько требований к конфигурации ядра для работы, некоторых вариантов использования (напр., UEFI) и для специфичной функциональности (напр., bootchart). Несоблюдение этих требований может привести к нестабильной работе или отказу системы. Список необходимых и рекомендуемых параметров вы можете найти в файле `/usr/share/doc/systemd/README`. Сверьтесь с ним перед компиляцией. Сами требования время от времени меняются, а изменения не анонсируются, так как Arch предполагает, что вы используете официальное ядро. Перед установкой новой версии systemd обратитесь к примечанию к релизу и убедитесь, что ваша конфигурация ядра соответствует требованиям.
-
-#### Load existing .config
-
-If you have already a kernel `.config` file, uncommenting one of the interactive config tools, such as `nconfig`, and loading your `.config` from there avoids any problems with kernel naming that may otherwise occur - except in the case of at least make menuconfig. See note.
-
-**Note:** If you uncomment and use 'make menuconfig' in prepare(), then use the menuconfig gui to load your existing config, you will run into problems with conflicting files in the end package. This is because you will overwrite the default config that PKGBUILD has modified to provide a unique install path, specifically the LOCALVERSION and LOCALVERSION_AUTO config options. To fix this, simply re-set LOCALVERSION to your custom kernel naming and LOCALVERSION_AUTO=n while still in menuconfig. For details, see [BBS#173504](https://bbs.archlinux.org/viewtopic.php?id=173504)
 
 ### Пересоздание контрольных сумм
 

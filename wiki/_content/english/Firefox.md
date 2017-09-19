@@ -278,14 +278,11 @@ Alternatively, having the traditional scroll cursor on middle-click (default beh
 
 ### Backspace does not work as the 'Back' button
 
-As per [Mozilla's community based (unnoficial) documentation](http://kb.mozillazine.org/Browser.backspace_action/),
+According to [mozillaZine](http://kb.mozillazine.org/Browser.backspace_action), the `Backspace` key was mapped based on which platform the browser was running on. As a compromise, this preference was created to allow the `Backspace` key to either go back/forward, scroll up/down a page, or do nothing.
 
-> <font color="grey">*"The backspace key was mapped (..)based on which platform the browser was running on. As a compromise, this preference was created to allow the backspace key to either go back/forward, scroll up/down a page, or do nothing."*</font>
-> — [http://kb.mozillazine.org/Browser.backspace_action/](http://kb.mozillazine.org/Browser.backspace_action/)
+To make `Backspace` behave like the back button type `about:config` in the address bar and search for the property `browser.backspace_action`, then set it to `0`.
 
-To make backspace behave like the back button type `about:config` in the address bar and search for the property `browser.backspace_action`, then set it to `0` (zero).
-
-You can also set the property `browser.backspace_action` to `1` (one) so the Backspace key will scroll up the page, whereas "Shift+Backspace" scrolls down. Setting this property to any other value will leave the key unmapped (Arch Linux defaults to `2` (two), in other words, it's unmapped by default).
+You can also set the property `browser.backspace_action` to `1` so the `Backspace` key will scroll up the page, whereas `Shift+Backspace` scrolls down. Setting this property to any other value will leave the key unmapped (Arch Linux defaults to `2`, in other words, it is unmapped by default).
 
 ### Firefox does not remember login information
 

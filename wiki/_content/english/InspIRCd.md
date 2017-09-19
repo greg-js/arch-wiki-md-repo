@@ -35,7 +35,7 @@ By default, InspIRCd loads no modules. As every feature outside of [RFC 1459](ht
 
 ```
 
-This will load the m_silence module (which provides the somewhat standard SILENCE list facility). You must restart the daemon for changes to take effect. A list of the available modules is available at the [InspIRCd modules](http://wiki.inspircd.org/modules) wiki page.
+This will load the m_silence module (which provides the somewhat standard SILENCE list facility). You must restart the daemon for changes to take effect. A list of the available modules is available at the [InspIRCd modules](https://wiki.inspircd.org/2.0/Modules) wiki page.
 
 ### Third-party modules
 

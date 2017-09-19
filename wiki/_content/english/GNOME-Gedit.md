@@ -1,3 +1,7 @@
+Related articles
+
+*   [GNOME](/index.php/GNOME "GNOME")
+
 ## Contents
 
 *   [1 Installing](#Installing)

@@ -6,11 +6,9 @@ This page deals with setting up Arch Linux on the Dell Vostro 3500 laptop.
 *   [2 CPU](#CPU)
     *   [2.1 Fan Control](#Fan_Control)
 *   [3 Network](#Network)
-    *   [3.1 Ethernet](#Ethernet)
-    *   [3.2 Wireless](#Wireless)
+    *   [3.1 Wireless](#Wireless)
 *   [4 Video](#Video)
-    *   [4.1 Intel card](#Intel_card)
-    *   [4.2 Nvidia card](#Nvidia_card)
+    *   [4.1 Nvidia card](#Nvidia_card)
 
 ## Installation notes
 
@@ -97,10 +95,6 @@ set config(3)	{{- 2}  70 128  70 128}
 
 ## Network
 
-### Ethernet
-
-Works out of the box. Just set up `dhcpd` daemon, plug and go.
-
 ### Wireless
 
 See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless")
@@ -110,8 +104,6 @@ See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless")
 **Note:** Configuration may vary depending on the purchase, your laptop may not have a dedicated graphics card at all
 
 This laptop comes with Optimus switchable graphics configuration. This is a muxless hybrid-graphics configuration without any BIOS setting to turn it off. That said, the main Xorg server will be running on the integrated card. To be able to use it, you will need [bumblebee](/index.php/Bumblebee "Bumblebee") or [ironhide](/index.php?title=Ironhide&action=edit&redlink=1 "Ironhide (page does not exist)") workarounds.
-
-### Intel card
 
 ### Nvidia card
 

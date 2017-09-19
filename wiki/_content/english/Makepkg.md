@@ -139,7 +139,7 @@ The options passed to a C/C++ compiler (e.g. [gcc](https://www.archlinux.org/pac
 GCC can automatically detect and enable safe architecture-specific optimizations. To use this feature, first remove any `-march` and `-mtune` flags, then add `-march=native`. For example,
 
 ```
-CFLAGS="-march=native -O2 -pipe -fstack-protector-strong"
+CFLAGS="-march=native -O2 -pipe -fstack-protector-strong -fno-plt"
 CXXFLAGS="${CFLAGS}"
 
 ```

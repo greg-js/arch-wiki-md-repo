@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [Nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-19，点击[这里](https://wiki.archlinux.org/index.php?title=Nvidia-xrun&diff=0&oldid=490779)可以查看翻译后英文页面的改动。
+
 [nvidia-xrun](https://github.com/Witko/nvidia-xrun)是一个实用的独立显卡与独立的NVIDIA图形完全性能。[bumblebee](/index.php/Bumblebee "Bumblebee")目前的状态提供了非常糟糕的表现，nvidia-xrun这个解决方案提供了一个更复杂的程序，拥有更好的GPU利用效率。
 
 ## Contents
@@ -80,25 +82,25 @@ EndSection
 *   在启动时载入bbswitch模块
 
 ```
- sudo echo 'bbswitch ' > /etc/modules-load.d/bbswitch
+ # echo 'bbswitch ' > /etc/modules-load.d/bbswitch
 
 ```
 
 *   关闭nvidia显卡的选项
 
 ```
- sudo echo 'options bbswitch load_state=0' > /etc/modprobe.d/bbswitch.conf 
+ # echo 'options bbswitch load_state=0' > /etc/modprobe.d/bbswitch.conf 
 
 ```
 
 *   将nvidia相关模块加入黑名单
 
 ```
- lsmod | grep nvidia | cut -d ' ' -f 1 > /tmp/nvidia
- lsmod | grep  nouveau | cut -d ' ' -f 1 > > /tmp/nvidia
- sort -n /tmp/nvidia | uniq >  /tmp/nvidia.conf#去重
- sed -i 's/^\w*$/blacklist &/g' /tmp/nvidia.conf  #添加blacklist
- sudo cp /tmp/nvidia.conf /etc/modprobe.d/nvidia.conf  #移动
+ $ lsmod | grep nvidia | cut -d ' ' -f 1 > /tmp/nvidia
+ $ lsmod | grep  nouveau | cut -d ' ' -f 1 > > /tmp/nvidia
+ $ sort -n /tmp/nvidia | uniq >  /tmp/nvidia.conf#去重
+ $ sed -i 's/^\w*$/blacklist &/g' /tmp/nvidia.conf  #添加blacklist
+ # cp /tmp/nvidia.conf /etc/modprobe.d/nvidia.conf  #移动
 
 ```
 
@@ -112,8 +114,8 @@ EndSection
 开关显卡可以使用bbswitch相关命令
 
 ```
- sudo tee /proc/acpi/bbswitch <<<OFF
- sudo tee /proc/acpi/bbswitch <<<ON
+ # tee /proc/acpi/bbswitch <<<OFF
+ # tee /proc/acpi/bbswitch <<<ON
 
 ```
 
@@ -121,11 +123,9 @@ EndSection
 
 ## 使用
 
-1\. 切换到tty
-
-2\. 登录
-
-3\. 运行`nvidia-xrun [app]`
+1.  切换到tty
+2.  登录
+3.  运行`nvidia-xrun [app]`
 
 ## 问题
 

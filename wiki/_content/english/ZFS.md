@@ -1,3 +1,9 @@
+Related articles
+
+*   [File systems](/index.php/File_systems "File systems")
+*   [Experimenting with ZFS](/index.php/Experimenting_with_ZFS "Experimenting with ZFS")
+*   [Installing Arch Linux on ZFS](/index.php/Installing_Arch_Linux_on_ZFS "Installing Arch Linux on ZFS")
+
 [ZFS](https://en.wikipedia.org/wiki/ZFS "wikipedia:ZFS") is an advanced filesystem created by [Sun Microsystems](https://en.wikipedia.org/wiki/Sun_Microsystems "wikipedia:Sun Microsystems") (now owned by Oracle) and released for OpenSolaris in November 2005\.
 
 Features of ZFS include: pooled storage (integrated volume management – zpool), [Copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write "wikipedia:Copy-on-write"), [snapshots](https://en.wikipedia.org/wiki/Snapshot_(computer_storage) "wikipedia:Snapshot (computer storage)"), data integrity verification and automatic repair (scrubbing), [RAID-Z](https://en.wikipedia.org/wiki/RAID-Z "wikipedia:RAID-Z"), a maximum [16 Exabyte](https://en.wikipedia.org/wiki/Exabyte "wikipedia:Exabyte") file size, and a maximum 256 Quadrillion [Zettabytes](https://en.wikipedia.org/wiki/Zettabyte "wikipedia:Zettabyte") storage with no limit on number of filesystems (datasets) or files[[1]](http://docs.oracle.com/cd/E19253-01/819-5461/zfsover-2/index.html). ZFS is licensed under the [Common Development and Distribution License](https://en.wikipedia.org/wiki/CDDL "wikipedia:CDDL") (CDDL).
@@ -104,7 +110,7 @@ Install [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) or [zfs-dkms-gi
 
 **Tip:** Add an `IgnorePkg` entry to [pacman.conf](/index.php/Pacman.conf "Pacman.conf") to prevent these packages from upgrading when doing a regular update.
 
-Note: Pacman does not take dependencies into consideration when rebuilding DKMS modules. This will result in build failures when pacman tries to rebuild DKMS modules after a kernel upgrade. See bug reports [FS#52901](https://bugs.archlinux.org/task/52901) and [FS#53669](https://bugs.archlinux.org/task/53669).
+**Note:** Pacman does not take dependencies into consideration when rebuilding DKMS modules. This will result in build failures when pacman tries to rebuild DKMS modules after a kernel upgrade. See bug report [FS#52901](https://bugs.archlinux.org/task/52901) for details. The [dkms-sorted](https://aur.archlinux.org/packages/dkms-sorted/) package adds experimental support for such dependencies; technically, it is a drop-in replacement for the `dkms` package. The most convenient way to try out dkms-sorted is to install it *before* you install any DKMS modules.
 
 ## Experimenting with ZFS
 

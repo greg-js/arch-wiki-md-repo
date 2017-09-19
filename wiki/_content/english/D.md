@@ -7,9 +7,8 @@ From [Wikipedia:D (programming language)](https://en.wikipedia.org/wiki/D_(progr
 *   [1 Installation](#Installation)
 *   [2 Testing the installation](#Testing_the_installation)
 *   [3 Considerations](#Considerations)
-*   [4 hardening-wrapper](#hardening-wrapper)
-*   [5 Useful libraries and bindings](#Useful_libraries_and_bindings)
-*   [6 See Also](#See_Also)
+*   [4 Useful libraries and bindings](#Useful_libraries_and_bindings)
+*   [5 See Also](#See_Also)
 
 ## Installation
 
@@ -57,58 +56,6 @@ which will simply compile and run without leaving any object files in the direct
 There are however possible choices regarding the compiler you choose. The standard (reference one) is dmd, but [gdc](https://aur.archlinux.org/packages/gdc/) (GNU D Compiler) and [ldc](https://www.archlinux.org/packages/?name=ldc) (LLVM D Compiler) are also popular. Those are also in [community].
 
 As of April 2017 [dmd's backend is now FOSS](https://github.com/dlang/dmd/pull/6680) (Boost-licensed). All 3 compilers share same front-end code and thus have almost identical support for language features (assuming same front-end version).
-
-## hardening-wrapper
-
-In Arch Linux [dmd](https://www.archlinux.org/packages/?name=dmd) and [libphobos](https://www.archlinux.org/packages/?name=libphobos) packages are built without PIC support. Using [hardening-wrapper](https://www.archlinux.org/packages/?name=hardening-wrapper) forces building executables with PIC support which results in:
-
-```
-dmd app.d
-/usr/bin/ld: app.o: relocation R_X86_64_32 against  `__dmd_personality_v0' can not be used when making a shared object;  recompile with -fPIC
-app.o: error adding symbols: Bad value
-collect2: error: ld returned 1 exit status
---- errorlevel 1
-
-```
-
-There are few possible workarounds:
-
-*   uninstall [hardening-wrapper](https://www.archlinux.org/packages/?name=hardening-wrapper)
-*   use [gdc](https://aur.archlinux.org/packages/gdc/) compiler which is compiled with PIC support
-
-```
-gdc app.d 
-
-```
-
-or for [dub](https://aur.archlinux.org/packages/dub/)
-
-```
-dub --compiler=gdc
-
-```
-
-*   recompile [dmd](https://www.archlinux.org/packages/?name=dmd) and [libphobos](https://www.archlinux.org/packages/?name=libphobos) with -fPIC flags using [abs](/index.php/Abs "Abs") or manually
-*   use clang linker
-
-```
-CC=/usr/bin/clang dmd app.d
-
-```
-
-if using dub
-
-```
-CC=/usr/bin/clang dub
-
-```
-
-more information
-
-*   [https://issues.dlang.org/show_bug.cgi?id=15054](https://issues.dlang.org/show_bug.cgi?id=15054)
-*   [FS#34983](https://bugs.archlinux.org/task/34983)
-*   [FS#46260](https://bugs.archlinux.org/task/46260)
-*   [http://wiki.dlang.org/Installing_LDC_on_Gentoo#Hardened_Gentoo](http://wiki.dlang.org/Installing_LDC_on_Gentoo#Hardened_Gentoo)
 
 ## Useful libraries and bindings
 
