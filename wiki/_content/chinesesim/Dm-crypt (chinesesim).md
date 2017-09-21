@@ -1,3 +1,8 @@
+相关文章
+
+*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
+*   [Removing System Encryption](/index.php/Removing_System_Encryption "Removing System Encryption")
+
 **翻译状态：** 本文是英文页面 [Dm-crypt](/index.php/Dm-crypt "Dm-crypt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-12-30，点击[这里](https://wiki.archlinux.org/index.php?title=Dm-crypt&diff=0&oldid=290892)可以查看翻译后英文页面的改动。
 
 This article focuses on how to set up encryption on Arch Linux using *dm-crypt*, which is the standard device-mapper encryption functionality provided by the Linux kernel.

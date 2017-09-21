@@ -1,3 +1,10 @@
+Related articles
+
+*   [TeX Live FAQ](/index.php/TeX_Live_FAQ "TeX Live FAQ")
+*   [TeX Live and CJK](/index.php/TeX_Live_and_CJK "TeX Live and CJK")
+*   [Ooolatex](/index.php/Ooolatex "Ooolatex")
+*   [List of applications/Documents#Scientific_documents](/index.php/List_of_applications/Documents#Scientific_documents "List of applications/Documents")
+
 [TeX Live](https://www.tug.org/texlive/) is an "easy way to get up and running with the [TeX](https://en.wikipedia.org/wiki/TeX "wikipedia:TeX") document production system. It provides a comprehensive TeX system with binaries for most flavors of Unix, including GNU/Linux, and also Windows. It includes all the major TeX-related programs, macro packages, and fonts that are free software, including support for many languages around the world."
 
 TeX Live is one of the most popular distributions for [LaTeX](https://en.wikipedia.org/wiki/LaTeX "wikipedia:LaTeX"), [ConTeXt](https://en.wikipedia.org/wiki/ConTeXt "wikipedia:ConTeXt") and friends.
@@ -59,7 +66,7 @@ You will probably want a [TeX editor](/index.php/List_of_applications/Documents#
 
 *   The ConTeXt formats (for MKII and MKIV) are not automatically generated upon installation. See [the ConTeXT wiki](http://wiki.contextgarden.net) for instructions on how to do this.
 
-*   The packages containing the documentation and sources are **no longer available** in official repositories. You can locally build them with [tllocalmgr](#TeXLive_Local_Manager). You can also consult documentation online at [https://tug.org/texlive/Contents/live/doc.html](https://tug.org/texlive/Contents/live/doc.html) or on CTAN. Another possibility is using the online documentation at `http://texdoc.net/pkg/packagename` which resolves to the relevant pdf for `packagename`, similar to the command line tool `texdoc` (which is useless without locally installed documentation).
+*   The packages containing the documentation and sources are **no longer available** in official repositories. You can locally build them with [tllocalmgr](#TeXLive_Local_Manager). You can also consult documentation online at [https://tug.org/texlive/Contents/live/doc.html](https://tug.org/texlive/Contents/live/doc.html) or on CTAN. Another possibility is using the online documentation at `http://texdoc.net/pkg/packagename` which resolves to the relevant pdf for `packagename`, similar to the command line tool `texdoc` (which is useless without locally installed documentation). The documentation is now contained in [texlive-most-doc](https://aur.archlinux.org/packages/texlive-most-doc/).
 
 *   TeX Live (upstream) now provides a tool for incremental updates of CTAN packages. On that basis, we also plan to update our packages on a regular basis (we have written tools that almost automate that task).
 

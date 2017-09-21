@@ -158,7 +158,7 @@ On kernel 3.17, max value seems to be 187
 
 ### Ambient Light Sensor (ALS)
 
-The included Ambient Light Sensor can be accessed using the [als-driver-git](https://aur.archlinux.org/packages/als-driver-git/) kernel module. There is also a userspace program [als-controller-git](https://aur.archlinux.org/packages/als-controller-git/), which has the purpose of automatically adjusting the keyboard and screen backlight. Usage of the Ambient Light Sensor is described in more detail on the wiki page for the [ASUS Zenbook Prime UX31A](/index.php/ASUS_Zenbook_Prime_UX31A "ASUS Zenbook Prime UX31A").
+The included Ambient Light Sensor can be accessed using the [als-dkms](https://aur.archlinux.org/packages/als-dkms/) kernel module. There is also a userspace program [als-controller](https://aur.archlinux.org/packages/als-controller/), which has the purpose of automatically adjusting the keyboard and screen backlight. Usage of the Ambient Light Sensor is described in more detail on the wiki page for the [ASUS Zenbook Prime UX31A](/index.php/ASUS_Zenbook_Prime_UX31A "ASUS Zenbook Prime UX31A").
 
 Note that the userspace program currently does not work correctly on the UX303 as the reported brightness values differ from the Zenbook Prime.
 

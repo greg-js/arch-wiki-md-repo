@@ -3,7 +3,7 @@ Related articles
 *   [Window manager](/index.php/Window_manager "Window manager")
 *   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
 
-*bspwm* is a tiling window manager that represents windows as the leaves of a full binary tree. It has support for [EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) and multiple monitors, and is configured and controlled through messages.
+**bspwm** is a tiling window manager that represents windows as the leaves of a full binary tree. It has support for [EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) and multiple monitors, and is configured and controlled through messages.
 
 ## Contents
 
@@ -275,4 +275,3 @@ Either you try to use the same key twice, or you start sxhkd twice. Check bspwmr
 *   [https://bbs.archlinux.org/viewtopic.php?id=149444](https://bbs.archlinux.org/viewtopic.php?id=149444) - Arch BBS thread
 *   [https://github.com/baskerville/bspwm](https://github.com/baskerville/bspwm) - GitHub project
 *   [https://github.com/windelicato/dotfiles/wiki/bspwm-for-dummies](https://github.com/windelicato/dotfiles/wiki/bspwm-for-dummies) - earsplit's "bspwm for dummies"
-*   [https://github.com/smlb/dotfiles/wiki/Bspwm](https://github.com/smlb/dotfiles/wiki/Bspwm) - smlb's wiki

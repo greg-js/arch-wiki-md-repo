@@ -81,6 +81,13 @@ $ mysql --user ttrss --password=<PASSWORD> ttrss < /usr/share/webapps/tt-rss/sch
 
 ```
 
+With PostgreSQL run:
+
+```
+$ psql ttrss -U ttrss -f /usr/share/webapps/tt-rss/schema/ttrss_schema_pgsql.sql
+
+```
+
 ### Set up an update daemon
 
 See [https://tt-rss.org/gitlab/fox/tt-rss/wikis/UpdatingFeeds](https://tt-rss.org/gitlab/fox/tt-rss/wikis/UpdatingFeeds) – but you should be able to simply

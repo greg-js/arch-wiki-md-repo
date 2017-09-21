@@ -57,7 +57,7 @@ Judd Vinet, a Canadian programmer and occasional guitarist, began developing Arc
 
 ### The middle years
 
-The early Arch community grew steadily, as evidenced by [this chart of forum posts, users, and bug reports](https://dev.archlinux.org/~dan/archstats.svg). Moreover, it was from its early days known as [an open, friendly, and helpful community](http://www.osnews.com/story/4827).
+The early Arch community grew steadily, as evidenced by [this chart of forum posts, users, and bug reports](/images/8/8d/Archstats2002-2011.png "Archstats2002-2011.png"). Moreover, it was from its early days known as [an open, friendly, and helpful community](http://www.osnews.com/story/4827).
 
 ### Birth of the ArchWiki
 

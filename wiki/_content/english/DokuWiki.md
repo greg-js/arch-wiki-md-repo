@@ -12,6 +12,7 @@ In other words, DokuWiki is a wiki written in PHP and requires no database.
     *   [3.1 Apache](#Apache)
     *   [3.2 lighttpd](#lighttpd)
     *   [3.3 nginx](#nginx)
+    *   [3.4 Enable upload and displaying of SVG files](#Enable_upload_and_displaying_of_SVG_files)
 *   [4 Post installation](#Post_installation)
     *   [4.1 Cleaning up](#Cleaning_up)
     *   [4.2 Installing plugins](#Installing_plugins)
@@ -201,6 +202,20 @@ Restart nginx
  # systemctl restart nginx
 
 ```
+
+### Enable upload and displaying of SVG files
+
+DokuWiki supports SVG files but has them disabled by default.
+
+If you wish to enable them, create the following file:
+
+ `/etc/webapps/dokuwiki/mime.local.conf` 
+```
+svg image/svg+xml
+
+```
+
+This has security implications - [see here](https://github.com/splitbrain/dokuwiki/issues/1045#issuecomment-90226230)
 
 ## Post installation
 

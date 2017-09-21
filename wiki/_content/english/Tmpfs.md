@@ -35,7 +35,7 @@ To specify a more secure mounting, specify the following mount option:
 
  `/etc/fstab`  `tmpfs   /www/cache    tmpfs  rw,size=1G,nr_inodes=5k,noexec,nodev,nosuid,uid=*user*,gid=*group*,mode=1700 0 0` 
 
-See the `mount` man page and [#Security#File systems](#Security.23File_systems) for more information.
+See the `mount` man page and [Security#File systems](/index.php/Security#File_systems "Security") for more information.
 
 Reboot for the changes to take effect. Note that although it may be tempting to simply run `mount -a` to make the changes effective immediately, this will make any files currently residing in these directories inaccessible (this is especially problematic for running programs with lockfiles, for example). However, if all of them are empty, it should be safe to run `mount -a` instead of rebooting (or mount them individually).
 

@@ -180,6 +180,8 @@ Depending on which [webserver](/index.php/Webserver "Webserver") you are using, 
 
 #### Apache
 
+If you haven't already, install [Apache](/index.php/Apache "Apache") and install and enable [Apache's PHP module](/index.php/Apache#PHP "Apache")
+
 Copy the Apache configuration file to the configuration directory:
 
 ```

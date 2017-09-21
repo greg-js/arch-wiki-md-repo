@@ -2,9 +2,12 @@
 
 *   [1 About](#About)
 *   [2 Template (Package list)](#Template_.28Package_list.29)
+    *   [2.1 Candidates](#Candidates)
+    *   [2.2 Possible reasons](#Possible_reasons)
 *   [3 Template (TU)](#Template_.28TU.29)
     *   [3.1 Packages to Remove](#Packages_to_Remove)
     *   [3.2 Packages to Keep](#Packages_to_Keep)
+    *   [3.3 Possible reasons](#Possible_reasons_2)
 *   [4 Remove from Filesystem](#Remove_from_Filesystem)
 *   [5 See also](#See_also)
 
@@ -25,15 +28,38 @@ Join [#archlinux-aur](/index.php/IRC_channel "IRC channel") to collaborate and c
 
 ## Template (Package list)
 
-**Add new packages here** - check for the package in the sorted lists below before adding
+### Candidates
+
+Check for the package in the sorted lists below before adding.
 
 *   [packagename](https://aur.archlinux.org/packages.php?ID=NNN) - reason
 
 <--informative separator-->
 
-*   [packagename](https://aur.archlinux.org/packages.php?ID=NNN) - reason
+*   [a2jmidid-git](https://aur.archlinux.org/packages/a2jmidid-git/) - [a2midid](https://www.archlinux.org/packages/?name=a2midid) is available and seems to be newer than the last commit in git. Old and unmaintained developmental (cvs/svn/etc) package (last commit from 2013-11-26, upstream URL is dead, note: manually git-clones repo instad of using the source list.)
+*   [abook-git](https://aur.archlinux.org/packages/abook-git/) - error: access denied or repository not exported” for the repo specified in PKGBUILD
+*   [attic](https://aur.archlinux.org/packages/attic/) - Project dead, see [borg](https://aur.archlinux.org/packages/borg/) fork
 
-Possible reasons:
+<--[Obsoleted by --assumed-installed](https://lists.archlinux.org/pipermail/aur-requests/2017-June/017483.html)-->
+
+*   [akonadi-fake](https://aur.archlinux.org/packages/akonadi-fake/)
+*   [asciidoc-fake](https://aur.archlinux.org/packages/asciidoc-fake/)
+*   [kalzium-fake](https://aur.archlinux.org/packages/kalzium-fake/)
+*   [openbabel-fake](https://aur.archlinux.org/packages/openbabel-fake/)
+*   [texinfo-fake](https://aur.archlinux.org/packages/texinfo-fake/)
+*   [xterm-fake](https://aur.archlinux.org/packages/xterm-fake/)
+
+<--Orphaned & out-of-date from before 2016-->
+
+*   Up to page 10 [https://aur.archlinux.org/packages/?O=0&SeB=nd&K=&outdated=on&SB=l&SO=a&PP=50&do_Orphans=Orphans](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=&outdated=on&SB=l&SO=a&PP=50&do_Orphans=Orphans)
+
+<--Should be renamed-->
+
+*   [python-sphinx](https://www.archlinux.org/packages/?name=python-sphinx) to sphinx - [python- packages are libraries](https://wiki.archlinux.org/index.php/Python_package_guidelines#Package_naming), which this is not
+*   [python-vint](https://aur.archlinux.org/packages/python-vint/) to vint - ^
+*   [firefox-extension- packages](https://aur.archlinux.org/packages/?O=0&K=firefox-extension) to firefox- - Uniformity with the [repo](https://www.archlinux.org/groups/any/firefox-addons/) and the others in the AUR
+
+### Possible reasons
 
 *   doesn't work anymore
 *   deprecated by [packagename](https://aur.archlinux.org/packages.php?ID=NNNN)
@@ -77,7 +103,7 @@ In community:
 
 *   [packagename](https://aur.archlinux.org/packages.php?ID=NNNN) - reason
 
-Possible reasons:
+### Possible reasons
 
 *   It is for compiling old stuff, lets keep it, does not harm
 *   Seems to be actively maintained

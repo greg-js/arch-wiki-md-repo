@@ -15,7 +15,7 @@ Related articles
     *   [2.2 Key bindings - input.conf](#Key_bindings_-_input.conf)
     *   [2.3 Additional configuration files](#Additional_configuration_files)
 *   [3 Scripts](#Scripts)
-    *   [3.1 Javascript](#Javascript)
+    *   [3.1 JavaScript](#JavaScript)
     *   [3.2 Lua](#Lua)
         *   [3.2.1 mpv-stats](#mpv-stats)
         *   [3.2.2 mpv-webm](#mpv-webm)
@@ -198,17 +198,19 @@ In addition there are a few more configuration files one can create:
 
 ## Scripts
 
-*mpv* has a [large variety of scripts](https://github.com/mpv-player/mpv/wiki/User-Scripts) that extend the functionality of the player. To this end it has internal bindings for both Lua and Javascript (added recently).
+*mpv* has a [large variety of scripts](https://github.com/mpv-player/mpv/wiki/User-Scripts) that extend the functionality of the player. To this end, it has internal bindings for both Lua and JavaScript (added recently).
 
-Scripts are typically installed by simply putting them into the `~/.config/mpv/scripts/` directory (you may have to create it first), after that they will be automatically loaded when mpv starts (this behavior can be altered with other mpv options). Some scripts come with their own installation and configuration instructions so make sure to have a look. In addition some scripts are old, broken, and unmaintained.
+Scripts are typically installed by putting them in the `~/.config/mpv/scripts/` directory (you may have to create it first). After that they will be automatically loaded when mpv starts (this behavior can be altered with other mpv options). Some scripts come with their own installation and configuration instructions, so make sure to have a look. In addition some scripts are old, broken, and unmaintained.
 
-### Javascript
+### JavaScript
 
-Since Javascript support is still fairly new there is currently very little in the way of scripts but [documentation exists](https://mpv.io/manual/master/#javascript) for anyone interested in making their own.
+Since JavaScript support is still fairly new, there is currently very little in the way of scripts, but [documentation exists](https://mpv.io/manual/master/#javascript) for anyone interested in making their own.
+
+JavaScript support isn't currently available in the [mpv](https://www.archlinux.org/packages/?name=mpv) build, but is supported by several AUR packages, including [mpv-full](https://aur.archlinux.org/packages/mpv-full/) and [mpv-build-git](https://aur.archlinux.org/packages/mpv-build-git/).
 
 ### Lua
 
-There are a lot of interesting Lua scripts for mpv. If you would like to make your own the relevant documentation may be found [here](https://github.com/mpv-player/mpv/blob/master/DOCS/man/lua.rst).
+There are a lot of interesting Lua scripts for mpv. If you would like to make your own, the relevant documentation may be found [here](https://github.com/mpv-player/mpv/blob/master/DOCS/man/lua.rst).
 
 #### mpv-stats
 
@@ -216,7 +218,7 @@ There are a lot of interesting Lua scripts for mpv. If you would like to make yo
 
 #### mpv-webm
 
-[mpv-webm](https://github.com/ElegantMonkey/mpv-webm) (or simply *webm*) is a very easy to use Lua script that allows one to create webm's while watching videos. It includes several features and does not have any extra dependencies (relies entirely on mpv).
+[mpv-webm](https://github.com/ElegantMonkey/mpv-webm) (or simply *webm*) is a very easy to use Lua script that allows one to create WebM files while watching videos. It includes several features and does not have any extra dependencies (relies entirely on mpv).
 
 ## Vapoursynth
 

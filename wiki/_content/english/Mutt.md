@@ -88,6 +88,7 @@ This article covers using both native IMAP sending and retrieval, and a setup de
     *   [4.4 Error sending message, child exited 127 (Exec error.).](#Error_sending_message.2C_child_exited_127_.28Exec_error..29.)
     *   [4.5 Character encoding problems](#Character_encoding_problems)
     *   [4.6 Unable to login with GMail](#Unable_to_login_with_GMail)
+    *   [4.7 Not possible to open too long URLs with urlview](#Not_possible_to_open_too_long_URLs_with_urlview)
 *   [5 Documentation](#Documentation)
 *   [6 See also](#See_also)
 
@@ -1305,6 +1306,26 @@ text/html; w3m -dump -I $(echo %{charset} | sed s/gb2312/gbk/I) %s; nametempla
 ### Unable to login with GMail
 
 Gmail disables access from apps it considers less secure, including `mutt`. You can enable access by following the instructions [here](https://support.google.com/accounts/answer/6010255)
+
+### Not possible to open too long URLs with urlview
+
+Too long URLs are not parsed correctly, because urlview does not decode text (see [https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=127090](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=127090)). You can let mutt decode the e-mails instead. Replace the line for opening urlview with the following code:
+
+```
+macro index \cb "\
+:set my_tmp_pipe_decode=\$pipe_decode
+\
+:set pipe_decode
+\
+|urlview
+\
+:set pipe_decode=\$my_tmp_pipe_decode
+\
+:unset my_tmp_pipe_decode
+" \
+'call urlview to extract URLs out of a message'
+
+```
 
 ## Documentation
 

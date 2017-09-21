@@ -129,3 +129,4 @@ To have qutebrowser handle sessions more like in [dwb](/index.php/Dwb "Dwb") wit
 *   [Github repository](https://github.com/qutebrowser/qutebrowser)
 *   [Homepage](http://qutebrowser.org/)
 *   [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=191076)
+*   [New config example](https://bitbucket.org/jasonwryan/shiv/src/tip/.config/qutebrowser/config.py)

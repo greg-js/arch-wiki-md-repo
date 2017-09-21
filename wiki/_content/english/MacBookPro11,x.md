@@ -1,3 +1,10 @@
+Related articles
+
+*   [Installation guide](/index.php/Installation_guide "Installation guide")
+*   [General recommendations](/index.php/General_recommendations "General recommendations")
+*   [MacBookPro10,x](/index.php/MacBookPro10,x "MacBookPro10,x")
+*   [Mac](/index.php/Mac "Mac")
+
 The MacBook Pro 11,x consists of models with Retina display shipped by Apple In Late 2013 and Mid 2014\. Like its predecessors, it is based on Intel chipset, although some manual configuration might be required in specific cases in order to deal with Apple-related features.
 
 Like previous MacBook models, the MacBook Pro 11,x supports UEFI. This page will cover the current status of hardware support on Arch Linux, as well as post-installation recommendations.
@@ -104,6 +111,8 @@ $ cd broadcom-wl
 $ makepkg -s
 
 ```
+
+**Note:** For older MacBooks the linked chipset will not work. Instead, use [https://aur.archlinux.org/packages/b43-firmware/](https://aur.archlinux.org/packages/b43-firmware/) by cloning the repository and then following the instructions above. You will then also need to use `modprobe b43` instead of `modprobe wl` in the steps below.
 
 This will give you a package (`broadcom-wl-*.pkg.tar.xz`) which can be installed using [pacman](/index.php/Pacman "Pacman"). Put this package on a USB drive, mount it, and install the package using:
 

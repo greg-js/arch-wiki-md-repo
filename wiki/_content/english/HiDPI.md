@@ -99,7 +99,7 @@ Note also that DPI in the above example is expressed in 1024ths of an inch.
 
 ### KDE
 
-KDE plasma 5 provides excellent support for HiDPI screens out of the box. You can set the correct DPI by [#Using KDE system settings](#Using_KDE_system_settings). Alternatives are to use [SDDM#DPI settings](/index.php/SDDM#DPI_settings "SDDM") or the [#X Server](#X_Server) (currently not working). However, it seems that Gtk+ applications ignore both SDDM and X settings. You can fix this by creating a custom login session as follows:
+KDE plasma 5 provides excellent support for HiDPI screens out of the box. You can set the correct DPI by [#Using KDE system settings](#Using_KDE_system_settings). Alternatives are to use [SDDM#DPI settings](/index.php/SDDM#DPI_settings "SDDM") or the [#X Server](#X_Server) (~~currently not working~~ seems to be working for 5.10.5). However, it seems that Gtk+ applications ignore both SDDM and X settings. You can fix this by creating a custom login session as follows:
 
 ```
 # cp /usr/share/xsessions/plasma.desktop /usr/share/xsessions/plasma-custom.desktop
@@ -414,7 +414,7 @@ The HiDPI setting applies to the whole desktop, so non-HiDPI external displays s
 
 ### Side display
 
-One workaround is to using [xrandr](/index.php/Xrandr "Xrandr")'s scale option. To have a non-HiDPI monitor (on DP1) right of an internal HiDPI display (eDP1), one could run:
+One workaround is to use [xrandr](/index.php/Xrandr "Xrandr")'s scale option. To have a non-HiDPI monitor (on DP1) right of an internal HiDPI display (eDP1), one could run:
 
 ```
 xrandr --output eDP-1 --auto --output DP-1 --auto --scale 2x2 --right-of eDP-1

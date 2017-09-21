@@ -35,7 +35,7 @@
 
 **警告:** dnsmasq 默认启用其 DNS 服务器。如果不需要，必须明确地将其 DNS 端口设置为 `0` 禁用它： `/etc/dnsmasq.conf`  `port=0` 
 
-**提示:** 查看配置文件语法是否正确，可执行下列命令：
+**提示：** 查看配置文件语法是否正确，可执行下列命令：
 ```
 $ dnsmasq --test
 
@@ -82,7 +82,7 @@ nameserver 127.0.0.1
 
 ```
 
-现在，DNS查询将首先解析dnsmasq，只检查外部的服务器如果DNSMasq无法解析查询. [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), 不幸的是，往往默认覆盖 `/etc/resolv.conf`, 所以如果你使用DHCP，这是一个好主意来保护 `/etc/resolv.conf`,要做到这一点，追加 `nohook resolv.conf`到dhcpcd的配置文件：
+现在，DNS查询将首先解析dnsmasq，只检查外部的服务器如果DNSMasq无法解析查询. [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), 不幸的是，往往默认覆盖 `/etc/resolv.conf`, 所以如果你使用DHCP，这里有一个好主意来保护 `/etc/resolv.conf`,要做到这一点，追加 `nohook resolv.conf`到dhcpcd的配置文件：
 
  `/etc/dhcpcd.conf` 
 ```
@@ -155,7 +155,7 @@ dns=dnsmasq
 
 *dnsmasq* 被 `NetworkManager` 启动后，此目录下配置文件中的配置将取代默认配置。
 
-**提示:** 这种方法可以让你启用特定域名的自定义DNS设置。例如: `server=/example1.com/exemple2.com/xx.xxx.xxx.x` 改变第一个DNS地址，浏览以下网站`example1.com, example2.com`使用`xx.xxx.xxx.xx`。This method is preferred to a global DNS configuration when using particular DNS nameservers which lack of speed, stability, privacy and security.
+**提示：** 这种方法可以让你启用特定域名的自定义DNS设置。例如: `server=/example1.com/exemple2.com/xx.xxx.xxx.x` 改变第一个DNS地址，浏览以下网站`example1.com, example2.com`使用`xx.xxx.xxx.xx`。This method is preferred to a global DNS configuration when using particular DNS nameservers which lack of speed, stability, privacy and security.
 
 #### IPv6
 

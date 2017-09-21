@@ -14,19 +14,20 @@ This is a listing of Linux distributions which are [derived](/index.php/Develope
 
 *   [1 Active](#Active)
 *   [2 Inactive](#Inactive)
-    *   [2.1 2016](#2016)
-    *   [2.2 2015](#2015)
-    *   [2.3 2014](#2014)
-    *   [2.4 2013](#2013)
-    *   [2.5 2012](#2012)
-    *   [2.6 2011](#2011)
-    *   [2.7 2010](#2010)
-    *   [2.8 2009](#2009)
-    *   [2.9 2008](#2008)
-    *   [2.10 2007](#2007)
-    *   [2.11 2006](#2006)
-    *   [2.12 2005](#2005)
-    *   [2.13 2004](#2004)
+    *   [2.1 2017](#2017)
+    *   [2.2 2016](#2016)
+    *   [2.3 2015](#2015)
+    *   [2.4 2014](#2014)
+    *   [2.5 2013](#2013)
+    *   [2.6 2012](#2012)
+    *   [2.7 2011](#2011)
+    *   [2.8 2010](#2010)
+    *   [2.9 2009](#2009)
+    *   [2.10 2008](#2008)
+    *   [2.11 2007](#2007)
+    *   [2.12 2006](#2006)
+    *   [2.13 2005](#2005)
+    *   [2.14 2004](#2004)
 
 ## Active
 
@@ -51,7 +52,6 @@ This is a listing of Linux distributions which are [derived](/index.php/Develope
 *   [MSYS2](https://sourceforge.net/projects/msys2/)
 *   [Netrunner](https://sourceforge.net/projects/netrunneros/)
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
-*   [Nurunner Linux](https://nurunner.org/)
 *   [PacBSD](https://www.pacbsd.org/)
 *   [Parabola GNU/Linux-libre](https://www.parabola.nu/)
 *   [Velt OS](https://velt.io)
@@ -61,6 +61,10 @@ This is a listing of Linux distributions which are [derived](/index.php/Develope
 ## Inactive
 
 These distributions are no longer developed, but show some of the history surrounding Arch Linux and the greater FOSS community. Sections show the year of the latest release.
+
+### 2017
+
+*   [Nurunner Linux](https://nurunner.org/)
 
 ### 2016
 

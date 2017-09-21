@@ -28,6 +28,7 @@ Asus Zenbook UX430 comes in 2 versions - UX430UA and UX430UQ. The only differenc
     *   [2.1 Headphones audio is too low](#Headphones_audio_is_too_low)
     *   [2.2 Fan spins all the time](#Fan_spins_all_the_time)
     *   [2.3 Microcode](#Microcode)
+    *   [2.4 Nvidia issues with Bumblebee](#Nvidia_issues_with_Bumblebee)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Power saving and performance](#Power_saving_and_performance)
     *   [3.2 Extract Windows 10 license key](#Extract_Windows_10_license_key)
@@ -61,8 +62,8 @@ In order to fix it, install [hda-verb](https://aur.archlinux.org/packages/hda-ve
  `/usr/local/bin/fix_headphones_audio.sh` 
 ```
 #!/bin/sh
-hda-verb /dev/snd/hwC0D0 0x20 SET_COEF_INDEX 0x67
-hda-verb /dev/snd/hwC0D0 0x20 SET_PROC_COEF 0x3000
+/usr/bin/hda-verb /dev/snd/hwC0D0 0x20 SET_COEF_INDEX 0x67
+/usr/bin/hda-verb /dev/snd/hwC0D0 0x20 SET_PROC_COEF 0x3000
 
 ```
 
@@ -72,14 +73,14 @@ Then create a [systemd](/index.php/Systemd "Systemd") script with the following 
 ```
 [Unit]
 Description=Fix headphones audio after boot & resume.
-After=multi-user.target suspend.target hibernate.target
+After=dev-snd-hwC0D0.device suspend.target hibernate.target
 
 [Service]
 Type=oneshot
 ExecStart=/bin/sh '/usr/local/bin/fix_headphones_audio.sh'
 
 [Install]
-WantedBy=multi-user.target suspend.target hibernate.target
+WantedBy=dev-sdn-hwC0D0.device suspend.target hibernate.target
 
 ```
 
@@ -92,6 +93,13 @@ See [Fan_speed_control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed contro
 ## Microcode
 
 During boot you might get message `[Firmware Bug]: TSC_DEADLINE disabled due to Errata; please update microcode to version: 0x52 (or later)`. See [Microcode](/index.php/Microcode "Microcode") to resolve it.
+
+## Nvidia issues with Bumblebee
+
+It is likelly that it's one of these issues:
+
+*   You used power management application (especially [Powertop](/index.php/Powertop "Powertop")). See [bumblebee#Broken_power_management_with_kernel_4.8](/index.php/Bumblebee#Broken_power_management_with_kernel_4.8 "Bumblebee") for more information.
+*   You suspended your laptop and resumed - unable to start GPU. The only fix seems to be full reboot in order to get it working back.
 
 # Tips and tricks
 
@@ -115,3 +123,5 @@ The laptop comes with Windows 10 preinstalled and the activation key is hardcode
 # grep -aPo '[A-Z\d-]{29}' /sys/firmware/acpi/tables/MSDM
 
 ```
+
+**Note:** Microsoft online support confirmed that the code is valid, but because you are unable to activate it (Windows fails to activate and asks for another code), they offered 2 options - replace code with another one for 40$ or contact OEM (Asus) about this issue and try to sort this out.

@@ -20,6 +20,7 @@ Related articles
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 General](#General)
     *   [5.2 PulseAudio](#PulseAudio)
+    *   [5.3 Hidepid](#Hidepid)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -150,6 +151,10 @@ A GUI application for use with Firejail is also available, [firetools](https://a
 If Firejail causes PulseAudio to misbehave, there is a [known issue.](https://firejail.wordpress.com/support/known-problems/) A temporary workaround:
 
  `cp /etc/pulse/client.conf ~/.config/pulse/`  `echo "enable-shm = no" >> ~/.config/pulse/client.conf` 
+
+### Hidepid
+
+if you have hidepid installed, Firemon can only be run as root. This, among other things, will cause problems with the Firetools GUI incorrectly reporting the status of "Seccomp" and "Protocols". See [this issue](https://github.com/netblue30/firejail/issues/1564).
 
 ## See also
 

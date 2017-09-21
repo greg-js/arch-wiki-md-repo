@@ -133,7 +133,7 @@ You can then set the XF86KbdBrightnessDown and XF86KbdBrightnessUp keys to the a
 
 #### Ambient Light Sensor (ALS)
 
-The Zenbook has an ambient light sensor which enables adjustment of the keyboard and LCD backlights based on the light environment in which the Zenbook finds itself. The AUR contains packages to build the necessary kernel module and userspace programs to change keyboard and backlights and to turn the sensor on and off. The kernel module package is [als-driver-git](https://aur.archlinux.org/packages/als-driver-git/) and the userspace programs in [als-controller-git](https://aur.archlinux.org/packages/als-controller-git/).
+The Zenbook has an ambient light sensor which enables adjustment of the keyboard and LCD backlights based on the light environment in which the Zenbook finds itself. The AUR contains packages to build the necessary kernel module and userspace programs to change keyboard and backlights and to turn the sensor on and off. The kernel module package is [als-dkms](https://aur.archlinux.org/packages/als-dkms/) and the userspace programs in [als-controller](https://aur.archlinux.org/packages/als-controller/).
 
 ##### ALS Driver
 

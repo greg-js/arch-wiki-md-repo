@@ -1,3 +1,12 @@
+Related articles
+
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [Xdg-menu](/index.php/Xdg-menu "Xdg-menu")
+
 From the [awesome website](https://awesomewm.org/):
 
 	[awesome](https://en.wikipedia.org/wiki/awesome_(window_manager) is a highly configurable, next generation framework window manager for X. It is very fast, extensible and licensed under the GNU GPLv2 license. It is primarily targeted at power users, developers and any people dealing with every day computing tasks and who want to have fine-grained control on its graphical environment.
@@ -148,14 +157,14 @@ Several extensions are available for awesome (3.5+):
 To autorun programs, create a shell script via
 
 ```
-$ touch .config/awesome/autorun.sh
+$ touch ~/.config/awesome/autorun.sh
 
 ```
 
 and make it executable by
 
 ```
-$ chmod +x .config/awesome/autorun.sh
+$ chmod +x ~/.config/awesome/autorun.sh
 
 ```
 
@@ -176,7 +185,7 @@ function run {
 To add programs to autostart, simply append `run program [some arguments]` to `autorun.sh`. The `run` function checks whether there already is an instance of `program` running and only runs `program` if there is none. You can check your `autorun.sh` by running it:
 
 ```
-$ .config/awesome/autorun.sh
+$ ~/.config/awesome/autorun.sh
 
 ```
 

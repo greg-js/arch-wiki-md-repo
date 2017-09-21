@@ -103,11 +103,11 @@ This list is by no means complete. If you know of a community that is not listed
 
 ### Japan
 
-*   Homepage: [https://www.archlinuxjp.org/](https://www.archlinuxjp.org/)
-*   Forum: [https://bbs.archlinuxjp.org/](https://bbs.archlinuxjp.org/)
-*   Wiki: [https://wiki.archlinuxjp.org/](https://wiki.archlinuxjp.org/)
-*   Slack: [https://slack.archlinuxjp.org/](https://slack.archlinuxjp.org/)
-*   Planet: [https://planet.archlinuxjp.org/](https://planet.archlinuxjp.org/)
+*   Homepage: [https://www.archlinux.jp/](https://www.archlinux.jp/)
+*   Forum: [https://bbs.archlinux.jp/](https://bbs.archlinux.jp/)
+*   Wiki: [https://wiki.archlinux.jp/](https://wiki.archlinux.jp/)
+*   Slack: [https://slack.archlinux.jp/](https://slack.archlinux.jp/)
+*   Planet: [https://planet.archlinux.jp/](https://planet.archlinux.jp/)
 *   Projects: [https://github.com/ArchLinuxJP](https://github.com/ArchLinuxJP)
 
 ### Lithuania

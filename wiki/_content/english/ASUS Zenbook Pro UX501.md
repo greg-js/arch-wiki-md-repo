@@ -65,6 +65,8 @@ But be careful with `/etc/modprobe.d/i915.conf`. It may cause screen freezing.
 
 The touch pad will work with the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package.
 
+**The below is only necessary with kernels older than 4.10, as it has been included in the base version of the kernel.**
+
 Multi-gesture can be activated downloading this git project [Asus HID DKMS](https://github.com/vlasenko/hid-asus-dkms) and executing the following script:
 
 ```

@@ -24,7 +24,7 @@
     *   [3.1 Keep a log of what is watched](#Keep_a_log_of_what_is_watched)
     *   [3.2 CLI tool for kodi](#CLI_tool_for_kodi)
     *   [3.3 Enable Hardware video acceleration](#Enable_Hardware_video_acceleration)
-    *   [3.4 Slowing down CD/DVD drive speed](#Slowing_down_CD.2FDVD_drive_speed)
+    *   [3.4 Adjusting CD/DVD drive speed](#Adjusting_CD.2FDVD_drive_speed)
     *   [3.5 Use port 80 for webserver](#Use_port_80_for_webserver)
     *   [3.6 Using ALSA](#Using_ALSA)
     *   [3.7 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
@@ -432,7 +432,7 @@ Enable and configure [Hardware video acceleration](/index.php/Hardware_video_acc
 
 Restart Kodi and enable the hardware backend(s) in Playback under Settings.
 
-### Slowing down CD/DVD drive speed
+### Adjusting CD/DVD drive speed
 
 The `eject` program from the `util-linux` package does a nice job for this, but its setting is cleared as soon as the media is changed.
 
