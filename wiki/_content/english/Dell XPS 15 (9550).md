@@ -172,6 +172,10 @@ Bluetooth is disabled by default. If you wish to use Bluetooth you'll need to in
 
 It is possible to get video, audio, Ethernet and USB devices working by updating your BIOS to version >=1.2.19 and disabling Thunderbolt security in your bios settings. If you don't disable Thunderbolt security, then only video and power will work (at lest on the Dell TB16 dock).
 
+On bios version 1.4.0 the USB and Ethernet peripherals will not work unless Thunderbolt security and Thunderbolt Boot support options are disabled.
+
+It should also be noted that the TB16 dock will crash when hot plugged on all BIOS versions after 1.2.18 (Still the case as of version 1.4.0).
+
 You can update your bios either [manually](http://www.dell.com/support/article/hr/en/hrdhs1/SLN171755/en) or by using fwupdmgr although if you installed arch by just bundling everything into /boot as some guides suggest then your only option is to update manually util this [issue](https://github.com/rhinstaller/fwupdate/issues/58) is resolved.
 
 ## USB-C / Thunderbolt 3 Compatibility Chart

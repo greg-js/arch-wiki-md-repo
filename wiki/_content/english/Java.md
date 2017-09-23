@@ -7,7 +7,7 @@ From the [Wikipedia article](https://en.wikipedia.org/wiki/Java_(programming_lan
 
 	Java is a programming language originally developed by Sun Microsystems and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++ but has a simpler object model and fewer low-level facilities. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture.
 
-Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net/) versions 7 and 8\. All these JVM can be installed without conflict and switched between using helper script `archlinux-java`. Several other Java environments are available in [AUR](/index.php/AUR "AUR") but are not officially supported.
+Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net/) versions 7, 8, and 9\. All these JVM can be installed without conflict and switched between using helper script `archlinux-java`. Several other Java environments are available in [AUR](/index.php/AUR "AUR") but are not officially supported.
 
 ## Contents
 
@@ -61,6 +61,10 @@ The following packages are available:
 **OpenJFX 8** — The open-source implementation of JavaFX.
 
 	[http://openjdk.java.net/projects/openjfx/](http://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
+
+**OpenJDK 9** — The open-source implementation of the ninth edition of Java SE.
+
+	[http://openjdk.java.net/projects/jdk9/](http://openjdk.java.net/projects/jdk9/) || [jre9-openjdk-headless](https://www.archlinux.org/packages/?name=jre9-openjdk-headless) [jre9-openjdk](https://www.archlinux.org/packages/?name=jre9-openjdk) [jdk9-openjdk](https://www.archlinux.org/packages/?name=jdk9-openjdk) [openjdk9-doc](https://www.archlinux.org/packages/?name=openjdk9-doc) [openjdk9-src](https://www.archlinux.org/packages/?name=openjdk9-src)
 
 **Java SE** — Oracle's implementation of JRE and JDK.
 

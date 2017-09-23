@@ -87,18 +87,7 @@ When do not need to use nvidia , use bbswitch to turn off it , and run applicati
 *   Disable the nvidia on boot time.
 
 ```
- # echo 'options bbswitch load_state=0' > /etc/modprobe.d/bbswitch.conf 
-
-```
-
-*   Blacklisting nvidia modules
-
-```
-$ lsmod | grep nvidia | cut -d ' ' -f 1 > /tmp/nvidia
-$ lsmod | grep  nouveau | cut -d ' ' -f 1 > > /tmp/nvidia
-$ sort -n /tmp/nvidia | uniq >  /tmp/nvidia.conf
-$ sed -i 's/^\w*$/blacklist &/g' /tmp/nvidia.conf
-# cp /tmp/nvidia.conf /etc/modprobe.d/nvidia.conf
+ # echo 'options bbswitch load_state=0 unload_state=1' > /etc/modprobe.d/bbswitch.conf 
 
 ```
 

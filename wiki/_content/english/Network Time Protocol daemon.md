@@ -81,7 +81,7 @@ restrict default kod nomodify notrap nopeer noquery
 
 **Note:** This still allows other people to query your time server. You need to add `noserve` to stop serving time. It will also block time synchronization since it blocks all packets except *ntpq* and *ntpdc* queries.
 
-If you want to change any of these, see the full docs for the "restrict" option in [ntp_acc()](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntp_acc.), the detailed [ntp instructions](https://support.ntp.org/bin/view/Support/AccessRestrictions) and [#As a daemon](#As_a_daemon).
+If you want to change any of these, see the full docs for the "restrict" option in [ntp_acc(5)](https://linux.die.net/man/5/ntp_acc), the detailed [ntp instructions](https://support.ntp.org/bin/view/Support/AccessRestrictions) and [#As a daemon](#As_a_daemon).
 
 Following this line, you need to tell *ntpd* what to allow through into your server; the following line is enough if you are not configuring an NTP server:
 

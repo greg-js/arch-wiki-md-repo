@@ -1,3 +1,8 @@
+Related articles
+
+*   [Steam](/index.php/Steam "Steam")
+*   [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting")
+
 This article covers running Steam in Wine, in order to play games not available through the native Linux [Steam](/index.php/Steam "Steam").
 
 ## Contents
@@ -186,7 +191,7 @@ wine ~/.wine/drive_c/Program Files/Steam/Steam.exe -no-cef-sandbox
 
 ```
 
-If this does not work, open winecfg, "Add application...", navigate to ~/.wine/Program Files/Steam/bin/, choose steamwebhelper.exe, and set its "Windows Version" at the bottom to Windows XP.
+If this does not work, open winecfg, "Add application...", navigate to ~/Program Files/Steam, choose Steam.exe, and set its "Windows Version" at the bottom to Windows XP.
 
 ### No text rendered problem
 

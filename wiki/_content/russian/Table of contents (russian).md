@@ -31,7 +31,7 @@
 | <small>2.10.2.</small> [Веб браузер](/index.php/Category:Web_browser_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Web browser (Русский)") <small>(6)</small> | <small>2.10.8.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(25) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
  <small>2.10.9.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5)</small> |
 | <small>2.11.</small> [Математика и наука](/index.php/Category:Mathematics_and_science_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Mathematics and science (Русский)") <small>(1)</small> | <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(27)</small> |
-| <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia (Русский)") <small>(14)</small> | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(47)</small> |
+| <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia (Русский)") <small>(14)</small> | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(48)</small> |
  <small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(15)</small> |
  <small>2.12.2.</small> [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players") <small>(20)</small> |
  <small>2.12.3.</small> [Streaming](/index.php/Category:Streaming "Category:Streaming") <small>(17)</small> |
@@ -68,20 +68,20 @@
 | <small>4.8.</small> [Ноутбуки](/index.php/Category:Laptops_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Laptops (Русский)") <small>(6)</small> | <small>4.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(22)</small> |
  <small>4.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(37)</small> |
  <small>4.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
- <small>4.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(12)</small> |
- <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(72)</small> |
+ <small>4.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(11)</small> |
+ <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(70)</small> |
  <small>4.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
  <small>4.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(2)</small> |
-| <small>4.8.1.</small> [Dell](/index.php/Category:Dell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Dell (Русский)") <small>(1)</small> | <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(60)</small> |
+| <small>4.8.1.</small> [Dell](/index.php/Category:Dell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Dell (Русский)") <small>(1)</small> | <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(61)</small> |
 | <small>4.8.2.</small> [Fujitsu](/index.php/Category:Fujitsu_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Fujitsu (Русский)") <small>(1)</small> | <small>4.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(5)</small> |
  <small>4.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
-| <small>4.8.3.</small> [HP](/index.php/Category:HP_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:HP (Русский)") <small>(1)</small> | <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(55)</small> |
+| <small>4.8.3.</small> [HP](/index.php/Category:HP_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:HP (Русский)") <small>(1)</small> | <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(54)</small> |
  <small>4.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(10)</small> |
  <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(79)</small> |
  <small>4.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(5)</small> |
  <small>4.9.14.</small> [Nokia](/index.php/Category:Nokia "Category:Nokia") <small>(1)</small> |
-| <small>4.8.4.</small> [Samsung](/index.php/Category:Samsung_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Samsung (Русский)") <small>(1)</small> | <small>4.9.15.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(12)</small> |
- <small>4.9.16.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(12)</small> |
+| <small>4.8.4.</small> [Samsung](/index.php/Category:Samsung_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Samsung (Русский)") <small>(1)</small> | <small>4.9.15.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(11)</small> |
+ <small>4.9.16.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(11)</small> |
  <small>4.9.17.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(18)</small> |
  <small>4.9.18.</small> [Xiaomi](/index.php/Category:Xiaomi "Category:Xiaomi") <small>(1)</small> |
  <small>4.10.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(4)</small> |
@@ -93,7 +93,7 @@
 | <small>4.13.</small> [Накопители информации](/index.php/Category:Storage_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Storage (Русский)") <small>(5)</small> | <small>4.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(17)</small> |
 | <small>4.13.1.</small> [Оптические](/index.php/Category:Optical_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Optical (Русский)") <small>(1)</small> | <small>4.16.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small> |
  <small>4.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11)</small> |
-| <small>5.</small> [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)") <small>(40)</small> | <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(76)</small> |
+| <small>5.</small> [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)") <small>(40)</small> | <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(75)</small> |
 | <small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Distributed computing (Русский)") <small>(1)</small> | <small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(5)</small> |
  <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(12)</small> |
 | <small>5.2.</small> [Протокол передачи файлов (FTP)](/index.php/Category:File_Transfer_Protocol_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:File Transfer Protocol (Русский)") <small>(1)</small> | <small>5.3.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(8)</small> |
@@ -156,6 +156,6 @@
 | <small>6.12.5.</small> [Виртуальные частные сети (VPN)](/index.php/Category:Virtual_Private_Network_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Virtual Private Network (Русский)") <small>(2) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small> | <small>6.11.5.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(14) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
  <small>6.11.5.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(6)</small> |
 | <small>6.13.</small> [Восстановление системы](/index.php/Category:System_recovery_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System recovery (Русский)") <small>(10)</small> | <small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(31)</small> |
-| <small>6.14.</small> [Виртуализация](/index.php/Category:Virtualization_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Virtualization (Русский)") <small>(3)</small> | <small>6.13.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(23)</small> |
+| <small>6.14.</small> [Виртуализация](/index.php/Category:Virtualization_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Virtualization (Русский)") <small>(3)</small> | <small>6.13.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(22)</small> |
 | <small>6.14.1.</small> [Гипервизоры](/index.php/Category:Hypervisors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Hypervisors (Русский)") <small>(3)</small> | <small>6.13.1.</small> [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") <small>(9)</small> |
 | <small>6.15.</small> [X сервер](/index.php/Category:X_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:X server (Русский)") <small>(35)</small> | <small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(61)</small> |

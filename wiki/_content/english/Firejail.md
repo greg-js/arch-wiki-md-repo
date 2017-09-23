@@ -10,24 +10,27 @@ Related articles
 *   [2 Configuration](#Configuration)
 *   [3 Usage](#Usage)
     *   [3.1 Creating a custom profile](#Creating_a_custom_profile)
-    *   [3.2 Private mode](#Private_mode)
-    *   [3.3 Using Firejail by default](#Using_Firejail_by_default)
-        *   [3.3.1 Verifying Firejail is being used](#Verifying_Firejail_is_being_used)
-        *   [3.3.2 Desktop files](#Desktop_files)
-        *   [3.3.3 Daemons](#Daemons)
-        *   [3.3.4 Notes](#Notes)
+    *   [3.2 Persistent local customisation](#Persistent_local_customisation)
+    *   [3.3 Private mode](#Private_mode)
+    *   [3.4 Using Firejail by default](#Using_Firejail_by_default)
+        *   [3.4.1 Verifying Firejail is being used](#Verifying_Firejail_is_being_used)
+        *   [3.4.2 Desktop files](#Desktop_files)
+        *   [3.4.3 Daemons](#Daemons)
+        *   [3.4.4 Notes](#Notes)
 *   [4 Firetools](#Firetools)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 General](#General)
-    *   [5.2 PulseAudio](#PulseAudio)
-    *   [5.3 Hidepid](#Hidepid)
-*   [6 See also](#See_also)
+*   [5 Firejail with Apparmor](#Firejail_with_Apparmor)
+    *   [5.1 Usage](#Usage_2)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 General](#General)
+    *   [6.2 PulseAudio](#PulseAudio)
+    *   [6.3 Hidepid](#Hidepid)
+*   [7 See also](#See_also)
 
 ## Installation
 
 **Note:** The User-namespace (`CONFIG_USER_NS=Y`) is not set in the [kernel](/index.php/Kernel "Kernel") configuration. Impact on Firejail users is [deemed negligable](https://github.com/netblue30/firejail/issues/1347). See [FS#36969](https://bugs.archlinux.org/task/36969) for details why this namespace is disabled by default. User-namespaces are [enabled](/index.php/Security#Sandboxing_applications "Security") by default in [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package.
 
-[Install](/index.php/Install "Install") the [firejail](https://www.archlinux.org/packages/?name=firejail) or [firejail-git](https://aur.archlinux.org/packages/firejail-git/) package which provide all of the requirements out of the box.
+[Install](/index.php/Install "Install") either [firejail](https://www.archlinux.org/packages/?name=firejail), [firejail-git](https://aur.archlinux.org/packages/firejail-git/) or the [firejail-apparmor](https://aur.archlinux.org/packages/firejail-apparmor/) package which provide all of the requirements out of the box.
 
 ## Configuration
 
@@ -77,6 +80,29 @@ $ firejail --profile=/absolute/path/to/profile <program name>
 
 See man(5) firejail-profile
 
+### Persistent local customisation
+
+The standard profile layout now includes the capability to make persistent local customisations through the inclusion of `.local` files. Basically, each officially supported profile contains the lines `include /etc/firejail/ProgramName.local` and `include /etc/firejail/globals.local`. Since the order of precedence is determined by which is read first, this makes for a very powerful way of making local customisations.
+
+For example, with reference [this firejail question](https://github.com/netblue30/firejail/issues/1510#issuecomment-326443650), to globally enable Apparmor and disable Internet connectivity, one could simply create/edit `/etc/firejail/globals.local` to include the lines
+
+```
+# enable Apparmor and disable Internet globally
+net none
+apparmor
+
+```
+
+Then, to allow, for example, "curl" to connect to the internet, yet still maintain its apparmor confinement, one would create/edit `/etc/firejail/curl.local` to include the lines.
+
+```
+# enable internet for curl
+ignore net
+
+```
+
+Since `curl.local` is read before `globals.local`, `ignore net` overrides `net none`, and, as a bonus, the above changes would be persistent across future updates.
+
 ### Private mode
 
 Firejail also includes a one time private mode, in which no mounts are made in the chroots to your home directory. In doing this, you can execute applications without performing any changes to disk. For example, to execute okular in private mode, do the following:
@@ -103,6 +129,8 @@ You can manually do this for individual applications by executing:
 # ln -s /usr/bin/firejail /usr/local/bin/<program name>
 
 ```
+
+Note, `firecfg` doesn't work with some cli shells such as: `tar`, `curl`, `wget`, `git` and `ssh` which need to be symlinked manually. One should also note that, while symlinking these shells does not break official packages like`pacman`, doing so may break certain AUR packages. In particular, without weakening the `/etc/firejail/curl.profile`, symlinking `curl` will break [Yaourt](https://aur.archlinux.org/packages/Yaourt/), but not, for example, [Cower](https://aur.archlinux.org/packages/Cower/).
 
 #### Verifying Firejail is being used
 
@@ -136,6 +164,58 @@ Other configurations exist; it is suggested you check out the man page for firej
 
 A GUI application for use with Firejail is also available, [firetools](https://aur.archlinux.org/packages/firetools/).
 
+## Firejail with Apparmor
+
+Since 0.942, [firejail-apparmor](https://aur.archlinux.org/packages/firejail-apparmor/), has supported more direct integration with Apparmor through a generic apparmor profile. During installation, the profile, `firejail-default`, is placed in `/etc/apparmor.d` directory, and needs to be loaded into the kernel by running the following command as root:
+
+```
+# aa-enforce firejail-default
+
+```
+
+To quote the manual:
+
+	*The installed profile tries to replicate some advanced security features inspired by kernel-based Grsecurity:*
+
+	*- Prevent information leakage in /proc and /sys directories.The resulting filesystem is barely enough for running commands such as "top" and "ps aux".*
+
+	*- Allow running programs only from well-known system paths, such as /bin, /sbin, /usr/bin etc. Running programs and scripts from user home or other directories writable by the user is not allowed.*
+
+	*- Disable D-Bus. D-Bus has long been a huge security hole, and most programs don't use it anyway. You should have no problems running Chromium or Firefox.*
+
+Note, with the release of 0.9.50, local customisations of the apparmor profile are also supported by editing the file `/etc/apparmor.d/local/firejail-local`
+
+#### Usage
+
+To enable Apparmor confinement on top of a Firejail security profile, pass the `--apparmor` flag to Firejail in the command line.
+
+Example:
+
+```
+$ firejail --apparmor firefox
+
+```
+
+Alternatively, the apparmor flag could be added to a custom profile. Or, it could be enabled globally through `/etc/firejail/globals.local` and disabled as needed through the use of `ignore apparmor` in an applications local customisation file,
+
+For example:
+
+/etc/firejail/globals.local
+
+```
+# enables apparmor globally
+apparmor
+
+```
+
+/etc/firejail/keepass.local
+
+```
+# disables apparmor for keepass
+ignore apparmor
+
+```
+
 ## Troubleshooting
 
 ### General
@@ -154,7 +234,7 @@ If Firejail causes PulseAudio to misbehave, there is a [known issue.](https://fi
 
 ### Hidepid
 
-if you have hidepid installed, Firemon can only be run as root. This, among other things, will cause problems with the Firetools GUI incorrectly reporting the status of "Seccomp" and "Protocols". See [this issue](https://github.com/netblue30/firejail/issues/1564).
+if you have hidepid installed, Firemon can only be run as root. This, among other things, will cause problems with the Firetools GUI incorrectly reporting "Capabilities", "Protocols" and the status of "Seccomp". See [this issue](https://github.com/netblue30/firejail/issues/1564).
 
 ## See also
 

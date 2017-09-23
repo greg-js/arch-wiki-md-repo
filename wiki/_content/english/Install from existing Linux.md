@@ -1,3 +1,7 @@
+Related articles
+
+*   [Install from SSH](/index.php/Install_from_SSH "Install from SSH")
+
 This document describes the bootstrapping process required to install Arch Linux from a running Linux host system. After bootstrapping, the installation proceeds as described in the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 Installing Arch Linux from a running Linux is useful for:
@@ -93,7 +97,7 @@ Download the bootstrap image from a [mirror](https://www.archlinux.org/download)
 
 ```
 # cd /tmp
-# curl -O [https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2017.08.01-x86_64.tar.gz](https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2017.08.01-x86_64.tar.gz)
+# curl -O [https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2017.09.01-x86_64.tar.gz](https://mirrors.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2017.09.01-x86_64.tar.gz)
 
 ```
 
@@ -102,7 +106,7 @@ You can also download the signature (same URL with `.sig` added) and [verify it 
 Extract the tarball:
 
 ```
-# tar xzf <path-to-bootstrap-image>/archlinux-bootstrap-2017.08.01-x86_64.tar.gz
+# tar xzf <path-to-bootstrap-image>/archlinux-bootstrap-2017.09.01-x86_64.tar.gz
 
 ```
 

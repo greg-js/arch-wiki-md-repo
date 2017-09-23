@@ -131,6 +131,8 @@ Next edit the configuration file and add following lines to the $CONFIG array.
 
 Install [PHP#gd](/index.php/PHP#gd "PHP"), [php-intl](https://www.archlinux.org/packages/?name=php-intl) and [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt) as additional modules.
 
+Some apps(News for example) require the iconv.so extension, if you wish to use these apps, uncomment the extension in `/etc/php/php.ini`.
+
 Depending on which database backend will be used:
 
 *   For [MySQL](/index.php/MySQL "MySQL"), see [PHP#MySQL/MariaDB](/index.php/PHP#MySQL.2FMariaDB "PHP").

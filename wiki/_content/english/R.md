@@ -1,3 +1,7 @@
+Related articles
+
+*   [Intel C++](/index.php/Intel_C%2B%2B "Intel C++")
+
 [R](https://www.r-project.org/) is a "free software environment for statistical computing and graphics."
 
 ## Contents
@@ -32,9 +36,7 @@
         *   [6.1.2 Intel MKL](#Intel_MKL)
         *   [6.1.3 intel-advisor-xe](#intel-advisor-xe)
     *   [6.2 Set CRAN mirror across R sessions](#Set_CRAN_mirror_across_R_sessions)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Package PKI won't install](#Package_PKI_won.27t_install)
-*   [8 See also](#See_also)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -350,17 +352,6 @@ local({
   r["CRAN"] <- "[https://cloud.r-project.org/](https://cloud.r-project.org/)"
   options(repos = r)
 })
-```
-
-## Troubleshooting
-
-### Package PKI won't install
-
-The version of the PKI package currently on CRAN (0.1-3) is old and will not work with the current version of [openssl](https://www.archlinux.org/packages/?name=openssl). The work around is to install a newer version from rforge:
-
-```
-> install.packages("PKI", repos = "[https://www.rforge.net](https://www.rforge.net)")
-
 ```
 
 ## See also

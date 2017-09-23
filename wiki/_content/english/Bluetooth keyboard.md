@@ -3,10 +3,11 @@ This article describes how to set up a [Bluetooth](/index.php/Bluetooth "Bluetoo
 ## Contents
 
 *   [1 Pairing process](#Pairing_process)
-*   [2 Manually enabling a Bluetooth Keyboard](#Manually_enabling_a_Bluetooth_Keyboard)
-*   [3 Automatically enabling a Bluetooth Keyboard](#Automatically_enabling_a_Bluetooth_Keyboard)
-*   [4 Troubleshooting](#Troubleshooting)
-*   [5 Xorg](#Xorg)
+*   [2 Legacy method for auto-connect](#Legacy_method_for_auto-connect)
+    *   [2.1 Manually enabling a Bluetooth Keyboard](#Manually_enabling_a_Bluetooth_Keyboard)
+    *   [2.2 Automatically enabling a Bluetooth Keyboard](#Automatically_enabling_a_Bluetooth_Keyboard)
+*   [3 Troubleshooting](#Troubleshooting)
+*   [4 Xorg](#Xorg)
 
 ## Pairing process
 
@@ -123,9 +124,19 @@ Done. Leave the `bluetoothctl` utility:
 
 ```
 
-Now the external device (i.e. keyboard) and the USB BT dongle are paired permanently, unless you break the pairing intenionally. This does not mean that the keyboard will connect automatically to your BT device after a boot. *Power up* of the controller and *connecting* device and controller needs to be done after every startup of your computer.
+Now the external device (i.e. keyboard) and the USB BT dongle are paired permanently, unless you break the pairing intenionally. This does not mean that the keyboard will connect automatically to your BT device after a boot. This is mainly due to the fact that the bluetooth controller will be automatically turned off after each reboot. So, to automatically connect the keyboard after a reboot, configure your bluetooth to be powered on automatically. To do so, add the line `AutoEnable=true` in `/etc/bluetooth/main.conf` at the bottom of the `[Policy]` section, see [Bluetooth#Configuration via the CLI](/index.php/Bluetooth#Configuration_via_the_CLI "Bluetooth"):
 
-## Manually enabling a Bluetooth Keyboard
+ `/etc/bluetooth/main.conf` 
+```
+[Policy]
+AutoEnable=true
+```
+
+## Legacy method for auto-connect
+
+Before Bluez added the feature to automatically power on the bluetooth controller after a reboot, it was necessary to run two commands manually or automatically via a systemd service or a udev rule to *Power up* the controller and *connect* device and controller. In the following, those legacy methods are demonstrated if the new method yields any problems.
+
+### Manually enabling a Bluetooth Keyboard
 
 Although the device and the controller are now paired (see above), you need to connect them every time the computer starts.
 
@@ -145,7 +156,7 @@ Next, make the connection, now using the `hcitool` utility. Make sure that the k
 
 Your BT keyboard should be useable now, even if an error message ("Can't create connection: Input/output error") is shown. Next we will discuss how to automate this process with [systemd](/index.php/Systemd "Systemd").
 
-## Automatically enabling a Bluetooth Keyboard
+### Automatically enabling a Bluetooth Keyboard
 
 Remember that you have to pair and trust your device in bluetoothctl to cause autoconnect. Then you can power up your adapter automatically in several ways:
 

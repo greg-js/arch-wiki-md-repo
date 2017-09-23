@@ -1,3 +1,9 @@
+Related articles
+
+*   [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration")
+*   [Samba](/index.php/Samba "Samba")
+*   [SOGo](/index.php/SOGo "SOGo")
+
 This article explains how to setup an Active Directory domain controller using [Samba](/index.php/Samba "Samba"). It is assumed that all configuration files are in their unmodified, post-installation state. This article was written and tested on a fresh installation, with no modifications other than setting up a static IPv4 network connection, and adding openssh and vim (which should have no effect on the Samba configuration). Finally, most of the commands below will require elevated privileges. Despite conventional wisdom, it may be easier to run these short few commands from a root session as opposed to obtaining rights on an as needed basis.
 
 ## Contents
@@ -30,9 +36,9 @@ This article explains how to setup an Active Directory domain controller using [
 
 **Note:** Make sure you can access the machines in your network via their hostname. See [Network configuration#Local network hostname resolution](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration") for more information.
 
-A fully functional samba domain controller requires several programs beyond those included with the Samba distribution. [Install](/index.php/Install "Install") the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools), [krb5](https://www.archlinux.org/packages/?name=krb5), [ntp](https://www.archlinux.org/packages/?name=ntp), [openldap](https://www.archlinux.org/packages/?name=openldap), [openresolv](https://www.archlinux.org/packages/?name=openresolv) and [samba](https://www.archlinux.org/packages/?name=samba) packages.
+A fully functional samba domain controller requires several programs beyond those included with the Samba distribution. [Install](/index.php/Install "Install") the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools), [krb5](https://www.archlinux.org/packages/?name=krb5), [ntp](https://www.archlinux.org/packages/?name=ntp), [openresolv](https://www.archlinux.org/packages/?name=openresolv) and [samba](https://www.archlinux.org/packages/?name=samba) packages.
 
-Additionally, Samba contains its own fully functional DNS server, but many administrators prefer to use the ISC BIND package. If you need to maintain DNS zones for external domains, you are strongly encouraged to use [bind](https://www.archlinux.org/packages/?name=bind). If you need to share printers, you will also need [cups](https://www.archlinux.org/packages/?name=cups). If needed, install the [bind](https://www.archlinux.org/packages/?name=bind) and/or [cups](https://www.archlinux.org/packages/?name=cups) packages.
+Samba contains its own fully functional DNS server, but if you need to maintain DNS zones for external domains, you are strongly encouraged to use [BIND](/index.php/BIND "BIND") instead. If you need to share printers, you will also need [CUPS](/index.php/CUPS "CUPS"). If needed, install the [bind](https://www.archlinux.org/packages/?name=bind) and/or [cups](https://www.archlinux.org/packages/?name=cups) packages.
 
 ## Creating a new directory
 
@@ -41,7 +47,7 @@ Additionally, Samba contains its own fully functional DNS server, but many admin
 The first step to creating an Active Directory domain is provisioning. This involves setting up the internal [LDAP](/index.php/LDAP "LDAP"), [Kerberos](/index.php/Kerberos "Kerberos"), and DNS servers and performing all of the basic configuration needed for the directory. If you have set up a directory server before, you are undoubtedly aware of the potential for errors in making these individual components work together as a single unit. The difficulty in doing so is the very reason that the Samba developers chose not to use the MIT or Heimdal Kerberos server or OpenLDAP server, instead opting for internal versions of these programs. The server packages above were installed only for the client utilities. Provisioning is quite a bit easier with Samba. Just issue the following command:
 
 ```
-# samba-tool domain provision --use-rfc2307 --use-xattrs=yes --interactive
+# samba-tool domain provision --use-rfc2307 --interactive
 
 ```
 
@@ -49,11 +55,7 @@ The first step to creating an Active Directory domain is provisioning. This invo
 
 	--use-rfc2307
 
-	this argument adds POSIX attributes (UID/GID) to the AD Schema. This will be necessary if you intend to authenticate Linux, BSD, or OS X clients (including the local machine) in addition to Microsoft Windows.
-
-	--use-xattrs=yes
-
-	this argument enables the use of unix extended attributes (ACLs) for files hosted on this server. If you intend not have file shares on the domain controller, you can omit this switch (but this is not recommended). You should also ensure that any filesystems that will host Samba shares are mounted with support for ACLs.
+	this argument adds POSIX attributes (UID/GID) to the AD Schema. This will be necessary if you intend to authenticate Linux, BSD, or macOS clients (including the local machine) in addition to Microsoft Windows.
 
 	--interactive
 

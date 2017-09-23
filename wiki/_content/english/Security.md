@@ -21,9 +21,10 @@ This article contains recommendations and best practices for hardening an Arch L
         *   [3.2.1 Mount options](#Mount_options)
     *   [3.3 File access permissions](#File_access_permissions)
 *   [4 User setup](#User_setup)
-    *   [4.1 Lockout user after three failed login attempts](#Lockout_user_after_three_failed_login_attempts)
-    *   [4.2 Limit amount of processes](#Limit_amount_of_processes)
-    *   [4.3 Run Xorg rootless](#Run_Xorg_rootless)
+    *   [4.1 Enforce a delay after a failed login attempt](#Enforce_a_delay_after_a_failed_login_attempt)
+    *   [4.2 Lockout user after three failed login attempts](#Lockout_user_after_three_failed_login_attempts)
+    *   [4.3 Limit amount of processes](#Limit_amount_of_processes)
+    *   [4.4 Run Xorg rootless](#Run_Xorg_rootless)
 *   [5 Restricting root](#Restricting_root)
     *   [5.1 Use sudo instead of su](#Use_sudo_instead_of_su)
         *   [5.1.1 Editing files using sudo](#Editing_files_using_sudo)
@@ -82,7 +83,7 @@ This article contains recommendations and best practices for hardening an Arch L
 
 ## Passwords
 
-Passwords are key to a secure linux system. They secure your [user accounts](/index.php/Users_and_groups "Users and groups"), [encrypted filesystems](/index.php/Disk_encryption "Disk encryption"), and [SSH](/index.php/SSH_keys "SSH keys")/[GPG](/index.php/GPG "GPG") keys. They are the main way a computer chooses to trust the person using it, so a big part of security is just about picking secure passwords and protecting them.
+Passwords are key to a secure Linux system. They secure your [user accounts](/index.php/Users_and_groups "Users and groups"), [encrypted filesystems](/index.php/Disk_encryption "Disk encryption"), and [SSH](/index.php/SSH_keys "SSH keys")/[GPG](/index.php/GPG "GPG") keys. They are the main way a computer chooses to trust the person using it, so a big part of security is just about picking secure passwords and protecting them.
 
 ### Choosing secure passwords
 
@@ -206,6 +207,14 @@ The default [Umask](/index.php/Umask "Umask") `0022` can be changed to improve s
 ## User setup
 
 After installation make a normal user for daily use. Do not use the root user for daily use.
+
+### Enforce a delay after a failed login attempt
+
+Add the following line to `/etc/pam.d/system-login` to add a delay of at least 4 seconds between failed login attempts:
+
+ `/etc/pam.d/system-login`  `auth required pam_faildelay.so delay=4000000` 
+
+`4000000` is the time in milliseconds to delay.
 
 ### Lockout user after three failed login attempts
 
@@ -495,7 +504,7 @@ Manual [chroot](/index.php/Chroot "Chroot") jails can also be constructed.
 
 ### Linux containers
 
-[Linux Containers](/index.php/Linux_Containers "Linux Containers") are another good option when you need more separation than the other options (short of KVM and Virtualbox) provide. LXC's run on top of the existing kernel in a pseudo-chroot with their own virtual hardware.
+[Linux Containers](/index.php/Linux_Containers "Linux Containers") are another good option when you need more separation than the other options (short of KVM and VirtualBox) provide. LXC's run on top of the existing kernel in a pseudo-chroot with their own virtual hardware.
 
 ### Other virtualization options
 

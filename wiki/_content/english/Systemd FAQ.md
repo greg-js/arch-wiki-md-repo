@@ -1,3 +1,9 @@
+Related articles
+
+*   [systemd](/index.php/Systemd "Systemd")
+*   [systemd/User](/index.php/Systemd/User "Systemd/User")
+*   [Daemons#List of daemons](/index.php/Daemons#List_of_daemons "Daemons")
+
 ## Contents
 
 *   [1 FAQ](#FAQ)
@@ -31,7 +37,7 @@ If you want to change this behavior, then edit `/etc/systemd/logind.conf` and ch
 
 You can also pre-activate gettys which will be running from boot.
 
-To add another pre-activated getty, simply place another symlink for instantiating another getty in the `/etc/systemd/system/getty.target.wants/` directory:
+To add another pre-activated getty, place another symlink for instantiating another getty in the `/etc/systemd/system/getty.target.wants/` directory:
 
 ```
 # ln -sf /usr/lib/systemd/system/getty@.service /etc/systemd/system/getty.target.wants/getty@tty9.service
@@ -39,7 +45,7 @@ To add another pre-activated getty, simply place another symlink for instantiati
 
 ```
 
-To remove a getty, simply remove the getty symlinks you want to get rid of in the `/etc/systemd/system/getty.target.wants/` directory:
+To remove a getty, remove the getty symlinks you want to get rid of in the `/etc/systemd/system/getty.target.wants/` directory:
 
 ```
 # rm /etc/systemd/system/getty.target.wants/getty@{tty5,tty6}.service

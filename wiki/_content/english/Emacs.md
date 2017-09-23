@@ -307,7 +307,7 @@ function emacs {
 
 ```
 
-If you want to run the it in new session just do `emacs <file> -`.
+If you want to run it in a new session just do `emacs <file> -`.
 
 ### Multiple configurations
 

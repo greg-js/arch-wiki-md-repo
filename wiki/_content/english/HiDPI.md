@@ -99,7 +99,7 @@ Note also that DPI in the above example is expressed in 1024ths of an inch.
 
 ### KDE
 
-KDE plasma 5 provides excellent support for HiDPI screens out of the box. You can set the correct DPI by [#Using KDE system settings](#Using_KDE_system_settings). Alternatives are to use [SDDM#DPI settings](/index.php/SDDM#DPI_settings "SDDM") or the [#X Server](#X_Server) (~~currently not working~~ seems to be working for 5.10.5). However, it seems that Gtk+ applications ignore both SDDM and X settings. You can fix this by creating a custom login session as follows:
+KDE plasma 5 provides excellent support for HiDPI screens out of the box. You can set the correct DPI by [#Using KDE system settings](#Using_KDE_system_settings). Alternatives are to use [SDDM#DPI settings](/index.php/SDDM#DPI_settings "SDDM") or the [#X Server](#X_Server). However, it seems that Gtk+ applications ignore both SDDM and X settings. You can fix this by creating a custom login session as follows:
 
 ```
 # cp /usr/share/xsessions/plasma.desktop /usr/share/xsessions/plasma-custom.desktop

@@ -28,6 +28,7 @@ Layouts are applied dynamically, and different layouts may be used on each works
     *   [5.7 Controlling xmonad with external scripts](#Controlling_xmonad_with_external_scripts)
     *   [5.8 Launching another window manager within xmonad](#Launching_another_window_manager_within_xmonad)
     *   [5.9 KDE and xmonad](#KDE_and_xmonad)
+        *   [5.9.1 Disable plasmashell](#Disable_plasmashell)
     *   [5.10 IM Layout for Skype](#IM_Layout_for_Skype)
     *   [5.11 Example configurations](#Example_configurations)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -396,6 +397,26 @@ Just remember to add a comma before or after and change the path to your actual 
 The xmonad wiki has instructions on how to [run xmonad inside KDE](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE)
 
 It also might be a good idea to set a global keyboard shortcut in KDE to start xmonad in case it is accidentally killed or closed.
+
+#### Disable plasmashell
+
+You might want to disable plasmashell (the KDE5 thing responsible for desktop background, taskbar, tray, etc.).
+
+```
+  cp /etc/xdg/autostart/plasmashell.desktop ~/.config/autostart/
+
+```
+
+Then edit `~/.config/autostart/plasmashell.desktop` and replace `Exec=plasmashell` with `Exec=`. The result will look like this:
+
+ `~/.config/autostart/plasmashell.desktop` 
+```
+[Desktop Entry]
+Exec=
+Name=Plasma Desktop Workspace
+... # more stuff
+
+```
 
 ### IM Layout for Skype
 

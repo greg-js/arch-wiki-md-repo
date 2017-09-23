@@ -1,3 +1,10 @@
+Related articles
+
+*   [Bluez4](/index.php/Bluez4 "Bluez4")
+*   [Bluetooth mouse](/index.php/Bluetooth_mouse "Bluetooth mouse")
+*   [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset")
+*   [Blueman](/index.php/Blueman "Blueman")
+
 [Bluetooth](http://www.bluetooth.org/) is a standard for the short-range wireless interconnection of cellular phones, computers, and other electronic devices. In Linux, the canonical implementation of the Bluetooth protocol stack is [BlueZ](http://www.bluez.org/).
 
 ## Contents
@@ -65,7 +72,7 @@ Pairing a device from the shell is one of the simplest and most reliable options
 Start the `bluetoothctl` interactive command. There one can input `help` to get a list of available commands.
 
 *   Possibly select a default controller by inputting `select *MAC Address*`
-*   Turn the power to the controller on by entering `power on`. It is off by default.
+*   Turn the power to the controller on by entering `power on`. It is off by default and will turn off again each reboot, see [#Auto power-on after boot](#Auto_power-on_after_boot).
 *   Enter `devices` to get the MAC Address of the device with which to pair.
 *   Enter device discovery mode with `scan on` command if device is not yet on the list.
 *   Turn the agent on with `agent on`.
@@ -82,6 +89,9 @@ An example session may look this way:
 Agent registered
 [bluetooth]# default-agent 
 Default agent request successful
+[bluetooth]# power on
+Changing power on succeeded
+[CHG] Controller 00:10:20:30:40:50 Powered: yes
 [bluetooth]# scan on
 Discovery started
 [CHG] Controller 00:10:20:30:40:50 Discovering: yes

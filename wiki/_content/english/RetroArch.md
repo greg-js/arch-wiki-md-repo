@@ -10,8 +10,9 @@
 *   [4 Online updater](#Online_updater)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 No cores found](#No_cores_found)
-    *   [5.2 Input devices do not operate](#Input_devices_do_not_operate)
-    *   [5.3 Poor video performance](#Poor_video_performance)
+    *   [5.2 No option to update or download cores in the menu](#No_option_to_update_or_download_cores_in_the_menu)
+    *   [5.3 Input devices do not operate](#Input_devices_do_not_operate)
+    *   [5.4 Poor video performance](#Poor_video_performance)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -83,6 +84,10 @@ By default RetroArch will attempt to find cores in `/usr/lib/libretro`. Cores do
 libretro_directory = "~/.config/retroarch/cores"
 libretro_info_path = "~/.config/retroarch/cores/info"
 ```
+
+### No option to update or download cores in the menu
+
+Open `~/.config/retroarch/retroarch.cfg` or `/etc/retroarch.cfg` & make sure that "menu_show_core_updater" is set to true. This should then allow you to update cores in the 'Online Updater' menu & download cores in the 'Load Core' menu
 
 ### Input devices do not operate
 

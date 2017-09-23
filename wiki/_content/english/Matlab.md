@@ -416,7 +416,7 @@ Since MATLAB R2017a, Image Acqusition Toolbox is using GStreamer library version
 
 ### MATLAB hangs for several minutes when closing Help Browser
 
-Since upgrade of glibc from 2.24 to 2.25, MATLAB (at least R2017a) hangs when closing Help Browser. The issue is related to the particular version of jxbrowser-chromium shipped with MATLAB.
+Since upgrade of glibc from 2.24 to 2.25, MATLAB (at least R2017a) hangs when closing Help Browser. The issue is related to the particular version of jxbrowser-chromium shipped with MATLAB. This issue is still present with glibc 2.26 and MATLAB R2017b.
 
 To fix this issue, download the [latest jxbrowser](https://www.teamdev.com/jxbrowser) and replace the following jars from MATLAB:
 
@@ -427,6 +427,41 @@ matlabroot/java/jarext/jxbrowser-chromium/jxbrowser-linux64.jar
 ```
 
 MATLAB should automatically unpack those jars into `matlabroot/sys/jxbrowser-chromium/glnxa64/chromium` when first opening Help Browser. Remove `matlabroot/sys/jxbrowser-chromium/glnxa64/chromium` directory to make sure MATLAB uses the latest jxbrowser.
+
+Unfortunately, this workaround doesn't work in R2017b anymore. Going deeper into investigation of this issue, it is related to a crash of one of jxbrowser-chromium processes. The parent process of jxbrowser-chromium then sits there and waits for response from a process that is already dead. This causes MATLAB main window to freeze. You can easily unfreeze MATLAB by manually killing all leftover jxbrowser-chromium processes.
+
+I've come up with this simple script that uses inotify and waits for user to close Help browser in MATLAB. It triggers when user closes Help browser and sends kill signal to all leftover jxbrowser-chromium processes:
+
+```
+#!/usr/bin/bash
+
+if [ -z "$1" ]; then
+	REL=R2017b
+else
+	REL=$1
+fi
+#Wait for user to close Help Browser, then killall leftover jxbrowser processes
+inotifywait -m -e CLOSE /path/to/MATLAB/$REL/sys/jxbrowser-chromium/glnxa64/chromium/resources.pak |
+while read line
+do
+	killall /path/to/MATLAB/$REL/sys/jxbrowser-chromium/glnxa64/chromium/jxbrowser-chromium
+done
+
+```
+
+I run this script as part of my MATLAB start script like that:
+
+```
+~/bin/unfreeze_matlab.sh R2017b &
+
+```
+
+To make sure that this background job is killed when I exit MATLAB, I use this in the beginning of MATLAB start script:
+
+```
+trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
+
+```
 
 ### Some dropdown menus cannot be selected
 

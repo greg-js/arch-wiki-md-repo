@@ -1,4 +1,4 @@
-| [Nederlands](/index.php/Category:Nederlands "Category:Nederlands") <small>(16)</small> |
+| [Nederlands](/index.php/Category:Nederlands "Category:Nederlands") <small>(15)</small> |
 | <small>1.</small> [Over Arch](/index.php/Category:About_Arch_(Nederlands) "Category:About Arch (Nederlands)") <small>(5)</small> |
 | <small>1.1.</small> [Arch ontwikkeling](/index.php/Category:Arch_development_(Nederlands) "Category:Arch development (Nederlands)") <small>(1)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Nederlands) "Category:ArchWiki (Nederlands)") <small>(2)</small> |
@@ -9,7 +9,7 @@
 | <small>5.</small> [Netwerken](/index.php/Category:Networking_(Nederlands) "Category:Networking (Nederlands)") <small>(2)</small> |
 | <small>6.</small> [Software](/index.php/Category:Software_(Nederlands) "Category:Software (Nederlands)") <small>(0)</small> |
 | <small>6.1.</small> [Boot proces](/index.php/Category:Boot_process_(Nederlands) "Category:Boot process (Nederlands)") <small>(1)</small> |
-| <small>6.2.</small> [Desktop environments](/index.php/Category:Desktop_environments_(Nederlands) "Category:Desktop environments (Nederlands)") <small>(2)</small> |
+| <small>6.2.</small> [Desktop environments](/index.php/Category:Desktop_environments_(Nederlands) "Category:Desktop environments (Nederlands)") <small>(1)</small> |
 | <small>6.3.</small> [Paketbeheer](/index.php/Category:Package_management_(Nederlands) "Category:Package management (Nederlands)") <small>(3)</small> |
 | <small>7.</small> [Storage](/index.php/Category:Storage_(Nederlands) "Category:Storage (Nederlands)") <small>(1)</small> |
 | <small>8.</small> [Systeemadministratie](/index.php/Category:System_administration_(Nederlands) "Category:System administration (Nederlands)") <small>(0)</small> |

@@ -21,6 +21,7 @@
     *   [9.1 Can't disable smooth fonts](#Can.27t_disable_smooth_fonts)
     *   [9.2 The dock is not covered by fullscreen windows](#The_dock_is_not_covered_by_fullscreen_windows)
     *   [9.3 No application icons for some applications](#No_application_icons_for_some_applications)
+    *   [9.4 Window attributes not set persistently](#Window_attributes_not_set_persistently)
 *   [10 See Also](#See_Also)
 
 ## Installation
@@ -180,6 +181,14 @@ To correct this issue, right click on any pinned application and, from the *Dock
 ### No application icons for some applications
 
 Some applications such as [Chromium](/index.php/Chromium "Chromium") will not display an application icon. For a workaround involving Chromium, see the following [bug report](https://code.google.com/p/chromium/issues/detail?id=375758#c3).
+
+### Window attributes not set persistently
+
+If you find that window attributes that you have saved for a certain window are not persistent, this is probably because you are trying to override hints set by the application itself that change the way the window manager treats the window. For instance, a window might set a Motif hint requesting that the window manager does not decorate the window with a titlebar. However, when you untick the *Disable titlebar* option and hit *Save* in *Window Attributes* you find that the window does not have a titlebar when it is next launched.
+
+This problem arises because Window Maker will only write window settings to the settings file that it considers to be non-default. However, Window Maker will not update what it considers to be a default setting to take into account window hints. So for a window that has no titlebar, hitting the *Save* button after unticking *Disable titlebar* will do nothing because Window Maker incorrectly considers that to already be the default setting.
+
+To work around this, open the *Window Attributes* dialogue for the window in question and, without making any changes whatsoever, hit the *Save* button. This will write the hint set settings that Window Maker considers to be non-default to file. Then, open `~/GNUstep/Defaults/WMWindowAttributes` in a text editor and you should find the settings in question for that window written there. You can now change them to your preferred values, for instance: change `NoTitlebar = Yes;` to `NoTitlebar = No;`
 
 ## See Also
 
