@@ -31,7 +31,7 @@
 | <small>2.10.9.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5)</small> |
 | <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(27)</small> |
 | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(48)</small> |
-| <small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(15)</small> |
+| <small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(14)</small> |
 | <small>2.12.2.</small> [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players") <small>(20)</small> |
 | <small>2.12.3.</small> [Streaming](/index.php/Category:Streaming "Category:Streaming") <small>(17)</small> |
 | <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(18)</small> |
@@ -40,7 +40,7 @@
 | <small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(12)</small> |
 | <small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(19)</small> |
 | <small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(13)</small> |
-| <small>2.18.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(29) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
+| <small>2.18.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(28) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>2.19.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(21)</small> |
 | <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(49)</small> |
 | <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(19) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
@@ -52,7 +52,7 @@
 | <small>3.5.</small> [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System") <small>(16)</small> |
 | <small>3.6.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4)</small> |
 | <small>4.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(2)</small> |
-| <small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(9)</small> |
+| <small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(6)</small> |
 | <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(6)</small> |
 | <small>4.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(9)</small> |
 | <small>4.4.</small> [Displays](/index.php/Category:Displays "Category:Displays") <small>(3)</small> |
@@ -61,7 +61,7 @@
 | <small>4.7.</small> [Imaging](/index.php/Category:Imaging "Category:Imaging") <small>(7)</small> |
 | <small>4.8.</small> [Input devices](/index.php/Category:Input_devices "Category:Input devices") <small>(14)</small> |
 | <small>4.8.1.</small> [Graphics tablet](/index.php/Category:Graphics_tablet "Category:Graphics tablet") <small>(1)</small> |
-| <small>4.8.2.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(22)</small> |
+| <small>4.8.2.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(21)</small> |
 | <small>4.8.3.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(15)</small> |
 | <small>4.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(22)</small> |
 | <small>4.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(37)</small> |
@@ -111,7 +111,7 @@
 | <small>5.15.1.</small> [Content management systems](/index.php/Category:Content_management_systems "Category:Content management systems") <small>(4)</small> |
 | <small>5.15.2.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
 | <small>5.15.3.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces "Category:Web admin interfaces") <small>(5)</small> |
-| <small>5.15.4.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(29) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
+| <small>5.15.4.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(28) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>5.15.5.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(25) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>5.15.6.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(4)</small> |
 | <small>5.15.7.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(29) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |

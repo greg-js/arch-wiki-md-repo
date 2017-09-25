@@ -1,3 +1,7 @@
+Related articles
+
+*   [GTK+](/index.php/GTK%2B "GTK+")
+
 Projekt GNOME začal od píky a vytvořil úplně nový desktop jménem GNOME 3\. Nabízí:
 
 *   Moderní vzhled a písmo

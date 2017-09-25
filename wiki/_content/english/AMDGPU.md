@@ -66,7 +66,7 @@ Also, since kernel 4.13, adding the `amdgpu.si_support=1` or `amdgpu.cik_support
 **Note:**
 
 *   To use the proprietary OpenCL component without AMDGPU PRO, [install](/index.php/Install "Install") [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/) instead.
-*   A [downgrade](/index.php/Downgrade "Downgrade") of the [linux](https://www.archlinux.org/packages/?name=linux) (4.8 or 4.9) and [Xorg](/index.php/Xorg "Xorg") (1.18) packages may be required to use AMDGPU PRO.
+*   A [downgrade](/index.php/Downgrade "Downgrade") of the [linux](https://www.archlinux.org/packages/?name=linux) (4.9) and [Xorg](/index.php/Xorg "Xorg") (1.18) packages is required to use AMDGPU PRO 17.10.
 
 AMD provides a proprietary, binary userland driver called *AMDGPU PRO*, which works on top of the open-source AMDGPU kernel driver. The driver provides OpenGL, [OpenCL](/index.php/OpenCL "OpenCL"), [Vulkan](/index.php/Vulkan "Vulkan") and [VDPAU](/index.php/VDPAU "VDPAU") support (although this is also supported by the open-source driver). For some workloads it provides better performance than the open-source driver ([example benchmark](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-PRO-16.40-Deus-MD)), while for others it is true the contrary ([example benchmark](https://openbenchmarking.org/prospect/1610315-TA-AMDGPUPRO08/998ba9b677230564e0fbca342a8e1b9a7e85b6ab)).
 

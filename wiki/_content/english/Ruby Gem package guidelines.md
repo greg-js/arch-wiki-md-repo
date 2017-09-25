@@ -2,7 +2,7 @@
 
 * * *
 
-[CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Node.js](/index.php/Node.js_package_guidelines "Node.js package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – **Ruby** – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
+[CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Node.js](/index.php/Node.js_package_guidelines "Node.js package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – <a class="mw-selflink selflink">Ruby</a> – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
 
 Writing [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for software written in [Ruby](/index.php/Ruby "Ruby").
 
@@ -15,7 +15,6 @@ Writing [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for software written in [Rub
     *   [3.1 Quarry](#Quarry)
 *   [4 Gotchas](#Gotchas)
     *   [4.1 Package contains reference to $pkgdir](#Package_contains_reference_to_.24pkgdir)
-*   [5 Automation](#Automation)
 
 ## Package naming
 
@@ -54,9 +53,3 @@ Sometimes when you build the package you can see following warning `WARNING: Pac
 **Note:** folder `ext` contains native extension code usually written in C. During the package installation rubygems generates a Makefile using `mkmf` library. Then `make` is called, it compiles a shared library and copies one to `lib` gem directory.
 
 After `gem install` is over the `Makefile` is not needed anymore. In fact none of the files in `ext` is needed and it can be completely removed by adding `rm -rf "$pkgdir/$_gemdir/gems/$_gemname-$pkgver/ext"` to `package()` function.
-
-## Automation
-
-The gem installation can be automated completely with the tool [pacgem](https://aur.archlinux.org/packages/pacgem/) which creates a temporary PKGBUILD, calls [makepkg](/index.php/Makepkg "Makepkg") and [namcap](/index.php/Namcap "Namcap"). The resulting package is then installed with `sudo pacman`.
-
-There is also [gem2arch](https://aur.archlinux.org/packages/gem2arch/) tools which aid in automating the process of creating a ruby gem PKGBUILD. Make sure to manually check the PKGBUILD after generation.

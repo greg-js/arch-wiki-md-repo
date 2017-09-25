@@ -1,3 +1,17 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [GTK+](/index.php/GTK%2B "GTK+")
+*   [GDM](/index.php/GDM "GDM")
+*   [GNOME Files](/index.php/GNOME_Files "GNOME Files")
+*   [Gedit](/index.php/Gedit "Gedit")
+*   [GNOME Web](/index.php/GNOME_Web "GNOME Web")
+*   [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")
+*   [Cinnamon](/index.php/Cinnamon "Cinnamon")
+*   [MATE](/index.php/MATE "MATE")
+
 Od [GNOME: Desktop projekat slobodnog softvera](http://www.gnome.org/about/):
 
 	*GNOME je projekat koji pruza dve stvari: GNOME desktop okruzenje, jedan intuitivan i atraktivan desktop za korisnike, i GNOME razvojnu platformu, prosiriv frejmvork za izgradnju aplikacija koje se integrisu u ostatak desktopa.*

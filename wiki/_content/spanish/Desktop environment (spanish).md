@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [Display Manager (Español)](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)")
+*   [Window Manager (Español)](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)")
+*   [Default applications](/index.php/Default_applications "Default applications")
+
 Un [entorno de escritorio](https://en.wikipedia.org/wiki/es:Desktop_environment "wikipedia:es:Desktop environment") proporciona una *completa* interfaz gráfica de usuario (GUI) para un sistema donde se agrupan una diversidad de clientes de X escritos con un conjunto de herramientas Widget y un conjunto de bibliotecas comunes.
 
 ## Contents

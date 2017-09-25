@@ -1,3 +1,15 @@
+Artículos relacionados
+
+*   [Desktop Environment (Español)](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)")
+*   [Display Manager (Español)](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)")
+*   [Window Manager (Español)](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)")
+*   [GTK+](/index.php/GTK%2B "GTK+")
+*   [GDM (Español)](/index.php/GDM_(Espa%C3%B1ol) "GDM (Español)")
+*   [Nautilus (Español)](/index.php/Nautilus_(Espa%C3%B1ol) "Nautilus (Español)")
+*   [Gedit](/index.php/Gedit "Gedit")
+*   [Epiphany](/index.php/Epiphany "Epiphany")
+*   [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")
+
 Tomado de la [página de GNOME](http://www.gnome.org/about/%7Cla):
 
 	*«El Proyecto GNOME se inició en 1997 por —en aquellos días— dos estudiantes universitarios, Miguel de Icaza y Federico Mena. Su objetivo: producir un [entorno de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") de código libre. Desde entonces, GNOME se ha convertido en una empresa exitosa. Usado por millones de personas en todo el mundo, es el entorno de escritorio más popular para GNU/Linux y sistemas operativos tipo UNIX. El escritorio se ha utilizado con éxito en empresas de gran escala, y en despliegues públicos, y las tecnologías del proyecto desarrollador se utilizan en un gran número de dispositivos móviles populares.»*

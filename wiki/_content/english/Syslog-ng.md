@@ -1,3 +1,7 @@
+Related articles
+
+*   [rsyslog](/index.php/Rsyslog "Rsyslog")
+
 **Note:** With systemd's journal, syslog-ng is not needed by most users.
 
 ## Contents
@@ -36,7 +40,7 @@ Sources are defined using the "source" directive. These incoming messages are th
 
 [Enable](/index.php/Enable "Enable") syslog-ng with the `syslog-ng.service` service file. As of *systemd* 216, messages are no longer forwarded to syslog by default. Syslog-ng did not become journald aware until months later with the release of syslog-ng 3.6\. This meant that if you were running systemd 216 or greater and syslog-ng you needed to set the option `ForwardToSyslog=yes` in `/etc/systemd/journald.conf` to actually use *syslog-ng* with *journald*.
 
-If you use a current [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng), it is not necessary to change the option because **syslog-ng** pulls the messages from the journal. If you have set `ForwardToSyslog=yes` you should revert it to `ForwardToSyslog=no` in order to avoid the overhead associated with the socket and to avoid [needless error messages in the log](https://github.com/balabit/syslog-ng/issues/314). If on the other hand you do not want to store your logs twice and turn *journald'*s `Storage=none`, you **will** need `ForwardToSyslog=yes`, as *syslog-ng* tries to follow the 'journald' journal file.
+If you use a current [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng), it is not necessary to change the option because <a class="mw-selflink selflink">syslog-ng</a> pulls the messages from the journal. If you have set `ForwardToSyslog=yes` you should revert it to `ForwardToSyslog=no` in order to avoid the overhead associated with the socket and to avoid [needless error messages in the log](https://github.com/balabit/syslog-ng/issues/314). If on the other hand you do not want to store your logs twice and turn *journald'*s `Storage=none`, you **will** need `ForwardToSyslog=yes`, as *syslog-ng* tries to follow the 'journald' journal file.
 
 ## Sources
 
@@ -441,6 +445,7 @@ options {
   perm(0640);
   group("log");
   ts_format(iso);      #make ISO-8601 timestamps
+  #frac-digits(3);     #optional time to nearest millisecond 
 };
 
 ```

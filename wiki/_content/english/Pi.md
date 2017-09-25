@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Raspberry Pi](/index.php?title=Raspberry_Pi&redirect=no "Raspberry Pi")
+*   [Category:ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture")

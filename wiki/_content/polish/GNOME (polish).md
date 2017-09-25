@@ -1,3 +1,9 @@
+Related articles
+
+*   [GTK+ (Polski)](/index.php?title=GTK%2B_(Polski)&action=edit&redlink=1 "GTK+ (Polski) (page does not exist)")
+*   [KDE (Polski)](/index.php/KDE_(Polski) "KDE (Polski)")
+*   [Xfce (Polski)](/index.php/Xfce_(Polski) "Xfce (Polski)")
+
 GNOME 3 to nowoczesne środowisko, napisane od zera używając biblioteki GTK3.
 
 ## Contents

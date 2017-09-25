@@ -43,7 +43,7 @@ Related articles
 
 Vncserver provides two major remote control abilities:
 
-1.  Virtual (headless) server which is similar to the standard X server, but has a virtual screen rather than a physical one. The virtual server runs completely *parallel* to the physical X server should one be running.
+1.  Virtual (headless) server is similar to the standard X server, but has a virtual screen rather than a physical one. The virtual server runs completely *parallel* to the physical X server should one be running.
 2.  Direct control of the local X session(s) which do run on the physical monitor.
 
 ## Running vncserver for virtual (headless) sessions

@@ -37,7 +37,7 @@ You can [install](/index.php/Install "Install") the [synergy](https://www.archli
 
 ### Windows and macOS
 
-[Download](https://symless.com/synergy/) and run the newest installer from the official website. The official version is paid, although you may compile and run your own builds for free using [sources on GitHub](https://github.com/symless/synergy).
+[Download](https://symless.com/synergy/) and run the newest installer from the official website. The official version is paid, although you may compile and run your own builds for free using [sources on GitHub](https://github.com/symless/synergy-core).
 
 ## Pre-configuration
 
@@ -58,7 +58,7 @@ First determine the IP addresses and [host names](/index.php/Network_configurati
 
 ## Server configuration
 
-In synergy, the computer with keyboard and mouse you want to share is called server. See [Synergy Configuration File Format](https://github.com/symless/synergy/wiki/Text-Config) for a detailed description of all available sections and options.
+In synergy, the computer with keyboard and mouse you want to share is called server. See [Synergy Configuration File Format](https://github.com/symless/synergy-core/wiki/Text-Config) for a detailed description of all available sections and options.
 
 ### Arch Linux
 
@@ -129,7 +129,7 @@ C:\Program Files\Synergy+\bin\synergys.exe  -f --debug ERROR --name left --log c
 
 ### macOS
 
-macOS has a similar configuration as Unix: check [the official documentation](https://github.com/symless/synergy/wiki/Developer) for more information.
+macOS has a similar configuration as Unix: check [the official documentation](https://github.com/symless/synergy-core/wiki/Developer) for more information.
 
 ### Configuration examples
 
@@ -271,7 +271,7 @@ $ synergyc --enable-crypto
 
 ```
 
-**Note:** There is an open issue with the GUI client of synergy (see [https://github.com/symless/synergy/issues/4737](https://github.com/symless/synergy/issues/4737)). The dialog to prompt for confirmation of the server's fingerprint, only pops up if the logging level is set to INFO, DEBUG or DEBUG2.
+**Note:** There is an open issue with the GUI client of synergy (see [https://github.com/symless/synergy-core/issues/4737](https://github.com/symless/synergy-core/issues/4737)). The dialog to prompt for confirmation of the server's fingerprint, only pops up if the logging level is set to INFO, DEBUG or DEBUG2.
 
 #### Autostart
 
@@ -337,7 +337,7 @@ To start the service at login for your user:
 
 ```
 
-Automatically starting Synergy is also documented in its [official reference page](https://github.com/symless/synergy/wiki/Startup).
+Automatically starting Synergy is also documented in its [official reference page](https://github.com/symless/synergy-core/wiki/Startup).
 
 ### Windows
 
@@ -367,7 +367,7 @@ If Arch is being used as a client in a Synergy installation, the server may not 
 
 ## Troubleshooting
 
-The official documentation has a [FAQ](https://github.com/symless/synergy/wiki/User-FAQ) and also a [troubleshooting page](https://github.com/symless/synergy/wiki/User-Guide#Troubleshooting).
+The official documentation has a [FAQ](https://github.com/symless/synergy-core/wiki/User-FAQ) and also a [troubleshooting page](https://github.com/symless/synergy-core/wiki/User-Guide#Troubleshooting).
 
 ### Keyboard AltGr
 
@@ -421,4 +421,4 @@ You need to copy the content of server's "~/.synergy/SSL/Fingerprints/Local.txt"
 ## External links
 
 *   Synergy website: [https://symless.com/synergy/](https://symless.com/synergy/)
-*   Official documentation: [https://github.com/symless/synergy/wiki/User-Guide](https://github.com/symless/synergy/wiki/User-Guide)
+*   Official documentation: [https://github.com/symless/synergy-core/wiki/User-Guide](https://github.com/symless/synergy-core/wiki/User-Guide)

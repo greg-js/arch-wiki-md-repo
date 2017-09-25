@@ -1309,7 +1309,7 @@ Gmail disables access from apps it considers less secure, including `mutt`. You 
 
 ### Not possible to open too long URLs with urlview
 
-Too long URLs are not parsed correctly, because urlview does not decode text (see [https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=127090](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=127090)). You can let mutt decode the e-mails instead. Replace the line for opening urlview with the following code:
+Too long URLs are not parsed correctly, because urlview does not decode text (see [[2]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=127090)). You can let mutt decode the e-mails instead. Replace the line for opening urlview with the following code:
 
 ```
 macro index \cb "\

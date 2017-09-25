@@ -9,7 +9,6 @@ Related articles
 *   [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS")
 *   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
 *   [.SRCINFO](/index.php/.SRCINFO ".SRCINFO")
-*   [VCS package guidelines](/index.php/VCS_package_guidelines "VCS package guidelines")
 *   [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot")
 
 This article aims to assist users creating their own packages using the Arch Linux "ports-like" [build system](/index.php/Arch_Build_System "Arch Build System"), also for submission in [AUR](/index.php/AUR "AUR"). It covers creation of a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") – a package build description file sourced by `makepkg` to create a binary package from source. If already in possession of a `PKGBUILD`, see [makepkg](/index.php/Makepkg "Makepkg"). For instructions regarding existing rules and ways to improve package quality see [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards").
@@ -35,7 +34,8 @@ This article aims to assist users creating their own packages using the Arch Lin
 *   [6 Summary](#Summary)
     *   [6.1 Warnings](#Warnings)
 *   [7 More detailed guidelines](#More_detailed_guidelines)
-*   [8 See also](#See_also)
+*   [8 PKGBUILD generators](#PKGBUILD_generators)
+*   [9 See also](#See_also)
 
 ## Overview
 
@@ -228,6 +228,17 @@ Please read [AUR User Guidelines#Submitting packages](/index.php/AUR_User_Guidel
 * * *
 
 [CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Node.js](/index.php/Node.js_package_guidelines "Node.js package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
+
+## PKGBUILD generators
+
+PKGBUILDs for some packages can be generated automatically.
+
+**Note:** Users are still responsible for ensuring that the package meets the high quality standards before submitting the generated files to the [AUR](/index.php/AUR "AUR").
+
+*   [Go](/index.php/Go "Go"): [go-makepkg](https://github.com/seletskiy/go-makepkg)
+*   [Haskell](/index.php/Haskell "Haskell"): [cblrepo](https://github.com/magthe/cblrepo)
+*   [Python](/index.php/Python "Python"): [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/), [PyPI2PKGBUILD](https://github.com/anntzer/pypi2pkgbuild)
+*   [Ruby](/index.php/Ruby "Ruby"): [gem2archAUR](https://aur.archlinux.org/packages/gem2archAUR/), [pacgem](https://aur.archlinux.org/packages/pacgem/)
 
 ## See also
 

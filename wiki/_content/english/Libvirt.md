@@ -630,7 +630,14 @@ user = "dave"
 
 ```
 
-You will also need to tell QEMU to use the PulseAudio backend and identify the server to connect to. Add the following section to your domain configuration using `virsh edit`.
+You will also need to tell QEMU to use the PulseAudio backend and identify the server to connect to. First add the qemu namespace to you domain.
+
+```
+<domain type='kvm' xmlns:qemu='[http://libvirt.org/schemas/domain/qemu/1.0'](http://libvirt.org/schemas/domain/qemu/1.0')>
+
+```
+
+Then add the following section to your domain configuration using `virsh edit`.
 
 ```
  <qemu:commandline>

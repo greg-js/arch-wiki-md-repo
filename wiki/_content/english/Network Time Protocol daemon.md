@@ -32,7 +32,7 @@ Related articles
 
 ## Configuration
 
-The main daemon is *ntpd*, which is configured in `/etc/ntp.conf`. Refer to the manual pages for detail: [ntp.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5) and the related `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`.
+The main daemon is *ntpd*, which is configured in `/etc/ntp.conf`. Refer to [ntp.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5) for detail.
 
 ### Connection to NTP servers
 
@@ -81,7 +81,7 @@ restrict default kod nomodify notrap nopeer noquery
 
 **Note:** This still allows other people to query your time server. You need to add `noserve` to stop serving time. It will also block time synchronization since it blocks all packets except *ntpq* and *ntpdc* queries.
 
-If you want to change any of these, see the full docs for the "restrict" option in [ntp_acc(5)](https://linux.die.net/man/5/ntp_acc), the detailed [ntp instructions](https://support.ntp.org/bin/view/Support/AccessRestrictions) and [#As a daemon](#As_a_daemon).
+If you want to change any of these, see the full docs for the "restrict" option in [ntp.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5), the detailed [ntp instructions](https://support.ntp.org/bin/view/Support/AccessRestrictions) and [#As a daemon](#As_a_daemon).
 
 Following this line, you need to tell *ntpd* what to allow through into your server; the following line is enough if you are not configuring an NTP server:
 

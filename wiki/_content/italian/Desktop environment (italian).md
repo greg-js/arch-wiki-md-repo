@@ -1,3 +1,9 @@
+Articoli correlati
+
+*   [Display Manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)")
+*   [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)")
+*   [Default applications](/index.php/Default_applications "Default applications")
+
 Un [Desktop environment](https://en.wikipedia.org/wiki/it:Desktop_environment "wikipedia:it:Desktop environment") fornisce una *completa* interfaccia Grafica Utente (GUI) per un sistema, abbinando insieme una serie di client [X](https://en.wikipedia.org/wiki/it:X_Window_System "wikipedia:it:X Window System") scritti utilizzando widget-toolkit ed insiemi di librerie comuni.
 
 ## Contents

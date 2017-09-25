@@ -22,10 +22,10 @@ Related articles
         *   [4.1.1 Font rendering issues in PDF plugin](#Font_rendering_issues_in_PDF_plugin)
     *   [4.2 Force 3D acceleration](#Force_3D_acceleration)
     *   [4.3 WebGL](#WebGL)
-    *   [4.4 Distorted GUI](#Distorted_GUI)
-    *   [4.5 Disable keyring password prompt](#Disable_keyring_password_prompt)
+    *   [4.4 Zoomed-in GUI](#Zoomed-in_GUI)
+    *   [4.5 Password prompt on every start with GNOME Keyring](#Password_prompt_on_every_start_with_GNOME_Keyring)
     *   [4.6 Chromecasts in the network are not discovered](#Chromecasts_in_the_network_are_not_discovered)
-    *   [4.7 Losing cookies when switching between desktop environments](#Losing_cookies_when_switching_between_desktop_environments)
+    *   [4.7 Losing cookies and passwords when switching between desktop environments](#Losing_cookies_and_passwords_when_switching_between_desktop_environments)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -133,19 +133,21 @@ Visit `chrome://gpu/` for debugging information about WebGL support.
 
 Chromium can save incorrect data about your GPU in your user profile (e.g. if you use switch between an Nvidia card using Optimus and Intel, it will show the Nvidia card in `chrome://gpu` even when you're not using it or primusrun/optirun). Running using a different user directory, e.g, `chromium --user-data-dir=$(mktemp -d)` may solve this issue. For a persistent solution you can reset the GPU information by deleting `~/.config/chromium/Local\ State`.
 
-### Distorted GUI
+### Zoomed-in GUI
 
-Chromium's graphical interface may look unsightly, distorted and zoomed in on high-DPI displays. To disable any attempts to scale display according to device DPI, use `--force-device-scale-factor=1`.
+Chromium's graphical interface will automatically scale on high-DPI displays. To disable this, use `--force-device-scale-factor=1`.
 
-### Disable keyring password prompt
+### Password prompt on every start with GNOME Keyring
 
-See [GNOME/Keyring#Passwords are not remembered](/index.php/GNOME/Keyring#Passwords_are_not_remembered "GNOME/Keyring"). You may also need to edit the Chromium command line to append `--password-store=gnome`.
+See [GNOME/Keyring#Passwords are not remembered](/index.php/GNOME/Keyring#Passwords_are_not_remembered "GNOME/Keyring").
 
 ### Chromecasts in the network are not discovered
 
 You will need to enable the Media Router Component Extension in `chrome://flags/#load-media-router-component-extension`.
 
-### Losing cookies when switching between desktop environments
+### Losing cookies and passwords when switching between desktop environments
+
+If you see the message `Failed to decrypt token for service AccountId-*` in the terminal when you start Chromium, it might try to use the wrong password storage backend. This might happen when you switch between Desktop Environments.
 
 See [Chromium/Tips and tricks#Force a password store](/index.php/Chromium/Tips_and_tricks#Force_a_password_store "Chromium/Tips and tricks").
 

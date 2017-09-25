@@ -16,13 +16,13 @@ The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Deskto
     *   [2.3 Theme settings](#Theme_settings)
         *   [2.3.1 Current theme](#Current_theme)
         *   [2.3.2 Editing themes](#Editing_themes)
-        *   [2.3.3 Mouse cursor](#Mouse_cursor)
-        *   [2.3.4 Changing your avatar](#Changing_your_avatar)
+        *   [2.3.3 Testing (Previewing) a Theme](#Testing_.28Previewing.29_a_Theme)
+        *   [2.3.4 Mouse cursor](#Mouse_cursor)
+        *   [2.3.5 Changing your avatar](#Changing_your_avatar)
     *   [2.4 Numlock](#Numlock)
     *   [2.5 Rotate display](#Rotate_display)
     *   [2.6 Configuration GUI](#Configuration_GUI)
     *   [2.7 DPI settings](#DPI_settings)
-    *   [2.8 SDDM and Gnome-keyring](#SDDM_and_Gnome-keyring)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Hangs after login](#Hangs_after_login)
     *   [3.2 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
@@ -92,6 +92,19 @@ Set the current theme through the `Current` value, e.g. `Current=archlinux-simpl
 
 The default SDDM theme directory is `/usr/share/sddm/themes/`. You can add your custom made themes to that directory under a separate subdirectory. Note that SDDM requires these subdirectory names to be the same as the theme names. Study the files installed to modify or create your own theme.
 
+#### Testing (Previewing) a Theme
+
+You can preview an SDDM theme if needed. This is especially helpful if you are not sure how the theme would look if selected or just edited a theme and want to see how it would look without logging out. You can run something like this:
+
+```
+$ sddm-greeter --theme /usr/share/sddm/themes/breeze
+
+```
+
+This should open a new window and show a preview of the theme.
+
+**Note:** This is just a preview. In this mode, some actions like shutdown, suspend or login will have no effect.
+
 #### Mouse cursor
 
 To set the mouse cursor theme, set `CursorTheme` to your preferred cursor theme.
@@ -136,33 +149,6 @@ For example:
 [X11]
 ServerArguments=-nolisten tcp -dpi 94
 ```
-
-### SDDM and Gnome-keyring
-
-To automatically unlock the [Gnome-keyring](/index.php/Gnome-keyring "Gnome-keyring") upon login in KDM add the following line to your `/etc/pam.d/sddm` right after the `auth include system-login` line:
-
-```
-auth            optional        pam_gnome_keyring.so
-
-```
-
-and add
-
-```
-session         optional        pam_gnome_keyring.so auto_start
-
-```
-
-after `session include system-login`
-
-To automatically re-unlock the keyring when you unlock your screensaver open `/etc/pam.d/kscreensaver` and add
-
-```
-auth            optional        pam_gnome_keyring.so
-
-```
-
-as the last line.
 
 ## Troubleshooting
 

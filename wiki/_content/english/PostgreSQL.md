@@ -244,7 +244,7 @@ Become the postgres user, and initialize the new cluster:
 
 ```
 
-[Edit](/index.php/Edit "Edit") `postgresql.service` to create a drop-in file and override the `Environment` and `PIDFile` setting, example:
+[Edit](/index.php/Edit "Edit") `postgresql.service` to create a drop-in file and override the `Environment` and `PIDFile` settings. For example:
 
 ```
 [Service]

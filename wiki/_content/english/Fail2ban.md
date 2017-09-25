@@ -105,7 +105,7 @@ bantime  = 2w
 
 ```
 
-fail2ban has IPv6 support since version 0.10\. Adapt your firewall accordingly, e.g. start and enable ip6tables.service.
+fail2ban has IPv6 support since version 0.10\. Adapt your firewall accordingly, e.g. start and enable `ip6tables.service`.
 
 **Note:** If your firewall is [shorewall](/index.php/Shorewall "Shorewall"), replace `iptables[name=SSH, port=ssh, protocol=tcp]` with `shorewall`. You can also set `BLACKLIST` to `ALL` in `/etc/shorewall/shorewall.conf`, otherwise the rule added to ban an IP address will affect only new connections.
 

@@ -266,7 +266,7 @@ Inicie nuevamente cheese.
 
 ### fswebcam
 
-fswebcam es una aplicación de webcam pequeña y flexible que puede lanzarse desde la línea de comandos. Instálela desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") con el paquete [fswebcam](https://www.archlinux.org/packages/?name=fswebcam).
+fswebcam es una aplicación de webcam pequeña y flexible que puede lanzarse desde la línea de comandos. Instálela desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") con el paquete [fswebcam](https://aur.archlinux.org/packages/fswebcam/).
 
 ### GTK+ UVC Viewer (guvcview)
 

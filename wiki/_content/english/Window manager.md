@@ -83,7 +83,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[Fluxbox](/index.php/Fluxbox "Fluxbox")** — Window manager for X that was based on the Blackbox 0.61.1 code. It is very light on resources and easy to handle but yet full of features to make an easy and extremely fast desktop experience. It is built using C++ and licensed under the MIT License.
 
-	[http://www.fluxbox.org/](http://www.fluxbox.org/) || [fluxbox](https://www.archlinux.org/packages/?name=fluxbox)
+	[https://github.com/fluxbox/fluxbox](https://github.com/fluxbox/fluxbox) || [fluxbox](https://www.archlinux.org/packages/?name=fluxbox)
 
 *   **[Flwm](https://en.wikipedia.org/wiki/FLWM "wikipedia:FLWM")** — Attempt to combine the best ideas I have seen in several window managers. The primary influence and code base is from wm2 by Chris Cannam.
 
@@ -147,7 +147,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[Openbox](/index.php/Openbox "Openbox")** — Highly configurable, next generation window manager with extensive standards support. The *box visual style is well known for its minimalistic appearance. Openbox uses the *box visual style, while providing a greater number of options for theme developers than previous *box implementations. The theme documentation describes the full range of options found in Openbox themes.
 
-	[http://openbox.org/wiki/Main_Page](http://openbox.org/wiki/Main_Page) || [openbox](https://www.archlinux.org/packages/?name=openbox)
+	[http://openbox.org/](http://openbox.org/) || [openbox](https://www.archlinux.org/packages/?name=openbox)
 
 *   **[pawm](/index.php/Pawm "Pawm")** — Window manager for the X Window system. So it is not a 'desktop' and does not offer you a huge pile of useless options, just the facilities needed to run your X applications and at the same time having a friendly and easy to use interface.
 

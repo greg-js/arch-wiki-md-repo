@@ -1,3 +1,13 @@
+Articoli correlati
+
+*   [Desktop Environment](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)")
+*   [Display Manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)")
+*   [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)")
+*   [Plasma](/index.php/Plasma_(Italiano) "Plasma (Italiano)")
+*   [Qt](/index.php/Qt "Qt")
+*   [KDevelop 4](/index.php/KDevelop_4 "KDevelop 4")
+*   [Integrazione dei temi di KDE 4 con le applicationi GTK](/index.php/Uniform_Look_for_Qt_and_GTK_Applications_(Italiano) "Uniform Look for Qt and GTK Applications (Italiano)")
+
 Tratto da [KDE - KDE Software Compilation](http://www.kde.org/community/whatiskde/softwarecompilation.php) e [Getting KDE Software](http://www.kde.org/download/):
 
 	*Il KDE Software Compilation è l'insieme di strutture, aree di lavoro e applicazioni prodotte da KDE. Nella sua creazione, KDE è nato per realizzare un bellissimo, funzionale e gratuito ambiente di elaborazione desktop per Linux e sistemi operativi analoghi. KDE è costituito da un gran numero di applicazioni individuali e da uno spazio di lavoro desktop, inteso come un guscio all'interno del quale è possibile eseguire queste applicazioni in modo integrato.*

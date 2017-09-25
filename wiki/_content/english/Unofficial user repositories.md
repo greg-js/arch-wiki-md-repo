@@ -147,7 +147,7 @@ Server = https://mirror.archstrike.org/$arch/$repo
 *   **Maintainer:** [Ianis G. Vasilev](https://ivasilev.net)
 *   **Description:** A variety of packages, mostly my own software and AUR builds.
 *   **Upstream page:** [https://ivasilev.net/pacman](https://ivasilev.net/pacman)
-*   **Key-ID:** [53065C70](https://pgp.mit.edu/pks/lookup?op=vindex&search=0xDD4D0AEFDDAF29CCE3B5865D30C4A2E653065C70)
+*   **Key-ID:** [17DAB671](https://pgp.mit.edu/pks/lookup?op=vindex&search=0xB77A3C8832838F1F80ADFD7E1D0507B417DAB671)
 
 **Note:** I maintain **any** and **x86_64** repos. **x86_64** includes packages from **any**. **$arch** can be overridden by both.
 
@@ -344,7 +344,7 @@ Server = http://repo.herecura.be/$repo/$arch
 *   **Maintainer:** [Ianis G. Vasilev](https://ivasilev.net)
 *   **Description:** A variety of packages, mostly my own software and AUR builds.
 *   **Upstream page:** [https://ivasilev.net/pacman](https://ivasilev.net/pacman)
-*   **Key-ID:** [53065C70](https://pgp.mit.edu/pks/lookup?op=vindex&search=0xDD4D0AEFDDAF29CCE3B5865D30C4A2E653065C70)
+*   **Key-ID:** [17DAB671](https://pgp.mit.edu/pks/lookup?op=vindex&search=0xB77A3C8832838F1F80ADFD7E1D0507B417DAB671)
 
 **Note:** I maintain **any** and **x86_64** repos. **x86_64** includes packages from **any**. **$arch** can be overridden by both.
 

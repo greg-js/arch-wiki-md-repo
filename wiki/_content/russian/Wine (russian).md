@@ -1,3 +1,8 @@
+Ссылки по теме
+
+*   [Steam/Wine](/index.php/Steam/Wine "Steam/Wine")
+*   [CrossOver](/index.php/CrossOver "CrossOver")
+
 [Wine](https://en.wikipedia.org/wiki/ru:Wine "wikipedia:ru:Wine") — свободная реализация программного интерфейса Microsoft Windows (WinAPI), позволяющая запускать приложения Windows в среде Unix-подобных операционных систем. Программы, запущенные в Wine, работают точно так же, как и в своей родной среде без снижения производительности, в отличие от запуска в эмуляторе. Более подробное описание Wine смотрите на [домашней странице проекта](http://www.winehq.org/) и на [вики-страницах Wine](http://wiki.winehq.org/).
 
 ## Contents

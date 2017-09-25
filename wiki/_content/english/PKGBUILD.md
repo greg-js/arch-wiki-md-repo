@@ -9,7 +9,6 @@ Related articles
 *   [makepkg](/index.php/Makepkg "Makepkg")
 *   [pacman](/index.php/Pacman "Pacman")
 *   [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks")
-*   [VCS package guidelines](/index.php/VCS_package_guidelines "VCS package guidelines")
 
 This article discusses variables definable by the maintainer in a PKGBUILD. For information on the PKGBUILD functions and creating packages in general, refer to [Creating packages](/index.php/Creating_packages "Creating packages"). Also read [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
 

@@ -1,9 +1,15 @@
-**PowerTOP** is a tool provided by Intel to enable various powersaving modes in userspace, kernel and hardware. It is possible to monitor processes and show which of them are utilizing the CPU and wake it from its Idle-States, allowing to identify applications with particular high power demands.
+Related articles
+
+*   [Power saving](/index.php/Power_saving "Power saving")
+*   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
+
+**Powertop** is a tool provided by Intel to enable various powersaving modes in userspace, kernel and hardware. It is possible to monitor processes and show which of them are utilizing the CPU and wake it from its Idle-States, allowing to identify applications with particular high power demands.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Tips and tricks](#Tips_and_tricks)
+*   [2 Usage](#Usage)
+    *   [2.1 Apply settings](#Apply_settings)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Error: Cannot load from file](#Error:_Cannot_load_from_file)
     *   [3.2 Calibration to prevent inaccurate measurement](#Calibration_to_prevent_inaccurate_measurement)
@@ -13,18 +19,20 @@
 
 [Install](/index.php/Install "Install") the [powertop](https://www.archlinux.org/packages/?name=powertop) package.
 
-PowerTOP features are detailed on the release notes for each version on the [PowerTOP blog](https://01.org/powertop/blogs).
+## Usage
 
-## Tips and tricks
+Powertop suggests a few methods to reduce the power consumption further. However, in interactive mode, powertop does not display the parameters. To find out which ones are suggested, proceed as follows:
 
-PowerTOP suggests a few methods to reduce the power consumption further. However, in the console, PowerTOP does not display the parameters. To find out which ones are suggested, proceed as follows:
-
-1.  If you have changed parameters (e.g. in PowerTOP), reboot so that the system has default state of the parameters.
-2.  Use PowerTOP to produce a report on parameters: `# powertop --html=powerreport.html`
+1.  If you have changed parameters (e.g. in powertop), reboot so that the system has default state of the parameters.
+2.  Use powertop to produce a report on parameters: `# powertop --html=powerreport.html`
 3.  Open the report in your favorite web browser. The "Tuning" tab of the report now shows the actual parameters suggested by the tool to apply to save power. You may extract the commands with `awk -F '</?td ?>' '/tune/ { print $4 }' powerreport.html`.
-4.  They are two ways to apply those settings:
-    *   **Recommended:** You can apply these settings at boot by using [module parameters](/index.php/Module_parameters "Module parameters"), [udev rules](/index.php/Udev_rules "Udev rules") and [sysctl](/index.php/Sysctl "Sysctl"). For details, see the [power management](/index.php/Power_management "Power management") page.
-    *   You can use the `--auto-tune` feature from PowerTOP which sets all tunable options to their GOOD setting. This can be combined with systemd to have the tunables set on boot.
+
+### Apply settings
+
+There are two ways to automatically apply the suggested settings:
+
+*   **Recommended:** You can apply these settings at boot by using [module parameters](/index.php/Module_parameters "Module parameters"), [udev rules](/index.php/Udev_rules "Udev rules") and [sysctl](/index.php/Sysctl "Sysctl"). For details, see the [power management](/index.php/Power_management "Power management") page.
+*   You can use the `--auto-tune` feature from powertop which sets all tunable options to their GOOD setting. This can be combined with systemd service to have the tunables set on boot.
 
  `/etc/systemd/system/powertop.service` 
 ```

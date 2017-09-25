@@ -1,3 +1,11 @@
+Related articles
+
+*   [GNOME](/index.php/GNOME "GNOME")
+*   [Cinnamon](/index.php/Cinnamon "Cinnamon")
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications")
+
 From [MATE homepage](http://mate-desktop.org/):
 
 	*The MATE Desktop Environment is the continuation of GNOME 2\. It provides an intuitive and attractive desktop environment using traditional metaphors for Linux and other Unix-like operating systems. MATE is [under active development](https://github.com/mate-desktop) to add support for new technologies while preserving a traditional desktop experience.*
@@ -97,7 +105,7 @@ Consider the following community efforts, cf. [forum](https://bbs.archlinux.org/
 
 ## Starting MATE
 
-Choose *MATE* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice. The MATE team recommends [LightDM](/index.php/LightDM "LightDM") as the display manager.
+Choose *MATE* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
 
 Alternatively, to start MATE with *startx*, append `exec mate-session` to your `~/.xinitrc` file. See [xinitrc](/index.php/Xinitrc "Xinitrc") for details, such as preserving the logind session.
 

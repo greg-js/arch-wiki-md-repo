@@ -38,7 +38,7 @@ Check for the package in the sorted lists below before adding.
 
 *   [a2jmidid-git](https://aur.archlinux.org/packages/a2jmidid-git/) - [a2midid](https://www.archlinux.org/packages/?name=a2midid) is available and seems to be newer than the last commit in git. Old and unmaintained developmental (cvs/svn/etc) package (last commit from 2013-11-26, upstream URL is dead, note: manually git-clones repo instad of using the source list.)
 *   [abook-git](https://aur.archlinux.org/packages/abook-git/) - error: access denied or repository not exported” for the repo specified in PKGBUILD
-*   [attic](https://aur.archlinux.org/packages/attic/) - Project dead, see [borg](https://aur.archlinux.org/packages/borg/) fork
+*   [attic](https://aur.archlinux.org/packages/attic/) - Project dead, see [borg](https://www.archlinux.org/packages/?name=borg) fork
 
 <--[Obsoleted by --assumed-installed](https://lists.archlinux.org/pipermail/aur-requests/2017-June/017483.html)-->
 

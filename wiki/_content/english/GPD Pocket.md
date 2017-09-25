@@ -36,7 +36,7 @@ During Boot add **"fbcon=rotate:1"** to the kernel line to rotate the console. I
 ```
 [gpd-pocket] 
 SigLevel = Optional TrustAll 
-Server = https://github.com/njkli/$repo/raw/master/repo 
+Server = https://github.com/njkli/$repo/releases/download/$arch
 
 ```
 

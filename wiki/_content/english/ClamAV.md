@@ -213,7 +213,7 @@ User root
 
 ```
 
-Next, create the file `/etc/clamav/detected.zsh` and add the following. This allows you to change/specify the debug message when a virus has been detected by clamd's on-access scanning service:
+Next, create the file `/etc/clamav/detected.zsh` and add the following (replace X_user with the username and X_userId with the userid for whom to display the desktop notification). This allows you to change/specify the debug message when a virus has been detected by clamd's on-access scanning service:
 
  `/etc/clamav/detected.zsh` 
 ```
@@ -225,7 +225,7 @@ echo "$(date) - $CLAM_VIRUSEVENT_VIRUSNAME > $CLAM_VIRUSEVENT_FILENAME" >> /var/
 if [[ -z $(command -v notify-send) ]]; then
   echo "$alert" {{!}} wall -n
 else
-  notify-send "$alert"
+  sudo -u X_user DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/X_userId/bus /usr/bin/notify-send -i dialog-warning "$alert"
 fi
 
 ```

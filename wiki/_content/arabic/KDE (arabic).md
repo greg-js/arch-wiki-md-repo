@@ -1,3 +1,13 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display Manager (العربية)](/index.php/Display_Manager_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Display Manager (العربية)")
+*   [Window Manager (العربية)](/index.php/Window_Manager_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Window Manager (العربية)")
+*   [Plasma](/index.php/Plasma "Plasma")
+*   [Qt](/index.php/Qt "Qt")
+*   [KDevelop 4](/index.php/KDevelop_4 "KDevelop 4")
+*   [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")
+
 **ملاحظة:** ما زالت هذه المقالة قيد الترجمة.
 
 من [KDE Software Compilation](http://www.kde.org/community/whatiskde/softwarecompilation.php) و [Getting KDE Software](http://www.kde.org/download/):

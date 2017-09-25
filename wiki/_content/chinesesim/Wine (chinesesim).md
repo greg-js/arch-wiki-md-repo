@@ -1,5 +1,10 @@
 **翻译状态：** 本文是英文页面 [Wine](/index.php/Wine "Wine") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-08-5，点击[这里](https://wiki.archlinux.org/index.php?title=Wine&diff=0&oldid=389504)可以查看翻译后英文页面的改动。
 
+相关文章
+
+*   [Steam](/index.php/Steam "Steam")
+*   [CrossOver](/index.php/CrossOver "CrossOver")
+
 [Wine](https://en.wikipedia.org/wiki/Wine_(software) 是类UNIX系统下运行微软Windows程序的"兼容层"。在Wine中运行的Windows程序，就如同运行原生Linux程序一样，不会有模拟器那样的性能问题。
 
 获取更详细的介绍请浏览[项目官方网站](http://www.winehq.org/)和[wiki](http://wiki.winehq.org/)页面。

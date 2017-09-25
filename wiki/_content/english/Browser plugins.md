@@ -1,3 +1,9 @@
+Related articles
+
+*   [Opera](/index.php/Opera "Opera")
+*   [Firefox](/index.php/Firefox "Firefox")
+*   [Chromium](/index.php/Chromium "Chromium")
+
 There are two types of browser plugins, based on the plugin API they use:
 
 *   Netscape plugin API (NPAPI): these plugins work in most smaller browsers ([Firefox supports only the Flash Player plugin](/index.php/Firefox#Plugins "Firefox"), Chromium and Opera do **not** support these plugins).
@@ -223,7 +229,7 @@ Install [Watch with MPV](https://addons.mozilla.org/en-US/firefox/addon/watch-wi
 **Note:**
 
 *   This plugin is not required when using Chromium
-*   Hangouts calling doesn't work in Firefox as of March 2017.[[2]](https://gsuiteupdates.googleblog.com/2017/02/google-hangouts-temporary-issues-with-firefox.html)
+*   Hangouts calling doesn't work in Firefox as of March 2017.[[2]](https://gsuiteupdates.googleblog.com/2017/02/google-hangouts-temporary-issues-with-firefox.html)[[3]](https://support.google.com/hangouts/answer/7334146)
 
 Hangouts plugin can be installed with the [google-talkplugin](https://aur.archlinux.org/packages/google-talkplugin/) package. Hangouts is a messenger by Google, that allows you to make video call between 15 people simultaneously, or share your screen with others.
 

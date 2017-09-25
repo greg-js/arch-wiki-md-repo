@@ -16,14 +16,53 @@ Setting the mouse acceleration depends on the windowing protocol you are using: 
 
 ## Contents
 
-*   [1 Setting mouse acceleration](#Setting_mouse_acceleration)
-    *   [1.1 In Xorg configuration](#In_Xorg_configuration)
-    *   [1.2 Using xset](#Using_xset)
-    *   [1.3 Using xinput](#Using_xinput)
-    *   [1.4 Configuration example](#Configuration_example)
-*   [2 Disabling mouse acceleration](#Disabling_mouse_acceleration)
-    *   [2.1 with libinput](#with_libinput)
-*   [3 Mouse speed with libinput](#Mouse_speed_with_libinput)
+*   [1 Mouse speed with libinput](#Mouse_speed_with_libinput)
+    *   [1.1 Changing the speed](#Changing_the_speed)
+    *   [1.2 Persistent configuration](#Persistent_configuration)
+*   [2 Setting mouse acceleration](#Setting_mouse_acceleration)
+    *   [2.1 In Xorg configuration](#In_Xorg_configuration)
+    *   [2.2 Using xset](#Using_xset)
+    *   [2.3 Using xinput](#Using_xinput)
+    *   [2.4 Configuration example](#Configuration_example)
+*   [3 Disabling mouse acceleration](#Disabling_mouse_acceleration)
+    *   [3.1 with libinput](#with_libinput)
+
+## Mouse speed with libinput
+
+When using the adaptive pointer acceleration profile, [libinput](/index.php/Libinput "Libinput") calculates the mouse acceleration depending on the DPI and the parameter `Acceleration Speed` [[2]](https://wayland.freedesktop.org/libinput/doc/latest/pointer-acceleration.html). libinput relies on the resolution reported by [evdev](/index.php/Evdev "Evdev") [[3]](https://wayland.freedesktop.org/libinput/doc/latest/motion_normalization.html). Feedback settings set with `xset m` are effectively ignored. When using the flat pointer acceleration profile, the acceleration factor is constant regardless of the velocity of the pointer. This provides 1:1 movement between the device and the pointer on-screen.
+
+### Changing the speed
+
+Find the id of your device with `xinput list` and set the acceleration speed with the following command. Note that the acceleration speed has to be in the range of [-1,1]. Check [this plot](https://wayland.freedesktop.org/libinput/doc/latest/pointer-acceleration.html#ptraccel-linear) to see the impact of different acceleration speed values.
+
+```
+$ xinput --set-prop <device id> 'libinput Accel Speed' <acceleration factor>
+
+```
+
+Confirm your changes with the following:
+
+```
+$ xinput --list-props <device id>
+
+```
+
+### Persistent configuration
+
+libinput does not store configuration options, it is up to the caller to manage these. Under Wayland configuration is restored by the desktop environment. Under X [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) reads the xorg config files and applies the options [[4]](https://wayland.freedesktop.org/libinput/doc/latest/faq.html#faq_config_options). To make changes persistent under X create a file like this:
+
+ `/etc/X11/xorg.conf.d/99-libinput-custom-config.conf` 
+```
+Section "InputClass"
+  Identifier "<something to identify this snippet>"
+  MatchDriver "libinput"
+  MatchProduct "<substring of the device name>"
+  Option "AccelSpeed" "<e.g. 0.3>"
+EndSection
+
+```
+
+For further options see [libinput(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4).
 
 ## Setting mouse acceleration
 
@@ -225,12 +264,3 @@ $ xinput list-props {1..50} 2>/dev/null | fgrep 'libinput Accel Profile Enabled 
 ```
 
 The profile should read `0, 1`.
-
-## Mouse speed with libinput
-
-The speed setting `libinput Accel Speed` is the same as before, taking values in the [-1, 1] range. The Speed setting is a fraction that is added (or subtracted) to 100%, e.g. -0.3 is 70% of the normal speed, and 0.5 is 150%. For example, to adjust the mouse speed down to 50%, use
-
-```
-$ xinput --set-prop 9 'libinput Accel Speed' -0.5
-
-```

@@ -180,7 +180,7 @@ To enlarge icons in system tray, right-click on it (aim for empty space / top pi
 
 ### Cinnamon
 
-Supports HiDPI since 2.2\. The support is pretty good (e.g. window borders are correctly sized, which is not the case under Xfce).
+Has good support out of the box.
 
 ### Enlightenment
 
@@ -286,19 +286,17 @@ Set a lower resolution for the framebuffer as explained in [GRUB/Tips and tricks
 
 #### Firefox
 
-Open Firefox advanced preferences page (`about:config`) and set parameter `layout.css.devPixelsPerPx` to `2` (or find the one that suits you better; `2` is a good choice for Retina screens).
+Firefox should use the [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29) settings.
 
-If you use a HiDPI monitor such as Retina display together with another monitor, you can use [AutoHiDPI](https://addons.mozilla.org/en-US/firefox/addon/autohidpi/) add-on in order to automatically adjust `layout.css.devPixelsPerPx` setting for the active screen.
+To override those, open Firefox advanced preferences page (`about:config`) and set parameter `layout.css.devPixelsPerPx` to `2` (or find the one that suits you better; `2` is a good choice for Retina screens).
 
-From Firefox version 38 onwards, your system (GTK+ 3.10) settings should be taken into account.[[1]](https://bugzilla.mozilla.org/show_bug.cgi?id=975919)
-
-Also, since Firefox version 49, it auto-scales based on your screen resolution, making it easier to deal with 2 or more screens.
+If you use a HiDPI monitor such as Retina display together with another monitor, you can use [AutoHiDPI](https://addons.mozilla.org/en-US/firefox/addon/autohidpi/) add-on in order to automatically adjust `layout.css.devPixelsPerPx` setting for the active screen. Also, since Firefox version 49, it auto-scales based on your screen resolution, making it easier to deal with 2 or more screens.
 
 #### Chromium / Google Chrome
 
-Full out of the box HiDPI support is available in [chromium](https://www.archlinux.org/packages/?name=chromium) and [google-chrome](https://aur.archlinux.org/packages/google-chrome/) as tested (with google-chrome) on Gnome and Cinnamon. Additionally, for environments where out of the box support does not work, the browser can be launched with the command line flag `--force-device-scale-factor` and a scaling value. This will scale all content and ui, including tab and font size. For example:
+Chromium should use the [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29) settings.
 
- `chromium --force-device-scale-factor=2` 
+To override those, use the `--force-device-scale-factor` flag with a scaling value. This will scale all content and ui, including tab and font size. For example `chromium --force-device-scale-factor=2`.
 
 Using this option, a scaling factor of 1 would be normal scaling. Floating point values can be used. To make the change permanent, for Chromium, you can add it to `~/.config/chromium-flags.conf`:
 
@@ -308,9 +306,9 @@ If you use a HiDPI monitor such as Retina display together with another monitor,
 
 #### Opera
 
-Since version 24 one can alter Opera's DPI by starting it with the `--alt-high-dpi-setting=X` command line option, where X is the desired DPI. For example, with `--alt-high-dpi-setting=144` Opera will assume that DPI is 144\. Newer versions of opera will auto detect the DPI using the font DPI setting (in KDE: the force font DPI setting.)
+Opera should use the [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29) settings.
 
-Generally speaking, Opera's HiDPI support is excellent. Since it is also built using Chromium's blink renderer, and has an extension which runs most Chrome extensions, it is a very viable alternative to Chromium/Chrome.
+To override those, use the `--alt-high-dpi-setting=X` command line option, where X is the desired DPI. For example, with `--alt-high-dpi-setting=144` Opera will assume that DPI is 144\. Newer versions of opera will auto detect the DPI using the font DPI setting (in KDE: the force font DPI setting.)
 
 ### Thunderbird
 
@@ -329,7 +327,7 @@ and change the "dpi" setting found in the "Graphics" tab. This only affects the 
 
 ### Skype
 
-The new Skype for Linux Alpha with the [skypeforlinux](https://aur.archlinux.org/packages/skypeforlinux/)) package uses [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29), and the [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/) package uses [#GTK+ 2](#GTK.2B_2).
+The new Skype for Linux with the [skypeforlinux](https://aur.archlinux.org/packages/skypeforlinux/) package uses [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29), and the [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/) package uses [#GTK+ 2](#GTK.2B_2).
 
 The old legacy Skype ([skype](https://aur.archlinux.org/packages/skype/)) uses Qt 4, and needs to be configured separately. You cannot change the DPI setting for it, but at least you can change font size. Install [qt4](https://www.archlinux.org/packages/?name=qt4) and run `qtconfig-qt4` to do it.
 
@@ -359,7 +357,7 @@ Sublime Text 3 has full support for display scaling. Go to Preferences > Setting
 
 ### IntelliJ IDEA
 
-IntelliJ IDEA 15 and above should include HiDPI support.[[2]](http://blog.jetbrains.com/idea/2015/07/intellij-idea-15-eap-comes-with-true-hidpi-support-for-windows-and-linux/) If it does not work, the most convenient way to fix the problem in this case seems to be changing the Override Default Fonts setting:
+IntelliJ IDEA 15 and above should include HiDPI support.[[1]](http://blog.jetbrains.com/idea/2015/07/intellij-idea-15-eap-comes-with-true-hidpi-support-for-windows-and-linux/) If it does not work, the most convenient way to fix the problem in this case seems to be changing the Override Default Fonts setting:
 
 	*File -> Settings -> Behaviour & Appearance -> Appearance*
 
@@ -367,7 +365,7 @@ The addition of `-Dhidpi=true` to the vmoptions file in either `$HOME/.IdeaC14/`
 
 ### NetBeans
 
-NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[3]](http://wiki.netbeans.org/FaqFontSize)
+NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[2]](http://wiki.netbeans.org/FaqFontSize)
 
 The editor fontsize can be controlled from Tools → Option → Fonts & Colors.
 
@@ -398,7 +396,7 @@ java -Dsun.java2d.uiScale=2 -jar some_application.jar
 
 ### Mono applications
 
-According to [[4]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK3](#GDK_3_.28GTK.2B_3.29) applications.
+According to [[3]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK3](#GDK_3_.28GTK.2B_3.29) applications.
 
 ### Unsupported applications
 
@@ -461,7 +459,7 @@ xrandr --output eDP-1 --auto --pos 0x(DxF) --output HDMI-1 --auto --scale [E]x[F
 
 You may adjust the "sharpness" parameter on your monitor settings to adjust the blur level introduced with scaling.
 
-**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available.[[5]](https://bbs.archlinux.org/viewtopic.php?pid=1670840)
+**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available.[[4]](https://bbs.archlinux.org/viewtopic.php?pid=1670840)
 
 ### Mirroring
 

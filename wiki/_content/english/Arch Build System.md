@@ -21,11 +21,11 @@ This article provides an overview of the Arch Build System (ABS) along with a wa
         *   [1.3.1 SVN tree](#SVN_tree)
 *   [2 Why would I want to use ABS?](#Why_would_I_want_to_use_ABS.3F)
 *   [3 How to use ABS](#How_to_use_ABS)
-    *   [3.1 Retrieve PKGBUILD source](#Retrieve_PKGBUILD_source)
+    *   [3.1 Retrieve PKGBUILD source using Svn](#Retrieve_PKGBUILD_source_using_Svn)
         *   [3.1.1 Prerequisites](#Prerequisites)
         *   [3.1.2 Non-recursive checkout](#Non-recursive_checkout)
         *   [3.1.3 Checkout a package](#Checkout_a_package)
-    *   [3.2 Configure makepkg](#Configure_makepkg)
+    *   [3.2 Retrieve PKGBUILD source using Git](#Retrieve_PKGBUILD_source_using_Git)
     *   [3.3 Build package](#Build_package)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Preserve modified packages](#Preserve_modified_packages)
@@ -99,7 +99,7 @@ The Arch Build System is used to:
 *   Compile or recompile a package, for any reason
 *   Make and install new packages from source of software for which no packages are yet available (see [Creating packages](/index.php/Creating_packages "Creating packages"))
 *   Customize existing packages to fit your needs (enabling or disabling options, patching)
-*   Rebuild your entire system using your compiler flags, "à la FreeBSD" (e.g. with [pacbuilder-svn](https://aur.archlinux.org/packages/pacbuilder-svn/))
+*   Rebuild your entire system using your compiler flags, "à la FreeBSD" (e.g. with [pacbuilder-svn](https://aur.archlinux.org/packages/pacbuilder-svn/) (not available anymore))
 *   Cleanly build and install your own custom kernel (see [Kernel compilation](/index.php/Kernels#Compilation "Kernels"))
 *   Get kernel modules working with your custom kernel
 *   Easily compile and install a newer, older, beta, or development version of an Arch package by editing the version number in the PKGBUILD
@@ -108,9 +108,9 @@ ABS is not necessary to use Arch Linux, but it is useful for automating certain 
 
 ## How to use ABS
 
-### Retrieve PKGBUILD source
+To retrieve the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") required to build a certain package from source, you can either use [Svn](/index.php/Subversion "Subversion") or a [Git](/index.php/Git "Git")-based approach using the [asp](https://www.archlinux.org/packages/?name=asp) package which is a thin wrapper around the svntogit repositories. In the following, the svn-based method as well as the [git-based method](#Retrieve_PKGBUILD_source_using_Git) is described.
 
-**Tip:** An alternative method is to [install](/index.php/Install "Install") and use the [asp](https://www.archlinux.org/packages/?name=asp) package which is a thin wrapper around the svntogit repositories.
+### Retrieve PKGBUILD source using Svn
 
 #### Prerequisites
 
@@ -162,13 +162,35 @@ $ svn update
 
 ```
 
-### Configure makepkg
+### Retrieve PKGBUILD source using Git
 
-See [makepkg#Configuration](/index.php/Makepkg#Configuration "Makepkg") on how to configure *makepkg* for building packages from the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")'s you have checked out.
+As a precondition, [install](/index.php/Install "Install") the [asp](https://www.archlinux.org/packages/?name=asp) package.
+
+To clone the svntogit-repository for a specific package, use:
+
+```
+$ asp checkout *pkgname*
+
+```
+
+This will clone the git repository for the given package into a directory named like the package.
+
+To update the cloned git repository, run `asp update` followed by `git pull` inside the git repository.
+
+Furthermore, you can use all other git commands to checkout an older version of the package or to track custom changes. For more information on git usage, see the [git](/index.php/Git "Git") page.
+
+If you just want to copy a snapshot of the current [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for a specific package, use:
+
+```
+$ asp export *pkgname*
+
+```
 
 ### Build package
 
-Copy the directory containing the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") you wish to modify to a new location. Then make the desired modifications. From there, use *makepkg* as described in [makepkg#Usage](/index.php/Makepkg#Usage "Makepkg") to create and install the new package.
+See [makepkg#Configuration](/index.php/Makepkg#Configuration "Makepkg") on how to configure *makepkg* for building packages from the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")'s you have checked out.
+
+Then, copy the directory containing the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") you wish to modify to a new location. There, make the desired modifications and use *makepkg* there as described in [makepkg#Usage](/index.php/Makepkg#Usage "Makepkg") to create and install the new package.
 
 ## Tips and tricks
 

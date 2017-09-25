@@ -192,7 +192,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Vimiv** — An image viewer with vim-like keybindings. It is written in python3 using the Gtk3 toolkit.
 
-	[http://karlch.github.io/vimiv](http://karlch.github.io/vimiv) || [vimiv](https://aur.archlinux.org/packages/vimiv/)
+	[http://karlch.github.io/vimiv](http://karlch.github.io/vimiv) || [vimiv](https://www.archlinux.org/packages/?name=vimiv)
 
 *   **Xloadimage** — Classic X image viewer.
 

@@ -119,7 +119,7 @@ $ chromium --user-data-dir=<PATH TO A PROFILE>
 
 For example, if you copied the Default folder to `~/Downloads`:
 
- `$ chromium --user-data-dir=$HOME/Downloads` 
+ `$ chromium --user-data-dir=~/Downloads` 
 
 ### Directly open *.torrent files and magnet links with a torrent client
 
@@ -201,7 +201,7 @@ The procedure is pretty much the same. You need to go to `chrome://settings/impo
 
 ### Enabling native notifications
 
-Go to chrome://flags and enable the flag #enable-native-notifications. This requires version 59 or higher.
+Go to `chrome://flags#enable-native-notifications` and select *Enabled*.
 
 ## Profile maintenance
 
@@ -322,7 +322,7 @@ ScriptBlock is similar to NoScript, which is a Firefox add-on. Both extensions s
 
 It's also worth checking it's default whitelist, which might be permissive to you.
 
-Extension is available in the Chrome Web Store: [ScriptBlock](https://chrome.google.com/webstore/detail/scriptblock/hcdjknjpbnhdoabbngpmfekaecnpajba?hl=en-US)
+Extension is available in the [Chrome Web Store](https://chrome.google.com/webstore/detail/scriptblock/hcdjknjpbnhdoabbngpmfekaecnpajba?hl=en-US)
 
 #### ScriptSafe
 
@@ -330,9 +330,7 @@ ScriptSafe is a browser extension that gives users control of the web and more s
 
 **Note:** Due to the nature of this extension, this will break most sites! It is designed to learn over time with sites that you allow.
 
-Check it on [GitHub](https://github.com/andryou/scriptsafe)
-
-Extension is available in the Chrome Web Store: [ScriptSafe](https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf?hl=en)
+Check it on [GitHub](https://github.com/andryou/scriptsafe) or in the [Chrome Web Store](https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf?hl=en).
 
 #### Vanilla Cookie Manager
 
@@ -342,15 +340,11 @@ You could turn off cookies completely or just shut off third-party cookies. But 
 
 With Vanilla you can select which cookies you want to keep on a whitelist. All unwanted cookies are deleted automatically (or manually if you prefer).
 
-Vanilla Cookie Manager on [GitHub](https://github.com/laktak/vanilla-chrome)
-
-Extension is available in the Chrome Web Store: [Vanilla Cookie Manager](https://chrome.google.com/webstore/detail/vanilla-cookie-manager/gieohaicffldbmiilohhggbidhephnjj)
+Vanilla Cookie Manager on [GitHub](https://github.com/laktak/vanilla-chrome) or in the [Chrome Web Store](https://chrome.google.com/webstore/detail/vanilla-cookie-manager/gieohaicffldbmiilohhggbidhephnjj).
 
 ### Do Not Track
 
-Chromium's 'Do Not Track' option is turned off by default. To enable it, visit `chrome://settings`, scroll down to **Show advanced settings...** and under **Privacy**, check **Send a "Do Not Track" request with your browsing traffic**.
-
-**Note:** DNT is a suggestion for the websites you're visiting to not track you. It may be just ignored, and isn't going to stop all web tracking. Even if you turn this feature on, your data may be still collected and analyzed.
+To enable [Do Not Track](https://en.wikipedia.org/wiki/Do_Not_Track "wikipedia:Do Not Track"), visit `chrome://settings`, scroll down to *Advanced* and under *Privacy and security*, check *Send a "Do Not Track" request with your browsing traffic*.
 
 ### Force a password store
 

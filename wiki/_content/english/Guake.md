@@ -11,7 +11,7 @@ Related articles
 *   [3 Autostartup](#Autostartup)
 *   [4 Guake scripting](#Guake_scripting)
 *   [5 Using Guake on multiple monitors](#Using_Guake_on_multiple_monitors)
-*   [6 Throubleshooting](#Throubleshooting)
+*   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 'Ctrl' keybind problem](#.27Ctrl.27_keybind_problem)
     *   [6.2 In Floating WM](#In_Floating_WM)
 *   [7 See also](#See_also)
@@ -135,7 +135,7 @@ There are two GConf options allowing you to change the screen on which Guake win
 
 Use some tool like *gconf-editor* to edit GConf options.
 
-## Throubleshooting
+## Troubleshooting
 
 ### 'Ctrl' keybind problem
 

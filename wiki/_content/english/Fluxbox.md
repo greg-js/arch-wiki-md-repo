@@ -346,10 +346,10 @@ To make a help function in your menu, just add in `~/.fluxbox/menu`:
 
 ## See also
 
-*   [Fluxbox Homepage](http://fluxbox.org/)
+*   [Fluxbox on Github](https://github.com/fluxbox/fluxbox)
 *   [Fluxbox wiki](http://fluxbox-wiki.org/)
-*   [Gentoo Wiki about Fluxbox](http://wiki.gentoo.org/wiki/Fluxbox)
+*   [Gentoo Wiki about Fluxbox](https://wiki.gentoo.org/wiki/Fluxbox)
 *   [Themes for Fluxbox](https://www.box-look.org/browse/cat/139/ord/latest/)
+*   The Fluxbox man pages: fluxbox, fluxbox-menu, fluxbox-style, fluxbox-keys, fluxbox-apps, fluxbox-remote, fbsetroot, fbsetbg, fbrun, startfluxbox
 *   [Narada's Fluxbox Guide](https://bbs.archlinux.org/viewtopic.php?id=77729)
-*   The Fluxbox man pages: fluxbox, fluxbox-menu, fluxbox-style, fluxbox-keys, fluxbox-apps, fluxbox-remote, fbsetroot, fbsetbg, fbrun, startfluxbox.
 *   [Arch Linux Fluxbox screenshots](https://bbs.archlinux.org/viewtopic.php?id=90260)

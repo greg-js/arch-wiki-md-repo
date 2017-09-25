@@ -1,3 +1,9 @@
+Related articles
+
+*   [OpenVPN (client) in Linux containers](/index.php/OpenVPN_(client)_in_Linux_containers "OpenVPN (client) in Linux containers")
+*   [OpenVPN (server) in Linux containers](/index.php/OpenVPN_(server)_in_Linux_containers "OpenVPN (server) in Linux containers")
+*   [Easy-RSA](/index.php/Easy-RSA "Easy-RSA")
+
 This article describes a basic installation and configuration of [OpenVPN](http://openvpn.net), suitable for private and small business use. For more detailed information, please see the [OpenVPN 2.4 man page](https://community.openvpn.net/openvpn/wiki/Openvpn24ManPage) and the [OpenVPN documentation](http://openvpn.net/index.php/open-source/documentation). OpenVPN is a robust and highly flexible [VPN](https://en.wikipedia.org/wiki/VPN "wikipedia:VPN") daemon. It supports [SSL/TLS](https://en.wikipedia.org/wiki/SSL/TLS "wikipedia:SSL/TLS") security, [Ethernet bridging](https://en.wikipedia.org/wiki/Bridging_(networking) "wikipedia:Bridging (networking)"), [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol "wikipedia:Transmission Control Protocol") or [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol "wikipedia:User Datagram Protocol") [tunnel transport](https://en.wikipedia.org/wiki/Tunneling_protocol "wikipedia:Tunneling protocol") through [proxies](https://en.wikipedia.org/wiki/Proxy_server "wikipedia:Proxy server") or [NAT](https://en.wikipedia.org/wiki/Network_address_translation "wikipedia:Network address translation"). Additionally it has support for dynamic IP addresses and [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol"), scalability to hundreds or thousands of users, and portability to most major OS platforms.
 
 OpenVPN is tightly bound to the [OpenSSL](http://www.openssl.org) library, and derives much of its crypto capabilities from it. It supports conventional encryption using a [pre-shared secret key](https://en.wikipedia.org/wiki/Pre-shared_key "wikipedia:Pre-shared key") (Static Key mode) or [public key security](https://en.wikipedia.org/wiki/Public_key "wikipedia:Public key") ([SSL/TLS](https://en.wikipedia.org/wiki/SSL/TLS "wikipedia:SSL/TLS") mode) using client & server certificates. Additionally it supports unencrypted TCP/UDP tunnels.
@@ -451,11 +457,11 @@ On a client you might not always need to run a VPN tunnel and/or only want to es
 case "$2" in
   up)
     if [ "$CONNECTION_ID" == "Provider" ]; then
-      systemctl start openvpn@client
+      systemctl start openvpn-client@*<configuration>*
     fi
   ;;
   down)
-    systemctl stop openvpn@client
+    systemctl stop openvpn-client@*<configuration>*
   ;;
 esac
 ```

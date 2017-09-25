@@ -44,7 +44,7 @@ Samba contains its own fully functional DNS server, but if you need to maintain 
 
 ### Provisioning
 
-The first step to creating an Active Directory domain is provisioning. This involves setting up the internal [LDAP](/index.php/LDAP "LDAP"), [Kerberos](/index.php/Kerberos "Kerberos"), and DNS servers and performing all of the basic configuration needed for the directory. If you have set up a directory server before, you are undoubtedly aware of the potential for errors in making these individual components work together as a single unit. The difficulty in doing so is the very reason that the Samba developers chose not to use the MIT or Heimdal Kerberos server or OpenLDAP server, instead opting for internal versions of these programs. The server packages above were installed only for the client utilities. Provisioning is quite a bit easier with Samba. Just issue the following command:
+The first step to creating an Active Directory domain is provisioning. This involves setting up the internal [LDAP](/index.php/LDAP "LDAP"), [Kerberos](/index.php/Kerberos "Kerberos"), and DNS servers and performing all of the basic configuration needed for the directory. If you have set up a directory server before, you are undoubtedly aware of the potential for errors in making these individual components work together as a single unit. The difficulty in doing so is the very reason that the Samba developers chose provide internal versions of these programs. The server packages above were installed only for the client utilities. Provisioning is quite a bit easier with Samba. Just issue the following command:
 
 ```
 # samba-tool domain provision --use-rfc2307 --interactive
@@ -87,12 +87,7 @@ The first step to creating an Active Directory domain is provisioning. This invo
 
 #### NTPD
 
-Create a suitable NTP configuration for your network time server. See [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") for explanations of, and additional configuration options. Create a backup copy of the default file:
-
-```
-# cp /etc/ntp.conf{,.default}
-
-```
+Create a suitable NTP configuration for your network time server. See [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") for explanations of, and additional configuration options.
 
 Modify the `/etc/ntp.conf` file with the following contents:
 
@@ -143,20 +138,12 @@ Enable and start the `ntpd.service` unit.
 
 #### BIND
 
-If you elected to use the **BIND9_DLZ** DNS backend, [Install](/index.php/Install "Install") the [bind](https://www.archlinux.org/packages/?name=bind) package and create the following BIND configuration. See [BIND](/index.php/BIND "BIND") for explanations of, and additional configuration options. Be sure to replace the **x** characters with suitable values: First, create a backup of the default configuration file:
-
-```
-# mv /etc/named.conf{,.default}
-
-```
+If you elected to use the **BIND9_DLZ** DNS backend, [Install](/index.php/Install "Install") the [bind](https://www.archlinux.org/packages/?name=bind) package and create the following BIND configuration. See [BIND](/index.php/BIND "BIND") for explanations of, and additional configuration options. Be sure to replace the **x** characters with suitable values:
 
 Create the `/etc/named.conf` file:
 
  `/etc/named.conf` 
 ```
-
-// vim:set ts=4 sw=4 et:
-
 options {
     directory "/var/named";
     pid-file "/run/named/named.pid";

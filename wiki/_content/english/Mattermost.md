@@ -38,20 +38,21 @@ By using Docker, you do not need to manually install a database server and confi
 However, the tradeoff is that you cannot choose the database back-end or web server you want, but only those provided in the docker images, unless you make your own.
 
 *   [Install Docker](/index.php/Docker#Installation "Docker").
-*   Download, build and start the docker container:
+*   Download the source:
 
 ```
-git clone https://github.com/mattermost/mattermost-docker.git -b team-and-enterprise
-cd mattermost-docker
-docker-compose build
-docker-compose up -d
+$ git clone https://github.com/mattermost/mattermost-docker.git 
 
 ```
 
-	or for the development version:
+*   For Team edition, edit the `docker-compose.yml` file by commenting out the line: `dockerfile: Dockerfile-enterprise`
+*   Build and start the docker container:
 
 ```
-docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
+$ cd mattermost-docker
+$ docker-compose build
+$ docker-compose up -d
+$ docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
 ```
 

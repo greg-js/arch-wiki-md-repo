@@ -1,3 +1,8 @@
+Articoli correlati
+
+*   [Disk Encryption (Italiano)](/index.php/Disk_Encryption_(Italiano) "Disk Encryption (Italiano)")
+*   [Removing System Encryption](/index.php/Removing_System_Encryption "Removing System Encryption")
+
 Questo articolo si concentra su come configurare un sistema completamente crittografato su Arch Linux, usando dm-crypt con LUKS.
 
 **dm-crypt** è il device-mapper standard per le funzionalità di crittografia fornito dal kernel Linux. Può essere utilizzato direttamente da chi desidera avere un completo controllo degli aspetti del partizionamento e della gestione delle chiavi.

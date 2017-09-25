@@ -6,9 +6,18 @@ For this guide the focus will be on YP Core 1.8 (Fido) and newer.
 
 **Note:** Arch Linux is not validated to work with Yocto/Poky.
 
+**Note:** From YP Core 2.2 (Morty) and newer [python3](https://www.archlinux.org/packages/?name=python3) is supported
+
+## Contents
+
+*   [1 Installation](#Installation)
+    *   [1.1 YP Core from Fido but before Morty](#YP_Core_from_Fido_but_before_Morty)
+*   [2 Build core-image-minimal](#Build_core-image-minimal)
+*   [3 Run core-image-minimal](#Run_core-image-minimal)
+
 ## Installation
 
-[Install](/index.php/Install "Install") the [git](https://www.archlinux.org/packages/?name=git), [diffstat](https://www.archlinux.org/packages/?name=diffstat), [unzip](https://www.archlinux.org/packages/?name=unzip), [texinfo](https://www.archlinux.org/packages/?name=texinfo), [python2](https://www.archlinux.org/packages/?name=python2), [chrpath](https://www.archlinux.org/packages/?name=chrpath), [wget](https://www.archlinux.org/packages/?name=wget), [xterm](https://www.archlinux.org/packages/?name=xterm), [sdl](https://www.archlinux.org/packages/?name=sdl), [socat](https://www.archlinux.org/packages/?name=socat) and [cpio](https://www.archlinux.org/packages/?name=cpio) packages.
+[Install](/index.php/Install "Install") the [git](https://www.archlinux.org/packages/?name=git), [diffstat](https://www.archlinux.org/packages/?name=diffstat), [unzip](https://www.archlinux.org/packages/?name=unzip), [texinfo](https://www.archlinux.org/packages/?name=texinfo), [python3](https://www.archlinux.org/packages/?name=python3), [chrpath](https://www.archlinux.org/packages/?name=chrpath), [wget](https://www.archlinux.org/packages/?name=wget), [xterm](https://www.archlinux.org/packages/?name=xterm), [sdl](https://www.archlinux.org/packages/?name=sdl), [socat](https://www.archlinux.org/packages/?name=socat) and [cpio](https://www.archlinux.org/packages/?name=cpio) packages.
 
 **Note:** For the 64-bit version of Arch Linux, [Install](/index.php/Install "Install") the [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) package from the official [multilib](/index.php/Multilib "Multilib") repository.
 
@@ -22,14 +31,16 @@ You may receive the following conflicts:
 
 Resolve these by choosing `y` (we actually want the multilib versions).
 
-Clone the official git repository. In this example the *fido* branch is used.
+Clone the official git repository. In this example the *morty* branch is used.
 
 ```
-$ git clone --branch fido git://git.yoctoproject.org/poky.git ~/poky
+$ git clone --branch morty git://git.yoctoproject.org/poky.git ~/poky
 
 ```
 
-YP Core requires the use of [python2](https://www.archlinux.org/packages/?name=python2), from the [Python](/index.php/Python#Python_2 "Python") page:
+### YP Core from Fido but before Morty
+
+YP Core required [python2](https://www.archlinux.org/packages/?name=python2), from the [Python](/index.php/Python#Python_2 "Python") page:
 
 ```
 $ mkdir -p ~/bin

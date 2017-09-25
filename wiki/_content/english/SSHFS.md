@@ -25,14 +25,17 @@ Related articles
     *   [5.3 Remote host has disconnected](#Remote_host_has_disconnected)
     *   [5.4 Freezing apps (e.g. Gnome Files, Gedit)](#Freezing_apps_.28e.g._Gnome_Files.2C_Gedit.29)
     *   [5.5 fstab mounting issues](#fstab_mounting_issues)
-    *   [5.6 Git doesn't work in a mounted directory](#Git_doesn.27t_work_in_a_mounted_directory)
 *   [6 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [sshfs](https://www.archlinux.org/packages/?name=sshfs) package.
 
-**Tip:** If you often need to mount sshfs filesystems you may be interested in using an sshfs helper, such as [qsshfs](https://aur.archlinux.org/packages/qsshfs/), [sftpman](/index.php/Sftpman "Sftpman"), [sshmnt](https://aur.archlinux.org/packages/sshmnt/) or [fmount.py](https://github.com/lahwaacz/Scripts/blob/master/fmount.py).
+**Tip:**
+
+*   If you often need to mount sshfs filesystems you may be interested in using an sshfs helper, such as [qsshfs](https://aur.archlinux.org/packages/qsshfs/), [sftpman](/index.php/Sftpman "Sftpman"), [sshmnt](https://aur.archlinux.org/packages/sshmnt/) or [fmount.py](https://github.com/lahwaacz/Scripts/blob/master/fmount.py).
+*   You may want to use [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") providing additional security as in two-step authentication.
+*   [SSH keys](/index.php/SSH_keys "SSH keys") may be used over traditional password authentication.
 
 ### Mounting
 
@@ -55,8 +58,6 @@ Here `-p 9876` specifies the port number and `-C` enables compression. For more 
 When not specified, the remote path defaults to the remote user home directory. Default user names and options can be predefined on a host-by-host basis in `~/.ssh/config` to simplify the *sshfs* usage. For more information see [Secure Shell#Client usage](/index.php/Secure_Shell#Client_usage "Secure Shell").
 
 SSH will ask for the password, if needed. If you do not want to type in the password multiple times a day, see [SSH keys](/index.php/SSH_keys "SSH keys").
-
-**Tip:** [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") can be used with sshfs for additional security.
 
 ### Unmounting
 
@@ -296,19 +297,6 @@ To be able to run `mount -av` and see the debug output, remove the following:
  noauto,x-systemd.automount
 
 ```
-
-### Git doesn't work in a mounted directory
-
-When executing some operations in a Git repository which is mounted via SSHFS, you might get the following error:
-
-```
-fatal: cannot update the ref 'HEAD': unable to append to '.git/logs/HEAD': Invalid argument
-
-```
-
-This can be fixed by appending the `-o writeback_cache=no` flag to the sshfs mount command.
-
-This was introduced in sshfs 3.2 and seems to be considered a feature and not a bug. See [FS#55242](https://bugs.archlinux.org/task/55242) and [sshfs#82](https://github.com/libfuse/sshfs/issues/82) for more information.
 
 ## See also
 

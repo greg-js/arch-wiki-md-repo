@@ -260,7 +260,7 @@ QtCAM is an Open Source Linux Webcam Software that enables users to capture/view
 
 ### fswebcam
 
-fswebcam is a tiny and flexible webcam app which can be called from the command line. [Install](/index.php/Install "Install") the package [fswebcam](https://www.archlinux.org/packages/?name=fswebcam).
+fswebcam is a tiny and flexible webcam app which can be called from the command line. [Install](/index.php/Install "Install") the package [fswebcam](https://aur.archlinux.org/packages/fswebcam/).
 
 ### GTK+ UVC Viewer (guvcview)
 

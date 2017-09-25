@@ -1,3 +1,15 @@
+Articoli correlati
+
+*   [Desktop Environment (Italiano)](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)")
+*   [Display Manager (Italiano)](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)")
+*   [Window Manager (Italiano)](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)")
+*   [GTK+ (Italiano)](/index.php/GTK%2B_(Italiano) "GTK+ (Italiano)")
+*   [GDM](/index.php/GDM "GDM")
+*   [GNOME Files](/index.php/GNOME_Files "GNOME Files")
+*   [Gedit](/index.php/Gedit "Gedit")
+*   [Epiphany](/index.php/Epiphany "Epiphany")
+*   [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")
+
 Il progetto GNOME è ripartito dalle fondamenta ed ha creato un desktop completamente nuovo chiamato GNOME 3\. Esso ha:
 
 *   Tema grafico e font moderni

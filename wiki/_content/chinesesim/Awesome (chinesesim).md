@@ -144,7 +144,7 @@ $ cp /etc/xdg/awesome/rc.lua ~/.config/awesome
 
 #### 使用 Xephyr
 
-用这种方式可以在不破坏现有桌面的情况下对rc.lua进行测试。首先把 rc.lua 复制到一个新文件rc.lua.new，接着进行修改。然后在Xephyr中运行新的rc.lua (Xephyr允许你在XWindow中植入一个新的XWindow - ([screenshot](http://www.dante4d.cz/pub/screenie/2009-08-01-025216_1920x1200_scrot.png))。 你可以这样测试你的新rc.lua
+用这种方式可以在不破坏现有桌面的情况下对 rc.lua 进行测试。首先把 rc.lua 复制到一个新文件 rc.lua.new，接着进行修改。然后在 [Xephyr](/index.php/Xephyr_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xephyr (简体中文)") 中运行新的 rc.lua （Xephyr 允许你在 XWindow 中植入一个新的 XWindow - （[screenshot](http://www.dante4d.cz/pub/screenie/2009-08-01-025216_1920x1200_scrot.png)）。 你可以这样测试你的新 rc.lua
 
 ```
 $ Xephyr -ac -br -noreset -screen 1152x720 :1 &
@@ -152,7 +152,7 @@ $ DISPLAY=:1.0 awesome -c ~/.config/awesome/rc.lua.new
 
 ```
 
-这种方式的巨大优势在于如果你弄坏了rc.lua.new，你不至于把现有的Awesome桌面弄得一团糟（并且很可能还会把XWindow弄崩溃了，没保存的工作全部丢失………）。一旦你觉得新的配置文件不错，就用rc.lua.new代替rc.lua，然后重启Awesome。
+这种方式的巨大优势在于如果你弄坏了 rc.lua.new，你不至于把现有的 Awesome 桌面弄得一团糟（并且很可能还会把 XWindow 弄崩溃了，没保存的工作全部丢失………）。一旦你觉得新的配置文件不错，就用 rc.lua.new 代替 rc.lua，然后重启 Awesome。
 
 #### 使用 awmtt
 

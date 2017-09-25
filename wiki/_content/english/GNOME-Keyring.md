@@ -144,10 +144,6 @@ When using a display manager, the keyring works out of the box for most cases. T
 
 For GDM, note the keyring [must be](https://wiki.gnome.org/Projects/GnomeKeyring/Pam) named *login* to be automatically unlocked.
 
-For [SDDM](/index.php/SDDM "SDDM"), see [SDDM#SDDM and Gnome-keyring](/index.php/SDDM#SDDM_and_Gnome-keyring "SDDM").
-
-For LightDM, uncomment `auth optional pam_gnome_keyring.so` and `session optional pam_gnome_keyring.so auto_start` in `/etc/pam.d/lightdm`.
-
 To enable the keyring for applications run through the terminal, such as SSH, add the following to your `~/.bash_profile`, `~/.zshenv`, or similar:
 
  `~/.zshenv` 
@@ -158,15 +154,13 @@ if [ -n "$DESKTOP_SESSION" ];then
 fi
 ```
 
-**Note:** The GNOME Keyring Daemon no longer exposes `GNOME_KEYRING_PID`. See [commit](https://mail.gnome.org/archives/commits-list/2014-March/msg03864.html).
-
 ## SSH keys
 
 To add your SSH key:
 
 ```
-$ ssh-add ~/.ssh/id_dsa
-Enter passphrase for /home/mith/.ssh/id_dsa:
+$ ssh-add ~/.ssh/id_rsa
+Enter passphrase for /home/mith/.ssh/id_rsa:
 
 ```
 
@@ -193,7 +187,7 @@ Alternatively, to permanently save the a passphrase in the keyring, use seahorse
 
 ```
 
-**Note:** You have to have a have the corresponding `.pub` file in the same directory as the private key (`~/.ssh/id_dsa.pub` in the example). Also, make sure that the public key is the file name of the private key plus `.pub` (for example, `my_key.pub`).
+**Note:** You have to have a have the corresponding `.pub` file in the same directory as the private key (`~/.ssh/id_rsa.pub` in the example). Also, make sure that the public key is the file name of the private key plus `.pub` (for example, `my_key.pub`).
 
 ### Start SSH and Secrets components of keyring daemon
 

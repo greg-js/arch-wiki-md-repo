@@ -120,32 +120,7 @@ These are some of the original, patched, and selected packages that comprise the
 
 ### Via [xinit](/index.php/Xinit "Xinit")
 
-Alternatively, you can use `~/.xinitrc` to launch the Pantheon shell, such as:
-
-```
-#!/bin/sh
-
-#Prepend xinitrc.d/ configuration
-if [ -d /etc/X11/xinit/xinitrc.d ]; then
-  for f in /etc/X11/xinit/xinitrc.d/*; do
-    [ -x "$f" ] && . "$f"
-  done
-  unset f
-fi
-
-#Autostart services and applications
-gsettings-data-convert &
-xdg-user-dirs-gtk-update &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-/usr/lib/gnome-settings-daemon/gnome-settings-daemon &
-/usr/lib/gnome-user-share/gnome-user-share &
-eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)
-export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
-
-#Load Pantheon
-exec cerbere
-
-```
+Alternatively, you can use `~/.xinitrc` to launch the Pantheon shell, by adding `exec cerbere` at to the end of the file.
 
 #### Autostart applications with *xinit*
 

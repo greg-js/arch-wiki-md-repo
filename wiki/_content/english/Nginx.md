@@ -757,15 +757,19 @@ Run the configuration:
 PIDFile=/run/nginx/nginx.pid
 ExecStart=
 ExecStart=/usr/bin/nginx -g 'pid /run/nginx/nginx.pid; error_log stderr;' # copied from nginx.service
+ExecReload=
+ExecReload=/usr/bin/nginx -s reload -g 'pid /run/nginx/nginx.pid;'
 ```
 
 	`/var/lib/nginx/*`
 
 	Some directories under `/var/lib/nginx` need to be bootstrapped by nginx running as `root`. It is not necessary to start the whole server to do that, nginx will do it on a simple [configuration test](#Configuration_validation). So just run one of those and you're good to go.
 
-	Remove logs
+	Log file & Directory Permissions
 
 	The step of running a configuration test will create a dangling `root`-owned log. Remove logs in `/var/log/nginx` to start fresh.
+
+	The nginx service user needs write permission to `/var/log/nginx`. This may require [changing permission](/index.php/File_permissions_and_attributes#Changing_permissions "File permissions and attributes") and/or ownership of this directory on your system.
 
 Now we should be good to go. Go ahead and [start](/index.php/Start "Start") nginx, and enjoy your completely rootless nginx.
 

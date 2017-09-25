@@ -214,7 +214,7 @@ Add the following line to `/etc/pam.d/system-login` to add a delay of at least 4
 
  `/etc/pam.d/system-login`  `auth required pam_faildelay.so delay=4000000` 
 
-`4000000` is the time in milliseconds to delay.
+`4000000` is the time in microseconds to delay.
 
 ### Lockout user after three failed login attempts
 

@@ -1,3 +1,7 @@
+Related articles
+
+*   [Creating packages](/index.php/Creating_packages "Creating packages")
+
 [Arch is the best](/index.php/Arch_is_the_best "Arch is the best"). But you may still want to package for other distributions.
 
 ## Contents

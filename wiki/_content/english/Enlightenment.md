@@ -55,11 +55,13 @@ Development PKGBUILDs which download and install the very latest development cod
 The following are EFL-based applications, most in an early stage of development and not yet released:
 
 *   [ecrire-git](https://aur.archlinux.org/packages/ecrire-git/) – Ecrire text editor
+*   [edi](https://aur.archlinux.org/packages/edi/) – An EFL based IDE
 *   [elbow-git](https://aur.archlinux.org/packages/elbow-git/) – Elbow web browser
 *   [eluminance-git](https://aur.archlinux.org/packages/eluminance-git/) – Eluminance photo browser
 *   [enjoy-git](https://aur.archlinux.org/packages/enjoy-git/) – [Enjoy](https://trac.enlightenment.org/e/wiki/Enjoy) music player
 *   [eperiodique](https://aur.archlinux.org/packages/eperiodique/) – [Eperiodique](http://eperiodique.sourceforge.net/) periodic table viewer
-*   [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/) – [Ephoto](http://smhouston.us/ephoto/) picture viewer
+*   [ephoto](https://aur.archlinux.org/packages/ephoto/) and [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/) – [Ephoto](http://smhouston.us/ephoto/) picture viewer
+*   [epour](https://aur.archlinux.org/packages/epour/) – Torrent client based on EFL
 *   [epymc-git](https://aur.archlinux.org/packages/epymc-git/) – E Python Media Center
 *   [equate-git](https://aur.archlinux.org/packages/equate-git/) – Equate calculator
 *   [eruler-git](https://aur.archlinux.org/packages/eruler-git/) – Eruler on-screen ruler and measurement tools

@@ -2,7 +2,7 @@
 
 * * *
 
-[Internet](/index.php/List_of_applications/Internet_(Espa%C3%B1ol) "List of applications/Internet (Español)") – [Multimedia](/index.php/List_of_applications/Multimedia_(Espa%C3%B1ol) "List of applications/Multimedia (Español)") – [Utilidades](/index.php/List_of_applications/Utilities_(Espa%C3%B1ol) "List of applications/Utilities (Español)") – [Documentos](/index.php/List_of_applications/Documents_(Espa%C3%B1ol) "List of applications/Documents (Español)") – [Seguridad](/index.php/List_of_applications/Security_(Espa%C3%B1ol) "List of applications/Security (Español)") – [Ciencia](/index.php/List_of_applications/Science_(Espa%C3%B1ol) "List of applications/Science (Español)") – **Otras**
+[Internet](/index.php/List_of_applications/Internet_(Espa%C3%B1ol) "List of applications/Internet (Español)") – [Multimedia](/index.php/List_of_applications/Multimedia_(Espa%C3%B1ol) "List of applications/Multimedia (Español)") – [Utilidades](/index.php/List_of_applications/Utilities_(Espa%C3%B1ol) "List of applications/Utilities (Español)") – [Documentos](/index.php/List_of_applications/Documents_(Espa%C3%B1ol) "List of applications/Documents (Español)") – [Seguridad](/index.php/List_of_applications/Security_(Espa%C3%B1ol) "List of applications/Security (Español)") – [Ciencia](/index.php/List_of_applications/Science_(Espa%C3%B1ol) "List of applications/Science (Español)") – <a class="mw-selflink selflink">Otras</a>
 
 ## Contents
 

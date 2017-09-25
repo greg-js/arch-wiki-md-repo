@@ -1,3 +1,19 @@
+Artículos relacionados
+
+*   [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages")
+*   [Improve Pacman Performance (Español)](/index.php/Improve_Pacman_Performance_(Espa%C3%B1ol) "Improve Pacman Performance (Español)")
+*   [Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
+*   [Pacman Rosetta (Español)](/index.php/Pacman_Rosetta_(Espa%C3%B1ol) "Pacman Rosetta (Español)")
+*   [Pacman tips](/index.php/Pacman_tips "Pacman tips")
+*   [Pacman package signing](/index.php/Pacman_package_signing "Pacman package signing")
+*   [FAQ (Español)#Gestión de paquetes](/index.php/FAQ_(Espa%C3%B1ol)#Gesti.C3.B3n_de_paquetes "FAQ (Español)")
+*   [pacman-key](/index.php/Pacman-key "Pacman-key")
+*   [Pacnew and Pacsave files](/index.php/Pacnew_and_Pacsave_files "Pacnew and Pacsave files")
+*   [List of Applications/Utilities (Español)#Gestores de paquetes](/index.php/List_of_Applications/Utilities_(Espa%C3%B1ol)#Gestores_de_paquetes "List of Applications/Utilities (Español)")
+*   [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)")
+*   [Official Repositories (Español)](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)")
+*   [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)")
+
 El [gestor de paquetes de pacman](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system") es una de las principales características distintivas de Arch Linux. Combina un simple formato de paquetes binarios con un fácil [sistema de compilación de paquetes](/index.php/Arch_Build_System "Arch Build System"). El objetivo de pacman es hacer posible gestionar fácilmente los paquetes, si son de los [repositorios oficiales de Arch](/index.php/Official_repositories "Official repositories") o compilaciones propias del usuario.
 
 Pacman mantiene el sistema actualizado y sincronizado con la listas de paquetes del servidor principal. Este modelo servidor/cliente le permite descargar e instalar paquetes con una simple orden y cubrir las dependencias necesarias.
@@ -8,341 +24,352 @@ Pacman está escrito en lenguaje de programación C y usa el formato *.pkg.tar.x
 
 ## Contents
 
-*   [1 Configuración](#Configuraci.C3.B3n)
-    *   [1.1 Opciones Generales](#Opciones_Generales)
-        *   [1.1.1 Evitar la actualización de un paquete](#Evitar_la_actualizaci.C3.B3n_de_un_paquete)
-        *   [1.1.2 Evitar la actualización de un grupo de paquetes](#Evitar_la_actualizaci.C3.B3n_de_un_grupo_de_paquetes)
-        *   [1.1.3 Evitar la instalación de archivos en el sistema](#Evitar_la_instalaci.C3.B3n_de_archivos_en_el_sistema)
-    *   [1.2 Repositorios](#Repositorios)
-    *   [1.3 Seguridad de los paquetes](#Seguridad_de_los_paquetes)
-*   [2 Uso](#Uso)
-    *   [2.1 Instalar paquetes](#Instalar_paquetes)
-        *   [2.1.1 Instalar paquetes específicos](#Instalar_paquetes_espec.C3.ADficos)
-        *   [2.1.2 Instalar grupos de paquetes](#Instalar_grupos_de_paquetes)
-    *   [2.2 Desinstalar paquetes](#Desinstalar_paquetes)
-    *   [2.3 Actualizar paquetes](#Actualizar_paquetes)
-    *   [2.4 Consultar la base de datos de paquetes](#Consultar_la_base_de_datos_de_paquetes)
-    *   [2.5 Órdenes adicionales](#.C3.93rdenes_adicionales)
-    *   [2.6 Las actualizaciones parciales no son soportadas](#Las_actualizaciones_parciales_no_son_soportadas)
-    *   [2.7 Nota general](#Nota_general)
-*   [3 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [3.1 ¡Una actualización de un paquete XYZ me rompió el sistema!](#.C2.A1Una_actualizaci.C3.B3n_de_un_paquete_XYZ_me_rompi.C3.B3_el_sistema.21)
-    *   [3.2 ¡Conozco un paquete de actualización para ABC que fue liberado, pero pacman dice que mi sistema está al día!](#.C2.A1Conozco_un_paquete_de_actualizaci.C3.B3n_para_ABC_que_fue_liberado.2C_pero_pacman_dice_que_mi_sistema_est.C3.A1_al_d.C3.ADa.21)
-    *   [3.3 Me sale el siguiente error en la actualización: "file exists in filesystem"!](#Me_sale_el_siguiente_error_en_la_actualizaci.C3.B3n:_.22file_exists_in_filesystem.22.21)
-    *   [3.4 Obtengo un error cuando instalo un paquete: "not found in sync db"](#Obtengo_un_error_cuando_instalo_un_paquete:_.22not_found_in_sync_db.22)
-    *   [3.5 Obtengo un error cuando se instala un paquete: "target not found"](#Obtengo_un_error_cuando_se_instala_un_paquete:_.22target_not_found.22)
-    *   [3.6 ¡Pacman me pregunta repetidamente por la actualización del mismo paquete!](#.C2.A1Pacman_me_pregunta_repetidamente_por_la_actualizaci.C3.B3n_del_mismo_paquete.21)
-    *   [3.7 ¡Pacman se rompe durante una actualización!](#.C2.A1Pacman_se_rompe_durante_una_actualizaci.C3.B3n.21)
-    *   [3.8 He instalado software usando "make install"; ¡estos archivos no pertenece a ningún paquete!](#He_instalado_software_usando_.22make_install.22.3B_.C2.A1estos_archivos_no_pertenece_a_ning.C3.BAn_paquete.21)
-    *   [3.9 Necesito un paquete con un archivo específico. ¿Cómo puedo saber lo que ofrece?](#Necesito_un_paquete_con_un_archivo_espec.C3.ADfico._.C2.BFC.C3.B3mo_puedo_saber_lo_que_ofrece.3F)
-    *   [3.10 ¡Pacman está completmente roto!. ¿Cómo puedo volver a reinstalarlo?](#.C2.A1Pacman_est.C3.A1_completmente_roto.21._.C2.BFC.C3.B3mo_puedo_volver_a_reinstalarlo.3F)
-    *   [3.11 Después de actualizar mi sistema, me sale el siguiente error al reiniciar: "unable to find root device", y mi sistema ya no puede arrancar.](#Despu.C3.A9s_de_actualizar_mi_sistema.2C_me_sale_el_siguiente_error_al_reiniciar:_.22unable_to_find_root_device.22.2C_y_mi_sistema_ya_no_puede_arrancar.)
-    *   [3.12 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)
-    *   [3.13 Sigue saliendo el mensaje "PackageName: signature from "User <email@archlinux.org>" is invalid"](#Sigue_saliendo_el_mensaje_.22PackageName:_signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.22)
-    *   [3.14 Sigo recibiendo un error de "failed to commit transaction (invalid or corrupted package)"](#Sigo_recibiendo_un_error_de_.22failed_to_commit_transaction_.28invalid_or_corrupted_package.29.22)
-    *   [3.15 Me da un error cada vez que utilizo pacman diciendo 'warning: current locale is invalid; using default "C" locale'. ¿Qué debo hacer?](#Me_da_un_error_cada_vez_que_utilizo_pacman_diciendo_.27warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.27._.C2.BFQu.C3.A9_debo_hacer.3F)
-    *   [3.16 ¿Cómo hacer que Pacman respete mi configuración del proxy?](#.C2.BFC.C3.B3mo_hacer_que_Pacman_respete_mi_configuraci.C3.B3n_del_proxy.3F)
-    *   [3.17 ¿Cómo puedo volver a instalar todos los paquetes, manteniendo la información acerca de qué paquetes se han instalado de forma explícita y cúales como una dependencia?](#.C2.BFC.C3.B3mo_puedo_volver_a_instalar_todos_los_paquetes.2C_manteniendo_la_informaci.C3.B3n_acerca_de_qu.C3.A9_paquetes_se_han_instalado_de_forma_expl.C3.ADcita_y_c.C3.BAales_como_una_dependencia.3F)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
-
-## Configuración
-
-La configuración de pacman se encuentra en el archivo `/etc/pacman.conf`. Este es el archivo donde el usuario configura el programa para que funcione de manera deseada. Información en profundidad sobre el archivo de configuración se puede encontrar en [man pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html).
-
-### Opciones Generales
-
-Las opciones generales están en la sección `[options]`. Lea la página man o en el `pacman.conf` predefinido para información adicional.
-
-#### Evitar la actualización de un paquete
-
-Para omitir la actualización de un paquete en particular especifíquelo:
-
-```
-IgnorePkg=linux
-
-```
-
-Para ignorar la actualización de varios paquetes utilice una lista separada por espacios, o use líneas adicionales `IgnorePkg`.
-
-#### Evitar la actualización de un grupo de paquetes
-
-Al igual que con un paquete, es posible ignorar la actualización de un grupo de paquetes:
-
-```
-IgnoreGroup=gnome
-
-```
-
-#### Evitar la instalación de archivos en el sistema
-
-Para ignorar siempre la instalación de archivos o carpetas específicos enumerarlos con `NoExtract`. Por ejemplo, para evitar la instalación de units de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") use ésto:
-
-```
-NoExtract=usr/lib/systemd/system/*
-
-```
-
-### Repositorios
-
-En esta sección se define qué [repositorios](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") utilizar, como se especifican en `/etc/pacman.conf`. Se puede especificar aquí directamente o incluirlo desde otro archivo (por ejemplo `/etc/pacman.d/mirrorlist`), siendo necesario mantener una sola lista.
-
- `/etc/pacman.conf` 
-```
-#[testing]
-#SigLevel = PackageRequired
-#Include = /etc/pacman.d/mirrorlist
-
-[core]
-SigLevel = PackageRequired
-Include = /etc/pacman.d/mirrorlist
-
-[extra]
-SigLevel = PackageRequired
-Include = /etc/pacman.d/mirrorlist
-
-#[community-testing]
-#SigLevel = PackageRequired
-#Include = /etc/pacman.d/mirrorlist
-
-[community]
-SigLevel = PackageRequired
-Include = /etc/pacman.d/mirrorlist
-
-# If you want to run 32 bit applications on your x86_64 system,
-# enable the multilib repositories as required here.
-
-#[multilib-testing]
-#SigLevel = PackageRequired
-#Include = /etc/pacman.d/mirrorlist
-
-#[multilib]
-#SigLevel = PackageRequired
-#Include = /etc/pacman.d/mirrorlist
-
-# An example of a custom package repository.  See the pacman manpage for
-# tips on creating your own repositories.
-#[custom]
-#SigLevel = Optional TrustAll
-#Server = file:///home/custompkgs
-```
-
-**Advertencia:** Se debe tener cuidado cuando se utiliza el repositorio [testing]. Dado que se encuentra en desarrollo continuo, la actualización puede causar mal funcionamiento en algunos paquetes. A los usuarios que usan el repositorio [testing] se les anima a suscribirse a la [lista de correos de arch-dev-public](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public) para estar al corriente.
-
-### Seguridad de los paquetes
-
-Pacman 4 soporta firmas de los paquetes, que añaden una capa adicional de seguridad a los paquetes. La configuración por defecto, `SigLevel = Required DatabaseOptional`, permite la verificación de las firmas para todos los paquetes a nivel global: Esto puede ser anulado por la línea `SigLevel` de los repositorio mostrados más arriba. Para conocer más detalles sobre la firma de paquetes y la verificación de firma, eche un vistazo a [pacman-key](/index.php/Pacman-key "Pacman-key").
+*   [1 Uso](#Uso)
+    *   [1.1 Instalación de paquetes](#Instalaci.C3.B3n_de_paquetes)
+        *   [1.1.1 Instalación de paquetes específicos](#Instalaci.C3.B3n_de_paquetes_espec.C3.ADficos)
+        *   [1.1.2 Instalación de grupos de paquetes](#Instalaci.C3.B3n_de_grupos_de_paquetes)
+    *   [1.2 Desintalar paquetes](#Desintalar_paquetes)
+    *   [1.3 Actualización de paquetes](#Actualizaci.C3.B3n_de_paquetes)
+    *   [1.4 Consulta de bases de datos de paquetes](#Consulta_de_bases_de_datos_de_paquetes)
+        *   [1.4.1 Estructura de base de datos](#Estructura_de_base_de_datos)
+    *   [1.5 Limpieza de la caché del paquete](#Limpieza_de_la_cach.C3.A9_del_paquete)
+    *   [1.6 Órdenes adicionales](#.C3.93rdenes_adicionales)
+    *   [1.7 Las actualizaciones parciales no son soportadas](#Las_actualizaciones_parciales_no_son_soportadas)
+    *   [1.8 Nota general](#Nota_general)
+*   [2 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+    *   [2.1 ¡Una actualización de un paquete XYZ me rompió el sistema!](#.C2.A1Una_actualizaci.C3.B3n_de_un_paquete_XYZ_me_rompi.C3.B3_el_sistema.21)
+    *   [2.2 ¡Conozco un paquete de actualización para ABC que fue liberado, pero pacman dice que mi sistema está al día!](#.C2.A1Conozco_un_paquete_de_actualizaci.C3.B3n_para_ABC_que_fue_liberado.2C_pero_pacman_dice_que_mi_sistema_est.C3.A1_al_d.C3.ADa.21)
+    *   [2.3 Me sale el siguiente error en la actualización: "file exists in filesystem"!](#Me_sale_el_siguiente_error_en_la_actualizaci.C3.B3n:_.22file_exists_in_filesystem.22.21)
+    *   [2.4 Obtengo un error cuando instalo un paquete: "not found in sync db"](#Obtengo_un_error_cuando_instalo_un_paquete:_.22not_found_in_sync_db.22)
+    *   [2.5 Obtengo un error cuando se instala un paquete: "target not found"](#Obtengo_un_error_cuando_se_instala_un_paquete:_.22target_not_found.22)
+    *   [2.6 ¡Pacman me pregunta repetidamente por la actualización del mismo paquete!](#.C2.A1Pacman_me_pregunta_repetidamente_por_la_actualizaci.C3.B3n_del_mismo_paquete.21)
+    *   [2.7 ¡Pacman se rompe durante una actualización!](#.C2.A1Pacman_se_rompe_durante_una_actualizaci.C3.B3n.21)
+    *   [2.8 He instalado software usando "make install"; ¡estos archivos no pertenece a ningún paquete!](#He_instalado_software_usando_.22make_install.22.3B_.C2.A1estos_archivos_no_pertenece_a_ning.C3.BAn_paquete.21)
+    *   [2.9 Necesito un paquete con un archivo específico. ¿Cómo puedo saber lo que ofrece?](#Necesito_un_paquete_con_un_archivo_espec.C3.ADfico._.C2.BFC.C3.B3mo_puedo_saber_lo_que_ofrece.3F)
+    *   [2.10 ¡Pacman está completmente roto!. ¿Cómo puedo volver a reinstalarlo?](#.C2.A1Pacman_est.C3.A1_completmente_roto.21._.C2.BFC.C3.B3mo_puedo_volver_a_reinstalarlo.3F)
+    *   [2.11 Después de actualizar mi sistema, me sale el siguiente error al reiniciar: "unable to find root device", y mi sistema ya no puede arrancar.](#Despu.C3.A9s_de_actualizar_mi_sistema.2C_me_sale_el_siguiente_error_al_reiniciar:_.22unable_to_find_root_device.22.2C_y_mi_sistema_ya_no_puede_arrancar.)
+    *   [2.12 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)
+    *   [2.13 Sigue saliendo el mensaje "PackageName: signature from "User <email@archlinux.org>" is invalid"](#Sigue_saliendo_el_mensaje_.22PackageName:_signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.22)
+    *   [2.14 Sigo recibiendo un error de "failed to commit transaction (invalid or corrupted package)"](#Sigo_recibiendo_un_error_de_.22failed_to_commit_transaction_.28invalid_or_corrupted_package.29.22)
+    *   [2.15 Me da un error cada vez que utilizo pacman diciendo 'warning: current locale is invalid; using default "C" locale'. ¿Qué debo hacer?](#Me_da_un_error_cada_vez_que_utilizo_pacman_diciendo_.27warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.27._.C2.BFQu.C3.A9_debo_hacer.3F)
+    *   [2.16 ¿Cómo hacer que Pacman respete mi configuración del proxy?](#.C2.BFC.C3.B3mo_hacer_que_Pacman_respete_mi_configuraci.C3.B3n_del_proxy.3F)
+    *   [2.17 ¿Cómo puedo volver a instalar todos los paquetes, manteniendo la información acerca de qué paquetes se han instalado de forma explícita y cúales como una dependencia?](#.C2.BFC.C3.B3mo_puedo_volver_a_instalar_todos_los_paquetes.2C_manteniendo_la_informaci.C3.B3n_acerca_de_qu.C3.A9_paquetes_se_han_instalado_de_forma_expl.C3.ADcita_y_c.C3.BAales_como_una_dependencia.3F)
+*   [3 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Uso
 
-Lo que sigue es una pequeña muestra de las operaciones que se pueden realizar con pacman. Para leer más ejemplos, consulte [man pacman](https://www.archlinux.org/pacman/pacman.8.html).
+Lo que sigue es sólo una pequeña muestra de las operaciones que *pacman* puede realizar. Para leer más ejemplos, consulte [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8).
 
-### Instalar paquetes
+**Tip:** Para aquellos que han utilizado otras distribuciones de Linux antes, hay un útil artículo de [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta")
 
-**Nota:** Los paquetes suelen tener dependencias opcionales, paquetes que proporcionan características adicionales a la aplicación, sin ser necesarios para su funcionamiento. Al instalar un paquete pacman mostrará sus dependencias opcionales sin registrarlas en pacman.log. Use el comando [pacman -Si](#Consultar_la_base_de_datos_de_paquetes) para ver las dependencias opcionales de un paquete y una descripciones breve de sus funcionalidades.
+### Instalación de paquetes
 
-#### Instalar paquetes específicos
+**Nota:** paquetes suelen tener una serie de [optional dependencies](/index.php/PKGBUILD#optdepends "PKGBUILD") que son paquetes que proporcionan funcionalidad adicional a la aplicación, aunque no estrictamente necesaria para su ejecución. Al instalar un paquete, *pacman* mostrará sus dependencias opcionales entre los mensajes de salida, pero no se encontrarán en `pacman.log`: use el comando [pacman -Si](#Querying_package_databases) para ver las dependencias opcionales de un paquete, junto con breves descripciones de su funcionalidad.
 
-Para instalar o actualizar un solo paquete o lista de paquetes (incluyendo las dependencias), ejecute la orden siguiente:
+**Advertencia:** Al instalar paquetes en Arch, evite actualizar la lista de paquetes sin [actualizar el sistema](#Upgrading_packages) (por ejemplo, cuando [no se encuantra](#Packages_cannot_be_retrieved_on_installation) un paquete en los repositorios oficiales). En la práctica, **no** ejecute `pacman -Sy *package_name*` en lugar de `pacman -Sy**u** *package_name*`, ya que esto podría dar lugar a problemas de dependencia. Consulte [System maintenance#Partial upgrades are unsupported](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance") y [BBS#89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
 
-```
-# pacman -S *nombre_paquete1* *nombre_paquete2* ...
+#### Instalación de paquetes específicos
 
-```
-
-A veces hay varias versiones de un paquete en diferentes repositorios, por ejemplo, [extra] y [testing]. Para instalar la versión precedente necesita especificar el nombre del repositorio:
+Para instalar un solo paquete o una lista de paquetes (incluidas las dependencias), emita el siguiente comando:
 
 ```
-# pacman -S extra/*nombre_paquete*
+ # pacman -S *package_name1* *package_name2* ...
 
 ```
 
-#### Instalar grupos de paquetes
-
-Algunos paquetes pertenecen a un grupo, los cuales se pueden instalar simultáneamente. Por ejemplo, usando la orden:
+Para instalar una lista de paquetes con regex (vea [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=7179)):
 
 ```
-# pacman -S gnome
+ # pacman -S $(pacman -Ssq *package_regex*)
 
 ```
 
-el prompt le pedirá que seleccione los paquetes del grupo [gnome](https://www.archlinux.org/groups/x86_64/gnome/) que desea instalar.
-
-En algunas ocasiones, un grupo contiene una gran cantidad de paquetes, y puede que solo le interese o no desee instalar unos pocos de ellos. En lugar de tener que introducir todos los números excepto los que no desea, quizás sea más conveniente, para seleccionar o excluir paquetes o intervalos de paquetes, la siguiente sintaxis:
+A veces hay varias versiones de un paquete en diferentes repositorios, por ejemplo *extra* y *testing*. Para instalar la versión anterior, el repositorio debe definirse delante:
 
 ```
-Enter a selection (default=all): 1-10 15
+ # pacman -S extra/*package_name*
 
 ```
 
-que seleccionará los paquetes del 1 al 10 y 15 para la instalación, o bien:
+Para instalar un número de paquetes que comparten patrones similares en sus nombres - no todo el grupo ni todos los paquetes coincidentes; p.ej. [plasma](https://www.archlinux.org/groups/x86_64/plasma/):
 
 ```
-Enter a selection (default=all): ^5-8 ^2
-
-```
-
-que seleccionará todos los paquetes excepto 5 a 8 y 2 para la instalación.
-
-Para ver qué paquetes pertenecen al grupo gnome, ejecute:
-
-```
-# pacman -Sg gnome
+ # pacman -S plasma-{desktop,mediacenter,nm}
 
 ```
 
-Visite también [https://www.archlinux.org/groups/](https://www.archlinux.org/groups/) para ver qué grupos de paquetes están disponibles.
+Por supuesto, eso no es limitado y se puede ampliar a muchos niveles necesarios:
 
-**Nota:** Si un paquete en la lista ya está instalado en el sistema, éste se volverá a reinstalar, incluso si ya está actualizado, a menos que se utilice la opción `--needed`.
+```
+ # pacman -S plasma-{workspace{,-wallpapers},pa}
 
-**Advertencia:** Al instalar paquetes, **no** actualice la lista de paquetes sin [actualizar](#Upgrading_packages) al mismo tiempo el sistema (es decir, `pacman -Sy *nombre_paquete*`); de lo contrario, se pueden producir problemas de dependencia. Véase [#Partial upgrades are unsupported](#Partial_upgrades_are_unsupported) y [https://bbs.archlinux.org/viewtopic.php?id=89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
+```
 
-### Desinstalar paquetes
+#### Instalación de grupos de paquetes
+
+Algunos paquetes pertenecen a un grupo de paquetes [group of packages](/index.php/Creating_packages#Meta_packages_and_groups "Creating packages") que pueden instalarse simultáneamente. Por ejemplo, emitiendo el comando:
+
+```
+ # pacman -S gnome
+
+```
+
+le pedirá que seleccione los paquetes del grupo [gnome](https://www.archlinux.org/groups/x86_64/gnome/) que desea instalar. A veces un grupo de paquetes contendrá una gran cantidad de paquetes, y puede haber sólo unos pocos que usted hace o no desea instalar. En lugar de tener que introducir todos los números excepto los que no desea, a veces es más conveniente seleccionar o excluir paquetes o rangos de paquetes con la siguiente sintaxis:
+
+```
+ Introduzca una selección (predeterminado = todo): 1-10 15
+
+```
+
+que seleccionará los paquetes 1 a 10 y 15 para la instalación, o:
+
+```
+ Introduzca una selección (predeterminado = todo): ^ 5-8 ^ 2
+
+```
+
+que seleccionará todos los paquetes excepto 5 a 8 y 2 para la instalación. Para ver qué paquetes pertenecen al grupo gnome, ejecute:
+
+```
+ # pacman -Sg gnome
+
+```
+
+También visite [https://www.archlinux.org/groups/](https://www.archlinux.org/groups/) para ver qué grupos de paquetes están disponibles.
+
+**Nota:** Si un paquete de la lista ya está instalado en el sistema, se reinstalará incluso si ya está actualizado. Este comportamiento se puede sobreescribir con la opción `--needed`.
+
+### Desintalar paquetes
 
 Para eliminar un solo paquete, dejando todas sus dependencias instaladas:
 
 ```
-# pacman -R *nombre_paquete*
+ # pacman -R *nombre_paquete*
 
 ```
 
-Para eliminar un paquete y sus dependencias que no son usadas por ningún otro paquete instalado:
+Para eliminar un paquete y sus dependencias que no requieren ningún otro paquete instalado:
 
 ```
-# pacman -Rs *nombre_paquete*
-
-```
-
-Para eliminar un paquete, sus dependencias y todos los paquetes que dependen de esas dependencias:
-
-**Advertencia:** Esta operación es recursiva, y debe utilizarse con precaución, ya que puede eliminar muchos paquetes potencialmente necesarios.
-
-```
-# pacman -Rsc *nombre_paquete*
+ # pacman -Rs *nombre_paquete*
 
 ```
 
-Para eliminar un paquete, el cual es requerido por otro paquete, sin quitar el paquete dependiente:
+Para eliminar un paquete, sus dependencias y todos los paquetes que dependen del paquete de destino:
+
+**Advertencia:** Esta operación es recursiva y debe utilizarse con cuidado, ya que puede eliminar muchos paquetes potencialmente necesarios.
 
 ```
-# pacman -Rdd *nombre_paquete*
-
-```
-
-Pacman guarda los archivos de configuración importantes al quitar ciertas aplicaciones y los renombra con la extensión: `.pacsave`. Para evitar la creación de estos archivos de backup utilice la opción `-n`:
-
-```
-# pacman -Rn *nombre_paquete*
+ # pacman -Rsc *nombre_paquete*
 
 ```
 
-**Note:** Pacman no eliminará las configuraciones creadas de la aplicación misma (por ejemplo "dotfiles" — archivos que comienzan con un punto — en la carpeta home).
-
-### Actualizar paquetes
-
-Pacman puede actualizar todos los paquetes del sistema con una sola orden. Esto proceso puede durar bastante tiempo dependiendo de cuánto tiempo haya estados sin actualizar el sistema. Esta orden puede sincronizar las bases de datos de los repositorios *y* actualizar los paquetes del sistema (excluyendo paquetes "locales" que no están en los repositorios configurados):
+Para quitar un paquete, que es requerido por otro paquete, sin quitar el paquete dependiente:
 
 ```
-# pacman -Syu
+ # pacman -Rdd *nombre_paquete*
 
 ```
 
-**Advertencia:** En lugar de actualizar inmediatamente tan pronto como las actualizaciones están disponibles, los usuarios deben tener presente que siendo Arch un distribución rolling release, una actualización puede tener consecuencias imprevistas. Esto significa que no es prudente actualizar si, por ejemplo, se necesitará tener el sistema estable por motivos de trabajo. Más bien, actualizar durante el tiempo libre y estar preparados para hacer frente a cualquier problema que pueda surgir.
-
-Pacman es una potente herramienta de gestión de paquetes, pero no está diseñado para gestionar y resolver automáticamente cada posible problema. Consulte [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)") si esto causa confusión. Los usuarios deben estar alerta y tomar la responsabilidad del mantenimiento de su propio sistema. **Cuando se realiza una actualización del sistema, es esencial que los usuarios lean toda la información generada por la salida de pacman y usen el sentido común.** Si un archivo de configuración modificado por el usuario debe ser actualizado por una nueva versión de un paquete, pacman creará un archivo `.pacnew` para evitar sobrescribir los ajustes modificados por el usuario. Pacman le pedirá, a continuación, al usuario que combine ambos archivos. Estos archivos requieren una intervención manual por parte del usuario y es una buena práctica hacerlo inmediatamente después de cada actualización o eliminación de paquetes. Véase [Pacnew and Pacsave files](/index.php/Pacnew_and_Pacsave_files "Pacnew and Pacsave files") para más información.
-
-**Sugerencia:** Recuerde que la salida de pacman se registra en el archivo `/var/log/pacman.log`.
-
-Antes de actualizar, se recomienda visitar la [home page de Arch Linux](https://www.archlinux.org/) para comprobar las últimas noticias (o suscribirse al feed RSS): cuando la actualización requiera la intervención extraordinaria del usuario (más allá de lo que puede ser manejado simplemente siguiendo las instrucciones dadas por pacman), se hará un news post apropiado.
-
-Si se encuentra con problemas que no pueden ser resueltos por estas instrucciones, asegúrese de buscar en el foro. Es probable que otros hayan encontrado el mismo problema y hayan publicado instrucciones para resolverlo.
-
-### Consultar la base de datos de paquetes
-
-Pacman puede consultar la base de datos local de los paquetes con la opción `-Q`; véase:
+pacman guarda los archivos de configuración importantes al eliminar ciertas aplicaciones y las nombra con la extensión: .pacsave . Para evitar la creación de estos archivos de copia de seguridad, utilice la opción -n :
 
 ```
-$ pacman -Q --help
+ # pacman -Rn *nombre_paquete*
 
 ```
 
-y puede consultar las bases de datos sincronizadas con la opción `-S`; véase:
+**Nota:** *pacman* no eliminará configuraciones creadas por la propia aplicación (por ejemplo, "dotfiles" en la carpeta de inicio).
+
+### Actualización de paquetes
+
+**Advertencia:**
+
+*   Se espera que los usuarios sigan las instrucciones de la sección delManual de mantenimiento [System maintenance#Upgrading the system](/index.php/System_maintenance#Upgrading_the_system "System maintenance") para actualizar sus sistemas regularmente y no ejecutar ciegamente el siguiente comando.
+*   Arch sólo admite actualizaciones completas del sistema. Consulte [System maintenance#Partial upgrades are unsupported](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance") y [#Installing packages](#Installing_packages) para obtener más detalles.
+
+*pacman* puede actualizar todos los paquetes del sistema con un solo comando. Esto podría tomar bastante tiempo dependiendo de lo actualizado que esté el sistema. El siguiente comando sincroniza las bases de datos del repositorio “y” actualiza los paquetes del sistema, excluyendo paquetes "locales" que no están en los repositorios configurados:
 
 ```
-$ pacman -S --help
+ # pacman -Syu
 
 ```
 
-Pacman puede buscar paquetes en la base de datos, la búsqueda se realiza tanto por los nombres como por las descripciones de los paquetes:
+### Consulta de bases de datos de paquetes
+
+*pacman* consulta la base de datos de paquetes local con el indicador `-Q` , la base de datos de sincronización con el indicador `-S` y la base de datos de archivos con el indicador `-F` . Vea pacman `pacman -Q --help`, `pacman -S –help` y pacman `pacman -F --help` para las respectivas subopciones de cada flag. *pacman* puede buscar paquetes en la base de datos, buscando tanto en los nombres de los paquetes como en las descripciones:
 
 ```
-$ pacman -Ss *cadena1* *cadena2* ...
+ $ pacman -Ss *string1* *string2* ...
+
+```
+
+A veces, `-s` ERE (Expresiones regulares extendidas) incorporadas, puede causar muchos resultados no deseados, por lo que debe limitarse a coincidir con el nombre del paquete; no la descripción ni cualquier otro campo:
+
+```
+ $ pacman -Ss '^ vim-'
 
 ```
 
 Para buscar paquetes ya instalados:
 
 ```
-$ pacman -Qs *cadena1* *cadena2* ...
+ $ pacman -Qs *string1* *string2* ...
 
 ```
 
-Para mostrar información detallada acerca de un determinado paquete:
+Para buscar nombres de archivos de paquetes en paquetes remotos:
 
 ```
-$ pacman -Si *nombre_paquete*
-
-```
-
-Para los paquetes instalados localmente:
-
-```
-$ pacman -Qi *nombre_paquete*
+ $ pacman -Fs *string1* *string2* ...
 
 ```
 
-Pasando la doble opción `-i` también se mostrará la lista de archivos de backup y sus estados de modificación:
+Para mostrar información extensa sobre un paquete dado:
 
 ```
-$ pacman -Qii *nombre_paquete*
-
-```
-
-Para obtener una lista de los archivos instalados por un paquete:
-
-```
-$ pacman -Ql *nombre_paquete*
+ $ pacman -Si *nombre_paquete*
 
 ```
 
-Para los paquetes no instalados, utilice [pkgfile](/index.php/Pkgfile "Pkgfile").
-
-También se puede consultar la base de datos para saber qué paquete pertenece a un determinado archivo del sistema:
+Para paquetes instalados localmente:
 
 ```
-$ pacman -Qo */ruta/al/nombre_del_archivo*
+ $ pacman -Qi *nombre_paquete*
 
 ```
 
-Para listar todos los paquetes que no sean necesarios como dependencias (huérfanos):
+Pasando dos indicadores `-i` también mostrará la lista de archivos de copia de seguridad y sus estados de modificación:
 
 ```
-$ pacman -Qdt
-
-```
-
-Para listar el árbol de dependencias de un paquete:
-
-```
-$ pactree *nombre_paquete*
+ $ pacman -Qii *nombre_paquete*
 
 ```
 
-Para listar todos los paquetes que dependen de un específico paquete, utilice `whoneeds` de [pkgtools](/index.php/Pkgtools "Pkgtools"):
+Para recuperar una lista de los archivos instalados por un paquete:
 
 ```
-$ whoneeds *nombre_paquete*
+ $ pacman -Ql *nombre_paquete*
 
 ```
+
+Para recuperar una lista de los archivos instalados por un paquete remoto:
+
+```
+ $ pacman -Fl *nombre_paquete*
+
+```
+
+Para verificar la presencia de los archivos instalados por un paquete:
+
+```
+ $ pacman -Qk *nombre_paquete*
+
+```
+
+Pasando la bandera `-k` dos veces se realizará una verificación más completa. Para consultar la base de datos para saber a qué paquete pertenece un archivo del sistema de archivos:
+
+```
+ $ pacman -Qo */path/to/file_name*
+
+```
+
+Para consultar la base de datos para saber a qué paquete remoto pertenece un archivo:
+
+```
+ $ pacman -Fo */path/to/file_name*
+
+```
+
+Para enumerar todos los paquetes que ya no se requieren como dependencias (huérfanos):
+
+```
+ $ pacman -Qdt
+
+```
+
+Para enumerar todos los paquetes explícitamente instalados y no necesarios como dependencias:
+
+```
+ $ pacman -Qet
+
+```
+
+Para enumerar un árbol de dependencias de un paquete:
+
+```
+ $ pactree “nombre_paquete”
+
+```
+
+Para enumerar todos los paquetes recursivamente dependiendo de un paquete *instalado* , use “whoneeds” de [pkgtools](https://aur.archlinux.org/packages/pkgtools/):
+
+```
+ $ whoneeds “nombre_paquete”
+
+```
+
+o la bandera de revés a pactree :
+
+```
+ $ pactree -r “nombre_paquete”
+
+```
+
+Vea [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") para más ejemplos.
+
+#### Estructura de base de datos
+
+Las bases de datos de pacman normalmente se encuentran en `/var/lib/pacman/sync`. Para cada repositorio especificado en `/etc/pacman.conf` habrá un archivo de base de datos correspondiente ubicado allí. Los archivos de base de datos son archivos tar-gzip que contienen un directorio para cada paquete, por ejemplo para el paquete `/etc/pacman.conf`:
+
+```
+% tree which-2.20-6 
+which-2.20-6
+|-- depends
+`-- desc
+
+```
+
+El archivo `depends` lista los paquetes de los que este paquete depende, mientras `desc` tiene una descripción del paquete, como el tamaño del archivo y el hash MD5.
+
+### Limpieza de la caché del paquete
+
+*pacman* almacena sus paquetes descargados en `/var/cache/pacman/pkg/` y no elimina las versiones antiguas o desinstaladas automáticamente, por lo tanto es necesario limpiar deliberadamente esa carpeta periódicamente para evitar que dicha carpeta crezca indefinidamente en tamaño. La opción integrada para eliminar todos los paquetes en caché que no están instalados actualmente es:
+
+```
+ # pacman -Sc
+
+```
+
+**Advertencia:**
+
+*   Unicamente haga esto cuando esté seguro de que no se requieren versiones anteriores de paquetes, por ejemplo, para una versión [downgrade](/index.php/Downgrade "Downgrade") posterior. `pacman -Sc` sólo deja disponibles las versiones de los paquetes que están actualmente disponibles, las versiones anteriores tendrían que ser recuperadas por otros medios, como el [Archive](/index.php/Archive "Archive").
+
+*   Es posible vaciar completamente la carpeta de caché con `pacman -Scc` . Además de lo anterior, esto también evita la reinstalación de un paquete directamente “desde” la carpeta de caché en caso de necesidad, lo que requiere una nueva descarga. Debe evitarse a menos que haya una necesidad inmediata de espacio en disco.
+
+Debido a las limitaciones anteriores, considere una alternativa para más control sobre qué paquetes y cuántos son eliminados de la memoria caché: La secuencia de comandos *paccache* , proporcionada por el propio paquete [pacman](https://www.archlinux.org/packages/?name=pacman) , elimina todas las versiones en caché de cada paquete, independientemente de si están instaladas o no, excepto por el 3 más reciente:
+
+```
+ # paccache -r
+
+```
+
+**Sugerencia:** Puede crear [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") para ejecutarlo automáticamente después de cada transacción pacman. Vea [this thread](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743) para ver ejemplos.
+
+También puede definir cuántas versiones recientes desea conservar:
+
+```
+ # paccache -rk 1
+
+```
+
+Para eliminar todas las versiones en caché de paquetes desinstalados, vuelva a ejecutar *paccache* con:
+
+```
+ # paccache -ruk0
+
+```
+
+Consulte `paccache -h` para obtener más opciones. [pkgcacheclean](https://aur.archlinux.org/packages/pkgcacheclean/) y [pacleaner](https://aur.archlinux.org/packages/pacleaner/) son dos alternativas más.
 
 ### Órdenes adicionales
 

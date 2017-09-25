@@ -184,7 +184,7 @@ Instead of managing gems with `gem`, you can use `pacman`, or some [AUR](/index.
 *   Gems are updated along with the rest of your system. As a result, you never need to run `gem update`: `# pacman -Syu` suffices.
 *   Installed gems are available system-wide, instead of being available only to the user who installed them.
 
-If a gem is not available in AUR, you can use [gem2arch](https://aur.archlinux.org/packages/gem2arch/) or [pacgem](https://aur.archlinux.org/packages/pacgem/) to automatically create a package, which can then be installed by pacman.
+**Note:** There are also tools integrating *gem* with *pacman* by automatically generating PKGBUILDs for specified gems: see [Creating packages#PKGBUILD generators](/index.php/Creating_packages#PKGBUILD_generators "Creating packages").
 
 #### Quarry
 

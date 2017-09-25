@@ -37,6 +37,7 @@ There are multiple low level interfaces (backends) providing basic functionality
     *   [4.3 Suspend/hibernate doesn't work, or not consistently](#Suspend.2Fhibernate_doesn.27t_work.2C_or_not_consistently)
     *   [4.4 Wake-on-LAN](#Wake-on-LAN)
     *   [4.5 Instantaneous wakeups from suspend](#Instantaneous_wakeups_from_suspend)
+*   [5 See also](#See_also)
 
 ## Low level interfaces
 
@@ -194,3 +195,7 @@ The relevant devices are `EHC1`, `EHC1` and `XHC` (for USB 3.0). To toggle their
 ```
 
 This should result in suspension working again. However, this settings are only temporary and would have to be set at every reboot. To automate this take a look at [systemd#Writing unit files](/index.php/Systemd#Writing_unit_files "Systemd"). See [BBS thread](https://bbs.archlinux.org/viewtopic.php?pid=1575617#p1575617) for a possible solution and more information.
+
+## See also
+
+*   [Auto hibernate after suspend](https://wiki.sabayon.org/index.php?title=Auto_hibernate_after_suspend)
