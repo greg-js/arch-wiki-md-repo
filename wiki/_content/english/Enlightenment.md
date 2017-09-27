@@ -118,11 +118,9 @@ For extended configuration, you may also install Econnman (available in AUR as [
 
 **NetworkManager**
 
-You can also use [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) to manage your network connections. Follow the instructions on [NetworkManager](/index.php/NetworkManager "NetworkManager") to do the configuration.
+You can also use [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) to manage your network connections - see [NetworkManager](/index.php/NetworkManager "NetworkManager") for more information.
 
-You probably also need [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) to help with your settings. You may want to add it to the start up programs so every time Enlightenment starts it appears on systray. For that you should go to *Settings Panel > Apps > Startup Applications > System* and activate *Network*.
-
-Whilst network connectivity will work, the applet itself will not be visible without a [#System tray](#System_tray).
+Note however that the applet will need Appindicator support to show in Enlightenment's [system tray](#System_tray). See [NetworkManager#Appindicator](/index.php/NetworkManager#Appindicator "NetworkManager"). As an alternative to using the applet, NetworkManager includes both CLI and TUI interfaces for network configuration - see [NetworkManager#Command line](/index.php/NetworkManager#Command_line "NetworkManager").
 
 #### Polkit agent
 
@@ -144,7 +142,7 @@ More information on this topic in the [GNOME Keyring](/index.php/GNOME_Keyring "
 
 #### System tray
 
-**Note:** Since Enlightenment 20, Xembed support has been removed [[1]](https://twitter.com/_enlightenment_/status/538000507315314688) meaning that many 'legacy' applets can no longer be displayed in the Systray. To use these applets, you will need to use a standalone system tray application such as [stalonetray](https://www.archlinux.org/packages/?name=stalonetray) instead.
+**Note:** Since Enlightenment 20, Xembed support has been removed [[2]](https://twitter.com/_enlightenment_/status/538000507315314688) meaning that many 'legacy' applets can no longer be displayed in the Systray. To use these applets, you will need to use a standalone system tray application such as [stalonetray](https://www.archlinux.org/packages/?name=stalonetray) instead.
 
 Enlightenment has support for a system tray but it is disabled by default. To enable the system tray, open the Enlightenment main menu, navigate to the *Settings* submenu and click on the *Modules* option. Scroll down until you see the *Systray* option. Highlight that option and click the *Load* button. Now that the module has been loaded, it can be added to the shelf. Right click on the shelf you wish to add the Systray to, hightlight the *Shelf* submenu and click on the *Contents* option. Scroll down until you see *Systray*. Highlight that option and click the *Add* button.
 
@@ -162,11 +160,11 @@ Enlightenment provides a notification server through its Notification extension.
 
 More themes to customize the look of Enlightenment are available from:
 
-*   [exchange.enlightenment.org](http://exchange.enlightenment.org/theme)
-*   [e17-stuff.org](http://e17-stuff.org/index.php?xcontentmode=7000)
+*   [enlightenment-themes.org](https://www.enlightenment-themes.org/)
 *   [relighted.c0n.de](http://relighted.c0n.de/#100) for the default theme in 200 different colors
 *   [git.enlightenment.org](http://git.enlightenment.org/themes) (git clone the theme you like, run 'make' and you end up with a .edj theme file)
 *   [packages.bodhilinux.com](http://packages.bodhilinux.com/bodhi/pool/stable/b/) has a good collection (you will need to extract the .edj file from the .deb; bsdtar will do this and is part of the base ArchLinux install). A nice catalog can be seen at [their wiki](https://web.archive.org/web/20140120083020/http://art.bodhilinux.com/doku.php?id=bodhi_e17_themes_v3).
+*   [exchange.enlightenment.org](https://web.archive.org/web/20161025233126/https://exchange.enlightenment.org/theme) (archived)
 
 You can install the themes (coming in .edj format) using the theme configuration dialog or by moving them to `~/.e/e/themes`.
 

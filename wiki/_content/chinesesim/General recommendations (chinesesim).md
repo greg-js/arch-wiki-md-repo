@@ -471,7 +471,7 @@ alias hosts='sudo wget [https://raw.githubusercontent.com/googlehosts/hosts/mast
 
 **提示：** 可以使用 [crontab](/index.php/Crontab "Crontab") 定时执行脚本 (root 身份运行或 sudo 免密码)
 
-**提示：** 除hosts方法外，你可能还需要进行相应的代理设置，如对程序单独设置代理或者使用工具设置临时代理（如使用[proxchains](https://www.archlinux.org/packages/?name=proxchains)工具，配置好代理和proxychains的配置文件后，使用`proxchians 程序名`使该程序从代理进行联网）或者全局代理（如桌面环境的设置中可能提供该选项），可参考各工具的相应文档进行设置，或者参考[Proxy_settings](/index.php/Proxy_settings "Proxy settings")一文。
+**提示：** 除hosts方法外，你可能还需要进行相应的代理设置，如对程序单独设置代理或者使用工具设置临时代理（如使用[proxychains](https://www.archlinux.org/packages/?name=proxychains)工具，配置好代理和proxychains的配置文件后，使用`proxchians 程序名`使该程序从代理进行联网）或者全局代理（如桌面环境的设置中可能提供该选项），可参考各工具的相应文档进行设置，或者参考[Proxy settings](/index.php/Proxy_settings "Proxy settings")一文。
 
 ### 即时通讯工具
 

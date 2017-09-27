@@ -1,3 +1,7 @@
+Related articles
+
+*   [File systems](/index.php/File_systems "File systems")
+
 [F2FS](https://en.wikipedia.org/wiki/F2FS "wikipedia:F2FS") (Flash-Friendly File System) is a file system intended for NAND-based flash memory equipped with Flash Transition Layer. Unlike JFFS or UBIFS it relies on FTL to handle write distribution. It is supported from kernel 3.8 onwards.
 
 ## Contents
@@ -55,7 +59,7 @@ With the latest [installation media](https://www.archlinux.org/download/) it is 
 
 1.  Create the root partition as F2FS as described in section [#Creating a F2FS partition](#Creating_a_F2FS_partition).
 2.  If your [bootloader](/index.php/Bootloader "Bootloader") does not support F2FS, create a separate `/boot` partition using a filesystem that it does.
-3.  Continue with the installation procedure as per [Installation guide#Mount the partitions](/index.php/Installation_guide#Mount_the_partitions "Installation guide") until [chrooted](/index.php/Change_root "Change root").
+3.  Continue with the installation procedure in the Installation Guide as per [#Mount the file systems](/index.php/Installation_guide#Mount_the_file_systems "Installation guide") until [chrooted](/index.php/Change_root "Change root").
 4.  Install [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) on the newly installed system as well.
 5.  Regenerate the [initramfs](/index.php/Initramfs "Initramfs") while chrooted.
 

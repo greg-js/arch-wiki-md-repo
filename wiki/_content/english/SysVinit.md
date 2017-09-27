@@ -281,7 +281,7 @@ esac
 
 ## Runlevels
 
-**Note:** [systemd](/index.php/Systemd "Systemd") is used by default, which uses targets (see `man systemd.target`) rather than runlevels.
+**Note:** [systemd](/index.php/Systemd "Systemd") is used by default, which uses targets (see [systemd.target(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.target.5)) rather than runlevels.
 
 From the [init](http://unixhelp.ed.ac.uk/CGI/man-cgi?init+8) man page:
 

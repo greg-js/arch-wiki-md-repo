@@ -9,7 +9,7 @@
     *   [2.1 保存设置](#.E4.BF.9D.E5.AD.98.E8.AE.BE.E7.BD.AE)
 *   [3 疑难解决](#.E7.96.91.E9.9A.BE.E8.A7.A3.E5.86.B3)
     *   [3.1 Error: Cannot load from file](#Error:_Cannot_load_from_file)
-    *   [3.2 Calibration to prevent inaccurate measurement](#Calibration_to_prevent_inaccurate_measurement)
+    *   [3.2 校准测量数据](#.E6.A0.A1.E5.87.86.E6.B5.8B.E9.87.8F.E6.95.B0.E6.8D.AE)
 *   [4 更多信息](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF)
 
 ## 安装
@@ -32,7 +32,7 @@ PowerTOP提供进一步降低功耗的方法。然而在控制台，PowerTOP不�
 
 有两种方法保存其设置，使其在重启后依然应用先前的设置。
 
-*   使用 [Kernel_modules_(简体中文)](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)")、 [Udev_(简体中文)](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)") 和[sysctl](/index.php/Sysctl "Sysctl")来使其在系统启动时应用设置。相关细节请看[Power_management_(简体中文)](/index.php/Power_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Power management (简体中文)")。
+*   使用 [Kernel modules (简体中文)](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)")、 [Udev (简体中文)](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)") 和[sysctl](/index.php/Sysctl "Sysctl")来使其在系统启动时应用设置。相关细节请看[Power management (简体中文)](/index.php/Power_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Power management (简体中文)")。
 *   使用poertop的 `--auto-tune` 参数，该参数会使得所有的可调整项变成GOOD,为使其在系统启动时就生效，可使用systemd 服务使其开启自启动。添加该文件：
 
  `/etc/systemd/system/powertop.service` 
@@ -83,7 +83,7 @@ WantedBy=multi-user.target
 
 ### Error: Cannot load from file
 
-If you receive an error like the following when starting powertop, it's likely that powertop has not collected enough measurement data yet. To fix this, keep powertop running for a certain time connected to battery power only.
+如果在启动 powertop 时遇到如下错误，可能是因为 powertop 没有收集到足够的数据，请在电池供电的情况下多运行一段时间，收集更多的数据。
 
 ```
 Loaded 39 prior measurements
@@ -92,13 +92,11 @@ Cannot load from file /var/cache/powertop/saved_parameters.powertop
 
 ```
 
-### Calibration to prevent inaccurate measurement
+### 校准测量数据
 
-If you experience inaccurate measurement, then it is likely that you need to calibrate powertop first. This can be done by running powertop with the `--calibrate` parameter.
+如果测量结果不准确，可能需要先校准 powertop: 运行 powertop 是增加 `--calibrate` 参数.
 
-**Note:**
-
-*   Calibration will toggle various functions like backlight or wifi. Thus, it may turn your screen black for some time, lose your connection, and so on. Do not touch the machine during the calibration.
+**Note:** 校准时会开关背光、wifi 等功能，再校准时不要触碰机器。
 
 ```
 # powertop --calibrate

@@ -18,8 +18,8 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [1.2 KDE applications and language packs](#KDE_applications_and_language_packs)
     *   [1.3 Unstable releases](#Unstable_releases)
 *   [2 Starting Plasma](#Starting_Plasma)
-    *   [2.1 Graphically](#Graphically)
-    *   [2.2 Manual](#Manual)
+    *   [2.1 Using a display manager](#Using_a_display_manager)
+    *   [2.2 From the console](#From_the_console)
 *   [3 Configuration](#Configuration)
     *   [3.1 Personalization](#Personalization)
         *   [3.1.1 Plasma desktop](#Plasma_desktop)
@@ -121,11 +121,9 @@ See [Official repositories#kde-unstable](/index.php/Official_repositories#kde-un
 
 **Note:** Although it is possible to launch Plasma under [Wayland](/index.php/Wayland "Wayland"), there are some missing features and known problems as of Plasma 5.10\. See the [Plasma 5.10 Errata](https://community.kde.org/Plasma/5.10_Errata#Wayland) for a list of issues and the [Plasma on Wayland workboard](https://phabricator.kde.org/project/board/99/) for the current state of development. Use [Xorg](/index.php/Xorg "Xorg") for the most complete and stable experience.
 
-Plasma can be started either graphically, using a [display manager](/index.php/Display_manager "Display manager"), or manually from the console.
+Plasma can be started either using a [display manager](/index.php/Display_manager "Display manager"), or from the console.
 
-### Graphically
-
-Using a [Display manager](/index.php/Display_manager "Display manager"):
+### Using a [display manager](/index.php/Display_manager "Display manager")
 
 *   Select *Plasma* to launch a new session in [Xorg](/index.php/Xorg "Xorg").
 *   [Install](/index.php/Install "Install") [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) and select *Plasma (Wayland)* to launch a new session in [Wayland](/index.php/Wayland "Wayland").
@@ -135,7 +133,7 @@ Using a [Display manager](/index.php/Display_manager "Display manager"):
 *   Using the [Nouveau](/index.php/Nouveau "Nouveau") driver.
 *   Using the (default) Xorg session.
 
-### Manual
+### From the console
 
 To start Plasma with [xinit](/index.php/Xinit "Xinit")/*startx*, append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login"). To start a Plasma on Wayland session from a console, run `startplasmacompositor`.
 
@@ -154,13 +152,13 @@ Some Frameworks 5 applications can use KDElibs 4 configuration, after moving the
 
 ##### Themes
 
-[Plasma themes](https://store.kde.org/browse/cat/104/) define the look of panels and plasmoids. For easy system-wide installation, some such themes are available in both the official repositories and the [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmatheme&do_Search=Go).
+[Plasma themes](https://store.kde.org/browse/cat/104/) define the look of panels and plasmoids. For easy system-wide installation, some themes are available in both the official repositories and the [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmatheme&do_Search=Go).
 
 The easiest way to install themes is by going through the *System Settings > Workspace Theme > Desktop Theme > Get new Themes*.
 
-This will present a frontend for [https://store.kde.org/](https://store.kde.org/) that allows you to install, uninstall, or update third-party plasmoid scripts.
+This will present a frontend for the [KDE-Store](https://store.kde.org/) that allows you to install, uninstall, or update third-party plasmoid scripts.
 
-Splash and Lock screens are currently unavailable so to customize these screens you have to modify the original theme found in `/usr/share/plasma/look-and-feel/`. See [this thread](https://www.kubuntuforums.net/showthread.php?67599-Plasma-5-background-images&s=59832dc20e5bfc2948dbb591d8453f61) on the Kubuntu forums.
+Splash and Lock screens are currently unavailable. To customize these screens, you have to modify the original theme found in `/usr/share/plasma/look-and-feel/`. See [this thread](https://www.kubuntuforums.net/showthread.php?67599-Plasma-5-background-images&s=59832dc20e5bfc2948dbb591d8453f61) on the Kubuntu forums.
 
 Note that the [SDDM](/index.php/SDDM "SDDM") login screen is not part of this theme.
 
@@ -188,7 +186,7 @@ Plasmoids are little scripted (plasmoid scripts) or coded (plasmoid binaries) KD
 
 The easiest way to install plasmoid scripts is by right-clicking onto a panel or the desktop and choosing *Add Widgets > Get new Widgets > Download Widgets*. This will present a nice frontend for [https://store.kde.org/](https://store.kde.org/) that allows you to install, uninstall, or update third-party plasmoid scripts with literally just one click.
 
-Many Plasmoid binaries are [available from the AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmoid&do_Search=Go&PP=25&SO=d&SB=v).
+Many Plasmoid binaries are available from the [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmoid&PP=50&SO=d&SB=v).
 
 ##### Sound applet in the system tray
 

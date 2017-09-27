@@ -1,3 +1,10 @@
+Ссылки по теме
+
+*   [udev (Русский)](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)")
+*   [mount (Русский)](/index.php/Mount_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mount (Русский)")
+*   [Polkit](/index.php/Polkit "Polkit")
+*   [Функциональность файлового менеджера](/index.php/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%B0 "Функциональность файлового менеджера")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Udisks](/index.php/Udisks "Udisks"). Дата последней синхронизации: 7 октября 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Udisks&diff=0&oldid=403685).
 
 [udisks](http://www.freedesktop.org/wiki/Software/udisks/) предоставляет демон *udisksd*, который реализует интерфейс [D-Bus](/index.php/D-Bus "D-Bus"), используемый для запроса и управления устройств хранения данных и инструмента командной строки *udisksctl*, используемый для запросов и использования в качестве демона.
@@ -22,7 +29,7 @@
 
 Существует две версии *udisks* по имени [udisks](https://aur.archlinux.org/packages/udisks/) и [udisks2](https://www.archlinux.org/packages/?name=udisks2). Разработка *udisks* прекратилась в пользу *udisks2*. [[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
 
-*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) и *udisks-демон* ([udisks](https://aur.archlinux.org/packages/udisks/)) запускаются по требованию [D-Bus](/index.php/D-Bus "D-Bus") и не должны быть включены явно (см. `man udisksd` и `man udisks-daemon`). Ими можно управлять через командную строку с помощью *udisksctl* и *udisks*, соответственно. Для получения дополнительной информации смотрите `man udisksctl` и `man udisks`.
+*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) и *udisks-демон* ([udisks](https://aur.archlinux.org/packages/udisks/)) запускаются по требованию [D-Bus](/index.php/D-Bus "D-Bus") и не должны быть включены явно (см. [udisksd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisksd.8) и [udisks-daemon()](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisks-daemon.)). Ими можно управлять через командную строку с помощью *udisksctl* и *udisks*, соответственно. Для получения дополнительной информации смотрите [udisksctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisksctl.1) и [udisks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8).
 
 ## Настройка
 
@@ -183,7 +190,7 @@ KERNEL == «sda2», ENV {UDISKS_IGNORE} = «1»
 
 ```
 
-Для получения дополнительной информации смотрите `man udisks`.
+Для получения дополнительной информации смотрите [udisks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8).
 
 ## Смотрите также
 

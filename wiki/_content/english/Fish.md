@@ -224,7 +224,7 @@ $ funcsave FooAliasName
 
 ```
 
-This will set you alias as a persistent fish shell function. if you wish to see all functions and/or edit them, one can simply use `fish_config)` to view or edit all functions under the **Function** tab in the resulting web configuration page.
+This will set you alias as a persistent fish shell function. if you wish to see all functions and/or edit them, one can simply use `fish_config` to view or edit all functions under the **Function** tab in the resulting web configuration page.
 
 ## See also
 

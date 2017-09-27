@@ -398,7 +398,7 @@ Also installing [lib32-libxinerama](https://www.archlinux.org/packages/?name=lib
 
 ### exe-thumbnailer
 
-This is a small piece of UI code meant to be installed with (or even before) Wine. It provides thumbnails for executable files that show the embedded icons when available, and also gives the user a hint that Wine will be used to open it. Install it with the [gnome-exe-thumbnailer](https://aur.archlinux.org/packages/gnome-exe-thumbnailer/) package.
+This is a small piece of UI code meant to be installed with (or even before) Wine. It provides thumbnails for executable files that show the embedded icons when available, and also gives the user a hint that Wine will be used to open it. Install it with the [exe-thumbnailer](https://aur.archlinux.org/packages/exe-thumbnailer/) package.
 
 ### Changing the language
 

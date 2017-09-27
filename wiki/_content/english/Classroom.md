@@ -18,9 +18,11 @@ Classes are held in the IRC channel **#archlinux-classroom** on the [Freenode](h
 
 ### Upcoming classes
 
-Classes are announced on arch-general, the forums, and other broadcasting places like twitter. A list is given below for easy viewing.
+Classes are announced on the mailing list arch-general, the forums, and other broadcasting places like twitter. The following table lists classes being developed and classes announced. The stages for class development are drafting, scheduling, and canceled. Once a class has been announced, the date and time are given.
 
-| **Date and Time** | **Class Title** | **Instructor(s)** | **Announcement(s)** |
+| **Stage / Date** | **Class Title** | **Instructor(s)** | **Announcements and Notes** |
+| scheduling | *Python for Beginners* | pulec | [https://github.com/archclassroom/python-beginners](https://github.com/archclassroom/python-beginners) |
+| drafting | *C Programming* | HalosGhost | [https://ptpb.pw/r/~alcclass](https://ptpb.pw/r/~alcclass) |
 
 ### Previous classes
 
@@ -28,7 +30,7 @@ Classes that have already happened. (Maybe students and teachers could write up 
 
 | **Date** | **Class Title** | **Instructor(s)** | **Logs** |
 | 2017-06-04 | *The Beginner's Guide to Arch Linux Package Management* | Eschwartz | [17:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2017-06-04-the_beginners_guide_to_arch_linux_package_management.txt) |
-| 2016-12-11 | *Getting started with Arch Linux packaging* | halosghost and meskarune | [19:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2016-12-11-getting_started_with_arch_linux_packaging.txt) |
+| 2016-12-11 | *Getting started with Arch Linux packaging* | HalosGhost and meskarune | [19:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2016-12-11-getting_started_with_arch_linux_packaging.txt) |
 | 2016-07-16 | *Git for Gits* | polyzen and meskarune | [16:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2016-07-16-git_for_gits.txt) |
 | 2015-05-17 | *An Imperfect Introduction to Static Typing* | HalosGhost | [23:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2015-05-17-an_imperfect_introduction_to_static_typing.txt) |
 | 2014-09-05 | *Introduction to Scheme and Functional Programming* | nisstyre | [20:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-09-05-introduction_to_scheme_and_functional_programming.txt) |

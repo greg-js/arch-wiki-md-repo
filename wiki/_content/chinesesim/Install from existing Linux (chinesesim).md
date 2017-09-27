@@ -1,3 +1,7 @@
+Related articles
+
+*   [Install from SSH](/index.php/Install_from_SSH "Install from SSH")
+
 **翻译状态：** 本文是英文页面 [Install_from_Existing_Linux](/index.php/Install_from_Existing_Linux "Install from Existing Linux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-10-16，点击[这里](https://wiki.archlinux.org/index.php?title=Install_from_Existing_Linux&diff=0&oldid=407080)可以查看翻译后英文页面的改动。
 
 本指南给出了从当前 Linux 发行版安装 Arch Linux 所需的准备步骤。 准备完成后的安装参考[Installation guide (简体中文)](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")。

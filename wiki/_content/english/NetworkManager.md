@@ -17,8 +17,7 @@ Related articles
     *   [2.1 GNOME](#GNOME)
     *   [2.2 KDE Plasma](#KDE_Plasma)
     *   [2.3 nm-applet](#nm-applet)
-        *   [2.3.1 Xfce](#Xfce)
-        *   [2.3.2 Openbox](#Openbox)
+        *   [2.3.1 Appindicator](#Appindicator)
     *   [2.4 Command line](#Command_line)
         *   [2.4.1 nmcli](#nmcli)
         *   [2.4.2 nmtui](#nmtui)
@@ -176,34 +175,16 @@ killall nm-applet
 
 When you close the *stalonetray* window, it closes `nm-applet` too, so no extra memory is used once you are done with network settings.
 
-#### Xfce
+**Tip:** The applet can show notifications for events such as connecting to or disconnecting from a WiFi network. For these notifications to display, ensure that you have a notification server installed - see [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications"). If you use the applet without a notification server, you might see some messages in stdout/stderr however these can be safely ignored.
 
-While [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) works in [Xfce](/index.php/Xfce "Xfce"), in order to see notifications, including error messages, `nm-applet` needs an implementation of the FreeDesktop.org [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications"). In the xfce panel settings the applet is named "Notification Area" which might be misleading to some users especially in different translation. To enable notifications install [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd), a package that provides an implementation for the specification. To add a password prompt for new wifi networks install a service that implements org.freedesktop.secrets like [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring).
+#### Appindicator
 
-Without such a notification daemon, `nm-applet` outputs the following errors to stdout/stderr:
-
-```
-(nm-applet:24209): libnotify-WARNING **: Failed to connect to proxy
-** (nm-applet:24209): WARNING **: get_all_cb: couldn't retrieve
-system settings properties: (25) Launch helper exited with unknown
-return code 1.
-** (nm-applet:24209): WARNING **: fetch_connections_done: error
-fetching connections: (25) Launch helper exited with unknown return
-code 1.
-** (nm-applet:24209): WARNING **: Failed to register as an agent:
-(25) Launch helper exited with unknown return code 1
+Appindicator support is available in *nm-applet* however it is not compiled into the official package. To use nm-applet in an Appindicator environment, replace [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) with [network-manager-applet-indicator](https://aur.archlinux.org/packages/network-manager-applet-indicator/) and then start the applet with the following command:
 
 ```
+$ nm-applet --indicator
 
-`nm-applet` will still work fine, though, but without notifications.
-
-Should the applet not appear, install the [xfce4-indicator-plugin](https://aur.archlinux.org/packages/xfce4-indicator-plugin/) package. [[2]](http://askubuntu.com/questions/449658/networkmanager-tray-nm-applet-is-gone-after-upgrade-to-14-04-trusty)
-
-#### Openbox
-
-To work properly in [Openbox](/index.php/Openbox "Openbox"), the GNOME applet requires the [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd) notification daemon for the same reason as in XFCE and the [gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme) package to be able to display the applet in the systray.
-
-`nm-applet` installs the autostart file at `/etc/xdg/autostart/nm-applet.desktop`. If you have issues with it (e.g. `nm-applet` is started twice or is not started at all), see [Openbox#autostart](/index.php/Openbox#autostart "Openbox") or [[3]](https://bbs.archlinux.org/viewtopic.php?pid=993738) for solution.
+```
 
 ### Command line
 
@@ -894,7 +875,7 @@ wifi.scan-rand-mac-address=no
 
 ```
 
-**Tip:** Disabling MAC address randomization may be needed for stable connection. See [[4]](https://bbs.archlinux.org/viewtopic.php?id=220101).
+**Tip:** Disabling MAC address randomization may be needed for stable connection. See [[2]](https://bbs.archlinux.org/viewtopic.php?id=220101).
 
 MAC randomization for network connections can be set to different modes for both wireless and ethernet interfaces. See [the Gnome blog post](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) for more details on the different modes.
 

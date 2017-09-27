@@ -74,7 +74,7 @@ To use alternative DNS servers, edit `/etc/resolv.conf` and add them to the top 
 
 [OpenNIC](http://www.opennicproject.org/) provides free uncensored nameservers with additional features.
 
-**Tip:** OpenNIC offers many [different nameservers](http://wiki.opennicproject.org/Tier2) located in multiple countries. Pick some of the [nearest nameservers](https://www.opennicproject.org/nearest-servers/) for optimal performance.
+**Tip:** OpenNIC offers many [different nameservers](https://servers.opennic.org/) located in multiple countries. Pick some of the [nearest nameservers](https://www.opennic.org/) for optimal performance. Alternatively, the anycast servers below can be used; while reliable their latency [fluctuates a lot](https://wiki.opennic.org/opennic/dont_anycast).
 
 ```
 # OpenNIC IPv4 nameservers (Worldwide Anycast)

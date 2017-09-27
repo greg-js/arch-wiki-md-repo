@@ -7,66 +7,64 @@ Related articles
 *   [OpenSSL](/index.php/OpenSSL "OpenSSL")
 *   [WebDAV](/index.php/WebDAV "WebDAV")
 
-From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"):
+From [Wikipedia](https://en.wikipedia.org/wiki/Nextcloud "wikipedia:Nextcloud"):
 
-	Nextcloud is a suite of client-server software for creating file hosting services and using them.
+	Nextcloud is a suite of client-server software for creating and using file hosting services. It is functionally similar to Dropbox, although Nextcloud is free and open-source, allowing anyone to install and operate it on a private server. In contrast to proprietary services like Dropbox, the open architecture allows adding additional functionality to the server in form of applications.
 
-It is functionally very similar to the widely used Dropbox, with the primary functional difference being that Nextcloud is free and open-source, and thereby allowing anyone to install and operate it without charge on a private server. In contrast to proprietary services like Dropbox, the open architecture allows adding additional functionality to the server in form of so-called applications.
-
-For differences between Nextcloud and ownCloud see [wikipedia:Nextcloud#Differences from ownCloud](https://en.wikipedia.org/wiki/Nextcloud#Differences_from_ownCloud "wikipedia:Nextcloud").
+Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia:Nextcloud#Differences from ownCloud](https://en.wikipedia.org/wiki/Nextcloud#Differences_from_ownCloud "wikipedia:Nextcloud").
 
 ## Contents
 
 *   [1 Prerequisites](#Prerequisites)
 *   [2 Installation](#Installation)
 *   [3 Setup](#Setup)
-    *   [3.1 Pre-install](#Pre-install)
-    *   [3.2 PHP setup](#PHP_setup)
-    *   [3.3 Database setup](#Database_setup)
-        *   [3.3.1 MariaDB](#MariaDB)
-        *   [3.3.2 PostgreSQL](#PostgreSQL)
-    *   [3.4 Webserver setup](#Webserver_setup)
-        *   [3.4.1 Apache](#Apache)
-            *   [3.4.1.1 WebDAV](#WebDAV)
-        *   [3.4.2 Nginx](#Nginx)
-            *   [3.4.2.1 PHP-FPM configuration](#PHP-FPM_configuration)
+    *   [3.1 PHP setup](#PHP_setup)
+    *   [3.2 Database setup](#Database_setup)
+        *   [3.2.1 MariaDB](#MariaDB)
+        *   [3.2.2 PostgreSQL](#PostgreSQL)
+    *   [3.3 Webserver setup](#Webserver_setup)
+        *   [3.3.1 Apache](#Apache)
+            *   [3.3.1.1 WebDAV](#WebDAV)
+        *   [3.3.2 Nginx](#Nginx)
+            *   [3.3.2.1 PHP-FPM configuration](#PHP-FPM_configuration)
 *   [4 Initialize](#Initialize)
+    *   [4.1 Create storage directories](#Create_storage_directories)
 *   [5 Security Hardening](#Security_Hardening)
     *   [5.1 Let's Encrypt](#Let.27s_Encrypt)
         *   [5.1.1 nginx](#nginx_2)
     *   [5.2 uWSGI](#uWSGI)
         *   [5.2.1 Activation](#Activation)
     *   [5.3 Setting strong permissions for the filesystem](#Setting_strong_permissions_for_the_filesystem)
-*   [6 Maintenance associated with Arch package updates](#Maintenance_associated_with_Arch_package_updates)
-*   [7 Synchronization](#Synchronization)
-    *   [7.1 Desktop](#Desktop)
-        *   [7.1.1 Calendar](#Calendar)
-        *   [7.1.2 Contacts](#Contacts)
-        *   [7.1.3 Mounting files with davfs2](#Mounting_files_with_davfs2)
-    *   [7.2 Mounting files in Gnome Nautilus](#Mounting_files_in_Gnome_Nautilus)
-    *   [7.3 Android](#Android)
-    *   [7.4 SABnzbd](#SABnzbd)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Self-signed certificate not accepted](#Self-signed_certificate_not_accepted)
-    *   [8.2 Self-signed certificate for Android devices](#Self-signed_certificate_for_Android_devices)
-    *   [8.3 Cannot write into config directory!](#Cannot_write_into_config_directory.21)
-    *   [8.4 Cannot create data directory (/path/to/dir)](#Cannot_create_data_directory_.28.2Fpath.2Fto.2Fdir.29)
-    *   [8.5 CSync failed to find a specific file.](#CSync_failed_to_find_a_specific_file.)
-    *   [8.6 Seeing white page after login](#Seeing_white_page_after_login)
-    *   [8.7 GUI sync client fails to connect](#GUI_sync_client_fails_to_connect)
-    *   [8.8 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload.2C_but_give_an_error_.27Integrity_constraint_violation....27)
-    *   [8.9 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
-    *   [8.10 Installed apps get blocked because of MIME type error](#Installed_apps_get_blocked_because_of_MIME_type_error)
-    *   [8.11 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
-    *   [8.12 "Reading from keychain failed with error: 'No keychain service available'"](#.22Reading_from_keychain_failed_with_error:_.27No_keychain_service_available.27.22)
-    *   [8.13 FolderSync: "Method Not Allowed"](#FolderSync:_.22Method_Not_Allowed.22)
-*   [9 Tips and tricks](#Tips_and_tricks)
-    *   [9.1 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
-    *   [9.2 Docker](#Docker)
-    *   [9.3 Upload and share from File Manager](#Upload_and_share_from_File_Manager)
-    *   [9.4 Defining Background Jobs](#Defining_Background_Jobs)
-    *   [9.5 Collabora Online Office integration](#Collabora_Online_Office_integration)
-*   [10 See also](#See_also)
+*   [6 Synchronization](#Synchronization)
+    *   [6.1 Desktop](#Desktop)
+        *   [6.1.1 Calendar](#Calendar)
+        *   [6.1.2 Contacts](#Contacts)
+        *   [6.1.3 Mounting files with davfs2](#Mounting_files_with_davfs2)
+    *   [6.2 Mounting files in GNOME Files (Nautilus)](#Mounting_files_in_GNOME_Files_.28Nautilus.29)
+    *   [6.3 Android](#Android)
+    *   [6.4 iOS](#iOS)
+    *   [6.5 SABnzbd](#SABnzbd)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Self-signed certificate not accepted](#Self-signed_certificate_not_accepted)
+    *   [7.2 Self-signed certificate for Android devices](#Self-signed_certificate_for_Android_devices)
+    *   [7.3 Cannot write into config directory!](#Cannot_write_into_config_directory.21)
+    *   [7.4 Cannot create data directory](#Cannot_create_data_directory)
+    *   [7.5 CSync failed to find a specific file.](#CSync_failed_to_find_a_specific_file.)
+    *   [7.6 Seeing white page after login](#Seeing_white_page_after_login)
+    *   [7.7 GUI sync client fails to connect](#GUI_sync_client_fails_to_connect)
+    *   [7.8 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload.2C_but_give_an_error_.27Integrity_constraint_violation....27)
+    *   [7.9 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
+    *   [7.10 Installed apps get blocked because of MIME type error](#Installed_apps_get_blocked_because_of_MIME_type_error)
+    *   [7.11 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
+    *   [7.12 "Reading from keychain failed with error: 'No keychain service available'"](#.22Reading_from_keychain_failed_with_error:_.27No_keychain_service_available.27.22)
+    *   [7.13 FolderSync: "Method Not Allowed"](#FolderSync:_.22Method_Not_Allowed.22)
+*   [8 Tips and tricks](#Tips_and_tricks)
+    *   [8.1 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
+    *   [8.2 Docker](#Docker)
+    *   [8.3 Upload and share from File Manager](#Upload_and_share_from_File_Manager)
+    *   [8.4 Defining Background Jobs](#Defining_Background_Jobs)
+    *   [8.5 Collabora Online Office integration](#Collabora_Online_Office_integration)
+*   [9 See also](#See_also)
 
 ## Prerequisites
 
@@ -87,43 +85,6 @@ Make sure the required components are installed before proceeding.
 ## Setup
 
 As stated above, in order to setup Nextcloud, you must set up the appropriate PHP requirements; additionally, you must configure a database and a webserver.
-
-### Pre-install
-
-Arch packages Nextcloud in a way where the *apps* folder only has the webserver as a group without web permissions and the *data* folder is nonexistent.
-
-The easiest non-conflicting way is to create a new writable folder for apps and also create a writable data folder. Replace the http group with the group your webserver uses if needed.
-
-```
-# mkdir -p /usr/share/webapps/nextcloud/data
-# mkdir -p /usr/share/webapps/nextcloud/apps2
-# chown http:http /usr/share/webapps/nextcloud/data
-# chown http:http /usr/share/webapps/nextcloud/apps2
-# chmod 700 /usr/share/webapps/nextcloud/data
-# chmod 700 /usr/share/webapps/nextcloud/apps2
-
-```
-
-Next edit the configuration file and add following lines to the $CONFIG array.
-
-```
- 'apps_paths' => 
- array (
-   0 => 
-   array (
-     'path' => '/usr/share/webapps/nextcloud/apps',
-     'url' => '/apps',
-     'writable' => false,
-   ),
-   1 => 
-   array (
-     'path' => '/usr/share/webapps/nextcloud/apps2',
-     'url' => '/apps2',
-     'writable' => true,
-   ),
- ),
-
-```
 
 ### PHP setup
 
@@ -206,7 +167,7 @@ Now restart Apache (`httpd.service`).
 
 ##### WebDAV
 
-ownCloud comes with its own [WebDAV](/index.php/WebDAV "WebDAV") implementation enabled, which may conflict with the one shipped with Apache. If you have enabled WebDAV (not enabled by default), disable the modules `mod_dav` and `mod_dav_fs` in `/etc/httpd/conf/httpd.conf`. See [[2]](https://forum.owncloud.org/viewtopic.php?f=17&t=7240) for details.
+Nextcloud comes with its own [WebDAV](/index.php/WebDAV "WebDAV") implementation enabled, which may conflict with the one shipped with Apache. If you have enabled WebDAV in Apache (not enabled by default), disable the modules `mod_dav` and `mod_dav_fs` in `/etc/httpd/conf/httpd.conf`. See [[2]](https://forum.owncloud.org/viewtopic.php?f=17&t=7240) for details.
 
 #### Nginx
 
@@ -252,7 +213,49 @@ Uncomment `env[PATH] = /usr/local/bin:/usr/bin:/bin` in `/etc/php/php-fpm.d/www.
 
 ## Initialize
 
-Open the address where you have installed Nextcloud in a web browser (e.g., [https://www.examples.com/nextcloud](https://www.examples.com/nextcloud)). From there follow the instructions in adding an administrator account as well as selecting the database you created earlier.
+Open the address where you have installed Nextcloud in a web browser (e.g., [https://www.examples.com/nextcloud](https://www.examples.com/nextcloud)).
+
+### Create storage directories
+
+You will now see "Cannot write into "apps" directory". This is because Arch packages Nextcloud in a way where the *apps* folder only has the webserver as a group without web permissions and the *data* folder is nonexistent.
+
+The easiest non-conflicting way is to create a new writable folder for apps and also create a writable data folder. Replace the http group with the group your webserver uses if needed.
+
+```
+# mkdir -p /usr/share/webapps/nextcloud/data
+# mkdir -p /usr/share/webapps/nextcloud/apps2
+# chown http:http /usr/share/webapps/nextcloud/data
+# chown http:http /usr/share/webapps/nextcloud/apps2
+# chmod 700 /usr/share/webapps/nextcloud/data
+# chmod 700 /usr/share/webapps/nextcloud/apps2
+
+```
+
+Next edit the configuration file at `/etc/webapps/nextcloud/config/config.php` and add following lines before the closing `);` of the file.
+
+ `/etc/webapps/nextcloud/config/config.php` 
+```
+'apps_paths' =>
+  array (
+    0 =>
+    array (
+      'path' => '/usr/share/webapps/nextcloud/apps',
+      'url' => '/apps',
+      'writable' => false,
+    ),
+    1 =>
+    array (
+      'path' => '/usr/share/webapps/nextcloud/apps2',
+      'url' => '/apps2',
+      'writable' => true,
+    ),
+  ),
+  'datadirectory' => '/usr/share/webapps/nextcloud/data'
+```
+
+Refresh the page and the error should be gone.
+
+From there follow the instructions in adding an administrator account as well as selecting the database you created earlier.
 
 ## Security Hardening
 
@@ -268,7 +271,7 @@ The [Nextcloud Hardening and Security](https://docs.nextcloud.com/server/12/admi
 
 ### uWSGI
 
-You can run *ownCloud* in its own process and service by using the [uWSGI](/index.php/UWSGI "UWSGI") application server with [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php). This allows you to define a [PHP configuration](/index.php/PHP#Configuration "PHP") only for this instance of PHP, without the need to edit the global `php.ini` and thus keeping your web application configurations compartmentalized. *uWSGI* itself has a wealth of features to limit the resource use and to harden the security of the application, and by being a separate process it can run under its own user.
+You can run Nextcloud in its own process and service by using the [uWSGI](/index.php/UWSGI "UWSGI") application server with [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php). This allows you to define a [PHP configuration](/index.php/PHP#Configuration "PHP") only for this instance of PHP, without the need to edit the global `php.ini` and thus keeping your web application configurations compartmentalized. *uWSGI* itself has a wealth of features to limit the resource use and to harden the security of the application, and by being a separate process it can run under its own user.
 
 The only part that differs from [#php-fpm configuration](#php-fpm_configuration) is the `location ~ \.php(?:$|/) {}` block:
 
@@ -281,14 +284,14 @@ The only part that differs from [#php-fpm configuration](#php-fpm_configuration)
     uwsgi_hide_header X-XSS-Protection;
     uwsgi_hide_header X-Content-Type-Options;
     uwsgi_hide_header X-Robots-Tag;
-    uwsgi_pass unix:/run/uwsgi/owncloud.sock;
+    uwsgi_pass unix:/run/uwsgi/nextcloud.sock;
     }
 
 ```
 
 Then create a config file for *uWSGI*:
 
- `/etc/uwsgi/owncloud.ini` 
+ `/etc/uwsgi/nextcloud.ini` 
 ```
 [uwsgi]
 ; load the required plugins
@@ -327,12 +330,12 @@ php-index = index.php
 
 ; set php configuration for this instance of php, no need to edit global php.ini
 php-set = date.timezone=Etc/UTC
-;php-set = open_basedir=/tmp/:/usr/share/webapps/owncloud:/etc/webapps/owncloud:/dev/urandom
+;php-set = open_basedir=/tmp/:/usr/share/webapps/nextcloud:/etc/webapps/nextcloud:/dev/urandom
 php-set = expose_php=false
 ; avoid security risk of leaving sessions in world-readable /tmp
-php-set = session.save_path=/usr/share/webapps/owncloud/data
+php-set = session.save_path=/usr/share/webapps/nextcloud/data
 
-; port of php directives set upstream in /usr/share/webapps/owncloud/.user.ini for use with PHP-FPM
+; port of php directives set upstream in /usr/share/webapps/nextcloud/.user.ini for use with PHP-FPM
 php-set = upload_max_filesize=513M
 php-set = post_max_size=513M
 php-set = memory_limit=512M
@@ -379,33 +382,32 @@ php-set = extension=apcu.so
 php-set = apc.ttl=7200
 php-set = apc.enable_cli=1
 
-cron2 = minute=-15,unique=1 /usr/bin/php -f /usr/share/webapps/owncloud/cron.php 1>/dev/null
+cron2 = minute=-15,unique=1 /usr/bin/php -f /usr/share/webapps/nextcloud/cron.php 1>/dev/null
 
 ```
 
-**Note:**
+**Note:** * Do not forget to set your timezone and uncomment the required database connector in the uWSGI config file
 
-*   Do not forget to set your timezone and uncomment the required database connector in the uWSGI config file
-*   Starting with PHP 7, the [open_basedir](/index.php/PHP#Configuration "PHP") directive is [no longer set by default](https://www.archlinux.org/news/php-70-packages-released/) to keep in line with upstream. A commented out version functional until at least OC 8.2 has been left in the config for users wishing to harden security. Be aware that it may [occasionally break things](https://github.com/owncloud/core/search?q=open_basedir&type=Issues&utf8=%E2%9C%93).
+*   The [open_basedir](/index.php/PHP#Configuration "PHP") directive is optional and commented out. You can uncomment to harden security. Be aware that it may [occasionally break things](https://github.com/owncloud/core/search?q=open_basedir&type=Issues).
 *   Use `php-docroot = /usr/share/webapps` if placing nextcloud in /nextcloud subdirectory.
 
-**Warning:** The way the [ownCloud background job](https://doc.owncloud.org/server/9.0/admin_manual/configuration_server/background_jobs_configuration.html) is currently set up with [uWSGI cron](https://uwsgi-docs.readthedocs.org/en/latest/Cron.html) will make use of the default global configuration from `/etc/php/php.ini`. This means that none of the specific parameters defined (e.g. required modules) will be enabled, [leading to various issues](https://github.com/owncloud/core/issues/12678#issuecomment-66114448). One solution is to copy `/etc/php/php.ini` to e.g. `/etc/uwsgi/cron-php.ini`, make the required modifications there (mirroring `/etc/uwsgi/owncloud.ini` parameters) and referencing it in the cron directive by adding the `-c /etc/uwsgi/cron-php.ini` option to *php* invocation.
+**Warning:** The way the [Nextcloud background job](https://docs.nextcloud.com/server/12/admin_manual/configuration_server/background_jobs_configuration.html) is currently set up with [uWSGI cron](https://uwsgi-docs.readthedocs.org/en/latest/Cron.html) will make use of the default global configuration from `/etc/php/php.ini`. This means that none of the specific parameters defined (e.g. required modules) will be enabled, [leading to various issues](https://github.com/owncloud/core/issues/12678#issuecomment-66114448). One solution is to copy `/etc/php/php.ini` to e.g. `/etc/uwsgi/cron-php.ini`, make the required modifications there (mirroring `/etc/uwsgi/nextcloud.ini` parameters) and referencing it in the cron directive by adding the `-c /etc/uwsgi/cron-php.ini` option to *php* invocation.
 
 #### Activation
 
 [uWSGI](/index.php/UWSGI "UWSGI") provides a [template unit](/index.php/Systemd#Using_units "Systemd") that allows to start and enable application using their configuration file name as instance identifier. For example:
 
 ```
-# systemctl start uwsgi@owncloud.socket
+# systemctl start uwsgi@nextcloud.socket
 
 ```
 
-would start it on demand referencing the configuration file `/etc/uwsgi/owncloud.ini`.
+would start it on demand referencing the configuration file `/etc/uwsgi/nextcloud.ini`.
 
 To enable the uwsgi service by default at start-up, run:
 
 ```
-# systemctl enable uwsgi@owncloud.socket
+# systemctl enable uwsgi@nextcloud.socket
 
 ```
 
@@ -415,11 +417,8 @@ See also [UWSGI#Starting service](/index.php/UWSGI#Starting_service "UWSGI").
 
 ### Setting strong permissions for the filesystem
 
-From the [official installation manual](https://docs.nextcloud.com/server/11/admin_manual/installation/installation_wizard.html#setting-strong-directory-permissions):
+You should set the permissions for `config/`, `data/` and `apps/` as strict as possible. That means that your HTTP user (*http* in case of [apache](https://www.archlinux.org/packages/?name=apache)) should own them, and the should have `700` permissions. You can use the following script to achieve this.
 
-	For hardened security we recommend setting the permissions on your ownCloud directories as strictly as possible, and for proper server operations. This should be done immediately after the initial installation and before running the setup. Your HTTP user must own the `config/`, `data/` and `apps/` directories so that you can configure ownCloud, create, modify and delete your data files, and install apps via the ownCloud Web interface.
-
-**Note:** The AUR package for nextcloud provides a similar script `/usr/bin/set-nc-perms` while the owncloud package does not.
  `oc-perms` 
 ```
 #!/bin/bash
@@ -465,46 +464,35 @@ fi
 
 ```
 
-If you have customized your ownCloud installation and your filepaths are different than the standard installation, then modify this script accordingly.
-
-## Maintenance associated with Arch package updates
-
-When the Arch nextcloud package is updated via pacman, it may become necessary to connect via the web interface to manually trigger an update of the associated files. Alternatively, one can run use `/usr/share/webapps/nextcloud/occ upgrade` from the shell but it must be run as the *http* user:
-
-```
-# sudo -u http /usr/share/webapps/nextcloud/occ upgrade
-
-```
-
-**Note:** Failure to do so will render the mobile app unable to connect.
+If you have customized your Nextcloud installation and your filepaths are different than the standard installation, then modify this script accordingly.
 
 ## Synchronization
 
 ### Desktop
 
-The official client can be installed with the [owncloud-client](https://www.archlinux.org/packages/?name=owncloud-client) or [nextcloud-client](https://aur.archlinux.org/packages/nextcloud-client/) package. Alternative versions are available in the [AUR](/index.php/AUR "AUR"): [owncloud-client-beta](https://aur.archlinux.org/packages/owncloud-client-beta/), [owncloud-client-git](https://aur.archlinux.org/packages/owncloud-client-git/) and [owncloud-client-qt5](https://aur.archlinux.org/packages/owncloud-client-qt5/).
+The official client can be installed with the [owncloud-client](https://www.archlinux.org/packages/?name=owncloud-client) or [nextcloud-client](https://aur.archlinux.org/packages/nextcloud-client/) package. Alternative versions are available in the [AUR](/index.php/AUR "AUR"): [owncloud-client-git](https://aur.archlinux.org/packages/owncloud-client-git/).
 
 #### Calendar
 
-To access your *ownCloud* calendars using Mozilla [Thunderbird](/index.php/Thunderbird "Thunderbird")'s [Lightning calendar](/index.php/Thunderbird#Lightning_-_Calendar "Thunderbird") you would use the following URL:
+To access your Nextcloud calendars using Mozilla [Thunderbird](/index.php/Thunderbird "Thunderbird")'s Lightning calendar you would use the following URL:
 
 ```
 https://ADDRESS/remote.php/caldav/calendars/USERNAME/CALENDARNAME
 
 ```
 
-To access your *ownCloud* calendars using CalDAV-compatible programs like Kontact or [Evolution](/index.php/Evolution "Evolution"), you would use the following URL:
+To access your Nextcloud calendars using CalDAV-compatible programs like Kontact or [Evolution](/index.php/Evolution "Evolution"), you would use the following URL:
 
 ```
 https://ADDRESS/remote.php/caldav
 
 ```
 
-For details see the [official documentation](http://doc.owncloud.org/server/7.0/user_manual/pim/calendar.html#synchronizing-calendars-using-caldav).
+For details see the [official documentation](https://docs.nextcloud.com/server/12/user_manual/pim/index.html).
 
 #### Contacts
 
-To sync contacts with [Thunderbird](/index.php/Thunderbird "Thunderbird") you must install the [SOGo frontend](http://www.sogo.nu/downloads/frontends.html), [Lightning extension](/index.php/Thunderbird#Lightning_-_Calendar "Thunderbird") and follow [those instructions](http://doc.owncloud.org/server/7.0/user_manual/pim/sync_thunderbird.html) from the official doc.
+To sync contacts with [Thunderbird](/index.php/Thunderbird "Thunderbird"), see [these instructions](https://docs.nextcloud.com/server/12/user_manual/pim/sync_thunderbird.html) from the official doc.
 
 #### Mounting files with davfs2
 
@@ -531,24 +519,23 @@ You can also create an entry for this in `/etc/fstab`
 
 **Note:** If creating/copying files is not possible, while the same operations work on directories, see [Davfs#Creating/copying files not possible and/or freezes](/index.php/Davfs#Creating.2Fcopying_files_not_possible_and.2For_freezes "Davfs").
 
-### Mounting files in Gnome Nautilus
+### Mounting files in GNOME Files (Nautilus)
 
 You can access the files directly in Nautilus ('+ Other Locations') through WebDAV protocol - use the link as shown in your Nextcloud installation Web GUI (typically: [https://example.org/remote.php/webdav/](https://example.org/remote.php/webdav/)) but replace the protocol name from 'https' to 'davs'. Nautilus will ask for user name and password when trying to connect.
 
 ### Android
 
-There is an official Android app available for a [small donation on the Play Store](https://play.google.com/store/apps/details?id=at.bitfire.davdroid) and for free [on F-Droid](https://f-droid.org/app/at.bitfire.davdroid).
+Download the official Nextcloud app from [Google Play](https://play.google.com/store/apps/details?id=com.nextcloud.client).
 
-To enable contacts and calendar sync:
+To enable contacts and calendar sync (Android 4+):
 
-*   if using Android 4+:
-    1.  download [[3]](https://davdroid.bitfire.at/) ([Play Store](https://play.google.com/store/apps/details?id=at.bitfire.davdroid), [F-Droid](https://f-droid.org/app/at.bitfire.davdroid))
-    2.  Enable mod_rewrite.so in httpd.conf
-    3.  create a new DAVdroid account in the *Account* settings, and specify your "short" server address and login/password couple, e.g. `https://cloud.example.com` (there is no need for the `/remote.php/{carddav,webdav}` part if you configured your web server with the proper redirections, as illustrated previously in the article; *DAVdroid* will find itself the right URLs)
+1.  download [DAVdroid](https://davdroid.bitfire.at/) ([Play Store](https://play.google.com/store/apps/details?id=at.bitfire.davdroid), [F-Droid](https://f-droid.org/app/at.bitfire.davdroid))
+2.  Enable mod_rewrite.so in httpd.conf
+3.  create a new DAVdroid account in the *Account* settings, and specify your "short" server address and login/password couple, e.g. `https://cloud.example.com` (there is no need for the `/remote.php/{carddav,webdav}` part if you configured your web server with the proper redirections, as illustrated previously in the article; *DAVdroid* will find itself the right URLs)
 
-	For an older version of the app but with still useful info, see [this article](http://www.slsmk.com/sync-android-contacts-calendar-and-files-to-owncloud/).
+### iOS
 
-*   if using an Android version below 4.0 and favouring Free/Libre software solutions, give a try to [aCal](https://f-droid.org/repository/browse/?fdfilter=caldav&fdid=com.morphoss.acal) for calendar and contacts sync or CalDAV Sync Adapter ([F-Droid](https://f-droid.org/repository/browse/?fdfilter=caldav&fdid=org.gege.caldavsyncadapter)) for just calendar sync; if you are willing to use non-libre software, then the [recommended solution](http://doc.owncloud.org/server/7.0/user_manual/pim/contacts.html#synchronizing-with-android) is to use [CardDAV-Sync and CalDAV-Sync](http://dmfs.org/).
+Download the official Nextcloud app from the [App Store](https://itunes.apple.com/us/app/nextcloud/id1125420102).
 
 ### SABnzbd
 
@@ -618,33 +605,21 @@ Then import `CA.der.crt` to your Android device:
 
 Put the `CA.der.crt` file onto the sdcard of your Android device (usually to the internal one, e.g. save from a mail attachment). It should be in the root directory. Go to *Settings > Security > Credential storage* and select *Install from device storage*. The `.crt` file will be detected and you will be prompted to enter a certificate name. After importing the certificate, you will find it in *Settings > Security > Credential storage > Trusted credentials > User*.
 
-Thanks to: [[4]](http://www.leftbrainthings.com/2013/10/13/creating-and-importing-self-signed-certificate-to-android-device/)
+Thanks to: [[3]](http://www.leftbrainthings.com/2013/10/13/creating-and-importing-self-signed-certificate-to-android-device/)
 
 Another way is to import the certificate directly from your server via [CAdroid](https://play.google.com/store/apps/details?id=at.bitfire.cadroid) and follow the instructions there.
 
 ### Cannot write into config directory!
 
-Check your httpd configuration file (like `owncloud.conf`). Add your configuration directory (`/etc/webapps` by default) to
+If you have set `open_basedir` in your PHP/web server configuration file (e.g. `/etc/httpd/conf/extra/nextcloud.conf`), make sure that it includes `/etc/webapps`.
 
-```
-php_admin_value open_basedir "/srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/:/path/to/dir/"
+Restart the web server to apply the change.
 
-```
+### Cannot create data directory
 
-Restart the httpd or php-fpm service to activate the change.
+If you have set `open_basedir` in your PHP/web server configuration file (e.g. `/etc/httpd/conf/extra/nextcloud.conf`), make sure that it includes the data directory.
 
-### Cannot create data directory (/path/to/dir)
-
-Check your httpd configuration file (like `owncloud.conf`). Add your data directory to
-
-```
-php_admin_value open_basedir "/srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/:/path/to/dir/"
-
-```
-
-Restart the httpd or php-fpm service to activate the change.
-
-Alternatively, since PHP 7 doesn't use open_basedir by default, you may work around this issue by creating the required data directory owned by root:http (replace http by the user your webserver is running under) with 770 permissions.
+Restart the web server to apply the change.
 
 ### CSync failed to find a specific file.
 
@@ -657,7 +632,7 @@ This is most likely a certificate issue. Recreate it, and do not leave the commo
 
 ### Seeing white page after login
 
-The cause is probably a new app that you installed. To fix that, you can use the occ command as described [here](https://doc.owncloud.org/server/8.2/admin_manual/configuration_server/occ_command.html). So with
+The cause is probably a new app that you installed. To fix that, you can use the occ command as described [here](https://docs.nextcloud.com/server/12/admin_manual/configuration_server/occ_command.html). So with
 
 ```
 sudo -u http php /usr/share/webapps/owncloud/occ app:list
@@ -686,7 +661,7 @@ This should delete the relevant configuration from the table and add it again.
 
 ### GUI sync client fails to connect
 
-If using HTTP basic authentication, make sure to exclude "status.php", which must be publicly accessible. [[5]](https://github.com/owncloud/mirall/issues/734)
+If using HTTP basic authentication, make sure to exclude "status.php", which must be publicly accessible. [[4]](https://github.com/owncloud/mirall/issues/734)
 
 ### Some files upload, but give an error 'Integrity constraint violation...'
 
@@ -697,7 +672,7 @@ You may see the following error in the ownCloud sync client:
 
 ```
 
-This is caused by an issue with the File Locking app, which is often not sufficient to keep conflicts from occurring on some webserver configurations. A more complete [Transactional File Locking](https://doc.owncloud.org/server/8.1/admin_manual/configuration_files/files_locking_transactional.html) is available that rids these errors, but you must be using the Redis php-caching method. Install [redis](https://www.archlinux.org/packages/?name=redis) and [php-redis](https://aur.archlinux.org/packages/php-redis/), comment out your current php-cache mechanism, and then in `/etc/php/conf.d/redis.ini` uncomment `extension=redis.so`. Then in `config.php` make the following changes:
+This is caused by an issue with the File Locking app, which is often not sufficient to keep conflicts from occurring on some webserver configurations. A more complete [Transactional File Locking](https://docs.nextcloud.com/server/12/admin_manual/configuration_files/files_locking_transactional.html) is available that rids these errors, but you must be using the Redis php-caching method. Install [redis](https://www.archlinux.org/packages/?name=redis) and [php-redis](https://aur.archlinux.org/packages/php-redis/), comment out your current php-cache mechanism, and then in `/etc/php/conf.d/redis.ini` uncomment `extension=redis.so`. Then in `config.php` make the following changes:
 
 ```
    'memcache.local' => '\OC\Memcache\Redis',
@@ -736,7 +711,7 @@ location ~ /apps2/(.*)$ {
 
 ### Security warnings even though the recommended settings have been included in nginx.conf
 
-At the top of the admin page there might be a warning to set the `Strict-Transport-Security`, `X-Content-Type-Options`, `X-Frame-Options`, `X-XSS-Protection` and `X-Robots-Tag` according to [https://doc.owncloud.org/server/8.1/admin_manual/configuration_server/harden_server.html](https://doc.owncloud.org/server/8.1/admin_manual/configuration_server/harden_server.html) even though they are already set like that.
+At the top of the admin page there might be a warning to set the `Strict-Transport-Security`, `X-Content-Type-Options`, `X-Frame-Options`, `X-XSS-Protection` and `X-Robots-Tag` according to [https://docs.nextcloud.com/server/12/admin_manual/configuration_server/harden_server.html](https://docs.nextcloud.com/server/12/admin_manual/configuration_server/harden_server.html) even though they are already set like that.
 
 A possible cause could be that because owncloud sets those settings, uwsgi passed them along and nginx added them again:
 
@@ -987,7 +962,5 @@ Now you can enable the Collabora Online app in your Nextcloud instance. In the l
 
 ## See also
 
-*   [ownCloud official website](http://owncloud.org/)
-*   [ownCloud 9.2 Admin Documentation](http://doc.owncloud.org/server/9.2/admin_manual/)
 *   [nextcloud official website](https://docs.nextcloud.com/)
 *   [nextcloud 12.0 Admin Documentation](https://docs.nextcloud.com/server/12/admin_manual/)

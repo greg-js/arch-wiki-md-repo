@@ -1,3 +1,7 @@
+Related articles
+
+*   [File systems](/index.php/File_systems "File systems")
+
 [F2FS](https://en.wikipedia.org/wiki/F2FS "wikipedia:F2FS") (Flash-Friendly File System) 는 낸드 플래시 메모리용으로 설계된 파일 시스템이다. 커널 3.8 이후로 지원되고 있다.
 
 ## F2FS 포맷 파티션 생성

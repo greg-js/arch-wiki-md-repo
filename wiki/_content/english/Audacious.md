@@ -23,12 +23,13 @@
 
 **Note:** GTK+ is now the default interface in Audacious 2.4 and above.
 
-Audacious currently provides two interfaces:
+Audacious currently provides three interfaces:
 
 *   Winamp classic interface
-*   GTK+ interface.
+*   GTK+ interface
+*   Qt5 interface.
 
-One may switch between two interfaces in Audacious.
+For Qt5 interface, install [audacious-qt5](https://aur.archlinux.org/packages/audacious-qt5/) since package from official repository doesn't have Qt5 enabled by default. However, package from AUR doesn't support GTK+. If you want support for both Qt5 and GTK+, you should remove `--disable-gtk` option in [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") of both audacious-qt5 and [audacious-plugins-qt5](https://aur.archlinux.org/packages/audacious-plugins-qt5/). One may switch between interfaces in Audacious settings.
 
 #### Adding Winamp skins
 

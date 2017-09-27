@@ -108,7 +108,7 @@ ABS is not necessary to use Arch Linux, but it is useful for automating certain 
 
 ## How to use ABS
 
-To retrieve the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") required to build a certain package from source, you can either use [Svn](/index.php/Subversion "Subversion") or a [Git](/index.php/Git "Git")-based approach using the [asp](https://www.archlinux.org/packages/?name=asp) package which is a thin wrapper around the svntogit repositories. In the following, the svn-based method as well as the [git-based method](#Retrieve_PKGBUILD_source_using_Git) is described.
+To retrieve the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") required to build a certain package from source, you can either use [Svn](/index.php/Svn "Svn") or a [Git](/index.php/Git "Git")-based approach using the [asp](https://www.archlinux.org/packages/?name=asp) package which is a thin wrapper around the svntogit repositories. In the following, the svn-based method as well as the [git-based method](#Retrieve_PKGBUILD_source_using_Git) is described.
 
 ### Retrieve PKGBUILD source using Svn
 

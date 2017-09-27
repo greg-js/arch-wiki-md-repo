@@ -19,7 +19,7 @@
 *   [nvidia](https://www.archlinux.org/packages/?name=nvidia)
 *   [bbswitch](https://www.archlinux.org/packages/?name=bbswitch)
 *   [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun/) 或者 [nvidia-xrun-git](https://aur.archlinux.org/packages/nvidia-xrun-git/)
-*   一个 [窗口管理器](https://wiki.archlinux.org/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)), 例如 [openbox](https://www.archlinux.org/packages/?name=openbox) 可选，仅用来运行需要使用nvidia的程序，因为直接使用nvidia-xrun运行一些程序（如steam）表现较差，使用一些像Openbox窗口管理器会好一些。
+*   一个 [窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)"), 例如 [openbox](https://www.archlinux.org/packages/?name=openbox) 可选，仅用来运行需要使用nvidia的程序，因为直接使用nvidia-xrun运行一些程序（如steam）表现较差，使用一些像Openbox窗口管理器会好一些。
 
 ## 配置
 

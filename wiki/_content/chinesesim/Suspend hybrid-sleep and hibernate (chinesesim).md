@@ -38,7 +38,7 @@
 
 ArchLiux的休眠功能需要用户设置后才能使用。
 
-这里介绍使用systemd休眠，此外可选择[pm-utils](https://aur.archlinux.org/packages/pm-utils/)实现，参看[Pm-utils_(简体中文)](/index.php/Pm-utils_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pm-utils (简体中文)")。
+这里介绍使用systemd休眠，此外可选择[pm-utils](https://aur.archlinux.org/packages/pm-utils/)实现，参看[Pm-utils (简体中文)](/index.php/Pm-utils_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pm-utils (简体中文)")。
 
 ### 开启休眠
 

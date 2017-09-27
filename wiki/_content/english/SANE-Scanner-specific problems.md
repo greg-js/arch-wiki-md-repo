@@ -113,6 +113,8 @@ Find out your printer/scanner's IP address, and add it on a new line to `/etc/sa
 
 Sane should now find your device. For more details refer to [sane-pixma(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sane-pixma.5).
 
+Alternative: for some Canon Pixma all-in-one printer/scanners, which are not detected over network, can be used [scangearmp2](https://aur.archlinux.org/packages/scangearmp2/) package from AUR.
+
 ## Epson
 
 With Epson scanners, you can use "Image Scan! for Linux".

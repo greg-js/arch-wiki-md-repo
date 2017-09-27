@@ -1,7 +1,6 @@
 Related articles
 
 *   [Bridge with netctl](/index.php/Bridge_with_netctl "Bridge with netctl")
-*   [ODROID#Bridge_interfaces_do_not_work_as_expected](/index.php/ODROID#Bridge_interfaces_do_not_work_as_expected "ODROID")
 
 A bridge is a piece of software used to unite two or more network segments. A bridge behaves like a virtual network switch, working transparently (the other machines do not need to know or care about its existence). Any real devices (e.g. `eth0`) and virtual devices (e.g. `tap0`) can be connected to it.
 

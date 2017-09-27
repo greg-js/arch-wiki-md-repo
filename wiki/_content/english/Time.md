@@ -1,3 +1,10 @@
+Related articles
+
+*   [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon")
+*   [OpenNTPD](/index.php/OpenNTPD "OpenNTPD")
+*   [Chrony](/index.php/Chrony "Chrony")
+*   [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd")
+
 In an operating system, the time (clock) is determined by four parts: time value, time standard, time zone, and Daylight Saving Time (DST) if applicable. This article explains what they are and how to read/set them. Two clocks are present on systems: a hardware clock and a system clock which are also detailed in this article.
 
 Standard behavior of most operating systems is:

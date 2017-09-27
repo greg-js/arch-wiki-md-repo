@@ -244,7 +244,7 @@ When building on an Arch Linux ARM device, the developers *highly* recommend usi
 *   [distccd-alarm-armv7h](https://aur.archlinux.org/packages/distccd-alarm-armv7h/)
 *   [distccd-alarm-armv8](https://aur.archlinux.org/packages/distccd-alarm-armv8/)
 
-Setup on the slave machine containing the toolchain is identical to [Distcc#Slaves](/index.php/Distcc#Slaves "Distcc") except that the name of the configuration file matches that of the respective package. For example, `/etc/conf.d/distccd-armv7h`.
+Setup on the slave machine containing the toolchain is identical to [#Slaves](#Slaves) except that the name of the configuration file matches that of the respective package. For example, `/etc/conf.d/distccd-armv7h`.
 
 A systemd service unit is provided for each respective package. For example, `distccd-armv7h.service`.
 

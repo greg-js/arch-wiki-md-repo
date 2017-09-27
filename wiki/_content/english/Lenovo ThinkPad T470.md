@@ -43,7 +43,7 @@ suspend-resume results in the fan holding at 100% without ever spinning down. Th
 
 Without the *intel* driver ([xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), neither *xbacklight* or *xrandr* brightness control are working. It is possible that, with the good *acpi_** kernel parameters, the backlight related keys do their job.
 
-Other workaround exists, such as described [on this post](https://bbs.archlinux.org/viewtopic.php?pid=1449243#p1449243) or in the wiki [acpid#Enabling_backlight_control](/index.php/Acpid#Enabling_backlight_control "Acpid"). Using the [acpilight](https://aur.archlinux.org/packages/acpilight/) package as a *xbacklight* replacement works well. You can also check [this repository](https://lab.knightsofnii.com/kristaba/tpacpi-backlight)] as a base to add the ACPI rules to call *xbacklight* when backlight keys are pressed.
+Other workaround exists, such as described [on this post](https://bbs.archlinux.org/viewtopic.php?pid=1449243#p1449243) or in the wiki [acpid#Enabling backlight control](/index.php/Acpid#Enabling_backlight_control "Acpid"). Using the [acpilight](https://aur.archlinux.org/packages/acpilight/) package as a *xbacklight* replacement works well. You can also check [this repository](https://lab.knightsofnii.com/kristaba/tpacpi-backlight)] as a base to add the ACPI rules to call *xbacklight* when backlight keys are pressed.
 
 **Note:** The [acpilight](https://aur.archlinux.org/packages/acpilight/) package is known to allow controlling the ThinkPad keyboard backlight. Similar ACPI rules should allow to toggle it when the keyboard backlight key is pressed.
 

@@ -202,19 +202,7 @@ $ sed -i '/^OnlyShowIn.*$/d' ~/.config/autostart/gnome-keyring-ssh.desktop
 
 ### Disable keyring daemon components
 
-If you wish to run an alternative SSH agent (e.g. [ssh-agent](/index.php/SSH_keys#ssh-agent "SSH keys") or [gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG"), you need to disable the `ssh` component of GNOME Keyring. To do so in an account-local way:
-
-```
-#!/bin/sh
-
-mkdir ~/.config/autostart
-cp /etc/xdg/autostart/gnome-keyring-ssh.desktop ~/.config/autostart/ &&
-printf '%s
-' 'Hidden=true' >> ~/.config/autostart/gnome-keyring-ssh.desktop 
-
-```
-
-Then log out.
+If you wish to run an alternative SSH agent (e.g. [ssh-agent](/index.php/SSH_keys#ssh-agent "SSH keys") or [gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG"), you need to disable the `ssh` component of GNOME Keyring. To do so in an account-local way, copy `/etc/xdg/autostart/gnome-keyring-ssh.desktop` to `~/.config/autostart` and then append the line `Hidden=true` to the copied file. Then log out.
 
 ## Tips and tricks
 

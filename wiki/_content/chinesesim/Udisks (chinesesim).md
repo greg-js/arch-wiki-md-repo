@@ -1,3 +1,10 @@
+Related articles
+
+*   [udev (简体中文)](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)")
+*   [Mount](/index.php/Mount "Mount")
+*   [Polkit (简体中文)](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Polkit (简体中文)")
+*   [File manager functionality (简体中文)](/index.php/File_manager_functionality_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File manager functionality (简体中文)")
+
 **翻译状态：** 本文是英文页面 [Udisks](/index.php/Udisks "Udisks") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-27，点击[这里](https://wiki.archlinux.org/index.php?title=Udisks&diff=0&oldid=434397)可以查看翻译后英文页面的改动。
 
 [udisks](http://www.freedesktop.org/wiki/Software/udisks/) 提供了 *udisksd* 守护进程，它实现了用于查询和管理存储设备的 D-Bus 接口；还提供了一个命令行工具 *udisksctl*，用于查询和使用该守护进程。
@@ -26,7 +33,7 @@
 
 有两个版本的 *udisks*，分别称为 [udisks](https://aur.archlinux.org/packages/udisks/) 和 [udisks2](https://www.archlinux.org/packages/?name=udisks2)。为了集中精力开发*udisks2*，*udisks* 的开发已终止 。[[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
 
-*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) 和 *udisks-daemon* ([udisks](https://aur.archlinux.org/packages/udisks/)) 都是由 [D-Bus](/index.php/D-Bus "D-Bus") 在后台启动，不应该被显式地启用。（参阅 `man udisksd` 和 `man udisks-daemon`）。可以通过 *udisksctl* 和 *udisks* 以命令行方式分别进行管控。详情参阅 `man udisksctl` 和 `man udisks`。
+*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) 和 *udisks-daemon* ([udisks](https://aur.archlinux.org/packages/udisks/)) 都是由 [D-Bus](/index.php/D-Bus "D-Bus") 在后台启动，不应该被显式地启用。（参阅 [udisksd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisksd.8) 和 [udisks-daemon()](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisks-daemon.)）。可以通过 *udisksctl* 和 *udisks* 以命令行方式分别进行管控。详情参阅 [udisksctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisksctl.1) 和 [udisks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8)。
 
 ## 配置
 
@@ -191,7 +198,7 @@ The above line is also useful to hide multi device btrfs filesystems, as all the
 
 ```
 
-详情请参考`man udisks`.
+详情请参考[udisks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8).
 
 ### 物理设备移除后再连接，无法再次挂载
 

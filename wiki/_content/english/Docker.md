@@ -88,7 +88,7 @@ As Arch linux ships new kernels, there is no point using the compatibility optio
 
 To see current storage driver, run `# docker info | head`, modern docker installation should already use `overlay2` by default.
 
-To set your own choice of storage driver, create a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") and use `-s` option to `dockerd`:
+To set your own choice of storage driver, create a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") and use `-s` option to `dockerd` (use `systemctl edit docker`):
 
  `/etc/systemd/system/docker.service.d/override.conf` 
 ```

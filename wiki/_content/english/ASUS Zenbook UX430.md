@@ -45,7 +45,7 @@ See [Intel Graphics](/index.php/Intel_graphics#Installation "Intel graphics") an
 
 ## Audio
 
-See [Pulseaudio](/index.php/Pulseaudio "Pulseaudio").
+See [PulseAudio](/index.php/PulseAudio "PulseAudio").
 
 ## Touchpad
 
@@ -88,7 +88,7 @@ And finally, [start and enable](/index.php/Systemd#Using_units "Systemd") `fix_h
 
 ## Fan spins all the time
 
-See [Fan_speed_control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control") to fix fan behaviour.
+See [Fan speed control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control") to fix fan behaviour.
 
 ## Microcode
 
@@ -98,7 +98,7 @@ During boot you might get message `[Firmware Bug]: TSC_DEADLINE disabled due to 
 
 It is likelly that it's one of these issues:
 
-*   You used power management application (especially [Powertop](/index.php/Powertop "Powertop")). See [bumblebee#Broken_power_management_with_kernel_4.8](/index.php/Bumblebee#Broken_power_management_with_kernel_4.8 "Bumblebee") for more information.
+*   You used power management application (especially [Powertop](/index.php/Powertop "Powertop")). See [bumblebee#Broken power management with kernel 4.8](/index.php/Bumblebee#Broken_power_management_with_kernel_4.8 "Bumblebee") for more information.
 *   You suspended your laptop and resumed - unable to start GPU. The only fix seems to be full reboot in order to get it working back.
 
 # Tips and tricks

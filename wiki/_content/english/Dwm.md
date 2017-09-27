@@ -198,7 +198,7 @@ xmodmap -e "remove mod1 = Super_L"  # make sure X keeps it out of the mod1 group
 
 After doing so, any functions that are triggered by the `Super_L` key press will also be triggered by an `Alt_R` key press.
 
-**Note:** There is a `#define` option in [config.h](#Customizing) which also allows you to switch the modkey
+**Note:** There is a `#define` option in [config.h](#Customization) which also allows you to switch the modkey
 
 ### Space around font in dwm's bar
 

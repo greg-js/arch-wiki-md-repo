@@ -112,7 +112,7 @@ $ makepkg -s
 
 ```
 
-**Note:** For older MacBooks the linked chipset will not work. Instead, use [https://aur.archlinux.org/packages/b43-firmware/](https://aur.archlinux.org/packages/b43-firmware/) by cloning the repository and then following the instructions above. You will then also need to use `modprobe b43` instead of `modprobe wl` in the steps below.
+**Note:** For older MacBooks the linked chipset will not work. Instead, use [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) by cloning the repository and then following the instructions above. You will then also need to use `modprobe b43` instead of `modprobe wl` in the steps below.
 
 This will give you a package (`broadcom-wl-*.pkg.tar.xz`) which can be installed using [pacman](/index.php/Pacman "Pacman"). Put this package on a USB drive, mount it, and install the package using:
 

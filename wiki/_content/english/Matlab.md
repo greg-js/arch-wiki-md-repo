@@ -440,12 +440,21 @@ if [ -z "$1" ]; then
 else
 	REL=$1
 fi
-#Wait for user to close Help Browser, then killall leftover jxbrowser processes
-inotifywait -m -e CLOSE /path/to/MATLAB/$REL/sys/jxbrowser-chromium/glnxa64/chromium/resources.pak |
-while read line
-do
-	killall /path/to/MATLAB/$REL/sys/jxbrowser-chromium/glnxa64/chromium/jxbrowser-chromium
-done
+
+JXPATH="/path/to/MATLAB/$REL/sys/jxbrowser-chromium/glnxa64/chromium"
+CMD="inotifywait -m -e CLOSE $JXPATH/resources.pak"
+
+#Exit if the daemon is already active
+if ! pgrep -f "$CMD" > /dev/null; then
+	#Wait for user to close Help Browser, then killall leftover jxbrowser processes
+	$CMD |
+	while read line
+	do
+		killall "$JXPATH/jxbrowser-chromium"
+	done
+else
+	exit
+fi
 
 ```
 

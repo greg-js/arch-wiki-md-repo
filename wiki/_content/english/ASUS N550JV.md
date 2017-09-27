@@ -270,7 +270,7 @@ Due to unknown reasons, card reader does not detect cards. To resolve this, quic
 
 ### Fan control
 
-See [Fan_speed_control](/index.php/Fan_speed_control "Fan speed control").
+See [Fan speed control](/index.php/Fan_speed_control "Fan speed control").
 
 Here is a configuration file, which was tested on Asus N550JV and was used with `asus-nb-wmi` kernel module. It however might need some tweaking:
 

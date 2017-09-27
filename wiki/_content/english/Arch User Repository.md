@@ -225,7 +225,7 @@ $ ssh-keygen -f ~/.ssh/aur
 
 ```
 
-**Tip:** You can add multiple public keys to your profile by seperating them with a newline in the input field.
+**Tip:** You can add multiple public keys to your profile by separating them with a newline in the input field.
 
 #### Creating a new package
 

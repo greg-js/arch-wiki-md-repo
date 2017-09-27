@@ -1,3 +1,8 @@
+相关文章
+
+*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
+*   [Libvirt (简体中文)](/index.php/Libvirt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Libvirt (简体中文)")
+
 **翻译状态：** 本文是英文页面 [QEMU](/index.php/QEMU "QEMU") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-25，点击[这里](https://wiki.archlinux.org/index.php?title=QEMU&diff=0&oldid=447331)可以查看翻译后英文页面的改动。
 
 来自 [QEMU 关于页面](http://wiki.qemu.org/Main_Page),
@@ -1073,7 +1078,7 @@ You might also want to install [qemu-guest-agent](https://www.archlinux.org/pack
 
 Windows does not come with the virtio drivers. Therefore, you will need to load them during installation. There are basically two ways to do this: via Floppy Disk or via ISO files. Both images can be downloaded from the [Fedora repository](https://fedoraproject.org/wiki/Windows_Virtio_Drivers).
 
-The floppy disk option is difficult because you will need to press F6 (Shift-F6 on newer Windows) at the very beginning of powering on the QEMU. This is difficult since you need time to connect your VNC console window. You can attempt to add a delay to the boot sequence. See `man qemu-system` for more details about applying a delay at boot.
+The floppy disk option is difficult because you will need to press F6 (Shift-F6 on newer Windows) at the very beginning of powering on the QEMU. This is difficult since you need time to connect your VNC console window. You can attempt to add a delay to the boot sequence. See [qemu-system()](http://jlk.fjfi.cvut.cz/arch/manpages/man/qemu-system.) for more details about applying a delay at boot.
 
 The ISO option to load drivers is the preferred way, but it is available only on Windows Vista and Windows Server 2008 and later. The procedure is to load the image with virtio drivers in an additional cdrom device along with the primary disk device and Windows installer:
 

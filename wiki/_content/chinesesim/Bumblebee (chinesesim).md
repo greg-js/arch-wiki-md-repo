@@ -68,18 +68,13 @@ Bumblebee 试图模拟 Optimus 技术的行为；当需要的时候，使用独�
 
 *   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - 提供守护进程以及程序的主要安装包。
 *   [mesa](https://www.archlinux.org/packages/?name=mesa) - 开源的**OpenGL**标准实现。
+*   合适的NVIDIA 驱动，参看[NVIDIA#安装](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85 "NVIDIA (简体中文)") 。
 *   [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) - Intel 驱动。
-*   [nvidia](https://www.archlinux.org/packages/?name=nvidia) - NVIDIA 驱动。
 
 对于32位程序 (必须启用[Multilib](/index.php/Multilib "Multilib"))在64位机器上的支持，安装:
 
 *   [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils)
-*   [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl)
-*   [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) - 如果你要需要用 `primusrun`.
-
-**警告:** **不要** 安装 [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils)，没有它 Bumblebee 会找到正确的32位NVIDIA库。
-
-**注意:** 如果你已安装 [mesa](https://www.archlinux.org/packages/?name=mesa) 和 [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) ，你需要把它们加入到安装序列中以避免与 [mesa](https://www.archlinux.org/packages/?name=mesa) 和 [nvidia](https://www.archlinux.org/packages/?name=nvidia) 间的依赖冲突。
+*   [lib32-nvida-utils](https://www.archlinux.org/packages/?name=lib32-nvida-utils)，或者[lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils)，或者 [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils) ，匹配64位的版本。
 
 要使用 Bumblebee ，请确保添加相关用户到 `bumblebee` 组：
 
@@ -102,6 +97,21 @@ Bumblebee 试图模拟 Optimus 技术的行为；当需要的时候，使用独�
 
 *   [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) - 实验性的3D加速驱动。
 *   [mesa](https://www.archlinux.org/packages/?name=mesa) - Mesa 使用 Gallium3D 驱动和3D图形库的传统DRI.
+
+**提示：** 如果你使用`priumsrun`，需要获取：
+```
+ primus: fatal: failed to load any of the libraries: /usr/$LIB/nvidia/libGL.so.1 
+ /usr/$LIB/nvidia/libGL.so.1: Cannot open shared object file: No such file or directory
+
+```
+
+再添加一下内容到`/usr/bin/primus`的`PRIMUS_libGL`之后：
+
+```
+export PRIMUS_libGLa='/usr/$LIB/libGL.so.1'
+
+```
+你还可以新建一个脚本来实现它(例如*primusnouveau*)。
 
 ## 用法
 

@@ -64,9 +64,7 @@ Cannot load from file /var/cache/powertop/saved_parameters.powertop
 
 If you experience inaccurate measurement, then it is likely that you need to calibrate powertop first. This can be done by running powertop with the `--calibrate` parameter.
 
-**Note:**
-
-*   Calibration will toggle various functions like backlight or wifi. Thus, it may turn your screen black for some time, lose your connection, and so on. Do not touch the machine during the calibration.
+**Note:** Calibration will toggle various functions like backlight or wifi. Thus, it may turn your screen black for some time, lose your connection, and so on. Do not touch the machine during the calibration.
 
 ```
 # powertop --calibrate

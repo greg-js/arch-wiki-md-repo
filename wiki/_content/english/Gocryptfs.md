@@ -9,7 +9,7 @@ From [gocryptfs](https://nuetzlich.net/gocryptfs/):
 
 	The highlights are: Scrypt password hashing, GCM encryption for all file contents, EME wide-block encryption for file names with a per-directory IV.
 
-See the [gocryptfs](https://nuetzlich.net/gocryptfs/) project home for further introduction of its features, benchmarks, etc. See [Disk encryption#Comparison table](/index.php/Disk_encryption#Comparison_table "Disk encryption") for an overview of alternative methods and [Encfs](/index.php/Encfs "Encfs") for the direct alternative.
+See the [gocryptfs](https://nuetzlich.net/gocryptfs/) project home for further introduction of its features, benchmarks, etc. See [Disk encryption#Comparison table](/index.php/Disk_encryption#Comparison_table "Disk encryption") for an overview of alternative methods and [EncFS](/index.php/EncFS "EncFS") for the direct alternative.
 
 ## Contents
 

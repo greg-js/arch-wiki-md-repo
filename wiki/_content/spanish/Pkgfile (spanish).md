@@ -1,3 +1,7 @@
+Related articles
+
+*   [pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
+
 **pkgfile** es una herramienta para buscar ficheros en paquetes de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ## Contents
@@ -40,7 +44,7 @@ core/archlinux-keyring usr/share/pacman/keyrings/archlinux-trusted
 core/archlinux-keyring usr/share/pacman/keyrings/archlinux.gpg
 ```
 
-Lo último se puede comparar con `pacman -Ql` (vea [Consultar la base de datos de paquetes](/index.php/Pacman_(Espa%C3%B1ol)#Consultar_la_base_de_datos_de_paquetes "Pacman (Español)")), salvo que este se aplica a paquetes remotos.
+Lo último se puede comparar con `pacman -Ql` (vea [Consultar la base de datos de paquetes](/index.php/Pacman_(Espa%C3%B1ol)#Consulta_de_bases_de_datos_de_paquetes "Pacman (Español)")), salvo que este se aplica a paquetes remotos.
 
 ## Comando no encontrado
 

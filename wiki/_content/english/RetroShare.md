@@ -41,5 +41,5 @@ First, you have to create new profile. Then you need to explicitly add friends t
 
 ## External Links
 
-*   [RetroShare Homepage](http://retroshare.sourceforge.net/)
+*   [RetroShare Homepage](http://retroshare.net//)
 *   [RetroShare Wikipedia entry](https://en.wikipedia.org/wiki/RetroShare "wikipedia:RetroShare")

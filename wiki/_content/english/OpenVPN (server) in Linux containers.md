@@ -24,8 +24,6 @@ This article describes how to setup a [Linux Container](/index.php/Linux_Contain
 2.  One needs to enable packet forwarding. Refer to [Internet sharing#Enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") for this.
 3.  Although not strictly required, a firewall is highly recommended.
 
-**Warning:** On the ODROID series of hardware, users need to configure the default forward policy due to some quirkiness. This does not apply to other Arch ARM devices such as Raspberry Pis nor does it apply to x86_64 or i686 machines. For a work-around, see [ODROID#DHCP assignments to LXCs do not work as expected](/index.php/ODROID#DHCP_assignments_to_LXCs_do_not_work_as_expected "ODROID") for a work-around.
-
 ## Container setup
 
 Basic setup and understanding of [Linux Containers](/index.php/Linux_Containers "Linux Containers") is required. This article assumes that readers have a base LXC setup operational. Newcomers to these are directed to the aforementioned article.

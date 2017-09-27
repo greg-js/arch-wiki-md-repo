@@ -128,7 +128,7 @@ $ lspci |grep VGA
 
 ```
 
-**提示：** 上面配置文件中后三项的选项如果不注释掉**可能导致画面撕裂**，但（注释掉）换取的是一定的性能损失。注意， `TearFree` 选项只用于`"sna"` 加速, 参看 [Intel_graphics_(简体中文)](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel graphics (简体中文)")。`"AccelMethod"` 选项中，你可以使用 `"sna"` 或 `"uxa"`。
+**提示：** 上面配置文件中后三项的选项如果不注释掉**可能导致画面撕裂**，但（注释掉）换取的是一定的性能损失。注意， `TearFree` 选项只用于`"sna"` 加速, 参看 [Intel graphics (简体中文)](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel graphics (简体中文)")。`"AccelMethod"` 选项中，你可以使用 `"sna"` 或 `"uxa"`。
 
 如果X服务启动后屏幕上什么也没有出现，检查`/var/log/xorg.conf`，确保该文件含有类似此行内容：
 
@@ -277,7 +277,7 @@ EndSection
 
 NVIDIA驱动自319.12 Beta [[3]](http://www.nvidia.com/object/linux-display-amd64-319.12-driver.html)起已经包含在内核（版本3.9级以上)中。
 
-另一个解决方案是安装[Intel](/index.php/Intel "Intel")驱动进行显示，如果需要运行3D软件，可以使用 [Bumblebee_(简体中文)](/index.php/Bumblebee_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bumblebee (简体中文)")来使用NVIDIA显卡。
+另一个解决方案是安装[Intel](/index.php/Intel "Intel")驱动进行显示，如果需要运行3D软件，可以使用 [Bumblebee (简体中文)](/index.php/Bumblebee_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bumblebee (简体中文)")来使用NVIDIA显卡。
 
 ## 使用 nouveau
 

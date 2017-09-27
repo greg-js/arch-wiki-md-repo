@@ -4,9 +4,11 @@ The [Ethereum](https://github.com/ethereum/go-ethereum) project provides an open
 
 ### Ethereum Wallet
 
-The Ethereum Wallet is currently not in the Arch repositories.
+The Ethereum Wallet is currently not in the Arch official repositories.
 
-*   You can download it from Github [here](https://github.com/ethereum/mist/releases). Use the most recent Linux release with the zip extension: Ethereum-Wallet-linux64-<<version>>.zip
+*   You can download it from the AUR via the [mist](https://aur.archlinux.org/packages/mist/) package or via Github [here](https://github.com/ethereum/mist/releases).
+
+If you use the github release, use the most recent Linux release with the zip extension: Ethereum-Wallet-linux64-<<version>>.zip
 
 *   Unzip the file
 

@@ -115,7 +115,7 @@ Note for [AUR](/index.php/AUR "AUR") packages, "pre-compiled" means the packages
 
 	[linux-kpatch](https://aur.archlinux.org/packages/linux-kpatch/)
 
-	The Linux kernel with [live patching](/index.php/Kernel_live_patching "Kernel live patching") support.
+	The Linux kernel with [live patching](/index.php/Live_patching "Live patching") support.
 
 ## Patches and Patchsets
 

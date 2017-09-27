@@ -284,15 +284,13 @@ It usually occurs when an unused sound device is used as default for ALSA. See [
 
 If you use [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) and attempt to move an audio stream between different sinks, there's a possibility that you won't be able to move the stream.
 
-This is due to recent versions of OpenAL default to disallow pulse streams from being moved, create a ~/.alsoftrc with the contents
+This is because recent versions of OpenAL default to disallow pulse streams from being moved. To remedy this fact, create a ~/.alsoftrc with the contents
 
 ```
 [pulse]
 allow-moves=true
 
 ```
-
-to remedy this fact
 
 ## In-home streaming issues
 

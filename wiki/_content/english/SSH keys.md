@@ -362,6 +362,8 @@ WantedBy=*default*.target
 
 Add `SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"` to `~/.pam_environment`. Then [enable](/index.php/Enable "Enable") or [start](/index.php/Start "Start") the service.
 
+**Note:** If you use GNOME, this environment variable is overridden by default. See [GNOME/Keyring#Disable_keyring_daemon_components](/index.php/GNOME/Keyring#Disable_keyring_daemon_components "GNOME/Keyring").
+
 #### ssh-agent as a wrapper program
 
 An alternative way to start ssh-agent (with, say, each X session) is described in [this ssh-agent tutorial by UC Berkeley Labs](http://upc.lbl.gov/docs/user/sshagent.shtml). A basic use case is if you normally begin X with the `startx` command, you can instead prefix it with `ssh-agent` like so:

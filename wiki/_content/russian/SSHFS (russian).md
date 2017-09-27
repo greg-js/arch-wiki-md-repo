@@ -25,14 +25,17 @@
     *   [5.3 Удаленный хост отключен](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D1.85.D0.BE.D1.81.D1.82_.D0.BE.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD)
     *   [5.4 Зависание приложений (например, Gnome Files, Gedit)](#.D0.97.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.28.D0.BD.D0.B0.D0.BF.D1.80.D0.B8.D0.BC.D0.B5.D1.80.2C_Gnome_Files.2C_Gedit.29)
     *   [5.5 Проблемы с монтированием fstab](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5.D0.BC_fstab)
-    *   [5.6 Не работает Git в примонтированной директории](#.D0.9D.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_Git_.D0.B2_.D0.BF.D1.80.D0.B8.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D0.BE.D0.B9_.D0.B4.D0.B8.D1.80.D0.B5.D0.BA.D1.82.D0.BE.D1.80.D0.B8.D0.B8)
 *   [6 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
 
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [sshfs](https://www.archlinux.org/packages/?name=sshfs)
 
-**Совет:** Если часто приходится монтировать файловые системы sshfs, то вас могут заинтересовать помощники sshfs, такие как [qsshfs](https://aur.archlinux.org/packages/qsshfs/), [sftpman](/index.php/Sftpman "Sftpman"), [sshmnt](https://aur.archlinux.org/packages/sshmnt/) или [fmount.py](https://github.com/lahwaacz/Scripts/blob/master/fmount.py).
+**Совет:**
+
+*   Если часто приходится монтировать файловые системы sshfs, то вас могут заинтересовать помощники sshfs, такие как [qsshfs](https://aur.archlinux.org/packages/qsshfs/), [sftpman](/index.php/Sftpman "Sftpman"), [sshmnt](https://aur.archlinux.org/packages/sshmnt/) или [fmount.py](https://github.com/lahwaacz/Scripts/blob/master/fmount.py).
+*   Можно использовать [Google Authenticator](/index.php/Google_Authenticator_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Google Authenticator (Русский)") c sshfs для дополнительной безопасности.
+*   Также можно использовать [SSH keys](/index.php/SSH_keys "SSH keys") вместо традиционного ввода пароля.
 
 ### Монтирование
 
@@ -55,8 +58,6 @@ $ sshfs myuser@mycomputer:/remote/path /local/path -C -p 9876
 Если не указан путь, то по умолчанию он указывает на удаленную домашнюю директорию пользователя. Имя пользователя по умолчанию и опции могут быть заданы в `~/.ssh/config`. Смотрите [Secure Shell#Client usage](/index.php/Secure_Shell#Client_usage "Secure Shell").
 
 SSH запросит пароль, если необходимо. Если вы не хотите постоянно вводить пароль, прочитайте: [как использовать ключ аутентификации RSA с SSH](http://linuxmafia.com/~karsten/Linux/FAQs/sshrsakey.html) или [SSH Keys](/index.php/SSH_keys_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SSH keys (Русский)").
-
-**Совет:** Можно использовать [Google Authenticator](/index.php/Google_Authenticator_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Google Authenticator (Русский)") c sshfs для дополнительной безопасности.
 
 ### Размонтирование
 
@@ -305,19 +306,6 @@ ssh_command=ssh\040-vv,sshfs_debug,debug
 noauto,x-systemd.automount
 
 ```
-
-### Не работает Git в примонтированной директории
-
-Выполняя некоторые операции в репозитории Git, примонтированном через SSHFS, вы можете получить следующую ошибку:
-
-```
-fatal: cannot update the ref 'HEAD': unable to append to '.git/logs/HEAD': Invalid argument
-
-```
-
-Ее можно исправить, добавив флаг `-o writeback_cache=no` в команду монтирования
-
-Это было введено в sshfs 3.2 и, по-видимому, является фичей, а не багом. Для получения дополнительной информации смотрите [FS#55242](https://bugs.archlinux.org/task/55242) и [sshfs#82](https://github.com/libfuse/sshfs/issues/82).
 
 ## Смотрите также
 

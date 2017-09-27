@@ -42,7 +42,7 @@ INFO: The APR based Apache Tomcat Native library which allows optimal performanc
 | `/etc/tomcat*` | 配置文件。包括： `tomcat-users.xml` (defines users allowed to use administration tools and their roles), `server.xml` (Main Tomcat configuration file), `catalina.policy` (security policies configuration file) |
 | `/usr/share/tomcat*` | Tomcat 主文件夹。包括脚本文件及到其它文件夹的链接 |
 | `/usr/share/java/tomcat*` | Tomcat 的 Java 库（jar文件） |
-| `/var/log/tomcat*` | **不**被 `systemd` 记录的日志文件 (参阅 [#Logging](#Logging)) |
+| `/var/log/tomcat*` | **不**被 `systemd` 记录的日志文件 (参阅 [#日志记录](#.E6.97.A5.E5.BF.97.E8.AE.B0.E5.BD.95)) |
 | `/var/lib/tomcat*/webapps` | Tomcat 部署你的 Web 程序的地方 |
 | `/var/tmp/tomcat*` | Tomcat 存储你的 Web 程序数据的地方 |
 

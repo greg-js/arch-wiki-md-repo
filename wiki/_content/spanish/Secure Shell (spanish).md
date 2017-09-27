@@ -337,7 +337,7 @@ Listo. ¡Disfruta tu túnel seguro!
 
 En el sistema remoto:
 
-*   [instale](/index.php/Pacman_(Espa%C3%B1ol)#Instalar_paquetes_espec.C3.ADficos "Pacman (Español)") [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) y [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
+*   [instale](/index.php/Pacman_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes_espec.C3.ADficos "Pacman (Español)") [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) y [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
 *   en `/etc/ssh/ssh**d**_config`:
     *   verifique que las opciones `AllowTcpForwarding` y `X11UseLocalhost` están ajustadas a *yes*, y que `X11DisplayOffset` está ajustado a *10* (esos son los valores por defecto si no se han cambiado, ver [sshd_config(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5))
     *   ajuste `X11Forwarding` a *yes*

@@ -84,7 +84,7 @@ By sprawdzić stan usługi, użyj `timedatectl status`.
 
 ### Partycjonuj dyski
 
-Gdy rozpoznane przez system live, dyski są przypisane do *urządzeń blokowych (block devices)* takich jak `/dev/sda`. By zidentyfikować je, użyj [lsblk](/index.php/Lsblk "Lsblk") lub *fdisk* — wyniki koczące się `rom`, `loop` lub `airoot` mogą zostać zignorowane:
+Gdy rozpoznane przez system live, dyski są przypisane do *urządzeń blokowych (block devices)* takich jak `/dev/sda`. By zidentyfikować je, użyj [lsblk](/index.php/Lsblk "Lsblk") lub *fdisk* — wyniki kończące się `rom`, `loop` lub `airoot` mogą zostać zignorowane:
 
 ```
 # fdisk -l

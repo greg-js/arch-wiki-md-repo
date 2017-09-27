@@ -1,4 +1,4 @@
-**警告:** Polipo 已经停止维护，建议使用 squid, privoxy 等其它方案.
+**警告:** Polipo 已经停止维护，建议使用 [squid](/index.php/Squid "Squid"), [privoxy](/index.php/Privoxy "Privoxy") 等其它方案.
 
 来自[Polipo's site](http://www.pps.jussieu.fr/~jch/software/polipo/):
 
