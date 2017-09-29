@@ -200,6 +200,8 @@ Section "Device"
 EndSection
 ```
 
+Note: You'd need to install [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) to reference the intel driver.
+
 See [FS#27677](https://bugs.archlinux.org/task/27677) and [[2]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741) for details.
 
 ### Other utilities

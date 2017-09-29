@@ -108,18 +108,14 @@ Use an active profile management script for maximal reliability and ease of use.
 
 ### Launch a new browser instance
 
-When you launch the browser, it first checks if another instance using the same profile is already running. If there is one, the new window is associated with the old instance. To prevent this, you can specifically ask the browser to run with a different profile.
+When you launch the browser, it first checks if another instance using the same data directory is already running. If there is one, the new window is associated with the old instance. If you want to launch an independent instance of the browser, you must specify separate directory using the `--user-data-dir` parameter:
 
 ```
-$ chromium --user-data-dir=<PATH TO A PROFILE>
+$ chromium --user-data-dir=*/path/to/some/directory*
 
 ```
 
-**Note:** It will not work if you specify a link or even a symlink to your regular Chromium profile (typically `~/.config/chromium/Default`). If you want to use the same profile as your current one for this new instance, first copy the folder `~/.config/chromium/Default` to a directory of your choice, keeping the same `Default` name, and launch the browser using the following command by specifying the parent folder of the `Default` folder you have just copied.
-
-For example, if you copied the Default folder to `~/Downloads`:
-
- `$ chromium --user-data-dir=~/Downloads` 
+**Note:** The default location of the user data is `~/.config/chromium/`.
 
 ### Directly open *.torrent files and magnet links with a torrent client
 

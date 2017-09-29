@@ -104,9 +104,10 @@ drm_kms_helper.edid_firmware=VGA-1:edid/your_edid.bin
 
 ```
 
-For the four built-in resolutions, see table below for the name to specify:
+For the built-in resolutions, see table below for the name to specify:
 
 | **Resolution** | **Name to specify** |
+| 800x600 | edid/800x600.bin |
 | 1024x768 | edid/1024x768.bin |
 | 1280x1024 | edid/1280x1024.bin |
 | 1600x1200 (kernel 3.10 or higher) | edid/1600x1200.bin |

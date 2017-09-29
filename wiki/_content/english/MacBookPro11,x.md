@@ -438,6 +438,7 @@ Updated 2016-07-21
 
 *   [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) from the [AUR](/index.php/AUR "AUR") works
     *   Stability is an issue for some, look at [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for possible fixes (e.g. downgrading kernel works if your card is BCM4360)
+    *   If stability is still an issue after the above, a possible alternative is to connect on a 802.11g network. More recent standards can cause the BCM4360 to disconnect randomly.
 
 ### Backlight keys / Suspend support
 

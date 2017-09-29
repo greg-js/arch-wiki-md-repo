@@ -45,6 +45,7 @@ Layouts are applied dynamically, and different layouts may be used on each works
     *   [6.10 Problems with focused border in VirtualBox](#Problems_with_focused_border_in_VirtualBox)
     *   [6.11 Steam games (Half-Life, Left 4 Dead, …) and xmonad](#Steam_games_.28Half-Life.2C_Left_4_Dead.2C_.E2.80.A6.29_and_xmonad)
     *   [6.12 LibreOffice - focus flicking between main window and dialog](#LibreOffice_-_focus_flicking_between_main_window_and_dialog)
+    *   [6.13 Problems with finding shared libraries after update](#Problems_with_finding_shared_libraries_after_update)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -641,6 +642,10 @@ The LibreOffice UI defaults to the gtk engine outside a desktop environment. Thi
 ```
 
 to use the general (QT) UI.
+
+### Problems with finding shared libraries after update
+
+The xmonad executable is located in `~/.xmonad/`. After upgrading xmonad, an old executable might persist and need in that case be removed for xmonad to compile a new executable.
 
 ## See also
 

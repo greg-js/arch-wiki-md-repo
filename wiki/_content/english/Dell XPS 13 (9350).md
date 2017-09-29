@@ -73,7 +73,7 @@ In case your `efivars` are not properly set it is most likely due to you not bei
 
 ### Updates
 
-[BIOS update 1.4.18](https://downloads.dell.com/FOLDER04373090M/1/XPS_9350_1.4.18.exe) was released on 2017-07-27\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu. This might also help if your machine will not resume after suspend.
+[BIOS update 1.5.1](https://downloads.dell.com/FOLDER04494006M/1/XPS_9350_1.5.1.exe) was released on 2017-09-28\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu. This might also help if your machine will not resume after suspend.
 
 ### Firmware Updates
 
@@ -338,7 +338,7 @@ As shipped the Trusted Platform Module (TPM) can be configured easily following 
 
 ### TPM 2.0
 
-Originally the Dell XPS 13 (9350) shipped with TPM 1.2 - the TPM chip was configured to support the TPM Standard version 1.2\. However, on 6 Jan 2017 Dell released a [firmware update](http://www.dell.com/support/home/uk/en/ukdhs1/Drivers/DriversDetails?driverId=N8P80) (internal version 1.3.1.0_V1) for the TPM chip that converts it to support the feature set of TPM Standard version 2.0\. Unfortunately, as of this moment the update cannot be applied through Linux or the BIOS direct flashing capabilities. The only way to install it seems to be to apply it through a running Windows OS. The easiest method is to run a temporary Windows installation on a USB drive, boot into it and run the update from there.
+Originally the Dell XPS 13 (9350) shipped with TPM 1.2 - the TPM chip was configured to support the TPM Standard version 1.2\. However, Dell released a [firmware update](http://www.dell.com/support/home/uk/en/ukdhs1/drivers/driversdetails?driverId=RF87D) (internal version 1.3.2.8, A02) for the TPM chip that converts it to support the feature set of TPM Standard version 2.0\. Unfortunately, as of this moment the update cannot be applied through Linux or the BIOS direct flashing capabilities. The only way to install it seems to be to apply it through a running Windows OS. The easiest method is to run a temporary Windows installation on a USB drive, boot into it and run the update from there.
 **Note:** It should be noted that this update is reversible once applied. To revert back to TPM 1.2 by using a [firmware update](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=F3J3P) It also requires that the TPM memory and configuration is completely cleared.
 
 **Note:** As for BIOS updates, please make sure the laptop is plugged in to a power source and that power source is stable.

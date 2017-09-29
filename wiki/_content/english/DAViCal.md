@@ -1,10 +1,16 @@
+Related articles
+
+*   [Kcaldav](/index.php/Kcaldav "Kcaldav")
+*   [AgenDAV](/index.php/AgenDAV "AgenDAV")
+*   [Radicale](/index.php/Radicale "Radicale")
+
 [DAViCal](https://www.davical.org/) is a server implementing the CalDAV and CardDAV protocol. It's solely a server, with minimal direct user interaction, instead relying on using CalDav clients, such as Apple's iCal.app, iOS (iPhone, iPad, iPod), Thunderbird with Sunbird, or Evolution.
 
 ## Installation
 
 ### Installing pre-requisites
 
-DAViCal is written in [PHP](/index.php/PHP "PHP") and uses the [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") database as its backend to store the calendar information. Currently it only supports PostgreSQL, but there is work to support other databases as well. [Install](/index.php/Install "Install") [davical](https://aur.archlinux.org/packages/davical/), [postgresql](https://www.archlinux.org/packages/?name=postgresql), [php](https://www.archlinux.org/packages/?name=php), and [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql).
+DAViCal is written in [PHP](/index.php/PHP "PHP") and uses the [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") database as its backend to store the calendar information. Currently it only supports PostgreSQL, but there is work to support other databases as well. [Install](/index.php/Install "Install") [davical](https://aur.archlinux.org/packages/davical/), [postgresql](https://www.archlinux.org/packages/?name=postgresql), [php](https://www.archlinux.org/packages/?name=php), and [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql). The installation directories are defined by [Web application package guidelines](/index.php/Web_application_package_guidelines "Web application package guidelines") and are slightly different than upstream documentation (/usr/share/webapps/davical and /etc/webapps/davical).
 
 DAViCal is a web application, and therefore you need a web server set up as well. Here [Nginx](/index.php/Nginx "Nginx") will be assumed, but DAViCal can run on nearly any web server (some may stop processing requests when they see the CalDAV HTTP headers, and therefore DAViCal will not be able to see them).
 
@@ -45,3 +51,5 @@ Then run createdb as root:
 # createdb
 
 ```
+
+If your PostgreSQL server is on a remote host, use [DAViCal PostgreSQL_Config](https://wiki.davical.org/index.php/PostgreSQL_Config) instead of the instructions above.

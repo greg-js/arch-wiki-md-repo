@@ -14,7 +14,12 @@
 
 ## 安装
 
-ClamAV 可通过 [clamav](https://www.archlinux.org/packages/?name=clamav) 包进行[安装](/index.php/Pacman "Pacman")，在[官方源](/index.php/Official_repositories "Official repositories")中可以找到.
+ClamAV 可通过 [clamav](https://www.archlinux.org/packages/?name=clamav) 包进行[安装](/index.php/Pacman "Pacman")，在[官方源](/index.php/Official_repositories "Official repositories")中可以找到。此外还可以安装：
+
+*   [clamtk](https://www.archlinux.org/packages/?name=clamtk) , clamav的tk前端。
+*   扩展
+    *   [clamtk-gnome](https://aur.archlinux.org/packages/clamtk-gnome/) ，gnome文件管理器nautilus的插件，可在右键菜单中对文件进行clamv操作。
+    *   [thunar-sendto-clamtk](https://aur.archlinux.org/packages/thunar-sendto-clamtk/) ，thunnar文件管理的插件，可在右键菜单中对文件进行clamv操作。
 
 ## 启动守护进程
 

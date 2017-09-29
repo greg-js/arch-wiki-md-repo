@@ -1,3 +1,8 @@
+Related articles
+
+*   [GNOME](/index.php/GNOME "GNOME")
+*   [Display manager](/index.php/Display_manager "Display manager")
+
 From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GNOME Display Manager (GDM) is a program that manages graphical display servers and handles graphical user logins."
 
 [Display managers](/index.php/Display_manager "Display manager") provide [X Window System](/index.php/X_Window_System "X Window System") and [Wayland](/index.php/Wayland "Wayland") users with a graphical login prompt.
@@ -5,41 +10,39 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GN
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Autostarting applications with GDM](#Autostarting_applications_with_GDM)
-    *   [2.2 Log-in screen background image](#Log-in_screen_background_image)
-    *   [2.3 DConf configuration](#DConf_configuration)
-        *   [2.3.1 Log-in screen logo](#Log-in_screen_logo)
-        *   [2.3.2 Changing the cursor theme](#Changing_the_cursor_theme)
-        *   [2.3.3 Larger font for log-in screen](#Larger_font_for_log-in_screen)
-        *   [2.3.4 Turning off the sound](#Turning_off_the_sound)
-        *   [2.3.5 Make the power button interactive](#Make_the_power_button_interactive)
-        *   [2.3.6 Enabling tap-to-click](#Enabling_tap-to-click)
-        *   [2.3.7 Disable/Enable Accessibility Menu](#Disable.2FEnable_Accessibility_Menu)
-    *   [2.4 GDM keyboard layout](#GDM_keyboard_layout)
-        *   [2.4.1 GNOME Control Center](#GNOME_Control_Center)
-        *   [2.4.2 GDM 2.x layout](#GDM_2.x_layout)
-    *   [2.5 Change the language](#Change_the_language)
-    *   [2.6 Automatic login](#Automatic_login)
-    *   [2.7 Passwordless login](#Passwordless_login)
-    *   [2.8 Passwordless shutdown for multiple sessions](#Passwordless_shutdown_for_multiple_sessions)
-    *   [2.9 Add or edit GDM sessions](#Add_or_edit_GDM_sessions)
-    *   [2.10 Enable root login in GDM](#Enable_root_login_in_GDM)
-    *   [2.11 Hide user from login list](#Hide_user_from_login_list)
-    *   [2.12 Setup default monitor settings](#Setup_default_monitor_settings)
-    *   [2.13 xrandr at login](#xrandr_at_login)
-    *   [2.14 Configure X server access permission](#Configure_X_server_access_permission)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Failure to start with AMD Catalyst driver](#Failure_to_start_with_AMD_Catalyst_driver)
-    *   [3.2 Failure on logout](#Failure_on_logout)
-    *   [3.3 Xorg 1.16](#Xorg_1.16)
-    *   [3.4 Use Xorg backend](#Use_Xorg_backend)
-    *   [3.5 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
-*   [4 See also](#See_also)
+*   [2 Starting](#Starting)
+    *   [2.1 Autostarting applications](#Autostarting_applications)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Log-in screen background image](#Log-in_screen_background_image)
+    *   [3.2 DConf configuration](#DConf_configuration)
+        *   [3.2.1 Log-in screen logo](#Log-in_screen_logo)
+        *   [3.2.2 Changing the cursor theme](#Changing_the_cursor_theme)
+        *   [3.2.3 Larger font for log-in screen](#Larger_font_for_log-in_screen)
+        *   [3.2.4 Turning off the sound](#Turning_off_the_sound)
+        *   [3.2.5 Configure power button behavior](#Configure_power_button_behavior)
+        *   [3.2.6 Enabling tap-to-click](#Enabling_tap-to-click)
+        *   [3.2.7 Disable/Enable Accessibility Menu](#Disable.2FEnable_Accessibility_Menu)
+    *   [3.3 Keyboard layout](#Keyboard_layout)
+    *   [3.4 Change the language](#Change_the_language)
+    *   [3.5 Users and login](#Users_and_login)
+        *   [3.5.1 Automatic login](#Automatic_login)
+        *   [3.5.2 Passwordless login](#Passwordless_login)
+        *   [3.5.3 Passwordless shutdown for multiple sessions](#Passwordless_shutdown_for_multiple_sessions)
+        *   [3.5.4 Enable root login in GDM](#Enable_root_login_in_GDM)
+        *   [3.5.5 Hide user from login list](#Hide_user_from_login_list)
+    *   [3.6 Setup default monitor settings](#Setup_default_monitor_settings)
+    *   [3.7 Configure X server access permission](#Configure_X_server_access_permission)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Failure to start with AMD Catalyst driver](#Failure_to_start_with_AMD_Catalyst_driver)
+    *   [4.2 Failure on logout](#Failure_on_logout)
+    *   [4.3 Xorg 1.16](#Xorg_1.16)
+    *   [4.4 Use Xorg backend](#Use_Xorg_backend)
+    *   [4.5 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
+*   [5 See also](#See_also)
 
 ## Installation
 
-GDM can be [installed](/index.php/Installed "Installed") with the [gdm](https://www.archlinux.org/packages/?name=gdm) package, and it is installed as part of the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group. To start GDM at boot time [enable](/index.php/Enable "Enable") `gdm.service`.
+GDM can be [installed](/index.php/Installed "Installed") with the [gdm](https://www.archlinux.org/packages/?name=gdm) package, and it is installed as part of the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group.
 
 If you would prefer to use legacy GDM which was used in GNOME 2 and has its own configuration utility, install the [gdm-old](https://aur.archlinux.org/packages/gdm-old/) package. Note that the rest of this article discusses current GDM, not legacy GDM, unless indicated otherwise.
 
@@ -49,15 +52,24 @@ You might also wish to install the following:
 
 	[https://github.com/Nano77/gdm3setup](https://github.com/Nano77/gdm3setup) || [gdm3setup](https://aur.archlinux.org/packages/gdm3setup/)
 
+## Starting
+
+To start GDM at boot time [enable](/index.php/Enable "Enable") `gdm.service`.
+
+### Autostarting applications
+
+One might want to autostart certain commands, such as *xrandr* for instance, on login. This can be achieved by adding a command or script to a location that is sourced by the display manager. See [Display manager#Autostarting](/index.php/Display_manager#Autostarting "Display manager") for a list of supported locations.
+
+**Note:** The `/etc/gdm/Init` directory is no longer a supported location, see [[1]](https://bugzilla.gnome.org/show_bug.cgi?id=751602#c2).
+
 ## Configuration
-
-### Autostarting applications with GDM
-
-See [Display manager#Autostarting](/index.php/Display_manager#Autostarting "Display manager"). Note that adding scripts to `/etc/gdm/Init` no longer works, see the [upstream bug report](https://bugzilla.gnome.org/show_bug.cgi?id=751602).
 
 ### Log-in screen background image
 
-**Note:** Since GNOME 3.16, GNOME Shell themes are now stored as binary files (gresource).
+**Note:**
+
+*   Since GNOME 3.16, GNOME Shell themes are now stored as binary files (gresource).
+*   This change will be overwritten on subsequent updates of [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell).
 
 Firstly, you need to extract the existing GNOME Shell theme to a folder in your home directory. You can do this using the following script:
 
@@ -150,7 +162,7 @@ $ glib-compile-resources gnome-shell-theme.gresource.xml
 
 Then copy the resulting `gnome-shell-theme.gresource` file to the `/usr/share/gnome-shell` directory.
 
-Restart GDM - you should find that it is using your preferred background image.
+Then restart `gdm.service` (note that simply logging out is not enough) and you should find that it is using your preferred background image.
 
 For more information, please see the following [forum thread](https://bbs.archlinux.org/viewtopic.php?id=197036).
 
@@ -245,22 +257,32 @@ $ gsettings set org.gnome.desktop.sound event-sounds 'false'
 
 ```
 
-#### Make the power button interactive
+#### Configure power button behavior
 
-The behaviour of the power buttons can be configured in GDM. The example below will configure the power and hibernate buttons to *Show dialog*:
+**Note:**
 
-Create the following keyfile:
+*   The [logind settings](/index.php/Power_management#ACPI_events "Power management") for the power button are overriden by GNOME Settings Daemon. [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=755953#c4)
+*   As of October 2015, the power button cannot be set to *interactive*. [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=753713#c6)
+*   In some cases, this setting will be ignored and hardcoded defaults will be used. [[4]](https://bugzilla.gnome.org/show_bug.cgi?id=755953#c17)
+
+**Warning:** Please note that the [acpid](/index.php/Acpid "Acpid") daemon also handles the "power button" and "hibernate button" events. Running both systems at the same time may lead to unexpected behaviour.
+
+Either create the following keyfile:
 
  `/etc/dconf/db/gdm.d/05-power` 
 ```
-[org/gnome/settings-daemon/plugins/power button]
-power='interactive'
-hibernate='interactive'
+[org/gnome/settings-daemon/plugins/power]
+power-button-action='*action*'
 ```
 
-and then recompile the GDM database.
+and then recompile the GDM database or alternatively log in to the GDM user and execute the following:
 
-**Warning:** Please note that the [acpid](/index.php/Acpid "Acpid") daemon also handles the "power button" and "hibernate button" events. Running both systems at the same time may lead to unexpected behaviour.
+```
+$ gsettings set org.gnome.settings-daemon.plugins.power power-button-action '*action*'
+
+```
+
+where *action* can be one of `nothing`, `suspend` or `hibernate`.
 
 #### Enabling tap-to-click
 
@@ -296,21 +318,15 @@ To disable or enable the Accessibility Menu, set the following key in dconf edit
 
 The menu is disabled when the key is false, enabled when it is true.
 
-### GDM keyboard layout
+### Keyboard layout
 
 See [Keyboard configuration in Xorg#Using X configuration files](/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files "Keyboard configuration in Xorg").
 
 **Tip:** See [Wikipedia:ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1 "wikipedia:ISO 3166-1") for a list of keymaps.
 
-#### GNOME Control Center
+Alternatively, if the package [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed, the keyboard layout(s) can be configured using a graphical frontend. Start *gnome-control-center* and navigate to *Region & Language -> Input Sources*. Then, in the header bar, hit the *Login Screen* toggle button to configure the keyboard layout for GDM specifically.
 
-If the package [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed, the keyboard layout(s) can be configured using a graphical frontend. Start *gnome-control-center* and navigate to *Region & Language -> Input Sources*. Then, in the header bar, hit the *Login Screen* toggle button to configure the keyboard layout for GDM specifically.
-
-#### GDM 2.x layout
-
-Users of legacy GDM may need to follow the instructions below:
-
-Edit `~/.dmrc`:
+Users of GDM 2.x (legacy GDM) may need to edit `~/.dmrc` as shown below:
 
  `~/.dmrc` 
 ```
@@ -339,7 +355,9 @@ Now just reboot your computer.
 
 Once you have rebooted, if you look at the `/var/lib/AccountsService/users/gdm` file again, you will see that the language line is cleared — do not worry, the language change has been preserved.
 
-### Automatic login
+### Users and login
+
+#### Automatic login
 
 To enable automatic login with GDM, add the following to `/etc/gdm/custom.conf` (replace *username* with your own):
 
@@ -368,7 +386,7 @@ You can set the session used for automatic login (replace `gnome-xorg` with desi
 
  `/var/lib/AccountsService/users/*username*`  `XSession=gnome-xorg` 
 
-### Passwordless login
+#### Passwordless login
 
 If you want to bypass the password prompt in GDM then simply add the following line on the first line of `/etc/pam.d/gdm-password`:
 
@@ -386,7 +404,7 @@ Now, add your user to the `nopasswdlogin` group and you will only have to click 
 *   Do **not** do this for a **root** account.
 *   You won't be able to change your session type at login with GDM anymore. If you want to change your default session type, you will first need to remove your user from the `nopasswdlogin` group.
 
-### Passwordless shutdown for multiple sessions
+#### Passwordless shutdown for multiple sessions
 
 GDM uses polkit and logind to gain permissions for shutdown. You can shutdown the system when multiple users are logged in by setting:
 
@@ -413,27 +431,7 @@ GDM uses polkit and logind to gain permissions for shutdown. You can shutdown th
 
 You can find all available logind options (e.g. reboot-multiple-sessions) [here](http://www.freedesktop.org/wiki/Software/systemd/logind#Security).
 
-### Add or edit GDM sessions
-
-Each session is a `.desktop` file located at `/usr/share/xsessions/`.
-
-**To add a new session:**
-
-1\. Copy an existing `.desktop` file to use as a template for a new session:
-
-```
-$ cd /usr/share/xsessions
-# cp gnome.desktop other.desktop
-
-```
-
-2\. Modify the template desired `.desktop` file to open the required window manager.
-
-If you happen to have KDM installed in parallel, you can alternatively open the new session in KDM which will create the new `.desktop` file. Then return to using GDM and the new session will be available.
-
-See also [Display manager#Session configuration](/index.php/Display_manager#Session_configuration "Display manager").
-
-### Enable root login in GDM
+#### Enable root login in GDM
 
 It is not advised to login as root, but if necessary you can edit `/etc/pam.d/gdm-password` and add the following line before the line `auth required pam_deny.so`:
 
@@ -459,7 +457,7 @@ auth            required        pam_deny.so
 
 You should be able to login as root after restarting GDM.
 
-### Hide user from login list
+#### Hide user from login list
 
 The users for the gdm user list are gathered by [AccountsService](https://www.freedesktop.org/wiki/Software/AccountsService/). It will automatically hide system users (UID < 1000). To hide ordinary users from the login list create or edit a file named after the user to hide in `/var/lib/AccountsService/users/` to contain at least:
 
@@ -483,24 +481,6 @@ If you have your monitors setup as you like (orientation, primary and so on) in 
 Changes will take effect on logout. This is necessary because GDM does not respect `xorg.conf`.
 
 **Note:** Wayland backend may be [ignoring](https://bbs.archlinux.org/viewtopic.php?id=196219) `/var/lib/gdm/.config/monitors.xml` file. See [#Use Xorg backend](#Use_Xorg_backend) to learn how to disable Wayland backend.
-
-### xrandr at login
-
-If you want to run a script using xrandr that affects the login screen you must add a script in `/etc/X11/xinit/xinitrc.d`.
-
-For example, to select automatically a external screen connected through HDMI:
-
-```
-#!/bin/sh
-EXTERNAL_OUTPUT="HDMI1"
-INTERNAL_OUTPUT="eDP1"
-if (xrandr | grep $EXTERNAL_OUTPUT | grep " connected "); then
-    xrandr --output $INTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT --auto
-else
-    xrandr --output $INTERNAL_OUTPUT --auto
-fi
-
-```
 
 ### Configure X server access permission
 

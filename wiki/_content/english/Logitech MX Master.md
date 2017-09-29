@@ -3,15 +3,38 @@
 ## Contents
 
 *   [1 Usage](#Usage)
-*   [2 Mappings for extra buttons](#Mappings_for_extra_buttons)
-*   [3 Power](#Power)
-*   [4 Smart shift](#Smart_shift)
+*   [2 List of events sent by mouse](#List_of_events_sent_by_mouse)
+*   [3 Mappings for extra buttons](#Mappings_for_extra_buttons)
+*   [4 Power](#Power)
+*   [5 Smart shift](#Smart_shift)
 
 ## Usage
 
 The mouse should work with no special configuration if using the unified receiver USB dongle. Plug in the dongle, then press the `connect` button on the mouse.
 
 To use [Bluetooth](/index.php/Bluetooth "Bluetooth"), change the channel on the bottom of the mouse, and click the `connect` button. Now, search for the mouse with a bluetooth manager of your choice and pair. In future it should connect as soon as you switch to that channel when your bluetooth is active. If you have problems with the mouse not showing when scanning, see [Bluetooth LE device does not show up in scan](/index.php/Bluetooth#Device_does_not_show_up_in_scan "Bluetooth")
+
+## List of events sent by mouse
+
+| Physical action | detected as |
+| Left button | button 1 |
+| Press to wheel | button 2 |
+| Right button | button 3 |
+| Scroll wheel up | button 4 |
+| Scroll wheel down | button 5 |
+| Press "i" button under wheel | undetectable in linux |
+| Scroll hor_wheel right (up) | button 6 |
+| Scroll hor_wheel left (down) | button 7 |
+| Side-bottom button | button 8 |
+| Side-top button | button 9 |
+| Thumb button | Ctrl+Alt+Tab |
+
+Notes:
+
+*   It is impossible to move mouse cursor while thumb button is pressed, but possible to use any other actions (pressing buttons and scrolling wheels). Ctrl+Alt+Tab event is sent only after releasing thumb button.
+*   If you wish, you can get experience of thumb button like in Windows or Mac. In kde go to System settings → Shortcuts → Global Shortcuts → KWin → Show all windows from all desktops. It is set to ctrl+f10 by default. Set ctrl+alt+tab for this action and apply settings.
+*   "I" button under wheel is undetectable in linux, but works as switching wheel between free and rattle mode
+*   Logitech gestures (moving mouse up/down/left/right while thumb pressed) are not detected in linux.
 
 ## Mappings for extra buttons
 

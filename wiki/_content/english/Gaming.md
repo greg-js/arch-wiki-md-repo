@@ -1,3 +1,8 @@
+Related articles
+
+*   [List of games](/index.php/List_of_games "List of games")
+*   [Xorg](/index.php/Xorg "Xorg")
+
 This page only contains information about running games and related system configuration tips. For lists of popular games for GNU/Linux see [List of games](/index.php/List_of_games "List of games").
 
 ## Contents
@@ -186,7 +191,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 	[http://ppsspp.org/](http://ppsspp.org/) || [ppsspp](https://www.archlinux.org/packages/?name=ppsspp)
 
-*   **snes-9x** — Portable, freeware Super Nintendo Entertainment System (SNES) emulator.
+*   **Snes9x** — Portable, freeware Super Nintendo Entertainment System (SNES) emulator.
 
 	[http://www.snes9x.com/](http://www.snes9x.com/) || [snes9x](https://www.archlinux.org/packages/?name=snes9x)
 

@@ -152,7 +152,7 @@ Option "TearFree" "true"
 
 ### No HDMI/DP Audio
 
-The open source AMDGPU driver relies on the DAL code that [currently being worked on](https://cgit.freedesktop.org/~agd5f/linux/log/?h=drm-next-4.7-wip-dal). Until DAL is mainlined, audio suppport for HDMI and DisplayPort will not be available. The only current way to get HDMI and DisplayPort audio is to install the [#AMDGPU PRO](#AMDGPU_PRO) driver.
+The open source AMDGPU driver relies on the DAL code that is [currently being worked on](https://cgit.freedesktop.org/~agd5f/linux/log/?h=drm-next-4.7-wip-dal). Until DAL is mainlined, audio support for HDMI and DisplayPort will not be available. The only current way to get HDMI and DisplayPort audio is to install the [#AMDGPU PRO](#AMDGPU_PRO) driver.
 
 ### Incorrect screen position on HDMI
 

@@ -4,16 +4,10 @@ The [Ethereum](https://github.com/ethereum/go-ethereum) project provides an open
 
 ### Ethereum Wallet
 
-The Ethereum Wallet is currently not in the Arch official repositories.
+You can install the Ethereum Wallet via the [mist](https://aur.archlinux.org/packages/mist/) package or the GitHub [releases](https://github.com/ethereum/mist/releases).
 
-*   You can download it from the AUR via the [mist](https://aur.archlinux.org/packages/mist/) package or via Github [here](https://github.com/ethereum/mist/releases).
+If you use a GitHub release, download the most recent Linux one with the zip extension: `Ethereum-Wallet-linux64-*version*.zip`; unzip the file and run `./ethereumwallet`.
 
-If you use the github release, use the most recent Linux release with the zip extension: Ethereum-Wallet-linux64-<<version>>.zip
-
-*   Unzip the file
-
-*   Run ./ethereumwallet from the command-line.
-
-*   If the application fails to start with error "error while loading shared libraries: libgtk-x11-2.0.so: cannot open shared object file: No such file or directory", install package "gtk2".
+If the application fails to start with `error while loading shared libraries: libgtk-x11-2.0.so: cannot open shared object file: No such file or directory`, install the [GTK+ 2](/index.php/GTK%2B "GTK+") library.
 
 The wallet also implements an Ethereum node.

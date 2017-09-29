@@ -1,5 +1,7 @@
 Windows 10 has a subsystem that emulates the Linux kernel interface to allow ordinary Linux applications to run. It is somewhat like the opposite of [Wine](/index.php/Wine "Wine"), but at a lower level. By default it comes with Ubuntu user space, but that can be replaced with Arch. To get it working properly you will require access to an existing Arch installation to build some packages. These instructions are based on [this guide](https://www.reddit.com/r/bashonubuntuonwindows/comments/5vnne8/howto_installing_arch_on_wsl_manually/).
 
+**Warning:** A WSL install is NOT an Arch Linux installation, so is not supported in the Arch Community support channels.
+
 ## Preparation
 
 You must be running the Windows 10 Creator's Update. If you have not used the Windows Subsystem for Linux yet, follow the instructions [here](https://msdn.microsoft.com/en-gb/commandline/wsl/install_guide) to enable it. Basically you enable:

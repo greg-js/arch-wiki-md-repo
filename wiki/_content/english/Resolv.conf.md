@@ -14,7 +14,7 @@ The configuration file for DNS resolvers is `/etc/resolv.conf`. From [resolv.con
     *   [1.1 Testing](#Testing)
 *   [2 Alternative DNS servers](#Alternative_DNS_servers)
     *   [2.1 OpenNIC](#OpenNIC)
-    *   [2.2 Cisco Umbrella (was: OpenDNS)](#Cisco_Umbrella_.28was:_OpenDNS.29)
+    *   [2.2 Cisco Umbrella (formerly OpenDNS)](#Cisco_Umbrella_.28formerly_OpenDNS.29)
     *   [2.3 Google](#Google)
     *   [2.4 Comodo](#Comodo)
     *   [2.5 Yandex](#Yandex)
@@ -90,9 +90,9 @@ nameserver 2a05:dfc7:5::5353
 
 ```
 
-### Cisco Umbrella (was: OpenDNS)
+### Cisco Umbrella (formerly OpenDNS)
 
-[OpenDNS](https://www.opendns.com/home-internet-security/) provided free alternative nameservers, was [bought by Cisco in 11/2016](https://umbrella.cisco.com/products/features/opendns-cisco-umbrella) and continues to offer OpenDNS as end-user product of its "Umbrella" product suite with focus on Security Enforcement, Security Intelligence and Web Filtering. The old nameservers [still work](https://www.opendns.com/setupguide/) but are [pre-configured to block adult content](https://www.opendns.com/home-internet-security/):
+[OpenDNS](https://www.opendns.com/home-internet-security/) provided free alternative nameservers, was [bought by Cisco in Nov. 2016](https://umbrella.cisco.com/products/features/opendns-cisco-umbrella) and continues to offer OpenDNS as end-user product of its "Umbrella" product suite with focus on Security Enforcement, Security Intelligence and Web Filtering. The old nameservers [still work](https://www.opendns.com/setupguide/) but are [pre-configured to block adult content](https://www.opendns.com/home-internet-security/):
 
 ```
 # OpenDNS IPv4 nameservers
@@ -175,7 +175,7 @@ Yandex.DNS' speed is the same in all three modes. In "Basic" mode, there is no t
 
 ### UncensoredDNS
 
-[UncensoredDNS](http://censurfridns.dk) is a free uncensored DNS resolver who also answers queries on port 5353 if you are behind a firewall blocking outgoing port 53.
+[UncensoredDNS](http://censurfridns.dk) is a free uncensored DNS resolver which also answers queries on port 5353 if you are behind a firewall blocking outgoing port 53\. It is run by a private individual and it consists in one anycast served by multiple servers and one unicast node hosted in Denmark.
 
 ```
 # censurfridns.dk IPv4 nameservers
@@ -186,8 +186,8 @@ nameserver 89.233.43.71      ## unicast.censurfridns.dk
 
 ```
 # censurfridns.dk IPv6 nameservers
-nameserver 2001:67c:28a4::             ## anycast.censurfridns.dk
-nameserver 2a01:3a0:53:53::    ## unicast.censurfridns.dk
+nameserver 2001:67c:28a4::   ## anycast.censurfridns.dk
+nameserver 2a01:3a0:53:53::  ## unicast.censurfridns.dk
 
 ```
 

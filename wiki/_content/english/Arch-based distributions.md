@@ -47,7 +47,7 @@ This is a listing of Linux distributions which are [derived](/index.php/Develope
 *   [KaOS](https://sourceforge.net/projects/kaosx/)
 *   [LinHES](http://linhes.org/)
 *   [Obarun](https://web.obarun.org/)
-*   [OBRevenge](http://obrevenge.weebly.com/)
+*   [Revenge OS](https://sourceforge.net/projects/obrevenge/)
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
 *   [MSYS2](https://sourceforge.net/projects/msys2/)
 *   [Netrunner](https://sourceforge.net/projects/netrunneros/)

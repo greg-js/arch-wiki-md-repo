@@ -65,8 +65,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Using an alternative window manager](#Using_an_alternative_window_manager)
         *   [5.1.1 KDE/Openbox session](#KDE.2FOpenbox_session)
-        *   [5.1.2 Compiz custom](#Compiz_custom)
-        *   [5.1.3 Re-enabling compositing effects](#Re-enabling_compositing_effects)
+        *   [5.1.2 Re-enabling compositing effects](#Re-enabling_compositing_effects)
     *   [5.2 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
     *   [5.3 Disable opening application launcher with Super key (Windows key)](#Disable_opening_application_launcher_with_Super_key_.28Windows_key.29)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -123,7 +122,7 @@ See [Official repositories#kde-unstable](/index.php/Official_repositories#kde-un
 
 Plasma can be started either using a [display manager](/index.php/Display_manager "Display manager"), or from the console.
 
-### Using a [display manager](/index.php/Display_manager "Display manager")
+### Using a display manager
 
 *   Select *Plasma* to launch a new session in [Xorg](/index.php/Xorg "Xorg").
 *   [Install](/index.php/Install "Install") [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) and select *Plasma (Wayland)* to launch a new session in [Wayland](/index.php/Wayland "Wayland").
@@ -565,26 +564,6 @@ For those starting the session manually, add the following line to your `.xinitr
 
 ```
 exec openbox-kde-session
-
-```
-
-#### Compiz custom
-
-If you need to run Compiz with custom options and switches select *Compiz custom* and then create a script called `compiz-kde-launcher` and add to it the commands you wish to use to start Compiz. See the example below:
-
- `/usr/local/bin/compiz-kde-launcher` 
-```
-#!/bin/bash
-LIBGL_ALWAYS_INDIRECT=1
-compiz --replace &
-wait
-
-```
-
-Then make it executable:
-
-```
-$ chmod +x /usr/local/bin/compiz-kde-launcher
 
 ```
 

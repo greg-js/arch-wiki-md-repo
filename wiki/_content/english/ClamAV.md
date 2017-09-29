@@ -19,7 +19,12 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [clamav](https://www.archlinux.org/packages/?name=clamav) package.
+[Install](/index.php/Install "Install") the [clamav](https://www.archlinux.org/packages/?name=clamav) package.Also you can install:
+
+*   [clamtk](https://www.archlinux.org/packages/?name=clamtk) , a GUI frontend for clamav.
+*   addons
+    *   [clamtk-gnome](https://aur.archlinux.org/packages/clamtk-gnome/) , a simple plugin for ClamTk to allow a right-click, context menu scan of files or folders in the Nautilus file manager.
+    *   [thunar-sendto-clamtk](https://aur.archlinux.org/packages/thunar-sendto-clamtk/) , a simple plugin to allow a right-click, context menu scan of files or folders in Thunar.
 
 ## Updating database
 

@@ -444,7 +444,7 @@ Emacs除了用作编辑器，其高级功能更为出名，其中一项就是把
 即科学上网。
 
 *   [Shadowsocks (简体中文)](/index.php/Shadowsocks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Shadowsocks (简体中文)")
-*   Lantern（蓝灯）：安装[lantern](https://aur.archlinux.org/packages/lantern/)（如安装有archlinuxcn源可直接使用`pacman -S lantern`安装）即可。
+*   Lantern（蓝灯）：安装[lantern](https://aur.archlinux.org/packages/lantern/)（如安装有archlinuxcn源可直接使用`pacman -S lantern-bin`安装）即可。
 *   [XX-Net (简体中文)](/index.php/XX-Net_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "XX-Net (简体中文)")
 *   更改hosts： 获取可以科学上网的hosts文件，修改或替换`/etc/hosts`即可。
 

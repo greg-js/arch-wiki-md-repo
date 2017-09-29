@@ -124,7 +124,7 @@ Each of those options are explained in the following sections.
 
 	`-r`
 
-	Enables [Wikipedia:Rock Ridge](https://en.wikipedia.org/wiki/Rock_Ridge "wikipedia:Rock Ridge") extension, which adds POSIX file system semantics to an image, including support of long 255-character filenames and Unix-style file permissions.
+	Enables [Rock Ridge](https://en.wikipedia.org/wiki/Rock_Ridge "wikipedia:Rock Ridge") extension, which adds POSIX file system semantics to an image, including support of long 255-character filenames and Unix-style file permissions.
 
 	`-o`
 

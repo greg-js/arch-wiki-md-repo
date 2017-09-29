@@ -1,3 +1,9 @@
+Related articles
+
+*   [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs")
+*   [System maintenance#Backup](/index.php/System_maintenance#Backup "System maintenance")
+*   [System backup](/index.php/System_backup "System backup")
+
 Disk cloning is the process of making an image of a partition or of an entire hard drive. This can be useful for copying the drive to other computers and for [backup](/index.php/Backup "Backup") and [recovery](/index.php/File_recovery "File recovery") purposes.
 
 ## Contents
@@ -145,7 +151,7 @@ Now you can check the file system for corruption and mount the new drive.
 
 ## Using e2image
 
-*e2image* is a tool included in [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) for debugging purposes. It can be used to copy ext2, ext3, and ext4 partitions efficiently by only copying the used blocks. Note that is only works for ext2, ext3, and ext4 filesystems, and the unused blocks are not copied so this may not be a useful tool if one is hoping to recover deleted files.
+*e2image* is a tool included in [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) for debugging purposes. It can be used to copy ext2, ext3, and ext4 partitions efficiently by only copying the used blocks. Note that this only works for ext2, ext3, and ext4 filesystems, and the unused blocks are not copied so this may not be a useful tool if one is hoping to recover deleted files.
 
 To clone a partition from physical disk `/dev/sda`, partition 1, to physical disk `/dev/sdb`, partition 1 with e2image, run
 

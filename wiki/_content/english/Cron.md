@@ -22,18 +22,17 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Cron "wikipedia:Cron"):
 *   [4 Basic commands](#Basic_commands)
 *   [5 Examples](#Examples)
 *   [6 Default editor](#Default_editor)
-*   [7 run-parts issue](#run-parts_issue)
-*   [8 Running X.org server-based applications](#Running_X.org_server-based_applications)
-*   [9 Asynchronous job processing](#Asynchronous_job_processing)
-    *   [9.1 Cronie](#Cronie)
-    *   [9.2 Dcron](#Dcron)
-    *   [9.3 Cronwhip](#Cronwhip)
-    *   [9.4 Anacron](#Anacron)
-    *   [9.5 Fcron](#Fcron)
-*   [10 Ensuring exclusivity](#Ensuring_exclusivity)
-*   [11 cronie](#cronie_2)
-*   [12 Dcron](#Dcron_2)
-*   [13 See also](#See_also)
+*   [7 Running X.org server-based applications](#Running_X.org_server-based_applications)
+*   [8 Asynchronous job processing](#Asynchronous_job_processing)
+    *   [8.1 Cronie](#Cronie)
+    *   [8.2 Dcron](#Dcron)
+    *   [8.3 Cronwhip](#Cronwhip)
+    *   [8.4 Anacron](#Anacron)
+    *   [8.5 Fcron](#Fcron)
+*   [9 Ensuring exclusivity](#Ensuring_exclusivity)
+*   [10 Cronie](#Cronie_2)
+*   [11 Dcron](#Dcron_2)
+*   [12 See also](#See_also)
 
 ## Installation
 
@@ -381,10 +380,6 @@ alias scron="su -c $(printf "%q " "crontab -e")"
 
 ```
 
-## run-parts issue
-
-cronie uses `run-parts` to carry out script in `cron.daily`/`cron.weekly`/`cron.monthly`. Be careful that the script name in these won't include a dot (.), e.g. `backup.sh`, since `run-parts` without options will ignore them (see: [run-parts(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/run-parts.8)).
-
 ## Running X.org server-based applications
 
 Cron does not run under the X.org server therefore it cannot know the environmental variable necessary to be able to start an X.org server application so they will have to be defined. One can use a program like [xuserrun](https://aur.archlinux.org/packages/xuserrun/) to do it:
@@ -465,32 +460,42 @@ If you run potentially long-running jobs (e.g., a backup might all of a sudden r
 
 ```
 
-## cronie
+## Cronie
 
-Long time users of vixie-cron (traditional cron) will be confused by how cronie is set up. Here is the relevant file hierarchy:
+The relevant file hierarchy for cronie is the following:
 
 ```
-   /etc
-     |----- anacrontab
-     |----- cron.d
+   /etc/
+     |----- cron.d/
               | ----- 0hourly
-     |----- cron.daily
-     |----- cron.deny
-     |----- cron.hourly
+     |----- cron.minutely/
+     |----- cron.hourly/
               | ----- 0anacron
-     |----- cron.monthly
-     |----- cron.weekly
+     |----- anacrontab
+     |----- cron.daily/
+     |----- cron.monthly/
+     |----- cron.weekly/
      |----- crontab
+     |----- cron.deny
 
 ```
 
-Note that the crontab file is **not** created by default, but jobs added here will be run if you wish to use this file. Cronie provides both cron and anacron functionality. The difference is that cron will run jobs at particular time intervals (down to a granularity of one minute) *if the machine is on at the particular time specified*, while anacron runs jobs (with a minimum daily granularity) without assuming that the machine is turned on all the time. When the machine is on, anacron will check to see if there are any jobs that *should have been run* and will run them accordingly. The `/etc/cron.d` and `/etc/cron.hourly` directories are associated with **cron** functionality, while the `/etc/anacrontab` file and `/etc/cron.daily`, `/etc/cron.weekly`, and `/etc/cron.monthly` directories are associated with **anacron** functionality. The `/etc/cron.deny` file is there so that any user who is not specifically prohibited can create their own cron jobs.
+Cronie provides both *cron* and *anacron* functionalities: *cron* runs jobs at regular time intervals (down to a granularity of one minute) as long as the system is available at the specified time, while *anacron* executes commands at intervals specified in days. Unlike cron, it does not assume that the system is running continuously. Whenever the system is up, *anacron* checks if there are any jobs that should have been run and handles them accordingly.
 
-To implement a system-wide cron job, create a crontab-like file for it and place it in the `/etc/cron.d` directory or add the job to /etc/crontab. Any executable (these are almost always shell scripts) in `/etc/cron.hourly` will be run every hour.
+A *cron* job can be defined in a crontab-like file in the `/etc/cron.d` directory or added within the `/etc/crontab` file. Note the latter is not present by default but is used if it exists. As instructed by `/etc/cron.d/0hourly`, any executable file in `/etc/cron.hourly` will be run every hour (by default at minute 1 of the hour). Files in `/etc/cron.minutely` are executed every minute if instructed accordingly in `/etc/cron.d/0hourly`. The executables are typically shell scripts, symlinks to executable files can also be used. The `/etc/cron.deny` file includes the list of users not allowed to use crontab, without this file, only users listed in `/etc/cron.allow` can use it.
 
-Anacron functionality is implemented similarly, however using the `/etc/cron.daily`, `/etc/cron.weekly`, or `/etc/cron.monthly` directories, depending on how frequently you want the job to be run. The anacron job files are also executables; i.e. not in crontab-format. Anacron is triggered at the beginning of every hour by the crontab file `/etc/cron.d/0hourly` which runs the executables in `/etc/cron.hourly` including the file `/etc/cron.hourly/0anacron` - deleting these will prevent anacron running any daily, weekly or monthly tasks.
+*Anacron* works similarly, by executing the files in the `/etc/cron.daily`, `/etc/cron.weekly` and `/etc/cron.monthly` directories, placed there depending on the desired job frequency. The cron job `/etc/cron.hourly/0anacron` makes sure that *anacron* is run once daily to perform its pending tasks.
 
-**Note:** the output of `systemctl status cronie` might show a message such as `crond[<PID>]: (root) CAN'T OPEN (/etc/crontab): No such file or directory`. However, this is not an error as of cronie 1.4.8\. See [this](https://lists.archlinux.org/pipermail/arch-general/2012-February/025178.html) discussion.
+**Note:** cronie uses `run-parts` to carry out scripts in the different directories. The filenames should not include any dot (.) since `run-parts` in its default mode will silently ignore them (see [run-parts(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/run-parts.8)). The names must consist only of upper and lower-case letters, digits, underscores and minus-hyphens.
+
+**Note:** the output of `systemctl status cronie` might show a message such as `CAN'T OPEN (/etc/crontab): No such file or directory`. However, this can be ignored since cronie does not require one.
+
+**Tip:** To prevent the sending of output and stop email alert, add `>/dev/null 2>&1` at the end of the line for each cron job to redirect output to /dev/null.
+```
+0 1 5 10 * /path/to/script.sh >/dev/null 2>&1
+
+```
+You can also set `MAILTO=””` variable in your crontab file to disable email alerts.
 
 ## Dcron
 

@@ -11,9 +11,7 @@
         *   [2.1.2 以守护进程形式运行客户端](#.E4.BB.A5.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E5.BD.A2.E5.BC.8F.E8.BF.90.E8.A1.8C.E5.AE.A2.E6.88.B7.E7.AB.AF)
         *   [2.1.3 图形界面客户端](#.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2.E5.AE.A2.E6.88.B7.E7.AB.AF)
         *   [2.1.4 配置代理](#.E9.85.8D.E7.BD.AE.E4.BB.A3.E7.90.86)
-        *   [2.1.5 浏览器配置](#.E6.B5.8F.E8.A7.88.E5.99.A8.E9.85.8D.E7.BD.AE)
-            *   [2.1.5.1 Firefox](#Firefox)
-            *   [2.1.5.2 Chrome/Chromium](#Chrome.2FChromium)
+            *   [2.1.4.1 浏览器配置](#.E6.B5.8F.E8.A7.88.E5.99.A8.E9.85.8D.E7.BD.AE)
     *   [2.2 服务端](#.E6.9C.8D.E5.8A.A1.E7.AB.AF)
         *   [2.2.1 以命令行启动进程](#.E4.BB.A5.E5.91.BD.E4.BB.A4.E8.A1.8C.E5.90.AF.E5.8A.A8.E8.BF.9B.E7.A8.8B)
         *   [2.2.2 以守护进程形式运行](#.E4.BB.A5.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E5.BD.A2.E5.BC.8F.E8.BF.90.E8.A1.8C)
@@ -129,39 +127,48 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 
 *   转换为http代理
 
-直接指走socks代理似乎不能远程dns解析，这未必是用户的期望（尤其是在浏览器上使用时），可使用privoxy等软件转化socks代理为http代理。 可使用[Privoxy](/index.php/Privoxy "Privoxy")）和[Squid](/index.php/Squid "Squid")。
+直接指走socks代理似乎不能远程dns解析，这未必是用户的期望（尤其是在浏览器上使用时），可使用privoxy等软件转化socks代理为http代理。可使用[privoxy](https://www.archlinux.org/packages/?name=privoxy)和[Squid](https://www.archlinux.org/packages/?name=Squid)。 以[Privoxy](/index.php/Privoxy "Privoxy")为例，编辑privoxy配置文件，添加socks5转发（不要漏下1080后面的点)：
 
-#### 浏览器配置
+```
+ forward-socks5 / 127.0.0.1:1080 .
+
+```
+
+默认监听的是本机的8188端口，即`localhost:8188`，可更改为监听其他端口，如
+
+```
+ listen-address  127.0.0.1:8010
+
+```
+
+**提示：** 如果希望网络上其他主机也能使用该privoxy配置，可以更改127.0.0.1为0.0.0.0或直接删除127.0.0.1。
+
+使用[systemd](/index.php/Systemd "Systemd")启动或重启`privoxy.service`服务，就可以使用了。假设转化后的http代理为127.0.0.1:8010，则在终端中启动（以启动chromium为例）：
+
+```
+ $ chromium %U --proxy-server=127.0.0.1:8010
+
+```
+
+##### 浏览器配置
 
 **提示：** 浏览器直接使用[SOCKS](https://en.wikipedia.org/wiki/SOCKS "wikipedia:SOCKS")代理时，你可能需要使用[privoxy](/index.php/Privoxy "Privoxy")等辅助程序，因为一般浏览器会泄漏你的DNS请求，从而减少你的匿名，参看前文[Shadowsocks_(简体中文)#配置代理](/index.php/Shadowsocks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE.E4.BB.A3.E7.90.86 "Shadowsocks (简体中文)")中转化为http代理一节。
 
-##### Firefox
+*   firefox
 
-*   使用firefox的连接设置
-
-打开设置-高级-连接，在其中选用socks v5进行配置。
-
-*   使用扩展
-
-以foxyproxy为例： 安装[foxyproxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/?src=userprofile)：打开浏览器右上角菜单，进入扩展管理，在搜索框中输入foxyproxy，安装foxyproxy，添加socks v5代理。
+可使用firefox的连接设置，打开设置-高级-连接，在其中选用socks v5进行配置。 或者使用扩展，以foxyproxy为例： 安装[foxyproxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/?src=userprofile)：打开浏览器右上角菜单，进入扩展管理，在搜索框中输入foxyproxy，安装foxyproxy，添加socks v5代理。
 
 订阅白名单规则，以gfwlist为例，可从[gfwlist](https://github.com/gfwlist/gfwlist)]获取被屏蔽的网址规则列表，点击该项目的gfwlist.txt文件，进入后点击"raw"查看源码，可从浏览器地址栏获取[该文件URL](https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt)。然后打开foxyproxy,在规则订阅（pattern subscrib)选项卡中添加一个新的订阅规则，规则订阅URL栏填写刚才用"raw"查看的[gfwlist.txt地址](https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt)，代理项选择使先前添加的socks v5代理，设置一个自动更新规则的间隔时间（Refresh Rate），格式（Format)选择FoxyProxy，混淆（obfuscation）选择Base64，保存后使其生效。
 
 其余扩展使用方法类似，例如switchyomega可参照下文chromium中的switchyomega设置。
 
-##### Chrome/Chromium
+*   Chrome/Chromium
 
-以下是本地监听端口`127.0.0.1:1080`配置完毕后，[Chrome/Chromium](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)")使用代理服务器的方法示例。
-
-*   使用插件
-
-以switchomega为例：
+[Chrome/Chromium](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)")使用使用插件switchomega配置示例例：
 
 安装 [Proxy SwitchyOmega插件](https://chrome.google.com/webstore/detail/padekgcemlokbadohgkifijomclgjgif)（[Proxy SwitchySharp](https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm)已停止维护），若商店打不开的话可以直接下载Github上面的[crx文件](https://github.com/FelisCatus/SwitchyOmega/releases)可参考[该扩展提供的图解流程](https://github.com/FelisCatus/SwitchyOmega)。
 
 添加gfwlist规则：参阅[Google Chrome + SwitchyOmega + GFWList](https://github.com/FelisCatus/SwitchyOmega/wiki/GFWList)
-
-也可以选用其他代理扩展，设置方法类似。
 
 ### 服务端
 

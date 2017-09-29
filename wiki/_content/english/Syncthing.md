@@ -1,3 +1,8 @@
+Related articles
+
+*   [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync")
+*   [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs")
+
 [Syncthing](https://syncthing.net) is an open-source file synchronization client/server application, written in [Go](/index.php/Go "Go"), implementing its own, equally free [Block Exchange Protocol](https://docs.syncthing.net/specs/bep-v1.html). All transit communications between syncthing nodes are encrypted, and all nodes are uniquely identified with cryptographic certificates.
 
 ## Contents
@@ -15,6 +20,7 @@
     *   [5.2 Run a Relay](#Run_a_Relay)
     *   [5.3 Stop journal spam](#Stop_journal_spam)
     *   [5.4 Discovery Server](#Discovery_Server)
+    *   [5.5 Run in VirtualBox](#Run_in_VirtualBox)
 *   [6 Troubleshooting](#Troubleshooting)
 
 ## Installation
@@ -141,6 +147,14 @@ To point the client at your discovery server, change the `Global Discovery Serve
 
 If you are using self-signed certificates, the client will refuse to connect unless you append the discovery server ID to its domain. The ID is printed to stdout upon launching the discovery server. Amend the Global Discovery Servers entry to add the ID: `https://yourserver.com:8443/?id=AAAAAAA-BBBBBBB-CCCCCCC-DDDDDDD-EEEEEEE-FFFFFFF-GGGGGGG-HHHHHHH`.
 
+### Run in VirtualBox
+
+It is possible to have Syncthing connect both locally and globally within a [VirtualBox](/index.php/VirtualBox "VirtualBox") virtual machine keeping its network adapter in standard NAT mode (rather than switching to bridged networking attached to the host computer's adapter).
+
+To achieve this, Syncthing should use a port in the VM different from the port it uses on the host. If the default 22000 port is used by the host for listening, one could use 22001 in the VM. This is carried out by setting Syncthing's [Sync Protocol Listen Addresses](https://docs.syncthing.net/users/config.html#listen-addresses) to `tcp://:22001` in the VM and by opening the corresponding port of the virtual machine: the 22001/TCP host's port should be forwarded to the guest's same port.
+
+In this setup, relaying should not be necessary: local devices will connect to the VM on port 22001 while global devices should be accessible as long as they have an open port.
+
 ## Troubleshooting
 
-See [Debugging syncthing](http://docs.syncthing.net/dev/debugging.html).
+See [Debugging Syncthing](http://docs.syncthing.net/dev/debugging.html).

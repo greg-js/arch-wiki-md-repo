@@ -68,10 +68,10 @@ To share files with Samba, [install](/index.php/Install "Install") the [samba](h
 
 Samba is configured in `/etc/samba/smb.conf`, if this file doesn't exist smbd will fail to start.
 
-To get started you can copy the default config file `/etc/samba/smb.conf.default`:
+To get started you can copy the default config file from [here](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD) to
 
 ```
-# cp /etc/samba/smb.conf.default /etc/samba/smb.conf
+wget "[https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD)" -O /etc/samba/smb.conf
 
 ```
 

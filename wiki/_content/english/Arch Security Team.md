@@ -1,91 +1,64 @@
-This article introduces the Arch CVE Monitoring Team (ACMT) and describes best practices for contributing.
+The Arch Security Team is a group of volunteers whose goal is to track security issues with Arch Linux packages. All issues are tracked on the [Arch Linux security tracker](https://security.archlinux.org/).
+
+It was formerly known as the Arch CVE Monitoring Team.
 
 ## Contents
 
-*   [1 Introduction](#Introduction)
-*   [2 Joining the ACMT](#Joining_the_ACMT)
-*   [3 Participation Guidelines](#Participation_Guidelines)
-*   [4 Procedure](#Procedure)
-    *   [4.1 Bug Report Template](#Bug_Report_Template)
-*   [5 Resources](#Resources)
-    *   [5.1 RSS](#RSS)
-    *   [5.2 Mailing Lists](#Mailing_Lists)
-    *   [5.3 Other Distributions](#Other_Distributions)
-    *   [5.4 Other](#Other)
-    *   [5.5 More](#More)
-*   [6 Team Members](#Team_Members)
+*   [1 Contribute](#Contribute)
+*   [2 Guidelines](#Guidelines)
+*   [3 Procedure](#Procedure)
+*   [4 Resources](#Resources)
+    *   [4.1 RSS](#RSS)
+    *   [4.2 Mailing Lists](#Mailing_Lists)
+    *   [4.3 Other Distributions](#Other_Distributions)
+    *   [4.4 Other](#Other)
+    *   [4.5 More](#More)
+*   [5 Team Members](#Team_Members)
 
-## Introduction
+## Contribute
 
-Arch Linux is a community-driven distribution. It relies upon the efforts of volunteers to maintain and improve the distribution itself and to support fellow community members.
+Anyone can contribute to the Security Team and improve the security of Arch Linux. The most important job is to find and track issues assigned a [Common Vulnerabilites and Exposure](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures) (CVE) number. Following the recommended mailing lists for new CVEs, along with other sources if required, is a good idea to stay updated on new issues.
 
-The importance of software security cannot be overstated. Today's society relies upon computer technology for everything from amusement to indispensable national and local infrastructure. Many rely upon Arch Linux to provide these.
+Advisories are published on the IRC channel for peer-review, and needs two acknowledgments from team members before being published. We encourage volunteers in the channel to look over the advisories for mistakes, questions, or comments about the advisory.
 
-On March 9, 2014, Allan McRae [called](https://mailman.archlinux.org/pipermail/arch-dev-public/2014-March/025952.html) upon our community to assist in securing Arch Linux by monitoring any and all relevant resources for announced [Common Vulnerabilities and Exposures](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures "wikipedia:Common Vulnerabilities and Exposures") (CVE's). In contrast to security issues which can be fixed by updating, CVE's require patches to be backported. As such, Arch developers must be notified that this is the case. This is where the ACMT comes in.
+The Arch Linux security tracker is a platform used by the Security Team to track packages, add CVEs and generate advisory text. Contributing code to the [project](https://github.com/archlinux/arch-security-tracker) is a great way to contribute to the team.
 
-The ACMT should embody the efforts of the "security-conscious" part of the Arch users population. Server owners, maintainers of workstations in production environments as well as concerned personal users would gain the benefit of relatively prompt security updates. The ACMT should help alleviate two important problems: finding bugs, communicating with developers.
+Derivative distributions that rely on Arch Linux package repositories are encouraged to contribute. This helps the security of all the users.
 
-The Team is a volunteer maintained service. Volunteers are welcome to help identify and notify packages with security vulnerabilities.
+## Guidelines
 
-## Joining the ACMT
+Follow the [#archlinux-security](irc://irc.freenode.net/archlinux-security) IRC channel.
 
-Joining is as simple as helping. Firstly, join the [Arch Security mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-security) and/or IRC chan [#archlinux-security](irc://irc.freenode.net/archlinux-security). Secondly, consider the area where you would like to help. It would be ideal to have team members' labor divided across the software ecosystem as equally as possible. This helps the Team to quickly and efficiently find and report CVE's. Software categories are listed [below](#Package_Categories_and_Team_Members). However, it is not required that those who wish to volunteer restrict their monitoring in any way. "Global" and multiple-category volunteers are needed and encouraged.
+Subscribe to the following mailing lists:
 
-It is recommended that interested parties please consider monitoring those categories for which there are fewer volunteers. However, it is fully recognized that volunteers contribute best in areas in which they are most interested. Please consider both of these factors when selecting where your primary efforts will be placed. However, please note that it is not required that you restrict your monitoring to any one particular category. *The goal of the ACMT is to simply keep Arch Linux secure. Any and all efforts are more than welcome and unreservedly appreciated.*
+*   [arch-security](https://lists.archlinux.org/listinfo/arch-security)
+*   [oss-security](http://oss-security.openwall.org/wiki/mailing-lists/oss-security)
 
-If you would like to join the Team, please edit this page to include your name in the [Package Categories and Team Members](#Package_Categories_and_Team_Members) section below. Please place your name beneath the package category for which you will be monitoring. If you do not care to monitor specific categories and you would like to contribute any and all, please place your name in the "Global" category. *These options are not mutually exclusive.*
-
-## Participation Guidelines
-
-ACMT monitors all packages within the following repositories:
+Packages qualified for an advisory has to be part of the following repositories:
 
 *   *core*
 *   *extra*
 *   *community*
-
-Follow mailing lists (both development and user), security advisories (if any) and bug trackers on a regular basis. A few resources are listed below. You will quickly learn the different kind of vulnerabilities if you are unfamiliar. For those who will monitor languages, it is ideal to be able to operate at both the interpreter level (often written in C) and the language level.
-
-Everyone should file bug reports. If you are unsure how to file a bug report, please refer to the [Reporting bug guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
-
-People with the technical ability are encouraged to not only file bug reports about CVE's, but write/comment patches, test, communicate with upstream developers, among other things.
+*   *multilib*
 
 ## Procedure
 
-A security vulnerability has been found in a software package within the Arch Linux official repositories. An ACMT member picks up this information from some mailing list he/she is following.
+A security vulnerability has been found in a software package within the Arch Linux official repositories. A Security Team member picks up this information.
 
-*   In order to assure vulnerability, verify the report against the current package version (including possible patches) and collect as much information (also via search engines) as possible.
-*   If upstream released a new version that corrects the issue, the ACMT member should flag the package out-of-date.
-    *   If the package has not been updated after a too long delay, a bug report should be filed about the security issue.
+*   In order to assure vulnerability, verify the report against the current package version (including possible patches), and collect as much information (also via search engines) as possible.
+    *   Enter the IRC channel if you need help verifying the security issue.
+*   If upstream released a new version that corrects the issue, the Security Team member should flag the package out-of-date.
+    *   If the package has not been updated after a long delay, a bug report should be filed about the vulnerability.
     *   If this is an important (critical) security issue, a bug report must be filed immediately after flagging the package out-of-date.
-    *   If there is no upstream release available, a but report must be filed including the patches for mitigation.
-*   If a bug report has been created, the following informations are mandatory:
+    *   If there is no upstream release available, a bug report must be filed including the patches for mitigation.
+*   If a bug report has been created, the following information is mandatory:
     *   Description about the security issue and its impact
     *   Links to the CVE-IDs and (upstream) report
     *   If no release is available, links to the upstream patches (or attachments) that mitigate the issue
-*   Submit the issue to [https://security.archlinux.org/](https://security.archlinux.org/)
+*   A team member will create an advisory on the [security tracker](https://security.archlinux.org/) and add the CVEs for tracking.
+*   A team member with access to [arch-security](https://lists.archlinux.org/listinfo/arch-security) will generate an ASA from the tracker and publish it.
 
-If you have a private bug to report, [then use security@archlinux.org](https://mailman.archlinux.org/pipermail/arch-security/2014-June/000088.html). Please note that the address for private bugs reporting is *security*, not *arch-security*. A private bug is one that is too sensitive to post where anyone can read and exploit it, e.g. vulnerabilities in Arch Linux infrastructure.
-
-### Bug Report Template
-
-```
-Title : [<pkg-name>] <CVE-ID> vulnerability-types
-Description:
-Quick description of the issue (or copy/paste from oss-sec, upstream bug reports, etc.)
-upstream bug report [0]
-
-Resolution:
-patch [1] 
-
-Resources:
-[0] links to upstream bug report
-[1] link to patch
-
-```
-
-The criticality of the bug report should be set to either Critical or High, depending on the severity of the issue. Some updates will be much more critical than others. However, updates are always recommended in the case of any vulnerability.
-
-Once this process is complete, please update [https://security.archlinux.org/](https://security.archlinux.org/).
+If you have a private bug to report, contact [security@archlinux.org](https://mailman.archlinux.org/pipermail/arch-security/2014-June/000088.html). Please note that the address for private bug reporting is *security*, not *arch-security*. A private bug is one that is too sensitive to post where anyone can read and exploit it, e.g. vulnerabilities in the Arch Linux infrastructure.
 
 ## Resources
 
@@ -93,37 +66,37 @@ Once this process is complete, please update [https://security.archlinux.org/](h
 
 	National Vulnerability Database (NVD)
 
-	All CVE vulnerabilites: [http://nvd.nist.gov/download/nvd-rss.xml](http://nvd.nist.gov/download/nvd-rss.xml)
+	All CVE vulnerabilites: [https://nvd.nist.gov/download/nvd-rss.xml](https://nvd.nist.gov/download/nvd-rss.xml)
 
-	All fully analyzed CVE vulnerabilities: [http://nvd.nist.gov/download/nvd-rss-analyzed.xml](http://nvd.nist.gov/download/nvd-rss-analyzed.xml)
+	All fully analyzed CVE vulnerabilities: [https://nvd.nist.gov/download/nvd-rss-analyzed.xml](https://nvd.nist.gov/download/nvd-rss-analyzed.xml)
 
 ### Mailing Lists
 
 	oss-sec
 
-	main list dealing with security of free software, a lot of CVE attributions happen here, required if you wish to follow security news.
+	Main list dealing with security of free software, a lot of CVE attributions happen here, required if you wish to follow security news.
 
-	info: [http://oss-security.openwall.org/wiki/mailing-lists/oss-security](http://oss-security.openwall.org/wiki/mailing-lists/oss-security)
+	Info: [http://oss-security.openwall.org/wiki/mailing-lists/oss-security](http://oss-security.openwall.org/wiki/mailing-lists/oss-security)
 
-	subscribe: oss-security-subscribe(at)lists.openwall.com
+	Subscribe: oss-security-subscribe(at)lists.openwall.com
 
-	archive: [http://www.openwall.com/lists/oss-security/](http://www.openwall.com/lists/oss-security/)
+	Archive: [http://www.openwall.com/lists/oss-security/](http://www.openwall.com/lists/oss-security/)
 
-	bugtraq
+	BugTraq
 
-	a full disclosure moderated mailing list (noisy)
+	A full disclosure moderated mailing list (noisy).
 
-	info: [http://www.securityfocus.com/archive/1/description](http://www.securityfocus.com/archive/1/description)
+	Info: [http://www.securityfocus.com/archive/1/description](http://www.securityfocus.com/archive/1/description)
 
-	subscribe: bugtraq-subscribe(at)securityfocus.com
+	Subscribe: bugtraq-subscribe(at)securityfocus.com
 
-	full-disclosure
+	Full-disclosure
 
-	another full-disclosure mailing-list (noisy)
+	Another full-disclosure mailing-list (noisy).
 
-	info: [http://lists.grok.org.uk/full-disclosure-charter.html](http://lists.grok.org.uk/full-disclosure-charter.html)
+	Info: [http://lists.grok.org.uk/full-disclosure-charter.html](http://lists.grok.org.uk/full-disclosure-charter.html)
 
-	subscribe: full-disclosure-request(at)lists.grok.org.uk
+	Subscribe: full-disclosure-request(at)lists.grok.org.uk
 
 Also consider following the mailing lists for specific packages, such as LibreOffice, X.org, Puppetlabs, ISC, etc.
 
@@ -133,47 +106,47 @@ Resources of other distributions (to look for CVE, patch, comments etc.):
 
 	RedHat and Fedora
 
-	rss advisories: [https://admin.fedoraproject.org/updates/rss/rss2.0?type=security](https://admin.fedoraproject.org/updates/rss/rss2.0?type=security)
+	Advisories feed: [https://bodhi.fedoraproject.org/rss/updates/?type=security](https://bodhi.fedoraproject.org/rss/updates/?type=security)
 
-	CVE tracker: [https://access.redhat.com/security/cve/](https://access.redhat.com/security/cve/)<CVE-id>
+	CVE tracker: [https://access.redhat.com/security/cve/](https://access.redhat.com/security/cve/)<CVE-ID>
 
-	bug tracker: [https://bugzilla.redhat.com/show_bug.cgi?id=](https://bugzilla.redhat.com/show_bug.cgi?id=)<CVE-id>
+	Bug tracker: [https://bugzilla.redhat.com/show_bug.cgi?id=](https://bugzilla.redhat.com/show_bug.cgi?id=)<CVE-ID>
 
 	Ubuntu
 
-	advisories: [http://www.ubuntu.com/usn/atom.xml](http://www.ubuntu.com/usn/atom.xml)
+	Advisories feed: [https://www.ubuntu.com/usn/atom.xml](https://www.ubuntu.com/usn/atom.xml)
 
-	CVE tracker: [http://people.canonical.com/~ubuntu-security/cve/?cve=](http://people.canonical.com/~ubuntu-security/cve/?cve=)<CVE-id>
+	CVE tracker: [https://people.canonical.com/~ubuntu-security/cve/?cve=](https://people.canonical.com/~ubuntu-security/cve/?cve=)<CVE-ID>
 
-	database: [https://code.launchpad.net/~ubuntu-security/ubuntu-cve-tracker/master](https://code.launchpad.net/~ubuntu-security/ubuntu-cve-tracker/master)
+	Database: [https://code.launchpad.net/~ubuntu-security/ubuntu-cve-tracker/master](https://code.launchpad.net/~ubuntu-security/ubuntu-cve-tracker/master)
 
 	Debian
 
-	CVE tracker: [http://security-tracker.debian.org/tracker/](http://security-tracker.debian.org/tracker/)<CVE-id>
+	CVE tracker: [https://security-tracker.debian.org/tracker/](https://security-tracker.debian.org/tracker/)<CVE-ID>/
 
-	patch-tracker: [http://patch-tracker.debian.org/](http://patch-tracker.debian.org/)
+	Patch tracker: [https://tracker.debian.org/pkg/patch](https://tracker.debian.org/pkg/patch)
 
-	database: [http://anonscm.debian.org/viewvc/secure-testing/data/](http://anonscm.debian.org/viewvc/secure-testing/data/)
+	Database: [https://anonscm.debian.org/viewvc/secure-testing/data/](https://anonscm.debian.org/viewvc/secure-testing/data/)
 
 	OpenSUSE
 
-	CVE tracker: [http://support.novell.com/security/cve/](http://support.novell.com/security/cve/)<CVE-id>.html
+	CVE tracker: [https://www.suse.com/security/cve/](https://www.suse.com/security/cve/)<CVE-ID>/
 
 ### Other
 
 	Mitre and NVD links for CVE's
 
-	[http://cve.mitre.org/cgi-bin/cvename.cgi?name=](http://cve.mitre.org/cgi-bin/cvename.cgi?name=)<CVE-id>
+	[https://cve.mitre.org/cgi-bin/cvename.cgi?name=](https://cve.mitre.org/cgi-bin/cvename.cgi?name=)<CVE-ID>
 
-	[http://web.nvd.nist.gov/view/vuln/detail?vulnId=](http://web.nvd.nist.gov/view/vuln/detail?vulnId=)<CVE-id>
+	[https://web.nvd.nist.gov/view/vuln/detail?vulnId=](https://web.nvd.nist.gov/view/vuln/detail?vulnId=)<CVE-ID>
 
-NVD and Mitre do not necessarily fill their CVE entry immediately after attribution, so it is not always relevant for Arch. The CVE-id and the "Date Entry Created" fields do not have particular meaning. CVE are attributed by CVE Numbering Authorities (CNA), and each CNA obtain CVE blocks from Mitre when needed/asked, so the CVE ID is not linked to the attribution date. The "Date Entry Created" field often only indicates when the CVE block was given to the CNA, nothing more.
+NVD and Mitre do not necessarily fill their CVE entry immediately after attribution, so it is not always relevant for Arch. The CVE-ID and the "Date Entry Created" fields do not have particular meaning. CVE are attributed by CVE Numbering Authorities (CNA), and each CNA obtain CVE blocks from Mitre when needed/asked, so the CVE ID is not linked to the attribution date. The "Date Entry Created" field often only indicates when the CVE block was given to the CNA, nothing more.
 
 	Linux Weekly News
 
-	LWN provides a daily notice of security updates for various distributions
+	LWN provides a daily notice of security updates for various distributions.
 
-	[http://lwn.net/headlines/newrss](http://lwn.net/headlines/newrss)
+	[https://lwn.net/headlines/newrss](https://lwn.net/headlines/newrss)
 
 ### More
 
@@ -181,7 +154,7 @@ For more resources, please see the OpenWall's [Open Source Software Security Wik
 
 ## Team Members
 
-**Note:** Run `/msg phrik pingsec` on freenode for a listing of security team members.
+**Note:** Run `!pingsec <msg>` in [IRC channels](https://wiki.archlinux.org/index.php/IRC_channel) to hilight all current security team members.
 
 *   [Levente Polyak](/index.php/User:Anthraxx "User:Anthraxx")
 *   [Remi Gacogne](/index.php/User:Rgacogne "User:Rgacogne")

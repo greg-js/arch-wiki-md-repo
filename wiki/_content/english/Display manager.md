@@ -18,7 +18,7 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
     *   [3.2 Starting applications without a window manager](#Starting_applications_without_a_window_manager)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Autostarting](#Autostarting)
-    *   [4.2 Set the language](#Set_the_language)
+    *   [4.2 Set language for user session](#Set_language_for_user_session)
 
 ## List of display managers
 
@@ -133,16 +133,14 @@ See also [xinitrc#Starting applications without a window manager](/index.php/Xin
 
 Most display managers source `/etc/xprofile`, `~/.xprofile` and `/etc/X11/xinit/xinitrc.d/`. For more details, see [xprofile](/index.php/Xprofile "Xprofile").
 
-### Set the language
+### Set language for user session
 
-For display managers that use [AccountsService](http://freedesktop.org/wiki/Software/AccountsService/) the display manager [locale](/index.php/Locale "Locale") can be set by editing `/var/lib/AccountsService/users/$USER`:
-
+For display managers that use [AccountsService](http://freedesktop.org/wiki/Software/AccountsService/) the [locale](/index.php/Locale "Locale") for the user session can be set by editing: `/var/lib/AccountsService/users/$USER` 
 ```
 [User]
 Language=*your_locale*
-
 ```
 
 where *your_locale* is a value such as `en_GB.UTF-8`.
 
-Restart your display manager for the changes to take effect.
+Log out and then back in again for the changes to take effect.

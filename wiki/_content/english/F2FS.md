@@ -53,17 +53,17 @@ where `*/dev/sdxY*` is the target F2FS volume to grow.
 
 ## Install Arch Linux on F2FS partition
 
-**Warning:** If using GRUB your freshly installed system might not boot after reboot. As GRUB doesn't support F2FS it isn't able to extract the UUID (which is persistent across reboots) of your drive so it uses classic `/dev/sdXx` names instead (which are not guaranteed to be persistent across reboots). In this case you might have to manually edit `/boot/grub/grub.cfg` and replace `root=/dev/sdXx` with `root=UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`; you can use the `blkid` command to get the UUID of your device.
+**Warning:** If using GRUB your freshly installed system might not boot after reboot. As GRUB does not support F2FS it is not able to extract the UUID (which is persistent across reboots) of your drive so it uses classic `/dev/sdXx` names instead (which are not guaranteed to be persistent across reboots). In this case you might have to manually edit `/boot/grub/grub.cfg` and replace `root=/dev/sdXx` with `root=UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`; you can use the `blkid` command to get the UUID of your device.
 
 With the latest [installation media](https://www.archlinux.org/download/) it is possible to install Arch linux with root located on a F2FS filesystem:
 
 1.  Create the root partition as F2FS as described in section [#Creating a F2FS partition](#Creating_a_F2FS_partition).
 2.  If your [bootloader](/index.php/Bootloader "Bootloader") does not support F2FS, create a separate `/boot` partition using a filesystem that it does.
-3.  Continue with the installation procedure in the Installation Guide as per [#Mount the file systems](/index.php/Installation_guide#Mount_the_file_systems "Installation guide") until [chrooted](/index.php/Change_root "Change root").
+3.  Continue from [Installation guide#Mount the file systems](/index.php/Installation_guide#Mount_the_file_systems "Installation guide") until [chrooted](/index.php/Change_root "Change root").
 4.  Install [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) on the newly installed system as well.
 5.  Regenerate the [initramfs](/index.php/Initramfs "Initramfs") while chrooted.
 
-Be sure to also check out the [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key") page if you're installing Arch on a USB flash drive. (In particular the part about editing `/etc/mkinitcpio.conf` is important, otherwise your system won't boot.)
+Be sure to also check out the [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key") page if you are installing Arch on a USB flash drive (in particular the part about editing `/etc/mkinitcpio.conf` is important, otherwise your system will not boot).
 
 ## Checking and repair
 

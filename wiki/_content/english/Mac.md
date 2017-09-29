@@ -918,7 +918,7 @@ According to Apple, all recent MacBook models contain a Facetime HD camera inste
 
 If your MacBook is more recent than the models listed above, it is likely equipped with the Facetime HD camera as well.
 
-In order to make the camera work, you need to install the [bcwc-pcie-dkms](https://aur.archlinux.org/packages/bcwc-pcie-dkms/) and [bcwc-pcie-firmware](https://aur.archlinux.org/packages/bcwc-pcie-firmware/) packages. This will enable camera video support through the `facetimehd` kernel module.
+In order to make the camera work, you need to install the [bcwc-pcie-git](https://aur.archlinux.org/packages/bcwc-pcie-git/) package. This will enable camera video support through the `facetimehd` kernel module.
 
 In order to verify if the Facetime camera is working after the installation of both packages, you'll need to reboot your system.
 
