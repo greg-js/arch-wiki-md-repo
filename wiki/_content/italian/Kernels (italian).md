@@ -1,3 +1,10 @@
+Articoli correlati
+
+*   [Kernel modules (Italiano)](/index.php/Kernel_modules_(Italiano) "Kernel modules (Italiano)")
+*   [Kernel Panics (Italiano)](/index.php/Kernel_Panics_(Italiano) "Kernel Panics (Italiano)")
+*   [Linux-ck](/index.php/Linux-ck "Linux-ck")
+*   [sysctl](/index.php/Sysctl "Sysctl")
+
 Da [Wikipedia](https://en.wikipedia.org/wiki/Kernel_(computing) "wikipedia:Kernel (computing)"):
 
 	*il kernel è la componente più importante del sistema operativo; è un ponte tra le applicazioni e l'elaborazione dei dati eseguita a livello hardware. Le responsabilità del kernel comprendono la gestione delle risorse del sistema (la comunicazione tra le componenti hardware e software).*

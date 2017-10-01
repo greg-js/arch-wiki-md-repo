@@ -38,6 +38,7 @@ This is a listing of Linux distributions which are [derived](/index.php/Develope
 *   [ArchBox](https://sourceforge.net/projects/archbox-linux/)
 *   [ArchEX](https://sourceforge.net/projects/archex/)
 *   [Arch XFerience](https://sourceforge.net/projects/arch-xferience/)
+*   [Artix Linux](https://sourceforge.net/projects/artix-linux/)
 *   [BBQLinux](https://sourceforge.net/projects/bbqlinux/)
 *   [BlackArch Linux](https://blackarch.org/)
 *   [Bluestar Linux](https://sourceforge.net/projects/bluestarlinux/)
@@ -64,7 +65,7 @@ These distributions are no longer developed, but show some of the history surrou
 
 ### 2017
 
-*   [Nurunner Linux](https://nurunner.org/)
+*   Nurunner Linux
 
 ### 2016
 

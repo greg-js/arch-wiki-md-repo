@@ -84,7 +84,7 @@ $ sshfs myuser@mycomputer:/remote/path /local/path -o idmap=user
 
 ```
 
-Если вам требуется более точный контроль над переводом идентификаторов между локальным и удаленным пользователем, то обратите внимание на опции *idmap=file*, *uidfile* и *gidfile*.
+Если вам требуется более точный контроль над переводом идентификаторов между локальным и удаленным пользователем, то обратите внимание на `idmap=file`, `uidfile` и `gidfile`.
 
 ## Изменение корневого каталога
 
@@ -134,12 +134,7 @@ user@host:/remote/folder /mount/point  fuse.sshfs noauto,x-systemd.automount,_ne
 
 **Примечание:** После редактирования `/etc/fstab`, (пере)запустите соответствующий сервис: `systemctl daemon-reload && systemctl restart <цель>`; можно найти `<цель>`, используя `systemctl list-unit-files --type automount`
 
-**Совет:**
-
-Существует еще 2 способа для создания такого типа монтирования. Они не требуют редактирования `/etc/fstab` для создания новой точки монтирования. Вместо этого, обычные пользователи смогут создавать точки монтирования, просто пытаясь получить к ним доступ (например, `ls ~/mnt/ssh/[user@]yourremotehost[:port]`):
-
-*   [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) - использует AutoFS. Пользователям нужно включить ее при помощи `autosshfs-user`.
-*   [afuse](https://aur.archlinux.org/packages/afuse/) - универсальный пользовательский автомонтировщик для файловых систем FUSE. Он также прекрасно работает и с sshfs. Не требуется никаких активаций со стороны пользователя. Пример: `afuse -o mount_template='sshfs -o ServerAliveInterval=10 -o reconnect %r:/ %m' -o unmount_template='fusermount -u -z %m' ~/mnt/ssh`
+**Совет:** [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) не требует редактирования `/etc/fstab` для создания новой точки монтирования. Обычные пользователи смогут создавать точки монтирования, просто пытаясь получить к ним доступ (например, `ls ~/mnt/ssh/[user@]yourremotehost[:port]`. [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) использует AutoFS. Пользователям нужно включить ее при помощи `autosshfs-user`.
 
 ### При загрузке
 
@@ -170,7 +165,7 @@ user@domain.org:/home/user  /media/user   fuse.sshfs    defaults,allow_other,_ne
 
 ### Безопасный доступ пользователей
 
-Когда используется автомонтирование через `/etc/[fstab](/index.php/Fstab "Fstab")`, файловая система будет монтироваться от суперпользователя. По умолчанию, это приводит к нежелательным результатам, если вы хотите получать доступ как обычный пользователь и ограничить доступ другим пользователям.
+Когда используется автомонтирование через [fstab](/index.php/Fstab "Fstab"), файловая система будет монтироваться от суперпользователя. По умолчанию, это приводит к нежелательным результатам, если вы хотите получать доступ как обычный пользователь и ограничить доступ другим пользователям.
 
 Пример конфигурации:
 
@@ -222,38 +217,6 @@ $ chown -R USER_C: /mnt/client/folder
 ```
 
 6\. Проверьте, что точка монтирования (папка) пуста. По умолчанию, вы не можете монтировать каталоги SSHFS в непустые директории.
-
-7\. Если вы хотите автоматически монтировать объекты SSH, используя публичный ключ аутентификации (без пароля), через `/etc/fstab`, то используйте следующую строчку, как пример:
-
-```
-*USER_S*@*SERVER*:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.automount,_netdev,user,idmap=user,transform_symlinks,identityfile=/home/*USER_C*/.ssh/id_rsa,allow_other,default_permissions,uid=*USER_C_ID*,gid=*GROUP_C_ID*,umask=0   0 0
-
-```
-
-и, учитывая следующий пример настроек...
-
-*   SERVER = Имя сервера (serv)
-*   USER_S = Имя пользователя сервера (pete)
-*   USER_C = Имя пользователя клиента (pete)
-*   USER_S_ID = Идентификатор пользователя сервера (1004)
-*   USER_C_ID = Идентификатор пользователя клиента (1000)
-*   GROUP_C_ID = Идентификатор группы пользователя клиента (100)
-
-Вы можете получить идентификатор пользователя и группы посредством следующей команды:
-
-```
-$ id ИМЯПОЛЬЗОВАТЕЛЯ
-
-```
-
-Вот конечная строка для монтирования SSHFS в `/etc/fstab`:
-
-```
-pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.automount,_netdev,user,idmap=user,transform_symlinks,identityfile=/home/pete/.ssh/id_rsa,allow_other,default_permissions,uid=1004,gid=1000,umask=0   0 0
-
-```
-
-8\. Если вам известны еще проблемы для этого контрольного списка, то, пожалуйста, добавьте их выше.
 
 ### Сброс соединения пиром
 
@@ -309,6 +272,5 @@ noauto,x-systemd.automount
 
 ## Смотрите также
 
-*   [sftpman](/index.php/Sftpman "Sftpman") - помощник sshfs
-*   [SSH](/index.php/SSH "SSH")
 *   [Как монтировать файловую систему SSH, находящуюся в chroot-среде](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), с специальными владельцами и вопросами доступа.
+*   [SSHFS – установка и производительность](http://www.admin-magazine.com/HPC/Articles/Sharing-Data-with-SSHFS) — сравнение с NFS и подсказки по оптимизации.

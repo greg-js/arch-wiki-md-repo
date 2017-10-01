@@ -219,14 +219,14 @@ Due to buggy hardware or drivers, your monitor's correct resolutions may not alw
 
 First we run `gtf` or `cvt` to get the **Modeline** for the resolution we want:
 
-For some LCD screens (samsung 2343NW), the command "cvt -r" (= with reduced blanking) is to be used.
-
  `$ cvt 1280 1024` 
 ```
 # 1280x1024 59.89 Hz (CVT 1.31M4) hsync: 63.67 kHz; pclk: 109.00 MHz
 Modeline "1280x1024_60.00"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hsync +vsync
 
 ```
+
+**Tip:** For some LCD screens (e.g. Samsung 2343NW, Acer XB280HK), the command `cvt -r` (= with reduced blanking) is to be used.
 
 **Note:** If the Intel video driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) is used, it may report the desired resolution along with its properties in `/var/log/Xorg.0.log` — use that first if it is different from the output of `gtf` or `cvt`. For instance, the log and its use with xrandr:
 ```

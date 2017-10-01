@@ -185,7 +185,7 @@ The columns have the following meaning:
 *   *Clean build*: does not export new variables that can prevent a successful build process.
 *   *Reliable parser*: ability to handle complex packages by using the provided metadata (RPC/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/).
 *   *Reliable solver*: ability to correctly solve and build complex dependency chains, such as [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/).
-*   *Split packages*: ability to correctly build and install split packages independently, such as [python-nikola](https://aur.archlinux.org/packages/python-nikola/).
+*   *Split packages*: ability to correctly build and install split packages independently.
 *   *Git clone*: uses git clones instead of downloading tarballs (deprecated since AUR 4).
 *   *Syntax*: P stands for [Pacman](/index.php/Pacman "Pacman")-like, S for specific.
 

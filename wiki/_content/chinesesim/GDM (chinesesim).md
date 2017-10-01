@@ -1,3 +1,12 @@
+相关文章
+
+*   [Display manager (简体中文)](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")
+*   [GNOME (简体中文)](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")
+*   [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [LightDM](/index.php/LightDM "LightDM")
+*   [LXDM](/index.php/LXDM "LXDM")
+
 **翻译状态：** 本文是英文页面 [GDM](/index.php/GDM "GDM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-09-14，点击[这里](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=399844)可以查看翻译后英文页面的改动。
 
 来自 [GDM - GNOME显示管理器](http://projects.gnome.org/gdm/about.html):

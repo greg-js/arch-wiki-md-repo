@@ -352,6 +352,13 @@ export MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre
 
 ```
 
+*   Matlab R2017b with an up-to-date Arch Linux (as of September 30, 2017) fails on startup with the familiar "Failure loading desktop class." A solution is to install outdated versions of the libraries in the packages [cairo](https://www.archlinux.org/packages/?name=cairo) (1.14.10 works) and [harfbuzz](https://www.archlinux.org/packages/?name=harfbuzz) (1.4.6 works) to a local directory and add them to the LD_LIBRARY_PATH for matlab (See also: [[5]](https://bbs.archlinux.org/viewtopic.php?id=228944)):
+
+```
+LD_LIBRARY_PATH="/opt/matlab/outdatedLibraries/:$LD_LIBRARY_PATH" /opt/matlab/R2017b/bin/matlab
+
+```
+
 ### Segmentation fault on startup
 
 If Matlab stops working after upgrading [ncurses](https://www.archlinux.org/packages/?name=ncurses) to v6.x, [install](/index.php/Install "Install") the [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) package. See [BBS#202575](https://bbs.archlinux.org/viewtopic.php?id=202575).
@@ -372,13 +379,13 @@ opengl('save','software')
 
 ```
 
-See [[5]](https://bugzilla.redhat.com/show_bug.cgi?id=1357571) and [[6]](https://bugs.freedesktop.org/show_bug.cgi?id=96671) for more.
+See [[6]](https://bugzilla.redhat.com/show_bug.cgi?id=1357571) and [[7]](https://bugs.freedesktop.org/show_bug.cgi?id=96671) for more.
 
 ### Addon manager not working
 
 Addon manager requires the [libselinux](https://aur.archlinux.org/packages/libselinux/) package to work. (in Matlab 2016b)
 
-Since upgrade from pango-1.40.5 to pango-1.40.6, the MATLABWindow application (responsible for Add-On Manager, Simulation Data Inspector and perhaps something else) cannot be started. [[7]](https://bugs.archlinux.org/task/54257) A workaround is to point MATLAB shipping glib libraries to those glib libraries from your system. There are 5 of those libraries in `matlabroot/R2017a/cefclient/sys/os/glnxa64`, namely, as of R2017a:
+Since upgrade from pango-1.40.5 to pango-1.40.6, the MATLABWindow application (responsible for Add-On Manager, Simulation Data Inspector and perhaps something else) cannot be started. [[8]](https://bugs.archlinux.org/task/54257) A workaround is to point MATLAB shipping glib libraries to those glib libraries from your system. There are 5 of those libraries in `matlabroot/R2017a/cefclient/sys/os/glnxa64`, namely, as of R2017a:
 
 ```
 libgio-2.0.so

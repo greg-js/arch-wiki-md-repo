@@ -55,30 +55,6 @@ WantedBy=multi-user.target
 
 ```
 
-`auto-tunne`会导致的一个问题时，USB设备在闲置一段时间后挂起，导致需要几秒钟延迟才能激活（例如使用鼠标时）使用，为解决该问题，可更改上面的文件如下：
-
- `/etc/systemd/system/powertop.service` 
-```
-[Unit]
-Description=Powertop tunings
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/powertop --auto-tune
-ExecStart=echo 'on' > '/sys/bus/usb/devices/usb2/power/control'
-RemainAfterExit=true
-
-[Install]
-WantedBy=multi-user.target
-```
-
-然后再执行
-
-```
- # systemctl enable powertop
-
-```
-
 ## 疑难解决
 
 ### Error: Cannot load from file

@@ -1,3 +1,11 @@
+Related articles
+
+*   [Firefox](/index.php/Firefox "Firefox")
+*   [Tor](/index.php/Tor "Tor")
+*   [Browser Plugins](/index.php/Browser_Plugins "Browser Plugins")
+*   [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox/Tweaks")
+*   [Firefox/Profile on RAM](/index.php/Firefox/Profile_on_RAM "Firefox/Profile on RAM")
+
 This article overviews configuration settings and some useful extensions which enhance security and privacy while using the [Firefox](/index.php/Firefox "Firefox") web browser.
 
 ## Contents
@@ -17,20 +25,21 @@ This article overviews configuration settings and some useful extensions which e
 *   [2 Extensions](#Extensions)
     *   [2.1 HTTPS Everywhere](#HTTPS_Everywhere)
     *   [2.2 uBlock Origin](#uBlock_Origin)
-    *   [2.3 Adblock Plus](#Adblock_Plus)
-    *   [2.4 Privacy Badger](#Privacy_Badger)
-    *   [2.5 Disconnect](#Disconnect)
-    *   [2.6 NoScript](#NoScript)
-    *   [2.7 uMatrix](#uMatrix)
-    *   [2.8 Cookie Monster](#Cookie_Monster)
-    *   [2.9 Self-Destructing Cookies](#Self-Destructing_Cookies)
-    *   [2.10 RefControl](#RefControl)
-    *   [2.11 RequestPolicy](#RequestPolicy)
-    *   [2.12 Decentraleyes](#Decentraleyes)
-    *   [2.13 CanvasBlocker](#CanvasBlocker)
-    *   [2.14 Random User Agent](#Random_User_Agent)
-    *   [2.15 Privacy Settings](#Privacy_Settings)
-    *   [2.16 Stop Fingerprinting](#Stop_Fingerprinting)
+    *   [2.3 AdNauseam](#AdNauseam)
+    *   [2.4 Adblock Plus](#Adblock_Plus)
+    *   [2.5 Privacy Badger](#Privacy_Badger)
+    *   [2.6 Disconnect](#Disconnect)
+    *   [2.7 NoScript](#NoScript)
+    *   [2.8 uMatrix](#uMatrix)
+    *   [2.9 Cookie Monster](#Cookie_Monster)
+    *   [2.10 Self-Destructing Cookies](#Self-Destructing_Cookies)
+    *   [2.11 RefControl](#RefControl)
+    *   [2.12 RequestPolicy](#RequestPolicy)
+    *   [2.13 Decentraleyes](#Decentraleyes)
+    *   [2.14 CanvasBlocker](#CanvasBlocker)
+    *   [2.15 Random User Agent](#Random_User_Agent)
+    *   [2.16 Privacy Settings](#Privacy_Settings)
+    *   [2.17 Stop Fingerprinting](#Stop_Fingerprinting)
 
 ## Configuration tweaks
 
@@ -158,9 +167,13 @@ The lead developer of uBlock forked the project and created uBlock Origin. As of
 
 uBlock Origin: [Github](https://github.com/gorhill/uBlock); [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/ublock-origin/).
 
+### AdNauseam
+
+[AdNauseam](https://adnauseam.io/) is a lightweight browser extension that blends software tool and artware intervention to fight back against tracking by advertising networks. AdNauseam works like an ad-blocker (it is built atop uBlock-Origin) to silently simulate clicks on each blocked ad, confusing trackers as to one's real interests [[5]](https://github.com/dhowe/AdNauseam/).
+
 ### Adblock Plus
 
-[Adblock Plus](https://adblockplus.org/en/) was a popular extension to block ads. Now that it is not blocking some ads on purpose [[5]](https://adblockplus.org/acceptable-ads), it may be a better idea to use a different blocker like uBlock Origin.
+[Adblock Plus](https://adblockplus.org/en/) was a popular extension to block ads. Now that it is not blocking some ads on purpose [[6]](https://adblockplus.org/acceptable-ads), it may be a better idea to use a different blocker like uBlock Origin.
 
 ### Privacy Badger
 

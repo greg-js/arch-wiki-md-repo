@@ -39,8 +39,6 @@ The official documentation [states](http://ceph.com/docs/master/install/#deploy-
 
 Install it with the package [ceph](https://www.archlinux.org/packages/?name=ceph), available in the [official repositories](/index.php/Official_repositories "Official repositories"). You may instead install [ceph-git](https://aur.archlinux.org/packages/ceph-git/) if you want a bleeding-edge installation.
 
-The Ceph's official cluster deployment tool is available as [ceph-deploy](https://aur.archlinux.org/packages/ceph-deploy/).
-
 Install [ceph](https://www.archlinux.org/packages/?name=ceph) on all nodes that will be in the cluster.
 
 ### NTP Client

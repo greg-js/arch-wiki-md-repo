@@ -237,12 +237,7 @@ When resizing or connecting/disconnecting different monitors there may be a remn
 
 ### Fixing gaps around terminal windows
 
-If there are empty gaps of desktop space outside terminal windows, it is likely due to the terminal's font size. Either adjust the size until finding the ideal scale that closes the gap, or toggle `resizehints` to *False* in `config.h`:
-
-```
-static Bool resizehints = False; /* True means respect size hints in tiled resizals */
-
-```
+If there are empty gaps of desktop space outside terminal windows, it is likely due to the terminal's font size. Either adjust the size until finding the ideal scale that closes the gap, or toggle `resizehints` to *0* in `config.h`.
 
 This will cause dwm to ignore resize requests from all client windows, not just terminals. The downside to this workaround is that some terminals may suffer redraw anomalies, such as ghost lines and premature line wraps, among others.
 

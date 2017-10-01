@@ -65,19 +65,11 @@ Note for [AUR](/index.php/AUR "AUR") packages, "pre-compiled" means the packages
 
 	Linux Kernel built with Con Kolivas' ck1 patchset—see the [#-ck](#-ck) section or the [linux-ck](/index.php/Linux-ck "Linux-ck") page. Additional options which can be toggled on/off in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") include: BFQ scheduler, nconfig, localmodconfig and use running kernel's config.
 
-	[linux-fbcondecor](https://aur.archlinux.org/packages/linux-fbcondecor/)
-
-	The Linux Kernel and modules with [fbcondecor support](/index.php/Fbsplash "Fbsplash").
-
 	[linux-git](https://aur.archlinux.org/packages/linux-git/)
 
 	Linux kernel and modules built using sources from [Linus Torvalds' Git repository](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git).
 
-	[linux-ice](https://aur.archlinux.org/packages/linux-ice/)
-
-	The Linux Kernel and modules with gentoo-sources patchset and [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") support.
-
-	[linux-libre](https://aur.archlinux.org/packages/linux-libre/), [linux-libre-lts](https://aur.archlinux.org/packages/linux-libre-lts/), [linux-libre-rt](https://aur.archlinux.org/packages/linux-libre-rt/), [linux-libre-xen](https://aur.archlinux.org/packages/linux-libre-xen/)
+	[linux-libre](https://aur.archlinux.org/packages/linux-libre/)
 
 	The Linux Kernels without "binary blobs".
 
@@ -104,10 +96,6 @@ Note for [AUR](/index.php/AUR "AUR") packages, "pre-compiled" means the packages
 	[linux-rt](https://aur.archlinux.org/packages/linux-rt/)
 
 	Linux kernel with the realtime patch set. Improves latency and introduces hard realtime support. [https://rt.wiki.kernel.org/](https://rt.wiki.kernel.org/)
-
-	[linux-tresor](https://aur.archlinux.org/packages/linux-tresor/)/[linux-lts-tresor](https://aur.archlinux.org/packages/linux-lts-tresor/)
-
-	The current/LTS Linux Kernel and modules with integrated [TRESOR](https://www1.informatik.uni-erlangen.de/tresor)
 
 	[linux-vfio](https://aur.archlinux.org/packages/linux-vfio/)/[linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)
 

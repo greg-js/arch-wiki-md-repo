@@ -1,3 +1,9 @@
+Related articles
+
+*   [GRUB](/index.php/GRUB "GRUB")
+*   [Syslinux](/index.php/Syslinux "Syslinux")
+*   [Archiso](/index.php/Archiso "Archiso")
+
 A multiboot USB flash drive allows booting multiple ISO files from a single device. The ISO files can be copied to the device and booted directly without unpacking them first. There are multiple methods available, but they may not work for all ISO images.
 
 ## Contents
@@ -18,7 +24,8 @@ A multiboot USB flash drive allows booting multiple ISO files from a single devi
     *   [2.2 Install the memdisk module](#Install_the_memdisk_module)
     *   [2.3 Configuration](#Configuration)
     *   [2.4 Caveat for 32-bit systems](#Caveat_for_32-bit_systems)
-*   [3 See also](#See_also)
+*   [3 Using MultiBootUSB](#Using_MultiBootUSB)
+*   [4 See also](#See_also)
 
 ## Using GRUB and loopback devices
 
@@ -269,6 +276,12 @@ For example when booting the 32-bit system from the [Arch installation ISO](http
 modprobe: ERROR: could not insert 'phram': Input/output error
 
 ```
+
+## Using MultiBootUSB
+
+[MultiBootUSB](http://multibootusb.org/) is a cross platform software written in python which allows you to install multiple live linux on a USB disk non destructively and option to uninstall distros. Try out the world's first true cross platform multi boot live usb creator for free.
+
+The package [multibootusb](https://aur.archlinux.org/packages/multibootusb/) can be installed from the AUR. It includes both graphical and command line interfaces.
 
 ## See also
 

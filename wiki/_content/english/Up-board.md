@@ -10,17 +10,17 @@ The [up-board](http://up-board.org) is a Intel based SOC.
 
 ## Installation
 
-The up-board features a [UEFI](/index.php/UEFI "UEFI") only setup (no BIOS emulation). You may experience issues trying to use a GPT partition scheme, if that's the case use MBR and install [GRUB](/index.php/GRUB "GRUB") to use as a bootloader.
+The up-board features a [UEFI](/index.php/UEFI "UEFI") only setup (no BIOS emulation). The standard UEFI installation process may be followed. [systemd-boot](/index.php/Systemd-boot "Systemd-boot") works well as a simple bootloader.
 
-**Note:** The installation disk for the up-board is `/dev/mmcblk0`.
+**Note:** The installation disk for the up-board is `/dev/mmcblk0`. [GPT](/index.php/Partitioning#GUID_Partition_Table "Partitioning") is the recommended partition type.
 
 ## Sound
 
-As of August 2016, the mainline kernel does not support sound through HDMI for cherry trail based devices like the up-board. There are plans on adding support to the mainline kernel as noted [here](https://bugzilla.kernel.org/show_bug.cgi?id=113971#c6), but in the mean time if you wish to have sound you will need to patch your kernel. The package [linux-ct](https://aur.archlinux.org/packages/linux-ct/) is available on the AUR, or alternatively you can follow the instructions below to generate and apply the patch yourself.
+As of August 2016, the mainline kernel does not support sound through HDMI for cherry trail based devices like the up-board. There are plans on adding support to the mainline kernel as noted [here](https://bugzilla.kernel.org/show_bug.cgi?id=113971#c6), but in the mean time if you wish to have sound you will need to manually patch your kernel. There is currently no AUR package including these patches.
 
 ### Compilation
 
-Without any optimisations, compilation on the up-board takes around 5-6 hours. Setting your `MAKEFLAGS` beforehand will drastically improve the compilation time. If you're using the ABS the [makepkg](/index.php/Makepkg "Makepkg") page has information on how to set the variable in there.
+Without any optimizations, compilation on the up-board takes around 5-6 hours. Setting your `MAKEFLAGS` beforehand will drastically improve the compilation time. If you're using the ABS the [makepkg](/index.php/Makepkg "Makepkg") page has information on how to set the variable in there.
 
 #### Manual
 

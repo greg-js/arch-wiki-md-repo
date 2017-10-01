@@ -53,7 +53,7 @@ However, ineffective use can be counter-productive. Please read the [Reporting b
 
 ### Inform about security issues
 
-New vulnerabilites are found all the time. Help the [Arch Security Team](https://wiki.archlinux.org/index.php/Arch_Security_Team) keep track of new vulnerabilities.
+New vulnerabilites are found all the time. Help the [Arch Security Team](/index.php/Arch_Security_Team "Arch Security Team") keep track of new vulnerabilities.
 
 ### Create and adopt AUR packages
 

@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [Display Manager (Español)](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)")
+*   [GNOME (Español)](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)")
+
 De [GDM - GNOME Display Manager](http://projects.gnome.org/gdm/about.html):
 
 	*GDM, el gestor de pantallas de GNOME, es un pequeño programa que se ejecuta en segundo plano, dirige las sesiones de X, le presenta una pantalla de inicio de sesión y, luego, le impide el acceso hasta tanto le sea suministrada la contraseña. Hace casi prácticamente todo lo que desearía hacer con xdm, pero sin los problemas de este último. GDM no utiliza ningún código de xdm. Es compatible con XDMCP, y, de hecho, extiende XDMCP a aspectos a los que no llegaba xdm (pero sigue siendo compatible con XDMCP de xdm).*

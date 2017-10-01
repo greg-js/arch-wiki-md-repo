@@ -1,3 +1,7 @@
+Related articles
+
+*   [strongSwan](/index.php/StrongSwan "StrongSwan")
+
 This article describes how to configure and use a L2TP/IPsec Virtual Private Network client on Arch Linux. It covers the installation and setup of several needed software packages. L2TP refers to the [w:Layer 2 Tunneling Protocol](https://en.wikipedia.org/wiki/Layer_2_Tunneling_Protocol "w:Layer 2 Tunneling Protocol") and for [w:IPsec](https://en.wikipedia.org/wiki/IPsec "w:IPsec"), the [Openswan](https://www.openswan.org/) implementation is employed.
 
 This guide is primarily targeted for clients connecting to a Windows Server machine, as it uses some settings that are specific to the Microsoft implementation of L2TP/IPsec. However, it is adaptable with any other common L2TP/IPsec setup. The [Openswan wiki](https://github.com/xelerance/Openswan/wiki/L2tp-ipsec-configuration-using-openswan-and-xl2tpd) features instructions to set up a corresponding L2TP/IPSec Linux server.
@@ -9,7 +13,7 @@ This guide is primarily targeted for clients connecting to a Windows Server mach
     *   [2.1 OpenSwan](#OpenSwan)
     *   [2.2 xl2tpd](#xl2tpd)
 *   [3 Routing](#Routing)
-    *   [3.1 Routing traffic to a single IP address through the tunnel](#Routing_traffic_to_a_single_IP_address_through_the_tunnel)
+    *   [3.1 Routing traffic to a single IP address or Subnet through the tunnel](#Routing_traffic_to_a_single_IP_address_or_Subnet_through_the_tunnel)
     *   [3.2 Routing all traffic through the tunnel](#Routing_all_traffic_through_the_tunnel)
 *   [4 Troubleshooting](#Troubleshooting)
 *   [5 Tips and Tricks](#Tips_and_Tricks)
@@ -19,7 +23,7 @@ This guide is primarily targeted for clients connecting to a Windows Server mach
 
 ## Installation
 
-[Install](/index.php/Install "Install") [xl2tpd](https://www.archlinux.org/packages/?name=xl2tpd) from the repos and [openswan](https://aur.archlinux.org/packages/openswan/) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [xl2tpd](https://www.archlinux.org/packages/?name=xl2tpd) from the repos and [openswan](https://aur.archlinux.org/packages/openswan/) from the [AUR](/index.php/AUR "AUR"). After install be sure to run command **systemctl daemon-reload** or reboot before proceeding.
 
 Make sure that the openswan service is running with `systemctl start openswan.service`, or you may get an error message about a missing pluto_ctl `connect(pluto_ctl) failed: No such file or directory`.
 
@@ -147,23 +151,31 @@ You should see a `pppX` device that represents the tunnel. Right now, nothing is
 
 ## Routing
 
-### Routing traffic to a single IP address through the tunnel
+### Routing traffic to a single IP address or Subnet through the tunnel
 
 This is as easy as adding a routing rule to your kernel table:
 
 ```
- # ip route add xxx.xxx.xxx.xxx via yyy.yyy.yyy.yyy dev eth0
+ # ip route add xxx.xxx.xxx.xxx via yyy.yyy.yyy.yyy dev pppX
 
 ```
 
-Replace xxx.xxx.xxx.xxx with the specific ip address of the server that you wish to communicate with through the tunnel, then replace yyy.yyy.yyy.yyy with the remote IP your PPP connection. The remote IP of a PPP connection can be discovered by issuing:
+Note xxx.xxx.xxx.xxx is the specific ip address (e.g. 192.168.3.10) or subnet (e.g. 192.168.3.0/24) that you wish to communicate with through the tunnel device (e.g. ppp0).
+
+Note yyy.yyy.yyy.yyy is "peer ip" of your pppX device used to route traffic to tunnel destination xxx.xxx.xxx.xxx.
+
+See example below for command to identify tunnel device name and peer ip and then add route. :
 
 ```
- # ip a
+  [~]$ ip address
+  4: ppp0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1400 qdisc fq_codel state UNKNOWN group default qlen 3
+      link/ppp 
+      inet 10.192.168.40 **peer 192.0.2.1/32** scope global ppp0
+         valid_lft forever preferred_lft forever
+
+  [~]$ ip route add 192.168.3.0/24 via 192.0.2.1 dev ppp0
 
 ```
-
-and reading the P-t-P address for the PPP interface that corresponds to your tunnel.
 
 ### Routing all traffic through the tunnel
 

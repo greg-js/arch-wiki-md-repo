@@ -17,7 +17,7 @@ It was formerly known as the Arch CVE Monitoring Team.
 
 ## Contribute
 
-Anyone can contribute to the Security Team and improve the security of Arch Linux. The most important job is to find and track issues assigned a [Common Vulnerabilites and Exposure](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures) (CVE) number. Following the recommended mailing lists for new CVEs, along with other sources if required, is a good idea to stay updated on new issues.
+Anyone can contribute to the Security Team and improve the security of Arch Linux. The most important job is to find and track issues assigned a [Common Vulnerabilites and Exposure](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures "wikipedia:Common Vulnerabilities and Exposures") (CVE) number. Following the recommended mailing lists for new CVEs, along with other sources if required, is a good idea to stay updated on new issues.
 
 Advisories are published on the IRC channel for peer-review, and needs two acknowledgments from team members before being published. We encourage volunteers in the channel to look over the advisories for mistakes, questions, or comments about the advisory.
 
@@ -154,7 +154,7 @@ For more resources, please see the OpenWall's [Open Source Software Security Wik
 
 ## Team Members
 
-**Note:** Run `!pingsec <msg>` in [IRC channels](https://wiki.archlinux.org/index.php/IRC_channel) to hilight all current security team members.
+**Note:** Run `!pingsec <msg>` in [IRC channels](/index.php/IRC_channels "IRC channels") to hilight all current security team members.
 
 *   [Levente Polyak](/index.php/User:Anthraxx "User:Anthraxx")
 *   [Remi Gacogne](/index.php/User:Rgacogne "User:Rgacogne")

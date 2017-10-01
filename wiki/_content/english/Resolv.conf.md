@@ -30,7 +30,7 @@ The configuration file for DNS resolvers is `/etc/resolv.conf`. From [resolv.con
 
 ## DNS in Linux
 
-Your ISP (usually) provides working [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") servers, and a router may also add an extra DNS server in case you have your own cache server. Switching between DNS servers does not represent a problem for Windows users, because if a DNS server is slow or does not work it will immediately switch to a better one. However, Linux usually takes longer to timeout, which could be the reason why you are getting a delay.
+Your ISP (usually) provides working [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") servers, and a router may also add an extra DNS server in case it has its own cache server. Switching between DNS servers does not represent a problem for Windows users, because if a DNS server is slow or does not work it will immediately switch to a better one. However, Linux usually takes longer to timeout, which could be the reason why you are getting a delay.
 
 ### Testing
 
@@ -64,11 +64,11 @@ $ drill @127.0.0.1 www5.yahoo.com
 
 ## Alternative DNS servers
 
-To use alternative DNS servers, edit `/etc/resolv.conf` and add them to the top of the file so they are used first, optionally removing or commenting out already listed servers. Currently, you may include a maximum of three `nameserver` lines.
+To use alternative DNS servers, edit `/etc/resolv.conf` and add them at the top of the list so they are used first, optionally removing or commenting out other servers. Currently, you may include a maximum of three nameservers.
 
 **Note:** Changes made to `/etc/resolv.conf` take effect immediately.
 
-**Tip:** If you require more flexibility, e.g. more than three nameservers, you can use a locally caching nameserver/resolver like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [unbound](/index.php/Unbound "Unbound"). Using a local DNS caching resolver, most likely you will not set the `nameserver` to the actual DNS server but to `127.0.0.1`. See the article for the program you are using for DNS caching.
+**Tip:** If you require more flexibility, e.g. more than three nameservers, you can use a local DNS resolver like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [unbound](/index.php/Unbound "Unbound"). In this case the nameserver IP address will likely be `127.0.0.1`.
 
 ### OpenNIC
 
@@ -139,7 +139,7 @@ nameserver 8.20.247.20
 
 ### Yandex
 
-[Yandex.DNS](https://dns.yandex.com/advanced/) have three options:
+[Yandex.DNS](https://dns.yandex.com/advanced/) has three options:
 
 ```
 # Basic Yandex.DNS - Quick and reliable DNS
@@ -171,11 +171,11 @@ nameserver 2a02:6b8:0:1::feed:a11 # Alternate IPv6 DNS
 
 ```
 
-Yandex.DNS' speed is the same in all three modes. In "Basic" mode, there is no traffic filtering. In "Safe" mode, protection from infected and fraudulent sites is provided. "Family" mode enables protection from dangerous sites and blocks sites with adult content.
+Yandex.DNS' speed is the same in the three modes. In *Basic* mode, there is no traffic filtering. In *Safe* mode, protection from infected and fraudulent sites is provided. *Family* mode enables protection from dangerous sites and blocks sites with adult content.
 
 ### UncensoredDNS
 
-[UncensoredDNS](http://censurfridns.dk) is a free uncensored DNS resolver which also answers queries on port 5353 if you are behind a firewall blocking outgoing port 53\. It is run by a private individual and it consists in one anycast served by multiple servers and one unicast node hosted in Denmark.
+[UncensoredDNS](http://censurfridns.dk) is a free uncensored DNS service. It is run by a private individual and consists in one anycast served by multiple servers and one unicast node hosted in Denmark.
 
 ```
 # censurfridns.dk IPv4 nameservers
@@ -190,6 +190,8 @@ nameserver 2001:67c:28a4::   ## anycast.censurfridns.dk
 nameserver 2a01:3a0:53:53::  ## unicast.censurfridns.dk
 
 ```
+
+**Note:** Its servers listen to port 5353 as well as the standard port 53\. This can be used in case your ISP hijacks port 53.
 
 ## Preserve DNS settings
 

@@ -1,3 +1,10 @@
+Articoli correlati
+
+*   [Network configuration](/index.php/Network_configuration "Network configuration")
+*   [Wireless Setup (Italiano)](/index.php/Wireless_Setup_(Italiano) "Wireless Setup (Italiano)")
+*   [Netctl](/index.php/Netctl "Netctl")
+*   [NetworkManager (Italiano)](/index.php/NetworkManager_(Italiano) "NetworkManager (Italiano)")
+
 [Wicd](http://www.wicd.net/) è un gestore delle connessioni capace di gestire sia le interfacce wireless che quelle cablate, simile ed alternativo a [Network Manager](/index.php/NetworkManager_(Italiano) "NetworkManager (Italiano)"). Wicd è scritto in [Python](/index.php/Python "Python") e [GTK+](/index.php/GTK%2B_(Italiano) "GTK+ (Italiano)"), e necessita dell'installazione di un minor numero di dipendenze rispetto agli altri network manager. Alternativamente, una versione di Wicd per [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)"), scritta con le Qt, è disponibile su [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)"). Wicd può anche essere eseguito da terminale, utilizzando una interfaccia disegnata con le librerie curses, non necessita di un server grafico avviato oppure un di un vassoio di sistema o di un area di notifica (si veda il paragrafo [Eseguire Wicd](#Eseguire_Wicd)).
 
 ## Contents

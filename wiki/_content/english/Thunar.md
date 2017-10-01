@@ -1,3 +1,11 @@
+Related articles
+
+*   [Xfce](/index.php/Xfce "Xfce")
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [GNOME Files](/index.php/GNOME_Files "GNOME Files")
+*   [PCManFM](/index.php/PCManFM "PCManFM")
+*   [Nemo](/index.php/Nemo "Nemo")
+
 From the project [home page](https://docs.xfce.org/xfce/thunar/start):
 
 	*Thunar is a modern file manager for the Xfce Desktop Environment. Thunar has been designed from the ground up to be fast and easy-to-use. Its user interface is clean and intuitive, and does not include any confusing or useless options by default. Thunar is fast and responsive with a good start up time and folder load time.*
@@ -41,7 +49,7 @@ From the project [home page](https://docs.xfce.org/xfce/thunar/start):
 
 	[https://goodies.xfce.org/projects/thunar-plugins/thunar-archive-plugin](https://goodies.xfce.org/projects/thunar-plugins/thunar-archive-plugin) || [thunar-archive-plugin](https://www.archlinux.org/packages/?name=thunar-archive-plugin)
 
-*   **Thunar Media Tags Plugin** — Plugin which allows you to view detailed information about media files. It also has a bulk renamed and allows editing of media tags. It supports ID3 (the MP3 file format's system) and Ogg/Vorbis tags. Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
+*   **Thunar Media Tags Plugin** — Plugin which allows you to view detailed information about media files. It also has a bulk renamer and allows editing of media tags. It supports ID3 (the MP3 file format's system) and Ogg/Vorbis tags. Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
 
 	[https://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin](https://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin) || [thunar-media-tags-plugin](https://www.archlinux.org/packages/?name=thunar-media-tags-plugin)
 

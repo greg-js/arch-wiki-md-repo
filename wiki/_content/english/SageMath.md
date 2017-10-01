@@ -1,3 +1,9 @@
+Related articles
+
+*   [Matlab](/index.php/Matlab "Matlab")
+*   [Octave](/index.php/Octave "Octave")
+*   [Mathematica](/index.php/Mathematica "Mathematica")
+
 [SageMath](http://www.sagemath.org) (formerly **Sage**) is a program for numerical and symbolic mathematical computation that uses [Python](/index.php/Python "Python") as its main language. It is meant to provide an alternative for commercial programs such as Maple, Matlab, and Mathematica.
 
 SageMath provides support for the following:
@@ -29,7 +35,7 @@ SageMath provides support for the following:
 *   [sagemath-doc](https://www.archlinux.org/packages/?name=sagemath-doc) for HTML documentation and inline help from the command line.
 *   [sage-notebook](https://www.archlinux.org/packages/?name=sage-notebook) includes the browser-based notebook interface.
 
-**Note:** Most if not all of the [standard sage packages](http://doc.sagemath.org/html/en/installation/standard_packages.html) are available as [optional dependencies](/index.php/Pacman#Installing_packages "Pacman") of the [sagemath](https://www.archlinux.org/packages/?name=sagemath) package, therefore they have to be installed additionally as normal Arch packages in order to take advantage of their features. Note that there is no need to install them with `sage -i`, in fact this command will not work if you installed SageMath with pacman.
+**Note:** Most of the [standard Sage packages](http://doc.sagemath.org/html/en/installation/standard_packages.html) are available as [optional dependencies](/index.php/Pacman#Installing_packages "Pacman") of the [sagemath](https://www.archlinux.org/packages/?name=sagemath) package or in [AUR](/index.php/AUR "AUR"), therefore they have to be installed additionally as normal Arch packages in order to take advantage of their features. Note that there is no need to install them with `sage -i`, in fact this command will not work if you installed SageMath with pacman.
 
 ## Usage
 
@@ -59,7 +65,7 @@ SageMath opens the plot in an external application.
 
 ### Sage Notebook
 
-**Note:** The SageMath Flask notebook is currently in maintenance mode and will be deprecated in favour of the Jupyter notebook. The Jupyter notebook is recommended for all new worksheets. You can use the [sage-notebook-exporter](https://www.archlinux.org/packages/?name=sage-notebook-exporter) application to convert your Flask notebooks to Jupyter
+**Note:** The SageMath Flask notebook is deprecated in favour of the Jupyter notebook. The Jupyter notebook is recommended for all new worksheets. You can use the [sage-notebook-exporter](https://www.archlinux.org/packages/?name=sage-notebook-exporter) application to convert your Flask notebooks to Jupyter
 
 A better suited interface for advanced usage in SageMath is the Notebook. To start the Notebook server from the command-line, execute:
 
@@ -81,7 +87,7 @@ For a more comprehensive tutorial on the Sage Notebook see the [Sage documentati
 
 ### Jupyter Notebook
 
-SageMath also provides a kernel for the [Jupyter](https://jupyter.org/) notebook in package [sagemath-jupyter](https://www.archlinux.org/packages/?name=sagemath-jupyter). To use it, install [ipython2-notebook](https://www.archlinux.org/packages/?name=ipython2-notebook) and [mathjax](https://www.archlinux.org/packages/?name=mathjax), launch the notebook with the command
+SageMath also provides a kernel for the [Jupyter](https://jupyter.org/) notebook in the [sagemath-jupyter](https://www.archlinux.org/packages/?name=sagemath-jupyter) package. To use it, launch the notebook with the command
 
 ```
 $ jupyter notebook

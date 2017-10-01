@@ -1,3 +1,8 @@
+Articoli correlati
+
+*   [Uswsusp](/index.php/Uswsusp "Uswsusp")
+*   [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")
+
 **pm-utils** è un framework per l'impostazione della sospensione e per la variazione dello stato di alimentazione. É progettato per sostituire gli script come quelli forniti dal pacchetto `powersave`.
 
 pm-utils è una collezione di script di shell che integrano nella modalità kernel la sospensione/rispristino con vari hack necessari per risolvere i bug nei driver e sottosistemi che non sono ancora a conoscenza della sospensione. E 'facilmente estendibile tramite l'ausilio di hook personalizzati in una directory, che possono essere creati dall'amministratore di sistema o hook che possono forniti da un pacchetto, soprattutto se questo pacchetto richiede particolare attenzione nel corso di una sospensione del sistema o la variazione dello stato di alimentazione.

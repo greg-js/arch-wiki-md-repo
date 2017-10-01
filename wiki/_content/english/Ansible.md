@@ -9,17 +9,17 @@ From [docs.ansible.com](http://docs.ansible.com/):
     *   [2.1 Inventory](#Inventory)
     *   [2.2 Ping](#Ping)
     *   [2.3 Playbook](#Playbook)
+    *   [2.4 Vault](#Vault)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Telling Ansible where Python is located](#Telling_Ansible_where_Python_is_located)
+    *   [3.1 User account creation](#User_account_creation)
+    *   [3.2 Python binary location](#Python_binary_location)
 *   [4 See also](#See_also)
 
 ## Installation
 
-On the control machine (server, master), [Install](/index.php/Install "Install") the [ansible](https://www.archlinux.org/packages/?name=ansible) package.
+On the control machine (server, master), [Install](/index.php/Install "Install") the [ansible](https://www.archlinux.org/packages/?name=ansible) package. [python](https://www.archlinux.org/packages/?name=python) is also required (Python versions 2.6, 2.7 or 3.5 and higher are supported).
 
-On the managed machines (clients, slaves), where you want to automate deployment or configuration tasks, install [python2](https://www.archlinux.org/packages/?name=python2) and [openssh](https://www.archlinux.org/packages/?name=openssh). (Or you can use [python](https://www.archlinux.org/packages/?name=python) instead of [python2](https://www.archlinux.org/packages/?name=python2), but Python 3 support in Ansible is currently experimental.)
-
-Note that a functioning [SSH key](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys") setup makes the use of Ansible much more frictionless (but this is not required).
+On the managed machines (clients, slaves), where you want to automate deployment or configuration tasks, you need a way to communicate, which is normally [SSH](/index.php/SSH "SSH"). Note that a functioning [SSH key](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys") setup eases the use of Ansible but is not required.
 
 ## Basic usage
 
@@ -75,13 +75,59 @@ Then, run the playbook script:
 
 ```
 
+### Vault
+
+A [vault](http://docs.ansible.com/ansible/latest/playbooks_vault.html#using-vault-in-playbooks) can be used to keep sensitive data in an encrypted form, rather than plaintext, in playbooks or roles. The vault password can be stored in plaintext in a file. It can be created with `echo myvaultpassword > vault_pass.txt` to be used later on with Ansible as follows:
+
+```
+ansible-playbook site.yml --vault-id vault_pass.txt
+
+```
+
+In order to encrypt the content `varcontent` of a variable named `varname`, the following command should be used:
+
+```
+ansible-vault encrypt_string --vault-id vault_pass.txt varcontent -n varname
+
+```
+
+It returns directly the protected variable that can be inserted into a playbook. Encrypted and non-encrypted variables can be mixed together in a YAML file as showed [here](http://docs.ansible.com/ansible/latest/playbooks_vault.html#single-encrypted-variable).
+
 ## Tips and tricks
 
-### Telling Ansible where Python is located
+### User account creation
 
-Ansible requires [Python](/index.php/Python "Python") on the target machine, Python 3 is supported as a preview [[1]](https://docs.ansible.com/ansible/python_3_support.html) but might not work for all modules. By default Ansible assumes it can find a `/usr/bin/python` on your remote system that is a 2.X or 3.X version of Python, specifically 2.4 or higher.
+Ansible is able to manage user accounts and in particular to create new ones. This is achieved in playbooks with the [user module](http://docs.ansible.com/ansible/latest/user_module.html) which takes an optional `password` argument to set the user's password. It is the **hashed value of the password** that needs to be provided to the module. The hashing can simply be performed on the fly within Ansible using one of the internal [hashing filters](http://docs.ansible.com/ansible/latest/playbooks_filters.html#hash-filters):
 
-If some of your modules require Python 2 you need to tell Ansible where to find Python 2 by setting the `ansible_python_interpreter` variable in your Ansible inventory file. This can be done succinctly by using host groups in the inventory:
+```
+- user:
+   name: madhead
+   password: "{{ 'user_password' | password_hash('sha512', 'permsalt') }}"
+   shell: /usr/bin/nologin
+
+```
+
+**Tip:** The salt should be fixed and explicitely supplied as a second parameter of the hash function for the operation to be indempotent (can be repeated without changing the state of the system).
+
+With this approach it is recommended to vault-encrypt *user_password* so that it does not appear in plain text, see [#Vault](#Vault). However, an encrypted variable cannot be piped directly and will first need to be assigned to another one that will be piped.
+
+Alternatively, the hashing can be performed outside Ansible. The following commands return respectively the MD5 and the SHA512 hashed values of *user_password*:
+
+```
+$ openssl passwd -1 user_password
+
+```
+
+```
+$ python -c 'import crypt; print(crypt.crypt("user_password", crypt.mksalt(crypt.METHOD_SHA512)))'
+
+```
+
+### Python binary location
+
+Ansible requires [Python](/index.php/Python "Python") on the target machine. By default Ansible assumes it can find a `/usr/bin/python` on your remote system that is a 2.X or 3.X version of Python, specifically 2.6 or higher.
+
+If some of your modules specifically require Python2 you need to inform Ansible about its location by setting the `ansible_python_interpreter` variable in your inventory file. This can be done by using host groups in the inventory:
 
  `Inventory file` 
 ```
@@ -94,10 +140,9 @@ server3
 
 [archlinux:vars]
 ansible_python_interpreter=/usr/bin/python2
-
 ```
 
-More information about Python versions is available in [[2]](https://docs.ansible.com/ansible/python_3_support.html), [[3]](http://docs.ansible.com/faq.html#how-do-i-handle-python-pathing-not-having-a-python-2-x-in-usr-bin-python-on-a-remote-machine) and [[4]](http://docs.ansible.com/intro_inventory.html#list-of-behavioral-inventory-parameters).
+More information about Python versions is available in [[1]](https://docs.ansible.com/ansible/python_3_support.html), [[2]](http://docs.ansible.com/faq.html#how-do-i-handle-python-pathing-not-having-a-python-2-x-in-usr-bin-python-on-a-remote-machine) and [[3]](http://docs.ansible.com/intro_inventory.html#list-of-behavioral-inventory-parameters).
 
 ## See also
 

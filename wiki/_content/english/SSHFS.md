@@ -219,33 +219,6 @@ $ chown -R USER_C: /mnt/client/folder
 
 6\. Check that the client's mount point (folder) is empty. By default you cannot mount SSHFS folders to non-empty folders.
 
-7\. If you want to automount SSH shares by using an SSH public key authentication (no password) via `/etc/fstab`, you can use this line as an example:
-
-```
-*USER_S*@*SERVER*:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.automount,_netdev,user,idmap=user,transform_symlinks,identityfile=/home/*USER_C*/.ssh/id_rsa,allow_other,default_permissions,uid=*USER_C_ID*,gid=*GROUP_C_ID*,umask=0   0 0
-
-```
-
-Considering the following example settings ...
-
-SERVER = Server host name (serv) USER_S = Server user name (pete) USER_C = Client user name (pete) USER_S_ID = Server user ID (1004) USER_C_ID = Client user ID (1000) GROUP_C_ID = Client user's group ID (100)
-
-you get the client user's ID and group ID with
-
-```
-$ id USERNAME
-
-```
-
-this is the final SSHFS mount row in `/etc/fstab`;
-
-```
-pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.automount,_netdev,user,idmap=user,transform_symlinks,identityfile=/home/pete/.ssh/id_rsa,allow_other,default_permissions,uid=1004,gid=1000,umask=0   0 0
-
-```
-
-8\. If you know another issue for this checklist please add it the list above.
-
 ### Connection reset by peer
 
 *   If you are trying to access the remote system with a hostname, try using its IP address, as it can be a domain name solving issue. Make sure you edit `/etc/hosts` with the server details.

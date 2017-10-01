@@ -19,7 +19,7 @@ You have to edit dwm's `config.h` and recompile/reinstall dwm to properly accoun
 Get the latest [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for dwm:
 
 ```
-# abs community/dwm
+# asp export community/dwm
 
 ```
 

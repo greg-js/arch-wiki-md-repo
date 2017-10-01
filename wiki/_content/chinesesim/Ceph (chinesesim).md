@@ -41,8 +41,6 @@ The official documentation [states](http://ceph.com/docs/master/install/#deploy-
 
 可以从[官方源](/index.php/Official_repositories "Official repositories")安装[ceph](https://www.archlinux.org/packages/?name=ceph)。如果愿意冒险，也可以安装开发版的 [ceph-git](https://aur.archlinux.org/packages/ceph-git/)。
 
-[ceph-deploy](https://aur.archlinux.org/packages/ceph-deploy/)提供了 Ceph 的官方部署工具。
-
 存储集群的所有节点都要安装 [ceph](https://www.archlinux.org/packages/?name=ceph)。
 
 ### NTP 客户端

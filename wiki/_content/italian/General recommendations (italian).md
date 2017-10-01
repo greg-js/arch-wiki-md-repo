@@ -1,3 +1,9 @@
+Articoli correlati
+
+*   [FAQ (Italiano)](/index.php/FAQ_(Italiano) "FAQ (Italiano)")
+*   [Beginners' Guide (Italiano)](/index.php/Beginners%27_Guide_(Italiano) "Beginners' Guide (Italiano)")
+*   [List of Applications (Italiano)](/index.php/List_of_Applications_(Italiano) "List of Applications (Italiano)")
+
 Questa pagina è un indice ragionato di altri articoli e di informazioni rilevanti. Diverse pagine qui elencate richiedono l'utilizzo di [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)") per installare pacchetti addizionali presenti nei [repositori ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"), e di altri non ufficiali da [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") per mezzo di [makepkg](/index.php/Makepkg "Makepkg") con l'aiuto opzionale di un [AUR helper](/index.php/AUR_helper "AUR helper"). Quindi il concetto di gestione dei pacchetti deve essere perfettamente compreso prima di continuare.
 
 Si assume che i lettori abbiano letto e seguito la [Guida per Principianti](/index.php/Guida_per_Principianti "Guida per Principianti") oppure la [Guida Ufficiale all'Installazione](/index.php/Guida_Ufficiale_all%27Installazione "Guida Ufficiale all'Installazione") per installare un sistema Arch Linux base. Inoltre ci sono diversi altri pacchetti software normalmente considerati fondamentali per un sistema completo e funzionale. Ad esempio, qualora si desideri un interfaccia grafica, si legga prima la pagina dedicata a [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)"), mentre chi fosse interessato alla possibilità di stampare consideri di leggere anche la pagina su [Cups](/index.php/CUPS_(Italiano) "CUPS (Italiano)"). Tutti gli utenti possono familiarizzare con la struttura del file system leggendo [Filesystem Hierarchy Standard](/index.php/Filesystem_Hierarchy_Standard_(Italiano) "Filesystem Hierarchy Standard (Italiano)").

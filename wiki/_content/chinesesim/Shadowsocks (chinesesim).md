@@ -127,7 +127,7 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 
 *   转换为http代理
 
-直接指走socks代理似乎不能远程dns解析，这未必是用户的期望（尤其是在浏览器上使用时），可使用privoxy等软件转化socks代理为http代理。可使用[privoxy](https://www.archlinux.org/packages/?name=privoxy)和[Squid](https://www.archlinux.org/packages/?name=Squid)。 以[Privoxy](/index.php/Privoxy "Privoxy")为例，编辑privoxy配置文件，添加socks5转发（不要漏下1080后面的点)：
+直接指走socks代理似乎不能远程dns解析，这未必是用户的期望（尤其是在浏览器上使用时），可使用privoxy等软件转化socks代理为http代理。可使用[privoxy](https://www.archlinux.org/packages/?name=privoxy)和[squid](https://www.archlinux.org/packages/?name=squid)。 以[Privoxy](/index.php/Privoxy "Privoxy")为例，编辑privoxy配置文件，添加socks5转发（不要漏下1080后面的点)：
 
 ```
  forward-socks5 / 127.0.0.1:1080 .

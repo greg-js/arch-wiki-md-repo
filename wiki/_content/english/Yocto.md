@@ -6,7 +6,7 @@ For this guide the focus will be on YP Core 1.8 (Fido) and newer.
 
 **Note:** Arch Linux is not validated to work with Yocto/Poky.
 
-**Note:** From YP Core 2.2 (Morty) and newer [python3](https://www.archlinux.org/packages/?name=python3) is supported
+**Note:** From YP Core 2.2 (Morty) and newer python3 is supported
 
 ## Contents
 
@@ -17,7 +17,7 @@ For this guide the focus will be on YP Core 1.8 (Fido) and newer.
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [git](https://www.archlinux.org/packages/?name=git), [diffstat](https://www.archlinux.org/packages/?name=diffstat), [unzip](https://www.archlinux.org/packages/?name=unzip), [texinfo](https://www.archlinux.org/packages/?name=texinfo), [python3](https://www.archlinux.org/packages/?name=python3), [chrpath](https://www.archlinux.org/packages/?name=chrpath), [wget](https://www.archlinux.org/packages/?name=wget), [xterm](https://www.archlinux.org/packages/?name=xterm), [sdl](https://www.archlinux.org/packages/?name=sdl), [socat](https://www.archlinux.org/packages/?name=socat) and [cpio](https://www.archlinux.org/packages/?name=cpio) packages.
+[Install](/index.php/Install "Install") the [git](https://www.archlinux.org/packages/?name=git), [diffstat](https://www.archlinux.org/packages/?name=diffstat), [unzip](https://www.archlinux.org/packages/?name=unzip), [texinfo](https://www.archlinux.org/packages/?name=texinfo), [python](https://www.archlinux.org/packages/?name=python), [chrpath](https://www.archlinux.org/packages/?name=chrpath), [wget](https://www.archlinux.org/packages/?name=wget), [xterm](https://www.archlinux.org/packages/?name=xterm), [sdl](https://www.archlinux.org/packages/?name=sdl), [socat](https://www.archlinux.org/packages/?name=socat) and [cpio](https://www.archlinux.org/packages/?name=cpio) packages.
 
 **Note:** For the 64-bit version of Arch Linux, [Install](/index.php/Install "Install") the [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) package from the official [multilib](/index.php/Multilib "Multilib") repository.
 

@@ -1,3 +1,8 @@
+Related articles
+
+*   [ATI (Русский)](/index.php/ATI_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ATI (Русский)")
+*   [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)")
+
 Владельцы видеокарт ATI/AMD имеют выбор между проприетарным ([catalyst](https://aur.archlinux.org/packages/catalyst/)) и [открытым драйвером](/index.php/ATI_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ATI (Русский)") ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)). Эта статья описывает проприетарный драйвер.
 
 Пакет с драйвером AMD для Linux, *catalyst*, раньше назывался *fglrx* (**F**ire**GL** и **R**adeon **X**). Было изменено только имя пакета, в то время как модуль ядра сохраняет исходное имя *fglrx.ko*. Таким образом, любое упоминание о fglrx ниже, является отсылкой к *модулю ядра*, а **не к пакету**.

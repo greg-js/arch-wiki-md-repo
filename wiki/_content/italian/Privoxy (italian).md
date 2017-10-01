@@ -1,3 +1,8 @@
+Articoli correlati
+
+*   [Tor](/index.php/Tor "Tor")
+*   [Polipo](/index.php/Polipo "Polipo")
+
 Ci potrebbero essere delle situazioni in cui vorresti avere un completo anonimato mentre usi Internet. Un modo per averlo è usare Tor e Privoxy.
 
 ## Contents

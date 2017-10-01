@@ -2,6 +2,7 @@ Related articles
 
 *   [Dnsmasq](/index.php/Dnsmasq "Dnsmasq")
 *   [Lighttpd](/index.php/Lighttpd "Lighttpd")
+*   [Linux_Containers](/index.php/Linux_Containers "Linux Containers")
 *   [Nginx](/index.php/Nginx "Nginx")
 *   [OpenVPN](/index.php/OpenVPN "OpenVPN")
 
@@ -144,7 +145,14 @@ push "dhcp-option DNS xxx.xxx.xxx.xxx"
 
 ```
 
-**Note:** This should be the only modification needed.
+If it still doesn't work, try creating a file `/etc/dnsmasq.d/00-openvpn.conf` with the following contents:
+
+```
+interface=tun0
+
+```
+
+This may be necessary to make `dnsmasq` listen on `tun0`.
 
 ## Pi-hole Standalone
 

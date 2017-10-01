@@ -1,3 +1,11 @@
+相关文章
+
+*   [Kernel modules (简体中文)](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)")
+*   [Compile kernel module](/index.php/Compile_kernel_module "Compile kernel module")
+*   [Kernel Panics (简体中文)](/index.php/Kernel_Panics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel Panics (简体中文)")
+*   [Linux-ck (简体中文)](/index.php/Linux-ck_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Linux-ck (简体中文)")
+*   [sysctl](/index.php/Sysctl "Sysctl")
+
 **翻译状态：** 本文是英文页面 [Kernels](/index.php/Kernels "Kernels") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-06-01，点击[这里](https://wiki.archlinux.org/index.php?title=Kernels&diff=0&oldid=477606)可以查看翻译后英文页面的改动。
 
 来自 [Wikipedia](https://en.wikipedia.org/wiki/Kernel_(computing) "wikipedia:Kernel (computing)"):

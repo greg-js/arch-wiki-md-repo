@@ -1,3 +1,8 @@
+Related articles
+
+*   [Thunderbird/Enigmail](/index.php/Thunderbird/Enigmail "Thunderbird/Enigmail")
+*   [Firefox](/index.php/Firefox "Firefox")
+
 [Mozilla Thunderbird](https://www.mozilla.org/thunderbird/) is an open source email, news, and chat client developed by the [Mozilla Foundation](https://www.mozilla.org/).
 
 ## Contents
@@ -89,7 +94,7 @@ Thunderbird can be extensively configured in *Edit > Preferences > Advanced > Ge
 
 **Note:** Since version 24 the `network.protocol-handler.app.*` keys have no effect and will not be able to set the default browser.
 
-Recent versions of Thunderbird use the default browser as defined by the [system MIME settings](/index.php/Default_applications "Default applications"). This is commonly modified by the Gnome Control Center (*Gnome Control Center > Details > Default Applications > Web*) (available in: [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)).
+Thunderbird uses the default browser as defined by the [system MIME settings](/index.php/Default_applications "Default applications"). This is commonly modified by the Gnome Control Center (*Gnome Control Center > Details > Default Applications > Web*) (available in: [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)).
 
 This can be overridden in the [#Config Editor](#Config_Editor) by searching for `network.protocol-handler.warn-external`.
 

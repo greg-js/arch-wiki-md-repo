@@ -9,7 +9,7 @@ Related articles
 
 *   [1 Installation](#Installation)
 *   [2 Starting Syncthing](#Starting_Syncthing)
-    *   [2.1 Run binary](#Run_binary)
+    *   [2.1 Run Syncthing](#Run_Syncthing)
     *   [2.2 System service](#System_service)
     *   [2.3 User service](#User_service)
     *   [2.4 Syncthing-GTK](#Syncthing-GTK)
@@ -31,9 +31,9 @@ Synchronization by *inotify* can be added with either the [syncthing-inotify](ht
 
 ## Starting Syncthing
 
-**Tip:** You can run multiple copies of syncthing, but only one instance per user as syncthing locks the database to it. Check logs for errors related to locked database.
+**Note:** You can run multiple copies of syncthing, but only one instance per user as syncthing locks the database to it. Check logs for errors related to locked database.
 
-### Run binary
+### Run Syncthing
 
 Run the `syncthing` binary manually from a terminal.
 
@@ -89,20 +89,20 @@ Increase the default `fs.inotify.max_user_watches` value to prevent errors like 
 
 ### Run a Relay
 
-Since version 0.12 Syncthing has the ability to connect two devices via a relay when there exists no direct path between them. There is a default set of relays that is used out of the box. Relayed connections are encrypted in the usual manner, end to end, so the relay has no more insight into the connection than any other random eavesdropper on the internet [[1]](https://forum.syncthing.net/t/syncthing-v0-12-beryllium-bedbug-release-notes-v0-12-0-beta1/5480?u=rumpelsepp). To run a relay install [syncthing-relaysrv](https://www.archlinux.org/packages/?name=syncthing-relaysrv), then [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `syncthing-relaysrv.service` service.
+Syncthing has the ability to connect two devices via a [relay](https://docs.syncthing.net/users/relaying.html) when it is not possible to establish a direct connection between them. Relayed connections are end-to-end encrypted in the usual manner, so the relay has no insight into the connection other than the knowledge of the IP addresses and device IDs.
 
-There is also a git version in the [AUR](/index.php/AUR "AUR"). More information about the [syncthing-relaysrv-git](https://aur.archlinux.org/packages/syncthing-relaysrv-git/) package are available in the [Syncthing forum](https://forum.syncthing.net/t/syncthing-relaysrv-for-arch-linux/5862).
-
-Per default the relay joins the [Syncthing relay pool](https://relays.syncthing.net/) and is publicy available. Rate limiting and other options can be configured via command line flags (check `syncthing-relaysrv -help`). To edit the command line flags just create a [drop-in snippet](/index.php/Systemd#Drop-in_files "Systemd") for `syncthing-relaysrv.service` and replace the `ExecStart` directive:
+Anyone can run a [relay server](https://docs.syncthing.net/users/strelaysrv.html) and it will automatically join the [Syncthing relay pool](https://relays.syncthing.net/) and be available to all Syncthing's users. To run your own relay, [install](/index.php/Install "Install") [syncthing-relaysrv](https://www.archlinux.org/packages/?name=syncthing-relaysrv) and [Start/Enable](/index.php/Systemd#Using_units "Systemd") `syncthing-relaysrv.service`. Rate limiting and other options can be configured via the command line. These options can be set in the `ExecStart` directive of the service [drop-in file](/index.php/Systemd#Drop-in_files "Systemd") as follows:
 
  `/etc/systemd/system/syncthing-relaysrv.service.d/override.conf` 
 ```
 [Service]
 ExecStart=
-ExecStart=/usr/bin/syncthing-relaysrv FLAGS
+ExecStart=/usr/bin/syncthing-relaysrv -global-rate 500000 -provided-by relayprovidername
 ```
 
-A traffic statistics page is available at port 22070, e.g. [http://78.47.248.86:22070/status](http://78.47.248.86:22070/status).
+**Note:** The relay listens by default to port 22067 for data and 22070 for service status (used for public statistics). They can be respectively overridden with the `-listen` and `-status-srv` options. These ports should therefore be open for TCP connections.
+
+**Tip:** The traffic statistics of a particular relay are accessible by default on port 22070, e.g. [http://108.28.183.249:22070/status](http://108.28.183.249:22070/status)
 
 ### Stop journal spam
 
@@ -117,9 +117,9 @@ ExecStart=/bin/bash -c 'set -o pipefail; /usr/bin/syncthing -no-browser -no-rest
 
 ### Discovery Server
 
-The Syncthing Discovery Server is available in the AUR under [syncthing-discosrv](https://aur.archlinux.org/packages/syncthing-discosrv/). Documentation is provided [here](https://docs.syncthing.net/users/stdiscosrv.html).
+The Syncthing Discovery Server is available in the AUR under [syncthing-discosrv](https://aur.archlinux.org/packages/syncthing-discosrv/). The official documentation is provided [here](https://docs.syncthing.net/users/stdiscosrv.html).
 
-Note, that the discovery server requires certificates to run, which should ideally be placed in `/var/discosrv`, and the user/group `syncthing` needs permissions to able to read the certificate files. Currently, you will need to edit the systemd unit file to correctly point to the certificates (as well as any other configuration changes you want to undertake, see [list](https://docs.syncthing.net/users/stdiscosrv.html#configuring)).
+Note that the discovery server requires certificates to run, which should ideally be placed in `/var/discosrv`. The user/group `syncthing` needs permissions to be able to read the certificate files. You need to edit the systemd unit file to correctly point to the certificates (and to undertake any other configuration change you may want, see [list](https://docs.syncthing.net/users/stdiscosrv.html#configuring)).
 
  `/usr/lib/systemd/system/syncthing-discosrv.service` 
 ```
@@ -143,13 +143,13 @@ NoNewPrivileges=true
 WantedBy=multi-user.target
 ```
 
-To point the client at your discovery server, change the `Global Discovery Servers` variable under Settings, to point to `https://yourserver:8443/` (default port) or whatever port you have reconfigured to. The variable takes a comma-seperated list of discovery servers, it is possible to include multiple ones, including the default one.
+To point the client to your discovery server, change the `Global Discovery Servers` variable under Settings to `https://yourserver:8443/` (default port) or whatever port you have reconfigured to. The variable takes a comma-separated list of discovery servers. It is possible to include multiple ones, including the default one.
 
-If you are using self-signed certificates, the client will refuse to connect unless you append the discovery server ID to its domain. The ID is printed to stdout upon launching the discovery server. Amend the Global Discovery Servers entry to add the ID: `https://yourserver.com:8443/?id=AAAAAAA-BBBBBBB-CCCCCCC-DDDDDDD-EEEEEEE-FFFFFFF-GGGGGGG-HHHHHHH`.
+If you are using self-signed certificates, the client refuses to connect unless you append the discovery server ID to its domain. The ID is printed to stdout upon launching the discovery server. Amend the *Global Discovery Servers* entry to add the ID: `https://yourserver.com:8443/?id=AAAAAAA-BBBBBBB-CCCCCCC-DDDDDDD-EEEEEEE-FFFFFFF-GGGGGGG-HHHHHHH`.
 
 ### Run in VirtualBox
 
-It is possible to have Syncthing connect both locally and globally within a [VirtualBox](/index.php/VirtualBox "VirtualBox") virtual machine keeping its network adapter in standard NAT mode (rather than switching to bridged networking attached to the host computer's adapter).
+It is possible to have Syncthing connect both locally and globally within a [VirtualBox](/index.php/VirtualBox "VirtualBox") virtual machine keeping its network adapter in the standard NAT mode (rather than switching to bridged networking attached to the host computer's adapter).
 
 To achieve this, Syncthing should use a port in the VM different from the port it uses on the host. If the default 22000 port is used by the host for listening, one could use 22001 in the VM. This is carried out by setting Syncthing's [Sync Protocol Listen Addresses](https://docs.syncthing.net/users/config.html#listen-addresses) to `tcp://:22001` in the VM and by opening the corresponding port of the virtual machine: the 22001/TCP host's port should be forwarded to the guest's same port.
 

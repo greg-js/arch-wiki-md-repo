@@ -1,3 +1,11 @@
+Ссылки по теме
+
+*   [Модули ядра](/index.php/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D0%B8_%D1%8F%D0%B4%D1%80%D0%B0 "Модули ядра")
+*   [Compile kernel module](/index.php/Compile_kernel_module "Compile kernel module")
+*   [Kernel Panics](/index.php/Kernel_Panics "Kernel Panics")
+*   [Linux-ck (Русский)](/index.php/Linux-ck_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Linux-ck (Русский)")
+*   [sysctl](/index.php/Sysctl "Sysctl")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Kernels](/index.php/Kernels "Kernels"). Дата последней синхронизации: 29 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Kernels&diff=0&oldid=428531).
 
 Из [Wikipedia](https://ru.wikipedia.org/wiki/Ядро_операционной_системы):

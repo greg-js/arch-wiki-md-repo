@@ -40,6 +40,7 @@ List here articles that only exist in non-English languages, or that exist in En
 | [Internet key Momo Design (Italiano)](/index.php/Internet_key_Momo_Design_(Italiano) "Internet key Momo Design (Italiano)") | Italian |
 | [IPsec-based VPN Server (简体中文)](/index.php/IPsec-based_VPN_Server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "IPsec-based VPN Server (简体中文)") | Chinese (Simplified) | See also [strongSwan](/index.php/StrongSwan "StrongSwan") and [Openswan L2TP/IPsec VPN client setup](/index.php/Openswan_L2TP/IPsec_VPN_client_setup "Openswan L2TP/IPsec VPN client setup") |
 | [Kile and TeX Live (Español)](/index.php/Kile_and_TeX_Live_(Espa%C3%B1ol) "Kile and TeX Live (Español)") | Spanish |
+| [Leanote (简体中文)](/index.php/Leanote_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Leanote (简体中文)") | Chinese (Simplified) |
 | [Media Center (Italiano)](/index.php/Media_Center_(Italiano) "Media Center (Italiano)") | Italian |
 | [Mounting external storage with correct character encoding in Gnome (Русский)](/index.php/Mounting_external_storage_with_correct_character_encoding_in_Gnome_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mounting external storage with correct character encoding in Gnome (Русский)") | Russian | in Russian only |
 | [MSI GT72 2QD Dominator (Español)](/index.php/MSI_GT72_2QD_Dominator_(Espa%C3%B1ol) "MSI GT72 2QD Dominator (Español)") | Spanish |

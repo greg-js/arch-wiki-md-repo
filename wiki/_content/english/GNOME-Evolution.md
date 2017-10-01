@@ -20,6 +20,7 @@
     *   [10.1 Changing cipher settings](#Changing_cipher_settings)
 *   [11 Troubleshooting](#Troubleshooting)
     *   [11.1 Failing to Synchronize with Server](#Failing_to_Synchronize_with_Server)
+    *   [11.2 Stuck at 'saving user interface' on startup](#Stuck_at_.27saving_user_interface.27_on_startup)
 *   [12 References](#References)
 
 ## Installation
@@ -290,6 +291,10 @@ If after some system upgrade one gets no accounts in Evolution then all is not l
 If you change internet connections, such as switching VPN or restart X, Evolution may have problems connecting to the mail servers. You would see it endlessly trying to connect in the status bar at the bottom.
 
 A possible solution is to switch to "Work Offline" select "Don't Synchronize” in the pop-up. Then after a minute has passed, go back to On-line mode. It should now have no problem fetching from the mail servers.
+
+### Stuck at 'saving user interface' on startup
+
+This is a known problem and relates to glibc not Evolution hence cannot be fixed. To workaround the problem, before Evolution is closed put the application in 'offline mode' either by clicking on plug and socket icon (in bottom left) or from File menu > Work offline. Next time Evolution is run, put it to online mode to sync all emails. Problem of being stuck at 'saving user interface' will not repeat.
 
 ## References
 

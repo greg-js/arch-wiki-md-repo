@@ -2,7 +2,7 @@ This **Laptop main page** contains links to article (sections) needed for config
 
 To gain an overview of the reported/achieved Linux hardware compatibility of a particular laptop model, see the results per vendor of below subpages.
 
-| **Laptop main page** |
+| <a class="mw-selflink selflink">Laptop main page</a> |
 | [Acer](/index.php/Laptop/Acer "Laptop/Acer") - [Apple](/index.php/Laptop/Apple "Laptop/Apple") - [Asus](/index.php/Laptop/Asus "Laptop/Asus") - [Compaq](/index.php/Laptop/Compaq "Laptop/Compaq") (discontinued) - [Dell](/index.php/Laptop/Dell "Laptop/Dell") - [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") - [HP](/index.php/Laptop/HP "Laptop/HP") - [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") - [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") - [Sony](/index.php/Laptop/Sony "Laptop/Sony") - [Toshiba](/index.php/Laptop/Toshiba "Laptop/Toshiba") - [Other](/index.php/Laptop/Other "Laptop/Other") |
 
 If there are laptop model specific instructions, the respective article is crosslinked in the first column of the vendor subpages. In case the model is not listed in the vendor table, existing instructions of similar models via the [Category:Laptops](/index.php/Category:Laptops "Category:Laptops") vendor subcategory may help.
@@ -49,7 +49,7 @@ Battery state can be read using ACPI utilities from the terminal. ACPI command l
 
 If your battery sends events to [udev](/index.php/Udev "Udev") whenever it (dis)charges by 1%, you can use this udev rule to automatically hibernate the system when battery level is critical, and thus prevent all unsaved work from being lost.
 
-**Note:** Not all batteries report discharge events. Test by running `udevadm monitor --property` while on battery and see if any events are reported. You should wait at least 1% drop. If no events are reported and `/sys/class/power_supply/BAT0/alarm` is non-zero then the battery will likely trigger an event when `BAT0/energy_now` drops below the alarm value, and the udev rule will work as long as the percentage math works out.
+**Note:** Not all batteries report discharge events. Test by running `udevadm monitor --property` while on battery and see if any events are reported. You should wait at least 1% drop. If no events are reported and `/sys/class/power_supply/BAT0/alarm` is non-zero then the battery will likely trigger an event when `BAT0/energy_now` drops below the alarm value, and the udev rule will work as long as the percentage math works out. Some laptops have an option for this disabled in BIOS by default.
  `/etc/udev/rules.d/99-lowbat.rules` 
 ```
 # Suspend the system when battery level drops to 5% or lower
@@ -113,7 +113,7 @@ For example, to disable waking from suspend (S3) on opening the lid, run:
 
 ```
 
-This change can be made permanent with [tmpfiles.d(5)](http://man7.org/linux/man-pages/man5/tmpfiles.d.5.html):
+This change can be made permanent with [tmpfiles.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5):
 
  `/etc/tmpfiles.d/disable-lid-wakeup.conf`  `w /proc/acpi/wakeup - - - - LID` 
 

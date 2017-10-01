@@ -51,6 +51,7 @@
 | [Disk encryption (Español)](/index.php/Disk_encryption_(Espa%C3%B1ol) "Disk encryption (Español)") | Seguridad/encriptación discos | `2015-06` |
 | [Display manager (Español)](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") | GUI | `2013-09` |
 | [dm-crypt (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)") | Seguridad/encriptación sistema archivos | `2015-06` |
+| [dm-crypt/Drive preparation (Español)](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol) "Dm-crypt/Drive preparation (Español)") | Seguridad/encriptación sistema archivos | `2017-09` |
 | [dm-crypt/Encrypting an entire system (Español)](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting an entire system (Español)") | Seguridad/encriptación sistema archivos | `2015-06` |
 | [DNSCrypt (Español)](/index.php/DNSCrypt_(Espa%C3%B1ol) "DNSCrypt (Español)") | Encriptación tráfico DNS | `2014-09` |
 | [dnsmasq (Español)](/index.php/Dnsmasq_(Espa%C3%B1ol) "Dnsmasq (Español)") | Información | `2014-09` |

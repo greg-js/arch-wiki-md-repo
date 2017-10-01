@@ -230,3 +230,4 @@ This will set you alias as a persistent fish shell function. if you wish to see 
 
 *   [http://fishshell.com/](http://fishshell.com/) - Home page
 *   [http://fishshell.com/docs/current/index.html](http://fishshell.com/docs/current/index.html) - Documentation
+*   [http://hyperpolyglot.org/unix-shells](http://hyperpolyglot.org/unix-shells) - Shell grammar correspondence table

@@ -13,7 +13,7 @@ Install the [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-
 If the following command does not list any module after you installed [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms),
 
 ```
-$ lsmod | grep wireguard
+$ modprobe wireguard && lsmod | grep wireguard
 
 ```
 

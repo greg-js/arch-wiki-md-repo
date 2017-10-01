@@ -344,4 +344,4 @@ fwupd is a simple daemon to allow session software to update device firmware on 
 
 Large vendors including Dell and Logitech use this way to distribute firmware updates to Linux.
 
-A list of hardware currently available in stable tree can be viewed [here](https://secure-lvfs.rhcloud.com/lvfs/devicelist).
+A list of hardware currently available in stable tree can be viewed [here](https://fwupd.org/lvfs/devicelist).

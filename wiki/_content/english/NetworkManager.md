@@ -175,7 +175,20 @@ killall nm-applet
 
 When you close the *stalonetray* window, it closes `nm-applet` too, so no extra memory is used once you are done with network settings.
 
-**Tip:** The applet can show notifications for events such as connecting to or disconnecting from a WiFi network. For these notifications to display, ensure that you have a notification server installed - see [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications"). If you use the applet without a notification server, you might see some messages in stdout/stderr however these can be safely ignored.
+The applet can show notifications for events such as connecting to or disconnecting from a WiFi network. For these notifications to display, ensure that you have a notification server installed - see [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications"). If you use the applet without a notification server, you might see some messages in stdout/stderr, and the app might hang. See [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=788313).
+
+In order to run `nm-applet` with such notifications disabled, start the applet with the following command:
+
+```
+$ nm-applet --no-agent
+
+```
+
+**Tip:** `nm-applet` might be started automatically with a [autostart desktop file](/index.php/Desktop_entries#Autostart "Desktop entries"), to add the --no-agent option modify the Exec line there, i.e.
+```
+Exec=nm-applet --no-agent
+
+```
 
 #### Appindicator
 
@@ -875,7 +888,7 @@ wifi.scan-rand-mac-address=no
 
 ```
 
-**Tip:** Disabling MAC address randomization may be needed for stable connection. See [[2]](https://bbs.archlinux.org/viewtopic.php?id=220101).
+**Tip:** Disabling MAC address randomization may be needed for stable connection. See [[3]](https://bbs.archlinux.org/viewtopic.php?id=220101).
 
 MAC randomization for network connections can be set to different modes for both wireless and ethernet interfaces. See [the Gnome blog post](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) for more details on the different modes.
 

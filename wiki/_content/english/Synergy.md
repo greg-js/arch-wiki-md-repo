@@ -27,6 +27,8 @@ Redirecting the mouse and keyboard is as simple as moving the mouse off the edge
     *   [6.3 Keyboard mapping](#Keyboard_mapping)
     *   [6.4 No cursor in Gnome](#No_cursor_in_Gnome)
     *   [6.5 Client is returning "failed to verify server certificate fingerprint"](#Client_is_returning_.22failed_to_verify_server_certificate_fingerprint.22)
+    *   [6.6 Scroll Lock LED does not light](#Scroll_Lock_LED_does_not_light)
+    *   [6.7 Additional mouse buttons do not work in client](#Additional_mouse_buttons_do_not_work_in_client)
 *   [7 External links](#External_links)
 
 ## Installation
@@ -318,6 +320,8 @@ After=network.target
 
 [Service]
 ExecStart=/usr/bin/synergyc --no-daemon *server-name*
+Restart=always
+RestartSec=3
 
 [Install]
 WantedBy=default.target
@@ -417,6 +421,67 @@ This can be added to an init script or systemd unit:
 ### Client is returning "failed to verify server certificate fingerprint"
 
 You need to copy the content of server's "~/.synergy/SSL/Fingerprints/Local.txt" into client's "~/.synergy/SSL/Fingerprints/TrustedServers.txt".
+
+### Scroll Lock LED does not light
+
+When using Scroll Lock to lock to a client (or to enter relative mouse move mode), you may run into an issue with your keyboard's Scroll Lock LED not lighting. This can be solved by binding the `Scroll_Lock` key to an empty modifier key.
+
+First, find an empty modifier. In this case, mod3 is available:
+
+```
+ $ xmodmap
+ xmodmap:  up to 4 keys per modifier, (keycodes in parentheses):
+
+ shift       Shift_L (0x32),  Shift_R (0x3e)
+ lock        Caps_Lock (0x42)
+ control     Control_L (0x25),  Control_R (0x69)
+ mod1        Alt_L (0x40),  Alt_R (0x6c),  Meta_L (0xcd)
+ mod2        Num_Lock (0x4d)
+ mod3
+ mod4        Super_L (0x85),  Super_R (0x86),  Super_L (0xce),  Hyper_L (0xcf)
+ mod5        ISO_Level3_Shift (0x5c),  Mode_switch (0xcb)
+
+```
+
+Then, add the new mapping.
+
+```
+ $ xmodmap -e 'add mod3 = Scroll_Lock'
+ $ "echo "add mod3 = Scroll_Lock" >> ~/.Xmodmap
+
+```
+
+See [Xmodmap#Activating_the_custom_table](/index.php/Xmodmap#Activating_the_custom_table "Xmodmap") to have `~/.Xmodmap` loaded on login.
+
+After making this change, test the LED and screen locking. If you find that you need to press Scroll Lock twice to lock screens, enable `halfDuplexScrollLock` on all screens in `section: screens`.
+
+### Additional mouse buttons do not work in client
+
+If you find that additional mouse buttons (i.e. Mouse4/Mouse5) do not translate to a client, try adding the following to `section: options`:
+
+```
+ mousebutton(6) = mousebutton(4)
+ mousebutton(7) = mousebutton(5)
+
+```
+
+This will re-map the mouse keys to the proper number. If that does not fix the problem, remove the configuration, stop Synergy, and start it in the foreground with debug logging enabled:
+
+```
+ $ synergys -f -d DEBUG1
+
+```
+
+Then, move your cursor to the screen of the client with the issue. Click the non-functioning keys, and watch for log entries like this:
+
+```
+ [2017-09-30T14:56:45] DEBUG1: onMouseDown id=6
+ ...
+ [2017-09-30T14:56:46] DEBUG1: onMouseUp id=6
+
+```
+
+The `id=...` part will have the right number to use in `mousebutton(...)`
 
 ## External links
 

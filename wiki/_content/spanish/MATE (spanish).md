@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [GNOME (Español)](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)")
+
 Tomado de la [pagina de MATE](http://mate-desktop.org/):
 
 	*MATE Desktop Environment es la continuación de GNOME 2\. Proporciona un entorno de escritorio atractivo e intuitivo utilizando metáforas tradicionales para Linux y otros sistemas operativos Unix. MATE está [bajo desarrollo activo](https://github.com/mate-desktop) de añadir soporte para nuevas tecnologías, preservando una experiencia de escritorio tradicional.*

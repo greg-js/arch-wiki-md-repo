@@ -238,7 +238,7 @@ PKGBUILDs for some packages can be generated automatically.
 *   [Go](/index.php/Go "Go"): [go-makepkg](https://github.com/seletskiy/go-makepkg)
 *   [Haskell](/index.php/Haskell "Haskell"): [cblrepo](https://github.com/magthe/cblrepo)
 *   [Python](/index.php/Python "Python"): [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/), [PyPI2PKGBUILD](https://github.com/anntzer/pypi2pkgbuild)
-*   [Ruby](/index.php/Ruby "Ruby"): [gem2archAUR](https://aur.archlinux.org/packages/gem2archAUR/), [pacgem](https://aur.archlinux.org/packages/pacgem/)
+*   [Ruby](/index.php/Ruby "Ruby"): [gem2arch](https://aur.archlinux.org/packages/gem2arch/), [pacgem](https://aur.archlinux.org/packages/pacgem/)
 
 ## See also
 

@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [ATI (Español)](/index.php/ATI_(Espa%C3%B1ol) "ATI (Español)")
+*   [Xorg (Español)](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)")
+
 Los poseedores de tarjetas de video **ATI/AMD** tienen la opción de elegir entre el controlador propietario de ATI ([catalyst](https://aur.archlinux.org/packages/catalyst/)) y el [controlador de código abierto](/index.php/ATI_(Espa%C3%B1ol) "ATI (Español)") ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)). Este artículo trata sobre el driver propietario.
 
 El paquete del controlador catalyst de AMD para linux , era conocido anteriormente como *fglrx* (**F**ire**GL** y **R**adeon **X**). Solo el nombre del paquete ha cambiado, mientras que el módulo del kernel conserva su nombre original *fglrx.ko*. Por lo tanto, cualquier mención de fglrx en este artículo se refiere específicamente al *módulo del kernel*, **no al paquete**.

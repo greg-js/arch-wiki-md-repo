@@ -15,13 +15,13 @@ In spite of their scope, man pages are designed to be self-contained documents, 
 *   [3 Searching manuals](#Searching_manuals)
 *   [4 Page width](#Page_width)
 *   [5 Reading local man pages](#Reading_local_man_pages)
-    *   [5.1 Converting to browser-readable HTML](#Converting_to_browser-readable_HTML)
-        *   [5.1.1 mdocml](#mdocml)
+    *   [5.1 Conversion to HTML](#Conversion_to_HTML)
+        *   [5.1.1 mandoc](#mandoc)
         *   [5.1.2 man2html](#man2html)
         *   [5.1.3 man -H](#man_-H)
         *   [5.1.4 roffit](#roffit)
-    *   [5.2 Converting to PDF](#Converting_to_PDF)
-*   [6 Online Man Pages](#Online_Man_Pages)
+    *   [5.2 Conversion to PDF](#Conversion_to_PDF)
+*   [6 Online man pages](#Online_man_pages)
 *   [7 Noteworthy manpages](#Noteworthy_manpages)
 *   [8 See also](#See_also)
 
@@ -128,11 +128,11 @@ Instead of the standard interface, using browsers such as [lynx](https://www.arc
 *   [xorg-xman](https://www.archlinux.org/packages/?name=xorg-xman) provides a categorized look at man pages in [X](/index.php/X "X").
 *   The [GNOME](/index.php/GNOME "GNOME") Help Browser [yelp](https://www.archlinux.org/packages/?name=yelp) can be used via `yelp man:<name>`.
 
-### Converting to browser-readable HTML
+### Conversion to HTML
 
-#### mdocml
+#### mandoc
 
-Install [mdocml](https://aur.archlinux.org/packages/mdocml/) from [AUR](/index.php/AUR "AUR"). To convert a page, for example `free(1)`:
+Install the [mandoc](https://aur.archlinux.org/packages/mandoc/) package. To convert a page, for example `free(1)`:
 
 ```
 $ gunzip -c /usr/share/man/man1/free.1.gz | mandoc -Thtml -Ostyle=style.css 1> free.html
@@ -181,32 +181,32 @@ $ gunzip -c /usr/share/man/man1/free.1.gz | roffit > free.html
 
 ```
 
-### Converting to PDF
+### Conversion to PDF
 
 man pages have always been printable: they are written in troff, which is fundamentally a typesetting language. If you have ghostscript installed, converting a man page to PDF is actually very easy: `man -t <manpage> | ps2pdf - <pdf>`. [This google image search](https://www.google.com/search?q=manpage+pdf+troff&num=100&hl=en&prmd=imvns&source=lnms&tbm=isch&sa=X&ei=5BZpUI3oH6rI2AXvx4CoAw&ved=0CAoQ_AUoAQ&biw=1321&bih=1100) should give you an idea of what the result looks like; it may not be to everybody's liking.
 
 Caveats: Fonts are generally limited to Times at hardcoded sizes. There are no hyperlinks. Some man pages were specifically designed for terminal viewing, and won't look right in PS or PDF form.
 
-## Online Man Pages
+## Online man pages
 
 There are several online databases of man pages, including:
 
-*   [Man7.org.](http://man7.org/linux/man-pages/index.html) Upstream for Arch Linux's [man-pages](https://www.archlinux.org/packages/?name=man-pages).
-*   [*Arch Linux man pages*](https://manned.org/pkg/arch)
-*   [*Debian GNU/Linux man pages*](http://manpages.debian.net/)
-*   [*DragonFlyBSD manual pages*](http://leaf.dragonflybsd.org/cgi/web-man)
-*   [*FreeBSD Hypertext Man Pages*](http://www.freebsd.org/cgi/man.cgi)
-*   [*Linux and Solaris 10 Man Pages*](http://www.manpages.spotlynx.com/)
-*   [*Linux man pages at die.net*](http://linux.die.net/man/)
-*   [*NetBSD manual pages*](http://netbsd.gw.com/cgi-bin/man-cgi)
-*   [*Mac OS X Manual Pages*](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
-*   [*On-line UNIX manual pages*](http://unixhelp.ed.ac.uk/alphabetical/index.html)
-*   [*OpenBSD manual pages*](http://www.openbsd.org/cgi-bin/man.cgi)
-*   [*Plan 9 Manual — Volume 1*](http://man.cat-v.org/plan_9/)
-*   [*Inferno Manual — Volume 1*](http://man.cat-v.org/inferno/)
-*   [*Storage Foundation Man Pages*](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
-*   [*The UNIX and Linux Forums Man Page Repository*](http://www.unix.com/man-page/OpenSolaris/1/man/)
-*   [*Ubuntu Manpage Repository*](http://manpages.ubuntu.com/)
+*   [man7.org](http://man7.org/linux/man-pages/index.html). Upstream for Arch Linux's [man-pages](https://www.archlinux.org/packages/?name=man-pages).
+*   [Arch Linux man pages](https://manned.org/pkg/arch)
+*   [Debian GNU/Linux man pages](http://manpages.debian.net/)
+*   [DragonFlyBSD manual pages](http://leaf.dragonflybsd.org/cgi/web-man)
+*   [FreeBSD man pages](http://www.freebsd.org/cgi/man.cgi)
+*   [Linux and Solaris 10 man pages](http://www.manpages.spotlynx.com/)
+*   [Linux man pages at die.net](http://linux.die.net/man/)
+*   [NetBSD manual pages](http://netbsd.gw.com/cgi-bin/man-cgi)
+*   [Mac OS X manual pages](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
+*   [On-line UNIX manual pages](http://unixhelp.ed.ac.uk/alphabetical/index.html)
+*   [OpenBSD manual pages](http://www.openbsd.org/cgi-bin/man.cgi)
+*   [Plan 9 Manual — Volume 1](http://man.cat-v.org/plan_9/)
+*   [Inferno Manual — Volume 1](http://man.cat-v.org/inferno/)
+*   [Storage Foundation man pages](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
+*   [The UNIX and Linux forums man page repository](http://www.unix.com/man-page/OpenSolaris/1/man/)
+*   [Ubuntu manpage repository](http://manpages.ubuntu.com/)
 
 **Warning:** Some distributions provide patched or outdated man pages that differ from those provided by Arch. Exercise caution when using online man pages.
 

@@ -1,3 +1,10 @@
+Articoli correlati
+
+*   [ATI (Italiano)](/index.php/ATI_(Italiano) "ATI (Italiano)")
+*   [Intel (Italiano)](/index.php/Intel_(Italiano) "Intel (Italiano)")
+*   [NVIDIA (Italiano)](/index.php/NVIDIA_(Italiano) "NVIDIA (Italiano)")
+*   [Xorg (Italiano)](/index.php/Xorg_(Italiano) "Xorg (Italiano)")
+
 I possessori di schede video **ATI/AMD** possono scegliere tra i driver proprietari ATI ([Catalyst](https://aur.archlinux.org/packages/Catalyst/)) e i [driver opensource](/index.php/ATI_(Italiano) "ATI (Italiano)") ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)). Questo articolo tratta i driver proprietari.
 
 Conosciuti precedentemente come *fglrx*(**F**ire**GL** and **R**adeon **X**), ATI ha ribattezzato i suoi driver proprietari Linux, che sono ora noti come *Catalyst*. Attualmente solo il nome dei pacchetti è cambiato, mentre il modulo del kernel mantiene il nome originale *fglrx.ko*, perciò ogni riferimento a fglrx da qui in poi sarà specificatamente riferito al modulo del kernel, **non al pacchetto**.
