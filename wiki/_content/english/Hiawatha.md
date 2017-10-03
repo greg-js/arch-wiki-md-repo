@@ -1,20 +1,22 @@
-[Hiawatha](https://www.hiawatha-webserver.org/) is "an open source [web-server](https://en.wikipedia.org/wiki/Web_server "wikipedia:Web server") with security, easy to use and lightweight as the three key features. It supports among others [(Fast)](https://en.wikipedia.org/wiki/FastCGI "wikipedia:FastCGI")[CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface"), IPv6, URL rewriting and reverse proxy and has security features no other webserver has, like blocking [SQL injections](https://en.wikipedia.org/wiki/SQL_injection "wikipedia:SQL injection"), [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting "wikipedia:Cross-site scripting"), [CSRF](https://en.wikipedia.org/wiki/Cross-site_scripting "wikipedia:Cross-site scripting") and exploit attempts."
+[Hiawatha](https://www.hiawatha-webserver.org/) is an open source [web-server](https://en.wikipedia.org/wiki/Web_server "wikipedia:Web server") with security, ease of use and lightweight as its three key features. It supports among others [(Fast)](https://en.wikipedia.org/wiki/FastCGI "wikipedia:FastCGI")[CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface"), IPv6, URL rewriting and reverse proxy and has security features no other webserver has, like blocking [SQL injections](https://en.wikipedia.org/wiki/SQL_injection "wikipedia:SQL injection"), [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting "wikipedia:Cross-site scripting"), [CSRF](https://en.wikipedia.org/wiki/Cross-site_scripting "wikipedia:Cross-site scripting") and exploit attempts.
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Basic Setup](#Basic_Setup)
-    *   [2.2 CGI](#CGI)
-    *   [2.3 FastCGI](#FastCGI)
-        *   [2.3.1 PHP](#PHP)
-    *   [2.4 Reverse Proxy](#Reverse_Proxy)
-        *   [2.4.1 Ruby on Rails](#Ruby_on_Rails)
-        *   [2.4.2 Python FastCGI](#Python_FastCGI)
-    *   [2.5 SSL](#SSL)
-        *   [2.5.1 Let's Encrypt](#Let.27s_Encrypt)
-        *   [2.5.2 Server Name Indication](#Server_Name_Indication)
-    *   [2.6 Output Compression](#Output_Compression)
+    *   [2.1 Directory structure](#Directory_structure)
+    *   [2.2 Basic webserver setup](#Basic_webserver_setup)
+    *   [2.3 Normal CGI](#Normal_CGI)
+        *   [2.3.1 Interpreters for CGI scripts](#Interpreters_for_CGI_scripts)
+    *   [2.4 FastCGI](#FastCGI)
+        *   [2.4.1 PHP via FastCGI](#PHP_via_FastCGI)
+    *   [2.5 Reverse Proxy](#Reverse_Proxy)
+    *   [2.6 SSL/TLS](#SSL.2FTLS)
+        *   [2.6.1 Let's Encrypt](#Let.27s_Encrypt)
+            *   [2.6.1.1 Install](#Install)
+            *   [2.6.1.2 Obtain a certificate](#Obtain_a_certificate)
+            *   [2.6.1.3 Auto renewal](#Auto_renewal)
+        *   [2.6.2 Server Name Indication](#Server_Name_Indication)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -23,25 +25,51 @@
 
 ## Configuration
 
-### Basic Setup
+### Directory structure
 
-The Hiawatha configuration file is: `/etc/hiawatha/hiawatha.conf`. By default it should produce a 404 page.
+First, to give an overview of the overall directory structure of Hiawatha, we show below the hierarchy suggested by the default configuration:
 
-The default configuration file suggests `/srv/http/my-domain/public` as the document directory served. To test the installation, create a dummy file:
+	`/etc/hiawatha`
 
- `/srv/http/my-domain/public/index.html`  `Hello world!` 
+	program configuration files
 
-Edit the VIRTUAL HOSTS section in the config file to fit your needs.
+	`/etc/hiawatha/tls`
 
-Then [start/enable](/index.php/Start/enable "Start/enable") the `hiawatha.service` and point your browser to `my-domain`, where you should see the test page.
+	website TLS certificate
 
-A very good example configuration file is available at `/etc/hiawatha/hiawatha.conf.sample`.
+	`/srv/http/hiawatha`
+
+	root for the default blank website associated with the IP address
+
+	`/var/log/hiawatha`
+
+	log files for Hiawatha and for the default blank website associated with the IP address
+
+	`/srv/http/*my-domain*/public`
+
+	website root
+
+	`/srv/http/*my-domain*/log`
+
+	website log files
+
+### Basic webserver setup
+
+The Hiawatha configuration file is `/etc/hiawatha/hiawatha.conf`. A configuration file example `/etc/hiawatha/hiawatha.conf.sample` is provided.
+
+In the sample setup, there is one default website attached to the IP address of the domain, it is a dummy one directing to a blank html page. This is the page IP scanning robots and hackers will face.
+
+Then, the working webservers are defined with `VirtualHost` sections. Hiawatha can serve more than one webserver and each of these sections describes a different one. For initial testing purpose, you can create one `VirtualHost` for *my-domain* and save in its root directory `/srv/http/*my-domain*/public` a dummy `index.html` start file.
+
+Next, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `hiawatha.service` and point your browser to `http://*my-domain*`. At that stage you should be able to load the website start page.
 
 For further details see the official [HowTo](https://www.hiawatha-webserver.org/howto).
 
-### CGI
+**Note:** Hiawatha supports on-the-fly [gzip content encoding](https://en.wikipedia.org/wiki/HTTP_compression). It will gzip the requested file and cache it on disk in `/var/lib/hiawatha/gzipped`. Every time the file is requested again, the already gzipped version from disk will be used. It will notice (timestamp and size) file changes and the cache is cleared upon restart.
 
-[Common Gateway Interface](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface") (CGI) scripts work with Hiawatha out of box, you just need to enable the CGI module.
+### Normal CGI
+
+[Common Gateway Interface](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface") (CGI) scripts work with Hiawatha out of box, you just need to enable the CGI module as follows:
 
  `/etc/hiawatha/hiawatha.conf` 
 ```
@@ -51,64 +79,46 @@ VirtualHost {
 }
 ```
 
-Make sure your chosen programming language interpreter is installed. (i.e. for python you would install [python](https://www.archlinux.org/packages/?name=python))
+#### Interpreters for CGI scripts
+
+If you want to use CGI scripts in your website, you have to specify where Hiawatha can find the binary that can run those scripts. This is configured the following way by associating the interpreter with extensions:
+
+```
+CGIhandler = /usr/bin/php5-cgi:php,php5
+CGIhandler = /usr/bin/perl:pl
+CGIhandler = /usr/bin/python:py
+
+```
+
+**Note:** The corresponding language interpreters should be installed. For *php* you need both [php](https://www.archlinux.org/packages/?name=php) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi), for *python* [python](https://www.archlinux.org/packages/?name=python)).
 
 For further details see the official [HowTo](https://www.hiawatha-webserver.org/howto/cgi_and_fastcgi).
 
 ### FastCGI
 
-Install [fcgi](https://www.archlinux.org/packages/?name=fcgi). Now you have Hiawatha with fcgi support.
+[Install](/index.php/Install "Install") [fcgi](https://www.archlinux.org/packages/?name=fcgi).
 
-**Note:** There are two kinds of FastCGI applications:
+Hiawatha supports two different methods to send information to the FastCGI process: the webserver can communicate over either a *Unix domain socket* or a *TCP connection*. The communication type is defined in the `FastCGIServer` section via the field `ConnectTo`.
 
-*   The first one runs as a daemon and listens to a port for incoming connections from a webserver.
-*   The second one is started by the webserver and communicates with the webserver via pipes.
+#### PHP via FastCGI
 
-Hiawatha only supports the first kind!
+Install [php](https://www.archlinux.org/packages/?name=php), [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) (see also [PHP](/index.php/PHP "PHP") and [LAMP](/index.php/LAMP "LAMP")). [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `php-fpm.service`. You can check that [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) is working properly by executing `$ php-cgi --version`.
 
-#### PHP
-
-Install [php](https://www.archlinux.org/packages/?name=php), [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) (see also [PHP](/index.php/PHP "PHP") and [LAMP](/index.php/LAMP "LAMP")). Do not forget to [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `php-fpm.service`.
-
-Check that php-cgi is working `php-cgi --version`
-
-```
-PHP 7.0.2 (cgi-fcgi) (built: Jan  6 2016 11:51:03)
-Copyright (c) 1997-2015 The PHP Group
-Zend Engine v3.0.0, Copyright (c) 1998-2015 Zend Technologies
-
-```
-
-If you get a similar output then php is installed correctly.
-
-Add one of this `FastCGIserver` sections to your config file.
+To activate a FastCGI server with [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) using a *UNIX socket*, a `FastCGIserver` section is needed in the configuration file:
 
  `/etc/hiawatha/hiawatha.conf` 
 ```
-### The following fast CGI daemon requires php-fpm using a UNIX socket and TCP port, respectively.
-# ACTIVATE a FastCGI server for php  (using UNIX socket)
 FastCGIserver {
     FastCGIid = PHP7
     ConnectTo = /run/php-fpm/php-fpm.sock
     Extension = php
     SessionTimeout = 30
 }
-
-```
- `/etc/hiawatha/hiawatha.conf` 
-```
-### The following fast CGI daemon requires php-fpm using a UNIX socket and TCP port, respectively.
-# ACTIVATE a FastCGI server for php (using IP-address and TCP port)
-FastCGIserver {
-    FastCGIid = PHP5
-    ConnectTo = 127.0.0.1:9000
-    Extension = php
-    SessionTimeout = 30
-}
-
 ```
 
-To use the FastCGIserver ad the following to your config file
+To connect to the FastCGI process in *TCP* mode, use instead `ConnectTo = 127.0.0.1:9000` in the `FastCGIserver` section above to indicate the IP-address and TCP port Hiawatha should use to reach the FastCGI server.
+
+Eventually, to use the previously defined `FastCGIserver` with your webserver, just reference it as follows:
 
  `/etc/hiawatha/hiawatha.conf` 
 ```
@@ -118,7 +128,7 @@ VirtualHost {
 }
 ```
 
-Then [Reload](/index.php/Reload "Reload") the `hiawatha.service`.
+Then [restart](/index.php/Restart "Restart") the `hiawatha.service`.
 
 ### Reverse Proxy
 
@@ -136,28 +146,11 @@ VirtualHost {
 
 ```
 
-#### Ruby on Rails
+### SSL/TLS
 
-For some details see the FastCGI section of the [HowTo](https://www.hiawatha-webserver.org/howto/cgi_and_fastcgi).
+First, you need a *X.509 SSL/TLS* certificate to use TLS. If you don't, you can obtain one for free from [#Let's Encrypt](#Let.27s_Encrypt) certificate authority.
 
-#### Python FastCGI
-
-For some details see the FastCGI section of the [HowTo](https://www.hiawatha-webserver.org/howto/cgi_and_fastcgi).
-
-### SSL
-
-For SSL/TLS support add the following `Binding` to your con fig file. Then [Reload](/index.php/Reload "Reload") the `hiawatha.service`.
-
- `/etc/hiawatha/hiawatha.conf` 
-```
-Binding {
-    Port = 443
-    TLScertFile = /etc/hiawatha/serverkey.pem
-}
-
-```
-
-The order of the items in `serverkey.pem` is important. The order has to be as follows:
+The order of the items in the certificate file is important and has to be as follows:
 
  `serverkey.pem` 
 ```
@@ -175,56 +168,51 @@ The order of the items in `serverkey.pem` is important. The order has to be as f
 
 ```
 
+For SSL/TLS support, the following `Binding` section that configures Hiawatha to use a certificate for HTTPS connections should be added:
+
+ `/etc/hiawatha/hiawatha.conf` 
+```
+Binding {
+    Port = 443
+    TLScertFile = /etc/hiawatha/tls/serverkey.pem
+}
+```
+
+Once it is done, [reload](/index.php/Reload "Reload") the `hiawatha.service`.
+
 #### Let's Encrypt
 
-If you want to use Let's Encrypt with Hiawatha follow [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") (the manual way is recommended). Read Let's Encrypt [Getting Started](https://letsencrypt.org/getting-started/) for detailed instructions. Afterwards, create a Hiawatha certificate bundle:
+##### Install
+
+Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion. Download it into your preferred location:
+
+ `curl [https://www.hiawatha-webserver.org/files/letsencrypt.tar.gz](https://www.hiawatha-webserver.org/files/letsencrypt.tar.gz) | tar -xz` 
+
+Alternatively the script is also available in `extra/letsencrypt` within the [source tarball](https://github.com/hsleisink/hiawatha/archive/master.zip).
+
+##### Obtain a certificate
+
+The detailed instructions are described in `README.txt` and the tool configuration is defined in `letsencrypt.conf`. In short, there are two steps to get a certificate:
+
+1.  Register an account with the Let's Encrypt certificate authority (CA). An account key file will be created. `$ ./letsencrypt register` 
+2.  Request a website certificate: *www.my-domain.org* must be the first hostname of a `VirtualHost`. Any following webserver's hostname will be used as an alternative hostname for the certificate. The file `www.my-domain.org.pem` will be created. `$ ./letsencrypt request www.my-domain.org` 
+
+If the above succeeds, you can switch from the ***testing*** to the ***production*** CA by changing the LE_CA_HOSTNAME setting in the configuration file and go through the **two steps** above again.
+
+##### Auto renewal
+
+In order to automate the renewal of the certificate, schedule a cronjob (daily is recommended) for the root user that runs:
 
 ```
-# cd /etc/letsencrypt/live/domain.tld/
-# cat privkey.pem cert.pem chain.pem > /etc/hiawatha/certs/domain.tld/hiawatha.pem
-
-```
-
-and secure it:
-
-```
-# chmod 400 /etc/hiawatha/certs/domain.tld/hiawatha.pem
-
-```
-
-Change your Hiawatha TLScertFile paths accordingly in hiawatha.conf:
-
-```
-   Binding {                                                      
-      ...                                                         
-      RequireTLS = yes                                           
-      TLScertFile = /etc/hiawatha/certs/domain.tld/hiawatha.pem 
-      ...                                                         
-   }                                                              
-
-   VirtualHost {                                                  
-       ...                                                        
-       RequireTLS = yes                                           
-       TLScertFile = /etc/hiawatha/certs/domain.tld/hiawatha.pem
-       ...                                                        
-   }                                                              
+$ ./letsencrypt renew restart
 
 ```
 
-Then restart Hiawatha:
-
-```
-   # systemctl restart hiawatha.service
-
-```
-
-For see this [forum post](https://www.hiawatha-webserver.org/forum/topic/2085).
-
-For further details see the official [HowTo](https://www.hiawatha-webserver.org/howto/bindings).
+The certificate will be renewed whenever the certificate has less than 7 days to go and written to the directory indicated in `HIAWATHA_CERT_DIR`. The number of days before renewal is controlled via the `RENEWAL_EXPIRE_THRESHOLD` setting if necessary. A daily cronjob schedule is appropriate as no action will be taken anyway before the threshold is reached.
 
 #### Server Name Indication
 
-Hiawatha has support for SNI, which allows you to serve multiple TLS websites via one IP address. Just configure a TLS binding as explained above. For each virtual host that has its own SSL/TLS certificate, simply use the `TLScertFile` option inside the virtual host block. The certificate specified via Binding{} is used when a website is requested for which no virtual host has been defined.
+Hiawatha has support for SNI, which allows you to serve multiple TLS websites via one IP address. Just configure a TLS binding as explained above. For each virtual host that has its own SSL/TLS certificate, simply use the `TLScertFile` option inside the virtual host block. The certificate specified via `Binding{}` is used when a website is requested for which no virtual host has been defined.
 
  `/etc/hiawatha/hiawatha.conf` 
 ```
@@ -235,12 +223,6 @@ VirtualHost {
 }
 
 ```
-
-### Output Compression
-
-Hiawatha has no support for on-the-fly GZip content encoding! But Hiawatha goes its own way with preziped contend.
-
-For further details see the official [FAQ](https://www.hiawatha-webserver.org/faq).
 
 ## See also
 

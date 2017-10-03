@@ -5,7 +5,7 @@ Related articles
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 *   [EFISTUB](/index.php/EFISTUB "EFISTUB")
 
-rEFInd is a [UEFI](/index.php/UEFI "UEFI") boot manager capable of launching [EFISTUB](/index.php/EFISTUB "EFISTUB") kernels. It is a fork of the no-longer-maintained [rEFIt](http://refit.sourceforge.net/) and fixes many issues with respect to non-Mac UEFI booting. It is designed to be platform-neutral and to simplify booting multiple OSes.
+[rEFInd](http://www.rodsbooks.com/refind/) is a [UEFI](/index.php/UEFI "UEFI") boot manager capable of launching [EFISTUB](/index.php/EFISTUB "EFISTUB") kernels. It is a fork of the no-longer-maintained rEFIt and fixes many issues with respect to non-Mac UEFI booting. It is designed to be platform-neutral and to simplify booting multiple OSes.
 
 **Note:** In the entire article `*esp*` denotes the mountpoint of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") aka ESP.
 
@@ -115,7 +115,7 @@ See [refind-install(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/refind-install
 To use only hashes with *shim*, execute `refind-install` with the option `--shim */path/to/shim*`
 
 ```
-# refind-install --shim /usr/share/shim-signed/shim.efi
+# refind-install --shim /usr/share/shim-signed/shimx64.efi
 
 ```
 
@@ -128,7 +128,7 @@ To sign rEFInd with a Machine Owner Key, install [sbsigntools](https://www.archl
 Execute `refind-install` with the options `--shim */path/to/shim*` and `--localkeys`:
 
 ```
-# refind-install --shim /usr/share/shim-signed/shim.efi --localkeys
+# refind-install --shim /usr/share/shim-signed/shimx64.efi --localkeys
 
 ```
 
@@ -344,7 +344,7 @@ Follow [#Using PreLoader](#Using_PreLoader) and `HashTool.efi` will be placed rE
 
 #### MokManager
 
-Follow [#Using shim](#Using_shim) and `MokManager.efi` will be placed rEFInd's directory.
+Follow [#Using shim](#Using_shim) and MokManager will be placed rEFInd's directory.
 
 #### KeyTool
 

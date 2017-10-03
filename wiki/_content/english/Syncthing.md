@@ -31,11 +31,11 @@ Synchronization by *inotify* can be added with either the [syncthing-inotify](ht
 
 ## Starting Syncthing
 
-**Note:** You can run multiple copies of syncthing, but only one instance per user as syncthing locks the database to it. Check logs for errors related to locked database.
-
 ### Run Syncthing
 
 Run the `syncthing` binary manually from a terminal.
+
+**Note:** You can run multiple copies of syncthing, but only one instance per user as syncthing locks the database to it. Check logs for errors related to locked database.
 
 ### System service
 
@@ -57,9 +57,9 @@ When launching the syncthing daemon using both systemd and [syncthing-gtk](https
 
 ## Accessing the web-interface
 
-**Tip:** To access the configuration GUI for a remote computer, see the [FAQ](https://docs.syncthing.net/users/faq.html#how-do-i-access-the-web-gui-from-another-computer).
+When Syncthing is started, a web interface will be provided by default on [http://localhost:8384](http://localhost:8384).
 
-When Syncthing is started, a web interface will be provided by default on [http://localhost:8384](http://localhost:8384). If you started syncthing manually, it should open the admin page in your browser.
+**Tip:** To access the configuration GUI remotely, see the [FAQ](https://docs.syncthing.net/users/faq.html#how-do-i-access-the-web-gui-from-another-computer).
 
 ## Configuration
 
@@ -149,9 +149,11 @@ If you are using self-signed certificates, the client refuses to connect unless 
 
 ### Run in VirtualBox
 
-It is possible to have Syncthing connect both locally and globally within a [VirtualBox](/index.php/VirtualBox "VirtualBox") virtual machine keeping its network adapter in the standard NAT mode (rather than switching to bridged networking attached to the host computer's adapter).
+It is possible to have Syncthing connect both locally and globally within a [VirtualBox](/index.php/VirtualBox "VirtualBox") virtual machine keeping its network adapter in the standard [NAT](https://www.virtualbox.org/manual/ch06.html#network_nat) mode (as opposed to [bridged networking](https://www.virtualbox.org/manual/ch06.html#network_bridged) attached to the host computer's adapter).
 
-To achieve this, Syncthing should use a port in the VM different from the port it uses on the host. If the default 22000 port is used by the host for listening, one could use 22001 in the VM. This is carried out by setting Syncthing's [Sync Protocol Listen Addresses](https://docs.syncthing.net/users/config.html#listen-addresses) to `tcp://:22001` in the VM and by opening the corresponding port of the virtual machine: the 22001/TCP host's port should be forwarded to the guest's same port.
+To achieve this, Syncthing should use a port in the VM different from the port it uses on the host. If the default 22000 port is used by the host for listening, one could use 22001 in the VM. This is carried out by setting Syncthing's [Sync Protocol Listen Addresses](https://docs.syncthing.net/users/config.html#listen-addresses) to `tcp://:22001` in the VM and by opening the corresponding port of the virtual machine: the 22001/TCP host's port should be forwarded to the guest's same port:
+
+ `$ VBoxManage modifyvm myvmname --natpf1 "syncthing,tcp,,22001,,22001"` 
 
 In this setup, relaying should not be necessary: local devices will connect to the VM on port 22001 while global devices should be accessible as long as they have an open port.
 

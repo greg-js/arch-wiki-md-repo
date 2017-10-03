@@ -210,7 +210,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 
 ### Thunderbolt Firmware updates
 
-The thunderbolt controller in the laptop has an embedded firmware. The laptop ships with firmware version NVM 18, and the most recent available version from Dell's website is NVM 21\. If encountering compatibility problems with Thunderbolt accessories (such as the DA-200), the firmware may need to be updated. Dell maintains a [Github repository](https://github.com/dell/thunderbolt-nvm-linux) explaining the process to update the firmware, but unfortunately, does not provide the updated payload files. These can be extracted from the Windows firmware update files. Mainline support for the firmware update process is pending the inclusion of [these patches](https://github.com/01org/thunderbolt-software-kernel-tree/tree/networking) into the Linux kernel.
+The thunderbolt controller in the laptop has an embedded firmware. The laptop ships with firmware version NVM 18, and the most recent available version from Dell's website is NVM 21\. If encountering compatibility problems with Thunderbolt accessories (such as the DA-200), the firmware may need to be updated. Dell maintains a [Github repository](https://github.com/dell/thunderbolt-nvm-linux) explaining the process to update the firmware which also provides the updated payload files. Mainline support for the firmware update process is pending the inclusion of [these patches](https://github.com/01org/thunderbolt-software-kernel-tree/tree/networking) into the Linux kernel.
 
 Here is a short list of steps to update the Thunderbolt-Firmware on linux 4.12+ (use at your own risk):
 
@@ -238,18 +238,10 @@ Here is a short list of steps to update the Thunderbolt-Firmware on linux 4.12+ 
 
 ```
 
-*   Download the Intel_TBT3_FW_UPDATE_*.exe from Dell's website
-*   Unpack the exe with
+*   Flash the 9360 firmware from the thunderbolt-nvm-linux repository to a non active NVME memory spot
 
 ```
-# 7z x Intel_TBT3_FW_UPDATE_*.exe
-
-```
-
-*   Flash the 9360 firmware to a non active NVME memory spot
-
-```
-# dd if=0x075B_secure.bin of=/sys/bus/thunderbolt/devices/0-0/nvm_non_active0/nvmem
+# dd if=payloads/0x075B.bin of=/sys/bus/thunderbolt/devices/0-0/nvm_non_active0/nvmem
 
 ```
 

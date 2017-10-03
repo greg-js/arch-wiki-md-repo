@@ -64,7 +64,7 @@ You can also set these flags in `~/.cabal/config` so that it applies to all proj
 ```
 library-vanilla: False
 shared: True
-enable-executable-dynamic: True
+executable-dynamic: True
 
 ```
 

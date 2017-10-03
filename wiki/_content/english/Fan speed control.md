@@ -219,7 +219,7 @@ $ nbfc config -a "Asus Zenbook UX430UA"
 
 If there are no recommended models, go to [NBFC git repository](https://github.com/hirschmann/nbfc/tree/master/Configs) or `/opt/nbfc/Configs/` and check if there are any similar models available from the same manufacturer. For example, on **Asus Zenbook UX430UQ**, the configuration **Asus Zenbook UX430UA** did not work well (fans completelly stopped all the time), but **Asus Zenbook UX410UQ** worked fantastically.
 
-Run `nbfc` to see all options. More information is available at [upstream](https://github.com/hirschmann/nbfc/wiki/First-steps#linux) page.
+Run `nbfc` to see all options. More information about configuration is available at [upstream wiki](https://github.com/hirschmann/nbfc/wiki/).
 
 ## Dell laptops
 

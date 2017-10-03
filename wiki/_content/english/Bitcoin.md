@@ -1,3 +1,7 @@
+Related articles
+
+*   [Nxt](/index.php/Nxt "Nxt")
+
 [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin "wikipedia:Bitcoin") is a decentralized P2P electronic cash system without a central server or trusted parties. Users hold the cryptographic keys to their own money and make transactions directly with each other, with the help of the network to check for double-spending. Bitcoins, usually denoted by BTC (e.g. 0.1 BTC), can also be exchanged for traditional currencies like US dollars.
 
 ## Contents
@@ -92,7 +96,7 @@ A full node is a bitcoin client which starts with the initial genesis block of t
 
 There are several Bitcoin full node implementations in the [official repositories](/index.php/Official_repositories "Official repositories") and in the [AUR](/index.php/AUR "AUR").
 
-If you decide to install one: It is possible to run a full node that deletes almost all historical blocks, only keeping the recent history to a certain threshold, but only after having downloaded (97GB as of November 2016) and verified them (which is CPU intensive) in sequence to arrive at the present period it retains. This is to ensure the same guarantee of the cryptographic integrity of the UTXO set. Afterwards, one may [reduce storage](https://bitcoin.org/en/full-node#reduce-storage) and [limit bandwith](https://bitcoin.org/en/full-node#reduce-traffic).
+If you decide to install one: It is possible to run a full node that deletes almost all historical blocks, only keeping the recent history to a certain threshold, but only after having downloaded (150GB as of October 2017) and verified them (which is CPU intensive) in sequence to arrive at the present period it retains. This is to ensure the same guarantee of the cryptographic integrity of the UTXO set. Afterwards, one may [reduce storage](https://bitcoin.org/en/full-node#reduce-storage) and [limit bandwith](https://bitcoin.org/en/full-node#reduce-traffic).
 
 The initial download of the blockchain can be sped up by increasing the database cache as much as your RAM allows, add `dbcache=M` to `~/.bitcoin/bitcoin.conf` where M is the number of megabytes of RAM to allocate.
 

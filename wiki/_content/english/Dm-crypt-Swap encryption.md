@@ -247,7 +247,7 @@ To create it, first choose a mapped partition (e.g. `/dev/mapper/rootDevice`) wh
 
 Now [create the swap file](/index.php/Swap#Swap_file_creation "Swap") (e.g. `/swapfile`) inside the mounted filesystem of your chosen mapped partition. Be sure to activate it with `swapon` and also add it to your `/etc/fstab` file afterward. Note that the swapfile's previous contents remain transparent over reboots.
 
-Set up your system to resume from your chosen mapped partition. For example, if you use [GRUB](/index.php/GRUB "GRUB") with kernel hibernation support, add `resume=`*your chosen mapped partition* and `resume_offset=`*see calculation command below* to the kernel line in `/boot/grub/grub.cfg`. A line with encrypted root partition can look like this:
+Set up your system to resume from your chosen mapped partition. For example, if you use [GRUB](/index.php/GRUB "GRUB") with kernel hibernation support, add `resume=`*your chosen mapped partition* and `resume_offset=`*see calculation command below* to the kernel line in your GRUB configuration (typically at `/etc/default/grub`). A line with encrypted root partition can look like this:
 
 ```
 kernel /vmlinuz-linux cryptdevice=/dev/sda2:rootDevice root=/dev/mapper/rootDevice resume=/dev/mapper/rootDevice resume_offset=123456789 ro

@@ -38,6 +38,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
         *   [5.6.2 /dev/vmci not found](#.2Fdev.2Fvmci_not_found)
         *   [5.6.3 Kernel modules fail to build after Linux 4.9](#Kernel_modules_fail_to_build_after_Linux_4.9)
         *   [5.6.4 vmware modules fail to build on kernel 4.11+ and GCC 7](#vmware_modules_fail_to_build_on_kernel_4.11.2B_and_GCC_7)
+        *   [5.6.5 Kernel modules fail to build on Linux 4.13](#Kernel_modules_fail_to_build_on_Linux_4.13)
     *   [5.7 Installer Fails to Start](#Installer_Fails_to_Start)
         *   [5.7.1 User interface initialization failed](#User_interface_initialization_failed)
     *   [5.8 VMware Fails to Start](#VMware_Fails_to_Start)
@@ -409,6 +410,20 @@ To skip the check, use this workaround:
 
 ```
 
+#### Kernel modules fail to build on Linux 4.13
+
+On VMware Workstation Pro 12.5.7, the module source needs to be modified to be successfully compiled under kernel 4.13 [[2]](https://communities.vmware.com/thread/568089).
+
+```
+# cd /usr/lib/vmware/modules/source
+# tar xf vmnet.tar
+# mv vmnet.tar vmnet.old.tar
+# sed -i 's/atomic_inc(&clone->users);/clone = skb_get(clone);/g' vmnet-only/bridge.c
+# tar cf vmnet.tar vmnet-only
+# rm -r vmnet-only
+
+```
+
 ### Installer Fails to Start
 
 If you just get back to the prompt when opening the `.bundle`, then you probably have a deprecated or broken version of the VMware installer and it should removed (you may also refer to the [uninstallation](#Uninstallation) section of this article):
@@ -454,7 +469,7 @@ See [Microcode](/index.php/Microcode "Microcode") for how to update the microcod
 
 #### vmplayer/vmware fails to start from version 12.5.4
 
-As per [[2]](https://bbs.archlinux.org/viewtopic.php?id=224667) the temporary workaround is to downgrade the package `libpng` to version 1.6.28-1 and keep it in the `IgnorePkg` parameter in [/etc/pacman.conf](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman").
+As per [[3]](https://bbs.archlinux.org/viewtopic.php?id=224667) the temporary workaround is to downgrade the package `libpng` to version 1.6.28-1 and keep it in the `IgnorePkg` parameter in [/etc/pacman.conf](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman").
 
 An easier workaround is to make VMWare use the system's version of zlib instead of its own one:
 
@@ -563,7 +578,7 @@ ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 
 #### Networking on Guests not available after system restart
 
-This is likely due to the `vmnet` module not being loaded [[3]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/). See also the [#systemd services](#systemd_services) section for automatic loading.
+This is likely due to the `vmnet` module not being loaded [[4]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/). See also the [#systemd services](#systemd_services) section for automatic loading.
 
 ## Uninstallation
 

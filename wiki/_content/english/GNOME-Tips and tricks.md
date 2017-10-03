@@ -190,10 +190,10 @@ $ gsettings set org.gnome.desktop.interface cursor-blink false
 
 ```
 
-To disable the blinking cursor in Terminal only use (make sure profile uid is correct one):
+To disable the blinking cursor in Terminal only use:
 
 ```
-$ dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/cursor-blink-mode "'off'"
+$ gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')/ cursor-blink-mode off
 
 ```
 

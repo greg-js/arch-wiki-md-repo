@@ -58,7 +58,7 @@ The following packages are available:
 
 	[http://openjdk.java.net/projects/jdk8/](http://openjdk.java.net/projects/jdk8/) || [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src)
 
-**OpenJFX 8** — The open-source implementation of JavaFX.
+**OpenJFX 8** — The open-source implementation of JavaFX. You [do not need](https://wiki.openjdk.java.net/display/OpenJFX/Repositories+and+Releases) to install this package if you are making use of Java SE (the Oracle's implementation of JRE and JDK described below). This package only concerns users of the open source implementation of Java (OpenJDK project).
 
 	[http://openjdk.java.net/projects/openjfx/](http://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
 

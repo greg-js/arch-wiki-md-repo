@@ -1,3 +1,10 @@
+Related articles
+
+*   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
+*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
+*   [Docker](/index.php/Docker "Docker")
+*   [limits.conf](/index.php/Limits.conf "Limits.conf")
+
 **cgroups** (aka **control groups**) is a Linux kernel feature to limit, police and account the resource usage for a set of processes. Compared to other approaches like the 'nice' command or `/etc/security/limits.conf`, cgroups are more flexible as they can operate on (sub)sets of processes (possibly with different system users).
 
 Control groups can be used in multiple ways:
@@ -50,7 +57,7 @@ Create a new cgroup named *groupname*:
 Example: set the maximum memory limit to 100MB:
 
 ```
-# echo 10000000 > /sys/fs/cgroup/memory/*groupname*/memory.limit_in_bytes
+# echo 100000000 > /sys/fs/cgroup/memory/*groupname*/memory.limit_in_bytes
 
 ```
 

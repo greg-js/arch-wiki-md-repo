@@ -17,11 +17,12 @@ Related articles
 *   [2 Configuration](#Configuration)
     *   [2.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
     *   [2.2 Display](#Display)
-    *   [2.3 TrackPoint Scrolling](#TrackPoint_Scrolling)
-    *   [2.4 Lenovo ThinkPad Thunderbolt 3 Dockingstation](#Lenovo_ThinkPad_Thunderbolt_3_Dockingstation)
-        *   [2.4.1 Ethernet](#Ethernet)
-        *   [2.4.2 USB](#USB)
-    *   [2.5 HP Thunderbolt 3 Dock](#HP_Thunderbolt_3_Dock)
+    *   [2.3 Backlight Control](#Backlight_Control)
+    *   [2.4 TrackPoint Scrolling](#TrackPoint_Scrolling)
+    *   [2.5 Lenovo ThinkPad Thunderbolt 3 Dockingstation](#Lenovo_ThinkPad_Thunderbolt_3_Dockingstation)
+        *   [2.5.1 Ethernet](#Ethernet)
+        *   [2.5.2 USB](#USB)
+    *   [2.6 HP Thunderbolt 3 Dock](#HP_Thunderbolt_3_Dock)
 
 ## Model description
 
@@ -103,6 +104,19 @@ There are two options for displays:
 
 *   14" FHD IPS (1920 x 1080): Works
 *   14" WQHD (2560 x 1440): Works
+
+### Backlight Control
+
+By default, no acpi events are generated for Fn+F5 and Fn+F6 keypress because
+
+```
+kernel: thinkpad_acpi: This ThinkPad has standard ACPI backlight brightness control, supported by the ACPI video driver
+kernel: thinkpad_acpi: Disabling thinkpad-acpi brightness events by default...
+kernel: thinkpad_acpi: Standard ACPI backlight interface available, not loading native one
+
+```
+
+Setting the acpi_brightness=vendor kernel parameter fixes this.
 
 ### TrackPoint Scrolling
 

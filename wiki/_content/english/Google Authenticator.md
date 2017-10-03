@@ -1,5 +1,7 @@
 [Google Authenticator](https://github.com/google/google-authenticator) provides a two-step authentication procedure using one-time passcodes (OTP). The OTP generator application is available for iOS, Android and Blackberry. Similar to [S/KEY Authentication](/index.php/S/KEY_Authentication "S/KEY Authentication") the authentication mechanism integrates into the Linux [PAM](/index.php/PAM "PAM") system. This guide shows the installation and configuration of this mechanism.
 
+For the reverse operation (generating codes compatible with Google Authenticator under Linux) see [#Code generation](#Code_generation) below.
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -9,6 +11,8 @@
 *   [5 Testing](#Testing)
 *   [6 Storage location](#Storage_location)
 *   [7 Desktop logins](#Desktop_logins)
+*   [8 Code generation](#Code_generation)
+    *   [8.1 Command line](#Command_line)
 
 ## Installation
 
@@ -142,4 +146,39 @@ The Google Authenticator PAM plugin can also be used for console logins and with
 ```
    auth required pam_google_authenticator.so
 
+```
+
+## Code generation
+
+If you have Google Authenticator configured with other systems, then losing your device can prevent you from being able to log in to those systems. Having additional ways to generate the codes can be helpful.
+
+### Command line
+
+The easiest way to generate codes is with `oath-tool`. It is available in the `oath-toolkit` package, and can be used as follows:
+
+```
+oathtool --totp -b ABC123
+
+```
+
+Where `ABC123` is the secret key.
+
+On most Android systems with sufficient user access, the Google Authenticator database can be copied off the device and accessed directly, as it is an sqlite3 database. This shell script will read a Google Authenticator database and generate live codes for each key found:
+
+ `google-authenticator.sh` 
+```
+#!/bin/sh
+
+# This is the path to the Google Authenticator app file.  It's typically located
+# in /data under Android.  Copy it to your PC in a safe location and specify the
+# path to it here.
+DB="/path/to/com.google.android.apps.authenticator/databases/databases"
+
+sqlite3 "$DB" 'SELECT email,secret FROM accounts;' | while read A
+do
+        NAME=`echo "$A" | cut -d '|' -f 1`
+        KEY=`echo "$A" | cut -d '|' -f 2`
+        CODE=`oathtool --totp -b "$KEY"`
+        echo -e "\e[1;32m$CODE\e[0m - \e[1;33m$NAME\e[0m"
+done
 ```

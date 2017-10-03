@@ -341,20 +341,6 @@ To change the GDM language, ensure that [gnome-control-center](https://www.archl
 
 **Tip:** By adding 2 different input languages, logging out then selecting your default language GDM will remember your choice once the second option is removed.
 
-Alternatively, edit the file `/var/lib/AccountsService/users/gdm` and change the language line using the correct UTF-8 value for your language. You should see something similar to the text below:
-
- `/var/lib/AccountsService/users/gdm` 
-```
-[User]
-Language=fr_FR.UTF-8
-XSession=
-SystemAccount=true
-```
-
-Now just reboot your computer.
-
-Once you have rebooted, if you look at the `/var/lib/AccountsService/users/gdm` file again, you will see that the language line is cleared — do not worry, the language change has been preserved.
-
 ### Users and login
 
 #### Automatic login

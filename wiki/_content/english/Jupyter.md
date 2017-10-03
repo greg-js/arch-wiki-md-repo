@@ -10,6 +10,7 @@
     *   [3.3 Python](#Python)
     *   [3.4 R](#R)
     *   [3.5 Sage math](#Sage_math)
+    *   [3.6 Octave](#Octave)
 
 ## Installation
 
@@ -54,3 +55,7 @@ Follow the installation instructions in [IR Kernel](https://github.com/IRkernel/
 ### Sage math
 
 Install the [sagemath-jupyter](https://www.archlinux.org/packages/?name=sagemath-jupyter) package.
+
+### Octave
+
+Install the [jupyter-octave_kernel](https://aur.archlinux.org/packages/jupyter-octave_kernel/) package.

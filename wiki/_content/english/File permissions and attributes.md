@@ -67,7 +67,7 @@ Each of the three permission triads (`rwx` in the example above) can be made up 
 
 See `info Coreutils -n "Mode Structure"` and [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) for more details.
 
-#### Examples
+### Examples
 
 Let us see some examples to clarify:
 
@@ -424,7 +424,7 @@ To remove an attribute on a file just change `+` to `-`.
 
 ## Extended attributes
 
-From `attr(5)`: "Extended attributes are name:value pairs associated permanently with files and directories". There are four extended attribute classes: security, system, trusted and user.
+From [attr(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/attr.5): "Extended attributes are name:value pairs associated permanently with files and directories". There are four extended attribute classes: security, system, trusted and user.
 
 **Warning:** By default, extended attributes are not preserved by [cp](/index.php/Cp "Cp"), [rsync](/index.php/Rsync "Rsync"), and other similar programs.
 
@@ -439,11 +439,10 @@ $ setfattr -n user.checksum -v "3baf9ebce4c664ca8d9e5f6314fb47fb" foo.bar
 
 Use getfattr to display extended attributes:
 
+ `$ getfattr -d foo.bar` 
 ```
-$ getfattr -d foo.bar
 # file: foo.bar
 user.checksum="3baf9ebce4c664ca8d9e5f6314fb47fb"
-
 ```
 
 ### Capabilities

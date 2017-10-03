@@ -1,3 +1,8 @@
+Related articles
+
+*   [VMware](/index.php/VMware "VMware")
+*   [Installing VMWare vCLI](/index.php/Installing_VMWare_vCLI "Installing VMWare vCLI")
+
 This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMware") product, such as [Player (Plus)](http://www.vmware.com/products/player/), [Fusion](http://www.vmware.com/products/fusion/) or [Workstation](http://www.vmware.com/products/workstation/).
 
 ## Contents
@@ -56,7 +61,7 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
 *   `vmxnet3` - For VMware's vmxnet3 virtual ethernet NIC.
 *   a fuse-based hgfs implementation has been added to `open-vm-tools` 10.0+ and is supported from kernel version 4.0+.
 
-These drivers are only needed if you are running Arch Linux on a hypervisor like [VMware vSphere Hypervisor](http://www.vmware.com/products/vsphere-hypervisor)
+These drivers are only needed if you are running Arch Linux on a hypervisor like [VMware vSphere Hypervisor](http://www.vmware.com/products/vsphere-hypervisor). Client-server applications can write to the VMCI Sock (vsock) interface to make use of the VMCI virtual device, when communicating between virtual machines.
 
 *   `vsock` - The Virtual Socket Protocol. It is similar to the TCP/IP socket protocol, allowing communication between Virtual Machines and hypervisor or host.
 *   `vmw_vsock_vmci_transport` - Implements a VMCI transport for Virtual Sockets.

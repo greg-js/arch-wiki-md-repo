@@ -185,7 +185,6 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [87 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
 *   [88 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
     *   [88.1 Start with black screen](#Start_with_black_screen)
-    *   [88.2 No English fonts](#No_English_fonts)
 *   [89 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
     *   [89.1 No sound](#No_sound_7)
 *   [90 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
@@ -715,7 +714,6 @@ Dependencies:
 
 *   [libudev0](https://aur.archlinux.org/packages/libudev0/)
 *   [libpng12](https://www.archlinux.org/packages/?name=libpng12)
-*   [libtxc_dxtn](https://www.archlinux.org/packages/?name=libtxc_dxtn)
 
 ### In-game font is unreadable
 
@@ -1428,10 +1426,6 @@ Dependencies:
 The game by default tries to launch in fullscreen mode with a resolution of 1024x768, which doesn't work on some devices (for example the Samsung Series9 laptop with Intel hd4000 video).
 
 Launch the game in windowed mode by adding `-window` to your [launch options](/index.php/Launch_option "Launch option"). Then change the resolution in-game.
-
-### No English fonts
-
-If you are using an Intel video card, disable S3TC in [driconf](https://www.archlinux.org/packages/?name=driconf).
 
 ## Stephen's Sausage Roll
 

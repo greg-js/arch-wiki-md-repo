@@ -32,13 +32,13 @@ Nginx is often used together with a scripting language such as [PHP](/index.php/
     *   [4.4 Modify nginx.service to start chroot](#Modify_nginx.service_to_start_chroot)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Running unprivileged using systemd](#Running_unprivileged_using_systemd)
-    *   [5.2 Nginx Beautifier](#Nginx_Beautifier)
+    *   [5.2 Alternative script for systemd](#Alternative_script_for_systemd)
+    *   [5.3 Nginx Beautifier](#Nginx_Beautifier)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Configuration validation](#Configuration_validation)
     *   [6.2 Accessing local IP redirects to localhost](#Accessing_local_IP_redirects_to_localhost)
     *   [6.3 Error: The page you are looking for is temporarily unavailable. Please try again later. (502 Bad Gateway)](#Error:_The_page_you_are_looking_for_is_temporarily_unavailable._Please_try_again_later._.28502_Bad_Gateway.29)
     *   [6.4 Error: No input file specified](#Error:_No_input_file_specified)
-    *   [6.5 Alternative script for systemd](#Alternative_script_for_systemd)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -332,7 +332,7 @@ The main configuration file of PHP-FPM is `/etc/php/php-fpm.conf`, then [enable]
 **Note:**
 
 *   If you [run nginx under different user](#Running_under_different_user), make sure that the PHP-FPM socket file is accessible by this user, or use a TCP socket.
-*   If you run nginx in chrooted environment (chroot is `/srv/nginx-jail`, web pages are served at `/srv/nginx-jail/www`), you must modify the file `/etc/php/php-fpm.conf` to include the `chroot /srv/nginx-jail` and `listen = /srv/nginx-jail/run/php-fpm/php-fpm.sock` directives within the pool section (a default one is `[www]`). Create the directory for the socket file, if missing.
+*   If you run nginx in chrooted environment (chroot is `/srv/nginx-jail`, web pages are served at `/srv/nginx-jail/www`), you must modify the file `/etc/php/php-fpm.conf` to include the `chroot /srv/nginx-jail` and `listen = /srv/nginx-jail/run/php-fpm/php-fpm.sock` directives within the pool section (a default one is `[www]`). Create the directory for the socket file, if missing. Moreover, for modules that are dynamically linked to dependencies, you will need to copy those dependencies to the chroot (e.g. for php-imagick, you will need to copy the ImageMagick libraries to the chroot, but not imagick.so itself).
 
 ##### nginx configuration
 
@@ -691,7 +691,7 @@ If you do not remove the non-chrooted nginx installation, you may want to make s
 
 ## Tips and tricks
 
-#### Running unprivileged using [systemd](/index.php/Systemd "Systemd")
+### Running unprivileged using [systemd](/index.php/Systemd "Systemd")
 
 [Edit nginx.service](/index.php/Systemd#Editing_provided_units "Systemd") and set the `User` and optionally `Group` options under `[Service]`:
 
@@ -775,7 +775,56 @@ Now we should be good to go. Go ahead and [start](/index.php/Start "Start") ngin
 
 **Tip:** The same setup may be desirable for your [FastCGI server](#FastCGI) as well.
 
-#### Nginx Beautifier
+### Alternative script for systemd
+
+On pure systemd you can get advantages of chroot + systemd. [[2]](http://0pointer.de/blog/projects/changing-roots.html) Based on set [user group](http://wiki.nginx.org/CoreModule#user) an pid on:
+
+ `/etc/nginx/nginx.conf` 
+```
+user http;
+pid /run/nginx.pid;
+```
+
+the absolute path of file is `/srv/http/etc/nginx/nginx.conf`.
+
+ `/etc/systemd/system/nginx.service` 
+```
+[Unit]
+Description=nginx (Chroot)
+After=syslog.target network.target
+
+[Service]
+Type=forking
+PIDFile=/srv/http/run/nginx.pid
+RootDirectory=/srv/http
+ExecStartPre=/usr/sbin/nginx -t -c /etc/nginx/nginx.conf
+ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx.conf
+ExecReload=/usr/sbin/nginx -c /etc/nginx/nginx.conf -s reload
+ExecStop=/usr/sbin/nginx -c /etc/nginx/nginx.conf -s stop
+
+[Install]
+WantedBy=multi-user.target
+```
+
+It is not necesary to set the default location, nginx loads at default `-c /etc/nginx/nginx.conf`, but it is a good idea though.
+
+Alternatively you can run **only** `ExecStart` as chroot with parameter `RootDirectoryStartOnly` set as `yes` [man systemd service](http://www.freedesktop.org/software/systemd/man/systemd.service.html) or start it before mount point as effective or a [systemd path](http://www.freedesktop.org/software/systemd/man/systemd.path.html) is available.
+
+ `/etc/systemd/system/nginx.path` 
+```
+[Unit]
+Description=nginx (Chroot) path
+[Path]
+PathExists=/srv/http/site/Public_html
+[Install]
+WantedBy=default.target
+```
+
+[Enable](/index.php/Enable "Enable") the created `nginx.path` and change the `WantedBy=default.target` to `WantedBy=nginx.path` in `/etc/systemd/system/nginx.service`.
+
+The `PIDFile` in unit file allows systemd to monitor process (absolute path required). If it is undesired, you can change to default one-shot type, and delete the reference from the unit file.
+
+### Nginx Beautifier
 
 [nginxbeautifier](https://aur.archlinux.org/packages/nginxbeautifier/) is a commandline tool used to beautify and format nginx configuration files.
 
@@ -842,55 +891,6 @@ or you should create a group and user to start the php-cgi:
 ```
 
 5\. If you are running php-fpm with chrooted nginx ensure `chroot` is set correctly within `/etc/php-fpm/php-fpm.d/www.conf` (or `/etc/php-fpm/php-fpm.conf` if working on older version)
-
-### Alternative script for systemd
-
-On pure systemd you can get advantages of chroot + systemd. [[2]](http://0pointer.de/blog/projects/changing-roots.html) Based on set [user group](http://wiki.nginx.org/CoreModule#user) an pid on:
-
- `/etc/nginx/nginx.conf` 
-```
-user http;
-pid /run/nginx.pid;
-```
-
-the absolute path of file is `/srv/http/etc/nginx/nginx.conf`.
-
- `/etc/systemd/system/nginx.service` 
-```
-[Unit]
-Description=nginx (Chroot)
-After=syslog.target network.target
-
-[Service]
-Type=forking
-PIDFile=/srv/http/run/nginx.pid
-RootDirectory=/srv/http
-ExecStartPre=/usr/sbin/nginx -t -c /etc/nginx/nginx.conf
-ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx.conf
-ExecReload=/usr/sbin/nginx -c /etc/nginx/nginx.conf -s reload
-ExecStop=/usr/sbin/nginx -c /etc/nginx/nginx.conf -s stop
-
-[Install]
-WantedBy=multi-user.target
-```
-
-It is not necesary to set the default location, nginx loads at default `-c /etc/nginx/nginx.conf`, but it is a good idea though.
-
-Alternatively you can run **only** `ExecStart` as chroot with parameter `RootDirectoryStartOnly` set as `yes` [man systemd service](http://www.freedesktop.org/software/systemd/man/systemd.service.html) or start it before mount point as effective or a [systemd path](http://www.freedesktop.org/software/systemd/man/systemd.path.html) is available.
-
- `/etc/systemd/system/nginx.path` 
-```
-[Unit]
-Description=nginx (Chroot) path
-[Path]
-PathExists=/srv/http/site/Public_html
-[Install]
-WantedBy=default.target
-```
-
-[Enable](/index.php/Enable "Enable") the created `nginx.path` and change the `WantedBy=default.target` to `WantedBy=nginx.path` in `/etc/systemd/system/nginx.service`.
-
-The `PIDFile` in unit file allows systemd to monitor process (absolute path required). If it is undesired, you can change to default one-shot type, and delete the reference from the unit file.
 
 ## See also
 

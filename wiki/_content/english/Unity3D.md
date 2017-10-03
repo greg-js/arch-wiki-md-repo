@@ -19,6 +19,7 @@ Not to be confused with Canonical's [Unity](/index.php/Unity "Unity").
     *   [3.1 Unity crashes on first launch before/while signing in](#Unity_crashes_on_first_launch_before.2Fwhile_signing_in)
     *   [3.2 Unity crashes when trying to load project](#Unity_crashes_when_trying_to_load_project)
     *   [3.3 Unity crashes if ~/.config/user-dirs.dirs is missing](#Unity_crashes_if_.7E.2F.config.2Fuser-dirs.dirs_is_missing)
+    *   [3.4 Minor stuttering while playtesting (NVIDIA)](#Minor_stuttering_while_playtesting_.28NVIDIA.29)
 
 ## Installation
 
@@ -86,3 +87,9 @@ Users have [reported](http://forum.unity3d.com/threads/unity-on-arch-manjaro-lin
 ### Unity crashes if ~/.config/user-dirs.dirs is missing
 
 See how to generate the xdg files here: [XDG user directories](/index.php/XDG_user_directories "XDG user directories")
+
+### Minor stuttering while playtesting (NVIDIA)
+
+Vsync does not seem to work correctly with NVIDIA graphics cards / drivers. Solution: In [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) go to "OpenGL Settings" and turn off "Sync to VBlank".
+
+The behaviour occured/noticed when used "transform.Rotate" in combination with "Input.GetKey".

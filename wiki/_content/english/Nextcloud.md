@@ -18,15 +18,16 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
 *   [1 Prerequisites](#Prerequisites)
 *   [2 Installation](#Installation)
 *   [3 Setup](#Setup)
-    *   [3.1 PHP setup](#PHP_setup)
-    *   [3.2 Database setup](#Database_setup)
-        *   [3.2.1 MariaDB](#MariaDB)
-        *   [3.2.2 PostgreSQL](#PostgreSQL)
-    *   [3.3 Webserver setup](#Webserver_setup)
-        *   [3.3.1 Apache](#Apache)
-            *   [3.3.1.1 WebDAV](#WebDAV)
-        *   [3.3.2 Nginx](#Nginx)
-            *   [3.3.2.1 PHP-FPM configuration](#PHP-FPM_configuration)
+    *   [3.1 Pacman hook](#Pacman_hook)
+    *   [3.2 PHP setup](#PHP_setup)
+    *   [3.3 Database setup](#Database_setup)
+        *   [3.3.1 MariaDB](#MariaDB)
+        *   [3.3.2 PostgreSQL](#PostgreSQL)
+    *   [3.4 Webserver setup](#Webserver_setup)
+        *   [3.4.1 Apache](#Apache)
+            *   [3.4.1.1 WebDAV](#WebDAV)
+        *   [3.4.2 Nginx](#Nginx)
+            *   [3.4.2.1 PHP-FPM configuration](#PHP-FPM_configuration)
 *   [4 Initialize](#Initialize)
     *   [4.1 Create storage directories](#Create_storage_directories)
 *   [5 Security Hardening](#Security_Hardening)
@@ -85,6 +86,29 @@ Make sure the required components are installed before proceeding.
 ## Setup
 
 As stated above, in order to setup Nextcloud, you must set up the appropriate PHP requirements; additionally, you must configure a database and a webserver.
+
+### Pacman hook
+
+To do nextcloud database upgrade automatically you may set up pacman post upgrade hook based on following example:
+
+```
+ # Update Nextcloud when core or -apps are touched
+
+ [Trigger]
+ Operation = Install
+ Operation = Upgrade
+ Type = Package
+ Target = nextcloud
+ Target = nextcloud-app-*
+
+ [Action]
+ Description = Updating Nextcloud installation
+ When = PostTransaction
+ Exec = /usr/bin/runuser -u http -- /usr/bin/php /usr/share/webapps/nextcloud/occ upgrade
+
+```
+
+See also [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman")
 
 ### PHP setup
 

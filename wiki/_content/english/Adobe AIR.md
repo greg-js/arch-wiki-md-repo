@@ -7,12 +7,10 @@
     *   [2.1 Making it executable](#Making_it_executable)
     *   [2.2 Removing the application](#Removing_the_application)
     *   [2.3 Running binaries that use AIR](#Running_binaries_that_use_AIR)
-*   [3 App-specific troubleshooting](#App-specific_troubleshooting)
-    *   [3.1 ZinioReader4](#ZinioReader4)
 
 ## Installing Adobe AIR
 
-Install [adobe-air-sdk](https://aur.archlinux.org/packages/adobe-air-sdk/?comments=all) from the [AUR](/index.php/AUR "AUR").
+Install the [adobe-air-sdk](https://aur.archlinux.org/packages/adobe-air-sdk/) package.
 
 ## Installing an AIR Application
 
@@ -73,18 +71,3 @@ echo -n 2 > ~/.appdata/Adobe/AIR/eulaAccepted
 ```
 
 After this, you should clear the check and the binary should run normally.
-
-## App-specific troubleshooting
-
-### ZinioReader4
-
-The app doesn't start out of the box if you are not using [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE") on a 32 bit installation.
-
-Required packages: [libgnome](https://aur.archlinux.org/packages/libgnome/), [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring), [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) and [lib32-libgnome-keyring](https://aur.archlinux.org/packages/lib32-libgnome-keyring/) (only on x86_64)
-
-Run with the command:
-
-```
- DESKTOP_SESSION="gnome" /opt/adobe-air-sdk/bin/adl -nodebug /opt/airapps/ZinioReader4/META-INF/AIR/application.xml /opt/airapps/ZinioReader4/
-
-```

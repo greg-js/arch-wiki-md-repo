@@ -1,4 +1,4 @@
-**Note:** libetc is unmaintained upstream. You can use rewritefs instead.
+**Note:** libetc is unmaintained upstream. You can use [rewritefs](/index.php?title=Rewritefs&action=edit&redlink=1 "Rewritefs (page does not exist)") instead.
 
 This is for those who are tired of having a messy $HOME folder cluttered with loads of dotfiles/dotfolders.
 

@@ -494,7 +494,7 @@ To fix, first try choosing the [fallback](#Image_creation_and_activation) image 
 ## See also
 
 *   Linux Kernel documentation on [initramfs](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/filesystems/ramfs-rootfs-initramfs.txt?id=HEAD)
-*   Linux Kernel documentation on [initrd](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/initrd.txt?id=HEAD)
+*   Linux Kernel documentation on [initrd](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/plain/Documentation/admin-guide/initrd.rst?id=HEAD)
 *   Wikipedia article on [initrd](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd")
 *   **[dracut](https://en.wikipedia.org/wiki/dracut_(software) "w:dracut (software)")** — A cross-distribution initramfs generation tool.
 

@@ -10,15 +10,15 @@ Related articles
 
 **翻译状态：** 本文是英文页面 [i3](/index.php/I3 "I3") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-03-22，点击[这里](https://wiki.archlinux.org/index.php?title=i3&diff=0&oldid=471488)可以查看翻译后英文页面的改动。
 
-[i3](http://i3wm.org/) 是一套动态[平铺式窗口管理器](https://en.wikipedia.org/wiki/Tiling_window_manager "wikipedia:Tiling window manager")，灵感来自针对开发者与资深用户的 [wmii](/index.php/Wmii "Wmii")。
+[i3](http://i3wm.org/) 是一种动态的[平铺式窗口管理器](https://en.wikipedia.org/wiki/Tiling_window_manager "wikipedia:Tiling window manager")，其灵感来自于面向开发者与资深用户的 [wmii](/index.php/Wmii "Wmii")。
 
-i3的既定目标包括清晰可读的文档，多显示器支持，多窗口的树形数据结构，和多种的模式，例如 [vim](/index.php/Vim "Vim") 模式。
+i3 的既定目标包括清晰可读的文档，完善的多显示器支持，基于树形结构的窗口管理，提供 [vim](/index.php/Vim "Vim") 式的多种操作模式。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 显示管理器](#.E6.98.BE.E7.A4.BA.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [1.2 xinitrc](#xinitrc)
+    *   [1.1 从显示管理器启动](#.E4.BB.8E.E6.98.BE.E7.A4.BA.E7.AE.A1.E7.90.86.E5.99.A8.E5.90.AF.E5.8A.A8)
+    *   [1.2 从 xinitrc 启动](#.E4.BB.8E_xinitrc_.E5.90.AF.E5.8A.A8)
 *   [2 使用](#.E4.BD.BF.E7.94.A8)
 *   [3 键盘映射](#.E9.94.AE.E7.9B.98.E6.98.A0.E5.B0.84)
     *   [3.1 容器](#.E5.AE.B9.E5.99.A8)
@@ -46,34 +46,36 @@ i3的既定目标包括清晰可读的文档，多显示器支持，多窗口的
     *   [4.16 网速显示](#.E7.BD.91.E9.80.9F.E6.98.BE.E7.A4.BA)
 *   [5 疑难排除](#.E7.96.91.E9.9A.BE.E6.8E.92.E9.99.A4)
     *   [5.1 普遍问题](#.E6.99.AE.E9.81.8D.E9.97.AE.E9.A2.98)
-    *   [5.2 按钮在i3信息栏不能用](#.E6.8C.89.E9.92.AE.E5.9C.A8i3.E4.BF.A1.E6.81.AF.E6.A0.8F.E4.B8.8D.E8.83.BD.E7.94.A8)
-    *   [5.3 Faulty line wraps in tiled terminals](#Faulty_line_wraps_in_tiled_terminals)
+    *   [5.2 i3 信息栏上的某些按钮不能用](#i3_.E4.BF.A1.E6.81.AF.E6.A0.8F.E4.B8.8A.E7.9A.84.E6.9F.90.E4.BA.9B.E6.8C.89.E9.92.AE.E4.B8.8D.E8.83.BD.E7.94.A8)
+    *   [5.3 平铺的终端窗口中出现折行错乱](#.E5.B9.B3.E9.93.BA.E7.9A.84.E7.BB.88.E7.AB.AF.E7.AA.97.E5.8F.A3.E4.B8.AD.E5.87.BA.E7.8E.B0.E6.8A.98.E8.A1.8C.E9.94.99.E4.B9.B1)
     *   [5.4 鼠标指针总处于忙碌状态](#.E9.BC.A0.E6.A0.87.E6.8C.87.E9.92.88.E6.80.BB.E5.A4.84.E4.BA.8E.E5.BF.99.E7.A2.8C.E7.8A.B6.E6.80.81)
-    *   [5.5 Unresponsive key bindings](#Unresponsive_key_bindings)
-    *   [5.6 Tearing](#Tearing)
-    *   [5.7 Tray icons not visible](#Tray_icons_not_visible)
+    *   [5.5 绑定快捷键不起作用](#.E7.BB.91.E5.AE.9A.E5.BF.AB.E6.8D.B7.E9.94.AE.E4.B8.8D.E8.B5.B7.E4.BD.9C.E7.94.A8)
+    *   [5.6 画面撕裂现象](#.E7.94.BB.E9.9D.A2.E6.92.95.E8.A3.82.E7.8E.B0.E8.B1.A1)
+    *   [5.7 看不到系统托盘图标](#.E7.9C.8B.E4.B8.8D.E5.88.B0.E7.B3.BB.E7.BB.9F.E6.89.98.E7.9B.98.E5.9B.BE.E6.A0.87)
 *   [6 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [i3](https://www.archlinux.org/groups/x86_64/i3/) [软件包](/index.php/Pacman#Installing_package_groups "Pacman")，其中包含了 [i3lock](https://www.archlinux.org/packages/?name=i3lock), [i3status](https://www.archlinux.org/packages/?name=i3status) 和 [i3-wm](https://www.archlinux.org/packages/?name=i3-wm) 程序包。`i3-wm` 是一套独立的桌面管理器，`i3status` 则是用于通过 [stdout](https://en.wikipedia.org/wiki/Standard_streams#Standard_output_.28stdout.29 "wikipedia:Standard streams") 向 i3bar 写入一条状态行，`i3lock` 则专于锁屏。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [i3](https://www.archlinux.org/groups/x86_64/i3/) [软件包组](/index.php/Pacman#Installing_package_groups "Pacman")，这个组里包含了：
 
-[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 中还提供了不少附加程序包。例子可参考[#补丁](#.E8.A1.A5.E4.B8.81)章节。
+*   [i3-wm](https://www.archlinux.org/packages/?name=i3-wm)：窗口管理器
+*   [i3status](https://www.archlinux.org/packages/?name=i3status) 和 [i3blocks](https://www.archlinux.org/packages/?name=i3blocks)：这两个软件都可以通过管道向 i3bar 输送系统状态消息
+*   [i3lock](https://www.archlinux.org/packages/?name=i3lock) 则专于锁屏
 
-### 显示管理器
+### 从显示管理器启动
 
-[i3-wm](https://www.archlinux.org/packages/?name=i3-wm) 软件包包括了作为[Xsession](/index.php/Xsession "Xsession")的`i3.desktop`,用于启动窗口管理器。 `i3-with-shmlog.desktop` 启用了日志（对于调试很有用）。[i3-gnome](https://aur.archlinux.org/packages/i3-gnome/) 软件包在 [GNOME](/index.php/GNOME "GNOME") 中集成了 `i3-wm`。
+[i3-wm](https://www.archlinux.org/packages/?name=i3-wm) 软件包自带了 `i3.desktop`，可以支持将 i3 作为 [Xsession](/index.php/Xsession "Xsession") 启动。`i3-with-shmlog.desktop` 这个入口则附加了日志功能（对于调试很有用）。[i3-gnome](https://aur.archlinux.org/packages/i3-gnome/) 软件包则把 `i3-wm` 集成到了 [GNOME](/index.php/GNOME "GNOME") 中去。
 
-### xinitrc
+### 从 xinitrc 启动
 
-编辑 [Xinitrc](/index.php/Xinitrc "Xinitrc") ，添加：
+编辑 [Xinitrc](/index.php/Xinitrc "Xinitrc") ，在其末尾添加这一行：
 
 ```
 exec i3
 
 ```
 
-如果您想记录 i3 所有的输日志，则添加：
+如果想记录 i3 程序所有的输出，这一行要写成：
 
 ```
 exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
@@ -527,26 +529,25 @@ xss-lock -- i3lock -i *background_image* &
 
 ### 网速显示
 
-可以参考此处的脚本文件[measure-net-speed.bash](https://github.com/glittershark/i3status/blob/master/contrib/measure-net-speed.bash)、[measure-net-speed-i3status.bash](https://github.com/glittershark/i3status/blob/master/contrib/measure-net-speed-i3status.bash)。
+可以把上游的[脚本](http://code.stapelberg.de/git/i3status/tree/contrib/net-speed.sh)修改来用。这个脚本已经具有自动查找网卡的能力。如果需要自行指定网卡：
 
-*   获得你的网络接口 (使用 `ip addr`)，如 `wlan0`
-*   在 `/sys/devices` 找到网卡的名称:
+*   用 `ip addr` 命令找到你的网卡代号，如 `wlan0`
+*   在 `/sys/devices` 路径下，用如下命令来确认网卡是存在的:
 
- ` $ find /sys/devices -name *network_interface*` 例如 ` $ find /sys/devices -name wlan0` 
-**Tip:** Use `/sys/class/net/*interface*/statistics/` to not depend on PCI location.
+ ` $ find /sys/devices -name *wlan0*` 
 
-把修改后的脚本文件放置在适当的位置 (比如 `~/.config/i3`) 按照脚本中的建议设置你的 [i3-wm](https://www.archlinux.org/packages/?name=i3-wm)和 [i3status](https://www.archlinux.org/packages/?name=i3status)配置文件:
+把上面的脚本下载到适当的位置 (比如 `~/.config/i3`) ，把你想观测的网卡代号写进去。
 
-*   为脚本 `measure-net-speed-i3status.bash` 、 `measure-net-speed.bash` 添加可执行权限
+*   把这个脚本改为可执行属性
 
-*   修改 `measure-net-speed-i3status.bash` 中行`dat=$(measure-net-speed.bash)` 为 `dat=$(/path/to/measure-net-speed.bash)`
+ ` $ chmod +x ~/.i3/config/net-speed.sh` 
 
 *   修改 `~/.i3/config` 中对应章节：
 
 ```
-bar {
-   status_command /path/to/measure-net-speed-i3status.bash
-}
+ bar {
+   status_command exec ~/.i3/config/net-speed.sh
+ }
 
 ```
 
@@ -554,15 +555,15 @@ bar {
 
 ### 普遍问题
 
-In many cases, bugs are fixed in the development versions [i3-git](https://aur.archlinux.org/packages/i3-git/) and [i3status-git](https://aur.archlinux.org/packages/i3status-git/), and upstream will ask to reproduce any errors with this version. [[2]](http://i3wm.org/docs/debugging.html) See also [Debug - Getting Traces#General](/index.php/Debug_-_Getting_Traces#General "Debug - Getting Traces").
+很多时候，你遇到的 bug 在开发中的版本就被修复了。可以从 AUR 上的 [i3-git](https://aur.archlinux.org/packages/i3-git/) 与 [i3status-git](https://aur.archlinux.org/packages/i3status-git/) 编译安装最新的开发版。上游（即 i3 项目开发者）希望你能用开发版再试试看能否重现问题 [[2]](http://i3wm.org/docs/debugging.html) 延伸阅读：[Debug - Getting Traces#General](/index.php/Debug_-_Getting_Traces#General "Debug - Getting Traces").
 
-### 按钮在i3信息栏不能用
+### i3 信息栏上的某些按钮不能用
 
-如“Edit config”按钮用于在`i3-nagbar`中访问`i3-sensible-terminal`，所以确保你的终端模拟器能够被i3识别。
+举例：`i3-nagbar` 上的“Edit Config”按钮是要调用 `i3-sensible-terminal` 命令的。这就需要你的[终端模拟器](#.E8.99.9A.E6.8B.9F.E7.BB.88.E7.AB.AF)能够被i3识别。
 
-### Faulty line wraps in tiled terminals
+### 平铺的终端窗口中出现折行错乱
 
-i3 v4.3 and higher ignore size increment hints for tiled windows [[3]](https://www.mail-archive.com/i3-discuss@i3.zekjur.net/msg00709.html). This may cause terminals to wrap lines prematurely, amongst other issues. As a workaround, make the offending window floating, before tiling it again.
+从 v4.3 版本起，i3 会无视平铺窗口的扩大提示（size increment hints）[[3]](https://www.mail-archive.com/i3-discuss@i3.zekjur.net/msg00709.html)。这就带来了折行错乱等问题。平铺之前尝试先把窗口改成浮动状态，可以绕过这个问题。
 
 ### 鼠标指针总处于忙碌状态
 
@@ -576,9 +577,9 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 
 ```
 
-### Unresponsive key bindings
+### 绑定快捷键不起作用
 
-Some tools such as [scrot](/index.php/Taking_a_screenshot#scrot "Taking a screenshot") may not work when used with a regular key binding (executed after key press). In those cases, execute commands after key release with the `--release` argument [[4]](http://i3wm.org/docs/userguide.html#keybindings):
+像 [scrot](/index.php/Taking_a_screenshot#scrot "Taking a screenshot") 这类工具，用普通的按键绑定方式（按下按键后，未松开按键前就立即执行）可能不会正常工作。可以试试绑定时加上 `--release` 参数，使命令在松开按键之后执行 [[4]](http://i3wm.org/docs/userguide.html#keybindings)：
 
 ```
 bindsym --release Print exec --no-startup-id scrot
@@ -586,13 +587,13 @@ bindsym --release Shift+Print exec --no-startup-id scrot -s
 
 ```
 
-### Tearing
+### 画面撕裂现象
 
-i3 does [not properly implement double buffering](https://github.com/i3/i3/issues/661) hence tearing or flickering may occur. To prevent this, install and configure [compton](/index.php/Compton "Compton"). [[5]](https://faq.i3wm.org/question/3279/do-i-need-a-composite-manager-compton.1#post-id-3282)
+因为 i3 的[双倍缓冲实现得不到位](https://github.com/i3/i3/issues/661)，会出现画面撕裂或闪烁。安装并配置好 [compton](/index.php/Compton_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Compton (简体中文)") 可以解决这一问题。[[5]](https://faq.i3wm.org/question/3279/do-i-need-a-composite-manager-compton.1#post-id-3282)
 
-### Tray icons not visible
+### 看不到系统托盘图标
 
-The `tray_output primary` directive may require setting a primary output with *xrandr*, specifying the output explicitly or simply removing this directive. [[6]](https://github.com/i3/i3/issues/1144) See [Xrandr](/index.php/Xrandr "Xrandr") for details. The default configuration created by i3-config-wizard no longer adds this directive to the configuration from i3 4.12.
+为了让 `tray_output primary` 这一行配置生效，有时需要用 *xrandr* 来指定一个主显示输出。你也可以试试按照 [[6]](https://i3wm.org/docs/userguide.html#_tray_output) 显式地指定一个具体的输出，或者干脆删掉这行配置。[[7]](https://github.com/i3/i3/issues/1144) 关于显示输出的细节可以参看 [Xrandr](/index.php/Xrandr "Xrandr") 页面. 自从 i3 4.12 版本起，由 i3-config-wizard 生成的默认配置已经不再包含这行配置了。
 
 ## 参见
 

@@ -60,7 +60,7 @@ Copy fan config `# cp /etc/default/gpd-fan.example /etc/default/gpd-fan` and unc
 
 ### WiFi
 
-Copy brcmfmac4356-pcie.txt from [here](https://github.com/cawilliamson/ansible-gpdpocket/tree/master/roles/common/files) to /lib/firmware/brcm/ then run
+Copy brcmfmac4356-pcie.txt and brcmfmac4356-pcie.bin from [here](https://github.com/cawilliamson/ansible-gpdpocket/tree/master/roles/common/files) to /lib/firmware/brcm/ then run
 `# modprobe -r brcmfmac`
 `# modprobe brcmfmac`
 

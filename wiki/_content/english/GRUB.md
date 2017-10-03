@@ -115,7 +115,7 @@ If you use [LVM](/index.php/LVM "LVM") for your `/boot`, you can install GRUB on
 
 **Tip:** See [GRUB/Tips and tricks#Alternative installation methods](/index.php/GRUB/Tips_and_tricks#Alternative_installation_methods "GRUB/Tips and tricks") for other ways to install GRUB, such as to a USB stick.
 
-See [grub-install(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8)and [[3]](https://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html) for more details on the *grub-install* command.
+See [grub-install(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8) and [[3]](https://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html) for more details on the *grub-install* command.
 
 ## UEFI systems
 
@@ -189,7 +189,7 @@ Use the *grub-mkconfig* tool to generate `grub.cfg`:
 
 By default the generation scripts automatically add menu entries for Arch Linux to any generated configuration. See [Multiboot USB drive#Boot entries](/index.php/Multiboot_USB_drive#Boot_entries "Multiboot USB drive") and [#Dual-booting](#Dual-booting) for custom menu entries for other systems.
 
-**Tip:** To have *grub-mkconfig* search for other installed systems and automatically add them to the menu, [install](/index.php/Install "Install") the [os-prober](https://www.archlinux.org/packages/?name=os-prober) package.
+**Tip:** To have *grub-mkconfig* search for other installed systems and automatically add them to the menu, [install](/index.php/Install "Install") the [os-prober](https://www.archlinux.org/packages/?name=os-prober) package and [mount](/index.php/File_systems#Mount_a_file_system "File systems") the partitions that contain other systems.
 
 **Note:**
 

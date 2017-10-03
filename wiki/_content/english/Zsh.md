@@ -487,7 +487,7 @@ bindkey '^[[1;3D'      cdUndoKey
 xterm title is set with [xterm escape sequences](http://tldp.org/HOWTO/Xterm-Title-3.html#ss3.1). For example:
 
 ```
-print -n '\e]2;My xterm title\a'
+$ print -n '\e]2;My xterm title\a'
 
 ```
 

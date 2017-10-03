@@ -82,7 +82,7 @@ The version of the package. This should be the same as the version released by t
 
 **Tip:**
 
-*   The ordering of uncommon values can be tested with [vercmp](https://www.archlinux.org/pacman/vercmp.8.html), which is provided by the [pacman](/index.php/Pacman "Pacman") package.
+*   The ordering of uncommon values can be tested with [vercmp(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vercmp.8), which is provided by the [pacman](/index.php/Pacman "Pacman") package.
 *   [makepkg](/index.php/Makepkg "Makepkg") can automatically [update](http://allanmcrae.com/2013/04/pacman-4-1-released/) this variable by defining a `pkgver()` function in the PKGBUILD. See [VCS package guidelines#The pkgver() function](/index.php/VCS_package_guidelines#The_pkgver.28.29_function "VCS package guidelines") for details.
 
 ### pkgrel
@@ -102,7 +102,7 @@ epoch=1
 ```
  `1:5.13-2` 
 
-See [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) for more information on version comparisons.
+See [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) for more information on version comparisons.
 
 ## Generic
 

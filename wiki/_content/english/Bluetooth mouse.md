@@ -16,6 +16,7 @@ This article describes how to set up a [Bluetooth](/index.php/Bluetooth "Bluetoo
     *   [3.3 Mouse always disconnect](#Mouse_always_disconnect)
     *   [3.4 Apple Magic Mouse scroll speed](#Apple_Magic_Mouse_scroll_speed)
     *   [3.5 Apple Magic Mouse middle click](#Apple_Magic_Mouse_middle_click)
+    *   [3.6 Mouse pairing and dual boot](#Mouse_pairing_and_dual_boot)
 
 ## Installation
 
@@ -113,4 +114,12 @@ If you find the middle click to be too finicky, you can disable it
 
 If this setting suits you, you can make the change permantent in `/etc/modprobe.d/`
 
- ` /etc/modprobe.d/hid_magicmouse.conf `  `options hid_magicmouse emulate_3button=0`
+ ` /etc/modprobe.d/hid_magicmouse.conf `  `options hid_magicmouse emulate_3button=0` 
+
+### Mouse pairing and dual boot
+
+When dual booting Windows and Linux, you may find yourself having to repair your Bluetooth mouse again and again. This will happen every time you switch OS, because when you pair your device, your Bluetooth service generates a unique set of pairing keys.
+
+First, your computer stores the Bluetooth device's mac address and pairing key. Second, your Bluetooth device stores your computer's mac address and the matching key. This usually works fine, but the mac address for your Bluetooth port will be the same on both Linux and Windows (it is set on the hardware level). However, when you re-pair the device in Windows or Linux, it generates a new key. That key overwrites the previously stored key on the Bluetooth device. Windows overwrites the Linux key and vice versa.
+
+To fix the problem, follow the instructions on [this post at StackExchange](https://unix.stackexchange.com/questions/255509/bluetooth-pairing-on-dual-boot-of-windows-linux-mint-ubuntu-stop-having-to-p).

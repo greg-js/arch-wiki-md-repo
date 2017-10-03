@@ -8,7 +8,7 @@ From the project [home page](http://www.pidgin.im/): "Pidgin is an easy to use a
     *   [3.1 Facebook](#Facebook)
     *   [3.2 IRC](#IRC)
     *   [3.3 Sametime protocol](#Sametime_protocol)
-    *   [3.4 SIP/Simple protocol for Live Communications Server 2003/2005/2007](#SIP.2FSimple_protocol_for_Live_Communications_Server_2003.2F2005.2F2007)
+    *   [3.4 SIP/Simple protocol for Skype for Business/Office 365/Lync](#SIP.2FSimple_protocol_for_Skype_for_Business.2FOffice_365.2FLync)
     *   [3.5 Skype plugin](#Skype_plugin)
     *   [3.6 Rocket.Chat plugin](#Rocket.Chat_plugin)
 *   [4 Security](#Security)
@@ -93,7 +93,7 @@ This final step will add your channel to 'Buddies': go to *Buddies > Add chat*, 
 
 [Install](/index.php/Install "Install") the [libpurple-meanwhile](https://aur.archlinux.org/packages/libpurple-meanwhile/) package. The 'Sametime' protocol will be available when creating an account.
 
-### SIP/Simple protocol for Live Communications Server 2003/2005/2007
+### SIP/Simple protocol for Skype for Business/Office 365/Lync
 
 [Install](/index.php/Install "Install") the [pidgin-sipe](https://www.archlinux.org/packages/?name=pidgin-sipe) package.
 
@@ -103,28 +103,7 @@ Install the [purple-skypeweb](https://www.archlinux.org/packages/?name=purple-sk
 
 ### Rocket.Chat plugin
 
-Install [mercurial](https://www.archlinux.org/packages/?name=mercurial) and [discount](https://aur.archlinux.org/packages/discount/) packages.
-
-Type:
-
-```
-hg clone [https://bitbucket.org/EionRobb/purple-rocketchat/](https://bitbucket.org/EionRobb/purple-rocketchat/)
-cd purple-rocketchat
-make
-sudo make install
-
-```
-
-Following files will be installed:
-
-```
-/usr/lib/purple-2/librocketchat.so
-/usr/share/pixmaps/pidgin/protocols/16/rocketchat.png
-/usr/share/pixmaps/pidgin/protocols/48/rocketchat.png
-/usr/share/pixmaps/pidgin/protocols/22/rocketchat.png
-```
-
-The 'Rocket.Chat' protocol should be now available when creating an account.
+Install the [purple-rocketchat](https://aur.archlinux.org/packages/purple-rocketchat/) package.
 
 ## Security
 

@@ -3,16 +3,21 @@ The [up-board](http://up-board.org) is a Intel based SOC.
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Sound](#Sound)
-    *   [2.1 Compilation](#Compilation)
-        *   [2.1.1 Manual](#Manual)
-        *   [2.1.2 Arch Build System](#Arch_Build_System)
+*   [2 GPIO](#GPIO)
+*   [3 Sound](#Sound)
+    *   [3.1 Compilation](#Compilation)
+        *   [3.1.1 Manual](#Manual)
+        *   [3.1.2 Arch Build System](#Arch_Build_System)
 
 ## Installation
 
 The up-board features a [UEFI](/index.php/UEFI "UEFI") only setup (no BIOS emulation). The standard UEFI installation process may be followed. [systemd-boot](/index.php/Systemd-boot "Systemd-boot") works well as a simple bootloader.
 
 **Note:** The installation disk for the up-board is `/dev/mmcblk0`. [GPT](/index.php/Partitioning#GUID_Partition_Table "Partitioning") is the recommended partition type.
+
+## GPIO
+
+The GPIO pins on the UP board are routed through a CPLD that requires a custom driver. This driver has not yet been added to the mainline kernel, but there are patches available that add the functionality. The AUR package [linux-up](https://aur.archlinux.org/packages/linux-up/) provides the mainline kernel with the driver patched in and enabled.
 
 ## Sound
 
