@@ -36,11 +36,11 @@ Configuration:
 
 Hardware:
 
-*   **CPU**: Intel Core i7-6850K
+*   **CPU**: Intel Core i7-6850K 3.6GHz
 *   **Motherboard**: Gigabyte x99-Ultra Gaming (Revision 1.0, BIOS/UEFI Version: F4)
 *   **Host GPU**: AMD Radeon HD6950 1GB
 *   **Guest GPU**: AMD R9 390 8GB
-*   **RAM**: 32GB G-Skill Ripjaws DDR4 3333MHz
+*   **RAM**: 32GB G-Skill Ripjaws DDR4 runing at 3200MHz
 
 Configuration:
 
@@ -48,15 +48,15 @@ Configuration:
 *   Using **libvirt QEMU/KVM with OVMF**: link to domain XMLs/scripts/notes: [https://github.com/manbearpig3130/MBP-VT-d-gaming-machine](https://github.com/manbearpig3130/MBP-VT-d-gaming-machine)
 *   **Host OS**: Arch Linux
 *   **Guest OS**: Windows 10 Pro
-*   2x 480GB SSDs set up in LVM striped mode (with mdadm) formatted to ext4 are mounted in linux which contains the guest's qcow2 virtual VirtIO disk.
+*   2x 480GB SSDs set up in LVM striped mode (with mdadm) formatted to ext4 are mounted in linux which contains the guest's qcow2 virtual VirtIO disk file.
 *   USB Host controller is passed through, giving most USB ports to the VM, leaving my USB 3.1 controller with attached USB hub for the host.
 *   Motherboard has two NICs, one is passed into VM (Works perfectly after installing Killer NIC Driver).
 *   VM gets dedicated 16GB RAM via static hugepages.
 *   CPU pinning increased performance considerably.
 *   Windows boots straight into Steam big picture mode on primary display (43" Sony Bravia). Overall an awesome gaming machine that meets my gaming needs and lust for GNU/Linux at the same time.
 *   **Quirks**:
-*   I sometimes have to reinstall the AMD drivers in Windows to get HDMI audio working properly, and also when applications refuse to launch due to driver errors sometimes after booting
-*   Sometimes doesn't boot properly, and have to force reset the VM, sometimes a few times before it boots properly. I think it may have something to do with how Windows handles shutdown?
+*   I sometimes have to reinstall the AMD drivers in Windows to get HDMI audio working properly, or roll back to Windows HDMI driver.
+*   I find that if I allow Windows to go through its shutdown procedure it has trouble booting again. To get around this I force off the machine in virtual machine manager gui.
 
 ### Bretos' Virtual Gaming Setup
 

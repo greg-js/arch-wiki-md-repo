@@ -1,11 +1,21 @@
+相关文章
+
+*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
+*   [在 VMware 中安装 Arch](/index.php/Installing_Arch_Linux_in_VMware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installing Arch Linux in VMware (简体中文)")
+*   [VirtualBox](/index.php/VirtualBox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox (简体中文)")
+*   [KVM](/index.php/KVM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KVM (简体中文)")
+*   [QEMU](/index.php/QEMU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "QEMU (简体中文)")
+*   [Xen](/index.php/Xen "Xen")
+*   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
+
 **翻译状态：** 本文是英文页面 [VMware](/index.php/VMware "VMware") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-18，点击[这里](https://wiki.archlinux.org/index.php?title=VMware&diff=0&oldid=485222)可以查看翻译后英文页面的改动。
 
 本文是关于在 Arch 中安装 VMware，你也许想寻找的是 [在 VMware 中安装 Arch Linux](/index.php/Installing_Arch_Linux_in_VMware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installing Arch Linux in VMware (简体中文)")
 
 **注意:**
 
-*   这篇文章时针对最新的VMware正式版,即VMware Workstation Pro 和Player 12.5.
-*   而对于旧版本,可以使用[vmware-patch](https://aur.archlinux.org/packages/vmware-patch/)包
+*   这篇文章适用于最新的 VMware 正式版，即 VMware Workstation Pro / Player 12.5.
+*   对于旧版本的 VMware，建议安装本体后追加安装 [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) 包
 
 ## Contents
 
@@ -34,6 +44,7 @@
         *   [5.6.2 错误：/dev/vmci not found](#.E9.94.99.E8.AF.AF.EF.BC.9A.2Fdev.2Fvmci_not_found)
         *   [5.6.3 在Linux 4.9后内核模块无法编译](#.E5.9C.A8Linux_4.9.E5.90.8E.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97.E6.97.A0.E6.B3.95.E7.BC.96.E8.AF.91)
         *   [5.6.4 VMware模块在Linux内核4.11+上（在GCC7下）编译失败](#VMware.E6.A8.A1.E5.9D.97.E5.9C.A8Linux.E5.86.85.E6.A0.B84.11.2B.E4.B8.8A.EF.BC.88.E5.9C.A8GCC7.E4.B8.8B.EF.BC.89.E7.BC.96.E8.AF.91.E5.A4.B1.E8.B4.A5)
+        *   [5.6.5 VMware 模块在 Linux 4.13 版内核上编译失败](#VMware_.E6.A8.A1.E5.9D.97.E5.9C.A8_Linux_4.13_.E7.89.88.E5.86.85.E6.A0.B8.E4.B8.8A.E7.BC.96.E8.AF.91.E5.A4.B1.E8.B4.A5)
     *   [5.7 安装程序启动失败](#.E5.AE.89.E8.A3.85.E7.A8.8B.E5.BA.8F.E5.90.AF.E5.8A.A8.E5.A4.B1.E8.B4.A5)
         *   [5.7.1 用户界面初始化失败](#.E7.94.A8.E6.88.B7.E7.95.8C.E9.9D.A2.E5.88.9D.E5.A7.8B.E5.8C.96.E5.A4.B1.E8.B4.A5)
     *   [5.8 VMware启动失败](#VMware.E5.90.AF.E5.8A.A8.E5.A4.B1.E8.B4.A5)
@@ -51,14 +62,14 @@
 
 [安装](/index.php/Pacman "Pacman") 依赖项:
 
-*   [fuse2](https://www.archlinux.org/packages/?name=fuse2) - 提供*vmware-vmblock-fuse*
-*   [gksu](https://www.archlinux.org/packages/?name=gksu) - 支持root操作（比如内存分配、注册许可证等等）
-*   [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) - 支持GUI
-*   [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) - 提供模块编译
-*   [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) - 被`--console`安装程序需要
+*   [fuse2](https://www.archlinux.org/packages/?name=fuse2) - 提供 *vmware-vmblock-fuse*
+*   [gksu](https://www.archlinux.org/packages/?name=gksu) - 支持需要 root 权限的操作（比如内存分配、注册许可证等等）
+*   [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) - 支持 GUI
+*   [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) - 模块编译所需
+*   [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) - 支持安装程序的 `--console` 选项
 *   [libcanberra](https://www.archlinux.org/packages/?name=libcanberra) - 支持事件提示音
 
-下载最新的[VMware Workstation Pro](https://www.vmware.com/go/tryworkstation)或[Player](https://www.vmware.com/go/downloadplayer) (或者[beta](https://communities.vmware.com/community/vmtn/beta)版本,当可用时).
+下载最新的 [VMware Workstation Pro](https://www.vmware.com/go/tryworkstation) 或[Player](https://www.vmware.com/go/downloadplayer) (或者[beta](https://communities.vmware.com/community/vmtn/beta)版，如果有的话)。
 
 开始安装：
 
@@ -70,17 +81,17 @@
 **提示：** 一些常用的选项：
 
 *   `--eulas-agreed` - 跳过各种许可协议
-*   `--console` - 使用控制台UI
+*   `--console` - 使用命令行界面，而非 GUI
 *   `--custom` - 允许自定义安装目录，比如`/usr/local`（记得修改[#Systemd 服务](#Systemd_.E6.9C.8D.E5.8A.A1)一节下，`vmware-usbarbitrator.service`中的路径）
 *   `-I`, `--ignore-errors` - 忽略致命错误
 *   `--set-setting=vmware-workstation serialNumber XXXXX-XXXXX-XXXXX-XXXXX-XXXXX` - 设置安装时使用的序列号（有利于脚本化安装）
 *   `--required` - 只询问必要的问题（当结合`--eulas-agreed`和`--console`时可以实现静默安装）
 
-将`System service scripts directory`设置为`/etc/init.d` (默认值)
+当安装程序询问 `System service scripts directory` 的设置时，输入 `/etc/init.d` 即可。
 
 **注意:** 安装过程中会收到`"No rc*.d style init script directories"`错误。这可以安全忽略，因为Arch使用的是[systemd](/index.php/Systemd "Systemd").
 
-**提示：** 从终端上（重新）构建模块，使用:
+**提示：** 如需重新编译模块，用这条命令：
 ```
 # vmware-modconfig --console --install-all
 
@@ -405,6 +416,20 @@ modconfig| I125: The GCC compiler "/sbin/gcc" cannot be used for the target kern
 
 ```
 
+#### VMware 模块在 Linux 4.13 版内核上编译失败
+
+VMware Workstation Pro 12.5.7 版本的内核模块代码需要做出一定修改，才能够成功地为 4.13 版 Linux 内核编译。出处：[[2]](https://communities.vmware.com/thread/568089)。
+
+```
+# cd /usr/lib/vmware/modules/source
+# tar xf vmnet.tar
+# mv vmnet.tar vmnet.old.tar
+# sed -i 's/atomic_inc(&clone->users);/clone = skb_get(clone);/g' vmnet-only/bridge.c
+# tar cf vmnet.tar vmnet-only
+# rm -r vmnet-only
+
+```
+
 ### 安装程序启动失败
 
 如果你回到了执行`.bundle`时的终端提示，则这个版本的VMware Installer也许坏掉了或者不完整，你应该删掉它（你也许也应该参照[#卸载](#.E5.8D.B8.E8.BD.BD)一节中的内容）:
@@ -450,7 +475,7 @@ $ xhost -
 
 #### 版本号为12.5.4的vmplayer/vmware无法启动
 
-如[[2]](https://bbs.archlinux.org/viewtopic.php?id=224667)中所述，临时的解决方案是将包`libpng`降级至1.6.28-1版本，并将其加入`IgnorePkg`参数以忽略升级（参见[/etc/pacman.conf](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman")）。
+如[[3]](https://bbs.archlinux.org/viewtopic.php?id=224667)中所述，临时的解决方案是将包`libpng`降级至1.6.28-1版本，并将其加入`IgnorePkg`参数以忽略升级（参见[/etc/pacman.conf](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman")）。
 
 更方便的解决方案是令VMware使用系统的zlib而不是它自己的：
 
@@ -462,8 +487,6 @@ $ xhost -
 ```
 
 #### 版本号为12.5.3-12.5.5的vmplayer/vmware无法启动
-
-**注意:** 无需在12.5.6上执行该解决方案，但对于12.5.7来说，解决方案可能是必要的。见下文。
 
 这貌似是文件`/usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6`中的问题，`CXXABI_1.3.8`缺失。
 
@@ -554,7 +577,7 @@ ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 
 #### Guests系统启动后网络不可用
 
-这可能是 `vmnet` 模块没有加载 [[3]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/)。又见[#Systemd 服务](#Systemd_.E6.9C.8D.E5.8A.A1)自动加载。
+这可能是 `vmnet` 模块没有加载 [[4]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/)。又见[#Systemd 服务](#Systemd_.E6.9C.8D.E5.8A.A1)自动加载。
 
 ## 卸载
 

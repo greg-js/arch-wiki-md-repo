@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [Compton](/index.php/Compton "Compton") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-04，点击[这里](https://wiki.archlinux.org/index.php?title=Compton&diff=0&oldid=487244)可以查看翻译后英文页面的改动。
+
 Compton 是一个独立的合成管理器，可以给不带合成功能的窗口管理器（例如 [i3](/index.php/I3_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "I3 (简体中文)")）带来淡入淡出、半透明、阴影等视觉效果。Compton 是 [xcompmgr-dana](http://oliwer.net/xcompmgr-dana/) 的分支，而后者又是 [xcompmgr](/index.php/Xcompmgr "Xcompmgr") 的分支。欲了解更多，可查看 [GitHub 上的 compton 项目](https://github.com/chjj/compton)。
 
 ## Contents
@@ -12,14 +14,15 @@ Compton 是一个独立的合成管理器，可以给不带合成功能的窗口
 *   [4 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
     *   [4.1 标签页式窗口](#.E6.A0.87.E7.AD.BE.E9.A1.B5.E5.BC.8F.E7.AA.97.E5.8F.A3)
     *   [4.2 slock](#slock)
-    *   [4.3 dwm & dmenu](#dwm_.26_dmenu)
-    *   [4.4 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
-    *   [4.5 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
-    *   [4.6 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
-    *   [4.7 High CPU use with nvidia drivers](#High_CPU_use_with_nvidia_drivers)
-    *   [4.8 Errors while trying to daemonize with nvidia drivers](#Errors_while_trying_to_daemonize_with_nvidia_drivers)
-    *   [4.9 Lag when using xft fonts](#Lag_when_using_xft_fonts)
-*   [5 See also](#See_also)
+    *   [4.3 dwm 与 dmenu](#dwm_.E4.B8.8E_dmenu)
+    *   [4.4 用 xsetroot 无法设置桌面背景颜色](#.E7.94.A8_xsetroot_.E6.97.A0.E6.B3.95.E8.AE.BE.E7.BD.AE.E6.A1.8C.E9.9D.A2.E8.83.8C.E6.99.AF.E9.A2.9C.E8.89.B2)
+    *   [4.5 Intel 显卡渲染出错](#Intel_.E6.98.BE.E5.8D.A1.E6.B8.B2.E6.9F.93.E5.87.BA.E9.94.99)
+    *   [4.6 使用 AMD Catalyst 驱动时出现的花屏 / 截屏问题](#.E4.BD.BF.E7.94.A8_AMD_Catalyst_.E9.A9.B1.E5.8A.A8.E6.97.B6.E5.87.BA.E7.8E.B0.E7.9A.84.E8.8A.B1.E5.B1.8F_.2F_.E6.88.AA.E5.B1.8F.E9.97.AE.E9.A2.98)
+    *   [4.7 使用 NVidia 驱动时出现高 CPU 占用](#.E4.BD.BF.E7.94.A8_NVidia_.E9.A9.B1.E5.8A.A8.E6.97.B6.E5.87.BA.E7.8E.B0.E9.AB.98_CPU_.E5.8D.A0.E7.94.A8)
+    *   [4.8 使用 NVidia 驱动时，进程后台化会报错](#.E4.BD.BF.E7.94.A8_NVidia_.E9.A9.B1.E5.8A.A8.E6.97.B6.EF.BC.8C.E8.BF.9B.E7.A8.8B.E5.90.8E.E5.8F.B0.E5.8C.96.E4.BC.9A.E6.8A.A5.E9.94.99)
+    *   [4.9 使用 Xft 字体会导致卡顿](#.E4.BD.BF.E7.94.A8_Xft_.E5.AD.97.E4.BD.93.E4.BC.9A.E5.AF.BC.E8.87.B4.E5.8D.A1.E9.A1.BF)
+    *   [4.10 屏幕闪烁](#.E5.B1.8F.E5.B9.95.E9.97.AA.E7.83.81)
+*   [5 延伸阅读](#.E5.BB.B6.E4.BC.B8.E9.98.85.E8.AF.BB)
 
 ## 安装
 
@@ -213,80 +216,91 @@ focus-exclude = "id = 0x1800001";
 
 ```
 
-### dwm & dmenu
+### dwm 与 dmenu
 
-dwm's statusbar is not detected by any of compton's functions to automatically exclude window manager elements. Neither dwm statusbar nor dmenu have a static window id. If you want to exclude it from inactive window transparency (or other), you'll have to either patch a window class into the source code of each, or exclude by less precise attributes. I have dmenu and dwm's status on top, which allows me to write a resolution independent location exclusion.
+虽然有时我们希望 compton 不要为 dwm 状态栏渲染窗口失焦特效，但 dwm 状态栏没法轻易地被 compton 的规则匹配到。而且 dwm 状态栏和 dmenu 都没有静态的 window id。要实现这一效果，你只能尝试给这两个项目打补丁，给这些窗口加上 class 属性用于规则匹配。或者采用宽泛的规则去匹配。
+
+下面这个方法适用于 dmenu 和 dwm 状态栏总是出现在屏幕顶端（从左上角顶点起绘制）的情况：
 
 ```
-$ compton <any other arguments> --focus-exclude "x = 0 && y = 0 && override_redirect = true"
+$ compton <别的参数> --focus-exclude "x = 0 && y = 0 && override_redirect = true"
 
 ```
 
-Otherwise, where using a configuration file:
+如果要写进配置文件的话，要这么写：
 
 ```
 focus-exclude = "x = 0 && y = 0 && override_redirect = true";
 
 ```
 
-The override redirect property seems to be false for most windows- having this in the exclusion rule prevents other windows drawn in the upper left corner from being excluded (for example, when dwm statusbar is hidden, x0 y0 will match whatever is in dwm's master stack).
+`override_redirect` 这个属性在绝大多数窗口上的值似乎都是 `false`。在匹配规则里写 `override_redirect = true` 可以避免这条规则误伤到位置一样的应用程序窗口。
 
-### Unable to change the background color with xsetroot
+### 用 xsetroot 无法设置桌面背景颜色
 
-Currently, compton is incompatible with `xsetroot`'s `-solid` option, a workaround is to use [hsetroot](https://aur.archlinux.org/packages/hsetroot/) to set the background color:
+目前 compton 与 `xsetroot` 的 `-solid` 功能还无法兼容。不过你可以试试用 [hsetroot](https://aur.archlinux.org/packages/hsetroot/) 这个替代方案：
 
 ```
 $ hsetroot -solid '#000000'
 
 ```
 
-For a detailed explanation, please see [https://github.com/chjj/compton/issues/162](https://github.com/chjj/compton/issues/162).
+在 [https://github.com/chjj/compton/issues/162](https://github.com/chjj/compton/issues/162) 可以了解到这一问题背后的具体细节。
 
-### Corrupted screen contents with Intel graphics
+### Intel 显卡渲染出错
 
-On at least some Intel chipsets, DRI3 is known to cause [trouble](https://bugs.freedesktop.org/show_bug.cgi?id=97916) for compton when the display resolution is changed or a new monitor is connected. This can happen with either the `intel` or `modesetting` driver. A workaround is to [disable DRI3](/index.php/Intel_graphics#DRI3_issues "Intel graphics").
+已知某些 Intel 芯片在启用 DRI3 后，如果调节分辨率或者接入新显示器，compton 的渲染就会产生[问题](https://bugs.freedesktop.org/show_bug.cgi?id=97916)。`intel` 与 `modesetting` 两种驱动都受到这一问题的影响。[禁用 DRI3](/index.php/Intel_graphics#DRI3_issues "Intel graphics") 可以绕过这一问题。
 
-### Screen artifacts/screenshot issues when using AMD's Catalyst driver
+### 使用 AMD Catalyst 驱动时出现的花屏 / 截屏问题
 
-Try running compton with
+尝试在 compton 启动时加上参数
 
 ```
 --backend xrender
 
 ```
 
-or adding
+或者把下面这一行写入 compton.conf 配置文件
 
 ```
 backend = "xrender";
 
 ```
 
-to your compton.conf file.
+在 [https://github.com/chjj/compton/issues/208](https://github.com/chjj/compton/issues/208) 可以了解到更多细节。
 
-For more info, please see [https://github.com/chjj/compton/issues/208](https://github.com/chjj/compton/issues/208)
+### 使用 NVidia 驱动时出现高 CPU 占用
 
-### High CPU use with nvidia drivers
+如果在使用参数 `--backend glx` 时发现 CPU 占用很高，或者使用 `--vsync` 时出现画面撕裂，应按照 [NVIDIA](/index.php/NVIDIA "NVIDIA") 的指示安装上 [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils)。
 
-When facing high CPU use with `--backend glx` or tearing with `--vsync` enabled, [install](/index.php/Install "Install") [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl) as described in [NVIDIA](/index.php/NVIDIA "NVIDIA").
+### 使用 NVidia 驱动时，进程后台化会报错
 
-### Errors while trying to daemonize with nvidia drivers
+如果以后台进程启动 compton 时出现错误信息：`main(): Failed to create new session.`，可以装这个版本试试：[compton-garnetius-git](https://aur.archlinux.org/packages/compton-garnetius-git/)。这个版本还包含了若干个上游未能合入的补丁。
 
-If you get error `main(): Failed to create new session.` while trying to start compton in background you should try [compton-garnetius-git](https://aur.archlinux.org/packages/compton-garnetius-git/). It also provides a few pulls from upstream that aren't merged yet.
+### 使用 Xft 字体会导致卡顿
 
-### Lag when using xft fonts
-
-If you experience heavy lag when using Xft fonts in applications such as [xterm](/index.php/Xterm "Xterm") or [urxvt](/index.php/Urxvt "Urxvt") try running with
+如果使用了 Xft 字体会导致 [xterm](/index.php/Xterm "Xterm") 和 [urxvt](/index.php/Urxvt "Urxvt") 之类的软件严重卡顿，尝试给 compton 加上如下参数：
 
 ```
 --xrender-sync --xrender-sync-fence
 
 ```
 
-or try using the xrender backend.
+或者改用 xrender 渲染方式。
 
-See [[1]](https://github.com/chjj/compton/issues/152) for more information.
+在 [https://github.com/chjj/compton/issues/152](https://github.com/chjj/compton/issues/152) 可以了解到更多细节。
 
-## See also
+### 屏幕闪烁
+
+在无任何 panel 的桌面环境中将窗口最大化，可能会出现这一问题。解决办法是在配置文件中加入：
+
+```
+ unredir-if-possible = false;
+
+```
+
+在 [https://github.com/chjj/compton/issues/402](https://github.com/chjj/compton/issues/402) 可以了解到更多细节。
+
+## 延伸阅读
 
 *   [Howto: Using Compton for tear-free compositing on XFCE or LXDE](http://ubuntuforums.org/showthread.php?t=2144468&p=12644745#post12644745)

@@ -94,14 +94,14 @@ $ emacs filename.txt
 
 ### No Colors
 
-By default, Emacs starts with a color theme showing hyperlinks in dark blue. To start Emacs without any color theme or scheme:
+By default, Emacs starts with a color theme showing hyperlinks in dark blue. To start Emacs on a text terminal without any color theme or scheme:
 
 ```
 $ emacs -nw --color=no
 
 ```
 
-This will cause all text to appear in white color only.
+This will cause all text to appear in the foreground color of the terminal — normally white text on a black background, or black text on a white background.
 
 ### As a daemon
 

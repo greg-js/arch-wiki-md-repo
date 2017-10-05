@@ -1,3 +1,8 @@
+Related articles
+
+*   [distcc](/index.php/Distcc "Distcc")
+*   [TORQUE](/index.php/TORQUE "TORQUE")
+
 [Slurm](https://en.wikipedia.org/wiki/Slurm_Workload_Manager "wikipedia:Slurm Workload Manager") (also referred as Slurm Workload Manager or slurm-llnl) is an open-source workload manager designed for Linux clusters of all sizes, used by many of the world's supercomputers and computer clusters. It provides three key functions. First it allocates exclusive and/or non-exclusive access to resources (computer nodes) to users for some duration of time so they can perform work. Second, it provides a framework for starting, executing, and monitoring work (typically a parallel job) on a set of allocated nodes. Finally, it arbitrates contention for resources by managing a queue of pending work.
 
 ## Contents
@@ -18,7 +23,7 @@ The package itself has many more optional dependencies, though Slurm has to be r
 
 ## Setup
 
-The configuration files for slurm-llnl reside under `/etc/slurm-llnl`. Prior to starting any slurm-services, it has to be configured properly by creating a config file `/etc/slurm-llnl/slurm.conf`. Client and server may use the same configuration file, which can either be generated at [https://computing.llnl.gov/linux/slurm/configurator.html](https://computing.llnl.gov/linux/slurm/configurator.html) or by copying `/etc/slurm-llnl/slurm.conf.example` to `/etc/slurm-llnl/slurm.conf` and adapting it to ones liking.
+The configuration files for slurm-llnl reside under `/etc/slurm-llnl`. Prior to starting any slurm-services, it has to be configured properly by creating a config file at `/etc/slurm-llnl/slurm.conf`. Client and server may use the same configuration file, which can either be generated at [the official website](https://computing.llnl.gov/linux/slurm/configurator.html) or by copying `/etc/slurm-llnl/slurm.conf.example` to `/etc/slurm-llnl/slurm.conf` and adapting it to ones liking.
 
 By default the Slurm user, which was introduced to your system in the installation process, has `64030` as UID and GID, this simplifies the setup on multiple systems. UID and GID matches the one used in Debian, therefore they may be used side-by-side, but remember that binaries are not in the same directories on each and every distribution.
 
@@ -30,7 +35,7 @@ On the client-side one may now safely [start](/index.php/Start "Start")/[enable]
 
 [Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `slurmctld.service`.
 
-To complete an entrerprise like solution you may want to [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `slurmdbd.service`, which handles a mysql database for easier management thereby logging somewhat essential process information.
+Additionally you may want to [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `slurmdbd.service`, which handles a SQL database for easier management thereby logging somewhat essential process information.
 
 **Note:** Additional arguments may be passed to the program by adapting `/etc/default/slurm-llnl` though still utilizing the power of systemd. This file is handled as the environment file for the various services and simply passes any arguments on to the program.
 

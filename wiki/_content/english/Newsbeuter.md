@@ -129,7 +129,7 @@ Several aspects of newsbeuter’s behaviour can be configured via a configuratio
 
 The configuration file can also contain comments, which start with the `#` character and go as far as the end of line. If you need to enter a configuration argument that contains spaces, use quotes `"` around the whole argument. It’s even possible to integrate the output of external commands into the configuration. The text between two backticks ``` is evaluated as shell command, and its output is put on its place instead. This works like backtick evaluation in Bourne-compatible shells and allows users to use external information from the system within the configuration.
 
-See [[1]](https://gist.github.com/anonymous/42d2f5956e7bc8ee1ebc), [[2]](http://moparx.com/configs/newsbeuter/) and [[3]](https://github.com/akrennmair/newsbeuter/blob/master/test/config-example) for example configurations.
+See [[1]](https://gist.github.com/anonymous/42d2f5956e7bc8ee1ebc) and [[2]](http://moparx.com/configs/newsbeuter/) for example configurations.
 
 **Note:** To see a complete list of configuration command, consult the man page
 

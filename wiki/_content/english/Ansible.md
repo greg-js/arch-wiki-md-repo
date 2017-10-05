@@ -91,7 +91,19 @@ ansible-vault encrypt_string --vault-id vault_pass.txt varcontent -n varname
 
 ```
 
-It returns directly the protected variable that can be inserted into a playbook. Encrypted and non-encrypted variables can be mixed together in a YAML file as showed [here](http://docs.ansible.com/ansible/latest/playbooks_vault.html#single-encrypted-variable).
+It returns directly the protected variable that can be inserted into a playbook. Encrypted and non-encrypted variables can be mixed together in a YAML file:
+
+```
+notsecret: myvalue
+mysecret: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          66386439653236336462626566653063336164663966303231363934653561363964363833313662
+          6431626536303530376336343832656537303632313433360a626438346336353331386135323734
+          62656361653630373231613662633962316233633936396165386439616533353965373339616234
+          3430613539666330390a313736323265656432366236633330313963326365653937323833366536
+          3462
+other_plain_text: othervalue
+```
 
 ## Tips and tricks
 

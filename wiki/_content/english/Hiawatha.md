@@ -65,7 +65,7 @@ Next, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start")
 
 For further details see the official [HowTo](https://www.hiawatha-webserver.org/howto).
 
-**Note:** Hiawatha supports on-the-fly [gzip content encoding](https://en.wikipedia.org/wiki/HTTP_compression). It will gzip the requested file and cache it on disk in `/var/lib/hiawatha/gzipped`. Every time the file is requested again, the already gzipped version from disk will be used. It will notice (timestamp and size) file changes and the cache is cleared upon restart.
+**Note:** Hiawatha supports on-the-fly [gzip content encoding](https://en.wikipedia.org/wiki/HTTP_compression "wikipedia:HTTP compression"). It will gzip the requested file and cache it on disk in `/var/lib/hiawatha/gzipped`. Every time the file is requested again, the already gzipped version from disk will be used. It will notice (timestamp and size) file changes and the cache is cleared upon restart.
 
 ### Normal CGI
 
@@ -148,7 +148,7 @@ VirtualHost {
 
 ### SSL/TLS
 
-First, you need a *X.509 SSL/TLS* certificate to use TLS. If you don't, you can obtain one for free from [#Let's Encrypt](#Let.27s_Encrypt) certificate authority.
+First, you need a *X.509 SSL/TLS* certificate to use TLS. If you do not, you can obtain one for free from [#Let's Encrypt](#Let.27s_Encrypt) certificate authority.
 
 The order of the items in the certificate file is important and has to be as follows:
 
@@ -186,7 +186,10 @@ Once it is done, [reload](/index.php/Reload "Reload") the `hiawatha.service`.
 
 Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion. Download it into your preferred location:
 
- `curl [https://www.hiawatha-webserver.org/files/letsencrypt.tar.gz](https://www.hiawatha-webserver.org/files/letsencrypt.tar.gz) | tar -xz` 
+```
+$ curl [https://www.hiawatha-webserver.org/files/letsencrypt.tar.gz](https://www.hiawatha-webserver.org/files/letsencrypt.tar.gz) | tar -xz
+
+```
 
 Alternatively the script is also available in `extra/letsencrypt` within the [source tarball](https://github.com/hsleisink/hiawatha/archive/master.zip).
 
@@ -197,7 +200,7 @@ The detailed instructions are described in `README.txt` and the tool configurati
 1.  Register an account with the Let's Encrypt certificate authority (CA). An account key file will be created. `$ ./letsencrypt register` 
 2.  Request a website certificate: *www.my-domain.org* must be the first hostname of a `VirtualHost`. Any following webserver's hostname will be used as an alternative hostname for the certificate. The file `www.my-domain.org.pem` will be created. `$ ./letsencrypt request www.my-domain.org` 
 
-If the above succeeds, you can switch from the ***testing*** to the ***production*** CA by changing the LE_CA_HOSTNAME setting in the configuration file and go through the **two steps** above again.
+If the above succeeds, you can switch from the ***testing*** to the ***production*** CA by changing the `LE_CA_HOSTNAME` setting in the configuration file and go through the **two steps** above again.
 
 ##### Auto renewal
 

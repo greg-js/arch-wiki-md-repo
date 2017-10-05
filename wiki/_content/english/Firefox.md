@@ -158,6 +158,8 @@ security.sandbox.content.write_path_whitelist
 
 ```
 
+**Note:** The trailing slash on `/dev/snd/` is important, otherwise apulse will report "Permission denied" errors.
+
 ### Dictionaries for spell checking
 
 To enable spell checking for a specific language right click on any text field and check the *Check Spelling* box. To select a language for spell checking to you have right click again and select your language from the *Languages* sub-menu.

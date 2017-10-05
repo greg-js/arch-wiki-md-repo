@@ -2,7 +2,7 @@ From the squid [website](http://www.squid-cache.org):
 
 	Squid is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages. Squid has extensive access controls and makes a great server accelerator. It runs on Unix and Windows and is licensed under the GNU GPL.
 
-While squid works wonderfully in large corporations and schools, it can also benefit the home user too. However, if you're looking for a more lightweight single-user proxy, you should try [Polipo](/index.php/Polipo "Polipo").
+While squid works wonderfully in large corporations and schools, it can also benefit the home user too.
 
 ## Contents
 

@@ -96,7 +96,7 @@ If the backend of your scanner is not part of the sane package (such as `hpaio.c
 
 Many frontends exist for SANE, a non-exhaustive list of which can be found on the [sane-project website](http://www.sane-project.org/sane-frontends.html). Another way to find them is to use `pacman` to [search the repositories](/index.php/Pacman#Querying_package_databases "Pacman") for keywords such as "sane" or "scanner".
 
-*   **[gscan2pdf](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#gscan2pdf "wikipedia:Scanner Access Now Easy")** — A GTK2-based GUI to produce PDFs, TIFFs or DjVus from scanned documents. It is also able to apply OCR in the process using different engines.
+*   **[gscan2pdf](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#gscan2pdf "wikipedia:Scanner Access Now Easy")** — A GTK2-based GUI to produce PDFs, TIFFs or DjVus from scanned documents. It is also able to apply [OCR](/index.php/List_of_applications/Documents#OCR_software "List of applications/Documents") in the process using different engines.
 
 	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://aur.archlinux.org/packages/gscan2pdf/)
 

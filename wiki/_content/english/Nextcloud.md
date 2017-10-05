@@ -108,6 +108,8 @@ To do nextcloud database upgrade automatically you may set up pacman post upgrad
 
 ```
 
+You need to put it into /etc/pacman.d/hooks/nextcloud.hook if you did not customize HookDir in pacman.conf.
+
 See also [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman")
 
 ### PHP setup

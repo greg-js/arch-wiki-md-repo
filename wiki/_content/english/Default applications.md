@@ -1,3 +1,9 @@
+Related articles
+
+*   [Desktop entries](/index.php/Desktop_entries "Desktop entries")
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Window manager](/index.php/Window_manager "Window manager")
+
 There is frequently more than one application able to handle data of a certain type, so users and even some packages assemble lists of default applications for each [#MIME type](#MIME_types). While the base install of Arch Linux does not define default applications, [desktop environments](/index.php/Desktop_environments "Desktop environments") you install may do so. Some desktop environments also provide a GUI or a file-manager which can interactively configure default applications. If you do not use a desktop environment, you may need to install additional software in order to conveniently manage default applications.
 
 ## Contents
@@ -98,7 +104,7 @@ The [XDG standard](https://specifications.freedesktop.org/mime-apps-spec/mime-ap
 
 Additionally, it is possible to define [desktop environment](/index.php/Desktop_environment "Desktop environment")-specific default applications in a file named `*desktop*-mimeapps.list` where `*desktop*` is the name of the desktop environment (from the `XDG_CURRENT_DESKTOP` environment variable). For example, `/etc/xdg/xfce-mimeapps.list` defines system-wide default application overrides for [Xfce](/index.php/Xfce "Xfce"). These desktop-specific overrides take precedence over the corresponding non-desktop-specific file. For example, `/etc/xdg/xfce-mimeapps.list` takes precedence over `/etc/xdg/mimeapps.list` but is still overridden by `~/.config/mimeapps.list`.
 
-**Tip:** Although deprecated, several applications still read/write to `~/.local/share/applications/mimeapps.list`. To simplify maintenance, simply symlink it `$ ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list` . Note that the symlink must be in this direction because [#xdg-utils](#xdg-utils) deletes and recreates `~/.local/share/applications/mimeapps.list` when it writes to it, which will break any symbolic/hard links to `~/.config/mimeapps.list`.
+**Tip:** Although deprecated, several applications still read/write to `~/.local/share/applications/mimeapps.list`. To simplify maintenance, simply symlink it `$ ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list` . Note that the symlink must be in this direction because [#xdg-utils](#xdg-utils) deletes and recreates `~/.config/mimeapps.list` when it writes to it, which will break any symbolic/hard links
 
 **Note:** You might also find files in these locations named `defaults.list`. This file is similar to `mimeapps.list` except it only lists default applications (not added/removed associations). It is now deprecated and should be manually merged with `mimeapps.list`.
 

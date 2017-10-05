@@ -313,6 +313,7 @@ domains = LDAP
 
 [domain/LDAP]
 cache_credentials = true
+enumerate = true
 
 id_provider = ldap
 auth_provider = ldap

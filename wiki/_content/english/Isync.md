@@ -37,6 +37,8 @@ Install [isync](https://www.archlinux.org/packages/?name=isync) from the [offici
 
 **Note:** Google appears to block isync from downloading emails by default. You need to change your account's security preferences. Toggle "Allow less secure apps" to "on" on [Google's Security Page](https://myaccount.google.com/security).
 
+**Note:** **Subfolders** setting in MaildirStore now seems to be requred to be set: [iSync Config SubFolders](http://isync.sourceforge.net/mbsync.html) **SubFolders Legacy** worked as previous unset - Oct 2017
+
 First create and customize the main configuration file using this example ~/.mbsyncrc:
 
  `~/.mbsyncrc` 

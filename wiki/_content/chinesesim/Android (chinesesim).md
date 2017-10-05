@@ -1,3 +1,8 @@
+相关文章
+
+*   [Android notifier](/index.php/Android_notifier "Android notifier")
+*   [Android tethering](/index.php/Android_tethering "Android tethering")
+
 **翻译状态：** 本文是英文页面 [Android](/index.php/Android "Android") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-26，点击[这里](https://wiki.archlinux.org/index.php?title=Android&diff=0&oldid=451481)可以查看翻译后英文页面的改动。
 
 ## Contents
@@ -56,10 +61,10 @@
 *   [MTP](/index.php/MTP "MTP") 协议可以用USB传输文件。
 *   [其它连接方法](#.E5.85.B6.E5.AE.83.E8.BF.9E.E6.8E.A5.E6.96.B9.E6.B3.95) (比如 FTP, SSH)。
 
-更高阶的用法，开发、刷机和恢复等：
+更高阶的用法，开发、刷入固件和恢复固件等：
 
 *   [ADB 工具包](#.E5.AE.89.E5.8D.93.E8.B0.83.E8.AF.95.E6.A1.A5_.28ADB.29) 广泛用于开发。
-*   [恢复 Android](#.E6.81.A2.E5.A4.8D_Android) 用于刷机和恢复安卓固件（包括 fastboot）。
+*   [恢复 Android](#.E6.81.A2.E5.A4.8D_Android) 用于刷入和恢复安卓固件（包括 fastboot）。
 
 ## 安卓开发
 

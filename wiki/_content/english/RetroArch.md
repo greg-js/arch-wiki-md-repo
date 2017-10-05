@@ -25,7 +25,7 @@
 
 RetroArch uses separate libraries, called "emulator cores" or "emulator implementations", available from both [Community](https://www.archlinux.org/packages/?q=libretro) and the [libretro GitHub repository](https://github.com/libretro).
 
-Each libretro core package will install a library to `/usr/lib/libretro`. The syntax to choose one when executing *retroarch* is:
+Each libretro core package will install a library to `/usr/lib/libretro/`. The syntax to choose one when executing *retroarch* is:
 
 ```
 $ retroarch --libretro /usr/lib/libretro/libretro-*core*.so *path/to/rom*
@@ -34,7 +34,7 @@ $ retroarch --libretro /usr/lib/libretro/libretro-*core*.so *path/to/rom*
 
 A default emulation core can be defined in the configuration, obviating the need to specify it on every run.
 
- `/etc/retroarch.cfg or ~/.config/retroarch/retroarch.cfg`  `libretro_path = "/usr/lib/libretro/libretro-*core*.so"` 
+ `~/.config/retroarch/retroarch.cfg`  `libretro_path = "/usr/lib/libretro/libretro-*core*.so"` 
 
 ## Configuration
 
@@ -47,17 +47,17 @@ $ cp /etc/retroarch.cfg ~/.config/retroarch/retroarch.cfg
 
 ```
 
-It supports split configuration files using the `#include "foo.cfg"` directive within the main configuration file, `retroarch.cfg`. This can be overridden using the `--appendconfig /path/to/config` parameter and is beneficial if different keybinds, video configurations or audio settings are required for the various implementations.
+It supports split configuration files using the `#include "foo.cfg"` directive within the main configuration file, `retroarch.cfg`. This can be overridden using the `--appendconfig */path/to/config*` parameter and is beneficial if different keybinds, video configurations or audio settings are required for the various implementations.
 
-**Tip:** RetroArch is capable of loading *[bsnes xml filters](https://gitorious.org/bsnes/xml-shaders)* and *[cg shaders](https://github.com/libretro/common-shaders)* that can be defined in `retroarch.cfg` as `video_bsnes_shader` and `video_cg_shader` respectively.
+**Tip:** RetroArch is capable of loading [bsnes xml filters](https://gitorious.org/bsnes/xml-shaders) and [cg shaders](https://github.com/libretro/common-shaders) that can be defined in `retroarch.cfg` as `video_bsnes_shader` and `video_cg_shader` respectively.
 
 **Note:** [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) requires [nvidia-cg-toolkit](https://www.archlinux.org/packages/?name=nvidia-cg-toolkit) in order to use the *cg shaders*.
 
-**Warning:** When using *[ALSA](/index.php/ALSA "ALSA")* it is necessary for the `audio_out_rate` to be equal to the system's default output rate, usually 48000.
+**Warning:** When using [ALSA](/index.php/ALSA "ALSA") it is necessary for the `audio_out_rate` to be equal to the system's default output rate, usually `48000`.
 
 ## Online updater
 
-Recent versions of RetroArch have introduced a built-in menu for updating core files and various assets from the [RetroArch Buildbot](https://buildbot.libretro.com/). It can be accessed from the main menu at "Online Updater".
+Recent versions of RetroArch have introduced a built-in menu for updating core files and various assets from the [RetroArch Buildbot](https://buildbot.libretro.com/). It can be accessed from the main menu at *Online Updater*.
 
  `Online Updater` 
 ```
@@ -77,7 +77,7 @@ These cores and assets are kept up to date and can be pulled from the updater at
 
 ### No cores found
 
-By default RetroArch will attempt to find cores in `/usr/lib/libretro`. Cores downloaded using the built-in Online Updater will fail to save unless retroarch is run as root (not recommended, as it may overwrite cores installed by pacman), since the user does not have permission to modify this directory. To use cores from the Online Updater, edit these lines:
+By default RetroArch will attempt to find cores in `/usr/lib/libretro/`. Cores downloaded using the built-in Online Updater will fail to save unless retroarch is run as root (not recommended, as it may overwrite cores installed by [pacman](/index.php/Pacman "Pacman")), since the user does not have permission to modify this directory. To use cores from the Online Updater, edit these lines:
 
  `~/.config/retroarch/retroarch.cfg` 
 ```
@@ -87,18 +87,13 @@ libretro_info_path = "~/.config/retroarch/cores/info"
 
 ### No option to update or download cores in the menu
 
-Open `~/.config/retroarch/retroarch.cfg` or `/etc/retroarch.cfg` & make sure that "menu_show_core_updater" is set to true. This should then allow you to update cores in the 'Online Updater' menu & download cores in the 'Load Core' menu
+Open `~/.config/retroarch/retroarch.cfg` or `/etc/retroarch.cfg` and make sure that `menu_show_core_updater` is set to `true`. This should then allow you to update cores in the *Online Updater* menu and download cores in the *Load Core* menu.
 
 ### Input devices do not operate
 
-You may encounter problems if running on a CLI or a display server other than [Xorg](/index.php/Xorg "Xorg") or if you use the [udev](/index.php/Udev "Udev") input driver, because /dev/input nodes are limited to root-only access. Try adding your user to the "input" group then logging in again, e.g.
+You may encounter problems if running on a CLI or a display server other than [Xorg](/index.php/Xorg "Xorg") or if you use the [udev](/index.php/Udev "Udev") input driver, because `/dev/input` nodes are limited to root-only access. Try adding your user to the "input" [group](/index.php/Group "Group") then logging in again.
 
-```
-# usermod -a -G input *username*
-
-```
-
-Alternatively, manually add a rule in `/etc/udev/rules.d/99-evdev.rules`, with `KERNEL=="event*", NAME="input/%k", MODE="666"` as its contents. Reload udev rules by running:
+Alternatively, manually add a rule in `/etc/udev/rules.d/99-evdev.rules`, with `KERNEL=="event*", NAME="input/%k", MODE="666"` as its contents. Reload [udev rules](/index.php/Udev_rules "Udev rules") by running:
 
 ```
 # udevadm control --reload-rules

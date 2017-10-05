@@ -7,22 +7,10 @@
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 快速入门](#.E5.BF.AB.E9.80.9F.E5.85.A5.E9.97.A8)
-    *   [2.1 运行Emacs](#.E8.BF.90.E8.A1.8CEmacs)
-        *   [2.1.1 图形界面下打开方式](#.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2.E4.B8.8B.E6.89.93.E5.BC.80.E6.96.B9.E5.BC.8F)
-        *   [2.1.2 虚拟终端下的常见方式](#.E8.99.9A.E6.8B.9F.E7.BB.88.E7.AB.AF.E4.B8.8B.E7.9A.84.E5.B8.B8.E8.A7.81.E6.96.B9.E5.BC.8F)
-            *   [2.1.2.1 去掉颜色](#.E5.8E.BB.E6.8E.89.E9.A2.9C.E8.89.B2)
-        *   [2.1.3 作为守护进程](#.E4.BD.9C.E4.B8.BA.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)
-    *   [2.2 基本术语和约定](#.E5.9F.BA.E6.9C.AC.E6.9C.AF.E8.AF.AD.E5.92.8C.E7.BA.A6.E5.AE.9A)
-    *   [2.3 移动](#.E7.A7.BB.E5.8A.A8)
-    *   [2.4 文件和缓冲区](#.E6.96.87.E4.BB.B6.E5.92.8C.E7.BC.93.E5.86.B2.E5.8C.BA)
-    *   [2.5 编辑](#.E7.BC.96.E8.BE.91)
-    *   [2.6 移除，召回和区域](#.E7.A7.BB.E9.99.A4.EF.BC.8C.E5.8F.AC.E5.9B.9E.E5.92.8C.E5.8C.BA.E5.9F.9F)
-    *   [2.7 查找和替换](#.E6.9F.A5.E6.89.BE.E5.92.8C.E6.9B.BF.E6.8D.A2)
-    *   [2.8 缩进和前缀参数](#.E7.BC.A9.E8.BF.9B.E5.92.8C.E5.89.8D.E7.BC.80.E5.8F.82.E6.95.B0)
-    *   [2.9 窗口和外框架](#.E7.AA.97.E5.8F.A3.E5.92.8C.E5.A4.96.E6.A1.86.E6.9E.B6)
-    *   [2.10 获得帮助](#.E8.8E.B7.E5.BE.97.E5.B8.AE.E5.8A.A9)
-    *   [2.11 模式](#.E6.A8.A1.E5.BC.8F)
+*   [2 运行Emacs](#.E8.BF.90.E8.A1.8CEmacs)
+    *   [2.1 没有颜色](#.E6.B2.A1.E6.9C.89.E9.A2.9C.E8.89.B2)
+    *   [2.2 作为守护进程](#.E4.BD.9C.E4.B8.BA.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)
+    *   [2.3 作为systemd单元](#.E4.BD.9C.E4.B8.BAsystemd.E5.8D.95.E5.85.83)
 *   [3 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
     *   [3.1 TRAMP](#TRAMP)
     *   [3.2 键盘宏和寄存器](#.E9.94.AE.E7.9B.98.E5.AE.8F.E5.92.8C.E5.AF.84.E5.AD.98.E5.99.A8)
@@ -59,18 +47,11 @@
 
 ## 安装
 
-Emacs有众多变体发行版本(有时候称作*emacsen*). 最常见的莫过于 [GNU Emacs](http://www.gnu.org/software/emacs/)，在[Official repositories](/index.php/Official_repositories "Official repositories")可以找到
+Emacs有众多变体发行版本（有时候称作*emacsen*）。 最常见的莫过于 [GNU Emacs](http://www.gnu.org/software/emacs/)，在[Official repositories](/index.php/Official_repositories "Official repositories")可以找到。
 
-```
-$ pacman -S emacs
+在 [official repositories](/index.php/Official_repositories "Official repositories") 中可以安装 [emacs](https://www.archlinux.org/packages/?name=emacs) 。如果你经常使用命令行，你可能更喜欢没有GTK+支持的 [emacs-nox](https://www.archlinux.org/packages/?name=emacs-nox)（也没有声音或其它有趣的东西）。 值得注意的是文字模式的Emacs有一些缺点：它支持更少的颜色和字体设置功能（实时改变字体大小，单文档多字体等等）。而且emacs-nox存在一些高级功能上的缺陷，比如Speedbar和GUD（调试环境），处理复杂的外观（face）的时候速度也会变慢。
 
-```
-
-如果你总是在终端下工作的话，你可能会选择[emacs-nox](https://www.archlinux.org/packages/?name=emacs-nox)。这是一个没有GTK+依赖的版本（也没有声音支持）。
-
-终端版Emacs存在以下问题：它支持更少的颜色和更少的字体控制功能（缺少在线控制字体大小、在一篇文档中使用多种字体等功能）。而且对于一些需要高级特性的功能比如Speedbar或者GUD（调试环境），它也不支持。另外在控制复杂的外观（face）时，emacs-nox比Emacs要慢。
-
-如果你想体验Emacs的所有扩展功能而不用装一堆依赖的话，你可以使用PKGBUILD来按你的需求定制Emacs。不使用`gtk3`可以让Emacs避免使用gconf。图像和声音的支持也可以去除。在Emacs的源代码目录下运行`./configure --help`可以看看有哪些配置选项。
+如果你想体验Emacs的所有扩展功能而不用装一堆依赖的话，你可以使用PKGBUILD来按你的需求定制Emacs。不使用 `gtk3` 可以让Emacs避免使用gconf。图像和声音的支持也可以去除。在Emacs的源代码目录下运行 `./configure --help` 可以看看有哪些配置选项。
 
  `PKGBUILD` 
 ```
@@ -82,276 +63,104 @@ $ pacman -S emacs
 
 ```
 
-另外一个常见的变体就是[xemacs](https://aur.archlinux.org/packages/xemacs/).
+## 运行Emacs
 
-## 快速入门
+启动Emacs之前，你应该知道怎样关掉它（特别是你在终端里运行时）：使用 `Ctrl+x``Ctrl+c` 。
 
-一般印象是Emacs十分复杂，学习曲线陡峭，但很多资深学习者并不这样认为，反而认为其非常易懂和可定制。因为其源码和配置文件语义化程度较高。简单了解下自定义和高扩展带来的好处花不了多少时间。何况还有很多成熟的功能拓展模块，很方便添加，可以让Emacs为任何文本编辑的需求配置强大的环境。
-
-Emacs自带一个入门教程，你可以点击欢迎界面上的第一个链接来打开它; 或者从菜单栏中选择*Help->Emacs Tutorial*，或者按'F1'键然后按't'. 我们设计这篇文章来为你在Emacs入门学习中提供额外的资源。
-
-Emacs也包括一系列引用链接，既有适合初学者的内容，也有骨灰级玩家所喜爱的．参见`/usr/share/emacs/<version>/etc/refcards/` (将<version>换成你的emacs版本).
-
-### 运行Emacs
-
-在启动Emacs之前，你要先学会怎么关闭它（尤其是你要在终端里运行它的话）：用`Ctrl+x``Ctrl+c`来关闭它。
-
-#### 图形界面下打开方式
-
-图形界面下可以直接点击图标打开。
-
-#### 虚拟终端下的常见方式
-
-打开Emacs:
+启动Emacs：
 
 ```
 $ emacs
 
 ```
 
-不打开图形界面，直接在终端中运行:
+或者以文字模式启动：
 
 ```
 $ emacs -nw
 
 ```
 
-也可以直接用下面的命令来打开一个文件:
+又或者，快速启动（不解析.emacs文件）并以文字模式启动：
+
+```
+$ emacs -Q -nw
+
+```
+
+如果你安装的是nox版本，'emacs' 和 'emacs -nw' 效果是一样的。
+
+可以直接打开文件：
 
 ```
 $ emacs filename.txt
 
 ```
 
-##### 去掉颜色
+### 没有颜色
 
-默认的emacs会带有颜色主题，如果不需要，可以关闭之：
+默认情况下Emacs启动时会将超链接显示为深蓝色。不使用任何颜色主题：
 
 ```
 $ emacs -nw --color=no
 
 ```
 
-#### 作为守护进程
+这样一来所有文字都是白色了。
 
-Emacs由于每次启动都需要加载大量自定义的配置文件，所以打开时候会有点慢。从Emacs23开始, Emacs可以以守护进程的形式运行，这样每个用户都可以链接到Emacs。以守护进程运行Emacs:
+### 作为守护进程
+
+不想让Emacs每次启动都读取一次配置文件的话，可以将Emacs以守护进程运行：
 
 ```
 $ emacs --daemon
 
 ```
 
-你可能在启动时打开一个守护进程，然后再将守护进程链接到窗口。另外，也可以将图形和终端客户端同时链接到守护进程上，这样启动图形界面速度就很快了。
-
-如果你仅仅想链接到守护进程，用下面的命令(注意,在桌面环境下这个命令会打开一个图形客户端，而在像tty这种命令行下，它会打开一个命令行版的emacs):
+连接到守护进程：
 
 ```
-$ emacsclient
+$ emacsclient -nc
 
 ```
 
-如果你想在桌面环境下打开一个命令行版的emacs，使用下面的命令:
+这个命令创建一个新的frame `-c`（使用 `-t` 如果你更喜欢文字模式）并且不独占终端 `-n` （`--no-wait`）。有的程序例如Mutt和Git（为了提交信息）会等待编辑器完成编辑，所以不能使用 `-n` 参数。如果你的默认编辑器是Emacs，你需要为那些程序指定一个替代编辑器（比如 `emacsclient -a "" -t`）。
 
+### 作为systemd单元
+
+The old system unit method had some caveats. It gave a limited shell environment which restricted shell calls, so we will be using a user unit, which tends to work a lot better than naively calling *emacs --daemon*.
+
+为Emacs创建一个systemd单元：
+
+**Note:** Such a unit file is planned for inclusion in Emacs 26.1, see [emacs bug 16507](https://debbugs.gnu.org/cgi/bugreport.cgi?bug=16507).
+ `~/.config/systemd/user/emacs.service` 
 ```
-$ emacsclient -t
+[Unit]
+Description=Emacs: the extensible, self-documenting text editor
 
-```
+[Service]
+Type=forking
+ExecStart=/usr/bin/emacs --daemon
+ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
+Restart=always
 
-另外，你可以在后面加上 `-a ""` 参数. 现在，你第一次使用这个命令时，它会把emacs作为守护进程来启动，它会留在后台以加快以后的启动速度(也会记住缓冲区).
-
-更聪明点，你可以在.bashrc中加上下面的别名:
-
-```
-alias em='emacsclient -t -a ""'  #在终端中开启emacs
-alias emc='emacsclient -nc -a ""'  #启动emacs图形界面
-EDITOR='emacsclient -a ""'
-```
-
-在[xfce](/index.php/Xfce "Xfce")桌面环境中，如果你想使用 emacsclient -c 来代替 emacs %f 打开一个新文件, 你可以修改你的 /usr/share/applications/emacs.desktop 文件，把下面这一行
-
-```
-$ Exec=emacs %f
-
-```
-
-修改为
-
-```
-$ Exec=emacsclient -c
+[Install]
+WantedBy=default.target
 
 ```
 
-使用这种方法，每次你打开一个文件时就只会启动客户端，因此速度非常快!
-
-### 基本术语和约定
-
-Emacs使用一些刚开始看起来很奇怪的术语和约定，我们会在合适的时候介绍。但是，对于部分术语，我们必须要在前面介绍，因为它们对于使用Emacs来说是非常基础的。
-
-第一个要介绍的术语是*缓冲区*的概念。一个缓冲区就是Emacs中的数据的一种表示方式，比如，当使用Emacs打开一个文件时，这个文件从磁盘中被读出来，它的内容被存储在了缓冲区里面，它的内容可以在这个缓冲区里面被编辑并且可以重新写进磁盘中。缓冲区中的内容不仅仅可以是文本，也可以是图片和widget。现在，让缓冲区可以显示应用程序的工作正在进行！换个角度思考，在磁盘中数据是以文件形式保存的，而在Emacs中，数据是以缓冲区的形式存在的。
-
-在Emacs中，对于按键组合的约定你可能很陌生。比如:
-
-**C-x** 代表 Ctrl-x
-
-**M-x** 代表 Meta-x
-
-**注意:** 'Meta'一般代表Alt键，也可以用Esc键替代。
-
-举个例子，退出Emacs使用下面的按键组合**C-x C-c**。这个可以读做，"按住Ctrl键再按'x'，释放，再按住Ctrl键再按'c'。虽然Emacs提供了一个菜单栏，但是强烈建议学习使用按键组合。这个指南将参考Emacs的按键绑定的约定。
-
-### 移动
-
-光标移动和其它图形编辑器非常类似，鼠标和方向键可以用来改变光标（在Emacs中称为*点*）的位置。在Emacs中，方向键代表的标准移动命令也有其它辅助的绑定。向前(forward)移动一个字符，使用 **C-f**，向后(back)移动一个字符，使用**C-b**。 **C-n** 和 **C-p** 分别用于移动到下(next)一行和移动到上(previous)一行。再声明一下，强烈推荐使用组合键而不是使用方向键和鼠标。
-
-可以想像，Emacs提供了更多的光标高级移动命令，包括移动一个单词和一个句子。 **M-f** 表示光标向前移动一个单词， **M-b** 表示向后移动一个单词。类似地，**M-e** 把光标移动到一个句子的末尾(end)， **M-a** 移动到句子的开头。
-
-直到现在，所有的移动命令都是和光标有关的。**M-<** 表示把光标移动到缓冲区的开头，和它相反的是 **M->**, 把光标移动到缓冲区的末尾。要把光标移动到某一特定行，使用**M-g g**. **M-g g** 会提示输入行号。同样，要移动到一行的开头或者结尾，分别使用**C-a** 和 **C-e**。
-
-**Note:** 这些命令（实际上是全部命令）的绑定，在不同的模式(mode)中，*稍微*会有不同。然而，覆盖的命令提供不同的功能这种情况很少见。更多信息请看[Modes](/index.php/Emacs#Modes "Emacs")。
-
-### 文件和缓冲区
-
-Emacs 提供了一系列命令来对文件操作，其中最常用的会在这里详细说明。**C-x C-f** 用来打开一个文件(在Emacs中叫做'查找文件')。如果指定的文件不存在，Emacs会打开一个空的缓冲区。保存一个缓冲区会创建一个包含缓冲区内容的文件。**C-x C-s** 就是用来保存缓冲区的。要保存一个文件名不一样的缓冲区，使用**C-x C-w** (这其实是'write-file'这条命令的助记符), 它会在写入磁盘之前提示输入新文件名。也可以使用**C-x s**来保存所有的缓冲区, 如果某个缓冲区在上次保存之后被修改了，则会提示进行哪项操作。
-
-**Note:** 如果指向某个文件的缓冲区还在打开的话，**C-x C-f** 是不会重新从磁盘中读取文件的。要从磁盘中重新读取文件，先使用**C-x k**关掉缓冲区，再使用**C-x C-f**打开文件，或者使用**M-x revert-buffer**.
-
-很多互动的命令，比如"find-file" 或者 "write-file" 会在Emacs窗口的底部栏提示输入。这栏称为*minibuffer*。和很多*nix shell一样，minibuffer支持很多基本的操作和TAB补全。按两下**<TAB>**可以显示一个补全的选项列表，并且，如果你喜欢，可以用鼠标从列表中选择。minibuffer的补全在很多输入（包括命令和文件名）中都可以用。
-
-minibuffer也提供一个记住历史的特性。通过**Up Arrow** 或者 **C-p**可以取得这条命令的上一个条目.
-
-要在任意时刻退出minibuffer，使用**C-g**.
-
-打开几个文件后，切换缓冲区是非常必要的。打开一个指向那个缓冲区的文件可以切换到那个缓冲区。但是这不是最高效的方法。Emacs提供**C-x b**来提示要显示的新缓冲区(这里可以使用TAB补全)。输入一个不存在的缓冲区，则会新建一个空的缓冲区。
-
-**Note:** 要切换到上一个缓冲区，使用**C-x b <RET>**, 因为上一个缓冲区是默认的缓冲区。
-
-使用**C-x C-b**可以显示所有打开缓冲区的列表。如果某个缓冲区不需要使用了，使用**C-x k**来关掉它。
-
-### 编辑
-
-Emacs 内建有很多编辑命令。可能最重要的还没有介绍的是'undo'，它的快捷键为 *C-_* 或者 *C-/* .移动光标的命令通常都有对应的删除字符的命令。例如， **M-<backspace>** 可以用来删除一个光标后的词，**M-d**可以用来删除光标前面的一个词。删除光标至行尾或者句尾的字符可以分别用**C-k** 或者 **M-k**。
-
-通常我们都约定一行不能超过80个字符。这是为了代码的可读性，尤其是一行中的字符可能会接触到窗口边缘。在Emacs，自动地插入或者删除换行符称为*filling*。我们可以用 **M-q** 重整当前的段落（重新分配换行符，删除段落中多余的空格和tab键）
-
-字符和单词可以分别通过 **C-t** 和 **M-t** 进行交换。比如： `Hello World!` → `World! Hello`
-
-单词的大小写也可以调整。**M-l** 把光标处的单词变成小写 (`HELLO` → `hello`); **M-u** 把光标处的单词变成大写(`hello` → `HELLO`)， **M-c** 把光标处的单词的第一个字母变成大写，并把后面的变成小写(`hElLo` → `Hello`).
-
-### 移除，召回和区域
-
-一个*区域*（region)是指在两个位置之间的一段字。其中一个位置被称为*标记*(mark)，另一个是光标。**C-<SPC>**用来设置标记的位置，紧接着就可以通过移动光标来创造一个区域。在GNU Emacs 23.1及以后的版本中，这个区域默认是可见的。有许多命令是针对区域的，其中最常用的就是*kill*命令。
-
-在Emacs中，剪切和粘贴分别对应的命令叫做*kill*和*yank*。许多删除多个字符的命令（包括上面提到的**C-k**和**M-d**命令）实际上是把文字剪切下来，附加到一个叫*kill-ring*的地方。kill-ring 就是一个被删掉的文字的列表。在默认情况下，kill-ring会保存最多60次删除记录。连续的删除会连在一起。
-
-**C-w** 和 **M-w** 可以用来删除或复制一个区域。
-
-要想把删掉的文字插入进来（也就是'yanking'），可以用**C-y**命令。**C-y** 可以连续用好多次来重复插入。按刚刚所讲，之前删除的文字会排成一个列表，但是**C-y**只能获取列表中的第一个，也就是最后删掉的一个。再之前删掉的可以通过**M-y**来获取。它会把**C-y**刚刚插入的文字用再早删除的文字替换掉。**M-y** 必须紧跟着**C-y**命令执行，可以执行很多次以遍历kill-ring。
-
-### 查找和替换
-
-在文本编辑中进行字符串查找是很常见的任务。按**C-s**可以正向搜索，按**C-r‘’‘则可以反向搜索。这些命令提示要搜索的字符串。搜索是增量的，你再次按键时会显示下一个匹配的位置，并且可以使用**C-s’‘’向前或者使用**C-r‘’‘向后。找到匹配结果之后，可以按下**<RET>**结束搜索。另外，如果你想回到发起搜索的位置，可以使用**C-g**。**
-
-一旦搜索完成（不是由**C-g**之类的指令引起），当前搜索的字符串将会作为下一次搜索的默认参数。使用’‘’C-s C-s**或者**C-r C-r**可以达到这样的效果。**
-
-I-search 有一些有用的命令，使用**M-e**来编辑当且搜索区域，使用**M-c**来触发大小写敏感匹配。
-
-正则表达式搜索除了指令不同之外，其他方面和以上都相同。使用**C-M-s**或者**C-M-r**来使用正则表达式搜索。相应地，用**C-s**和**C-r**可以前后移动，和普通的搜索没什么两样。
-
-除了搜索之外，进行字符串替换也是有必要的。原始文本和替换文本都会有提示，替换的时候也会有提示。尽管有很多选项提供（按**?**可以了解完整的选项），最常用的还是**y**（进行替换），**n**（跳过），以及**!**（替换当前及之后所有匹配）。
-
-### 缩进和前缀参数
-
-Indentation is usually performed with either **<TAB>**, to indent a single line, or with **C-M-\**, to indent a region.
-
-Exactly how text is indented usually depends on the *major-mode* which is active. Major-modes often define indentation styles specialising in indenting a certain type of text. (See [Modes](/index.php/Emacs#Modes "Emacs") for more information.)
-
-In some cases, a suitable major-mode may not exist for a file type, in which case, manual indentation may be necessary. Create a region (see [Killing, yanking and regions](/index.php/Emacs#Killing.2C_yanking_and_regions "Emacs")) then perform indentation with **C-u <n> C-x <TAB>** (where '<n>' is the number of columns which the text within the region should be indented). For example:
-
-Increase the region's indentation by four columns:
+You need to start and enable the unit so that it gets started on every boot (note - DO *NOT* run this as root - we want them for our user, not for the root user):
 
 ```
-C-u 4 C-x <TAB>
+$ systemctl --user enable --now emacs
 
 ```
 
-Decrease the region's indentation by two columns.
+Note that systemd user units do not inherit environment variables from a login shell (like `~/.bash_profile`), so you may want to set the variables in `~/.pam_environment` instead. See [Systemd/User](/index.php/Systemd/User "Systemd/User") for more information.
 
-```
-C-u -2 C-x <TAB>
+If you start emacs as a daemon, you may want to set the `VISUAL` and `EDITOR` environment variables to `emacsclient` so that programs that start an editor use emacsclient instead of starting a new full instance of the editor. Programs that use an external editor include email programs (for editing the message), Git (for editing the commit message), and less (the `v` command for editing the displayed file). Do not use the `-n` (`--nowait`) option to emacsclient, since programs typically expect editing to be finished when the editor exits.
 
-```
-
-**Note:** The trick behind this is **C-u**, which corresponds to the 'universal-argument' command. Providing a 'universal-argument' is a way to provide more information to a command (this information is referred to as a 'prefix argument'). In this case, we provided the amount of indentation desired to the command invoked by **C-x <TAB>**. Without providing an argument, **C-x <TAB>** will only increase indentation by 1 column.
-
-### 窗口和外框架
-
-Emacs的设计是可以同时方便地编辑多个文件。这是通过把Emacs的接口分成三个层次来实现的，即buffer（之前介绍过了），*window*和*frame*。
-
-*window* 是显示buffer的一个viewport（社区）。一个window一次只能显示一个buffer。但是一个buffer可以在多个window中显示。在窗口下面有一个*mode-line*，它用于显示当前buffer的信息。
-
-*frame* 是Emacs的一个"窗口"（这是标准的术语。比如，'窗口'是现代桌面的称谓），它包含了标题栏，菜单栏，还有一个或多个'window'（这是Emacs的术语，比如上面提到的'window'）。
-
-从现在起，这些Emacs中存在的名词的定义就可以使用了。
-
-要把window水平分隔和垂直分隔，分别使用**C-x 2**和**C-x 3**。这种效果其实就是在当前frame中开户另外一个window。要在多个window中循环切换，使用**C-x o**。
-
-与分隔一个window相反的是删除window。要删掉当前window，使用**C-x 0**，要删掉除了当前window之外的其它window，使用**C-x 1**。
-
-和window一样，创建和删除frame也是可以的。**C-x 5 2**会创建一个frame，**C-x 5 0**会删除当前的frame，**C-x 5 1**会删除除了当前frame之外的其它frame。
-
-**注意:** 这些命令不影响buffer。比如删除一个window并不会删除在window中显示的buffer。
-
-### 获得帮助
-
-Emacs在设计的时候就自文档化了。比如，要查看一个命令的名字或者它的键的绑定，Emacs提供了很多帮助信息。下面是列出来的最有用的一些帮助命令：
-
-```
-**C-h t**        启动Emacs官方教程
-
-**C-h b**        列出来所有的有效键绑定
-
-**C-h k**        查找一个键被绑定在了哪个命令上
-
-**C-h w**        查找一个命令被绑定在了哪些键上
-
-**C-h a**        查找一个匹配一段描述的命令
-
-**C-h m**        显示当前激活的所有模式的信息
-
-**C-h f**        显示给定函数的描述信息
-
-```
-
-### 模式
-
-一个Emacs模式是用Emacs Lisp语言写的一个控制相关缓冲区行为的扩展。一般来说，它给编辑文本提供缩进，语法高亮和键绑定的功能。复杂的模式可以把Emacs变成一个完美的IDE (Integrated Development Environment). Emacs 一般会使用一个文件的扩展来确定应该加载那个模式。
-
-一些编写shell脚本比较有用的模式有sh-mode, line-number-mode 和 column-number-mode。它们可以并行地通过下面的方式激活:
-
-**M-x sh-mode <RET>**
-
-**M-x column-number-mode <RET>**
-
-line-number-mode 默认是激活的，它可以通过下面的命令来打开/关闭：
-
-**M-x line-number-mode <RET>**
-
-sh-mode 是一个 *major-mode*. Major-modes 调整Emacs，并且经常提供了一些特定的命令来编辑某种类型的文本。一个缓冲区只能激活一种major-mode。除了支持语法高亮和缩进，sh-mode还定义了几条命令来帮助快速开发shell脚本。下面是其中的几条：
-
-```
-**C-c (**	 插入一个函数定义
-
-**C-c C-f**	 插入一个for循环
-
-**C-c TAB**	 插入一条if语句
-
-**C-c C-w**	 插入一个while循环
-
-**C-c C-l**	 插入一个从1到n的有下标的循环
-
-```
-
-'line-number-mode' 和 'column-number-mode' 是 *minor-modes*. Minor-modes 可以用来扩充major-mode的功能，多个minor-mode可以同时激活。
+It is also recommended to change any GUI start menu entries (or equivalent) for Emacs to point to emacsclient instead of emacs, so that the emacs daemon is used instead of starting a new emacs process.
 
 ## 提示和技巧
 

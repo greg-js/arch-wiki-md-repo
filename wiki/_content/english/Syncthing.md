@@ -153,7 +153,10 @@ It is possible to have Syncthing connect both locally and globally within a [Vir
 
 To achieve this, Syncthing should use a port in the VM different from the port it uses on the host. If the default 22000 port is used by the host for listening, one could use 22001 in the VM. This is carried out by setting Syncthing's [Sync Protocol Listen Addresses](https://docs.syncthing.net/users/config.html#listen-addresses) to `tcp://:22001` in the VM and by opening the corresponding port of the virtual machine: the 22001/TCP host's port should be forwarded to the guest's same port:
 
- `$ VBoxManage modifyvm myvmname --natpf1 "syncthing,tcp,,22001,,22001"` 
+```
+$ VBoxManage modifyvm myvmname --natpf1 "syncthing,tcp,,22001,,22001"
+
+```
 
 In this setup, relaying should not be necessary: local devices will connect to the VM on port 22001 while global devices should be accessible as long as they have an open port.
 

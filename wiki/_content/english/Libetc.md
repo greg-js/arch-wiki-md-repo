@@ -1,5 +1,3 @@
-**Note:** libetc is unmaintained upstream. You can use [rewritefs](/index.php?title=Rewritefs&action=edit&redlink=1 "Rewritefs (page does not exist)") instead.
-
 This is for those who are tired of having a messy $HOME folder cluttered with loads of dotfiles/dotfolders.
 
 libetc is a LD_PRELOAD-able shared library that intercepts file operations: if a program tries to open a dotfile in $HOME, it is redirected to $XDG_CONFIG_HOME, [as defined by freedesktop](http://standards.freedesktop.org/basedir-spec/basedir-spec-0.6.html).

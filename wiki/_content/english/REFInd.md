@@ -340,11 +340,11 @@ rEFInd can detect Secure Boot key management tools if they are placed in rEFInd'
 
 #### HashTool
 
-Follow [#Using PreLoader](#Using_PreLoader) and `HashTool.efi` will be placed rEFInd's directory.
+Follow [#Using PreLoader](#Using_PreLoader) and `HashTool.efi` will be placed in rEFInd's directory.
 
 #### MokManager
 
-Follow [#Using shim](#Using_shim) and MokManager will be placed rEFInd's directory.
+Follow [#Using shim](#Using_shim) and MokManager will be placed in rEFInd's directory.
 
 #### KeyTool
 
