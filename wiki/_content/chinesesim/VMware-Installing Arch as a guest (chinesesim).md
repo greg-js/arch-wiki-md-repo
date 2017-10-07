@@ -22,21 +22,20 @@
 *   [4 VMware Tools](#VMware_Tools)
     *   [4.1 模块](#.E6.A8.A1.E5.9D.97)
     *   [4.2 安装（从客户机）](#.E5.AE.89.E8.A3.85.EF.BC.88.E4.BB.8E.E5.AE.A2.E6.88.B7.E6.9C.BA.EF.BC.89)
-*   [5 Xorg配置](#Xorg.E9.85.8D.E7.BD.AE)
+*   [5 Xorg 配置](#Xorg_.E9.85.8D.E7.BD.AE)
 *   [6 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [6.1 共享文件夹](#.E5.85.B1.E4.BA.AB.E6.96.87.E4.BB.B6.E5.A4.B9)
-        *   [6.1.1 在引导时启用](#.E5.9C.A8.E5.BC.95.E5.AF.BC.E6.97.B6.E5.90.AF.E7.94.A8)
-            *   [6.1.1.1 fstab](#fstab)
-            *   [6.1.1.2 Systemd](#Systemd)
-        *   [6.1.2 Prune mlocate DB](#Prune_mlocate_DB)
+    *   [6.1 通过 vmhgfs-fuse 共享目录](#.E9.80.9A.E8.BF.87_vmhgfs-fuse_.E5.85.B1.E4.BA.AB.E7.9B.AE.E5.BD.95)
+        *   [6.1.1 fstab](#fstab)
+        *   [6.1.2 Systemd](#Systemd)
     *   [6.2 3D加速](#3D.E5.8A.A0.E9.80.9F)
+        *   [6.2.1 OpenGL 与 GLSL 支持](#OpenGL_.E4.B8.8E_GLSL_.E6.94.AF.E6.8C.81)
     *   [6.3 时间同步](#.E6.97.B6.E9.97.B4.E5.90.8C.E6.AD.A5)
-        *   [6.3.1 Host machine as time source](#Host_machine_as_time_source)
-        *   [6.3.2 External server as time source](#External_server_as_time_source)
+        *   [6.3.1 与宿主机同步时间](#.E4.B8.8E.E5.AE.BF.E4.B8.BB.E6.9C.BA.E5.90.8C.E6.AD.A5.E6.97.B6.E9.97.B4)
+        *   [6.3.2 与外部服务器同步时间](#.E4.B8.8E.E5.A4.96.E9.83.A8.E6.9C.8D.E5.8A.A1.E5.99.A8.E5.90.8C.E6.AD.A5.E6.97.B6.E9.97.B4)
     *   [6.4 Performance Tips](#Performance_Tips)
-        *   [6.4.1 Paravirtual SCSI adapter](#Paravirtual_SCSI_adapter)
-        *   [6.4.2 Paravirtual Network Adapater](#Paravirtual_Network_Adapater)
-        *   [6.4.3 Virtual Machine Settings](#Virtual_Machine_Settings)
+        *   [6.4.1 平行虚拟化 SCSI 驱动](#.E5.B9.B3.E8.A1.8C.E8.99.9A.E6.8B.9F.E5.8C.96_SCSI_.E9.A9.B1.E5.8A.A8)
+        *   [6.4.2 平行虚拟化网络驱动](#.E5.B9.B3.E8.A1.8C.E8.99.9A.E6.8B.9F.E5.8C.96.E7.BD.91.E7.BB.9C.E9.A9.B1.E5.8A.A8)
+        *   [6.4.3 虚拟机设置](#.E8.99.9A.E6.8B.9F.E6.9C.BA.E8.AE.BE.E7.BD.AE)
 *   [7 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
     *   [7.1 鼠标问题](#.E9.BC.A0.E6.A0.87.E9.97.AE.E9.A2.98)
         *   [7.1.1 按钮丢失](#.E6.8C.89.E9.92.AE.E4.B8.A2.E5.A4.B1)
@@ -222,79 +221,59 @@ systemctl enable vmware-vmblock-fuse.service
 
 **Tip:** 在 GitHub 上有个项目 [[2]](https://github.com/rasa/vmware-tools-patches) 尝试将这些步骤全自动处理。
 
-## Xorg配置
+## Xorg 配置
 
-**Note:** 在虚拟机中运行Xorg，必须有至少32MB的VGA内存
+**注意:** 要在虚拟机中使用 Xorg，至少需要为其分配 32MB 的显存。
 
-安装依赖项:[xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse)，[xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware)和[mesa](https://www.archlinux.org/packages/?name=mesa).
+需要安装以下依赖：[xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse)，[xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware)，以及 [mesa](https://www.archlinux.org/packages/?name=mesa)。
 
-If booting into a `graphical target` you are almost done. `/etc/xdg/autostart/vmware-user.desktop` will get started which will setup most of the things needed to work with the Virtual Machine.
+如果能启动至 `graphical.target` 那么已经接近成功了。接下来 `/etc/xdg/autostart/vmware-user.desktop` 会自动启动，并负责完成在虚拟机里运行 X 的必要配置。
 
-However, if booting into `multi-user.target` or using an uncommon setup (e.g. multiple monitors), then `vmtoolsd.service` needs to be [enabled](/index.php/Enable "Enable"). In addition to this, edit:
+然而如果你先启动至了 `multi-user.target`，或者你的环境不太常规（比如用了多个显示器），那么你需要手动启动 `vmtoolsd.service` 服务。并且为了让 X server 拥有 root 权限来加载驱动，还需要编辑下面的配置：
 
  `/etc/X11/Xwrapper.config`  `needs_root_rights=yes` 
 
-to give permission for loading drivers.
-
 ## 提示与技巧
 
-### 共享文件夹
+### 通过 `vmhgfs-fuse` 共享目录
 
-**Note:** 这个功能只能在VMware Workstation/Fusion里使用
+**注意:** 这一功能需要的最低软件版本是 `open-vm-tools` v.10.x 与 Linux 内核 4.x。或者 VMware Workstation / Fusion。
 
-选择*虚拟机设置 > 选项 > 共享文件夹 > 总是启用*,并添加共享.来共享一个文件夹。
+在菜单中选择 *Edit virtual machine settings > Options > Shared Folders > Always enabled*，即可建立共享目录。
 
-请确保`vmhgfs`驱动已加载：
-
-```
-# modprobe vmhgfs
-
-```
-
-You should be able to see the shared folders by running vmware-hgfsclient command:
+在客机里运行如下命令可以列出共享目录：
 
 ```
 $ vmware-hgfsclient
 
 ```
 
-Now you can mount the folder:
+然后以如下方式挂载：
 
 ```
-# mkdir /home/user1/shares
-# mount -n -t vmhgfs .host:/*<shared_folder>* /home/user1/shares
+# mkdir <shared folders root directory>
+# vmhgfs-fuse -o allow_other -o auto_unmount .host:/*<shared_folder>* *<shared folders root directory>*
 
 ```
 
-#### 在引导时启用
-
-编辑`mkinitcpio.conf`就像这样:
-
- ` # cat /etc/mkinitcpio.conf` 
-```
-...
-MODULES="... vmhgfs"
-...
-```
-
-and then update your ramdisk:
+欲了解 `vmhgfs-fuse` 的其他挂载参数，可以用 `-h` 参数调用：
 
 ```
-# mkinitcpio -p linux
+# vmhgfs-fuse -h
 
 ```
 
 ##### fstab
 
-为每个共享添加规则：
+每个共享目录的挂载都需要写如下的一行配置：
 
  `/etc/fstab` 
 ```
-.host:/*<shared_folder>* */home/user1/shares* vmhgfs defaults 0 0
+.host:/*<shared_folder>* */home/user1/shares* fuse.vmhgfs-fuse defaults 0 0
 
 ```
 
-创建并挂载共享文件夹：
+然后创建并挂载目录：
 
 ```
 # mkdir /home/user1/shares
@@ -304,130 +283,123 @@ and then update your ramdisk:
 
 ##### Systemd
 
-For shared folders to be working you need to have loaded the `vmhgfs` driver. Simply create the following `.service`s:
+可以把挂载目录的命令写成 Systemd `.service`：
 
- `/etc/systemd/system/mnt-hgfs.mount` 
+ `/etc/systemd/system/*<shared folders root directory>*-*<shared_folder>*.service` 
 ```
 [Unit]
 Description=Load VMware shared folders
+Requires=vmware-vmblock-fuse.service
+After=vmware-vmblock-fuse.service
 ConditionPathExists=.host:/*<shared_folder>*
 ConditionVirtualization=vmware
 
-[Mount]
-What=.host:/*<shared_folder>*
-Where=*<shared folders root directory>*/*<shared_folder>*
-Type=vmhgfs
-Options=defaults,noatime
-
-[Install]
-WantedBy=multi-user.target
-```
- `/etc/systemd/system/mnt-hgfs.automount` 
-```
-[Unit]
-Description=Load VMware shared folders
-ConditionPathExists=.host:/*<shared_folder>*
-ConditionVirtualization=vmware
-
-[Automount]
-Where=*<shared folders root directory>*/*<shared_folder>*
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=
+ExecStart=/usr/bin/vmhgfs-fuse -o allow_other -o auto_unmount .host:/*<shared_folder>* *<shared folders root directory>*
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-Make sure the `*<shared folders root directory>*` folder exists on your system. If this folder does not exist then you have to create it as the systemd scripts depend on it:
+如果客机里的 `*<shared folders root directory>*` 目录还不存在，你需要手动提前创建：
 
 ```
 # mkdir -p *<shared folders root directory>*
 
 ```
 
-[Enable](/index.php/Enable "Enable") the `mnt-hgfs.automount` mount target.
+然后[激活](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") `<shared folders root directory>-<shared_folder>.service` 这个挂载服务。
 
-If you want to mount all shared folders automatically then omit *<shared_folder>*.
-
-#### Prune mlocate DB
-
-When using [mlocate](/index.php/Mlocate "Mlocate"), it is useless to index the shared directories in the `locate DB`. Therefore, add the directories to `PRUNEPATHS` in `/etc/updatedb`.
+删掉 *<shared_folder>* 的部分可以一次性挂载所有共享目录。
 
 ### 3D加速
 
 3D加速功能如果在创建客户机时没有选择, 可以勾选: *编辑虚拟机设置 > 硬件 > 显示器 > 加速3D图形*.
 
+**注意:** 启用 3D 加速之后，Xorg 的性能可能会很差。有些时候通过 llvmpipe 来实现软件渲染的性能可能更好。
+
+#### OpenGL 与 GLSL 支持
+
+用户可以自行更新实现 OpenGL 的 GLSL 内核模块，覆盖 Arch 自带的版本。
+
+本文成文时，OpenGL 3.3 和 GLSL 3.30 都得到了支持。参阅 [https://bbs.archlinux.org/viewtopic.php?id=202713](https://bbs.archlinux.org/viewtopic.php?id=202713) 可以了解更多细节。
+
 ### 时间同步
 
-Configuring time synchronization in a Virtual Machine is important; fluctuations are bound to occur more easily in a guest, compared to a physical host. This is mostly due to the CPU being shared by more than one guest.
+为虚拟机配置时间同步很重要，因为虚拟机比物理机更容易出现时间波动现象。主要原因就在于 CPU 是被共用的。
 
-There are 2 options to set up time synchronization: the host or an external source.
+有两种方案可以实现实现同步：同步到宿主机，或是外部服务器。
 
-#### Host machine as time source
+#### 与宿主机同步时间
 
-To use the host as a time source, ensure `vmtoolsd.service` is [started](/index.php/Start "Start"). Then enable the time synchronization:
+保证 `vmtoolsd.service` 服务处于运行状态，然后用如下的命令启用时间同步功能：
 
 ```
 # vmware-toolbox-cmd timesync enable
 
 ```
 
-To synchronize the guest after suspending the host:
+宿主系统休眠后，用如下的命令来使客机间同步时间：
 
 ```
 # hwclock --hctosys --localtime
 
 ```
 
-#### External server as time source
+#### 与外部服务器同步时间
 
-See [NTP](/index.php/NTP "NTP").
+参阅 [NTP](/index.php/NTP "NTP")。
 
 ### Performance Tips
 
-You can try the followings tips to improve the performance of your virtual machine.
+下面这些技巧可以帮你改善虚拟机性能。
 
-#### Paravirtual SCSI adapter
+#### 平行虚拟化 SCSI 驱动
 
-[VMware Paravirtual SCSI (PVSCSI) adapters](http://kb.vmware.com/kb/1010398) are high-performance storage adapters for VMware ESXi that can result in greater throughput and lower CPU utilization. PVSCSI adapters are best suited for environments, where hardware or applications drive a very high amount of I/O throughput.
+[VMware 平行虚拟化 SCSI (PVSCSI) 驱动](http://kb.vmware.com/kb/1010398) 是为 VMware ESXi 设计的 SCSI 驱动。可以明显提升吞吐量，降低 CPU 消耗。
 
-The SCSI adapter type `VMware Paravirtual` is available in the Virtual Machine settings.
+在虚拟机设置的 SCSI 适配器类型里可以找到 `VMware 平行虚拟化`选项。
 
-If you do not have these settings in your virtual machine configuration you can still use the paravirtual SCSI adapter like this: Make sure that the paravirtual SCSI adapter is included in your kernel image. For this you have to modify your `mkinitcpio.conf`
+如果你在虚拟机设置里找不到这些选项，可以用这个办法：首先确保将 PVSCSI 模块添加进内核的内存盘镜像。具体的做法是修改`mkinitcpio.conf` 文件：
 
  ` cat /etc/mkinitcpio.conf` 
 ```
-`...`
-MODULES="`...` vmw_pvscsi"
-`...`
+...
+MODULES="... vmw_pvscsi"
+...
 ```
 
-Rebuild your ramdisk:
+然后重建内存盘镜像：
 
 ```
 # mkinitcpio -p linux
 
 ```
 
-Shutdown your virtual machine and change the SCSI adapter your `.vmx` to the following:
+将虚拟机关机，在虚拟机的 `.vmx` 配置文件里用如下的方法指定 SCSI 驱动：
 
 ```
 scsi0.virtualDev = "pvscsi"
 
 ```
 
-#### Paravirtual Network Adapater
+#### 平行虚拟化网络驱动
 
-VMware offers [multiple network adapters](http://kb.vmware.com/kb/1001805) for the guest OS. The default adapter used is usually the `e1000` adapter, which emulates an Intel 82545EM Gigabit Ethernet NIC. This Intel adapter is generally compatible with the built-in drivers across most operating systems, include Arch.
+VMware 虚拟机提供了 [多种网络适配方案](http://kb.vmware.com/kb/1001805)。默认的网卡适配器一般是`e1000`，它能模拟 Intel 82545EM 千兆以太网卡。该网卡可以被常见的操作系统（含 Arch）直接支持。
 
-For [much more performance and additional features](http://rickardnobel.se/vmxnet3-vs-e1000e-and-e1000-part-1/) (such as multiqueue support), the VMware native `vmxnet3` network adapter can be used.
+若要 [提升性能，并引入更多高级功能](http://rickardnobel.se/vmxnet3-vs-e1000e-and-e1000-part-1/)（比如多队列支持），可以考虑使用 VMware 原生的 `vmxnet3` 网络适配器。
 
-Arch has the `vmxnet3` kernel module available with a default install. Once enabled in [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") (or if it is auto-detected, check by running `$ lsmod | grep vmxnet3` to see if it is loaded), shutdown and change the network adapter type in your *.vmx* file to the following:
+正常安装的 Arch 就包含有 `vmxnet3` 内核模块。该模块可以通过 [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 来启用（或者被自动加载。可以用 `lsmod | grep vmxnet3` 命令来验证加载成功），然后关闭虚拟机，并如下修改 *.vmx* 文件：
 
 ```
 ethernet0.virtualDev = "vmxnet3"
 
 ```
 
-After changing network adapters, you will need to update your network and [dhcpcd](/index.php/Dhcpcd "Dhcpcd") settings to use the new adapter name and mac address.
+指定更换网卡驱动之后，你还要更新网络与 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 的设置来真正使用新网卡：
 
 ```
 # dhcpcd *new_interface_name*
@@ -435,11 +407,11 @@ After changing network adapters, you will need to update your network and [dhcpc
 
 ```
 
-You can get the new interface name by running `ip link`
+运行 `ip link` 命令可以找到新网卡的名字。
 
-#### Virtual Machine Settings
+#### 虚拟机设置
 
-These settings could help improve the responsiveness of your virtual machine:
+按照 [Vmware KB1008885](http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1008885) 给出的如下优化方法，可以减少硬盘 I/O 操作数量，但代价是提升宿主机内存占用：
 
 ```
 mainMem.useNamedFile = "FALSE"
@@ -450,13 +422,13 @@ sched.mem.pshare.enable = "FALSE"
 
 ```
 
-*   **mainMem.useNamedFile**: This will only work for Windows hosts and you can use this parameter if you experience high disk activity on shutting down the virtual machine. This will prevent VMware from creating a *.vmem* file. Use *mainmem.backing = "swap"* on Linux hosts instead.
-*   **MemTrimRate**: This setting prevents that memory whichc was released by the guest is released on the host also.
-*   **prefvmx.useRecommendedLockedMemSize**: Unfortunately there does not seem to exist a proper explanation for this setting. This setting seems to prevent the host system from swapping parts of the guest memory.
-*   **MemAllowAutoScaleDown**: Prevents that VMware adjusts the memory size of the virtual machine in case it cannot allocate enough memory.
-*   **sched.mem.pshare.enable**: If several virtual machines are running simultaneously VMware will try to locate identical pages and share these between the virtual machines. This can be very I/O intensive.
+*   **mainMem.useNamedFile**: 把这个参数的值设为 *"FALSE"* 可以让 VMware 不再创建 *.vmem* 文件。这样有助于减少虚拟机关机时的硬盘操作，但这么做只对 Windows 宿主系统有效。如果你的宿主系统是 Linux，建议用这个配置：*mainmem.backing = "swap"*。
+*   **MemTrimRate**: 这项优化会使客机释放的内存在宿主机得不到释放。
+*   **prefvmx.useRecommendedLockedMemSize**: 很遗憾，这项优化没给出什么解释。貌似会阻止宿主系统把客机系统的部分内存进行内存换页。
+*   **MemAllowAutoScaleDown**: 阻止 VMware 在申请不到内存的时候自动调整虚拟机的内存大小。
+*   **sched.mem.pshare.enable**: 如果同时有多台虚拟机运行，VMware 会尝试找到它们之间相同的内存页，并且在共享这些页。但这是个 I/O 消耗很大的操作。
 
-The following settings could also be set in the configuration dialog of VMware Workstation(*Edit -> Preferences... -> Memory/Priority*).
+下面这些配置可以在 VMware Workstation 的配置对话框里调整 (*Edit -> Preferences... -> Memory/Priority*)。
 
 ```
 prefvmx.minVmMemPct = "100"
@@ -465,8 +437,9 @@ mainMem.partialLazyRestore = "FALSE"
 
 ```
 
-*   **prefvmx.minVmMemPct**: Sets amount of RAM in percent which should be reserved by the virtual machine on the host system. If you set this to a lower value it is possible to assign the virtual machine more memory than available in the host system. Be careful though in this case as this will most likely lead to excessive hard drive usage. If you have enough RAM then leave this value at 100.
-*   **mainMem.partialLazySave** and **mainMem.partialLazyRestore**: These two parameters will prevent the virtual machine from creating partial snapshots for suspends. When you use these parameters and you suspend your virtual machine it will take a little bit longer, but there should be less hard disk activity from VMware trying to store this information.
+*   **prefvmx.minVmMemPct**: 指定虚拟机的内存应该有多大的部分来自物理内存，单位是百分比。如果这个值设得较低，那么虚拟机可见的内存总量是可以超过物理机的物理内存的。但这就会带来大量的硬盘读写。如果你的物理内存够大的话，这个值应该维持在 100。
+
+*   **mainMem.partialLazySave** and **mainMem.partialLazyRestore**: 这两项参数的优化是为了阻止虚拟机出于休眠的目的来创建不完整内存快照。如此优化之后，虚拟机的休眠操作耗时会稍长些，但相应地也会减少硬盘读写。
 
 ## 疑难解答
 

@@ -96,6 +96,7 @@ Installing [linux-tp-x1-carbon-5th](https://aur.archlinux.org/packages/linux-tp-
 *   Fn+P sends Pause
 *   Fn+B sends Control_L+Break
 *   Fn+K sends Scroll_Lock
+*   Fn+Space toggles the keyboard backlight
 *   Fn by itself sends XF86WakeUp (wakes computer from sleep by default)
 
 ### Display
@@ -107,7 +108,7 @@ There are two options for displays:
 
 ### Backlight Control
 
-By default, no acpi events are generated for Fn+F5 and Fn+F6 keypress because
+I had issues with the thinkpad_acpi module in linux-4.12 and linux-4.13\. When loaded no acpi events are generated for Fn+F5 and Fn+F6 keypress by default, because
 
 ```
 kernel: thinkpad_acpi: This ThinkPad has standard ACPI backlight brightness control, supported by the ACPI video driver
@@ -116,7 +117,7 @@ kernel: thinkpad_acpi: Standard ACPI backlight interface available, not loading 
 
 ```
 
-Setting the acpi_brightness=vendor kernel parameter fixes this.
+Setting the acpi_brightness=vendor kernel parameter helped but gave issues with brightness save/restore. In linux-4.14 this issue is resolved.
 
 ### TrackPoint Scrolling
 

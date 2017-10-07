@@ -206,7 +206,7 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 
 *   **[KOrganizer](https://en.wikipedia.org/wiki/Kontact#Organizer "wikipedia:Kontact")** — Calendar and scheduling program, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
-	[http://www.kde.org/applications/office/korganizer/](http://www.kde.org/applications/office/korganizer/) || [korganizer](https://www.archlinux.org/packages/?name=korganizer)
+	[https://www.kde.org/applications/office/korganizer/](https://www.kde.org/applications/office/korganizer/) || [korganizer](https://www.archlinux.org/packages/?name=korganizer)
 
 *   **[Lightning](https://en.wikipedia.org/wiki/Lightning_(software) "wikipedia:Lightning (software)")** — Extension to Mozilla Thunderbird that provides calendar and task support.
 
@@ -306,7 +306,7 @@ See also [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/
 
 *   **[GNU Screen](/index.php/GNU_Screen "GNU Screen")** — Full-screen window manager that multiplexes a physical terminal.
 
-	[https://gnu.org/s/screen/](https://gnu.org/s/screen/) || [screen](https://www.archlinux.org/packages/?name=screen)
+	[https://www.gnu.org/software/screen/](https://www.gnu.org/software/screen/) || [screen](https://www.archlinux.org/packages/?name=screen)
 
 *   **[tmux](/index.php/Tmux "Tmux")** — BSD licensed terminal multiplexer.
 
@@ -332,7 +332,7 @@ See also [#Terminal multiplexers](#Terminal_multiplexers), which offer some of t
 
 *   **twin** — Text-mode window manager.
 
-	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
+	[https://sourceforge.net/projects/twin/](https://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
 
 *   **Wmutils** — A set of tools for X windows manipulation.
 
@@ -450,7 +450,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **[dmenu](/index.php/Dmenu "Dmenu")** — Fast and lightweight dynamic menu for X which is also useful as an application launcher.
 
-	[http://tools.suckless.org/dmenu/](http://tools.suckless.org/dmenu/) || [dmenu](https://www.archlinux.org/packages/?name=dmenu)
+	[https://tools.suckless.org/dmenu/](https://tools.suckless.org/dmenu/) || [dmenu](https://www.archlinux.org/packages/?name=dmenu)
 
 *   **dmenu-extended** — An extension to *dmenu* for quickly opening files and folders.
 
@@ -474,7 +474,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **[Gmrun](/index.php/Gmrun "Gmrun")** — Lightweight GTK+-based application launcher, with the ability to run programs inside a terminal and other handy features.
 
-	[http://sourceforge.net/projects/gmrun/](http://sourceforge.net/projects/gmrun/) || [gmrun](https://www.archlinux.org/packages/?name=gmrun)
+	[https://sourceforge.net/projects/gmrun/](https://sourceforge.net/projects/gmrun/) || [gmrun](https://www.archlinux.org/packages/?name=gmrun)
 
 *   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do with many plugins, originally developed for the GNOME desktop.
 
@@ -600,7 +600,7 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 
 *   **Netwmpager** — A NetWM/EWMH compatible pager.
 
-	[http://sourceforge.net/projects/sf-xpaint/files/netwmpager/](http://sourceforge.net/projects/sf-xpaint/files/netwmpager/) || [netwmpager](https://aur.archlinux.org/packages/netwmpager/)
+	[https://sourceforge.net/projects/sf-xpaint/files/netwmpager/](https://sourceforge.net/projects/sf-xpaint/files/netwmpager/) || [netwmpager](https://aur.archlinux.org/packages/netwmpager/)
 
 #### Desktop widgets
 

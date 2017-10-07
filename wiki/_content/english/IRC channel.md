@@ -1,3 +1,9 @@
+Related articles
+
+*   [ArchWiki:IRC](/index.php/ArchWiki:IRC "ArchWiki:IRC")
+*   [International communities](/index.php/International_communities "International communities")
+*   [phrik](/index.php/Phrik "Phrik")
+
 **Note:** Do not edit this page unless you are a channel op in #archlinux. You are welcome to use the discussion page.
 
 ## Contents
@@ -12,7 +18,7 @@
 
 **Warning:** Channel statistics are logged for [#archlinux-offtopic](http://www.hax0r.se/aotstats.html). Speak to dunz0r if you would like to opt-out permanently.
 
-This section is about **#archlinux**, the main Arch Linux support [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") channel, and **#archlinux-offtopic**, the main Arch Linux social channel, both available on the [Freenode](https://www.freenode.net/) network.
+This section is about **#archlinux**, the main Arch Linux support [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") channel, and **#archlinux-offtopic**, the main Arch Linux social channel, both available on the [Freenode](https://freenode.net/) network.
 
 The central topic for **#archlinux** is support and general discussion about Arch Linux. For a list of rules refer to the [Code of conduct](/index.php/Code_of_conduct "Code of conduct") and [Code of conduct#IRC](/index.php/Code_of_conduct#IRC "Code of conduct"). For a list of commonly used abbreviations, see [Arch terminology](/index.php/Arch_terminology "Arch terminology") and [IRC Jargon](http://leonardo.spidernet.net/Copernicus/831/mirc/tips5/jarg.html).
 

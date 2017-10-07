@@ -1,4 +1,4 @@
-[st](http://st.suckless.org/) is a simple terminal implementation for [X.org](/index.php/X.org "X.org") by [suckless](http://suckless.org). It is intended to serve as a lightweight replacement for [xterm](/index.php/Xterm "Xterm") or [urxvt](/index.php/Urxvt "Urxvt"). It currently supports 256 colors, true colors, most VT10X escape sequences, UTF-8, X11 copy/paste, anti-aliased fonts (using fontconfig), fallback fonts, resizing, shortcuts via config.h, and line drawing.
+[st](https://st.suckless.org/) is a simple terminal implementation for [X.org](/index.php/X.org "X.org") by [suckless](https://suckless.org/). It is intended to serve as a lightweight replacement for [xterm](/index.php/Xterm "Xterm") or [urxvt](/index.php/Urxvt "Urxvt"). It currently supports 256 colors, true colors, most VT10X escape sequences, UTF-8, X11 copy/paste, anti-aliased fonts (using fontconfig), fallback fonts, resizing, shortcuts via config.h, and line drawing.
 
 ## Contents
 
@@ -173,6 +173,6 @@ endif
 
 ## See also
 
-*   [Homepage](http://st.suckless.org/)
-*   [Frequently asked questions](http://git.suckless.org/st/plain/FAQ)
-*   [Official git repository](http://git.suckless.org/st/)
+*   [Homepage](https://st.suckless.org/)
+*   [Frequently asked questions](https://git.suckless.org/st/plain/FAQ)
+*   [Official git repository](https://git.suckless.org/st/)

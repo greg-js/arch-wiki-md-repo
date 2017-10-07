@@ -324,7 +324,7 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 
 	[http://pympd.sourceforge.net](http://pympd.sourceforge.net) || [pympd](https://www.archlinux.org/packages/?name=pympd)
 
-*   **Quimup** — A client for the music player daemon (MPD) written in C++ and QT3
+*   **Quimup** — A client for the music player daemon (MPD) written in C++ and QT3 / since v. 1.4.0 the code was migrated to Qt5 for MPD 0.17.0 and above
 
 	[http://goodies.xfce.org/projects/applications/xfmpc](http://goodies.xfce.org/projects/applications/xfmpc) || [quimup](https://aur.archlinux.org/packages/quimup/)
 

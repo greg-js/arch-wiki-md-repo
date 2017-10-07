@@ -79,7 +79,7 @@ static Searchengine searchengines[] = {
 
 ```
 
-If you are running Vimprobable in [tabbed](http://tools.suckless.org/tabbed), you can direct other applications to open webpages and have them captured in `tabbed` by starting Vimprobable with an `xid`:
+If you are running Vimprobable in [tabbed](https://tools.suckless.org/tabbed/), you can direct other applications to open webpages and have them captured in `tabbed` by starting Vimprobable with an `xid`:
 
 ```
  $(tabbed -d >/tmp/tabbed.xid); vimprobable2 -e $(</tmp/tabbed.xid)
@@ -104,5 +104,5 @@ exec vimprobable2 -e $(</tmp/tabbed.xid) $( [[  "$1"  ]] && echo "$1") &
 
 ## Resources
 
-*   [tabbed](http://tools.suckless.org/tabbed) a suckless program for managing tabs
-*   [A screencast](http://vimeo.com/53829053) introduction to Vimprobable
+*   [tabbed](https://tools.suckless.org/tabbed/) a suckless program for managing tabs
+*   [A screencast](https://vimeo.com/53829053) introduction to Vimprobable

@@ -211,11 +211,11 @@ loopback loop **($isopart)**$isofile
 Also see [archiso](/index.php/Archiso "Archiso").
 
 ```
-menuentry '[loopback]archlinux-2017.04.01-x86_64.iso' {
-	set isofile='/boot/iso/archlinux-2017.04.01-x86_64.iso'
+menuentry '[loopback]archlinux-2017.10.01-x86_64.iso' {
+	set isofile='/boot/iso/archlinux-2017.10.01-x86_64.iso'
 	loopback loop $isofile
-	linux (loop)/arch/boot/**x86_64**/vmlinuz archisodevice=/dev/loop0 img_dev=$imgdevpath img_loop=$isofile earlymodules=loop
-	initrd (loop)/arch/boot/**x86_64**/archiso.img
+	linux (loop)/arch/boot/x86_64/vmlinuz archisodevice=/dev/loop0 img_dev=$imgdevpath img_loop=$isofile earlymodules=loop
+	initrd (loop)/arch/boot/x86_64/archiso.img
 }
 ```
 

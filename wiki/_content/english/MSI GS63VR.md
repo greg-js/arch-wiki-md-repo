@@ -1,15 +1,33 @@
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Drivers](#Drivers)
-    *   [2.1 Nvidia/Optimus](#Nvidia.2FOptimus)
-    *   [2.2 Touchpad](#Touchpad)
-    *   [2.3 Networking](#Networking)
-        *   [2.3.1 Wireless](#Wireless)
-    *   [2.4 Audio](#Audio)
-    *   [2.5 SteelSeries Keyboard](#SteelSeries_Keyboard)
-*   [3 Misc](#Misc)
-    *   [3.1 BIOS](#BIOS)
+*   [1 Introduction](#Introduction)
+*   [2 Installation](#Installation)
+*   [3 Drivers](#Drivers)
+    *   [3.1 Nvidia/Optimus](#Nvidia.2FOptimus)
+    *   [3.2 Touchpad](#Touchpad)
+    *   [3.3 Networking](#Networking)
+        *   [3.3.1 Wireless](#Wireless)
+    *   [3.4 Audio](#Audio)
+    *   [3.5 SteelSeries Keyboard](#SteelSeries_Keyboard)
+*   [4 Misc](#Misc)
+    *   [4.1 BIOS](#BIOS)
+
+## Introduction
+
+The GS series of MSI laptops is considered to be a thin gaming laptop. Although it is not thin as ultrabooks, it is still very thin for a *gaming* laptop. As of October 5th 2017, the 2016 model works fine with the latest kernel. That can't be said for the 2017 model. It still lacks support for some important components, like the internal graphics card.
+
+| **Device** | **GS63 (2016)** | **GS63 (2017)** | **GS73 (2016)** |
+| [Display](/index.php?title=Display&action=edit&redlink=1 "Display (page does not exist)") | -- | Full HD 120Hz/3ms | -- |
+| [Intel IGU](/index.php?title=Intel_IGU&action=edit&redlink=1 "Intel IGU (page does not exist)") | Yes | No HD Graphics 630 (i915) |  ?? |
+| [Nvidia GPU](/index.php?title=Nvidia_GPU&action=edit&redlink=1 "Nvidia GPU (page does not exist)") | Yes | HDMI only Nvidia GTX 1070 Max-Q (nvidia) |  ?? |
+| [Network](/index.php/Network "Network") | Yes | Yes |  ?? |
+| [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") |  ?? | -- |  ?? |
+| Atheros Wireless | Yes | Yes |  ?? |
+| [ALSA](/index.php/ALSA "ALSA") | Yes |  ?? |  ?? |
+| [Touchpad](/index.php/Touchpad "Touchpad") | Manual |  ?? |  ?? |
+| [Webcam](/index.php/Webcam "Webcam") |  ?? |  ?? |  ?? |
+| Card Reader |  ?? | mmc warning |  ?? |
+| [Power management](/index.php/Power_management "Power management") |  ?? | No |  ?? |
 
 ## Installation
 

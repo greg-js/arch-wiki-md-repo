@@ -268,7 +268,7 @@ If you are already using iptables you can easily protect SSH against brute force
 
 **Note:** In this example the SSH port was changed to port 42660 TCP.
 
-Before the following rules can be used we create a new rule chain to log and drop to many connection attempts:
+Before the following rules can be used we create a new rule chain to log and drop too many connection attempts:
 
 ```
 # iptables -N LOG_AND_DROP

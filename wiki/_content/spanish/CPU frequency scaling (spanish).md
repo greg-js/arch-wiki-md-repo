@@ -1,22 +1,39 @@
+Artículos relacionados
+
+*   [Power saving](/index.php/Power_saving "Power saving")
+*   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
+*   [pm-utils](/index.php/Pm-utils "Pm-utils")
+*   [PHC](/index.php/PHC "PHC")
+
 ## Contents
 
-*   [1 Resumen](#Resumen)
-*   [2 Instalación](#Instalaci.C3.B3n)
-*   [3 Configuración](#Configuraci.C3.B3n)
-    *   [3.1 Controlador de frecuencia de la UCP](#Controlador_de_frecuencia_de_la_UCP)
-    *   [3.2 Reguladores de ajuste (Esquemas de potencia de la UCP)](#Reguladores_de_ajuste_.28Esquemas_de_potencia_de_la_UCP.29)
-    *   [3.3 Modo demonio](#Modo_demonio)
-*   [4 Otros recursos](#Otros_recursos)
+*   [1 Herramientas del espacio de usuario](#Herramientas_del_espacio_de_usuario)
+    *   [1.1 thermald](#thermald)
+    *   [1.2 cpupower](#cpupower)
+*   [2 Configuración](#Configuraci.C3.B3n)
+    *   [2.1 Controlador de frecuencia de la UCP](#Controlador_de_frecuencia_de_la_UCP)
+    *   [2.2 Reguladores de ajuste (Esquemas de potencia de la UCP)](#Reguladores_de_ajuste_.28Esquemas_de_potencia_de_la_UCP.29)
+    *   [2.3 Modo demonio](#Modo_demonio)
+*   [3 Otros recursos](#Otros_recursos)
 
-## Resumen
+## Herramientas del espacio de usuario
 
-[cpufrequtils](https://www.archlinux.org/packages/?name=cpufrequtils) es un conjunto de utilidades diseñadas para ayudar al ajuste de frecuencias de la UCP, una tecnología usada principalmente en portátiles que permite al sistema operativo el ajuste de la velocidad hacia arriba o hacia abajo, dependiendo de la carga actual del sistema o del esquema de potencia. Por poner un ejemplo, el ajuste de frecuencia de la UCP puede reducir un procesador de 2 GHz a uno de 1 GHz cuando el portátil funciona con la batería, conservando la duración de ésta, reduciendo el calor generado y reduciendo el ruido del ventilador.
+### thermald
 
-Cuando es usado en conjunción com [pm-utils](/index.php/Pm-utils "Pm-utils"), los propietarios de portátiles están provistos de un conjunto completo de programas para la gestión de la potencia.
+[thermald](https://www.archlinux.org/packages/?name=thermald) es un demonio de Linux que previene el sobrecalentamiento del ordenador; controla y equilibra la temperatura utilizando los métodos de refrigeración disponibles en la máquina.
 
-## Instalación
+De manera predeterminada, monitorea la temperatura la UCP usando los sensores de temperatura digitales disponibles en la misma, y mantiene la temperatura de la UCP bajo control antes que la máquina tome una medida correctiva que resulte agresiva.
 
-El paquete [cpufrequtils](https://www.archlinux.org/packages/?name=cpufrequtils) está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+### cpupower
+
+[cpupower](https://www.archlinux.org/packages/?name=cpupower) es un conjunto de utilidades diseñadas para ajustar la frecuencias de la UCP (tecnología usada principalmente en portátiles) y permite al sistema operativo el ajuste de la velocidad hacia arriba o hacia abajo, dependiendo de la carga actual del sistema o del esquema de potencia, p. ej. la frecuencia de la UCP puede ser reducida de 2 GHz a 1 GHz cuando el portátil funciona con la batería, conservando la duración de ésta, reduciendo el calor generado y el ruido del ventilador.
+
+El fichero de configuración de *cpupower* se encuentra alojada en `/etc/default/cpupower`. Este fichero de configuración es leído por un script bash alojado en `/usr/lib/systemd/scripts/cpupower` y es activado con *systemd* a través del servicio `cpupower.service`. Si desea habilitarlo para que inicie al arrancar el sistema operativo, puede ejecutar la orden:
+
+```
+# systemctl enable cpupower.service 
+
+```
 
 ## Configuración
 

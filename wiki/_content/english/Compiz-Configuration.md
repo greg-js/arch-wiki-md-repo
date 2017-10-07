@@ -90,7 +90,7 @@ Emerald settings such as window button pulse can be configured in `emerald-theme
 
 The GTK Window Decorator can be compiled with support for the Metacity or Marco window managers (depending on the Compiz version). If it is compiled with this support, the theme used by Metacity or Marco will also be used by GTK Window Decorator. If GTK Window Decorator is not compiled with Metacity or Marco support, a builtin fallback theme will be used.
 
-Many Metacity themes are available for download on [gnome-look.org](https://www.gnome-look.org/browse/cat/125/ord/latest/). Once downloaded, they should be unpacked into a directory such as `/usr/local/share/themes` (create it if it does not exist).
+Many Metacity themes are available for download on [gnome-look.org](https://www.gnome-look.org/browse/cat/125/ord/latest/). Once downloaded, they should be unpacked into a directory such as `/usr/local/share/themes` (for Metacity) or `~/.themes` (for Marco).
 
 	Compiz 0.9
 

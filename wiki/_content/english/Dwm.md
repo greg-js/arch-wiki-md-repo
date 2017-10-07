@@ -3,7 +3,7 @@ Related articles
 *   [dmenu](/index.php/Dmenu "Dmenu")
 *   [wmii](/index.php/Wmii "Wmii")
 
-[dwm](http://dwm.suckless.org/) is a dynamic window manager for [Xorg](/index.php/Xorg "Xorg"). It manages windows in tiled, stacked, and full-screen layouts, as well as many others with the help of [optional patches](#Patches). Layouts can be applied dynamically, optimizing the environment for the application in use and the task being performed. dwm is extremely lightweight and fast, written in C and with a stated design goal of remaining under 2000 source lines of code. It provides [multihead](/index.php/Multihead "Multihead") support for [xrandr](/index.php/Xrandr "Xrandr") and Xinerama.
+[dwm](https://dwm.suckless.org/) is a dynamic window manager for [Xorg](/index.php/Xorg "Xorg"). It manages windows in tiled, stacked, and full-screen layouts, as well as many others with the help of [optional patches](#Patches). Layouts can be applied dynamically, optimizing the environment for the application in use and the task being performed. dwm is extremely lightweight and fast, written in C and with a stated design goal of remaining under 2000 source lines of code. It provides [multihead](/index.php/Multihead "Multihead") support for [xrandr](/index.php/Xrandr "Xrandr") and Xinerama.
 
 ## Contents
 
@@ -52,7 +52,7 @@ exec dwm
 
 ### Customization
 
-dwm is configured at compile-time by editing some of its source files, namely `config.h`. For detailed information on these settings see the included, well commented `config.def.h` as well as the [customisation section](http://dwm.suckless.org/customisation/) on the dwm website.
+dwm is configured at compile-time by editing some of its source files, namely `config.h`. For detailed information on these settings see the included, well commented `config.def.h` as well as the [customisation section](https://dwm.suckless.org/customisation/) on the dwm website.
 
 ### Patches
 
@@ -60,7 +60,7 @@ The official website has a number of [patches](http://dwm.suckless.org/patches/)
 
 ### Status bar
 
-See the [dwmstatus](http://dwm.suckless.org/dwmstatus/) section on the dwm website. Also see the [#Statusbar configuration](#Statusbar_configuration) section.
+See the [dwmstatus](https://dwm.suckless.org/dwmstatus/) section on the dwm website. Also see the [#Statusbar configuration](#Statusbar_configuration) section.
 
 ### Use pacman
 
@@ -72,7 +72,7 @@ After making any desired changes and installing the updated package, restart dwm
 
 ## Basic usage
 
-Consult the [dwm tutorial](http://dwm.suckless.org/tutorial) for information on basic dwm usage. Additionally see [dwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dwm.1).
+Consult the [dwm tutorial](https://dwm.suckless.org/tutorial) for information on basic dwm usage. Additionally see [dwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dwm.1).
 
 ## Tips and tricks
 
@@ -110,7 +110,7 @@ In this case the date is shown in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8
 
 **Note:** It is not recommended to set the update interval equal to zero or remove the "sleep" line entirely since this will cause CPU usage to rise substantially (you can assess the effect with *top* and [powertop](/index.php/Powertop "Powertop")).
 
-More examples of statusbars are included [on the suckless wiki](http://dwm.suckless.org/dwmstatus/).
+More examples of statusbars are included [on the suckless wiki](https://dwm.suckless.org/dwmstatus/).
 
 #### Conky statusbar
 
@@ -243,7 +243,7 @@ This will cause dwm to ignore resize requests from all client windows, not just 
 
 ## See also
 
-*   [dwm's official website](http://dwm.suckless.org/)
+*   [dwm's official website](https://dwm.suckless.org/)
 *   [Introduction to dwm video](http://www.youtube.com/watch?v=GQ5s6T25jCc)
 *   [dmenu](/index.php/Dmenu "Dmenu") - Simple application launcher from the developers of dwm
 *   The [dwm thread](https://bbs.archlinux.org/viewtopic.php?id=57549/) on the forums

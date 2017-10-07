@@ -336,9 +336,9 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[https://github.com/sidus-dev/poseidon](https://github.com/sidus-dev/poseidon) || [poseidon](https://aur.archlinux.org/packages/poseidon/)
 
-*   **[Surf](/index.php/Surf "Surf")** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
+*   **[Surf](/index.php/Surf "Surf")** — Lightweight WebKit-based browser, which follows the [suckless ideology](https://suckless.org/philosophy) (basically, the browser itself is a single C source file).
 
-	[http://surf.suckless.org](http://surf.suckless.org) || [surf](https://www.archlinux.org/packages/?name=surf)
+	[https://surf.suckless.org/](https://surf.suckless.org/) || [surf](https://www.archlinux.org/packages/?name=surf)
 
 *   **Surfer** — Simple keyboard based web browser.
 
@@ -468,7 +468,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **[KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet")** — Download manager for KDE. Supports HTTP, FTP, BitTorrent and Metalink. Part of [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
 
-	[http://www.kde.org/applications/internet/kget/](http://www.kde.org/applications/internet/kget/) || [kdenetwork-kget](https://www.archlinux.org/packages/?name=kdenetwork-kget)
+	[https://www.kde.org/applications/internet/kget/](https://www.kde.org/applications/internet/kget/) || [kdenetwork-kget](https://www.archlinux.org/packages/?name=kdenetwork-kget)
 
 *   **Persepolis** — Graphical front-end for aria2 download manager with lots of features. Supports HTTP and FTP.
 
@@ -778,7 +778,7 @@ Pastebin services are often used to quote text or images while collaborating and
 
 	[http://ix.io](http://ix.io) || [ix](https://aur.archlinux.org/packages/ix/)
 
-*   **Pastebinit** — Really small Python script that acts as a Pastebin client. Servers: [pastie.org](http://pastie.org/), [paste.kde.org](http://paste.kde.org/), [paste.debian.net](http://paste.debian.net/), [paste.ubuntu.com](http://paste.ubuntu.com/) and others (for a full list see `pastebinit -l`).
+*   **Pastebinit** — Really small Python script that acts as a Pastebin client. Servers: [pastie.org](http://pastie.org/), [paste.kde.org](https://paste.kde.org/), [paste.debian.net](http://paste.debian.net/), [paste.ubuntu.com](http://paste.ubuntu.com/) and others (for a full list see `pastebinit -l`).
 
 	[http://launchpad.net/pastebinit](http://launchpad.net/pastebinit) || [pastebinit](https://www.archlinux.org/packages/?name=pastebinit)
 
@@ -854,7 +854,7 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 *   **Balsa** — Simple and light email client for GNOME.
 
-	[http://pawsa.fedorapeople.org/balsa/](http://pawsa.fedorapeople.org/balsa/) || [balsa](https://www.archlinux.org/packages/?name=balsa)
+	[https://pawsa.fedorapeople.org/balsa/](https://pawsa.fedorapeople.org/balsa/) || [balsa](https://www.archlinux.org/packages/?name=balsa)
 
 *   **[Claws Mail](https://en.wikipedia.org/wiki/Claws_Mail "wikipedia:Claws Mail")** — Lightweight GTK-based email client and news reader.
 
@@ -868,9 +868,17 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[https://wiki.gnome.org/Apps/Geary](https://wiki.gnome.org/Apps/Geary) || [geary](https://www.archlinux.org/packages/?name=geary)
 
+*   **Hiri** — An Exchange ready mail client aiming to replace Outlook (QT5)
+
+	[https://www.hiri.com/](https://www.hiri.com/) || [hiri](https://aur.archlinux.org/packages/hiri/)
+
 *   **[Kmail](https://en.wikipedia.org/wiki/Kmail "wikipedia:Kmail")** — Mature and feature-rich email client. Part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
-	[http://kde.org/applications/internet/kmail/](http://kde.org/applications/internet/kmail/) || [kmail](https://www.archlinux.org/packages/?name=kmail)
+	[https://www.kde.org/applications/internet/kmail/](https://www.kde.org/applications/internet/kmail/) || [kmail](https://www.archlinux.org/packages/?name=kmail)
+
+*   **Mailspring** — Fork of Nylas Mail
+
+	[https://getmailspring.com/](https://getmailspring.com/) || [mailspring](https://aur.archlinux.org/packages/mailspring/)
 
 *   **Nylas Mail** — A new mail client, built on the modern web and designed to be extended.
 
@@ -936,15 +944,15 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **[ii](https://en.wikipedia.org/wiki/Ii_(IRC_client) "wikipedia:Ii (IRC client)")** — Featherweight IRC client, literally `tail -f` the conversation and `echo` back your replies to a file.
 
-	[http://tools.suckless.org/ii](http://tools.suckless.org/ii) || [ii](https://aur.archlinux.org/packages/ii/)
+	[https://tools.suckless.org/ii/](https://tools.suckless.org/ii/) || [ii](https://aur.archlinux.org/packages/ii/)
 
 *   **Ircfs** — File system interface to IRC written in [Limbo](http://limbo.cat-v.org).
 
-	[http://www.ueber.net/code/r/ircfs](http://www.ueber.net/code/r/ircfs) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=ircfs)</small>
+	[https://bitbucket.org/mjl/ircfs](https://bitbucket.org/mjl/ircfs) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=ircfs)</small>
 
 *   **[Irssi](/index.php/Irssi "Irssi")** — Highly-configurable ncurses-based IRC client.
 
-	[http://irssi.org/](http://irssi.org/) || [irssi](https://www.archlinux.org/packages/?name=irssi)
+	[https://irssi.org/](https://irssi.org/) || [irssi](https://www.archlinux.org/packages/?name=irssi)
 
 *   **ScrollZ** — Advanced IRC client based on [ircII](https://en.wikipedia.org/wiki/ircII "wikipedia:ircII").
 
@@ -952,11 +960,11 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **sic** — Extremely simple IRC client, similar to [ii](https://en.wikipedia.org/wiki/Ii_(IRC_client) "wikipedia:Ii (IRC client)").
 
-	[http://tools.suckless.org/sic](http://tools.suckless.org/sic) || [sic](https://aur.archlinux.org/packages/sic/)
+	[https://tools.suckless.org/sic/](https://tools.suckless.org/sic/) || [sic](https://aur.archlinux.org/packages/sic/)
 
 *   **[WeeChat](https://en.wikipedia.org/wiki/WeeChat "wikipedia:WeeChat")** — Modular, lightweight ncurses-based IRC client.
 
-	[http://weechat.org/](http://weechat.org/) || [weechat](https://www.archlinux.org/packages/?name=weechat)
+	[https://weechat.org/](https://weechat.org/) || [weechat](https://www.archlinux.org/packages/?name=weechat)
 
 ###### Graphical
 
@@ -966,11 +974,11 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **HexChat** — Fork of XChat for Linux and Windows.
 
-	[http://hexchat.github.io/](http://hexchat.github.io/) || [hexchat](https://www.archlinux.org/packages/?name=hexchat)
+	[https://hexchat.github.io/](https://hexchat.github.io/) || [hexchat](https://www.archlinux.org/packages/?name=hexchat)
 
 *   **[Konversation](https://en.wikipedia.org/wiki/Konversation "wikipedia:Konversation")** — Qt-based IRC client for the KDE desktop.
 
-	[http://konversation.kde.org/](http://konversation.kde.org/) || [konversation](https://www.archlinux.org/packages/?name=konversation)
+	[https://konversation.kde.org/](https://konversation.kde.org/) || [konversation](https://www.archlinux.org/packages/?name=konversation)
 
 *   **[KVIrc](https://en.wikipedia.org/wiki/KVIrc "wikipedia:KVIrc")** — Qt-based IRC client featuring extensive themes support.
 
@@ -1004,7 +1012,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **Freetalk** — Console-based Jabber client.
 
-	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://www.archlinux.org/packages/?name=freetalk)
+	[https://www.gnu.org/software/freetalk/](https://www.gnu.org/software/freetalk/) || [freetalk](https://www.archlinux.org/packages/?name=freetalk)
 
 *   **jabber.el** — Minimal Jabber client for [Emacs](/index.php/Emacs "Emacs").
 
@@ -1096,11 +1104,11 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 ###### Console
 
-*   **BarnOwl** — Ncurses-based chat client with support for the Zephyr, AIM, Jabber, IRC, and Twitter protocols.
+*   **BarnOwl** — Ncurses-based chat client with support for the Zephyr, Jabber, IRC, and Twitter protocols.
 
 	[http://barnowl.mit.edu/](http://barnowl.mit.edu/) || [barnowl](https://aur.archlinux.org/packages/barnowl/)
 
-*   **[Bitlbee](/index.php/Bitlbee "Bitlbee")** — IRC client that provides a gateway to popular chat networks (XMPP, MSN, Yahoo, AIM, ICQ and Twitter).
+*   **[Bitlbee](/index.php/Bitlbee "Bitlbee")** — IRC client that provides a gateway to popular chat networks (XMPP, Yahoo, ICQ and Twitter).
 
 	[http://bitlbee.org/](http://bitlbee.org/) || [bitlbee](https://www.archlinux.org/packages/?name=bitlbee)
 
@@ -1112,11 +1120,11 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 	[http://developer.pidgin.im/wiki/Using%20Finch](http://developer.pidgin.im/wiki/Using%20Finch) || [finch](https://www.archlinux.org/packages/?name=finch)
 
-*   **[naim](https://en.wikipedia.org/wiki/naim_(software) "wikipedia:naim (software)")** — Ncurses chat client with support for AOL, ICQ, IRC and the Lily CMC.
+*   **[naim](https://en.wikipedia.org/wiki/naim_(software) "wikipedia:naim (software)")** — Ncurses chat client with support for ICQ, IRC and the Lily CMC.
 
 	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://www.archlinux.org/packages/?name=naim)
 
-*   **pork** — Programmable, ncurses-based AIM and IRC client that mostly looks and feels like ircII.
+*   **pork** — Programmable, ncurses-based IRC client that mostly looks and feels like ircII.
 
 	[http://dev.ojnk.net/](http://dev.ojnk.net/) || [pork](https://www.archlinux.org/packages/?name=pork)
 
@@ -1134,15 +1142,15 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 	[http://instantbird.com/](http://instantbird.com/) || [instantbird](https://aur.archlinux.org/packages/instantbird/)
 
-*   **[Kopete](https://en.wikipedia.org/wiki/Kopete "wikipedia:Kopete")** — User-friendly IM supporting AIM, ICQ, Yahoo, Jabber, Gadu-Gadu, Novell GroupWise Messenger, and other IM networks. Part of [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
+*   **[Kopete](https://en.wikipedia.org/wiki/Kopete "wikipedia:Kopete")** — User-friendly IM supporting ICQ, Yahoo, Jabber, Gadu-Gadu, Novell GroupWise Messenger, and other IM networks. Part of [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
 
-	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
+	[https://userbase.kde.org/Kopete](https://userbase.kde.org/Kopete) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
 *   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — KDE instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Meant as a replacement for Kopete.
 
-	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [telepathy-kde-meta](https://www.archlinux.org/packages/?name=telepathy-kde-meta)
+	[https://userbase.kde.org/Telepathy](https://userbase.kde.org/Telepathy) || [telepathy-kde-meta](https://www.archlinux.org/packages/?name=telepathy-kde-meta)
 
-*   **Licq** — Instant messaging client for UNIX supporting multiple protocols (currently ICQ, MSN and Jabber).
+*   **Licq** — Instant messaging client for UNIX supporting multiple protocols (currently ICQ and Jabber).
 
 	[http://www.licq.org](http://www.licq.org) || [licq](https://www.archlinux.org/packages/?name=licq)
 
@@ -1194,7 +1202,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[KPhone](https://en.wikipedia.org/wiki/KPhone "wikipedia:KPhone")** — Qt SIP User Agent with voice, video and text messaging support.
 
-	[http://sourceforge.net/projects/kphone/](http://sourceforge.net/projects/kphone/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=kphone)</small>
+	[https://sourceforge.net/projects/kphone/](https://sourceforge.net/projects/kphone/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=kphone)</small>
 
 *   **[Linphone](https://en.wikipedia.org/wiki/Linphone "wikipedia:Linphone")** — VoIP phone application for communicating freely with people over the internet, with voice, video, and text instant messaging.
 
@@ -1212,7 +1220,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Skype](/index.php/Skype "Skype")** — Popular but proprietary application for voice and video communication.
 
-	[https://www.skype.com/](https://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/) or [skypeforlinux](https://aur.archlinux.org/packages/skypeforlinux/)
+	[https://www.skype.com/](https://www.skype.com/) || [skypeforlinux](https://aur.archlinux.org/packages/skypeforlinux/) (or [skype](https://aur.archlinux.org/packages/skype/) for the old version)
 
 *   **Hangups** — A third-party instant messaging client for Google Hangouts
 
@@ -1284,7 +1292,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **[Akregator](https://en.wikipedia.org/wiki/Kontact#News_Feed_Aggregator "wikipedia:Kontact")** — News aggregator for KDE, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
-	[http://kde.org/applications/internet/akregator/](http://kde.org/applications/internet/akregator/) || [akregator](https://www.archlinux.org/packages/?name=akregator)
+	[https://www.kde.org/applications/internet/akregator/](https://www.kde.org/applications/internet/akregator/) || [akregator](https://www.archlinux.org/packages/?name=akregator)
 
 *   **Blam** — Simple newsreader for GNOME written in C Sharp.
 

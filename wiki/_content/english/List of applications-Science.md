@@ -50,7 +50,7 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 *   **[bc](https://en.wikipedia.org/wiki/bc_programming_language "wikipedia:bc programming language")** — Arbitrary precision calculator language.
 
-	[http://www.gnu.org/software/bc/](http://www.gnu.org/software/bc/) || [bc](https://www.archlinux.org/packages/?name=bc)
+	[https://www.gnu.org/software/bc/](https://www.gnu.org/software/bc/) || [bc](https://www.archlinux.org/packages/?name=bc)
 
 *   **calc** — Arbitrary precision console calculator.
 
@@ -62,7 +62,7 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 *   **galculator** — GTK+ based scientific calculator.
 
-	[http://galculator.sourceforge.net/](http://galculator.sourceforge.net/) || GTK+ 3: [galculator](https://www.archlinux.org/packages/?name=galculator), GTK+ 2: [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2)
+	[http://galculator.mnim.org/](http://galculator.mnim.org/) || GTK+ 3: [galculator](https://www.archlinux.org/packages/?name=galculator), GTK+ 2: [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2)
 
 *   **[GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")** — Scientific calculator included in the GNOME desktop.
 
@@ -70,11 +70,11 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 *   **KAlgebra** — Calculator and 3D plotter included in KDE EDU.
 
-	[http://www.kde.org/applications/education/kalgebra/](http://www.kde.org/applications/education/kalgebra/) || [kalgebra](https://www.archlinux.org/packages/?name=kalgebra)
+	[https://www.kde.org/applications/education/kalgebra/](https://www.kde.org/applications/education/kalgebra/) || [kalgebra](https://www.archlinux.org/packages/?name=kalgebra)
 
 *   **[KCalc](https://en.wikipedia.org/wiki/KCalc "wikipedia:KCalc")** — Scientific calculator included in the KDE desktop.
 
-	[http://kde.org/applications/utilities/kcalc/](http://kde.org/applications/utilities/kcalc/) || [kcalc](https://www.archlinux.org/packages/?name=kcalc)
+	[https://www.kde.org/applications/utilities/kcalc/](https://www.kde.org/applications/utilities/kcalc/) || [kcalc](https://www.archlinux.org/packages/?name=kcalc)
 
 *   **MATE Calc** — Calculator for the MATE desktop environment.
 
@@ -90,7 +90,7 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 *   **[xcalc](https://en.wikipedia.org/wiki/xcalc "wikipedia:xcalc")** — Scientific calculator for X with algebraic and reverse polish notation modes.
 
-	[http://xorg.freedesktop.org/](http://xorg.freedesktop.org/) || [xorg-xcalc](https://www.archlinux.org/packages/?name=xorg-xcalc)
+	[https://www.x.org/](https://www.x.org/) || [xorg-xcalc](https://www.archlinux.org/packages/?name=xorg-xcalc)
 
 #### Computer algebra system
 
@@ -106,7 +106,7 @@ See also [Wikipedia:Comparison of computer algebra systems](https://en.wikipedia
 
 *   **[Maple](/index.php/Maple "Maple")** — Famous commercial CAS. Often used in education.
 
-	[http://www.maplesoft.com/products/maple/](http://www.maplesoft.com/products/maple/) ||
+	[https://www.maplesoft.com/products/maple/](https://www.maplesoft.com/products/maple/) ||
 
 *   **Mathics** — A free CAS for symbolic mathematical computations which uses [Python](/index.php/Python "Python") as its main language. It aims at achieving a Mathematica-compatible syntax and functions. It relies mostly on Sympy for most mathematical tasks and, optionally, Sage for more advanced functionality.
 
@@ -146,15 +146,15 @@ See also [Wikipedia:Comparison of numerical analysis software](https://en.wikipe
 
 *   **[GNU Radio](/index.php/GNU_Radio "GNU Radio")** — Software development toolkit that provides signal processing blocks to implement software radios.
 
-	[http://gnuradio.org/redmine/projects/gnuradio/wiki](http://gnuradio.org/redmine/projects/gnuradio/wiki) || [gnuradio](https://www.archlinux.org/packages/?name=gnuradio)
+	[https://www.gnuradio.org/](https://www.gnuradio.org/) || [gnuradio](https://www.archlinux.org/packages/?name=gnuradio)
 
 *   **[matplotlib (PyLab)](https://en.wikipedia.org/wiki/matplotlib "wikipedia:matplotlib")** — Collection of Python modules (pyplot, numpy, etc.) used for scientific calculations.
 
-	[http://www.scipy.org/](http://www.scipy.org/) || [python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib)
+	[https://www.scipy.org/](https://www.scipy.org/) || [python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib)
 
 *   **[Octave](/index.php/Octave "Octave")** — [Matlab](/index.php/Matlab "Matlab")-like language and interface for numerical computations.
 
-	[http://www.gnu.org/software/octave/](http://www.gnu.org/software/octave/) || [octave](https://www.archlinux.org/packages/?name=octave)
+	[https://www.gnu.org/software/octave/](https://www.gnu.org/software/octave/) || [octave](https://www.archlinux.org/packages/?name=octave)
 
 *   **[Sage-mathematics](/index.php/Sage-mathematics "Sage-mathematics")** — Mathematics software system, that combines many existing open-source packages into a common Python interface. Alternative to Magma, Maple, Mathematica and Matlab.
 
@@ -178,19 +178,19 @@ See also [Wikipedia:Comparison of statistical packages](https://en.wikipedia.org
 
 *   **[PSPP](https://en.wikipedia.org/wiki/PSPP "wikipedia:PSPP")** — Free SPSS implementation.
 
-	[http://www.gnu.org/software/pspp/](http://www.gnu.org/software/pspp/) || [pspp](https://aur.archlinux.org/packages/pspp/)
+	[https://www.gnu.org/software/pspp/](https://www.gnu.org/software/pspp/) || [pspp](https://aur.archlinux.org/packages/pspp/)
 
 *   **[R](/index.php/R "R")** — Software environment for statistical computing and graphics.
 
-	[http://cran.r-project.org/](http://cran.r-project.org/) || [r](https://www.archlinux.org/packages/?name=r)
+	[https://cran.r-project.org/](https://cran.r-project.org/) || [r](https://www.archlinux.org/packages/?name=r)
 
 *   **[RKWard](https://en.wikipedia.org/wiki/RKWard "wikipedia:RKWard")** — Frontend for the statistical language R.
 
-	[http://rkward.sourceforge.net/](http://rkward.sourceforge.net/) || [rkward](https://aur.archlinux.org/packages/rkward/)
+	[https://rkward.kde.org/](https://rkward.kde.org/) || [rkward](https://aur.archlinux.org/packages/rkward/)
 
 *   **[RStudio](https://en.wikipedia.org/wiki/RStudio "wikipedia:RStudio")** — A powerful and productive IDE for R written in Qt.
 
-	[http://www.rstudio.com/](http://www.rstudio.com/) || [rstudio-desktop-bin](https://aur.archlinux.org/packages/rstudio-desktop-bin/)
+	[https://www.rstudio.com/](https://www.rstudio.com/) || [rstudio-desktop-bin](https://aur.archlinux.org/packages/rstudio-desktop-bin/)
 
 #### Data evaluation
 
@@ -218,7 +218,7 @@ See also [Wikipedia:List of information graphics software](https://en.wikipedia.
 
 *   **[ROOT](https://en.wikipedia.org/wiki/ROOT "wikipedia:ROOT")** — Data analysis program and library (originally for particle physics) developed by CERN.
 
-	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://aur.archlinux.org/packages/root/)
+	[https://root.cern.ch/](https://root.cern.ch/) || [root](https://aur.archlinux.org/packages/root/)
 
 *   **[SciDAVis](https://en.wikipedia.org/wiki/SciDAVis "wikipedia:SciDAVis")** — Fork of QtiPlot with the goal of being better documented and more user friendly.
 
@@ -258,7 +258,7 @@ See also [Wikipedia:List of open source bioinformatics software](https://en.wiki
 
 *   **[UGENE](https://en.wikipedia.org/wiki/UGENE "wikipedia:UGENE")** — Application that integrates dozens of well-known biological tools and algorithms, providing both graphical user and command-line interfaces.
 
-	[http://ugene.unipro.ru/](http://ugene.unipro.ru/) || [ugene](https://aur.archlinux.org/packages/ugene/)
+	[http://ugene.net/](http://ugene.net/) || [ugene](https://aur.archlinux.org/packages/ugene/)
 
 #### Molecules
 
@@ -268,11 +268,11 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — Editor, viewer and simulator for 3D molecule structures (also supports downloading files from the [Protein Data Bank](https://en.wikipedia.org/wiki/Protein_Data_Bank "wikipedia:Protein Data Bank")).
 
-	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://aur.archlinux.org/packages/avogadro/)
+	[http://avogadro.cc/](http://avogadro.cc/) || [avogadro](https://aur.archlinux.org/packages/avogadro/)
 
 *   **BALLView** — Standalone molecular modeling and visualization application, part of the [BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL") framework.
 
-	[http://www.ballview.org/](http://www.ballview.org/) || [ball](https://aur.archlinux.org/packages/ball/)
+	[http://www.ball-project.org/](http://www.ball-project.org/) || [ball](https://aur.archlinux.org/packages/ball/)
 
 *   **[Ghemical](https://en.wikipedia.org/wiki/Ghemical "wikipedia:Ghemical")** — Computational chemistry software package used to edit, view and simulate molecular structures.
 
@@ -280,7 +280,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **[PyMOL](https://en.wikipedia.org/wiki/PyMOL "wikipedia:PyMOL")** — Open-source molecular visualization system that can produce high quality 3D images of small molecules and biological macromolecules, such as proteins.
 
-	[http://pymol.org](http://pymol.org) || [pymol](https://www.archlinux.org/packages/?name=pymol)
+	[https://pymol.org/](https://pymol.org/) || [pymol](https://www.archlinux.org/packages/?name=pymol)
 
 ##### Drawing
 
@@ -318,11 +318,11 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **gElemental** — Periodic table of the elements with additional information.
 
-	[http://freshmeat.net/projects/gelemental](http://freshmeat.net/projects/gelemental) || [gelemental](https://aur.archlinux.org/packages/gelemental/)
+	[http://freecode.com/projects/gelemental](http://freecode.com/projects/gelemental) || [gelemental](https://aur.archlinux.org/packages/gelemental/)
 
 *   **[Kalzium](https://en.wikipedia.org/wiki/Kalzium "wikipedia:Kalzium")** — Periodic table of the elements with molecule editor and equation solver from the [KDE](/index.php/KDE "KDE") desktop.
 
-	[http://edu.kde.org/kalzium/](http://edu.kde.org/kalzium/) || [kalzium](https://www.archlinux.org/packages/?name=kalzium)
+	[https://edu.kde.org/kalzium/](https://edu.kde.org/kalzium/) || [kalzium](https://www.archlinux.org/packages/?name=kalzium)
 
 #### Biochemistry
 
@@ -334,7 +334,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **[ImageJ](https://en.wikipedia.org/wiki/ImageJ "wikipedia:ImageJ")** — Java-based image processing and analysing program that provides extensibility via plugins and macros. It is widely used in microscopy (e.g. for cell counting).
 
-	[http://rsb.info.nih.gov/ij](http://rsb.info.nih.gov/ij) || [imagej](https://aur.archlinux.org/packages/imagej/)
+	[https://imagej.nih.gov/ij/](https://imagej.nih.gov/ij/) || [imagej](https://aur.archlinux.org/packages/imagej/)
 
 *   **[Fiji](https://en.wikipedia.org/wiki/FIJI_(software) "wikipedia:FIJI (software)")** — ImageJ distribution (and soon ImageJ2) with a lot of plugins organized into a coherent menu structure.
 
@@ -344,7 +344,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **[Celestia](https://en.wikipedia.org/wiki/Celestia "wikipedia:Celestia")** — 3D astronomy simulation program that allows users to travel through an extensive universe, modeled after reality, at any speed, in any direction and at any time in history.
 
-	[http://www.shatters.net/celestia/](http://www.shatters.net/celestia/) || [celestia](https://www.archlinux.org/packages/?name=celestia)
+	[https://celestiaproject.net/](https://celestiaproject.net/) || [celestia](https://www.archlinux.org/packages/?name=celestia)
 
 *   **GIMP Astronomy Plugins** — Set of GIMP plugins for astronomical image processing.
 
@@ -356,15 +356,15 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **[KStars](https://en.wikipedia.org/wiki/KStars "wikipedia:KStars")** — Planetarium application that provides an accurate graphical simulation of the night sky, from any location on Earth, at any date and time. It is included in KDE Edu.
 
-	[http://edu.kde.org/kstars/](http://edu.kde.org/kstars/) || [kstars](https://www.archlinux.org/packages/?name=kstars)
+	[https://edu.kde.org/kstars/](https://edu.kde.org/kstars/) || [kstars](https://www.archlinux.org/packages/?name=kstars)
 
 *   **Qastrocam-g2** — Webcam acquisition software for planetary imaging.
 
-	[http://sourceforge.net/projects/qastrocam-g2/](http://sourceforge.net/projects/qastrocam-g2/) || [qastrocam-g2](https://aur.archlinux.org/packages/qastrocam-g2/)
+	[https://sourceforge.net/projects/qastrocam-g2/](https://sourceforge.net/projects/qastrocam-g2/) || [qastrocam-g2](https://aur.archlinux.org/packages/qastrocam-g2/)
 
 *   **[Skychart / Cartes du Ciel](https://en.wikipedia.org/wiki/Cartes_du_Ciel "wikipedia:Cartes du Ciel")** — Planetarium that maps out and labels most of the constellations, planets, and objects you can see with a telescope. It can also download Digitized Sky Survey Charts and superimpose images over these charts.
 
-	[http://www.ap-i.net/skychart/start/](http://www.ap-i.net/skychart/start/) || [skychart](https://aur.archlinux.org/packages/skychart/)
+	[https://www.ap-i.net/skychart/](https://www.ap-i.net/skychart/) || [skychart](https://aur.archlinux.org/packages/skychart/)
 
 *   **StarPlot** — 3-dimensional star chart viewer.
 
@@ -398,7 +398,7 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **Logisim** — Educational digital logic design and simulation software, written in Java, officially its development has stopped.
 
-	[http://sourceforge.net/projects/circuit/](http://sourceforge.net/projects/circuit/) || [logisim](https://aur.archlinux.org/packages/logisim/)
+	[https://sourceforge.net/projects/circuit/](https://sourceforge.net/projects/circuit/) || [logisim](https://aur.archlinux.org/packages/logisim/)
 
 *   **Logisim Evolution** — Project which continue the development of the original Logisim with new features, written in Java.
 
@@ -412,7 +412,7 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **[Altera Design Software](/index.php/Altera_Design_Software "Altera Design Software")** — A set of design tools for Altera's FPGA chips that includes Quartus II and ModelSim-Altera.
 
-	[http://www.altera.com/products/software/sfw-index.jsp](http://www.altera.com/products/software/sfw-index.jsp) || see [Altera Design Software](/index.php/Altera_Design_Software "Altera Design Software")
+	[https://www.altera.com/products/design-software/overview.html](https://www.altera.com/products/design-software/overview.html) || see [Altera Design Software](/index.php/Altera_Design_Software "Altera Design Software")
 
 *   **[Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK")** — FPGA programmable logic design suit.
 
@@ -422,7 +422,7 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **[Arduino](/index.php/Arduino "Arduino")** — Arduino prototyping platform SDK.
 
-	[http://arduino.cc/en/Main/Software](http://arduino.cc/en/Main/Software) || [arduino](https://www.archlinux.org/packages/?name=arduino)
+	[https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software) || [arduino](https://www.archlinux.org/packages/?name=arduino)
 
 ##### Schematic capture editor
 
@@ -432,7 +432,7 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **[KiCAD](https://en.wikipedia.org/wiki/KiCAD "wikipedia:KiCAD")** — Software suite for electronic design automation (EDA) that facilitates the design of schematics for electronic circuits and their conversion to PCB (printed circuit board).
 
-	[http://www.kicad-pcb.org/display/KICAD/KiCad+EDA+Software+Suite](http://www.kicad-pcb.org/display/KICAD/KiCad+EDA+Software+Suite) || [kicad](https://www.archlinux.org/packages/?name=kicad)
+	[http://kicad-pcb.org/](http://kicad-pcb.org/) || [kicad](https://www.archlinux.org/packages/?name=kicad)
 
 *   **[Oregano](https://en.wikipedia.org/wiki/Oregano_(software) "wikipedia:Oregano (software)")** — Graphical software application for schematic capture and simulation of electrical circuits. The actual simulation is done by the [ngspice](https://en.wikipedia.org/wiki/Ngspice "wikipedia:Ngspice") or [Gnucap](https://en.wikipedia.org/wiki/GNU_Circuit_Analysis_Package "wikipedia:GNU Circuit Analysis Package") engines.
 
@@ -440,7 +440,7 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **QElectroTech** — Application used to draw advanced electrical circuits.
 
-	[http://qelectrotech.org/](http://qelectrotech.org/) || [qelectrotech](https://aur.archlinux.org/packages/qelectrotech/)
+	[https://qelectrotech.org/](https://qelectrotech.org/) || [qelectrotech](https://aur.archlinux.org/packages/qelectrotech/)
 
 *   **[Qucs](https://en.wikipedia.org/wiki/Quite_Universal_Circuit_Simulator "wikipedia:Quite Universal Circuit Simulator")** — Electronics circuit simulator application that gives you the ability to set up a circuit with a graphical user interface and simulate its large-signal, small-signal and noise behaviour.
 
@@ -450,19 +450,19 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **[Code_Aster](https://en.wikipedia.org/wiki/Code_Aster "wikipedia:Code Aster")** — Software package for Civil and Structural Engineering finite element analysis and numeric simulation in structural mechanics.
 
-	[http://www.code-aster.org/V2/spip.php?rubrique2](http://www.code-aster.org/V2/spip.php?rubrique2) || [aster](https://aur.archlinux.org/packages/aster/)
+	[https://www.code-aster.org/V2/spip.php?rubrique2](https://www.code-aster.org/V2/spip.php?rubrique2) || [aster](https://aur.archlinux.org/packages/aster/)
 
 *   **[EPANET](https://en.wikipedia.org/wiki/EPANET "wikipedia:EPANET")** — EPANET performs extended period simulation of the water movement and quality behavior within pressurized pipe networks.
 
-	[http://www.epa.gov/](http://www.epa.gov/) || [epanet2-git](https://aur.archlinux.org/packages/epanet2-git/)
+	[https://www.epa.gov/](https://www.epa.gov/) || [epanet2-git](https://aur.archlinux.org/packages/epanet2-git/)
 
 *   **[Step](https://en.wikipedia.org/wiki/Step_(software) "wikipedia:Step (software)")** — Two-dimensional physics simulation engine that is included in the KDE desktop as part of KDE Edu.
 
-	[http://edu.kde.org/step/](http://edu.kde.org/step/) || [step](https://www.archlinux.org/packages/?name=step)
+	[https://edu.kde.org/step/](https://edu.kde.org/step/) || [step](https://www.archlinux.org/packages/?name=step)
 
 *   **[SWMM](https://en.wikipedia.org/wiki/SWMM "wikipedia:SWMM")** — Storm Water Management Model is a dynamic rainfall-runoff-subsurface runoff simulation model used for simulation of the surface/subsurface hydrology quantity and quality.
 
-	[http://www.epa.gov/](http://www.epa.gov/) || [swmm5-git](https://aur.archlinux.org/packages/swmm5-git/)
+	[https://www.epa.gov/](https://www.epa.gov/) || [swmm5-git](https://aur.archlinux.org/packages/swmm5-git/)
 
 #### Unit conversion
 
@@ -476,7 +476,7 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **[Units](https://en.wikipedia.org/wiki/GNU_Units "wikipedia:GNU Units")** — Command-line unit converter and calculator that can handle multiplicative scale changes, nonlinear conversions such as Fahrenheit to Celsius or wire gauge and others.
 
-	[http://www.gnu.org/s/units/](http://www.gnu.org/s/units/) || [units](https://www.archlinux.org/packages/?name=units)
+	[https://www.gnu.org/software/units/](https://www.gnu.org/software/units/) || [units](https://www.archlinux.org/packages/?name=units)
 
 ### Geography
 
@@ -550,4 +550,4 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **Viking** — GTK+2 application to manage GPS data.
 
-	[http://viking.sourceforge.net/](http://viking.sourceforge.net/) || [viking](https://www.archlinux.org/packages/?name=viking)
+	[https://sourceforge.net/projects/viking/](https://sourceforge.net/projects/viking/) || [viking](https://www.archlinux.org/packages/?name=viking)

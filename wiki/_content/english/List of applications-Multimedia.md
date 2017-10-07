@@ -242,7 +242,7 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 *   **[Gpaint](https://en.wikipedia.org/wiki/GNU_Paint "wikipedia:GNU Paint")** — [Paintbrush](https://en.wikipedia.org/wiki/PC_Paintbrush "wikipedia:PC Paintbrush") clone for GNOME.
 
-	[http://www.gnu.org/software/gpaint/](http://www.gnu.org/software/gpaint/) || [gpaint](https://aur.archlinux.org/packages/gpaint/)
+	[https://www.gnu.org/software/gpaint/](https://www.gnu.org/software/gpaint/) || [gpaint](https://aur.archlinux.org/packages/gpaint/)
 
 *   **[GraphicsMagick](https://en.wikipedia.org/wiki/GraphicsMagick "wikipedia:GraphicsMagick")** — Fork of ImageMagick designed to have API and command-line stability. It also supports multi-CPU for enhanced performance and thus is used by some large commercial sites (Flickr, etsy) for its performance.
 
@@ -278,7 +278,7 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 *   **[XPaint](https://en.wikipedia.org/wiki/XPaint "wikipedia:XPaint")** — Color image editing tool which features most standard paint program options.
 
-	[http://sourceforge.net/projects/sf-xpaint/](http://sourceforge.net/projects/sf-xpaint/) || [xpaint](https://aur.archlinux.org/packages/xpaint/)
+	[https://sourceforge.net/projects/sf-xpaint/](https://sourceforge.net/projects/sf-xpaint/) || [xpaint](https://aur.archlinux.org/packages/xpaint/)
 
 Some image viewers like Ephoto, GNOME Photos, [gThumb](https://en.wikipedia.org/wiki/GThumb and [XnView MP](https://en.wikipedia.org/wiki/XnView "wikipedia:XnView") also provide some basic image manipulation functionality.
 
@@ -408,7 +408,7 @@ See also [Wikipedia:Sound server](https://en.wikipedia.org/wiki/Sound_server "wi
 
 *   **wineasio** — Provides an ASIO to JACK driver for *wine*. ASIO is the most common Windows low-latency driver, so is commonly used in audio workstation programs.
 
-	[http://sourceforge.net/projects/wineasio/](http://sourceforge.net/projects/wineasio/) || [wineasio](https://aur.archlinux.org/packages/wineasio/)
+	[https://sourceforge.net/projects/wineasio/](https://sourceforge.net/projects/wineasio/) || [wineasio](https://aur.archlinux.org/packages/wineasio/)
 
 #### Audio players
 
@@ -610,7 +610,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **GVolWheel** — An audio mixer which lets you control the volume through a tray icon.
 
-	[http://sourceforge.net/projects/gvolwheel/](http://sourceforge.net/projects/gvolwheel/) || [gvolwheel](https://aur.archlinux.org/packages/gvolwheel/)
+	[https://sourceforge.net/projects/gvolwheel/](https://sourceforge.net/projects/gvolwheel/) || [gvolwheel](https://aur.archlinux.org/packages/gvolwheel/)
 
 *   **pa-applet** — PulseAudio system tray applet with volume bar.
 
@@ -796,7 +796,7 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 *   **[Dragon Player](https://en.wikipedia.org/wiki/Kdemultimedia#Dragon_Player "wikipedia:Kdemultimedia")** — Simple video player for KDE. Part of the [kdemultimedia](https://www.archlinux.org/groups/x86_64/kdemultimedia/) group.
 
-	[http://www.kde.org/applications/multimedia/dragonplayer/](http://www.kde.org/applications/multimedia/dragonplayer/) || [dragon](https://www.archlinux.org/packages/?name=dragon)
+	[https://www.kde.org/applications/multimedia/dragonplayer/](https://www.kde.org/applications/multimedia/dragonplayer/) || [dragon](https://www.archlinux.org/packages/?name=dragon)
 
 *   **[GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")** — Media player (audio and video) for the GNOME desktop that uses GStreamer. Part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
 
@@ -804,7 +804,7 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 *   **[Kaffeine](https://en.wikipedia.org/wiki/Kaffeine "wikipedia:Kaffeine")** — Very versatile KDE media player that, by default, utilizes VLC as its backend and has excellent support of digital TV (DVB).
 
-	[http://kaffeine.kde.org/](http://kaffeine.kde.org/) || [kaffeine](https://www.archlinux.org/packages/?name=kaffeine)
+	[https://www.kde.org/applications/multimedia/kaffeine/](https://www.kde.org/applications/multimedia/kaffeine/) || [kaffeine](https://www.archlinux.org/packages/?name=kaffeine)
 
 *   **Parole** — Modern media player based on the GStreamer framework.
 
@@ -1010,7 +1010,7 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 *   **KDE Connect** — A project that aims to communicate all your devices.
 
-	[http://community.kde.org/KDEConnect](http://community.kde.org/KDEConnect) || [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)
+	[https://community.kde.org/KDEConnect](https://community.kde.org/KDEConnect) || [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)
 
 ### Digital camera managers
 

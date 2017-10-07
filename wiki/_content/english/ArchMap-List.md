@@ -1051,5 +1051,6 @@ You can use the following website to get your device's coordinates along with a 
 46.596249, 7.055057 "helvethor" # Le Pâquier, Fribourg, Switzerland
 35.33720,25.12360 "gkaklas" # Heraklion, Greece
 38.704883, -90.878528 "Noorquacker" # Missouri, USA
+58.493, 13.154 "phi97" # Lidkoping, Sweden
 
 ```

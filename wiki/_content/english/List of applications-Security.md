@@ -41,11 +41,11 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 *   **IPTraf** — Console-based network monitoring utility.
 
-	[https://fedorahosted.org/iptraf-ng/](https://fedorahosted.org/iptraf-ng/) || [iptraf-ng](https://www.archlinux.org/packages/?name=iptraf-ng)
+	[https://sourceforge.net/projects/iptraf-ng/](https://sourceforge.net/projects/iptraf-ng/) || [iptraf-ng](https://www.archlinux.org/packages/?name=iptraf-ng)
 
 *   **Kismet** — 802.11 layer2 wireless network detector, sniffer, and intrusion detection system.
 
-	[http://www.kismetwireless.net/](http://www.kismetwireless.net/) || [kismet](https://www.archlinux.org/packages/?name=kismet)
+	[https://www.kismetwireless.net/](https://www.kismetwireless.net/) || [kismet](https://www.archlinux.org/packages/?name=kismet)
 
 *   **Nemesis** — Command-line network packet crafting and injection utility.
 
@@ -53,7 +53,7 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 *   **[Nmap](/index.php/Nmap "Nmap")** — Security scanner used to discover hosts and services on a computer network, thus creating a "map" of the network.
 
-	[http://nmap.org/](http://nmap.org/) || [nmap](https://www.archlinux.org/packages/?name=nmap)
+	[https://nmap.org/](https://nmap.org/) || [nmap](https://www.archlinux.org/packages/?name=nmap)
 
 *   **[Ntop](/index.php/Ntop "Ntop")** — Network probe that shows network usage in a way similar to what top does for processes.
 
@@ -61,7 +61,7 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 *   **[Snort](/index.php/Snort "Snort")** — Network intrusion prevention and detection system.
 
-	[http://www.snort.org/](http://www.snort.org/) || [snort](https://aur.archlinux.org/packages/snort/)
+	[https://www.snort.org/](https://www.snort.org/) || [snort](https://aur.archlinux.org/packages/snort/)
 
 *   **Spectools** — A set of utilities for spectrum analyzer hardware including Wi-Spy devices.
 
@@ -69,11 +69,11 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 *   **[Sshguard](/index.php/Sshguard "Sshguard")** — Daemon that protects SSH and other services against brute-force attacts, similar to Fail2ban.
 
-	[http://www.sshguard.net/](http://www.sshguard.net/) || [sshguard](https://www.archlinux.org/packages/?name=sshguard)
+	[https://www.sshguard.net/](https://www.sshguard.net/) || [sshguard](https://www.archlinux.org/packages/?name=sshguard)
 
 *   **[Suricata](/index.php/Suricata "Suricata")** — High performance Network IDS, IPS and Network Security Monitoring engine.
 
-	[http://suricata-ids.org/](http://suricata-ids.org/) || [suricata](https://aur.archlinux.org/packages/suricata/)
+	[https://suricata-ids.org/](https://suricata-ids.org/) || [suricata](https://aur.archlinux.org/packages/suricata/)
 
 *   **[Tcpdump](https://en.wikipedia.org/wiki/tcpdump "wikipedia:tcpdump")** — Common console-based packet analyzer that allows the user to intercept and display TCP/IP and other packets being transmitted or received over a network.
 
@@ -85,7 +85,7 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 *   **[Wireshark](/index.php/Wireshark "Wireshark")** — Network protocol analyzer that lets you capture and interactively browse the traffic running on a computer network.
 
-	[http://www.wireshark.org/](http://www.wireshark.org/) || [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk)
+	[https://www.wireshark.org/](https://www.wireshark.org/) || [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk)
 
 #### Threat and vulnerability detection
 
@@ -99,7 +99,7 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 *   **[Metasploit Framework](/index.php/Metasploit_Framework "Metasploit Framework")** — An advanced open-source platform for developing, testing, and using exploit code.
 
-	[http://www.metasploit.com/](http://www.metasploit.com/) || [metasploit](https://www.archlinux.org/packages/?name=metasploit)
+	[https://www.metasploit.com/](https://www.metasploit.com/) || [metasploit](https://www.archlinux.org/packages/?name=metasploit)
 
 *   **[Nessus](/index.php/Nessus "Nessus")** — Comprehensive vulnerability scanning program.
 
@@ -137,7 +137,7 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 *   **[Logwatch](/index.php/Logwatch "Logwatch")** — Customizable log analysis system.
 
-	[http://sourceforge.net/projects/logwatch/](http://sourceforge.net/projects/logwatch/) || [logwatch](https://www.archlinux.org/packages/?name=logwatch)
+	[https://sourceforge.net/projects/logwatch/](https://sourceforge.net/projects/logwatch/) || [logwatch](https://www.archlinux.org/packages/?name=logwatch)
 
 *   **OpenDLP** — OpenDLP is a free and open source, agent- and agentless-based, centrally-managed, massively distributable data loss prevention tool.
 
@@ -159,7 +159,7 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 *   **Hostsblock** — A script that downloads, sorts, and compiles multiple ad- and malware-blocking hosts files.
 
-	[http://gaenserich.github.com/hostsblock/](http://gaenserich.github.com/hostsblock/) || [hostsblock](https://aur.archlinux.org/packages/hostsblock/)
+	[http://gaenserich.github.io/hostsblock/](http://gaenserich.github.io/hostsblock/) || [hostsblock](https://aur.archlinux.org/packages/hostsblock/)
 
 #### Backup programs
 
@@ -181,7 +181,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **i3lock** — A simple screen locker. Provides user feedback, uses PAM authentication, supports DPMS. The background can be set to an image or solid color.
 
-	[http://i3wm.org/i3lock/](http://i3wm.org/i3lock/) || [i3lock](https://www.archlinux.org/packages/?name=i3lock)
+	[https://i3wm.org/i3lock/](https://i3wm.org/i3lock/) || [i3lock](https://www.archlinux.org/packages/?name=i3lock)
 
 *   **i3lock-blur** — Fork of *i3lock* which can use your desktop with the blur effect applied as a background.
 
@@ -209,7 +209,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **[slock](/index.php/Slock "Slock")** — Very simple and lightweight X screen locker. Offers only a black background when locked, there are no animations or text fields.
 
-	[http://tools.suckless.org/slock](http://tools.suckless.org/slock) || [slock](https://www.archlinux.org/packages/?name=slock)
+	[https://tools.suckless.org/slock/](https://tools.suckless.org/slock/) || [slock](https://www.archlinux.org/packages/?name=slock)
 
 *   **sxlock** — Fork of sflock with a few enhancements. Provides basic user feedback, uses PAM authentication, supports DPMS and RandR. Supports `sxlock.service` to lock the screen on suspend/hibernation. See the [README](https://github.com/lahwaacz/sxlock/blob/master/README.md) for more information.
 
@@ -229,7 +229,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **[XScreenSaver](/index.php/XScreenSaver "XScreenSaver")** — Screen saver and locker for the X Window System.
 
-	[http://www.jwz.org/xscreensaver/](http://www.jwz.org/xscreensaver/) || [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver)
+	[https://www.jwz.org/xscreensaver/](https://www.jwz.org/xscreensaver/) || [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver)
 
 *   **XSecureLock** — X11 screen lock utility designed with the primary goal of security.
 
@@ -259,7 +259,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **Quick Hash GUI** — A GUI to enable the rapid selection and subsequent hashing of files (individually or recursively throughout a folder structure) text and (on Linux) disks.
 
-	[http://sourceforge.net/projects/quickhash/](http://sourceforge.net/projects/quickhash/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+	[https://sourceforge.net/projects/quickhash/](https://sourceforge.net/projects/quickhash/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **RHash** — Utility for verifying hash sums (SFV, CRC, etc). Supports lots of algorithms.
 
@@ -289,7 +289,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **[GnuPG](/index.php/GnuPG "GnuPG")** — The GNU project's complete and free implementation of the OpenPGP standard as defined by RFC4880\. Free and Open Source replacement of PGP, mostly used for digital signing of packages.
 
-	[http://gnupg.org/](http://gnupg.org/) || [gnupg](https://www.archlinux.org/packages/?name=gnupg)
+	[https://gnupg.org/](https://gnupg.org/) || [gnupg](https://www.archlinux.org/packages/?name=gnupg)
 
 *   **gzsteg** — A utiltiy that can hide data in gzip compressed files
 
@@ -311,7 +311,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **Encryptr** — Zero-knowledge, cloud-based password manager.
 
-	[https://spideroak.com/personal/encryptr](https://spideroak.com/personal/encryptr) || [encryptr](https://aur.archlinux.org/packages/encryptr/)
+	[https://spideroak.com/encryptr/](https://spideroak.com/encryptr/) || [encryptr](https://aur.archlinux.org/packages/encryptr/)
 
 *   **Enpass** — A multiplatform password manager
 
@@ -319,7 +319,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **Figaro's Password Manager 2** — GTK2 port of [Figaro's Password Manager](http://fpm.sourceforge.net/) with some new enhancements.
 
-	[http://als.regnet.cz/fpm2/](http://als.regnet.cz/fpm2/) || [fpm2](https://aur.archlinux.org/packages/fpm2/)
+	[https://als.regnet.cz/fpm2/](https://als.regnet.cz/fpm2/) || [fpm2](https://aur.archlinux.org/packages/fpm2/)
 
 *   **GPass** — Password manegement software for GNOME2 desktop.
 
@@ -331,15 +331,15 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **[KeePass Password Safe](/index.php/KeePass "KeePass")** — Free open source Mono-based password manager, which helps you to manage your passwords in a secure way.
 
-	[http://keepass.info/](http://keepass.info/) || [keepass](https://www.archlinux.org/packages/?name=keepass)
+	[https://keepass.info/](https://keepass.info/) || [keepass](https://www.archlinux.org/packages/?name=keepass)
 
 *   **KeePassC** — KeePassC is a curses-based password manager compatible to KeePass v.1.x and KeePassX.
 
-	[https://raymontag.github.com/keepassc](https://raymontag.github.com/keepassc) || [keepassc](https://aur.archlinux.org/packages/keepassc/)
+	[http://raymontag.github.io/keepassc/](http://raymontag.github.io/keepassc/) || [keepassc](https://aur.archlinux.org/packages/keepassc/)
 
 *   **KeePassX** — Free and open source Qt-based password manager. Compatible with KeePass v.1.x and KeePass v.2.x.
 
-	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2)
+	[https://www.keepassx.org/](https://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2)
 
 *   **KeePassXC** — A community fork of KeePassX with more active development.
 
@@ -347,15 +347,15 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **MyPasswords** — What you need for managing your passwords, including the passwords of your online accounts, bank accounts and ... with the corresponding URLs.
 
-	[http://sourceforge.net/projects/mypasswords7/](http://sourceforge.net/projects/mypasswords7/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+	[https://sourceforge.net/projects/mypasswords7/](https://sourceforge.net/projects/mypasswords7/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **[pass](/index.php/Pass "Pass")** — Simple console based password manager
 
-	[http://www.passwordstore.org/](http://www.passwordstore.org/) || [pass](https://www.archlinux.org/packages/?name=pass)
+	[https://www.passwordstore.org/](https://www.passwordstore.org/) || [pass](https://www.archlinux.org/packages/?name=pass)
 
 *   **Password Gorilla** — A cross-platform password manager.
 
-	[https://github.com/zdia/gorilla/wiki/](https://github.com/zdia/gorilla/wiki/) || [password-gorilla](https://aur.archlinux.org/packages/password-gorilla/)
+	[https://github.com/zdia/gorilla/wiki](https://github.com/zdia/gorilla/wiki) || [password-gorilla](https://aur.archlinux.org/packages/password-gorilla/)
 
 *   **Password Safe** — Simple and secure password manager.
 
@@ -371,7 +371,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **Revelation** — Password manager for the GNOME desktop.
 
-	[http://revelation.olasagasti.info/](http://revelation.olasagasti.info/) || [revelation](https://aur.archlinux.org/packages/revelation/)
+	[https://revelation.olasagasti.info/](https://revelation.olasagasti.info/) || [revelation](https://aur.archlinux.org/packages/revelation/)
 
 *   **spm** — Simple Password Manager written entirely in POSIX shell using PGP. Fast, lightweight and easily scriptable.
 

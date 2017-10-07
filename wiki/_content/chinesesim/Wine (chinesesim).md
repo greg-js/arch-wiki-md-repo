@@ -620,6 +620,8 @@ Source: [Fedora Mailing List](http://www.spinics.net/linux/fedora/fedora-users/m
 
 ```
 
+更多信息参考[Wine的中文显示与字体设置](http://linux-wiki.cn/wiki/Wine%E7%9A%84%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B8%8E%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE)
+
 ## 第三方工具
 
 这些程序有其自己的主页和支持论坛。

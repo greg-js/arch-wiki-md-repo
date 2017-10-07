@@ -158,7 +158,7 @@ $ VBoxManage modifyvm myvmname --natpf1 "syncthing,tcp,,22001,,22001"
 
 ```
 
-In this setup, relaying should not be necessary: local devices will connect to the VM on port 22001 while global devices should be accessible as long as they have an open port.
+In this setup, relaying should not be necessary: local devices can connect to the VM on port 22001 while global devices should be accessible as long as they have an open port.
 
 ## Troubleshooting
 

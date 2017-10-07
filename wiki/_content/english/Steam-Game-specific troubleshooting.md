@@ -203,41 +203,42 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [96 Tomb Raider](#Tomb_Raider)
     *   [96.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
     *   [96.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
-*   [97 Tower Unite](#Tower_Unite)
-    *   [97.1 Graphical Glitches](#Graphical_Glitches)
-*   [98 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
-*   [99 Transistor](#Transistor)
-    *   [99.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_audio_issues)
-*   [100 Transmissions: Element 120](#Transmissions:_Element_120)
-    *   [100.1 Troubleshooting](#Troubleshooting)
-*   [101 Trine 2](#Trine_2)
-    *   [101.1 Colors](#Colors)
-    *   [101.2 Sound](#Sound)
-    *   [101.3 Resolution](#Resolution)
-*   [102 Tropico 5](#Tropico_5)
-    *   [102.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
-*   [103 Unity of Command](#Unity_of_Command)
-    *   [103.1 Squares](#Squares)
-    *   [103.2 No audio](#No_audio_5)
-*   [104 Unity3D](#Unity3D)
-    *   [104.1 Locale settings](#Locale_settings)
-    *   [104.2 Unity 5 sound problems](#Unity_5_sound_problems)
-    *   [104.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
-    *   [104.4 Missing Chinese/Japanese/Korea fonts](#Missing_Chinese.2FJapanese.2FKorea_fonts)
-*   [105 Unrest](#Unrest)
-*   [106 War Thunder](#War_Thunder)
-    *   [106.1 No audio](#No_audio_6)
-    *   [106.2 Blank screen](#Blank_screen)
-*   [107 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
-*   [108 Worms W.M.D](#Worms_W.M.D)
-*   [109 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [109.1 Game does not start](#Game_does_not_start_11)
-*   [110 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-*   [111 World of Goo](#World_of_Goo)
-    *   [111.1 Changing resolution](#Changing_resolution)
-*   [112 XCOM](#XCOM)
-    *   [112.1 Hangs on startup](#Hangs_on_startup)
-    *   [112.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+*   [97 Total War: Rome II](#Total_War:_Rome_II)
+*   [98 Tower Unite](#Tower_Unite)
+    *   [98.1 Graphical Glitches](#Graphical_Glitches)
+*   [99 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
+*   [100 Transistor](#Transistor)
+    *   [100.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_audio_issues)
+*   [101 Transmissions: Element 120](#Transmissions:_Element_120)
+    *   [101.1 Troubleshooting](#Troubleshooting)
+*   [102 Trine 2](#Trine_2)
+    *   [102.1 Colors](#Colors)
+    *   [102.2 Sound](#Sound)
+    *   [102.3 Resolution](#Resolution)
+*   [103 Tropico 5](#Tropico_5)
+    *   [103.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
+*   [104 Unity of Command](#Unity_of_Command)
+    *   [104.1 Squares](#Squares)
+    *   [104.2 No audio](#No_audio_5)
+*   [105 Unity3D](#Unity3D)
+    *   [105.1 Locale settings](#Locale_settings)
+    *   [105.2 Unity 5 sound problems](#Unity_5_sound_problems)
+    *   [105.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
+    *   [105.4 Missing Chinese/Japanese/Korea fonts](#Missing_Chinese.2FJapanese.2FKorea_fonts)
+*   [106 Unrest](#Unrest)
+*   [107 War Thunder](#War_Thunder)
+    *   [107.1 No audio](#No_audio_6)
+    *   [107.2 Blank screen](#Blank_screen)
+*   [108 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
+*   [109 Worms W.M.D](#Worms_W.M.D)
+*   [110 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+    *   [110.1 Game does not start](#Game_does_not_start_11)
+*   [111 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+*   [112 World of Goo](#World_of_Goo)
+    *   [112.1 Changing resolution](#Changing_resolution)
+*   [113 XCOM](#XCOM)
+    *   [113.1 Hangs on startup](#Hangs_on_startup)
+    *   [113.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
 
 ## Common steps
 
@@ -1584,6 +1585,22 @@ If your Steam Controller is correctly recognized and paired but still not workin
 *   Go to Big Screen and start Tomb Raider
 
 Correctly recognized means you can control the desktop mouse and Steam in Big Picture mode and the controller is shown in the Big Picture settings.
+
+## Total War: Rome II
+
+Total War Rome II's Steam version running under Wine can have some problems. If the game freezes at launch, make sure you have installed [lib32-mpg123](https://www.archlinux.org/packages/?name=lib32-mpg123) as well as directx9 and vcrun2005/8/10 installed via winetricks.
+
+```
+winetricks directx9 vcrun2005 vcrun2008 vcrun2010
+
+```
+
+If the game runs poorly outside of the main menu, try disabling opengl.
+
+```
+winetricks glsl=disable
+
+```
 
 ## Tower Unite
 

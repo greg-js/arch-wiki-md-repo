@@ -82,7 +82,7 @@ If your root partition is on an unsupported file system, you must create a separ
 
 ### GUID Partition Table (GPT) specific instructions
 
-On a BIOS/[GPT](/index.php/GPT "GPT") configuration a [BIOS boot partition](http://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html) is required. GRUB embeds its `core.img` into this partition.
+On a BIOS/[GPT](/index.php/GPT "GPT") configuration, a [BIOS boot partition](http://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html) is required. GRUB embeds its `core.img` into this partition.
 
 **Note:**
 
@@ -781,7 +781,7 @@ If booting gets stuck without any error message after GRUB loading the kernel an
 
 ### Arch not found from other OS
 
-Some have reported that other distributions have trouble finding Arch Linux automatically with `os-prober`. If this problem arises, it has been reported that detection can be improved with the presence of `/etc/lsb-release`. This file and updating tool is available with the package [lsb-release](https://www.archlinux.org/packages/?name=lsb-release) in the [official repositories](/index.php/Official_repositories "Official repositories").
+Some have reported that other distributions may have trouble finding Arch Linux automatically with `os-prober`. If this problem arises, it has been reported that detection can be improved with the presence of `/etc/lsb-release`. This file and updating tool is available with the package [lsb-release](https://www.archlinux.org/packages/?name=lsb-release) in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ### Warning when installing in chroot
 

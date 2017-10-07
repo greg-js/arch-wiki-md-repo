@@ -1,3 +1,10 @@
+Related articles
+
+*   [IRC channels](/index.php/IRC_channels "IRC channels")
+*   [IRC](/index.php/IRC "IRC")
+*   [WeeChat](/index.php/WeeChat "WeeChat")
+*   [HexChat](/index.php/HexChat "HexChat")
+
 [irssi](https://irssi.org/) is a modular, ncurses based IRC (Internet Relay Chat) client. It also supports [SILC](https://en.wikipedia.org/wiki/SILC_(protocol) and [ICB](http://www.icb.net/_jrudd/icb/protocol.html) protocols via plugins.
 
 ## Contents
@@ -50,6 +57,10 @@ $ irssi
 | `/window close`, `/wc` | Close the current window. |
 | `/window move 1` | Move the current window to the first window position. |
 | `/layout save` | Save the current window positions for later use. |
+| `/statusbar` | Show interface elements. |
+| `/statusbar topic disable` | Removes the topic bar. |
+| `/statusbar window placement top` | Moves the windows list to the top. |
+| `/statusbar window remove time` | Removes the time element from the window bar. |
 | `/set` | Show a list of current settings. |
 | `/help` | Describe a provided parameter. |
 | `/alias` | Create a shortcut. |

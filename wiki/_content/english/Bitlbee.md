@@ -1,4 +1,4 @@
-[Bitlbee](https://www.bitlbee.org/main.php/news.r.html) is a "console-based IRC to IM chatting gateway, including ICQ/MSN/Jabber". It allows the user to interact with popular chat networks XMPP/Jabber, MSN Messenger, Yahoo! Messenger, AIM and ICQ, the Twitter microblogging network (plus all other Twitter API compatible services like identi.ca and status.net), and social networking chat networks like Facebook and StudiVZ within their IRC client.
+[Bitlbee](https://www.bitlbee.org/main.php/news.r.html) is a "console-based IRC to IM chatting gateway". It allows the user to interact with popular chat networks XMPP/Jabber, Yahoo! Messenger and ICQ, the Twitter microblogging network (plus all other Twitter API compatible services like identi.ca and status.net), and social networking chat networks like Facebook and StudiVZ within their IRC client.
 
 The users' buddies appear as normal IRC users in a channel and conversations use the private message facility of IRC.
 

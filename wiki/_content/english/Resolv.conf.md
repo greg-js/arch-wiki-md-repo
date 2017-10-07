@@ -92,7 +92,7 @@ nameserver 2a05:dfc7:5::5353
 
 ```
 
-**Note:** Use of OpenNIC DNS servers will allow host name resolution in the traditional Top-Level Domain (TLD) registries, but also in OpenNIC or afiliated operated namespaces.
+**Note:** Use of OpenNIC DNS servers will allow host name resolution in the traditional Top-Level Domain (TLD) registries, but also in OpenNIC or afiliated operated namespaces (.o, .libre, .dyn...)
 
 ### Cisco Umbrella (formerly OpenDNS)
 

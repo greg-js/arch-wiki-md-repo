@@ -37,7 +37,7 @@ In the following table, commonly-specified families are shown in **bold**. This 
 | **Times** | Nimbus Roman | TeX Gyre Termes | FreeSerif | MS Serif (Tms Rmn) | **Times New Roman** | Liberation Serif | Tinos | Thorndale |
 | **Courier** | Nimbus Mono | TeX Gyre Cursor | FreeMono | **Courier New** | Liberation Mono | Cousine | Cumberland |
 | **Helvetica Condensed** | Nimbus Sans Narrow | TeX Gyre Heros Cn | **Arial Narrow** | Liberation Sans Narrow |
-| **Georgia** | Gelasio |
+ **Georgia** | Gelasio |
 
 <caption>Microsoft Office fonts</caption>
 | [Microsoft](#Microsoft) | [CrOS](#Chrome_OS) |
@@ -90,7 +90,7 @@ Microsoft bundles a number of fonts with Microsoft Windows and Microsoft Office.
 
 ### TeX Gyre
 
-[TeX Gyre](http://www.gust.org.pl/projects/e-foundry/tex-gyre/) is a remake and extension of 35 base PostScript fonts distributed with Ghostscript ver. 4.00\. The project provides TeX support and also the cross-platform OpenType format of the fonts.
+[TeX Gyre](http://www.gust.org.pl/projects/e-foundry/tex-gyre/) is a remake and extension of 35 base PostScript fonts distributed with Ghostscript ver. 4.00\. The project provides TeX support and also the cross-platform OpenType format of the fonts. A related project, [TeX Gyre Math](http://www.gust.org.pl/projects/e-foundry/tg-math), provides corresponding mathematical OpenType fonts.
 
 ### GNU FreeFont
 

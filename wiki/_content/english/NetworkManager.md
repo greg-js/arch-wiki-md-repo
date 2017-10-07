@@ -192,7 +192,7 @@ Exec=nm-applet --no-agent
 
 #### Appindicator
 
-Appindicator support is available in *nm-applet* however it is not compiled into the official package. To use nm-applet in an Appindicator environment, replace [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) with [network-manager-applet-indicator](https://aur.archlinux.org/packages/network-manager-applet-indicator/) and then start the applet with the following command:
+Appindicator support is available in *nm-applet* however it is not compiled into the official package, see [FS#51740](https://bugs.archlinux.org/task/51740). To use nm-applet in an Appindicator environment, replace [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) with [network-manager-applet-indicator](https://aur.archlinux.org/packages/network-manager-applet-indicator/) and then start the applet with the following command:
 
 ```
 $ nm-applet --indicator

@@ -207,6 +207,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [QacQoc GN30H USB C HUB Aluminum Multi-Port TYPE C HUB Adapter with 4K HDMI](https://smile.amazon.com/QacQoc-Aluminum-Multi-Port-Charging-Ethernet/dp/B01MU1FFMP) | 4K@30Hz HDMI, 3x USB 3.0, Gigabit Ethernet, USB-C Power, SD, Micro-SD | Working |
 | [Xiaomi USB Type-C to HDMI Multifunction Adapter](https://xiaomi-mi.com/accessories-for-laptops/xiaomi-usb-type-c-to-hdmi-multifunction-adapter/) | 4K HDMI, 1x USB 3.0, USB-C Power | Working |
 | [Dell TB16](https://www.amazon.com/Dell-3GMVT-Thunderbolt-Dock-black/dp/B06XN6XWD7/) | USB-C Power, VGA, mDP, HDMI, DP, Thunderbolt, Ethernet (only 100Mbit Mode) 2x USB 2.0 3x USB 3.0 (Disable Thunderbolt Security in BIOS) | Working |
+| [ARP USB 3.1 C - DVI](https://www.arp.ch/fr/adaptateur-arp-usb-3-1-c-dvi-4044821-5115074) | DVI | Working |
 
 ### Thunderbolt Firmware updates
 

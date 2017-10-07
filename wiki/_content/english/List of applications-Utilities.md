@@ -112,7 +112,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 *   **[Konsole](https://en.wikipedia.org/wiki/Konsole "wikipedia:Konsole")** — Terminal emulator included in the [KDE](/index.php/KDE "KDE") desktop.
 
-	[http://kde.org/applications/system/konsole/](http://kde.org/applications/system/konsole/) || [konsole](https://www.archlinux.org/packages/?name=konsole)
+	[https://www.kde.org/applications/system/konsole/](https://www.kde.org/applications/system/konsole/) || [konsole](https://www.archlinux.org/packages/?name=konsole)
 
 *   **kitty** — A modern, hackable, featureful, OpenGL based terminal emulator
 
@@ -120,7 +120,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 *   **mlterm** — A multi-lingual terminal emulator supporting various character sets and encodings in the world.
 
-	[http://sourceforge.net/projects/mlterm/](http://sourceforge.net/projects/mlterm/) || [mlterm](https://aur.archlinux.org/packages/mlterm/)
+	[https://sourceforge.net/projects/mlterm/](https://sourceforge.net/projects/mlterm/) || [mlterm](https://aur.archlinux.org/packages/mlterm/)
 
 *   **QTerminal** — A lightweight Qt-based terminal emulator.
 
@@ -156,7 +156,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 *   **[Yakuake](https://en.wikipedia.org/wiki/Yakuake "wikipedia:Yakuake")** — Drop-down terminal (Quake style) emulator based on Konsole.
 
-	[http://yakuake.kde.org/](http://yakuake.kde.org/) || [yakuake](https://www.archlinux.org/packages/?name=yakuake)
+	[https://yakuake.kde.org/](https://yakuake.kde.org/) || [yakuake](https://www.archlinux.org/packages/?name=yakuake)
 
 #### VTE-based
 
@@ -400,7 +400,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[Dired](https://en.wikipedia.org/wiki/Dired "wikipedia:Dired")** — Directory editor integrated with [Emacs](/index.php/Emacs "Emacs").
 
-	[http://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html](http://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html) || [emacs](https://www.archlinux.org/packages/?name=emacs)
+	[https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html) || [emacs](https://www.archlinux.org/packages/?name=emacs)
 
 *   **dired** — Ancient DIRectory EDitor since 1980.
 
@@ -442,7 +442,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[Dolphin](/index.php/Dolphin "Dolphin")** — File manager included in the KDE desktop.
 
-	[http://dolphin.kde.org/](http://dolphin.kde.org/) || [dolphin](https://www.archlinux.org/packages/?name=dolphin)
+	[https://userbase.kde.org/Dolphin](https://userbase.kde.org/Dolphin) || [dolphin](https://www.archlinux.org/packages/?name=dolphin)
 
 *   **Double Commander** — File manager with two panels side by side. It is inspired by Total Commander and features some new ideas.
 
@@ -550,7 +550,7 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 *   **[cpio](https://en.wikipedia.org/wiki/cpio "wikipedia:cpio")** — GNU tool supporting cpio and tar file archive formats.
 
-	[http://www.gnu.org/software/cpio](http://www.gnu.org/software/cpio) || [cpio](https://www.archlinux.org/packages/?name=cpio)
+	[https://www.gnu.org/software/cpio/](https://www.gnu.org/software/cpio/) || [cpio](https://www.archlinux.org/packages/?name=cpio)
 
 *   **[dar](https://en.wikipedia.org/wiki/Dar_(disk_archiver) "wikipedia:Dar (disk archiver)")** — An archiving and compression utility avoiding the drawbacks of tar
 
@@ -582,7 +582,7 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 *   **[tar](/index.php/Tar "Tar")** — GNU utility for manipulating the ubiquitous tar archives (tarballs).
 
-	[http://www.gnu.org/software/tar](http://www.gnu.org/software/tar) || [tar](https://www.archlinux.org/packages/?name=tar)
+	[https://www.gnu.org/software/tar/](https://www.gnu.org/software/tar/) || [tar](https://www.archlinux.org/packages/?name=tar)
 
 *   **[zpaq](https://en.wikipedia.org/wiki/ZPAQ "wikipedia:ZPAQ")** — A high compression ratio archiver written in C++. Powered by Context-Model, LZ77 and BWT algorithm.
 
@@ -600,7 +600,7 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 *   **[Ark](https://en.wikipedia.org/wiki/Ark_(software) "wikipedia:Ark (software)")** — Archiving tool included in the KDE desktop.
 
-	[http://kde.org/applications/utilities/ark/](http://kde.org/applications/utilities/ark/) || [ark](https://www.archlinux.org/packages/?name=ark)
+	[https://www.kde.org/applications/utilities/ark/](https://www.kde.org/applications/utilities/ark/) || [ark](https://www.archlinux.org/packages/?name=ark)
 
 *   **Engrampa** — Archive manager for [MATE](/index.php/MATE "MATE")
 
@@ -816,11 +816,11 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 *   **[KSysGuard](https://en.wikipedia.org/wiki/KDE_System_Guard "wikipedia:KDE System Guard")** — Also known as KSysguard, is the [KDE](/index.php/KDE "KDE") task manager and performance monitor.
 
-	[http://userbase.kde.org/KSysGuard](http://userbase.kde.org/KSysGuard) || [ksysguard](https://www.archlinux.org/packages/?name=ksysguard) or as part of [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)
+	[https://userbase.kde.org/KSysGuard](https://userbase.kde.org/KSysGuard) || [ksysguard](https://www.archlinux.org/packages/?name=ksysguard) or as part of [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)
 
 *   **linux process explorer** — Graphical process explorer for Linux.
 
-	[http://sourceforge.net/projects/procexp/](http://sourceforge.net/projects/procexp/) || [procexp](https://aur.archlinux.org/packages/procexp/)
+	[https://sourceforge.net/projects/procexp/](https://sourceforge.net/projects/procexp/) || [procexp](https://aur.archlinux.org/packages/procexp/)
 
 *   **LXTask** — Lightweight task manager for [LXDE](/index.php/LXDE "LXDE").
 
@@ -920,7 +920,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 *   **xxkb** — A lightweight keyboard layout indicator and switcher.
 
-	[http://sourceforge.net/projects/xxkb/](http://sourceforge.net/projects/xxkb/) || [xxkb](https://www.archlinux.org/packages/?name=xxkb)
+	[https://sourceforge.net/projects/xxkb/](https://sourceforge.net/projects/xxkb/) || [xxkb](https://www.archlinux.org/packages/?name=xxkb)
 
 *   **qxkb** — A keyboard switcher written in Qt.
 

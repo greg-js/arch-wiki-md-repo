@@ -1,3 +1,10 @@
+Related articles
+
+*   [Fonts](/index.php/Fonts "Fonts")
+*   [Font configuration](/index.php/Font_configuration "Font configuration")
+*   [MS Fonts](/index.php/MS_Fonts "MS Fonts")
+*   [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description")
+
 Some users may find the default Java fonts or the display mode of fonts in Java applications to be unpleasant. Several methods to improve the font display in the Oracle Java Runtime Environment (JRE) are available. These methods may be used separately, but many users will find they achieve better results by combining them.
 
 TrueType fonts appear to be the best supported format for use with Java.
@@ -6,8 +13,7 @@ TrueType fonts appear to be the best supported format for use with Java.
 
 *   [1 Anti-aliasing](#Anti-aliasing)
     *   [1.1 Basic settings](#Basic_settings)
-    *   [1.2 Font hinting](#Font_hinting)
-    *   [1.3 OpenJDK patch](#OpenJDK_patch)
+    *   [1.2 OpenJDK patch](#OpenJDK_patch)
 *   [2 Font selection](#Font_selection)
     *   [2.1 TrueType fonts](#TrueType_fonts)
     *   [2.2 Fixing Mojibake (For JRE8)](#Fixing_Mojibake_.28For_JRE8.29)
@@ -54,19 +60,6 @@ _JAVA_OPTIONS=*options* *executable*
 ```
 
 Re-login for the changes to take effect.
-
-### Font hinting
-
-Some java applications are subject to system font hinting changes. Consider choosing one of the following environment variables before launching a java app:
-
-```
-export FT2_SUBPIXEL_HINTING=0  # Classic mode
-export FT2_SUBPIXEL_HINTING=1  # Infinality mode
-export FT2_SUBPIXEL_HINTING=2  # Default mode
-
-```
-
-For example, the value of <tt>0</tt> makes freetype use non-bold fonts (at least for some apps).
 
 ### OpenJDK patch
 

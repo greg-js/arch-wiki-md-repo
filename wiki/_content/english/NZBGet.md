@@ -10,6 +10,7 @@
     *   [5.1 Default NZBGet credentials](#Default_NZBGet_credentials)
     *   [5.2 NZBGet crashes on start](#NZBGet_crashes_on_start)
     *   [5.3 Alternative systemd service](#Alternative_systemd_service)
+    *   [5.4 Unable to extract archives](#Unable_to_extract_archives)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -118,15 +119,19 @@ User=nzbget
 Group=nzbget
 Type=forking
 PIDFile=/var/lib/nzbget/nzbget.lock
-ExecStart=/usr/bin/nzbget -D
+ExecStart=/usr/bin/nzbget -c /var/lib/nzbget/.nzbget -D
 ExecStop=/usr/bin/nzbget -Q
-ExecReload=/bin/kill -HUP $MAINPID
+ExecReload=/usr/bin/nzbget -O
 KillMode=process
 Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
 ```
+
+### Unable to extract archives
+
+Verify if [unzip](https://www.archlinux.org/packages/?name=unzip), [unrar](https://www.archlinux.org/packages/?name=unrar), [p7zip](https://www.archlinux.org/packages/?name=p7zip) and [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline) have been installed.
 
 ## See also
 

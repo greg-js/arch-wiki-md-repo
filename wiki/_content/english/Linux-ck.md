@@ -1,3 +1,8 @@
+Related articles
+
+*   [Repo-ck](/index.php/Repo-ck "Repo-ck")
+*   [Modprobed-db](/index.php/Modprobed-db "Modprobed-db")
+
 ## Contents
 
 *   [1 General package details](#General_package_details)
@@ -170,7 +175,7 @@ Always feel free to open a thread in the forums for support purpose. Be sure to 
 
 ## See also
 
-*   [Kernel patch homepage of Con Kolivas](http://users.tpg.com.au/ckolivas/kernel/)
+*   [Kernel patch repository of Con Kolivas](http://ck.kolivas.org/patches/)
 *   [Con Kolivas' Blog](http://ck-hack.blogspot.it/)
 *   [Con Kolivas' desktop-centric kernel patchset](http://lkml.org/lkml/2009/9/6/136)
 *   [Wikipedia's Con Kovalis page](https://en.wikipedia.org/wiki/Con_Kolivas "wikipedia:Con Kolivas")

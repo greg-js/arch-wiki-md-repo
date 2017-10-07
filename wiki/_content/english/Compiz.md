@@ -1,3 +1,11 @@
+Related articles
+
+*   [Compiz/Configuration](/index.php/Compiz/Configuration "Compiz/Configuration")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Xfce](/index.php/Xfce "Xfce")
+*   [MATE](/index.php/MATE "MATE")
+
 According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"):
 
 	Compiz is a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") for the [X Window System](/index.php/X_Window_System "X Window System"), using 3D graphics hardware to create fast compositing desktop effects for window management. Effects, such as a minimization animation or a cube workspace, are implemented as loadable plugins.
@@ -44,10 +52,11 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"
     *   [5.15 Mouse cursor invisible or X shaped on startup](#Mouse_cursor_invisible_or_X_shaped_on_startup)
 *   [6 Known issues](#Known_issues)
     *   [6.1 Plugins in Compiz 0.8 are not present in Compiz 0.9](#Plugins_in_Compiz_0.8_are_not_present_in_Compiz_0.9)
-    *   [6.2 Xfce panel window buttons are not refreshed when a window changes viewport](#Xfce_panel_window_buttons_are_not_refreshed_when_a_window_changes_viewport)
+    *   [6.2 Xfce panel issues](#Xfce_panel_issues)
+        *   [6.2.1 Xfce panel window buttons are not refreshed when a window changes viewport](#Xfce_panel_window_buttons_are_not_refreshed_when_a_window_changes_viewport)
+        *   [6.2.2 Xfce workspace switcher has wrong aspect ratio](#Xfce_workspace_switcher_has_wrong_aspect_ratio)
     *   [6.3 Compiz crashes when enabling the D-Bus plugin](#Compiz_crashes_when_enabling_the_D-Bus_plugin)
     *   [6.4 Workspace pager and window buttons issues](#Workspace_pager_and_window_buttons_issues)
-    *   [6.5 Xfce workspace switcher has wrong aspect ratio](#Xfce_workspace_switcher_has_wrong_aspect_ratio)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -140,17 +149,19 @@ To be able to switch to different [viewports](/index.php/Compiz/Configuration#Wo
 
 **Tip:** For information on selecting and managing themes, see: [Compiz/Configuration#Window decoration themes](/index.php/Compiz/Configuration#Window_decoration_themes "Compiz/Configuration").
 
+**Note:** The KDE Window Decorator is not compatible with KDE Plasma 5\. The Compiz 0.8 upstream dropped the KDE Window Decorator from Compiz Core in December 2015\. [[1]](https://github.com/compiz-reloaded/compiz/releases/tag/v0.8.9)
+
 The window decorator is the program which provides windows with borders. Unlike window managers such as Kwin or [Xfwm](/index.php/Xfwm "Xfwm") which provide just one decorator, users of Compiz have a choice of three: GTK Window Decorator, KDE Window Decorator and Emerald. The GTK Window Decorator and the KDE Window Decorator are included in the Compiz source and can be optionally compiled whilst building Compiz. Emerald, on the other hand, is a separate, standalone decorator. The *Window Decoration* plugin in CCSM must be ticked otherwise no window decorator will be started.
 
 	Choosing the decorator
 
-The window decorator that will be started is specified under CCSM -> *Effects* -> *Window Decoration* -> *Command*. The command can be one of the following executables: *emerald*, *gtk-window-decorator*, *kde4-window-decorator*. Use the `--replace` switch, e.g. `emerald --replace`, if specifying the decorator executable on its own is not sufficient.
+The window decorator that will be started is specified under CCSM -> *Effects* -> *Window Decoration* -> *Command*. The default command is *compiz-decorator* which is a script which will attempt to locate the *emerald* and *gtk-window-decorator* executables (and also the *kde4-window-decorator* executable if you are using Compiz 0.9). It will then start the first decorator that it finds, according to the search order and conditions (such as session detection) specified in the script. Note that the script provided by Compiz 0.8 differs significantly from the one provided by Compiz 0.9 so the behavior may be different.
 
-**Tip:** In Compiz 0.9, the decorator command is set to *compiz-decorator* by default. This is a script which will search for the *emerald*, *gtk-window-decorator* and *kde4-window-decorator* executables in that order and start the first one that it finds.
+The *compiz-decorator* command can be replaced with one of the executables listed above. If you find that your preferred decorator is not being started, try appending the `--replace` switch to the command, for example: `emerald --replace`.
 
 ### Compiz startup
 
-**Note:** Some Compiz versions may require you to manually load the CCP plugin on startup: `compiz --replace ccp` [[1]](http://blog.northfield.ws/compiz-release-announcement-0-8-12/)
+**Note:** Some Compiz versions may require you to manually load the CCP plugin on startup: `compiz --replace ccp` [[2]](http://blog.northfield.ws/compiz-release-announcement-0-8-12/)
 
 You can start Compiz using the following command:
 
@@ -271,7 +282,7 @@ Map the command for a [run dialog](/index.php/List_of_applications#Application_l
 
 ### Remove title bar from maximized windows
 
-Start CCSM and navigate to the *Window Decoration* plugin. Then in the *Decoration Windows* field, change `any` to `!state=maxvert`. [[2]](http://planetkris.com/2009/07/how-to-remove-the-title-bar-with-compiz-without-losing-3-hours-of-your-life/)
+Start CCSM and navigate to the *Window Decoration* plugin. Then in the *Decoration Windows* field, change `any` to `!state=maxvert`. [[3]](http://planetkris.com/2009/07/how-to-remove-the-title-bar-with-compiz-without-losing-3-hours-of-your-life/)
 
 ## Troubleshooting
 
@@ -410,9 +421,15 @@ Some plugins that were popular in Compiz 0.8 were disabled in Compiz versions 0.
 
 Likewise, Compiz Plugins Unsupported (a package which includes plugins such as *Atlantis*) is unavailable in recent versions of Compiz 0.9\. It has not been developed for the Compiz 0.9 series since Compiz 0.9.5 and no longer builds successfully.
 
-### Xfce panel window buttons are not refreshed when a window changes viewport
+### Xfce panel issues
+
+#### Xfce panel window buttons are not refreshed when a window changes viewport
 
 You may find that if you right click on a window title and choose an option such as *Move to Workspace Right* then the window will move but the window button will still be visible in the viewport the window moved from until you switch viewports. This issue can be fixed by replacing [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel) with [xfce4-panel-compiz](https://aur.archlinux.org/packages/xfce4-panel-compiz/) which incorporates a patch for this issue. See the following [upstream bug report](https://bugzilla.xfce.org/show_bug.cgi?id=10908) for more information.
+
+#### Xfce workspace switcher has wrong aspect ratio
+
+When Compiz is used with Xfce Panel 4.11 and above, the workspace pager will use the width of only one workspace but will divide this space into ever smaller bars, according to how many viewports Compiz specifies. This issue can be fixed by replacing [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel) with [xfce4-panel-compiz](https://aur.archlinux.org/packages/xfce4-panel-compiz/) which incorporates a patch for this issue. For more information, see the following [upstream bug report](https://bugzilla.xfce.org/show_bug.cgi?id=11697).
 
 ### Compiz crashes when enabling the D-Bus plugin
 
@@ -422,15 +439,11 @@ The *D-Bus* plugin will cause Compiz to crash if enabled in conjunction with cer
 
 Only a few [panels and docks](/index.php/List_of_applications#Taskbars_.2F_panels_.2F_docks "List of applications") are compatible with Compiz's [viewports](/index.php/Compiz/Configuration#Workspaces_and_Viewports "Compiz/Configuration"). Incompatible panels and docks may display issues such as showing all window buttons in all workspaces or the workspace pager may only show one workspace available. The panels listed below are known to be compatible:
 
-*   [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel)
+*   [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel) (partial, see [#Xfce panel issues](#Xfce_panel_issues))
 *   [mate-panel](https://www.archlinux.org/packages/?name=mate-panel)
 *   [perlpanel](https://aur.archlinux.org/packages/perlpanel/)
 *   [gnome-panel](https://www.archlinux.org/packages/?name=gnome-panel)
 *   [cairo-dock](https://www.archlinux.org/packages/?name=cairo-dock)
-
-### Xfce workspace switcher has wrong aspect ratio
-
-When Compiz is used with Xfce Panel 4.11 and above, the workspace pager will use the width of only one workspace but will divide this space into ever smaller bars, according to how many viewports Compiz specifies. This issue can be fixed by replacing [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel) with [xfce4-panel-compiz](https://aur.archlinux.org/packages/xfce4-panel-compiz/) which incorporates a patch for this issue. For more information, see the following [upstream bug report](https://bugzilla.xfce.org/show_bug.cgi?id=11697).
 
 ## See also
 

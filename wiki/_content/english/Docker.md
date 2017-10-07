@@ -24,9 +24,8 @@ Related articles
     *   [2.8 Insecure registries](#Insecure_registries)
 *   [3 Images](#Images)
     *   [3.1 Arch Linux](#Arch_Linux)
-        *   [3.1.1 Manually](#Manually)
     *   [3.2 Debian](#Debian)
-        *   [3.2.1 Manually](#Manually_2)
+        *   [3.2.1 Manually](#Manually)
 *   [4 Arch Linux image with snapshot repository](#Arch_Linux_image_with_snapshot_repository)
 *   [5 Clean Remove Docker + Images](#Clean_Remove_Docker_.2B_Images)
 *   [6 Useful tips](#Useful_tips)
@@ -223,31 +222,14 @@ ExecStart=/usr/bin/dockerd -H fd:// --insecure-registry my.registry.name:5000
 
 ### Arch Linux
 
-The following command pulls the [base/archlinux](https://hub.docker.com/r/base/archlinux/) x86_64 image.
+The following command pulls the [archlinux/base](https://hub.docker.com/r/archlinux/base/) x86_64 image.
 
 ```
-# docker pull base/archlinux
-
-```
-
-#### Manually
-
-Check [moby/contrib repo](https://github.com/moby/moby/tree/master/contrib) and download `mkimage-arch.sh` and `mkimage-arch-pacman.conf` to the same directory as raw files. Next, make the script executable and run it:
-
-```
-$ chmod +x mkimage-arch.sh
-$ cp /etc/pacman.conf ./mkimage-arch-pacman.conf # or get a pacman.conf from somewhere else
-$ ./mkimage-arch.sh
-# docker run -t -i --rm archlinux /bin/bash  # try it
+# docker pull archlinux/base
 
 ```
 
-For slow network connections or CPU, the build timeout can be extended:
-
-```
-$ sed -i 's/timeout 60/timeout 120/' mkimage-arch.sh
-
-```
+See also [README.md](https://github.com/archlinux/archlinux-docker/blob/master/README.md).
 
 ### Debian
 
@@ -273,7 +255,7 @@ Build Debian image with [debootstrap](https://www.archlinux.org/packages/?name=d
 
 ## Arch Linux image with snapshot repository
 
-Arch Linux on Docker can become problematic when multiple images are created and updated each having different package versions. To keep Docker containers with consistent package versions, a [Docker image with a snapshot repository](https://registry.hub.docker.com/u/pritunl/archlinux/) is available. This allows installing new packages from the official repository as it was on the day that the snapshot was created.
+Arch Linux on Docker can become problematic when multiple images are created and updated each having different package versions. To keep Docker containers with consistent package versions, an unofficial [Docker image with a snapshot repository](https://registry.hub.docker.com/u/pritunl/archlinux/) is available. This allows installing new packages from the official repository as it was on the day that the snapshot was created.
 
 ```
 $ docker pull pritunl/archlinux:latest
