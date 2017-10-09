@@ -311,7 +311,7 @@ This means that configuring an Arch installation to be automatically recognized 
 
 *   First, while configuring a new Arch installation, create a separate `/boot` partition. Many tools are available in the Arch ISO, for example **cgdisk**.
 *   Make sure the partition is at least ~250 MB in size, since it will be used to store the kernel as well as any custom kernel you will install in the future. Moreover, make sure the partition type is set as Apple HFS/HFS+ (it will appear as `Apple HFS/HFS+` in fdisk/cgdisk or `af00` in gdisk)
-*   Since the Arch installation ISO does not include the [hfsprogs](https://www.archlinux.org/packages/?name=hfsprogs) package, we need to install it in the installation environment before proceeding with formatting the new partition as HFS+
+*   Since the Arch installation ISO does not include the [hfsprogs](https://aur.archlinux.org/packages/hfsprogs/) package, we need to install it in the installation environment before proceeding with formatting the new partition as HFS+
 
 ```
  # pacman -Sy hfsprogs
@@ -326,7 +326,7 @@ Note: replace /dev/sd**X** with the correct device as appropriate
 
 **Warning:**
 
-Once inside the chrooted enviroment, don’t forget to install the [hfsprogs](https://www.archlinux.org/packages/?name=hfsprogs) package on the newly installed system as well. After the installation of the package, regenerate the initramfs while chrooted
+Once inside the chrooted enviroment, don’t forget to install the [hfsprogs](https://aur.archlinux.org/packages/hfsprogs/) package on the newly installed system as well. After the installation of the package, regenerate the initramfs while chrooted
 
 ```
  # mkinitcpio -p linux
@@ -1014,7 +1014,7 @@ end remote
 
 ### HFS partition sharing
 
-First, install the [hfsprogs](https://www.archlinux.org/packages/?name=hfsprogs) package.
+First, install the [hfsprogs](https://aur.archlinux.org/packages/hfsprogs/) package.
 
 we have to list our partitions. Use
 
@@ -1407,7 +1407,7 @@ First prepare your harddisc according to your wishes. In this scenario it was a 
 
 ```
 
-The [hfsprogs](https://www.archlinux.org/packages/?name=hfsprogs) package contains the tools to handle HFS/HFS+ filesystems. The rEFInd bootloader recognizes it on its own. Usually the partition for the EFI bootloader is a FAT32 (vfat) partition. In this case I tried rEFIt first, which apparently needs the HFS+ filesystem to work, and kept it at that.
+The [hfsprogs](https://aur.archlinux.org/packages/hfsprogs/) package contains the tools to handle HFS/HFS+ filesystems. The rEFInd bootloader recognizes it on its own. Usually the partition for the EFI bootloader is a FAT32 (vfat) partition. In this case I tried rEFIt first, which apparently needs the HFS+ filesystem to work, and kept it at that.
 
 The mount points are:
 

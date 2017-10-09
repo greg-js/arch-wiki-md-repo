@@ -33,13 +33,18 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
     *   [3.5 Enable power saving features for the i915 kernel module](#Enable_power_saving_features_for_the_i915_kernel_module)
     *   [3.6 Wifi and Bluetooth](#Wifi_and_Bluetooth)
 *   [4 Graphics](#Graphics)
-    *   [4.1 Open source driver with PRIME render offloading](#Open_source_driver_with_PRIME_render_offloading)
-    *   [4.2 Proprietary driver with bumblebee](#Proprietary_driver_with_bumblebee)
-    *   [4.3 Proprietary driver with PRIME output offloading](#Proprietary_driver_with_PRIME_output_offloading)
-*   [5 Firmware updates](#Firmware_updates)
-*   [6 Fingerprint reader](#Fingerprint_reader)
-*   [7 Notes](#Notes)
-*   [8 External links](#External_links)
+    *   [4.1 Intel card only](#Intel_card_only)
+    *   [4.2 Open source driver with PRIME render offloading](#Open_source_driver_with_PRIME_render_offloading)
+    *   [4.3 Proprietary driver with bumblebee](#Proprietary_driver_with_bumblebee)
+    *   [4.4 Proprietary driver with PRIME output offloading](#Proprietary_driver_with_PRIME_output_offloading)
+*   [5 Touchpad](#Touchpad)
+    *   [5.1 Configure middle button](#Configure_middle_button)
+*   [6 Firmware updates](#Firmware_updates)
+*   [7 Fingerprint reader](#Fingerprint_reader)
+*   [8 Troubleshoutting](#Troubleshoutting)
+    *   [8.1 xorg freezes at starup](#xorg_freezes_at_starup)
+*   [9 Notes](#Notes)
+*   [10 External links](#External_links)
 
 ## UEFI
 
@@ -69,7 +74,7 @@ The thermometer on the discrete Nvidia GPU can be monitored with the `nvidia-smi
 
 ### Disable discrete GPU
 
-The discrete Nvidia GTX 1050 GPU is on by default and cannot be disabled in the UEFI settings. Even when idle, it uses a significant amount of power (about 7W). To disable it when not in use it is necessary to install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) and [bumblebee](https://www.archlinux.org/packages/?name=bumblebee), add `acpi_rev_override=1` to the [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), [enable](/index.php/Enable "Enable") `bumblebeed.service`, and reboot.
+The discrete Nvidia GTX 1050 GPU is on by default and cannot be disabled in the UEFI settings. Even when idle, it uses a significant amount of power (about 7W). To disable it when not in use it is necessary to install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) and [bumblebee](https://www.archlinux.org/packages/?name=bumblebee), add `acpi_rev_override=1` to the [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), [enable](/index.php/Enable "Enable") `bumblebeed.service`, and reboot (you may need to reboot twice for the firmware to notice `acpi_rev_override`).
 
 ```
 $ cat /proc/acpi/bbswitch
@@ -127,6 +132,10 @@ For the Precision 5520 which has an Intel 8265 wifi card, the `power_save` optio
 
 The integrated Intel HD 630 GPU works well out of the box. Optionally you may install [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) but this is no longer recommended, since the built in kernel modesetting driver is more reliable. If you do not want to use the discrete Nvidia GPU, no extra setup is necessary. Otherwise there are a few options. All of the display outputs are connected to the integrated GPU so there is no need to set up output from the discrete GPU. It may be necessary to compile a custom kernel as described in [#Power Saving](#Power_Saving).
 
+### Intel card only
+
+See [#Disable discrete GPU](#Disable_discrete_GPU) above.
+
 ### Open source driver with PRIME render offloading
 
 With this setup it is possible to use the integrated GPU by default and to offload GPU intensive applications to the discrete GPU by the use of the `DRI_PRIME` environment variable. See [PRIME](/index.php/PRIME "PRIME") for details. Note that the open source Nvidia driver [Nouveau](/index.php/Nouveau "Nouveau") currently [does not support](https://nouveau.freedesktop.org/wiki/CodeNames/#NV130) power management on Pascal GPUs such as the GTX 1050, so performance is very poor with this driver. See [Nouveau#Power management](/index.php/Nouveau#Power_management "Nouveau").
@@ -139,6 +148,42 @@ With this setup the integrated GPU is used by default but some applications can 
 
 With this setup the discrete GPU is used for all rendering and the integrated GPU is used only to display the rendered output. Power consumption is much higher during light usage because the discrete GPU cannot be disabled. Performance for graphics intensive applications is significantly better than with Bumblebee, and v-sync works due to [PRIME Synchronization](https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/1) so tearing is eliminated. Remove [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) and follow the instructions in [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus"), [Nvidia README](http://us.download.nvidia.com/XFree86/Linux-x86_64/375.66/README/randr14.html), or [PRIME Synchronization thread](https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/1) using `PCI:1:0:0` as the BusID. Add the `modeset=1` parameter to the `nvidia_drm` kernel module (on boot, not with modprobe) to enable PRIME synchronization and remove tearing (see [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules")). It is necessary to use the long lived branch of the [NVIDIA](/index.php/NVIDIA "NVIDIA") driver ([nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), [nvidia-utils-llb](https://aur.archlinux.org/packages/nvidia-utils-llb/), [lib32-nvidia-utils-llb](https://aur.archlinux.org/packages/lib32-nvidia-utils-llb/)) since the latest version (375.66) contains [bugfixes](https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/post/5141480/#5141480) making PRIME Synchronization usable on the GTX 1050, which are not present in the latest stable (378.13) and beta (381.09) releases.
 
+## Touchpad
+
+Touchpad works of the box. It's a Synaptics touchpad, so you can use `synclient` to list its capabilities and change them for the session.
+
+### Configure middle button
+
+The touchpad has a big click zone in the bottom that can be disabled or configured for 1, 2 or 3 buttons. For example, to have most of the touchpad seen as "button 1" but the middle lower zone (middle button) and the right lower zone (right button), create `/etc/X11/xorg.conf.d/50-synaptics.conf` with content:
+
+```
+Section "InputClass"
+   Identifier "touchpad catchall"
+   Driver "synaptics"
+   MatchIsTouchpad "on"
+   # enable clik zone and configure 3 buttons on bottom
+   Option "ClickPad" "1"
+   Option "SoftButtonAreas" "60% 0 82% 0 40% 60% 82% 0"
+   # other commons options than you may want to configure
+   # scroll with two fingers (enabled vertically, disabled horizontally)
+   Option "VertTwoFingerScroll" "1"
+   Option "HorizTwoFingerScroll" "0"
+   # enable tap as click: 1 finger -> left button, 2 fingers -> right, 3 fingers -> middle
+   Option "TapButton1" "1"
+   Option "TapButton2" "3"
+   Option "TapButton3" "2"
+   # idem but for click with 1,2,3 fingers. Use "0" to disable. 
+   Option "ClickFinger1" "1"
+   Option "ClickFinger2" "3"
+   Option "ClickFinger3" "2"
+   # palm detection. These parameters somehow works, YMMV. 
+   Option "PalmDetect" "1"
+   Option "PalmMinWidth" "10"
+   Option "PalmMinZ" "200"
+EndSection
+
+```
+
 ## Firmware updates
 
 Firmware updates are provided by Dell and can be installed with [fwupdate](https://www.archlinux.org/packages/?name=fwupdate) or [fwupd](https://www.archlinux.org/packages/?name=fwupd). Available firmware versions can be seen [here](https://secure-lvfs.rhcloud.com/lvfs/device/34578c72-11dc-4378-bc7f-b643866f598c).
@@ -148,6 +193,12 @@ Alternatively, firmware updates can be installed by copying the MS-DOS executabl
 ## Fingerprint reader
 
 The fingerprint reader is a Validity/Synaptics model with USB id `138a:0090`. There currently is no Linux driver but an open source Linux driver is being developed by reverse engineering the Windows driver. [[1]](https://github.com/nmikhailov/Validity90)
+
+## Troubleshoutting
+
+### xorg freezes at starup
+
+If Xorg freezes as soon as it starts, even before printing any logs, and you are trying to use the Intel card with the nvidia one disabled, you need to add kernel parameter `acpi_rev_override=1` as explained in [#Disable discrete GPU](#Disable_discrete_GPU) above.
 
 ## Notes
 

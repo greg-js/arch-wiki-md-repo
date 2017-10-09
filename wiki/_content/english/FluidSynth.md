@@ -74,7 +74,7 @@ Requires [soundfont-fluid](https://www.archlinux.org/packages/?sort=&q=soundfont
 Simple command lines to convert midi to mp3:
 
 ```
-$ fluidsynth -l -T raw -F /usr/share/soundfonts/FluidR3_GM.sf2 example.mid | twolame -b 256 -r example.mp3 
+$ fluidsynth -l -T raw -F - /usr/share/soundfonts/FluidR3_GM.sf2 example.mid | twolame -b 256 -r - example.mp3 
 
 ```
 

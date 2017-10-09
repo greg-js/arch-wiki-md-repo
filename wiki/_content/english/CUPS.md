@@ -160,7 +160,7 @@ $ /usr/lib/cups/backend/snmp *ip_address* # Use SNMP to find a URI
 
 ```
 
-	List the drivers
+	List the models
 
 ```
 $ lpinfo -m

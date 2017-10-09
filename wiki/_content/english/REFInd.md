@@ -119,7 +119,7 @@ To use only hashes with *shim*, execute `refind-install` with the option `--shim
 
 ```
 
-Next time you boot with Secure Boot enabled, MokManager will launch and you will need to enrol the hash of rEFInd (`loader.efi`), rEFInd's drivers (e.g. `ext4_x64.efi`) and kernel.
+Next time you boot with Secure Boot enabled, MokManager will launch and you will need to enrol the hash of rEFInd (`grubx64.efi`), rEFInd's drivers (e.g. `ext4_x64.efi`) and kernel.
 
 To sign rEFInd with a Machine Owner Key, install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools).
 

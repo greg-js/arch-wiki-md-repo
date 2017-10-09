@@ -70,7 +70,7 @@ TrackPoints expose their attributes as files in `/sys/devices/platform/i8042/ser
 
 ```
 
-**Note:** The location of the attribute files may be different depending on the device you are using. Systems with both a TrackPoint and a touchpad device will use the `/sys/devices/platform/i8042/serio1/serio2/` path, whereas systems with only a TrackPoint device will use the `/sys/devices/platform/i8042/serio1/` path.
+**Note:** The location of the attribute files may be different depending on the device you are using. Systems with both a TrackPoint and a touchpad device will use either `/sys/devices/platform/i8042/serio1/serio2/` or `/sys/devices/platform/i8042/serio1/serio3/` for the path, whereas systems with only a TrackPoint device will use the `/sys/devices/platform/i8042/serio1/` path.
 
 ### Configuration at boot
 
@@ -130,7 +130,7 @@ Reload udev's hwdb to apply the changes:
 
 ```
 
-To test the changes prior to restarting your compositor or X session, first find your device input node ({ic|/dev/input/eventX}} using:
+To test the changes prior to restarting your compositor or X session, first find your device input node `/dev/input/eventX` using:
 
 ```
 # libinput-list-devices

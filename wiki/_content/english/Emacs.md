@@ -271,6 +271,8 @@ $ setxkbmap -option "shift:both_capslock"
 
 ```
 
+Some desktop environments include graphical tools to simplify keyboard remappings. For example, in [Plasma 5](/index.php/Plasma "Plasma") open System Settings and click on Input Devices. Select Keyboard and in the Advanced tab you will find the setting Caps Lock behaviour under which you can select Caps Lock is also a Ctrl.
+
 ### Multiplexing emacs and emacsclient
 
 Opening a new file in the same `emacs-session` requires the use of `emacsclient`. `emacs` command can be itself wrapped to do the smarter job to open the file if the session exists.

@@ -63,7 +63,7 @@ ssh-add $HOME/.ssh/key1 $HOME/.ssh/key2 $HOME/.ssh/key3 </dev/null
 
 ```
 
-You also have to set the `SSH_ASKPASS` environment variable in your /etc/profile or ~/.bash_profile:
+You also have to set the `SSH_ASKPASS` [environment variable](/index.php/Environment_variable "Environment variable"), see [Environment variables#Defining variables](/index.php/Environment_variables#Defining_variables "Environment variables"). E.g.:
 
 ```
 export SSH_ASKPASS="/usr/bin/ksshaskpass"

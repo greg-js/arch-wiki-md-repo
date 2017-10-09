@@ -16,13 +16,13 @@ Related articles
 
 ## Main channels
 
-**Warning:** Channel statistics are logged for [#archlinux-offtopic](http://www.hax0r.se/aotstats.html). Speak to dunz0r if you would like to opt-out permanently.
+**Warning:** Channel statistics are logged for [#archlinux-offtopic](http://www.hax0r.se/aotstats.html). Speak to *dunz0r* if you would like to opt-out permanently.
 
-This section is about **#archlinux**, the main Arch Linux support [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") channel, and **#archlinux-offtopic**, the main Arch Linux social channel, both available on the [Freenode](https://freenode.net/) network.
+This section is about [#archlinux](ircs://chat.freenode.net/archlinux), the main Arch Linux support [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") channel, and [#archlinux-offtopic](ircs://chat.freenode.net/archlinux-offtopic), the main Arch Linux social channel, both available on the [Freenode](https://freenode.net/) network.
 
 The central topic for **#archlinux** is support and general discussion about Arch Linux. For a list of rules refer to the [Code of conduct](/index.php/Code_of_conduct "Code of conduct") and [Code of conduct#IRC](/index.php/Code_of_conduct#IRC "Code of conduct"). For a list of commonly used abbreviations, see [Arch terminology](/index.php/Arch_terminology "Arch terminology") and [IRC Jargon](http://leonardo.spidernet.net/Copernicus/831/mirc/tips5/jarg.html).
 
-**Note:** Due to abuse various gateways and web clients may be banned at times. If you experience trouble use a "proper" irc client or ask one of the operators for a ban exemption (+e)
+**Note:** Due to abuse various gateways and web clients may be banned at times. If you experience trouble use a "*proper*" IRC client or ask one of the operators for a ban exemption (`+e`).
 
 To join the channels, you need an IRC client. The [installation](/index.php/Installation "Installation") environment includes the [Irssi](/index.php/Irssi "Irssi") client. See [List of applications/Internet#IRC clients](/index.php/List_of_applications/Internet#IRC_clients "List of applications/Internet") or [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients "wikipedia:Comparison of Internet Relay Chat clients") for a list.
 
@@ -33,16 +33,16 @@ To join the channels, you need an IRC client. The [installation](/index.php/Inst
 To register with NickServ, follow the [freenode FAQ](https://freenode.net/kb/answer/registration), as well as `NickServ help` when connected to *chat.freenode.net*:
 
 ```
-/query nickserv help register
-/query nickserv help identify
+/query NickServ HELP REGISTER
+/query NickServ HELP IDENTIFY
 
 ```
 
-If you are not registered and identified, you will be forwarded to **#archlinux-unregistered**. You can get a list of people who can help you by typing `/msg chanserv access #archlinux list`, or join #freenode and ask there.
+If you are not registered and identified, you will be forwarded to **#archlinux-unregistered**. You can get a list of people who can help you by typing `/msg ChanServ ACCESS #archlinux LIST`, or join #freenode and ask there.
 
 **Note:**
 
-*   If `/query` happens to not work in your client you can try using either `/quote nickserv <command>` or `/msg nickserv <command>`.
+*   If `/query` happens to not work in your client you can try using either `/quote NickServ <command>` or `/msg NickServ <command>`.
 *   Some IRC clients have a race-condition where they try to autojoin channels before you have been identified with NickServ, and to solve it you need to enable SASL. Either look up your IRC client's documentation or look at the freenode [SASL page](https://freenode.net/kb/answer/sasl) to find instructions for how to enable it.
 
 ### Channel operators

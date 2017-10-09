@@ -36,16 +36,17 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [6.3 Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)](#Font_and_screen_corruption_in_GTK.2B_applications_.28missing_glyphs_after_suspend.2Fresume.29)
     *   [6.4 Blank screen during boot, when "Loading modules"](#Blank_screen_during_boot.2C_when_.22Loading_modules.22)
     *   [6.5 X freeze/crash with intel driver](#X_freeze.2Fcrash_with_intel_driver)
-    *   [6.6 Adding undetected resolutions](#Adding_undetected_resolutions)
-    *   [6.7 Weathered colors (color range problem)](#Weathered_colors_.28color_range_problem.29)
-    *   [6.8 Backlight is not adjustable](#Backlight_is_not_adjustable)
-    *   [6.9 Disabling frame buffer compression](#Disabling_frame_buffer_compression)
-    *   [6.10 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption.2FUnresponsiveness_in_Chromium_and_Firefox)
-    *   [6.11 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
-    *   [6.12 Skylake support](#Skylake_support)
-    *   [6.13 Lag in Windows guests](#Lag_in_Windows_guests)
-    *   [6.14 Screen flickering](#Screen_flickering)
-    *   [6.15 OpenGL 2.1 with i915 driver](#OpenGL_2.1_with_i915_driver)
+    *   [6.6 Baytrail complete freeze](#Baytrail_complete_freeze)
+    *   [6.7 Adding undetected resolutions](#Adding_undetected_resolutions)
+    *   [6.8 Weathered colors (color range problem)](#Weathered_colors_.28color_range_problem.29)
+    *   [6.9 Backlight is not adjustable](#Backlight_is_not_adjustable)
+    *   [6.10 Disabling frame buffer compression](#Disabling_frame_buffer_compression)
+    *   [6.11 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption.2FUnresponsiveness_in_Chromium_and_Firefox)
+    *   [6.12 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
+    *   [6.13 Skylake support](#Skylake_support)
+    *   [6.14 Lag in Windows guests](#Lag_in_Windows_guests)
+    *   [6.15 Screen flickering](#Screen_flickering)
+    *   [6.16 OpenGL 2.1 with i915 driver](#OpenGL_2.1_with_i915_driver)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -317,12 +318,16 @@ i915.semaphores=1
 
 to your boot parameters.
 
-If you are using kernel 4.0.X or above on Baytrail architecture and frequently encounter complete system freezes (especially when watching video or using GFX intensivelly), you should try adding the following kernel option as a workaround, until [this bug](https://bugzilla.kernel.org/show_bug.cgi?id=109051) will be fixed permanently.
+### Baytrail complete freeze
+
+If you are using kernel > 3.16 on Baytrail architecture and randomly encounter total system freezes, the following kernel option is a workaround until [this bug](https://bugzilla.kernel.org/show_bug.cgi?id=109051) is fixed in the linux kernel.
 
 ```
 intel_idle.max_cstate=1
 
 ```
+
+This is originally an Intel CPU bug that can be triggered by certain c-state transitions. It can also happen with Linux kernel 3.16 or Windows, though apparently much more rarely. The kernel option will prevent the freeze by avoiding c-state transitions but will also increase power consumption.
 
 ### Adding undetected resolutions
 

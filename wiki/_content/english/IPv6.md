@@ -425,5 +425,5 @@ Note however that even when using the above option, networkd will still be expec
 
 *   [IPv6](https://www.kernel.org/doc/Documentation/networking/ipv6.txt) - kernel.org documentation
 *   [IPv6 temporary addresses](http://www.ipsidixit.net/2012/08/09/ipv6-temporary-addresses-and-privacy-extensions/) - a summary about temporary addresses and privacy extensions
-*   [IPv6 prefixes](http://tldp.org/HOWTO/Linux+IPv6-HOWTO/x513.html) - a summary of prefix types
-*   [net.ipv6 options](http://tldp.org/HOWTO/Linux+IPv6-HOWTO/proc-sys-net-ipv6..html) - documentation of kernel parameters
+*   [IPv6 prefixes](http://tldp.org/HOWTO/Linux+IPv6-HOWTO/ch03s02.html) - a summary of prefix types
+*   [net.ipv6 options](http://tldp.org/HOWTO/Linux+IPv6-HOWTO/ch11s02.html) - documentation of kernel parameters

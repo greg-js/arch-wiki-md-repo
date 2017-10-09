@@ -70,9 +70,9 @@ CRLs are also signed with the CA key, but they only dictate information regardin
 
 ## Configuring
 
-The OpenSSL configuration file, conventionally placed in `/etc/ssl/openssl.cnf`, may appear complicated at first. This isn't remedied by the fact that there's no *include* directive to split configuration into a modal setup. Nevertheless, this section covers the essential settings.
+The OpenSSL configuration file, conventionally placed in `/etc/ssl/openssl.cnf`, may appear complicated at first. This is not remedied by the fact that there is no *include* directive to split configuration into a modal setup. Nevertheless, this section covers the essential settings.
 
-Remember that variables may be expanded in assignments, much like how shell scripts work. For a more thorough explanation of the configuration file format, see *config(5)*. In some operating systems, this [man](/index.php/Man "Man") page is named *openssl-config* or *config(5ssl)*. Sometimes, it may not even be available through the man hierarchy at all, for example, it may be placed in the following location `/usr/share/openssl`.
+Remember that variables may be expanded in assignments, much like how shell scripts work. For a more thorough explanation of the configuration file format, see [config(5ssl)](http://jlk.fjfi.cvut.cz/arch/manpages/man/config.5ssl). In some operating systems, this [man page](/index.php/Man_page "Man page") is named config(5) or openssl-config(5). Sometimes, it may not even be available through the man hierarchy at all, for example, it may be placed in the following location `/usr/share/openssl`.
 
 ### Global variables
 
@@ -82,7 +82,6 @@ These settings are relevant in all sections. For that to happen, they can not be
 DIR=		.			# Useful macro for populating real vars.
 RANDFILE=	${DIR}/private/.rnd	# Entropy source.
 default_md=	sha1			# Default message digest.
-
 ```
 
 ### ca section
@@ -139,22 +138,17 @@ nsCertType=		client, email
 nsComment=		"OpenSSL Generated Certificate"
 
 authorityKeyIdentifier=keyid:always,issuer:always
-
 ```
 
 ### req section
 
 Settings related to generating keys, requests and self-signed certificates.
 
-The req section is responsible for the DN prompts. A general misconception is the *Common Name* (CN) prompt, which suggests that it should have the user's proper name as a value. End-user certificates need to have the **machine hostname** as CN, whereas CA should *not* have a valid TLD, so that there's no chance that, between the possible combinations of certified end-users' CN and the CA certificate's, there's a match that could be misinterpreted by some software as meaning that the end-user certificate is self-signed. Some CA certificates do not even have a CN, such as [Equifax](http://www.equifax.com):
+The req section is responsible for the DN prompts. A general misconception is the *Common Name* (CN) prompt, which suggests that it should have the user's proper name as a value. End-user certificates need to have the **machine hostname** as CN, whereas CA should *not* have a valid TLD, so that there is no chance that, between the possible combinations of certified end-users' CN and the CA certificate's, there is a match that could be misinterpreted by some software as meaning that the end-user certificate is self-signed. Some CA certificates do not even have a CN, such as [Equifax](http://www.equifax.com):
 
-```
-# subject= /C=US/O=Equifax/OU=Equifax Secure Certificate Authority
-openssl x509 -subject -noout < /etc/ssl/certs/Equifax_Secure_CA.pem
+ `$ openssl x509 -subject -noout < /etc/ssl/certs/Equifax_Secure_CA.pem`  `subject= /C=US/O=Equifax/OU=Equifax Secure Certificate Authority` 
 
-```
-
-Even though splitting the files isn't strictly necessary to normal functioning, it is very confusing to handle request generation and CA administration from the same configuration file, so it is advised to follow the convention of clearly separating the settings into two `cnf` files and into two containing directories.
+Even though splitting the files is not strictly necessary to normal functioning, it is very confusing to handle request generation and CA administration from the same configuration file, so it is advised to follow the convention of clearly separating the settings into two `cnf` files and into two containing directories.
 
 Here are the settings that are common to both tasks:
 
@@ -166,7 +160,6 @@ default_keyfile=private/cakey.pem
 
 string_mask=	utf8only	# Only allow utf8 strings in request/ca fields.
 prompt=		no		# Do not prompt for field value confirmation.
-
 ```
 
 #### CA req settings
@@ -178,7 +171,7 @@ distinguished_name=ca_dn	# Distinguished name contents.
 x509_extensions=ca_v3		# For generating ca certificates.
 
 [ ca_dn ]
-# CN isn't needed for CA certificates
+# CN is not needed for CA certificates
 C=	US
 ST=	New Jersey
 O=	localdomain
@@ -196,7 +189,6 @@ nsCertType=	sslCA
 nsComment=	"OpenSSL Generated CA Certificate"
 
 authorityKeyIdentifier=keyid:always,issuer:always
-
 ```
 
 #### End-user req settings
@@ -216,7 +208,6 @@ CN=	localhost
 [ req_v3 ]
 basicConstraints=	CA:FALSE
 keyUsage=		nonRepudiation, digitalSignature, keyEncipherment
-
 ```
 
 ### GOST engine support
@@ -224,7 +215,7 @@ keyUsage=		nonRepudiation, digitalSignature, keyEncipherment
 First, be sure that libgost.so exist on your system
 
 ```
-pacman -Ql openssl | grep libgost
+$ pacman -Ql openssl | grep libgost
 
 ```
 
@@ -275,7 +266,7 @@ $ chmod 0600 private/key.pem
 Alternatively set [umask](/index.php/Umask "Umask") to restrict permissions of newly created files and directories:
 
 ```
-umask 077
+$ umask 077
 
 ```
 
@@ -300,7 +291,7 @@ To obtain a certificate from a CA, whether a public one such as [CAcert.org](htt
 Make a new request and sign it with a previously [generated key](#Generating_keys):
 
 ```
-openssl req -new -sha256 -key private/key.pem -out req.csr
+$ openssl req -new -sha256 -key private/key.pem -out req.csr
 
 ```
 
@@ -315,7 +306,7 @@ A significant amount of programs will not work with self-signed certificates, an
 If a key was already generated as [explained before](#Generating_keys), use this command to sign the new certificate with the aforementioned key:
 
 ```
-openssl req -key private/key.pem -x509 -new -days 3650 -out cacert.pem
+$ openssl req -key private/key.pem -x509 -new -days 3650 -out cacert.pem
 
 ```
 
@@ -374,21 +365,20 @@ revoke:	${CADEPS} ${item}
 sign:	${CADEPS} ${item}
 	@test -n $${item:?'usage: ${MAKE} sign item=request.csr'}
 	mkdir -p newcerts
-	${CA} -in ${item} -out ${item:.csr=.crt} 
-
+	${CA} -in ${item} -out ${item:.csr=.crt}
 ```
 
 To sign certificates:
 
 ```
-make sign item=**req.csr**
+$ make sign item=**req.csr**
 
 ```
 
 To revoke certificates:
 
 ```
-make revoke item=**cert.pem**
+$ make revoke item=**cert.pem**
 
 ```
 

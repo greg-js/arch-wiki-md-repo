@@ -8,14 +8,15 @@ Plex for Linux is split into a closed-source server Plex Media Server, and an op
     *   [1.1 Installation](#Installation)
     *   [1.2 Setup](#Setup)
     *   [1.3 Plugins](#Plugins)
-    *   [1.4 Security](#Security)
-    *   [1.5 Resource Management](#Resource_Management)
-    *   [1.6 Network](#Network)
-    *   [1.7 Remote access through vpn](#Remote_access_through_vpn)
-        *   [1.7.1 Requirements](#Requirements)
-        *   [1.7.2 How to](#How_to)
-    *   [1.8 Library Updates](#Library_Updates)
-    *   [1.9 Troubleshooting](#Troubleshooting)
+    *   [1.4 Plex Live TV and DVR](#Plex_Live_TV_and_DVR)
+    *   [1.5 Security](#Security)
+    *   [1.6 Resource Management](#Resource_Management)
+    *   [1.7 Network](#Network)
+    *   [1.8 Remote access through vpn](#Remote_access_through_vpn)
+        *   [1.8.1 Requirements](#Requirements)
+        *   [1.8.2 How to](#How_to)
+    *   [1.9 Library Updates](#Library_Updates)
+    *   [1.10 Troubleshooting](#Troubleshooting)
 *   [2 Plex Home Theater (PHT)](#Plex_Home_Theater_.28PHT.29)
     *   [2.1 Installation](#Installation_2)
 *   [3 Plex Media Player (PMP)](#Plex_Media_Player_.28PMP.29)
@@ -46,6 +47,14 @@ and then browse to `[http://localhost:8888/web/](http://localhost:8888/web/)`.
 PMS can be expanded with additional plugins. For example, PMS can be used as an IPTV client with the [IPTV plugin](https://github.com/Cigaras/IPTV.bundle).
 
 Plugins can be installed inside `$PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR/Plex Media Server/Plug-ins`.
+
+### Plex Live TV and DVR
+
+Plex live TV requires a plexpass.
+
+To enable live TV viewing and DVR support with plex, you must have one of the supported tuners listed on the [support page](https://support.plex.tv/hc/en-us/articles/225877427-Supported-DVR-Tuners-and-Antennas) and [plex-media-server-plexpass](https://aur.archlinux.org/packages/plex-media-server-plexpass/) installed. PMS will automatically recognize any connected tuners.
+
+The plex user needs to be part of the video group in order to access local tuners. This can be done by running `usermod -a -G video plex`
 
 ### Security
 

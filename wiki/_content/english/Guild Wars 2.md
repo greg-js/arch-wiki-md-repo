@@ -10,7 +10,7 @@
 
 ## Installation
 
-Install [wine](https://www.archlinux.org/packages/?name=wine) or [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) and [mpg123](https://www.archlinux.org/packages/?name=mpg123). Download the GW2 32bit client from their [website](http://cloudfront.guildwars2.com/client/Gw2.exe), or GW2 64bit client from [here](http://s3.amazonaws.com/gw2cdn/client/branches/Gw2-64.exe) (see [this post in the official forum](https://forum-en.guildwars2.com/forum/support/support/64-bit-Client-Beta-FAQ/first#post5717439)) and run it like this:
+Install [wine](https://www.archlinux.org/packages/?name=wine) or [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) and [mpg123](https://www.archlinux.org/packages/?name=mpg123). Download the GW2 [32-bit](http://cloudfront.guildwars2.com/client/Gw2.exe) or [64-bit](http://s3.amazonaws.com/gw2cdn/client/branches/Gw2-64.exe) client (see [64-bit FAQ](https://forum-en.guildwars2.com/forum/support/support/64-bit-Client-Beta-FAQ/first#post5717439) for differences) and run it like this:
 
 ```
 wine ./Gw2.exe
@@ -24,27 +24,11 @@ wine ./Gw2-64.exe
 
 ```
 
-(For use the 64bit client need set the WINEARCH to 'win64' or use a 64bit WINEPREFIX bottle. or unset WINEARCH for multiarch installation).
-
-Alternatively you can use [WineGW2](http://boxedfox.org/projects/winegw2/) which is a fork of wine that fixes some issues and provides better performance. You may still want to install [wine](https://www.archlinux.org/packages/?name=wine) package to get the dependencies right.
+It is recommended to use [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) with [Wine#CSMT patch](/index.php/Wine#CSMT_patch "Wine") for optimal performance.
 
 ### Radeon gpu users
 
 In case the default [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) driver does yield low fps you can try catalyst drivers. For installation instructions see [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst"). (On HD6670 catalyst drivers give higher fps - 40-50 in open-world and there are no graphical glitches) .
-
-As well as that, you will need to install wine with CSMT patch-set applied [wine-staging](https://github.com/wine-compholio/wine-staging/wiki/Installation#-arch-linux) as mouselook in game without it is extremely laggy. After installing you should create 32bit WINEPREFIX and enable CSMT, run:
-
-```
-   WINEARCH=win32 winecfg
-
-```
-
-When winecfg launches, select **staging** tab, and check the checkbox "Enable CSMT for better graphic performance", click apply and exit. Run the game by executing launcher with -dx9single flag which fixes various launcher issues:
-
-```
-   wine Gw2.exe -dx9single
-
-```
 
 *   When in game, its a good idea to start tweaking graphical settings from medium/low for each setting until you find optimal settings that give you playable fps.
 *   Warning: Enabling Vsync causes the game to lock max fps at 30, enable this feature at your own risk.
@@ -70,6 +54,8 @@ wine ./Gw2-64.exe -dx9single
 if use a 64bit client
 
 ### Patcher/launcher crashes with assertion failed on "m_ioCount"
+
+	related: Wine [bug 30511](https://bugs.winehq.org/show_bug.cgi?id=30511)
 
 The best known "fix" for this is to just let it crash and restart it, it should continue on where it left off. Some people reports that the installer crashes when approximately 1 GB has been downloaded but some other people reports crashes every few minutes. This however is rarely a problem when installing patches and only the initial installation poses a challenge, reason why some people just copy the Gw2 installation directory or the Gw2.dat from a Windows installation into the GW2 installation directory in Linux (`/wineprefix/GuildWars2/drive_c/Program Files/ArenaNet/Guild Wars 2/`) when installing the game.
 

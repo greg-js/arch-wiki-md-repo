@@ -1,4 +1,4 @@
-DRM content on Flash still requires HAL to play. This is apparent for example with WatchESPN or Demand 5 (Channel 5 UK). If you attempt to play a DRM-protected content without HAL, you may see the following error: `an error occurred and your player could not be updated`.
+DRM content on Flash still requires HAL to play. This is apparent for example with WatchESPN, HBO GO, or Demand 5 (Channel 5 UK). If you attempt to play a DRM-protected content without HAL, you may see the following error: `an error occurred and your player could not be updated`.
 
 To deliver DRM-protected content, Flash calls several functions provided by the HAL daemon and its libraries. While Flash-based players remain popular, HAL has been deprecated and is not commonly installed on newer systems. To provide the necessary HAL functionality on such systems, you can either install the full HAL package and run the HAL daemon or install a modified HAL library "stub" that uses the modern UDisks daemon instead.
 

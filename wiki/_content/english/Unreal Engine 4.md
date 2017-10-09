@@ -10,7 +10,7 @@ The content of this article was originally written on [this page](https://wiki.u
 
 *   [1 Minimum requirements](#Minimum_requirements)
 *   [2 Installation](#Installation)
-    *   [2.1 Register to get the source code](#Register_to_get_the_source_code)
+    *   [2.1 Gain access to the source code](#Gain_access_to_the_source_code)
     *   [2.2 Installing from the AUR](#Installing_from_the_AUR)
     *   [2.3 Compile from source code](#Compile_from_source_code)
 *   [3 Troubleshooting](#Troubleshooting)
@@ -31,15 +31,17 @@ The content of this article was originally written on [this page](https://wiki.u
 
 ## Installation
 
-#### Register to get the source code
+#### Gain access to the source code
 
-First, register at [UnrealEngine.com](https://www.unrealengine.com/) and link your GitHub account to your Epic Games account. Once registered, you should be able to [browse the source code](https://github.com/EpicGames/UnrealEngine).
+The Unreal Engine source code is in a [private Github repository](https://github.com/EpicGames/UnrealEngine) requiring free registration with the developer (Epic Games) for access[[1]](https://www.unrealengine.com/en-US/ue4-on-github).
+
+To gain access, login or register at [Epic Games Accounts](https://accounts.epicgames.com/login) and provide an accessible GitHub username at the bottom of the Epic Games ['Connected Accounts Dashboard'](https://www.unrealengine.com/dashboard/connected) page. You will then receive an invite to access the private Github repository.
 
 ### Installing from the AUR
 
 Unreal Engine 4 is available in the [AUR](/index.php/AUR "AUR") as the [unreal-engine](https://aur.archlinux.org/packages/unreal-engine/) package.
 
-The package is 22 GiB once installed, so it needs about 100 GiB free space to build. There is about 7 GiB of source files to download, and the compilation might take a few hours.
+The package is ~28 GiB installed and needs ~100 GiB to build with an output ABS package of ~4.5 GiB when compressed. This AUR package downloads ~9.5 GiB of source files plus ~4.5 GiB of dependencies. The compilation can take from 30 minutes up to a few hours depending on your machine.
 
 Since the repository is private, you can [set up an SSH key](https://help.github.com/articles/generating-an-ssh-key/) so your GitHub account is used to download the source.
 
@@ -91,7 +93,7 @@ The StarterContent project is installed to /opt/unreal-engine/Samples/StarterCon
 
 ### Marketplace Apps
 
-The launcher with the Unreal Marketplace is not available for Linux yet[[1]](https://forums.unrealengine.com/showthread.php?52166-Unreal-launcher-for-linux), so apps like the ContentExamples project cannot be installed from Linux[[2]](https://answers.unrealengine.com/questions/301869/download-content-from-marketplace-on-linux.html).
+The launcher with the Unreal Marketplace is not available for Linux yet[[2]](https://forums.unrealengine.com/showthread.php?52166-Unreal-launcher-for-linux), so apps like the ContentExamples project cannot be installed from Linux[[3]](https://answers.unrealengine.com/questions/301869/download-content-from-marketplace-on-linux.html).
 
 The marketplace apps can be downloaded using the [launcher](https://www.unrealengine.com/download) on Windows (Mac may also work), they are stored in:
 

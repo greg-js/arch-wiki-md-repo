@@ -27,10 +27,6 @@ It is recommended to disable the filtering of HTTP connections by adding the fol
 
  `/etc/pgl/pglcmd.conf`  `WHITE_TCP_OUT="http https"` 
 
-Some program might not be able to reach the outside world. For instance, users of MSN for instant messaging, will need to add port 1863 to the white list:
-
- `/etc/pgl/pglcmd.conf`  `WHITE_TCP_OUT="http https msnp"` 
-
 Conversely, one could white list all the ports except the ones used by the program to be blocked. The following example only use the block lists to stop incoming traffic on ports 53 (DNS) and 80 (HTTP):
 
  `/etc/pgl/pglcmd.conf` 

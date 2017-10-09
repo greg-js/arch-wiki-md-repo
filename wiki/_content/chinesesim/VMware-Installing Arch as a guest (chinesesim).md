@@ -2,9 +2,8 @@
 
 *   [VMware](/index.php/VMware "VMware")
 *   [Installing VMWare vCLI](/index.php/Installing_VMWare_vCLI "Installing VMWare vCLI")
-*   [Installing Arch Linux in VMware (systemd)](/index.php/Installing_Arch_Linux_in_VMware_(systemd) "Installing Arch Linux in VMware (systemd)")
 
-**翻译状态：** 本文是英文页面 [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-08-05，点击[这里](https://wiki.archlinux.org/index.php?title=VMware%2FInstalling+Arch+as+a+guest&diff=0&oldid=390024)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-08，点击[这里](https://wiki.archlinux.org/index.php?title=VMware%2FInstalling+Arch+as+a+guest&diff=0&oldid=492075)可以查看翻译后英文页面的改动。
 
 这篇文章是关于如何在[VMware](/index.php/VMware "VMware")产品，比如[Player (Plus)](http://www.vmware.com/products/player/)，[Fusion](http://www.vmware.com/products/fusion/)或[Workstation](http://www.vmware.com/products/workstation/)中安装ArchLinux。
 
@@ -32,20 +31,23 @@
     *   [6.3 时间同步](#.E6.97.B6.E9.97.B4.E5.90.8C.E6.AD.A5)
         *   [6.3.1 与宿主机同步时间](#.E4.B8.8E.E5.AE.BF.E4.B8.BB.E6.9C.BA.E5.90.8C.E6.AD.A5.E6.97.B6.E9.97.B4)
         *   [6.3.2 与外部服务器同步时间](#.E4.B8.8E.E5.A4.96.E9.83.A8.E6.9C.8D.E5.8A.A1.E5.99.A8.E5.90.8C.E6.AD.A5.E6.97.B6.E9.97.B4)
-    *   [6.4 Performance Tips](#Performance_Tips)
+    *   [6.4 性能优化](#.E6.80.A7.E8.83.BD.E4.BC.98.E5.8C.96)
         *   [6.4.1 平行虚拟化 SCSI 驱动](#.E5.B9.B3.E8.A1.8C.E8.99.9A.E6.8B.9F.E5.8C.96_SCSI_.E9.A9.B1.E5.8A.A8)
         *   [6.4.2 平行虚拟化网络驱动](#.E5.B9.B3.E8.A1.8C.E8.99.9A.E6.8B.9F.E5.8C.96.E7.BD.91.E7.BB.9C.E9.A9.B1.E5.8A.A8)
         *   [6.4.3 虚拟机设置](#.E8.99.9A.E6.8B.9F.E6.9C.BA.E8.AE.BE.E7.BD.AE)
-*   [7 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [7.1 鼠标问题](#.E9.BC.A0.E6.A0.87.E9.97.AE.E9.A2.98)
-        *   [7.1.1 按钮丢失](#.E6.8C.89.E9.92.AE.E4.B8.A2.E5.A4.B1)
-    *   [7.2 Boot problems](#Boot_problems)
-        *   [7.2.1 Slow boot time](#Slow_boot_time)
-        *   [7.2.2 Shutdown/Reboot hangs](#Shutdown.2FReboot_hangs)
-    *   [7.3 Autofit problems](#Autofit_problems)
-    *   [7.4 拖拽，复制/粘贴](#.E6.8B.96.E6.8B.BD.EF.BC.8C.E5.A4.8D.E5.88.B6.2F.E7.B2.98.E8.B4.B4)
-    *   [7.5 Problems when running as a shared VM on Workstation 11](#Problems_when_running_as_a_shared_VM_on_Workstation_11)
-    *   [7.6 Shared folder not mounted after system upgrade](#Shared_folder_not_mounted_after_system_upgrade)
+*   [7 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
+    *   [7.1 声音问题](#.E5.A3.B0.E9.9F.B3.E9.97.AE.E9.A2.98)
+    *   [7.2 鼠标问题](#.E9.BC.A0.E6.A0.87.E9.97.AE.E9.A2.98)
+    *   [7.3 启动故障](#.E5.90.AF.E5.8A.A8.E6.95.85.E9.9A.9C)
+        *   [7.3.1 启动速度慢](#.E5.90.AF.E5.8A.A8.E9.80.9F.E5.BA.A6.E6.85.A2)
+        *   [7.3.2 关机/重启时卡住不动](#.E5.85.B3.E6.9C.BA.2F.E9.87.8D.E5.90.AF.E6.97.B6.E5.8D.A1.E4.BD.8F.E4.B8.8D.E5.8A.A8)
+    *   [7.4 窗口分辨率自动适配](#.E7.AA.97.E5.8F.A3.E5.88.86.E8.BE.A8.E7.8E.87.E8.87.AA.E5.8A.A8.E9.80.82.E9.85.8D)
+        *   [7.4.1 方案 1](#.E6.96.B9.E6.A1.88_1)
+        *   [7.4.2 方案 2](#.E6.96.B9.E6.A1.88_2)
+        *   [7.4.3 方案 3](#.E6.96.B9.E6.A1.88_3)
+    *   [7.5 拖拽与复制粘贴](#.E6.8B.96.E6.8B.BD.E4.B8.8E.E5.A4.8D.E5.88.B6.E7.B2.98.E8.B4.B4)
+    *   [7.6 在 VMware Workstation 11 版上运行共享 VM](#.E5.9C.A8_VMware_Workstation_11_.E7.89.88.E4.B8.8A.E8.BF.90.E8.A1.8C.E5.85.B1.E4.BA.AB_VM)
+    *   [7.7 Shared folder not mounted after system upgrade](#Shared_folder_not_mounted_after_system_upgrade)
 
 ## 编译进内核的驱动程序（模块）
 
@@ -195,7 +197,7 @@ systemctl enable vmware-vmblock-fuse.service
 *   “Warning: This script could not find mkinitrd or update-initramfs and cannot remake the initrd file!”
 *   在系统中找不到 Fuse 组件
 
-从 [opem-vm-tools](https://www.archlinux.org/packages/?name=opem-vm-tools) 中拷贝并启用 `vmware-vmblock-fuse` 服务：
+从 [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) 中拷贝并启用 `vmware-vmblock-fuse` 服务：
 
 ```
  # pacman -S asp
@@ -353,7 +355,7 @@ WantedBy=multi-user.target
 
 参阅 [NTP](/index.php/NTP "NTP")。
 
-### Performance Tips
+### 性能优化
 
 下面这些技巧可以帮你改善虚拟机性能。
 
@@ -441,66 +443,69 @@ mainMem.partialLazyRestore = "FALSE"
 
 *   **mainMem.partialLazySave** and **mainMem.partialLazyRestore**: 这两项参数的优化是为了阻止虚拟机出于休眠的目的来创建不完整内存快照。如此优化之后，虚拟机的休眠操作耗时会稍长些，但相应地也会减少硬盘读写。
 
-## 疑难解答
+## 故障排除
+
+### 声音问题
+
+如果虚拟机发出了恼人的巨响，那有可能是 [PC 扬声器](/index.php/PC_speaker "PC speaker")的原因。在客户机系统里禁用 PC 扬声器即可解决：
+
+```
+# echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
+
+```
 
 ### 鼠标问题
 
-鼠标可能会发生这些问题：
+虚拟机可能会出现下列鼠标问题：
 
-*   The automatic grab/ungrab feature will not automatically grab input when cursor enters the window
-*   输入延迟
-*   Clicks are not registered in some applications
-*   当光标进入/离开虚拟机时跳动
-*   光标跳转到它离开VM客户机的地方
+*   自动获取/失去焦点的功能可能会在鼠标箭头移入窗口时失效
+*   按键无响应
+*   卡顿、延迟
+*   在个别软件中点击无响应
+*   箭头在移入/移出虚拟机时跳跃
+*   箭头会跳跃到从虚拟机移出的位置
 
-您可以尝试卸载[xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse)。[xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse)和[xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput)足以处理鼠标与键盘输入。
+可以先删掉软件包 [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) 试试看。
 
-您可以尝试添加这些设置到`.vmx`配置文件([光标跳转到它离开VM客户机的地方](https://forums.mageia.org/en/viewtopic.php?f=7&t=7977)):
+为解决[鼠标箭头跳跃到从虚拟机移出的位置](https://forums.mageia.org/en/viewtopic.php?f=7&t=7977)的问题，可以试试在 `.vmx` 配置文件里写入这些：
 
  `~/vmware/*<Virtual Machine name>*/*<Virtual Machine name>*.vmx` 
 ```
 mouse.vusb.enable = "TRUE"
 mouse.vusb.useBasicMouse = "FALSE"
-usb.generic.allowHID = "TRUE"
-
-VMware attempts to automatically optimize mouse for gaming. If experiencing problems, disabling it is recommended: *Edit > Preferences > Input > Optimize mouse for games: Never*
 ```
 
-Alternatively, attempting to [disable](http://www.spinics.net/lists/xorg/msg53932.html) the `catchall` event in `10-evdev.conf` may be needed:
+VMware 还会为游戏做自动的鼠标优化。如果这一优化产生了问题，可以在这里将其禁用：*Edit > Preferences > Input > Optimize mouse for games: Never*
 
- `/etc/X11/xorg.conf.d/10-evdev.conf` 
+再者，尝试在 `60-libinput.conf` 里[禁用](http://www.spinics.net/lists/xorg/msg53932.html) `catchall` 事件也可能有用:
+
+ `/usr/share/X11/xorg.conf.d/60-libinput.conf` 
 ```
 #Section "InputClass"
-#        Identifier "evdev pointer catchall"
+#        Identifier "libinput pointer catchall"
 #        MatchIsPointer "on"
 #        MatchDevicePath "/dev/input/event*"
-#        Driver "evdev"
+#        Driver "libinput"
 #EndSection
 
 ```
 
-#### 按钮丢失
+### 启动故障
 
-If not by default, all mouse buttons should be working after adding `[mouse.vusb.useBasicMouse = "FALSE"](https://communities.vmware.com/thread/457313?start=15&tstart=0)` to the `.vmx`.
+#### 启动速度慢
 
- `~/vmware/*<Virtual Machine name>*/*<Virtual Machine name>*.vmx`  `mouse.vusb.useBasicMouse = "FALSE"` 
-
-### Boot problems
-
-#### Slow boot time
-
-You may see the following errors if VMWare's memory hot-add feature is enabled.
+如果 VMware 开启了内存热扩容功能，那么有可能会出现如下错误：
 
 *   add_memory failed
 *   acpi_memory_enable_device() error
 
-Disable the memory hot-add feature by setting `mem.hotadd = "FALSE"` to the `.vmx`.
+若要禁用内存热扩容功能，可以在 `.vmx` 配置文件里写入 `mem.hotadd = "FALSE"`。
 
  `~/vmware/*<Virtual Machine name>*/*<Virtual Machine name>*.vmx`  `mem.hotadd = "FALSE"` 
 
-#### Shutdown/Reboot hangs
+#### 关机/重启时卡住不动
 
-Adjust the timeout for the vmtoolsd service (defaults to 90 seconds).
+试着降低 vmtoolsd 服务的超时阈值（默认是 90 秒）：
 
  `/etc/systemd/system/vmtoolsd.service.d/timeout.conf` 
 ```
@@ -508,23 +513,41 @@ Adjust the timeout for the vmtoolsd service (defaults to 90 seconds).
 TimeoutStopSec=1
 ```
 
-### Autofit problems
+### 窗口分辨率自动适配
 
-If VMWare is stretching instead of changing the resolution even with the system service enabled, you may need to add the modules to mkinitcpio.conf.
+自动适配的意思是，当你在宿主机里缩放 VMware 窗口之后，Arch 作为客户机系统，应该自动根据主系统窗口的新尺寸来调整分辨率。
+
+#### 方案 1
+
+确保在设置里开启了自动适配。
+
+VMware Worksation 的这一设置位于：*View -> Autosize -> Autofit Guest*
+
+#### 方案 2
+
+分辨率自动适配的功能依赖 [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) 和 [gtk2](https://www.archlinux.org/packages/?name=gtk2) 软件包。确保客户机里装上这两个包。如果你没安装 X，或者你使用的桌面环境不依赖 GTK（比如 KDE），那么你需要手动安装这两个包。
+
+#### 方案 3
+
+通过 mkinitcpio.conf 加载以下模块：
 
  `/etc/mkinitcpio.conf`  `MODULES="vsock vmw_vsock_vmci_transport vmw_balloon vmw_vmci vmwgfx"` 
 
-Do not forget to run:
+然后运行：
 
  `# mkinitcpio -p linux` 
 
-### 拖拽，复制/粘贴
+再重启试试看。
 
-`/etc/xdg/autostart/vmware-user.desktop` may try to start *vmware-user-suid-wrapper* properly when you log in, but there is an unspecified relationship between it and *gtkmm* that causes it to silently fail. This is documented in [FS#43159](https://bugs.archlinux.org/task/43159).
+### 拖拽与复制粘贴
 
-### Problems when running as a shared VM on Workstation 11
+拖拽与复制粘贴功能依赖 [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) 和 [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) 这两个包。
 
-Workstation 11 has a bug where vmware-hostd crashes if an Arch guest is running as a shared VM and vmtoolsd is running in the guest. A patch to open-vm-tools to work around the bug is [here](https://github.com/vmware/open-vm-tools/issues/31).
+`/etc/xdg/autostart/vmware-user.desktop` 服务可能会在登录时调用程序 *vmware-user-suid-wrapper*，该程序需要依赖 *gtkmm*，但这一依赖关系未被明确声明。此问题在 [FS#43159](https://bugs.archlinux.org/task/43159) 有详述。
+
+### 在 VMware Workstation 11 版上运行共享 VM
+
+Workstation 11 有个 bug：当 Arch 客户机以共享 VM 模式运行，且启动了 vmtoolsd 服务时，vmware-hostd 会崩溃。open-vm-tools 有个补丁来[绕过](https://github.com/vmware/open-vm-tools/issues/31)这一问题。
 
 ### Shared folder not mounted after system upgrade
 

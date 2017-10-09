@@ -75,7 +75,7 @@ When run, PreLoader tries to launch `loader.efi`, if the hash of `loader.efi` is
 
 #### Set up PreLoader
 
-**Warning:** `PreLoader.efi` and `HashTool.efi` in [efitools](https://www.archlinux.org/packages/?name=efitools) package are not signed, so their usefulness is limited. You can get a signed `PreLoader.efi` and `HashTool.efi` from [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) or [download them manually](http://blog.hansenpartnership.com/linux-foundation-secure-boot-system-released/).
+**Warning:** `PreLoader.efi` and `HashTool.efi` in [efitools](https://www.archlinux.org/packages/?name=efitools) package are not signed, so their usefulness is limited. You can get a signed `PreLoader.efi` and `HashTool.efi` from [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) or [download them manually](https://blog.hansenpartnership.com/linux-foundation-secure-boot-system-released/).
 
 [Install](/index.php/Install "Install") [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) and copy `PreLoader.efi` and `HashTool.efi` to the [boot loader](/index.php/Boot_loader "Boot loader") directory; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
 
@@ -265,7 +265,7 @@ Secure Boot implementations use these keys:
 
 	Contains keys and/or hashes of blacklisted EFI binaries.
 
-See [The Meaning of all the UEFI Keys](http://blog.hansenpartnership.com/the-meaning-of-all-the-uefi-keys/) for a more detailed explanation.
+See [The Meaning of all the UEFI Keys](https://blog.hansenpartnership.com/the-meaning-of-all-the-uefi-keys/) for a more detailed explanation.
 
 ### Custom keys
 
@@ -450,8 +450,8 @@ See [Replacing Keys Using KeyTool](http://www.rodsbooks.com/efi-bootloaders/cont
 
 To [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows"), you would need to add Microsoft's certificates to the Signature Database. Microsoft has two db certificates:
 
-*   [Microsoft Windows Production PCA 2011](http://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt) for Windows
-*   [Microsoft Corporation UEFI CA 2011](http://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt) for third-party binaries like UEFI drivers, option ROMs etc.
+*   [Microsoft Windows Production PCA 2011](https://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt) for Windows
+*   [Microsoft Corporation UEFI CA 2011](https://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt) for third-party binaries like UEFI drivers, option ROMs etc.
 
 Microsoft's certificates are in DER format, convert them to PEM format with *openssl*:
 
@@ -493,7 +493,7 @@ Note that some motherboards (this is the case in a Packard Bell laptop) only all
 *   [Dealing with Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html) by Rod Smith
 *   [Controlling Secure Boot](http://www.rodsbooks.com/efi-bootloaders/controlling-sb.html) by Rod Smith
 *   [UEFI secure booting (part 2)](https://mjg59.dreamwidth.org/5850.html) by Matthew Garrett
-*   [UEFI Secure Boot](http://blog.hansenpartnership.com/uefi-secure-boot/) by James Bottomley
+*   [UEFI Secure Boot](https://blog.hansenpartnership.com/uefi-secure-boot/) by James Bottomley
 *   [efitools README](https://git.kernel.org/cgit/linux/kernel/git/jejb/efitools.git/tree/README)
 *   [Will your computer's "Secure Boot" turn out to be "Restricted Boot"?](https://www.fsf.org/campaigns/secure-boot-vs-restricted-boot) — Free Software Foundation
 *   [Free Software Foundation recommendations for free operating system distributions considering Secure Boot](https://www.fsf.org/campaigns/secure-boot-vs-restricted-boot/statement/campaigns/secure-boot-vs-restricted-boot/whitepaper-web)

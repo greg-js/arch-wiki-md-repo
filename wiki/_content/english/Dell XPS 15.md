@@ -23,31 +23,32 @@ This page is a work in progress! More info coming soon.
 
 *   [1 System Settings](#System_Settings)
 *   [2 Differences between XPS 9550 & Precision 5510](#Differences_between_XPS_9550_.26_Precision_5510)
-*   [3 System Setup](#System_Setup)
-    *   [3.1 Power Management](#Power_Management)
-    *   [3.2 Sound](#Sound)
-    *   [3.3 Graphics](#Graphics)
-        *   [3.3.1 Intel only](#Intel_only)
-            *   [3.3.1.1 acpi_call usage](#acpi_call_usage)
-        *   [3.3.2 Intel with Nvidia](#Intel_with_Nvidia)
-    *   [3.4 Screen](#Screen)
-    *   [3.5 External Display](#External_Display)
-        *   [3.5.1 Multihead](#Multihead)
-    *   [3.6 WLAN](#WLAN)
-        *   [3.6.1 Note](#Note)
-    *   [3.7 Bluetooth](#Bluetooth)
-    *   [3.8 BIOS](#BIOS)
-    *   [3.9 Webcam](#Webcam)
-    *   [3.10 Power management](#Power_management_2)
-    *   [3.11 Special Touch Keys](#Special_Touch_Keys)
-        *   [3.11.1 Alternative method](#Alternative_method)
-    *   [3.12 Hidden Keyboard Keys](#Hidden_Keyboard_Keys)
-    *   [3.13 Touchpad Gestures](#Touchpad_Gestures)
-        *   [3.13.1 libinput](#libinput)
-            *   [3.13.1.1 XPS 9550](#XPS_9550)
-        *   [3.13.2 Synaptics](#Synaptics)
-    *   [3.14 Notes](#Notes)
-*   [4 Howtos & Helpful Info](#Howtos_.26_Helpful_Info)
+*   [3 XPS 15 9560 and "early 2017" revision](#XPS_15_9560_and_.22early_2017.22_revision)
+*   [4 System Setup](#System_Setup)
+    *   [4.1 Power Management](#Power_Management)
+    *   [4.2 Sound](#Sound)
+    *   [4.3 Graphics](#Graphics)
+        *   [4.3.1 Intel only](#Intel_only)
+            *   [4.3.1.1 acpi_call usage](#acpi_call_usage)
+        *   [4.3.2 Intel with Nvidia](#Intel_with_Nvidia)
+    *   [4.4 Screen](#Screen)
+    *   [4.5 External Display](#External_Display)
+        *   [4.5.1 Multihead](#Multihead)
+    *   [4.6 WLAN](#WLAN)
+        *   [4.6.1 Note](#Note)
+    *   [4.7 Bluetooth](#Bluetooth)
+    *   [4.8 BIOS](#BIOS)
+    *   [4.9 Webcam](#Webcam)
+    *   [4.10 Power management](#Power_management_2)
+    *   [4.11 Special Touch Keys](#Special_Touch_Keys)
+        *   [4.11.1 Alternative method](#Alternative_method)
+    *   [4.12 Hidden Keyboard Keys](#Hidden_Keyboard_Keys)
+    *   [4.13 Touchpad Gestures](#Touchpad_Gestures)
+        *   [4.13.1 libinput](#libinput)
+            *   [4.13.1.1 XPS 9550](#XPS_9550)
+        *   [4.13.2 Synaptics](#Synaptics)
+    *   [4.14 Notes](#Notes)
+*   [5 Howtos & Helpful Info](#Howtos_.26_Helpful_Info)
 
 ## System Settings
 
@@ -230,6 +231,10 @@ lspci for model Precision 5510:
 ## Differences between XPS 9550 & Precision 5510
 
 The Precision 5510 is essentially identical to the [XPS 9550](/index.php/Dell_XPS_15_(9550) "Dell XPS 15 (9550)") variant, with the exception of an Intel Wireless NIC & Quadro 1000M Graphics Chip. Compared to the 9550's Broadcom NIC & 960M graphics chip.
+
+## XPS 15 9560 and "early 2017" revision
+
+There is [a dedicated page](/index.php/Dell_XPS_15_9560 "Dell XPS 15 9560") for version 9560 from 2016 and 2017 (especially troubleshouting video related problems).
 
 ## System Setup
 

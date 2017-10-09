@@ -110,7 +110,7 @@
 | [NVIDIA (Español)](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)") | Tarjeta gráfica | `2013-09` |
 | [Official repositories (Español)](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") | Repositorios | `2013-09` |
 | [Optical disc drive (Español)](/index.php/Optical_disc_drive_(Espa%C3%B1ol) "Optical disc drive (Español)") | Grabación | `2013-12` |
-| [Pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") | Gestión de paquetes | `2013-09` |
+| [Pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") | Gestión de paquetes | `2017-10` |
 | [Pacman Rosetta (Español)](/index.php/Pacman_Rosetta_(Espa%C3%B1ol) "Pacman Rosetta (Español)") | Gestión de paquetes | `2013-09` |
 | [Partitioning (Español)](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") | Particionado | `2014-11` |
 | [Persistent block device naming (Español)](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol) "Persistent block device naming (Español)") | Sistema de archivos | `2014-12` |

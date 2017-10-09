@@ -42,7 +42,8 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [6.11 Steam](#Steam)
     *   [6.12 Java applications](#Java_applications)
     *   [6.13 Mono applications](#Mono_applications)
-    *   [6.14 Unsupported applications](#Unsupported_applications)
+    *   [6.14 MATLAB](#MATLAB)
+    *   [6.15 Unsupported applications](#Unsupported_applications)
 *   [7 Multiple displays](#Multiple_displays)
     *   [7.1 Side display](#Side_display)
     *   [7.2 Mirroring](#Mirroring)
@@ -397,6 +398,18 @@ java -Dsun.java2d.uiScale=2 -jar some_application.jar
 ### Mono applications
 
 According to [[3]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK3](#GDK_3_.28GTK.2B_3.29) applications.
+
+### MATLAB
+
+Recent versions (R2017b) of [MATLAB](/index.php/Matlab "Matlab") allow to set the scale factor:
+
+```
+>> s = settings;s.matlab.desktop.DisplayScaleFactor
+>> s.matlab.desktop.DisplayScaleFactor.PersonalValue = 2
+
+```
+
+The settings take effect after MATLAB is restarted.
 
 ### Unsupported applications
 

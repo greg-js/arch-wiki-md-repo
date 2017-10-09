@@ -16,7 +16,7 @@ The *Package* column contains a link to ArchWiki page for each daemon (or link t
 | [Avahi](/index.php/Avahi "Avahi") | avahi-daemon | avahi-daemon.service | Allows programs to automatically find local network services. |
 | avahi-dnsconfd | avahi-dnsconfd.service | Multicast/unicast DNS-SD framework. |
 | [Audit framework](/index.php/Audit_framework "Audit framework") | auditd | auditd.service | Linux audit framework |
-| [Bitlbee](/index.php/Bitlbee "Bitlbee") | bitlbee | bitlbee.service | Brings instant messaging (XMPP, MSN, Yahoo!, AIM, ICQ, Twitter) to IRC. |
+| [Bitlbee](/index.php/Bitlbee "Bitlbee") | bitlbee | bitlbee.service | Brings instant messaging (XMPP, Yahoo!, ICQ, Twitter) to IRC. |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | bluetooth | bluetooth.service | Bluetooth protocol stack, framework, subsystem. |
 | [Chrony](/index.php/Chrony "Chrony") | chrony | chrony.service | Lightweight NTP client and server. |
 | [CDemu](/index.php/CDemu "CDemu") | cdemud | cdemu-daemon.service | CD/DVD-ROM device emulator. |

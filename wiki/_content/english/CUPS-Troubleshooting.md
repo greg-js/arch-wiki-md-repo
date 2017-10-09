@@ -258,7 +258,7 @@ make sure [hplip](https://www.archlinux.org/packages/?name=hplip) has been [inst
 
 ### CUPS: "Filter failed"
 
-A "filter failed" error can be caused by any number of issues. The CUPS error log should record which filter failed and why.
+A "filter failed" error can be caused by any number of issues. The CUPS error log (by default `/var/log/cups/error_log`) should record which filter failed and why.
 
 #### Missing foomatic-db
 

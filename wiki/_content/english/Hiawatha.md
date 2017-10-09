@@ -27,7 +27,7 @@
 
 ### Directory structure
 
-First, to give an overview of the overall directory structure of Hiawatha, we show below the hierarchy suggested by the default configuration:
+First, to give an overview of the overall directory structure of Hiawatha, the hierarchy suggested by the default configuration is shown below:
 
 	`/etc/hiawatha`
 

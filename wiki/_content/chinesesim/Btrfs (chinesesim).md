@@ -429,7 +429,7 @@ Btrfs 提供对 RAID 一类的 [多设备文件系统](#Multi-device_file_system
 也可以只发送两个快照间发生变化的部分,例如如果你已经发送了快照 `root_backup` ,然后又建立了一个新的只读快照 `root_backup_new` ,可以这样完成增量发送:
 
 ```
- # btrfs send -p /root_backup /root_backup_new | btrfs send /backup
+ # btrfs send -p /root_backup /root_backup_new | btrfs receive /backup
 
 ```
 

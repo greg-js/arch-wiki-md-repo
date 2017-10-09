@@ -4,11 +4,9 @@ The **Blizzard App** (previously known as the **Battle.net client**) is a tool t
 
 *   [1 Installation](#Installation)
 *   [2 Known issues](#Known_issues)
-    *   [2.1 Crash after login/no 'Login' buttons](#Crash_after_login.2Fno_.27Login.27_buttons)
-    *   [2.2 Login region select](#Login_region_select)
-    *   [2.3 White flashing](#White_flashing)
-    *   [2.4 Login screen stuck at loading spinner (input fields disabled/greyed out)](#Login_screen_stuck_at_loading_spinner_.28input_fields_disabled.2Fgreyed_out.29)
-    *   [2.5 Installer crashes after language selection](#Installer_crashes_after_language_selection)
+    *   [2.1 Crash after login/no 'Login' buttons/region select missing](#Crash_after_login.2Fno_.27Login.27_buttons.2Fregion_select_missing)
+    *   [2.2 Login screen stuck at loading spinner (input fields disabled/greyed out)](#Login_screen_stuck_at_loading_spinner_.28input_fields_disabled.2Fgreyed_out.29)
+    *   [2.3 Installer crashes after language selection](#Installer_crashes_after_language_selection)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -24,19 +22,11 @@ $ winetricks corefonts
 
 ## Known issues
 
-### Crash after login/no 'Login' buttons
+### Crash after login/no 'Login' buttons/region select missing
 
 	Related Wine bugs: [38845](https://bugs.winehq.org/show_bug.cgi?id=38845), [42000](https://bugs.winehq.org/show_bug.cgi?id=42000)
 
-If the launcher crashes after logging in, and/or you are missing the 'Log in to Blizzard' and 'Log in with Facebook' buttons, try running `winecfg` and changing your Windows Version to Windows XP.
-
-### Login region select
-
-When logging in, you must move the mouse over where the dropdown would be for 'Region Select' - otherwise it does not show up.
-
-### White flashing
-
-The client often flashes when the window is moved, or other windows are moved over it. This should not affect the running of the app.
+This bug is fixed in Wine staging [2.18](https://www.wine-staging.com/news/2017-10-04-release-2.18.html). Install [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) instead of [wine](https://www.archlinux.org/packages/?name=wine).
 
 ### Login screen stuck at loading spinner (input fields disabled/greyed out)
 

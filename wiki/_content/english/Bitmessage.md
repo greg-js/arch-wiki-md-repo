@@ -19,7 +19,7 @@ Bitmessage may be used independently or with TOR. Using it with TOR has addition
 
 ## Installation
 
-Install [pybitmessage](https://aur.archlinux.org/packages/pybitmessage/) or [pybitmessage-git](https://aur.archlinux.org/packages/pybitmessage-git/)from the [AUR](/index.php/AUR "AUR"). In order to use it with TOR, install [tor](https://www.archlinux.org/packages/?name=tor) from the official repositories. If you wish to use bitmessage with Thunderbird, install [bmwrapper-git](https://aur.archlinux.org/packages/bmwrapper-git/) from the AUR. For using the given python script to create magnet links, install the package [python2-bencode](https://aur.archlinux.org/packages/python2-bencode/).
+Install [pybitmessage](https://aur.archlinux.org/packages/pybitmessage/) or [pybitmessage-git](https://aur.archlinux.org/packages/pybitmessage-git/)from the [AUR](/index.php/AUR "AUR"). In order to use it with TOR, install [tor](https://www.archlinux.org/packages/?name=tor) from the official repositories. If you wish to use bitmessage with Thunderbird, install bmwrapper archived in [aur-mirror](https://github.com/felixonmars/aur3-mirror/tree/master/bmwrapper-git). For using the given python script to create magnet links, install the package [python2-bencode](https://aur.archlinux.org/packages/python2-bencode/).
 
 ## Set up
 

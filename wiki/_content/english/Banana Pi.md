@@ -101,6 +101,37 @@ $ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi-
 
 ```
 
+In case the following error shows up during the compilation:
+
+```
+ Traceback (most recent call last):
+ File "./tools/binman/binman", line 31, in <module>
+   import control
+ File "/u00/thomas/Downloads/bananapi/u-boot/tools/binman/control.py", line 15, in <module>
+   import fdt
+ File "/u00/thomas/Downloads/bananapi/u-boot/tools/binman/../dtoc/fdt.py", line 13, in <module>
+   import libfdt
+ File "tools/libfdt.py", line 17, in <module>
+   _libfdt = swig_import_helper()
+ File "tools/libfdt.py", line 16, in swig_import_helper
+   return importlib.import_module('_libfdt')
+ File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+   __import__(name)
+ ImportError: No module named _libfdt
+ make: *** [Makefile:1149: u-boot-sunxi-with-spl.bin] Fehler 1
+
+```
+
+Make sure the python2 interpreter is used. To force that you could use for example:
+
+```
+$ virtualenv -p /usr/bin/python2.7 my_uboot
+$ source my_uboot/bin/activate
+
+```
+
+Then compile again as below.
+
 If everything went fine you should have an U-Boot image: u-boot-sunxi-with-spl.bin. Now dd the image to your sdcard, where /dev/sdX is your sdcard.
 
 ```

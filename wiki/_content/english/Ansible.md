@@ -13,6 +13,7 @@ From [docs.ansible.com](http://docs.ansible.com/):
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 User account creation](#User_account_creation)
     *   [3.2 Python binary location](#Python_binary_location)
+    *   [3.3 Unarchive](#Unarchive)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -119,7 +120,7 @@ Ansible is able to manage user accounts and in particular to create new ones. Th
 
 ```
 
-**Tip:** The salt should be fixed and explicitely supplied as a second parameter of the hash function for the operation to be indempotent (can be repeated without changing the state of the system).
+**Tip:** The salt should be fixed and explicitely supplied as a second parameter of the hash function for the operation to be idempotent (can be repeated without changing the state of the system).
 
 With this approach it is recommended to vault-encrypt *user_password* so that it does not appear in plain text, see [#Vault](#Vault). However, an encrypted variable cannot be piped directly and will first need to be assigned to another one that will be piped.
 
@@ -155,6 +156,10 @@ ansible_python_interpreter=/usr/bin/python2
 ```
 
 More information about Python versions is available in [[1]](https://docs.ansible.com/ansible/python_3_support.html), [[2]](http://docs.ansible.com/faq.html#how-do-i-handle-python-pathing-not-having-a-python-2-x-in-usr-bin-python-on-a-remote-machine) and [[3]](http://docs.ansible.com/intro_inventory.html#list-of-behavioral-inventory-parameters).
+
+### Unarchive
+
+The `unarchive` module unpacks an archive. However *tar* files are not well supported and several outstanding issues are reported in [github](https://github.com/ansible/ansible/labels/unarchive). In particular when the parameter `keep_newer` is set to `yes`, idempotence is not observed. In case you face an issue with the module, you can use instead the *zip* format which is better integrated in ansible.
 
 ## See also
 

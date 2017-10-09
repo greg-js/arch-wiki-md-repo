@@ -214,6 +214,16 @@ $ setxkbmap -layout "us,de" -option "grp:alt_shift_toggle"
 
 ```
 
+Or you can use Awesome itself to switch(from v.4). Add the following line in the keybindings section of rc.lua:
+
+```
+aweful.key({ "Shift" }, "Alt_L", function ) mykeyboardlayout.next_layout(); end) 
+aweful.key({ "Mod1" }, "Shift_L", function ) mykeyboardlayout.next_layout(); end)
+
+```
+
+This require you to set up witch keyboard layouts you want to be able to switch between, either by the setxkbmap command or in xorg.
+
 Once you've found the appropiate comand to setup your layouts, add it to [#Autorun programs](#Autorun_programs).
 
 Alternatively, see [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg").

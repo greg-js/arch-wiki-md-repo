@@ -60,7 +60,7 @@
 
 	[http://siag.nu/](http://siag.nu/) || [siag-office](https://aur.archlinux.org/packages/siag-office/)
 
-*   **[SoftMaker Office](https://en.wikipedia.org/wiki/ru:SoftMaker_Office "wikipedia:ru:SoftMaker Office")** — Полноценный, надежный, молниеносный и совместимый с форматами Microsoft Office офисный пакет, предоставляющий текстовый процессор, а также приложения для редактирования электронных таблиц и презентаций
+*   **[SoftMaker Office](https://en.wikipedia.org/wiki/ru:SoftMaker_Office "wikipedia:ru:SoftMaker Office")** — Полноценный, надежный, молниеносный и совместимый с форматами Microsoft Office офисный пакет, предоставляющий текстовый процессор, а также приложения для редактирования электронных таблиц и презентаций. Для запуска программы вам понадобится получить активационный ключ на сайте, нажав download и указав свой email.
 
 	[http://www.freeoffice.com/](http://www.freeoffice.com/) || [freeoffice](https://aur.archlinux.org/packages/freeoffice/)
 

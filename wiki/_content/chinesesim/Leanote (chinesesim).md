@@ -1,21 +1,19 @@
+[Leanote](https://leanote.com/), 不只是笔记!
+
 ## Contents
 
-*   [1 1\. 介绍](#1._.E4.BB.8B.E7.BB.8D)
-*   [2 2\. 为什么我们要创建Leanote?](#2._.E4.B8.BA.E4.BB.80.E4.B9.88.E6.88.91.E4.BB.AC.E8.A6.81.E5.88.9B.E5.BB.BALeanote.3F)
-*   [3 3\. 获取Leanote](#3._.E8.8E.B7.E5.8F.96Leanote)
-*   [4 4\. 相关文档](#4._.E7.9B.B8.E5.85.B3.E6.96.87.E6.A1.A3)
-*   [5 5\. 如何对Leanote进行二次开发](#5._.E5.A6.82.E4.BD.95.E5.AF.B9Leanote.E8.BF.9B.E8.A1.8C.E4.BA.8C.E6.AC.A1.E5.BC.80.E5.8F.91)
-*   [6 6\. 贡献者](#6._.E8.B4.A1.E7.8C.AE.E8.80.85)
-*   [7 7\. 加入我们](#7._.E5.8A.A0.E5.85.A5.E6.88.91.E4.BB.AC)
-*   [8 8\. 捐赠](#8._.E6.8D.90.E8.B5.A0)
-*   [9 9\. 其它相关项目](#9._.E5.85.B6.E5.AE.83.E7.9B.B8.E5.85.B3.E9.A1.B9.E7.9B.AE)
+*   [1 介绍](#.E4.BB.8B.E7.BB.8D)
+*   [2 为什么我们要创建Leanote?](#.E4.B8.BA.E4.BB.80.E4.B9.88.E6.88.91.E4.BB.AC.E8.A6.81.E5.88.9B.E5.BB.BALeanote.3F)
+*   [3 获取Leanote](#.E8.8E.B7.E5.8F.96Leanote)
+*   [4 相关文档](#.E7.9B.B8.E5.85.B3.E6.96.87.E6.A1.A3)
+*   [5 如何对Leanote进行二次开发](#.E5.A6.82.E4.BD.95.E5.AF.B9Leanote.E8.BF.9B.E8.A1.8C.E4.BA.8C.E6.AC.A1.E5.BC.80.E5.8F.91)
+*   [6 贡献者](#.E8.B4.A1.E7.8C.AE.E8.80.85)
+*   [7 加入我们](#.E5.8A.A0.E5.85.A5.E6.88.91.E4.BB.AC)
+*   [8 捐赠](#.E6.8D.90.E8.B5.A0)
+*   [9 其它相关项目](#.E5.85.B6.E5.AE.83.E7.9B.B8.E5.85.B3.E9.A1.B9.E7.9B.AE)
 *   [10 欢迎加入我们!](#.E6.AC.A2.E8.BF.8E.E5.8A.A0.E5.85.A5.E6.88.91.E4.BB.AC.21)
 
-## 1\. 介绍
-
-* * *
-
-Leanote, 不只是笔记!
+## 介绍
 
 特性
 
@@ -40,7 +38,7 @@ Leanote, 不只是笔记!
 
 ```
 
-## 2\. 为什么我们要创建Leanote?
+## 为什么我们要创建Leanote?
 
 我们都曾是Evernote的忠实粉丝, 一直以来Evernote都是我们日常知识管理的有效工具。于是我们决定重新创造一款工具，提供Evernote所能提供的功能，同时弥补Evernote的不足，比如：
 
@@ -54,7 +52,7 @@ Leanote, 不只是笔记!
 
 ```
 
-## 3\. 获取Leanote
+## 获取Leanote
 
 Leanote云笔记产品包括: Leanote Web & Server(即本仓库), 桌面客户端, IOS, android. 4端全部开源!
 
@@ -72,19 +70,19 @@ Leanote云笔记产品包括: Leanote Web & Server(即本仓库), 桌面客户�
 
 ```
 
-## 4\. 相关文档
+## 相关文档
 
 更多详细的安装说明、问题处理和配置说明文档，请查看 [wiki](https://github.com/leanote/leanote/wiki)。
 
-## 5\. 如何对Leanote进行二次开发
+## 如何对Leanote进行二次开发
 
 如果您有兴趣基于Leanote二次开发，请查看 [How-to-develop-Leanote](https://github.com/leanote/leanote/wiki/How-to-develop-leanote-%E5%A6%82%E4%BD%95%E5%BC%80%E5%8F%91leanote)。
 
-## 6\. 贡献者
+## 贡献者
 
 在此对向Leanote贡献力量的[贡献者们](https://github.com/leanote/leanote/graphs/contributors) 表示感谢。Leanote因有你们而更完美!
 
-## 7\. 加入我们
+## 加入我们
 
 欢迎提交[pull requests](https://github.com/leanote/leanote/pulls) 到Leanote。
 
@@ -92,29 +90,23 @@ Leanote云笔记产品包括: Leanote Web & Server(即本仓库), 桌面客户�
 
 Leanote还有很多问题, 如果你喜欢它, 欢迎加入我们一起完善Leanote。
 
-## 8\. 捐赠
+## 捐赠
 
 如果您喜欢我们的产品，请考虑支持我们, 捐赠[Leanote](http://leanote.org/#donate)。
 
 感谢[这些捐赠者](http://leanote.leanote.com/post/leanote-donation-list), 谢谢你们的鼓励, Leanote会一直坚持!
 
-## 9\. 其它相关项目
+## 其它相关项目
 
-```
-   [Leanote Desktop App](https://github.com/leanote/desktop-app), [下载地址](http://app.leanote.com/)
-   [Leanote iOS](https://github.com/leanote/leanote-ios), [从App Store下载](https://itunes.apple.com/zn/app/leanote/id1022302858?mt=8)
-   [Leanote Android](https://github.com/leanote/leanote-android), 开发阶段
-
-```
+*   [Leanote Desktop App](https://github.com/leanote/desktop-app), [下载地址](http://app.leanote.com/)
+*   [Leanote iOS](https://github.com/leanote/leanote-ios), [从App Store下载](https://itunes.apple.com/zn/app/leanote/id1022302858?mt=8)
+*   [Leanote Android](https://github.com/leanote/leanote-android), 开发阶段
 
 ## 欢迎加入我们!
 
 联系&加入我们
 
-```
-   Email: [leanote@leanote.com leanote@leanote.com]
-   [Leanote 社区](http://bbs.leanote.com/)
-   [QQ群](http://leanote.leanote.com/post/Leanote-groups)
-   [Leanote Google Group](https://groups.google.com/forum/#!forum/leanote)
-
-```
+*   Email: [leanote@leanote.com leanote@leanote.com]
+*   [Leanote 社区](http://bbs.leanote.com/)
+*   [QQ群](http://leanote.leanote.com/post/Leanote-groups)
+*   [Leanote Google Group](https://groups.google.com/forum/#!forum/leanote)

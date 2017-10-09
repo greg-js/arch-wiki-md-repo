@@ -2,7 +2,9 @@ Articoli correlati
 
 *   [Dnsmasq](/index.php/Dnsmasq "Dnsmasq")
 *   [Lighttpd](/index.php/Lighttpd "Lighttpd")
+*   [Linux_Containers](/index.php/Linux_Containers "Linux Containers")
 *   [Nginx](/index.php/Nginx "Nginx")
+*   [OpenVPN](/index.php/OpenVPN "OpenVPN")
 
 Pi-hole è un progetto basato su script di shell che gestisce liste di blocco di pubblicità e malware conosciuti e interagisce trasparentemente con dnsmasq per reindirizzare ogni richiesta verso un sostituto. Pi-hole rimpiazza il tuo router come DNS di rete e quindi tutti le richieste saranno gestire da lui senza il bisogno di installare nulla sul lato client. Questa configurazione implementa efficacemente il blocco della pubblicità a livello di rete (es. tutti gli apparati connessi). Il pacchetto offre una webUI ben fatta (unitamente ad una interfaccia CLI) ed è particolarmente leggero e scalabile.
 

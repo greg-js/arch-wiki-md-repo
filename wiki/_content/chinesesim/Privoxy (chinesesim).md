@@ -3,11 +3,9 @@ Related articles
 *   [Tor](/index.php/Tor "Tor")
 *   [Polipo](/index.php/Polipo "Polipo")
 
-[Privoxy](http://www.privoxy.org/) 是一个HTTP协议过滤代理，常结合Tor使用。privoxy是有着先进的过滤能力和保护隐私的代理工具，它可以过滤网页内容，管理cookies，控制访问，除广告、横幅、弹出窗口等等，它同时支持单系统和多用户网络。
+[Privoxy](http://www.privoxy.org/) 是一个 HTTP 协议过滤代理，常结合 Tor 使用。Privoxy 是有着先进的过滤能力和保护隐私的代理工具，它可以过滤网页内容，管理cookies，控制访问，除广告、横幅、弹出窗口等等，它同时支持单系统和多用户网络。
 
-Using Privoxy is necessary when they use a [SOCKS](https://en.wikipedia.org/wiki/SOCKS "wikipedia:SOCKS") proxy directly because browsers leak your DNS requests, which reduces your anonymity.
-
-当使用[SOCKS](https://en.wikipedia.org/wiki/SOCKS "wikipedia:SOCKS")代理直接访问时使用Privoxy是有必要的，因为直接使用socks5访问时，浏览器可能会泄漏泄漏DNS请求，从降低匿名性。
+当用户直接使用 [SOCKS](https://en.wikipedia.org/wiki/SOCKS "wikipedia:SOCKS") 代理访问网络时，浏览器会泄漏 DNS 请求，降低匿名性，这时应该使用 Privoxy。
 
 ## Contents
 
@@ -17,11 +15,11 @@ Using Privoxy is necessary when they use a [SOCKS](https://en.wikipedia.org/wiki
     *   [2.2 转发协议](#.E8.BD.AC.E5.8F.91.E5.8D.8F.E8.AE.AE)
     *   [2.3 广告屏蔽](#.E5.B9.BF.E5.91.8A.E5.B1.8F.E8.94.BD)
 *   [3 使用](#.E4.BD.BF.E7.94.A8)
-*   [4 See also](#See_also)
+*   [4 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
 
-安装[privoxy](https://www.archlinux.org/packages/?name=privoxy)。
+安装 [privoxy](https://www.archlinux.org/packages/?name=privoxy)。
 
 ## 配置
 
@@ -126,7 +124,7 @@ http_proxy="http://localhost:8118"
 
 参看[Proxy_settings](/index.php/Proxy_settings "Proxy settings")
 
-## See also
+## 参阅
 
-*   [Privoxy Official Website](http://www.privoxy.org/)
-*   [Tor Official Website](https://www.torproject.org/index.html.en)
+*   [Privoxy 官方网站](http://www.privoxy.org/)
+*   [Tor 官方网站](https://www.torproject.org/index.html.en)

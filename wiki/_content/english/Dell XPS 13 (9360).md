@@ -186,28 +186,28 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 ### USB-C Compatibility Chart
 
 | **Device** | **Ports** | **Status** |
-| [Apple USB-C Digital AV Multiport Adapter](http://www.apple.com/uk/shop/product/MJ1K2ZM/A/usb-c-digital-av-multiport-adapter) | USB-C, USB-A, HDMI | Not Working |
+| [Anker USB-C to HDMI Adapter](https://www.amazon.com/Anker-Adapter-Supports-Macbook-Chromebook/dp/B01MYUCWOK/) | 4K@60Hz HDMI | Working |
 | [Apple 29W USB-C Power Adapter](http://www.apple.com/uk/shop/product/MJ262B/A/apple-29w-usb-c-power-adapter?fnode=8b) | USB-C Power | Not Working |
 | [Apple 87W USB-C Power Adapter](https://www.apple.com/uk/shop/product/MNF82B/A/87w-usb-c-power-adapter?fnode=8b) | USB-C Power | Working |
-| [Aukey USB C Hub HDMI 4 Port](https://www.amazon.co.uk/gp/product/B01H3K387Q/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) | USB-C, 4xUSB-A, HDMI | Working |
-| [Belkin USB-C to VGA Adapter](http://www.belkin.com/us/p/P-F2CU037/) | VGA | Working |
-| [Dell DA200](https://www.amazon.com/dp/B012DT6KW2) | USB-A, Ethernet, HDMI, VGA | Working |
-| [Dell WD15 130W](https://www.amazon.com/dp/B01FN1YK92) | 3xUSB-A 3.0, 2xUSB-A 2.0, Ethernet, HDMI, Mini DisplayPort, VGA, Line Out, Line In | Working |
-| [StarTech.com tb32dp2 - Thunderbolt 3 Adapter](https://www.amazon.com/dp/B01ANR4CYE) | 2 x DP (4 K, 60 Hz) | Working |
-| [StarTech TBT3TBTADAP Thunderbolt 3 to Thunderbolt Adapter](https://www.amazon.com/StarTech-com-Thunderbolt-Adapter-Compatible-DisplayPort/dp/B019FPJDQ2) | Thunderbolt 2, Thunderbolt | Working |
 | [Apple Thunderbolt 3 (USB-C) to Thunderbolt 2 Adapter](https://www.apple.com/shop/product/MMEL2AM/A/thunderbolt-3-usb-c-to-thunderbolt-2-adapter) | Thunderbolt 2, Thunderbolt | Not Working |
-| [Cable Matters USB-C Multiport Adapter](https://www.amazon.com/dp/B01C316EIK) | 4K HDMI or VGA, USB 3.0, Gigabit Ethernet | Working |
-| [Juiced Systems BizHUB USB-C Multiport Gigabit HDMI Hub](https://www.amazon.com/Juiced-BizHUB-Multiport-Ethernet-Delivery/dp/B01J391C3W) | 4K@30Hz HDMI, 3x USB 3.0, Gigabit Ethernet, USB-C Power, SD, Micro-SD | Working |
-| [Anker USB-C to HDMI Adapter](https://www.amazon.com/Anker-Adapter-Supports-Macbook-Chromebook/dp/B01MYUCWOK/) | 4K@60Hz HDMI | Working |
-| [PCT UHC304](http://www.pct-max.com.tw/cht/products.php?index=289) | HDMI (4K@30Hz, 2K@60Hz), Gigabit Ethernet, USB-A, USB-C | Working |
-| [i-Tec USB-C Dual Display MST Dock](https://www.i-tec-europe.eu/?lng=en&t=3&v=443) | HDMI, DP (4K@30Hz Single Monitor, 1920x1200@60Hz Dual Monitor), Gbit Ethernet, 3xUSB-A, USB-C, Sound, Charging @ 60W | Working |
-| [Tripp Lite USB-C to DVI External Video Adapter](https://www.amazon.com/Tripp-Lite-External-Charging-U444-06N-DGU-C/dp/B01LYQB1XI) | DVI, Gbit Ethernet, USB-A, USB-C PD Charging Port | Working |
-| [StarTech CDP2HD - USB-C to HDMI Adapter](https://www.startech.com/nl/en/AV/usb-c-video-adapters/usb-c-hdmi-adapter~CDP2HD) | HDMI | Working |
-| [Kanex USB-C to HDMI 4K Adapter](https://www.amazon.com/Kanex-USB-C-Adapter-Inches-White/dp/B00VBNSY0S) | HDMI | Working |
-| [QacQoc GN30H USB C HUB Aluminum Multi-Port TYPE C HUB Adapter with 4K HDMI](https://smile.amazon.com/QacQoc-Aluminum-Multi-Port-Charging-Ethernet/dp/B01MU1FFMP) | 4K@30Hz HDMI, 3x USB 3.0, Gigabit Ethernet, USB-C Power, SD, Micro-SD | Working |
-| [Xiaomi USB Type-C to HDMI Multifunction Adapter](https://xiaomi-mi.com/accessories-for-laptops/xiaomi-usb-type-c-to-hdmi-multifunction-adapter/) | 4K HDMI, 1x USB 3.0, USB-C Power | Working |
-| [Dell TB16](https://www.amazon.com/Dell-3GMVT-Thunderbolt-Dock-black/dp/B06XN6XWD7/) | USB-C Power, VGA, mDP, HDMI, DP, Thunderbolt, Ethernet (only 100Mbit Mode) 2x USB 2.0 3x USB 3.0 (Disable Thunderbolt Security in BIOS) | Working |
+| [Apple USB-C Digital AV Multiport Adapter](http://www.apple.com/uk/shop/product/MJ1K2ZM/A/usb-c-digital-av-multiport-adapter) | USB-C, USB-A, HDMI | Not Working |
 | [ARP USB 3.1 C - DVI](https://www.arp.ch/fr/adaptateur-arp-usb-3-1-c-dvi-4044821-5115074) | DVI | Working |
+| [Aukey USB-C Hub HDMI 4 Port](https://www.amazon.co.uk/gp/product/B01H3K387Q/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) | USB-C, 4xUSB-A, HDMI | Working |
+| [Belkin USB-C to VGA Adapter](http://www.belkin.com/us/p/P-F2CU037/) | VGA | Working |
+| [Cable Matters USB-C Multiport Adapter](https://www.amazon.com/dp/B01C316EIK) | 4K HDMI or VGA, USB 3.0, Gigabit Ethernet | Working |
+| [Dell DA200](https://www.amazon.com/dp/B012DT6KW2) | USB-A, Ethernet, HDMI, VGA | Working |
+| [Dell TB16](https://www.amazon.com/Dell-3GMVT-Thunderbolt-Dock-black/dp/B06XN6XWD7/) | USB-C Power, VGA, mDP, HDMI, DP, Thunderbolt, Ethernet (only 100Mbit Mode), 2x USB 2.0, 3x USB 3.0 (Disable Thunderbolt Security in BIOS) | Working |
+| [Dell WD15 130W](https://www.amazon.com/dp/B01FN1YK92) | 3xUSB-A 3.0, 2xUSB-A 2.0, Ethernet, HDMI, Mini DisplayPort, VGA, Line Out, Line In | Working |
+| [i-Tec USB-C Dual Display MST Dock](https://www.i-tec-europe.eu/?lng=en&t=3&v=443) | HDMI, DP (4K@30Hz Single Monitor, 1920x1200@60Hz Dual Monitor), Gbit Ethernet, 3xUSB-A, USB-C, Sound, Charging @ 60W | Working |
+| [Juiced Systems BizHUB USB-C Multiport Gigabit HDMI Hub](https://www.amazon.com/Juiced-BizHUB-Multiport-Ethernet-Delivery/dp/B01J391C3W) | 4K@30Hz HDMI, 3x USB 3.0, Gigabit Ethernet, USB-C Power, SD, Micro-SD | Working |
+| [Kanex USB-C to HDMI 4K Adapter](https://www.amazon.com/Kanex-USB-C-Adapter-Inches-White/dp/B00VBNSY0S) | HDMI | Working |
+| [PCT UHC304](http://www.pct-max.com.tw/cht/products.php?index=289) | HDMI (4K@30Hz, 2K@60Hz), Gigabit Ethernet, USB-A, USB-C | Working |
+| [QacQoc GN30H USB-C HUB Aluminum Multi-Port TYPE C HUB Adapter with 4K HDMI](https://smile.amazon.com/QacQoc-Aluminum-Multi-Port-Charging-Ethernet/dp/B01MU1FFMP) | 4K@30Hz HDMI, 3x USB 3.0, Gigabit Ethernet, USB-C Power, SD, Micro-SD | Working |
+| [StarTech CDP2HD - USB-C to HDMI Adapter](https://www.startech.com/nl/en/AV/usb-c-video-adapters/usb-c-hdmi-adapter~CDP2HD) | HDMI | Working |
+| [StarTech TB32DP2 - Thunderbolt 3 Adapter](https://www.amazon.com/dp/B01ANR4CYE) | 2 x DP (4 K, 60 Hz) | Working |
+| [StarTech TBT3TBTADAP - Thunderbolt 3 to Thunderbolt Adapter](https://www.amazon.com/StarTech-com-Thunderbolt-Adapter-Compatible-DisplayPort/dp/B019FPJDQ2) | Thunderbolt 2, Thunderbolt | Working |
+| [Tripp Lite USB-C to DVI External Video Adapter](https://www.amazon.com/Tripp-Lite-External-Charging-U444-06N-DGU-C/dp/B01LYQB1XI) | DVI, Gbit Ethernet, USB-A, USB-C PD Charging Port | Working |
+| [Xiaomi USB Type-C to HDMI Multifunction Adapter](https://xiaomi-mi.com/accessories-for-laptops/xiaomi-usb-type-c-to-hdmi-multifunction-adapter/) | 4K HDMI, 1x USB 3.0, USB-C Power | Working |
 
 ### Thunderbolt Firmware updates
 

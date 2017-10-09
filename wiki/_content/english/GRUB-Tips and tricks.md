@@ -179,7 +179,7 @@ GRUB_GFXPAYLOAD_LINUX=keep
 
 ```
 
-Multiple resolutions can be specified, including the default `auto`, so it is recommended that you edit the line to resemble `GRUB_GFXMODE=<desired resolution>,<fallback such as 1024x768>,auto`. For more information, refer to [the GRUB gfxmode documentation](https://www.gnu.org/software/grub/manual/html_node/gfxmode.html#gfxmode). The [gfxpayload](https://www.gnu.org/software/grub/manual/html_node/gfxpayload.html#gfxpayload) property will make sure the kernel keeps the resolution.
+Multiple resolutions can be specified, including the default `auto`, so it is recommended that you edit the line to resemble `GRUB_GFXMODE=<desired resolution>,<fallback such as 1024x768>,auto`. For more information, refer to [the GRUB gfxmode documentation](https://www.gnu.org/software/grub/manual/grub/html_node/gfxmode.html). The [gfxpayload](https://www.gnu.org/software/grub/manual/html_node/gfxpayload.html#gfxpayload) property will make sure the kernel keeps the resolution.
 
 **Note:**
 

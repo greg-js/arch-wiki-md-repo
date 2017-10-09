@@ -23,6 +23,7 @@ Guix makes builds more reproducible by running the build process using an unpriv
 
 ```
 # groupadd --system guixbuild
+# uncomment and type e.g.  10  for   *n* below  -->  have ten users  
 # for i in `seq -w 1 *n*`;
   do
     useradd -g guixbuild -G guixbuild           \

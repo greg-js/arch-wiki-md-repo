@@ -39,31 +39,33 @@ Notes:
 
 ## Login manager configuration
 
-In general, you have to edit configuration files in `/etc/pam.d` so that *pam_mount* will be called on login. The correct order of entries in each file is important. It is necessary to edit `/etc/pam.d/system-auth` as shown below. If you use a [display manager](/index.php/Display_manager "Display manager") edit its file too. Example configuration files follow, with the added lines in bold. The `pam_succeed` line before `pam_mount` in session skips `pam_mount` (`success=*n*` means skip the next `*n*` lines) if the `systemd-user` service is running through the PAM stack. This avoids double mount attempts and errors relating to dropped privileges.
+In general, you have to edit configuration files in `/etc/pam.d` so that *pam_mount* will be called on login. The correct order of entries in each file is important. It is necessary to edit `/etc/pam.d/system-login` as shown below. If you use a [display manager](/index.php/Display_manager "Display manager") make sure its file includes `system-login`. Example configuration files follow, with the added lines in bold. The `pam_succeed` line before `pam_mount` in session skips `pam_mount` (`success=*n*` means skip the next `*n*` lines) if the `systemd-user` service is running through the PAM stack. This avoids double mount attempts and errors relating to dropped privileges.
 
- `/etc/pam.d/system-auth` 
+ `/etc/pam.d/system-login` 
 ```
 #%PAM-1.0
 
-auth      required  pam_env.so
-auth      required  pam_unix.so     try_first_pass nullok
-**auth      optional  pam_mount.so**
-auth      optional  pam_permit.so
+auth       required   pam_tally.so         onerr=succeed file=/var/log/faillog
+auth       required   pam_shells.so
+auth       requisite  pam_nologin.so
+**auth       optional   pam_mount.so**
+auth       include    system-auth
 
-account   required  pam_unix.so
-account   optional  pam_permit.so
-account   required  pam_time.so
+account    required   pam_access.so
+account    required   pam_nologin.so
+account    include    system-auth
 
-**password  optional  pam_mount.so**
-password  required  pam_unix.so     try_first_pass nullok sha512 shadow
-password  optional  pam_permit.so
+**password   optional   pam_mount.so**
+password   include    system-auth
 
+session    optional   pam_loginuid.so
 **session [success=1 default=ignore]  pam_succeed_if.so  service = systemd-user quiet**
-**session   optional  pam_mount.so**
-session   required  pam_limits.so
-session   required  pam_env.so
-session   required  pam_unix.so
-session   optional  pam_permit.so
+**session    optional   pam_mount.so**
+session    include    system-auth
+session    optional   pam_motd.so          motd=/etc/motd
+session    optional   pam_mail.so          dir=/var/spool/mail standard quiet
+-session   optional   pam_systemd.so
+session    required   pam_env.so
 ```
 
 ### SLiM

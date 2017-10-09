@@ -1,3 +1,13 @@
+相关文章
+
+*   [fstab](/index.php/Fstab "Fstab")
+*   [分区](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")
+*   [Mount](/index.php/Mount "Mount")
+*   [tmpfs](/index.php/Tmpfs "Tmpfs")
+*   [NFS](/index.php/NFS "NFS")
+*   [Samba](/index.php/Samba "Samba")
+*   [List of applications/Internet#Distributed file systems](/index.php/List_of_applications/Internet#Distributed_file_systems "List of applications/Internet")
+
 **翻译状态：** 本文是英文页面 [File_Systems](/index.php/File_Systems "File Systems") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=File_Systems&diff=0&oldid=448724)可以查看翻译后英文页面的改动。
 
 根据 [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
@@ -43,7 +53,7 @@ Arch Linux支持许多文件系统类型，我们可以为每个磁盘分区设�
 
 *   **[HFS](https://en.wikipedia.org/wiki/Hierarchical_File_System "w:Hierarchical File System")** — **Hierarchical File System** 是苹果公司开发的专有文件系统，在 Mac OS 系统中使用.
 
-	[http://www.opensource.apple.com](http://www.opensource.apple.com) || [hfsprogs](https://www.archlinux.org/packages/?name=hfsprogs)
+	[http://www.opensource.apple.com](http://www.opensource.apple.com) || [hfsprogs](https://aur.archlinux.org/packages/hfsprogs/)
 
 *   **[JFS](/index.php/JFS "JFS")** — IBM 的**日志文件系统（ Journaled File System ）**。这是第一个支持日志的文件系统。它在 IBM AIX® 操作系统中开发了多年，然后被移植到GNU/Linux上。JFS 效率非常高并且 CPU 资源占用率比 GNU/Linux 上的其他任何一个文件系统都要低。并且在格式化、挂载和磁盘检测的时候都非常快，在各方面的表现都非常突出,尤其是与 deadline I/O 调度器结合。不如ext系列或者ReiserFS那样广泛支持，但非常成熟稳定。
 

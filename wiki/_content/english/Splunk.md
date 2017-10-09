@@ -52,7 +52,7 @@ Splunk's installation directory is commonly referred to as $SPLUNKHOME. You may 
 
 ```
 export SPLUNK_HOME =/opt/splunk
-export PATH=$SPLUNK_HOME/bin:$PATH
+export PATH=$PATH:$SPLUNK_HOME/bin
 
 ```
 

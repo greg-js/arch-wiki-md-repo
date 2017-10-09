@@ -133,6 +133,8 @@ options uvcvideo quirks=512
 
 The [openrazer-meta](https://aur.archlinux.org/packages/openrazer-meta/) package enables backlight control capabilities (including effects) and macro controls. You may use [polychromatic](https://aur.archlinux.org/packages/polychromatic/) or [razercommander-git](https://aur.archlinux.org/packages/razercommander-git/) for a GUI to set the keyboard options.
 
+For more information on OpenRazer, see the [Razer peripherals#OpenRazer](/index.php/Razer_peripherals#OpenRazer "Razer peripherals")
+
 # 2014 version
 
 ## Problems

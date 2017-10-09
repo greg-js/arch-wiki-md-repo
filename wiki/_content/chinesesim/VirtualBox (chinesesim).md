@@ -1,18 +1,28 @@
+相关文章
+
+*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
+*   [VirtualBox/Tips and tricks](/index.php/VirtualBox/Tips_and_tricks "VirtualBox/Tips and tricks")
+*   [PhpVirtualBox](/index.php/PhpVirtualBox "PhpVirtualBox")
+*   [VirtualBox Arch Linux Guest On Physical Drive](/index.php/VirtualBox_Arch_Linux_Guest_On_Physical_Drive "VirtualBox Arch Linux Guest On Physical Drive")
+*   [Installing Arch Linux from VirtualBox](/index.php/Installing_Arch_Linux_from_VirtualBox "Installing Arch Linux from VirtualBox")
+*   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
+
 **翻译状态：** 本文是英文页面 [VirtualBox](/index.php/VirtualBox "VirtualBox") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-6-12，点击[这里](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=434334)可以查看翻译后英文页面的改动。
 
-**VirtualBox** 是一个类似 [VMware](/index.php/VMware "VMware") 的虚拟 PC 模拟器，处于不断的开发中。使用 [Qt](/index.php/Qt "Qt") 图形界面，提供了无界面运行和 [SDL](https://en.wikipedia.org/wiki/SDL "wikipedia:SDL") 命令行工具进行运行管理。它包含**guest additions**为一些虚拟系统提供附加功能，包括文件共享、剪贴板和图形加速，支持 “无缝” 窗口整合模式。
+**VirtualBox** 是运行于现有操作系统之上的虚拟机监视器，用途是在特制环境（即虚拟机）里运行操作系统。VirtualBox 处于活跃开发状态，时常会引入新功能。VirtualBox 支持 [Qt](/index.php/Qt "Qt")，[SDL](https://en.wikipedia.org/wiki/SDL "wikipedia:SDL") 与无界面模式运行虚拟机。也支持用 Qt 图形界面和命令行工具管理虚拟机。
 
-[Wikipedia:Virtualbox](https://en.wikipedia.org/wiki/Virtualbox "wikipedia:Virtualbox")
+为了实现某些主体-客体系统间的整合功能，例如共享目录与剪贴板、显卡加速渲染、无缝窗口整合，VirtualBox 需要在某些系统中安装客体机插件（Guest Addition）。
 
 ## Contents
 
-*   [1 在Archlinux中安装VirtualBox的安装步骤](#.E5.9C.A8Archlinux.E4.B8.AD.E5.AE.89.E8.A3.85VirtualBox.E7.9A.84.E5.AE.89.E8.A3.85.E6.AD.A5.E9.AA.A4)
+*   [1 在 Arch 里安装 VirtualBox](#.E5.9C.A8_Arch_.E9.87.8C.E5.AE.89.E8.A3.85_VirtualBox)
     *   [1.1 安装基本软件包](#.E5.AE.89.E8.A3.85.E5.9F.BA.E6.9C.AC.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [1.2 加载VirtualBox的内核模块](#.E5.8A.A0.E8.BD.BDVirtualBox.E7.9A.84.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
-    *   [1.3 在客户端系统访问主机 USB](#.E5.9C.A8.E5.AE.A2.E6.88.B7.E7.AB.AF.E7.B3.BB.E7.BB.9F.E8.AE.BF.E9.97.AE.E4.B8.BB.E6.9C.BA_USB)
-    *   [1.4 Guest 附加光盘](#Guest_.E9.99.84.E5.8A.A0.E5.85.89.E7.9B.98)
-    *   [1.5 扩展组件](#.E6.89.A9.E5.B1.95.E7.BB.84.E4.BB.B6)
-    *   [1.6 使用正确的前端](#.E4.BD.BF.E7.94.A8.E6.AD.A3.E7.A1.AE.E7.9A.84.E5.89.8D.E7.AB.AF)
+    *   [1.2 模块签名](#.E6.A8.A1.E5.9D.97.E7.AD.BE.E5.90.8D)
+    *   [1.3 加载 VirtualBox 内核模块](#.E5.8A.A0.E8.BD.BD_VirtualBox_.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
+    *   [1.4 从客体系统访问主机 USB 设备](#.E4.BB.8E.E5.AE.A2.E4.BD.93.E7.B3.BB.E7.BB.9F.E8.AE.BF.E9.97.AE.E4.B8.BB.E6.9C.BA_USB_.E8.AE.BE.E5.A4.87)
+    *   [1.5 客体机插件光盘](#.E5.AE.A2.E4.BD.93.E6.9C.BA.E6.8F.92.E4.BB.B6.E5.85.89.E7.9B.98)
+    *   [1.6 扩展包](#.E6.89.A9.E5.B1.95.E5.8C.85)
+    *   [1.7 使用正确的前端](#.E4.BD.BF.E7.94.A8.E6.AD.A3.E7.A1.AE.E7.9A.84.E5.89.8D.E7.AB.AF)
 *   [2 在 VirtualBox 中安装 Archlinux](#.E5.9C.A8_VirtualBox_.E4.B8.AD.E5.AE.89.E8.A3.85_Archlinux)
     *   [2.1 在EFI模式下安装](#.E5.9C.A8EFI.E6.A8.A1.E5.BC.8F.E4.B8.8B.E5.AE.89.E8.A3.85)
     *   [2.2 Install the Guest Additions](#Install_the_Guest_Additions)
@@ -80,85 +90,84 @@
     *   [6.31 Failed to insert module](#Failed_to_insert_module)
 *   [7 参阅](#.E5.8F.82.E9.98.85)
 
-## 在Archlinux中安装VirtualBox的安装步骤
+## 在 Arch 里安装 VirtualBox
 
-为了在您的Archlinux中安装VirtualBox，请遵循以下步骤。
+以下步骤可以帮你在 Arch 主体系统里安装 VirtualBox
 
 ### 安装基本软件包
 
-[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 软件包 [virtualbox](https://www.archlinux.org/packages/?name=virtualbox)。从下面选择一个内核模块获取方式
+[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 软件包 [virtualbox](https://www.archlinux.org/packages/?name=virtualbox)。内核模块的安装方式要从下面二选一：
 
-*   如果使用[linux](https://www.archlinux.org/packages/?name=linux)内核，请安装[virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch)
-*   其它内核安装 [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
+*   如果在用默认的 [linux](https://www.archlinux.org/packages/?name=linux) 内核，建议安装[virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch)
+*   如果用了其它的内核，需要安装 [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
 
-要编译 [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) 提供的内核文件，需要同时安装对应的内核头文件(例如安装 [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) 的头文件 [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers)). [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) VirtualBox 或内核更新的时候，DKMS Pacman 钩子会自动编译内核模块。
+为了能基于 [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) 编译内核模块，你还要安装与内核对应的内核头文件（例如[linux-lts](https://www.archlinux.org/packages/?name=linux-lts) 内核的头文件是 [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers)）。[[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) 当 VirtualBox 或内核更新的时候，DKMS 的 Pacman 钩子会自动编译内核模块。
 
-要使用基于 [Qt](/index.php/Qt "Qt") 的图形界面，需要安装 [qt5-x11extras](https://www.archlinux.org/packages/?name=qt5-x11extras) 软件包。如果使用命令行命令，则不需要安装。
+### 模块签名
 
-### 加载VirtualBox的内核模块
+如果你的 Linux 内核是自行编译的，并启用了 `CONFIG_MODULE_SIG_FORCE` 选项，那么你需要用编译内核时所使用的密钥为所有模块签名。
 
-从版本 5.0.16 开始，[virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch) 和 [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) 使用 `systemd-modules-load.service` 在启动时自动加载内核模块。
+进入内核源码目录，执行下面的命令：
 
-**Note:** 如果不希望启动时就加载 VirtualBox 模块，需要屏蔽默认的 `/usr/lib/modules-load.d/virtualbox-host-modules-arch.conf` (或 `-dkms.conf`)。创建一个同名空文件或链接到 `/dev/null`.
+```
+# for module in `ls /lib/modules/$(uname -r)/kernel/misc/{vboxdrv.ko,vboxnetadp.ko,vboxnetflt.ko,vboxpci.ko}` ; do ./scripts/sign-file sha1 certs/signing_key.pem certs/signing_key.x509 $module ; done
 
-VirtualBox 在 Linux 上运行需要使用自己的[内核模块](/index.php/Kernel_modules "Kernel modules")，**vboxdrv**模块必须在虚拟机运行前加载。
+```
 
-手动加载模块:
+**注意:** 哈系算法不必与配置时选择的算法相匹配，但必须被编译进内核。
+
+### 加载 VirtualBox 内核模块
+
+从版本 5.0.16 开始，[virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch) 和 [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) 使用 `systemd-modules-load.service` 在启动时自动加载 VirtualBox 的四个内核模块。若要在安装之后就加载模块，可以手动加载一次，或者干脆重启。
+
+**注意:** 如果希望启动时不自动加载 VirtualBox 模块，需要将默认的 `/usr/lib/modules-load.d/virtualbox-host-modules-arch.conf` (或 `-dkms.conf`) 配置文件屏蔽掉。具体做法是：在 `/etc/modules-load.d` 目录里创建同名的空文件。
+
+在 VirtualBox 所使用的 [内核模块](/index.php/Kernel_modules "Kernel modules") 中，只有 `vboxdrv` 是必须的。该模块必须在虚拟机运行之前加载。
+
+手动加载模块的命令是：
 
 ```
 # modprobe vboxdrv
 
 ```
 
-**Note:** 使用命令前可能需要更新内核模块数据库以避免 'no such file or directory' 错误，执行: `depmod -a`.
+以下模块不是必需的，但如果你不想在使用高级功能（见下）时再操心，建议都加载上。
 
-启动 VirtualBox 图形界面:
+*   `vboxnetadp` 和 `vboxnetflt`：这两个模块在使用[桥接网络](https://www.virtualbox.org/manual/ch06.html#network_bridged)和[host-only 网络](https://www.virtualbox.org/manual/ch06.html#network_hostonly)功能时，都是需要的。具体来说，`vboxnetadp` 模块用于在 VirtualBox 全局配置里为主体机创建虚拟网卡；`vboxnetflt` 模块会在使用了该功能的客体机启动时起作用。
 
-```
-$VirtualBox
+*   `vboxpci`：若要让虚拟机使用主体机的 PCI 设备，那么就需要这个模块。
 
-```
+**注意:** 如果在 VirtualBox 内核模块运行期间你更新了模块（所属的软件包），为了使用新版本，你需要手动重新加载这些模块。在 root 权限下运行 `vboxreload` 即可重新加载。
 
-以下模块是可选的，但建议选上如果您不想在进行一些高级配置时被打扰(如下): `vboxnetadp`, `vboxnetflt` 和`vboxpci`.
+最后，如果你要使用前面提到的 "Host-only 网络" 或是桥接网络功能，请确保 [net-tools](https://www.archlinux.org/packages/?name=net-tools) 已经安装。当VirtualBox 通过 `VBoxManage hostonlyif` 命令或是 GUI 的 *Settings > Network > Host-only Networks > Edit host-only network (space) > Adapter* 选项来配置网络功能时，背后都会调用 `ifconfig` 和 `route` 命令，来为宿主机的虚拟网卡完成 IP 与路由的配置。
 
-*   `vboxnetadp` 和`vboxnetflt` 都是需要的当你使用网桥时 [bridged](https://www.virtualbox.org/manual/ch06.html#network_bridged) or [host-only networking](https://www.virtualbox.org/manual/ch06.html#network_hostonly) feature. More precisely, `vboxnetadp` is needed to create the host interface in the VirtualBox global preferences, and `vboxnetflt` is needed to launch a virtual machine using that network interface.
+### 从客体系统访问主机 USB 设备
 
-*   `vboxpci`是需要的， 当你的虚拟机需要使用一个你的主机上的pci设备时
+将需要运行 VirtualBox 的用户名添加到 `vboxusers` [用户组](/index.php/Group "Group")，USB 设备才能被访问。
 
-**Note:** 如果在virtualbox内核模块运行时你更新了模块，你需要手动重新加载这些模块以使用新版本。为了这么做，请在 root 权限下运行 `vboxreload`
+### 客体机插件光盘
 
-最后，如果你使用前面提到的 "Host-only" 或是 "bridge networking" 功能，请确保 [net-tools](https://www.archlinux.org/packages/?name=net-tools) 已经安装。VirtualBoxt 为主机接口配置命令 `VBoxManage hostonlyif` 使用 `ifconfig` 和 `route` 来定位 IP 和 route，或通过 GUI 的*Settings > Network > Host-only Networks > Edit host-only network (space) > Adapter*选项。
+建议在运行 VirtualBox 的主机系统上安装 [virtualbox-guest-iso](https://www.archlinux.org/packages/?name=virtualbox-guest-iso) 软件包。这个包里有个 `.iso` 镜像文件，用来为 Arch 之外的客体系统安装插件。镜像文件的位置在 `/usr/lib/virtualbox/additions/VBoxGuestAdditions.iso`，手动在虚拟机的虚拟光驱里加载这个文件之后，即可在客体机里安装插件。
 
-### 在客户端系统访问主机 USB
+### 扩展包
 
-将需要运行 Virtualbox 的用户名添加到 **vboxusers** [用户组](/index.php/Group "Group")，USB 设备才能被访问。
+Oracle Extension Pack 为虚拟机提供了[额外功能](https://www.virtualbox.org/manual/ch01.html#intro-installing)。但它并不是以自由软件协议发布的，*仅供个人使用*。这些扩展包可以从 [virtualbox-ext-oracle](https://aur.archlinux.org/packages/virtualbox-ext-oracle/) 安装，从 [seblu](/index.php/Unofficial_user_repositories#seblu "Unofficial user repositories") 仓库可以安装编译好的版本。
 
-### Guest 附加光盘
-
-建议在运行VirtualBox 的主机系统上安装[virtualbox-guest-iso](https://www.archlinux.org/packages/?name=virtualbox-guest-iso) 软件包 。 这个包是一个磁盘镜像，用来安装虚拟系统的附加功能。 这个 *.iso* 文件会被定位在 `/usr/lib/virtualbox/additions/VBoxGuestAdditions.iso`，也许需要手动在虚拟机中加载，当挂载之后你可以安装增强工具。
-
-### 扩展组件
-
-Oracle 的扩展组件以仅供个人使用的协议发布，在这里提供 [additional features](https://www.virtualbox.org/manual/ch01.html#intro-installing)。安装 [virtualbox-ext-oracle](https://aur.archlinux.org/packages/virtualbox-ext-oracle/) 可获得这些组件, 已编译的版本可以在 [seblu](/index.php/Unofficial_user_repositories#seblu "Unofficial user repositories")仓库找到。
-
-如果你喜欢使用传统的手动方法：手动下载扩展组件并通过 GUI 安装 (*File > Preferences > Extensions*) 或通过 `VBoxManage extpack install <.vbox-extpack>`命令来安装, 请确保你拥有 toolkit (like [Polkit](/index.php/Polkit "Polkit"), gksu, etc.) 来获准进入 VirtualBox。安装过程 [需要 root 权限](https://www.virtualbox.org/ticket/8473).
+如果你喜欢使用传统的手动方法来安装扩展包：通过 GUI 下载并安装 (*File > Preferences > Extensions*) 或着手动下载后用 `VBoxManage extpack install <.vbox-extpack>` 命令来安装。你需要某种方式（例如 [Polkit](/index.php/Polkit "Polkit")，gksu 等等）在安装时为 VirtualBox 授予 [root 权限](https://www.virtualbox.org/ticket/8473)。
 
 ### 使用正确的前端
 
-恭喜你！现在，你已经准备好使用VirtualBox了。
+VirtualBox 自带三个前端：
 
-这里有多个前端提供给您，其中两个是默认提供:
+*   如果你想通过常规 GUI 使用 VirtualBox，使用 `VirtualBox` 命令来启动 VirtualBox。
+*   如果你想在命令行下启动与管理 VirtualBox，可以使用 `VBoxSDL` 命令。从 VBoxSDL 启动的虚拟机，其窗口仅包含虚拟机的画面，没有菜单或是其他控制项。
+*   如果你想使用不想由任何 GUI（例如在服务器上）来使用 VirtualBox，使用 `VBoxHeadless` 命令。如果还想登录到这种虚拟机的图形界面，就需要安装 VRDP 扩展。
 
-*   如果你只想在命令行下使用 VirtualBox (只想启动现有的虚拟机或是更改一些配置)，你可以使用 `VBoxSDL` 命令。VBoxSDL 仅仅提供一个简单的窗口包含所有虚拟机，没有菜单或是其他控制项。
-*   如果你想使用命令行并且不使用任何 GUI (例如在服务器上) 来创建、运行和配置虚拟机，使用 `VBoxHeadless` 命令，不会有任何图形输出，但是仅仅使用 VRDP 数据(安装扩展模块之后才能使用)
+如果你想通过 web 界面来管理虚拟机，可以安装 [PhpVirtualBox](/index.php/PhpVirtualBox "PhpVirtualBox")。
 
-如果你安装了 [qt5-x11extras](https://www.archlinux.org/packages/?name=qt5-x11extras)这一可选依赖，你可以运行 `VirtualBox` 来获得一个美观易用的图形界面并能够使用鼠标。
+若要了解如何创建虚拟机，可以查阅 [VirtualBox 手册](https://www.virtualbox.org/manual)。
 
-最后你可以使用 [PhpVirtualBox](/index.php/PhpVirtualBox "PhpVirtualBox") 来通过网页界面来管理你的虚拟机。
-
-查阅 [VirtualBox manual](https://www.virtualbox.org/manual) 来了解如何创建虚拟机。
-
-**Warning:** 如果你打算在 [Btrfs](/index.php/Btrfs "Btrfs") 文件系统上存储虚拟硬盘镜像在创建任何镜像之前，你应该考虑在镜像的目标文件夹中关闭[Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs")
+**Warning:** 如果你想把在虚拟机的硬盘镜像放到 [Btrfs](/index.php/Btrfs "Btrfs") 文件系统上，在创建镜像之前，你应该考虑为镜像所处的文件夹关闭[写时复制](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs")。
 
 ## 在 VirtualBox 中安装 Archlinux
 

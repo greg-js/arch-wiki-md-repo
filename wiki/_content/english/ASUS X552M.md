@@ -65,6 +65,8 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ## Settings
 
+**Warning:** Intel Baytrail CPU is known to provoque complete system freeze until [this bug](https://bugzilla.kernel.org/show_bug.cgi?id=109051) is fixed in the kernel
+
 #### Video
 
 Laptop comes with two GPU's (main [INTEL](/index.php/Intel_graphics "Intel graphics") and dedicated [NVIDIA](/index.php/NVIDIA "NVIDIA")):

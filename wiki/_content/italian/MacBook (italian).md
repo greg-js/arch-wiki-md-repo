@@ -1,3 +1,8 @@
+Articoli correlati
+
+*   [Installation guide](/index.php/Installation_guide "Installation guide")
+*   [Post Installation Tips](/index.php/Post_Installation_Tips "Post Installation Tips")
+
 La procedura per installare Arch Linux su un Macbook è molto simile a quella valida per qualsiasi altro computer. Nonostante ciò, a causa di alcuni componenti hardware specifici del MacBook, bisogna prendere dei particolari accorgimenti. Per informazioni generali sull'installazione, vedi [Installation guide](/index.php/Installation_guide "Installation guide"). Queste istruzioni sono da considerarsi valide per qualsiasi computer Apple il cui harware sia supportato dal kernel Linux. Si consiglia di leggere i relativi articoli (in alto a destra nella pagina), per la risoluzione dei problemi di specifiche versioni di MacBook.
 
 ## Contents
@@ -90,7 +95,7 @@ Se non si è sicuri sulla modalità da scegliere, consigliamo un dualboot, per p
 
 Questa è la soluzione più semplice da realizzare. Il partizionamento si esegue come su qualsiasi altro computer su cui Arch Linux può essere installato. L'unico accorgimento particolare va preso per il suono del boot . Per assicurarsi che questo suono non sia presente, premere **mute** in OS X prima di procedere. Il firmware memorizzerà questa impostazione, se possibile. Bisogna tener presente che se si elimina la partizione OS X non vi è un modo semplice di aggiornare il firmware, a meno che non si esegua OS X da un drive esterno. Lo si può eseguire con EFI (raccomandato) o in modalità BIOS compatibile, nel dubbio scegliere EFI.
 
-Per installare usando EFI, seguire le istruzioni [instruction to make a EFI bootable media](/index.php/Unified_Extensible_Firmware_Interface#Create_UEFI_bootable_USB_from_ISO "Unified Extensible Firmware Interface"). Una volta fatto verificare che il dispositivo USB parta in modalità EFI [checking the EFI kernel variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Variables_Support "Unified Extensible Firmware Interface"). Si dovrà formattare la partizione EFI con `hfsplus` filesystem ([hfsprogs](https://www.archlinux.org/packages/?name=hfsprogs)) anzichè vfat altrimenti [mactel-boot](https://aur.archlinux.org/packages/mactel-boot/) non funzionerà, e su un MacBook non si può usare efibootmgr..
+Per installare usando EFI, seguire le istruzioni [instruction to make a EFI bootable media](/index.php/Unified_Extensible_Firmware_Interface#Create_UEFI_bootable_USB_from_ISO "Unified Extensible Firmware Interface"). Una volta fatto verificare che il dispositivo USB parta in modalità EFI [checking the EFI kernel variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Variables_Support "Unified Extensible Firmware Interface"). Si dovrà formattare la partizione EFI con `hfsplus` filesystem ([hfsprogs](https://aur.archlinux.org/packages/hfsprogs/)) anzichè vfat altrimenti [mactel-boot](https://aur.archlinux.org/packages/mactel-boot/) non funzionerà, e su un MacBook non si può usare efibootmgr..
 
 #### EFI
 

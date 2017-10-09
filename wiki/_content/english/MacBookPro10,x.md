@@ -1,3 +1,9 @@
+Related articles
+
+*   [Installation guide](/index.php/Installation_guide "Installation guide")
+*   [General recommendations](/index.php/General_recommendations "General recommendations")
+*   [Mac](/index.php/Mac "Mac")
+
 This page should help you setting up ArchLinux on a [MacBook Pro 10,1 with Retina display](https://en.wikipedia.org/wiki/MacBook_Pro#Third_generation_.28Retina.29 "wikipedia:MacBook Pro"). Most of the steps are the same or very similar to the regular ArchLinux installation. However, because this is very new hardware, the setup requires a few different steps. The general installation guidelines are descibed in [Mac](/index.php/Mac "Mac").
 
 **Note:** To have all hardware supported, you should run this Notebook with Kernel 3.7 or newer.
@@ -27,7 +33,7 @@ This page should help you setting up ArchLinux on a [MacBook Pro 10,1 with Retin
             *   [3.2.4.1 Switch to Intel integrated GPU and turn off discrete Nvidia GPU](#Switch_to_Intel_integrated_GPU_and_turn_off_discrete_Nvidia_GPU)
             *   [3.2.4.2 Keeping the discrete GPU off at boot](#Keeping_the_discrete_GPU_off_at_boot)
         *   [3.2.5 Graphic artifacting under b43-firmware](#Graphic_artifacting_under_b43-firmware)
-    *   [3.3 Sound](#Sound)
+    *   [3.3 Sound and microphone](#Sound_and_microphone)
     *   [3.4 Touchpad](#Touchpad)
     *   [3.5 Memory Card (SDHCI/SDX) Reader](#Memory_Card_.28SDHCI.2FSDX.29_Reader)
 *   [4 What does not work (early August 2013, 3.10.3-1)](#What_does_not_work_.28early_August_2013.2C_3.10.3-1.29)
@@ -232,11 +238,20 @@ If you want to keep the discrete GPU off at boot, see [systemd-vgaswitcheroo-uni
 
 While on integrated graphics with the b43-firmware package, you might encounter moderate to severe graphic artifacting that appears to be correlated to wireless network traffic. (disconnected->no artifacting, connected->periodic artifacting, large transfer->severe artifacting/unusuable) This can be resolved by removing/blacklisting [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) and using either [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms).
 
-### Sound
+### Sound and microphone
 
-On the MacBookPro10,2 you may need to use the 'snd_hda_intel' driver with the model option 'mbp101'. This model option goes in the modprobe configuration and is undocumented in the list of models available online, but it work admirably. (Until you do this, it will look it is working because you will be able to get sound out through HDMI, but /not/ the built-in speakers.)
+On the MacBookPro10,2 you may need to use the 'snd_hda_intel' driver with the model option 'mbp101'. This model option goes in the modprobe configuration; for example, add the following to /etc/modprobe.d/alsa-base.conf ([forum post](https://bbs.archlinux.org/viewtopic.php?pid=1195946#p1195946)):
 
-**Note:** **As of September 2013** this no longer appears to be required; this should work automatically.
+```
+ options snd-hda-intel model=mbp101
+
+```
+
+Note this model option is undocumented in the list of models available online, but it works admirably. (Until you do this, the sound may seem fine through HDMI, but the built-in speakers and internal microphone may not work properly.)
+
+**Note:** Reports **as of September 2013** suggest this model option is no longer required and should work automatically; but **as of October 2017** it still appears to be required for the microphone (but not the speakers).
+
+For additional microphone troubleshooting tips, see [Advanced_Linux_Sound_Architecture/Troubleshooting#Microphone](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Microphone "Advanced Linux Sound Architecture/Troubleshooting").
 
 ### Touchpad
 

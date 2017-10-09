@@ -210,7 +210,7 @@ First of all you need an [Android SDK](/index.php/Android "Android") and NDK. In
 *   [android-qt5-x86](https://aur.archlinux.org/packages/android-qt5-x86/) - x86
 *   [android-qt5-x86_64](https://aur.archlinux.org/packages/android-qt5-x86_64/) - x86_64
 
-Or you can use [QT Installer](http://download.qt.io/official_releases/qt/5.9/5.9.1/qt-opensource-linux-x64-5.9.1.run).
+Or you can use [QT Installer](http://download.qt.io/official_releases/qt/5.9/5.9.2/qt-opensource-linux-x64-5.9.2.run).
 
 ### Tools
 
