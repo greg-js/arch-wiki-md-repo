@@ -9,9 +9,7 @@ Related articles
 *   [1 Installation](#Installation)
 *   [2 Rofi as dmenu replacement](#Rofi_as_dmenu_replacement)
 *   [3 Custom Themes](#Custom_Themes)
-    *   [3.1 Official Theme Generator](#Official_Theme_Generator)
-    *   [3.2 Contributed Themes](#Contributed_Themes)
-    *   [3.3 Rofi Theme](#Rofi_Theme)
+    *   [3.1 Contributed Themes](#Contributed_Themes)
 
 ## Installation
 
@@ -37,18 +35,12 @@ rofi -show run -modi run -location 1 -width 100 \
 
 ```
 
-**Tip:** You can add the `-dump-xresources` flag above, save the text output to a file and upload it to the [official theme generator](https://davedavenport.github.io/rofi/p11-Generator.html) to further customize the above theme.
-
 ## Custom Themes
 
-### Official Theme Generator
-
-See the [official theme generator](https://davedavenport.github.io/rofi/p11-Generator.html).
+1.  Requires the [xorg-xrdb](https://www.archlinux.org/packages/?name=xorg-xrdb) package.
+2.  Add your customisations to your [.Xresources file](/index.php/X_resources "X resources") (see below for examples).
+3.  Reload .Xresources with `xrdb -load ~/.Xresources`.
 
 ### Contributed Themes
 
 See the official [rofi-themes](https://github.com/DaveDavenport/rofi-themes) repository for a list of custom themes.
-
-### Rofi Theme
-
-Require xorg-xrdb installed. Choose one theme you like [Rofi Theme](https://davedavenport.github.io/rofi/p05-Themes.html) Copy code to ~/.Xresources Reload .Xresources file by xrdb -load ~/.Xresources or restart your computer it will works. If you don't understand, you can watch this video [Youtube](https://youtu.be/r4EYovtjLCk)

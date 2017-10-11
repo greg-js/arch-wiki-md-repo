@@ -59,6 +59,7 @@ account    include    system-auth
 password   include    system-auth
 
 session    optional   pam_loginuid.so
+session    optional   pam_keyinit.so       force revoke
 **session [success=1 default=ignore]  pam_succeed_if.so  service = systemd-user quiet**
 **session    optional   pam_mount.so**
 session    include    system-auth

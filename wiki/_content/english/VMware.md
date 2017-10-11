@@ -39,6 +39,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
         *   [5.6.3 Kernel modules fail to build after Linux 4.9](#Kernel_modules_fail_to_build_after_Linux_4.9)
         *   [5.6.4 vmware modules fail to build on kernel 4.11+ and GCC 7](#vmware_modules_fail_to_build_on_kernel_4.11.2B_and_GCC_7)
         *   [5.6.5 Kernel modules fail to build on Linux 4.13](#Kernel_modules_fail_to_build_on_Linux_4.13)
+        *   [5.6.6 Failed to lock page for guest RAM on Linux 4.13](#Failed_to_lock_page_for_guest_RAM_on_Linux_4.13)
     *   [5.7 Installer Fails to Start](#Installer_Fails_to_Start)
         *   [5.7.1 User interface initialization failed](#User_interface_initialization_failed)
     *   [5.8 VMware Fails to Start](#VMware_Fails_to_Start)
@@ -423,6 +424,19 @@ On VMware Workstation Pro 12.5.7, the module source needs to be modified to be s
 # rm -r vmnet-only
 
 ```
+
+#### Failed to lock page for guest RAM on Linux 4.13
+
+VMware Workstation Pro versions from 12.5 up to 14.0 can lock up both guest and host systems while running a virtual machine under kernel 4.13 without a patch to the `vmmon` module due to the virtual machine being unable to reserve memory on the host machine. The VM-specific log files show the following errors:
+
+```
+I125: [msg.monitorInit.mem.lockFailed] The virtual machine is unable to reserve memory.
+...
+E105: PANIC: Failed to lock page for guest RAM!
+
+```
+
+A collection of patches needed for the VMware host modules to build against recent kernels can be found from the following GitHub repository, [vmware-host-modules](https://github.com/mkubecek/vmware-host-modules/tree/b50848c985f1a6c0a341187346d77f0119d0a835).
 
 ### Installer Fails to Start
 

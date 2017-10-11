@@ -645,7 +645,7 @@ to use the general (QT) UI.
 
 ### Problems with finding shared libraries after update
 
-The xmonad executable is located in `~/.xmonad/`. After upgrading xmonad, an old executable might persist and need in that case be removed for xmonad to compile a new executable.
+The xmonad executable is located in `~/.xmonad/`. After upgrading xmonad, an old executable might persist and need in that case be removed for xmonad to compile a new executable. Alternatively use `xmonad --recompile`
 
 ## See also
 

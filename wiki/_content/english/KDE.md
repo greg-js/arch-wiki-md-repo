@@ -118,7 +118,7 @@ See [Official repositories#kde-unstable](/index.php/Official_repositories#kde-un
 
 ## Starting Plasma
 
-**Note:** Although it is possible to launch Plasma under [Wayland](/index.php/Wayland "Wayland"), there are some missing features and known problems as of Plasma 5.10\. See the [Plasma 5.10 Errata](https://community.kde.org/Plasma/5.10_Errata#Wayland) for a list of issues and the [Plasma on Wayland workboard](https://phabricator.kde.org/project/board/99/) for the current state of development. Use [Xorg](/index.php/Xorg "Xorg") for the most complete and stable experience.
+**Note:** Although it is possible to launch Plasma under [Wayland](/index.php/Wayland "Wayland"), there are some missing features and known problems as of Plasma 5.11\. See the [Plasma 5.11 Errata](https://community.kde.org/Plasma/5.11_Errata#Wayland) for a list of issues and the [Plasma on Wayland workboard](https://phabricator.kde.org/project/board/99/) for the current state of development. Use [Xorg](/index.php/Xorg "Xorg") for the most complete and stable experience.
 
 Plasma can be started either using a [display manager](/index.php/Display_manager "Display manager"), or from the console.
 
@@ -210,6 +210,13 @@ then select the panel with the plus-sized cursor. [[2]](https://forum.kde.org/vi
 for WID in $(xwininfo -root -tree | sed '/"Plasma": ("plasmashell" "plasmashell")/!d; s/^  *\([^ ]*\) .*/\1/g'); do
    xprop -id $WID -remove _KDE_NET_WM_SHADOW
 done
+
+```
+
+Set execution permissions for the script:
+
+```
+$ sudo chmod 755 /usr/local/bin/kde-no-shadow
 
 ```
 

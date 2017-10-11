@@ -683,7 +683,7 @@ Download and install the for-4.4 branch from [SourceForge](http://sourceforge.ne
 
 ```
  # rmmod wacom
- # insmod /lib/modules/YOUR_KERNEL/extra/wacom.ko.gz
+ # insmod /lib/modules/YOUR_KERNEL/kernel/drivers/hid/wacom.ko.gz
 
 ```
 

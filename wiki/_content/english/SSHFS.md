@@ -86,6 +86,8 @@ $ sshfs myuser@mycomputer:/remote/path /local/path -o idmap=user
 
 If you need more control over UID and GID translation, look at the options `idmap=file`, `uidfile` and `gidfile`.
 
+A complete list of options can be found in [sshfs(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sshfs.1).
+
 ## Chrooting
 
 You may want to restrict a specific user to a specific directory on the remote system. This can be done by editing `/etc/ssh/sshd_config`:

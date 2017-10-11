@@ -67,6 +67,7 @@ Related articles
     *   [5.12 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
     *   [5.13 Power Manager Plugin shows battery time and remaining percentage](#Power_Manager_Plugin_shows_battery_time_and_remaining_percentage)
     *   [5.14 User switching action button is greyed out](#User_switching_action_button_is_greyed_out)
+    *   [5.15 Macros in .Xresources not working](#Macros_in_.Xresources_not_working)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -715,6 +716,10 @@ A possible workaround is to create an executable script called *gdmflexiserver* 
 
 *   For LXDM - [LXDM#Simultaneous users and switching users](/index.php/LXDM#Simultaneous_users_and_switching_users "LXDM").
 *   For LightDM - [LightDM#User switching](/index.php/LightDM#User_switching "LightDM").
+
+### Macros in .Xresources not working
+
+Xfce loads `$HOME/.Xresources` file using `xrdb`, but with `-nocpp` option to skip preprocessing. For macros to work properly, copy `/etc/xdg/xfce4/xinitrc` to `$HOME/.config/xfce4` directory and remove `-nocpp` option to `xrdb` from the resulting file. See [this thread](https://bbs.archlinux.org/profile.php?id=104121).
 
 ## See also
 

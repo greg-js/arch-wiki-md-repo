@@ -1,3 +1,11 @@
+Related articles
+
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
+*   [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg")
+*   [Extra keyboard keys in console](/index.php/Extra_keyboard_keys_in_console "Extra keyboard keys in console")
+*   [Xbindkeys](/index.php/Xbindkeys "Xbindkeys")
+
 *xmodmap* is a utility for modifying keymaps and pointer button mappings in [Xorg](/index.php/Xorg "Xorg").
 
 *xmodmap* is not directly related to [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") (XKB), as it uses different (pre-XKB) ideas on how *keycodes* are processed within X. Generally, it is only recommended for the simplest tasks. See [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") for advanced layout configuration.
@@ -38,7 +46,7 @@ There are two types of keyboard values in [Xorg](/index.php/Xorg "Xorg"): *keyco
 
 ## Installation
 
-*xmodmap* can be [installed](/index.php/Pacman "Pacman") through the [xorg-xmodmap](https://www.archlinux.org/packages/?name=xorg-xmodmap) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+*xmodmap* can be [installed](/index.php/Pacman "Pacman") through the [xorg-xmodmap](https://www.archlinux.org/packages/?name=xorg-xmodmap) package.
 
 Optionally, install [xkeycaps](https://www.archlinux.org/packages/?name=xkeycaps), which is a graphical front-end to *xmodmap*.
 

@@ -150,6 +150,8 @@ With these example commands, we will create a basic boot environment compatible 
 
 ```
 
+**Note:** You will need to enable ACL support on the pool that will house `/var/log/journal`, i.e. `zfs set acltype=posixacl ...`. See [Systemd#systemd-tmpfiles-setup.service fails to start at boot](/index.php/Systemd#systemd-tmpfiles-setup.service_fails_to_start_at_boot "Systemd") for more information.
+
 ### Configure the root filesystem
 
 If you have just created your zpool, it will be mounted in a dir at the root of your tree named after the pool (ie /zroot). If the following set commands fail, you may need to unmount any ZFS filesystems first:

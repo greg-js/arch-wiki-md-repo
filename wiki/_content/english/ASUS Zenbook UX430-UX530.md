@@ -55,7 +55,7 @@ See [Libinput](/index.php/Libinput "Libinput").
 
 You may notice that the audio through the headphones is noticeably low ([upstream bug](https://bugs.launchpad.net/ubuntu/+source/alsa-driver/+bug/1648183)).
 
-In order to fix it, install [hda-verb](https://aur.archlinux.org/packages/hda-verb/) and create file:
+In order to fix it, install [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) or [hda-verb](https://aur.archlinux.org/packages/hda-verb/) and create file:
 
  `/usr/local/bin/fix_headphones_audio.sh` 
 ```
@@ -86,7 +86,7 @@ And finally, [start and enable](/index.php/Systemd#Using_units "Systemd") `fix_h
 
 ## Fan spins all the time
 
-See [Fan speed control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control") to fix fan behaviour.
+See [Fan speed control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control") and [here](https://github.com/hirschmann/nbfc/issues/342#issuecomment-335388009) to fix fan behaviour.
 
 ## Microcode
 
@@ -122,4 +122,4 @@ The laptop comes with Windows 10 preinstalled and the activation key is hardcode
 
 ```
 
-**Note:** Microsoft online support confirmed that the code is valid, but because you are unable to activate it (Windows fails to activate and asks for another code), they offered 2 options - replace activation code with another one for 40$ or contact OEM (ASUS) about this issue.
+**Note:** Microsoft online support confirmed that the code is valid, but because you are unable to activate it (Windows fails to activate and asks for another code), they offered 2 options - replace activation code with another one for 40$ or contact OEM (ASUS) about this issue.ASUS confirmed, that in order to "use" this activation key, you need to bring this laptop to repair service so they can "restore" system using ASUS OEM Windows 10 image. They do not provide this image for download.

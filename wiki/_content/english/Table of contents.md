@@ -140,7 +140,7 @@
 | <small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(76)</small> |
 | <small>6.7.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(16)</small> |
 | <small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(38)</small> |
-| <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(32)</small> |
+| <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(31)</small> |
 | <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(20)</small> |
 | <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(70)</small> |
 | <small>6.11.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(26)</small> |

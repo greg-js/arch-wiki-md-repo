@@ -1,4 +1,4 @@
-[Mercurial](http://mercurial.selenic.com/) (commonly referred to as **hg**) is a distributed version control system written in Python and is similar in many ways to [Git](/index.php/Git "Git"), [Bazaar](http://bazaar.canonical.com/) and [Darcs](/index.php/Darcs "Darcs").
+[Mercurial](https://www.mercurial-scm.org/) (commonly referred to as **hg**) is a distributed version control system written in Python and is similar in many ways to [Git](/index.php/Git "Git"), [Bazaar](http://bazaar.canonical.com/) and [Darcs](/index.php/Darcs "Darcs").
 
 ## Contents
 

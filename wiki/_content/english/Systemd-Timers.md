@@ -12,7 +12,7 @@ Timers are [systemd](/index.php/Systemd "Systemd") unit files whose name ends in
 *   [1 Timer units](#Timer_units)
 *   [2 Service unit](#Service_unit)
 *   [3 Management](#Management)
-*   [4 Example](#Example)
+*   [4 Examples](#Examples)
     *   [4.1 Monotonic timer](#Monotonic_timer)
     *   [4.2 Realtime timer](#Realtime_timer)
 *   [5 Transient .timer units](#Transient_.timer_units)
@@ -54,9 +54,9 @@ Fri 2014-07-11 00:00:00 CEST  15h left    Thu 2014-07-10 00:00:13 CEST  8h ago  
 *   The status of a service started by a timer will likely be inactive unless it is currently being triggered.
 *   If a timer gets out of sync, it may help to delete its `stamp-*` file in `/var/lib/systemd/timers`. These are zero length files which mark the last time each timer was run. If deleted, they will be reconstructed on the next start of their timer.
 
-## Example
+## Examples
 
-No change to a service unit file is needed to schedule it with a timer. The following example schedules `foo.service` to be run with a corresponding timer called `foo.timer`.
+A service unit file can be scheduled with a timer out-of-the-box. The following examples schedule `foo.service` to be run with a corresponding timer called `foo.timer`.
 
 ### Monotonic timer
 
@@ -78,7 +78,7 @@ WantedBy=timers.target
 
 ### Realtime timer
 
-A timer which starts once a week (at 12:00am on Monday). It starts once immediately if it missed the last start time (option `Persistent=true`), for example due to the system being powered off:
+A timer which starts once a week (at 12:00am on Monday). When activated, it triggers the service immediately if it missed the last start time (option `Persistent=true`), for example due to the system being powered off:
 
  `/etc/systemd/system/foo.timer` 
 ```
@@ -93,14 +93,23 @@ Persistent=true
 WantedBy=timers.target
 ```
 
-The format controlling `OnCalendar` events uses the following format when more specific dates and times are required: `DayOfWeek Year-Month-Day Hour:Minute:Second`. An asterisk may be used to specify any value and commas may be used to list possible values. Two values separated by `..` may be used to indicate a contiguous range. In this example the service is run the first four days of each month at 12:00 PM, but *only* if that day is also on a Monday or a Tuesday. More information is available in [systemd.time(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.time.7).
+When more specific dates and times are required, `OnCalendar` events uses the following format:
+
+```
+`DayOfWeek Year-Month-Day Hour:Minute:Second`
+
+```
+
+An asterisk may be used to specify any value and commas may be used to list possible values. Two values separated by `..` indicate a contiguous range.
+
+In the below example the service is run the first four days of each month at 12:00 PM, but *only* if that day is a Monday or a Tuesday. More information is available in [systemd.time(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.time.7).
 
 ```
 OnCalendar=Mon,Tue *-*-01..04 12:00:00
 
 ```
 
-**Tip:** Special event expressions like `daily` and `weekly` refer to *specific start times* and thus any timers sharing such calendar events will start simultaneously. Timers sharing start events can cause poor system performance if the timers' services compete for system resources. The `RandomizedDelaySec` option avoids this problem by randomly staggering the start time of each timer. See [systemd.timer(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5).
+**Tip:** Special event expressions like `daily` and `weekly` refer to *specific start times* and thus any timers sharing such calendar events will start simultaneously. Timers sharing start events can cause poor system performance if the timers' services compete for system resources. The `RandomizedDelaySec` option in the `[Timer]` section avoids this problem by randomly staggering the start time of each timer. See [systemd.timer(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5).
 
 ## Transient .timer units
 
@@ -187,7 +196,7 @@ Then simply [edit](/index.php/Edit "Edit") the service you want emails for and a
 
 Several of the caveats can be worked around by installing a package that parses a traditional crontab to configure the timers. [systemd-cron-next](https://aur.archlinux.org/packages/systemd-cron-next/) and [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/) are two such packages. These can provide the missing `MAILTO` feature.
 
-If you like crontabs just because they provide a unified view of all scheduled jobs, `systemctl` can provide this. See [#Management](#Management).
+Also, like with crontabs, a unified view of all scheduled jobs can be obtained with `systemctl`. See [#Management](#Management).
 
 ## See also
 

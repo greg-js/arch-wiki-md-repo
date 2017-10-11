@@ -485,6 +485,8 @@ $ gpg-connect-agent reloadagent /bye
 
 The command should print `OK`.
 
+However in some cases only the restart may not be sufficient, like when `keep-screen` has been added to the agent configuration. In this case you firstly need to kill the ongoing gpg-agent process and then you can restart it as was explained above.
+
 ### pinentry
 
 Finally, the agent needs to know how to ask the user for the password. This can be set in the gpg-agent configuration file.

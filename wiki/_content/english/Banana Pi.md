@@ -130,7 +130,7 @@ $ source my_uboot/bin/activate
 
 ```
 
-Then compile again as below.
+Then compile again as above.
 
 If everything went fine you should have an U-Boot image: u-boot-sunxi-with-spl.bin. Now dd the image to your sdcard, where /dev/sdX is your sdcard.
 

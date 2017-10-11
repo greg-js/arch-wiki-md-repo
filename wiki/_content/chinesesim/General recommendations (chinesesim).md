@@ -374,7 +374,7 @@ Linux 下的图形界面基本都使用 [GTK+](/index.php/GTK%2B "GTK+") 或者 
 
 ### 其它 shells
 
-[Bash](/index.php/Bash "Bash") 是 Arch 默认按照的 shell，而安装的时候使用的是 [zsh](/index.php/Zsh "Zsh") 并使用 [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config) 插件。其它选择参阅 [Command shell#List of shells](/index.php/Command_shell#List_of_shells "Command shell")。
+[Bash](/index.php/Bash "Bash") 是 Arch 默认安装的 shell，而安装的时候使用的是 [zsh](/index.php/Zsh "Zsh") 并使用 [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config) 插件。其它选择参阅 [Command shell#List of shells](/index.php/Command_shell#List_of_shells "Command shell")。
 
 ### Bash 增强功能
 

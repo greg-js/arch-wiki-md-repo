@@ -51,7 +51,7 @@ For a simple deployment, it is conventional to move the extracted directory to `
 Splunk's installation directory is commonly referred to as $SPLUNKHOME. You may set it in `.bashrc` and add it to your path:
 
 ```
-export SPLUNK_HOME =/opt/splunk
+export SPLUNK_HOME=/opt/splunk
 export PATH=$PATH:$SPLUNK_HOME/bin
 
 ```

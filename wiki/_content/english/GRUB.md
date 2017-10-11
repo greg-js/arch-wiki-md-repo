@@ -82,11 +82,11 @@ If your root partition is on an unsupported file system, you must create a separ
 
 ### GUID Partition Table (GPT) specific instructions
 
-On a BIOS/[GPT](/index.php/GPT "GPT") configuration, a [BIOS boot partition](http://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html) is required. GRUB embeds its `core.img` into this partition.
+On a BIOS/[GPT](/index.php/GPT "GPT") configuration, a [BIOS boot partition](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation) is required. GRUB embeds its `core.img` into this partition.
 
 **Note:**
 
-*   Before attempting this method keep in mind that not all systems will be able to support this partitioning scheme. Read more on [GUID partition tables](/index.php/GUID_Partition_Table#BIOS_systems "GUID Partition Table").
+*   Before attempting this method keep in mind that not all systems will be able to support this partitioning scheme. Read more on [GUID partition tables](/index.php/Partitioning#GUID_Partition_Table "Partitioning").
 *   This additional partition is only needed on a GRUB, BIOS/GPT partitioning scheme. Previously, for a GRUB, BIOS/MBR partitioning scheme, GRUB used the Post-MBR gap for the embedding the `core.img`). GRUB for GPT, however, does not use the Post-GPT gap to conform to GPT specifications that require 1_megabyte/2048_sector disk boundaries.
 *   For [UEFI](/index.php/UEFI "UEFI") systems this extra partition is not required, since no embedding of boot sectors takes place in that case. However, UEFI systems still require an [ESP](/index.php/ESP "ESP").
 
@@ -115,7 +115,7 @@ If you use [LVM](/index.php/LVM "LVM") for your `/boot`, you can install GRUB on
 
 **Tip:** See [GRUB/Tips and tricks#Alternative installation methods](/index.php/GRUB/Tips_and_tricks#Alternative_installation_methods "GRUB/Tips and tricks") for other ways to install GRUB, such as to a USB stick.
 
-See [grub-install(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8) and [[3]](https://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html) for more details on the *grub-install* command.
+See [grub-install(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8) and [[3]](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation) for more details on the *grub-install* command.
 
 ## UEFI systems
 

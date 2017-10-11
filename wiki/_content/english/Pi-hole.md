@@ -70,6 +70,13 @@ extension=sockets.so
 [...]
 ```
 
+For security reason, if you want to populate [PHP open_basedir](/index.php/PHP#Configuration "PHP") directive, pi-hole administration web interface needs access to following files and directories:
+
+```
+/srv/http/pihole:/run/pihole-ftl/pihole-FTL.port:/run/log/pihole/pihole.log:/run/log/pihole-ftl/pihole-FTL.log:/etc/pihole:/etc/hosts:/etc/hostname:/etc/dnsmasq.d/03-pihole-wildcard.conf:/proc/meminfo:/proc/cpuinfo:/sys/class/thermal/thermal_zone0/temp:/tmp
+
+```
+
 ##### Lighttpd
 
 [Install](/index.php/Install "Install") [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi).

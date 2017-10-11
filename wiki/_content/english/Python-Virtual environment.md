@@ -146,6 +146,8 @@ $ mkdir $WORKON_HOME
 
 ```
 
+**Note:** This seems to happen now automatically after re-open the console for the first time.
+
 ### Basic usage
 
 The main information source on virtualenvwrapper usage (and extension capability) is Doug Hellmann's [page](http://www.doughellmann.com/docs/virtualenvwrapper/).

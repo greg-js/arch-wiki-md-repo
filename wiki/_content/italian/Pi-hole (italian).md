@@ -70,6 +70,13 @@ extension=sockets.so
 [...]
 ```
 
+Per ragioni di sicurezza, se vuoi popolare la direttiva [PHP open_basedir](/index.php/PHP#Configuration "PHP"), l'interfaccia web di amministrazione di pi-hole necessita l'accesso ai seguenti file e cartelle:
+
+```
+/srv/http/pihole:/run/pihole-ftl/pihole-FTL.port:/run/log/pihole/pihole.log:/run/log/pihole-ftl/pihole-FTL.log:/etc/pihole:/etc/hosts:/etc/hostname:/etc/dnsmasq.d/03-pihole-wildcard.conf:/proc/meminfo:/proc/cpuinfo:/sys/class/thermal/thermal_zone0/temp:/tmp
+
+```
+
 ##### Lighttpd
 
 Installa [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) e [php-cgi](https://www.archlinux.org/packages/?name=php-cgi).

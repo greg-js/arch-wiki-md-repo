@@ -42,47 +42,41 @@ See also [Wikipedia:Comparison of file synchronization software](https://en.wiki
 
 **Legend:**
 
-*   **Name**: the application name, linking to the official website.
-*   **Installation**: a link to the main ArchWiki article, if existing, or directly to the package pages.
+*   **Name**: the application name, linking to the ArchWiki article or the official website.
+*   **Installation**: a link to the package.
 *   **Implementation**: the programming language, library, or utility that the application is based on.
 *   **Delta transfer**: only the modified *parts* of files are transferred.
 *   **Encrypted transfer**: data is encrypted by default when transferred over the network.
 *   **FS metadata**: file system permissions and attributes are synchronized.
-*   **Resumable**: the synchronization can be resumed without restarting it if interrupted.
+*   **Resumable**: the synchronization can be resumed if interrupted.
 *   **Handles renames**: moved/renamed files are detected and not stored or transferred twice. It typically means that a checksum of files or its chunks is computed.
 *   **Version control**: the old version of files are backed up (**reverse incremental backup**).
-*   **Change propagation**: specifies in how many directions changes can be propagated. *Unidirectional* means one-way synchronization of two locations, *bidirectional* means two-way synchronization of two locations and *multidirectional* means full synchronization of more than two locations.
+*   **Change propagation**: specifies in how many directions changes can be propagated.
 *   **Conflict resolution**: the application handles file conflicts, either automatically or interactively, i.e. it does not silently discard conflicting files. This attribute does not apply to applications that only propagate changes in one direction.
 *   **FS monitoring**: the application listens to file system events to trigger the synchronization.
-*   **CLI**: the application is command-line driven, i.e. it is scriptable.
-*   **Other interfaces**: the application has the specified user interfaces, e.g. GUI, TUI, or web-based.
-*   **License**: the license of the server and client applications.
-*   **Other platforms**: supported operating systems other than Linux.
-*   **Active**: whether the project is currently maintained.
 *   **Specificity**: brief notes about special features that notably set the application apart from the others.
 
-| Name | Installation | Implementation | Delta transfer | Encrypted transfer | FS metadata | Resumable | Handles renames | Version control | Change propagation | Conflict resolution | FS monitoring | CLI | Other interfaces | License | Other platforms | Active | Specificity |
-| [Resilio Sync](https://www.resilio.com/individuals/) (formerly BitTorrent Sync) | [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync") | Closed source | Yes | Yes, also LAN transfer encryption option |  ? | Yes |  ? | Yes, previous versions moved to archive folder | multidirectional |  ? |  ? | No | Web | Proprietary freemium | FreeBSD, Windows, macOS, Android, iOS, Windows Phone, Amazon Kindle Fire | Yes | P2P sync |
-| [FreeFileSync](http://freefilesync.sourceforge.net/) | [freefilesync](https://aur.archlinux.org/packages/freefilesync/) | C++ |  ? | SFTP [[1]](http://www.freefilesync.org/faq.php#features) |  ? |  ? | Yes [[2]](http://www.freefilesync.org/faq.php#features) | Yes [[3]](http://www.freefilesync.org/manual.php?topic=versioning) | unidirectional | n/a |  ? | No | Yes | GPL | Windows, macOS | Yes |
-| [git-annex](http://git-annex.branchable.com/) | [git-annex](https://www.archlinux.org/packages/?name=git-annex) | Haskell, git | rsync [[4]](http://git-annex.branchable.com/transferring_data/) | rsync [[5]](http://git-annex.branchable.com/transferring_data/) |  ? |  ? |  ? | Yes | multidirectional; with git remotes [[6]](http://git-annex.branchable.com/sync/) | renames conflicting files [[7]](http://git-annex.branchable.com/automatic_conflict_resolution/) |  ? | Yes | [git-annex assistant](http://git-annex.branchable.com/assistant/) | GPLv3 | macOS, Android | Yes | Manage files with git |
-| [Grsync](http://www.opbyte.it/grsync/) | [grsync](https://www.archlinux.org/packages/?name=grsync) | rsync front-end | rsync | rsync |  ? |  ? |  ? |  ? | unidirectional | n/a |  ? | No | GTK+ | GPLv2 |  ? |
-| [gutbackup](https://github.com/gutenye/gutbackup) | [gutbackup](https://aur.archlinux.org/packages/gutbackup/) | rsync wrapper | rsync | rsync |  ? |  ? |  ? |  ? | unidirectional | n/a |  ? | Yes | No | MIT |  ? |
-| [Jotasync](https://trixon.se/projects/jotasync/) | [jotasync](https://aur.archlinux.org/packages/jotasync/) | Java gui for rsync | rsync | rsync |  ? |  ? |  ? |  ? | unidirectional | n/a |  ? | limited | Swing | Apache v2 | Windows, macOS | Yes | Integrated scheduler. |
-| [luckyBackup](http://luckybackup.sourceforge.net/index.html) | [luckybackup](https://aur.archlinux.org/packages/luckybackup/) | C++ | rsync [[8]](http://luckybackup.sourceforge.net/features.html) | rsync [[9]](http://luckybackup.sourceforge.net/features.html) |  ? |  ? |  ? | Yes | unidirectional | n/a |  ? | limited [[10]](http://luckybackup.sourceforge.net/manual.html#terminal) | Qt | GPLv3 | frozen [[11]](http://luckybackup.sourceforge.net/index.html) |
-| [osync.sh](http://www.netpower.fr/osync) | [osync](https://aur.archlinux.org/packages/osync/) | Shell | rsync | rsync |  ? | Yes | No | Yes | bidirectional | keeps multiple versions of a file [[12]](http://www.netpower.fr/sites/default/files/soft/html-doc/osync_v1.2.html#toc-Subsubsection-1.3.1) | optional [[13]](https://github.com/deajan/osync#daemon-mode) | Yes | No | BSD | Yes |
-| [rdiff-backup](http://www.nongnu.org/rdiff-backup/) | [rdiff-backup](https://www.archlinux.org/packages/?name=rdiff-backup) | Python 2 | Yes | Yes | Yes |  ? | No | Yes | unidirectional | n/a | No | Yes | No | GPL | Win32 |  ? |
-| [rsync](http://rsync.samba.org/) | [rsync](/index.php/Rsync "Rsync") | C | Yes | SSH or native protocol | Yes | Yes | No | 
+| Name | Installation | Implementation | Delta transfer | Encrypted transfer | FS metadata | Resumable | Handles renames | Version control | Change propagation | Conflict resolution | FS monitoring | Interfaces | License | Other platforms | Maintained | Specificity |
+| [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync") | [rslsync](https://aur.archlinux.org/packages/rslsync/) |  ? (closed source) | Yes | Yes |  ? | Yes |  ? | Yes | multiple ways |  ? |  ? | Web | Proprietary freemium | FreeBSD, Windows, macOS, Android, iOS, Windows Phone, Amazon Kindle Fire | Yes | P2P sync |
+| [FreeFileSync](https://www.freefilesync.org/) | [freefilesync](https://aur.archlinux.org/packages/freefilesync/) | C++ |  ? | SFTP [[1]](http://www.freefilesync.org/faq.php#features) |  ? |  ? | Yes [[2]](http://www.freefilesync.org/faq.php#features) | Yes [[3]](http://www.freefilesync.org/manual.php?topic=versioning) | one-way | n/a |  ? |  ? | GPL | Windows, macOS | Yes |
+| [git-annex](https://git-annex.branchable.com/) | [git-annex](https://www.archlinux.org/packages/?name=git-annex) | Haskell, git | rsync [[4]](http://git-annex.branchable.com/transferring_data/) | rsync [[5]](http://git-annex.branchable.com/transferring_data/) |  ? |  ? |  ? | Yes | multiple ways; with git remotes [[6]](http://git-annex.branchable.com/sync/) | renames conflicting files [[7]](http://git-annex.branchable.com/automatic_conflict_resolution/) |  ? | CLI, [git-annex assistant](http://git-annex.branchable.com/assistant/) | GPLv3 | macOS, Android | Yes | Manage files with git |
+| [Grsync](http://www.opbyte.it/grsync/) | [grsync](https://www.archlinux.org/packages/?name=grsync) | rsync front-end | rsync | rsync |  ? |  ? |  ? |  ? | one-way | n/a |  ? | GTK+ | GPLv2 |  ? |
+| [gutbackup](https://github.com/gutenye/gutbackup) | [gutbackup](https://aur.archlinux.org/packages/gutbackup/) | rsync wrapper | rsync | rsync |  ? |  ? |  ? |  ? | one-way | n/a |  ? | CLI | MIT |  ? |
+| [Jotasync](https://trixon.se/projects/jotasync/) | [jotasync](https://aur.archlinux.org/packages/jotasync/) | Java GUI for rsync | rsync | rsync |  ? |  ? |  ? |  ? | one-way | n/a |  ? | CLI (limited), Swing | Apache v2 | Windows, macOS | Yes | Integrated scheduler. |
+| [luckyBackup](http://luckybackup.sourceforge.net/index.html) | [luckybackup](https://aur.archlinux.org/packages/luckybackup/) | C++ | rsync [[8]](http://luckybackup.sourceforge.net/features.html) | rsync [[9]](http://luckybackup.sourceforge.net/features.html) |  ? |  ? |  ? | Yes | one-way | n/a |  ? | CLI (limited [[10]](http://luckybackup.sourceforge.net/manual.html#terminal)), Qt | GPLv3 | frozen [[11]](http://luckybackup.sourceforge.net/index.html) |
+| [osync.sh](http://www.netpower.fr/osync) | [osync](https://aur.archlinux.org/packages/osync/) | Bash, based on rsync | rsync | rsync |  ? | Yes | No | Yes | two-way | keeps multiple versions of a file [[12]](http://www.netpower.fr/sites/default/files/soft/html-doc/osync_v1.2.html#toc-Subsubsection-1.3.1) | optional [[13]](https://github.com/deajan/osync#daemon-mode) | CLI | BSD | Yes |
+| [rdiff-backup](http://www.nongnu.org/rdiff-backup/) | [rdiff-backup](https://www.archlinux.org/packages/?name=rdiff-backup) | Python 2, librsync | rsync | rsync | Yes |  ? | No | Yes | one-way | n/a | No | CLI | GPL | Win32 |  ? |
+| [rsync](/index.php/Rsync "Rsync") | [rsync](https://www.archlinux.org/packages/?name=rsync) | C | Yes | SSH or native protocol | Yes | Yes | No | 
 
 *   `--link-dest` with hard links [[14]](http://www.ibm.com/developerworks/aix/library/au-spunix_rsync/index.html#backup)
 *   `--backup`
 
- | unidirectional | n/a | No | Yes | grsync | GPLv3 | Win32 | Yes | Standard tool present on all Linux distributions. |
-| [SparkleShare](http://sparkleshare.org/) | [sparkleshare](https://www.archlinux.org/packages/?name=sparkleshare) | C# |  ? |  ? |  ? |  ? |  ? |  ? |  ? |  ? |  ? | No | Yes | GPLv3 | Windows, macOS |  ? |
-| [Syncthing](https://syncthing.net/) | [Syncthing](/index.php/Syncthing "Syncthing") | Go | Yes [[15]](http://docs.syncthing.net/users/faq.html#is-synchronization-fast) | Yes [[16]](http://docs.syncthing.net/users/security.html) | partial [[17]](http://docs.syncthing.net/users/faq.html#what-things-are-synced) | Yes |  ? | Yes [[18]](http://docs.syncthing.net/users/versioning.html), previous versions moved to archive folder | multidirectional | renames one file [[19]](https://docs.syncthing.net/users/faq.html#what-if-there-is-a-conflict) | Yes with [syncthing-inotify](https://github.com/syncthing/syncthing-inotify) | Yes | Web, GTK | MPL v2 | BSD, Windows, macOS, Android, Kindle Paperwhite | Yes | P2P sync |
-| [Synkron](http://synkron.sourceforge.net/) | [synkron](https://aur.archlinux.org/packages/synkron/) | C++ |  ? |  ? |  ? |  ? |  ? |  ? | multidirectional |  ? |  ? | No | Qt | GPLv2 | Windows, macOS | [No](https://sourceforge.net/projects/synkron/) |
-| [taskd](https://tasktools.org/projects/taskd.html) | [Taskd](/index.php/Taskd "Taskd") | C++, python, | Yes | Yes |  ? | Yes |  ? |  ? | multidirectional |  ? | No | Yes | No | MIT | Android | Yes |
-| [Unison](http://www.cis.upenn.edu/~bcpierce/unison/) | [Unison](/index.php/Unison "Unison") | OCaml | Yes | Yes | partial [[20]](http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#perms) | optional [[21]](http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#speeding) | No | Yes [[22]](http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#backups) | bidirectional | interactive | No | Yes | GTK2 | GPL | FreeBSD, Windows, macOS, Android | Yes [[23]](http://www.cis.upenn.edu/~bcpierce/unison/status.html) |
-| Name | Installation | Implementation | Delta transfer | Encrypted transfer | FS metadata | Resumable | Handles renames | Version control | Change propagation | Conflict resolution | FS monitoring | CLI | Other interfaces | License | Other platforms | Active | Specificity |
+ | one-way | n/a | No | CLI, grsync | GPLv3 | Win32 | Yes | Standard tool present on all Linux distributions. |
+| [SparkleShare](https://sparkleshare.org/) | [sparkleshare](https://www.archlinux.org/packages/?name=sparkleshare) | C#, git | Yes |  ? |  ? |  ? | Yes | Yes |  ? |  ? |  ? |  ? | GPLv3 | Windows, macOS | Yes |
+| [Syncthing](/index.php/Syncthing "Syncthing") | [syncthing](https://www.archlinux.org/packages/?name=syncthing) | Go | Yes [[15]](http://docs.syncthing.net/users/faq.html#is-synchronization-fast) | Yes [[16]](http://docs.syncthing.net/users/security.html) | partial [[17]](http://docs.syncthing.net/users/faq.html#what-things-are-synced) | Yes |  ? | Yes [[18]](http://docs.syncthing.net/users/versioning.html), previous versions moved to archive folder | multiple ways | renames one file [[19]](https://docs.syncthing.net/users/faq.html#what-if-there-is-a-conflict) | Yes with [syncthing-inotify](https://github.com/syncthing/syncthing-inotify) | CLI, Web, GTK | MPL v2 | BSD, Windows, macOS, Android, Kindle Paperwhite | Yes | P2P sync |
+| [Synkron](http://synkron.sourceforge.net/) | [synkron](https://aur.archlinux.org/packages/synkron/) | C++ |  ? |  ? |  ? |  ? |  ? |  ? | multiple ways |  ? |  ? | Qt | GPLv2 | Windows, macOS | [No](https://sourceforge.net/projects/synkron/) |
+| [taskd](/index.php/Taskd "Taskd") | [taskd](https://aur.archlinux.org/packages/taskd/) | C++, Python | Yes | Yes |  ? | Yes |  ? |  ? | multiple ways |  ? | No | CLI | MIT | Android | Yes |
+| [Unison](/index.php/Unison "Unison") | [unison](https://www.archlinux.org/packages/?name=unison) | OCaml | Yes | Yes | partial [[20]](http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#perms) | optional [[21]](http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#speeding) | No | Yes [[22]](http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#backups) | two-way | interactive | No | CLI, GTK2 | GPL | FreeBSD, Windows, macOS, Android | Yes [[23]](http://www.cis.upenn.edu/~bcpierce/unison/status.html) |
 
 ## Incremental backups
 
@@ -107,7 +101,6 @@ See also [Dotfiles#Version control](/index.php/Dotfiles#Version_control "Dotfile
 *   **Other interfaces**: the application has the specified user interfaces, e.g. GUI, TUI, or web-based.
 *   **Licence**: the licence of the server and client applications.
 *   **Other platforms**: supported operating systems other than Linux.
-*   **Active**: whether the project is currently maintained.
 *   **Specificity**: brief notes about special features that notably set the application apart from the others.
 
 ### Single machine
@@ -118,7 +111,7 @@ These applications are aimed at backing up data from the machine they are instal
 
 If a file is modified, these applications store only its changed *parts* at the next snapshot. Compared to [#File-based increments](#File-based_increments) applications, these are more space-efficient, especially when large files receive small modifications; on the other hand, the archived snapshots have to be opened with the backup application that created them, since the files have to be reconstructed from the stored binary diffs.
 
-| Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | CLI | Other interfaces | Licence | Other platforms | Active | Specificity |
+| Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | CLI | Other interfaces | Licence | Other platforms | Maintained | Specificity |
 | [Areca Backup](http://areca.sourceforge.net/) | [areca](https://aur.archlinux.org/packages/areca/) | Java | Zip, Zip64 | AES128, AES256 | Yes | Yes | Yes | No | Pausing only | No | Yes | Yes | GPLv2 | Windows | Yes |
 | [BorgBackup](http://borgbackup.readthedocs.org/en/stable/) | [borg](https://www.archlinux.org/packages/?name=borg) | Python (Attic fork) | lz4, zlib, lzma | AES256 | Yes | SSH | Yes[[24]](http://borgbackup.readthedocs.org/en/stable/faq.html#which-file-types-attributes-etc-are-preserved) | Yes[[25]](http://borgbackup.readthedocs.org/en/stable/usage.html#borg-mount) | Yes[[26]](http://borgbackup.readthedocs.org/en/stable/faq.html#if-a-backup-stops-mid-way-does-the-already-backed-up-data-stay-there) | Yes | Yes | third party | BSD | *BSD, macOS | Yes | Deduplication based on variable length chunks |
 | [btar](http://viric.name/cgi-bin/btar) | [btar](https://aur.archlinux.org/packages/btar/) | C | Yes | Yes | Yes | Yes |  ? | No |  ? |  ? | Yes | No | GPLv3 | Yes | Redundancy, indexed extraction, multicore compression, input and output serialisation, tolerance to partial archive errors. |
@@ -132,7 +125,6 @@ If a file is modified, these applications store only its changed *parts* at the 
 | [obnam](http://liw.fi/obnam/) | [obnam](https://aur.archlinux.org/packages/obnam/) | Python | Yes | GnuPG | Yes | Yes |  ? | Yes | checkpoints every 100MB |  ? | Yes | No | GPLv3 | No |
 | [restic](https://restic.github.io/) | [restic](https://aur.archlinux.org/packages/restic/) [restic-git](https://aur.archlinux.org/packages/restic-git/) | Go | No [[30]](https://github.com/restic/restic/issues/21) | AES-256 [[31]](https://github.com/restic/restic/blob/master/doc/Design.md) | Yes | Yes |  ? | Yes[[32]](https://restic.readthedocs.io/en/stable/manual.html#mount-a-repository) |  ? | Yes | Yes |  ? | BSD | Yes |
 | [ZBackup](http://zbackup.org/) | [zbackup](https://aur.archlinux.org/packages/zbackup/) | C++ | LZMA, LZO | AES | Yes | Yes |  ? | planned [[33]](https://github.com/zbackup/zbackup#improvements) | No | Kinda through tar | Yes | No | GPLv2 | Yes | Repository consists of immutable files. |
-| Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | CLI | Other interfaces | Licence | Other platforms | Active | Specificity |
 
 #### File-based increments
 
@@ -142,7 +134,7 @@ If a file is modified, these applications store its new version entirely at the 
 
 *   **Hard links**: whether unmodified files are stored as hard links to previous versions.
 
-| Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | Hard links | CLI | Other interfaces | Licence | Other platforms | Active | Specificity |
+| Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | Hard links | CLI | Other interfaces | Licence | Other platforms | Maintained | Specificity |
 | [Back In Time](https://github.com/bit-team/backintime) | [Back In Time](/index.php/Back_In_Time "Back In Time") | Python, rsync, diff | No | No | rsync | rsync | rsync | Yes | No | No | Yes [[34]](http://backintime.le-web.org/documentation/) | Yes | Qt | GPLv2 | Yes |
 | [DAR](http://dar.linux.free.fr/) (Disk ARchive) | [dar](https://aur.archlinux.org/packages/dar/) | C++ | special archive format | Yes | Yes | Yes |  ? |  ? |  ? |  ? | No [[35]](http://dar.linux.free.fr/doc/Features.html) | Yes | DarGUI | GPL | FreeBSD, NetBSD, Windows, macOS | Yes | Automatic backup using [cron](/index.php/Cron "Cron") is possible with [sarab](https://aur.archlinux.org/packages/sarab/). |
 | [DarGUI](http://dargui.sourceforge.net/) | [dargui](https://aur.archlinux.org/packages/dargui/) | DAR front-end | Yes | Yes | Yes | Yes |  ? |  ? |  ? |  ? | No [[36]](http://dar.linux.free.fr/doc/Features.html) | No | GTK | GPL | Windows |  ? |
@@ -152,7 +144,6 @@ If a file is modified, these applications store its new version entirely at the 
 | [rsnapshot](http://www.rsnapshot.org/) | [rsnapshot](/index.php/Rsnapshot "Rsnapshot") | rsync | No | No | Yes | Yes |  ? |  ? |  ? |  ? | Yes [[38]](http://rsnapshot.org/rsnapshot/docs/docbook/rest.html) | Yes | No | GPLv2 | Win32 | Yes |
 | [sbackup](https://launchpad.net/sbackup) | [sbackup](https://aur.archlinux.org/packages/sbackup/) | Python | gzip, bzip2 | No |  ? | SSH |  ? | No | No | No | No | No | GTK | GPLv3 | Yes |
 | [TimeShift](https://launchpad.net/timeshift) | [timeshift](https://aur.archlinux.org/packages/timeshift/) | rsync | No | No | rsync | rsync |  ? |  ? |  ? |  ? | Yes | No | GTK | GPLv3 | Designed for full-system backups to dedicated devices. | Yes |
-| Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | Hard links | CLI | Other interfaces | Licence | Other platforms | Active | Specificity |
 
 ### Network oriented
 
@@ -166,7 +157,7 @@ These applications have been designed to centralize the backup of several machin
         *   **hard-links**: whether unmodified files are stored as hard links to previous versions.
     *   **chunk-based**: only the modified *parts* of files are stored at each snapshot.
 
-| Name | Installation | Implementation | Control direction | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | Increment type | CLI | Other interfaces | Licence | Other platforms | Active | Specificity |
+| Name | Installation | Implementation | Control direction | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | Increment type | CLI | Other interfaces | Licence | Other platforms | Maintained | Specificity |
 | [BackupPC](http://backuppc.sourceforge.net/index.html) | [BackupPC](/index.php/BackupPC "BackupPC") | Perl | Pull | Yes | No | Yes | Yes | Yes | No | Yes |  ? | file-based, hard links [[39]](http://backuppc.sourceforge.net/faq/BackupPC.html#Backup-basics) | No | Web | GPLv2 | Any (no client needed) | Yes | Identical files across backups of the same or different clients are stored only once. |
 | [Bacula](http://www.bacula.org) | [bacula*](https://aur.archlinux.org/packages/?K=bacula) in [AUR](/index.php/AUR "AUR") | C++ | Pull | Yes | Yes |  ? | Yes |  ? |  ? | Yes |  ? | file-based [[40]](http://burp.grke.org/why.html) | Yes | GUI, Web | AGPLv3 | Windows, macOS | Yes |
 | [burp](http://burp.grke.org) | [burp-backup](https://aur.archlinux.org/packages/burp-backup/) | librsync | Push | Yes | Yes | Yes | Yes |  ? |  ? |  ? |  ? | chunk-based [[41]](http://burp.grke.org/why.html) | Yes | [burp-ui](https://git.ziirish.me/ziirish/burp-ui) | AGPLv3 | Windows | Yes |
@@ -174,7 +165,6 @@ These applications have been designed to centralize the backup of several machin
 | [Snebu](http://www.snebu.com) | [snebu](https://aur.archlinux.org/packages/snebu/) | C | Push or Pull | Yes | No |  ? | Yes |  ? |  ? |  ? |  ? | file-based [[43]](http://www.snebu.com/#_concepts) | Yes | No | GPLv3 |  ? | Supports arbitrary retention schedules. |
 | [Synbak](http://www.initzero.it/portal/soluzioni/software-open-source/synbak-universal-backup-system_2623.html) | [synbak](https://www.archlinux.org/packages/?name=synbak) | Multitool wrapper |  ? | Yes | No | Yes | Yes | Yes |  ? |  ? |  ? |  ? | No | Web | GPLv3 | Yes | Unifies several backup methods. |
 | [UrBackup](https://www.urbackup.org) | [urbackup*](https://aur.archlinux.org/packages/?K=urbackup) in [AUR](/index.php/AUR "AUR") | C++ | Pull | No | No | Yes | Internet transfers only | Yes | Yes | Yes | Yes | file-based,hard-links and symlinks[[44]](http://blog.urbackup.org/156/symbolically-linking-directories-during-incremental-file-backups)/chunk-based CoW-Snapshots[[45]](http://blog.urbackup.org/83/file-backup-storage-with-btrfs-snapshots) | Yes (client) | GUI, Web | AGPLv3+ | Windows, macOS | Yes | Identical files across backups of the same or different clients are stored only once. Integrates with LVM, dattobd and btrfs for file system snapshots. |
-| Name | Installation | Implementation | Control direction | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | Increment type | CLI | Other interfaces | Licence | Other platforms | Active | Specificity |
 
 ## Cloud storage
 
@@ -349,7 +339,7 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
     *   Support for working with some other revision control systems
     *   Complete Unicode support.
 
-	[http://bazaar.canonical.com/en/](http://bazaar.canonical.com/en/) || [bzr](https://www.archlinux.org/packages/?name=bzr)
+	[https://bazaar.canonical.com/en/](https://bazaar.canonical.com/en/) || [bzr](https://www.archlinux.org/packages/?name=bzr)
 
 *   **Darcs** — A distributed revision control system that was designed to replace traditional, centralized source control systems such as CVS and Subversion.
     *   Offline mode.
@@ -365,7 +355,7 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
     *   Has a "staging area" or "index", this is an intermediate area where commits can be formatted and reviewed before completing the commit.
     *   Does not handle binary files very well.
 
-	[http://git-scm.com/](http://git-scm.com/) || [git](https://www.archlinux.org/packages/?name=git)
+	[https://git-scm.com/](https://git-scm.com/) || [git](https://www.archlinux.org/packages/?name=git)
 
 *   **[Mercurial](/index.php/Mercurial "Mercurial")** — A distributed version control system written in Python and similar in many ways to Git.
     *   Platform independent.
@@ -373,7 +363,7 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
     *   A set of commands consistent with Subversion.
     *   Supports tags.
 
-	[http://mercurial.selenic.com/](http://mercurial.selenic.com/) || [mercurial](https://www.archlinux.org/packages/?name=mercurial)
+	[https://www.mercurial-scm.org/](https://www.mercurial-scm.org/) || [mercurial](https://www.archlinux.org/packages/?name=mercurial)
 
 *   **[Subversion](/index.php/Subversion "Subversion")** — A full-featured centralized version control system originally designed to be a better CVS.
     *   Renamed/copied/moved/removed files retain full revision history.
@@ -381,7 +371,7 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
     *   Costs proportional to change size, not to data size.
     *   Allows arbitrary metadata ("properties") to be attached to any file or directory.
 
-	[http://subversion.apache.org/](http://subversion.apache.org/) || [subversion](https://www.archlinux.org/packages/?name=subversion)
+	[https://subversion.apache.org/](https://subversion.apache.org/) || [subversion](https://www.archlinux.org/packages/?name=subversion)
 
 ## See also
 

@@ -409,7 +409,7 @@ If you regularly turn off your computer but do not want to miss jobs, there are 
 
 ### Cronie
 
-[cronie](https://www.archlinux.org/packages/?name=cronie) comes with anacron included. The project homepage reads:
+[cronie](https://www.archlinux.org/packages/?name=cronie) comes with anacron included. The project homepage says:
 
 Cronie contains the standard UNIX daemon crond that runs specified programs at scheduled times and related tools. It is based on the original cron and has security and configuration enhancements like the ability to use pam and SELinux.
 

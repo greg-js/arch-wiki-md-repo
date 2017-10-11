@@ -38,7 +38,7 @@ OpenStack is a global collaboration of developers and cloud computing technologi
 
 ### Object Storage (Swift)
 
-Swift is not available in Arch, yet.
+Install [swift](https://aur.archlinux.org/packages/swift/) or [swift-development-bin](https://aur.archlinux.org/packages/swift-development-bin/) from [AUR](/index.php/AUR "AUR").
 
 ### Identity (Keystone)
 

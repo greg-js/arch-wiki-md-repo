@@ -12,12 +12,13 @@
         *   [2.4.1 PHP via FastCGI](#PHP_via_FastCGI)
     *   [2.5 Reverse Proxy](#Reverse_Proxy)
     *   [2.6 SSL/TLS](#SSL.2FTLS)
-        *   [2.6.1 Let's Encrypt](#Let.27s_Encrypt)
-            *   [2.6.1.1 Install](#Install)
-            *   [2.6.1.2 Obtain a certificate](#Obtain_a_certificate)
-            *   [2.6.1.3 Auto renewal](#Auto_renewal)
-        *   [2.6.2 Server Name Indication](#Server_Name_Indication)
-*   [3 See also](#See_also)
+*   [3 Let's Encrypt](#Let.27s_Encrypt)
+    *   [3.1 Install](#Install)
+    *   [3.2 Obtain a certificate](#Obtain_a_certificate)
+    *   [3.3 Auto renewal](#Auto_renewal)
+        *   [3.3.1 Automation with cron](#Automation_with_cron)
+        *   [3.3.2 Automation with systemd/Timers](#Automation_with_systemd.2FTimers)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -69,7 +70,7 @@ For further details see the official [HowTo](https://www.hiawatha-webserver.org/
 
 ### Normal CGI
 
-[Common Gateway Interface](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface") (CGI) scripts work with Hiawatha out of box, you just need to enable the CGI module as follows:
+[Common Gateway Interface](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface") (CGI) scripts work with Hiawatha out of the box, you just need to enable the CGI module in the `VirtualHost` section as follows:
 
  `/etc/hiawatha/hiawatha.conf` 
 ```
@@ -81,7 +82,7 @@ VirtualHost {
 
 #### Interpreters for CGI scripts
 
-If you want to use CGI scripts in your website, you have to specify where Hiawatha can find the binary that can run those scripts. This is configured the following way by associating the interpreter with extensions:
+To use CGI scripts in your website, you have to specify where Hiawatha can find the binary that can run them. This is configured by associating the interpreter with the script extensions in the main body of the configuration file:
 
 ```
 CGIhandler = /usr/bin/php5-cgi:php,php5
@@ -90,7 +91,7 @@ CGIhandler = /usr/bin/python:py
 
 ```
 
-**Note:** The corresponding language interpreters should be installed. For *php* you need both [php](https://www.archlinux.org/packages/?name=php) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi), for *python* [python](https://www.archlinux.org/packages/?name=python)).
+**Note:** The corresponding language interpreters should be installed. For *php* you need both [php](https://www.archlinux.org/packages/?name=php) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi), for *python* [python](https://www.archlinux.org/packages/?name=python).
 
 For further details see the official [HowTo](https://www.hiawatha-webserver.org/howto/cgi_and_fastcgi).
 
@@ -178,46 +179,9 @@ Binding {
 }
 ```
 
-Once it is done, [reload](/index.php/Reload "Reload") the `hiawatha.service`.
+Once it is done, [restart](/index.php/Restart "Restart") the `hiawatha.service`.
 
-#### Let's Encrypt
-
-##### Install
-
-Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion. Download it into your preferred location:
-
-```
-$ curl [https://www.hiawatha-webserver.org/files/letsencrypt.tar.gz](https://www.hiawatha-webserver.org/files/letsencrypt.tar.gz) | tar -xz
-
-```
-
-Alternatively the script is also available in `extra/letsencrypt` within the [source tarball](https://github.com/hsleisink/hiawatha/archive/master.zip).
-
-##### Obtain a certificate
-
-The detailed instructions are described in `README.txt` and the tool configuration is defined in `letsencrypt.conf`. In short, there are two steps to get a certificate:
-
-1.  Register an account with the Let's Encrypt certificate authority (CA). An account key file will be created. `$ ./letsencrypt register` 
-2.  Request a website certificate: *www.my-domain.org* must be the first hostname of a `VirtualHost`. Any following webserver's hostname will be used as an alternative hostname for the certificate. The file `www.my-domain.org.pem` will be created. `$ ./letsencrypt request www.my-domain.org` 
-
-If the above succeeds, you can switch from the ***testing*** to the ***production*** CA by changing the `LE_CA_HOSTNAME` setting in the configuration file and go through the **two steps** above again.
-
-##### Auto renewal
-
-In order to automate the renewal of the certificate, schedule a cronjob (daily is recommended) for the root user that runs:
-
-```
-$ ./letsencrypt renew restart
-
-```
-
-The certificate will be renewed whenever the certificate has less than 7 days to go and written to the directory indicated in `HIAWATHA_CERT_DIR`. The number of days before renewal is controlled via the `RENEWAL_EXPIRE_THRESHOLD` setting if necessary. A daily cronjob schedule is appropriate as no action will be taken anyway before the threshold is reached.
-
-#### Server Name Indication
-
-Hiawatha has support for SNI, which allows you to serve multiple TLS websites via one IP address. Just configure a TLS binding as explained above. For each virtual host that has its own SSL/TLS certificate, simply use the `TLScertFile` option inside the virtual host block. The certificate specified via `Binding{}` is used when a website is requested for which no virtual host has been defined.
-
- `/etc/hiawatha/hiawatha.conf` 
+**Tip:** Hiawatha supports [Server Name Indication](https://en.wikipedia.org/wiki/Server_Name_Indication "wikipedia:Server Name Indication"), which allows to serve multiple certificates on the same IP address and hence multiple secure websites. To use this functionality, add a `TLScertFile` setting inside the `VirtualHost` block for each virtual host that has its own SSL/TLS certificate. The certificate specified in the `Binding` section is used whenever no virtual host has been defined for a website. `/etc/hiawatha/hiawatha.conf` 
 ```
 VirtualHost {
     Hostname = www.website.org
@@ -226,6 +190,77 @@ VirtualHost {
 }
 
 ```
+
+## Let's Encrypt
+
+### Install
+
+Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion. Download it into your preferred location:
+
+```
+$ curl [https://www.hiawatha-webserver.org/files/letsencrypt.tar.gz](https://www.hiawatha-webserver.org/files/letsencrypt.tar.gz) | tar -xz
+
+```
+
+Alternatively, the script is also available within the [source tarball](https://github.com/hsleisink/hiawatha/archive/master.zip) in `extra/letsencrypt`.
+
+### Obtain a certificate
+
+The detailed instructions are described in `README.txt` and the tool configuration is defined in `letsencrypt.conf`. In short, there are two steps to get a certificate:
+
+1.  Register an account with the Let's Encrypt certificate authority (CA). An account key file will be created. `$ ./letsencrypt register` 
+2.  Request a website certificate: *www.my-domain.org* must be the first hostname of a `VirtualHost`. Any following webserver's hostname will be used as an alternative hostname for the certificate. The file `www.my-domain.org.pem` will be created. `$ ./letsencrypt request www.my-domain.org` 
+
+If the above succeeds, you can switch from the ***testing*** to the ***production*** CA by changing the `LE_CA_HOSTNAME` setting in the configuration file and go through the **two steps** above again.
+
+### Auto renewal
+
+The following command can be used to renew the certificate and restart the server upon renewal:
+
+```
+$ /path/to/letsencrypt renew restart
+
+```
+
+The certificate will be renewed whenever it has less than 7 days to go and written to the directory indicated in `HIAWATHA_CERT_DIR`. The number of days before renewal is controlled via the `RENEWAL_EXPIRE_THRESHOLD` setting if necessary.
+
+A daily schedule of this script is appropriate as no action will be taken anyway before the threshold is reached. This daily automation can be achieved using either [cron](/index.php/Cron "Cron") or [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"):
+
+#### Automation with cron
+
+In order to automate the renewal of the certificate, schedule a cronjob for the root user to run the command line above.
+
+#### Automation with systemd/Timers
+
+Both service and timer unit files need to be created:
+
+ `/etc/systemd/system/letsencrypt-renew.service ` 
+```
+[Unit]
+Description=Renew Let's Encrypt certificates
+
+[Service]
+Type=oneshot
+ExecStart=/path/to/letsencrypt renew restart
+
+```
+ `/etc/systemd/system/letsencrypt-renew.timer ` 
+```
+[Unit]
+Description=Daily renewal of Let's Encrypt's certificates
+
+[Timer]
+OnCalendar=daily
+# Be kind to the Let's Encrypt servers: add a random delay of 0–3600 seconds
+RandomizedDelaySec=3600
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+
+```
+
+[start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the newly created `letsencrypt-renew.timer`.
 
 ## See also
 
