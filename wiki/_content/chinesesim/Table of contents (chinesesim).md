@@ -2,7 +2,7 @@
 
 目前因为中文文档和分类尚不齐全，有需要的请浏览英语语种的网页。
 
-| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(163)</small> |
+| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(162)</small> |
 | <small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(22)</small> |
 | <small>1.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(2) (同时还属于 [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)"))</small> |
 | <small>1.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(20)</small> |
@@ -50,7 +50,7 @@
 | <small>4.7.</small> [输入设备](/index.php/Category:Input_devices_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Input devices (简体中文)") <small>(3)</small> |
 | <small>4.7.1.</small> [Graphics tablet](/index.php/Category:Graphics_tablet_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics tablet (简体中文)") <small>(1)</small> |
 | <small>4.7.2.</small> [键盘](/index.php/Category:Keyboards_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Keyboards (简体中文)") <small>(6)</small> |
-| <small>4.7.3.</small> [鼠标](/index.php/Category:Mice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mice (简体中文)") <small>(2)</small> |
+| <small>4.7.3.</small> [鼠标](/index.php/Category:Mice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mice (简体中文)") <small>(3)</small> |
 | <small>4.8.</small> [笔记本电脑](/index.php/Category:Laptops_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Laptops (简体中文)") <small>(4)</small> |
 | <small>4.8.1.</small> [Acer](/index.php/Category:Acer_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Acer (简体中文)") <small>(1)</small> |
 | <small>4.8.2.</small> [Apple](/index.php/Category:Apple_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Apple (简体中文)") <small>(1)</small> |
@@ -85,7 +85,7 @@
 | <small>6.14.</small> [网页服务器](/index.php/Category:Web_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web server (简体中文)") <small>(10)</small> |
 | <small>6.15.</small> [无线网络](/index.php/Category:Wireless_networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Wireless networking (简体中文)") <small>(8)</small> |
 | <small>7.</small> [软件](/index.php/Category:Software_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Software (简体中文)") <small>(4)</small> |
-| <small>7.1.</small> [启动过程](/index.php/Category:Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot process (简体中文)") <small>(28)</small> |
+| <small>7.1.</small> [启动过程](/index.php/Category:Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot process (简体中文)") <small>(29)</small> |
 | <small>7.1.1.</small> [引导器](/index.php/Category:Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot loaders (简体中文)") <small>(9)</small> |
 | <small>7.1.2.</small> [图形启动界面](/index.php/Category:Bootsplash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bootsplash (简体中文)") <small>(2) (同时还属于 [美化](/index.php/Category:Eye_candy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Eye candy (简体中文)"))</small> |
 | <small>7.2.</small> [命令行](/index.php/Category:Command_shells_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Command shells (简体中文)") <small>(6)</small> |
@@ -101,7 +101,7 @@
 | <small>7.6.</small> [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)") <small>(25)</small> |
 | <small>7.7.</small> [软件包管理](/index.php/Category:Package_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package management (简体中文)") <small>(25)</small> |
 | <small>7.8.</small> [电源管理](/index.php/Category:Power_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Power management (简体中文)") <small>(9)</small> |
-| <small>7.9.</small> [X server](/index.php/Category:X_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:X server (简体中文)") <small>(27)</small> |
+| <small>7.9.</small> [X server](/index.php/Category:X_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:X server (简体中文)") <small>(28)</small> |
 | <small>8.</small> [系统管理](/index.php/Category:System_administration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System administration (简体中文)") <small>(5)</small> |
 | <small>8.1.</small> [音频/视频](/index.php/Category:Audio/Video_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Audio/Video (简体中文)") <small>(12)</small> |
 | <small>8.2.</small> [美化](/index.php/Category:Eye_candy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Eye candy (简体中文)") <small>(13)</small> |
@@ -116,6 +116,6 @@
 | <small>8.6.2.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(4) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
 | <small>8.6.3.</small> [代理服务器](/index.php/Category:Proxy_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Proxy servers (简体中文)") <small>(4) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
 | <small>8.6.4.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(5) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
-| <small>8.7.</small> [系统修复](/index.php/Category:System_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System recovery (简体中文)") <small>(13)</small> |
+| <small>8.7.</small> [系统修复](/index.php/Category:System_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System recovery (简体中文)") <small>(14)</small> |
 | <small>8.8.</small> [虚拟化](/index.php/Category:Virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtualization (简体中文)") <small>(7)</small> |
 | <small>8.8.1.</small> [Hypervisors](/index.php/Category:Hypervisors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hypervisors (简体中文)") <small>(2)</small> |

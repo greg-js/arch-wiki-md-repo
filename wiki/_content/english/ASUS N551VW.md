@@ -4,7 +4,7 @@
 | Ethernet | Working | r8169 |
 | Wireless | Working | iwlwifi |
 | Audio | Working | snd_hda_intel or via HDMI |
-| Touchpad | Not Working properly, TBC | xf86-input-synaptics? |
+| Touchpad | TBC | Elantech |
 | Camera | Working | uvcvideo |
 | Card Reader | Working | rtsx_usb? |
 | Bluetooth | Not Tested | bluetooth? |
@@ -75,15 +75,17 @@ xrandr --output eDP-1-1 --mode 1920x1080_60.00
 
 ## Audio
 
-Works over regular jack and also over HDMI For regular jack to work please select Analog Stereo Output in PulseAudio Volume Control External ASUS subwoofer does not work though (I believe it requires a MS Windows based driver)
+Works over regular jack and also over HDMI. For regular jack to work please select Analog Stereo Output in PulseAudio Volume Control. External ASUS subwoofer does not work though (I believe it requires a MS Windows based driver)
 
 ## Keyboard
 
-no problems with keyboard keys, function keys is a separate story TBC
+No problems with keyboard keys, function keys not tested. TBC
 
 ## Touchpad
 
-works but in erroneous way TBC
+This is Elantech touchpad. Please follow instructions from here: [Elantech touchpads](https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Elantech_touchpads)
+
+TBC
 
 # Troubleshooting
 

@@ -1,3 +1,11 @@
+Articoli correlati
+
+*   [systemd/User (Italiano)](/index.php/Systemd/User_(Italiano) "Systemd/User (Italiano)")
+*   [Automatic login to virtual console (Italiano)](/index.php/Automatic_login_to_virtual_console_(Italiano) "Automatic login to virtual console (Italiano)")
+*   [Display Manager (Italiano)](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)")
+*   [Silent boot](/index.php/Silent_boot "Silent boot")
+*   [Xinitrc (Italiano)](/index.php/Xinitrc_(Italiano) "Xinitrc (Italiano)")
+
 Questo articolo spiega come avviare automaticamente il [Server X](/index.php/Xorg_(Italiano) "Xorg (Italiano)") dopo il login in un terminale virtuale attraverso l'utilizzo del comando *startx*, il cui comportamento può essere modificato come riportato nella pagina relativa a [xinitrc](/index.php/Xinitrc_(Italiano) "Xinitrc (Italiano)"), ad esempio per scegliere quale [window manager](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") avviare.
 
 In alternativa, è possibile utilizzare un [display manager](/index.php/Display_manager_(Italiano) "Display manager (Italiano)") per avviare automaticamente X e fornire un login grafico.

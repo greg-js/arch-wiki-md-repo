@@ -165,7 +165,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Smart Common Input Method platform (简体中文)](/index.php/Smart_Common_Input_Method_platform_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Smart Common Input Method platform (简体中文)") | 过期 | 无 | 无 |
 | [Systemd-timesyncd (简体中文)‎‎](/index.php/Systemd-timesyncd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-timesyncd (简体中文)") | 完成 | 无 | 无 |
 | [Vim (简体中文)](/index.php/Vim_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Vim (简体中文)") | 完成 | 无 | 无 |
-| [VirtualBox (简体中文)](/index.php/VirtualBox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox (简体中文)") | 翻译中 | ThomasWFan | 正在将页面与英文版本同步 |
+| [VirtualBox (简体中文)](/index.php/VirtualBox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox (简体中文)") | 翻译中 | [User:5long](/index.php?title=User:5long&action=edit&redlink=1 "User:5long (page does not exist)") |
 | [VMware (简体中文)](/index.php/VMware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VMware (简体中文)") | 完成 | ThomasWFan | 页面已经与英文版同步，长期维护中 |
 | [Xfce (简体中文)](/index.php/Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xfce (简体中文)") | 完成 | 无 | 无 |
 | [Xmonad (简体中文)](/index.php/Xmonad_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xmonad (简体中文)") | 过期 | 无 | 无 |

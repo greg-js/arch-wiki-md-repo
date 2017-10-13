@@ -20,8 +20,8 @@ KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment "Desktop environ
     *   [1.2 KDE 应用和语言包](#KDE_.E5.BA.94.E7.94.A8.E5.92.8C.E8.AF.AD.E8.A8.80.E5.8C.85)
     *   [1.3 不稳定版本](#.E4.B8.8D.E7.A8.B3.E5.AE.9A.E7.89.88.E6.9C.AC)
 *   [2 启动 Plasma](#.E5.90.AF.E5.8A.A8_Plasma)
-    *   [2.1 图形界面启动](#.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2.E5.90.AF.E5.8A.A8)
-    *   [2.2 手动启动](#.E6.89.8B.E5.8A.A8.E5.90.AF.E5.8A.A8)
+    *   [2.1 使用显示管理器](#.E4.BD.BF.E7.94.A8.E6.98.BE.E7.A4.BA.E7.AE.A1.E7.90.86.E5.99.A8)
+    *   [2.2 控制台启动](#.E6.8E.A7.E5.88.B6.E5.8F.B0.E5.90.AF.E5.8A.A8)
 *   [3 配置](#.E9.85.8D.E7.BD.AE)
     *   [3.1 个性化](#.E4.B8.AA.E6.80.A7.E5.8C.96)
         *   [3.1.1 Plasma 桌面](#Plasma_.E6.A1.8C.E9.9D.A2_2)
@@ -67,8 +67,7 @@ KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment "Desktop environ
 *   [5 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
     *   [5.1 使用其他窗口管理器](#.E4.BD.BF.E7.94.A8.E5.85.B6.E4.BB.96.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
         *   [5.1.1 KDE/Openbox 会话](#KDE.2FOpenbox_.E4.BC.9A.E8.AF.9D)
-        *   [5.1.2 Compiz 自定义](#Compiz_.E8.87.AA.E5.AE.9A.E4.B9.89)
-        *   [5.1.3 重新启用特殊效果](#.E9.87.8D.E6.96.B0.E5.90.AF.E7.94.A8.E7.89.B9.E6.AE.8A.E6.95.88.E6.9E.9C)
+        *   [5.1.2 重新启用特殊效果](#.E9.87.8D.E6.96.B0.E5.90.AF.E7.94.A8.E7.89.B9.E6.AE.8A.E6.95.88.E6.9E.9C)
     *   [5.2 显示器分辨率 / 多显示器配置](#.E6.98.BE.E7.A4.BA.E5.99.A8.E5.88.86.E8.BE.A8.E7.8E.87_.2F_.E5.A4.9A.E6.98.BE.E7.A4.BA.E5.99.A8.E9.85.8D.E7.BD.AE)
 *   [6 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
     *   [6.1 有关配置的问题](#.E6.9C.89.E5.85.B3.E9.85.8D.E7.BD.AE.E7.9A.84.E9.97.AE.E9.A2.98)
@@ -88,7 +87,7 @@ KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment "Desktop environ
         *   [6.6.5 Nvidia 显卡屏幕撕裂](#Nvidia_.E6.98.BE.E5.8D.A1.E5.B1.8F.E5.B9.95.E6.92.95.E8.A3.82)
         *   [6.6.6 Plasma 光标有时显示不正确](#Plasma_.E5.85.89.E6.A0.87.E6.9C.89.E6.97.B6.E6.98.BE.E7.A4.BA.E4.B8.8D.E6.AD.A3.E7.A1.AE)
     *   [6.7 Plasma 5 下的声音问题](#Plasma_5_.E4.B8.8B.E7.9A.84.E5.A3.B0.E9.9F.B3.E9.97.AE.E9.A2.98)
-        *   [6.7.1 KDE 睡眠后没声音](#KDE_.E7.9D.A1.E7.9C.A0.E5.90.8E.E6.B2.A1.E5.A3.B0.E9.9F.B3)
+        *   [6.7.1 睡眠后没声音](#.E7.9D.A1.E7.9C.A0.E5.90.8E.E6.B2.A1.E5.A3.B0.E9.9F.B3)
         *   [6.7.2 ALSA 相关的问题](#ALSA_.E7.9B.B8.E5.85.B3.E7.9A.84.E9.97.AE.E9.A2.98)
             *   [6.7.2.1 在播放任何声音时出现 "返回默认" 消息](#.E5.9C.A8.E6.92.AD.E6.94.BE.E4.BB.BB.E4.BD.95.E5.A3.B0.E9.9F.B3.E6.97.B6.E5.87.BA.E7.8E.B0_.22.E8.BF.94.E5.9B.9E.E9.BB.98.E8.AE.A4.22_.E6.B6.88.E6.81.AF)
             *   [6.7.2.2 使用 GStreamer Phonon 后端时不能播放 MP3 文件](#.E4.BD.BF.E7.94.A8_GStreamer_Phonon_.E5.90.8E.E7.AB.AF.E6.97.B6.E4.B8.8D.E8.83.BD.E6.92.AD.E6.94.BE_MP3_.E6.96.87.E4.BB.B6)
@@ -120,13 +119,11 @@ KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment "Desktop environ
 
 ## 启动 Plasma
 
-**注意:** 虽然可以使用 [Wayland](/index.php/Wayland "Wayland") 启动 Plasma，Plasma 5.10 任存在一些缺失的特性和已知问题。问题清单详见 [Plasma 5.10 Errata](https://community.kde.org/Plasma/5.10_Errata#Wayland)，当前开发状况详见 [Plasma on Wayland workboard](https://phabricator.kde.org/project/board/99/)。使用 [Xorg](/index.php/Xorg "Xorg") 获得最完整和稳定的体验。
+**注意:** 虽然可以使用 [Wayland](/index.php/Wayland "Wayland") 启动 Plasma，Plasma 5.11 仍存在一些缺失的功能和已知问题。问题清单详见 [Plasma 5.11 Errata](https://community.kde.org/Plasma/5.11_Errata#Wayland)，当前开发状况详见 [Plasma on Wayland workboard](https://phabricator.kde.org/project/board/99/)。使用 [Xorg](/index.php/Xorg "Xorg") 获得最完整和稳定的体验。
 
-Plasma 可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)") 以图形方式启动,也可从控制台手动启动。
+Plasma 可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)") 启动,也可从控制台手动启动。
 
-### 图形界面启动
-
-使用[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")：
+### 使用[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")
 
 *   在菜单中选择 *Plasma* 用 Xorg 启动。
 *   安装 [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) 软件包，然后选择 *Plasma (Wayland)* 用 Wayland 启动。
@@ -136,7 +133,7 @@ Plasma 可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%B
 *   使用 [Nouveau](/index.php/Nouveau "Nouveau") 驱动。
 *   使用默认 Xorg 会话。
 
-### 手动启动
+### 控制台启动
 
 如果希望使用“[xinitrc](/index.php/Xinitrc "Xinitrc")/startx”来启动 Plasma 桌面，请在 `.xinitrc` 文件中添加 `exec startkde`。如果你想在登录的时候开启 Xorg 请参阅[Start X at login](/index.php/Start_X_at_login "Start X at login")。若要从终端启动 Wayland 会话, 运行 `startplasmacompositor`。
 
@@ -197,7 +194,7 @@ Plasmoid包含短的脚本（plasmoid scripts）或者编译过的（plasmoid bi
 
 这将显示 [kde-look.org](http://www.kde-look.org/) 的前端界面，并可一键可以安装/卸载/更新第三方 plasmoid 脚本。
 
-大部分 plasmoids 的二进位编码可从 [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmoid&do_Search=Go&PP=25&SO=d&SB=v) 上获得。
+大部分 plasmoids 的二进位编码可从 [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmoid&PP=50&SO=d&SB=v) 上获得。
 
 ##### 系统托盘中的声音应用
 
@@ -222,6 +219,13 @@ $ xprop -remove _KDE_NET_WM_SHADOW
 for WID in $(xwininfo -root -tree | sed '/"Plasma": ("plasmashell" "plasmashell")/!d; s/^  *\([^ ]*\) .*/\1/g'); do
    xprop -id $WID -remove _KDE_NET_WM_SHADOW
 done
+
+```
+
+添加可执行权限
+
+```
+# chmod 755 /usr/local/bin/kde-no-shadow
 
 ```
 
@@ -584,26 +588,6 @@ exec openbox-kde-session
 
 ```
 
-#### Compiz 自定义
-
-如果你想要使用自定义选项运行 Compiz，选择 *Compiz custom* 然后再创建一个名为 `compiz-kde-launcher` 脚本并在其中添加要用于启动 Compiz 的命令。见以下例子：
-
- `/usr/local/bin/compiz-kde-launcher` 
-```
-#!/bin/bash
-LIBGL_ALWAYS_INDIRECT=1
-compiz --replace &
-wait
-
-```
-
-然后标记其为可执行：
-
-```
-$ chmod +x /usr/local/bin/compiz-kde-launcher
-
-```
-
 #### 重新启用特殊效果
 
 当你用不包含窗口混合器（Compositor）的窗口管理器（例如 Openbox）替换 Kwin 时，任何桌面特殊效果都会失效（例如窗口透明度）。在这种情况下，请安装并运行其他独立混合器，比如 [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") 或 [Compton](/index.php/Compton "Compton")。
@@ -741,7 +725,7 @@ $ ln -s /usr/share/icons/breeze_cursors/cursors ~/.icons/default/cursors
 
 ### Plasma 5 下的声音问题
 
-#### KDE 睡眠后没声音
+#### 睡眠后没声音
 
 如果睡眠后没有声音并且 Kmix 没有显示应该显示的音频设备，可以尝试重新启动 plasmeshell 和 pulseaudio：
 

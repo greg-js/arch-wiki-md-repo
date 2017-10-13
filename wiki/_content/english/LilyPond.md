@@ -46,13 +46,13 @@ The next thing you need to do is enable the syntaxes. To do so edit `~/.vimrc` w
 
  `~/.vimrc` 
 ```
-set runtimepath+=/usr/share/lilypond/2.12.3/vim/ 
+set runtimepath+=/usr/share/lilypond/2.18.2/vim/ 
 syntax on		" Turn on colors
 filetype plugin on	" Enables the ftplugin options
 set autoindent		" Automaticaly indent while writing.
 ```
 
-Now when you edit a `*.ly` file you can compile your code with `F5` button, open PDF viewer with `F6` and play midi with `F4` (using timidity). A configuration file is in `/usr/share/lilypond/2.12.3/vim/ftplugin/lilypond.vim` which is easy to customize.
+Now when you edit a `*.ly` file you can compile your code with `F5` button, open PDF viewer with `F6` and play midi with `F4` (using timidity). A configuration file is in `/usr/share/lilypond/2.18.2/vim/ftplugin/lilypond.vim` which is easy to customize.
 
 Click-and-point using evince. [[2]](https://github.com/markk/textedit-ly)
 

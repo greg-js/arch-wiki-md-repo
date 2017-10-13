@@ -8,12 +8,11 @@
     *   [2.2 Keybindings](#Keybindings)
     *   [2.3 Video playback](#Video_playback)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Use webengine backend](#Use_webengine_backend)
-    *   [3.2 Minimize fingerprinting](#Minimize_fingerprinting)
-        *   [3.2.1 Set a common user-agent](#Set_a_common_user-agent)
-        *   [3.2.2 Set a common HTTP_ACCEPT header](#Set_a_common_HTTP_ACCEPT_header)
-        *   [3.2.3 Disable reading from canvas](#Disable_reading_from_canvas)
-    *   [3.3 dwb-like session handling](#dwb-like_session_handling)
+    *   [3.1 Minimize fingerprinting](#Minimize_fingerprinting)
+        *   [3.1.1 Set a common user-agent](#Set_a_common_user-agent)
+        *   [3.1.2 Set a common HTTP_ACCEPT header](#Set_a_common_HTTP_ACCEPT_header)
+        *   [3.1.3 Disable reading from canvas](#Disable_reading_from_canvas)
+    *   [3.2 dwb-like session handling](#dwb-like_session_handling)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -61,17 +60,6 @@ See [Browser plugins#Multimedia playback](/index.php/Browser_plugins#Multimedia_
 
 ## Tips and tricks
 
-### Use webengine backend
-
-To use the more secure webengine backend, use the `--backend` flag:
-
-```
- $ qutebrowser --backend webengine
-
-```
-
-**Note:** The qutebrowser implementation of webengine may be missing features. See [this issue](https://github.com/qutebrowser/qutebrowser/issues/2335) for updates.
-
 ### Minimize fingerprinting
 
 Websites may be able to identify you based on combining information on screen size, user-agent, HTTP_ACCEPT headers, and more. See [[1]](https://panopticlick.eff.org/) for more information and to test the uniqueness of your browser. Below are a few steps that can be taken to make your qutebrowser installation more "generic".
@@ -113,16 +101,11 @@ $ qutebrowser --qt-flag disable-reading-from-canvas
 
 See [issue #2235](https://github.com/qutebrowser/qutebrowser/issues/2235) for more information.
 
-**Note:**
-
-*   Some websites depend on canvas reading for content rendering and other functionality. Adding this option may cause them to not work properly [[2]](https://github.com/qutebrowser/qutebrowser/issues/2908).
-*   This will not have any effect with the QtWebKit backend. See [#Use webengine backend](#Use_webengine_backend) to use the webengine backend.
+**Note:** Some websites depend on canvas reading for content rendering and other functionality. Adding this option may cause them to not work properly [[2]](https://github.com/qutebrowser/qutebrowser/issues/2908).
 
 ### dwb-like session handling
 
 To have qutebrowser handle sessions more like in [dwb](/index.php/Dwb "Dwb") with the `--restore` option (multiple simultaneously active sessions), you can use [this wrapper script](https://github.com/ayekat/dotfiles/blob/master/bin/qutebrowser). It uses `--basedir` to separate data, cache and runtime for each session, while keeping the configuration shared.
-
-**Note:** The wrapper script defaults to the webengine backend. You can pass `--backend webkit` to have it use the QtWebKit backend.
 
 ## See also
 

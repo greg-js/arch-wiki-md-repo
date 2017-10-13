@@ -43,8 +43,9 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Opt
     *   [2.2 DVD](#DVD)
 *   [3 Ripping](#Ripping)
     *   [3.1 CD](#CD_2)
-    *   [3.2 DVD](#DVD_2)
+    *   [3.2 DVD-Video](#DVD-Video)
         *   [3.2.1 dvd::rip](#dvd::rip)
+    *   [3.3 DVD-Audio](#DVD-Audio)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Brasero fails to normalize audio CD](#Brasero_fails_to_normalize_audio_CD)
     *   [4.2 VLC: Error "... could not open the disc /dev/dvd"](#VLC:_Error_.22..._could_not_open_the_disc_.2Fdev.2Fdvd.22)
@@ -683,7 +684,7 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 	[https://github.com/JoeLametta/whipper](https://github.com/JoeLametta/whipper) || [whipper](https://www.archlinux.org/packages/?name=whipper)
 
-### DVD
+### DVD-Video
 
 Often, the process of ripping a DVD can be broken down into two subtasks:
 
@@ -739,6 +740,12 @@ The following packages should be installed:
 The dvd::rip preferences are mostly well-documented/self-explanatory. If you need help with something, see [http://www.exit1.org/dvdrip/doc/gui-gui_pref.cipp](http://www.exit1.org/dvdrip/doc/gui-gui_pref.cipp).
 
 Ripping a DVD is often a simple matter of selecting the preferred codec(s), selecting the desired titles, then clicking the "Rip" button.
+
+### DVD-Audio
+
+*   **Python Audio Tools** — Includes dvda2track, which is easy to use command line tool to extract DVD-Audio tracks to uncompressed wav files.
+
+	[http://audiotools.sourceforge.net/](http://audiotools.sourceforge.net/) || [audiotools-git](https://www.archlinux.org/packages/?name=audiotools-git)
 
 ## Troubleshooting
 

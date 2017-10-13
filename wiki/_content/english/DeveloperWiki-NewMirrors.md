@@ -1,18 +1,28 @@
 ## Contents
 
 *   [1 Adding a new mirror](#Adding_a_new_mirror)
-*   [2 2-tier mirroring scheme](#2-tier_mirroring_scheme)
-*   [3 For the mirror administrator](#For_the_mirror_administrator)
-    *   [3.1 Tier 2 requirements](#Tier_2_requirements)
-    *   [3.2 Tier 1 requirements](#Tier_1_requirements)
-    *   [3.3 Create a feature-request](#Create_a_feature-request)
-    *   [3.4 Contact info and mailing lists](#Contact_info_and_mailing_lists)
-*   [4 The Arch Linux side](#The_Arch_Linux_side)
-*   [5 Mirror size](#Mirror_size)
+*   [2 Notes about private mirrors](#Notes_about_private_mirrors)
+*   [3 2-tier mirroring scheme](#2-tier_mirroring_scheme)
+*   [4 For the mirror administrator](#For_the_mirror_administrator)
+    *   [4.1 Tier 2 requirements](#Tier_2_requirements)
+    *   [4.2 Tier 1 requirements](#Tier_1_requirements)
+    *   [4.3 Create a feature-request](#Create_a_feature-request)
+    *   [4.4 Contact info and mailing lists](#Contact_info_and_mailing_lists)
+*   [5 The Arch Linux side](#The_Arch_Linux_side)
+*   [6 Mirror size](#Mirror_size)
 
 ### Adding a new mirror
 
 This text should outline the procedure for adding a new mirror for Arch packages.
+
+### Notes about private mirrors
+
+*   Bandwidth is not free for the mirrors. They must pay for all the data they serve you
+    *   This still applies although you pay your ISP
+    *   A full mirror is over 50GB in size
+*   There are many packages that will be downloaded that you will likely never use
+*   Mirror operators will much prefer you to download only the packages you need
+*   Really please look at the alternatives listed [here](https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Network_shared_pacman_cache) before setting up a private mirror
 
 ## 2-tier mirroring scheme
 

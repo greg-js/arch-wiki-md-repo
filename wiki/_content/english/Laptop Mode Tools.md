@@ -1,3 +1,13 @@
+Related articles
+
+*   [acpid](/index.php/Acpid "Acpid")
+*   [systemd](/index.php/Systemd "Systemd")
+*   [cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils")
+*   [pm-utils](/index.php/Pm-utils "Pm-utils")
+*   [Laptop](/index.php/Laptop "Laptop")
+*   [Powertop](/index.php/Powertop "Powertop")
+*   [TLP](/index.php/TLP "TLP")
+
 [Laptop Mode Tools](https://github.com/rickysarraf/laptop-mode-tools) is a laptop power saving package for Linux systems. It is the primary way to enable the Laptop Mode feature of the Linux kernel, which lets your hard drive spin down. In addition, it allows you to tweak a number of other power-related settings using a simple configuration file.
 
 Combined with [acpid](/index.php/Acpid "Acpid") and [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling"), LMT provides most users with a complete notebook power management suite.
@@ -71,7 +81,7 @@ With the `CONTROL_MOUNT_OPTIONS` variable (default on), laptop-mode-tools automa
 
 #### Solid state drives
 
-From the [official, upstream FAQ](https://github.com/rickysarraf/laptop-mode-tools/wiki/FAQ#i-have-a-solid-state-disk-ssd-in-my-machine-should-i-enable-any-of-the-disk-related-parts-of-laptop-mode-tools-or-are-they-irrelevant):
+From the [official, upstream FAQ](http://samwel.tk/laptop_mode/faq):
 
 **Question:** I have a solid-state disk (SSD) in my machine. Should I enable any of the disk-related parts of laptop-mode-tools, or are they irrelevant?
 
@@ -101,29 +111,6 @@ NOLM_AC_CPU_IGNORE_NICE_LOAD=0
 CONTROL_CPU_THROTTLING=0
 
 ```
-
-A laptop using a modern Intel CPU controls CPU frequency with the module **intel_pstate** by default. To make the laptop more power-saving, add `intel_pstate=disable` to your kernel line, and edit the following lines in `cpufreq.conf`.
-
-```
-# cpufreq.conf
-# ThinkPad T40/T42/T60 Example
-#
-BATT_CPU_MAXFREQ=fastest
-BATT_CPU_MINFREQ=slowest
-BATT_CPU_GOVERNOR=powersave
-BATT_CPU_IGNORE_NICE_LOAD=1
-LM_AC_CPU_MAXFREQ=fastest
-LM_AC_CPU_MINFREQ=slowest
-LM_AC_CPU_GOVERNOR=performance
-LM_AC_CPU_IGNORE_NICE_LOAD=1
-NOLM_AC_CPU_MAXFREQ=fastest
-NOLM_AC_CPU_MINFREQ=slowest
-NOLM_AC_CPU_GOVERNOR=performance
-NOLM_AC_CPU_IGNORE_NICE_LOAD=0
-
-```
-
-If you care more about productivity of your laptop on battery, you can go with the default **intel_pstate**.
 
 ### Device and bus
 

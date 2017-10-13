@@ -1,3 +1,11 @@
+Artículos relacionados
+
+*   [systemd/User (Español)](/index.php/Systemd/User_(Espa%C3%B1ol) "Systemd/User (Español)")
+*   [Automatic login to virtual console (Español)](/index.php/Automatic_login_to_virtual_console_(Espa%C3%B1ol) "Automatic login to virtual console (Español)")
+*   [Display Manager (Español)](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)")
+*   [Silent boot (Español)](/index.php/Silent_boot_(Espa%C3%B1ol) "Silent boot (Español)")
+*   [Xinitrc (Español)](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)")
+
 En este artículo se explica cómo hacer que el [servidor X](/index.php/X_server "X server") se inicie automáticamente después de iniciar sesión en un terminal virtual. Esto se logra mediante la ejecución de la órden *startx*, cuyo comportamiento se puede personalizar como se describe en el artículo [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)"), por ejemplo para elegir qué [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") será lanzado. Alternativamente, se puede usar un [gestor de ventanas](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") para iniciar automáticamente X y proporcionar una pantalla gráfica de acceso.
 
 ## Archivos de perfiles de la Shell

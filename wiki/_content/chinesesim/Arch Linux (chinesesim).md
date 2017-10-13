@@ -66,7 +66,7 @@ Arch有一个易用的[包管理系统](https://en.wikipedia.org/wiki/Package_ma
 
 ### 中期
 
-[这个](https://dev.archlinux.org/~dan/archstats.svg) 表格见证了Arch Linux 社区的稳步扩大. 而且从早期开始，Arch 就树立起了 [开放、友好和社区互助的形象](http://www.osnews.com/story/4827)。
+[这个](/images/8/8d/Archstats2002-2011.png "Archstats2002-2011.png")图表见证了Arch Linux 社区的稳步扩大. 而且从早期开始，Arch 就树立起了 [开放、友好和社区互助的形象](http://www.osnews.com/story/4827)。
 
 ### ArchWiki 的诞生
 

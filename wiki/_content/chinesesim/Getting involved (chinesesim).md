@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Getting_Involved](/index.php/Getting_Involved "Getting Involved") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-01-19，点击[这里](https://wiki.archlinux.org/index.php?title=Getting_Involved&diff=0&oldid=462995)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Getting_Involved](/index.php/Getting_Involved "Getting Involved") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-12，点击[这里](https://wiki.archlinux.org/index.php?title=Getting_Involved&diff=0&oldid=491797)可以查看翻译后英文页面的改动。
 
 在进化生物学中，[合作](https://en.wikipedia.org/wiki/Co-operation_(evolution) "wikipedia:Co-operation (evolution)")是指个体付出一个小成本，可以为其他同胞带来更大的收益，而其他个体也一样提供回报，这样每个参与者都会获得非常大的收益。Arch 社区也是如此，很多成员希望为自己喜爱的 GNU/Linux 发行版做出贡献。大家的参与，不仅有利于 Archer 同胞，还能造福[自由软件和开源软件](https://en.wikipedia.org/wiki/zh:%E8%87%AA%E7%94%B1%E5%8F%8A%E5%BC%80%E6%94%BE%E6%BA%90%E4%BB%A3%E7%A0%81%E8%BD%AF%E4%BB%B6 "wikipedia:zh:自由及开放源代码软件")的全体爱好者。
 
@@ -12,8 +12,8 @@
     *   [1.3 加入聊天室](#.E5.8A.A0.E5.85.A5.E8.81.8A.E5.A4.A9.E5.AE.A4)
     *   [1.4 报告安装的软件](#.E6.8A.A5.E5.91.8A.E5.AE.89.E8.A3.85.E7.9A.84.E8.BD.AF.E4.BB.B6)
     *   [1.5 报告和修正 bug](#.E6.8A.A5.E5.91.8A.E5.92.8C.E4.BF.AE.E6.AD.A3_bug)
-    *   [1.6 创建或维护 AUR 软件包](#.E5.88.9B.E5.BB.BA.E6.88.96.E7.BB.B4.E6.8A.A4_AUR_.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [1.7 参加活动](#.E5.8F.82.E5.8A.A0.E6.B4.BB.E5.8A.A8)
+    *   [1.6 安全问题](#.E5.AE.89.E5.85.A8.E9.97.AE.E9.A2.98)
+    *   [1.7 创建或维护 AUR 软件包](#.E5.88.9B.E5.BB.BA.E6.88.96.E7.BB.B4.E6.8A.A4_AUR_.E8.BD.AF.E4.BB.B6.E5.8C.85)
     *   [1.8 Arch 官方软件项目](#Arch_.E5.AE.98.E6.96.B9.E8.BD.AF.E4.BB.B6.E9.A1.B9.E7.9B.AE)
     *   [1.9 捐款](#.E6.8D.90.E6.AC.BE)
 *   [2 社区项目](#.E7.A4.BE.E5.8C.BA.E9.A1.B9.E7.9B.AE)
@@ -45,7 +45,7 @@
 
 ### 报告安装的软件
 
-[pkgstats](/index.php/Pkgstats "Pkgstats") 可以定期将系统中安装的软件上报服务器，同时还能提供系统架构和使用镜像的信息。开发者可以通过数据统计，安排自己工作的优先级。信息是匿名发送，不会暴露用户隐私。可以通过[统计页面](https://www.archlinux.de/?page=Statistics)查看信息。详情请阅读[这个论坛帖子](https://bbs.archlinux.org/viewtopic.php?id=105431)。
+[pkgstats](/index.php/Pkgstats "Pkgstats") 使用 [systemd 定时器](/index.php/Systemd/Timers "Systemd/Timers")定期将系统中安装的软件上报服务器，同时还能提供系统架构和使用镜像的信息。开发者可以通过数据统计，安排自己工作的优先级。信息是匿名发送，不会暴露用户隐私。可以通过[统计页面](https://www.archlinux.de/?page=Statistics)查看信息。详情请阅读[这个论坛帖子](https://bbs.archlinux.org/viewtopic.php?id=105431)。
 
 ### 报告和修正 bug
 
@@ -53,13 +53,15 @@
 
 但若汇报的问题无意义时，反而会浪费大家的时间。如有意参与其中，请先阅读 [Bug 汇报指南](/index.php/Reporting_bug_guidelines_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Reporting bug guidelines (简体中文)")。
 
+### 安全问题
+
+新的漏洞不停出现，帮助 [Arch 安全小组](/index.php/Arch_Security_Team "Arch Security Team") 追踪新的漏洞。
+
 ### 创建或维护 AUR 软件包
 
 [Arch 用户软件仓库](/index.php/Arch_User_Repository "Arch User Repository")是一个大众主导的软件仓库，包含了大量用户提交的 PKGBUILD。与官方软件库二进制包的形式不同，AUR 中的软件包将以 PKGBUILD 的形式供用户使用，并全由用户自行编译。用户可通过 AUR 分享软件，其中一些热门软件会选入官方的`[community]`软件仓库。
 
-### 参加活动
-
-每年都会举行一些 bug 修正、翻译和清理活动。可以在 [Arch Linux Event Calendar](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar") 查询。
+[aurphan](https://www.archlinux.org/packages/?name=aurphan) 可以找到您系统上无人维护的软件包，已方便您找到想要接收的软件包。
 
 ### Arch 官方软件项目
 
@@ -172,8 +174,8 @@ Arch 特别服务：
 *   加入信任用户，获得软件打包经验，提升技能
 *   将软件包提交到 AUR
 *   加入以后可能成为 Arch 主流应用的程序开发或者自己建立一个项目
-*   修改 pacman、makepkg 或其它源代码并通过 bug 管理系统提交补丁
-*   浏览 bug 管理系统，修正问题
+*   修改 pacman、makepkg 或其它 [Arch 项目](https://git.archlinux.org/)并通过 bug 管理系统提交补丁
+*   浏览 [bug](https://bugs.archlinux.org/) 管理系统，修正问题
 *   找到并提交新 Bug
 *   修正维基错误、添加页面、清理页面并保证步骤符合最新系统
 *   提交翻译

@@ -23,7 +23,7 @@
 
 ### Alternate installations
 
-It is not uncommon to need or desire to work in different versions of [nodejs](https://www.archlinux.org/packages/?name=nodejs). A preferred method among node users is to use [NVM](https://github.com/creationix/nvm) (Node Version Manger). [nvm](https://aur.archlinux.org/packages/nvm/) allows for cheap and easy alternative installs. Usage is well documented on the projects GitHub but is as simple as:
+It is not uncommon to need or desire to work in different versions of [nodejs](https://www.archlinux.org/packages/?name=nodejs). A preferred method among node users is to use [NVM](https://github.com/creationix/nvm) (Node Version Manger). [nvm](https://aur.archlinux.org/packages/nvm/) allows for cheap and easy alternative installs. Usage is well documented on the project's GitHub but is as simple as:
 
 ```
 $ nvm install VERSION_NUM
@@ -97,7 +97,7 @@ For the case of globally installed packages (`-g`)
 
 ##### Updating all packages
 
-However, sometimes you may just wish to update all packages. Be it locally or globally. Leaving off the packageName `npm` will attempt to update all the packages
+However, sometimes you may just wish to update all packages, either locally or globally. Leaving off the packageName `npm` will attempt to update all packages
 
 ```
 $ npm update
@@ -176,7 +176,7 @@ $ sudo npm install --unsafe-perm -g node-inspector
 
 ## Additional resources
 
-For further information on Node.js and use of its official package manager NPM you may wish to consult the following external resources
+For further information on Node.js and the use of its official package manager NPM you may wish to consult the following external resources
 
 *   [Node.js documentation](https://nodejs.org/en/docs/)
 *   [NPM documentation](https://docs.npmjs.com/)

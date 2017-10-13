@@ -211,9 +211,9 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 
 ### Thunderbolt Firmware updates
 
-The thunderbolt controller in the laptop has an embedded firmware. The laptop ships with firmware version NVM 18, and the most recent available version from Dell's website is NVM 21\. If encountering compatibility problems with Thunderbolt accessories (such as the DA-200), the firmware may need to be updated. Dell maintains a [Github repository](https://github.com/dell/thunderbolt-nvm-linux) explaining the process to update the firmware which also provides the updated payload files. Mainline support for the firmware update process is pending the inclusion of [these patches](https://github.com/01org/thunderbolt-software-kernel-tree/tree/networking) into the Linux kernel.
+The thunderbolt controller in the laptop has an embedded firmware. The laptop ships with firmware version NVM 18, and the most recent available version from Dell's website is NVM 21\. If encountering compatibility problems with Thunderbolt accessories (such as the DA-200), the firmware may need to be updated. Dell maintains a [Github repository](https://github.com/dell/thunderbolt-nvm-linux) explaining the process to update the firmware which also provides the updated payload files.
 
-Here is a short list of steps to update the Thunderbolt-Firmware on linux 4.12+ (use at your own risk):
+Here is a short list of steps to update the Thunderbolt-Firmware on linux 4.13+ (use at your own risk):
 
 *   Install [libsmbios](https://www.archlinux.org/packages/?name=libsmbios) and [efivar](https://www.archlinux.org/packages/?name=efivar)
 *   Clone [dell Thunderbolt Force Tool](https://github.com/dell/thunderbolt-nvm-linux)
@@ -228,14 +228,6 @@ Here is a short list of steps to update the Thunderbolt-Firmware on linux 4.12+ 
 
 ```
 # ./force_dell_tbt 1
-
-```
-
-*   Install [thunderbolt-dkms-git](https://aur.archlinux.org/packages/thunderbolt-dkms-git/)
-*   Load the thunderbolt module (the controller *must* be in force mode before this step)
-
-```
-# modprobe thunderbolt
 
 ```
 

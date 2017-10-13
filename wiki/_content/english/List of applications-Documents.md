@@ -481,7 +481,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Sublime Text 2](https://en.wikipedia.org/wiki/Sublime_Text "wikipedia:Sublime Text")** — Closed-source C++ and Python-based editor with many advanced features and plugins while staying lightweight and pretty.
 
-	[https://www.sublimetext.com](https://www.sublimetext.com) || [sublime-text](https://aur.archlinux.org/packages/sublime-text/)
+	[https://www.sublimetext.com](https://www.sublimetext.com) || [sublime-text2](https://aur.archlinux.org/packages/sublime-text2/)
 
 *   **[Sublime Text 3](https://en.wikipedia.org/wiki/Sublime_Text "wikipedia:Sublime Text")** — Closed-source C++ and Python-based editor with many advanced features and plugins while staying lightweight and pretty.
 

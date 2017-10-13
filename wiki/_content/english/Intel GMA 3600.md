@@ -1,3 +1,8 @@
+Related articles
+
+*   [Intel graphics](/index.php/Intel_graphics "Intel graphics")
+*   [Xorg](/index.php/Xorg "Xorg")
+
 The **Intel GMA 3600** series is a family of integrated video adapters based on the PowerVR SGX 545 graphics core. It is used in the Atom N2600, N2800 and D2550.
 
 The Linux kernel has support since version 3.5.
@@ -73,4 +78,3 @@ mplayer -lavdopts threads=4 -fs myvideo.avi
 *   [https://www.change.org/en-GB/petitions/intel-listen-to-the-community-and-develop-gma3600-drivers-for-linux](https://www.change.org/en-GB/petitions/intel-listen-to-the-community-and-develop-gma3600-drivers-for-linux)
 *   [http://ubuntuforums.org/showthread.php?t=1953734](http://ubuntuforums.org/showthread.php?t=1953734)
 *   [http://communities.intel.com/message/158477](http://communities.intel.com/message/158477)
-*   [https://bugs.launchpad.net/ubuntu/+source/cedarview-drm-drivers/+bug/1132584](https://bugs.launchpad.net/ubuntu/+source/cedarview-drm-drivers/+bug/1132584)

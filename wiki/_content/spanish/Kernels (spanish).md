@@ -105,7 +105,7 @@ make nconfig # new CLI menu for configuration
 
 Si ya tenias un archivo de configuración para el kernel. Te sugiero descomentar una de las herramientas de configuración interactiva, como nconfig, y cargar tu configuración desde allí. Eso evitará problemas con el nombre del kernel.
 
-**Note:** Si descomentas *return 1*, podes cambiar el directorio principal del kernel luego de que makepkg termine las extracciones y luego hacer la configuración con nconfig. Esto te permitirá configurar tu kernel en varias sesiones. Cuando estés listo para compilar, copia el archivo .config sobre el .config que se haya generado automáticamente, o sobre el config.x86_64 (esto dependerá de la arquitectura del procesador), comenta *return 1* y usa **makepkg -i**.
+**Note:** Si descomenta *return 1*, puede cambiar el directorio principal del kernel luego de que makepkg termine las extracciones y luego hacer la configuración con nconfig. Esto te permitirá configurar tu kernel en varias sesiones. Cuando estés listo para compilar, copia el archivo .config sobre el .config que se haya generado automáticamente, o sobre el config.x86_64 (esto dependerá de la arquitectura del procesador), comenta *return 1* y usa **makepkg -i**.
 
 #### Cambiando la función package_kernel26()
 
@@ -167,11 +167,9 @@ En el [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository
 
 ## Tradicional
 
-[La manera tradicional](/index.php/Kernel_Compilation_(Espa%C3%B1ol) "Kernel Compilation (Español)") es simple y directa.
+Este método requiere la descargar manual del tarball y construir el kernel en el directorio home como usuario normal. Una vez configurado, se explican dos métodos de compilación/instalación, el método manual o mediante [makepkg (Español)](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)")/[pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").
 
-Este método requiere de la descarga manual del tarbal, y la contrucción en tu directorio home como usuario normal. Una vez configurado, se explican dos métodos de compilación/instalación, el método manual y el de makepkg/[pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").
-
-Si sos nuevo en este proceso, [la manera tradicional para nuevos usuarios](/index.php/Kernel_Compilation_From_Source_For_New_Users_Guide "Kernel Compilation From Source For New Users Guide") es la apropiada.
+Más información en [Compilación tradicional](/index.php/Kernels/Traditional_compilation "Kernels/Traditional compilation").
 
 ## Revisa también
 

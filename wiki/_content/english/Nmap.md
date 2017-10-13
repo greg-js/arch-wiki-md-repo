@@ -145,7 +145,7 @@ Nmap uses different kinds of ping packets when run with user or root privileges 
 There are 3 main states a port can be in:
 
 *   `open` - there is a program listening and responding to requests on this port
-*   `closed` - the host replys with an "error: no program listening on this port" reply to requests to this port
+*   `closed` - the host replies with an "error: no program listening on this port" reply to requests to this port
 *   `filtered` - the host doesn't reply at all. This can be due to restrictive firewall rules, which "drop" a packet without sending a reply
 
 In addition to these there are 3 more states that Nmap can classify a port. These are used when Nmap cannot reliably determine the state but suspects two of the three possible states:

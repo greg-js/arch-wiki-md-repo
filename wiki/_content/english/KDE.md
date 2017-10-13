@@ -216,7 +216,7 @@ done
 Set execution permissions for the script:
 
 ```
-$ sudo chmod 755 /usr/local/bin/kde-no-shadow
+# chmod 755 /usr/local/bin/kde-no-shadow
 
 ```
 

@@ -1,3 +1,8 @@
+Related articles
+
+*   [fdisk](/index.php/Fdisk "Fdisk")
+*   [Partitioning](/index.php/Partitioning "Partitioning")
+
 GNU Parted is a program for creating and manipulating partition tables. GParted is a GUI frontend.
 
 ## Contents

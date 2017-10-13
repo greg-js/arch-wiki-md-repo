@@ -8,6 +8,7 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Front-ends](#Front-ends)
 *   [2 As a cp alternative](#As_a_cp_alternative)
     *   [2.1 Trailing slash caveat](#Trailing_slash_caveat)
 *   [3 As a backup utility](#As_a_backup_utility)
@@ -29,7 +30,23 @@ Related articles
 
 *rsync* must be installed on both the source and the destination machine.
 
-The [grsync](https://www.archlinux.org/packages/?name=grsync) package provides a graphical front-end.
+### Front-ends
+
+*   **Grsync** — GTK+ front-end.
+
+	[http://www.opbyte.it/grsync/](http://www.opbyte.it/grsync/) || [grsync](https://www.archlinux.org/packages/?name=grsync)
+
+*   **gutback** — rsync wrapper written in Shell.
+
+	[https://github.com/gutenye/gutbackup](https://github.com/gutenye/gutbackup) || [gutbackup](https://aur.archlinux.org/packages/gutbackup/)
+
+*   **JotaSync** — Java Swing GUI for rsync with integrated scheduler.
+
+	[https://trixon.se/projects/jotasync/](https://trixon.se/projects/jotasync/) || [jotasync](https://aur.archlinux.org/packages/jotasync/)
+
+*   **luckyBackup** — Qt front-end written in C++.
+
+	[http://luckybackup.sourceforge.net/index.html](http://luckybackup.sourceforge.net/index.html) || [luckybackup](https://aur.archlinux.org/packages/luckybackup/)
 
 ## As a cp alternative
 

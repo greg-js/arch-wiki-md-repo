@@ -1,3 +1,10 @@
+Artículos relacionados
+
+*   [Display Manager (Español)](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)")
+*   [Start X at Login (Español)](/index.php/Start_X_at_Login_(Espa%C3%B1ol) "Start X at Login (Español)")
+*   [Xorg (Español)](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)")
+*   [xprofile (Español)](/index.php/Xprofile_(Espa%C3%B1ol) "Xprofile (Español)")
+
 El archivo `~/.xinitrc` es un script de shell leído por `xinit` y estos por el frontend `startx`. Se utiliza principalmente para ejecutar [entornos de escritorios](/index.php/Desktop_environment "Desktop environment"), [gestores de ventanas](/index.php/Window_manager "Window manager"), y otros programas al iniciar el servidor X (por ejemplo, como los daemons y las configuraciones de las variables de entorno). El programa `xinit` se utilizan para iniciar servidor [X Window System](/index.php/Xorg "Xorg") y funcionan como el primer programa cliente en sistemas que no utilizan un [gestor de inicio de sesión](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)").
 
 Una de las principales funciones de `~/.xinitrc` es dictar al sistema X Window lo que se invoca desde el programa `startx` o `xinit` en función de lo especificado por cada usuario. Existe numerosas especificaciones adicionales y órdenes que se pueden añadir a `~/.xinitrc` con el fin de personalizar aún más su sistema.

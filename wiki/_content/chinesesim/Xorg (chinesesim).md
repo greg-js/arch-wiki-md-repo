@@ -1,6 +1,5 @@
 相关文章
 
-*   [登录时启动X](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)")
 *   [Autostarting](/index.php/Autostarting "Autostarting")
 *   [X启动时执行命令](/index.php/Execute_commands_after_X_start "Execute commands after X start")
 *   [登录管理器](/index.php/Login_Manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Login Manager (简体中文)")
@@ -10,14 +9,25 @@
 *   [使用所有鼠标按键](/index.php/All_Mouse_Buttons_Working "All Mouse Buttons Working")
 *   [桌面环境](/index.php/Desktop_Environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop Environment (简体中文)")
 *   [Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)")
+*   [登录时启动X](/index.php/Xinitrc_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xinitrc (简体中文)")
+*   [xrandr](/index.php/Xrandr "Xrandr")
 
-**Xorg** 是 X11 窗口系统的一个开源实现。Xorg 在 Linux 用户中非常流行，已经成为图形用户程序的必备条件，所以大部分发行版都提供了它。详情参见 [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") 维基文章或访问[Xorg 网站](http://www.x.org/wiki/)。
+**翻译状态：** 本文是英文页面 [Xorg](/index.php/Xorg "Xorg") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-13，点击[这里](https://wiki.archlinux.org/index.php?title=Xorg&diff=0&oldid=489762)可以查看翻译后英文页面的改动。
+
+摘自 [http://www.x.org/wiki/](http://www.x.org/wiki/):
+
+	X.Org 项目提供了 X 窗口系统的开源实现。开发工作实在 freedesktop.org 社区的通力合作下完成。X.Org 组织是非盈利教育机构。
+
+Xorg 在 Linux 用户中非常流行，已经成为图形用户程序的必备条件，所以大部分发行版都提供了它。详情参见 [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") 维基文章或访问[Xorg 网站](http://www.x.org/wiki/)。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
     *   [1.1 驱动安装](#.E9.A9.B1.E5.8A.A8.E5.AE.89.E8.A3.85)
+    *   [1.2 AMD](#AMD)
 *   [2 运行](#.E8.BF.90.E8.A1.8C)
+    *   [2.1 显示管理器](#.E6.98.BE.E7.A4.BA.E7.AE.A1.E7.90.86.E5.99.A8)
+    *   [2.2 手动](#.E6.89.8B.E5.8A.A8)
 *   [3 配置](#.E9.85.8D.E7.BD.AE)
 *   [4 输入设备](#.E8.BE.93.E5.85.A5.E8.AE.BE.E5.A4.87)
     *   [4.1 鼠标加速](#.E9.BC.A0.E6.A0.87.E5.8A.A0.E9.80.9F)
@@ -64,60 +74,79 @@
 
 ## 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 位于[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库") 的软件包 [xorg-server](https://www.archlinux.org/packages/?name=xorg-server)。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [xorg-server](https://www.archlinux.org/packages/?name=xorg-server)。
 
-另外，安装位于 [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils) 组中的某些工具以进行某些特定的配置工作。其他一些有用的工具可以在 [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) 组中找到。
+此外，[xorg-apps](https://www.archlinux.org/packages/?name=xorg-apps) 组提供了一些程序以完成某些特定的配置工作。
+
+软件包组 [xorg](https://www.archlinux.org/groups/x86_64/xorg/) 包含了 Xorg server，[xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) 中的软件包以及字体.
 
 **提示：** 用户通常需要选择安装某个 [窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)") 或 [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")以配合使用 X。
 
 ### 驱动安装
 
-Linux 内核包含了开源的视频驱动，支持硬件加速的 framebuffers。OpenGL 和 X11 的 2D 加速需要用户空间工具。
+Linux 内核包含了开源的视频驱动，支持硬件加速。OpenGL 和 X11 的 2D 加速需要用户空间工具。
 
-如果不知道显卡类型，请执行如下命令进行查询：
+执行如下命令查询显卡类型：
 
 ```
 $ lspci | grep -e VGA -e 3D
 
 ```
 
-输入下面命令，查看所有**开源**驱动:
+安装对应的驱动，输入下面命令，查看所有开源驱动:
 
 ```
-$ pacman -Ss xf86-video | less
+$ pacman -Ss xf86-video
 
 ```
 
-`vesa`是一个支持大部分显卡的通用驱动，不提供任何 2D 和 3D 加速功能。要充分发挥显卡性能，请按下表安装驱动程序。推荐先使用开源驱动，这些驱动出问题的可能性较小。
+Xorg 会自动搜索安装的驱动：
 
-| 厂商 | 类型 | 驱动 | [Multilib](/index.php/Multilib "Multilib") 软件包
-(适用于 Arch x86_64 上的 32 位程序) | 文档 |
-| **AMD/ATI** | 开源 | [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [ATI (简体中文)](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)") |
-| 闭源 | [catalyst](https://aur.archlinux.org/packages/catalyst/) | [lib32-catalyst-libgl](https://aur.archlinux.org/packages/lib32-catalyst-libgl/) | [AMD Catalyst (简体中文)](/index.php/AMD_Catalyst_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AMD Catalyst (简体中文)") |
-| **Intel** | 开源 | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [Intel graphics (简体中文)](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel graphics (简体中文)") |
-| **Nvidia** | 开源 | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [Nouveau (简体中文)](/index.php/Nouveau_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Nouveau (简体中文)") |
-| 闭源 | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) | [NVIDIA (简体中文)](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NVIDIA (简体中文)") |
-| [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) | [lib32-nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-libgl) |
-| [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) | [lib32-nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-libgl) |
+*   如果无法找到设备在下表中列出的驱动，会首先查看是否安装了 *fbdev* ([xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev)).
+*   如果依然没有找到，会搜索 *vesa* ([xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa)), 这是一个支持大部分显卡的通用驱动，不提供任何 2D 和 3D 加速功能。
+*   如果没有找到 *vesa*，Xorg 会使用 [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"), 这个驱动提供了 GLAMOR 加速 (参考 [modesetting(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4)).
+
+要充分发挥显卡性能，请按下表安装驱动程序。推荐先使用开源驱动，这些驱动出问题的可能性较小。
+
+| 厂商 | 类型 | 驱动 | OpenGL | OpenGL ([Multilib](/index.php/Multilib "Multilib")) | 文档 |
+| **AMD/
+ATI** | 开源 | [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [AMDGPU](/index.php/AMDGPU "AMDGPU") |
+| [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [ATI](/index.php/ATI "ATI") |
+| 非开源 | [catalyst](https://aur.archlinux.org/packages/catalyst/) | [catalyst-libgl](https://aur.archlinux.org/packages/catalyst-libgl/) | [lib32-catalyst-libgl](https://aur.archlinux.org/packages/lib32-catalyst-libgl/) | [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
+| **Intel** | 开源 | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Intel graphics](/index.php/Intel_graphics "Intel graphics") |
+| **Nvidia** | 开源 | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Nouveau](/index.php/Nouveau "Nouveau") |
+| 非开源 | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) | [NVIDIA](/index.php/NVIDIA "NVIDIA") |
+| [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) | [nvidia-340xx-utils](https://www.archlinux.org/packages/?name=nvidia-340xx-utils) | [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) |
+| [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) | [nvidia-304xx-utils](https://www.archlinux.org/packages/?name=nvidia-304xx-utils) | [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils) |
+
+对于同时使用集成显卡和独立显卡的 NVIDIA Optimus 笔记本，请参考 [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") 或 [Bumblebee](/index.php/Bumblebee "Bumblebee").
+
+其它驱动也都位于 [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/) 软件包组中.
+
+### AMD
+
+| GPU 架构 | Radeon 显卡 | 开源驱动 | 非开源驱动 |
+| GCN 4
+and newer | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") |
+| GCN 3 | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [Catalyst](/index.php/Catalyst "Catalyst") /
+[AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") |
+| GCN 2* | [AMDGPU](/index.php/AMDGPU "AMDGPU") / [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
+| GCN 1* | [AMDGPU](/index.php/AMDGPU "AMDGPU") / [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
+| TeraScale 2&3 | HD 5000 - HD 6000 | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
+| TeraScale 1 | HD 2000 - HD 4000 | [Catalyst](/index.php/Catalyst "Catalyst") legacy |
+| Older | X1000 and older | *不支持* |
+
+	*: AMDGPU 实验支持
 
 ## 运行
 
-*参见: [Start X at Login (简体中文)](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)")*
+### 显示管理器
 
-**提示：** 最简单的方法是使用 [登录管理器](/index.php/%E7%99%BB%E5%BD%95%E7%AE%A1%E7%90%86%E5%99%A8 "登录管理器") 例如 [GDM](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)") 或 [SLiM](/index.php/SLiM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SLiM (简体中文)").
+最简单的方法是使用 [显示管理器](/index.php/Display_manager "Display manager")，这样就不需要额外的安装和配置。
 
-如果不用登陆管理器启动 X，需要安装软件包 [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit)。
+### 手动
 
-`startx` 和 `xinit` 命令将启动 X 服务器和客户端(`startx` 脚本是更通用命令 `xinit` 的前端)。为了确定要运行的客户端，`startx`/`xinit` 先在用户目录解析 `~/.xinitrc` 文件，如果 `~/.xinitrc` 不存在，使用默认的 `/etc/X11/xinit/xinitrc`, 其中默认会使用 [Twm](/index.php/Twm "Twm") 窗口管理器，[Xclock](https://en.wikipedia.org/wiki/Xclock "wikipedia:Xclock") 和 [Xterm](/index.php/Xterm "Xterm")（需安装 [xorg-twm](https://www.archlinux.org/packages/?name=xorg-twm), [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock) 和 [xterm](https://www.archlinux.org/packages/?name=xterm)）.
-
-**注意:** X 必须在登陆的 tty 启动，这样才能保持 logind 会话。默认的`/etc/X11/xinit/xserverrc`已经进行了处理。
-
-更多信息请阅读 [xinitrc (简体中文)](/index.php/Xinitrc_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xinitrc (简体中文)").
-
-**注意:**
-
-*   如果出现问题，请检查日志文件 `/var/log/Xorg.0.log`. 看看有没有以`(EE)`(代表错误) 或 `(WW)` (代表警告)开头的内容。
-*   如果 `$HOME` 中有空 `.xinitrc` 文件，请删除或[修改它](/index.php/Xinitrc_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xinitrc (简体中文)")。否则 X 会显示空白屏幕，而且 `Xorg.0.log` 中没有任何错误。删除它会运行一个默认的环境。
+如果不用登陆管理器启动 X，请参考 [xinit (简体中文)](/index.php/Xinit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xinit (简体中文)")。
 
 ## 配置
 

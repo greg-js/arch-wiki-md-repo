@@ -11,6 +11,7 @@ Before downgrading a single or multiple packages, consider why you wish to do so
 
 *   Downgrading one package may require that its dependencies be downgraded as well. When the number of packages to downgrade is large, consider using a snapshot. See [Arch Linux Archive#How to restore all packages to a specific date](/index.php/Arch_Linux_Archive#How_to_restore_all_packages_to_a_specific_date "Arch Linux Archive").
 *   Be careful with changes to configuration files and scripts. For now pacman will handle this for us, as long as we do not bypass its safeguards.
+*   If the downgrading involve a soname change, all dependency may need downgrading or [rebuild](/index.php/Frequently_asked_questions#What_if_I_run_a_full_system_upgrade_and_there_will_be_an_update_for_a_shared_library.2C_but_not_for_the_apps_that_depend_on_it.3 "Frequently asked questions") too.
 
 ## Contents
 

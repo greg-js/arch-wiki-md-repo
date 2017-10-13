@@ -500,7 +500,7 @@ To see a volume's physical properties:
 Create a disk-only snapshot (the option `--atomic` will prevent the volume from being modified if snapshot creation fails):
 
 ```
-# virsh snapshot-create-as *domain* snapshot1 --disk-only --atomic
+# virsh snapshot-create *domain* --disk-only --atomic
 
 ```
 
@@ -514,14 +514,12 @@ List snapshots:
 
 ```
 
-One can they copy the original image with `cp --sparse=true` or `rsync -S` and then merge the the original back into snapshot:
+One can then restore from the snapshot:
 
 ```
-# virsh blockpull --domain *domain* --path /vms/*domain*.snapshot1
+# virsh snapshot-revert *domain* *snapshot*
 
 ```
-
-`domain.snapshot1` becomes a new volume. After this is done the original volume (`domain.img` and snapshot metadata can be deleted. The `virsh blockcommit` would work opposite to `blockpull` but it seems to be currently under development (including `snapshot-revert feature`, scheduled to be released sometime next year.
 
 ### Other management
 

@@ -24,15 +24,15 @@
     *   [1.6 扩展包](#.E6.89.A9.E5.B1.95.E5.8C.85)
     *   [1.7 使用正确的前端](#.E4.BD.BF.E7.94.A8.E6.AD.A3.E7.A1.AE.E7.9A.84.E5.89.8D.E7.AB.AF)
 *   [2 在 VirtualBox 中安装 Archlinux](#.E5.9C.A8_VirtualBox_.E4.B8.AD.E5.AE.89.E8.A3.85_Archlinux)
-    *   [2.1 在EFI模式下安装](#.E5.9C.A8EFI.E6.A8.A1.E5.BC.8F.E4.B8.8B.E5.AE.89.E8.A3.85)
-    *   [2.2 Install the Guest Additions](#Install_the_Guest_Additions)
-    *   [2.3 Load the Virtualbox kernel modules](#Load_the_Virtualbox_kernel_modules)
-    *   [2.4 Launch the VirtualBox guest services](#Launch_the_VirtualBox_guest_services)
-    *   [2.5 Hardware acceleration](#Hardware_acceleration)
-    *   [2.6 Enable shared folders](#Enable_shared_folders)
-        *   [2.6.1 Manual mounting](#Manual_mounting)
-        *   [2.6.2 Automounting](#Automounting)
-        *   [2.6.3 Mount at boot](#Mount_at_boot)
+    *   [2.1 以 EFI 模式安装](#.E4.BB.A5_EFI_.E6.A8.A1.E5.BC.8F.E5.AE.89.E8.A3.85)
+    *   [2.2 安装客体机插件](#.E5.AE.89.E8.A3.85.E5.AE.A2.E4.BD.93.E6.9C.BA.E6.8F.92.E4.BB.B6)
+    *   [2.3 加载 VirtualBox 内核模块](#.E5.8A.A0.E8.BD.BD_VirtualBox_.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97_2)
+    *   [2.4 启动 VirtualBox 客体机服务](#.E5.90.AF.E5.8A.A8_VirtualBox_.E5.AE.A2.E4.BD.93.E6.9C.BA.E6.9C.8D.E5.8A.A1)
+    *   [2.5 显卡加速](#.E6.98.BE.E5.8D.A1.E5.8A.A0.E9.80.9F)
+    *   [2.6 启用共享目录](#.E5.90.AF.E7.94.A8.E5.85.B1.E4.BA.AB.E7.9B.AE.E5.BD.95)
+        *   [2.6.1 手动挂载](#.E6.89.8B.E5.8A.A8.E6.8C.82.E8.BD.BD)
+        *   [2.6.2 自动挂载](#.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BD)
+        *   [2.6.3 按配置于启动时挂载](#.E6.8C.89.E9.85.8D.E7.BD.AE.E4.BA.8E.E5.90.AF.E5.8A.A8.E6.97.B6.E6.8C.82.E8.BD.BD)
 *   [3 虚拟磁盘管理](#.E8.99.9A.E6.8B.9F.E7.A3.81.E7.9B.98.E7.AE.A1.E7.90.86)
     *   [3.1 支持VirtualBox的格式](#.E6.94.AF.E6.8C.81VirtualBox.E7.9A.84.E6.A0.BC.E5.BC.8F)
     *   [3.2 磁盘映像格式转换](#.E7.A3.81.E7.9B.98.E6.98.A0.E5.83.8F.E6.A0.BC.E5.BC.8F.E8.BD.AC.E6.8D.A2)
@@ -171,151 +171,159 @@ VirtualBox 自带三个前端：
 
 ## 在 VirtualBox 中安装 Archlinux
 
-在 VirtualBox 中新建一个虚拟机，并在加载 Archlinux 镜像，按照一般步骤完整安装 Archlinux系统，参考[Beginners' guide (简体中文)](/index.php/Beginners%27_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Beginners' guide (简体中文)") 或是 [Installation guide (简体中文)](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")
+简单来说，在虚拟机的虚拟光驱里加载 Arch Linux 的[安装镜像](https://www.archlinux.org/download/)，然后按照[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")里的步骤继续即可。
 
-### 在EFI模式下安装
+### 以 EFI 模式安装
 
-If you want to install Arch Linux in EFI mode inside VirtualBox, in the settings of the virtual machine, choose *System* item from the panel on the left and *Motherboard* tab from the right panel, and check the checkbox *Enable EFI (special OSes only)*. After selecting the kernel from the Arch Linux installation media's menu, the media will hang for a minute or two and will continue to boot the kernel normally afterwards. Be patient.
+如果你想在 VirtualBox 里以 EFI 模式安装 Arch Linux，这需要在虚拟机的设置窗口里，先从左侧选择 *System*，再从右侧选择 *Motherboard* 标签页，最后勾选 *Enable EFI (special OSes only)* 选项。从安装镜像的启动菜单里选好 Arch Linux 的内核之后，这时启动过程要卡顿一两分钟，之后就能正常进入系统。稍安勿躁。
 
-Once the system and the boot loader are installed, VirtualBox will first attempt to run `/EFI/BOOT/BOOTX64.EFI` from the [ESP](/index.php/ESP "ESP"). If that first option fails, VirtualBox will then try the EFI shell script `startup.nsh` from the root of the ESP. This means that in order to boot the system you have the following options:
+等系统和 [启动引导程序](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")安装成功之后，VirtualBox 会首先尝试从 [ESP](/index.php/ESP "ESP") 加载 `/EFI/BOOT/BOOTX64.EFI`。如果这个首选的文件加载失败，VirtualBox 会从 ESP 根目录尝试加载 EFI shell 脚本 `startup.nsh`。这样来说，为了能顺利进入系统，你需要从下面几种方案选一个：
 
-*   [Launch the bootloader manually](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") from the EFI shell every time;
-*   Move the bootloader to the default `/EFI/BOOT/BOOTX64.EFI` path;
-*   Create the `startup.nsh` script at the ESP root containing the path to the boot loader application, e.g. `\EFI\grub\grubx64.efi`.
+*   每次都从 EFI shell [手动选择启动引导程序](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface")
+*   把启动引导程序的 .EFI 文件移动到默认位置：`/EFI/BOOT/BOOTX64.EFI`
+*   自己编写 ESP 分区的 `/startup.nsh` 脚本，用这个脚本加载想使用的引导程序（例如 `\EFI\grub\grubx64.efi`）
+*   从 ESP 分区的 [startup.nsh 脚本](/index.php/EFISTUB#Using_a_startup.nsh_script "EFISTUB")直接启动到 Linux
 
-Do not bother with the VirtualBox Boot Manager (accessible with `F2` at boot): EFI entries added to it manually at boot or with [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will persist after a reboot [but are lost when the VM is shut down](https://www.virtualbox.org/ticket/11177).
+虽然 VirtualBox 支持按 F2 进入自带的 VirtualBox Boot Manager 来管理 EFI 启动过程，但这部分功能还不完整而且有 bug。它还不能持久保存交互式设置的 EFI 变量。也就是说，开机时按下 F12 之后手动添加的、或者用 [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) 添加的 EFI 项目，重启后依然可以生效，但关机之后就会失效。
 
-See also [UEFI Virtualbox installation boot problems](https://bbs.archlinux.org/viewtopic.php?id=158003).
+另见：[UEFI VirtualBox installation boot problems](https://bbs.archlinux.org/viewtopic.php?id=158003).
 
-### Install the Guest Additions
+### 安装客体机插件
 
-VirtualBox [Guest Additions](https://www.virtualbox.org/manual/ch04.html) provides drivers and applications that optimize the guest operating system including improved image resolution and better control of the mouse. Within the installed guest system, install:
+VirtualBox [客体机插件](https://www.virtualbox.org/manual/ch04.html) 为客体系统提供了必要的驱动与应用软件，其作用包括改善图像分辨率与鼠标支持等。在客体机的 Arch Linux 系统里：
 
-*   [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) for VirtualBox Guest utilities with X support
-*   [virtualbox-guest-utils-nox](https://www.archlinux.org/packages/?name=virtualbox-guest-utils-nox) for VirtualBox Guest utilities without X support
+*   若需要支持 X，安装 [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) 这个包
+*   若不需支持 X，安装 [virtualbox-guest-utils-nox](https://www.archlinux.org/packages/?name=virtualbox-guest-utils-nox)
 
-Both packages will make you choose a package to provide guest modules:
+安装这两个包都会询问你希望如何对应安装客体机插件所需的内核模块：
 
-*   for [linux](https://www.archlinux.org/packages/?name=linux) kernel choose [virtualbox-guest-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-guest-modules-arch)
-*   for other kernels choose [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)
+*   若使用了默认的 [linux](https://www.archlinux.org/packages/?name=linux) 内核，安装 [virtualbox-guest-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-guest-modules-arch) 这个包
+*   若使用其他内核，需要安装 [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)
 
-To compile the virtualbox modules provided by [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms), it will also be necessary to install the appropriate headers package(s) for your installed kernel(s) (e.g. [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers) for [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)). [[2]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) When either VirtualBox or the kernel is updated, the kernel modules will be automatically recompiled thanks to the DKMS Pacman hook.
+为了安装由 [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) 提供的内核模块，还需要给你所使用的内核安装相应的包来提供内核头文件。（例如 [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) 内核需要配套安装 [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers)）。[[2]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) 这样，无论内核还是 VirtualBox 有更新， [DKMS](/index.php/DKMS "DKMS") 的Pacman 钩子程序都会自动编译好内核模块。
 
-**Note:**
+**注意:**
 
-*   You can alternatively install the Guest Additions with the ISO from the [virtualbox-guest-iso](https://www.archlinux.org/packages/?name=virtualbox-guest-iso) package, provided you installed this on the host system. To do this, go to the device menu click Insert Guest Additions CD Image.
-*   To recompile the vbox kernel modules, run `rcvboxdrv` as root.
+*   另一个安装方案是从宿主机（如果也是 Arch 系统）安装 [virtualbox-guest-iso](https://www.archlinux.org/packages/?name=virtualbox-guest-iso)，这个软件包里有供客体机安装插件的 ISO 文件。装好这个包之后，启动客体机，点击菜单项目 Devices -> Insert Guest Additions CD Image 即可加载安装镜像。
+*   若要手动重新编译客体机的 VirtualBox 内核模块，以 root 权限运行 `rcvboxdrv` 即可。
 
-### Load the Virtualbox kernel modules
+客体机里运行的插件和主体机上的 VirtualBox 程序版本需要匹配。否则某些功能（比如剪贴板互通）可能会失效。如果你在客体机里升级系统（比如运行了 `pacman -Syu`），那么宿主机上的 VirtualBox 也要跟进更新到最新版。VirtualBox GUI 菜单里的 "Check for updates" 功能未必够用，可以去官网 virtualbox.org 再看看。
 
-To load the modules automatically, [enable](/index.php/Enable "Enable") the `vboxservice` service which loads the modules and synchronizes the guest's system time with the host.
+### 加载 VirtualBox 内核模块
 
-To load the modules manually, type:
+若要开机自动加载模块，[启用](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") `vboxservice.service` 服务即可。该服务还能起到将客户机时间与宿主机同步的功能。
+
+若要手动加载模块，使用这个命令：
 
 ```
 # modprobe -a vboxguest vboxsf vboxvideo
 
 ```
 
-Since version 5.0.16, [virtualbox-guest-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-guest-modules-arch) and [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) use **systemd-modules-load** service to load their modules at boot time.
+自从 5.0.16 版本起，[virtualbox-guest-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-guest-modules-arch) 与 [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) 都能利用 `systemd-modules-load.service` 服务来在开机时自动加载各自提供的模块。
 
-**Note:** If you don't want the VirtualBox modules to be loaded at boot time, you have to mask the default `/usr/lib/modules-load.d/virtualbox-guest-modules-arch.conf` (or `-dkms.conf`) by creating an empty file (or symlink to `/dev/null`) with the same name in `/etc/modules-load.d`.
+**注意:**
 
-### Launch the VirtualBox guest services
+如果你希望开机时不要加载 VirtualBox 模块，办法是将配置文件 `/usr/lib/modules-load.d/virtualbox-guest-modules-arch.conf` (或是 `-dkms.conf`，如果安装了 [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)) 屏蔽掉。具体的操作是：在 `/etc/modules-load.d` 目录里创建一个同文件名的空文件。例如：
 
-After the rather big installation step dealing with VirtualBox kernel modules, now you need to start the guest services. The guest services are actually just a binary executable called `VBoxClient` which will interact with your X Window System. `VBoxClient` manages the following features:
+```
+# touch /etc/modules-load.d/virtualbox-guest-modules-arch.conf
 
-*   shared clipboard and drag and drop between the host and the guest;
-*   seamless window mode;
-*   the guest display is automatically resized according to the size of the guest window;
-*   checking the VirtualBox host version
+```
 
-All of these features can be enabled independently with their dedicated flags:
+### 启动 VirtualBox 客体机服务
+
+安装并加载了 VirtualBox 内核模块之后，如果你在虚拟机系统里使用 [X](/index.php/Xorg "Xorg")，那么推荐启动这样一个客体机服务：服务的程序名字叫 `VBoxClient`，它与 X 窗口系统沟通来实现其功能。具体功能包括：
+
+*   在宿主机与客体机之间互通剪贴板，实现鼠标拖拽文件
+*   无缝窗口模式
+*   宿主机的虚拟机窗口缩放之后，使客体机的显示分辨率与之自动匹配
+*   检查宿主机的 VirtualBox 的版本
+
+上述功能由专门的命令行参数来各自启用：
 
 ```
 $ VBoxClient --clipboard --draganddrop --seamless --display --checkhostversion
 
 ```
 
-As a shortcut, the `VBoxClient-all` bash script enables all of these features.
+为了方便，`VBoxClient-all` 这个 shell 脚本能取代上面这一整行命令。
 
-[virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) installs `/etc/xdg/autostart/vboxclient.desktop` that launches `VBoxClient-all` on logon. If your [desktop environment](/index.php/Desktop_environment "Desktop environment") or [window manager](/index.php/Window_manager "Window manager") does not support this scheme, you will need to set up autostarting yourself, see [Autostarting#Graphical](/index.php/Autostarting#Graphical "Autostarting") for more details.
+[virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) 包提供了 XDG 自启动项目 `/etc/xdg/autostart/vboxclient.desktop`，这会在登录 X 时自动运行 `VBoxClient-all`。然而，如果你在用的[桌面环境](/index.php/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83 "桌面环境")或[窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")不支持 XDG 自启动，那么你就需要手动配置。详见 [Autostarting_(简体中文)#图形程序](/index.php/Autostarting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.9B.BE.E5.BD.A2.E7.A8.8B.E5.BA.8F "Autostarting (简体中文)")。
 
-VirtualBox can also synchronize the time between the host and the guest, to do this, [start/enable](/index.php/Start/enable "Start/enable") the `vboxservice.service`.
+至此，你的 Arch Linux 应该能在虚拟机里正常运行了。需要指出的是，某些功能（如剪贴板互通）在 VirtualBox 里是默认禁用的。这需要在各个虚拟机的设置选项里手动开启（*Settings > General > Advanced > Shared Clipboard*）。
 
-Now, you should have a working Arch Linux guest. Note that features like clipboard sharing are disabled by default in VirtualBox, and you will need to turn them on in the per-VM settings if you actually want to use them (e.g. *Settings > General > Advanced > Shared Clipboard*).
+### 显卡加速
 
-### Hardware acceleration
+从 VirtualBox 选项里可以开启显卡加速。已知 [GDM](/index.php/GDM "GDM") 显示管理器从 3.16 版本起会导致显卡加速失效。[[3]](https://bugzilla.gnome.org/show_bug.cgi?id=749390) 如果你遇到类似问题，可以换另一种显示管理器（比如 [LightDM](/index.php/LightDM "LightDM")）试试看。[[4]](https://bbs.archlinux.org/viewtopic.php?id=200025) [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1607593#p1607593)
 
-Hardware acceleration can be activated from the VirtualBox options on the host computer. Note the [GDM](/index.php/GDM "GDM") display manager 3.16+ is known to [break](https://bugzilla.gnome.org/show_bug.cgi?id=749390) hardware acceleration support. So if you get issues with hardware acceleration, try out another display manager (lightdm seems to work fine).[[3]](https://bbs.archlinux.org/viewtopic.php?id=200025) [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1607593#p1607593)
+### 启用共享目录
 
-If you want to share folders between your host and your Arch Linux guest, read on.
+共享目录的设置在宿主机这边操作。启动 VirtualBox 的图形管理界面，在虚拟机的设置界面的 *Shared Folders* 标签页可以找到相关设置。可以设置的项目包括：目录在宿主机的位置 *Folder Path*，客户机挂载点的名字 *Folder name*，还有 *Read-only*，*Auto-mount*, *Make permanent* 等杂项。还有一种管理方法是使用 `VBoxManage`。详情可以参阅 [VirtualBox 手册](https://www.virtualbox.org/manual/ch04.html#sharedfolders)。
 
-### Enable shared folders
+无论用哪一种方法来挂载共享目录，首先都要做些准备工作。
 
-Shared folders are managed on the host, in the settings of the Virtual Machine accessible via the GUI of VirtualBox, in the *Shared Folders* tab. There, *Folder Path*, the name of the mount point identified by *Folder name*, and options like *Read-only*, *Auto-mount* and *Make permanent* can be specified. These parameters can be defined with the `VBoxManage` command line utility. See [there for more details](https://www.virtualbox.org/manual/ch04.html#sharedfolders).
+为了避免出现 `/sbin/mount.vboxsf: mounting failed with the error: No such device` 这种错误，首先要确保 `vboxsf` 内核模块已经加载。只要按照前面的步骤在加载客体机里加载内核模块，这一步应该没问题。
 
-No matter which method you will use to mount your folder, all methods require some steps first.
+为了让挂载之后的目录能让 root 之外的用户也直接读写，还要：
 
-To avoid this issue `/sbin/mount.vboxsf: mounting failed with the error: No such device`, make sure the `vboxsf` kernel module is properly loaded. It should be, since we enabled all guest kernel modules previously.
+*   安装 [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) 软件包时会创建用户组 `vboxsf`（在前面的步骤就装过了）
+*   你的用户需要加入到 `vboxsf` [用户组](/index.php?title=Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87&action=edit&redlink=1 "Users and groups (简体中文 (page does not exist)")
 
-Two additional steps are needed in order for the mount point to be accessible from users other than root:
+#### 手动挂载
 
-*   the [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) package created a group `vboxsf` (done in a previous step);
-*   your username must be in `vboxsf` [group](/index.php/Group "Group").
-
-#### Manual mounting
-
-Use the following command to mount your folder in your Arch Linux guest:
+在 Arch Linux 客体系统里挂载共享目录的命令是：
 
 ```
-# mount -t vboxsf *shared_folder_name* *mount_point_on_guest_system*
+# mount -t vboxsf *<共享目录的名字>* *<客户机系统的挂载点>*
 
 ```
 
-The vboxsf filesystem offers other options which can be displayed with this command:
+这个命令可以查看 vboxsf 的挂载参数：
 
 ```
 # mount.vboxsf
 
 ```
 
-For example if the user was not in the *vboxsf* group, we could have used this command to give access our mountpoint to him:
+假如用户不在 `vboxsf` 组里，用这个命令可以把挂载点的读写权限授权给他：
 
 ```
 # mount -t vboxsf -o uid=1000,gid=1000 home /mnt/
 
 ```
 
-Where *uid* and *gid* are values corresponding to the users we want to give access to. These values are obtained from the `id` command run against this user.
+其中 *uid* 和 *gid* 的值要与接受授权的用户的值相对应。用 `id` 命令可以为该用户找到这两个值。
 
-#### Automounting
+#### 自动挂载
 
-In order for the automounting feature to work you must have checked the auto-mount checkbox in the GUI or used the optional `--automount` argument with the command `VBoxManage sharedfolder`.
+**注意:** 自动挂载需要启用 `vboxservice` 服务才能生效
 
-The shared folder should now appear in `/media/sf_*shared_folder_name*`. If users in `media` cannot access the shared folders, check that `media` has permissions 755 or has group ownership `vboxsf` if using permission 750\. This is currently not the default if media is created by installing the `virtualbox-guest-utils`.
+为使用自动挂载功能，首先需要在 GUI 的管理界面里勾选自动挂载，或者为命令行工具 `VBoxManage sharedfolder` 加上参数 `--automount`。
 
-You can use symlinks if you want to have a more convenient access and avoid to browse in that directory, e.g.:
+此时，共享目录应该已经在 `/media/sf_*<共享目录的名字>*` 挂载上了。如果用户没有读写权限，确认一下该目录的权限是否是 755。如果是 750 的话，确保该目录属于 `vboxsf` 组。
 
-```
-$ ln -s /media/sf_*shared_folder_name* ~/*my_documents*
-
-```
-
-#### Mount at boot
-
-You can mount your directory with [fstab](/index.php/Fstab "Fstab"). However, to prevent startup problems with systemd, `comment=systemd.automount` should be added to `/etc/fstab`. This way, the shared folders are mounted only when those mount points are accessed and not during startup. This can avoid some problems, especially if the guest additions are not loaded yet when systemd read fstab and mount the partitions.
+可以用软链接把共享目录链接到方便的位置，这样就不必进入那么远的目录了：
 
 ```
-*sharedFolderName*  */path/to/mntPtOnGuestMachine*  vboxsf  uid=*user*,gid=*group*,rw,dmode=700,fmode=600,comment=systemd.automount  0  0
+$ ln -s /media/sf_*共享目录的名字* ~/*my_documents*
 
 ```
 
-*   `*sharedFolderName*`: the value from the VirtualMachine's *Settings > SharedFolders > Edit > FolderName* menu. This value can be different from the name of the real folder name on the host machine. To see the VirtualMachine's *Settings* go to the host OS VirtualBox application, select the corresponding virtual machine and click on *Settings*.
-*   `*/path/to/mntPtOnGuestMachine*`: if not existing, this directory should be created manually (for example by using [mkdir](/index.php/Core_utilities#mkdir "Core utilities"))
-*   `dmode`/`fmode` are directory/file permissions for directories/files inside `*/path/to/mntPtOnGuestMachine*`.}}
+#### 按配置于启动时挂载
 
-As of 2012-08-02, mount.vboxsf does not support the *nofail* option:
+[fstab](/index.php/Fstab "Fstab") 可以用来挂载目录。然而，为了避免 Systemd 启动可能带来的问题，要在 `/etc/fstab` 配置里为共享目录加上挂载选项 `noauto,x-systemd.automount`。这样，共享目录会在开机后初次访问时挂载，而不是在系统启动过程里挂载。这可以避免 Systemd 在客体机插件加载之前就按 fstab 挂载目录而导致的出错。
+
+```
+*sharedFolderName*  */path/to/mntPtOnGuestMachine*  vboxsf  uid=*user*,gid=*group*,rw,dmode=700,fmode=600,noauto,x-systemd.automount 
+
+```
+
+*   `*sharedFolderName*`: 在虚拟机设置界面 *Settings > SharedFolders > Edit > FolderName* 里所设置的值。这个值和宿主机里实际的目录名可以不相同。要查看虚拟机的设置，在宿主机的 VirtualBox GUI 管理界面选中虚拟机，然后点击工具栏的 *Settings* 按钮，再从弹出的对话框里选择 *Shared Folders*。
+*   `*/path/to/mntPtOnGuestMachine*`: 如果这个路径在虚拟机里还不存在，那么需要在挂载之前手动创建（用 [mkdir](/index.php/Core_utilities#mkdir "Core utilities") 就可以）。
+*   `dmode`/`fmode` 分别用来指定挂载共享目录之后，下面的子目录与文件的属性。}}
+
+`mount.vboxsf` 尚不支持 `nofail` 挂载参数：
 
 ```
 *desktop*  */media/desktop*  vboxsf  uid=*user*,gid=*group*,rw,dmode=700,fmode=600,nofail  0  0
@@ -944,7 +952,7 @@ options snd-intel8x0 ac97_clock=48000
 
 ### 客户端启动后的Xorg死机
 
-Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[6]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in *Settings > Display*, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
+Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[7]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in *Settings > Display*, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
 
 ### "NS_ERROR_FAILURE" and missing menu items
 
@@ -1095,7 +1103,7 @@ This is a known incompatiblity with SMAP enabled kernels affecting (mostly) Inte
 Disabling hardware virtualisation (VT-x/AMD-V) may solve the problem.
 
 *   Various Kernel bugs
-    *   Fuse mounted partitions (like ntfs) [[7]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[8]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
+    *   Fuse mounted partitions (like ntfs) [[8]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[9]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
 
 Generally, such issues are observed after upgrading VirtualBox or linux kernel. Downgrading them to the previous versions of theirs might solve the problem.
 

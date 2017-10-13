@@ -100,7 +100,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **[feh](/index.php/Feh "Feh")** — Fast, lightweight image viewer that uses imlib2.
 
-	[http://feh.finalrewind.org](http://feh.finalrewind.org) || [feh](https://www.archlinux.org/packages/?name=feh)
+	[https://feh.finalrewind.org/](https://feh.finalrewind.org/) || [feh](https://www.archlinux.org/packages/?name=feh)
 
 *   **GalaPix** — OpenGL-based image viewer for simultaneously viewing and zooming large collections of image files,
 

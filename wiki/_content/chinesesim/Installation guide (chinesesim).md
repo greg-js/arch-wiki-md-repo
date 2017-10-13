@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Installation_guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-05-02，点击[这里](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=472389)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Installation_guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-12，点击[这里](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=488957)可以查看翻译后英文页面的改动。
 
 本文将指导如何用官方安装镜像启动的 Live 系统安装 [Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。建议在安装前阅读 [FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。对于本文中使用的惯用术语，请参阅 [Help:Reading](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Reading (简体中文)").
 
@@ -68,7 +68,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ```
 
-若发现网络不通,利用 `systemctl stop dhcpcd@<TAB>` [停用](/index.php/Systemd#Using_units "Systemd") *dhcpcd* 进程，然后查看 [网络配置](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)").
+若发现网络不通,利用 `systemctl stop dhcpcd@`,`TAB` [停用](/index.php/Systemd#Using_units "Systemd") *dhcpcd* 进程，详情请查看 [网络配置文档](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)").
 
 对于**无线**连接,[iw(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) 和 [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") 等工具已被提供. 详情查看[无线网络配置](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)").
 

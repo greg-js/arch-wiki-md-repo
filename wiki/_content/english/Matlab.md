@@ -29,7 +29,7 @@ From the [official website](http://www.mathworks.com/products/matlab/):
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Static TLS errors](#Static_TLS_errors)
     *   [5.2 MATLAB crashes when displaying graphics](#MATLAB_crashes_when_displaying_graphics)
-    *   [5.3 Blank/grey UI when using DWM/Awesome](#Blank.2Fgrey_UI_when_using_DWM.2FAwesome)
+    *   [5.3 Blank/grey UI when using WM (non-reparenting window manager)](#Blank.2Fgrey_UI_when_using_WM_.28non-reparenting_window_manager.29)
     *   [5.4 Garbled or invisible text](#Garbled_or_invisible_text)
     *   [5.5 Corrupted text and fonts in menus and fields](#Corrupted_text_and_fonts_in_menus_and_fields)
     *   [5.6 Installation](#Installation_2)
@@ -299,16 +299,29 @@ sudo ln -s /usr/lib/libstdc++.so.6
 
 If MATLAB still crashes or corrupts graphics (during startup or when plotting), make sure Java's 2D OpenGL rendering is disabled. The environment variable `_JAVA_OPTIONS` should not contain `-Dsun.java2d.opengl=true`.
 
-### Blank/grey UI when using DWM/Awesome
+### Blank/grey UI when using WM (non-reparenting window manager)
 
-[wmname](http://tools.suckless.org/wmname) is a utility to set the window manager name of the root window.
+This is a common issue in a number of window managers. (DWM, Awesome, bspwm) Java does not play well with these window managers. There are two methods.
+
+First try setting the environment variable by running
+
+```
+$ export _JAVA_AWT_WM_NONREPARENTING=1
+
+```
+
+If Matlab works afterwards, export the variable in your `.xinitrc`.
+
+If it doesn't resolve, you have to fool Java into thinking the WM is named LG3D. (It's an old, depreciated WM that Java applications ironically support) Clean the previous environment variable, install the [wmname](http://tools.suckless.org/wmname) utility, and run.
 
 ```
 wmname LG3D
 
 ```
 
-Then start Matlab.
+Try running Matlab. If it works, put the fix in your starting script. (`.xinitrc`, `bspwmrc` and similar should be OK) Do note that other applications (such as `neofetch`, or `tdrop`) will think your WM is named LG3D, so you will have to configure them accordingly. Another solution is to run the command only before launching Matlab, and fixing the name after you are done with Matlab.
+
+If it doesn't work, try the combination of both. (The second line works in bspwm) If it still doesn't work, try googling similar issues with java in general.
 
 ### Garbled or invisible text
 

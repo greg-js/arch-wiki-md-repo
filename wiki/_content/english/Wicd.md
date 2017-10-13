@@ -223,7 +223,7 @@ ESSID="YOUR_WIFI_ESSID"
 
 if [ $1 == "wireless" ]; then
 	if [ $2 == "$ESSID" ]; then
-		systemctl restart openvpn@client
+		systemctl restart openvpn-client@client
 	fi
 fi
 
@@ -238,7 +238,7 @@ ESSID="YOUR_WIFI_ESSID"
 
 if [ $1 == "wireless" ]; then
 	if [ $2 == "$ESSID" ]; then
-		systemctl stop openvpn@client
+		systemctl stop openvpn-client@client
 	fi
 fi
 

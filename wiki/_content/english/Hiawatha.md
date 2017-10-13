@@ -195,7 +195,7 @@ VirtualHost {
 
 ### Install
 
-Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion. Download it into your preferred location:
+Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion. Download it into your preferred location (for example `/root`):
 
 ```
 $ curl [https://www.hiawatha-webserver.org/files/letsencrypt.tar.gz](https://www.hiawatha-webserver.org/files/letsencrypt.tar.gz) | tar -xz
