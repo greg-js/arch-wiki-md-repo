@@ -105,7 +105,7 @@ Bus 002 Device 007: ID 056a:0062 Wacom Co., Ltd
 
 ```
 
-In this example idVendor is 056a and idProduct 0062. In case you have device with touch (e.g. Bamboo Pen&Touch) you might need to add a second line for the touch input interface. For details check the linuxwacom wiki [Fixed device files with udev](http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Fixed_device_files_with_udev).
+In this example idVendor is 056a and idProduct 0062. In case you have device with touch (e.g. Bamboo Pen&Touch) you might need to add a second line for the touch input interface. For details check the linuxwacom wiki [Fixed device files with udev](http://linuxwacom.sourceforge.net/wiki/index.php/Fixed_device_files_with_udev).
 
 Save the file and reload udev's configuration profile using the command *udevadm control --reload-rules* Check again the content of */dev/input* to make sure that the *wacom* symlinks appeared. Note that you may need to plug-in the tablet again for the device to appear.
 

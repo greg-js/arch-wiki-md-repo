@@ -391,9 +391,9 @@ See the [sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardeni
 
 Unfortunately, bruteforce attacks on services accessible via an external IP address are common. One reason for this is that the attacks are easy to do with the many tools available. Fortunately, there are a number of ways to protect the services against them. One is the use of appropriate `iptables` rules which activate and blacklist an IP after a set number of packets attempt to initiate a connection. Another is the use of specialised daemons that monitor the logfiles for failed attempts and blacklist accordingly.
 
-**Warning:** Using an IP blacklist will stop trivial attacks but it relies on an additional daemon and successful logging (the partition containing /var can become full, especially if an attacker is pounding on the server). Additionally, if the attacker knows your IP address, they can send packets with a spoofed source header and get you locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to the problem of brute forcing without these problems.
+**Warning:** Using an IP blacklist will stop trivial attacks but it relies on an additional daemon and successful logging (the partition containing /var can become full, especially if an attacker is pounding on the server). Additionally, with the knowledge of your IP address, the attacker can send packets with a spoofed source header and get you locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to the problem of brute forcing without these problems.
 
-Two packages that ban IPs after too many password failures are [Fail2ban](/index.php/Fail2ban "Fail2ban") or, for `sshd` in particular, [Sshguard](/index.php/Sshguard "Sshguard"). These two applications update iptables rules to reject future connections from blacklisted IP addresses.
+Two packages that ban IPs after too many password failures are [Fail2ban](/index.php/Fail2ban "Fail2ban") or, for `sshd` in particular, [Sshguard](/index.php/Sshguard "Sshguard"). These two applications update iptables rules to reject temporarily or permanently future connections from attackers.
 
 The following rules give an example configuration to mitigate SSH bruteforce attacks using `iptables`.
 
@@ -428,9 +428,9 @@ This arrangement works for the IN_SSH rule if you followed this entire wiki so f
 
 ```
 
-The above rules can, of course, be used to protect any service, though protecting the SSH daemon is probably the most often required one.
+The above rules can be used to protect any service, though protecting the SSH daemon is probably the most often required one.
 
-**Tip:** For self-testing the rules after setup, the actual blacklist happening can slow the test making it difficult to fine-tune parameters. One can watch the incoming attempts via `cat /proc/net/xt_recent/sshbf`. To unblock the own IP during testing, root is needed `# echo / > /proc/net/xt_recent/sshbf`
+**Tip:** For self-testing the rules after setup, the actual blacklisting can slow the test, making it difficult to fine-tune parameters. One can watch the incoming attempts via `cat /proc/net/xt_recent/sshbf`. To unblock the own IP during testing, root is needed `# echo / > /proc/net/xt_recent/sshbf`
 
 ### Saving the rules
 

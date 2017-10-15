@@ -76,6 +76,7 @@ Actually, for this to work, we will need to add the primary and secondary groups
  smtpq | 92 |
  smtpf | 93 |
 | [filesystem](https://www.archlinux.org/packages/?name=filesystem) | nobody | 99 |
+| [zeroc-ice](https://www.archlinux.org/packages/?name=zeroc-ice) | ice | 101 |
 | [polkit](https://www.archlinux.org/packages/?name=polkit) | polkitd | 102 |
 | [minio](https://www.archlinux.org/packages/?name=minio) | minio | 103 |
  nm-openconnect | 104 |
@@ -220,6 +221,7 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [filesystem](https://www.archlinux.org/packages/?name=filesystem) | power | 98 |
 | [filesystem](https://www.archlinux.org/packages/?name=filesystem) | nobody | 99 |
 | [filesystem](https://www.archlinux.org/packages/?name=filesystem) | users | 100 |
+| [zeroc-ice](https://www.archlinux.org/packages/?name=zeroc-ice) | ice | 101 |
 | [polkit](https://www.archlinux.org/packages/?name=polkit) | polkitd | 102 |
 | [minio](https://www.archlinux.org/packages/?name=minio) | minio | 103 |
  nm-openconnect | 104 |

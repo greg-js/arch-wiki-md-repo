@@ -745,7 +745,7 @@ Ripping a DVD is often a simple matter of selecting the preferred codec(s), sele
 
 *   **Python Audio Tools** — Includes dvda2track, which is easy to use command line tool to extract DVD-Audio tracks to uncompressed wav files.
 
-	[http://audiotools.sourceforge.net/](http://audiotools.sourceforge.net/) || [audiotools-git](https://www.archlinux.org/packages/?name=audiotools-git)
+	[http://audiotools.sourceforge.net/](http://audiotools.sourceforge.net/) || [audiotools-git](https://aur.archlinux.org/packages/audiotools-git/)
 
 ## Troubleshooting
 

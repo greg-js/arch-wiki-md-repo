@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [Arch Boot Process (Español)](/index.php/Arch_Boot_Process_(Espa%C3%B1ol) "Arch Boot Process (Español)")
+*   [Master Boot Record (Español)](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)")
+*   [GUID Partition Table (Español)](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)")
+
 **Unified Extensible Firmware Interface** (o UEFI para abreviar) es un nuevo tipo de firmware que fue diseñado inicialmente por Intel (conocido con el nombre de EFI entonces) principalmente para los sistemas basados ​​en Itanium. Se introdujeron así nuevas formas de arrancar un sistema operativo distintas del método usado comúnmente desde el «código de arranque del [MBR](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)")», seguido por los sistemas [BIOS](https://en.wikipedia.org/wiki/es:BIOS "wikipedia:es:BIOS"). Comenzó como EFI de Intel en las versiones 1.x y luego, un grupo de empresas denominado UEFI Forum, se hizo cargo de su desarrollo, a partir del cual se llamó EFI Unificado desde de la versión 2.0\. Hasta el 24 de julio de 2013, la Especificación 2.4 de UEFI (liberada el 11 de julio de 2013) es la versión más reciente.
 
 **Nota:**

@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [x11vnc](/index.php/X11vnc "X11vnc")
+
 Vncserver es un demonio de visualización remota que permite a usuarios situados a distancia realizar distintas funciones, incluyendo:
 
 1.  Sesiones de X virtuales (sin cabeza) y totalmente en *paralelo* que se ejecutan en segundo plano (es decir, no en el monitor físico, sino virtualmente) en una máquina. Todas las aplicaciones que se ejecutan en el servidor pueden seguir funcionando, incluso cuando el usuario se desconecta.

@@ -91,6 +91,13 @@ exec startlxqt
 
 ```
 
+make sure {bc|~/.vnc/xstartup} has a execute permission:
+
+```
+ chmod u+x ~/.vnc/xstartup
+
+```
+
 #### Edit the optional config file
 
 With the release of tigervnc 1.60-1, support for parsing options in `~/.vnc/config` has been implemented which obviates the need to call `vncserver` with command line switches. The format is one option per line. An example is provided:

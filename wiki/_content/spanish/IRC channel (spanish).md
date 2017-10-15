@@ -16,6 +16,8 @@
 
 El canal [IRC](https://en.wikipedia.org/wiki/es:Internet_Relay_Chat "wikipedia:es:Internet Relay Chat") oficial de Arch Linux es **#archlinux** en la red [Freenode](http://www.freenode.net/).
 
+Para el canal oficial de soporte en español entrar a **#archlinux-es** en la misma red de Freenode.
+
 También hay una serie de canales dedicados a Arch Linux mantenidos por miembros de la comunidad. Mira [IRC channels (Español)](/index.php/IRC_channels_(Espa%C3%B1ol) "IRC channels (Español)") para ver una lista.
 
 ### Uso
@@ -24,7 +26,7 @@ Para unirte a los canales, necesitas un cliente IRC. Wikipedia tiene una [lista 
 
 ```
 /connect irc.freenode.net
-/join #archlinux
+/join #archlinux, #archlinux-es
 
 ```
 

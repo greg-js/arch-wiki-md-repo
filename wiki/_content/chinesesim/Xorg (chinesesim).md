@@ -29,54 +29,47 @@ Xorg 在 Linux 用户中非常流行，已经成为图形用户程序的必备�
     *   [2.1 显示管理器](#.E6.98.BE.E7.A4.BA.E7.AE.A1.E7.90.86.E5.99.A8)
     *   [2.2 手动](#.E6.89.8B.E5.8A.A8)
 *   [3 配置](#.E9.85.8D.E7.BD.AE)
+    *   [3.1 使用 .conf 文件](#.E4.BD.BF.E7.94.A8_.conf_.E6.96.87.E4.BB.B6)
+    *   [3.2 使用 xorg.conf](#.E4.BD.BF.E7.94.A8_xorg.conf)
 *   [4 输入设备](#.E8.BE.93.E5.85.A5.E8.AE.BE.E5.A4.87)
-    *   [4.1 鼠标加速](#.E9.BC.A0.E6.A0.87.E5.8A.A0.E9.80.9F)
-    *   [4.2 扩展鼠标按键](#.E6.89.A9.E5.B1.95.E9.BC.A0.E6.A0.87.E6.8C.89.E9.94.AE)
-    *   [4.3 触摸板](#.E8.A7.A6.E6.91.B8.E6.9D.BF)
-    *   [4.4 触摸屏](#.E8.A7.A6.E6.91.B8.E5.B1.8F)
-    *   [4.5 键盘设置](#.E9.94.AE.E7.9B.98.E8.AE.BE.E7.BD.AE)
 *   [5 显示器设置](#.E6.98.BE.E7.A4.BA.E5.99.A8.E8.AE.BE.E7.BD.AE)
     *   [5.1 开始](#.E5.BC.80.E5.A7.8B)
     *   [5.2 多个显示器](#.E5.A4.9A.E4.B8.AA.E6.98.BE.E7.A4.BA.E5.99.A8)
         *   [5.2.1 多于一个显卡](#.E5.A4.9A.E4.BA.8E.E4.B8.80.E4.B8.AA.E6.98.BE.E5.8D.A1)
-        *   [5.2.2 切换笔记本内部/外部显示的脚本](#.E5.88.87.E6.8D.A2.E7.AC.94.E8.AE.B0.E6.9C.AC.E5.86.85.E9.83.A8.2F.E5.A4.96.E9.83.A8.E6.98.BE.E7.A4.BA.E7.9A.84.E8.84.9A.E6.9C.AC)
     *   [5.3 显示大小和 DPI](#.E6.98.BE.E7.A4.BA.E5.A4.A7.E5.B0.8F.E5.92.8C_DPI)
         *   [5.3.1 手动设置DPI](#.E6.89.8B.E5.8A.A8.E8.AE.BE.E7.BD.AEDPI)
             *   [5.3.1.1 专有的NVIDIA驱动程序](#.E4.B8.93.E6.9C.89.E7.9A.84NVIDIA.E9.A9.B1.E5.8A.A8.E7.A8.8B.E5.BA.8F)
     *   [5.4 DPMS](#DPMS)
 *   [6 Composite](#Composite)
     *   [6.1 List of composite managers](#List_of_composite_managers)
-*   [7 配置文件样例](#.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6.E6.A0.B7.E4.BE.8B)
-    *   [7.1 示例1 : xorg.conf & /etc/X11/xorg.conf.d/10-evdev.conf](#.E7.A4.BA.E4.BE.8B1_:_xorg.conf_.26_.2Fetc.2FX11.2Fxorg.conf.d.2F10-evdev.conf)
-*   [8 技巧和技巧](#.E6.8A.80.E5.B7.A7.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [8.1 调整 X 启动参数(/usr/bin/startx)](#.E8.B0.83.E6.95.B4_X_.E5.90.AF.E5.8A.A8.E5.8F.82.E6.95.B0.28.2Fusr.2Fbin.2Fstartx.29)
-    *   [8.2 Virtual X session](#Virtual_X_session)
-    *   [8.3 Nested X session](#Nested_X_session)
-    *   [8.4 Starting GUI programs remotely](#Starting_GUI_programs_remotely)
-    *   [8.5 On-demand disabling and enabling of input sources](#On-demand_disabling_and_enabling_of_input_sources)
-*   [9 故障和修复](#.E6.95.85.E9.9A.9C.E5.92.8C.E4.BF.AE.E5.A4.8D)
-    *   [9.1 通用问题](#.E9.80.9A.E7.94.A8.E9.97.AE.E9.A2.98)
-    *   [9.2 Black screen, No protocol specified.., Resource temporarily unavailable for all or some users](#Black_screen.2C_No_protocol_specified...2C_Resource_temporarily_unavailable_for_all_or_some_users)
-    *   [9.3 CTRL 右键无法与和oss keymap一起工作](#CTRL_.E5.8F.B3.E9.94.AE.E6.97.A0.E6.B3.95.E4.B8.8E.E5.92.8Coss_keymap.E4.B8.80.E8.B5.B7.E5.B7.A5.E4.BD.9C)
-    *   [9.4 Ctrl-Alt-Backspace无法退出X](#Ctrl-Alt-Backspace.E6.97.A0.E6.B3.95.E9.80.80.E5.87.BAX)
-        *   [9.4.1 System-wide](#System-wide)
-        *   [9.4.2 User-specific](#User-specific)
-    *   [9.5 Apple 的键盘问题](#Apple_.E7.9A.84.E9.94.AE.E7.9B.98.E9.97.AE.E9.A2.98)
-    *   [9.6 触摸板点击不正常](#.E8.A7.A6.E6.91.B8.E6.9D.BF.E7.82.B9.E5.87.BB.E4.B8.8D.E6.AD.A3.E5.B8.B8)
-    *   [9.7 额外的鼠标按键不工作](#.E9.A2.9D.E5.A4.96.E7.9A.84.E9.BC.A0.E6.A0.87.E6.8C.89.E9.94.AE.E4.B8.8D.E5.B7.A5.E4.BD.9C)
-    *   [9.8 无法用"su"以root身份启动X客户端](#.E6.97.A0.E6.B3.95.E7.94.A8.22su.22.E4.BB.A5root.E8.BA.AB.E4.BB.BD.E5.90.AF.E5.8A.A8X.E5.AE.A2.E6.88.B7.E7.AB.AF)
-    *   [9.9 无法加载'(null)'字体](#.E6.97.A0.E6.B3.95.E5.8A.A0.E8.BD.BD.27.28null.29.27.E5.AD.97.E4.BD.93)
-    *   [9.10 无法运行在frambuffer模式下](#.E6.97.A0.E6.B3.95.E8.BF.90.E8.A1.8C.E5.9C.A8frambuffer.E6.A8.A1.E5.BC.8F.E4.B8.8B)
-    *   [9.11 Matrox显卡的DRI功能失效](#Matrox.E6.98.BE.E5.8D.A1.E7.9A.84DRI.E5.8A.9F.E8.83.BD.E5.A4.B1.E6.95.88)
-    *   [9.12 修复：在出现GUI登录界面之前，不启动Xorg](#.E4.BF.AE.E5.A4.8D.EF.BC.9A.E5.9C.A8.E5.87.BA.E7.8E.B0GUI.E7.99.BB.E5.BD.95.E7.95.8C.E9.9D.A2.E4.B9.8B.E5.89.8D.EF.BC.8C.E4.B8.8D.E5.90.AF.E5.8A.A8Xorg)
-    *   [9.13 X failed to start : Keyboard initialization failed](#X_failed_to_start_:_Keyboard_initialization_failed)
-    *   [9.14 不使用 root 权限的 Xorg (v1.16)](#.E4.B8.8D.E4.BD.BF.E7.94.A8_root_.E6.9D.83.E9.99.90.E7.9A.84_Xorg_.28v1.16.29)
+*   [7 技巧和技巧](#.E6.8A.80.E5.B7.A7.E5.92.8C.E6.8A.80.E5.B7.A7)
+    *   [7.1 调整 X 启动参数(/usr/bin/startx)](#.E8.B0.83.E6.95.B4_X_.E5.90.AF.E5.8A.A8.E5.8F.82.E6.95.B0.28.2Fusr.2Fbin.2Fstartx.29)
+    *   [7.2 Nested X session](#Nested_X_session)
+    *   [7.3 Starting GUI programs remotely](#Starting_GUI_programs_remotely)
+    *   [7.4 On-demand disabling and enabling of input sources](#On-demand_disabling_and_enabling_of_input_sources)
+    *   [7.5 Killing application with hotkey](#Killing_application_with_hotkey)
+    *   [7.6 Block TTY access](#Block_TTY_access)
+    *   [7.7 Prevent a user from killing X](#Prevent_a_user_from_killing_X)
+*   [8 故障和修复](#.E6.95.85.E9.9A.9C.E5.92.8C.E4.BF.AE.E5.A4.8D)
+    *   [8.1 通用问题](#.E9.80.9A.E7.94.A8.E9.97.AE.E9.A2.98)
+    *   [8.2 Black screen, No protocol specified.., Resource temporarily unavailable for all or some users](#Black_screen.2C_No_protocol_specified...2C_Resource_temporarily_unavailable_for_all_or_some_users)
+    *   [8.3 CTRL 右键无法与和oss keymap一起工作](#CTRL_.E5.8F.B3.E9.94.AE.E6.97.A0.E6.B3.95.E4.B8.8E.E5.92.8Coss_keymap.E4.B8.80.E8.B5.B7.E5.B7.A5.E4.BD.9C)
+    *   [8.4 Ctrl-Alt-Backspace无法退出X](#Ctrl-Alt-Backspace.E6.97.A0.E6.B3.95.E9.80.80.E5.87.BAX)
+        *   [8.4.1 System-wide](#System-wide)
+        *   [8.4.2 User-specific](#User-specific)
+    *   [8.5 无法用"su"以root身份启动X客户端](#.E6.97.A0.E6.B3.95.E7.94.A8.22su.22.E4.BB.A5root.E8.BA.AB.E4.BB.BD.E5.90.AF.E5.8A.A8X.E5.AE.A2.E6.88.B7.E7.AB.AF)
+    *   [8.6 无法加载'(null)'字体](#.E6.97.A0.E6.B3.95.E5.8A.A0.E8.BD.BD.27.28null.29.27.E5.AD.97.E4.BD.93)
+    *   [8.7 无法运行在frambuffer模式下](#.E6.97.A0.E6.B3.95.E8.BF.90.E8.A1.8C.E5.9C.A8frambuffer.E6.A8.A1.E5.BC.8F.E4.B8.8B)
+    *   [8.8 Matrox显卡的DRI功能失效](#Matrox.E6.98.BE.E5.8D.A1.E7.9A.84DRI.E5.8A.9F.E8.83.BD.E5.A4.B1.E6.95.88)
+    *   [8.9 修复：在出现GUI登录界面之前，不启动Xorg](#.E4.BF.AE.E5.A4.8D.EF.BC.9A.E5.9C.A8.E5.87.BA.E7.8E.B0GUI.E7.99.BB.E5.BD.95.E7.95.8C.E9.9D.A2.E4.B9.8B.E5.89.8D.EF.BC.8C.E4.B8.8D.E5.90.AF.E5.8A.A8Xorg)
+    *   [8.10 X failed to start : Keyboard initialization failed](#X_failed_to_start_:_Keyboard_initialization_failed)
+    *   [8.11 不使用 root 权限的 Xorg (v1.16)](#.E4.B8.8D.E4.BD.BF.E7.94.A8_root_.E6.9D.83.E9.99.90.E7.9A.84_Xorg_.28v1.16.29)
 
 ## 安装
 
 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [xorg-server](https://www.archlinux.org/packages/?name=xorg-server)。
 
-此外，[xorg-apps](https://www.archlinux.org/packages/?name=xorg-apps) 组提供了一些程序以完成某些特定的配置工作。
+此外，[xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) 组提供了一些程序以完成某些特定的配置工作。
 
 软件包组 [xorg](https://www.archlinux.org/groups/x86_64/xorg/) 包含了 Xorg server，[xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) 中的软件包以及字体.
 
@@ -152,44 +145,63 @@ and newer | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_process
 
 **Note:** Arch 提供了位于 `/usr/share/X11/xorg.conf.d` 的默认配置文件。通常情况下，用户无需进行额外的配置与修改即可正常使用。
 
-Xorg 可以通过 `/etc/X11/xorg.conf` 或 `/etc/xorg.conf` 和位于 `/etc/X11/xorg.conf.d/` 的配置文件配置。用户可以创建自己的配置文件，需要以 `XX-` 开头(XX 是数字)并以`.conf` 结尾(例如 10 在 20 之前读取)。
+Xorg 可以通过 `/etc/X11/xorg.conf` 或 `/etc/xorg.conf` 和位于 `/etc/X11/xorg.conf.d/` 的配置文件配置。。完整的说明可用通过[这里](http://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml) 或执行 [xorg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5) 获得.
 
 此外，显卡驱动可能提供了自动配置工具，例如 NVIDIA 提供了 `nvidia-xconfig`，ATI 提供了 `aticonfig`。
 
+### 使用 .conf 文件
+
+`/etc/X11/xorg.conf.d/` 目录保存主机特有设置，用户可以创建自己的配置文件，需要以 `XX-` 开头(XX 是数字)并以`.conf` 结尾(例如 10 在 20 之前读取).X 服务器启动是会解析这些文件，将其视为 `xorg.conf` 的一部分进行处理。如果配置之间有冲突，将会使用最后被处理的文件。所以通用的设置应该放到前面。最后会解析 `xorg.conf` 文件。
+
+设置请参考 [fedora wiki](http://fedoraproject.org/wiki/Input_device_configuration#xorg.conf.d).
+
+### 使用 xorg.conf
+
+可用通过 `/etc/X11/xorg.conf` 或 `/etc/xorg.conf` 配置 Xorg，用下面命令可用生成 `xorg.conf` 模板:
+
+```
+# Xorg :0 -configure
+
+```
+
+执行后会在 `/root/` 生成 `xorg.conf.new` 文件。
+
+**Tip:** 如果以及运行了 X 服务器，请使用不同的 display，例如 `Xorg :2 -configure`.
+
+显卡的专有驱动可能也提供了自动配置 Xorg 的工具，详情请参考 [NVIDIA](/index.php/NVIDIA "NVIDIA") 或 [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst")。
+
+**Note:** 配置文件关键字是大小写敏感的，"_" 字符会被忽略。配置，包括选项名也是大小写敏感的，会自动忽略空白和 "_"。
+
 ## 输入设备
 
-[udev](/index.php/Udev "Udev") 会自动检测硬件，[evdev](https://en.wikipedia.org/wiki/evdev "wikipedia:evdev") 可以用作绝大部分设备的即插即用驱动。Udev 由 [systemd](https://www.archlinux.org/packages/?name=systemd) 和 [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev)需要通过 [xorg-server](https://www.archlinux.org/packages/?name=xorg-server)提供，所以不需要显式安装。
+X 服务器默认使用 libinput 驱动([xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput)) 处理输入设备，[xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) 和相关驱动是后备方案[[1]](https://www.archlinux.org/news/xorg-server-1191-is-now-in-extra/)。
 
-你应该有`10-evdev.conf` 在 `/usr/share/X11/xorg.conf.d/` 目录,它管理键盘，鼠标，触摸板和触摸屏。
+[udev](/index.php/Udev "Udev") ，[evdev](https://en.wikipedia.org/wiki/evdev "wikipedia:evdev") 可以用作绝大部分设备的即插即用驱动。Udev 由 [systemd](https://www.archlinux.org/packages/?name=systemd) 通过 [xorg-server](https://www.archlinux.org/packages/?name=xorg-server)提供，所以不需要显式安装。
 
-如果 evdev不支持您的设备, 请从[xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/)组安装需要的驱动程序. Alike evdev, [libinput](/index.php/Libinput "Libinput") ([xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput)) is a driver which supports a wide array of hardware from all device categories.
+[Udev](/index.php/Udev "Udev") 是 systemd 的依赖，会自动检测硬件，使用 evdev 或 libinput 处理设备的输入。配置文件是 `/usr/share/X11/xorg.conf.d/` 中的 `10-evdev.conf` 和 `40-libinput.conf`。
 
-### 鼠标加速
+启动 X Server 时，日志文件会记录所使用的输入驱动:
 
-见 [Mouse acceleration (简体中文)](/index.php/Mouse_acceleration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mouse acceleration (简体中文)").
+```
+$ grep -e "Using input driver " Xorg.0.log
 
-### 扩展鼠标按键
+```
 
-见 [All Mouse Buttons Working](/index.php/All_Mouse_Buttons_Working "All Mouse Buttons Working").
+如果两个驱动都不支持您的设备, 请从[xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/) 组安装需要的驱动程序.
 
-### 触摸板
+更详细的信息，请参考 [libinput](/index.php/Libinput "Libinput") 和 [Fedora wiki](https://fedoraproject.org/wiki/Input_device_configuration)。
 
-见 [Touchpad Synaptics (简体中文)](/index.php/Touchpad_Synaptics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Touchpad Synaptics (简体中文)") 或 [libinput](/index.php/Libinput "Libinput").
-
-### 触摸屏
-
-见 [Touchscreen](/index.php/Touchscreen "Touchscreen").
-
-### 键盘设置
-
-见 [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg").
+*   鼠标加速： [Mouse acceleration (简体中文)](/index.php/Mouse_acceleration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mouse acceleration (简体中文)").
+*   扩展鼠标按键：[All Mouse Buttons Working](/index.php/All_Mouse_Buttons_Working "All Mouse Buttons Working").
+*   触摸板：[Touchpad Synaptics (简体中文)](/index.php/Touchpad_Synaptics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Touchpad Synaptics (简体中文)") 或 [libinput](/index.php/Libinput "Libinput").
+*   触摸屏：[Touchscreen](/index.php/Touchscreen "Touchscreen").
+*   键盘设置：[Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg").
 
 ## 显示器设置
 
 ### 开始
 
-**注意:** 这一步是可选的，除非你知道在做什么，否则不要进行这一步。
-但是如果你使用双监视器或者nouveau驱动，你**必须**执行这一步。参见[Nouveau#Configuration](/index.php/Nouveau#Configuration "Nouveau")。
+**注意:** 新的 Xorg 版本会自动配置显示器，无需额外配置。
 
 首先，创建一个新的配置文件，例如`/etc/X11/xorg.conf.d/10-monitor.conf`。
 
@@ -250,7 +262,7 @@ EndSection
 
 ```
 
-为了获取你的BusID：
+为了获取 BusID：
 
 ```
 $ lspci | grep VGA
@@ -259,37 +271,6 @@ $ lspci | grep VGA
 ```
 
 这个示例的BusID是 1:0:0.
-
-#### 切换笔记本内部/外部显示的脚本
-
-这个脚本可以用于键盘快捷键中。
-
-```
-#!/bin/bash
-
-IN="LVDS1"
-EXT="VGA1"
-
-if (xrandr | grep "$EXT" | grep "+")
-    then
-    xrandr --output $EXT --off --output $IN --auto
-    else
-        if (xrandr | grep "$EXT" | grep " connected")
-            then
-            xrandr --output $IN --off --output $EXT --auto
-        fi
-fi
-
-```
-
-为了获取内部/外部显示的名字，你可以输入：
-
-```
-# xrandr -q
-
-```
-
-如果你没有 `xrandr`, [install](/index.php/Pacman "Pacman") [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) 来获取它。
 
 ### 显示大小和 DPI
 
@@ -391,15 +372,13 @@ DPMS (显示器电源管理信号) 是一种技术，可以在计算机不使用
 
 The Composite extension for X causes an entire sub-tree of the window hierarchy to be rendered to an off-screen buffer. Applications can then take the contents of that buffer and do whatever they like. The off-screen buffer can be automatically merged into the parent window or merged by external programs, called compositing managers. See the following article for more information: [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager")
 
+Some window managers (e.g. [Compiz](/index.php/Compiz "Compiz"), [Enlightenment](/index.php/Enlightenment "Enlightenment"), KWin, Marco, Metacity, Muffin, Mutter, [Xfwm](/index.php/Xfwm "Xfwm")) do compositing on their own. For other window managers, a standalone composite manager can be used.
+
 ### List of composite managers
 
 *   **[Cairo Composite Manager](/index.php/Cairo_Compmgr "Cairo Compmgr")** — Cairo based composite manager
 
 	[http://cairo-compmgr.tuxfamily.org/](http://cairo-compmgr.tuxfamily.org/) || [cairo-compmgr-git](https://aur.archlinux.org/packages/cairo-compmgr-git/)
-
-*   **[Compiz](/index.php/Compiz "Compiz")** — Composite manager for Aiglx and Xgl, with plugins and CCSM
-
-	[http://www.compiz.org/](http://www.compiz.org/) || [compiz](https://aur.archlinux.org/packages/compiz/)
 
 *   **[Compton](/index.php/Compton "Compton")** — Compositor (a fork of xcompmgr-dana)
 
@@ -412,26 +391,6 @@ The Composite extension for X causes an entire sub-tree of the window hierarchy 
 *   **Unagi** — Modular compositing manager which aims written in C and based on XCB
 
 	[http://projects.mini-dweeb.org/projects/unagi](http://projects.mini-dweeb.org/projects/unagi) || [unagi](https://aur.archlinux.org/packages/unagi/)
-
-## 配置文件样例
-
-Anyone who has an `xorg.conf` file written up that works, go ahead and post a link to it here for others to look at. Please do not in-line the entire configuration file; upload it somewhere else and link to it.
-
-**请只贴热插拔示例否则注明配置未使用热插拔** (Xorg 1.8 = udev)
-
-### 示例1 : `xorg.conf` & `/etc/X11/xorg.conf.d/10-evdev.conf`
-
-这是 `/etc/X11/xorg.conf.d/10-evdev.conf` 配置键盘布局的示例:
-
-**注意:** "InputDevice" 部分已经注释掉，因为它们由 10-evdev.conf 负责。
-
-```
-`xorg.conf`: [http://pastebin.com/raw.php?i=EuSKahkn](http://pastebin.com/raw.php?i=EuSKahkn)
-`/etc/X11/xorg.conf.d/10-evdev.conf`: [http://pastebin.com/raw.php?i=4mPY35Mw](http://pastebin.com/raw.php?i=4mPY35Mw)
-`/etc/X11/xorg.conf.d/10-monitor.conf` (VMware): [http://pastebin.com/raw.php?i=fJv8EXGb](http://pastebin.com/raw.php?i=fJv8EXGb)
-`/etc/X11/xorg.conf.d/10-monitor.conf` (KVM): [http://pastebin.com/raw.php?i=NRz7v0Kn](http://pastebin.com/raw.php?i=NRz7v0Kn)
-
-```
 
 ## 技巧和技巧
 
@@ -452,17 +411,6 @@ $ man Xserver
 -deferglyphs 16
 
 ```
-
-### Virtual X session
-
-To start another X session in, for example, `Ctrl+Alt+F8`, you need to type this on a console:
-
-```
-xinit /path/to/wm -- :1
-
-```
-
-Change "/path/to/wm" to your window manager start file or to your login manager like gdm or slim.
 
 ### Nested X session
 
@@ -524,6 +472,40 @@ To re-enable the device, just issue the opposite command:
 ```
 $ xinput --enable 10
 
+```
+
+### Killing application with hotkey
+
+Run script on hotkey:
+
+```
+#!/bin/bash
+windowFocus=$(xdotool getwindowfocus);
+pid=$(xprop -id $windowFocus | grep PID);
+kill -9 $pid
+
+```
+
+Deps: [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop), [xdotool](https://www.archlinux.org/packages/?name=xdotool)
+
+### Block TTY access
+
+To block tty access when in an X add the following to xorg.conf:
+
+```
+Section "ServerFlags"
+    Option "DontVTSwitch" "True"
+EndSection
+```
+
+### Prevent a user from killing X
+
+To prevent a user from killing when it is running add the following to xorg.conf:
+
+```
+Section "ServerFlags"
+    Option "DontZap"      "True"
+EndSection
 ```
 
 ## 故障和修复
@@ -601,18 +583,6 @@ setxkbmap -option terminate:ctrl_alt_bksp
 ```
 
 **Note:** This setting has no effect on Gnome 3.
-
-### Apple 的键盘问题
-
-	*参见 [Apple Keyboard](/index.php/Apple_Keyboard "Apple Keyboard")*
-
-### 触摸板点击不正常
-
-	*参见: [Synaptics](/index.php/Synaptics "Synaptics")*
-
-### 额外的鼠标按键不工作
-
-	*参见：[Get All Mouse Buttons Working](/index.php/Get_All_Mouse_Buttons_Working "Get All Mouse Buttons Working")*
 
 ### 无法用"su"以root身份启动X客户端
 
@@ -721,7 +691,7 @@ Make some free space on your root partition and X will start.
 
 ### 不使用 root 权限的 Xorg (v1.16)
 
-在 1.16 版及以后 [[1]](https://www.archlinux.org/news/xorg-server-116-is-now-available/)， Xorg 可能在 `logind` 的帮助下以用户特权运行。如此运行对系统的要求如下所示：
+在 1.16 版及以后 [[2]](https://www.archlinux.org/news/xorg-server-116-is-now-available/)， Xorg 可能在 `logind` 的帮助下以用户特权运行。如此运行对系统的要求如下所示：
 
 *   [systemd](/index.php/Systemd "Systemd")： 版本 >=216 以支持多实例；
 *   经由 [xinit](/index.php/Xinit "Xinit") 启动 X： 显示管理器（登陆管理器）不被支持；

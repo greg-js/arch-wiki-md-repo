@@ -9,7 +9,7 @@
 *   [Trinity](/index.php/Trinity "Trinity")
 *   [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")
 
-**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-27，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=489302)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-13，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=492962)可以查看翻译后英文页面的改动。
 
 KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment "Desktop environment")、支持库和框架 (KDE Frameworks)、和应用组成的软件项目。KDE 官网维护了一份 [UserBase Wiki](https://userbase.kde.org/)。用户能在那里找到大部分 KDE 应用的详细信息。
 
@@ -305,7 +305,7 @@ Plasma 访问 SMB 共享的能力有限。写入到 Windows 共享存在问题�
 
 ```
 
-可能有必要也可能没必要将 `.local` 附加到 hostname。
+可能需要将 `.local` 附加到 hostname。对于某些 NAS 设备，可能需要将 `vers=1.0` 附加到参数行以实现 SMB 1.0 的兼容性。
 
 另一种简单的解决办法则是使用 [samba-mounter-git](https://aur.archlinux.org/packages/samba-mounter-git/)。它在 *系统设置* > *网络驱动* 中提供了基本相同的功能。
 

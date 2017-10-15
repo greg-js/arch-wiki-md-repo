@@ -1,3 +1,11 @@
+Related articles
+
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [Wayland](/index.php/Wayland "Wayland")
+*   [Default applications](/index.php/Default_applications "Default applications")
+
 A [desktop environment](https://en.wikipedia.org/wiki/Desktop_environment "wikipedia:Desktop environment") provides a *complete* graphical user interface (GUI) for a system by bundling together a variety of components written using a common widget toolkit and set of libraries.
 
 ## Contents
@@ -217,8 +225,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [liri-shell-git](https://aur.archlinux.org/packages/liri-shell-git/) | Liri Terminal
 [liri-terminal-git](https://aur.archlinux.org/packages/liri-terminal-git/) | Liri Files
 [liri-files-git](https://aur.archlinux.org/packages/liri-files-git/) | Liri Calculator
-<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=liri-calculator-git)</small> | Liri Text
-<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=liri-text-git)</small> | EyeSight
+[liri-calculator-git](https://aur.archlinux.org/packages/liri-calculator-git/) | Liri Text
+[liri-text-git](https://aur.archlinux.org/packages/liri-text-git/) | EyeSight
 [eyesight](https://aur.archlinux.org/packages/eyesight/) | Liri Player
 [liri-player-git](https://aur.archlinux.org/packages/liri-player-git/) | Liri Browser
 [liri-browser-git](https://aur.archlinux.org/packages/liri-browser-git/) | SDDM

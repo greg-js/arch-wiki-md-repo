@@ -8,11 +8,11 @@ Notes to get Arch Linux on the [GPD Pocket](https://www.indiegogo.com/projects/g
     *   [2.2 WiFi](#WiFi)
     *   [2.3 Bluetooth](#Bluetooth)
     *   [2.4 Xorg](#Xorg)
-    *   [2.5 Sound](#Sound)
-    *   [2.6 SDDM](#SDDM)
-    *   [2.7 Touchscreen Gestures](#Touchscreen_Gestures)
-    *   [2.8 KDE Display](#KDE_Display)
-    *   [2.9 Mouse Scroll Emulation](#Mouse_Scroll_Emulation)
+    *   [2.5 Mouse Scroll Emulation](#Mouse_Scroll_Emulation)
+    *   [2.6 Sound](#Sound)
+    *   [2.7 SDDM](#SDDM)
+    *   [2.8 Touchscreen Gestures](#Touchscreen_Gestures)
+    *   [2.9 KDE Display](#KDE_Display)
 *   [3 Known Issues](#Known_Issues)
 *   [4 Acknowledgements:](#Acknowledgements:)
 
@@ -122,6 +122,24 @@ EndSection
 
 Alternatively you can copy the files from [here](https://github.com/nexus511/gpd-ubuntu-packages/tree/master/packages/gpdpocket-xorg/files/config).
 
+### Mouse Scroll Emulation
+
+/etc/X11/xorg.conf.d/80-trackpoint.conf to scroll while holding right click.
+
+ `/etc/X11/xorg.conf.d/80-trackpoint.conf` 
+```
+Section "InputClass"
+        Identifier "GPD trackpoint"
+        MatchProduct "SINO WEALTH Gaming Keyboard"
+        MatchIsPointer "on"
+        Driver "libinput"
+        Option "MiddleEmulation" "1"
+        Option "ScrollButton" "3"
+        Option "ScrollMethod" "button"
+EndSection
+
+```
+
 ### Sound
 
 Copy chtrt5645.conf and HiFi.conf from [here](https://github.com/nexus511/gpd-ubuntu-packages/tree/master/packages/gpdpocket-audio/files) to /usr/share/alsa/ucm/chtrt5645/. Append the following lines into /etc/pulse/default.pa.
@@ -163,22 +181,6 @@ Install [touchegg](https://aur.archlinux.org/packages/touchegg/) then copy confi
 ### KDE Display
 
 In System Settings > Display and Monitor change Orientation to 90° Clockwise, and Scale Display to a comfortable size.
-
-### Mouse Scroll Emulation
-
-Create /home/$HOME/bin/mousescroll.sh to scroll while holding right click.
-
- `/home/$HOME/bin/mousescroll.sh` 
-```
-#!/bin/bash  
-# Emulate scroll wheel in built in nub while holding the right click button  
-xinput --set-prop pointer:"SINO WEALTH Gaming Keyboard" "libinput Middle Emulation Enabled" 1  
-# Trigger wheel emulation with button 3 (right click)  
-xinput --set-prop pointer:"SINO WEALTH Gaming Keyboard" "libinput Button Scrolling Button" 3  
-
-```
-
-Add script to SDDM Autostart in System Settings > Startup and Shutdown > Autostart.
 
 ## Known Issues
 

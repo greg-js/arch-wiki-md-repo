@@ -205,9 +205,9 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 *   使用`-d`参数
 
 ```
- # sserver -c /etc/shadowsocks/foo.json -d start  #启动
- # sserver -c /etc/shadowsocks/foo.json -d start  #停止
- # sserver -c /etc/shadowsocks/foo.json -d start  #重启
+ # ssserver -c /etc/shadowsocks/foo.json -d start  #启动
+ # ssserver -c /etc/shadowsocks/foo.json -d start  #停止
+ # ssserver -c /etc/shadowsocks/foo.json -d start  #重启
 
 ```
 

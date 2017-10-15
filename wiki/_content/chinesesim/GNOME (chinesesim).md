@@ -19,23 +19,21 @@
 
 **翻译状态：** 本文是英文页面 [GNOME](/index.php/GNOME "GNOME") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-21，点击[这里](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=451075)可以查看翻译后英文页面的改动。
 
-[GNOME](https://www.gnome.org/)（读音是*gah-nohm* 或 *nohm*）是一个简单易用的[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")。它由[GNOME 项目组](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project")设计，完全自由和开源。GNOME是[GNU 项目](https://en.wikipedia.org/wiki/GNU_Project "wikipedia:GNU Project")的一部分。默认使用[Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)")而不是[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")进行显示。
+[GNOME](https://www.gnome.org/)（读音是*gah-nohm* 或 *nohm*）是一个简单易用的[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")。它是由 [GNOME 项目组](https://en.wikipedia.org/wiki/The_GNOME_Project 而不是 [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") 进行显示。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
     *   [1.1 附加的软件包](#.E9.99.84.E5.8A.A0.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
-*   [2 GNOME会话](#GNOME.E4.BC.9A.E8.AF.9D)
+*   [2 GNOME 会话](#GNOME_.E4.BC.9A.E8.AF.9D)
 *   [3 运行 GNOME](#.E8.BF.90.E8.A1.8C_GNOME)
     *   [3.1 图形界面启动](#.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2.E5.90.AF.E5.8A.A8)
     *   [3.2 手动启动](#.E6.89.8B.E5.8A.A8.E5.90.AF.E5.8A.A8)
-        *   [3.2.1 Xorg会话](#Xorg.E4.BC.9A.E8.AF.9D)
-        *   [3.2.2 Wayland会话](#Wayland.E4.BC.9A.E8.AF.9D)
+        *   [3.2.1 Xorg 会话](#Xorg_.E4.BC.9A.E8.AF.9D)
+        *   [3.2.2 Wayland 会话](#Wayland_.E4.BC.9A.E8.AF.9D)
     *   [3.3 Wayland 中的 GNOME 应用程序](#Wayland_.E4.B8.AD.E7.9A.84_GNOME_.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
-*   [4 导览](#.E5.AF.BC.E8.A7.88)
-    *   [4.1 重启 GNOME shell](#.E9.87.8D.E5.90.AF_GNOME_shell)
-    *   [4.2 GNOME Shell 崩溃](#GNOME_Shell_.E5.B4.A9.E6.BA.83)
-    *   [4.3 遗留名称](#.E9.81.97.E7.95.99.E5.90.8D.E7.A7.B0)
+*   [4 浏览](#.E6.B5.8F.E8.A7.88)
+    *   [4.1 遗留名称](#.E9.81.97.E7.95.99.E5.90.8D.E7.A7.B0)
 *   [5 配置](#.E9.85.8D.E7.BD.AE)
     *   [5.1 GNOME 系统设置](#GNOME_.E7.B3.BB.E7.BB.9F.E8.AE.BE.E7.BD.AE)
         *   [5.1.1 色彩设置](#.E8.89.B2.E5.BD.A9.E8.AE.BE.E7.BD.AE)
@@ -72,21 +70,25 @@
 
 以下两个软件组均包含 GNOME 的组件：
 
-*   [gnome](https://www.archlinux.org/groups/x86_64/gnome/) 组包含基本桌面环境和精选的[应用程序](https://wiki.gnome.org/Apps)；
+*   [gnome](https://www.archlinux.org/groups/x86_64/gnome/) 组包含基本的桌面环境和良好集成的[应用程序](https://wiki.gnome.org/Apps)；
 
-*   [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/) 包组包含剩余的可选工具，例如[文本编辑器](/index.php/Gedit "Gedit")、压缩文件管理器、磁盘管理器、邮件客户端、游戏及其它非必需的软件。 [gnome](https://www.archlinux.org/groups/x86_64/gnome/) 软件组是这个组的基础。
+*   [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/) 组包含其他的 GNOME 应用，包括[文本编辑器](/index.php/Gedit "Gedit")、压缩文件管理器、磁盘管理器以及一些游戏。 [gnome](https://www.archlinux.org/groups/x86_64/gnome/) 软件组是这个组的基础。
 
-基础桌面环境包含了 [GNOME Shell](https://en.wikipedia.org/wiki/GNOME_Shell 窗口管理器的插件，可以通过软件包 [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) 单独安装。
+基础桌面环境包含了 [GNOME Shell](https://en.wikipedia.org/wiki/GNOME_Shell 窗口管理器的插件。它可以通过软件包 [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) 单独安装。
 
-**注意:** *mutter* 是 gnome 桌面的混合管理器, 利用硬件加速减少屏幕杂乱。GNOME会话管理器自动检测显卡驱动是否足以运行GNOME Shell, 不足以胜任就用 *llvmpipe* 软件绘制.
+**注意:** *mutter* 是 gnome 桌面的混合管理器。它利用硬件加速减少屏幕杂乱。GNOME 会话管理器会自动检测显卡驱动是否足以运行 GNOME Shell，如果不行则用 *llvmpipe* 软件绘制。
 
 ### 附加的软件包
 
-上面提到的包组不包括这些包：
+上面提到的软件组不包括以下软件包：
 
 *   **[Boxes](https://en.wikipedia.org/wiki/GNOME_Boxes "wikipedia:GNOME Boxes")** — 访问 [libvirt](/index.php/Libvirt "Libvirt") 虚拟机的用户接口。
 
 	[https://wiki.gnome.org/Apps/Boxes](https://wiki.gnome.org/Apps/Boxes) || [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
+
+*   **Games** — GNOME 的游戏启动器。
+
+	[https://wiki.gnome.org/Apps/Games](https://wiki.gnome.org/Apps/Games) || [gnome-games](https://www.archlinux.org/packages/?name=gnome-games)
 
 *   **GNOME Initial Setup** — 准备新系统的简单、易用和安全的工具。
 
@@ -96,7 +98,7 @@
 
 	[https://wiki.gnome.org/Apps/MultiWriter](https://wiki.gnome.org/Apps/MultiWriter) || [gnome-multi-writer](https://www.archlinux.org/packages/?name=gnome-multi-writer)
 
-*   **GNOME PackageKit** — 用于GNOME的PackageKit的图形工具集。
+*   **GNOME PackageKit** — GNOME 的 PackageKit 图形工具集。
 
 	[https://github.com/GNOME/gnome-packagekit](https://github.com/GNOME/gnome-packagekit) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
 
@@ -104,23 +106,31 @@
 
 	[https://wiki.gnome.org/Apps/Nemiver](https://wiki.gnome.org/Apps/Nemiver) || [nemiver](https://www.archlinux.org/packages/?name=nemiver)
 
+*   **Recipes** — GNOME 的食谱管理应用。
+
+	[https://wiki.gnome.org/Apps/Recipes](https://wiki.gnome.org/Apps/Recipes) || [gnome-recipes](https://www.archlinux.org/packages/?name=gnome-recipes)
+
+*   **Simple Scan** — 简单的扫描工具。
+
+	[https://launchpad.net/simple-scan](https://launchpad.net/simple-scan) || [simple-scan](https://www.archlinux.org/packages/?name=simple-scan)
+
 *   **[Software](https://en.wikipedia.org/wiki/GNOME_Software "wikipedia:GNOME Software")** — 安装和更新软件和系统扩展。
 
 	[https://wiki.gnome.org/Apps/Software/](https://wiki.gnome.org/Apps/Software/) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 
-## GNOME会话
+## GNOME 会话
 
 GNOME 有三个可用的会话，都使用 GNOME Shell。
 
-*   **GNOME** 是使用Wayland的默认会话，传统X应用将通过Xwayland运行。
-*   **GNOME Classic** 的桌面布局类似于传统的GNOME 2, 使用预先激活的插件和参数。[[1]](http://worldofgnome.org/welcome-to-gnome-3-8-flintstones-mode/) 因此，它更像是一个定制的GNOME Shell，而不是完全独立的模式。
-*   **GNOME on Xorg** 用 Xorg 运行 GNOME Shell。
+*   **GNOME** 是使用 Wayland 的默认会话，传统X应用将通过 Xwayland 运行。
+*   **GNOME Classic** 的桌面布局类似于传统的GNOME 2, 使用预先激活的插件和参数。[[1]](http://worldofgnome.org/welcome-to-gnome-3-8-flintstones-mode/) 因此，它更像是一个定制的 GNOME Shell，而不是完全独立的模式。
+*   **GNOME on Xorg** 使用 Xorg 运行 GNOME Shell。
 
 ## 运行 GNOME
 
-GNOME可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")以图形方式启动,也可以从控制台手动启动。
+GNOME 可以通过[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")以图形方式启动，也可以从控制台手动启动。
 
-**注意:** GNOME中的锁屏由GDM提供支持。如果没有使用GDM启动GNOME，则需要使用另一个屏幕锁定器来提供此功能。参见[List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security")。
+**注意:** GNOME 的锁屏功能由 GDM 提供支持。如果没有使用 GDM 启动 GNOME，则需要使用另一个屏幕锁定器来提供此功能。详见[List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security")。
 
 ### 图形界面启动
 
@@ -128,9 +138,9 @@ GNOME可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%
 
 ### 手动启动
 
-#### Xorg会话
+#### Xorg 会话
 
-*   对于 GNOME on Xorg 会话，在 `~/.xinitrc` 中添加：`exec gnome-session`.
+*   对于 GNOME on Xorg 会话，在 `~/.xinitrc` 中添加：`exec gnome-session`。
 *   对于 GNOME Classic 会话，在 `~/.xinitrc` 中添加：
     ```
     export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME
@@ -138,67 +148,56 @@ GNOME可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%
     exec gnome-session --session=gnome-classic
     ```
 
-修改完 `~/.xinitrc` 后，即可用 `startx` 启动GNOME（有关其他详细信息，请见 [xinitrc](/index.php/Xinitrc "Xinitrc") 例如如何保留登陆会话）。设置完 `~/.xinitrc` 后，也可以选择[在登录时启动X](/index.php/Start_X_at_login "Start X at login")。
+修改完 `~/.xinitrc` 后，即可使用 `startx` 启动 GNOME（有关其他详细信息，例如如何保留 logind 会话，详见 [xinitrc](/index.php/Xinitrc "Xinitrc")）。设置完 `~/.xinitrc` 后，也可以设定[在登录时启动X](/index.php/Start_X_at_login "Start X at login")。
 
-#### Wayland会话
+#### Wayland 会话
 
 **注意:**
 
-*   [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) 软件包提供的X服务器仍然需要用于运行尚未移植到[Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)")的应用程序。
-*   使用专有NVIDIA驱动程序的Wayland显示目前拥有非常差的性能：[FS#53284](https://bugs.archlinux.org/task/53284)。
+*   [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) 软件包提供的X服务器仍然需要用于运行尚未移植到 [Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)") 的应用程序。
+*   使用专有 NVIDIA 驱动的 Wayland 目前拥有非常差的性能：[FS#53284](https://bugs.archlinux.org/task/53284)。
 
-可以用 `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session` 手动启动Wayland会话。
+可以用 `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session` 手动启动 Wayland 会话。
 
-若要在tty1登录时启动，将以下内容添加到 `.bash_profile` 中：
+若要在 tty1 登录时启动，将以下内容添加到 `.bash_profile` 中：
 
 ```
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [[ -z $XDG_SESSION_TYPE ]]; then
   XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
 fi
 
 ```
 
-**注意:** 如果这给出了无限循环，如[此问题](https://bugzilla.gnome.org/show_bug.cgi?id=780801)所示，在分号之前插入 `&& [[ -z $XDG_SESSION_TYPE ]]` 。
-
 ### Wayland 中的 GNOME 应用程序
 
-在使用 *GNOME* 会话时，GNOME应用程序将使用Wayland运行。你可以在 [GNOME Applications under Wayland](https://wiki.gnome.org/Initiatives/Wayland/Applications/) 中查看GNOME应用程序在Wayland下的当前状态。若要调试，[GTK+ 手册](https://developer.gnome.org/gtk3/stable/gtk-running.html) 列出了选项和环境变量。
+在使用 *GNOME* 会话时，GNOME 应用程序将使用 Wayland 运行。[GNOME Applications under Wayland](https://wiki.gnome.org/Initiatives/Wayland/Applications/) 中列出了 GNOME 应用程序在 Wayland 下的当前状态。若要调试，[GTK+ 手册](https://developer.gnome.org/gtk3/stable/gtk-running.html) 列出了选项和环境变量。
 
-## 导览
+## 浏览
 
-您可以阅读这篇文章： [GNOME Shell cheat sheet](https://wiki.gnome.org/Projects/GnomeShell/CheatSheet) 以了解如何高效地使用 GNOME shell，它展示了 GNOME shell 的特色与使用快捷键。文章内容包括怎么切换任务，使用键盘，窗口控制，使用面板，预览模式等。 部分常用的快捷键：
+[GNOME Shell cheat sheet](https://wiki.gnome.org/Projects/GnomeShell/CheatSheet) 中解释了如何高效地使用 GNOME shell，它展示了 GNOME shell 的特色和快捷键，包括切换任务，使用键盘，窗口控制，面板，概览模式等等。以下是部分常用的快捷键：
 
-*   `Super`： 进入预览模式
-*   `Super` + `m`： 显示消息托盘
+*   `Super` + `m`：显示消息托盘
 *   `Super` + `a`：显示应用程序菜单
+*   `Alt-` + `Tab`：切换当前使用的应用
+*   `Alt-` + ``` (美式键盘 `Tab` 上面的按键)：切换前台应用程序的窗口
 *   `Alt` + `F2`：输入命令以快速启动应用
-*   `Alt` + `F2`，然后输入 `r` 或 `restart`，再 `Enter`：重启 GNOME shell。这一条在你遇到 shell 图形界面错误时十分有用。
-
-### 重启 GNOME shell
-
-当修改过界面之后你可能需要重启 GNOME shell。你可以重新登陆，不过有一个简单快捷的方法。 按 `Alt` + `F2` 再输入 `r` 再 `Enter`
-
-### GNOME Shell 崩溃
-
-一些特定的微调或者经常性重启 Shell 会导致 shell 在将要重启的时候崩溃。这个时候你必须做好心理准备，然后强制注销。有一些修改，例如在***GNOME Shell*** 和 ***fallback mode,*** 之间切换，不能简单地使用 r 重启；必须重登陆来应用这个效果。
-
-丑话说在前面，在重启 shell 前请先把有用的文档保存（或者关闭）。虽然这不是必要的，因为窗口和文档在重启了 shell 之后应该还在。
+*   `Alt` + `F2`，然后输入 `r` 或 `restart`：重启界面如果图形界面出了问题（仅用于 X/传统 模式，不用于 Wayland 模式）。
 
 ### 遗留名称
 
-**注意:** 一些GNOME程序在文档和关于对话框的名称已更改，但可执行文件的名称却没有。这样的应用程序在下面表格列出.
+**注意:** 一些 GNOME 程序在文档和对话框中的名称已经更改，但执行文件名称却没有。下面表格列出了一些这样的应用程序。
 
-**提示：** 在搜索栏中搜索的应用程序的遗留名称将成功返回现在的应用程序，例如搜索*nautilus*将返回*Files*.
+**提示：** 在搜索栏中搜索应用程序的遗留名称将成功找到要找应用程序，例如搜索 *nautilus* 将返回 *Files*。
 
-| Current | Legacy |
+| 当前 | 遗留 |
 | [Files](/index.php/Files "Files") | Nautilus |
-| [Web](/index.php/GNOME_Web "GNOME Web") | Epiphany |
+| [Web](/index.php/GNOME/Web "GNOME/Web") | Epiphany |
 | Videos | Totem |
 | Main Menu | Alacarte |
 | Document Viewer | Evince |
 | Disk Usage Analyser | Baobab |
 | Image Viewer | EoG (Eye of GNOME) |
-| [Passwords and Keys](/index.php/GNOME_Keyring "GNOME Keyring") | Seahorse |
+| [Passwords and Keys](/index.php/GNOME/Keyring "GNOME/Keyring") | Seahorse |
 
 ## 配置
 

@@ -654,30 +654,30 @@ However, it is likely that port 443 is already in use by a web server serving HT
 
 ### Speeding up SSH
 
-**Tip:** If you intend to use SSH for SFTP or SCP, installing [openssh-hpn-git](https://aur.archlinux.org/packages/openssh-hpn-git/) can significantly increase throughput.[[8]](https://www.psc.edu/index.php/hpn-ssh)
-
 There are several [client configuration](#Configuration) options which can speed up connections either globally or for specific hosts. See [ssh_config(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ssh_config.5) for full descriptions of these options.
 
-You can make all sessions to the same host share a single connection using these options:
+*   You can make all sessions to the same host share a single connection using these options:
+    ```
+    ControlMaster auto
+    ControlPersist yes
+    ControlPath ~/.ssh/sockets/socket-%r@%h:%p
 
-```
-ControlMaster auto
-ControlPersist yes
-ControlPath ~/.ssh/sockets/socket-%r@%h:%p
+    ```
 
-```
+	where `~/.ssh/sockets` can be any directory not writable by other users.
 
-where `~/.ssh/sockets` can be any directory not writable by other users.
+*   `ControlPersist` specifies how long the master should wait in the background for new clients after the initial client connection has been closed. Possible values are either:
+    *   `no` to close the connection immediately after the last client disconnects,
+    *   a time in seconds,
+    *   `yes` to wait forever, the connection will never be closed automatically.
 
-`ControlPersist` specifies how long the master should wait for clients before it closes the connection. Possible values are a time in seconds, `yes` to wait forever and `no` to close the connection immediately when the last client disconnects.
-
-**Warning:** Beware that if `ControlPersist` is set to `yes` that the connection will never be closed automatically.
-
-Another option to improve speed is to enable compression with the `Compression yes` option or the `-C` flag.
+*   Another option to improve speed is to enable compression with the `Compression yes` option or the `-C` flag.
 
 **Note:** [ssh(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ssh.1) states that "[c]ompression is desirable on modem lines and other slow connections, but will only slow down things on fast networks." This tip might be counterproductive depending on your network configuration.
 
-Login time can be shortened by bypassing IPv6 lookup using the `AddressFamily inet` option or `-4` flag.
+*   Login time can be shortened by bypassing IPv6 lookup using the `AddressFamily inet` option or `-4` flag.
+
+*   Last, if you intend to use SSH for SFTP or SCP, [High Performance SSH/SCP](https://www.psc.edu/index.php/hpn-ssh) can significantly increase throughput by raising dynamically the SSH buffer sizes. Install the package [openssh-hpn-git](https://aur.archlinux.org/packages/openssh-hpn-git/) to use a patched version of OpenSSH with this enhancement.
 
 ### Mounting a remote filesystem with SSHFS
 

@@ -72,7 +72,7 @@ Playbooks are the main organizational unit to configure and deploy the whole inf
 Then, run the playbook script:
 
 ```
-# ansible-playbook --ask-become-pass syu.yml
+$ ansible-playbook --ask-become-pass syu.yml
 
 ```
 
@@ -81,14 +81,14 @@ Then, run the playbook script:
 A [vault](http://docs.ansible.com/ansible/latest/playbooks_vault.html#using-vault-in-playbooks) can be used to keep sensitive data in an encrypted form, rather than plaintext, in playbooks or roles. The vault password can be stored in plaintext in a file. It can be created with `echo myvaultpassword > vault_pass.txt` to be used later on with Ansible as follows:
 
 ```
-ansible-playbook site.yml --vault-id vault_pass.txt
+$ ansible-playbook site.yml --vault-id vault_pass.txt
 
 ```
 
 In order to encrypt the content `varcontent` of a variable named `varname`, the following command should be used:
 
 ```
-ansible-vault encrypt_string --vault-id vault_pass.txt varcontent -n varname
+$ ansible-vault encrypt_string --vault-id vault_pass.txt varcontent -n varname
 
 ```
 

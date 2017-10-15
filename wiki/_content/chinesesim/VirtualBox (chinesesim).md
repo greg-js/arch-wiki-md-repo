@@ -1,13 +1,12 @@
 相关文章
 
-*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
 *   [VirtualBox/Tips and tricks](/index.php/VirtualBox/Tips_and_tricks "VirtualBox/Tips and tricks")
+*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
 *   [PhpVirtualBox](/index.php/PhpVirtualBox "PhpVirtualBox")
-*   [VirtualBox Arch Linux Guest On Physical Drive](/index.php/VirtualBox_Arch_Linux_Guest_On_Physical_Drive "VirtualBox Arch Linux Guest On Physical Drive")
-*   [Installing Arch Linux from VirtualBox](/index.php/Installing_Arch_Linux_from_VirtualBox "Installing Arch Linux from VirtualBox")
+*   [RemoteBox](/index.php/RemoteBox "RemoteBox")
 *   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
 
-**翻译状态：** 本文是英文页面 [VirtualBox](/index.php/VirtualBox "VirtualBox") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-6-12，点击[这里](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=434334)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [VirtualBox](/index.php/VirtualBox "VirtualBox") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-15，点击[这里](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=491411)可以查看翻译后英文页面的改动。
 
 **VirtualBox** 是运行于现有操作系统之上的虚拟机监视器，用途是在特制环境（即虚拟机）里运行操作系统。VirtualBox 处于活跃开发状态，时常会引入新功能。VirtualBox 支持 [Qt](/index.php/Qt "Qt")，[SDL](https://en.wikipedia.org/wiki/SDL "wikipedia:SDL") 与无界面模式运行虚拟机。也支持用 Qt 图形界面和命令行工具管理虚拟机。
 
@@ -33,62 +32,49 @@
         *   [2.6.1 手动挂载](#.E6.89.8B.E5.8A.A8.E6.8C.82.E8.BD.BD)
         *   [2.6.2 自动挂载](#.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BD)
         *   [2.6.3 按配置于启动时挂载](#.E6.8C.89.E9.85.8D.E7.BD.AE.E4.BA.8E.E5.90.AF.E5.8A.A8.E6.97.B6.E6.8C.82.E8.BD.BD)
+    *   [2.7 从宿主机 SSH 登录客体机](#.E4.BB.8E.E5.AE.BF.E4.B8.BB.E6.9C.BA_SSH_.E7.99.BB.E5.BD.95.E5.AE.A2.E4.BD.93.E6.9C.BA)
+        *   [2.7.1 用 SSHFS 来实现共享目录](#.E7.94.A8_SSHFS_.E6.9D.A5.E5.AE.9E.E7.8E.B0.E5.85.B1.E4.BA.AB.E7.9B.AE.E5.BD.95)
 *   [3 虚拟磁盘管理](#.E8.99.9A.E6.8B.9F.E7.A3.81.E7.9B.98.E7.AE.A1.E7.90.86)
-    *   [3.1 支持VirtualBox的格式](#.E6.94.AF.E6.8C.81VirtualBox.E7.9A.84.E6.A0.BC.E5.BC.8F)
-    *   [3.2 磁盘映像格式转换](#.E7.A3.81.E7.9B.98.E6.98.A0.E5.83.8F.E6.A0.BC.E5.BC.8F.E8.BD.AC.E6.8D.A2)
-        *   [3.2.1 VMDK to VDI and VDI to VMDK](#VMDK_to_VDI_and_VDI_to_VMDK)
-        *   [3.2.2 VHD to VDI and VDI to VDH](#VHD_to_VDI_and_VDI_to_VDH)
-        *   [3.2.3 QCOW2 to VDI and VDI to QCOW2](#QCOW2_to_VDI_and_VDI_to_QCOW2)
-*   [4 从其他虚拟机中迁移](#.E4.BB.8E.E5.85.B6.E4.BB.96.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.B8.AD.E8.BF.81.E7.A7.BB)
-    *   [4.1 从QEMU映像转换](#.E4.BB.8EQEMU.E6.98.A0.E5.83.8F.E8.BD.AC.E6.8D.A2)
-    *   [4.2 从VMware映像转换](#.E4.BB.8EVMware.E6.98.A0.E5.83.8F.E8.BD.AC.E6.8D.A2)
-    *   [4.3 挂载虚拟磁盘](#.E6.8C.82.E8.BD.BD.E8.99.9A.E6.8B.9F.E7.A3.81.E7.9B.98)
-        *   [4.3.1 VDI](#VDI)
-    *   [4.4 压缩磁盘映像](#.E5.8E.8B.E7.BC.A9.E7.A3.81.E7.9B.98.E6.98.A0.E5.83.8F)
-    *   [4.5 增加虚拟磁盘](#.E5.A2.9E.E5.8A.A0.E8.99.9A.E6.8B.9F.E7.A3.81.E7.9B.98)
-        *   [4.5.1 Increase size for VDI disks](#Increase_size_for_VDI_disks)
-    *   [4.6 从.vbox文件中手动更换虚拟磁盘](#.E4.BB.8E.vbox.E6.96.87.E4.BB.B6.E4.B8.AD.E6.89.8B.E5.8A.A8.E6.9B.B4.E6.8D.A2.E8.99.9A.E6.8B.9F.E7.A3.81.E7.9B.98)
-        *   [4.6.1 Linux主机和其他操作系统之间的转移](#Linux.E4.B8.BB.E6.9C.BA.E5.92.8C.E5.85.B6.E4.BB.96.E6.93.8D.E4.BD.9C.E7.B3.BB.E7.BB.9F.E4.B9.8B.E9.97.B4.E7.9A.84.E8.BD.AC.E7.A7.BB)
-*   [5 配置](#.E9.85.8D.E7.BD.AE)
-    *   [5.1 网络](#.E7.BD.91.E7.BB.9C)
-        *   [5.1.1 NAT](#NAT)
-        *   [5.1.2 桥接](#.E6.A1.A5.E6.8E.A5)
-    *   [5.2 主机端和客户端之间的键盘和鼠标](#.E4.B8.BB.E6.9C.BA.E7.AB.AF.E5.92.8C.E5.AE.A2.E6.88.B7.E7.AB.AF.E4.B9.8B.E9.97.B4.E7.9A.84.E9.94.AE.E7.9B.98.E5.92.8C.E9.BC.A0.E6.A0.87)
-    *   [5.3 主机端和客户端间的共享文件夹](#.E4.B8.BB.E6.9C.BA.E7.AB.AF.E5.92.8C.E5.AE.A2.E6.88.B7.E7.AB.AF.E9.97.B4.E7.9A.84.E5.85.B1.E4.BA.AB.E6.96.87.E4.BB.B6.E5.A4.B9)
-    *   [5.4 Clone a virtual disk and assigning a new UUID to it](#Clone_a_virtual_disk_and_assigning_a_new_UUID_to_it)
-*   [6 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [6.1 modprobe Exec 格式错误](#modprobe_Exec_.E6.A0.BC.E5.BC.8F.E9.94.99.E8.AF.AF)
-    *   [6.2 VERR_ACCESS_DENIED](#VERR_ACCESS_DENIED)
-    *   [6.3 pacstrap script fails](#pacstrap_script_fails)
-    *   [6.4 键盘和鼠标都在我的虚拟机](#.E9.94.AE.E7.9B.98.E5.92.8C.E9.BC.A0.E6.A0.87.E9.83.BD.E5.9C.A8.E6.88.91.E7.9A.84.E8.99.9A.E6.8B.9F.E6.9C.BA)
-    *   [6.5 无法发送CTRL + ALT+ Fn键到我的虚拟机](#.E6.97.A0.E6.B3.95.E5.8F.91.E9.80.81CTRL_.2B_ALT.2B_Fn.E9.94.AE.E5.88.B0.E6.88.91.E7.9A.84.E8.99.9A.E6.8B.9F.E6.9C.BA)
-    *   [6.6 解决ISO映像问题](#.E8.A7.A3.E5.86.B3ISO.E6.98.A0.E5.83.8F.E9.97.AE.E9.A2.98)
-    *   [6.7 VirtualBox的GUI没有应用我的GTK主题](#VirtualBox.E7.9A.84GUI.E6.B2.A1.E6.9C.89.E5.BA.94.E7.94.A8.E6.88.91.E7.9A.84GTK.E4.B8.BB.E9.A2.98)
-    *   [6.8 OpenBSD系统无法使用时，虚拟化指令不可用](#OpenBSD.E7.B3.BB.E7.BB.9F.E6.97.A0.E6.B3.95.E4.BD.BF.E7.94.A8.E6.97.B6.EF.BC.8C.E8.99.9A.E6.8B.9F.E5.8C.96.E6.8C.87.E4.BB.A4.E4.B8.8D.E5.8F.AF.E7.94.A8)
-    *   [6.9 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_.280x80BB0007.29)
-    *   [6.10 USB 子系统在宿主机和虚拟机没有作用](#USB_.E5.AD.90.E7.B3.BB.E7.BB.9F.E5.9C.A8.E5.AE.BF.E4.B8.BB.E6.9C.BA.E5.92.8C.E8.99.9A.E6.8B.9F.E6.9C.BA.E6.B2.A1.E6.9C.89.E4.BD.9C.E7.94.A8)
-    *   [6.11 主机模式网络接口创建失败](#.E4.B8.BB.E6.9C.BA.E6.A8.A1.E5.BC.8F.E7.BD.91.E7.BB.9C.E6.8E.A5.E5.8F.A3.E5.88.9B.E5.BB.BA.E5.A4.B1.E8.B4.A5)
-    *   [6.12 WinXP: 位深不能大于 16](#WinXP:_.E4.BD.8D.E6.B7.B1.E4.B8.8D.E8.83.BD.E5.A4.A7.E4.BA.8E_16)
-    *   [6.13 虚拟系统使用串行端口](#.E8.99.9A.E6.8B.9F.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8.E4.B8.B2.E8.A1.8C.E7.AB.AF.E5.8F.A3)
-    *   [6.14 Windows 8.x Error Code 0x000000C4](#Windows_8.x_Error_Code_0x000000C4)
-    *   [6.15 Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"](#Windows_8.2C_8.1_or_10_fails_to_install.2C_boot_or_has_error_.22ERR_DISK_FULL.22)
-    *   [6.16 Linux guests have slow/distorted audio](#Linux_guests_have_slow.2Fdistorted_audio)
-    *   [6.17 客户端启动后的Xorg死机](#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.90.AF.E5.8A.A8.E5.90.8E.E7.9A.84Xorg.E6.AD.BB.E6.9C.BA)
-    *   [6.18 "NS_ERROR_FAILURE" and missing menu items](#.22NS_ERROR_FAILURE.22_and_missing_menu_items)
-    *   [6.19 USB modem](#USB_modem)
-    *   [6.20 "The specified path does not exist. Check the path and then try again." error in Windows guests](#.22The_specified_path_does_not_exist._Check_the_path_and_then_try_again..22_error_in_Windows_guests)
-    *   [6.21 挂载失败导致的啟动问题](#.E6.8C.82.E8.BD.BD.E5.A4.B1.E8.B4.A5.E5.AF.BC.E8.87.B4.E7.9A.84.E5.95.9F.E5.8A.A8.E9.97.AE.E9.A2.98)
-    *   [6.22 复制和粘贴在 Arch Linux 客户机没有作用](#.E5.A4.8D.E5.88.B6.E5.92.8C.E7.B2.98.E8.B4.B4.E5.9C.A8_Arch_Linux_.E5.AE.A2.E6.88.B7.E6.9C.BA.E6.B2.A1.E6.9C.89.E4.BD.9C.E7.94.A8)
-    *   [6.23 唤醒后异常](#.E5.94.A4.E9.86.92.E5.90.8E.E5.BC.82.E5.B8.B8)
-    *   [6.24 Btrfs 系统镜像](#Btrfs_.E7.B3.BB.E7.BB.9F.E9.95.9C.E5.83.8F)
-    *   [6.25 vagrant 啟动问题](#vagrant_.E5.95.9F.E5.8A.A8.E9.97.AE.E9.A2.98)
-    *   [6.26 没有64位客户端选项](#.E6.B2.A1.E6.9C.8964.E4.BD.8D.E5.AE.A2.E6.88.B7.E7.AB.AF.E9.80.89.E9.A1.B9)
-    *   [6.27 主机上的虚拟机启动操作系统死机](#.E4.B8.BB.E6.9C.BA.E4.B8.8A.E7.9A.84.E8.99.9A.E6.8B.9F.E6.9C.BA.E5.90.AF.E5.8A.A8.E6.93.8D.E4.BD.9C.E7.B3.BB.E7.BB.9F.E6.AD.BB.E6.9C.BA)
-    *   [6.28 The virtual machine has terminated unexpectedly during startup with exit code 1 (0x1)](#The_virtual_machine_has_terminated_unexpectedly_during_startup_with_exit_code_1_.280x1.29)
-    *   [6.29 Analog microphone not working in guest](#Analog_microphone_not_working_in_guest)
-    *   [6.30 Fullscreen mode shows blank guest screen](#Fullscreen_mode_shows_blank_guest_screen)
-    *   [6.31 Failed to insert module](#Failed_to_insert_module)
-*   [7 参阅](#.E5.8F.82.E9.98.85)
+    *   [3.1 VirtualBox 支持的格式](#VirtualBox_.E6.94.AF.E6.8C.81.E7.9A.84.E6.A0.BC.E5.BC.8F)
+    *   [3.2 转换虚拟磁盘文件格式](#.E8.BD.AC.E6.8D.A2.E8.99.9A.E6.8B.9F.E7.A3.81.E7.9B.98.E6.96.87.E4.BB.B6.E6.A0.BC.E5.BC.8F)
+        *   [3.2.1 QCOW](#QCOW)
+    *   [3.3 在宿主机直接挂载并读写虚拟磁盘镜像](#.E5.9C.A8.E5.AE.BF.E4.B8.BB.E6.9C.BA.E7.9B.B4.E6.8E.A5.E6.8C.82.E8.BD.BD.E5.B9.B6.E8.AF.BB.E5.86.99.E8.99.9A.E6.8B.9F.E7.A3.81.E7.9B.98.E9.95.9C.E5.83.8F)
+        *   [3.3.1 VDI](#VDI)
+    *   [3.4 压紧虚拟磁盘](#.E5.8E.8B.E7.B4.A7.E8.99.9A.E6.8B.9F.E7.A3.81.E7.9B.98)
+    *   [3.5 扩充虚拟硬盘容量](#.E6.89.A9.E5.85.85.E8.99.9A.E6.8B.9F.E7.A1.AC.E7.9B.98.E5.AE.B9.E9.87.8F)
+        *   [3.5.1 一般方法](#.E4.B8.80.E8.88.AC.E6.96.B9.E6.B3.95)
+        *   [3.5.2 VDI 格式的方法](#VDI_.E6.A0.BC.E5.BC.8F.E7.9A.84.E6.96.B9.E6.B3.95)
+    *   [3.6 修改 .vbox 文件来替换磁盘镜像](#.E4.BF.AE.E6.94.B9_.vbox_.E6.96.87.E4.BB.B6.E6.9D.A5.E6.9B.BF.E6.8D.A2.E7.A3.81.E7.9B.98.E9.95.9C.E5.83.8F)
+        *   [3.6.1 将虚拟机从 Linux 宿主系统迁移到其他系统（或迁回）](#.E5.B0.86.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.BB.8E_Linux_.E5.AE.BF.E4.B8.BB.E7.B3.BB.E7.BB.9F.E8.BF.81.E7.A7.BB.E5.88.B0.E5.85.B6.E4.BB.96.E7.B3.BB.E7.BB.9F.EF.BC.88.E6.88.96.E8.BF.81.E5.9B.9E.EF.BC.89)
+    *   [3.7 复制虚拟盘并为其分配新 UUID](#.E5.A4.8D.E5.88.B6.E8.99.9A.E6.8B.9F.E7.9B.98.E5.B9.B6.E4.B8.BA.E5.85.B6.E5.88.86.E9.85.8D.E6.96.B0_UUID)
+*   [4 使用技巧](#.E4.BD.BF.E7.94.A8.E6.8A.80.E5.B7.A7)
+*   [5 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
+    *   [5.1 鼠标键盘都锁死在虚拟机里了](#.E9.BC.A0.E6.A0.87.E9.94.AE.E7.9B.98.E9.83.BD.E9.94.81.E6.AD.BB.E5.9C.A8.E8.99.9A.E6.8B.9F.E6.9C.BA.E9.87.8C.E4.BA.86)
+    *   [5.2 无法新建 64 位虚拟机](#.E6.97.A0.E6.B3.95.E6.96.B0.E5.BB.BA_64_.E4.BD.8D.E8.99.9A.E6.8B.9F.E6.9C.BA)
+    *   [5.3 VirtualBox 图形管理界面和主机 GTK 主题样式不匹配](#VirtualBox_.E5.9B.BE.E5.BD.A2.E7.AE.A1.E7.90.86.E7.95.8C.E9.9D.A2.E5.92.8C.E4.B8.BB.E6.9C.BA_GTK_.E4.B8.BB.E9.A2.98.E6.A0.B7.E5.BC.8F.E4.B8.8D.E5.8C.B9.E9.85.8D)
+    *   [5.4 无法向虚拟机键入 Ctrl+Alt+Fn](#.E6.97.A0.E6.B3.95.E5.90.91.E8.99.9A.E6.8B.9F.E6.9C.BA.E9.94.AE.E5.85.A5_Ctrl.2BAlt.2BFn)
+    *   [5.5 USB 功能不可用](#USB_.E5.8A.9F.E8.83.BD.E4.B8.8D.E5.8F.AF.E7.94.A8)
+    *   [5.6 USB 调制解调器在宿主系统不可用](#USB_.E8.B0.83.E5.88.B6.E8.A7.A3.E8.B0.83.E5.99.A8.E5.9C.A8.E5.AE.BF.E4.B8.BB.E7.B3.BB.E7.BB.9F.E4.B8.8D.E5.8F.AF.E7.94.A8)
+    *   [5.7 让虚拟机使用串口](#.E8.AE.A9.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.BD.BF.E7.94.A8.E4.B8.B2.E5.8F.A3)
+    *   [5.8 重启 Xorg 之后虚拟机卡死](#.E9.87.8D.E5.90.AF_Xorg_.E4.B9.8B.E5.90.8E.E8.99.9A.E6.8B.9F.E6.9C.BA.E5.8D.A1.E6.AD.BB)
+    *   [5.9 全屏模式只能看到黑屏](#.E5.85.A8.E5.B1.8F.E6.A8.A1.E5.BC.8F.E5.8F.AA.E8.83.BD.E7.9C.8B.E5.88.B0.E9.BB.91.E5.B1.8F)
+    *   [5.10 虚拟机启动时宿主系统卡死](#.E8.99.9A.E6.8B.9F.E6.9C.BA.E5.90.AF.E5.8A.A8.E6.97.B6.E5.AE.BF.E4.B8.BB.E7.B3.BB.E7.BB.9F.E5.8D.A1.E6.AD.BB)
+    *   [5.11 Linux 客体机的声音缓慢 / 扭曲](#Linux_.E5.AE.A2.E4.BD.93.E6.9C.BA.E7.9A.84.E5.A3.B0.E9.9F.B3.E7.BC.93.E6.85.A2_.2F_.E6.89.AD.E6.9B.B2)
+    *   [5.12 模拟信号麦克风不可用](#.E6.A8.A1.E6.8B.9F.E4.BF.A1.E5.8F.B7.E9.BA.A6.E5.85.8B.E9.A3.8E.E4.B8.8D.E5.8F.AF.E7.94.A8)
+    *   [5.13 版本更新之后麦克风不能用](#.E7.89.88.E6.9C.AC.E6.9B.B4.E6.96.B0.E4.B9.8B.E5.90.8E.E9.BA.A6.E5.85.8B.E9.A3.8E.E4.B8.8D.E8.83.BD.E7.94.A8)
+    *   [5.14 转换得来的 ISO 文件出现问题](#.E8.BD.AC.E6.8D.A2.E5.BE.97.E6.9D.A5.E7.9A.84_ISO_.E6.96.87.E4.BB.B6.E5.87.BA.E7.8E.B0.E9.97.AE.E9.A2.98)
+    *   [5.15 Host-only 网卡创建失败](#Host-only_.E7.BD.91.E5.8D.A1.E5.88.9B.E5.BB.BA.E5.A4.B1.E8.B4.A5)
+    *   [5.16 插入模块失败](#.E6.8F.92.E5.85.A5.E6.A8.A1.E5.9D.97.E5.A4.B1.E8.B4.A5)
+    *   [5.17 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_.280x80BB0007.29)
+    *   [5.18 NS_ERROR_FAILURE 且菜单项缺失](#NS_ERROR_FAILURE_.E4.B8.94.E8.8F.9C.E5.8D.95.E9.A1.B9.E7.BC.BA.E5.A4.B1)
+    *   [5.19 Arch: pacstrap 脚本出错](#Arch:_pacstrap_.E8.84.9A.E6.9C.AC.E5.87.BA.E9.94.99)
+    *   [5.20 缺少硬件虚拟化导致 OpenBSD 不稳定](#.E7.BC.BA.E5.B0.91.E7.A1.AC.E4.BB.B6.E8.99.9A.E6.8B.9F.E5.8C.96.E5.AF.BC.E8.87.B4_OpenBSD_.E4.B8.8D.E7.A8.B3.E5.AE.9A)
+    *   [5.21 Windows 宿主机: VERR_ACCESS_DENIED](#Windows_.E5.AE.BF.E4.B8.BB.E6.9C.BA:_VERR_ACCESS_DENIED)
+    *   [5.22 Windows: "The specified path does not exist. Check the path and then try again."](#Windows:_.22The_specified_path_does_not_exist._Check_the_path_and_then_try_again..22)
+    *   [5.23 Windows 8.x 出现错误代码 0x000000C4](#Windows_8.x_.E5.87.BA.E7.8E.B0.E9.94.99.E8.AF.AF.E4.BB.A3.E7.A0.81_0x000000C4)
+    *   [5.24 Windows 8, 8.1 或 10 无法安装、启动或报错 "ERR_DISK_FULL"](#Windows_8.2C_8.1_.E6.88.96_10_.E6.97.A0.E6.B3.95.E5.AE.89.E8.A3.85.E3.80.81.E5.90.AF.E5.8A.A8.E6.88.96.E6.8A.A5.E9.94.99_.22ERR_DISK_FULL.22)
+    *   [5.25 WinXP: 颜色深度不得多于 16 位](#WinXP:_.E9.A2.9C.E8.89.B2.E6.B7.B1.E5.BA.A6.E4.B8.8D.E5.BE.97.E5.A4.9A.E4.BA.8E_16_.E4.BD.8D)
+*   [6 参阅](#.E5.8F.82.E9.98.85)
 
 ## 在 Arch 里安装 VirtualBox
 
@@ -330,169 +316,124 @@ $ ln -s /media/sf_*共享目录的名字* ~/*my_documents*
 
 ```
 
+### 从宿主机 SSH 登录客体机
+
+在虚拟机设置的 Network 标签页 -> 右侧打开 Advanced 折叠 -> 单击 Port Forwarding 按钮，可以设置端口。
+
+假如我们设置了将宿主机的 3022 端口转发到客体机的 22 端口。然后在宿主机执行：
+
+```
+user@host$ ssh -p 3022 $USER@localhost
+
+```
+
+即可 SSH 登录客体机。
+
+#### 用 SSHFS 来实现共享目录
+
+配置好了端口转发，再装上 [SSHFS](/index.php/SSHFS "SSHFS")，只要在宿主机运行这个命令就可以把客体机的目录挂载到宿主机：
+
+```
+user@host$ sshfs -p 3022 $USER@localhost:$HOME ~/shared_folder
+
+```
+
+这样也能实现互传文件。
+
 ## 虚拟磁盘管理
 
-### 支持VirtualBox的格式
+### VirtualBox 支持的格式
 
-VirtualBox supports the following virtual disk formats:
+VirtualBox 支持下列虚拟磁盘格式：
 
-*   VDI: The Virtual Disk Image is the VirtualBox own open container used by default when you create a virtual machine with VirtualBox.
+*   **VDI**: Virtual Disk Image 格式是 VirtualBox 新建虚拟机时默认选用的格式。也是 VirtualBox 的自有开放格式。
 
-*   VMDK: The Virtual Machine Disk has been initially developed by VMware for their products. The specification was initially closed source, but it became now an open format which is fully supported by VirtualBox. This format offers the ability to be split into several 2GB files. This feature is specially useful if you want to store the virtual machine on machines which do not support very large files. Other formats, excluding the HDD format from Parallels, do not provide such an equivalent feature.
+*   **VMDK**: Virtual Machine Disk 最初是由 VMware 为其产品研发的格式。该格式技术设计文档最初是闭源的，而现在已经开源，在 VirtualBox 里完全可用。这种格式有个功能是：把一个虚拟机的镜像分割成多个 2GB 大小的文件。如果你要把虚拟机镜像放在不支持大文件的文件系统（例如 FAT32）上，那么这个功能就非常有用。在其他的虚拟磁盘格式里，能做到同样功能的只有 Parallels 的 HDD。
 
-*   VHD: The Virtual Hard Disk is the format used by Microsoft in Windows Virtual PC and Hyper-V. If you intend to use any of these Microsoft products, you will have to choose this format.
+*   **VHD**: Virtual Hard Disk 是 Microsoft 为 Windows Virtual PC 与 Hyper-V 研发的格式。如果你想把虚拟机部署到这些平台上，那么你只能用这种格式。
 
-**Tip:** Since Windows 7, this format can be mounted directly without any additional application.
+**Tip:** Windows 7 开始可以直接把 VHD 文件挂载成虚拟盘进行读写。而不需要额外安装软件。
 
-*   VHDX (read only): This is the eXtended version of the Virtual Hard Disk format developed by Microsoft, which has been released on 2012-09-04 with Hyper-V 3.0 coming with Windows Server 2012\. This new version of the disk format does offer enhanced performance (better block alignment), larger blocks size, and journal support which brings power failure resiliency. VirtualBox [should support this format in read only](https://www.virtualbox.org/manual/ch15.html#idp63002176).
+*   **VHDX** (只读): 这是由 Microsoft 研发的 Virtual Hard Disk 格式的加强版。于 2012-09-04 与 Hyper-V 3.0 同步发布，二者都是 Windows Server 2012 的功能。该加强版的改进包括性能优化（源于区块对齐），支持大区块单位，还有应对断电的磁盘日志。VirtualBox [支持该格式的只读访问](https://www.virtualbox.org/manual/ch15.html#idp63002176)。
 
-*   Version 2 of the HDD: The HDD format is developed by Parallels Inc and used in their hypervisor solutions like Parallels Desktop for Mac. Newer versions of this format (i.e. 3 and 4) are not supported due to the lack of documentation for this proprietary format.
-    **Note:** There is currently a controversy regarding the support of the version 2 of the format. While the official VirtualBox manual [only reports the second version of the HDD file format as supported](https://www.virtualbox.org/manual/ch05.html#vdidetails), Wikipedia's contributors are [reporting the first version may work too](https://en.wikipedia.org/wiki/Comparison_of_platform_virtual_machines#Image_type_compatibility "wikipedia:Comparison of platform virtual machines"). Help is welcome if you can perform some tests with the first version of the HDD format.
+*   **HDD** (V2): HDD 格式是由 Parallels Inc 研发的，由他们的虚拟机方案（如 Parallels Desktop for Mac）所使用。该格式的新版（v3 和 v4）由于缺少文档，又是专有格式，未能被 VirtualBox 支持。
 
-*   QED: The QEMU Enhanced Disk format is an old file format for QEMU, another free and open source hypervisor. This format was designed from 2010 in a way to provide a superior alternative to QCOW2 and others. This format features a fully asynchronous I/O path, strong data integrity, backing files, and sparse files. QED format is supported only for compatibility with virtual machines created with old versions of QEMU.
+**注意:** 关于该格式“仅支持 V2 版”的说法目前有争议。VirtualBox 官方手册 [声称只支持 V2 版](https://www.virtualbox.org/manual/ch05.html#vdidetails)，但 Wikipedia 上的说法是 [V1 版也能正常工作](https://en.wikipedia.org/wiki/Comparison_of_platform_virtual_machines#Image_type_compatibility "wikipedia:Comparison of platform virtual machines")。如果你能为 V1 的支持状况做测试验证，非常欢迎。
 
-*   QCOW: The QEMU Copy On Write format is the current format for QEMU. The QCOW format does support zlib-based transparent compression and encryption (the latter has flaw and is not recommended). QCOW is available in two versions: QCOW and QCOW2\. The latter tends to supersede the first one. QCOW is [currently fully supported by VirtualBox](https://www.virtualbox.org/manual/ch15.html#idp63002176). QCOW2 comes in two revisions: QCOW2 0.10 and QCOW2 1.1 (which is the default when you create a virtual disk with QEMU). VirtualBox does not support this QCOW2 format (both revisions have been tried).
+*   **QED**: QEMU Enhanced Disk 是旧版 QEMU 使用的格式。QEMU 也是一个开源免费的虚拟机方案。该格式于 2010 年设计出来，目的是要比 QCOW2 等格式更优秀。这种格式支持的功能包括全异步 I/O，数据高度完整性，文件备份，稀疏文件。VirtualBox 支持 QED 格式只是为了兼容由旧版 QEMU 创建的虚拟机。
 
-*   OVF: The Open Virtualization Format is an open format which has been designed for interoperability and distributions of virtual machines between different hypervisors. VirtualBox supports all revisions of this format via the [`VBoxManage` import/export feature](https://www.virtualbox.org/manual/ch08.html#idp55423424) but with [known limitations](https://www.virtualbox.org/manual/ch14.html#KnownProblems).
+*   **QCOW**: QEMU Copy On Write 是 QEMU 现有版本支持的格式。QCOW 支持基于 zlib 实现的透明压缩与加密（加密功能有缺陷，不推荐使用）。QCOW 包括两个版本：QCOW 与 QCOW2。QCOW2 取代了旧版。[VirtualBox 完全支持旧版 QCOW](https://www.virtualbox.org/manual/ch15.html#idp63002176)。QCOW2 包含两个修订版：QCOW2 0.10 和 QCOW2 1.1（QEMU 新建的虚拟机默认使用 1.1）。然而 VirtualBox 并不支持 QCOW2。
 
-*   RAW: This is the mode when the virtual disk is exposed directly to the disk without being contained in a specific file format container. VirtualBox supports this feature in several ways: converting RAW disk [to a specific format](https://www.virtualbox.org/manual/ch08.html#idp59139136), or by [cloning a disk to RAW](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi), or by using directly a VMDK file [which points to a physical disk or a simple file](https://www.virtualbox.org/manual/ch09.html#idp57804112).
+*   **OVF**: Open Virtualization Format 是为了在让虚拟机在不同监视器方案间得到通用而设计的开放方案。VirtualBox 支持该格式的所有修订版，具体的支持方式是 [VBoxManage import/export 命令](https://www.virtualbox.org/manual/ch08.html#idp55423424)，但也有[部分功能受限](https://www.virtualbox.org/manual/ch14.html#KnownProblems)。
 
-### 磁盘映像格式转换
+*   **RAW**: 虚拟磁盘可以不以任何文件格式封装，而直接以这种 RAW 模式供虚拟机使用。VirtualBox 对此有多种支持方案：将 RAW 磁盘 [转换成上述某种格式](https://www.virtualbox.org/manual/ch08.html#idp59139136)；[将物理盘转换成 RAW 格式](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi)；直接挂载一个[指向物理盘或 RAW 格式文件](https://www.virtualbox.org/manual/ch09.html#idp57804112)的 VMDK 文件。
 
-#### VMDK to VDI and VDI to VMDK
+### 转换虚拟磁盘文件格式
 
-VirtualBox can handle back and forth conversion between VDI and VMDK by itself with [`VBoxManage clonehd`](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi).
-
-VMDK to VDI:
+[VBoxManage clonehd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) 这个命令可以实现 VDI, VMDK, VHD 与 RAW 格式间的互转
 
 ```
-$ VBoxManage clonehd *source.vmdk* *destination.vdi* --format VDI
+$ VBoxManage clonehd *inputfile* *outputfile* --format *outputformat*
 
 ```
 
-VDI to VMDK:
+以 VDI 转成 VMDK 为例：
 
 ```
 $ VBoxManage clonehd *source.vdi* *destination.vmdk* --format VMDK
 
 ```
 
-#### VHD to VDI and VDI to VDH
+#### QCOW
 
-VirtualBox can handle conversion back and forth this format with [`VBoxManage clonehd`](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) too.
+VirtualBox 不支持 [QEMU](/index.php/QEMU "QEMU") 的 QCOW2 格式。若要让 VirtualBox 使用 QCOW2 格式的文件，你只能将其转换成已支持的格式。用 [qemu](https://www.archlinux.org/packages/?name=qemu) 包提供的 `qemu-img` 程序可以做到。`qemu-img` 可以实现 QCOW 格式与 VDI, VMDK, VHDX, RAW 等其他格式间的互转。具体支持的格式可以通过运行 `qemu-img --help` 命令查看。
 
-VHD to VDI:
-
-```
-$ VBoxManage clonehd *source.vhd* *destination.vdi* --format VDI
+该命令的一般形式是：
 
 ```
-
-VDI to VHD:
-
-```
-$ VBoxManage clonehd *source.vdi* *destination.vhd* --format VHD
+$ qemu-img convert -O *output_fmt* *inputfile* *outputfile*
 
 ```
 
-#### QCOW2 to VDI and VDI to QCOW2
-
-[`VBoxManage clonehd`](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) cannot handle the QEMU format conversion; we will thus rely on another tool. The `qemu-img` command from [qemu](https://www.archlinux.org/packages/?name=qemu) can be used to convert images back and forth from VDI to QCOW2\.
-**Note:** `qemu-img` can handle a bunch of other formats too. According to the `qemu-img --help`, here are the supported formats this tool supports: "*vvfat vpc vmdk vhdx vdi ssh sheepdog sheepdog sheepdog raw host_cdrom host_floppy host_device file qed qcow2 qcow parallels nbd nbd nbd iscsi dmg tftp ftps ftp https http cow cloop bochs blkverify blkdebug'".*
-
-QCOW2 to VDI:
+以 QCOW2 转成 VDI 为例：
 
 ```
-$ qemu-img convert -pO vdi *source.qcow2* *destination.vdi*
+$ qemu-img convert -O vdi *source.qcow2* *destination.vdi*
 
 ```
 
-VDI to QCOW2:
+**Tip:** 转换时加上 `-p` 参数可以实时查看转换进度
 
-```
-$ qemu-img convert -pO qcow2 *source.vdi* *destination.qcow2*
+QCOW2 有两个修订版： 0.10 和 1.1，用 `-o compat=*revision*` 参数可以具体指定。
 
-```
-
-As QCOW2 comes in two revisions (see [#Formats supported by VirtualBox](#Formats_supported_by_VirtualBox), use the flag `-o compat=` to specify the revision.
-
-```
-$ qemu-img convert -pO qcow2 *source.vdi* *destination.qcow2* -o compat=0.10
-
-```
-
-or
-
-```
-$ qemu-img convert -pO qcow2 *source.vdi* *destination.qcow2* -o compat=1.1
-
-```
-
-**Tip:** The `-p` parameter is used to get the progression of the conversion task.
-
-## 从其他虚拟机中迁移
-
-`qemu-img` 程序可以用来将映像从一种格式转换到另一种格式，或为一个映像添加压缩或加密。
-
-```
-  # pacman -S qemu
-
-```
-
-### 从QEMU映像转换
-
-To convert a QEMU image for use with VirtualBox, first convert it to *raw* format, then use VirtualBox's conversion utility to convert and compact it in its native format.
-
-```
-  $ qemu-img convert -O raw test.qcow2 test.raw
-  $ VBoxManage modifyvdi /full/path/to/test.vdi compact
-or 
-  $ qemu-img convert -O raw test.qcow2 test.raw
-    (of course you must have installed qemu package for that)
-  $ VBoxManage convertfromraw /full/path/to/test.raw /full/path/to/test.vdi
-  $ VBoxManage modifyvdi      /full/path/to/test.vdi compact
-
-```
-
-### 从VMware映像转换
-
-运行
-
-```
-  $ VBoxManage clonehd source.vmdk target.vdi --format VDI
-
-```
-
-对于当前VirtualBox版本来说也许是不必要的（有待证实）
-
-### 挂载虚拟磁盘
+### 在宿主机直接挂载并读写虚拟磁盘镜像
 
 #### VDI
 
-Mounting vdi images only works with fixed size images (a.k.a. static images); dynamic (dynamically size allocating) images are not easily mountable.
+固定大小的 VDI 镜像（又名静态镜像）可以直接在宿主机挂载。动态镜像则没法轻松挂载。
 
-The offset of the partition (within the vdi) is needed, then add the value of `offData` to `32256` (e.g. 69632 + 32256 = 101888):
+首先要拿到 VDI 里数据分区的偏移量 `offData`：
 
 ```
 $ VBoxManage internalcommands dumphdinfo <storage.vdi> | grep "offData"
 
 ```
 
-The can now be mounted with:
+然后再加上 `32256` (例如 69632 + 32256 = 101888)，那么就用这个命令来挂载：
 
 ```
 # mount -t ext4 -o rw,noatime,noexec,loop,offset=101888 <storage.vdi> /mntpoint/
 
 ```
 
-You can also use [mount.vdi](https://github.com/pld-linux/VirtualBox/blob/master/mount.vdi) script that, which you can use as (install script itself to `/usr/bin/`):
+另一个办法是用 [mount.vdi](https://github.com/pld-linux/VirtualBox/blob/master/mount.vdi) 脚本来完成挂载。首先要把脚本安装到 `/usr/bin/`，然后：
 
 ```
 # mount -t vdi -o fstype=ext4,rw,noatime,noexec *vdi_file_location* */mnt/*
 
 ```
 
-Alternately you can use [qemu](https://www.archlinux.org/packages/?name=qemu)'s kernel module that can do this [attrib](http://bethesignal.org/blog/2011/01/05/how-to-mount-virtualbox-vdi-image/):
+还有一个办法是用 [qemu](https://www.archlinux.org/packages/?name=qemu) 的内核模块来实现[[6]](http://bethesignal.org/blog/2011/01/05/how-to-mount-virtualbox-vdi-image/)：
 
 ```
 # modprobe nbd max_part=16
@@ -504,79 +445,81 @@ Alternately you can use [qemu](https://www.archlinux.org/packages/?name=qemu)'s 
 
 ```
 
-If the partition nodes are not propagated try using `partprobe /dev/nbd0`; otherwise, a vdi partition can be mapped directly to a node by: `qemu-nbd -P 1 -c /dev/nbd0 <storage.vdi>`.
+如果未能生成分区节点，试试运行命令：`partprobe /dev/nbd0`。另外，VDI 分区还可以直接用这个命令来映射到节点：`qemu-nbd -P 1 -c /dev/nbd0 <storage.vdi>`。
 
-### 压缩磁盘映像
+### 压紧虚拟磁盘
 
-Compacting virtual disks only works with `.vdi` files and basically consists in the following steps.
+只有 `.vdi` 格式的虚拟磁盘文件可以压紧。具体操作步骤如下。
 
-Boot your virtual machine and remove all bloat manually or by using cleaning tools like [bleachbit](https://www.archlinux.org/packages/?name=bleachbit) which is [available for Windows systems too](http://bleachbit.sourceforge.net/download/windows).
+启动虚拟机，手动删除无用文件，或者用自动的清理工具（如 [bleachbit](https://www.archlinux.org/packages/?name=bleachbit)，同时也支持 [Windows](http://bleachbit.sourceforge.net/download/windows)）来清理磁盘。
 
-Wiping free space with zeroes can be achieved with several tools:
+下一步要用零字节来填充可用空间。这有如下的可行方案：
 
-*   If you were previously using Bleachbit, check the checkbox *System > Free disk space* in the GUI, or use `bleachbit -c system.free_disk_space` in CLI;
-*   在 UNIX基本系统,使用 `dd` or preferably [dcfldd](https://www.archlinux.org/packages/?name=dcfldd) (see [here](http://superuser.com/a/355322) to learn the differences) :
+*   如果你已经在用 Bleachbit 了，在 GUI 菜单里选择 *System > Free disk space*，或者在命令行执行：`bleachbit -c system.free_disk_space`；
+*   在类 UNIX 系统里，`dd` 或 [dcfldd](https://www.archlinux.org/packages/?name=dcfldd) 都可以做到，后者更推荐。（参阅 [这里](http://superuser.com/a/355322)来了解两者的区别）；
 
 	 `# dcfldd if=/dev/zero of=*/fillfile* bs=4M` 
 
-	When `fillfile` reaches the limit of the partition, you will get a message like `1280 blocks (5120Mb) written.dcfldd:: No space left on device`. This means that all of the user-space and non-reserved blocks of the partition will be filled with zeros. Using this command as root is important to make sure all free blocks have been overwritten. Indeed, by default, when using partitions with ext filesystem, a specified percentage of filesystem blocks is reserved for the super-user (see the `-m` argument in the `mkfs.ext4` man pages or use `tune2fs -l` to see how much space is reserved for root applications).
+	当 `fillfile` 文件的体积占满分区时，会出现这样的错误信息：`1280 blocks (5120Mb) written.dcfldd:: No space left on device`。这意味着所有的可用空间与未保留区块都已经被零字节填满了。因为 ext 类系统会为 root 用户默认保留一部分硬盘空间（见 `mkfs.ext4` 手册页对 `-m` 参数的解释，或者用 `tune2fs -l` 命令来查看具体为 root 保留了多少空间），所以运行这一命令时需要有 root 权限。
 
-	When the aforementioned process has completed, you can remove the file `*fillfile*` you created.
+	前面一步操作完成后，手动把 `*fillfile*` 删掉。
 
-*   On Windows, there are two tools available:
+*   在 Windows 系统里有两种办法：
 
-*   `sdelete` from the [Sysinternals Suite](http://technet.microsoft.com/en-us/sysinternals/bb842062.aspx), type `sdelete -s -z *c:*`, where you need to reexecute the command for each drive you have in your virtual machine;
-*   or, if you love scripts, there is a [PowerShell solution](http://blog.whatsupduck.net/2012/03/powershell-alternative-to-sdelete.html), but which still needs to be repeated for all drives.
+*   由 [Sysinternals Suite](http://technet.microsoft.com/en-us/sysinternals/bb842062.aspx) 提供的 `sdelete` 命令，用法是 `sdelete -s -z *c:*`。在虚拟机里的每一个分区都要执行一遍（当然 *c:* 这个参数要对应地改成各个分区的盼覆）；
+*   如果你喜欢脚本，可以用这个 [PowerShell 实现的方案](http://blog.whatsupduck.net/2012/03/powershell-alternative-to-sdelete.html)，但依然要每个分区执行一次。
 
 	 `PS> ./Write-ZeroesToFreeSpace.ps1 -Root *c:\* -PercentFree 0` 
 
-**Note:** This script must be run in a PowerShell environment with administrator privileges. By default, scripts cannot be run, ensure the execution policy is at least on `RemoteSigned` and not on `Restricted`. This can be checked with `Get-ExecutionPolicy` and the required policy can be set with `Set-ExecutionPolicy RemoteSigned`.
+**注意:** 该脚本需要在有管理员权限的 PowerShell 环境才能运行。默认的 PowerShell 默认配置下，这个脚本无法运行。需要把秩序策略至少调整到 `RemoteSigned`，而不能是 `Restricted`。用 `Get-ExecutionPolicy` 命令可以看到当前的执行策略，用 `Set-ExecutionPolicy RemoteSigned` 可以设置想要的执行策略。
 
-Once the free disk space have been wiped, shut down your virtual machine.
+完成这一步之后，将虚拟机停机。
 
-The next time you boot your virtual machine, it is recommended to do a filesystem check.
+下一次启动虚拟机时，推荐先进行文件系统检查：
 
-*   On UNIX-based systems, you can use `fsck` manually;
+*   在类 UNIX 系统上可以手动运行 `fsck` 来检查；
 
-*   On GNU/Linux systems, and thus on Arch Linux, you can force a disk check at boot [thanks to a kernel boot parameter](/index.php/Fsck#Forcing_the_check "Fsck");
+*   在 GNU/Linux 系统上（包括 Arch）可以在系统启动时强行执行硬盘检查。详见 [thanks to a kernel boot parameter](/index.php/Fsck#Forcing_the_check "Fsck")；
 
-*   On Windows systems, you can use:
+*   在 Windows 系统上：
 
-*   either `chkdsk *c:* /F` where `*c:*` needs to be replaced by each disk you need to scan and fix errors;
-*   or `FsckDskAll` [from here](http://therightstuff.de/2009/02/14/ChkDskAll-ChkDsk-For-All-Drives.aspx) which is basically the same software as `chkdsk`, but without the need to repeat the command for all drives;
+*   可以用这个命令 `chkdsk *c:* /F`。其中 `*c:*` 可以替换成所有你希望检查的盘符；
+*   或者从 [这里下载](http://therightstuff.de/2009/02/14/ChkDskAll-ChkDsk-For-All-Drives.aspx) `FsckDskAll`。这和前面的 `chkdsk` 基本一样，只是不必手动为每个分区执行一遍了。
 
-Now, remove the zeros from the `vdi` file with `[VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi)`:
+接下来用 [VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi) 即可完成压紧过程：
 
 ```
 $ VBoxManage modifyhd *your_disk.vdi* --compact
 
 ```
 
-**Note:** If your virtual machine has snapshots, you need to apply the above command on each `.vdi` files you have.
+**注意:** 如果你的虚拟机有保存过快照，那么每个 `.vdi` 文件都要单独执行一遍压紧操作。
 
-### 增加虚拟磁盘
+### 扩充虚拟硬盘容量
 
-If you are running out of space due to the small hard drive size you selected when you created your virtual machine, the solution adviced by the VirtualBox manual is to use [`VBoxManage modifyhd`](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi). However this command only works for VDI and VHD disks and only for the dynamically allocated variants. If you want to resize a fixed size virtual disk disk too, read on this trick which works either for a Windows or UNIX-like virtual machine.
+#### 一般方法
 
-First, create a new virtual disk next to the one you want to increase:
+如果你在创建虚拟机时给虚拟硬盘分配的容量太小了，VirtualBox 推荐的扩容方案是用 [VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi) 这个命令。然而这个命令只支持 VDI 和 VHD 这两种格式，而且还需要设置成动态分配容量。如果你想为固定容量的虚拟磁盘扩容，下面的办法可以适用于 Windows 或类 UNIX 系统的虚拟机。
+
+首先创建一个新的虚拟磁盘：
 
 ```
 $ VBoxManage createhd -filename *new.vdi* --size *10000*
 
 ```
 
-where size is in MiB, in this example 10000MiB ~= 10GiB, and *new.vdi* is name of new hard drive to be created.
+`--size` 参数的值的单位是 MiB，在例子里 10000 MiB ~= 10 GiB，[Template:New.vdi](/index.php?title=Template:New.vdi&action=edit&redlink=1 "Template:New.vdi (page does not exist)") 是新创建的镜像文件。
 
-Next, the old virtual disk needs to be cloned to the new one which this may take some time:
+**Note:** 由这个命令创建的镜像文件默认是动态分配空间的。如果想让新镜像和旧镜像一样固定空间，需要追加参数 `--variant Fixed`。
+
+接下来要把旧镜像的内容复制到新镜像里去，这一步骤可能会花些时间：
 
 ```
 $ VBoxManage clonehd *old.vdi* *new.vdi* --existing
 
 ```
 
-**Note:** By default, this command uses the *Standard* (corresponding to dynamic allocated) file format variant and thus will not use the same file format variant as your source virtual disk. If your *old.vdi* has a fixed size and you want to keep this variant, add the parameter `--variant Fixed`.
-
-Detach the old hard drive and attach new one, replace all mandatory italic arguments by your own:
+取下旧硬盘镜像，挂载新镜像，下面命令中的斜体字部分需要按照你的使用环境来换成真实的值：
 
 ```
 $ VBoxManage storageattach *VM_name* --storagectl *SATA* --port *0* --medium none
@@ -584,7 +527,7 @@ $ VBoxManage storageattach *VM_name* --storagectl *SATA* --port *0* --medium *ne
 
 ```
 
-To get the storage controller name and the port number, you can use the command `VBoxManage showvminfo *VM_name*`. Among the output you will get such a result (what you are looking for is in italic):
+在上面的命令中，若要获知储存控制器的名字与端口号，可以使用命令：`VBoxManage showvminfo *VM_name*`。这会打印出如下的输出（斜体标注的信息是有用的）：
 
 ```
 [...]
@@ -605,11 +548,11 @@ IDE (1, 0): Empty
 [...]
 ```
 
-Download [GParted live image](http://gparted.org/download.php) and mount it as a virtual CD/DVD disk file, boot your virtual machine, increase/move your partitions, umount GParted live and reboot.
+下载 [GParted Live 可引导镜像](http://gparted.org/download.php)，在虚拟机里用虚拟光驱加载之，启动虚拟机，调整分区大小 / 位置，取下镜像并重启。这样扩容就完成了。
 
-**Note:** On GPT disks, increasing the size of the disk will result in the backup GPT header not being at the end of the device. GParted will ask to fix this, click on *Fix* both times. On MBR disks, you do not have such a problem as this partition table as no trailer at the end of the disk.
+**注意:** 如果虚拟盘用了 GPT 分区表，扩容会导致 GPT 备份头不再位于磁盘末尾。GParted 会询问是否要将其修复，此时两次询问都要点 *Fix*。如果是 MBR 分区，就不存在这一问题。
 
-Finally, unregister the virtual disk from VirtualBox and remove the file:
+最后，从 VirtualBox 里注销旧的镜像文件，并删除掉：
 
 ```
 $ VBoxManage closemedium disk *old.vdi*
@@ -617,24 +560,24 @@ $ rm *old.vdi*
 
 ```
 
-#### Increase size for VDI disks
+#### VDI 格式的方法
 
-If your disk is a vdi one, simply run:
+如果你的虚拟磁盘是 VDI 格式的：
 
 ```
 $ VBoxManage modifyhd *your_virtual_disk.vdi* --resize *the_new_size*
 
 ```
 
-Then jump back to the Gparted step, to increase the size of the partition on the virtual disk.
+然后回到上面的 Gparted 步骤，继续完成扩容操作。
 
-### 从.vbox文件中手动更换虚拟磁盘
+### 修改 .vbox 文件来替换磁盘镜像
 
-If you think that editing a simple *XML* file is more convenient than playing with the GUI or with `VBoxManage` and you want to replace (or add) a virtual disk to your virtual machine, in the *.vbox* configuration file corresponding to your virtual machine, simply replace the GUID, the file location and the format to your needs:
+如果相比用 GUI 或 `VBoxManage` 来管理虚拟机，你觉得编辑 XML 文件更加简单直接。按下面的步骤修改虚拟机对应的 .vbox 文件，即可完成虚拟机的磁盘替换：
 
  `ArchLinux_vm.vbox`  `<HardDisk uuid="*{670157e5-8bd4-4f7b-8b96-9ee412a712b5}*" location="*ArchLinux_vm.vdi*" format="*VDI*" type="Normal"/>` 
 
-then in the `<AttachedDevice>` sub-tag of `<StorageController>`, replace the GUID by the new one.
+找到 `<StorageController>` 的子元素 `<AttachedDevice>`，把 GUID 属性改成新镜像文件的值：
 
  `ArchLinux_vm.vbox` 
 ```
@@ -643,11 +586,11 @@ then in the `<AttachedDevice>` sub-tag of `<StorageController>`, replace the GUI
 </AttachedDevice>
 ```
 
-**Note:** If you do not know the GUID of the drive you want to add, you can use the `VBoxManage showhdinfo *file*`. If you previously used `VBoxManage clonehd` to copy/convert your virtual disk, this command should have outputted the GUID just after the copy/conversion completed. Using a random GUID does not work, as each [UUID is stored inside each disk image](http://www.virtualbox.org/manual/ch05.html#cloningvdis).
+**注意:** 如果你还不知道新镜像文件的 GUID 值，可以用命令 `VBoxManage showhdinfo *file*` 来查看。如果你用 `VBoxManage clonehd` 命令来处理过虚拟盘，那么在复制 / 转换过程完成时，也会打印出 GUID 值。随便写一个 GUID 上去是不行的，必须与 [镜像文件里的 GUID 值](http://www.virtualbox.org/manual/ch05.html#cloningvdis)相对应才行。
 
-#### Linux主机和其他操作系统之间的转移
+#### 将虚拟机从 Linux 宿主系统迁移到其他系统（或迁回）
 
-The information about path to harddisks and the snapshots is stored between `<HardDisks> .... </HardDisks>` tags in the file with the *.vbox* extension. You can edit them manually or use this script where you will need change only the path or use defaults, assumed that *.vbox* is in the same directory with a virtual harddisk and the snapshots folder. It will print out new configuration to stdout.
+.vbox 配置文件把虚拟盘和快照文件的位置记录在 `<HardDisks> .... </HardDisks>` 标签里。如果新宿主系统存放虚拟机文件的路径与旧宿主系统不同，你可以手动修改 .vbox 文件来调整路径。如果 .vbox 文件与虚拟盘 / 快照文件位于相同的目录，也可以用下面的脚本自动修改。该脚本会将修改后的新配置打印到标准输出。
 
 ```
 #!/bin/bash
@@ -665,250 +608,76 @@ L=B[2];
 else print $0}' "$Filename"
 ```
 
-**Note:**
+**注意:**
 
-*   If you will prepare virtual machine for use in Windows host then in the path name end you should use backslash \ instead of / .
-*   The script detects snapshots by looking for `{` in the file name.
-*   To make it run on a new host you will need to add it first to the register by clicking on **Machine -> Add...** or use hotkeys Ctrl+A and then browse to *.vbox* file that contains configuration or use command line `VBoxManage registervm *filename*.vbox`
+*   如果你想把虚拟机迁移到 Windows 宿主系统上去，文件路径里应该使用 \ 而不是 /。
+*   这个脚本判断快照的逻辑是：文件名是否包含 `{`。
+*   为了在新宿主机上运行起来，首先得在管理界面注册：点选菜单项 **Machine -> Add...** 或者按快捷键 Ctrl+A ，然后找到 *.vbox* 配置文件。也可以用命令行：`VBoxManage registervm *filename*.vbox`
 
-## 配置
+### 复制虚拟盘并为其分配新 UUID
 
-### 网络
+VirtualBox 广泛应用了 UUID。每个虚拟机，虚拟机的每个虚拟盘，都有属于自己的 UUID。用 [VBoxManage list](http://www.virtualbox.org/manual/ch08.html#vboxmanage-list) 命令可以列出 VirtualBox 管理的所有资源。
 
-VirtualBox 客户端可以通过不同的方式连接网络；其中，有[#NAT](#NAT)和[#桥接](#.E6.A1.A5.E6.8E.A5)链接。[#NAT](#NAT)是最简单的且作为一个新虚拟机的默认方式。
+如果你想复制一台虚拟机，仅复制虚拟盘镜像文件是不够的。你还得给复制出的新镜像文件分配一个新的 UUID。否则在同一个 VirtualBox 的环境里无法同时注册两个具有相同 UUID 的镜像文件。
 
-[VirtualBox手册](http://www.virtualbox.org/manual/UserManual.html)涵盖了主机模式和内网选项。这些都被忽略了，因为在大多数情况下与操作系统无关。
-
-#### NAT
-
-在VirtualBox中：
-
-*   访问虚拟机的*设置*菜单；
-*   点击左边的*网络‘’；最后，*
-*   在“连接方式”的下拉列表中选择*NAT*。
-
-与VirtualBox捆绑的DHCP服务使得客户端系统能够与DHCP一起配置，第一张卡的NAT IP地址是 10.0.2.0，第二张是10.0.3.0，往后以此类推。
-
-#### 桥接
-
-桥接网络可能被以多种方式启动；其中，有要求以较少控制为代价进行最小启动的原生方式。对于较新版本，VirtualBox可以在没有第三方工具的帮助下，在客户端和无线主机接口间进行桥接。
-
-在继续之前，加载必要模块：
-
-```
-# modprobe vboxnetflt
-
-```
-
-在VirtualBox中：
-
-*   访问虚拟机的*设置*菜单；
-*   点击左边列表中的*网络*
-*   在*链接方式*的下拉列表中选择*Bridged Adapter(桥接适配器)*；最后，
-*   在*界面名称*下拉列表中，选择客户端操作系统被包含在内，主机用于连接网络的接口。
-
-Start the virtual machine and configure its network as usual; e.g., DHCP or static. 打开虚拟机，像往常一样配置其网络；例如 DHCP 或 static（静态网络）。
-
-### 主机端和客户端之间的键盘和鼠标
-
-*   为了捕获键盘和鼠标，点击虚拟机内部。
-*   想要释放，按下右 `Ctrl`.
-
-想要获得在主机端和客户端之间的无缝鼠标集成功能，在客户端内安装[#客户端增强包](#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.A2.9E.E5.BC.BA.E5.8C.85)。
-
-### 主机端和客户端间的共享文件夹
-
-在虚拟机的设置中，找到数据空间标签，然后加入你想要共享的文件夹。
-
-*   注意：为了使用这个功能你需要安装客户端增强包。
-
-```
-在Linux主机中，*设备 → 安装增强功能*
-确定（被要求下载CD镜像时）
-挂载（被要求注册和挂载时）
-
-```
-
-In a Linux host, create one or more folders for sharing files, then set the shared folders via the virtualbox menu (guest window). 在Linux主机端中，为共享的文件创建一个或更多的文件夹，然后通过Virtualbox菜单中设置（Windows客户端）
-
-在Windows客户端中，从VirtualBox 1.5.0开始，共享文件夹是可浏览的，所以在Windows资源管理器中是可视的。打开Windows资源管理器，在*我的网络位置（My Networking Places） → 整个网络（Entire Network） → VirtualBox Shared Folders（VirtualBox共享文件夹）*。
-
-启动Windows资源管理器（运行资源管理器命令），游览 网络位置（network places） -> （+）号展开： 整个网络（entire network）&rarr； VirtualBox Shared Folders（VirtualBox共享文件夹） &rarr；**\\Vboxsvr** → 然后你就可以在此展开所有已配置的文件夹了，并且在客户端文件系统中为Linux文件夹创建快捷方式。你也可以使用“添加网络位置向导（Add network place wizard）”找到“VBoxsvr”。
-
-此外，在Windows命令行提示符中，你也可以使用以下命令：
-
-```
-net use x: \\VBOXSVR\sharename
-
-```
-
-虽然`VBOXSVR`是一个固定名称，但请用你所想要用于共享的盘符替代`x:`，用VBoxManage指定的共享名替换sharename。
-
-在Windows客户端中，为了以VirtualBox共享文件夹改善文件的读取与保存（如MS Office），编辑*c:\windows\system32\drivers\etc\hosts*如下：
-
-```
-127.0.0.1 localhost vboxsvr
-
-```
-
-在Linux客户端中，实用以下命令：
-
-```
-# mount -t vboxsf [-o OPTIONS] sharename mountpoint
-  (注意：共享名是任意的，或者和VirtualBox对话框中选定的一样（在主机端文件系统中共享目录的挂载点）。
-
-```
-
-	自动挂载共享文件夹可以通过Linux客户端 /etc/fstab 文件来实现。你可以指定uid=#,gid=#（# 用实际的数字uid和gid替换），以便以普通用户权限（而不是root权限）来挂载共享文件夹。（这个对于为了在Linux客户端中使用而挂载主机上～/home的一部分是很有用的。为了做到这点，依照以下格式添加一个条目到Linux客户端中的/etc/fstab：
-
-```
-sharename mountpoint vboxsf uid=#,gid=# 0 0
-
-```
-
-用在VBoxManage中指定的共享名替换`sharename`，并用你想要共享的路径替换mountpoint（如 /mnt/share）。通常的挂载申请，就是说，如果还没有的话，先创建这个文件夹。注意，如果你已经让VirtualBox“自动挂载”这个共享文件夹，这一步可能就不必了，而且你的文件夹可以在/media 下找到。
-
-除了mount命令提供的标准选项外，以下是可选的：
-
-```
-iocharset=CHARSET
-
-```
-
-设置用于I/O操作的字符集（默认utf8），并且：
-
-```
-convertcp=CHARSET
-
-```
-
-用于指定用于共享文件夹名称的字符集（默认utf8）
-
-### Clone a virtual disk and assigning a new UUID to it
-
-UUIDs are widely used by VirtualBox. Each virtual machines and each virtual disk of a virtual machine must have a different UUID. When you launch a virtual machine in VirtualBox, the latter will keep track of all UUID of your virtual machine instance. See the [`VBoxManage list`](http://www.virtualbox.org/manual/ch08.html#vboxmanage-list) to list the items registered with VirtualBox.
-
-If you cloned a virtual disk manually by copying the virtual disk file, you will need to assign a new UUID to the cloned virtual drive if you want to use the disk in the same virtual machine or even in another (if that one has already been opened, and thus registered, with VirtualBox).
-
-You can use this command to assign a new UUID to your virtual disk:
+下面这个命令可以用来为虚拟盘分配新 UUID：
 
 ```
 $ VBoxManage internalcommands sethduuid */path/to/disk.vdi*
 
 ```
 
-**Tip:** In the future, to avoid copying the virtual disk and assigning a new UUID to your file manually, use `[VBoxManage clonehd](http://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi)` instead.
+**Tip:** 用 [VBoxManage clonehd](http://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) 可以一次性完成复制内容与分配新 UUID
 
-**Note:** The commands above supports [all virtual disk formats supported by VirtualBox](#Formats_supported_by_VirtualBox).
+**注意:** 上述命令可以用于任意 [VirtualBox 所支持的镜像格式](#VirtualBox_.E6.94.AF.E6.8C.81.E7.9A.84.E6.A0.BC.E5.BC.8F)。
+
+## 使用技巧
+
+高端使用技巧可以参阅 [VirtualBox/Tips and tricks (简体中文)](/index.php/VirtualBox/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox/Tips and tricks (简体中文)")。
 
 ## 故障排除
 
-### modprobe Exec 格式错误
+### 鼠标键盘都锁死在虚拟机里了
 
-确认你使用的是最新系统:
+这是因为你的虚拟机捕获了键盘与鼠标的输入。只要按下右 `Ctrl` 键即可让输入焦点回到宿主系统。
 
-```
-pacman -Syu
+如果想要不按切换键就能让鼠标在宿主机与虚拟机之间无缝切换，这需要安装客户机插件。如果你的虚拟机系统是 Arch Linux，可以参阅前面的章节：[#安装客体机插件](#.E5.AE.89.E8.A3.85.E5.AE.A2.E4.BD.93.E6.9C.BA.E6.8F.92.E4.BB.B6)。其他系统请参阅 VirtualBox 的官方帮助文档。
 
-```
+### 无法新建 64 位虚拟机
 
-### VERR_ACCESS_DENIED
+如果新建虚拟机时看不到 64 位系统选项，这需要确认你的 CPU 是否支持虚拟化技术（通常称作 `VT-x`），并且还要在 BIOS 中启用。
 
-To access the raw vmdk image on a windows host, run the VirtualBox GUI as administrator.
+如果你的宿主系统是 Windows，那么你得禁用 Hyper-V 功能。因为 Hyper-V 会妨碍 VirtualBox 使用 VT-x。[[7]](https://www.virtualbox.org/ticket/12350)
 
-### pacstrap script fails
+### VirtualBox 图形管理界面和主机 GTK 主题样式不匹配
 
-If you used *pacstrap* in the [#Installation steps for Arch Linux guests](#Installation_steps_for_Arch_Linux_guests) to also [#Install the Guest Additions](#Install_the_Guest_Additions) **before** performing a first boot into the new guest, you will need to `umount -l /mnt/dev` as root before using *pacstrap* again; a failure to do this will render it unusable.
+VirtualBox 的 GUI 是基于 Qt 实现的。为了修改这类应用的外观，见 [Uniform look for Qt and GTK applications (简体中文)](/index.php/Uniform_look_for_Qt_and_GTK_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Uniform look for Qt and GTK applications (简体中文)")。
 
-### 键盘和鼠标都在我的虚拟机
+### 无法向虚拟机键入 Ctrl+Alt+Fn
 
-This means your virtual machine has captured the input of your keyboard and your mouse. Simply press the right `Ctrl` key and your input should control your host again.
+如果你在虚拟机安装了某个 Linux 发行版，有时会需要按 `Ctrl+Alt+F2` 进入它的 TTY 界面，或者按 `Ctrl+Alt+Backspace` 来退出 X 会话。如果你的宿主系统也是 Linux，这些组合键默认会首先被宿主系统捕获。正确的做法是按 *Host Key*（默认是右 `Ctrl`）加 `F2` 来向虚拟机键入 `Ctrl+Alt+F2`。
 
-To control transparently your virtual machine with your mouse going back and forth your host, without having to press any key, and thus have a seamless integration, install the guest additions inside the guest. Read from the [#Install the Guest Additions](#Install_the_Guest_Additions) step if you guest is Arch Linux, otherwise read the official VirtualBox help.
+### USB 功能不可用
 
-### 无法发送CTRL + ALT+ Fn键到我的虚拟机
+在宿主系统里使用虚拟机的用户需要加入到 `vboxusers` 用户组。如果想要支持 USB 2 设备，还要安装 [扩展包](#.E6.89.A9.E5.B1.95.E5.8C.85)。此后在虚拟机的设置里即可开启 USB 2 支持，并且通过过滤规则来允许客体系统访问指定的 USB 设备。
 
-Your guest operating system is a GNU/Linux distribution and you want to open a new TTY shell by hitting `Ctrl+Alt+F2` or exit your current X session with `Ctrl+Alt+Backspace`. If you type these keyboard shortcuts without any adaptation, the guest will not receive any input and the host (if it is a GNU/Linux distribution too) will intercept these shortcut keys. To send `Ctrl+Alt+F2` to the guest for example, simply hit your *Host Key* (usually the right `Ctrl` key) and press `F2` simultaneously.
+如果用 root 身份运行 `VBoxManage list usbhost` 命令也没有列出任何 USB 设备，需要确认一下 */etc/udev/rules.d/* 目录里没有遗留的 VirtualBox 4.x 的 udev 规则。VirtualBox 5.0 起会把 udev 规则文件安装到 */usr/lib/udev/rules.d/* 目录。用 `pacman -Qo /usr/lib/udev/rules.d/60-vboxdrv.rules` 命令可以查看这些 udev 文件是否已经过期。
 
-### 解决ISO映像问题
+有时某些旧 Linux 宿主系统无法自动检测到 USB 子系统，就会出现这个错误：`Could not load the Host USB Proxy service: VERR_NOT_FOUND`。或者可能让宿主机也识别不了 USB 磁盘，[哪怕用户已经加入了 `vboxusers` 用户组](https://bbs.archlinux.org/viewtopic.php?id=121377)。出现这类问题的原因是 VirtualBox 从 3.0.8 版本开始，从 *usbfs* 转向使用 *sysfs*。如果宿主系统不支持这一改动，你可以在 shell 的启动脚本（举例：如果在用 *bash* 的话，就修改 `~/.bashrc` 文件）里声明这一环境变量，让 VirtualBox 回退到旧的行为：
 
-While VirtualBox can mount ISO images without problem, there are some image formats which cannot reliably be converted to ISO. For instance, ccd2iso ignores .ccd and .sub files, which can give disk images with broken files.
+ `~/.bashrc`  `export VBOX_USB=usbfs` 
 
-In this case, you will either have to use [CDemu](/index.php/CDemu "CDemu") for Linux inside VirtualBox or any other utility used to mount disk images.
+然后确保这行代码对环境变量的修改生效：重新登录，手动加载该文件，启动一个新 shell 会话，或者干脆重启。
 
-### VirtualBox的GUI没有应用我的GTK主题
+另外，还应确保用户加入到了 `storage` 用户组。
 
-See [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") for information about theming Qt based applications like Virtualbox.
+### USB 调制解调器在宿主系统不可用
 
-### OpenBSD系统无法使用时，虚拟化指令不可用
+如果你的客体系统正在使用 USB 调制解调器，`kill` 掉虚拟机进程可能会造成它在宿主系统里不可用。杀掉并重启余下的 `VBoxSVC` 进程应该可以解决这一问题。
 
-While OpenBSD is reported to work fine on other hypervisors without virtualisation instructions (VT-x AMD-V) enabled, an OpenBSD virtual machine running on VirtualBox without these instructions will be unusable, manifesting with a bunch of segmentation faults. Starting VirtualBox with the *-norawr0* argument [may solve the problem](https://www.virtualbox.org/ticket/3947). You can do it like this:
+### 让虚拟机使用串口
 
-```
-$ VBoxSDL -norawr0 -vm *name_of_OpenBSD_VM*
-
-```
-
-### VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)
-
-这种情形可能会在虚拟机没有正常退出时发生，解除锁定虚拟机并不难:
-
-```
-$ VBoxManage controlvm *virtual_machine_name* poweroff
-
-```
-
-### USB 子系统在宿主机和虚拟机没有作用
-
-Your user must be in the `vboxusers` group, and you need to install the [extension pack](#Extension_pack) if you want USB 2 support. Then you will be able to enable USB 2 in the VM settings and add one or several filters for the devices you want to access from the guest OS.
-
-Sometimes, on old Linux hosts, the USB subsystem is not auto-detected resulting in an error `Could not load the Host USB Proxy service: VERR_NOT_FOUND` or in a not visible USB drive on the host, [even when the user is in the **vboxusers** group](https://bbs.archlinux.org/viewtopic.php?id=121377). This problem is due to the fact that VirtualBox switched from *usbfs* to *sysfs* in version 3.0.8\. If the host does not understand this change, you can revert to the old behaviour by defining the following environment variable in any file that is sourced by your shell (e.g. your `~/.bashrc` if you are using *bash*):
-
- `~/.bashrc`  `VBOX_USB=usbfs` 
-
-Then make sure, the environment has been made aware of this change (reconnect, source the file manually, launch a new shell instance or reboot).
-
-Also make sure that your user is a member of the `storage` group.
-
-### 主机模式网络接口创建失败
-
-Make sure all required kernel modules are loaded. See [#Load the Virtualbox kernel modules](#Load_the_Virtualbox_kernel_modules).
-
-To be able to create a Host-Only Network Adapter or a Bridged Network Adapter the kernel modules `vboxnetadp` and `vboxnetflt` need to be loaded, you also need to make sure the [net-tools](https://www.archlinux.org/packages/?name=net-tools) package is installed. It's possible to load these kernel modules manually with
-
-```
-# modprobe -a vboxnetadp vboxnetflt
-
-```
-
-若要开机自动加载，每个模块添加一行到 `/etc/modules-load.d/virtualbox.conf`:
-
-```
-vboxdrv
-vboxnetadp
-vboxnetflt
-
-```
-
-**Note:** 以前这些都要添加到 `/etc/rc.conf` 的 `MODULES` 数组，现此方法已过时。
-
-更多信息请看[这个](https://bbs.archlinux.org/viewtopic.php?id=130581)主题。
-
-### WinXP: 位深不能大于 16
-
-若你运行于 16 位色深，图标可能看起来糊糊的。但是当你试图调到更高色深，系统可能会受限于较低的分辨率，甚至根本不允许更改色深。若要修正此问题，运行 `regedit` 并添加下列键值到虚拟 XP 注册表:
-
-```
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services]
-"ColorDepth"=dword:00000004
-
-```
-
-接著在桌面属性窗口改变色深。若没有反应，可透过一些方法强制屏幕重绘 (按下 `Host+F` 重绘/进入全屏)。
-
-### 虚拟系统使用串行端口
-
-确认你的串行端口权限
+确认你有权限使用串口：
 
 ```
 $ /bin/ls -l /dev/ttyS*
@@ -919,44 +688,89 @@ crw-rw---- 1 root uucp 4, 67 Feb  3 09:12 /dev/ttyS3
 
 ```
 
-添加你的用户到 `uucp` 组。
+将你的用户添加到 `uucp` [用户组](/index.php/%E7%94%A8%E6%88%B7%E7%BB%84 "用户组")即可。
 
-```
-# gpasswd -a $USER uucp 
+### 重启 Xorg 之后虚拟机卡死
 
-```
+出现这一问题的原因是驱动程序缺失或有错。例如：[[8]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) 或 [[9]](https://bbs.archlinux.org/viewtopic.php?id=156079)。试试从菜单项 *Settings > Display* 里关闭 3D 加速，并确认要用的 [Xorg](/index.php/Xorg "Xorg") 驱动都已装好。
 
-然后重新登陆。
+### 全屏模式只能看到黑屏
 
-### Windows 8.x Error Code 0x000000C4
+在某些窗口管理器（[i3](/index.php/I3 "I3"), [awesome](/index.php/Awesome "Awesome")）下运行 VirtualBox 时，由于顶层状态栏（overlay bar）的问题，VirtualBox 的全屏模式会出现问题。试试在菜单项 "Guest Settings > User Interface > Mini ToolBar" 里禁用 "Show in Full-screen/Seamless" 有可能绕过这一问题。详情可见[上游的问题汇报](https://www.virtualbox.org/ticket/14323)。
 
-If you get this error code while booting, even if you choose OS Type Win 8, try to enable the `CMPXCHG16B` CPU instruction:
+### 虚拟机启动时宿主系统卡死
 
-```
-$ vboxmanage setextradata *virtual_machine_name* VBoxInternal/CPUM/CMPXCHG16B 1
+潜在原因与解决方案：
 
-```
+*   SMAP
 
-### Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"
+已知启用了 SMAP 的内核与某些芯片组（多为 Intel Broadwell）不兼容。解决办法是在[内核参数](/index.php/%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0 "内核参数")里添加 `nosmap` 来禁用 SMAP 支持。
 
-Update the VM's settings by going to *Settings > Storage > Controller:SATA* and check "Use Host I/O Cache".
+*   硬件虚拟化
 
-### Linux guests have slow/distorted audio
+禁用硬件虚拟化（VT-x/AMD-V）有可能解决这一问题。
 
-The AC97 audio driver within the Linux kernel occasionally guesses the wrong clock settings when running inside Virtual Box, leading to audio that is either too slow or too fast. To fix this, create a file in `/etc/modprobe.d` with the following line:
+*   各种内核的 bug
+    *   通过 Fuse 挂载的分区（如 ntfs）[[10]](https://bbs.archlinux.org/viewtopic.php?id=185841)，[[11]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
+
+一般来说，这类问题都是在 VirtualBox 或 Linux 内核版本更新之后初次出现。降级回到前一个版本就有可能解决问题。
+
+### Linux 客体机的声音缓慢 / 扭曲
+
+在 VirtualBox 里运行时，Linux 内核的 AC97 声卡驱动偶尔会猜错时钟频率设定。这就会造成声音播放速度太慢 / 太快。在 `/etc/modprobe.d` 目录里创建一个内容如下的文件即可解决：
 
 ```
 options snd-intel8x0 ac97_clock=48000
 
 ```
 
-### 客户端启动后的Xorg死机
+### 模拟信号麦克风不可用
 
-Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[7]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in *Settings > Display*, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
+如果从模拟信号麦克风输入的音频信号在宿主系统可用，但在客体系统里不可用，可以试试在宿主系统上安装 [PulseAudio](/index.php/PulseAudio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PulseAudio (简体中文)") 之类的[音频服务器](/index.php/Sound_system#Sound_servers "Sound system")试试看。
 
-### "NS_ERROR_FAILURE" and missing menu items
+如果装了 PulseAudio 之后麦克风还是不能用，在菜单项 *VirtualBox > Machine > Settings > Audio* 里把 *Host Audio Driver* 的值改成 *ALSA Audio Driver* 也许有用。
 
-If you encounter this message when first time starting the virtual machine:
+### 版本更新之后麦克风不能用
+
+5.1.x 版本以来一些用户遇到了音频输入问题：[[12]](https://forums.virtualbox.org/viewtopic.php?f=7&t=78797)
+
+[降级](/index.php/%E9%99%8D%E7%BA%A7 "降级")也许能解决问题。[virtualbox-bin-5.0](https://aur.archlinux.org/packages/virtualbox-bin-5.0/) 可以帮你相对轻松地降级。
+
+### 转换得来的 ISO 文件出现问题
+
+有些镜像文件格式无法可靠地转换到 ISO 格式。例如：[ccd2iso](https://www.archlinux.org/packages/?name=ccd2iso) 在转换时会忽略 .ccd 和 .sub 文件里的信息，最终产出的 ISO 镜像里的文件就可能受损。
+
+为了避免这种情况，可以使用 [CDemu](/index.php/CDemu "CDemu") 或类似软件来在 Linux 客体系统里挂载光盘镜像。
+
+### Host-only 网卡创建失败
+
+确保所需的内核模块都已成功加载。详见 [#加载 VirtualBox 内核模块](#.E5.8A.A0.E8.BD.BD_VirtualBox_.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)。
+
+### 插入模块失败
+
+如果你在加载模块时遇到如下错误信息：
+
+```
+Failed to insert 'vboxdrv': Required key not available
+
+```
+
+将[#模块签名](#.E6.A8.A1.E5.9D.97.E7.AD.BE.E5.90.8D)，或者在内核配置中禁用 `CONFIG_MODULE_SIG_FORCE`。
+
+### VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)
+
+虚拟机不能平滑退出，就可能出现这个错误。试试下面这个命令：
+
+```
+$ VBoxManage controlvm *virtual_machine_name* poweroff
+
+```
+
+### NS_ERROR_FAILURE 且菜单项缺失
+
+如果创建虚拟机时选择了 *QCOW*/*QCOW2*/*QED* 虚拟盘格式，有时就会出现这个错误。
+
+如果初次启动虚拟机时遇到下面的错误消息：
 
 ```
 Failed to open a session for the virtual machine debian.
@@ -971,7 +785,7 @@ Medium
 
 ```
 
-Exit VirtualBox, delete all files of the new machine and from virtualbox config file remove the last line in `MachineRegistry` menu (or the offending machine you are creating):
+退出 VirtualBox，把新建虚拟机的相关文件都删除，并且在 VirtualBox 的配置文件中找到 `MachineRegistry` 元素，从这里删除你所创建的格式错误的虚拟机（一般是其最后一个子元素）：
 
  `~/.config/VirtualBox/VirtualBox.xml` 
 ```
@@ -984,166 +798,53 @@ Exit VirtualBox, delete all files of the new machine and from virtualbox config 
 ...
 ```
 
-This happens sometimes when selecting *QCOW*/*QCOW2*/*QED* disk format when creating a new virutal disk.
+### Arch: pacstrap 脚本出错
 
-### USB modem
+如果你在[安装 Arch 系统](#.E5.9C.A8_VirtualBox_.E4.B8.AD.E5.AE.89.E8.A3.85_Archlinux)时，用 `pactrap` 脚本直接[#安装客体机插件](#.E5.AE.89.E8.A3.85.E5.AE.A2.E4.BD.93.E6.9C.BA.E6.8F.92.E4.BB.B6)，但此时 **还没有** 启动至新安装到虚拟盘的系统。那么你需要以 root 身份运行一次 `umount -l /mnt/dev` 然后再次运行 `pactrap`。否则新装的系统就不可用。
 
-If you have a USB modem which is being used by the guest OS, killing the guest OS can cause the modem to become unusable by the host system. Killing and restarting `VBoxSVC` should fix this problem.
+### 缺少硬件虚拟化导致 OpenBSD 不稳定
 
-### "The specified path does not exist. Check the path and then try again." error in Windows guests
-
-This error message often appears when running an .exe file which requires administrator priviliges from a shared folder in windows guests. See [the bug report](https://www.virtualbox.org/ticket/5732) for details.
-
-There are several workarounds:
-
-1.  Disable UAC from Control Panel -> Action Center -> "Change User Account Control settings" from left side pane -> set slider to "Never notify" -> OK and reboot
-2.  Copy the file from the shared folder to the guest and run from there
-
-Other threads on the internet suggest to add VBOXSVR to the list of trusted sites, but this doesn't work with Windows 7 or newer.
-
-### 挂载失败导致的啟动问题
-
-若你在内核升级后 [systemd](/index.php/Systemd "Systemd") 设定遇到问题，你应该透过 `init=/bin/bash` 开啟系统 (如果应急 shell 对你没有作用)。
+据称在其他的虚拟机平台上，OpenBSD 可以不依赖虚拟化指令集（VT-X，AMD-V）正常运行，VirtualBox 上的 OpenBSD 则不然。具体现象是出现大量的分段错误（segfault）。解决办法是在启动虚拟机时加上 `-norawr0` 参数。例如：
 
 ```
-root=/dev/mapper/vg_main-lv_root ro vga=792 resume=/dev/mapper/vg_main-lv_swap init=/bin/bash
+$ VBoxSDL -norawr0 -vm *name_of_OpenBSD_VM*
 
 ```
 
-接著附加写入权限挂载 *root*-文件系统:
+### Windows 宿主机: VERR_ACCESS_DENIED
+
+为了能在 Windows 宿主机上读取 RAW 格式的 VMDK 镜像，VirtualBox GUI 需要以管理员权限启动。
+
+### Windows: "The specified path does not exist. Check the path and then try again."
+
+当在 Windows 客体系统里运行位于共享目录里 `.exe` 程序，而这一程序又需要管理员权限时，就可能出现这一错误信息。[[13]](https://www.virtualbox.org/ticket/5732#comment:39)
+
+一个解决办法是把文件复制到虚拟硬盘上再运行。或者直接从[UNC 路径](https://en.wikipedia.org/wiki/Uniform_Naming_Convention "w:Uniform Naming Convention") (`\\vboxsvr`) 运行程序。详见 [[14]](https://support.microsoft.com/de-de/help/2019185/copying-files-from-a-mapped-drive-to-a-local-directory-fails-with-erro)。
+
+### Windows 8.x 出现错误代码 0x000000C4
+
+如果你在创建虚拟机时选择了 Win 8 系统，但在启动时还是遇到这一错误，可以尝试启用 `CMPXCHG16B` CPU 指令集。命令如下：
 
 ```
-# mount / -o remount,rw
-
-```
-
-根据 [#Arch Linux 客户机共享文件夹](#Arch_Linux_.E5.AE.A2.E6.88.B7.E6.9C.BA.E5.85.B1.E4.BA.AB.E6.96.87.E4.BB.B6.E5.A4.B9) 更改 `/etc/fstab`]]，然后在 Bash shell 运行 systemd:
-
-```
-# exec /bin/systemd
-
-```
-
-### 复制和粘贴在 Arch Linux 客户机没有作用
-
-Since updating `virtualbox-guest-additions` to version `4.2.0-2` copy&paste from Host OS to Arch Linux Guest stopped working. It seems to be due to `VBoxClient-all` requiring *root* access. In previous versions adding *VBoxClient-all &* to *~/.xinitrc* was sufficient to make copy&paste work. Update *~/.xinitrc* to match `sudo VBoxClient-all &` and add the line `, NOPASSWD: /usr/bin/VBoxClient-all` to your username in the sudoers file and restart X. It should all work again. The line in the sudoers file should look similar to this:
-
-```
- # Allow sudo for user 'you' and let him run VBoxClient-all without requiring a password
- you ALL = PASSWD: ALL, NOPASSWD: /usr/bin/VBoxClient-all
+$ vboxmanage setextradata *virtual_machine_name* VBoxInternal/CPUM/CMPXCHG16B 1
 
 ```
 
-**Note:** 使用 `visudo` 编辑 sudoer 文件，这会在存储时检查语法错误。
+### Windows 8, 8.1 或 10 无法安装、启动或报错 "ERR_DISK_FULL"
 
-### 唤醒后异常
+修改虚拟机设置，在菜单项 *Settings > Storage > Controller:SATA* 里勾选 "Use Host I/O Cache"。
 
-有个已知臭虫导致唤醒后异常: [https://www.virtualbox.org/ticket/11289。避开的方法很简单](https://www.virtualbox.org/ticket/11289。避开的方法很简单): 每次都按 Host+q 或菜单关闭虚拟机。
+### WinXP: 颜色深度不得多于 16 位
 
-### Btrfs 系统镜像
-
-In 2010 there were reports that OS disk images would not start if they were attached via a virtual SATA device. It was reportedly fixed, and seemed to be. But as of around March 2013, that particular bug report has been [repoened](https://www.virtualbox.org/ticket/6905). This can be fixed by enabling the use of the host I/O cache, which is disabled by default with virtual SATA interfaces.
-
-### vagrant 啟动问题
-
-在最新版的 VirtualBox(4.2.14-1)，运行 `vagrant up` 命令伴随以下错误:
+如果只显示 16 位色，桌面图标看起来会模糊 / 结块。但是将色深调高时，系统可能会将桌面分辨率限制得较低，或者根本不允许改变色身。解决办法是在 Windows XP 虚拟机里运行 `regedit`，并写入这一项：
 
 ```
-Command: ["import",
-"/Users/username/.vagrant.d/boxes/precise32/virtualbox/box.ovf"]
-Stderr: 0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
-Interpreting
-/Users/username/.vagrant.d/boxes/precise32/virtualbox/box.ovf...
-OK.
-0%...
-Progress object failure: NS_ERROR_CALL_FAILED
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services]
+"ColorDepth"=dword:00000004
 
 ```
 
-在[这个修正](https://www.virtualbox.org/ticket/11895)释出前，你需要使用其它方法解决，或是将 VirtualBox 降级。
-
-有个临时的解决方法是在 `~/.vagrant.d/boxes/BoxName/virtualbox` 為每个 box 创建 manifest:
-
-```
-openssl sha1 *.vmdk *.ovf > box.mf
-
-```
-
-你可以降级 VirtualBox。若你的缓存有旧的软件包，可以透过下列命令降级:
-
-```
-sudo pacman -U /var/cache/pacman/pkg/virtualbox-4.2.12-3-x86_64.pkg.tar.xz
-
-```
-
-这个错误似乎同时出现在所有平台: [http://www.marshut.com/pzisi/progress-object-failure-ns-error-call-failed-when-running-vagrant-up-in-getting-started-guide.html#qhihz](http://www.marshut.com/pzisi/progress-object-failure-ns-error-call-failed-when-running-vagrant-up-in-getting-started-guide.html#qhihz)
-
-It's unclean for the moment. It could be regression inside Virtualbox or a issue inside Vagrant. When you delete the cache you can downgrade via ArchLinux [downgrader](https://aur.archlinux.org/packages/downgrader/) (I did not test it correctly, but I assume this works, else check the wiki page for downgrading: [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages")
-
-更多信息请到 GitHub issue 页面查看 [Clean install on OS X 10.8.4 w/ latest VirtualBox not working](https://github.com/mitchellh/vagrant/issues/1847)
-
-根据 [Vagrant creator on Twitter](https://twitter.com/mitchellh/status/348886504728305664)，这是 VirtualBox 的臭虫。在 2013 年 06 月 25 日，他说他们在 SVN 修正此臭虫，并且正在等待释出。同时，我可以确认这是跨平台的问题，4.2.14 在我的 Win7 上面是坏的。
-
-这个问题在 virtualbox-4.2.16-1 这份 VirtualBox 版本释出时已解决
-
-### 没有64位客户端选项
-
-When launching a VM client, and no 64-bit options are available, make sure your CPU virtualization capabilities (usually named `VT-x`) are enabled in the BIOS.
-
-### 主机上的虚拟机启动操作系统死机
-
-Possible causes/solutions :
-
-*   SMAP
-
-This is a known incompatiblity with SMAP enabled kernels affecting (mostly) Intel Broadwell chipsets. The matter is currently being investigated, with a wide variety of WIP vboxhost module patches out in the wild that are meant to solve the issue. At the moment of writing though, the only 100% guaranteed solution to this problem is disabling SMAP support in your kernel by appending the "nosmap" option to your kernel boot command line.
-
-*   Hardware Virtualisation
-
-Disabling hardware virtualisation (VT-x/AMD-V) may solve the problem.
-
-*   Various Kernel bugs
-    *   Fuse mounted partitions (like ntfs) [[8]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[9]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
-
-Generally, such issues are observed after upgrading VirtualBox or linux kernel. Downgrading them to the previous versions of theirs might solve the problem.
-
-### The virtual machine has terminated unexpectedly during startup with exit code 1 (0x1)
-
-When trying to launch a virtual machine, an error message like the following appears:
-
-```
-The virtual machine has terminated unexpectedly during startup with exit code 1 (0x1)
-NS_ERROR_FAILURE 0x80004005
-Component: MachineWrap
-Interface: IMachine
-```
-
-This may occur after upgrading the [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) or [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) package. Try reloading the `vboxdrv` module:
-
-```
-# modprobe -r vboxdrv
-# modprobe vboxdrv
-
-```
-
-### Analog microphone not working in guest
-
-If the audio input from an analog microphone is working correctly on the host, but no sound seems to get through to the guest, despite the microphone device apparently being detected normally, installing a [sound server](/index.php/Sound_system#Sound_servers "Sound system") such as [PulseAudio](/index.php/PulseAudio "PulseAudio") on the host might fix the problem.
-
-### Fullscreen mode shows blank guest screen
-
-On some window managers ([i3](/index.php/I3 "I3")), VirtualBox has issues with fullscreen mode properly due to the overlay bar. To workaround this issue, disable "Show in Full-screen/Seamless" option in "Guest Settings --> User Interface --> Mini ToolBar". See [the upstream bug report](https://www.virtualbox.org/ticket/14323) for more information.
-
-### Failed to insert module
-
-If you encounter problem when loading modules as follow:
-
-```
-Failed to insert 'vboxdrv': Required key not available
-
-```
-
-Make sure you signed your modules or disable `CONFIG_MODULE_SIG_FORCE` in your kernel config.
+然后再去“桌面属性”窗口里修改色深。如果还是不见效，强制让屏幕重绘（比如按 `Host+f` 进入全屏模式）试试。
 
 ## 参阅
 

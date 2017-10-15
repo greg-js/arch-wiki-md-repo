@@ -3,7 +3,7 @@ There are several ways to set up a Virtual Private Network through SSH. Note tha
 ## Contents
 
 *   [1 OpenSSH's built in tunneling](#OpenSSH.27s_built_in_tunneling)
-    *   [1.1 Create tun interfaces using netctl](#Create_tun_interfaces_using_netctl)
+    *   [1.1 Create tun interfaces using netcfg](#Create_tun_interfaces_using_netcfg)
     *   [1.2 Create tun interfaces using systemd-networkd](#Create_tun_interfaces_using_systemd-networkd)
         *   [1.2.1 Creating interfaces in SSH command](#Creating_interfaces_in_SSH_command)
     *   [1.3 Start SSH](#Start_SSH)
@@ -16,7 +16,7 @@ There are several ways to set up a Virtual Private Network through SSH. Note tha
 
 OpenSSH has built-in TUN/TAP support using -w<local-tun-number>:<remote-tun-number>. Here, a layer 3/point-to-point/ TUN tunnel is described. It is also possible to create a layer 2/ethernet/TAP tunnel.
 
-### Create tun interfaces using netctl
+### Create tun interfaces using netcfg
 
 Create tun interfaces:
 

@@ -12,11 +12,10 @@ This article covers running Steam in Wine, in order to play games not available 
 *   [3 Tips](#Tips)
     *   [3.1 Performance](#Performance)
     *   [3.2 Source engine launch options](#Source_engine_launch_options)
-    *   [3.3 Using a pre-existing Steam installation](#Using_a_pre-existing_Steam_installation)
+    *   [3.3 Using a pre-existing Steam installation/Content Library](#Using_a_pre-existing_Steam_installation.2FContent_Library)
     *   [3.4 Steam links in Firefox, Chrome, etc](#Steam_links_in_Firefox.2C_Chrome.2C_etc)
     *   [3.5 Steam Client Store/(built-in) Web Browser not working](#Steam_Client_Store.2F.28built-in.29_Web_Browser_not_working)
-    *   [3.6 No text rendered problem](#No_text_rendered_problem)
-    *   [3.7 Proxy settings](#Proxy_settings)
+    *   [3.6 Proxy settings](#Proxy_settings)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -36,24 +35,12 @@ $ wine SteamSetup.exe
 
 ## Starting Steam
 
-On x86:
-
-```
-$ wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe
-
-```
-
-On x86_64:
-
 ```
 $ wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe
 
 ```
 
-**Note:**
-
-*   If text is not rendered (properly), append `-no-dwrite` to this command. See [#No text rendered problem](#No_text_rendered_problem) for more information.
-*   If you are using an Nvidia card through [Bumblebee](/index.php/Bumblebee "Bumblebee"), you should prefix this command with `optirun`.
+**Note:** If you are using an Nvidia card through [Bumblebee](/index.php/Bumblebee "Bumblebee"), you should prefix this command with `optirun`.
 
 You should consider making an alias to easily start Steam (and put it in your shell's rc file), example:
 
@@ -110,41 +97,31 @@ Go to *Properties > Set Launch Options*, e.g.:
 
 Please refer to [https://developer.valvesoftware.com/wiki/Command_Line_Options](https://developer.valvesoftware.com/wiki/Command_Line_Options) for a complete list of launch options.
 
-### Using a pre-existing Steam installation
+### Using a pre-existing Steam installation/Content Library
 
-If you have a shared drive with Windows, or already have a Steam installation somewhere else, you can simply symlink the Steam directory to `~/.wine/drive_c/Program Files/Steam/` . However, be sure to do **all** the previous steps in this wiki. Confirm Steam launches and logs into your account, *then* do this:
+If you have a shared drive with Windows, or already have a Steam installation somewhere else, you can use that.
 
-```
-$ cd ~/.wine/drive_c/Program\ Files/ 
-$ mv Steam/ Steam.backup/   (or you can just delete the directory)
-$ ln -s /mnt/windows_partition/Program\ Files/Steam/
-
-```
-
-**Note:**
-
-*   If you have trouble starting Steam after symlinking the entire Steam folder, try linking only the `steamapps` subdirectory in your existing wine steam folder instead.
-*   If you still have trouble starting games, use `# mount --bind /path/to/SteamApps ~/.local/share/Steam/SteamApps -ouser=your-user-name` , this is the only thing that worked with `TF2` for one Arch user.
+In the Steam client, go to *Steam* > *Settings* > *Downloads* and click "Steam library folders". Then add a new library folder. For instance, if you have mounted your Windows drive at `/mnt/windows`, add `Z:\mnt\windows\Program Files (x86)\Steam`.
 
 ### Steam links in Firefox, Chrome, etc
 
 To make `steam://` urls in your browser connect with Steam in Wine, there are several things you can do. One involves making steam url-handler keys in gconf, another involves making protocol files for KDE, others involve tinkering with desktop files or the Local State file for Chromium. These seem to only work in Firefox or under certain desktop configurations. One way to do it that works more globally is using mimeo, a tool made by Xyne (an Arch TU) which follows. For another working and less invasive (but Firefox-only) way, see the first post [here](http://ubuntuforums.org/showthread.php?t=433548) .
 
-*   Make `/usr/bin/steam` with your favorite editor and paste:
+*   Make `/usr/bin/steam-wine` with your favorite editor and paste:
 
 ```
 #!/bin/sh
 #
 # Steam wrapper script
 #
-exec wine "c:\\program files\\steam\\steam.exe" "$@"
+exec wine "C:\\Program Files (x86)\\Steam\\Steam.exe" "$@"
 
 ```
 
 *   Make it executable:
 
 ```
-# chmod +x /usr/bin/steam
+# chmod +x /usr/bin/steam-wine
 
 ```
 
@@ -153,7 +130,7 @@ exec wine "c:\\program files\\steam\\steam.exe" "$@"
 *   Create `~/.config/mimeo/associations.txt` with your favorite editor and paste:
 
 ```
-/usr/bin/steam %u
+/usr/bin/steam-wine %u
   ^steam://
 
 ```
@@ -184,29 +161,16 @@ detectDE()
 
 ### Steam Client Store/(built-in) Web Browser not working
 
-Launch Steam 32-bit disabling "CEF-based runtime sandboxing" support:
+	related: Wine [bug 39403](https://bugs.winehq.org/show_bug.cgi?id=39403)
+
+Launch Steam without "CEF-based runtime sandboxing" support:
 
 ```
-wine ~/.wine/drive_c/Program Files/Steam/Steam.exe -no-cef-sandbox
+$ wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe -no-cef-sandbox
 
 ```
 
 If this does not work, open winecfg, "Add application...", navigate to ~/Program Files/Steam, choose Steam.exe, and set its "Windows Version" at the bottom to Windows XP.
-
-### No text rendered problem
-
-**Note:** This should no longer be an issue with Wine 1.7.50 and up since the implementation of dwrite has progressed sufficiently.
-
-If there is no text/font rendered when starting steam you should try to start steam with the parameter `-no-dwrite`. Read more in [the forum thread about it.](https://bbs.archlinux.org/viewtopic.php?id=146223)
-
- `wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe -no-dwrite` 
-**Note:** Although this method does currently work, It is not persistent if Steam relaunches automatically (i.e. update), or if you follow a URL link.
-
-*   This can be achieved by going through ***winecfg > Libraries*** and setting the **"dwrite"** override to *"disable"*
-
-**Or**
-
-*   `$ wine reg add 'HKCU\Software\Valve\Steam' /v DWriteEnable /t REG_DWORD /d 00000000`
 
 ### Proxy settings
 

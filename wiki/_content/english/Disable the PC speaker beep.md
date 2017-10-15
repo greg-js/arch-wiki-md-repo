@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [PC speaker](/index.php?title=PC_speaker&redirect=no "PC speaker")
+*   [PC speaker#Disable PC Speaker](/index.php/PC_speaker#Disable_PC_Speaker "PC speaker")

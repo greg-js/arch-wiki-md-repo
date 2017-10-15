@@ -1,3 +1,11 @@
+Related articles
+
+*   [Cinnamon](/index.php/Cinnamon "Cinnamon")
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [GNOME Files](/index.php/GNOME_Files "GNOME Files")
+*   [Thunar](/index.php/Thunar "Thunar")
+*   [PCManFM](/index.php/PCManFM "PCManFM")
+
 [Nemo](https://github.com/linuxmint/nemo) is a fork of [GNOME Files](/index.php/GNOME_Files "GNOME Files"). It is also the default file manager of the [Cinnamon](/index.php/Cinnamon "Cinnamon") desktop. Nemo is based on the Files 3.4 code. It was created as a response to the changes in Files 3.6 which saw features such as type ahead find and split pane view removed.
 
 ## Contents
@@ -44,6 +52,10 @@ Some programs can add extra functionality to Nemo. Here are a few packages that 
 *   **Nemo Share** — Samba extension for Nemo.
 
 	[https://github.com/linuxmint/nemo-extensions/tree/master/nemo-share](https://github.com/linuxmint/nemo-extensions/tree/master/nemo-share) || [nemo-share](https://www.archlinux.org/packages/?name=nemo-share)
+
+*   **Nemo Terminal** — Embedded terminal window for Nemo
+
+	[https://github.com/linuxmint/nemo-extensions/tree/master/nemo-terminal](https://github.com/linuxmint/nemo-extensions/tree/master/nemo-terminal) || [nemo-terminal](https://www.archlinux.org/packages/?name=nemo-terminal)
 
 *   **RabbitVCS Nemo** — Integrate RabbitVCS into Nemo.
 

@@ -43,6 +43,8 @@ After adding the `plymouth-encrypt` hook, if input goes to the background in pla
 
  `/etc/mkinitcpio.conf`  `MODULES="i915 [...]"` 
 
+This might also be a step needed for some themes to work.
+
 ### Alternative plymouth hook (systemd)
 
 If your [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") includes the `systemd` hook, then replace `plymouth` with `sd-plymouth`. Additionally, if using hard drive encryption, use `sd-encrypt` instead of `encrypt` or `plymouth-encrypt`:

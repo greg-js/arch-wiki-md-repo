@@ -180,7 +180,7 @@ Relevant mount options are:
 
 Partitions used for data should always be mounted with `nodev`, `nosuid`, `noexec`. Potential usage is presented in the table below.
 
-| **Partition** | `nodev` | `nosuid` | `noexec` |
+| Partition | `nodev` | `nosuid` | `noexec` |
 | `/var` | yes | yes | yes  |
 | `/home` | yes | yes | yes, if you do not code, use wine or steam  |
 | `/dev/shm` | yes | yes | yes |

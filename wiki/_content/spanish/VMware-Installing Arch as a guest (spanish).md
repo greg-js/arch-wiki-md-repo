@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [VMware](/index.php/VMware "VMware")
+*   [Installing VMWare vCLI](/index.php/Installing_VMWare_vCLI "Installing VMWare vCLI")
+
 Este artículo trata sobre la instalación de Arch Linux en un producto [VMware](/index.php/VMware "VMware"), como [Player (Plus)](http://www.vmware.com/products/player/), [Fusion](http://www.vmware.com/products/fusion/) o [Workstation](http://www.vmware.com/products/workstation/).
 
 ## Contents

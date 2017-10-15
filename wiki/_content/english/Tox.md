@@ -28,10 +28,6 @@ In order to use Tox, you should [install](/index.php/Install "Install") a [Tox c
 
 	[https://wiki.tox.chat/clients/qtox](https://wiki.tox.chat/clients/qtox) || [qtox-git](https://aur.archlinux.org/packages/qtox-git/)
 
-*   **Ricin** — Lightweight and fully-Hackable Tox client powered by Vala & Gtk3
-
-	[https://ricin.im/](https://ricin.im/) || [ricin-git](https://aur.archlinux.org/packages/ricin-git/)
-
 *   **Tox Pidgin Protocol Plugin** — a plugin for Pidgin which allows the use of the Tox protocol within Pidgin
 
 	[http://tox.dhs.org/](http://tox.dhs.org/) || [tox-prpl-git](https://aur.archlinux.org/packages/tox-prpl-git/)

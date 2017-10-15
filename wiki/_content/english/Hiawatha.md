@@ -62,7 +62,7 @@ In the sample setup, there is one default website attached to the IP address of 
 
 Then, the working webservers are defined with `VirtualHost` sections. Hiawatha can serve more than one webserver and each of these sections describes a different one. For initial testing purpose, you can create one `VirtualHost` for *my-domain* and save in its root directory `/srv/http/*my-domain*/public` a dummy `index.html` start file.
 
-Next, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `hiawatha.service` and point your browser to `http://*my-domain*`. At that stage you should be able to load the website start page.
+Next, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `hiawatha.service` and point your browser to `http://*my-domain*`. At that stage you should be able to load the website start page.
 
 For further details see the official [HowTo](https://www.hiawatha-webserver.org/howto).
 
@@ -129,7 +129,7 @@ VirtualHost {
 }
 ```
 
-Then [restart](/index.php/Restart "Restart") the `hiawatha.service`.
+Then [restart](/index.php/Restart "Restart") `hiawatha.service`.
 
 ### Reverse Proxy
 
@@ -179,7 +179,7 @@ Binding {
 }
 ```
 
-Once it is done, [restart](/index.php/Restart "Restart") the `hiawatha.service`.
+Once it is done, [restart](/index.php/Restart "Restart") `hiawatha.service`.
 
 **Tip:** Hiawatha supports [Server Name Indication](https://en.wikipedia.org/wiki/Server_Name_Indication "wikipedia:Server Name Indication"), which allows to serve multiple certificates on the same IP address and hence multiple secure websites. To use this functionality, add a `TLScertFile` setting inside the `VirtualHost` block for each virtual host that has its own SSL/TLS certificate. The certificate specified in the `Binding` section is used whenever no virtual host has been defined for a website. `/etc/hiawatha/hiawatha.conf` 
 ```
@@ -209,7 +209,7 @@ Alternatively, the script is also available within the [source tarball](https://
 The detailed instructions are described in `README.txt` and the tool configuration is defined in `letsencrypt.conf`. In short, there are two steps to get a certificate:
 
 1.  Register an account with the Let's Encrypt certificate authority (CA). An account key file will be created. `$ ./letsencrypt register` 
-2.  Request a website certificate: *www.my-domain.org* must be the first hostname of a `VirtualHost`. Any following webserver's hostname will be used as an alternative hostname for the certificate. The file `www.my-domain.org.pem` will be created. `$ ./letsencrypt request www.my-domain.org` 
+2.  Request a website certificate: *www.my-domain.org* must be the first hostname of a `VirtualHost`. Any following webserver's hostname will be used as an alternative hostname for the certificate. The file `www.my-domain.org.pem` will be created. `# ./letsencrypt request www.my-domain.org` 
 
 If the above succeeds, you can switch from the ***testing*** to the ***production*** CA by changing the `LE_CA_HOSTNAME` setting in the configuration file and go through the **two steps** above again.
 
@@ -218,7 +218,7 @@ If the above succeeds, you can switch from the ***testing*** to the ***productio
 The following command can be used to renew the certificate and restart the server upon renewal:
 
 ```
-$ /path/to/letsencrypt renew restart
+# /path/to/letsencrypt renew restart
 
 ```
 
