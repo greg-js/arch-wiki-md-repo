@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [Pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-16，点击[这里](https://wiki.archlinux.org/index.php?title=Pacman%2FRestore+local+database&diff=0&oldid=489928)可以查看翻译后英文页面的改动。
+
 如果遇到下面的问题，很可能需要恢复pacman本地数据库：
 
 *   `pacman -Q`什么都不输出，`pacman -Syu`错误地报告系统已为最新。
@@ -68,6 +70,8 @@ $ { cat pkglist.orig; pacman -Slq; } | sort | uniq -d > pkglist
 
 ```
 
+**Note:** If this fails with `failed to initialise alpm library`, then check if `/var/lib/pacman/local/ALPM_DB_VERSION` exists - if not, then run `pacman-db-upgrade` as root followed by `pacman -Sy` and then **retry the previous command**.
+
 检查**base**软件包组中的软件包是否缺失，并加入列表：
 
 ```
@@ -94,14 +98,14 @@ mkdir -p "${dbpath}" "${cache}" "${root}"
 popd
 
 recovery-pacman() {
-  fakeroot pacman "$@"   \
-    --dbpath "${dbpath}" \
-    --root   "${root}"   \
-    --cache  "${cache}"  \
-    --log    "${log}"    \
-    --noscriptlet        \
-    #
-}
+     sudo pacman "$@"  \
+     --log /dev/null   \
+     --noscriptlet     \
+     --dbonly          \
+     --force           \
+     --nodeps          \
+     --needed
+ }
 ```
 
 同步临时目录中的数据库：

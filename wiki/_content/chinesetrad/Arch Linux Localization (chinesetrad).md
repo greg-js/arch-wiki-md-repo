@@ -1,3 +1,9 @@
+相關文章
+
+*   [安裝指南](/index.php/Installation_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Installation guide (正體中文)")
+*   [一般建議](/index.php/General_recommendations_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "General recommendations (正體中文)")
+*   [新手教學](/index.php/Beginners%27_Guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' Guide (正體中文)")
+
 本篇很大部分參考了 [Arch Linux Localization (简体中文)](/index.php/Arch_Linux_Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux Localization (简体中文)")。雖然本地化的流程是相似的，但是正體中文化所需要的軟體和設定檔仍和簡體中文化有所不同，故有此篇文章的產生。
 
 ## Contents
@@ -97,7 +103,7 @@ export LC_ALL=zh_TW.UTF-8
 
 ### 中文輸入法
 
-常用的正體中文輸入法有 [gcin (正體中文)](/index.php/Gcin_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Gcin (正體中文)")、[scim (正體中文)](/index.php/Scim_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Scim (正體中文)") 以及由 gcin 分支出來的 [hime-git](https://aur.archlinux.org/packages/hime-git/) ([AUR](/index.php/AUR "AUR")中)。推薦使用 gcin 或[hime](/index.php/Hime_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Hime (正體中文)")。可看該輸入法文章，其中有較詳細的介紹。
+常用的正體中文輸入法有 [gcin (正體中文)](/index.php/Gcin_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Gcin (正體中文)")、[scim (正體中文)](/index.php/Scim_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Scim (正體中文)") 以及由 gcin 分支出來的 [hime-git](https://aur.archlinux.org/packages/hime-git/) ([AUR](/index.php/AUR "AUR")中)。推薦使用 gcin 或 [hime-git](https://aur.archlinux.org/packages/hime-git/)。可看該輸入法文章，其中有較詳細的介紹。
 
 以使用 gcin 為例，安裝好後在 `~/.xinitrc` 或 `~/.xprofile` 加入以下內容：
 

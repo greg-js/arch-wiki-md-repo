@@ -118,7 +118,10 @@ SC2 never fully loads the game initially, but rather streams and loads required 
 Have a look at projects aiming at creating more ergonomic hotkeys for SCII:
 
 *   [TheCore](http://www.teamliquid.net/forum/sc2-strategy/341878-thecore-advanced-keyboard-layout)
-*   [TheCore Lite](http://www.teamliquid.net/forum/sc2-strategy/333891-thecore-lite-advanced-keyboard-layout)
+*   [TheCore Lite](https://github.com/bobo38/TheCoreLite)
+
+Some other unmaintained options:
+
 *   [Fleet Keys](http://www.teamliquid.net/forum/sc2-strategy/404476-fleet-keys-refined-hotkey-systems).
 *   [DarkGrid](http://www.teamliquid.net/forum/sc2-strategy/257590-darkgrid-layout)
 

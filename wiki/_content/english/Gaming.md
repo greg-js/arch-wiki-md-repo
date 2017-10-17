@@ -179,7 +179,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 	[http://psxemulator.gazaxian.com/](http://psxemulator.gazaxian.com/) || [psx](https://aur.archlinux.org/packages/psx/)
 
-*   **PCSXR** — PlayStation emulator; Debian fork of the abandoned original PCSX
+*   **[PCSXR](/index.php/PCSX-Reloaded "PCSX-Reloaded")** — PlayStation emulator; Debian fork of the abandoned original PCSX
 
 	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://www.archlinux.org/packages/?name=pcsxr)
 

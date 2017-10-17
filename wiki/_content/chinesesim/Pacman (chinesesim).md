@@ -6,20 +6,19 @@
 *   [pacman/Pacnew and Pacsave (简体中文)](/index.php/Pacman/Pacnew_and_Pacsave_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman/Pacnew and Pacsave (简体中文)")
 *   [pacman/Rosetta (简体中文)](/index.php/Pacman/Rosetta_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman/Rosetta (简体中文)")
 *   [pacman/Tips and tricks (简体中文)](/index.php/Pacman/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman/Tips and tricks (简体中文)")
-*   [FAQ#Package Management (简体中文)](/index.php/FAQ#Package_Management_.28.E7.AE.80.E4.BD.93.E4.B8.AD.E6.96.87.29 "FAQ")
-
+*   [FAQ (简体中文)](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")
 *   [System maintenance (简体中文)](/index.php/System_maintenance_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "System maintenance (简体中文)")
 *   [Arch Build System (简体中文)](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")
 *   [Official repositories (简体中文)](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")
 *   [Arch User Repository (简体中文)](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")
 
-**翻译状态：** 本文是英文页面 [pacman](/index.php/Pacman "Pacman") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-05-01，点击[这里](https://wiki.archlinux.org/index.php?title=pacman&diff=0&oldid=465856)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [pacman](/index.php/Pacman "Pacman") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-16，点击[这里](https://wiki.archlinux.org/index.php?title=pacman&diff=0&oldid=490231)可以查看翻译后英文页面的改动。
 
 [pacman](https://archlinux.org/pacman/)[软件包管理器](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system")是 Arch Linux 的一大亮点。它将一个简单的二进制包格式和易用的构建系统结合了起来(参见[makepkg](/index.php/Makepkg "Makepkg")和[ABS](/index.php/ABS "ABS"))。不管软件包是来自官方的 Arch 库还是用户自己创建，*pacman* 都能方便得管理。
 
 *pacman* 通过和主服务器同步软件包列表来进行系统更新。这种服务器/客户端模式可以使用一条命令就下载/安装软件包，同时安装必需的依赖包。
 
-*pacman* 用 C 语言编写，使用 `.pkg.tar.xz` 打包格式。
+*pacman* 用 C 语言编写，使用[tar](https://en.wikipedia.org/wiki/tar_(computing) "w:tar (computing)")打包格式。
 
 **提示：** [pacman](https://www.archlinux.org/packages/?name=pacman) 软件包还提供了其它有用工具，例如 [makepkg](/index.php/Makepkg "Makepkg")、**pactree**、**vercomp**、 [checkupdates](/index.php/Checkupdates "Checkupdates")等。可以通过 `pacman -Ql pacman | grep bin` 获取工具列表。
 
@@ -63,18 +62,19 @@
         *   [3.9.2 Chroot 修复](#Chroot_.E4.BF.AE.E5.A4.8D)
     *   [3.10 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)
     *   [3.11 Request on importing PGP keys](#Request_on_importing_PGP_keys)
-    *   [3.12 不停看到错误 "PackageName: signature from "User <email@archlinux.org>" is invalid"](#.E4.B8.8D.E5.81.9C.E7.9C.8B.E5.88.B0.E9.94.99.E8.AF.AF_.22PackageName:_signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.22)
-    *   [3.13 'warning: current locale is invalid; using default "C" locale' 错误](#.27warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.27_.E9.94.99.E8.AF.AF)
-    *   [3.14 pacman不使用我的代理设置](#pacman.E4.B8.8D.E4.BD.BF.E7.94.A8.E6.88.91.E7.9A.84.E4.BB.A3.E7.90.86.E8.AE.BE.E7.BD.AE)
-    *   [3.15 如何重装所有包并保留安装和依赖信息？](#.E5.A6.82.E4.BD.95.E9.87.8D.E8.A3.85.E6.89.80.E6.9C.89.E5.8C.85.E5.B9.B6.E4.BF.9D.E7.95.99.E5.AE.89.E8.A3.85.E5.92.8C.E4.BE.9D.E8.B5.96.E4.BF.A1.E6.81.AF.EF.BC.9F)
-    *   [3.16 "Cannot open shared object file" 错误](#.22Cannot_open_shared_object_file.22_.E9.94.99.E8.AF.AF)
-    *   [3.17 软件包下载停滞](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.B8.8B.E8.BD.BD.E5.81.9C.E6.BB.9E)
-    *   [3.18 无法从镜像服务器获取 'core.db'](#.E6.97.A0.E6.B3.95.E4.BB.8E.E9.95.9C.E5.83.8F.E6.9C.8D.E5.8A.A1.E5.99.A8.E8.8E.B7.E5.8F.96_.27core.db.27)
+    *   [3.12 Error: key "0123456789ABCDEF" could not be looked up remotely](#Error:_key_.220123456789ABCDEF.22_could_not_be_looked_up_remotely)
+    *   [3.13 不停看到错误 "PackageName: signature from "User <email@archlinux.org>" is invalid"](#.E4.B8.8D.E5.81.9C.E7.9C.8B.E5.88.B0.E9.94.99.E8.AF.AF_.22PackageName:_signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.22)
+    *   [3.14 'warning: current locale is invalid; using default "C" locale' 错误](#.27warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.27_.E9.94.99.E8.AF.AF)
+    *   [3.15 pacman不使用我的代理设置](#pacman.E4.B8.8D.E4.BD.BF.E7.94.A8.E6.88.91.E7.9A.84.E4.BB.A3.E7.90.86.E8.AE.BE.E7.BD.AE)
+    *   [3.16 如何重装所有包并保留安装和依赖信息？](#.E5.A6.82.E4.BD.95.E9.87.8D.E8.A3.85.E6.89.80.E6.9C.89.E5.8C.85.E5.B9.B6.E4.BF.9D.E7.95.99.E5.AE.89.E8.A3.85.E5.92.8C.E4.BE.9D.E8.B5.96.E4.BF.A1.E6.81.AF.EF.BC.9F)
+    *   [3.17 "Cannot open shared object file" 错误](#.22Cannot_open_shared_object_file.22_.E9.94.99.E8.AF.AF)
+    *   [3.18 软件包下载停滞](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.B8.8B.E8.BD.BD.E5.81.9C.E6.BB.9E)
+    *   [3.19 无法从镜像服务器获取 'core.db'](#.E6.97.A0.E6.B3.95.E4.BB.8E.E9.95.9C.E5.83.8F.E6.9C.8D.E5.8A.A1.E5.99.A8.E8.8E.B7.E5.8F.96_.27core.db.27)
 *   [4 参见](#.E5.8F.82.E8.A7.81)
 
 ## 用法
 
-下面只是一个可执行操作的小部分示范，*pacman* 的其他示例请阅读[man pacman](https://www.archlinux.org/pacman/pacman.8.html)。
+下面只是一个可执行操作的小部分示范，*pacman* 的其他示例请阅读[pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)。
 
 **提示：** 使用过其它发行版的用户，可以参考 [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta") 中的对比.
 
@@ -202,11 +202,9 @@ pacman -Rn package_name
 
 ### 升级软件包
 
-**警告:** Arch 只支持系统完整升级，详细参见[不支持部分升级](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance")和[#安装软件包](#.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)。
+**警告:** * 建议所有用户都 [经常性的更新系统](/index.php/System_maintenance#Upgrading_the_system "System maintenance")。
 
-建议所有用户都 [经常性的更新系统](/index.php/System_maintenance#Upgrading_the_system "System maintenance")。在论坛提问题的时候，一般假定您的系统已经升级到最新状态。
-
-建议升级前访问 [Arch Linux 主页](https://www.archlinux.org/)查看最新消息（或订阅 [RSS](https://www.archlinux.org/feeds/news/)，或订阅 [arch-announce 邮件列表](https://mailman.archlinux.org/mailman/listinfo/arch-announce/)，或关注 [@archlinux](https://twitter.com/archlinux)。如果升级需要不寻常的用户操作介入时（无法简单地按照 *pacman* 的输出信息处理），以上信息总会给出合适的方法。有时候系统更新会出现问题并需要进行一些手动调整，请不要在重要任务前进行系统更新。
+*   Arch 只支持系统完整升级，详细参见[不支持部分升级](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance")和[#安装软件包](#.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)。
 
 一个 *pacman* 命令就可以升级整个系统。花费的时间取决于系统有多老。这个命令会同步非本地(local)软件仓库并升级系统的软件包：
 
@@ -214,15 +212,6 @@ pacman -Rn package_name
 # pacman -Syu
 
 ```
-
-*pacman* 是强大的软件包管理工具，但是不会做所有的事情。遵循[Arch 之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")，用户需要负责维护自己的系统。**执行系统升级时，请务必阅读 *pacman* 输出的所有信息。**如果用户修改过的配置文件需要更新，新的配置文件会被保存为 `.pacnew` 文件以免覆盖了用户的配置。*pacman* 会提醒用户合并新旧文件。这些文件需要手动干预。在升级或删除软件包后，应该立即着手处理。参见 [Pacnew 和 pacsave 文件](/index.php/Pacnew_and_Pacsave_files_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacnew and Pacsave files (简体中文)")。
-
-**提示：**
-
-*   *pacman* 输出会记录到 `/var/log/pacman.log`。
-*   你可以使用日志阅读工具，如[wat-git](https://aur.archlinux.org/packages/wat-git/)来搜索pacman的日志。
-
-如果遇到问题，无法按照给出方法解决。请搜索下论坛，很有可能已经有人遇到并解决了。
 
 ### 查询包数据库
 
@@ -261,6 +250,13 @@ $ pacman -Qs *string1* *string2* ...
 
 ```
 
+按文件名查找软件库：
+
+```
+$ pacman -Fs *string1* *string2* ...
+
+```
+
 显示软件包的详尽的信息：
 
 ```
@@ -289,7 +285,12 @@ $ pacman -Ql *package_name*
 
 ```
 
-未安装的软件包使用 [pkgfile](/index.php/Pkgfile_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pkgfile (简体中文)")。
+查询远程库中软件包包含的文件：
+
+```
+$ pacman -Fl *package_name*
+
+```
 
 检查软件包安装的文件是否都存在：
 
@@ -302,6 +303,13 @@ $ pacman -Qk *package_name*
 
 ```
 $ pacman -Qo */path/to/file_name*
+
+```
+
+查询文件属于远程数据库中的哪个软件包：
+
+```
+$ pacman -Fo */path/to/file_name*
 
 ```
 
@@ -380,6 +388,8 @@ which-2.20-6
 # paccache -r
 
 ```
+
+**Tip:** 可以使用 [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") 自动执行清理，[这里](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743)是参考示例。
 
 也可以自己设置保留最近几个版本：
 
@@ -537,6 +547,8 @@ IgnoreGroup = gnome
 
 #### 跳过软件包文件
 
+**Warning:** 跳过软件包时请考虑清楚，Arch 官方并不支持 [部分更新](/index.php/Partial_upgrades "Partial upgrades")。
+
 要跳过某些文件夹的安装，可以将它们放到 `NoExtract` 中，例如不想安装 [systemd](/index.php/Systemd "Systemd") unit 文件：
 
 ```
@@ -682,7 +694,7 @@ If you *require* an install media with persistent dataspace, the [Archiso](/inde
 
 #### Chroot 修复
 
-如果上面方法不行，请下载 2012 年之后发布的安装程序进行启动，执行:
+如果上面方法不行，请下载最新的安装程序进行启动，执行:
 
 ```
 # mount /dev/sdxY /mnt         #Your root partition.
@@ -702,12 +714,16 @@ If you *require* an install media with persistent dataspace, the [Archiso](/inde
 试试以下途径：
 
 *   更新已知密钥：`pacman-key --refresh-keys`;
-*   手动升级`archlinux-keyring`软件包：`pacman -S archlinux-keyring`.
+*   手动升级`archlinux-keyring`软件包：`pacman -Sy archlinux-keyring && pacman -Su`.
 *   查看[pacman-key#Resetting all the keys](/index.php/Pacman-key#Resetting_all_the_keys "Pacman-key").
 
 ### Request on importing PGP keys
 
 If [installing](/index.php/Installation_guide "Installation guide") Arch with an outdated ISO, you are likely prompted to import PGP keys. Agree to download the key to proceed. If you are unable to add the PGP key successfully, update the keyring or upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) (see [above](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)).
+
+### Error: key "0123456789ABCDEF" could not be looked up remotely
+
+If packages are signed with new keys, which were only recently added to [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring), these keys are not locally available during update (chicken-egg-problem). The installed [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) does not contain the key, until it is updated. Pacman tries to bypass this by a lookup through a key-server, which might not be possible e.g. behind proxys or firewalls and results in the stated error. Upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) first as shown [above](#Signature_from_.22User_.3Cemail.40example.org.3E.22_is_unknown_trust.2C_installation_failed).
 
 ### 不停看到错误 "PackageName: signature from "User <email@archlinux.org>" is invalid"
 

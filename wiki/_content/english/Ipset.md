@@ -1,3 +1,8 @@
+Related articles
+
+*   [Firewalls](/index.php/Firewalls "Firewalls")
+*   [Iptables](/index.php/Iptables "Iptables")
+
 [ipset](http://ipset.netfilter.org/) is a companion application for the [iptables](/index.php/Iptables "Iptables") Linux [firewall](/index.php/Firewall "Firewall"). It allows you to setup rules to quickly and easily block a set of IP addresses, among other things.
 
 ## Contents
@@ -5,7 +10,7 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Blocking a list of network](#Blocking_a_list_of_network)
-    *   [2.2 Blocking a list of network](#Blocking_a_list_of_network_2)
+    *   [2.2 Blocking a list of IP addresses](#Blocking_a_list_of_IP_addresses)
     *   [2.3 Making ipset persistent](#Making_ipset_persistent)
     *   [2.4 Blocking With PeerGuardian and Other Blocklists](#Blocking_With_PeerGuardian_and_Other_Blocklists)
 *   [3 Other Commands](#Other_Commands)
@@ -50,7 +55,7 @@ Finally, configure [iptables](/index.php/Iptables "Iptables") to block any addre
 
 ```
 
-### Blocking a list of network
+### Blocking a list of IP addresses
 
 Start by creating a new "set" of ip addresses. This creates a new "hash" set of "ip" addresses named "myset-ip".
 
@@ -89,7 +94,7 @@ Then [enable](/index.php/Enable "Enable") `ipset.service`, which works similarly
 
 ### Blocking With PeerGuardian and Other Blocklists
 
-The [pg2ipset-git](https://aur.archlinux.org/packages/pg2ipset-git/) tool by the author of maeyanie.com, coupled with the [ipset-update.sh](https://github.com/ilikenwf/pg2ipset/blob/master/ipset-update.sh) script can be used with cron to automatically update various blocklists. Currently, by default country blocking, tor exit node blocking, and pg2 list blocking from Bluetack are implemented.
+The [pg2ipset-git](https://aur.archlinux.org/packages/pg2ipset-git/) tool by the author of Maeyanie.com, coupled with the [ipset-update.sh](https://github.com/ilikenwf/pg2ipset/blob/master/ipset-update.sh) script can be used with cron to automatically update various blocklists. Currently, by default, blocking of: country, tor exit node and Bluetrack pg2 list are implemented.
 
 ## Other Commands
 

@@ -45,7 +45,7 @@ Wayland only works on systems using [KMS](/index.php/KMS "KMS"). As Wayland is o
 
 ### Buffer API support
 
-For the GPU driver and Wayland composer to be compatible they must support the same buffer API. There are two main APIs: [GBM](https://en.wikipedia.org/wiki/Generic_Buffer_Management "wikipedia:Generic Buffer Management") and [EGLStreams](http://www.phoronix.com/scan.php?page=news_item&px=XDC2016-Device-Memory-API).
+For the GPU driver and Wayland compositor to be compatible they must support the same buffer API. There are two main APIs: [GBM](https://en.wikipedia.org/wiki/Generic_Buffer_Management "wikipedia:Generic Buffer Management") and [EGLStreams](http://www.phoronix.com/scan.php?page=news_item&px=XDC2016-Device-Memory-API).
 
 | Buffer API | GPU driver support | Wayland compositor support |
 | GBM | All except [NVIDIA](/index.php/NVIDIA "NVIDIA") | All |

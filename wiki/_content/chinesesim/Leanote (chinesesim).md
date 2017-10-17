@@ -54,6 +54,8 @@
 
 ## 获取Leanote
 
+安装 [leanote](https://aur.archlinux.org/packages/leanote/).
+
 Leanote云笔记产品包括: Leanote Web & Server(即本仓库), 桌面客户端, IOS, android. 4端全部开源!
 
 如果想试用我们的产品，欢迎在 [https://leanote.com](https://leanote.com) 上注册, Leanote团队为你提供稳定可靠的服务。 担心服务厂商如何处理你的个人数据吗？你可以下载Leanote安装在自己的服务器上, 通过Leanote客户端连接与自建服务同步数据。

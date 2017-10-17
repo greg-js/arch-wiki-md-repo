@@ -885,8 +885,6 @@ $ chromium --ignore-gpu-blacklist
 
 ```
 
-**Attenzione:** I driver Catalyst non supportano l'estensione GL_ARB_robustness, è possibile che un sito malevolo possa sfruttare questa mancanza per attuare un attacco DDOS sulla scheda grafica, per ulteriori informazioni consultare: [[3]](http://www.h-online.com/security/news/item/WebGL-as-a-security-problem-1240567.html)
-
 ### Freeze guardando video flash con flashplugin
 
 Modificare `/etc/adobe/mms.cfg` per renderlo simile a questo:

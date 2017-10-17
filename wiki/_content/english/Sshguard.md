@@ -3,7 +3,7 @@ Related articles
 *   [fail2ban](/index.php/Fail2ban "Fail2ban")
 *   [ssh](/index.php/Ssh "Ssh")
 
-**Warning:** Using an IP blacklist will stop trivial attacks but it relies on an additional daemon and successful logging (the partition containing /var can become full, especially if an attacker is pounding on the server). Additionally, if the attacker knows your IP address, they can send packets with a spoofed source header and get you locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to the problem of brute forcing without these problems.
+**Warning:** Using an IP blacklist will stop trivial attacks but it relies on an additional daemon and successful logging (the partition containing /var can become full, especially if an attacker is pounding on the server). Additionally, with the knowledge of your IP address, the attacker can send packets with a spoofed source header and get you locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to the problem of brute forcing without these problems.
 
 [sshguard](http://www.sshguard.net) is a daemon that protects [SSH](/index.php/SSH "SSH") and other services against brute-force attacks, similar to [fail2ban](/index.php/Fail2ban "Fail2ban").
 
@@ -119,7 +119,7 @@ To save the rules:
 
 ### systemd
 
-[Enable](/index.php/Enable "Enable") and start the `sshguard.service`.
+[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `sshguard.service`.
 
 ### syslog-ng
 
@@ -138,7 +138,7 @@ Configuration is done in `/etc/sshguard.conf` which is required for *sshguard* t
 
 ### Change danger level
 
-By default in the Arch-provided configuration file, offenders become permanently banned once they have reached a "danger" level of 120 (or 12 failed logins; see [terminology](http://www.sshguard.net/docs/terminology/) for more details). This behavior can be modified by prepending a danger level to the blacklist file.
+By default in the Arch-provided configuration file, offenders become permanently banned once they have reached a "danger" level of 120 (or 12 failed logins; see [attack dangerousness](https://www.sshguard.net/docs/terminology/#attack-dangerousness) for more details). This behavior can be modified by prepending a danger level to the blacklist file.
 
 ```
 BLACKLIST_FILE=200:/var/db/sshguard/blacklist.db
@@ -168,7 +168,7 @@ MaxAuthTries 1
 
 ```
 
-You will have to [restart](/index.php/Restart "Restart") the `sshd.service` unit for this change to take effect.
+You will have to [restart](/index.php/Restart "Restart") `sshd.service` for this change to take effect.
 
 ## Tips and Tricks
 

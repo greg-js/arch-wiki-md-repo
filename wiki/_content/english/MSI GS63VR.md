@@ -25,9 +25,9 @@ The GS series of MSI laptops is considered to be a thin gaming laptop. Although 
 | Atheros Wireless | Yes | Yes |  ?? |
 | [ALSA](/index.php/ALSA "ALSA") | Yes |  ?? |  ?? |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Manual |  ?? |  ?? |
-| [Webcam](/index.php/Webcam "Webcam") |  ?? |  ?? |  ?? |
-| Card Reader |  ?? | mmc warning |  ?? |
-| [Power management](/index.php/Power_management "Power management") |  ?? | No |  ?? |
+| [Webcam](/index.php/Webcam "Webcam") | Yes | Yes |  ?? |
+| Card Reader | Yes | mmc warning |  ?? |
+| [Power management](/index.php/Power_management "Power management") | Yes | No |  ?? |
 
 ## Installation
 

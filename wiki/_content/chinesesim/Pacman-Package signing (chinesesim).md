@@ -1,6 +1,11 @@
+Related articles
+
+*   [GnuPG](/index.php/GnuPG "GnuPG")
+*   [DeveloperWiki:Package signing](/index.php/DeveloperWiki:Package_signing "DeveloperWiki:Package signing")
+
 **翻译状态：** 本文是英文页面 [Pacman/Package_signing](/index.php/Pacman/Package_signing "Pacman/Package signing") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-22，点击[这里](https://wiki.archlinux.org/index.php?title=Pacman%2FPackage_signing&diff=0&oldid=445709)可以查看翻译后英文页面的改动。
 
-为了保证软件包来自开发者, Pacman 使用[信任网络](http://www.gnupg.org/gph/en/manual.html#AEN385)中的 [GnuPG 密钥](http://www.gnupg.org/)进行软件包验证。目前Archlinux拥有5个[主要签名密钥](https://www.archlinux.org/master-keys/)。 其中至少三个主密匙被用来签署官方开发者和授信用户自己的密钥，而他们将用这些密钥签署自己的包。用户在设置pacman-key时也会生成一个自己的密钥。所以信任网络也会把用户的密钥连接到五大主密钥上面。
+为了保证软件包来自开发者, Pacman 使用[信任网络](http://www.gnupg.org/gph/en/manual.html#AEN385)中的 [GnuPG 密钥](http://www.gnupg.org/)进行软件包验证。目前 Archlinux 的主要签名密钥在[这里](https://www.archlinux.org/master-keys/)。 其中至少三个主密匙被用来签署官方开发者和授信用户自己的密钥，而他们将用这些密钥签署自己的包。用户在设置pacman-key时也会生成一个自己的密钥。所以信任网络也会把用户的密钥连接到五大主密钥上面。
 
 密钥也可以用来签名其它的密钥，也就是说签名密钥的所有者能够保证被签名密钥的安全性。要信任一个软件包，需要在用户自己的 PGP 密钥和软件包签名间建立一个密钥链。在 Arch 的密钥结构中，有三种方式：
 
@@ -20,7 +25,7 @@
     *   [1.1 配置 pacman](#.E9.85.8D.E7.BD.AE_pacman)
     *   [1.2 初始化密钥环](#.E5.88.9D.E5.A7.8B.E5.8C.96.E5.AF.86.E9.92.A5.E7.8E.AF)
 *   [2 管理密钥](#.E7.AE.A1.E7.90.86.E5.AF.86.E9.92.A5)
-    *   [2.1 验证五大主密钥](#.E9.AA.8C.E8.AF.81.E4.BA.94.E5.A4.A7.E4.B8.BB.E5.AF.86.E9.92.A5)
+    *   [2.1 验证主密钥](#.E9.AA.8C.E8.AF.81.E4.B8.BB.E5.AF.86.E9.92.A5)
     *   [2.2 官方开发者密钥](#.E5.AE.98.E6.96.B9.E5.BC.80.E5.8F.91.E8.80.85.E5.AF.86.E9.92.A5)
     *   [2.3 导入非官方密钥](#.E5.AF.BC.E5.85.A5.E9.9D.9E.E5.AE.98.E6.96.B9.E5.AF.86.E9.92.A5)
     *   [2.4 用GPG调试](#.E7.94.A8GPG.E8.B0.83.E8.AF.95)
@@ -85,7 +90,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ## 管理密钥
 
-### 验证五大主密钥
+### 验证主密钥
 
 通过以下命令进行配置：
 
@@ -192,8 +197,11 @@ pacman-key 成功运行后停止 rngd 并删除软件包。
 *   不正确的系统时间。
 *   你的ISP屏蔽了用于导入 PGP keys 的端口。
 *   *pacman* 缓存中包含之前的未签名软件包
+*   未正确设置 `dirmngr`
 
 过期的 [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) 包可能会导致这个问题，你应该首先尝试 [升级系统](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.8D.87.E7.BA.A7.E8.BD.AF.E4.BB.B6.E5.8C.85 "Pacman (简体中文)") 能否解决这个问题。
+
+请确保 `/root/.gnupg/dirmngr_ldapservers.conf` 文件存在，`# dirmngr` 可以正常运行. 如果没有，创建一个空文件，并执行 `# dirmngr`。
 
 如果这样没有起作用，并且系统时间是正确的，你可以尝试切换到 MIT 提供的公钥服务器(keyserver)：编辑 `/etc/pacman.d/gnupg/gpg.conf` 将 `keyserver hkp://keys.gnupg.net` 替换为
 
@@ -212,6 +220,13 @@ keyserver hkp://keyserver.kjsl.com:80
 如果你关闭了 IPv6 ，GPG 在发现 IPv6 地址时会出错。出现这种情况是尝试使用 IPv4-only 的公钥服务器，例如：
 
  `keyserver hkp://ipv4.pool.sks-keyservers.net:11371` 
+
+如果 80 端口也关闭了，可以使用加密端口
+
+```
+keyserver hkps://hkps.pool.sks-keyservers.net:443
+
+```
 
 如果你忘记了执行 `pacman-key --populate archlinux` 在你导入公钥的时候可能会遇到一些错误。
 

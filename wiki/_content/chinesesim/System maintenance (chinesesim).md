@@ -1,4 +1,8 @@
-**翻译状态：** 本文是英文页面 [System_maintenance](/index.php/System_maintenance "System maintenance") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-28，点击[这里](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=435140)可以查看翻译后英文页面的改动。
+相关文章
+
+*   [General recommendations (简体中文)](/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General recommendations (简体中文)")
+
+**翻译状态：** 本文是英文页面 [System_maintenance](/index.php/System_maintenance "System maintenance") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-16，点击[这里](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=484864)可以查看翻译后英文页面的改动。
 
 要持续使用 Arch linux，需要进行系统日常维护，每个用户都应该及时维护系统。
 
@@ -12,10 +16,11 @@
     *   [2.2 安装的软件包](#.E5.AE.89.E8.A3.85.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
     *   [2.3 Pacman 数据库](#Pacman_.E6.95.B0.E6.8D.AE.E5.BA.93)
     *   [2.4 LUKS headers](#LUKS_headers)
+    *   [2.5 系统和用户数据](#.E7.B3.BB.E7.BB.9F.E5.92.8C.E7.94.A8.E6.88.B7.E6.95.B0.E6.8D.AE)
 *   [3 更新系统](#.E6.9B.B4.E6.96.B0.E7.B3.BB.E7.BB.9F)
-    *   [3.1 避免某些 Pacman 命令](#.E9.81.BF.E5.85.8D.E6.9F.90.E4.BA.9B_Pacman_.E5.91.BD.E4.BB.A4)
-    *   [3.2 不支持部分升级](#.E4.B8.8D.E6.94.AF.E6.8C.81.E9.83.A8.E5.88.86.E5.8D.87.E7.BA.A7)
-    *   [3.3 更新系统前检查消息](#.E6.9B.B4.E6.96.B0.E7.B3.BB.E7.BB.9F.E5.89.8D.E6.A3.80.E6.9F.A5.E6.B6.88.E6.81.AF)
+    *   [3.1 升级前的准备](#.E5.8D.87.E7.BA.A7.E5.89.8D.E7.9A.84.E5.87.86.E5.A4.87)
+    *   [3.2 避免某些 Pacman 命令](#.E9.81.BF.E5.85.8D.E6.9F.90.E4.BA.9B_Pacman_.E5.91.BD.E4.BB.A4)
+    *   [3.3 不支持部分升级](#.E4.B8.8D.E6.94.AF.E6.8C.81.E9.83.A8.E5.88.86.E5.8D.87.E7.BA.A7)
     *   [3.4 注意更新时的提醒](#.E6.B3.A8.E6.84.8F.E6.9B.B4.E6.96.B0.E6.97.B6.E7.9A.84.E6.8F.90.E9.86.92)
     *   [3.5 处理配置文件更新](#.E5.A4.84.E7.90.86.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6.E6.9B.B4.E6.96.B0)
     *   [3.6 回退有问题的更新](#.E5.9B.9E.E9.80.80.E6.9C.89.E9.97.AE.E9.A2.98.E7.9A.84.E6.9B.B4.E6.96.B0)
@@ -59,7 +64,7 @@ Xorg 的相关错误可以查看 [Xorg#Troubleshooting](/index.php/Xorg#Troubles
 
 ## 备份
 
-把重要数据的备份作为日常维护任务。这些数据包括配置文件，安装的软件包和重要的目录例如 `/etc`, `/home`, `/var` 和 服务器使用的 `/srv`.
+把重要数据的备份作为日常维护任务。
 
 其它备份方案可以参考 [同步和备份程序页面](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs")，[Category:System recovery](/index.php/Category:System_recovery "Category:System recovery") 包含其它相关文章。
 
@@ -67,7 +72,7 @@ Xorg 的相关错误可以查看 [Xorg#Troubleshooting](/index.php/Xorg#Troubles
 
 ### 配置文件
 
-在编辑任何配置文件前，先保留备份。这样出问题是可以直接还原。[vim](/index.php/Vim "Vim") 和 [emacs](/index.php/Emacs "Emacs") 编辑器会自动备份，[etckeeper](/index.php/Etckeeper "Etckeeper") 可以将 `/etc` 纳入版本控制系统。
+在编辑任何配置文件前，先保留备份。这样出问题是可以直接还原。[vim](/index.php/Vim "Vim") 和 [emacs](/index.php/Emacs "Emacs") 编辑器会自动备份，[etckeeper](/index.php/Etckeeper "Etckeeper") 可以将 `/etc` 纳入版本控制系统。详情请参考 [dotfiles#Version control](/index.php/Dotfiles#Version_control "Dotfiles")。
 
 ### 安装的软件包
 
@@ -83,13 +88,25 @@ Xorg 的相关错误可以查看 [Xorg#Troubleshooting](/index.php/Xorg#Troubles
 
 如果 LUKS 使用密码加密，建议定期检查和同步 LUKS 加密分区的头部数据。参考 [Dm-crypt/Device encryption#Backup and restore](/index.php/Dm-crypt/Device_encryption#Backup_and_restore "Dm-crypt/Device encryption").
 
+### 系统和用户数据
+
+参考 [System backup](/index.php/System_backup "System backup")。
+
 ## 更新系统
 
-建议日常进行系统完整更新，这样既能享受到最新的问题修复和安全更新，还可以避免一次更新太多的软件包，手动处理是分批进行的。参考[Pacman#Upgrading packages](/index.php/Pacman#Upgrading_packages "Pacman").
+建议日常进行[系统完整更新](/index.php/Pacman#Upgrading_packages "Pacman")，这样既能享受到最新的问题修复和安全更新，还可以避免一次更新太多的软件包，手动处理是分批进行的。从社区寻求帮助时，其他人会假定系统进行了完整更新。
 
 手头上保留 Arch 安装盘或其它 Linux "Live" 环境，这样有问题是可以进行修正。如果在生产环境使用 Arch，无法接受任何的停机，那么在更新前请在非关键系统上测试新配置文件和软件包，没有问题的时候再部署到生产环境。
 
 如果软件包来自 [AUR](/index.php/AUR "AUR"), 请注意更新完整.
+
+### 升级前的准备
+
+建议升级前访问 [Arch Linux 主页](https://www.archlinux.org/)查看最新消息（或订阅 [RSS](https://www.archlinux.org/feeds/news/)，或订阅 [arch-announce 邮件列表](https://mailman.archlinux.org/mailman/listinfo/arch-announce/)，或关注 [@archlinux](https://twitter.com/archlinux)。如果升级需要不寻常的用户操作介入时（无法简单地按照 *pacman* 的输出信息处理），以上信息总会给出合适的方法。
+
+在更新[kernel](/index.php/Kernel "Kernel"), [xorg](/index.php/Xorg "Xorg"), [systemd](/index.php/Systemd "Systemd") 和 [glibc](https://www.archlinux.org/packages/?name=glibc)等重要软件之前, 查看[论坛](https://bbs.archlinux.org/)看是否有被报告的出错等问题.
+
+有时候系统更新会出现问题并需要进行一些手动调整，请不要在重要任务前进行系统更新。
 
 ### 避免某些 Pacman 命令
 
@@ -109,11 +126,7 @@ Arch Linux 是滚动发行版，新[库](https://en.wikipedia.org/wiki/Library_(
 
 如果进行了部分升级，二进制包因为找不到链接库而损坏，**不要通过简单的符号链接进行修正**。库升级 [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") 是因为它们**不再向前兼容**。只要 *pacman* 可以运行，使用更新的源进行 `pacman -Syu` 就能修复这些问题。
 
-pacman 软件包提供的 *checkupdates* 脚本可以检查更新但不进行实际安装，参考 [BBS##1563725](https://bbs.archlinux.org/viewtopic.php?pid=1563725#p1563725).
-
-### 更新系统前检查消息
-
-在升级Arch前, 一定要阅读[Arch News](https://www.archlinux.org/news/)来确认是否有重要的软件更改，最新的软件包是否有配置文件更改. 在更新[kernel](/index.php/Kernel "Kernel"), [xorg](/index.php/Xorg "Xorg"), [systemd](/index.php/Systemd "Systemd") 和 [glibc](https://www.archlinux.org/packages/?name=glibc)等重要软件之前, 查看[论坛](https://bbs.archlinux.org/)看是否有被报告的出错等问题.
+pacman 软件包提供的 *checkupdates* 脚本可以检查更新但不进行实际安装。
 
 ### 注意更新时的提醒
 
@@ -127,13 +140,21 @@ pacman 可能会创建 `.pacnew` 和 `.pacsave` 文件，这是 pacman 会通知
 
 ### 回退有问题的更新
 
-如果软件包可能导致问题，软件包维护者会在更新时给出提示信息。在更新后遇到问题，请先确认 `/var/log/pacman.log` 中有没有提醒信息.然后看看 [https://www.archlinux.org/](https://www.archlinux.org/) 中有没有新闻，然后再到论坛上查找类似的问题，如果都没有找到，可用到 [论坛](https://bbs.archlinux.org), [IRC](/index.php/IRC "IRC") 中发帖求助。
+如果软件包可能导致问题，软件包维护者会在更新时给出提示信息。在更新后遇到问题，请先确认 `/var/log/pacman.log` 中有没有提醒信息.
+
+**Tip:** 可以使用 [wat-git](https://aur.archlinux.org/packages/wat-git/) 等工具搜索 pacman 日志。
+
+然后看看 [https://www.archlinux.org/](https://www.archlinux.org/) 中有没有新闻，然后再到论坛上查找类似的问题，如果都没有找到，可用到 [论坛](https://bbs.archlinux.org), [IRC](/index.php/IRC "IRC") 中发帖求助。
 
 [降级](/index.php/Downgrading_packages "Downgrading packages") 是最后的解决方案。
 
 ### 使用包管理器安装软件
 
-软件包管理 [pacman](/index.php/Pacman "Pacman") 可以比你更好的记录安装的文件。如果你手动地安装软件，你会过了一会就不知道你到底安装了什么，到底安装在哪里，安装导致的那些冲突，是否安装在了错误的地方，等等问题. 避免安装自编译的软件包,可以自己[创建软件包](/index.php/Creating_packages "Creating packages")。
+软件包管理 [pacman](/index.php/Pacman "Pacman") 可以比你更好的记录安装的文件。如果你手动地安装软件，你会过了一会就不知道你到底安装了什么，到底安装在哪里，安装导致的那些冲突，是否安装在了错误的地方，等等问题.
+
+*   使用 [Pacman#Installing packages](/index.php/Pacman#Installing_packages "Pacman") 中介绍的方法安装官方软件包。
+*   如果找不到需要的软件包，看看 [AUR](/index.php/AUR "AUR") 中有没有提供软件包打包脚本。
+*   如果都没有找到，请学习[创建软件包](/index.php/Creating_packages "Creating packages")。
 
 要清理自己安装的文件，可以[这里](/index.php/Pacman/Tips_and_tricks#Identify_files_not_owned_by_any_package "Pacman/Tips and tricks").
 
@@ -187,7 +208,7 @@ pacman 可能会创建 `.pacnew` 和 `.pacsave` 文件，这是 pacman 会通知
 下面命令可以列出所有有问题的软链接，可以检查并删除列表中的文件。
 
 ```
-# find . -type l -! -exec test -e {} \; -print
+  # find -xtype l -print
 
 ```
 

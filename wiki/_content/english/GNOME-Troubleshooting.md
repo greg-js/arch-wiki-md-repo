@@ -29,6 +29,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [25 No H264 Video in Gnome Video Player (Totem)](#No_H264_Video_in_Gnome_Video_Player_.28Totem.29)
 *   [26 No suspend on LID closure](#No_suspend_on_LID_closure)
 *   [27 gnome-shell / gnome-session crashes on session startup](#gnome-shell_.2F_gnome-session_crashes_on_session_startup)
+*   [28 Low OpenGL performance and stuttering on proprietary NVIDIA driver](#Low_OpenGL_performance_and_stuttering_on_proprietary_NVIDIA_driver)
 
 ## Shell freezes
 
@@ -340,3 +341,7 @@ Sometimes `gnome-session` crashes immediately after login. This might be more vi
 $ gsettings set org.gnome.SessionManager auto-save-session false
 
 ```
+
+## Low OpenGL performance and stuttering on proprietary NVIDIA driver
+
+[This](https://bugzilla.gnome.org/show_bug.cgi?id=781835) bug is much likely the cause of it. You should revert `383ba566bd7c2a76d0856015a66e47caedef06b6` commit in [mutter](https://www.archlinux.org/packages/?name=mutter). Use [ABS](/index.php/ABS "ABS") for this and add `git revert -n 383ba566bd7c2a76d0856015a66e47caedef06b6` to `prepare()` function. Or you can simply install [mutter-781835-workaround](https://aur.archlinux.org/packages/mutter-781835-workaround/)

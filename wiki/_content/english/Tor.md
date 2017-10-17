@@ -55,7 +55,7 @@ Related articles
                 *   [12.3.2.5.1 Uncensored DNS](#Uncensored_DNS)
 *   [13 TorDNS](#TorDNS)
     *   [13.1 Using TorDNS for all DNS queries](#Using_TorDNS_for_all_DNS_queries)
-*   [14 Torify](#Torify)
+*   [14 Torsocks](#Torsocks)
 *   [15 Transparent Torification](#Transparent_Torification)
 *   [16 Troubleshooting](#Troubleshooting_2)
     *   [16.1 Problem with user value](#Problem_with_user_value)
@@ -301,7 +301,7 @@ Optionally you can enable the quick switch under the *General* tab to be able to
 You can simply run:
 
 ```
-$ torify luakit
+$ torsocks luakit
 
 ```
 
@@ -733,30 +733,17 @@ nohook resolv.conf
 
 If you already have an *nohook* line, just add **resolv.conf** separated with a comma.
 
-## Torify
+## Torsocks
 
-**torify** will allow you use an application via the Tor network without the need to make configuration changes to the application involved. From the man page:
+**torsocks** will allow you use an application via the Tor network without the need to make configuration changes to the application involved. From the man page:
 
-*torify is a simple wrapper that attempts to find the best underlying Tor wrapper available on a system. It calls torsocks with a tor specific configuration file.*
+*torsocks is a wrapper between the torsocks library and the application in order to make every Internet communication go through the Tor network.*
 
 Usage example:
 
 ```
-$ torify elinks checkip.dyndns.org
-$ torify wget -qO- https://check.torproject.org/ | grep -i congratulations
-
-```
-
-Torify *will not*, however, perform DNS lookups through the Tor network. A workaround is to use it in conjunction with `tor-resolve` (described above). In this case, the procedure for the first of the above examples would look like this:
-
- `$ tor-resolve checkip.dyndns.org` 
-```
-208.78.69.70
-
-```
-
-```
-$ torify elinks 208.78.69.70
+$ torsocks elinks checkip.dyndns.org
+$ torsocks wget -qO- https://check.torproject.org/ | grep -i congratulations
 
 ```
 

@@ -36,7 +36,7 @@ If you want to use the cover art plugin, but are unable to do so, you need to in
 
 After you do that, restart Rhythmbox.
 
-This requirement also affects the Song Lyrics and Magnitune plugins, as well as serveral others.
+This requirement also affects the Song Lyrics and Magnitune plugins, as well as several others.
 
 ### What to do when the little red icon shows when you try to play radio stations
 

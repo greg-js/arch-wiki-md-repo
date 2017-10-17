@@ -1,4 +1,4 @@
-[qutebrowser](https://github.com/The-Compiler/qutebrowser) is a keyboard-focused web browser based on Python and PyQt5.
+[qutebrowser](https://github.com/qutebrowser/qutebrowser) is a keyboard-focused web browser based on Python and PyQt5.
 
 ## Contents
 
@@ -8,11 +8,12 @@
     *   [2.2 Keybindings](#Keybindings)
     *   [2.3 Video playback](#Video_playback)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Minimize fingerprinting](#Minimize_fingerprinting)
-        *   [3.1.1 Set a common user-agent](#Set_a_common_user-agent)
-        *   [3.1.2 Set a common HTTP_ACCEPT header](#Set_a_common_HTTP_ACCEPT_header)
-        *   [3.1.3 Disable reading from canvas](#Disable_reading_from_canvas)
-    *   [3.2 dwb-like session handling](#dwb-like_session_handling)
+    *   [3.1 Turn on spell checking](#Turn_on_spell_checking)
+    *   [3.2 Minimize fingerprinting](#Minimize_fingerprinting)
+        *   [3.2.1 Set a common user-agent](#Set_a_common_user-agent)
+        *   [3.2.2 Set a common HTTP_ACCEPT header](#Set_a_common_HTTP_ACCEPT_header)
+        *   [3.2.3 Disable reading from canvas](#Disable_reading_from_canvas)
+    *   [3.3 dwb-like session handling](#dwb-like_session_handling)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -23,7 +24,7 @@
 
 Use `:` to access the command prompt. You can use `Tab` to auto-complete.
 
-On first usage of qutebrowser, a Quickstart page appears. It is later accessible via `:help`. See the [cheatsheet](http://qutebrowser.org/img/cheatsheet-big.png) for keyboard shortcuts.
+On first usage of qutebrowser, a Quickstart page appears. It is later accessible via `:help`. See the [cheatsheet](https://qutebrowser.org/img/cheatsheet-big.png) for keyboard shortcuts.
 
 ### User configuration
 
@@ -34,7 +35,7 @@ aw = https://wiki.archlinux.org/?search={}
 
 ```
 
-Now, in qutebrowser you can search the arch wiki for an article about qutebrowser via `:open aw qutebrowser` which will bring you to this page. As per the standard configuration the key mapping `o` will subsitute `:open`, so typing `o aw *your_search_term*` will henceforth allow you to quickly search the arch wiki. Notice that the arguments required to perform a search vary across search engines, for example, to set up Google use:
+Now, in qutebrowser you can search the Arch Linux wiki for an article about qutebrowser via `:open aw qutebrowser` which will bring you to this page. As per the standard configuration the key mapping `o` will subsitute `:open`, so typing `o aw *your_search_term*` will henceforth allow you to quickly search the arch wiki. Notice that the arguments required to perform a search vary across search engines, for example, to set up Google use:
 
 ```
 g = https://www.google.com/search?hl=en&q={}
@@ -59,6 +60,22 @@ You can edit the keybindings directly from the browser with the command `:bind *
 See [Browser plugins#Multimedia playback](/index.php/Browser_plugins#Multimedia_playback "Browser plugins").
 
 ## Tips and tricks
+
+### Turn on spell checking
+
+First, download the dictionaries you want using [this script](https://github.com/qutebrowser/qutebrowser/blob/master/scripts/install_dict.py). For example, to install the English dictionary do:
+
+```
+# python install_dict.py en-US
+
+```
+
+Then set the following in qutebrowser:
+
+```
+:set spellcheck.languages ["en-US"]
+
+```
 
 ### Minimize fingerprinting
 
@@ -110,6 +127,6 @@ To have qutebrowser handle sessions more like in [dwb](/index.php/Dwb "Dwb") wit
 ## See also
 
 *   [Github repository](https://github.com/qutebrowser/qutebrowser)
-*   [Homepage](http://qutebrowser.org/)
+*   [Homepage](https://qutebrowser.org/)
 *   [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=191076)
 *   [New config example](https://bitbucket.org/jasonwryan/shiv/src/tip/.config/qutebrowser/config.py)

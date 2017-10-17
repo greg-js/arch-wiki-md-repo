@@ -1,3 +1,9 @@
+Related articles
+
+*   [IBus](/index.php/IBus "IBus")
+*   [SCIM](/index.php/SCIM "SCIM")
+*   [UIM](/index.php/UIM "UIM")
+
 [Fcitx](https://fcitx-im.org/wiki/Fcitx) (Flexible Input Method Framework) is a lightweight [input method framework](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") aimed at providing environment independent language support for Linux. It supports a lot of different languages and also provides many useful non-CJK features.
 
 ## Contents
@@ -15,24 +21,23 @@
     *   [2.3 Xim](#Xim)
 *   [3 Configuration](#Configuration)
     *   [3.1 Configuration tools](#Configuration_tools)
-    *   [3.2 Change default UI](#Change_default_UI)
-        *   [3.2.1 Gnome-Shell](#Gnome-Shell)
-        *   [3.2.2 KDE](#KDE)
-        *   [3.2.3 Extend pinyin dictionary](#Extend_pinyin_dictionary)
-        *   [3.2.4 Skins](#Skins)
+    *   [3.2 Input methods configuration](#Input_methods_configuration)
+    *   [3.3 Change default UI](#Change_default_UI)
+    *   [3.4 Extend pinyin dictionary](#Extend_pinyin_dictionary)
+    *   [3.5 Skins](#Skins)
+    *   [3.6 Cloud Pinyin configuration](#Cloud_Pinyin_configuration)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Clipboard Access](#Clipboard_Access)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Diagnose the problem](#Diagnose_the_problem)
     *   [5.2 Emacs](#Emacs)
         *   [5.2.1 Emacs Daemon](#Emacs_Daemon)
-    *   [5.3 Input method module](#Input_method_module_2)
+    *   [5.3 Firefox popup menu not work](#Firefox_popup_menu_not_work)
     *   [5.4 Ctrl+Space fail to work in GTK programs](#Ctrl.2BSpace_fail_to_work_in_GTK_programs)
     *   [5.5 Buildin Chinese Pinyin Default NOT ACTIVE](#Buildin_Chinese_Pinyin_Default_NOT_ACTIVE)
     *   [5.6 fcitx and KDE](#fcitx_and_KDE)
     *   [5.7 Input method switched to English unintentionally](#Input_method_switched_to_English_unintentionally)
     *   [5.8 xmodmap settings being overwritten](#xmodmap_settings_being_overwritten)
-    *   [5.9 Gnome on Wayland with Fcitx](#Gnome_on_Wayland_with_Fcitx)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -52,7 +57,7 @@ Depending on the language you wish to type, other input method engines are avail
 *   [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime), based on schemas from the [Rime IME](/index.php/Rime_IME "Rime IME") project.
 *   [fcitx-googlepinyin](https://www.archlinux.org/packages/?name=fcitx-googlepinyin), the Google pinyin IME for Android.
 *   [fcitx-sogoupinyin](https://aur.archlinux.org/packages/fcitx-sogoupinyin/), Sogou input method for linux—Supports, Jianpin, fuzzy sound, cloud input, English input, mixed skin.[Official website](http://pinyin.sogou.com/linux/)
-*   [fcitx-cloudpinyin](https://www.archlinux.org/packages/?name=fcitx-cloudpinyin) uses internet sources to provide input candidates. The selected cloud result will be added to local dictionary.
+*   [fcitx-cloudpinyin](https://www.archlinux.org/packages/?name=fcitx-cloudpinyin) uses internet sources to provide input candidates. The selected cloud result will be added to local dictionary. It support all fcitx pinyin input method except [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime).
 *   [fcitx-chewing](https://www.archlinux.org/packages/?name=fcitx-chewing) is a popular Zhuyin input engine for Traditional Chinese based on [libchewing](https://www.archlinux.org/packages/?name=libchewing).
 *   [fcitx-table-extra](https://www.archlinux.org/packages/?name=fcitx-table-extra) adds [Cangjie](https://en.wikipedia.org/wiki/Cangjie_input_method "wikipedia:Cangjie input method"), [Zhengma](https://en.wikipedia.org/wiki/Zhengma_method "wikipedia:Zhengma method"), [Boshiamy](https://en.wikipedia.org/wiki/Boshiamy_method "wikipedia:Boshiamy method") support.
 
@@ -71,7 +76,7 @@ Depending on the language you wish to type, other input method engines are avail
 
 ### Input method module
 
-To obtain a better experience in Gtk+ and Qt programs, install the [fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2), [fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3), [fcitx-qt4](https://www.archlinux.org/packages/?name=fcitx-qt4) and [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5) input method modules as your need, or the [fcitx-im](https://www.archlinux.org/groups/x86_64/fcitx-im/) group to install all of them.
+To obtain a better experience in Gtk+ and Qt programs, install the [fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2), [fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3), [fcitx-qt4](https://www.archlinux.org/packages/?name=fcitx-qt4) and [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5) input method modules as your need, or the [fcitx-im](https://www.archlinux.org/groups/x86_64/fcitx-im/) group to install all of them. Without those modules, the input method may work on most applications but you may experience input method hang up, preview window screen location error or no preview error.
 
 Applications below do not use Gtk+/Qt input module:
 
@@ -94,23 +99,11 @@ Others packages (including git version) are also available in the [AUR](/index.p
 
 ### Desktop Environment
 
-If you are using any XDG compatible desktop environment such as [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE"), after you relogin, the autostart should work out of box. If not, open your favorite terminal, type:
-
-```
-$ fcitx
-
-```
-
-To see if fcitx is working correctly, open an application such as leafpad and press CTRL+Space (the default shortcut for switching input method) to invoke FCITX and input some words.
+If you are using any XDG compatible desktop environment such as [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE"), after you relogin, the autostart should work out of box. If not, open your favorite terminal, type `fcitx`. To see if fcitx is working correctly, open an application such as leafpad and press CTRL+Space (the default shortcut for switching input method) to invoke FCITX and input some words.
 
 If Fcitx failed to start with your desktop automatically or if you want to change the parameters to start fcitx, please use tools provided by your desktop environment to configure xdg auto start or edit the `fcitx-autostart.desktop` file in your `~/.config/autostart/` directory (copy it from `/etc/xdg/autostart/` if it doesn't exist yet).
 
-If your desktop environment does not support xdg auto start, please add the following command to your startup script (after the environment variables are set up properly).
-
-```
-$ fcitx
-
-```
+If your desktop environment does not support xdg auto start, please add `fcitx` to your startup script (after the environment variables are set up properly).
 
 When other input methods with xim support is also running, Fcitx may fail to start due to xim error. Please make sure no other input method is running before you start Fcitx.
 
@@ -118,7 +111,8 @@ When other input methods with xim support is also running, Fcitx may fail to sta
 
 Add the following lines to your desktop start up script files to register the input method modules and support xim programs.
 
-*   Use `.xprofile` if you are using KDM, GDM, LightDM or SDDM.
+*   Use `.xprofile` if you are using GDM, LightDM or SDDM with Xorg.
+*   Use `/etc/environment` for Wayland, it will not read environment variables stored in `~/.xprofile`
 *   Use `.xinitrc` if you are using startx or Slim.
 
 ```
@@ -154,28 +148,26 @@ Optionally, you can use xim in your GTK+ and/or Qt programs without installing t
 
 Fcitx provides GUI configure tools. You can install either [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx)(KDE), [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) (based on gtk3). Run fcitx-config-gtk3 after [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) is installed. Unset *Only Show Current Language* if you want to enable a input method of a different language.
 
-Note that Fcitx does not supports manual configuration while its GUI is active.
+Stop fcitx before manully change configuration, or the change may be lost.
 
 In order to enable spell checking, press ctrl + alt + h when fcitx is on a input method provides by fcitx-keyboard. Then that's it, you can type long word, to see whether it works.
+
+### Input methods configuration
+
+You can add/remove input methods in GUI tools. Set first item to Keyborad layout (e.g. Keyboard - English) if you want to enable/disable other input methods quickly.
 
 ### Change default UI
 
 Fcitx support kimpanel protocol to provide bettter desktop intergation.
 
-#### Gnome-Shell
+*   Gnome-Shell: You can install kimpanel from extensions.gnome.org or [gnome-shell-extension-kimpanel-git](https://aur.archlinux.org/packages/gnome-shell-extension-kimpanel-git/), which provides a similar user experience as ibus-gjs.
+*   KDE: [kimtoy](https://www.archlinux.org/packages/?name=kimtoy) could use skin from Sogou and fcitx.
 
-You can install kimpanel from extensions.gnome.org or [gnome-shell-extension-kimpanel-git](https://aur.archlinux.org/packages/gnome-shell-extension-kimpanel-git/) package in [AUR](/index.php/AUR "AUR"), which provides a similar user experience as ibus-gjs.
-
-#### KDE
-
-*   [kdeplasma-addons-applets-kimpanel](https://www.archlinux.org/packages/?name=kdeplasma-addons-applets-kimpanel) - a plasmoids providing native feeling under kde. Simply add kimpanel to plasma and fcitx will automatically switch to it without extra configuration.
-*   [kimtoy](https://www.archlinux.org/packages/?name=kimtoy) could use skin from Sogou and fcitx.
-
-#### Extend pinyin dictionary
+### Extend pinyin dictionary
 
 Pinyin dictionary is located at `~/.config/fcitx/pinyin`. File `pybase.mb` is for single characters and file `pyphrase.mb` defines pinyin phrases. To extend them, put your file into `/usr/share/fcitx/pinyin` and restart fcitx.
 
-#### Skins
+### Skins
 
 You can download skins and extract them to one of the following directories, you can create the directory if it doesn't exist:
 
@@ -184,6 +176,16 @@ You can download skins and extract them to one of the following directories, you
 ~/.config/fcitx/skin    #User settings
 
 ```
+
+### Cloud Pinyin configuration
+
+After install [fcitx-cloudpinyin](https://www.archlinux.org/packages/?name=fcitx-cloudpinyin) input method, restart fcitx. If you could not find it in configuration GUI, enable advanced setting. The cloud query result will be added to current input method dictionary automatically.
+
+If your network could not access Google, change Cloud Pinyin source to Baidu.
+
+The query result from cloud will list as secondary candicate by default and it is configuable. If the result already exit, only one item is shown.
+
+**Note:** Set query result as first candicate is not recommend because the dictionary order will be changed if query return empty result。
 
 ## Tips and tricks
 
@@ -222,11 +224,9 @@ Environment="LC_CTYPE=zh_CN.UTF-8" "XMODIFIERS=@im=fcitx"
 
 (XMODIFIERS may need to be set explicitly here as systemd doesn't load .xprofile. Check the `initial-environment` variable in emacs to verify both variables are set correctly.)
 
-### Input method module
+### Firefox popup menu not work
 
-**Warning:** You may still be able to use input method in most programs without the input method module, however, you may have unsolvable weird problems if you do so.
-
-**Warning:** for firefox above version 13, the popup menu may fail to work due to xim, please make sure that fcitx-gtk2 along with a latest version fcitx are installed.
+For firefox above version 13, the popup menu may fail to work due to xim, please make sure that fcitx-gtk2 along with a latest version fcitx are installed.
 
 ### Ctrl+Space fail to work in GTK programs
 
@@ -286,19 +286,6 @@ To fix this issue, open the fcitx GUI configuration tool (provided by [fcitx-con
 Fcitx controls keyboard layout, so your xmodmap settings will be overwritten. Since 4.2.7, Fcitx will try to load ~/.Xmodmap if it exists.
 
 For more details on how you can save your xmodmap changes see [FAQ](http://fcitx-im.org/wiki/FAQ#xmodmap_settings_being_overwritten)
-
-### Gnome on Wayland with Fcitx
-
-Since Wayland can not read the environment variables stored in `~/.xprofile`, you need to add them manually in `/etc/environment`.
-
-```
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-
-```
-
-Or use "Gnome on Xorg" from the display manager's session menu.
 
 ## See also
 

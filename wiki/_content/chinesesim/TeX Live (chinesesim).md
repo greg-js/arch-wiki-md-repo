@@ -1,3 +1,10 @@
+Related articles
+
+*   [TeX Live FAQ](/index.php/TeX_Live_FAQ "TeX Live FAQ")
+*   [TeX Live and CJK](/index.php/TeX_Live_and_CJK "TeX Live and CJK")
+*   [Ooolatex](/index.php/Ooolatex "Ooolatex")
+*   [List of applications/Documents#Scientific_documents](/index.php/List_of_applications/Documents#Scientific_documents "List of applications/Documents")
+
 **翻译状态：** 本文是英文页面 [TeXLive](/index.php/TeXLive "TeXLive") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-07，点击[这里](https://wiki.archlinux.org/index.php?title=TeXLive&diff=0&oldid=478813)可以查看翻译后英文页面的改动。
 
 [TeX Live](https://www.tug.org/texlive/)是"安装和运行[TeX](/index.php/Category:TeX "Category:TeX")文档制作系统的简单方式。它提供了一个全面的Tex系统，提供的二进制文件适用于大多数Unix风格操作系统(包括GNU/Linux)的二进制文件，当然也有Windows。它包含了全部主要的Tex相关的属于自由软件的程序，宏包，字体，还有对世界上很多语种的支持。"

@@ -201,6 +201,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [i-Tec USB-C Dual Display MST Dock](https://www.i-tec-europe.eu/?lng=en&t=3&v=443) | HDMI, DP (4K@30Hz Single Monitor, 1920x1200@60Hz Dual Monitor), Gbit Ethernet, 3xUSB-A, USB-C, Sound, Charging @ 60W | Working |
 | [Juiced Systems BizHUB USB-C Multiport Gigabit HDMI Hub](https://www.amazon.com/Juiced-BizHUB-Multiport-Ethernet-Delivery/dp/B01J391C3W) | 4K@30Hz HDMI, 3x USB 3.0, Gigabit Ethernet, USB-C Power, SD, Micro-SD | Working |
 | [Kanex USB-C to HDMI 4K Adapter](https://www.amazon.com/Kanex-USB-C-Adapter-Inches-White/dp/B00VBNSY0S) | HDMI | Working |
+| [Omars Type C Hub OMADTTCSL4PAL-UK](https://www.amazon.de/gp/product/B073WVKSSS/) | Gigabit Ethernet, HDMI (4K@30 Hz), VGA, 2x USB 3.0 | Working |
 | [PCT UHC304](http://www.pct-max.com.tw/cht/products.php?index=289) | HDMI (4K@30Hz, 2K@60Hz), Gigabit Ethernet, USB-A, USB-C | Working |
 | [QacQoc GN30H USB-C HUB Aluminum Multi-Port TYPE C HUB Adapter with 4K HDMI](https://smile.amazon.com/QacQoc-Aluminum-Multi-Port-Charging-Ethernet/dp/B01MU1FFMP) | 4K@30Hz HDMI, 3x USB 3.0, Gigabit Ethernet, USB-C Power, SD, Micro-SD | Working |
 | [StarTech CDP2HD - USB-C to HDMI Adapter](https://www.startech.com/nl/en/AV/usb-c-video-adapters/usb-c-hdmi-adapter~CDP2HD) | HDMI | Working |

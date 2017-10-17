@@ -1,3 +1,7 @@
+相關文章
+
+*   [Arch Linux Localization (正體中文)](/index.php/Arch_Linux_Localization_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Linux Localization (正體中文)")
+
 ## Contents
 
 *   [1 安裝](#.E5.AE.89.E8.A3.9D)

@@ -24,6 +24,7 @@ Related articles
     *   [6.1 General](#General)
     *   [6.2 PulseAudio](#PulseAudio)
     *   [6.3 Hidepid](#Hidepid)
+    *   [6.4 Makepkg](#Makepkg)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -235,6 +236,21 @@ If Firejail causes PulseAudio to misbehave, there is a [known issue.](https://fi
 ### Hidepid
 
 if you have hidepid installed, Firemon can only be run as root. This, among other things, will cause problems with the Firetools GUI incorrectly reporting "Capabilities", "Protocols" and the status of "Seccomp". See [this issue](https://github.com/netblue30/firejail/issues/1564).
+
+### Makepkg
+
+With respect to this [Arch Forum](https://bbs.archlinux.org/viewtopic.php?id=230913) post. During the final stages of a pkgbuild, (when compressing the package,) symlinks to `gzip` and `xz` interfere with `makepkg’s` ability to preload the `libfakeroot.so` The most elegant way of solving the problem is to temporarily exclude `/usr/local/bin` from the `makepkg $PATH` by appending the following to `/etc/makepkg.conf`
+
+```
+# Temporarily alter the makepkg PATH variable to exclude /usr/local/bin
+PATH=":$PATH"
+PATH="${PATH/:\/usr\/local\/bin:/:}"
+PATH="${PATH/:\/usr\/local\/sbin:/:}"
+export PATH="${PATH#:}"
+
+```
+
+The linked post offers a fully tested `makepkg.profile` and using the above solution, `makepkg` can itself be symlinked to use firejail by default.
 
 ## See also
 

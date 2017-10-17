@@ -4,15 +4,17 @@ Related articles
 *   [SCIM](/index.php/SCIM "SCIM")
 *   [UIM](/index.php/UIM "UIM")
 
-[Fcitx](http://code.google.com/p/fcitx/) (Flexible Input Method Framework) ──即小企鹅输入法，它是一个以 GPL 方式发布的[输入法](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method")平台(即原来的 G 五笔)，包括五笔、拼音(全拼和双拼)、二笔、区位等输入模块，支持简入繁出，是在 Linux 操作系统中常用的中文输入法。它的优点是，短小精悍、跟程序的兼容性比较好。
+**翻译状态：** 本文是英文页面 [Fcitx](/index.php/Fcitx "Fcitx") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-16，点击[这里](https://wiki.archlinux.org/index.php?title=Fcitx&diff=0&oldid=493369)可以查看翻译后英文页面的改动。
+
+[Fcitx](https://fcitx-im.org/wiki/Fcitx) (Flexible Input Method Framework) ──即小企鹅输入法，它是一个以 GPL 方式发布的[输入法](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method")平台,可以通过安装引擎支持多种输入法，支持简入繁出，是在 Linux 操作系统中常用的中文输入法。它的优点是，短小精悍、跟程序的兼容性比较好。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 输入法](#.E8.BE.93.E5.85.A5.E6.B3.95)
-        *   [1.1.1 第三方拼音输入法](#.E7.AC.AC.E4.B8.89.E6.96.B9.E6.8B.BC.E9.9F.B3.E8.BE.93.E5.85.A5.E6.B3.95)
-        *   [1.1.2 云拼音](#.E4.BA.91.E6.8B.BC.E9.9F.B3)
-        *   [1.1.3 异国语言输入引擎](#.E5.BC.82.E5.9B.BD.E8.AF.AD.E8.A8.80.E8.BE.93.E5.85.A5.E5.BC.95.E6.93.8E)
+    *   [1.1 输入法引擎](#.E8.BE.93.E5.85.A5.E6.B3.95.E5.BC.95.E6.93.8E)
+        *   [1.1.1 中文](#.E4.B8.AD.E6.96.87)
+        *   [1.1.2 Japanese](#Japanese)
+        *   [1.1.3 其它语言](#.E5.85.B6.E5.AE.83.E8.AF.AD.E8.A8.80)
     *   [1.2 输入法模块](#.E8.BE.93.E5.85.A5.E6.B3.95.E6.A8.A1.E5.9D.97)
     *   [1.3 其它](#.E5.85.B6.E5.AE.83)
 *   [2 使用](#.E4.BD.BF.E7.94.A8)
@@ -22,11 +24,10 @@ Related articles
 *   [3 配置](#.E9.85.8D.E7.BD.AE)
     *   [3.1 配置工具](#.E9.85.8D.E7.BD.AE.E5.B7.A5.E5.85.B7)
     *   [3.2 替换自带的经典界面](#.E6.9B.BF.E6.8D.A2.E8.87.AA.E5.B8.A6.E7.9A.84.E7.BB.8F.E5.85.B8.E7.95.8C.E9.9D.A2)
-        *   [3.2.1 Gnome-Shell](#Gnome-Shell)
-        *   [3.2.2 KDE](#KDE)
-    *   [3.3 输入法](#.E8.BE.93.E5.85.A5.E6.B3.95_2)
-        *   [3.3.1 扩充内置拼音词库](#.E6.89.A9.E5.85.85.E5.86.85.E7.BD.AE.E6.8B.BC.E9.9F.B3.E8.AF.8D.E5.BA.93)
-    *   [3.4 皮肤](#.E7.9A.AE.E8.82.A4)
+    *   [3.3 输入法](#.E8.BE.93.E5.85.A5.E6.B3.95)
+    *   [3.4 扩充内置拼音词库](#.E6.89.A9.E5.85.85.E5.86.85.E7.BD.AE.E6.8B.BC.E9.9F.B3.E8.AF.8D.E5.BA.93)
+    *   [3.5 皮肤](#.E7.9A.AE.E8.82.A4)
+    *   [3.6 云拼音](#.E4.BA.91.E6.8B.BC.E9.9F.B3)
 *   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
     *   [4.1 快捷键](#.E5.BF.AB.E6.8D.B7.E9.94.AE)
     *   [4.2 Vim](#Vim)
@@ -47,57 +48,46 @@ Related articles
 
 ## 安装
 
-安装位于 [Official repositories (简体中文)](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)") 里的 [fcitx](https://www.archlinux.org/packages/?name=fcitx).
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")软件包 [fcitx](https://www.archlinux.org/packages/?name=fcitx)。
 
-### 输入法
+### 输入法引擎
 
-#### 第三方拼音输入法
+Fcitx 内置的输入法支持中文 [拼音](https://en.wikipedia.org/wiki/Pinyin "wikipedia:Pinyin") 和基于字符表的输入(例如[五笔](https://en.wikipedia.org/wiki/Wubi "wikipedia:Wubi")). 根据语言的不同，有不同的输入法引擎可以选择。
 
-Fcitx 同样支持流行的第三方拼音输入法以提供更好的整句输入效果. 在 Fcitx 支持的拼音输入法中，内置拼音响应速度最快，[fcitx-sunpinyin](https://www.archlinux.org/packages/?name=fcitx-sunpinyin) 在输入速度和输入精度之间有较好的平衡，[fcitx-libpinyin](https://www.archlinux.org/packages/?name=fcitx-libpinyin) 算法比 sunpinyin 先进。其它的还有：
+#### 中文
 
-*   [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime), 即著名中文输入法 [Rime](https://code.google.com/p/rimeime/) 的 Fcitx 版本。但它不支持 Fcitx 本身的 [#特殊符号](#.E7.89.B9.E6.AE.8A.E7.AC.A6.E5.8F.B7) 和 [#快速输入](#.E5.BF.AB.E9.80.9F.E8.BE.93.E5.85.A5) 功能，自定义设置请参见[官方](http://rime.im)，
+在 Fcitx 支持的拼音输入法中，内置拼音响应速度最快。Fcitx 同样支持流行的第三方拼音输入法以提供更好的整句输入效果.
+
+*   [fcitx-sunpinyin](https://www.archlinux.org/packages/?name=fcitx-sunpinyin) 在输入速度和输入精度之间有较好的平衡。
+*   [fcitx-libpinyin](https://www.archlinux.org/packages/?name=fcitx-libpinyin) 算法比 sunpinyin 先进。
+*   [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime), 即著名中文输入法 [Rime IME](/index.php/Rime_IME "Rime IME")的 Fcitx 版本。但它不支持 Fcitx 本身的 [#特殊符号](#.E7.89.B9.E6.AE.8A.E7.AC.A6.E5.8F.B7) 和 [#快速输入](#.E5.BF.AB.E9.80.9F.E8.BE.93.E5.85.A5) 功能，自定义设置请参见[官方](http://rime.im)，
 *   [fcitx-googlepinyin](https://www.archlinux.org/packages/?name=fcitx-googlepinyin), Google 拼音输入法 for Android.
 *   [fcitx-sogoupinyin](https://aur.archlinux.org/packages/fcitx-sogoupinyin/), 搜狗输入法for linux—支持全拼、简拼、模糊音、云输入、皮肤、中英混输入。[官方网址](http://pinyin.sogou.com/linux/)
+*   [fcitx-cloudpinyin](https://www.archlinux.org/packages/?name=fcitx-cloudpinyin) 可以提供云拼音输入的支持，支持 Fcitx 下的所有拼音输入法，Fcitx-rime 除外。
+*   [fcitx-chewing](https://www.archlinux.org/packages/?name=fcitx-chewing) 为 Fcitx 添加 chewing (繁体中文注音) 输入引擎支持。依赖 [libchewing](https://www.archlinux.org/packages/?name=libchewing).
+*   [fcitx-table-extra](https://www.archlinux.org/packages/?name=fcitx-table-extra) adds [Cangjie](https://en.wikipedia.org/wiki/Cangjie_input_method "wikipedia:Cangjie input method"), [Zhengma](https://en.wikipedia.org/wiki/Zhengma_method "wikipedia:Zhengma method"), [Boshiamy](https://en.wikipedia.org/wiki/Boshiamy_method "wikipedia:Boshiamy method") support.
 
-#### 云拼音
-
-[fcitx-cloudpinyin](https://www.archlinux.org/packages/?name=fcitx-cloudpinyin) 可以提供云拼音输入的支持，支持 Fcitx 下的所有拼音输入法，Fcitx-rime 除外。安装后重启 Fcitx 即可，所选的云拼音输入结果会自动添加到当前输入法的词库中。 提醒：建议在fcitx设置里面将“云拼音来源”由Google改为“百度”，Google国内访问不是很顺畅。
-
-启用云拼音后，从云拼音获得的候选词会默认添加到候选词列表中的第二个，显示位置可以通过云拼音的设置配置。如果云拼音的结果和本地输入法给出的结果一致，云拼音后选项会和本地产生的候选项自动合并，不会产生重复的候选项。
-
-若安装fcitx-cloudpinyin后，在配置程序里却没有看见云拼音，记得勾上“高级”复选框。这时云拼音会显示出来，再勾上云拼音。
-
-**注意:** 不推荐将云拼音候选词设为第一个候选词，因为当网络情况不好，没有及时返回云拼音结果，那么云拼音结果将默认降到第二候选词的位置，于是这个过程可能会涉及到默认候选词的改变。
-
-#### 异国语言输入引擎
+#### Japanese
 
 *   [fcitx-anthy](https://www.archlinux.org/packages/?name=fcitx-anthy), 为 Fcitx 添加 anthy (日语) 输入引擎支持。
-*   [fcitx-chewing](https://www.archlinux.org/packages/?name=fcitx-chewing), 为 Fcitx 添加 chewing (繁体中文注音) 输入引擎支持。
+*   [fcitx-mozc](https://www.archlinux.org/packages/?name=fcitx-mozc), 为 Fcitx 添加 mozc (日语) 输入引擎支持，mozc 是 Google 日语输入法的开源版本。
+*   [fcitx-kkc](https://www.archlinux.org/packages/?name=fcitx-kkc), a new Japanese Kana Kanji input engine, based on [libkkc](https://www.archlinux.org/packages/?name=libkkc).
+
+#### 其它语言
+
 *   [fcitx-hangul](https://www.archlinux.org/packages/?name=fcitx-hangul), 为 Fcitx 添加 hangul (韩语) 输入引擎支持。
 *   [fcitx-m17n](https://www.archlinux.org/packages/?name=fcitx-m17n), 为 Fcitx 添加 m17n (多国语言码表) 输入引擎支持。
-*   [fcitx-mozc](https://www.archlinux.org/packages/?name=fcitx-mozc), 为 Fcitx 添加 mozc (日语) 输入引擎支持，mozc 是 Google 日语输入法的开源版本。
 *   [fcitx-unikey](https://www.archlinux.org/packages/?name=fcitx-unikey), 为 Fcitx 添加 unikey (越南语) 输入引擎支持。
 *   [fcitx-sayura](https://www.archlinux.org/packages/?name=fcitx-sayura), 为 Fcitx 添加 sayura （僧伽罗语） 输入引擎支持。
 
 ### 输入法模块
 
-Fcitx 提供对 Gtk+/Qt 提供了输入法模块，请根据需要安装 [fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2), [fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3), [fcitx-qt4](https://www.archlinux.org/packages/?name=fcitx-qt4) 和 [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5). 多软件包 [fcitx-im](https://www.archlinux.org/groups/x86_64/fcitx-im/) 打包了全部.(现在已经包括 [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5)).
-
-**警告:** 即使未安装输入法模块，一般还是可以在大部分程序中使用输入法，不过很可能出现从无法光标跟随、无法显示预编辑字符串、无法输入甚至程序卡死等情况。如无特殊情况请直接安装 [fcitx-im](https://www.archlinux.org/groups/x86_64/fcitx-im/).
+Fcitx 提供对 Gtk+/Qt 提供了输入法模块，请根据需要安装 [fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2), [fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3), [fcitx-qt4](https://www.archlinux.org/packages/?name=fcitx-qt4) 和 [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5). 软件包组 [fcitx-im](https://www.archlinux.org/groups/x86_64/fcitx-im/) 包含了全部模块。如果没有安装对应的模块，一般还是可以在大部分程序中使用输入法的。不过很可能出现从无法光标跟随、无法显示预编辑字符串、无法输入甚至程序卡死等情况。
 
 某些程序不使用 Gtk+/Qt 的输入法模块，这些程序包括:
 
 *   所有不使用 Gtk+/Qt的程序，如使用 Tk, motif, 甚至 xlib 的程序
-*   Emacs
-*   Opera
-*   OpenOffice
-*   LibreOffice
-*   Skype
-*   Wine
-*   Java
-*   Xterm
-*   urxvt
-*   WPS
+*   Emacs,Opera,OpenOffice,LibreOffice,Skype,Wine,Java,Xterm,urxvt,WPS
 
 ### 其它
 
@@ -113,14 +103,7 @@ Fcitx 提供对 Gtk+/Qt 提供了输入法模块，请根据需要安装 [fcitx-
 
 ### 桌面环境
 
-如果您用 XDG 兼容的桌面环境，比如 [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE"), 那么当您安装好 Fcitx 并重新登录后，Fcitx 应该会自动启动。如果没有的话，可以打开控制台并运行：
-
-```
-  fcitx
-
-```
-
-为检验 Fcitx 是否正常运行, 打开一个程序，比如 leafpad, 按 CTRL+Space 激活 Fcitx 并试着输入几个字。
+如果您用 XDG 兼容的桌面环境，比如 [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE"), 那么当您安装好 Fcitx 并重新登录后，Fcitx 应该会自动启动。如果没有的话，可以打开控制台并运行`fcitx`。为检验 Fcitx 是否正常运行, 打开一个程序，比如 leafpad, 按 CTRL+Space 激活 Fcitx 并试着输入几个字。
 
 如果 Fcitx 没有随桌面环境自动启动，或者您想修改下 Fcitx 启动参数，请用桌面环境提供的自动启动工具配置，或者直接编辑用户目录`~/.config/autostart/` 下的 `fcitx-autostart.desktop` 文件以确认自动启动是否被禁用。如果用户目录下的文件并不存在，您可以复制自动启动文件 `/etc/xdg/autostart/fcitx-autostart.desktop` 到用户目录：
 
@@ -129,22 +112,17 @@ cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/
 
 ```
 
-如果您使用的桌面环境并不自动支持 XDG, 请在您使用的启动脚本里面添加：
+如果您使用的桌面环境并不自动支持 XDG 自动启动, 请在您使用的启动脚本里面添加 `fcitx` 以实现自动启动。
 
-```
- fcitx
-
-```
-
-以实现自动启动。
-
-**注意:** 当 iBus 等其它输入法程序同时启动且开启了 Xim 支持时, 可能会害 Fcitx 启动不了，请确保已禁用了其它输入法程序的自动启动。
+当 iBus 等其它输入法程序同时启动且开启了 Xim 支持时, 可能会害 Fcitx 启动不了，请确保已禁用了其它输入法程序的自动启动。
 
 ### 非桌面环境
 
-使用 Fcitx 之前，您必须先设置一些环境设定变量：
+将下面内容加入桌面的启动脚本，以注册输入法模块并支持 xim 程序。
 
-如果您用 KDM, GDM, LightDM 等显示管理器，请在 `~/.xprofile` 中加入以下代码；如果您用 `startx` 或者 Slim 启动，即使用 `.xinitrc` 的场合，则改在 `~/.xinitrc` 中加入,如果你使用的是较新版本的GNOME，则请在`/etc/environment`中加入：
+*   KDM, GDM, LightDM 等显示管理器，请使用 `~/.xprofile`
+*   如果您用 `startx` 或者 Slim 启动，请使用`~/.xinitrc` 中加入
+*   如果你使用的是较新版本的GNOME，使用 Wayland 显示管理器，则请在`/etc/environment`中加入：
 
 ```
  export GTK_IM_MODULE=fcitx
@@ -153,11 +131,13 @@ cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/
 
 ```
 
+重新登录后让环境变量生效。
+
 **警告:** 这一步非常重要请不要忽略，即便你原来默认没有.xprofile文件也要新建一个然后写入这几行，不然中文输入法是启动不了的。还有.xprofile文件名一定要全部小写，不要看到.Xauthority这种文件名以为首字母要大写就大写成.Xprofile了，不然也是没法用中文输入法的。
 
-**警告:** 请不要在 `.bashrc` 设置这些环境变量。`bashrc`只应用于交互性 bash 会话的初始化，并不应用于非交互性脚本或 X 会话的初始化。否则，从命令行启动的某程序会误以为该环境变量在 X 会话中已正确设置，哪怕 X 会话并没有启动。
+**警告:** 请不要在 `.bashrc` 设置这些环境变量。`bashrc`只应用于交互性 bash 会话的初始化，并不应用于非交互性脚本或 X 会话的初始化。
 
-重新登录后让环境变量生效。
+如果 Qt 使用 fcitx 有问题，请执行 qtconfig (qtconfig-qt4)，在输入法配置中将 fcitx 设置为 "Default Input Method"。
 
 ### Xim
 
@@ -173,15 +153,15 @@ cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/
 
 重新登录后让环境变量生效。
 
+**Note:** Gtk2 从 2.24.20 开始，使用 `/usr/lib/gtk-2.0/2.10.0/immodules.cache` 作为缓存文件。如果设置了 `GTM_IM_MODULE_FILE` 环境变量或在安装后修改了配置，请清掉环境变量并使用 `/usr/bin/gtk-query-immodules-2.0 --update-cache` 更新缓存。
+
 ## 配置
 
 ### 配置工具
 
-Fcitx 提供了若干图形界面的配置程序：基于 KDE 之 kcm 的 [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx), 基于 GTK+3 的 [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool), 或者来自 [AUR](/index.php/AUR "AUR"), 基于 GTK+2, 但不被官方支持的 [fcitx-configtool-gtk2](https://aur.archlinux.org/packages/fcitx-configtool-gtk2/)。
+Fcitx 提供了若干图形界面的配置程序：基于 KDE 之 kcm 的 [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx), 基于 GTK+3 的 [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool)。
 
-安装完配置工具[fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool)之后打开配置工具的方法是用终端运行fcitx-config-gtk3，打开这个配置工具之后还要添加中文输入法。
-
-添加中文输入法的方法是在第一个标签，点下面的加号，然后它默认本身是勾选了之显示当前语言的输入法的（Only Show Current Language），因为一般按照默认的方法安装Archlinux的是英文语言，在这种状态下是找不到中文输入法的，一定要先取消勾选这个选项，然后才能在上面的列表中找到中文输入法（可能叫Pinyin, Libpinyin之类的）。然后添加这个才会有中文输入法。
+安装完配置工具[fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool)之后打开配置工具的方法是用终端运行fcitx-config-gtk3，打开这个配置工具之后还要添加中文输入法。对于新安装的英文系统，要取消只显示当前语言的输入法（Only Show Current Language），才能看到和添加中文输入法(Pinyin, Libpinyin等)。
 
 如果要手工编辑 fcitx 的配置文件，请确保系统中并没有在运行 fcitx ，否则手工编辑的配置内容可能丢失。
 
@@ -189,14 +169,8 @@ Fcitx 提供了若干图形界面的配置程序：基于 KDE 之 kcm 的 [kcm-f
 
 Fcitx 支持使用 kimpanel 协议的界面，以提供更好的桌面整合体验.
 
-#### Gnome-Shell
-
-您可以在 [AUR](/index.php/AUR "AUR") 安装 [gnome-shell-extension-kimpanel-git](https://aur.archlinux.org/packages/gnome-shell-extension-kimpanel-git/), 它提供了类似 ibus-gjs 的用户体验，其候选框界面将会采用 Gnome-Shell 的主题风格, 同时在状态栏中增加 Fcitx 的输入法状态图标。
-
-#### KDE
-
-*   您可以安装 [kdeplasma-addons-applets-kimpanel](https://www.archlinux.org/packages/?name=kdeplasma-addons-applets-kimpanel), 其用 plasma 作为输入法界面, 候选框风格将与 plasma 主题保持一致。
-*   目前有 [kimtoy](https://www.archlinux.org/packages/?name=kimtoy)，它都可以使用搜狗输入法和 Fcitx 本身的皮肤。
+*   Gnome-Shell: 安装 [gnome-shell-extension-kimpanel-git](https://aur.archlinux.org/packages/gnome-shell-extension-kimpanel-git/), 它提供了类似 ibus-gjs 的用户体验，其候选框界面将会采用 Gnome-Shell 的主题风格, 同时在状态栏中增加 Fcitx 的输入法状态图标。
+*   KDE: [kimtoy](https://www.archlinux.org/packages/?name=kimtoy) 可以使用搜狗输入法和 Fcitx 本身的皮肤。
 
 ### 输入法
 
@@ -204,7 +178,7 @@ Fcitx 支持使用 kimpanel 协议的界面，以提供更好的桌面整合体�
 
 **警告:** 请必须将键盘布局输入法设为列表中第一项, 否则可能会无法禁用中文输入。
 
-#### 扩充内置拼音词库
+### 扩充内置拼音词库
 
 用户配置拼音词库在 `~/.config/fcitx/pinyin`, 其中 `pybase.mb` 为拼音单字库，`pyphrase.mb` 为拼音词库。如果这两文件并不存在，直接将您下载的词库放置到 `/usr/share/fcitx/pinyin`. 重启 Fcitx 即可。
 
@@ -217,6 +191,16 @@ Fcitx 支持使用 kimpanel 协议的界面，以提供更好的桌面整合体�
 ~/.config/fcitx/skin    #特定用户设置
 
 ```
+
+### 云拼音
+
+安装后重启 Fcitx 即可，所选的云拼音输入结果会自动添加到当前输入法的词库中。提醒：建议在fcitx设置里面将“云拼音来源”由Google改为“百度”，Google国内访问不是很顺畅。
+
+启用云拼音后，从云拼音获得的候选词会默认添加到候选词列表中的第二个，显示位置可以通过云拼音的设置配置。如果云拼音的结果和本地输入法给出的结果一致，云拼音后选项会和本地产生的候选项自动合并，不会产生重复的候选项。
+
+若安装fcitx-cloudpinyin后，在配置程序里却没有看见云拼音，记得勾上“高级”复选框。这时云拼音会显示出来，再勾上云拼音。
+
+**注意:** 不推荐将云拼音候选词设为第一个候选词，因为当网络情况不好，没有及时返回云拼音结果，那么云拼音结果将默认降到第二候选词的位置，于是这个过程可能会涉及到默认候选词的改变。
 
 ## 提示与技巧
 

@@ -2,7 +2,7 @@
 
 You can control your computer keyboard backlight via the [D-Bus](/index.php/D-Bus "D-Bus") interface. The benefits of using it are that no modification to device files is required and it is vendor agnostic.
 
-Here is an example implementation in [Python](/index.php/Python "Python") 3. Place the following script in `/usr/local/bin/` and make it executable. You can then map your keyboard shortcuts to run `/usr/local/bin/kb-light.py +` and `/usr/local/bin/kb-light.py -` to increase and decrease your keyboard backlight level.
+Here is an example implementation in [Python](/index.php/Python "Python") 3. [Install](/index.php/Install "Install") the [upower](https://www.archlinux.org/packages/?name=upower) package then place the following script in `/usr/local/bin/` and make it executable. You can then map your keyboard shortcuts to run `/usr/local/bin/kb-light.py +` and `/usr/local/bin/kb-light.py -` to increase and decrease your keyboard backlight level.
 
  `/usr/local/bin/kb-light.py` 
 ```

@@ -33,7 +33,7 @@ Related articles
     *   [6.4 Fix for no mouse cursor](#Fix_for_no_mouse_cursor)
     *   [6.5 Recommended security settings](#Recommended_security_settings)
     *   [6.6 Toggling Fullscreen](#Toggling_Fullscreen)
-    *   [6.7 Unable to type less than character (<)](#Unable_to_type_less_than_character_.28.3C.29)
+    *   [6.7 Unable to type '<' character](#Unable_to_type_.27.3C.27_character)
 
 ## Installation
 
@@ -318,16 +318,13 @@ Alternatively, simply add the "localhost" option as a single line in `~/.vnc/con
 
  `~/.vnc/config` 
 ```
-
 ## Supported server options to pass to vncserver upon invocation can be listed
 ## in this file. See the following manpages for more: vncserver(1) Xvnc(1).
 ## Several common ones are shown below. Uncomment and modify to your liking.
-##
 geometry=1200x700
 alwaysshared
 dpi=96
 localhost
-
 ```
 
 ### On the client
@@ -452,7 +449,7 @@ Issuing x509 certificates is beyond the scope of this guide. However, this is ex
 
 This can be done through vncclient's Menu. By default, vncclient's Menu Key is F8.
 
-### Unable to type less than character (<)
+### Unable to type '<' character
 
 If pressing `<` on a remote client emits the `>` character, try remapping the incoming key [[1]](https://insaner.com/blog/2013/05.html#20130422063137):
 

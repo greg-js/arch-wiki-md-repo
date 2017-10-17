@@ -1,8 +1,15 @@
+Related articles
+
+*   [Rdesktop](/index.php/Rdesktop "Rdesktop")
+*   [xrdp](/index.php/Xrdp "Xrdp")
+
 [Remmina](http://www.remmina.org/wp/) is a remote desktop client written in GTK+ from the [freerdp](http://www.freerdp.com/) project. It supports the protocols SSH, VNC, RDP, NX and XDMCP.
 
 ## Installation
 
 Install the [remmina](https://www.archlinux.org/packages/?name=remmina) package.
+
+For VNC support install the [libvncserver](https://www.archlinux.org/packages/?name=libvncserver) package.
 
 If you need RDP support, also install the optional [freerdp](https://www.archlinux.org/packages/?name=freerdp) or [remmina-plugin-rdesktop](https://aur.archlinux.org/packages/remmina-plugin-rdesktop/). For these note:
 

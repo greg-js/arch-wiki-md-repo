@@ -165,7 +165,7 @@ See [Backlight#Kernel command-line options](/index.php/Backlight#Kernel_command-
 
 ### Enabling compositing
 
-Compositing is not enabled by default. To enable it navigate to run `System -> Preferences -> Windows` and click the tick box alongside **Enable software compositing window manager** in the `General` tab. Alternatively, you can run the following from the terminal:
+Compositing is not enabled by default. To enable it navigate to run `System -> Preferences -> Look and Feel -> Windows` and click the tick box alongside **Enable software compositing window manager** in the `General` tab. Alternatively, you can run the following from the terminal:
 
 ```
 $ gsettings set org.mate.Marco.general compositing-manager true

@@ -169,6 +169,7 @@ If the `refind-install` script does not work for you, rEFInd can be set up manua
 First, copy the executable to the ESP:
 
 ```
+# mkdir -p *esp*/EFI/refind
 # cp /usr/share/refind/refind_x64.efi *esp*/EFI/refind/
 
 ```

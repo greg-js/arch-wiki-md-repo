@@ -25,8 +25,8 @@ This page is a starting point for a basic OpenLDAP installation and a sanity che
         *   [2.5.3 Start slapd with SSL](#Start_slapd_with_SSL)
 *   [3 Next steps](#Next_steps)
     *   [3.1 Backup LDAP](#Backup_LDAP)
-        *   [3.1.1 Export Database](#Export_Database)
-        *   [3.1.2 Export Configuration](#Export_Configuration)
+        *   [3.1.1 Export Config](#Export_Config)
+        *   [3.1.2 Export Database](#Export_Database)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 slapd configuration checking](#slapd_configuration_checking)
     *   [4.2 Client authentication checking](#Client_authentication_checking)
@@ -314,17 +314,17 @@ A nice web frontend is [phpLDAPadmin](/index.php/PhpLDAPadmin "PhpLDAPadmin").
 
 It is imperative that we have a backup of our LDAP database and configuration in case we ever need to restore for any number of reasons.
 
-#### Export Database
+#### Export Config
 
 ```
 $ slapcat -F /etc/openldap/slapd.d -n 0 -l "$(hostname)-ldap-mdb-database-$(date '+%F').ldif"
 
 ```
 
-#### Export Configuration
+#### Export Database
 
 ```
-$ slapcat -l "$(hostname)-ldap-config-$(date '+%F').ldif"
+$ slapcat -l "$(hostname)-ldap-database-$(date '+%F').ldif"
 
 ```
 

@@ -1,3 +1,11 @@
+相关文章
+
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
+*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
+*   [grub-gfx](/index.php/Grub-gfx "Grub-gfx")
+*   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
+
 **翻译状态：** 本文是英文页面 [GRUB_Legacy](/index.php/GRUB_Legacy "GRUB Legacy") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-02-28，点击[这里](https://wiki.archlinux.org/index.php?title=GRUB_Legacy&diff=0&oldid=348680)可以查看翻译后英文页面的改动。
 
 [GRUB Legacy](http://www.gnu.org/software/grub/grub-legacy.html) 是一个原本由 [GNU Project](/index.php/GNU_Project "GNU Project") 维护的 [多启动](http://www.gnu.org/software/grub/manual/multiboot/) 引导器，其前身为 GRUB (GRand Unified Bootloader), 最初由 Erich Stefan Boleyn 设计和实现。
@@ -35,7 +43,6 @@
     *   [5.2 Framebuffer 分辨率](#Framebuffer_.E5.88.86.E8.BE.A8.E7.8E.87)
         *   [5.2.1 GRUB 可识别的值](#GRUB_.E5.8F.AF.E8.AF.86.E5.88.AB.E7.9A.84.E5.80.BC)
         *   [5.2.2 hwinfo](#hwinfo)
-        *   [5.2.3 vbetest](#vbetest)
     *   [5.3 给分区命名](#.E7.BB.99.E5.88.86.E5.8C.BA.E5.91.BD.E5.90.8D)
         *   [5.3.1 按盘符](#.E6.8C.89.E7.9B.98.E7.AC.A6)
         *   [5.3.2 按 UUID](#.E6.8C.89_UUID)
@@ -558,39 +565,6 @@ Mode 0x0365: 1440x900 (+5760), 24 bits
 kernel /vmlinuz-linux root=/dev/sda1 ro **vga=0x0365**
 
 ```
-
-**注意:** *vbetest* 所给出的 VESA 模式我们要加上512才能在 kernel 选项里使用。*hwinfo* 直接给出了选项需要的值。
-
-#### vbetest
-
-1.  从 [AUR](/index.php/AUR "AUR") 安装软件包 [lrmi](https://aur.archlinux.org/packages/lrmi/), 它包含 **vbetest** 工具 (x86_64 用户需要使用 [hwinfo](#hwinfo)).
-2.  以 root 身份运行 `vbetest`.
-3.  代表分辨率的数字是以 [ ] 注释起来的。
-4.  按 `q` 以退出 **vbetest** 互动提示符。
-    1.  作为一个选项，在 root 身份的终端中，你可以运行 `vbetest -m <yourcode>` 来测试你选中的模式，然后会看见像[这样](http://www.phoronix.net/image.php?id=803&image=x_vbespy_5)的图案。
-5.  给你找到的值加上 **512** ，并在 `menu.lst` 里设置给内核参数 `vga=`.
-6.  重启并欣赏。
-
-**vbetest** 输出样例:
-
-```
-[356] 1440x900 (256 color palette)
-[357] 1440x900 (8:8:8)
-
-```
-
-你要的数字就是 357\. 然后，357 + 512 = 869, 所以你要设置 **vga=869**. 如下把它添加到 `menu.lst` 的 kernel 行:
-
-```
-kernel /vmlinuz-linux root=/dev/sda1 ro **vga=869**
-
-```
-
-**注意:**
-
-*   (8:8:8) 是24位彩色 (24bit 就是 32bit)
-*   (5:6:5) 是16位彩色
-*   (5:5:5) 是15位彩色
 
 ### 给分区命名
 

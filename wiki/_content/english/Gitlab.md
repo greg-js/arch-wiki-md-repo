@@ -45,9 +45,7 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
     *   [6.2 Hook into /var](#Hook_into_.2Fvar)
     *   [6.3 Hidden options](#Hidden_options)
     *   [6.4 Backup and restore](#Backup_and_restore)
-    *   [6.5 Migrate from sqlite to mysql](#Migrate_from_sqlite_to_mysql)
-    *   [6.6 Running GitLab with rvm](#Running_GitLab_with_rvm)
-    *   [6.7 Sending mails from Gitlab via SMTP](#Sending_mails_from_Gitlab_via_SMTP)
+    *   [6.5 Sending mails from Gitlab via SMTP](#Sending_mails_from_Gitlab_via_SMTP)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 HTTPS is not green (gravatar not using https)](#HTTPS_is_not_green_.28gravatar_not_using_https.29)
     *   [7.2 401 Unauthorized on all API access](#401_Unauthorized_on_all_API_access)
@@ -636,89 +634,6 @@ Restore the previously created backup file `/home/gitlab/gitlab/tmp/backups/2013
 
 **Note:** Backup folder is set in `config/gitlab.yml`. GitLab backup and restore is documented [here](https://github.com/gitlabhq/gitlabhq/blob/master/doc/raketasks/backup_restore.md).
 
-### Migrate from sqlite to mysql
-
-Get latest code as described in [#Update Gitlab](#Update_Gitlab). Save data.
-
-```
-# cd /home/gitlab/gitlab
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.3 exec rake db:data:dump RAILS_ENV=production"
-
-```
-
-Follow [#Mysql](#Mysql) instructions and then setup the database.
-
-```
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.3 exec rake db:setup RAILS_ENV=production"
-
-```
-
-Finally restore old data.
-
-```
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.3 exec rake db:data:load RAILS_ENV=production"
-
-```
-
-### Running GitLab with rvm
-
-To run gitlab with rvm first you have to set up an rvm:
-
-```
- curl -L [https://get.rvm.io](https://get.rvm.io) | bash -s stable --ruby=1.9.3
-
-```
-
-**Note:** Version 1.9.3 is currently recommended to avoid some compatibility issues.
-
-For the complete installation you will want to be the final user (e.g. `git`) so make sure to switch to this user and activate your rvm:
-
-```
- su - git
- source "$HOME/.rvm/scripts/rvm"
-
-```
-
-Then continue with the installation instructions from above. However, the systemd scripts will not work this way, because the environment for the rvm is not activated. The recommendation here is to create to separate shell scripts for `unicorn` and `sidekiq` to activate the environment and then start the service:
-
- `gitlab.sh` 
-```
-#!/bin/sh
-source `/home/git/.rvm/bin/rvm 1.9.3 do rvm env --path`
-bundle-2.3 exec "unicorn_rails -c /usr/share/webapps/gitlab/config/unicorn.rb -E production"
-
-```
- `sidekiq.sh` 
-```
-#!/bin/sh
-source `/home/git/.rvm/bin/rvm 1.9.3 do rvm env --path`
-case $1 in
-    start)
-        bundle-2.3 exec rake sidekiq:start RAILS_ENV=production
-        ;;
-    stop)
-        bundle-2.3 exec rake sidekiq:stop RAILS_ENV=production
-        ;;
-    *)
-        echo "Usage $0 {start|stop}"
-esac
-
-```
-
-Then modify the above systemd files so they use these scripts. Modify the given lines:
-
- `gitlab.service` 
-```
-ExecStart=/home/git/bin/gitlab.sh
-
-```
- `sidekiq.service` 
-```
-ExecStart=/home/git/bin/sidekiq.sh start
-ExecStop=/home/git/bin/sidekiq.sh stop
-
-```
-
 ### Sending mails from Gitlab via SMTP
 
 You might want to use a gmail (or other mail service) to send mails from your gitlab server. This avoids the need to install a mail daemon on the gitlab server.
@@ -834,6 +749,6 @@ This file is usually generated while installing the [gitlab-shell](https://www.a
 
 ## See also
 
-*   [Official Documentation](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md)
-*   [Gitlab recipes with further documentation on running it with several webservers](https://gitlab.com/gitlab-org/gitlab-recipes)
-*   [GitLab source code](https://github.com/gitlabhq/gitlabhq)
+*   [Official installation documentation](https://docs.gitlab.com/ce/install/installation.html)
+*   [GitLab recipes with further documentation on running it with several web servers](https://gitlab.com/gitlab-org/gitlab-recipes)
+*   [GitLab source code](https://gitlab.com/gitlab-org/gitlab-ce)

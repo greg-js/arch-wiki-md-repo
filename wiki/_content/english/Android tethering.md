@@ -102,7 +102,7 @@ This method works for all known Android versions and requires neither root acces
 
 ### Tools needed
 
-For Arch, you need to [install](/index.php/Install "Install") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package. You will also need to install the [android-tools](https://www.archlinux.org/packages/?name=android-tools) package for the *adb* tool and [android-udev](https://www.archlinux.org/packages/?name=android-udev) which sets up the correct `/usr/lib/udev/rules.d/51-android.rules` file for your device to be recognized. On the phone, you need the [azulink.apk](http://lfx.org/azilink/azilink.apk) ([azilink homepage](https://github.com/aziwoqpd/azilink)). The android application acts as a NAT, adb forwards the ports to your phone, and your openvnp setup will connect to it.
+For Arch, you need to [install](/index.php/Install "Install") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package. You will also need to install the [android-tools](https://www.archlinux.org/packages/?name=android-tools) package for the *adb* tool and [android-udev](https://www.archlinux.org/packages/?name=android-udev) which sets up the correct `/usr/lib/udev/rules.d/51-android.rules` file for your device to be recognized. On the phone, you need the [azilink.apk](http://lfx.org/azilink/azilink.apk) ([azilink homepage](https://github.com/aziwoqpd/azilink)). The android application acts as a NAT, adb forwards the ports to your phone, and your openvnp setup will connect to it.
 
 #### Configuring the phone connection in Arch Linux
 

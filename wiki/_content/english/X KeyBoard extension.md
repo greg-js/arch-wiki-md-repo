@@ -148,14 +148,14 @@ Internally, the translation involves additional steps:
 
 with `S` being the translation table (actually called `xkb_symbols`, see below).
 
-Types are used to tell which modifiers affect which keys; essentially it's a way to reduce the third dimension of `S`. For example, typical alphanumeric key is only affected by `Shift`; it's type is set to `TWO_LEVEL`, and
+Types are used to tell which modifiers affect which keys; essentially it's a way to reduce the third dimension of `S`. For example, a typical alphanumeric key is only affected by `Shift`, so its type is set to `TWO_LEVEL`, and
 
 ```
    (state, TWO_LEVEL) → level = ((state >> 0) & 0x01) = state & 0x01
 
 ```
 
-which is either 0 or 1\. Thus it's `S[keycode][0..4][0..1]` instead of `S[keycode][0..4][0..256]`.
+is either 0 or 1\. Thus it's `S[keycode][0..4][0..1]` instead of `S[keycode][0..4][0..256]`.
 
 ### Keysyms and states
 

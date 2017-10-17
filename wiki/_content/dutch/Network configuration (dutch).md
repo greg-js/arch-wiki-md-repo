@@ -41,21 +41,21 @@ Hulp bij het up-to-date brengen van deze pagina wordt zeer gewaardeerd.
 
 ## Apparaatmodules laden
 
-Udev zou de modules voor je netwerkkaart automatisch moeten detecteren en laden tijdens het opstarten. Indien dit niet het geval is, moet je weten welke module jou netwerkkaart nodig heeft:
+Udev zou de modules voor je netwerkkaart automatisch moeten detecteren en laden tijdens het opstarten. Indien dit niet het geval is, moet je weten welke module jouw netwerkkaart nodig heeft:
 
 ```
 hwdetect --show-net
 
 ```
 
-Als je nu weet welke module nodig hebt voor je netwerkkaart, kun je die laden met:
+Als je nu weet welke module nodig is voor je netwerkkaart, kun je deze laden met:
 
 ```
 # modprobe <modulename>
 
 ```
 
-Als udev de juiste module niet automatisch detecteert en laad, dan kun je de module toevoegen aan de **MODULES=** array in `/etc/rc.conf`, zodat je de module niet elke keer hoeft te modproben na het opstarten. Bijvoorbeeld, als tg3 de netwerkmodule is:
+Als udev de juiste module niet automatisch detecteert en laadt, dan kun je deze toevoegen aan de **MODULES=** array in `/etc/rc.conf`, zodat je de module niet elke keer hoeft te modproben na het opstarten. Bijvoorbeeld, als tg3 de netwerkmodule is:
 
 ```
 MODULES=(!usbserial tg3 snd-cmipci)
