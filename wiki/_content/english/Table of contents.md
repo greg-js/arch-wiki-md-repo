@@ -139,7 +139,7 @@
 | <small>6.5.2.</small> [Fonts](/index.php/Category:Fonts "Category:Fonts") <small>(7)</small> |
 | <small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(76)</small> |
 | <small>6.7.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(16)</small> |
-| <small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(38)</small> |
+| <small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(37)</small> |
 | <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(30)</small> |
 | <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(20)</small> |
 | <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(70)</small> |
@@ -149,7 +149,7 @@
 | <small>6.11.4.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(19) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.11.5.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(14) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.11.5.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(6)</small> |
-| <small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(31)</small> |
+| <small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(30)</small> |
 | <small>6.13.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(24)</small> |
 | <small>6.13.1.</small> [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") <small>(9)</small> |
 | <small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(61)</small> |

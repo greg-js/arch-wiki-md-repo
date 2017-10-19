@@ -3,7 +3,7 @@ Related articles
 *   [GnuPG](/index.php/GnuPG "GnuPG")
 *   [DeveloperWiki:Package signing](/index.php/DeveloperWiki:Package_signing "DeveloperWiki:Package signing")
 
-**翻译状态：** 本文是英文页面 [Pacman/Package_signing](/index.php/Pacman/Package_signing "Pacman/Package signing") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-22，点击[这里](https://wiki.archlinux.org/index.php?title=Pacman%2FPackage_signing&diff=0&oldid=445709)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Pacman/Package_signing](/index.php/Pacman/Package_signing "Pacman/Package signing") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-17，点击[这里](https://wiki.archlinux.org/index.php?title=Pacman%2FPackage_signing&diff=0&oldid=490037)可以查看翻译后英文页面的改动。
 
 为了保证软件包来自开发者, Pacman 使用[信任网络](http://www.gnupg.org/gph/en/manual.html#AEN385)中的 [GnuPG 密钥](http://www.gnupg.org/)进行软件包验证。目前 Archlinux 的主要签名密钥在[这里](https://www.archlinux.org/master-keys/)。 其中至少三个主密匙被用来签署官方开发者和授信用户自己的密钥，而他们将用这些密钥签署自己的包。用户在设置pacman-key时也会生成一个自己的密钥。所以信任网络也会把用户的密钥连接到五大主密钥上面。
 

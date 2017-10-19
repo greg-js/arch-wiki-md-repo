@@ -328,7 +328,7 @@ and change the "dpi" setting found in the "Graphics" tab. This only affects the 
 
 ### Skype
 
-The new Skype for Linux with the [skypeforlinux](https://aur.archlinux.org/packages/skypeforlinux/) package uses [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29), and the [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/) package uses [#GTK+ 2](#GTK.2B_2).
+The new Skype for Linux with the [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/) package uses [#GTK+ 2](#GTK.2B_2).
 
 The old legacy Skype ([skype](https://aur.archlinux.org/packages/skype/)) uses Qt 4, and needs to be configured separately. You cannot change the DPI setting for it, but at least you can change font size. Install [qt4](https://www.archlinux.org/packages/?name=qt4) and run `qtconfig-qt4` to do it.
 

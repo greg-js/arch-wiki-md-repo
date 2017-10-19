@@ -254,7 +254,7 @@ $ VBoxClient --clipboard --draganddrop --seamless --display --checkhostversion
 为了让挂载之后的目录能让 root 之外的用户也直接读写，还要：
 
 *   安装 [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) 软件包时会创建用户组 `vboxsf`（在前面的步骤就装过了）
-*   你的用户需要加入到 `vboxsf` [用户组](/index.php?title=Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87&action=edit&redlink=1 "Users and groups (简体中文 (page does not exist)")
+*   你的用户需要加入到 `vboxsf` [用户组](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.94.A8.E6.88.B7.E7.BB.84.E7.AE.A1.E7.90.86 "Users and groups (简体中文)")
 
 #### 手动挂载
 
@@ -508,7 +508,7 @@ $ VBoxManage createhd -filename *new.vdi* --size *10000*
 
 ```
 
-`--size` 参数的值的单位是 MiB，在例子里 10000 MiB ~= 10 GiB，[Template:New.vdi](/index.php?title=Template:New.vdi&action=edit&redlink=1 "Template:New.vdi (page does not exist)") 是新创建的镜像文件。
+`--size` 参数的值的单位是 MiB，在例子里 10000 MiB ~= 10 GiB，`new.vdi` 是新创建的镜像文件。
 
 **Note:** 由这个命令创建的镜像文件默认是动态分配空间的。如果想让新镜像和旧镜像一样固定空间，需要追加参数 `--variant Fixed`。
 

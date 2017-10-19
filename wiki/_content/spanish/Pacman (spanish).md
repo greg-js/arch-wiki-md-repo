@@ -220,7 +220,7 @@ $ pacman -Ss *cadena1* *cadena2* ...
 
 ```
 
-Sometimes, `-s`'s builtin ERE can cause a lot of unwanted results, so it has to be limited to match the package name only; not the description nor any other field:
+Algunas veces `-s` construye una ERE (Expresión Regular Extendida) que puede causar resultados no deseados, por lo cual debe limitarse para que coincida con el nombre del paquete y no con la descripción u otro campo:
 
 ```
 $ pacman -Ss '^vim-'

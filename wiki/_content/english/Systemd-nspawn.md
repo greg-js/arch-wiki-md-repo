@@ -275,6 +275,8 @@ You will need to set the `DISPLAY` environment variable inside your container se
 
 X stores some required files in the `/tmp` directory. In order for your container to display anything, it needs access to those files. To do so, append the `--bind=/tmp/.X11-unix:/tmp/.X11-unix` option when starting the container.
 
+**Note:** There is [a bug](https://github.com/systemd/systemd/issues/7093) in systemd version 235 that causes /tmp/.X11-unix to disappear from the filesystem when doing this. If you're having trouble, try binding /tmp/.X11-unix read-only instead: `--bind-ro=/tmp/.X11-unix:/tmp/.X11-unix`
+
 ### Run Firefox
 
 See [Firefox tweaks](/index.php/Firefox_tweaks#Run_Firefox_inside_an_nspawn_container "Firefox tweaks").

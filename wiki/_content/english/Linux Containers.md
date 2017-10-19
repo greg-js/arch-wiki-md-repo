@@ -130,7 +130,84 @@ root:100000:65536
 
 ### Host network configuration
 
-LXCs support different virtual network types and devices (see [lxc.container.conf(5)](https://linuxcontainers.org/lxc/manpages//man5/lxc.container.conf.5.html)). A bridge device on the host is required for most types of virtual networking. Users are referred to the [Network bridge](/index.php/Network_bridge "Network bridge") article.
+LXCs support different virtual network types and devices (see [lxc.container.conf(5)](https://linuxcontainers.org/lxc/manpages//man5/lxc.container.conf.5.html)). A bridge device on the host is required for most types of virtual networking.
+
+LXC comes with it's own NAT Bridge (lxcbr0).
+
+**Note:** A NAT bridge is a standalone bridge with a private network that is not bridged to the host eth0 or a physical network. It exists as a private subnet in the host.
+
+**Tip:** This is quite useful when WIFI is the only option. There have bean various attempts of creating Bridges on WIFI without much success.
+
+To use LXC's NAT Bridge you need to create it's configuration file:
+
+ `/etc/default/lxc-net` 
+```
+# Leave USE_LXC_BRIDGE as "true" if you want to use lxcbr0 for your
+# containers.  Set to "false" if you'll use virbr0 or another existing
+# bridge, or mavlan to your host's NIC.
+USE_LXC_BRIDGE="true"
+
+# If you change the LXC_BRIDGE to something other than lxcbr0, then
+# you will also need to update your /etc/lxc/default.conf as well as the
+# configuration (/var/lib/lxc/<container>/config) for any containers
+# already created using the default config to reflect the new bridge
+# name.
+# If you have the dnsmasq daemon installed, you'll also have to update
+# /etc/dnsmasq.d/lxc and restart the system wide dnsmasq daemon.
+LXC_BRIDGE="lxcbr0"
+LXC_ADDR="10.0.3.1"
+LXC_NETMASK="255.255.255.0"
+LXC_NETWORK="10.0.3.0/24"
+LXC_DHCP_RANGE="10.0.3.2,10.0.3.254"
+LXC_DHCP_MAX="253"
+# Uncomment the next line if you'd like to use a conf-file for the lxcbr0
+# dnsmasq.  For instance, you can use 'dhcp-host=mail1,10.0.3.100' to have
+# container 'mail1' always get ip address 10.0.3.100.
+#LXC_DHCP_CONFILE=/etc/lxc/dnsmasq.conf
+
+# Uncomment the next line if you want lxcbr0's dnsmasq to resolve the .lxc
+# domain.  You can then add "server=/lxc/10.0.3.1' (or your actual $LXC_ADDR)
+# to your system dnsmasq configuration file (normally /etc/dnsmasq.conf,
+# or /etc/NetworkManager/dnsmasq.d/lxc.conf on systems that use NetworkManager).
+# Once these changes are made, restart the lxc-net and network-manager services.
+# 'container1.lxc' will then resolve on your host.
+#LXC_DOMAIN="lxc"
+```
+
+**Tip:** Make sure the bridges ip-range does not interfere with your local network.
+
+Then we need to modify the LXC container template so our containers use our bridge:
+
+ `/etc/lxc/default.conf` 
+```
+lxc.net.0.type = veth
+lxc.net.0.link = lxcbr0
+lxc.net.0.flags = up
+lxc.net.0.hwaddr = 00:16:3e:xx:xx:xx
+```
+
+You also need to install [Dnsmasq](https://wiki.archlinux.org/index.php/Dnsmasq) which is a dependency for lxcbr0.
+
+```
+pacman -S dnsmasq
+
+```
+
+Then we can start the bridge:
+
+```
+systemctl start lxc-net
+
+```
+
+If you want the bridge to start at boot-time
+
+```
+systemctl enable lxc-net
+
+```
+
+For further information including Host bridges users are referred to the [Network bridge](/index.php/Network_bridge "Network bridge") article.
 
 ### Container creation
 

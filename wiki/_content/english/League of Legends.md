@@ -14,36 +14,32 @@
             *   [1.4.3.1 Using Windows installer](#Using_Windows_installer)
             *   [1.4.3.2 Using an existing copy of the game](#Using_an_existing_copy_of_the_game)
         *   [1.4.4 Run the game under Wine](#Run_the_game_under_Wine)
-            *   [1.4.4.1 Use the League Client open beta](#Use_the_League_Client_open_beta)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Tips](#Tips)
-    *   [2.2 Client update issues](#Client_update_issues)
-        *   [2.2.1 first client update stuck on 47%](#first_client_update_stuck_on_47.25)
-    *   [2.3 Connection issues](#Connection_issues)
-        *   [2.3.1 Connection Error: connection failure unable to connect to the pvp.net server](#Connection_Error:_connection_failure_unable_to_connect_to_the_pvp.net_server)
-        *   [2.3.2 Login server does not respond](#Login_server_does_not_respond)
-    *   [2.4 Launcher issues](#Launcher_issues)
-        *   [2.4.1 Launcher screen is black](#Launcher_screen_is_black)
-        *   [2.4.2 In-game shop crash](#In-game_shop_crash)
-        *   [2.4.3 Store Authentication Required](#Store_Authentication_Required)
-        *   [2.4.4 Hang after champ select with AMD proprietary fglrx driver](#Hang_after_champ_select_with_AMD_proprietary_fglrx_driver)
-        *   [2.4.5 Game failing to run after Champion Select screen](#Game_failing_to_run_after_Champion_Select_screen)
-    *   [2.5 In-game issues](#In-game_issues)
-        *   [2.5.1 Low FPS](#Low_FPS)
-        *   [2.5.2 For d3dstream patched Wine](#For_d3dstream_patched_Wine)
-    *   [2.6 PlayOnLinux Troubleshooting](#PlayOnLinux_Troubleshooting)
+    *   [2.2 Connection issues](#Connection_issues)
+        *   [2.2.1 Connection Error: connection failure unable to connect to the pvp.net server](#Connection_Error:_connection_failure_unable_to_connect_to_the_pvp.net_server)
+        *   [2.2.2 Login server does not respond](#Login_server_does_not_respond)
+    *   [2.3 Launcher issues](#Launcher_issues)
+        *   [2.3.1 Launcher screen is black](#Launcher_screen_is_black)
+        *   [2.3.2 Using OpenGL](#Using_OpenGL)
+        *   [2.3.3 Store Authentication Required](#Store_Authentication_Required)
+        *   [2.3.4 Hang after champ select with AMD proprietary fglrx driver](#Hang_after_champ_select_with_AMD_proprietary_fglrx_driver)
+        *   [2.3.5 Game failing to run after Champion Select screen](#Game_failing_to_run_after_Champion_Select_screen)
+    *   [2.4 In-game issues](#In-game_issues)
+        *   [2.4.1 Low FPS](#Low_FPS)
+        *   [2.4.2 For d3dstream patched Wine](#For_d3dstream_patched_Wine)
+    *   [2.5 PlayOnLinux Troubleshooting](#PlayOnLinux_Troubleshooting)
 
 ## Installation
 
 ### Lutris Method
 
-**Tip:** The other methods are lot harder and/or buggy, probably not working at all in some cases. This one is easier and is reported to work on 4º of june 2017
+**Tip:** The other methods are lot harder and/or buggy, probably not working at all in some cases. This one is easier and is reported to work on 18º of October 2017
 
 1.  Install [lutris](https://aur.archlinux.org/packages/lutris/) from [AUR](/index.php/AUR "AUR")
 2.  Install from [https://lutris.net/games/league-of-legends/](https://lutris.net/games/league-of-legends/)
-3.  Once installed and logged in, in the top right gear of the client, check "low spec mode" and uncheck "close client during game"
 
-	Here is an outdated video from the creator of the Lutris script that could be useful in case of doubt/trobleshooting [https://youtu.be/sWisCfj_fA0](https://youtu.be/sWisCfj_fA0)
+	Here is an outdated video from the creator of the Lutris script that could be useful in case of doubt/troubleshooting [https://www.youtube.com/watch?v=z5uwusZTlNM](https://www.youtube.com/watch?v=z5uwusZTlNM)
 
 ### PlayonLinux Method
 
@@ -103,18 +99,21 @@ Install the required packages on your system:
 Install the following windows components using winetricks:
 
 ```
-# WINEARCH=win32 WINEPREFIX=$HOME/.wine32 winetricks d3dx9 vcrun2005 wininet corefonts adobeair ie8
+# WINEARCH=win32 WINEPREFIX=$HOME/.wine32 winetricks directx9 d3dx9_43
 
 ```
 
-If you run into problems installing adobeair, you need to make a little change in your Winecfg.
+Run winecfg and add the following dll overrides under the libraries tab:
 
 ```
 # WINEARCH=win32 WINEPREFIX=$HOME/.wine32 winecfg
 
 ```
 
-Access the libraries tab, find in the list of existing libraries (or add a new entry for it if it does not exist) **dnsapi**, click Edit... and configure it for "**Native then Builtin**"
+*   msvcp140 (Native, then builtin)
+*   msvcp120 (Native, then builtin)
+*   vcomp120 (Native, then builtin)
+*   atl120 (Native, then builtin)
 
 #### Client installation
 
@@ -122,20 +121,9 @@ Access the libraries tab, find in the list of existing libraries (or add a new e
 
 **Warning:** The Windows installer may not work on some systems.
 
-Use the latest installer from riot games: [https://signup.na.leagueoflegends.com/en/signup/redownload](https://signup.na.leagueoflegends.com/en/signup/redownload) Now unpack it and execute it using msiexec
-
-```
-mkdir /tmp/lol_installer
-WINEARCH=win32 WINEPREFIX=$HOME/.wine32 wine /PATH/TO/INSTALLER.exe /extract:Z:/tmp/lol_installer
-WINEARCH=win32 WINEPREFIX=$HOME/.wine32 wine  msiexec /i /tmp/lol_installer/LoL.XXX.msi
-
-```
-
-Where XXX is the region of the installer.
+Use the latest installer from riot games: [https://riotgamespatcher-a.akamaihd.net/releases/live/installer/deploy/League%20of%20Legends%20installer%20NA.exe](https://riotgamespatcher-a.akamaihd.net/releases/live/installer/deploy/League%20of%20Legends%20installer%20NA.exe)
 
 Follow the steps indicated on the installer menu.
-
-*Note for installing via installer: Uncheck the "Create desktop icon" and "Create start menu icon", it may causes the installer to hang. You can leave the "Run League of Legends" checkbox checked, it does not cause any issues*
 
 ##### Using an existing copy of the game
 
@@ -174,8 +162,8 @@ Bash script example: **/bin/leagueoflegends**
 
 ```
 #!/bin/sh
-pushd $HOME/.wine32/drive_c/Riot\ Games/League\ of\ Legends/RADS/system/
-WINEARCH=win32 WINEPREFIX=$HOME/.wine32 wine rads_user_kernel.exe run lol_launcher $(ls ../projects/lol_launcher/releases/) LoLLauncher.exe
+pushd $HOME/.wine32/drive_c/Riot\ Games/League\ of\ Legends/
+WINEARCH=win32 WINEPREFIX=$HOME/.wine32 wine LeagueClient.exe
 popd
 
 ```
@@ -190,7 +178,7 @@ Make sure to remember to make the file executable
 Alias example: **$HOME/.bashrc**
 
 ```
-# alias League_of_Legends='pushd $HOME/.wine32/drive_c/Riot\ Games/League\ of\ Legends/RADS/system/ && wine32 rads_user_kernel.exe run lol_launcher $(ls ../projects/lol_launcher/releases/) LoLLauncher.exe && popd'
+# alias League_of_Legends='pushd $HOME/.wine32/drive_c/Riot\ Games/League\ of\ Legends/ && wine32 LeagueClient.exe && popd'
 
 ```
 
@@ -208,55 +196,11 @@ Categories=Wine;Game;
 
 ```
 
-To be able to use an Icon for the application, you need to either convert the ***/RADS/system/lol.ico** to the png format (with imagemick or gimp), or download the icon separately and place it in the **~/.icons/** folder of your home directory. Here is a [48x48 icon](http://img.informer.com/icons/png/48/4719/4719180.png) you can download.
+To be able to use an Icon for the application, you need to either convert the ***/RADS/system/icon.ico** to the png format (with imagemick or gimp), or download the icon separately and place it in the **~/.icons/** folder of your home directory. Here is a [48x48 icon](http://img.informer.com/icons/png/48/4719/4719180.png) you can download.
 
 Run the bash script/alias/shortcut and you should be good to go!
 
 To test if the game is working, create a custom Summoner's Rift match with one bot. If it loads and you do not crash upon opening the in-game store, you are golden! Congratulations!
-
-##### Use the League Client open beta
-
-If you want to try out the new League Client, click on the upgrade button on the patcher. You have to add three overrides to your libraries for the client to start.
-
-```
-# WINEARCH=win32 WINEPREFIX=$HOME/.wine32 winecfg
-
-```
-
-Access the libraries tab, and add :
-
-*   msvcp140 (Native, then builtin)
-*   vcomp140 (Native, then builtin)
-*   vcruntime140 (Native, then builtin)
-
-Starting the client from the actual patcher seems to work, but you can also start it by improving the script above :
-
-Bash script example: **/bin/leagueoflegends**
-
-```
-#!/bin/sh
-#
-
-case $1 in
-    beta)
-        pushd $HOME/.wine32/drive_c/Riot\ Games/League\ of\ Legends/
-        WINEARCH=win32 WINEPREFIX=$HOME/.wine32 wine LeagueClient.exe
-        ;;
-    *)
-        pushd $HOME/.wine32/drive_c/Riot\ Games/League\ of\ Legends/RADS/system/
-        WINEARCH=win32 WINEPREFIX=$HOME/.wine32 wine rads_user_kernel.exe run lol_launcher $(ls ../projects/lol_launcher/releases/) LoLLauncher.exe
-        ;;
-esac
-popd
-
-```
-
-And running the beta version by typing
-
-```
-# leagueoflegends beta
-
-```
 
 ## Troubleshooting
 
@@ -271,12 +215,6 @@ And running the beta version by typing
 *   Disabling Anti-Aliasing, Vertical Synchronization and Frame Rate Cap in the in-game options may greatly improve performance for some cards.
 
 *   If there is no in-game audio with usb sound cards, installing [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) may resolve it.
-
-### Client update issues
-
-##### first client update stuck on 47%
-
-**(tried in the Lutris installation version)** I let the game updating the whole night while sleeping. By the time i woke up the client stuck in 47%. I just closed the game (and stoppped it from the Lutris GUI) and when I restarted, it worked like a charm (maybe I was just lucky) and this shouldn't be noted here, but who knows... in concrete: the advice here is just to be really patient and generous with the time, in wine that is usually required (in my case 8+ hours)
 
 ### Connection issues
 
@@ -322,7 +260,7 @@ Alternatively, you can disable the library by adding the following variable over
 
 Install the 32-bit graphics driver listed in the *OpenGL (Multilib)* column in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
 
-#### In-game shop crash
+#### Using OpenGL
 
 Edit the file `Config/game.cfg` and add `x3d_platform=1` to `[General]` section.
 
@@ -334,7 +272,15 @@ x3d_platform=1
 
 This option should switch to the OpenGL renderer.
 
-**Warning:** This may cause some moderate to severe graphic bugs and blurry textures, depending on setup.
+**Warning:** This can cause some moderate to severe graphic bugs and blurry textures, depending on setup.
+
+If you are using mesa and are not using proprietary graphics drivers, you will need to set the following [[Environment Variables](https://wiki.archlinux.org/index.php/Environment_variables)] before launching the game, otherwise in-game text will not render properly:
+
+```
+ export MESA_GL_VERSION_OVERRIDE=4.5COMPAT
+ export MESA_GLSL_VERSION_OVERRIDE=450
+
+```
 
 #### Store Authentication Required
 
@@ -382,7 +328,7 @@ Then replace all mentions of localhost with the hostname you got from the first 
 *   If you cannot access the launcher store running d3dstream patched wine, you can bypass the problem by running the game from the default 64-bit prefix with the below command, just remember to restart the game before you try to go for another match.
 
 ```
-wine .wine32/drive_c/Riot\ Games/League\ of\ Legends/lol.launcher.exe
+wine .wine32/drive_c/Riot\ Games/League\ of\ Legends/LeagueClient.exe
 
 ```
 

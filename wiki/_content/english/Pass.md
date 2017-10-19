@@ -98,7 +98,7 @@ Since version 1.7, pass supports extensions developed by the community. These ex
 
 Manage the whole tree of your password store encrypted inside a [tomb](/index.php/Tomb "Tomb").
 
-*   [pass-otp](https://github.com/tadfisher/pass-otp) ([pass-otp](https://aur.archlinux.org/packages/pass-otp/))
+*   [pass-otp](https://github.com/tadfisher/pass-otp) ([pass-otp](https://www.archlinux.org/packages/?name=pass-otp))
 
 Support for one-time-password (OTP) tokens.
 

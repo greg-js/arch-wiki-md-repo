@@ -473,7 +473,7 @@ ui.track_notifications_enabled=false
 
 ```
 
-Restart Spotify. Note that several causes appear to exist for this problem, and this particular fix only applies to select versions of Spotify client and Awesome, and it may be that additional root causes exist for the Debian and Ubuntu users reporting this issue. Observed with Spotify 0.9.17.1.g9b85d436 and Awesome 3.4.15.
+Restart Spotify. Note that several causes appear to exist for this problem, and this particular fix only applies to select versions of Spotify client, i3 and Awesome, and it may be that additional root causes exist for the Debian and Ubuntu users reporting this issue. Observed with Spotify 0.9.17.1.g9b85d436 and Awesome 3.4.15 and i3-gaps 4.13-2 and Spotify 1.0.64.407.g9bd02c2d.
 
 **Note:** As of Spotify 1.0.17.75-2, `ui.track_notifications_enabled=false` seems to be ignored. On the other hand some, users report not experimenting the deadlock anymore as of Awesome 3.5.6\. Deadlocks could be caused by scripts called by Awesome, which rely on buggy spotify dbus properties. See [[1]](https://github.com/acrisci/playerctl/issues/20).
 

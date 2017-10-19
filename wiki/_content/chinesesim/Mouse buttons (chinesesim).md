@@ -9,9 +9,9 @@ Related articles
 
 ## Contents
 
-*   [1 Prerequisites](#Prerequisites)
-*   [2 Finding the mouse name](#Finding_the_mouse_name)
-*   [3 Configuring Xorg](#Configuring_Xorg)
+*   [1 写在前面](#.E5.86.99.E5.9C.A8.E5.89.8D.E9.9D.A2)
+*   [2 查找鼠标名称](#.E6.9F.A5.E6.89.BE.E9.BC.A0.E6.A0.87.E5.90.8D.E7.A7.B0)
+*   [3 配置Xorg](#.E9.85.8D.E7.BD.AEXorg)
 *   [4 Post Configuration](#Post_Configuration)
     *   [4.1 Google Chrome](#Google_Chrome)
     *   [4.2 Opera](#Opera)
@@ -35,28 +35,28 @@ Related articles
     *   [8.2 Mad Catz Mouse](#Mad_Catz_Mouse)
     *   [8.3 Logitech M560/M545/M546](#Logitech_M560.2FM545.2FM546)
 
-## Prerequisites
+## 写在前面
 
 **Note:** These are helper comments, and can be ignored if you are looking for nothing but raw information. Due to community feedback, I decided to add a bit more commenting that describes what's going on "behind the scenes" with this configuration.
 
-We will be using the `evdev` driver for Xorg. EVentDEVice is an advanced driver for USB input devices which offers much greater power over the standard Xorg `mouse` driver. It is also more "direct" than the `mouse` driver, allowing lower latency and less translation issues.
+我们将为Xorg使用`evdev`驱动。EVentDEvice是一款高级USB设备驱动，可以提供比常规Xorg `mouse` 驱动更强大，更“直接”的功能，减少输入延迟以及交流问题。
 
-*   Note that `evdev` is both a kernel module and an Xorg input driver. All the Arch kernels come with the `evdev` module.
+*   注意：`evdev` 是内核与Xorg包共有的输入驱动。所有的Arch内核都与`evdev`模块有关。
 
-With the newer Xorg 11R7.0 it seems only the following changes to `/etc/X11/xorg.conf` need to be made with nothing else needing to be done.
+较新的Xorg版本（比如11R7.0）只需要进行下列步骤中对 `/etc/X11/xorg.conf` 的更改而不需要其它的步骤。
 
-## Finding the mouse name
+## 查找鼠标名称
 
-**Note:** To get accurate information it is sometimes required to execute this command from a boot where no Xorg or mouse drivers have been loaded.
+**Note:** 为了得到更准确的信息，有时你需要在未加载Xorg或者鼠标驱动时执行命令。
 
-The first step is to find the name of the mouse / mice. To do this, execute the following command:
+第一步：查找你鼠标的名字。你可以通过输入以下命令来查询：
 
 ```
 $ egrep "Name|Handlers" /proc/bus/input/devices | egrep -B1 'Handlers.*mouse'
 
 ```
 
-This should output something like this:
+输出会像下面这样:
 
 ```
 N: Name="Logitech USB Gaming Mouse"
@@ -64,7 +64,7 @@ H: Handlers=mouse0 event0 ts0
 
 ```
 
-Or this if you have more than one mouse:
+如果你拥有多于一个的鼠标：
 
 ```
 N: Name="Kensington Kensington Expert Mouse Wireless"
@@ -75,18 +75,21 @@ H: Handlers=kbd event2 mouse1
 
 ```
 
-The mouse is the one that has the `Handlers=mouse0`, so the name of the device is `Logitech USB Gaming Mouse`.
+**Note:** 译者注：在VMware等虚拟环境下鼠标类型可能与实际不符。
 
-**Note:** My mouse is a Logitech G5; your mouse is probably different, and therefore the `Name` will be different.
+你的鼠标名就是其中一个含有`Handlers=mouse0`的设备名，所以本例中的鼠标名为 `Logitech USB Gaming Mouse`。
 
-Copy the name of the device, and open up `/etc/X11/xorg.conf`.
+**Note:** 本例中使用的鼠标是Logitech G5,你所用的鼠标或许与之不同，所以`名字`可能不同
 
-## Configuring Xorg
+拷贝你鼠标的名字，打开`/etc/X11/xorg.conf`。
 
-Now, we need an entry in `xorg.conf` that tells X how to use this mouse. It should look something like this:
+## 配置Xorg
+
+我们需要一个入口点告诉X服务器如何使用这个鼠标，它可能会像是这样：
+
+Section "InputDevice"
 
 ```
-Section "InputDevice"
   Identifier      "Evdev Mouse"
   Driver          "evdev"
   Option          "Name" "Logitech USB Gaming Mouse"
@@ -99,11 +102,11 @@ EndSection
 
 ```
 
-Replace the `Name` option with the name you copied from above. You may also omit the `CorePointer` option if you use multiple mice or experience errors when attempting to load Xorg. The other options are all basic mouse configurations for evdev and should work with most mice.
+将`Name`选项用你刚刚复制的名字覆盖。如果你在使用多个鼠标或者在加载Xorg时出现错误，可以忽略掉`CorePointer`选项。其他选项均为`evdev`对鼠标的默认配置，因此应该可以对大多数鼠标生效。
 
-Next, we need to tell X to use the mouse, so look in `xorg.conf` for `ServerLayout`.
+接下来，我们需要告诉X使用这个刚配置好的鼠标，因此，要在`xorg.conf`中寻找`ServerLayout`。
 
-Modify the `ServerLayout` section to use "Evdev Mouse" as the device. When you are done, it should look something like this:
+修改`ServerLayout`块来启用“Evdev Mouse”（刚刚设置好的设备的Identifier）。完成后，它应该像下面这样：
 
 ```
 Section "ServerLayout"
@@ -115,47 +118,47 @@ EndSection
 
 ```
 
-The only thing you should change in the layout is the `InputDevice` line that refers to your mouse.
+你只需要更改其中的`InputDevice`一行指向你刚刚配置好的鼠标。
 
-That should be all that is required.
+完成后，准备工作就告一段落了。
 
-*   Edit by: xxsashixx
+*   由xxsashixx编辑：
 
-This is for Logitech G5 Mouse users. I have not tested this for other mice, but if you do not add this, your mouse *MAY* not work. If you do not need to add this, then do not.
+这是为Logitech G5鼠标用户写的。我没有为其他鼠标做测试。不过如果不做这一步，你的鼠标“可能”不能正常工作。 如果你不需要添加这些，就不要添加。
 
-Put
+将
 
 ```
 Option "Device" "/dev/input/event[#]"
 
 ```
 
-in the `InputDevice` section or else the mouse will not be picked up.
-
-[#] = The number you got from:
+加入`InputDevice` 块中，不然鼠标可能不会被检测到。 请把[#]替换成下面命令的执行结果：
 
 ```
 egrep "Name|Handlers" /proc/bus/input/devices
 
 ```
 
-*   Edit by: bapman
+*   由bapman编辑：
 
-With the above method, your mouse might not to work after reboot (event number changes). To fix this, you can use symlinks in `/dev/input/by-id`. For example:
+这个方法完成后，你的鼠标在重启后可能会失灵（因为改变了event number）。如果出现这种情况，你可以在`/dev/input/by-id`中使用symlink，比如：
 
 ```
 Option      "Device" "/dev/input/by-id/usb-Logitech_USB_Receiver-event-mouse"
 
 ```
 
-To find the appropriate id, do:
+“usb-Logitech_USB_Receiver-event-mouse”可以使用
 
 ```
-ls /dev/input/by-id/
+ls /dev/input/by-id
 
 ```
 
-*   Edit by: Diamir
+命令查询到。
+
+*   由Diamir编辑：
 
 With a Desktop type keyboard-mouse, this does not work because there is only one USB attachment and `/dev/input/by-id` contains only the keyboard. In this case, we can create a udev rule to get a consistent link. The following rules create the link `/dev/input/usbmouse` which points on the correct event entry:
 

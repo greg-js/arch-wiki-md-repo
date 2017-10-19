@@ -29,9 +29,13 @@ $ lxc-checkconfig
 
 ```
 
-Due to security concerns, the default Arch kernel does **not** ship with the ability to run containers as an unprivileged user. LXD however needs this ability to run. You can either build a kernel yourself that has `CONFIG_USER_NS` enabled, or use [linux-userns](https://aur.archlinux.org/packages/linux-userns/) or [linux-lts-userns](https://aur.archlinux.org/packages/linux-lts-userns/) from the [AUR](/index.php/AUR "AUR").
+The safest type of container that LXD can create is *unprivileged*. This is done by leveraging the Linux kernel's **User Namespaces** feature. However, due to more general security concerns, the default Arch kernel does *not* ship with User Namespaces enabled (`CONFIG_USER_NS` is a kernel compile-time decision). You have three (3) options to use a kernel with `CONFIG_USER_NS` and thereby create *unprivileged* containers:
 
-**Note:** You still be able to run containers without CONFIG_USER_NS kernel feature. See: [#Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS)
+*   Install the [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) kernel package along-side the default [linux](https://www.archlinux.org/packages/?name=linux) kernel. When you wish to run unprivileged LXD containers, boot with [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) by selecting it in the bootloader. [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) is compiled with `CONFIG_USER_NS`. Otherwise, run with [linux](https://www.archlinux.org/packages/?name=linux) as normal.
+*   Install the [linux-userns](https://aur.archlinux.org/packages/linux-userns/) or [linux-lts-userns](https://aur.archlinux.org/packages/linux-lts-userns/) packages from the [AUR](/index.php/AUR "AUR"). Both are compiled with `CONFIG_USER_NS`, the latter being the Long-Term Support version.
+*   Compile and install your own custom kernel with `CONFIG_USER_NS` enabled.
+
+**Note:** If you decide to run a kernel **without User Namespaces**, LXD containers will be *privileged* and that involves some risk (in the event a process escapes the container). See [#Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS) below.
 
 ### Sub{u,g}id configuration
 

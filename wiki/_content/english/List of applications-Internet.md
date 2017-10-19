@@ -410,7 +410,7 @@ See also [w:Comparison of web server software](https://en.wikipedia.org/wiki/Com
 
 *   **Webfs** — Simple and instant http server for mostly static content.
 
-	[http://linux.bytesex.org/misc/webfs.html/](http://linux.bytesex.org/misc/webfs.html/) || [webfs](https://www.archlinux.org/packages/?name=webfs)
+	[http://linux.bytesex.org/misc/webfs.html](http://linux.bytesex.org/misc/webfs.html) || [webfs](https://www.archlinux.org/packages/?name=webfs)
 
 *   **darkhttpd** — A small and secure static webserver
 
@@ -1220,7 +1220,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Skype](/index.php/Skype "Skype")** — Popular but proprietary application for voice and video communication.
 
-	[https://www.skype.com/](https://www.skype.com/) || [skypeforlinux](https://aur.archlinux.org/packages/skypeforlinux/) (or [skype](https://aur.archlinux.org/packages/skype/) for the old version)
+	[https://www.skype.com/](https://www.skype.com/) || [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/) (or [skype](https://aur.archlinux.org/packages/skype/) for the old version)
 
 *   **Hangups** — A third-party instant messaging client for Google Hangouts
 

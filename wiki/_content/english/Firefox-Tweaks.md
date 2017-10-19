@@ -1,3 +1,10 @@
+Related articles
+
+*   [Firefox](/index.php/Firefox "Firefox")
+*   [Browser plugins](/index.php/Browser_plugins "Browser plugins")
+*   [Firefox/Profile on RAM](/index.php/Firefox/Profile_on_RAM "Firefox/Profile on RAM")
+*   [Firefox/Privacy](/index.php/Firefox/Privacy "Firefox/Privacy")
+
 This page contains advanced Firefox configuration options and performance tweaks.
 
 ## Contents
@@ -629,6 +636,8 @@ Else rather boot the container, with systemd ideally setting up your networking 
               --network-veth -b
 
 ```
+
+**Note:** There is [a bug](https://github.com/systemd/systemd/issues/7093) in systemd version 235 that causes /tmp/.X11-unix to disappear from the filesystem when doing this. If you're having trouble, try binding /tmp/.X11-unix read-only instead: `--bind-ro=/tmp/.X11-unix`
 
 Once your container is booted, run the Xorg binary like so:
 

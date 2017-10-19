@@ -133,6 +133,8 @@ You can manually do this for individual applications by executing:
 
 Note, `firecfg` doesn't work with some cli shells such as: `tar`, `curl`, `wget`, `git` and `ssh` which need to be symlinked manually. One should also note that, while symlinking these shells does not break official packages like`pacman`, doing so may break certain AUR packages. In particular, without weakening the `/etc/firejail/curl.profile`, symlinking `curl` will break [Yaourt](https://aur.archlinux.org/packages/Yaourt/), but not, for example, [Cower](https://aur.archlinux.org/packages/Cower/).
 
+**Warning:** Upstream provides profiles for `gpg` and `gpg-agent`. If gpg is symlinked with the supplied profile, pacman will be unable to update the archlinux-keyring.
+
 #### Verifying Firejail is being used
 
 ```

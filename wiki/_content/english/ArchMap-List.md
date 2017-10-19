@@ -1052,5 +1052,6 @@ You can use the following website to get your device's coordinates along with a 
 35.33720,25.12360 "gkaklas" # Heraklion, Greece
 38.704883, -90.878528 "Noorquacker" # Missouri, USA
 58.493, 13.154 "phi97" # Lidkoping, Sweden
+51.1214715, -114.1167452 "mcnster" # Cowtown, Alberta, Canada
 
 ```

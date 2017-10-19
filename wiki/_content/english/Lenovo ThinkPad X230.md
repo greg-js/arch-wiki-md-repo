@@ -1,3 +1,9 @@
+Related articles
+
+*   [fprint](/index.php/Fprint "Fprint")
+*   [TrackPoint](/index.php/TrackPoint "TrackPoint")
+*   [HiDPI](/index.php/HiDPI "HiDPI")
+
 [Lenovo ThinkPad X230](http://www.lenovo.com/hk/en/productcatalog/pdf/X230-datasheet.pdf)
 
 ## Contents
@@ -9,6 +15,7 @@
     *   [1.4 Backlight control keys](#Backlight_control_keys)
     *   [1.5 Suspend to ram](#Suspend_to_ram)
     *   [1.6 UMTS Modem](#UMTS_Modem)
+    *   [1.7 Fan control](#Fan_control)
 *   [2 USB BIOS update](#USB_BIOS_update)
 *   [3 Power Saving](#Power_Saving)
     *   [3.1 TLP](#TLP)
@@ -125,6 +132,24 @@ In order for it to work with [NetworkManager](/index.php/NetworkManager "Network
 For it to be recognized by ModemManager, you also need to set the kernel module option to:
 
  `/etc/modprobe.d/umts-modem.conf`  `options cdc_ncm prefer_mbim=N` 
+
+### Fan control
+
+To optimize fan control, install and setup [thinkfan](https://wiki.archlinux.org/index.php/Fan_speed_control#ThinkPad_laptops). Then use the following configuration:
+
+ `/etc/thinkfan.conf` 
+```
+tp_fan /proc/acpi/ibm/fan
+hwmon /sys/class/thermal/thermal_zone0/temp
+
+(0, 0,  60)
+(1, 53, 65)
+(2, 55, 66)
+(3, 57, 68)
+(4, 61, 70)
+(5, 64, 71)
+(7, 68, 32767)
+```
 
 ## USB BIOS update
 

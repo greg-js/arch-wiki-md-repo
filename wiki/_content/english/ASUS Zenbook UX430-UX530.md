@@ -86,7 +86,9 @@ And finally, [start and enable](/index.php/Systemd#Using_units "Systemd") `fix_h
 
 ## Fan spins all the time
 
-See [Fan speed control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control") and [here](https://github.com/hirschmann/nbfc/issues/342#issuecomment-335388009) to fix fan behaviour.
+See [Fan speed control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control").
+
+**Tip:** [pull request](https://github.com/hirschmann/nbfc/pull/361) in upstream has been submitted. The official configuration file might soon be available.
 
 ## Microcode
 

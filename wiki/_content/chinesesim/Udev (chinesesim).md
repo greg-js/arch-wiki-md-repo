@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Udev](/index.php/Udev "Udev") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-10-07，点击[这里](https://wiki.archlinux.org/index.php?title=Udev&diff=0&oldid=403579)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Udev](/index.php/Udev "Udev") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-19，点击[这里](https://wiki.archlinux.org/index.php?title=Udev&diff=0&oldid=493547)可以查看翻译后英文页面的改动。
 
 摘自[维基百科：Udev](https://en.wikipedia.org/wiki/Udev "wikipedia:Udev")：
 
@@ -19,24 +19,24 @@
 *   [3 Udisks](#Udisks)
 *   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
     *   [4.1 访问固件编程器（烧录器）和 USB 虚拟串行设备](#.E8.AE.BF.E9.97.AE.E5.9B.BA.E4.BB.B6.E7.BC.96.E7.A8.8B.E5.99.A8.EF.BC.88.E7.83.A7.E5.BD.95.E5.99.A8.EF.BC.89.E5.92.8C_USB_.E8.99.9A.E6.8B.9F.E4.B8.B2.E8.A1.8C.E8.AE.BE.E5.A4.87)
-    *   [4.2 USB 插入时执行规则](#USB_.E6.8F.92.E5.85.A5.E6.97.B6.E6.89.A7.E8.A1.8C.E8.A7.84.E5.88.99)
-    *   [4.3 VGA 线缆接入时执行规则](#VGA_.E7.BA.BF.E7.BC.86.E6.8E.A5.E5.85.A5.E6.97.B6.E6.89.A7.E8.A1.8C.E8.A7.84.E5.88.99)
-    *   [4.4 侦测新的 eSATA 设备](#.E4.BE.A6.E6.B5.8B.E6.96.B0.E7.9A.84_eSATA_.E8.AE.BE.E5.A4.87)
-    *   [4.5 将内置 SATA 接口标记为 eSATA](#.E5.B0.86.E5.86.85.E7.BD.AE_SATA_.E6.8E.A5.E5.8F.A3.E6.A0.87.E8.AE.B0.E4.B8.BA_eSATA)
-    *   [4.6 设置静态设备名](#.E8.AE.BE.E7.BD.AE.E9.9D.99.E6.80.81.E8.AE.BE.E5.A4.87.E5.90.8D)
-        *   [4.6.1 视频设备](#.E8.A7.86.E9.A2.91.E8.AE.BE.E5.A4.87)
-        *   [4.6.2 打印机](#.E6.89.93.E5.8D.B0.E6.9C.BA)
-        *   [4.6.3 USB 闪存设备](#USB_.E9.97.AA.E5.AD.98.E8.AE.BE.E5.A4.87)
-    *   [4.7 唤醒挂起的 USB 设备](#.E5.94.A4.E9.86.92.E6.8C.82.E8.B5.B7.E7.9A.84_USB_.E8.AE.BE.E5.A4.87)
-    *   [4.8 触发事件](#.E8.A7.A6.E5.8F.91.E4.BA.8B.E4.BB.B6)
+    *   [4.2 VGA 线缆接入时执行规则](#VGA_.E7.BA.BF.E7.BC.86.E6.8E.A5.E5.85.A5.E6.97.B6.E6.89.A7.E8.A1.8C.E8.A7.84.E5.88.99)
+    *   [4.3 侦测新的 eSATA 设备](#.E4.BE.A6.E6.B5.8B.E6.96.B0.E7.9A.84_eSATA_.E8.AE.BE.E5.A4.87)
+    *   [4.4 将内置 SATA 接口标记为 eSATA](#.E5.B0.86.E5.86.85.E7.BD.AE_SATA_.E6.8E.A5.E5.8F.A3.E6.A0.87.E8.AE.B0.E4.B8.BA_eSATA)
+    *   [4.5 设置静态设备名](#.E8.AE.BE.E7.BD.AE.E9.9D.99.E6.80.81.E8.AE.BE.E5.A4.87.E5.90.8D)
+        *   [4.5.1 视频设备](#.E8.A7.86.E9.A2.91.E8.AE.BE.E5.A4.87)
+        *   [4.5.2 打印机](#.E6.89.93.E5.8D.B0.E6.9C.BA)
+    *   [4.6 唤醒挂起的 USB 设备](#.E5.94.A4.E9.86.92.E6.8C.82.E8.B5.B7.E7.9A.84_USB_.E8.AE.BE.E5.A4.87)
+    *   [4.7 触发事件](#.E8.A7.A6.E5.8F.91.E4.BA.8B.E4.BB.B6)
+    *   [4.8 触发 udev 规则事件的桌面提示](#.E8.A7.A6.E5.8F.91_udev_.E8.A7.84.E5.88.99.E4.BA.8B.E4.BB.B6.E7.9A.84.E6.A1.8C.E9.9D.A2.E6.8F.90.E7.A4.BA)
 *   [5 排错](#.E6.8E.92.E9.94.99)
     *   [5.1 屏蔽模块](#.E5.B1.8F.E8.94.BD.E6.A8.A1.E5.9D.97)
-    *   [5.2 udevd 引导时挂起](#udevd_.E5.BC.95.E5.AF.BC.E6.97.B6.E6.8C.82.E8.B5.B7)
-    *   [5.3 BusLogic](#BusLogic)
-    *   [5.4 一些移动设备不可移除](#.E4.B8.80.E4.BA.9B.E7.A7.BB.E5.8A.A8.E8.AE.BE.E5.A4.87.E4.B8.8D.E5.8F.AF.E7.A7.BB.E9.99.A4)
-    *   [5.5 声音问题和一些不能自动加载的模块](#.E5.A3.B0.E9.9F.B3.E9.97.AE.E9.A2.98.E5.92.8C.E4.B8.80.E4.BA.9B.E4.B8.8D.E8.83.BD.E8.87.AA.E5.8A.A8.E5.8A.A0.E8.BD.BD.E7.9A.84.E6.A8.A1.E5.9D.97)
-    *   [5.6 IDE CD/DVD 驱动器的支持](#IDE_CD.2FDVD_.E9.A9.B1.E5.8A.A8.E5.99.A8.E7.9A.84.E6.94.AF.E6.8C.81)
-    *   [5.7 光驱被标识为磁盘](#.E5.85.89.E9.A9.B1.E8.A2.AB.E6.A0.87.E8.AF.86.E4.B8.BA.E7.A3.81.E7.9B.98)
+    *   [5.2 Debug output](#Debug_output)
+    *   [5.3 udevd 引导时挂起](#udevd_.E5.BC.95.E5.AF.BC.E6.97.B6.E6.8C.82.E8.B5.B7)
+    *   [5.4 BusLogic](#BusLogic)
+    *   [5.5 一些移动设备不可移除](#.E4.B8.80.E4.BA.9B.E7.A7.BB.E5.8A.A8.E8.AE.BE.E5.A4.87.E4.B8.8D.E5.8F.AF.E7.A7.BB.E9.99.A4)
+    *   [5.6 声音问题和一些不能自动加载的模块](#.E5.A3.B0.E9.9F.B3.E9.97.AE.E9.A2.98.E5.92.8C.E4.B8.80.E4.BA.9B.E4.B8.8D.E8.83.BD.E8.87.AA.E5.8A.A8.E5.8A.A0.E8.BD.BD.E7.9A.84.E6.A8.A1.E5.9D.97)
+    *   [5.7 IDE CD/DVD 驱动器的支持](#IDE_CD.2FDVD_.E9.A9.B1.E5.8A.A8.E5.99.A8.E7.9A.84.E6.94.AF.E6.8C.81)
+    *   [5.8 光驱被标识为磁盘](#.E5.85.89.E9.A9.B1.E8.A2.AB.E6.A0.87.E8.AF.86.E4.B8.BA.E7.A3.81.E7.9B.98)
 *   [6 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
@@ -170,46 +170,26 @@ Udev 自动侦测规则文件的变化，所以修改会立即生效，无需重
 
 ### 访问固件编程器（烧录器）和 USB 虚拟串行设备
 
-The following ruleset will allow normal users (within the "users" group) the ability to access the [USBtinyISP](http://www.ladyada.net/make/usbtinyisp/) USB programmer for AVR microcontrollers and a generic (SiLabs [CP2102](http://www.silabs.com/products/interface/usbtouart)) USB to UART adapter, the [Atmel AVR Dragon](http://www.atmel.com/tools/AVRDRAGON.aspx?tab=overview) programmer, and the [Atmel AVR ISP mkII](http://www.atmel.com/tools/AVRISPMKII.aspx). Adjust the permissions accordingly. Verified as of 31-10-2012.
+下列规则允许 group 组用户访问 [USBtinyISP](http://www.ladyada.net/make/usbtinyisp/)（用于 AVR 微控制器的 USB 接口编程器）：
 
- `/etc/udev/rules.d/50-embedded_devices.rules` 
+ `/etc/udev/rules.d/50-usbtinyisp.rules` 
 ```
-# USBtinyISP Programmer rules
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="1781", ATTRS{idProduct}=="0c9f", GROUP="users", MODE="0666"
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="0479", GROUP="users", MODE="0666"
-
-# USBasp Programmer rules http://www.fischl.de/usbasp/
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="05dc", GROUP="users", MODE="0666"
-
-# Mdfly.com Generic (SiLabs CP2102) 3.3v/5v USB VComm adapter
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", GROUP="users", MODE="0666"
-
-#Atmel AVR Dragon (dragon_isp) rules
-SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2107", GROUP="users", MODE="0666"
-
-#Atmel AVR JTAGICEMKII rules
-SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2103", GROUP="users", MODE="0666"
-
-#Atmel Corp. AVR ISP mkII
-SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2104", GROUP="users", MODE="0666"
-
-#Atmel Copr. JTAGICE3
-SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2140", GROUP="users", MODE="0666"
-
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1781", ATTRS{idProduct}=="0c9f", GROUP="users", MODE="0660"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="0479", GROUP="users", MODE="0660"
 ```
 
-### USB 插入时执行规则
-
-See the [Execute on USB insert](/index.php/Execute_on_USB_insert "Execute on USB insert") article or the [devmon wrapper script](http://igurublog.wordpress.com/downloads/script-devmon/).
+用 *lsusb* 命令可获取其他种类设备的厂商 ID 和产品 ID。
 
 ### VGA 线缆接入时执行规则
 
-Create the rule `/etc/udev/rules.d/95-monitor-hotplug.rules` with the following content to launch [arandr](https://www.archlinux.org/packages/?name=arandr) on plug in of a VGA monitor cable:
+创建包含下列内容的规则文件 `/etc/udev/rules.d/95-monitor-hotplug.rules` ，可以在 VGA 线缆插入时执行 [arandr](https://www.archlinux.org/packages/?name=arandr)：
 
 ```
 KERNEL=="card0", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/*username*/.Xauthority", RUN+="/usr/bin/arandr"
 
 ```
+
+**提示：** 某些显示管理器把 .Xauthority 文件保存在用户家目录以外的位置，需要修改 ENV{XAUTHORITY} 的内容。例如，[GNOME 显示管理器](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)") 里的.Xauthority 文件路径如下所示： `$ printenv XAUTHORITY`  `/run/user/1000/gdm/Xauthority` 
 
 ### 侦测新的 eSATA 设备
 
@@ -306,42 +286,6 @@ LABEL="persistent_printer_end"
 
 ```
 
-#### USB 闪存设备
-
-USB flash devices usually contain partitions, and partition labels are one way to have a static naming for a device. Another way is to create a udev rule for it.
-
-Get the serial number and USB ids from the USB flash drive (if you use multiple of the same make, you might have to check the serial is indeed unique):
-
-```
-lsusb -v | grep -A 5 Vendor
-
-```
-
-Create a udev rule for it by adding the following to a file in `/etc/udev/rules.d/`, such as `8-usbstick.rules`:
-
-```
-KERNEL=="sd*", ATTRS{serial}=="$SERIAL", ATTRS{idVendor}=="$VENDOR", ATTRS{idProduct}=="$PRODUCT" SYMLINK+="$SYMLINK%n"
-
-```
-
-Replace `$SERIAL`, `$VENDOR`, `$PRODUCT` from above output accordingly and `$SYMLINK` with the desired name. `%n` will expand to the partition number. For example, if the device has two partitions, two symlinks will be created. You do not need to go with the 'serial' attribute. If you have a custom rule of your own, you can put it in as well (e.g. using the vendor name).
-
-Rescan sysfs:
-
-```
-udevadm trigger
-
-```
-
-Now check the contents of `/dev`:
-
-```
-ls /dev
-
-```
-
-It should show the device with the desired name.
-
 ### 唤醒挂起的 USB 设备
 
 First, find vendor and product ID of your device, for example
@@ -369,11 +313,70 @@ It can be useful to trigger various udev events. For example, you might want to 
 
 This command will trigger a USB remove event on all USB devices with vendor ID `abcd`.
 
+### 触发 udev 规则事件的桌面提示
+
+Invoking an external script containing calls to `notify-send` via *udev* [can sometimes be challenging](https://bbs.archlinux.org/viewtopic.php?id=212364) since the notification(s) never display on the Desktop. Here is an example of what commands and environmental variables need to be included in which files for `notify-send` to successfully be executed from a *udev* rule. NOTE: a number of variables are hardcoded in this example, thus consider making them portable (i.e., $USER rather than user's shortname) once you understand the example.
+
+1) The following *udev* rule executes a script that plays a notification sound and sends a desktop notification when screen brightness is changed according to power state on a laptop. Create the file:
+
+ `/etc/udev/rules.d/99-backlight_notification.rules` 
+```
+Play a notification sound and send a desktop notification when screen brightness is changed according to power state on a laptop (a second ''udev'' rule actually changes the screen brightness)
+# Rule for when switching to battery
+ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="0", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/USERNAME/.Xauthority" RUN+="/usr/bin/su USERNAME_TO_RUN_SCRIPT_AS -c /usr/local/bin/brightness_notification.sh"
+# Rule for when switching to AC
+ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="1", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/USERNAME/.Xauthority" RUN+="/usr/bin/su USERNAME_TO_RUN_SCRIPT_AS -c /usr/local/bin/brightness_notification.sh"
+
+```
+
+Note: 1) `USERNAME_TO_RUN_SCRIPT_AS` and `USERNAME` need to be changed to that of the shortname for the user of the graphical session where the notification will be displayed and 2) the script needs to be executed with `/usr/bin/su`, which will place its ownership under the user of the graphical session (rather than root/the system) where the notification will be displayed.
+
+2) Contents of the executable script to be run on trigger of the *udev* rule:
+
+ `/usr/local/bin/brightness_notification.sh` 
+```
+#!/usr/bin/env bash
+
+export XAUTHORITY=/home/USERNAME_TO_RUN_SCRIPT_AS/.Xauthority
+export DISPLAY=:0
+export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/UID_OF_USER_TO_RUN_SCRIPT_AS/bus"
+
+/usr/bin/sudo -u USERNAME_TO_RUN_SCRIPT_AS /usr/bin/paplay --server /run/user/UID_OF_USER_TO_RUN_SCRIPT_AS/pulse/native /home/USERNAME/.i3/sounds/Click1.wav > /dev/null 2>&1
+
+/usr/bin/notify-send -i /usr/share/icons/gnome/256x256/status/battery-full-charging.png 'Changing Power States' --expire-time=4000
+
+```
+
+Note: 1) `USERNAME_TO_RUN_SCRIPT_AS`, `UID_OF_USER_TO_RUN_SCRIPT_AS` and `USERNAME` needs to be changed to that of the shortname for the user and user's UID of the graphical session where the notification will be displayed; 2) `/usr/bin/sudo` is needed when playing audio via pulseaudio; and, 3) three environmental variables (i.e., `XAUTHORITY`, `DISPLAY` and `DBUS_SESSION_BUS_ADDRESS`) for the user of the graphical session where the notification will be displayed need to be defined and exported.
+
+**Warning:** The `XAUTHORITY`, `DISPLAY` and `DBUS_SESSION_BUS_ADDRESS` environment variables must be defined correctly.
+
+3) Load/reload the new *udev* rule (see above) and test it by unplugging the power supply to the laptop.
+
+**Tip:** See also [xpub](https://github.com/Ventto/xpub) as a method for getting the user's display environment variables and exporting the last into *udev* rules via `IMPORT` key.
+
 ## 排错
 
 ### 屏蔽模块
 
 极个别情况下，udev 也会犯错或加载错误的模块。为了防止错误的发生，你可以使用模块禁用列表。只要模块加入该列表，无论是启动时，或者是运行时（如usb硬盘等）udev都不会加载这些模块。参见[blacklisting](/index.php/Blacklisting "Blacklisting").
+
+### Debug output
+
+To get hardware debug info, use the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `udev.log-priority=debug`. Alternatively you can set
+
+ `/etc/udev/udev.conf`  `udev_log="debug"` 
+
+This option can also be compiled into your initramfs by adding the config file to your `FILES` array
+
+ `/etc/mkinitcpio.conf`  `FILES="... /etc/udev/udev.conf"` 
+
+and then rebuilding the initramfs with
+
+```
+# mkinitcpio -p linux
+
+```
 
 ### udevd 引导时挂起
 
@@ -453,4 +456,6 @@ SUBSYSTEMS=="scsi", KERNEL=="s[rg][0-9]*", ATTRS{type}=="5", GROUP="optical"
 *   [udev 邮件列表](http://vger.kernel.org/vger-lists.html#linux-hotplug)
 *   [Scripting with udev](http://jasonwryan.com/blog/2014/01/20/udev/)
 *   [编写 udev 规则](http://www.reactivated.net/writing_udev_rules.html)
+*   [LFS 系统设备与模块处理](http://www.linuxfromscratch.org/lfs/view/6.1/chapter07/udev.html)
+*   [Running GUI or accessing display variables from udev rules](https://github.com/Ventto/xpub)
 *   中文读者可参阅 [金步国](http://www.jinbuguo.com/)先生翻译的 [udev 中文手册](http://www.jinbuguo.com/systemd/udev.html)

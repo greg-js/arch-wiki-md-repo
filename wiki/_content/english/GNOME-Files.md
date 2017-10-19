@@ -1,3 +1,11 @@
+Related articles
+
+*   [GNOME](/index.php/GNOME "GNOME")
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [Nemo](/index.php/Nemo "Nemo")
+*   [Thunar](/index.php/Thunar "Thunar")
+*   [PCManFM](/index.php/PCManFM "PCManFM")
+
 Files is the default file manager for [GNOME](https://wiki.gnome.org/). Files attempts to provide a streamlined method to manage both files and applications.
 
 **Note:** Files was known as [Nautilus](https://wiki.gnome.org/Apps/Nautilus) prior to version 3.6\. The application was given new descriptive names, one for each supported language. The name *Nautilus* is still used in numerous places such as the executable name, some package names, some desktop entries, and some GSettings schemas.
@@ -15,6 +23,7 @@ Files is the default file manager for [GNOME](https://wiki.gnome.org/). Files at
     *   [3.1 Thumbnails](#Thumbnails)
     *   [3.2 Create an empty document in Files 3.6 and above](#Create_an_empty_document_in_Files_3.6_and_above)
     *   [3.3 Music files metadata in list view](#Music_files_metadata_in_list_view)
+    *   [3.4 Hiding Files and Folders](#Hiding_Files_and_Folders)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Files is no longer the default file manager](#Files_is_no_longer_the_default_file_manager)
     *   [4.2 Thumbnailing not working for video files](#Thumbnailing_not_working_for_video_files)
@@ -139,6 +148,26 @@ To use the script you first need to [install](/index.php/Install "Install") the 
 Once the dependencies are installed, save the [bsc-v2.py](http://pastebin.com/zN69twVP) script to `~/.local/share/nautilus-python/extensions` (create the directory if it does not exist) and restart Files.
 
 The new columns should now have been added. To enable them, navigate to Preferences -> List columns and tick the columns that you wish to use.
+
+### Hiding Files and Folders
+
+Files and folders can be hidden in two ways. Traditionally, files and folders prepended with a dot ('.') will be hidden from view.
+
+To hide a file or folder without renaming, create a text file `.hidden` in the parent directory. Populate the file with the names of the files or folders you wish to be hidden.
+
+For example:
+
+ `~/.hidden` 
+```
+Templates
+Public
+Desktop
+
+```
+
+will hide the Templates, Public, and Desktop folders in the home directory.
+
+This function may not be respected by other file managers.
 
 ## Troubleshooting
 

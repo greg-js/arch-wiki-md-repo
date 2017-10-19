@@ -224,7 +224,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [105.1 Locale settings](#Locale_settings)
     *   [105.2 Unity 5 sound problems](#Unity_5_sound_problems)
     *   [105.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
-    *   [105.4 Missing Chinese/Japanese/Korea fonts](#Missing_Chinese.2FJapanese.2FKorea_fonts)
+    *   [105.4 Chinese/Japanese/Korean display bug](#Chinese.2FJapanese.2FKorean_display_bug)
 *   [106 Unrest](#Unrest)
 *   [107 War Thunder](#War_Thunder)
     *   [107.1 No audio](#No_audio_6)
@@ -453,7 +453,7 @@ Add `UNITY_DISABLE_GRAPHICS_DRIVER_WORKAROUNDS=yes` to your [launch options](/in
 
 ## Civilization V
 
-You need to add `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6'` to your [launch options](/index.php/Launch_option "Launch option").
+You need to add `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%` to your [launch options](/index.php/Launch_option "Launch option").
 
 [steam-for-linux issue #4379](https://github.com/ValveSoftware/steam-for-linux/issues/4379)
 
@@ -1753,11 +1753,11 @@ Some of the affected games: *Cities: Skylines*, *Tablestop Simulator*, *Assault 
 
 Be aware that some games do not support setting that parameter, it will simply be ignored. This is the case for *Pillars of Eternity*, *Kentucky Route Zero*, *Sunless Sea*.
 
-### Missing Chinese/Japanese/Korea fonts
+### Chinese/Japanese/Korean display bug
 
-Probably it is a Unity3D bug,which is fixed in up-to-date version ( above 1:5.6.2f1+20170628-1 ) of [unity-editor](https://aur.archlinux.org/packages/unity-editor/).[[8]](https://issuetracker.unity3d.com/issues/linux-simplified-chinese-characters-are-not-supported-on-linux)
+Chinese/Japanese/Korean characters are all blank on Linux. Probably it is a Unity3D bug,which is fixed in up-to-date version ( above 1:5.6.2f1+20170628-1 ) of [unity-editor](https://aur.archlinux.org/packages/unity-editor/).[[8]](https://issuetracker.unity3d.com/issues/linux-simplified-chinese-characters-are-not-supported-on-linux)
 
-Some of the affected games: *Cities: Skylines*, ~~*Streets of Rogue*~~, *Beholder*, *Onraid*, *Rimworld*, *The Escapists 2*, *Candle*, *Human:Fall Flat*, *Ultimate Chicken Horse*.
+Some of the affected games: *Cities: Skylines*, ~~*Streets of Rogue*~~, *Beholder*, *Onraid*, *Rimworld*, *The Escapists 2*, *Candle*, *Human:Fall Flat*, *Plague Inc.*, *Ultimate Chicken Horse*.
 
 ## Unrest
 

@@ -34,18 +34,18 @@ $ nmap localhost
 
 **4.** Check if is working [here](http://acidhub.click/NullidentdMod/).
 
-As is nullidentdmod will return a random userid.
+As is, nullidentdmod will return a random userid.
 
 ### Customization
 
-**1.** Copy the unit for customization
+**1.** [Edit](/index.php/Edit "Edit") the unit with systemctl command:
 
 ```
-# cp /usr/lib/systemd/system/nullidentdmod@.service /etc/systemd/system/
+# systemctl edit --full nullidentdmod@.service
 
 ```
 
-**2.** [Edit](/index.php/Edit "Edit") `/etc/systemd/system/nullidentdmod@.service` At line 6, write desired userid
+At line 6, write desired userid
 
 ```
 [Unit]                                   

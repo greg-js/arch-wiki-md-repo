@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [KDE Wallet](/index.php/KDE_Wallet "KDE Wallet") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-18，点击[这里](https://wiki.archlinux.org/index.php?title=KDE+Wallet&diff=0&oldid=492606)可以查看翻译后英文页面的改动。
+
 [KDE Wallet Manager](http://utils.kde.org/projects/kwalletmanager/) 是一个用于管理 KDE Plasma 上密码的工具。它将用于在 KDE 上访问和管理你的密码
 
 ## Contents
@@ -12,14 +14,16 @@
 
 如果您的 KWallet 密码与您的用户名密码相同，您可以在登录时自动解锁您的 KWallet。
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) 包， 然后编辑您的登录管理器 pam (通常为于 `/etc/pam.d` ) 文件，并在其相应部分下添加:
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) 包，
+
+如果没有使用 [SDDM](/index.php/SDDM "SDDM") 登陆管理器，需要编辑您的登录管理器 pam (通常为于 `/etc/pam.d` ) 文件，并在其相应部分下添加:
 
 ```
 auth            optional        pam_kwallet5.so
 session         optional        pam_kwallet5.so auto_start
 ```
 
-在 [LightDM](/index.php/LightDM "LightDM"), 修改 `/etc/pam.d/lightdm` 和 `/etc/pam.d/lightdm-greeter` 文件:
+例如 [LightDM](/index.php/LightDM "LightDM") 需要修改 `/etc/pam.d/lightdm` 和 `/etc/pam.d/lightdm-greeter` 文件:
 
  `/etc/pam.d/lightdm` 
 ```
@@ -32,19 +36,7 @@ session         include         system-login
 **session         optional        pam_kwallet5.so auto_start**
 ```
 
-在 [SDDM](/index.php/SDDM "SDDM"), 只需编辑 `/etc/pam.d/sddm` 就可以让 Kwllet5 在登录后自动解锁:
-
- `/etc/pam.d/sddm` 
-```
-auth            include         system-login
-**auth            optional        pam_kwallet5.so**
-account         include         system-login
-password        include         system-login
-session         include         system-login
-**session         optional        pam_kwallet5.so auto_start**
-```
-
-重新启动后，如果您的用户密码与 KWallet 密码相同，您的 KWallet 将自动解锁。
+如果是 [GDM](/index.php/GDM "GDM"),编辑`/etc/pam.d/gdm-password`。重新启动后，如果您的用户密码与 KWallet 密码相同，您的 KWallet 将自动解锁。
 
 **Note:** Currently, kwallet-pam has at least two limitations: first, it's not compatible with [GnuPG](/index.php/GnuPG "GnuPG") keys, so KDE Wallet must use the standard blowfish encryption. Also, the wallet name must be "kdewallet" (that's the default name). If, for some reason, you create a new wallet, you need to use this name (so you will probably need to rename the old wallet too).
 
@@ -70,7 +62,7 @@ ssh-add $HOME/.ssh/key1 $HOME/.ssh/key2 $HOME/.ssh/key3 </dev/null
 
 ```
 
-You also have to set the `SSH_ASKPASS` environment variable in your /etc/profile or ~/.bash_profile:
+You also have to set the `SSH_ASKPASS` [environment variable](/index.php/Environment_variable "Environment variable"), see [Environment variables#Defining variables](/index.php/Environment_variables#Defining_variables "Environment variables"). E.g.:
 
 ```
 export SSH_ASKPASS="/usr/bin/ksshaskpass"

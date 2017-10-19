@@ -113,6 +113,19 @@ When I first installed xorg, I installed [xf86-input-evdev](https://www.archlinu
 
 If your touchpad stops working after suspend, it might be due to a [problem with the i8042 module](https://bbs.archlinux.org/viewtopic.php?pid=1550691#p1550691).
 
+To make taps work as clicks on the touchpad this file has to be created (see [libinput](/index.php/Libinput "Libinput")):
+
+ `/etc/X11/xorg.conf.d/30-touchpad.conf` 
+```
+Section "InputClass"
+    Identifier "touchpad"
+    Driver "libinput"
+    MatchIsTouchpad "on"
+    Option "Tapping" "on"
+EndSection
+
+```
+
 ### Camera
 
 The camera worked without effort on my part. I tested by installing running guvcview.

@@ -23,37 +23,22 @@ CAPT is Canon's proprietary Canon Advanced Printing Technology (CAPT) driver, su
 
 ## Configuration
 
-**Note:** Installing CAPT printers via the [CUPS](/index.php/CUPS "CUPS") web interface may not work [[1]](http://askubuntu.com/a/464334). Instead, use the manual method described below.
+Canon's driver uses a local daemon to communicate with the printer, and wraps that using a CUPS driver.
 
-Register the printer with CUPS using *lpadmin*:
+To configure the printer, follow the [CUPS](/index.php/CUPS "CUPS") article, using a [Printer URI](/index.php/CUPS#Printer_URI "CUPS") of `ccp://localhost:59787`. Find the right model using `lpinfo -m`, or check the table provided on the [Ubuntu help page](https://help.ubuntu.com/community/CanonCaptDrv190), which matches each supported printer with its corresponding PPD.
 
-```
-# lpadmin -p *printer_model* -m *printer_ppd_file* -v ccp://localhost:59787 -E
-
-```
-
-**Note:** If port `59787` doesn't work, try port `59**6**87`.
-
-Find the right PPD inside `/usr/share/cups/model`. For the printer model, use the `ShortNickName` found inside the PPD, or derive it from the file name, for example `CNCUPS**LBP6310**CAPTK.ppd`.
-
-Alternatively, check the table provided on the [Ubuntu help page](https://help.ubuntu.com/community/CanonCaptDrv190), which matches each supported printer with its corresponding PPD.
+**Warning:** Installing CAPT printers via the [CUPS](/index.php/CUPS "CUPS") web interface may not work [[1]](http://askubuntu.com/a/464334). Instead, use the [CLI tools](/index.php/CUPS#CLI_tools "CUPS").
 
 **Note:**
 
+*   If port `59787` doesn't work, try port `59**6**87`.
 *   Some models have multiple PPDs, where the last letter indicates the regional model (J = Japan, K = United Kingdom, S = United States)
-*   When specifying the PPD, use just the file name and not the full path (for instance, `SOME_PRINTER.ppd` instead of `/long/path/to/ppd/SOME_PRINTER.ppd`
+*   When specifying the PPD, use just the file name and not the full path (for instance, `SOME_PRINTER.ppd` instead of `/usr/share/cups/model/SOME_PRINTER.ppd`
 
-For example, for the *Canon LBP6310dn (UK model)*, run:
-
-```
-# lpadmin -p LBP6310 -m CNCUPSLBP6310CAPTK.ppd -v ccp://localhost:59787 -E
+Next, register the printer with the CAPT driver itself via *ccpdadmin*. Replace `*printer_address*` with either the USB port (e.g. `/dev/usb/lp0`) in case of a local printer, or the IP address, prefixed by `net:` (e.g. `net:192.168.1.100`) in case of a network printer:
 
 ```
-
-Next, register the printer with the CAPT driver itself via *ccpdadmin*. Replace `*printer_model*` with the model you found earlier (e.g. `LBP6310`), and `*printer_address*` with either the USB port (e.g. `/dev/usb/lp0`) in case of a local printer, or the IP address, prefixed by `net:` (e.g. `net:192.168.1.100`) in case of a network printer:
-
-```
-# ccpdadmin -p *printer_model* -o *printer_address*
+# ccpdadmin -p *queue_name* -o *printer_address*
 
 ```
 

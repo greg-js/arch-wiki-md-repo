@@ -1,3 +1,7 @@
+Related articles
+
+*   [udisks](/index.php/Udisks "Udisks")
+
 From [Wikipedia article](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
 
 	*udev* is a device manager for the Linux kernel. As the successor of *devfsd* and *hotplug*, *udev* primarily manages device nodes in the `/dev` directory. At the same time, *udev* also handles all user space events raised while hardware devices are added into the system or removed from it, including firmware loading as required by certain devices.
@@ -39,7 +43,7 @@ From [Wikipedia article](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
 
 ## Installation
 
-*udev* is now part of [systemd](/index.php/Systemd "Systemd") and is installed by default. See [systemd-udevd.service(8)](http://man7.org/linux/man-pages/man8/systemd-udevd.service.8.html) for information.
+*udev* is now part of [systemd](/index.php/Systemd "Systemd") and is installed by default. See [systemd-udevd.service(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-udevd.service.8) for information.
 
 A standalone fork is available as [eudev](/index.php/Eudev "Eudev").
 
@@ -168,13 +172,15 @@ See [Udisks](/index.php/Udisks "Udisks").
 
 ### Accessing firmware programmers and USB virtual comm devices
 
-The following rule will allow users in the `users` group to access the [USBtinyISP](http://www.ladyada.net/make/usbtinyisp/) USB programmer for AVR microcontrollers. Use *lsusb* to get the vendor and product IDs for other devices.
+The following rule will allow users in the `users` group to access the [USBtinyISP](http://www.ladyada.net/make/usbtinyisp/) USB programmer for AVR microcontrollers.
 
  `/etc/udev/rules.d/50-usbtinyisp.rules` 
 ```
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="1781", ATTRS{idProduct}=="0c9f", GROUP="users", MODE="0660"
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="0479", GROUP="users", MODE="0660"
 ```
+
+Use *lsusb* to get the vendor and product IDs for other devices.
 
 ### Execute on VGA cable plug in
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Pacnew_and_Pacsave_Files](/index.php/Pacnew_and_Pacsave_Files "Pacnew and Pacsave Files") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-04-12，点击[这里](https://wiki.archlinux.org/index.php?title=Pacnew_and_Pacsave_Files&diff=0&oldid=309973)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Pacnew_and_Pacsave_Files](/index.php/Pacnew_and_Pacsave_Files "Pacnew and Pacsave Files") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-18，点击[这里](https://wiki.archlinux.org/index.php?title=Pacnew_and_Pacsave_Files&diff=0&oldid=487323)可以查看翻译后英文页面的改动。
 
 在使用 pacman 移除一个带有配置文档的软件包时，pacman 通常会将配置文档复制为一个后缀名为 .pacsave 的备份文档。
 
@@ -123,10 +123,6 @@ Pacman 包含了 *pacdiff* 工具管理 pacnew/pacsave 文件。这个工具会�
 
 下面一些 [AUR](/index.php/AUR "AUR") 三方工具可以自动处理这些文件：
 
-*   **diffpac** — Standalone pacdiffviewer replacement
-
-	[https://github.com/bruenig/diffpac](https://github.com/bruenig/diffpac) || [diffpac](https://aur.archlinux.org/packages/diffpac/)
-
 *   **[Dotpac](/index.php/Dotpac "Dotpac")** — Basic interactive script with ncurses-based text interface and helpful walkthrough. No merging or auto-merging features.
 
 	[https://github.com/AladW/dotpac](https://github.com/AladW/dotpac) || [dotpac](https://aur.archlinux.org/packages/dotpac/)
@@ -135,13 +131,9 @@ Pacman 包含了 *pacdiff* 工具管理 pacnew/pacsave 文件。这个工具会�
 
 	[https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update](https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update) || [etc-update](https://aur.archlinux.org/packages/etc-update/)
 
-*   **pacdiffviewer** — Fully-featured interactive CLI script with automatic merging. Part of [Yaourt](/index.php/Yaourt "Yaourt").
+*   **pacmarge** — A tool for automatically merging .pacnew files
 
-	[http://archlinux.fr/yaourt-en](http://archlinux.fr/yaourt-en) || [yaourt](https://aur.archlinux.org/packages/yaourt/)
-
-*   **pacmerge-git** — Interactive CLI merge program.
-
-	[https://gitorious.org/pacmerge](https://gitorious.org/pacmerge) || [pacmerge-git](https://aur.archlinux.org/packages/pacmerge-git/)
+	[https://github.com/foutrelis/pacmarge](https://github.com/foutrelis/pacmarge) || [pacmarge](https://aur.archlinux.org/packages/pacmarge/)
 
 *   **pacnew-auto** — Automatic `pacnew` merging using [git](https://www.archlinux.org/packages/?name=git) rebase.
 

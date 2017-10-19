@@ -45,7 +45,7 @@ Alternatively, you can use the web version at [web.skype.com](https://web.skype.
 
 The new *Skype for Linux* has full functionality, including group video chat and [screen sharing](http://www.omgubuntu.co.uk/2017/08/skype-redesign-everyone-hates-now-available-linux).
 
-[Install](/index.php/Install "Install") it with the [skypeforlinux](https://aur.archlinux.org/packages/skypeforlinux/) or [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/) package.
+[Install](/index.php/Install "Install") it with the [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/) package.
 
 ## Legacy Skype
 
@@ -833,7 +833,7 @@ This might be caused by the wrong sound card being selected for [skypeforlinux-b
 
 #### Skype does not remember credentials/freezes after entering password
 
-The "new" Skype ([skypeforlinux](https://aur.archlinux.org/packages/skypeforlinux/) and [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/)) stores the user name/password in a [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), so make sure you have it properly set up.
+The "new" Skype [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/)) stores the user name/password in a [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), so make sure you have it properly set up.
 
 Note also that skype cannot work with [libsecret](https://www.archlinux.org/packages/?name=libsecret), it instead relies on the (deprecated) [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) library. If it is not installed, the UI will just freeze after the login page.
 

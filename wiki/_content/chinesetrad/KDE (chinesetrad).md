@@ -873,8 +873,6 @@ They stay there until KDE is declared stable and passes to [extra].
 
 Make sure [you make bug reports](/index.php/KDE#Distro_and_Upstream_bug_report "KDE") if you find any issues.
 
-Read [this section](/index.php/DeveloperWiki:KDE#Users "DeveloperWiki:KDE") in the wiki as well.
-
 ### KDE Legacy
 
 #### Downgrading to KDEmod3 from KDE 4

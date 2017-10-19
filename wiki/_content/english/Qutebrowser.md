@@ -5,6 +5,7 @@
 *   [1 Installation](#Installation)
 *   [2 Basic usage](#Basic_usage)
     *   [2.1 User configuration](#User_configuration)
+        *   [2.1.1 Configuration in Qutebrowser](#Configuration_in_Qutebrowser)
     *   [2.2 Keybindings](#Keybindings)
     *   [2.3 Video playback](#Video_playback)
 *   [3 Tips and tricks](#Tips_and_tricks)
@@ -28,26 +29,45 @@ On first usage of qutebrowser, a Quickstart page appears. It is later accessible
 
 ### User configuration
 
-You will find the configuration files of qutebrowser under `$XDG_CONFIG_HOME/qutebrowser/`. The main configuration happens in the file `qutebrowser.conf`, which is organized in sections like an ini-file. For example, under `[searchengines]` you can configure your search engines as described by the comment. To add a shortcut for searching the the arch wiki, add this line:
+Qutebrowser can be configured via the UI, the qutebrowser command-line or a python script. Qutebrowser's own documentation explains in detail how to configure qutebrowser with these different methods. To open qutebrowser's help system, type `:help`. On the help page, choose `Configuring qutebrowser`.
+
+To find out the paths where the configuration files will be located, open the special page `qute://version`. On Archlinux, this will typically be `$XDG_CONFIG_HOME/qutebrowser/`. The configuration made in qutebrowser will be stored in `autoconfig.yml` (which should not be touched by the user) while the user's python script is `config.py`.
+
+#### Configuration in Qutebrowser
+
+To set a single configuration item, you can simply type `:set` followed by the name of the configuration item and the new value that you would like to set. For example, you could type
 
 ```
-aw = https://wiki.archlinux.org/?search={}
+:set auto_save.session true
 
 ```
 
-Now, in qutebrowser you can search the Arch Linux wiki for an article about qutebrowser via `:open aw qutebrowser` which will bring you to this page. As per the standard configuration the key mapping `o` will subsitute `:open`, so typing `o aw *your_search_term*` will henceforth allow you to quickly search the arch wiki. Notice that the arguments required to perform a search vary across search engines, for example, to set up Google use:
+to open your previous tabs when you reopen qutebrowser.
+
+To open qutebrowser's UI settings page, type
 
 ```
-g = https://www.google.com/search?hl=en&q={}
+:set
 
 ```
 
-You can also make this setting from the browser with `:set searchengines *keyword* *your_search_term*`. For example:
+without further arguments. There, you can edit the different settings in the UI. When you are finished, type `:set` again to store your configuration.
+
+For example, under `url.searchengines` you can configure your search engines which are stored as a list of key-value pairs. When you have not changed this setting yet, this should look something like
 
 ```
-:set searchengines aw https://wiki.archlinux.org/?search={}
+{"DEFAULT": "https://duckduckgo.com/?q={}"}
 
 ```
+
+This configures duckduckgo as your default search engine while the placeholder `{}` will be replaced by your search term. To add a shortcut for quickly searching the arch wiki, you could use
+
+```
+{"DEFAULT": "https://duckduckgo.com/?q={}", "wa": "https://wiki.archlinux.org/?search={}"}
+
+```
+
+Then, as described by the comment in the qutebrowser UI, you can search the arch wiki by typing `o wa <searchterm>`. Notice that the arguments required to perform a search vary across search engines. For example, to set up Google, use `https://www.google.com/search?hl=en&q={}`.
 
 ### Keybindings
 

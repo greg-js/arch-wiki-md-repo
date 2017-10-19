@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [CPU_Frequency_Scaling](/index.php/CPU_Frequency_Scaling "CPU Frequency Scaling") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-04-04，点击[这里](https://wiki.archlinux.org/index.php?title=CPU_Frequency_Scaling&diff=0&oldid=247933)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Lenovo ThinkPad T420](/index.php/Lenovo_ThinkPad_T420 "Lenovo ThinkPad T420") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-04-04，点击[这里](https://wiki.archlinux.org/index.php?title=Lenovo+ThinkPad+T420&diff=0&oldid=247933)可以查看翻译后英文页面的改动。
 
 本文涵盖了在Lenovo T420笔记本上安装和配置Arch Linux的信息。
 

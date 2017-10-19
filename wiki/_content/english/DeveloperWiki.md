@@ -47,7 +47,6 @@
 
 *   [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database")
 *   [DeveloperWiki:Provides Database](/index.php/DeveloperWiki:Provides_Database "DeveloperWiki:Provides Database")
-*   [DeveloperWiki:KDE](/index.php/DeveloperWiki:KDE "DeveloperWiki:KDE")
 *   [DeveloperWiki:Ncurses Todo List](/index.php/DeveloperWiki:Ncurses_Todo_List "DeveloperWiki:Ncurses Todo List")
 
 ### Important Public Information

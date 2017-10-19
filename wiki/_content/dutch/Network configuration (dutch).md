@@ -1,461 +1,682 @@
+Related articles
+
+*   [Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")
+*   [Firewalls](/index.php/Firewalls "Firewalls")
+*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
+*   [network bridge](/index.php/Network_bridge "Network bridge")
+*   [List of applications/Internet#network managers](/index.php/List_of_applications/Internet#network_managers "List of applications/Internet")
+*   [network Debugging](/index.php/Network_Debugging "Network Debugging")
+
+Op deze pagina woordt de installatie van een **bedrade** netwerkaansluiting uitgelegd. Voor configuratie van een **wireless** aansluiting, zie de [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") engelstalige pagina.
+
 ## Contents
 
-*   [1 Gedateerde informatie](#Gedateerde_informatie)
-*   [2 Apparaatmodules laden](#Apparaatmodules_laden)
-*   [3 IP-adres configureren](#IP-adres_configureren)
-    *   [3.1 DHCP](#DHCP)
-    *   [3.2 Statisch](#Statisch)
-*   [4 Alternatieven](#Alternatieven)
-*   [5 Computernaam instellen](#Computernaam_instellen)
-*   [6 Hostnaam/IP instellen](#Hostnaam.2FIP_instellen)
-*   [7 Configuratie laden](#Configuratie_laden)
-*   [8 Nog meer instellingen](#Nog_meer_instellingen)
-    *   [8.1 Draadloos netwerk configureren](#Draadloos_netwerk_configureren)
-    *   [8.2 Firewall](#Firewall)
-    *   [8.3 Ifplugd](#Ifplugd)
-    *   [8.4 Koppelen van netwerkkaarten](#Koppelen_van_netwerkkaarten)
-    *   [8.5 Meerdere IP-adressen op meerdere netwerkkaarten](#Meerdere_IP-adressen_op_meerdere_netwerkkaarten)
-*   [9 Problemen oplossen](#Problemen_oplossen)
-    *   [9.1 Wisselen van computers op een kabelmodem](#Wisselen_van_computers_op_een_kabelmodem)
-    *   [9.2 Het TCP Window Scaling probleem](#Het_TCP_Window_Scaling_probleem)
-        *   [9.2.1 Hoe een probleem te constateren?](#Hoe_een_probleem_te_constateren.3F)
-        *   [9.2.2 Hoe een probleem op te lossen? (De slechte manier)](#Hoe_een_probleem_op_te_lossen.3F_.28De_slechte_manier.29)
-        *   [9.2.3 Hoe een probleem op te lossen? (De goede manier)](#Hoe_een_probleem_op_te_lossen.3F_.28De_goede_manier.29)
-        *   [9.2.4 Hoe een probleem op te lossen? (De beste manier)](#Hoe_een_probleem_op_te_lossen.3F_.28De_beste_manier.29)
-        *   [9.2.5 Meer informatie?](#Meer_informatie.3F)
-    *   [9.3 Realtek geen link / WOL problemen](#Realtek_geen_link_.2F_WOL_problemen)
-        *   [9.3.1 Methode 1 - Windows driver terugrollen of veranderen](#Methode_1_-_Windows_driver_terugrollen_of_veranderen)
-        *   [9.3.2 Methode 2 - WOL activeren in Windows driver](#Methode_2_-_WOL_activeren_in_Windows_driver)
-        *   [9.3.3 Methode 3 - Nieuwere Realtek Linux driver](#Methode_3_-_Nieuwere_Realtek_Linux_driver)
-        *   [9.3.4 Methode 4 - *LAN Boot ROM* activeren in BIOS/CMOS](#Methode_4_-_LAN_Boot_ROM_activeren_in_BIOS.2FCMOS)
-    *   [9.4 DLink G604T/DLink G502T DNS probleem](#DLink_G604T.2FDLink_G502T_DNS_probleem)
-        *   [9.4.1 Hoe het probleem te constateren?](#Hoe_het_probleem_te_constateren.3F)
-        *   [9.4.2 Hoe het probleem op te lossen?](#Hoe_het_probleem_op_te_lossen.3F)
-        *   [9.4.3 Meer informatie?](#Meer_informatie.3F_2)
+*   [1 Controleer de kabelaansluiting](#Controleer_de_kabelaansluiting)
+*   [2 Device driver](#Device_driver)
+    *   [2.1 Controleer de status](#Controleer_de_status)
+    *   [2.2 Laadt de module](#Laadt_de_module)
+*   [3 Netwerk management](#Netwerk_management)
+    *   [3.1 Device namen](#Device_namen)
+        *   [3.1.1 Toon de de huidige benaming](#Toon_de_de_huidige_benaming)
+        *   [3.1.2 Activeren en De-actieveren van netwerk interfaces](#Activeren_en_De-actieveren_van_netwerk_interfaces)
+    *   [3.2 Dynamisch IP adres](#Dynamisch_IP_adres)
+    *   [3.3 Statisch IP adres](#Statisch_IP_adres)
+        *   [3.3.1 Handmatige toewijzing statisch adres](#Handmatige_toewijzing_statisch_adres)
+        *   [3.3.2 Bereken adressen](#Bereken_adressen)
+    *   [3.4 netwerk managers](#netwerk_managers)
+*   [4 Bepaal de hostnaam](#Bepaal_de_hostnaam)
+    *   [4.1 Lokaal netwerk hostnaam resolutie](#Lokaal_netwerk_hostnaam_resolutie)
+*   [5 Tips en tricks](#Tips_en_tricks)
+    *   [5.1 Device naam wijzigen](#Device_naam_wijzigen)
+    *   [5.2 Terug naar de traditionele device namen](#Terug_naar_de_traditionele_device_namen)
+    *   [5.3 Instellen van device MTU en queue lengte](#Instellen_van_device_MTU_en_queue_lengte)
+    *   [5.4 ifplugd voor laptops](#ifplugd_voor_laptops)
+    *   [5.5 Bonding of LAG](#Bonding_of_LAG)
+    *   [5.6 IP adres aliasing](#IP_adres_aliasing)
+        *   [5.6.1 Voorbeeld](#Voorbeeld)
+    *   [5.7 MAC/hardware adres wijzigen](#MAC.2Fhardware_adres_wijzigen)
+    *   [5.8 Internet delen](#Internet_delen)
+    *   [5.9 Router configuratie](#Router_configuratie)
+    *   [5.10 Promiscuous (willekeurig) mode](#Promiscuous_.28willekeurig.29_mode)
+*   [6 Foutopsporing](#Foutopsporing)
+    *   [6.1 Swapping computers on the cable modem](#Swapping_computers_on_the_cable_modem)
+    *   [6.2 Het TCP window scaling probleem](#Het_TCP_window_scaling_probleem)
+        *   [6.2.1 How to diagnose the problem](#How_to_diagnose_the_problem)
+        *   [6.2.2 Hoe te herstellen](#Hoe_te_herstellen)
+            *   [6.2.2.1 Fout](#Fout)
+            *   [6.2.2.2 Goed](#Goed)
+            *   [6.2.2.3 Best](#Best)
+        *   [6.2.3 Aanvullend](#Aanvullend)
+    *   [6.3 Realtek geen link / WOL probleem](#Realtek_geen_link_.2F_WOL_probleem)
+        *   [6.3.1 Activeren van de NIC in Linux](#Activeren_van_de_NIC_in_Linux)
+        *   [6.3.2 Rollback/wijzig de Windows driver](#Rollback.2Fwijzig_de_Windows_driver)
+        *   [6.3.3 Activeer WOL in Windows driver](#Activeer_WOL_in_Windows_driver)
+        *   [6.3.4 Nieuwe Realtek Linux driver](#Nieuwe_Realtek_Linux_driver)
+        *   [6.3.5 Inschakelen *LAN Boot ROM* in BIOS/CMOS](#Inschakelen_LAN_Boot_ROM_in_BIOS.2FCMOS)
+    *   [6.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
+    *   [6.5 Broadcom BCM57780](#Broadcom_BCM57780)
+    *   [6.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
+    *   [6.7 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
+*   [7 Zie ook](#Zie_ook)
 
-## Gedateerde informatie
+## Controleer de kabelaansluiting
 
-**Warning:** De informatie op deze pagina is zeer gedateerd, en deze instructies werken niet op een hedendaags Arch Linux-systeem. Voor de informatie die u nodig heeft verwijzen wij u naar de [Engelse network configuration](/index.php/Network_configuration "Network configuration")-pagina.
+Deze basis installatie / configuratie gaat uit van een werkende netwerkaansluiting. Gebruik [ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) om de werking te controleren:
 
-Hulp bij het up-to-date brengen van deze pagina wordt zeer gewaardeerd.
+ `$ ping www.google.com` 
+```
+PING www.l.google.com (74.125.132.105) 56(84) bytes of data.
+64 bytes from wb-in-f105.1e100.net (74.125.132.105): icmp_req=1 ttl=50 time=17.0 ms
+...
+```
 
-## Apparaatmodules laden
+Wanneer de ping successvol is (zie het 64 bytes bericht hierboven), dan is het netwerk al geconfigureerd. Druk op `Control-C` om de ping sessie te stoppen.
 
-Udev zou de modules voor je netwerkkaart automatisch moeten detecteren en laden tijdens het opstarten. Indien dit niet het geval is, moet je weten welke module jouw netwerkkaart nodig heeft:
+Echter, indien de ping faalt met een *Unknown hosts* fout, blijkt je computer niet in staat is om de gebruite domeinnaam te vinden. Dit kan geweten worden aan de internet service provider of aan je eigen router/gateway. Probeer eerst eens om een statisch adres te pingen om te bepalen of er toch aansluiting is op het Internet:
 
+ `$ ping 8.8.8.8` 
 ```
-hwdetect --show-net
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_req=1 ttl=53 time=52.9 ms
+...
 
 ```
+
+Indien `8.8.8.8` **gepingd** kan worden, maar niet b.v. `www.google.com`, controleer dan de DNS configuratie. Zie [resolv.conf](/index.php/Resolv.conf "Resolv.conf") voor details. De `hosts` regel in `/etc/nsswitch.conf` is ook een optie welke gecontroleerd kan worden.
+
+Indien geen baat, controleer de netwerkkabel op defecten.
+
+**Note:**
+
+*   Een foutmelding als `ping: icmp open socket: Operation not permitted` bij een *ping*, herinstalleer het [iputils](https://www.archlinux.org/packages/?name=iputils) pakket.
+*   De `-c *num*` optie kan gebruikt worden voor exacte `*num*` pings, anders kan de ping oneindig doorlopen en zal dan handmatig beeindigd moeten worden. Zie [ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) voor meer informatie.
+*   `8.8.8.8` is een statisch adres dat makkelijk te onthouden is. Het betreft hier Google's primary DNS server adres, en kan als betrouwbaar beschouwd worden omdat het gewoonlijk niet geblokkeerd wordt door contentfilters en proxy servers.
 
-Als je nu weet welke module nodig is voor je netwerkkaart, kun je deze laden met:
+## Device driver
 
+### Controleer de status
+
+[udev](/index.php/Udev "Udev") zou de [netwerk interface controller](https://en.wikipedia.org/wiki/netwerk_interface_controller "wikipedia:netwerk interface controller") moeten vinden en bij het opstarten de noodzakelijke module laden. Controleer de "Ethernet controller" regel bij de `lspci -v` output. Als het goed zal kenbaar zijn welke kernelmodule de driver voor de netwerk adapter aanbied. Bijvoorbeeld:
+
+ `$ lspci -v` 
 ```
-# modprobe <modulename>
+02:00.0 Ethernet controller: Attansic Technology Corp. L1 Gigabit Ethernet Adapter (rev b0)
+ 	...
+ 	Kernel driver in use: atl1
+ 	Kernel modules: atl1
 
 ```
 
-Als udev de juiste module niet automatisch detecteert en laadt, dan kun je deze toevoegen aan de **MODULES=** array in `/etc/rc.conf`, zodat je de module niet elke keer hoeft te modproben na het opstarten. Bijvoorbeeld, als tg3 de netwerkmodule is:
+Controleer nu dat de driver daadwerkelijk geladen is via `dmesg | grep *module_name*`. Bijvoorbeeld:
 
+ `$ dmesg | grep atl1` 
 ```
-MODULES=(!usbserial tg3 snd-cmipci)
+...
+atl1 0000:02:00.0: eth0 link is up 100 Mbps full duplex
 
 ```
+
+Als de driver geladen is, sla dan de volgende sectie over. Zo niet, dan moet achterhaald worden welke module vereist is voor dit model netwerkkaart.
+
+### Laadt de module
+
+Zoek op het Internet naar de benodigde module/driver voor de gebruikte chipset. Algemene modules zijn `8139too` voor kaarten met een Realtek chipset, of `sis900` waneer een SiS chipset gebruikt wordt. Als bekend is welke chipset gebruikt is, probeer de module dan [zelf te laden](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). Mocht er een foutmelding optreden omdat de module niet gevonden is, dan zou het zomaar kunnen dat deze module niet inbegrepen is in de Arch kernel. Eventueel kan in de [AUR](/index.php/AUR "AUR") kan nog gezocht worden op modulenaam.
+
+Indien udev tijdens het opstarten de juiste module niet detecteert en/of laadt, zie dan [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
+
+## Netwerk management
 
-Andere veel voorkomende modules zijn 8139too voor netwerkkaarten met de Realtek chipset, of sis900 voor SiS netwerkkaarten.
+### Device namen
 
-## IP-adres configureren
+Bij computers met meerdere Netwerk Interfaces (NIC's), is het van belang om vaste device benaming te gebruiken. Als dat niet gebeurt, worden configuratieproblemen veelal veroorzaakt door verandering in de benoeming.
 
-### DHCP
+[udev](/index.php/Udev "Udev") zorgt ervoor dat elk device een naam toegewezen krijgt. Systemd gebruikt [Predictable network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictablenetworkInterfaceNames), welk automatisch statische namen toekent aan netwerk devices. Interfaces worden hedentendage vooraf gegaan met `en` (bedraad/[Ethernet](https://en.wikipedia.org/wiki/Ethernet "w:Ethernet")), `wl` (draadloos/WLAN), of `ww` ([WWAN](https://en.wikipedia.org/wiki/Wireless_WAN "w:Wireless WAN")) gevolgd door een automatisch gegenereerde identifier, zoals: `enp0s25`.
 
-Om DHCP te gebruiken, heb je het dhcpcd pakket nodig (al geinstalleerd op de meeste installaties). Wijzig `/etc/rc.conf` zoals hier:
+**Tip:** Deze wijze van benoemen kan teruggedraaid worden naar de **eth0** of **wlan0** notatie, door `net.ifnames=0` aan de [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") toe te voegen.
 
+**Note:** Vergeet in dat geval vooral niet om alle netwerk gerelateerde configuratiebestanden bij te werken!.
+
+#### Toon de de huidige benaming
+
+Zowel bedrade als wireless device-namen kunnen getoond worden met:
+
+```
+$ ls /sys/class/net
+
+```
+
+of via:
+
 ```
-eth0="dhcp"
-INTERFACES=(eth0)
-ROUTES=(!gateway)
+$ ip link
 
 ```
+
+Let erop dat `lo` het [W:Loop_device](https://en.wikipedia.org/wiki/Loop_device "w:Loop device") is, en niet gebruikt wordt om een netwerkverbinding te leggen.
+
+Wireless device-names kunnen eveneens achterhaald worden met `iw dev`. Zie ook [Wireless network configuration#Get the name of the interface](/index.php/Wireless_network_configuration#Get_the_name_of_the_interface "Wireless network configuration").
 
-Als je DHCP gebruikt en je jou DNS servers **niet** elke keer automatisch toegewezen wilt krijgen als je je netwerk start, verzeker jezelf er dan van dat je de "-C" parameter gebruikt in **DHCPCD_ARGS** in `/etc/conf.d/dhcpcd` (wordt gebruikt door `/etc/rc.d/network`). Dit weerhoudt dhcpcd ervan om de inhoud van `/etc/resolv.conf` elke keer te overschrijven:
+**Tip:** Teneinde de device-namen te veranderen, zie [#Change device name](#Change_device_name) en [#Revert to traditional device names](#Revert_to_traditional_device_names) (terug naar de traditionele benamingsmethode.
 
+#### Activeren en De-actieveren van netwerk interfaces
+
+Een netwerk interface activeren:
+
 ```
-DHCPCD_ARGS="**-C resolv.conf** -q"
+# ip link set *interface* up
 
 ```
 
-Let op: in vorige dhcpcd versies werdt de nu achterhaalde **-R** parameter nog gebruikt:
+Om te deactiveren gebruik dan:
 
 ```
-DHCPCD_ARGS="-R -t 30 -h $HOSTNAME"
+# ip link set *interface* down
 
 ```
 
-Verzeker jezelf er ook van dat je (een) geldige nameserver(s) aan `/etc/resolv.conf` toevoegt. Een voorbeeld van een `/etc/resolv.conf`:
+Om de interface koppeling te controleren `eth0`:
 
+ `$ ip link show dev eth0` 
 ```
-#DHCP met door de gebruiker gedefinieerde DNS servers
-nameserver 4.2.2.2
-nameserver 4.2.2.4
+2: eth0: <BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master br0 state UP mode DEFAULT qlen 1000
+...
 
 ```
+
+**Note:** In het geval de default route via de interface `eth0` loopt, zal bij deactivatie ook de route verdwijnen, en tevens zal bij re-activatie de default route niet automatisch hersteld worden. Zie [#Manual assignment](#Manual_assignment) om deze handmatig te kunnen herstellen.
+
+### Dynamisch IP adres
 
-**LET OP**
+Zie [#netwerk managers](#netwerk_managers) voor een opsomming van opties voor een dynamisch IP adres.
 
-De nieuwe dhcpcd (>= 4.0.2) werkt niet langer met de **-R** parameter, aangezien deze parameter achterhaald is (werkt alleen nog als dhcpcd wordt gecompileerd in compatibility mode). In plaats hiervan moet je je eigen DNS servers in het bestand `/etc/resolv.conf.head` plaatsen. dhcpcd zal dit bestand dan toevoegen bovenin de normale `/etc/resolv.conf`.
+### Statisch IP adres
 
-Als laatste, als je niet wilt rebooten, test dan je nieuwe instellingen door de `/etc/rc.d/network` daemon te stoppen en starten, in plaats van het down en weer up brengen van je netwerk interface en het handmatig starten van dhcp. Om de network daemon te herstarten:
+Een statisch IP adres kan via de meeste, standaard, [netwerk managers](#network_managers) geconfigureerd worden. Welke manager ook gebruikt wordt, de volgend informatie zal voorhanden moeten zijn:
 
+*   statisch IP adres
+*   Subnet mask, of mogelijk de [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing"), zoals `/24` de CIDR notatie is van het netmask `255.255.255.0`.
+*   [Broadcast adres](https://en.wikipedia.org/wiki/Broadcast_address "wikipedia:Broadcast address")
+*   [Gateway](https://en.wikipedia.org/wiki/Default_gateway "wikipedia:Default gateway")'s IP adres
+*   Nameserver (DNS) IP adresen. Zie ook [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
+
+Bij een prive netwerk, is het een veilige, en standaard, keuze om IP adres bereik `192.168.*.*` te gebruiken, met een subnet mask van `255.255.255.0` en een broadcast address als `192.168.*.255`. De gateway is normaal gesproke `192.168.*.1` of `192.168.*.254`.
+
+Echter, in een netwerk met meerdere guests (computers en/of servers) is het handiger om op de commandline korte adressen te kunnen gebruiken via een IP bereik van 10.0.0.* met als subnet 255.0.0.0 en een gateway/router adres van 10.0.0.1. Let wel dat het 192.* IP bereik in aan te schaffen apparatuur. (printers, routers, IP camera's, etc), altijd als standaard ingesteld is, en dat het even moeite vraagt om deze apparatuur binnen het 10.0.0.0 bereik te kunnen gebruiken.
+
+**Warning:**
+
+*   Wees er zeker van dat handmatig toegekende (statische) adressen niet in conflict komen met de door de DHCP serve toegekende dynamische adressen. Zie [op dit forum](http://www.raspberrypi.org/forums/viewtopic.php?f=28&t=16797) .
+
+**Tip:** adressen kunnen berekend worden met behulp van het [ipcalc](https://www.archlinux.org/packages/?name=ipcalc) pakket; Zie [#Calculating_addresses](#Calculating_addresses).
+
+#### Handmatige toewijzing statisch adres
+
+Kan uitgevoerd worden met gebruik van het [iproute2](https://www.archlinux.org/packages/?name=iproute2) pakket. Dit is tevens een goode manier om de instellingen te testen, daar de aansluiting, op deze manier gemaakt, niet permanent is en bij een herstart verdwijnt. Allereerdt zor dat de [netwerk interface](#Device_names) geactiveerd is:
+
 ```
-/etc/rc.d/network restart
+# ip link set *interface* up
 
 ```
+
+Ken, via de commandregel, een statisch IP adres toe:
 
-**LET OP** Je zou het openresolv pakket (van AUR) kunnen gebruiken, als meerdere softwarepakketten proberen om resolv.conf te veranderen (bijvoorbeeld dhcpcd en een VPN client). Er is geen verdere configuratie nodig voor dhcpcd als je openresolv gebruikt.
+```
+# ip addr add *IP_adres*/*subnet_mask* broadcast *broadcast_adres* dev *interface*
 
-### Statisch
+```
 
-Als je je internetverbinding deelt vanaf een Windows machine zonder gebruik van een router, wees er dan zeker van dat je een statisch IP-adres gebruikt op beide computers. Ander zul je waarschijnlijk LAN problemen hebben.
+Hetzelfde met het gateway IP adres:
 
-Je hebt nodig:
+```
+# ip route add default via *default_gateway*
 
-*   Je statische IP-adres
-*   Het netmask
-*   Het broadcast address
-*   Je gateway
-*   Het IP-adres van je nameserver
-*   Je domeinnaam
+```
 
-Als je een privè-netwerk draait, is het veilig om IP-adressen in het 192.168.*.* bereik te gebruiken, met een netmask van 255.255.0.0 en broadcast addres 192.168.255.255\. Tenzij je netwerk een router heeft, maakt het gateway adres niets uit. Wijzig `/etc/rc.conf` zoals dit, waarbij je je eigen waardes invult voor het IP-adres, netmask, broadcast adres en gateway:
+Bijvoorbeeld:
 
 ```
-eth0="eth0 82.137.129.59 netmask 255.255.255.0 broadcast 82.137.129.255"
-INTERFACES=(eth0)
-gateway="default gw 82.137.129.1"
-ROUTES=(gateway)
+# ip link set eth0 up
+# ip addr add 192.168.1.2/24 broadcast 192.168.1.255 dev eth0
+# ip route add default via 192.168.1.1
 
 ```
 
-En je `/etc/resolv.conf` zoals dit, waarbij je je eigen waardes invult voor je nameserver's IP-adres en je domeinnaam:
+**Tip:** Mocht zich de foutmelding voordoen: `RTNETLINK answers: netwerk is unreachable`, probeer dan het opzetten van de route in twee stappen te doen:
+```
+# ip route add 192.168.1.1 dev eth0
+# ip route add default via 192.168.1.1 dev eth0
 
 ```
-nameserver 61.23.173.5
-nameserver 61.95.849.8
-search example.com
 
+Om deze handelinge ongedaan te maken (b.v. alvorens over te gaan tot een dynamisch IP), verwijder alle toegekende IP adressen:
+
 ```
+# ip addr flush dev *interface*
 
-Je mag zoveel nameserver regels toevoegen als je wilt.
+```
 
-## Alternatieven
+Verwijder daarna de aangegeven gateway:
 
-Als om onduidelijke redenen dhcpcd eth0 mislukt, installeer dan dhclient (pacman -S dhclient) en gebruik `dhclient eth0` in de plaats van `dhcpcd eth0`.
+```
+# ip route flush dev *interface*
 
-## Computernaam instellen
+```
 
-Verander `/etc/rc.conf` en zet in **HOSTNAME** je gewenste computernaam:
+En tenslotte, deactiveer de netwerkkaart:
 
 ```
-HOSTNAME="banana"
+# ip link set *interface* down
 
 ```
 
-## Hostnaam/IP instellen
+Voor meerdere opties, zie de [ip(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8). Deze commandline opdrachten kunnen geautomatiseerd uitgevoerd worden via scripts en [systemd units](/index.php/Systemd#Writing_unit_files "Systemd").
 
-Wijzig `/etc/hosts` en voeg dezelfde HOSTNAME toe, die je in `/etc/rc.conf` hebt neergezet:
+#### Bereken adressen
 
-```
-127.0.0.1      banana.domain.org   localhost.localdomain      localhost    banana
+Met behulp van `ipcalc` installeerbaar via het [ipcalc](https://www.archlinux.org/packages/?name=ipcalc) pakket, kunnen IP broadcast, netwerk, netmask, en host bereik berekend worden in meer geavanceerde configuraties. Een voorbeeld kan zijn om Ethernet te gebruiken over Firewire om een Windows machine aan Linux te koppelen. Om veiligheids- en organisatorische redenen zullen beide machines hun eigen netwerk en broadcast gebruiken.
+
+De respectievelijke netmask en broadcastadressen zijn zichtbaar te nmaken met `ipcalc`, door het IP van de Linux NIC in te geven `10.66.66.1` en daarbij het aantal hosts (in dit geval twee:
 
+ `$ ipcalc -nb 10.66.66.1 -s 1` 
 ```
+adres:   10.66.66.1
 
-Dit formaat, inclusief de localhost regel, is vereist voor compatibiliteit met sommige programma's.
+Netmask:   255.255.255.252 = 30
+netwerk:   10.66.66.0/30
+HostMin:   10.66.66.1
+HostMax:   10.66.66.2
+Broadcast: 10.66.66.3
+Hosts/Net: 2                     Class A, Private Internet
 
-## Configuratie laden
+```
 
-Om je instellingen te testen kun je je computer herstarten, of als root `/etc/rc.d/network restart` uitvoeren. Probeer vervolgens om je gateway, DNS server, ISP provider en andere websites te pingen, om er zeker van te zijn dat je internetverbinding goed functioneert.
+### netwerk managers
 
-## Nog meer instellingen
+Er is een ruime keuze voorhanden, maar hou voor ogen dat er slechts een daemon gestart mag zijn! In onderstaande tabel worden verschillende managers vergeleken. *Automatisch bedrade aansluiting* houdt in dat er voor de gebruiker tenminste 1 mogelijkheid bestaat om op eenvoudige wijze, en zonder configuratiebestand, de daemon op te starten om zo een ethernetaansluiting te realiseren:
 
-### Draadloos netwerk configureren
+| Connection manager | Automatically handles
+wired connection | Official
+GUI | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Console tools | Systemd units |
+| [ConnMan](/index.php/ConnMan "ConnMan") | Yes | No | No | `connmanctl` | `connman.service` |
+| [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | Yes | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `dhcpcd` | `dhcpcd.service`, `dhcpcd@*interface*.service` |
+| [netctl](/index.php/Netctl "Netctl") | Yes | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `netctl` | `netctl-ifplugd@*interface*.service` |
+| [NetworkManager](/index.php/NetworkManager "NetworkManager") | Yes | Yes | No | `nmcli`,`nmtui` | `NetworkManager.service` |
+| [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") | No | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `systemd-networkd.service`, `systemd-resolved.service` |
+| [Wicd](/index.php/Wicd "Wicd") | Yes | Yes | No | `wicd-curses` | `wicd.service` |
 
-Zie [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") voor meer informatie.
+Zie ook de [List of applications#Network_managers](/index.php/List_of_applications#Network_managers "List of applications").
 
-### Firewall
+## Bepaal de hostnaam
 
-Je kunt een [firewall](/index.php/Firewalls "Firewalls") installeren en configureren, om je zekerder te voelen. ;-)
+Een [hostnaam](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") is een unieke naam gegeven aan een apparaat op een netwerk, als aangeduid in `/etc/hostname`—zie [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) en [hostname(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.7) voor details. Het bestand kan eventueel ook de domeinnaam van het systeem/netwerk bevatten. Om de hostnaam in te stellen, [wijzig](/index.php/Textedit "Textedit") `/etc/hostname` en voeg een enkele regel toe met b.v. `*myhostname*`:
+
+ `/etc/hostname` 
+```
+*myhostname*
 
-### Ifplugd
+```
 
-Je kunt een daemon installeren, die je netwerkkaart automatisch configureert als er een kabel ingeplugt is en die je netwerkkaart automatisch deconfigureert als de kabel eruit getrokken wordt. Dit is handig op laptops met onboard netwerkkaarten, omdat het alleen je netwerkkaart configureert als er daadwerkelijk een kabel ingeplugt is. Ook is het handig als je alleen je netwerk wilt herstarten, maar niet door je computer te herstarten of de shell te gebruiken; je trekt de kabel eruit en plugt de kabel er vervolgens weer in, ifplugd doet de rest.
+**Tip:** Advies om een hostnname te kiezen: zie [RFC 1178](https://tools.ietf.org/html/rfc1178).
 
-De installatie van ifplugd is erg makkelijk, omdat het in [extra] zit:
+Als alternatief kan [hostnamectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1) gebruikt worden:
 
 ```
-# pacman -S ifplugd
+# hostnamectl set-hostname *myhostname*
 
 ```
 
-Standaard is ifplugd geconfigureerd om voor de netwerkkaart eth0 te werken. Deze instellen, alsmede andere instellingen als vertragingen, kunnen worden geconfigureeerd in `/etc/ifplugd/ifplugd.conf`.
+Om een tijdelijke hostnaam toe te kennen, totaan een herstart, gebruik [hostname(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.1) van [inetutils](https://www.archlinux.org/packages/?name=inetutils):
 
-Start ifplugd met:
+```
+# hostname *myhostname*
 
 ```
-# /etc/rc.d/ifplugd start
+
+Om de hostnaam, en andere metadata,te verfraaien, zie [machine-info(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/machine-info.5#https%3A%2F%2Fwww.freedesktop.org%2Fsoftware%2Fsystemd%2Fman%2Fmachine-info.html).
+
+### Lokaal netwerk hostnaam resolutie
 
+Allereerst dient [#Set the hostname](#Set_the_hostname) uitgevoerd te zijn, waarmee de hostnaam resolutie in werking gezet wordt op de lokale computer zelf:
+
+ `$ ping *myhostname*` 
 ```
+PING myhostname (192.168.1.2) 56(84) bytes of data.
+64 bytes from myhostname (192.168.1.2): icmp_seq=1 ttl=64 time=0.043 ms
+```
+
+Om het mogelijk te maken dat andere systemen in het netwerkwerk de computer via de **hostnaam** kunnen bereiken, is het noodzakelijk dat of:
 
-Of voeg ifplugd toe aan de **DAEMONS=** array in `/etc/rc.conf`.
+*   het bestand [hosts(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5) geconfigureerd is, of
+*   een dienst geactiveerd word welke de hostname kan zoeken en vinden.
 
-### Koppelen van netwerkkaarten
+**Note:** [systemd](https://www.archlinux.org/packages/?name=systemd) heeft daartoe de mogelijkheid via de `myhostname` nss module, standaard geactiveerd in `/etc/nsswitch.conf`. Echter, sommige systemen gebruiken wellicht toch nog het bestand `/etc/hosts`, zie [[2]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) voor voorbeelden.
 
-Je kunt **ifenslave** installeren om twee echte netwerkkaarten te koppelen met één IP-adres. /etc/conf.d/bonding
+Pas het hosts file aan door de volgende regel toe te voegen aan `/etc/hosts`:
 
+1.  127.0.1.1 *myhostname*.localdomain *myhostname*
+
+Als gevolg waarvan het systeem zichtbaar en bereikbaar is op beide adressen:
+
+ `$ getent hosts` 
 ```
-bond_bond0="eth0 eth1"
-BOND_INTERFACES=(bond0)
+127.0.0.1       localhost
+127.0.1.1       myhostname.localdomain myhostname
 
 ```
+
+Overigens kan en mag **localdomain** door willekeurig welke domeinnaam vervangen worden, b.v. thuis,nl, jansen.xx, etc. Wees hierin wel consequent op de aangesloten systemen.
+
+In host file kunnen tevens alle op het netwerk aanwezige systemen, voorzien van een statisch IP adres, opgenomen worden, welke dan eveneens via hunner eigen hostnaam herkend zullen worden, bijvoorbeeld:
+
+{{hc|/etc/hosts| 127.0.0.1 localhost 127.0.1.1 myhostname.local myhostname 10.0.0.6 raspbian.local raspbian 10.0.0.5 xbian.local xbian 10.0.0.107 runeaudio.local runeaudio enz
+
+En als klap op de vuurpijl kunnen ongewenste verbindingen naar de eeuwige jachtvelden gezonden worden door deze te verwijzen naar het niet bestaande 0.0.0.0 of naar het lokale adres 127.0.0.1:
+
+1.  0.0.0.0 p78878.adskape.ru
+
+Een kant en klaar, en regelmatig bijgewerkt, host file is te downloaden op [[4]](http://winhelp2002.mvps.org/hosts2.htm) de MVPhosts site
+
+**Note:** Een optie is om een volledige DNS server zoals [BIND](/index.php/BIND "BIND") of [Unbound](/index.php/Unbound "Unbound"), maar dat is wel overkill en te complex voor de meeste systemen. In het geval van kleine / beperkte netwerken waar dynamisch en flexible hosts kunnen aan- en afkoppelen zijn de [zero-configuration netwerking](https://en.wikipedia.org/wiki/Zero-configuration_netwerking "wikipedia:Zero-configuration netwerking") services, goed toepasbaar:
+
+*   [Samba](/index.php/Samba "Samba") verleent de hostnaam resolutie via Microsoft's **NetBIOS**. Benodigd is slechts de installatie van [samba](https://www.archlinux.org/packages/?name=samba) en activatie van de `nmbd.service` service. Computers met Windows, macOS, en Linux waarop `nmbd` is geinstalleerd, zullen de machine kunnen vinden.
+*   [Avahi](/index.php/Avahi "Avahi") voorziet in de hostnaam resolutie via **zeroconf**, ook bekend als Avahi of Bonjour. Het vergt een enigzins complexer configuratie dan met Samba: zie [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") voor meer info. Computers met macOS, of Linux met een werkende Avahi daemon, zullen de machine kunnen traceren. Windows beschikt niet over een ingebouwde Avahi client of daemon.
 
-/etc/modprobe.d/modprobe.conf:
+## Tips en tricks
 
+### Device naam wijzigen
+
+De device naam kan handmatig gewijzigd worden door aanmaak van een udev-rule. Bijvoorbeeld:
+
+ `/etc/udev/rules.d/10-netwerk.rules` 
 ```
-options bonding miimon=100
+SUBSYSTEM=="net", ACTION=="add", ATTR{adres}=="aa:bb:cc:dd:ee:ff", NAME="net1"
+SUBSYSTEM=="net", ACTION=="add", ATTR{adres}=="ff:ee:dd:cc:bb:aa", NAME="net0"
 
 ```
+
+welke na een reboot automatisch geactiveerd zal worden.
 
-/etc/rc.conf
+Enkele opmerkingen:
 
+*   Om het MAC adres van een netwerkkaart te verkrijgen, gebruik dit commando: `cat /sys/class/net/*device_name*/adres`
+*   Gebruik alleen de in onderkast aangegeven hex waarden in een udev-rule. Hoofdletters worden niet verwerkt.
+
+Indien de netwerkkaart over een dynamisch MAC adres beschikt, kan `DEVPATH` gebruikt worden, bijvoorbeeld:
+
+ `/etc/udev/rules.d/10-netwerk.rules` 
 ```
-MODULES=(... bonding ...)
-bond0="bond0 192.168.1.1 netmask 255.255.255.0 broadcast 192.168.1.255"
-INTERFACES=(bond0)
+SUBSYSTEM=="net", DEVPATH=="/devices/platform/wemac.*", NAME="int"
+SUBSYSTEM=="net", DEVPATH=="/devices/pci*/*1c.0/*/net/*", NAME="en"
 
 ```
+
+Het pad naar het device dient zowel naar de nieuwe als naar de oude naam te verwijzen, omdat deze rule tijdens het opstarten meer dan eens uitgevoerd kan worden. Zo is bijvoorbeeld `"/devices/pci*/*1c.0/*/net/enp*"` in de tweede regel niet goed, daar deze niet zal werken wanneer de naam veranderd is in `en`. Alleen de systeem-default rule zal deze in tweede instantie starten, waarmee de naam (terug) veranderd wordt in b.v.`enp1s0`.
+
+Om [test](/index.php/Udev#Testing_rules_before_loading "Udev") de rules te testen, kunnen deze vanuit een userspace direct geactiveerd worden, b.v. via `udevadm --debug test /sys/*DEVPATH*`. Let er dan wel op dat de interface welke hernoemd gaat worden, eerst gedeactiveerd wordt(e.g. `ip link set enp1s0 down`).
 
-Herstart het netwerk met:
+**Note:** Bij het hernoemen zou **vermeden moeten worden om statische namen als** "eth*X*" and "wlan*X*"**, te gebruiken, daar dit tijdens het opstarten kan leiden tot onverwachte situaties tussen de kernel en udev. Daarvoor is het beter om namen te gebruiken die niet door de kernel gekend zijn, b.v.: `net0`, `net1`, `wifi0`, `wifi1`. Voor meer onformatie zie [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictablenetwerkInterfaceNames) documentation.**
 
+### Terug naar de traditionele device namen
+
+In het geval de gebruiker b.v. over scripts beschikt waarin verwezen wordt naar de traditionele benaming eth0 of wlan0, dan kan [Predictable netwerk Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictablenetwerkInterfaceNames) gedeactiveerd worden via maskering van de udev-rule:
+
 ```
-/etc/rc.d/network restart
+ # ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
 
 ```
 
-### Meerdere IP-adressen op meerdere netwerkkaarten
+### Instellen van device MTU en queue lengte
 
-Eén IP-adres op één kaart:
+De [MTU](https://en.wikipedia.org/wiki/Maximum_transmission_unit "wikipedia:Maximum transmission unit") van het netwerk device en tevens de queue lengte kunnen aangepast worden via een udev-rule. Bijvoorbeeld:
 
+ `/etc/udev/rules.d/10-netwerk.rules` 
 ```
-vi /etc/rc.conf
- eth0="eth0 192.168.0.1 netmask 255.255.255.0 broadcast 192.168.0.255"
- INTERFACES=(lo eth0)
+ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1500", ATTR{tx_queue_len}="2000"
 
 ```
+
+**Note:**
+
+*   `mtu`: Bij PPPoE, dient de MTU niet groter te zijn dan 1492\. MTU kan ook ingesteld worden [systemd.netdev(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.netdev.5).
+*   `tx_queue_len`: Gebruik kleine waarden voor langzamere devices met een hoge latency, zoals modem links en ISDN. Hoge waarden worden aanbevolen bij hoge snelheid aansluitingen met veel dataverkeer.
+
+### ifplugd voor laptops
+
+**Tip:** [dhcpcd](/index.php/Dhcpcd "Dhcpcd") voorziet standaard in deze mogelijkheid.
+
+[ifplugd](https://www.archlinux.org/packages/?name=ifplugd) is een daemon welke automatisch een Ethernet device configureerd op het moment er een kabel aangesloten wordt, en de configuratie weer ongedaan maakt als de kabelverbinding weer verbroken wordt. Bijzonder nuttig bij laptops met een ingebouwde netwerk adapter, omdat de interface allen geconfigureerd wordt als er daadwerkelijk een kabelverbinding is. Ook is het handig wanneer alleeb de netwerkaansluiting opnieuw opgestart moet worden, zonder de laptop te hoeven herstarten.
 
-Twee IP-adressen op één kaart (BUG:/etc/rc.d/network stop)
+Standaard configuratie geldt voor het `eth0` device. Wijzigingen hierin, bv het device of vertragingsinstellingen, kunnen aangebracht worden in `/etc/ifplugd/ifplugd.conf`.
 
+**Note:** [netctl](/index.php/Netctl "Netctl") pakket is inclusief `netctl-ifplugd@.service`, ook kan `ifplugd@.service` uit het [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) pakket gebruikt worden. Bijvoorbeeld: [enable](/index.php/Enable "Enable") `ifplugd@eth0.service`.
+
+### Bonding of LAG
+
+Zie [netctl#Bonding](/index.php/Netctl#Bonding "Netctl") of [Wireless bonding](/index.php/Wireless_bonding "Wireless bonding").
+
+### IP adres aliasing
+
+Bij IP aliasing wordt meer dan een enkel adres toegevoegd aan aan een netwerk interface. Hierdoor is het mogelijk dat een node op een netwerk meerdere aansluitingen kan hebben met dat netwerk, waarbij elke aansluiting een ander doelkan dienen Deze methode wordt typisch gebruikt bij virtual hosting of Web en FTP servers, of bij herorganisatie van servers, zonder andere machines te hoeven updaten (dit kan erg handig zijn voor naamservers).
+
+#### Voorbeeld
+
+Omhandmatig een alias in te stellen voor een NIC, gebruik [iproute2](https://www.archlinux.org/packages/?name=iproute2), type:
+
 ```
-vi /etc/rc.conf
- eth0="eth0 192.168.0.1 netmask 255.255.255.0 broadcast 192.168.0.255"
- eth0_0="eth0:0 192.168.0.2 netmask 255.255.255.0 broadcast 192.168.0.255"
- INTERFACES=(lo eth0 eth0_0)
+# ip addr add 192.168.2.101/24 dev eth0 label eth0:1
 
 ```
 
-Eén IP-adres op twee kaarten:
+Om het alias te verwijderen, type:
 
 ```
-pacman -S ifenslave
-vi /etc/rc.conf
- bond0="bond0 192.168.0.1 netmask 255.255.255.0 broadcast 192.168.0.255"
- INTERFACES=(lo bond0)
- MODULES=(... bonding ...)
+# ip addr del 192.168.2.101/24 dev eth0:1
 
 ```
+
+Datapaketten, bedoeld voor een subnet, zullen standaars het primaire alias gebruiken. Wanneer het bestemmings IP zich binnen een subnet of een secondaire alias bevindt, zal het bron IP ook zo ingesteld worden. In het geval er meer dan een NIC is, kunnen de default routes weergegeven worden met `ip route`.
+
+### MAC/hardware adres wijzigen
+
+Zie [MAC address spoofing](/index.php/MAC_address_spoofing "MAC address spoofing").
+
+### Internet delen
+
+Zie [Internet sharing](/index.php/Internet_sharing "Internet sharing").
+
+### Router configuratie
+
+Zie [Router](/index.php/Router "Router").
 
-Twee IP-adressen op twee kaarten (BUG:/etc/rc.d/network stop):
+### Promiscuous (willekeurig) mode
 
+Bij inschakelen van de [promiscuous mode](https://en.wikipedia.org/wiki/Promiscuous_mode "wikipedia:Promiscuous mode") zal een (wireless) NIC alle ontvangen dataverkeer verwerken. Dit in tegenstelling tot de "normale modus" waarin een NIC alle data ,welke het niet geacht is te ontvangen, zal negeren. Willekeurige modus wordt veelal gebruikt bij probleemoplossing in geavanceerde netwerken en bij [packet sniffing](https://en.wikipedia.org/wiki/Packet_sniffing "wikipedia:Packet sniffing").
+
+ `/etc/systemd/system/promiscuous@.service` 
 ```
-pacman -S ifenslave
-vi /etc/rc.conf
- bond0="bond0 192.168.0.1 netmask 255.255.255.0 broadcast 192.168.0.255"
- bond01="bond0:1 192.168.0.2 netmask 255.255.255.0 broadcast 192.168.0.255"
- INTERFACES=(lo bond0 bond01)
- MODULES=(... bonding ...)
+[Unit]
+Description=Set %i interface in promiscuous mode
+After=netwerk.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/ip link set dev %i promisc on
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
 
 ```
 
-**Note:** Nadat je dit soort opties hebt geconfigureerd (koppelen, etcetera), zou het kunnen dat je je firewall instellingen moet veranderen om het netwerk goed te laten werken.
+Activeren van de promiscuous mode op interface `eth0` via [enable](/index.php/Enable "Enable") `promiscuous@eth0.service`.
 
-## Problemen oplossen
+## Foutopsporing
 
-### Wisselen van computers op een kabelmodem
+### Swapping computers on the cable modem
 
-De meeste huishouden-gerichte internetproviders (waaronder videotron en @home) maken gebruik van een kabelmodem dat geconfigureerd is, om slechts één PC te herkennen, door het MAC-adres van de netwerkkaart van die computer te onthouden. Zodra het kabelmodem het MAC-adres van de computer heeft geleerd, waarmee het het eerste heeft gecommuniceerd, zal het niet meer willen communiceren met andere MAC-adressen (lees: andere computers/netwerkkaarten). Als je dus een PC (of router) vervangt door een andere PC of router, dan zal de nieuwe PC of router niet worden herkend door het kabelmodem. Om het kabelmodem te resetten, moet je eerst de PC en het kabelmodem uitschakelen, dan het kabelmodem inschakelen en wachten tot het weer helemaal opgestart en online gegaan is. Start dan de nieuwe PC of router op, zodat het een DHCP aanvraag doet. Het kabelmodem zal dan de nieuwe PC of router herkennen.
+Niet van toepassing op de Europese / Nederlandse markt
 
-### Het TCP Window Scaling probleem
+### Het TCP window scaling probleem
 
-TCP pakketten bevatten een "window" waarde in hun headers, dat aangeeft hoeveel gegevens de andere host mag terugsturen. Deze waarde wordt vertegenwoordigd met slechts 16 bits, waardoor de window grootte maximaal 64Kb kan zijn. TCP pakketten worden tijdelijk gecached (omdat ze gesorteerd moeten worden), en omdat het beschikbare geheugen daarvoor gelimiteerd is, zou het kunnen voorkomen dat een host een tekort aan geheugen krijgt.
+TCP-pakketten bevatten een "window" -waarde in hun koptekst, waarin wordt aangegeven hoeveel gegevens de andere host mogelijk in ruil zal sturen. Deze waarde wordt alleen weergegeven met slechts 16 bits, dus de venstergrootte bedraagt ​​maximaal 64Kb. TCP-pakketten worden een tijdje in de cache gehouden (ze moeten worden herordend), en aangezien het geheugen beperkt of nog beperkt is, kan een host geheugen tekort komen.
 
-Rond 1992, toen er steeds meer geheugen beschikbaar kwam, was [RFC 1323](http://www.faqs.org/rfcs/rfc1323.html) geschreven, om de situatie te verbeteren: Window Scaling. De "window" waarde, die in alle pakketten aanwezig is, zou eenmalig worden gewijzigd door een "Scale Factor" (schaal factor), helemaal aan het begin van de connectie.
+Terug in 1992, toen meer en meer geheugen beschikbaar werd, werd RFC 1323 geschreven om de situatie te verbeteren: Window Scaling. De "window" -waarde, die in alle pakketten wordt geleverd, wordt gewijzigd door een schaalfactor die eenmaal is gedefinieerd, aan het begin van de verbinding. Die 8-bits Scale Factor maakt het venster maximaal 32 keer hoger dan de oorspronkelijke 64Kb.
 
-Deze 8-bit Scale Factor staat een window toe om tot 32 keer groter te worden als de initiële 64Kb.
+Het lijkt erop dat sommige oudere routers en firewalls op het internet de Scale Factor omschrijven naar 0, waardoor misverstanden tussen hosts veroorzaakt worden. De Linux kernel 2.6.17 introduceerde een nieuw berekeningsschema dat hogere schaalfactoren oplevert, waardoor de nasleep van de oudere routers en firewalls vrijwel zichtbaar wordt.
 
-Het lijkt erop dat sommige niet goed functionerende routers en firewalls op het internet de Scale Factor herschrijven naar 0, waardoor er communicatieproblemen tussen hosts ontstaat.
+De resulterende verbinding is in ieder geval zeer langzaam of gebroken.
 
-Versie 2.6.17 van de Linux kernel introduceerde een nieuw berekeningsschema, die hogere Scale Factors genereert, waardoor de effecten van de niet goed functionerende routers en firewalls beter zichtbaar zijn. De resulterende verbinding is op zijn best erg traag of helemaal niet aanwezig.
+#### How to diagnose the problem
 
-#### Hoe een probleem te constateren?
+Het moge duidelijk zijn dat dit een raar probleem is. In sommige gevallen zal het niet mogelijk zijn om uberhaupt TCP aansluitingen (HTTP, FTP, ...) te gebruiken, en in een ander geval kan slechts met sommige hosts gecommuniceerd worden.
 
-Als eerste is het belangrijk om duidelijk te maken dat de symptomen van dit probleem erg onvoorspelbaar zijn. In sommige gevallen zul je geen TCP connecties kunnen gebruiken (HTTP, FTP, ...) en in sommige andere gevallen zul je slechts met een beperkt aantal hosts kunnen communiceren.
+Indien dit probleem zich manifesteert zal de `dmesg`'s output er goed uitzien en de logs zullen leeg blijven, daarbij zal `ip addr` een normale status rapporteren, waardoor er op het eerste gezicht niet aan de hand lijkt te zijn.
 
-**Waarschuwing**: `dmesg`'s uitvoer is OK, de logbestanden zijn schoon en de uitvoer van `ifconfig` geeft een normale status terug; het lijkt erop dat alles OK is.
+Maar wanneer websites niet reageren en het pingen van een willekeurige host geen probleem oplevert, dan is er een grote kans dat we hier met genoemd probleem te maken hebben: ping gebruikt namelijk ICMP en heeft dus geen lastvan de TCP problemen.
 
-Als je naar geen enkele websit kunt browsen, maar slechts een paar hosts kunt pingen, dan is de kans groot dat je dit probleem hebt: ping maakt gebruik van het ICMP protocol en wordt niet beinvloed door de TCP problemen.
+Mischien dat [Wireshark](/index.php/Wireshark "Wireshark") iets verduidelijkt. Wellicht wordt UDP en ICMP verkeer zichbaar, maar TCP niet (alleen bij externe hosts).
 
-Je kunt proberen om WireShark te gebruiken. Je zult mischien een aantal succesvolle UDP en ICMP communicaties zien, maar onsuccesvolle TCP communicaties zien (naar vreemde hosts).
+#### Hoe te herstellen
 
-#### Hoe een probleem op te lossen? (De slechte manier)
+##### Fout
 
-Om het probleem op de slechte manier op te lossen, kun je de tcp_rmem waarde veranderen, waarop de Scale Factor is gebaseerd. Alhoewel deze oplossing zou moeten werken voor de meeste hosts, is het niet gegarandeerd, in het bijzonder voor hosts die ver weg zijn.
+Op de foute manier kan de `tcp_rmem` waarde, waarop Scale Factor calculatie is gebaseerd, aangepast worden. Alhoewel dit voor de meeste hosts zal werken, is er geen garantie dat dit ook het geval zal zijn voor met name hosts op afstand.
 
 ```
-echo "4096 87380 174760" > /proc/sys/net/ipv4/tcp_rmem
+# echo "4096 87380 174760" > /proc/sys/net/ipv4/tcp_rmem
 
 ```
 
-#### Hoe een probleem op te lossen? (De goede manier)
+##### Goed
 
-De goede manier is om window scaling te deactiveren. Zelfs al is window scaling een leuke TCP feature, het kan oncomfortabel zijn als je de defecte routers en firewalls in de verbinding niet kan repareren. Er zijn meerdere manieren om window scaling te deactiveren, en het lijkt erop dat de beste methode is, om de volgende regels aan je `/etc/rc.local` toe te voegen:
+KISS: simpleweg deactiveren van de Window Scaling. Maar omdat Window Scaling is een fijne TCP feature is, voelt het wellicht niet fijn om het uit te schakelen, zeker als een oudere router er niet mee opgeknapt wordt. Window Scaling kan op meerdere manieren uitgeschakeld worden, maar klaarblijkelijk is de beste manier (en effectief met de meeste kernels), om de volgende regel toe te voegen aan `/etc/sysctl.d/99-disable_window_scaling.conf` (zie ook [sysctl](/index.php/Sysctl "Sysctl")):
 
 ```
-echo 0 > /proc/sys/net/ipv4/tcp_window_scaling
+net.ipv4.tcp_window_scaling = 0
 
 ```
 
-#### Hoe een probleem op te lossen? (De beste manier)
+##### Best
 
-Het probleem wordt veroorzaakt door niet goed functionerende routers en firewalls, dus die zouden gerepareerd of vervangen moeten worden. Sommige gebruikers hebben gemeld, dat de niet goed functionerende router of firewall hun eigen DSL router was.
+Omdat het probleem veroorzaakt wordt door een **defecte** router/firewall, is vervanging gewenst. Sommige gebruikers gaven aan dat hun defecte router de DSL router was.
 
-#### Meer informatie?
+#### Aanvullend
 
-Dit onderdeel is gebaseerd op het LWN artikel [TCP window scaling and broken routers](http://lwn.net/Articles/92727/) en een artikel van Kernel Trap: [Window Scaling on the Internet](http://kerneltrap.org/node/6723).
+Gebaseerd op het LWN artikel [TCP window scaling and broken routers](http://lwn.net/Articles/92727/) en een Kernel Trap artikel: [Window Scaling on the Internet](http://kerneltrap.org/node/6723).
 
-Recentelijk zijn een aantal Arch Linux gebruikers getroffen door dit probleem:
+Meer relevante discussie zijn te vinden op de LKML.
 
-*   [Odd network issue](https://www.archlinux.org/pipermail/arch/2006-June/011250.html)
-*   [Kernel 2.6.17 and TCP window scaling](https://www.archlinux.org/pipermail/arch/2006-September/011943.html) — het topic dat dit artikel begon
+### Realtek geen link / WOL probleem
 
-Er zijn ook diverse relevante threads op LKML te vinden.
+Gebruikers met Realtek 8168 8169 8101 8111 (C) gebaseerde NIC's (kaarten en aan boord) kunnen het probleem hebben dat de NIC bij het opstarten gedeactiveerd lijkt te zijn en geen Link-lichtje heeft. Dit kan meestal worden gevonden op een dual boot systeem waar Windows ook geïnstalleerd is. Het lijkt erop dat het gebruik van de officiële Realtek-drivers (gedateerd na mei 2007) onder Windows de oorzaak is. Deze nieuwere stuurprogramma's schakelen de functie Wake-On-LAN uit door de NIC uit te schakelen bij de Windows-uitschakeltijd, waar het wordt uitgeschakeld tot de volgende keer dat Windows opstart. U zult kunnen opmerken of dit probleem u beïnvloedt als het Link-lampje uit blijft tot Windows opstart; tijdens het uitschakelen van Windows zal het Link-lampje weer uitschakelen. Normale werking moet zijn dat het verbindingslampje altijd brandt zolang het systeem aan staat, zelfs tijdens POST. Dit probleem heeft ook invloed op andere besturingssystemen zonder nieuwe drivers (bijv. Live CD's). Hier zijn een paar correcties voor dit probleem.
 
-### Realtek geen link / WOL problemen
+#### Activeren van de NIC in Linux
 
-Gebruikers met netwerkkaarten die gebaseerd zijn op Realtek 8168 8169 8101 8111(C) chips, kunnen een probleem constateren, waarbij de netwerkkaart lijkt te zijn gedeactiveert bij het opstarten en geen Link lampje laat branden. Dit probleem komt vaak voor op dualboot systemen met Windows geinstalleerd. Het lijkt erop dat het gebruik van de officiële Realtek drivers (alle drivers van na mei 2007) de oorzaak is. Deze nieuwe drivers deactiveren de Wake-On-LAN functionaliteit, door de netwerkkaart te deactiveren als Windows afsluit, waarbij de netwerkkaart blijft gedeactiveert tot Windows weer opnieuw opstart. Bij het afsluiten van Windows zal het Link lampje uit gaan; de normale situatie is dat het Link lampje altijd aan is, zelfs bij POST (Power On Self Test). Dit probleem beinvloed ook andere besturingssystemen zonder nieuwere drivers (waaronder Linux/BSD Live CD's). Hier zijn een aantal oplossingen voor het probleem:
+Ga naar [#Enabling and disabling netwerk interfaces](#Enabling_and_disabling_netwerk_interfaces) om de NIC in te schakelen.
 
-#### Methode 1 - Windows driver terugrollen of veranderen
+#### Rollback/wijzig de Windows driver
 
-Je kunt je Windows netwerkkaartdriver terugrollen naar de door Microsoft aangeleverde driver (indien beschikbaar), of een officiële Realtek driver van voor mei 2007 installeren (bijvoorbeeld van de cd die bij je netwerkkaart kwam).
+U kunt uw Windows NIC-stuurprogramma terugzetten naar de Microsoft versie, indien beschikbaar, of terugzetten / installeer een officiële Realtek-driver van voor mei 2007 (staat op cd die bij uw hardware is geleverd).
 
-#### Methode 2 - WOL activeren in Windows driver
+#### Activeer WOL in Windows driver
 
-Waarschijnlijk is de beste en snelste manier, om de gewraakte instelling in de Windows driver te veranderen. Op deze manier zou het probleem op het gehele systeem opgelost moeten zijn (en niet alleen onder Arch Linux). Zoek in Windows, onder Apparaatbeheer, naar je Realtek netwerkkaart en dubbelklik erop. Onder het tabblad geadvanceerd moet je de optie "Wake-on-LAN after shutdown" op Enable of Activeren zetten.
+Waarschijnlijk is de beste en de snelste oplossing om deze instelling in het Windows-stuurprogramma te wijzigen. Op deze manier zou het systeembreed opgelost moeten zijn en niet alleen onder Arch (bijvoorbeeld live CD's, andere besturingssystemen). Zoek in Windows onder Device Manager uw Realtek-netwerkadapter en dubbelklik op het. Onder het tabblad 'Geavanceerd' wijzigt u 'Wake-on-LAN na uitschakelen' in 'Inschakelen'.
 
+In Windows XP (example):
+
 ```
- In Windows XP (example)
- Right click my computer
- --> Hardware tab
-   --> Device Manager
-     --> Network Adapters
-       --> "double click" Realtek ...
-         --> Advanced tab
-           --> Wake-On-Lan After Shutdown
-             --> Enable
+Right click my computer and choose "Properties"
+--> "Hardware" tab
+  --> Device Manager
+    --> netwerk Adapters
+      --> "double click" Realtek ...
+        --> Advanced tab
+          --> Wake-On-Lan After Shutdown
+            --> Enable
 
 ```
 
-*   **Let op**: nieuwere Realtek Windows drivers (getest met *Realtek 8111/8169 LAN Driver v5.708.1030.2008*, dated 2009/01/22, available from GIGABYTE) kunnen iets anders naar deze optie verwijzen, bijvoorbeeld *Shutdown Wake-On-LAN --> Enable*. Een workaround is om Windows te booten en het systeem eenvoudigweg te resetten (zonder gebruik te maken van afsluiten of herstarten), waardoor de Windows driver niet de kans krijgt om de Link te deactiveren. Het Link lampje zal geactiveerd blijven en de netwerkkaart zal toegankelijk blijven na POST - zolang je Windows niet opstart en op de normale manier afsluit.
+**Note:** Nieuwere Realtek Windows-stuurprogramma's (getest met *Realtek 8111/8169 LAN Driver v5.708.1030.2008* , gedateerd 2009/01/22, verkrijgbaar bij GIGABYTE) kunnen deze optie iets anders, zoals *Shutdown Wake-On- LAN -> inschakelen* . Het lijkt erop dat het overschakelen naar `Disable` geen effect heeft (u merkt dat het Link-lampje nog steeds wordt uitgeschakeld bij het uitschakelen van Windows). Eén vieze oplossing is om naar Windows te starten en het systeem opnieuw te resetten (een onhandige herstart / uitschakeling uitvoeren) waardoor de Windows-chauffeur geen kans krijgt om LAN uit te schakelen. Het Link-lampje blijft aan en de LAN-adapter blijft toegankelijk na POST - dat wil zeggen totdat u weer opstart naar Windows en het weer goed afsluit..
 
-#### Methode 3 - Nieuwere Realtek Linux driver
+#### Nieuwe Realtek Linux driver
 
-Op de Realtek website zijn er nieuwere drivers voor de Realtek kaarten te vinden. Deze drivers zijn nog niet getest, maar het wordt aangenomen dat deze nieuwe drivers de problemen oplossen.
+Nieuwere drivers voor deze Realtek kaarten zijn verkrijgbaar voor Linux op de Realtek site (ongetest, maar lost waarschijnlijk het probleem wel op).
 
-#### Methode 4 - *LAN Boot ROM* activeren in BIOS/CMOS
+#### Inschakelen *LAN Boot ROM* in BIOS/CMOS
 
-Het lijkt erop dat het instellen van *Integrated Peripherals --> Onboard LAN Boot ROM --> Enabled* in het BIOS/CMOS de Realtek LAN chip activeert bij het POSTen van het systeem, ondanks het deactiveren van de kaart door de Windows driver tijdens het afsluiten.
+Het lijkt erop dat de instelling *Integrated Peripherals --> Onboard LAN Boot ROM --> Enabled* in BIOS/CMOS de Realtek LAN chip bij system boot-up reactiveerd, ondanks dat de Windows driver bij afsluiten van het systeem het de-activeerd.
 
-<small>Dit is meerdere malen succesvol getest met een GIGABYTE system board GA-G31M-ES2L met BIOS versie F8 vrijgegeven op 2009/02/05\. YMMV.</small>
+**Note:** Getest op een GIGABYTE GA-G31M-ES2L motherboard, BIOS version F8 released on 2009/02/05.
 
-### DLink G604T/DLink G502T DNS probleem
+### No interface with Atheros chipsets
 
-Gebruikers met een DLink G604T/DLink G502T router, die DHCP gebruiken en een firmware versie v2.00+ hebben (over het algemeen gebruikers met AUS firmware), kunnen problemen ervaren met bepaalde programma's die geen DNS resolven. Eén van deze programma's is helaas pacman. Het probleem is dat de router in bepaalde situaties de DNS gegevens niet juist via DHCP verstuurd, waardoor de programma's opnieuw proberen verbinding te maken met servers met een IP-adres 1.0.0.0 en uiteindelijk stoppen met een "connection timed out" foutmelding.
+Gebruikers van sommige Atheros ethernet chips melden dat deze niet out-of-the-box werken. (bij installatiemedis van februari 2014). Een werkende oplossing is om vanuit [backports-patched](https://aur.archlinux.org/packages/backports-patched/) te installeren.
 
-#### Hoe het probleem te constateren?
+### Broadcom BCM57780
 
-De beste manier om het probleem te constateren, is om een webbrowser te gebruiken en om wget voor pacman te activeren. Als je op een verse installatie van Arch Linux werkt, dan zou je kunnen overwegen om **links** te installen via de live CD.
+Deze Broadcom chipset gedraagt zich iet altijd netjes wanner nier specifiek aangegeven wordt dat de betreffende module geladen dient te worden. Het betreft de mosules `broadcom` en `tg3`, waarbij laatstgenoemde als eerste geladen dient te worden.
 
-Als eerste, activeer wget voor pacman (omdat het informatie geeft over pacman als het pakketten download) Open /etc/pacman.conf met je favoriete teksteditor en uncomment de volgende regel (verwijder het hekje (#) als het aanwezig is)
+Onderstaande stappen bieden een oplossing voor deze chipset:
 
-```
-XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u
+*   Zoek de NIC in *lspci* output:
 
+ `$ lspci | grep Ethernet` 
 ```
+02:00.0 Ethernet controller: Broadcom Corporation NetLink BCM57780 Gigabit Ethernet PCIe (rev 01)
 
-Terwijl je in pacman.conf bent, noteer dan de standaard spiegelserver, die pacman gebruikt om pakketten te downloaden.
+```
 
-Open nu de standaard spiegelserver in een webbrowser, om te controleren of de spiegelserver werkt. Als het werkt, probeer dan een **pacman -Syy**. Als de spiegelserver niet werkt in je browser, kies dan een andere werkende spiegelserver en maak dat de standaard spiegelserver voor pacman. Als je iets krijgt wat lijkt op het volgende (let op de 1.0.0.0):
+*   Insien de bedrade netwerkaansluiting hapert, probeer het volgende, na eerst de kabel losgekoppeld te hebben:
 
 ```
-ftp://mirror.pacific.net.au/linux/archlinux/extra/os/i686/extra.db.tar.gz                                                            
-           => `/var/lib/pacman/community.db.tar.gz.part'                            
-Resolving mirror.pacific.net.au... 1.0.0.0
+# modprobe -r tg3
+# modprobe broadcom
+# modprobe tg3
 
 ```
 
-Dan heb je hoogstwaarschijnlijk last van het probleem. De 1.0.0.0 betekent dat het niet in staat is om de DNS te resolven, dus moeten we de DNS handmatig toevoegen aan resolv.conf.
+*   Koppel de kabel weer aan. Mocht dit de oplossing te zijn geweest, dan kan de procedure permanent gemaakt worden door toevoeging van `broadcom` en `tg3` (in deze volgorde) aan de `MODULES` array in `/etc/mkinitcpio.conf`:
 
-#### Hoe het probleem op te lossen?
+```
+MODULES=".. broadcom tg3 .."
 
-Het oplossen van het probleem komt erop neer dat je handmatig de DNS server aan je /etc/resolv.conf bestand moet toevoegen. Het probleem is dat DHCP automatisch de inhoud van resolv.conf verwijdert, als er een nieuwe DHCP lease wordt aangevraagd, dus we moeten `/etc/conf.d/dhcpcd` wijzigen en een parameter veranderen, om ervoor te zorgen dat dhcpcd dit niet meer doet:
+```
 
-Als je `/etc/conf.d/dhcpcd` opent, zou je iets moeten zien dat lijkt op het volgende:
+*   Rebuild the initramfs:
 
 ```
-DHCPCD_ARGS="-t 30 -h $HOSTNAME"
+# mkinitcpio -p linux
 
 ```
 
-Voeg de -R parameter toe aan het argument:
+*   Als alternatief kan ook een `/etc/modprobe.d/broadcom.conf` aangemaakt worden:
 
 ```
-DHCPCD_ARGS="-R -t 30 -h $HOSTNAME"
+softdep tg3 pre: broadcom
 
 ```
 
-**LET OP**: Als je een dhcpcd >= 4.0.2 gebruikt, dan is de -R parameter achterhaald. Kijk dan even in de TODO sectie van deze pagina om te zien hoe je een aangepaste resolv.conf kunt gebruiken.
+**Note:** Deze methode kan ook werken voor andere chipsets, zoals de BCM57760.
 
-Bewaar en sluit het bestand en open vervolgens `/etc/resolv.conf`. Je zou slects één namespace moeten zien (hoogstwaarschijnlijk 10.1.1.1), namelijk de gateway naar je router, waar we verbinding mee moeten maken, om de DNS van je internetprovider te krijgen. Plak het IP-adres in je browser en log in op je router. Ga naar het DNS-gedeelte, waar je een IP-adres zou moeten zien in het "Preferred DNS Server" gedeelte (Voorkeurs DNS server). Kopier het IP-adres en plak het in resolv.conf als een namespace, boven het huidige gateway adres:
+### Realtek RTL8111/8168B
 
-De bestaande resolv.conf zou er ongeveer zo uit moeten zien:
-
+ `# lspci | grep Ethernet` 
 ```
-namespace 10.1.1.1
+03:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168B PCI Express Gigabit Ethernet controller (rev 02)
 
 ```
-
-Als je Primary DNS Server 211.29.132.12 is, verander dan resolv.conf naar:
 
-```
-namespace 211.29.132.12
-namespace 10.1.1.1
+De adapter moet herkend worden door de `r8169` module. Echter, met enkele chiprevisies kan de aansluiting voortdurend aan en uit gaan. Het alternatief [r8168](https://www.archlinux.org/packages/?name=r8168) moet in dit geval gebruikt worden voor een betrouwbare aansluiting. [Blacklist](/index.php/Blacklist "Blacklist") `r8169`, als [r8168](https://www.archlinux.org/packages/?name=r8168) niet automatisch wordt geladen door [udev](/index.php/Udev "Udev"), zie [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
 
-```
+Ook kan matige IPv6 ondersteuning de oorzaak zijn bij sommige revisies. [IPv6#Disable functionality](/index.php/IPv6#Disable_functionality "IPv6") kan behulpzaam zijn bij problemen met hangende webpagina's en lage snelheden.
 
-Herstart nu je network daemon met `/etc/rc.d/network restart` en voer een **pacman -Syy** uit. Als pacman synchroniseert met de spiegelserver, dan is het probleem opgelost.
+### Gigabyte Motherboard with Realtek 8111/8168/8411
 
-#### Meer informatie?
+Met moederborden zoals de Gigabyte GA-990FXA-UD3, opstartend met IOMMU uitgeschakeld (wat de standaard kan zijn) zorgt ervoor dat de netwerkinterface onbetrouwbaar is, vaak niet aansluit of aansluiting heeft, maar geen doorvoer mogelijk maakt. Dit geldt niet alleen voor de NIC aan boord, maar ook voor andere pci-NIC's, omdat de instelling van de IOMMU de gehele netwerkinterface op het bord beïnvloedt. Als u IOMMU inschakelt en opstart met de installatiemedia, worden AMD I-10 / xhci pagina-defecten voor een seconde gebroken, maar start daarna wel normaal op, wat resulteert in een volledig functionele interne NIC (zelfs bij de r8169-module).
 
-Een linkje naar het whirpool forum (Australische internetprovider gemeenschap), waar gesproken wordt over het probleem en de oplossing:
+Voeg `iommu=soft` als een [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") toe om bij het opstarten foutmeldingen te onderdrukken en de USB3.0-functionaliteit te herstellen.
 
-```
-[http://forums.whirlpool.net.au/forum-replies-archive.cfm/461625.html](http://forums.whirlpool.net.au/forum-replies-archive.cfm/461625.html)
+## Zie ook
 
-```
+*   [Debian Reference: netwerk setup](https://www.debian.org/doc/manuals/debian-reference/ch05.en.html)
+*   [RHEL7: netwerking Guide](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/netwerking_Guide/)

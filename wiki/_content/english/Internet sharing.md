@@ -1,3 +1,14 @@
+Related articles
+
+*   [Android tethering](/index.php/Android_tethering "Android tethering")
+*   [Software access point](/index.php/Software_access_point "Software access point")
+*   [Bridge with netctl](/index.php/Bridge_with_netctl "Bridge with netctl")
+*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
+*   [Sharing PPP Connection](/index.php/Sharing_PPP_Connection "Sharing PPP Connection")
+*   [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")
+*   [Router](/index.php/Router "Router")
+*   [USB 3G Modem](/index.php/USB_3G_Modem "USB 3G Modem")
+
 This article explains how to share the internet connection from one machine to other(s).
 
 ## Contents
@@ -7,6 +18,8 @@ This article explains how to share the internet connection from one machine to o
     *   [2.1 Static IP address](#Static_IP_address)
     *   [2.2 Enable packet forwarding](#Enable_packet_forwarding)
     *   [2.3 Enable NAT](#Enable_NAT)
+        *   [2.3.1 With iptables](#With_iptables)
+        *   [2.3.2 With nftables](#With_nftables)
     *   [2.4 Assigning IP addresses to the client PC(s)](#Assigning_IP_addresses_to_the_client_PC.28s.29)
         *   [2.4.1 Manually adding an IP](#Manually_adding_an_IP)
 *   [3 Troubleshooting](#Troubleshooting)
@@ -60,7 +73,7 @@ Enter this command to temporarily enable packet forwarding at runtime:
 
 **Tip:** To enable packet forwarding selectively for a specific interface, use `sysctl net.ipv4.conf.*interface_name*.forwarding=1` instead.
 
-**Warning:** If the system uses [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") to control the network interfaces, a per-interface setting for IPv4 is not possible, i.e. systemd logic propagates any configured forwarding into a global (for all interfaces) setting for IPv4\. The advised work-around is to use a firewall to forbid forwarding again on selective interfaces. See the [systemd.network(5)](http://man7.org/linux/man-pages/man5/systemd.network.5.html) manual page for more information. The `IPForward=kernel` semantics introduced in a previous systemd release 220/221 to honor kernel settings does not apply anymore.[[1]](https://github.com/poettering/systemd/commit/765afd5c4dbc71940d6dd6007ecc3eaa5a0b2aa1) [[2]](https://github.com/systemd/systemd/blob/a2088fd025deb90839c909829e27eece40f7fce4/NEWS)
+**Warning:** If the system uses [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") to control the network interfaces, a per-interface setting for IPv4 is not possible, i.e. systemd logic propagates any configured forwarding into a global (for all interfaces) setting for IPv4\. The advised work-around is to use a firewall to forbid forwarding again on selective interfaces. See the [systemd.network(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5) manual page for more information. The `IPForward=kernel` semantics introduced in a previous systemd release 220/221 to honor kernel settings does not apply anymore.[[1]](https://github.com/poettering/systemd/commit/765afd5c4dbc71940d6dd6007ecc3eaa5a0b2aa1) [[2]](https://github.com/systemd/systemd/blob/a2088fd025deb90839c909829e27eece40f7fce4/NEWS)
 
 Edit `/etc/sysctl.d/30-ipforward.conf` to make the previous change persistent after a reboot for all interfaces:
 
@@ -76,6 +89,8 @@ Afterwards it is advisable to double-check forwarding is enabled as required aft
 
 ### Enable NAT
 
+#### With iptables
+
 [Install](/index.php/Install "Install") the [iptables](https://www.archlinux.org/packages/?name=iptables) package. Use iptables to enable NAT:
 
 ```
@@ -88,6 +103,37 @@ Afterwards it is advisable to double-check forwarding is enabled as required aft
 **Note:** Of course, this also works with a mobile broadband connection (usually called ppp0 on routing PC).
 
 Read the [iptables](/index.php/Iptables "Iptables") article for more information (especially saving the rule and applying it automatically on boot). There is also an excellent guide on iptables [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall").
+
+#### With nftables
+
+[Install](/index.php/Install "Install") the [nftables](https://www.archlinux.org/packages/?name=nftables) package. To enable NAT with [nftables](/index.php/Nftables "Nftables"), you will have to create the prerouting and postrouting chains in a new/exisiting table (you need both chains even if they're empty):
+
+```
+# nft add table ip nat
+# nft add chain ip nat prerouting { type nat hook prerouting priority 0 \; }
+# nft add chain ip nat postrouting { type nat hook postrouting priority 100 \; }
+
+```
+
+**Note:** If you want to use IPv6, you have to replace all occurences of `ip` with `ip6`.
+
+After that, you have to masquerade the `net0` adresses for `internet0`:
+
+```
+# nft add rule nat postrouting oifname internet0 masquerade
+
+```
+
+You may want to add some more firewall restrictions on the forwarding (assuming the filter table already exists, like configured in [Nftables#Simple IP/IPv6 firewall](/index.php/Nftables#Simple_IP.2FIPv6_firewall "Nftables")):
+
+```
+# nft add chain inet filter forward { type filter hook forward priority 0 \; policy drop}
+# nft add rule filter forward ct state related,established accept
+# nft add rule filter forward iifname net0 oifname internet0 accept
+
+```
+
+You can find more information on NAT in nftables in the [nftables Wiki](https://wiki.nftables.org/wiki-nftables/index.php/Performing_Network_Address_Translation_(NAT)). If you want to make these changes permanent, follow the instructions on [nftables](/index.php/Nftables "Nftables")
 
 ### Assigning IP addresses to the client PC(s)
 

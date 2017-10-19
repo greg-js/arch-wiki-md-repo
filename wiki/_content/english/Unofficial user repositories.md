@@ -182,7 +182,7 @@ Server = https://pkgbuilder-repo.chriswarrick.com/
 
 ```
 [xyne-any]
-Server = http://xyne.archlinux.ca/repos/xyne
+Server = https://xyne.archlinux.ca/repos/xyne/
 
 ```
 
@@ -209,7 +209,7 @@ Server = https://youtube-dl.tk
 
 ```
 [archlinuxgr-any]
-Server = http://archlinuxgr.tiven.org/archlinux/any
+Server = https://archlinuxgr.tiven.org/archlinux/any
 
 ```
 
@@ -227,7 +227,7 @@ Repositories with both i686 and x86_64 versions. The `$arch` variable will be se
 
 ```
 [arcanisrepo]
-Server = http://repo.arcanis.me/repo/$arch
+Server = https://repo.arcanis.me/repo/$arch
 
 ```
 
@@ -260,7 +260,7 @@ Server = http://repo.archlinuxcn.org/$arch
 
 ```
 [blackeagle-pre-community]
-Server = http://repo.herecura.be/$repo/$arch
+Server = https://repo.herecura.be/$repo/$arch
 
 ```
 
@@ -272,7 +272,7 @@ Server = http://repo.herecura.be/$repo/$arch
 
 ```
 [catalyst]
-Server = http://mirror.hactar.xyz/Vi0L0/catalyst/$arch
+Server = https://mirror.hactar.xyz/Vi0L0/catalyst/$arch
 
 ```
 
@@ -284,7 +284,7 @@ Server = http://mirror.hactar.xyz/Vi0L0/catalyst/$arch
 
 ```
 [catalyst-hd234k]
-Server = http://mirror.hactar.xyz/Vi0L0/catalyst-hd234k/$arch
+Server = https://mirror.hactar.xyz/Vi0L0/catalyst-hd234k/$arch
 
 ```
 
@@ -335,7 +335,7 @@ See [ArchHaskell#haskell-web](/index.php/ArchHaskell#haskell-web "ArchHaskell").
 
 ```
 [herecura]
-Server = http://repo.herecura.be/$repo/$arch
+Server = https://repo.herecura.be/$repo/$arch
 
 ```
 
@@ -376,7 +376,7 @@ Server = https://jrpi.mooo.com/Repositórios/haskell/
 
 ```
 [llvm-svn]
-Server = http://repos.uni-plovdiv.net/archlinux/$repo/$arch
+Server = https://repos.uni-plovdiv.net/archlinux/$repo/$arch
 
 ```
 
@@ -388,7 +388,7 @@ Server = http://repos.uni-plovdiv.net/archlinux/$repo/$arch
 
 ```
 [miffe]
-Server = http://arch.miffe.org/$arch/
+Server = https://arch.miffe.org/$arch/
 
 ```
 
@@ -426,7 +426,7 @@ Server = http://al.seblu.net/$repo/$arch
 
 ```
 [seiichiro]
-Server = http://www.seiichiro0185.org/repo/$arch
+Server = https://www.seiichiro0185.org/repo/$arch
 
 ```
 
@@ -452,7 +452,7 @@ Server = http://repo.p5n.pp.ru/$repo/os/$arch
 
 ```
 [tredaelli-systemd]
-Server = http://pkgbuild.com/~tredaelli/repo/systemd/$arch
+Server = https://pkgbuild.com/~tredaelli/repo/systemd/$arch
 
 ```
 
@@ -465,7 +465,7 @@ Server = http://pkgbuild.com/~tredaelli/repo/systemd/$arch
 
 ```
 [home_mrmariusz_ArchLinux]
-Server = http://download.opensuse.org/repositories/home:/mrmariusz/ArchLinux/$arch
+Server = https://download.opensuse.org/repositories/home:/mrmariusz/ArchLinux/$arch
 
 ```
 
