@@ -1,3 +1,10 @@
+Related articles
+
+*   [Steam/Wine](/index.php/Steam/Wine "Steam/Wine")
+*   [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshooting")
+*   [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting")
+*   [Gamepad](/index.php/Gamepad "Gamepad")
+
 From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam (software)"):
 
 	Steam is a digital distribution, digital rights management, multiplayer and communications platform developed by Valve Corporation. It is used to distribute games and related media online, from small independent developers to larger software houses.
@@ -7,28 +14,28 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Alternative Flatpak Installation](#Alternative_Flatpak_Installation)
-    *   [2.1 SteamCMD](#SteamCMD)
-*   [3 Usage](#Usage)
-*   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Directory structure](#Directory_structure)
-    *   [4.2 Launch options](#Launch_options)
-    *   [4.3 Big Picture Mode without a window manager](#Big_Picture_Mode_without_a_window_manager)
-    *   [4.4 Steam skins](#Steam_skins)
-        *   [4.4.1 Creating skins](#Creating_skins)
-    *   [4.5 Changing the Steam notification position](#Changing_the_Steam_notification_position)
-        *   [4.5.1 Use a skin](#Use_a_skin)
-        *   [4.5.2 Live patching](#Live_patching)
-    *   [4.6 In-Home Streaming](#In-Home_Streaming)
-    *   [4.7 Finding a games AppID](#Finding_a_games_AppID)
-*   [5 Troubleshooting](#Troubleshooting)
-*   [6 See also](#See_also)
+    *   [1.1 SteamCMD](#SteamCMD)
+    *   [1.2 Alternative Flatpak installation](#Alternative_Flatpak_installation)
+*   [2 Usage](#Usage)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Directory structure](#Directory_structure)
+    *   [3.2 Launch options](#Launch_options)
+    *   [3.3 Big Picture Mode without a window manager](#Big_Picture_Mode_without_a_window_manager)
+    *   [3.4 Steam skins](#Steam_skins)
+        *   [3.4.1 Creating skins](#Creating_skins)
+    *   [3.5 Changing the Steam notification position](#Changing_the_Steam_notification_position)
+        *   [3.5.1 Use a skin](#Use_a_skin)
+        *   [3.5.2 Live patching](#Live_patching)
+    *   [3.6 In-Home Streaming](#In-Home_Streaming)
+    *   [3.7 Finding a games AppID](#Finding_a_games_AppID)
+*   [4 Troubleshooting](#Troubleshooting)
+*   [5 See also](#See_also)
 
 ## Installation
 
 **Note:**
 
-*   Arch Linux is **not** officially supported, the only officially supported distribution is Ubuntu. [[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366).
+*   Arch Linux is **not** officially supported, the only officially supported distribution is Ubuntu. [[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366)
 *   If you have a 64-bit system, enable the [multilib](/index.php/Multilib "Multilib") repository.
 
 [Install](/index.php/Install "Install") the [steam](https://www.archlinux.org/packages/?name=steam) package.
@@ -41,27 +48,22 @@ The following fixes are needed to get Steam functioning properly on Arch Linux:
 *   Several games have dependencies which may be missing from your system. If a game fails to launch (often without error messages) then make sure all of the libraries listed in [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") are installed.
 *   In case that you are using Arch Linux in your local language, make sure that you also have properly generated en_US locales (see [Locale#Generating locales](/index.php/Locale#Generating_locales "Locale")). Otherwise Steam client wont start with **invalid pointer** error.
 
-## Alternative Flatpak Installation
-
-Currently does not support themes.
-
-Install [flatpak](https://www.archlinux.org/packages/?name=flatpak)
-
-Add the flatpak [flathub](https://flathub.org/) repository
-
-`flatpak remote-add --if-not-exists flathub [https://flathub.org/repo/flathub.flatpakrepo](https://flathub.org/repo/flathub.flatpakrepo)`
-
-Install the Steam flatpak
-
-`flatpak install flathub com.valvesoftware.Steam`
-
-By default steam won't be able to see your home folder, we can specify it to use the home folder so it behaves identically to as it would be on Ubuntu or SteamOS by specifying that with
-
-`flatpak override com.valvesoftware.Steam --filesystem=/home/USERNAME`
-
 ### SteamCMD
 
 For the [SteamCMD](https://developer.valvesoftware.com/wiki/SteamCMD), a command-line version of the Steam client, that is primarily used to install and update dedicated servers, [install](/index.php/Install "Install") the [steamcmd](https://aur.archlinux.org/packages/steamcmd/) package.
+
+### Alternative Flatpak installation
+
+Steam can also be installed with [Flatpak](/index.php/Flatpak "Flatpak") as `com.valvesoftware.Steam` from [Flathub](https://flathub.org/).
+
+The Flatpak application currently does not support themes.
+
+By default Steam won't be able to access your home directory, you can run the following command to allow it, so that it behaves like on Ubuntu or SteamOS:
+
+```
+flatpak override com.valvesoftware.Steam --filesystem=/home/$USER
+
+```
 
 ## Usage
 
@@ -203,6 +205,6 @@ See [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshoot
 
 ## See also
 
-*   [Steam](https://wiki.gentoo.org/wiki/Steam) at Gentoo wiki
+*   [Gentoo Wiki article](https://wiki.gentoo.org/wiki/Steam)
 *   [The Big List of DRM-Free Games on Steam](https://pcgamingwiki.com/wiki/The_Big_List_of_DRM-Free_Games_on_Steam) at PCGamingWiki
-*   [List of DRM-free games](http://steam.wikia.com/wiki/List_of_DRM-free_games) at wikia
+*   [List of DRM-free games](http://steam.wikia.com/wiki/List_of_DRM-free_games) at Wikia

@@ -36,7 +36,7 @@ sshguard is not vulnerable to most (or maybe any) of the log analysis [vulnerabi
 
 sshguard works by monitoring `/var/log/auth.log`, syslog-ng or the systemd journal for failed login attempts. For each failed attempt, the offending host is banned from further communication for a limited amount of time. The default amount of time the offender is banned starts at 7 minutes, and doubles each time he or she fails another login. sshguard can be configured to permanently ban a host with too many failed attempts.
 
-Both temporary and permanent bans are done by adding an entry into the "sshguard" chain in iptables that drops all packets from the offender. The ban is then logged to syslog and ends up in `/var/log/auth.log`, or the systemd journal, if systemd is being used. To make the ban only affect port 22, simply do not send packets going to other ports through the "sshguard" chain.
+Both temporary and permanent bans are done by adding an entry into the "sshguard" chain in iptables that drops all packets from the offender. The ban is then logged to syslog and ends up in `/var/log/auth.log`, or the systemd journal, if systemd is being used.
 
 You must configure a firewall to be used with sshguard in order for blocking to work.
 
@@ -151,7 +151,7 @@ Finally [restart](/index.php/Restart "Restart") the `sshguard.service` unit.
 
 ### Aggressive banning
 
-For some users under constant attack, it may be beneficial to enable a more aggressive banning policy. If you can be reasonably sure that accidental failed logins are unlikely, then you can instruct SSHGuard to automatically ban hosts with a single failed login. Modify the parameters in the configuration file in the following way:
+For some users under constant attack, a more aggressive banning policy can be adopted. If you are confident that accidental failed logins are unlikely, you can instruct SSHGuard to permanently ban hosts after a single failed login. Modify the parameters in the configuration file in the following way:
 
 ```
 THRESHOLD=10
@@ -159,9 +159,9 @@ BLACKLIST_FILE=10:/var/db/sshguard/blacklist.db
 
 ```
 
-Finally [restart](/index.php/Restart "Restart") the `sshguard.service` unit.
+Finally [restart](/index.php/Restart "Restart") `sshguard.service`.
 
-To prevent multiple authentication attempts during a single connection, you may also want to change /etc/ssh/sshd_config by defining:
+Also, to prevent multiple authentication attempts during a single connection, you may want to change `/etc/ssh/sshd_config` by defining:
 
 ```
 MaxAuthTries 1
@@ -174,7 +174,7 @@ You will have to [restart](/index.php/Restart "Restart") `sshd.service` for this
 
 ### Unbanning
 
-If you *yourself* get banned, you can wait to get unbanned automatically or use iptables to unban yourself. First check if your IP is banned by sshguard:
+If you ban *yourself*, you can wait to get unbanned automatically or use iptables to unban yourself. First check if your IP is banned by sshguard:
 
 ```
 # iptables -L sshguard --line-numbers --numeric

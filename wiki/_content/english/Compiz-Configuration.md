@@ -132,17 +132,17 @@ $ gsettings set org.gnome.desktop.wm.preferences theme *theme-name*
 
 	Compiz 0.8
 
-The GTK Window Decorator included in the Compiz provided by the original Compiz upstream (versions 0.8.9 and below) can be compiled with Metacity (version 2) support. This GTK Window Decorator version expects the theme to be defined as a GConf setting. Assuming this support is compiled in, use the command below to change the Metacity theme:
-
-```
-$ gconftool-2 -s /apps/metacity/general/theme -t string *theme-name*
-
-```
-
 The GTK Window Decorator included in the Compiz provided by the Compiz-Reloaded upstream (versions 0.8.10 and higher) can be compiled with Marco support. Assuming this support is compiled in, use the command below to change the Marco theme:
 
 ```
 $ gsettings set org.mate.Marco.general theme *theme-name*
+
+```
+
+The GTK Window Decorator included in the Compiz provided by the original Compiz upstream (versions 0.8.9 and below) can be compiled with Metacity (version 2) support. This GTK Window Decorator version expects the theme to be defined as a GConf setting. Assuming this support is compiled in, use the command below to change the Metacity theme:
+
+```
+$ gconftool-2 -s /apps/metacity/general/theme -t string *theme-name*
 
 ```
 
@@ -154,7 +154,7 @@ Kwin themes can be downloaded, installed and managed using the [KDE](/index.php/
 
 **Note:** There was once a *Number of Desktops* option under CCSM -> *General Options* -> *Desktop Size* which made it possible to use standard workspaces instead of viewports (though this was incompatible with many Compiz plugins such as *Cube*). As of Compiz 0.9.11 ([revision 3857](http://bazaar.launchpad.net/~compiz-team/compiz/0.9.12/revision/3857)) the *Number of Desktops* option has been removed.
 
-Unlike many other window managers, Compiz does not use multiple workspaces. Instead, it uses one workspace but splits it into multiple sections known as viewports.
+Unlike many other window managers, Compiz does not use multiple workspaces. Instead, it uses one workspace but splits it into multiple sections known as viewports. See [[1]](http://www.circuitousroot.com/artifice/programming/useful/fvwm/viewports/index.html) for more information.
 
 The number and layout of viewports can be configured in CCSM -> *General Options* -> *Desktop Size*. Changing the *Horizontal Virtual Size* will change the number of viewports in a row. Changing the *Vertical Virtual Size* will add or remove rows of viewports.
 

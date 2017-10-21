@@ -139,6 +139,7 @@ When using a display manager, the keyring works out of the box for most cases. T
 *   [SLiM](/index.php/SLiM "SLiM")
 *   [LightDM](/index.php/LightDM "LightDM")
 *   [LXDM](/index.php/LXDM "LXDM")
+*   [SDDM](/index.php/SDDM "SDDM")
 
 **Note:** You may need to install [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring)
 

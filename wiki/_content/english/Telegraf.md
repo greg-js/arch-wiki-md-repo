@@ -1,3 +1,8 @@
+Related articles
+
+*   [InfluxDB](/index.php/InfluxDB "InfluxDB")
+*   [Grafana](/index.php/Grafana "Grafana")
+
 [Telegraf](https://github.com/influxdata/telegraf/) is an agent written in Go for collecting, processing, aggregating, and writing metrics. It is an open source application developed by InfluxData and closely integrated into the TICK Stack. It is highly customizable with plugins for different metrics and backends.
 
 ## Installation

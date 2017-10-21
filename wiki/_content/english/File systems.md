@@ -109,6 +109,14 @@ Some FUSE-based file systems:
 
 	[https://nuetzlich.net/gocryptfs/](https://nuetzlich.net/gocryptfs/) || [gocryptfs](https://aur.archlinux.org/packages/gocryptfs/)
 
+*   **[SSHFS](/index.php/SSHFS "SSHFS")** — SSHFS is a FUSE-based filesystem client for mounting directories over SSH.
+
+	[https://github.com/libfuse/sshfs](https://github.com/libfuse/sshfs) || [sshfs](https://www.archlinux.org/packages/?name=sshfs)
+
+*   **vdfuse** — Mounting VirtualBox disk images (VDI/VMDK/VHD).
+
+	[https://github.com/muflone/virtualbox-includes](https://github.com/muflone/virtualbox-includes) || [vdfuse](https://aur.archlinux.org/packages/vdfuse/)
+
 *   **xbfuse-git** — Mount an Xbox (360) ISO.
 
 	[http://multimedia.cx/xbfuse/](http://multimedia.cx/xbfuse/) || [xbfuse-git](https://aur.archlinux.org/packages/xbfuse-git/)
@@ -116,10 +124,6 @@ Some FUSE-based file systems:
 *   **xmlfs** — Represent an XML file as a directory structure for easy access.
 
 	[https://github.com/halhen/xmlfs](https://github.com/halhen/xmlfs) || [xmlfs](https://aur.archlinux.org/packages/xmlfs/)
-
-*   **vdfuse** — Mounting VirtualBox disk images (VDI/VMDK/VHD).
-
-	[https://github.com/muflone/virtualbox-includes](https://github.com/muflone/virtualbox-includes) || [vdfuse](https://aur.archlinux.org/packages/vdfuse/)
 
 See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wiki/Filesystem_in_Userspace#Example_uses "wikipedia:Filesystem in Userspace") for more.
 

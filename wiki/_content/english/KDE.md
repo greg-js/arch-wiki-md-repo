@@ -296,7 +296,7 @@ Make it permanent:
 
 ```
 
-It migh or it might not be necessary to append `.local` to the hostname. For some NAS devices it might also be necessary to append `vers=1.0` to the argument line to enforce SMB 1.0 compatibility.
+It might be necessary to append `.local` to the hostname. For some NAS devices it might also be necessary to append `vers=1.0` to the argument line to enforce SMB 1.0 compatibility.
 
 An easier solution is to use [samba-mounter-git](https://aur.archlinux.org/packages/samba-mounter-git/), which offers basically the same functionality via an easy to use option located at *System Settings* > *Network Drivers*.
 

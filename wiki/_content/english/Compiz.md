@@ -61,7 +61,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"
 
 ## Installation
 
-There are two versions of Compiz available, the 0.8 series which is written in C and the 0.9 series which is a complete re-write of Compiz in C++. As of August 2016, both series are actively developed. Compiz 0.9 is developed by the [Compiz Maintainers on Launchpad](https://code.launchpad.net/~compiz-team) whilst Compiz 0.8 is developed by the [Compiz Reloaded project](https://github.com/compiz-reloaded) on GitHub. The two series cannot be installed side by side.
+There are two versions of Compiz available, the 0.8 series which is written in C and the 0.9 series which is a complete re-write of Compiz in C++. As of August 2016, both series are actively developed. Compiz 0.9 is developed by the [Compiz Maintainers on Launchpad](https://launchpad.net/~compiz-team) whilst Compiz 0.8 is developed by the [Compiz Reloaded project](https://github.com/compiz-reloaded) on GitHub. The two series cannot be installed side by side.
 
 ### 0.9 series
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Getting_Involved](/index.php/Getting_Involved "Getting Involved") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-12，点击[这里](https://wiki.archlinux.org/index.php?title=Getting_Involved&diff=0&oldid=491797)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Getting Involved](/index.php/Getting_Involved "Getting Involved") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-20，点击[这里](https://wiki.archlinux.org/index.php?title=Getting+Involved&diff=0&oldid=493583)可以查看翻译后英文页面的改动。
 
 在进化生物学中，[合作](https://en.wikipedia.org/wiki/Co-operation_(evolution) "wikipedia:Co-operation (evolution)")是指个体付出一个小成本，可以为其他同胞带来更大的收益，而其他个体也一样提供回报，这样每个参与者都会获得非常大的收益。Arch 社区也是如此，很多成员希望为自己喜爱的 GNU/Linux 发行版做出贡献。大家的参与，不仅有利于 Archer 同胞，还能造福[自由软件和开源软件](https://en.wikipedia.org/wiki/zh:%E8%87%AA%E7%94%B1%E5%8F%8A%E5%BC%80%E6%94%BE%E6%BA%90%E4%BB%A3%E7%A0%81%E8%BD%AF%E4%BB%B6 "wikipedia:zh:自由及开放源代码软件")的全体爱好者。
 
@@ -20,8 +20,7 @@
     *   [2.1 团体](#.E5.9B.A2.E4.BD.93)
     *   [2.2 软件](#.E8.BD.AF.E4.BB.B6)
         *   [2.2.1 ArchWiki 浏览器](#ArchWiki_.E6.B5.8F.E8.A7.88.E5.99.A8)
-    *   [2.3 服务](#.E6.9C.8D.E5.8A.A1)
-    *   [2.4 其他](#.E5.85.B6.E4.BB.96)
+    *   [2.3 其他](#.E5.85.B6.E4.BB.96)
 *   [3 FAQ](#FAQ)
     *   [3.1 怎样才能成为 Arch 开发者?](#.E6.80.8E.E6.A0.B7.E6.89.8D.E8.83.BD.E6.88.90.E4.B8.BA_Arch_.E5.BC.80.E5.8F.91.E8.80.85.3F)
     *   [3.2 如何成为 Trusted User?](#.E5.A6.82.E4.BD.95.E6.88.90.E4.B8.BA_Trusted_User.3F)
@@ -144,14 +143,6 @@ Arch 拥有一个充满活力的用户社区。如果您的项目想参与到社
 	[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
 
 	一个简单的基于 curses 的阅读器，可以阅读 ArchWiki 或 Wikipedia 等 MediaWiki 网站，软件包：[wikicurses](https://aur.archlinux.org/packages/wikicurses/), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
-
-### 服务
-
-Arch 特别服务：
-
-	[ArchLinux.info](https://bbs.archlinux.org/viewtopic.php?id=150417&)
-
-	基于 VPS 的 @archlinux.info 电子邮件。
 
 ### 其他
 

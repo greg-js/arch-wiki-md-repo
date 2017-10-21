@@ -1,8 +1,6 @@
 This page explains how to set up a stateful firewall using [iptables](/index.php/Iptables "Iptables"). It also explains what the rules mean and why they are needed. For simplicity, it is split into two major sections. The first section deals with a firewall for a single machine, the second sets up a NAT gateway in addition to the firewall from the first section.
 
-**Warning:** The rules are given in the order that they are executed. If you are logged into a remote machine, you may be locked out of the machine while setting up the rules. You should only follow the steps below while you are logged in locally.
-
-The [example config file](#Example_iptables.rules_file) can be used to get around this problem.
+**Warning:** The rules below are given in the order they are executed and should only be followed while logged in locally. If you are logged into a remote machine, you may be locked out of the machine while setting up the rules. To get around this problem in a remote setup, the [example config file](#Example_iptables.rules_file) can be used.
 
 ## Contents
 
@@ -168,7 +166,7 @@ The next rule will accept all new incoming **ICMP echo requests**, also known as
 
 Now we attach the TCP and UDP chains to the INPUT chain to handle all new incoming connections. Once a connection is accepted by either TCP or UDP chain, it is handled by the RELATED/ESTABLISHED traffic rule. The TCP and UDP chains will either accept new incoming connections, or politely reject them. New TCP connections must be started with SYN packets.
 
-**Note:** NEW but not SYN is the only invalid TCP flag not covered by the INVALID state. The reason is because they are rarely malicious packets, and they should not just be dropped. Instead, we simply do not accept them, so they are rejected with a TCP RESET by the next rule.
+**Note:** NEW but not SYN is the only invalid TCP flag not covered by the INVALID state. This is because they are rarely malicious packets and should not just be dropped. Instead, they are simply rejected with a TCP RESET by the next rule.
 
 ```
 # iptables -A INPUT -p udp -m conntrack --ctstate NEW -j UDP
@@ -321,7 +319,7 @@ More information is in the iptables man page, or reading the docs and examples o
 **Note:**
 
 *   This opens you up to a form of [DoS](https://en.wikipedia.org/wiki/Denial-of-service_attack "wikipedia:Denial-of-service attack"). An attack can send packets with spoofed IPs and get them blocked from connecting to your services.
-*   This trick may block legal IP address for the reason that: while packets from legal IP address and their destination port is also a permitted one, but some of these packets may be regarded as INVALID by module conntrack. So legal IP address goes to the blacklist and is blocked out. A solution may be that permitting all packets destined for that port.
+*   This trick may block a legitimate IP address if some packets from this address to the destination port are regarded as INVALID by module conntrack. To avoid blacklisting, a turnaround is to allow all packets directed to that particular destination port.
 
 Port scans are used by attackers to identify open ports on your computer. This allows them to identify and fingerprint your running services and possibly launch exploits against them.
 
@@ -333,7 +331,7 @@ The recent module can be used to trick the remaining two types of port scans. Th
 
 ##### SYN scans
 
-In a SYN scan, the port scanner sends SYN packet to every port. Closed ports return a TCP RESET packet, or get dropped by a strict firewall. Open ports return a SYN ACK packet regardless of the presence of a firewall.
+In a SYN scan, the port scanner sends a SYN (synchronization) packet to every port to initiate a TCP connection. Closed ports return a TCP RESET packet, or get dropped by a strict firewall. Open ports return a SYN ACK packet.
 
 The recent module can be used to keep track of hosts with rejected connection attempts and return a TCP RESET for any SYN packet they send to open ports as if the port was closed. If an open port is the first to be scanned, a SYN ACK will still be returned, so running applications such as ssh on non-standard ports is required for this to work consistently.
 

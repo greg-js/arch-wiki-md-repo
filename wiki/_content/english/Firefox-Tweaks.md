@@ -10,20 +10,21 @@ This page contains advanced Firefox configuration options and performance tweaks
 ## Contents
 
 *   [1 Performance](#Performance)
-    *   [1.1 Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29)
-    *   [1.2 Set AzureContentBackend to Skia instead of Cairo](#Set_AzureContentBackend_to_Skia_instead_of_Cairo)
-    *   [1.3 Enable Accelerated Azure Canvas](#Enable_Accelerated_Azure_Canvas)
-    *   [1.4 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
-    *   [1.5 Turn off the disk cache](#Turn_off_the_disk_cache)
-    *   [1.6 Longer interval to save session](#Longer_interval_to_save_session)
-    *   [1.7 Immediate rendering of pages](#Immediate_rendering_of_pages)
-    *   [1.8 Referrer header control](#Referrer_header_control)
-    *   [1.9 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
-    *   [1.10 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
-    *   [1.11 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
-    *   [1.12 Enable Electrolysis](#Enable_Electrolysis)
-    *   [1.13 Enable HTTP Cache](#Enable_HTTP_Cache)
-    *   [1.14 Disable Pocket](#Disable_Pocket)
+    *   [1.1 Change Performance settings](#Change_Performance_settings)
+    *   [1.2 Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29)
+    *   [1.3 Set AzureContentBackend to Skia instead of Cairo](#Set_AzureContentBackend_to_Skia_instead_of_Cairo)
+    *   [1.4 Enable Accelerated Azure Canvas](#Enable_Accelerated_Azure_Canvas)
+    *   [1.5 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
+    *   [1.6 Turn off the disk cache](#Turn_off_the_disk_cache)
+    *   [1.7 Longer interval to save session](#Longer_interval_to_save_session)
+    *   [1.8 Immediate rendering of pages](#Immediate_rendering_of_pages)
+    *   [1.9 Referrer header control](#Referrer_header_control)
+    *   [1.10 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
+    *   [1.11 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
+    *   [1.12 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
+    *   [1.13 Enable Electrolysis](#Enable_Electrolysis)
+    *   [1.14 Enable HTTP Cache](#Enable_HTTP_Cache)
+    *   [1.15 Disable Pocket](#Disable_Pocket)
 *   [2 Appearance](#Appearance)
     *   [2.1 Fonts](#Fonts)
         *   [2.1.1 Configure the DPI value](#Configure_the_DPI_value)
@@ -72,6 +73,25 @@ Improving Firefox's performance is divided into parameters that can be inputted 
 
 This section contains advanced Firefox options for performance tweaking. For additional information see [these MozillaZine articles](http://kb.mozillazine.org/Category:Tweaking_preferences).
 
+### Change Performance settings
+
+Firefox 56 automatically uses settings based on the computer's hardware specifications [[1]](https://support.mozilla.org/en-US/kb/performance-settings).
+
+Adjusting these settings can be done in Preferences or by changing the `dom.ipc.processCount` and `browser.preferences.defaultPerformanceSettings.enabled` key values manually in `about:config`.
+
+However you may want to manually adjust this setting to increase performance even further or decrease memory usage on low-end devices.
+
+In this case the **Content process limit** for the current [user](/index.php/User "User") has been increased to *4*:
+
+ `$ ps -e | grep 'Web Content'` 
+```
+13991 tty1     00:00:04 Web Content
+14027 tty1     00:00:09 Web Content
+14031 tty1     00:00:20 Web Content
+14040 tty1     00:00:26 Web Content
+
+```
+
 ### Enable OpenGL Off-Main-Thread Compositing (OMTC)
 
 **Warning:** If OpenGL OMTC is disabled for a specific hardware, it may be due to stability issues, high system resources consumption, driver bugs or a number of different variables, and so instead of speeding things up it might slow them down. Proceed with force-enabling it at your own risk, benchmark if you aren’t sure.
@@ -84,7 +104,7 @@ Restart Firefox for changes to take effect.
 
 To check if OpenGL OMTC is enabled, go to `about:support` and under the "Graphics" section look for "Compositing". If it reports "Basic", OpenGL OMTC is disabled; if it reports "OpenGL" it is enabled.
 
-If the above changes do not enable GPU acceleration, try setting the environment variable as follows: `export MOZ_USE_OMTC=1`. Then run Firefox [[1]](http://featherweightmusings.blogspot.se/2013/11/no-more-main-thread-opengl-in-firefox.html).
+If the above changes do not enable GPU acceleration, try setting the environment variable as follows: `export MOZ_USE_OMTC=1`. Then run Firefox [[2]](http://featherweightmusings.blogspot.se/2013/11/no-more-main-thread-opengl-in-firefox.html).
 
 For more information on OMTC in Firefox read here: [https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing](https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing)
 
@@ -178,7 +198,7 @@ In `about:config`, set the string value to a blank for both of these: `browser.n
 
 ### Enable Electrolysis
 
-In Firefox 48 (45 ESR) or later, Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to *true* in `about:config`. It may be needed to force-enable Electrolysis [[2]](https://wiki.mozilla.org/Electrolysis#Force_Enable), although this is generally not recommended and may cause issues.
+In Firefox 48 (45 ESR) or later, Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to *true* in `about:config`. It may be needed to force-enable Electrolysis [[3]](https://wiki.mozilla.org/Electrolysis#Force_Enable), although this is generally not recommended and may cause issues.
 
 To check if Electrolysis is enabled, go to `about:support` and under the "Application Basics" section look for "Multiprocess Windows". If it reports "0/1 (Disabled)", Electrolysis is disabled; if it reports "1/1 (Enabled by user)" it is enabled. Note that the given numbers **/** indicate the number of open Firefox windows, e.g. 0/2 meaning non of the two Firefox-windows are using Electrolysis, and 2/2 means it is enabled for both windows.
 
@@ -204,7 +224,7 @@ Modifying the following value can help improve the way fonts looks in Firefox if
 
 Note that the above method only affects the Firefox user interface's DPI settings. Web page contents still use a DPI value of 96, which may look ugly or, in the case of high-resolution displays, may be rendered too small to read. A solution is to change `layout.css.devPixelsPerPx` to system's DPI divided by 96\. For example, if your system's DPI is 144, then the value to add is 144/96 = 1.5\. Changing `layout.css.devPixelsPerPx` to **1.5** makes web page contents use a DPI of 144, which looks much better.
 
-See also [HiDPI#Firefox](/index.php/HiDPI#Firefox "HiDPI") for information about HiDPI displays and [[3]](https://www.sven.de/dpi/) for calculating the DPI.
+See also [HiDPI#Firefox](/index.php/HiDPI#Firefox "HiDPI") for information about HiDPI displays and [[4]](https://www.sven.de/dpi/) for calculating the DPI.
 
 #### Default font settings from Microsoft Windows
 
@@ -573,7 +593,7 @@ x-scheme-handler/magnet=kde4-ktorrent.desktop
 
 ```
 
-See [[4]](http://superuser.com/questions/44072/how-do-i-associate-magnet-links-with-ktorrent-in-firefox)
+See [[5]](http://superuser.com/questions/44072/how-do-i-associate-magnet-links-with-ktorrent-in-firefox)
 
 ### Prevent accidental closing
 
@@ -664,7 +684,7 @@ To disable audio post processing, disable the following preferences:
 
 *   `media.getusermedia.aec_enabled` (Acoustic Echo Cancellation)
 *   `media.getusermedia.agc_enabled` (Automatic Gain Control)
-*   `media.getusermedia.noise_enabled` Noise suppression. BEWARE: Disabling noise suppression in Firefox may lead to a "Mickey Mouse voice"
+*   `media.getusermedia.noise_enabled` (Noise suppression)
 
 ### Make URL bar behave like on Windows regarding mouse clicks
 

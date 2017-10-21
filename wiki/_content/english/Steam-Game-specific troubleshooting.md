@@ -1725,7 +1725,7 @@ Games made in C# often have a problem with some locales (e.g. Russian, German) b
 
 To work around this, use the [launch option](/index.php/Launch_option "Launch option") `LC_ALL=C`.
 
-Some of the affected games: *FORCED*, *Gone Home*, *Ichi*, *Nimble Quest*, *Syder Arcade*.
+Affected games: *FORCED, Gone Home, Ichi, Nimble Quest, Syder Arcade*.
 
 ### Unity 5 sound problems
 
@@ -1735,7 +1735,7 @@ Another solution is to disable the Steam runtime: in the launch options for the 
 
 Another solution is to prevent Unity from trying to use pulseaudio using [pulsenomore](https://aur.archlinux.org/packages/pulsenomore/) package from the [AUR](/index.php/AUR "AUR"). Once it is installed, use the following as launch options :`/usr/bin/pulsenomore %command%`
 
-Some of the affected games: *Kerbal Space Programm*, *SUPERHOT*, *ClusterTruck*
+Affected games: *Kerbal Space Programm, SUPERHOT, ClusterTruck*
 
 ### Game launching on wrong monitor in fullscreen mode
 
@@ -1749,15 +1749,15 @@ When changing to value into `<pref name="UnitySelectMonitor" type="int">**0**</p
 
 A Unity game config file usually resides in `~/.config/unity3d/*CompanyName*/*ProductName*/prefs`.
 
-Some of the affected games: *Cities: Skylines*, *Tablestop Simulator*, *Assault Android Cactus*, *Wasteland 2*, *Tyranny*, *Beat Cop*.
+Affected games: *Cities: Skylines, Tablestop Simulator, Assault Android Cactus, Wasteland 2, Tyranny, Beat Cop*.
 
 Be aware that some games do not support setting that parameter, it will simply be ignored. This is the case for *Pillars of Eternity*, *Kentucky Route Zero*, *Sunless Sea*.
 
 ### Chinese/Japanese/Korean display bug
 
-Chinese/Japanese/Korean characters are all blank on Linux. Probably it is a Unity3D bug,which is fixed in up-to-date version ( above 1:5.6.2f1+20170628-1 ) of [unity-editor](https://aur.archlinux.org/packages/unity-editor/).[[8]](https://issuetracker.unity3d.com/issues/linux-simplified-chinese-characters-are-not-supported-on-linux)
+Chinese/Japanese/Korean characters are all blank on Linux. It is confirmed to be a Unity3D bug,which is fixed in up-to-date version ( above 1:5.6.2f1+20170628-1 ) of [unity-editor](https://aur.archlinux.org/packages/unity-editor/).[[8]](https://issuetracker.unity3d.com/issues/linux-simplified-chinese-characters-are-not-supported-on-linux)
 
-Some of the affected games: *Cities: Skylines*, ~~*Streets of Rogue*~~, *Beholder*, *Onraid*, *Rimworld*, *The Escapists 2*, *Candle*, *Human:Fall Flat*, *Plague Inc.*, *Ultimate Chicken Horse*.
+Affected games: *Beholder, Onraid, Rimworld, The Escapists 2, Candle, Plague Inc: Evolved, Ultimate Chicken Horse, Teslagrad, Holy Potatoes! We’re in Space?!*.
 
 ## Unrest
 

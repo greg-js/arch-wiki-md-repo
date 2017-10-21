@@ -49,7 +49,7 @@ Choose which client you would prefer. The Linux client is receiving good reviews
 
 *   **[Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)")** — Able to stream from Spotify with a premium account after activating (downloading) a plugin in the settings.
 
-	[http://www.clementine-player.org/](http://www.clementine-player.org/) || [clementine](https://www.archlinux.org/packages/?name=clementine)
+	[https://www.clementine-player.org/](https://www.clementine-player.org/) || [clementine](https://www.archlinux.org/packages/?name=clementine)
 
 *   **Mopidy** — An alternative plug-in based implementation of [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daemon") is able to stream from Spotify with an extension.
 
@@ -71,7 +71,7 @@ Choose which client you would prefer. The Linux client is receiving good reviews
 
 First, install [Wine](/index.php/Wine "Wine").
 
-Obtaining Spotify can be done by registering for an account on their Website, the application does not offer in-app registration. Obtain the appliction from [https://www.spotify.com/us/download/windows/](https://www.spotify.com/us/download/windows/).
+Obtaining Spotify can be done by registering for an account on their website, the application does not offer in-app registration. Obtain the application from [https://www.spotify.com/us/download/windows/](https://www.spotify.com/us/download/windows/).
 
 After you have registered and downloaded your copy of the installer you will need to run the application through Wine, depending on your setup you may be able to run the application by right clicking the file. If not terminal will work just fine, as long as you run the below command in the directory of your download.
 

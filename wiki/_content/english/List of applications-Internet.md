@@ -218,6 +218,10 @@ See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(softw
 
 	[https://cyberfox.8pecxstudios.com/](https://cyberfox.8pecxstudios.com/) || [cyberfox-bin](https://aur.archlinux.org/packages/cyberfox-bin/)
 
+*   **Waterfox** — 64bit Optimized fork of Mozilla Firefox, without data collection and allowing unsigned extensions and 64bit NPAPI plugins.
+
+	[https://www.waterfoxproject.org/](https://www.waterfoxproject.org/) || [waterfox-bin](https://aur.archlinux.org/packages/waterfox-bin/) or [waterfox-git](https://aur.archlinux.org/packages/waterfox-git/)
+
 *   **[GNU IceCat](https://en.wikipedia.org/wiki/GNU_IceCat "wikipedia:GNU IceCat")** — A customized build of Firefox ESR distributed by the GNU Project, stripped of non-free components and with additional privacy extensions. Release cycle may be delayed compared to Mozilla Firefox.
 
 	[https://www.gnu.org/software/gnuzilla/](https://www.gnu.org/software/gnuzilla/) || [icecat](https://aur.archlinux.org/packages/icecat/) or [icecat-bin](https://aur.archlinux.org/packages/icecat-bin/)
@@ -506,55 +510,59 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 #### Cloud synchronization clients
 
-*   **aws-cli** — Command Line interface for Amazon Web Services, including efficient file transfers to and from Amazon S3.
+*   **aws-cli** — CLI for Amazon Web Services, including efficient file transfers to and from Amazon S3.
 
 	[https://aws.amazon.com/cli/](https://aws.amazon.com/cli/) || [aws-cli](https://www.archlinux.org/packages/?name=aws-cli)
 
-*   **[Cozy](/index.php/Cozy "Cozy") Drive** — Desktop application to sync the files stored in your Cozy with your laptop and/or your desktop.
+*   **[Cozy](/index.php/Cozy "Cozy") Drive** — Desktop client for Cozy.
 
 	[https://cozy-labs.github.io/cozy-desktop/](https://cozy-labs.github.io/cozy-desktop/) || [cozy-desktop-gui](https://aur.archlinux.org/packages/cozy-desktop-gui/)
 
-*   **[Dropbox](/index.php/Dropbox "Dropbox")** — Proprietary desktop client for Dropbox file hosting service.
+*   **[CrashPlan](/index.php/CrashPlan "CrashPlan")** — Desktop client for CrashPlan.
+
+	[https://www.crashplan.com/](https://www.crashplan.com/) || [crashplan](https://aur.archlinux.org/packages/crashplan/)
+
+*   **[Dropbox](/index.php/Dropbox "Dropbox")** — Proprietary desktop client for Dropbox.
 
 	[https://www.dropbox.com/](https://www.dropbox.com/) || [dropbox](https://aur.archlinux.org/packages/dropbox/)
 
-*   **[Mega](https://en.wikipedia.org/wiki/Mega_(service) Sync Client** — Desktop client to sync files with Mega file hosting service.
+*   **[Mega](https://en.wikipedia.org/wiki/Mega_(service) Sync Client** — Desktop client to sync files with Mega.
 
 	[https://mega.nz/](https://mega.nz/) || [megasync](https://aur.archlinux.org/packages/megasync/)
 
-*   **Megatools** — Unofficial command line client for Mega file hosting service.
+*   **Megatools** — Unofficial CLI for Mega.
 
 	[https://megatools.megous.com/](https://megatools.megous.com/) || [megatools](https://aur.archlinux.org/packages/megatools/)
 
-*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Client** — Desktop client to keep your files synchronized between your Nextcloud server and your desktop.
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Client** — Desktop client for Nextcloud.
 
 	[https://nextcloud.com/](https://nextcloud.com/) || [nextcloud-client](https://aur.archlinux.org/packages/nextcloud-client/)
 
-*   **Nutstore** — Desktop application to sync your files with the Nutstore file hosting service.
+*   **Nutstore** — Desktop client for Nutstore.
 
 	[https://www.jianguoyun.com/](https://www.jianguoyun.com/) || [nutstore](https://aur.archlinux.org/packages/nutstore/)
 
-*   **OneDrive** — Unofficial command line tool to interact with [OneDrive](https://onedrive.live.com/about/) file hosting service.
+*   **OneDrive** — Unofficial CLI for [OneDrive](https://onedrive.live.com/about/).
 
 	[https://skilion.github.io/onedrive/](https://skilion.github.io/onedrive/) || [onedrive-git](https://aur.archlinux.org/packages/onedrive-git/)
 
-*   **[Pydio](/index.php/Pydio "Pydio")Sync** — Desktop application to keep your files synchronized in real-time with Pydio.
+*   **[Pydio](/index.php/Pydio "Pydio")Sync** — Desktop client for Pydio.
 
 	[https://pydio.com/](https://pydio.com/) || [pydio-sync](https://aur.archlinux.org/packages/pydio-sync/)
 
-*   **S3cmd** — Unofficial command line tool and client for uploading, retrieving and managing data in Amazon S3.
+*   **S3cmd** — Unofficial CLI for Amazon S3.
 
 	[http://s3tools.org/s3cmd](http://s3tools.org/s3cmd) || [s3cmd](https://www.archlinux.org/packages/?name=s3cmd)
 
-*   **[Seafile](/index.php/Seafile "Seafile") Client** — GUI client for synchronizing your local files with Seafile server.
+*   **[Seafile](/index.php/Seafile "Seafile") Client** — GUI client for Seafile.
 
 	[https://www.seafile.com/](https://www.seafile.com/) || [seafile-client](https://aur.archlinux.org/packages/seafile-client/)
 
-*   **[SpiderOak](https://en.wikipedia.org/wiki/SpiderOak "wikipedia:SpiderOak") One** — Proprietary secure file backup, sync and sharing client for SpiderOak One file hosting service.
+*   **[SpiderOak](https://en.wikipedia.org/wiki/SpiderOak "wikipedia:SpiderOak") One** — Proprietary client for SpiderOak One.
 
 	[https://spideroak.com/](https://spideroak.com/) || [spideroak-one](https://aur.archlinux.org/packages/spideroak-one/)
 
-*   **[Yandex Disk](/index.php/Yandex_Disk "Yandex Disk")** — Proprietary command line tool to sync with Yandex Disk file hosting service.
+*   **[Yandex Disk](/index.php/Yandex_Disk "Yandex Disk")** — Proprietary CLI for Yandex Disk.
 
 	[https://disk.yandex.ru/](https://disk.yandex.ru/) || [yandex-disk](https://aur.archlinux.org/packages/yandex-disk/)
 

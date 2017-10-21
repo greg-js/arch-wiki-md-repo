@@ -59,7 +59,7 @@ If you are not using [GNOME](/index.php/GNOME "GNOME"), you may want to install 
 
 ### Alternative
 
-The [wicd-bzr](https://aur.archlinux.org/packages/wicd-bzr/) buildscript is available in the [AUR](/index.php/AUR "AUR"), which should build the latest development branch. If you need an alternative version or you just want to roll your own package, you can easily build it using [ABS](/index.php/ABS "ABS").
+The [wicd-git](https://aur.archlinux.org/packages/wicd-git/) is the latest development branch. If you need an alternative version or you just want to roll your own package, you can easily build it using [ABS](/index.php/ABS "ABS").
 
 ## Getting started
 

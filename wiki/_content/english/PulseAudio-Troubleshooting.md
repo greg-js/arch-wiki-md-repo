@@ -355,6 +355,8 @@ Install pavucontrol, unlink the microphone channels and turn down the left one t
 
 If we are getting static noise in Skype, gnome-sound-recorder, arecord, etc.'s recordings, then the sound card sample rate is incorrect. That is why there is static noise in Linux microphone recordings. To fix this, we need to set the sampling rate in `/etc/pulse/daemon.conf` for the sound hardware.
 
+In addition to the guide below, since [PulseAudio 11](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/11.0/) it is possible to set `avoid-resampling = yes` in `daemon.conf` to use the application sampling rate without resampling.
+
 #### Determine sound cards in the system (1/5)
 
 This requires [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) and related packages to be installed:
@@ -542,6 +544,51 @@ pulseaudio --start
 
 and check if the module is activated by starting `pavucontrol`. Under `Recoding` the input device should show `Echo-Cancel Source Stream from"`
 
+Here a list of possible 'aec_args' for 'aec_method=webrtc' with their default values [[2]](https://github.com/pulseaudio/pulseaudio/blob/master/src/modules/echo-cancel/webrtc.cc)[[3]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3):
+
+*   `analog_gain_control=1` - Analog AGC - 'Automatic Gain Control' done over changing the volume directly - Will most likely lead to [distortions](/index.php/PulseAudio/Troubleshooting#Microphone_distorted_due_to_automatic_adjustment "PulseAudio/Troubleshooting").
+*   `digital_gain_control=0` - Digital AGC - 'Automatic Gain Control' done in post processing (higher CPU load).
+*   `experimental_agc=0` - Allow enabling of the webrtc experimental AGC mechanism.
+*   `agc_start_volume=85` - Initial volume when using AGC - Possible values 0-255 - A too low initial volume may prevent the AGC algorithm from ever raising the volume high enough [[4]](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/9.0/).
+*   `high_pass_filter=1` - ?
+*   `noise_suppression=1` - Noise suppression.
+*   `mobile=0` - ?
+*   `routing_mode="speakerphone"` - Possible Values "quiet-earpiece-or-headset,earpiece,loud-earpiece,speakerphone,loud-speakerphone" - only valid with "mobile=1".
+*   `comfort_noise=1` - ? - only valid with "mobile=1".
+*   `drift_compensation=0` - Drift compensation to allow echo cancellation between different devices (such as speakers on your laptop and the microphone on your USB webcam). - only possible with "mobile=0".
+*   `voice_detection=1` - VAD - Voice activity detection.
+*   `extended_filter=0` - The extended filter is more complex and less sensitive to incorrect delay reporting from the hardware than the regular filter. The extended filter mode is disabled by default, because it seemed produce worse results during double-talk [[5]](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/9.0/).
+*   `intelligibility_enhancer=0` - Some bits for webrtc intelligibility enhancer.
+*   `beamforming=0` - See [[6]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3)[[7]](https://arunraghavan.net/2016/06/beamforming-in-pulseaudio/)
+*   `mic_geometry="x1,y1,z1,x2,y2,z2"` - Only with "beamforming=1".
+*   `target_direction="a,e,r"` - Only with "beamforming=1".
+
+If you are using the [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancelation "PulseAudio/Troubleshooting"), you probably don't want other applications to do additional audio post processing.
+Here is a list for disabling audio post processing in following applications:
+
+*   Mumble:
+
+1.  Configure -> Settings -> Check 'Advanced' check box -> Audio Input
+
+2.  Echo: Select 'Disabled'
+
+3.  Noise Suppression: Set slider to 'Off'
+
+4.  Max. Aplification: Set slider to '1.0'
+
+*   TeamSpeak:
+
+1.  Tools -> Options -> Check 'Advanced Options' check box
+
+2.  Uncheck: 'Echo reduction', 'Echo cancellation', 'Remove background noise' and 'Automatic voice gain control'
+
+*   Firefox:
+
+1.  Is described [here](/index.php/Firefox_tweaks#Disable_WebRTC_audio_post_processing "Firefox tweaks")
+
+BEWARE:
+If you plug in a USB Soundcard/Headset, or you have for example a 5.1 Speaker configuration and plug in a Headset on your front audio connectors after you have loaded the 'module-echo-cancel', you have to manually unload and load the 'module-echo-cancel' again, because unfortunately there is no way to tell the 'module-echo-cancel' that it should automatically switch to the new default 'source_master' and 'source_sink'. See [https://bugs.freedesktop.org/show_bug.cgi?id=100403](https://bugs.freedesktop.org/show_bug.cgi?id=100403)
+
 ### Glitches, skips or crackling
 
 The newer implementation of the PulseAudio sound server uses timer-based audio scheduling instead of the traditional, interrupt-driven approach.
@@ -714,7 +761,11 @@ default-fragment-size-msec = 2
 
 This can result from an incorrectly set sample rate. Try the following setting:
 
- `/etc/pulse/daemon.conf`  `default-sample-rate = 48000` 
+ `/etc/pulse/daemon.conf` 
+```
+avoid-resampling = yes #(Needs [PA11](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/11.0/) or higher)
+default-sample-rate = 48000
+```
 
 and restart the PulseAudio server.
 
@@ -744,7 +795,7 @@ hdmi-output-0: HDMI / DisplayPort (priority: 5900, not available)
 
 This leads to no sound coming from HDMI output. A workaround for this is to switch to another VT and back again. If that does not work, try: turn off your monitor, switch to another VT, turn on your monitor, and switch back. This problem has been reported by ATI/Nvidia/Intel users.
 
-Another workaround could be to disable the switch-on-port-available module by commenting it in /etc/pulse/default.pa [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=93946#c36):
+Another workaround could be to disable the switch-on-port-available module by commenting it in /etc/pulse/default.pa [[8]](https://bugs.freedesktop.org/show_bug.cgi?id=93946#c36):
 
  `/etc/pulse/default.pa` 
 ```
@@ -996,7 +1047,7 @@ As a workaround, include [gksu](https://www.archlinux.org/packages/?name=gksu) o
 
 The other workaround is to uncomment and set `daemonize = yes` in the `/etc/pulse/daemon.conf`.
 
-See also [[3]](https://bbs.archlinux.org/viewtopic.php?id=135955).
+See also [[9]](https://bbs.archlinux.org/viewtopic.php?id=135955).
 
 ### Audacity
 
@@ -1204,4 +1255,4 @@ load-module module-stream-restore restore_device=false
 
 ### RTP/UDP packet flood
 
-In some cases the default configuration might flood the network with UDP packets.[[4]](https://bugs.freedesktop.org/show_bug.cgi?id=44777) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[5]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)
+In some cases the default configuration might flood the network with UDP packets.[[10]](https://bugs.freedesktop.org/show_bug.cgi?id=44777) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[11]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)

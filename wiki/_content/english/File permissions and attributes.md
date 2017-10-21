@@ -363,7 +363,7 @@ $ find *directory* -type f -exec chmod 644 {} +
 
 [chown](https://en.wikipedia.org/wiki/chown "wikipedia:chown") changes the owner of a file or directory, which is quicker and easier than altering the permissions in some cases.
 
-Consider the following example, making a new partition with [GParted](/index.php/GParted "GParted") for backup data. Gparted does this all as root so everything belongs to root. This is all well and good but when it came to writing data to the mounted partition, permission was denied.
+Consider the following example, making a new partition with [GParted](/index.php/GParted "GParted") for backup data. Gparted does this all as root so everything belongs to root by default. This is all well and good but when it comes to writing data to the mounted partition, permission is denied for regular users.
 
 ```
 brw-rw---- 1 root disk 8,    9 Jul  6 16:02 sda9
@@ -371,7 +371,7 @@ drwxr-xr-x 5 root root    4096 Jul  6 16:01 Backup
 
 ```
 
-As you can see the device in `/dev` is owned by root, as is where it is mounted (`/media/Backup`). To change the owner of where it is mounted one can do the following:
+As you can see the device in `/dev` is owned by root, as is the mount location (`/media/Backup`). To change the owner of the mount location one can do the following:
 
 Before: `drwxr-xr-x 5 root root 4096 Jul 6 16:01 Backup`
 
@@ -382,7 +382,7 @@ Before: `drwxr-xr-x 5 root root 4096 Jul 6 16:01 Backup`
 
 After: `drwxr-xr-x 5 archie root 4096 Jul 6 16:01 Backup`
 
-Now the partition can have backup data written to it as instead of altering the permissions, as the owner already has `rwx` permissions, the owner has been altered to the user archie. Alternatives would be to alter the permissions for everyone else (undesirable as it is a backup permission) or adding the user to the group `root`.
+Now the partition can have data written to it by the new owner, archie, without altering the permissions (as the owner triad already had `rwx` permissions).
 
 ## Access Control Lists
 

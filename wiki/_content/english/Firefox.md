@@ -42,7 +42,6 @@ Related articles
     *   [6.18 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
     *   [6.19 Firefox looks bad with GTK+ >=3.20](#Firefox_looks_bad_with_GTK.2B_.3E.3D3.20)
     *   [6.20 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
-    *   [6.21 Make Firefox 54 use more than one "Web content" process](#Make_Firefox_54_use_more_than_one_.22Web_content.22_process)
 *   [7 See also](#See_also)
 
 ## Installing
@@ -204,6 +203,8 @@ in the Firefox address bar or go to the *Add-ons* entry in the Firefox Menu and 
 For general enhancements see [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox/Tweaks"), for privacy related enhancements see [Firefox/Privacy](/index.php/Firefox/Privacy "Firefox/Privacy").
 
 ### Screenshot of webpage
+
+**Tip:** Since Firefox 55 a screenshot button may be used instead.
 
 To use Firefox to take a screenshot of a webpage open the developer console using `Shift+F2`. Then type in:
 
@@ -413,29 +414,6 @@ WebRTC applications for instance [Firefox WebRTC getUserMedia test page](https:/
 You can try setting `media.navigator.audio.full_duplex` property to `false` at `about:config` Firefox page and restart Firefox.
 
 This can also help if you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancelation "PulseAudio/Troubleshooting"), and Firefox does not recognise the virtual echo canceling source.
-
-### Make Firefox 54 use more than one "Web content" process
-
-Firefox 54 supports multiple "Web Content" processes but the default installation uses only one. To solve that, go to `about:config` and set `dom.ipc.processCount` to `4`. The recommended maximum is four, but you can set up to seven. [[6]](https://arstechnica.com/information-technology/2017/06/firefox-multiple-content-processes/) [[7]](https://support.mozilla.org/en-US/kb/performance-settings)
-
-With `dom.ipc.processCount` set to `1` (Default):
-
- `# ps -e | grep 'Web Content'` 
-```
-13421 tty1     00:00:14 Web Content
-
-```
-
-With `dom.ipc.processCount` set to `4`:
-
- `# ps -e | grep 'Web Content'` 
-```
-13991 tty1     00:00:04 Web Content
-14027 tty1     00:00:09 Web Content
-14031 tty1     00:00:20 Web Content
-14040 tty1     00:00:26 Web Content
-
-```
 
 ## See also
 

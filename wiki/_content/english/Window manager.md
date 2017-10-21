@@ -99,7 +99,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **Goomwwm** — X11 window manager implemented in C as a cleanroom software project. It manages windows in a minimal floating layout, while providing flexible keyboard-driven controls for window switching, sizing, moving, tagging, and tiling. It is also fast, lightweight, modeless, Xinerama-aware, and EWMH compatible wherever possible.
 
-	[http://aerosuidae.net/goomwwm/](http://aerosuidae.net/goomwwm/) || [goomwwm](https://aur.archlinux.org/packages/goomwwm/)
+	[https://github.com/seanpringle/goomwwm](https://github.com/seanpringle/goomwwm) || [goomwwm](https://aur.archlinux.org/packages/goomwwm/)
 
 *   **[IceWM](/index.php/IceWM "IceWM")** — Window manager for the X Window System. The goal of IceWM is speed, simplicity, and not getting in the user's way.
 
@@ -111,7 +111,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[JWM](/index.php/JWM "JWM")** — Window manager for the X11 Window System. JWM is written in C and uses only Xlib at a minimum.
 
-	[http://joewing.net/projects/jwm/index.shtml](http://joewing.net/projects/jwm/index.shtml) || [jwm](https://www.archlinux.org/packages/?name=jwm)
+	[https://joewing.net/projects/jwm/index.shtml](https://joewing.net/projects/jwm/index.shtml) || [jwm](https://www.archlinux.org/packages/?name=jwm)
 
 *   **Karmen** — Window manager for X, written by Johan Veenhuizen. It is designed to "just work." There is no configuration file and no library dependencies other than Xlib. The input focus model is click-to-focus. Karmen aims at ICCCM and EWMH compliance.
 
@@ -131,7 +131,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")** — This window manager strives to be quiet, small, stable, get on with its job, and stay out of your attention.
 
-	[http://blogs.gnome.org/metacity/](http://blogs.gnome.org/metacity/) || [metacity](https://www.archlinux.org/packages/?name=metacity)
+	[https://blogs.gnome.org/metacity/](https://blogs.gnome.org/metacity/) || [metacity](https://www.archlinux.org/packages/?name=metacity)
 
 *   **[Muffin](https://en.wikipedia.org/wiki/Mutter_(software)#Muffin "wikipedia:Mutter (software)")** — Window and compositing manager for Cinnamon, fork of Mutter, based on Clutter, uses OpenGL. It cannot be used outside of Cinnamon.
 
@@ -139,7 +139,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[Mutter](https://en.wikipedia.org/wiki/Mutter_(window_manager) "wikipedia:Mutter (window manager)")** — Window and compositing manager for GNOME, based on Clutter, uses OpenGL. Also serves a Wayland compositor.
 
-	[http://git.gnome.org/browse/mutter/](http://git.gnome.org/browse/mutter/) || [mutter](https://www.archlinux.org/packages/?name=mutter)
+	[https://git.gnome.org/browse/mutter/](https://git.gnome.org/browse/mutter/) || [mutter](https://www.archlinux.org/packages/?name=mutter)
 
 *   **[MWM](https://en.wikipedia.org/wiki/Motif_Window_Manager "wikipedia:Motif Window Manager")** — The Motif Window Manager (MWM) is an X window manager based on the Motif toolkit.
 
@@ -155,7 +155,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[PekWM](/index.php/PekWM "PekWM")** — Window manager that once upon a time was based on the aewm++ window manager, but it has evolved enough that it no longer resembles aewm++ at all. It has a much expanded feature-set, including window grouping (similar to Ion, PWM, or Fluxbox), auto-properties, Xinerama, keygrabber that supports keychains, and much more.
 
-	[http://www.pekwm.org/projects/pekwm](http://www.pekwm.org/projects/pekwm) || [pekwm](https://www.archlinux.org/packages/?name=pekwm)
+	[https://www.pekwm.org/](https://www.pekwm.org/) || [pekwm](https://www.archlinux.org/packages/?name=pekwm)
 
 *   **[Sawfish](/index.php/Sawfish "Sawfish")** — Extensible window manager using a Lisp-based scripting language. Its policy is very minimal compared to most window managers. Its aim is simply to manage windows in the most flexible and attractive manner possible. All high-level WM functions are implemented in Lisp for future extensibility or redefinition.
 
@@ -167,7 +167,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[twm](/index.php/Twm "Twm")** — Window manager for the X Window System. It provides titlebars, shaped windows, several forms of icon management, user-defined macro functions, click-to-type and pointer-driven keyboard focus, and user-specified key and pointer button bindings.
 
-	[http://cgit.freedesktop.org/xorg/app/twm/](http://cgit.freedesktop.org/xorg/app/twm/) || [xorg-twm](https://www.archlinux.org/packages/?name=xorg-twm)
+	[https://cgit.freedesktop.org/xorg/app/twm/](https://cgit.freedesktop.org/xorg/app/twm/) || [xorg-twm](https://www.archlinux.org/packages/?name=xorg-twm)
 
 *   **[UWM](https://en.wikipedia.org/wiki/UDE "wikipedia:UDE")** — The ultimate window manager for UDE.
 
@@ -175,11 +175,11 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **WindowLab** — Small and simple window manager of novel design. It has a click-to-focus but not raise-on-focus policy, a window resizing mechanism that allows one or many edges of a window to be changed in one action, and an innovative menubar that shares the same part of the screen as the taskbar. Window titlebars are prevented from going off the edge of the screen by constraining the mouse pointer, and when appropriate the pointer is also constrained to the taskbar/menubar in order to make target menu items easier to hit.
 
-	[http://nickgravgaard.com/windowlab/](http://nickgravgaard.com/windowlab/) || [windowlab](https://www.archlinux.org/packages/?name=windowlab)
+	[https://github.com/nickgravgaard/windowlab](https://github.com/nickgravgaard/windowlab) || [windowlab](https://www.archlinux.org/packages/?name=windowlab)
 
 *   **[Window Maker](/index.php/Window_Maker "Window Maker")** — X11 window manager originally designed to provide integration support for the GNUstep Desktop Environment. In every way possible, it reproduces the elegant look and feel of the NEXTSTEP user interface. It is fast, feature rich, easy to configure, and easy to use. It is also free software, with contributions being made by programmers from around the world.
 
-	[http://windowmaker.org/](http://windowmaker.org/) || [windowmaker](https://www.archlinux.org/packages/?name=windowmaker)
+	[https://windowmaker.org/](https://windowmaker.org/) || [windowmaker](https://www.archlinux.org/packages/?name=windowmaker)
 
 *   **WM2** — Window manager for X. It provides an unusual style of window decoration and as little functionality as its author feels comfortable with in a window manager. wm2 is not configurable, except by editing the source and recompiling the code, and is really intended for people who do not particularly want their window manager to be too friendly.
 
@@ -187,7 +187,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[Xfwm](/index.php/Xfwm "Xfwm")** — The [Xfce](/index.php/Xfce "Xfce") window manager manages the placement of application windows on the screen, provides beautiful window decorations, manages workspaces or virtual desktops and natively supports multiscreen mode. It provides its own compositing manager (from the X.Org Composite extension) for true transparency and shadows. The Xfce window manager also includes a keyboard shortcuts editor for user specific commands and basic windows manipulations and provides a preferences dialog for advanced tweaks.
 
-	[http://www.xfce.org/projects/xfwm4/](http://www.xfce.org/projects/xfwm4/) || [xfwm4](https://www.archlinux.org/packages/?name=xfwm4)
+	[https://docs.xfce.org/xfce/xfwm4/start](https://docs.xfce.org/xfce/xfwm4/start) || [xfwm4](https://www.archlinux.org/packages/?name=xfwm4)
 
 ### Tiling window managers
 

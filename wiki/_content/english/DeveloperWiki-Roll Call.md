@@ -27,7 +27,6 @@
 *   Dan McGee
     *   Packaging
     *   Archweb (but fairly inactive on this front)
-*   Daniel Isenmann
 *   Dave Reisner
     *   Packaging
 *   Eric Bélanger
@@ -104,6 +103,10 @@
 
 ## Trusted Users
 
+*   Alad Wenter
+    *   Packaging
+    *   Wiki administration
+    *   IRC op (#archlinux, #archlinux-offtopic, #archlinux-aur, #archlinux-wiki, others)
 *   Alexander Rødseth
 *   Alexandre Filgueira
 *   Anatol Pomozov
@@ -180,9 +183,6 @@
 
 ## Support Staff
 
-*   Alad Wenter
-    *   Wiki administration
-    *   IRC op
 *   Dario Giovannetti
     *   Wiki administration
 *   Doug Newgard

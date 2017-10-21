@@ -11,20 +11,21 @@ Related articles
 *   [3 Usage](#Usage)
     *   [3.1 Creating a custom profile](#Creating_a_custom_profile)
     *   [3.2 Persistent local customisation](#Persistent_local_customisation)
-    *   [3.3 Private mode](#Private_mode)
-    *   [3.4 Using Firejail by default](#Using_Firejail_by_default)
-        *   [3.4.1 Verifying Firejail is being used](#Verifying_Firejail_is_being_used)
-        *   [3.4.2 Desktop files](#Desktop_files)
-        *   [3.4.3 Daemons](#Daemons)
-        *   [3.4.4 Notes](#Notes)
+    *   [3.3 Testing a profile](#Testing_a_profile)
+    *   [3.4 Private mode](#Private_mode)
+    *   [3.5 Using Firejail by default](#Using_Firejail_by_default)
+        *   [3.5.1 Verifying Firejail is being used](#Verifying_Firejail_is_being_used)
+        *   [3.5.2 Desktop files](#Desktop_files)
+        *   [3.5.3 Daemons](#Daemons)
 *   [4 Firetools](#Firetools)
 *   [5 Firejail with Apparmor](#Firejail_with_Apparmor)
-    *   [5.1 Usage](#Usage_2)
+    *   [5.1 Apparmor usage](#Apparmor_usage)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 General](#General)
-    *   [6.2 PulseAudio](#PulseAudio)
-    *   [6.3 Hidepid](#Hidepid)
-    *   [6.4 Makepkg](#Makepkg)
+    *   [6.2 Symlinks](#Symlinks)
+    *   [6.3 PulseAudio](#PulseAudio)
+    *   [6.4 Hidepid](#Hidepid)
+    *   [6.5 Makepkg](#Makepkg)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -37,7 +38,7 @@ Related articles
 
 Most users will not require any custom configuration, and can proceed to the usage section, below.
 
-**Warning:** The default firejail profiles operate on a blacklist instead of a whitelist. This means that anything not explicitly forbidden by the profile will be accessible to the application. For example, if you have btrfs snapshots available in `/mnt/btrfs`, a jailed program may be forbidden from accessing `$HOME/.ssh`, but would be able to access `/mnt/btrfs/@some-snapshot/$HOME/.ssh`. Make sure to audit your profiles using e.g. `firejail --profile=/etc/firejail/firefox.profile /bin/bash`.
+**Warning:** The default firejail profiles operate on a blacklist instead of a whitelist. This means that anything not explicitly forbidden by the profile will be accessible to the application. For example, if you have btrfs snapshots available in `/mnt/btrfs`, a jailed program may be forbidden from accessing `$HOME/.ssh`, but would be able to access `/mnt/btrfs/@some-snapshot/$HOME/.ssh`. Make sure to audit your profiles using e.g. `firejail --profile=/etc/firejail/firefox.profile /bin/bash`. See [#Testing a profile](#Testing_a_profile)
 
 Firejail uses profiles to set the security protections for each of the applications executed inside of it - you can find the default profiles in `/etc/firejail/*application*.profile`. Should you require custom profiles for applications not included, or wish to modify the defaults, you may place new rules or copies of the defaults in the `~/.config/firejail/` directory. You may have multiple custom profile files for a single application, and you may share the same profile file among several applications.
 
@@ -104,6 +105,19 @@ ignore net
 
 Since `curl.local` is read before `globals.local`, `ignore net` overrides `net none`, and, as a bonus, the above changes would be persistent across future updates.
 
+### Testing a profile
+
+Firejail's built in audit feature allows the user to find gaps in a security profile by replacing the program to be sandboxed with a test program. By default, firejail uses the `faudit` program distributed with Firejail. (Note: A custom test program supplied by the user can also be used.)
+
+Examples:
+
+1.  Run the default audit program: `$ firejail --audit transmission-gtk`
+2.  Run a custom audit program: `$ firejail --audit=~/sandbox-test transmission-gtk`
+
+In the examples above, the sandbox configures the transmission-gtk profile and starts the test program. The real program, transmission-gtk, will not be started.
+
+**Note:** The audit feature is not implemented for --x11 commands.
+
 ### Private mode
 
 Firejail also includes a one time private mode, in which no mounts are made in the chroots to your home directory. In doing this, you can execute applications without performing any changes to disk. For example, to execute okular in private mode, do the following:
@@ -131,7 +145,7 @@ You can manually do this for individual applications by executing:
 
 ```
 
-Note, `firecfg` doesn't work with some cli shells such as: `tar`, `curl`, `wget`, `git` and `ssh` which need to be symlinked manually. One should also note that, while symlinking these shells does not break official packages like`pacman`, doing so may break certain AUR packages. In particular, without weakening the `/etc/firejail/curl.profile`, symlinking `curl` will break [Yaourt](https://aur.archlinux.org/packages/Yaourt/), but not, for example, [Cower](https://aur.archlinux.org/packages/Cower/).
+**Note:** `firecfg` doesn't work with some cli shells such as: `tar`, `curl`, `wget`, `git` and `ssh` which need to be symlinked manually. One should also note that, while symlinking these shells does not affect official packages like`pacman`, doing so may break certain AUR packages. In particular, without weakening the `/etc/firejail/curl.profile`, symlinking `curl` will break [Yaourt](https://aur.archlinux.org/packages/Yaourt/), but not, for example, [Cower](https://aur.archlinux.org/packages/Cower/).
 
 **Warning:** Upstream provides profiles for `gpg` and `gpg-agent`. If gpg is symlinked with the supplied profile, pacman will be unable to update the archlinux-keyring.
 
@@ -157,12 +171,6 @@ There may be other cases for which you may need to do this manually, possibly ne
 
 For a daemon, you will need to overwrite the systemd unit file for that daemon to call firejail, see [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd").
 
-#### Notes
-
-Some applications do not work properly with Firejail, and others simply require special configuration. In the instance any directories are disallowed or blacklisted for any given application, you may have to further edit the profile to enable nonstandard directories that said application needs to access. One example is wine; wine will not work with seccomp in most cases.
-
-Other configurations exist; it is suggested you check out the man page for firejail to see them all, as firejail is in rapid development.
-
 ## Firetools
 
 A GUI application for use with Firejail is also available, [firetools](https://aur.archlinux.org/packages/firetools/).
@@ -186,60 +194,45 @@ To quote the manual:
 
 	*- Disable D-Bus. D-Bus has long been a huge security hole, and most programs don't use it anyway. You should have no problems running Chromium or Firefox.*
 
-Note, with the release of 0.9.50, local customisations of the apparmor profile are also supported by editing the file `/etc/apparmor.d/local/firejail-local`
+With the release of 0.9.50, local customisations of the apparmor profile are supported by editing the file `/etc/apparmor.d/local/firejail-local`
 
-#### Usage
+#### Apparmor usage
 
-To enable Apparmor confinement on top of a Firejail security profile, pass the `--apparmor` flag to Firejail in the command line.
+There are a number of ways to enable Apparmor confinement on top of a Firejail security profile:
 
-Example:
-
-```
-$ firejail --apparmor firefox
-
-```
-
-Alternatively, the apparmor flag could be added to a custom profile. Or, it could be enabled globally through `/etc/firejail/globals.local` and disabled as needed through the use of `ignore apparmor` in an applications local customisation file,
-
-For example:
-
-/etc/firejail/globals.local
-
-```
-# enables apparmor globally
-apparmor
-
-```
-
-/etc/firejail/keepass.local
-
-```
-# disables apparmor for keepass
-ignore apparmor
-
-```
+*   Pass the `--apparmor` flag to Firejail in the command line, eg `firejail --apparmor firefox`
+*   Use a custom profile.
+*   Enable Apparmor globally in `/etc/firejail/globals.local` and disable as needed through the use of `ignore apparmor` in `/etc/firejail/<ProgramName>.local`.
 
 ## Troubleshooting
 
-### General
+#### General
 
-1\. If you are depending upon `firecfg` to have generated a symlink, ie. you followed the instructions for [#Using Firejail by default](#Using_Firejail_by_default), double-check that the symlink was actually created. You may need to create one manually.
+Some applications do not work properly with Firejail, and others simply require special configuration. In the instance any directories are disallowed or blacklisted for any given application, you may have to further edit the profile to enable nonstandard directories that said application needs to access. One example is wine; wine will not work with seccomp in most cases.
 
-2\. If the symlink exists, you may need to run `sudo updatedb` to update the location database.
+Other configurations exist; it is suggested you check out the man page for firejail to see them all, as firejail is in rapid development.
 
-3\. You may need to re-initialize the hash for the executable, ie. `hash -d <command_name>`.
+#### Symlinks
 
-### PulseAudio
+1.  If you are depending upon `firecfg` to have generated a symlink, ie. you followed the instructions for [#Using Firejail by default](#Using_Firejail_by_default), double-check that the symlink was actually created. You may need to create one manually.
+2.  If the symlink exists, you may need to run `sudo updatedb` to update the location database.
+3.  You may need to re-initialize the hash for the executable, ie. `hash -d <command_name>`.
+
+#### PulseAudio
 
 If Firejail causes PulseAudio to misbehave, there is a [known issue.](https://firejail.wordpress.com/support/known-problems/) A temporary workaround:
 
- `cp /etc/pulse/client.conf ~/.config/pulse/`  `echo "enable-shm = no" >> ~/.config/pulse/client.conf` 
+```
+cp /etc/pulse/client.conf ~/.config/pulse/
+echo "enable-shm = no" >> ~/.config/pulse/client.conf
 
-### Hidepid
+```
+
+#### Hidepid
 
 if you have hidepid installed, Firemon can only be run as root. This, among other things, will cause problems with the Firetools GUI incorrectly reporting "Capabilities", "Protocols" and the status of "Seccomp". See [this issue](https://github.com/netblue30/firejail/issues/1564).
 
-### Makepkg
+#### Makepkg
 
 With respect to this [Arch Forum](https://bbs.archlinux.org/viewtopic.php?id=230913) post. During the final stages of a pkgbuild, (when compressing the package,) symlinks to `gzip` and `xz` interfere with `makepkg’s` ability to preload the `libfakeroot.so` The most elegant way of solving the problem is to temporarily exclude `/usr/local/bin` from the `makepkg $PATH` by appending the following to `/etc/makepkg.conf`
 

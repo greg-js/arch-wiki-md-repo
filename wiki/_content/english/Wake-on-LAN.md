@@ -4,20 +4,21 @@
 
 *   [1 Hardware settings](#Hardware_settings)
 *   [2 Software configuration](#Software_configuration)
-    *   [2.1 Make it persistent](#Make_it_persistent)
-        *   [2.1.1 netctl](#netctl)
-        *   [2.1.2 systemd.link](#systemd.link)
-        *   [2.1.3 systemd service](#systemd_service)
-        *   [2.1.4 udev](#udev)
-        *   [2.1.5 cron](#cron)
-        *   [2.1.6 NetworkManager](#NetworkManager)
+    *   [2.1 Enable WoL on the network adapter](#Enable_WoL_on_the_network_adapter)
+    *   [2.2 Make it persistent](#Make_it_persistent)
+        *   [2.2.1 netctl](#netctl)
+        *   [2.2.2 systemd.link](#systemd.link)
+        *   [2.2.3 systemd service](#systemd_service)
+        *   [2.2.4 udev](#udev)
+        *   [2.2.5 cron](#cron)
+        *   [2.2.6 NetworkManager](#NetworkManager)
 *   [3 Trigger a wake up](#Trigger_a_wake_up)
     *   [3.1 On the same LAN](#On_the_same_LAN)
     *   [3.2 Across the internet](#Across_the_internet)
         *   [3.2.1 Forward a port to the broadcast address](#Forward_a_port_to_the_broadcast_address)
 *   [4 Miscellaneous](#Miscellaneous)
     *   [4.1 Battery draining problem](#Battery_draining_problem)
-    *   [4.2 Example WOL script](#Example_WOL_script)
+    *   [4.2 Example of WoL script](#Example_of_WoL_script)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Realtek](#Realtek)
     *   [5.2 alx driver support](#alx_driver_support)
@@ -26,34 +27,33 @@
 
 ## Hardware settings
 
-The target computer's motherboard and [NIC](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller") have to support Wake-on-LAN. Wireless cards do not support Wake-on-LAN, so the target computer has to be physically connected (i.e. by cable) to router or the source computer.
+The target computer's motherboard and [Network Interface Controller](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller") have to support Wake-on-LAN (WoL). Wireless cards do not support WoL, the target computer has to be physically connected (with a cable) to a router or to the source computer.
 
-The Wake-on-LAN feature also has to be enabled in the PC's BIOS. Different motherboard manufactures use slightly different language for this feature. Look for terminology such as "PCI Power up", "Allow PCI wake up event" or "Boot from PCI/PCI-E".
+The Wake-on-LAN feature also has to be enabled in the computer's BIOS. Different motherboard manufacturers use slightly different language for this feature. Look for terminology such as "PCI Power up", "Allow PCI wake up event" or "Boot from PCI/PCI-E".
 
-It is known that some motherboards are affected by a nasty bug that causes reboots rather than shutdowns under certain situations (see [this](https://bbs.archlinux.org/viewtopic.php?id=173648) thread for example). To prevent this bug from surfacing, it is recommended to do the following on the target machine:
+It is known that some motherboards are affected by a bug that causes immediate wake-up after a *shutdown* under certain circumstances whenever the BIOS WoL feature is enabled (as discussed in [this thread](https://bbs.archlinux.org/viewtopic.php?id=173648) for example). The following actions in the BIOS preferences are known to solve this issue with some motherboards:
 
-1.  Disable all references to "xHCI" as it pertains to USB settings.
-2.  Disable EuP 2013 if it is explicitly an option.
-3.  Optionally enable WOL for keyboard actions.
+1.  Disable all references to *xHCI* in the USB settings (this will also disable USB 3.0 at boot time)
+2.  Disable *EuP 2013* if it is explicitly an option
+3.  Optionally enable wake-up on keyboard actions
 
 **Note:** There are mixed opinions as to the value of #3 above and it may be motherboard dependent.
 
 ## Software configuration
 
-Depending on the hardware, the network drivers may have WOL switched off by default. To query this status or to change the settings, install [ethtool](https://www.archlinux.org/packages/?name=ethtool).
+### Enable WoL on the network adapter
 
-Query the network device via this command:
+Depending on the hardware, the network driver may have WoL switched off by default.
+
+To query this status or to change the settings, install [ethtool](https://www.archlinux.org/packages/?name=ethtool) and query the network device via this command:
 
  `# ethtool net0 | grep Wake-on` 
 ```
-        Supports Wake-on: pumbag
-    Wake-on: d
-
+Supports Wake-on: pumbag
+Wake-on: d
 ```
 
-The values define what activity to wake on: `d` (disabled), `p` (PHY activity), `u` (unicast activity), `m` (multicast activity), `b` (broadcast activity), `a` (ARP activity), and `g` (magic packet activity). The value of `g` is required for WOL to work.
-
-To enable the WOL feature in the driver:
+The *Wake-on* values define what activity to wake on: `d` (disabled), `p` (PHY activity), `u` (unicast activity), `m` (multicast activity), `b` (broadcast activity), `a` (ARP activity), and `g` (magic packet activity). The value `g` is required for WoL to work, if not, the following command will enable the WoL feature in the driver:
 
 ```
 # ethtool -s net0 wol g
@@ -166,7 +166,7 @@ From version 1.2.0 Wake-on-LAN settings can be changed graphically using [nm-con
 
 ## Trigger a wake up
 
-To trigger WOL on a target machine, its MAC address and external or internal IP should be known.
+To trigger WoL on a target machine, its MAC address and external or internal IP should be known.
 
 To obtain the internal IP address and MAC address of the target computer, execute the following command:
 
@@ -189,7 +189,7 @@ To obtain the internal IP address and MAC address of the target computer, execut
 
 Here the internal IP address is `192.168.1.20` and the MAC address is `48:05:ca:09:0e:6a`.
 
-One program able to send magic packets for WOL is [wol](https://www.archlinux.org/packages/?name=wol).
+One program able to send magic packets for WoL is [wol](https://www.archlinux.org/packages/?name=wol).
 
 ### On the same LAN
 
@@ -249,9 +249,9 @@ Some laptops have a battery draining problem after shutdown [[1]](http://ubuntuf
 
 ```
 
-### Example WOL script
+### Example of WoL script
 
-Here is a script to automate WOL to several different machines:
+Here is a script that illustrates the use of `wol` with several different machines:
 
 ```
 #!/bin/bash
@@ -262,7 +262,6 @@ chronic=00:3a:53:21:bc:30
 powerless=1a:32:41:02:29:92
 ghost=01:1a:d2:56:6b:e6
 
-while true; do
 echo "Which PC to wake?"
 echo "p) powerless"
 echo "m) monster"
@@ -274,41 +273,29 @@ read input1
 
 case $input1 in
   p)
-  /usr/bin/wol $powerless
-  ;;
-
+    /usr/bin/wol $powerless
+    ;;
   m)
-  /usr/bin/wol $monster
-  ;;
-
+    /usr/bin/wol $monster
+    ;;
   c)
-  /usr/bin/wol $chronic
-  ;;
-
+    /usr/bin/wol $chronic
+    ;;
   g)
-  # this line requires an IP address in /etc/hosts for ghost
-  # and should use wol over the internet provided that port 9
-  # is forwarded to ghost on ghost's router
-  /usr/bin/wol -v -h -p 9 ghost $ghost
-  ;;
-
+    # this line requires an IP address in /etc/hosts for ghost and should use
+    # wol over the internet provided that port 9 is forwarded to ghost on ghost's router
+    /usr/bin/wol -v -h -p 9 ghost $ghost
+    ;;
   b)
-  /usr/bin/wol $monster
-  echo "monster sent, now waiting for 40sec then waking chronic"
-  sleep 40
-  /usr/bin/wol $chronic
-  ;;
-
+    /usr/bin/wol $monster
+    echo "monster sent, now waiting for 40sec then waking chronic"
+    sleep 40
+    /usr/bin/wol $chronic
+    ;;
   Q|q)
-  echo "later!"
-  break
-  ;;
-
+    break
+    ;;
 esac
-
-done
-echo  "this is the (quit) end!! c-ya!"
-
 ```
 
 ## Troubleshooting

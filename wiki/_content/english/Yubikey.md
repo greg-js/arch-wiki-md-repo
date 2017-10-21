@@ -71,6 +71,7 @@ A small section of this article also works for *Fido U2F* USB keys : [#Enabling
         *   [8.1.3 (Optional) Install the Yubico Authenticator Desktop client](#.28Optional.29_Install_the_Yubico_Authenticator_Desktop_client)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Yubikey not acting as HID device](#Yubikey_not_acting_as_HID_device)
+    *   [9.2 ykman fails to connect to the Yubikey](#ykman_fails_to_connect_to_the_Yubikey)
 
 ## Introduction
 
@@ -601,3 +602,7 @@ $ udevadm trigger
 ```
 
 You may also need to [install](/index.php/Install "Install") the package [libu2f-host](https://www.archlinux.org/packages/?name=libu2f-host) if you want support in chrome.
+
+### ykman fails to connect to the Yubikey
+
+If the manager fails to connect to the Yubikey, make sure you have started `pcscd.service` or `pcscd.socket`.

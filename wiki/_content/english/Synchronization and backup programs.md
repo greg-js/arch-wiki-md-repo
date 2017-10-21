@@ -146,7 +146,7 @@ If a file is modified, these applications store its new version entirely at the 
 | [rdup](https://github.com/miekg/rdup) | [rdup](https://aur.archlinux.org/packages/rdup/) | C | tar.gz | gpg, blowfish and others |  ? |  ? |  ? | Yes |  ? | No | Yes | Yes | No | GPLv3 | No | Set of command-line tools. |
 | [rsnapshot](http://www.rsnapshot.org/) | [rsnapshot](/index.php/Rsnapshot "Rsnapshot") | rsync | No | No | Yes | Yes |  ? |  ? |  ? |  ? | Yes [[34]](http://rsnapshot.org/rsnapshot/docs/docbook/rest.html) | Yes | No | GPLv2 | Win32 | Yes |
 | [sbackup](https://launchpad.net/sbackup) | [sbackup](https://aur.archlinux.org/packages/sbackup/) | Python | gzip, bzip2 | No |  ? | SSH |  ? | No | No | No | No | No | GTK | GPLv3 | Yes |
-| [TimeShift](https://launchpad.net/timeshift) | [timeshift](https://aur.archlinux.org/packages/timeshift/) | rsync | No | No | rsync | rsync |  ? |  ? |  ? |  ? | Yes | No | GTK | GPLv3 | Designed for full-system backups to dedicated devices. | Yes |
+| [TimeShift](https://github.com/teejee2008/timeshift) | [timeshift](https://aur.archlinux.org/packages/timeshift/) | rsync | No | No | rsync | rsync |  ? |  ? |  ? |  ? | Yes | No | GTK | GPLv3 | Designed for full-system backups to dedicated devices. | Yes |
 
 ### Network oriented
 
@@ -173,24 +173,13 @@ These applications have been designed to centralize the backup of several machin
 
 ### Third-party services
 
-See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.org/wiki/Comparison_of_online_backup_services "wikipedia:Comparison of online backup services").
+See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.org/wiki/Comparison_of_online_backup_services "wikipedia:Comparison of online backup services") and [List of applications#Cloud synchronization clients](/index.php/List_of_applications#Cloud_synchronization_clients "List of applications").
 
 **Tip:** [cryptomator](https://aur.archlinux.org/packages/cryptomator/) is an open-source, multi-platform program designed to add client-side transparent encryption on cloud-shared files.
 
 *   **Amazon S3** — Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage. Amazon S3 is easy to use, with a simple web service interface to store and retrieve any amount of data from anywhere on the web. With Amazon S3, you pay only for the storage you actually use. There is no minimum fee and no setup cost.
 
 	[http://aws.amazon.com/s3/](http://aws.amazon.com/s3/) || [s3cmd](https://www.archlinux.org/packages/?name=s3cmd)
-
-*   **CloudBacko** — Enterprise-grade cloud backup tool for Linux, Mac and Windows.
-    *   Closed source. Free, Lite and Pro versions available.
-    *   Written in Java.
-    *   Encrypted backup to multiple cloud destinations.
-    *   Supports multiple cloud destinations combined as one storage pool.
-    *   No installation required in Free version.
-    *   GUI frontend for Linux in Pro version.
-    *   Virtual machine backup available in Pro version.
-
-	[http://www.cloudbacko.com/](http://www.cloudbacko.com/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **[CrashPlan](/index.php/CrashPlan "CrashPlan")** — An online/offsite backup solution.
     *   Unlimited online space for very reasonable pricing.

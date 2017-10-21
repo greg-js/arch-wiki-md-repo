@@ -71,7 +71,7 @@ In the [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE") and [LXQt]
 To immediately trigger `xscreensaver`, if it is running, and lock the screen, execute the following command:
 
 ```
-$ xscreensaver-command --lock
+$ xscreensaver-command -lock
 
 ```
 

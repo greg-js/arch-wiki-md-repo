@@ -16,27 +16,28 @@ Understand if you have permission from Cisco Systems to use this software. If yo
 
 ### 64-bit systems
 
-See the [AUR](/index.php/AUR "AUR") article for important usage topics. For now, only download and extract the tarball for [packettracer](https://aur.archlinux.org/packages/packettracer/) from the [AUR](/index.php/AUR "AUR")
+See the [AUR](/index.php/AUR "AUR") article for important usage topics. For now, only download and extract the tarball for [packettracer](https://aur.archlinux.org/packages/packettracer/) from the [AUR](/index.php/AUR "AUR").
 
-You will need to have access to the file `Cisco Packet Tracer 6.0.1 for Linux (with tutorials)` to continue with the installation. For your convenience, the sha1sum and md5sum of this file is provided below.
+You will need to have access to the file `PacketTracer71_64bit_linux.tar.gz` to continue with the installation. For your convenience, the sha1sum of this file is provided below.
 
 ```
-$ sha1sum Cisco\ Packet\ Tracer\ 6.0.1\ for\ Linux\ \(with\ tutorials\)
-81f74633115fab6bd1cb699f203a5a5375830c30  Cisco Packet Tracer 6.0.1 for Linux (with tutorials)
-$ md5sum Cisco\ Packet\ Tracer\ 6.0.1\ for\ Linux\ \(with\ tutorials\)
-6d623bc0761cbb6e3cdccb3c0e0ec70b  Cisco Packet Tracer 6.0.1 for Linux (with tutorials)
+$ sha1sum PacketTracer71_64bit_linux.tar.gz
+bbc776e62725ac714c228e87e239dda4dfd9449c  PacketTracer71_64bit_linux.tar.gz
 
 ```
 
-Copy this file to your working directory, maintaining the name. The [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file found in the earlier tarball will require this archive. It is not provided in the tarball itself for ethical and legal reasons. This file requirement may change in the future, based on the version of packet tracer available at that time. At the time of writing, the proper file name is `Cisco Packet Tracer 6.0.1 for Linux (with tutorials)`.
-
-After you have copied the file to the working directory (the directory you extracted the tarball to), you may now continue installation normally.
+Copy this file to your working directory with the same name and continue the installation normally. The [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file found in the earlier tarball will require this archive. It is not provided in the tarball itself for ethical and legal reasons. The required file may change in the future, based on the version of PacketTracer available at that time. At the time of writing, the file is named `PacketTracer71_64bit_linux.tar.gz`.
 
 Finally, please read the EULA at `/usr/share/licenses/packettracer/eula.txt` and uninstall if you do not agree. If you agree, the program can be found under most menu systems in the Internet category.
 
 ### Assessment environment check
 
 The Cisco Packet Tracer-based Assessment Environment Check is used to confirm that students can start packet tracer activities for assessments such as practice and final exams. It is critical that you have a working version of [Java](/index.php/Java "Java") installed. Perform the check at [this page](http://skills.netacad.net/check/check.html) to confirm whether or not this ability is functional.
+
+```
+javaws PT-Assessment-Client.jnlp
+
+```
 
 ## See also
 

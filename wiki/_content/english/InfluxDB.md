@@ -1,3 +1,10 @@
+Related articles
+
+*   [Telegraf](/index.php/Telegraf "Telegraf")
+*   [Chronograf](/index.php?title=Chronograf&action=edit&redlink=1 "Chronograf (page does not exist)")
+*   [Kapacitor](/index.php?title=Kapacitor&action=edit&redlink=1 "Kapacitor (page does not exist)")
+*   [Grafana](/index.php/Grafana "Grafana")
+
 InfluxDB is a time series database built from the ground up to handle high write and query loads. It is the second piece of the [TICK stack](/index.php?title=TICK_stack&action=edit&redlink=1 "TICK stack (page does not exist)"). InfluxDB is meant to be used as a backing store for any use case involving large amounts of timestamped data, including DevOps monitoring, application metrics, IoT sensor data, and real-time analytics.[[1]](https://docs.influxdata.com/influxdb/v1.2/)
 
 ## Contents

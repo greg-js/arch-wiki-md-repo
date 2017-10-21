@@ -46,12 +46,14 @@ Version: ThinkPad X1 Carbon 5th
 | Mobile broadband | Yes |
 | [ALSA](/index.php/ALSA "ALSA") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
-| [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
+| [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes* |
 | Camera | Yes |
 | Fingerprint Reader | No |
 | [Power management](/index.php/Power_management "Power management") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 | microSD card reader | Yes |
+
+*   Lenovo uses several different trackpoint types in the 5th generation X1 Carbon. Only the standard ALPS variant has Linux support.
 
 ### Fingerprint Reader
 
@@ -71,9 +73,11 @@ If you have an older version of the kernel, you need to manually patch the kerne
 
 ### Bug: Trackpoint/Trackpad not working
 
-There is a bug in Synaptics drivers that prevent both Trackpoint and Trackpad to function properly if Trackpoint is enabled at boot.
+Several different trackpoints are used with the X1 Carbon Gen 5\. There are at least three different trackpoints in use. You can identify them in dmesg as either LEN0071, LEN0072 or LEN0073\.
 
-You are affected by the bug if you see those with dmesg
+There is a bug in Synaptics drivers that prevent both Trackpoint and Trackpad to function properly if Trackpoint is enabled at boot. This issue affects the Elantech trackpoint as well as one of the ALPS variants.
+
+If you have the Elantech trackpoint, identified as LEN0073 you will see the following in your dmesg log.
 
 ```
 kernel: psmouse serio1: TouchPad at isa0060/serio1/input0 lost sync at byte 1
@@ -85,7 +89,7 @@ kernel: psmouse serio1: issuing reconnect request
 
 ```
 
-Installing [linux-tp-x1-carbon-5th](https://aur.archlinux.org/packages/linux-tp-x1-carbon-5th/) fixes this, see [https://gist.github.com/ursm/6d1007f44a1d6beeb670b3c3a6a78ea4](https://gist.github.com/ursm/6d1007f44a1d6beeb670b3c3a6a78ea4) .
+Installing [linux-tp-x1-carbon-5th](https://aur.archlinux.org/packages/linux-tp-x1-carbon-5th/) fixes this, see [https://gist.github.com/ursm/6d1007f44a1d6beeb670b3c3a6a78ea4](https://gist.github.com/ursm/6d1007f44a1d6beeb670b3c3a6a78ea4) . Note that this only works on the Elantech trackpoint (LEN0073).
 
 ## Configuration
 

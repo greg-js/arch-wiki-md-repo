@@ -45,9 +45,7 @@ KDE 前端，请安装[AUR](/index.php/AUR "AUR")中的[wicd-kde](https://aur.ar
 
 ### 其他软件包安装方法
 
-如果想安装最新开发版本，可到[AUR](/index.php/AUR "AUR")中找 [wicd-bzr](https://aur.archlinux.org/packages/wicd-bzr/)。
-
-如果你要完全定制安装或者制作自己的包，可使用 [ABS](/index.php/ABS "ABS") 编译。
+[wicd-git](https://aur.archlinux.org/packages/wicd-git/) 是最新的开发版本，如果你要完全定制安装或者制作自己的包，可使用 [ABS](/index.php/ABS "ABS") 编译。
 
 ## 开始使用
 

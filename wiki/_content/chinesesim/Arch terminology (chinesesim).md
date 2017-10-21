@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Arch_terminology](/index.php/Arch_terminology "Arch terminology") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-04，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_terminology&diff=0&oldid=476777)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Arch_terminology](/index.php/Arch_terminology "Arch terminology") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-19，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_terminology&diff=0&oldid=492867)可以查看翻译后英文页面的改动。
 
 本页面试图揭开 Arch Linux 社区术语的神秘面纱。您可以自由的添加或更改任何术语，但是请使用某个章节的编辑选项。如果想添加新术语请按照字母顺序。
 
@@ -95,7 +95,7 @@ Archlinux、ArchLinux、archLinux、aRcHlInUx 等等称呼都不是标准的。
 
 ## Developer
 
-无偿为 Arch 提供帮助的人，半个上帝，[开发者](https://www.archlinux.org/developers/) 等级仅在我们的上帝 Judd Vinet 和 Aaron Griffin 之下。
+无偿为 Arch 提供帮助的人，半个上帝，[开发者](https://www.archlinux.org/people/developers/) 等级仅在我们的上帝 Judd Vinet 和 Aaron Griffin 之下。
 
 ## extra/[extra]
 

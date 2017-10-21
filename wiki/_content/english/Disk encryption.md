@@ -252,7 +252,7 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
 | Supported Linux kernel versions | 2.0 or newer | CBC-mode since 2.6.4, ESSIV 2.6.10, LRW 2.6.20, XTS 2.6.24 |  ? |  ? | 2.4 or newer |
 | Encrypted data can also be accessed from Windows | ✔
-(with [[3]](#See_also), [[14]](#See_also)) | ✔
+(with [[3]](#See_also), [[14]](#See_also)) | ?
 (with [[4]](#See_also), [[14]](#See_also)) | ✔ |  ? |  ?
 [[9]](#See_also) |
 | Encrypted data can also be accessed from Mac OS X |  ? |  ? | ✔ |  ? | ✔
@@ -564,4 +564,4 @@ See [Wikipedia:Plausible deniability](https://en.wikipedia.org/wiki/Plausible_de
 11.  [^](#Compatibility_.26_prevalence) [https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf](https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf)
 12.  [^](#Compatibility_.26_prevalence) [https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf](https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf)
 13.  [^](#Performance_features) [https://github.com/vgough/encfs/issues/118](https://github.com/vgough/encfs/issues/118)
-14.  [^](#Compatibility_.26_prevalence) [DOXBOX](https://github.com/t-d-k/doxbox) - support to open dm-crypt / LUKS in newer Windows releases (includes fork from OTFE)
+14.  [^](#Compatibility_.26_prevalence) ~~[DOXBOX](https://github.com/t-d-k/doxbox)~~ renamed into [LibreCrypt](https://github.com/t-d-k/LibreCrypt) - support to open dm-crypt / LUKS in newer Windows releases (includes fork from OTFE). Project seems to be abandoned by developer, with multiple open issues.

@@ -23,7 +23,7 @@ Files is the default file manager for [GNOME](https://wiki.gnome.org/). Files at
     *   [3.1 Thumbnails](#Thumbnails)
     *   [3.2 Create an empty document in Files 3.6 and above](#Create_an_empty_document_in_Files_3.6_and_above)
     *   [3.3 Music files metadata in list view](#Music_files_metadata_in_list_view)
-    *   [3.4 Hiding Files and Folders](#Hiding_Files_and_Folders)
+    *   [3.4 Hiding files](#Hiding_files)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Files is no longer the default file manager](#Files_is_no_longer_the_default_file_manager)
     *   [4.2 Thumbnailing not working for video files](#Thumbnailing_not_working_for_video_files)
@@ -149,25 +149,11 @@ Once the dependencies are installed, save the [bsc-v2.py](http://pastebin.com/zN
 
 The new columns should now have been added. To enable them, navigate to Preferences -> List columns and tick the columns that you wish to use.
 
-### Hiding Files and Folders
+### Hiding files
 
-Files and folders can be hidden in two ways. Traditionally, files and folders prepended with a dot ('.') will be hidden from view.
+Like most other file managers GNOME Files hides files with names starting with a dot by default.
 
-To hide a file or folder without renaming, create a text file `.hidden` in the parent directory. Populate the file with the names of the files or folders you wish to be hidden.
-
-For example:
-
- `~/.hidden` 
-```
-Templates
-Public
-Desktop
-
-```
-
-will hide the Templates, Public, and Desktop folders in the home directory.
-
-This function may not be respected by other file managers.
+GNOME Files additionally hides files when their names are listed in a `.hidden` file in the same directory (one filename per line).
 
 ## Troubleshooting
 

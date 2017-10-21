@@ -18,8 +18,7 @@ This article describes how both new and experienced Arch users can contribute to
     *   [2.1 Groups](#Groups)
     *   [2.2 Software](#Software)
     *   [2.3 ArchWiki browsing](#ArchWiki_browsing)
-    *   [2.4 Services](#Services)
-    *   [2.5 Other](#Other)
+    *   [2.4 Other](#Other)
 *   [3 FAQ](#FAQ)
     *   [3.1 How can I become an Arch Developer?](#How_can_I_become_an_Arch_Developer.3F)
     *   [3.2 How can I become a Trusted User?](#How_can_I_become_a_Trusted_User.3F)
@@ -141,6 +140,10 @@ They offer you some different methods to visit ArchWiki.
 
 	Arch-wiki-lite is designed to offer the smoothest possible experience for the poor person stuck without internet access or any way of starting a graphical web browser. Package: [arch-wiki-lite](https://www.archlinux.org/packages/?name=arch-wiki-lite).
 
+	[arch-wiki-man](https://github.com/greg-js/arch-wiki-man)
+
+	The Arch Wiki easily accessible and searchable as man pages. Works offline. Package: [arch-wiki-man](https://aur.archlinux.org/packages/arch-wiki-man/).
+
 	[ArchWiki Viewer for Android](https://bbs.archlinux.org/viewtopic.php?id=150538)
 
 	A simple viewer for the ArchLinux Wiki online. Page content is formatted for optimal mobile viewing.
@@ -148,14 +151,6 @@ They offer you some different methods to visit ArchWiki.
 	[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
 
 	A simple curses interface for MediaWiki sites such as ArchWiki or Wikipedia. Packages: [wikicurses](https://aur.archlinux.org/packages/wikicurses/), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
-
-### Services
-
-Services specifically made for Arch users.
-
-	[ArchLinux.info](https://bbs.archlinux.org/viewtopic.php?id=150417&)
-
-	VPS-based @archlinux.info emails.
 
 ### Other
 

@@ -328,11 +328,11 @@ If you do not specify a bold font at the command line, `-fb`, or through the `XT
 
 Many fonts do not contain glyphs for the double width Chinese, Japanese and Korean languages. Other terminal emulators such as [urxvt](/index.php/Urxvt "Urxvt") may be better suited if you frequently work with these languages.
 
-Using bitmapped XLFD fonts with CJK has many pitfalls in xterm. It is much easier to use TrueType fonts for CJK display, using the `faceNameDoublesize` resource. This example uses *DejaVu Sans Mono* as the normal font and *WenQuanYi Bitmap Song* as the double width font:
+Using bitmapped XLFD fonts with CJK has many pitfalls in xterm. It is much easier to use TrueType fonts for CJK display, using the `faceNameDoublesize` resource. This example uses *DejaVu Sans Mono* as the normal font and *WenQuanYi WenQuanYi Bitmap Song* as the double width font:
 
 ```
 XTerm.vt100.faceName: DejaVu Sans Mono:style=Book:antialias=false
-XTerm.vt100.faceNameDoublesize: WenQuanYi Bitmap Song
+XTerm.vt100.faceNameDoublesize: WenQuanYi WenQuanYi Bitmap Song
 XTerm.vt100.faceSize: 8
 
 ```

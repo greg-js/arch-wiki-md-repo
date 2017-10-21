@@ -27,13 +27,15 @@ Related articles
     *   [6.2 Grab and scroll mode](#Grab_and_scroll_mode)
     *   [6.3 Long pressing a link opens it in a background tab (extension)](#Long_pressing_a_link_opens_it_in_a_background_tab_.28extension.29)
     *   [6.4 Virtual On-Screen keyboard (extension)](#Virtual_On-Screen_keyboard_.28extension.29)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Slow scrolling on NVIDIA cards](#Slow_scrolling_on_NVIDIA_cards)
-    *   [7.2 Horizontal mouse wheel scrolling](#Horizontal_mouse_wheel_scrolling)
-    *   [7.3 Launching an external browser](#Launching_an_external_browser)
-    *   [7.4 Opera crashes when starting or closing with GTK+ 2.24.7+](#Opera_crashes_when_starting_or_closing_with_GTK.2B_2.24.7.2B)
-    *   [7.5 Unreadable input fields and address bar with dark GTK+ themes](#Unreadable_input_fields_and_address_bar_with_dark_GTK.2B_themes)
-*   [8 See Also](#See_Also)
+*   [7 Security](#Security)
+    *   [7.1 Force a password store](#Force_a_password_store)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 Slow scrolling on NVIDIA cards](#Slow_scrolling_on_NVIDIA_cards)
+    *   [8.2 Horizontal mouse wheel scrolling](#Horizontal_mouse_wheel_scrolling)
+    *   [8.3 Launching an external browser](#Launching_an_external_browser)
+    *   [8.4 Opera crashes when starting or closing with GTK+ 2.24.7+](#Opera_crashes_when_starting_or_closing_with_GTK.2B_2.24.7.2B)
+    *   [8.5 Unreadable input fields and address bar with dark GTK+ themes](#Unreadable_input_fields_and_address_bar_with_dark_GTK.2B_themes)
+*   [9 See Also](#See_Also)
 
 ## Installation
 
@@ -183,6 +185,12 @@ It is possible to open up any long-clicked link in a new background tab by insta
 ### Virtual On-Screen keyboard (extension)
 
 There is an extension which allows the use of an on-screen virtual keyboard. Further details and installation link can be found [here](https://addons.opera.com/en/addons/extensions/details/virtual-keyboard/).
+
+## Security
+
+### Force a password store
+
+Since current Opera uses the same engine as Chromium does, you can force Opera to use a specific password store by launching it with the `--password-store` flag. For more details see [Chromium/Tips_and_tricks#Force_a_password_store](/index.php/Chromium/Tips_and_tricks#Force_a_password_store "Chromium/Tips and tricks").
 
 ## Troubleshooting
 

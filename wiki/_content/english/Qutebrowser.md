@@ -29,9 +29,9 @@ On first usage of qutebrowser, a Quickstart page appears. It is later accessible
 
 ### User configuration
 
-Qutebrowser can be configured via the UI, the qutebrowser command-line or a python script. Qutebrowser's own documentation explains in detail how to configure qutebrowser with these different methods. To open qutebrowser's help system, type `:help`. On the help page, choose `Configuring qutebrowser`.
+Qutebrowser can be configured via the UI, the qutebrowser command-line or a Python script. Qutebrowser's own documentation explains in detail how to configure qutebrowser with these different methods. To open qutebrowser's help system, type `:help`. On the help page, choose `Configuring qutebrowser`.
 
-To find out the paths where the configuration files will be located, open the special page `qute://version`. On Archlinux, this will typically be `$XDG_CONFIG_HOME/qutebrowser/`. The configuration made in qutebrowser will be stored in `autoconfig.yml` (which should not be touched by the user) while the user's python script is `config.py`.
+To find out the paths where the configuration files will be located, open the special page `qute://version`. On Arch Linux, this will typically be `$XDG_CONFIG_HOME/qutebrowser/`. The configuration made in qutebrowser will be stored in `autoconfig.yml` (which should not be touched by the user) while the user's Python script is `config.py`.
 
 #### Configuration in Qutebrowser
 
@@ -60,14 +60,14 @@ For example, under `url.searchengines` you can configure your search engines whi
 
 ```
 
-This configures duckduckgo as your default search engine while the placeholder `{}` will be replaced by your search term. To add a shortcut for quickly searching the arch wiki, you could use
+This configures DuckDuckGo as your default search engine while the placeholder `{}` will be replaced by your search term. To add a shortcut for quickly searching the Arch Linux wiki, you could use
 
 ```
 {"DEFAULT": "https://duckduckgo.com/?q={}", "wa": "https://wiki.archlinux.org/?search={}"}
 
 ```
 
-Then, as described by the comment in the qutebrowser UI, you can search the arch wiki by typing `o wa <searchterm>`. Notice that the arguments required to perform a search vary across search engines. For example, to set up Google, use `https://www.google.com/search?hl=en&q={}`.
+Then, as described by the comment in the qutebrowser UI, you can search the Arch Linux wiki by typing `o wa <searchterm>`. Notice that the arguments required to perform a search vary across search engines. For example, to set up Google, use `https://www.google.com/search?hl=en&q={}`.
 
 ### Keybindings
 

@@ -1092,7 +1092,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 | Name | Written in | Genre | License | Package | Description |
 | **[0 A.D.](https://en.wikipedia.org/wiki/0_A.D._(video_game) "w:0 A.D. (video game)")**
-- [play0ad.com](https://play0ad.com/) | C/C++ | Strategy | <abbr title="GNU Lesser General Public License">LGPL</abbr>/<abbr title="GNU General Public License Version 2">GPLv2</abbr> | [0ad](https://www.archlinux.org/packages/?name=0ad) | 3D and historically-based real-time strategy game. |
+- [play0ad.com](https://play0ad.com/) | C/C++ | <abbr title="Real-time strategy game">RTS</abbr> | <abbr title="GNU Lesser General Public License">LGPL</abbr>/<abbr title="GNU General Public License Version 2">GPLv2</abbr> | [0ad](https://www.archlinux.org/packages/?name=0ad) | 3D and historically-based real-time strategy game. |
 | [**Abuse**](https://en.wikipedia.org/wiki/Abuse_(game) "w:Abuse (game)")
 - [abuse.zoy.org](http://abuse.zoy.org) | C++ | Action | <abbr title="Public Domain">PD</abbr>/<abbr title="GNU General Public License">GPL</abbr>/<abbr title="Do What the Fuck You Want To Public License">WTFPL</abbr> | [abuse](https://www.archlinux.org/packages/?name=abuse) | Side-scroller action game that pits you against ruthless alien killers. |
 | **[ADOM](https://en.wikipedia.org/wiki/ADOM "w:ADOM")**
@@ -1103,20 +1103,27 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 - [rephial.org](http://rephial.org) | C | Rogue-Like | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [angband](https://www.archlinux.org/packages/?name=angband) | Roguelike dungeon exploration game based on the writings of JRR Tolkien. |
 | **[AssaultCube](https://en.wikipedia.org/wiki/AssaultCube "w:AssaultCube")**
 - [assault.cubers.net](http://assault.cubers.net/) | C/C++ | <abbr title="First-Person Shooter">FPS</abbr> | ZLIB | [assaultcube](https://www.archlinux.org/packages/?name=assaultcube) | Free multiplayer FPS, based on the cube engine. Realistic environments, fast, arcade gameplay. Much like Counter-Strike. |
+| **[Blob Wars: Metal Blob Solid](https://en.wikipedia.org/wiki/Blob_Wars#Blob_Wars:_Metal_Blob_Solid "w:Blob Wars")**
+- [sourceforge.net/projects/blobwars](https://sourceforge.net/projects/blobwars/) | C/C++ | Platform | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [blobwars](https://www.archlinux.org/packages/?name=blobwars) | 2D platform shooting game. |
+| **[BZFlag](https://en.wikipedia.org/wiki/BZFlag "w:BZFlag")**
+- [bzflag.org](https://www.bzflag.org/) | C/C++ | Tank <abbr title="First-Person Shooter">FPS</abbr> | <abbr title="GNU Lesser General Public License version 2.1">LGPLv2.1</abbr>/<abbr title="Mozilla Public License version 2.0">MPLv2</abbr> | [bzflag](https://www.archlinux.org/packages/?name=bzflag) | 3D multiplayer tank first-person shooter game. |
 | **[Endgame Singularity](https://en.wikipedia.org/wiki/Endgame:_Singularity "w:Endgame: Singularity")**
-- [emhsoft.com/singularity](http://www.emhsoft.com/singularity/) | Python | Strategy | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [singularity](https://www.archlinux.org/packages/?name=singularity) | Turn based single player strategy/simulation about a AI hiding, growing and evolving. |
+- [emhsoft.com/singularity](http://www.emhsoft.com/singularity/) | Python | <abbr title="Turn-based strategy game">TBS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [singularity](https://www.archlinux.org/packages/?name=singularity) | Turn based single player strategy/simulation about a AI hiding, growing and evolving. |
 | **[FlightGear](https://en.wikipedia.org/wiki/FlightGear "w:FlightGear")**
 - [flightgear.org](http://www.flightgear.org/) | C/C++ | Simulation | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [flightgear](https://www.archlinux.org/packages/?name=flightgear) | Open-source, multi-platform flight simulator. |
 | **[Foobillard++](https://en.wikipedia.org/wiki/Foobillard%2B%2B "w:Foobillard++")**
 - [foobillardplus.sourceforge.net](http://foobillardplus.sourceforge.net/) | C | Simulation | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [foobillard++](https://www.archlinux.org/packages/?name=foobillard%2B%2B) | Successor to Foobillard, OpenGL billiard game for Linux. |
 | **[Freeciv](https://en.wikipedia.org/wiki/Freeciv "w:Freeciv")**
-- [freeciv.wikia.com](http://freeciv.wikia.com/wiki/Main_Page) | C | Strategy | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [freeciv](https://www.archlinux.org/packages/?name=freeciv) | Multiuser clone of the famous Microprose game of Civilization. |
+- [freeciv.wikia.com](http://freeciv.wikia.com/wiki/Main_Page) | C/C++ | <abbr title="Turn-based strategy game">TBS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [freeciv](https://www.archlinux.org/packages/?name=freeciv) | Multiuser clone of the famous Microprose game of Civilization. Scripted using a Lua API. |
 | **[Freecol](https://en.wikipedia.org/wiki/Freecol "w:Freecol")**
-- [freecol.org](http://www.freecol.org/) | Java | Strategy | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [freecol](https://www.archlinux.org/packages/?name=freecol) | Turn-based strategy game based on Colonization. |
+- [freecol.org](http://www.freecol.org/) | Java | <abbr title="Turn-based strategy game">TBS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [freecol](https://www.archlinux.org/packages/?name=freecol) | Turn-based strategy game based on Colonization. |
 | **[Megaglest](https://en.wikipedia.org/wiki/Megaglest "w:Megaglest")**
-- [megaglest.org](https://megaglest.org/) | C/C++ | Strategy | <abbr title="GNU General Public License Version 3">GPLv3</abbr> | [megaglest](https://www.archlinux.org/packages/?name=megaglest) | Fork of Glest, a 3D real-time strategy game in a fantastic world. |
+- [megaglest.org](https://megaglest.org/) | C/C++ | <abbr title="Real-time strategy game">RTS</abbr> | <abbr title="GNU General Public License Version 3">GPLv3</abbr> | [megaglest](https://www.archlinux.org/packages/?name=megaglest) | Fork of Glest, a 3D real-time strategy game in a fantastic world. |
 | **[OpenRA](https://en.wikipedia.org/wiki/Command_%26_Conquer:_Red_Alert#Open_source_remake "w:Command & Conquer: Red Alert")**
-- [openra.net](http://www.openra.net) | C# | Strategy | <abbr title="GNU General Public License Version 3">GPLv3</abbr> | [openra](https://www.archlinux.org/packages/?name=openra), [openra-git](https://aur.archlinux.org/packages/openra-git/) | An open-source implementation of the Command & Conquer: Red Alert engine using .NET/Mono and OpenGL. |
+- [openra.net](http://www.openra.net) | C# | <abbr title="Real-time strategy game">RTS</abbr> | <abbr title="GNU General Public License Version 3">GPLv3</abbr> | [openra](https://www.archlinux.org/packages/?name=openra), [openra-git](https://aur.archlinux.org/packages/openra-git/) | An open-source implementation of the Command & Conquer: Red Alert engine using .NET/Mono and OpenGL. It has a Lua API for generating custom maps. |
+| **[OpenTTD](/index.php/OpenTTD "OpenTTD")**
+- [openttd.org](http://www.openttd.org) | C/C++ | <abbr title="Real-time strategy game">RTS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [openttd](https://www.archlinux.org/packages/?name=openttd)
+[openttd-svn](https://www.archlinux.org/packages/?name=openttd-svn) | An open-source remake of Transport Tycoon Deluxe. Scripted using the Squirrel programming language. |
 | **PyChess**
 - [pychess.org](http://pychess.org) | Python | Chess | <abbr title="GNU General Public License Version 3">GPLv3</abbr> | [pychess](https://www.archlinux.org/packages/?name=pychess) | An advanced chess client for Linux following the GNOME Human Interface Guidelines. |
 | **[RuneScape](https://en.wikipedia.org/wiki/RuneScape "w:RuneScape")**
@@ -1125,17 +1132,20 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 | **[SuperTux](https://en.wikipedia.org/wiki/SuperTux "w:SuperTux")**
 - [supertux.github.io](http://supertux.github.io/) | C++ | Platform | <abbr title="GNU General Public License Version 3">GPLv3</abbr> | [supertux](https://www.archlinux.org/packages/?name=supertux)
 [supertux-git](https://aur.archlinux.org/packages/supertux-git/)
-[supertux-old](https://aur.archlinux.org/packages/supertux-old/) | Classic 2D jump'n side-scroller game similar to the Super Mario Bros games, featuring Tux.
-Milestone 1 of the game was released in 2003 and is provided by supertux-old.
-Milestone 2, the current version of SuperTux in the Arch Linux community repository, was released in December 2015. |
+[supertux-old](https://aur.archlinux.org/packages/supertux-old/) | Classic 2D jump'n side-scroller game similar to the Super Mario Bros games, featuring Tux. Milestone 1 of the game was released in 2003 and is provided by supertux-old.
+Milestone 2, the current version of SuperTux in the Arch Linux community repository, was released in December 2015\. It is scripted using the Squirrel programming language. |
+| **[SuperTuxKart](https://en.wikipedia.org/wiki/SuperTuxKart "w:SuperTuxKart")**
+- [supertuxkart.net](https://supertuxkart.net) | C/C++ | 3D racing | <abbr title="GNU General Public License Version 3">GPLv3</abbr> | [supertuxkart](https://www.archlinux.org/packages/?name=supertuxkart) | Free, 3D racing game where the characters racing are represented by open-source project mascots. |
 | **[The Battle for Wesnoth](https://en.wikipedia.org/wiki/The_Battle_for_Wesnoth "w:The Battle for Wesnoth")**
-- [wesnoth.org](http://www.wesnoth.org/) | C/C++/Java | Strategy | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [wesnoth](https://www.archlinux.org/packages/?name=wesnoth) | Free, turn-based tactical strategy game with a high fantasy theme, featuring both single-player, and online/hotseat multiplayer combat. |
+- [wesnoth.org](http://www.wesnoth.org/) | C/C++/Java | <abbr title="Turn-based strategy game">TBS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [wesnoth](https://www.archlinux.org/packages/?name=wesnoth) | Free, turn-based tactical strategy game with a high fantasy theme, featuring both single-player, and online/hotseat multiplayer combat. |
 | **The Mana World**
 - [themanaworld.org](http://themanaworld.org/) | C++ | <abbr title="Massively Multiplayer Online Role-Playing Game">MMORPG</abbr> | <abbr title="GNU Affero General Public License Version 3">AGPLv3</abbr>/<abbr title="GNU General Public License Version 3">GPLv3</abbr> | [manaplus](https://www.archlinux.org/packages/?name=manaplus) | Serious effort to create an innovative free and open-source MMORPG. |
 | **[Urban Terror](/index.php/Urban_Terror "Urban Terror")**
 - [urbanterror.info](http://urbanterror.info/) | C | <abbr title="First-Person Shooter">FPS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [urbanterror](https://aur.archlinux.org/packages/urbanterror/) | Modern multiplayer FPS based on the ioquake3 engine. |
 | **[Warzone 2100](/index.php/Warzone_2100 "Warzone 2100")**
-- [wz2100.net](http://wz2100.net/) | C++ | Strategy | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [warzone2100](https://www.archlinux.org/packages/?name=warzone2100) | 3D realtime strategy game on a future Earth. |
+- [wz2100.net](http://wz2100.net/) | C++ | <abbr title="Real-time strategy game">RTS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [warzone2100](https://www.archlinux.org/packages/?name=warzone2100) | 3D real-time strategy game on a future Earth. |
+| **[Widelands](https://en.wikipedia.org/wiki/Widelands "w:Widelands")**
+- [wl.widelands.org](http://wl.widelands.org/) | C++/Lua/Python | <abbr title="Real-time strategy game">RTS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [widelands](https://www.archlinux.org/packages/?name=widelands) | 2D real-time strategy game similar to *The Settlers*. Scripted using a Lua API. |
 
 ## See also
 

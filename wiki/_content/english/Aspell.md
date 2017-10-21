@@ -4,9 +4,8 @@ From the [official website](http://aspell.net/): "GNU Aspell is a Free and Open 
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
-*   [3 Dictionaries](#Dictionaries)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 All text is marked as misspelled](#All_text_is_marked_as_misspelled)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 All text is marked as misspelled](#All_text_is_marked_as_misspelled)
 
 ## Installation
 
@@ -31,10 +30,6 @@ To list mispelled words from standard input:
 $ cat *somefile* | aspell list
 
 ```
-
-## Dictionaries
-
-Dictionaries are available: [aspell-en](https://www.archlinux.org/packages/?name=aspell-en) for example.
 
 ## Troubleshooting
 

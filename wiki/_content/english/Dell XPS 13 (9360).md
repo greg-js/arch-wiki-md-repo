@@ -190,7 +190,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [Apple 29W USB-C Power Adapter](http://www.apple.com/uk/shop/product/MJ262B/A/apple-29w-usb-c-power-adapter?fnode=8b) | USB-C Power | Not Working |
 | [Apple 87W USB-C Power Adapter](https://www.apple.com/uk/shop/product/MNF82B/A/87w-usb-c-power-adapter?fnode=8b) | USB-C Power | Working |
 | [Apple Thunderbolt 3 (USB-C) to Thunderbolt 2 Adapter](https://www.apple.com/shop/product/MMEL2AM/A/thunderbolt-3-usb-c-to-thunderbolt-2-adapter) | Thunderbolt 2, Thunderbolt | Not Working |
-| [Apple USB-C Digital AV Multiport Adapter](http://www.apple.com/uk/shop/product/MJ1K2ZM/A/usb-c-digital-av-multiport-adapter) | USB-C, USB-A, HDMI | Not Working |
+| [Apple USB-C Digital AV Multiport Adapter](http://www.apple.com/uk/shop/product/MJ1K2ZM/A/usb-c-digital-av-multiport-adapter) | USB-C, USB-A, HDMI (Got it to work on Alienware 13) | Maybe |
 | [ARP USB 3.1 C - DVI](https://www.arp.ch/fr/adaptateur-arp-usb-3-1-c-dvi-4044821-5115074) | DVI | Working |
 | [Aukey USB-C Hub HDMI 4 Port](https://www.amazon.co.uk/gp/product/B01H3K387Q/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) | USB-C, 4xUSB-A, HDMI | Working |
 | [Belkin USB-C to VGA Adapter](http://www.belkin.com/us/p/P-F2CU037/) | VGA | Working |
@@ -212,7 +212,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 
 ### Thunderbolt Firmware updates
 
-The thunderbolt controller in the laptop has an embedded firmware. The laptop ships with firmware version NVM 18, and the most recent available version from Dell's website is NVM 21\. If encountering compatibility problems with Thunderbolt accessories (such as the DA-200), the firmware may need to be updated. Dell maintains a [Github repository](https://github.com/dell/thunderbolt-nvm-linux) explaining the process to update the firmware which also provides the updated payload files.
+The thunderbolt controller in the laptop has an embedded firmware. The laptop ships with firmware version NVM 18, and the most recent available version from Dell's website is NVM 21\. If encountering compatibility problems with Thunderbolt accessories (such as the DA-200), the firmware may need to be updated. Dell maintains a [Github repository](https://github.com/dell/thunderbolt-nvm-linux) explaining the process to update the firmware which also provides the updated payload files. If the provided payload does not work, try `0x075B_secure.bin` inside the [Windows package](http://www.dell.com/support/home/us/en/19/drivers/driversdetails?driverId=MHTHF). This can be extracted with [p7zip](https://www.archlinux.org/packages/?name=p7zip).
 
 Here is a short list of steps to update the Thunderbolt-Firmware on linux 4.13+ (use at your own risk):
 
