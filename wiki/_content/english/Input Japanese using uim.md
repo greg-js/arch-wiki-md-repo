@@ -1,5 +1,10 @@
 This page explains how to get the Japanese input to work using [uim](http://code.google.com/p/uim/).
 
+Related articles
+
+*   [Internationalization](/index.php/Internationalization "Internationalization")
+*   [Internationalization/Japanese](/index.php/Internationalization/Japanese "Internationalization/Japanese")
+
 If you use SCIM, see [Smart Common Input Method platform](/index.php/Smart_Common_Input_Method_platform "Smart Common Input Method platform").
 
 If you use IBus, see [IBus](/index.php/IBus "IBus").
@@ -86,9 +91,11 @@ If you want to show [2channel Shift JIS art](https://en.wikipedia.org/wiki/2chan
 
 [Install](/index.php/Install "Install") [uim](https://www.archlinux.org/packages/?name=uim) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
+**Note:** uim versions before 1.8.0 do not support Qt5\. To use uim in Qt5 applications, install the development version ([uim-git](https://aur.archlinux.org/packages/uim-git/)), or the Debian fork ([uim-debian](https://aur.archlinux.org/packages/uim-debian/)).
+
 #### Compiling uim from source using PKGBUILD
 
-If you want to build uim with your configurationin, you can compile from source, using [ABS](/index.php/ABS "ABS") for istance. See [official wiki](http://code.google.com/p/uim/wiki/InstallUim) for all configure options.
+If you want to build uim with your configuration, you can compile from source, using [ABS](/index.php/ABS "ABS") for instance. See [official wiki](http://code.google.com/p/uim/wiki/InstallUim) for all configure options.
 
 In Arch official repositories, uim is built with the following custom configuration (as of 1.8.6):
 
@@ -97,8 +104,6 @@ In Arch official repositories, uim is built with the following custom configurat
 *   `--with-qt4` - Build uim-tools for Qt4
 
 If you want KDE4 plasma widget, install [automoc4](https://www.archlinux.org/packages/?name=automoc4) for making dependency, and add `--enable-kde4-applet` option to PKGBUILD file.
-
-**Note:** [uim-debian](https://aur.archlinux.org/packages/uim-debian/) contains patches that bring uim in line with its development version, eg. offering Qt5 support.
 
 ### Input method
 

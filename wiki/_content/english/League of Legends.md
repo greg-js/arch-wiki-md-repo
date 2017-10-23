@@ -278,7 +278,6 @@ If you are using mesa and are not using proprietary graphics drivers, you will n
 
 ```
  export MESA_GL_VERSION_OVERRIDE=4.5COMPAT
- export MESA_GLSL_VERSION_OVERRIDE=450
 
 ```
 

@@ -544,7 +544,7 @@ pulseaudio --start
 
 and check if the module is activated by starting `pavucontrol`. Under `Recoding` the input device should show `Echo-Cancel Source Stream from"`
 
-Here a list of possible 'aec_args' for 'aec_method=webrtc' with their default values [[2]](https://github.com/pulseaudio/pulseaudio/blob/master/src/modules/echo-cancel/webrtc.cc)[[3]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3):
+Here is a list of possible 'aec_args' for 'aec_method=webrtc' with their default values [[2]](https://github.com/pulseaudio/pulseaudio/blob/master/src/modules/echo-cancel/webrtc.cc)[[3]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3):
 
 *   `analog_gain_control=1` - Analog AGC - 'Automatic Gain Control' done over changing the volume directly - Will most likely lead to [distortions](/index.php/PulseAudio/Troubleshooting#Microphone_distorted_due_to_automatic_adjustment "PulseAudio/Troubleshooting").
 *   `digital_gain_control=0` - Digital AGC - 'Automatic Gain Control' done in post processing (higher CPU load).
@@ -553,15 +553,15 @@ Here a list of possible 'aec_args' for 'aec_method=webrtc' with their default va
 *   `high_pass_filter=1` - ?
 *   `noise_suppression=1` - Noise suppression.
 *   `mobile=0` - ?
-*   `routing_mode="speakerphone"` - Possible Values "quiet-earpiece-or-headset,earpiece,loud-earpiece,speakerphone,loud-speakerphone" - only valid with "mobile=1".
+*   `routing_mode=speakerphone` - Possible Values "quiet-earpiece-or-headset,earpiece,loud-earpiece,speakerphone,loud-speakerphone" - only valid with "mobile=1".
 *   `comfort_noise=1` - ? - only valid with "mobile=1".
 *   `drift_compensation=0` - Drift compensation to allow echo cancellation between different devices (such as speakers on your laptop and the microphone on your USB webcam). - only possible with "mobile=0".
 *   `voice_detection=1` - VAD - Voice activity detection.
 *   `extended_filter=0` - The extended filter is more complex and less sensitive to incorrect delay reporting from the hardware than the regular filter. The extended filter mode is disabled by default, because it seemed produce worse results during double-talk [[5]](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/9.0/).
 *   `intelligibility_enhancer=0` - Some bits for webrtc intelligibility enhancer.
 *   `beamforming=0` - See [[6]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3)[[7]](https://arunraghavan.net/2016/06/beamforming-in-pulseaudio/)
-*   `mic_geometry="x1,y1,z1,x2,y2,z2"` - Only with "beamforming=1".
-*   `target_direction="a,e,r"` - Only with "beamforming=1".
+*   `mic_geometry=x1,y1,z1,x2,y2,z2` - Only with "beamforming=1".
+*   `target_direction=a,e,r` - Only with "beamforming=1".
 
 If you are using the [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancelation "PulseAudio/Troubleshooting"), you probably don't want other applications to do additional audio post processing.
 Here is a list for disabling audio post processing in following applications:
@@ -1006,6 +1006,8 @@ Add the following:
 load-module module-switch-on-connect
 
 ```
+
+Since [PulseAudio 11](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/11.0/) USB and bluetooth devices are preferred over internal sound cards by default, but as in the above link described, you still need module-switch-on-connect to also moves existing streams to the new sink.
 
 ### My Bluetooth device is paired but does not play any sound
 

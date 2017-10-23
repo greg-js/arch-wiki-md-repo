@@ -77,7 +77,7 @@ This section contains advanced Firefox options for performance tweaking. For add
 
 Firefox 56 automatically uses settings based on the computer's hardware specifications [[1]](https://support.mozilla.org/en-US/kb/performance-settings).
 
-Adjusting these settings can be done in Preferences or by changing the `dom.ipc.processCount` and `browser.preferences.defaultPerformanceSettings.enabled` key values manually in `about:config`.
+Adjusting these settings can be done in Preferences or by changing the `dom.ipc.processCount` value to `1-7` and `browser.preferences.defaultPerformanceSettings.enabled` to `false` manually in `about:config`.
 
 However you may want to manually adjust this setting to increase performance even further or decrease memory usage on low-end devices.
 
@@ -529,6 +529,10 @@ To modify the default values (i.e. speed-up) of the mouse wheel scroll speed, go
 
 *   Set `mousewheel.acceleration.start` to **-1**.
 *   Set `mousewheel.acceleration.factor` to the desired number (10 to 20 are common values).
+
+Mozilla's recommendation for increasing the mousewheel scroll speed is to:
+
+*   Set `mousewheel.default.delta_multiplier_y` to between **200-500** (default: 100)
 
 Alternatively you can install the [SmoothWheel add-on](http://smoothwheel.mozdev.org/).
 

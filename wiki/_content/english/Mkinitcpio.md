@@ -467,7 +467,46 @@ The test used by mkinitcpio to determine if /dev is mounted is to see if /dev/fd
 
 ### Using systemd HOOKS in a LUKS/LVM/resume setup
 
-Using `systemd`/`sd-encrypt`/`sd-lvm2` **HOOKS** instead of the traditional `encrypt`/`lvm2`/`resume` requires different initrd parameters to be passed by your [boot loader](/index.php/Boot_loader "Boot loader"). See [this post on forum](https://bbs.archlinux.org/viewtopic.php?pid=1480241) for details.
+Using `systemd`/`sd-encrypt`/`sd-lvm2` **HOOKS** instead of the traditional `encrypt`/`lvm2`/`resume` requires different initrd parameters to be passed by your [boot loader](/index.php/Boot_loader "Boot loader"). See [this post on forum](https://bbs.archlinux.org/viewtopic.php?pid=1480241) for background. More information about the possible parameters is available [here](https://www.freedesktop.org/software/systemd/man/kernel-command-line.html)
+
+To support LUKS and LVM:
+
+You'll need to switch your hooks from udev to systemd and to sd-* where applicable, an updated HOOKS entry would look something like
+
+ `/etc/mkinitcpio.conf`  `HOOKS="systemd autodetect modconf block keymap sd-encrypt sd-lvm2 btrfs filesystems keyboard"` 
+
+To use the systemd kernel parameters via bootctl with a basic lvm of root and swap
+
+ `/boot/loader/entries/arch-encrypted.conf` 
+```
+title ArchLinux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options rd.luks.uuid=XXXX... rd.lvm.lv=vg/vg-root rd.lvm.lv=vg/vg-swap root=UUID=YYYY...
+```
+
+**Note:** For XXXX uuid and YYYY uuid run
+```
+lsblk -f
+---
+NAME                                     FSTYPE      LABEL UUID MOUNTPOINT
+sda                                                                                                
+├─sda1                                   vfat        BOOT-UUID /boot
+└─sda2                                   crypto_LUKS XXXX-...   
+  └─luks-XXXX-...                        LVM2_member LVM-UUID 
+    ├─vg-swap                            swap        SWAP-UUID [SWAP]
+    └─vg-root                            btrfs       YYYY-...  /
+
+```
+
+now you should be able to run
+
+```
+ mkinitcpio -p linux
+
+```
+
+and with a reboot the switch from udev to systemd should be completed
 
 ### Possibly missing firmware for module XXXX
 

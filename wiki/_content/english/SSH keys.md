@@ -169,7 +169,7 @@ Both of those concerns are best summarized in [libssh curve25519 introduction](h
 
 #### Ed25519
 
-[Ed25519](http://ed25519.cr.yp.to/) was introduced in [OpenSSH 6.5](http://www.openssh.com/txt/release-6.5): "*Ed25519 is an elliptic curve signature scheme that offers better security than ECDSA and DSA and good performance*". Its main strengths are its speed, its constant-time run time (and resistance against side-channel attacks), and its lack of nebulous hard-coded constants.[[8]](https://git.libssh.org/projects/libssh.git/tree/doc/curve25519-sha256@libssh.org.txt) See also [this blog post](https://blog.mozilla.org/warner/2011/11/29/ed25519-keys/) by a Mozilla developer on how it works.
+[Ed25519](http://ed25519.cr.yp.to/) was introduced in [OpenSSH 6.5](http://www.openssh.com/txt/release-6.5) of January 2014: "*Ed25519 is an elliptic curve signature scheme that offers better security than ECDSA and DSA and good performance*". Its main strengths are its speed, its constant-time run time (and resistance against side-channel attacks), and its lack of nebulous hard-coded constants.[[8]](https://git.libssh.org/projects/libssh.git/tree/doc/curve25519-sha256@libssh.org.txt) See also [this blog post](https://blog.mozilla.org/warner/2011/11/29/ed25519-keys/) by a Mozilla developer on how it works.
 
 It is already implemented in [many applications and libraries](https://en.wikipedia.org/wiki/Curve25519#Popularity "wikipedia:Curve25519") and is the [default key exchange algorithm](https://www.libssh.org/2013/11/03/openssh-introduces-curve25519-sha256libssh-org-key-exchange/) (which is different from key *signature*) in OpenSSH.
 

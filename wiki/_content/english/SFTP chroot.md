@@ -1,3 +1,7 @@
+Related articles
+
+*   [SSHFS](/index.php/SSHFS "SSHFS")
+
 [OpenSSH](/index.php/OpenSSH "OpenSSH") 4.9+ includes a built-in chroot for sftp, but requires a few tweaks to the normal install.
 
 ## Contents
@@ -81,7 +85,7 @@ Set a (complex) password - to prevent `account is locked` error:
 
 ```
 
-You many to deny [shell](/index.php/Shell "Shell") login access for the user:
+You may deny [shell](/index.php/Shell "Shell") login access for the user:
 
 ```
 # usermod -s /sbin/nologin *username*

@@ -157,7 +157,7 @@ The style argument can be one of the following:
 *   Solid - fill button a solid color.
 *   ColorSet - fill button with the ColorSet specified - takes an alpha argument between 0 and 100.
 *   Vector - draws a line pattern - using the keyword Vector is optional as this is a standard style.
-*   ?Gradient - fills the button with a gradient - see the FVWM man page Color Gradients section for the syntax.
+*   ?Gradient - fills the button with a gradient - see the Color Gradients section of [fvwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) for the syntax.
 *   Pixmap - fills the button with a given pixmap - see also the following variants: AdjustedPixmap, ShrunkPixmap, StretchedPixmap, TiledPixmap.
 *   MiniIcon - fills the button with the window's mini icon.
 

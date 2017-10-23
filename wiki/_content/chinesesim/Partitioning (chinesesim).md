@@ -176,7 +176,7 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 #### /tmp
 
-默认情况下这个目录已经是一个独立分区，systemd 将其挂载问*tmpfs*。
+默认情况下这个目录已经是一个独立分区，systemd 将其挂载为*tmpfs*。
 
 #### Swap
 

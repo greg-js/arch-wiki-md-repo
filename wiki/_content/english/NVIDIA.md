@@ -164,7 +164,7 @@ Double check your `/etc/X11/xorg.conf` to make sure your default depth, horizont
 
 ### NVIDIA Settings
 
-The [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) tool lets you configure many options using either CLI or GUI. Running `nvidia-settings` without any options launches the GUI, for CLI options see `nvidia-settings(1)`.
+The [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) tool lets you configure many options using either CLI or GUI. Running `nvidia-settings` without any options launches the GUI, for CLI options see [nvidia-settings(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nvidia-settings.1).
 
 You can run the GUI as a normal user and save the settings to `~/.nvidia-settings-rc`. Then you can load the settings using `$ nvidia-settings --load-config-only` (for example in your [xinitrc](/index.php/Xinitrc "Xinitrc")). Alternatively, you can move the settings file to `/etc/X11/xorg.conf.d/20-nvidia.conf` where they will be loaded automatically.
 

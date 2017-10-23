@@ -132,13 +132,13 @@ root:100000:65536
 
 LXCs support different virtual network types and devices (see [lxc.container.conf(5)](https://linuxcontainers.org/lxc/manpages//man5/lxc.container.conf.5.html)). A bridge device on the host is required for most types of virtual networking.
 
-LXC comes with it's own NAT Bridge (lxcbr0).
+LXC comes with its own NAT Bridge (lxcbr0).
 
 **Note:** A NAT bridge is a standalone bridge with a private network that is not bridged to the host eth0 or a physical network. It exists as a private subnet in the host.
 
 **Tip:** This is quite useful when WIFI is the only option. There have bean various attempts of creating Bridges on WIFI without much success.
 
-To use LXC's NAT Bridge you need to create it's configuration file:
+To use LXC's NAT Bridge you need to create its configuration file:
 
  `/etc/default/lxc-net` 
 ```
@@ -293,7 +293,7 @@ In order to run programs on the host's display, some bind mounts need to be defi
 ## for xorg
 lxc.mount.entry = /dev/dri dev/dri none bind,optional,create=dir
 lxc.mount.entry = /dev/snd dev/snd none bind,optional,create=dir
-lxc.mount.entry = /tmp/.X11-unix tmp/.X11-unix none bind,optional,create=dir
+lxc.mount.entry = /tmp/.X11-unix tmp/.X11-unix none bind,optional,create=dir,ro
 lxc.mount.entry = /dev/video0 dev/video0 none bind,optional,create=file
 
 ```

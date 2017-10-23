@@ -32,7 +32,7 @@ This article overviews configuration settings and some useful extensions which e
     *   [2.7 NoScript](#NoScript)
     *   [2.8 uMatrix](#uMatrix)
     *   [2.9 Cookie Monster](#Cookie_Monster)
-    *   [2.10 Self-Destructing Cookies](#Self-Destructing_Cookies)
+    *   [2.10 Cookie AutoDelete](#Cookie_AutoDelete)
     *   [2.11 RefControl](#RefControl)
     *   [2.12 RequestPolicy](#RequestPolicy)
     *   [2.13 Decentraleyes](#Decentraleyes)
@@ -209,9 +209,9 @@ For more Information visit the [project site](https://github.com/gorhill/uMatrix
 
 From the preferences for Cookie Monster select "Block All Cookies". Once this is done, just as with NoScript, you can enable the use of cookies for specific pages from either the Cookie Monster icon on the toolbar or by right clicking the page and navigating to Cookie Monster. You have the option to accept cookies from the website in question or alternatively to only temporarily allow cookies for the current session.
 
-### Self-Destructing Cookies
+### Cookie AutoDelete
 
-[Self-Destructing Cookies](https://addons.mozilla.org/firefox/addon/self-destructing-cookies/) gets rid of a site's cookies and LocalStorage as soon as you close its tabs. Protects against trackers and zombie-cookies.
+[Cookie AutoDelete](https://addons.mozilla.org/firefox/addon/cookie-autodelete/) is an extension that deletes cookies as soon as the tab closes. Supports automatic and manual cookie cleaning modes. Clearing LocalStorage is [not yet supported](https://github.com/Cookie-AutoDelete/Cookie-AutoDelete/issues/44).
 
 ### RefControl
 

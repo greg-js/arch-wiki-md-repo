@@ -656,6 +656,6 @@ Workstation 11 has a bug where vmware-hostd crashes if an Arch guest is running 
 
 ### Shared folder not mounted after system upgrade
 
-This is probably only happens to [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools). Since the vmhgfs module belongs to [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) which belongs to AUR repositiory, therefore would not get's updated automatically by the `pacman -Syu` command. Always update the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) manually before the system upgrade.
+Most likely, this should only happen to [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools). Since the `vmhgfs` module belongs to [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/), the legacy filesystem driver would not be upgraded by using the command `pacman -Syu`. Therefor, [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) should be manually upgraded before the official repositories.
 
-If you happened to get in to this situation, you need to remove the automount for shared file system, upgrade and do a `mkinitcpio -p linux`.
+If a shared folder is not mounted after a system upgrade, then remove the shared filesystem automount, upgrade [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/), run `pacman -Syu`, and finally execute `mkinitcpio -p linux`. Don't forget to restore the filesystem automount.

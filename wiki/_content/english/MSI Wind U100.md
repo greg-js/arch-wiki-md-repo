@@ -95,7 +95,23 @@ Audio is supported through ALSA with virtually no configuration. Following the [
 
 The on-board graphics uses the Intel driver. [Install](/index.php/Install "Install") [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel).
 
+```
+     pacman -S  xf86-video-intel
+
+```
+
 Aside from that, there are no out-of-the-ordinary configuration steps. Consult [Xorg](/index.php/Xorg "Xorg") and [Intel](/index.php/Intel "Intel") for more information.
+
+If console becomes garbled after an update cycle, you can try disabling the linux framebuffer 'inteldrmfb'.
+
+This is one way to disable the framebuffer
+
+```
+    vi /etc/default/grub 
+    GRUB_CMDLINE_LINUX_DEFAULT="i915.modeset=0 quiet"
+    grub-mkconfig -o /boot/grub/grub.cfg
+
+```
 
 ### Webcam
 

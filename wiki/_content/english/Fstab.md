@@ -42,8 +42,8 @@ A simple `/etc/fstab`, using kernel name descriptors:
 
 *   `<device>` describes the block special device or remote filesystem to be mounted; see [#Identifying filesystems](#Identifying_filesystems).
 *   `<dir>` describes the [mount](/index.php/Mount "Mount") directory, `<type>` the [file system](/index.php/File_system "File system") type, and `<options>` the associated mount options; see [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8#FILESYSTEM-INDEPENDENT_MOUNT_OPTIONS).
-*   `<dump>` is checked by the [dump(8)](http://linux.die.net/man/8/dump) utility.
-*   `<fsck>` sets the order for filesystem checks at boot time; see [fsck(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fsck.8).
+*   `<dump>` is checked by the [dump(8)](http://linux.die.net/man/8/dump) utility. This field is usually set to `0`, which disables the check.
+*   `<fsck>` sets the order for filesystem checks at boot time; see [fsck(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fsck.8). For the root device it should be `1`. For other partitions it should be `2`, or `0` to disable checking.
 
 **Tip:** The `auto` type lets the mount command guess what type of file system is used. This is useful for optical media (CD/DVD).
 
@@ -105,7 +105,7 @@ UUID=f9fe0b69-a280-415d-a03a-a32752370dee none  swap   defaults                 
 
 ```
 
-**Tip:** If you would like to return just the UUID of a specific partition: $ lsblk -no UUID /dev/sda2
+**Tip:** If you would like to return just the UUID of a specific partition: `lsblk -no UUID /dev/sda2`.
 
 ### GPT labels
 

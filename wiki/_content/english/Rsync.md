@@ -433,6 +433,8 @@ $ rsync *local-file* rsync://*server/share/*
 
 Consider iptables to open port `873` and user authentication.
 
+**Note:** All transferred data including user authentication are not encrypted.
+
 ## See also
 
 *   More usage examples can be searched in the [Community Contributions](https://bbs.archlinux.org/viewforum.php?id=27) and [General Programming](https://bbs.archlinux.org/viewforum.php?id=33) forums

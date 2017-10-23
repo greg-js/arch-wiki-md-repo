@@ -202,6 +202,8 @@ key <DELE> { [ BackSpace, Delete ] };
 
 To enable Trackpad support you need to install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
 
+**Warning:** the above did the opposite for me. When both [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) are installed, the trackpoint (red thingy) uses libinput by default, so it doesn't cooperate with the trackpad (which by default is driven by synaptics), and as a result you can't scroll with middle button + trackpoint. Keeping only [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) got everything working.
+
 #### Lock-ups on click
 
 There are significant issues with the trackpad locking up on click. This is due to the trackpad operating in buggy PS/2 mode.

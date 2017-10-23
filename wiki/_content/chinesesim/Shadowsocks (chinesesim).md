@@ -59,14 +59,6 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 | fast_open | 是否启用[TCP-Fast-Open](https://github.com/clowwindy/shadowsocks/wiki/TCP-Fast-Open) |
 | wokers | worker数量，如果不理解含义请不要改 |
 
-要更改日志等级，应添加 `"verbose": *value*` 选项并赋予下列某一个值：
-
-*   2: full logging
-*   1: debug
-*   0: default
-*   -1: warnings
-*   -2: errors
-
 ### 客户端
 
 #### 命令行
@@ -80,6 +72,8 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 配合nohup和&可以使之后台运行，关闭终端也不影响：
 
  `#nohup sslocal -s *服务器地址* -p *服务器端口* -l *本地端端口* -k *密码* -m *加密方法* &` 
+
+增加 `-v` 参数获取详细log信息
 
 * * *
 

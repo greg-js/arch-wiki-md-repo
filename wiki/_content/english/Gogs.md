@@ -32,7 +32,7 @@ Each package provides multiple options for configuring the backend/storage for t
 
 Installing Gogs from the [AUR](/index.php/AUR "AUR") instead of manually has the added benefit that lots of steps have been taken care of for you (e.g. permissions and ownership for files, etc).
 
-Also before installing the Gogs package from the [AUR](/index.php/AUR "AUR"), you need to choose a database backend if you're planning to host Gogs it on the same machine as the database:
+Also before installing the Gogs package from the [AUR](/index.php/AUR "AUR"), you need to choose a database backend if you're planning to host Gogs on the same machine as the database:
 
 *   SQLite: [sqlite](https://www.archlinux.org/packages/?name=sqlite) - For configuration of Gogs with SQLite see [#SQLite](#SQLite).
 *   PostgreSQL: [postgresql](https://www.archlinux.org/packages/?name=postgresql) - Read [PostgreSQL#Installing PostgreSQL](/index.php/PostgreSQL#Installing_PostgreSQL "PostgreSQL") to set it up and start the [daemon](/index.php/Daemon "Daemon") and for configuration of Gogs with PostgreSQL see [#PostgreSQL](#PostgreSQL).

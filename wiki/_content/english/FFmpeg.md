@@ -84,7 +84,7 @@ FFmpeg includes the [x11grab](http://www.ffmpeg.org/ffmpeg-devices.html#x11grab)
 To create `test.mkv` with lossless encoding:
 
 ```
-$ ffmpeg -f x11grab -video_size 1920x1080 -framerate 60 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac grab.mkv
+$ ffmpeg -f x11grab -video_size 1920x1080 -framerate 60 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac test.mkv
 
 ```
 
@@ -93,7 +93,7 @@ where `-video_size` specifies the size of the area to capture. Check the FFmpeg 
 To implicitly encode to a shareable size use :
 
 ```
-$ ffmpeg -f x11grab -video_size 1920x1080 -framerate 60 -i $DISPLAY -f alsa -i default -r 30 -s 1280x720 -c:v libx264 -preset:v veryfast -b:v 2000k -c:a libopus -b:a 128k grab.mkv
+$ ffmpeg -f x11grab -video_size 1920x1080 -framerate 60 -i $DISPLAY -f alsa -i default -r 30 -s 1280x720 -c:v libx264 -preset:v veryfast -b:v 2000k -c:a libopus -b:a 128k test.mkv
 
 ```
 

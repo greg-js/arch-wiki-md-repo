@@ -52,6 +52,7 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
     *   [7.3 Error at push bad line length character: API](#Error_at_push_bad_line_length_character:_API)
     *   [7.4 Errors after updating](#Errors_after_updating)
     *   [7.5 /etc/webapps/gitlab/secret is empty](#.2Fetc.2Fwebapps.2Fgitlab.2Fsecret_is_empty)
+    *   [7.6 Gitlab-Unicorn cannot access non-default repositories directory](#Gitlab-Unicorn_cannot_access_non-default_repositories_directory)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -746,6 +747,10 @@ This file is usually generated while installing the [gitlab-shell](https://www.a
 # chmod 640 /etc/webapps/gitlab/secret
 
 ```
+
+### Gitlab-Unicorn cannot access non-default repositories directory
+
+If a custom repository storage directory is set in `/home`, disable the `ProtectHome=true` parameter in the `gitlab-unicorn.service` (see [Systemd#Drop-in_files](/index.php/Systemd#Drop-in_files "Systemd") and the [relevant forum thread on gitlab.com](https://forum.gitlab.com/t/cannot-change-repositores-location/9634/2)).
 
 ## See also
 

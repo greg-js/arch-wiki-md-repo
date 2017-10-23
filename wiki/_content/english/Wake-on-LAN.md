@@ -1,4 +1,4 @@
-[Wake-on-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN "wikipedia:Wake-on-LAN") (WOL) is a feature to switch on a computer via the network.
+[Wake-on-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN "wikipedia:Wake-on-LAN") (WoL) is a feature to switch on a computer via the network.
 
 ## Contents
 
@@ -12,28 +12,29 @@
         *   [2.2.4 udev](#udev)
         *   [2.2.5 cron](#cron)
         *   [2.2.6 NetworkManager](#NetworkManager)
+    *   [2.3 Enable WoL in TLP](#Enable_WoL_in_TLP)
 *   [3 Trigger a wake up](#Trigger_a_wake_up)
     *   [3.1 On the same LAN](#On_the_same_LAN)
     *   [3.2 Across the internet](#Across_the_internet)
         *   [3.2.1 Forward a port to the broadcast address](#Forward_a_port_to_the_broadcast_address)
 *   [4 Miscellaneous](#Miscellaneous)
-    *   [4.1 Battery draining problem](#Battery_draining_problem)
+    *   [4.1 Check reception of the magic packets](#Check_reception_of_the_magic_packets)
     *   [4.2 Example of WoL script](#Example_of_WoL_script)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Realtek](#Realtek)
-    *   [5.2 alx driver support](#alx_driver_support)
-    *   [5.3 Suspend/Resume](#Suspend.2FResume)
+    *   [5.1 Battery draining problem](#Battery_draining_problem)
+    *   [5.2 Realtek](#Realtek)
+    *   [5.3 alx driver support](#alx_driver_support)
 *   [6 See also](#See_also)
 
 ## Hardware settings
 
-The target computer's motherboard and [Network Interface Controller](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller") have to support Wake-on-LAN (WoL). Wireless cards do not support WoL, the target computer has to be physically connected (with a cable) to a router or to the source computer.
+The target computer's motherboard and [Network Interface Controller](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller") have to support Wake-on-LAN. The target computer has to be physically connected (with a cable) to a router or to the source computer, wireless cards do not support WoL.
 
 The Wake-on-LAN feature also has to be enabled in the computer's BIOS. Different motherboard manufacturers use slightly different language for this feature. Look for terminology such as "PCI Power up", "Allow PCI wake up event" or "Boot from PCI/PCI-E".
 
-It is known that some motherboards are affected by a bug that causes immediate wake-up after a *shutdown* under certain circumstances whenever the BIOS WoL feature is enabled (as discussed in [this thread](https://bbs.archlinux.org/viewtopic.php?id=173648) for example). The following actions in the BIOS preferences are known to solve this issue with some motherboards:
+It is known that some motherboards are affected by a bug that can cause immediate or random wake-up after a *shutdown* whenever the BIOS WoL feature is enabled (as discussed in [this thread](https://bbs.archlinux.org/viewtopic.php?id=173648) for example). The following actions in the BIOS preferences can solve this issue with some motherboards:
 
-1.  Disable all references to *xHCI* in the USB settings (this will also disable USB 3.0 at boot time)
+1.  Disable all references to *xHCI* in the USB settings (note this will also disable USB 3.0 at boot time)
 2.  Disable *EuP 2013* if it is explicitly an option
 3.  Optionally enable wake-up on keyboard actions
 
@@ -53,14 +54,14 @@ Supports Wake-on: pumbag
 Wake-on: d
 ```
 
-The *Wake-on* values define what activity to wake on: `d` (disabled), `p` (PHY activity), `u` (unicast activity), `m` (multicast activity), `b` (broadcast activity), `a` (ARP activity), and `g` (magic packet activity). The value `g` is required for WoL to work, if not, the following command will enable the WoL feature in the driver:
+The *Wake-on* values define what activity triggers wake up: `d` (disabled), `p` (PHY activity), `u` (unicast activity), `m` (multicast activity), `b` (broadcast activity), `a` (ARP activity), and `g` (magic packet activity). The value `g` is required for WoL to work, if not, the following command enables the WoL feature in the driver:
 
 ```
 # ethtool -s net0 wol g
 
 ```
 
-This command might not last beyond the next reboot, so it must be repeated via some mechanism. Common solutions are listed in the following subsections.
+This command might not last beyond the next reboot and in this case must be repeated via some mechanism. Common solutions are listed in the following subsections.
 
 ### Make it persistent
 
@@ -164,6 +165,10 @@ Then reboot, possibly two times.
 
 From version 1.2.0 Wake-on-LAN settings can be changed graphically using [nm-connection-editor](https://www.archlinux.org/packages/?name=nm-connection-editor).
 
+### Enable WoL in TLP
+
+When using [TLP](/index.php/TLP "TLP") for suspend/hibernate, the `WOL_DISABLE` setting should be set to `N` in `/etc/default/tlp` to allow resuming the computer with WoL.
+
 ## Trigger a wake up
 
 To trigger WoL on a target machine, its MAC address and external or internal IP should be known.
@@ -213,12 +218,12 @@ $ wol -i *target_IP* *target_MAC_address*
 
 ### Across the internet
 
-When the source and target computers are separated by a router, Wake-on-LAN can be used via [port forwarding](https://en.wikipedia.org/wiki/Port_forwarding "wikipedia:Port forwarding"). There are two possible solutions:
+When the source and target computers are separated by a router, Wake-on-LAN can be achieved via [port forwarding](https://en.wikipedia.org/wiki/Port_forwarding "wikipedia:Port forwarding"). The router needs to be configured using one of these two options:
 
-*   Configure the router to forward a different port to each target machine. (Requires any target machine to have a static IP address on its LAN)
-*   Configure the router to forward a single port to the [broadcast address](https://en.wikipedia.org/wiki/Broadcast_address "wikipedia:Broadcast address"). (May not be possible on all routers)
+*   Forward a different port to each target machine. This requires any target machine to have a static IP address on its LAN.
+*   Forward a single port to the [broadcast address](https://en.wikipedia.org/wiki/Broadcast_address "wikipedia:Broadcast address"). This is likely not possible on your router with the stock firmware, in this case refer to [#Forward a port to the broadcast address](#Forward_a_port_to_the_broadcast_address) for workarounds.
 
-In both cases to trigger the wakeup run:
+In both cases, run the following command from the source computer to trigger wake-up:
 
 ```
 $ wol -p *forwarded_port* -i *router_IP* *target_MAC_address*
@@ -227,27 +232,35 @@ $ wol -p *forwarded_port* -i *router_IP* *target_MAC_address*
 
 #### Forward a port to the broadcast address
 
-Most routers do not allow you to forward to broadcast, however if you can get shell access to your router (through telnet, ssh, serial cable, etc) you can implement this workaround:
+Most routers do not allow to forward to broadcast, however if you can get shell access to your router (through telnet, ssh, serial cable, etc), you can implement this workaround:
 
 ```
 $ ip neighbor add 192.168.1.254 lladdr FF:FF:FF:FF:FF:FF dev net0
 
 ```
 
-(The above command assumes your network is 192.168.1.0/24 and use net0 as network interface). Now, forward UDP port 9 to 192.168.1.254\. This has worked for me on a Linksys WRT54G running Tomato, and on the Verizon FIOS ActionTec router.
+(The above command assumes your network is *192.168.1.0/24* and uses *net0* as network interface). Now, forward UDP port 9 to 192.168.1.254\. This has worked for me on a Linksys WRT54G running [Tomato](https://en.wikipedia.org/wiki/Tomato_(firmware) "wikipedia:Tomato (firmware)"), and on the Verizon FIOS ActionTec router.
 
-For notes on how to do it on DD-WRT routers, see [this tutorial](http://www.dd-wrt.com/wiki/index.php/WOL#Remote_Wake_On_LAN_via_Port_Forwarding).
+For notes on how to do it on a router with [DD-WRT](https://en.wikipedia.org/wiki/DD-WRT "wikipedia:DD-WRT") firmware, see [this tutorial](http://www.dd-wrt.com/wiki/index.php/WOL#Remote_Wake_On_LAN_via_Port_Forwarding).
+
+For notes on how to do it on a router with [OpenWrt](https://en.wikipedia.org/wiki/OpenWrt "wikipedia:OpenWrt") firmware, see [this tutorial](https://wiki.openwrt.org/doc/uci/wol).
 
 ## Miscellaneous
 
-### Battery draining problem
+### Check reception of the magic packets
 
-Some laptops have a battery draining problem after shutdown [[1]](http://ubuntuforums.org/archive/index.php/t-1729782.html). This might be caused by enabled WOL. To solve this problem, disable it by using ethtool as mentioned above.
+In order to make sure the WoL packets reach the target computer, one can listen to the UDP port, usually port 9, for magic packets.
+
+This can be performed by installing [gnu-netcat](https://www.archlinux.org/packages/?name=gnu-netcat) from the [official repositories](/index.php/Official_repositories "Official repositories") on the target computer and using the following command:
 
 ```
-# ethtool -s net0 wol d
+# nc --udp --listen --local-port=9 --hexdump
 
 ```
+
+Then wait for the incoming traffic to appear in the `nc` terminal.
+
+The magic packet frame expected contains 6 bytes of FF followed by 16 repetitions of the target computer's MAC (6 bytes each) for a total of 102 bytes.
 
 ### Example of WoL script
 
@@ -259,22 +272,17 @@ Here is a script that illustrates the use of `wol` with several different machin
 # definition of MAC addresses
 monster=01:12:46:82:ab:4f
 chronic=00:3a:53:21:bc:30
-powerless=1a:32:41:02:29:92
 ghost=01:1a:d2:56:6b:e6
 
 echo "Which PC to wake?"
-echo "p) powerless"
 echo "m) monster"
 echo "c) chronic"
 echo "g) ghost"
 echo "b) wake monster, wait 40sec, then wake chronic"
-echo "q) quit and take no action"
+echo "q) quit"
 read input1
 
 case $input1 in
-  p)
-    /usr/bin/wol $powerless
-    ;;
   m)
     /usr/bin/wol $monster
     ;;
@@ -300,6 +308,15 @@ esac
 
 ## Troubleshooting
 
+### Battery draining problem
+
+Some laptops have a battery draining problem after shutdown [[1]](http://ubuntuforums.org/archive/index.php/t-1729782.html). This might be caused by enabled WOL. To solve this problem, disable it by using ethtool as mentioned above.
+
+```
+# ethtool -s net0 wol d
+
+```
+
 ### Realtek
 
 Users with Realtek 8168 8169 8101 8111(C) based NICs (cards / and on-board) may notice a problem where the NIC seems to be disabled on boot and has no Link light. See [Network configuration#Realtek no link / WOL problem](/index.php/Network_configuration#Realtek_no_link_.2F_WOL_problem "Network configuration").
@@ -313,10 +330,6 @@ For the `r8168` module you might need to set the `s5wol=1` [module option](/inde
 ### alx driver support
 
 For some newer Atheros-based NICs (such as Atheros AR8161 and Killer E2500), WOL support has been disabled in the mainline `alx` module due to a bug causing unintentional wake-up (see [this patch discussion](http://www.spinics.net/lists/netdev/msg242477.html)). A patch can be applied (or installed as a [dkms](/index.php/Dkms "Dkms") module) which both restores WOL support and fixes the underlying bug, as outlined in [this thread](https://bugzilla.kernel.org/show_bug.cgi?id=61651).
-
-### Suspend/Resume
-
-If the computer does not wake after suspend/hibernate when using [TLP](/index.php/TLP "TLP"), set the `WOL_DISABLE` value to `N` in `/etc/default/tlp`.
 
 ## See also
 

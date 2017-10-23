@@ -331,18 +331,18 @@ The recent module can be used to trick the remaining two types of port scans. Th
 
 ##### SYN scans
 
-In a SYN scan, the port scanner sends a SYN (synchronization) packet to every port to initiate a TCP connection. Closed ports return a TCP RESET packet, or get dropped by a strict firewall. Open ports return a SYN ACK packet.
+In a SYN scan, the port scanner sends a SYN (synchronization) packet to every port to initiate a TCP connection. Closed ports return a TCP RESET packet, or get dropped by a strict firewall, while open ports return a SYN ACK packet.
 
-The recent module can be used to keep track of hosts with rejected connection attempts and return a TCP RESET for any SYN packet they send to open ports as if the port was closed. If an open port is the first to be scanned, a SYN ACK will still be returned, so running applications such as ssh on non-standard ports is required for this to work consistently.
+The `recent` module can be used to keep track of hosts with rejected connection attempts and return a TCP RESET for any SYN packet they send to open ports as if the port was closed. If an open port is the first to be scanned, a SYN ACK will still be returned, so running applications such as ssh on non-standard ports is required for this to work consistently.
 
-First, insert a rule at the top of the TCP chain. This rule responds with a TCP RESET to any host that got onto the TCP-PORTSCAN list in the past sixty seconds. The `--update` switch causes the recent list to be updated, meaning the 60 second counter is reset.
+First, insert a rule at the top of the TCP chain. This rule responds with a TCP RESET to any host that got onto the `TCP-PORTSCAN` list in the past sixty seconds. The `--update` switch causes the recent list to be updated, meaning the 60 second counter is reset.
 
 ```
 # iptables -I TCP -p tcp -m recent --update --seconds 60 --name TCP-PORTSCAN -j REJECT --reject-with tcp-reset
 
 ```
 
-Next, the rule for rejecting TCP packets need to be modified to add hosts with rejected packets to the TCP-PORTSCAN list.
+Next, the rule for rejecting TCP packets need to be modified to add hosts with rejected packets to the `TCP-PORTSCAN` list.
 
 ```
 # iptables -D INPUT -p tcp -j REJECT --reject-with tcp-reset
@@ -356,7 +356,7 @@ UDP port scans are similar to TCP SYN scans except that UDP is a "connectionless
 
 The Linux kernel sends out ICMP port unreachable messages very slowly, so a full UDP scan against a Linux machine would take over 10 hours. However, common ports could still be identified, so applying the same countermeasures against UDP scans as SYN scans is a good idea.
 
-First, add a rule to reject packets from hosts on the UDP-PORTSCAN list to the top of the UDP chain.
+First, add a rule to reject packets from hosts on the `UDP-PORTSCAN` list to the top of the UDP chain.
 
 ```
 # iptables -I UDP -p udp -m recent --update --seconds 60 --name UDP-PORTSCAN -j REJECT --reject-with icmp-port-unreachable

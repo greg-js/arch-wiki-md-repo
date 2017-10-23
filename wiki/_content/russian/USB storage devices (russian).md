@@ -8,6 +8,7 @@
 
 *   [1 Монтирование USB устройств](#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_USB_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2)
     *   [1.1 Автоматическое монтирование с помощью udev](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_udev)
+        *   [1.1.1 Автомонтирование с использованием systemd](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.81_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5.D0.BC_systemd)
     *   [1.2 Монтирование вручную](#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B2.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E)
         *   [1.2.1 Где взять ядро, поддерживающее usb_storage](#.D0.93.D0.B4.D0.B5_.D0.B2.D0.B7.D1.8F.D1.82.D1.8C_.D1.8F.D0.B4.D1.80.D0.BE.2C_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D1.8E.D1.89.D0.B5.D0.B5_usb_storage)
         *   [1.2.2 Опознавание устройств](#.D0.9E.D0.BF.D0.BE.D0.B7.D0.BD.D0.B0.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2)
@@ -76,6 +77,94 @@ sleep 1; rm -f $TMPFILE
  `имя_пользователя	ALL=(ALL) NOPASSWD: /bin/umount` 
 
 Если терминал не появляется проверьте команду его запуска. Например, в xfce4, используется команда "Terminal -T <title> -e <script-file> .
+
+#### Автомонтирование с использованием systemd
+
+Предыдущий способ плох тем что выключает скрипт через 3 минуты, и окно с консолью завершится в любом случае. Поэтому создаем новый файл **/etc/systemd/flash-mount@.service** и пишем туда:
+
+```
+[Unit]
+Description=Автомонтирование съемных устройств
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/udev/domount %I
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+Теперь отредактируем файл **/etc/udev/rules.d/automount.rules**:
+
+```
+ACTION=="add", ENV{DEVTYPE}=="partition", DRIVERS=="usb-storage", ENV{SYSTEMD_WANTS}="flash-mount@%N.service"
+
+```
+
+Теперь скрипт **/ust/lib/udev/domount**, вот улучшенная версия скрипта которая поддерживает русские символы:
+
+```
+#!/bin/sh
+
+MYUID=1000              # Ваш uid
+MYGID=100               # группа users
+MYLOGIN=user            # ваш логин
+TERM=xterm         		# ваш эмулятор терминала
+MYSHELL=bash            # ваш шелл
+export DISPLAY=:0       # Ваш X дисплей
+
+TMPFILE=/run/automount.$RANDOM
+DIR=`cat /etc/fstab | grep -v '#' | grep $* | awk '{print $2;}'`
+if [ "x$DIR" = "x" ]; then
+        MYUUID=`blkid -o value -s UUID $*`
+        if [ "x$MYUUID" = "x" ]; then
+                MYUUID="unknown"
+        fi
+        DIR=/run/media/$MYUUID
+fi
+mkdir -p /run/media
+mkdir -p $DIR
+cat > $TMPFILE << EOF
+#!/bin/sh
+echo "$* был примонтирован в $DIR. "
+sudo /bin/mount -o iocharset=utf8,uid=$MYUID,gid=$MYGID $* $DIR
+cd $DIR
+$MYSHELL
+sudo /bin/umount -l $DIR
+EOF
+
+export LANG=ru_RU.UTF-8
+export LC_CTYPE=ru_RU.UTF-8
+export LC_NUMERIC=ru_RU.UTF-8
+export LC_TIME=ru_RU.UTF-8
+export LC_COLLATE=ru_RU.UTF-8
+export LC_MONETARY=ru_RU.UTF-8
+export LC_MESSAGES=ru_RU.UTF-8
+export LC_PAPER=ru_RU.UTF-8
+export LC_NAME=ru_RU.UTF-8
+export LC_ADDRESS=ru_RU.UTF-8
+export LC_TELEPHONE=ru_RU.UTF-8
+export LC_MEASUREMENT=ru_RU.UTF-8
+export LC_IDENTIFICATION=ru_RU.UTF-8
+export LC_ALL=
+chmod a+x $TMPFILE
+
+su $MYLOGIN -c "$TERM -e $TMPFILE"
+sleep 1
+rm -f $TMPFILE
+rmdir "$DIR"
+
+```
+
+Теперь применяем правила:
+
+```
+udevadm control --reload-rules && udevadm trigger
+
+```
+
+Монтируем флешку и проверяем!
 
 ### Монтирование вручную
 

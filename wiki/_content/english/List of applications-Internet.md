@@ -1284,7 +1284,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 	[http://gnus.org/](http://gnus.org/) || [emacs](https://www.archlinux.org/packages/?name=emacs)
 
-*   **Newsbeuter** — Ncurses RSS aggregator with layout and keybinding similar to the [Mutt](/index.php/Mutt "Mutt") email client.
+*   **[Newsbeuter](/index.php/Newsbeuter "Newsbeuter")** — Ncurses RSS aggregator with layout and keybinding similar to the [Mutt](/index.php/Mutt "Mutt") email client.
 
 	[http://newsbeuter.org](http://newsbeuter.org) || [newsbeuter](https://www.archlinux.org/packages/?name=newsbeuter)
 

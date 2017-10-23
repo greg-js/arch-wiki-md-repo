@@ -135,7 +135,7 @@ card1-VGA-2
 ```
 [core]
 # xwayland support
-modules=xwayland.so
+xwayland=true
 
 [libinput]
 enable_tap=true
@@ -219,7 +219,7 @@ Minimal `weston.ini` :
  `~/.config/weston.ini` 
 ```
 [core]
-modules=xwayland.so
+xwayland=true
 
 [keyboard]
 keymap_layout=gb

@@ -860,7 +860,7 @@ Next time you connect, username and password should appear in the "VPN secrets" 
 
 ### Ignore specific devices
 
-Sometimes it may be desired that NetworkManager ignores specific devices and does not try to configure addresses and routes for them.You can quickly and easily ignore devices by MAC or interface-name by using the following in `/etc/NetworkManager/NetworkManager.conf`:
+Sometimes it may be desired that NetworkManager ignores specific devices and does not try to configure addresses and routes for them. You can quickly and easily ignore devices by MAC or interface-name by using the following in `/etc/NetworkManager/NetworkManager.conf`:
 
 ```
 [keyfile]

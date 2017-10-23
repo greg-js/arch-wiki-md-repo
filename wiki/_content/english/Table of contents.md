@@ -139,7 +139,7 @@
 | <small>6.5.2.</small> [Fonts](/index.php/Category:Fonts "Category:Fonts") <small>(7)</small> |
 | <small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(76)</small> |
 | <small>6.7.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(16)</small> |
-| <small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(37)</small> |
+| <small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(35)</small> |
 | <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(30)</small> |
 | <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(20)</small> |
 | <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(70)</small> |

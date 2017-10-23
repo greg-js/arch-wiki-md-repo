@@ -2,15 +2,15 @@
 
 ## Contents
 
-*   [1 installation](#installation)
-*   [2 configuration](#configuration)
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
     *   [2.1 Setting the right bus id](#Setting_the_right_bus_id)
     *   [2.2 Automatically run window manager](#Automatically_run_window_manager)
     *   [2.3 Use bbswitch to manage nvidia](#Use_bbswitch_to_manage_nvidia)
-*   [3 usage](#usage)
+*   [3 Usage](#Usage)
 *   [4 Troubleshooting](#Troubleshooting)
 
-## installation
+## Installation
 
 [Install](/index.php/Install "Install"):
 
@@ -19,7 +19,7 @@
 *   [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun/) or [nvidia-xrun-git](https://aur.archlinux.org/packages/nvidia-xrun-git/)
 *   a [Window manager](/index.php/Window_manager "Window manager"), such as [openbox](https://www.archlinux.org/packages/?name=openbox) it only for running applications，becasue running some applications (such as Steam) directly with nvidia-xrun does not work well, use some window manager like openbox will be better.
 
-## configuration
+## Configuration
 
 ### Setting the right bus id
 
@@ -75,30 +75,30 @@ With this you do not need to specify the app and you can simply run:
 
 ### Use bbswitch to manage nvidia
 
-When do not need to use nvidia , use bbswitch to turn off it , and run application which need nvidia , nvidia-xrun will automatically run window manager and wake up nvidia.
+When the nvidia card is not needed, bbswitch can be used to turn it off. The nvidia-xrun script will automatically take care of running a window manager and waking up the nvidia card. To achieve that, you need to:
 
-*   Load bbswitch module when boot
+*   Load bbswitch module on boot
 
 ```
  # echo 'bbswitch ' > /etc/modules-load.d/bbswitch
 
 ```
 
-*   Disable the nvidia on boot time.
+*   Disable the nvidia module on boot:
 
 ```
  # echo 'options bbswitch load_state=0 unload_state=1' > /etc/modprobe.d/bbswitch.conf 
 
 ```
 
-Reboot system , nvidia will be off , you can geet the status:
+After a reebot, the nvidia card will be off. This can bee seen by querying bbswitch's status:
 
 ```
  $ cat /proc/acpi/bbswitch  
 
 ```
 
-turn the card off, respectively on:
+To force the card to turn on/off respectively run:
 
 ```
  # tee /proc/acpi/bbswitch <<<OFF
@@ -106,9 +106,9 @@ turn the card off, respectively on:
 
 ```
 
-more about bbswitch see [Bumblebee-Project/bbswitch](https://github.com/Bumblebee-Project/bbswitch)
+For more about bbswitch see [Bumblebee-Project/bbswitch](https://github.com/Bumblebee-Project/bbswitch)
 
-## usage
+## Usage
 
 1.  switch to free tty
 2.  login
