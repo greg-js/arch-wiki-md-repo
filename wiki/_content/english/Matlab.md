@@ -398,9 +398,9 @@ See [[6]](https://bugzilla.redhat.com/show_bug.cgi?id=1357571) and [[7]](https:/
 
 ### Addon manager not working
 
-Addon manager requires the [libselinux](https://aur.archlinux.org/packages/libselinux/) package to work. (in Matlab 2016b)
+Addon manager requires the [libselinux](https://aur.archlinux.org/packages/libselinux/) package to work. (in Matlab 2017b)
 
-Since upgrade from pango-1.40.5 to pango-1.40.6, the MATLABWindow application (responsible for Add-On Manager, Simulation Data Inspector and perhaps something else) cannot be started. [[8]](https://bugs.archlinux.org/task/54257) A workaround is to point MATLAB shipping glib libraries to those glib libraries from your system. There are 5 of those libraries in `matlabroot/R2017a/cefclient/sys/os/glnxa64`, namely, as of R2017a:
+Since upgrade from pango-1.40.5 to pango-1.40.6, the MATLABWindow application (responsible for Add-On Manager, Simulation Data Inspector and perhaps something else) cannot be started. [[8]](https://bugs.archlinux.org/task/54257) A workaround is to point MATLAB shipping glib libraries to those glib libraries from your system. There are 5 of those libraries in `matlabroot/R2017b/cefclient/sys/os/glnxa64`, namely, as of R2017b:
 
 ```
 libgio-2.0.so
@@ -411,9 +411,9 @@ libgthread-2.0.so
 
 ```
 
-Make it so that these symlinks are pointing to your system glib libraries instead of versions located in `matlabroot/R2017a/cefclient/sys/os/glnxa64`.
+Make it so that these symlinks are pointing to your system glib libraries instead of versions located in `matlabroot/R2017b/cefclient/sys/os/glnxa64`. On a standard arch install the local files reside in `/usr/lib/`.
 
-Relinking of "libfreetype.so.6" is also necessary to open these interfaces. This is found in `matlabroot/R2017a/bin/glnxa64/`.
+Relinking of "libfreetype.so.6" is also necessary to open these interfaces. This is found in `matlabroot/R2017b/bin/glnxa64/`.
 
 If the window opens but is blank, consider switching the html renderer to: " webutils.htmlrenderer('basic');" as described in [#Help browser](#Help_browser).
 

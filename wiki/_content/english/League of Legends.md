@@ -315,7 +315,7 @@ Then replace all mentions of localhost with the hostname you got from the first 
 
 #### Low FPS
 
-*   On Wine configuration, in staging tab, set CSMT option checked
+*   On Wine configuration, in staging tab, set CSMT option checked (Note: You can alternatively install [wine-staging-nine](https://www.archlinux.org/packages/?name=wine-staging-nine) and enable gallium-nine in the staging tab instead)
 *   In game settings, set max FPS to 60 and disable vertical sync
 
 #### For d3dstream patched Wine

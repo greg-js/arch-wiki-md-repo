@@ -270,7 +270,7 @@ The 16 characters used in the ModHex alphabet are: `c,b,d,e,f,g,h,i,j,k,l,n,r,t,
 
 ### Yubico OTP mode
 
-The Yubico OTP mode is AES symmetric key based. On a new YubiKey the Yubico OTP is preconfigured on slot 1\. This initial AES symmetric key is stored in the YubiKey and the same AES key is already stored on the Yubico Authentication server. This allows validating against YubiCloud, meaning the use of Yubico OTP in combination with the Yubico Forum website for instance or on [demo.yubico.com](/index.php?title=Demo.yubico.com&action=edit&redlink=1 "Demo.yubico.com (page does not exist)")).
+The Yubico OTP mode is AES symmetric key based. On a new YubiKey the Yubico OTP is preconfigured on slot 1\. This initial AES symmetric key is stored in the YubiKey and the same AES key is already stored on the Yubico Authentication server. This allows validating against YubiCloud, meaning the use of Yubico OTP in combination with the Yubico Forum website for instance or on [https://demo.yubico.com](https://demo.yubico.com)).
 
 The initial configuration and AES key stored in slot 1 can of course be overwritten.
 

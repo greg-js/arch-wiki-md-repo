@@ -267,7 +267,7 @@ lxc.net.0.hwaddr = ee:ec:fa:e9:56:7d
 # uncomment the next two lines if static IP addresses are needed
 # leaving these commented will imply DHCP networking
 #
-#lxc.net.0.ipv4 = 192.168.0.3/24
+#lxc.net.0.ipv4.address = 192.168.0.3/24
 #lxc.net.0.ipv4.gateway = 192.168.0.1
 
 ```

@@ -228,7 +228,7 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
     *   Offers encryption and de-duplication.
     *   Usually accessed through its web interface but other tools exist.
 
-	[https://mega.co.nz](https://mega.co.nz) || [megatools](https://aur.archlinux.org/packages/megatools/), [megasync](https://aur.archlinux.org/packages/megasync/), [megafuse](https://aur.archlinux.org/packages/megafuse/)
+	[https://mega.co.nz](https://mega.co.nz) || [megatools](https://aur.archlinux.org/packages/megatools/), [megasync](https://aur.archlinux.org/packages/megasync/), [megafuse-git](https://aur.archlinux.org/packages/megafuse-git/)
 
 *   **Nutstore** — A cloud service that lets you sync and share files anywhere.
     *   Multiple file folders sync.

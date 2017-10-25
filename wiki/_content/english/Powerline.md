@@ -10,6 +10,8 @@
     *   [1.5 Airline-vim alternative](#Airline-vim_alternative)
     *   [1.6 Special plugins](#Special_plugins)
 *   [2 Usage](#Usage)
+    *   [2.1 Bash](#Bash)
+    *   [2.2 Other plugins](#Other_plugins)
 
 ## Installation
 
@@ -17,7 +19,7 @@ Powerline can be installed in multiple ways, depending on preference and/or usag
 
 ### Official repositories
 
-[Install](/index.php/Install "Install") [powerline](https://www.archlinux.org/packages/?name=powerline) from the [official repositories](/index.php/Official_repositories "Official repositories")
+[Install](/index.php/Install "Install") [powerline](https://www.archlinux.org/packages/?name=powerline) and [powerline-fonts](https://www.archlinux.org/packages/?name=powerline-fonts) from the [official repositories](/index.php/Official_repositories "Official repositories")
 
 ### Using python-pip
 
@@ -63,5 +65,21 @@ Depending on where you want to use Powerline, you might need to install addition
 	[python-i3-git](https://aur.archlinux.org/packages/python-i3-git/)
 
 ## Usage
+
+### Bash
+
+After installing [powerline](https://www.archlinux.org/packages/?name=powerline) and [powerline-fonts](https://www.archlinux.org/packages/?name=powerline-fonts). Add the following to your **~/.bashrc**:
+
+```
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+
+```
+
+Close and reopen your terminal and it should be working. If not, check if Python version has changed and then update this page.
+
+### Other plugins
 
 For detailed usage instructions, such as configuring your system to use Powerline with shell prompts, window manager widgets, etc., please refer to the [Usage section](https://powerline.readthedocs.io/en/latest/usage.html#usage) of the [Powerline documentation](https://powerline.readthedocs.io/en/latest/index.html).

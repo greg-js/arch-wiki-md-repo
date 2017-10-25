@@ -31,7 +31,14 @@ If you would like to use an Arch Linux theme for XDM, you can optionally install
 
 ### Defining the session
 
-Unlike many more modern [display managers](/index.php/Display_manager "Display manager") such as [GDM](/index.php/GDM "GDM") or [LightDM](/index.php/LightDM "LightDM"), XDM does not source available sessions from .desktop files located in the `/usr/share/xsessions` directory. As such, XDM does not have a 'session menu.' Instead, XDM will execute the `.xsession` file in the home directory. See also [Xinitrc#Configuration](/index.php/Xinitrc#Configuration "Xinitrc").
+Unlike many more modern [display managers](/index.php/Display_manager "Display manager") such as [GDM](/index.php/GDM "GDM") or [LightDM](/index.php/LightDM "LightDM"), XDM does not source available sessions from .desktop files located in the `/usr/share/xsessions` directory. As such, XDM does not have a 'session menu.' Instead, XDM will execute the `.xsession` file in the home directory.
+
+For example, to start xfce upon login, the `~/.xsession` should look like this
+
+```
+startxfce4
+
+```
 
 Ensure that the `.xsession` file in your home directory is executable. To do this use the following command:
 

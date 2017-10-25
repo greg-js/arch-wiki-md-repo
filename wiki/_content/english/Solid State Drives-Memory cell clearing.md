@@ -1,3 +1,8 @@
+Related articles
+
+*   [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives")
+*   [Securely wipe disk](/index.php/Securely_wipe_disk "Securely wipe disk")
+
 On occasion, users may wish to completely reset an SSD's cells to the same virgin state they were manufactured, thus restoring it to its [factory default write performance](http://www.anandtech.com/storage/showdoc.aspx?i=3531&p=8). Write performance is known to degrade over time even on SSDs with native TRIM support. TRIM only safeguards against file deletes, not replacements such as an incremental save.
 
 **Warning:**
@@ -33,10 +38,10 @@ A possible solution is to simply [suspend](/index.php/Suspend "Suspend") the sys
 If the command output shows "frozen", you may be able to work around it by:
 
 1.  Reboot into the Dell BIOS by pressing F2 on startup.
-2.  Set the Internal HDD Password in the BIOS.
+2.  Set the Internal HDD Password in the BIOS (be careful, the keymap is en_US / qwerty).
 3.  Apply the changes and reboot.
 4.  When prompted for the password by Dell Security Manager, press Escape rather than entering it. The drive will remain locked but not frozen.
-5.  Skip to Step 3 below.
+5.  Skip step 2, and go directly to Step 3 below.
 
 **Note:** If you are using a Lenovo system and can not remove the "frozen" state (e.g. Lenovo tablets use SSD on M.2 interface), you can use a **[proprietary tool](https://pcsupport.lenovo.com/us/en/olddownloads/ds019026)** to accomplish the memory cell clearing rather than following this article. See also: [https://superuser.com/questions/763642/secure-erase-ssd-on-lenovo-thinkpad-t520-cant-unfreeze-ssd-machine-reboots-on](https://superuser.com/questions/763642/secure-erase-ssd-on-lenovo-thinkpad-t520-cant-unfreeze-ssd-machine-reboots-on)
 

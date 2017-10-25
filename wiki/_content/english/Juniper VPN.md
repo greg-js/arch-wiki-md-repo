@@ -3,9 +3,11 @@
 *   [1 Installation](#Installation)
     *   [1.1 Native Open Source support with OpenConnect](#Native_Open_Source_support_with_OpenConnect)
     *   [1.2 Official Software Preferred installation method](#Official_Software_Preferred_installation_method)
-    *   [1.3 Third-party scripts](#Third-party_scripts)
-        *   [1.3.1 Mad Scientist's "msjnc" script](#Mad_Scientist.27s_.22msjnc.22_script)
-        *   [1.3.2 Jvpn script (support 64-bit and host checker)](#Jvpn_script_.28support_64-bit_and_host_checker.29)
+    *   [1.3 Using the pulsesvc CLI client](#Using_the_pulsesvc_CLI_client)
+    *   [1.4 Using the pulseUi GUI client](#Using_the_pulseUi_GUI_client)
+    *   [1.5 Third-party scripts](#Third-party_scripts)
+        *   [1.5.1 Mad Scientist's "msjnc" script](#Mad_Scientist.27s_.22msjnc.22_script)
+        *   [1.5.2 Jvpn script (support 64-bit and host checker)](#Jvpn_script_.28support_64-bit_and_host_checker.29)
 *   [2 Workarounds](#Workarounds)
     *   [2.1 64-bit Java (workaround 1)](#64-bit_Java_.28workaround_1.29)
     *   [2.2 64-bit Java (workaround 2)](#64-bit_Java_.28workaround_2.29)
@@ -17,6 +19,7 @@
     *   [3.4 Network Connect launched and a configuration error message is displayed](#Network_Connect_launched_and_a_configuration_error_message_is_displayed)
     *   [3.5 ncapp.error Failed to connect/authenticate with IVE.](#ncapp.error_Failed_to_connect.2Fauthenticate_with_IVE.)
     *   [3.6 ncsvc and kernel versions 3.19 and 4.5 to 4.9](#ncsvc_and_kernel_versions_3.19_and_4.5_to_4.9)
+    *   [3.7 Unauthorized new route has been added, disconnecting](#Unauthorized_new_route_has_been_added.2C_disconnecting)
 
 ## Installation
 
@@ -90,6 +93,25 @@ for use without GUI. To stop the client, execute
 $ jnc stop
 
 ```
+
+### Using the pulsesvc CLI client
+
+1) Install [pulse-secure](https://aur.archlinux.org/packages/pulse-secure/).
+
+2) Run the service
+
+```
+$ pulsesvc -h <hostname> -Port <port number> -u <username> -realm <realm> -Url <login URL>
+
+```
+
+Note that the login URL is different from the URL used in browsers. Check "Note regarding Server/URL" section below.
+
+### Using the pulseUi GUI client
+
+1) Install [pulse-secure](https://aur.archlinux.org/packages/pulse-secure/) and [webkitgtk](https://aur.archlinux.org/packages/webkitgtk/). The latter is necessary for the GUI frontend.
+
+2) Run `pulseUi`. In the GUI client, the URL should be same as that used in browsers.
 
 ### Third-party scripts
 
@@ -340,4 +362,15 @@ There are also issues with [linux](https://www.archlinux.org/packages/?name=linu
 
 	To make this setting automatically on boot time use [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd"):
 
- `/etc/tmpfiles.d/disable-router-solicitations.conf`  `w /proc/sys/net/ipv6/conf/default/router_solicitations - - - - 0`
+ `/etc/tmpfiles.d/disable-router-solicitations.conf`  `w /proc/sys/net/ipv6/conf/default/router_solicitations - - - - 0` 
+
+### Unauthorized new route has been added, disconnecting
+
+When using the [pulse-secure](https://aur.archlinux.org/packages/pulse-secure/) client, VPN may not work with [connman](https://www.archlinux.org/packages/?name=connman) due to conflicting routing table strategies. Check `~/.pulse_secure/pulse/pulsesvc.log` for such messages:
+
+```
+rmon.error Unauthorized new route to x.x.x.x/y.y.y.y has been added (conflicts with our route to z.z.z.z), disconnecting (routemon.cpp:598)
+
+```
+
+If this is the case, using [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) instead can fix the issue.

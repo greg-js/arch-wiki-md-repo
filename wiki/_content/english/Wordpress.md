@@ -1,3 +1,10 @@
+Related articles
+
+*   [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server")
+*   [PHP](/index.php/PHP "PHP")
+*   [MySQL](/index.php/MySQL "MySQL")
+*   [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")
+
 [WordPress](http://wordpress.org) is a free and open source content management system ([CMS](https://en.wikipedia.org/wiki/Content_management_system "wikipedia:Content management system")) created by [Matt Mullenweg](https://en.wikipedia.org/wiki/Matt_Mullenweg "wikipedia:Matt Mullenweg") and first released in 2003\. WordPress has a vast and vibrant community that provides tens of thousands of free plugins and themes to allow the user to easily customize the appearance and function of their WordPress CMS. WordPress is licensed under the GPLv2.
 
 The biggest feature of WordPress is its ease in configuration and administration. [Setting up a WordPress site takes five minutes](http://codex.wordpress.org/Installing_WordPress). The WordPress administration panel allows users to easily configure almost every aspect of their website including fetching and installing plugins and themes. WordPress provides effortless automatic updates.
@@ -23,6 +30,8 @@ The biggest feature of WordPress is its ease in configuration and administration
     *   [4.3 Updating](#Updating)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Appearance is broken (no styling)](#Appearance_is_broken_.28no_styling.29)
+    *   [5.2 Plugins are unable to install: Could not create directory](#Plugins_are_unable_to_install:_Could_not_create_directory)
+    *   [5.3 Cannot save plugins to localhost](#Cannot_save_plugins_to_localhost)
 *   [6 Tips and tricks](#Tips_and_tricks)
 *   [7 See also](#See_also)
 
@@ -235,6 +244,24 @@ This occurs because you used a url with the hostname of your server, instead of 
 To fix this, you will either need to edit your /etc/hosts file or setup a proxy server. For an easy to setup proxy server, see [Polipo](/index.php/Polipo "Polipo"), or if you want something with a little more configuration, see [Squid](/index.php/Squid "Squid").
 
 Another option is changing a value in the database table of your WordPress, specifically the wp_options table. The fix is to change the siteurl option to point directly to the domain name and not "localhost".
+
+### Plugins are unable to install: Could not create directory
+
+Your WordPress site need appropriate permissions to your local files. It doesn't have the permissions to create files/directory. Appache with Arch uses the user `http`.
+
+To give the appropriate permissions run the following command:
+
+ `$ chown -R http:http your-wordpress-directory/wp-content` 
+
+### Cannot save plugins to localhost
+
+WordPress uses by default only a ftp server to download plugins. In order to also download them locally append the following config:
+
+ `# *wordpress_root_location*/wp-config.php` 
+```
+define('FSMETHOD', 'direct');
+
+```
 
 ## Tips and tricks
 

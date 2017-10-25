@@ -64,6 +64,8 @@ According to the [official website](https://www.gnupg.org/):
     *   [9.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
     *   [9.9 Smartcard not detected](#Smartcard_not_detected)
     *   [9.10 gpg: WARNING: server 'gpg-agent' is older than us (x < y)](#gpg:_WARNING:_server_.27gpg-agent.27_is_older_than_us_.28x_.3C_y.29)
+    *   [9.11 gpg: ..., IPC connect call failed](#gpg:_....2C_IPC_connect_call_failed)
+    *   [9.12 Error: [key] could not be locally signed or gpg: No default secret key: No public key](#Error:_.5Bkey.5D_could_not_be_locally_signed_or_gpg:_No_default_secret_key:_No_public_key)
 *   [10 See also](#See_also)
 
 ## Installation
@@ -814,6 +816,35 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 ### gpg: WARNING: server 'gpg-agent' is older than us (x < y)
 
 This warning appears if `gnupg` is upgraded and the old gpg-agent is still running. [Restart](/index.php/Restart "Restart") the *user'*s `gpg-agent.socket` (i.e., use the `--user` flag when restarting).
+
+### gpg: ..., IPC connect call failed
+
+Make sure `gpg-agent` and `dirmngr` are not running with `killall gpg-agent dirmngr` and the `$GNUPGHOME/crls.d/` folder has permission set to `700`.
+
+If your keyring is stored on a vFat filesystem (e.g. a USB drive), `gpg-agent` will fail to create the required sockets (vFat does not support sockets), you can create redirects to a location that handles sockets, e.g. `/dev/shm`:
+
+```
+# export GNUPGHOME=/custom/gpg/home                                                                
+# printf '%%Assuan%%
+socket=/dev/shm/S.gpg-agent
+' > $GNUPGHOME/S.gpg-agent                      
+# printf '%%Assuan%%
+socket=/dev/shm/S.gpg-agent.browser
+' > $GNUPGHOME/S.gpg-agent.browser      
+# printf '%%Assuan%%
+socket=/dev/shm/S.gpg-agent.extra
+' > $GNUPGHOME/S.gpg-agent.extra          
+# printf '%%Assuan%%
+socket=/dev/shm/S.gpg-agent.ssh
+' > $GNUPGHOME/S.gpg-agent.ssh              
+
+```
+
+Test that gpg-agent starts successfully with `gpg-agent --daemon`.
+
+### Error: [key] could not be locally signed or gpg: No default secret key: No public key
+
+Occurs when attempting to sign keys on a non-standard keyring while a yubikey is plugged in, e.g. as [Pacman](/index.php/Pacman/Package_signing "Pacman/Package signing") does in `pacman-key --populate archlinux`. The solution is to remove the offending yubikey and start over.
 
 ## See also
 

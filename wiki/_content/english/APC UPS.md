@@ -11,6 +11,7 @@ This document describes how to install the APC UPS daemon. The main advantage of
     *   [4.3 Make apcupsd kill UPS power once the hibernate is done](#Make_apcupsd_kill_UPS_power_once_the_hibernate_is_done)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 The desktop environment will also sense the UPS if connected by USB cable](#The_desktop_environment_will_also_sense_the_UPS_if_connected_by_USB_cable)
+    *   [5.2 hid-generic : control queue full](#hid-generic_:_control_queue_full)
 *   [6 See also](#See_also)
 
 ## Install the package
@@ -225,6 +226,10 @@ Now you can [test your setup](#Test).
 ### The desktop environment will also sense the UPS if connected by USB cable
 
 For example, the default KDE setting is to put the computer in sleep if it has been on UPS battery for more than 10 minutes and the mouse has not moved. On many computers this causes a crash. This can be changed from KDE System Settings->Power Management->On battery.
+
+### hid-generic : control queue full
+
+If you are using a [systemd based initramfs](https://wiki.archlinux.org/index.php/Mkinitcpio#Common_hooks) you might run into the "control queue full" log message happening many times every second. You'll want to add `hid-generic` to you `modules` and regenerate your initramfs.
 
 ## See also
 

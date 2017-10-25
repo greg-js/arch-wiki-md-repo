@@ -33,10 +33,9 @@ Related articles
     *   [6.1 Extracting the image](#Extracting_the_image)
     *   [6.2 Recompressing a modified extracted image](#Recompressing_a_modified_extracted_image)
     *   [6.3 "/dev must be mounted" when it already is](#.22.2Fdev_must_be_mounted.22_when_it_already_is)
-    *   [6.4 Using systemd HOOKS in a LUKS/LVM/resume setup](#Using_systemd_HOOKS_in_a_LUKS.2FLVM.2Fresume_setup)
-    *   [6.5 Possibly missing firmware for module XXXX](#Possibly_missing_firmware_for_module_XXXX)
-    *   [6.6 Standard rescue procedures](#Standard_rescue_procedures)
-        *   [6.6.1 Boot succeeds on one machine and fails on another](#Boot_succeeds_on_one_machine_and_fails_on_another)
+    *   [6.4 Possibly missing firmware for module XXXX](#Possibly_missing_firmware_for_module_XXXX)
+    *   [6.5 Standard rescue procedures](#Standard_rescue_procedures)
+        *   [6.5.1 Boot succeeds on one machine and fails on another](#Boot_succeeds_on_one_machine_and_fails_on_another)
 *   [7 See also](#See_also)
 
 ## Overview
@@ -464,49 +463,6 @@ The test used by mkinitcpio to determine if /dev is mounted is to see if /dev/fd
 ```
 
 (Obviously, /proc must be mounted as well. mkinitcpio requires that anyway, and that is the next thing it will check.)
-
-### Using systemd HOOKS in a LUKS/LVM/resume setup
-
-Using `systemd`/`sd-encrypt`/`sd-lvm2` **HOOKS** instead of the traditional `encrypt`/`lvm2`/`resume` requires different initrd parameters to be passed by your [boot loader](/index.php/Boot_loader "Boot loader"). See [this post on forum](https://bbs.archlinux.org/viewtopic.php?pid=1480241) for background. More information about the possible parameters is available [here](https://www.freedesktop.org/software/systemd/man/kernel-command-line.html)
-
-To support LUKS and LVM:
-
-You'll need to switch your hooks from udev to systemd and to sd-* where applicable, an updated HOOKS entry would look something like
-
- `/etc/mkinitcpio.conf`  `HOOKS="systemd autodetect modconf block keymap sd-encrypt sd-lvm2 btrfs filesystems keyboard"` 
-
-To use the systemd kernel parameters via bootctl with a basic lvm of root and swap
-
- `/boot/loader/entries/arch-encrypted.conf` 
-```
-title ArchLinux
-linux /vmlinuz-linux
-initrd /initramfs-linux.img
-options rd.luks.uuid=XXXX... rd.lvm.lv=vg/vg-root rd.lvm.lv=vg/vg-swap root=UUID=YYYY...
-```
-
-**Note:** For XXXX uuid and YYYY uuid run
-```
-lsblk -f
----
-NAME                                     FSTYPE      LABEL UUID MOUNTPOINT
-sda                                                                                                
-├─sda1                                   vfat        BOOT-UUID /boot
-└─sda2                                   crypto_LUKS XXXX-...   
-  └─luks-XXXX-...                        LVM2_member LVM-UUID 
-    ├─vg-swap                            swap        SWAP-UUID [SWAP]
-    └─vg-root                            btrfs       YYYY-...  /
-
-```
-
-now you should be able to run
-
-```
- mkinitcpio -p linux
-
-```
-
-and with a reboot the switch from udev to systemd should be completed
 
 ### Possibly missing firmware for module XXXX
 

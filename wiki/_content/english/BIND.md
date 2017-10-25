@@ -1,3 +1,11 @@
+Related articles
+
+*   [DNSCrypt](/index.php/DNSCrypt "DNSCrypt")
+*   [dnsmasq](/index.php/Dnsmasq "Dnsmasq")
+*   [Pdnsd](/index.php/Pdnsd "Pdnsd")
+*   [Unbound](/index.php/Unbound "Unbound")
+*   [PowerDNS](/index.php/PowerDNS "PowerDNS")
+
 [BIND](https://www.isc.org/downloads/bind/) is the most widely used Domain Name System (DNS) server.
 
 **Note:** The organization developing BIND is serving security notices to paying customers up to four days before Linux distributions or the general public.[[1]](https://kb.isc.org/article/AA-00861/0/ISC-Software-Defect-and-Security-Vulnerability-Disclosure-Policy.html)
@@ -162,7 +170,7 @@ In order to do this, we first need to create a place to keep the jail, we shall 
  mkdir -p /srv/named/{dev,etc,usr/lib/engines,var/{run,log,named}}
  # Copy over required system files
  cp -av /etc/{localtime,named.conf} /srv/named/etc/
- cp -av /usr/lib/engines/* /srv/named/usr/lib/engines/
+ cp -av /usr/lib/engines-1.1/* /srv/named/usr/lib/engines/
  cp -av /var/named/* /srv/named/var/named/.
  # Set up required dev nodes
  mknod /srv/named/dev/null c 1 3
@@ -191,7 +199,56 @@ we need to edit how the service calls bind.
 
 ```
 
-Now, reload systemd `systemctl daemon-reload`. Then [start](/index.php/Start "Start") `named-chroot.service`
+Stop the old named service
+
+```
+ systemctl stop named.service
+
+```
+
+Disable the old named service
+
+```
+ systemctl disable named.service
+
+```
+
+Enable the new chroot named service
+
+```
+ systemctl enable named-chroot.service
+
+```
+
+Now reload systemd
+
+```
+ systemctl daemon-reload
+
+```
+
+Then [start](/index.php/Start "Start") `named-chroot.service` using
+
+```
+ systemctl start named-chroot.service
+
+```
+
+Check the service status
+
+```
+ systemctl status named-chroot.service
+
+```
+
+If you see any errors, reboot your system. Then check again and it should then be loading the **named-chroot.service** automatically and not **named.service**.
+
+You can check all enabled services using
+
+```
+ sudo systemctl list-unit-files | grep enabled
+
+```
 
 ## See also
 

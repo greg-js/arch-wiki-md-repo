@@ -20,7 +20,7 @@ The *fuseiso* command line program is a simple tool that uses [FUSE](https://en.
 The syntax for mounting an image is:
 
 ```
-# fuseiso *source_imagefile* *destination_directory*
+$ fuseiso *source_imagefile* *destination_directory*
 
 ```
 

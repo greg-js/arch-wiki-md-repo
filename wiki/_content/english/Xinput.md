@@ -1,11 +1,16 @@
-*xinput* is a utility to configure and test X input devices, such as mouses, keyboards, and touchpads. It is found in the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package. It is similar to [xmodmap](/index.php/Xmodmap "Xmodmap") in function, but uses the newer X Input Extension, and is thus more powerful and flexible.
+Related articles
 
-## xinput list
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [libinput](/index.php/Libinput "Libinput")
 
-To list what xinput devices are available, use *xinput list*.
+*xinput* is a utility to configure and test X input devices, such as mouses, keyboards, and touchpads. It is found in the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package.
 
+## List devices
+
+To list what xinput devices are available, use:
+
+ `$ xinput list` 
 ```
-$ xinput list
 ⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
 ⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
 ⎜   ↳ SYNA7813:00 06CB:16DB                   	id=13	[slave  pointer  (2)]
@@ -22,16 +27,15 @@ $ xinput list
     ↳ AT Translated Set 2 keyboard            	id=14	[slave  keyboard (3)]
     ↳ HP WMI hotkeys                          	id=16	[slave  keyboard (3)]
     ↳ HP Wireless hotkeys                     	id=17	[slave  keyboard (3)]
-
 ```
 
-## Example usage of xinput
+## Usage examples
 
-Here are some of the ways xinput can be used
+Here are some of the ways *xinput* can be used.
 
 ### Remove the middle and right mouse buttons
 
 ```
-$ xinput set-button-map 'dougav’s mouse'  1 1 1
+$ xinput set-button-map 'dougav’s mouse' 1 1 1
 
 ```

@@ -63,14 +63,6 @@ This is a list of helper utilities that search, download and/or build packages.
 
 	[https://github.com/falconindy/cower](https://github.com/falconindy/cower) || [cower](https://aur.archlinux.org/packages/cower/)
 
-*   **cylon** — pacman and pacaur wrapper, and is also a wrapper for cower and provides it a backend. Includes various other maintenance functions and extras.
-
-	[https://github.com/gavinlyonsrepo/cylon](https://github.com/gavinlyonsrepo/cylon) || [cylon](https://aur.archlinux.org/packages/cylon/)
-
-*   **owlman** — pacman and cower wrapper ([Forum page](https://bbs.archlinux.org/viewtopic.php?id=129609))
-
-	[https://github.com/baskerville/owlman](https://github.com/baskerville/owlman) || [owlman](https://aur.archlinux.org/packages/owlman/)
-
 *   **pacaur** — An AUR helper that minimizes user interaction. ([Forum page](https://bbs.archlinux.org/viewtopic.php?pid=937423))
 
 	[https://github.com/rmarquis/pacaur](https://github.com/rmarquis/pacaur) || [pacaur](https://aur.archlinux.org/packages/pacaur/)
@@ -145,14 +137,6 @@ This is a list of helper utilities that search, download and/or build packages.
 
 	[https://github.com/anatol/pkgoutofdate](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-git](https://aur.archlinux.org/packages/pkgoutofdate-git/)
 
-*   **aur-check** — Uses the AUR API to find newer versions of your foreign packages
-
-	[https://gist.github.com/felipec/94752ddd08e1adfb80ac57947982443c](https://gist.github.com/felipec/94752ddd08e1adfb80ac57947982443c) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **updpkgver** — Detects upstream releases and updates the PKGBUILD automatically
-
-	[https://github.com/renatosilva/pactoys/tree/master/source/updpkgver](https://github.com/renatosilva/pactoys/tree/master/source/updpkgver) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
 ## Libraries
 
 *   **haskell-archlinux** — Library to access the AUR and package metadata from the Haskell programming language
@@ -198,7 +182,6 @@ The columns have the following meaning:
 | aurutils | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | zsh | S | [vifm](/index.php/Vifm "Vifm"), [PCRE](https://en.wikipedia.org/wiki/PCRE "w:PCRE"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support |
 | bauerbill | Python | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Trust management, ABS support, extends Powerpill |
 | burgaur | Python/C | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | P | Wrapper for *cower* |
-| owlman | Bash/C | Yes | Yes | Yes | No | Partial | No | None | S | Wrapper for *cower* |
 | pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Minimizes user interaction, multilingual, sort by votes/popularity |
 | packer | Bash | No | Yes | No | No | No | No | None | P | - |
 | pbget | Python | Yes | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds |

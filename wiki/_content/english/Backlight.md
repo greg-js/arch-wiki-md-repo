@@ -40,7 +40,7 @@ All methods are exposed to the user through `/sys/class/backlight` and xrandr/xb
 
 ## ACPI
 
-The brightness of the screen backlight is adjusted by setting the power level of the backlight LEDs or cathodes. The power level can often be controlled using the ACPI kernel module for video. An interface to this module is provided via a folder in the sysfs at `/sys/class/backlight`.
+The brightness of the screen backlight is adjusted by setting the power level of the backlight LEDs or cathodes. The power level can often be controlled using the ACPI kernel module for video. An interface to this module is provided via a sysfs directory at `/sys/class/backlight/`.
 
 The name of the folder depends on the graphics card model.
 

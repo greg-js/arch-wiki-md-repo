@@ -201,5 +201,6 @@ $ lxc profile edit default
 
 ## See also
 
+*   [Official documentation](https://lxd.readthedocs.io)
 *   [The official LXD homepage](https://linuxcontainers.org/lxd/)
 *   [The LXD GitHub page](https://github.com/lxc/lxd)

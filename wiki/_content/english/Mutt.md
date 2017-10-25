@@ -110,7 +110,9 @@ Or (if using POP3) [getmail](https://www.archlinux.org/packages/?name=getmail), 
 
 The [NeoMutt](http://www.neomutt.org/) project aims to bring together all the patches for Mutt. It adds a large set of [features](http://www.neomutt.org/feature.html). Lots of old Mutt patches have been brought up-to-date, tidied and documented.
 
-While there are many different packages of mutt in the AUR, each of them providing another set of patches, NeoMutt aims to replace them in the future by implementing appropriate compile options. For now, you can find NeoMutt in the AUR at [neomutt](https://www.archlinux.org/packages/?name=neomutt) and [neomutt-git](https://aur.archlinux.org/packages/neomutt-git/).
+While there are many different packages of mutt in the AUR, each of them providing another set of patches, NeoMutt aims to replace them in the future by implementing appropriate compile options.
+
+NeoMutt can be installed with the [neomutt](https://www.archlinux.org/packages/?name=neomutt) package or alternatively from the AUR at [neomutt-git](https://aur.archlinux.org/packages/neomutt-git/) for the development version.
 
 ## Configuration
 

@@ -1,3 +1,7 @@
+Related articles
+
+*   [Android tethering](/index.php/Android_tethering "Android tethering")
+
 ## Contents
 
 *   [1 Exploring Android device](#Exploring_Android_device)
@@ -34,7 +38,7 @@
 *   [5 Alternative connection methods](#Alternative_connection_methods)
     *   [5.1 Android File Transfer](#Android_File_Transfer)
     *   [5.2 adb-sync](#adb-sync)
-    *   [5.3 AirDroid](#AirDroid)
+    *   [5.3 AirDroid and AirMore](#AirDroid_and_AirMore)
     *   [5.4 Send Anywhere](#Send_Anywhere)
     *   [5.5 AndroidScreencast](#AndroidScreencast)
     *   [5.6 FTP](#FTP)
@@ -558,9 +562,9 @@ which means that your device is visible to Odin & Windows operating system and i
 
 [adb-sync](https://github.com/google/adb-sync) (available in [adb-sync-git](https://aur.archlinux.org/packages/adb-sync-git/)) is a tool to synchronize files between a PC and an Android device using the ADB protocol.
 
-### AirDroid
+### AirDroid and AirMore
 
-[AirDroid](https://play.google.com/store/apps/details?id=com.sand.airdroid) is an Android app to access files from your web browser.
+[AirDroid](https://play.google.com/store/apps/details?id=com.sand.airdroid) and [AirMore](https://play.google.com/store/apps/details?id=com.airmore) are Android apps which provide file transfer and remote phone control from your web browser, via your local LAN or over the web.
 
 ### Send Anywhere
 

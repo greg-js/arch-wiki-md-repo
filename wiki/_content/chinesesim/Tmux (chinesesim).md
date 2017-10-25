@@ -1,6 +1,13 @@
-**翻译状态：** 本文是英文页面 [Tmux](/index.php/Tmux "Tmux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-01-03，点击[这里](https://wiki.archlinux.org/index.php?title=Tmux&diff=0&oldid=456181)可以查看翻译后英文页面的改动。
+相关文章
 
-[Tmux](http://tmux.github.io/) 是一个终端复用器: 可以激活多个终端或窗口, 在每个终端都可以单独访问，每一个终端都可以访问，运行和控制各自的程序.tmux类似于screen，可以关闭窗口将程序放在后台运行，需要的时候再重新连接。 Tmux是于基于BSD协议发布的 [GNU Screen](/index.php/Screen_Tips "Screen Tips"). 虽然两者类似，但是还是有不同的地方，详情点击 [tmux FAQ page](https://raw.githubusercontent.com/tmux/tmux/master/FAQ)。
+*   [dtach](/index.php/Dtach "Dtach")
+*   [GNU Screen](/index.php/GNU_Screen "GNU Screen")
+
+**翻译状态：** 本文是英文页面 [Tmux](/index.php/Tmux "Tmux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-24，点击[这里](https://wiki.archlinux.org/index.php?title=Tmux&diff=0&oldid=492457)可以查看翻译后英文页面的改动。
+
+[tmux](http://tmux.github.io/) 是一个终端复用器: 可以激活多个终端或窗口, 在每个终端都可以单独访问，每一个终端都可以访问，运行和控制各自的程序.tmux类似于screen，可以关闭窗口将程序放在后台运行，需要的时候再重新连接。
+
+Tmux 与基于 ISC 协议发布的 [GNU Screen](/index.php/Screen_Tips "Screen Tips") 类似，这个[tmux FAQ 页面](https://raw.githubusercontent.com/tmux/tmux/master/FAQ)包含两者的区别。
 
 ## Contents
 
@@ -13,29 +20,29 @@
     *   [2.4 其他设置](#.E5.85.B6.E4.BB.96.E8.AE.BE.E7.BD.AE)
     *   [2.5 用systemd后台自启tmux](#.E7.94.A8systemd.E5.90.8E.E5.8F.B0.E8.87.AA.E5.90.AFtmux)
 *   [3 会话初始化](#.E4.BC.9A.E8.AF.9D.E5.88.9D.E5.A7.8B.E5.8C.96)
-*   [4 常见问题与解答](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98.E4.B8.8E.E8.A7.A3.E7.AD.94)
-    *   [4.1 滚动问题](#.E6.BB.9A.E5.8A.A8.E9.97.AE.E9.A2.98)
-    *   [4.2 Shift+F6 not working in Midnight Commander](#Shift.2BF6_not_working_in_Midnight_Commander)
-*   [5 ICCCM Selection Integration](#ICCCM_Selection_Integration)
-    *   [5.1 Urxvt MiddleClick Solution](#Urxvt_MiddleClick_Solution)
-*   [6 提示和小技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E5.B0.8F.E6.8A.80.E5.B7.A7)
-    *   [6.1 启动时使用默认布局](#.E5.90.AF.E5.8A.A8.E6.97.B6.E4.BD.BF.E7.94.A8.E9.BB.98.E8.AE.A4.E5.B8.83.E5.B1.80)
-        *   [6.1.1 获取默认布局参数](#.E8.8E.B7.E5.8F.96.E9.BB.98.E8.AE.A4.E5.B8.83.E5.B1.80.E5.8F.82.E6.95.B0)
-        *   [6.1.2 定义默认布局](#.E5.AE.9A.E4.B9.89.E9.BB.98.E8.AE.A4.E5.B8.83.E5.B1.80)
-        *   [6.1.3 自动使用默认布局启动tmux](#.E8.87.AA.E5.8A.A8.E4.BD.BF.E7.94.A8.E9.BB.98.E8.AE.A4.E5.B8.83.E5.B1.80.E5.90.AF.E5.8A.A8tmux)
-        *   [6.1.4 默认会话的替代实现方式](#.E9.BB.98.E8.AE.A4.E4.BC.9A.E8.AF.9D.E7.9A.84.E6.9B.BF.E4.BB.A3.E5.AE.9E.E7.8E.B0.E6.96.B9.E5.BC.8F)
-    *   [6.2 Start tmux in urxvt](#Start_tmux_in_urxvt)
-    *   [6.3 启动shell时自动启动tmux](#.E5.90.AF.E5.8A.A8shell.E6.97.B6.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8tmux)
-        *   [6.3.1 Bash](#Bash)
-    *   [6.4 启动non-login shell](#.E5.90.AF.E5.8A.A8non-login_shell)
-    *   [6.5 像标签一样使用窗口](#.E5.83.8F.E6.A0.87.E7.AD.BE.E4.B8.80.E6.A0.B7.E4.BD.BF.E7.94.A8.E7.AA.97.E5.8F.A3)
-    *   [6.6 Clients simultaneously interacting with various windows of a session](#Clients_simultaneously_interacting_with_various_windows_of_a_session)
-    *   [6.7 根据终端类型自动更正TERM环境变量](#.E6.A0.B9.E6.8D.AE.E7.BB.88.E7.AB.AF.E7.B1.BB.E5.9E.8B.E8.87.AA.E5.8A.A8.E6.9B.B4.E6.AD.A3TERM.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F)
-    *   [6.8 不用重启tmux就能加载新的配置](#.E4.B8.8D.E7.94.A8.E9.87.8D.E5.90.AFtmux.E5.B0.B1.E8.83.BD.E5.8A.A0.E8.BD.BD.E6.96.B0.E7.9A.84.E9.85.8D.E7.BD.AE)
-    *   [6.9 样例代码:attach已启动的会话而不是新开一个](#.E6.A0.B7.E4.BE.8B.E4.BB.A3.E7.A0.81:attach.E5.B7.B2.E5.90.AF.E5.8A.A8.E7.9A.84.E4.BC.9A.E8.AF.9D.E8.80.8C.E4.B8.8D.E6.98.AF.E6.96.B0.E5.BC.80.E4.B8.80.E4.B8.AA)
-    *   [6.10 标题栏自动更改](#.E6.A0.87.E9.A2.98.E6.A0.8F.E8.87.AA.E5.8A.A8.E6.9B.B4.E6.94.B9)
-    *   [6.11 自动布局](#.E8.87.AA.E5.8A.A8.E5.B8.83.E5.B1.80)
-    *   [6.12 使用类似Vim的快捷键设置](#.E4.BD.BF.E7.94.A8.E7.B1.BB.E4.BC.BCVim.E7.9A.84.E5.BF.AB.E6.8D.B7.E9.94.AE.E8.AE.BE.E7.BD.AE)
+*   [4 提示和小技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E5.B0.8F.E6.8A.80.E5.B7.A7)
+    *   [4.1 启动时使用默认布局](#.E5.90.AF.E5.8A.A8.E6.97.B6.E4.BD.BF.E7.94.A8.E9.BB.98.E8.AE.A4.E5.B8.83.E5.B1.80)
+        *   [4.1.1 获取默认布局参数](#.E8.8E.B7.E5.8F.96.E9.BB.98.E8.AE.A4.E5.B8.83.E5.B1.80.E5.8F.82.E6.95.B0)
+        *   [4.1.2 定义默认布局](#.E5.AE.9A.E4.B9.89.E9.BB.98.E8.AE.A4.E5.B8.83.E5.B1.80)
+        *   [4.1.3 自动使用默认布局启动tmux](#.E8.87.AA.E5.8A.A8.E4.BD.BF.E7.94.A8.E9.BB.98.E8.AE.A4.E5.B8.83.E5.B1.80.E5.90.AF.E5.8A.A8tmux)
+        *   [4.1.4 默认会话的替代实现方式](#.E9.BB.98.E8.AE.A4.E4.BC.9A.E8.AF.9D.E7.9A.84.E6.9B.BF.E4.BB.A3.E5.AE.9E.E7.8E.B0.E6.96.B9.E5.BC.8F)
+    *   [4.2 Start tmux in urxvt](#Start_tmux_in_urxvt)
+    *   [4.3 启动shell时自动启动tmux](#.E5.90.AF.E5.8A.A8shell.E6.97.B6.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8tmux)
+        *   [4.3.1 Bash](#Bash)
+    *   [4.4 启动non-login shell](#.E5.90.AF.E5.8A.A8non-login_shell)
+    *   [4.5 像标签一样使用窗口](#.E5.83.8F.E6.A0.87.E7.AD.BE.E4.B8.80.E6.A0.B7.E4.BD.BF.E7.94.A8.E7.AA.97.E5.8F.A3)
+    *   [4.6 Clients simultaneously interacting with various windows of a session](#Clients_simultaneously_interacting_with_various_windows_of_a_session)
+    *   [4.7 根据终端类型自动更正TERM环境变量](#.E6.A0.B9.E6.8D.AE.E7.BB.88.E7.AB.AF.E7.B1.BB.E5.9E.8B.E8.87.AA.E5.8A.A8.E6.9B.B4.E6.AD.A3TERM.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F)
+    *   [4.8 不用重启tmux就能加载新的配置](#.E4.B8.8D.E7.94.A8.E9.87.8D.E5.90.AFtmux.E5.B0.B1.E8.83.BD.E5.8A.A0.E8.BD.BD.E6.96.B0.E7.9A.84.E9.85.8D.E7.BD.AE)
+    *   [4.9 样例代码:attach已启动的会话而不是新开一个](#.E6.A0.B7.E4.BE.8B.E4.BB.A3.E7.A0.81:attach.E5.B7.B2.E5.90.AF.E5.8A.A8.E7.9A.84.E4.BC.9A.E8.AF.9D.E8.80.8C.E4.B8.8D.E6.98.AF.E6.96.B0.E5.BC.80.E4.B8.80.E4.B8.AA)
+    *   [4.10 标题栏自动更改](#.E6.A0.87.E9.A2.98.E6.A0.8F.E8.87.AA.E5.8A.A8.E6.9B.B4.E6.94.B9)
+    *   [4.11 自动布局](#.E8.87.AA.E5.8A.A8.E5.B8.83.E5.B1.80)
+    *   [4.12 使用类似Vim的快捷键设置](#.E4.BD.BF.E7.94.A8.E7.B1.BB.E4.BC.BCVim.E7.9A.84.E5.BF.AB.E6.8D.B7.E9.94.AE.E8.AE.BE.E7.BD.AE)
+*   [5 常见问题与解答](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98.E4.B8.8E.E8.A7.A3.E7.AD.94)
+    *   [5.1 滚动问题](#.E6.BB.9A.E5.8A.A8.E9.97.AE.E9.A2.98)
+    *   [5.2 Shift+F6 not working in Midnight Commander](#Shift.2BF6_not_working_in_Midnight_Commander)
+*   [6 ICCCM Selection Integration](#ICCCM_Selection_Integration)
+    *   [6.1 Urxvt MiddleClick Solution](#Urxvt_MiddleClick_Solution)
 *   [7 外部链接](#.E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5)
 
 ## 安装
@@ -61,8 +68,6 @@
 默认绑定的前缀按键为Ctrl-b. 比如说垂直分割窗口的快捷键就是 `Ctrl-b %`。
 
 使用多个面板分割窗口后, 先按前缀快捷键(比如说：`Ctrl-b`)然后按住Ctrl键就可以使用方向键调整面板大小。 如果要交换面板也是采用同样的方式，只是按键由方向键换成“O“键。
-
-**提示：** 如果想要模仿screen的快捷键前缀配置, 可以把 `/usr/share/tmux/screen-keys.conf` 拷贝到上述提到的任一配置文件位置.
 
 快捷键前缀可以用`tmux.conf`中的bind和unbind命令修改。比如你可以在配置文件中增加下面命令,把前缀`Ctrl-b`改成`Ctrl-a`：
 
@@ -129,10 +134,10 @@ bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; new-window -n "urlvie
 
 ### 正确设置 term
 
-如果你正在使用256色的终端，你必须在tmux中正确设置term .你可以在 `tmux.conf` 中设置:
+如果使用的是 256 色的终端，必须在 tmux 的配置文件 `tmux.conf` 中将终端设置为 `tmux` 或 `tmux-256color`:
 
 ```
-set -g default-terminal "screen-256color" 
+ set -g default-terminal "tmux-256color"  
 
 ```
 
@@ -239,113 +244,13 @@ bind B source-file ~/.tmux/bar
 
 ```
 
-## 常见问题与解答
-
-### 滚动问题
-
-如果你在终端中使用Shift-PageUp/Shift-PageDown 翻页有问题,把下面加到配置文件中试试:
-
-```
-set -g terminal-overrides 'xterm*:smcup@:rmcup@'
-
-```
-
-### Shift+F6 not working in Midnight Commander
-
-If the `Shift+F6` key combination is not working with either `TERM=screen` or `TERM=screen-256color`, then from inside tmux, run this command:
-
-```
-infocmp > screen (or screen-256color)
-
-```
-
-Open the file in a text editor, and add the following to the bottom of that file:
-
-```
-kf16=\E[29~,
-
-```
-
-Then compile the file with `tic`. The keys should be working now.
-
-## ICCCM Selection Integration
-
-It is possible to copy a tmux paste buffer to an ICCCM selection, and vice-versa, by defining a shell command which interfaces tmux with an X11 selection interface. The following tmux config file snippet effectively integrates `CLIPBOARD` with the current tmux paste buffer using xclip:
-
- `~/.tmux.conf` 
-```
-...
-##CLIPBOARD selection integration
-##Requires prefix key before the command key
-#Copy tmux paste buffer to CLIPBOARD
-bind C-c run "tmux save-buffer - | xclip -i -selection clipboard"
-#Copy CLIPBOARD to tmux paste buffer and paste tmux paste buffer
-bind C-v run "tmux set-buffer -- \"$(xclip -o -selection clipboard)\"; tmux paste-buffer"
-
-```
-
-As alternative you can use `xsel`:
-
- `~/.tmux.conf` 
-```
-...
-##CLIPBOARD selection integration
-##Requires prefix key before the command key
-#Copy tmux paste buffer to CLIPBOARD
-bind C-c run "tmux show-buffer | xsel -i -b"
-#Copy CLIPBOARD to tmux paste buffer and paste tmux paste buffer
-bind C-v run "tmux set-buffer -- \"$(xsel -o -b)\"; tmux paste-buffer"
-
-```
-
-It seems `xclip` does not close `STDOUT` after it has read from `tmux`'s buffer. As such, `tmux` doesn't know that the copy task has completed, and continues to /await `xclip`'s termination, thereby rendering the window manager unresponsive. To work around this, you can execute the command via `run-shell -b` instead of `run`, you can redirect `STDOUT` of `xclip` to `/dev/null`, or you can use an alternative command like `xsel`.
-
-### Urxvt MiddleClick Solution
-
-**Note:** To use this, you need to enable mouse support
-
-There is an unofficial perl extension (mentioned in the official [FAQ](http://sourceforge.net/p/tmux/tmux-code/ci/master/tree/FAQ)) to enable copying/pasting in and out of urxvt with tmux via Middle Mouse Clicking.
-
-First, you will need to download the perl script and place it into urxvts perl lib:
-
-```
-wget [http://anti.teamidiot.de/static/nei/*/Code/urxvt/osc-xterm-clipboard](http://anti.teamidiot.de/static/nei/*/Code/urxvt/osc-xterm-clipboard)
-mv osc-xterm-clipboard /usr/lib/urxvt/perl/
-```
-
-You will also need to enable that perl script in your .Xdefaults:
-
- `~/.Xdefaults` 
-```
-...
-*URxvt.perl-ext-common:		osc-xterm-clipboard
-...
-
-```
-
-Next, you want to tell tmux about the new function and enable mouse support (if you haven't already). The third option is optional, to enable scrolling and selecting inside panes with your mouse:
-
- `~/.tmux.conf` 
-```
-...
-set-option -ga terminal-override ',rxvt-uni*:XT:Ms=\E]52;%p1%s;%p2%s\007'
-set-window-option -g mode-mouse on
-set-option -g mouse-select-pane on
-...
-
-```
-
-That's it. Be sure to end all instances of tmux before trying the new MiddleClick functionality.
-
-While in tmux, Shift+MiddleMouseClick will paste the clipboard selection while just MiddleMouseClick will paste your tmux buffer. Outside of tmux, just use MiddleMouseClick to paste your tmux buffer and your standard Ctrl-c to copy.
-
-**Note:** The current tmux version 1.8-1 has a bug where it sometimes might not be possible to paste tmux buffer between different panes of tmux. This behaviour is fixed in the git-version (2013.10.15)
-
 ## 提示和小技巧
 
 ### 启动时使用默认布局
 
-To setup your default Tmux session layout, you install [tmuxinator](https://aur.archlinux.org/packages/tmuxinator/) from [AUR](/index.php/AUR "AUR"). Test your installation with
+Session managers like tmuxinator and [tmuxp](/index.php/Tmuxp "Tmuxp") make it easy to manage common session configurations.
+
+For tmuxinator, install [tmuxinator](https://aur.archlinux.org/packages/tmuxinator/) from [AUR](/index.php/AUR "AUR"). Test your installation with
 
 ```
 tmuxinator doctor
@@ -354,7 +259,7 @@ tmuxinator doctor
 
 #### 获取默认布局参数
 
-Start Tmux as usual and configure your windows and panes layout as you like. When finished, get the current layout values by executing (while you are still within the current Tmux session)
+Start tmux as usual and configure your windows and panes layout as you like. When finished, get the current layout values by executing (while you are still within the current tmux session)
 
 ```
 tmux list-windows
@@ -373,7 +278,7 @@ The Interesting part you need to copy for later use begins after **[layout...** 
 
 #### 定义默认布局
 
-Knowing this, you can exit the current tmux session. Following this, you create your default Tmux session layout by editing Tmuxinator's config file (Don't copy the example, get your layout values as described above)
+Knowing this, you can exit the current tmux session. Following this, you create your default tmux session layout by editing tmuxinator's config file (Don't copy the example, get your layout values as described above)
 
  `~/.tmuxinator/default.yml` 
 ```
@@ -394,7 +299,7 @@ windows:
 
 ```
 
-The example defines two windows named "default" and "remote". With your determined layout values. For each pane you have to use at least one `-` line. Within the first window panes you start the commandline "clear" in pane one, "vim" in pane two and "clear && emacs -nw" executes two commands in pane three on each Tmux start. The second window layout has two panes without defining any start commmands.
+The example defines two windows named "default" and "remote". With your determined layout values. For each pane you have to use at least one `-` line. Within the first window panes you start the commandline "clear" in pane one, "vim" in pane two and "clear && emacs -nw" executes two commands in pane three on each tmux start. The second window layout has two panes without defining any start commmands.
 
 Test the new default layout with (yes, it is "mux"):
 
@@ -405,7 +310,7 @@ mux default
 
 #### 自动使用默认布局启动tmux
 
-如果你想在启动终端的时候直接进入tmux, 并且使用默认布局, 可以往~/.bashrc添加如下:
+如果想在启动终端的时候直接进入tmux, 并且使用默认布局, 可以设置
 
  `~/.bashrc` 
 ```
@@ -722,6 +627,128 @@ bind-key -n M-n split-window \; select-layout
 ### 使用类似Vim的快捷键设置
 
 See [[2]](https://gist.github.com/anonymous/6bebae3eb9f7b972e6f0) for a configuration friendly to [vim](/index.php/Vim "Vim") users.
+
+With tmux 2.4 change:
+
+```
+bind -t vi-copy 'v' begin-selection
+bind -t vi-copy 'y' copy-selection
+bind -t vi-copy 'Space' halfpage-down
+bind -t vi-copy 'Bspace' halfpage-up
+
+```
+
+to:
+
+```
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection
+bind-key -T copy-mode-vi 'Space' send -X halfpage-down
+bind-key -T copy-mode-vi 'Bspace' send -X halfpage-up
+
+```
+
+## 常见问题与解答
+
+### 滚动问题
+
+如果你在终端中使用Shift-PageUp/Shift-PageDown 翻页有问题,把下面加到配置文件中试试:
+
+```
+set -g terminal-overrides 'xterm*:smcup@:rmcup@'
+
+```
+
+### Shift+F6 not working in Midnight Commander
+
+If the `Shift+F6` key combination is not working with either `TERM=screen` or `TERM=screen-256color`, then from inside tmux, run this command:
+
+```
+infocmp > screen (or screen-256color)
+
+```
+
+Open the file in a text editor, and add the following to the bottom of that file:
+
+```
+kf16=\E[29~,
+
+```
+
+Then compile the file with `tic`. The keys should be working now.
+
+## ICCCM Selection Integration
+
+It is possible to copy a tmux paste buffer to an ICCCM selection, and vice-versa, by defining a shell command which interfaces tmux with an X11 selection interface. The following tmux config file snippet effectively integrates `CLIPBOARD` with the current tmux paste buffer using xclip:
+
+ `~/.tmux.conf` 
+```
+...
+##CLIPBOARD selection integration
+##Requires prefix key before the command key
+#Copy tmux paste buffer to CLIPBOARD
+bind C-c run "tmux save-buffer - | xclip -i -selection clipboard"
+#Copy CLIPBOARD to tmux paste buffer and paste tmux paste buffer
+bind C-v run "tmux set-buffer -- \"$(xclip -o -selection clipboard)\"; tmux paste-buffer"
+
+```
+
+As alternative you can use `xsel`:
+
+ `~/.tmux.conf` 
+```
+...
+##CLIPBOARD selection integration
+##Requires prefix key before the command key
+#Copy tmux paste buffer to CLIPBOARD
+bind C-c run "tmux show-buffer | xsel -i -b"
+#Copy CLIPBOARD to tmux paste buffer and paste tmux paste buffer
+bind C-v run "tmux set-buffer -- \"$(xsel -o -b)\"; tmux paste-buffer"
+
+```
+
+It seems `xclip` does not close `STDOUT` after it has read from `tmux`'s buffer. As such, `tmux` doesn't know that the copy task has completed, and continues to /await `xclip`'s termination, thereby rendering the window manager unresponsive. To work around this, you can execute the command via `run-shell -b` instead of `run`, you can redirect `STDOUT` of `xclip` to `/dev/null`, or you can use an alternative command like `xsel`.
+
+### Urxvt MiddleClick Solution
+
+**Note:** To use this, you need to enable mouse support
+
+There is an unofficial perl extension (mentioned in the official [FAQ](http://sourceforge.net/p/tmux/tmux-code/ci/master/tree/FAQ)) to enable copying/pasting in and out of urxvt with tmux via Middle Mouse Clicking.
+
+First, you will need to download the perl script and place it into urxvts perl lib:
+
+```
+wget [http://anti.teamidiot.de/static/nei/*/Code/urxvt/osc-xterm-clipboard](http://anti.teamidiot.de/static/nei/*/Code/urxvt/osc-xterm-clipboard)
+mv osc-xterm-clipboard /usr/lib/urxvt/perl/
+```
+
+You will also need to enable that perl script in your .Xdefaults:
+
+ `~/.Xdefaults` 
+```
+...
+*URxvt.perl-ext-common:		osc-xterm-clipboard
+...
+
+```
+
+Next, you want to tell tmux about the new function and enable mouse support (if you haven't already). The third option is optional, to enable scrolling and selecting inside panes with your mouse:
+
+ `~/.tmux.conf` 
+```
+...
+set-option -ga terminal-override ',rxvt-uni*:XT:Ms=\E]52;%p1%s;%p2%s\007'
+set-window-option -g mode-mouse on
+set-option -g mouse-select-pane on
+...
+
+```
+
+That's it. Be sure to end all instances of tmux before trying the new MiddleClick functionality.
+
+While in tmux, Shift+MiddleMouseClick will paste the clipboard selection while just MiddleMouseClick will paste your tmux buffer. Outside of tmux, just use MiddleMouseClick to paste your tmux buffer and your standard Ctrl-c to copy.
+
+**Note:** The current tmux version 1.8-1 has a bug where it sometimes might not be possible to paste tmux buffer between different panes of tmux. This behaviour is fixed in the git-version (2013.10.15)
 
 ## 外部链接
 

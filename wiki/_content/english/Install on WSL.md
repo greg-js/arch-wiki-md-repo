@@ -4,19 +4,19 @@ Windows 10 has a subsystem that emulates the Linux kernel interface to allow ord
 
 ## Preparation
 
-**Note:** If you have used WSL prior to the Fall Creator's update, uninstall it first from the command prompt (you might want to save some data first):
+**Note:** If you have used WSL prior to the Fall Creators Update, uninstall it first from the command prompt (you might want to save some data first):
 ```
 > lxrun /uninstall /full /y
 
 ```
 
-If you are running the Windows 10 Fall Creator's Update or later, enable "Windows Subsystem for Linux" in *Turn Windows features on or off*.
+If you are running the Windows 10 Fall Creators Update or later, enable "Windows Subsystem for Linux" in *Turn Windows features on or off*.
 
-If you are on the Anniversary Update or Creator's Update, follow the instructions [here](https://msdn.microsoft.com/en-gb/commandline/wsl/install_guide) to enable it.
+If you are on the Anniversary Update or Creators Update, follow the instructions [here](https://msdn.microsoft.com/en-gb/commandline/wsl/install_guide) to enable it.
 
 ## Installation
 
-**Note:** If you're using a Windows version older than the Fall Creator's update, use `%localappdata%\lxss\rootfs` instead of `%localappdata%\Packages\CanonicalGroupLimited.UbuntuonWindows_*\LocalState\rootfs`.
+**Note:** If you're using a Windows version older than the Fall Creators Update, use `%localappdata%\lxss\rootfs` instead of `%localappdata%\Packages\CanonicalGroupLimited.UbuntuonWindows_*\LocalState\rootfs`.
 
 Install [Ubuntu from the Windows Store](https://www.microsoft.com/en-us/store/p/ubuntu/9nblggh4msv6).
 
@@ -25,7 +25,7 @@ Start Ubuntu from the Start Menu.
 Download an Arch bootstrap .tar.gz from [Arch Linux Downloads](https://www.archlinux.org/download/), and extract it:
 
 ```
-$ tar -zxvf /mnt/c/Users/*username*/Downloads/archlinux-bootstrap-2017.06.01-x86_64.tar.gz
+$ tar -zxvf /mnt/c/Users/*username*/Downloads/archlinux-bootstrap-*version*.tar.gz
 
 ```
 
@@ -71,6 +71,8 @@ Set up a user (does not have to be the same as your Windows username):
 ```
 
 Set the user as the default by running the following in a Windows command prompt:
+
+**Note:** If you are running the Windows 10 Fall Creators Update or later, use this command: `ubuntu config --default-user username`
 
 ```
 > lxrun /setdefaultuser *username*

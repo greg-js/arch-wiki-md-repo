@@ -183,7 +183,7 @@ luks.uuid=*UUID*
 
 ```
 
-Specify the UUID of the device to be decrypted on boot with this flag. If the UUID is in `/etc/crypttab`, the options listed there will be used.
+Specify the [UUID](/index.php/UUID "UUID") of the device to be decrypted on boot with this flag. If the UUID is in `/etc/crypttab`, the options listed there will be used.
 
 #### luks.name
 

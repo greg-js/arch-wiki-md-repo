@@ -1,3 +1,7 @@
+Related articles
+
+*   [init](/index.php/Init "Init")
+
 **Warning:** Arch Linux only has official support for [systemd](/index.php/Systemd "Systemd"). When using OpenRC, please mention so in support requests.
 
 [OpenRC](https://wiki.gentoo.org/wiki/OpenRC) is a service manager maintained by the Gentoo developers. OpenRC is dependency based and works with the system provided init program, normally [SysVinit](/index.php/SysVinit "SysVinit").
@@ -23,23 +27,26 @@
     *   [5.4 /etc/sysctl.conf not found](#.2Fetc.2Fsysctl.conf_not_found)
     *   [5.5 opentmpfiles-setup failed to start](#opentmpfiles-setup_failed_to_start)
 *   [6 Using OpenRC with a desktop environment](#Using_OpenRC_with_a_desktop_environment)
-*   [7 See also](#See_also)
+*   [7 Reverting to systemd](#Reverting_to_systemd)
+*   [8 See also](#See_also)
 
 ## Installation
 
 OpenRC and accompanying packages are available in the [AUR](/index.php/AUR "AUR"). For details on init components, see [Init](/index.php/Init "Init").
 
-Install either the [openrc](https://aur.archlinux.org/packages/openrc/) or [openrc-git](https://aur.archlinux.org/packages/openrc-git/) package. [openrc-sysvinit](https://aur.archlinux.org/packages/openrc-sysvinit/) or [busybox](https://www.archlinux.org/packages/?name=busybox) are used as the init process. Service files are available from the [openrc-arch-services-git](https://aur.archlinux.org/packages/openrc-arch-services-git/) package.
+Install either the [openrc](https://aur.archlinux.org/packages/openrc/) or [openrc-git](https://aur.archlinux.org/packages/openrc-git/) package. From version 0.25 onward, OpenRC provides its own init at `/usr/bin/openrc-init`. Optionally, you can use other inits from, e.g., [busybox](https://www.archlinux.org/packages/?name=busybox) or [openrc-sysvinit](https://aur.archlinux.org/packages/openrc-sysvinit/). Note that when `openrc-init` is used, it must be paired with `openrc-shutdown`, and *not* the `shutdown` or `reboot` commands from other packages, otherwise you will encounter errors.
 
-To maintain compability with [initscripts-fork](https://aur.archlinux.org/packages/initscripts-fork/), configuration files are installed to `**/etc/openrc/**`. The sysvinit init binary is installed to `/usr/bin/init-openrc` for compability with [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) or similar packages.
+A basic set of service files are available from the [openrc-arch-services-git](https://aur.archlinux.org/packages/openrc-arch-services-git/) package. Other packages may have service files provided outside this package; a search on the AUR is recommended.
+
+To maintain compatibility with [initscripts-fork](https://aur.archlinux.org/packages/initscripts-fork/), configuration files are installed to `/etc/openrc/`.
 
 ### Booting
 
-For booting with OpenRC add `init=/usr/bin/init-openrc` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). To switch back to systemd, remove the parameter again.
-
-The `/etc/openrc/conf.d` directory, and the `/etc/openrc/rc.d` file is used for configuration.
+For booting with OpenRC add your chosen init to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). OpenRC's built-in init is `/usr/bin/openrc-init`, and the one provided by [openrc-sysvinit](https://aur.archlinux.org/packages/openrc-sysvinit/) is `/usr/bin/init-openrc`.
 
 ## Configuration
+
+The `/etc/openrc/conf.d` directory, and the `/etc/openrc/rc.d` file is used for configuration.
 
 For general information on configuring OpenRC, see:
 
@@ -230,6 +237,13 @@ Begin with OpenRC 0.28 SysVinit is replaced with openrc-init, shutdown is replac
 ```
 
 Also you need to replace polkit-consolekit with [polkit-elogind](https://aur.archlinux.org/packages/polkit-elogind/), or the system will alarm "not authorized to perform operation" when mounting usb device, and can't reboot or shutdown from the desktop session.
+
+## Reverting to systemd
+
+Reverting to systemd should be straightforward in most cases. It is essentially the reversal of migrating to OpenRC, with care placed on the following:
+
+*   Removal of, or otherwise editing, the `init=` parameter on the kernel command line
+*   Replacement of any OpenRC-tailored or no-systemd packages with their stock equivalents (e.g. replacement of [dbus-nosystemd](https://aur.archlinux.org/packages/dbus-nosystemd/) with [dbus](https://www.archlinux.org/packages/?name=dbus))
 
 ## See also
 

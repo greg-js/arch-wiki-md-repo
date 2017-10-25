@@ -10,7 +10,7 @@ This page explains how to set up a stateful firewall using [iptables](/index.php
     *   [2.2 The FORWARD chain](#The_FORWARD_chain)
     *   [2.3 The OUTPUT chain](#The_OUTPUT_chain)
     *   [2.4 The INPUT chain](#The_INPUT_chain)
-    *   [2.5 Example iptables.rules file](#Example_iptables.rules_file)
+    *   [2.5 Resulting iptables.rules file](#Resulting_iptables.rules_file)
     *   [2.6 The TCP and UDP chains](#The_TCP_and_UDP_chains)
         *   [2.6.1 Opening ports to incoming connections](#Opening_ports_to_incoming_connections)
         *   [2.6.2 Port knocking](#Port_knocking)
@@ -189,7 +189,7 @@ For other protocols, we add a final rule to the INPUT chain to reject all remain
 
 ```
 
-### Example iptables.rules file
+### Resulting iptables.rules file
 
 Example of `iptables.rules` file after running all the commands from above:
 
@@ -216,7 +216,7 @@ COMMIT
 
 ```
 
-This file can be generated with:
+This file can be generated and saved with:
 
 ```
 # iptables-save > /etc/iptables/iptables.rules
@@ -449,9 +449,7 @@ Save the rules with this command:
 
 ```
 
-and make sure your rules are loaded on boot enabling the **iptables** systemd service.
-
-Check that the rules load correctly by [starting](/index.php/Starting "Starting") `iptables.service` and then checking the status of the service.
+Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `iptables.service`. Check the status of the service to make sure the rules load correctly.
 
 ### IPv6
 

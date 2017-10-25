@@ -148,7 +148,7 @@ Optionally, you can use xim in your GTK+ and/or Qt programs without installing t
 
 Fcitx provides GUI configure tools. You can install either [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx)(KDE), [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) (based on gtk3). Run fcitx-config-gtk3 after [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) is installed. Unset *Only Show Current Language* if you want to enable a input method of a different language.
 
-Stop fcitx before manully change configuration, or the change may be lost.
+Stop fcitx manually before changing configuration, or the change may be lost.
 
 In order to enable spell checking, press ctrl + alt + h when fcitx is on a input method provides by fcitx-keyboard. Then that's it, you can type long word, to see whether it works.
 

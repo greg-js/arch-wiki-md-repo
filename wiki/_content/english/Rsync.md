@@ -417,6 +417,12 @@ It is possible to do a successful file system migration by using rsync as descri
 
 Edit the template `/etc/rsyncd.conf`, configure a share and [start](/index.php/Start "Start") the `rsyncd.service`.
 
+**Note:** As of [rsync](https://www.archlinux.org/packages/?name=rsync)-3.1.2-5 the systemd unit `rsyncd.service` included in the package has `ProtectHome=on` under the `[Service]` section as a security feature to make the `/home/` and `/root/` directories inaccessible. If you need it to serve home directories you can [edit](/index.php/Edit "Edit") the unit and include this in the overriding snippet: `/etc/systemd/system/rsyncd.service.d/override.conf` 
+```
+[Service]
+ProtectHome=off
+```
+
 Usage from client, e.g. list server content:
 
 ```
