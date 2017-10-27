@@ -1,3 +1,7 @@
+Related articles
+
+*   [Linux-ck](/index.php/Linux-ck "Linux-ck")
+
 *Repo-ck* is an unofficial Arch Linux repository hosting generic and CPU-optimized kernels and support packages, featuring [MuQSS](http://ck-hack.blogspot.com) (pronounced mux) and rest of the ck patchset by [Con Kolivas](https://en.wikipedia.org/wiki/Con_Kolivas "wikipedia:Con Kolivas"). It has been in operation since 2011 and is maintained by [graysky](/index.php/User:Graysky "User:Graysky").
 
 ## Contents
@@ -100,7 +104,6 @@ Use the **ck-X** group and select the desired packages for installation. There a
 :: There are 8 members in group ck-generic:
 :: Repository repo-ck
    1) broadcom-wl-ck  2) linux-ck  3) linux-ck-headers  4) nvidia-304xx-ck  5) nvidia-340xx-ck  6) nvidia-ck
-   7) virtualbox-ck-guest-modules  8) virtualbox-ck-host-modules
 
 Enter a selection (default=all):
 ```

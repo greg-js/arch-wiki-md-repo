@@ -27,20 +27,20 @@ By default, ZeroNet uses clearnet and Tor if available. To enable Tor support yo
 
 ```
 # usermod -a -G tor zeronet
-# mkdir -m 750 /var/lib/tor-auth
-# chown tor:tor /var/lib/tor-auth
 
 ```
 
-[Append](/index.php/Append "Append") the following lines to `/etc/tor/torrc`:
+[Append](/index.php/Append "Append") or edit the following options in `/etc/tor/torrc`:
 
 ```
-ControlPort 9051
+DataDirectoryGroupReadable 1
 CookieAuthentication 1
 CookieAuthFileGroupReadable 1
-CookieAuthFile /var/lib/tor-auth/control_auth_cookie
+CookieAuthFile /var/lib/tor/control_auth_cookie
 
 ```
+
+You may also want to [start/enable](/index.php/Start/enable "Start/enable") `tor.service`.
 
 ## Creating ZeroNet sites
 

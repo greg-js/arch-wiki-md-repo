@@ -22,6 +22,13 @@ Install [Ubuntu from the Windows Store](https://www.microsoft.com/en-us/store/p/
 
 Start Ubuntu from the Start Menu.
 
+Make sure the Default user is root:
+
+```
+$ ubuntu config --default-user root
+
+```
+
 Download an Arch bootstrap .tar.gz from [Arch Linux Downloads](https://www.archlinux.org/download/), and extract it:
 
 ```

@@ -20,7 +20,7 @@ This document describes how to install the APC UPS daemon. The main advantage of
 
 ## Configure APC UPS
 
-The main configuration file for the APC UPS daemon can be found here: `/etc/apcupsd/apcupsd.conf`
+The main configuration file for the APC UPS daemon can be found in `/etc/apcupsd/apcupsd.conf`.
 
 In the following example, the lines of text are changed to support a USB style cable:
 
@@ -46,14 +46,14 @@ DEVICE /dev/usb/hiddev[[0-15]]
 
 ```
 
-If apcupsd does not start, in `/etc/defaults/apcupsd` change
+If apcupsd does not start, in `/etc/defaults/apcupsd` change:
 
 ```
 ISCONFIGURED=no
 
 ```
 
-to
+to:
 
 ```
 ISCONFIGURED=yes
@@ -62,7 +62,7 @@ ISCONFIGURED=yes
 
 ## Test
 
-First, [enable](/index.php/Enable "Enable") and start the [systemd](/index.php/Systemd "Systemd") service, `apcupsd.service`.
+First, [enable](/index.php/Enable "Enable") and start `apcupsd.service`.
 
 Next, wait about a minute and confirm the daemon is running and properly monitoring the battery:
 
@@ -114,11 +114,11 @@ To fully test your setup:
 5.  Power on your Linux box.
 6.  Change `TIMEOUT` from `1` back to `0` in the `/etc/apcupsd/apcupsd.conf` file.
 
-When everything is ok, all that's left to do is enable the `apcupsd` service.
+When everything is ok, all that is left to do is enable the `apcupsd` service.
 
 ## Hibernating instead of shutting down
 
-You can make your system hibernate instead of shutting down. First, make sure the system hibernates cleanly. To set up hibernation, look [here](/index.php/Pm-utils "Pm-utils").
+You can make your system hibernate instead of shutting down. First, make sure the system hibernates cleanly. To set up hibernation, see [Power management/Suspend and hibernate](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate").
 
 ### Create the hibernate script
 
@@ -225,11 +225,11 @@ Now you can [test your setup](#Test).
 
 ### The desktop environment will also sense the UPS if connected by USB cable
 
-For example, the default KDE setting is to put the computer in sleep if it has been on UPS battery for more than 10 minutes and the mouse has not moved. On many computers this causes a crash. This can be changed from KDE System Settings->Power Management->On battery.
+For example, the default KDE setting is to put the computer in sleep if it has been on UPS battery for more than 10 minutes and the mouse has not moved. On many computers this causes a crash. This can be changed from *KDE System Settings > Power Management > On battery*.
 
 ### hid-generic : control queue full
 
-If you are using a [systemd based initramfs](https://wiki.archlinux.org/index.php/Mkinitcpio#Common_hooks) you might run into the "control queue full" log message happening many times every second. You'll want to add `hid-generic` to you `modules` and regenerate your initramfs.
+If you are using a [systemd-based initramfs](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") you might run into the "control queue full" log message happening many times every second. You will want to add `hid-generic` to you `modules` and regenerate your initramfs.
 
 ## See also
 

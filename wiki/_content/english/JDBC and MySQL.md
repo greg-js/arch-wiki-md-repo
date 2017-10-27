@@ -37,14 +37,14 @@ If you use the AUR packages, you will need to link the driver(s) to your JRE's e
 For mariadb-jdbc:
 
 ```
-# ln -s /usr/share/java/mariadb-jdbc/mariadb-java-client.jar /usr/lib/jvm/default-runtime/lib/ext/
+# ln -s /usr/share/java/mariadb-jdbc/mariadb-java-client.jar /usr/lib/jvm/default-runtime/jre/lib/ext
 
 ```
 
 For mysql-jdbc:
 
 ```
-# ln -s /usr/share/java/mysql-jdbc/mysql-connector-java-bin.jar /usr/lib/jvm/default-runtime/lib/ext/
+# ln -s /usr/share/java/mysql-jdbc/mysql-connector-java-bin.jar /usr/lib/jvm/default-runtime/jre/lib/ext
 
 ```
 

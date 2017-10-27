@@ -691,15 +691,14 @@ In *Sytem Settings > Display and Monitor*, uncheck *Allow applications to block 
 
 #### Screen tearing with Nvidia
 
-By default, KWin compositing suffers from tearing when used with the proprietary Nvidia driver. To work around this, create a file `kwin.sh` in `~/.config/plasma-workspace/env/` with the following contents:
+By default, KWin compositing suffers from tearing when used with the proprietary Nvidia driver. To work around this, run `kwin_x11 --replace` with the environment variable `export __GL_YIELD="USLEEP"` stated before:
 
 ```
-#!/bin/sh
-export __GL_YIELD="USLEEP"
+export __GL_YIELD="USLEEP" && kwin_x11 --replace
 
 ```
 
-This however does only work with OpenGL compositing.
+Unlike using the environment variable globally, this does only affect KWin and doesn't reduce CPU performance in other 3D applications. This can also be executed automatically when logging in by creating a simple script and put it into Plasma's `autostart-scripts` folder.
 
 #### Plasma cursor sometimes shown incorrecty
 

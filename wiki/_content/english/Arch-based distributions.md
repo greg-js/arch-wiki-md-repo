@@ -45,6 +45,7 @@ This is a listing of Linux distributions which are [derived](/index.php/Develope
 *   [Chakra](https://sourceforge.net/projects/chakra/)
 *   [DidJiX](http://easy.open.and.free.fr/didjix/)
 *   [Frugalware](https://frugalware.org/)
+*   [Hyperbola GNU/Linux-libre](http://hyperbola.info/)
 *   [KaOS](https://sourceforge.net/projects/kaosx/)
 *   [LinHES](http://linhes.org/)
 *   [Obarun](https://web.obarun.org/)

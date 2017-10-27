@@ -27,7 +27,7 @@ Xpra is '[screen](/index.php/Screen "Screen") for X': it allows you to run X pro
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [xpra-winswitch](https://aur.archlinux.org/packages/xpra-winswitch/) from the [AUR](/index.php/AUR "AUR"), on the server and the clients.
+[Install](/index.php/Install "Install") the package [xpra](https://aur.archlinux.org/packages/xpra/) from the [AUR](/index.php/AUR "AUR"), on the server and the clients.
 
 **Tip:** If you intend to run Xpra locally under a existing Xorg session with graphic drivers such as `nvidia` or `ATi` you will need to modify the default xpra config. Xpra fetches `-configdir` from `xorg-server-xvfb` which will be `/etc/X11/xorg.conf.d`, there for you need to change this by following the three bottom steps of [1333056#p1333056](https://bbs.archlinux.org/viewtopic.php?pid=1333056#p1333056) in order to run xpra locally.
 

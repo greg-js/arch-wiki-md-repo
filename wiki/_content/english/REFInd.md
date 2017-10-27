@@ -36,7 +36,9 @@ Related articles
     *   [4.5 iPXE](#iPXE)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Using drivers in UEFI shell](#Using_drivers_in_UEFI_shell)
-    *   [5.2 btrfs subvolume root support](#btrfs_subvolume_root_support)
+    *   [5.2 Btrfs subvolume support](#Btrfs_subvolume_support)
+        *   [5.2.1 Auto detection](#Auto_detection)
+        *   [5.2.2 Manual boot stanza](#Manual_boot_stanza)
     *   [5.3 Apple Macs](#Apple_Macs)
     *   [5.4 VirtualBox](#VirtualBox)
 *   [6 See also](#See_also)
@@ -387,7 +389,19 @@ Shell> map -r
 
 Now you can access your file system from UEFI shell.
 
-### btrfs subvolume root support
+### Btrfs subvolume support
+
+#### Auto detection
+
+To allow kernel auto detection on a Btrfs subvolume uncomment and edit `also_scan_dirs` in `refind.conf`.
+
+ `*esp*/EFI/refind/refind.conf`  `also_scan_dirs *subvolume*/boot` 
+
+Next add `subvol=*subvolume*` to `rootflags` in `refind_linux.conf` and then predend `*subvolume*` to the initrd path.
+
+ `/boot/refind_linux.conf`  `"Boot using standard options"  "root=PARTUUID=XXXXXXXX rootflags=rw,subvol=*subvolume* initrd=*subvolume*/boot/initramfs-linux.img"` 
+
+#### Manual boot stanza
 
 If booting a [btrfs](/index.php/Btrfs "Btrfs") subvolume as root, amend the `options` line with `rootflags=subvol=<root subvolume>`. In the example below, root has been mounted as a btrfs subvolume called 'ROOT' (e.g. `mount -o subvol=ROOT /dev/sdxY /mnt`):
 

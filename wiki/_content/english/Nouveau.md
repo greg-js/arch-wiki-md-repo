@@ -1,3 +1,9 @@
+Related articles
+
+*   [NVIDIA](/index.php/NVIDIA "NVIDIA")
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [Bumblebee](/index.php/Bumblebee "Bumblebee")
+
 This article covers the open-source [Nouveau](https://nouveau.freedesktop.org/) driver for NVIDIA graphics cards. For information about the proprietary driver, see [NVIDIA](/index.php/NVIDIA "NVIDIA").
 
 Find your card's [code name](https://nouveau.freedesktop.org/wiki/CodeNames) (a more detailed list is available on [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_Graphics_Processing_Units "wikipedia:Comparison of Nvidia Graphics Processing Units")), and compare it with the [feature matrix](https://nouveau.freedesktop.org/wiki/FeatureMatrix/) for supported features.
@@ -22,6 +28,8 @@ Find your card's [code name](https://nouveau.freedesktop.org/wiki/CodeNames) (a 
     *   [4.4 Flat Panel Table Invalid](#Flat_Panel_Table_Invalid)
 
 ## Installation
+
+**Note:** The [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) package is only necessary for better [Xorg](/index.php/Xorg "Xorg") acceleration and not strictly required. The [nouveau](https://nouveau.freedesktop.org/) driver kernel module is already compiled into the kernel.
 
 [Install](/index.php/Install "Install") the [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) package. It provides the DDX driver for 2D acceleration in [Xorg](/index.php/Xorg "Xorg"), and pulls in [mesa](https://www.archlinux.org/packages/?name=mesa) as a dependency which provides the DRI driver for 3D acceleration.
 

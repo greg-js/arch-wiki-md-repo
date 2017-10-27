@@ -231,3 +231,4 @@ Do not forget to make it [executable](/index.php/Executable "Executable"). After
 *   [Beginning Game Development with Python and Pygame](https://www.apress.com/book/9781590598726) commercial
 *   [Think Python](http://www.greenteapress.com/thinkpython/)
 *   [Pythonspot](https://pythonspot.com)
+*   [Learn Python Step by Step](http://www.techbeamers.com/python-tutorial-step-by-step/)

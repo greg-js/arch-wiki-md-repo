@@ -71,7 +71,6 @@ This article contains recommendations and best practices for hardening an Arch L
     *   [12.5 Block TTY access from X](#Block_TTY_access_from_X)
     *   [12.6 Protect against rogue USB devices](#Protect_against_rogue_USB_devices)
 *   [13 Rebuilding packages](#Rebuilding_packages)
-    *   [13.1 Custom hardening flags](#Custom_hardening_flags)
 *   [14 See also](#See_also)
 
 ## Concepts
@@ -643,69 +642,6 @@ Install [USBGuard](/index.php/USBGuard "USBGuard"), which is a software framewor
 ## Rebuilding packages
 
 Packages can be rebuilt and stripped of undesired functions and features as a means to reduce attack surface. For example, [bzip2](https://www.archlinux.org/packages/?name=bzip2) can be rebuilt without `bzip2recover` in an attempt to circumvent [CVE-2016-3189](https://security.archlinux.org/CVE-2016-3189). Custom hardening flags can also be applied either manually or via a wrapper.
-
-### Custom hardening flags
-
-While still a work in progress, the following build flags can be enabled in `/etc/makepkg.conf` as they are expected to become [Arch default](https://lists.archlinux.org/pipermail/arch-dev-public/2016-October/028405.html) flags in the future:
-
-*   `-z,now` to LDFLAGS
-*   `-fno-plt -fstack-check` to [CFLAGS](https://en.wikipedia.org/wiki/CFLAGS "wikipedia:CFLAGS")
-
-Using [hardening-check](https://aur.archlinux.org/packages/hardening-check/) to verify the status of the vanilla `bzip2` binary:
-
-```
-$ hardening check -v /usr/bin/bzip2
-/usr/bin/bzip2:
-Position Independent Executable: no, normal executable!
-Stack protected: yes
-Fortify Source functions: no, only unprotected functions found!
-       unprotected: fread
-       unprotected: fprintf
-       unprotected: strcat
-       unprotected: strncpy
-       unprotected: strcpy
-Read-only relocations: no, not found!
-Immediate binding: no, not found!
-
-```
-
-Using [hardening-check](https://aur.archlinux.org/packages/hardening-check/) to verify the status of a hardened `bzip2` *binary*:
-
-```
-$ hardening check -v /usr/bin/bzip2
-/usr/bin/bzip2:
-Position Independent Executable: yes
-Stack protected: yes
-Fortify Source functions: yes (some protected functions found)
-       unprotected: memcpy
-       unprotected: fread
-       unprotected: strncpy
-       protected: fprintf
-       protected: strcat
-Read-only relocations: yes
-Immediate binding: yes
-
-```
-
-Using [checksec](https://www.archlinux.org/packages/?name=checksec) to verify the status of the vanilla `bzip2` binary:
-
-```
-$ checksec -f /usr/bin/bzip2
-RELRO           STACK CANARY      NX                   PIE                RPATH        RUNPATH         FORTIFY Fortified Fortifiable  FILE
-No RELRO     Canary found         NX enabled     No PIE          No RPATH  No RUNPATH    Yes         0                    5        /usr/bin/bzip2
-
-```
-
-Using [checksec](https://www.archlinux.org/packages/?name=checksec) to verify the status of a hardened `bzip2` binary:
-
-```
-$ checksec -f /usr/bin/bzip2
-RELRO           STACK CANARY      NX                   PIE                RPATH        RUNPATH         FORTIFY Fortified Fortifiable  FILE
-Full RELRO    Canary found         NX enabled     PIE enabled  No RPATH  No RUNPATH   Yes         0                    5        /usr/bin/bzip2
-
-```
-
-**Note:** Certain packages are known to fail with PIE enabled. `export HARDENING_PIE=0` as a workaround.
 
 ## See also
 

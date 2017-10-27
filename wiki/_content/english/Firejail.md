@@ -218,19 +218,12 @@ $ firecfg --fix
 
 ```
 
-There may cases for which you need to manually modify the EXEC line of the `.desktop` file in `~/.local/share/applications/` to explicitly call Firejail. For example, to sandbox `Thunar Bulk Rename`, modify `~/.local/share/applications/Thunar-bulk-rename.desktop` to read:
-
-```
-Exec=firejail --profile=/etc/firejail/thunar.profile /usr/lib/Thunar/ThunarBulkRename
-
-```
+There may cases for which you need to manually modify the EXEC line of the `.desktop` file in `~/.local/share/applications/` to explicitly call Firejail.
 
 ### Symbolic links
 
-1.  If you are depending upon `firecfg` to have generated a symlink, ie. you followed the instructions for [#Using Firejail by default](#Using_Firejail_by_default), double-check that the symlink was actually created. You may need to create one manually.
-2.  If the symlink exists, you may need to run `updatedb` as root to update the location database.
-3.  You may need to re-initialize the hash for the executable, ie. `hash -d <command_name>`.
-4.  Some applications, notably *Thunar*, run with only one instance. This means that, after symlinking, you need to log out and back in again before the profile is loaded.
+1.  If used, any location database or hash table will need to be updated/reset.
+2.  Some applications, notably *Thunar*, run with only one instance. As a result, after symlinking firejail to the application, the profile may not be loaded until the next login.[[2]](https://github.com/netblue30/firejail/issues/1311)
 
 ### PulseAudio
 
@@ -244,7 +237,7 @@ echo "enable-shm = no" >> ~/.config/pulse/client.conf
 
 ### Hidepid
 
-if you have hidepid installed, Firemon can only be run as root. This, among other things, will cause problems with the Firetools GUI incorrectly reporting "Capabilities", "Protocols" and the status of "Seccomp". See [[2]](https://github.com/netblue30/firejail/issues/1564)
+if you have hidepid installed, Firemon can only be run as root. This, among other things, will cause problems with the Firetools GUI incorrectly reporting "Capabilities", "Protocols" and the status of "Seccomp". See [[3]](https://github.com/netblue30/firejail/issues/1564)
 
 ## Tips and tricks
 

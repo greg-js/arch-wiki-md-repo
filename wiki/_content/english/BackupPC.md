@@ -19,7 +19,7 @@ Given the ever decreasing cost of disks and raid systems, it is now practical an
 
 ## Installation
 
-[Install](/index.php/Install "Install") [backuppc](https://www.archlinux.org/packages/?name=backuppc) from the [official repositories](/index.php/Official_repositories "Official repositories"). Install [rsync](https://www.archlinux.org/packages/?name=rsync) and [perl-file-rsyncp](https://www.archlinux.org/packages/?name=perl-file-rsyncp) if you want to use [rsync](/index.php/Rsync "Rsync") as a transport.
+[Install](/index.php/Install "Install") [backuppc](https://www.archlinux.org/packages/?name=backuppc) from the [official repositories](/index.php/Official_repositories "Official repositories"). Install [rsync](https://www.archlinux.org/packages/?name=rsync) and [perl-file-rsyncp](https://www.archlinux.org/packages/?name=perl-file-rsyncp) if you want to use [rsync](/index.php/Rsync "Rsync") as a transport, and [rrdtool](https://www.archlinux.org/packages/?name=rrdtool) to display usage data in the CGI interface.
 
 Start **backuppc** [systemd](/index.php/Systemd "Systemd") [daemon](/index.php/Daemon "Daemon") and, if you wish to have running at boot time enable it.
 

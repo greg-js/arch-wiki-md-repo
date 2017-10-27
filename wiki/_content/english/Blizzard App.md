@@ -11,7 +11,7 @@ The **Blizzard App** (previously known as the **Battle.net client**) is a tool t
 
 ## Installation
 
-You need to install [wine](/index.php/Wine "Wine"), [winetricks](https://www.archlinux.org/packages/?name=winetricks), [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls), and [lib32-libldap](https://www.archlinux.org/packages/?name=lib32-libldap)
+You need to install [wine](/index.php/Wine "Wine"), [winetricks](https://www.archlinux.org/packages/?name=winetricks), [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls), and [lib32-libldap](https://www.archlinux.org/packages/?name=lib32-libldap).
 
 From winetricks, install:
 
@@ -19,6 +19,8 @@ From winetricks, install:
 $ winetricks corefonts
 
 ```
+
+Run *winecfg* in a terminal and select "Windows 7" or newer as Windows version. (older versions are not supported by Blizzard)
 
 ## Known issues
 

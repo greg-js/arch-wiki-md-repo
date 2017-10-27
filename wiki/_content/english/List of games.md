@@ -57,6 +57,10 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[http://bzflag.org/](http://bzflag.org/) || [bzflag](https://www.archlinux.org/packages/?name=bzflag)
 
+*   **[Commander_Keen](https://en.wikipedia.org/wiki/Commander_Keen "wikipedia:Commander Keen")** — side-scrolling platform action video game
+
+	[http://clonekeen.sourceforge.net/](http://clonekeen.sourceforge.net/) || [clonekeen](https://aur.archlinux.org/packages/clonekeen/)
+
 *   **[Freedink](https://en.wikipedia.org/wiki/Dink_Smallwood "wikipedia:Dink Smallwood")** — Free and enhanced version of the action-adventure "Dink Smallwood".
 
 	[https://www.freedink.org/](https://www.freedink.org/) || [freedink](https://aur.archlinux.org/packages/freedink/)
@@ -282,6 +286,10 @@ For more about running games, related system configuration tips, see [Gaming](/i
 *   **chessx** — Chess Database and PGN viewer
 
 	[http://chessx.sourceforge.net](http://chessx.sourceforge.net) || [chessx](https://aur.archlinux.org/packages/chessx/)
+
+*   **cutechess** — A graphical user interface, command-line interface and a library for playing chess
+
+	[https://github.com/cutechess/cutechess](https://github.com/cutechess/cutechess) || [cutechess](https://aur.archlinux.org/packages/cutechess/)
 
 *   **Eboard** — Chess interface to ICS and chess engines
 

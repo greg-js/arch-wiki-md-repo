@@ -90,7 +90,7 @@ w /sys/kernel/mm/transparent_hugepage/defrag - - - - never
 
 To solve warning messages as `*The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.*`, increase the current value:
 
- `/etc/sysctl.d/redis.conf` 
+ `/etc/sysctl.d/99-sysctl.conf` 
 ```
 net.core.somaxconn=512
 
@@ -100,7 +100,7 @@ net.core.somaxconn=512
 
 To solve warning messages as `*overcommit_memory is set to 0! Background save may fail under low memory condition*`:
 
- `/etc/sysctl.d/redis.conf` 
+ `/etc/sysctl.d/99-sysctl.conf` 
 ```
 vm.overcommit_memory=1
 

@@ -154,7 +154,7 @@ For more resources, please see the OpenWall's [Open Source Software Security Wik
 
 ## Team Members
 
-**Note:** Run `!pingsec <msg>` in [IRC channels](/index.php/IRC_channels "IRC channels") to hilight all current security team members.
+**Note:** Run `!pingsec <msg>` in [IRC channels](/index.php/IRC_channels "IRC channels") to highlight all current security team members.
 
 *   [Levente Polyak](/index.php/User:Anthraxx "User:Anthraxx")
 *   [Remi Gacogne](/index.php/User:Rgacogne "User:Rgacogne")

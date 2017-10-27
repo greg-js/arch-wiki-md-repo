@@ -28,6 +28,7 @@
     *   [6.6 Zend Studio](#Zend_Studio)
 *   [7 Commandline tools](#Commandline_tools)
     *   [7.1 Composer](#Composer)
+        *   [7.1.1 Allow user-wide installations](#Allow_user-wide_installations)
     *   [7.2 Box](#Box)
     *   [7.3 PDepend](#PDepend)
     *   [7.4 PHP Coding Standards Fixer](#PHP_Coding_Standards_Fixer)
@@ -266,7 +267,9 @@ You would need other plugins for JavaScript support and DB query.
 
 [Composer](https://getcomposer.org/) is a dependency manager for PHP. It can be installed with the [composer](https://www.archlinux.org/packages/?name=composer) package.
 
-Add `$HOME/.config/composer/vendor/bin` as [environment variable](/index.php/Environment_variable "Environment variable") to execute global (e.g. `composer global require "package/name"`) installed packages:
+#### Allow user-wide installations
+
+To allow global package installations for the current [user](/index.php/User "User") (e.g. `$ composer global require "package/name"`), you may want to specify a default location by using an [environment variable](/index.php/Environment_variable "Environment variable"):
 
 ```
 PATH="$HOME/.config/composer/vendor/bin:$PATH"

@@ -730,3 +730,4 @@ The latest (2005) tarball can be found [here](ftp://ftp.cs.helsinki.fi/pub/Softw
 *   [Useful introduction to Emacs and its shortcuts](http://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html)
 *   [The Church of Emacs (via Google drive)](https://d0edfcdc0ccc1cd13cdab5eb986fb92e8660dbef.googledrive.com/host/0B6LMD0u8OhYYZEotN2QyR1hwR1k/)
 *   [Official reference card](http://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf)
+*   [EXWM](/index.php/EXWM "EXWM"), the Emacs X Window Manager

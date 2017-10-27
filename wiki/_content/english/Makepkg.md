@@ -22,15 +22,14 @@ Related articles
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Creating optimized packages](#Creating_optimized_packages)
         *   [3.1.1 MAKEFLAGS](#MAKEFLAGS)
-    *   [3.2 Package hardening](#Package_hardening)
-    *   [3.3 Show packages with specific packager](#Show_packages_with_specific_packager)
-    *   [3.4 Improving compile times](#Improving_compile_times)
-        *   [3.4.1 tmpfs](#tmpfs)
-        *   [3.4.2 ccache](#ccache)
-    *   [3.5 Generate new checksums](#Generate_new_checksums)
-    *   [3.6 Use other compression algorithms](#Use_other_compression_algorithms)
-    *   [3.7 Utilizing multiple cores on compression](#Utilizing_multiple_cores_on_compression)
-    *   [3.8 Build 32-bit packages on a 64-bit system](#Build_32-bit_packages_on_a_64-bit_system)
+    *   [3.2 Show packages with specific packager](#Show_packages_with_specific_packager)
+    *   [3.3 Improving compile times](#Improving_compile_times)
+        *   [3.3.1 tmpfs](#tmpfs)
+        *   [3.3.2 ccache](#ccache)
+    *   [3.4 Generate new checksums](#Generate_new_checksums)
+    *   [3.5 Use other compression algorithms](#Use_other_compression_algorithms)
+    *   [3.6 Utilizing multiple cores on compression](#Utilizing_multiple_cores_on_compression)
+    *   [3.7 Build 32-bit packages on a 64-bit system](#Build_32-bit_packages_on_a_64-bit_system)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Makepkg sometimes fails to sign a package without asking for signature passphrase](#Makepkg_sometimes_fails_to_sign_a_package_without_asking_for_signature_passphrase)
     *   [4.2 CFLAGS/CXXFLAGS/CPPFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS.2FCXXFLAGS.2FCPPFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
@@ -161,43 +160,6 @@ $ gcc -march=native -v -Q --help=target
 The `MAKEFLAGS` option can be used to specify additional options for make. Users with multi-core/multi-processor systems can specify the number of jobs to run simultaneously. This can be accomplished with the use of *nproc* to determine the number of available processors, e.g. `MAKEFLAGS="-j$(nproc)"`. Some [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") specifically override this with `-j1`, because of race conditions in certain versions or simply because it is not supported in the first place. Packages that fail to build because of this should be [reported](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") on the bug tracker (or in the case of [AUR](/index.php/AUR "AUR") packages, to the package maintainer) after making sure that the error is indeed being caused by your `MAKEFLAGS`.
 
 See [make(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/make.1) for a complete list of available options.
-
-### Package hardening
-
-See [Security#Rebuilding packages](/index.php/Security#Rebuilding_packages "Security").
-
-[Install](/index.php/Install "Install") the [hardening-wrapper](https://www.archlinux.org/packages/?name=hardening-wrapper) package. This wraps gcc, g++, etc. such that there are context-dependent hardening flags. These flags can be controlled in `/etc/hardening-wrapper.conf`.
-
-To enable all hardening flags:
-
- `/etc/hardening-wrapper.conf` 
-```
-HARDENING_BINDNOW=1
-HARDENING_PIE=1
-HARDENING_FORTIFY=2
-HARDENING_RELRO=1
-HARDENING_STACK_CHECK=1
-HARDENING_STACK_PROTECTOR=2
-```
-
-After installation, you will need to [source](/index.php/Source "Source") your `/etc/profile` or log out and log back in. To verify you are using the wrapper:
-
-```
-$ which gcc
-/usr/lib/hardening-wrapper/bin/gcc
-
-```
-
-Now simply follow the normal process in creating packages.
-
-To check that the hardened flags have been used, [install](/index.php/Install "Install") the [checksec](https://www.archlinux.org/packages/?name=checksec) package, which can check individual executables or recursively check a directory. For example:
-
-```
-$ checksec --dir /tmp/makepkg/dwm/pkg/dwm/usr/bin
-RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      FORTIFY Checked         Total   Filename
-Full RELRO      Canary found      NX enabled    PIE enabled     No RPATH   No RUNPATH   Yes     4               6       /tmp/makepkg/dwm/pkg/dwm/usr/bin/dwm
-
-```
 
 ### Show packages with specific packager
 

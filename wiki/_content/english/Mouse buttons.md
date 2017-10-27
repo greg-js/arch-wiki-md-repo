@@ -539,7 +539,7 @@ You can execute the g5hack tool at system start up using systemd unit. See [Syst
 
 ## User tools
 
-[imwheel](https://aur.archlinux.org/packages/imwheel/) provides configurable mouse wheel and button mapping. It can be configured globally or for individual processes.
+[imwheel](/index.php/Imwheel "Imwheel") provides configurable mouse wheel and button mapping. It can be configured globally or for individual processes.
 
 Sample `~/.imwheelrc` to enable back/forward thumb buttons for all applications and increased scroll speed in Chromium:
 

@@ -64,7 +64,7 @@ Two control files must be configured:
 The default configurations in `/usr/share/doc/lprng` are adequate for a client computer printing to a remote printer. Copy these to `/etc/lprng/lpd/`
 
 ```
-cp /usr/share/doc/lprng /etc/lprng/lpd/
+cp /usr/share/doc/lprng /etc/lprng/lpd
 
 ```
 

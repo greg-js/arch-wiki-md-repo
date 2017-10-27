@@ -35,10 +35,9 @@ Depending on the card you have, find the right driver in [Xorg#AMD](/index.php/X
 
 ## Installation
 
-**Note:**
+**Note:** If coming from the proprietary Catalyst driver, see [AMD Catalyst#Uninstallation](/index.php/AMD_Catalyst#Uninstallation "AMD Catalyst") first.
 
-*   If coming from the proprietary Catalyst driver, see [AMD Catalyst#Uninstallation](/index.php/AMD_Catalyst#Uninstallation "AMD Catalyst") first.
-*   The [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) package is only used for [Xorg](/index.php/Xorg "Xorg") acceleration and not strictly required.
+**Note:** The [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) package is only necessary for better [Xorg](/index.php/Xorg "Xorg") acceleration and not strictly required. The `amdgpu` driver kernel module is already compiled into the kernel.
 
 [Install](/index.php/Install "Install") the [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) package. It provides the DDX driver for 2D acceleration and it pulls in [mesa](https://www.archlinux.org/packages/?name=mesa) as a dependency, providing the DRI driver for 3D acceleration.
 

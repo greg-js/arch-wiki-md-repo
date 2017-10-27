@@ -11,18 +11,22 @@ Machine check exceptions (MCEs) can occur for a variety of reasons ranging from 
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [mcelog](https://www.archlinux.org/packages/?name=mcelog) package. [mcelog](http://www.mcelog.org/) written by Andi Kleen is one of the tools to gather MCE information.
+[Install](/index.php/Install "Install") the [rasdaemon](https://aur.archlinux.org/packages/rasdaemon/) package. [rasdaemon](https://pagure.io/rasdaemon) written by Mauro Carvalho Chehab is one of the tools to gather MCE information.
+
+Previously, the task was performed by the `mcelog` package. However, it has been deprecated, and Arch kernels are not even compiled with the necessary configuration option CONFIG_X86_MCELOG_LEGACY ([FS#55657](https://bugs.archlinux.org/task/55657)) now.
 
 ## Configuration
 
-mcelog's configuration file is located at `/etc/mcelog/mcelog.conf`. See [mcelog(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mcelog.8), [mcelog.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mcelog.conf.5) and [mcelog.triggers(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mcelog.triggers.5) for more information.
+There are two systemd services that need to be [started](/index.php/Start "Start") and enabled. `ras-mc-ctl.service` registers DIMM labels (from `/etc/ras/dimm_labels.d/`) with EDAC drivers. On consumer-grade motherboards it usually logs a `No dimm labels for <motherboard model>` error and does nothing. `rasdaemon.service` runs as a daemon and logs RAS events to [systemd journal](/index.php/Systemd_journal "Systemd journal").
 
-[Start](/index.php/Start "Start") and enable `mcelog.service`. By default, the service runs *mcelog* as a daemon.
+See [ras-mc-ctl(8)](https://www.mankier.com/8/ras-mc-ctl) and [rasdaemon(1)](https://www.mankier.com/1/rasdaemon) for more information.
 
 ## See also
 
 *   [Wikipedia:Machine_Check_Exception](https://en.wikipedia.org/wiki/Machine_Check_Exception "wikipedia:Machine Check Exception")
 *   [Wikipedia:Machine_check_architecture](https://en.wikipedia.org/wiki/Machine_check_architecture "wikipedia:Machine check architecture")
+*   [Rasdaemon initial announcement](https://lwn.net/Articles/543097/)
+*   [RAS presentation](https://events.linuxfoundation.org/sites/events/files/slides/RAS_presentation_LinuxCon_NA_0.pdf)
 *   [mcelog Home](http://www.mcelog.org/)
 *   [mcelog References](http://www.mcelog.org/references.html)
 

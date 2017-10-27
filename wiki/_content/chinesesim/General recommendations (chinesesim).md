@@ -267,7 +267,7 @@ Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD
 
 ### 配置防火墙
 
-[防火墙](/index.php/Firewalls "Firewalls")为Linux网络访问提供额外保护。作为[Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter")计划的一部分，Linux 内核内置了iptables——一种[状态防火墙](https://en.wikipedia.org/wiki/Stateful_firewall "wikipedia:Stateful firewall")（Stateful firewall）。可以通过直接或间接的方式配置它。Arch默认不打开任何端口，因此一般没有必要使用防火墙。
+[防火墙](/index.php/Firewalls "Firewalls")为Linux网络访问提供额外保护。作为[Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter")计划的一部分，Linux 内核内置了iptables——一种[状态防火墙](https://en.wikipedia.org/wiki/Stateful_firewall "wikipedia:Stateful firewall")（Stateful firewall）。可以通过直接或间接的方式配置它。非常推荐建立一个防火墙，参考[防火墙](/index.php/Firewalls "Firewalls")。
 
 ### 资源共享
 
