@@ -93,9 +93,9 @@ Alternatively, run `avahi-autoipd`:
 
 ## Adding services
 
-Avahi advertises the services whose `*.service` files are found in `/etc/avahi/services`. If you want to advertise a service for which there is no `*.service` file, it is very easy to create your own.
+Avahi advertises the services whose `*.service` files are found in `/etc/avahi/services`. Files in this directory must be readable by the `avahi` user/group.
 
-As an example, let's say you wanted to advertise a quote of the day (QOTD) service operating per RFC 865 on TCP port `17` which you are running on your machine
+If you want to advertise a service for which there is no `*.service` file, it is very easy to create your own. As an example, let's say you wanted to advertise a quote of the day (QOTD) service operating per RFC 865 on TCP port `17` which you are running on your machine
 
 The first thing to do is to determine the `<type>`. [avahi.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/avahi.service.5) indicates that the type should be "the DNS-SD service type for this service. e.g. '_http._tcp'". Since the [DNS-SD register was merged into the IANA register in 2010](http://www.dns-sd.org/ServiceTypes.html), we look for the service name on the [IANA register](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml) or in `/etc/services` file. The service name shown there is `qotd`. Since we're running QOTD on tcp, we now know the service is `_qotd._tcp` and the port (per IANA and RFC 865) is `17`.
 

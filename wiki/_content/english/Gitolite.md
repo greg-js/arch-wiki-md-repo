@@ -9,9 +9,8 @@
 *   [3 Add users](#Add_users)
     *   [3.1 ssh users](#ssh_users)
     *   [3.2 http(s) users](#http.28s.29_users)
-*   [4 Gitosis-like ssh usernames](#Gitosis-like_ssh_usernames)
-*   [5 Troubleshooting](#Troubleshooting)
-*   [6 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -57,14 +56,14 @@ hello *username*, this is gitolite@*hostname* running gitolite3 v3.6.2 on git 2.
 
 ```
 
-Do NOT add repositories or users directly as *gitolite* on the server! You MUST manage the server by cloning the special *gitolite-admin* repository
+Do **not** add repositories or users directly as *gitolite* on the server! The server **must** be managed by cloning the special *gitolite-admin* repository
 
 ```
 $ git clone gitolite@*hostname*:gitolite-admin
 
 ```
 
-For reference see [Gitolite](https://github.com/sitaramc/gitolite/)
+For reference see [Gitolite](https://github.com/sitaramc/gitolite/).
 
 ### Adding http(s) access via Apache (with basic authentication)
 
@@ -140,31 +139,19 @@ Finally, in the gitolite-admin repository you cloned in the previous section, ed
 
 ### ssh users
 
-Ask each user who will get access to send you a public key. On their workstation generate the pair of ssh keys:
+Ask each user who will get access to send you an [SSH public key](/index.php/SSH_keys "SSH keys"). Rename each public key to `*username*.pub`, where `*username*` is the user name which will be used in `gitolite.conf`. Then move all new public keys to the `keydir` directory in the cloned `gitolite-admin` repo. You can also organise them into various subdirectories of `keydir` if you wish, since the entire tree is searched.
 
-```
-$ ssh-keygen
-
-```
-
-Rename each public key according to the user's name, with a .pub extension, like sitaram.pub or john-smith.pub. You can also use periods and underscores. Have the users send you the keys.
-
-Copy all these *.pub files to keydir in your gitolite-admin repo clone. You can also organise them into various subdirectories of keydir if you wish, since the entire tree is searched.
-
-Edit the config file (conf/gitolite.conf in your admin repo clone). See the gitolite.conf documentation ([http://sitaramc.github.com/gitolite/admin.html#conf](http://sitaramc.github.com/gitolite/admin.html#conf)) for details on what goes in that file, syntax, etc. Just add new repos as needed, and add new users and give them permissions as required. The users names should be exactly the same as their keyfile names, but without the .pub extension
-
-```
-$ nano conf/gitolite.conf
-
-```
-
-Commit and push the changes them:
+Finally commit and push the changes:
 
 ```
 $ git commit -a
 $ git push
 
 ```
+
+See the [add/remove users](http://gitolite.com/gitolite/basic-admin/#addremove-users) in the official documentation for details.
+
+To grant access rights to the new users, edit the config file (`conf/gitolite.conf` in the `gitolite-admin` repo). See [the "conf" file](http://gitolite.com/gitolite/conf/) in the official documentation for details.
 
 ### http(s) users
 
@@ -174,26 +161,6 @@ User management for http(s) is more suitable for single-user setups. To add a ne
 # htpasswd /srv/http/git/htpasswd *username*
 
 ```
-
-## Gitosis-like ssh usernames
-
-If you want to distinguish users with the same login (like `username@server1`, `username@server2`) you may want to do the following (tested with [gitolite](https://www.archlinux.org/packages/?name=gitolite) 3.04-1):
-
-*   edit `/usr/lib/gitolite/triggers/post-compile/ssh-authkeys` and replace
-
-```
-$user =~ s/(\@[^.]+)?\.pub$//;    # baz.pub, baz@home.pub -> baz
-
-```
-
-by
-
-```
-$user =~ s/\.pub$//;              # baz@home.pub -> baz@home
-
-```
-
-*   update authorized_keys file (for example, by pushing into the *gitolite-admin* repository)
 
 ## Troubleshooting
 
@@ -207,11 +174,12 @@ To solve this you have to allow PAM in `sshd_config` or unlock the account by:
 # usermod -p '*' gitolite
 
 ```
- `# nano /etc/passwd` 
+ `/etc/passwd` 
 ```
 ...
 gitolite:*:16199:0:99999:7:::
 ...
+
 ```
 
 **Warning:** Do not leave the account in the state left by `passwd -u` (with a blank password field). Doing that will allow logins without entering a password!

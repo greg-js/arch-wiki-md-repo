@@ -333,7 +333,7 @@ template1 | postgres | UTF8      | C         | C     |
 
 *   **pgAdmin** — GUI-based administration tool for PostgreSQL.
 
-	[http://www.pgadmin.org/](http://www.pgadmin.org/) || [pgadmin3](https://www.archlinux.org/packages/?name=pgadmin3)
+	[http://www.pgadmin.org/](http://www.pgadmin.org/) || [pgadmin4](https://www.archlinux.org/packages/?name=pgadmin4)
 
 ## Setup HHVM to work with PostgreSQL
 

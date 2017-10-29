@@ -81,17 +81,18 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [5.1.9 coderkun-aur-audio](#coderkun-aur-audio)
         *   [5.1.10 decryptedepsilon](#decryptedepsilon)
         *   [5.1.11 eatabrick](#eatabrick)
-        *   [5.1.12 freifunk-rheinland](#freifunk-rheinland)
-        *   [5.1.13 holo](#holo)
+        *   [5.1.12 holo](#holo)
+        *   [5.1.13 jlk](#jlk)
         *   [5.1.14 jrpi](#jrpi)
         *   [5.1.15 linux-kalterfx](#linux-kalterfx)
         *   [5.1.16 markzz](#markzz)
         *   [5.1.17 mikelpint](#mikelpint)
-        *   [5.1.18 qt-debug](#qt-debug)
-        *   [5.1.19 quarry](#quarry)
-        *   [5.1.20 siosm-aur](#siosm-aur)
-        *   [5.1.21 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.22 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.18 mobile](#mobile)
+        *   [5.1.19 qt-debug](#qt-debug)
+        *   [5.1.20 quarry](#quarry)
+        *   [5.1.21 siosm-aur](#siosm-aur)
+        *   [5.1.22 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.23 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -833,17 +834,6 @@ Server = http://repo.eatabrick.org/$arch
 
 ```
 
-#### freifunk-rheinland
-
-*   **Maintainer:** nomaster
-*   **Description:** Packages for the Freifunk project: batman-adv, batctl, fastd and dependencies.
-
-```
-[freifunk-rheinland]
-Server = http://mirror.fluxent.de/archlinux-custom/$repo/os/$arch
-
-```
-
 #### holo
 
 *   **Maintainer:** Stefan Majewsky <holo-pacman@posteo.de> (please prefer to report issues at [Github](https://github.com/majewsky/holo-pacman-repo/issues))
@@ -855,6 +845,19 @@ Server = http://mirror.fluxent.de/archlinux-custom/$repo/os/$arch
 ```
 [holo]
 Server = https://repo.holocm.org/archlinux/x86_64
+
+```
+
+#### jlk
+
+*   **Maintainer:** [Jakub Klinkovský](/index.php/User:Lahwaacz "User:Lahwaacz")
+*   **Description:** Various packages from the ABS and AUR. Modified packages are in the `modified` group.
+*   **Upstream page:** [http://jlk.fjfi.cvut.cz/arch/repo/README.html](http://jlk.fjfi.cvut.cz/arch/repo/README.html)
+*   **Key-ID:** 932BA3FA0C86812A32D1F54DAB5964AEB9FEDDDC
+
+```
+[jlk]
+Server = http://jlk.fjfi.cvut.cz/arch/repo
 
 ```
 
@@ -908,6 +911,19 @@ Server = https://repo.markzz.com/arch/$repo/$arch
 ```
 [mikelpint]
 Server = https://mikelpint.github.io/archlinux
+
+```
+
+#### mobile
+
+*   **Maintainer:** [farwayer](https://keybase.io/farwayer)
+*   **Description:** React Native and Android development
+*   **Upstream page:** [https://keybase.pub/farwayer/arch/mobile/](https://keybase.pub/farwayer/arch/mobile/)
+*   **Key ID:** 7943315502A936D7
+
+```
+[mobile]
+Server = https://farwayer.keybase.pub/arch/$repo
 
 ```
 

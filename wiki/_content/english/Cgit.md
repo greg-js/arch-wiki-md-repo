@@ -3,14 +3,14 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration of Web Server](#Configuration_of_Web_Server)
+*   [2 Configuration of web server](#Configuration_of_web_server)
     *   [2.1 Apache](#Apache)
     *   [2.2 Lighttpd](#Lighttpd)
         *   [2.2.1 Lighttpd sub-domain](#Lighttpd_sub-domain)
     *   [2.3 Nginx](#Nginx)
         *   [2.3.1 Using fcgiwrap](#Using_fcgiwrap)
         *   [2.3.2 Using uwsgi](#Using_uwsgi)
-*   [3 Configuration of Cgit](#Configuration_of_Cgit)
+*   [3 Configuration of cgit](#Configuration_of_cgit)
     *   [3.1 Basic Configuration](#Basic_Configuration)
     *   [3.2 Adding repositories](#Adding_repositories)
     *   [3.3 Syntax highlighting](#Syntax_highlighting)
@@ -30,7 +30,7 @@ Install the [cgit](https://www.archlinux.org/packages/?name=cgit) package.
 
 To use cgit a [web server](/index.php/Category:Web_server "Category:Web server") must be installed on the system, such as [Apache](/index.php/Apache "Apache").
 
-## Configuration of Web Server
+## Configuration of web server
 
 ### Apache
 
@@ -168,27 +168,28 @@ First, install [uwsgi](https://www.archlinux.org/packages/?name=uwsgi) and [uwsg
 
 Add below server block to your configuration:
 
+ `/etc/nginx/nginx.conf` 
 ```
- server {
-   listen 80;
-   server_name git.example.com;
-   root /usr/share/webapps/cgit;
+server {
+  listen 80;
+  server_name git.example.com;
+  root /usr/share/webapps/cgit;
 
- # Serve static files with nginx
- location ~* ^.+(cgit.(css|png)|favicon.ico|robots.txt) {
-     root /usr/share/webapps/cgit;
-     expires 30d;
-   }
-   location / {
-     try_files $uri @cgit;
-   }
-   location @cgit {
-     gzip off;
-     include uwsgi_params;
-     uwsgi_modifier1 9;
-     uwsgi_pass unix:/run/uwsgi/cgit.sock;
-   }
- } 
+  # Serve static files with nginx
+  location ~* ^.+(cgit.(css|png)|favicon.ico|robots.txt) {
+    root /usr/share/webapps/cgit;
+    expires 30d;
+  }
+  location / {
+    try_files $uri @cgit;
+  }
+  location @cgit {
+    gzip off;
+    include uwsgi_params;
+    uwsgi_modifier1 9;
+    uwsgi_pass unix:/run/uwsgi/cgit.sock;
+  }
+} 
 
 ```
 
@@ -216,7 +217,7 @@ Enable and start the corresponding socket (you could also enable and start the s
 
 ```
 
-## Configuration of Cgit
+## Configuration of cgit
 
 ### Basic Configuration
 
@@ -322,8 +323,6 @@ To get a list of all coloring styles that are available, do:
  ['manni', 'igor', 'xcode', 'vim', 'autumn', 'vs', 'rrt', 'native', 'perldoc', 'borland', 'tango', 'emacs', 'friendly', 'monokai', 'paraiso-dark', 'colorful', 'murphy', 'bw', 'pastie', 'paraiso-light', 'trac', 'default', 'fruity']
 
 ```
-
-If you want to be able to properly color markdown files, (often called README.md), install [python-pygments-markdown-lexer](https://aur.archlinux.org/packages/python-pygments-markdown-lexer/)
 
 #### Using highlight
 

@@ -149,16 +149,20 @@ If you are using self-signed certificates, the client refuses to connect unless 
 
 ### Run in VirtualBox
 
-It is possible to have Syncthing connect both locally and globally within a [VirtualBox](/index.php/VirtualBox "VirtualBox") virtual machine keeping its network adapter in the standard [NAT](https://www.virtualbox.org/manual/ch06.html#network_nat) mode (as opposed to [bridged networking](https://www.virtualbox.org/manual/ch06.html#network_bridged) attached to the host computer's adapter).
+It is possible to have Syncthing connect both locally and globally within a [VirtualBox](/index.php/VirtualBox "VirtualBox") virtual machine (VM) while keeping its network adapter in the standard [NAT](https://www.virtualbox.org/manual/ch06.html#network_nat) mode (as opposed to [bridged networking](https://www.virtualbox.org/manual/ch06.html#network_bridged) attached to the host computer's adapter).
 
-To achieve this, Syncthing should use a port in the VM different from the port it uses on the host. If the default 22000 port is used by the host for listening, one could use 22001 in the VM. This is carried out by setting Syncthing's [Sync Protocol Listen Addresses](https://docs.syncthing.net/users/config.html#listen-addresses) to `tcp://:22001` in the VM and by opening the corresponding port of the virtual machine: the 22001/TCP host's port should be forwarded to the guest's same port:
+To enable this mode, Syncthing should listen to a port in the VM different from the listening port already used by the host. For example, if the default 22000 port is used by the host, one could use 22001 in the VM. The listening port in the VM can be changed through Syncthing's [Sync Protocol Listen Addresses](https://docs.syncthing.net/users/config.html#listen-addresses) to `tcp://:22001` in the GUI *Settings*.
+
+The 22001/TCP port of the host will need to be forwarded to the guest in this configuration. This can be done with the following command:
 
 ```
-$ VBoxManage modifyvm myvmname --natpf1 "syncthing,tcp,,22001,,22001"
+$ VBoxManage modifyvm **myvmname** --natpf1 "syncthing,tcp,,22001,,22001"
 
 ```
 
-In this setup, relaying should not be necessary: local devices can connect to the VM on port 22001 while global devices should be accessible as long as they have an open port.
+In this setup, relaying should not be necessary: local devices can connect to the VM on port 22001 while global devices should be accessible as long as they have themselves an open port.
+
+**Note:** local discovery in this setup is limited because the discovery listening port 21027 is already used by the host. The guest is therefore not able to build a table of local announcements though it can still broadcast to the local network via the VM NAT. The steps described above allow to run a functioning server in the default NAT configuration but bridged networking is recommended for an optimal setup.
 
 ## Troubleshooting
 

@@ -14,17 +14,18 @@
 
 ## Introduction
 
-The GS series of MSI laptops is considered to be a thin gaming laptop. Although it is not thin as ultrabooks, it is still very thin for a *gaming* laptop. As of October 5th 2017, the 2016 model works fine with the latest kernel. That can't be said for the 2017 model. It still lacks support for some important components, like the internal graphics card.
+The GS series of MSI laptops is considered to be a thin gaming laptop. Although it is not thin as ultrabooks, it is still very thin for a *gaming* laptop. As of October 5th 2017, the 2016 model works fine with the latest kernel. The 2017 model has a bug concerning the eDP LCD display. There is a fix from intel here: [https://github.com/freedesktop/drm-tip/commit/0501a3b0eb01ac2209ef6fce76153e5d6b07034e.patch](https://github.com/freedesktop/drm-tip/commit/0501a3b0eb01ac2209ef6fce76153e5d6b07034e.patch)
+
+This issue was discussed in this thread: [https://bbs.archlinux.org/viewtopic.php?id=230541](https://bbs.archlinux.org/viewtopic.php?id=230541)
 
 | **Device** | **GS63 (2016)** | **GS63 (2017)** | **GS73 (2016)** |
 | [Display](/index.php?title=Display&action=edit&redlink=1 "Display (page does not exist)") | -- | Full HD 120Hz/3ms | -- |
-| [Intel IGU](/index.php?title=Intel_IGU&action=edit&redlink=1 "Intel IGU (page does not exist)") | Yes | No HD Graphics 630 (i915) |  ?? |
-| [Nvidia GPU](/index.php?title=Nvidia_GPU&action=edit&redlink=1 "Nvidia GPU (page does not exist)") | Yes | HDMI only Nvidia GTX 1070 Max-Q (nvidia) |  ?? |
+| [Intel IGU](/index.php?title=Intel_IGU&action=edit&redlink=1 "Intel IGU (page does not exist)") | Yes | (with patch) i915 |  ?? |
+| [Nvidia GPU](/index.php?title=Nvidia_GPU&action=edit&redlink=1 "Nvidia GPU (page does not exist)") | Yes | Yes nvidia |  ?? |
 | [Network](/index.php/Network "Network") | Yes | Yes |  ?? |
-| [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") |  ?? | -- |  ?? |
 | Atheros Wireless | Yes | Yes |  ?? |
-| [ALSA](/index.php/ALSA "ALSA") | Yes |  ?? |  ?? |
-| [Touchpad](/index.php/Touchpad "Touchpad") | Manual |  ?? |  ?? |
+| [ALSA](/index.php/ALSA "ALSA") | Yes | Yes |  ?? |
+| [Touchpad](/index.php/Touchpad "Touchpad") | Manual | Yes |  ?? |
 | [Webcam](/index.php/Webcam "Webcam") | Yes | Yes |  ?? |
 | Card Reader | Yes | mmc warning |  ?? |
 | [Power management](/index.php/Power_management "Power management") | Yes | No |  ?? |

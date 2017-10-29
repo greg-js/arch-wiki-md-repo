@@ -73,7 +73,7 @@ Example:
 
 In case of network scanning, e.g. by WiFi, Sane may still be unable to find the scanner. If so, you need to specify the IP address of the scanner in the `/etc/sane.d/net.conf` file.
 
-Now use `scanimage --check-devices` to check whether sane is able to find your scanner. If not, further check that Sane expects this device through the network (see [[1]](http://neithere.net/2013/02/18/archlinux_brother_7860.html)). Check that `/etc/sane.d/dll.conf` contains `brother*X*`, where the `*X*` stands for the brscan version from above. If nothing was found, add `brother*X*` to the end of the file.
+Now use `scanimage --list-devices` to check whether sane is able to find your scanner. If not, further check that Sane expects this device through the network (see [[1]](http://neithere.net/2013/02/18/archlinux_brother_7860.html)). Check that `/etc/sane.d/dll.conf` contains `brother*X*`, where the `*X*` stands for the brscan version from above. If nothing was found, add `brother*X*` to the end of the file.
 
 ### Invalid argument
 

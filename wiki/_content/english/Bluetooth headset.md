@@ -228,6 +228,20 @@ This is very likely to occur when the Bluetooth and the WiFi share the same chip
 
 A possible solution is to move your WiFi network to 5GHz so that there will be no interference. If your card/router doesn't support this, you can upgrade your WiFi drivers/firmware. This approach works on Realtek 8723BE and latest rtl drivers for this chip from AUR.
 
+Another possible mitigation is to configure the latency on PulseAudio output port to a suitable value (125000 microseconds in the following example):
+
+```
+pactl set-port-latency-offset <bluez_card> headset-output **125000**
+
+```
+
+where the identifier of the card can be found with
+
+```
+pacmd list-sinks | egrep -o 'bluez_card[^>]*'
+
+```
+
 #### Connecting works, but I cannot play sound
 
 Make sure that you see the following messages in your system log:

@@ -36,6 +36,7 @@ Related articles
     *   [6.4 Possibly missing firmware for module XXXX](#Possibly_missing_firmware_for_module_XXXX)
     *   [6.5 Standard rescue procedures](#Standard_rescue_procedures)
         *   [6.5.1 Boot succeeds on one machine and fails on another](#Boot_succeeds_on_one_machine_and_fails_on_another)
+    *   [6.6 Non-root drives are not decrypted by sd-lvm2 hook](#Non-root_drives_are_not_decrypted_by_sd-lvm2_hook)
 *   [7 See also](#See_also)
 
 ## Overview
@@ -485,6 +486,27 @@ With an improper initial ram-disk a system often is unbootable. So follow a syst
 *mkinitcpio'*s `autodetect` hook filters unneeded [kernel modules](/index.php/Kernel_modules "Kernel modules") in the primary initramfs scanning `/sys` and the modules loaded at the time it is run. If you transfer your `/boot` directory to another machine and the boot sequence fails during early userspace, it may be because the new hardware is not detected due to missing kernel modules. Note that USB 2.0 and 3.0 need different kernel modules.
 
 To fix, first try choosing the [fallback](#Image_creation_and_activation) image from your [bootloader](/index.php/Bootloader "Bootloader"), as it is not filtered by `autodetect`. Once booted, run *mkinitcpio* on the new machine to rebuild the primary image with the correct modules. If the fallback image fails, try booting into an Arch Linux live CD/USB, chroot into the installation, and run *mkinitcpio* on the new machine. As a last resort, try [manually](#MODULES) adding modules to the initramfs.
+
+### Non-root drives are not decrypted by sd-lvm2 hook
+
+Even if the drives are listed in `/etc/crypttab`, `systemd-cryptsetup-generator` may choose to skip them. From [systemd-cryptsetup-generator(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8):
+
+```
+If /etc/crypttab exists, only those UUIDs specified on the kernel
+command line will be activated in the initrd or the real root.
+
+```
+
+This may make the boot process fail, due to LVM's inability to locate the physical volumes. The latter manifests as timeout errors:
+
+```
+Timed out waiting for device dev-mapper-VolGroup00\x2dLVNAME.device.
+
+```
+
+(This is not unexpected: after all, `systemd-cryptsetup-generator` never decrypted the device which stores `VolGroup00/LVNAME`.)
+
+To work around this, make sure that in kernel boot parameters, `rd.luks.uuid` is used to specify the LUKS device containing the root volume, and not just `luks.uuid`.
 
 ## See also
 

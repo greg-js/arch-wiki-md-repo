@@ -1,3 +1,8 @@
+Related articles
+
+*   [Midnight Commander](/index.php/Midnight_Commander "Midnight Commander")
+*   [vifm](/index.php/Vifm "Vifm")
+
 [ranger](http://ranger.nongnu.org/) is a text-based file manager written in Python. Directories are displayed in one pane with three columns. Moving between them is accomplished with keystrokes, bookmarks, the mouse or the command history. File previews and directory contents show automatically for the current selection.
 
 Features include: vi-style key bindings, bookmarks, selections, tagging, tabs, command history, the ability to make symbolic links, several console modes, and a task view. *ranger* has customizable commands and key bindings, including bindings to external scripts. The closest competitor is [Vifm](/index.php/Vifm "Vifm"), which has two panes and vi-style key bindings, but fewer features overall.
@@ -278,7 +283,7 @@ map <c-n>  eval fm.tab_new('%d')
 
 ### PDF file preview
 
-You can preview PDF files in ranger by first converting the PDF file to an image. Ranger will store the image previews in `~/.cache/ranger/`.
+By default ranger will preview PDF files as text. However, you can preview PDF files as an image in ranger by first converting the PDF file to an image. Ranger stores the image previews in `~/.cache/ranger/`.
 
 First, ensure image preview is enabled:
 
@@ -291,17 +296,22 @@ set preview_images true
 
 Ranger can preview images using, for example, [w3m](https://www.archlinux.org/packages/?name=w3m); see `~/.config/ranger/rc.conf` for all available preview methods.
 
-Finally, add the following pdf preview command:
+Finally, replace the following lines under `pdf)` in `handle_extension()` (62-64 by default):
 
  `~/.config/ranger/scope.sh` 
 ```
-# Image previews, if enabled in ranger.
-if [ "$preview_images" = "True" ]; then
-    case "$mimetype" in
-        application/pdf)
-             pdftoppm -jpeg -singlefile "$path" "${cached//.jpg}" && exit 6;;
-    esac
-fi
+           # Preview as text conversion
+           pdftotext -l 10 -nopgbrk -q -- "${FILE_PATH}" - && exit 5
+           exiftool "${FILE_PATH}" && exit 5                        
+
+```
+
+with:
+
+ `~/.config/ranger/scope.sh` 
+```
+           # Preview as image conversion
+           pdftoppm -jpeg -singlefile "${FILE_PATH}" "${IMAGE_CACHE_PATH//.jpg}" && exit 6
 
 ```
 

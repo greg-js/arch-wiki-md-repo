@@ -33,7 +33,6 @@ It is simple to configure but it can only start EFI executables such as the Linu
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Manual entry using efibootmgr](#Manual_entry_using_efibootmgr)
     *   [4.2 Menu does not appear after Windows upgrade](#Menu_does_not_appear_after_Windows_upgrade)
-    *   [4.3 Non-root drives are not decrypted by sd-lvm2 mkinitcpio hook](#Non-root_drives_are_not_decrypted_by_sd-lvm2_mkinitcpio_hook)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -114,7 +113,7 @@ The basic configuration is stored in `*esp*/loader/loader.conf` file and it is c
 
 *   `default` – default entry to select (without the `.conf` suffix); can be a wildcard like `arch-*`.
 
-*   `timeout` – menu timeout in seconds. If this is not set, the menu will only be shown on key press during boot.
+*   `timeout` – menu timeout in seconds. If this is not set, the menu will only be shown on `Space` press during boot.
 
 *   `editor` – whether to enable the kernel parameters editor or not. `1` (default) is enabled, `0` is disabled; since the user can add `init=/bin/bash` to bypass root password and gain root access, it is strongly recommended to set this option to `0`.
 
@@ -338,27 +337,6 @@ where `/dev/sdXY` is the [EFI System Partition](/index.php/EFI_System_Partition 
 ### Menu does not appear after Windows upgrade
 
 See [UEFI#Windows changes boot order](/index.php/UEFI#Windows_changes_boot_order "UEFI").
-
-### Non-root drives are not decrypted by sd-lvm2 mkinitcpio hook
-
-Even if the drives are listed in `/etc/crypttab`, `systemd-cryptsetup-generator` may choose to skip them. From the manpage:
-
-```
-If /etc/crypttab exists, only those UUIDs specified on the kernel
-command line will be activated in the initrd or the real root.
-
-```
-
-This may make the boot process fail, due to LVM's inability to locate the physical volumes. The latter manifests as timeout errors:
-
-```
-Timed out waiting for device dev-mapper-VolGroup00\x2dLVNAME.device.
-
-```
-
-(This is not unexpected if `systemd-cryptsetup-generator` never decrypted the device which stores `VolGroup00/LVNAME`.)
-
-To work around this, make sure that in kernel boot parameters, `rd.luks.uuid` is used to specify the LUKS device containing the root volume, and not just `luks.uuid`.
 
 ## See also
 

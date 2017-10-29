@@ -14,7 +14,6 @@ For a more complete comparison, see [w:Comparison of operating systems](https://
     *   [1.1 CRUX](#CRUX)
     *   [1.2 LFS](#LFS)
     *   [1.3 Gentoo/Funtoo Linux](#Gentoo.2FFuntoo_Linux)
-    *   [1.4 GuixSD](#GuixSD)
 *   [2 General](#General)
     *   [2.1 Debian](#Debian)
     *   [2.2 Fedora](#Fedora)
@@ -53,14 +52,6 @@ Source-based distributions are highly portable, giving the advantage of controll
 *   Arch only supports x86_64 while Gentoo officially supports x86 (i486/i686), x86_64, PPC/PPC64, SPARC, Alpha, ARM, MIPS, HPPA, S/390 and Itanium architectures.
 *   Gentoo's official package and system management tools tend to be rather more complex and "powerful" than those provided by Arch, and certain features which are at the very heart of Gentoo *([USE flags](https://wiki.gentoo.org/wiki/Handbook:X86/Working/USE), [SLOTs](https://wiki.gentoo.org/wiki/Handbook:X86/Working/Portage#Terminology), etc.)* do not have any direct Arch Linux equivalent. Some of that is due to the fact that Arch is primarily a binary distro, but differences in [design philosophy](/index.php/Arch_Linux#Principles "Arch Linux") also play a big role, with Arch taking a more principled stance in favor of architectural simplicity and avoiding over-engineering.
 *   Because both the Gentoo and Arch installations only include a base system, both are considered to be highly customizable. If comfortable with [systemd](/index.php/Systemd "Systemd"), Gentoo users will also generally feel at ease with most other aspects of Arch.
-
-### GuixSD
-
-*   GuixSD has no maintainers and users themselves updates the packages collaborately.
-*   Both Arch Linux and GuixSD are rolling release systems, making packages available to the distribution a short time after they are released upstream.
-*   The Guix packages and base system are built directly from source code according to user-specified package definitions (written in Guile Scheme instead of shell scripts) and binaries are continously provided by build-farms.
-*   Guix, the package manager and compiler, is written in Guile Guile and supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and more.
-*   Arch currently have more packages availiable. The list of packages are growing rapidly in GuixSD and most popular and widely used packages are now availiable.
 
 ## General
 

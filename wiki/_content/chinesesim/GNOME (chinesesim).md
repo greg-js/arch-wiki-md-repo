@@ -180,36 +180,40 @@ fi
 *   `Super` + `a`：显示应用程序菜单
 *   `Alt-` + `Tab`：切换当前使用的应用
 *   `Alt-` + ``` (美式键盘 `Tab` 上面的按键)：切换前台应用程序的窗口
-*   `Alt` + `F2`：输入命令以快速启动应用
-*   `Alt` + `F2`，然后输入 `r` 或 `restart`：重启界面如果图形界面出了问题（仅用于 X/传统 模式，不用于 Wayland 模式）。
+*   `Alt` + `F2`，然后输入 `r` 或 `restart`：重启界面如果图形界面出了问题（仅用于 X/传统 模式，不适用于 Wayland 模式）。
 
 ### 遗留名称
 
 **注意:** 一些 GNOME 程序在文档和对话框中的名称已经更改，但执行文件名称却没有。下面表格列出了一些这样的应用程序。
 
-**提示：** 在搜索栏中搜索应用程序的遗留名称将成功找到要找应用程序，例如搜索 *nautilus* 将返回 *Files*。
+**提示：** 在搜索栏中搜索应用程序的遗留名称将成功找到要找应用程序，例如搜索 *文件* 将返回 *Files*。
 
 | 当前 | 遗留 |
-| [Files](/index.php/Files "Files") | Nautilus |
+| [文件](/index.php/Files "Files") | Nautilus |
 | [Web](/index.php/GNOME/Web "GNOME/Web") | Epiphany |
-| Videos | Totem |
-| Main Menu | Alacarte |
-| Document Viewer | Evince |
-| Disk Usage Analyser | Baobab |
-| Image Viewer | EoG (Eye of GNOME) |
-| [Passwords and Keys](/index.php/GNOME/Keyring "GNOME/Keyring") | Seahorse |
+| 视频 | Totem |
+| 主菜单 | Alacarte |
+| 文档查看器 | Evince |
+| 磁盘使用情况分析器 | Baobab |
+| 图像查看器 | EoG (Eye of GNOME) |
+| [密码和密钥](/index.php/GNOME/Keyring "GNOME/Keyring") | Seahorse |
 
 ## 配置
 
-GNOME 3 是重新设计的，但是像大多数大型软件项目一样，他是很多不同时间的部分组装起来的。他没有一个 **无所不包** 的配置工具。新的 *系统设置* 比以前的控制面板有很大的改进。 *系统设置* 组织得很好，但是你可能想要更深层次地改变外观。
+GNOME 系统设置面板（gnome-control-center）和 GNOME 应用使用 [dconf](https://en.wikipedia.org/wiki/Dconf "wikipedia:Dconf") 配置系统存储设置。
 
-以前你所熟悉的配置工具现在有的好用，有的不好用了。有些设置选项隐藏着，不太容易找到。许多设置将会，或已经迁移到了新的工具上。你需要了解应当去哪里寻找适当的设置项，才能更好地配置 GNOME 外观。
+您可以使用 `gsettings` 或 `dconf` 命令行工具直接访问 dconf 数据库。
 
-GNOME 桌面环境依赖于一个存储配置的数据库后端（DConf）来存储 GNOME 与 GNOME 应用的设置。安装桌面环境时，GNOME 提供一套默认的配置，而各类应用程序向数据库中添加它们自己的配置。
+直到 GNOME 3.24，设置由 GNOME 设置进程应用，也可以在 GNOME 会话之外运行：
 
-对用户来说，最基础而直观的配置方式莫过于使用 GNOME 系统设置面板（gnome-control-center），以及 GNOME 应用程序各自的首选项（preferences）面板。如果您愿意，直接在 DConf 数据库中进行修改与配置总是可行的，尤其是在某些设置选项没有暴露在用户界面的情况下，直接修改可以更改某些隐藏选项。
+```
+ $ nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &
 
-GNOME 的这些配置通常是用户间相互独立的。以下文字仅供单用户配置所用，并没有提及更改全局配置模板的方法。
+```
+
+GNOME 3.24 however replaced the GNOME settings daemon with several separate settings plugins `/usr/lib/gnome-settings-daemon/gsd-*`. These plugins are now controlled via desktop files under `/etc/xdg/autostart` (org.gnome.SettingsDaemon.*.desktop). To run these plugins outside of a GNOME session you will now need to copy/edit the appropriate [desktop entries](/index.php/Desktop_entries "Desktop entries") to `~/.config/autostart`.
+
+配置通常是用户特定的，本文将不介绍如何为多个用户创建配置模板。
 
 ### GNOME 系统设置
 
@@ -542,7 +546,7 @@ For further information, refer to the [app-folders schema](https://git.gnome.org
 ## 参见
 
 *   [官方网站](http://www.gnome.org/)
-*   [GNOME-shell扩展](http://extensions.gnome.org/)
+*   [GNOME-shell 扩展](http://extensions.gnome.org/)
 *   主题、图标和壁纸：
     *   [GNOME Art](http://art.gnome.org/)
     *   [GNOME 外观](http://www.gnome-look.org/)

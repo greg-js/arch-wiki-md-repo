@@ -1,3 +1,7 @@
+Related articles
+
+*   [Google Earth](/index.php/Google_Earth "Google Earth")
+
 The **ArchMap** project creates a map of Arch Linux users all over the world.
 
 ## Contents
@@ -32,9 +36,9 @@ Here are some screenshots of how it used to look:
 
 ## archmap
 
-`[archmap](https://github.com/maelstrom59/ArchMap/blob/master/archmap.py)` is a python script that can generate *GeoJSON*, *KML* and *CSV* files by parsing [this list](/index.php/ArchMap/List#List "ArchMap/List") of Arch Linux users.
+`[archmap](https://github.com/guyfawcus/ArchMap/blob/master/archmap.py)` is a python script that can generate *GeoJSON*, *KML* and *CSV* files by parsing [this list](/index.php/ArchMap/List#List "ArchMap/List") of Arch Linux users.
 
-**Note:** ArchMap is currently under development on [GitHub](https://github.com/maelstrom59/ArchMap). If you have any suggestions, please [post them](https://bbs.archlinux.org/viewtopic.php?id=22518&p=2) in the forums or [create an issue](https://github.com/maelstrom59/ArchMap/issues) in the repository.
+**Note:** ArchMap is currently under development on [GitHub](https://github.com/guyfawcus/ArchMap). If you have any suggestions, please [post them](https://bbs.archlinux.org/viewtopic.php?id=22518&p=2) in the forums or [create an issue](https://github.com/guyfawcus/ArchMap/issues) in the repository.
 
 The documentation is hosted by [readthedocs.org](http://archmap.readthedocs.io).
 
@@ -60,7 +64,7 @@ You can refresh the data by right-clicking the ArchMap folder and selecting *Ref
 
 ### Daily updated map
 
-[This map](https://data.dopsi.ch/archmap) is updated daily (around 10:00am UTC) using the [ArchMap](http://github.com/maelstrom59/ArchMap) script. The KML data used to render the map is available [here](https://data.dopsi.ch/archmap/archmap.kml), the raw users list [here](https://data.dopsi.ch/archmap/users.txt).
+[This map](https://data.dopsi.ch/archmap) is updated daily (around 10:00am UTC) using the [ArchMap](http://github.com/guyfawcus/ArchMap) script. The KML data used to render the map is available [here](https://data.dopsi.ch/archmap/archmap.kml), the raw users list [here](https://data.dopsi.ch/archmap/users.txt).
 
 ### User Generated Maps
 

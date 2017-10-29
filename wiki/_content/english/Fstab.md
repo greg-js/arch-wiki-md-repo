@@ -228,5 +228,5 @@ If for some reason the root partition has been improperly mounted read only, rem
 
 *   [Full device listing including block device](http://www.kernel.org/pub/linux/docs/lanana/device-list/devices-2.6.txt)
 *   [Filesystem Hierarchy Standard](http://www.pathname.com/fhs/2.2/index.html)
-*   [30x Faster Cache and Site Speed with TMPFS](http://www.askapache.com/optimize/super-speed-secrets/)
+*   [30x Faster Cache and Site Speed with TMPFS](https://www.askapache.com/optimize/super-speed-secrets/)
 *   [Adding Samba shares to /etc/fstab](/index.php/Samba#As_mount_entry "Samba")

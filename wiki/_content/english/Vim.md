@@ -1,3 +1,7 @@
+Related articles
+
+*   [List of applications/Documents#Vi text editors](/index.php/List_of_applications/Documents#Vi_text_editors "List of applications/Documents")
+
 [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor) is a terminal text editor. It is an extended version of [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") with additional features, including syntax highlighting, a comprehensive help system, native scripting (vimscript), a visual mode for text selection, and comparison of files (vimdiff).
 
 ## Contents
@@ -342,7 +346,7 @@ nnoremap <C-l> :TlistToggle<CR>
 *   [Bart Trojanowski](https://web.archive.org/web/20131004071740/http://www.jukie.net/~bart/conf/vimrc)
 *   [Steve Francia'http://vimawesome.com/s Vim Distribution](https://github.com/spf13/spf13-vim)
 *   [W4RH4WK's Vim configuration](https://github.com/W4RH4WK/dotVim)
-*   [Fast vimrc/colorscheme from askapache](http://www.askapache.com/linux/fast-vimrc.html)
+*   [Fast vimrc/colorscheme from askapache](https://www.askapache.com/linux/fast-vimrc/)
 *   [Basic vimrc](https://gist.github.com/anonymous/c966c0757f62b451bffa)
 *   [Usevim](http://www.usevim.com/)
 

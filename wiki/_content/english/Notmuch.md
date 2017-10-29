@@ -18,7 +18,7 @@ Related articles
     *   [3.7 ner](#ner)
 *   [4 Integrating with mutt](#Integrating_with_mutt)
     *   [4.1 notmuch-mutt problems](#notmuch-mutt_problems)
-*   [5 Integrating with NeoMutt / mutt-kz](#Integrating_with_NeoMutt_.2F_mutt-kz)
+*   [5 Integrating with NeoMutt](#Integrating_with_NeoMutt)
 *   [6 Permanently delete emails](#Permanently_delete_emails)
 
 ## Overview
@@ -131,9 +131,9 @@ Gnu.c: loadable library and perl binaries are mismatched (got handshake key 0xdb
 
 can indicate that some of the notmuch-mutt dependencies are installed via cpan while some are installed and managed via pacman, and that you should install all dependencies via one or the other method.
 
-## Integrating with NeoMutt / mutt-kz
+## Integrating with NeoMutt
 
-If you use either [neomutt](https://aur.archlinux.org/packages/neomutt/), [mutt-kz](https://aur.archlinux.org/packages/mutt-kz/) or mutt with notmuch-patches, the [notmuch-mutt](https://www.archlinux.org/packages/?name=notmuch-mutt) package is not needed. Instead, create a `~/.mailboxes` with some basic (virtual) mailboxes. A virtual mailbox is not an actual folder, but the result of a notmuch query for a specific tag:
+If you use [neomutt](https://www.archlinux.org/packages/?name=neomutt), the [notmuch-mutt](https://www.archlinux.org/packages/?name=notmuch-mutt) package is not required. Instead, create a `~/.mailboxes` with some basic (virtual) mailboxes. A virtual mailbox is not an actual folder, but the result of a notmuch query for a specific tag:
 
  `~/.mailboxes` 
 ```

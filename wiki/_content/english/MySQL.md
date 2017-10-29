@@ -1,3 +1,10 @@
+Related articles
+
+*   [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")
+*   [Adminer](/index.php/Adminer "Adminer")
+*   [JDBC and MySQL](/index.php/JDBC_and_MySQL "JDBC and MySQL")
+*   [Open Database Connectivity](/index.php/Open_Database_Connectivity "Open Database Connectivity")
+
 MySQL is a widely spread, multi-threaded, multi-user SQL database. For more information about features, see the [official homepage](http://www.mysql.com/).
 
 **Note:** MariaDB is now officially Arch Linux's default implementation of MySQL. It is recommended for all users to [upgrade](#Upgrade_from_Oracle_MySQL_to_MariaDB) to MariaDB. Oracle MySQL was dropped to the [AUR](/index.php/AUR "AUR"). See [the announcement](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/).
@@ -584,4 +591,4 @@ See [#Increase character limit](#Increase_character_limit).
 *   [MySQL documentation](http://dev.mysql.com/doc/)
 *   [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") - ArchWiki article on the Apache HTTP Server
 *   [PHP](/index.php/PHP "PHP") - ArchWiki article on PHP.
-*   [MySQL Performance Tuning Scripts and Know-How](http://www.askapache.com/mysql/performance-tuning-mysql.html)
+*   [MySQL Performance Tuning Scripts and Know-How](https://www.askapache.com/mysql/performance-tuning-mysql/)

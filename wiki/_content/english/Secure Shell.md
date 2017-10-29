@@ -55,6 +55,7 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
     *   [3.10 Automatically restart SSH tunnels with systemd](#Automatically_restart_SSH_tunnels_with_systemd)
     *   [3.11 Autossh - automatically restarts SSH sessions and tunnels](#Autossh_-_automatically_restarts_SSH_sessions_and_tunnels)
         *   [3.11.1 Run autossh automatically at boot via systemd](#Run_autossh_automatically_at_boot_via_systemd)
+    *   [3.12 Alternative service should SSH daemon fail](#Alternative_service_should_SSH_daemon_fail)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Checklist](#Checklist)
     *   [4.2 Connection refused or timeout problem](#Connection_refused_or_timeout_problem)
@@ -771,6 +772,20 @@ ExecStart=/usr/bin/autossh -M 0 -o ControlMaster=no -NL 2222:localhost:2222 -o T
 ```
 
 **Tip:** It is also easy to maintain several autossh processes, to keep several tunnels alive. Just create multiple service files with different names.
+
+### Alternative service should SSH daemon fail
+
+For remote or headless servers which relay exclusively on SSH, a failure to start the SSH daemon (e.g., after a system upgrade) may prevent administration access. [systemd](/index.php/Systemd "Systemd") offers a simple solution via `OnFailure` option.
+
+Let's suppose the server runs `sshd` and [telnet](/index.php/Telnet "Telnet") is the fail-safe alternative of choice. Create a file as follow. Do **not** [enable](/index.php/Enable "Enable") telnet.socket!
+
+ `/etc/systemd/system/sshd.service.d/override.conf` 
+```
+[Unit]
+OnFailure=telnet.socket
+```
+
+That's it. Telnet is not available when `sshd` is running. Should `sshd` fail to start, a telnet session can be opened for recovery.
 
 ## Troubleshooting
 

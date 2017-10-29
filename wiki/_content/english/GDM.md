@@ -50,7 +50,7 @@ You might also wish to install the following:
 
 *   **gdm3setup** — An interface to configure GDM3, autologin options and change Shell theme
 
-	[https://github.com/Nano77/gdm3setup](https://github.com/Nano77/gdm3setup) || [gdm3setup](https://aur.archlinux.org/packages/gdm3setup/)
+	[https://github.com/Nano77/gdm3setup](https://github.com/Nano77/gdm3setup) || [gdm3setup-utils](https://aur.archlinux.org/packages/gdm3setup-utils/)
 
 ## Starting
 

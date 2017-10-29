@@ -1,3 +1,9 @@
+Related articles
+
+*   [Bash](/index.php/Bash "Bash")
+*   [Environment variables](/index.php/Environment_variables "Environment variables")
+*   [Git#Git prompt](/index.php/Git#Git_prompt "Git")
+
 Bash has several prompts which can be customized to increase productivity, aesthetic appeal, and nerd cred.
 
 ## Contents
@@ -56,7 +62,7 @@ $ infocmp
 
 ```
 
-The capability names (the part before the =) can be looked up in [terminfo(5)](http://man7.org/linux/man-pages/man5/terminfo.5.html) for a description of what they do. For example, `setaf` sets the foreground color of whatever text is printed after it. To get the escape code for a capability, you can use the `tput` command. For example
+The capability names (the part before the =) can be looked up in [terminfo(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5) for a description of what they do. For example, `setaf` sets the foreground color of whatever text is printed after it. To get the escape code for a capability, you can use the `tput` command. For example
 
 ```
 $ tput setaf 2
@@ -310,7 +316,7 @@ Of course your window title string can include output from [embedding commands](
 
 *   Community examples and screenshots in the Forum thread: [What's your PS1?](https://bbs.archlinux.org/viewtopic.php?id=50885)
 *   [Gentoo's `/etc/bash/bashrc`](https://gitweb.gentoo.org/repo/gentoo.git/tree/app-shells/bash/files/bashrc). See also [gentoo-bashrc](https://aur.archlinux.org/packages/gentoo-bashrc/).
-*   [tput(1)](http://man7.org/linux/man-pages/man1/tput.1.html)
+*   [tput(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tput.1)
     *   [tput reference on bash-hackers.org](http://wiki.bash-hackers.org/scripting/terminalcodes)
     *   [Colours and Cursor Movement With tput](http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x405.html)
 *   [Nice Xresources color schemes collection](http://xcolors.net/)
@@ -318,5 +324,5 @@ Of course your window title string can include output from [embedding commands](
 *   [Giles Orr's collection of sample prompts](http://gilesorr.com/bashprompt/prompts/index.html)
 *   [Bash tips: Colors and formatting](http://misc.flogisoft.com/bash/tip_colors_and_formatting)
 *   [Liquid Prompt — a useful adaptive prompt for Bash & zsh](https://github.com/nojhan/liquidprompt)
-*   [Bash POWER PROMPT](http://www.askapache.com/linux-unix/bash-power-prompt.html)
+*   [Bash POWER PROMPT](https://www.askapache.com/linux/bash-power-prompt/)
 *   [Wikipedia:ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code "wikipedia:ANSI escape code")

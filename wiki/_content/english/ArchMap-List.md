@@ -41,13 +41,13 @@ You can use the following website to get your device's coordinates along with a 
 ## List
 
 ```
-12.9382632,77.6260124 "saifikhan" #Bangalore, Karnataka, India
-19.100030, 72.908897 "rihbyne" # Mumbai, Maharashtra, India
-3.392083, -76.545803 "roadev" # Cali, Valle del Cauca, Colombia
-37.834638, -82.478598 "osendott" # Inez, KY, USA
-49.574583, 17.956361 "deu439" # Starý Jičín, Czech Republic
-36.003135, -78.942432 "tannhauser" # Durham, NC, USA
-44.5019424, 11.3493327 "matenoz" # Porretta Terme, Italy
+12.9382632,77.6260124 "saifikhan" # Bangalore, Karnataka, India
+19.100030,72.908897 "rihbyne" # Mumbai, Maharashtra, India
+3.392083,-76.545803 "roadev" # Cali, Valle del Cauca, Colombia
+37.834638,-82.478598 "osendott" # Inez, KY, USA
+49.574583,17.956361 "deu439" # Starý Jičín, Czech Republic
+36.003135,-78.942432 "tannhauser" # Durham, NC, USA
+44.5019424,11.3493327 "matenoz" # Porretta Terme, Italy
 67.416000,26.588699 "topyli" # Sodankylä, Finland
 34.052234,-118.243685 "cinelli" # Los Angeles, California, USA
 40.11263226927652,-88.21860820055008 "td123" # Urbana, IL, USA
@@ -714,7 +714,7 @@ You can use the following website to get your device's coordinates along with a 
 42.434912,-71.087447 "jdarnold" # Medford, MA, USA
 43.746960,-79.258033 "CanadaRox" # Scarborough (Toronto), Ontario, Canada
 49.264248,-123.159828 "Postcomp" # Vancouver, British Columbia, Canada
-53.383611, -1.466944 "tenmilestereo" # Sheffield, UK
+53.383611,-1.466944 "tenmilestereo" # Sheffield, UK
 35.675699,139.837051 "vigilandy" # Tokyo, Japan
 51.355788,-2.376634 "ben9250" # Bath, BANES, UK
 56.9618,24.102 "levantis" # Riga, Latvia
@@ -727,7 +727,7 @@ You can use the following website to get your device's coordinates along with a 
 34.154286,-77.879264 "ant978" # Wilmington, NC, USA
 50.411275,4.156757 "TimScampi" # Waudrez, Hainaut, Belgium
 39.810761,16.207237 "Simandr" # Castrovillari, CS, Italy
-39.843568,16.135632 "NGM" #Morano Calabro, CS, Italy
+39.843568,16.135632 "NGM" # Morano Calabro, CS, Italy
 42.979397,-81.246139 "indienick" # London, Ontario, Canada
 39.634638,22.395083 "DuckGrindrr" # Larisa, Greece
 51.560535,0.250558 "tigerfish66" # Upminster, UK
@@ -778,7 +778,7 @@ You can use the following website to get your device's coordinates along with a 
 47.402619,8.581073 "dimle" # Zurich, Switzerland
 38.024980,23.670001 "giral" # Peristeri, Greece
 37.975111,23.780536 "ChIossif" # NTUA, Greece
--23.180132,-46.885643 "duca" #Jundiai, SP, Brazil
+-23.180132,-46.885643 "duca" # Jundiai, SP, Brazil
 37.943349,23.726204 "Herco" # Nea Smyrni, Greece
 -6.888568,107.615842 "renodesper" # Bandung, Indonesia
 40.502616,22.921715 "jemadux" # Peraia Thessaloniki, Greece
@@ -787,7 +787,7 @@ You can use the following website to get your device's coordinates along with a 
 48.755595,-123.7264 "Circleo" # Duncan, BC, Canada
 53.156035,6.747465 "Ixium" # Hoogezand, The Netherlands
 36.62283,-4.499931 "ppsalama" # Torremolinos, Spain
-39.4565351307392,-87.4156802147627 "snakeb0t" #Terre Haute, Indiana, USA
+39.4565351307392,-87.4156802147627 "snakeb0t" # Terre Haute, Indiana, USA
 51.647012,17.384294 "domryba" # Zduny, Poland
 43.459461,19.811432 "mima" # Nova Varos, Serbia
 42.301754,-83.030788 "uc50ic4more" # Windsor, Ontario, Canada
@@ -959,99 +959,100 @@ You can use the following website to get your device's coordinates along with a 
 35.665460,138.639732 "kusanaginoturugi" # Fuefuki, Yamanashi, Japan
 49.996480,-110.672823 "sketchet" # Medicine Hat, AB, Canada
 34.727100,10.719314 "lejenome" # Sfax, Tunisia
-26.508936, 80.231026 "govg" # Kanpur, India
+26.508936,80.231026 "govg" # Kanpur, India
 55.755826,37.6173 "Agent0" # Moscow, Russia
 -27.586230,151.983355 "andyc" # Toowoomba, Qld, Australia
 45.518958,-122.6890503 "neophile" # Portland, OR, USA
-13.155322,-61.224367  "cjaka12" # St.Vincent
+13.155322,-61.224367 "cjaka12" # St.Vincent
 40.357298,-74.667223 "miguel" # Princeton, NJ, USA
 41.081444999999995,81.51900499999999 "locustmage" # Akron, Ohio, USA
 36.1860589,-115.2617282 "cameros" # Las Vegas, Nevada, USA
 53.599432,-113.491945 "shadowone" # Edmonton, AB, Canada
-48.208174, 16.373819 "andixschild" # Vienna, Austria
+48.208174,16.373819 "andixschild" # Vienna, Austria
 40.377122,-74.551387 "Brandon" # Monmouth Junction, NJ, USA
-45.492864, -122.621038 "MichaelRpdx" # Portland, Oregon, USA
+45.492864,-122.621038 "MichaelRpdx" # Portland, Oregon, USA
 22.273487,70.8212963 "delta24" # Rajkot, Gujarat, India
 56.3187600,-3.020513 "Ranger" # Cupar, Scotland, UK
-51.329888, 12.340868 "da" # Leipzig, Germany
-44.798140, 20.469875 "zola" # Belgrade, Serbia
-55.755826, 37.617300 "mango" # Moscow, Russia
--21.684616, -43.347343 "Orkan" # Juiz de Fora, Brazil
-30.668912,  -81.4604791 "mlayland" # Fernandina Beach, FL, USA
-42.356391, -71.097565 "ccompton" # Cambridge, MA, USA
-41.633719, 9.237224 "Plastic-1" # Porto-Vecchio, Corsica, France
+51.329888,12.340868 "da" # Leipzig, Germany
+44.798140,20.469875 "zola" # Belgrade, Serbia
+55.755826,37.617300 "mango" # Moscow, Russia
+-21.684616,-43.347343 "Orkan" # Juiz de Fora, Brazil
+30.668912,-81.4604791 "mlayland" # Fernandina Beach, FL, USA
+42.356391,-71.097565 "ccompton" # Cambridge, MA, USA
+41.633719,9.237224 "Plastic-1" # Porto-Vecchio, Corsica, France
 34.7361012,-87.7123259 "comhack" # Tuscumbia, AL, USA
--7.556497, 110.863657 "ibnuda" # Surakarta, Jawa Tengah, Indonesia
-55.788994, 37.791333 "kirill9617" # Moscow, Russia
-69.672155, 29.946787 "Ehtele" # Kirkenes, Norway
--15.788975, -48.008574 "Seninha" # Brasília, Brazil
-59.726734, 17.773031 "Sarsaparilla" # Knivsta, Sweden
-35.650711, -78.4563914 "Alex" # Clayton, NC, USA
-60.226772, 24.654515 "haaja" # Espoo, Finland
-61.458941, 23.850865 "sayami" # Tampere, Finland
-31.830981, 117.255113 "wzhd" # Anhui, China
-40.577862, -74.525521 "Poppamunz" # Bridgewater, NJ, USA
-13.099386, 77.600913 "sria91" # Bengaluru, KA, IN
-45.562541, -73.681114 "jflemieux" # Laval, QC, Canada
-30.503504, 114.409928 "felixonmars" # Wuhan, Hubei, China
-43.522033, -79.832676 "S29K" # Milton, ON, Canada
+-7.556497,110.863657 "ibnuda" # Surakarta, Jawa Tengah, Indonesia
+55.788994,37.791333 "kirill9617" # Moscow, Russia
+69.672155,29.946787 "Ehtele" # Kirkenes, Norway
+-15.788975,-48.008574 "Seninha" # Brasília, Brazil
+59.726734,17.773031 "Sarsaparilla" # Knivsta, Sweden
+35.650711,-78.4563914 "Alex" # Clayton, NC, USA
+60.226772,24.654515 "haaja" # Espoo, Finland
+61.458941,23.850865 "sayami" # Tampere, Finland
+31.830981,117.255113 "wzhd" # Anhui, China
+40.577862,-74.525521 "Poppamunz" # Bridgewater, NJ, USA
+13.099386,77.600913 "sria91" # Bengaluru, KA, IN
+45.562541,-73.681114 "jflemieux" # Laval, QC, Canada
+30.503504,114.409928 "felixonmars" # Wuhan, Hubei, China
+43.522033,-79.832676 "S29K" # Milton, ON, Canada
 41.967952,-84.6459807 "myrrlyn" # Jonesville, MI, USA
-37, 80 "riggt" # Blacksburg, Virginia, USA
-49.23, -123.98 "pxit" # Nanaimo, BC Canada
-46.106677, 11.112510 "alegotta" Trento, Italy
-41.091064, -73.865318 "snakeroot" # Sleepy Hollow, NY USA
-46.518568, 6.566716 "dopsi" # Lausanne, VD, Switzerland
-40.915535, 17.021062 "TheSillex" # Turi, BA, Italy
-20.624184, -103.352554 "arknix" # Guadalajara, Jalisco, Mexico
-52.5134438, 13.4263034 "XenGi" # Berlin, Germany
-50.207419, 9.536354 "c-korn" # Hessen, Germany
-52.468271, 4.837296 "hmhdiswiss" # Zaandam, The Netherlands
-23.1344342,-82.3871747,"Uranio-235" # Havana, Cuba
-52.318574, -0.082783 "andrewj720" # St Ives, Cambridgeshire, UK
-82.501771, -62.348099 "Archeon" # Toronto, Ontario, Canada 
-42.6677927, 23.3233898 "Ianis G. Vasilev aka ivasilev / v--" # Sofia, Bulgaria
+37,80 "riggt" # Blacksburg, Virginia, USA
+49.23,-123.98 "pxit" # Nanaimo, BC Canada
+46.106677,11.112510 "alegotta" # Trento, Italy
+41.091064,-73.865318 "snakeroot" # Sleepy Hollow, NY USA
+46.518568,6.566716 "dopsi" # Lausanne, VD, Switzerland
+40.915535,17.021062 "TheSillex" # Turi, BA, Italy
+20.624184,-103.352554 "arknix" # Guadalajara, Jalisco, Mexico
+52.5134438,13.4263034 "XenGi" # Berlin, Germany
+50.207419,9.536354 "c-korn" # Hessen, Germany
+52.468271,4.837296 "hmhdiswiss" # Zaandam, The Netherlands
+23.1344342,-82.3871747 "Uranio-235" # Havana, Cuba
+52.318574,-0.082783 "andrewj720" # St Ives, Cambridgeshire, UK
+82.501771,-62.348099 "Archeon" # Toronto, Ontario, Canada
+42.6677927,23.3233898 "Ianis G. Vasilev aka ivasilev / v--" # Sofia, Bulgaria
 32.8037,130.7232 "hiri" # Kumamoto, Japan
 -23.588182,-46.610116 "gaballench" # São Paulo, Brazil
 52.7577027,7.2108198 "SunRed" # Haren (Ems), Lower Saxony, Germany
-42.351812, -71.141449 "jethrosun7" # Boston, MA, USA
-55.992348, 92.796414 "Prototik" # Krasnoyarsk, Russia
-41.946728, 12.825640 "Daniele" # Tivoli, Italy
-50.697456, 7.251146 "autarchprinceps" # Heisterbacherroth, NRW, Germany
+42.351812,-71.141449 "jethrosun7" # Boston, MA, USA
+55.992348,92.796414 "Prototik" # Krasnoyarsk, Russia
+41.946728,12.825640 "Daniele" # Tivoli, Italy
+50.697456,7.251146 "autarchprinceps" # Heisterbacherroth, NRW, Germany
 52.337376,-0.189092 "shawny" # Huntingdon, Cambridgeshire, UK
 19.168670,73.263631 "rksomayaji" # Badlapur, Maharashtra, India
-46.012929, -65.155508 "hakstrap01013" # Wheaton Settlement, New Brunswick, Canada
-59.959530, 10.634994 "corebob" # Oslo, Norway
-37.997714, 32.529863 "erayaydin" # Konya, Turkey
--3.336549, 37.140109 "Joseph U" # Moshi, Tanzania
-44.231338, -76.508145 "propheis" # Kingston, Ontario, Canada
+46.012929,-65.155508 "hakstrap01013" # Wheaton Settlement, New Brunswick, Canada
+59.959530,10.634994 "corebob" # Oslo, Norway
+37.997714,32.529863 "erayaydin" # Konya, Turkey
+-3.336549,37.140109 "Joseph U" # Moshi, Tanzania
+44.231338,-76.508145 "propheis" # Kingston, Ontario, Canada
 44.373300,0.733741 "Damien Flament" # Pujols, Aquitaine, France
--20.240991, -70.138735 "Iván Ramírez Paz" #Iquique, Tarapaca, Chile
--35.211579, 149.009614 "Max Chesterfield" #Canberra, Australia
-49.874284, 24.044106 "Michael Lutsiuk" # Lviv, Ukraine
-55.669841, 37.279732 "monory" # Odintsovo, Moscow region, Russia
-37.511334, 22.372988 "jansu" # Tripoli, Greece
-52.733978, -0.651432 "Us3rname" # Rutland, United Kingdom
-42.656469, -82.974470 "wjstarrsiii" # Macomb, MI, USA
+-20.240991,-70.138735 "Iván Ramírez Paz" # Iquique, Tarapaca, Chile
+-35.211579,149.009614 "Max Chesterfield" # Canberra, Australia
+49.874284,24.044106 "Michael Lutsiuk" # Lviv, Ukraine
+55.669841,37.279732 "monory" # Odintsovo, Moscow region, Russia
+37.511334,22.372988 "jansu" # Tripoli, Greece
+52.733978,-0.651432 "Us3rname" # Rutland, United Kingdom
+42.656469,-82.974470 "wjstarrsiii" # Macomb, MI, USA
 37.766202,30.558844 "Özgür Sarıer" # Isparta, Turkey
-53.624290, 11.418881 "aeno" # Schwerin, Germany
--41.249527, 174.795626 "Piffle" # Wellington, New Zealand
-46.607027, -122.486172 "gehidore" # Cinebar, Washington, USA
--41.128481, 175.076722 "phillid" # Upper Hutt, New Zealand
-49.00408, 8.40861 "wombalton" # Karlsruhe, Baden-Württemberg, Germany, EU
-51.993161, 7.547592 "thunfisch" # Münster, NRW, Germany, EU
-51.544265, -0.011686 "ragreener" # London, United Kingdom
-61.464059, 23.890607 "Michael" # Tampere, Finland
-42.250611, -84.459172 "Mark Weiman (markzz)" # Jackson, Michigan, United States
-19.040532, -98.194858 "Marco A. Rojas (MrcRjs)" # Puebla de Zaragoza, Puebla, Mexico
+53.624290,11.418881 "aeno" # Schwerin, Germany
+-41.249527,174.795626 "Piffle" # Wellington, New Zealand
+46.607027,-122.486172 "gehidore" # Cinebar, Washington, USA
+-41.128481,175.076722 "phillid" # Upper Hutt, New Zealand
+49.00408,8.40861 "wombalton" # Karlsruhe, Baden-Württemberg, Germany, EU
+51.993161,7.547592 "thunfisch" # Münster, NRW, Germany, EU
+51.544265,-0.011686 "ragreener" # London, United Kingdom
+61.464059,23.890607 "Michael" # Tampere, Finland
+42.250611,-84.459172 "Mark Weiman (markzz)" # Jackson, Michigan, United States
+19.040532,-98.194858 "Marco A. Rojas (MrcRjs)" # Puebla de Zaragoza, Puebla, Mexico
 39.508295,-84.181346 "TheClean" # Clearcreek Township, Ohio
-48.8123411, 2.3710360999999693 "Ybalrid" #Ivry-sur-Seine, Île-de-France, France
+48.8123411,2.3710360999999693 "Ybalrid" # Ivry-sur-Seine, Île-de-France, France
 52.396330,20.931634 "nr6000000" # Legionowo, Poland
 25.016733,121.298885 "Thomas" # Taoyuan,Taiwan
 39.120383,118.351087 "Puzhou Wang" # Caofeidian,Tangshan,China
-46.596249, 7.055057 "helvethor" # Le Pâquier, Fribourg, Switzerland
+46.596249,7.055057 "helvethor" # Le Pâquier, Fribourg, Switzerland
 35.33720,25.12360 "gkaklas" # Heraklion, Greece
-38.704883, -90.878528 "Noorquacker" # Missouri, USA
-58.493, 13.154 "phi97" # Lidkoping, Sweden
-51.1214715, -114.1167452 "mcnster" # Cowtown, Alberta, Canada
+38.704883,-90.878528 "Noorquacker" # Missouri, USA
+58.493,13.154 "phi97" # Lidkoping, Sweden
+51.1214715,-114.1167452 "mcnster" # Cowtown, Alberta, Canada
+47.547837,-121.995722 "jrmasters" # Issaquah, Washington, USA
 
 ```

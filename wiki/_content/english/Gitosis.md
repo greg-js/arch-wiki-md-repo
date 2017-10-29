@@ -1,6 +1,6 @@
 Gitosis is a tool which provides access control and remote management for hosted [Git](/index.php/Git "Git") repositories. It allows for fine-grained management of read and write access over SSH, without requiring that the users have local system accounts on the server. To do this, it sets up a single system account "`git`" which is then used for all Git access.
 
-Gitosis provides installation instructions in its [README](http://eagain.net/gitweb/?p=gitosis.git;a=blob;f=README.rst;hb=HEAD) file. This guide is based on those instructions.
+Gitosis provides installation instructions in its [README](https://github.com/tv42/gitosis/blob/master/README.rst) file. This guide is based on those instructions.
 
 ## Contents
 

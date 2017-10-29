@@ -8,8 +8,7 @@ From [Wikipedia:Clipboard (computing)](https://en.wikipedia.org/wiki/Clipboard_(
 *   [2 Background](#Background)
 *   [3 How to use the selections (clipboards)](#How_to_use_the_selections_.28clipboards.29)
 *   [4 Application specific notes](#Application_specific_notes)
-    *   [4.1 Konsole terminal](#Konsole_terminal)
-    *   [4.2 CLIPBOARD in Gvim](#CLIPBOARD_in_Gvim)
+    *   [4.1 CLIPBOARD in vim](#CLIPBOARD_in_vim)
 *   [5 Disable paste on middle mouse click](#Disable_paste_on_middle_mouse_click)
     *   [5.1 Firefox](#Firefox)
     *   [5.2 GTK](#GTK)
@@ -38,11 +37,7 @@ The PRIMARY selection speeds up the copying task by copying the text to the clip
 
 ## Application specific notes
 
-### Konsole terminal
-
-The [konsole](https://www.archlinux.org/packages/?name=konsole) terminal allows to use the shortcut `ctl+c` both for copying text and for stopping commands. The behaviour depends on whether there is something selected or not.
-
-### CLIPBOARD in Gvim
+### CLIPBOARD in vim
 
 See [Vim#Clipboard](/index.php/Vim#Clipboard "Vim").
 

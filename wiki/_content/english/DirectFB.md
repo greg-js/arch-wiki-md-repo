@@ -1,4 +1,4 @@
-[DirectFB](http://directfb.org/) stands for Direct Frame Buffer. It is a software library for GNU/Linux/Unix-based operating systems with a small memory footprint that provides graphics acceleration, input device handling and abstraction layer, and integrated windowing system with support for translucent windows and multiple display layers on top of the Linux framebuffer without requiring any kernel modifications.[2] DirectFB is free software licensed under the terms of the GNU Lesser General Public License (LGPL).
+[DirectFB](https://elinux.org/DirectFB) stands for Direct Frame Buffer. It is a software library for GNU/Linux/Unix-based operating systems with a small memory footprint that provides graphics acceleration, input device handling and abstraction layer, and integrated windowing system with support for translucent windows and multiple display layers on top of the Linux framebuffer without requiring any kernel modifications.[2] DirectFB is free software licensed under the terms of the GNU Lesser General Public License (LGPL).
 
 ## Installation
 

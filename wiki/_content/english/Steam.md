@@ -52,6 +52,8 @@ The following fixes are needed to get Steam functioning properly on Arch Linux:
 
 For the [SteamCMD](https://developer.valvesoftware.com/wiki/SteamCMD), a command-line version of the Steam client, that is primarily used to install and update dedicated servers, [install](/index.php/Install "Install") the [steamcmd](https://aur.archlinux.org/packages/steamcmd/) package.
 
+**Note:** The AUR package installs files owned by root, so you must be root to update SteamCMD itself.
+
 ### Alternative Flatpak installation
 
 Steam can also be installed with [Flatpak](/index.php/Flatpak "Flatpak") as `com.valvesoftware.Steam` from [Flathub](https://flathub.org/).

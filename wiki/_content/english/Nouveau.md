@@ -21,6 +21,7 @@ Find your card's [code name](https://nouveau.freedesktop.org/wiki/CodeNames) (a 
     *   [3.5 Power management](#Power_management)
         *   [3.5.1 Fan control](#Fan_control)
     *   [3.6 Optimus](#Optimus)
+    *   [3.7 Vertical Sync](#Vertical_Sync)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Disable MSI](#Disable_MSI)
     *   [4.2 Phantom output issue](#Phantom_output_issue)
@@ -226,6 +227,10 @@ Sources:
 ### Optimus
 
 You have two solutions to use [Optimus](/index.php/Optimus "Optimus") on a laptop (aka hybrid graphics, when you have two GPUs on your laptop): [bumblebee](/index.php/Bumblebee "Bumblebee") and [PRIME](/index.php/PRIME "PRIME")
+
+### Vertical Sync
+
+In [Xfce](/index.php/Xfce "Xfce"), xfwm4 4.13 has an improved [compositor](https://github.com/xfce-mirror/xfwm4/blob/master/COMPOSITOR) - its Xpresent method is smoother than using [Compton](/index.php/Compton "Compton").
 
 ## Troubleshooting
 
