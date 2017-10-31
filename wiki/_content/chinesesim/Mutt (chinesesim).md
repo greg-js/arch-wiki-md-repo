@@ -46,7 +46,7 @@ Mutt主要侧重于作为邮件用户代理（MUA），最初是为了查看邮�
 
 [NeoMutt](http://www.neomutt.org/) 项目旨在汇集 Mutt 的所有补丁。它增加了很多[功能](http://www.neomutt.org/feature.html)。许多旧的 Mutt 补丁已经被更新，整理和记录。
 
-AUR 中有许多不同的 mutt 包，每个都提供了不同的补丁，NeoMutt 计划在未来通过适当的编译选项来替代它们。现在，可以在AUR中通过 [neomutt](https://aur.archlinux.org/packages/neomutt/) 和 [neomutt-git](https://aur.archlinux.org/packages/neomutt-git/) 找到NeoMutt。
+AUR 中有许多不同的 mutt 包，每个都提供了不同的补丁，NeoMutt 计划在未来通过适当的编译选项来替代它们。现在，可以在AUR中通过 [neomutt](https://www.archlinux.org/packages/?name=neomutt) 和 [neomutt-git](https://aur.archlinux.org/packages/neomutt-git/) 找到NeoMutt。
 
 ## 配置
 

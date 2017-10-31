@@ -86,7 +86,7 @@ And finally, [start and enable](/index.php/Systemd#Using_units "Systemd") `fix_h
 
 ## Fan spins all the time
 
-**Note:** Kernel version 4.13 causes (Intel Kaby Lake architecture) CPU to stay at minimum of 800Mhz frequency instead of 400Mhz. Of course, this wastes battery and generates heat, causing fan to spin more aggressively. Use kernel version 4.12 or earlier for temporary fix.
+**Note:** Kernel version 4.13 has unstable CPU frequencies staying at minimum of 800Mhz-900Mhz instead of 400Mhz. This wastes battery and generates heat, causing fan to spin more aggressively. Use kernel version 4.12 or earlier as a temporary fix until [upstream bug](https://bugzilla.kernel.org/show_bug.cgi?id=197469) is fixed.
 
 See [Fan speed control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control").
 

@@ -107,7 +107,7 @@ To use different font with lemonbar, you need to pass `-f` option when starting 
 
 ##### Font Awesome icons
 
-With XFT support, you can also add [font-awesome icons](http://fontawesome.io/) to your bar. You need to install [ttf-font-awesome](https://aur.archlinux.org/packages/ttf-font-awesome/) before using the icons and pass `-f "Font Awesome"` to lemonbar. Please note, that you also need to specify one more font (e.g. `-f "Roboto Medium"`) to be used for other symbols than font awesome icons if you want something else visible in your lemonbar as font awesome does not contain other symbols.
+With XFT support, you can also add [font-awesome icons](http://fontawesome.io/) to your bar. You need to install [ttf-font-awesome](https://www.archlinux.org/packages/?name=ttf-font-awesome) before using the icons and pass `-f "Font Awesome"` to lemonbar. Please note, that you also need to specify one more font (e.g. `-f "Roboto Medium"`) to be used for other symbols than font awesome icons if you want something else visible in your lemonbar as font awesome does not contain other symbols.
 
 Before adding an icon to lemonbar, you need to look up its unicode id on the [icon list](http://fontawesome.io/icons/) and pass it to lemonbar string. Here is a script that displays icon with unicode id `f242` in lemonbar:
 

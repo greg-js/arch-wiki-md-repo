@@ -82,7 +82,7 @@ Kernel '4.13.9-1-ARCH'
 00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (4) I219-V (rev 21)
 02:00.0 3D controller: NVIDIA Corporation GM108M [GeForce 940MX] (rev ff)
 04:00.0 Network controller: Intel Corporation Wireless 8265 / 8275 (rev 78)
-3e:00.0 Non-Volatile memory controller: Intel Corporation Device f1a5 (rev 03)
+3e:00.0 Non-Volatile memory controller: Lenovo Device 0004
 
 ```
 

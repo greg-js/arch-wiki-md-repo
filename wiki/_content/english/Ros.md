@@ -22,7 +22,7 @@ Packages are being added on an as-needed basis. Please send package requests to 
 
 ### Configure the build tool
 
-Note that catkin uses python2, and therefore catkin_make may fail unless it it explicitly pointed to the python2 install. To do so, add the following alias to your .bashrc (or equivalent):
+Note that catkin uses python2, and therefore catkin_make may fail unless it is explicitly pointed to the python2 install. To do so, add the following alias to your .bashrc (or equivalent):
 
 ```
 alias catkin_make="catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so"

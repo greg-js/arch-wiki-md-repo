@@ -47,6 +47,7 @@ Packages marked with `*` are available only for the 64-bit systems, see [this fo
 | *ck-bobcat ** | CPUs based on AMD Family 14h cores with x86-64 instruction set support. |
 | *ck-bulldozer ** | CPUs based on AMD Family 15h cores with x86-64 instruction set support. |
 | *ck-piledriver ** | CPUs based on AMD Family 15h cores with x86-64 instruction set support. |
+| *ck-zen ** | CPUs based on AMD Family 17h cores with x86-64 instruction set support. |
 
 ## Selecting the correct CPU optimized package
 
@@ -80,6 +81,7 @@ The resulting `-march` is what GCC would use natively. Refer to the table below 
 | *ck-bobcat* | btver1 |
 | *ck-bulldozer* | bdver1 |
 | *ck-piledriver* | bdver2 |
+| *ck-zen* | vnver1 |
 
 **Note:** Add additional entries to this table based on experience.
 

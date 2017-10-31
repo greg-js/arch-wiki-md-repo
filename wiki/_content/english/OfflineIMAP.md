@@ -1,3 +1,9 @@
+Related articles
+
+*   [isync](/index.php/Isync "Isync")
+*   [notmuch](/index.php/Notmuch "Notmuch")
+*   [msmtp](/index.php/Msmtp "Msmtp")
+
 [OfflineIMAP](http://offlineimap.org/) is a Python utility to sync mail from IMAP servers. It does not work with the POP3 protocol or mbox, and is usually paired with a MUA such as [Mutt](/index.php/Mutt "Mutt").
 
 **Note:** [imapfw](http://www.offlineimap.org/development/2015/10/08/imapfw-is-made-public.html) is intened to replace offlineimap in the future.
@@ -154,7 +160,7 @@ Instead of setting OfflineIMAP as a daemon, it can be managed with the packages'
 
 This timer by default runs OfflineIMAP every 15 minutes. This can be easily changed by creating a [drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet"). For example, the following modifies the timer to check every 5 minutes:
 
- `~/.systemd/user/offlineimap.timer.d/timer.conf` 
+ `~/.config/systemd/user/offlineimap.timer.d/timer.conf` 
 ```
 [Timer]
 OnUnitInactiveSec=5m
@@ -163,7 +169,7 @@ OnUnitInactiveSec=5m
 
 For more robust solution it is possible to set a watchdog which will kill OfflineIMAP in case of freeze:
 
- `~/.systemd/user/offlineimap.service.d/service.conf` 
+ `~/.config/systemd/user/offlineimap.service.d/service.conf` 
 ```
 [Service]
 WatchdogSec=300

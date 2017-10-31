@@ -223,7 +223,7 @@ A daily schedule of this script is appropriate as no action will be taken anyway
 
 In order to automate the renewal of the certificate, schedule a cronjob for the root user to run the command line above.
 
-#### Automation with systemd/Timers
+#### Automation with [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
 
 Both service and timer unit files need to be created:
 

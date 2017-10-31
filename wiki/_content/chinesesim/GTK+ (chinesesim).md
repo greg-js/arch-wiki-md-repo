@@ -1,3 +1,9 @@
+相关文章
+
+*   [统一QT和GTK程序的外观](/index.php/Uniform_Look_for_QT_and_GTK_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Uniform Look for QT and GTK Applications (简体中文)")
+*   [Qt](/index.php/Qt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Qt (简体中文)")
+*   [GNU Project](/index.php/GNU_Project "GNU Project")
+
 **翻译状态：** 本文是英文页面 [GTK+](/index.php/GTK%2B "GTK+") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-02-18，点击[这里](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=247172)可以查看翻译后英文页面的改动。
 
 摘自[GTK+ 官方网站](http://www.gtk.org)：
@@ -235,8 +241,8 @@ zenity --info --title='Hello world!' --text='This is an example dialog.'
 
 #### Boo
 
-*   依赖： [gtk-sharp-git](https://aur.archlinux.org/packages/gtk-sharp-git/) 来自 AUR ([boo](https://www.archlinux.org/packages/?name=boo))
-*   编译依赖： [boo](https://www.archlinux.org/packages/?name=boo)
+*   依赖： [gtk-sharp-git](https://aur.archlinux.org/packages/gtk-sharp-git/) 来自 AUR ([boo](https://aur.archlinux.org/packages/boo/))
+*   编译依赖： [boo](https://aur.archlinux.org/packages/boo/)
 *   编译： `booc hello_world.boo`
 *   运行： `mono hello_world.exe` (or `booi hello_world.boo`)
 
@@ -406,7 +412,7 @@ public class HelloWorld {
 #### Visual Basic .NET
 
 *   依赖： [gtk-sharp-git](https://aur.archlinux.org/packages/gtk-sharp-git/) 来自 AUR
-*   编译依赖： [mono-basic](https://www.archlinux.org/packages/?name=mono-basic)
+*   编译依赖： [mono-basic](https://aur.archlinux.org/packages/mono-basic/)
 *   编译： `vbnc -r:/usr/lib/mono/gtk-sharp-3.0/gio-sharp.dll -r:/usr/lib/mono/gtk-sharp-3.0/glib-sharp.dll -r:/usr/lib/mono/gtk-sharp-3.0/gtk-sharp.dll hello_world.vb`
 *   运行： `mono hello_world.exe`
 

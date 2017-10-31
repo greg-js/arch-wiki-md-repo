@@ -14,11 +14,10 @@ Pi-hole è un progetto basato su script di shell che gestisce liste di blocco di
     *   [1.1 Installazione](#Installazione)
     *   [1.2 Configurazione iniziale](#Configurazione_iniziale)
         *   [1.2.1 Dnsmasq](#Dnsmasq)
-        *   [1.2.2 Router](#Router)
-        *   [1.2.3 Web Server](#Web_Server)
-            *   [1.2.3.1 Lighttpd](#Lighttpd)
-            *   [1.2.3.2 Nginx](#Nginx)
-    *   [1.3 Web interface](#Web_interface)
+        *   [1.2.2 Web Server](#Web_Server)
+            *   [1.2.2.1 Lighttpd](#Lighttpd)
+            *   [1.2.2.2 Nginx](#Nginx)
+    *   [1.3 Configurazione tipica](#Configurazione_tipica)
     *   [1.4 FTL](#FTL)
 *   [2 Usare Pi-hole attraverso OpenVPN](#Usare_Pi-hole_attraverso_OpenVPN)
 *   [3 Pi-hole Standalone](#Pi-hole_Standalone)
@@ -38,7 +37,7 @@ Installa [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) e [pi-ho
 
 #### Dnsmasq
 
-Pi-hole interagisce con [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) per risolvere le richieste DNS della tua LAN e si occuperà del filtraggio della pubblicità. Assicurati che la seguente riga in `/etc/dnsmasq.conf` sia non commentata:
+Assicurati che la seguente riga in `/etc/dnsmasq.conf` sia non commentata:
 
  `/etc/dnsmasq.conf` 
 ```
@@ -48,10 +47,6 @@ conf-dir=/etc/dnsmasq.d/,*.conf
 ```
 
 Abilita `dnsmasq.service` e ri/avvia il servizio.
-
-#### Router
-
-Pi-hole deve essere il DNS della LAN per poter funzionare correttamente. La tipica utenza casalinga o i piccoli uffici si affidano al proprio router per risolvere le richieste DNS. Il metodo migliore è semplicemente ridefinire i DNS **sul router** indicando di usare l'indirizzo IP della macchina che esegue Pi-hole. Configurare il router è fuori dagli scopi di questo articolo. In alternativa è possibile configurare i DNS di ogni macchina o apparato che si connette al router anche se può essere noioso. Vedi [Come configurare i miei apparati per usare Pi-hole come DNS server?](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) per maggiori dettagli.
 
 #### Web Server
 
@@ -120,19 +115,23 @@ Copia il file di configurazione fornito dal pacchetto:
 
 Abilita `nginx.service` `php-fpm.service` e ri/avvia i servizi.
 
-### Web interface
+### Configurazione tipica
 
-L'interfaccia web di pi-hole è particolarmente completa e ben fatta. Si può usare per configurare quasi ogni aspetto di [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq), eseguire molti dei comandi disponibili di pi-hole, gestire le white e blacklist e monitorare il filtraggio della pubblicità. Per connetterti all'interfaccia
+Pi-hole può essere configurato in diversi modi. Questa sezione si occupa della configurazione come semplice ad-blocker, non come server DHCP. Partiamo dal presupposto che la maggior parte degli utenti residenziali abbiano un apparato separato (un router) per questo. Configurazioni maggiormente avanzate sono fuori dagli scopi di questa sezione.
 
+**Note:** Per gli scopi di questa sezione, 192.168.1.1 sarà l'indirizzo del router e 192.168.1.250 sarà l'indirizzo della macchina che esegue pi-hole.
+
+Pi-hole deve essere il DNS della LAN per poter funzionare correttamente. Il metodo migliore è semplicemente ridefinire i campi DNS **sul router** in modo da usare l'indirizzo IP della macchina che esegue pi-hole. Configurare il router è al di fuori degli scopi di questo articolo. In alternativa è possibile configurare i DNS di ogni macchina o apparato che si connette al router anche se può essere noioso. Vedi [Come configurare i miei apparati per usare Pi-hole come DNS server?](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) per maggiori dettagli.
+
+Una volta che il router indichi l'indirizzo IP della macchina che esegue pi-hole come server DNS, entrare nell'interfaccia web di pi-hole ([http://pi.hole/admin](http://pi.hole/admin)), opzionalmente è possibile autenticarsi attraverso una password, e cliccare su "Settings". Scendere nella pagina fino alla sezione chiamata, "Upstream DNS Servers" (i server DNS che userà pi-hole per risolvere gli indirizzi non filtrati) e selezionare uno o più server DNS tra quelli proposti .
+
+**Note:** L'interfaccia web di pi-hole può configurare praticamente tutte le funzioni di [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq), eseguire diversi comandi di pi-hole, controllare whitelist e blacklist and monitorare il filtraggio della pubblicità.
+
+Potrebbe risultare necessario riavviare la configurazione della rete per ogni apparato connesso. Come esempio, il contenuto del file `/etc/resolv.conf` di uno degli apparati in rete dovrebbe essere simile a questo:
+
+ `/etc/resolv.conf` 
 ```
-http://<IP/Hostname della macchina Pi-hole>/admin/
-
-```
-
-o
-
-```
-[http://pi.hole/admin](http://pi.hole/admin)
+nameserver 192.168.1.250
 
 ```
 

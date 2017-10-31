@@ -1,3 +1,9 @@
+Related articles
+
+*   [Catalyst](/index.php/Catalyst "Catalyst")
+*   [Nvidia](/index.php/Nvidia "Nvidia")
+*   [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration")
+
 GPGPU stands for [General-purpose computing on graphics processing units](https://en.wikipedia.org/wiki/GPGPU "wikipedia:GPGPU"). In Linux, there are currently two major GPGPU frameworks: [OpenCL](https://en.wikipedia.org/wiki/OpenCL "wikipedia:OpenCL") and [CUDA](https://en.wikipedia.org/wiki/CUDA "wikipedia:CUDA")
 
 ## Contents
@@ -122,7 +128,7 @@ The [cuda](https://www.archlinux.org/packages/?name=cuda) package installs all c
 
 To find whether the installation was successful and if cuda is up and running, you can compile the samples installed on `/opt/cuda/samples` (you can simply run `make` inside the directory, altough is a good practice to copy the `/opt/cuda/samples` directory to your home directory before compiling) and running the compiled examples. A nice way to check the installation is to run one of the examples, called `deviceQuery`.
 
-**Note:** CUDA 8.0 is not compatible with GCC 6 (see [FS#49272](https://bugs.archlinux.org/task/49272)). Therefore the [cuda](https://www.archlinux.org/packages/?name=cuda) package depends on [gcc5](https://www.archlinux.org/packages/?name=gcc5) and creates symbolic links in `/opt/cuda/bin/` for the older version to be picked up by `nvcc`. You might also need to configure your build system to use the same GCC version for compiling host code.
+**Note:** CUDA 9.0 is not compatible with GCC 7 (see [FS#49272](https://bugs.archlinux.org/task/49272) for the history). Therefore the [cuda](https://www.archlinux.org/packages/?name=cuda) package depends on [gcc6](https://www.archlinux.org/packages/?name=gcc6) and creates symbolic links in `/opt/cuda/bin/` for the older version to be picked up by `nvcc`. You might also need to configure your build system to use the same GCC version for compiling host code.
 
 ### Language bindings
 

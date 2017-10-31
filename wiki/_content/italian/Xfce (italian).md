@@ -1,3 +1,12 @@
+Articoli correlati
+
+*   [Desktop Environment](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)")
+*   [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)")
+*   [Xfwm](/index.php/Xfwm "Xfwm")
+*   [Thunar](/index.php/Thunar_(Italiano) "Thunar (Italiano)")
+*   [LXDE](/index.php/LXDE_(Italiano) "LXDE (Italiano)")
+*   [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)")
+
 Tratto da [Xfce - About](http://www.xfce.org/about/):
 
 	*Xfce incarna la filosofia UNIX tradizionale di modularità e riutilizzabilità. Si compone di una serie di componenti che forniscono la completa funzionalità che si può aspettare da un ambiente desktop moderno. Essi sono distribuiti separatamente e si può scegliere tra i pacchetti disponibili per creare un ambiente ottimale di lavoro personale.*

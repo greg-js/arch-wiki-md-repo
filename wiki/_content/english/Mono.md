@@ -14,9 +14,9 @@ Mono is an open source, cross-platform, implementation of C# and the CLR that is
 
 ## Installation
 
-Mono can be [installed](/index.php/Pacman "Pacman") with the package [mono](https://www.archlinux.org/packages/?name=mono), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+Mono can be [installed](/index.php/Pacman "Pacman") with the package [mono](https://www.archlinux.org/packages/?name=mono).
 
-If you need VisualBasic.Net support you have to [install](/index.php/Install "Install") the VisualBasic.Net interpreter with the package [mono-basic](https://www.archlinux.org/packages/?name=mono-basic), available in the official repositories.
+If you need VisualBasic.Net support you have to [install](/index.php/Install "Install") the VisualBasic.Net interpreter with the package [mono-basic](https://aur.archlinux.org/packages/mono-basic/).
 
 MonoDevelop calls [xterm](/index.php/Xterm "Xterm") when you run your project. You might install it, when you're writing a console application.
 
@@ -64,9 +64,7 @@ Hello world!
 
 ## Development
 
-Starting to develop in Mono/C# is very easy. Just [install](/index.php/Install "Install") the [MonoDevelop IDE](http://monodevelop.com/) and debugger support with packages [monodevelop](https://www.archlinux.org/packages/?name=monodevelop), [monodevelop-debugger-gdb](https://www.archlinux.org/packages/?name=monodevelop-debugger-gdb), available in the official repositories.
-
-Alternatively, you can install the [rider](https://aur.archlinux.org/packages/rider/) IDE.
+Starting to develop in Mono/C# is very easy. Just [install](/index.php/Install "Install") the [MonoDevelop IDE](http://monodevelop.com/) with packages [monodevelop](https://aur.archlinux.org/packages/monodevelop/). Alternatively, you can install the [rider](https://aur.archlinux.org/packages/rider/) IDE.
 
 If you want the API documentation browser and some testing and development tools you have to install [mono-tools](https://www.archlinux.org/packages/?name=mono-tools).
 

@@ -1,3 +1,12 @@
+相关文章
+
+*   [Compiz/Configuration](/index.php/Compiz/Configuration "Compiz/Configuration")
+*   [Window manager (简体中文)](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)")
+*   [Desktop environment (简体中文)](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")
+*   [Xfce (简体中文)](/index.php/Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xfce (简体中文)")
+*   [MATE (简体中文)](/index.php/MATE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "MATE (简体中文)")
+*   [Unity (简体中文)](/index.php/Unity_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unity (简体中文)")
+
 **翻译状态：** 本文是英文页面 [Compiz](/index.php/Compiz "Compiz") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-08-14，点击[这里](https://wiki.archlinux.org/index.php?title=Compiz&diff=0&oldid=328840)可以查看翻译后英文页面的改动。
 
 来自[维基百科](https://zh.wikipedia.org/wiki/Compiz)的解释:

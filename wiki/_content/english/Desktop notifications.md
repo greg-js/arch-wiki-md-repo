@@ -1,3 +1,8 @@
+Related articles
+
+*   [GTK+](/index.php/GTK%2B "GTK+")
+*   [Libcanberra](/index.php/Libcanberra "Libcanberra")
+
 Desktop notifications are small, passive popup dialogs that notify the user of particular events in an asynchronous manner.
 
 ## Contents
@@ -108,8 +113,8 @@ notify-send 'Hello world!' 'This is an example notification.' --icon=dialog-info
 
 **Boo**
 
-*   Dependency: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3) ([boo](https://www.archlinux.org/packages/?name=boo))
-*   Makedependency: [boo](https://www.archlinux.org/packages/?name=boo)
+*   Dependency: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3) ([boo](https://aur.archlinux.org/packages/boo/))
+*   Makedependency: [boo](https://aur.archlinux.org/packages/boo/)
 *   Build with: `booc hello_world.boo`
 *   Run with: `mono hello_world.exe` (or `booi hello_world.boo`)
 
@@ -239,7 +244,7 @@ class HelloWorld
 **F#**
 
 *   Dependency: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3)
-*   Makedependency: [fsharp](https://www.archlinux.org/packages/?name=fsharp)
+*   Makedependency: [fsharp](https://aur.archlinux.org/packages/fsharp/)
 *   Build with: `fsharpc -r:notify-sharp.dll -I:/usr/lib/mono/notify-sharp-3.0/ -I:/usr/lib/mono/gtk-sharp-3.0/ hello_world.fs`
 *   Run with: `mono hello_world.exe`
 
@@ -673,7 +678,7 @@ public class HelloWorld {
 **Visual Basic .NET**
 
 *   Dependency: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3)
-*   Makedependency: [mono-basic](https://www.archlinux.org/packages/?name=mono-basic)
+*   Makedependency: [mono-basic](https://aur.archlinux.org/packages/mono-basic/)
 *   Build with: `vbnc -r:/usr/lib/mono/notify-sharp-3.0/notify-sharp.dll hello_world.vb`
 *   Run with: `mono hello_world.exe`
 

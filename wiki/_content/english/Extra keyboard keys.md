@@ -42,7 +42,8 @@ In Linux console, some *keysyms* (e.g. `F1` to `F246`) can be mapped to certain 
     *   [4.4 Lenovo T460p (or possibly others)](#Lenovo_T460p_.28or_possibly_others.29)
 *   [5 Gaming Keyboards](#Gaming_Keyboards)
     *   [5.1 Cooler Master CM Storm QuickFire TK](#Cooler_Master_CM_Storm_QuickFire_TK)
-    *   [5.2 Logitech G series G710 and 710+](#Logitech_G_series_G710_and_710.2B)
+    *   [5.2 Corsair K series keyboards](#Corsair_K_series_keyboards)
+    *   [5.3 Logitech G series G710 and 710+](#Logitech_G_series_G710_and_710.2B)
 *   [6 See also](#See_also)
 
 ## Identifying key codes
@@ -201,6 +202,10 @@ This keyboard has two features that could cause confusion in Linux: N-Key Rollov
 N-Key Rollover can [cause problems with the Function keys](https://bbs.archlinux.org/viewtopic.php?id=170877). To disable N-key rollover, hold down the FN lock key (next to right-ctrl) until it lights up, then hold Escape and press 6 to switch to 6-key rollover. Hold down the FN lock key to disable the Fn lock.
 
 The Win-Lock Key completely disables the Super (Windows) keys. Simply press the FN lock key and F12 together to toggle Win-Lock on and off.
+
+### Corsair K series keyboards
+
+There is a winlock button on these keyboards that can disable the use of the Super (Windows) keys. This button is located at the top right of the keyboard next to the num and capslock buttons. CKB can be used to disable this functionality entirely preventing further locking. However, in a default state, simply pressing the button would enable the Super (Windows) keys again.
 
 ### Logitech G series G710 and 710+
 

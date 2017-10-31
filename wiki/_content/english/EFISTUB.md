@@ -231,16 +231,16 @@ UEFI is designed to remove the need for an intermediate bootloader such as [GRUB
 The command looks like
 
 ```
-# efibootmgr -d */dev/sdX* -p *Y* -c -g -L "Arch Linux" -l /vmlinuz-linux -u "root=*/dev/sdBZ* rw initrd=/initramfs-linux.img"
+# efibootmgr --disk */dev/sdX* --part *Y* --create --gpt --label "Arch Linux" --loader /vmlinuz-linux --unicode "root=*/dev/sdBZ* rw initrd=/initramfs-linux.img"
 
 ```
 
-Where `*/dev/sdX*` and `*Y*` are the disk and partition where the ESP is located. Change the `root=` parameter to reflect your Linux root (disk UUIDs can also be used). Note that the `-u` argument in double quotes is just the list of [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), so you may need to add additional parameters e.g. for [suspend to disk](/index.php/Suspend_and_hibernate#Required_kernel_parameters "Suspend and hibernate") or [microcode](/index.php/Microcode "Microcode").
+Where `*/dev/sdX*` and `*Y*` are the disk and partition where the ESP is located. Change the `root=` parameter to reflect your Linux root (disk [UUIDs](/index.php/UUID "UUID") can also be used). Note that the `-u`/`--unicode` argument in double quotes is just the list of [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), so you may need to add additional parameters e.g. for [suspend to disk](/index.php/Suspend_and_hibernate#Required_kernel_parameters "Suspend and hibernate") or [microcode](/index.php/Microcode "Microcode").
 
 It is a good idea to then run
 
 ```
-# efibootmgr -v
+# efibootmgr --verbose
 
 ```
 
@@ -251,16 +251,17 @@ to verify that the resulting entry is correct.
 # rm /sys/firmware/efi/efivars/dump-*
 
 ```
+
 Or, as a last resort, boot with the `efi_no_storage_paranoia` kernel parameter. You can also try to downgrade your efibootmgr install to version 0.11.0 if you have it available in your cache. This version works with Linux version 4.0.6\. See the bug discussion [FS#34641](https://bugs.archlinux.org/task/34641) for more information.
 
 To set the boot order, run:
 
 ```
-# efibootmgr -o XXXX,XXXX
+# efibootmgr --bootorder *XXXX*,*XXXX*
 
 ```
 
-where XXXX is the number that appears in the output of `efibootmgr` command against each entry.
+where *XXXX* is the number that appears in the output of `efibootmgr` command against each entry.
 
 **Tip:** Save the command for creating your boot entry in a shell script somewhere, which makes it easier to modify (when changing kernel parameters, for example).
 

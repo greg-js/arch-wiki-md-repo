@@ -1,3 +1,11 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Oblogout](/index.php/Oblogout "Oblogout")
+
 Ο Openbox είναι ένας ελαφρύς, ισχυρός και πλήρως παραμετροποιήσιμος *stacking* [διαχειριστής παραθύρων (αγγλικά)](/index.php/Window_manager "Window manager") με εκτεταμένη υποστήριξη προτύπων. Μπορεί να χτιστεί και να τρέξει ανεξάρτητα ως βάση για κάποιο [περιβάλλον εργασίας (αγγλικά)](/index.php/Desktop_environment "Desktop environment"), ή να ενσωματωθεί σε άλλα περιβάλλοντα εργασίας όπως το [KDE](/index.php/KDE "KDE") ή το [Xfce](/index.php/Xfce "Xfce"), ως μια εναλλακτική έναντι των διαχειριστών παραθύρων που αυτά παρέχουν. Το περιβάλλον εργασίας [LXDE](/index.php/LXDE "LXDE") είναι το ίδιο χτισμένο γυρώ από τον Οpenbox. Μια περιεκτική λίστα των χαρακτηριστικών του καταγράφεται στο [επίσημο site του Openbox](http://openbox.org/). Το συγκεκριμένο άρθρο αναφέρεται ειδικά στον τρόπο εγκατάστασης του Openbox στο Arch Linux.
 
 ## Contents
@@ -954,7 +962,7 @@ own_window_type normal
 
 ## File managers
 
-Multiple [file managers](/index.php/List_of_applications#File_managers "List of applications") may be used with Openbox, including [PCManFM](/index.php/PCManFM "PCManFM"), [SpaceFM](/index.php/SpaceFM "SpaceFM"), [Thunar](/index.php/Thunar "Thunar"), [xfe](https://www.archlinux.org/packages/?name=xfe), and [qtfm](https://www.archlinux.org/packages/?name=qtfm). Thunar is the native file manager for [Xfce](/index.php/Xfce "Xfce"), and if installing be aware that some Xfce-related dependencies will also be installed, including [exo](https://www.archlinux.org/packages/?name=exo) (set default applications) and **xfce4-about** (provide information about the Xfce deskop environment). The menu entries for these may consequently have to be hidden.
+Multiple [file managers](/index.php/List_of_applications#File_managers "List of applications") may be used with Openbox, including [PCManFM](/index.php/PCManFM "PCManFM"), [SpaceFM](/index.php/SpaceFM "SpaceFM"), [Thunar](/index.php/Thunar "Thunar"), [xfe](https://www.archlinux.org/packages/?name=xfe), and [qtfm](https://aur.archlinux.org/packages/qtfm/). Thunar is the native file manager for [Xfce](/index.php/Xfce "Xfce"), and if installing be aware that some Xfce-related dependencies will also be installed, including [exo](https://www.archlinux.org/packages/?name=exo) (set default applications) and **xfce4-about** (provide information about the Xfce deskop environment). The menu entries for these may consequently have to be hidden.
 
 A file manager alone will not provide the same features and functionality as provided by default in full desktop environments like [Xfce](/index.php/Xfce "Xfce") and [KDE](/index.php/KDE "KDE"). For example, it may not be initially possible to view or access other partitions or access removable media. See [File manager functionality](/index.php/File_manager_functionality "File manager functionality") for further information.
 

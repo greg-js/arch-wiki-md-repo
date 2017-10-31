@@ -5,7 +5,7 @@
 | Touchpad | Working | xf86-input-synaptics |
 | Webcam | Working | uvcvideo |
 | Suspend | Working | systemd-suspend |
-| Function keys | Partially working |
+| Function keys | Working |
 
 ## Contents
 
@@ -15,9 +15,6 @@
     *   [2.1 CPU](#CPU)
     *   [2.2 Video](#Video)
     *   [2.3 Touchpad](#Touchpad)
-    *   [2.4 Wi-Fi](#Wi-Fi)
-*   [3 Problems](#Problems)
-    *   [3.1 ACPI](#ACPI)
 
 ## Hardware
 
@@ -47,17 +44,3 @@ Install [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-i
 ### Touchpad
 
 The touch works out of the box, read the [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") page for driver install and configuration.
-
-### Wi-Fi
-
-Connecting wirelessly works out of the box with the `ath9k` driver, but times out sometimes during the DHCP lease process. Configuration can be done by editing the `/etc/modprobe.d/ath9k.conf` file. For example:
-
- `/etc/modprobe.d/ath9k.conf`  `options ath9k ps_enable=0 bt_ant_diversity=1 nohwcrypt=1` 
-
-The `ps_enable=0` option disables power saving mode. `bt_ant_diversity=1` enables [antenna diversity](https://wireless.wiki.kernel.org/en/users/drivers/ath9k/antennadiversity). `nohwcrypt=1` disables encryption and decryption with hardware which may solve some connection issues.
-
-## Problems
-
-### ACPI
-
-ACPI functions such as the lid switch and `fn` keys do not work properly. Closing the lid will not suspend the laptop and pressing `fn`+`F6` will not increase the screen backlight. Suspending with the power key and resuming from suspend by opening the lid does work. `acpi_listen` only detects mute, volume up, volume down keys. However, when removing "Windows 2012" from the ACPI strings by setting `acpi_osi="!Windows 2012"` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), the lid switch and all `fn` keys work perfectly but the the touchpad gets disabled.

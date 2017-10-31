@@ -526,7 +526,7 @@
 
 *   **qpdfview** — Программа просмотра документов с вкладками. Использует библиотеку Poppler для поддержки PDF, libspectre - для PS, DjVuLibre - для DjVu, CUPS - для печати и тулкит Qt - для отображения собственного интерфейса
 
-	[https://launchpad.net/qpdfview](https://launchpad.net/qpdfview) || [qpdfview](https://aur.archlinux.org/packages/qpdfview/)
+	[https://launchpad.net/qpdfview](https://launchpad.net/qpdfview) || [qpdfview](https://www.archlinux.org/packages/?name=qpdfview)
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Приложение просмотра PDF и создания заметок
 

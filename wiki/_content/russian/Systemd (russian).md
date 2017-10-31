@@ -39,31 +39,32 @@
     *   [3.5 Изменение цели загрузки по умолчанию](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.86.D0.B5.D0.BB.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
 *   [4 Временные файлы](#.D0.92.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B)
 *   [5 Таймеры](#.D0.A2.D0.B0.D0.B9.D0.BC.D0.B5.D1.80.D1.8B)
-*   [6 Журнал](#.D0.96.D1.83.D1.80.D0.BD.D0.B0.D0.BB)
-    *   [6.1 Фильтрация вывода](#.D0.A4.D0.B8.D0.BB.D1.8C.D1.82.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4.D0.B0)
-    *   [6.2 Ограничение размера журнала](#.D0.9E.D0.B3.D1.80.D0.B0.D0.BD.D0.B8.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.D0.B0_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.B0)
-    *   [6.3 Очистка файлов журнала вручную](#.D0.9E.D1.87.D0.B8.D1.81.D1.82.D0.BA.D0.B0_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.B0_.D0.B2.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E)
-    *   [6.4 Journald в связке с классическим демоном syslog](#Journald_.D0.B2_.D1.81.D0.B2.D1.8F.D0.B7.D0.BA.D0.B5_.D1.81_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.BC_.D0.B4.D0.B5.D0.BC.D0.BE.D0.BD.D0.BE.D0.BC_syslog)
-    *   [6.5 Перенаправить журнал на /dev/tty12](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BD.D0.B0.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D1.82.D1.8C_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB_.D0.BD.D0.B0_.2Fdev.2Ftty12)
-    *   [6.6 Команда просмотра другого журнала](#.D0.9A.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D0.B0_.D0.BF.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80.D0.B0_.D0.B4.D1.80.D1.83.D0.B3.D0.BE.D0.B3.D0.BE_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.B0)
-*   [7 Оптимизация](#.D0.9E.D0.BF.D1.82.D0.B8.D0.BC.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F)
-    *   [7.1 Анализ процесса загрузки](#.D0.90.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7_.D0.BF.D1.80.D0.BE.D1.86.D0.B5.D1.81.D1.81.D0.B0_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8)
-        *   [7.1.1 Использование systemd-analyze](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_systemd-analyze)
-        *   [7.1.2 Использование systemd-bootchart](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_systemd-bootchart)
-        *   [7.1.3 Использование bootchart2](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_bootchart2)
-*   [8 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [8.1 Изучение ошибок systemd](#.D0.98.D0.B7.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA_systemd)
-    *   [8.2 Диагностика проблем с загрузкой системы](#.D0.94.D0.B8.D0.B0.D0.B3.D0.BD.D0.BE.D1.81.D1.82.D0.B8.D0.BA.D0.B0_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D1.81_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
-    *   [8.3 Диагностика проблем в работе определенной службы](#.D0.94.D0.B8.D0.B0.D0.B3.D0.BD.D0.BE.D1.81.D1.82.D0.B8.D0.BA.D0.B0_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D0.B2_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B5_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D1.81.D0.BB.D1.83.D0.B6.D0.B1.D1.8B)
-    *   [8.4 Выключение/перезагрузка происходят ужасно долго](#.D0.92.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5.2F.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.BF.D1.80.D0.BE.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D1.8F.D1.82_.D1.83.D0.B6.D0.B0.D1.81.D0.BD.D0.BE_.D0.B4.D0.BE.D0.BB.D0.B3.D0.BE)
-    *   [8.5 По-видимому, процессы с кратким сроком жизни не оставляют записей в логах](#.D0.9F.D0.BE-.D0.B2.D0.B8.D0.B4.D0.B8.D0.BC.D0.BE.D0.BC.D1.83.2C_.D0.BF.D1.80.D0.BE.D1.86.D0.B5.D1.81.D1.81.D1.8B_.D1.81_.D0.BA.D1.80.D0.B0.D1.82.D0.BA.D0.B8.D0.BC_.D1.81.D1.80.D0.BE.D0.BA.D0.BE.D0.BC_.D0.B6.D0.B8.D0.B7.D0.BD.D0.B8_.D0.BD.D0.B5_.D0.BE.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D1.8F.D1.8E.D1.82_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B5.D0.B9_.D0.B2_.D0.BB.D0.BE.D0.B3.D0.B0.D1.85)
-    *   [8.6 Отключение журналирования аварийных дампов памяти приложений](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B0.D0.B2.D0.B0.D1.80.D0.B8.D0.B9.D0.BD.D1.8B.D1.85_.D0.B4.D0.B0.D0.BC.D0.BF.D0.BE.D0.B2_.D0.BF.D0.B0.D0.BC.D1.8F.D1.82.D0.B8_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9)
-    *   [8.7 Сообщение об ошибке при перезагрузке или выключении](#.D0.A1.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B5_.D0.BF.D1.80.D0.B8_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5_.D0.B8.D0.BB.D0.B8_.D0.B2.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B8)
-        *   [8.7.1 cgroup : option or name mismatch, new: 0x0 "", old: 0x4 "systemd"](#cgroup_:_option_or_name_mismatch.2C_new:_0x0_.22.22.2C_old:_0x4_.22systemd.22)
-        *   [8.7.2 watchdog watchdog0: watchdog did not stop!](#watchdog_watchdog0:_watchdog_did_not_stop.21)
-    *   [8.8 Время загрузки системы увеличивается с течением времени](#.D0.92.D1.80.D0.B5.D0.BC.D1.8F_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D1.83.D0.B2.D0.B5.D0.BB.D0.B8.D1.87.D0.B8.D0.B2.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D1.81_.D1.82.D0.B5.D1.87.D0.B5.D0.BD.D0.B8.D0.B5.D0.BC_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.B8)
-    *   [8.9 systemd-tmpfiles-setup.service fails to start at boot](#systemd-tmpfiles-setup.service_fails_to_start_at_boot)
-*   [9 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [6 Монтирование](#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
+*   [7 Журнал](#.D0.96.D1.83.D1.80.D0.BD.D0.B0.D0.BB)
+    *   [7.1 Фильтрация вывода](#.D0.A4.D0.B8.D0.BB.D1.8C.D1.82.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4.D0.B0)
+    *   [7.2 Ограничение размера журнала](#.D0.9E.D0.B3.D1.80.D0.B0.D0.BD.D0.B8.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.D0.B0_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.B0)
+    *   [7.3 Очистка файлов журнала вручную](#.D0.9E.D1.87.D0.B8.D1.81.D1.82.D0.BA.D0.B0_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.B0_.D0.B2.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E)
+    *   [7.4 Journald в связке с классическим демоном syslog](#Journald_.D0.B2_.D1.81.D0.B2.D1.8F.D0.B7.D0.BA.D0.B5_.D1.81_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.BC_.D0.B4.D0.B5.D0.BC.D0.BE.D0.BD.D0.BE.D0.BC_syslog)
+    *   [7.5 Перенаправить журнал на /dev/tty12](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BD.D0.B0.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D1.82.D1.8C_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB_.D0.BD.D0.B0_.2Fdev.2Ftty12)
+    *   [7.6 Команда просмотра другого журнала](#.D0.9A.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D0.B0_.D0.BF.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80.D0.B0_.D0.B4.D1.80.D1.83.D0.B3.D0.BE.D0.B3.D0.BE_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.B0)
+*   [8 Оптимизация](#.D0.9E.D0.BF.D1.82.D0.B8.D0.BC.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F)
+    *   [8.1 Анализ процесса загрузки](#.D0.90.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7_.D0.BF.D1.80.D0.BE.D1.86.D0.B5.D1.81.D1.81.D0.B0_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8)
+        *   [8.1.1 Использование systemd-analyze](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_systemd-analyze)
+        *   [8.1.2 Использование systemd-bootchart](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_systemd-bootchart)
+        *   [8.1.3 Использование bootchart2](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_bootchart2)
+*   [9 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+    *   [9.1 Изучение ошибок systemd](#.D0.98.D0.B7.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA_systemd)
+    *   [9.2 Диагностика проблем с загрузкой системы](#.D0.94.D0.B8.D0.B0.D0.B3.D0.BD.D0.BE.D1.81.D1.82.D0.B8.D0.BA.D0.B0_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D1.81_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+    *   [9.3 Диагностика проблем в работе определенной службы](#.D0.94.D0.B8.D0.B0.D0.B3.D0.BD.D0.BE.D1.81.D1.82.D0.B8.D0.BA.D0.B0_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D0.B2_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B5_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D1.81.D0.BB.D1.83.D0.B6.D0.B1.D1.8B)
+    *   [9.4 Выключение/перезагрузка происходят ужасно долго](#.D0.92.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5.2F.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.BF.D1.80.D0.BE.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D1.8F.D1.82_.D1.83.D0.B6.D0.B0.D1.81.D0.BD.D0.BE_.D0.B4.D0.BE.D0.BB.D0.B3.D0.BE)
+    *   [9.5 По-видимому, процессы с кратким сроком жизни не оставляют записей в логах](#.D0.9F.D0.BE-.D0.B2.D0.B8.D0.B4.D0.B8.D0.BC.D0.BE.D0.BC.D1.83.2C_.D0.BF.D1.80.D0.BE.D1.86.D0.B5.D1.81.D1.81.D1.8B_.D1.81_.D0.BA.D1.80.D0.B0.D1.82.D0.BA.D0.B8.D0.BC_.D1.81.D1.80.D0.BE.D0.BA.D0.BE.D0.BC_.D0.B6.D0.B8.D0.B7.D0.BD.D0.B8_.D0.BD.D0.B5_.D0.BE.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D1.8F.D1.8E.D1.82_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B5.D0.B9_.D0.B2_.D0.BB.D0.BE.D0.B3.D0.B0.D1.85)
+    *   [9.6 Отключение журналирования аварийных дампов памяти приложений](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B0.D0.B2.D0.B0.D1.80.D0.B8.D0.B9.D0.BD.D1.8B.D1.85_.D0.B4.D0.B0.D0.BC.D0.BF.D0.BE.D0.B2_.D0.BF.D0.B0.D0.BC.D1.8F.D1.82.D0.B8_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9)
+    *   [9.7 Сообщение об ошибке при перезагрузке или выключении](#.D0.A1.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B5_.D0.BF.D1.80.D0.B8_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5_.D0.B8.D0.BB.D0.B8_.D0.B2.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B8)
+        *   [9.7.1 cgroup : option or name mismatch, new: 0x0 "", old: 0x4 "systemd"](#cgroup_:_option_or_name_mismatch.2C_new:_0x0_.22.22.2C_old:_0x4_.22systemd.22)
+        *   [9.7.2 watchdog watchdog0: watchdog did not stop!](#watchdog_watchdog0:_watchdog_did_not_stop.21)
+    *   [9.8 Время загрузки системы увеличивается с течением времени](#.D0.92.D1.80.D0.B5.D0.BC.D1.8F_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D1.83.D0.B2.D0.B5.D0.BB.D0.B8.D1.87.D0.B8.D0.B2.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D1.81_.D1.82.D0.B5.D1.87.D0.B5.D0.BD.D0.B8.D0.B5.D0.BC_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.B8)
+    *   [9.9 systemd-tmpfiles-setup.service fails to start at boot](#systemd-tmpfiles-setup.service_fails_to_start_at_boot)
+*   [10 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Основы использования systemctl
 
@@ -449,6 +450,10 @@ $ systemctl list-units --type=target
 
 **Примечание:** Таймеры способны в значительной степени заменить функциональность *cron*. Смотрите раздел [Замена cron](/index.php/Systemd/T%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B#.D0.92_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D0.BD.D1.8B_cron "Systemd/Tаймеры")
 
+## Монтирование
+
+Так как systemd полностью заменяет собой SysVinit, он отвечает за точки монтирования, описанные в файле `/etc/fstab`. Фактически он выходит за рамки возможностей обычного `fstab`, реализуя особые точки монтирования с префиксом `x-systemd`, например, т.н. *автомонтирование* (монтирование по запросу) использует данные расширения (см. [для более подробной информации как это реализовано](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.81_systemd "Fstab (Русский)")). С полным описанием всех расширений и работы с ними вы можете ознакомиться на английском в [[2]](https://www.freedesktop.org/software/systemd/man/systemd.mount.html#fstab)
+
 ## Журнал
 
 *systemd* имеет собственную систему ведения логов, названную журналом (journal). В связи с этим больше не требуется запускать демон `syslog`. Для чтения логов используйте команду:
@@ -459,6 +464,8 @@ $ systemctl list-units --type=target
 ```
 
 В Arch Linux каталог `/var/log/journal/` является частью пакета [systemd](https://www.archlinux.org/packages/?name=systemd), и по умолчанию (когда в конфигурационном файле `/etc/systemd/journald.conf` параметр `Storage=` имеет значение `auto`) журнал записывается именно в `/var/log/journal/`. Если вы или какая-то программа удалит этот каталог, *systemd* **не** пересоздаст его автоматически и вместо этого будет писать свои журналы по непостоянному пути `/run/systemd/journal`. Однако, папка будет пересоздана, когда вы установите `Storage=persistent` и выполните `systemctl restart systemd-journald` (или перезагрузитесь).
+
+Сообщения в журнале классифицируются по приоритету и объектам. Классификация записей соответствует классическому протоколу [Syslog](https://en.wikipedia.org/wiki/Syslog) ([RFC 5424](https://tools.ietf.org/html/rfc5424)).
 
 ### Фильтрация вывода
 

@@ -1,21 +1,19 @@
-## Contents
-
-*   [1 Introduction](#Introduction)
-*   [2 Discovering Errors](#Discovering_Errors)
-*   [3 CPU Stressing Programs](#CPU_Stressing_Programs)
-*   [4 Stressing CPU and Memory](#Stressing_CPU_and_Memory)
-    *   [4.1 Mprime (Prime95 for Windows and MacOS)](#Mprime_.28Prime95_for_Windows_and_MacOS.29)
-    *   [4.2 Linpack](#Linpack)
-    *   [4.3 Systester (AKA SuperPi for Windows)](#Systester_.28AKA_SuperPi_for_Windows.29)
-    *   [4.4 Intel Processor Diagnostic Tool](#Intel_Processor_Diagnostic_Tool)
-*   [5 Stressing Memory](#Stressing_Memory)
-    *   [5.1 Running Memtest86+](#Running_Memtest86.2B)
-
-## Introduction
-
-Running an overclocked PC is totally fine provided that the PC is stable at the overclock settings. There are several programs available to assess system stability through stress testing the system and thereby the overclock level. The steps of overclocking a PC are beyond the scope of this article, but there is pretty inclusive guide written by graysky on the topic: [Overclocking guide](http://www.hardforum.com/showthread.php?t=1198647).
+Running an overclocked PC is fine as long as it is stable and that the temperature of its components do not exceed their acceptable range. There are several programs available to assess system stability through stress testing the system and thereby the overclock level. The steps of overclocking a PC are beyond the scope of this article, but there is pretty inclusive guide written by graysky on the topic: [Overclocking guide](http://www.hardforum.com/showthread.php?t=1198647).
 
 **Note:** The linked guide is a bit dated. More contemporary guides are recommended for modern hardware.
+
+## Contents
+
+*   [1 Discovering Errors](#Discovering_Errors)
+*   [2 CPU Stressing Programs](#CPU_Stressing_Programs)
+*   [3 Stressing CPU and Memory](#Stressing_CPU_and_Memory)
+    *   [3.1 stress](#stress)
+    *   [3.2 MPrime](#MPrime)
+    *   [3.3 Linpack](#Linpack)
+    *   [3.4 Systester (AKA SuperPi for Windows)](#Systester_.28AKA_SuperPi_for_Windows.29)
+    *   [3.5 Intel Processor Diagnostic Tool](#Intel_Processor_Diagnostic_Tool)
+*   [4 Stressing Memory](#Stressing_Memory)
+    *   [4.1 Running Memtest86+](#Running_Memtest86.2B)
 
 ## Discovering Errors
 
@@ -59,16 +57,28 @@ This machine running with a vcore of +0.005 (in offset mode) remains stable in b
 | *Cc/Gcc* | Both cc/gcc compilation is a great method of stress testing. Both are available in the *base-devel* group. |
 | *HandBrake-cli* | [handbrake-cli](https://www.archlinux.org/packages/?name=handbrake-cli) can be used to encode using high quality settings. |
 | *Systester* | [systester](https://aur.archlinux.org/packages/systester/) Systester is a multithreaded piece of software capable of deriving values of pi out to 128,000,000 decimal places. It has built in check for system stability. |
-| **High** | *mprime* | [mprime-bin](https://aur.archlinux.org/packages/mprime-bin/) factors large numbers and is an excellent way to stress CPU and memory. |
+| **High** | *stress* | [stress](https://www.archlinux.org/packages/?name=stress) is a simple CPU, memory, I/O, and disk workload generator implemented in C. |
+| *mprime* | [mprime-bin](https://aur.archlinux.org/packages/mprime-bin/) factors large numbers and is an excellent way to stress CPU and memory. |
 | *linpack* | [linpack](https://aur.archlinux.org/packages/linpack/) - Linpack makes use of the BLAS (Basic Linear Algebra Subprograms) libraries for performing basic vector and matrix operations. and is an excellent way to stress CPUs for stability. |
 
 ## Stressing CPU and Memory
 
-### Mprime (Prime95 for Windows and MacOS)
+### stress
 
-Prime95 is recognized universally as one defacto measure of system stability. Mprime under torture test mode will perform a series of very CPU intensive calculations and compare the values it gets to known good values.
+[stress](https://www.archlinux.org/packages/?name=stress) performs a loop that calculates the square root of a random number in order to stress the CPU. It can run simultaneously several workers to load all the cores of a CPU for example. It can also generate memory, I/O or disk workload depending on the parameters passed. The [FAQ](http://people.seas.harvard.edu/~apw/stress/FAQ) provides examples and explanations.
 
-Prime95 for Linux is called [mprime](https://aur.archlinux.org/packages/mprime/) and is available in the AUR.
+To spawn 4 workers spinning on sqrt(), use the command:
+
+```
+$ stress --cpu 4
+
+```
+
+### MPrime
+
+MPrime (also known as Prime95 in its Windows and MacOS implementation) is recognized universally as one defacto measure of system stability. MPrime under torture test mode will perform a series of very CPU intensive calculations and compare the values it gets to known good values.
+
+The Linux implementation is called [mprime](https://aur.archlinux.org/packages/mprime/) and is available in the AUR.
 
 **Warning:** Before proceeding, it is **HIGHLY** recommended that users have some means to monitor the CPU temperature. Packages such as [Lm_sensors](/index.php/Lm_sensors "Lm sensors") can do this.
 
@@ -169,7 +179,7 @@ Once it is installed, you can run the Diagnostic Tool by clicking on the IPDT Ic
 
 ## Stressing Memory
 
-A very good program for stress testing memory is [Memtest86+](http://www.memtest.org/). It is based on the well-known original memtest86 written by Chris Brady. Memtest86+ is, like the original, released under the terms of the GNU General Public License (GPL).
+Originally a very good program for memory failure detection, [Memtest86+](http://www.memtest.org/) can also be used to stress test the memory. It is based on the well-known original memtest86 written by Chris Brady. Memtest86+ is, like the original, released under the terms of the GNU General Public License (GPL).
 
 ### Running Memtest86+
 

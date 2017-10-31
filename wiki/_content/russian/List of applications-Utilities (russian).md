@@ -186,7 +186,7 @@
 
 *   **[MonoDevelop](https://en.wikipedia.org/wiki/ru:MonoDevelop "wikipedia:ru:MonoDevelop")** — Кроссплатформенная IDE, направленная на фреймворки Mono и .NET
 
-	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop](https://www.archlinux.org/packages/?name=monodevelop)
+	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop](https://aur.archlinux.org/packages/monodevelop/)
 
 *   **[NetBeans](/index.php/Netbeans "Netbeans")** — Интегрированная среда разработки (IDE) для Java, JavaScript, PHP, Python, Ruby, Groovy, C, C++, Scala, Clojure и других языков
 
@@ -458,7 +458,7 @@
 
 *   **qtFM** — Небольшой, легковесный файловый менеджер для Linux, основанный на чистом Qt
 
-	[http://www.qtfm.org/](http://www.qtfm.org/) || [qtfm](https://www.archlinux.org/packages/?name=qtfm)
+	[http://www.qtfm.org/](http://www.qtfm.org/) || [qtfm](https://aur.archlinux.org/packages/qtfm/)
 
 *   **[ROX](/index.php/ROX "ROX")** — Небольшой и быстрый файловый менеджер, который имеет возможность управлять фоновым изображением рабочего стола и панелями
 

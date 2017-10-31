@@ -40,7 +40,7 @@ Server = https://github.com/njkli/$repo/releases/download/$arch
 
 ```
 
-Install fan control and custom kernel using `# pacman -S gpd-fan linux-jwrdegoede linux-jwrdegoede-docs linux-jwrdegoede-headers`.
+Install fan control and custom kernel and more using `# pacman -S --force gpd-pocket-support`.
 
 ### Power and Fan
 
@@ -59,6 +59,8 @@ DISK_IOSCHED="deadline"
 Copy fan config `# cp /etc/default/gpd-fan.example /etc/default/gpd-fan` and uncomment settings.
 
 ### WiFi
+
+**Note:** this step is already included in the [gpd-pocket-support](https://github.com/njkli/gpd-pocket/tree/master/gpd-pocket-support) package.
 
 Copy brcmfmac4356-pcie.txt and brcmfmac4356-pcie.bin from [here](https://github.com/cawilliamson/ansible-gpdpocket/tree/master/roles/common/files) to /lib/firmware/brcm/ then run
 `# modprobe -r brcmfmac`

@@ -6,6 +6,11 @@
 
 [互联网](/index.php/List_of_Applications/Internet_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Internet (简体中文)") – [多媒体](/index.php/List_of_Applications/Multimedia_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Multimedia (简体中文)") – [工具](/index.php/List_of_Applications/Utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Utilities (简体中文)") – [文档](/index.php/List_of_Applications/Documents_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Documents (简体中文)") – [安全](/index.php/List_of_Applications/Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Security (简体中文)") – [科学](/index.php/List_of_Applications/Science_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Science (简体中文)") – [其它](/index.php/List_of_Applications/Other_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Other (简体中文)")
 
+Related articles
+
+*   [List of applications#Emulators](/index.php/List_of_applications#Emulators "List of applications")
+*   [List_of_Applications_(简体中文)](/index.php/List_of_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications (简体中文)")
+
 **Note:** 本页面力求列出已知的GNU / Linux下运行所有游戏。访问通过[official repositories](/index.php/Official_repositories "Official repositories") and [AUR](/index.php/AUR "AUR"). 欲了解更多有关运行游戏，相关的系统配置提示， 参阅 [Gaming](/index.php/Gaming "Gaming"). 对于可能更多的最新选择的可用游戏 在 AUR, 请检查 [AUR 'games' category](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&C=6&SeB=nd&SB=n&SO=a&PP=25).
 
 ## Contents
@@ -545,7 +550,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 *   **VDrift** — Open source driving simulation made with drift racing in mind.
 
-	[http://vdrift.net/](http://vdrift.net/) || [vdrift](https://www.archlinux.org/packages/?name=vdrift)
+	[http://vdrift.net/](http://vdrift.net/) || [vdrift](https://aur.archlinux.org/packages/vdrift/)
 
 *   **[XMoto](https://en.wikipedia.org/wiki/X-Moto "wikipedia:X-Moto")** — Challenging 2D motocross platform game, where physics play an important role.
 

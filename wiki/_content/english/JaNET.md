@@ -28,7 +28,7 @@ Install [janet](https://aur.archlinux.org/packages/janet/) from the [AUR](/index
 
 ### Manual installation
 
-If you prefer manual installation, first install: [monodevelop](https://www.archlinux.org/packages/?name=monodevelop) [festival](https://www.archlinux.org/packages/?name=festival) [simon](https://aur.archlinux.org/packages/simon/).
+If you prefer manual installation, first install: [monodevelop](https://aur.archlinux.org/packages/monodevelop/) [festival](https://www.archlinux.org/packages/?name=festival) [simon](https://aur.archlinux.org/packages/simon/).
 
 You can grab the source [here](https://sourceforge.net/projects/project-janet/files/Project_jaNET-v0.1.3-src/Project_jaNET-v0.1.3-src.tar.gz) if you wish to develop; however, we are going to use the latest binary.
 

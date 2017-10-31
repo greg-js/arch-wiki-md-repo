@@ -94,8 +94,8 @@ gtk_dialog_run (GTK_DIALOG (hello))
 
 ### Boo
 
-*   Dependency: [gtk-sharp-3](https://www.archlinux.org/packages/?name=gtk-sharp-3) (and [boo](https://www.archlinux.org/packages/?name=boo))
-*   Makedependency: [boo](https://www.archlinux.org/packages/?name=boo)
+*   Dependency: [gtk-sharp-3](https://www.archlinux.org/packages/?name=gtk-sharp-3) (and [boo](https://aur.archlinux.org/packages/boo/))
+*   Makedependency: [boo](https://aur.archlinux.org/packages/boo/)
 *   Build with: `booc hello_world.boo`
 *   Run with: `mono hello_world.exe` (or `booi hello_world.boo`)
 
@@ -204,7 +204,7 @@ void main(string[] args)
 ### F#
 
 *   Dependency: [gtk-sharp-3](https://www.archlinux.org/packages/?name=gtk-sharp-3)
-*   Makedependency: [fsharp](https://www.archlinux.org/packages/?name=fsharp)
+*   Makedependency: [fsharp](https://aur.archlinux.org/packages/fsharp/)
 *   Build with: `fsharpc -r:gtk-sharp.dll -I:/usr/lib/mono/gtk-sharp-3.0/ hello_world.fs`
 *   Run with: `mono hello_world.exe`
 
@@ -584,7 +584,7 @@ public class HelloWorld {
 ### Visual Basic .NET
 
 *   Dependency: [gtk-sharp-3](https://www.archlinux.org/packages/?name=gtk-sharp-3)
-*   Makedependency: [mono-basic](https://www.archlinux.org/packages/?name=mono-basic)
+*   Makedependency: [mono-basic](https://aur.archlinux.org/packages/mono-basic/)
 *   Build with: `vbnc -r:/usr/lib/mono/gtk-sharp-3.0/gtk-sharp.dll hello_world.vb`
 *   Run with: `mono hello_world.exe`
 

@@ -1,3 +1,9 @@
+相关文章
+
+*   [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Default applications](/index.php/Default_applications "Default applications")
+
 [桌面环境](https://en.wikipedia.org/wiki/Desktop_environment "wikipedia:Desktop environment")通过汇集使用相同组件库的程序，为用户提供了*完全的*图形用户界面。
 
 ## Contents

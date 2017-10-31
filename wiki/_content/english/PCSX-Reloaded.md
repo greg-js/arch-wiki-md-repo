@@ -75,7 +75,7 @@ You installed a 64 bit version of the emulator and is trying to run a 32 bit plu
 
 ### cfgPeteXGL2, cfgPeteMesaGL or cfgPeopsOSS not found
 
-This issue is likely to happen with [Pete's plugins](http://www.pbernert.com/html/gpu.htm). This happens because the creator forgot to pack the corresponding files with the plugins. To solve that problem, go to the [Pete's Old GPU Plugins](http://www.pbernert.com/html/old_gpu.htm) and download an older version of the plugin whose CFG's are missing, fetch the missing file from the ZIP file and put it on the `~/.pcsxr/plugins/` folder and the problem will be solved.
+This issue happens because the latest Linux version of [Pete's plugins](http://www.pbernert.com/html/gpu.htm) don't provide the configuration files with them. To solve the problem go to [Pete's GPU Plugins page](http://www.pbernert.com/html/gpu.htm) and find the **Linux GPU Configs** section, download the configuration files - they will come all together in a .tar.gz file. Fetch the missing ones from the Gzip file and put them on the `~/.pcsxr/plugins/` folder and the problem will be solved.
 
 ### PE.Op.S OSS Audio Driver outputs no sound
 

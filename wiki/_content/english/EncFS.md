@@ -1,3 +1,7 @@
+Related articles
+
+*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
+
 **EncFS** is a userspace stackable cryptographic file-system similar to [eCryptfs](/index.php/ECryptfs "ECryptfs"), and aims to secure data with the minimum hassle. It uses [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") to mount an encrypted directory onto another directory specified by the user. It does not use a loopback system like some other comparable systems such as [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") and [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
 
 EncFS is definitely the simplest software if you want to try disk encryption on Linux.
@@ -59,7 +63,7 @@ $ encfs ~/.*name* ~/*name*
 
 ```
 
-Note that absolute paths must be used. This will be followed by a prompt about whether you want to go with the default options, expert configuration or a paranoid preset. The latter allows specifying algorithms and other options. The former is a fairly secure default setup. After entering a key for the encryption, the encoded file-system will be created and mounted. The encoded files are stored, in this example, at `~/.*name*`, and their unencrypted versions in `~/*name*`.
+Note that absolute paths must be used. This will be followed by a prompt about whether you want to go with the default options, expert configuration or a paranoid preset. The first is a fairly secure default setup. The second allows specifying algorithms and other options. After entering a key for the encryption, the encoded file-system will be created and mounted. The encoded files are stored, in this example, at `~/.*name*`, and their unencrypted versions in `~/*name*`.
 
 To unmount the file-system, type:
 

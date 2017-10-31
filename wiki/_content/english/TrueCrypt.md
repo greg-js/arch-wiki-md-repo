@@ -4,9 +4,9 @@ Related articles
 *   [Tcplay](/index.php/Tcplay "Tcplay")
 *   [Tomb](/index.php/Tomb "Tomb")
 
-**Warning:** As of May 2014, development on TrueCrypt is discontinued and [will no longer receive updates and fixes](http://truecrypt.sourceforge.net/). Consider alternatives such as [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), [tcplay](/index.php/Tcplay "Tcplay") or use a TrueCrypt fork. For example, [VeraCrypt](https://veracrypt.fr/) is in active development and available as [veracrypt](https://www.archlinux.org/packages/?name=veracrypt); VeraCrypt storage format is compatible with TrueCrypt storage format since version 1.0f.
+**Warning:** Development of TrueCrypt was discontinued on May 2014, i.e. it [will no longer receive updates and fixes](http://truecrypt.sourceforge.net/). The final release repository with information about TrueCrypt code audit is found at [[1]](https://www.grc.com/misc/truecrypt/truecrypt.htm).
 
-The [pure-privacy assocation](https://pure-privacy.org/) has adopted the TrueCrypt project. [[1]](https://truecrypt.ch/) Final release repository with information about TrueCrypt code audit: [[2]](https://www.grc.com/misc/truecrypt/truecrypt.htm)
+Consider using [VeraCrypt](https://veracrypt.fr/), a TrueCrypt fork in active development installable with the [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) package; VeraCrypt storage format is compatible with TrueCrypt storage format since version 1.0f.
 
 **Warning:** On 2015/09/26 two critical security issues has been found in **Windows** version of TrueCrypt: CVE-2015-7358 and CVE-2015-7359\. Take this into account if you're planning to use this software to share encrypted volumes between Windows and ArchLinux. More information: [1](https://veracrypt.codeplex.com/SourceControl/changeset/cf4794372e5dea753b6310f1ca6912c6bfa86d45)[2](http://www.theregister.co.uk/2015/09/29/google_flaks_find_admin_elevation_holes_that_gave_truecrypt_audit_the_slip/)
 

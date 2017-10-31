@@ -228,7 +228,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **qtFM** — Pequeño, administrador de archivos ligero para escritorios Linux basado en Qt puro.
 
-	[http://www.qtfm.org/](http://www.qtfm.org/) || [qtfm](https://www.archlinux.org/packages/?name=qtfm)
+	[http://www.qtfm.org/](http://www.qtfm.org/) || [qtfm](https://aur.archlinux.org/packages/qtfm/)
 
 *   **[ROX](/index.php/ROX "ROX")** — Gestor de archivos pequeño y rápido que puede manejar opcionalmente el fondo del escritorio y los paneles .
 

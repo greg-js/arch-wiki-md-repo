@@ -292,15 +292,6 @@ In both cases of enabling metadata checksums for new and existing filesystems, y
 
 If your CPU supports SSE 4.2, make sure the `crc32c_intel` kernel module is loaded in order to enable the hardware accelerated CRC32C algorithm. If not you will need to load the `crc32c_generic` module.
 
-If this is the root file-system, add `crypto-crc32c` module (an [alias](/index.php/Kernel_modules#Obtaining_information "Kernel modules") to all CRC32C modules) to `/etc/mkinitcpio.conf`:
-
-```
-MODULES="... crypto-crc32c"
-
-```
-
-And then regenerate the initramfs. See [Mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
-
 After this, you are ready to enable support for metadata checksums as described in the following two sections. In both cases the file system must not be mounted.
 
 More about metadata checksums can be read on the [ext4 wiki](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums).

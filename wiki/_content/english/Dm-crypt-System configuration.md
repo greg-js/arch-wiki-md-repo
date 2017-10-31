@@ -23,6 +23,7 @@ Back to [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
         *   [3.1.1 Mounting a stacked blockdevice](#Mounting_a_stacked_blockdevice)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 System stuck on boot/password prompt does not show](#System_stuck_on_boot.2Fpassword_prompt_does_not_show)
+    *   [4.2 Passphrase being asked twice on boot](#Passphrase_being_asked_twice_on_boot)
 
 ## mkinitcpio
 
@@ -172,9 +173,11 @@ crypto=sha512:twofish-xts-plain64:512:0:
 
 In all of the following `luks` can be replaced with `rd.luks`. `luks` parameters are honored by both the main system and initrd. `rd.luks` parameters are only honored by the initrd. See [systemd-cryptsetup-generator(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8) for more options and more details.
 
-**Tip:** If the file `/etc/crypttab.initramfs` exists, [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") will add it to the initramfs as `/etc/crypttab`.
+**Note:**
 
-**Note:** If you use `luks.*` kernel parameters for the rootfs while also using `/etc/crypttab` for the swap then [systemd](/index.php/Systemd "Systemd") will complain about "Not creating device 'swap' because it was not specified on the kernel command line.". To fix this issue just use `rd.luks.*` parameters instead.
+*   If the file `/etc/crypttab.initramfs` exists, [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") will add it to the initramfs as `/etc/crypttab`, you can specify devices that need to unlocked at boot there. Syntax is documented in [crypttab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5).
+*   If you are using `/etc/crypttab.initramfs` together with `luks.*` or `rd.luks.*` parameters, only those devices specified on the kernel command line will be activated. To activate all devices in `/etc/crypttab.initramfs` do not specify any `luks.*` or `rd.luks.*` parameters .
+*   If you use `luks.*` kernel parameters for the rootfs while also using `/etc/crypttab` for the swap then [systemd](/index.php/Systemd "Systemd") will complain about `Not creating device 'swap' because it was not specified on the kernel command line.`. To fix this issue just use `rd.luks.*` parameters instead.
 
 #### luks.uuid
 
@@ -310,3 +313,52 @@ Given you specify the correct corresponding crypttab (e.g. UUID for the `crypto_
 ### System stuck on boot/password prompt does not show
 
 If you are using [Plymouth](/index.php/Plymouth "Plymouth"), make sure to use the correct modules (see: [Plymouth#The plymouth hook](/index.php/Plymouth#The_plymouth_hook "Plymouth")) or disable it. Otherwise Plymouth will swallow the password prompt, making a system boot impossible.
+
+### Passphrase being asked twice on boot
+
+If you have a setup where your luks-encrypted device is a LVM partition which includes all mount points listed in /etc/fstab, you may be asked to enter your passphrase twice during boot: once by grub and again by systemd.
+
+To have the system only prompt once, first get the correct device path and UUID with the following command:
+
+```
+# eval $(lsblk -npfl | awk '$2 == "crypto_LUKS" {print "DEVPATH=" $1 " DEVUUID=" $3}')
+# cryptsetup luksDump $DEVPATH
+
+```
+
+**NOTE:** If no output is returned, it's best to stop here and double-check your setup before continuing.
+
+Now [create a keyfile](/index.php/Dm-crypt/Device_encryption#Creating_a_keyfile_with_random_characters "Dm-crypt/Device encryption"):
+
+```
+# dd bs=512 count=4 if=/dev/urandom of=/crypto_keyfile.bin
+# chmod 000 /crypto_keyfile.bin
+
+```
+
+Add the newly created keyfile using the device path from the `lsblk` command above:
+
+```
+# cryptsetup luksAddKey $DEVPATH /crypto_keyfile.bin
+
+```
+
+Create an entry in */etc/crypttab* that reflects your mapped device name (replace **VolGroup00** with your actual LVM group using the `vgs` command):
+
+ `/etc/crypttab` 
+```
+# cat >> /etc/crypttab <<-EOT
+VolGroup00        UUID=$DEVUUID        /crypto_keyfile.bin
+EOT
+```
+
+Include the keyfile by adding it to the **FILES=()** array in */etc/mkinitcpio.conf*:
+
+ `/etc/mkinitcpio.conf`  `FILES=(... **/crypto_keyfile.bin** ...)` 
+
+Generate a new initial ramdisk environment using the linux preset from the default ARCH kernel:
+
+```
+# mkinitcpio -p linux
+
+```

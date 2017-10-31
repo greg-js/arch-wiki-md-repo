@@ -1,23 +1,20 @@
-Onlyoffice Documentserver is a full-featured backend for editing different office documents like Open Document, Word, Excel, etc. online in your browser. The software is open source and can be easily deployed and integrated into existing server software. Available frontends are [Nextcloud](/index.php/Nextcloud "Nextcloud") or the Onlyoffice CommunityServer. It can be also used in own software, see [following examples](https://github.com/ONLYOFFICE/document-server-integration) for PHP, Nodejs, etc.
+[Onlyoffice Documentserver](https://www.onlyoffice.com/) is a full-featured backend for editing different office documents like Open Document, Word, Excel, etc. online in your browser. The software is open source and can be easily deployed and integrated into existing server software. Available frontends are [Nextcloud](/index.php/Nextcloud "Nextcloud") or the Onlyoffice CommunityServer. It can be also used in own software, see [following examples](https://github.com/ONLYOFFICE/document-server-integration) for PHP, Nodejs, etc.
 
 ## Contents
 
-*   [1 Server setup](#Server_setup)
-    *   [1.1 Installation](#Installation)
-    *   [1.2 Configuration](#Configuration)
-        *   [1.2.1 Database](#Database)
-        *   [1.2.2 Webserver](#Webserver)
-    *   [1.3 Starting](#Starting)
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Database](#Database)
+    *   [2.2 Webserver](#Webserver)
+*   [3 Starting](#Starting)
 
-## Server setup
-
-### Installation
+## Installation
 
 [Install](/index.php/Install "Install") the [onlyoffice-documentserver](https://aur.archlinux.org/packages/onlyoffice-documentserver/) package. Further you will need [Postgresql](/index.php/Postgresql "Postgresql") as a database backend and the [Redis](/index.php/Redis "Redis") and [rabbitmq](https://www.archlinux.org/packages/?name=rabbitmq) services installed.
 
-### Configuration
+## Configuration
 
-#### Database
+### Database
 
 The Postgresql database backend needs to be configured. Here's an example database setup:
 
@@ -35,7 +32,7 @@ $ psql -hlocalhost -Uonlyoffice -d onlyoffice -f /usr/share/webapps/onlyoffice/d
 
 ```
 
-#### Webserver
+### Webserver
 
 Here's an example for the [Nginx](/index.php/Nginx "Nginx") webserver:
 
@@ -78,6 +75,6 @@ server {
 }
 ```
 
-### Starting
+## Starting
 
 [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the following services if you wish to use them locally on the same machine: `rabbitmq redis postgresql`. Finally start the documentserver services: `onlyoffice-spellchecker onlyoffice-fileconverter onlyoffice-docservice`.

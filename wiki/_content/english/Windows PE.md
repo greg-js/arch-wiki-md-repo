@@ -28,7 +28,7 @@ Normally, an image of Windows PE can only be created using the Windows Automated
 
 ## Creating a bootable Windows PE image
 
-Install [wimlib](https://aur.archlinux.org/packages/wimlib/) from the [AUR](/index.php/AUR "AUR").
+Install [wimlib](https://www.archlinux.org/packages/?name=wimlib) from the [AUR](/index.php/AUR "AUR").
 
 ### Configure the Windows PE image
 
@@ -59,7 +59,7 @@ Mount the source ISO, either Windows installation image or WAIK/WADK, named wini
 
 ```
 
-Use the `mkwinpeimg` script provided with [wimlib](https://aur.archlinux.org/packages/wimlib/) to create a bootable Windows PE ISO `winpe.iso`, with the startup script created in the previous section:
+Use the `mkwinpeimg` script provided with [wimlib](https://www.archlinux.org/packages/?name=wimlib) to create a bootable Windows PE ISO `winpe.iso`, with the startup script created in the previous section:
 
 **Option A**: source image is Windows installation media
 

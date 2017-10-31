@@ -2,7 +2,7 @@
 
 En biología evolutiva, la [cooperation](https://en.wikipedia.org/wiki/Co-operation_(evolution) describe las interacciones donde un individuo que paga un pequeño coste produce un beneficio mayor para otro u otros. Si es correspondido, de esta contribución costosa pueden beneficiarse todos los involucrados enormemente. Este principio también se aplica a los miembros proactivos de la comunidad de Arch que quieran involucrarse y colaborar con su distribución de Linux preferida. Esta participación no solo beneficia a los miembros de la comunidad y sus compañeros Archers, sino también a todos los usuarios del [software libre y de código abierto](https://en.wikipedia.org/wiki/es:Software_libre_y_de_c%C3%B3digo_abierto "wikipedia:es:Software libre y de código abierto").
 
-En este artículo se describe cómo, tanto los nuevos como experimentados usuarios de Arch, pueden contribuir a la comunidad. Tenga en cuenta que esto no es una lista exhaustiva.
+En este artículo se describe cómo los usuarios nuevos o experimentados en Arch, pueden contribuir a la comunidad. Tenga en cuenta que esto no es una lista exhaustiva.
 
 ## Contents
 
@@ -32,7 +32,7 @@ Por favor, familiarícese con el [código de conducta](/index.php/Code_of_conduc
 
 ### Publicar en los foros
 
-Una de las maneras más fáciles de colaborar es participando en los [Foros de Arch Linux](https://bbs.archlinux.org/), que permiten conocer a la comunidad y ayudar a los nuevos usuarios.
+Una de las maneras más fáciles de colaborar es participando en los [Foros de Arch Linux](https://bbs.archlinux.org/), que permiten conocer a la comunidad y brindar ayuda a los nuevos usuarios.
 
 ### Mejorar esta wiki
 

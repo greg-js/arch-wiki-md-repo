@@ -1,3 +1,7 @@
+Related articles
+
+*   [Securely wipe disk#hdparm](/index.php/Securely_wipe_disk#hdparm "Securely wipe disk")
+
 hdparm is a command line utility to set and view hardware parameters of [hard disk drives](https://en.wikipedia.org/wiki/Hard_disk_drive "wikipedia:Hard disk drive"). It can also be used as a simple [benchmarking](/index.php/Benchmarking "Benchmarking") tool.
 
 **Warning:** Be careful, changing default parameters can damage the drive or freeze the system.
@@ -11,10 +15,10 @@ hdparm is a command line utility to set and view hardware parameters of [hard di
     *   [2.3 Power management configuration](#Power_management_configuration)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Querying the status of the disk without waking it up](#Querying_the_status_of_the_disk_without_waking_it_up)
-    *   [3.2 Working with unsupported hardware](#Working_with_unsupported_hardware)
-    *   [3.3 Persistent configuration using udev rule](#Persistent_configuration_using_udev_rule)
-    *   [3.4 Putting a drive to sleep directly after boot](#Putting_a_drive_to_sleep_directly_after_boot)
-    *   [3.5 Power management for WD Green HDDs](#Power_management_for_WD_Green_HDDs)
+    *   [3.2 Persistent configuration using udev rule](#Persistent_configuration_using_udev_rule)
+    *   [3.3 Putting a drive to sleep directly after boot](#Putting_a_drive_to_sleep_directly_after_boot)
+    *   [3.4 Working with unsupported hardware](#Working_with_unsupported_hardware)
+    *   [3.5 Power management for Western Digital Green drives](#Power_management_for_Western_Digital_Green_drives)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 APM level reset after suspend](#APM_level_reset_after_suspend)
 
@@ -79,27 +83,6 @@ Device is in STANDBY mode, exit(2)
 
 ```
 
-### Working with unsupported hardware
-
-Some drives, particularly external ones, do not support spin down via hdparm. A diagnostic error message similar to the following is a good clue this is the case:
-
-```
-# hdparm -S 240 /dev/sda
-/dev/sda:
-setting standby to 240 (20 minutes)
-HDIO_DRIVE_CMD(setidle) failed: Invalid argument
-
-```
-
-Such drives can be spun down using [hd-idle](https://www.archlinux.org/packages/?name=hd-idle) which ships with a systemd service. One need only edit `/etc/conf.d/hd-idle` and edit the "HD_IDLE_OPTS" line followed by starting and enabling `hd-idle.service`:
-
-Example using a 30 min idle time for sda:
-
-```
-HD_IDLE_OPTS="-i 0 -a sda -i 1800"
-
-```
-
 ### Persistent configuration using udev rule
 
 To make the setting persistent, adapt the following [udev](/index.php/Udev "Udev") rule:
@@ -138,11 +121,32 @@ WantedBy=multi-user.target
 
 Then [enable](/index.php/Enable "Enable") it.
 
-### Power management for WD Green HDDs
+### Working with unsupported hardware
 
-The the Western Digital Green drives have a special "idle3" timeout, which controls how often the drive parks its heads and enters a low power consumption state. The factory default is 8 seconds, which is a very poor choice for use with Linux. Leaving it at the default will result in hundreds of thousands of head load/unload cycles in a very short period of time, which could result in premature failure, not to mention the performance impact of the drive often having to wake-up before doing routine I/O.
+Some drives, particularly external ones, do not support spin down via hdparm. A diagnostic error message similar to the following is a good indication this is the case:
 
-WD supplies an official `WDIDLE3.EXE` DOS utility for tweaking this setting, which should be used if at all possible. **hdparm** features a reverse-engineered implementation behind the `-J` flag, which is not as complete as the original official program, even though it seems to work on at a least a few drives. Another unofficial utility is provided by the [idle3-tools](https://www.archlinux.org/packages/?name=idle3-tools) package. A full power cycle is required for any change in setting to take effect, regardless of which program is used to tweak things.
+```
+# hdparm -S 240 /dev/sda
+/dev/sda:
+setting standby to 240 (20 minutes)
+HDIO_DRIVE_CMD(setidle) failed: Invalid argument
+
+```
+
+Such drives can be spun down using [hd-idle](https://www.archlinux.org/packages/?name=hd-idle) which ships with a systemd service. One need only edit `/etc/conf.d/hd-idle` and the `HD_IDLE_OPTS` value, then [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `hd-idle.service`.
+
+Example using a 30 min idle time for `sda`:
+
+```
+HD_IDLE_OPTS="-i 0 -a sda -i 1800"
+
+```
+
+### Power management for Western Digital Green drives
+
+The *Western Digital Green* HDDs have a special *idle3* timeout, which controls how often the drive parks its heads and enters a low power consumption state. The factory default is 8 seconds, which is a very poor choice. Leaving it at the default will result in thousands of head load/unload cycles in a short period of time, which could result in premature failure, not to mention the performance impact of the drive often having to wake-up before doing routine I/O.
+
+WD supplies an official `WDIDLE3.EXE` DOS utility for tweaking this setting, which should be used if possible for a one-off permanent change. hdparm features a reverse-engineered implementation behind the `-J` flag, which is not as complete as the original official program, even though it seems to work on at a least a few drives. Another unofficial utility is provided by the [idle3-tools](https://www.archlinux.org/packages/?name=idle3-tools) package. A full power cycle is required for any change in setting to take effect, regardless of which program is used to tweak things.
 
 ## Troubleshooting
 

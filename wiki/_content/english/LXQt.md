@@ -1,3 +1,9 @@
+Related articles
+
+*   [LXDE](/index.php/LXDE "LXDE")
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Window manager](/index.php/Window_manager "Window manager")
+
 In early 2013, Hong Jen Yee "PCMan" started porting [LXDE](/index.php/LXDE "LXDE") components to [Qt](/index.php/Qt "Qt"). The first [preview of LXDE-Qt](http://blog.lxde.org/?p=1013) was released on July 3rd, 2013\. On July 21st, it was announced that Razor-qt (a desktop similar in design to LXDE) and LXDE were merging.
 
 The result is [LXQt](http://lxqt.org), a desktop built on Qt which partly uses Razor-qt and LXDE components. While development is mainly focused on LXQt, the GTK+ 2 version of LXDE will see continued development.
@@ -33,7 +39,7 @@ For additional functionality, you may wish to install the following:
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
-*   A screen locker, if needed. For example, [slock](/index.php/Slock "Slock") or [XScreenSaver](/index.php/XScreenSaver "XScreenSaver"). Both are confirmed to integrate with LXQt, others may too. If you want to disable screen locking upon suspend/sleep it is under "LXQT Session Settings/Lock screen before suspending".
+*   A screen locker, if needed. For example, [slock](/index.php/Slock "Slock") or [XScreenSaver](/index.php/XScreenSaver "XScreenSaver"). Both are confirmed to integrate with LXQt, others may too. If you want to disable screen locking upon suspend/sleep it is under LXQt -> Preferences -> LXQt Settings -> Session Settings -> "Lock screen before suspending/hibernating" checkbox.
 
 **Tip:** LXQt uses *xdg-screensaver* from [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) for screen locking which only works with XScreenSaver and [xautolock](https://www.archlinux.org/packages/?name=xautolock) in LXQt session. You can use it or another screen locker by itself. For example, with *slock* you can follow [Slock#Lock on suspend](/index.php/Slock#Lock_on_suspend "Slock") as well as install patched [xdg-utils-slock](https://aur.archlinux.org/packages/xdg-utils-slock/) to obtain feelings expected by LXQt
 

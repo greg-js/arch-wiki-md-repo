@@ -261,7 +261,7 @@ $ cp /etc/i3status.conf ~/.config/i3status/config
 
 *   **ttf-font-awesome** — Масштабируемые векторные иконки, которые могут быть настроены с помощью CSS. [http://fortawesome.github.io/Font-Awesome/cheatsheet/](http://fortawesome.github.io/Font-Awesome/cheatsheet/) Шпаргалка] показывающая пункт Unicode для каждого символа.
 
-	[http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/) || [ttf-font-awesome](https://aur.archlinux.org/packages/ttf-font-awesome/)
+	[http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/) || [ttf-font-awesome](https://www.archlinux.org/packages/?name=ttf-font-awesome)
 
 *   **ttf-font-icons** — Непересекающаяся и последовательная смесь Awesome и Ionicons. Она также позволяет избежать дублирования между DejaVu Sans и Awesome.
 

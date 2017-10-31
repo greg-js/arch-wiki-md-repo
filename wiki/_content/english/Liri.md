@@ -1,3 +1,11 @@
+Related articles
+
+*   [Wayland](/index.php/Wayland "Wayland")
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Qt](/index.php/Qt "Qt")
+
 [Liri](https://liri.io/) is a desktop environment with modern design and features. Liri is the merge between [Hawaii](http://hawaiios.org/), [Papyros](http://papyros.io/) and the [Liri Project](https://github.com/liri-project).
 
 **Warning:** Liri is currently in alpha stage and there might be issues.

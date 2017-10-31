@@ -1,3 +1,7 @@
+Related articles
+
+*   [TigerVNC](/index.php/TigerVNC "TigerVNC")
+
 x11vnc allows one to view remotely and interact with real X displays (i.e. a display corresponding to a physical monitor, keyboard, and mouse) with any VNC viewer. In this way it plays the role for Unix/X11 that WinVNC plays for Windows.
 
 **Note:** x11vnc is not the only way to accomplish a remote control of the real X display; x0vncserver is part of [tigervnc](https://www.archlinux.org/packages/?name=tigervnc) and allows for the same operation.
@@ -131,6 +135,15 @@ or
 $ x11vnc -forever -display :0
 
 ```
+
+It is also possible to use the following command :
+
+```
+$ x11vnc --loop
+
+```
+
+this will restart the server once the session is finished
 
 ### Accessing
 

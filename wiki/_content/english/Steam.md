@@ -33,16 +33,13 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam
 
 ## Installation
 
-**Note:**
+**Note:** Arch Linux is **not** officially supported, the only officially supported distribution is Ubuntu. [[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366)
 
-*   Arch Linux is **not** officially supported, the only officially supported distribution is Ubuntu. [[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366)
-*   If you have a 64-bit system, enable the [multilib](/index.php/Multilib "Multilib") repository.
-
-[Install](/index.php/Install "Install") the [steam](https://www.archlinux.org/packages/?name=steam) package.
+Enable the [Multilib](/index.php/Multilib "Multilib") repository and [install](/index.php/Install "Install") the [steam](https://www.archlinux.org/packages/?name=steam) package.
 
 The following fixes are needed to get Steam functioning properly on Arch Linux:
 
-*   If you have a 64-bit system, you will need to install the 32-bit version of your [graphics driver](/index.php/Xorg#Driver_installation "Xorg") (the package in the *OpenGL (Multilib)* column)
+*   You need to install the 32-bit version of your [graphics driver](/index.php/Xorg#Driver_installation "Xorg") (the package in the *OpenGL (Multilib)* column).
 *   Steam may fail to start due to broken/missing libraries. See [Steam/Troubleshooting#Steam runtime issues](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting").
 *   Steam makes heavy usage of the Arial font. A decent Arial font to use is [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) or [the fonts provided by Steam](/index.php/Steam/Troubleshooting#Text_is_corrupt_or_missing "Steam/Troubleshooting"). Asian languages require [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) to display properly.
 *   Several games have dependencies which may be missing from your system. If a game fails to launch (often without error messages) then make sure all of the libraries listed in [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") are installed.

@@ -259,7 +259,7 @@ Afterwards continue with the installation procedure up to the mkinitcpio step.
 
 Add the `keyboard`, `keymap` and `encrypt` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). If the default US keymap is fine for you, you can omit the `keymap` hook.
 
- `/etc/mkinitcpio.conf`  `HOOKS="... **keyboard keymap** block **encrypt** ... filesystems ..."` 
+ `/etc/mkinitcpio.conf`  `HOOKS=(... **keyboard** **keymap** block **encrypt** ... filesystems ...)` 
 
 Depending on which other hooks are used, the order may be relevant. See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
@@ -404,7 +404,7 @@ Afterwards continue with the installation procedure up to the `mkinitcpio` step.
 
 Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
- `/etc/mkinitcpio.conf`  `HOOKS="... **keyboard** block **encrypt** **lvm2** ... filesystems ..."` 
+ `/etc/mkinitcpio.conf`  `HOOKS=(... **keyboard** **keymap** block **encrypt** **lvm2** ... filesystems ...)` 
 
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
@@ -487,7 +487,7 @@ Now after setup of the encrypted LVM partitioning, it would be time to install: 
 
 Add the `keyboard`, `lvm2` and `encrypt` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
- `/etc/mkinitcpio.conf`  `HOOKS="... **keyboard** block **lvm2** **encrypt** ... filesystems ..."` 
+ `/etc/mkinitcpio.conf`  `HOOKS=(... **keyboard** **keymap** block **lvm2** **encrypt** ... filesystems ...)` 
 
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
@@ -687,8 +687,8 @@ Save the RAID configuration:
 Edit [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") to include your keyfile and add the proper hooks:
 
 ```
-FILES="/crypto_keyfile.bin"
-HOOKS=" ... mdadm_udev encrypt ... " (insert right before "filesystems") 
+FILES=(/crypto_keyfile.bin)
+HOOKS=( ... **keyboard** **keymap** block **mdadm_udev** **encrypt** filesystems ... )
 
 ```
 
@@ -729,7 +729,7 @@ The disk layout is:
 
 **Tip:**
 
-*   It is also possible to use a single usb key by copying the keyfile to the initram directly. An example keyfile `/etc/keyfile` gets copied to the initram image by setting `FILES="/etc/keyfile"` in `/etc/mkinitcpio.conf`. The way to instruct the `encrypt` hook to read the keyfile in the initram image is using `rootfs:` prefix before the filename, e.g. `cryptkey=rootfs:/etc/keyfile`.
+*   It is also possible to use a single usb key by copying the keyfile to the initram directly. An example keyfile `/etc/keyfile` gets copied to the initram image by setting `FILES=(/etc/keyfile)` in `/etc/mkinitcpio.conf`. The way to instruct the `encrypt` hook to read the keyfile in the initram image is using `rootfs:` prefix before the filename, e.g. `cryptkey=rootfs:/etc/keyfile`.
 *   Another option is using a passphrase with good [entropy](/index.php/Disk_encryption#Choosing_a_strong_passphrase "Disk encryption").
 
 ### Preparing the disk
@@ -796,7 +796,7 @@ We choose a non-journalling file system to preserve the flash memory of the `/bo
 
 Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
- `etc/mkinitcpio.conf`  `HOOKS="... **keyboard** block **encrypt** **lvm2** ... filesystems ..."` 
+ `etc/mkinitcpio.conf`  `HOOKS=(... **keyboard** **keymap** block **encrypt** **lvm2** ... filesystems ...)` 
 
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
@@ -978,7 +978,7 @@ Afterwards continue with the installation procedure up to the mkinitcpio step.
 
 Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
- `/etc/mkinitcpio.conf`  `HOOKS="... **keyboard** block **encrypt** **lvm2** ... filesystems ..."` 
+ `/etc/mkinitcpio.conf`  `HOOKS=(... **keyboard** **keymap** block **encrypt** **lvm2** ... filesystems ...)` 
 
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
@@ -1164,7 +1164,7 @@ In order for GRUB to open the LUKS partition without having the user enter his p
 
 After creating, adding, and embedding the key as described above, add the `encrypt` hook to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") as well as any other hooks you require. See [Dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for detailed information. Be sure to regenerate the initial ramdisk when finished.
 
-**Tip:** You may want to add `BINARIES="/usr/bin/btrfs"` to your `mkinitcpio.conf`. See the [Btrfs#Corruption recovery](/index.php/Btrfs#Corruption_recovery "Btrfs") article.
+**Tip:** You may want to add `BINARIES=(/usr/bin/btrfs)` to your `mkinitcpio.conf`. See the [Btrfs#Corruption recovery](/index.php/Btrfs#Corruption_recovery "Btrfs") article.
 
 ### Configuring the boot loader
 

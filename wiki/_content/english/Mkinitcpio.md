@@ -56,7 +56,7 @@ mkinitcpio is a modular tool for building an initramfs CPIO image, offering many
 *   The use of [BusyBox](http://www.busybox.net/) to provide a small and lightweight base for early userspace.
 *   Support for **[udev](/index.php/Udev "Udev")** for hardware auto-detection at runtime, thus preventing the loading of unnecessary modules.
 *   Using an extendable hook-based init script, which supports custom hooks that can easily be included in packages.
-*   Support for [LVM2](/index.php/LVM2 "LVM2"), [dm-crypt](/index.php/Dm-crypt "Dm-crypt") for both plain and LUKS volumes, [RAID](/index.php/RAID "RAID"), and [swsusp](https://en.wikipedia.org/wiki/swsusp "wikipedia:swsusp") and [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") for resuming, and booting from USB mass storage devices.
+*   Support for [LVM2](/index.php/LVM2 "LVM2"), [dm-crypt](/index.php/Dm-crypt "Dm-crypt") for both plain and LUKS volumes, [RAID](/index.php/RAID "RAID"), and [swsusp](https://en.wikipedia.org/wiki/swsusp "wikipedia:swsusp") for resuming, and booting from USB mass storage devices.
 *   The ability to allow many features to be configured from the kernel command line without needing to rebuild the image.
 
 mkinitcpio has been developed by the Arch Linux developers and from community contributions. See the [public Git repository](https://projects.archlinux.org/mkinitcpio.git/).
@@ -104,7 +104,6 @@ The primary configuration file for **mkinitcpio** is `/etc/mkinitcpio.conf`. Add
 **Note:**
 
 *   Users with multiple hardware disk controllers that use the same node names but different kernel modules (e.g. two SCSI/SATA or two IDE controllers) should ensure the correct order of modules is specified in `/etc/mkinitcpio.conf`. Otherwise, the root device location may change between boots, resulting in kernel panics. A more elegant alternative is to use [persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") to ensure that the right devices are mounted.
-
 *   **PS/2 keyboard users**: In order to get keyboard input during early init, if you do not have it already, add the **keyboard** hook to the `HOOKS`. On some motherboards (mostly ancient ones, but also a few new ones), the i8042 controller cannot be automatically detected. It is rare, but some people will surely be without keyboard. You can detect this situation in advance. If you have a PS/2 port and get `i8042: PNP: No PS/2 controller found. Probing ports directly` message, add **atkbd** to the `MODULES`.
 
 Users can modify six variables within the configuration file:
@@ -149,12 +148,12 @@ Modules suffixed with a `?` will not throw errors if they are not found. This mi
 These options allow users to add files to the image. Both `BINARIES` and `FILES` are added before hooks are run, and may be used to override files used or provided by a hook. `BINARIES` are auto-located within a standard `PATH` and are dependency-parsed, meaning any required libraries will also be added. `FILES` are added *as-is*. For example:
 
 ```
-FILES="/etc/modprobe.d/modprobe.conf"
+FILES=(/etc/modprobe.d/modprobe.conf)
 
 ```
 
 ```
-BINARIES="kexec"
+BINARIES=(kexec)
 
 ```
 
@@ -209,7 +208,7 @@ Provides a busybox recovery shell when using **systemd** hook.
  | -- |
 | **udev** | **systemd** | Adds udevd, udevadm, and a small subset of udev rules to your image. | Starts the udev daemon and processes uevents from the kernel; creating device nodes. As it simplifies the boot process by not requiring the user to explicitly specify necessary modules, using it is recommended. |
 | **usr** | Adds support for `/usr` on a separate partition. | Mounts the `/usr` partition after the real root has been mounted. |
-| **resume** | -- | Tries to resume from the "suspend to disk" state. **resume** hook supports both *swsusp* and *[TuxOnIce](/index.php/TuxOnIce "TuxOnIce")*, **systemd** hook supports only *swsusp*. See [Hibernation](/index.php/Hibernation "Hibernation") for further configuration. |
+| **resume** | -- | Tries to resume from the "suspend to disk" state. See [Hibernation](/index.php/Hibernation "Hibernation") for further configuration. |
 | **btrfs** | -- | Sets the required modules to enable [Btrfs](/index.php/Btrfs "Btrfs") for using multiple devices with Btrfs. This hook is not required for using Btrfs on a single device. | Runs `btrfs device scan` to assemble a multi-device Btrfs root file system when **udev** hook or **systemd** hook is not present. The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package is required for this hook. |
 | **autodetect** | Shrinks your initramfs to a smaller size by creating a whitelist of modules from a scan of sysfs. Be sure to verify included modules are correct and none are missing. This hook must be run before other subsystem hooks in order to take advantage of auto-detection. Any hooks placed before 'autodetect' will be installed in full. | -- |
 | **modconf** | Includes modprobe configuration files from `/etc/modprobe.d` and `/usr/lib/modprobe.d` | -- |
@@ -224,7 +223,7 @@ Provides a busybox recovery shell when using **systemd** hook.
 | **consolefont** | Adds the specified console font from `/etc/vconsole.conf` to the initramfs. | Loads the specified console font from `/etc/vconsole.conf` during early userspace. |
 | **encrypt** | **sd-encrypt** | Adds the `dm_crypt` kernel module and the `cryptsetup` tool to the image. You must have [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) installed to use this. | Detects and unlocks an encrypted root partition. See [#Runtime customization](#Runtime_customization) for further configuration.
 
-For **sd-encrypt** see [systemd-cryptsetup-generator(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8) for available kernel command line options. Alternatively, if the file `/etc/crypttab.initramfs` exists, it will be added to the initramfs as `/etc/crypttab`. See the [crypttab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5) manpage for more information on crypttab syntax.
+For **sd-encrypt** see [dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration").
 
  |
 | **lvm2** | **sd-lvm2** | Adds the device mapper kernel module and the `lvm` tool to the image. You must have [lvm2](https://www.archlinux.org/packages/?name=lvm2) installed to use this. | Enables all LVM2 volume groups. This is necessary if you have your root file system on [LVM](/index.php/LVM "LVM"). |
@@ -244,7 +243,7 @@ Make sure you have the correct file compression utility installed for the method
 These are additional flags passed to the program specified by `COMPRESSION`, such as:
 
 ```
-COMPRESSION_OPTIONS='-9'
+COMPRESSION_OPTIONS=(-9)
 
 ```
 
@@ -310,11 +309,11 @@ This parameter tells the kernel how to configure IP addresses of devices and als
 
 If this parameter is missing from the kernel command line, all fields are assumed to be empty, and the defaults mentioned in the [kernel documentation](https://www.kernel.org/doc/Documentation/filesystems/nfs/nfsroot.txt) apply. In general this means that the kernel tries to configure everything using autoconfiguration.
 
-The `<autoconf>` parameter can appear alone as the value to the 'ip' parameter (without all the ':' characters before). If the value is "ip=off" or "ip=none", no autoconfiguration will take place, otherwise autoconfiguration will take place. The most common way to use this is "ip=dhcp".
+The `<autoconf>` parameter can appear alone as the value to the 'ip' parameter (without all the ':' characters before). If the value is `ip=off` or `ip=none`, no autoconfiguration will take place, otherwise autoconfiguration will take place. The most common way to use this is `ip=dhcp`.
 
 For parameters explanation, see the [kernel doc](https://www.kernel.org/doc/Documentation/filesystems/nfs/nfsroot.txt).
 
-	Examples
+Examples:
 
 ```
  ip=127.0.0.1:::::lo:none  --> Enable the loopback interface.
@@ -329,7 +328,7 @@ For parameters explanation, see the [kernel doc](https://www.kernel.org/doc/Docu
 
 If you have multiple network cards, this parameter can include the MAC address of the interface you are booting from. This is often useful as interface numbering may change, or in conjunction with pxelinux IPAPPEND 2 or IPAPPEND 3 option. If not given, eth0 will be used.
 
-*Example:*
+Example:
 
 ```
  BOOTIF=01-A1-B2-C3-D4-E5-F6  # Note the prepended "01-" and capital letters.
@@ -345,39 +344,7 @@ If the `nfsroot` parameter is NOT given on the command line, the default `/tftpb
 
 ```
 
-*Parameter explanation:*
-
-```
- <server-ip>   Specifies the IP address of the NFS server. If this field
-               is not given, the default address as determined by the
-               `ip' variable (see below) is used. One use of this
-               parameter is for example to allow using different servers
-               for RARP and NFS. Usually you can leave this blank.
-
- <root-dir>    Name of the directory on the server to mount as root. If
-               there is a "%s" token in the string, the token will be
-               replaced by the ASCII-representation of the client's IP
-               address.
-
- <nfs-options> Standard NFS options. All options are separated by commas.
-               If the options field is not given, the following defaults
-               will be used:
-                       port            = as given by server portmap daemon
-                       rsize           = 1024
-                       wsize           = 1024
-                       timeo           = 7
-                       retrans         = 3
-                       acregmin        = 3
-                       acregmax        = 60
-                       acdirmin        = 30
-                       acdirmax        = 60
-                       flags           = hard, nointr, noposix, cto, ac
-
-```
-
-**root=/dev/nfs**
-
-If you do not use the `nfsroot` parameter, you need to set `root=/dev/nfs` to boot from an NFS root via automatic configuration.
+Run `mkinitcpio -H net` for parameter explanation.
 
 ### Using LVM
 

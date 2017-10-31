@@ -248,7 +248,7 @@ $ cp /etc/i3status.conf ~/.config/i3status/config
 
 *   **ttf-font-awesome** — 可以通过 CSS定制的可缩放矩阵字体。[[1]](http://fortawesome.github.io/Font-Awesome/cheatsheet/)显示了每个图像的 Unicode 值。
 
-	[http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/) || [ttf-font-awesome](https://aur.archlinux.org/packages/ttf-font-awesome/)
+	[http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/) || [ttf-font-awesome](https://www.archlinux.org/packages/?name=ttf-font-awesome)
 
 *   **ttf-font-icons** — 也提供了全面的图像字符，包括彼此毫无重叠的 Awesome 和 Ionicons, 也很好地避免了 Awesome 与 DejaVu Sans 的微秒重叠。
 

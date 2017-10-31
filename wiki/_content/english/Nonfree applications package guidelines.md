@@ -149,7 +149,7 @@ Many proprietary programs are shipped in nasty installers which sometimes do not
 *   [p7zip](https://www.archlinux.org/packages/?name=p7zip) unpacks not only many archive formats but also [NSIS](https://en.wikipedia.org/wiki/NSIS "wikipedia:NSIS")-based `.exe` installers
     *   it even can extract single sections from common PE (`.exe` & `.dll`) files!
 *   [upx](https://www.archlinux.org/packages/?name=upx) is sometimes used to encrypt above-listed executables and can be used for decryption as well
-*   [innoextract](https://aur.archlinux.org/packages/innoextract/) can unpack `.exe` installers created with [Inno Setup](https://en.wikipedia.org/wiki/Inno_Setup "wikipedia:Inno Setup") (used for example by GOG.com games)
+*   [innoextract](https://www.archlinux.org/packages/?name=innoextract) can unpack `.exe` installers created with [Inno Setup](https://en.wikipedia.org/wiki/Inno_Setup "wikipedia:Inno Setup") (used for example by GOG.com games)
 
 In order to determine exact type of file run `file *file_of_unknown_type*`.
 

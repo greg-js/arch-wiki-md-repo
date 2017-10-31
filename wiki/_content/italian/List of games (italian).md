@@ -453,7 +453,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 *   **VDrift** — Gioco di simulazione di guida Open source creato partendo da drift.
 
-	[http://vdrift.net/](http://vdrift.net/) || [vdrift](https://www.archlinux.org/packages/?name=vdrift)
+	[http://vdrift.net/](http://vdrift.net/) || [vdrift](https://aur.archlinux.org/packages/vdrift/)
 
 *   **[XMoto](https://en.wikipedia.org/wiki/X-Moto "wikipedia:X-Moto")** — Gioco di sfide motocross su piattaforme in 2D, dove la fisica svolge un ruolo importante
 

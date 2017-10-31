@@ -56,7 +56,7 @@ Related articles
 
 **Warning:** If you can access a file or resource with your user account, programs running in Wine can too. Wine prefixes are **not** [sandboxes](https://en.wikipedia.org/wiki/Sandbox_(computer_security) "wikipedia:Sandbox (computer security)"). Consider using [virtualization](https://en.wikipedia.org/wiki/Virtualization "wikipedia:Virtualization") if security is important.
 
-Wine can be installed with the packages [wine](https://www.archlinux.org/packages/?name=wine) (stable) or [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) (testing). [Wine Staging](https://wine-staging.com/) is a patched version of [Wine](https://www.winehq.org/), which contains bug fixes and features (e.g. [CSMT patch](#CSMT_patch)), which have not been integrated into the stable branch yet. If you are running a 64-bit system, you will need to enable the [Multilib](/index.php/Multilib "Multilib") repository first. See also [#Sound](#Sound).
+Wine can be installed by enabling the [Multilib](/index.php/Multilib "Multilib") repository and [installing](/index.php/Install "Install") the [wine](https://www.archlinux.org/packages/?name=wine) (stable) or [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) (testing) package. [Wine Staging](https://wine-staging.com/) is a patched version of [Wine](https://www.winehq.org/), which contains bug fixes and features (e.g. [CSMT patch](#CSMT_patch)), which have not been integrated into the stable branch yet. See also [#Graphics drivers](#Graphics_drivers) and [#Sound](#Sound).
 
 You may also want to install [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) and [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) for applications that need support for Internet Explorer and .NET, respectively. These packages are not strictly required as Wine will download the relevant files as needed. However, having the files downloaded in advance allows you to work off-line and makes it so Wine does not download the files for each Wine prefix needing them.
 
@@ -88,7 +88,7 @@ $ env WINEPREFIX=~/.customprefix wineboot -u
 
 ### WINEARCH
 
-If you have a 64-bit system, Wine will start an 64-bit environment by default. You can change this behavior using the `WINEARCH` environment variable. Rename your `~/.wine` directory and create a new Wine environment by running `$ WINEARCH=win32 winecfg`. This will get you a 32-bit Wine environment. Not setting `WINEARCH` will get you a 64-bit one.
+Wine will start an 64-bit environment by default. You can change this behavior using the `WINEARCH` environment variable. Rename your `~/.wine` directory and create a new Wine environment by running `$ WINEARCH=win32 winecfg`. This will get you a 32-bit Wine environment. Not setting `WINEARCH` will get you a 64-bit one.
 
 You can combine this with `WINEPREFIX` to make a separate `win32` and `win64` environment:
 
@@ -115,7 +115,7 @@ export WINEARCH=win32
 
 ### Graphics drivers
 
-For 64-bit systems, additional [multilib](/index.php/Multilib "Multilib") packages are required. Please install the one that is listed in the *Multilib Package* column in the table in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
+You need to install the 32-bit version of your graphics driver. Please install the package that is listed in the *OpenGL (Multilib)* column in the table in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
 
 A good sign that your drivers are inadequate or not properly configured is when Wine reports the following in your terminal window:
 
@@ -130,12 +130,12 @@ Direct rendering is disabled, most likely your OpenGL drivers have not been inst
 
 By default sound issues may arise when running Wine applications. Ensure only one sound device is selected in *winecfg*. Currently, the [Alsa](/index.php/Alsa "Alsa") driver is the best supported.
 
-*   If you want to use the [ALSA](/index.php/ALSA "ALSA") driver in Wine on a 64-bit system, you will need to install [lib32-alsa-lib](https://www.archlinux.org/packages/?name=lib32-alsa-lib) and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins).
+*   If you want to use the [ALSA](/index.php/ALSA "ALSA") driver in Wine, you will need to install [lib32-alsa-lib](https://www.archlinux.org/packages/?name=lib32-alsa-lib) and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins).
 *   If you want to use the [PulseAudio](/index.php/PulseAudio "PulseAudio") driver in Wine, you will need to install the [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) package.
 *   If you want to use the [OSS](/index.php/OSS "OSS") driver in Wine, you will need to install the [lib32-alsa-oss](https://www.archlinux.org/packages/?name=lib32-alsa-oss) package. The OSS driver in the kernel will not suffice.
 *   Games that use advanced sound systems (*e.g.* TESV: Skyrim) may additionally require installations of [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal).
 
-If *winecfg* **still** fails to detect the audio driver (Selected driver: (none)), [configure it via the registry](https://www.winehq.org/docs/wineusr-guide/using-regedit#Configuring_Sound). For example, in a case where the microphone wasn't working in a 32-bit Windows application on a 64-bit stock install of wine-1.9.7, this provided full access to the sound hardware (sound playback and mic): open *regedit*, look for the key HKEY_CURRENT_USER → Software → Wine → Drivers, and add a string called *Audio* and give it the value *alsa*. Also, if you are using a 64-bit Arch, it may help to [recreate the prefix](#WINEARCH).
+If *winecfg* **still** fails to detect the audio driver (Selected driver: (none)), [configure it via the registry](https://www.winehq.org/docs/wineusr-guide/using-regedit#Configuring_Sound). For example, in a case where the microphone wasn't working in a 32-bit Windows application on a 64-bit stock install of wine-1.9.7, this provided full access to the sound hardware (sound playback and mic): open *regedit*, look for the key HKEY_CURRENT_USER → Software → Wine → Drivers, and add a string called *Audio* and give it the value *alsa*. Also, it may help to [recreate the prefix](#WINEARCH).
 
 #### MIDI support
 
@@ -494,7 +494,7 @@ Wine features an embedded FPS monitor which works for all graphical applications
 
 ### Installing .NET Framework 4.0
 
-First create a new 32-bit Wine prefix if you are on a 64-bit system.
+First create a new 32-bit Wine prefix:
 
 ```
 $ WINEARCH=win32 WINEPREFIX=~/win32 winecfg

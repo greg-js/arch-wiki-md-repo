@@ -607,7 +607,7 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 *   **VDrift** — Open source driving simulation made with drift racing in mind.
 
-	[http://vdrift.net/](http://vdrift.net/) || [vdrift](https://www.archlinux.org/packages/?name=vdrift)
+	[http://vdrift.net/](http://vdrift.net/) || [vdrift](https://aur.archlinux.org/packages/vdrift/)
 
 *   **[XMoto](https://en.wikipedia.org/wiki/X-Moto "wikipedia:X-Moto")** — Challenging 2D motocross platform game, where physics play an important role.
 
@@ -1141,7 +1141,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 [openra-git](https://aur.archlinux.org/packages/openra-git/) | An open-source implementation of the Command & Conquer: Red Alert engine using .NET/Mono and OpenGL. It has a Lua API for generating custom maps. |
 | **[OpenTTD](/index.php/OpenTTD "OpenTTD")**
 - [openttd.org](http://www.openttd.org) | C/C++ | <abbr title="Real-time strategy game">RTS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [openttd](https://www.archlinux.org/packages/?name=openttd)
-[openttd-svn](https://www.archlinux.org/packages/?name=openttd-svn) | An open-source remake of Transport Tycoon Deluxe. Scripted using the Squirrel programming language. |
+[openttd-svn](https://aur.archlinux.org/packages/openttd-svn/) | An open-source remake of Transport Tycoon Deluxe. Scripted using the Squirrel programming language. |
 | **PyChess**
 - [pychess.org](http://pychess.org) | Python | Chess | <abbr title="GNU General Public License Version 3">GPLv3</abbr> | [pychess](https://www.archlinux.org/packages/?name=pychess) | An advanced chess client for Linux following the GNOME Human Interface Guidelines. |
 | **[RuneScape](https://en.wikipedia.org/wiki/RuneScape "w:RuneScape")**
@@ -1156,7 +1156,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 [supertuxkart-git](https://aur.archlinux.org/packages/supertuxkart-git/) | Free, 3D racing game where the characters racing are represented by open-source project mascots. |
 | **[The Battle for Wesnoth](https://en.wikipedia.org/wiki/The_Battle_for_Wesnoth "w:The Battle for Wesnoth")**
 - [wesnoth.org](http://www.wesnoth.org/) | C/C++/Java | <abbr title="Turn-based strategy game">TBS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [wesnoth](https://www.archlinux.org/packages/?name=wesnoth)
-[wesnoth-git](https://www.archlinux.org/packages/?name=wesnoth-git) | Free, turn-based tactical strategy game with a high fantasy theme, featuring both single-player, and online/hotseat multiplayer combat. |
+[wesnoth-git](https://aur.archlinux.org/packages/wesnoth-git/) | Free, turn-based tactical strategy game with a high fantasy theme, featuring both single-player, and online/hotseat multiplayer combat. |
 | **The Mana World**
 - [themanaworld.org](http://themanaworld.org/) | C++ | <abbr title="Massively Multiplayer Online Role-Playing Game">MMORPG</abbr> | <abbr title="GNU Affero General Public License Version 3">AGPLv3</abbr>/<abbr title="GNU General Public License Version 3">GPLv3</abbr> | [manaplus](https://www.archlinux.org/packages/?name=manaplus)
 [manaplus-git](https://aur.archlinux.org/packages/manaplus-git/) | Serious effort to create an innovative free and open-source MMORPG. |

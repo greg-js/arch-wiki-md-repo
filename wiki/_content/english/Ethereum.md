@@ -17,7 +17,7 @@ Create an account with `geth account new`.
 
 The client can be started with `geth`, and it will proceed to download several gigabytes of blockchain data.
 
-Optionally, start the client with `geth console` to get a JavaScript console for more meaningful interaction. This console can then be attached-to from another terminal or remotely with `geth attach [hostname:port` .
+Optionally, start the client with `geth console` to get a JavaScript console for more meaningful interaction. This console can then be attached-to from another terminal or remotely with `geth attach [hostname:port defaults to localhost]`.
 
 To check balances in the console or attach modes, use `web3.fromWei(eth.getBalance(eth.coinbase), "ether")`.
 

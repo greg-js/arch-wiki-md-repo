@@ -318,7 +318,7 @@ gtk-font-name = Sans 10
 Additional theme locations:
 
 *   [DeviantArt](http://www.deviantart.com/browse/all/customization/skins/linuxutil/desktopenv/gnome/gtk3/).
-*   [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=167).
+*   [gnome-look.org](http://gnome-look.org/).
 *   [GTK+ 3 themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=gtk3&do_Search=Go).
 *   [Cursor themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=xcursor&do_Search=Go&PP=50&SB=v&SO=d).
 *   [Icon themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=icon-theme&do_Search=Go&PP=50&SB=v&SO=d).
@@ -393,7 +393,7 @@ The theme of GNOME Shell itself is configurable. To use a Shell theme, firstly e
 
 There are a number of GNOME Shell themes available [in the AUR](https://aur.archlinux.org/packages.php?O=0&K=gnome-shell-theme&do_Search=Go&PP=50&SB=v&SO=d).
 
-Shell themes can also be downloaded from [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=191).
+Shell themes can also be downloaded from [gnome-look.org](http://gnome-look.org/).
 
 ##### Icons on menu
 

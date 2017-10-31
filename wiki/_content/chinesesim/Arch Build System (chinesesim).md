@@ -1,4 +1,15 @@
-**翻译状态：** 本文是英文页面 [Arch_Build_System](/index.php/Arch_Build_System "Arch Build System") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-24，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=485111)可以查看翻译后英文页面的改动。
+相关文章
+
+*   [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
+*   [Creating packages](/index.php/Creating_packages "Creating packages")
+*   [Kernel Compilation with ABS](/index.php/Kernel_Compilation_with_ABS "Kernel Compilation with ABS")
+*   [PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")
+*   [makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")
+*   [pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")
+*   [官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")
+*   [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")
+
+**翻译状态：** 本文是英文页面 [Arch_Build_System](/index.php/Arch_Build_System "Arch Build System") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-31，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=491300)可以查看翻译后英文页面的改动。
 
 本文简要介绍 Arch 编译系统，同时提供一个使用教程。这不是一个完整的参考指南！
 
@@ -11,11 +22,11 @@
         *   [1.3.1 SVN目录树](#SVN.E7.9B.AE.E5.BD.95.E6.A0.91)
 *   [2 我为什么要用ABS](#.E6.88.91.E4.B8.BA.E4.BB.80.E4.B9.88.E8.A6.81.E7.94.A8ABS)
 *   [3 如何使用 ABS](#.E5.A6.82.E4.BD.95.E4.BD.BF.E7.94.A8_ABS)
-    *   [3.1 获取PKGBUILD](#.E8.8E.B7.E5.8F.96PKGBUILD)
+    *   [3.1 使用 SVN 获取 PKGBUILD](#.E4.BD.BF.E7.94.A8_SVN_.E8.8E.B7.E5.8F.96_PKGBUILD)
         *   [3.1.1 前提](#.E5.89.8D.E6.8F.90)
         *   [3.1.2 非递归checkout](#.E9.9D.9E.E9.80.92.E5.BD.92checkout)
         *   [3.1.3 Checkout软件包](#Checkout.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [3.2 配置makepkg](#.E9.85.8D.E7.BD.AEmakepkg)
+    *   [3.2 使用 Git 获取 PKGBUILD](#.E4.BD.BF.E7.94.A8_Git_.E8.8E.B7.E5.8F.96_PKGBUILD)
     *   [3.3 构建软件包](#.E6.9E.84.E5.BB.BA.E8.BD.AF.E4.BB.B6.E5.8C.85)
 *   [4 技巧](#.E6.8A.80.E5.B7.A7)
     *   [4.1 保留修改过的软件包](#.E4.BF.9D.E7.95.99.E4.BF.AE.E6.94.B9.E8.BF.87.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
@@ -89,7 +100,7 @@ ABS 可以用来:
 *   编译或重新编译软件包
 *   从源代码编译Arch官方源里没有的软件(详情请参照[创建软件包](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating packages (简体中文)"))
 *   定制现有的软件包以满足你的特定需求(通过开启或禁用相关选项)
-*   用你的编译器的flags重新构建整个系统，“就像FreeBSD那样” 。(使用[pacbuilder-svn](https://aur.archlinux.org/packages/pacbuilder-svn/))
+*   用你的编译器的flags重新构建整个系统，“就像FreeBSD那样” 。(使用[pacbuilder-svn](https://aur.archlinux.org/packages/pacbuilder-svn/)不支持 git 仓库)
 *   干净地编译安装你自己定制的内核。(参照[内核编译(简体中文)](/index.php/Kernel_Compilation_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel Compilation (简体中文)"))
 *   使内核模块(比如某些显卡驱动)在你定制的内核下正常工作
 *   修改 PKGBUILD 中的版本就能方便的编译和安装新的、老的、beta 或者开发版本的 Arch 软件包
@@ -98,9 +109,9 @@ ABS 可以用来:
 
 ## 如何使用 ABS
 
-### 获取PKGBUILD
+要获取需要的 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")，从源代码编译软件包，需要使用 [Svn](/index.php/Svn "Svn") 或支持 [Git](/index.php/Git "Git") 的 [asp](https://www.archlinux.org/packages/?name=asp)。
 
-**Tip:** 另一种方法是[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")使用[asp](https://www.archlinux.org/packages/?name=asp)，这个工具简单封装了svntogit仓库。
+### 使用 SVN 获取 PKGBUILD
 
 #### 前提
 
@@ -152,11 +163,33 @@ $ svn update
 
 ```
 
-### 配置makepkg
+### 使用 Git 获取 PKGBUILD
 
-关于如何配置*makepkg*来从[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")构建软件包，请参考[makepkg (简体中文)#配置](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE "Makepkg (简体中文)")。
+先安装 [install](/index.php/Install "Install") 软件包 [asp](https://www.archlinux.org/packages/?name=asp)。
+
+要获取某个软件包的 svntogit 仓库：
+
+```
+$ asp checkout *pkgname*
+
+```
+
+这个命令会将软件包的 git 仓库克隆到一个目录。
+
+要更新本地仓库，在仓库目录执行 `asp update`，然后执行 `git pull`.
+
+可以使用 git 的其它命令获取软件包的老版本，或记录自定也改动，详情请参考 [git](/index.php/Git "Git") 页面。
+
+仅要获取某个软件包当前版本的快照，执行:
+
+```
+$ asp export *pkgname*
+
+```
 
 ### 构建软件包
+
+关于如何配置*makepkg*来从[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")构建软件包，请参考[makepkg (简体中文)#配置](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE "Makepkg (简体中文)")。
 
 把[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")所在目录复制到新的位置。在新目录按需要进行修改。 并按照[makepkg (简体中文)#使用](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8 "Makepkg (简体中文)")来构建和安装软件包。
 

@@ -14,8 +14,9 @@
     *   [3.1 Preliminary](#Preliminary)
     *   [3.2 Rapid Fire Hotkey throughput](#Rapid_Fire_Hotkey_throughput)
     *   [3.3 Enable double-key Rapid Fire Hotkey behaviour](#Enable_double-key_Rapid_Fire_Hotkey_behaviour)
-    *   [3.4 Enable CapsLock as a Rapid Fire Hotkey](#Enable_CapsLock_as_a_Rapid_Fire_Hotkey)
-    *   [3.5 Enable Scrollclick](#Enable_Scrollclick)
+    *   [3.4 Enable CapsLock as a Rapid Fire Hotkey with xmodmap](#Enable_CapsLock_as_a_Rapid_Fire_Hotkey_with_xmodmap)
+    *   [3.5 Use temporary XKB options](#Use_temporary_XKB_options)
+    *   [3.6 Enable Scrollclick](#Enable_Scrollclick)
 *   [4 Troubleshooting](#Troubleshooting)
 *   [5 See also](#See_also)
 
@@ -146,7 +147,9 @@ $ xset r rate <delay_to_activate_in_ms> <nb_of_repeats_per_second>
 
 Fancy double-key Rapid Fire Trick are not possible by default for Linux. The [xkb_repeat](https://git.framasoft.org/bobo/xkb_repeat/tree/master) git project may help you unlock this behaviour, providing patches to recompile your X server.
 
-#### Enable CapsLock as a Rapid Fire Hotkey
+**Warning:** This double key repeat usage for RapidFire inject is no longer possible since LoTV release
+
+#### Enable CapsLock as a Rapid Fire Hotkey with xmodmap
 
 TheCore and TheCore Lite hotkeys rely on CapsLock to be a rapid fire hotkey. This does not work by default under Linux. To make it work, CapsLock key could be remapped to another key with [xmodmap](/index.php/Xmodmap "Xmodmap"). Hereafter an example with "Backspace" character.
 
@@ -155,7 +158,7 @@ $ xmodmap -e "remove Lock = Caps_Lock" -e "keycode 66 = BackSpace"
 
 ```
 
-The .SC2Hotkeys file would need to be modified, to take it into account to add "Backspace" as an alternate wherever CapsLock is used
+The .SC2Hotkeys file would need to be modified, to take it into account to add "Backspace" as an alternate wherever CapsLock is used. You may consider tune your .SC2Hotkeys file with one of those command lines:
 
 ```
 $ sed -i -e "s:CapsLock:Backspace:" <file>.SC2Hotkeys                         # replacement of CapsLock by BackSpace
@@ -165,6 +168,27 @@ $ sed -i -e "s:\([=,]\([=,]\)*CapsLock\):\1,\2Backspace:" <file>.SC2Hotkeys   # 
 ```
 
 **Tip:** `xmodmap -e "add Lock = Caps_Lock" -e "keycode 66 = Caps_Lock"` to get back to default CapsLock behavior, once you exit the game
+
+#### Use temporary XKB options
+
+This tip could be used to perform some modifications:
+
+*   map CapsLock to Backspace with `caps:backspace`
+*   swap left Control and Alt keys with `ctrl:swap_lalt_lctl`
+
+```
+$ setxkbmap -option -option "$(localectl | grep Options | sed -e 's/.*Options:\s*//'),ctrl:swap_lalt_lctl,caps:backspace"
+
+```
+
+**Tip:** All possible options could be found looking in /usr/share/X11/xkb/rules/base.lst
+
+**Tip:** to get back to the default XKB options, once you exit the game you can use the following code in a script
+
+```
+setxkbmap -option -option "$(localectl | grep Options | sed -e 's/.*Options:\s*//')"
+
+```
 
 #### Enable Scrollclick
 
@@ -187,7 +211,11 @@ Then add alternate key SCII hotkeys for:
 
 **Tip:** `xmodmap -e "pointer = default"` resets to default mouse functionality
 
-**Tip:** The same method could make "forward mouse button" and "back mouse button" available on your stupid 3 mouse buttons, to be bound to Next/Previous subgroups (like in TheCore/TheCore Lite); as scrollclick applications previously demoed could be better executed with RapidFire Key method
+**Warning:** scrollclick applications previously demoed could be better executed with RapidFire Key method
+
+**Tip:** you may consider using this tip to use wheel for previous/next subgroup browsing
+
+**Tip:** for more 5+ button, you may consider use `evrouter` to apply the same tip and map buttons to other usages
 
 ## Troubleshooting
 

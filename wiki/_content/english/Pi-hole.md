@@ -14,11 +14,10 @@ Pi-hole is a shell-script based project that manages blocklists of known adverti
     *   [1.1 Installation](#Installation)
     *   [1.2 Initial configuration](#Initial_configuration)
         *   [1.2.1 Dnsmasq](#Dnsmasq)
-        *   [1.2.2 Router](#Router)
-        *   [1.2.3 Web Server](#Web_Server)
-            *   [1.2.3.1 Lighttpd](#Lighttpd)
-            *   [1.2.3.2 Nginx](#Nginx)
-    *   [1.3 Web interface](#Web_interface)
+        *   [1.2.2 Web Server](#Web_Server)
+            *   [1.2.2.1 Lighttpd](#Lighttpd)
+            *   [1.2.2.2 Nginx](#Nginx)
+    *   [1.3 Typical configuration](#Typical_configuration)
     *   [1.4 FTL](#FTL)
 *   [2 Using Pi-hole together with OpenVPN](#Using_Pi-hole_together_with_OpenVPN)
 *   [3 Pi-hole Standalone](#Pi-hole_Standalone)
@@ -48,10 +47,6 @@ conf-dir=/etc/dnsmasq.d/,*.conf
 ```
 
 [Enable](/index.php/Enable "Enable") `dnsmasq.service` and re/start it.
-
-#### Router
-
-Pi-hole needs to be the DNS for the LAN in order to work properly. Typical home users rely on their router to resolve DNS queries. The prefered method is to simply redefine the DNS entry **on the router** to use the IP address of the box running Pi-hole. Configuring the router is outside the scope of this article. An alternative is to manually define the DNS entries for each device connecting to the router although this can be tedious. See, [How do I configure my devices to use Pi-hole as their DNS server?](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245)
 
 #### Web Server
 
@@ -120,21 +115,15 @@ Copy the package provided default config for pi-hole:
 
 [Enable](/index.php/Enable "Enable") `nginx.service` `php-fpm.service` and re/start them.
 
-### Web interface
+### Typical configuration
 
-The Pi-hole web interface is very complete and well done. One can use it to, configure nearly every aspect of [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq), execute lots of Pi-hole available commands, control white lists and black lists, and monitor ad filtering. Connect to web interface at
+This section details how to simply use pi-hole as an adblocker, not how to use it to serve out IP addresses via DHCP. It is assumed that most residential users have a separate device (a router) that does this. More advanced setups are beyond the scope of this section.
 
-```
-http://<IP/Hostname of Pi-hole machine>/admin/
+Pi-hole needs to be the DNS for the LAN in order to work properly. The preferred method is to simply redefine the DNS entry **on the router** to use the IP address of the box running Pi-hole. Additionally, one may need to disable the internal DNS functionality in the router as well. See, [How do I configure my devices to use Pi-hole as their DNS server?](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245)
 
-```
+**Tip:** A simple check to see that the router is setup correctly is to first renew a DHCP lease, then inspect the contents of /etc/resolv.conf on the target machine. One should see the IP address of the pi-hole box, not the IP address of the router.
 
-or
-
-```
-[http://pi.hole/admin](http://pi.hole/admin)
-
-```
+Once the router is serving up the pihole box's IP address as the DNS, and once it stops trying to provide DNS internally, log into the pi-hole web interface ([http://pi.hole/admin](http://pi.hole/admin)). Click "Settings" and from there, scroll down to the section entitled, "Upstream DNS Servers" and, select any of the options provided to use as DNS servers.
 
 ### FTL
 

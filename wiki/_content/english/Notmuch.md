@@ -85,7 +85,7 @@ More file handlers can be configured of course.
 
 ### Neomutt
 
-[Neomutt](http://www.neomutt.org/) - Another mutt fork which includes many feature patches, among them the [Notmuch](http://www.neomutt.org/feature/notmuch) integration patch. Install from the [AUR](/index.php/AUR "AUR") as [neomutt](https://aur.archlinux.org/packages/neomutt/) or [neomutt-git](https://aur.archlinux.org/packages/neomutt-git/).
+[Neomutt](http://www.neomutt.org/) - Another mutt fork which includes many feature patches, among them the [Notmuch](http://www.neomutt.org/feature/notmuch) integration patch. Install the [neomutt](https://www.archlinux.org/packages/?name=neomutt) or the [neomutt-git](https://aur.archlinux.org/packages/neomutt-git/) package.
 
 ### astroid
 

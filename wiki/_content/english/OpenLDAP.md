@@ -317,7 +317,7 @@ It is imperative that we have a backup of our LDAP database and configuration in
 #### Export Config
 
 ```
-$ slapcat -F /etc/openldap/slapd.d -n 0 -l "$(hostname)-ldap-mdb-database-$(date '+%F').ldif"
+$ slapcat -F /etc/openldap/slapd.d -n 0 -l "$(hostname)-ldap-mdb-config-$(date '+%F').ldif"
 
 ```
 

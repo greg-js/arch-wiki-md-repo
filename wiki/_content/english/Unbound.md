@@ -18,7 +18,6 @@ Related articles
     *   [2.2 Root hints](#Root_hints)
     *   [2.3 DNSSEC validation](#DNSSEC_validation)
         *   [2.3.1 Testing validation](#Testing_validation)
-        *   [2.3.2 Automatic updates](#Automatic_updates)
     *   [2.4 Forwarding queries](#Forwarding_queries)
         *   [2.4.1 Allow local network to use DNS](#Allow_local_network_to_use_DNS)
         *   [2.4.2 Include local DNS server](#Include_local_DNS_server)
@@ -34,7 +33,6 @@ Related articles
     *   [4.2 Adding an authoritative DNS server](#Adding_an_authoritative_DNS_server)
     *   [4.3 WAN facing DNS](#WAN_facing_DNS)
     *   [4.4 Roothints systemd timer](#Roothints_systemd_timer)
-    *   [4.5 Example configuration](#Example_configuration)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Issues concerning num-threads](#Issues_concerning_num-threads)
 *   [6 See also](#See_also)
@@ -128,27 +126,6 @@ $ drill sigok.verteiltesysteme.net
 ```
 
 The first command should give an `rcode` of `SERVFAIL`. The second should give an `rcode` of `NOERROR`.
-
-#### Automatic updates
-
-`trusted-key.key` can become out of date. To have unbound automatically update the file, use the following instead of the above configuration:
-
- `/etc/unbound/unbound.conf`  `auto-trust-anchor-file: trusted-key.key` 
-
-Additionally, the `unbound` user needs write permissions to the directory:
-
-```
-# chown root:unbound /etc/unbound
-# chmod 775 /etc/unbound
-
-```
-
-Lastly, one can also automatically check for updates before unbound is run by adding the following to the systemd unit under the `[Service]` section using a [drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet"):
-
-```
-ExecStartPre=/usr/bin/unbound-anchor -a /etc/unbound/trusted-key.key
-
-```
 
 ### Forwarding queries
 
@@ -377,28 +354,13 @@ Description=Run root.hints monthly
 
 [Timer]
 OnCalendar=monthly
-Persistent=true     
+Persistent=true
 
 [Install]
 WantedBy=timers.target
 ```
 
 [Start/enable](/index.php/Start/enable "Start/enable") the `roothints.timer` systemd timer.
-
-### Example configuration
-
-The following is a minimal configuration that automatically updates the trusted key file for [#DNSSEC validation](#DNSSEC_validation) and uses [#Root hints](#Root_hints). All [queries are forwarded](#Forwarding_queries) to Google's DNS servers.
-
- `/etc/unbound/unbound.conf` 
-```
-server:
-  auto-trust-anchor-file: /etc/unbound/trusted-key.key
-  root-hints: /etc/unbound/root.hints
-  forward-zone:
-    name: "."
-    forward-addr: 8.8.8.8
-    forward-addr: 8.8.4.4
-```
 
 ## Troubleshooting
 

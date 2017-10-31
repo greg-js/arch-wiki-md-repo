@@ -252,7 +252,7 @@ Nem minden plugin van definiálva az alapértelmezett konfigurációban, és né
 
 *   **ttf-font-awesome** — Nagyítható vektor ikonok, CSS-el szabhatóak testre. Ez a [cheatsheet](http://fortawesome.github.io/Font-Awesome/cheatsheet/) leírja az Unicode kódjait.
 
-	[http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/) || [ttf-font-awesome](https://aur.archlinux.org/packages/ttf-font-awesome/)
+	[http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/) || [ttf-font-awesome](https://www.archlinux.org/packages/?name=ttf-font-awesome)
 
 *   **ttf-font-icons** — Átfedés nélküli, és következetesen méretezett keveréke az Awesome és Ionicons ikonoknak. Szintén megszüntet egy kisebb átfedést a DejaVu Sans és az Awesome között.
 

@@ -144,6 +144,8 @@ To later restore this layout you can run:
 
 ```
 
+**Note:** If the device path contains semicolons, restore will fail with *line X : unsupported command*. Use a device path without semicolons.
+
 ### Using sgdisk
 
 Using *sgdisk* you can create a binary backup consisting of the protective MBR, the main GPT header, the backup GPT header, and one copy of the partition table:
