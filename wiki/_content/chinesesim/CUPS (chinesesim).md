@@ -68,7 +68,7 @@
 *   **[foo2zjs](https://aur.archlinux.org/packages/foo2zjs/)** - Drivers for ZjStream protocol printers such as the HP Laserjet 1018\. More info [here](http://foo2zjs.rkkda.com), Foo2zsj is available in the [foo2zjs](https://aur.archlinux.org/packages/foo2zjs/).
 *   **[hplip](https://www.archlinux.org/packages/?name=hplip)** - HP GNU/Linux 驱动. 支持 DeskJet, OfficeJet, Photosmart, Business Inkjet 和一些 LaserJet printer 型的, 以及一些兄弟打印机。
 *   **[splix](https://www.archlinux.org/packages/?name=splix)** - 三星驱动，支持SPL打印机(SPL：Samsung Printer Language) (USB打印机要配合使用 [AUR](/index.php/AUR "AUR") 的 [cups-usblp](https://aur.archlinux.org/packages/cups-usblp/) )
-*   **[ufr2](https://aur.archlinux.org/packages/ufr2/)** - 佳能 UFR2 驱动，支持LBP, iR 和 MF 系列打印机. 在 [AUR](/index.php/AUR "AUR") 能找到这个包。
+*   **[cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/)** - 佳能 UFR2 驱动，支持LBP, iR 和 MF 系列打印机. 在 [AUR](/index.php/AUR "AUR") 能找到这个包。
 *   **[cups-pdf](https://www.archlinux.org/packages/?name=cups-pdf)** - PDF虚拟打印机，这个东西可以把发送给他的打印任务输出为PDF文件。
 
 If unsure of what driver package to install or if the current driver is not working, it may be easiest to just install all of drivers, since some of the packages are misleading because printers of other makes may rely on them. For instance, the Brother HL-2140 needs the hplip driver installed.

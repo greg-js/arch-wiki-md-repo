@@ -11,6 +11,8 @@ Related articles
 
 **Note:** Occasionally, updates/changes are made to the default config file `/usr/share/psd/psd.conf` upstream. The user copy `$XDG_CONFIG_HOME/psd/psd.conf` will need to be diffed against it. On Arch Linux, pacman should notify the user to do this. Users of other package managers and/or distros will need to periodically diff the files manually.
 
+**Note:** Sometimes this daemon can slow down your login, because it copy all your browser cache to the RAM at [login](https://www.reddit.com/r/archlinux/comments/4l7gvm/very_slow_when_login/d3lrx9y/).
+
 ## Contents
 
 *   [1 Design goals and benefits of psd](#Design_goals_and_benefits_of_psd)

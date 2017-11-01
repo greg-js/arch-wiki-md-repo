@@ -23,7 +23,8 @@ Related articles
 *   [7 NFS Security](#NFS_Security)
     *   [7.1 NFS Server](#NFS_Server)
     *   [7.2 NFS Client](#NFS_Client)
-*   [8 See also](#See_also)
+*   [8 Troubleshooting](#Troubleshooting)
+*   [9 See also](#See_also)
 
 ## Installation
 
@@ -425,6 +426,15 @@ Check that it worked with the `mount` command:
 nfsserver:/srv/export on /mnt type nfs4 (rw,relatime,vers=4.1,rsize=131072,wsize=131072,namlen=255,hard,proto=tcp,port=0,timeo=600,retrans=2,sec=krb5,clientaddr=192.168.100.139,local_lock=none,addr=192.168.100.136)
 
 ```
+
+## Troubleshooting
+
+```
+Cannot set GSSAPI authentication names, aborting
+
+```
+
+Your realm is missing either the `kadmin/admin` or `kadmin/changepw` principal.
 
 ## See also
 

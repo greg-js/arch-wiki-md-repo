@@ -170,7 +170,10 @@ Executing it will prompt for a password, which should have very high entropy. Be
 
 Using the device `/dev/sd*X*`, the above right column example results in:
 
- `# cryptsetup --cipher=twofish-xts-plain64 --offset=0 --key-file=/dev/sd*Z* --key-size=512 open --type=plain /dev/sdX enc` 
+```
+# cryptsetup --cipher=twofish-xts-plain64 --offset=0 --key-file=/dev/sd*Z* --key-size=512 open --type=plain /dev/sdX enc
+
+```
 
 Unlike encrypting with LUKS, the above command must be executed *in full* whenever the mapping needs to be re-established, so it is important to remember the cipher, hash and key file details. We can now check that the mapping has been made:
 
@@ -211,7 +214,10 @@ You will note that the dump not only shows the cipher header information, but al
 
 The following example will create an encrypted root partition on `/dev/sda1` using the default AES cipher in XTS mode with an effective 256-bit encryption
 
- `# cryptsetup -s 512 luksFormat /dev/sda1` 
+```
+# cryptsetup -s 512 luksFormat /dev/sda1
+
+```
 
 ##### Using LUKS to format partitions with a keyfile
 
@@ -272,26 +278,27 @@ The creation and subsequent access of a *dm-crypt* plain mode encryption both re
 
 A first mapper is created with *cryptsetup's* plain-mode defaults, as described in the table's left column above
 
+ `# cryptsetup --type plain -v open /dev/sdaX plain1` 
 ```
-# cryptsetup --type plain -v open /dev/sdaX plain1 
 Enter passphrase: 
 Command successful.
-# 
 
 ```
 
 Now we add the second blockdevice inside it, using different encryption parameters and with an (optional) offset, create a filesystem and mount it
 
+ `# cryptsetup --type plain --cipher=serpent-xts-plain64 --hash=sha256 --key-size=256 --offset=10  open /dev/mapper/plain1 plain2`  `Enter passphrase:`  `# lsblk -p` 
 ```
-# cryptsetup --type plain --cipher=serpent-xts-plain64 --hash=sha256 --key-size=256 --offset=10  open /dev/mapper/plain1 plain2
-Enter passphrase: 
-# lsblk -p   
-NAME                                                     
-/dev/sda                                     
-├─/dev/sdaX          
-│ └─/dev/mapper/plain1     
-│   └─/dev/mapper/plain2              
-...
+ NAME                                                     
+ /dev/sda                                     
+ ├─/dev/sdaX          
+ │ └─/dev/mapper/plain1     
+ │   └─/dev/mapper/plain2              
+ ...
+
+```
+
+```
 # mkfs -t ext2 /dev/mapper/plain2
 # mount -t ext2 /dev/mapper/plain2 /mnt
 # echo "This is stacked. one passphrase per foot to shoot." > /mnt/stacked.txt
@@ -306,29 +313,35 @@ We close the stack to check access works
 
 ```
 
-First, let's try to open the filesystem directly:
+First, let us try to open the filesystem directly:
 
 ```
 # cryptsetup --type plain --cipher=serpent-xts-plain64 --hash=sha256 --key-size=256 --offset=10 open /dev/sdaX plain2
-# mount -t ext2 /dev/mapper/plain2 /mnt
+
+```
+ `# mount -t ext2 /dev/mapper/plain2 /mnt` 
+```
 mount: wrong fs type, bad option, bad superblock on /dev/mapper/plain2,
       missing codepage or helper program, or other error
 
 ```
 
-Why that did not work? Because the "plain2" starting block (10) is still encrypted with the cipher from "plain1". It can only be accessed via the stacked mapper. The error is arbitrary though, trying a wrong passphrase or wrong options will yield the same. For *dm-crypt* plain mode, the `open` action will not error out itself.
+Why that did not work? Because the "plain2" starting block (`10`) is still encrypted with the cipher from "plain1". It can only be accessed via the stacked mapper. The error is arbitrary though, trying a wrong passphrase or wrong options will yield the same. For *dm-crypt* plain mode, the `open` action will not error out itself.
 
 Trying again in correct order:
 
 ```
 # cryptsetup close plain2    # dysfunctional mapper from previous try
-# cryptsetup --type plain open /dev/sdaX plain1
-Enter passphrase: 
-# cryptsetup --type plain --cipher=serpent-xts-plain64 --hash=sha256 --key-size=256 --offset=10 open /dev/mapper/plain1 plain2 
-Enter passphrase: 
-# mount /dev/mapper/plain2 /mnt && cat /mnt/stacked.txt
+
+```
+ `# cryptsetup --type plain open /dev/sdaX plain1` 
+```
+Enter passphrase:
+
+```
+ `# cryptsetup --type plain --cipher=serpent-xts-plain64 --hash=sha256 --key-size=256 --offset=10 open /dev/mapper/plain1 plain2`  `Enter passphrase:`  `# mount /dev/mapper/plain2 /mnt && cat /mnt/stacked.txt` 
+```
 This is stacked. one passphrase per foot to shoot.
-# exit
 
 ```
 
@@ -336,12 +349,8 @@ This is stacked. one passphrase per foot to shoot.
 
 Available for plain mode only is the option `--shared`. With it a single device can be segmented into different non-overlapping mappers. We do that in the next example, using a *loopaes* compatible cipher mode for "plain2" this time:
 
+ `# cryptsetup --type plain --offset 0 --size 1000 open /dev/sdaX plain1`  `Enter passphrase:`  `# cryptsetup --type plain --offset 1000 --size 1000 --shared --cipher=aes-cbc-lmk --hash=sha256 open /dev/sdaX plain2`  `Enter passphrase:`  `# lsblk -p` 
 ```
-# cryptsetup --type plain --offset 0 --size 1000 open /dev/sdaX plain1 
-Enter passphrase: 
-# cryptsetup --type plain --offset 1000 --size 1000 --shared --cipher=aes-cbc-lmk --hash=sha256 open /dev/sdaX plain2
-Enter passphrase: 
-# lsblk -p
 NAME                    
 dev/sdaX                    
 ├─/dev/sdaX               
@@ -361,7 +370,7 @@ It is possible to define up to 8 different keys per LUKS partition. This enables
 
 Once an encrypted partition has been created, the initial keyslot 0 is created (if no other was specified manually). Additional keyslots are numbered from 1 to 7\. Which keyslots are used can be seen by issuing
 
- `# cryptsetup luksDump /dev/<device> |grep BLED` 
+ `# cryptsetup luksDump /dev/<device> | grep BLED` 
 ```
 Key Slot 0: ENABLED
 Key Slot 1: ENABLED
@@ -371,6 +380,7 @@ Key Slot 4: DISABLED
 Key Slot 5: DISABLED
 Key Slot 6: DISABLED
 Key Slot 7: DISABLED
+
 ```
 
 Where <device> is the volume containing the LUKS header. This and all the following commands in this section work on header backup files as well.
@@ -379,8 +389,8 @@ Where <device> is the volume containing the LUKS header. This and all the follow
 
 Adding new keyslots is accomplished using cryptsetup with the `luksAddKey` action. For safety it will always, i.e. also for already unlocked devices, ask for a valid existing key ("any passphrase") before a new one may be entered:
 
+ `# cryptsetup luksAddKey /dev/<device> (/path/to/<additionalkeyfile>)` 
 ```
-# cryptsetup luksAddKey /dev/<device> (/path/to/<additionalkeyfile>) 
 Enter any passphrase:
 Enter new passphrase for key slot:
 Verify passphrase: 
@@ -396,22 +406,25 @@ If `/path/to/<additionalkeyfile>` is given, cryptsetup will add a new keyslot fo
 
 If it is intended to use multiple keys and change or revoke them, the `--key-slot` or `-S` option may be used to specify the slot:
 
+ `# cryptsetup luksAddKey /dev/<device> -S 6` 
 ```
-# cryptsetup luksAddKey /dev/<device> -S 6 
 Enter any passphrase: 
 Enter new passphrase for key slot: 
 Verify passphrase:
-# cryptsetup luksDump /dev/sda8 |grep 'Slot 6'
+
+```
+ `# cryptsetup luksDump /dev/sda8 | grep 'Slot 6'` 
+```
 Key Slot 6: ENABLED
 
 ```
 
 To show an associated action in this example, we decide to change the key right away:
 
+ `# cryptsetup luksChangeKey /dev/<device> -S 6` 
 ```
-# cryptsetup luksChangeKey /dev/<device> -S 6 
 Enter LUKS passphrase to be changed: 
-Enter new LUKS passphrase: 
+Enter new LUKS passphrase:
 
 ```
 
@@ -432,18 +445,19 @@ There are three different actions to remove keys from the header:
 
 For above warning it is good to know the key we want to **keep** is valid. An easy check is to unlock the device with the `-v` option, which will specify which slot it occupies:
 
+ `# cryptsetup -v open /dev/<device> testcrypt` 
 ```
-# cryptsetup -v open /dev/<device> testcrypt
 Enter passphrase for /dev/<device>: 
 Key slot 1 unlocked.
 Command successful.
+
 ```
 
 Now we can remove the key added in the previous subsection using its passphrase:
 
+ `# cryptsetup luksRemoveKey /dev/<device>` 
 ```
-# cryptsetup luksRemoveKey /dev/<device>
-Enter LUKS passphrase to be deleted: 
+Enter LUKS passphrase to be deleted:
 
 ```
 
@@ -451,16 +465,16 @@ If we had used the same passphrase for two keyslots, the first slot would be wip
 
 Alternatively, we can specify the key slot:
 
+ `# cryptsetup luksKillSlot /dev/<device> 6` 
 ```
-# cryptsetup luksKillSlot /dev/<device> 6
 Enter any remaining LUKS passphrase:
 
 ```
 
 Note that in both cases, no confirmation was required.
 
+ `# cryptsetup luksDump /dev/sda8 | grep 'Slot 6'` 
 ```
-# cryptsetup luksDump /dev/sda8 |grep 'Slot 6'
 Key Slot 6: DISABLED
 
 ```
@@ -493,6 +507,7 @@ where <device> is the partition containing the LUKS volume.
 # gpg2 --recipient <User ID> --encrypt /root/<tmp>/<file>.img 
 # cp /root/<tmp>/<file>.img.gpg /mnt/<backup>/
 # umount /root/<tmp>
+
 ```
 
 **Warning:** Tmpfs can swap to harddisk if low on memory so it is not recommended here.
@@ -503,10 +518,14 @@ where <device> is the partition containing the LUKS volume.
 
 In order to evade restoring a wrong header, you can ensure it does work by using it as a remote `--header` first:
 
+ `# cryptsetup -v --header /mnt/<backup>/<file>.img open /dev/<device> test` 
 ```
-# cryptsetup -v --header /mnt/<backup>/<file>.img open /dev/<device> test 
 Key slot 0 unlocked.
 Command successful.
+
+```
+
+```
 # mount /dev/mapper/test /mnt/test && ls /mnt/test 
 # umount /mnt/test 
 # cryptsetup close test 
@@ -526,11 +545,19 @@ Now that all the keyslot areas are overwritten; only active keyslots from the ba
 
 The header always resides at the beginning of the device and a backup can be performed without access to *cryptsetup* as well. First you have to find out the payload offset of the crypted partition:
 
- `# cryptsetup luksDump /dev/<device> | grep "Payload offset"`  ` Payload offset:	4040` 
+ `# cryptsetup luksDump /dev/<device> | grep "Payload offset"` 
+```
+Payload offset:	4040
+
+```
 
 Second check the sector size of the drive
 
- `# fdisk -l /dev/<device> |grep "Sector size"`  `Sector size (logical/physical): 512 bytes / 512 bytes` 
+ `# fdisk -l /dev/<device> | grep "Sector size"` 
+```
+Sector size (logical/physical): 512 bytes / 512 bytes
+
+```
 
 Now that you know the values, you can backup the header with a simple dd command:
 
@@ -550,7 +577,7 @@ A restore can then be performed using the same values as when backing up:
 
 ### Re-encrypting devices
 
-The [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) package features the *cryptsetup-reencrypt* tool. It can be used to convert an existing unencrypted filesystem to a LUKS encrypted one (option `--new`) and permanently remove LUKS encryption (`--decrypt`) from a device. As its name suggests it can also be used to re-encrypt an existing LUKS encrypted device, though, re-encryption is not possible for a detached LUKS header or other encryption modes (e.g. plain-mode). For re-encryption it is possible to change the [#Encryption options for LUKS mode](#Encryption_options_for_LUKS_mode). *cryptsetup-reencrypt* actions can be performed to unmounted devices only. See [cryptsetup-reencrypt(8)](http://man7.org/linux/man-pages/man8/cryptsetup-reencrypt.8.html) for more information.
+The [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) package features the *cryptsetup-reencrypt* tool. It can be used to convert an existing unencrypted filesystem to a LUKS encrypted one (option `--new`) and permanently remove LUKS encryption (`--decrypt`) from a device. As its name suggests it can also be used to re-encrypt an existing LUKS encrypted device, though, re-encryption is not possible for a detached LUKS header or other encryption modes (e.g. plain-mode). For re-encryption it is possible to change the [#Encryption options for LUKS mode](#Encryption_options_for_LUKS_mode). *cryptsetup-reencrypt* actions can be performed to unmounted devices only. See [cryptsetup-reencrypt(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cryptsetup-reencrypt.8) for more information.
 
 One application of re-encryption may be to secure the data again after a passphrase or [keyfile](#Keyfiles) has been compromised *and* one cannot be certain that no copy of the LUKS header has been obtained. For example, if only a passphrase has been shoulder-surfed but no physical/logical access to the device happened, it would be enough to change the respective passphrase/key only ([#Key management](#Key_management)).
 
@@ -566,16 +593,24 @@ The [default](#Encryption_options_for_LUKS_mode) LUKS header encryption cipher r
 
 ```
 # umount /mnt
-# e2fsck -f /dev/sdaX 
+
+```
+ `# e2fsck -f /dev/sdaX` 
+```
 e2fsck 1.43-WIP (18-May-2015)
 Pass 1: Checking inodes, blocks, and sizes
 ...
 /dev/sda6: 12/166320 files (0.0% non-contiguous), 28783/665062 blocks
-# resize2fs -M /dev/sdaX
+
+```
+ `# resize2fs -M /dev/sdaX` 
+```
 resize2fs 1.43-WIP (18-May-2015)
 Resizing the filesystem on /dev/sdaX to 26347 (4k) blocks.
 The filesystem on /dev/sdaX is now 26347 (4k) blocks long.
 ```
+
+}}
 
 Now we encrypt it, using the default cipher we do not have to specify it explicitly. Note there is no option (yet) to double-check the passphrase before encryption starts, be careful not to mistype:
 
@@ -584,19 +619,28 @@ Now we encrypt it, using the default cipher we do not have to specify it explici
 WARNING: this is experimental code, it can completely break your data.
 Enter new passphrase: 
 Progress: 100,0%, ETA 00:00, 2596 MiB written, speed  37,6 MiB/s
+
 ```
 
 After it finished, the encryption was performed to the full partition, i.e. not only the space the filesystem was shrunk to (`sdaX` has `2.6GiB` and the CPU used in the example has no hardware AES instructions). As a final step we extend the filesystem of the now encrypted device again to occupy available space:
 
+ `# cryptsetup open /dev/sdaX recrypt` 
 ```
-# cryptsetup open /dev/sdaX recrypt 
 Enter passphrase for /dev/sdaX: 
 ...
-# resize2fs /dev/mapper/recrypt 
+
+```
+ `# resize2fs /dev/mapper/recrypt` 
+```
 resize2fs 1.43-WIP (18-May-2015)
 Resizing the filesystem on /dev/mapper/recrypt to 664807 (4k) blocks.
 The filesystem on /dev/mapper/recrypt is now 664807 (4k) blocks long.
+
+```
+
+```
 # mount /dev/mapper/recrypt /mnt
+
 ```
 
 and are done.
@@ -615,6 +659,7 @@ In order to re-encrypt a device with its existing encryption options, they do no
 WARNING: this is experimental code, it can completely break your data.
 Enter passphrase for key slot 0: 
 Progress: 100,0%, ETA 00:00, 2596 MiB written, speed  36,5 MiB/s
+
 ```
 
 performs it.
@@ -626,6 +671,7 @@ A possible usecase is to re-encrypt LUKS devices which have non-current encrypti
 Cipher mode:   	cbc-essiv:sha256
 Payload offset:	**2048**
 MK bits:       	128
+
 ```
 
 While it is possible to upgrade the encryption of such a device, it is currently only feasible in two steps. First, re-encrypting with the same encryption options, but using the `--reduce-device-size` option to make further space for the larger LUKS header. Second, re-encypt the whole device again with the desired cipher. For this reason and the fact that a backup should be created in any case, creating a new, fresh encrypted device to restore into is always the faster option.
@@ -714,15 +760,22 @@ There are many kinds of keyfiles. Each type of keyfile used has benefits and dis
 
 This is a keyfile containing a simple passphrase. The benefit of this type of keyfile is that if the file is lost the data it contained is known and hopefully easily remembered by the owner of the encrypted volume. However the disadvantage is that this does not add any security over entering a passphrase during the initial system start.
 
-Example: 1234
+Example: `1234`
 
-**Note:** The keyfile containing the passphrase must not have a newline in it. One option is to create it using `# echo -n 'your_passphrase' > /path/to/<keyfile> `  `# chown root:root /path/to/<keyfile>; chmod 400 /path/to/<keyfile>` Prepend the commands with a space to avoid saving them in the shell history
+**Note:** The keyfile containing the passphrase must not have a newline in it. One option is to create it using
+```
+# echo -n 'your_passphrase' > /path/to/<keyfile>
+# chown root:root /path/to/<keyfile>; chmod 400 /path/to/<keyfile>
+
+```
+
+Prepend the commands with a space to avoid saving them in the shell history
 
 #### randomtext
 
 This is a keyfile containing a block of random characters. The benefit of this type of keyfile is that it is much more resistant to dictionary attacks than a simple passphrase. An additional strength of keyfiles can be utilized in this situation which is the length of data used. Since this is not a string meant to be memorized by a person for entry, it is trivial to create files containing thousands of random characters as the key. The disadvantage is that if this file is lost or changed, it will most likely not be possible to access the encrypted volume without a backup passphrase.
 
-Example: fjqweifj830149-57 819y4my1-38t1934yt8-91m 34co3;t8y;9p3y-
+Example: `fjqweifj830149-57 819y4my1-38t1934yt8-91m 34co3;t8y;9p3y-`
 
 #### binary
 
@@ -783,6 +836,7 @@ Add a keyslot for the keyfile to the LUKS header:
 Enter any LUKS passphrase:
 key slot 0 unlocked.
 Command successful.
+
 ```
 
 ### Manually unlocking a partition using a keyfile
@@ -798,11 +852,22 @@ Use the `--key-file` option when opening the LUKS device:
 
 If the keyfile for a secondary file system is itself stored inside an encrypted root, it is safe while the system is powered off but can be sourced to automatically unlock the mount during with boot via [crypttab](/index.php/Crypttab "Crypttab"). Following on from the first example above
 
- `/etc/crypttab`  `home    /dev/sda2    /etc/mykeyfile` 
+ `/etc/crypttab` 
+```
+home    /dev/sda2    /etc/mykeyfile
+
+```
 
 is all needed for unlocking, and
 
- `/etc/fstab`  `/dev/mapper/home        /home   ext4        defaults        0       2` for mounting the LUKS blockdevice with the generated keyfile.
+ `/etc/fstab` 
+```
+/dev/mapper/home        /home   ext4        defaults        0       2
+
+```
+
+for mounting the LUKS blockdevice with the generated keyfile.
+
 **Tip:** If you prefer to use a `--plain` mode blockdevice, the encryption options necessary to unlock it are specified in `/etc/crypttab`. Take care to apply the systemd workaround mentioned in [crypttab](/index.php/Crypttab "Crypttab") in this case.
 
 ### Unlocking the root partition at boot
@@ -818,23 +883,18 @@ Two cases will be covered:
 
 ##### Configuring mkinitcpio
 
-You have to add two extra modules in your `/etc/mkinitcpio.conf`, one for the drive's file system (`vfat` module in the example below) and one for the codepage (`nls_cp437` module) :
+You have to add a module in your `/etc/mkinitcpio.conf` for the drive's file system (`vfat` module in the example below):
 
 ```
-MODULES="nls_cp437 vfat"
+MODULES=(vfat)
 
 ```
 
-In this example it is assumed that you use a FAT formatted USB drive (`vfat` module). Replace those module names if you use another file system on your USB stick (e.g. `ext2`) or another codepage. Users running the stock Arch kernel should stick to the codepage mentioned here. If it complains of bad superblock and bad codepage at boot, then you need an extra codepage module to be loaded. For instance, you may need `nls_iso8859-1` module for `iso8859-1` codepage.
+In this example it is assumed that you use a FAT formatted USB drive (`vfat` module). Replace those module names if you use another file system on your USB stick (e.g. `ext2`) or another codepage. If it complains of bad superblock and bad codepage at boot, then you need an extra codepage module to be loaded. For instance, you may need `nls_iso8859-1` module for `iso8859-1` codepage.
 
 If you have a non-US keyboard, it might prove useful to load your keyboard layout before you are prompted to enter the password to unlock the root partition at boot. For this, you will need the `keymap` hook before `encrypt`.
 
-Generate a new initramfs image:
-
-```
-# mkinitcpio -p linux
-
-```
+[Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 ##### Configuring the kernel parameters
 
@@ -887,7 +947,7 @@ If using `sd-encrypt` instead of `encrypt`, specify the location of the keyfile 
 
 Include the key in [mkinitcpio FILES array](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio"):
 
- `/etc/mkinitcpio.conf`  `FILES="/crypto_keyfile.bin"` 
+ `/etc/mkinitcpio.conf`  `FILES=(/crypto_keyfile.bin)` 
 
 Finally [Regenerate your initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
 

@@ -1,3 +1,7 @@
+Articoli correlati
+
+*   [Wireless Setup](/index.php/Wireless_Setup "Wireless Setup")
+
 [ConnMan](http://connman.net/) è un gestore delle connessioni alternativo a [NetworkManager](/index.php/NetworkManager_(Italiano) "NetworkManager (Italiano)") e [Wicd](/index.php/Wicd_(Italiano) "Wicd (Italiano)"), creato da Intel e il progetto Moblin per l'utilizzo con dispositivi embedded.
 
 ## Installazione

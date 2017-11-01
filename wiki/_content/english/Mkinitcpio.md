@@ -71,7 +71,7 @@ Advanced users may wish to install the latest development version of mkinitcpio 
 
 ## Image creation and activation
 
-By default, the mkinitcpio script generates two images after kernel installation or upgrades: a *default* image, and a *fallback* image that skips the *autodetect* hook thus including a full range of mostly-unneeded modules. This is accomplished via the *preset* files which most kernel packages install in `/etc/mkinitcpio.d` (e.g. `/etc/mkinitcpio.d/linux.preset` for `linux`). A preset is a predefined definition of how to create an initramfs image instead of specifying the configuration file and output file every time. The `-p` switch specifies a *preset* to utilize. For example, `mkinitcpio -p linux` selects the preset provided by the [linux](https://www.archlinux.org/packages/?name=linux) package.
+By default, the mkinitcpio script generates two images after kernel installation or upgrades: a *default* image, and a *fallback* image that skips the *autodetect* hook thus including a full range of mostly-unneeded modules. This is accomplished via the *preset* files which most kernel packages install in `/etc/mkinitcpio.d/` (e.g. `/etc/mkinitcpio.d/linux.preset` for `linux`). A preset is a predefined definition of how to create an initramfs image instead of specifying the configuration file and output file every time. The `-p` switch specifies a *preset* to utilize. For example, `mkinitcpio -p linux` selects the preset provided by the [linux](https://www.archlinux.org/packages/?name=linux) package.
 
 An additional configuration file is located at `/etc/mkinitcpio.conf` and is used to specify options global to all presets. The `--allpresets` switch specifies that all presets should be utilized when regenerating the initramfs after a `mkinitcpio.conf` change.
 
@@ -88,7 +88,7 @@ Users can generate an image using an alternative configuration file. For example
 
 ```
 
-If generating an image for a kernel other than the one currently running, add the kernel version to the command line. You can see available kernel versions in `/usr/lib/modules`.
+If generating an image for a kernel other than the one currently running, add the kernel version to the command line. You can see available kernel versions in `/usr/lib/modules/`.
 
 ```
 # mkinitcpio -g /boot/linux-custom2.img -k 3.3.0-ARCH
@@ -103,7 +103,7 @@ The primary configuration file for **mkinitcpio** is `/etc/mkinitcpio.conf`. Add
 
 **Note:**
 
-*   Users with multiple hardware disk controllers that use the same node names but different kernel modules (e.g. two SCSI/SATA or two IDE controllers) should ensure the correct order of modules is specified in `/etc/mkinitcpio.conf`. Otherwise, the root device location may change between boots, resulting in kernel panics. A more elegant alternative is to use [persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") to ensure that the right devices are mounted.
+*   Users with multiple hardware disk controllers that use the same node names but different kernel modules (e.g. two SCSI/SATA or two IDE controllers) should use [persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") to ensure that the right devices are mounted. Otherwise, the root device location may change between boots, resulting in kernel panics.
 *   **PS/2 keyboard users**: In order to get keyboard input during early init, if you do not have it already, add the **keyboard** hook to the `HOOKS`. On some motherboards (mostly ancient ones, but also a few new ones), the i8042 controller cannot be automatically detected. It is rare, but some people will surely be without keyboard. You can detect this situation in advance. If you have a PS/2 port and get `i8042: PNP: No PS/2 controller found. Probing ports directly` message, add **atkbd** to the `MODULES`.
 
 Users can modify six variables within the configuration file:
@@ -167,7 +167,7 @@ The default `HOOKS` setting should be sufficient for most simple, single disk se
 
 #### Build hooks
 
-Build hooks are found in `/usr/lib/initcpio/install`. These files are sourced by the bash shell during runtime of mkinitcpio and should contain two functions: `build` and `help`. The `build` function describes the modules, files, and binaries which will be added to the image. An API, documented by mkinitcpio(8), serves to facilitate the addition of these items. The `help` function outputs a description of what the hook accomplishes.
+Build hooks are found in `/usr/lib/initcpio/install/`. These files are sourced by the bash shell during runtime of mkinitcpio and should contain two functions: `build` and `help`. The `build` function describes the modules, files, and binaries which will be added to the image. An API, documented by [mkinitcpio(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8), serves to facilitate the addition of these items. The `help` function outputs a description of what the hook accomplishes.
 
 For a list of all available hooks:
 
@@ -185,7 +185,7 @@ $ mkinitcpio -H udev
 
 #### Runtime hooks
 
-Runtime hooks are found in `/usr/lib/initcpio/hooks`. For any runtime hook, there should always be a build hook of the same name, which calls `add_runscript` to add the runtime hook to the image. These files are sourced by the busybox ash shell during early userspace. With the exception of cleanup hooks, they will always be run in the order listed in the `HOOKS` setting. Runtime hooks may contain several functions:
+Runtime hooks are found in `/usr/lib/initcpio/hooks/`. For any runtime hook, there should always be a build hook of the same name, which calls `add_runscript` to add the runtime hook to the image. These files are sourced by the busybox ash shell during early userspace. With the exception of cleanup hooks, they will always be run in the order listed in the `HOOKS` setting. Runtime hooks may contain several functions:
 
 `run_earlyhook`: Functions of this name will be run once the API file systems have been mounted and the kernel command line has been parsed. This is generally where additional daemons, such as udev, which are needed for the early boot process are started from.
 
@@ -211,7 +211,7 @@ Provides a busybox recovery shell when using **systemd** hook.
 | **resume** | -- | Tries to resume from the "suspend to disk" state. See [Hibernation](/index.php/Hibernation "Hibernation") for further configuration. |
 | **btrfs** | -- | Sets the required modules to enable [Btrfs](/index.php/Btrfs "Btrfs") for using multiple devices with Btrfs. This hook is not required for using Btrfs on a single device. | Runs `btrfs device scan` to assemble a multi-device Btrfs root file system when **udev** hook or **systemd** hook is not present. The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package is required for this hook. |
 | **autodetect** | Shrinks your initramfs to a smaller size by creating a whitelist of modules from a scan of sysfs. Be sure to verify included modules are correct and none are missing. This hook must be run before other subsystem hooks in order to take advantage of auto-detection. Any hooks placed before 'autodetect' will be installed in full. | -- |
-| **modconf** | Includes modprobe configuration files from `/etc/modprobe.d` and `/usr/lib/modprobe.d` | -- |
+| **modconf** | Includes modprobe configuration files from `/etc/modprobe.d/` and `/usr/lib/modprobe.d/`. | -- |
 | **block** | Adds all block device modules, formerly separately provided by the *fw*, *mmc*, *pata*, *sata*, *scsi*, *usb*, and *virtio* hooks. | -- |
 | **pcmcia** | Adds the necessary modules for PCMCIA devices. You need to have [pcmciautils](https://www.archlinux.org/packages/?name=pcmciautils) installed to use this. | -- |
 | **net** | *not implemented* | Adds the necessary modules for a network device. For PCMCIA net devices, please add the **pcmcia** hook too. | Provides handling for an NFS-based root file system. |
@@ -419,18 +419,18 @@ Which corresponds to the command you need to run, which may be:
 
 ```
 
-**Warning:** It is a good idea to rename the automatically generated /boot/initramfs-linux.img before you overwrite it, so you can easily undo your changes. Be prepared for making a mistake that prevents your system from booting. If this happens, you will need to boot through the fallback, or a boot CD, to restore your original, run mkinitcpio to overwrite your changes, or fix them yourself and recompress the image.
+**Warning:** It is a good idea to rename the automatically generated `/boot/initramfs-linux.img` before you overwrite it, so you can easily undo your changes. Be prepared for making a mistake that prevents your system from booting. If this happens, you will need to boot through the fallback, or a boot CD, to restore your original, run mkinitcpio to overwrite your changes, or fix them yourself and recompress the image.
 
 ### "/dev must be mounted" when it already is
 
-The test used by mkinitcpio to determine if /dev is mounted is to see if /dev/fd/ is there. If everything else looks fine, it can be "created" manually by:
+The test used by mkinitcpio to determine if `/dev` is mounted is to see if `/dev/fd/` is there. If everything else looks fine, it can be "created" manually by:
 
 ```
 # ln -s /proc/self/fd /dev/
 
 ```
 
-(Obviously, /proc must be mounted as well. mkinitcpio requires that anyway, and that is the next thing it will check.)
+(Obviously, `/proc` must be mounted as well. mkinitcpio requires that anyway, and that is the next thing it will check.)
 
 ### Possibly missing firmware for module XXXX
 

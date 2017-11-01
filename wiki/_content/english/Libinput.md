@@ -75,7 +75,12 @@ $ xinput set-prop *device* *option-number* *setting*
 
 ```
 
-to change a setting.
+to change a setting. For example, to set both options of libinput Click Method Enabled (303), the following is issued:
+
+```
+# xinput set-prop 14 303 {1 1}
+
+```
 
 See [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") for permanent option settings. [Logitech Marble Mouse#Using libinput](/index.php/Logitech_Marble_Mouse#Using_libinput "Logitech Marble Mouse") and [#Button re-mapping](#Button_re-mapping) illustrate examples.
 

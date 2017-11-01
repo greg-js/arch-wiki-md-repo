@@ -85,6 +85,8 @@ To create the configuration for the seafile server instance choose and follow th
 
 Those initial setup steps can be done with the `seafile-admin` command as the seafile user. Be sure to execute them in the correct directory:
 
+**Note:** seafile-admin only works if you also installed the [seahub](https://aur.archlinux.org/packages/seahub/)-Package beforehand.
+
 ```
 $ cd $HOME/*example.org*
 $ seafile-admin setup

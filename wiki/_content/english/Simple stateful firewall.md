@@ -406,14 +406,7 @@ The following rules give an example configuration to mitigate SSH bruteforce att
 
 Most of the options should be self-explanatory, they allow for three connection packets in ten seconds. Further tries in that time will blacklist the IP. The next rule adds a quirk by allowing a total of four attempts in 30 minutes. This is done because some bruteforce attacks are actually performed slow and not in a burst of attempts. The rules employ a number of additional options. To read more about them, check the original reference for this example: [compilefailure.blogspot.com](http://compilefailure.blogspot.com/2011/04/better-ssh-brute-force-prevention-with.html)
 
-Using the above rules, now ensure that:
-
-```
-# iptables -A INPUT -p tcp --dport ssh -m conntrack --ctstate NEW -j IN_SSH
-
-```
-
-is in an appropriate position in the iptables.rules file.
+Using the above rules, now ensure that `-A INPUT -p tcp --dport ssh -m conntrack --ctstate NEW -j IN_SSH` is in an appropriate position in the iptables.rules file.
 
 This arrangement works for the IN_SSH rule if you followed this entire wiki so far:
 

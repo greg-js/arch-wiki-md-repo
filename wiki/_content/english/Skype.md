@@ -829,7 +829,7 @@ Currently, Skype doesn't work PulseAudio 9.0 `enable-memfd` option, you have to 
 
 #### Skype outputs only UI sounds, but no voice/microphone
 
-This might be caused by the wrong sound card being selected for [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/). Try *Tools > Audio & Video settings* and choose 'Default device'. (You can make a test call there as well to verify the settings). Also, make sure you have pulseaudio installed.
+This might be caused by the wrong sound card being selected for [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/). Try *Tools > Audio & Video settings* and choose 'Default device'. (You can make a test call there as well to verify the settings). Also, make sure you have [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) and [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) installed.
 
 #### Skype does not remember credentials/freezes after entering password
 

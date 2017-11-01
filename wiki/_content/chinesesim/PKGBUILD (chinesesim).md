@@ -11,7 +11,7 @@
 *   [pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")
 *   [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks")
 
-**翻译状态：** 本文是英文页面 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-05-18，点击[这里](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=477450)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-31，点击[这里](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=493230)可以查看翻译后英文页面的改动。
 
 **PKGBUILD**是一个shell脚本，包含 [Arch Linux](/index.php/Arch_Linux "Arch Linux") 在构建软件包时需要的信息。本页面讨论PKGUILD中使用的变量。若要获取PKGBUILD中函数的信息，请参考[创建软件包](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating packages (简体中文)") 和 [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
 
@@ -88,8 +88,8 @@ source=("$pkgname-${pkgver//_/-}.tar.gz")
 
 **Tip:**
 
-*   非常用变量的顺序可以通过 [pacman](/index.php/Pacman "Pacman") 软件包提供的 [vercmp](https://www.archlinux.org/pacman/vercmp.8.html) 进行测试.
-*   在 PKGBUILD 中定义`pkgver()`，[makepkg](/index.php/Makepkg "Makepkg") 就可以自动 [更新](http://allanmcrae.com/2013/04/pacman-4-1-released/) 此变量。详情参阅 [VCS package guidelines#The pkgver() 函数](/index.php/VCS_package_guidelines#The_pkgver.28.29_.E5.87.BD.E6.95.B0 "VCS package guidelines").
+*   非常用变量的顺序可以通过 [pacman](/index.php/Pacman "Pacman") 软件包提供的 [vercmp(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vercmp.8) 进行测试.
+*   在 PKGBUILD 中定义`pkgver()`，[makepkg](/index.php/Makepkg "Makepkg") 就可以自动 [更新](http://allanmcrae.com/2013/04/pacman-4-1-released/) 此变量。详情参阅 [VCS package guidelines](/index.php/VCS_package_guidelines "VCS package guidelines").
 
 ### pkgrel
 
@@ -110,7 +110,7 @@ epoch=1
 ```
  `1:5.13-2` 
 
-更多信息参见[pacman(8)](https://www.archlinux.org/pacman/pacman.8.html)。
+更多信息参见[pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)。
 
 ## 一般变量
 
@@ -136,7 +136,7 @@ epoch=1
 
 软件发布许可证。软件包仓库 `[core]` 中的 [licenses](https://www.archlinux.org/packages/?name=licenses) 包存放了通用的许可证协议，安装后能在 `/usr/share/licenses/common` 中找到这些许可证协议，比如 `/usr/share/licenses/common/GPL`。如果软件包是发布在这些许可证中的任何一个，这个值应该被设定成许可证的目录名，比如：`license=('GPL')`。如果软件包中没有适用的许可证，可以按下的方法执行：
 
-1.  许可证安装到： `/usr/share/licenses/**pkgname**/` 目录下，例如：`/usr/share/licenses/foobar/LICENSE`。
+1.  许可证安装到： `/usr/share/licenses/**pkgname**/` 目录下，例如使用下面命令： `install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE` 
 2.  如果许可证的内容仅保存在网站上，那么你需要单独保存一个版本。
 3.  把 `custom` 添加到 `license` 列表。或者你可以用 `custom:name of license` 替代 `custom`。一旦某个许可证被官方仓库用于两个以上软件包（包括 `[community]`），它将成为 [licenses](https://www.archlinux.org/packages/?name=licenses) 的一个组成部分。
 
@@ -148,6 +148,15 @@ epoch=1
 *   如果最终无法决定使用哪种许可证，[PKGBUILD.proto](https://projects.archlinux.org/pacman.git/tree/proto/PKGBUILD.proto) 建议使用 `unknown`。这种情况下应该联系上游的软件发布者。
 
 **提示：** 有些软件作者没有提供单独的版权文件，而是在 ReadMe.txt 中声明。可以在 `build` 阶段将这些声明提取为单独文件：`sed -n '/**This software**/,/ **thereof.**/p' ReadMe.txt > LICENSE`.
+
+关于自由/开源软件协议的更多信息请参考：
+
+*   [w:Free software licence](https://en.wikipedia.org/wiki/Free_software_licence "w:Free software licence")
+*   [w:Comparison of free and open-source software licenses](https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses "w:Comparison of free and open-source software licenses")
+*   [A Legal Issues Primer for Open Source and Free Software Projects](https://www.softwarefreedom.org/resources/2008/foss-primer.html)
+*   [GNU Project - Various Licenses and Comments about Them](https://www.gnu.org/licenses/license-list.html)
+*   [Debian - License information](https://www.debian.org/legal/licenses/)
+*   [Open Source Initiative - Licenses by Name](http://www.opensource.org/licenses/alphabetical)
 
 ### groups
 
@@ -213,17 +222,15 @@ $ LC_ALL=C pacman -Si $(pactree -rl ''package'') 2>/dev/null | grep -q "^Groups 
 
 ### conflicts
 
-与当前软件包发生冲突的包列表。安装此软件时，所有有冲突的软件都会被删除。可以像 depends 那样指定冲突包的版本号。
+与当前软件包发生冲突的包列表。安装此软件时，所有有冲突的软件都会被删除。可以像 depends 那样指定冲突包的版本号。如果你在制作已有的软件包（例如官方源或 AUR ）的替代时，你需要在 `conflicts` 中指定它们与你的包冲突。
 
-如果你在制作已有的软件包（例如官方源或 AUR ）的替代时，你需要在 `conflicts` 中指定它们与你的包冲突。
-
-不过如果你的包提供的包名称和其它的包冲突，你不需要将冲突的包添加进 `conflicts` 组中，例如：
+有时候，指定所有软件包的冲突很难实现，尤其是当软件包被不同的人维护的时候。所以如果软件包的 `provides` 和其它软件包的 `provides` 提供了相同的功能，就不需要将冲突的包添加进 `conflicts` 组中，例如：
 
 *   [netbeans](https://www.archlinux.org/packages/?name=netbeans) 提供 `netbeans` 。
 *   [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) 提供 `netbeans` ，和 `netbeans` 冲突。
 *   [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) 提供 `netbeans` 而且和 `netbeans` 冲突，但是因为它和 [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) 都提供 `netbeans` 而且 [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) 和 `netbeans` 冲突，pacman 可以发现它们相互冲突，于是不必在 `conflicts` 中表示 [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) 和 [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) 冲突了。
 
-	反过来的例子： [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) 因为和 [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) 提供相同的包于是不必相互冲突。
+	反过来的例子： [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) 因为和 [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) 提供相同的功能，于是不必相互冲突。
 
 ### replaces
 
@@ -243,7 +250,7 @@ $ LC_ALL=C pacman -Si $(pactree -rl ''package'') 2>/dev/null | grep -q "^Groups 
 
 ### options
 
-这个变量允许你重置`makepkg`的部分默认（定义在`/etc/makepkg.conf`中的）行为。要设置一个选项必须指定选项名。要反转一个默认行为，在选项前加上**`!`** 。 参见[PKGBUILD(5)](https://www.archlinux.org/pacman/PKGBUILD.5.html) 以获取所有可用选项。
+这个变量允许你重置`makepkg`的部分默认（定义在`/etc/makepkg.conf`中的）行为。要设置一个选项必须指定选项名。要反转一个默认行为，在选项前加上**`!`** 。 参见 [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5) 以获取所有可用选项。
 
 ### install
 
@@ -334,7 +341,7 @@ Checksums 仅是为了验证下载文件的 *完整性*，而**不是** 它们�
 
 [makepkg](/index.php/Makepkg "Makepkg") 的 `-g`/`--geninteg` 选项可以自动生成校验值，可以通过 `makepkg -g >> PKGBUILD` 命令写入. `updpkgsums` 也可以自动更新 PKGBUILD 中的数值. 两个工具都会自动检测 PKGBUILD 中的算法, 如果没找到就使用 `md5sums`。
 
-要使用的校验算法可以通过 `/etc/makepkg.conf` 中的 `INTEGRITY_CHECK` 选项设置，参考 [makepkg.conf(5)](https://www.archlinux.org/pacman/makepkg.conf.5.html).
+要使用的校验算法可以通过 `/etc/makepkg.conf` 中的 `INTEGRITY_CHECK` 选项设置，参考 [makepkg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5).
 
 ### md5sums
 

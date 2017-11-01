@@ -23,7 +23,6 @@ Back to [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
         *   [3.1.1 Mounting a stacked blockdevice](#Mounting_a_stacked_blockdevice)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 System stuck on boot/password prompt does not show](#System_stuck_on_boot.2Fpassword_prompt_does_not_show)
-    *   [4.2 Passphrase being asked twice on boot](#Passphrase_being_asked_twice_on_boot)
 
 ## mkinitcpio
 
@@ -43,7 +42,7 @@ A typical `/etc/mkinitcpio.conf` configuration using `encrypt` hook:
  `/etc/mkinitcpio.conf` 
 ```
 ...
-HOOKS="base udev autodetect keyboard keymap consolefont modconf block encrypt lvm2 filesystems fsck"
+HOOKS=(base udev autodetect keyboard keymap consolefont modconf block encrypt lvm2 filesystems fsck)
 ...
 ```
 
@@ -52,7 +51,7 @@ A configuration with systemd-based initramfs using `sd-encrypt` hook:
  `/etc/mkinitcpio.conf` 
 ```
 ...
-HOOKS="base systemd autodetect keyboard sd-vconsole modconf block sd-encrypt sd-lvm2 filesystems fsck"
+HOOKS=(base systemd autodetect keyboard sd-vconsole modconf block sd-encrypt sd-lvm2 filesystems fsck)
 ...
 ```
 
@@ -313,52 +312,3 @@ Given you specify the correct corresponding crypttab (e.g. UUID for the `crypto_
 ### System stuck on boot/password prompt does not show
 
 If you are using [Plymouth](/index.php/Plymouth "Plymouth"), make sure to use the correct modules (see: [Plymouth#The plymouth hook](/index.php/Plymouth#The_plymouth_hook "Plymouth")) or disable it. Otherwise Plymouth will swallow the password prompt, making a system boot impossible.
-
-### Passphrase being asked twice on boot
-
-If you have a setup where your luks-encrypted device is a LVM partition which includes all mount points listed in /etc/fstab, you may be asked to enter your passphrase twice during boot: once by grub and again by systemd.
-
-To have the system only prompt once, first get the correct device path and UUID with the following command:
-
-```
-# eval $(lsblk -npfl | awk '$2 == "crypto_LUKS" {print "DEVPATH=" $1 " DEVUUID=" $3}')
-# cryptsetup luksDump $DEVPATH
-
-```
-
-**NOTE:** If no output is returned, it's best to stop here and double-check your setup before continuing.
-
-Now [create a keyfile](/index.php/Dm-crypt/Device_encryption#Creating_a_keyfile_with_random_characters "Dm-crypt/Device encryption"):
-
-```
-# dd bs=512 count=4 if=/dev/urandom of=/crypto_keyfile.bin
-# chmod 000 /crypto_keyfile.bin
-
-```
-
-Add the newly created keyfile using the device path from the `lsblk` command above:
-
-```
-# cryptsetup luksAddKey $DEVPATH /crypto_keyfile.bin
-
-```
-
-Create an entry in */etc/crypttab* that reflects your mapped device name (replace **VolGroup00** with your actual LVM group using the `vgs` command):
-
- `/etc/crypttab` 
-```
-# cat >> /etc/crypttab <<-EOT
-VolGroup00        UUID=$DEVUUID        /crypto_keyfile.bin
-EOT
-```
-
-Include the keyfile by adding it to the **FILES=()** array in */etc/mkinitcpio.conf*:
-
- `/etc/mkinitcpio.conf`  `FILES=(... **/crypto_keyfile.bin** ...)` 
-
-Generate a new initial ramdisk environment using the linux preset from the default ARCH kernel:
-
-```
-# mkinitcpio -p linux
-
-```

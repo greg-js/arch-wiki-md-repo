@@ -1,3 +1,9 @@
+相关文章
+
+*   [CD Burning](/index.php/CD_Burning "CD Burning")
+*   [Archiso](/index.php/Archiso "Archiso")
+*   [Multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive")
+
 **翻译状态：** 本文是英文页面 [USB_Flash_Installation_Media](/index.php/USB_Flash_Installation_Media "USB Flash Installation Media") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-02-17，点击[这里](https://wiki.archlinux.org/index.php?title=USB_Flash_Installation_Media&diff=0&oldid=467029)可以查看翻译后英文页面的改动。
 
 USB 驱动器，也被称为闪存驱动器、USB记忆棒、U盘等。可以从 ISO 制作 Arch LiveUSB 系统，从 UEFI 或 BIOS 系统上直接启动 Arch Linux 安装环境。因为[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")的只读性质，关机后所有的更改都会丢失。这样的系统可用于 Arch Linux 安装、系统维护或者系统恢复。
@@ -174,7 +180,7 @@ $ sudo dd if=path/to/arch.iso of=/dev/**r**diskX bs=1m
 
 #### GNU/Linux
 
-这种方法比 `dd` 复杂，但能够保持U盘可用（ISO 被装在[[Partitioning|]分了区的设备]的某个分区里而无需改变其他分区）。
+这种方法比 `dd` 复杂，但能够保持U盘可用（ISO 被装在[分了区的设备](/index.php/Partitioning "Partitioning")的某个分区里而无需改变其他分区）。
 
 **注意:** 接下来会用 `/dev/sd**Xn**` 指代目标分区，请根据自身的情况调整 **X** 和 **n**。
 

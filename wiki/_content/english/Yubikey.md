@@ -388,7 +388,7 @@ These steps will allow you to use the OpenPGP functionality of your YubiKey (onc
 
 Yubikey can be used to strenghen the security of your cryptsetup encrypted partition/disk (e.g. in LUKS format).
 
-A robust and comfortable to use implementation of a initramfs hook to integrate your yubikey using Challenge-Response (using a static non-private challenge) and optionally a password on top of it [can be found here](https://github.com/Tormen/yubikey-full-disk-encryption).
+A robust and comfortable to use implementation of a initramfs hook to integrate your yubikey using Challenge-Response (using a static non-private challenge) and optionally a password on top of it [can be found here](https://github.com/agherzan/yubikey-full-disk-encryption).
 
 ### Yubikey and KeePass
 

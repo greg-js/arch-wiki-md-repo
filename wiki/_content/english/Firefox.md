@@ -306,7 +306,7 @@ Restart Firefox and see if it solved the problem.
 
 When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. Amazon can have white text on white background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme. The extension [Text Contrast for Dark Themes](https://addons.mozilla.org/firefox/addon/text-contrast-for-dark-themes/) sets the other color as needed to maintain contrast.
 
-Another workaround is to explicitly set standard colors for all web pages in `~/.mozilla/firefox/*xxxxxxxx*.default/chrome/userContent.css` or using the [stylus add-on](https://addons.mozilla.org/en-US/firefox/addon/styl-us/).
+Another workaround is to explicitly set standard colors for all web pages in `~/.mozilla/firefox/*xxxxxxxx*.default/chrome/userContent.css` or using the [stylus add-on](https://addons.mozilla.org/firefox/addon/styl-us/).
 
 The following sets input fields to standard black text / white background; both can be overridden by the displayed site, so that colors are seen as intended:
 

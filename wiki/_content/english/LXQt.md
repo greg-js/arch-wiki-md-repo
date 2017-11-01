@@ -39,7 +39,7 @@ For additional functionality, you may wish to install the following:
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
-*   A screen locker, if needed. For example, [slock](/index.php/Slock "Slock") or [XScreenSaver](/index.php/XScreenSaver "XScreenSaver"). Both are confirmed to integrate with LXQt, others may too. If you want to disable screen locking upon suspend/sleep it is under LXQt -> Preferences -> LXQt Settings -> Session Settings -> "Lock screen before suspending/hibernating" checkbox.
+*   A screen locker, if needed. For example, [slock](/index.php/Slock "Slock") or [XScreenSaver](/index.php/XScreenSaver "XScreenSaver"). Both are confirmed to integrate with LXQt, others may too. If you want to disable screen locking upon suspend/sleep it is under *LXQt > Preferences > LXQt Settings > Session Settings > Lock screen before suspending/hibernating* checkbox.
 
 **Tip:** LXQt uses *xdg-screensaver* from [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) for screen locking which only works with XScreenSaver and [xautolock](https://www.archlinux.org/packages/?name=xautolock) in LXQt session. You can use it or another screen locker by itself. For example, with *slock* you can follow [Slock#Lock on suspend](/index.php/Slock#Lock_on_suspend "Slock") as well as install patched [xdg-utils-slock](https://aur.archlinux.org/packages/xdg-utils-slock/) to obtain feelings expected by LXQt
 
@@ -82,7 +82,7 @@ window_manager=*your_window_manager*
 
 ### Autostarting applications
 
-To have X applications start on login, click the main menu from the LXQt -> Preferences -> LXQt Settings -> Session Settings. Alternatively, this can be launched with:
+To have X applications start on login, click the main menu from the *LXQt > Preferences > LXQt Settings > Session Settings*. Alternatively, this can be launched with:
 
 ```
 lxqt-config-session
@@ -111,7 +111,7 @@ When moving icons on the desktop it is possible to place them a bit too close to
 
 ### Customizing Leave
 
-One can customize the options available under "Leave" simply by copying the respective package provide .desktop file to `~/.local/share/applications` and modifying it to contain the *NoDisplay=true* directive. Reference: [#876](https://github.com/lxde/lxqt/issues/876).
+One can customize the options available under *Leave* simply by copying the respective package provide `.desktop` file to `~/.local/share/applications` and modifying it to contain the `NoDisplay=true` directive. Reference: [#876](https://github.com/lxde/lxqt/issues/876).
 
 Complete list of files to consider masking include:
 

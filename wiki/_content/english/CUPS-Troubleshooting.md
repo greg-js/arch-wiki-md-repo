@@ -370,7 +370,7 @@ Fixed in Arch with [[2]](https://git.archlinux.org/svntogit/packages.git/commit/
 
 ### Printing fails with unauthorised error
 
-If a remote printer requests authentication CUPS will automatically add an `AuthInfoRequired` directive to the printer in `/etc/cups/printers.conf`. However, some graphical applications (for instance, some versions of [LibreOffice](/index.php/LibreOffice "LibreOffice") [[3]](https://bugs.documentfoundation.org/show_bug.cgi?id=53029)) have no way to prompt for credentials, so printing fails. To fix this include the required username and password in the URI. See [[4]](https://bugs.launchpad.net/ubuntu/+source/cups/+bug/283811), [[5]](https://bbs.archlinux.org/viewtopic.php?id=61826),
+If a remote printer requests authentication CUPS will automatically add an `AuthInfoRequired` directive to the printer in `/etc/cups/printers.conf`. However, some graphical applications (for instance, some versions of [LibreOffice](/index.php/LibreOffice "LibreOffice") [[3]](https://bugs.documentfoundation.org/show_bug.cgi?id=53029)) have no way to prompt for credentials, so printing fails. To fix this include the required username and password in the URI. See [[4]](https://bugs.launchpad.net/ubuntu/+source/cups/+bug/283811), [[5]](https://bbs.archlinux.org/viewtopic.php?id=61826).
 
 ### Unknown supported format: application/postscript
 

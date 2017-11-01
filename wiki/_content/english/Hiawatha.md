@@ -17,7 +17,7 @@
     *   [3.2 Obtain a certificate](#Obtain_a_certificate)
     *   [3.3 Auto renewal](#Auto_renewal)
         *   [3.3.1 Automation with cron](#Automation_with_cron)
-        *   [3.3.2 Automation with systemd/Timers](#Automation_with_systemd.2FTimers)
+        *   [3.3.2 Automation with a systemd timer](#Automation_with_a_systemd_timer)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -70,7 +70,7 @@ For further details see the official [HowTo](https://www.hiawatha-webserver.org/
 
 ### Normal CGI
 
-[Common Gateway Interface](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface") (CGI) scripts work with Hiawatha out of the box, you just need to enable the CGI module in the `VirtualHost` section as follows:
+[Common Gateway Interface](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface") (CGI) scripts work with Hiawatha out of the box, the CGI module in the `VirtualHost` section just needs to be enabled as follows:
 
  `/etc/hiawatha/hiawatha.conf` 
 ```
@@ -82,7 +82,7 @@ VirtualHost {
 
 #### Interpreters for CGI scripts
 
-To use CGI scripts in your website, you have to specify where Hiawatha can find the binary that can run them. This is configured by associating the interpreter with the script extensions in the main body of the configuration file:
+To use CGI scripts in your website, you have to specify the common script file extension and the location of the binary that can run them. This is indicated in the main body of the configuration file:
 
 ```
 CGIhandler = /usr/bin/php5-cgi:php,php5
@@ -91,7 +91,7 @@ CGIhandler = /usr/bin/python:py
 
 ```
 
-**Note:** The corresponding language interpreters should be installed. For *php* you need both [php](https://www.archlinux.org/packages/?name=php) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi), for *python* [python](https://www.archlinux.org/packages/?name=python).
+**Note:** The corresponding language interpreters should be installed: for *php* both [php](https://www.archlinux.org/packages/?name=php) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) are needed, for *python* [python](https://www.archlinux.org/packages/?name=python) is required.
 
 For further details see the official [HowTo](https://www.hiawatha-webserver.org/howto/cgi_and_fastcgi).
 
@@ -223,9 +223,9 @@ A daily schedule of this script is appropriate as no action will be taken anyway
 
 In order to automate the renewal of the certificate, schedule a cronjob for the root user to run the command line above.
 
-#### Automation with [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
+#### Automation with a systemd timer
 
-Both service and timer unit files need to be created:
+A [systemd timer](/index.php/Systemd/Timers "Systemd/Timers") can be used for the repetition of the renewal process, both service and timer unit files need to be created:
 
  `/etc/systemd/system/letsencrypt-renew.service ` 
 ```

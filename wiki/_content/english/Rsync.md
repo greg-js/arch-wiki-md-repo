@@ -417,7 +417,7 @@ It is possible to do a successful file system migration by using rsync as descri
 
 Edit the template `/etc/rsyncd.conf`, configure a share and [start](/index.php/Start "Start") the `rsyncd.service`.
 
-**Note:** As of [rsync](https://www.archlinux.org/packages/?name=rsync)-3.1.2-5 the systemd unit `rsyncd.service` included in the package adds security features `ProtectHome=on` and `ProtectSystem=full` under the `[Service]` section. This makes the `/home/` and `/root/` directories inaccessible and `/boot/`, `/etc/` and `/usr/` directories read-only. If you need rsyncd to serve home directories or write system directories you can [edit](/index.php/Edit "Edit") the unit and set either `ProtectHome=off` or `ProtectSystem=off` in the `[Service]` section of the overriding snippet.
+**Note:** As of [rsync](https://www.archlinux.org/packages/?name=rsync)-3.1.2-5 the systemd unit `rsyncd.service` included in the package adds security feature `ProtectSystem=full` (`ProtectHome=on` has been undone in [rsync](https://www.archlinux.org/packages/?name=rsync)-3.1.2-8) under the `[Service]` section. This makes the `/boot/`, `/etc/` and `/usr/` directories read-only. If you need rsyncd write system directories you can [edit](/index.php/Edit "Edit") the unit and set `ProtectSystem=off` in the `[Service]` section of the overriding snippet.
 
 Usage from client, e.g. list server content:
 

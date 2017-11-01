@@ -74,8 +74,8 @@ Invoking hdparm with the query option is known to wake-up some drives. Instead, 
 
 Example:
 
+ `# smartctl -i -n standby /dev/sda` 
 ```
-# smartctl -i -n standby /dev/sda
 smartctl 6.5 2016-05-07 r4318 [x86_64-linux-4.10.13-1-ARCH] (local build)
 Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
 
@@ -87,19 +87,11 @@ Device is in STANDBY mode, exit(2)
 
 To make the setting persistent, adapt the following [udev](/index.php/Udev "Udev") rule:
 
- `/etc/udev/rules.d/50-hdparm.rules` 
-```
-ACTION=="add", SUBSYSTEM=="block", KERNEL=="sda", RUN+="/usr/bin/hdparm -B 254 -S 0 /dev/sda"
-
-```
+ `/etc/udev/rules.d/50-hdparm.rules`  `ACTION=="add", SUBSYSTEM=="block", KERNEL=="sda", RUN+="/usr/bin/hdparm -B 254 -S 0 /dev/sda"` 
 
 Systems with multiple hard drives, can make the rule more flexible. For example, to apply power-saving settings for all external drives (assuming there is only one internal drive, `/dev/sda`):
 
- `/etc/udev/rules.d/50-hdparm.rules` 
-```
-ACTION=="add|change", KERNEL=="sd[b-z]", ATTR{queue/rotational}=="1", RUN+="/usr/bin/hdparm -B 127 -S 12 /dev/%k"
-
-```
+ `/etc/udev/rules.d/50-hdparm.rules`  `ACTION=="add` 
 
 ### Putting a drive to sleep directly after boot
 
@@ -116,7 +108,6 @@ ExecStart=/usr/bin/hdparm -q -S 120 -y /dev/sdb
 
 [Install]
 WantedBy=multi-user.target
-
 ```
 
 Then [enable](/index.php/Enable "Enable") it.
@@ -125,8 +116,8 @@ Then [enable](/index.php/Enable "Enable") it.
 
 Some drives, particularly external ones, do not support spin down via hdparm. A diagnostic error message similar to the following is a good indication this is the case:
 
+ `# hdparm -S 240 /dev/sda` 
 ```
-# hdparm -S 240 /dev/sda
 /dev/sda:
 setting standby to 240 (20 minutes)
 HDIO_DRIVE_CMD(setidle) failed: Invalid argument
@@ -144,9 +135,9 @@ HD_IDLE_OPTS="-i 0 -a sda -i 1800"
 
 ### Power management for Western Digital Green drives
 
-The *Western Digital Green* HDDs have a special *idle3* timeout, which controls how often the drive parks its heads and enters a low power consumption state. The factory default is 8 seconds, which is a very poor choice. Leaving it at the default will result in thousands of head load/unload cycles in a short period of time, which could result in premature failure, not to mention the performance impact of the drive often having to wake-up before doing routine I/O.
+The *Western Digital Green* HDDs have a special *idle3* timeout, which controls how long the drive waits before positioning its heads in their park position and entering a low power consumption state. The factory default is 8 seconds, which is a poor choice. Leaving it at the default will result in thousands of head load/unload cycles in a short period of time, which could result in premature failure, not to mention the performance impact of the drive often having to wake-up before doing routine I/O.
 
-WD supplies an official `WDIDLE3.EXE` DOS utility for tweaking this setting, which should be used if possible for a one-off permanent change. hdparm features a reverse-engineered implementation behind the `-J` flag, which is not as complete as the original official program, even though it seems to work on at a least a few drives. Another unofficial utility is provided by the [idle3-tools](https://www.archlinux.org/packages/?name=idle3-tools) package. A full power cycle is required for any change in setting to take effect, regardless of which program is used to tweak things.
+Western Digital supplies a DOS utility `WDIDLE3.EXE` for [download](https://support.wdc.com/downloads.aspx?p=113) for tweaking this setting. This utility is designed to upgrade the firmware of the following hard drives: WD1000FYPS-01ZKB0, WD7500AYPS-01ZKB0, WD7501AYPS-01ZKB0 and only these. hdparm features a reverse-engineered implementation behind the `-J` flag, which is not as complete as the original official program, even though it seems to work on at a least a few drives. Another unofficial utility is provided by the [idle3-tools](https://www.archlinux.org/packages/?name=idle3-tools) package. A full power cycle is required for any change in setting to take effect, regardless of which program is used to tweak things.
 
 ## Troubleshooting
 
