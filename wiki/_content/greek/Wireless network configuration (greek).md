@@ -1,3 +1,10 @@
+Related articles
+
+*   [Network configuration](/index.php/Network_configuration "Network configuration")
+*   [Software access point](/index.php/Software_access_point "Software access point")
+*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
+*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
+
 Η ρύθμιση του ασύρματου δικτύου, είναι μια διαδικασία που αποτελείται από δύο μέρη: Το πρώτο είναι η αναγνώριση και η επιβεβαίωση πως ο σωστός οδηγός για την ασύρματη κάρτα σας είναι εγκατεστημένος (υπάρχουν στο μέσο εγκατάστασης αλλά συχνά απαιτείται η ξεχωριστή εγκατάσταση), και η ρύθμιση της διεπαφής.
 
 Το δεύτερο είναι η επιλογή μεθόδου διαχείρισης των ασυρμάτων συνδέσεων. Αυτό το άρθρο καλύπτει και τα δύο μέρη, και παρέχει επιπλέον συνδέσμους που αφορούν εργαλεία διαχείρισης ασύρματων δικτύων.
@@ -536,7 +543,7 @@ This section contains general troubleshooting tips, not strictly related to prob
 
 ### Rfkill caveat
 
-Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by kernel. This can be handled by [rfkill](https://www.archlinux.org/packages/?name=rfkill). Use *rfkill* to show the current status:
+Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by kernel. This can be handled by rfkill. Use *rfkill* to show the current status:
 
  `# rfkill list` 
 ```

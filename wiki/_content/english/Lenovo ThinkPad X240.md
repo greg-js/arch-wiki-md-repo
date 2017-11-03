@@ -98,7 +98,7 @@ The keyboard works out of the box mostly, including the `Fn` key and XF86 aliase
 
 Most WMs/DEs handle the special XF86 keys automatically, but you might need to add a configuration yourself. Tools like `amixer` ([alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)), [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight), [arandr](https://www.archlinux.org/packages/?name=arandr) and [lxrandr](https://www.archlinux.org/packages/?name=lxrandr) help in this regard.
 
-The button `XF86WLAN` automatically toggles the (soft) [rfkill](https://www.archlinux.org/packages/?name=rfkill) block state of the wireless device. Keep this in mind when you set it up to connect/disconnect to your wireless network. You can also unblock wlan without using this key: `rfkill unblock wlan`.
+The button `XF86WLAN` automatically toggles the (soft) *rfkill* block state of the wireless device. Keep this in mind when you set it up to connect/disconnect to your wireless network. You can also unblock wlan without using this key: `rfkill unblock wlan`.
 
 The keyboard doesn't have an LED for `Caps Lock`. If your WM/DE doesn't come with an indicator you can use [indicator-keylock](https://aur.archlinux.org/packages/indicator-keylock/) in the tray.
 

@@ -35,110 +35,37 @@ There are several ways to achieve this on Linux:
 
 <caption>VA-API</caption>
  [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) [[1]](https://github.com/01org/intel-vaapi-driver/blob/master/README) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) | [Catalyst XvBA](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst") | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)
-(VDPAU adapter) |
+
+(VDPAU adapter)
+
+ |
 | Decoding |
-| MPEG2 | GMA 4500 and newer | 
-
-<center>?</center>
-
- | Radeon HD 4000 and newer | 
-
-<center>See VDPAU.</center>
-
- |
-| MPEG4 | 
-
-<center>✗</center>
-
- | Radeon HD 6000 and newer |
+| MPEG2 | GMA 4500 and newer |  ? | Radeon HD 4000 and newer | See VDPAU. |
+| MPEG4 | ✗ | Radeon HD 6000 and newer |
 | H.264 | GMA 4500, Ironlake Graphics and newer | Radeon HD 4000 and newer |
-| HEVC (H.265) | Cherryview/Braswell and newer | 
-
-<center>?</center>
-
- |
+| HEVC (H.265) | Cherryview/Braswell and newer | ✗ |
 | VC1 | Sandy Bridge Graphics and newer | Radeon HD 4000 and newer |
-| VP8 | Broadwell and newer | 
-
-<center>?</center>
-
- | 
-
-<center>✗</center>
-
- |
-| VP9 | Broxton and newer | 
-
-<center>?</center>
-
- |
+| VP8 | Broadwell and newer | ✗ | ✗ |
+| VP9 | Broxton and newer | ✗ |
 | Encoding |
-| MPEG2 | Ivy Bridge Graphics and newer | 
-
-<center>?</center>
-
- | 
-
-<center>✗</center>
-
- | 
-
-<center>✗</center>
-
- |
-| H.264 | Sandy Bridge Graphics and newer | 
-
-<center>✗</center>
-
- |
-| HEVC (H.265) | Skylake and newer | 
-
-<center>?</center>
-
- |
-| VP8 | Cherryview/Braswell and newer | 
-
-<center>?</center>
-
- |
-| VP9 | Kaby Lake and newer | 
-
-<center>?</center>
-
- |
+| MPEG2 | Ivy Bridge Graphics and newer |  ? | ✗ | ✗ |
+| H.264 | Sandy Bridge Graphics and newer | ✗ |
+| HEVC (H.265) | Skylake and newer | ✗ |
+| VP8 | Cherryview/Braswell and newer | ✗ |
+| VP9 | Kaby Lake and newer | ✗ |
 
 <caption>VDPAU</caption>
  [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)
 (VA-API adapter) |
 | Decoding |
-| MPEG2 | Radeon 9500 and newer, GeForce 8 and newer | GeForce 8 and newer | 
-
-<center>?</center>
-
- | 
-
-<center>✗</center>
-
- |
+| MPEG2 | Radeon 9500 and newer, GeForce 8 and newer | GeForce 8 and newer |  ? | ✗ |
 | MPEG4 | Radeon HD 6000 and newer, GeForce 200 and newer | GeForce 200 and newer |
-| H.264 | Radeon HD 4000 and newer, GeForce 8 and newer | GeForce 8 and newer | 
-
-<center>See VA-API.</center>
-
- |
-| HEVC (H.265) | 
-
-<center>✗</center>
-
- | GeForce 900 and newer | 
-
-<center>✗</center>
-
- |
+| H.264 | Radeon HD 4000 and newer, GeForce 8 and newer | GeForce 8 and newer | See VA-API. |
+| HEVC (H.265) | ✗ | GeForce 900 and newer | ✗ |
 | VC1 | Radeon HD 4000 and newer, GeForce 8 and newer | GeForce 8 and newer |
 
 *   Supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead.
-*   As of version 0.3, the VA GL driver doesn't support any other hardware decoder than H.264.
+*   As of version 0.3, the VA GL driver does not support any other hardware decoder than H.264.
 *   [Except](https://en.wikipedia.org/wiki/Nvidia_PureVideo "wikipedia:Nvidia PureVideo") GeForce 8800 Ultra, 8800 GTX, 8800 GTS (320/640 MB).
 *   Except GeForce GTX 970 and GTX 980.
 
@@ -173,7 +100,7 @@ There are also two specific types of drivers for VA-API and VDPAU:
 
 For pre-2007 cards see [XvMC](/index.php/XvMC "XvMC").
 
-**Tip:** It is recommended to install and configure both VA-API and VDPAU to achieve support in different scenarios, e.g. [Flash](/index.php/Flash "Flash") doesn't support VA-API but can use the VDPAU VA-API backend.
+**Tip:** It is recommended to install and configure both VA-API and VDPAU to achieve support in different scenarios, e.g. [Flash](/index.php/Flash "Flash") does not support VA-API but can use the VDPAU VA-API backend.
 
 ### Installing VA-API
 
@@ -209,7 +136,7 @@ For pre-2007 cards see [XvMC](/index.php/XvMC "XvMC").
 
 ## Verification
 
-Your system may work perfectly out-of-the-box without needing any configuration. Therefore it’s a good idea to start with this section to see it that’s is the case.
+Your system may work perfectly out-of-the-box without needing any configuration. Therefore it is a good idea to start with this section to see that it is the case.
 
 **Tip:** [mpv](/index.php/Mpv#Hardware_decoding "Mpv") is great for testing hardware acceleration in practice.
 
@@ -257,11 +184,14 @@ vainfo: Supported profile and entrypoints
 
 ```
 
-*VAEntrypointVLD* means that your card is capable to decode this format, *VAEntrypointEncSlice* means that you can encode to this format.
+`VAEntrypointVLD` means that your card is capable to decode this format, `VAEntrypointEncSlice` means that you can encode to this format.
 
 In this example the `i965` driver is used, as you can see in this line:
 
- `libva info: Trying to open /usr/lib/dri/**i965**_drv_video.so` 
+```
+libva info: Trying to open /usr/lib/dri/**i965**_drv_video.so
+
+```
 
 If the following error is displayed when running `vainfo`:
 
@@ -317,7 +247,9 @@ VC1_ADVANCED                    4  9216  2048  1152
 
 Although the video driver should automatically enable hardware video acceleration support for both VA-API and VDPAU, it may be needed to configure VA-API/VDPAU manually. Only continue to this section if you went through [#Verification](#Verification).
 
-**Note:** The default driver names, used if there’s no other configuration present, are guess by the system. However, they are often hacked together and may not work. You can see the guessed values by running: `$ grep -iE 'vdpau|dri driver' ~/.local/share/xorg/Xorg.0.log` 
+The default driver names, used if there is no other configuration present, are guess by the system. However, they are often hacked together and may not work. You can see the guessed values by running:
+
+ `$ grep -iE 'vdpau | dri driver' ~/.local/share/xorg/Xorg.0.log` 
 ```
 (II) RADEON(0): [DRI2] DRI driver: radeonsi
 (II) RADEON(0): [DRI2] VDPAU driver: radeonsi
@@ -326,7 +258,7 @@ Although the video driver should automatically enable hardware video acceleratio
 
 In this case `radeonsi` is the default for both VA-API and VDPAU.
 
-This does not represent the *configuration* however. The values above won’t change even if you override them.
+This does not represent the *configuration* however. The values above will not change even if you override them.
 
 ### Configuring VA-API
 
@@ -362,6 +294,6 @@ The correct driver name depends on your setup:
 
 ### Failed to open VDPAU backend
 
-This happens when you use [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) without overriding `VDPAU_DRIVER`. VDPAU doesn't know what driver to use in this case for some reason and guesses wrongly. See [#Configuring VDPAU](#Configuring_VDPAU).
+This happens when you use [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) without overriding `VDPAU_DRIVER`. VDPAU does not know what driver to use in this case for some reason and guesses wrongly. See [#Configuring VDPAU](#Configuring_VDPAU).
 
 However you may want to configure your media player to use VA-API instead, getting far better results. See [#Software](#Software).

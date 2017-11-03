@@ -131,7 +131,7 @@ There are no strict rules for partitioning a hard drive, although one may follow
 
 *   [UEFI](/index.php/UEFI "UEFI") systems require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 *   BIOS systems that are partitioned with [GPT](#GUID_Partition_Table) require a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") if [GRUB](/index.php/GRUB "GRUB") is used as the bootloader.
-*   If using [Btrfs](/index.php/Btrfs "Btrfs"), subvolumes can be treated as partitions. See the [Btrfs#Mounting subvolumes](/index.php/Btrfs#Mounting_subvolumes "Btrfs") section.
+*   If using [Btrfs](/index.php/Btrfs "Btrfs"), subvolumes can be used to imitate partitions. See the [Btrfs#Mounting subvolumes](/index.php/Btrfs#Mounting_subvolumes "Btrfs") section.
 
 ### Single root partition
 
@@ -141,7 +141,7 @@ This scheme is the simplest and should be enough for most use cases. A [swapfile
 
 Separating out a path as a partition allows for the choice of a different filesystem and mount options. In some cases like a media partition, they can also be shared between operating systems.
 
-Below are some example layouts that can be used when partitioning, and the following subsections detail a few of the directories which can be placed on their own separate partition and then [mounted](/index.php/Mount "Mount") at mount points under `/`. See [file-hierarchy(7)](http://man7.org/linux/man-pages/man7/file-hierarchy.7.html) for a full description of the contents of these directories.
+Below are some example layouts that can be used when partitioning, and the following subsections detail a few of the directories which can be placed on their own separate partition and then [mounted](/index.php/Mount "Mount") at mount points under `/`. See [file-hierarchy(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) for a full description of the contents of these directories.
 
 #### /
 

@@ -56,10 +56,6 @@ $ [[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx -- vt1 &> /dev/null
 
 ```
 
-Outstanding Issues:
-
-*   [Systemd shutdowns are not quiet](https://bugs.freedesktop.org/show_bug.cgi?id=57216) - As of systemd v206, the `quiet` kernel command line parameter is now respected on shutdown, though it seems that if you use the `shutdown` hook of [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio), this function has not been set up to support that parameter.
-
 ## fsck
 
 To hide fsck messages during boot, let systemd check the root filesystem. For this, remove *fsck* from:

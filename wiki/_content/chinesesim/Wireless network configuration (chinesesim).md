@@ -326,7 +326,7 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 ```
 
-**注意:** 如果显示 "Interface doesn't support scanning"，可能是忘了安装固件。有时不以 root 运行 `iwlist` 也会产生这个问题。同样无线网络可能被软禁于，请安装 [rfkill](https://www.archlinux.org/packages/?name=rfkill) 并运行 `rfkill list all` 进行检查。
+**注意:** 如果显示 "Interface doesn't support scanning"，可能是忘了安装固件。有时不以 root 运行 `iwlist` 也会产生这个问题。同样无线网络可能被软禁于，请运行 `rfkill list all` 进行检查。
 
 需要关注的信息:
 
@@ -563,7 +563,7 @@ WPA2-Enterprise wireless networks demanding MSCHAPv2 type-2 authentication with 
 
 ### Rfkill 警告
 
-许多笔记本都有一个硬件按钮或开关来关闭无线网卡, 无论如何, 无线网卡也可以通过kernel来进行屏蔽。 负责这个任务的是 [rfkill](https://www.archlinux.org/packages/?name=rfkill). 使用 *rfkill* 来显示当前状态:
+许多笔记本都有一个硬件按钮或开关来关闭无线网卡, 无论如何, 无线网卡也可以通过kernel来进行屏蔽。 负责这个任务的是 rfkill. 使用 *rfkill* 来显示当前状态:
 
  `# rfkill list` 
 ```

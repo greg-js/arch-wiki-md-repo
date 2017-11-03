@@ -2,13 +2,18 @@
 
 ## Contents
 
-*   [1 Configuration](#Configuration)
-    *   [1.1 User account](#User_account)
-    *   [1.2 Signature](#Signature)
-    *   [1.3 Encoding](#Encoding)
-    *   [1.4 Displaying all posts](#Displaying_all_posts)
-*   [2 Managing usergroups](#Managing_usergroups)
-*   [3 See also](#See_also)
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+    *   [2.1 User account](#User_account)
+    *   [2.2 Signature](#Signature)
+    *   [2.3 Encoding](#Encoding)
+    *   [2.4 Displaying all posts](#Displaying_all_posts)
+*   [3 Managing usergroups](#Managing_usergroups)
+*   [4 See also](#See_also)
+
+## Installation
+
+[Install](/index.php/Install "Install") the [slrn](https://www.archlinux.org/packages/?name=slrn) package.
 
 ## Configuration
 

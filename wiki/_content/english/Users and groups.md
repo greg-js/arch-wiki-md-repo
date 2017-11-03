@@ -405,7 +405,7 @@ Non-root workstation/desktop users often need to be added to some of following g
 | games | `/var/games` | Access to some game software. |
 | http | `/srv/http/` | Access to files served by [HTTP](https://en.wikipedia.org/wiki/HTTP "wikipedia:HTTP") servers. |
 | log | Access to log files in `/var/log/` created by [syslog-ng](/index.php/Syslog-ng "Syslog-ng"). |
-| rfkill | `/dev/rfkill` | Right to control wireless devices power state (used by [rfkill](https://www.archlinux.org/packages/?name=rfkill)). |
+| rfkill | `/dev/rfkill` | Right to control wireless devices power state (used by *rfkill*). |
 | sys | Right to administer printers in [CUPS](/index.php/CUPS "CUPS"). |
 | systemd-journal | `/var/log/journal/*` | Can be used to provide read-only access to the systemd logs, as an alternative to `adm` and `wheel` [[1]](https://cgit.freedesktop.org/systemd/systemd/tree/README?id=fdbbf0eeda929451e2aaf34937a72f03a225e315#n190). Otherwise, only user generated messages are displayed. |
 | users | Standard users group. |

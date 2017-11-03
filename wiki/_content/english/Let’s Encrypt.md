@@ -293,7 +293,7 @@ WantedBy=timers.target
 
 ##### Alternative services
 
-When using the standalone method you should stop your webserver before executing the renew request, and start your webserver when Certbot is finished. The systemd **ExecStartPre** and **ExecStartPost** can provide this.
+When using the standalone method you should stop your webserver before executing the renew request, and start your webserver when Certbot is finished. We use the renew hooks of `certbot` for this because they only get executed when certbot actually renews our certificates (See [https://certbot.eff.org/docs/using.html#renewing-certificates](https://certbot.eff.org/docs/using.html#renewing-certificates) for more information).
 
 ###### nginx
 
@@ -304,9 +304,7 @@ Description=Let's Encrypt renewal
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/certbot renew --quiet --agree-tos
-ExecStartPre=/bin/systemctl stop nginx.service
-ExecStartPost=/bin/systemctl start nginx.service
+ExecStart=/usr/bin/certbot renew --pre-hook "/usr/bin/systemctl stop nginx.service" --post-hook "/usr/bin/systemctl start nginx.service" --quiet --agree-tos
 ```
 
 ###### Apache
@@ -318,9 +316,7 @@ Description=Let's Encrypt renewal
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/certbot renew --quiet --agree-tos
-ExecStartPre=/bin/systemctl stop httpd.service
-ExecStartPost=/bin/systemctl start httpd.service
+ExecStart=/usr/bin/certbot renew --pre-hook "/usr/bin/systemctl stop httpd.service" --post-hook "/usr/bin/systemctl start httpd.service" --quiet --agree-tos --quiet --agree-tos
 ```
 
 ## See also

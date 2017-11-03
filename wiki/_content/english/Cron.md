@@ -382,17 +382,24 @@ alias scron="su -c $(printf "%q " "crontab -e")"
 
 ## Running X.org server-based applications
 
-Cron does not run under the X.org server therefore it cannot know the environmental variable necessary to be able to start an X.org server application so they will have to be defined. One can use a program like [xuserrun](https://aur.archlinux.org/packages/xuserrun/) to do it:
+Cron does not run under the X.org server therefore it cannot know the environmental variable necessary to be able to start an X.org server application so they will have to be defined. One can use a program like [xuserrun-git](https://aur.archlinux.org/packages/xuserrun-git/) to do it:
 
 ```
 17 02 * ... /usr/bin/xuserrun /usr/bin/xclock
 
 ```
 
-Or then can be defined manually (`echo $DISPLAY` will give the current DISPLAY value):
+Or they can be defined manually (`echo $DISPLAY` will give the current DISPLAY value):
 
 ```
 17 02 * ... env DISPLAY=:0 /usr/bin/xclock
+
+```
+
+If running notify-send for desktop notifications in cron, notify-send is sending values to dbus. So it needs to tell dbus to connect to the right bus. The address can be found by examining DBUS_SESSION_BUS_ADDRESS environment variable and setting it to the same value. Therefore:
+
+```
+17 02 * ... env DBUS_SESSION_BUS_ADDRESS=your-address notify-send 'Foo bar'
 
 ```
 

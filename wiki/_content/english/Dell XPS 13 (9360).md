@@ -290,7 +290,7 @@ Then add this file to `/etc/mkinitcpio.conf`:
 
 ```
    ...
-   FILES="/etc/modprobe.d/modprobe.conf"
+   FILES=(/etc/modprobe.d/modprobe.conf)
    ...
 
 ```

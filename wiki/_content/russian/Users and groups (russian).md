@@ -249,7 +249,7 @@ $ cat /etc/group
 | games | `/var/games` | Доступ к некоторым игровым программам. |
 | http | `/srv/http/` | Доступ к файлам, обслуживаемым [HTTP](https://en.wikipedia.org/wiki/HTTP "wikipedia:HTTP") серверами. |
 | log | Доступ к лог-файлам в `/var/log/`, созданным [syslog-ng](/index.php/Syslog-ng "Syslog-ng"). |
-| rfkill | `/dev/rfkill` | Право управления состоянием питания беспроводных устройств (используется [rfkill](https://www.archlinux.org/packages/?name=rfkill)). |
+| rfkill | `/dev/rfkill` | Право управления состоянием питания беспроводных устройств (используется rfkill). |
 | sys | Право администрирования принтеров в [CUPS](/index.php/CUPS "CUPS"). |
 | systemd-journal | `/var/log/journal/*` | Может использоваться для обеспечения доступа (только для чтения) к журналам systemd, в качестве альтернативы `adm` and `wheel` [[1]](https://cgit.freedesktop.org/systemd/systemd/tree/README?id=fdbbf0eeda929451e2aaf34937a72f03a225e315#n190). В противном случае отображаются только сообщения, созданные пользователем. |
 | users | Стандартная группа пользователей. |

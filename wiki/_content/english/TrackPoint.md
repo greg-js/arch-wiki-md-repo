@@ -14,6 +14,7 @@ Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point. For th
         *   [3.1.3 udev hwdb entry](#udev_hwdb_entry)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Trackpoint is not detected or is detected after X minutes](#Trackpoint_is_not_detected_or_is_detected_after_X_minutes)
+    *   [4.2 Trackpoint buttons do not always work](#Trackpoint_buttons_do_not_always_work)
 *   [5 See also](#See_also)
 
 ## GUI configuration
@@ -159,6 +160,15 @@ A workaround is passing `proto=bare` to the `psmouse` module. However, this disa
 
 ```
 # modprobe psmouse proto=bare
+
+```
+
+### Trackpoint buttons do not always work
+
+If you discover that disabling the touchpad in the BIOS disables the wrong buttons and/or that the trackpoint buttons work very unreliable a workaround is to pass `proto=imps` to the `psmouse` module.
+
+```
+# rmmode psmouse; modprobe psmouse proto=imps
 
 ```
 

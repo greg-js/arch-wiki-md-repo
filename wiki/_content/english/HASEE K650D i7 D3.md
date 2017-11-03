@@ -8,7 +8,7 @@ The HASEE K650D-i7-D3 is a powerful laptop, on which Arch-Linux runs fine. For a
 *   [4 Audio](#Audio)
 *   [5 Webcam](#Webcam)
 *   [6 Software access point](#Software_access_point)
-*   [7 Further suggestions](#Further_suggestions)
+*   [7 See also](#See_also)
 
 ## Touchpad synaptics
 
@@ -64,9 +64,9 @@ A Wi-Fi access point can be created in this computer following [Software access 
 channel=10 
 ```
 
-## Further suggestions
+## See also
 
+*   [Laptop](/index.php/Laptop "Laptop")
 *   [Microcode](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode") should be installed for cpu.
 *   UEFI/GPT mode is recommended for a rapid boot process; the default boot logo can be hidden under UEFI.
-*   Wireless and bluetooth are supported at the same time. Run [rfkill](https://www.archlinux.org/packages/?name=rfkill) to shutdown bluetooth for power-saving.
 *   Micphone should be set to 0, and webcam should be covered for potential risk.

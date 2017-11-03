@@ -498,7 +498,7 @@ See [USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 
 
 ### Switching off WLAN on laptops
 
-Sometimes NetworkManager will not work when you disable your Wi-Fi adapter with a switch on your laptop and try to enable it again afterwards. This is often a problem with `rfkill`. Install [rfkill](https://www.archlinux.org/packages/?name=rfkill) from the [official repositories](/index.php/Official_repositories "Official repositories") and use
+Sometimes NetworkManager will not work when you disable your Wi-Fi adapter with a switch on your laptop and try to enable it again afterwards. This is often a problem with `rfkill`. Use
 
 ```
 $ watch -n1 rfkill list all

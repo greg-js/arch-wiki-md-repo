@@ -32,7 +32,11 @@ Speech recognition can mean several things:
 
 ## List of text to speech applications
 
-Two text-to-speech applications are Festival and eSpeak, a small feature comparison is available in a mailing list [thread](http://web.archive.org/web/20090924193011/http://braille.uwo.ca/pipermail/speakup/2008-July/046756.html). Available packages for this category:
+Two text-to-speech applications are Festival and eSpeak, a small feature comparison is available in a mailing list [thread](http://web.archive.org/web/20090924193011/http://braille.uwo.ca/pipermail/speakup/2008-July/046756.html).
+
+	Engines
+
+	TTS-Engines that can be used as commandline tools or embedded in other applications:
 
 *   **[eSpeak](https://en.wikipedia.org/wiki/eSpeak "wikipedia:eSpeak")** — Compact open source software speech synthesizer for more than 50 languages.
 
@@ -42,23 +46,35 @@ Two text-to-speech applications are Festival and eSpeak, a small feature compari
 
 	[http://www.cstr.ed.ac.uk/projects/festival/](http://www.cstr.ed.ac.uk/projects/festival/) || [festival](https://www.archlinux.org/packages/?name=festival)
 
+*   **[MBROLA](/index.php/Mbrola "Mbrola")** — Non-free phonemes-to-audio program which supports more than 70 languages.
+
+	[http://tcts.fpms.ac.be/synthesis/mbrola.html](http://tcts.fpms.ac.be/synthesis/mbrola.html) || [mbrola](https://aur.archlinux.org/packages/mbrola/)
+
+*   **Flite** — A lighweight speech synthesis engine
+
+	[http://www.festvox.org/flite/](http://www.festvox.org/flite/) || [flite](https://www.archlinux.org/packages/?name=flite)
+
+*   **SVOX Pico** — The text-to-speech engine used on Android phones
+
+	- || [svox-pico-bin](https://aur.archlinux.org/packages/svox-pico-bin/)
+
+*   **Mimic** — Text-to-speech voice synthesis from the Mycroft project (based on flite)
+
+	[https://mimic.mycroft.ai/](https://mimic.mycroft.ai/) || [mimic-git](https://aur.archlinux.org/packages/mimic-git/)
+
+	User Applications
+
+	Mostly Graphical Applications using one of above engines:
+
 *   **Gnome speech** — API to incorporate speech into GNOME application menus
 
-	[wikipedia:GNOME Speech](https://en.wikipedia.org/wiki/GNOME_Speech "wikipedia:GNOME Speech") || [gnome-speech](https://www.archlinux.org/packages/?name=gnome-speech)
+	|| <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **Jovie** — KDE Text To Speech Daemon.
 
 	[https://userbase.kde.org/Jovie](https://userbase.kde.org/Jovie) || [kdeaccessibility-jovie](https://www.archlinux.org/packages/?name=kdeaccessibility-jovie)
 
-*   **[MBROLA](/index.php/Mbrola "Mbrola")** — Non-free phonemes-to-audio program which supports more than 70 languages.
-
-	[http://tcts.fpms.ac.be/synthesis/mbrola.html](http://tcts.fpms.ac.be/synthesis/mbrola.html) || [mbrola](https://aur.archlinux.org/packages/mbrola/)
-
-*   **Mimic** — Text-to-speech voice synthesis from the Mycroft project
-
-	[https://mimic.mycroft.ai/](https://mimic.mycroft.ai/) || [mimic-git](https://aur.archlinux.org/packages/mimic-git/)
-
-*   **Orca** — Screen reader for individuals who are blind or visually impaired
+*   **Orca** — Screen reader for individuals who are blind or visually impaired, using eSpeak (via speech-dispatcher)
 
 	[http://www.gnome.org/projects/orca](http://www.gnome.org/projects/orca) || [orca](https://www.archlinux.org/packages/?name=orca)
 
@@ -69,6 +85,10 @@ Two text-to-speech applications are Festival and eSpeak, a small feature compari
 *   **Speech Dispatcher** — Common interface to speech synthesis. It has backends for eSpeak, Festival, and a few other speech synthesizers.
 
 	[http://www.freebsoft.org/speechd](http://www.freebsoft.org/speechd) || [speech-dispatcher](https://www.archlinux.org/packages/?name=speech-dispatcher)
+
+*   **Gespeaker** — Gespeaker is a GTK+ frontend for espeak
+
+	[http://www.muflone.com/gespeaker/](http://www.muflone.com/gespeaker/) || [gespeaker-git](https://aur.archlinux.org/packages/gespeaker-git/)
 
 ## List of voiced commands applications
 

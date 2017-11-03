@@ -1,3 +1,13 @@
+Related articles
+
+*   [Software RAID and LVM](/index.php/Software_RAID_and_LVM "Software RAID and LVM")
+*   [Installing with Fake RAID](/index.php/Installing_with_Fake_RAID "Installing with Fake RAID")
+*   [Convert a single drive system to RAID](/index.php/Convert_a_single_drive_system_to_RAID "Convert a single drive system to RAID")
+*   [ZFS](/index.php/ZFS "ZFS")
+*   [Experimenting with ZFS](/index.php/Experimenting_with_ZFS "Experimenting with ZFS")
+*   [Swap#Striping](/index.php/Swap#Striping "Swap")
+*   [Btrfs#RAID](/index.php/Btrfs#RAID "Btrfs")
+
 This article explains what RAID is and how to create/manage a software RAID array using mdadm.
 
 ## Contents
@@ -182,7 +192,7 @@ or if a particular partition on a drive is to be deleted:
 
 ### Create the Partition Table (GPT)
 
-It is highly recommended to pre-partition the disks to be used in the array. Since most RAID users are selecting HDDs >2 TB, GPT partition tables are required and recommended. Disks are easily partitioned using [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk).
+It is highly recommended to pre-partition the disks to be used in the array. Since most RAID users are selecting HDDs >2 TB, GPT partition tables are required and recommended. Disks are easily partitioned using [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) or cgdisk if you're running from archiso.
 
 *   After created, the partition type should be assigned hex code FD00.
 *   If a larger disk array is employed, consider assigning [disk labels](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming") or [partition labels](/index.php/Persistent_block_device_naming#by-partlabel "Persistent block device naming") to make it easier to identify an individual disk later.

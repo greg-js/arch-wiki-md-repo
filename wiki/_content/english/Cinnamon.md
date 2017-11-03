@@ -1,3 +1,11 @@
+Related articles
+
+*   [Nemo](/index.php/Nemo "Nemo")
+*   [GNOME](/index.php/GNOME "GNOME")
+*   [MATE](/index.php/MATE "MATE")
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+
 [Cinnamon](https://github.com/linuxmint/Cinnamon) is a [desktop environment](/index.php/Desktop_environment "Desktop environment") which combines a traditional desktop layout with modern graphical effects. The underlying technology was forked from the [GNOME](/index.php/GNOME "GNOME") desktop. As of version 2.0, Cinnamon is a complete desktop environment and not merely a frontend for GNOME like GNOME Shell and Unity.
 
 ## Contents
@@ -166,6 +174,13 @@ $ gsettings set org.nemo.desktop show-desktop-icons false
 Linux Mint styled themes and icons can be installed with the [mint-x-theme](https://aur.archlinux.org/packages/mint-x-theme/) and [mint-x-icons](https://aur.archlinux.org/packages/mint-x-icons/) packages. The themes can be edited in `Settings → Themes → Other settings`.
 
 Official Linux Mint Cinnamon themes can be installed using the [mint-cinnamon-themes](https://aur.archlinux.org/packages/mint-cinnamon-themes/) package.
+
+Setting the desktop theme via shell can be done like this:
+
+```
+$ gsettings set org.cinnamon.theme name "*Theme-Name*"
+
+```
 
 ### Sound events
 

@@ -12,7 +12,7 @@ The first generation of notebooks with hybrid graphics follow an approach that i
 *   Turn on the DGP
 *   Switch the multiplexer
 *   Turn off the IGP
-*   Turn on again the display
+*   Turn the display on again
 
 This switch is somewhat rough and adds some blinks and black screens in laptops that could do it "on the fly". Later approaches made the transition a little more user-friendly.
 

@@ -43,7 +43,7 @@ Related articles
 
 mkinitcpio is a Bash script used to create an initial ramdisk environment. From the [mkinitcpio(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8):
 
-	The initial ramdisk is in essence a very small environment (early userspace) which loads various kernel modules and sets up necessary things before handing over control to init. This makes it possible to have, for example, encrypted root file systems and root file systems on a software RAID array. mkinitcpio allows for easy extension with custom hooks, has autodetection at runtime, and many other features.
+	The initial ramdisk is in essence a very small environment (early userspace) which loads various kernel modules and sets up necessary things before handing over control to `init`. This makes it possible to have, for example, encrypted root file systems and root file systems on a software RAID array. mkinitcpio allows for easy extension with custom hooks, has autodetection at runtime, and many other features.
 
 Traditionally, the kernel was responsible for all hardware detection and initialization tasks early in the [boot process](/index.php/Boot_process "Boot process") before mounting the root file system and passing control to `init`. However, as technology advances, these tasks have become increasingly complex.
 
@@ -71,9 +71,9 @@ Advanced users may wish to install the latest development version of mkinitcpio 
 
 ## Image creation and activation
 
-By default, the mkinitcpio script generates two images after kernel installation or upgrades: a *default* image, and a *fallback* image that skips the *autodetect* hook thus including a full range of mostly-unneeded modules. This is accomplished via the *preset* files which most kernel packages install in `/etc/mkinitcpio.d/` (e.g. `/etc/mkinitcpio.d/linux.preset` for `linux`). A preset is a predefined definition of how to create an initramfs image instead of specifying the configuration file and output file every time. The `-p` switch specifies a *preset* to utilize. For example, `mkinitcpio -p linux` selects the preset provided by the [linux](https://www.archlinux.org/packages/?name=linux) package.
+By default, the mkinitcpio script generates two images after kernel installation or upgrades: a *default* image, and a *fallback* image that skips the *autodetect* hook thus including a full range of mostly-unneeded modules. This is accomplished via the *preset* files which most kernel packages install in `/etc/mkinitcpio.d/` (e.g. `/etc/mkinitcpio.d/linux.preset` for `linux`). A preset is a predefined definition of how to create an initramfs image instead of specifying the configuration file and output file every time. The `-p`/`--preset` switch specifies a *preset* to utilize. For example, `mkinitcpio -p linux` selects the preset provided by the [linux](https://www.archlinux.org/packages/?name=linux) package.
 
-An additional configuration file is located at `/etc/mkinitcpio.conf` and is used to specify options global to all presets. The `--allpresets` switch specifies that all presets should be utilized when regenerating the initramfs after a `mkinitcpio.conf` change.
+An additional configuration file is located at `/etc/mkinitcpio.conf` and is used to specify options global to all presets. The `-P`/`--allpresets` switch specifies that all presets should be utilized when regenerating the initramfs after a `mkinitcpio.conf` change.
 
 Users may create any number of initramfs images with a variety of different configurations. The desired image must be specified in the respective [boot loader](/index.php/Boot_loader "Boot loader") configuration file.
 
@@ -176,7 +176,7 @@ $ mkinitcpio -L
 
 ```
 
-Use mkinitcpio's `-H` option to output help for a specific hook, for example:
+Use mkinitcpio's `-H`/`--hookhelp` option to output help for a specific hook, for example:
 
 ```
 $ mkinitcpio -H udev
@@ -218,7 +218,7 @@ Provides a busybox recovery shell when using **systemd** hook.
 | **dmraid** | *?* | Provides support for fakeRAID root devices. You must have [dmraid](https://www.archlinux.org/packages/?name=dmraid) installed to use this. Note that it is preferred to use `mdadm` with the **mdadm_udev** hook with fakeRAID if your controller supports it. | Locates and assembles fakeRAID block devices using `dmraid`. |
 | **mdadm** | -- | Provides support for assembling RAID arrays from `/etc/mdadm.conf`, or autodetection during boot. You must have [mdadm](https://www.archlinux.org/packages/?name=mdadm) installed to use this. The **mdadm_udev** hook is preferred over this hook. | Locates and assembles software RAID block devices using `mdassemble`. |
 | **mdadm_udev** | Provides support for assembling RAID arrays via udev. You must have [mdadm](https://www.archlinux.org/packages/?name=mdadm) installed to use this. If you use this hook with a FakeRAID array, it is recommended to include `mdmon` in the binaries section. | Locates and assembles software RAID block devices using `udev` and `mdadm` incremental assembly. This is the preferred method of mdadm assembly (rather than using the above *mdadm* hook). |
-| **keyboard** | Adds the necessary modules for keyboard devices. Use this if you have an USB or serial keyboard and need it in early userspace (either for entering encryption passphrases or for use in an interactive shell). As a side effect, modules for some non-keyboard input devices might be added to, but this should not be relied on. | -- |
+| **keyboard** | Adds the necessary modules for keyboard devices. Use this if you have an USB or serial keyboard and need it in early userspace (either for entering encryption passphrases or for use in an interactive shell). As a side effect, modules for some non-keyboard input devices might be added too, but this should not be relied on. | -- |
 | **keymap** | **sd-vconsole** | Adds the specified keymap(s) from `/etc/vconsole.conf` to the initramfs. | Loads the specified keymap(s) from `/etc/vconsole.conf` during early userspace. |
 | **consolefont** | Adds the specified console font from `/etc/vconsole.conf` to the initramfs. | Loads the specified console font from `/etc/vconsole.conf` during early userspace. |
 | **encrypt** | **sd-encrypt** | Adds the `dm_crypt` kernel module and the `cryptsetup` tool to the image. You must have [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) installed to use this. | Detects and unlocks an encrypted root partition. See [#Runtime customization](#Runtime_customization) for further configuration.

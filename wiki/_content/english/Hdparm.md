@@ -39,7 +39,7 @@ To get information about hard disks, run the following:
 
 ### Benchmarking
 
-See [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices").
+hdparm can be used for [Benchmarking#hdparm](/index.php/Benchmarking#hdparm "Benchmarking").
 
 ### Power management configuration
 
@@ -91,7 +91,11 @@ To make the setting persistent, adapt the following [udev](/index.php/Udev "Udev
 
 Systems with multiple hard drives, can make the rule more flexible. For example, to apply power-saving settings for all external drives (assuming there is only one internal drive, `/dev/sda`):
 
- `/etc/udev/rules.d/50-hdparm.rules`  `ACTION=="add` 
+ `/etc/udev/rules.d/50-hdparm.rules` 
+```
+ACTION=="add|change", KERNEL=="sd[b-z]", ATTR{queue/rotational}=="1", RUN+="/usr/bin/hdparm -B 127 -S 12 /dev/%k"
+
+```
 
 ### Putting a drive to sleep directly after boot
 
@@ -114,7 +118,7 @@ Then [enable](/index.php/Enable "Enable") it.
 
 ### Working with unsupported hardware
 
-Some drives, particularly external ones, do not support spin down via hdparm. A diagnostic error message similar to the following is a good indication this is the case:
+Some drives, do not support spin down via hdparm. A diagnostic error message similar to the following is a good indication this is the case:
 
  `# hdparm -S 240 /dev/sda` 
 ```
@@ -124,20 +128,42 @@ HDIO_DRIVE_CMD(setidle) failed: Invalid argument
 
 ```
 
-Such drives can be spun down using [hd-idle](https://www.archlinux.org/packages/?name=hd-idle) which ships with a systemd service. One need only edit `/etc/conf.d/hd-idle` and the `HD_IDLE_OPTS` value, then [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `hd-idle.service`.
+Such drives can be spun down using [hd-idle](https://www.archlinux.org/packages/?name=hd-idle) which ships with a [systemd](/index.php/Systemd "Systemd") service. One need to edit `/etc/conf.d/hd-idle` and the `HD_IDLE_OPTS` value, then [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `hd-idle.service`.
 
-Example using a 30 min idle time for `sda`:
-
-```
-HD_IDLE_OPTS="-i 0 -a sda -i 1800"
+Example using a 10 min idle time for `/dev/sda` and a 1 min idle time for `/dev/disk/by-uuid/01CF0AC9AA5EAF70`:
 
 ```
+HD_IDLE_OPTS="-i 0 -a /dev/sda -i 600 -a /dev/disk/by-uuid/01CF0AC9AA5EAF70 -i 60"
+
+```
+
+the leading `-i 0` parameter indicates that hd-idle is disabled on other drives.
 
 ### Power management for Western Digital Green drives
 
-The *Western Digital Green* HDDs have a special *idle3* timeout, which controls how long the drive waits before positioning its heads in their park position and entering a low power consumption state. The factory default is 8 seconds, which is a poor choice. Leaving it at the default will result in thousands of head load/unload cycles in a short period of time, which could result in premature failure, not to mention the performance impact of the drive often having to wake-up before doing routine I/O.
+*Western Digital Green* hard drives have a special *idle3* timer which controls how long the drive waits before positioning its heads in their park position and entering a low power consumption state. The factory default is aggressively set to 8 seconds, which can result in thousands of head load/unload cycles in a short period of time and eventually premature failure, not to mention the performance impact of the drive often having to wake-up before doing routine I/O. Western Digital issued a [statement](http://wdc.custhelp.com/app/answers/detail/a_id/5357), claiming that Linux is not optimized for low power storage devices and advising to reduce logging frequency. There are different ways to amend the *idle3* state:
 
-Western Digital supplies a DOS utility `WDIDLE3.EXE` for [download](https://support.wdc.com/downloads.aspx?p=113) for tweaking this setting. This utility is designed to upgrade the firmware of the following hard drives: WD1000FYPS-01ZKB0, WD7500AYPS-01ZKB0, WD7501AYPS-01ZKB0 and only these. hdparm features a reverse-engineered implementation behind the `-J` flag, which is not as complete as the original official program, even though it seems to work on at a least a few drives. Another unofficial utility is provided by the [idle3-tools](https://www.archlinux.org/packages/?name=idle3-tools) package. A full power cycle is required for any change in setting to take effect, regardless of which program is used to tweak things.
+*   Western Digital supplies a DOS utility `wdidle3.exe` for [download](https://support.wdc.com/downloads.aspx?p=113) for tweaking this setting. This utility is designed to upgrade only the firmware of the following hard drives: WD1000FYPS, WD7500AYPS, WD7501AYPS but is known to be able to change the *idle3* timer of other Green models as well.
+*   hdparm features a reverse-engineered implementation behind the `-J` flag, which is not as complete as the original official program, even though it seems to work on at least a few drives.
+*   Another unofficial utility is provided by the [idle3-tools](https://www.archlinux.org/packages/?name=idle3-tools) package. A raw *idle3* value is passed as a command parameter and the correspondence between this value and the timeout in seconds is provided in the bottom table of the [idle3-tool documentation page](http://idle3-tools.sourceforge.net/). The following command sets the timer to 5 min:
+
+```
+# idle3ctl -s 138 /dev/sdc
+
+```
+
+	this one completely disables the timer:
+
+```
+# idle3ctl -d /dev/sdc
+
+```
+
+**Note:**
+
+*   A full power cycle is required for any change to take effect regardless of which program above is used. It means the drive needs to be powered OFF and then ON, a simple reboot does not suffice.
+*   Some Western Digital Green drives are also known to have a different interpretation of hparm's standby timeout parameter, `-S 1` resulting in a 10 min timer rather than 5 sec.
+*   The power consumption of a Green drive is typically around 5.3W during read/write, 4.7W in idle mode and 0.7W in standby mode
 
 ## Troubleshooting
 

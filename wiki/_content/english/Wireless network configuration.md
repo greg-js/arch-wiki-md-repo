@@ -489,7 +489,7 @@ If you have problematic hardware and need internet access to, for example, downl
 
 ### Rfkill caveat
 
-Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by kernel. This can be handled by [rfkill](https://www.archlinux.org/packages/?name=rfkill). Use *rfkill* to show the current status:
+Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by kernel. This can be handled by *rfkill*. To show the current status:
 
  `# rfkill list` 
 ```

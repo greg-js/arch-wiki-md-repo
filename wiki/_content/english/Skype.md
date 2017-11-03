@@ -51,7 +51,7 @@ The new *Skype for Linux* has full functionality, including group video chat and
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [skype](https://aur.archlinux.org/packages/skype/) package.
+[Install](/index.php/Install "Install") the [skype-legacy](https://aur.archlinux.org/packages/skype-legacy/) package.
 
 Running Skype is just as easy. Type `skype` into a terminal or double-click the Skype icon on your desktop or in your DE's application menu.
 

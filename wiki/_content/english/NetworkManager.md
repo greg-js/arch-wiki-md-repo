@@ -629,14 +629,14 @@ See [USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 
 
 ### Switching off WLAN on laptops
 
-Sometimes NetworkManager will not work when you disable your Wi-Fi adapter with a switch on your laptop and try to enable it again afterwards. This is often a problem with *rfkill*. [Install](/index.php/Install "Install") the [rfkill](https://www.archlinux.org/packages/?name=rfkill) package and use:
+Sometimes NetworkManager will not work when you disable your Wi-Fi adapter with a switch on your laptop and try to enable it again afterwards. This is often a problem with *rfkill*. To check if the driver notifies *rfkill* about the wireless adapter's status, use:
 
 ```
 $ watch -n1 rfkill list all
 
 ```
 
-to check if the driver notifies *rfkill* about the wireless adapter's status. If one identifier stays blocked after you switch on the adapter you could try to manually unblock it with (where X is the number of the identifier provided by the above output):
+If one identifier stays blocked after you switch on the adapter you could try to manually unblock it with (where X is the number of the identifier provided by the above output):
 
 ```
 # rfkill event unblock X

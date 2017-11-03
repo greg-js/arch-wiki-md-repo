@@ -285,7 +285,7 @@ $ cat /etc/group
 | games | `/var/games` | 存取某些遊戲軟體。 |
 | locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | 使用 [updatedb](https://en.wikipedia.org/wiki/updatedb "wikipedia:updatedb") 指令的權利。 |
 | networkmanager | 您的使用者帳號需要這個，才能以 [NetworkManager](/index.php/NetworkManager "NetworkManager") 連上無線網路。這個群組預設不包含進 Arch，必須手動加入。 |
-| rfkill | `/dev/rfkill` | 控制無線裝置電力狀態的權利 ([rfkill](https://www.archlinux.org/packages/?name=rfkill) 使用)。 |
+| rfkill | `/dev/rfkill` | 控制無線裝置電力狀態的權利 (rfkill 使用)。 |
 | users | 一般使用者群組。 |
 | uucp | `/dev/ttyS[0-9]`, `/dev/tts/[0-9]` | 序列與 USB 裝置，如數據機、手持設備、RS-232/序列埠。 |
 | wheel | 管理性群組，通常用來給予 [sudo](/index.php/Sudo "Sudo") 與 [su](/index.php/Su "Su") 指令的存取 (預設皆不使用，可在 `/etc/pam.d/su` 和 `/etc/pam.d/su-l` 設置)。 |

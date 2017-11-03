@@ -14,7 +14,7 @@ Depending on requirements, different methods may be used to encrypt the [swap](/
 
 ## Without suspend-to-disk support
 
-In systems where suspend-to-disk (*i.e..,* hibernation) is not a desired feature, `/etc/crypttab` can be set up to decrypt the swap partition with a random password with plain dm-crypt at boot-time. The random password is discarded on shutdown, leaving behind only encrypted, inaccessible data in the swap device.
+In systems where suspend-to-disk (hibernation) is not a desired feature, `/etc/crypttab` can be set up to decrypt the swap partition with a random password with plain dm-crypt at boot-time. The random password is discarded on shutdown, leaving behind only encrypted, inaccessible data in the swap device.
 
 To enable this feature, simply uncomment the line beginning with `swap` in `/etc/crypttab`. Change the `<device>` parameter to the name of your swap device. For example, it will look something like this:
 
@@ -30,14 +30,14 @@ This will map `/dev/sd*X#*` to `/dev/mapper/swap` as a swap partition that can b
 
 *   Use `by-id` and `by-path` paths. However, these are both are susceptible to hardware changes. See [Persistent block device naming#by-id and by-path](/index.php/Persistent_block_device_naming#by-id_and_by-path "Persistent block device naming").
 *   Use an [LVM](/index.php/LVM "LVM") logical volume's name.
-*   Use the method described in [#UUID and LABEL](#UUID_and_LABEL). Labels and [UUIDS](/index.php/Persistent_block_device_naming#by-uuid "Persistent block device naming") **cannot** be used directly because of the recreation and re-encryption of the swap device on every boot with `mkswap` [[1]](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup).
+*   Use the method described in [#UUID and LABEL](#UUID_and_LABEL). Labels and [UUIDS](/index.php/Persistent_block_device_naming#by-uuid "Persistent block device naming") **cannot** be used directly because of the recreation and re-encryption of the swap device on every boot with `mkswap`, see [cryptsetup FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup).
 
 To use a `by-id` persistent device naming instead of kernel simple naming, first identify the swap device:
 
- `# ls -l /dev/disk/*/* | grep sdaX` 
+ `# find -L /dev/disk -samefile /dev/*sdaX*` 
 ```
-lrwxrwxrwx 1 root root 10 Oct 12 16:54 /dev/disk/by-id/ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-partX -> ../../sdaX
-lrwxrwxrwx 1 root root 10 Oct 12 16:54 /dev/disk/by-id/wwn-0x60015ee0000b237f-partX -> ../../sdaX
+/dev/disk/by-id/ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-part*X*
+/dev/disk/by-id/wwn-0x60015ee0000b237f-part*X*
 
 ```
 
@@ -51,9 +51,10 @@ swap      /dev/disk/by-id/ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-partX  /dev/
 
 After a reboot to activate the encrypted swap, you will note that running `swapon -s` shows an arbitrary device mapper entry (e.g. `/dev/dm-1`) for it, while the `lsblk` command shows **crypt** in the `FSTYPE` column. Due to fresh encryption each boot, the UUID for `/dev/mapper/swap` will change every time.
 
-**Note:** If the partition chosen for swap was previously a LUKS partition, crypttab will not overwrite the partition to create a swap partition. This is a safety measure to prevent data loss from accidental mis-identification of the swap partition in crypttab. In order to use such a partition the [LUKS header must be overwritten](/index.php/Dm-crypt/Drive_preparation#Wipe_LUKS_header "Dm-crypt/Drive preparation") once.
+**Note:**
 
-**Note:** If you use the `sd-encrypt` hook and `luks.*` kernel parameters for the rootfs while also using /etc/crypttab for the swap then systemd will complain about "Not creating device 'swap' because it was not specified on the kernel command line.". To fix this issue just use `rd.luks.*` parameters instead.
+*   If the partition chosen for swap was previously a LUKS partition, crypttab will not overwrite the partition to create a swap partition. This is a safety measure to prevent data loss from accidental mis-identification of the swap partition in crypttab. In order to use such a partition the [LUKS header must be overwritten](/index.php/Dm-crypt/Drive_preparation#Wipe_LUKS_header "Dm-crypt/Drive preparation") once.
+*   If you use the `sd-encrypt` hook and `luks.*` kernel parameters for the rootfs while also using `/etc/crypttab` for the swap then systemd will complain about `Not creating device 'swap' because it was not specified on the kernel command line.`. To fix this issue just use `rd.luks.*` parameters instead.
 
 ### UUID and LABEL
 
@@ -63,7 +64,7 @@ It's dangerous to use crypttab swap with simple kernel device names like `/dev/s
 
 It is more reliable to identify the correct partition by giving it a genuine UUID or LABEL. By default that does not work because dm-crypt and `mkswap` would simply overwrite any content on that partition which would remove the UUID and LABEL too; however, it is possible to specify a swap offset. This allows you to create a very small, empty, bogus filesystem with no other purpose than providing a persistent UUID or LABEL for the swap encryption.
 
-Create a filesystem with label of your choice:
+Create a [filesystem](/index.php/Filesystem "Filesystem") with label of your choice:
 
 ```
 # mkfs.ext2 -L *cryptswap* /dev/sd*X#* 1M
@@ -90,7 +91,7 @@ Note the offset: it's 2048 sectors of 512 bytes, thus 1 MiB. This way the encryp
 /dev/mapper/swap  none   swap    defaults   0       0
 ```
 
-Using this setup, the cryptswap will only try to use the partition with the corresponding LABEL, regardless of what its device name may be. Should you decide to use the partition for something else, by formatting it the cryptswap LABEL would also be gone, so cryptswap won't overwrite it on your next boot.
+Using this setup, the cryptswap will only try to use the partition with the corresponding LABEL, regardless of what its device name may be. Should you decide to use the partition for something else, by formatting it the cryptswap LABEL would also be gone, so cryptswap will not overwrite it on your next boot.
 
 ## With suspend-to-disk support
 
@@ -114,7 +115,7 @@ then run `mkinitcpio -p linux` to update the [initramfs](/index.php/Initramfs "I
 
 ### mkinitcpio hook
 
-**Note:** This section is only applicable when using the `encrypt` hook, which can only unlock a single device ([FS#23182](https://bugs.archlinux.org/task/23182)). With `sd-encrypt` multiple devices may be unlocked (see [Dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration")), but swap autodetection is not available yet.[[2]](https://github.com/systemd/systemd/issues/4878)
+**Note:** This section is only applicable when using the `encrypt` hook, which can only unlock a single device ([FS#23182](https://bugs.archlinux.org/task/23182)). With `sd-encrypt` multiple devices may be unlocked (see [Dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration")), but swap autodetection is not available yet. [systemd issue 4878](https://github.com/systemd/systemd/issues/4878)
 
 If the swap device is on a different device from that of the root file system, it will not be opened by the `encrypt` hook, i.e. the resume will take place before `/etc/crypttab` can be used, therefore it is required to create a hook in `/etc/mkinitcpio.conf` to open the swap LUKS device before resuming.
 
@@ -153,10 +154,10 @@ Now you have to create a hook to open the swap at boot time. You can either [ins
 
  `/etc/initcpio/hooks/openswap` 
 ```
- run_hook ()
- {
-     cryptsetup open --type luks /dev/<device> swapDevice
- }
+run_hook ()
+{
+    cryptsetup open --type luks /dev/<device> swapDevice
+}
 
 ```
 
@@ -164,21 +165,21 @@ for opening the swap device by typing your password or
 
  `/etc/initcpio/hooks/openswap` 
 ```
- run_hook ()
- {
-     ## Optional: To avoid race conditions
-     x=0;
-     while [ ! -b /dev/mapper/<root-device> ] && [ $x -le 10 ]; do
-        x=$((x+1))
-        sleep .2
-     done
-     ## End of optional
+run_hook ()
+{
+    ## Optional: To avoid race conditions
+    x=0;
+    while [ ! -b /dev/mapper/<root-device> ] && [ $x -le 10 ]; do
+       x=$((x+1))
+       sleep .2
+    done
+    ## End of optional
 
-     mkdir crypto_key_device
-     mount /dev/mapper/<root-device> crypto_key_device
-     cryptsetup open --type luks --key-file crypto_key_device/<path-to-the-key> /dev/<device> swapDevice
-     umount crypto_key_device
- }
+    mkdir crypto_key_device
+    mount /dev/mapper/<root-device> crypto_key_device
+    cryptsetup open --type luks --key-file crypto_key_device/<path-to-the-key> /dev/<device> swapDevice
+    umount crypto_key_device
+}
 
 ```
 
@@ -186,7 +187,7 @@ for opening the swap device by loading a keyfile from a crypted root device.
 
 On some computers race conditions may occur when mkinitcpio tries to mount the device before the decryption process and device enumeration is completed. The commented *Optional* block will delay the boot process up to 2 seconds until the root device is ready to mount.
 
-**Note:** If swap is on a Solid State Disk (SSD) and Discard/TRIM is desired the option `--allow-discards` has to get added to the cryptsetup line in the openswap hook above. See [Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") or [SSD](/index.php/SSD "SSD") for more information on discard. Additionally you have to add the mount option 'discard' to your fstab entry for the swap device.
+**Note:** If swap is on a Solid State Disk (SSD) and Discard/TRIM is desired the option `--allow-discards` has to get added to the cryptsetup line in the openswap hook above. See [Dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") or [SSD](/index.php/SSD "SSD") for more information on discard. Additionally you have to add the mount option 'discard' to your fstab entry for the swap device.
 
 Then create and edit the hook setup file:
 
@@ -226,14 +227,12 @@ Add the mapped partition to `/etc/fstab` by adding the following line:
 
 ```
 
-Set up your system to resume from `/dev/mapper/swapDevice`. For example, if you use [GRUB](/index.php/GRUB "GRUB") with kernel hibernation support, add `resume=/dev/mapper/swapDevice` to the kernel line in `/boot/grub/grub.cfg`. A line with encrypted root and swap partitions can look like this:
+Set up your system to resume from `/dev/mapper/swapDevice`. For example, if you use [GRUB](/index.php/GRUB "GRUB") with kernel hibernation support, add the kernel parameter `resume=/dev/mapper/swapDevice` to GRUB by appending it to the `GRUB_CMDLINE_LINUX_DEFAULT` variable in `/etc/default/grub`. A kernel line with encrypted root and swap partitions can look like this:
 
 ```
 kernel /vmlinuz-linux cryptdevice=/dev/sda2:rootDevice root=/dev/mapper/rootDevice resume=/dev/mapper/swapDevice ro
 
 ```
-
-To make the parameter persistent on kernel updates, add it to `/etc/default/grub`.
 
 At boot time, the `openswap` hook will open the swap partition so the kernel resume may use it. If you use special hooks for resuming from hibernation, make sure they are placed **after** `openswap` in the `HOOKS` array. Please note that because of initrd opening swap, there is no entry for swapDevice in `/etc/crypttab` needed in this case.
 
@@ -261,7 +260,7 @@ The `resume_offset` of the swap-file points to the start (extent zero) of the fi
 
 ```
 
-Add the `resume` hook to your `etc/mkinitcpio.conf` file and [rebuild the image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") afterward:
+Add the `resume` hook to your `etc/mkinitcpio.conf` file and [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") afterward:
 
 ```
 HOOKS="... encrypt **resume** ... filesystems ..."
@@ -277,4 +276,4 @@ HOOKS="... **keyboard** encrypt ..."
 
 ## Known Issues
 
-*   "Stopped (with error) /dev/dm-1" in logs. See [[3]](https://github.com/systemd/systemd/issues/1620).
+*   `Stopped (with error) /dev/dm-1` in logs. See [systemd issue 1620](https://github.com/systemd/systemd/issues/1620).

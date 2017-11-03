@@ -246,6 +246,10 @@ See [FS#27677](https://bugs.archlinux.org/task/27677) and [[2]](https://bugs.deb
 
 	[https://github.com/FedeDP/Clight](https://github.com/FedeDP/Clight) || [clight-git](https://aur.archlinux.org/packages/clight-git/)
 
+*   **Monica** — A monitor calibration tool. It works as frontend to xgamma to alter the gamma correction
+
+	[https://sources.archlinux.org/other/monica/](https://sources.archlinux.org/other/monica/) || [monica](https://www.archlinux.org/packages/?name=monica)
+
 ### setpci
 
 It is possible to set the register of the graphic card to adjust the backlight. It means you adjust the backlight by manipulating the hardware directly, which can be risky and generally is not a good idea. Not all of the graphic cards support this method.

@@ -517,11 +517,11 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Calibre](https://en.wikipedia.org/wiki/Calibre_(software) "wikipedia:Calibre (software)")** — E-book library management application that can also convert between different formats and sync with a variety of e-book readers. Supported formats include CBZ, CBR, CBC, CHM, DJVU, EPUB, FictionBook, HTML, HTMLZ, LIT, LRF, Mobipocket, ODT, PDF, PRC, PDB, PML, RB, RTF, SNB, TCR, TXT and TXTZ.
 
-	[http://calibre-ebook.com/](http://calibre-ebook.com/) || [calibre](https://www.archlinux.org/packages/?name=calibre)
+	[https://calibre-ebook.com/](https://calibre-ebook.com/) || [calibre](https://www.archlinux.org/packages/?name=calibre)
 
 *   **Cool Reader** — E-book viewer with many supported formats such as EPUB (non-DRM), FictionBook, TXT, RTF, HTML, CHM and TCR.
 
-	[http://crengine.sourceforge.net/](http://crengine.sourceforge.net/) || [coolreader3-git](https://aur.archlinux.org/packages/coolreader3-git/)
+	[https://sourceforge.net/projects/crengine/](https://sourceforge.net/projects/crengine/) || [coolreader3-git](https://aur.archlinux.org/packages/coolreader3-git/)
 
 *   **epub** — A console EPUB reader using Python and Curses.
 
@@ -529,7 +529,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[FBReader](https://en.wikipedia.org/wiki/FBReader "wikipedia:FBReader")** — E-book viewer with many supported formats such as EPUB, FictionBook, HTML, plucker, PalmDoc, zTxt, TCR, CHM, RTF, OEB, Mobipocket (non-DRM) and TXT.
 
-	[http://fbreader.org/](http://fbreader.org/) || [fbreader](https://www.archlinux.org/packages/?name=fbreader)
+	[https://fbreader.org/](https://fbreader.org/) || [fbreader](https://www.archlinux.org/packages/?name=fbreader)
 
 *   **pPub** — Simple EPUB reader using Python, GTK3 and WebKit.
 
@@ -537,7 +537,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Sigil](https://en.wikipedia.org/wiki/Sigil_(application) "wikipedia:Sigil (application)")** — WYSIWYG ebook editor.
 
-	[http://sigil-ebook.com/](http://sigil-ebook.com/) || [sigil](https://www.archlinux.org/packages/?name=sigil)
+	[https://sigil-ebook.com/](https://sigil-ebook.com/) || [sigil](https://www.archlinux.org/packages/?name=sigil)
 
 #### PDF and DjVu
 
@@ -561,7 +561,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **jfbview** — Framebuffer PDF and image viewer. Features include Vim-like controls, zoom-to-fit, a TOC (outline) view, fast multi-threaded rendering and asynchronous pre-caching. Originally a fork of *fbpdf* called *jfbpdf*, now completely rewritten.
 
-	[http://seasonofcode.com/pages/jfbview.html](http://seasonofcode.com/pages/jfbview.html) || [jfbview](https://aur.archlinux.org/packages/jfbview/)
+	[https://seasonofcode.com/pages/jfbview.html](https://seasonofcode.com/pages/jfbview.html) || [jfbview](https://aur.archlinux.org/packages/jfbview/)
 
 ##### Graphical
 
@@ -573,7 +573,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **apvlv** — Lightweight PDF/DjVu/UMD/TXT viewer with [Vim](/index.php/Vim "Vim") keybindings.
 
-	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://www.archlinux.org/packages/?name=apvlv)
+	[http://naihe2010.github.io/apvlv/](http://naihe2010.github.io/apvlv/) || [apvlv](https://www.archlinux.org/packages/?name=apvlv)
 
 *   **Atril** — Simple multi-page document viewer for MATE.
 
@@ -589,7 +589,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Foxit Reader](https://en.wikipedia.org/wiki/Foxit_Reader "wikipedia:Foxit Reader")** — Small, fast (compared to Acrobat) PDF viewer. (closed source)
 
-	[http://www.foxitsoftware.com/pdf/desklinux/](http://www.foxitsoftware.com/pdf/desklinux/) || [foxitreader](https://aur.archlinux.org/packages/foxitreader/)
+	[https://www.foxitsoftware.com/pdf-reader/](https://www.foxitsoftware.com/pdf-reader/) || [foxitreader](https://aur.archlinux.org/packages/foxitreader/)
 
 *   **gv** — Graphical user interface for the Ghostscript interpreter that allows to view and navigate through PostScript and PDF documents.
 
@@ -605,7 +605,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[MuPDF](/index.php/MuPDF "MuPDF")** — Very fast PDF and XPS viewer and toolkit written in portable C. Features CJK font support.
 
-	[http://mupdf.com](http://mupdf.com) || [mupdf](https://www.archlinux.org/packages/?name=mupdf)
+	[https://mupdf.com/](https://mupdf.com/) || [mupdf](https://www.archlinux.org/packages/?name=mupdf)
 
 *   **[Okular](https://en.wikipedia.org/wiki/Okular "wikipedia:Okular")** — Universal PDF viewer for KDE.
 
@@ -621,7 +621,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **PDF Studio** — All-in-one PDF editor similar to Adobe Acrobat (proprietary).
 
-	[http://www.qoppa.com/pdfstudio/](http://www.qoppa.com/pdfstudio/) || [pdfstudio](https://aur.archlinux.org/packages/pdfstudio/)
+	[https://www.qoppa.com/pdfstudio/](https://www.qoppa.com/pdfstudio/) || [pdfstudio](https://aur.archlinux.org/packages/pdfstudio/)
 
 *   **qpdfview** — Tabbed document viewer. It uses Poppler for PDF support, libspectre for PS support, DjVuLibre for DjVu support, CUPS for printing support and the Qt toolkit for its interface.
 
@@ -633,11 +633,11 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf")** — Viewer that can decode LZW and read encrypted PDFs. Note that due to removal of all Type1 fonts from the gsfonts package, you will need to install them from an archive package - see [https://bugs.archlinux.org/task/50297](https://bugs.archlinux.org/task/50297)
 
-	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://www.archlinux.org/packages/?name=xpdf) and [gsfonts-type1](https://aur.archlinux.org/packages/gsfonts-type1/)
+	[http://www.xpdfreader.com/](http://www.xpdfreader.com/) || [xpdf](https://www.archlinux.org/packages/?name=xpdf) and [gsfonts-type1](https://aur.archlinux.org/packages/gsfonts-type1/)
 
 *   **[zathura](https://en.wikipedia.org/wiki/Zathura_(document_viewer) "wikipedia:Zathura (document viewer)")** — Highly customizable and functional PDF/DjVu/PostScript/ComicBook viewer (plugin based).
 
-	[http://pwmt.org/projects/zathura/](http://pwmt.org/projects/zathura/) || [zathura](https://www.archlinux.org/packages/?name=zathura) [zathura-pdf-mupdf](https://www.archlinux.org/packages/?name=zathura-pdf-mupdf) [zathura-djvu](https://www.archlinux.org/packages/?name=zathura-djvu)
+	[https://pwmt.org/projects/zathura/](https://pwmt.org/projects/zathura/) || [zathura](https://www.archlinux.org/packages/?name=zathura) [zathura-pdf-mupdf](https://www.archlinux.org/packages/?name=zathura-pdf-mupdf) [zathura-djvu](https://www.archlinux.org/packages/?name=zathura-djvu)
 
 #### Terminal pagers
 
@@ -654,7 +654,7 @@ See also [Wikipedia:Terminal pager](https://en.wikipedia.org/wiki/Terminal_pager
 
 *   **mcview** — A pager with mouse and colour support. It is bundled with midnight commander.
 
-	[http://www.midnight-commander.org](http://www.midnight-commander.org) || [mc](https://www.archlinux.org/packages/?name=mc)
+	[http://midnight-commander.org/](http://midnight-commander.org/) || [mc](https://www.archlinux.org/packages/?name=mc)
 
 *   **vimpager** — A script that turns vim into a pager. As a result, you get various vim features such as colour schemes, mouse support, split screens, etc.
 
@@ -670,11 +670,11 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 
 *   **Kchmviewer** — Qt-based CHM viewer that uses chmlib and borrows some ideas from xchm. It does not depend on [KDE](/index.php/KDE "KDE"), but it can be compiled to integrate with it.
 
-	[http://www.ulduzsoft.com/kchmviewer/](http://www.ulduzsoft.com/kchmviewer/) || [kchmviewer](https://www.archlinux.org/packages/?name=kchmviewer)
+	[http://www.ulduzsoft.com/linux/kchmviewer/](http://www.ulduzsoft.com/linux/kchmviewer/) || [kchmviewer](https://www.archlinux.org/packages/?name=kchmviewer)
 
 *   **[xCHM](https://en.wikipedia.org/wiki/xCHM "wikipedia:xCHM")** — Lightweight CHM viewer, based on chmlib.
 
-	[http://xchm.sf.net/](http://xchm.sf.net/) || [xchm](https://www.archlinux.org/packages/?name=xchm)
+	[http://xchm.sourceforge.net/](http://xchm.sourceforge.net/) || [xchm](https://www.archlinux.org/packages/?name=xchm)
 
 #### Comic book (comix/manga)
 

@@ -180,71 +180,73 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [82.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
 *   [83 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
     *   [83.1 No audio](#No_audio_2)
-*   [84 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
-    *   [84.1 No audio](#No_audio_3)
-*   [85 Spacechem](#Spacechem)
-    *   [85.1 Game crash](#Game_crash)
-*   [86 Splice](#Splice)
-*   [87 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
-*   [88 The Stanley Parable](#The_Stanley_Parable)
-    *   [88.1 Game won't start](#Game_won.27t_start)
-*   [89 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
-*   [90 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
-    *   [90.1 Start with black screen](#Start_with_black_screen)
-*   [91 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
-    *   [91.1 No sound](#No_sound_7)
-*   [92 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
-*   [93 Tabletop Simulator](#Tabletop_Simulator)
-    *   [93.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
-*   [94 Team Fortress 2](#Team_Fortress_2)
-    *   [94.1 HRTF setup](#HRTF_setup)
-    *   [94.2 Loading screen freeze](#Loading_screen_freeze)
-    *   [94.3 No audio](#No_audio_4)
-    *   [94.4 Slow loading textures](#Slow_loading_textures)
-*   [95 Terraria](#Terraria)
-*   [96 This War of Mine](#This_War_of_Mine)
-    *   [96.1 Game does not start](#Game_does_not_start_10)
-    *   [96.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
-*   [97 Ticket to Ride](#Ticket_to_Ride)
-*   [98 Tomb Raider](#Tomb_Raider)
-    *   [98.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
-    *   [98.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
-*   [99 Total War: Rome II](#Total_War:_Rome_II)
-*   [100 Tower Unite](#Tower_Unite)
-    *   [100.1 Graphical Glitches](#Graphical_Glitches)
-*   [101 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
-*   [102 Transistor](#Transistor)
-    *   [102.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_audio_issues)
-*   [103 Transmissions: Element 120](#Transmissions:_Element_120)
-    *   [103.1 Troubleshooting](#Troubleshooting)
-*   [104 Trine 2](#Trine_2)
-    *   [104.1 Colors](#Colors)
-    *   [104.2 Sound](#Sound)
-    *   [104.3 Resolution](#Resolution)
-*   [105 Tropico 5](#Tropico_5)
-    *   [105.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
-*   [106 Unity of Command](#Unity_of_Command)
-    *   [106.1 Squares](#Squares)
-    *   [106.2 No audio](#No_audio_5)
-*   [107 Unity3D](#Unity3D)
-    *   [107.1 Locale settings](#Locale_settings)
-    *   [107.2 Unity 5 sound problems](#Unity_5_sound_problems)
-    *   [107.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
-    *   [107.4 Chinese/Japanese/Korean display bug](#Chinese.2FJapanese.2FKorean_display_bug)
-*   [108 Unrest](#Unrest)
-*   [109 War Thunder](#War_Thunder)
-    *   [109.1 No audio](#No_audio_6)
-    *   [109.2 Blank screen](#Blank_screen)
-*   [110 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
-*   [111 Worms W.M.D](#Worms_W.M.D)
-*   [112 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [112.1 Game does not start](#Game_does_not_start_11)
-*   [113 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-*   [114 World of Goo](#World_of_Goo)
-    *   [114.1 Changing resolution](#Changing_resolution)
-*   [115 XCOM](#XCOM)
-    *   [115.1 Hangs on startup](#Hangs_on_startup)
-    *   [115.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+*   [84 Songbringer](#Songbringer)
+    *   [84.1 Launch error with wanyland](#Launch_error_with_wanyland)
+*   [85 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
+    *   [85.1 No audio](#No_audio_3)
+*   [86 Spacechem](#Spacechem)
+    *   [86.1 Game crash](#Game_crash)
+*   [87 Splice](#Splice)
+*   [88 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
+*   [89 The Stanley Parable](#The_Stanley_Parable)
+    *   [89.1 Game won't start](#Game_won.27t_start)
+*   [90 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
+*   [91 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
+    *   [91.1 Start with black screen](#Start_with_black_screen)
+*   [92 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
+    *   [92.1 No sound](#No_sound_7)
+*   [93 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
+*   [94 Tabletop Simulator](#Tabletop_Simulator)
+    *   [94.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
+*   [95 Team Fortress 2](#Team_Fortress_2)
+    *   [95.1 HRTF setup](#HRTF_setup)
+    *   [95.2 Loading screen freeze](#Loading_screen_freeze)
+    *   [95.3 No audio](#No_audio_4)
+    *   [95.4 Slow loading textures](#Slow_loading_textures)
+*   [96 Terraria](#Terraria)
+*   [97 This War of Mine](#This_War_of_Mine)
+    *   [97.1 Game does not start](#Game_does_not_start_10)
+    *   [97.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
+*   [98 Ticket to Ride](#Ticket_to_Ride)
+*   [99 Tomb Raider](#Tomb_Raider)
+    *   [99.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
+    *   [99.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
+*   [100 Total War: Rome II](#Total_War:_Rome_II)
+*   [101 Tower Unite](#Tower_Unite)
+    *   [101.1 Graphical Glitches](#Graphical_Glitches)
+*   [102 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
+*   [103 Transistor](#Transistor)
+    *   [103.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_audio_issues)
+*   [104 Transmissions: Element 120](#Transmissions:_Element_120)
+    *   [104.1 Troubleshooting](#Troubleshooting)
+*   [105 Trine 2](#Trine_2)
+    *   [105.1 Colors](#Colors)
+    *   [105.2 Sound](#Sound)
+    *   [105.3 Resolution](#Resolution)
+*   [106 Tropico 5](#Tropico_5)
+    *   [106.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
+*   [107 Unity of Command](#Unity_of_Command)
+    *   [107.1 Squares](#Squares)
+    *   [107.2 No audio](#No_audio_5)
+*   [108 Unity3D](#Unity3D)
+    *   [108.1 Locale settings](#Locale_settings)
+    *   [108.2 Unity 5 sound problems](#Unity_5_sound_problems)
+    *   [108.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
+    *   [108.4 Chinese/Japanese/Korean display bug](#Chinese.2FJapanese.2FKorean_display_bug)
+*   [109 Unrest](#Unrest)
+*   [110 War Thunder](#War_Thunder)
+    *   [110.1 No audio](#No_audio_6)
+    *   [110.2 Blank screen](#Blank_screen)
+*   [111 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
+*   [112 Worms W.M.D](#Worms_W.M.D)
+*   [113 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+    *   [113.1 Game does not start](#Game_does_not_start_11)
+*   [114 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+*   [115 World of Goo](#World_of_Goo)
+    *   [115.1 Changing resolution](#Changing_resolution)
+*   [116 XCOM](#XCOM)
+    *   [116.1 Hangs on startup](#Hangs_on_startup)
+    *   [116.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
 
 ## Common steps
 
@@ -1406,6 +1408,17 @@ mmap = true
 
 ```
 
+## Songbringer
+
+### Launch error with wanyland
+
+Install [glfw-x11](https://www.archlinux.org/packages/?name=glfw-x11) ,then add this line to [launch options](/index.php/Launch_option "Launch option"):
+
+```
+LD_PRELOAD=/usr/lib/libglfw.so.3 %command%
+
+```
+
 ## Space Pirates and Zombies
 
 Requires [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal).
@@ -1806,7 +1819,12 @@ Be aware that some games do not support setting that parameter, it will simply b
 
 ### Chinese/Japanese/Korean display bug
 
-Install [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) and [wqy-microhei-lite](https://www.archlinux.org/packages/?name=wqy-microhei-lite).
+Install [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) and [wqy-microhei-lite](https://www.archlinux.org/packages/?name=wqy-microhei-lite). Then
+
+```
+#fc-cache -fv
+
+```
 
 ## Unrest
 

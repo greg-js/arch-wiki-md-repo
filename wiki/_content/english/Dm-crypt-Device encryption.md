@@ -135,12 +135,32 @@ is all that is needed to create a new LUKS device with default parameters (`-v` 
 Defaults are compared with a cryptographically higher specification example in the table below, with accompanying comments:
 
 | Options | Cryptsetup 1.7.0 defaults | Example | Comment |
-| --cipher, -c | `aes-xts-plain64` | `aes-xts-plain64` | [Release 1.6.0](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.6/v1.6.0-ReleaseNotes) changed the defaults to an AES [cipher](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") in [XTS](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory") mode (see item 5.16 [of the FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects)). It is advised against using the previous default `--cipher aes-cbc-essiv` because of its known [issues](https://en.wikipedia.org/wiki/Disk_encryption_theory#Cipher-block_chaining_.28CBC.29 "wikipedia:Disk encryption theory") and practical [attacks](http://www.jakoblell.com/blog/2013/12/22/practical-malleability-attack-against-cbc-encrypted-luks-partitions/) against them. |
-| --key-size, -s | `256` | `512` | By default a 256 bit key-size is used. Note however that [XTS splits the supplied key in half](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory"), so to use AES-256 instead of AES-128 you have to set the XTS key-size to `512`. |
-| --hash, -h | `sha256` | `sha512` | Hash algorithm used for [key derivation](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). Release 1.7.0 changed defaults from `sha1` to `sha256` "*not for security reasons [but] mainly to prevent compatibility problems on hardened systems where SHA1 is already [being] phased out*"[[1]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). The former default of `sha1` can still be used for compatibility with older versions of *cryptsetup* since it is [considered secure](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) (see item 5.20). |
-| --iter-time, -i | `2000` | `5000` | Number of milliseconds to spend with PBKDF2 passphrase processing. Release 1.7.0 changed defaults from `1000` to `2000` to "*try to keep PBKDF2 iteration count still high enough and also still acceptable for users.*"[[2]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). This option is only relevant for LUKS operations that set or change passphrases, such as *luksFormat* or *luksAddKey*. Specifying 0 as parameter selects the compiled-in default.. |
+| --cipher
+
+-c
+
+ | `aes-xts-plain64` | `aes-xts-plain64` | [Release 1.6.0](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.6/v1.6.0-ReleaseNotes) changed the defaults to an AES [cipher](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") in [XTS](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory") mode (see item 5.16 [of the FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects)). It is advised against using the previous default `--cipher aes-cbc-essiv` because of its known [issues](https://en.wikipedia.org/wiki/Disk_encryption_theory#Cipher-block_chaining_.28CBC.29 "wikipedia:Disk encryption theory") and practical [attacks](http://www.jakoblell.com/blog/2013/12/22/practical-malleability-attack-against-cbc-encrypted-luks-partitions/) against them. |
+| --key-size
+
+-s
+
+ | `256` | `512` | By default a 256 bit key-size is used. Note however that [XTS splits the supplied key in half](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory"), so to use AES-256 instead of AES-128 you have to set the XTS key-size to `512`. |
+| --hash
+
+-h
+
+ | `sha256` | `sha512` | Hash algorithm used for [key derivation](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). Release 1.7.0 changed defaults from `sha1` to `sha256` "*not for security reasons [but] mainly to prevent compatibility problems on hardened systems where SHA1 is already [being] phased out*"[[1]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). The former default of `sha1` can still be used for compatibility with older versions of *cryptsetup* since it is [considered secure](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) (see item 5.20). |
+| --iter-time
+
+-i
+
+ | `2000` | `5000` | Number of milliseconds to spend with PBKDF2 passphrase processing. Release 1.7.0 changed defaults from `1000` to `2000` to "*try to keep PBKDF2 iteration count still high enough and also still acceptable for users.*"[[2]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). This option is only relevant for LUKS operations that set or change passphrases, such as *luksFormat* or *luksAddKey*. Specifying 0 as parameter selects the compiled-in default.. |
 | --use-{u,}random | `--use-urandom` | `--use-random` | Selects which [random number generator](/index.php/Random_number_generator "Random number generator") to use. Quoting the cryptsetup manual page: "In a low-entropy situation (e.g. in an embedded system), both selections are problematic. Using /dev/urandom can lead to weak keys. Using /dev/random can block a long time, potentially forever, if not enough entropy can be harvested by the kernel." |
-| --verify-passphrase, -y | Yes | - | Default only for luksFormat and luksAddKey. No need to type for Arch Linux with LUKS mode at the moment. |
+| --verify-passphrase
+
+-y
+
+ | Yes | - | Default only for luksFormat and luksAddKey. No need to type for Arch Linux with LUKS mode at the moment. |
 
 If you want to deep-dive into cryptographic features of LUKS, the [LUKS specification](https://gitlab.com/cryptsetup/cryptsetup/wikis/Specification) (e.g. its appendices) is a resource.
 
@@ -160,13 +180,37 @@ To create a *plain* mode mapping with cryptsetup's default parameters:
 Executing it will prompt for a password, which should have very high entropy. Below a comparison of default parameters with the example in [Dm-crypt/Encrypting an entire system#Plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system")
 
 | Option | Cryptsetup 1.7.0 defaults | Example | Comment |
-| **--hash** | `ripemd160` | - | The hash is used to create the key from the passphrase; it is not used on a keyfile. |
-| **--cipher** | `aes-cbc-essiv:sha256` | `twofish-xts-plain64` | The cipher consists of three parts: cipher-chainmode-IV generator. Please see [Disk encryption#Ciphers and modes of operation](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") for an explanation of these settings, and the [DMCrypt documentation](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt) for some of the options available. |
-| **--key-size** | `256` | `512` | The key size (in bits). The size will depend on the cipher being used and also the chainmode in use. Xts mode requires twice the key size of cbc. |
-| **--offset** | `0` | `0` | The offset from the beginning of the target disk (in bytes) from which to start the mapping |
-| **--key-file** | default uses a passphrase | `/dev/sd*Z*` (or e.g. /boot/keyfile.enc) | The device or file to be used as a key. See [#Keyfiles](#Keyfiles) for further details. |
-| **--keyfile-offset** | `0` | `0` | Offset from the beginning of the file where the key starts (in bytes). This option is supported from *cryptsetup* 1.6.7 onwards. |
-| **--keyfile-size** | `8192kB` | - (default applies) | Limits the bytes read from the key file. This option is supported from *cryptsetup* 1.6.7 onwards. |
+| --hash
+
+-h
+
+ | `ripemd160` | - | The hash is used to create the key from the passphrase; it is not used on a keyfile. |
+| --cipher
+
+-c
+
+ | `aes-cbc-essiv:sha256` | `twofish-xts-plain64` | The cipher consists of three parts: cipher-chainmode-IV generator. Please see [Disk encryption#Ciphers and modes of operation](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") for an explanation of these settings, and the [DMCrypt documentation](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt) for some of the options available. |
+| --key-size
+
+-s
+
+ | `256` | `512` | The key size (in bits). The size will depend on the cipher being used and also the chainmode in use. Xts mode requires twice the key size of cbc. |
+| --offset
+
+-o
+
+ | `0` | `0` | The offset from the beginning of the target disk (in bytes) from which to start the mapping |
+| --key-file
+
+-d
+
+ | default uses a passphrase | `/dev/sd*Z*` (or e.g. `/boot/keyfile.enc`) | The device or file to be used as a key. See [#Keyfiles](#Keyfiles) for further details. |
+| --keyfile-offset | `0` | `0` | Offset from the beginning of the file where the key starts (in bytes). This option is supported from *cryptsetup* 1.6.7 onwards. |
+| --keyfile-size
+
+-l
+
+ | `8192kB` | - (default applies) | Limits the bytes read from the key file. This option is supported from *cryptsetup* 1.6.7 onwards. |
 
 Using the device `/dev/sd*X*`, the above right column example results in:
 

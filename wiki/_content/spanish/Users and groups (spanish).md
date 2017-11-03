@@ -281,7 +281,7 @@ Los usuarios de estaciones de trabajo/escritorios suelen añadir su propio usuar
 | games | `/var/games` | Permite el acceso a algún software de juego. |
 | locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Faculta para hacer uso de la orden [updatedb](https://en.wikipedia.org/wiki/updatedb "wikipedia:updatedb"). |
 | networkmanager | Requisito necesario para que el usuario pueda conectarse de forma inalámbrica con [NetworkManager](/index.php/NetworkManager_(Espa%C3%B1ol) "NetworkManager (Español)"). Este grupo no se incluye con Arch de forma predefinida, por lo que se debe agregar manualmente. |
-| rfkill | `/dev/rfkill` | Permite controlar el estado de energía del dispositivo móvil (utilizado por [rfkill](https://www.archlinux.org/packages/?name=rfkill)). |
+| rfkill | `/dev/rfkill` | Permite controlar el estado de energía del dispositivo móvil (utilizado por *rfkill*). |
 | users | Grupo de usuarios estándar. |
 | uucp | `/dev/ttyS[0-9]`, `/dev/tts/[0-9]` | Permite el acceso a dispositivos de serie y USB tales como módems, handhelds, puertos de la serie RS-232. |
 | wheel | Grupo de administración, utilizado normalmente para dar acceso a las órdenes `sudo` y `su` (no habilitado por defecto). |

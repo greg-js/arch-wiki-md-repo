@@ -175,6 +175,7 @@ This tip could be used to perform some modifications:
 
 *   map CapsLock to Backspace with `caps:backspace`
 *   swap left Control and Alt keys with `ctrl:swap_lalt_lctl`
+*   turn CapsLock into an additional Control key with `caps:ctrl_modifier`
 
 ```
 $ setxkbmap -option -option "$(localectl | grep Options | sed -e 's/.*Options:\s*//'),ctrl:swap_lalt_lctl,caps:backspace"

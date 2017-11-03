@@ -28,7 +28,7 @@ Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
 
 ## Securing the unencrypted boot partition
 
-The `/boot` partition and the [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") are the two areas of the disk that are not encrypted, even in an [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system") configuration. They cannot usually be encrypted because the [boot loader](/index.php/Boot_loader "Boot loader") and BIOS (respectively) are unable to unlock a dm-crypt container in order to continue the boot process. An exception is [GRUB](/index.php/GRUB "GRUB"), which gained a feature to unlock a LUKS encrypted `/boot` - see [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB").
+The `/boot` partition and the [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") are the two areas of the disk that are not encrypted, even in an [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system") configuration. They cannot usually be encrypted because the [boot loader](/index.php/Boot_loader "Boot loader") and BIOS (respectively) are unable to unlock a dm-crypt container in order to continue the boot process. An exception is [GRUB](/index.php/GRUB "GRUB"), which gained a feature to unlock a LUKS encrypted `/boot` - see [dm-crypt/Encrypting an entire system#Encrypted boot partition (GRUB)](/index.php/Dm-crypt/Encrypting_an_entire_system#Encrypted_boot_partition_.28GRUB.29 "Dm-crypt/Encrypting an entire system").
 
 This section describes steps that can be taken to make the boot process more secure.
 

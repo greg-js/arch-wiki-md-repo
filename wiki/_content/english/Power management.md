@@ -425,7 +425,7 @@ See [Backlight](/index.php/Backlight "Backlight").
 
 To disable bluetooth completely, [blacklist](/index.php/Blacklist "Blacklist") the `btusb` and `bluetooth` modules.
 
-To turn off bluetooth only temporarily, use [rfkill](https://www.archlinux.org/packages/?name=rfkill):
+To turn off bluetooth only temporarily, use *rfkill*:
 
 ```
 # rfkill block bluetooth
@@ -440,8 +440,6 @@ Or with udev rule:
 SUBSYSTEM=="rfkill", ATTR{type}=="bluetooth", ATTR{state}="0"
 
 ```
-
-Or just [enable](/index.php/Enable "Enable") the instantiated `rfkill-block@bluetooth.service` provided by the [rfkill](https://www.archlinux.org/packages/?name=rfkill) package.
 
 ### Web camera
 

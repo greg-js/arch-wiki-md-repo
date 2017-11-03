@@ -60,12 +60,12 @@ Related articles
 There are few methods of exploring your device:
 
 *   [MTP](/index.php/MTP "MTP") over USB for files transferring.
-*   [Alternative methods](#Alternative_connection_methods) (such as FTP, SSH).
+*   [#Alternative connection methods](#Alternative_connection_methods) (such as FTP, SSH).
 
 For more advanced usage, development, flashing and restore:
 
-*   [ADB](#Android_Debug_Bridge_.28ADB.29) mostly for development purposes.
-*   [Restoring Android](#Restoring_Android) for flashing and restoring Android firmwares (includes fastboot).
+*   [#Android Debug Bridge (ADB)](#Android_Debug_Bridge_.28ADB.29) mostly for development purposes.
+*   [[#Restoring Android] for flashing and restoring Android firmwares (includes fastboot).
 
 ## Android development
 
@@ -77,9 +77,10 @@ There are 3 steps that need to be performed before you can develop Android appli
 
 ### Android SDK core components
 
-**Note:** If you are running a 64-bit system, make sure the [multilib](/index.php/Multilib "Multilib") repository is enabled to avoid "error: target not found: lib32-*" error messages.
+**Note:**
 
-**Note:** If you plan to install [#Android Studio](#Android_Studio) and want the IDE to manage your SDK installation, you do not need to install these packages
+*   If you are running a 64-bit system, make sure the [multilib](/index.php/Multilib "Multilib") repository is enabled to avoid `error: target not found: lib32-*` error messages.
+*   If you plan to install [#Android Studio](#Android_Studio) and want the IDE to manage your SDK installation, you do not need to install these packages
 
 Before developing Android applications, you need to install the Android SDK, which is made of 4 distinct packages, all installable from [AUR](/index.php/AUR "AUR"):
 
@@ -90,7 +91,7 @@ Before developing Android applications, you need to install the Android SDK, whi
 
 If supporting older devices, or working with older code, [android-support](https://aur.archlinux.org/packages/android-support/) and [android-support-repository](https://aur.archlinux.org/packages/android-support-repository/) might be required.
 
-Android-sdk will be installed on `/opt/android-sdk`. This folder has root permissions, so keep in mind to run sdk manager as root, otherwise you will not be able to modify anything in this directory. If you intend to use it as a regular user, create the Android sdk users group:
+Android-sdk will be installed on `/opt/android-sdk/`. This folder has root permissions, so keep in mind to run sdk manager as root, otherwise you will not be able to modify anything in this directory. If you intend to use it as a regular user, create the Android sdk users group:
 
 ```
 # groupadd sdkusers
@@ -161,9 +162,10 @@ Android Studio is the official Android development environment based on IntelliJ
 
 You can [install](/index.php/Install "Install") it with the [android-studio](https://aur.archlinux.org/packages/android-studio/) package. If you get an error about a missing SDK, refer to [#Android SDK platform API](#Android_SDK_platform_API) above.
 
-**Note:** If you are using a tiling window manager other than i3wm, you may need to apply one of the fixes mentioned in [this](https://code.google.com/p/android/issues/detail?id=57675) issue page.
+**Note:**
 
-**Note:** Make sure you properly [set the Java environment](/index.php/Java#Change_default_Java_environment "Java") otherwise android-studio will not start.
+*   If you are using a tiling window manager other than i3wm, you may need to apply one of the fixes mentioned in [this](https://code.google.com/p/android/issues/detail?id=57675) issue page.
+*   Make sure you properly [set the Java environment](/index.php/Java#Change_default_Java_environment "Java") otherwise android-studio will not start.
 
 Normally, apps are built through the Android Studio GUI. To build apps from the commandline (using e.g. `./gradlew assembleDebug`), add the following to your `~/.bashrc`:
 
@@ -197,15 +199,15 @@ The official, but deprecated, [Eclipse ADT](http://developer.android.com/sdk/ecl
 
 Enter the path to the Android SDK Location in *Windows > Preferences > Android*.
 
-**Note:**
-
-If the plugins do not show up in Eclipse after the AUR package has been upgraded, then eclipse probably has out-of-date caches. Running `sudo eclipse -clean` once should clear them. If the problem persists, uninstall eclipse and all the plugins, delete `/usr/share/eclipse`, and reinstall everything.
+**Note:** If the plugins do not show up in Eclipse after the AUR package has been upgraded, then eclipse probably has out-of-date caches. Running `sudo eclipse -clean` once should clear them. If the problem persists, uninstall eclipse and all the plugins, delete `/usr/share/eclipse`, and reinstall everything.
 
 ### Android Debug Bridge (ADB)
 
-**Tip:** For some devices, you may have to enable MTP on the device, before ADB will work. Some other devices require enable PTP mode to work.
+**Tip:**
 
-**Tip:** Many devices' udev rules are included in [libmtp](https://www.archlinux.org/packages/?name=libmtp), so if you have this installed, the following steps may not be necessary.
+*   For some devices, you may have to enable MTP on the device, before ADB will work. Some other devices require enable PTP mode to work.
+*   Many devices' udev rules are included in [libmtp](https://www.archlinux.org/packages/?name=libmtp), so if you have this installed, the following steps may not be necessary.
+*   Make sure your USB cable is capable of both charge and data. Many USB cables bundled with mobile devices do not include the USB data pin.
 
 #### Connect device
 
@@ -214,8 +216,8 @@ To connect to a real device or phone via ADB under Arch, you must:
 1.  Install [android-tools](https://www.archlinux.org/packages/?name=android-tools). In addition, you might want to install [android-udev](https://www.archlinux.org/packages/?name=android-udev) if you wish to connect the device to the proper `/dev/` entries.
 2.  plug in your android device via USB.
 3.  Enable USB Debugging on your phone or device:
-    *   Jelly Bean (4.2) and newer: Go to `Settings --> About Phone` tap “Build Number” 7 times until you get a popup that you have become a developer. Then go to `Settings --> Developer --> USB debugging` and enable it. The device will ask to allow the computer with its fingerprint to connect. allowing it permanent will copy $HOME/.android/adbkey.pub onto the devices /data/misc/adb/adb_keys folder.
-    *   Older versions: This is usually done from `Settings --> Applications --> Development --> USB debugging`. Reboot the phone after checking this option to make sure USB debugging is enabled.
+    *   Jelly Bean (4.2) and newer: Go to *Settings > About Phone* tap *Build Number* 7 times until you get a popup that you have become a developer. Then go to *Settings > Developer > USB debugging* and enable it. The device will ask to allow the computer with its fingerprint to connect. allowing it permanent will copy `$HOME/.android/adbkey.pub` onto the devices `/data/misc/adb/adb_keys` folder.
+    *   Older versions: This is usually done from *Settings > Applications > Development > USB debugging*. Reboot the phone after checking this option to make sure USB debugging is enabled.
 4.  If [android-udev](https://www.archlinux.org/packages/?name=android-udev) has been installed, add yourself to the *adbusers* group:
 
 ```
@@ -223,7 +225,7 @@ To connect to a real device or phone via ADB under Arch, you must:
 
 ```
 
-If [ADB recognizes your device](#Detect_the_device) (`adb devices` shows it as "device" and not as "unauthorized", or it is visible and accessible in IDE), you are done. Otherwise see instructions below.
+If [ADB recognizes your device](#Detect_the_device) (`adb devices` shows it as `"device" and not as "unauthorized"`, or it is visible and accessible in IDE), you are done. Otherwise see instructions below.
 
 #### Figure out device IDs
 
@@ -251,13 +253,14 @@ Bus 002 Device 006: ID 0bb4:0c8d High Tech Computer Corp.
 
 #### Adding udev Rules
 
-Use the rules from [android-udev](https://www.archlinux.org/packages/?name=android-udev) (or [android-udev-git](https://aur.archlinux.org/packages/android-udev-git/)), install them manually from [Android developer](https://source.android.com/source/initializing#configuring-usb-access), or use the following template for your udev rules, just replace [VENDOR ID] and [PRODUCT ID] with yours. Copy these rules into `/etc/udev/rules.d/51-android.rules`:
+Use the rules from [android-udev](https://www.archlinux.org/packages/?name=android-udev) (or [android-udev-git](https://aur.archlinux.org/packages/android-udev-git/)), install them manually from [Android developer](https://source.android.com/source/initializing#configuring-usb-access), or use the following template for your [udev rules](/index.php/Udev_rules "Udev rules"), just replace `[VENDOR ID]` and `[PRODUCT ID]` with yours. Copy these rules into `/etc/udev/rules.d/51-android.rules`:
 
  `/etc/udev/rules.d/51-android.rules` 
 ```
 SUBSYSTEM=="usb", ATTR{idVendor}=="[VENDOR ID]", MODE="0660", GROUP="adbusers"
 SUBSYSTEM=="usb",ATTR{idVendor}=="[VENDOR ID]",ATTR{idProduct}=="[PRODUCT ID]",SYMLINK+="android_adb"
 SUBSYSTEM=="usb",ATTR{idVendor}=="[VENDOR ID]",ATTR{idProduct}=="[PRODUCT ID]",SYMLINK+="android_fastboot"
+
 ```
 
 Then, to reload your new udev rules, execute:
@@ -273,8 +276,8 @@ Make sure you are member of `adbusers` [group](/index.php/Group "Group") to acce
 
 Instead of using udev rules, you may create/edit `~/.android/adb_usb.ini` which contains a list of vendor IDs.
 
+ `~/.android/adb_usb.ini` 
 ```
-$ cat ~/.android/adb_usb.ini 
 0x27e8
 
 ```
@@ -318,7 +321,7 @@ $ adb pull *<what-to-pull>* *<where-to-place>*
 
 *   **ADB** can also be installed via [platform tools](#Android_SDK_platform_API)(usually available in `/opt/android-sdk/platform-tools/`), so it might not be necessary to install [android-tools](https://www.archlinux.org/packages/?name=android-tools) (available in `/usr/bin/`).
 
-*   If you are getting an empty list (your device is not there), it may be because you have not enabled USB debugging on your device. You can do that by going to Settings => Applications => Development and enabling USB debugging. On Android 4.2 (Jelly Bean) the Development menu is hidden; to enable it go to Settings => About phone and tap Build number 7 times.
+*   If you are getting an empty list (your device is not there), it may be because you have not enabled USB debugging on your device. You can do that by going to *Settings > Applications > Development* and enabling USB debugging. On Android 4.2 (Jelly Bean) the Development menu is hidden; to enable it go to *Settings > About phone* and tap Build number 7 times.
 
 *   If there are still problems such as *adb* displaying `???????? no permissions` under devices, try restarting the adb server as root.
 
@@ -407,9 +410,10 @@ $ source venv/bin/activate
 
 ```
 
-**Note:** This activation is only active for the current terminal session. The virtual env will be kept in the `venv` folder.
+**Note:**
 
-**Note:** During build you may receive error pertaining to missing python modules. A quick and dirty fix is to symlink /usr/lib/python2.7/* to ~/android/venv/lib/python2.7/ (Change ~/android to reflect your build directory if different than above).
+*   This activation is only active for the current terminal session. The virtual env will be kept in the `venv` folder.
+*   During build you may receive error pertaining to missing python modules. A quick and dirty fix is to symlink /usr/lib/python2.7/* to ~/android/venv/lib/python2.7/ (Change ~/android to reflect your build directory if different than above).
 
 Example:
 
@@ -470,13 +474,10 @@ If you run **lunch** without arguments, it will ask what build you want to creat
 
 The build takes a very long time.
 
-**Note:** Make sure you have enough RAM.
+**Note:**
 
-Android will use the /tmp directory heavily. By default the size of the partition the /tmp folder is mounted on is half the size of your RAM. If it fills up, the build will fail. 4GB of RAM or more is recommended.
-
-*   Alternatively, you can get rid of the tmpfs from [fstab](/index.php/Fstab "Fstab") all together.
-
-**Note:** From the [Android Building and Running guide](https://source.android.com/source/building#build-the-code):
+*   Make sure you have enough RAM. Android will use the /tmp directory heavily. By default the size of the partition the /tmp folder is mounted on is half the size of your RAM. If it fills up, the build will fail. 4GB of RAM or more is recommended. Alternatively, you can get rid of the tmpfs from [fstab](/index.php/Fstab "Fstab") all together.
+*   From the [Android Building and Running guide](https://source.android.com/source/building#build-the-code):
 
 "GNU make can handle parallel tasks with a -jN argument, and it's common to use a number of tasks N that's between 1 and 2 times the number of hardware threads on the computer being used for the build. E.g. on a dual-E5520 machine (2 CPUs, 4 cores per CPU, 2 threads per core), the fastest builds are made with commands between make -j16 and make -j32."
 
@@ -498,7 +499,7 @@ make -j8 updatepackage
 
 ```
 
-This will create a zip image under **out/target/product/hammerhead** (hammerhead being the device name) that can be flashed.
+This will create a zip image under `**out/target/product/hammerhead**` (hammerhead being the device name) that can be flashed.
 
 ## Restoring Android
 
@@ -530,8 +531,8 @@ Arch Linux (host) preparation:
 
 1.  Install [VirtualBox](/index.php/VirtualBox "VirtualBox") together with its [extension pack](/index.php/VirtualBox#Extension_pack "VirtualBox") and [guest additions](/index.php/VirtualBox#Guest_additions_disc "VirtualBox").
 2.  Install your preferred, but compatible with Odin, Windows operating system (with VirtualBox guest additions) into a virtual hard drive using VirtualBox.
-3.  Open VirtualBox settings of your Windows operating system, navigate to **USB**, then tick (or make sure it is ticked) **Enable USB 2.0 (EHCI) Controller**.
-4.  At VirtualBox running Windows operating system, click in the menu bar **Devices**, then **USB Devices**, then click on your Samsung mobile device from the list, which is connected to your computer via USB.
+3.  Open VirtualBox settings of your Windows operating system, navigate to *USB*, then tick (or make sure it is ticked) **Enable USB 2.0 (EHCI) Controller**.
+4.  At VirtualBox running Windows operating system, click in the menu bar *Devices > USB Devices*, then click on your Samsung mobile device from the list, which is connected to your computer via USB.
 
 Windows (guest) preparation:
 
@@ -542,7 +543,7 @@ Windows (guest) preparation:
 Check if configuration is working:
 
 1.  Turn your device into Download mode and connect to your Linux machine.
-2.  In virtual machine toolbar, select `devices` --> `USB` --> `...Samsung...` device.
+2.  In virtual machine toolbar, select *Devices > USB > ...Samsung...* device.
 3.  Open Odin. The white box (a big one at the bottom-left side) named **Message**, should print a line similar to this:
 
 ```
@@ -596,14 +597,7 @@ See [Samba](/index.php/Samba "Samba").
 
 ### During Debugging "Source not found"
 
-Most probably the debugger wants to step into the Java code. As the source code of Android does not come with the Android SDK, this leads to an error. The best solution is to use step filters to not jump into the Java source code. Step filters are not activated by default. To activate them:
-
-```
-Window -> Preferences -> Java -> Debug -> Step Filtering
-
-```
-
-Consider to select them all. If appropriate you can add the android.* package. See the forum post for more information: [http://www.eclipsezone.com/eclipse/forums/t83338.rhtml](http://www.eclipsezone.com/eclipse/forums/t83338.rhtml)
+Most probably the debugger wants to step into the Java code. As the source code of Android does not come with the Android SDK, this leads to an error. The best solution is to use step filters to not jump into the Java source code. Step filters are not activated by default. To activate them: *Window > Preferences > Java > Debug > Step Filtering*. Consider to select them all. If appropriate you can add the android.* package. See the forum post for more information: [http://www.eclipsezone.com/eclipse/forums/t83338.rhtml](http://www.eclipsezone.com/eclipse/forums/t83338.rhtml)
 
 ### Linux distribution on the sdcard
 
@@ -624,14 +618,14 @@ If you try to run an AVD (Android Virtual Device) under x86_64 Arch and get the 
 One fix is to issue:
 
 ```
-rm ~/.repopickle_.gitconfig
+$ rm ~/.repopickle_.gitconfig
 
 ```
 
 If that does not work, then try this:
 
 ```
-rm `find /path/to/android-root -name .repopickle_config`
+$ find /path/to/android-root -name .repopickle_config -exec rm {} +
 
 ```
 
@@ -639,10 +633,10 @@ rm `find /path/to/android-root -name .repopickle_config`
 
 Sometimes, beginning to load an AVD will cause an error message similar to this to be displayed, or the loading process will appear to finish but no AVD will load and no error message will be displayed.
 
-The AVD loads an incorrect version of libstdc++, you can remove the folder libstdc++ from ~/Android/Sdk/emulator/lib64/ (for 64-bit) or ~/Android/Sdk/emulator/lib/ (for 32-bit) , e.g.:
+The AVD loads an incorrect version of libstdc++, you can remove the folder libstdc++ from `~/Android/Sdk/emulator/lib64/` (for 64-bit) or `~/Android/Sdk/emulator/lib/` (for 32-bit) , e.g.:
 
 ```
-rm -r ~/Android/Sdk/emulator/lib64/libstdc++
+$ rm -r ~/Android/Sdk/emulator/lib64/libstdc++
 
 ```
 
@@ -683,4 +677,4 @@ QObject::~QObject: Timers cannot be stopped from another thread
 
 ```
 
-You can try to install glxinfo (Its [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos)) but if your computer has enough power you could simply use software to render graphics. To do so, go to Tools -> Android -> AVD Manager, edit the AVD (click the pencil icon), then select "Software - GLES 2.0" for "Emulated Performance -> Graphics".
+You can try to install glxinfo (Its [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos)) but if your computer has enough power you could simply use software to render graphics. To do so, go to *Tools > Android > AVD Manager*, edit the *AVD* (click the pencil icon), then select *Software - GLES 2.0* for *Emulated Performance > Graphics*.

@@ -1,5 +1,3 @@
-**This page is a work in progress.** I hope to be done by next week.
-
 [Whonix](https://www.whonix.org) is a desktop operating system designed for advanced security and privacy. It works by compartmentalizing two different operating systems running in two separate virtual machines for greater security. The first operating system is "The Workstation" and is the OS you perform your normal tasks inside like you would using a normal virtual machine. The second is "The Gateway" that forces all traffic from the Workstation through tor such that your ip address is always protected, even in the case of the Gateway being compromised, while your other activities are compartmentalized from the internet.
 
 The main Whonix team provides both the Gateway and Workstation running on top of Debian but Arch users may enjoy using Arch as their main Workstation OS. This page describes how that is to be done. This is done in three steps:

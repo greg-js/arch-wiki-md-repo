@@ -110,6 +110,8 @@ Here client 65 is the actual MIDI synthesizer. Assuming the soundcard is [set up
 
 **Note:** You need to run `aconnect *in* *out*` each time you restart Qsynth or change the instrument/SoundFont.
 
+**Note:** Qsynth default audio driver is set to jack. To use alsa run : qsynth -a alsa
+
 #### Qsynth using JACK
 
 1.  We need to install [qsynth](https://www.archlinux.org/packages/?name=qsynth), [jack](/index.php/Jack "Jack"), [qjackctl](https://www.archlinux.org/packages/?name=qjackctl)

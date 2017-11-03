@@ -1378,15 +1378,15 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 
 	[http://www.nndev.org/](http://www.nndev.org/) || [nn](https://aur.archlinux.org/packages/nn/)
 
-*   **[NZBGet](/index.php/NZBGet "NZBGet")** — CLI Utility to grab Usenet binary file using .nzb files.
+*   **[NZBGet](/index.php/NZBGet "NZBGet")** — Usenet binary downloader for .nzb files with web and CLI interface.
 
-	[http://nzbget.sourceforge.net/](http://nzbget.sourceforge.net/) || [nzbget](https://www.archlinux.org/packages/?name=nzbget)
+	[https://nzbget.net/](https://nzbget.net/) || [nzbget](https://www.archlinux.org/packages/?name=nzbget)
 
 *   **[pan](https://en.wikipedia.org/wiki/Pan_(newsreader) "wikipedia:Pan (newsreader)")** — A GTK2 Usenet newsreader that's good at both text and binaries.
 
 	[http://pan.rebelbase.com/](http://pan.rebelbase.com/) || [pan](https://www.archlinux.org/packages/?name=pan)
 
-*   **[SABnzbd](/index.php/SABnzbd "SABnzbd")** — SABnzbd is an open-source binary newsreader written in Python.
+*   **[SABnzbd](/index.php/SABnzbd "SABnzbd")** — An open-source binary newsreader written in Python.
 
 	[https://sabnzbd.org/](https://sabnzbd.org/) || [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) [sabnzbd-git](https://aur.archlinux.org/packages/sabnzbd-git/)
 

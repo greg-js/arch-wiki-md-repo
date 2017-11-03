@@ -228,7 +228,7 @@ This is very likely to occur when the Bluetooth and the WiFi share the same chip
 
 A possible solution is to move your WiFi network to 5GHz so that there will be no interference. If your card/router doesn't support this, you can upgrade your WiFi drivers/firmware. This approach works on Realtek 8723BE and latest rtl drivers for this chip from AUR.
 
-Another possible mitigation is to configure the fragment size and the latency on PulseAudio output port. Suitable values must be chosen, because these settings can make the audio out of sync (e.g. when playing videos). To change the latency of the bluetooth headset's port (e.g. to 125000 microseconds in the following example):
+If nothing of the previous is possible, a less effective mitigation is to tweak the fragment size and the latency on PulseAudio output port, trying to compensate interference. Reasonable values must be chosen, because these settings can make the audio out of sync (e.g. when playing videos). To change the latency of the bluetooth headset's port (e.g. to 125000 microseconds in the following example):
 
 ```
 $ pactl set-port-latency-offset <bluez_card> headset-output **125000**

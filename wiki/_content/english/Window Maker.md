@@ -36,7 +36,7 @@ Select the *windowmaker* session from the display manager's session menu.
 
 ### Manually
 
-Once installed create or edit the file [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc") as follows:
+Once installed, create or edit the file [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc") as follows:
 
 ```
 exec wmaker
@@ -51,7 +51,7 @@ To start Window Maker:
 
 ### Files
 
-All of the settings for Window Maker can be found in the `GNUSTEP_USER_ROOT` directory, under `Default` and `Library`. They are saved as simple text files. You can use the `Preferences Utility` (`WPrefs`) GUI application to change the settings, or edit them by hand.
+All of the settings for Window Maker can be found in the `GNUSTEP_USER_ROOT` directory, under `Default` and `Library`. They are simple text files which can be edited by hand, or you can use the `Preferences Utility` (`WPrefs`) GUI application to change the settings; in the default installation WPrefs can be started by double-clicking the icon in the top right corner of the workspace.
 
 *   `Defaults/WindowMaker` - The current Window Maker settings.
 *   `Defaults/WMGLOBAL`

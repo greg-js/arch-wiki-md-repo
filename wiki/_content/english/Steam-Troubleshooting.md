@@ -35,16 +35,17 @@ Related articles
 *   [11 Missing libGL](#Missing_libGL)
 *   [12 Missing vgui2_s.so](#Missing_vgui2_s.so)
 *   [13 Games do not launch on older Intel hardware](#Games_do_not_launch_on_older_Intel_hardware)
-*   [14 2K games do not run on XFS partitions](#2K_games_do_not_run_on_XFS_partitions)
-*   [15 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
-*   [16 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
-*   [17 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
-*   [18 Prevent memory dumps from consuming RAM](#Prevent_memory_dumps_from_consuming_RAM)
-*   [19 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
-*   [20 Very slow app download speed](#Very_slow_app_download_speed)
-*   [21 Symbol lookup error using dri3](#Symbol_lookup_error_using_dri3)
-*   [22 Launching games on nvidia optimus laptops](#Launching_games_on_nvidia_optimus_laptops)
-*   [23 "Needs to be online" error](#.22Needs_to_be_online.22_error)
+*   [14 Games do not launch on open source drivers, complaining about OpenGL version that the card actually supports](#Games_do_not_launch_on_open_source_drivers.2C_complaining_about_OpenGL_version_that_the_card_actually_supports)
+*   [15 2K games do not run on XFS partitions](#2K_games_do_not_run_on_XFS_partitions)
+*   [16 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
+*   [17 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
+*   [18 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
+*   [19 Prevent memory dumps from consuming RAM](#Prevent_memory_dumps_from_consuming_RAM)
+*   [20 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
+*   [21 Very slow app download speed](#Very_slow_app_download_speed)
+*   [22 Symbol lookup error using dri3](#Symbol_lookup_error_using_dri3)
+*   [23 Launching games on nvidia optimus laptops](#Launching_games_on_nvidia_optimus_laptops)
+*   [24 "Needs to be online" error](#.22Needs_to_be_online.22_error)
 
 ## Debugging Steam
 
@@ -403,6 +404,19 @@ This can be fixed, however, by forcing the game to use a later version of OpenGL
 
 ```
 MESA_GL_VERSION_OVERRIDE=3.1 MESA_GLSL_VERSION_OVERRIDE=140 %command%
+
+```
+
+## Games do not launch on open source drivers, complaining about OpenGL version that the card actually supports
+
+Some games are badly programmed, to use any OpenGL version above 3.0 with mesa, an application has to request a specific core profile.
+
+If it doesn't make such a request, only OpenGL 3.0 and lower are available.
+
+This can be fixed, by forcing the game to use a version of OpenGL it actually needs. Right click on the game, select Properties. Then, click "Set Launch Options" in the "General" tab and paste the following(edit as needed):
+
+```
+MESA_GL_VERSION_OVERRIDE=4.1 MESA_GLSL_VERSION_OVERRIDE=410 %command%
 
 ```
 

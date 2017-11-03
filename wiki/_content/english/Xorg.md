@@ -62,7 +62,7 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [8.8 Recovery: disabling Xorg before GUI login](#Recovery:_disabling_Xorg_before_GUI_login)
     *   [8.9 X clients started with "su" fail](#X_clients_started_with_.22su.22_fail)
     *   [8.10 X failed to start: Keyboard initialization failed](#X_failed_to_start:_Keyboard_initialization_failed)
-    *   [8.11 Rootless Xorg (v1.16)](#Rootless_Xorg_.28v1.16.29)
+    *   [8.11 Rootless Xorg](#Rootless_Xorg)
         *   [8.11.1 Broken redirection](#Broken_redirection)
     *   [8.12 Why do I get a green screen whenever I try to watch a video?](#Why_do_I_get_a_green_screen_whenever_I_try_to_watch_a_video.3F)
     *   [8.13 SocketCreateListener error](#SocketCreateListener_error)
@@ -697,11 +697,10 @@ Please also check the log file at "/var/log/Xorg.0.log" for additional informati
 
 Make some free space on the relevant filesystem and X will start.
 
-### Rootless Xorg (v1.16)
+### Rootless Xorg
 
-As of version 1.16 [[4]](https://www.archlinux.org/news/xorg-server-116-is-now-available/), Xorg may run with standard user privileges with the help of `logind`. The requirements for this are:
+Xorg may run with standard user privileges with the help of `logind`. The requirements for this are:
 
-*   [systemd](/index.php/Systemd "Systemd"); version >=216 for multiple instances
 *   Starting X via [xinit](/index.php/Xinit "Xinit"); display managers are not supported
 *   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"); implementations in proprietary display drivers fail [auto-detection](http://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/xorg-wrapper.c#n222) and require manually setting `needs_root_rights = no` in `/etc/X11/Xwrapper.config`.
 
@@ -721,11 +720,11 @@ See also [Xorg.wrap(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.wrap.1) a
 While user Xorg logs are stored in `~/.local/share/xorg/Xorg.log`, they do not include the output from the X session. To re-enable redirection, start X with the `-keeptty` flag:
 
 ```
-exec startx -- -keeptty -nolisten tcp > ~/.xorg.log 2>&1
+exec startx -- -keeptty > ~/.xorg.log 2>&1
 
 ```
 
-Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
+Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
 
 ### Why do I get a green screen whenever I try to watch a video?
 

@@ -178,7 +178,7 @@ When using a container frequently, you may want to start it on boot.
 
 First [enable](/index.php/Enable "Enable") the `machines.target` target, then `systemd-nspawn@*myContainer*.service`, where `myContainer` is an nspawn container in `/var/lib/machines`.
 
-**Tip:** To customize the startup of a container, [edit](/index.php/Edit "Edit") the `systemd-nspawn@*myContainer*` unit instance. See [systemd-nspawn(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1) for all options.
+**Tip:** To customize the startup of a container, edit `/etc/systemd/nspawn/*myContainer*.nspawn`. See [systemd.nspawn(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.nspawn.5) for all options.
 
 ### Build and test packages
 

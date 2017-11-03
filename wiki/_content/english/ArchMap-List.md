@@ -1054,5 +1054,6 @@ You can use the following website to get your device's coordinates along with a 
 58.493,13.154 "phi97" # Lidkoping, Sweden
 51.1214715,-114.1167452 "mcnster" # Cowtown, Alberta, Canada
 47.547837,-121.995722 "jrmasters" # Issaquah, Washington, USA
+39.45326,-0.46449 "manolollr" # Alaquàs, València, Spain
 
 ```

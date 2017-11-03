@@ -329,7 +329,7 @@ A more verbose command combining the information of `df` and `show` which direct
 
 ### Defragmentation
 
-Btrfs supports online defragmentation through a [mount option](https://btrfs.wiki.kernel.org/index.php/Mount_options). To manually defragment your root, use:
+Btrfs supports online defragmentation through the [mount option](https://btrfs.wiki.kernel.org/index.php/Mount_options) `autodefrag`. To manually defragment your root, use:
 
 ```
 # btrfs filesystem defragment -r /

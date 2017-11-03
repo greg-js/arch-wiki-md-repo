@@ -1,3 +1,10 @@
+Articoli correlati
+
+*   [Configurare la rete](/index.php/Configuring_Network_(Italiano) "Configuring Network (Italiano)")
+*   [Setup wreless](/index.php/Wireless_Setup_(Italiano) "Wireless Setup (Italiano)")
+*   [Netctl](/index.php/Netctl "Netctl")
+*   [Wicd](/index.php/Wicd_(Italiano) "Wicd (Italiano)")
+
 [NetworkManager](http://projects.gnome.org/NetworkManager/) è un programma per la rilevazione e la configurazione delle reti, e con il quale, i sistemi potranno connettersi automaticamente. La funzionalità di NetworkManager può essere utile sia per reti cablate che wireless. Per quanto riguarda il wireless, NetworkManager predilige le reti conosciute, ed offre la possibilità di passare alla rete più affidabile. Le applicazioni di allerta di NetworkManager possono passare dalla modalità online a quella offline. NetworkManager può inoltre favorire le connessioni cablate a quelle wireless, oltre ad includere il supporto per connessioni modem e certi tipi di VPN. NetworkManager è stato originariamente sviluppato da RedHat ed è ora ospitato dal progetto [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)").
 
 ## Contents
@@ -475,7 +482,7 @@ Se NetworkManager (da v0.7.999) non rileva il modem 3G, ma è comunque possibile
 
 ### Spegnimento WLAN su computer portatili
 
-A volte NetworkManager non funziona quando si disattiva l'adattatore Wifi con l'interruttore del portatile e si prova ad abilitarlo nuovamente in seguito. Questo è spesso un problema con [rfkill](https://www.archlinux.org/packages/?name=rfkill). [Installarlo](/index.php/Pacman_(Italiano) "Pacman (Italiano)") dai [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") e dare il comando
+A volte NetworkManager non funziona quando si disattiva l'adattatore Wifi con l'interruttore del portatile e si prova ad abilitarlo nuovamente in seguito.
 
 ```
 $ watch -n1 rfkill list all

@@ -1,3 +1,9 @@
+Related articles
+
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [KDE](/index.php/KDE "KDE")
+*   [udisks](/index.php/Udisks "Udisks")
+
 [Dolphin](https://www.kde.org/applications/system/dolphin/) is the default file manager of [KDE](/index.php/KDE "KDE"). For the game emulator, see [Dolphin emulator](/index.php/Dolphin_emulator "Dolphin emulator").
 
 ## Contents
@@ -36,6 +42,8 @@ The *Compare files* dialog depends on [kompare](https://www.archlinux.org/packag
 *   [kde-thumbnailer-apk](https://aur.archlinux.org/packages/kde-thumbnailer-apk/): **A**ndroid **a**pplication **p**ackage files
 *   [kde-thumbnailer-blender](https://aur.archlinux.org/packages/kde-thumbnailer-blender/): Blender application files
 *   [kde-thumbnailer-epub](https://aur.archlinux.org/packages/kde-thumbnailer-epub/): Electronic book files
+
+Enable preview showing of required file type in `Control` → `Configure Dolphin...` → `General` → `Previews`
 
 ## Usage
 

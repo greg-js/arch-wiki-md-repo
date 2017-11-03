@@ -255,7 +255,7 @@ Some tools have been marked as deprecated and removed from the package. At this 
 
 ### bluetoothctl
 
-If bluetoothctl cannot find any controller, the bluetooth device may be blocked. Try to unblock it using [rfkill](https://www.archlinux.org/packages/?name=rfkill):
+If bluetoothctl cannot find any controller, the bluetooth device may be blocked. Try to unblock it using *rfkill*:
 
 ```
 # rfkill unblock bluetooth

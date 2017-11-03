@@ -293,7 +293,7 @@ Gli utenti di pc Workstation/desktop sono soliti aggiungere i propri utenti non-
 
 | Gruppo | File interessati | Scopo |
 | games | `/var/games` | Concede l'accesso ad alcuni giochi. |
-| rfkill | `/dev/rfkill` | Permette di controllare lo stato di alimentazione dei dispositivi wireless (utilizzato dal pacchetto [rfkill](https://www.archlinux.org/packages/?name=rfkill)). |
+| rfkill | `/dev/rfkill` | Permette di controllare lo stato di alimentazione dei dispositivi wireless (utilizzato dal pacchetto rfkill). |
 | users | Gruppo standard degli utenti. |
 | uucp | `/dev/ttyS[0-9]`, `/dev/tts/[0-9]` | Permette di accedere a periferiche seriali ed USB come modem, controller, porte seriali/RS232. |
 | wheel | Gruppo di Amministrazione, comunemente utilizzato per consentire l'accesso alle utility [sudo](/index.php/Sudo_(Italiano) "Sudo (Italiano)") e [su](/index.php/Su "Su") ( non lo usa di default), , configurabili in `/etc/pam.d/su` and `/etc/pam.d/su-l`). Può anche essere usato per avere accesso completo in lettura ai file [journal](/index.php/Systemd_(Italiano)#Il_Journal "Systemd (Italiano)"). |

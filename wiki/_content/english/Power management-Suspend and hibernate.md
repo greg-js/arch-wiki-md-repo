@@ -185,7 +185,7 @@ XHC       S3    *enabled  pci:0000:00:14.0
 
 ```
 
-The relevant devices are `EHC1`, `EHC1` and `XHC` (for USB 3.0). To toggle their state you have to echo the device name to the file as root.
+The relevant devices are `EHC1`, `EHC2` and `XHC` (for USB 3.0). To toggle their state you have to echo the device name to the file as root.
 
 ```
 # echo EHC1 > /proc/acpi/wakeup

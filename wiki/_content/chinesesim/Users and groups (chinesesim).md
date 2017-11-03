@@ -372,7 +372,7 @@ This section explains the purpose of the essential groups from the [core/filesys
 | games | `/var/games` | 访问一些游戏。 |
 | log | 访问 [syslog-ng](/index.php/Syslog-ng "Syslog-ng") 创建的 `/var/log/` 日志文件. |
 | http | `/srv/http/` | 访问 [HTTP](https://en.wikipedia.org/wiki/HTTP "wikipedia:HTTP") 服务器文件. |
-| rfkill | **不再使用!** 控制无线设备的电源 (可能被 [rfkill](https://www.archlinux.org/packages/?name=rfkill) 使用). |
+| rfkill | **不再使用!** 控制无线设备的电源 (被 rfkill 使用). |
 | sys | Right to administer printers in [CUPS](/index.php/CUPS "CUPS"). |
 | systemd-journal | `/var/log/journal/*` | 以只读方式访问系统日志，和 `adm` 和 `wheel` 不同 [[1]](https://cgit.freedesktop.org/systemd/systemd/tree/README?id=fdbbf0eeda929451e2aaf34937a72f03a225e315#n190). 不在此组中的用户仅能访问自己生成的信息。 |
 | users | 标准用户组. |

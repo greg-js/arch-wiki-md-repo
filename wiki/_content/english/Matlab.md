@@ -376,7 +376,9 @@ LD_LIBRARY_PATH="/opt/matlab/outdatedLibraries/:$LD_LIBRARY_PATH" /opt/matlab/R2
 
 ### Segmentation fault on startup
 
-If Matlab stops working after upgrading [ncurses](https://www.archlinux.org/packages/?name=ncurses) to v6.x, [install](/index.php/Install "Install") the [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) package. See [BBS#202575](https://bbs.archlinux.org/viewtopic.php?id=202575).
+If Matlab (R2016a or earlier) stops working after upgrading [ncurses](https://www.archlinux.org/packages/?name=ncurses) to v6.x, [install](/index.php/Install "Install") the [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) package. See [BBS#202575](https://bbs.archlinux.org/viewtopic.php?id=202575).
+
+In newer versions (e.g. R2017b), the issue could also be due to a font display failing to load. Try moving the libfreetype.so.6 font display file in $MATLAB/bin/glnxa64/ to an 'exclude' directory; see [BBS#231299](https://bbs.archlinux.org/viewtopic.php?id=231299).
 
 ### Hangs on rendering or exiting with Intel graphics
 

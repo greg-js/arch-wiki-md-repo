@@ -91,8 +91,6 @@ NetworkManager-wait-online.service | NetworkManager daemon, provides configurati
 | [Prosody](/index.php/Prosody "Prosody") | prosody | prosody.service | XMPP server. |
 | [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") | psd | psd.service | Manages your browser's profile in tmpfs and periodically syncs it back to your physical disk. |
  pure-ftpd | pure-ftpd.servicecups.service | A fast, production quality, standards-compliant FTP server. |
-| [rfkill](https://www.archlinux.org/packages/?name=rfkill) | rfkill | rfkill-block@.service
-rfkill-unblock@.service | (Un)blocks radio devices. |
 | [Rsync](/index.php/Rsync "Rsync") | rsyncd | rsyncd.service | rsync daemon. |
 | [Rsyslog](/index.php/Rsyslog "Rsyslog") | rsyslogd | rsyslog.service | Alternative system logger. |
 | [redis](https://www.archlinux.org/packages/?name=redis) | redis-server | redis.service | Key-value store |

@@ -12,7 +12,6 @@ This article covers the Arch Linux support for the Lenovo Yoga 2 11 Laptop.
     *   [3.1 TrackPad](#TrackPad)
     *   [3.2 TouchScreen](#TouchScreen)
     *   [3.3 Video](#Video)
-        *   [3.3.1 Colour Calibration](#Colour_Calibration)
     *   [3.4 Wireless](#Wireless)
     *   [3.5 Sound](#Sound)
     *   [3.6 Webcam](#Webcam)
@@ -27,8 +26,6 @@ This article covers the Arch Linux support for the Lenovo Yoga 2 11 Laptop.
     *   [4.1 Tablet Mode](#Tablet_Mode)
 
 ## Installation
-
-Installation was performed with the Arch Linux ISO 2014.08.01, with kernel 3.15.7.
 
 ### Booting the Install USB
 
@@ -119,10 +116,6 @@ The packages [easystroke](https://www.archlinux.org/packages/?name=easystroke) o
 
 See [Intel graphics](/index.php/Intel_graphics "Intel graphics"), [xrandr](/index.php/Xrandr "Xrandr") and [Backlight](/index.php/Backlight "Backlight").
 
-#### Colour Calibration
-
-Colours in [xorg](/index.php/Xorg "Xorg") were on the dark side out of the box. Using a program such as [monica](https://www.archlinux.org/packages/?name=monica) to configure the best colour settings is recommended.
-
 ### Wireless
 
 Works out of the box.
@@ -179,7 +172,7 @@ systemctl suspend
 
 ```
 
-Initially, waking the machine resulted in the wifi card being soft-blocked and had to be repaired by installing [rfkill](https://www.archlinux.org/packages/?name=rfkill) and running
+Initially, waking the machine resulted in the wifi card being soft-blocked and had to be repaired by running
 
 ```
 rfkill unblock 0

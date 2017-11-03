@@ -1,4 +1,4 @@
-[NZBGet](http://www.nzbget.net/) is an Usenet-client written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources.
+[NZBGet](https://nzbget.net/) is an Usenet-client written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources.
 
 ## Contents
 
@@ -16,8 +16,6 @@
 ## Installation
 
 Install the [nzbget](https://www.archlinux.org/packages/?name=nzbget) package and the optional [nzbget-systemd](https://aur.archlinux.org/packages/nzbget-systemd/) that provides a `nzbget` [systemd](/index.php/Systemd "Systemd") service.
-
-To install the latest [NZBGet Git](https://github.com/nzbget/nzbget) version with a [systemd](/index.php/Systemd "Systemd") service file, install [nzbget-git](https://aur.archlinux.org/packages/nzbget-git/).
 
 ## Configuring NZBGet
 
@@ -61,7 +59,7 @@ NZBGet should now be accessible on [http://localhost:6789](http://localhost:6789
 
 ## Running NZBGet under a different user
 
-**Tip:** The [nzbget-git](https://aur.archlinux.org/packages/nzbget-git/) and [nzbget-systemd](https://aur.archlinux.org/packages/nzbget-systemd/) provides already a `nzbget` user and group, so there is no need of adding a system user.
+**Tip:** The [nzbget-systemd](https://aur.archlinux.org/packages/nzbget-systemd/) package provides the `nzbget` user and group, so there is no need of adding a system user.
 
 For better security it is better to run NZBGet under a [system user](/index.php/Users_and_groups#Example_adding_a_system_user "Users and groups").
 

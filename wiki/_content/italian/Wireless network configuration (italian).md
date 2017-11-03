@@ -276,7 +276,7 @@ Molte schede necessitano che l'interfaccia del kernel venga attivata prima di po
 
 ```
 
-**Nota:** Se si ottengono errori simili a `RTNETLINK answers: Operation not possible due to RF-kill`, assicurarsi che l'interruttore hardware che controlla la scheda wireless sia su "ON". È anche possibile che la scheda sia bloccata via software, nel qual caso sarà necessario installare [rfkill](https://www.archlinux.org/packages/?name=rfkill) e controllare con `rfkill list all`.
+**Nota:** Se si ottengono errori simili a `RTNETLINK answers: Operation not possible due to RF-kill`, assicurarsi che l'interruttore hardware che controlla la scheda wireless sia su "ON". È anche possibile che la scheda sia bloccata via software, e controllare con `rfkill list all`.
 
 #### Ricerca degli Access Points
 

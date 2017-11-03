@@ -68,7 +68,8 @@ channel=10
 
 ## 其他建议
 
+参阅 [Laptop](/index.php/Laptop "Laptop")
+
 *   由于是Intel的CPU，所以最好安装[Microcode](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode")。
 *   最好把系统BIOS设置为UEFI启动，并以此方式安装系统，提高启动速度，并且开机的默认的眼睛Logo也不显示了。
-*   机器网卡同时支持网络和蓝牙，如果你蓝牙用得不多的情况下，可以用[rfkill](https://www.archlinux.org/packages/?name=rfkill)把蓝牙关掉。系统电池虽然只有4400mAh，但是在浏览网页、编程、写文档等工作条件下，可以使用近4个小时。
 *   平时最好把麦克风音量调整为0，用黑胶布粘贴住摄像头，并且把uvcvideo模块blacklist掉，就会感觉好一些。

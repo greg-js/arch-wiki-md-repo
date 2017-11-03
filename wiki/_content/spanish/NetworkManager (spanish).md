@@ -1,3 +1,10 @@
+Artículos relacionados
+
+*   [Network Configuration (Español)](/index.php/Network_Configuration_(Espa%C3%B1ol) "Network Configuration (Español)")
+*   [Wireless Setup (Español)](/index.php/Wireless_Setup_(Espa%C3%B1ol) "Wireless Setup (Español)")
+*   [Netctl (Español)](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)")
+*   [Wicd (Español)](/index.php/Wicd_(Espa%C3%B1ol) "Wicd (Español)")
+
 [NetworkManager](http://projects.gnome.org/NetworkManager/) es un programa que proporciona a los sistemas la detección y configuración automática para conectarse a la red. Las funcionalidades de NetworkManager son útiles tanto para redes inalámbricas como por cable. Para las redes inalámbricas, NetworkManager prefiere las redes conocidas y tiene la capacidad de cambiar a la red más confiable. NetworkManager permite que las aplicaciones puedan cambiar de modalidad en línea y fuera de línea. NetworkManager da preferencia a las conexiones por cable antes que a las inalámbricas, tiene soporte para conexiones por módem y para ciertos tipos de VPN. NetworkManager fue originariamente desarrollado por Red Hat y ahora es respaldado por el proyecto [GNOME](/index.php/GNOME "GNOME").
 
 ## Contents
@@ -502,7 +509,7 @@ Si NetworkManager (desde v0.7.999) no detecta el módem 3G, pero todavía se pue
 
 ### Desconexión de WLAN en portátiles
 
-A veces, NetworkManager no funciona cuando se deshabilita el adaptador WiFi con el interruptor del portátil y se trata de activar de nuevo después. Esto suele ser debido a un problema con `rfkill`. Instale [rfkill](https://www.archlinux.org/packages/?name=rfkill) de los [repositorios oficiales](/index.php/Official_repositories "Official repositories") y use la siguiente orden:
+A veces, NetworkManager no funciona cuando se deshabilita el adaptador WiFi con el interruptor del portátil y se trata de activar de nuevo después. Esto suele ser debido a un problema con `rfkill`:
 
 ```
 $ watch -n1 rfkill list all

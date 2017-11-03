@@ -11,19 +11,20 @@ Here are some hints for getting Arch Linux working on your tablet PC. These inst
 *   [4 Automatic rotation](#Automatic_rotation)
     *   [4.1 With a script](#With_a_script)
     *   [4.2 With systemd](#With_systemd)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 CellWriter](#CellWriter)
-    *   [5.2 Easystroke](#Easystroke)
-        *   [5.2.1 Launch CellWriter under pen](#Launch_CellWriter_under_pen)
-        *   [5.2.2 Gestures for the Alphabet](#Gestures_for_the_Alphabet)
-    *   [5.3 Xournal](#Xournal)
-    *   [5.4 Disable gksu grab mode](#Disable_gksu_grab_mode)
-    *   [5.5 Gnome-screensaver](#Gnome-screensaver)
-    *   [5.6 GDM](#GDM)
-    *   [5.7 LightDM](#LightDM)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Wacom Drivers](#Wacom_Drivers)
-    *   [6.2 Screen Rotation](#Screen_Rotation)
+*   [5 Tablet mode](#Tablet_mode)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 CellWriter](#CellWriter)
+    *   [6.2 Easystroke](#Easystroke)
+        *   [6.2.1 Launch CellWriter under pen](#Launch_CellWriter_under_pen)
+        *   [6.2.2 Gestures for the Alphabet](#Gestures_for_the_Alphabet)
+    *   [6.3 Xournal](#Xournal)
+    *   [6.4 Disable gksu grab mode](#Disable_gksu_grab_mode)
+    *   [6.5 Gnome-screensaver](#Gnome-screensaver)
+    *   [6.6 GDM](#GDM)
+    *   [6.7 LightDM](#LightDM)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Wacom Drivers](#Wacom_Drivers)
+    *   [7.2 Screen Rotation](#Screen_Rotation)
 
 ## Models
 
@@ -209,6 +210,10 @@ For GDM, which cannot be done via GUI:
 sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false
 
 ```
+
+## Tablet mode
+
+If your laptop-tablet convertible has 2 accelerometers, you can try to use [https://github.com/alesguzik/linux_detect_tablet_mode](https://github.com/alesguzik/linux_detect_tablet_mode) to configure laptop and tablet modes (e.g. enable/disable keyboard/touchpad/trackpoint, start/kill on-screen keyboard etc.)
 
 ## Tips and tricks
 

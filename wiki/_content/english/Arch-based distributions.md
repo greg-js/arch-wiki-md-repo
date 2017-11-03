@@ -31,7 +31,6 @@ This is a listing of Linux distributions which are [derived](/index.php/Develope
 
 ## Active
 
-*   [Alpine Linux](https://alpinelinux.org/)
 *   [Antergos](https://sourceforge.net/projects/antergos/)
 *   [Arch Linux ARM](https://archlinuxarm.org/)
 *   [Arch Linux 32](https://archlinux32.org/)

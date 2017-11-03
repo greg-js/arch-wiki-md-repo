@@ -53,7 +53,7 @@ After install is complete, enable Boot Booster in the BIOS. On the second boot a
 
 ## Wireless/rfkill
 
-The wireless interface may become soft blocked shortly after completing initial installation. Install [rfkill](https://www.archlinux.org/packages/?name=rfkill) as part of the installation and see the [rfkill caveat](/index.php/Wireless_network_configuration#Rfkill_caveat "Wireless network configuration").
+The wireless interface may become soft blocked shortly after completing initial installation. See the [rfkill caveat](/index.php/Wireless_network_configuration#Rfkill_caveat "Wireless network configuration").
 
 # Display and input settings
 

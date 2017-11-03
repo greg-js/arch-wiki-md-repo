@@ -557,7 +557,7 @@ IPv6推送主机名：
 
 ### 在笔记本上关闭WLAN
 
-有时候在你使用笔记本上的开关禁用WI-Fi然后重新启用后，NetworkManager无法工作。这常常是`rfkill`的问题。请安装[rfkill](https://www.archlinux.org/packages/?name=rfkill)并使用 $ watch -n1 rfkill list all 检查驱动`rfkill`是否通知到无线适配器的状态. 如果你开启适配器后,其标识符仍然显示blocked,你可以尝试如下命令手动unblock(X是前一条命令的identifier编号)
+有时候在你使用笔记本上的开关禁用WI-Fi然后重新启用后，NetworkManager无法工作。这常常是`rfkill`的问题。 $ watch -n1 rfkill list all 检查驱动`rfkill`是否通知到无线适配器的状态. 如果你开启适配器后,其标识符仍然显示blocked,你可以尝试如下命令手动unblock(X是前一条命令的identifier编号)
 
 ```
 # rfkill event unblock X

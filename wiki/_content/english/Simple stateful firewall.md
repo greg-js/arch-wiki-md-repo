@@ -1,3 +1,10 @@
+Related articles
+
+*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
+*   [Router](/index.php/Router "Router")
+*   [Firewalls](/index.php/Firewalls "Firewalls")
+*   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")
+
 This page explains how to set up a stateful firewall using [iptables](/index.php/Iptables "Iptables"). It also explains what the rules mean and why they are needed. For simplicity, it is split into two major sections. The first section deals with a firewall for a single machine, the second sets up a NAT gateway in addition to the firewall from the first section.
 
 **Warning:** The rules below are given in the order they are executed and should only be followed while logged in locally. If you are logged into a remote machine, you may be locked out of the machine while setting up the rules. To get around this problem in a remote setup, the [example config file](#Example_iptables.rules_file) can be used.
@@ -157,7 +164,7 @@ The third rule will drop all traffic with an "INVALID" state match. Traffic can 
 
 ```
 
-The next rule will accept all new incoming **ICMP echo requests**, also known as pings. Only the first packet will count as NEW, the rest will be handled by the RELATED,ESTABLISHED rule. Since the computer is not a router, no other ICMP traffic with state NEW needs to be allowed.
+The next rule will accept all new incoming **ICMP echo requests**, also known as pings. Only the first packet will count as NEW, the others will be handled by the RELATED, ESTABLISHED rule. Since the computer is not a router, no other ICMP traffic with state NEW needs to be allowed.
 
 ```
 # iptables -A INPUT -p icmp --icmp-type 8 -m conntrack --ctstate NEW -j ACCEPT
@@ -387,7 +394,7 @@ See the [sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardeni
 
 #### Bruteforce attacks
 
-Unfortunately, bruteforce attacks on services accessible via an external IP address are common. One reason for this is that the attacks are easy to do with the many tools available. Fortunately, there are a number of ways to protect the services against them. One is the use of appropriate `iptables` rules which activate and blacklist an IP after a set number of packets attempt to initiate a connection. Another is the use of specialised daemons that monitor the logfiles for failed attempts and blacklist accordingly.
+Unfortunately, bruteforce attacks on services accessible via an external IP address are common. One reason for this is that the attacks are easy to perform with the many tools available. Fortunately, there are a number of ways to protect the services against them. One is the use of appropriate `iptables` rules which activate and blacklist an IP after a set number of packets attempt to initiate a connection. Another is the use of specialised daemons that monitor the logfiles for failed attempts and blacklist accordingly.
 
 **Warning:** Using an IP blacklist will stop trivial attacks but it relies on an additional daemon and successful logging (the partition containing /var can become full, especially if an attacker is pounding on the server). Additionally, with the knowledge of your IP address, the attacker can send packets with a spoofed source header and get you locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to the problem of brute forcing without these problems.
 
@@ -404,22 +411,20 @@ The following rules give an example configuration to mitigate SSH bruteforce att
 
 ```
 
-Most of the options should be self-explanatory, they allow for three connection packets in ten seconds. Further tries in that time will blacklist the IP. The next rule adds a quirk by allowing a total of four attempts in 30 minutes. This is done because some bruteforce attacks are actually performed slow and not in a burst of attempts. The rules employ a number of additional options. To read more about them, check the original reference for this example: [compilefailure.blogspot.com](http://compilefailure.blogspot.com/2011/04/better-ssh-brute-force-prevention-with.html)
+Most of the rules should be self-explanatory: the first one allows for a maximum of three connection packets in ten seconds and drops further attempts from this IP. The next rule adds a quirk by allowing a maximum of four hits in 30 minutes. This is done because some bruteforce attacks are actually performed slow and not in a burst of attempts. The rules employ a number of additional options. To read more about them, check the original reference for this example in [compilefailure.blogspot.com](http://compilefailure.blogspot.com/2011/04/better-ssh-brute-force-prevention-with.html)
 
-Using the above rules, now ensure that `-A INPUT -p tcp --dport ssh -m conntrack --ctstate NEW -j IN_SSH` is in an appropriate position in the iptables.rules file.
+The above rules can be used to protect any service, though the SSH daemon is probably the most often required one.
 
-This arrangement works for the IN_SSH rule if you followed this entire wiki so far:
+In terms of order, one must ensure that `-A INPUT -p tcp --dport ssh -m conntrack --ctstate NEW -j IN_SSH` is at the right position in the iptables sequence: it should come before the TCP chain is attached to INPUT in order to catch new SSH connections first. If all the previous steps of this wiki have been completed, the following positioning works:
 
 ```
-*
+-A INPUT -m conntrack --ctstate INVALID -j DROP
 -A INPUT -p icmp -m icmp --icmp-type 8 -m conntrack --ctstate NEW -j ACCEPT
--A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW -j IN_SSH
+**-A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW -j IN_SSH**
 -A INPUT -p udp -m conntrack --ctstate NEW -j UDP
-*
+-A INPUT -p tcp --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j TCP
 
 ```
-
-The above rules can be used to protect any service, though protecting the SSH daemon is probably the most often required one.
 
 **Tip:** For self-testing the rules after setup, the actual blacklisting can slow the test, making it difficult to fine-tune parameters. One can watch the incoming attempts via `cat /proc/net/xt_recent/sshbf`. To unblock the own IP during testing, root is needed `# echo / > /proc/net/xt_recent/sshbf`
 
@@ -610,10 +615,6 @@ and make sure your rules are loaded when you boot enabling the **iptables** syst
 
 ## See Also
 
-*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
-*   [Router](/index.php/Router "Router")
-*   [Firewalls](/index.php/Firewalls "Firewalls")
-*   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")
 *   [Methods to block SSH attacks](http://www.webhostingtalk.com/showthread.php?t=456571)
 *   [Using iptables to block brute force attacks](http://www.ducea.com/2006/06/28/using-iptables-to-block-brute-force-attacks/)
 *   [20 Iptables Examples For New SysAdmins](http://linuxconfig.org/collection-of-basic-linux-firewall-iptables-rules)

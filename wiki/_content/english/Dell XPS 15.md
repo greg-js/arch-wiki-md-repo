@@ -35,7 +35,6 @@ This page is a work in progress! More info coming soon.
     *   [4.5 External Display](#External_Display)
         *   [4.5.1 Multihead](#Multihead)
     *   [4.6 WLAN](#WLAN)
-        *   [4.6.1 Note](#Note)
     *   [4.7 Bluetooth](#Bluetooth)
     *   [4.8 BIOS](#BIOS)
     *   [4.9 Webcam](#Webcam)
@@ -517,11 +516,7 @@ The modifications to `.xinitrc` automate the configuration of the displays. Firs
 
 ### WLAN
 
-Some users will need to install the [rfkill](https://www.archlinux.org/packages/?name=rfkill) package in order to switch on the wireless adapter with the fn+F2 key. Remember that [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) will be needed for using a network manager such as [NetworkManager](/index.php/NetworkManager "NetworkManager"), see [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") for more information.
-
-#### Note
-
-It seems that [rfkill](https://www.archlinux.org/packages/?name=rfkill) used in conjunction with [NetworkManager](/index.php/NetworkManager "NetworkManager") will cause a normal shutdown to result in reboot when Wlan is powered off. To avoid this DO NOT install both together.
+Remember that [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) will be needed for using a network manager such as [NetworkManager](/index.php/NetworkManager "NetworkManager"), see [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") for more information.
 
 ### Bluetooth
 

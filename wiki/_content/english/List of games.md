@@ -219,6 +219,10 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[http://www.tetrinet.info/](http://www.tetrinet.info/) || [gtetrinet](https://aur.archlinux.org/packages/gtetrinet/)
 
+*   **Trackballs** — A 3D marble game inspired by the classic Marble Madness.
+
+	[https://trackballs.github.io/](https://trackballs.github.io/) || [trackballs](https://aur.archlinux.org/packages/trackballs/)
+
 *   **Ultrastar-ng** — Clone of SingStar, a music video game.
 
 	[http://performous.org/](http://performous.org/) || [ultrastardx-git](https://aur.archlinux.org/packages/ultrastardx-git/)

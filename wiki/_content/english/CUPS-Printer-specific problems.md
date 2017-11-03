@@ -32,12 +32,13 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
     *   [7.1 Utilities](#Utilities_2)
     *   [7.2 Custom drivers](#Custom_drivers_3)
 *   [8 Oki](#Oki)
-*   [9 Samsung](#Samsung)
-*   [10 Xerox or FujiXerox](#Xerox_or_FujiXerox)
-    *   [10.1 Custom drivers](#Custom_drivers_4)
-        *   [10.1.1 Phaser 3100MFP](#Phaser_3100MFP)
-        *   [10.1.2 Phaser 6000B](#Phaser_6000B)
-        *   [10.1.3 Phaser 6125N](#Phaser_6125N)
+*   [9 Ricoh](#Ricoh)
+*   [10 Samsung](#Samsung)
+*   [11 Xerox or FujiXerox](#Xerox_or_FujiXerox)
+    *   [11.1 Custom drivers](#Custom_drivers_4)
+        *   [11.1.1 Phaser 3100MFP](#Phaser_3100MFP)
+        *   [11.1.2 Phaser 6000B](#Phaser_6000B)
+        *   [11.1.3 Phaser 6125N](#Phaser_6125N)
 
 ## Brother
 
@@ -448,6 +449,13 @@ Keep in mind you can use the automated installer but doing so will leave the res
 | C110 | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
 | MC561 | [foomatic-db-nonfree](/index.php/CUPS#Foomatic "CUPS") |
 | Printer | Driver/filter | Notes |
+
+## Ricoh
+
+Install [openprinting-ppds-pxlmono-ricoh](https://aur.archlinux.org/packages/openprinting-ppds-pxlmono-ricoh/) if your device is black and white, or [openprinting-ppds-pxlcolor-ricoh](https://aur.archlinux.org/packages/openprinting-ppds-pxlcolor-ricoh/) if it's color. Note that Ricoh copiers are sometimes branded as Savin, Gestetner, Lanier, Rex-Rotary, Nashuatec, and/or IKON. So, if you have a device bearing one of these brands, it may be supported by these drivers as well.
+
+*   [List of supported black and white models](https://www.openprinting.org/driver/pxlmono-Ricoh)
+*   [List of supported color models](https://www.openprinting.org/driver/pxlcolor-Ricoh)
 
 ## Samsung
 

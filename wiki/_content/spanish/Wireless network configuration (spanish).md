@@ -1,3 +1,10 @@
+Artículos relacionados
+
+*   [Network Configuration (Español)](/index.php/Network_Configuration_(Espa%C3%B1ol) "Network Configuration (Español)")
+*   [Software access point](/index.php/Software_access_point "Software access point")
+*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
+*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
+
 La configuración inalámbrica es un proceso que consta de dos partes: la primera parte consiste en identificar el controlador correcto para el dispositivo inalámbrico, asegurarse que está instalado (los cuales están disponibles en el disco de instalación, así que asegúrese de instalarlos), y configurar la interfaz. La segunda parte consiste en la elección de un método de gestión de las conexiones inalámbricas. Este artículo trata sobre las dos partes, y proporciona enlaces adicionales a las herramientas de gestión inalámbrica.
 
 ## Contents
@@ -525,7 +532,7 @@ Esta sección contiene sugerencias para resolver problemas generales, no estrict
 
 ### Rfkill
 
-Muchos portátiles tienen un botón de hardware (o switch -*«alternador»*-) para desactivar la tarjeta inalámbrica, sin embargo, la tarjeta puede también ser bloqueada por el kernel. Esto puede ser manejado por [rfkill](https://www.archlinux.org/packages/?name=rfkill). Utilice *rfkill* para mostrar el estado actual:
+Muchos portátiles tienen un botón de hardware (o switch -*«alternador»*-) para desactivar la tarjeta inalámbrica, sin embargo, la tarjeta puede también ser bloqueada por el kernel. Esto puede ser manejado por rfkill. Utilice *rfkill* para mostrar el estado actual:
 
  `# rfkill list` 
 ```

@@ -704,6 +704,10 @@ See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc d
 
 	[https://github.com/Martchus/tageditor](https://github.com/Martchus/tageditor) || [tageditor](https://aur.archlinux.org/packages/tageditor/)
 
+*   **Thunar Media Tags Plugin** — Adds special features for media files to the Thunar File Manager, including the ability to edit tags.
+
+	[http://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin) || [thunar-media-tags-plugin](https://www.archlinux.org/packages/?name=thunar-media-tags-plugin)
+
 *   **Qoobar** — Universal QT-based audio tagger (specialized for classical music)
 
 	[http://qoobar.sourceforge.net/en/index.htm](http://qoobar.sourceforge.net/en/index.htm) || [qoobar](https://aur.archlinux.org/packages/qoobar/)
