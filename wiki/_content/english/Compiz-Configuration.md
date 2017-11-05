@@ -152,7 +152,7 @@ Kwin themes can be downloaded, installed and managed using the [KDE](/index.php/
 
 ## Workspaces and Viewports
 
-**Note:** There was once a *Number of Desktops* option under CCSM -> *General Options* -> *Desktop Size* which made it possible to use standard workspaces instead of viewports (though this was incompatible with many Compiz plugins such as *Cube*). As of Compiz 0.9.11 ([revision 3857](http://bazaar.launchpad.net/~compiz-team/compiz/0.9.12/revision/3857)) the *Number of Desktops* option has been removed.
+**Note:** There was once a *Number of Desktops* option under CCSM -> *General Options* -> *Desktop Size* which made it possible to use multiple workspaces along with viewports (though this was incompatible with many Compiz plugins such as *Cube*). As of Compiz 0.9.11 ([revision 3857](http://bazaar.launchpad.net/~compiz-team/compiz/0.9.12/revision/3857)) the *Number of Desktops* option has been removed.
 
 Unlike many other window managers, Compiz does not use multiple workspaces. Instead, it uses one workspace but splits it into multiple sections known as viewports. See [[1]](http://www.circuitousroot.com/artifice/programming/useful/fvwm/viewports/index.html) for more information.
 

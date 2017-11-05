@@ -345,7 +345,7 @@ The `recent` module can be used to keep track of hosts with rejected connection 
 First, insert a rule at the top of the TCP chain. This rule responds with a TCP RESET to any host that got onto the `TCP-PORTSCAN` list in the past sixty seconds. The `--update` switch causes the recent list to be updated, meaning the 60 second counter is reset.
 
 ```
-# iptables -I TCP -p tcp -m recent --update --seconds 60 --name TCP-PORTSCAN -j REJECT --reject-with tcp-reset
+# iptables -I TCP -p tcp -m recent --update --rsource --seconds 60 --name TCP-PORTSCAN -j REJECT --reject-with tcp-reset
 
 ```
 
@@ -353,7 +353,7 @@ Next, the rule for rejecting TCP packets need to be modified to add hosts with r
 
 ```
 # iptables -D INPUT -p tcp -j REJECT --reject-with tcp-reset
-# iptables -A INPUT -p tcp -m recent --set --name TCP-PORTSCAN -j REJECT --reject-with tcp-reset
+# iptables -A INPUT -p tcp -m recent --set --rsource --name TCP-PORTSCAN -j REJECT --reject-with tcp-reset
 
 ```
 
@@ -366,7 +366,7 @@ The Linux kernel sends out ICMP port unreachable messages very slowly, so a full
 First, add a rule to reject packets from hosts on the `UDP-PORTSCAN` list to the top of the UDP chain.
 
 ```
-# iptables -I UDP -p udp -m recent --update --seconds 60 --name UDP-PORTSCAN -j REJECT --reject-with icmp-port-unreachable
+# iptables -I UDP -p udp -m recent --update --rsource --seconds 60 --name UDP-PORTSCAN -j REJECT --reject-with icmp-port-unreachable
 
 ```
 
@@ -374,7 +374,7 @@ Next, modify the reject packets rule for UDP:
 
 ```
 # iptables -D INPUT -p udp -j REJECT --reject-with icmp-port-unreachable
-# iptables -A INPUT -p udp -m recent --set --name UDP-PORTSCAN -j REJECT --reject-with icmp-port-unreachable
+# iptables -A INPUT -p udp -m recent --set --rsource --name UDP-PORTSCAN -j REJECT --reject-with icmp-port-unreachable
 
 ```
 
@@ -418,11 +418,13 @@ The above rules can be used to protect any service, though the SSH daemon is pro
 In terms of order, one must ensure that `-A INPUT -p tcp --dport ssh -m conntrack --ctstate NEW -j IN_SSH` is at the right position in the iptables sequence: it should come before the TCP chain is attached to INPUT in order to catch new SSH connections first. If all the previous steps of this wiki have been completed, the following positioning works:
 
 ```
+...
 -A INPUT -m conntrack --ctstate INVALID -j DROP
 -A INPUT -p icmp -m icmp --icmp-type 8 -m conntrack --ctstate NEW -j ACCEPT
 **-A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW -j IN_SSH**
 -A INPUT -p udp -m conntrack --ctstate NEW -j UDP
 -A INPUT -p tcp --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j TCP
+...
 
 ```
 

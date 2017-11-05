@@ -25,7 +25,7 @@ Related articles
 
 ## Installation
 
-Syncthing can be [installed](/index.php/Install "Install") with the [syncthing](https://www.archlinux.org/packages/?name=syncthing) package.
+[Install](/index.php/Install "Install") the [syncthing](https://www.archlinux.org/packages/?name=syncthing) package.
 
 Synchronization by *inotify* can be added with either the [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify) or the [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) package, see [#Use inotify](#Use_inotify) for caveats. *syncthing-gtk* also provides a GTK interface, [desktop notifications](/index.php/Desktop_notifications "Desktop notifications") and integration with [Nautilus](/index.php/Nautilus "Nautilus"), [Nemo](/index.php/Nemo "Nemo") and Caja.
 
@@ -77,15 +77,13 @@ Next, you can either change the configuration of the default node (click its nam
 
 ### Use inotify
 
-**Note:** There is no need to [enable](/index.php/Enable "Enable") the `syncthing-inotify` service when using the `syncthing` service.
+[Inotify](https://en.wikipedia.org/wiki/Inotify "w:Inotify") (inode notify) is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications. Syncthing does not support *inotify* yet but there is an official extension module which talks to the Syncthing REST API. The usage of *inotify* avoids expensive rescans every minute. The *inotify* extension can be installed with the [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify) package. [Restart](/index.php/Restart "Restart") `syncthing.service` for change to take effect.
 
-[Inotify](https://en.wikipedia.org/wiki/Inotify "w:Inotify") (inode notify) is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications. Syncthing does not support *inotify* yet but there is an official extension module which talks to the Syncthing REST API. The usage of *inotify* avoids expensive rescans every minute. The *inotify* extension can be installed with the [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify) package. [Restart](/index.php/Restart "Restart") the `syncthing` [service](/index.php?title=Service&action=edit&redlink=1 "Service (page does not exist)") for changes to take effect.
+**Note:** There is no need to [enable](/index.php/Enable "Enable") the `syncthing-inotify` service when using the `syncthing` service.
 
 Alternatively, *inotify* support is provided by [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) (which does not depend on [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify)) but in this case *inotify* will only work while the GUI is running.
 
-Increase the default `fs.inotify.max_user_watches` value to prevent errors like *Too many open files*, by [appending](/index.php/Append "Append") the following line:
-
- `/etc/sysctl.d/40-max-user-watches.conf`  `fs.inotify.max_user_watches=524288` 
+**Tip:** To prevent errors like *Too many open files*, increase the default `fs.inotify.max_user_watches` value, by [appending](/index.php/Append "Append") the following line: `/etc/sysctl.d/40-max-user-watches.conf`  `fs.inotify.max_user_watches=524288` 
 
 ### Run a Relay
 
@@ -97,16 +95,16 @@ Anyone can run a [relay server](https://docs.syncthing.net/users/strelaysrv.html
 ```
 [Service]
 ExecStart=
-ExecStart=/usr/bin/syncthing-relaysrv -global-rate 500000 -provided-by relayprovidername
+ExecStart=/usr/bin/syncthing-relaysrv -global-rate 500000 -provided-by *relayprovidername*
 ```
 
-**Note:** The relay listens by default to port 22067 for data and 22070 for service status (used for public statistics). They can be respectively overridden with the `-listen` and `-status-srv` options. These ports should therefore be open for TCP connections.
+**Note:** The relay listens by default to port *22067* for data and *22070* for service status (used for public statistics), they should therefore be open for TCP connections. The default ports can be respectively overridden with the `-listen` and `-status-srv` options if necessary.
 
 **Tip:** The traffic statistics of a particular relay are accessible by default on port 22070, e.g. [http://108.28.183.249:22070/status](http://108.28.183.249:22070/status)
 
 ### Stop journal spam
 
-Syncthing can be quite noisy even while it isn't doing anything. The service ExecStart can be overridden like this to filter output directly without an extra script (adjust "grep" as needed):
+Syncthing can be quite noisy even while it is not doing anything. The service ExecStart can be overridden to filter output directly without an extra script (adjust "grep" as needed):
 
  `/etc/systemd/system/syncthing@.service.d/nospam.conf` 
 ```
@@ -117,9 +115,9 @@ ExecStart=/bin/bash -c 'set -o pipefail; /usr/bin/syncthing -no-browser -no-rest
 
 ### Discovery Server
 
-The Syncthing Discovery Server is available in the AUR under [syncthing-discosrv](https://aur.archlinux.org/packages/syncthing-discosrv/). The official documentation is provided [here](https://docs.syncthing.net/users/stdiscosrv.html).
+Anyone can run a [discovery server](https://docs.syncthing.net/users/stdiscosrv.html) used by Syncthing to find peers on the internet. To run your own server [install](/index.php/Install "Install") the [syncthing-discosrv](https://aur.archlinux.org/packages/syncthing-discosrv/) package.
 
-Note that the discovery server requires certificates to run, which should ideally be placed in `/var/discosrv`. The user/group `syncthing` needs permissions to be able to read the certificate files. You need to edit the systemd unit file to correctly point to the certificates (and to undertake any other configuration change you may want, see [list](https://docs.syncthing.net/users/stdiscosrv.html#configuring)).
+The discovery server requires certificates to run, which should ideally be placed in `/var/discosrv`. The user/group `syncthing` needs permissions to be able to read the certificate files. You need to edit the systemd unit file to correctly point to the certificates (and to undertake any other configuration change you may want, see [list](https://docs.syncthing.net/users/stdiscosrv.html#configuring)).
 
  `/usr/lib/systemd/system/syncthing-discosrv.service` 
 ```

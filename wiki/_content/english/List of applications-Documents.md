@@ -515,6 +515,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 **Note:** Some [PDF and DjVu viewers](#PDF_and_DjVu) also support other e-book formats.
 
+*   **Bookworm** — eBook reader with epub, pdf, mobi, cbr support for Elementary OS.
+
+	[https://babluboy.github.io/bookworm/](https://babluboy.github.io/bookworm/) || [bookworm](https://aur.archlinux.org/packages/bookworm/)
+
 *   **[Calibre](https://en.wikipedia.org/wiki/Calibre_(software) "wikipedia:Calibre (software)")** — E-book library management application that can also convert between different formats and sync with a variety of e-book readers. Supported formats include CBZ, CBR, CBC, CHM, DJVU, EPUB, FictionBook, HTML, HTMLZ, LIT, LRF, Mobipocket, ODT, PDF, PRC, PDB, PML, RB, RTF, SNB, TCR, TXT and TXTZ.
 
 	[https://calibre-ebook.com/](https://calibre-ebook.com/) || [calibre](https://www.archlinux.org/packages/?name=calibre)
@@ -603,7 +607,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 	[https://code-industry.net/free-pdf-editor/](https://code-industry.net/free-pdf-editor/) || [masterpdfeditor](https://aur.archlinux.org/packages/masterpdfeditor/)
 
-*   **[MuPDF](/index.php/MuPDF "MuPDF")** — Very fast PDF and XPS viewer and toolkit written in portable C. Features CJK font support.
+*   **[MuPDF](/index.php/MuPDF "MuPDF")** — Very fast PDF, XPS, and EPUB viewer and toolkit written in portable C. Features CJK font support.
 
 	[https://mupdf.com/](https://mupdf.com/) || [mupdf](https://www.archlinux.org/packages/?name=mupdf)
 

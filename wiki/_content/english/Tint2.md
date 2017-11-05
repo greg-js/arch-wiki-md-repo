@@ -1,4 +1,4 @@
-[tint2](https://gitlab.com/o9000/tint2) is a system panel/taskbar for Linux. It is described by its developers as "simple, unobtrusive and light". It can be configured to include (or not include), among other things, a system tray, a task list, a battery monitor and a clock. Its look can also be configured a great deal, and it does not have many dependencies. This makes it ideal for window manager users who want a panel but do not have one by default, like [Openbox](/index.php/Openbox "Openbox") users.
+[tint2](https://gitlab.com/o9000/tint2) is a system panel/taskbar for Linux. It is described by its developers as "simple, unobtrusive and light". It can be configured to include (or not include), among other things, a system tray, a task list, a battery monitor and a clock. Its look can be configured a great deal, and it does not have many dependencies. This makes it ideal for users of window managers such as [Openbox](/index.php/Openbox "Openbox") which do not provide a panel.
 
 ## Contents
 
@@ -13,8 +13,8 @@
     *   [3.3 Multiple panels](#Multiple_panels)
 *   [4 Enabling transparency](#Enabling_transparency)
     *   [4.1 Fullscreen/Overlay](#Fullscreen.2FOverlay)
-    *   [4.2 Third Party Extensions](#Third_Party_Extensions)
-*   [5 See Also](#See_Also)
+    *   [4.2 Third party extensions](#Third_party_extensions)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -73,13 +73,13 @@ launcher_item_app = /some/where/anotherapplication.desktop
 
 	F
 
-	Expanded Spacer (Only Works Without T)
+	Expanded Spacer (only works without T)
 
 ### Applications menu in Openbox
 
-Since version 0.12, you have the ability to create launchers. Unfortunately, tint2 does not support nested menus yet, so there is no native function to enable an applications menu. With a little ingenuity, one can trick tint2 and get an applications menu anyway! This example will create such a launcher for Openbox.
+Since version 0.12, you have the ability to create launchers. Unfortunately, tint2 does not support nested menus yet, so there is no native function to enable an applications menu. This section describes a way to create a launcher for Openbox.
 
-Besides tint2 and Openbox, you have to [install](/index.php/Install "Install") the [xdotool](https://www.archlinux.org/packages/?name=xdotool) package. Next you want to create a keybinding for opening the Openbox menu. For Openbox, this would require the following entry between the <keyboard> and </keyboard> tags in `~/.config/openbox/rc.xml`:
+Besides tint2 and Openbox, [install](/index.php/Install "Install") the [xdotool](https://www.archlinux.org/packages/?name=xdotool) package. Next, create a keybinding for opening the Openbox menu. For Openbox, this would require the following entry between the <keyboard> and </keyboard> tags in `~/.config/openbox/rc.xml`:
 
 ```
  <keybind key="C-A-space">
@@ -95,7 +95,7 @@ $ xdotool key ctrl+alt+space
 
 ```
 
-If the menu you chose pops up under your mouse cursor, you have done it right! Now create a `open-openbox-menu.desktop` file inside `~/.local/share/applications` directory. Be sure to add the line `Exec=xdotool key ctrl+alt+space` where `Ctrl+Alt+Space` are your chosen key combinations. Open your new `open-openbox-menu.desktop` file from your file manager and, once again, you should see the menu appear under your cursor. Now just add this to tint2 as a launcher, and you have your Openbox Applications Menu as a launcher for tint2!
+If the menu you chose pops up under your mouse cursor, you have done it right! Now create a `open-openbox-menu.desktop` file inside the `~/.local/share/applications` directory. Add the line `Exec=xdotool key ctrl+alt+space` where `Ctrl+Alt+Space` are your chosen key combinations. Open your new `open-openbox-menu.desktop` file from your file manager and, once again, you should see the menu appear under your cursor. Now just add this to tint2 as a launcher, and you have your Openbox Applications Menu as a launcher for tint2.
 
 See [Openbox Menus](http://openbox.org/wiki/Help:Menus) for further help on creating your own menu to use here, and [menumaker](https://www.archlinux.org/packages/?name=menumaker) to generate a nice full `menu.xml` for most (possibly all) of your installed programs.
 
@@ -168,11 +168,11 @@ fi
 
 ```
 
-Various other (better) ways to make Xcompmgr run at startup are discussed in the [Openbox](/index.php/Openbox "Openbox") article.
+Other (better) ways to make Xcompmgr run at startup are discussed in the [Openbox](/index.php/Openbox "Openbox") article.
 
 ### Fullscreen/Overlay
 
-To force tint2 to stay on top of the application(overlay), you need to set the panel_layer option appropriately. This can be helpful when you switch from a fullscreen window to a normal application using Alt-Tab. There is a discussion on this at [Crunchbang Forum](http://crunchbang.org/forums/viewtopic.php?pid=70048)
+To force tint2 to stay on top of the application (overlay), you need to set the panel_layer option appropriately. This can be helpful when you switch from a fullscreen window to a normal application using Alt-Tab. There is a discussion on this at [Crunchbang Forum](http://crunchbang.org/forums/viewtopic.php?pid=70048)
 
 ```
  #Panel
@@ -181,10 +181,10 @@ To force tint2 to stay on top of the application(overlay), you need to set the p
 
 ```
 
-### Third Party Extensions
+### Third party extensions
 
 It is also possible to extend tint2 with other applications. To add third party extensions, check the "Pages" section in the Official Wiki link below.
 
-## See Also
+## See also
 
 *   [Tint2 Official Wiki](https://gitlab.com/o9000/tint2/wikis/home)

@@ -12,9 +12,7 @@
 
 ## Installation
 
-The standard Go compiler is `go`, which can be installed from the [go](https://www.archlinux.org/packages/?name=go) package. The `go` command also include various tooling such as `go get`, `go doc`, etc. An alternative is [gcc-go](https://www.archlinux.org/packages/?name=gcc-go), which is a Go frontend for the GNU Compiler Collection (GCC). In some cases `gccgo` may do better optimisations.
-
-When in doubt: use `go`; it's what almost everyone uses.
+The standard Go compiler is `go`, which can be installed from the [go](https://www.archlinux.org/packages/?name=go) package. The `go` command also include various tooling such as `go get`, `go doc`, etc. An alternative is [gcc-go](https://www.archlinux.org/packages/?name=gcc-go), which is a Go frontend for the GNU Compiler Collection (GCC). In some cases `gccgo` may do better optimisations. When in doubt: use `go`.
 
 An additional package that most Go developers will want to install is `go-tools`. This will provide various commonly used tools which will make working with Go easier, such as `goimports`, `guru`, `gorename`, etc.
 
@@ -82,15 +80,11 @@ Run `go help gopath` for more information.
 
 ### Enable cross compilation for other platforms
 
-The Arch package only supports Linux amd64, i386, and arm. Here's how you can cross-compile to Darwin, FreeBSD and MS Windows.
+The [go](https://www.archlinux.org/packages/?name=go) package only supports Linux *amd64*, *i386*, and *arm*. However you may compile go from source and enable cross-compiling for additional architectures. The following paragraph will outline the basics steps do enable cross-compilation support for *Darwin*, *FreeBSD* and *MS Windows*.
 
-You can not build `/usr/lib/go/src` with the Go version in that directory. You will need to use a different Go installation.
+Download a copy of the source code from the [official website](https://golang.org/) and extracts its content to e.g. `~/downloads/go`.
 
-To get around this, grab a source copy of Go from [https://golang.org/](https://golang.org/).
-
-**Note:** Commands below will assume you extracted your download of Go to `~/downloads/go`.
-
-Build your downloaded Go with your system GO.
+Build your downloaded Go with your system Go:
 
 ```
  $ cd ~/downloads/go/src
@@ -98,7 +92,7 @@ Build your downloaded Go with your system GO.
 
 ```
 
-You can now build your system Go using the downloaded Go as bootstrap with this command.
+You can now build your system Go using the downloaded Go as bootstrap with the following command:
 
 ```
  $ cd /usr/lib/go/src; for os in darwin freebsd windows; do for arch in amd64 386; do sudo GOROOT_BOOTSTRAP="$HOME/downloads/go" GOOS=$os GOARCH=$arch ./make.bash --no-clean; done; done
@@ -113,7 +107,7 @@ For more information, see [FS#30287](https://bugs.archlinux.org/task/30287).
 
 ### Jetbrains Go Plugin
 
-If you are using a Jetbrains IDE and the Go plugin cannot find your Go SDK path, you might be using an incompatible package. Remove the `gcc-go` package and replace it with `go`. If your GOPATH is set, the IDE should now be able to find your Go SDK at `/usr/lib/go`.
+If you are using a Jetbrains IDE and the Go plugin cannot find your Go SDK path, you might be using an incompatible package. Remove the `gcc-go` package and replace it with `go`. If your `$GOPATH` is set, the IDE should now be able to find your Go SDK at `/usr/lib/go`.
 
 ## See also
 

@@ -59,11 +59,11 @@ NZBGet should now be accessible on [http://localhost:6789](http://localhost:6789
 
 ## Running NZBGet under a different user
 
-**Tip:** The [nzbget-systemd](https://aur.archlinux.org/packages/nzbget-systemd/) package provides the `nzbget` user and group, so there is no need of adding a system user.
+**Note:** [nzbget-systemd](https://aur.archlinux.org/packages/nzbget-systemd/) already provides the `nzbget` [user](/index.php/User "User") and [group](/index.php/Group "Group").
 
-For better security it is better to run NZBGet under a [system user](/index.php/Users_and_groups#Example_adding_a_system_user "Users and groups").
+See [system user](/index.php/Users_and_groups#Example_adding_a_system_user "Users and groups") for an example and reasons why it may be useful.
 
-After adding a system user, update the main configuration file using the webinterface or by editing the config file:
+After adding a system user, update the main configuration file using the webinterface or by manually editing `/var/lib/nzbget/.nzbget`:
 
  `/var/lib/nzbget/.nzbget` 
 ```

@@ -3,7 +3,7 @@ Related articles
 *   [Firewalls](/index.php/Firewalls "Firewalls")
 *   [iptables](/index.php/Iptables "Iptables")
 
-[nftables](http://netfilter.org/projects/nftables/) is a netfilter project that aims to replace the existing ip-, ip6-, arp-, and ebtables framework. It provides a new packet filtering framework, a new user-space utility (nft), and a compatibility layer for ip- and ip6tables. It uses the existing hooks, connection tracking system, user-space queueing component, and logging subsystem of netfilter.
+[nftables](http://netfilter.org/projects/nftables/) is a netfilter project that aims to replace the existing {ip,ip6,arp,eb}tables framework. It provides a new packet filtering framework, a new user-space utility (nft), and a compatibility layer for {ip,ip6}tables. It uses the existing hooks, connection tracking system, user-space queueing component, and logging subsystem of netfilter.
 
 It consists of three main components: a kernel implementation, the libnl netlink communication and the nftables user-space front-end. The kernel provides a netlink configuration interface, as well as run-time rule-set evaluation, libnl contains the low-level functions for communicating with the kernel, and the nftables front-end is what the user interacts with via nft.
 
@@ -12,52 +12,47 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Basic implementation](#Basic_implementation)
-    *   [2.1 Load the basic default ruleset](#Load_the_basic_default_ruleset)
-*   [3 nft](#nft)
-*   [4 Tables](#Tables)
-    *   [4.1 Family](#Family)
-    *   [4.2 Listing](#Listing)
-    *   [4.3 Creation](#Creation)
-    *   [4.4 Deletion](#Deletion)
-*   [5 Chains](#Chains)
-    *   [5.1 Listing](#Listing_2)
-    *   [5.2 Creation](#Creation_2)
-        *   [5.2.1 Properties](#Properties)
-            *   [5.2.1.1 Types](#Types)
-            *   [5.2.1.2 Hooks](#Hooks)
-            *   [5.2.1.3 Priorities](#Priorities)
-    *   [5.3 Editing](#Editing)
-    *   [5.4 Deletion](#Deletion_2)
-*   [6 Rules](#Rules)
-    *   [6.1 Listing](#Listing_3)
-    *   [6.2 Creation](#Creation_3)
-        *   [6.2.1 Matches](#Matches)
-        *   [6.2.2 Jumps](#Jumps)
-    *   [6.3 Insertion](#Insertion)
-        *   [6.3.1 Prepended](#Prepended)
-        *   [6.3.2 At a given position](#At_a_given_position)
-    *   [6.4 Deletion](#Deletion_3)
-    *   [6.5 Atomic reloading](#Atomic_reloading)
-*   [7 File definitions](#File_definitions)
-*   [8 Getting started](#Getting_started)
-*   [9 Examples](#Examples)
-    *   [9.1 Simple IP/IPv6 firewall](#Simple_IP.2FIPv6_firewall)
-    *   [9.2 Limit rate IP/IPv6 firewall](#Limit_rate_IP.2FIPv6_firewall)
-    *   [9.3 Jump](#Jump)
-    *   [9.4 Different rules for different interfaces](#Different_rules_for_different_interfaces)
-    *   [9.5 Masquerading](#Masquerading)
-*   [10 See also](#See_also)
+*   [2 Usage](#Usage)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Tables](#Tables)
+        *   [3.1.1 Create table](#Create_table)
+        *   [3.1.2 List tables](#List_tables)
+        *   [3.1.3 List chains and rules in a table](#List_chains_and_rules_in_a_table)
+        *   [3.1.4 Delete table](#Delete_table)
+        *   [3.1.5 Flush table](#Flush_table)
+    *   [3.2 Chains](#Chains)
+        *   [3.2.1 Create chain](#Create_chain)
+            *   [3.2.1.1 Regular chain](#Regular_chain)
+            *   [3.2.1.2 Base chain](#Base_chain)
+        *   [3.2.2 List rules](#List_rules)
+        *   [3.2.3 Edit a chain](#Edit_a_chain)
+        *   [3.2.4 Delete a chain](#Delete_a_chain)
+        *   [3.2.5 Flush rules from a chain](#Flush_rules_from_a_chain)
+    *   [3.3 Rules](#Rules)
+        *   [3.3.1 Add rule](#Add_rule)
+            *   [3.3.1.1 Expressions](#Expressions)
+        *   [3.3.2 Deletion](#Deletion)
+    *   [3.4 Atomic reloading](#Atomic_reloading)
+*   [4 Examples](#Examples)
+    *   [4.1 Workstation](#Workstation)
+    *   [4.2 Simple IPv4/IPv6 firewall](#Simple_IPv4.2FIPv6_firewall)
+    *   [4.3 Limit rate IPv4/IPv6 firewall](#Limit_rate_IPv4.2FIPv6_firewall)
+    *   [4.4 Jump](#Jump)
+    *   [4.5 Different rules for different interfaces](#Different_rules_for_different_interfaces)
+    *   [4.6 Masquerading](#Masquerading)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Simple stateful firewall](#Simple_stateful_firewall)
+        *   [5.1.1 Single machine](#Single_machine)
+    *   [5.2 Prevent brute-force attacks](#Prevent_brute-force_attacks)
+*   [6 See also](#See_also)
 
 ## Installation
 
-Nftables is supported in the Arch Linux kernel. Userspace utilities are are provided by the package [nftables](https://www.archlinux.org/packages/?name=nftables) or the git version [nftables-git](https://aur.archlinux.org/packages/nftables-git/).
+[Install](/index.php/Install "Install") the userspace utilities package [nftables](https://www.archlinux.org/packages/?name=nftables) or the git version [nftables-git](https://aur.archlinux.org/packages/nftables-git/).
 
-## Basic implementation
+## Usage
 
-Like other firewalls, nftables makes a distinction between temporary rules made in the commandline and permanent ones loaded from or saved to a file. The default file is `/etc/nftables.conf` which already contains a simple ipv4/ipv6 firewall table named "inet filter".
-
-### Load the basic default ruleset
+*nftables* makes a distinction between temporary rules made in the commandline and permanent ones loaded from or saved to a file. The default file is `/etc/nftables.conf` which already contains a simple ipv4/ipv6 firewall table named "inet filter".
 
 To use it [start/enable](/index.php/Start/enable "Start/enable") the `nftables.service`.
 
@@ -68,57 +63,35 @@ You can check the ruleset with
 
 ```
 
-If it returns the inet filter table setup, you're good to go for basic desktop internet usage.
-
 **Note:** You may have to create `/etc/modules-load.d/nftables.conf` with all of the nftables related modules you require as entries for the systemd service to work correctly. You can get a list of modules using this command: `$ lsmod | grep '^nf'` Otherwise, you could end up with the dreaded `Error: Could not process rule: No such file or directory` error.
 
-## nft
+## Configuration
 
-nftables' user-space utility `nft` now performs most of the rule-set evaluation before handing rule-sets to the kernel. Because of this, nftables provides no default tables or chains; although, a user can emulate an iptables-like setup.
+nftables' user-space utility *nft* performs most of the rule-set evaluation before handing rule-sets to the kernel. Rules are stored in chains, which in turn are stored in tables. The following sections indicate how to create and modify these constructs.
 
-It works in a fashion similar to ifconfig or iproute2\. The commands are a long, structured sequence rather than using argument switches like in iptables. For example:
-
-```
-nft add rule ip6 filter input ip6 saddr ::1 accept
+All changes below are temporary. To make changes permanent, save your ruleset to `/etc/nftables` which is loaded by `nftables.service`:
 
 ```
-
-`add` is the command. `rule` is a subcommand of `add`. `ip6` is an argument of `rule`, telling it to use the ip6 family. `filter` and `input` are arguments of `rule` specifying the table and chain to use, respectively. The rest that follows is a rule definition, which includes matches (`ip`), their parameters (`saddr`), parameter arguments (`::1`), and jumps (`accept`).
-
-The following is an incomplete list of the commands available in nft:
-
-```
-list
-  tables [family]
-  table [family] <name>
-  chain [family] <table> <name>
-
-add
-  table [family] <name>
-  chain [family] <table> <name> [chain definitions]
-  rule [family] <table> <chain> <rule definition>
-
-table [family] <name> (shortcut for `add table`)
-
-insert
-  rule [family] <table> <chain> <rule definition>
-
-delete
-  table [family] <name>
-  chain [family] <table> <name>
-  rule [family] <table> <handle>
-
-flush
-  table [family] <name>
-  chain [family] <table> <name>
+# nft list ruleset > /etc/nftables.conf
 
 ```
 
-`family` is optional, see [section on family](#Family) below.
+**Note:** `nft list` does not output variable definitions, if you have any in `/etc/nftables` they will be lost. Any variables used in rules will be replaced by that variable value.
 
-## Tables
+To read input from a file use the `-f` flag:
 
-The purpose of tables is to hold chains. Unlike tables in iptables, there are no built-in tables in nftables. How many tables one uses, or their naming, is largely a matter of style and personal preference. However, each table has a (network) family and only applies to packets of this family. Tables can have one of five families specified, which unifies the various iptables utilities into one:
+```
+# nft -f *filename*
+
+```
+
+Note that any rules already loaded are not automatically flushed.
+
+See [nft(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for a complete list of all commands.
+
+### Tables
+
+Tables hold [#Chains](#Chains). Unlike tables in iptables, there are no built-in tables in nftables. The number of tables and their names is up to the user. However, each table only has one address family and only applies to packets of this family. Tables can have one of five families specified:
 
 | nftables family | iptables utility |
 | ip | iptables |
@@ -127,126 +100,137 @@ The purpose of tables is to hold chains. Unlike tables in iptables, there are no
 | arp | arptables |
 | bridge | ebtables |
 
-### Family
-
 `ip` (i.e. IPv4) is the default family and will be used if family is not specified.
-
-IPv6 is specified as `ip6`.
 
 To create one rule that applies to both IPv4 and IPv6, use `inet`. `inet` allows for the unification of the `ip` and `ip6` families to make defining rules for both easier.
 
 **Note:** `inet` does not work for `nat`-type chains, only for `filter`-type chains. ([source](http://www.spinics.net/lists/netfilter/msg56411.html))
 
-### Listing
+See the section `ADDRESS FAMILIES` in [nft(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for a complete description of address families.
 
-You can list the current tables in a family with the `nft list` command.
+In all of the following, `*family*` is optional, and if not specified is set to `ip`.
+
+#### Create table
+
+The following adds a new table:
+
+```
+# nft add table *family* *table*
+
+```
+
+#### List tables
+
+To list all tables:
 
 ```
 # nft list tables
-# nft list tables ip6
 
 ```
 
-You can list a full table definition by specifying a table name:
+#### List chains and rules in a table
+
+To list all chains and rules of a specified table do:
 
 ```
-# nft list table *foo*
-# nft list table *ip6 foo*
-
-```
-
-### Creation
-
-Tables can be added via two commands — one just being a shortcut for the other. Here is an example of how to add an ip table called foo and an ip6 table called foo:
-
-```
-# nft add table *foo*
-# nft table *ip6 foo*
+# nft list table *family* *table*
 
 ```
 
-You can have two tables with the same name as long as they are in different families.
+For example, to list all the rules of the `filter` table of the `inet` family:
 
-### Deletion
+```
+# nft list table inet filter
+
+```
+
+#### Delete table
+
+To delete a table do:
+
+```
+# nft delete table *family* *table*
+
+```
 
 Tables can only be deleted if there are no chains in them.
 
-```
-# nft delete table *foo*
-# nft delete table *ip6 foo*
+#### Flush table
+
+To flush all rules from a table do:
 
 ```
-
-## Chains
-
-The purpose of chains is to hold rules. Unlike chains in iptables, there are no built-in chains in nftables. This means that if no chain uses any types or hooks in the netfilter framework, packets that would flow through those chains will not be touched by nftables, unlike iptables.
-
-### Listing
-
-The `nft list table foo` command will list all the chains in the foo table. You can also list rules from an individual chain.
-
-```
-# nft list chain *foo* *bar*
-# nft list chain *ip6 foo bar*
+# nft flush table *family* *table*
 
 ```
 
-These commands will list the `bar` chains in the ip and ip6 `foo` tables.
+### Chains
 
-### Creation
+The purpose of chains is to hold [#Rules](#Rules). Unlike chains in iptables, there are no built-in chains in nftables. This means that if no chain uses any types or hooks in the netfilter framework, packets that would flow through those chains will not be touched by nftables, unlike iptables.
 
-Chains can be added when a table is created in a file definition or one at time via the `nft add chain` command.
+Chains have two types. A *base* chain is an entry point for packets from the networking stack, where a hook value is specified. A *regular* chain may be used as a jump target for better organization.
 
-```
-# nft add chain *foo* *bar*
-# nft add chain *ip6 foo bar*
+In all of the following `*family*` is optional, and if not specified is set to `ip`.
 
-```
+#### Create chain
 
-These commands will add a chain called `bar` to the ip and ip6 `foo` tables.
+##### Regular chain
 
-#### Properties
-
-Because nftables has no built-in chains, it allows chains to access certain features of the netfilter framework.
+The following adds a regular chain named `*chain*` to the table named `*table*`:
 
 ```
-# nft add chain filter input \{ type filter hook input priority 0\; \}
+# nft add chain *family* *table* *chain*
 
 ```
 
-This command tells nftables to add a chain called `input` to the `filter` table and defines its type, hook, and priority. These properties essentially replace the built-in tables and chains in iptables.
+For example, to add a regular chain named `tcpchain` to the `filter` table of the `inet` address family do:
 
-##### Types
+```
+# nft add chain inet filter tcpchain
 
-There are three types a chain can have and they correspond to the tables used in iptables:
+```
 
-*   filter
-*   nat
-*   route (mangle)
+##### Base chain
 
-##### Hooks
+To add a base chain specify hook and priority values:
 
-There are six hooks a chain can use and all except ingress correspond to chains used in iptables:
+```
+# nft add chain *family* *table* *chain* { type *type* hook *hook* priority *priority* \; }
 
-*   ingress
-*   input
-*   output
-*   forward
-*   prerouting
-*   postrouting
+```
 
-The ingress hook is an alternative to the existing `tc` utility.
+`*type*` can be `filter`, `route`, or `nat`.
 
-##### Priorities
+For IPv4/IPv6/Inet address families `*hook*` can be `prerouting`, `input`, `forward`, `output`, or `postrouting`. See [nft(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for a list of hooks for other families.
 
-**Note:**
+`*priority*` takes an integer value. Chains with lower numbers are processed first and can be negative. [[1]](https://wiki.nftables.org/wiki-nftables/index.php/Configuring_chains#Base_chain_types)
 
-*   Priorities do not currently appear to have any effect on which chain sees packets first.
-*   Since the priority seems to be an unsigned integer, negative priorities will be converted into very high priorities.
+For example, to add a base chain that filters input packets:
 
-Priorities tell nftables which chains packets should pass through first. They are integers, and the higher the integer, the higher the priority.
+```
+# nft add chain inet filter input { type filter hook input priority 0\; }
 
-### Editing
+```
+
+Replace `add` with `create` in any of the above to add a new chain but return an error if the chain already exists.
+
+#### List rules
+
+The following lists all rules of a chain:
+
+```
+# nft list chain *family* *table* *chain*
+
+```
+
+For example, the following lists the rules of the chain named `output` in the `inet` table named `filter`:
+
+```
+# nft list chain inet filter output
+
+```
+
+#### Edit a chain
 
 To edit a chain, simply call it by its name and define the rules you want to change.
 
@@ -262,49 +246,57 @@ If for example, you just want to change the input chain policy of the default ta
 
 ```
 
-### Deletion
+#### Delete a chain
 
-Chains can only be deleted if there are no rules in them.
-
-```
-# nft delete chain *foo bar*
-# nft delete chain *ip6 foo bar*
+To delete a chain do:
 
 ```
-
-These commands delete the `bar` chains from the ip and ip6 `foo` tables.
-
-## Rules
-
-The purpose of rules is to identify packets (match) and carry out tasks (jump). Like in iptables, there are various matches and jumps available, though not all of them are feature-complete in nftables.
-
-### Listing
-
-You can list the current rules in a table with the `nft list` command, using the same method as listing a table. You can also list rules from an individual chain.
-
-```
-# nft list chain *foo bar*
-# nft list chain *ip6 foo bar*
+# nft delete chain *family* *table* *chain*
 
 ```
 
-These commands will list the rules in the `bar` chains in the ip and ip6 `foo` tables.
+The chain must not contain any rules or be a jump target.
 
-### Creation
+#### Flush rules from a chain
 
-Rules can be added when a table is created in a file definition or one at time via the `nft add rule` command.
-
-```
-# nft add rule foo bar ip saddr 127.0.0.1 accept
-# nft add rule ip6 foo bar ip saddr ::1 accept
+To flush rules from a chain do:
 
 ```
+# nft flush chain *family* *table* *chain*
 
-These commands will add a rule to the `bar` chains in the ip and ip6 `foo` tables that matches an `ip` packet when its `saddr` (source address) is 127.0.0.1 (IPv4) or ::1 (IPv6) and accepts those packets.
+```
 
-#### Matches
+### Rules
 
-There are various matches available in nftables and, for the most part, coincide with their iptables counterparts. The most noticeable difference is that there are no generic or implicit matches anymore. A generic match was one that was always available, such as `--protocol` or `--source`. Implicit matches were protocol-specific, such as `--sport` when a packet was determined to be TCP.
+Rules are either constructed from expressions or statements and are contained within chains.
+
+#### Add rule
+
+**Tip:** The *iptables-translate* utility translates [iptables](/index.php/Iptables "Iptables") rules to nftables format.
+
+To add a rule to a chain do:
+
+```
+# nft add rule *family* *table* *chain* *position* *statement*
+
+```
+
+The rule is appended at `*position*`, which is optional. If not specified, the rule is appended to the end of the chain.
+
+To prepend the rule to the position do:
+
+```
+# nft insert rule *family* *table* *chain* *position* *statement*
+
+```
+
+If `*position*` is not specified, the rule is prepended to the chain.
+
+##### Expressions
+
+Typically a `*statement*` includes some expression to be matched and then a verdict statement. Verdict statements include `accept`, `drop`, `queue`, `continue`, `return`, `jump *chain*`, and `goto *chain*`. Other statements than verdict statements are possible. See [nft(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for more information.
+
+There are various expressions available in nftables and, for the most part, coincide with their iptables counterparts. The most noticeable difference is that there are no generic or implicit matches. A generic match was one that was always available, such as `--protocol` or `--source`. Implicit matches were protocol-specific, such as `--sport` when a packet was determined to be TCP.
 
 The following is an incomplete list of the matches available:
 
@@ -362,56 +354,7 @@ ct:
 
 ```
 
-#### Jumps
-
-Jumps work the same as they do in iptables, except multiple jumps can now be used in one rule.
-
-```
-# nft add rule filter input tcp dport 22 log accept
-
-```
-
-The following is an incomplete list of jumps:
-
-*   accept (accept a packet)
-*   reject (reject a packet)
-*   drop (drop a packet)
-*   snat (perform source NAT on a packet)
-*   dnat (perform destination NAT on a packet)
-*   log (log a packet)
-*   counter (keep a counter on a packet; counters are optional in nftables)
-*   return (stop traversing the chain)
-*   jump <chain> (jump to another chain)
-*   goto <chain> (jump to another chain, but do not return)
-
-### Insertion
-
-#### Prepended
-
-Rules can be prepended to chains with the `nft insert rule` command.
-
-```
-# nft insert rule filter input ct state established,related accept
-
-```
-
-#### At a given position
-
-Nftables uses handles to define the position of a rule. To get this information, you need to list the ruleset with the -a flag:
-
-```
- # nft list ruleset -a
-
-```
-
-To add a rule *after* another rule with a given handler, you have to type:
-
-```
- # nft add rule *table_name* *chain_name* position *handler_number* *[rule-definition]*
-
-```
-
-### Deletion
+#### Deletion
 
 Individual rules can only be deleted by their handles. The `nft --handle list` command must be used to determine rule handles. Note the `--handle` switch, which tells `nft` to list handles in its output.
 
@@ -467,74 +410,38 @@ Now you can edit /tmp/nftables and apply your changes with:
 
 ```
 
-## File definitions
+## Examples
 
-File definitions can be used by the `nft -f` command, which acts like the `iptables-restore` command. However, unlike `iptables-restore`, this command does not flush out your existing ruleset, to do so you have to prepend the flush command.
+### Workstation
 
- `/etc/nftables/filter.rules` 
+ `/etc/nftables.conf` 
 ```
-flush table ip filter
-table ip filter {
-     chain input {
-          type filter hook input priority 0;
-          ct state established,related accept
-          ip saddr 127.0.0.1 accept
-          tcp dport 22 log accept
-          reject
-     }
+flush ruleset
+
+table inet filter {
+        chain input {
+                type filter hook input priority 0;
+
+                # accept any localhost traffic
+                iif lo accept
+
+                # accept traffic originated from us
+                ct state established,related accept
+
+                # activate the following line to accept common local services
+                #tcp dport { 22, 80, 443 } ct state new accept
+
+                # accept neighbour discovery otherwise IPv6 connectivity breaks.
+                ip6 nexthdr icmpv6 icmpv6 type { nd-neighbor-solicit,  nd-router-advert, nd-neighbor-advert } accept
+
+                # count and drop any other traffic
+                counter drop
+        }
 }
 
 ```
 
-To export your rules (like `iptables-save`):
-
-```
-# nft list ruleset
-
-```
-
-## Getting started
-
-The below example shows *nft* commands to configure a basic **IPv4** only firewall. If you want to filter both IPv4 **and** IPv6 you should look at the other examples in `/usr/share/nftables` or just start with the default provided in `/etc/nftables.conf` which already works with IPv4/IPv6.
-
-To get an [iptables](/index.php/Iptables "Iptables")-like chain set up, you will first need to use the provided IPv4 filter file:
-
-```
-# nft -f /usr/share/nftables/ipv4-filter
-
-```
-
-To list the resulting chain:
-
-```
-# nft list table filter
-
-```
-
-Drop output to a destination:
-
-```
-# nft add rule ip filter output ip daddr 1.2.3.4 drop
-
-```
-
-Drop packets destined for local port 80:
-
-```
-# nft add rule ip filter input tcp dport 80 drop
-
-```
-
-Delete all rules in a chain:
-
-```
-# nft delete rule filter output
-
-```
-
-## Examples
-
-### Simple IP/IPv6 firewall
+### Simple IPv4/IPv6 firewall
 
  `firewall.rules` 
 ```
@@ -566,11 +473,20 @@ table inet filter {
 		# HTTP (ports 80 & 443)
 		tcp dport { http, https } accept
 	}
+
+	chain forward {
+		type filter hook forward priority 0; policy drop;
+	}
+
+	chain output {
+		type filter hook output priority 0; policy accept;
+	}
+
 }
 
 ```
 
-### Limit rate IP/IPv6 firewall
+### Limit rate IPv4/IPv6 firewall
 
  `firewall.2.rules` 
 ```
@@ -585,12 +501,21 @@ table inet filter {
 		ct state established,related accept
 		ct state invalid drop
 
-		iifname lo accept
+		iif lo accept
 
 		# avoid brute force on ssh:
 		tcp dport ssh limit rate 15/minute accept
 
 	}
+
+	chain forward {
+		type filter hook forward priority 0; policy drop;
+	}
+
+	chain output {
+		type filter hook output priority 0; policy accept;
+	}
+
 }
 
 ```
@@ -624,7 +549,7 @@ table inet filter {
   chain input { # this chain serves as a dispatcher
     type filter hook input priority 0;
 
-    iifname lo accept # always accept loopback
+    iif lo accept # always accept loopback
     iifname enp2s0 jump input_enp2s0
     iifname enp3s0 jump input_enp3s0
 
@@ -686,6 +611,131 @@ table ip nat {
 }
 
 ```
+
+## Tips and tricks
+
+### Simple stateful firewall
+
+See [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall") for more information.
+
+#### Single machine
+
+Flush the current ruleset:
+
+```
+# nft flush ruleset
+
+```
+
+Add a table:
+
+```
+# nft add table inet filter
+
+```
+
+Add the input, forward, and output base chains. The policy for input and forward will be to drop. The policy for output will be to accept.
+
+```
+# nft add chain inet filter input { type filter hook input priority 0 \; policy drop \; }
+# nft add chain inet filter forward { type filter hook forward priority 0 \; policy drop \; }
+# nft add chain inet filter output { type filter hook output priority 0 \; policy accept \; }
+
+```
+
+Add two regular chains that will be associate with tcp and udp:
+
+```
+# nft add chain inet filter TCP
+# nft add chain inet filter UDP
+
+```
+
+Related and established traffic will be accepted:
+
+```
+# nft add rule inet filter input ct state related,established accept
+
+```
+
+All loopback interface traffic will be accepted:
+
+```
+# nft add rule inet filter input iif lo accept
+
+```
+
+Drop any invalid traffic:
+
+```
+# nft add rule inet filter input ct state invalid drop
+
+```
+
+New echo requests (pings) will be accepted:
+
+```
+# nft add rule inet filter input icmp type echo-request ct state new accept
+
+```
+
+New upd traffic will jump to the UDP chain:
+
+```
+# nft add rule ip filter input ip protocol udp ct state new jump UDP
+
+```
+
+New tcp traffic will jump to the TCP chain:
+
+```
+# nft add rule ip filter input tcp flags & (fin|syn|rst|ack) == syn ct state new jump TCP
+
+```
+
+Reject all traffic that was not processed by other rules:
+
+```
+# nft add rule ip filter input ip protocol udp reject
+# nft add rule ip filter input ip protocol tcp reject with tcp reset
+# nft add rule ip filter input counter reject with icmp type prot-unreachable
+
+```
+
+Add this point you should decide what ports you want to open to incoming connections, which are handled by the TCP and UDP chains. For example to open connections for a web server add:
+
+```
+# nft add rule ip filter TCP tcp dport 80 accept
+
+```
+
+To accept HTTPS connections for a webserver on port 443:
+
+```
+# nft add rule ip filter TCP tcp dport 443 accept
+
+```
+
+To accept SSH traffic on port 22:
+
+```
+# nft add rule ip filter TCP tcp dport 22 accept
+
+```
+
+To accept incoming DNS requests:
+
+```
+# nft add rule ip filter TCP tcp dport 53 accept
+# nft add rule ip filter UDP tcp dport 53 accept
+
+```
+
+Be sure to make your changes permanent when satisifed.
+
+### Prevent brute-force attacks
+
+[Sshguard](/index.php/Sshguard "Sshguard") is program that can detect brute-force attacks and modify firewalls based on IP addresses it temporarily blacklists. See [Sshguard#nftables](/index.php/Sshguard#nftables "Sshguard") on how to set up nftables to be used with it.
 
 ## See also
 

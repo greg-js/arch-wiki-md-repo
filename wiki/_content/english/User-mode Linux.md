@@ -50,17 +50,17 @@ Hostfs means use the host's file system in read-only mode.
 
 #### Build rootfs image
 
-1.) First you have to create a single, big file into which you will install Arch Linux. This command creates a single 1 GB file, only containing zeros, which should be enough for a basic Arch Linux installation.
+1.) First you have to create a single, big file into which you will install Arch Linux. This command creates a single 1 GiB file, only containing zeros, which should be enough for a basic Arch Linux installation.
 
 ```
-dd if=/dev/zero of=rootfs bs=1MB count=1000
+dd if=/dev/zero of=rootfs bs=1M count=1024
 
 ```
 
 or
 
 ```
-fallocate -l 1GB ./rootfs
+fallocate -l 1GiB ./rootfs
 
 ```
 

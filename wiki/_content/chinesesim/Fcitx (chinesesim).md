@@ -382,9 +382,9 @@ gsettings set \
 由于 wayland 无法读取 `~/.xprofile` 中的环境变量，所以请在`/etc/environment`中加入：
 
 ```
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
 
 ```
 

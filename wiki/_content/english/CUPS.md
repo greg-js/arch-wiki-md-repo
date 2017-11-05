@@ -130,13 +130,13 @@ The URI should be of the form `parallel:*device*`. For instance, if the printer 
 
 If you have set up [Avahi](/index.php/Avahi "Avahi") as in [#Network](#Network), CUPS should detect the printer URI. You can also use `avahi-discover` to find the name of your printer and its address (for instance, `BRN30055C6B4C7A.local/10.10.0.155:631`).
 
-The URI can also be generated manually, without using [Avahi](/index.php/Avahi "Avahi"). A list of the available URI schemes for networked printers is available in the CUPS documentation [[2]](https://www.cups.org/doc/network.html#PROTOCOLS). As exact details of the URIs differ between printers, check either the manual of the printer or [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems").
+The URI can also be generated manually, without using [Avahi](/index.php/Avahi "Avahi"). A list of the available URI schemes for networked printers is available in the [CUPS documentation](https://www.cups.org/doc/network.html#PROTOCOLS). As exact details of the URIs differ between printers, check either the manual of the printer or [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems").
 
 Remote CUPS print servers can be accessed through a URI of the form `ipp://*hostname*:631/printers/*queue_name*`. See [CUPS/Printer sharing#Between GNU/Linux systems](/index.php/CUPS/Printer_sharing#Between_GNU.2FLinux_systems "CUPS/Printer sharing") for details on setting up the remote print server.
 
 See [CUPS/Troubleshooting#Networking issues](/index.php/CUPS/Troubleshooting#Networking_issues "CUPS/Troubleshooting") for additional issues and solutions.
 
-**Warning:** Avoid configuring both the server and the client with a printer filter - either the print queue on the client or the server should be 'raw'. This avoids sending a print job through the filters for a printer twice, which can cause problems (for instance, [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1589908#p1589908)). See [#Usage](#Usage) for an example of setting a print queue to 'raw'.
+**Warning:** Avoid configuring both the server and the client with a printer filter - either the print queue on the client or the server should be 'raw'. This avoids sending a print job through the filters for a printer twice, which can cause problems (for instance, [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1589908#p1589908)). See [#Usage](#Usage) for an example of setting a print queue to 'raw'.
 
 ## Usage
 
@@ -360,7 +360,7 @@ polkit.addRule(function(action, subject) {
 
 CUPS can be configured to directly connect to remote printer servers instead of running a local print server. This requires [installation](/index.php/Install "Install") of the [libcups](https://www.archlinux.org/packages/?name=libcups) package. Some applications will still require the [cups](https://www.archlinux.org/packages/?name=cups) package for printing.
 
-**Warning:** Accessing remote printers without a local CUPS server is not recommended by the developers. [[4]](http://www.cups.org/pipermail/cups/2015-October/027229.html)
+**Warning:** Accessing remote printers without a local CUPS server is not recommended by the developers. [[3]](http://www.cups.org/pipermail/cups/2015-October/027229.html)
 
 To use a remote CUPS server, set the `CUPS_SERVER` [environment variable](/index.php/Environment_variable "Environment variable") to `printerserver.mydomain:port`. For instance, if you want to use a different print server for a single [Firefox](/index.php/Firefox "Firefox") instance (substitute `printserver.mydomain:port` with your print server name/port):
 

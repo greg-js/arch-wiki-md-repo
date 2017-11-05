@@ -26,7 +26,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [5.3 CPU frequency governor](#CPU_frequency_governor)
     *   [5.4 High DPC Latency](#High_DPC_Latency)
         *   [5.4.1 CPU pinning with isolcpus](#CPU_pinning_with_isolcpus)
-    *   [5.5 Improving performance on AMD CPU](#Improving_performance_on_AMD_CPU)
+    *   [5.5 Improving performance on AMD CPUs](#Improving_performance_on_AMD_CPUs)
     *   [5.6 Further Tuning](#Further_Tuning)
 *   [6 Special procedures](#Special_procedures)
     *   [6.1 Using identical guest and host GPUs](#Using_identical_guest_and_host_GPUs)
@@ -462,30 +462,11 @@ The `chrt` command will ensure that the task scheduler will round-robin distribu
 
 See [this reddit comment](https://www.reddit.com/r/VFIO/comments/6vgtpx/high_dpc_latency_and_audio_stuttering_on_windows/dm0sfto/) for more info.
 
-### Improving performance on AMD CPU
+### Improving performance on AMD CPUs
 
-**Note:** Was tested on AMD Ryzen 5 1600 - helps a lot, depends on guest's applications. This slows down systems with AMD FX processors considerably, 1GB hugepages are fine however.
+Previously, Nested Page Tables (NPT) had to be disabled on AMD systems running KVM to improve GPU performance because of a [very old bug](https://sourceforge.net/p/kvm/bugs/230/), but the trade off was decreased CPU performance, including stuttering. There is now a [kernel patch](https://patchwork.kernel.org/patch/10027525/)that resolves this issue, you can get it by installing [linux-npt](https://aur.archlinux.org/packages/linux-npt/) or compiling the kernel yourself with the patch applied.
 
-Disabling Nested Page Tables(aka NPT) will improve GPU performance to a bare metal level.
-
- `/etc/modprobe.d/kvm_amd.conf`  `options kvm_amd npt=0` 
-
-Using [huge pages](#Static_huge_pages) for guest and bigger huge page size(e.g. 1 GB) could reduce periodical micro-freezes of whole VM introduced by disabled NPT.
-
-If periodical stuttering still occurs try removing smep feature from vCPU:
-
- `EDITOR=nano virsh edit [vmname]` 
-```
-...
-
-  <cpu mode='host-passthrough' check='none'>
-    ...
-    <feature policy='disable' name='smep'/>
-    ...
-  </cpu>
-
-...
-```
+**Note:** Several Ryzen users (see [this Reddit thread](https://www.reddit.com/r/VFIO/comments/78i3jx/possible_fix_for_the_npt_issue_discussed_on_iommu/)) have tested the patch, including myself, and can confirm that it works amazingly well, bringing GPU passthrough performance up to near native quality.
 
 ### Further Tuning
 

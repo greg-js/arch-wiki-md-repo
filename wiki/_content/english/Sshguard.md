@@ -18,12 +18,14 @@ sshguard is not vulnerable to most (or maybe any) of the log analysis [vulnerabi
     *   [2.1 FirewallD](#FirewallD)
     *   [2.2 UFW](#UFW)
     *   [2.3 iptables](#iptables)
+    *   [2.4 nftables](#nftables)
 *   [3 Usage](#Usage)
     *   [3.1 systemd](#systemd)
     *   [3.2 syslog-ng](#syslog-ng)
 *   [4 Configuration](#Configuration)
-    *   [4.1 Change danger level](#Change_danger_level)
-    *   [4.2 Aggressive banning](#Aggressive_banning)
+    *   [4.1 Blacklisting threshold](#Blacklisting_threshold)
+    *   [4.2 Moderate banning example](#Moderate_banning_example)
+    *   [4.3 Aggressive banning](#Aggressive_banning)
 *   [5 Tips and Tricks](#Tips_and_Tricks)
     *   [5.1 Unbanning](#Unbanning)
     *   [5.2 Logging](#Logging)
@@ -34,11 +36,11 @@ sshguard is not vulnerable to most (or maybe any) of the log analysis [vulnerabi
 
 ## Setup
 
-sshguard works by monitoring `/var/log/auth.log`, syslog-ng or the systemd journal for failed login attempts. For each failed attempt, the offending host is banned from further communication for a limited amount of time. The default amount of time the offender is banned starts at 7 minutes, and doubles each time he or she fails another login. sshguard can be configured to permanently ban a host with too many failed attempts.
+sshguard works by monitoring `/var/log/auth.log`, syslog-ng or the systemd journal for failed login attempts. For each failed attempt, the offending host is banned from further communication for a limited amount of time. The default amount of time the offender is banned starts at 120 seconds, and is increases by a factor of 1.5 every time it fails another login. sshguard can be configured to permanently ban a host with too many failed attempts.
 
-Both temporary and permanent bans are done by adding an entry into the "sshguard" chain in iptables that drops all packets from the offender. The ban is then logged to syslog and ends up in `/var/log/auth.log`, or the systemd journal, if systemd is being used.
+Both temporary and permanent bans are done by adding an entry into the "sshguard" chain in iptables that drops all packets from the offender. The ban is then logged to syslog and ends up in `/var/log/auth.log`, or the systemd journal if the latter is being used.
 
-You must configure a firewall to be used with sshguard in order for blocking to work.
+You must configure one of the following firewalls to be used with sshguard in order for blocking to work.
 
 #### FirewallD
 
@@ -99,10 +101,10 @@ The main configuration required is creating a chain named `sshguard`, where sshg
 
 ```
 
-Then add a rule to jump to the `sshguard` chain from the `INPUT` chain. This rule must be added **before** any other rules processing the ports that sshguard is protecting. See [this example](http://www.sshguard.net/docs/setup/#netfilter-iptables).
+Then add a rule to jump to the `sshguard` chain from the `INPUT` chain. This rule must be added **before** any other rules processing the ports that sshguard is protecting. Use the following line to protect FTP and SSH or see [this documentation](http://www.sshguard.net/docs/setup/#netfilter-iptables) for more examples.
 
 ```
-# iptables -A INPUT -p tcp --dport 22 -j sshguard
+# iptables -A INPUT -m multiport -p tcp --destination-ports 21,22 -j sshguard
 
 ```
 
@@ -114,6 +116,22 @@ To save the rules:
 ```
 
 **Note:** For IPv6, repeat the same steps with *ip6tables* and save the rules with *ip6tables-save* to `/etc/iptables/ip6tables.rules`.
+
+#### nftables
+
+Edit `/etc/sshguard.conf` and change the value of `BACKEND` to the following:
+
+ `/etc/sshguard.conf`  `BACKEND="/usr/lib/sshguard/sshg-fw-nft-sets"` 
+
+Additionally you will need to [edit](/index.php/Edit "Edit") the `sshguard.service` so that [iptables](/index.php/Iptables "Iptables") is not run:
+
+```
+[Service]
+ExecStartPre= 
+
+```
+
+When you [start/enable](/index.php/Start/enable "Start/enable") the `sshguard.service`, two new tables named `sshguard` in the `ip` and `ip6` address families are added which filter incoming traffic through sshguard's list of IP addresses. The chains in the `sshguard` table have a priority of -10 and will be processed before other rules lower priority. See [sshguard-setup(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sshguard-setup.7) and [nftables](/index.php/Nftables "Nftables") for more information.
 
 ## Usage
 
@@ -134,11 +152,11 @@ If you have [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng) inst
 
 Configuration is done in `/etc/sshguard.conf` which is required for *sshguard* to start. A commented example is located at `/usr/share/doc/sshguard/sshguard.conf.sample`.
 
-**Note:** Piped commands and runtime flags in *sshguards's* systemd units [are not supported](https://sourceforge.net/p/sshguard/mailman/message/35709860/). Such flags can be modified in the configuration file.
+**Note:** Piped commands and runtime flags in *sshguard's* systemd units [are not supported](https://sourceforge.net/p/sshguard/mailman/message/35709860/). Such flags can be modified in the configuration file.
 
-### Change danger level
+### Blacklisting threshold
 
-By default in the Arch-provided configuration file, offenders become permanently banned once they have reached a "danger" level of 120 (or 12 failed logins; see [attack dangerousness](https://www.sshguard.net/docs/terminology/#attack-dangerousness) for more details). This behavior can be modified by prepending a danger level to the blacklist file.
+By default in the Arch-provided configuration file, offenders become permanently banned once they reach a "danger" level of 120 (or 12 failed logins; see [attack dangerousness](https://www.sshguard.net/docs/terminology/#attack-dangerousness) for more details). This behavior can be modified by prepending a danger level to the blacklist file.
 
 ```
 BLACKLIST_FILE=200:/var/db/sshguard/blacklist.db
@@ -147,7 +165,22 @@ BLACKLIST_FILE=200:/var/db/sshguard/blacklist.db
 
 The `200:` in this example tells sshguard to permanently ban a host after achieving a danger level of 200.
 
-Finally [restart](/index.php/Restart "Restart") the `sshguard.service` unit.
+Finally [restart](/index.php/Restart "Restart") `sshguard.service`
+
+### Moderate banning example
+
+A slightly more aggressive banning rule than the default one is proposed here to illustrate various options. It monitors [sshd](/index.php/Sshd "Sshd") and [vsftpd](/index.php/Vsftpd "Vsftpd") via logs from systemd journal. It blocks attackers after 2 attempts for 180 sec, subsequent blocks increase by a factor of 1.5\. The attackers are remembered up to 3600 sec and permanently blacklisted after 10 attempts. It blocks not only the attacker's IP but all the IPv4 subnet 24 ([CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") notation).
+
+```
+BACKEND="/usr/lib/sshguard/sshg-fw-iptables"
+LOGREADER="LANG=C /usr/bin/journalctl -afb -p info -n1 -t sshd -t vsftpd -o cat"
+THRESHOLD=20
+BLOCK_TIME=180
+DETECTION_TIME=3600
+BLACKLIST_FILE=100:/var/db/sshguard/blacklist.db
+IPV4_SUBNET=24
+
+```
 
 ### Aggressive banning
 
@@ -168,7 +201,7 @@ MaxAuthTries 1
 
 ```
 
-You will have to [restart](/index.php/Restart "Restart") `sshd.service` for this change to take effect.
+[Restart](/index.php/Restart "Restart") `sshd.service` for this change to take effect.
 
 ## Tips and Tricks
 
@@ -177,14 +210,14 @@ You will have to [restart](/index.php/Restart "Restart") `sshd.service` for this
 If you ban *yourself*, you can wait to get unbanned automatically or use iptables to unban yourself. First check if your IP is banned by sshguard:
 
 ```
-# iptables -L sshguard --line-numbers --numeric
+# iptables --list sshguard --line-numbers --numeric
 
 ```
 
 Then use the following command to unban, with the line-number as identified in the former command:
 
 ```
-# iptables -D sshguard <line-number>
+# iptables --delete sshguard <line-number>
 
 ```
 

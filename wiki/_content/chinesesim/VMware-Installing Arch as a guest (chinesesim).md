@@ -18,7 +18,7 @@
         *   [3.3.1 多用户目标](#.E5.A4.9A.E7.94.A8.E6.88.B7.E7.9B.AE.E6.A0.87)
         *   [3.3.2 图形界面目标](#.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2.E7.9B.AE.E6.A0.87)
     *   [3.4 在窗口大小变动后自动重设分辨率](#.E5.9C.A8.E7.AA.97.E5.8F.A3.E5.A4.A7.E5.B0.8F.E5.8F.98.E5.8A.A8.E5.90.8E.E8.87.AA.E5.8A.A8.E9.87.8D.E8.AE.BE.E5.88.86.E8.BE.A8.E7.8E.87)
-*   [4 VMware Tools](#VMware_Tools)
+*   [4 官方的 VMware Tools](#.E5.AE.98.E6.96.B9.E7.9A.84_VMware_Tools)
     *   [4.1 模块](#.E6.A8.A1.E5.9D.97)
     *   [4.2 安装（从客户机）](#.E5.AE.89.E8.A3.85.EF.BC.88.E4.BB.8E.E5.AE.A2.E6.88.B7.E6.9C.BA.EF.BC.89)
 *   [5 Xorg 配置](#Xorg_.E9.85.8D.E7.BD.AE)
@@ -138,13 +138,13 @@ systemctl enable vmware-vmblock-fuse.service
 
 如果你还安装了 [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/)，那么你还需要将 `dkms.service` 这个 Systemd 服务也设置成开机自启动。这个服务会在每次内核更新之后自动重新编译内核模块。
 
-如果 [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) 不能正常工作，可以试试手动安装它。
+如果不能正常工作，可以试试手动安装 [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) 。
 
 ### 在窗口大小变动后自动重设分辨率
 
 按照这里：[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1081629#p1081629) 的步骤，在登录到 X 会话之后，启动 `/usr/bin/vmware-user-suid-wrapper`。
 
-## VMware Tools
+## 官方的 VMware Tools
 
 ### 模块
 

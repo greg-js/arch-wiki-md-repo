@@ -24,6 +24,8 @@ Please add yourself to the end of the list using the following format:
     *   The country must be separated by a comma.
     *   The line should not end with a period.
 
+Anything that satisfies [this regular expression](https://github.com/guyfawcus/ArchMap/blob/55b91daa1010fa190ac5af5d0cf26bcb1d07ca95/archmap.py#L95-L113) will work. You can test it out using [this webiste](http://regexr.com/3h3u2) to be sure but please try to keep to the format defined above.
+
 ## How to get your coordinates
 
 ### Google Maps

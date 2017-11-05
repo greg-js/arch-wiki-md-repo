@@ -1,47 +1,47 @@
 Related articles
 
-*   [LXDE](/index.php/LXDE "LXDE")
-*   [Openbox](/index.php/Openbox "Openbox")
-*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [LXDE_(简体中文)](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)")
+*   [Openbox_(简体中文)](/index.php/Openbox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Openbox (简体中文)")
+*   [File manager functionality_(简体中文)](/index.php/File_manager_functionality_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File manager functionality (简体中文)")
 *   [SpaceFM](/index.php/SpaceFM "SpaceFM")
-*   [Thunar](/index.php/Thunar "Thunar")
+*   [Thunar_(简体中文)](/index.php/Thunar_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Thunar (简体中文)")
 *   [GNOME Files](/index.php/GNOME_Files "GNOME Files")
 *   [Nemo](/index.php/Nemo "Nemo")
 
-[PCManFM](https://wiki.lxde.org/en/PCManFM) is a free file manager application and the standard file manager of [LXDE](/index.php/LXDE "LXDE").
+[PCManFM](https://wiki.lxde.org/en/PCManFM) 是一个开源的文件管理器，并且是 [LXDE](/index.php/LXDE "LXDE")的默认文件管理器。
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Desktop management](#Desktop_management)
-    *   [2.1 Desktop preferences](#Desktop_preferences)
-    *   [2.2 Creating new icons](#Creating_new_icons)
-*   [3 Daemon mode](#Daemon_mode)
-*   [4 Autostarting](#Autostarting)
-*   [5 Additional features and functionality](#Additional_features_and_functionality)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Get thumbnails for other file types](#Get_thumbnails_for_other_file_types)
-    *   [6.2 Set the terminal emulator](#Set_the_terminal_emulator)
-    *   [6.3 Integrate an archiver](#Integrate_an_archiver)
-    *   [6.4 Templates are accessible under *Create New...*](#Templates_are_accessible_under_Create_New...)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Open With dialog window empty](#Open_With_dialog_window_empty)
-    *   [7.2 No "Applications"](#No_.22Applications.22)
-    *   [7.3 No icons](#No_icons)
-    *   [7.4 No "Previous/Next Folder" functionality with mouse buttons](#No_.22Previous.2FNext_Folder.22_functionality_with_mouse_buttons)
+*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [2 桌面管理](#.E6.A1.8C.E9.9D.A2.E7.AE.A1.E7.90.86)
+    *   [2.1 桌面首选项](#.E6.A1.8C.E9.9D.A2.E9.A6.96.E9.80.89.E9.A1.B9)
+    *   [2.2 新建图标](#.E6.96.B0.E5.BB.BA.E5.9B.BE.E6.A0.87)
+*   [3 守护进程模式](#.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E6.A8.A1.E5.BC.8F)
+*   [4 开机自启](#.E5.BC.80.E6.9C.BA.E8.87.AA.E5.90.AF)
+*   [5 额外特色与功能](#.E9.A2.9D.E5.A4.96.E7.89.B9.E8.89.B2.E4.B8.8E.E5.8A.9F.E8.83.BD)
+*   [6 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
+    *   [6.1 为其他文件生成缩略图](#.E4.B8.BA.E5.85.B6.E4.BB.96.E6.96.87.E4.BB.B6.E7.94.9F.E6.88.90.E7.BC.A9.E7.95.A5.E5.9B.BE)
+    *   [6.2 设置终端模拟器](#.E8.AE.BE.E7.BD.AE.E7.BB.88.E7.AB.AF.E6.A8.A1.E6.8B.9F.E5.99.A8)
+    *   [6.3 集成归档管理器](#.E9.9B.86.E6.88.90.E5.BD.92.E6.A1.A3.E7.AE.A1.E7.90.86.E5.99.A8)
+    *   [6.4 创建模板](#.E5.88.9B.E5.BB.BA.E6.A8.A1.E6.9D.BF)
+*   [7 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
+    *   [7.1 启动窗口空白](#.E5.90.AF.E5.8A.A8.E7.AA.97.E5.8F.A3.E7.A9.BA.E7.99.BD)
+    *   [7.2 无 "Applications"](#.E6.97.A0_.22Applications.22)
+    *   [7.3 无图标](#.E6.97.A0.E5.9B.BE.E6.A0.87)
+    *   [7.4 无 "上一/下一 文件夹"](#.E6.97.A0_.22.E4.B8.8A.E4.B8.80.2F.E4.B8.8B.E4.B8.80_.E6.96.87.E4.BB.B6.E5.A4.B9.22)
     *   [7.5 --desktop parameter not working or crashing X-server](#--desktop_parameter_not_working_or_crashing_X-server)
-    *   [7.6 Terminal emulator advanced configuration not saved](#Terminal_emulator_advanced_configuration_not_saved)
+    *   [7.6 终端模拟器的高级配置无法保存](#.E7.BB.88.E7.AB.AF.E6.A8.A1.E6.8B.9F.E5.99.A8.E7.9A.84.E9.AB.98.E7.BA.A7.E9.85.8D.E7.BD.AE.E6.97.A0.E6.B3.95.E4.BF.9D.E5.AD.98)
     *   [7.7 Make PCManFM remember your preferred Sort Files settings](#Make_PCManFM_remember_your_preferred_Sort_Files_settings)
-    *   [7.8 "Not authorized" error when attempting to mount drive](#.22Not_authorized.22_error_when_attempting_to_mount_drive)
+    *   [7.8 挂载驱动时候提醒"Not authorized"](#.E6.8C.82.E8.BD.BD.E9.A9.B1.E5.8A.A8.E6.97.B6.E5.80.99.E6.8F.90.E9.86.92.22Not_authorized.22)
     *   [7.9 Operation not supported](#Operation_not_supported)
 
-## Installation
+## 安装
 
 [Install](/index.php/Install "Install") the [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm) package, or [pcmanfm-gtk3](https://www.archlinux.org/packages/?name=pcmanfm-gtk3) for the GTK3 version, or [pcmanfm-git](https://aur.archlinux.org/packages/pcmanfm-git/) for the development version. [gvfs](https://www.archlinux.org/packages/?name=gvfs) is recommended for trash support, mounting with [udisks](/index.php/Udisks "Udisks") and remote filesystems.
 
 [Qt](/index.php/Qt "Qt") variants are available through [pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt) and [pcmanfm-qt-git](https://aur.archlinux.org/packages/pcmanfm-qt-git/).
 
-## Desktop management
+## 桌面管理
 
 The command to allow PCManFM to set wallpapers and enable the use of desktop icons is:
 
@@ -52,7 +52,7 @@ pcmanfm --desktop
 
 The native desktop menu of the window manager will be replaced with that provided by PCManFM. However, it can easily be restored from the PCManFM menu itself by selecting `Desktop preferences` and then enabling the `Right click shows WM menu` option in the `Desktop` tab.
 
-### Desktop preferences
+### 桌面首选项
 
 If using the native desktop menu provided by a window manager, enter the following command to set or amend desktop preferences at any time:
 
@@ -63,7 +63,7 @@ $ pcmanfm --desktop-pref
 
 It is worthwhile to consider adding this command to a keybind and/or the native desktop menu for easy access.
 
-### Creating new icons
+### 新建图标
 
 User content such as text files, documents, images and so forth can be dragged and dropped directly onto the desktop. To create shortcuts for applications it will be necessary to copy their `.desktop` files to the `~/Desktop` directory itself. Do not drag and drop the files there as they will be moved completely. The syntax of the command to do so is:
 
@@ -81,7 +81,7 @@ cp /usr/share/applications/lxterminal.desktop ~/Desktop
 
 For those who used the [XDG user directories](/index.php/XDG_user_directories "XDG user directories") program to create their `$HOME` directories no further configuration will be required.
 
-## Daemon mode
+## 守护进程模式
 
 To run PCManFM in the background (to for example automatically mount removable media), use:
 
@@ -92,7 +92,7 @@ pcmanfm -d
 
 Should automount fail, see [udisks](/index.php/Udisks "Udisks").
 
-## Autostarting
+## 开机自启
 
 How PCManFM may be autostarted as a [daemon](/index.php/Daemon "Daemon") process or to manage the desktop for a standalone [window manager](/index.php/Window_manager "Window manager") will depend on the window manager itself. For example, to enable management of the desktop for [Openbox](/index.php/Openbox "Openbox"), the following command would be added to the `~/.config/openbox/autostart` file:
 
@@ -106,13 +106,13 @@ Review the relevant wiki article and/or official home page for a particular inst
 *   [xinitrc](/index.php/Xinitrc "Xinitrc"): When using the [SLiM](/index.php/SLiM "SLiM") [display manager](/index.php/Display_manager "Display manager") or [Startx](/index.php/Startx "Startx") command
 *   [xprofile](/index.php/Xprofile "Xprofile"): When using a display manager such as [LXDM](/index.php/LXDM "LXDM") or [LightDM](/index.php/LightDM "LightDM")
 
-## Additional features and functionality
+## 额外特色与功能
 
 Less experienced users should be aware that a file manager alone - especially when installed in a standalone [Window manager](/index.php/Window_manager "Window manager") such as [Openbox](/index.php/Openbox "Openbox") - will not provide the features and functionality users of full desktop environments such as [Xfce](/index.php/Xfce "Xfce") and [KDE](/index.php/KDE "KDE") will be accustomed to. Review the [file manager functionality](/index.php/File_manager_functionality "File manager functionality") article for further information.
 
-## Tips and tricks
+## 提示与技巧
 
-### Get thumbnails for other file types
+### 为其他文件生成缩略图
 
 PCManFM supports image thumbnails out of the box. However, in order to view thumbnails of other file types, PCManFM uses the information provided in the files located at `/usr/share/thumbnailers`. The packages which provide a thumbnailer usually add the corresponding *.thumbnail* file at `/usr/share/thumbnailers`. For example, in order to get thumbnails for OpenDocument files, you may install [libgsf](https://www.archlinux.org/packages/?name=libgsf) from the official repositories. For video files' thumbnails, the package [ffmpegthumbnailer](https://www.archlinux.org/packages/?name=ffmpegthumbnailer) is required. For PDF files, you may install [evince](https://www.archlinux.org/packages/?name=evince) from the official repositories, which provides `evince-thumbnailer` and the corresponding file at `/usr/share/thumbnailers`. However, if you prefer not to install `evince`, you can also replicate the functionality of `evince-thumbnailer` using [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)'s `convert` command. This is accomplished by creating a new file with the *.thumbnailer* extension (e.g.: `imagemagick-pdf.thumbnailer`) at `/usr/share/thumbnailers` with the following content:
 
@@ -130,21 +130,21 @@ Following this example, you can specify custom thumbnailers by creating your own
 
 **Tip:** If you only get thumbnails of certain files and not of all the files of the same type try increasing the maximum file size of the files that get a thumbnail at *Edit > Preferences > Display*.
 
-### Set the terminal emulator
+### 设置终端模拟器
 
 You can configure what terminal emulator PCManFM should use for *Tools > Open Current Folder in Terminal* under *Edit > Preferences > Advanced* e.g. `bash -c 'pantheon-terminal --working-directory "$PWD"'`.
 
-### Integrate an archiver
+### 集成归档管理器
 
 You can choose the integrated archiver under *Edit > Preferences > Advanced*. PCManFM supports [file-roller](https://www.archlinux.org/packages/?name=file-roller), [xarchiver](https://www.archlinux.org/packages/?name=xarchiver) (or [xarchiver-gtk2](https://www.archlinux.org/packages/?name=xarchiver-gtk2)), [engrampa](https://www.archlinux.org/packages/?name=engrampa), [ark](https://www.archlinux.org/packages/?name=ark) and [squeeze-git](https://aur.archlinux.org/packages/squeeze-git/).
 
-### Templates are accessible under *Create New...*
+### 创建模板
 
 PCManFM adds the files in `~/Templates` as *Create New...* context menu items on startup.
 
-## Troubleshooting
+## 故障排除
 
-### Open With dialog window empty
+### 启动窗口空白
 
 If you do not see any applications to choose from in the open with dialog, then you can try removing [gnome-menus](https://www.archlinux.org/packages/?name=gnome-menus) and instead install [lxmenu-data](https://www.archlinux.org/packages/?name=lxmenu-data). Furthermore, export the following variables:
 
@@ -154,7 +154,7 @@ export XDG_CURRENT_DESKTOP=LXDE
 
 ```
 
-### No "Applications"
+### 无 "Applications"
 
 You can try this method: Delete all files in the `$HOME/.cache/menus` directory, and run PCManFM again.
 
@@ -167,7 +167,7 @@ export XDG_MENU_PREFIX="lxde-"
 
 See these threads for more informations: [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1110903), and especially this post from the Linux Mint forums: [[2]](http://forums.linuxmint.com/viewtopic.php?f=175&t=53986#p501920)
 
-### No icons
+### 无图标
 
 If you are using a [window manager](/index.php/Window_manager "Window manager") instead of a [desktop environment](/index.php/Desktop_environment "Desktop environment") and you have no icons for folders and files, specify a GTK+ icon theme.
 
@@ -196,7 +196,7 @@ $ pacman -Ss icon-theme
 
 **Tip:** For an alternative GUI solution, install [lxappearance](https://www.archlinux.org/packages/?name=lxappearance) and apply an icon theme from there.
 
-### No "Previous/Next Folder" functionality with mouse buttons
+### 无 "上一/下一 文件夹"
 
 A method to fix this is with [Xbindkeys](/index.php/Xbindkeys "Xbindkeys").
 
@@ -228,7 +228,7 @@ Make sure you have ownership and write permissions on `~/.config/pcmanfm`.
 
 Setting the wallpaper either by using the `--desktop-pref` parameter or editing `~/.config/pcmanfm/default/pcmanfm.config` solves the problem.
 
-### Terminal emulator advanced configuration not saved
+### 终端模拟器的高级配置无法保存
 
 Make sure you have rights on libfm configuration file:
 
@@ -242,7 +242,7 @@ $ chmod 644 ~/.config/libfm/libfm.conf
 
 You can use *View > Sort Files* to change the order in which PCManFM lists the files, but PCManFM won't remember that the next time you start it. To make it remember, go to *Edit > Preferences* and close. That will write your current sort_type and sort_by values into `~/.config/pcmanfm/LXDE/pcmanfm.conf`.
 
-### "Not authorized" error when attempting to mount drive
+### 挂载驱动时候提醒"Not authorized"
 
 Make this [polkit](/index.php/Polkit "Polkit") rule in `/etc/polkit-1/rules.d/00-mount-internal.rules`:
 

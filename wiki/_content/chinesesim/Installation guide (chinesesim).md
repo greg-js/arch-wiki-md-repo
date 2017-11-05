@@ -288,9 +288,9 @@ zh_TW.UTF-8 UTF-8
 
 ### 安装引导程序
 
-[启动加载器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")页面介绍了可用选项和配置方法。包括 [GRUB (简体中文)](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)") (BIOS/UEFI), [systemd-boot (简体中文)](/index.php/Systemd-boot_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-boot (简体中文)") (UEFI) 和 [Syslinux (简体中文)](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") (BIOS)等.
+[启动加载器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")页面介绍了可用选项和配置方法。
 
-Intel CPU 也需要安装 [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) 并根据 [Microcode](/index.php/Microcode "Microcode") 配置 boot loader.
+如果你使用Intel CPU，那么需要安装[intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode)并[启用英特尔微码更新](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode")
 
 ## 重启
 

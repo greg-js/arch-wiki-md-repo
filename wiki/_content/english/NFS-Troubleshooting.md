@@ -38,8 +38,7 @@ Dedicated article for common problems and solutions.
     *   [4.5 NFS debug flags](#NFS_debug_flags)
     *   [4.6 NLM debug flags](#NLM_debug_flags)
     *   [4.7 RPC debug flags](#RPC_debug_flags)
-    *   [4.8 General Notes](#General_Notes)
-    *   [4.9 References](#References)
+    *   [4.8 References](#References)
 *   [5 Other issues](#Other_issues)
     *   [5.1 Permissions issues](#Permissions_issues)
 
@@ -213,15 +212,11 @@ calls      retrans    authrefrsh
 
 If the `retrans` column contains a number larger than 0, the server is failing to respond to some NFS requests, and the number of threads should be increased.
 
-To increase the number of threads on the server, edit the file `/etc/conf.d/nfs-server.conf` and set the value in the `NFSD_OPTS` variable. For example, to set the number of threads to 32:
-
- `/etc/conf.d/nfs-server.conf` 
-```
-NFSD_OPTS="32"
-
-```
+To increase the number of threads on the server, edit the file `/etc/nfs.conf` and set the value in the `[server] threads` variable.
 
 The default number of threads is 8\. Try doubling this number until `retrans` remains consistently at zero. Don't be afraid of increasing the number quite substantially. 256 threads may be quite reasonable, depending on the workload. You will need to restart the NFS server daemon each time you modify the configuration file. Bear in mind that the client statistics will only be reset to zero when the client is rebooted.
+
+While the number of threads can be increased at runtime via an echo to `/proc/fs/nfsd/threads`, the cache size (double the threads, see the **ra** line of /proc/net/rpc/nfsd) is not dynamic. The NFS daemon must be restarted with the new thread size during initialization in order for the thread cache to properly adjust.
 
 Use **htop** (disable the hiding of kernel threads) to keep an eye on how much work each nfsd thread is doing. If you reach a point where the `retrans` values are non-zero, but you can see `nfsd` threads on the server doing no work, something different is now causing your bottleneck, and you'll need to re-diagnose this new problem.
 
@@ -547,10 +542,6 @@ A rundown of `/proc/net/rpc/nfsd` (the userspace tool `nfsstat` pretty-prints th
 #define RPCDBG_CACHE            0x0800
 #define RPCDBG_ALL              0x7fff
 ```
-
-### General Notes
-
-*   While the number of threads can be increased at runtime via an echo to `/proc/fs/nfsd/threads`, the cache size (double the threads, see the **ra** line of /proc/net/rpc/nfsd) is not dynamic. The NFS daemon must be restarted with the new thread size during initialization in order for the thread cache to properly adjust.
 
 ### References
 

@@ -338,7 +338,7 @@ Btrfs supports online defragmentation through the [mount option](https://btrfs.w
 
 Using the above command without the `-r` switch will result in only the metadata held by the subvolume containing the directory being defragmented. This allows for single file defragmentation by simply specifying the path.
 
-Defragmenting a file which has a COW copy (either a snapshot copy or one made with cp --reflink or bcp) plus using the `-c` switch with a compression algorithm may result in two unrelated files effectively increasing the disk usage.
+Defragmenting a file which has a COW copy (either a snapshot copy or one made with `cp --reflink` or bcp) plus using the `-c` switch with a compression algorithm may result in two unrelated files effectively increasing the disk usage.
 
 ### RAID
 
@@ -508,7 +508,7 @@ If you see `crc32c=crc32c-generic`, it is probably because your root partition i
 
 *btrfs-check* cannot be used on a mounted file system. To be able to use *btrfs-check* without booting from a live USB, add it to the initial ramdisk:
 
- `/etc/mkinitcpio.conf`  `BINARIES="/usr/bin/btrfs"` 
+ `/etc/mkinitcpio.conf`  `BINARIES=("/usr/bin/btrfs")` 
 
 Regenerate the initial ramdisk using [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio").
 

@@ -93,7 +93,7 @@ NetworkManager-wait-online.service | NetworkManager daemon, provides configurati
  pure-ftpd | pure-ftpd.servicecups.service | A fast, production quality, standards-compliant FTP server. |
 | [Rsync](/index.php/Rsync "Rsync") | rsyncd | rsyncd.service | rsync daemon. |
 | [Rsyslog](/index.php/Rsyslog "Rsyslog") | rsyslogd | rsyslog.service | Alternative system logger. |
-| [redis](https://www.archlinux.org/packages/?name=redis) | redis-server | redis.service | Key-value store |
+| [Redis](/index.php/Redis "Redis") | redis-server | redis.service | Key-value store |
 | [samba](/index.php/Samba "Samba") | samba | smbd.service
 nmbd.service
 winbindd.service | File and print services for Microsoft Windows clients. |

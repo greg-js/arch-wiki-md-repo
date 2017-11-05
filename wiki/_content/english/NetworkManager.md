@@ -546,7 +546,13 @@ If you have problems with getting an IP address using the internal DHCP client, 
 
 After installation, update the NetworkManager config file:
 
- `/etc/NetworkManager/NetworkManager.conf`  `dhcp=dhclient` 
+ `/etc/NetworkManager/NetworkManager.conf` 
+```
+[main]
+# ...
+dhcp=dhclient
+# ...
+```
 
 This workaround might solve problems in big wireless networks like eduroam.
 

@@ -27,6 +27,10 @@ This is a list of helper utilities that search, download and/or build packages.
 
 	[https://github.com/oshazard/apacman](https://github.com/oshazard/apacman) || [apacman](https://aur.archlinux.org/packages/apacman/)
 
+*   **aur** — ArchLinux Package Manager helper.
+
+	[https://github.com/avelino/aur](https://github.com/avelino/aur) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 *   **aura** — A package manager for Arch Linux written in Haskell.
 
 	[https://github.com/aurapm/aura](https://github.com/aurapm/aura) || [aura](https://aur.archlinux.org/packages/aura/) or [aura-bin](https://aur.archlinux.org/packages/aura-bin/) (binary)

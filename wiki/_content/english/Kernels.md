@@ -141,6 +141,8 @@ The -ck patches can be found at [http://ck.kolivas.org/patches/](http://ck.koliv
 
 #### -rt
 
+See [Realtime kernel](/index.php/Realtime_kernel "Realtime kernel").
+
 This patchset is maintained by a small group of core developers, led by Ingo Molnar. This patch allows nearly all of the kernel to be preempted, with the exception of a few very small regions of code ("raw_spinlock critical regions"). This is done by replacing most kernel spinlocks with mutexes that support priority inheritance, as well as moving all interrupt and software interrupts to kernel threads.
 
 It further incorporates high resolution timers - a patch set, which is independently maintained.

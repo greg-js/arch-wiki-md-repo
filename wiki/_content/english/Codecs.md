@@ -1,3 +1,10 @@
+Related articles
+
+*   [Optical disc drive#Playback](/index.php/Optical_disc_drive#Playback "Optical disc drive")
+*   [GStreamer](/index.php/GStreamer "GStreamer")
+*   [MPlayer](/index.php/MPlayer "MPlayer")
+*   [VLC media player](/index.php/VLC_media_player "VLC media player")
+
 From [Wikipedia](https://en.wikipedia.org/wiki/Codec "wikipedia:Codec"), "a codec is a device or computer program capable of encoding and/or decoding a digital data stream or signal."
 
 In general, codecs are utilized by multimedia applications to encode or decode audio or video streams. In order to play encoded streams, users must ensure an appropriate codec is installed.

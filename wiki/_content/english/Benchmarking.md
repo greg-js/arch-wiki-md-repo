@@ -1,3 +1,8 @@
+Related articles
+
+*   [Improving performance](/index.php/Improving_performance "Improving performance")
+*   [Sysstat](/index.php/Sysstat "Sysstat")
+
 Benchmarking is the act of measuring performance and comparing the results to another system's results or a widely accepted standard through a unified procedure. This unified method of evaluating system performance can help answer questions such as:
 
 *   Is the system performing as it should?

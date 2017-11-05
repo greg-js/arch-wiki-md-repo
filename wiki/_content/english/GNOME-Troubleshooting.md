@@ -30,6 +30,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [26 No suspend on LID closure](#No_suspend_on_LID_closure)
 *   [27 gnome-shell / gnome-session crashes on session startup](#gnome-shell_.2F_gnome-session_crashes_on_session_startup)
 *   [28 Low OpenGL performance and stuttering on proprietary NVIDIA driver](#Low_OpenGL_performance_and_stuttering_on_proprietary_NVIDIA_driver)
+*   [29 GNOME Wayland session not available](#GNOME_Wayland_session_not_available)
 
 ## Shell freezes
 
@@ -345,3 +346,16 @@ $ gsettings set org.gnome.SessionManager auto-save-session false
 ## Low OpenGL performance and stuttering on proprietary NVIDIA driver
 
 [This](https://bugzilla.gnome.org/show_bug.cgi?id=781835) bug is much likely the cause of it. You should revert `383ba566bd7c2a76d0856015a66e47caedef06b6` commit in [mutter](https://www.archlinux.org/packages/?name=mutter). Use [ABS](/index.php/ABS "ABS") for this and add `git revert -n 383ba566bd7c2a76d0856015a66e47caedef06b6` to `prepare()` function. Or you can simply install [mutter-781835-workaround](https://aur.archlinux.org/packages/mutter-781835-workaround/)
+
+## GNOME Wayland session not available
+
+GNOME Wayland does not support more than one GPU for output yet, [falling back](https://bugzilla.gnome.org/show_bug.cgi?id=771442) on GNOME X11.
+
+If your displays are only connected to one of your video devices, add this to your [system environment variables](/index.php/Environment_variables#Using_pam_env "Environment variables"):
+
+```
+MUTTER_ALLOW_HYBRID_GPUS=1
+
+```
+
+To avoid [problems](https://bbs.archlinux.org/viewtopic.php?pid=1744592#p1744592) with some chipsets enable [Early KMS](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting").

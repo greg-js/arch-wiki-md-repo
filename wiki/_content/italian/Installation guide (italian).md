@@ -56,7 +56,7 @@ Ricordarsi di creare tutti i dispositivi a blocchi accatastati per [LVM](/index.
 
 ### Formattare le partizioni
 
-Si legga [file system](/index.php/File_systems_(Italiano)#Step_2:_creare_il_nuovo_file_system "File systems (Italiano)") e opzionalmente [Swap](/index.php/Swap_(Italiano) "Swap (Italiano)") per maggiori dettagli.
+Si legga [File System](/index.php/File_systems_(Italiano) "File systems (Italiano)") e opzionalmente [Swap](/index.php/Swap_(Italiano) "Swap (Italiano)") per maggiori dettagli.
 
 Se si sta utilizzando (U) EFI avrete probabilmente bisogno di un'altra partizione per ospitare la partizione di sistema UEFI. Si legga [questo articolo](/index.php/Unified_Extensible_Firmware_Interface_(Italiano)#Creare_una_partizione_di_sistema_UEFI_con_Linux "Unified Extensible Firmware Interface (Italiano)").
 
@@ -66,7 +66,7 @@ Ora si deve montare la partizione di root su `/mnt`. Dopodiche si dovrebbero anc
 
 ### Connessione alla rete
 
-Un servizio di DHCP è già abilitato per tutti i dispositivi disponibili. Se è necessario impostare un indirizzo IP statico o utilizzare strumenti di gestione, come [Netctl](/index.php/Netctl "Netctl"), si dovrebbe fermare in primo luogo di questo primo servizio: `systemctl stop dhcpcd.service`. Per maggiori informazioni si veda la pagina [Configurazione della Rete](/index.php/Configurazione_della_Rete "Configurazione della Rete").
+Un servizio di DHCP è già abilitato per tutti i dispositivi disponibili. Se è necessario impostare un indirizzo IP statico o utilizzare strumenti di gestione, come [Netctl](/index.php/Netctl "Netctl"), si dovrebbe fermare in primo luogo questo primo servizio: `systemctl stop dhcpcd.service`. Per maggiori informazioni si veda la pagina [Configurazione della Rete](/index.php/Configurazione_della_Rete "Configurazione della Rete").
 
 #### Wireless
 

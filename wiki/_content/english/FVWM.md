@@ -545,7 +545,10 @@ AddToFunc TileBottomRight
 
 ### Transfer focus on page or desk switch
 
-**Note:** The approach of using FvwmEvent allows for a window in a page to be automatically focused when clicking on that page in the FvwmPager. However, it breaks the right-click and drag panning functionality of the pager. For this reason, you might prefer to call `GoToPage` and `Focus-Previous` from within another function which can be bound to a hotkey instead of using the `new_page` event.
+**Note:**
+
+*   The approach of using FvwmEvent allows for a window in a page to be automatically focused when clicking on that page in the FvwmPager. However, it breaks the right-click and drag panning functionality of the pager. For this reason, you might prefer to call `GoToPage` and `Focus-Previous` from within another function which can be bound to a hotkey instead of using the `new_page` event.
+*   If you are using SloppyFocus or MouseFocus and wish to focus the previously focused window when switching desks, you will need to set the focus method to ClickToFocus before the desk switch is initiated. If you do not do this, any window under the pointer in the new desk will immediately receive focus, even if it is not the previously focused window. Note that this means you cannot use the FvwmEvent approach. Instead, create a function that temporarily changes the focus method and then calls `GoToDesk` and `Focus-Previous`.
 
 If you are using ClickToFocus, you might wish to automatically transfer keyboard focus when switching pages or desks to the previously focused window in that page or desk. Otherwise, you will have to click on the window you wish to interact with on every page or desk switch. This can be accomplished by using the [FvwmEvent](#FvwmEvent) module to bind a function which focuses the currently or previous focused window to the `new_page` and `new_desk` events.
 

@@ -19,7 +19,8 @@
     *   [3.1 GRUB Legacy](#GRUB_Legacy)
     *   [3.2 LILO](#LILO)
     *   [3.3 NeoGRUB](#NeoGRUB)
-*   [4 See also](#See_also)
+*   [4 功能比较](#.E5.8A.9F.E8.83.BD.E6.AF.94.E8.BE.83)
+*   [5 See also](#See_also)
 
 ## 适用于 BIOS 和 UEFI 的启动加载器
 
@@ -73,6 +74,20 @@ See [LILO](/index.php/LILO "LILO").
 NeoGRUB provides a means to boot Arch from the Windows boot loader without installing an additional boot loader. See [NeoGRUB](/index.php/NeoGRUB "NeoGRUB").
 
 Booting Arch from NeoGRUB has not been tested yet from Windows 8 and/or UEFI systems.
+
+## 功能比较
+
+| Name | Firmware | Multi-boot | [File systems](/index.php/File_systems "File systems") | Notes |
+| BIOS | [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)") | [Btrfs](/index.php/Btrfs "Btrfs") | [ext4](/index.php/Ext4 "Ext4") | ReiserFS v3 | [VFAT](/index.php/VFAT "VFAT") | [XFS](/index.php/XFS "XFS") |
+| [GRUB](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | On BIOS/GPT configuration requires a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition"). |
+| [systemd-boot](/index.php/Systemd-boot_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-boot (简体中文)") | No | Yes | Yes | No | No | No | Yes | No | Cannot launch binaries from partitions other than [ESP](/index.php/ESP "ESP"). |
+| [Syslinux](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") | Yes | [Partial](/index.php/Syslinux#Limitations_of_UEFI_Syslinux "Syslinux") | [Partial](/index.php/Syslinux#Chainloading "Syslinux") | without: multi-device volumes, compression, encryption | without: `64bit` feature, encryption | No | Yes | v4 on [MBR](/index.php/MBR "MBR") only | No support for certain [file system](/index.php/File_system "File system") features [[2]](http://www.syslinux.org/wiki/index.php?title=Filesystem) |
+| [EFISTUB](/index.php/EFISTUB "EFISTUB") | No | Yes | N/A | N/A | N/A | N/A | N/A | N/A |
+| [rEFInd](/index.php/REFInd "REFInd") | No | Yes | Yes | without encryption | without encryption | without tail-packing feature | Yes | No |
+| [Clover](/index.php/Clover "Clover") | emulates UEFI | Yes | Yes | No | Unknown | No | Yes | No | Main target audience is [Hackintosh](https://en.wikipedia.org/wiki/Hackintosh "wikipedia:Hackintosh") users. |
+| [LILO](/index.php/LILO "LILO") | Yes | No | Unknown | Unknown | Unknown | Unknown | Unknown | MBR only [[3]](http://xfs.org/index.php/XFS_FAQ#Q:_Does_LILO_work_with_XFS.3F) | [Deprecated](https://lists.alioth.debian.org/pipermail/lilo-devel/2015-December/000083.html). Does not support [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table"). |
+| [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") | Yes | No | Yes | No | No | Yes | Yes | v4 only | [Deprecated](https://www.gnu.org/software/grub/grub-legacy.html). Does not support [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table"). |
+| [NeoGRUB](/index.php/NeoGRUB "NeoGRUB") | Yes | No | Yes | Unknown | Unknown | Unknown | Unknown | Unknown |
 
 ## See also
 

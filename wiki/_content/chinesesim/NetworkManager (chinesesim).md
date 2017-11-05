@@ -16,16 +16,14 @@ Related articles
     *   [1.1 VPN 支持](#VPN_.E6.94.AF.E6.8C.81)
     *   [1.2 PPPoE / DSL 支持](#PPPoE_.2F_DSL_.E6.94.AF.E6.8C.81)
 *   [2 前端](#.E5.89.8D.E7.AB.AF)
-    *   [2.1 Gnome环境](#Gnome.E7.8E.AF.E5.A2.83)
+    *   [2.1 GNOME](#GNOME)
     *   [2.2 KDE Plasma](#KDE_Plasma)
-    *   [2.3 KDE 4](#KDE_4)
-    *   [2.4 XFCE](#XFCE)
-    *   [2.5 Openbox](#Openbox)
-    *   [2.6 其它桌面和窗口管理器](#.E5.85.B6.E5.AE.83.E6.A1.8C.E9.9D.A2.E5.92.8C.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [2.7 命令行](#.E5.91.BD.E4.BB.A4.E8.A1.8C)
-        *   [2.7.1 nmcli](#nmcli)
-        *   [2.7.2 nmtui](#nmtui)
-        *   [2.7.3 nmcli-dmenu](#nmcli-dmenu)
+    *   [2.3 nm-applet](#nm-applet)
+        *   [2.3.1 Appindicator](#Appindicator)
+    *   [2.4 命令行](#.E5.91.BD.E4.BB.A4.E8.A1.8C)
+        *   [2.4.1 nmcli](#nmcli)
+        *   [2.4.2 nmtui](#nmtui)
+        *   [2.4.3 nmcli-dmenu](#nmcli-dmenu)
 *   [3 配置](#.E9.85.8D.E7.BD.AE)
     *   [3.1 启用 NetworkManager](#.E5.90.AF.E7.94.A8_NetworkManager)
     *   [3.2 设置 PolicyKit 权限](#.E8.AE.BE.E7.BD.AE_PolicyKit_.E6.9D.83.E9.99.90)
@@ -68,7 +66,7 @@ Related articles
     *   [6.3 通过Ethernet共享连接](#.E9.80.9A.E8.BF.87Ethernet.E5.85.B1.E4.BA.AB.E8.BF.9E.E6.8E.A5)
     *   [6.4 在cron任务（jobs）或脚本中检查网络是否连接](#.E5.9C.A8cron.E4.BB.BB.E5.8A.A1.EF.BC.88jobs.EF.BC.89.E6.88.96.E8.84.9A.E6.9C.AC.E4.B8.AD.E6.A3.80.E6.9F.A5.E7.BD.91.E7.BB.9C.E6.98.AF.E5.90.A6.E8.BF.9E.E6.8E.A5)
     *   [6.5 登陆后自动解锁秘钥环](#.E7.99.BB.E9.99.86.E5.90.8E.E8.87.AA.E5.8A.A8.E8.A7.A3.E9.94.81.E7.A7.98.E9.92.A5.E7.8E.AF)
-        *   [6.5.1 GNOME](#GNOME)
+        *   [6.5.1 GNOME](#GNOME_2)
         *   [6.5.2 SLiM 登录管理器](#SLiM_.E7.99.BB.E5.BD.95.E7.AE.A1.E7.90.86.E5.99.A8)
     *   [6.6 有密码认证的KDE and OpenConnect VPN](#.E6.9C.89.E5.AF.86.E7.A0.81.E8.AE.A4.E8.AF.81.E7.9A.84KDE_and_OpenConnect_VPN)
     *   [6.7 忽略特定设备](#.E5.BF.BD.E7.95.A5.E7.89.B9.E5.AE.9A.E8.AE.BE.E5.A4.87)
@@ -111,71 +109,23 @@ NetworkManager 的 VPN 支持基于一个插件系统。如果需要通过 Netwo
 
 为了配置和轻松使用网络管理器，大多数用户会希望安装一个托盘组件。图形前端往往显示在系统托盘（或通知区域），从而允许用户选择网络或者配置 NetworkManager。不同类型的桌面环境下有多种托盘插件。
 
-### Gnome环境
+### GNOME
 
-Gnome的[network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet)几乎可以运行在所有的桌面环境下。
-
-如果你想储存验证信息(Wireless/DSL), 安装和配置[GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring")
-
-注意，对一个连接激活了`Make available to other users`勾选框后，NetworkManager用明文存储密码，但是相应的文件只能被root（或者其他用户通过`nm-applet`)）访问。参见[#Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)。
+[GNOME](/index.php/GNOME "GNOME")在网络设置里拥有内置的工具。
 
 ### KDE Plasma
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") the [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) applet.
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) 软件包。
 
-### KDE 4
+### nm-applet
 
-Plasma-nm 前端可以通过官方软件仓库中的 [kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm) 安装。老的 KNetworkManager 前端已经移到了[AUR](/index.php/AUR "AUR") 软件包 [kdeplasma-applets-networkmanagement](https://aur.archlinux.org/packages/kdeplasma-applets-networkmanagement/) 。
+[network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) 是一个GTK3+前端小程序，工作在Xorg环境下，带有一个系统托盘。
 
-如果同时安装了 KNetworkManager 和 nm-applet，在使用 KDE 时不想使用 nm-applet，将下行加入 `/etc/xdg/autostart/nm-applet.desktop`
+存储连接密码，安装并配置 [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")。
 
-```
-NotShowIn=KDE
+注意对某个连接启用了勾选框选项 `对其他用户可用` 时，NetworkManager将密码明文存储，即使相应的文件只能被root访问（或者其他使用 `nm-applet` 的用户）。参照 [#Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)。
 
-```
-
-详情参阅 [Userbase 页面](http://userbase.kde.org/NetworkManagement)。
-
-### XFCE
-
-虽然[network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet)在[Xfce](/index.php/Xfce "Xfce")下正常工作，但是为了可以看到通知信息，包括错误信息， `nm-applet`需要一个 Freedesktop 桌面通知说明（参见 [Galapago Project](http://www.galago-project.org/specs/notification/0.9/index.html)）来显示他们。要激活通知，请安装[xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd), 此包提供了上述说明的一个实现。
-
-如果没有这个通知守护进程，`nm-applet`就会输出下面的错误到 stdout/stderr：
-
-```
-(nm-applet:24209): libnotify-WARNING **: Failed to connect to proxy
-** (nm-applet:24209): WARNING **: get_all_cb: couldn't retrieve
-system settings properties: (25) Launch helper exited with unknown
-return code 1.
-** (nm-applet:24209): WARNING **: fetch_connections_done: error
-fetching connections: (25) Launch helper exited with unknown return
-code 1.
-** (nm-applet:24209): WARNING **: Failed to register as an agent:
-(25) Launch helper exited with unknown return code 1
-
-```
-
-`nm-applet` 还会工作得不错, 不过，没有通知消息。
-
-如果 `nm-applet` 在连接到 WiFi 时没有提示输入密码, 仅仅立即断开连接, 你可能需要安装 [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring)。
-
-如果托盘插件没有显示，安装[xfce4-indicator-plugin](https://aur.archlinux.org/packages/xfce4-indicator-plugin/)包。[[2]](http://askubuntu.com/questions/449658/networkmanager-tray-nm-applet-is-gone-after-upgrade-to-14-04-trusty)
-
-### Openbox
-
-为了能在[Openbox](/index.php/Openbox "Openbox")中优雅地工作，Gnome小程序，因为和XFCE同样的原因，需要[xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd)通知进程和[gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme)来在系统托盘中显示小程序。 GNOME applet 和 xfce4-notifyd 结合可以很好的工作:
-
-如果你想储存身份验证信息(Wireless/DSL)，请安装和配置[gnome-keyring](/index.php/Gnome-keyring "Gnome-keyring")：
-
-`nm-applet`在`/etc/xdg/autostart/nm-applet.desktop`中安装自动启动文件. 如果你遇到问题（比如，`nm-applet`启动了两次或者根本没有启动), 参考[Openbox#autostart](/index.php/Openbox#autostart "Openbox") 或者[[3]](https://bbs.archlinux.org/viewtopic.php?pid=993738)来解决.
-
-### 其它桌面和窗口管理器
-
-所有其他场景下，推荐使用 GNOME 组件。你也需要确保需要[gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme)被正确安装并可以显示小程序。安装 GNOME hicolor 主题：
-
-要存储连接密码，请安装和配置[GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring")。
-
-想要不使用系统托盘来运行`nm-applet`，可以使用 [trayer](https://www.archlinux.org/packages/?name=trayer) 或 [stalonetray](https://www.archlinux.org/packages/?name=stalonetray)。例如，你的PATH中加入像这样的一个脚本：
+在没有系统托盘的情况下运行 `nm-applet`，可以使用 [trayer](https://www.archlinux.org/packages/?name=trayer) 或者 [stalonetray](https://www.archlinux.org/packages/?name=stalonetray)。比如，你可以在自己的路径中添加这样的脚本：
 
  `nmgui` 
 ```
@@ -186,7 +136,31 @@ killall nm-applet
 
 ```
 
-当你关闭 *stalonetray* 窗口时，也将会同时关闭 `nm-applet`，所以完成网络设置后不会使用额外的内存。
+当关闭了 *stalonetray* 窗口，就也关闭了 `nm-applet`，所以当完成网络配置后就没有额外的内存消耗了。
+
+此小程序可以显示一些事件的消息，比如连接或断开WiFi。为了显示这些消息，确保你已安装了一个消息服务器 - 参照 [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications")。如果你在没有消息服务器的情况下使用，消息可能会出现在stdout/stderr，程序也有可能挂起。参照 [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=788313)。
+
+为了在消息服务被禁用的情况下使用 `nm-applet`，用以下命令运行程序：
+
+```
+$ nm-applet --no-agent
+
+```
+
+**Tip:** `nm-applet` 可能在 [自启动桌面文件](/index.php/Desktop_entries#Autostart "Desktop entries") 存在的情况下自动启动，例如修改Exec一行添加--no-agent选项：
+```
+Exec=nm-applet --no-agent
+
+```
+
+#### Appindicator
+
+Appindicator支持在 *nm-applet* 可用但没有被编译进官方软件包，详见 [FS#51740](https://bugs.archlinux.org/task/51740)。为了在Appindicator环境中使用nm-applet，将 [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) 替换成 [network-manager-applet-indicator](https://aur.archlinux.org/packages/network-manager-applet-indicator/) 并执行以下命令：
+
+```
+$ nm-applet --indicator
+
+```
 
 ### 命令行
 
@@ -208,7 +182,7 @@ killall nm-applet
 
 #### nmtui
 
-"nmtui" 是一个基于curses的图形化前端，包括在[networkmanager](https://www.archlinux.org/packages/?name=networkmanager)中。
+*nmtui* 是一个基于curses的图形化前端，包括在[networkmanager](https://www.archlinux.org/packages/?name=networkmanager)中。
 
 使用信息参见[nmtui(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1)。
 

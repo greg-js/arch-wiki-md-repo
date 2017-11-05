@@ -1,3 +1,9 @@
+Related articles
+
+*   [FAQ](/index.php/FAQ "FAQ")
+*   [Installation guide](/index.php/Installation_guide "Installation guide")
+*   [List of applications](/index.php/List_of_applications "List of applications")
+
 This document is an annotated index of popular articles and important information for improving and adding functionalities to the installed Arch system. Readers are assumed to have read and followed the [Installation guide](/index.php/Installation_guide "Installation guide") to obtain a basic Arch Linux installation. Having read and understood the concepts explained in [#System administration](#System_administration) and [#Package management](#Package_management) is *required* for following the other sections of this page and the other articles in the wiki.
 
 ## Contents
@@ -78,7 +84,7 @@ Users and groups are a mechanism for *access control*; administrators may fine-t
 
 ### Privilege escalation
 
-The [su](/index.php/Su "Su") (substitute user) command allows you to assume the identity of another user on the system (usually root) from an existing login, whereas the [sudo](/index.php/Sudo "Sudo") (substitute user do) command grants temporary privilege escalation for a specific command.
+Both the [su](/index.php/Su "Su") and [sudo](/index.php/Sudo "Sudo") commands allow you to run commands as another user. Be default *su* drops you to a login shell as the root user, and *sudo* by default temporarily grants you root privileges for a single command. See their respective articles for differences.
 
 ### Service management
 
@@ -230,7 +236,7 @@ For better security while browsing web, paying online, connecting to [SSH](/inde
 
 ### Setting up a firewall
 
-A [firewall](/index.php/Firewall "Firewall") can provide an extra layer of protection on top of the Linux networking stack. While the stock Arch kernel is capable of using [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter")'s [iptables](/index.php/Iptables "Iptables"), it is not enabled by default. It is highly recommended to set up some form of firewall. See [Firewalls](/index.php/Firewalls "Firewalls") for the available guides.
+A [firewall](/index.php/Firewall "Firewall") can provide an extra layer of protection on top of the Linux networking stack. While the stock Arch kernel is capable of using [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter")'s [iptables](/index.php/Iptables "Iptables"), or [nftables](/index.php/Nftables "Nftables"), neither are enabled by default. It is highly recommended to set up some form of firewall. See [Firewalls](/index.php/Firewalls "Firewalls") for the available guides.
 
 ### Resource sharing
 

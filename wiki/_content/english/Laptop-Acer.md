@@ -81,6 +81,15 @@ CPU frequency scaling: untested | Untested | Webcam: OK
 Hotkeys: OK
 Synaptic Touchpad: OK
 HDMI: OK | Ran into trouble with suspend/resume + nvidia prop. drivers ("gpu has fallen off the bus"). Fix/workaround: appended `rcutree.rcu_idle_gp_delay=1 acpi_osi=! acpi_osi="Windows 2009"` to kernel parameters. |
+| Acer Nitro VN7-791G-74DL | archlinux-2016.01.01-dual | Intel HD 530
+Nvidia GeForce GTX 970M 3GB VRAM | OK | Realtek: OK | OK, Killer Wireless-AC 1535 | OK | Suspend to RAM: Yes
+Disk: Yes
+Battery: Yes
+CPU frequency scaling: Yes | N/A | Webcam: Yes
+Hotkeys: OK
+Synaptic Touchpad: OK
+HDMI: Yes
+Booting from NVME: Yes | Ran into trouble with with fun control, porting driver from windows is required. |
 | Acer Nitro VN7-792G-710p | archlinux-2016.10.01-dual | Intel HD 530
 Nvidia GeForce GTX 960M 2GB VRAM | OK | Realtek: OK | OK | OK | Suspend to RAM: Yes
 Disk: Yes

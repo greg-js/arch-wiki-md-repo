@@ -1,3 +1,9 @@
+Related articles
+
+*   [Installation guide](/index.php/Installation_guide "Installation guide")
+*   [General recommendations](/index.php/General_recommendations "General recommendations")
+*   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
+
 This page explains how to perform a regular Arch installation onto a USB key (or "flash drive"). In contrast to having a LiveUSB as covered in [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"), the result will be a persistent installation identical to normal installation to HDD, but on a USB flash drive.
 
 ## Contents
@@ -10,12 +16,11 @@ This page explains how to perform a regular Arch installation onto a USB key (or
     *   [2.3 Syslinux](#Syslinux)
 *   [3 Tips](#Tips)
     *   [3.1 Using your USB install on multiple machines](#Using_your_USB_install_on_multiple_machines)
-        *   [3.1.1 Architecture](#Architecture)
-        *   [3.1.2 Input drivers](#Input_drivers)
-        *   [3.1.3 Video drivers](#Video_drivers)
-        *   [3.1.4 Persistent block device naming](#Persistent_block_device_naming)
-        *   [3.1.5 Kernel parameters](#Kernel_parameters)
-        *   [3.1.6 Booting from USB 3 media](#Booting_from_USB_3_media)
+        *   [3.1.1 Input drivers](#Input_drivers)
+        *   [3.1.2 Video drivers](#Video_drivers)
+        *   [3.1.3 Persistent block device naming](#Persistent_block_device_naming)
+        *   [3.1.4 Kernel parameters](#Kernel_parameters)
+        *   [3.1.5 Booting from USB 3 media](#Booting_from_USB_3_media)
     *   [3.2 Compatibility](#Compatibility)
     *   [3.3 Minimizing disk access](#Minimizing_disk_access)
 *   [4 See also](#See_also)
@@ -114,14 +119,6 @@ LABEL Arch
 ## Tips
 
 ### Using your USB install on multiple machines
-
-#### Architecture
-
-For the most versatile compatibility it is recommended that you install the i686 architecture because it will run on both 32-bit (i686) and 64-bit (x86_64) architectures.
-
-Additionally, due to the reduced size of 32-bit binaries and the absence of (possible) multilib packages, an i686 installation typically consumes less space than an equivalent x86_64 one.
-
-**Note:** Chrooting into a 64-bit Linux installation (eg. when using the USB key as install/rescue media) is only possible from x86_64 Arch.
 
 #### Input drivers
 

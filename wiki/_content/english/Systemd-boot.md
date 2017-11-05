@@ -113,7 +113,7 @@ The basic configuration is stored in `*esp*/loader/loader.conf` file and it is c
 
 *   `default` – default entry to select (without the `.conf` suffix); can be a wildcard like `arch-*`.
 
-*   `timeout` – menu timeout in seconds. If this is not set, the menu will only be shown on `Space` press during boot.
+*   `timeout` – menu timeout in seconds. If this is not set, the menu will only be shown on key press during boot.
 
 *   `editor` – whether to enable the kernel parameters editor or not. `1` (default) is enabled, `0` is disabled; since the user can add `init=/bin/bash` to bypass root password and gain root access, it is strongly recommended to set this option to `0`.
 

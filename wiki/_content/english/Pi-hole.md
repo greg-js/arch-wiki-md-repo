@@ -17,15 +17,17 @@ Pi-hole is a shell-script based project that manages blocklists of known adverti
         *   [1.2.2 Web Server](#Web_Server)
             *   [1.2.2.1 Lighttpd](#Lighttpd)
             *   [1.2.2.2 Nginx](#Nginx)
-    *   [1.3 Typical configuration](#Typical_configuration)
-    *   [1.4 FTL](#FTL)
-*   [2 Using Pi-hole together with OpenVPN](#Using_Pi-hole_together_with_OpenVPN)
-*   [3 Pi-hole Standalone](#Pi-hole_Standalone)
-    *   [3.1 Installation](#Installation_2)
-    *   [3.2 Initial configuration](#Initial_configuration_2)
-        *   [3.2.1 Dnsmasq](#Dnsmasq_2)
-        *   [3.2.2 Openresolve](#Openresolve)
-*   [4 See also](#See_also)
+*   [2 Configuration of the router and of Pi-hole](#Configuration_of_the_router_and_of_Pi-hole)
+    *   [2.1 Preferred method](#Preferred_method)
+    *   [2.2 Fallback method](#Fallback_method)
+    *   [2.3 FTL](#FTL)
+*   [3 Using Pi-hole together with OpenVPN](#Using_Pi-hole_together_with_OpenVPN)
+*   [4 Pi-hole Standalone](#Pi-hole_Standalone)
+    *   [4.1 Installation](#Installation_2)
+    *   [4.2 Initial configuration](#Initial_configuration_2)
+        *   [4.2.1 Dnsmasq](#Dnsmasq_2)
+        *   [4.2.2 Openresolve](#Openresolve)
+*   [5 See also](#See_also)
 
 ## Pi-hole Server
 
@@ -65,7 +67,7 @@ extension=sockets.so
 [...]
 ```
 
-For security reason, if you want to populate [PHP open_basedir](/index.php/PHP#Configuration "PHP") directive, pi-hole administration web interface needs access to following files and directories:
+For security reason, if you want to populate [PHP open_basedir](/index.php/PHP#Configuration "PHP") directive, Pi-hole administration web interface needs access to following files and directories:
 
 ```
 /srv/http/pihole:/run/pihole-ftl/pihole-FTL.port:/run/log/pihole/pihole.log:/run/log/pihole-ftl/pihole-FTL.log:/etc/pihole:/etc/hosts:/etc/hostname:/etc/dnsmasq.d/03-pihole-wildcard.conf:/proc/meminfo:/proc/cpuinfo:/sys/class/thermal/thermal_zone0/temp:/tmp
@@ -105,7 +107,7 @@ include /etc/nginx/conf.d/*.conf;
 
 ```
 
-Copy the package provided default config for pi-hole:
+Copy the package provided default config for Pi-hole:
 
 ```
 # mkdir /etc/nginx/conf.d
@@ -115,15 +117,44 @@ Copy the package provided default config for pi-hole:
 
 [Enable](/index.php/Enable "Enable") `nginx.service` `php-fpm.service` and re/start them.
 
-### Typical configuration
+## Configuration of the router and of Pi-hole
 
-This section details how to simply use pi-hole as an adblocker, not how to use it to serve out IP addresses via DHCP. It is assumed that most residential users have a separate device (a router) that does this. More advanced setups are beyond the scope of this section.
+### Preferred method
 
-Pi-hole needs to be the DNS for the LAN in order to work properly. The preferred method is to simply redefine the DNS entry **on the router** to use the IP address of the box running Pi-hole. Additionally, one may need to disable the internal DNS functionality in the router as well. See, [How do I configure my devices to use Pi-hole as their DNS server?](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245)
+Most users will want the all of the following functionality:
 
-**Tip:** A simple check to see that the router is setup correctly is to first renew a DHCP lease, then inspect the contents of /etc/resolv.conf on the target machine. One should see the IP address of the pi-hole box, not the IP address of the router.
+1.  Per-host tracking on Pi-hole (i.e. logging of DNS requests tied to individual machines by their respective hostnames).
+2.  The ability to resolve hostnames on the LAN.
+3.  Ad blocking/network monitoring provided by Pi-hole.
 
-Once the router is serving up the pihole box's IP address as the DNS, and once it stops trying to provide DNS internally, log into the pi-hole web interface ([http://pi.hole/admin](http://pi.hole/admin)). Click "Settings" and from there, scroll down to the section entitled, "Upstream DNS Servers" and, select any of the options provided to use as DNS servers.
+To achieve all of the above, the router should be configured to advertise Pi-hole's IP address for DNS resolution to clients, but retain the actual DNS resolution itself *upstream* of the Pi-hole box. Pi-hole should be configured to simply use the router as its *sole* DNS entry.
+
+On the router, use a custom dnsmasq config entry to advertise the IP of the Pi-hole box. The syntax is:
+
+```
+dhcp-option=6,IP_of_Pi-hole
+
+```
+
+If Pi-hole is running on a machine whose IP address is 192.168.1.250, this becomes:
+
+```
+dhcp-option=6,192.168.1.250
+
+```
+
+On Pi-hole, login to the web interface ([http://pi.hole](http://pi.hole)), select "Settings" and define the IP address of the *router* as the only upstream DNS server. Do not define any other DNS entries for Pi-hole.
+
+**Tip:** A simple check to see that the router is setup correctly is to first renew a DHCP lease, then inspect the contents of /etc/resolv.conf on the target client machine. One should see the IP address of the Pi-hole box, not the IP address of the router.
+
+### Fallback method
+
+**Note:** The above configuration may not be possible on some routers depending on the feature set exposed the firmware. The configuration above is confirmed to work on some open-source firmwares such as [LEDE/OpenWRT](https://forum.lede-project.org/t/lede-pi-hole-works-perfectly-need-to-understand-why-so-i-can-configure-tomatousb-the-same-way/8274) and [TomatoUSB](http://www.linksysinfo.org/index.php?threads/redefining-dns-from-router-to-a-box-running-pi-hole.73576/#post-292078) to name a few.
+
+Users unable to configure the router as directed above are referred to [this guide](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) for setup instructions that gives most of the functionality in the list above. Key limitations of using this method include:
+
+1.  Per-host tracking on Pi-hole (i.e. logging of DNS requests tied to individual machines by their respective hostnames).
+2.  The ability to resolve hostnames on the LAN.
 
 ### FTL
 
@@ -133,7 +164,7 @@ FTL is part of Pi-hole project. It is a database-like wrapper/API providing the 
 
 ## Using Pi-hole together with OpenVPN
 
-One can use both [OpenVPN](/index.php/OpenVPN "OpenVPN") (server) together with Pi-hole to effectively route the remote traffic from the clients though Pi-hole's DNS thus dropping ads for the clients. A reduction in cellular data usage is expected since ads are never allowed to load. Make sure `/etc/openvpn/server/server.conf` contains two key lines as illustrated below replacing the literal "xxx.xxx.xxx.xxx" with the IP address of the box running pi-hole:
+One can use both [OpenVPN](/index.php/OpenVPN "OpenVPN") (server) together with Pi-hole to effectively route the remote traffic from the clients though Pi-hole's DNS thus dropping ads for the clients. A reduction in cellular data usage is expected since ads are never allowed to load. Make sure `/etc/openvpn/server/server.conf` contains two key lines as illustrated below replacing the literal "xxx.xxx.xxx.xxx" with the IP address of the box running Pi-hole:
 
 ```
 push "redirect-gateway def1 bypass-dhcp"
@@ -152,7 +183,7 @@ This may be necessary to make `dnsmasq` listen on `tun0`.
 
 ## Pi-hole Standalone
 
-The Archlinux Pi-hole Standalone variant is born from the need to use pi-hole services in a mobile context. [Sky-hole article](http://dlaa.me/blog/post/skyhole) was inspirational.
+The Archlinux Pi-hole Standalone variant is born from the need to use Pi-hole services in a mobile context. [Sky-hole article](http://dlaa.me/blog/post/skyhole) was inspirational.
 
 ### Installation
 

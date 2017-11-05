@@ -32,7 +32,7 @@ Speech recognition can mean several things:
 
 ## List of text to speech applications
 
-Two text-to-speech applications are Festival and eSpeak, a small feature comparison is available in a mailing list [thread](http://web.archive.org/web/20090924193011/http://braille.uwo.ca/pipermail/speakup/2008-July/046756.html).
+Two text-to-speech applications are Festival and eSpeak, a small feature comparison is available in a mailing list [thread](http://web.archive.org/web/20090924193011/http://braille.uwo.ca/pipermail/speakup/2008-July/046756.html). You can find a listening comparison of the different engines [here](https://tools.wmflabs.org/tts-comparison/).
 
 	Engines
 
@@ -42,11 +42,15 @@ Two text-to-speech applications are Festival and eSpeak, a small feature compari
 
 	[http://espeak.sourceforge.net/](http://espeak.sourceforge.net/) || [espeak](https://www.archlinux.org/packages/?name=espeak)
 
+*   **[eSpeakNG](https://en.wikipedia.org/wiki/eSpeakNG "wikipedia:eSpeakNG")** — Fork of eSpeak (due to inactivity of original maintainer).
+
+	[https://github.com/espeak-ng/espeak-ng](https://github.com/espeak-ng/espeak-ng) || [espeak-ng-git](https://aur.archlinux.org/packages/espeak-ng-git/)
+
 *   **[Festival](/index.php/Festival "Festival")** — General framework for building speech synthesis systems as well as including examples of various modules. As a whole it offers full text to speech.
 
 	[http://www.cstr.ed.ac.uk/projects/festival/](http://www.cstr.ed.ac.uk/projects/festival/) || [festival](https://www.archlinux.org/packages/?name=festival)
 
-*   **[MBROLA](/index.php/Mbrola "Mbrola")** — Non-free phonemes-to-audio program which supports more than 70 languages.
+*   **[MBROLA](/index.php/Mbrola "Mbrola")** — Non-free phonemes-to-audio program which supports more than 70 languages. Mbrola-voices can also be used with eSpeak.
 
 	[http://tcts.fpms.ac.be/synthesis/mbrola.html](http://tcts.fpms.ac.be/synthesis/mbrola.html) || [mbrola](https://aur.archlinux.org/packages/mbrola/)
 
@@ -54,13 +58,27 @@ Two text-to-speech applications are Festival and eSpeak, a small feature compari
 
 	[http://www.festvox.org/flite/](http://www.festvox.org/flite/) || [flite](https://www.archlinux.org/packages/?name=flite)
 
-*   **SVOX Pico** — The text-to-speech engine used on Android phones
+*   **SVOX Pico** — The text-to-speech engine used on Android phones. (Available languages are en-US, en-GB, de-DE, es-ES, fr-FR and it-IT)
 
 	- || [svox-pico-bin](https://aur.archlinux.org/packages/svox-pico-bin/)
 
 *   **Mimic** — Text-to-speech voice synthesis from the Mycroft project (based on flite)
 
 	[https://mimic.mycroft.ai/](https://mimic.mycroft.ai/) || [mimic-git](https://aur.archlinux.org/packages/mimic-git/)
+
+*   **Marytts** — An open-source, multilingual Text-to-Speech Synthesis platform written in Java
+
+	[http://mary.dfki.de/](http://mary.dfki.de/) || [marytts](https://aur.archlinux.org/packages/marytts/)
+
+	language-specific Engines
+
+*   **Ekho** — Chinese text-to-speech (TTS) software for Cantonese, Mandarin, Zhaoan Hakka, Tibetan, Ngangien and Korean
+
+	[http://www.eguidedog.net/ekho.php](http://www.eguidedog.net/ekho.php) || [ekho](https://aur.archlinux.org/packages/ekho/)
+
+*   **Open-jtalk** — Japanese text-to-speech synthesis system
+
+	[https://sourceforge.net/projects/open-jtalk/](https://sourceforge.net/projects/open-jtalk/) || [open-jtalk](https://aur.archlinux.org/packages/open-jtalk/)
 
 	User Applications
 

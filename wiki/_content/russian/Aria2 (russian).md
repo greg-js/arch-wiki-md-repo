@@ -1,38 +1,37 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [Aria2](/index.php/Aria2 "Aria2"). Дата последней синхронизации: 8 февраля 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Aria2&diff=0&oldid=419572).
 
-С домашней страницы [проекта](http://aria2.sourceforge.net/):
+С домашней страницы [проекта](https://aria2.github.io/):
 
-	*aria2 - это легкая мультипротокольная и многопоточная консольная утилита. Она поддерживает [HTTP](https://en.wikipedia.org/wiki/ru:HTTP и [Metalink](https://en.wikipedia.org/wiki/ru:Metalink "wikipedia:ru:Metalink").* aria2 *можно управлять с помощью встроенных интерфейсов [JSON-RPC](https://en.wikipedia.org/wiki/ru:JSON-RPC "wikipedia:ru:JSON-RPC") и [XML-RPC](https://en.wikipedia.org/wiki/ru:XML-RPC "wikipedia:ru:XML-RPC").*
+	*aria2 - это легкая мультипротокольная и многопоточная консольная утилита. Она поддерживает [HTTP](https://en.wikipedia.org/wiki/ru:HTTP и [Metalink](https://en.wikipedia.org/wiki/ru:Metalink "wikipedia:ru:Metalink"). aria2 можно управлять с помощью встроенных интерфейсов [JSON-RPC](https://en.wikipedia.org/wiki/ru:JSON-RPC "wikipedia:ru:JSON-RPC") и [XML-RPC](https://en.wikipedia.org/wiki/ru:XML-RPC "wikipedia:ru:XML-RPC").*
 
 ## Contents
 
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Выполнение](#.D0.92.D1.8B.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5)
-*   [3 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-    *   [3.1 aria2.conf](#aria2.conf)
-    *   [3.2 Пример .bash_alias (псевдонимов Bash)](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_.bash_alias_.28.D0.BF.D1.81.D0.B5.D0.B2.D0.B4.D0.BE.D0.BD.D0.B8.D0.BC.D0.BE.D0.B2_Bash.29)
-    *   [3.3 Пример aria2.conf](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_aria2.conf)
-        *   [3.3.1 Детали опций](#.D0.94.D0.B5.D1.82.D0.B0.D0.BB.D0.B8_.D0.BE.D0.BF.D1.86.D0.B8.D0.B9)
-            *   [3.3.1.1 Пример входного файла #1](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_.D0.B2.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_.231)
-            *   [3.3.1.2 Пример входного файла #2](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_.D0.B2.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_.232)
-        *   [3.3.2 Дополнительные замечания](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F)
-    *   [3.4 Пример aria2.rapidshare](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_aria2.rapidshare)
-        *   [3.4.1 Детали опций](#.D0.94.D0.B5.D1.82.D0.B0.D0.BB.D0.B8_.D0.BE.D0.BF.D1.86.D0.B8.D0.B9_2)
-        *   [3.4.2 Дополнительные замечания](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F_2)
-    *   [3.5 Пример aria2.bittorrent](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_aria2.bittorrent)
-        *   [3.5.1 Детали опций](#.D0.94.D0.B5.D1.82.D0.B0.D0.BB.D0.B8_.D0.BE.D0.BF.D1.86.D0.B8.D0.B9_3)
-    *   [3.6 Пример aria2.daemon](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_aria2.daemon)
-*   [4 Интерфейс](#.D0.98.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81)
-    *   [4.1 Веб-интерфейсы](#.D0.92.D0.B5.D0.B1-.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D1.8B)
-    *   [4.2 Другие интерфейсы](#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D1.8B)
-*   [5 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
-    *   [5.1 Скачать пакеты без установки](#.D0.A1.D0.BA.D0.B0.D1.87.D0.B0.D1.82.D1.8C_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B_.D0.B1.D0.B5.D0.B7_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
-    *   [5.2 pacman XferCommand](#pacman_XferCommand)
-    *   [5.3 Минимальная пользовательская сборка](#.D0.9C.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B0.D1.8F_.D1.81.D0.B1.D0.BE.D1.80.D0.BA.D0.B0)
-    *   [5.4 Запуск aria2c при загрузке системы](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_aria2c_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
-    *   [5.5 Изменение User Agent](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_User_Agent)
-    *   [5.6 Использование Aria2 с makepkg](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_Aria2_.D1.81_makepkg)
-*   [6 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
+    *   [2.1 aria2.conf](#aria2.conf)
+    *   [2.2 Пример .bash_alias (псевдонимов Bash)](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_.bash_alias_.28.D0.BF.D1.81.D0.B5.D0.B2.D0.B4.D0.BE.D0.BD.D0.B8.D0.BC.D0.BE.D0.B2_Bash.29)
+    *   [2.3 Пример aria2.conf](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_aria2.conf)
+        *   [2.3.1 Детали опций](#.D0.94.D0.B5.D1.82.D0.B0.D0.BB.D0.B8_.D0.BE.D0.BF.D1.86.D0.B8.D0.B9)
+            *   [2.3.1.1 Пример входного файла #1](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_.D0.B2.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_.231)
+            *   [2.3.1.2 Пример входного файла #2](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_.D0.B2.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_.232)
+        *   [2.3.2 Дополнительные замечания](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F)
+    *   [2.4 Пример aria2.rapidshare](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_aria2.rapidshare)
+        *   [2.4.1 Детали опций](#.D0.94.D0.B5.D1.82.D0.B0.D0.BB.D0.B8_.D0.BE.D0.BF.D1.86.D0.B8.D0.B9_2)
+        *   [2.4.2 Дополнительные замечания](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F_2)
+    *   [2.5 Пример aria2.bittorrent](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_aria2.bittorrent)
+        *   [2.5.1 Детали опций](#.D0.94.D0.B5.D1.82.D0.B0.D0.BB.D0.B8_.D0.BE.D0.BF.D1.86.D0.B8.D0.B9_3)
+    *   [2.6 Пример aria2.daemon](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_aria2.daemon)
+*   [3 Интерфейс](#.D0.98.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81)
+    *   [3.1 Веб-интерфейсы](#.D0.92.D0.B5.D0.B1-.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D1.8B)
+    *   [3.2 Другие интерфейсы](#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D1.8B)
+*   [4 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
+    *   [4.1 Скачать пакеты без установки](#.D0.A1.D0.BA.D0.B0.D1.87.D0.B0.D1.82.D1.8C_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B_.D0.B1.D0.B5.D0.B7_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
+    *   [4.2 pacman XferCommand](#pacman_XferCommand)
+    *   [4.3 Минимальная пользовательская сборка](#.D0.9C.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B0.D1.8F_.D1.81.D0.B1.D0.BE.D1.80.D0.BA.D0.B0)
+    *   [4.4 Запуск aria2c при загрузке системы](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_aria2c_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+    *   [4.5 Изменение User Agent](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_User_Agent)
+    *   [4.6 Использование Aria2 с makepkg](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_Aria2_.D1.81_makepkg)
+*   [5 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
 
@@ -40,9 +39,7 @@
 
 Также можете поставить [aria2-systemd](https://github.com/GutenYe/systemd-units/tree/master/aria2) для использования aria2 в качестве [демона](/index.php/Daemon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Daemon (Русский)").
 
-## Выполнение
-
-Для исполняемого пакета aria2, есть имя `aria2c`. Такое имя было унаследовано для совместимости.
+**Note:** Для запуска пакета aria2 используется команда `aria2c`. Данное наименование было сохранено для обратной совместимости.
 
 ## Настройка
 

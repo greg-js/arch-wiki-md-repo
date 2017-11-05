@@ -27,6 +27,7 @@ ASUS [announced](https://www.asus.com/News/q0npwWGXCqpxoVf8) UX430 and UX530 mod
     *   [2.2 Fan spins all the time](#Fan_spins_all_the_time)
     *   [2.3 Microcode](#Microcode)
     *   [2.4 Nvidia issues with Bumblebee](#Nvidia_issues_with_Bumblebee)
+    *   [2.5 Headset Microphone](#Headset_Microphone)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Power saving and performance](#Power_saving_and_performance)
     *   [3.2 Extract Windows 10 license key](#Extract_Windows_10_license_key)
@@ -35,7 +36,9 @@ ASUS [announced](https://www.asus.com/News/q0npwWGXCqpxoVf8) UX430 and UX530 mod
 
 ## Secure Boot (option)
 
-In order to boot any Linux operating system, navigate to BIOS, then "Security Tab" and set "Secure Boot" to `Off`.
+In order to boot any Linux operating system, navigate to BIOS, then hit F7 or click on "Advanced Menu", then the "Security" tab and set "Secure Boot" to `Off`.
+
+If the aforementioned "Secure Boot" option is a menu rather than an on-or-off option, click on "Secure Boot", "Key Management", then "Reset to Setup Mode" and confirm in the dialog.
 
 ## Video
 
@@ -53,9 +56,9 @@ See [Libinput](/index.php/Libinput "Libinput").
 
 ## Headphones audio is too low
 
-You may notice that the audio through the headphones is noticeably low ([upstream bug](https://bugs.launchpad.net/ubuntu/+source/alsa-driver/+bug/1648183)).
+You may notice that the audio through the headphones is too low ([upstream bug](https://bugs.launchpad.net/ubuntu/+source/alsa-driver/+bug/1648183)).
 
-In order to fix it, install [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) or [hda-verb](https://aur.archlinux.org/packages/hda-verb/) and create file:
+In order to fix it, install [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) or [hda-verb](https://aur.archlinux.org/packages/hda-verb/) and create the file:
 
  `/usr/local/bin/fix_headphones_audio.sh` 
 ```
@@ -92,14 +95,25 @@ See [Fan speed control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed contro
 
 ## Microcode
 
-During boot you might get message `[Firmware Bug]: TSC_DEADLINE disabled due to Errata; please update microcode to version: 0x52 (or later)`. See [Microcode](/index.php/Microcode "Microcode") to resolve it.
+During boot you might get the message `[Firmware Bug]: TSC_DEADLINE disabled due to Errata; please update microcode to version: 0x52 (or later)`. See [Microcode](/index.php/Microcode "Microcode") to resolve it.
 
 ## Nvidia issues with Bumblebee
 
-It is likelly that it's one of these issues:
+It is likely that it's one of these issues:
 
 *   You used power management application (especially [Powertop](/index.php/Powertop "Powertop")). See [bumblebee#Broken power management with kernel 4.8](/index.php/Bumblebee#Broken_power_management_with_kernel_4.8 "Bumblebee") for more information.
-*   You suspended your laptop and resumed - unable to start GPU. The only fix seems to be full reboot in order to get it working back.
+*   You suspended your laptop and resumed, and are now unable to start your GPU. The only fix seems to be a full reboot in order to get working again.
+
+## Headset Microphone
+
+You may encounter an issue in which your headset microphone is not detected. The solution is to append
+
+```
+options snd-hda-intel model=dell-headset-multi
+
+```
+
+to a file in `/etc/modprobe.d/`.
 
 # Tips and tricks
 

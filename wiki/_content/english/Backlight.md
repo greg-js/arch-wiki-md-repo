@@ -76,6 +76,15 @@ The brightness can be set by writing a number to `brightness`. Attempting to set
 
 ```
 
+By default, only `root` can change the brightness by this method. To allow users in the `video` group to change the brightness, a [udev](/index.php/Udev "Udev") rule such as the following can be used:
+
+ `/etc/udev/rules.d/backlight.rules` 
+```
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="acpi_video0", RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness"
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="acpi_video0", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
+
+```
+
 ### Kernel command-line options
 
 Sometimes, ACPI does not work well due to different motherboard implementations and ACPI quirks, resulting in, for instance, inaccurate brightness notifications. This includes some laptops with dual graphics (e.g. Nvidia/Radeon dedicated GPU with Intel/AMD integrated GPU). Additionally, ACPI sometimes needs to register its own `acpi_video0` backlight even if one already exists (such as `intel_backlight`), which can be done by adding one of the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
@@ -206,7 +215,7 @@ See [FS#27677](https://bugs.archlinux.org/task/27677) and [[2]](https://bugs.deb
 
 ### Other utilities
 
-*   **brightnessctl** — Lightweight brightness control tool (Wayland compatible).
+*   **brightnessctl** — Lightweight brightness control tool (Wayland compatible). Note that brightnessctl is a setuid binary, which might be considered a security risk by some.
 
 	[https://github.com/Hummer12007/brightnessctl](https://github.com/Hummer12007/brightnessctl) || [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/)
 

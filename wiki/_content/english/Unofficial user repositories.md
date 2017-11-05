@@ -20,7 +20,6 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [2.1.2 ivasilev](#ivasilev)
         *   [2.1.3 pkgbuilder](#pkgbuilder)
         *   [2.1.4 xyne-any](#xyne-any)
-        *   [2.1.5 youtube-dl](#youtube-dl)
     *   [2.2 Unsigned](#Unsigned)
         *   [2.2.1 archlinuxgr-any](#archlinuxgr-any)
 *   [3 Both i686 and x86_64](#Both_i686_and_x86_64)
@@ -103,13 +102,13 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [5.2.7 matrixim](#matrixim)
         *   [5.2.8 mesa-git](#mesa-git)
         *   [5.2.9 mingw-w64](#mingw-w64)
-        *   [5.2.10 ownstuff](#ownstuff)
-        *   [5.2.11 pnsft-pur](#pnsft-pur)
-        *   [5.2.12 rakudo](#rakudo)
-        *   [5.2.13 rust-git](#rust-git)
-        *   [5.2.14 trinity](#trinity)
-        *   [5.2.15 zrootfs](#zrootfs)
-        *   [5.2.16 neo_chen](#neo_chen)
+        *   [5.2.10 neo_chen](#neo_chen)
+        *   [5.2.11 ownstuff](#ownstuff)
+        *   [5.2.12 pnsft-pur](#pnsft-pur)
+        *   [5.2.13 rakudo](#rakudo)
+        *   [5.2.14 rust-git](#rust-git)
+        *   [5.2.15 trinity](#trinity)
+        *   [5.2.16 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -184,20 +183,6 @@ Server = https://pkgbuilder-repo.chriswarrick.com/
 ```
 [xyne-any]
 Server = https://xyne.archlinux.ca/repos/xyne/
-
-```
-
-#### youtube-dl
-
-*   **Maintainer:** [Case_Of](https://bbs.archlinux.org/profile.php?id=94876)
-*   **Description:** A repository for latest release of youtube-dl package.
-*   **Key-ID:** [C6DFFE6ED7166B97](https://youtube-dl.tk/youtube-dl-pgp.key)
-
-**Note:** Install the package with `pacman -S youtube-dl/youtube-dl`.
-
-```
-[youtube-dl]
-Server = https://youtube-dl.tk
 
 ```
 
@@ -1103,6 +1088,21 @@ Server = http://downloads.sourceforge.net/project/mingw-w64-archlinux/$arch
 
 ```
 
+#### neo_chen
+
+*   **Maintainer:** Kolei Chen (Neo_Chen) <chenkolei@gmail.com>
+*   **Description:** Some uncommon AUR Package
+
+**Note:** This repo runs on a unstable Desktop.
+
+```
+[neo_chen]
+Server = https://neolinuxworkstation.nerdpol.ovh/~neo_chen/neo_chen_repo/
+Server = https://thunix.org/~neo_chen/neo_chen_repo/
+Server = http://sl-sgp.asn.yt/~neo_chen_repo/
+
+```
+
 #### ownstuff
 
 *   **Maintainer:** [Martchus](https://aur.archlinux.org/account/Martchus)
@@ -1169,18 +1169,5 @@ Server = http://repo.nasutek.com/arch/contrib/trinity/x86_64
 ```
 [zrootfs]
 Server = https://www.izzette.com/izzi/zrootfs-old
-
-```
-
-#### neo_chen
-
-*   **Maintainer:** Kolei Chen (Neo_Chen) <chenkolei@gmail.com>
-*   **Description:** Some uncommon AUR Package
-
-**Note:** This repo runs on a unstable Desktop.
-
-```
-[neo_chen]
-Server = https://neolinuxworkstation.nerdpol.ovh/~neo_chen/neo_chen_repo/
 
 ```

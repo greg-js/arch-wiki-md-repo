@@ -60,15 +60,15 @@ All of the settings for Window Maker can be found in the `GNUSTEP_USER_ROOT` dir
 *   `Defaults/WMWindowAttributes` - Individual application and window settings, such as application icon settings and title bar settings. You can also edit this by right clicking on any application or window icon and selecting "Attributes".
 *   `Defaults/WPrefs` - Settings for the Preferences Utility.
 *   `Library/Colors/`
-*   `Library/Icons/` - One of the default locations Window Maker looks for application icons. You can personally save your favorite icons here and use them by changing application or window attributes.
-*   `Library/WindowMaker/autostart` - Add applications that you want to automatically start when Window Maker starts. Be sure to run them in the background by using "&".
+*   `Library/Icons/` - One of the default locations Window Maker looks for application icons. You can save your favorite icons here and use them by changing application or window attributes.
+*   `Library/WindowMaker/autostart` - Add here applications that you want to automatically start when Window Maker starts. Be sure to run them in the background by using "&".
 *   `Library/exitscript` - Same as autostart, but used when exiting.
 *   `Library/Backgrounds` - One of the default locations where Window Maker looks for desktop wallpapers.
 *   `Library/Styles` - One of the default locations where Window Maker looks for styles.
 
 ### Styles
 
-Styles are simple text files that change the appearance of Window Maker. They are very similar in appearance to the `Defaults/WindowMaker` file. Whatever settings are in the style file will be applied to the `Defaults/WindowMaker` file. Here is an example style that gives Window Maker a blue and gray Arch Linux like look:
+Styles are simple text files that change the appearance of Window Maker. They have the same layout as the `Defaults/WindowMaker` file. Whatever settings are in the style file will be applied to the `Defaults/WindowMaker` file. Here is an example style that gives Window Maker a blue and gray Arch Linux like look:
 
 `Arch.style`
 
@@ -107,17 +107,17 @@ Styles can also be edited by using the Preferences Utility application.
 
 ### Keyboard shortcuts
 
-Window maker allows keyboard shortcuts to be assigned both to window manager actions and to menu entries.
+Window Maker allows keyboard shortcuts to be assigned both to window manager actions and to menu entries.
 
-To assign a keyboard shortcut to a window manager action, start the WPrefs application and navigate to the *Keyboard Shortcut Preferences* tab. Choose an action, click the *Capture* button and hit the desired keyboard combination. Then hit *Save*.
+To assign a keyboard shortcut to a window manager action, start the WPrefs application and navigate to the *Keyboard Shortcut Preferences* tab. Choose an action, click the *Capture* button and hit the desired keyboard combination. Then click *Save*.
 
-You can also assign keyboard shortcuts to menu entries. For instance, if one were using GNOME Screensaver to lock the screen, one could create a Lock Screen menu entry with the command `gnome-screensaver-command --lock`. To then assign a keyboard shortcut to this menu entry, start the WPrefs application and navigate to the *Application Menu Definition* tab. In the root menu that appears on screen, click on the Lock Screen entry. In the Wprefs window, click the *Capture* button, hit the desired keyboard combination and then click *Save*.
+You can also assign keyboard shortcuts to menu entries. For instance, if one wishes to use GNOME Screensaver to lock the screen, one could create a Lock Screen menu entry which runs the command `gnome-screensaver-command --lock`. To then assign a keyboard shortcut to this menu entry, start the WPrefs application and navigate to the *Applications Menu Definition* tab. In the root menu that appears on screen, click on the Lock Screen entry. In the WPrefs window, click the *Capture* button, hit the desired keyboard combination and then click *Save*.
 
 ### Background
 
 To use an image as a background in Window Maker, copy the image to the `~/GNUstep/Library/WindowMaker/Backgrounds` directory. Then, from the root menu, select *Appearance* -> *Background* -> *Images* -> *image-name*.
 
-Alternatively, you could use a standalone background setter such as [Nitrogen](/index.php/Nitrogen "Nitrogen").
+Alternatively, use a standalone background setter such as [Nitrogen](/index.php/Nitrogen "Nitrogen").
 
 ## Dock
 
@@ -148,19 +148,23 @@ See the Window Maker website for more information about dockapps.
 
 ## System tray
 
-Window Maker does not ship with a system tray however there are a number of standalone trays that can be used with Window Maker.
+Window Maker does not ship with a system tray, however a number of standalone trays can be used with it.
 
 	stalonetray
 
-Prior to version 0.8, [stalonetray](https://www.archlinux.org/packages/?name=stalonetray) did not work as a dockapp in Window Maker, use Docker instead. However, starting from version 0.8, there is very basic dockapp support for Window Maker which can be enabled using the `--dockapp-mode wmaker` command line option. The following options should also be used: `--slot-size 32 --geometry 2x2 --parent-bg --scrollbars none`.
+Since version 0.8 of [stalonetray](https://www.archlinux.org/packages/?name=stalonetray), basic dockapp support for Window Maker can be enabled using the `--dockapp-mode wmaker` command line option. The following options should also be used: `--slot-size 32 --geometry 2x2 --parent-bg --scrollbars none`.
 
-	System tray dockapps for Window Maker
+	Tint2
 
-[wmsystray](https://aur.archlinux.org/packages/wmsystray/) and [wmsystemtray](https://aur.archlinux.org/packages/wmsystemtray/) are both system tray dockapps designed for Window Maker; the latter is also reported to work well in other desktops.
+[tint2](/index.php/Tint2 "Tint2") is compatible with Window Maker. As well as a system tray it has an optional taskbar (duplicating the Window Maker feature) and applets showing the clock and the status of the battery.
+
+	Dockapps for Window Maker
+
+[wmsystray](https://aur.archlinux.org/packages/wmsystray/) and [wmsystemtray](https://aur.archlinux.org/packages/wmsystemtray/) are system tray dockapps designed for Window Maker; the latter is also reported to work well in other desktops.
 
 	Peksystray
 
-[Peksystray](https://aur.archlinux.org/packages/Peksystray/) is a system tray designed for all the light window managers that support docking. Peksystray provides a window where icons will automatically add up depending on the requests from the applications. Both the size of the window and the size of the icons can be selected by the user. If the window is full, it can automatically display another window in order to display more icons.
+[Peksystray](https://aur.archlinux.org/packages/Peksystray/) is a system tray designed for the light window managers that support docking. Peksystray provides a window where icons will automatically add up, according to the requests from the applications. Both the size of the window and the size of the icons can be selected by the user. If the window is full, it can automatically display another window in order to display more icons.
 
 ## Tips and tricks
 

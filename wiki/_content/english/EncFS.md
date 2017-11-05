@@ -342,7 +342,7 @@ rm "$lock" 2>/dev/null
 
 ### Mount using KDE KWallet
 
-This can be done in KDE with the [kdeencfs](http://pastebin.com/RR1hguwE) script. You will also have to [install](/index.php/Install "Install") the [kdialog](https://www.archlinux.org/packages/?name=kdialog) and [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) packages from the [official repositories](/index.php/Official_repositories "Official repositories"). kwallet-pam has to started with the session which it is by default. It can be used by calling *kdeencfs encrypted-folder decrypted-folder*.
+This can be done in KDE with the [kdeencfs](http://pastebin.com/RR1hguwE) script. You will also have to [install](/index.php/Install "Install") the [kdialog](https://www.archlinux.org/packages/?name=kdialog), [kdebase-runtime](https://www.archlinux.org/packages/?name=kdebase-runtime), [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools) and [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) packages from the [official repositories](/index.php/Official_repositories "Official repositories"). kwallet-pam has to started with the session which it is by default. *(If not: Add /usr/lib/pam_kwallet_init to sessionstart.)* It can be used by calling *kdeencfs encrypted-folder decrypted-folder*.
 
 ## Encrypted backup
 
