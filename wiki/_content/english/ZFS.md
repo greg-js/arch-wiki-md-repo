@@ -42,16 +42,17 @@ As a result:
     *   [5.5 ZVOLs](#ZVOLs)
         *   [5.5.1 RAIDZ and Advanced Format physical disks](#RAIDZ_and_Advanced_Format_physical_disks)
 *   [6 Usage](#Usage)
-    *   [6.1 Scrub](#Scrub)
-    *   [6.2 Check zfs pool status](#Check_zfs_pool_status)
-    *   [6.3 Destroy a storage pool](#Destroy_a_storage_pool)
-    *   [6.4 Exporting a storage pool](#Exporting_a_storage_pool)
-    *   [6.5 Renaming a zpool](#Renaming_a_zpool)
-    *   [6.6 Setting a different mount point](#Setting_a_different_mount_point)
-    *   [6.7 Swap volume](#Swap_volume)
-    *   [6.8 Automatic snapshots](#Automatic_snapshots)
-        *   [6.8.1 ZFS Automatic Snapshot Service for Linux](#ZFS_Automatic_Snapshot_Service_for_Linux)
-        *   [6.8.2 ZFS Snapshot Manager](#ZFS_Snapshot_Manager)
+    *   [6.1 Native encryption](#Native_encryption)
+    *   [6.2 Scrub](#Scrub)
+    *   [6.3 Check zfs pool status](#Check_zfs_pool_status)
+    *   [6.4 Destroy a storage pool](#Destroy_a_storage_pool)
+    *   [6.5 Exporting a storage pool](#Exporting_a_storage_pool)
+    *   [6.6 Renaming a zpool](#Renaming_a_zpool)
+    *   [6.7 Setting a different mount point](#Setting_a_different_mount_point)
+    *   [6.8 Swap volume](#Swap_volume)
+    *   [6.9 Automatic snapshots](#Automatic_snapshots)
+        *   [6.9.1 ZFS Automatic Snapshot Service for Linux](#ZFS_Automatic_Snapshot_Service_for_Linux)
+        *   [6.9.2 ZFS Snapshot Manager](#ZFS_Snapshot_Manager)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Creating a zpool fails](#Creating_a_zpool_fails)
     *   [7.2 ZFS is using too much RAM](#ZFS_is_using_too_much_RAM)
@@ -63,9 +64,7 @@ As a result:
     *   [7.6 Devices have different sector alignment](#Devices_have_different_sector_alignment)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Embed the archzfs packages into an archiso](#Embed_the_archzfs_packages_into_an_archiso)
-    *   [8.2 Encryption in ZFS on Linux](#Encryption_in_ZFS_on_Linux)
-        *   [8.2.1 Using dm-crypt](#Using_dm-crypt)
-        *   [8.2.2 Native encryption](#Native_encryption)
+    *   [8.2 Encryption in ZFS using dm-crypt](#Encryption_in_ZFS_using_dm-crypt)
     *   [8.3 Emergency chroot repair with archzfs](#Emergency_chroot_repair_with_archzfs)
     *   [8.4 Bind mount](#Bind_mount)
         *   [8.4.1 fstab](#fstab)
@@ -221,7 +220,7 @@ Now, finally, create the ZFS pool:
 
 *   **pool**: This is the name of the pool.
 
-*   **raidz**: This is the type of virtual device that will be created from the pool of devices. Raidz is a special implementation of raid5\. See [Jeff Bonwick's Blog -- RAID-Z](https://blogs.oracle.com/bonwick/entry/raid_z) for more information about raidz.
+*   **raidz**: This is the type of virtual device that will be created from the pool of devices. Raidz is a special implementation of raid5\. See [Jeff Bonwick's Blog -- RAID-Z](https://blogs.oracle.com/bonwick/entry/raid_z) for more information about raidz. The usage of **mirror** instead may be better when using RAID-1 [[3]](http://blog.programster.org/zfs-create-disk-pools).
 
 *   **ids**: The names of the drives or partitions that to include into the pool. Get it from `/dev/disk/by-id`.
 
@@ -491,6 +490,46 @@ $ man zpool
 
 ```
 
+### Native encryption
+
+Native ZFS encryption has been made available in 0.7.0.r26 or newer provided by packages like [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/), [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/) or other development builds.
+
+*   Supported encryption options: `aes-128-ccm`, `aes-192-ccm`, `aes-256-ccm`, `aes-128-gcm`, `aes-192-gcm` and `aes-256-gcm`. When encryption is set to `on`, `aes-256-ccm` will be used.
+*   Supported keyformats: `passphrase`, `raw`, `hex`
+
+You can also specify iterations of PBKDF2 with `-o pbkdf2iters <n>` (it takes time to decrypt the key)
+
+To create a dataset including native encryption with a passphrase, use:
+
+```
+# zfs create -o encryption=on -o keyformat=passphrase <nameofzpool>/<nameofdataset>
+
+```
+
+To use a key instead of using a passphrase:
+
+```
+# dd if=/dev/urandom of=/path/to/key bs=1 count=32
+# zfs create -o encryption=on -o keyformat=raw -o keylocation=file:///path/to/key <nameofzpool>/<nameofdataset>
+
+```
+
+You can also manually load the keys and then mount the encrypted dataset:
+
+```
+# zfs load-key pool/dataset # load key for a specific dataset
+# zfs load-key -a # load all keys
+# zfs load-key -r zpool/dataset # load all keys in a dataset
+
+```
+
+When importing a pool that contains encrypted datasets: ZFS will by default not decrypt these datasets. To do this use `-l`
+
+```
+# zpool import -l pool
+
+```
+
 ### Scrub
 
 ZFS pools should be scrubbed at least once a week. To scrub the pool:
@@ -542,10 +581,10 @@ If a storage pool is to be used on another system, it will first need to be expo
 
 Any attempts made to import an un-exported storage pool will result in an error stating the storage pool is in use by another system. This error can be produced at boot time abruptly abandoning the system in the busybox console and requiring an archiso to do an emergency repair by either exporting the pool, or adding the `zfs_force=1` to the kernel boot parameters (which is not ideal). See [#On boot the zfs pool does not mount stating: "pool may be in use from other system"](#On_boot_the_zfs_pool_does_not_mount_stating:_.22pool_may_be_in_use_from_other_system.22)
 
-To export a pool,
+To export a pool:
 
 ```
-# zpool export bigdata
+# zpool export <pool>
 
 ```
 
@@ -830,11 +869,9 @@ archzfs-linux
 
 Complete [Build the ISO](/index.php/Archiso#Build_the_ISO "Archiso") to finally build the iso.
 
-### Encryption in ZFS on Linux
+### Encryption in ZFS using dm-crypt
 
-#### Using dm-crypt
-
-The release version of ZFS on Linux does not support encryption directly, but zpools can be created in dm-crypt block devices. Since the zpool is created on the plain-text abstraction, it is possible to have the data encrypted while having all the advantages of ZFS like deduplication, compression, and data robustness.
+The stable release version of ZFS on Linux does not support encryption directly, but zpools can be created in dm-crypt block devices. Since the zpool is created on the plain-text abstraction, it is possible to have the data encrypted while having all the advantages of ZFS like deduplication, compression, and data robustness.
 
 dm-crypt, possibly via LUKS, creates devices in `/dev/mapper` and their name is fixed. So you just need to change `zpool create` commands to point to that names. The idea is configuring the system to create the `/dev/mapper` block devices and import the zpools from there. Since zpools can be created in multiple devices (raid, mirroring, striping, ...), it is important all the devices are encrypted otherwise the protection might be partially lost.
 
@@ -868,38 +905,6 @@ For example to have an encrypted home: (the two passwords, encryption and login,
 # passwd <username>
 # ecryptfs-migrate-home -u <username>
 <log in user and complete the procedure with ecryptfs-unwrap-passphrase>
-
-```
-
-#### Native encryption
-
-To use native ZFS encryption, you will need a recent enough zfs package like [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/) 0.7.0.r26 or newer.
-
-To create an encrypted dataset just specify the encryption type and keyformat:
-
-```
-# zfs create -o encryption=on -o keyformat=passphrase -o mountpoint=none pool/encr
-
-```
-
-*   Supported encryption options: `aes-128-ccm`, `aes-192-ccm`, `aes-256-ccm`, `aes-128-gcm`, `aes-192-gcm` and `aes-256-gcm`. When encryption is set to `on`, `aes-256-ccm` will be used.
-*   Supported keyformats: `passphrase`, `raw`, `hex`
-
-You can also specify iterations of PBKDF2 with `-o pbkdf2iters <n>` (Time it takes to decrypt the key)
-
-When importing a pool that contains encrypted datasets: ZFS will by default not decrypt these datasets. To do this use `-l`
-
-```
-# zpool import -l pool
-
-```
-
-You can also manually load the keys and then mount the encrypted dataset
-
-```
-# zfs load-key pool/dataset # load key for a specific dataset
-# zfs load-key -a # load all keys
-# zfs load-key -r zpool/dataset # load all keys in a dataset
 
 ```
 

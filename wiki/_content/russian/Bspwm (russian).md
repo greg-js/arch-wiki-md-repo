@@ -235,4 +235,3 @@ $ set -U SXHKD_SHELL /usr/bin/bash
 *   [https://bbs.archlinux.org/viewtopic.php?id=149444](https://bbs.archlinux.org/viewtopic.php?id=149444) - Arch BBS thread
 *   [https://github.com/baskerville/bspwm](https://github.com/baskerville/bspwm) - GitHub project
 *   [https://github.com/windelicato/dotfiles/wiki/bspwm-for-dummies](https://github.com/windelicato/dotfiles/wiki/bspwm-for-dummies) - earsplit's "bspwm for dummies"
-*   [https://github.com/smlb/dotfiles/wiki/Bspwm](https://github.com/smlb/dotfiles/wiki/Bspwm) - smlb's wiki

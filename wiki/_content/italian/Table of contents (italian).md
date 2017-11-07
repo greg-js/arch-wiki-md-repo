@@ -1,5 +1,5 @@
 | [Italiano](/index.php/Category:Italiano "Category:Italiano") <small>(1)</small> |
-| <small>1.</small> [A proposito di Arch](/index.php/Category:About_Arch_(Italiano) "Category:About Arch (Italiano)") <small>(15)</small> |
+| <small>1.</small> [A proposito di Arch](/index.php/Category:About_Arch_(Italiano) "Category:About Arch (Italiano)") <small>(16)</small> |
 | <small>1.1.</small> [Sviluppo di Arch Linux](/index.php/Category:Arch_development_(Italiano) "Category:Arch development (Italiano)") <small>(0)</small> |
 | <small>1.1.1.</small> [Sviluppo dei Pacchetti](/index.php/Category:Package_development_(Italiano) "Category:Package development (Italiano)") <small>(19)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Italiano) "Category:ArchWiki (Italiano)") <small>(3)</small> |

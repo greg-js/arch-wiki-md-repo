@@ -62,7 +62,7 @@ Some PulseAudio modules have been [split](https://www.archlinux.org/news/pulseau
 *   [pulseaudio-lirc](https://www.archlinux.org/packages/?name=pulseaudio-lirc): Infrared (LIRC) volume control
 *   [pulseaudio-zeroconf](https://www.archlinux.org/packages/?name=pulseaudio-zeroconf): Zeroconf (Avahi/DNS-SD) support
 
-**Note:** Some confusion can be made between [ALSA](/index.php/ALSA "ALSA") and PulseAudio. ALSA includes both Linux kernel component with sound card drivers, and a userspace component, `libalsa`.[[1]](http://www.alsa-project.org/main/index.php/Download) PulseAudio builds only on the kernel component, but offers compatibility with `libalsa` through [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa).[[2]](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/#index14h3)
+**Note:** Some confusion may occur between [ALSA](/index.php/ALSA "ALSA") and PulseAudio. ALSA includes a Linux kernel component with sound card drivers, as well as a userspace component, `libalsa`.[[1]](http://www.alsa-project.org/main/index.php/Download) PulseAudio builds only on the kernel component, but offers compatibility with `libalsa` through [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa).[[2]](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/#index14h3)
 
 ### Front-ends
 
@@ -79,21 +79,21 @@ There are a number of front-ends available for controlling the PulseAudio daemon
 
 *   KF5 plasma applet: [kmix](https://www.archlinux.org/packages/?name=kmix) and [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa)
 *   Xfce4 plugin: [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin), [pa-applet-git](https://aur.archlinux.org/packages/pa-applet-git/)
-*   If you want to use Bluetooth Headsets or other Bluetooth Audio Devices together with PulseAudio see the [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") Article.
+*   If you want to use Bluetooth headsets or other Bluetooth audio devices with PulseAudio, see the [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") article.
 
 ## Configuration
 
 ### Configuration files
 
-By default, PulseAudio is configured to automatically detect all sound cards and manage them. It takes control of all detected ALSA devices and redirect all audio streams to itself, making the PulseAudio daemon the central configuration point. The daemon should work mostly out of the box, only requiring a few minor tweaks.
+By default, PulseAudio is configured to automatically detect all sound cards and manage them. It takes control of all detected ALSA devices and redirects all audio streams to itself, making the PulseAudio daemon the central configuration point. The daemon should work mostly out of the box, only requiring a few minor tweaks.
 
-PulseAudio will first look for configuration files in home directory `~/.config/pulse`, then in system wide `/etc/pulse`.
+PulseAudio will first look for configuration files in the home directory `~/.config/pulse`, then system-wide `/etc/pulse`.
 
 PulseAudio runs as a server daemon that can run either system-wide or on per-user basis using a client/server architecture. The daemon by itself does nothing without its modules except to provide an API and host dynamically loaded modules. The audio routing and processing tasks are all handled by various modules. You can find a detailed list of all available modules at [Pulseaudio Loadable Modules](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/). To enable them you can just add a line `load-module <module-name-from-list>` to `~/.config/pulse/default.pa`.
 
 **Tip:**
 
-*   It is strongly suggested not to edit system wide configuration files, but rather edit user ones. Create the `~/.config/pulse` directory, then copy the system configuration files into it and edit according to your need.
+*   It is strongly suggested not to edit system-wide configuration files, but rather edit user ones. Create the `~/.config/pulse` directory, then copy the system configuration files into it and edit according to your need.
 *   Make sure you keep user configuration in sync with changes to the packaged files in `/etc/pulse/`. Otherwise, PulseAudio may refuse to start due to configuration errors.
 *   There is usually no need to add your user to the `audio` group, as PulseAudio uses [udev](/index.php/Udev "Udev") and *logind* to give access dynamically to the currently "active" user. Exceptions would include running the machine headless so that there is no currently "active" user.
 
@@ -106,6 +106,7 @@ Defines base settings like the default sample rates used by modules, resampling 
 <caption>Notable configuration options</caption>
 | Option | Description |<caption></caption>
 | system-instance | Run the daemon as a system-wide instance. Highly discouraged as it can introduce security issues. Useful on (headless) systems that have no real local users. Defaults to `no`. |<caption></caption>
+| avoid-resampling | With `avoid-resampling = yes`, PulseAudio automatically configures the hardware to the sample rate which the application uses, if the hardware supports this sample rate (needs [PA 11](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/11.0/) or higher) |<caption></caption>
 | resample-method | Which resampler to use when audio with incompatible sample rates needs to be passed between modules (e.g. playback of 96kHz audio on hardware which only supports 48kHz). The available resamplers can be listed with `$ pulseaudio --dump-resample-methods`. Choose the best tradeoff between CPU usage and audio quality for the present use-case.
 **Tip:** In some cases PulseAudio will generate a high CPU load. This can happen when multiple streams are resampled (individually). If this is a common use-case in a workflow, it should be considered to create an additional sink at a matching sample rate which can then be fed into the main sink, resampling only once.
  |<caption></caption>
@@ -161,7 +162,7 @@ For more information, see [PulseAudio: Running](http://www.freedesktop.org/wiki/
 
 ### ALSA
 
-If you have applications that do not support PulseAudio explicitly but rely on ALSA, these applications will try to access the sound card directly via ALSA and will therefore bypass PulseAudio. PulseAudio will thus not have access to the sound card any more. As a result, all applications relying on PulseAudio will not be working any more, leading to [this issue](/index.php/PulseAudio/Troubleshooting#The_only_device_shown_is_.22dummy_output.22_or_newly_connected_cards_are_not_detected "PulseAudio/Troubleshooting"). To prevent this, you will need to install the [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) package. It contains the necessary `/etc/asound.conf` for configuring ALSA to use PulseAudio. Also make sure that `~/.asoundrc` does not exist, it would override the `/etc/asound.conf` file.
+If you have applications that do not support PulseAudio explicitly but rely on ALSA, these applications will try to access the sound card directly via ALSA and will therefore bypass PulseAudio. PulseAudio will thus not have access to the sound card any more. As a result, all applications relying on PulseAudio will not be working any more, leading to [this issue](/index.php/PulseAudio/Troubleshooting#The_only_device_shown_is_.22dummy_output.22_or_newly_connected_cards_are_not_detected "PulseAudio/Troubleshooting"). To prevent this, you will need to install the [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) package. It contains the necessary `/etc/asound.conf` for configuring ALSA to use PulseAudio. Also make sure that `~/.asoundrc` does not exist, as it would override the `/etc/asound.conf` file.
 
 Please also install [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) if you run a x86_64 system and want to have sound for 32-bit [multilib](/index.php/Multilib "Multilib") programs like [Wine](/index.php/Wine "Wine") and [Steam](/index.php/Steam "Steam").
 

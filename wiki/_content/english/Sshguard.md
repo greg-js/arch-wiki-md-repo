@@ -131,7 +131,7 @@ ExecStartPre=
 
 ```
 
-When you [start/enable](/index.php/Start/enable "Start/enable") the `sshguard.service`, two new tables named `sshguard` in the `ip` and `ip6` address families are added which filter incoming traffic through sshguard's list of IP addresses. The chains in the `sshguard` table have a priority of -10 and will be processed before other rules lower priority. See [sshguard-setup(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sshguard-setup.7) and [nftables](/index.php/Nftables "Nftables") for more information.
+When you [start/enable](/index.php/Start/enable "Start/enable") the `sshguard.service`, two new tables named `sshguard` in the `ip` and `ip6` address families are added which filter incoming traffic through sshguard's list of IP addresses. The chains in the `sshguard` table have a priority of -10 and will be processed before other rules of lower priority. See [sshguard-setup(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sshguard-setup.7) and [nftables](/index.php/Nftables "Nftables") for more information.
 
 ## Usage
 

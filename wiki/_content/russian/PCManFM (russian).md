@@ -1,3 +1,7 @@
+Related articles
+
+*   [SpaceFM (Русский)](/index.php/SpaceFM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SpaceFM (Русский)")
+
 **PCManFM** (PCMan File Manager) — стандартный файловый менеджер среды [LXDE](/index.php/LXDE "LXDE") с открытым исходным кодом, представляющей собой набор приложений незваисимых друг от друга, но объединенных принципом экономии ресурсов. Продукт разрабатывается китайским программистом Hong Jen Yee (кит. 洪任諭), разработчиком графической среды [LXDE](/index.php/LXDE "LXDE").(Источник: [[1]](https://ru.wikipedia.org/wiki/PCManFM))
 
 ## Contents

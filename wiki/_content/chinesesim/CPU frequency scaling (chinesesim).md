@@ -1,4 +1,10 @@
-**翻译状态：** 本文是英文页面 [CPU_Frequency_Scaling](/index.php/CPU_Frequency_Scaling "CPU Frequency Scaling") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-22，点击[这里](https://wiki.archlinux.org/index.php?title=CPU_Frequency_Scaling&diff=0&oldid=436397)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-07，点击[这里](https://wiki.archlinux.org/index.php?title=CPU+frequency+scaling&diff=0&oldid=436397)可以查看翻译后英文页面的改动。
+
+相关文章
+
+*   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
+*   [pm-utils](/index.php/Pm-utils "Pm-utils")
+*   [PHC](/index.php/PHC "PHC")
 
 CPU 调频允许操作系统通过提高或降低 CPU 频率来达到省电目的。CPU 频率可以根据系统负载或响应 ACPI 事件来自动调整，也可通过用户空间程序手工调整。
 
@@ -111,21 +117,24 @@ $ cpupower frequency-info
 
 ## 调整调速器
 
-**Note:** pstate 驱动仅支持 performance 和 powersave governors and the performance [可以比老的 ondemand governor 更省电](http://www.phoronix.com/scan.php?page=news_item&px=MTM3NDQ).
-
 调速器（见下表）是预设的 CPU 电源方案。在同一时刻只会有一个会调速器被激活。可以查询内核源码的 [内核文档](https://www.kernel.org/doc/Documentation/cpu-freq/governors.txt) 得到更多的相关信息。
 
 | 调速器 | 描述 |
-| ondemand | 按需快速动态调整CPU频率， 一有cpu计算量的任务，就会立即达到最大频率运行，等执行完毕就立即回到最低频率（阙值为 95%） |
 | performance | 运行于最大频率 |
-| conservative | 按需快速动态调整CPU频率， 一有cpu计算量的任务，就会立即达到最大频率运行，等执行完毕就立即回到最低频率（阙值为 75%） |
 | powersave | 运行于最小频率 |
 | userspace | 运行于用户指定的频率 |
+| ondemand | 按需快速动态调整CPU频率， 一有cpu计算量的任务，就会立即达到最大频率运行，空闲时间增加就降低频率 |
+| conservative | 按需快速动态调整CPU频率， 比 ondemand 的调整更保守 |
+| schedutil | 基于调度程序调整 CPU 频率 [[1]](http://lwn.net/Articles/682391/), [[2]](https://lkml.org/lkml/2016/3/17/420). |
 
 根据实际硬件，以下的调速器可能被默认启用：
 
 *   `ondemand` ：AMD 及旧款 Intel CPU。
-*   `powersave` ：Intel Sandy Bridge 和更新的CPU。
+*   `powersave` ：Intel 使用 `intel_pstate` 驱动的 CPU(Sandy Bridge 和更新的CPU)。
+
+**Note:** pstate 驱动仅支持 performance 和 powersave governors and the performance [可以比老的 ondemand governor 更省电](http://www.phoronix.com/scan.php?page=news_item&px=MTM3NDQ).
+
+**Warning:** 修改默认调速器时，请使用 CPU 监控工具监控温度、电压等指标。
 
 如果需要指定特定的调速器，运行以下命令：
 
@@ -192,13 +201,17 @@ $ cat /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
 
 #### 保存设置
 
-要在重启后自动启用设置，可以使用 systemd-tmpfiles. 例如要在启动时设置 sampling_down_factor，创建并编辑 `/etc/tmpfiles.d/10-cpu-sampling-down.conf`：
+要在重启后自动启用设置，通常使用 [内核模式选项](/index.php/Kernel_modules "Kernel modules") 和 [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd")。如果某些特殊情况下会出现时序问题，可以使用 [udev](/index.php/Udev "Udev")。
 
- `/etc/tmpfiles.d/10-cpu-sampling-down.conf` 
+例如要将 CPU core `0` 的调速器设置为 performance，驱动是 `acpi_cpufreq`, 创建如下 udev 规则：
+
+ `/etc/udev/rules.d/50-scaling-governor.rules` 
 ```
-w /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor - - - - 40
+SUBSYSTEM=="module", ACTION=="add", KERNEL=="acpi_cpufreq", RUN+=" /bin/sh -c ' echo performance > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor ' "
 
 ```
+
+要在 *initramfs* 中启用设置，请参考下面例子：[udev#Debug output](/index.php/Udev#Debug_output "Udev").
 
 ## 与ACPI事件交互
 

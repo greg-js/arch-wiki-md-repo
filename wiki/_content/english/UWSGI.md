@@ -151,13 +151,13 @@ Since we are chrooting to `/srv/http` above configuration will result in followi
 **Note:**
 
 *   Your application must be placed within `/srv/http/www/application1` before service is started. Depending on configuration your application may be cached so you may need to restart the service when you modify it.
-*   If you are deploying python application you may need to copy standard python libraries - if you develop under python 3 then you can copy them from `/lib/python3.4` to `/srv/http/lib/python3.4`.
+*   If you are deploying python application you may need to copy standard python libraries - if you develop under python 3 then you can copy them from `/usr/lib/python3.6` to `/srv/http/lib/python3.6`.
 
 You can try to run following:
 
 ```
-# cp -r -p /lib/python3.4 /srv/http/lib
-# cp -r -p /lib/*python*so /srv/http/lib
+# cp -r -p /usr/lib/python3.6 /srv/http/lib
+# cp -r -p /usr/lib/*python*so /srv/http/lib
 
 ```
 

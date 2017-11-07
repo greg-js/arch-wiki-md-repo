@@ -229,4 +229,3 @@ Si, por ejemplo, las aplicaciones Java no pueden cambiar de tamaño o sus menús
 *   [https://bbs.archlinux.org/viewtopic.php?id=149444](https://bbs.archlinux.org/viewtopic.php?id=149444) - Tema en el foro Arch BBS
 *   [https://github.com/baskerville/bspwm](https://github.com/baskerville/bspwm) - GitHub
 *   [https://github.com/windelicato/dotfiles/wiki/bspwm-for-dummies](https://github.com/windelicato/dotfiles/wiki/bspwm-for-dummies) - Un "bspwm para tontos"
-*   [https://github.com/smlb/dotfiles/wiki/Bspwm](https://github.com/smlb/dotfiles/wiki/Bspwm) - La wiki de smlb

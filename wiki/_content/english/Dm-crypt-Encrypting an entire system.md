@@ -298,7 +298,7 @@ The disk layout in this example is:
 
 **Tip:** Two variants of this setup:
 
-*   Instructions at [Dm-crypt/Specialties#Encrypted system using a remote LUKS header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_remote_LUKS_header "Dm-crypt/Specialties") use this setup with a remote LUKS header on a USB device to achieve a two factor authentication with it.
+*   Instructions at [dm-crypt/Specialties#Encrypted system using a detached LUKS header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") use this setup with a detached LUKS header on a USB device to achieve a two factor authentication with it.
 *   Instructions at [Pavel Kogan's blog](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/) show how to encrypt the `/boot` partition while keeping it on the main LUKS partition when using GRUB.
 
 ### Preparing the disk
@@ -705,7 +705,7 @@ Note that if full-disk encryption is not required, the methods using LUKS descri
 **Tip:** If headerless encryption is your goal but you are unsure about the lack of key-derivation with *plain* mode, then two alternatives are:
 
 *   [tcplay](/index.php/Tcplay "Tcplay") which offers headerless encryption but with the PBKDF2 function, or
-*   dm-crypt LUKS mode by using the *cryptsetup* `--header` option. It cannot be used with the standard *encrypt* hook, but the hook [may be modified](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_remote_LUKS_header "Dm-crypt/Specialties").
+*   dm-crypt LUKS mode with a detached header by using the *cryptsetup* `--header` option. It cannot be used with the standard *encrypt* hook, but the hook [may be modified](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties").
 
 The scenario uses two USB sticks:
 
@@ -809,7 +809,7 @@ cryptdevice=/dev/sd*X*:enc cryptkey=/dev/sd*Z*:0:512 crypto=sha512:twofish-xts-p
 
 ```
 
-**Note:** If using sd-encrypt instead of encrypt, use `*luks.uuid*` instead of cryptdevice. See *systemd-cryptsetup-generator(8)*.
+**Note:** If using sd-encrypt instead of encrypt, respectively use the options specified in *systemd-cryptsetup-generator(8)*.
 
 See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details and other parameters that you may need.
 

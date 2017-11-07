@@ -126,7 +126,7 @@ You can omit the `.service` and `.target` extensions, especially if temporarily 
 | `systemctl list-units` | `rc.d list` | `rc-status` | List running services status |
 | `systemctl --failed` | `rc-status --crashed` | Check failed services |
 | `systemctl --all` | `rc-update -v show` | Display all available services. |
-| `systemctl (start, stop, restart, status) daemon.service` | `rc.d (start, stop, restart) daemon` | `rc-service (start, stop, restart, status) daemon` | Change service state. |
+| `systemctl (start, stop, restart, status) daemon.service` | `rc.d (start, stop, restart) daemon` | `rc-service daemon (start, stop, restart, status)` | Change service state. |
 | `systemctl (enable, disable) daemon.service` | `chkconfig daemon (on, off)` | `rc-update (add, del) daemon` | Turn service on or off. |
 | `systemctl daemon-reload` | `chkconfig daemon --add` | Create or modify configuration. |
 

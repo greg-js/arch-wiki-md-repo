@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [Fish](/index.php/Fish "Fish") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-07，点击[这里](https://wiki.archlinux.org/index.php?title=Fish&diff=0&oldid=494923)可以查看翻译后英文页面的改动。
+
 **fish**, 是 "friendly interactive shell" 的缩写, 是一个"为交互式使用而创建，用户友好的 [命令行shell](/index.php/Command-line_shell "Command-line shell")". [[1]](http://fishshell.com/docs/current/index.html)
 
 ## Contents
@@ -114,7 +116,7 @@ set-option -g default-shell "/usr/bin/fish"
 
 ```
 
-这样不论你什么时候启动*tmux*，都会自动进入fish。
+这样只要启动*tmux*，都会自动进入fish。
 
 ### 设为默认shell(不建议)
 
@@ -206,15 +208,16 @@ end
 
 ### 从jobs中删除进程
 
-*fish* terminates any jobs put into the background when fish terminates. To keep a job running after fish terminates, first use the `disown` builtin. For example, the following starts `firefox` in the background and then disowns it:
+当你退出*fish*的时候，所有后台进程也会终止。为了保持一个任务即使在fish退出了之后也继续运行，需要先输入`disown`命令，再退出。举例来说，在后台启动firefox，然后退出fish，但firefox在后台继续运行：
 
 ```
  $ firefox &
  $ disown
+ $ exit
 
 ```
 
-This means firefox will not be closed when the fish process is closed. See disown(1) in *fish* for more details.
+你会发现虽然你退出了fish，但firefox没有退出。请参阅disown(1)了解更多细节。
 
 ### 迅速设置别名
 

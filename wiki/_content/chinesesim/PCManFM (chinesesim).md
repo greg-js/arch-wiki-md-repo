@@ -8,6 +8,8 @@ Related articles
 *   [GNOME Files](/index.php/GNOME_Files "GNOME Files")
 *   [Nemo](/index.php/Nemo "Nemo")
 
+**翻译状态：** 本文是英文页面 [PCManFM](/index.php/PCManFM "PCManFM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-07，点击[这里](https://wiki.archlinux.org/index.php?title=PCManFM&diff=0&oldid=495212)可以查看翻译后英文页面的改动。
+
 [PCManFM](https://wiki.lxde.org/en/PCManFM) 是一个开源的文件管理器，并且是 [LXDE](/index.php/LXDE "LXDE")的默认文件管理器。
 
 ## Contents
@@ -37,31 +39,38 @@ Related articles
 
 ## 安装
 
-[Install](/index.php/Install "Install") the [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm) package, or [pcmanfm-gtk3](https://www.archlinux.org/packages/?name=pcmanfm-gtk3) for the GTK3 version, or [pcmanfm-git](https://aur.archlinux.org/packages/pcmanfm-git/) for the development version. [gvfs](https://www.archlinux.org/packages/?name=gvfs) is recommended for trash support, mounting with [udisks](/index.php/Udisks "Udisks") and remote filesystems.
+从仓库中选择 [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm) [安装](/index.php/%E5%AE%89%E8%A3%85 "安装")，如果想安装gtk3版本，选择 [pcmanfm-gtk3](https://www.archlinux.org/packages/?name=pcmanfm-gtk3)；如果想安装开发版，选择 [pcmanfm-git](https://aur.archlinux.org/packages/pcmanfm-git/)。 推荐安装[gvfs](https://www.archlinux.org/packages/?name=gvfs)以提供回收站功能；推荐安装 [udisks](/index.php/Udisks "Udisks") 实现远程文件系统的挂载支持。
 
-[Qt](/index.php/Qt "Qt") variants are available through [pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt) and [pcmanfm-qt-git](https://aur.archlinux.org/packages/pcmanfm-qt-git/).
+如果你想安装[Qt](/index.php/Qt "Qt")版本，可以选择 [pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt) 或 [pcmanfm-qt-git](https://aur.archlinux.org/packages/pcmanfm-qt-git/).
 
 ## 桌面管理
 
-The command to allow PCManFM to set wallpapers and enable the use of desktop icons is:
+使用如下命令，能够使用PCManFM进行桌面管理，比设置壁纸，桌面图标等：
 
 ```
 pcmanfm --desktop
 
 ```
 
-The native desktop menu of the window manager will be replaced with that provided by PCManFM. However, it can easily be restored from the PCManFM menu itself by selecting `Desktop preferences` and then enabling the `Right click shows WM menu` option in the `Desktop` tab.
+原生的桌面管理菜单会被PCManFM提供的桌面管理菜单所替换。但是，只需要在桌面右击，选择 `桌面偏好设置`，在 `高级`选项卡中选择 `右击时选择窗口管理器提供的菜单`，即可还原。或者在命令行中输入：
+
+```
+pcmanfm --desktop-off
+
+```
+
+即可关闭
 
 ### 桌面首选项
 
-If using the native desktop menu provided by a window manager, enter the following command to set or amend desktop preferences at any time:
+如果你使用的是原生的桌面管理器，只要输入下面命令就能进入修改桌面配置
 
 ```
 $ pcmanfm --desktop-pref
 
 ```
 
-It is worthwhile to consider adding this command to a keybind and/or the native desktop menu for easy access.
+可以考虑把这句命令添加快捷键等方式，以方便使用。
 
 ### 新建图标
 
@@ -83,14 +92,14 @@ For those who used the [XDG user directories](/index.php/XDG_user_directories "X
 
 ## 守护进程模式
 
-To run PCManFM in the background (to for example automatically mount removable media), use:
+如果你想在后台运行PCManFM ( 比如说要自动挂载移动硬盘等可移动介质)，使用：
 
 ```
 pcmanfm -d
 
 ```
 
-Should automount fail, see [udisks](/index.php/Udisks "Udisks").
+如果自动挂载失败，请参见 [udisks](/index.php/Udisks "Udisks").
 
 ## 开机自启
 
@@ -136,17 +145,17 @@ You can configure what terminal emulator PCManFM should use for *Tools > Open Cu
 
 ### 集成归档管理器
 
-You can choose the integrated archiver under *Edit > Preferences > Advanced*. PCManFM supports [file-roller](https://www.archlinux.org/packages/?name=file-roller), [xarchiver](https://www.archlinux.org/packages/?name=xarchiver) (or [xarchiver-gtk2](https://www.archlinux.org/packages/?name=xarchiver-gtk2)), [engrampa](https://www.archlinux.org/packages/?name=engrampa), [ark](https://www.archlinux.org/packages/?name=ark) and [squeeze-git](https://aur.archlinux.org/packages/squeeze-git/).
+可以在*编辑 > 偏好设置 > 高级* 中设置集成的归档管理器。目前 PCManFM 支持 [file-roller](https://www.archlinux.org/packages/?name=file-roller), [xarchiver](https://www.archlinux.org/packages/?name=xarchiver) (或者 [xarchiver-gtk2](https://www.archlinux.org/packages/?name=xarchiver-gtk2)), [engrampa](https://www.archlinux.org/packages/?name=engrampa), [ark](https://www.archlinux.org/packages/?name=ark) 和 [squeeze-git](https://aur.archlinux.org/packages/squeeze-git/)。
 
 ### 创建模板
 
-PCManFM adds the files in `~/Templates` as *Create New...* context menu items on startup.
+模板文件保存在 `~/Templates` ，点击*文件>新建...*可以选择相应的模板
 
 ## 故障排除
 
 ### 启动窗口空白
 
-If you do not see any applications to choose from in the open with dialog, then you can try removing [gnome-menus](https://www.archlinux.org/packages/?name=gnome-menus) and instead install [lxmenu-data](https://www.archlinux.org/packages/?name=lxmenu-data). Furthermore, export the following variables:
+如果你启动应用时，界面一片空白，那么你可以试着卸载 [gnome-menus](https://www.archlinux.org/packages/?name=gnome-menus) 然后安装 [lxmenu-data](https://www.archlinux.org/packages/?name=lxmenu-data)。此外，设置如下环境变量：
 
 ```
 export XDG_MENU_PREFIX=lxde-

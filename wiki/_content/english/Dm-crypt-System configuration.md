@@ -14,10 +14,10 @@ Back to [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
         *   [2.1.4 cryptkey](#cryptkey)
         *   [2.1.5 crypto](#crypto)
     *   [2.2 Using sd-encrypt hook](#Using_sd-encrypt_hook)
-        *   [2.2.1 luks.uuid](#luks.uuid)
-        *   [2.2.2 luks.name](#luks.name)
-        *   [2.2.3 luks.options](#luks.options)
-        *   [2.2.4 luks.key](#luks.key)
+        *   [2.2.1 rd.luks.uuid](#rd.luks.uuid)
+        *   [2.2.2 rd.luks.name](#rd.luks.name)
+        *   [2.2.3 rd.luks.options](#rd.luks.options)
+        *   [2.2.4 rd.luks.key](#rd.luks.key)
 *   [3 crypttab](#crypttab)
     *   [3.1 Mounting at boot time](#Mounting_at_boot_time)
         *   [3.1.1 Mounting a stacked blockdevice](#Mounting_a_stacked_blockdevice)
@@ -128,6 +128,8 @@ cryptkey=*device*:*offset*:*size*
 
 where the offset is in bytes and the size in bits. Example: `cryptkey=/dev/sdZ:0:512` reads a 512 bit keyfile starting at the beginning of the device.
 
+**Tip:** If the device path you want to access contains the character `:`, you have to escape it with three backslash `\`. In that case the cryptkey parameter would be as follow: `cryptkey=/dev/disk/by-id/usb-123456-0\\\:0:0:512` for a usb key with the id `usb-123456-0:0`.
+
 For a file [included](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") in the initramfs the format is[[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/encrypt_hook?h=packages/cryptsetup#n14):
 
 ```
@@ -170,27 +172,28 @@ crypto=sha512:twofish-xts-plain64:512:0:
 
 ### Using sd-encrypt hook
 
-In all of the following `luks` can be replaced with `rd.luks`. `luks` parameters are honored by both the main system and initrd. `rd.luks` parameters are only honored by the initrd. See [systemd-cryptsetup-generator(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8) for more options and more details.
+In all of the following `rd.luks` can be replaced with `luks`. `rd.luks` parameters are only honored by the initrd. `luks` parameters are honored by both the main system and initrd. Unless you want to control devices which get unlocked after boot from kernel command line use `rd.luks`. See [systemd-cryptsetup-generator(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8) for more options and more details.
 
-**Note:**
+**Tip:**
 
 *   If the file `/etc/crypttab.initramfs` exists, [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") will add it to the initramfs as `/etc/crypttab`, you can specify devices that need to unlocked at boot there. Syntax is documented in [crypttab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5).
-*   If you are using `/etc/crypttab.initramfs` together with `luks.*` or `rd.luks.*` parameters, only those devices specified on the kernel command line will be activated. To activate all devices in `/etc/crypttab.initramfs` do not specify any `luks.*` or `rd.luks.*` parameters .
-*   If you use `luks.*` kernel parameters for the rootfs while also using `/etc/crypttab` for the swap then [systemd](/index.php/Systemd "Systemd") will complain about `Not creating device 'swap' because it was not specified on the kernel command line.`. To fix this issue just use `rd.luks.*` parameters instead.
+*   `/etc/crypttab.initramfs` is not limited to using only UUID like `rd.luks`. You can use any of the [persistent block device naming methods](/index.php/Persistent_block_device_naming#Persistent_naming_methods "Persistent block device naming").
 
-#### luks.uuid
+**Warning:** If you are using `/etc/crypttab` or `/etc/crypttab.initramfs` together with `luks.*` or `rd.luks.*` parameters, only those devices specified on the kernel command line will be activated and you will see `Not creating device 'devicename' because it was not specified on the kernel command line.`. To activate all devices in `/etc/crypttab` do not specify any `luks.*` parameters and use `rd.luks.*`. To activate all devices in `/etc/crypttab.initramfs` do not specify any `luks.*` or `rd.luks.*` parameters.
 
-```
-luks.uuid=*UUID*
+#### rd.luks.uuid
 
 ```
-
-Specify the [UUID](/index.php/UUID "UUID") of the device to be decrypted on boot with this flag. If the UUID is in `/etc/crypttab`, the options listed there will be used.
-
-#### luks.name
+rd.luks.uuid=*UUID*
 
 ```
-luks.name=*UUID*=*name*
+
+Specify the [UUID](/index.php/UUID "UUID") of the device to be decrypted on boot with this flag. If the UUID is in `/etc/crypttab.initramfs`, the options listed there will be used. For `luks.uuid` options from `/etc/crypttab.initramfs` or `/etc/crypttab` will be used.
+
+#### rd.luks.name
+
+```
+rd.luks.name=*UUID*=*name*
 
 ```
 
@@ -198,17 +201,17 @@ Specify the name of the mapped device after the LUKS partition is open. For exam
 
 This is equivalent to the second parameter of `encrypt`'s `cryptdevice`.
 
-#### luks.options
+#### rd.luks.options
 
 ```
-luks.options=UUID=*options*
+rd.luks.options=UUID=*options*
 
 ```
 
 or
 
 ```
-luks.options=*options*
+rd.luks.options=*options*
 
 ```
 
@@ -221,18 +224,18 @@ Follows a similar format to options in crypttab - options are separated by comma
 For example:
 
 ```
-luks.options=timeout=10s,swap,cipher=aes-cbc-essiv:sha256,size=256
+rd.luks.options=timeout=10s,swap,cipher=aes-cbc-essiv:sha256,size=256
 
 ```
 
-#### luks.key
+#### rd.luks.key
 
 ```
-luks.key=*mykeyfile*
+rd.luks.key=*mykeyfile*
 
 ```
 
-Specify the location of a password file used to decrypt the device specified in `luks.UUID`. There is no default location like there is with the `encrypt` hook parameter `cryptkey`.
+Specify the location of a password file used to decrypt the device specified in `rd.luks.UUID`. There is no default location like there is with the `encrypt` hook parameter `cryptkey`.
 
 ## crypttab
 

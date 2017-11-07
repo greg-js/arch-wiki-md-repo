@@ -25,7 +25,7 @@ CAPT is Canon's proprietary Canon Advanced Printing Technology (CAPT) driver, su
 
 Canon's driver uses a local daemon to communicate with the printer, and wraps that using a CUPS driver.
 
-To configure the printer, follow the [CUPS](/index.php/CUPS "CUPS") article, using a [Printer URI](/index.php/CUPS#Printer_URI "CUPS") of `ccp://localhost:59787`. Find the right model using `lpinfo -m`, or check the table provided on the [Ubuntu help page](https://help.ubuntu.com/community/CanonCaptDrv190), which matches each supported printer with its corresponding PPD.
+To configure the printer, follow the [CUPS](/index.php/CUPS "CUPS") article, adding a *CAPT printer* and using a [Printer URI](/index.php/CUPS#Printer_URI "CUPS") of `ccp://localhost:59787`. Find the right model using `lpinfo -m`, or check the table provided on the [Ubuntu help page](https://help.ubuntu.com/community/CanonCaptDrv190), which matches each supported printer with its corresponding PPD.
 
 **Warning:** Installing CAPT printers via the [CUPS](/index.php/CUPS "CUPS") web interface may not work [[1]](http://askubuntu.com/a/464334). Instead, use the [CLI tools](/index.php/CUPS#CLI_tools "CUPS").
 
@@ -35,7 +35,7 @@ To configure the printer, follow the [CUPS](/index.php/CUPS "CUPS") article, usi
 *   Some models have multiple PPDs, where the last letter indicates the regional model (J = Japan, K = United Kingdom, S = United States)
 *   When specifying the PPD, use just the file name and not the full path (for instance, `SOME_PRINTER.ppd` instead of `/usr/share/cups/model/SOME_PRINTER.ppd`
 
-Next, register the printer with the CAPT driver itself via *ccpdadmin*. Replace `*printer_address*` with either the USB port (e.g. `/dev/usb/lp0`) in case of a local printer, or the IP address, prefixed by `net:` (e.g. `net:192.168.1.100`) in case of a network printer:
+Next, register the printer with the CAPT driver itself via *ccpdadmin*. Replace `*queue_name*` with the queue descriptive name and `*printer_address*` with either the USB port (e.g. `/dev/usb/lp0`) in case of a local printer or the IP address, prefixed by `net:` (e.g. `net:192.168.1.100`), in case of a network printer:
 
 ```
 # ccpdadmin -p *queue_name* -o *printer_address*
@@ -53,6 +53,13 @@ Or for a network printer:
 
 ```
 # ccpdadmin -p LBP6310 -o net:192.168.1.100
+
+```
+
+To remove a printer:
+
+```
+# ccpdadmin -x *queue_name*
 
 ```
 

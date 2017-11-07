@@ -22,7 +22,7 @@ Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
     *   [5.2 Modifying the encrypt hook for multiple partitions](#Modifying_the_encrypt_hook_for_multiple_partitions)
         *   [5.2.1 Root filesystem spanning multiple partitions](#Root_filesystem_spanning_multiple_partitions)
         *   [5.2.2 Multiple non-root partitions](#Multiple_non-root_partitions)
-    *   [5.3 Encrypted system using a remote LUKS header](#Encrypted_system_using_a_remote_LUKS_header)
+    *   [5.3 Encrypted system using a detached LUKS header](#Encrypted_system_using_a_detached_LUKS_header)
         *   [5.3.1 Using systemd hook](#Using_systemd_hook)
         *   [5.3.2 Modifying encrypt hook](#Modifying_encrypt_hook)
 
@@ -145,7 +145,7 @@ This hook requires [grub](https://www.archlinux.org/packages/?name=grub) release
 
 #### Installation
 
-[Install](/index.php/Install "Install") [mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) and edit `/etc/default/chkcryptoboot.conf`. If you want the ability of detecting if your boot partition was bypassed, edit the `CMDLINE_NAME` and `CMDLINE_VALUE` variables, with values known only to you. You can follow the advice of using two hashes as is suggested right after the installation. Also, be sure to make the appropriate changes to the [kernel command line](/index.php/Kernel_command_line "Kernel command line") in `/etc/default/grub`. Edit the `HOOKS=` line in `/etc/mkinitcpio.conf`, and insert the `chkcryptoboot` hook **before** `encrypt`. When finished, [rebuild](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") the initramfs.
+[Install](/index.php/Install "Install") [mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) and edit `/etc/default/chkcryptoboot.conf`. If you want the ability of detecting if your boot partition was bypassed, edit the `CMDLINE_NAME` and `CMDLINE_VALUE` variables, with values known only to you. You can follow the advice of using two hashes as is suggested right after the installation. Also, be sure to make the appropriate changes to the [kernel command line](/index.php/Kernel_command_line "Kernel command line") in `/etc/default/grub`. Edit the `HOOKS=` line in `/etc/mkinitcpio.conf`, and insert the `chkcryptoboot` hook **before** `encrypt`. When finished, [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 #### Technical Overview
 
@@ -188,7 +188,7 @@ The following forum posts give instructions to use two factor authentication, gp
 
 Note that:
 
-*   You can follow the above instructions with only two primary partitions, one boot partition (required because of encryption) and one primary LVM partition. Within the LVM partition you can have as many partitions as you need, but most importantly it should contain at least root, swap, and home logical volume partitions. This has the added benefit of having only one keyfile for all your partitions, and having the ability to hibernate your computer (suspend to disk) where the swap partition is encrypted. If you decide to do so your hooks in `/etc/mkinitcpio.conf` should look like this: `HOOKS=" ... usb usbinput (etwo or ssldec) encrypt (if using openssl) lvm2 resume ... "` and you should add `resume=/dev/mapper/<VolumeGroupName>-<LVNameOfSwap>` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+*   You can follow the above instructions with only two primary partitions, one boot partition (required because of encryption) and one primary LVM partition. Within the LVM partition you can have as many partitions as you need, but most importantly it should contain at least root, swap, and home logical volume partitions. This has the added benefit of having only one keyfile for all your partitions, and having the ability to hibernate your computer (suspend to disk) where the swap partition is encrypted. If you decide to do so your hooks in `/etc/mkinitcpio.conf` should look like this: `HOOKS=( ... usb usbinput (etwo or ssldec) encrypt (if using openssl) lvm2 resume ... )` and you should add `resume=/dev/mapper/<VolumeGroupName>-<LVNameOfSwap>` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 *   If you need to temporarily store the unencrypted keyfile somewhere, do not store them on an unencrypted disk. Even better make sure to store them to RAM such as `/dev/shm`.
 *   If you want to use a GPG encrypted keyfile, you need to use a statically compiled GnuPG version 1.4 or you could edit the hooks and use this AUR package [gnupg1](https://aur.archlinux.org/packages/gnupg1/)
 *   It is possible that an update to OpenSSL could break the custom `ssldec` mentioned in the second forum post.
@@ -238,7 +238,7 @@ Another package combination providing remote logins to the initcpio is [mkinitcp
 2.  Insert your SSH public key (i.e. the one you usually put onto hosts so that you can ssh in without a password, or the one you just created and which ends with *.pub*) into the remote machine's `/etc/dropbear/root_key` or `/etc/tinyssh/root_key` file.
     **Tip:** This method can later be used to add other SSH public keys as needed; In the case of simply copying the content of the remote's `~/.ssh/authorized_keys`, be sure to verify that it only contains keys you intend to be using to unlock the remote machine. When adding additional keys, regenerate your initrd as well using `mkinitcpio`. See also [Secure Shell#Protection](/index.php/Secure_Shell#Protection "Secure Shell").
 
-3.  Add all three `<netconf and/or ppp> <dropbear or tinyssh> encryptssh` [hooks](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") before `filesystems` within the "HOOKS" array in `/etc/mkinitcpio.conf` (the `encryptssh` replaces the `encrypt` hook). Then [rebuild the initramfs image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
+3.  Add all three `<netconf and/or ppp> <dropbear or tinyssh> encryptssh` [hooks](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") before `filesystems` within the "HOOKS" array in `/etc/mkinitcpio.conf` (the `encryptssh` replaces the `encrypt` hook). Then [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
     **Note:** The `net` hook provided by [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkinitcpio-nfs-utils) is **not** needed.
 
 4.  Configure the required `cryptdevice=` [parameter](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and add the `ip=` [kernel command parameter](/index.php/Kernel_parameters "Kernel parameters") to your bootloader configuration with the appropriate arguments. For example, if the DHCP server does not attribute a static IP to your remote system, making it difficult to access via SSH accross reboots, you can explicitly state the IP you want to be using: `ip=192.168.1.1:::::eth0:none` 
@@ -259,9 +259,9 @@ Below example shows a setup using a usb wifi adapter, connecting to a wifi netwo
     *   Include the `wpa_passphrase` and `wpa_supplicant` binaries.
     *   Add a hook `wifi` (or a name of your choice, this is the custom hook that will be created) before the `net` hook.
         ```
-        MODULES="*module*"
-        BINARIES="wpa_passphrase wpa_supplicant"
-        HOOKS="base udev autodetect ... **wifi** net ... dropbear encryptssh ..."
+        MODULES=(*module*)
+        BINARIES=(wpa_passphrase wpa_supplicant)
+        HOOKS=(base udev autodetect ... **wifi** net ... dropbear encryptssh ...)
         ```
 
 2.  Create the `wifi` hook in `/etc/initcpio/hooks/wifi`:
@@ -315,7 +315,7 @@ Below example shows a setup using a usb wifi adapter, connecting to a wifi netwo
 
 4.  Add `ip=:::::wlan0:dhcp` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Remove `ip=:::::eth0:dhcp` so it does not conflict.
 5.  Optionally create an additional boot entry with kernel parameter `ip=:::::eth0:dhcp`.
-6.  [Regenerate the intiramfs image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
+6.  [Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 7.  Update the configuration of your [boot loader](/index.php/Boot_loader "Boot loader").
 
 Remember to setup [wifi](/index.php/Wifi "Wifi"), so you are able to login once the system is fully booted. In case you are unable to connect to the wifi network, try increasing the sleep times a bit.
@@ -334,7 +334,7 @@ The following cases can be distinguished:
 
 	See also [Securely wipe disk#Flash memory](/index.php/Securely_wipe_disk#Flash_memory "Securely wipe disk").
 
-*   The device is encrypted with dm-crypt plain mode, or the LUKS header is stored [separately](#Encrypted_system_using_a_remote_LUKS_header):
+*   The device is encrypted with dm-crypt plain mode, or the LUKS header is stored [separately](#Encrypted_system_using_a_detached_LUKS_header):
     *   If plausible deniability is required, TRIM should **never** be used because of the considerations at the top of this section, or the use of encryption will be given away.
     *   If plausible deniability is not required, TRIM can be used for its performance gains, provided that the security dangers described at the top of this section are not of concern.
 
@@ -364,7 +364,7 @@ For LUKS devices unlocked manually on the console or via `/etc/crypttab` either 
 
 The `encrypt` hook only allows for a **single** `cryptdevice=` entry ([FS#23182](https://bugs.archlinux.org/task/23182)). In system setups with multiple drives this may be limiting, because *dm-crypt* has no feature to exceed the physical device. For example, take "LVM on LUKS": The entire LVM exists inside a LUKS mapper. This is perfectly fine for a single-drive system, since there is only one device to decrypt. But what happens when you want to increase the size of the LVM? You cannot, at least not without modifying the `encrypt` hook.
 
-The following sections briefly show alternatives to overcome the limitation. The first deals with how to expand a [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system") setup to a new disk. The second with modifying the `encrypt` hook to unlock multiple disks in LUKS setups without LVM. The third section then again uses LVM, but modifies the `encrypt` hook to unlock the encrypted LVM with a remote LUKS header.
+The following sections briefly show alternatives to overcome the limitation. The first deals with how to expand a [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system") setup to a new disk. The second with modifying the `encrypt` hook to unlock multiple disks in LUKS setups without LVM. The third section then again uses LVM, but modifies the `encrypt` hook to unlock the encrypted LVM with a detached LUKS header.
 
 ### Expanding LVM on multiple disks
 
@@ -374,7 +374,7 @@ The management of multiple disks is a basic [LVM](/index.php/LVM "LVM") feature 
 
 #### Adding a new drive
 
-First, it may be desired to prepare a new disk according to [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). Second, it is partitioned as a LVM, e.g. all space is allocated to `/dev/sdY1` with partition type "8E00" (Linux LVM). Third, the new disk/partition is attached to the existing LVM volume group, e.g.:
+First, it may be desired to prepare a new disk according to [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). Second, it is partitioned as a LVM, e.g. all space is allocated to `/dev/sdY1` with partition type `8E00` (Linux LVM). Third, the new disk/partition is attached to the existing LVM volume group, e.g.:
 
 ```
 # pvcreate /dev/sdY1
@@ -453,24 +453,24 @@ kernel /boot/vmlinuz-linux md=1,/dev/hda5,/dev/hdb5
 
 ```
 
-If you set up your root partition as a RAID, you will notice the similarities with that setup ;-). [GRUB](/index.php/GRUB "GRUB") can handle multiple array definitions just fine:
+If you set up your root partition as a RAID, you will notice the similarities with that setup. [GRUB](/index.php/GRUB "GRUB") can handle multiple array definitions just fine:
 
 ```
 kernel /boot/vmlinuz-linux root=/dev/md0 ro md=0,/dev/sda1,/dev/sdb1 md=1,/dev/sda5,/dev/sdb5,/dev/sdc5
 
 ```
 
-### Encrypted system using a remote LUKS header
+### Encrypted system using a detached LUKS header
 
-This example follows the same setup as in [Dm-crypt/Encrypting an entire system#Plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system"), which should be read first before following this guide.
+This example follows the same setup as in [dm-crypt/Encrypting an entire system#Plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system"), which should be read first before following this guide.
 
-By using a remote header the encrypted blockdevice itself only carries encrypted data, which gives [deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption") as long as the existence of a header is unknown to the attackers. It is similar to using [plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system"), but with the LUKS advantages such as multiple passphrases for the masterkey and key derivation. Further, using a remote header offers a form of two factor authentication with an easier setup than [using GPG or OpenSSL encrypted keyfiles](#Using_GPG_or_OpenSSL_Encrypted_Keyfiles), while still having a built-in password prompt for multiple retries. See [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption") for more information.
+By using a detached header the encrypted blockdevice itself only carries encrypted data, which gives [deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption") as long as the existence of a header is unknown to the attackers. It is similar to using [plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system"), but with the LUKS advantages such as multiple passphrases for the masterkey and key derivation. Further, using a detached header offers a form of two factor authentication with an easier setup than [using GPG or OpenSSL encrypted keyfiles](#Using_GPG_or_OpenSSL_Encrypted_Keyfiles), while still having a built-in password prompt for multiple retries. See [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption") for more information.
 
-See [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") for encryption options before performing the first step to setup the encrypted system partition and creating a header file to use with `cryptsetup`:
+See [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") for encryption options before performing the first step to setup the encrypted system partition and creating a header file to use with `cryptsetup`:
 
 ```
 # truncate -s 2M header.img
-# cryptsetup luksFormat /dev/sdX --header header.img
+# cryptsetup luksFormat /dev/sdX --align-payload 4096 --header header.img
 
 ```
 
@@ -490,30 +490,32 @@ Now follow the [LVM on LUKS setup](/index.php/Dm-crypt/Encrypting_an_entire_syst
 
 Follow the installation procedure up to the mkinitcpio step (you should now be `arch-chroot`ed inside the encrypted system).
 
+**Tip:** You will notice that since the system partition only has "random" data, it does not have a partition table and by that an `UUID` or a `LABEL`. But you can still have a consistent mapping using the [Persistent block device naming#by-id and by-path](/index.php/Persistent_block_device_naming#by-id_and_by-path "Persistent block device naming"). E.g. using disk id from `/dev/disk/by-id/`.
+
 There are two options for initramfs to support a detached LUKS header.
 
 #### Using systemd hook
 
 First create `/etc/crypttab.initramfs` and add the encrypted device to it. The syntax is defined in [crypttab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5)
 
- `/etc/crypttab.initramfs`  `MyStorage    PARTUUID=00000000-0000-0000-0000-000000000000    none    header=/boot/header.img` 
+ `/etc/crypttab.initramfs`  `enc	/dev/disk/by-id/*your-disk_id*	none	header=/boot/header.img` 
 
 Modify `/etc/mkinitcpio.conf` [to use systemd](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") and add the header to `FILES`.
 
  `/etc/mkinitcpio.conf` 
 ```
-FILES="**/boot/header.img**"
+FILES=(**/boot/header.img**)
 
-HOOKS="... **systemd** ... block **sd-encrypt** sd-lvm2 filesystems ..."
+HOOKS=(... **systemd** ... block **sd-encrypt** sd-lvm2 filesystems ...)
 ```
 
-[Recreate the initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") and you are done.
+[Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") and you are done.
 
-**Note:** No cryptsetup parameters need to be passed to the kernel command line, since`/etc/crypttab.initramfs` will be added as `/etc/crypttab` in the initramfs. If you wish to specify them in the kernel command line see [systemd-cryptsetup-generator(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8) for the supported options.
+**Note:** No cryptsetup parameters need to be passed to the kernel command line, since`/etc/crypttab.initramfs` will be added as `/etc/crypttab` in the initramfs. If you wish to specify them in the kernel command line see [dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration") for the supported options.
 
 #### Modifying encrypt hook
 
-This method shows how to modify the `encrypt` hook in order to use a remote LUKS header. Now the `encrypt` hook has to be modified to let `cryptsetup` use the separate header ([FS#42851](https://bugs.archlinux.org/task/42851); base source and idea for these changes [published on the BBS](https://bbs.archlinux.org/viewtopic.php?pid=1076346#p1076346)). Make a copy so it is not overwritten on a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") update:
+This method shows how to modify the `encrypt` hook in order to use a detached LUKS header. Now the `encrypt` hook has to be modified to let `cryptsetup` use the separate header ([FS#42851](https://bugs.archlinux.org/task/42851); base source and idea for these changes [published on the BBS](https://bbs.archlinux.org/viewtopic.php?pid=1076346#p1076346)). Make a copy so it is not overwritten on a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") update:
 
 ```
 # cp /usr/lib/initcpio/hooks/encrypt /etc/initcpio/hooks/encrypt2
@@ -553,11 +555,11 @@ Now edit the [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") to 
 
  `/etc/mkinitcpio.conf` 
 ```
-MODULES="**loop**"
+MODULES=(**loop**)
 
-FILES="**/boot/header.img**"
+FILES=(**/boot/header.img**)
 
-HOOKS="... **encrypt2** **lvm2** ... filesystems ..."
+HOOKS=(... **encrypt2** **lvm2** ... filesystems ...)
 ```
 
 This is required so the LUKS header is available on boot allowing the decryption of the system, exempting us from a more complicated setup to mount another separate USB device in order to access the header. After this set up [the initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") is created.
@@ -565,10 +567,8 @@ This is required so the LUKS header is available on boot allowing the decryption
 Next the [boot loader is configured](/index.php/Dm-crypt/Encrypting_an_entire_system#Configuring_the_boot_loader_4 "Dm-crypt/Encrypting an entire system") to specify the `cryptdevice=` also passing the new `header` option for this setup:
 
 ```
-cryptdevice=/dev/sdX:enc:header
+cryptdevice=/dev/disk/by-id/*your-disk_id*:enc:header
 
 ```
 
-To finish, following [Dm-crypt/Encrypting an entire system#Post-installation](/index.php/Dm-crypt/Encrypting_an_entire_system#Post-installation "Dm-crypt/Encrypting an entire system") is particularly useful with a `/boot` partition on an USB storage medium.
-
-**Tip:** You will notice that since the system partition only has "random" data, it does not have a partition table and by that an `UUID` or a `name`. But you can still have a consistent mapping using the disk id under `/dev/disk/by-id/`
+To finish, following [dm-crypt/Encrypting an entire system#Post-installation](/index.php/Dm-crypt/Encrypting_an_entire_system#Post-installation "Dm-crypt/Encrypting an entire system") is particularly useful with a `/boot` partition on an USB storage medium.

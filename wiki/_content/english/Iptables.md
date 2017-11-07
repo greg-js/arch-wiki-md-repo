@@ -7,13 +7,15 @@ Related articles
 *   [Fail2ban](/index.php/Fail2ban "Fail2ban")
 *   [Nftables](/index.php/Nftables "Nftables")
 
-*iptables* is a command line utility for configuring Linux kernel [firewall](/index.php/Firewall "Firewall") implemented within the [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") project. The term *iptables* is also commonly used to refer to this kernel-level firewall. It can be configured directly with iptables, or by using one of the many [frontends](/index.php/Firewalls#Console_frontends "Firewalls") and [GUIs](/index.php/Firewalls#Graphic_frontends "Firewalls"). iptables is used for [IPv4](https://en.wikipedia.org/wiki/IPv4 "wikipedia:IPv4") and *ip6tables* is used for [IPv6](/index.php/IPv6 "IPv6").
+*iptables* is a command line utility for configuring Linux kernel [firewall](/index.php/Firewall "Firewall") implemented within the [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") project. The term *iptables* is also commonly used to refer to this kernel-level firewall. It can be configured directly with iptables, or by using one of the many [frontends](#Console_frontends) and [GUIs](#Graphic_frontends). iptables is used for [IPv4](https://en.wikipedia.org/wiki/IPv4 "wikipedia:IPv4") and *ip6tables* is used for [IPv6](/index.php/IPv6 "IPv6").
 
 [nftables](/index.php/Nftables "Nftables") was released in [release with Linux kernel 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU), and will one day replace iptables as the main Linux firewall utility.
 
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Console frontends](#Console_frontends)
+    *   [1.2 Graphic frontends](#Graphic_frontends)
 *   [2 Basic concepts](#Basic_concepts)
     *   [2.1 Tables](#Tables)
     *   [2.2 Chains](#Chains)
@@ -36,6 +38,66 @@ Related articles
 ## Installation
 
 The stock Arch Linux kernel is compiled with iptables support. You will only need to [install](/index.php/Install "Install") the userland utilities, which are provided by the package [iptables](https://www.archlinux.org/packages/?name=iptables). (The [iproute2](https://www.archlinux.org/packages/?name=iproute2) package from the [base](https://www.archlinux.org/groups/x86_64/base/) group depends on iptables, so the iptables package should be installed on your system by default.)
+
+### Console frontends
+
+*   **Arno's firewall** — Secure firewall for both single and multi-homed machines. Very easy to configure, handy to manage and highly customizable. Supports: NAT and SNAT, port forwarding, ADSL ethernet modems with both static and dynamically assigned IPs, MAC address filtering, stealth port scan detection, DMZ and DMZ-2-LAN forwarding, protection against SYN/ICMP flooding, extensive user definable logging with rate limiting to prevent log flooding, all IP protocols and VPNs such as IPsec, plugin support to add extra features.
+
+	[http://rocky.eld.leidenuniv.nl/](http://rocky.eld.leidenuniv.nl/) || [arno-iptables-firewall](https://aur.archlinux.org/packages/arno-iptables-firewall/)
+
+*   **ferm** — Tool to maintain complex firewalls, without having the trouble to rewrite the complex rules over and over again. It allows the entire firewall rule set to be stored in a separate file, and to be loaded with one command. The firewall configuration resembles structured programming-like language, which can contain levels and lists.
+
+	[http://ferm.foo-projects.org/](http://ferm.foo-projects.org/) || [ferm](https://www.archlinux.org/packages/?name=ferm)
+
+*   **Firehol** — Language to express firewalling rules, not just a script that produces some kind of a firewall. It makes building even sophisticated firewalls easy - the way you want it.
+
+	[http://firehol.sourceforge.net/](http://firehol.sourceforge.net/) || [firehol](https://aur.archlinux.org/packages/firehol/)
+
+*   **Firetable** — Firewall with "human readable" syntax.
+
+	[http://projects.leisink.net/Firetable](http://projects.leisink.net/Firetable) || [firetable](https://aur.archlinux.org/packages/firetable/)
+
+*   **[Shorewall](/index.php/Shorewall "Shorewall")** — High-level tool for configuring Netfilter. You describe your firewall/gateway requirements using entries in a set of configuration files.
+
+	[http://www.shorewall.net/](http://www.shorewall.net/) || [shorewall](https://www.archlinux.org/packages/?name=shorewall)
+
+*   **[ufw](/index.php/Ufw "Ufw")** — Simple front-end for iptables.
+
+	[https://launchpad.net/ufw](https://launchpad.net/ufw) || [ufw](https://www.archlinux.org/packages/?name=ufw)
+
+*   **[PeerGuardian Linux](/index.php/PeerGuardian_Linux "PeerGuardian Linux")** — Privacy oriented firewall application. It blocks connections to and from hosts specified in huge block lists (thousands or millions of IP ranges).
+
+	[http://sourceforge.net/projects/peerguardian/](http://sourceforge.net/projects/peerguardian/) || [pgl-cli](https://aur.archlinux.org/packages/pgl-cli/)
+
+*   **Vuurmuur** — Powerful firewall manager. It has a simple and easy to learn configuration that allows both simple and complex configurations. The configuration can be fully configured through an [ncurses](https://www.archlinux.org/packages/?name=ncurses) GUI, which allows secure remote administration through SSH or on the console. Vuurmuur supports traffic shaping, has powerful monitoring features, which allow the administrator to look at the logs, connections and bandwidth usage in realtime.
+
+	[http://www.vuurmuur.org/](http://www.vuurmuur.org/) || [vuurmuur](https://aur.archlinux.org/packages/vuurmuur/)
+
+### Graphic frontends
+
+*   **Firestarter** — Good GUI for iptables writen on GTK2, it has the ability to use both white and black lists for regulating traffic, it is very simple and easy to use, with good documentation available on their website.
+
+	[http://www.fs-security.com/](http://www.fs-security.com/) || [Firestarter](https://aur.archlinux.org/packages/Firestarter/)
+
+*   **Firewall Builder** — GUI firewall configuration and management tool that supports iptables (netfilter), ipfilter, pf, ipfw, Cisco PIX (FWSM, ASA) and Cisco routers extended access lists. The program runs on Linux, FreeBSD, OpenBSD, Windows and macOS and can manage both local and remote firewalls.
+
+	[http://www.fwbuilder.org/](http://www.fwbuilder.org/) || [fwbuilder](https://www.archlinux.org/packages/?name=fwbuilder)
+
+*   **firewalld** — Daemon and graphical interface for configuring network and firewall zones as well as setting up and configuring firewall rules.
+
+	[https://fedoraproject.org/wiki/FirewallD](https://fedoraproject.org/wiki/FirewallD) || [firewalld](https://www.archlinux.org/packages/?name=firewalld)
+
+*   **[Gufw](/index.php/Uncomplicated_Firewall#Gufw "Uncomplicated Firewall")** — GTK-based front-end to [ufw](https://www.archlinux.org/packages/?name=ufw) which happens to be a CLI front-end to iptables (gufw->ufw->iptables), is super easy and super simple to use.
+
+	[http://gufw.org/](http://gufw.org/) || [gufw](https://www.archlinux.org/packages/?name=gufw)
+
+*   **[PeerGuardian Linux](/index.php/PeerGuardian_Linux "PeerGuardian Linux")** — Privacy oriented firewall application. It blocks connections to and from hosts specified in huge block lists (thousands or millions of IP ranges).
+
+	[http://sourceforge.net/projects/peerguardian/](http://sourceforge.net/projects/peerguardian/) || [pgl](https://aur.archlinux.org/packages/pgl/)
+
+*   **[kcm-ufw](/index.php/Uncomplicated_Firewall#kcm-ufw "Uncomplicated Firewall")** — KDE alternative to Gufw.
+
+	[http://kde-apps.org/content/show.php?content=137789](http://kde-apps.org/content/show.php?content=137789) || [kcm-ufw](https://aur.archlinux.org/packages/kcm-ufw/)
 
 ## Basic concepts
 
@@ -138,8 +200,6 @@ or
 Then [start](/index.php/Start "Start") the `iptables.service` unit. As with other services, if you want iptables to be loaded automatically on boot, you must [enable](/index.php/Enable "Enable") it.
 
 iptables rules for IPv6 are, by default, stored in `/etc/iptables/ip6tables.rules`, which is read by `ip6tables.service`. You can start it the same way as above.
-
-**Note:** Since [iptables](https://www.archlinux.org/packages/?name=iptables)-1.6.0-1 the `iptables.service` and `ip6tables.service` refer to the `network-pre.target` so that the firewall is started before any network is configured. Respective manual configuration changes to achieve this for prior versions ([FS#33478](https://bugs.archlinux.org/task/33478)) can be dropped.[[1]](https://bugs.freedesktop.org/show_bug.cgi?id=79600)
 
 After adding rules via command-line as shown in the following sections, the configuration file is not changed automatically — you have to save it manually:
 

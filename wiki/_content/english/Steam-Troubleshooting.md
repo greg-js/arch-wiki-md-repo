@@ -46,6 +46,7 @@ Related articles
 *   [22 Symbol lookup error using dri3](#Symbol_lookup_error_using_dri3)
 *   [23 Launching games on nvidia optimus laptops](#Launching_games_on_nvidia_optimus_laptops)
 *   [24 "Needs to be online" error](#.22Needs_to_be_online.22_error)
+*   [25 Steamlink cannot find host computer](#Steamlink_cannot_find_host_computer)
 
 ## Debugging Steam
 
@@ -516,3 +517,15 @@ To be able to play games which require using nvidia GPU (for example, Hitman 201
 If the Steam launcher refuses to start and you get an error saying: "Fatal Error: Steam needs to be online to update" while you **are** online, then there might be issues with name resolving.
 
 Try to install [nss-mdns](https://www.archlinux.org/packages/?name=nss-mdns).
+
+## Steamlink cannot find host computer
+
+Steam connects through UDP 27036, 27031 and TCP 27036, 27037\. You need to add the rules in your iptables(or similar firewall frontend's). Like so:
+
+```
+ iptables -A -d UDP -p udp --dport 27036 --src Your-subnet-here -j ACCEPT -m comment --comment "SteamLink"
+ iptables -A -d UDP -p udp --dport 27031 --src Your-subnet-here -j ACCEPT -m comment --comment "SteamLink"
+ iptables -A -d TCP -p tcp --dport 27036 --src Your-subnet-here -j ACCEPT -m comment --comment "SteamLink"
+ iptables -A -d TCP -p tcp --dport 27037 --src Your-subnet-here -j ACCEPT -m comment --comment "SteamLink"
+
+```

@@ -37,7 +37,7 @@ This section covers how to manually utilize *dm-crypt* from the command line to 
     *   [7.2 Creating a keyfile with random characters](#Creating_a_keyfile_with_random_characters)
         *   [7.2.1 Storing the keyfile on a filesystem](#Storing_the_keyfile_on_a_filesystem)
             *   [7.2.1.1 Securely overwriting stored keyfiles](#Securely_overwriting_stored_keyfiles)
-        *   [7.2.2 Storing the keyfile in tmpfs](#Storing_the_keyfile_in_tmpfs)
+        *   [7.2.2 Storing the keyfile in ramfs](#Storing_the_keyfile_in_ramfs)
     *   [7.3 Configuring LUKS to make use of the keyfile](#Configuring_LUKS_to_make_use_of_the_keyfile)
     *   [7.4 Manually unlocking a partition using a keyfile](#Manually_unlocking_a_partition_using_a_keyfile)
     *   [7.5 Unlocking a secondary partition at boot](#Unlocking_a_secondary_partition_at_boot)
@@ -271,8 +271,6 @@ When creating a new LUKS encrypted partition, a keyfile may be associated with t
 # cryptsetup luksFormat *device* */path/to/mykeyfile*
 
 ```
-
-This is accomplished by appending the bold area to the standard cryptsetup command which defines where the keyfile is located.
 
 See [#Keyfiles](#Keyfiles) for instructions on how to generate and manage keyfiles.
 
@@ -813,7 +811,7 @@ Example: `1234`
 
 ```
 
-Prepend the commands with a space to avoid saving them in the shell history
+Prepend the commands with a space to avoid saving them in the shell history (this needs `$HISTCONTROL` to be set to `ignorespace` or `ignoreboth`).
 
 #### randomtext
 
@@ -856,20 +854,25 @@ If you stored your temporary keyfile on a physical storage device, and want to d
 
 ```
 
-to securely overwrite it. For overaged filesystems like FAT or ext2 this will suffice while in the case of journaling filesystems, flash memory hardware and other cases it is highly recommended to [wipe the entire device](/index.php/Securely_wipe_disk "Securely wipe disk") or at least the keyfiles partition.
+to securely overwrite it. For overaged filesystems like FAT or ext2 this will suffice while in the case of journaling filesystems, flash memory hardware and other cases it is highly recommended to [wipe the entire device](/index.php/Securely_wipe_disk "Securely wipe disk").
 
-#### Storing the keyfile in tmpfs
+#### Storing the keyfile in ramfs
 
-Alternatively, you can mount a tmpfs for storing the keyfile temporarily:
-
-```
-# mkdir mytmpfs
-# mount tmpfs mytmpfs -t tmpfs -o size=32m
-# cd mytmpfs
+Alternatively, you can mount a ramfs for storing the keyfile temporarily:
 
 ```
+# mkdir /root/myramfs
+# mount ramfs /root/myramfs/ -t ramfs
+# cd /root/myramfs
 
-The advantage is that it resides in RAM and not on a physical disk, therefore it can not be recovered after unmounting the tmpfs. On the other hand this requires you to copy the keyfile to another filesystem you consider secure before unmounting.
+```
+
+The advantage is that it resides in RAM and not on a physical disk, therefore it can not be recovered after unmounting the ramfs. After copying the keyfile to another secure and persistent filesystem, unmount the ramfs again with
+
+```
+# umount /root/myramfs
+
+```
 
 ### Configuring LUKS to make use of the keyfile
 
@@ -918,7 +921,7 @@ for mounting the LUKS blockdevice with the generated keyfile.
 
 This is simply a matter of configuring [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") to include the necessary modules or files and configuring the [cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration") [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to know where to find the keyfile.
 
-Two cases will be covered:
+Two cases are covered below:
 
 1.  Using a keyfile stored on an external media (here a USB stick)
 2.  Using a keyfile embedded in the initramfs
@@ -989,7 +992,7 @@ If using `sd-encrypt` instead of `encrypt`, specify the location of the keyfile 
 
 **Warning:** When initramfs' permissions are set to 644 (by default), then all users will be able to dump the keyfile. Make sure the permissions are still 600 if you install a new kernel.
 
-Include the key in [mkinitcpio FILES array](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio"):
+Include the key in [mkinitcpio's FILES array](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio"):
 
  `/etc/mkinitcpio.conf`  `FILES=(/crypto_keyfile.bin)` 
 

@@ -76,7 +76,7 @@ mpv comes with a minimal GUI called On Screen Controller (OSC), that appears whe
 
 ## Configuration
 
-Though *mpv* comes with good all-around defaults that should work well on computers with weaker/older video cards. However, if you have a computer with a more modern video card then mpv allows you to do a great deal of configuration to achieve better video quality (limited only by the power of your video card). To do this one only needs to create a few configuration files (they do not exist by default).
+*mpv* comes with good all-around defaults that should work well on computers with weaker/older video cards. However, if you have a computer with a more modern video card then mpv allows you to do a great deal of configuration to achieve better video quality (limited only by the power of your video card). To do this one only needs to create a few configuration files (they do not exist by default).
 
 **Note:** Configuration files are read system-wide from `/etc/mpv` and per-user from `~/.config/mpv` (unless the [environment variable](/index.php/Environment_variable "Environment variable") `XDG_CONFIG_HOME` is set), where per-user settings override system-wide settings, all of which are overridden by the command line. User specific configuration is suggested since it may require some trial and error.
 
@@ -288,7 +288,9 @@ Even with hardware decoding enabled, it will only be used for some codecs by def
 
 #### In GNOME Wayland
 
-Because GNOME in Wayland mode also runs an Xorg server, video acceleration will fail with `[vaapi] libva: va_getDriverName() failed with unknown libva error,driver_name=(null)`. To make mpv use the Wayland compositor, add the mpv option `opengl-backend=wayland` [[1]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852).
+Because GNOME in Wayland mode also runs an Xorg server, video acceleration will fail with `[vaapi] libva: va_getDriverName() failed with unknown libva error,driver_name=(null)`.
+
+To make mpv use the Wayland compositor, add the mpv option `opengl-backend=wayland`[[1]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852). Note however that this will prevent the display of any on-screen decorations (controls, progress bar, elapsed time and total duration...) due to Wayland security features[[2]](https://github.com/mpv-player/mpv/pull/4556#issuecomment-311593370).
 
 ### Save position on quit
 

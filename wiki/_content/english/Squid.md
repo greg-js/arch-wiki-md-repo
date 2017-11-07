@@ -281,7 +281,7 @@ Replace SQUIDIP with the public IP(s) which squid may use for its listening port
 
 ### Shorewall
 
-Edit /etc/shorewall/rules and add
+[Edit](/index.php/Edit "Edit") `/etc/shorewall/rules` and add
 
 ```
 REDIRECT	loc	3128	tcp	www # redirect to Squid on port 3128

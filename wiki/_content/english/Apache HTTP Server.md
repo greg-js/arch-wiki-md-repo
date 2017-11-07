@@ -274,7 +274,7 @@ A very basic vhost file will look like this:
 
 ### PHP
 
-To install [PHP](/index.php/PHP "PHP"), first [install](/index.php/Install "Install") the [php](https://www.archlinux.org/packages/?name=php) and [php-apache](https://www.archlinux.org/packages/?name=php-apache) packages.
+To use [PHP](/index.php/PHP "PHP"), first [install](/index.php/Install "Install") [php-apache](https://www.archlinux.org/packages/?name=php-apache) package (which will pull in [php](https://www.archlinux.org/packages/?name=php)).
 
 In `/etc/httpd/conf/httpd.conf`, comment the line:
 

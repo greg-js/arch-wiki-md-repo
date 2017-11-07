@@ -3,17 +3,16 @@
 *   [systemd/User (简体中文)](/index.php/Systemd/User_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd/User (简体中文)")
 *   [systemd/Timers (简体中文)](/index.php/Systemd/Timers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd/Timers (简体中文)")
 *   [Systemd FAQ (简体中文)](/index.php/Systemd_FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd FAQ (简体中文)")
-*   [init Rosetta](/index.php/Init_Rosetta "Init Rosetta")
 *   [Daemons#List of deamons](/index.php/Daemons#List_of_deamons "Daemons")
 *   [udev (简体中文)](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)")
 *   [Improve Boot Performance (简体中文)](/index.php/Improve_Boot_Performance_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Improve Boot Performance (简体中文)")
 *   [Allow users to shutdown](/index.php/Allow_users_to_shutdown "Allow users to shutdown")
 
-**翻译状态：** 本文是英文页面 [Systemd](/index.php/Systemd "Systemd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=448461)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Systemd](/index.php/Systemd "Systemd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-06，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=495118)可以查看翻译后英文页面的改动。
 
 摘自[项目主页](http://freedesktop.org/wiki/Software/systemd)：
 
-***systemd** 是 Linux 下的一款系统和服务管理器，兼容 SysV 和 LSB 的启动脚本。systemd 的特性有：支持并行化任务；同时采用 socket 式与 [D-Bus](/index.php/D-Bus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "D-Bus (简体中文)") 总线式激活服务；按需启动守护进程（daemon）；利用 Linux 的 [cgroups](/index.php/Cgroups "Cgroups") 监视进程；支持快照和系统恢复；维护挂载点和自动挂载点；各服务间基于依赖关系进行精密控制。*
+	*systemd* 是一个 Linux 系统基础组件的集合，提供了一个系统和服务管理器，运行为 PID 1 并负责启动其它程序。功能包括：支持并行化任务；同时采用 socket 式与 [D-Bus](/index.php/D-Bus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "D-Bus (简体中文)") 总线式激活服务；按需启动守护进程（daemon）；利用 Linux 的 [cgroups](/index.php/Cgroups "Cgroups") 监视进程；支持快照和系统恢复；维护挂载点和自动挂载点；各服务间基于依赖关系进行精密控制。*systemd* 支持 SysV 和 LSB 初始脚本，可以替代 sysvinit。除此之外，功能还包括日志进程、控制基础系统配置，维护登陆用户列表以及系统账户、运行时目录和设置，可以运行容器和虚拟机，可以简单的管理网络配置、网络时间同步、日志转发和名称解析等。
 
 **注意:** [Arch Linux 论坛的这篇帖子](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530) 详细地解释了 Arch Linux 迁移到 systemd 的原因。
 
@@ -27,6 +26,10 @@
     *   [2.1 处理依赖关系](#.E5.A4.84.E7.90.86.E4.BE.9D.E8.B5.96.E5.85.B3.E7.B3.BB)
     *   [2.2 服务类型](#.E6.9C.8D.E5.8A.A1.E7.B1.BB.E5.9E.8B)
     *   [2.3 修改现存单元文件](#.E4.BF.AE.E6.94.B9.E7.8E.B0.E5.AD.98.E5.8D.95.E5.85.83.E6.96.87.E4.BB.B6)
+        *   [2.3.1 替换单元文件](#.E6.9B.BF.E6.8D.A2.E5.8D.95.E5.85.83.E6.96.87.E4.BB.B6)
+        *   [2.3.2 附加代码片段](#.E9.99.84.E5.8A.A0.E4.BB.A3.E7.A0.81.E7.89.87.E6.AE.B5)
+        *   [2.3.3 重置到软件包版本](#.E9.87.8D.E7.BD.AE.E5.88.B0.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.89.88.E6.9C.AC)
+        *   [2.3.4 示例](#.E7.A4.BA.E4.BE.8B)
 *   [3 目标（target）](#.E7.9B.AE.E6.A0.87.EF.BC.88target.EF.BC.89)
     *   [3.1 获取当前目标](#.E8.8E.B7.E5.8F.96.E5.BD.93.E5.89.8D.E7.9B.AE.E6.A0.87)
     *   [3.2 创建新目标](#.E5.88.9B.E5.BB.BA.E6.96.B0.E7.9B.AE.E6.A0.87)
@@ -37,8 +40,8 @@
 *   [5 定时器](#.E5.AE.9A.E6.97.B6.E5.99.A8)
 *   [6 挂载](#.E6.8C.82.E8.BD.BD)
 *   [7 日志](#.E6.97.A5.E5.BF.97)
-    *   [7.1 Facility](#Facility)
-    *   [7.2 Priority level](#Priority_level)
+    *   [7.1 优先级](#.E4.BC.98.E5.85.88.E7.BA.A7)
+    *   [7.2 功能](#.E5.8A.9F.E8.83.BD)
     *   [7.3 过滤输出](#.E8.BF.87.E6.BB.A4.E8.BE.93.E5.87.BA)
     *   [7.4 日志大小限制](#.E6.97.A5.E5.BF.97.E5.A4.A7.E5.B0.8F.E9.99.90.E5.88.B6)
     *   [7.5 配合 syslog 使用](#.E9.85.8D.E5.90.88_syslog_.E4.BD.BF.E7.94.A8)
@@ -48,6 +51,7 @@
     *   [7.9 查看特定位置的日志](#.E6.9F.A5.E7.9C.8B.E7.89.B9.E5.AE.9A.E4.BD.8D.E7.BD.AE.E7.9A.84.E6.97.A5.E5.BF.97)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Enable installed units by default](#Enable_installed_units_by_default)
+    *   [8.2 Sandboxing application environments](#Sandboxing_application_environments)
 *   [9 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
     *   [9.1 寻找错误](#.E5.AF.BB.E6.89.BE.E9.94.99.E8.AF.AF)
     *   [9.2 诊断启动问题](#.E8.AF.8A.E6.96.AD.E5.90.AF.E5.8A.A8.E9.97.AE.E9.A2.98)
@@ -59,11 +63,12 @@
     *   [9.8 systemd-tmpfiles-setup.service 在启动时启动失败](#systemd-tmpfiles-setup.service_.E5.9C.A8.E5.90.AF.E5.8A.A8.E6.97.B6.E5.90.AF.E5.8A.A8.E5.A4.B1.E8.B4.A5)
     *   [9.9 不能设定在开机时启动软链接到 /etc/systemd/system 的服务](#.E4.B8.8D.E8.83.BD.E8.AE.BE.E5.AE.9A.E5.9C.A8.E5.BC.80.E6.9C.BA.E6.97.B6.E5.90.AF.E5.8A.A8.E8.BD.AF.E9.93.BE.E6.8E.A5.E5.88.B0_.2Fetc.2Fsystemd.2Fsystem_.E7.9A.84.E6.9C.8D.E5.8A.A1)
     *   [9.10 启动时显示的 systemd 版本和安装版本不一致](#.E5.90.AF.E5.8A.A8.E6.97.B6.E6.98.BE.E7.A4.BA.E7.9A.84_systemd_.E7.89.88.E6.9C.AC.E5.92.8C.E5.AE.89.E8.A3.85.E7.89.88.E6.9C.AC.E4.B8.8D.E4.B8.80.E8.87.B4)
+    *   [9.11 禁用远程机器的 emergency 模式](#.E7.A6.81.E7.94.A8.E8.BF.9C.E7.A8.8B.E6.9C.BA.E5.99.A8.E7.9A.84_emergency_.E6.A8.A1.E5.BC.8F)
 *   [10 相关资源](#.E7.9B.B8.E5.85.B3.E8.B5.84.E6.BA.90)
 
 ## systemd 基本工具
 
-监视和控制systemd的主要命令是`systemctl`。该命令可用于查看系统状态和管理系统及服务。详见[systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)。
+监视和控制systemd的主要命令是`systemctl`。该命令可用于查看系统状态和管理系统及服务。详见[systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)。、
 
 **提示：**
 
@@ -177,6 +182,13 @@ $ systemctl is-enabled <单元>
 
 ```
 
+设置单元为自动启动并立即启动这个单元:
+
+```
+# systemctl enable --now *unit*
+
+```
+
 取消开机自动激活单元：
 
 ```
@@ -261,7 +273,7 @@ $ systemctl hybrid-sleep
 *   `/etc/systemd/system/` ：系统管理员安装的单元
 
 *   当 `systemd` 运行在[用户模式](/index.php/Systemd/User#How_it_works "Systemd/User")下时，使用的加载路径是完全不同的。
-*   systemd 单元名仅能包含 ASCII 字符，下划线和点号。其它字符需要用 C-style "\x2d" 替换。参阅 [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) 和 [systemd-escape(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-escape.1) 。}}
+*   systemd 单元名仅能包含 ASCII 字符，下划线和点号和有特殊意义的字符('@', '-')。其它字符需要用 C-style "\x2d" 替换。参阅 [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) 和 [systemd-escape(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-escape.1) 。}}
 
 单元文件的语法，可以参考系统已经安装的单元，也可以参考 [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) 中的[EXAMPLES章节](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples)。
 
@@ -288,7 +300,62 @@ $ systemctl hybrid-sleep
 
 ### 修改现存单元文件
 
-为了避免和 pacman 冲突，不应该直接编辑软件包提供的文件。要更改由软件包提供的单元文件，先创建名为 `/etc/systemd/system/<单元名>.d/` 的目录（如 `/etc/systemd/system/httpd.service.d/`） ，然后放入 `*.conf` 文件，其中可以添加或重置参数。这里设置的参数优先级高于原来的单元文件。例如，如果想添加一个额外的依赖，创建如下文件即可：
+为了避免和 pacman 冲突，不应该直接编辑软件包提供的文件。有两种方法可以不改动原始文件就做到修改单元文件：创建一个优先级更高的本地单元文件或创建一个片段，应用到原始单元文件之上。两种方法都需要在修改后重新加载单元，用 `systemctl edit` 编辑单元(会自动重载单元)或通过下面命令重新加载单元：
+
+```
+# systemctl daemon-reload
+
+```
+
+**Tip:**
+
+*   `systemd-delta` 命令用来查看哪些单元文件被覆盖、哪些被修改。系统维护的时候需要及时了解哪些单元已经有了更新。
+*   使用 `systemctl cat *unit*` 可以查看单元的内容和所有相关的片段.
+*   安装 [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) 软件包，可以使单元配置文件在 [Vim](/index.php/Vim "Vim") 下支持语法高亮。
+
+#### 替换单元文件
+
+要替换 `/usr/lib/systemd/system/*unit*`, 创建文件 `/etc/systemd/system/*unit*` 并重新启用单元以更新链接：
+
+```
+# systemctl reenable *unit*
+
+```
+
+或者运行：
+
+```
+# systemctl edit --full *unit*
+
+```
+
+这将会在记事本中打开 `/etc/systemd/system/*unit*`，如果文件不存在，可以将安装的版本复制到这里，在编辑完成之后，会自动加载新版本。
+
+**Note:** Pacman 不会更新新的单元文件，所以这个方式会增加系统维护的难度，所以推荐使用下面一种方法。
+
+#### 附加代码片段
+
+要附加代码片段，先创建名为 `/etc/systemd/system/<单元名>.d/` 的目录，然后放入 `*.conf` 文件，其中可以添加或重置参数。这里设置的参数优先级高于原来的单元文件。下面的更新方式比较简单：
+
+```
+# systemctl edit *unit*
+
+```
+
+这将会在编辑器中打开文件 `/etc/systemd/system/*unit*.d/override.conf`，编辑完成之后自动加载。
+
+#### 重置到软件包版本
+
+要回退单元的变更，使用 `systemctl edit` 并执行:
+
+```
+# systemctl revert *unit*
+
+```
+
+#### 示例
+
+例如，如果想添加一个额外的依赖，创建如下文件即可：
 
  `/etc/systemd/system/<unit>.d/customdependency.conf` 
 ```
@@ -297,7 +364,7 @@ Requires=<新依赖>
 After=<新依赖>
 ```
 
-As another example, in order to replace the `ExecStart` directive for a unit that is not of type `oneshot`, create the following file:
+要修改一个非 `oneshot` 单元的 `ExecStart` 命令，创建下面文件:
 
  `/etc/systemd/system/*unit*.d/customexec.conf` 
 ```
@@ -316,20 +383,6 @@ ExecStart=*new command*
 Restart=always
 RestartSec=30
 ```
-
-然后运行以下命令使更改生效：
-
-```
-# systemctl daemon-reload
-# systemctl restart <单元>
-
-```
-
-此外，把旧的单元文件从 `/usr/lib/systemd/system/` 复制到 `/etc/systemd/system/`，然后进行修改，也可以达到同样效果。在 `/etc/systemd/system/` 目录中的单元文件的优先级总是高于 `/usr/lib/systemd/system/` 目录中的同名单元文件。注意，当 `/usr/lib/` 中的单元文件因软件包升级变更时，`/etc/` 中自定义的单元文件不会同步更新。此外，你还得执行 `systemctl reenable <unit>`，手动重新启用该单元。因此，建议使用前面一种利用 `*.conf` 的方法。
-
-**提示：** `systemd-delta` 命令用来查看哪些单元文件被覆盖、哪些被修改。系统维护的时候需要及时了解哪些单元已经有了更新。
-
-安装 [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) 软件包，可以使单元配置文件在 [Vim](/index.php/Vim "Vim") 下支持语法高亮。
 
 ## 目标（target）
 
@@ -440,9 +493,38 @@ systemd 提供了自己的日志系统（logging system），称为 journal。�
 
 **提示：** 如果 `/var/log/journal/` 位于 [btrfs](/index.php/Btrfs "Btrfs") 文件系统，应该考虑对这个目录禁用写入时复制，方法参阅[Btrfs#Copy-on-Write (CoW)](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs")。
 
-Systemd 日志事件提示信息的记录分级方式符合经典的 BSD syslog 协议风格（[维基百科](https://en.wikipedia.org/wiki/Syslog "wikipedia:Syslog")，[RFC 5424](https://tools.ietf.org/html/rfc5424)）。详情请参阅 [Facility](#Facility)、[Priority level](#Priority_level)等章节，用例请参阅 [Filtering output](#Filtering_output)。
+Systemd 日志事件提示信息的记录安装优先级和更能进行分离，符合经典的 BSD syslog 协议风格（[维基百科](https://en.wikipedia.org/wiki/Syslog "wikipedia:Syslog")，[RFC 5424](https://tools.ietf.org/html/rfc5424)）。
 
-### Facility
+### 优先级
+
+A syslog severity code (in systemd called priority) is used to mark the importance of a message [RFC 5424 Section 6.2.1](https://tools.ietf.org/html/rfc5424#section-6.2.1).
+
+| Value | Severity | Keyword | Description | Examples |
+| 0 | Emergency | emerg | System is unusable | Severe Kernel BUG, systemd dumped core.
+This level should not be used by applications. |
+| 1 | Alert | alert | Should be corrected immediately | Vital subsystem goes out of work. Data loss.
+`kernel: BUG: unable to handle kernel paging request at ffffc90403238ffc`. |
+| 2 | Critical | crit | Critical conditions | Crashes, coredumps. Like familiar flash:
+`systemd-coredump[25319]: Process 25310 (plugin-containe) of user 1000 dumped core`
+Failure in the system primary application, like X11. |
+| 3 | Error | err | Error conditions | Not severe error reported:
+`kernel: usb 1-3: 3:1: cannot get freq at ep 0x84`,
+`systemd[1]: Failed unmounting /var.`,
+`libvirtd[1720]: internal error: Failed to initialize a valid firewall backend`). |
+| 4 | Warning | warning | May indicate that an error will occur if action is not taken. | A non-root file system has only 1GB free.
+`org.freedesktop. Notifications[1860]: (process:5999): Gtk-WARNING **: Locale not supported by C library. Using the fallback 'C' locale`. |
+| 5 | Notice | notice | Events that are unusual, but not error conditions. | `systemd[1]: var.mount: Directory /var to mount over is not empty, mounting anyway`. `gcr-prompter[4997]: Gtk: GtkDialog mapped without a transient parent. This is discouraged`. |
+| 6 | Informational | info | Normal operational messages that require no action. | `lvm[585]: 7 logical volume(s) in volume group "archvg" now active`. |
+| 7 | Debug | debug | Information useful to developers for debugging the application. | `kdeinit5[1900]: powerdevil: Scheduling inhibition from ":1.14" "firefox" with cookie 13 and reason "screen"`. |
+
+If issue you are looking for, was not found on according level, search it on couple of priority levels above and below. This rules are recommendations. Some errors considered a normal occasion for program so they marked low in priority by developer, and on the contrary, sometimes too many messages plaques too high priorities for them, but often it's an arguable situation. And often you really should solve an issue, also to understand architecture and adopt best practices.
+
+Examples:
+
+*   Info message: `pulseaudio[2047]: W: [pulseaudio] alsa-mixer.c: Volume element Master has 8 channels. That's too much! I can't handle that!` It is an warning or error by definition.
+*   Plaguing alert message: `sudo[21711]:     user : a password is required ; TTY=pts/0 ; PWD=/home/user ; USER=root ; COMMAND=list /usr/bin/pacman --color auto -Sy` The [reason](https://bbs.archlinux.org/viewtopic.php?id=184455) - user was manually added to sudoers file, not to wheel group, which is arguably normal action, but sudo produced an alert on every occasion.
+
+### 功能
 
 A syslog facility code is used to specify the type of program that is logging the message [RFC 5424 Section 6.2.1](https://tools.ietf.org/html/rfc5424#section-6.2.1).
 
@@ -473,35 +555,6 @@ A syslog facility code is used to specify the type of program that is logging th
 | 23 | local7 | local use 7 (local7) |
 
 So, useful facilities to watch: 0,1,3,4,9,10,15.
-
-### Priority level
-
-A syslog severity code (in systemd called priority) is used to mark the importance of a message [RFC 5424 Section 6.2.1](https://tools.ietf.org/html/rfc5424#section-6.2.1).
-
-| Value | Severity | Keyword | Description | Examples |
-| 0 | Emergency | emerg | System is unusable | Severe Kernel BUG, systemd dumped core.
-This level should not be used by applications. |
-| 1 | Alert | alert | Should be corrected immediately | Vital subsystem goes out of work. Data loss.
-`kernel: BUG: unable to handle kernel paging request at ffffc90403238ffc`. |
-| 2 | Critical | crit | Critical conditions | Crashes, coredumps. Like familiar flash:
-`systemd-coredump[25319]: Process 25310 (plugin-containe) of user 1000 dumped core`
-Failure in the system primary application, like X11. |
-| 3 | Error | err | Error conditions | Not severe error reported:
-`kernel: usb 1-3: 3:1: cannot get freq at ep 0x84`,
-`systemd[1]: Failed unmounting /var.`,
-`libvirtd[1720]: internal error: Failed to initialize a valid firewall backend`). |
-| 4 | Warning | warning | May indicate that an error will occur if action is not taken. | A non-root file system has only 1GB free.
-`org.freedesktop. Notifications[1860]: (process:5999): Gtk-WARNING **: Locale not supported by C library. Using the fallback 'C' locale`. |
-| 5 | Notice | notice | Events that are unusual, but not error conditions. | `systemd[1]: var.mount: Directory /var to mount over is not empty, mounting anyway`. `gcr-prompter[4997]: Gtk: GtkDialog mapped without a transient parent. This is discouraged`. |
-| 6 | Informational | info | Normal operational messages that require no action. | `lvm[585]: 7 logical volume(s) in volume group "archvg" now active`. |
-| 7 | Debug | debug | Information useful to developers for debugging the application. | `kdeinit5[1900]: powerdevil: Scheduling inhibition from ":1.14" "firefox" with cookie 13 and reason "screen"`. |
-
-If issue you are looking for, was not found on according level, search it on couple of priority levels above and below. This rules are recommendations. Some errors considered a normal occasion for program so they marked low in priority by developer, and on the contrary, sometimes too many messages plaques too high priorities for them, but often it's an arguable situation. And often you really should solve an issue, also to understand architecture and adopt best practices.
-
-Examples:
-
-*   Info message: `pulseaudio[2047]: W: [pulseaudio] alsa-mixer.c: Volume element Master has 8 channels. That's too much! I can't handle that!` It is an warning or error by definition.
-*   Plaguing alert message: `sudo[21711]:     user : a password is required ; TTY=pts/0 ; PWD=/home/user ; USER=root ; COMMAND=list /usr/bin/pacman --color auto -Sy` The [reason](https://bbs.archlinux.org/viewtopic.php?id=184455) - user was manually added to sudoers file, not to wheel group, which is arguably normal action, but sudo produced an alert on every occasion.
 
 ### 过滤输出
 
@@ -621,6 +674,18 @@ If this behavior is not desired, simply create a symlink from `/etc/systemd/syst
 
 **Note:** Enabling all units by default may cause problems with packages that contain two or more mutually exclusive units. *systemctl preset* is designed to be used by distributions and spins or system administrators. In the case where two conflicting units would be enabled, you should explicitly specify which one is to be disabled in a preset configuration file as specified in the manpage for `systemd.preset`.
 
+### Sandboxing application environments
+
+A unit file can be created as a sandbox to isolate applications and their processes within a hardened virtual environment. systemd leverages [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces"), white-/blacklisting of [Capabilities](/index.php/Capabilities "Capabilities"), and [control groups](/index.php/Control_groups "Control groups") to container processes through an extensive [execution environment configuration](https://www.freedesktop.org/software/systemd/man/systemd.exec.html).
+
+The enhancement of an existing systemd unit file with application sandboxing typically requires trial-and-error tests accompanied by the generous use of [strace](https://www.archlinux.org/packages/?name=strace), [stderr](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_.28stderr.29 "wikipedia:Standard streams") and [journalctl](https://www.freedesktop.org/software/systemd/man/journalctl.html) error logging and output facilities. You may want to first search upstream documentation for already done tests to base trials on.
+
+Some examples on how sandboxing with systemd can be deployed:
+
+*   `CapabilityBoundingSet` defines a whitelisted set of allowed capabilities, but may also be used to blacklist a specific capability for a unit.
+    *   The `CAP_SYS_ADM` capability, for example, which should be one of the [goals of a secure sandbox](https://lwn.net/Articles/486306/): `CapabilityBoundingSet=~ CAP_SYS_ADM`
+*   [Unbound#Sandboxing](/index.php/Unbound#Sandboxing "Unbound") shows a full-scale example of systemd features for sandboxing.
+
 ## 疑难解答
 
 ### 寻找错误
@@ -630,6 +695,13 @@ If this behavior is not desired, simply create a symlink from `/etc/systemd/syst
 **1.** 通过 *systemd* 寻找启动失败的服务:
 
  `$ systemctl --state=failed`  `systemd-modules-load.service   loaded **failed failed**  Load Kernel Modules` 
+
+或者使用 *systemd* 消息:
+
+```
+$ journalctl -fp err
+
+```
 
 **2.** 我们发现了启动失败的 `systemd-modules-load` 服务. 我们想知道更多信息:
 
@@ -796,6 +868,16 @@ Failed to issue method call: No such file or directory
 需要 [重新生成 initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio")。
 
 **提示：** 可以使用 pacman 钩子在更新 [systemd](https://www.archlinux.org/packages/?name=systemd)时重新生成 initramfs。参考 [这个帖子](https://bbs.archlinux.org/viewtopic.php?id=215411) 和 [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
+
+### 禁用远程机器的 emergency 模式
+
+如果远程机器位于云主机，emergency 模式会导致系统无法远程连接，可以通过下面方式禁用紧急模式：
+
+```
+# systemctl mask emergency.service
+# systemctl mask emergency.target
+
+```
 
 ## 相关资源
 

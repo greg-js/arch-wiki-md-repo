@@ -1,8 +1,9 @@
 Related articles
 
-*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
-*   [Router](/index.php/Router "Router")
 *   [Firewalls](/index.php/Firewalls "Firewalls")
+*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
+*   [Nftables#Simple stateful firewall](/index.php/Nftables#Simple_stateful_firewall "Nftables")
+*   [Router](/index.php/Router "Router")
 *   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")
 
 This page explains how to set up a stateful firewall using [iptables](/index.php/Iptables "Iptables"). It also explains what the rules mean and why they are needed. For simplicity, it is split into two major sections. The first section deals with a firewall for a single machine, the second sets up a NAT gateway in addition to the firewall from the first section.

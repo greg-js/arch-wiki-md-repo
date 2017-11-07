@@ -14,8 +14,8 @@ If you already have a Diablo II installation (for example, installed under Windo
 
 Those packages are needed in order to run the Blizzard Downloader:
 
-*   [lib32-libjpeg-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg-turbo) ([libjpeg-turbo](https://www.archlinux.org/packages/?name=libjpeg-turbo) on i686)
-*   [lib32-libldap](https://www.archlinux.org/packages/?name=lib32-libldap) ([libldap](https://www.archlinux.org/packages/?name=libldap) on i686)
+*   [lib32-libjpeg-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg-turbo)
+*   [lib32-libldap](https://www.archlinux.org/packages/?name=lib32-libldap)
 
 If any of those is not installed, downloaders will fail to start. You may download the standalone installers on Windows to avoid installing these.
 

@@ -361,7 +361,7 @@ See also [wipe(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wipe.1).
 
 ### shred
 
-[*shred*](https://www.gnu.org/software/coreutils/manual/html_node/shred-invocation.html) (from the [coreutils](https://www.archlinux.org/packages/?name=coreutils) package) is a Unix command that can be used to securely delete individual files or full devices so that they can be recovered only with great difficulty with specialised hardware, if at all. *shred* uses three passes, writing [pseudo-random data](/index.php/Random_number_generation "Random number generation") to the device during each pass. This can be reduced or increased.
+[*shred*](https://www.gnu.org/software/coreutils/manual/html_node/shred-invocation.html) (from the [coreutils](https://www.archlinux.org/packages/?name=coreutils) package) is a Unix command that can be used to securely delete individual files or full devices so that they can be recovered only with great difficulty with specialised hardware, if at all. By default *shred* uses three passes, writing [pseudo-random data](/index.php/Random_number_generation "Random number generation") to the device during each pass. This can be reduced or increased.
 
 The following command invokes shred with its default settings and displays the progress.
 

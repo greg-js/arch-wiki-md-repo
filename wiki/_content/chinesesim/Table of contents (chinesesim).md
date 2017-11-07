@@ -17,7 +17,7 @@
 | <small>2.3.</small> [数据库管理](/index.php/Category:Database_management_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Database management systems (简体中文)") <small>(4)</small> |
 | <small>2.4.</small> [字典](/index.php/Category:Dictionaries_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dictionaries (简体中文)") <small>(1)</small> |
 | <small>2.5.</small> [模拟器](/index.php/Category:Emulators_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Emulators (简体中文)") <small>(7)</small> |
-| <small>2.6.</small> [文件管理器](/index.php/Category:File_managers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File managers (简体中文)") <small>(3)</small> |
+| <small>2.6.</small> [文件管理器](/index.php/Category:File_managers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File managers (简体中文)") <small>(4)</small> |
 | <small>2.7.</small> [游戏娱乐](/index.php/Category:Gaming_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Gaming (简体中文)") <small>(6)</small> |
 | <small>2.8.</small> [图形和排版](/index.php/Category:Graphics_and_desktop_publishing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics and desktop publishing (简体中文)") <small>(4)</small> |
 | <small>2.9.</small> [网络程序](/index.php/Category:Internet_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet applications (简体中文)") <small>(17) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
@@ -57,6 +57,7 @@
 | <small>4.8.3.</small> [Dell](/index.php/Category:Dell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dell (简体中文)") <small>(1)</small> |
 | <small>4.8.4.</small> [HASEE](/index.php/Category:HASEE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:HASEE (简体中文)") <small>(1)</small> |
 | <small>4.8.5.</small> [Lenovo](/index.php/Category:Lenovo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Lenovo (简体中文)") <small>(3)</small> |
+| <small>4.8.6.</small> [Xiaomi](/index.php/Category:Xiaomi_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Xiaomi (简体中文)") <small>(1)</small> |
 | <small>4.9.</small> [主板和BIOS](/index.php/Category:Mainboards_and_BIOS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mainboards and BIOS (简体中文)") <small>(3)</small> |
 | <small>4.10.</small> [移动设备](/index.php/Category:Mobile_devices_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mobile devices (简体中文)") <small>(4)</small> |
 | <small>4.11.</small> [其他硬件](/index.php/Category:Other_hardware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Other hardware (简体中文)") <small>(1)</small> |
@@ -74,8 +75,8 @@
 | <small>6.4.2.</small> [IRC](/index.php/Category:Internet_Relay_Chat_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet Relay Chat (简体中文)") <small>(3)</small> |
 | <small>6.4.3.</small> [网页浏览器](/index.php/Category:Web_browser_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web browser (简体中文)") <small>(5)</small> |
 | <small>6.5.</small> [邮件服务器](/index.php/Category:Mail_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mail server (简体中文)") <small>(1)</small> |
-| <small>6.6.</small> [Network configuration](/index.php/Category:Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network configuration (简体中文)") <small>(2)</small> |
-| <small>6.7.</small> [Network monitoring](/index.php/Category:Network_monitoring_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network monitoring (简体中文)") <small>(1)</small> |
+| <small>6.6.</small> [网络配置](/index.php/Category:Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network configuration (简体中文)") <small>(2)</small> |
+| <small>6.7.</small> [网络监控](/index.php/Category:Network_monitoring_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network monitoring (简体中文)") <small>(1)</small> |
 | <small>6.8.</small> [网络共享](/index.php/Category:Network_sharing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network sharing (简体中文)") <small>(5)</small> |
 | <small>6.9.</small> [代理服务器](/index.php/Category:Proxy_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Proxy servers (简体中文)") <small>(4) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
 | <small>6.10.</small> [远程桌面](/index.php/Category:Remote_desktop_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Remote desktop (简体中文)") <small>(2)</small> |
@@ -88,6 +89,7 @@
 | <small>7.1.</small> [启动过程](/index.php/Category:Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot process (简体中文)") <small>(29)</small> |
 | <small>7.1.1.</small> [引导器](/index.php/Category:Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot loaders (简体中文)") <small>(9)</small> |
 | <small>7.1.2.</small> [图形启动界面](/index.php/Category:Bootsplash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bootsplash (简体中文)") <small>(2) (同时还属于 [美化](/index.php/Category:Eye_candy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Eye candy (简体中文)"))</small> |
+| <small>7.1.3.</small> [Init](/index.php/Category:Init_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Init (简体中文)") <small>(1)</small> |
 | <small>7.2.</small> [命令行](/index.php/Category:Command_shells_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Command shells (简体中文)") <small>(7)</small> |
 | <small>7.3.</small> [系统服务和守护进程](/index.php/Category:Daemons_and_system_services_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Daemons and system services (简体中文)") <small>(17)</small> |
 | <small>7.4.</small> [桌面环境](/index.php/Category:Desktop_environments_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Desktop environments (简体中文)") <small>(19)</small> |

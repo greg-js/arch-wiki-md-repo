@@ -37,6 +37,7 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [2.2.5 Hide window border and title bar](#Hide_window_border_and_title_bar)
         *   [2.2.6 Auto-hide Bookmarks Toolbar](#Auto-hide_Bookmarks_Toolbar)
         *   [2.2.7 Remove sidebar width restrictions](#Remove_sidebar_width_restrictions)
+        *   [2.2.8 Unreadable input fields with KDE Breeze Dark theme](#Unreadable_input_fields_with_KDE_Breeze_Dark_theme)
     *   [2.3 Web content CSS settings](#Web_content_CSS_settings)
         *   [2.3.1 Import other CSS files](#Import_other_CSS_files)
         *   [2.3.2 Block certain parts of a domain](#Block_certain_parts_of_a_domain)
@@ -50,19 +51,17 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [3.2 Mouse wheel scroll speed](#Mouse_wheel_scroll_speed)
     *   [3.3 Pixel-perfect trackpad scrolling](#Pixel-perfect_trackpad_scrolling)
     *   [3.4 Change the order of search engines in the Firefox Search Bar](#Change_the_order_of_search_engines_in_the_Firefox_Search_Bar)
-    *   [3.5 How to open a *.doc automatically with Abiword or LibreOffice Writer](#How_to_open_a_.2A.doc_automatically_with_Abiword_or_LibreOffice_Writer)
-    *   [3.6 "I'm Feeling Lucky" mode](#.22I.27m_Feeling_Lucky.22_mode)
-    *   [3.7 Secure DNS with DNSSEC validator](#Secure_DNS_with_DNSSEC_validator)
-    *   [3.8 Adding magnet protocol association](#Adding_magnet_protocol_association)
-    *   [3.9 Adding magnet protocol association for kTorrent (KDE4)](#Adding_magnet_protocol_association_for_kTorrent_.28KDE4.29)
-    *   [3.10 Prevent accidental closing](#Prevent_accidental_closing)
-    *   [3.11 Plugins do not work with latest version](#Plugins_do_not_work_with_latest_version)
-    *   [3.12 Jerky or choppy scrolling](#Jerky_or_choppy_scrolling)
-    *   [3.13 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
-    *   [3.14 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
-    *   [3.15 Enable touchscreen gestures](#Enable_touchscreen_gestures)
-    *   [3.16 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
-    *   [3.17 Make URL bar behave like on Windows regarding mouse clicks](#Make_URL_bar_behave_like_on_Windows_regarding_mouse_clicks)
+    *   [3.5 "I'm Feeling Lucky" mode](#.22I.27m_Feeling_Lucky.22_mode)
+    *   [3.6 Secure DNS with DNSSEC validator](#Secure_DNS_with_DNSSEC_validator)
+    *   [3.7 Adding magnet protocol association](#Adding_magnet_protocol_association)
+    *   [3.8 Prevent accidental closing](#Prevent_accidental_closing)
+    *   [3.9 Plugins do not work with latest version](#Plugins_do_not_work_with_latest_version)
+    *   [3.10 Jerky or choppy scrolling](#Jerky_or_choppy_scrolling)
+    *   [3.11 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
+    *   [3.12 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
+    *   [3.13 Enable touchscreen gestures](#Enable_touchscreen_gestures)
+    *   [3.14 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
+    *   [3.15 Make URL bar behave like on Windows regarding mouse clicks](#Make_URL_bar_behave_like_on_Windows_regarding_mouse_clicks)
 *   [4 See also](#See_also)
 
 ## Performance
@@ -377,6 +376,22 @@ The extension [Classic Theme Restorer](https://addons.mozilla.org/firefox/addon/
 
 ```
 
+#### Unreadable input fields with KDE Breeze Dark theme
+
+If you are using KDE desktop in conjunction with Breeze Dark theme, you might find that some input fields have dark background, which makes text unreadable. A very nice solution to this issue is to use a non-dark GTK theme along with a dark Firefox theme. By using a non-dark GTK theme pages will look nicely (no more unreadable input fields). Similarly, by using a dark Firefox theme your browser will look the way you want (requires Firefox 56 or later).
+
+Using non-dark GTK theme:
+
+*   Got to *System Settings --> Application Style (under Appearance section) --> Gnome Application Style (GTK)*
+*   Then set the "*Select a GTK3 Theme*" drop-down list to "*Breeze*". You should have no problem if you have different values in the other options.
+*   Click on the *Apply* button
+
+Using a dark Firefox theme:
+
+*   One theme that looks very nice with Breeze Dark theme is [FT DeepDark (by steva)](https://addons.mozilla.org/en-US/firefox/addon/ft-deepdark), but obviously you can you choose the one you want.
+*   Install the Firefox dark theme of your choice.
+*   Restart Firefox.
+
 ### Web content CSS settings
 
 This section deals with the `userContent.css` file in which you can add custom CSS rules for web content. Changes to this file will take effect once the browser is restarted.
@@ -549,10 +564,6 @@ To change the order search engines are displayed in:
 *   Open the drop-down list of search engines and click *Manage Search Engines...* entry.
 *   Highlight the engine you want to move and use *Move Up* or *Move Down* to move it. Alternatively, you can use drag-and-drop.
 
-### How to open a *.doc automatically with Abiword or LibreOffice Writer
-
-Go to *Preferences > Applications* and search for *Word Document* (or *Word 2007 Document* for `*.docx`). After finding it, click the drop-down list and select *Use other...*. From there you have to specify the exact path to the Abiword or Writer executable (i.e.`/usr/bin/abiword` or `/usr/bin/lowriter`).
-
 ### "I'm Feeling Lucky" mode
 
 Some search engines have a "feeling lucky" feature. For example, Google has "I'm Feeling Lucky", and DuckDuckGo has "I'm Feeling Ducky".
@@ -580,24 +591,6 @@ You can enable [DNSSEC](/index.php/DNSSEC "DNSSEC") support for safer browsing.
 In `about:config` set `network.protocol-handler.expose.magnet` to **false**.
 
 The next time you open a magnet link, you will be prompted with a `Launch Application` dialogue. From there simply select your chosen torrent client. This technique can also be used with other protocols.
-
-### Adding magnet protocol association for kTorrent (KDE4)
-
-Create a user copy of `/usr/share/applications/kde4/ktorrent.desktop` to `~/.local/share/applications/kde4/`, and append to `Mimetype=`
-
-```
-x-scheme-handler/magnet
-
-```
-
-Modify `~/.config/mimeapps.list` and append:
-
-```
-x-scheme-handler/magnet=kde4-ktorrent.desktop
-
-```
-
-See [[5]](http://superuser.com/questions/44072/how-do-i-associate-magnet-links-with-ktorrent-in-firefox)
 
 ### Prevent accidental closing
 

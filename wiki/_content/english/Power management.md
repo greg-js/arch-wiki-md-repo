@@ -502,7 +502,7 @@ Keep in mind that these power saving options are experimental and can cause an u
 
 #### Active State Power Management
 
-If the computer is believed not to support [ASPM](https://en.wikipedia.org/wiki/Active_State_Power_Management "wikipedia:Active State Power Management") it and will be disabled on boot:
+If the computer is believed not to support [ASPM](https://en.wikipedia.org/wiki/Active_State_Power_Management "wikipedia:Active State Power Management") it will be disabled on boot:
 
 ```
 # lspci -vv | grep ASPM.*abled\;

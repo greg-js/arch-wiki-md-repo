@@ -1,3 +1,12 @@
+Artículos relacionados
+
+*   [dm-crypt (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)")
+*   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
+*   [eCryptfs](/index.php/ECryptfs "ECryptfs")
+*   [EncFS](/index.php/EncFS "EncFS")
+*   [Tomb](/index.php/Tomb "Tomb")
+*   [tcplay](/index.php/Tcplay "Tcplay")
+
 **Estado de la traducción:** este artículo es una versión traducida de [Disk encryption](/index.php/Disk_encryption "Disk encryption"). Fecha de la última traducción/revisión: **2015-06-21**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Disk_encryption&diff=0&oldid=378165).
 
 En este artículo se analizan las técnicas comunes disponibles en Arch Linux para proteger criptográficamente una parte lógica de un disco de almacenamiento (carpeta, partición, disco completo, ...), de modo que todos los datos que se escriban en él se cifren automáticamente y descifren sobre la marcha cuando se lee de nuevo.

@@ -211,7 +211,7 @@ Reboot and verify that vfio-pci has loaded properly and that it is now bound to 
 [    2.061326] vfio-pci 0000:06:00.0: enabling device (0100 -> 0103)
 ```
 
-It isn't necessary for all devices (or even expected device) from vfio.conf to be in dmesg output. Sometimes device doesn't appear in output at boot but actually is able to be visible and operatable in guest VM.
+It isn't necessary for all devices (or even expected device) from vfio.conf to be in dmesg output. Sometimes a device doesn't appear in output at boot but actually is able to be visible and operatable in guest VM.
 
  `$ lspci -nnk -d 10de:13c2` 
 ```

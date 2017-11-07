@@ -202,16 +202,16 @@ fi
 
 GNOME 系统设置面板（gnome-control-center）和 GNOME 应用使用 [dconf](https://en.wikipedia.org/wiki/Dconf "wikipedia:Dconf") 配置系统存储设置。
 
-您可以使用 `gsettings` 或 `dconf` 命令行工具直接访问 dconf 数据库。
+您可以使用 `gsettings` 或 `dconf` 命令行工具直接访问 dconf 数据库。这也可以让你修改用户界面不公开的设置。
 
-直到 GNOME 3.24，设置由 GNOME 设置进程应用，也可以在 GNOME 会话之外运行：
+直到 GNOME 3.24，设置由 GNOME 设置进程应用，其也可以在 GNOME 会话之外通过以下命令运行：
 
 ```
  $ nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &
 
 ```
 
-GNOME 3.24 however replaced the GNOME settings daemon with several separate settings plugins `/usr/lib/gnome-settings-daemon/gsd-*`. These plugins are now controlled via desktop files under `/etc/xdg/autostart` (org.gnome.SettingsDaemon.*.desktop). To run these plugins outside of a GNOME session you will now need to copy/edit the appropriate [desktop entries](/index.php/Desktop_entries "Desktop entries") to `~/.config/autostart`.
+然而 GNOME 3.24 通过几个相互独立的设置插件 `/usr/lib/gnome-settings-daemon/gsd-*` 取代了 GNOME 设置进程。这些插件通过 `/etc/xdg/autostart` (org.gnome.SettingsDaemon.*.desktop) 下的桌面文件进行控制。如果需要在 GNOME 会话之外运行这些插件，您需要复制或编辑相应的[桌面条目](/index.php/Desktop_entries_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop entries (简体中文)")到 `~/.config/autostart`。
 
 配置通常是用户特定的，本文将不介绍如何为多个用户创建配置模板。
 

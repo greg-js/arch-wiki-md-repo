@@ -83,6 +83,8 @@ opacity-rule = [
 
 If opening a new tab through `Ctrl+Shift+t` fails with `no directory uri set`, [source](/index.php/Source "Source") `/etc/profile.d/vte.sh`. See [GNOME/Tips and tricks#New terminals adopt current directory](/index.php/GNOME/Tips_and_tricks#New_terminals_adopt_current_directory "GNOME/Tips and tricks").
 
+If it continues to fail, ensure your [hostname](/index.php/Hostname "Hostname") is valid. See [hostname(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.7).
+
 ## See also
 
 *   [Termite readme](https://github.com/thestinger/termite/blob/master/README.rst)

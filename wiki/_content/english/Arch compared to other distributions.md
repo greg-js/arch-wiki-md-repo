@@ -28,7 +28,7 @@ For a more complete comparison, see [w:Comparison of operating systems](https://
 
 ## Source-based
 
-Source-based distributions are highly portable, giving the advantage of controlling and compiling the entire OS and applications for a particular machine architecture and usage scheme, with the disadvantage of the time-consuming nature of source compilation. The Arch base and all packages are only compiled for the x86_64 architecture (and i686 [until](https://www.archlinux.org/news/phasing-out-i686-support/) November 2017), offering a potential performance boost over i486/i586 binary distributions, with the added advantage of expedient installation.
+Source-based distributions are highly portable, giving the advantage of controlling and compiling the entire OS and applications for a particular machine architecture and usage scheme, with the disadvantage of the time-consuming nature of source compilation. The Arch base and all packages are only compiled for the x86_64 architecture.
 
 ### CRUX
 
@@ -65,7 +65,7 @@ These distributions offer a broad range of advantages and strengths, and can be 
 
 *   Debian focuses on stringent testing of the Stable branch, which is "frozen" and supported up to [five years](https://wiki.debian.org/LTS). Arch packages are more current than Debian Stable, being more comparable to the Debian Testing and Unstable branches, and has no fixed release schedule.
 
-*   Debian is available for many architectures, including alpha, arm, hppa, i386, x86_64, ia64, m68k, mips, mipsel, powerpc, s390, and sparc, whereas Arch is officially i686 and x86_64, with community ports for arm (for Raspberry Pi for example) only.
+*   Debian is available for many architectures, including alpha, arm, hppa, i386, x86_64, ia64, m68k, mips, mipsel, powerpc, s390, and sparc, whereas Arch is officially x86_64, with community ports for i686 ([Arch Linux 32](https://archlinux32.org/)) and ARM ([Arch Linux ARM](https://archlinuxarm.org/)) only.
 
 *   Arch provides more expedient support for building custom, installable packages from outside sources, with a ports-like package build system. Debian does not offer a ports system, relying instead on its large binary repositories.
 

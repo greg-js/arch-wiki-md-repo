@@ -1,3 +1,10 @@
+Related articles
+
+*   [Solid State Drives/NVMe](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe")
+*   [Solid State Drives/Memory cell clearing](/index.php/Solid_State_Drives/Memory_cell_clearing "Solid State Drives/Memory cell clearing")
+*   [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices")
+*   [Improving performance#Storage devices](/index.php/Improving_performance#Storage_devices "Improving performance")
+
 This article covers special topics for operating [w:Solid State Drives](https://en.wikipedia.org/wiki/Solid_State_Drive "w:Solid State Drive") (SSDs) and other flash-memory based storage devices. If you want to partition a SSD for a specific purpose, it may be useful to consider the [List of file systems optimized for flash memory](https://en.wikipedia.org/wiki/List_of_file_systems#File_systems_optimized_for_flash_memory.2C_solid_state_media "w:List of file systems"). For general usage, you should simply choose your preferred [filesystem](/index.php/Filesystem "Filesystem").
 
 ## Contents
@@ -73,7 +80,7 @@ Or [install](/index.php/Install "Install") [hdparm](https://www.archlinux.org/pa
 
 #### Periodic TRIM
 
-The [util-linux](https://www.archlinux.org/packages/?name=util-linux) package provides `fstrim.service` and `fstrim.timer` [systemd](/index.php/Systemd "Systemd") unit files. [Enabling](/index.php/Enabling "Enabling") the timer will activate the service weekly. The service executes [fstrim(8)](http://man7.org/linux/man-pages/man8/fstrim.8.html) on all mounted filesystems on devices that support the *discard* operation.
+The [util-linux](https://www.archlinux.org/packages/?name=util-linux) package provides `fstrim.service` and `fstrim.timer` [systemd](/index.php/Systemd "Systemd") unit files. [Enabling](/index.php/Enabling "Enabling") the timer will activate the service weekly. The service executes [fstrim(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fstrim.8) on all mounted filesystems on devices that support the *discard* operation.
 
 The timer relies on the timestamp of `/var/lib/systemd/timers/stamp-fstrim.timer` (which it will create upon first invocation) to know whether a week has elapsed since it last ran. Therefore there is no need to worry about too frequent invocations, in an *anacron*-like fashion.
 
@@ -122,7 +129,7 @@ If you want to trim your entire SSD at once, e.g. for a new install, or you want
 
 Change the value of `issue_discards` option from 0 to 1 in `/etc/lvm/lvm.conf`.
 
-**Note:** Enabling this option will "issue discards to a logical volumes's underlying physical volume(s) when the logical volume is no longer using the physical volumes' space (e.g. *lvremove*, *lvreduce*, etc)" (see [lvm.conf(5)](http://man7.org/linux/man-pages/man5/lvm.conf.5.html) and/or inline comments in `/etc/lvm/lvm.conf`). As such it does not seem to be required for "regular" TRIM requests (file deletions inside a filesystem) to be functional.
+**Note:** Enabling this option will "issue discards to a logical volumes's underlying physical volume(s) when the logical volume is no longer using the physical volumes' space (e.g. *lvremove*, *lvreduce*, etc)" (see [lvm.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.conf.5) and/or inline comments in `/etc/lvm/lvm.conf`). As such it does not seem to be required for "regular" TRIM requests (file deletions inside a filesystem) to be functional.
 
 #### dm-crypt
 
@@ -211,7 +218,7 @@ If this (and also updating the firmware) does not resolves the problem or cause 
 
 Some SSDs (e.g. Transcend MTS400) are failing when SATA Active Link Power Management, [ALPM](https://en.wikipedia.org/wiki/Aggressive_Link_Power_Management "wikipedia:Aggressive Link Power Management"), is enabled. ALPM is disabled by default and enabled by a power saving daemon (e.g. [TLP](/index.php/TLP "TLP"), [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")).
 
-If you starting to encounter SATA related errors when using such daemon then you should try to disable ALPM by setting its state to `max_performance` for both battery and AC powered profiles.
+If you are starting to encounter SATA related errors when using such a daemon, you should try to disable ALPM by setting its state to `max_performance` for both battery and AC powered profiles.
 
 ## Firmware
 

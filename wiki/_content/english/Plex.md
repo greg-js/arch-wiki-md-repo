@@ -12,11 +12,8 @@ Plex for Linux is split into a closed-source server Plex Media Server, and an op
     *   [1.5 Security](#Security)
     *   [1.6 Resource Management](#Resource_Management)
     *   [1.7 Network](#Network)
-    *   [1.8 Remote access through vpn](#Remote_access_through_vpn)
-        *   [1.8.1 Requirements](#Requirements)
-        *   [1.8.2 How to](#How_to)
-    *   [1.9 Library Updates](#Library_Updates)
-    *   [1.10 Troubleshooting](#Troubleshooting)
+    *   [1.8 Library Updates](#Library_Updates)
+    *   [1.9 Troubleshooting](#Troubleshooting)
 *   [2 Plex Home Theater (PHT)](#Plex_Home_Theater_.28PHT.29)
     *   [2.1 Installation](#Installation_2)
 *   [3 Plex Media Player (PMP)](#Plex_Media_Player_.28PMP.29)
@@ -100,28 +97,6 @@ A short example with iptables:
 # iptables -A INPUT -p udp -m multiport --dports 1900,32410,32412,32413,32414 -j ACCEPT
 
 ```
-
-### Remote access through vpn
-
-#### Requirements
-
-If you share your libraries with some friends, but want the data to go through your vpn connection, you will need two things:
-
-*   A vpn provider that allows static port forwarding
-*   Remote Access enabled on your [plex server settings](http://127.0.0.1:32400/web/index.html#!/settings/server)
-
-#### How to
-
-1.  Go to your vpn provider settings and ask for a port. *(We're going to assume ours gave us the port 11652)*
-2.  Then add the following command to your boot sequence *(rc.local for example)*
-
-    	`# iptables -t nat -A PREROUTING -i tun0 -p tcp --dport 11652 -j REDIRECT --to-ports 32400`
-
-    	*(We're going to assume you're using the tun0 interface for openvpn)*
-
-3.  Finally, go to your plex server settings, enable advanced settings and define the custom port at 11652
-
-**Warning:** Don't forget to replace the 11652 example port with yours!
 
 ### Library Updates
 

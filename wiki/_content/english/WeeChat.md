@@ -1,3 +1,10 @@
+Related articles
+
+*   [IRC channels](/index.php/IRC_channels "IRC channels")
+*   [IRC](/index.php/IRC "IRC")
+*   [irssi](/index.php/Irssi "Irssi")
+*   [HexChat](/index.php/HexChat "HexChat")
+
 [WeeChat](https://weechat.org/) is a highly extendable and feature rich [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") Client currently under heavy development.
 
 ## Contents
@@ -22,7 +29,6 @@
         *   [7.7.1 IRC gateway](#IRC_gateway)
             *   [7.7.1.1 Upload file](#Upload_file)
         *   [7.7.2 Native client](#Native_client)
-            *   [7.7.2.1 Upload file](#Upload_file_2)
     *   [7.8 Desktop notifications](#Desktop_notifications)
     *   [7.9 Mobile device notifications](#Mobile_device_notifications)
 *   [8 Troubleshooting](#Troubleshooting)
@@ -211,15 +217,7 @@ A new plugin called "exec" has been added, with command `/exec`. It will execute
 
 ### Key Bindings
 
-Some helpful bindings:
-
-To use ctrl-left/right arrow keys to jump to next/previous words on the input line:
-
-```
-/key bind meta2-1;5D /input move_previous_word
-/key bind meta2-1;5C /input move_next_word
-
-```
+See `/help key`.
 
 ### SSH connection lost when idle
 
@@ -280,34 +278,6 @@ where:
 #### Native client
 
 There is a native client for slack: [wee-slack](https://github.com/rawdigits/wee-slack)
-
-You need to install the python2 librairy websocket-client:
-
-`pacman -S python2-websocket-client`
-
-Then install the wee-chat plugin into the weechat configuration folder
-
-`curl -o ~/.weechat/python/autoload/wee_slack.py https://raw.githubusercontent.com/rawdigits/wee-slack/master/wee_slack.py`
-
-Run `/python reload` to load the new plugin
-
-You will need an access token. You can grab one at [here](https://api.slack.com/docs/oauth-test-tokens)
-
-Once weechat is running, register your token into weechat:
-
-`/set plugins.var.python.slack_extension.slack_api_token [YOUR_SLACK_TOKEN]`
-
-And finally:
-
-`/save`
-
-`/python reload`
-
-##### Upload file
-
-To upload a file enter the following command into weechat:
-
-`/slack upload [file_path]`
 
 ### Desktop notifications
 

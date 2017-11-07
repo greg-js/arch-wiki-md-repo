@@ -262,7 +262,7 @@ Finally remove it.
 ```
 $ lpr *file*
 $ lpr -# 17 *file*            # print the file 17 times
-$ echo "Hello, world!" | lpr -p # print the result of a command. The -p switch adds a header.
+$ echo 'Hello, world!' | lpr -p # print the result of a command. The -p switch adds a header.
 
 ```
 

@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-07，点击[这里](https://wiki.archlinux.org/index.php?title=Visual+Studio+Code&diff=0&oldid=494942)可以查看翻译后英文页面的改动。
+
 **Visual Studio Code** (**VSCode**)是一个跨平台，免费，开源 (使用MIT协议)的文本编辑器，由微软使用JavaScript和TypeScript开发 。它构建于Electron框架之上，并且极具扩展性。 可以在编辑器自带的应用商店，或者从 [https://marketplace.visualstudio.com/VSCode](https://marketplace.visualstudio.com/VSCode) 中安装扩展。 微软在AUR中提供了一个专有的二进制构建版[visual-studio-code](https://aur.archlinux.org/packages/visual-studio-code/)（使用一个最终用户许可协议授权）供普通用户使用。
 
 ## Contents

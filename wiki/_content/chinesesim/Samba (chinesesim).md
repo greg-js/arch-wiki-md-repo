@@ -58,10 +58,12 @@
 
 要通过 Samba 共享文件,还需额外 [安装](/index.php/Pacman "Pacman") 软件包 [samba](https://www.archlinux.org/packages/?name=samba)。
 
-Samba 服务的默认配置文件在 `/etc/samba/smb.conf.default` 中，需要将初始配置复制到 `/etc/samba/smb.conf`，否则 smbd 无法启动：
+Samba 服务的配置文件是 `/etc/samba/smb.conf`，如果没有则 smbd 无法启动。
+
+你可以从 [这里](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD) 获取到默认配置文件：
 
 ```
-# cp /etc/samba/smb.conf.default /etc/samba/smb.conf
+# wget "[https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD)" -O /etc/samba/smb.conf
 
 ```
 

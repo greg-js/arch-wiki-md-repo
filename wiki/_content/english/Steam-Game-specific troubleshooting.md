@@ -157,6 +157,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [70.1 Crash on startup](#Crash_on_startup)
 *   [71 Natural Selection 2](#Natural_Selection_2)
     *   [71.1 No Sound](#No_Sound_5)
+    *   [71.2 Update 318 onwards not launching](#Update_318_onwards_not_launching)
 *   [72 Nuclear Throne](#Nuclear_Throne)
     *   [72.1 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found_2)
 *   [73 Penumbra: Overture](#Penumbra:_Overture)
@@ -1260,6 +1261,10 @@ Requires [lib32-speex](https://www.archlinux.org/packages/?name=lib32-speex).
 If there is no sound in-game. Try installing [lib32-sdl](https://www.archlinux.org/packages/?name=lib32-sdl) and [lib32-sdl2](https://www.archlinux.org/packages/?name=lib32-sdl2).
 
 If this fails, add `LD_LIBRARY_PATH="/usr/lib32:$LD_LIBRARY_PATH"` to your [launch options](/index.php/Launch_option "Launch option").
+
+### Update 318 onwards not launching
+
+New 64bit version of the game [Update 318 released October 2017] requires [sndio](https://aur.archlinux.org/packages/sndio/), available from the AUR.
 
 ## Nuclear Throne
 

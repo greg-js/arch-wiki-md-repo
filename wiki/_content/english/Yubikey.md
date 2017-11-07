@@ -81,7 +81,7 @@ The Yubikey is a small [USB Security token](https://en.wikipedia.org/wiki/Securi
 *   outputting a up to 63 char long static password
 *   handeling [Challenge - Response requests](https://en.wikipedia.org/wiki/Challenge%E2%80%93response_authentication "wikipedia:Challenge–response authentication"), using either Yubico OTP mode or HMAC-SHA1 mode)
 *   handeling [U2F](https://en.wikipedia.org/wiki/Universal_2nd_Factor "wikipedia:Universal 2nd Factor") requests (Yubikey 4 and Yubikey NEO)
-*   acting as smartcard (using the [CCID protocol](https://en.wikipedia.org/wiki/CCID_(protocol "wikipedia:CCID (protocol")) (Yubikey 4 and Yubikey NEO) - allowing storage of signing, encrypting, authenticating (RSA) keys to be used for instance for SSH login (authentication), Email signature/encryption, git commit signature, etc.
+*   acting as smartcard (using the [CCID protocol](https://en.wikipedia.org/wiki/CCID_(protocol) "wikipedia:CCID (protocol)")) (Yubikey 4 and Yubikey NEO) - allowing storage of signing, encrypting, authenticating (RSA) keys to be used for instance for SSH login (authentication), Email signature/encryption, git commit signature, etc.
 
 It is manufactured by [Yubico](http://www.yubico.com/). The current top models are YubiKey 4 (yk4) and YubiKey NEO. The main difference: yk4 has no NFC support, NEO does.
 

@@ -1,3 +1,12 @@
+Articoli correlati
+
+*   [LXDE (Italiano)](/index.php/LXDE_(Italiano) "LXDE (Italiano)")
+*   [Openbox (Italiano)](/index.php/Openbox_(Italiano) "Openbox (Italiano)")
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [Thunar (Italiano)](/index.php/Thunar_(Italiano) "Thunar (Italiano)")
+*   [GNOME Files](/index.php/GNOME_Files "GNOME Files")
+*   [Nemo](/index.php/Nemo "Nemo")
+
 Dal [sito](http://wiki.lxde.org/en/PCManFM) del progetto:
 
 	*PCMan File Manager (PCManFM) è un'applicazione di file manager sviluppata da Hong Jen Yee da Taiwan che è destinata ad essere un sostituto di Nautilus, Konqueror e Thunar. Rilasciato sotto la GNU General Public License , PCManFM è un software libero . PCManFM è il file manager standard di [LXDE](/index.php/LXDE_(Italiano) "LXDE (Italiano)") , che è sviluppato sempre dallo stesso autore in collaborazione con altri sviluppatori.*

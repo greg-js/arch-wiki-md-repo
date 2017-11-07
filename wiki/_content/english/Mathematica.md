@@ -1,3 +1,9 @@
+Related articles
+
+*   [Scientific Applications](/index.php/Scientific_Applications "Scientific Applications")
+*   [Sage-mathematics](/index.php/Sage-mathematics "Sage-mathematics")
+*   [Matlab](/index.php/Matlab "Matlab")
+
 [Mathematica](http://www.wolfram.com/mathematica/) is a commercial program used in scientific, engineering and mathematical fields. Here we explain how to install it.
 
 ## Contents
@@ -8,7 +14,7 @@
         *   [1.1.2 Running the Installer](#Running_the_Installer)
         *   [1.1.3 Fonts](#Fonts)
     *   [1.2 Mathematica 7](#Mathematica_7)
-    *   [1.3 Mathematica 8.0.4.0](#Mathematica_8.0.4.0)
+    *   [1.3 Mathematica 8](#Mathematica_8)
     *   [1.4 Mathematica 10](#Mathematica_10)
     *   [1.5 Mathematica 11](#Mathematica_11)
 *   [2 Troubleshooting](#Troubleshooting)
@@ -80,29 +86,9 @@ For KDE users, the Mathematica icon may appear in the *Lost & Found* category. T
 
 ```
 
-### Mathematica 8.0.4.0
+### Mathematica 8
 
-On 64-bit machines, two known issues are present; but solutions are provided. The second issue is present on 64-bit installs: but not yet confirmed on a 32-bit arch setup.
-
-The first issue assumes you are trying to use nVidia, CUDA and OpenCL libraries within Mathematica.
-
-The 64-bit archlinux nVidia and opencl driver packages install libraries in `/usr/lib`, not in `/usr/lib64` as does nVidia's binary installer. This is not a problem: `/usr/lib` is the correct location for 64-bit libraries on a 64-bit arch system. However, a 64-bit install of Mathematica will assume the drivers are installed in `/usr/lib64`; other distributions that Mathematica has been tested on have their drivers in that location. The easiest method to overcome this is to make a symlink from `/usr/lib64` to `/usr/lib`. Mathematica will be able to find nVidia, CUDA, and OpenCL libraries this way without further tweaking.
-
-A second, separate but partial solution, is to set the following environment variables:
-
-```
-export NVIDIA_DRIVER_LIBRARY_PATH=/usr/lib/libnvidia-tls.so
-
-```
-
-```
-export CUDA_LIBRARY_PATH=/usr/lib/libcuda.so
-
-```
-
-This second method, however, still will not permit Mathematica to find the OpenCL libraries in `/usr/local` as Mathematica seems hardwired to find them in `/usr/lib64`.
-
-The second issue with Mathematica 8 in 64-bit archlinux (may also affect 32-bit environments; but not tested) is a reproducible crash when performing WolframAlpha[] functions. By default, Mathematica is configured to detect the system's proxy settings when configuring how to connect to the internet to fetch data. A "bug" exists that will eventually crash Mathematica when the calling library is used. A workaround is to avoid this library call altogether by configuring Mathematica to "directly connect" to the internet. (*Edit > Preferences > Internet Connectivity > Proxy Settings*). This bug has been reported to Wolfram.
+An issue with Mathematica 8 is a reproducible crash when performing WolframAlpha[] functions. By default, Mathematica is configured to detect the system's proxy settings when configuring how to connect to the internet to fetch data. A "bug" exists that will eventually crash Mathematica when the calling library is used. A workaround is to avoid this library call altogether by configuring Mathematica to "directly connect" to the internet. (*Edit > Preferences > Internet Connectivity > Proxy Settings*). This bug has been reported to Wolfram.
 
 ### Mathematica 10
 

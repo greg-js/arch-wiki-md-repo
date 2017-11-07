@@ -13,10 +13,8 @@ AUR helpers are written to automate certain tasks for the [Arch User Repository]
 
 ## Uploading
 
-*   [bbidulock's script](https://gist.github.com/bbidulock/82ab6f5347f021136054) — Migrate from a .backup directory with all packages.
 *   [aur4_import.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_import.sh) — Splits a package from a git repository with multiple packages, adding/updating `.SRCINFO` for every commit.
-*   [aur4_make_submodule.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_make_submodule.sh) / [subaur4](https://github.com/alexandre-mbm/arch-pkgs/blob/master/subaur4) — Replaces a package in a bigger git repository with an AUR 4 submodule, including `.SRCINFO`.
-*   [import-to-aur4](https://github.com/ido/packages-archlinux/blob/master/bin/import-to-aur4.sh) — Splits an existing git repository into multiple AUR 4 packages, all at once, including `.SRCINFO` for every commit.
+*   [aur4_make_submodule.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_make_submodule.sh) — Replaces a package in a bigger git repository with an AUR 4 submodule, including `.SRCINFO`.
 *   [aurpublish](https://github.com/Edenhofer/abs/blob/master/aurpublish) — Manage AUR packages as [git subtrees](https://raw.githubusercontent.com/git/git/master/contrib/subtree/git-subtree.txt). The [generation of `.SRCINFO` files, `PKGBUILD` checking](https://github.com/Edenhofer/abs/blob/master/pre-commit.hook) and the [creation of a per package commit message template](https://github.com/Edenhofer/abs/blob/master/prepare-commit-msg.hook) is left to the git hooks in the same [repo](https://github.com/Edenhofer/abs/blob/master/README.md).
 
 ## Build and search
@@ -27,13 +25,9 @@ This is a list of helper utilities that search, download and/or build packages.
 
 	[https://github.com/oshazard/apacman](https://github.com/oshazard/apacman) || [apacman](https://aur.archlinux.org/packages/apacman/)
 
-*   **aur** — ArchLinux Package Manager helper.
+*   **aura** — A package manager for Arch Linux written in Haskell. ([Forum page](https://bbs.archlinux.org/viewtopic.php?id=155778))
 
-	[https://github.com/avelino/aur](https://github.com/avelino/aur) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **aura** — A package manager for Arch Linux written in Haskell.
-
-	[https://github.com/aurapm/aura](https://github.com/aurapm/aura) || [aura](https://aur.archlinux.org/packages/aura/) or [aura-bin](https://aur.archlinux.org/packages/aura-bin/) (binary)
+	[https://github.com/aurapm/aura](https://github.com/aurapm/aura) || [aura-bin](https://aur.archlinux.org/packages/aura-bin/)
 
 *   **auracle** — An AUR client written in C++.
 
