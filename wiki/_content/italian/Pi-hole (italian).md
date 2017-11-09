@@ -17,15 +17,17 @@ Pi-hole è un progetto basato su script di shell che gestisce liste di blocco di
         *   [1.2.2 Web Server](#Web_Server)
             *   [1.2.2.1 Lighttpd](#Lighttpd)
             *   [1.2.2.2 Nginx](#Nginx)
-    *   [1.3 Configurazione tipica](#Configurazione_tipica)
-    *   [1.4 FTL](#FTL)
-*   [2 Usare Pi-hole attraverso OpenVPN](#Usare_Pi-hole_attraverso_OpenVPN)
-*   [3 Pi-hole Standalone](#Pi-hole_Standalone)
-    *   [3.1 Installazione](#Installazione_2)
-    *   [3.2 Configurazione iniziale](#Configurazione_iniziale_2)
-        *   [3.2.1 Dnsmasq](#Dnsmasq_2)
-        *   [3.2.2 Openresolve](#Openresolve)
-*   [4 Risorse](#Risorse)
+        *   [1.2.3 FTL](#FTL)
+*   [2 Configurazione del router e di Pi-hole](#Configurazione_del_router_e_di_Pi-hole)
+    *   [2.1 Metodo consigliato](#Metodo_consigliato)
+    *   [2.2 Metodo alternativo](#Metodo_alternativo)
+*   [3 Usare Pi-hole attraverso OpenVPN](#Usare_Pi-hole_attraverso_OpenVPN)
+*   [4 Pi-hole Standalone](#Pi-hole_Standalone)
+    *   [4.1 Installazione](#Installazione_2)
+    *   [4.2 Configurazione iniziale](#Configurazione_iniziale_2)
+        *   [4.2.1 Dnsmasq](#Dnsmasq_2)
+        *   [4.2.2 Openresolve](#Openresolve)
+*   [5 Risorse](#Risorse)
 
 ## Pi-hole Server
 
@@ -50,7 +52,7 @@ Abilita `dnsmasq.service` e ri/avvia il servizio.
 
 #### Web Server
 
-Opzionalmente, è possibile scegliere un server web per usare l'interfaccia amministrativa di pi-hole.
+Opzionalmente, è possibile scegliere un server web per usare l'interfaccia amministrativa di Pi-hole.
 
 **Note:** Pi-hole non richiede forzatamente l'uso dell'interfaccia web in quanto molti comandi sono disponibili via CLI.
 
@@ -65,7 +67,7 @@ extension=sockets.so
 [...]
 ```
 
-Per ragioni di sicurezza, se vuoi popolare la direttiva [PHP open_basedir](/index.php/PHP#Configuration "PHP"), l'interfaccia web di amministrazione di pi-hole necessita l'accesso ai seguenti file e cartelle:
+Per ragioni di sicurezza, se vuoi popolare la direttiva [PHP open_basedir](/index.php/PHP#Configuration "PHP"), l'interfaccia web di amministrazione di Pi-hole necessita l'accesso ai seguenti file e cartelle:
 
 ```
 /srv/http/pihole:/run/pihole-ftl/pihole-FTL.port:/run/log/pihole/pihole.log:/run/log/pihole-ftl/pihole-FTL.log:/etc/pihole:/etc/hosts:/etc/hostname:/etc/dnsmasq.d/03-pihole-wildcard.conf:/proc/meminfo:/proc/cpuinfo:/sys/class/thermal/thermal_zone0/temp:/tmp
@@ -115,31 +117,50 @@ Copia il file di configurazione fornito dal pacchetto:
 
 Abilita `nginx.service` `php-fpm.service` e ri/avvia i servizi.
 
-### Configurazione tipica
-
-Pi-hole può essere configurato in diversi modi. Questa sezione si occupa della configurazione come semplice ad-blocker, non come server DHCP. Partiamo dal presupposto che la maggior parte degli utenti residenziali abbiano un apparato separato (un router) per questo. Configurazioni maggiormente avanzate sono fuori dagli scopi di questa sezione.
-
-**Note:** Per gli scopi di questa sezione, 192.168.1.1 sarà l'indirizzo del router e 192.168.1.250 sarà l'indirizzo della macchina che esegue pi-hole.
-
-Pi-hole deve essere il DNS della LAN per poter funzionare correttamente. Il metodo migliore è semplicemente ridefinire i campi DNS **sul router** in modo da usare l'indirizzo IP della macchina che esegue pi-hole. Configurare il router è al di fuori degli scopi di questo articolo. In alternativa è possibile configurare i DNS di ogni macchina o apparato che si connette al router anche se può essere noioso. Vedi [Come configurare i miei apparati per usare Pi-hole come DNS server?](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) per maggiori dettagli.
-
-Una volta che il router indichi l'indirizzo IP della macchina che esegue pi-hole come server DNS, entrare nell'interfaccia web di pi-hole ([http://pi.hole/admin](http://pi.hole/admin)), opzionalmente è possibile autenticarsi attraverso una password, e cliccare su "Settings". Scendere nella pagina fino alla sezione chiamata, "Upstream DNS Servers" (i server DNS che userà pi-hole per risolvere gli indirizzi non filtrati) e selezionare uno o più server DNS tra quelli proposti .
-
-**Note:** L'interfaccia web di pi-hole può configurare praticamente tutte le funzioni di [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq), eseguire diversi comandi di pi-hole, controllare whitelist e blacklist and monitorare il filtraggio della pubblicità.
-
-Potrebbe risultare necessario riavviare la configurazione della rete per ogni apparato connesso. Come esempio, il contenuto del file `/etc/resolv.conf` di uno degli apparati in rete dovrebbe essere simile a questo:
-
- `/etc/resolv.conf` 
-```
-nameserver 192.168.1.250
-
-```
-
-### FTL
+#### FTL
 
 FTL è parte del progetto Pi-hole. E' un interfaccia simil-database/fornitore di API sul log delle richieste DNS di Pi-hole. E' possibile configurare FTL attraverso il file `/etc/pihole/pihole-FTL.conf`. [Leggi](https://github.com/pi-hole/FTL#ftls-config-file) la documentazione del progetto per i dettagli.
 
 `pi-hole-ftl.service` è abilitato staticamente; ri/avvialo.
+
+## Configurazione del router e di Pi-hole
+
+### Metodo consigliato
+
+La maggior parte degli utenti hanno bisogno delle seguenti funzionalità:
+
+1.  Monitoraggio degli host sulla macchina Pi-hole (p.e.: log delle richieste DNS legate a singole macchine dai rispettivi hostname).
+2.  La risoluzione dei nomi sulla LAN.
+3.  I servizi di Ad blocking e monitoraggio di rete offerti da Pi-hole.
+
+Per ottenere i servizi suddetti, il router dovrebbe essere configurato in modo da distribuire ai i propri client l'indirizzo IP della macchina Pi-hole come risolutore DNS, ma mantenere la reale risoluzione DNS a *monte* della macchina Pi-hole. La macchina Pi-hole dovrebbe essere configurata per usare il router come *unico* risolutore DNS.
+
+Sul router, configura una voce personalizzata di dnsmasq per distribuire l'IP della macchina Pi-hole. La sintassi è:
+
+```
+dhcp-option=6,Pi-hole_IP
+
+```
+
+Se Pi-hole è eseguito su una macchina il cui indirizzo IP è 192.168.1.250, la voce diventerà:
+
+```
+dhcp-option=6,192.168.1.250
+
+```
+
+Sulla macchina Pi-hole, entra nell'interfaccia web ([http://pi.hole](http://pi.hole)), seleziona "Settings" e definisci l'indirizzo IP del *router* come unico server DNS. Non definire altre voci DNS per la macchina Pi-hole.
+
+**Tip:** Un semplice controllo per vedere se il router è configurato correttamente consiste nel rinnovare l'indirizzo IP rilasciato dal DHCP e controllare il contenuto di `/etc/resolv.conf` sulla macchina client. Sarebbe corretto vedere l'indirizzo IP della macchina Pi-hole e non l'IP del router.
+
+### Metodo alternativo
+
+**Note:** La configurazione consigliata potrebbe non essere possibile su alcuni router a seconda delle possibilità offerte dal firmware. La configurazione consigliata è confermata funzionante su alcuni firmware open-source come [LEDE/OpenWRT](https://forum.lede-project.org/t/lede-pi-hole-works-perfectly-need-to-understand-why-so-i-can-configure-tomatousb-the-same-way/8274) e [TomatoUSB](http://www.linksysinfo.org/index.php?threads/redefining-dns-from-router-to-a-box-running-pi-hole.73576/#post-292078) per nominarne alcuni.
+
+Gli utenti impossibilitati di configurare il router come precedentemente esposto possono fare riferimento a [questa guida](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) per ottenere quasi tutte le funzionalità richieste. Le limitazioni chiave di utilizzo di questo metodo includono:
+
+1.  Monitoraggio degli host sulla macchina Pi-hole (p.e.: log delle richieste DNS legate a singole macchine dai rispettivi hostname).
+2.  La risoluzione dei nomi sulla LAN.
 
 ## Usare Pi-hole attraverso OpenVPN
 
@@ -162,7 +183,7 @@ Questo potrebbe essere necessario per far si che `dnsmasq` sia in ascolto su `tu
 
 ## Pi-hole Standalone
 
-La variante Standalone di Pi-hole per Archlinux è nata dalla necessità di usare i servizi di pi-hole in mobilità. [L'articolo Sky-hole](http://dlaa.me/blog/post/skyhole) è stato di ispirazione.
+La variante Standalone di Pi-hole per Archlinux è nata dalla necessità di usare i servizi di Pi-hole in mobilità. [L'articolo Sky-hole](http://dlaa.me/blog/post/skyhole) è stato di ispirazione.
 
 ### Installazione
 

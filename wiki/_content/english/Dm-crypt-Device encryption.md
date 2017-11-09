@@ -1,5 +1,3 @@
-Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
-
 This section covers how to manually utilize *dm-crypt* from the command line to encrypt a system.
 
 ## Contents
@@ -177,7 +175,7 @@ To create a *plain* mode mapping with cryptsetup's default parameters:
 
 ```
 
-Executing it will prompt for a password, which should have very high entropy. Below a comparison of default parameters with the example in [Dm-crypt/Encrypting an entire system#Plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system")
+Executing it will prompt for a password, which should have very high entropy. Below a comparison of default parameters with the example in [dm-crypt/Encrypting an entire system#Plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system")
 
 | Option | Cryptsetup 1.7.0 defaults | Example | Comment |
 | --hash
@@ -734,7 +732,7 @@ Then the underlying filesystem must be resized.
 
 ### Loopback filesystem
 
-Assuming that an encrypted loopback filesystem is mounted on `/mnt/secret`, for example following [Dm-crypt/Encrypting a non-root file system#Loop device](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Loop_device "Dm-crypt/Encrypting a non-root file system"), first unmount the encrypted container:
+Assuming that an encrypted loopback filesystem is mounted on `/mnt/secret`, for example following [dm-crypt/Encrypting a non-root file system#Loop device](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Loop_device "Dm-crypt/Encrypting a non-root file system"), first unmount the encrypted container:
 
 ```
 # umount /mnt/secret
@@ -810,8 +808,6 @@ Example: `1234`
 # chown root:root /path/to/<keyfile>; chmod 400 /path/to/<keyfile>
 
 ```
-
-Prepend the commands with a space to avoid saving them in the shell history (this needs `$HISTCONTROL` to be set to `ignorespace` or `ignoreboth`).
 
 #### randomtext
 
@@ -945,7 +941,7 @@ If you have a non-US keyboard, it might prove useful to load your keyboard layou
 
 ##### Configuring the kernel parameters
 
-Add the following options to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") if using the `encrypt` hook. If using `sd-encrypt` see [Dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration").
+Add the following options to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") if using the `encrypt` hook. If using `sd-encrypt` see [dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration").
 
 ```
 cryptdevice=/dev/*<partition1>*:root cryptkey=/dev/*<partition2>*:<fstype>:<path>
@@ -976,9 +972,9 @@ The naming of device nodes like `/dev/sdb1` is not guaranteed to stay the same a
 
 This method allows to use a specially named keyfile that will be embedded in the [initramfs](/index.php/Initramfs "Initramfs") and picked up by the `encrypt` [hook](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") to unlock the root filesystem (`cryptdevice`) automatically. It may be useful to apply when using the [GRUB early cryptodisk](/index.php/GRUB#Boot_partition "GRUB") feature, in order to avoid entering two passphrases during boot.
 
-The `encrypt` hook lets the user specify a keyfile with the `cryptkey` kernel parameter: in the case of initramfs, the syntax is `rootfs:*path*`. See [Dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration"). Besides, this kernel parameter defaults to use `/crypto_keyfile.bin`, and if the initramfs contains a valid key with this name, decryption will occur automatically without the need to configure the `cryptkey` parameter.
+The `encrypt` hook lets the user specify a keyfile with the `cryptkey` kernel parameter: in the case of initramfs, the syntax is `rootfs:*path*`. See [dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration"). Besides, this kernel parameter defaults to use `/crypto_keyfile.bin`, and if the initramfs contains a valid key with this name, decryption will occur automatically without the need to configure the `cryptkey` parameter.
 
-If using `sd-encrypt` instead of `encrypt`, specify the location of the keyfile with the `luks.key` kernel parameter. See [Dm-crypt/System configuration#luks.key](/index.php/Dm-crypt/System_configuration#luks.key "Dm-crypt/System configuration").
+If using `sd-encrypt` instead of `encrypt`, specify the location of the keyfile with the `luks.key` kernel parameter. See [dm-crypt/System configuration#luks.key](/index.php/Dm-crypt/System_configuration#luks.key "Dm-crypt/System configuration").
 
 [Generate the keyfile](#Creating_a_keyfile_with_random_characters), give it suitable permissions and [add it as a LUKS key](#Adding_LUKS_keys):
 
@@ -996,7 +992,7 @@ Include the key in [mkinitcpio's FILES array](/index.php/Mkinitcpio#BINARIES_and
 
  `/etc/mkinitcpio.conf`  `FILES=(/crypto_keyfile.bin)` 
 
-Finally [Regenerate your initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
+Finally [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 On the next reboot you should only have to enter your container decryption passphrase once.
 

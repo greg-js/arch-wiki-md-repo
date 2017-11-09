@@ -68,10 +68,6 @@ endif
 
 If after exiting neovim cursor is still blinking see solution on [neovim FAQ](https://github.com/neovim/neovim/wiki/FAQ#cursor-style-isnt-restored-after-exiting-nvim).
 
-In case the provided solution does not work, set blinking to **on** instead. See [issue 6665](https://github.com/neovim/neovim/issues/6665).
-
- `~/.config/nvim/init.vim`  `au VimLeave * set guicursor+=a:blinkon**1**` 
-
 ## See also
 
 *   [Github repository](https://github.com/neovim/neovim)

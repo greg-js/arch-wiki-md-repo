@@ -632,13 +632,13 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 	[http://aria2.sourceforge.net/](http://aria2.sourceforge.net/) || [aria2](https://www.archlinux.org/packages/?name=aria2)
 
-*   **Ctorrent** — CTorrent is a BitTorrent client implemented in C++ to be lightweight and quick.
-
-	[http://www.rahul.net/dholmes/ctorrent/](http://www.rahul.net/dholmes/ctorrent/) || [enhanced-ctorrent](https://aur.archlinux.org/packages/enhanced-ctorrent/)
-
 *   **btpd** — The BitTorrent Protocol Daemon.
 
 	[https://github.com/btpd/btpd](https://github.com/btpd/btpd) || [btpd](https://aur.archlinux.org/packages/btpd/)
+
+*   **Ctorrent** — CTorrent is a BitTorrent client implemented in C++ to be lightweight and quick.
+
+	[http://www.rahul.net/dholmes/ctorrent/](http://www.rahul.net/dholmes/ctorrent/) || [enhanced-ctorrent](https://aur.archlinux.org/packages/enhanced-ctorrent/)
 
 *   **[MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey")** — Multi-protocol P2P client that supports BitTorrent, HTTP, FTP, eDonkey and Direct Connect.
 

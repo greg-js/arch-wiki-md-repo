@@ -1,6 +1,5 @@
 Related articles
 
-*   [Firewalls](/index.php/Firewalls "Firewalls")
 *   [iptables](/index.php/Iptables "Iptables")
 
 [nftables](http://netfilter.org/projects/nftables/) is a netfilter project that aims to replace the existing {ip,ip6,arp,eb}tables framework. It provides a new packet filtering framework, a new user-space utility (nft), and a compatibility layer for {ip,ip6}tables. It uses the existing hooks, connection tracking system, user-space queueing component, and logging subsystem of netfilter.

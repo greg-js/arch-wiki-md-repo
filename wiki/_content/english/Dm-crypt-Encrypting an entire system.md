@@ -1,5 +1,3 @@
-Back to [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
-
 The following are examples of common scenarios of full system encryption with *dm-crypt*. They explain all the adaptations that need to be done to the normal [installation procedure](/index.php/Installation_guide "Installation guide"). All the necessary tools are on the [installation image](https://www.archlinux.org/download/).
 
 ## Contents

@@ -1,5 +1,3 @@
-Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
-
 Depending on requirements, different methods may be used to encrypt the [swap](/index.php/Swap "Swap") partition which are described in the following. A setup where the swap encryption is re-initialised on reboot (with a new encryption) provides higher data protection, because it avoids sensitive file fragments which may have been swapped out a long time ago without being overwritten. However, re-encrypting swap also forbids using a suspend-to-disk feature generally.
 
 ## Contents

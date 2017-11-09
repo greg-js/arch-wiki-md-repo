@@ -1,3 +1,7 @@
+Related articles
+
+*   [sshguard](/index.php/Sshguard "Sshguard")
+
 **Warning:** Using an IP blacklist will stop trivial attacks but it relies on an additional daemon and successful logging (the partition containing /var can become full, especially if an attacker is pounding on the server). Additionally, if the attacker knows your IP address, they can send packets with a spoofed source header and get you locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to the problem of brute forcing without these problems.
 
 [Fail2ban](http://www.fail2ban.org/wiki/index.php/Main_Page) scans various textual log files and bans IP that makes too many password failures by updating firewall rules to reject the IP address, similar to [Sshguard](/index.php/Sshguard "Sshguard").
@@ -15,7 +19,6 @@
     *   [3.1 Default jails](#Default_jails)
     *   [3.2 Paths](#Paths)
     *   [3.3 Custom SSH jail](#Custom_SSH_jail)
-*   [4 See also](#See_also)
 
 ## Installation
 
@@ -117,7 +120,3 @@ LogLevel VERBOSE
 ```
 
 in your `/etc/ssh/sshd_config`. Else, password failures are not logged correctly.
-
-## See also
-
-*   [sshguard](/index.php/Sshguard "Sshguard")

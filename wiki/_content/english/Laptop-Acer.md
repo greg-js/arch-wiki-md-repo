@@ -7,10 +7,6 @@
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| TravelMate 2413NLC | Gimmick 0.7.2 | Intel GMA 915 driver: *i810* | Intel 82801FB with internal microphone | OK | -- | -- | Suspend to RAM: Yes
-Disk: Yes
-Battery: Yes
-CPU frequency scaling: Yes | untested | Hot keys: untested |
 | Aspire 5100-3825 | 0.8 (Voodoo) | ATI Radeon Xpress 1100 | Intel | Realtek | Atheros | n/a | untested | Hot keys: untested |
 | Aspire 1501LMi | 0.9 (Don't Panic) | ATI Radeon 9600: HW acceleration only with proprietary driver | VIA: OK | Broadcom: OK | untested | none | Suspend to RAM: ??
 Disk: Yes

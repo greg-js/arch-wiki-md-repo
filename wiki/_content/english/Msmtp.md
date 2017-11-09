@@ -1,3 +1,8 @@
+Related articles
+
+*   [mutt](/index.php/Mutt "Mutt")
+*   [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP")
+
 [msmtp](http://msmtp.sourceforge.net/) is a very simple and easy to use SMTP client with fairly complete [sendmail](https://en.wikipedia.org/wiki/sendmail "wikipedia:sendmail") compatibility.
 
 ## Contents
@@ -21,7 +26,7 @@
 
 ## Installing
 
-msmtp can be [installed](/index.php/Installed "Installed") with the package [msmtp](https://www.archlinux.org/packages/?name=msmtp). Additionally, install [msmtp-mta](https://www.archlinux.org/packages/?name=msmtp-mta), which creates a sendmail alias to msmtp.
+[Install](/index.php/Install "Install") the [msmtp](https://www.archlinux.org/packages/?name=msmtp) package. Additionally, [install](/index.php/Install "Install") [msmtp-mta](https://www.archlinux.org/packages/?name=msmtp-mta), which creates a sendmail alias to msmtp.
 
 ## Basic setup
 

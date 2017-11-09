@@ -24,8 +24,6 @@ Extra userspace NVMe tools can be found in [nvme-cli](https://aur.archlinux.org/
 
 See [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives") for supported filesystems, maximizing performance, minimizing disk reads/writes, etc.
 
-**Note:** It may be needed to add the **nvme** module to the [MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array within `/etc/mkinitcpio.conf` to successfully boot into the root filesystem.
-
 ## Performance
 
 ### Sector size
@@ -66,6 +64,8 @@ To test if NVME Power Management is working, install [nvme-cli](https://aur.arch
 When ASPT is enabled the output should contain "Autonomous Power State Transition Enable (APSTE): Enabled" and there should be non-zero entries in the table below indicating the idle time before transitioning into each of the available states.
 
 If ASPT is enabled but no non-zero states appear in the table, the latencies might be too high for any states to be enabled by default. The output of `# nvme id-ctrl /dev/nvme[0-9]` should show the available non-operational power states of the NVME controller. If the total latency of any state (enlat + xlat) is greater than 25000 (25ms) then to enable it you must pass a value at least that high to the `default_ps_max_latency_us` option for the `nvme_core` module in the boot parameters. This should enable ASPT and make the table in `# nvme get-feature` show the entries.
+
+On 4.13, drive errors can occur (ext4 fs) that cause the system to become unusable. This seems to be the result of a power saving state that the drive (Intel NVMe, in my case) cannot use. Adding the boot parameter nvme_core.default_ps_max_latency_us=5500 disables the lowest power saving state.
 
 ## References
 

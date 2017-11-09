@@ -5,15 +5,13 @@
 
 *   [1 IBM/Lenovo](#IBM.2FLenovo)
     *   [1.1 ThinkPad](#ThinkPad)
-        *   [1.1.1 300 series](#300_series)
-        *   [1.1.2 Edge series](#Edge_series)
-        *   [1.1.3 L series](#L_series)
-        *   [1.1.4 P series](#P_series)
-        *   [1.1.5 R series](#R_series)
-        *   [1.1.6 T series](#T_series)
-        *   [1.1.7 W series](#W_series)
-        *   [1.1.8 X series](#X_series)
-        *   [1.1.9 Yoga Series](#Yoga_Series)
+        *   [1.1.1 Edge series](#Edge_series)
+        *   [1.1.2 L series](#L_series)
+        *   [1.1.3 P series](#P_series)
+        *   [1.1.4 T series](#T_series)
+        *   [1.1.5 W series](#W_series)
+        *   [1.1.6 X series](#X_series)
+        *   [1.1.7 Yoga Series](#Yoga_Series)
 *   [2 Lenovo](#Lenovo)
     *   [2.1 IdeaPad](#IdeaPad)
     *   [2.2 B series](#B_series)
@@ -28,29 +26,19 @@
         *   [3.2.1 Operation with a HDD caddy](#Operation_with_a_HDD_caddy)
     *   [3.3 Lenovo K450e](#Lenovo_K450e)
     *   [3.4 ThinkPad X1 Carbon 3rd](#ThinkPad_X1_Carbon_3rd)
-    *   [3.5 IBM ThinkPad T21](#IBM_ThinkPad_T21)
-    *   [3.6 Lenovo 3000 N200](#Lenovo_3000_N200)
-    *   [3.7 IBM ThinkPad R52](#IBM_ThinkPad_R52)
-    *   [3.8 Lenovo ThinkPad T430](#Lenovo_ThinkPad_T430)
-    *   [3.9 Lenovo ThinkPad T440p](#Lenovo_ThinkPad_T440p)
-    *   [3.10 Lenovo ThinkPad T560](#Lenovo_ThinkPad_T560)
-    *   [3.11 Lenovo S21e-20](#Lenovo_S21e-20)
-        *   [3.11.1 tpacpi-bat](#tpacpi-bat)
-        *   [3.11.2 ThinkPad Edge E420s Delay with Space Bar](#ThinkPad_Edge_E420s_Delay_with_Space_Bar)
-    *   [3.12 Lenovo IdeaPad Y700](#Lenovo_IdeaPad_Y700)
+    *   [3.5 Lenovo 3000 N200](#Lenovo_3000_N200)
+    *   [3.6 Lenovo ThinkPad T430](#Lenovo_ThinkPad_T430)
+    *   [3.7 Lenovo ThinkPad T440p](#Lenovo_ThinkPad_T440p)
+    *   [3.8 Lenovo ThinkPad T560](#Lenovo_ThinkPad_T560)
+    *   [3.9 Lenovo S21e-20](#Lenovo_S21e-20)
+        *   [3.9.1 tpacpi-bat](#tpacpi-bat)
+        *   [3.9.2 ThinkPad Edge E420s Delay with Space Bar](#ThinkPad_Edge_E420s_Delay_with_Space_Bar)
+    *   [3.10 Lenovo IdeaPad Y700](#Lenovo_IdeaPad_Y700)
 *   [4 See also](#See_also)
 
 ## IBM/Lenovo
 
 ### ThinkPad
-
-#### 300 series
-
-| Model version | Arch Linux
-install CD version
- | Hardware support | Remarks |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| IBM ThinkPad 380ED | NA | NA | NA | NA | No | NA | NA | NA |
 
 #### Edge series
 
@@ -86,16 +74,6 @@ install CD version
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | [Lenovo ThinkPad P50](/index.php/Lenovo_ThinkPad_P50 "Lenovo ThinkPad P50") | 2016.04 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate not tested | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (No), | Wifi requires Kernel 4.3.3+ |
 | [Lenovo ThinkPad P70](/index.php/Lenovo_ThinkPad_P70 "Lenovo ThinkPad P70") | 2016.04 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate not tested | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (No), | Wifi requires Kernel 4.3.3+ |
-
-#### R series
-
-| Model version | Arch Linux
-install CD version
- | Hardware support | Remarks |
-| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| IBM ThinkPad R50 | Yes | Yes | Yes | Yes | NA | Yes | Yes | Infrared* |
-| IBM ThinkPad R52 | Yes | Yes | Yes | Yes | NA | Yes | Yes | Infrared* |
-| Lenovo ThinkPad R60 | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 
 #### T series
 
@@ -146,7 +124,6 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| IBM ThinkPad X23 | Yes | Yes | Yes | NA | NA | Yes | NA | NA |
 | [IBM ThinkPad X60s](/index.php/IBM_ThinkPad_X60s "IBM ThinkPad X60s") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | Lenovo ThinkPad X61s | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD slot |
 | [Lenovo ThinkPad X100e](/index.php/Lenovo_ThinkPad_X100e "Lenovo ThinkPad X100e") | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA | SD card (Yes), Webcam (Yes) |
@@ -272,22 +249,10 @@ After installing Arch Linux and booting, a single beep may be heard. To disable 
 
 *   [http://natalian.org/archives/2015/02/18/Archlinux_on_a_Lenovo_X1C3/](http://natalian.org/archives/2015/02/18/Archlinux_on_a_Lenovo_X1C3/)
 
-### IBM ThinkPad T21
-
-*   Video:
-    *   Incapable of running DRM at 1024x768 and 24-bit color due to 8 MB VRAM. Must drop color or resolution to get DRM.
-    *   For whatever reason, external VGA output (for an external monitor) was disabled. This was fixed by doing this:
-        *   `echo 1 > /proc/acpi/video/VID/DOS`
-
 ### Lenovo 3000 N200
 
 *   Sound:
     *   You may have to append `options snd_hda_intel model=lenovo` to `/etc/modprobe.d/modprobe.conf` for sound to work.
-
-### IBM ThinkPad R52
-
-*   USB network tethering
-    *   Inbound networking via interface *usb0* works.
 
 ### Lenovo ThinkPad T430
 

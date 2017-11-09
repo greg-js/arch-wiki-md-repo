@@ -33,7 +33,6 @@ To configure the printer, follow the [CUPS](/index.php/CUPS "CUPS") article, add
 
 *   If port `59787` doesn't work, try port `59**6**87`.
 *   Some models have multiple PPDs, where the last letter indicates the regional model (J = Japan, K = United Kingdom, S = United States)
-*   When specifying the PPD, use just the file name and not the full path (for instance, `SOME_PRINTER.ppd` instead of `/usr/share/cups/model/SOME_PRINTER.ppd`
 
 Next, register the printer with the CAPT driver itself via *ccpdadmin*. Replace `*queue_name*` with the queue descriptive name and `*printer_address*` with either the USB port (e.g. `/dev/usb/lp0`) in case of a local printer or the IP address, prefixed by `net:` (e.g. `net:192.168.1.100`), in case of a network printer:
 
@@ -56,14 +55,14 @@ Or for a network printer:
 
 ```
 
+[Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") the CAPT daemon with `ccpd.service`.
+
 To remove a printer:
 
 ```
 # ccpdadmin -x *queue_name*
 
 ```
-
-[Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") the CAPT daemon with `ccpd.service`.
 
 ## CAPT status monitor
 
@@ -92,7 +91,7 @@ $ captstatusui -P LBP6310 -e
 
 ### Remote CUPS
 
-Unfortunately, a local installation of captstatusui will not detect CAPT printers on a remote CUPS server.
+Unfortunately, a local installation of *captstatusui* will not detect CAPT printers on a remote CUPS server.
 
 Remote print monitoring can be achieved, however, using [SSH](/index.php/SSH "SSH") and [X11 forwarding](/index.php/Secure_Shell#X11_forwarding "Secure Shell").
 

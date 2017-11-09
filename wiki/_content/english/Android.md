@@ -54,6 +54,7 @@ Related articles
     *   [7.3 ValueError: unsupported pickle protocol](#ValueError:_unsupported_pickle_protocol)
     *   [7.4 libGL error: failed to load driver: swrast OR AVD doesn't load and no error message displayed](#libGL_error:_failed_to_load_driver:_swrast_OR_AVD_doesn.27t_load_and_no_error_message_displayed)
     *   [7.5 sh: glxinfo: command not found](#sh:_glxinfo:_command_not_found)
+    *   [7.6 Android Emulator: no keyboard input in xfwm4](#Android_Emulator:_no_keyboard_input_in_xfwm4)
 
 ## Exploring Android device
 
@@ -678,3 +679,19 @@ QObject::~QObject: Timers cannot be stopped from another thread
 ```
 
 You can try to install glxinfo (Its [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos)) but if your computer has enough power you could simply use software to render graphics. To do so, go to *Tools > Android > AVD Manager*, edit the *AVD* (click the pencil icon), then select *Software - GLES 2.0* for *Emulated Performance > Graphics*.
+
+### Android Emulator: no keyboard input in xfwm4
+
+In xfwm4, the vertical toolbar buttons window that's on the right of the emulator takes focus from the emulator and consumes keyboard events.
+
+The bug is opened here [https://issuetracker.google.com/issues/37094173](https://issuetracker.google.com/issues/37094173)
+
+You can use the workaround described in the answer on StackOverflow [https://stackoverflow.com/a/42720450/1366471](https://stackoverflow.com/a/42720450/1366471)
+
+```
+1) Go to xfwm4 settings
+2) Find Focus tab
+3) Change Focus Model to "Focus follow mouse"
+4) Disable "Automatically raise windows when they receive focus" option bellow.
+
+```

@@ -28,6 +28,8 @@ sshguard is not vulnerable to most (or maybe any) of the log analysis [vulnerabi
     *   [4.3 Aggressive banning](#Aggressive_banning)
 *   [5 Tips and Tricks](#Tips_and_Tricks)
     *   [5.1 Unbanning](#Unbanning)
+        *   [5.1.1 iptables](#iptables_2)
+        *   [5.1.2 nftables](#nftables_2)
     *   [5.2 Logging](#Logging)
 
 ## Installation
@@ -207,7 +209,11 @@ MaxAuthTries 1
 
 ### Unbanning
 
-If you ban *yourself*, you can wait to get unbanned automatically or use iptables to unban yourself. First check if your IP is banned by sshguard:
+If you ban *yourself*, you can wait to get unbanned automatically or use iptables or nftables to unban yourself.
+
+#### iptables
+
+First check if your IP is banned by sshguard:
 
 ```
 # iptables --list sshguard --line-numbers --numeric
@@ -217,16 +223,22 @@ If you ban *yourself*, you can wait to get unbanned automatically or use iptable
 Then use the following command to unban, with the line-number as identified in the former command:
 
 ```
-# iptables --delete sshguard <line-number>
+# iptables --delete sshguard *line-number*
 
 ```
 
 You will also need to remove the IP address from `/var/db/sshguard/blacklist.db` in order to make unbanning persistent.
 
-```
-# sed -i '/<ip-address>/d' /var/db/sshguard/blacklist.db
+#### nftables
+
+Remove your IP address from the `attackers` set:
 
 ```
+# nft delete element *family* sshguard attackers { *ip_address* }
+
+```
+
+where `*family*` is either `ip` or `ip6`.
 
 ### Logging
 

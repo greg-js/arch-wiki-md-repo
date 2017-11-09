@@ -191,7 +191,7 @@ If this method does not work for you, the deprecated `vga=` method will still wo
 
 ### 915resolution hack
 
-Some times for Intel graphic adapters neither `# hwinfo --framebuffer` nor `videoinfo` will show you the desired resolution. In this case you can use `915resolution` hack. This hack will temporarily modify video BIOS and add needed resolution. See [915resolution's home page](http://915resolution.mango-lang.org/). The package can be found here: [915resolution](https://aur.archlinux.org/packages/915resolution/)
+Sometimes for Intel graphic adapters neither `# hwinfo --framebuffer` nor `videoinfo` will show you the desired resolution. In this case you can use the `915resolution` hack. This hack will temporarily modify video BIOS and add needed resolution. See [915resolution's home page](http://915resolution.mango-lang.org/). The package can be found here: [915resolution](https://aur.archlinux.org/packages/915resolution/)
 
 First you need to find a video mode which will be modified later. For that we need the GRUB command shell:
 

@@ -1,5 +1,3 @@
-Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
-
 ## Contents
 
 *   [1 Securing the unencrypted boot partition](#Securing_the_unencrypted_boot_partition)

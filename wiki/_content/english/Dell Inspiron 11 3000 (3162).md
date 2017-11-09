@@ -91,6 +91,12 @@ Wireless worked with no additional effort on my part. This is fairly important a
 
 Audio using [ALSA](/index.php/ALSA "ALSA") worked immediately after install.
 
+If no sound is coming from the headphone jack, try adding
+
+ `options snd-hda-intel model=dell-headset-multi` 
+
+to `/etc/modprobe.d/snd-hda-intel.conf`
+
 ### Keyboard
 
 Most of the extra keys did not work for me after install. Some or all will work if you use a full desktop environment like Gnome or KDE though. I was able to configure my window manager to run appropriate commands when the extra keys are pressed. The Enable/Disable wireless key did work without any extra work on my part. However, the page up and page down keys (activated by pressing Fn + PageUp or PageDn) do not work as expected. After pressing and releasing them, the scrolling action will be glitched and will not stop. To fix this create the following [hwdb](/index.php/Map_scancodes_to_keycodes#Using_udev "Map scancodes to keycodes"):

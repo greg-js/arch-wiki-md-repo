@@ -1,3 +1,9 @@
+Related articles
+
+*   [Rbenv](/index.php/Rbenv "Rbenv")
+*   [Chruby](/index.php/Chruby "Chruby")
+*   [Ruby](/index.php/Ruby "Ruby")
+
 [RVM](http://rvm.io/) (Ruby Version Manager) is a command line tool which allows us to easily install, manage and work with multiple [Ruby](/index.php/Ruby "Ruby") environments from interpreters to sets of gems.
 
 There exists a similar application that you may also want to consider: [rbenv](/index.php/Rbenv "Rbenv").
@@ -305,11 +311,10 @@ If you've installed a few rubies, this might generate a list like so:
 
 ```
 rvm Rubies
-   jruby-1.5.0 [ [i386-java] ]
-=> ruby-1.8.7-p249 [ i386 ]
-   ruby-1.9.2-head [ i386 ]
+=> ruby-1.8.7-p249 [ x86_64 ]
+   ruby-1.9.2-head [ x86_64 ]
 System Ruby
-   system [ i386 ]
+   system [ x86_64 ]
 
 ```
 
@@ -317,7 +322,7 @@ The ASCII arrow indicates which environment is currently enabled. In this case, 
 
 ```
 $ ruby --version
-ruby 1.8.7 (2010-01-10 patchlevel 249) [i686-linux]
+ruby 1.8.7 (2010-01-10 patchlevel 249) [x86_64-linux]
 
 ```
 

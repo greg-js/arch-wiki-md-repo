@@ -1008,9 +1008,11 @@ load-module module-switch-on-connect
 
 ```
 
+Начиная с [PulseAudio 11](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/11.0/) USB и bluetooth устройства по умолчанию имеют больший приоритет по сравнению с внутренней звуковой картой. Но, как указано по ссылке выше, Вам все еще необходим модуль module-switch-on-connect для перемещения существующих потоков на новое устройство вывода.
+
 ### Устройство сопряжено, но не проигрывает звук
 
-[Смотрите раздел в статье Bluetooth](/index.php/Bluetooth#My_device_is_paired_but_no_sound_is_played_from_it "Bluetooth")
+[Смотрите раздел в статье Bluetooth](/index.php/Bluetooth_headset_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#A2DP_not_working_with_PulseAudio "Bluetooth headset (Русский)")
 
 Начиная с PulseAudio 2.99 и bluez 4.101, вы должны **избегать** использования интерфейса Socket. НЕ используйте:
 
@@ -1040,20 +1042,20 @@ W: [autospawn] lock-autospawn.c: Cannot access autospawn lock.
 E: [pulseaudio] main.c: Failed to acquire autospawn lock
 ```
 
-Известные програмы меняют права доступа для `/run/user*user id*/pulse` когда используется [Polkit](/index.php/Polkit "Polkit"):
+Известные програмы меняющие права доступа для `/run/user/*user id*/pulse` когда используется [Polkit](/index.php/Polkit "Polkit"):
 
 *   [sakis3g](https://aur.archlinux.org/packages/sakis3g/)
 
-В качестве обходного пути можно использовать [gksu](https://www.archlinux.org/packages/?name=gksu) или [kdesu](https://www.archlinux.org/packages/?name=kdesu) в [desktop entry](/index.php/Desktop_entry "Desktop entry") или добавить `*username* ALL=NOPASSWD: /usr/bin/*program_name*` в [sudoers](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0 "Sudo (Русский)") для запуска [sudo](https://www.archlinux.org/packages/?name=sudo) или `gksudo` без запроса пароля. Другой способ лежит через раскомментирование и установки `daemonize = yes` в `/etc/pulse/daemon.conf`.
+В качестве обходного пути можно использовать [gksu](https://www.archlinux.org/packages/?name=gksu) или [kdesu](https://www.archlinux.org/packages/?name=kdesu) в [desktop entry](/index.php/Desktop_entries_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop entries (Русский)") или добавить `*username* ALL=NOPASSWD: /usr/bin/*program_name*` в [sudoers](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0 "Sudo (Русский)") для запуска [sudo](https://www.archlinux.org/packages/?name=sudo) или `gksudo` без запроса пароля. Другой способ лежит через раскомментирование и установку `daemonize = yes` в `/etc/pulse/daemon.conf`.
 Также стоит посмотреть [эту ветку форума (англ)](https://bbs.archlinux.org/viewtopic.php?id=135955).
 
 ### Audacity
 
-При запуске Audacity вы можете обнаружить, что ваши наушники не работаую. Это может быть потому, что Audacity пытается использовать их в качестве записывающего устройства. Чтобы исправить это, откройте Audacity, затем установите его записывающее устройство `pulse:Internal Mic:0`.
+При запуске Audacity вы можете обнаружить, что ваши наушники не работают. Это может быть потому, что Audacity пытается использовать их в качестве записывающего устройства. Чтобы исправить это, откройте Audacity, затем установите его записывающее устройство `pulse:Internal Mic:0`.
 
-В некоторых случаях, воспроизведение может быть искажено, ускорятся , или зависть, как описано в [Audacity Wiki's Linux Issues page](http://wiki.audacityteam.org/wiki/Linux_Issues#ALSA_and_other_sound_systems).
+В некоторых случаях, воспроизведение может быть искажено, ускоряться , или зависать, как описано в [Audacity Wiki's Linux Issues page](http://wiki.audacityteam.org/wiki/Linux_Issues#ALSA_and_other_sound_systems).
 
-Решение, предложенное на этой странице может работать: запустите Audacity с опцией:
+Вам может помочь следующее решение: запустите Audacity с опцией:
 
 ```
 $ env PULSE_LATENCY_MSEC=30 audacity
@@ -1067,7 +1069,7 @@ $ pasuspender -- audacity
 
 ```
 
-Затем, не забудьте выбрать соответствующие устройства ввода и вывода ALSA в Audacity.
+Затем не забудьте выбрать соответствующие устройства ввода и вывода ALSA в Audacity.
 
 Смотрите также [#Определение номера фрагмента по умолчанию и размера буфера в PulseAudio](#.D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.BE.D0.BC.D0.B5.D1.80.D0.B0_.D1.84.D1.80.D0.B0.D0.B3.D0.BC.D0.B5.D0.BD.D1.82.D0.B0_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E_.D0.B8_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.D0.B0_.D0.B1.D1.83.D1.84.D0.B5.D1.80.D0.B0_.D0.B2_PulseAudio).
 
@@ -1081,7 +1083,7 @@ $ pasuspender -- audacity
 
 [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) представляет собой удобную утилиту с графическим интерфейсом для настройки PulseAudio. На вкладке 'Настройки', вы можете выбрать различные профили для каждого из ваших звуковых устройств, например: аналоговое стерео, цифровой выход (IEC958), HDMI 5.1 Surround и т.д.
 
-Тем не менее, вы можете столкнуться с случаем, когда выбрать другой профиль для карты приведёт к сбою демона Pulse и "зависнет" автоматическое повторное включение без нового выбора. Если это происходит, используйте другой полезный инструмент с графическим интерфейсом, [paprefs](https://www.archlinux.org/packages/?name=paprefs), чтобы проверить на вкладке "Одновременный вывод" для виртуального "одновременного устройства". Если этот параметр активен (флажок установлен), то это будет препятствовать вам изменению профиля любой карты в pavucontrol. Снимите флажок этого параметра, а затем настройте свой профиль в pavucontrol до повторного включения одновременного вывода в paprefs.
+Тем не менее, вы можете столкнуться со случаем, когда выбор другого профиля для карты приведёт к сбою демона Pulse и "зависнет" автоматическое повторное включение без сохранения нового выбора. Если это происходит, используйте другой полезный инструмент с графическим интерфейсом, [paprefs](https://www.archlinux.org/packages/?name=paprefs), чтобы проверить настройку на вкладке "Одновременный вывод" для виртуального "одновременного устройства". Если этот параметр активен (флажок установлен), то это будет мешать вам измененить профиль любой карты в pavucontrol. Снимите флажок этого параметра, а затем настройте свой профиль в pavucontrol до повторного включения одновременного вывода в paprefs.
 
 ### Не удалось создать устройство вывода: устройство вывода приостановлено
 

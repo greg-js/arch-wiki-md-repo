@@ -1,3 +1,9 @@
+Related articles
+
+*   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
+*   [Reporting bug guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines")
+*   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
+
 This article aims to help in creating a debugging Arch package and using it to provide trace and debug information for reporting software bugs to developers.
 
 ## Contents
@@ -80,7 +86,6 @@ strip $STRIP_BINARIES usr/bin/{gencat,getconf,getent,iconv,iconvconfig} \
                       usr/bin/{ldconfig,locale,localedef,nscd,makedb} \
                       usr/bin/{pcprofiledump,pldd,rpcgen,sln,sprof} \
                       usr/lib/getconf/*
-[[ $CARCH = "i686" ]] && strip $STRIP_BINARIES usr/bin/lddlibc4
 
 strip $STRIP_STATIC usr/lib/*.a
 
@@ -118,7 +123,7 @@ $ makepkg
 Then install the built package:
 
 ```
-# pacman -U glibc-2.5-8-i686.pkg.tar.gz
+# pacman -U glibc-2.26-1-x86_64.pkg.tar.gz
 
 ```
 

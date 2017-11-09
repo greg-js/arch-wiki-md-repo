@@ -172,15 +172,6 @@ Be sure to uncomment a preferred mirror as described above, then:
 
 ```
 
-If you get an error stating that the `$arch` variable is used but not defined, add the following to your `/etc/pacman.conf`:
-
-```
-Architecture = x86_64
-
-```
-
-**Note:** You can also use the values `auto` and `i686` for the `Architecture` variable.
-
 ## Unofficial mirrors
 
 These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.

@@ -1,3 +1,12 @@
+Related articles
+
+*   [systemd](/index.php/Systemd "Systemd")
+*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
+*   [Network bridge](/index.php/Network_bridge "Network bridge")
+*   [Network configuration](/index.php/Network_configuration "Network configuration")
+*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
+*   [Category:Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
+
 *systemd-networkd* is a system daemon that manages network configurations. It detects and configures network devices as they appear; it can also create virtual network devices. This service can be especially useful to set up complex network configurations for a container managed by [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") or for virtual machines. It also works fine on simple connections.
 
 ## Contents
@@ -56,11 +65,11 @@ For compatibility with [resolv.conf](/index.php/Resolv.conf "Resolv.conf"), dele
 
 ```
 
-See [systemd-resolved(8)](http://man7.org/linux/man-pages/man8/systemd-resolved.8.html), [resolved.conf(5)](http://man7.org/linux/man-pages/man5/resolved.conf.5.html), and [Systemd README](https://github.com/systemd/systemd/blob/master/README#L205).
+See [systemd-resolved(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8), [resolved.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5), and [Systemd README](https://github.com/systemd/systemd/blob/master/README#L205).
 
 ### Configuration examples
 
-All configurations in this section are stored as `foo.network` in `/etc/systemd/network`. For a full listing of options and processing order, see [#Configuration files](#Configuration_files) and [systemd.network(5)](http://man7.org/linux/man-pages/man5/systemd.network.5.html).
+All configurations in this section are stored as `foo.network` in `/etc/systemd/network`. For a full listing of options and processing order, see [#Configuration files](#Configuration_files) and [systemd.network(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5).
 
 Systemd/udev automatically assigns predictable, stable network interface names for all local Ethernet, WLAN, and WWAN interfaces. Use `networkctl list` to list the devices on the system.
 
@@ -97,7 +106,7 @@ Gateway=10.1.10.1
 
 ```
 
-`Address=` can be used more than once to configure multiple IPv4 or IPv6 addresses. See [#network files](#network_files) or [systemd.network(5)](http://man7.org/linux/man-pages/man5/systemd.network.5.html) for more options.
+`Address=` can be used more than once to configure multiple IPv4 or IPv6 addresses. See [#network files](#network_files) or [systemd.network(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5) for more options.
 
 #### Wireless adapter
 
@@ -190,7 +199,7 @@ They all follow the same rules:
 
 These files are aimed at setting network configuration variables, especially for servers and containers.
 
-`.network` files have the following sections: `[Match]`, `[Link]`, `[Network]`, `[Address]`, `[Route]`, and `[DHCP]`. Below are commonly configured keys for each section. See [systemd.network(5)](http://man7.org/linux/man-pages/man5/systemd.network.5.html) for more information and examples.
+`.network` files have the following sections: `[Match]`, `[Link]`, `[Network]`, `[Address]`, `[Route]`, and `[DHCP]`. Below are commonly configured keys for each section. See [systemd.network(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5) for more information and examples.
 
 #### [Match]
 
@@ -223,7 +232,7 @@ These files are aimed at setting network configuration variables, especially for
 
 If `Destination` is not present in `[Route]` section this section is treated as a default route.
 
-**Tip:** You can put the `Address=` and `Gateway=` keys in the `[Network]` section as a short-hand if `[Address]` section contains only an Address key and `[Gateway]` section contains only a Gateway key.
+**Tip:** You can put the `Address=` and `Gateway=` keys in the `[Network]` section as a short-hand if `[Address]` section contains only an Address key and `[Route]` section contains only a Gateway key.
 
 #### [DHCP]
 
@@ -231,7 +240,7 @@ If `Destination` is not present in `[Route]` section this section is treated as 
 
 ### netdev files
 
-These files will create virtual network devices. They have two sections: `[Match]` and `[NetDev]`. Below are commonly configured keys for each section. See [systemd.netdev(5)](http://man7.org/linux/man-pages/man5/systemd.netdev.5.html) for more information and examples.
+These files will create virtual network devices. They have two sections: `[Match]` and `[NetDev]`. Below are commonly configured keys for each section. See [systemd.netdev(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.netdev.5) for more information and examples.
 
 #### [Match] section
 
@@ -247,7 +256,7 @@ Most common keys are:
 
 ### link files
 
-These files are an alternative to custom udev rules and will be applied by [udev](/index.php/Udev "Udev") as the device appears. They have two sections: `[Match]` and `[Link]`. Below are commonly configured keys for each section. See [systemd.link(5)](http://man7.org/linux/man-pages/man5/systemd.link.5.html) for more information and examples.
+These files are an alternative to custom udev rules and will be applied by [udev](/index.php/Udev "Udev") as the device appears. They have two sections: `[Match]` and `[Link]`. Below are commonly configured keys for each section. See [systemd.link(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.link.5) for more information and examples.
 
 **Tip:** Use `udevadm test-builtin net_setup_link /sys/path/to/network/device` to diagnose problems with `.link` files.
 
@@ -271,9 +280,9 @@ The service is available with [systemd](https://www.archlinux.org/packages/?name
 
 For debugging purposes, it is strongly advised to [install](/index.php/Install "Install") the [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [net-tools](https://www.archlinux.org/packages/?name=net-tools), and [iproute2](https://www.archlinux.org/packages/?name=iproute2) packages.
 
-If you are using *systemd-nspawn*, you may need to modify the `systemd-nspawn@.service` and append boot options to the `ExecStart` line. Please refer to [systemd-nspawn(1)](http://man7.org/linux/man-pages/man1/systemd-nspawn.1.html) for an exhaustive list of options.
+If you are using *systemd-nspawn*, you may need to modify the `systemd-nspawn@.service` and append boot options to the `ExecStart` line. Please refer to [systemd-nspawn(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1) for an exhaustive list of options.
 
-Note that if you want to take advantage of automatic DNS configuration from DHCP, you need to enable `systemd-resolved` and symlink `/run/systemd/resolve/resolv.conf` to `/etc/resolv.conf`. See [systemd-resolved.service(8)](http://man7.org/linux/man-pages/man8/systemd-resolved.service.8.html) for more details.
+Note that if you want to take advantage of automatic DNS configuration from DHCP, you need to enable `systemd-resolved` and symlink `/run/systemd/resolve/resolv.conf` to `/etc/resolv.conf`. See [systemd-resolved.service(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.service.8) for more details.
 
 **Tip:** Before you start to configure your container network, it is useful to:
 
@@ -337,7 +346,7 @@ If you did not want to configure a DNS in `/etc/resolv.conf` and want to rely on
 
 ```
 
-See [systemd-resolved.service(8)](http://man7.org/linux/man-pages/man8/systemd-resolved.service.8.html) for more details.
+See [systemd-resolved.service(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.service.8) for more details.
 
 **Note:** Users accessing a system partition via `/usr/bin/arch-chroot` from [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts), will need to create the symlink outside of the chroot, on the mounted partition. This is due to arch-chroot linking the file to the live environment.
 

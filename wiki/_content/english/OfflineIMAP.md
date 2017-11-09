@@ -41,7 +41,7 @@ Related articles
 
 ## Installation
 
-Install [offlineimap](https://www.archlinux.org/packages/?name=offlineimap). For a development version, install [offlineimap-git](https://aur.archlinux.org/packages/offlineimap-git/).
+[Install](/index.php/Install "Install") the [offlineimap](https://www.archlinux.org/packages/?name=offlineimap) package or [offlineimap-git](https://aur.archlinux.org/packages/offlineimap-git/) for the development version.
 
 ## Configuration
 
@@ -602,5 +602,5 @@ Cause of this can be creation of same message both locally and on server. This h
 
 ## See also
 
-*   [Official OfflineIMAP mailing list](http://lists.alioth.debian.org/mailman/listinfo/offlineimap-project)
-*   [Mutt + Gmail + Offlineimap](http://pbrisbin.com/posts/mutt_gmail_offlineimap/) - An outline of brisbin's simple gmail/mutt setup using cron to keep offlineimap syncing.
+*   [Official OfflineIMAP mailing list](https://lists.alioth.debian.org/mailman/listinfo/offlineimap-project)
+*   [Mutt + Gmail + Offlineimap](https://pbrisbin.com/posts/mutt_gmail_offlineimap/) - An outline of brisbin's simple gmail/mutt setup using cron to keep offlineimap syncing.

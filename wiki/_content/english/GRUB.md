@@ -141,7 +141,7 @@ If you do not have an ESP, you will need to create one. See [EFI System Partitio
 
 **Note:** UEFI firmware are not implemented consistently by hardware manufacturers. The installation examples provided are intended to work on the widest range of UEFI systems possible. Those experiencing problems despite applying these methods are encouraged to share detailed information for their hardware-specific cases, especially where solving these problems. A [GRUB/EFI examples](/index.php/GRUB/EFI_examples "GRUB/EFI examples") article has been provided for such cases.
 
-This section assumes you are installing GRUB for x86_64 systems (x86_64-efi). For i686 systems, replace `x86_64-efi` with `i386-efi` where appropriate.
+This section assumes you are installing GRUB for x86_64 systems (x86_64-efi). For 32-bit EFI systems (not to be confused with 32-bit CPUs), replace `x86_64-efi` with `i386-efi` where appropriate.
 
 Make sure you are in a [bash](/index.php/Bash "Bash") shell.
 
@@ -193,7 +193,7 @@ By default the generation scripts automatically add menu entries for Arch Linux 
 
 **Note:**
 
-*   The default file path is `/boot/grub/grub.cfg`, not `/boot/grub/i386-pc/grub.cfg`. The [grub](https://www.archlinux.org/packages/?name=grub) includes a sample `/boot/grub/grub.cfg`; ensure your intended changes were written to this file.
+*   The default file path is `/boot/grub/grub.cfg`, not `/boot/grub/i386-pc/grub.cfg`. The [grub](https://www.archlinux.org/packages/?name=grub) package includes a sample `/boot/grub/grub.cfg`; ensure your intended changes are written to this file.
 *   If you are trying to run *grub-mkconfig* in a chroot or *systemd-nspawn* container, you might notice that it does not work, complaining that *grub-probe* cannot get the "canonical path of /dev/sdaX". In this case, try using *arch-chroot* as described in the [BBS post](https://bbs.archlinux.org/viewtopic.php?pid=1225067#p1225067).
 
 ## Configuration
@@ -210,7 +210,7 @@ It is not necessary to use both, but can be useful. For example, you could use `
 
 By default *grub-mkconfig* determines the [UUID](/index.php/UUID "UUID") of the root filesystem for the configuration. To disable this, uncomment `GRUB_DISABLE_LINUX_UUID=true`.
 
-For generating the GRUB recovery entry you also have to comment out `#GRUB_DISABLE_RECOVERY=true` in `/etc/default/grub`.
+For generating the GRUB recovery entry you have to ensure that `GRUB_DISABLE_RECOVERY` is not set to `true` in `/etc/default/grub`.
 
 You can also use `GRUB_CMDLINE_LINUX="resume=UUID=uuid-of-swap-partition"`
 
@@ -218,7 +218,7 @@ See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for mo
 
 ### Dual-booting
 
-The best way to add other entries is editing the `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg`. The entries in this file will be automatically added after rerunning `grub-mkconfig`.
+The best way to add other entries is editing `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg`. The entries in this file will be automatically added after rerunning `grub-mkconfig`.
 
 #### "Shutdown" menu entry
 
@@ -409,7 +409,7 @@ For tips on managing multiple GRUB entries, for example when using both [linux](
 
 To encrypt a root filesystem to be used with GRUB, add the `encrypt` hook or the `sd-encrypt` hook (if using systemd hooks) to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details, and [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") for alternative encryption hooks.
 
-If using the `encrypt` hook, add `cryptdevice` to `/etc/default/grub`. In the example below, the `sda2` partition has been encrypted as `/dev/mapper/cryptroot`:
+If using the `encrypt` hook, add the `cryptdevice` parameter to `/etc/default/grub`. In the example below, the `sda2` partition has been encrypted as `/dev/mapper/cryptroot`:
 
  `/etc/default/grub`  `GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda2:cryptroot"` 
 
@@ -558,7 +558,7 @@ grub rescue> set prefix=(hdX,Y)/boot/grub
 
 where X is the physical drive number and Y is the partition number.
 
-**Note:** With a separate boot partition, omit `/boot` from the path, (i.e. type `set prefix=(hdX,Y)/grub`).
+**Note:** With a separate boot partition, omit `/boot` from the path (i.e. type `set prefix=(hdX,Y)/grub`).
 
 To expand console capabilities, insert the `linux` module:
 

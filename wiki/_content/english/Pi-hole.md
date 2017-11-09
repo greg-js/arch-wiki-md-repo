@@ -17,10 +17,10 @@ Pi-hole is a shell-script based project that manages blocklists of known adverti
         *   [1.2.2 Web Server](#Web_Server)
             *   [1.2.2.1 Lighttpd](#Lighttpd)
             *   [1.2.2.2 Nginx](#Nginx)
+        *   [1.2.3 FTL](#FTL)
 *   [2 Configuration of the router and of Pi-hole](#Configuration_of_the_router_and_of_Pi-hole)
     *   [2.1 Preferred method](#Preferred_method)
     *   [2.2 Fallback method](#Fallback_method)
-    *   [2.3 FTL](#FTL)
 *   [3 Using Pi-hole together with OpenVPN](#Using_Pi-hole_together_with_OpenVPN)
 *   [4 Pi-hole Standalone](#Pi-hole_Standalone)
     *   [4.1 Installation](#Installation_2)
@@ -117,6 +117,12 @@ Copy the package provided default config for Pi-hole:
 
 [Enable](/index.php/Enable "Enable") `nginx.service` `php-fpm.service` and re/start them.
 
+#### FTL
+
+FTL is part of Pi-hole project. It is a database-like wrapper/API providing the frontend to Pi-hole's DNS query log. One can configure FTL in `/etc/pihole/pihole-FTL.conf`. [Read](https://github.com/pi-hole/FTL#ftls-config-file) project documentation for details.
+
+`pi-hole-ftl.service` is statically enabled; re/start it.
+
 ## Configuration of the router and of Pi-hole
 
 ### Preferred method
@@ -145,7 +151,7 @@ dhcp-option=6,192.168.1.250
 
 On Pi-hole, login to the web interface ([http://pi.hole](http://pi.hole)), select "Settings" and define the IP address of the *router* as the only upstream DNS server. Do not define any other DNS entries for Pi-hole.
 
-**Tip:** A simple check to see that the router is setup correctly is to first renew a DHCP lease, then inspect the contents of /etc/resolv.conf on the target client machine. One should see the IP address of the Pi-hole box, not the IP address of the router.
+**Tip:** A simple check to see that the router is setup correctly is to first renew a DHCP lease, then inspect the contents of `/etc/resolv.conf` on the target client machine. One should see the IP address of the Pi-hole box, not the IP address of the router.
 
 ### Fallback method
 
@@ -155,12 +161,6 @@ Users unable to configure the router as directed above are referred to [this gui
 
 1.  Per-host tracking on Pi-hole (i.e. logging of DNS requests tied to individual machines by their respective hostnames).
 2.  The ability to resolve hostnames on the LAN.
-
-### FTL
-
-FTL is part of Pi-hole project. It is a database-like wrapper/API providing the frontend to Pi-hole's DNS query log. One can configure FTL in `/etc/pihole/pihole-FTL.conf`. [Read](https://github.com/pi-hole/FTL#ftls-config-file) project documentation for details.
-
-`pi-hole-ftl.service` is statically enabled; re/start it.
 
 ## Using Pi-hole together with OpenVPN
 

@@ -48,16 +48,17 @@ Related articles
     *   [4.5 Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL](#Error:_Failed_to_retrieve_printer_list:_NT_STATUS_UNSUCCESSFUL)
     *   [4.6 Sharing a folder fails](#Sharing_a_folder_fails)
     *   [4.7 "Browsing" network fails with "Failed to retrieve share list from server"](#.22Browsing.22_network_fails_with_.22Failed_to_retrieve_share_list_from_server.22)
-    *   [4.8 Protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE](#Protocol_negotiation_failed:_NT_STATUS_INVALID_NETWORK_RESPONSE)
-    *   [4.9 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
-    *   [4.10 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
-    *   [4.11 Protocol negotiation failed: NT_STATUS_CONNECTION_RESET](#Protocol_negotiation_failed:_NT_STATUS_CONNECTION_RESET)
-    *   [4.12 Password Error when correct credentials are given (error 1326)](#Password_Error_when_correct_credentials_are_given_.28error_1326.29)
-    *   [4.13 Mapping reserved Windows characters](#Mapping_reserved_Windows_characters)
-    *   [4.14 Folder shared inside graphical environment is not available to guests](#Folder_shared_inside_graphical_environment_is_not_available_to_guests)
-        *   [4.14.1 Verify correct samba configuration](#Verify_correct_samba_configuration)
-        *   [4.14.2 Verify correct shared folder creation](#Verify_correct_shared_folder_creation)
-        *   [4.14.3 Verify folder access by guest](#Verify_folder_access_by_guest)
+    *   [4.8 "Browsing" network lead to an empty folder](#.22Browsing.22_network_lead_to_an_empty_folder)
+    *   [4.9 Protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE](#Protocol_negotiation_failed:_NT_STATUS_INVALID_NETWORK_RESPONSE)
+    *   [4.10 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
+    *   [4.11 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
+    *   [4.12 Protocol negotiation failed: NT_STATUS_CONNECTION_RESET](#Protocol_negotiation_failed:_NT_STATUS_CONNECTION_RESET)
+    *   [4.13 Password Error when correct credentials are given (error 1326)](#Password_Error_when_correct_credentials_are_given_.28error_1326.29)
+    *   [4.14 Mapping reserved Windows characters](#Mapping_reserved_Windows_characters)
+    *   [4.15 Folder shared inside graphical environment is not available to guests](#Folder_shared_inside_graphical_environment_is_not_available_to_guests)
+        *   [4.15.1 Verify correct samba configuration](#Verify_correct_samba_configuration)
+        *   [4.15.2 Verify correct shared folder creation](#Verify_correct_shared_folder_creation)
+        *   [4.15.3 Verify folder access by guest](#Verify_folder_access_by_guest)
 *   [5 See also](#See_also)
 
 ## Server configuration
@@ -795,6 +796,18 @@ iptables -t raw -A OUTPUT -p udp -m udp --dport 137 -j CT --helper netbios-ns
 ```
 
 to your iptables setup.
+
+### "Browsing" network lead to an empty folder
+
+Despite a working and well configured samba, browsing network for Windows shares using a [gvfs](https://www.archlinux.org/packages/?name=gvfs) based file manager (Nautilus, PCManFM, and others) it does only get an empty folder. With samba 4.7 are changed the default protocols and this seems to cause problems with browsers. For a temporary workaround you can add the following parameter in the `smb.conf` configuration file:
+
+ `/etc/samba/smb.conf` 
+```
+...
+[global]
+  client max protocol = NT1
+  ...
+```
 
 ### Protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE
 

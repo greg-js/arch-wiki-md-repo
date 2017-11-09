@@ -15,20 +15,18 @@
 
 This method is based on [byte's](/index.php/User:Byte "User:Byte") post from [this](https://bbs.archlinux.org/viewtopic.php?id=30431) thread.
 
-Download the package databases on a computer with internet access and transfer them to your computer. If needed, change `ARCH` to `x86_64` and `MIRROR` to any mirror from the [mirror status list](https://www.archlinux.org/mirrors/status/).
+Download the package databases on a computer with internet access and transfer them to your computer. If needed, change `MIRROR` to any mirror from the [mirror status list](https://www.archlinux.org/mirrors/status/).
 
 ```
 #!/bin/bash
 
-ARCH='i686'
+ARCH='x86_64'
 MIRROR='[https://mirrors.kernel.org/archlinux/'](https://mirrors.kernel.org/archlinux/')
 
 wget "${MIRROR}/community/os/${ARCH}/community.db"
 wget "${MIRROR}/core/os/${ARCH}/core.db"
 wget "${MIRROR}/extra/os/${ARCH}/extra.db"
-if [ "$ARCH" == "x86_64" ]; then
-  wget "${MIRROR}/multilib/os/${ARCH}/multilib.db"
-fi
+wget "${MIRROR}/multilib/os/${ARCH}/multilib.db"
 ```
 
 Following steps will make sure you are working with up-to-date package lists, as if you ran `pacman -Sy`.

@@ -49,13 +49,7 @@ The frontend and backend may be on separate computers on a network, and there ma
 
 ## Requirements
 
-MythTV is a very scalable system. With standard definition television and pure MPEG2 encoding and decoding with hardware acceleration, even a very modest system can act as both frontend and backend. How modest? Some people report being able to use fanless Via systems with Hauppauge PVR cards for both backend and frontend simultaneously. While the author does not condone the use of such a lightweight system, it has been done successfully.
-
-On the other end of the spectrum, high definition TV with MPEG4 transcoding and commercial flagging can require serious horsepower. Most people in the HD realm use high-end Athlon XPs, midrange to high-end Athlon 64s, and high-end Pentium 4s for their backends. The frontend can get away with a somewhat more midrange processor if XvMC playback acceleration is used.
-
 All systems are going to need a tuner card. The Hauppauge PVR series of cards (150, 250, 350, and 500) are very popular for use with MythTV due to fairly decent Linux support and low CPU usage. Other cards, like those based on the BT878 chipset, are also used. Unlike the PVR series, BT878 based cards require significant amounts of CPU power to save the video, as these cards output raw frames and not compressed streams.
-
-The only combination of hardware the author can say works is an Athlon XP 1700+ frontend with 512MB of DDR memory, and a Pentium 4 2.8GHz backend with 512MB of DDR2 memory.
 
 ## Getting Started
 

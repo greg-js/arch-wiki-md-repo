@@ -51,6 +51,15 @@ Include conf/extra/gitweb.conf
 
 ```
 
+If Apache refuses to display gitweb, but prints the plain source code of the perl script instead, it is very likely that `cgi_module` has not been loaded by Apache.
+
+In order to resolve this issue, add the following line to `/etc/httpd/conf/httpd.conf`
+
+```
+LoadModule cgi_module modules/mod_cgi.so
+
+```
+
 ### Lighttpd
 
 Add the following to `/etc/lighttpd/lighttpd.conf`:

@@ -52,7 +52,7 @@ The files `perllocal.pod` and `.packlist` also should not be present; this is ta
 
 ### Architecture
 
-In most cases, the `arch` array should contain `'any'` because most Perl packages are architecture independent. XS modules are compiled into dynamically loaded libraries (.so files) and should explicitly set their architecture to `('i686' 'x86_64')` in order to indicate that they are architecture dependent when built. An XS module usually contains one or more .xs files which dynamically generate .c files.
+In most cases, the `arch` array should contain `'any'` because most Perl packages are architecture independent. XS modules are compiled into dynamically loaded libraries (.so files) and should explicitly set their architecture to `('x86_64')` in order to indicate that they are architecture dependent when built. An XS module usually contains one or more .xs files which dynamically generate .c files.
 
 ### Automation
 

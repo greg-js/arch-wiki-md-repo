@@ -96,7 +96,7 @@ ExecStart=
 ExecStart=/usr/bin/dockerd -H fd:// -s overlay2
 ```
 
-Recall that `ExecStart=` line is needed to drop inherited `ExecStart`.
+Note that the `ExecStart=` line is needed to drop inherited `ExecStart`.
 
 Further information on options is available on the [user guide](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/).
 

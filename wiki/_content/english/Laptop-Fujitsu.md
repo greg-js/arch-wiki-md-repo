@@ -7,13 +7,3 @@
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| E6540 | Don't Panic | Yes (ATI Mobility P/M 8Mb) | Yes | Yes (PCMCIA) | N/A | N/A | Suspend to RAM: NA
-Disk: NA
-Battery: No
-Dimming of display: Yes
-Frequency scaling of CPU: N/A | N/A | N/A | N/A |
-| Amilo M1437G | latest as of 2010-04-23 | Yes (ATI Mobility x700) | Yes | Yes (Realtek) | Yes (Intel) | N/A | Suspend to RAM: N/A
-Disk: N/A
-Battery: No
-Dimming of display: Yes
-Frequency scaling of CPU: Yes | N/A | N/A | N/A |

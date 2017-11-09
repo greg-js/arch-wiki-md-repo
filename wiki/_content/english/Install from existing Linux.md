@@ -16,7 +16,7 @@ The goal of the bootstrapping procedure is to setup an environment from which th
 
 If the host system runs Arch Linux, this can be achieved by simply installing [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts). If the host system runs another Linux distribution, you will first need to set up an Arch Linux-based chroot.
 
-**Note:** This guide requires that the existing host system be able to execute the new target Arch Linux architecture programs. In the case of an x86_64 host, it is possible to use i686-pacman to build a 32-bit chroot environment. See [Install bundled 32-bit system in 64-bit system](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system"). However it is not so easy to build a 64-bit environment when the host only supports running 32-bit programs.
+**Note:** This guide requires that the existing host system be able to execute the new target Arch Linux architecture programs. This means it has to be an x86_64 host.
 
 **Warning:** Please make sure you understand each step before proceeding. It is easy to destroy your system or to lose critical data, and your service provider will likely charge a lot to help you recover.
 
@@ -112,8 +112,6 @@ Extract the tarball:
 
 Select a repository server by editing `/tmp/root.x86_64/etc/pacman.d/mirrorlist`.
 
-**Note:** If bootstrapping an i686 image from an x86_64 host system, also edit `/tmp/root.i686/etc/pacman.conf` and explicitly define `Architecture = i686` in order for pacman to pull the proper i686 packages.
-
 Enter the chroot
 
 *   If bash 4 or later is installed, and unshare supports the --fork and --pid options:
@@ -143,7 +141,7 @@ It is possible to mount the root image of the latest Arch Linux installation med
 
 **Note:** Before proceeding, make sure the latest version of [squashfs](http://squashfs.sourceforge.net/) is installed on the host system. Otherwise, errors like the following are to be expected: `FATAL ERROR aborting: uncompress_inode_table: failed to read block`.
 
-*   The root image can be found on one of the [mirrors](https://www.archlinux.org/download) under either arch/x86_64/ or arch/i686/, depending on the desired architecture. The squashfs format is not editable, so we unsquash the root image and mount it.
+*   The root image can be found on one of the [mirrors](https://www.archlinux.org/download) under `arch/x86_64/`. The squashfs format is not editable, so we unsquash the root image and mount it.
 
 *   To unsquash the root image, run
 

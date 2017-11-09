@@ -513,11 +513,11 @@ Using other, more full virtualization options such as [VirtualBox](/index.php/Vi
 
 ### Firewalls
 
-While the stock Arch kernel is capable of using [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter")'s [iptables](/index.php/Iptables "Iptables"), it is not enabled by default. It is highly recommended to set up some form of firewall to protect the services running on the system. Many resources (including ArchWiki) do not state explicitly which services are worth protecting, so enabling a firewall is a good precaution.
+While the stock Arch kernel is capable of using [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter")'s [iptables](/index.php/Iptables "Iptables") and [nftables](/index.php/Nftables "Nftables"), they are not enabled by default. It is highly recommended to set up some form of firewall to protect the services running on the system. Many resources (including ArchWiki) do not state explicitly which services are worth protecting, so enabling a firewall is a good precaution.
 
-*   See [iptables](/index.php/Iptables "Iptables") for general info.
+*   See [iptables](/index.php/Iptables "Iptables") and [nftables](/index.php/Nftables "Nftables") for general info.
 *   See [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall") for a guide on setting up an iptables firewall.
-*   See [Firewalls](/index.php/Firewalls "Firewalls") for other ways of setting up netfilter.
+*   See [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls") for other ways of setting up netfilter.
 *   See [Ipset](/index.php/Ipset "Ipset") for blocking lists of ip addresses, such as those from Bluetack.
 
 ### Kernel parameters

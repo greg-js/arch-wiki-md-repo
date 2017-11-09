@@ -1,3 +1,8 @@
+Articoli correlati
+
+*   [NFS (Italiano)](/index.php/NFS_(Italiano) "NFS (Italiano)")
+*   [Samba/Active Directory domain controller](/index.php/Samba/Active_Directory_domain_controller "Samba/Active Directory domain controller")
+
 **Samba** è una re implementazione del protocollo di rete SMB/CIFS, serve per facilitare la condivisione di file e stampanti tra sistemi Linux e Windows, come alternativa ad [NFS](/index.php/NFS_(Italiano) "NFS (Italiano)"). Samba è facilmente configurabile e le opzioni sono molto chiare. In ogni caso, gli utenti meno esperti potrebbero incontrare problemi per la sua complessità e per i meccanismi non intuitivi. Si consiglia quindi di attenersi alle seguenti indicazioni.
 
 ## Contents
@@ -31,12 +36,13 @@
     *   [4.4 Controllare da remoto i computer Windows](#Controllare_da_remoto_i_computer_Windows)
     *   [4.5 Bloccare determinate estenzioni di file extensions sulle condivisioni samba](#Bloccare_determinate_estenzioni_di_file_extensions_sulle_condivisioni_samba)
 *   [5 Risoluzione di problemi](#Risoluzione_di_problemi)
-    *   [5.1 Windows 7 problemi di connettività - mount error(12): cannot allocate memory](#Windows_7_problemi_di_connettivit.C3.A0_-_mount_error.2812.29:_cannot_allocate_memory)
-    *   [5.2 Problemi con gli accessi da Windows a condivisioni protette da password](#Problemi_con_gli_accessi_da_Windows_a_condivisioni_protette_da_password)
-    *   [5.3 Lentezza nell'apparsa della finestra per l'accesso](#Lentezza_nell.27apparsa_della_finestra_per_l.27accesso)
-    *   [5.4 Cambiamenti in Samba versione 3.4.0](#Cambiamenti_in_Samba_versione_3.4.0)
-    *   [5.5 Error: Value too large for defined data type](#Error:_Value_too_large_for_defined_data_type)
-    *   [5.6 Devo riavviare Samba per rendere le condivisioni visibili agli altri pc](#Devo_riavviare_Samba_per_rendere_le_condivisioni_visibili_agli_altri_pc)
+    *   [5.1 "Sfogliando" la rete si ottiene una finestra vuota](#.22Sfogliando.22_la_rete_si_ottiene_una_finestra_vuota)
+    *   [5.2 Windows 7 problemi di connettività - mount error(12): cannot allocate memory](#Windows_7_problemi_di_connettivit.C3.A0_-_mount_error.2812.29:_cannot_allocate_memory)
+    *   [5.3 Problemi con gli accessi da Windows a condivisioni protette da password](#Problemi_con_gli_accessi_da_Windows_a_condivisioni_protette_da_password)
+    *   [5.4 Lentezza nell'apparizione della finestra per l'accesso](#Lentezza_nell.27apparizione_della_finestra_per_l.27accesso)
+    *   [5.5 Cambiamenti in Samba versione 3.4.0](#Cambiamenti_in_Samba_versione_3.4.0)
+    *   [5.6 Error: Value too large for defined data type](#Error:_Value_too_large_for_defined_data_type)
+    *   [5.7 Devo riavviare Samba per rendere le condivisioni visibili agli altri pc](#Devo_riavviare_Samba_per_rendere_le_condivisioni_visibili_agli_altri_pc)
 *   [6 Risorse](#Risorse)
 
 ## Installazione
@@ -665,6 +671,18 @@ Veto files = /*.exe/*.com/*.dll/*.bat/*.vbs/*.tmp/*.mp3/*.avi/*.mp4/*.wmv/*.wma/
 
 ## Risoluzione di problemi
 
+### "Sfogliando" la rete si ottiene una finestra vuota
+
+Nonostante samba sia funzionante e ben configurato, sfogliando la rete Windows in cerca di condivisioni usando un gestore file basato su [gvfs](https://www.archlinux.org/packages/?name=gvfs) (Nautilus, PCManFM, e altri) non si ottiene altro che una finestra vuota. Con samba 4.7 sono cambiati i protocolli predefinii e sembra causa di problemi con i gestori di file. Come soluzione temporanea è possibile aggiungere la seguente voce nel file di configurazione `smb.conf`:
+
+ `/etc/samba/smb.conf` 
+```
+...
+[global]
+  client max protocol = NT1
+  ...
+```
+
 ### Windows 7 problemi di connettività - mount error(12): cannot allocate memory
 
 Un noto bug di Windows 7 che causa l'errore "mount error(12): cannot allocate memory" su di una condivisione cifs perfettamente configrata dal lato Linux, può essere risolto impostando alcune chiavi di regitro sul pc Windows come di seguito:
@@ -693,7 +711,7 @@ client ntlmv2 auth = no
 
 ```
 
-### Lentezza nell'apparsa della finestra per l'accesso
+### Lentezza nell'apparizione della finestra per l'accesso
 
 Si sono verificati ritardi anche di circa 30 secondi, dalla richiesta di connessione all'apparsa della finestra di accesso, sia utilizzando Windows XP che Windows 7\. E analizzando il log `error.log` compare:
 
@@ -703,20 +721,20 @@ Unable to connect to CUPS server localhost:631 - Interrupted system call
 
 ```
 
-Dato che il problema si verificava anche se sul server non erano connesse stampanti, la soluzione consiste nell'aggiungere queste righe nella sezione global del file `/etc/samba/smb.conf`
+Dato che il problema si verificava anche se sul server non erano connesse stampanti, la soluzione consiste nell'aggiungere queste righe nella sezione global del file `smb.conf`
 
+ `/etc/samba/smb.conf` 
 ```
-load printers = no
-printing = bsd
-disable spoolss = yes
-printcap name = /dev/null
+...
+[global]
+  load printers = no
+  printing = bsd
+  disable spoolss = yes
+  printcap name = /dev/null
+  ...
+```
 
-```
-
-```
 Non c'è la certezza che tutte queste righe siano effettivamente necessarie, ma in questo modo funziona.
-
-```
 
 ### Cambiamenti in Samba versione 3.4.0
 

@@ -713,7 +713,7 @@ needs_root_rights = *yes*
 
 See also [Xorg.wrap(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.wrap.1) and [Systemd/User#Xorg as a systemd user service](/index.php/Systemd/User#Xorg_as_a_systemd_user_service "Systemd/User").
 
-[GDM](/index.php/GDM "GDM") also runs Xorg without root privileges by default when [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") is used. If you don't use KMS with [NVIDIA](/index.php/NVIDIA "NVIDIA"), you can force rootless Xorg as described above via `Xwrapper.config`.
+[GDM](/index.php/GDM "GDM") also runs Xorg without root privileges by default when [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") is used.
 
 #### Broken redirection
 

@@ -1,5 +1,3 @@
-Back to [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
-
 **Tip:** If in need to remotely unlock root or other early-boot filesystems (headless machine, distant servers...), follow the specific instructions from [dm-crypt/Specialties#Remote unlocking of encrypted root](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_.28or_other.29_partition "Dm-crypt/Specialties").
 
 ## Contents
@@ -18,6 +16,7 @@ Back to [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
         *   [2.2.2 rd.luks.name](#rd.luks.name)
         *   [2.2.3 rd.luks.options](#rd.luks.options)
         *   [2.2.4 rd.luks.key](#rd.luks.key)
+        *   [2.2.5 Timeout](#Timeout)
 *   [3 crypttab](#crypttab)
     *   [3.1 Mounting at boot time](#Mounting_at_boot_time)
         *   [3.1.1 Mounting a stacked blockdevice](#Mounting_a_stacked_blockdevice)
@@ -236,6 +235,20 @@ rd.luks.key=*mykeyfile*
 ```
 
 Specify the location of a password file used to decrypt the device specified in `rd.luks.UUID`. There is no default location like there is with the `encrypt` hook parameter `cryptkey`.
+
+#### Timeout
+
+There are two options that affect the timeout for entering the password during boot:
+
+*   `rd.luks.options=timeout=*mytimeout*` specifies the timeout for querying for a password
+*   `rootflags=x-systemd.device-timeout=*mytimeout*` specifies how long systemd should wait for the rootfs device to show up before giving up (defaults to 90 seconds)
+
+If you want to disable the timeout altogether, then set both timeouts to zero:
+
+```
+rd.luks.options=timeout=0 rootflags=x-systemd.device-timeout=0
+
+```
 
 ## crypttab
 

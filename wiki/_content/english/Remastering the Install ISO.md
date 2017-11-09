@@ -30,7 +30,7 @@ It is often preferable to rebuild the installation ISO with [Archiso](/index.php
 
 ### How it works
 
-The installer ISO used to contain two separate archlinux systems. One for 32 bit (i686) and one for 64 bit (x86_64). Now only 64 bit system is supported. The root filesystems of this system is stored in `arch/x86_64/airootfs.sfs`. The kernel and initramfs are in `arch/boot/x86_64`.
+The root filesystems of the live system is stored in `arch/x86_64/airootfs.sfs` in the ISO. The kernel and initramfs are in `arch/boot/x86_64`.
 
 When booting, the initramfs will search for the device it was booted from via its label, `ARCH_201410` for example, and will mount the root filesystem for the architecture.
 

@@ -446,5 +446,5 @@ To start the persistence daemon at boot, [enable](/index.php/Enable "Enable") th
 ## See also
 
 *   [NVIDIA User forums](https://forums.geforce.com/)
-*   [Official README for NVIDIA drivers, all on one text page. Most Recent Driver Version as of September 7, 2015: 355.11.](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/README.txt)
-*   [README Appendix B. X Config Options, 355.11 (direct link)](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html)
+*   [Official README for NVIDIA drivers, all on one text page. Version 387.22 (2017-10-25)](http://download.nvidia.com/XFree86/Linux-x86/387.22/README/README.txt)
+*   [README Appendix B. X Config Options, 387.22 (direct link)](http://download.nvidia.com/XFree86/Linux-x86/387.22/README/xconfigoptions.html)

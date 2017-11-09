@@ -174,14 +174,17 @@ $ lpinfo -m
 
 ```
 
-The *queue_name* is up to you. Example:
+The *queue_name* is up to you. Examples:
 
 ```
 # lpadmin -p HP_DESKJET_940C -E -v "usb://HP/DESKJET%20940C?serial=CN16E6C364BH" -m drv:///HP/hp-deskjet_940c.ppd.gz
 # lpadmin -p AirPrint -E -v "ipp://10.0.1.25/ipp/print" -m everywhere    # Driverless queue (Apple AirPrint or IPP Everywhere)
 # lpadmin -p SHARED_PRINTER -m raw    # Raw queue; no PPD or filter
+# lpadmin -p Test_Printer -E -v "ipp://10.0.1.3/ipp/print" -m pxlmono.ppd    # Specifying a PPD instead of a model
 
 ```
+
+**Note:** When specifying the PPD, use just the file name and not the full path (for instance, `pxlmono.ppd` instead of `/usr/share/ppd/cupsfilters/pxlmono.ppd`)
 
 	Set the default printer
 

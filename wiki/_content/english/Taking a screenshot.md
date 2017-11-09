@@ -236,7 +236,7 @@ Note that [scrot](https://www.archlinux.org/packages/?name=scrot) actually uses 
 
 [maim](https://www.archlinux.org/packages/?name=maim) is aimed to be an improved scrot.
 
-Takes screenshots of your desktop using [slop](https://github.com/naelstrof/slop) for regions. It's meant to overcome shortcomings of scrot and performs better in [several ways](https://github.com/naelstrof/maim#why-use-maim-over-import-or-scrot).
+Takes screenshots of your desktop using [slop](https://github.com/naelstrof/slop) for regions. It's meant to overcome shortcomings of scrot.
 
 ### FFmpeg
 

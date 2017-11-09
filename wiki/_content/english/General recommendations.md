@@ -236,7 +236,7 @@ For better security while browsing web, paying online, connecting to [SSH](/inde
 
 ### Setting up a firewall
 
-A [firewall](/index.php/Firewall "Firewall") can provide an extra layer of protection on top of the Linux networking stack. While the stock Arch kernel is capable of using [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter")'s [iptables](/index.php/Iptables "Iptables"), or [nftables](/index.php/Nftables "Nftables"), neither are enabled by default. It is highly recommended to set up some form of firewall. See [Firewalls](/index.php/Firewalls "Firewalls") for the available guides.
+A firewall can provide an extra layer of protection on top of the Linux networking stack. While the stock Arch kernel is capable of using [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter")'s [iptables](/index.php/Iptables "Iptables") and [nftables](/index.php/Nftables "Nftables"), neither are enabled by default. It is highly recommended to set up some form of firewall. See [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls") for available guides.
 
 ### Resource sharing
 

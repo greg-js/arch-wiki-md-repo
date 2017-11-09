@@ -1,5 +1,3 @@
-Back to [dm-crypt](/index.php/Dm-crypt "Dm-crypt")
-
 The following are examples of encrypting a secondary, i.e. non-root, filesystem with dm-crypt.
 
 ## Contents

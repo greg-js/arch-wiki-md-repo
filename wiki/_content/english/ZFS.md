@@ -351,33 +351,33 @@ Other options for zfs can be displayed again, using the zfs command:
 
 You can also add SSD devices as a write intent log (external ZIL or SLOG) and also as a layer 2 adaptive replacement cache (l2arc). The process to add them is very similar to creating a new VDEV.
 
-All of the below references to device-id are the IDs from /dev/disk/by-id/*
+All of the below references to device-id are the IDs from `/dev/disk/by-id/*`.
 
 To add a ZIL:
 
 ```
- zpool add <pool> log <device-id>
+ # zpool add <pool> log <device-id>
 
 ```
 
-or to add a mirrored ZIL:
+Or to add a mirrored ZIL:
 
 ```
- zpool add <pool> log mirror <device-id-1> <device-id-2>
+ # zpool add <pool> log mirror <device-id-1> <device-id-2>
 
 ```
 
 To add an l2arc:
 
 ```
- zpool add <pool> cache <device-id>
+ # zpool add <pool> cache <device-id>
 
 ```
 
-or to add a mirrored l2arc:
+Or to add a mirrored l2arc:
 
 ```
- zpool add <pool> cache mirror <device-id-1> <device-id-2>
+ # zpool add <pool> cache mirror <device-id-1> <device-id-2>
 
 ```
 

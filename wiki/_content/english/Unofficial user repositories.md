@@ -52,13 +52,14 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [3.2.4 arsch](#arsch)
         *   [3.2.5 cinnamon](#cinnamon)
         *   [3.2.6 heftig](#heftig)
-        *   [3.2.7 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
-        *   [3.2.8 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
-        *   [3.2.9 noware](#noware)
-        *   [3.2.10 pantheon](#pantheon)
-        *   [3.2.11 pietma](#pietma)
-        *   [3.2.12 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.13 QOwnNotes](#QOwnNotes)
+        *   [3.2.7 home_fusion809_Arch_Extra](#home_fusion809_Arch_Extra)
+        *   [3.2.8 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
+        *   [3.2.9 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
+        *   [3.2.10 noware](#noware)
+        *   [3.2.11 pantheon](#pantheon)
+        *   [3.2.12 pietma](#pietma)
+        *   [3.2.13 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
+        *   [3.2.14 QOwnNotes](#QOwnNotes)
 *   [4 i686 only](#i686_only)
     *   [4.1 Signed](#Signed_3)
         *   [4.1.1 xyne-i686](#xyne-i686)
@@ -524,6 +525,18 @@ Server = http://archlinux.zoelife4u.org/cinnamon/$arch
 ```
 [heftig]
 Server = https://pkgbuild.com/~heftig/repo/$arch
+
+```
+
+#### home_fusion809_Arch_Extra
+
+*   **Maintainer:** [Brenton Horne](/index.php?title=User:Fusion809&action=edit&redlink=1 "User:Fusion809 (page does not exist)") (brentonhorne77 at gmail dot com).
+
+*   **Description:** Provides a few AUR and other packages I like. Like CodeLite, bleeding-edge (latest release within 1 day of its release) GVim (GTK+2 interface) and Sway (specifically release candidates when they're available).
+
+```
+[home_fusion809_Arch_Extra]
+Server = https://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/$arch
 
 ```
 

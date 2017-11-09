@@ -11,36 +11,34 @@ The 'old' page should be cleaned up and merged into this page, and any future in
 *   [2 Eee 900A](#Eee_900A)
 *   [3 Eee 901, 904, and 1000(H)](#Eee_901.2C_904.2C_and_1000.28H.29)
 *   [4 Eee 904HA](#Eee_904HA)
-*   [5 Eee T91MT](#Eee_T91MT)
-*   [6 Eee T101MT](#Eee_T101MT)
-*   [7 Eee 1000HE](#Eee_1000HE)
-*   [8 Eee 1001P](#Eee_1001P)
-*   [9 Eee 1001PX](#Eee_1001PX)
-*   [10 Eee 1005HA(B)](#Eee_1005HA.28B.29)
-*   [11 Eee 1005P(E)](#Eee_1005P.28E.29)
-*   [12 Eee 1011CX](#Eee_1011CX)
-*   [13 Eee 1011PX](#Eee_1011PX)
-*   [14 Eee 1015B](#Eee_1015B)
-    *   [14.1 Audio](#Audio)
-    *   [14.2 Powersaving](#Powersaving)
-*   [15 Eee 1015 BX](#Eee_1015_BX)
-*   [16 Eee 1015 PE/PEM](#Eee_1015_PE.2FPEM)
-    *   [16.1 Hardware](#Hardware)
-    *   [16.2 Installation](#Installation_2)
-        *   [16.2.1 ACPI](#ACPI)
-        *   [16.2.2 Modules](#Modules)
-*   [17 Eee 1015 PN](#Eee_1015_PN)
-*   [18 Eee 1025C](#Eee_1025C)
-*   [19 Eee 1201T](#Eee_1201T)
-*   [20 Eee 1201NL](#Eee_1201NL)
-*   [21 Eee 1215n](#Eee_1215n)
-*   [22 Eee 1215P](#Eee_1215P)
-*   [23 Eee 1215B](#Eee_1215B)
-    *   [23.1 Installation](#Installation_3)
-    *   [23.2 Audio](#Audio_2)
-    *   [23.3 Video](#Video)
-    *   [23.4 Power Management](#Power_Management)
-    *   [23.5 USB 3.0 on battery](#USB_3.0_on_battery)
+*   [5 Eee T101MT](#Eee_T101MT)
+*   [6 Eee 1000HE](#Eee_1000HE)
+*   [7 Eee 1001P](#Eee_1001P)
+*   [8 Eee 1001PX](#Eee_1001PX)
+*   [9 Eee 1005HA(B)](#Eee_1005HA.28B.29)
+*   [10 Eee 1005P(E)](#Eee_1005P.28E.29)
+*   [11 Eee 1011PX](#Eee_1011PX)
+*   [12 Eee 1015B](#Eee_1015B)
+    *   [12.1 Audio](#Audio)
+    *   [12.2 Powersaving](#Powersaving)
+*   [13 Eee 1015 BX](#Eee_1015_BX)
+*   [14 Eee 1015 PE/PEM](#Eee_1015_PE.2FPEM)
+    *   [14.1 Hardware](#Hardware)
+    *   [14.2 Installation](#Installation_2)
+        *   [14.2.1 ACPI](#ACPI)
+        *   [14.2.2 Modules](#Modules)
+*   [15 Eee 1015 PN](#Eee_1015_PN)
+*   [16 Eee 1025C](#Eee_1025C)
+*   [17 Eee 1201T](#Eee_1201T)
+*   [18 Eee 1201NL](#Eee_1201NL)
+*   [19 Eee 1215n](#Eee_1215n)
+*   [20 Eee 1215P](#Eee_1215P)
+*   [21 Eee 1215B](#Eee_1215B)
+    *   [21.1 Installation](#Installation_3)
+    *   [21.2 Audio](#Audio_2)
+    *   [21.3 Video](#Video)
+    *   [21.4 Power Management](#Power_Management)
+    *   [21.5 USB 3.0 on battery](#USB_3.0_on_battery)
 
 # Eee 700 Series and 900
 
@@ -87,10 +85,6 @@ The 901, 904, and 1000(H) all seem to share much-of, if not all the same hardwar
 
 [ASUS Eee PC 904HA](/index.php/ASUS_Eee_PC_904HA "ASUS Eee PC 904HA")
 
-# Eee T91MT
-
-[ASUS Eee PC T91MT](/index.php/ASUS_Eee_PC_T91MT "ASUS Eee PC T91MT")
-
 # Eee T101MT
 
 [ASUS Eee PC T101MT](/index.php/ASUS_Eee_PC_T101MT "ASUS Eee PC T101MT")
@@ -114,10 +108,6 @@ The 901, 904, and 1000(H) all seem to share much-of, if not all the same hardwar
 # Eee 1005P(E)
 
 [ASUS Eee PC 1005P](/index.php/ASUS_Eee_PC_1005P "ASUS Eee PC 1005P")
-
-# Eee 1011CX
-
-[ASUS Eee PC 1011cx](/index.php/ASUS_Eee_PC_1011cx "ASUS Eee PC 1011cx")
 
 # Eee 1011PX
 

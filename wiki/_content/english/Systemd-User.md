@@ -57,7 +57,7 @@ All the user services will be placed in `~/.config/systemd/user/`. If you want t
 
 The user instance of systemd does not inherit any of the [environment variables](/index.php/Environment_variables "Environment variables") set in places like `.bashrc` etc. There are several ways to set environment variables for the systemd user instance:
 
-1.  For users with a `$HOME` directory, use the `DefaultEnvironment` option in `~/.config/systemd/user.conf`. Affects only that user's user unit.
+1.  For users with a `$HOME` directory, create a *.conf* file in the `~/.config/environment.d/` directory with lines of the form `NAME=VAL`. Affects only that user's user unit. See [environment.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/environment.d.5) for more information.
 2.  Use the `DefaultEnvironment` option in `/etc/systemd/user.conf` file. Affects all user units.
 3.  Add a drop-in config file in `/etc/systemd/system/user@.service.d/`. Affects all user units; see [#Service example](#Service_example)
 4.  At any time, use `systemctl --user set-environment` or `systemctl --user import-environment`. Affects all user units started after setting the environment variables, but not the units that were already running.

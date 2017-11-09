@@ -42,9 +42,8 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [2.3.1 Import other CSS files](#Import_other_CSS_files)
         *   [2.3.2 Block certain parts of a domain](#Block_certain_parts_of_a_domain)
         *   [2.3.3 Add [pdf] after links to PDF files](#Add_.5Bpdf.5D_after_links_to_PDF_files)
-        *   [2.3.4 Firefox 4 New Menu Bar/Firefox Button](#Firefox_4_New_Menu_Bar.2FFirefox_Button)
-        *   [2.3.5 Block ads](#Block_ads)
-        *   [2.3.6 Remove fullscreen warning](#Remove_fullscreen_warning)
+        *   [2.3.4 Block ads](#Block_ads)
+        *   [2.3.5 Remove fullscreen warning](#Remove_fullscreen_warning)
 *   [3 Miscellaneous](#Miscellaneous)
     *   [3.1 Enable additional media codecs](#Enable_additional_media_codecs)
         *   [3.1.1 Widevine and Netflix/Amazon Video](#Widevine_and_Netflix.2FAmazon_Video)
@@ -430,85 +429,6 @@ a[href$=".pdf"]:after {
 
 ```
 
-#### Firefox 4 New Menu Bar/Firefox Button
-
-To toggle between the new Firefox button and the classic menu bar:
-
-*   if the button is active, check *Preferences > Menu Bar*, or right click in the toolbar area and check *Menu Bar*.
-*   if the menu bar is active, uncheck *View > Toolbars > Menu Bar*, or right click in the toolbar area and uncheck *Menu Bar*.
-
-In GNU/Linux, you will just get a plain grey button instead of the new orange one from Windows. However you can change this to either a Firefox icon or the icon followed by the "Firefox" text.
-
-Adding the following to your `~/.mozilla/firefox/userprofile/chrome/userChrome.css` file will place the icon before the text:
-
-```
-#appmenu-toolbar-button {
-  list-style-image: url("chrome://branding/content/icon16.png");
-}
-
-```
-
-Adding the following to the same file will *remove* the "Firefox" text:
-
-```
-#appmenu-toolbar-button > .toolbarbutton-text,
-#appmenu-toolbar-button > .toolbarbutton-menu-dropmarker {
-  display: none !important;
-}
-
-```
-
-This userChrome.css configuration copies the default Windows Firefox 4+ look and adds an orange background to the button, with a purple background in Private Browsing mode:
-
-```
-#main-window:not([privatebrowsingmode]) #appmenu-toolbar-button {
-    -moz-appearance: none !important;
-    color: #FEEDFC !important;
-    background: -moz-linear-gradient(hsl(34,85%,60%), hsl(26,72%,53%) 95%) !important;
-    border: 1px solid #000000 !important;
-}
-
-#main-window:not([privatebrowsingmode]) #appmenu-toolbar-button:hover:not(:active):not([open]) {
-    -moz-appearance: none !important;
-    color: #FEEDFC !important;
-    background: -moz-linear-gradient(hsl(26,72%,53%), hsl(34,85%,60%) 95%) !important;
-    border: 1px solid #000000 !important;
-}
-
-#main-window:not([privatebrowsingmode]) #appmenu-toolbar-button:hover:active,
-#main-window:not([privatebrowsingmode]) #appmenu-toolbar-button[open] {
-    -moz-appearance: none !important;
-    color: #FEEDFC !important;
-    background: -moz-linear-gradient(hsl(26,72%,53%), hsl(26,72%,53%) 95%) !important;
-    border: 1px solid #000000 !important;
-}
-
-#appmenu-toolbar-button {
-    -moz-appearance: none !important;
-    color: #FEEDFC !important;
-    background: -moz-linear-gradient(hsl(279,70%,46%), hsl(276,75%,38%) 95%) !important;
-    border: 1px solid #000000 !important;
-}
-
-#main-window #appmenu-toolbar-button:hover:not(:active):not([open]) {
-    -moz-appearance: none !important;
-    color: #FEEDFC !important;
-    background: -moz-linear-gradient(hsl(276,75%,38%), hsl(279,70%,46%) 95%) !important;
-    border: 1px solid #000000 !important;
-}
-
-#main-window #appmenu-toolbar-button:hover:active,
-#main-window #appmenu-toolbar-button[open] {
-    -moz-appearance: none !important;
-    color: #FEEDFC !important;
-    background: -moz-linear-gradient(hsl(276,75%,38%), hsl(276,75%,38%) 95%) !important;
-    border: 1px solid #000000 !important;
-}
-
-```
-
-**Note:** You need to create both the `chrome` directory and `userChrome.css`, if they do not already exist.
-
 #### Block ads
 
 See [floppymoose.com](http://www.floppymoose.com) for an example of how to use `userContent.css` as a basic ad-blocker.
@@ -613,7 +533,7 @@ in the *<keyboard>* section of your `~/.config/openbox/rc.xml` file.
 
 ### Plugins do not work with latest version
 
-Due to Arch's bleeding edge nature, there can be some compatibility issues with plugins not working with the latest Firefox install (e.g. [Pentadactyl](http://5digits.org/pentadactyl/index)). If possible, try installing the nightly/beta builds available, or see [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages").
+There can be compatibility issues with plugins not working with the latest Firefox version (e.g. [Pentadactyl](http://5digits.org/pentadactyl/index)). If possible, try installing the nightly/beta builds available, or temporarily [downgrade](/index.php/Downgrading_packages "Downgrading packages") Firefox.
 
 [Disable Add-on Compatibility Checks](https://addons.mozilla.org/firefox/addon/checkcompatibility/) plugin should take care of spurious compatibility issues when the plugins get disabled, even though they work just fine with the new version.
 

@@ -7,7 +7,6 @@
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| Compaq nx7300 | Duke/2007.5 | Intel 955GM + 3D/AIGLX | Intel HD audio with [ALSA](/index.php/ALSA "ALSA") | Yes | Yes, IPW3945 | YES | ACPI | Untested | Everything works fantastic. Easiest install of any Linux distribution |
 | Compaq Presario F700 | 2009.02 | Nvidia 7000M driver: *nvidia* | Nvidia HD audio with ALSA | Nvidia: OK | Atheros: OK
 driver: *ath5k* | none | ACPI
 Suspend to RAM/disk: OK

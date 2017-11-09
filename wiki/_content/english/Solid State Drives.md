@@ -5,7 +5,7 @@ Related articles
 *   [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices")
 *   [Improving performance#Storage devices](/index.php/Improving_performance#Storage_devices "Improving performance")
 
-This article covers special topics for operating [w:Solid State Drives](https://en.wikipedia.org/wiki/Solid_State_Drive "w:Solid State Drive") (SSDs) and other flash-memory based storage devices. If you want to partition a SSD for a specific purpose, it may be useful to consider the [List of file systems optimized for flash memory](https://en.wikipedia.org/wiki/List_of_file_systems#File_systems_optimized_for_flash_memory.2C_solid_state_media "w:List of file systems"). For general usage, you should simply choose your preferred [filesystem](/index.php/Filesystem "Filesystem").
+This article covers special topics for operating [w:Solid State Drives](https://en.wikipedia.org/wiki/Solid_State_Drive "w:Solid State Drive") (SSDs) and other flash-memory based storage devices. If you want to partition an SSD for a specific purpose, it may be useful to consider the [List of file systems optimized for flash memory](https://en.wikipedia.org/wiki/List_of_file_systems#File_systems_optimized_for_flash_memory.2C_solid_state_media "w:List of file systems"). For general usage, you should simply choose your preferred [filesystem](/index.php/Filesystem "Filesystem").
 
 ## Contents
 
@@ -42,7 +42,7 @@ This article covers special topics for operating [w:Solid State Drives](https://
 
 Most SSDs support the [ATA_TRIM command](https://en.wikipedia.org/wiki/TRIM "wikipedia:TRIM") for sustained long-term performance and wear-leveling. A [techspot](http://www.techspot.com/review/737-ocz-vector-150-ssd/page9.html) article shows performance benchmark examples of before and after filling an SSD with data.
 
-As of Linux kernel version 3.8 onwards, support for TRIM was continually added for the different [filesystems](/index.php/Filesystems "Filesystems"). See the following table for an indicative overview and the respective filesystems' articles for further details:
+As of Linux kernel version 3.8 onwards, support for TRIM was continually added for the different [filesystems](/index.php/Filesystems "Filesystems"). See the following table for an indicative overview:
 
 | File system | Continuous TRIM
 (`discard` option) | Periodic TRIM
@@ -90,7 +90,7 @@ To query the units activity and status, see [journalctl](/index.php/Journalctl "
 
 **Warning:** Unfortunately, there are wide quality gaps of SSD's bios' to perform continuous TRIM, which is also why using the `discard` mount flag is [recommended against](https://forums.freebsd.org/threads/56951/#post-328912) generally by ext filesystem developer Theodore Ts'o. If in doubt about your hardware, apply [#Periodic TRIM](#Periodic_TRIM) instead.
 
-**Note:** Before [SATA 3.1](https://en.wikipedia.org/wiki/Serial_ATA#SATA_revision_3.1 "w:Serial ATA") all TRIM commands were synchronous, so continuous trimming would produce frequent system freezes. In this case, applying [#Periodic TRIM](#Periodic_TRIM) less often is better alternative. Similar issue holds also for a [number of devices](https://github.com/torvalds/linux/blob/master/drivers/ata/libata-core.c#L4403-L4417), for which queued TRIM command execution was blacklisted due to [serious data corruption](https://blog.algolia.com/when-solid-state-drives-are-not-that-solid/). See [Wikipedia:Trim (computing)#Shortcomings](https://en.wikipedia.org/wiki/Trim_(computing)#Shortcomings for details.
+**Note:** Before [SATA 3.1](https://en.wikipedia.org/wiki/Serial_ATA#SATA_revision_3.1 "w:Serial ATA") all TRIM commands were synchronous, so continuous trimming would produce frequent system freezes. In this case, applying [#Periodic TRIM](#Periodic_TRIM) less often is better alternative. Similar issue holds also for a [number of devices](https://github.com/torvalds/linux/blob/master/drivers/ata/libata-core.c#L4523-L4536), for which queued TRIM command execution was blacklisted due to [serious data corruption](https://blog.algolia.com/when-solid-state-drives-are-not-that-solid/). See [Wikipedia:Trim (computing)#Shortcomings](https://en.wikipedia.org/wiki/Trim_(computing)#Shortcomings for details.
 
 Using the `discard` option for a mount in `/etc/fstab` enables continuous TRIM in device operations:
 
@@ -135,7 +135,7 @@ Change the value of `issue_discards` option from 0 to 1 in `/etc/lvm/lvm.conf`.
 
 **Warning:** The discard option allows discard requests to be passed through the encrypted block device. This improves performance on SSD storage but has security implications. See [Dm-crypt/TRIM support for SSD](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") for more information.
 
-For non-root filesystems, configure `/etc/crypttab` to include `discard` in the list of options for encrypted block devices located on a SSD (see [Dm-crypt/System configuration#crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration")).
+For non-root filesystems, configure `/etc/crypttab` to include `discard` in the list of options for encrypted block devices located on an SSD (see [Dm-crypt/System configuration#crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration")).
 
 For the root filesystem, follow the instructions from [Dm-crypt/TRIM support for SSD](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") to add the right kernel parameter to the bootloader configuration.
 
@@ -186,7 +186,7 @@ As noted in [#Hdparm shows frozen state](#Hdparm_shows_.22frozen.22_state) setti
 
 It is possible that the issue you are encountering is a firmware bug which is not Linux specific, so before trying to troubleshoot an issue affecting the SSD device, you should first check if updates are available for:
 
-*   The [SSD's firmware](/index.php/Solid_State_Drives/Firmware "Solid State Drives/Firmware")
+*   The [SSD's firmware](/index.php/Solid_State_Drives#Firmware "Solid State Drives")
 *   The [motherboard's BIOS/UEFI firmware](/index.php/Flashing_BIOS_from_Linux "Flashing BIOS from Linux")
 
 Even if it is a firmware bug it might be possible to avoid it, so if there are no updates to the firmware or you hesitant on updating firmware then the following might help.

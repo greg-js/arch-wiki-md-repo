@@ -12,11 +12,6 @@ Disk: Yes
 Battery: Yes
 Dimming of display: Yes
 Frequency scaling of CPU: Yes | not tested | smart card reader | has xHCI IRQ issues |
-| HP Compaq Mini 730 | 2009.02 | Intel GMA 950 driver: *intel* | Intel HDA driver: *snd_hda_intel* | Broadcom driver: *tg3* | Broadcom 4312 driver: *wl* | Yes | Suspend to RAM: Yes
-Disk: Yes
-Battery: Yes
-Dimming of display: Yes
-Frequency scaling of CPU: Yes | -- | -- | -- |
 | HP Compaq 6715S | 2010.05 | ATI Radeon X1250 driver: *catalyst* | AD1981 driver: *snd_hda_intel* | Broadcom driver: *tg3* | Broadcom 4312 driver: *ndiswrapper*
 (Problematic with 64-bit CPU) | Yes | Suspend to RAM: Yes
 Disk: Yes

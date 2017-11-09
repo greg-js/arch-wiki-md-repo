@@ -1,6 +1,5 @@
 Related articles
 
-*   [Intel GMA 500](/index.php/Intel_GMA_500 "Intel GMA 500")
 *   [Intel GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600")
 *   [Xorg](/index.php/Xorg "Xorg")
 *   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting")
@@ -12,7 +11,7 @@ Since Intel provides and supports open source drivers, Intel graphics are essent
 
 For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs, see [this comparison on Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units").
 
-**Note:** PowerVR-based graphics ([GMA 500](/index.php/Intel_GMA_500 "Intel GMA 500") and [GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600") series) are not supported by open source drivers.
+**Note:** PowerVR-based graphics ([GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600") series) are not supported by open source drivers.
 
 ## Contents
 

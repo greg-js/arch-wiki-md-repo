@@ -1,4 +1,8 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Remastering the Install ISO](/index.php/Remastering_the_Install_ISO "Remastering the Install ISO"). Дата последней синхронизации: 17 августа 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Remastering_the_Install_ISO&diff=0&oldid=485624).
+Ссылки по теме
+
+*   [Archiso (Русский)](/index.php/Archiso_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Archiso (Русский)")
+
+**Состояние перевода:** На этой странице представлен перевод статьи [Remastering the Install ISO](/index.php/Remastering_the_Install_ISO "Remastering the Install ISO"). Дата последней синхронизации: 4 ноября 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Remastering_the_Install_ISO&diff=0&oldid=495140).
 
 Ремастеринг официального установочного ISO образа Arch Linux не является необходимым для большинства приложений. Однако, это может быть желательно в некоторых случаях.
 

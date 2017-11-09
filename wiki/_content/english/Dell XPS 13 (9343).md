@@ -212,7 +212,7 @@ If `wifi-menu` and `iwlist scan` fail after driver installation and reboot, try 
 
 ### rfkill issues with KDE
 
-With recent kernel versions (as from 4.4) the rfkill switch works. Under the KDE desktop, the first time that the rfkill switch is used, the mouse pointer freezes. To unfreeze it, switch to another virtual console and back.
+As from kernel version 4.4 the rfkill switch works. The KDE plasma-nm (NetworkManager) widget does not indicate that wlan is active after it has been reactivated, but still connects correctly. The KDE system tray bluetooth widget usually disappears if the switch disables bluetooth, and fails to reappear when it is reactivated. You can work around this by setting the switch not to switch bluetooth in the BIOS setup. With kernel version < 4.13.11 and/or plasma-desktop < 5.11 the mouse pointer may freeze first time that the rfkill switch is used. To unfreeze it, switch to another virtual console and back.
 
 ### EFISTUB does not boot
 

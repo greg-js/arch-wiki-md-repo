@@ -1,4 +1,4 @@
-[isync](http://isync.sourceforge.net/) is a command line application which synchronizes mailboxes; currently Maildir and IMAP4 mailboxes are supported. New messages, message deletions and flag changes can be propagated both ways.
+[isync](http://isync.sourceforge.net/) is a command line application to synchronize mailboxes; it supports Maildir and IMAP4 mailboxes. New messages, message deletions and flag changes can be propagated both ways.
 
 Synchronization is based on unique message identifiers (UIDs), so no identification conflicts can occur (as opposed to some other mail synchronizers). Synchronization state is kept in one local text file per mailbox pair; multiple replicas of a mailbox can be maintained.
 
@@ -6,32 +6,20 @@ Synchronization is based on unique message identifiers (UIDs), so no identificat
 
 ## Contents
 
-*   [1 Features](#Features)
-*   [2 Installing](#Installing)
-*   [3 Configuring](#Configuring)
-*   [4 Usage](#Usage)
-*   [5 Automatic synchronization](#Automatic_synchronization)
-    *   [5.1 Integration with notmuch](#Integration_with_notmuch)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Step #1: Get the certificates](#Step_.231:_Get_the_certificates)
-    *   [6.2 Step #2: Setup mbsync](#Step_.232:_Setup_mbsync)
-    *   [6.3 Exchange 2003](#Exchange_2003)
-*   [7 External Links](#External_Links)
-
-## Features
-
-*   Fine-grained selection of synchronization operations to perform
-*   Synchronizes single mailboxes or entire mailbox collections
-*   Partial mirrors possible: keep only the latest messages locally
-*   Trash functionality: backup messages before removing them
-*   IMAP features:
-    *   Security: supports TLS/SSL via imaps: (port 993) and STARTTLS; CRAM-MD5 for authentication
-    *   Supports NAMESPACE for simplified configuration
-    *   Pipelining for maximum speed (currently only partially implemented)
+*   [1 Installing](#Installing)
+*   [2 Configuring](#Configuring)
+*   [3 Usage](#Usage)
+*   [4 Automatic synchronization](#Automatic_synchronization)
+    *   [4.1 Integration with notmuch](#Integration_with_notmuch)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Step #1: Get the certificates](#Step_.231:_Get_the_certificates)
+    *   [5.2 Step #2: Setup mbsync](#Step_.232:_Setup_mbsync)
+    *   [5.3 Exchange 2003](#Exchange_2003)
+*   [6 External links](#External_links)
 
 ## Installing
 
-Install [isync](https://www.archlinux.org/packages/?name=isync) from the [official repositories](/index.php/Official_repositories "Official repositories") or [isync-git](https://aur.archlinux.org/packages/isync-git/) can be installed from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [isync](https://www.archlinux.org/packages/?name=isync) package or [isync-git](https://aur.archlinux.org/packages/isync-git/) for the development version.
 
 ## Configuring
 
@@ -39,7 +27,7 @@ Install [isync](https://www.archlinux.org/packages/?name=isync) from the [offici
 
 **Note:** **Subfolders** setting in MaildirStore now seems to be required to be set: [iSync Config SubFolders](http://isync.sourceforge.net/mbsync.html) **SubFolders Legacy** worked as previous unset - Oct 2017
 
-First create and customize the main configuration file using this example ~/.mbsyncrc:
+First create and customize the main configuration file using this example `~/.mbsyncrc`:
 
  `~/.mbsyncrc` 
 ```
@@ -106,14 +94,7 @@ Channel sync-googlemail-trash
 
 ```
 
-As you can see, name-translations are possible this way, as well. Now calling
-
-```
-mbsync googlemail
-
-```
-
-will sync all the folders.
+As you can see, name-translations are possible this way, as well.
 
 ## Usage
 
@@ -395,9 +376,9 @@ PipelineDepth 1
 
 in the IMAPStore config part of the Exchange, this problem did not occur any more.
 
-## External Links
+## External links
 
 *   [Home page](http://isync.sourceforge.net/)
-*   [Sourceforge page](http://sourceforge.net/projects/isync/)
-*   [backing up gmail with mbsync](http://kevin.deldycke.com/2012/08/gmail-backup-mbsync/)
-*   [How To Verify SSL Certificate From A Shell Prompt](http://www.cyberciti.biz/faq/test-ssl-certificates-diagnosis-ssl-certificate/)
+*   [Sourceforge page](https://sourceforge.net/projects/isync/)
+*   [backing up gmail with mbsync](https://kevin.deldycke.com/2012/08/gmail-backup-mbsync/)
+*   [How To Verify SSL Certificate From A Shell Prompt](https://www.cyberciti.biz/faq/test-ssl-certificates-diagnosis-ssl-certificate/)

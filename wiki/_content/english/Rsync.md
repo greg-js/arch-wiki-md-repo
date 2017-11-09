@@ -75,7 +75,7 @@ $ rsync host:source destination
 
 ```
 
-Network file transfers use the SSH protocol by default.
+Network file transfers use the [SSH](/index.php/SSH "SSH") protocol by default and `host` can be a real hostname or a predefined profile/alias from `.ssh/config`.
 
 Whether transferring files locally or remotely, rsync first creates an index of block checksums of each source file. This index is used to find any identical blocks of data which might exist in the destination. Such blocks are used in-place, rather than being copied from the source. This can greatly accelerate the synchronization of large files with small changes. For more information, see [official documentation](https://rsync.samba.org/documentation.html), [how rsync works](https://rsync.samba.org/how-rsync-works.html).
 

@@ -1,3 +1,7 @@
+Related articles
+
+*   [Mastodon](/index.php/Mastodon "Mastodon")
+
 [Diaspora](https://www.diasporafoundation.org/) is the privacy aware, personally controlled, do-it-all, open source social network.
 
 On November 23, 2010 was [announced](http://blog.joindiaspora.com/2010/11/23/private-alpha-released.html) that Diaspora is in [private alpha](https://en.wikipedia.org/wiki/Software_release_life_cycle#Alpha "wikipedia:Software release life cycle") phase.
@@ -37,7 +41,7 @@ $ su - diaspora
 Create the database and initialize the schema:
 
 ```
-$ bin/bundle exec rake db:create db:schema:load
+$ bin/bundle exec rake db:create db:migrate
 
 ```
 

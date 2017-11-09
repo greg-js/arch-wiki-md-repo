@@ -290,7 +290,13 @@ You can now [enable](/index.php/Enable "Enable") and start `libvirtd` and its lo
 
 ### Setting up the guest OS
 
-The process of setting up a VM using `virt-manager` is mostly self explainatory, as most of the process comes with fairly comprehensive on-screen instructions. However, you should pay special attention to the following steps :
+The process of setting up a VM using `virt-manager` is mostly self explainatory, as most of the process comes with fairly comprehensive on-screen instructions.
+
+If using `virt-manager`, you have to add your user to the libvirt group by
+
+ `# gpasswd -a user libvirt` to ensure authentication.
+
+However, you should pay special attention to the following steps :
 
 *   When the VM creation wizard asks you to name your VM (final step before clicking "Finish"), check the "Customize before install" checkbox.
 *   In the "Overview" section, [set your firmware to "UEFI"](https://i.imgur.com/73r2ctM.png). If the option is grayed out, make sure that you have correctly specified the location of your firmware in `/etc/libvirt/qemu.conf` and restart `libvirtd.service`.
@@ -397,8 +403,8 @@ On the quad-core machine mentioned above, it would look like this :
 <vcpu placement='static'>4</vcpu>
 <cputune>
     <vcpupin vcpu='0' cpuset='2'/>
-    <vcpupin vcpu='1' cpuset='3'/>
-    <vcpupin vcpu='2' cpuset='6'/>
+    <vcpupin vcpu='1' cpuset='6'/>
+    <vcpupin vcpu='2' cpuset='3'/>
     <vcpupin vcpu='3' cpuset='7'/>
 </cputune>
 ...

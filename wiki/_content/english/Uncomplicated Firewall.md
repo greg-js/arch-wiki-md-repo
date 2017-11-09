@@ -1,6 +1,11 @@
+Related articles
+
+*   [iptables](/index.php/Iptables "Iptables")
+*   [sshguard](/index.php/Sshguard "Sshguard")
+
 From the project [home page](https://launchpad.net/ufw):
 
-	*Ufw stands for Uncomplicated Firewall, and is a program for managing a netfilter [firewall](/index.php/Firewall "Firewall"). It provides a command line interface and aims to be uncomplicated and easy to use.*
+	Ufw stands for Uncomplicated Firewall, and is a program for managing a netfilter [firewall](/index.php/Firewall "Firewall"). It provides a command line interface and aims to be uncomplicated and easy to use.
 
 ## Contents
 
@@ -21,7 +26,7 @@ From the project [home page](https://launchpad.net/ufw):
 
 ## Installation
 
-[ufw](https://www.archlinux.org/packages/?name=ufw) can be installed from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [ufw](https://www.archlinux.org/packages/?name=ufw) package.
 
 Start ufw as [systemd](/index.php/Systemd "Systemd") [service](/index.php/Daemon "Daemon") to have it running and enable it to make it available after boot.
 
@@ -229,6 +234,5 @@ The module will appear under "Network and Connectivity" category.
 
 ## See also
 
-*   [sshguard](/index.php/Sshguard "Sshguard")
 *   [Ubuntu UFW documentation](http://help.ubuntu.com/community/UFW)
 *   [UFW manual](http://manpages.ubuntu.com/manpages/natty/en/man8/ufw.8.html)
