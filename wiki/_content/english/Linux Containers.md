@@ -136,7 +136,7 @@ LXC comes with its own NAT Bridge (lxcbr0).
 
 **Note:** A NAT bridge is a standalone bridge with a private network that is not bridged to the host eth0 or a physical network. It exists as a private subnet in the host.
 
-**Tip:** This is quite useful when WIFI is the only option. There have bean various attempts of creating Bridges on WIFI without much success.
+**Tip:** This is quite useful when WIFI is the only option. There have been various attempts of creating Bridges on WIFI without much success.
 
 To use LXC's NAT Bridge you need to create its configuration file:
 

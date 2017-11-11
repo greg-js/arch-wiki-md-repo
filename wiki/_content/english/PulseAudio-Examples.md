@@ -312,7 +312,7 @@ default-sample-channels=8
 
 ```
 
-If your channels are not correclty mapped or the volume controls for the individual channels do not work as expected in pavucontrol, and you have a HDMI and an anlog soundcard, then try to add the following line to `/etc/pulse/default.pa`
+If your channels are not correclty mapped or the volume controls for the individual channels do not work as expected in pavucontrol, and you have a HDMI and an analog soundcard, then try to add the following line to `/etc/pulse/default.pa`
 
 ```
 load-module module-combine channels=6 channel_map=front-left,front-right,rear-left,rear-right,front-center,lfe

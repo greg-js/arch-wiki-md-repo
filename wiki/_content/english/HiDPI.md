@@ -374,7 +374,7 @@ The output window fontsize can be controlled from Tools → Options → Miscelan
 
 ### Gimp 2.8
 
-Use a high DPI theme, or [adjust](http://gimpforums.com/thread-increase-all-icons-on-hidpi-screen?pid=39113#pid39113) `gtkrc` of an existing theme. (Change all occurrences of the size `button` to `dialog`, for example `GimpToolPalette::tool-icon-size`.)
+Use a high DPI theme, or adjust `gtkrc` of an existing theme. (Change all occurrences of the size `button` to `dialog`, for example `GimpToolPalette::tool-icon-size`.)
 
 There is also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi).
 

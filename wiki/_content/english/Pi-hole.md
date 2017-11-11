@@ -155,7 +155,7 @@ On Pi-hole, login to the web interface ([http://pi.hole](http://pi.hole)), selec
 
 ### Fallback method
 
-**Note:** The above configuration may not be possible on some routers depending on the feature set exposed the firmware. The configuration above is confirmed to work on some open-source firmwares such as [LEDE/OpenWRT](https://forum.lede-project.org/t/lede-pi-hole-works-perfectly-need-to-understand-why-so-i-can-configure-tomatousb-the-same-way/8274) and [TomatoUSB](http://www.linksysinfo.org/index.php?threads/redefining-dns-from-router-to-a-box-running-pi-hole.73576/#post-292078) to name a few.
+**Note:** The above configuration may not be possible on some routers depending on the feature set exposed the firmware. The configuration above is confirmed to work on some popular open-source firmwares such as [LEDE/OpenWRT](https://forum.lede-project.org/t/lede-pi-hole-works-perfectly-need-to-understand-why-so-i-can-configure-tomatousb-the-same-way/8274), [DD-WRT](https://www.dd-wrt.com/site/index), and [TomatoUSB](http://www.linksysinfo.org/index.php?threads/redefining-dns-from-router-to-a-box-running-pi-hole.73576/#post-292078) to name a few.
 
 Users unable to configure the router as directed above are referred to [this guide](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) for setup instructions that gives most of the functionality in the list above. Key limitations of using this method include:
 

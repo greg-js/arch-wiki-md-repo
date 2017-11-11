@@ -1,3 +1,10 @@
+Related articles
+
+*   [Docker](/index.php/Docker "Docker")
+*   [KVM](/index.php/KVM "KVM")
+*   [Libvirt](/index.php/Libvirt "Libvirt")
+*   [VirtualBox](/index.php/VirtualBox "VirtualBox")
+
 [Vagrant](http://www.vagrantup.com) is a tool for managing and configuring virtualised development environments.
 
 Vagrant has a concept of 'providers', which map to the virtualisation engine and its API. The most popular and well-supported provider is Virtualbox; plugins exist for `libvirt`, `kvm`, `lxc`, `vmware` and more.
@@ -39,6 +46,13 @@ $ vagrant plugin install vagrant-vbguest vagrant-share
 ### vagrant-libvirt
 
 This plugin adds a libvirt provider to Vagrant. The gcc and make packages must be installed before this plugin can be installed, and [libvirt](/index.php/Libvirt "Libvirt") and related packages must be installed and configured before using the libvirt provider.
+
+As of November 2017 (Vagrant version 2.0.1-1) the workarounds described below are not needed. Install the plugin normally with
+
+```
+$ vagrant plugin install vagrant-libvirt
+
+```
 
 As of September 2016 (Vagrant version 1.8.5), a normal installation of this plugin fails on Arch Linux. The plugin can be successfully installed with this workaround:
 

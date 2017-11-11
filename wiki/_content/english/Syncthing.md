@@ -79,13 +79,15 @@ Next, you can either change the configuration of the default node (click its nam
 
 In the typical case several machines, like laptops and androids, share a local area network (LAN) behind a network address translation (NAT) router, it is advised for a versatile configuration to:
 
-*   Activate both local and global discovery on each node to allow discovery in all situations, including when a mobile device leaves the LAN and connects to the internet from outside,
+*   Activate both local and global discovery on each node to allow discovery in all situations, including when a mobile device leaves the LAN and connects to the internet from the outside,
 
-*   Use a specific [listen address port](https://docs.syncthing.net/users/config.html#listen-addresses) for each machine, like `tcp://:22010`, `tcp://:22011`, `tcp://:22012` and so forth. This will differentiate them on the global discovery servers and avoid the *"Connected to myself - should not happen"* message on the other local devices whenever they leave the NAT.
+*   Use a different [listen address port](https://docs.syncthing.net/users/config.html#listen-addresses) for each machine, like `tcp://:22010`, `tcp://:22011`, `tcp://:22012` and so forth. This will differentiate them on the global discovery servers and avoid the *"Connected to myself - should not happen"* message on the other local devices whenever they leave the NAT.
 
-*   Enable if possible [UPnP](https://en.wikipedia.org/wiki/universal_plug_and_play "wikipedia:universal plug and play") port forwarding. When a node is discovered, Syncthing will first try to use the listening port of the new node. However, if the incoming port is closed on the remote server end, the local listening port will be used instead. If this one appears to be closed as well, Syncthing will attempt to use UPnP to open the port at the NAT router level. If this is not desirable or not possible, each port should be manually forwarded to the right machine on the LAN. Eventually, if no open port can be found on both sides, [relaying](https://docs.syncthing.net/users/relaying.html) will be used.
+*   Enable if possible [UPnP](https://en.wikipedia.org/wiki/universal_plug_and_play "wikipedia:universal plug and play") port forwarding or manually forward each port. When a node is discovered, Syncthing will first try to use the listening port of the new node. However, if the incoming port is closed on the remote server end, the local listening port will be used instead. If this one appears to be closed as well, Syncthing will attempt to use UPnP to open the port at the NAT router level. If this is not desirable or not possible, each port should be manually forwarded to the right machine on the LAN. Eventually, if no open port can be found on both sides, [relaying](https://docs.syncthing.net/users/relaying.html) will be used.
 
 ## Participate in the infrastructure
+
+One can participate in the [Syncthing infrastructure](https://docs.syncthing.net/dev/infrastructure.html) by running a global discovery server or a relay server.
 
 ### Run a relay
 
@@ -106,7 +108,9 @@ ExecStart=/usr/bin/syncthing-relaysrv -global-rate 500000 -provided-by *relaypro
 
 ### Run a discovery server
 
-[Global discovery](https://docs.syncthing.net/specs/globaldisco-v3.html) is used by Syncthing to find peers on the internet. Any device announces itself at startup to the discovery server which stores the device ID, IP address, port and current time. Then on request, for a given device ID, it returns the information stored in JSON format, for instance: `{"seen":"2017-11-06T14:04:39.005929Z","addresses":["tcp://212.129.18.55:22000"]`}.
+[Global discovery](https://docs.syncthing.net/specs/globaldisco-v3.html) is used by Syncthing to find peers on the internet. Any device announces itself at startup to the discovery server which stores the device ID, IP address, port and current time. Then on request, for a given device ID, it returns the information stored in JSON format, for instance.
+
+As an example, the request `[https://discovery-v4-2.syncthing.net/v2/?device=ITZRNXE-YNROGBZ-HXTH5P7-VK5NYE5-QHRQGE2-7JQ6VNJ-KZUEDIU-5PPR5AM](https://discovery-v4-2.syncthing.net/v2/?device=ITZRNXE-YNROGBZ-HXTH5P7-VK5NYE5-QHRQGE2-7JQ6VNJ-KZUEDIU-5PPR5AM)` returns `{"seen":"2017-12-06T14:04:39.005929Z","addresses":["tcp://212.129.18.55:22000"]`}.
 
 Anyone can run a [discovery server](https://docs.syncthing.net/users/stdiscosrv.html), to run your own, [install](/index.php/Install "Install") the [syncthing-discosrv](https://aur.archlinux.org/packages/syncthing-discosrv/) package.
 
@@ -174,9 +178,9 @@ $ VBoxManage modifyvm *myvmname* --natpf1 "syncthing,tcp,,22001,,22001"
 
 ```
 
-In this setup, relaying should not be necessary: local devices can connect to the VM on port 22001 while global devices should be accessible as long as they have themselves an open port.
+In this setup, relaying should not be necessary: local devices can connect to the VM on port 22001 while global devices are accessible as long as they have themselves an open port.
 
-**Note:** local discovery in this setup is limited because the discovery listening port 21027 is already used by the host. The guest is therefore not able to build a table of local announcements though it can still broadcast to the local network via the VM NAT. The steps described above allow to run a functioning server in the default NAT configuration but bridged networking is recommended for an optimal setup.
+**Note:** local discovery in this setup is limited because the discovery listening port 21027 is already used by the host. The guest is therefore not able to build a table of local announcements though it can still broadcast to the local network via the VM NAT and announce itself. The steps described above allow to run a functioning server in the default NAT configuration but bridged networking is recommended for an optimal setup.
 
 ## Troubleshooting
 

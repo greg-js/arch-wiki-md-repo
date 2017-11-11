@@ -1,3 +1,8 @@
+Related articles
+
+*   [Install from a USB flash drive](/index.php/Install_from_a_USB_flash_drive "Install from a USB flash drive")
+*   [Laptop](/index.php/Laptop "Laptop")
+
 ## Contents
 
 *   [1 Installation](#Installation)

@@ -409,7 +409,7 @@ gsettings set org.nemo.desktop show-desktop-icons false
 
 ### screen recording
 
-(20161229) As of November 2016 there is an ongoing discussion how to implement screen recording. Currently the compositors implement at least basic functionality.
+Currently only [green-recorder](https://aur.archlinux.org/packages/green-recorder/) supports screen recording on Wayland (requires a GNOME session).
 
 ### remote display
 

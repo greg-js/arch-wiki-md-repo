@@ -59,6 +59,8 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 Wireless is working out of the box. Wired networking has not been tested.
 
+There is only one wireless antenna.
+
 ### Bluetooth
 
 Detectable by other devices, has not been tested.

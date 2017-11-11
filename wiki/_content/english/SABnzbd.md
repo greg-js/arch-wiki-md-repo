@@ -35,7 +35,7 @@ Further configuration can be done from within the UI (adding additional servers,
 
 ### Using systemd
 
-Both [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) and [sabnzbd-git](https://aur.archlinux.org/packages/sabnzbd-git/) provide a [systemd](/index.php/Systemd "Systemd") service, create the [user](/index.php/User "User") and [group](/index.php/Group "Group") `sabnzbd`, and use `/opt/sabnzbd/sabnzbd.ini` for configuration.
+Both [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) and [sabnzbd-git](https://aur.archlinux.org/packages/sabnzbd-git/) provide the `sabnzbd.service` [systemd](/index.php/Systemd "Systemd") unit, create the [user](/index.php/User "User") and [group](/index.php/Group "Group") `sabnzbd`, and use `/opt/sabnzbd/sabnzbd.ini` for configuration.
 
 Add users to the `sabnzbd` [group](/index.php/Group "Group") to allow access to SABnzbd files.
 
@@ -54,7 +54,7 @@ Use `~/sabnzbd.ini/sabnzbd.ini` for configuration.
 
 ### Stopping SABnzbd
 
-SABnzbd can be easily shutdown in the web-interface or the [systemd](/index.php/Systemd "Systemd") `sabnzbd` unit.
+SABnzbd can be easily shutdown in the web-interface or the [systemd](/index.php/Systemd "Systemd") `sabnzbd.service` unit.
 
 It is also possible to shutdown a running (remote) SABnzbd client using the provided API:
 

@@ -2,7 +2,7 @@ Related articles
 
 *   [PhpPgAdmin](/index.php/PhpPgAdmin "PhpPgAdmin")
 
-[PostgreSQL](http://www.postgresql.org/) is an open source, community driven, standard compliant object-relational database system.
+[PostgreSQL](https://www.postgresql.org/) is an open source, community driven, standard compliant object-relational database system.
 
 This document describes how to set up PostgreSQL. It also describes how to configure PostgreSQL to be accessible from a remote client. Among other applications, PostgreSQL can be substituted for MySQL as part of the [LAMP](/index.php/LAMP "LAMP") web stack.
 
@@ -96,14 +96,14 @@ As root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enabl
 
 **Tip:** If you create a PostgreSQL user with the same name as your Linux username, it allows you to access the PostgreSQL database shell without having to specify a user to login (which makes it quite convenient).
 
-Become the postgres user. Add a new database user using the [createuser](http://www.postgresql.org/docs/current/static/app-createuser.html) command:
+Become the postgres user. Add a new database user using the [createuser](https://www.postgresql.org/docs/current/static/app-createuser.html) command:
 
 ```
 [postgres]$ createuser --interactive
 
 ```
 
-Create a new database over which the above user has read/write privileges using the [createdb](http://www.postgresql.org/docs/current/static/app-createdb.html) command (execute this command from your login shell if the database user has the same name as your Linux user, otherwise add `-U *database-username*` to the following command):
+Create a new database over which the above user has read/write privileges using the [createdb](https://www.postgresql.org/docs/current/static/app-createdb.html) command (execute this command from your login shell if the database user has the same name as your Linux user, otherwise add `-U *database-username*` to the following command):
 
 ```
 $ createdb myDatabaseName
@@ -114,7 +114,7 @@ $ createdb myDatabaseName
 
 ### Access the database shell
 
-Become the postgres user. Start the primary database shell, [psql](http://www.postgresql.org/docs/current/static/app-psql.html), where you can do all your creation of databases/tables, deletion, set permissions, and run raw SQL commands. Use the `-d` option to connect to the database you created (without specifying a database, `psql` will try to access a database that matches your username).
+Become the postgres user. Start the primary database shell, [psql](https://www.postgresql.org/docs/current/static/app-psql.html), where you can do all your creation of databases/tables, deletion, set permissions, and run raw SQL commands. Use the `-d` option to connect to the database you created (without specifying a database, `psql` will try to access a database that matches your username).
 
 ```
 [postgres]$ psql -d myDatabaseName
@@ -193,7 +193,7 @@ host   all   all   *my_remote_client_ip_address*/32   md5
 
 where `my_remote_client_ip_address` is the IP address of the client.
 
-See the documentation for [pg_hba.conf](http://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html).
+See the documentation for [pg_hba.conf](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html).
 
 After this you should [restart](/index.php/Restart "Restart") `postgresql.service` for the changes to take effect.
 
@@ -333,7 +333,7 @@ template1 | postgres | UTF8      | C         | C     |
 
 *   **pgAdmin** — GUI-based administration tool for PostgreSQL.
 
-	[http://www.pgadmin.org/](http://www.pgadmin.org/) || [pgadmin4](https://www.archlinux.org/packages/?name=pgadmin4)
+	[https://www.pgadmin.org/](https://www.pgadmin.org/) || [pgadmin4](https://www.archlinux.org/packages/?name=pgadmin4)
 
 ## Setup HHVM to work with PostgreSQL
 
@@ -378,7 +378,7 @@ hhvm.extensions[pgsql] = pgsql.so
 
 Upgrading major PostgreSQL versions (i.e. from `9.*x*` to `9.*y*`) requires some extra maintenance.
 
-**Note:** Official PostgreSQL [upgrade documentation](http://www.postgresql.org/docs/current/static/upgrading.html) should be followed.
+**Note:** Official PostgreSQL [upgrade documentation](https://www.postgresql.org/docs/current/static/upgrading.html) should be followed.
 
 **Warning:** The following instructions could cause data loss. **Use at your own risk**.
 
@@ -389,7 +389,7 @@ IgnorePkg = postgresql postgresql-libs
 
 ```
 
-This will ensure you do not accidentally upgrade the database to an incompatible version. When an upgrade is available, pacman will notify you that it is skipping the upgrade because of the entry in `pacman.conf`. Minor version upgrades (e.g. 9.0.3 to 9.0.4) are safe to perform. However, if you do an accidental upgrade to a different major version (e.g. 9.0.x to 9.1.x), you might not be able to access any of your data. Always check the [PostgreSQL home page](http://www.postgresql.org/) to be sure of what steps are required for each upgrade. For a bit about why this is the case, see the [versioning policy](http://www.postgresql.org/support/versioning).
+This will ensure you do not accidentally upgrade the database to an incompatible version. When an upgrade is available, pacman will notify you that it is skipping the upgrade because of the entry in `pacman.conf`. Minor version upgrades (e.g. 9.0.3 to 9.0.4) are safe to perform. However, if you do an accidental upgrade to a different major version (e.g. 9.0.x to 9.1.x), you might not be able to access any of your data. Always check the [PostgreSQL home page](https://www.postgresql.org/) to be sure of what steps are required for each upgrade. For a bit about why this is the case, see the [versioning policy](https://www.postgresql.org/support/versioning).
 
 There are two main ways to upgrade your PostgreSQL database. Read the official documentation for details.
 
@@ -399,15 +399,18 @@ When you are ready, upgrade the following packages: [postgresql](https://www.arc
 
 ```
 # systemctl stop postgresql.service
-# su -l postgres -c 'mv /var/lib/postgres/data /var/lib/postgres/olddata'
-# su -l postgres -c 'initdb --locale en_US.UTF-8 -E UTF8 -D /var/lib/postgres/data'
+# mv /var/lib/postgres/data /var/lib/postgres/olddata
+# mkdir /var/lib/postgres/data
+# chown postgres:postgres /var/lib/postgres/data
+[postgres]$ initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data'
 
 ```
 
-The upgrade invocation will likely look something like the following. **Do not run this command blindly without understanding what it does!** Reference the [upstream pg_upgrade documentation](http://www.postgresql.org/docs/current/static/pgupgrade.html) for details.
+The upgrade invocation will likely look something like the following. **Do not run this command blindly without understanding what it does!** Reference the [upstream pg_upgrade documentation](https://www.postgresql.org/docs/current/static/pgupgrade.html) for details.
 
 ```
-# su -l postgres -c 'pg_upgrade -d /var/lib/postgres/olddata/ -D /var/lib/postgres/data/ -b /opt/pgsql-9.4/bin/ -B /usr/bin/'
+[postgres]$ cd /tmp
+[postgres]$ pg_upgrade -b /opt/pgsql-9.6/bin -B /usr/bin -d /var/lib/postgres/olddata -D /var/lib/postgres/data
 
 ```
 
@@ -415,13 +418,13 @@ The upgrade invocation will likely look something like the following. **Do not r
 
 You could also do something like this (after the upgrade and install of [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade)).
 
-**Note:** Below are the commands for PostgreSQL 9.4\. You can find similar commands in `/opt/` for PostgreSQL 9.2.
+**Note:** Below are the commands for PostgreSQL 9.6\. You can find similar commands in `/opt/` for PostgreSQL 9.2.
 
 ```
 # systemctl stop postgresql.service
-# /opt/pgsql-9.4/bin/pg_ctl -D /var/lib/postgres/olddata/ start
-# /opt/pgsql-9.4/bin/pg_dumpall >> old_backup.sql
-# /opt/pgsql-9.4/bin/pg_ctl -D /var/lib/postgres/olddata/ stop
+# /opt/pgsql-9.6/bin/pg_ctl -D /var/lib/postgres/olddata/ start
+# /opt/pgsql-9.6/bin/pg_dumpall >> old_backup.sql
+# /opt/pgsql-9.6/bin/pg_ctl -D /var/lib/postgres/olddata/ stop
 # systemctl start postgresql.service
 # psql -f old_backup.sql postgres
 
@@ -431,7 +434,7 @@ You could also do something like this (after the upgrade and install of [postgre
 
 ### Improve performance of small transactions
 
-If you are using PostgresSQL on a local machine for development and it seems slow, you could try turning [synchronous_commit off](http://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT) in the configuration. Beware of the [caveats](http://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT), however.
+If you are using PostgresSQL on a local machine for development and it seems slow, you could try turning [synchronous_commit off](https://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT) in the configuration. Beware of the [caveats](https://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT), however.
 
  `/var/lib/postgres/data/postgresql.conf`  `synchronous_commit = off` 
 

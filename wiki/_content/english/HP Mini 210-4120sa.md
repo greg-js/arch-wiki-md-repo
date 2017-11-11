@@ -72,7 +72,7 @@ Audio is supported through ALSA with virtually no configuration. Following the [
 
 ### Video
 
-Kernel module gma500_gfx should be automatically loaded as of Kernel 3.3rc1, see: [Poulsbo](/index.php/Poulsbo "Poulsbo")
+Kernel module gma500_gfx should be automatically loaded, see: [Intel GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600")
 
 ### Webcam
 

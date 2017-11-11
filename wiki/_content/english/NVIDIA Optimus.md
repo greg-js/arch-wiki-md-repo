@@ -1,3 +1,9 @@
+Related articles
+
+*   [Bumblebee](/index.php/Bumblebee "Bumblebee")
+*   [Nouveau](/index.php/Nouveau "Nouveau")
+*   [NVIDIA](/index.php/NVIDIA "NVIDIA")
+
 NVIDIA Optimus is a technology that allows an Intel integrated GPU and discrete NVIDIA GPU to be built into and accessed by a laptop. Getting Optimus graphics to work on Arch Linux requires a few somewhat complicated steps, explained below. There are several methods available:
 
 *   disabling one of the devices in BIOS, which may result in improved battery life if the NVIDIA device is disabled, but may not be available with all BIOSes and does not allow GPU switching
@@ -48,7 +54,7 @@ The proprietary NVIDIA driver does not support dynamic switching like the nouvea
 First, [install](/index.php/Install "Install") the [NVIDIA](/index.php/NVIDIA "NVIDIA") driver and [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr). Then, configure `xorg.conf`. You will need to know the PCI address of the NVIDIA card, which you can find by issuing
 
 ```
-$ lspci | grep -E "VGA|3D"
+$ lspci | egrep 'VGA|3D'
 
 ```
 

@@ -1,13 +1,6 @@
-This should be the page to gather all information on installing and running arch on the Asus Eee. Why? Because the 'old' page is a bit confusing/outdated, wrongly named (makes finding it in a search hard) and the title limits it to just the install precedure.
-
-The 'old' page should be cleaned up and merged into this page, and any future information should also go on this page. If no one that actualy owns an Eee want to do it, then I (Mr.Elendig) can do it, but it will take some time.
-
 ## Contents
 
 *   [1 Eee 700 Series and 900](#Eee_700_Series_and_900)
-    *   [1.1 Installation](#Installation)
-    *   [1.2 Xorg](#Xorg)
-    *   [1.3 Sound](#Sound)
 *   [2 Eee 900A](#Eee_900A)
 *   [3 Eee 901, 904, and 1000(H)](#Eee_901.2C_904.2C_and_1000.28H.29)
 *   [4 Eee 904HA](#Eee_904HA)
@@ -19,67 +12,31 @@ The 'old' page should be cleaned up and merged into this page, and any future in
 *   [10 Eee 1005P(E)](#Eee_1005P.28E.29)
 *   [11 Eee 1011PX](#Eee_1011PX)
 *   [12 Eee 1015B](#Eee_1015B)
-    *   [12.1 Audio](#Audio)
-    *   [12.2 Powersaving](#Powersaving)
 *   [13 Eee 1015 BX](#Eee_1015_BX)
 *   [14 Eee 1015 PE/PEM](#Eee_1015_PE.2FPEM)
     *   [14.1 Hardware](#Hardware)
-    *   [14.2 Installation](#Installation_2)
-        *   [14.2.1 ACPI](#ACPI)
-        *   [14.2.2 Modules](#Modules)
+    *   [14.2 Installation](#Installation)
 *   [15 Eee 1015 PN](#Eee_1015_PN)
 *   [16 Eee 1025C](#Eee_1025C)
 *   [17 Eee 1201T](#Eee_1201T)
-*   [18 Eee 1201NL](#Eee_1201NL)
-*   [19 Eee 1215n](#Eee_1215n)
-*   [20 Eee 1215P](#Eee_1215P)
-*   [21 Eee 1215B](#Eee_1215B)
-    *   [21.1 Installation](#Installation_3)
-    *   [21.2 Audio](#Audio_2)
-    *   [21.3 Video](#Video)
-    *   [21.4 Power Management](#Power_Management)
-    *   [21.5 USB 3.0 on battery](#USB_3.0_on_battery)
+*   [18 Eee 1201N](#Eee_1201N)
+*   [19 Eee 1215N](#Eee_1215N)
+*   [20 Eee 1215B](#Eee_1215B)
+    *   [20.1 Audio](#Audio)
+    *   [20.2 Power Management](#Power_Management)
+    *   [20.3 USB 3.0 on battery](#USB_3.0_on_battery)
 
 # Eee 700 Series and 900
 
-This should be filled with the majority of the content from [ASUS Eee PC 701](/index.php/ASUS_Eee_PC_701 "ASUS Eee PC 701").
-
-### Installation
-
-Installation can be achieved from an external cdrom drive, or from a usb stick configured as described in [Install from USB stick](/index.php/Install_from_USB_stick "Install from USB stick")
-
-The wireless module (ath5k) is now part of the stock kernel. The stock kernel performs very well on the eeepc. You do not need to install any extra packages from AUR for wireless or install any special kernel.
-
-During installation make sure you add the following packages in addition to the base packages for wireless to work.
-
-```
-wireless_tools
-netcfg
-
-```
-
-Thats all you now need for a working eee.
-
-### Xorg
-
-Xorg works without an xorg.conf on the eeepc fine with the new hotplugging system. See [Xorg](/index.php/Xorg "Xorg").
-
-### Sound
-
-If sound does not work in a new installation add the following line to `/etc/modprobe.d/modprobe.conf`
-
-```
-options snd-hda-intel model=3stack-dig
-
-```
+See [ASUS Eee PC 701](/index.php/ASUS_Eee_PC_701 "ASUS Eee PC 701").
 
 # Eee 900A
 
-The 900A is a 900 with a Intel Atom CPU and new hardware (the most is like in 901), you can get help in [Asus Eee PC 900A](/index.php/Asus_Eee_PC_900A "Asus Eee PC 900A").
+See [Asus Eee PC 900A](/index.php/Asus_Eee_PC_900A "Asus Eee PC 900A").
 
 # Eee 901, 904, and 1000(H)
 
-The 901, 904, and 1000(H) all seem to share much-of, if not all the same hardware. The steps for setting up Arch Linux are as follows. NB. There is a separate wiki page as well dedicated to the [ASUS Eee PC 901](/index.php/ASUS_Eee_PC_901 "ASUS Eee PC 901").
+The 901, 904, and 1000(H) all seem to share much-of, if not all the same hardware. See [ASUS Eee PC 901](/index.php/ASUS_Eee_PC_901 "ASUS Eee PC 901").
 
 # Eee 904HA
 
@@ -115,135 +72,7 @@ Some Fn keys might work out of the box but with recent kernels, you won't be abl
 
 # Eee 1015B
 
-Things that "just work":
-
-*   Wlan (ath9k is part of the kernel; some use brcmsmac)
-*   Ethernet
-*   Graphics (with kms and dri2, using the xf86-video-ati driver)
-*   Webcam (using v4l)
-*   Suspend-to-RAM (after installing acpid)
-*   Cardreader (but keucr is in staging, thus **taints the kernel**. PyroPeter experienced **crashes** while he inserted or removed sd cards)
-*   Bluetooth (after installing bluez)
-*   CPU Frequency Scaling (Use acpi_cpufreq since linux 3.7)
-*   TouchPad (support multi-touch after installing xf86-input-synaptics)
-*   Video Acceleration (either [open source driver](/index.php/ATI#Enabling_video_acceleration "ATI") ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)) or [ATI/AMD's propretary driver(catalyst)](/index.php/ATI_Catalyst#Video_acceleration "ATI Catalyst") work)
-
-*/etc/modprobe.d/eeepc1015b.conf:*
-
-```
-# supposed to help against following msg in dmesg:
-# SP5100 TCO timer: mmio address 0xbafe00 already in use
-blacklist sp5100_tco
-
-# if you don't need the sd-card reader you may want to blacklist
-# keucr. it is in staging, thus taints the kernel
-blacklist keucr
-
-# if you find "*ACPI: resource piix4_smbus [io 0x0b00-0x0b07]*
-# *conflicts with ACPI region SMRG [io 0xb00-0xb0f]*" 
-# in /var/log/messages.log ,try to uncomment the following line
-#blacklist i2c_piix4
-
-```
-
-lspci:
-
-```
-00:00.0 Host bridge: Advanced Micro Devices [AMD] Family 14h Processor Root Complex
-00:01.0 VGA compatible controller: Advanced Micro Devices [AMD] nee ATI Device 9805
-00:01.1 Audio device: Advanced Micro Devices [AMD] nee ATI Wrestler HDMI Audio [Radeon HD 6250/6310]
-00:04.0 PCI bridge: Advanced Micro Devices [AMD] Family 14h Processor Root Port
-00:05.0 PCI bridge: Advanced Micro Devices [AMD] Family 14h Processor Root Port
-00:11.0 SATA controller: Advanced Micro Devices [AMD] nee ATI SB7x0/SB8x0/SB9x0 SATA Controller [AHCI mode]
-00:12.0 USB controller: Advanced Micro Devices [AMD] nee ATI SB7x0/SB8x0/SB9x0 USB OHCI0 Controller
-00:12.2 USB controller: Advanced Micro Devices [AMD] nee ATI SB7x0/SB8x0/SB9x0 USB EHCI Controller
-00:13.0 USB controller: Advanced Micro Devices [AMD] nee ATI SB7x0/SB8x0/SB9x0 USB OHCI0 Controller
-00:13.2 USB controller: Advanced Micro Devices [AMD] nee ATI SB7x0/SB8x0/SB9x0 USB EHCI Controller
-00:14.0 SMBus: Advanced Micro Devices [AMD] nee ATI SBx00 SMBus Controller (rev 42)
-00:14.2 Audio device: Advanced Micro Devices [AMD] nee ATI SBx00 Azalia (Intel HDA) (rev 40)
-00:14.3 ISA bridge: Advanced Micro Devices [AMD] nee ATI SB7x0/SB8x0/SB9x0 LPC host controller (rev 40)
-00:14.4 PCI bridge: Advanced Micro Devices [AMD] nee ATI SBx00 PCI to PCI Bridge (rev 40)
-00:15.0 PCI bridge: Advanced Micro Devices [AMD] nee ATI SB700/SB800/SB900 PCI to PCI bridge (PCIE port 0)
-00:18.0 Host bridge: Advanced Micro Devices [AMD] Family 12h/14h Processor Function 0 (rev 43)
-00:18.1 Host bridge: Advanced Micro Devices [AMD] Family 12h/14h Processor Function 1
-00:18.2 Host bridge: Advanced Micro Devices [AMD] Family 12h/14h Processor Function 2
-00:18.3 Host bridge: Advanced Micro Devices [AMD] Family 12h/14h Processor Function 3
-00:18.4 Host bridge: Advanced Micro Devices [AMD] Family 12h/14h Processor Function 4
-00:18.5 Host bridge: Advanced Micro Devices [AMD] Family 12h/14h Processor Function 6
-00:18.6 Host bridge: Advanced Micro Devices [AMD] Family 12h/14h Processor Function 5
-00:18.7 Host bridge: Advanced Micro Devices [AMD] Family 12h/14h Processor Function 7
-01:00.0 Network controller: Atheros Communications Inc. AR9285 Wireless Network Adapter (PCI-Express) (rev 01)
-02:00.0 Ethernet controller: Atheros Communications Inc. AR8152 v2.0 Fast Ethernet (rev c1)
-
-```
-
-On models with ASMedia USB 3.0 chip, replace last 2 line with:
-
-```
-01:00.0 Network controller: Broadcom Corporation BCM4313 802.11b/g/n Wireless LAN Controller (rev 01)
-02:00.0 Ethernet controller: Atheros Communications Inc. AR8152 v2.0 Fast Ethernet (rev c1)
-03:00.0 USB controller: ASMedia Technology Inc. Device 1040
-
-```
-
-lsusb:
-
-```
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-Bus 002 Device 002: ID 13d3:5702 IMC Networks UVC VGA Webcam
-
-```
-
-## Audio
-
-After running alsaconf the graphics card was the default audio output, so I had to create `/etc/asound.conf` with the following contents:
-
-```
-defaults.ctl.card 1
-defaults.pcm.card 1
-defaults.timer.card 1
-
-```
-
-Volume function key for alsa:
-
- `/etc/acpi/handler.sh` 
-```
-......
-        open)
-            #echo "LID opend!">/dev/tty5
-            ;;
-    esac
-    ;;
-## volume control key ##
-button/mute)
-  case "$2" in
-    MUTE) amixer set Master toggle ;;
-  esac
-  ;;
-button/volumedown)
-  case "$2" in
-    VOLDN) amixer set Master 2%- ;;
-  esac
-  ;;
-button/volumeup)
-  case "$2" in
-    VOLUP) amixer set Master 2%+ ;;
-  esac
-  ;;
-## volume control key end ##
-*)
-  logger "ACPI group/action underfined: $1 /$2"
-  ;;
-esac
-```
-
-## Powersaving
-
-When system is idle, [ATI/AMD's propretary driver(catalyst)](/index.php/ATI_Catalyst "ATI Catalyst") saves 2.5W than xf86-video-ati.
+[ASUS Eee PC 1015b](/index.php/ASUS_Eee_PC_1015b "ASUS Eee PC 1015b")
 
 # Eee 1015 BX
 
@@ -362,25 +191,6 @@ Results may vary. The first partition was the Windows 7 installation. The second
 
 Due to the limitations of having 4 partitions per drive I installed arch on the first 107Gb partition and created a swap file instead of a partition as per [Swap](/index.php/Swap "Swap").
 
-### ACPI
-
-ACPI works fine following the [acpid](/index.php/Acpid "Acpid") guide. The following is for older versions of the kernel.
-
-To enable acpi you need to edit menu.lst and add acpi_osi=Linux to the kernel line like so:
-
-```
- kernel /boot/vmlinuz-linux root=/dev/sda1 ro acpi_osi=Linux
-
-```
-
-This enabled you to trigger devices in /sys/devices/platform/eeepc/.
-
-**Note:** As far as I can tell, this is no longer required. If you do add it, the module eeepc-wmi will fail to load - kernel 2.6.39.2-1
-
-### Modules
-
-As of [kernel](http://kernel.org) 3.3.7-1, no extra modules are **required** in order for full usage of Arch Linux on this laptop.
-
 # Eee 1015 PN
 
 [ASUS Eee PC 1015pn](/index.php/ASUS_Eee_PC_1015pn "ASUS Eee PC 1015pn")
@@ -393,27 +203,19 @@ As of [kernel](http://kernel.org) 3.3.7-1, no extra modules are **required** in 
 
 [ASUS Eee PC 1201T](/index.php/ASUS_Eee_PC_1201T "ASUS Eee PC 1201T")
 
-# Eee 1201NL
+# Eee 1201N
 
-[ASUS Eee PC 1201NL](/index.php/ASUS_Eee_PC_1201NL "ASUS Eee PC 1201NL")
+[ASUS Eee PC 1201N](/index.php/ASUS_Eee_PC_1201N "ASUS Eee PC 1201N")
 
-# Eee 1215n
+# Eee 1215N
 
-[ASUS Eee PC 1215n](/index.php/ASUS_Eee_PC_1215n "ASUS Eee PC 1215n")
-
-# Eee 1215P
-
-[ASUS Eee PC 1215p](/index.php/ASUS_Eee_PC_1215p "ASUS Eee PC 1215p")
+[ASUS Eee PC 1215N](/index.php/ASUS_Eee_PC_1215N "ASUS Eee PC 1215N")
 
 # Eee 1215B
 
 Things that work out of the box: Wifi, Ethernet, Video (max resolution available with basic Xorg and xfce packages installed), Touchpad, Keyboard (Fn keys not working).
 
 Things that need work: Audio, Fn keys, Power management.
-
-## Installation
-
-Arch setup encountered no problems, GRUB installed successfully with no damages to Windows (need to uncomment the windows lines in in /boot/grub/menu.lst) and Express Gate.
 
 ## Audio
 
@@ -425,10 +227,6 @@ defaults.ctl.card 1
 ```
 
 (Credit to Touko Korpela from the Debian mailing list)
-
-## Video
-
-YouTube videos with the default ATI driver work flawlessly with a resolution of 720p, while with 1080p playback isn't smooth anymore. Didn't test with the catalyst drivers, maybe a better playback could be achieved.
 
 ## Power Management
 

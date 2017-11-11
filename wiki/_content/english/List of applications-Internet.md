@@ -218,7 +218,7 @@ See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(softw
 
 	[https://cyberfox.8pecxstudios.com/](https://cyberfox.8pecxstudios.com/) || [cyberfox-bin](https://aur.archlinux.org/packages/cyberfox-bin/)
 
-*   **Waterfox** — 64bit Optimized fork of Mozilla Firefox, without data collection and allowing unsigned extensions and 64bit NPAPI plugins.
+*   **Waterfox** — Optimized fork of Mozilla Firefox, without data collection and allowing unsigned extensions and NPAPI plugins.
 
 	[https://www.waterfoxproject.org/](https://www.waterfoxproject.org/) || [waterfox-bin](https://aur.archlinux.org/packages/waterfox-bin/) or [waterfox-git](https://aur.archlinux.org/packages/waterfox-git/)
 
@@ -1340,7 +1340,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **Tickr (formerly News)** — GTK-based RSS Reader that displays feeds as a smooth scrolling line on your Desktop, as known from TV stations.
 
-	[http://newsrssticker.com/](http://newsrssticker.com/) || [tickr](https://aur.archlinux.org/packages/tickr/)
+	[https://www.open-tickr.net/](https://www.open-tickr.net/) || [tickr](https://aur.archlinux.org/packages/tickr/)
 
 *   **Urssus** — Cross platform GUI news aggregator.
 
@@ -1374,9 +1374,9 @@ Some [email clients](#Email_clients) also support NNTP. This section mainly list
 
 See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/List_of_Usenet_newsreaders "wikipedia:List of Usenet newsreaders"), [Wikipedia:Comparison of Usenet newsreaders](https://en.wikipedia.org/wiki/Comparison_of_Usenet_newsreaders "wikipedia:Comparison of Usenet newsreaders").
 
-*   **lottanzb** — A *SABnzbd+* (Usenet binary downloader) GUI front-end written in PyGTK
+*   **lottanzb** — A *SABnzbd* (Usenet binary downloader) GUI front-end written in PyGTK
 
-	[http://www.lottanzb.org/](http://www.lottanzb.org/) || [lottanzb](https://aur.archlinux.org/packages/lottanzb/)
+	[https://launchpad.net/lottanzb/](https://launchpad.net/lottanzb/) || [lottanzb](https://aur.archlinux.org/packages/lottanzb/)
 
 *   **nn** — Alternative more user-friendly(curses-based) Usenet newsreader for UNIX.
 

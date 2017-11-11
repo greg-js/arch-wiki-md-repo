@@ -17,28 +17,13 @@
 *   [3 触摸板](#.E8.A7.A6.E6.91.B8.E6.9D.BF)
 *   [4 Special Buttons](#Special_Buttons)
 *   [5 硬盘冲击保护](#.E7.A1.AC.E7.9B.98.E5.86.B2.E5.87.BB.E4.BF.9D.E6.8A.A4)
+*   [6 参阅](#.E5.8F.82.E9.98.85)
 
 ## 配置笔记本电脑
 
-本文链接到很多其它页面，它们包含把笔记本电脑配置为最佳体验所需的配置。配置笔记本电脑大体上和配置台式机相同，然而，还是会有一些差别。当在笔记本电脑上安装Arch Linux时，下面几项是需要注意的：
-
-*   [#电源管理](#.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86)。电量消耗（怎么尽量延长电池续航时间）？
-    *   [#待机休眠](#.E5.BE.85.E6.9C.BA.E4.BC.91.E7.9C.A0)。如何使笔记本电脑进入待机和休眠状态？
-    *   [#硬盘停转](#.E7.A1.AC.E7.9B.98.E5.81.9C.E8.BD.AC.E9.97.AE.E9.A2.98)。在计算机不活动多长时间以后，使硬盘停转？
-    *   关闭屏幕。在计算机不活动多长时间以后，关闭屏幕？（不只是启动屏保，而是完全关闭屏幕）
-
-*   屏幕亮度。如何调节屏幕亮度？
-*   无线网络。如何配置和连接无线网络？无线网络问题参见[Wireless Setup (简体中文)](/index.php/Wireless_Setup_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless Setup (简体中文)").
-*   多功能键。配置详见[Extra keyboard keys (简体中文)](/index.php/Extra_keyboard_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Extra keyboard keys (简体中文)").
-*   [#触摸板](#.E8.A7.A6.E6.91.B8.E6.9D.BF)。如何配置触摸板（Synaptics或Alps）的灵敏度、加速、键位功能、滚动条？
-*   [#硬盘冲击保护](#.E7.A1.AC.E7.9B.98.E5.86.B2.E5.87.BB.E4.BF.9D.E6.8A.A4)
+本文链接到很多其它页面，它们包含把笔记本电脑配置为最佳体验所需的配置。配置笔记本电脑大体上和配置台式机相同，然而，还是会有一些差别。
 
 在你配置笔记本电脑时，这几项内容都是很关键的。幸运的是，Arch Linux提供了所需的软件工具。下文重点讲述这些软件，并附以适当的提示和教程。
-
-注意：下面的链接可能对你有用：
-
-*   [http://www.linux-on-laptops.com/](http://www.linux-on-laptops.com/)
-*   [http://www.linlap.com/](http://www.linlap.com/)
 
 ## 电源管理
 
@@ -169,3 +154,8 @@ There are several laptops from different vendors featuring shock protection capa
 Currently, only one project, named HDAPS, support this kind of protection, which is prepared for IBM/Lenovo Thinkpads.
 
 Just Check [Hard Disk Active Protection System](/index.php/HDAPS "HDAPS").
+
+## 参阅
+
+*   [http://www.linux-on-laptops.com/](http://www.linux-on-laptops.com/)
+*   [http://www.linlap.com/](http://www.linlap.com/)

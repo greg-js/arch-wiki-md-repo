@@ -1,4 +1,4 @@
-**Note:** This laptop uses a [Poulsbo](/index.php/Poulsbo "Poulsbo") GPU. Hardware acceleration for GPU-related tasks is unsupported. Use the VESA display driver.
+**Note:** This laptop uses a [Intel GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600") GPU. Hardware acceleration for GPU-related tasks is unsupported. Use the VESA display driver.
 
 ## Contents
 
@@ -95,7 +95,7 @@ This only works if PulseAudio is running. To make this permanent, add the pacmd 
 
 ### Video
 
-You have to change the [video driver](/index.php/Poulsbo "Poulsbo"). If the HDMI cable is plugged in, it is enabled on boot. If plugged in after boot, use [xrandr](/index.php/Xrandr "Xrandr") to enable the second monitor:
+See [Intel GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600"). If the HDMI cable is plugged in, it is enabled on boot. If plugged in after boot, use [xrandr](/index.php/Xrandr "Xrandr") to enable the second monitor:
 
 ```
 # xrandr --output DVI-0 --auto

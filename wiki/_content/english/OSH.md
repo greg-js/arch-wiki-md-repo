@@ -6,7 +6,9 @@
     *   [1.1 Smoke Test](#Smoke_Test)
     *   [1.2 Making OSH your default shell](#Making_OSH_your_default_shell)
 *   [2 Uninstallation](#Uninstallation)
-*   [3 See also](#See_also)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Assertion `sts != -1' failed](#Assertion_.60sts_.21.3D_-1.27_failed)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -74,6 +76,26 @@ To this:
 *username*:x:1000:1000:*Full Name*,,,:/home/*username*:/bin/bash
 
 ```
+
+## Troubleshooting
+
+Reproducible bugs/errors may be reported on [Github](https://github.com/oilshell/oil/issues). When filing a report, please include the output of OSH when it is running in verbose mode. To enable verbose mode, execute the following:
+
+```
+$> export OVM_VERBOSE=1
+
+```
+
+### Assertion `sts != -1' failed
+
+```
+$> osh
+osh: Modules/main.c:347: Ovm_Main: Assertion `sts != -1' failed.
+Aborted (core dumped)
+
+```
+
+This error occurs when the OSH binary is stripped. The PKGBUILD file in the AUR explicitly disallows binary stripping, however custom `makepkg` configuration files may override this option. In the event of this error, attempt to reinstall OSH without any custom configurations.
 
 ## See also
 

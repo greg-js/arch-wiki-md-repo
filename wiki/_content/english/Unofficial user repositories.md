@@ -46,28 +46,28 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [3.1.20 tredaelli-systemd](#tredaelli-systemd)
         *   [3.1.21 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
     *   [3.2 Unsigned](#Unsigned_2)
-        *   [3.2.1 archlinuxfr](#archlinuxfr)
-        *   [3.2.2 archlinuxgr](#archlinuxgr)
-        *   [3.2.3 archlinuxgr-kde4](#archlinuxgr-kde4)
-        *   [3.2.4 arsch](#arsch)
-        *   [3.2.5 cinnamon](#cinnamon)
-        *   [3.2.6 heftig](#heftig)
-        *   [3.2.7 home_fusion809_Arch_Extra](#home_fusion809_Arch_Extra)
-        *   [3.2.8 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
-        *   [3.2.9 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
-        *   [3.2.10 noware](#noware)
-        *   [3.2.11 pantheon](#pantheon)
-        *   [3.2.12 pietma](#pietma)
-        *   [3.2.13 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.14 QOwnNotes](#QOwnNotes)
+        *   [3.2.1 andrwe](#andrwe)
+        *   [3.2.2 archlinuxfr](#archlinuxfr)
+        *   [3.2.3 archlinuxgr](#archlinuxgr)
+        *   [3.2.4 archlinuxgr-kde4](#archlinuxgr-kde4)
+        *   [3.2.5 arsch](#arsch)
+        *   [3.2.6 cinnamon](#cinnamon)
+        *   [3.2.7 heftig](#heftig)
+        *   [3.2.8 home_fusion809_Arch_Extra](#home_fusion809_Arch_Extra)
+        *   [3.2.9 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
+        *   [3.2.10 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
+        *   [3.2.11 noware](#noware)
+        *   [3.2.12 pantheon](#pantheon)
+        *   [3.2.13 pietma](#pietma)
+        *   [3.2.14 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
+        *   [3.2.15 QOwnNotes](#QOwnNotes)
 *   [4 i686 only](#i686_only)
     *   [4.1 Signed](#Signed_3)
         *   [4.1.1 xyne-i686](#xyne-i686)
     *   [4.2 Unsigned](#Unsigned_3)
-        *   [4.2.1 andrwe](#andrwe)
-        *   [4.2.2 kpiche](#kpiche)
-        *   [4.2.3 kernel26-pae](#kernel26-pae)
-        *   [4.2.4 linux-pae](#linux-pae)
+        *   [4.2.1 kpiche](#kpiche)
+        *   [4.2.2 kernel26-pae](#kernel26-pae)
+        *   [4.2.3 linux-pae](#linux-pae)
 *   [5 x86_64 only](#x86_64_only)
     *   [5.1 Signed](#Signed_4)
         *   [5.1.1 archsec](#archsec)
@@ -96,20 +96,19 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
-        *   [5.2.3 andrwe](#andrwe_2)
-        *   [5.2.4 brtln](#brtln)
-        *   [5.2.5 imake](#imake)
-        *   [5.2.6 jkanetwork](#jkanetwork)
-        *   [5.2.7 matrixim](#matrixim)
-        *   [5.2.8 mesa-git](#mesa-git)
-        *   [5.2.9 mingw-w64](#mingw-w64)
-        *   [5.2.10 neo_chen](#neo_chen)
-        *   [5.2.11 ownstuff](#ownstuff)
-        *   [5.2.12 pnsft-pur](#pnsft-pur)
-        *   [5.2.13 rakudo](#rakudo)
-        *   [5.2.14 rust-git](#rust-git)
-        *   [5.2.15 trinity](#trinity)
-        *   [5.2.16 zrootfs](#zrootfs)
+        *   [5.2.3 brtln](#brtln)
+        *   [5.2.4 imake](#imake)
+        *   [5.2.5 jkanetwork](#jkanetwork)
+        *   [5.2.6 matrixim](#matrixim)
+        *   [5.2.7 mesa-git](#mesa-git)
+        *   [5.2.8 mingw-w64](#mingw-w64)
+        *   [5.2.9 neo_chen](#neo_chen)
+        *   [5.2.10 ownstuff](#ownstuff)
+        *   [5.2.11 pnsft-pur](#pnsft-pur)
+        *   [5.2.12 rakudo](#rakudo)
+        *   [5.2.13 rust-git](#rust-git)
+        *   [5.2.14 trinity](#trinity)
+        *   [5.2.15 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -176,7 +175,7 @@ Server = https://pkgbuilder-repo.chriswarrick.com/
 
 *   **Maintainer:** [Xyne](https://www.archlinux.org/people/trusted-users/#xyne)
 *   **Description:** A repository for Xyne's own projects containing packages for "any" architecture.
-*   **Upstream page:** [http://xyne.archlinux.ca/projects/](http://xyne.archlinux.ca/projects/)
+*   **Upstream page:** [https://xyne.archlinux.ca/projects/](https://xyne.archlinux.ca/projects/)
 *   **Key-ID:** Not needed, as maintainer is a TU
 
 **Note:** Use this repository only if there is no matching `[xyne-*]` repository for your architecture.
@@ -460,6 +459,18 @@ Server = https://download.opensuse.org/repositories/home:/mrmariusz/ArchLinux/$a
 
 **Note:** Users will need to add the following to these entries: `SigLevel = PackageOptional`
 
+#### andrwe
+
+*   **Maintainer:** Andrwe Lord Weber
+*   **Description:** contains programs I'm using on many systems
+*   **Upstream page:** [http://andrwe.org/linux/repository](http://andrwe.org/linux/repository)
+
+```
+[andrwe]
+Server = http://repo.andrwe.org/$arch
+
+```
+
 #### archlinuxfr
 
 *   **Maintainer:**
@@ -547,7 +558,7 @@ Server = https://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/$
 
 ```
 [home_Minerva_W_Science_Arch_Extra]
-Server = http://download.opensuse.org/repositories/home:/Minerva_W:/Science/Arch_Extra/$arch 
+Server = https://download.opensuse.org/repositories/home:/Minerva_W:/Science/Arch_Extra/$arch 
 
 ```
 
@@ -558,7 +569,7 @@ Server = http://download.opensuse.org/repositories/home:/Minerva_W:/Science/Arch
 
 ```
 [home_Pival81_arch_xapps_Arch_Extra]
-Server = http://download.opensuse.org/repositories/home:/Pival81:/arch:/xapps/Arch_Extra/$arch 
+Server = https://download.opensuse.org/repositories/home:/Pival81:/arch:/xapps/Arch_Extra/$arch 
 
 ```
 
@@ -582,7 +593,7 @@ Server = http://direct.$repo.systems.:2/repository/arch/$arch
 
 ```
 [pantheon]
-Server = http://pkgbuild.com/~alucryd/$repo/$arch
+Server = https://pkgbuild.com/~alucryd/$repo/$arch
 
 ```
 
@@ -605,7 +616,7 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 [home_tarakbumba_archlinux_Arch_Extra_standard]
-Server = http://download.opensuse.org/repositories/home:/tarakbumba:/archlinux/Arch_Extra_standard/$arch
+Server = https://download.opensuse.org/repositories/home:/tarakbumba:/archlinux/Arch_Extra_standard/$arch
 
 ```
 
@@ -616,7 +627,7 @@ Server = http://download.opensuse.org/repositories/home:/tarakbumba:/archlinux/A
 
 ```
 [home_pbek_QOwnNotes_Arch_Extra]
-Server = http://download.opensuse.org/repositories/home:/pbek:/QOwnNotes/Arch_Extra/$arch
+Server = https://download.opensuse.org/repositories/home:/pbek:/QOwnNotes/Arch_Extra/$arch
 
 ```
 
@@ -635,23 +646,11 @@ Server = http://download.opensuse.org/repositories/home:/pbek:/QOwnNotes/Arch_Ex
 
 ```
 [xyne-i686]
-Server = http://xyne.archlinux.ca/repos/xyne
+Server = https://xyne.archlinux.ca/repos/xyne
 
 ```
 
 ### Unsigned
-
-#### andrwe
-
-*   **Maintainer:** Andrwe Lord Weber
-*   **Description:** each program I'm using on x86_64 is compiled for i686 too
-*   **Upstream page:** [http://andrwe.org/linux/repository](http://andrwe.org/linux/repository)
-
-```
-[andrwe]
-Server = http://repo.andrwe.org/i686
-
-```
 
 #### kpiche
 
@@ -947,7 +946,7 @@ Server = http://qutebrowser.org/qt-debug/$arch
 
 ```
 [quarry]
-Server = http://pkgbuild.com/~anatolik/quarry/x86_64/
+Server = https://pkgbuild.com/~anatolik/quarry/x86_64/
 
 ```
 
@@ -988,7 +987,7 @@ Server = http://smoothware.net/$repo/$arch
 
 ```
 [xyne-x86_64]
-Server = http://xyne.archlinux.ca/repos/xyne
+Server = https://xyne.archlinux.ca/repos/xyne
 
 ```
 
@@ -1003,7 +1002,7 @@ Server = http://xyne.archlinux.ca/repos/xyne
 
 ```
 [alucryd]
-Server = http://pkgbuild.com/~alucryd/$repo/x86_64
+Server = https://pkgbuild.com/~alucryd/$repo/x86_64
 
 ```
 
@@ -1014,19 +1013,7 @@ Server = http://pkgbuild.com/~alucryd/$repo/x86_64
 
 ```
 [alucryd-multilib]
-Server = http://pkgbuild.com/~alucryd/$repo/x86_64
-
-```
-
-#### andrwe
-
-*   **Maintainer:** Andrwe Lord Weber
-*   **Description:** contains programs I'm using on many systems
-*   **Upstream page:** [http://andrwe.org/linux/repository](http://andrwe.org/linux/repository)
-
-```
-[andrwe]
-Server = http://repo.andrwe.org/x86_64
+Server = https://pkgbuild.com/~alucryd/$repo/x86_64
 
 ```
 
@@ -1037,7 +1024,7 @@ Server = http://repo.andrwe.org/x86_64
 
 ```
 [brtln]
-Server = http://pkgbuild.com/~barthalion/brtln/$arch/
+Server = https://pkgbuild.com/~barthalion/brtln/$arch/
 
 ```
 
@@ -1083,7 +1070,7 @@ Server = https://repo.matrixim.cc/$repo/$arch
 
 ```
 [mesa-git]
-Server = http://pkgbuild.com/~lcarlier/$repo/$arch
+Server = https://pkgbuild.com/~lcarlier/$repo/$arch
 
 ```
 
@@ -1096,7 +1083,7 @@ Server = http://pkgbuild.com/~lcarlier/$repo/$arch
 
 ```
 [mingw-w64]
-Server = http://downloads.sourceforge.net/project/mingw-w64-archlinux/$arch
+Server = https://downloads.sourceforge.net/project/mingw-w64-archlinux/$arch
 #Server = http://amr.linuxd.org/archlinux/$repo/os/$arch
 
 ```
@@ -1135,7 +1122,7 @@ Server = http://martchus.no-ip.biz/repo/arch/$repo/os/$arch
 
 ```
 [pnsft-pur]
-Server = http://downloads.sourceforge.net/project/pnsft-aur/pur/x86_64
+Server = https://downloads.sourceforge.net/project/pnsft-aur/pur/x86_64
 
 ```
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Display_Power_Management_Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-25，点击[这里](https://wiki.archlinux.org/index.php?title=Display_Power_Management_Signaling&diff=0&oldid=419340)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-01，点击[这里](https://wiki.archlinux.org/index.php?title=Display+Power+Management+Signaling&diff=0&oldid=481650)可以查看翻译后英文页面的改动。
 
 **[DPMS](https://en.wikipedia.org/wiki/VESA_Display_Power_Management_Signaling "wikipedia:VESA Display Power Management Signaling")** (显示电源管理信号，简称DPMS) 可以在计算机一定时间无操作时，将显示器置于节电模式。具体的时间设置可以参考 [[1]](http://linux.die.net/man/3/dpmssettimeouts). 注意有些显示器在不同 DPMS 状态下表现不变。
 
@@ -59,7 +59,7 @@ EndSection
 
 ## 用xset修改DPMS和屏保设定
 
-可以用[官方仓库](/index.php/%E5%AE%98%E6%96%B9%E4%BB%93%E5%BA%93 "官方仓库")中[xorg-xset](https://www.archlinux.org/packages/?name=xorg-xset)提供的`xset`工具关闭屏幕。如果要在shell中关闭显示器，需要在命令前面加上 `sleep 1;` . 例如：
+可以用 [xorg-xset](https://www.archlinux.org/packages/?name=xorg-xset) 提供的`xset`工具关闭屏幕。如果要在shell中关闭显示器，需要在命令前面加上 `sleep 1;` . 例如：
 
 ```
 sleep 1; xset dpms force off
@@ -76,6 +76,8 @@ sleep 1; xset dpms force off
 | xset dpms force off | 立即关闭屏幕 |
 | xset dpms force standby | 待机界面 |
 | xset dpms force suspend | 休眠界面 |
+
+**Note:** 通过 `dpms 0 0 0` 可以将 DPMS 超时都设置成零，这样也可以禁用 DPMS. 这种方式更方便，可以使用 `xset dpms force off` 关闭屏幕。
 
 查看当前设置:
 

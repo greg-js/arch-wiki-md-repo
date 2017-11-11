@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting"). Дата последней синхронизации: 16 марта 2016‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&diff=0&oldid=425976).
+**Состояние перевода:** На этой странице представлен перевод статьи [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting"). Дата последней синхронизации: 10 ноября 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&diff=0&oldid=495864).
 
 Смотрите основную статью [PulseAudio (Русский)](/index.php/PulseAudio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PulseAudio (Русский)").
 
@@ -79,6 +79,7 @@
     *   [7.10 Планировщик в реальном времени](#.D0.9F.D0.BB.D0.B0.D0.BD.D0.B8.D1.80.D0.BE.D0.B2.D1.89.D0.B8.D0.BA_.D0.B2_.D1.80.D0.B5.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.BC_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.B8)
     *   [7.11 Ошибка pactl "неверный параметр" с отрицательным процентным аргументом](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_pactl_.22.D0.BD.D0.B5.D0.B2.D0.B5.D1.80.D0.BD.D1.8B.D0.B9_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.22_.D1.81_.D0.BE.D1.82.D1.80.D0.B8.D1.86.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.BC_.D0.BF.D1.80.D0.BE.D1.86.D0.B5.D0.BD.D1.82.D0.BD.D1.8B.D0.BC_.D0.B0.D1.80.D0.B3.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D0.BE.D0.BC)
     *   [7.12 Резервное устройство не определяется](#.D0.A0.D0.B5.D0.B7.D0.B5.D1.80.D0.B2.D0.BD.D0.BE.D0.B5_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.BE_.D0.BD.D0.B5_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.8F.D0.B5.D1.82.D1.81.D1.8F)
+    *   [7.13 Отправка большого количества пакетов RTP/UDP](#.D0.9E.D1.82.D0.BF.D1.80.D0.B0.D0.B2.D0.BA.D0.B0_.D0.B1.D0.BE.D0.BB.D1.8C.D1.88.D0.BE.D0.B3.D0.BE_.D0.BA.D0.BE.D0.BB.D0.B8.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2_RTP.2FUDP)
 
 ## Звук
 
@@ -1096,7 +1097,7 @@ $ rm -r ~/.pulse ~/.pulse-cookie ~/.config/pulse
 
 ### Pulse переписывает настройки ALSA
 
-PulseAudio обычно переписывает настройки ALSA — например устанавливает alsamixer при загрузке, даже когда демон ALSA загружен. Так как нет иного способа избежать такого поведения, чтобы восстановить настройки ALSA после запуска PulseAudio. Добавьте следующую команду в `.xinitrc` или `.bash_profile` или другой файл [Автоматической загрузки](/index.php/Autostarting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Autostarting (Русский)"):
+PulseAudio обычно переписывает настройки ALSA — например устанавливает alsamixer при загрузке, даже когда демон ALSA загружен. Так как нет иного способа избежать такого поведения, решение заключается в восстановлении настроек ALSA после запуска PulseAudio. Добавьте следующую команду в `.xinitrc` или `.bash_profile` или другой файл [Автоматической загрузки](/index.php/Autostarting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Autostarting (Русский)"):
 
 ```
 restore_alsa() {
@@ -1111,7 +1112,7 @@ restore_alsa &
 
 ### Предотвращение перезагрузки Pulse, после того как процесс был убит (kill)
 
-Иногда вы можете временно отключить Pulse. Для того чтобы сделать это, вы должны предотвратить Pulse от повторного запуска, после того как процесс был убит.
+Иногда вам может потребоваться временно отключить Pulse. Для того чтобы сделать это, вы должны запретить повторный запуск Pulse, после того как процесс был убит.
 
  `~/.config/pulse/client.conf` 
 ```
@@ -1132,13 +1133,13 @@ $ pulseaudio --start
 
 *   Убедитесь, что параметры для устройств вывода настроены правильно.
 
-*   Если вы настроили default.pa для загрузки и использования модулей OSS проверьте [lsof](https://www.archlinux.org/packages/?name=lsof) что устройство `/dev/dsp` не используется другим приложением.
+*   Если вы настроили default.pa для загрузки и использования модулей OSS проверьте с помощью [lsof](https://www.archlinux.org/packages/?name=lsof) что устройство `/dev/dsp` не используется другим приложением.
 
-*   Установите предпочтительный метод работы передискретизации. Используйте `pulseaudio --dump-resample-methods` чтобы увидеть список всех доступных методов ресэмплинга (resample) которые вы можете использовать.
+*   Установите предпочтительный метод работы передискретизации. Используйте `pulseaudio --dump-resample-methods` чтобы увидеть список всех доступных методов ресэмплирования (resample), которые вы можете использовать.
 
-*   Чтобы получить подробную информацию о недавно появившихся незаписанных ошибок или просто получить статус демона, используйте команду `pax11publish -d` и `pulseaudio -v` где `v` опция может быть использована для многократно установления подробности вывода журнала, равное `--log-level[=LEVEL]` опции где LEVEL от 0 до 4\. Смотрите раздел [#Вывод статуса ошибок PulseAudio утилитами проверки](#.D0.92.D1.8B.D0.B2.D0.BE.D0.B4_.D1.81.D1.82.D0.B0.D1.82.D1.83.D1.81.D0.B0_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA_PulseAudio_.D1.83.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D0.B0.D0.BC.D0.B8_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B8).
+*   Чтобы получить подробную информацию о недавно появившихся незаписанных ошибках или просто получить статус демона, используйте команду `pax11publish -d` и `pulseaudio -v`, где `v` опция может быть использована многократно для установления подробности вывода журнала, равное `--log-level[=LEVEL]` опции где LEVEL от 0 до 4\. Смотрите раздел [#Вывод статуса ошибок PulseAudio утилитами проверки](#.D0.92.D1.8B.D0.B2.D0.BE.D0.B4_.D1.81.D1.82.D0.B0.D1.82.D1.83.D1.81.D0.B0_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA_PulseAudio_.D1.83.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D0.B0.D0.BC.D0.B8_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B8).
 
-Для больших подробностей смотрите страницу справки [pax11publish(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pax11publish.1) и [pulseaudio(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pulseaudio.1).
+Для более подробной информации смотрите страницу справки [pax11publish(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pax11publish.1) и [pulseaudio(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pulseaudio.1).
 
 #### Вывод статуса ошибок PulseAudio утилитами проверки
 
@@ -1149,7 +1150,7 @@ N: [pulseaudio] main.c: User-configured server at "user", refusing to start/auto
 
 ```
 
-затем запустите команду `pax11publish -r` и будет хорошо если вы выйдите из системы и войдёте снова. Это всегда требуется при использовании LXDM, поскольку он не перезапускает сервер X при завершении сеанса; смотрите [LXDM#PulseAudio](/index.php/LXDM#PulseAudio "LXDM").
+то запустите команду `pax11publish -r`, и будет не лишним, если вы выйдите из системы и войдёте снова. Последний совет в первую очередь касается пользователей LXDM, поскольку он не перезапускает сервер X при завершении сеанса; смотрите [LXDM#PulseAudio](/index.php/LXDM#PulseAudio "LXDM").
 
 Если команда `pulseaudio -vvvv` показывает ошибку:
 
@@ -1177,9 +1178,9 @@ fs.inotify.max_user_watches = 100000
 
 **Смотрите также**
 
-*   [proc_sys_fs_inotify](http://www.linuxinsight.com/proc_sys_fs_inotify.html) and [dnotify, inotify](http://lwn.net/Articles/604686/)- more details about *inotify/max_user_watches*
+*   [proc_sys_fs_inotify](http://www.linuxinsight.com/proc_sys_fs_inotify.html) и [dnotify, inotify](http://lwn.net/Articles/604686/)- детальное описание *inotify/max_user_watches*
 *   [reasonable amount of inotify watches with Linux](http://stackoverflow.com/questions/535768/what-is-a-reasonable-amount-of-inotify-watches-with-linux?answertab=votes#tab-top)
-*   [inotify(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/inotify.7) - man page
+*   [inotify(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/inotify.7) - страница руководства
 
 ### Демон уже запущен
 
@@ -1202,7 +1203,7 @@ fs.inotify.max_user_watches = 100000
 
 Известные проблемы: [https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/494099](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/494099)
 
-Чтобы это исправить, необходимо изменить: `/etc/pulse/daemon.conf` и включить `enable-lfe-remixing` :
+Чтобы это исправить, необходимо включить `enable-lfe-remixing` в файле `/etc/pulse/daemon.conf`:
 
  `/etc/pulse/daemon.conf` 
 ```
@@ -1233,22 +1234,26 @@ enable-lfe-remixing = yes
 
 ### Ошибка pactl "неверный параметр" с отрицательным процентным аргументом
 
-Команды `pactl`, которые принимают отрицательные процентные аргументов, терпят крах с ошибкой 'недопустимый параметр/опция'. Используйте стандартную оболочку '--' псевдо аргумента отключите парсинг аргумента перед отрицательным элиментом. *Например* `pactl set-sink-volume 1 -- -5%`.
+Команды `pactl`, которые принимают отрицательные процентные значения аргументов, прекращают работу с ошибкой 'недопустимый параметр/опция'. Используйте стандартный псевдо аргумент оболочки '--' для предотвращения обработки отрицательного значения. *Например* `pactl set-sink-volume 1 -- -5%`.
 
 ### Резервное устройство не определяется
 
 По умолчанию PulseAudio не использует настоящее устройство. Вместо этого он использует ["резервный вариант"](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/DefaultDevice/), который применяется только к новым звуковым потокам. Это означает, что ранее запущенные приложения не зависят от вновь установленного резервного устройства.
 
-[gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center), [mate-media](https://www.archlinux.org/packages/?name=mate-media) и [paswitch](https://aur.archlinux.org/packages/paswitch/) справятся с этим. Альтернативно:
+[gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center), [mate-media](https://www.archlinux.org/packages/?name=mate-media) и [paswitch](https://aur.archlinux.org/packages/paswitch/) справятся с этим. В противном случае:
 
 1\. Переместите старые потоки вручную в [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) на новую звуковую карту.
 
-2\. Остановить Pulse, стереть "stream-volumes" в `~/.config/pulse` и/или `~/.pulse` и перезапустить Pulse. Это также сбросит громкость у приложений.
+2\. Остановите Pulse, сотрите "stream-volumes" в `~/.config/pulse` и/или `~/.pulse` и перезапустите Pulse. Это также сбросит громкость у приложений.
 
-3\. Отключите устройства чтения потока. Это может понадобиться если не хотите чтобы искались различные звуковые карты с различными приложениями.
+3\. Отключите устройства чтения потока. Это может не понадобиться если вы используете различные звуковые карты с разными приложениями.
 
  `/etc/pulse/default.pa` 
 ```
 load-module module-stream-restore restore_device=false
 
 ```
+
+### Отправка большого количества пакетов RTP/UDP
+
+В некоторых случаях, настройка по умолчанию может блокировать сеть отправкой очень большого количества пакетов UDP. [[9]](https://bugs.freedesktop.org/show_bug.cgi?id=44777) Для решения этой проблемы запустите `paprefs` и отключите "Multicast/RTP Sender".[[10]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)

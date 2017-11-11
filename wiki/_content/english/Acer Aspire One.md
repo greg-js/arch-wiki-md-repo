@@ -426,9 +426,7 @@ You will need to install packages:
 *   xf86-video-intel
 *   xf86-input-synaptics
 
-For Acer Spire One model D270 xf86-video-intel does not work. Install xf86-video-fbdev instead [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1232202#p1232202).
-
-The Acer Aspire One model A0751h uses the [Poulsbo](/index.php/Poulsbo "Poulsbo") chipset, which is, as of October 2009, incompletely supported in Linux. Instead of using the xf86-video-intel driver, an unofficial repository and driver may be used. This is not an officially-supported driver, and it may or may not work for you. See [this thread in the forums](https://bbs.archlinux.org/viewtopic.php?id=78719) for current status.
+For Acer Spire One model D270 has [Intel GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600") graphics, so [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) does not work. Install [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev) instead [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1232202#p1232202).
 
 Alternatively, using the instructions above and in the [Uvesafb](/index.php/Uvesafb "Uvesafb") article to set up the console framebuffer, and then installing and configuring the xf86-video-fbdev driver, will provide the full resolution -- backlight brightness control is impossible with this method, however.
 

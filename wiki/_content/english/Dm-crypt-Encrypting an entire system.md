@@ -702,8 +702,8 @@ Note that if full-disk encryption is not required, the methods using LUKS descri
 
 **Tip:** If headerless encryption is your goal but you are unsure about the lack of key-derivation with *plain* mode, then two alternatives are:
 
-*   [tcplay](/index.php/Tcplay "Tcplay") which offers headerless encryption but with the PBKDF2 function, or
-*   dm-crypt LUKS mode with a detached header by using the *cryptsetup* `--header` option. It cannot be used with the standard *encrypt* hook, but the hook [may be modified](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties").
+*   [dm-crypt LUKS mode with a detached header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") by using the *cryptsetup* `--header` option. It cannot be used with the standard *encrypt* hook, but the hook may be modified.
+*   [tcplay](/index.php/Tcplay "Tcplay") which offers headerless encryption but with the PBKDF2 function.
 
 The scenario uses two USB sticks:
 

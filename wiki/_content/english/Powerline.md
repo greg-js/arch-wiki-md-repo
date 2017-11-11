@@ -44,7 +44,7 @@ Substitute `*path/to/vim/plugins/directory*` with the actual directory, such as 
 
 ### Fonts
 
-Powerline uses special glyphs and symbols that will not appear correctly unless they are added to fontconfig or patched fonts are installed and used. The fontconfig and some patched fonts are available in the [powerline-fonts](https://www.archlinux.org/packages/?name=powerline-fonts) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+Powerline uses special glyphs and symbols that will not appear correctly unless they are added to fontconfig or patched fonts are installed and used. The fontconfig and some patched fonts are available in the [powerline-fonts](https://www.archlinux.org/packages/?name=powerline-fonts) package from the [official repositories](/index.php/Official_repositories "Official repositories"). A reduced set of fonts for the text console are available in [powerline-console-fonts](https://aur.archlinux.org/packages/powerline-console-fonts/).
 
 ### Airline-vim alternative
 

@@ -1,5 +1,11 @@
 **翻译状态：** 本文是英文页面 [Archiso](/index.php/Archiso "Archiso") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-07-30，点击[这里](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=481230)可以查看翻译后英文页面的改动。
 
+相关文章
+
+*   [Remastering the Install ISO](/index.php/Remastering_the_Install_ISO "Remastering the Install ISO")
+*   [PXE](/index.php/PXE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PXE (简体中文)")
+*   [Archboot](/index.php/Archboot_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Archboot (简体中文)")
+
 **Archiso** 是一组 bash 脚本，它能够建立功能全面的 Arch Linux 的 Live CD/DVD/USB 映像。它同样是用来生成官方映像的工具，但由于它是一个非常通用的工具，所以它可以被用来生成从救援系统、安装盘，到特殊爱好的 Live CD/DVD/USB 系统——无人知晓还有其他什么。简单地说，如果要将 Arch 放在一条闪光的船上，它可以帮你做到这一点。Archiso 的核心以及灵魂是 *mkarchiso*。它的所有选项都写在它的用法输出上，所以它的直接使用方法将不在这里讨论。相反，这篇 wiki 文章将导引你迅速建立你的 Live 介质。
 
 ## Contents
@@ -282,18 +288,16 @@ ExecStart=-/sbin/agetty --autologin **isouser** --noclear %I 38400 linux
 
 ## 构建ISO
 
-现在，你已经准备好把你的文件转换成 .iso，以便可以刻录到 CD 或 USB。
+现在，你已经准备好把你的文件转换成 .iso，以便可以刻录到 CD 或 USB：
 
-Now you are ready to turn your files into the .iso which you can then burn to CD or USB:
-
-First create the `out/` directory,
+首先创建 `out/` 目录，
 
 ```
 # mkdir ~/archlive/out/
 
 ```
 
-then inside `~/archlive`, execute:
+然后在 `~/archlive` 里面执行：
 
 ```
 # ./build.sh -v
@@ -304,43 +308,43 @@ then inside `~/archlive`, execute:
 
 ### 重建ISO
 
-Rebuilding the iso after modifications is not officially supported. However, it is easily possible by applying two steps. First you have to remove lock files in the work directory:
+在修改之后重建 ISO 不被官方支持。但是，通过应用两个步骤很容易。首先，您必须删除工作目录中的锁定文件：
 
 ```
 # rm -v work/build.make_*
 
 ```
 
-Furthermore it is required to edit the script `airootfs/root/customize_airootfs.sh`, and add an `id` command in the beginning of the `useradd` line as shown here. Otherwise the rebuild stops at this point because the user that is to be added already exists [[2]](https://bugs.archlinux.org/task/41865).
+此外，需要编辑脚本 `airootfs/root/customize_airootfs.sh`，并在 `useradd` 行的开头添加 `id` 命令，如下所示。否则，重建将在此处停止，因为要添加的用户已经存在 [[2]](https://bugs.archlinux.org/task/41865)。
 
 ```
 ! id arch && useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /usr/bin/zsh arch
 
 ```
 
-Also remove persistent data such as created users or symlinks such as `/etc/sudoers`.
+同时删除创建的用户或符号链接，如 `/etc/sudoers` 等持久性数据。
 
-Rebuilds can be sped up slightly by editing the pacstrap script (located at /bin/pacstrap) and changing the following at line 361:
+通过编辑 pacstrap 脚本（位于 /bin/pacstrap）并在第 361 行更改以下内容，可以稍微加快重建速度：
 
-Before:
+修改前:
 
 ```
 if ! pacman -r "$newroot" -Sy "${pacman_args[@]}"; then
 
 ```
 
-After:
+修改后:
 
 ```
 if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 
 ```
 
-This increases the speed of the initial bootstrap, since it doesn't have to download and install any of the base packages that are already installed.
+这增加了初始引导的速度，因为它不必下载和安装任何已经安装的基础包。
 
 ## 使用ISO
 
-See the [Category:Getting and installing Arch#Installation methods](/index.php/Category:Getting_and_installing_Arch#Installation_methods "Category:Getting and installing Arch") section for various options.
+有关各种选项，请参见 [Category:Getting_and_installing_Arch_(简体中文)#安装方式](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85.E6.96.B9.E5.BC.8F "Category:Getting and installing Arch (简体中文)") 部分。
 
 ## Tips and tricks
 

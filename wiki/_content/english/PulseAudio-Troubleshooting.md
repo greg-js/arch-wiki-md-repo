@@ -1204,7 +1204,7 @@ Also check user autostart files and directories, such as [xinitrc](/index.php/Xi
 
 Known issue: [https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/494099](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/494099)
 
-To fix this, must edit: `/etc/pulse/daemon.conf` and enable `enable-lfe-remixing` :
+To fix this, must edit `/etc/pulse/daemon.conf` and enable `enable-lfe-remixing` :
 
  `/etc/pulse/daemon.conf` 
 ```

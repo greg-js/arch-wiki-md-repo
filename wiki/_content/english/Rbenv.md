@@ -1,3 +1,9 @@
+Related articles
+
+*   [RVM](/index.php/RVM "RVM")
+*   [Chruby](/index.php/Chruby "Chruby")
+*   [Ruby](/index.php/Ruby "Ruby")
+
 [rbenv](https://github.com/sstephenson/rbenv) (Simple Ruby Version Management) lets you easily switch between multiple versions of Ruby. It's simple, unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing well.
 
 Another tool to be used for the same purpose is [RVM](/index.php/RVM "RVM").
@@ -27,7 +33,7 @@ rbenv can be extended via a plugin system, and the rbenv wiki includes a [list o
 Before compiling, make sure you have all the dependencies needed:
 
 ```
- pacman -S --needed gcc5 base-devel libffi libyaml openssl zlib
+ pacman -S --needed gcc6 base-devel libffi libyaml openssl zlib
 
 ```
 
@@ -49,10 +55,10 @@ Installation of Ruby 2.3.x may break down due to openssl version and/or segmenta
 
 Here's a way how you can make a ruby compile:
 
-1\. Install **gcc-5** and **openssl-1.0** packages first:
+1\. Install **gcc-6** and **openssl-1.0** packages first:
 
 ```
- sudo pacman -Syyu openssl-1.0 gcc5
+ sudo pacman -Syyu openssl-1.0 gcc6
 
 ```
 

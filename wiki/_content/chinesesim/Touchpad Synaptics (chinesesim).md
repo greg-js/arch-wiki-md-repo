@@ -457,7 +457,7 @@ $ syndaemon -i 0.5 -t -K -R
 
 #### 基本桌面
 
-非桌面环境额可以使用下面通用规则：
+非桌面环境可以使用下面通用规则：
 
  `/etc/udev/rules.d/01-touchpad.rules` 
 ```

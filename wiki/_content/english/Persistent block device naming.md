@@ -101,6 +101,10 @@ The labels of your filesystems can be changed. Following are some methods for ch
 
 	`mlabel -i /dev/XXX ::<label>` using [mtools](https://www.archlinux.org/packages/?name=mtools)
 
+	exfat 
+
+	`exfatlabel /dev/XXX <label>` using [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils)
+
 	ntfs 
 
 	`ntfslabel /dev/XXX <label>` using [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g)

@@ -9,7 +9,7 @@ The Nokia Booklet 3G is a small, light and nice Netbook with some interesting fe
 *   No fans, no noise, moderate hot.
 *   Bluetooth and wifi integrated.
 
-Most of the hardware of the Booklet if fairly compatible with Arch Linux out of the box. The worst part is always the Intel GMA500 graphics card, with good support for 2D acceleration (general experience is smooth and good), but a total lack of 3D and video acceleration, and some problems with HDMI output and suspend.
+Most of the hardware of the Booklet if fairly compatible with Arch Linux out of the box. The worst part is always the [Intel GMA 500](/index.php/Intel_GMA_500 "Intel GMA 500") graphics card, with good support for 2D acceleration (general experience is smooth and good), but a total lack of 3D and video acceleration, and some problems with HDMI output and suspend.
 
 Probably the second bad thing is the hard disk speed, but there are some tricks we can do with Arch to improve it.
 
@@ -30,7 +30,7 @@ Follow the [Installation guide](/index.php/Installation_guide "Installation guid
 
 ## Graphics Card
 
-See [Poulsbo](/index.php/Poulsbo "Poulsbo") for configuration and options (including brightness control).
+See [Intel GMA 500](/index.php/Intel_GMA_500 "Intel GMA 500") for configuration and options (including brightness control).
 
 HDMI out only works with `modesetting` driver (which is the newer one).
 

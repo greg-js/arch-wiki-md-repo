@@ -189,4 +189,4 @@ That is all for making a repository. You can now see it on your [http://localhos
 
 ## See also
 
-*   [How To Install A Public Git Repository On A Debian Server](http://www.howtoforge.com/how-to-install-a-public-git-repository-on-a-debian-server) — HowtoForge page used as the main source for this article.
+*   [How To Install A Public Git Repository On A Debian Server](https://www.howtoforge.com/how-to-install-a-public-git-repository-on-a-debian-server) — HowtoForge page used as the main source for this article.

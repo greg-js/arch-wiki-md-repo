@@ -6,7 +6,9 @@
     *   [1.1 Lunar](#Lunar)
     *   [1.2 Kinetic](#Kinetic)
     *   [1.3 Configure the build tool](#Configure_the_build_tool)
-*   [2 Rebuild when shared libraries are updated](#Rebuild_when_shared_libraries_are_updated)
+*   [2 catkin_make](#catkin_make)
+*   [3 catkin build](#catkin_build)
+*   [4 Rebuild when shared libraries are updated](#Rebuild_when_shared_libraries_are_updated)
 
 ## Installation Instructions
 
@@ -22,12 +24,25 @@ Packages are being added on an as-needed basis. Please send package requests to 
 
 ### Configure the build tool
 
+## catkin_make
+
 Note that catkin uses python2, and therefore catkin_make may fail unless it is explicitly pointed to the python2 install. To do so, add the following alias to your .bashrc (or equivalent):
 
 ```
 alias catkin_make="catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so"
 
 ```
+
+## catkin build
+
+For configuring the systems using the `catkin build` environment, one have to configure the catkin workspace as usual and issue a
+
+```
+catkin config -DPYTHON_EXECUTABLE\=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so"
+
+```
+
+Afterwards, use `catkin build` as normal. Please remember to reconfigure your catkin whenever you delete the configuration files (i.e. the `catkin_ws` directory)
 
 ## Rebuild when shared libraries are updated
 

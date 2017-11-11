@@ -52,7 +52,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 
 [Install](/index.php/Install "Install") the [mesa](https://www.archlinux.org/packages/?name=mesa) package, which provides the DRI driver for 3D acceleration.
 
-*   For 32-bit application support on x86_64, also install [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) from [multilib](/index.php/Multilib "Multilib").
+*   For 32-bit application support, also install the [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) package from the [multilib](/index.php/Multilib "Multilib") repository.
 *   For the DDX driver (which provides 2D acceleration in [Xorg](/index.php/Xorg "Xorg")), [install](/index.php/Install "Install") the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package. (Often not recommended, see note below.)
 *   For [Vulkan](/index.php/Vulkan "Vulkan") support (*Ivy Bridge* and newer), install the [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel) package.
 
@@ -238,7 +238,7 @@ See [Backlight](/index.php/Backlight "Backlight").
 
 ### SNA issues
 
-*SNA* is the default acceleration method in [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). If you are experience issues with *SNA* (e.g. pixelated graphics, corrupt text, etc.), try using *UXA* instead, which can be done by adding the following line to your [configuration file](#Xorg_configuration):
+*SNA* is the default acceleration method in [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). If you experience issues with *SNA* (e.g. pixelated graphics, corrupt text, etc.), try using *UXA* instead, which can be done by adding the following line to your [configuration file](#Xorg_configuration):
 
 ```
 Option      "AccelMethod"  "uxa"

@@ -174,7 +174,7 @@ exec bash -c 'pidof chromium &>/dev/null || exec /usr/bin/chromium --disk-cache-
 
 ### Wallpaper and transparency
 
-Example for setting transparency using [xcompmgr](/index.php/Xcompmgr "Xcompmgr") and nitrogen. First start nitrogen and set the desired wallpaper. Then use this in your .ratpoisonrc
+Example for setting transparency using [xcompmgr](/index.php/Xcompmgr "Xcompmgr") and nitrogen. First start nitrogen and set the desired wallpaper. Then use this in your `~/.ratpoisonrc`
 
  `Wallpaper and transparency` 
 ```
@@ -200,7 +200,7 @@ exec nitrogen --restore
 
 ## Focus follows mouse
 
-The Arch linux ratpoison package installs the build script, sloppy.c, in /usr/share/ratpoison/. It can be used to enable focus follows mouse in ratpoison. To enable it:
+`sloppy.c` is a build script for [ratpoison](https://www.archlinux.org/packages/?name=ratpoison) and can be found in `/usr/share/ratpoison/`. To enable focus follows mouse for `ratpoison`, run the following:
 
 ```
 # cd /usr/share/ratpoison/
@@ -209,7 +209,7 @@ The Arch linux ratpoison package installs the build script, sloppy.c, in /usr/sh
 
 ```
 
-To enable it upon ratpoison startup, put the following in ~/.ratpoisonrc
+To autostart focus follows mouse, add the following to `~/.ratpoisonrc`:
 
 ```
 exec /usr/share/ratpoison/sloppy

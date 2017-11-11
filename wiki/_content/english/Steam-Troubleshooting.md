@@ -47,6 +47,7 @@ Related articles
 *   [23 Launching games on nvidia optimus laptops](#Launching_games_on_nvidia_optimus_laptops)
 *   [24 "Needs to be online" error](#.22Needs_to_be_online.22_error)
 *   [25 Steamlink cannot find host computer](#Steamlink_cannot_find_host_computer)
+*   [26 Steam won't remember password](#Steam_won.27t_remember_password)
 
 ## Debugging Steam
 
@@ -529,3 +530,18 @@ Steam connects through UDP 27036, 27031 and TCP 27036, 27037\. You need to add t
  iptables -A -d TCP -p tcp --dport 27037 --src Your-subnet-here -j ACCEPT -m comment --comment "SteamLink"
 
 ```
+
+## Steam won't remember password
+
+	Related: [steam-for-linux#5030](https://github.com/ValveSoftware/steam-for-linux/issues/5030)
+
+As of 2017-11-10, Steam for Linux has a bug which causes it to forget the password of some users.
+
+As a workaround, after logging in to Steam, run the following in your terminal:
+
+```
+$ chmod 555 ~/.steam/registry.vdf
+
+```
+
+This will make the file read-only so Steam cannot edit it, and thus not log you out.

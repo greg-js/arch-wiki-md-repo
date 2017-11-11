@@ -21,6 +21,8 @@ Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point. For th
 
 [Install](/index.php/Install "Install") the [gpointing-device-settings](https://www.archlinux.org/packages/?name=gpointing-device-settings) package.
 
+**Note:** This software is not maintained anymore (last release in 2013). It may not allow deep configuration when [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) is used.
+
 ## Middle button scroll
 
 When using [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput), middle-button scrolling is enabled by default.

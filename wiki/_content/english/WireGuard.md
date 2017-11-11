@@ -8,8 +8,11 @@ From the [WireGuard](https://www.wireguard.io/) project homepage:
 *   [2 Usage](#Usage)
     *   [2.1 Server](#Server)
     *   [2.2 Client](#Client)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 DKMS module not available](#DKMS_module_not_available)
+*   [3 Setup a VPN server](#Setup_a_VPN_server)
+    *   [3.1 Server](#Server_2)
+    *   [3.2 Client](#Client_2)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 DKMS module not available](#DKMS_module_not_available)
 
 ## Installation
 
@@ -23,6 +26,8 @@ To create a public and private key
 $ wg genkey | tee privatekey | wg pubkey > publickey
 
 ```
+
+The following demonstartes how to setup a simple connection between two peers.
 
 #### Server
 
@@ -55,6 +60,46 @@ $ wg showconf wg0 > /etc/wireguard/wg0.conf
 $ wg setconf wg0 /etc/wireguard/wg0.conf
 
 ```
+
+## Setup a VPN server
+
+Wireguard comes with a tool to quickly create and tearn down VPN servers and clients, `wg-quick`. Note that the config file used here is not a valid config file that can be used with `wg setconf`.
+
+#### Server
+
+ `/etc/wireguard/wg0server.conf` 
+```
+[Interface]
+Address = 10.200.100.1/24
+PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+ListenPort = 51820
+PrivateKey = [SERVER PRIVATE KEY]
+
+[Peer]
+PublicKey = [CLIENT PUBLIC KEY]
+AllowedIPs = 10.200.100.2/32  # This denotes the clients IP.
+```
+
+Bring this interface up by using `wg-quick up wg0server`, and use `wg-quick down wg0server` to bring it down.
+
+#### Client
+
+ `/etc/wireguard/wg0.conf` 
+```
+[Interface]
+Address = 10.200.100.2/32  # The client IP from wg0server.conf
+PrivateKey = [CLIENT PRIVATE KEY]
+DNS = 10.200.100.1
+
+[Peer]
+PublicKey = [SERVER PUBLICKEY]
+AllowedIPs = 0.0.0.0/0
+Endpoint = [SERVER ENDPOINT]:51820
+PersistentKeepalive = 25
+```
+
+Bring this interface up by using `wg-quick up wg0`, and use `wg-quick down wg0` to bring it down.
 
 ## Troubleshooting
 

@@ -43,6 +43,7 @@ From the [official website](http://www.mathworks.com/products/matlab/):
     *   [5.14 MATLAB hangs for several minutes when closing Help Browser](#MATLAB_hangs_for_several_minutes_when_closing_Help_Browser)
     *   [5.15 Some dropdown menus cannot be selected](#Some_dropdown_menus_cannot_be_selected)
     *   [5.16 Not starting - licensing error](#Not_starting_-_licensing_error)
+    *   [5.17 MATLAB crashes with "Failure loading desktop class" on startup](#MATLAB_crashes_with_.22Failure_loading_desktop_class.22_on_startup)
 
 ## Overview
 
@@ -527,3 +528,29 @@ Licensing error: -9,57.
 ```
 
 a re-[activation](#Activation) might solve the problem.
+
+### MATLAB crashes with "Failure loading desktop class" on startup
+
+In case MATLAB won't start and starting it from command line gives you the following error:
+
+ `$ matlab` 
+```
+Fatal Internal Error: Internal Error: Failure occurs during desktop startup. Details: Failure loading desktop class.
+
+```
+
+and you have the option [`-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel`](/index.php/Java#GTK_LookAndFeel "Java") set in your `_JAVA_OPTIONS` environment variable, start MATLAB with
+
+```
+$ _JAVA_OPTIONS= matlab
+
+```
+
+If this works, add the line
+
+```
+export _JAVA_OPTIONS=
+
+```
+
+to your MATLAB launcher script. Optionally re-add other Java options.

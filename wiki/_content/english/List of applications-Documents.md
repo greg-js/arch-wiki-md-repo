@@ -79,6 +79,10 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 	[http://www.abisource.com/](http://www.abisource.com/) || [abiword](https://www.archlinux.org/packages/?name=abiword)
 
+*   **[Antiword](/index.php?title=Antiword&action=edit&redlink=1 "Antiword (page does not exist)")** — MS Word reader.
+
+	[http://http://www.winfield.demon.nl/](http://http://www.winfield.demon.nl/) || [antiword](https://www.archlinux.org/packages/?name=antiword)
+
 *   **[BlueGriffon](https://en.wikipedia.org/wiki/BlueGriffon "wikipedia:BlueGriffon")** — WYSIWYG content editor for the World Wide Web.
 
 	[http://www.bluegriffon.com/](http://www.bluegriffon.com/) || [bluegriffon](https://www.archlinux.org/packages/?name=bluegriffon)

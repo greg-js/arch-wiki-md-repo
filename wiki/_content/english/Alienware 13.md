@@ -10,6 +10,7 @@ See the [Installation guide](/index.php/Installation_guide "Installation guide")
 *   [4 Switchable graphics](#Switchable_graphics)
 *   [5 Keyboard lights](#Keyboard_lights)
 *   [6 OLED screen brightness](#OLED_screen_brightness)
+*   [7 OLED screen doesn't light up after resume](#OLED_screen_doesn.27t_light_up_after_resume)
 
 ## Getting Linux to boot
 
@@ -183,3 +184,48 @@ With gnome, the brightness control keys toggles the on-screen display, but it do
 xrandr --output eDP1 --brightness .5
 
 ```
+
+Until brightness control is supported by the kernel, we can use the following script to read off the brightness values from sysfs and apply xrandr brightness reduction to it:
+
+```
+$ cat /usr/local/bin/xbacklightmon 
+
+```
+
+```
+#!/bin/sh
+
+path=/sys/class/backlight/acpi_video0
+
+luminance() {
+    read -r level < "$path"/actual_brightness
+    factor=$((max))
+    new_brightness="$(bc -l <<< "scale = 2; $level / $factor")"
+    printf '%f
+' $new_brightness
+}
+
+read -r max < "$path"/max_brightness
+
+xrandr --output eDP-1 --brightness "$(luminance)"
+
+inotifywait -me modify --format * "$path"/actual_brightness | while read; do*
+    xrandr --output eDP-1 --brightness "$(luminance)"
+done
+
+```
+
+Make it executable and add it to your DE's autostart and you are set. We use inotifywait to know when the value is modified so we don't busy wait but are still responsive.
+
+## OLED screen doesn't light up after resume
+
+Sometimes when you sleep the computer and resume it, the OLED screen will flicker but not actually light up again. To fix this use the following xrandr command:
+
+```
+$ cat /usr/local/bin/resmon 
+#!/bin/sh
+xrandr -d :0.0 --output eDP-1 --off && xrandr -d :0.0 --output eDP-1 --auto
+
+```
+
+I have added it to a script so that I can easily run it if the monitor is off after resume: You can add it to a keyboard shortcut, or use run command, whichever is easier.

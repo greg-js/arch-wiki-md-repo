@@ -1,3 +1,7 @@
+Related articles
+
+*   [GNOME](/index.php/GNOME "GNOME")
+
 Web is the default web browser for [GNOME](https://live.gnome.org/). Web provides a simple and minimalist interface for accessing the internet. Whilst it is developed primarily for GNOME, Web works acceptably in other [desktop environments](/index.php/Desktop_environments "Desktop environments") as well.
 
 **Note:** Web was known as [Epiphany](http://projects.gnome.org/epiphany/) prior to version 3.4\. The application was given new descriptive names, one for each supported language. The name *Epiphany* is still used in numerous places such as the executable name, some package names, some desktop entries, and some GSettings schemas.
@@ -13,7 +17,7 @@ Web is the default web browser for [GNOME](https://live.gnome.org/). Web provide
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Pixelated fonts](#Pixelated_fonts)
     *   [4.2 Font hinting](#Font_hinting)
-    *   [4.3 Ad-blocking does not work](#Ad-blocking_does_not_work)
+    *   [4.3 No HTML5 video](#No_HTML5_video)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -73,16 +77,9 @@ Some websites such as github.com tend to use a bitmap font from X11, named `Clea
 
 Web does not respect GNOME hinting settings, but respects Fontconfig one. Check [Font configuration](/index.php/Font_configuration "Font configuration") for further instructions.
 
-### Ad-blocking does not work
+### No HTML5 video
 
-Close Web and delete the current filters configuration:
-
-```
-rm -r ~/.config/epiphany/adblock/
-
-```
-
-On restart, the filter should be reset.
+Install [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) for HTML5 H264 and WebM videos support.
 
 ## See also
 

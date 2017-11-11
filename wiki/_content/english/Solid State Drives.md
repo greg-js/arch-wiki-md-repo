@@ -4,8 +4,9 @@ Related articles
 *   [Solid State Drives/Memory cell clearing](/index.php/Solid_State_Drives/Memory_cell_clearing "Solid State Drives/Memory cell clearing")
 *   [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices")
 *   [Improving performance#Storage devices](/index.php/Improving_performance#Storage_devices "Improving performance")
+*   [Flashcache](/index.php/Flashcache "Flashcache")
 
-This article covers special topics for operating [w:Solid State Drives](https://en.wikipedia.org/wiki/Solid_State_Drive "w:Solid State Drive") (SSDs) and other flash-memory based storage devices. If you want to partition an SSD for a specific purpose, it may be useful to consider the [List of file systems optimized for flash memory](https://en.wikipedia.org/wiki/List_of_file_systems#File_systems_optimized_for_flash_memory.2C_solid_state_media "w:List of file systems"). For general usage, you should simply choose your preferred [filesystem](/index.php/Filesystem "Filesystem").
+This article covers special topics for operating [Solid State Drives](https://en.wikipedia.org/wiki/Solid-state_drive "wikipedia:Solid-state drive") (SSDs) and other flash-memory based storage devices. If you want to partition an SSD for a specific purpose, it may be useful to consider the [List of file systems optimized for flash memory](https://en.wikipedia.org/wiki/List_of_file_systems#File_systems_optimized_for_flash_memory.2C_solid_state_media "wikipedia:List of file systems"). For general usage, you should simply choose your preferred [filesystem](/index.php/Filesystem "Filesystem").
 
 ## Contents
 
@@ -40,7 +41,7 @@ This article covers special topics for operating [w:Solid State Drives](https://
 
 ### TRIM
 
-Most SSDs support the [ATA_TRIM command](https://en.wikipedia.org/wiki/TRIM "wikipedia:TRIM") for sustained long-term performance and wear-leveling. A [techspot](http://www.techspot.com/review/737-ocz-vector-150-ssd/page9.html) article shows performance benchmark examples of before and after filling an SSD with data.
+Most SSDs support the [ATA_TRIM command](https://en.wikipedia.org/wiki/TRIM "wikipedia:TRIM") for sustained long-term performance and wear-leveling. A [techspot article](https://www.techspot.com/review/737-ocz-vector-150-ssd/page9.html) shows performance benchmark examples of before and after filling an SSD with data.
 
 As of Linux kernel version 3.8 onwards, support for TRIM was continually added for the different [filesystems](/index.php/Filesystems "Filesystems"). See the following table for an indicative overview:
 
@@ -49,9 +50,9 @@ As of Linux kernel version 3.8 onwards, support for TRIM was continually added f
 (*fstrim*) | References
 and notes |
 | [Ext3](/index.php/Ext3 "Ext3") | No | ? |
-| [Ext4](/index.php/Ext4 "Ext4") | Yes | Yes | [[1]](http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/ext4.txt#n344) |
+| [Ext4](/index.php/Ext4 "Ext4") | Yes | Yes | [[1]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/ext4.txt#n344) |
 | [Btrfs](/index.php/Btrfs "Btrfs") | Yes | Yes |
-| [JFS](/index.php/JFS "JFS") | Yes | Yes | [[2]](http://www.phoronix.com/scan.php?page=news_item&px=MTE5ODY) |
+| [JFS](/index.php/JFS "JFS") | Yes | Yes | [[2]](https://www.phoronix.com/scan.php?page=news_item&px=MTE5ODY) |
 | [XFS](/index.php/XFS "XFS") | Yes | Yes | [[3]](http://xfs.org/index.php/FITRIM/discard) |
 | [F2FS](/index.php/F2FS "F2FS") | Yes | Yes |
 | [VFAT](/index.php/VFAT "VFAT") | Yes | No |
@@ -70,13 +71,13 @@ And check the values of DISC-GRAN and DISC-MAX columns. Non-zero values indicate
 
 Or [install](/index.php/Install "Install") [hdparm](https://www.archlinux.org/packages/?name=hdparm) package and run:
 
+ `# hdparm -I /dev/sda | grep TRIM` 
 ```
-# hdparm -I /dev/sda | grep TRIM
         *    Data Set Management TRIM supported (limit 1 block)
 
 ```
 
-**Note:** There are different types of TRIM support defined by the specification. Hence, the output may differ depending what the drive supports. See [w:TRIM#ATA](https://en.wikipedia.org/wiki/TRIM#ATA "w:TRIM") for more information.
+**Note:** There are different types of TRIM support defined by the specification. Hence, the output may differ depending what the drive supports. See [Wikipedia:TRIM#ATA](https://en.wikipedia.org/wiki/TRIM#ATA "wikipedia:TRIM") for more information.
 
 #### Periodic TRIM
 
@@ -90,7 +91,7 @@ To query the units activity and status, see [journalctl](/index.php/Journalctl "
 
 **Warning:** Unfortunately, there are wide quality gaps of SSD's bios' to perform continuous TRIM, which is also why using the `discard` mount flag is [recommended against](https://forums.freebsd.org/threads/56951/#post-328912) generally by ext filesystem developer Theodore Ts'o. If in doubt about your hardware, apply [#Periodic TRIM](#Periodic_TRIM) instead.
 
-**Note:** Before [SATA 3.1](https://en.wikipedia.org/wiki/Serial_ATA#SATA_revision_3.1 "w:Serial ATA") all TRIM commands were synchronous, so continuous trimming would produce frequent system freezes. In this case, applying [#Periodic TRIM](#Periodic_TRIM) less often is better alternative. Similar issue holds also for a [number of devices](https://github.com/torvalds/linux/blob/master/drivers/ata/libata-core.c#L4523-L4536), for which queued TRIM command execution was blacklisted due to [serious data corruption](https://blog.algolia.com/when-solid-state-drives-are-not-that-solid/). See [Wikipedia:Trim (computing)#Shortcomings](https://en.wikipedia.org/wiki/Trim_(computing)#Shortcomings for details.
+**Note:** Before [SATA 3.1](https://en.wikipedia.org/wiki/Serial_ATA#SATA_revision_3.1 for details.
 
 Using the `discard` option for a mount in `/etc/fstab` enables continuous TRIM in device operations:
 
@@ -99,7 +100,7 @@ Using the `discard` option for a mount in `/etc/fstab` enables continuous TRIM i
 
 ```
 
-The main benefit of continuous TRIM is speed; an SSD can perform more efficient [garbage collection](http://arstechnica.com/gadgets/2015/04/ask-ars-my-ssd-does-garbage-collection-so-i-dont-need-trim-right/). However, results vary and particularly earlier SSD generations may also show just the opposite effect. Also for this reason, some distributions decided against using it (e.g. Ubuntu: see [this article](http://www.phoronix.com/scan.php?page=news_item&px=MTUxOTY) and the [related blueprint](https://blueprints.launchpad.net/ubuntu/+spec/core-1311-ssd-trimming)).
+The main benefit of continuous TRIM is speed; an SSD can perform more efficient [garbage collection](https://arstechnica.com/gadgets/2015/04/ask-ars-my-ssd-does-garbage-collection-so-i-dont-need-trim-right/). However, results vary and particularly earlier SSD generations may also show just the opposite effect. Also for this reason, some distributions decided against using it (e.g. Ubuntu: see [this article](https://www.phoronix.com/scan.php?page=news_item&px=MTUxOTY) and the [related blueprint](https://blueprints.launchpad.net/ubuntu/+spec/core-1311-ssd-trimming)).
 
 **Note:** There is no need for the `discard` flag if you run `fstrim` periodically.
 
@@ -133,11 +134,11 @@ Change the value of `issue_discards` option from 0 to 1 in `/etc/lvm/lvm.conf`.
 
 #### dm-crypt
 
-**Warning:** The discard option allows discard requests to be passed through the encrypted block device. This improves performance on SSD storage but has security implications. See [Dm-crypt/TRIM support for SSD](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") for more information.
+**Warning:** The discard option allows discard requests to be passed through the encrypted block device. This improves performance on SSD storage but has security implications. See [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") for more information.
 
-For non-root filesystems, configure `/etc/crypttab` to include `discard` in the list of options for encrypted block devices located on an SSD (see [Dm-crypt/System configuration#crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration")).
+For non-root filesystems, configure `/etc/crypttab` to include `discard` in the list of options for encrypted block devices located on an SSD (see [dm-crypt/System configuration#crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration")).
 
-For the root filesystem, follow the instructions from [Dm-crypt/TRIM support for SSD](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") to add the right kernel parameter to the bootloader configuration.
+For the root filesystem, follow the instructions from [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") to add the right kernel parameter to the bootloader configuration.
 
 ### Maximizing performance
 
@@ -166,7 +167,7 @@ Operations like formatting the device or installing operating systems are not af
 
 The above output shows the device is **not locked** by a HDD-password on boot and the **frozen** state safeguards the device against malwares which may try to lock it by setting a password to it at runtime.
 
-If you intend to set a password to a "frozen" device yourself, a motherboard BIOS with support for it is required. A lot of notebooks have support, because it is required for [hardware encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption"), but support may not be trivial for a desktop/server board. For the Intel DH67CL/BL motherboard, for example, the motherboard has to be set to "maintenance mode" by a physical jumper to access the settings (see [[5]](http://sstahlman.blogspot.in/2014/07/hardware-fde-with-intel-ssd-330-on.html?showComment=1411193181867#c4579383928221016762), [[6]](https://communities.intel.com/message/251978#251978)).
+If you intend to set a password to a "frozen" device yourself, a motherboard BIOS with support for it is required. A lot of notebooks have support, because it is required for [hardware encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption"), but support may not be trivial for a desktop/server board. For the Intel DH67CL/BL motherboard, for example, the motherboard has to be set to "maintenance mode" by a physical jumper to access the settings (see [[5]](https://sstahlman.blogspot.in/2014/07/hardware-fde-with-intel-ssd-330-on.html?showComment=1411193181867#c4579383928221016762), [[6]](https://communities.intel.com/message/251978#251978)).
 
 **Warning:** Do not try to change the above **lock** security settings with `hdparm` unless you know exactly what you are doing.
 
@@ -174,13 +175,13 @@ If you intend to erase the SSD, see [Securely wipe disk#hdparm](/index.php/Secur
 
 #### SSD memory cell clearing
 
-On occasion, users may wish to completely reset an SSD's cells to the same virgin state they were at the time the device was installed thus restoring it to its [factory default write performance](http://www.anandtech.com/storage/showdoc.aspx?i=3531&p=8). Write performance is known to degrade over time even on SSDs with native TRIM support. TRIM only safeguards against file deletes, not replacements such as an incremental save.
+On occasion, users may wish to completely reset an SSD's cells to the same virgin state they were at the time the device was installed thus restoring it to its [factory default write performance](https://www.anandtech.com/show/2738/8). Write performance is known to degrade over time even on SSDs with native TRIM support. TRIM only safeguards against file deletes, not replacements such as an incremental save.
 
 The reset is easily accomplished in a three step procedure denoted on the [SSD memory cell clearing](/index.php/SSD_memory_cell_clearing "SSD memory cell clearing") wiki article. If the reason for the reset is to wipe data, you may not want to rely on the SSD bios to perform it securely. See [Securely wipe disk#Flash memory](/index.php/Securely_wipe_disk#Flash_memory "Securely wipe disk") for further information and examples to perform a wipe.
 
 #### Hardware encryption
 
-As noted in [#Hdparm shows frozen state](#Hdparm_shows_.22frozen.22_state) setting a password for a storage device (SSD/HDD) in the BIOS may also initialize the hardware encryption of devices supporting it. If the device also conforms to the OPAL standard, this may also be achieved without a respective BIOS feature to set the passphrase, see [Self-Encrypting Drives](/index.php/Self-Encrypting_Drives "Self-Encrypting Drives").
+As noted in [#Hdparm shows "frozen" state](#Hdparm_shows_.22frozen.22_state) setting a password for a storage device (SSD/HDD) in the BIOS may also initialize the hardware encryption of devices supporting it. If the device also conforms to the OPAL standard, this may also be achieved without a respective BIOS feature to set the passphrase, see [Self-Encrypting Drives](/index.php/Self-Encrypting_Drives "Self-Encrypting Drives").
 
 ## Troubleshooting
 
@@ -224,11 +225,11 @@ If you are starting to encounter SATA related errors when using such a daemon, y
 
 ### ADATA
 
-ADATA has a utility available for Linux (i686) on their support page [here](http://www.adata.com.tw/index.php?action=ss_main&page=ss_content_driver&lan=en). The link to latest firmware will appear after selecting the model. The latest Linux update utility is packed with firmware and needs to be run as root. One may need to set correct permissions for binary file first.
+ADATA has a utility available for Linux (i686) on their [support page](http://www.adata.com.tw/index.php?action=ss_main&page=ss_content_driver&lan=en). The link to latest firmware will appear after selecting the model. The latest Linux update utility is packed with firmware and needs to be run as root. One may need to set correct permissions for binary file first.
 
 ### Crucial
 
-Crucial provides an option for updating the firmware with an ISO image. These images can be found after selecting the product [here](http://www.crucial.com/usa/en/support-ssd) and downloading the "Manual Boot File."
+Crucial provides an option for updating the firmware with an ISO image. These images can be found after selecting the product on their [SSD support page](http://www.crucial.com/usa/en/support-ssd) and downloading the "Manual Boot File."
 
 **Note:** ISO images provided by Crucial does not seem to be hybrid. If you will use just the `dd` command to copy the image to some device, the [MBR](/index.php/MBR "MBR") won't be present, making such device unbootable.
 
@@ -252,7 +253,7 @@ Intel has a Linux live system based [Firmware Update Tool](https://downloadcente
 
 ### Kingston
 
-Kingston has a Linux utility to update the firmware of Sandforce controller based drives: [SSD support page](http://www.kingston.com/en/support/technical/category/ssd). Click the images on the page to go to a support page for your SSD model. Support specifically for, e.g. the SH100S3 SSD, can be found here: [support page](http://www.hyperxgaming.com/us/support/technical/products?model=sh100s3).
+Kingston has a Linux utility to update the firmware of Sandforce controller based drives: [SSD support page](https://www.kingston.com/en/support/technical/category/ssd). Click the images on the page to go to a support page for your SSD model. Support specifically for, e.g. the SH100S3 SSD, can be found on [HyperX support page](https://www.hyperxgaming.com/us/support/technical/products?model=sh100s3).
 
 ### Mushkin
 
@@ -260,11 +261,11 @@ The lesser known Mushkin brand Solid State drives also use Sandforce controllers
 
 ### OCZ
 
-OCZ has a command line utility available for Linux (i686 and x86_64) on their forum [here](http://www.ocztechnology.com/ssd_tools/). The AUR provides [ocz-ssd-utility](https://aur.archlinux.org/packages/ocz-ssd-utility/), [ocztoolbox](https://aur.archlinux.org/packages/ocztoolbox/) and [oczclout](https://aur.archlinux.org/packages/oczclout/).
+OCZ has a [Command Line Online Update Tool (CLOUT)](https://www.ocz.com/us/download/clout) available for Linux. The AUR provides [ocz-ssd-utility](https://aur.archlinux.org/packages/ocz-ssd-utility/), [ocztoolbox](https://aur.archlinux.org/packages/ocztoolbox/) and [oczclout](https://aur.archlinux.org/packages/oczclout/).
 
 ### Samsung
 
-Samsung notes that update methods other than using their Magician Software are "not supported," but it is possible. The Magician Software can be used to make a USB drive bootable with the firmware update. Samsung provides pre-made [bootable ISO images](http://www.samsung.com/global/business/semiconductor/samsungssd/downloads.html) that can be used to update the firmware. Another option is to use Samsung's [samsung_magician](https://aur.archlinux.org/packages/samsung_magician/), which is available in the AUR. Magician only supports Samsung-branded SSDs; those manufactured by Samsung for OEMs (e.g., Lenovo) are not supported.
+Samsung notes that update methods other than using their Magician Software are "not supported," but it is possible. The Magician Software can be used to make a USB drive bootable with the firmware update. Samsung provides pre-made [bootable ISO images](https://www.samsung.com/semiconductor/minisite/ssd/download/tools.html) that can be used to update the firmware. Another option is to use Samsung's [samsung_magician](https://aur.archlinux.org/packages/samsung_magician/), which is available in the AUR. Magician only supports Samsung-branded SSDs; those manufactured by Samsung for OEMs (e.g., Lenovo) are not supported.
 
 **Note:** Samsung does not make it obvious at all that they actually provide these. They seem to have 4 different firmware update pages, and each references different ways of doing things.
 
@@ -274,7 +275,7 @@ Users preferring to run the firmware update from a live USB created under Linux 
 
 Alternatively, the firmware can be upgraded natively, without making a bootable USB stick, as shown below.
 
-First visit the [Samsung downloads page](http://www.samsung.com/global/business/semiconductor/minisite/SSD/global/html/support/downloads.html) and download the latest firmware for Windows, which is available as a disk image. In the following, `Samsung_SSD_840_EVO_EXT0DB6Q.iso` is used as an example file name, adjust it accordingly.
+First visit the [Samsung downloads page](https://www.samsung.com/semiconductor/minisite/ssd/download/tools.html) and download the latest firmware for Windows, which is available as a disk image. In the following, `Samsung_SSD_840_EVO_EXT0DB6Q.iso` is used as an example file name, adjust it accordingly.
 
 Setup the disk image:
 
@@ -347,17 +348,16 @@ The iso images just contain a linux kernel and an initrd. Extract them to `/boot
 
 See also:
 
-SanDisk Extreme SSD [Firmware Release notes](http://kb.sandisk.com/app/answers/detail/a_id/10127) and [Manual Firmware update version R211](http://kb.sandisk.com/app/answers/detail/a_id/10476)
+SanDisk Extreme SSD [Firmware Release notes](https://kb.sandisk.com/app/answers/detail/a_id/10127) and [Manual Firmware update version R211](https://kb.sandisk.com/app/answers/detail/a_id/10476)
 
-SanDisk Ultra SSD [Firmware release notes](http://kb.sandisk.com/app/answers/detail/a_id/10192) and [Manual Firmware update version 365A13F0](http://kb.sandisk.com/app/answers/detail/a_id/10477)
+SanDisk Ultra SSD [Firmware release notes](https://kb.sandisk.com/app/answers/detail/a_id/10192) and [Manual Firmware update version 365A13F0](https://kb.sandisk.com/app/answers/detail/a_id/10477)
 
 ## See also
 
-*   [Discussion on Reddit about installing Arch on an SSD](http://www.reddit.com/r/archlinux/comments/rkwjm/what_should_i_keep_in_mind_when_installing_on_ssd/)
-*   See the [Flashcache](/index.php/Flashcache "Flashcache") article for advanced information on using solid-state with rotational drives for top performance.
+*   [Discussion on Reddit about installing Arch on an SSD](https://www.reddit.com/r/archlinux/comments/rkwjm/what_should_i_keep_in_mind_when_installing_on_ssd/)
 *   [Re: Varying Leafsize and Nodesize in Btrfs](http://permalink.gmane.org/gmane.comp.file-systems.btrfs/19446)
 *   [Re: SSD alignment and Btrfs sector size](http://thread.gmane.org/gmane.comp.file-systems.btrfs/19650/focus=19667)
-*   [Erase Block (Alignment) Misinformation?](http://forums.anandtech.com/showthread.php?t=2266113)
-*   [Is alignment to erase block size needed for modern SSD's?](http://superuser.com/questions/492084/is-alignment-to-erase-block-size-needed-for-modern-ssds)
+*   [Erase Block (Alignment) Misinformation?](https://forums.anandtech.com/threads/erase-block-alignment-misinformation.2266113/)
+*   [Is alignment to erase block size needed for modern SSD's?](https://superuser.com/questions/492084/is-alignment-to-erase-block-size-needed-for-modern-ssds)
 *   [Btrfs support for efficient SSD operation (data blocks alignment)](http://thread.gmane.org/gmane.comp.file-systems.btrfs/15646)
-*   [SSD, Erase Block Size & LVM: PV on raw device, Alignment](http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment)
+*   [SSD, Erase Block Size & LVM: PV on raw device, Alignment](https://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment)

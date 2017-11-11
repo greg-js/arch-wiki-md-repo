@@ -1,4 +1,4 @@
-This page provides a variety of configurations and optimizations for getting the Acer Aspire 3000 Series of Laptops running fast and smooth. Specifically for the **Acer Aspire 3000 ZL5** and based off the article for the [Acer Aspire 3003 WLMi](/index.php/Acer_Aspire_3003_WLMi "Acer Aspire 3003 WLMi")
+This page provides a variety of configurations and optimizations for getting the Acer Aspire 3000 Series of Laptops running fast and smooth. Specifically for the <a class="mw-selflink selflink">Acer Aspire 3000 ZL5</a> and based off the article for the [Acer Aspire 3003 WLMi](/index.php/Acer_Aspire_3003_WLMi "Acer Aspire 3003 WLMi")
 
 ## Contents
 

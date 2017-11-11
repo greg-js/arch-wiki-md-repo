@@ -20,9 +20,9 @@
     *   [5.2 Modifying the encrypt hook for multiple partitions](#Modifying_the_encrypt_hook_for_multiple_partitions)
         *   [5.2.1 Root filesystem spanning multiple partitions](#Root_filesystem_spanning_multiple_partitions)
         *   [5.2.2 Multiple non-root partitions](#Multiple_non-root_partitions)
-    *   [5.3 Encrypted system using a detached LUKS header](#Encrypted_system_using_a_detached_LUKS_header)
-        *   [5.3.1 Using systemd hook](#Using_systemd_hook)
-        *   [5.3.2 Modifying encrypt hook](#Modifying_encrypt_hook)
+*   [6 Encrypted system using a detached LUKS header](#Encrypted_system_using_a_detached_LUKS_header)
+    *   [6.1 Using systemd hook](#Using_systemd_hook)
+    *   [6.2 Modifying encrypt hook](#Modifying_encrypt_hook)
 
 ## Securing the unencrypted boot partition
 
@@ -59,7 +59,7 @@ Prepare the removable drive (`/dev/sdx`).
 Copy your existing `/boot` contents to the new one.
 
 ```
-# cp -R -i -d /boot/* /mnt
+# cp -ai /boot/* /mnt/
 
 ```
 
@@ -362,7 +362,7 @@ For LUKS devices unlocked manually on the console or via `/etc/crypttab` either 
 
 The `encrypt` hook only allows for a **single** `cryptdevice=` entry ([FS#23182](https://bugs.archlinux.org/task/23182)). In system setups with multiple drives this may be limiting, because *dm-crypt* has no feature to exceed the physical device. For example, take "LVM on LUKS": The entire LVM exists inside a LUKS mapper. This is perfectly fine for a single-drive system, since there is only one device to decrypt. But what happens when you want to increase the size of the LVM? You cannot, at least not without modifying the `encrypt` hook.
 
-The following sections briefly show alternatives to overcome the limitation. The first deals with how to expand a [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system") setup to a new disk. The second with modifying the `encrypt` hook to unlock multiple disks in LUKS setups without LVM. The third section then again uses LVM, but modifies the `encrypt` hook to unlock the encrypted LVM with a detached LUKS header.
+The following sections briefly show alternatives to overcome the limitation. The first deals with how to expand a [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system") setup to a new disk. The second with modifying the `encrypt` hook to unlock multiple disks in LUKS setups without LVM.
 
 ### Expanding LVM on multiple disks
 
@@ -458,7 +458,7 @@ kernel /boot/vmlinuz-linux root=/dev/md0 ro md=0,/dev/sda1,/dev/sdb1 md=1,/dev/s
 
 ```
 
-### Encrypted system using a detached LUKS header
+## Encrypted system using a detached LUKS header
 
 This example follows the same setup as in [dm-crypt/Encrypting an entire system#Plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system"), which should be read first before following this guide.
 
@@ -475,7 +475,7 @@ See [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-
 Open the container:
 
 ```
-# cryptsetup open --header header.img --type luks /dev/sdX enc
+# cryptsetup open --type luks --header header.img /dev/sdX enc
 
 ```
 
@@ -492,7 +492,7 @@ Follow the installation procedure up to the mkinitcpio step (you should now be `
 
 There are two options for initramfs to support a detached LUKS header.
 
-#### Using systemd hook
+### Using systemd hook
 
 First create `/etc/crypttab.initramfs` and add the encrypted device to it. The syntax is defined in [crypttab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5)
 
@@ -511,7 +511,7 @@ HOOKS=(... **systemd** ... block **sd-encrypt** sd-lvm2 filesystems ...)
 
 **Note:** No cryptsetup parameters need to be passed to the kernel command line, since`/etc/crypttab.initramfs` will be added as `/etc/crypttab` in the initramfs. If you wish to specify them in the kernel command line see [dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration") for the supported options.
 
-#### Modifying encrypt hook
+### Modifying encrypt hook
 
 This method shows how to modify the `encrypt` hook in order to use a detached LUKS header. Now the `encrypt` hook has to be modified to let `cryptsetup` use the separate header ([FS#42851](https://bugs.archlinux.org/task/42851); base source and idea for these changes [published on the BBS](https://bbs.archlinux.org/viewtopic.php?pid=1076346#p1076346)). Make a copy so it is not overwritten on a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") update:
 

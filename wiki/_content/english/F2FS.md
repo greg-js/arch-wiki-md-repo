@@ -11,10 +11,12 @@ Related articles
 *   [3 Grow an F2FS partition](#Grow_an_F2FS_partition)
 *   [4 Install Arch Linux on F2FS partition](#Install_Arch_Linux_on_F2FS_partition)
 *   [5 Checking and repair](#Checking_and_repair)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 GRUB with root on F2FS](#GRUB_with_root_on_F2FS)
 
 ## Creating a F2FS partition
 
-In order to create a F2FS partition, [install](/index.php/Install "Install") [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) from the [official repositories](/index.php/Official_repositories "Official repositories").
+In order to create a F2FS partition, [install](/index.php/Install "Install") [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools).
 
 Create the partition:
 
@@ -23,7 +25,7 @@ Create the partition:
 
 ```
 
-where `*/dev/sdxY*` is the target volume to format in F2FS.
+where `*/dev/sdxY*` is the target volume to format in F2FS. See [mkfs.f2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.f2fs.8) for all available options.
 
 ## Mounting a F2FS partition
 
@@ -47,13 +49,11 @@ Then expand the filesystem to fill the new partition using:
 
 ```
 
-where `*/dev/sdxY*` is the target F2FS volume to grow.
+where `*/dev/sdxY*` is the target F2FS volume to grow. See [resize.f2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resize.f2fs.8) for supported options.
 
-**Note:** If you're using GPT, the partition's GUID (seen in /dev/disk/by-partuuid/*) might change, but the filesystem UUID (seen in /dev/disk/by-uuid) should stay the same.
+**Note:** If you're using GPT, the partition's GUID (seen in `/dev/disk/by-partuuid/`) might change, but the filesystem UUID (seen in `/dev/disk/by-uuid/`) should stay the same.
 
 ## Install Arch Linux on F2FS partition
-
-**Warning:** If using GRUB your freshly installed system might not boot after reboot. As GRUB does not support F2FS it is not able to extract the UUID (which is persistent across reboots) of your drive so it uses classic `/dev/sdXx` names instead (which are not guaranteed to be persistent across reboots). In this case you might have to manually edit `/boot/grub/grub.cfg` and replace `root=/dev/sdXx` with `root=UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`; you can use the `blkid` command to get the UUID of your device.
 
 With the latest [installation media](https://www.archlinux.org/download/) it is possible to install Arch linux with root located on a F2FS filesystem:
 
@@ -67,4 +67,10 @@ Be sure to also check out the [Installing Arch Linux on a USB key](/index.php/In
 
 ## Checking and repair
 
-Checking and repairs to f2fs partitions are accomplished with `fsck.f2fs` provided by [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools). See the manpage for available switches.
+Checking and repairs to f2fs partitions are accomplished with `fsck.f2fs` provided by [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools). See [fsck.f2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fsck.f2fs.8) for available switches.
+
+## Troubleshooting
+
+### GRUB with root on F2FS
+
+When using [GRUB](/index.php/GRUB "GRUB") your freshly installed system might not boot after reboot. As GRUB does not support F2FS it is not able to extract the [UUID](/index.php/UUID "UUID") of your drive so it uses classic non-persistent `/dev/*sdXx*` names instead. In this case you might have to manually edit `/boot/grub/grub.cfg` and replace `root=/dev/*sdXx*` with `root=UUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*`. You can use the `blkid` command to get the UUID of your device, see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").

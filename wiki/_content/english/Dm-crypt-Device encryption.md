@@ -648,9 +648,8 @@ Pass 1: Checking inodes, blocks, and sizes
 resize2fs 1.43-WIP (18-May-2015)
 Resizing the filesystem on /dev/sdaX to 26347 (4k) blocks.
 The filesystem on /dev/sdaX is now 26347 (4k) blocks long.
-```
 
-}}
+```
 
 Now we encrypt it, using the default cipher we do not have to specify it explicitly. Note there is no option (yet) to double-check the passphrase before encryption starts, be careful not to mistype:
 

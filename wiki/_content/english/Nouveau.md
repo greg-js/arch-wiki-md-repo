@@ -30,11 +30,12 @@ Find your card's [code name](https://nouveau.freedesktop.org/wiki/CodeNames) (a 
 
 ## Installation
 
-**Note:** The [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) package is only necessary for better [Xorg](/index.php/Xorg "Xorg") acceleration and not strictly required. The [nouveau](https://nouveau.freedesktop.org/) driver kernel module is already compiled into the kernel.
+[Install](/index.php/Install "Install") the [mesa](https://www.archlinux.org/packages/?name=mesa) package, which provides the DRI driver for 3D acceleration.
 
-[Install](/index.php/Install "Install") the [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) package. It provides the DDX driver for 2D acceleration in [Xorg](/index.php/Xorg "Xorg"), and pulls in [mesa](https://www.archlinux.org/packages/?name=mesa) as a dependency which provides the DRI driver for 3D acceleration.
+*   For 32-bit application support, also install the [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) package from the [multilib](/index.php/Multilib "Multilib") repostory.
+*   For the DDX driver (which provides 2D acceleration in [Xorg](/index.php/Xorg "Xorg")), [install](/index.php/Install "Install") the [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) package.
 
-For 32-bit application support on x86_64, also install [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) from [multilib](/index.php/Multilib "Multilib").
+Also see [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
 ## Loading
 

@@ -8,6 +8,7 @@ This page explains how to setup your system in order to use a [smart card](https
     *   [3.1 Mozilla Firefox](#Mozilla_Firefox)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Smargo/TV Card reader](#Smargo.2FTV_Card_reader)
+    *   [4.2 p11tool](#p11tool)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -87,6 +88,12 @@ When interfacing with a TV-card for live TV and recording (PVR/DVR), you may nee
  `/etc/udev/rules.d/98-smargo.rules`  `SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", GROUP="video", MODE="0666", SYMLINK+="smargo"` 
 
 Set `/dev/smargo` as the reader device when using softcam applications like OSCam.
+
+### p11tool
+
+If using packages from the GnuTLS suite, such as p11tool, the the OpenSC driver might not properly load. (This can be determined if you run `p11tool --list-tokens` and you do not see your hardware token in the list.) Users can create a file that allows the OpenSC driver to be properly loaded:
+
+ `/usr/share/p11-kit/modules/opensc.module`  `module: opensc-pkcs11.so` 
 
 ## See also
 
