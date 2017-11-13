@@ -1,3 +1,9 @@
+Artigos relacionados
+
+*   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
+*   [Reporting bug guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines")
+*   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
+
 Esse artigo visa ajudar na criação de um pacote de depuração do Arch e usá-lo para fornecer informações de rastro e depuração para relatar bugs de software para desenvolvedores.
 
 ## Contents
@@ -55,32 +61,31 @@ Neste estágio, você pode modificar o arquivo de configuração global do `make
 
 ### Geral
 
-As of pacman 4.1, `/etc/makepkg.conf` has debug compilation flags in `DEBUG_CFLAGS` and `DEBUG_CXXFLAGS`. To use them, enable the `debug` makepkg option, and disable `strip`.
+Desde o pacman 4.1, `/etc/makepkg.conf` possui flags de depuração de compilação em `DEBUG_CFLAGS` e `DEBUG_CXXFLAGS`. Para usá-las, habilite a opção do makepkg `debug` e desabilite `strip`.
 
 ```
 OPTIONS+=(debug !strip)
 
 ```
 
-These settings will force compilation with debugging information and will disable the stripping of debug symbols from executables. To apply this setting to a single package, modify the PKGBUILD:
+Essas configurações vão forçar a compilação com informações de depuração e vai desabilitar a remoção de símbolos de executáveis. Para aplicar essa configuração a um único pacote, modifique o PKGBUILD:
 
 ```
 options=(debug !strip)
 
 ```
 
-Alternatively you can put the debug information in a separate package by enabling both `debug` and `strip`, debugging information will then be stripped from the main package and placed in a separate `*foo*-debug` package.
+Alternativamente, você pode colocar as informações de depuração em um pacote separado habilitando `debug` e `strip`, informações de depuração serão então removidos do pacote principal e colocados em um pacote separado `*foo*-debug`.
 
-**Note:** It is insufficient to simply install the newly compiled debug package, because the debugger will check that the file containing the debug symbols is from the same build as the associated library and executable. You must install both of the recompiled packages. In Arch, the debug symbols files are installed under `/usr/lib/debug`. See the [GDB documentation](https://sourceware.org/gdb/onlinedocs/gdb/Separate-Debug-Files.html) for more information about debug packages.
+**Nota:** Não é suficiente só instalar o pacote de depuração de recentemente compilado, porque o depurador vai conferir se o arquivo contendo os símbolos de depuração é o da mesma compilação que a biblioteca e executável associados. Você deve instalar os pacotes recompilados. No Arch, os arquivos de símbolos de depuração são instalados sob `/usr/lib/debug`. Veja a [documentação do GDB](https://sourceware.org/gdb/onlinedocs/gdb/Separate-Debug-Files.html) para mais informações sobre os pacotes de depuração.
 
-Note that certain packages such as *glibc* are stripped regardless. Check the PKGBUILD for sections such as:
+Note que certos pacotes como *glibc* são removidos. Verifique o PKGBUILD para seções como:
 
 ```
 strip $STRIP_BINARIES usr/bin/{gencat,getconf,getent,iconv,iconvconfig} \
                       usr/bin/{ldconfig,locale,localedef,nscd,makedb} \
                       usr/bin/{pcprofiledump,pldd,rpcgen,sln,sprof} \
                       usr/lib/getconf/*
-[[ $CARCH = "i686" ]] && strip $STRIP_BINARIES usr/bin/lddlibc4
 
 strip $STRIP_STATIC usr/lib/*.a
 
@@ -92,78 +97,78 @@ strip $STRIP_SHARED usr/lib/{libanl,libBrokenLocale,libcidn,libcrypt}-*.so \
 
 ```
 
-And remove them where appropriate.
+E, então, remova onde apropriado.
 
 ### Qt4
 
-In addition to the previous general settings, pass `-developer-build` option to the `configure` script in the `PKGBUILD`. By default, `-developer-build` passes `-Werror` to the compiler, which may cause the compilation to fail. To avoid compilation errors, you may need pass `-no-warnings-are-errors`, too.
+Além das configurações gerais anteriores, passe a opção `-developer-build` para o script `configure` no `PKGBUILD`. Por padrão, `-developer-build` passa `-Werror` para o compilador, o que pode fazer com que a compilação falhe. Para evitar erros de compilação, você pode precisar passar `-no-warnings-are-errors` também.
 
 ### Qt5
 
-The [qt-debug](/index.php/Unofficial_user_repositories#qt-debug "Unofficial user repositories") repository contains pre-built Qt/PyQt packages with debug symbols. See also [upstream](http://doc.qt.io/qt-5/debug.html) instructions.
+O repositório [qt-debug](/index.php/Unofficial_user_repositories#qt-debug "Unofficial user repositories") contém pacotes Qt/PyQt pré-compilados com símbolos de depuração. Veja também as instruções do [upstream](http://doc.qt.io/qt-5/debug.html).
 
 ### Aplicativos CMAKE (KDE)
 
-[KDE](/index.php/KDE "KDE") and related programs typically use [cmake](https://www.archlinux.org/packages/?name=cmake). To enable debug information and disable optimisations, change `-DCMAKE_BUILD_TYPE` to `Debug`. To enable debug information while keeping optimisations enabled, change `-DCMAKE_BUILD_TYPE` to `RelWithDebInfo`.
+[KDE](/index.php/KDE "KDE") e programas relacionados geralmente usam [cmake](https://www.archlinux.org/packages/?name=cmake). Para habilitar informações de depuração e desabilitar otimização, altere `-DCMAKE_BUILD_TYPE` para `Debug`. Para habilitar informações de depuração enquanto mantém as otimizações habilitadas, altere `-DCMAKE_BUILD_TYPE` para `RelWithDebInfo`.
 
 ## Compilando e instalando o pacote
 
-Build the package from source using `makepkg` while in the PKGBUILD's directory. This could take some time:
+Compile o pacote a partir do fonte usando `makepkg` no diretório do PKGBUILD. Isso pode levar algum tempo:
 
 ```
 $ makepkg
 
 ```
 
-Then install the built package:
+Então, instale o pacote compilado:
 
 ```
-# pacman -U glibc-2.5-8-i686.pkg.tar.gz
+# pacman -U glibc-2.26-1-x86_64.pkg.tar.gz
 
 ```
 
 ## Obtendo o rastro
 
-The actual backtrace (or stack trace) can now be obtained via e.g. [gdb](https://www.archlinux.org/packages/?name=gdb), the GNU Debugger. Run it either via:
+O backtrace real (ou rastro de pilha) pode agora ser obtido por meio de, p.ex. [gdb](https://www.archlinux.org/packages/?name=gdb), o GNU Debugger. Execute-o através de:
 
 ```
-# gdb /path/to/file
+# gdb /caminho/para/arquivo
 
 ```
 
-or:
+ou:
 
 ```
 # gdb
-(gdb) exec /path/to/file
+(gdb) exec /caminho/para/arquivo
 
 ```
 
-The path is optional, if already set in the `$PATH` variable.
+O caminho é opcional, se já definido na variável `$PATH`.
 
-Then, within `gdb`, type `run` followed by any arguments you wish the program to start with, e.g.:
+Então, dentro do `gdb`, digite `run` seguido por quaisquer argumentos que você deseje que o programa inicie com, p.ex.:
 
 ```
 (gdb) run --no-daemon --verbose
 
 ```
 
-to start execution of the file. Do whatever necessary to evoke the bug. For the actual log, type the lines:
+para iniciar a execução do arquivo. Faça o que for necessário para evocar o erro. Para registrar log, digite as linhas:
 
 ```
-(gdb) set logging file trace.log
+(gdb) set logging file rastro.log
 (gdb) set logging on
 
 ```
 
-and then:
+e então:
 
 ```
 (gdb) thread apply all bt full
 
 ```
 
-to output the trace to `trace.log` into the directory `gdb` was started in. To exit, enter:
+para emitir o rastro para `rastro.log` no diretório no qual `gdb` foi iniciado. Para sair, digite:
 
 ```
 (gdb) set logging off
@@ -171,14 +176,14 @@ to output the trace to `trace.log` into the directory `gdb` was started in. To e
 
 ```
 
-**Tip:** To debug an application written in python:
+**Dica:** Para depurar um aplicativo escrito em python:
 ```
 # gdb /usr/bin/python
-(gdb) run <python application>
+(gdb) run <aplicativo em python>
 
 ```
 
-You can also debug an already running application, e.g.:
+Você também pode depurar um aplicativo em execução, p.ex.:
 
 ```
  # gdb --pid=$(pidof firefox)
@@ -188,11 +193,11 @@ You can also debug an already running application, e.g.:
 
 ## Conclusão
 
-Use the complete stack trace to inform developers of a bug you have discovered before. This will be highly appreciated by them and will help to improve your favorite program.
+Use o rastro de pilha completo para informar os desenvolvedores de um erro que você descobriu. Isso será muito apreciado por eles e ajudará a melhorar o seu programa favorito
 
 ## Veja também
 
 *   [Gentoo Wiki - Backtraces with Gentoo](https://wiki.gentoo.org/wiki/Project:Quality_Assurance/Backtraces)
 *   [Fedora - StackTraces](http://fedoraproject.org/wiki/StackTraces)
 *   [GNOME - Getting Stack Traces](https://wiki.gnome.org/Community/GettingInTouch/Bugzilla/GettingTraces/Details#obtain-a-stacktrace)
-*   [gdb mini intro](http://linux.bytesex.org/gdb.html)
+*   [mini-introdução ao gdb](http://linux.bytesex.org/gdb.html)

@@ -329,7 +329,17 @@ dnsupdateproxy
 
 ### Testing nsswitch
 
-To ensure that our host is able to query the domain for users and groups, we test nsswitch settings by issuing the 'getent' command. The following output shows what a stock ArchLinux install looks like:
+To ensure that our host is able to query the domain for users and groups, we test nsswitch settings by issuing the 'getent' command.
+
+If user accounts from your DC are not showing, try adding the following line to your smb.conf file:
+
+ `/etc/samba/smb.conf` 
+```
+winbind trusted domains only = no
+
+```
+
+The following output shows what a stock ArchLinux install looks like:
 
  `# getent passwd` 
 ```

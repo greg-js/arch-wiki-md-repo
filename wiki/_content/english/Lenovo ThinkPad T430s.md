@@ -12,7 +12,7 @@ The following are known problems and workarounds for the Lenovo Thinkpad T430s, 
 
 ### Open issues
 
-*   The usual issue with laptop hard drives and disk head parking: [see here](/index.php/Hdparm#Parking_your_hard_drive "Hdparm")
+*   The usual issue with laptop hard drives and disk head parking, which can be fixed with [hdparm's -B option](/index.php/Hdparm "Hdparm").
 *   At least on one T430s, using QCad with [SNA](/index.php/Intel_graphics "Intel graphics") would reliably crash Xorg. A workaround is using UXA instead of SNA. ([FS#31617](https://bugs.archlinux.org/task/31617))
 *   The accelerometer for [HDAPS](/index.php/HDAPS "HDAPS") isn't supported.
 

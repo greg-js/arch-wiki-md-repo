@@ -1,3 +1,9 @@
+Artigos relacionados
+
+*   [FAQ (Português)](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)")
+*   [Installation guide (Português)](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)")
+*   [List of applications](/index.php/List_of_applications "List of applications")
+
 Esse documento é um índice anotado de artigos populares e informações importantes para melhorar e adicionar funcionalidades ao sistema Arch instalado. Presume-se aqui que os leitores leram e seguiram o [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação") para obter uma instalação básica do Arch Linux. Ter lido e entendido os conceitos explicados em [#Administração do sistema](#Administra.C3.A7.C3.A3o_do_sistema) e [#Gerenciamento de pacote](#Gerenciamento_de_pacote) é *obrigatório* para seguir as outras seções desta página e outros artigos no wiki.
 
 ## Contents
@@ -78,7 +84,7 @@ Usuários e grupos são mecanismo para *controle de acesso*; administradores pod
 
 ### Escalação de privilégios
 
-O comano [su](/index.php/Su "Su") (abreviação de *substitute user* ou "substituto de usuário") permite que você assuma a identidade de um outro usuário no sistema (geralmente o root) de um conta existente, enquanto o comando [sudo](/index.php/Sudo "Sudo") (abreviação para *substitute user do* ou "substituto de usuário faça") concede escalação de privilégio temporário para um comando específico.
+Os comandos [su](/index.php/Su "Su") e [sudo](/index.php/Sudo "Sudo") permitem que você execute comandos como outro usuário. Por padrão, *su* lhe fornece um shell de login como o usuário root e *sudo*, por padrão, temporariamente lhe concede privilégios para um único comando. Veja seus respectivos artigos para diferenças.
 
 ### Gerenciamento de serviço
 
@@ -230,7 +236,7 @@ Para melhor segurança ao navegar na web, jogar na internet, conectar a serviço
 
 ### Configuração de um firewall
 
-Um [firewall](/index.php/Firewall "Firewall") pode fornecer uma camada extra de proteção sobre a pilha de rede do Linux. O kernel padrão do Arch é capaz de usar [iptables](/index.php/Iptables "Iptables") do [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter"), isto não está habilitado por padrão. É altamente recomendado para configurar alguma forma de firewall. Veja [Firewalls](/index.php/Firewalls "Firewalls") para os guias disponíveis.
+Um [firewall](/index.php/Firewall "Firewall") pode fornecer uma camada extra de proteção sobre a pilha de rede do Linux. O kernel padrão do Arch é capaz de usar [iptables](/index.php/Iptables "Iptables") do [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") e [nftables](/index.php/Nftables "Nftables"), apesar de não estarem habilitados por padrão. É altamente recomendado para configurar alguma forma de firewall. Veja [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls") para os guias disponíveis.
 
 ### Compartilhamento de recurso
 

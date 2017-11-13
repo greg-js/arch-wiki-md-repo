@@ -51,6 +51,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [6.4 LightDM displaying in wrong monitor](#LightDM_displaying_in_wrong_monitor)
     *   [6.5 LightDM does not appear](#LightDM_does_not_appear)
     *   [6.6 Pulseaudio not starting automatically](#Pulseaudio_not_starting_automatically)
+    *   [6.7 Long pause before LightDM shows up when home is encrypted](#Long_pause_before_LightDM_shows_up_when_home_is_encrypted)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -448,6 +449,13 @@ This setting will tell LightDM to wait until graphics devices are ready before s
 ### Pulseaudio not starting automatically
 
 See [PulseAudio#Running](/index.php/PulseAudio#Running "PulseAudio").
+
+### Long pause before LightDM shows up when home is encrypted
+
+Some LightDM themes try to access the user avatar located in HOME. If your HOME is encrypted, LightDM cannot access it and hangs. To prevent this from happening, you can either:
+
+*   Set your avatar as explained in [LightDM#Changing_your_avatar](/index.php/LightDM#Changing_your_avatar "LightDM")
+*   for [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) only: `hide-user-image = true` in `/etc/lightdm/lightdm-gtk-greeter.conf`
 
 ## See also
 

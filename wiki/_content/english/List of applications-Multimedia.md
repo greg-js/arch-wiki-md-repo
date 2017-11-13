@@ -308,7 +308,7 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 *   **Mockingbot** — Prototyping & collaboration design tool .
 
-	[http://http://mockingbot.com/](http://http://mockingbot.com/) || [mockingbot](https://aur.archlinux.org/packages/mockingbot/)
+	[http://mockingbot.com/](http://mockingbot.com/) || [mockingbot](https://aur.archlinux.org/packages/mockingbot/)
 
 *   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Vector graphics editor, part of the Calligra Suite.
 

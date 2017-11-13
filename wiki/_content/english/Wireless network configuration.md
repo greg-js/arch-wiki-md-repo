@@ -690,8 +690,8 @@ Realtek chipsets rtl8811au/rtl8812au/rtl8814au/rtl8821au designed for various US
 Several packages provide the kernel drivers:
 
 | Chipset | Driver version | [AUR](/index.php/AUR "AUR") package | Notes |
-| rtl8812au | 5.2.9 | [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/) | Latest driver version for rtl8812au only |
-| rtl8811au, rtl8812au and rtl8821au | 5.1.5 | [rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8821au-dkms-git/) | This driver works for rtl8812au but driver v5.2.9 is recommended |
+| rtl8812au | 5.2.9.3 | [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/) | Latest driver version for rtl8812au only |
+| rtl8811au, rtl8812au and rtl8821au | 5.1.5 | [rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8821au-dkms-git/) | Works, for rtl8812au latest version is recommended instead |
 | rtl8814au | 4.3.21 | [rtl8814au-dkms-git](https://aur.archlinux.org/packages/rtl8814au-dkms-git/) | Possibly works for rtl8813au too |
 
 These require [DKMS](/index.php/DKMS "DKMS") so make sure you have your proper kernel headers installed.

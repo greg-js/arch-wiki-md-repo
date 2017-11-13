@@ -41,7 +41,7 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
     *   [5.1 Configure middle button](#Configure_middle_button)
 *   [6 Firmware updates](#Firmware_updates)
 *   [7 Fingerprint reader](#Fingerprint_reader)
-*   [8 Troubleshoutting](#Troubleshoutting)
+*   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 xorg freezes at starup](#xorg_freezes_at_starup)
 *   [9 Notes](#Notes)
 *   [10 External links](#External_links)
@@ -194,7 +194,7 @@ Alternatively, firmware updates can be installed by copying the MS-DOS executabl
 
 The fingerprint reader is a Validity/Synaptics model with USB id `138a:0090`. There currently is no Linux driver but an open source Linux driver is being developed by reverse engineering the Windows driver. [[1]](https://github.com/nmikhailov/Validity90)
 
-## Troubleshoutting
+## Troubleshooting
 
 ### xorg freezes at starup
 

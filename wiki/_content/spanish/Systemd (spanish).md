@@ -12,7 +12,7 @@ De la página web del [proyecto](http://freedesktop.org/wiki/Software/systemd):
 
 	*«**systemd** es un gestor del sistema y de los servicios para Linux, compatible con los initscript SysV y LSB.* systemd *proporciona una notable capacidad de paralelización, utiliza la activación de socket y [D-Bus](/index.php/D-Bus "D-Bus") para iniciar los servicios, permite el inicio de los demonios bajo demanda, realiza un seguimiento de los procesos con el uso de los [grupos de control](/index.php/Cgroups "Cgroups") de Linux, apoya snapshotting y la restauración del estado del sistema, mantiene los puntos montaje y servicios de montaje automático e implementa un elaborado sistema de gestión de dependencias basado en un control lógico de los servicios.»*
 
-**Nota:** Para conocer una explicación detallada del motivo por el cual Arch está cambiando a systemd, consulte este [post](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530).
+**Nota:** Para una explicación detallada del motivo por el cual Arch cambió a systemd, consulte este [post](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530).
 
 ## Contents
 

@@ -42,11 +42,8 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
     *   [10.3 Flash Player: performance](#Flash_Player:_performance)
     *   [10.4 Flash Player: no webcam, or low webcam resolution](#Flash_Player:_no_webcam.2C_or_low_webcam_resolution)
     *   [10.5 Flash Player: black bars in full screen playback on multi-headed setups](#Flash_Player:_black_bars_in_full_screen_playback_on_multi-headed_setups)
-    *   [10.6 Flash Player: videos not working on older systems](#Flash_Player:_videos_not_working_on_older_systems)
-    *   [10.7 Flash Player: plugin version still shown older version after upgrade](#Flash_Player:_plugin_version_still_shown_older_version_after_upgrade)
-        *   [10.7.1 Firefox](#Firefox)
-    *   [10.8 Plugins are installed but not working](#Plugins_are_installed_but_not_working)
-    *   [10.9 Gecko Media Player will not play Apple trailers](#Gecko_Media_Player_will_not_play_Apple_trailers)
+    *   [10.6 Firefox: old Flash Player version shown after upgrade](#Firefox:_old_Flash_Player_version_shown_after_upgrade)
+    *   [10.7 Firefox: plugins are installed but not working](#Firefox:_plugins_are_installed_but_not_working)
 
 ## Flash Player
 
@@ -196,10 +193,6 @@ See [Pipelight](/index.php/Pipelight "Pipelight").
 Many browsers support the [GStreamer](/index.php/GStreamer "GStreamer") framework to play multimedia inside HTML5 `<audio>` and `<video>` elements. Check the optional dependencies of the browser package (or of the web engine, e.g. [webkit2gtk](https://www.archlinux.org/packages/?name=webkit2gtk) or [qt5-webkit](https://www.archlinux.org/packages/?name=qt5-webkit)) to see if GStreamer is supported. See [GStreamer#Installation](/index.php/GStreamer#Installation "GStreamer") for the description of each plugin.
 
 ### Other plugins
-
-*   **Gecko Media Player** — Mozilla browser plugin to handle media on websites, using MPlayer.
-
-	[https://sites.google.com/site/kdekorte2/gecko-mediaplayer](https://sites.google.com/site/kdekorte2/gecko-mediaplayer) || [gecko-mediaplayer](https://www.archlinux.org/packages/?name=gecko-mediaplayer)
 
 *   **Rosa Media Player Plugin** — Qt-based browser plugin also based on MPlayer.
 
@@ -386,24 +379,7 @@ To fix this, you can use the "hack" described [here](http://al.robotfuzz.com/con
 
 **Note:** While the author mentions using NVDIA's TwinView, the hack should work for any multi-monitor setup.
 
-### Flash Player: videos not working on older systems
-
-If you have Adobe Flash installed on an older system and you start playing a video which simply turns black with nothing happening, it is most likely that your CPU does not support SSE2\. You can simply check this by looking at your CPU flags with this command:
-
-```
-$ grep sse2 /proc/cpuinfo
-
-```
-
-If no results are returned, then you need to install an older version of Flash (for example 10.3, or 11.1). Older versions possibly will have vulnerabilities. You should then consider sandboxing Firefox using the [sandfox](https://aur.archlinux.org/packages/sandfox/) package See the [sandfox homepage](https://igurublog.wordpress.com/downloads/script-sandfox/) for usage information.
-
-Older versions of Flash are available here: [https://www.adobe.com/products/flashplayer/distribution3.html](https://www.adobe.com/products/flashplayer/distribution3.html) You need to copy `libflashplayer.so` to the folder `/usr/lib/mozilla/plugins/`
-
-The most recent package without SSE2 is `flashplugin-11.1.102.63-1-i686.pkg.tar.xz`. If you use the packaged version, you have to add `IgnorePkg = flashplugin` to `/etc/pacman.conf`.
-
-### Flash Player: plugin version still shown older version after upgrade
-
-#### Firefox
+### Firefox: old Flash Player version shown after upgrade
 
 Solution for Firefox: delete file "pluginreg.dat" in user's profile directory.
 
@@ -413,7 +389,7 @@ Solution for Firefox: delete file "pluginreg.dat" in user's profile directory.
 
 Firefox will automatically rebuild this file once it is started again. Make sure to substitute *<username>* and *<profile_folder>* with the appropriate information.
 
-### Plugins are installed but not working
+### Firefox: plugins are installed but not working
 
 A common problem is that the plugin path is unset. This typically occurs on a new install, when the user has not re-logged in before running Firefox after the installation. Test if the path is unset:
 
@@ -426,14 +402,5 @@ If unset, then either re-login, or source `/etc/profile.d/mozilla-common.sh` and
 
 ```
 $ source /etc/profile.d/mozilla-common.sh && firefox
-
-```
-
-### Gecko Media Player will not play Apple trailers
-
-If Apple Trailers appear to start to play and then fail, try setting the user agent for your browser to:
-
-```
-QuickTime/7.6.2 (qtver=7.6.2;os=Windows NT 5.1Service Pack 3)
 
 ```

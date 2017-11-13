@@ -9,12 +9,13 @@
     *   [2.2 Keybindings](#Keybindings)
     *   [2.3 Video playback](#Video_playback)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Turn on spell checking](#Turn_on_spell_checking)
-    *   [3.2 Minimize fingerprinting](#Minimize_fingerprinting)
-        *   [3.2.1 Set a common user-agent](#Set_a_common_user-agent)
-        *   [3.2.2 Set a common HTTP_ACCEPT header](#Set_a_common_HTTP_ACCEPT_header)
-        *   [3.2.3 Disable reading from canvas](#Disable_reading_from_canvas)
-    *   [3.3 dwb-like session handling](#dwb-like_session_handling)
+    *   [3.1 Automatically enter login information using qute-pass](#Automatically_enter_login_information_using_qute-pass)
+    *   [3.2 Turn on spell checking](#Turn_on_spell_checking)
+    *   [3.3 Minimize fingerprinting](#Minimize_fingerprinting)
+        *   [3.3.1 Set a common user-agent](#Set_a_common_user-agent)
+        *   [3.3.2 Set a common HTTP_ACCEPT header](#Set_a_common_HTTP_ACCEPT_header)
+        *   [3.3.3 Disable reading from canvas](#Disable_reading_from_canvas)
+    *   [3.4 dwb-like session handling](#dwb-like_session_handling)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -80,6 +81,48 @@ You can edit the keybindings directly from the browser with the command `:bind *
 See [Browser plugins#Multimedia playback](/index.php/Browser_plugins#Multimedia_playback "Browser plugins").
 
 ## Tips and tricks
+
+### Automatically enter login information using qute-pass
+
+You can use the [qute-pass](https://github.com/qutebrowser/qutebrowser/blob/master/misc/userscripts/qute-pass) plugin to [automatically insert](https://i.imgur.com/KN3XuZP.gif) login information stored in your [Pass](/index.php/Pass "Pass") password-store. You'll need a [dmenu](/index.php/Dmenu "Dmenu")-compatible program (i.e. dmenu itself or [rofi](/index.php/Rofi "Rofi")) and [python-tldextract](https://www.archlinux.org/packages/?name=python-tldextract). Set up a keybinding which executes:
+
+```
+:spawn --userscript qute-pass
+
+```
+
+To quote from the script's description:
+
+```
+The domain of the site has to appear as a segment in the pass path, for example: "github.com/cryzed" or "websites/github.com". How the username and password are determined is freely configurable using the CLI arguments. The login information is inserted by emulating key events using qutebrowser's fake-key command in this manner: [USERNAME]<Tab>[PASSWORD], which is compatible with almost all login forms.
+
+```
+
+The userscript provides many options to accomodate most workflows and special circumstances (such as only wanting to insert the password or the regular method of inserting the username and password not working):
+
+```
+optional arguments:
+  -h, --help            show this help message and exit
+  --password-store PASSWORD_STORE, -p PASSWORD_STORE
+                        Path to your pass password-store
+  --username-pattern USERNAME_PATTERN, -u USERNAME_PATTERN
+                        Regular expression that matches the username
+  --username-target {path,secret}, -U {path,secret}
+                        The target for the username regular expression
+  --password-pattern PASSWORD_PATTERN, -P PASSWORD_PATTERN
+                        Regular expression that matches the password
+  --dmenu-invocation DMENU_INVOCATION, -d DMENU_INVOCATION
+                        Invocation used to execute a dmenu-provider
+  --no-insert-mode, -n  Don't automatically enter insert mode
+  --io-encoding IO_ENCODING, -i IO_ENCODING
+                        Encoding used to communicate with subprocesses
+  --merge-candidates, -m
+                        Merge pass candidates for fully-qualified and
+                        registered domain name
+  --username-only, -e   Only insert username
+  --password-only, -w   Only insert password
+
+```
 
 ### Turn on spell checking
 

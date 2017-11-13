@@ -57,7 +57,7 @@ Judd Vinet, um programador canadense e guitarrista ocasional, começou a desenvo
 
 ### Os anos médios
 
-A comunidade inicial do Arch cresceu firmemente, como evidencia [esse gráfico do número de publicações de fóruns, usuários e relatórios de bugs](https://dev.archlinux.org/~dan/archstats.svg). Além disso, foi desde o começo conhecida como [uma comunidade aberta, amigável e prestativa](http://www.osnews.com/story/4827).
+A comunidade inicial do Arch cresceu firmemente, como evidencia [esse gráfico do número de publicações de fóruns, usuários e relatórios de bugs](/images/8/8d/Archstats2002-2011.png "Archstats2002-2011.png"). Além disso, foi desde o começo conhecida como [uma comunidade aberta, amigável e prestativa](http://www.osnews.com/story/4827).
 
 ### Nascimento do ArchWiki
 

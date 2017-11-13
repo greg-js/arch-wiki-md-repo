@@ -102,9 +102,9 @@ $ printf '%s
 
 Similarly to *cp*, by default *dd* makes a bit-to-bit copy of the file, but with lower-level I/O flow control features.
 
-**Tip:** By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command. It is not available on older versions (8.24) of [coreutils](https://www.archlinux.org/packages/?name=coreutils).
+**Tip:** By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command. It is not available on older versions (before 8.24) of [coreutils](https://www.archlinux.org/packages/?name=coreutils).
 
-For more information see [dd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) or the [full documentation](http://www.gnu.org/software/coreutils/dd).
+For more information see [dd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) or the [full documentation](https://www.gnu.org/software/coreutils/dd).
 
 ## grep
 
@@ -219,7 +219,7 @@ Now programs that use the `PAGER` environment variable, like [git](/index.php/Gi
 
 [ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") lists directory contents.
 
-See `info ls` or [the online manual](http://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation) for more information.
+See `info ls` or [the online manual](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation) for more information.
 
 ### Long format
 
@@ -309,7 +309,7 @@ This alias suspends *mv* after eight seconds, asks for confirmation before overw
 
 ## od
 
-The [od](https://en.wikipedia.org/wiki/od_(Unix) (*o*ctal *d*ump) command is useful for visualizing data that is not in a human-readable format, like the executable code of a program, or the contents of an unformatted device. See the [manual](http://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html#od-invocation) for more information.
+The [od](https://en.wikipedia.org/wiki/od_(Unix) (*o*ctal *d*ump) command is useful for visualizing data that is not in a human-readable format, like the executable code of a program, or the contents of an unformatted device. See the [manual](https://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html#od-invocation) for more information.
 
 ## pv
 
@@ -430,5 +430,5 @@ For example, to erase all signatures from the device `/dev/sdb` and create a sig
 ## See also
 
 *   [A sampling of coreutils](http://www.reddit.com/r/commandline/comments/19garq/a_sampling_of_coreutils_120/) [, part 2](http://www.reddit.com/r/commandline/comments/19ge6v/a_sampling_of_coreutils_2040/) [, part 3](http://www.reddit.com/r/commandline/comments/19j1w3/a_sampling_of_coreutils_4060/) - Overview of commands in coreutils
-*   [GNU Coreutils online documentation](http://www.gnu.org/software/coreutils/manual/coreutils.html)
-*   [Learn the DD command](http://www.linuxquestions.org/questions/linux-newbie-8/learn-the-dd-command-362506/)
+*   [GNU Coreutils online documentation](https://www.gnu.org/software/coreutils/manual/coreutils.html)
+*   [Learn the DD command](https://www.linuxquestions.org/questions/linux-newbie-8/learn-the-dd-command-362506/)

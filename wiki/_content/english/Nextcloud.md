@@ -997,7 +997,8 @@ The [collabora-online-server-nodocker](https://aur.archlinux.org/packages/collab
 Alter the `/etc/loolwsd/loolwsd.xml` file, so that:
 
 *   `config > server_name` contains the host and port of the public Nextcloud address, separated by a colon (eg. `example.org:443`),
-*   `config > ssl > enable` is false (I suppose you’ll manage TLS at the proxy level),
+*   `config > ssl > enable` is false (ie. web browser —HTTPS→ proxy —HTTP→ loolwsd),
+*   `config > ssl > termination` is true (I suppose you’ll manage TLS at the proxy level),
 *   `config > storage > wopi > host` reflects the actual hostname (or pattern) of the proxy server (eg. `(?:.*\.)?example\.org`),
 *   `config > admin_console > username` and `config > admin_console > password` are set to values of your choice.
 

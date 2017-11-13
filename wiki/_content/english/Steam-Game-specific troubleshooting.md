@@ -115,90 +115,90 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [50 Hammerwatch](#Hammerwatch)
     *   [50.1 The game does not start via Steam](#The_game_does_not_start_via_Steam)
     *   [50.2 No sound](#No_sound_4)
-*   [51 Halo: Custom Edition](#Halo:_Custom_Edition)
-*   [52 Harvest: Massive Encounter](#Harvest:_Massive_Encounter)
-    *   [52.1 Compatibility](#Compatibility_2)
-*   [53 Hatoful Boyfriend](#Hatoful_Boyfriend)
-    *   [53.1 Japanese text invisible](#Japanese_text_invisible)
-*   [54 Hyper Light Drifter](#Hyper_Light_Drifter)
-    *   [54.1 The controller does not work](#The_controller_does_not_work)
-    *   [54.2 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found)
-*   [55 The Impossible Game](#The_Impossible_Game)
-*   [56 The Inner World](#The_Inner_World)
-    *   [56.1 Bringing up the inventory or main menu](#Bringing_up_the_inventory_or_main_menu)
-        *   [56.1.1 Cutscenes](#Cutscenes)
-*   [57 Interloper](#Interloper)
-    *   [57.1 Game does not start](#Game_does_not_start_6)
-*   [58 Invisible Apartment](#Invisible_Apartment)
-    *   [58.1 Game does not start](#Game_does_not_start_7)
-*   [59 Joe Danger 2: The Movie](#Joe_Danger_2:_The_Movie)
-    *   [59.1 Compatibility](#Compatibility_3)
-*   [60 Kerbal Space Program](#Kerbal_Space_Program)
-*   [61 Killing Floor](#Killing_Floor)
-    *   [61.1 Cannot change screen resolution](#Cannot_change_screen_resolution)
-    *   [61.2 Windowed mode](#Windowed_mode)
-    *   [61.3 Stuttering sound](#Stuttering_sound)
-*   [62 Left for Dead 2](#Left_for_Dead_2)
-    *   [62.1 Missing Chinese font](#Missing_Chinese_font)
-*   [63 Lethal League](#Lethal_League)
-*   [64 Life is Strange](#Life_is_Strange)
-*   [65 Little Racers STREET](#Little_Racers_STREET)
-*   [66 The Long Dark](#The_Long_Dark)
-    *   [66.1 Game does not start](#Game_does_not_start_8)
-    *   [66.2 Game starts, but some overlay text is missing and cutscenes shows black screen](#Game_starts.2C_but_some_overlay_text_is_missing_and_cutscenes_shows_black_screen)
-    *   [66.3 Cutscenes are still black](#Cutscenes_are_still_black)
-    *   [66.4 Cursor disappears](#Cursor_disappears)
-*   [67 Mark of the Ninja](#Mark_of_the_Ninja)
-    *   [67.1 Bad sound](#Bad_sound)
-*   [68 Metro: Last Light](#Metro:_Last_Light)
-*   [69 Middle-earth: Shadow of Mordor](#Middle-earth:_Shadow_of_Mordor)
-    *   [69.1 Floating heads](#Floating_heads)
-*   [70 Multiwinia](#Multiwinia)
-    *   [70.1 Crash on startup](#Crash_on_startup)
-*   [71 Natural Selection 2](#Natural_Selection_2)
-    *   [71.1 No Sound](#No_Sound_5)
-    *   [71.2 Update 318 onwards not launching](#Update_318_onwards_not_launching)
-*   [72 Nuclear Throne](#Nuclear_Throne)
-    *   [72.1 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found_2)
-*   [73 Penumbra: Overture](#Penumbra:_Overture)
-    *   [73.1 Windowed mode](#Windowed_mode_2)
-*   [74 The Polynomial](#The_Polynomial)
-    *   [74.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
-*   [75 Portal 2](#Portal_2)
-    *   [75.1 Game does not start](#Game_does_not_start_9)
-    *   [75.2 Resolution too low](#Resolution_too_low)
-    *   [75.3 Missing non Latin font](#Missing_non_Latin_font)
-*   [76 Prison Architect](#Prison_Architect)
-    *   [76.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
-*   [77 Project Zomboid](#Project_Zomboid)
-    *   [77.1 No sound](#No_sound_6)
-*   [78 Pyre](#Pyre)
-    *   [78.1 Game Does not Starts](#Game_Does_not_Starts)
-*   [79 Redshirt](#Redshirt)
-*   [80 Revenge of the Titans](#Revenge_of_the_Titans)
-*   [81 Risk of Rain](#Risk_of_Rain)
-*   [82 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
-*   [83 Saints Row IV](#Saints_Row_IV)
-    *   [83.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
-    *   [83.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
-*   [84 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
-    *   [84.1 No audio](#No_audio_2)
-*   [85 Songbringer](#Songbringer)
-    *   [85.1 Launch error with wanyland](#Launch_error_with_wanyland)
-*   [86 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
-    *   [86.1 No audio](#No_audio_3)
-*   [87 Spacechem](#Spacechem)
-    *   [87.1 Game crash](#Game_crash)
-*   [88 Splice](#Splice)
-*   [89 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
-*   [90 The Stanley Parable](#The_Stanley_Parable)
-    *   [90.1 Game won't start](#Game_won.27t_start)
-*   [91 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
-*   [92 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
-    *   [92.1 Start with black screen](#Start_with_black_screen)
-*   [93 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
-    *   [93.1 No sound](#No_sound_7)
-*   [94 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
+*   [51 Harvest: Massive Encounter](#Harvest:_Massive_Encounter)
+    *   [51.1 Compatibility](#Compatibility_2)
+*   [52 Hatoful Boyfriend](#Hatoful_Boyfriend)
+    *   [52.1 Japanese text invisible](#Japanese_text_invisible)
+*   [53 Hyper Light Drifter](#Hyper_Light_Drifter)
+    *   [53.1 The controller does not work](#The_controller_does_not_work)
+    *   [53.2 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found)
+*   [54 The Impossible Game](#The_Impossible_Game)
+*   [55 The Inner World](#The_Inner_World)
+    *   [55.1 Bringing up the inventory or main menu](#Bringing_up_the_inventory_or_main_menu)
+        *   [55.1.1 Cutscenes](#Cutscenes)
+*   [56 Interloper](#Interloper)
+    *   [56.1 Game does not start](#Game_does_not_start_6)
+*   [57 Invisible Apartment](#Invisible_Apartment)
+    *   [57.1 Game does not start](#Game_does_not_start_7)
+*   [58 Joe Danger 2: The Movie](#Joe_Danger_2:_The_Movie)
+    *   [58.1 Compatibility](#Compatibility_3)
+*   [59 Kerbal Space Program](#Kerbal_Space_Program)
+*   [60 Killing Floor](#Killing_Floor)
+    *   [60.1 Cannot change screen resolution](#Cannot_change_screen_resolution)
+    *   [60.2 Windowed mode](#Windowed_mode)
+    *   [60.3 Stuttering sound](#Stuttering_sound)
+*   [61 Left for Dead 2](#Left_for_Dead_2)
+    *   [61.1 Missing Chinese font](#Missing_Chinese_font)
+*   [62 Lethal League](#Lethal_League)
+*   [63 Life is Strange](#Life_is_Strange)
+*   [64 Little Racers STREET](#Little_Racers_STREET)
+*   [65 The Long Dark](#The_Long_Dark)
+    *   [65.1 Game does not start](#Game_does_not_start_8)
+    *   [65.2 Game starts, but some overlay text is missing and cutscenes shows black screen](#Game_starts.2C_but_some_overlay_text_is_missing_and_cutscenes_shows_black_screen)
+    *   [65.3 Cutscenes are still black](#Cutscenes_are_still_black)
+    *   [65.4 Cursor disappears](#Cursor_disappears)
+*   [66 Mark of the Ninja](#Mark_of_the_Ninja)
+    *   [66.1 Bad sound](#Bad_sound)
+*   [67 Metro: Last Light](#Metro:_Last_Light)
+*   [68 Middle-earth: Shadow of Mordor](#Middle-earth:_Shadow_of_Mordor)
+    *   [68.1 Floating heads](#Floating_heads)
+*   [69 Multiwinia](#Multiwinia)
+    *   [69.1 Crash on startup](#Crash_on_startup)
+*   [70 Natural Selection 2](#Natural_Selection_2)
+    *   [70.1 No Sound](#No_Sound_5)
+    *   [70.2 Update 318 onwards not launching](#Update_318_onwards_not_launching)
+*   [71 Nuclear Throne](#Nuclear_Throne)
+    *   [71.1 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found_2)
+*   [72 Penumbra: Overture](#Penumbra:_Overture)
+    *   [72.1 Windowed mode](#Windowed_mode_2)
+*   [73 The Polynomial](#The_Polynomial)
+    *   [73.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
+*   [74 Portal 2](#Portal_2)
+    *   [74.1 Game does not start](#Game_does_not_start_9)
+    *   [74.2 Resolution too low](#Resolution_too_low)
+    *   [74.3 Missing non Latin font](#Missing_non_Latin_font)
+*   [75 Prison Architect](#Prison_Architect)
+    *   [75.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
+*   [76 Project Zomboid](#Project_Zomboid)
+    *   [76.1 No sound](#No_sound_6)
+*   [77 Pyre](#Pyre)
+    *   [77.1 Game Does not Starts](#Game_Does_not_Starts)
+*   [78 Redshirt](#Redshirt)
+*   [79 Revenge of the Titans](#Revenge_of_the_Titans)
+*   [80 Risk of Rain](#Risk_of_Rain)
+*   [81 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
+*   [82 Saints Row IV](#Saints_Row_IV)
+    *   [82.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
+    *   [82.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
+*   [83 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
+    *   [83.1 No audio](#No_audio_2)
+*   [84 Songbringer](#Songbringer)
+    *   [84.1 Launch error with wanyland](#Launch_error_with_wanyland)
+*   [85 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
+    *   [85.1 No audio](#No_audio_3)
+*   [86 Spacechem](#Spacechem)
+    *   [86.1 Game crash](#Game_crash)
+*   [87 Splice](#Splice)
+*   [88 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
+*   [89 The Stanley Parable](#The_Stanley_Parable)
+    *   [89.1 Game won't start](#Game_won.27t_start)
+*   [90 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
+*   [91 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
+    *   [91.1 Start with black screen](#Start_with_black_screen)
+*   [92 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
+    *   [92.1 No sound](#No_sound_7)
+*   [93 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
+*   [94 System Shock 2](#System_Shock_2)
 *   [95 Tabletop Simulator](#Tabletop_Simulator)
     *   [95.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
 *   [96 Team Fortress 2](#Team_Fortress_2)
@@ -750,7 +750,9 @@ export LD_LIBRARY_PATH="."
 ./EoCApp
 ```
 
-Then just start the game.
+Then just start the game. In case it still crashes on loading you may also need to add
+
+ `export allow_glsl_extension_directive_midshader=true` 
 
 ## Don't Starve
 
@@ -996,10 +998,6 @@ drivers=alsa,pulse
 ```
 
 This way, Hammerwatch will use ALSA. This solution was found [here](https://stackoverflow.com/questions/9547396/what-does-al-lib-pulseaudio-c612-context-did-not-connect-access-denied-me).
-
-## Halo: Custom Edition
-
-Although not a Steam game, Halo: Custom Edition running under [Wine](/index.php/Wine "Wine") and/or PlayOnLinux has many audio problems. To mitigate this, install dsound via winetricks or PlayOnLinux. Then, set the in-game "Sound Quality" to medium. If you have installed the campaign extra, this also restores all video cut-scene audio.
 
 ## Harvest: Massive Encounter
 
@@ -1586,6 +1584,24 @@ libGL error: failed to load driver: swrast
 ```
 
 To solve this problem remove `*gamedir*/lib/libstdc++.so.6*`. After that the game will use the libstdc++ from Steam.
+
+## System Shock 2
+
+You get these errors when running it with the native client:
+
+```
+C:\windows\system32\winedevice.exe: symbol lookup error: /usr/lib32/libX11.so.6: undefined symbol: xcb_wait_for_reply64
+C:\windows\system32\wineboot.exe: symbol lookup error: /usr/lib32/libX11.so.6: undefined symbol: xcb_wait_for_reply64
+
+```
+
+Just delete or rename the libxcb library it got shipped with:
+
+```
+mv /mnt/olhdd/steam/steamapps/common/SS2/lib/libxcb.so.1{,.old}
+mv /mnt/olhdd/steam/steamapps/common/SS2/lib/libxcb.so.1.1.0{,.old}
+
+```
 
 ## Tabletop Simulator
 

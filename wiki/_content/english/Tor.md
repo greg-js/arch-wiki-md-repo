@@ -263,7 +263,9 @@ The Tor Project currently only supports web browsing with tor through the [Tor B
 
 ### Firefox
 
-In *Preferences > Advanced > Network tab > Settings* manually set Firefox to use the SOCKS proxy `localhost` with port `9050`. Then you must type `about:config` into the address bar and "void your warranty". Change `network.proxy.socks_remote_dns` to `true` and restart the browser. This channels all DNS requests through TOR's socks proxy.
+In *Preferences > General > Network Proxy > Settings* select "Manual proxy configuration" and enter SOCKS host `localhost` with port `9050` (SOCKS v5). To channel all DNS requests through TOR's socks proxy, also select "Proxy DNS when using SOCKS v5".
+
+**Note:** When using Firefox 55 or earlier (e.g. 52 ESR), the settings are located in *Preferences > Advanced > Network > Settings* instead.
 
 ### Chromium
 

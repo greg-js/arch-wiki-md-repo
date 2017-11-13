@@ -3,7 +3,7 @@ Related articles
 *   [Intel graphics](/index.php/Intel_graphics "Intel graphics")
 *   [Xorg](/index.php/Xorg "Xorg")
 
-The **Intel GMA 3600** series is a family of integrated video adapters based on the PowerVR SGX 545 graphics core. It is used in the Atom N2600, N2800 and D2550.
+The **Intel GMA 3600** series is a family of integrated video adapters based on the PowerVR SGX 545 graphics core. It is used in [Intel Cedarview](https://ark.intel.com/products/codename/37505/Cedarview) CPUs (Atom D2500, D2550, D2700, N2600 and N2800).
 
 The Linux kernel has support since version 3.5.
 

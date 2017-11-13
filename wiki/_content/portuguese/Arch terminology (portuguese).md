@@ -85,7 +85,7 @@ Veja [Repositório local personalizado](/index.php/Custom_local_repository "Cust
 
 ## Developer
 
-Desenvolvedores são semideuses trabalhando para melhorar o Arch sem qualquer ganho financeiro. [Desenvolvedores](https://www.archlinux.org/developers/) são deixados para trás somente por seus deuses, Judd Vinet e Aaron Griffin, os quais por sua vez são deixados para trás por tacos.
+Desenvolvedores são semideuses trabalhando para melhorar o Arch sem qualquer ganho financeiro. [Desenvolvedores](https://www.archlinux.org/people/developers/) são deixados para trás somente por seus deuses, Judd Vinet e Aaron Griffin, os quais por sua vez são deixados para trás por tacos.
 
 ## extra/[extra]
 
@@ -162,7 +162,7 @@ Repositório contém pacotes pré-compilados de um ou (geralmente) mais [PKGBUIL
 
 ## [RTFM](https://en.wikipedia.org/wiki/pt:RTFM "wikipedia:pt:RTFM")
 
-'"Read The Fucking (ou Fine) Manual"', que pode ser traduzido como "Leia a porra desse manual". Essa mensagem simples é respondida a muitos dos novos usuários Linux/Arch que perguntam sobre a funcionalidade de um programa quando ela está definida, de forma clara, no manual do programa.
+'"Read The Fine Manual"', que pode ser traduzido como "Leia este ótimo desse manual". Essa mensagem simples é respondida a muitos dos novos usuários Linux/Arch que perguntam sobre a funcionalidade de um programa quando ela está definida, de forma clara, no manual do programa.
 
 É geralmente usada quando um usuário falha em, ele mesmo, fazer qualquer tentativa de encontrar uma solução para o problema. Se alguém lhe disser isso, não está tentando lhe ofender; está apenas frustrado com sua falta de esforço.
 

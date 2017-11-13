@@ -1,3 +1,15 @@
+Artigos relacionados
+
+*   [Arch packaging standards (Português)](/index.php/Arch_packaging_standards_(Portugu%C3%AAs) "Arch packaging standards (Português)")
+*   [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
+*   [Creating packages (Português)](/index.php/Creating_packages_(Portugu%C3%AAs) "Creating packages (Português)")
+*   [Kernel Compilation with ABS](/index.php/Kernel_Compilation_with_ABS "Kernel Compilation with ABS")
+*   [makepkg (Português)](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
+*   [Official repositories (Português)](/index.php/Official_repositories_(Portugu%C3%AAs) "Official repositories (Português)")
+*   [pacman (Português)](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
+*   [PKGBUILD (Português)](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
+*   [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS")
+
 Esse artigo fornece uma visão geral do Arch Build System (ABS) junto com um tutorial para iniciantes. Ele não tem a intenção de ser um guia de referência completo.
 
 ## Contents
@@ -9,11 +21,11 @@ Esse artigo fornece uma visão geral do Arch Build System (ABS) junto com um tut
         *   [1.3.1 Árvore SVN](#.C3.81rvore_SVN)
 *   [2 Por que eu iria querer usar o ABS?](#Por_que_eu_iria_querer_usar_o_ABS.3F)
 *   [3 Como usar o ABS](#Como_usar_o_ABS)
-    *   [3.1 Obtendo fonte de PKGBUILD](#Obtendo_fonte_de_PKGBUILD)
+    *   [3.1 Obtendo fonte de PKGBUILD usando Svn](#Obtendo_fonte_de_PKGBUILD_usando_Svn)
         *   [3.1.1 Pré-requisitos](#Pr.C3.A9-requisitos)
         *   [3.1.2 Checkout não-recursivo](#Checkout_n.C3.A3o-recursivo)
         *   [3.1.3 Fazer checkout de um pacote](#Fazer_checkout_de_um_pacote)
-    *   [3.2 Configurar makepkg](#Configurar_makepkg)
+    *   [3.2 Obtendo fonte de PKGBUILD usando Git](#Obtendo_fonte_de_PKGBUILD_usando_Git)
     *   [3.3 Compilar pacote](#Compilar_pacote)
 *   [4 Dicas e truques](#Dicas_e_truques)
     *   [4.1 Preserve pacotes modificados](#Preserve_pacotes_modificados)
@@ -56,7 +68,7 @@ ABS é feito de uma árvore de diretórios que pode ser obtida (*checkout*) usan
 
 	O Arch User Repository é separado do ABS, mas PKGBUILDs do AUR (sem suporte) são compilados usando makepkg para compilar e empacotar software. Em contraste com a árvore do ABS em sua máquina local, o AUR existe como uma interface do website. Ele contém muitos milhares de PKGBUILDs contribuídos por usuários para software que está indisponível como um pacote oficial do Arch. Se você precisar compilar um pacote fora da árvore oficial do Arch, as chances são de que esteja no AUR.
 
-**Warning:** PKGBUILDs oficiais presumem que pacotes são [compilados em um *chroot* limpo](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot"). Compilação de software em um sistema de compilação *sujo* pode falhar ou causar comportamentos inesperados em tempo de execução, porque se o sistema de compilação detecta dependências dinamicamente, o resultado depende de quais pacotes estão disponíveis no sistema de compilação.
+**Atenção:** PKGBUILDs oficiais presumem que pacotes são [compilados em um *chroot* limpo](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot"). Compilação de software em um sistema de compilação *sujo* pode falhar ou causar comportamentos inesperados em tempo de execução, porque se o sistema de compilação detecta dependências dinamicamente, o resultado depende de quais pacotes estão disponíveis no sistema de compilação.
 
 #### Árvore SVN
 
@@ -87,7 +99,7 @@ O Arch Build System é usado para:
 *   Compilar ou recompilar um pacote, para qualquer motivo
 *   *Make* e instalar novos pacotes de fontes de software para os quais nenhum pacote está instalado ainda (veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes"))
 *   Personalizar pacotes existentes para atender suas necessidades (habilitar ou desabilitar opções, *patching*)
-*   Recompilar todo o seu sistema usando suas *flags* de compilador, "à la FreeBSD" (ex.: com [pacbuilder-svn](https://aur.archlinux.org/packages/pacbuilder-svn/))
+*   Recompilar todo o seu sistema usando suas *flags* de compilador, "à la FreeBSD" (ex.: com [pacbuilder-svn](https://aur.archlinux.org/packages/pacbuilder-svn/) (não mais disponível))
 *   Compilar e instalar, sem interferências, seu próprio kernel personalizado (veja [Compilação de kernel](/index.php/Kernels#Compilation "Kernels"))
 *   Fazer com que módulos de kernel funcionem com seu kernel personalizado
 *   Compilar e instalar facilmente uma versão mais nova, antiga, beta ou de desenvolvimento de um pacote do Arch editando o número de versão no PKGBUILD
@@ -96,9 +108,9 @@ ABS não é necessário para usar o Arch Linux, mas é útil para automatizar ce
 
 ## Como usar o ABS
 
-### Obtendo fonte de PKGBUILD
+Para obter o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") necessário para compilar um certo pacote a partir do fonte, você pode usar uma abordagem baseada em [Svn](/index.php/Svn "Svn") ou [Git](/index.php/Git "Git") usando o pacote [asp](https://www.archlinux.org/packages/?name=asp) que é uma interface para os repositórios svntogit. A seguir, o método baseado em svn, bem como o [método baseado em git](#Obtendo_fonte_de_PKGBUILD_usando_Git), é descrito.
 
-**Tip:** Um método alternativo é [instalar](/index.php/Instalar "Instalar") e usar o pacote [asp](https://www.archlinux.org/packages/?name=asp), o qual é um fino wrapper em volta de repositórios svntogit.
+### Obtendo fonte de PKGBUILD usando Svn
 
 #### Pré-requisitos
 
@@ -106,7 +118,7 @@ ABS não é necessário para usar o Arch Linux, mas é útil para automatizar ce
 
 #### Checkout não-recursivo
 
-**Warning:** Não baixe todo o repositório; siga apenas as instruções abaixo. O repositório SVN todo é gigantesco. Não apenas vai gastar uma quantidade absurda de espaço em disco, mas também vai ocupar o servidor do archlinux.org para você baixá-lo. Se você abusar desse serviço, seu endereço pode ser bloqueado. Nunca use o SVN público para qualquer tipo de *scripting*.
+**Atenção:** Não baixe todo o repositório; siga apenas as instruções abaixo. O repositório SVN todo é gigantesco. Não apenas vai gastar uma quantidade absurda de espaço em disco, mas também vai ocupar o servidor do archlinux.org para você baixá-lo. Se você abusar desse serviço, seu endereço pode ser bloqueado. Nunca use o SVN público para qualquer tipo de *scripting*.
 
 Para fazer *checkout* dos [repositórios](/index.php/Reposit%C3%B3rios "Repositórios") *core*, *extra* e *testing*:
 
@@ -141,7 +153,7 @@ Se você especifica um pacote que não existe, svn não vai avisar você. Ele s�
 *   verifique se o pacote não foi movido para outro repositório (ex. do repositório *community* para o repositório principal)
 *   acesse [https://www.archlinux.org/packages](https://www.archlinux.org/packages) para ver se o pacote é compilado a partir de outro pacote base (por exemplo, [python-tensorflow](https://www.archlinux.org/packages/?name=python-tensorflow) é compilado no PKGBUILD do [tensorflow](https://www.archlinux.org/packages/?name=tensorflow))
 
-**Tip:** Para fazer *checkout* uma versão mais antiga de um pacote, veja [#Faça checkout de uma versão anterior de um pacote](#Fa.C3.A7a_checkout_de_uma_vers.C3.A3o_anterior_de_um_pacote).
+**Dica:** Para fazer *checkout* uma versão mais antiga de um pacote, veja [#Faça checkout de uma versão anterior de um pacote](#Fa.C3.A7a_checkout_de_uma_vers.C3.A3o_anterior_de_um_pacote).
 
 Você deve atualizar periodicamente todos os pacotes baixados se você deseja realizar recompilações em revisões mais recentes dos repositórios. Para fazer isso, execute:
 
@@ -150,13 +162,33 @@ $ svn update
 
 ```
 
-### Configurar makepkg
+### Obtendo fonte de PKGBUILD usando Git
 
-Veja [makepkg (Português)#Configuração](/index.php/Makepkg_(Portugu%C3%AAs)#Configura.C3.A7.C3.A3o "Makepkg (Português)") sobre como configurar o *makepkg* para compilar pacotes dos [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") que você fez *checkout*.
+Para clonar o repositório svntogit para um pacote específico, use:
+
+```
+$ asp checkout *nome-pacote*
+
+```
+
+Isso vai clonar o repositório git para o pacote dado em um diretório com o nome do pacote.
+
+Para atualizar o repositório git clonado, execute `asp update` seguido por `git pull` dentro do repositório git.
+
+Em seguida, você pode usar todos os comandos git para realizar o *checkout* de uma versão antiga do pacote ou rastrear alterações personalizadas. Para mais informações sobre o uso de git, veja a página [git](/index.php/Git "Git").
+
+Se você só deseja copiar um snapshot do [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") para um pacote específico, use:
+
+```
+$ asp export *nome-pacote*
+
+```
 
 ### Compilar pacote
 
-Copie o diretório contendo o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") que você deseja modificar para uma nova localização. Então, faça as modificações desejadas. Então, use *makepkg* como descrito em [makepkg (Português)#Uso](/index.php/Makepkg_(Portugu%C3%AAs)#Uso "Makepkg (Português)") para criar e instalar o novo pacote.
+Veja [makepkg (Português)#Configuração](/index.php/Makepkg_(Portugu%C3%AAs)#Configura.C3.A7.C3.A3o "Makepkg (Português)") sobre como configurar o *makepkg* para compilar pacotes dos [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") que você fez *checkout*.
+
+Em seguida, copie o diretório contendo o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") que você deseja modificar para uma nova localização. Então, faça as modificações desejadas e use *makepkg*, como descrito em [makepkg (Português)#Uso](/index.php/Makepkg_(Portugu%C3%AAs)#Uso "Makepkg (Português)"), para criar e instalar o novo pacote.
 
 ## Dicas e truques
 

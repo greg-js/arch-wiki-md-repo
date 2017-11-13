@@ -49,7 +49,7 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [Bluewind](https://aur.archlinux.org/packages.php?K=bluewind&SeB=m) | Florian Pritz | bluewind@xinu.at |
 | [City-busz](https://aur.archlinux.org/packages.php?K=City-busz&SeB=m) | Balló György | ballogyor+arch at gmail dot com |
 | [ConnorBehan](https://aur.archlinux.org/packages.php?K=ConnorBehan&SeB=m) | Connor Behan | connor.behan@gmail.com |
-| [cryptocrack](https://aur.archlinux.org/packages.php?K=cryptocrack&SeB=m) | Lukas Fleischer | archlinux at cryptocrack dot de |
+| [lfleischer](https://aur.archlinux.org/packages.php?K=lfleischer&SeB=m) | Lukas Fleischer | lfleischer at archlinux dot org |
 | [eworm](https://aur.archlinux.org/packages.php?K=eworm&SeB=m) | Christian Hesse | mail@eworm.de |
 | [Dragonlord](https://aur.archlinux.org/packages.php?K=Dragonlord&SeB=m) | [Jaroslav Lichtblau](/index.php/User:Drag0nl0rd "User:Drag0nl0rd") | dragonlord @ aur archlinux org |
 | [dvzrv](https://aur.archlinux.org/packages.php?K=dvzrv&SeB=m) | [David Runge](/index.php/User:Davezerave "User:Davezerave") | dave@sleepmap.de |

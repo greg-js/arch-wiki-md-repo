@@ -127,6 +127,8 @@ Você quer que alguma documentação do wiki internacional seja traduzida? Envie
 | [Help:Style](/index.php/Help:Style_(Portugu%C3%AAs) "Help:Style (Português)") | Tradução do [Documento original](/index.php/Help:Style "Help:Style") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Concluído |
 | [Help:Template](/index.php/Help:Template_(Portugu%C3%AAs) "Help:Template (Português)") | Tradução do [Documento Original](/index.php/Help:Template "Help:Template") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Concluído |
 | [Template:Template](/index.php/Template:Template_(Portugu%C3%AAs) "Template:Template (Português)") | Tradução do [Documento Original](/index.php/Template:Template "Template:Template") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Concluído |
+| [Template:Expansion](/index.php/Template:Expansion_(Portugu%C3%AAs) "Template:Expansion (Português)") | Tradução do [Documento Original](/index.php/Template:Expansion "Template:Expansion") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Concluído |
+| [Man page](/index.php/Man_page_(Portugu%C3%AAs) "Man page (Português)") | Tradução do [Documento Original](/index.php/Man_page "Man page") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Concluído |
 | [GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)") | GDM - [Documento Original](/index.php/GDM "GDM") | [Albino Biasutti Neto](/index.php/User:Bino28 "User:Bino28") | Revisão |
 | [List of Aplications Internet](/index.php/List_of_applications/Internet_(Portugu%C3%AAs) "List of applications/Internet (Português)") | Tradução do [Documento original](/index.php/List_of_applications/Internet "List of applications/Internet") | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Em andamento |
 | [Daemon](https://wiki.archlinux.org/index.php?title=Daemon_(Português)) | Tradução do [Documento original](https://wiki.archlinux.org/index.php?title=Daemon) | [Victor Viana](/index.php?title=User:Victor&action=edit&redlink=1 "User:Victor (page does not exist)") | Em andamento |
@@ -138,10 +140,6 @@ Você quer que alguma documentação do wiki internacional seja traduzida? Envie
 | [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") | Tradução adaptada do [Documento Original](/index.php/Touchpad_Synaptics "Touchpad Synaptics") | [Xitus](/index.php?title=User:Xitus&action=edit&redlink=1 "User:Xitus (page does not exist)") | Em andamento |
 | [Hellanzb](/index.php/Hellanzb "Hellanzb") | Tradução do [Documento original](/index.php/Hellanzb "Hellanzb") | [tati](/index.php?title=User:Thatysx&action=edit&redlink=1 "User:Thatysx (page does not exist)") | Em andamento |
 | [NetworkManager](/index.php/NetworkManager "NetworkManager") | Tradução do [Documento original](/index.php/NetworkManager "NetworkManager") | [Clécio Oliveira](/index.php?title=User:Cleciooliveira&action=edit&redlink=1 "User:Cleciooliveira (page does not exist)") | Em andamento |
-| [Man page](/index.php/Man_page_(Portugu%C3%AAs) "Man page (Português)") | Tradução do [Documento Original](/index.php/Man_page "Man page") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Em andamento |
-| [Wmii](/index.php/Wmii "Wmii") | Guia de instalação e utilização do Wmii. [Documento Original](/index.php/Wmii "Wmii") | [Cainã Costa](/index.php?title=User:CainaCosta&action=edit&redlink=1 "User:CainaCosta (page does not exist)") | Não iniciada |
-| [KDE](/index.php/KDE "KDE") | Tradução do guia do ambiente KDE | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Não iniciado |
-| [ATI Catalyst](/index.php/ATI_Catalyst "ATI Catalyst") | Tradução do [Documento original](/index.php/ATI_Catalyst "ATI Catalyst") | [Robson Berthelsen](/index.php?title=User:Nosbor868&action=edit&redlink=1 "User:Nosbor868 (page does not exist)") | Não iniciado |
 
 ## Equipe de Traducão:
 

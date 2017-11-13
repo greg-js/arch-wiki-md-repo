@@ -637,7 +637,9 @@ Note that you can also run it without a configuration file, the defaults may wor
 
 The keyboard backlight is controlled by `/sys/class/leds/smc::kbd_backlight`. Write the desired value to `brightness` in that directory.
 
-Both [acpilight](https://aur.archlinux.org/packages/acpilight/) or [kbdlight](https://aur.archlinux.org/packages/kbdlight/) allow to control keyboard backlight though scripts. With the appropriate udev rules or [sxhkd](/index.php/Sxhkd "Sxhkd") they allow light-level changes without being root.
+Both [acpilight](https://aur.archlinux.org/packages/acpilight/) or [kbdlight](https://aur.archlinux.org/packages/kbdlight/) (stalled since 2015) allow to control keyboard backlight though scripts. With the appropriate udev rules or [sxhkd](/index.php/Sxhkd "Sxhkd") they allow light-level changes without being root.
+
+As of 2017-11-12, [acpilight](https://aur.archlinux.org/packages/acpilight/) provides a "just-works" solution tested on a MacbookPro 8,1\.
 
 ###### NVIDIA note
 

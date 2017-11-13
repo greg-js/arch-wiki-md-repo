@@ -10,15 +10,15 @@ Este artigo descreve como usuários novos e experientes do Arch podem contribuir
     *   [1.3 Ingresse nas salas de chat](#Ingresse_nas_salas_de_chat)
     *   [1.4 Reporte pacotes instalados](#Reporte_pacotes_instalados)
     *   [1.5 Corrija e reporte bugs](#Corrija_e_reporte_bugs)
-    *   [1.6 Crie e adote pacotes do AUR](#Crie_e_adote_pacotes_do_AUR)
-    *   [1.7 Projetos de software oficiais](#Projetos_de_software_oficiais)
-    *   [1.8 Doe dinheiro](#Doe_dinheiro)
+    *   [1.6 Informe sobre problemas de segurança](#Informe_sobre_problemas_de_seguran.C3.A7a)
+    *   [1.7 Crie e adote pacotes do AUR](#Crie_e_adote_pacotes_do_AUR)
+    *   [1.8 Projetos de software oficiais](#Projetos_de_software_oficiais)
+    *   [1.9 Doe dinheiro](#Doe_dinheiro)
 *   [2 Projetos da comunidade](#Projetos_da_comunidade)
     *   [2.1 Grupos](#Grupos)
     *   [2.2 Software](#Software)
     *   [2.3 Navegação do ArchWiki](#Navega.C3.A7.C3.A3o_do_ArchWiki)
-    *   [2.4 Serviços](#Servi.C3.A7os)
-    *   [2.5 Outros](#Outros)
+    *   [2.4 Outros](#Outros)
 *   [3 FAQ](#FAQ)
     *   [3.1 Como posso me tornar um desenvolvedor do Arch?](#Como_posso_me_tornar_um_desenvolvedor_do_Arch.3F)
     *   [3.2 Como me torno um Trusted User?](#Como_me_torno_um_Trusted_User.3F)
@@ -49,6 +49,10 @@ Você pode ajudar outros usuários a resolver problemas através do [canal do IR
 Reportar e corrigir bugs no [rastreador de bugs](https://bugs.archlinux.org/) é uma das formas possíveis de se ajudar a comunidade.
 
 Contudo, o uso inefetivo pode ser contra-produtivo. Por favor, leia [Diretrizes para relatar bugs](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
+
+### Informe sobre problemas de segurança
+
+Novas vulnerabilidades são localizadas todo momento. Ajude a [Equipe de Segurança do Arch](/index.php/Arch_Security_Team "Arch Security Team") a se manter antenada a novas vulnerabilidades.
 
 ### Crie e adote pacotes do AUR
 
@@ -134,6 +138,10 @@ Nós oferecemos diferentes métodos para visitar o ArchWiki.
 
 	Arch-wiki-lite é projetado para oferecer a experiência mais suave possível para pessoas hipossuficientes que não tenham acesso à internet ou qualquer outra forma de iniciar uma interface gráfica web. Pacote: [arch-wiki-lite](https://www.archlinux.org/packages/?name=arch-wiki-lite).
 
+	[arch-wiki-man](https://github.com/greg-js/arch-wiki-man)
+
+	O Arch Wiki facilmente acessível e pesquisável como páginas man. Funciona sem Internet. Pacote: [arch-wiki-man](https://aur.archlinux.org/packages/arch-wiki-man/).
+
 	[ArchWiki Viewer for Android](https://bbs.archlinux.org/viewtopic.php?id=150538)
 
 	Um visualizador simples para o ArchLinux Wiki online. Conteúdo da página é formatado para uma visão otimizada para *mobile*.
@@ -141,14 +149,6 @@ Nós oferecemos diferentes métodos para visitar o ArchWiki.
 	[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
 
 	Uma interface simples em *curses* para os sites do MediaWiki tal como ArchWiki ou Wikipédia. Pacotes: [wikicurses](https://aur.archlinux.org/packages/wikicurses/), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
-
-### Serviços
-
-Serviços feitos especialmente para usuários do Arch.
-
-	[ArchLinux.info](https://bbs.archlinux.org/viewtopic.php?id=150417&)
-
-	e-mails @archlinux.info baseados em VPS.
 
 ### Outros
 

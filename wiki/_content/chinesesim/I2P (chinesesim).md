@@ -1,25 +1,23 @@
-From the [I2P](https://geti2p.net/en/) homepage:
+节选自 [I2P](https://geti2p.net/en/) 主页:
 
-	I2P is an anonymizing network, offering a simple layer that identity-sensitive applications can use to securely communicate. All data is wrapped with several layers of encryption, and the network is both distributed and dynamic, with no trusted parties.
+	I2P 网络为通过 Internet 进行的通讯提供强有力的隐私保护。很多在公网上可能威胁用户隐私的活动可以在 I2P 中匿名进行。
 
-	Many applications are available that interface with I2P, including mail, peer-peer, IRC chat, and others.
+	许多有I2P接口的应用程序都可用，包括邮件，P2P，IRC聊天等等。
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Usage](#Usage)
-*   [3 Eepsite](#Eepsite)
-*   [4 See also](#See_also)
+*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [2 使用](#.E4.BD.BF.E7.94.A8)
+*   [3 匿名站点](#.E5.8C.BF.E5.90.8D.E7.AB.99.E7.82.B9)
+*   [4 参见](#.E5.8F.82.E8.A7.81)
 
-## Installation
+## 安装
 
-I2P is available with the [i2p](https://aur.archlinux.org/packages/i2p/) package providing compilation from source, and the [i2p-bin](https://aur.archlinux.org/packages/i2p-bin/) package providing a precompiled binary; both of which require a [Java](/index.php/Java "Java") Runtime Environment, OpenJDK is fine, for the ARM platform Oracle Java is recommended.
+I2P可用于提供编译的[i2p](https://aur.archlinux.org/packages/i2p/)包 源代码和提供预编译二进制文件的[i2p-bin](https://aur.archlinux.org/packages/i2p-bin/)包; 两者都需要[Java]运行时环境，可以使用OpenJDK，对于ARM平台推荐使用Oracle Java。 I2P主页还提供用于在用户主目录中进行命令行（无头）安装的预编译二进制包。 如果安装类型I2P将通过i2p网络自动更新。
 
-The I2P homepage also provides a precompiled binary package for command line (headless) install in the users home directory. In case of this installation type I2P will auto update itself through the i2p network.
+如果这些Java实现是不可取的; [i2pd](https://aur.archlinux.org/packages/i2pd/)是一个完整的C ++客户端，可以适应资源有限的硬件。
 
-Should these Java implementations be undesirable; [i2pd](https://aur.archlinux.org/packages/i2pd/) is a full C++ client, which may suit hardware with limited resources.
-
-## Usage
+## 使用
 
 First, [start](/index.php/Start "Start") and optionally also enable the `i2prouter.service`.
 
@@ -40,11 +38,11 @@ HTTPS 127.0.0.1 4445
 
 ```
 
-## Eepsite
+## 匿名站点
 
 If you make an eepsite, follow the I2P instructions, but keep in mind that the home directory will apply to the i2p user whose home directory is `/opt/i2p` as shown in the AUR [i2p.install](https://aur.archlinux.org/cgit/aur.git/tree/i2p.install?h=i2p) file.
 
-## See also
+## 参见
 
 *   [I2P Homepage](http://www.i2p2.de)
 *   [I2P FAQ](http://www.i2p2.de/faq.html)

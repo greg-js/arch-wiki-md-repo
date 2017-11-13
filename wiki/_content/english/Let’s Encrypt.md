@@ -46,7 +46,7 @@ Consult the [Certbot documentation](https://certbot.eff.org/docs/) for more info
 
 When using the webroot method the Certbot client places a challenge response inside `/path/to/domain.tld/html/.well-known/acme-challenge/` which is used for validation.
 
-The use of this method is recommend over a manual install; it offers automatically renewal and easier certificate management.
+The use of this method is recommend over a manual install; it offers automatic renewal and easier certificate management.
 
 **Tip:** The following initial [nginx server](/index.php/Nginx#Server_blocks "Nginx") configuration may be helpful to obtain a first-time certificate: `/etc/nginx/servers-available/domain.tld` 
 ```
@@ -99,7 +99,7 @@ See [#Automatic renewal](#Automatic_renewal) as alternative approach.
 **Note:**
 
 *   The running webserver has to temporarily stopped.
-*   Automatically renewal is not available when performing manual install, see [#Webroot](#Webroot) instead.
+*   Automatic renewal is not available when performing manual install, see [#Webroot](#Webroot) instead.
 
 If there is no plugin for your web server, use the following command:
 

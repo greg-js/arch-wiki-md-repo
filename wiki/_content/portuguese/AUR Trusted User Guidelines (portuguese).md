@@ -9,7 +9,7 @@ Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-u
 ## Contents
 
 *   [1 Lista de tarefas para novos Trusted Users](#Lista_de_tarefas_para_novos_Trusted_Users)
-*   [2 O TU e o [unsupported]](#O_TU_e_o_.5Bunsupported.5D)
+*   [2 O TU e o AUR](#O_TU_e_o_AUR)
 *   [3 O TU e [community], Diretrizes para Manutenção de Pacotes](#O_TU_e_.5Bcommunity.5D.2C_Diretrizes_para_Manuten.C3.A7.C3.A3o_de_Pacotes)
     *   [3.1 Regras para a Entrada de Pacotes no Repositório [community]](#Regras_para_a_Entrada_de_Pacotes_no_Reposit.C3.B3rio_.5Bcommunity.5D)
     *   [3.2 Acessando e Atualizando o Repositório](#Acessando_e_Atualizando_o_Reposit.C3.B3rio)
@@ -45,9 +45,9 @@ Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-u
 15.  Se você não for acrescentado a um grupo de Trusted User no rastreador de erro em dois dias, relate isso como um bug para arch-dev-public.
 16.  Começar a contribuir!
 
-## O TU e o [unsupported]
+## O TU e o AUR
 
-Os TUs deveriam também fazer um esforço para verificar o envio de pacotes no UNSUPPORTED por códigos maliciosos e o correto seguimento dos padrões dos PKGBUILD. Em cerca de 80% dos casos, os PKGBUILDs no UNSUPPORTED são muito simples e podem ter rapidamente verificadas a sanidade e os códigos maliciosos pela equipe de TUs.
+Os TUs deveriam também fazer um esforço para verificar o envio de pacotes no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") por códigos maliciosos e o correto seguimento dos padrões dos PKGBUILD. Em cerca de 80% dos casos, os PKGBUILDs no UNSUPPORTED são muito simples e podem ter rapidamente verificadas a sanidade e os códigos maliciosos pela equipe de TUs.
 
 Os TUs devem também verificar os PKGBUILDs por pequenos erros, sugerir correções e melhoras. O TU deve se tentar certificar-se de que todos os pacotes sigam Arch Packaging Guidelines/Standards (Diretrizes/Padrões de Empacotamento do Arch) e ao fazer isso, compartilhar suas habilidades com outros criadores de pacotes em um esforço em criar um padrão de criação de pacotes por toda a distribuição.
 
@@ -148,12 +148,13 @@ Não há sentido em remover pacotes-modelos, porque eles serão recriados na ten
 
 ## Lista de TODO na retirada de um Trusted User
 
-Quando um TU renuncia, a seguinte lista tem que ser seguida, essas etapas não se aplicam quando um TU renuncia, mas ainda é um desenvolvedor.
+Quando um TU renuncia, a seguinte lista tem que ser seguida -- essas etapas não se aplicam quando um TU renuncia, mas ainda é um desenvolvedor.
 
 1.  Todos os pacotes empacotados pelo TU retirado devem ser resignados (portanto, recompilados). Pacotes empacotados pelo retirado podem ser localizados no Archweb [https://www.archlinux.org/packages/?sort=&q=&empacotador=$empacotador&flagged=](https://www.archlinux.org/packages/?sort=&q=&empacotador=$empacotador&flagged=), sendo empacotador o nome de usuário no Archweb.
 2.  A conta do retirado deve ser desabilitada no Archweb e adicionada ao grupo "Retired Trusted users". O retirado deve ser removido dos "Trusted Users" e as permissões de repositório devem ser reduzidas a zero.
 3.  O acesso shell a nossos servidores devem ser desabilitados. (especialmente repos.archlinux.org, pkgbuild.com)
-4.  A chave GPG deve ser removida e um novo pacote [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) deve ser enviado para os repositórios.
+4.  A chave GPG deve ser removida e um novo pacote [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) deve ser enviado para os repositórios. Crie um relatório de erro no projeto do chaveiro para remover as chaves dos Trusted Users retirados.
+5.  Remova o grupo de TU de suas contas AUR.
 
 ## Veja também
 

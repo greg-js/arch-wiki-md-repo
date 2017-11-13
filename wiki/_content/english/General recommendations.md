@@ -84,7 +84,7 @@ Users and groups are a mechanism for *access control*; administrators may fine-t
 
 ### Privilege escalation
 
-Both the [su](/index.php/Su "Su") and [sudo](/index.php/Sudo "Sudo") commands allow you to run commands as another user. Be default *su* drops you to a login shell as the root user, and *sudo* by default temporarily grants you root privileges for a single command. See their respective articles for differences.
+Both the [su](/index.php/Su "Su") and [sudo](/index.php/Sudo "Sudo") commands allow you to run commands as another user. By default *su* drops you to a login shell as the root user, and *sudo* by default temporarily grants you root privileges for a single command. See their respective articles for differences.
 
 ### Service management
 

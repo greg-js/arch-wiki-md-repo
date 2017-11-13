@@ -105,6 +105,7 @@ International discussions are available at the following channels, also located 
 | [#archlinux.hu](ircs://chat.freenode.net/archlinux.hu) | Discussion (Hungarian) |
 | [#archlinux-it](ircs://chat.freenode.net/archlinux-it) | Discussion (Italian); also on **[irc.azzurra.org#archlinux](irc://irc.azzurra.org/archlinux)** |
 | [#archlinux-nordics](ircs://chat.freenode.net/archlinux-nordics) | Discussion (the nordics: Danish, Finnish, Norwegian and Swedish) |
+| [#archlinux-kr](ircs://chat.freenode.net/archlinux-kr) | Discussion (Korean) |
 | [#archlinux-ir](ircs://chat.freenode.net/archlinux-ir) | Discussion (Persian) |
 | [#archlinux.org.pl](ircs://chat.freenode.net/archlinux.org.pl) | Discussion (Polish) |
 | [#archlinux-pt](ircs://chat.freenode.net/archlinux-pt) | Discussion (Portuguese) |

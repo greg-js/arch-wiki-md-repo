@@ -97,18 +97,17 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
         *   [5.2.3 brtln](#brtln)
-        *   [5.2.4 imake](#imake)
-        *   [5.2.5 jkanetwork](#jkanetwork)
-        *   [5.2.6 matrixim](#matrixim)
-        *   [5.2.7 mesa-git](#mesa-git)
-        *   [5.2.8 mingw-w64](#mingw-w64)
-        *   [5.2.9 neo_chen](#neo_chen)
-        *   [5.2.10 ownstuff](#ownstuff)
-        *   [5.2.11 pnsft-pur](#pnsft-pur)
-        *   [5.2.12 rakudo](#rakudo)
-        *   [5.2.13 rust-git](#rust-git)
-        *   [5.2.14 trinity](#trinity)
-        *   [5.2.15 zrootfs](#zrootfs)
+        *   [5.2.4 jkanetwork](#jkanetwork)
+        *   [5.2.5 matrixim](#matrixim)
+        *   [5.2.6 mesa-git](#mesa-git)
+        *   [5.2.7 mingw-w64](#mingw-w64)
+        *   [5.2.8 neo_chen](#neo_chen)
+        *   [5.2.9 ownstuff](#ownstuff)
+        *   [5.2.10 pnsft-pur](#pnsft-pur)
+        *   [5.2.11 rakudo](#rakudo)
+        *   [5.2.12 rust-git](#rust-git)
+        *   [5.2.13 trinity](#trinity)
+        *   [5.2.14 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -1025,17 +1024,6 @@ Server = https://pkgbuild.com/~alucryd/$repo/x86_64
 ```
 [brtln]
 Server = https://pkgbuild.com/~barthalion/brtln/$arch/
-
-```
-
-#### imake
-
-*   **Maintainer:** GRV <grvconstanta@gmail.com>
-*   **Description:** Important AUR packages that are pre-compiled and ready to install with pacman.
-
-```
-[imake]
-Server = http://imake.ddns.net/$arch
 
 ```
 

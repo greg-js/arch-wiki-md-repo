@@ -22,10 +22,8 @@
     *   [5.5 Keybindings from line-cursor-mode](#Keybindings_from_line-cursor-mode)
     *   [5.6 Keybindings from scroll-mode](#Keybindings_from_scroll-mode)
     *   [5.7 Global keybindings](#Global_keybindings)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Crashing with: Illegal instruction (core dumped)](#Crashing_with:_Illegal_instruction_.28core_dumped.29)
-*   [7 Tips and tricks](#Tips_and_tricks)
-*   [8 See also](#See_also)
+*   [6 Tips and tricks](#Tips_and_tricks)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -365,59 +363,6 @@ m, c : Compose new message
    R : Edit most recent draft message
 
 ```
-
-## Troubleshooting
-
-### Crashing with: Illegal instruction (core dumped)
-
-`sup` uses a search engine called Xapian which is being compiled to use SSE2 instructions. If your CPU does not support SSE2 instructions you will encounter the error message:
-
-```
-   Illegal instruction (core dumped)
-
-```
-
-To solve this you have to compile Xapian with the flag `--disable-sse`.
-
-1\. Looking at the `PKGBUILD` for [ruby-xapian-ruby](https://aur.archlinux.org/packages/ruby-xapian-ruby/) you can see that it downloads a gem from [https://rubygems.org/gems/xapian-ruby](https://rubygems.org/gems/xapian-ruby). Download the gem.
-
-2\. run these commands
-
-```
-   gem unpack xapian-ruby.gem
-   gem unpack --spec xapian-ruby.gem
-   mv xapian-ruby.gemspec xapian-ruby/
-   cd xapian-ruby
-
-```
-
-3\. You are suppose to edit the `Rakefile`. Your goal is to change the 2 lines where it runs the config changes. All you have to do is to append `--disable-sse` to the end of those configuration commands:
-
-```
-   system! "./configure --prefix=#{prefix} --exec-prefix=#{prefix} --disable-sse"
-   system! "./configure --prefix=#{prefix} --exec-prefix=#{prefix} --with-ruby --disable-sse"
-
-```
-
-And save those changes.
-
-4\. run
-
-```
-   gem build xapian-ruby.gemspec
-   gem install --local xapian-ruby.gem
-
-```
-
-This should solve the problem with Xapian not running on old CPUs. It should also be mentioned that if it is your first time you run `sup-config` and you have done everything correctly but still end up wih the error message
-
-```
-   This Sup version expects a v4 index, but you have an existing v0 index. Please run sup-dump to save your labels, move /home/user/.sup/xapian out of the way, and run sup-sync --restore. (RuntimeError)
-   Rats, that failed. You may have to do it manually.
-
-```
-
-it is possible that you also have this issue, try to run the other executables such as `sup` or `sup-dump` to see if you get the Illegal instruction (core dumped) error message.
 
 ## Tips and tricks
 

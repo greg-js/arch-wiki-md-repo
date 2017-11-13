@@ -1,6 +1,4 @@
-Vim (**Vi** I**M**Proved), es un editor de texto derivado de Vi. Es notoriamente conocido por su empinada curva de aprendizaje, y su poco amistosa interfaz de usuario. No obstante, debido a su eficiencia, a su variedad de añadidos ("plugins")", y a sus posibilidades de personalización vim es uno de los editores de texto más populares para programadores y usuarios de sistemas tipo Unix (junto con [Emacs](/index.php/Emacs "Emacs")*). Existe también una versión gráfica, gVim, que proporciona un sistema de menús al usuario.
-
-**Tenga en cuenta que la Religión de Vi ha determinado que utilizar Emacs puede causar sequedad de boca, visión borrosa, somnolencia, vértigos, aumento de la sudoración, temblores, problemas de erección, dolor de cabeza, nauseas y dolor abdominal.*
+Vim (**Vi** I**M**Proved), es un editor de texto derivado de Vi. Es notoriamente conocido por su empinada curva de aprendizaje, y su poco amistosa interfaz de usuario. No obstante, debido a su eficiencia, variedad de añadidos ("plugins") y posibilidades de personalización, vim es uno de los editores de texto más populares entre programadores y usuarios de sistemas tipo Unix (junto con [Emacs](/index.php/Emacs "Emacs")*). Existe también una versión gráfica, gVim, que proporciona un sistema de menús al usuario.
 
 ## Contents
 
@@ -12,8 +10,8 @@ Vim (**Vi** I**M**Proved), es un editor de texto derivado de Vi. Es notoriamente
     *   [3.3 Cómo mover el cursor](#C.C3.B3mo_mover_el_cursor)
     *   [3.4 Cómo borrar texto](#C.C3.B3mo_borrar_texto)
     *   [3.5 Cómo insertar texto](#C.C3.B3mo_insertar_texto)
-    *   [3.6 Cómo CORTAR, COPIAR y PEGAR](#C.C3.B3mo_CORTAR.2C_COPIAR_y_PEGAR)
-    *   [3.7 CORTE, COPIE Y PEGUE en modo visual](#CORTE.2C_COPIE_Y_PEGUE.09en_modo_visual)
+    *   [3.6 Cómo Cortar, Copiar y Pegar](#C.C3.B3mo_Cortar.2C_Copiar_y_Pegar)
+    *   [3.7 Cortar, Copiar y Pegar en modo visual](#Cortar.2C_Copiar_y_Pegar_en_modo_visual)
     *   [3.8 Deshacer ("Undo")](#Deshacer_.28.22Undo.22.29)
     *   [3.9 Cómo buscar una palabra](#C.C3.B3mo_buscar_una_palabra)
     *   [3.10 Cómo sustituir texto](#C.C3.B3mo_sustituir_texto)
@@ -186,7 +184,7 @@ o bien
 
 3\. pulse **a** para entrar en modo de inserción. Esto **a**dosará texto justo a la derecha del carácter actual.
 
-### Cómo CORTAR, COPIAR y PEGAR
+### Cómo Cortar, Copiar y Pegar
 
 Si ejecuta la versión con interfaz gráfico de vim, gvim, puede utilizar el ratón y los menús de persiana para hacerlo---de la misma manera que con otro editor. Sin embargo, éste no es el estilo preferido. Se sentirá mucho mejor si puede prescindir del ratón en su vida.
 
@@ -237,7 +235,7 @@ Si quiere copiar o cortar varias líneas, introduzca un número delante de la or
 
 para copiar 8 líneas.
 
-### CORTE, COPIE Y PEGUE en modo visual
+### Cortar, Copiar y Pegar en modo visual
 
 *   El modo visual es como el modo de órdenes, pero las órdenes de movimiento se extienden a un área remarcada. Cuando se utiliza una orden que no sea de movimiento, se ejecuta ésta para toda el área remarcada. Cortar, copiar y pegar grandes porciones de texto es más eficiente hacerlo en modo visual.
 

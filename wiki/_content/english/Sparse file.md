@@ -7,8 +7,9 @@ This article contains information regarding sparse files, their creation, mainte
     *   [1.2 Advantages](#Advantages)
     *   [1.3 Disadvantages](#Disadvantages)
 *   [2 Creating sparse files](#Creating_sparse_files)
-    *   [2.1 Formatting the file with a filesystem](#Formatting_the_file_with_a_filesystem)
-    *   [2.2 Mounting the file at boot](#Mounting_the_file_at_boot)
+    *   [2.1 Making existing files sparse](#Making_existing_files_sparse)
+    *   [2.2 Formatting the file with a filesystem](#Formatting_the_file_with_a_filesystem)
+    *   [2.3 Mounting the file at boot](#Mounting_the_file_at_boot)
 *   [3 Copying the sparse file](#Copying_the_sparse_file)
     *   [3.1 Copying with `cp'](#Copying_with_.60cp.27)
     *   [3.2 Archiving with `tar'](#Archiving_with_.60tar.27)
@@ -70,6 +71,24 @@ $ du -h file.img
 ```
 
 As you can see, although the apparent size of the file is 512 MiB, its "actual" size is really zero—that's because due to the nature and beauty of sparse files, it will "expand" arbitrarily to minimize the space required to store its contents.
+
+### Making existing files sparse
+
+The *fallocate* utility can make existing files sparse on supported file systems (XFS, ext4, and tmpfs):
+
+```
+$ cp file.img copy.img --sparse=never
+$ du -h copy.img 
+512M    copy.img
+
+```
+
+```
+$ fallocate -d copy.img
+$ du -h copy.img
+0       copy.img
+
+```
 
 ### Formatting the file with a filesystem
 

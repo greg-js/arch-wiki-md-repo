@@ -69,21 +69,31 @@ There are several ways to achieve this on Linux:
 *   [Except](https://en.wikipedia.org/wiki/Nvidia_PureVideo "wikipedia:Nvidia PureVideo") GeForce 8800 Ultra, 8800 GTX, 8800 GTS (320/640 MB).
 *   Except GeForce GTX 970 and GTX 980.
 
+<caption>Nvidia NVDEC/NVENC ([Nvidia](/index.php/Nvidia "Nvidia") only)</caption>
+ Decoding (NVDEC) | Encoding (NVENC) |
+| MPEG-2 | ✓ | ✗ |
+| VC-1 | ✓ | ✗ |
+| H.264 | ✓ | ✓ |
+| HEVC (H.265) | Pascal and newer | Pascal and newer |
+| VP8 | Maxwell2 and newer | ✗ |
+| VP9 | Pascal and newer | ✗ |
+
 The features supported by your GPU may vary. To see what your GPU supports see [#Verification](#Verification).
 
 Regarding the [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/) package, see [AMDGPU#AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU").
 
 ### Software
 
- VA-API | VDPAU |
-| [GStreamer](/index.php/GStreamer "GStreamer") | ✓ (with [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi), see [GStreamer#Hardware acceleration](/index.php/GStreamer#Hardware_acceleration "GStreamer")) | ✓ (with [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad), see [GStreamer#Hardware acceleration](/index.php/GStreamer#Hardware_acceleration "GStreamer")) |
-| [VLC media player](/index.php/VLC_media_player "VLC media player") | ✓ (see [VLC media player#Hardware acceleration support](/index.php/VLC_media_player#Hardware_acceleration_support "VLC media player")) | ✓ (see [VLC media player#Hardware acceleration support](/index.php/VLC_media_player#Hardware_acceleration_support "VLC media player")) |
-| [mpv](/index.php/Mpv "Mpv") | ✓ (see [mpv#Hardware decoding](/index.php/Mpv#Hardware_decoding "Mpv")) | ✓ (see [mpv#Hardware decoding](/index.php/Mpv#Hardware_decoding "Mpv")) |
-| [MPlayer](/index.php/MPlayer "MPlayer") | ✓ (with [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/), see [MPlayer#Enabling VA-API](/index.php/MPlayer#Enabling_VA-API "MPlayer")) | ✓ (see [MPlayer#Enabling VDPAU](/index.php/MPlayer#Enabling_VDPAU "MPlayer")) |
-| [Flash](/index.php/Flash "Flash") | ✓ (with [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl), see [Flash#Configuration](/index.php/Flash#Configuration "Flash")) | ✓ (see [Flash#Configuration](/index.php/Flash#Configuration "Flash")) |
-| [Kodi](/index.php/Kodi "Kodi") | ✓ | ✓ |
-| [Firefox](/index.php/Firefox "Firefox") | ✗ [[2]](https://bugzilla.mozilla.org/show_bug.cgi?id=1210726) [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=1210727) [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=563206) |
-| [Chromium](/index.php/Chromium "Chromium") | [WIP](https://chromium-review.googlesource.com/c/chromium/src/+/532294) ([chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)) | ✗ |
+ VA-API | VDPAU | NVDEC/NVENC |
+| [GStreamer](/index.php/GStreamer "GStreamer") | ✓ (with [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi), see [GStreamer#Hardware acceleration](/index.php/GStreamer#Hardware_acceleration "GStreamer")) | ✓ (with [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad), see [GStreamer#Hardware acceleration](/index.php/GStreamer#Hardware_acceleration "GStreamer")) | [✓](https://www.phoronix.com/scan.php?page=news_item&px=NVIDIA-NVDEC-GStreamer) |
+| [VLC media player](/index.php/VLC_media_player "VLC media player") | ✓ (see [VLC media player#Hardware acceleration support](/index.php/VLC_media_player#Hardware_acceleration_support "VLC media player")) | ✓ (see [VLC media player#Hardware acceleration support](/index.php/VLC_media_player#Hardware_acceleration_support "VLC media player")) | ✗ |
+| [mpv](/index.php/Mpv "Mpv") | ✓ (see [mpv#Hardware decoding](/index.php/Mpv#Hardware_decoding "Mpv")) | ✓ (see [mpv#Hardware decoding](/index.php/Mpv#Hardware_decoding "Mpv")) | [✓](https://www.phoronix.com/scan.php?page=news_item&px=MPV-Player-0.21) |
+| [MPlayer](/index.php/MPlayer "MPlayer") | ✓ (with [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/), see [MPlayer#Enabling VA-API](/index.php/MPlayer#Enabling_VA-API "MPlayer")) | ✓ (see [MPlayer#Enabling VDPAU](/index.php/MPlayer#Enabling_VDPAU "MPlayer")) | ✗ |
+| [Flash](/index.php/Flash "Flash") | ✓ (with [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl), see [Flash#Configuration](/index.php/Flash#Configuration "Flash")) | ✓ (see [Flash#Configuration](/index.php/Flash#Configuration "Flash")) | ✗ |
+| [Kodi](/index.php/Kodi "Kodi") | ✓ | ✓ | ✓ |
+| [Firefox](/index.php/Firefox "Firefox") | ✗ [[2]](https://bugzilla.mozilla.org/show_bug.cgi?id=1210726) [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=1210727) [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=563206) | ✗ |
+| [Chromium](/index.php/Chromium "Chromium") | [WIP](https://chromium-review.googlesource.com/c/chromium/src/+/532294) ([chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)) | ✗ | ✗ |
+| [FFmpeg](/index.php/FFmpeg "FFmpeg") | ✓ | ✓ | [✓](https://www.phoronix.com/scan.php?page=news_item&px=FFmpeg-NVDEC-H264-Acceleration) |
 
 ## Installation
 

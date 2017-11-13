@@ -65,7 +65,7 @@ Here's a way how you can make a ruby compile:
 2\. Then run:
 
 ```
- CC=/usr/bin/gcc-5 \
+ CC=/usr/bin/gcc-6 \
  PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig \
  rbenv install 2.3.4
 

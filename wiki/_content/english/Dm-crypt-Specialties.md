@@ -472,6 +472,8 @@ See [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-
 
 ```
 
+**Tip:** When using option `--header`, `--align-payload` allows specifying the start of encrypted data on a device. By reserving a space at the beginning of device you have the option of later [reattaching the LUKS header](/index.php/Dm-crypt/Device_encryption#Restore_using_cryptsetup "Dm-crypt/Device encryption"). See [cryptsetup(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cryptsetup.8) for values supported by `--align-payload`.
+
 Open the container:
 
 ```

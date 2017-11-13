@@ -18,13 +18,14 @@ The configuration file for DNS resolvers is `/etc/resolv.conf`. From [resolv.con
     *   [2.3 Google](#Google)
     *   [2.4 Comodo](#Comodo)
     *   [2.5 Yandex](#Yandex)
-    *   [2.6 UncensoredDNS](#UncensoredDNS)
+    *   [2.6 DNS.WATCH](#DNS.WATCH)
+    *   [2.7 UncensoredDNS](#UncensoredDNS)
 *   [3 Preserve DNS settings](#Preserve_DNS_settings)
-    *   [3.1 With NetworkManager](#With_NetworkManager)
-    *   [3.2 Using openresolv](#Using_openresolv)
+    *   [3.1 Prevent NetworkManager modifications](#Prevent_NetworkManager_modifications)
+    *   [3.2 Use openresolv](#Use_openresolv)
     *   [3.3 Modify the dhcpcd config](#Modify_the_dhcpcd_config)
     *   [3.4 Write-protect /etc/resolv.conf](#Write-protect_.2Fetc.2Fresolv.conf)
-    *   [3.5 Use timeout option to reduce hostname lookup time](#Use_timeout_option_to_reduce_hostname_lookup_time)
+    *   [3.5 Limit lookup time](#Limit_lookup_time)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Local domain names](#Local_domain_names)
 
@@ -37,28 +38,28 @@ Your ISP (usually) provides working [DNS](https://en.wikipedia.org/wiki/Domain_N
 Use *drill* (provided by package [ldns](https://www.archlinux.org/packages/?name=ldns)) before any changes, repeat after making the adjustments and compare the query time(s). The following command uses the nameservers set in `/etc/resolv.conf`:
 
 ```
-$ drill www5.yahoo.com
+$ drill www.archlinux.org
 
 ```
 
 You can also specify a specific nameserver's ip address, bypassing the settings in your `/etc/resolv.conf`:
 
 ```
-$ drill @*ip.of.name.server* www5.yahoo.com
+$ drill @*ip.of.name.server* www.archlinux.org
 
 ```
 
 For example to test Google's name servers:
 
 ```
-$ drill @8.8.8.8 www5.yahoo.com
+$ drill @8.8.8.8 www.archlinux.org
 
 ```
 
 To test a local name server (such as [unbound](/index.php/Unbound "Unbound")) do:
 
 ```
-$ drill @127.0.0.1 www5.yahoo.com
+$ drill @127.0.0.1 www.archlinux.org
 
 ```
 
@@ -72,9 +73,9 @@ To use alternative DNS servers, edit `/etc/resolv.conf` and add them at the top 
 
 ### OpenNIC
 
-[OpenNIC](http://www.opennicproject.org/) provides free uncensored nameservers located in multiple countries.
+[OpenNIC](http://www.opennicproject.org/) provides free uncensored nameservers located in multiple countries. The full list of public servers is available at [servers.opennic.org](https://servers.opennic.org/) and a shortlist of nearest nameservers for optimal performance is generated on their [home page](https://www.opennic.org/).
 
-The full list of public servers is available at [servers.opennic.org](https://servers.opennic.org/) and a shortlist of nearest nameservers for optimal performance is generated on their [home page](https://www.opennic.org/).
+To retrieve a list of nearest nameservers, an API is also available and returns, based on the [URL parameters](https://wiki.opennic.org/api/geoip) provided, a list of nameservers in the desired format. For example to get the 200 nearest IPv4 servers, one can use [https://api.opennicproject.org/geoip/?list&ipv=4&res=200&adm=0&bl&wl](https://api.opennicproject.org/geoip/?list&ipv=4&res=200&adm=0&bl&wl).
 
 Alternatively, the anycast servers below can be used; while reliable their latency [fluctuates a lot](https://wiki.opennic.org/opennic/dont_anycast).
 
@@ -143,7 +144,7 @@ nameserver 8.20.247.20
 
 ### Yandex
 
-[Yandex.DNS](https://dns.yandex.com/advanced/) has three options:
+[Yandex.DNS](https://dns.yandex.com/advanced/) has servers in Russia, Eastern and Western Europe and has three options, *Basic*, *Safe* and *Family*:
 
 ```
 # Basic Yandex.DNS - Quick and reliable DNS
@@ -177,6 +178,17 @@ nameserver 2a02:6b8:0:1::feed:a11 # Alternate IPv6 DNS
 
 Yandex.DNS' speed is the same in the three modes. In *Basic* mode, there is no traffic filtering. In *Safe* mode, protection from infected and fraudulent sites is provided. *Family* mode enables protection from dangerous sites and blocks sites with adult content.
 
+### DNS.WATCH
+
+[DNS.WATCH](https://dns.watch/) focuses on neutrality and security and provides two servers located in Germany with no logging and with DNSSEC enabled. Note they welcome commercial sponsorship.
+
+```
+# dns.watch IPv4 nameservers
+nameserver 84.200.69.80    # resolver1.dns.watch 
+nameserver 84.200.70.40    # resolver2.dns.watch
+
+```
+
 ### UncensoredDNS
 
 [UncensoredDNS](http://censurfridns.dk) is a free uncensored DNS service. It is run by a private individual and consists in one anycast served by multiple servers and one unicast node hosted in Denmark.
@@ -204,7 +216,7 @@ nameserver 2a01:3a0:53:53::  ## unicast.censurfridns.dk
 *   If you are using *dhcpcd*, see [#Modify the dhcpcd config](#Modify_the_dhcpcd_config) below.
 *   If you are using [netctl](/index.php/Netctl "Netctl") and static IP address assignment, do not use the `DNS*` options in your profile, otherwise *resolvconf* is called and `/etc/resolv.conf` overwritten.
 
-### With NetworkManager
+### Prevent NetworkManager modifications
 
 To stop NetworkManager from modifying `/etc/resolv.conf`, edit `/etc/NetworkManager/NetworkManager.conf` and add the following in the `[main]` section:
 
@@ -215,7 +227,7 @@ dns=none
 
 `/etc/resolv.conf` might be a broken symlink that you will need to remove after doing that. Then, just create a new `/etc/resolv.conf` file.
 
-### Using openresolv
+### Use openresolv
 
 [openresolv](https://www.archlinux.org/packages/?name=openresolv) provides a utility *resolvconf*, which is a framework for managing multiple DNS configurations. See [resolvconf(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.8) and [resolvconf.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.conf.5) for more information.
 
@@ -255,7 +267,7 @@ Another way to protect your `/etc/resolv.conf` from being modified by anything i
 
 ```
 
-### Use timeout option to reduce hostname lookup time
+### Limit lookup time
 
 If you are confronted with a very long hostname lookup (may it be in [pacman](/index.php/Pacman "Pacman") or while browsing), it often helps to define a small timeout after which an alternative nameserver is used. To do so, put the following in `/etc/resolv.conf`.
 

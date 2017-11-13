@@ -34,7 +34,8 @@ Esse artigo objetiva auxiliar usuários na criação de seus próprios pacotes u
 *   [6 Resumo](#Resumo)
     *   [6.1 Avisos](#Avisos)
 *   [7 Diretrizes mais detalhadas](#Diretrizes_mais_detalhadas)
-*   [8 Veja também](#Veja_tamb.C3.A9m)
+*   [8 Geradores de PKGBUILD](#Geradores_de_PKGBUILD)
+*   [9 Veja também](#Veja_tamb.C3.A9m)
 
 ## Visão Geral
 
@@ -52,9 +53,9 @@ Um pacote do Arch é nada mais que um pacote tar, ou "tarball", comprimido usand
 
 Um grupo de pacotes é um conjunto de pacotes relacionados, definido pelo empacotador, que pode ser instalado ou desinstalado simultaneamente usando o nome de grupo como um substituto para cada nome de pacote individual. Enquanto um grupo não é um pacote, ele pode ser instalado de forma similar a um pacote, veja [Pacman (Português)#Instalando grupos de pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_grupos_de_pacotes "Pacman (Português)") e [PKGBUILD (Português)#groups](/index.php/PKGBUILD_(Portugu%C3%AAs)#groups "PKGBUILD (Português)").
 
-Um pacote meta, frequentemente (mas nem sempre) intitulado com o sufixo *-meta*, fornece funcionalidade similar a um grupo de pacotes no sentido que ele permite múltiplos pacotes relacionados serem instalados ou desinstalados simultaneamente. Pacotes meta podem ser instalados como qualquer outro pacote, veja [Pacman (Português)#Instalando pacotes específicos](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_pacotes_espec.C3.ADficos "Pacman (Português)"). A única diferença entre um pacote meta e um pacote comum é que um pacote meta é vazio e existe apenas para fazer um vínculo de pacotes relacionados por meio de dependências.
+Um pacote meta, frequentemente (mas nem sempre) intitulado com o sufixo *-meta*, fornece funcionalidade similar a um grupo de pacotes no sentido que ele permite múltiplos pacotes relacionados serem instalados ou desinstalados simultaneamente. Pacotes meta podem ser instalados como qualquer outro pacote (veja [Pacman (Português)#Instalando pacotes específicos](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_pacotes_espec.C3.ADficos "Pacman (Português)")). A única diferença entre um pacote meta e um pacote comum é que um pacote meta é vazio e existe apenas para fazer um vínculo de pacotes relacionados por meio de dependências.
 
-A vantagem de um pacote meta, comparado com um grupo, é que quaisquer novos pacotes membros serão instalados quando o pacote meta em si for atualizado com um novo conjunto de dependências. Isso é um contraste a um grupo em que novos membros de grupos não serão instalados automaticamente. A desvantagem de um pacote meta é que ele não é tão flexível quanto um grupo — você pode escolher quais membros do grupo você deseja instalar, mas não pode escolher qual dependência do pacote meta você deseja instalar. Da mesma forma, você pode desinstalar membros do grupo sem ter que remover todo o grupo, porém você não pode remover dependências de pacotes meta sem ter que desinstalar o pacote meta em si.
+A vantagem de um pacote meta, comparado com um grupo, é que quaisquer novos pacotes membros serão instalados quando o pacote meta em si for atualizado com um novo conjunto de dependências. Isso é um contraste a um grupo em que novos membros de grupos não serão instalados automaticamente. A desvantagem de um pacote meta é que ele não é tão flexível quanto um grupo — você pode escolher quais membros do grupo você deseja instalar, mas não pode escolher qual dependência do pacote meta você deseja instalar. Da mesma forma, você pode desinstalar membros do grupo sem ter que remover todo o grupo. Porém você não pode remover dependências de pacotes meta sem ter que desinstalar o pacote meta em si.
 
 ## Preparação
 
@@ -227,6 +228,20 @@ Por favor, leia [AUR (Português)#Enviando pacotes](/index.php/AUR_(Portugu%C3%A
 * * *
 
 [CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Node.js](/index.php/Node.js_package_guidelines "Node.js package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
+
+## Geradores de PKGBUILD
+
+PKGBUILDs para alguns pacotes podem ser gerados automaticamente.
+
+**Nota:** Usuários ainda são responsáveis por garantir que o pacote atende os padrões de alta qualidade antes de enviar os arquivos gerados para o [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)").
+
+*   [Go](/index.php/Go "Go"): [go-makepkg](https://github.com/seletskiy/go-makepkg)
+
+*   [Haskell](/index.php/Haskell "Haskell"): [cblrepo](https://github.com/magthe/cblrepo)
+
+*   [Python](/index.php/Python "Python"): [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/), [PyPI2PKGBUILD](https://github.com/anntzer/pypi2pkgbuild)
+
+*   [Ruby](/index.php/Ruby "Ruby"): [gem2arch](https://aur.archlinux.org/packages/gem2arch/), [pacgem](https://aur.archlinux.org/packages/pacgem/)
 
 ## Veja também
 

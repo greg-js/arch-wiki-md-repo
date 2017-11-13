@@ -423,7 +423,7 @@ You could also do something like this (after the upgrade and install of [postgre
 ```
 # systemctl stop postgresql.service
 # /opt/pgsql-9.6/bin/pg_ctl -D /var/lib/postgres/olddata/ start
-# /opt/pgsql-9.6/bin/pg_dumpall >> old_backup.sql
+# pg_dumpall >> old_backup.sql
 # /opt/pgsql-9.6/bin/pg_ctl -D /var/lib/postgres/olddata/ stop
 # systemctl start postgresql.service
 # psql -f old_backup.sql postgres

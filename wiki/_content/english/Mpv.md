@@ -304,7 +304,7 @@ Set `volume-max=*value*` in your configuration file to a reasonable amount, such
 
 ### Quickly cycle between aspect ratios
 
-You can cycle between aspect ratios using `Shift+a` from version 0.8.0 onwards.
+You can cycle between aspect ratios using `Shift+a`.
 
 ### Ignoring aspect ratio
 

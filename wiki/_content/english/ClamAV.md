@@ -141,7 +141,7 @@ Using the `-l /path/to/file` option will print the `clamscan` logs to a text fil
 
 ## Using the milter
 
-Copy `/etc/clamav/clamav-milter.conf.sample` to `/etc/clamav/clamav-milter.conf` and adjust it to your needs. For example:
+Milter will scan your sendmail server for email contianing virus. Copy `/etc/clamav/clamav-milter.conf.sample` to `/etc/clamav/clamav-milter.conf` and adjust it to your needs. For example:
 
  `/etc/clamav/clamav-milter.conf` 
 ```
@@ -218,20 +218,36 @@ User root
 
 ```
 
-Next, create the file `/etc/clamav/detected.zsh` and add the following (replace X_user with the username and X_userId with the userid for whom to display the desktop notification). This allows you to change/specify the debug message when a virus has been detected by clamd's on-access scanning service:
+Next, create the file `/etc/clamav/detected.zsh` and add the following. This allows you to change/specify the debug message when a virus has been detected by clamd's on-access scanning service:
 
- `/etc/clamav/detected.zsh` 
+ `/etc/clamav/detected.sh` 
 ```
-#!/usr/bin/env zsh
+#!/bin/bash
+PATH=/usr/bin
+
 alert="Signature detected: $CLAM_VIRUSEVENT_VIRUSNAME in $CLAM_VIRUSEVENT_FILENAME"
 
-echo "$(date) - $CLAM_VIRUSEVENT_VIRUSNAME > $CLAM_VIRUSEVENT_FILENAME" >> /var/log/clamav/infected.log
-
-if [[ -z $(command -v notify-send) ]]; then
-  echo "$alert" {{!}} wall -n
+# Send the alert to systemd logger if exist, othewise to /var/log
+if [[ -z $(command -v systemd-cat) ]]; then
+	echo "$(date) - $alert" >> /var/log/clamav/infected.log
 else
-  sudo -u X_user DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/X_userId/bus /usr/bin/notify-send -i dialog-warning "$alert"
+	# as "emerg", this could cause your DE to show a visual alert. Happen in Plasma. but the next visual alert is much nicer
+	echo "$alert" | /usr/bin/systemd-cat -t clamav -p emerg
 fi
+
+#send an alrt to all graphical user
+XUSERS=($(who|awk '{print $1$NF}'|sort -u))
+
+for XUSER in $XUSERS; do
+    NAME=(${XUSER/(/ })
+    DISPLAY=${NAME[1]/)/}
+    DBUS_ADDRESS=unix:path=/run/user/$(id -u ${NAME[0]})/bus
+    echo "run $NAME - $DISPLAY - $DBUS_ADDRESS -" >> /tmp/testlog 
+    /usr/bin/sudo -u ${NAME[0]} DISPLAY=${DISPLAY} \
+                       DBUS_SESSION_BUS_ADDRESS=${DBUS_ADDRESS} \
+                       PATH=${PATH} \
+                       /usr/bin/notify-send -i dialog-warning "clamAV" "$alert"
+done
 
 ```
 

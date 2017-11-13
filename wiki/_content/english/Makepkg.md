@@ -274,9 +274,15 @@ $ linux32 makepkg --config ~/.makepkg.i686.conf
 
 ### Makepkg sometimes fails to sign a package without asking for signature passphrase
 
-With [gnupg 2.1](https://www.gnupg.org/faq/whats-new-in-2.1.html), gpg-agent no longer has to be started manually and will be started automatically on the first invokation of gpg. Thus if you do not manually start gpg-agent, makepkg will start it. The problem is that makepkg runs gpg inside a fakeroot, so gpg-agent is also started in that same environment. This leads to bad behavior. A possible solution is to manually start the gpg-agent, either on boot or by command (see [GnuPG#gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG") for ways to do this), before you run makepkg, but this also can be unreliable: [FS#49946](https://bugs.archlinux.org/task/49946).
+With [gnupg 2.1](https://www.gnupg.org/faq/whats-new-in-2.1.html), gpg-agent is now started 'on-the-fly' by gpg. The problem arises in the package stage of `makepkg --sign`. To allow for the correct privileges, [fakeroot](https://www.archlinux.org/packages/?name=fakeroot) runs the `package()` function thereby starting gpg-agent within the same fakeroot environment. On exit, the fakeroot cleanups semaphores causing the 'write' end of the pipe to close for that instance of gpg-agent which will result in a broken pipe error. If the same gpg-agent is running when `makepkg --sign` is next executed, then gpg-agent returns exit code 2; so the following output occurs:
 
-In the meantime if you do not wish to experiment with your gpg-agent configuration, simply use makepkg *without* signing, and sign the packages afterwards with `gpg --detach-sign *name*.pkg.tar.xz`.
+```
+==> Signing package...
+==> WARNING: Failed to sign package file.
+
+```
+
+This bug is currently being tracked: [FS#49946](https://bugs.archlinux.org/task/49946). A temporary workaround for this issue is to run `killall gpg-agent && makepkg --sign` instead. This issue is resolved within [pacman-git](https://aur.archlinux.org/packages/pacman-git/), specifically at commit hash `c6b04c04653ba9933fe978829148312e412a9ea7`
 
 ### CFLAGS/CXXFLAGS/CPPFLAGS in makepkg.conf do not work for QMAKE based packages
 

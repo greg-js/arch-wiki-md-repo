@@ -12,7 +12,7 @@
 
 #### Install Package
 
-[icaclient](https://aur.archlinux.org/packages/icaclient/) x86_64
+[Install](/index.php/Install "Install") the [icaclient](https://aur.archlinux.org/packages/icaclient/) package.
 
 SSL connections are supported by default in this packages. Also Firefox plugin will be installed by default as well as the wfica.desktop file. That way Arch knows how to open ica files.
 
@@ -42,7 +42,7 @@ Note: if you are running Xfce and Chromium is opening the .ica files in the wron
 
 #### Citrix Receiver (icaclient) Installation
 
-*   **Step 1.** Download Citrix Receiver It can be found [here](http://www.citrix.com/downloads/citrix-receiver/linux.html). Choose the latest version of the x86 client for 32-bit systems or the x86_64 file for 64-bit systems in the .tar.gz format.
+*   **Step 1.** Download Citrix Receiver from [here](https://www.citrix.com/downloads/citrix-receiver/linux/receiver-for-linux-latest.html). Choose the latest version of the x86_64 tarball.
 
 *   **Step 2.** Unpack the archive:
 

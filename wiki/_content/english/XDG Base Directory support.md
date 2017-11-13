@@ -1,11 +1,11 @@
 Related articles
 
 *   [dotfiles](/index.php/Dotfiles "Dotfiles")
-*   [Xdg user directories](/index.php/Xdg_user_directories "Xdg user directories")
+*   [XDG user directories](/index.php/XDG_user_directories "XDG user directories")
 
 This article exists to catalog the growing set of software using the [XDG Base Directory Specification](http://standards.freedesktop.org/basedir-spec/latest/) introduced in 2003\. This is here to demonstrate the viability of this specification by listing commonly found dotfiles and their support status. For those not currently supporting the Base Directory Specification, workarounds will be demonstrated to emulate it instead.
 
-The workarounds will be limited to anything not involving patching the source, executing code stored in [environment variables](/index.php/Environment_variable "Environment variable") or compile-time options. The rationale for this is that configurations should be portable across systems and having compile-time options prevent that.
+The workarounds will be limited to anything not involving patching the source, executing code stored in [environment variables](/index.php/Environment_variables "Environment variables") or compile-time options. The rationale for this is that configurations should be portable across systems and having compile-time options prevent that.
 
 Hopefully this will provide a source of information about exactly what certain kinds of dotfiles are and where they come from.
 

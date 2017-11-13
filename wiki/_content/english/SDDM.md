@@ -30,6 +30,7 @@ The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Deskto
     *   [3.4 SDDM loads only US keyboard layout](#SDDM_loads_only_US_keyboard_layout)
     *   [3.5 No user Icon](#No_user_Icon)
     *   [3.6 Screen resolution is too low](#Screen_resolution_is_too_low)
+    *   [3.7 SDDM takes long time to load when your home directory is encrypted](#SDDM_takes_long_time_to_load_when_your_home_directory_is_encrypted)
 
 ## Installation
 
@@ -228,3 +229,7 @@ Section "Monitor"
         DisplaySize     345 194 # in millimeters
 EndSection
 ```
+
+### SDDM takes long time to load when your home directory is encrypted
+
+See [dm-crypt/Mounting at login#SDDM](https://wiki.archlinux.org/index.php/Dm-crypt/Mounting_at_login#SDDM)
