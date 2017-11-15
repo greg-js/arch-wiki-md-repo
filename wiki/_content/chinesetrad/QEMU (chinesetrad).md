@@ -1,3 +1,8 @@
+相關文章
+
+*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
+*   [Libvirt (正體中文)](/index.php/Libvirt_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Libvirt (正體中文)")
+
 來自 [QEMU 的關於頁面](http://wiki.qemu.org/Main_Page),
 
 	"Qemu是一個廣泛使用的開源電腦仿真器和虛擬機"
@@ -57,7 +62,7 @@
 與 [VirtualBox](/index.php/VirtualBox "VirtualBox") 和 [VMware](/index.php/VMware "VMware")等虛擬化方案不同, QEMU不提供GUI界面来管理虛擬機器 (除了執行虛擬機時出現的視窗), 也沒有提供一种持久保存虛擬機設定方式. 必須每一次在命令列上指定所有執行虛擬機器的參數,除非你已經創建了一個Script來啟動你的虛擬機. 然而，有幾種使用者圖形界面前端的QEMU：
 
 *   [qemu-launcher](https://www.archlinux.org/packages/?name=qemu-launcher)
-*   [qtemu](https://www.archlinux.org/packages/?name=qtemu)
+*   [qtemu](https://aur.archlinux.org/packages/qtemu/)
 *   [aqemu](https://aur.archlinux.org/packages/aqemu/)
 
 [libvirt (正體中文)](/index.php/Libvirt_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Libvirt (正體中文)") 也有援 QEMU 的額外前端界面。

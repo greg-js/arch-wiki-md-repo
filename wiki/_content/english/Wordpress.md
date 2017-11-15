@@ -259,7 +259,7 @@ WordPress uses by default only a ftp server to download plugins. In order to als
 
  `# *wordpress_root_location*/wp-config.php` 
 ```
-define('FSMETHOD', 'direct');
+define('FS_METHOD', 'direct');
 
 ```
 

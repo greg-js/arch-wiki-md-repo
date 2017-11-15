@@ -598,7 +598,7 @@ See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.
 
 	[http://www.xcdroast.org/](http://www.xcdroast.org/) || [xcdroast](https://aur.archlinux.org/packages/xcdroast/)
 
-*   **Xfburn** — Simple front-end to the libburnia libraries with support for CD/DVD(-RW), ISO images, and BurnFree.
+*   **[Xfburn](https://en.wikipedia.org/wiki/Xfce#Xfburn "wikipedia:Xfce")** — Simple front-end to the libburnia libraries with support for CD/DVD(-RW), ISO images, and BurnFree.
 
 	[http://goodies.xfce.org/projects/applications/xfburn](http://goodies.xfce.org/projects/applications/xfburn) || [xfburn](https://www.archlinux.org/packages/?name=xfburn)
 

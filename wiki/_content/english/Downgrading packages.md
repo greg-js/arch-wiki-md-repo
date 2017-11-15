@@ -11,7 +11,7 @@ Before downgrading a single or multiple packages, consider why you wish to do so
 
 *   Downgrading one package may require that its dependencies be downgraded as well. When the number of packages to downgrade is large, consider using a snapshot. See [Arch Linux Archive#How to restore all packages to a specific date](/index.php/Arch_Linux_Archive#How_to_restore_all_packages_to_a_specific_date "Arch Linux Archive").
 *   Be careful with changes to configuration files and scripts. For now pacman will handle this for us, as long as we do not bypass its safeguards.
-*   If the downgrading involve a soname change, all dependency may need downgrading or [rebuild](/index.php/Frequently_asked_questions#What_if_I_run_a_full_system_upgrade_and_there_will_be_an_update_for_a_shared_library.2C_but_not_for_the_apps_that_depend_on_it.3 "Frequently asked questions") too.
+*   If the downgrading involve a soname change, all dependency may need downgrading or [rebuild](/index.php/Frequently_asked_questions#What_if_I_run_a_full_system_upgrade_and_there_will_be_an_update_for_a_shared_library.2C_but_not_for_the_apps_that_depend_on_it.3F "Frequently asked questions") too.
 
 ## Contents
 
@@ -20,7 +20,6 @@ Before downgrading a single or multiple packages, consider why you wish to do so
     *   [1.2 Downgrading the kernel](#Downgrading_the_kernel)
     *   [1.3 Arch Linux Archive](#Arch_Linux_Archive)
     *   [1.4 Rebuild the package](#Rebuild_the_package)
-        *   [1.4.1 vABS - Versioned Arch Build System](#vABS_-_Versioned_Arch_Build_System)
     *   [1.5 Automation](#Automation)
 *   [2 Return from [testing]](#Return_from_.5Btesting.5D)
 
@@ -72,10 +71,6 @@ For packages from the [official repositories](/index.php/Official_repositories "
 See also [Arch Build System#Checkout an older version of a package](/index.php/Arch_Build_System#Checkout_an_older_version_of_a_package "Arch Build System").
 
 Old AUR packages can be built by checking out an old commit in the AUR package Git repository. For pre-2015 AUR3 PKGBUILDs, see [Arch User Repository#Git repositories for AUR3 packages](/index.php/Arch_User_Repository#Git_repositories_for_AUR3_packages "Arch User Repository").
-
-#### vABS - Versioned Arch Build System
-
-[vABS](https://vabs.archlinux-br.org) is an addition to ABS that has as main goal to keep different versions of the official PKGBUILDs. In ABS you have the latest versions of PKGBUILDs, while in vABS you also have old versions (up to 2 years). Select the desired version and download the build files tgz package or individual files and easily build your package with pkgbuild. More information about the service can be found [here](https://www.archlinux-br.org/vabs_en).
 
 ### Automation
 

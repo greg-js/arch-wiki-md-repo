@@ -723,8 +723,10 @@ Xfce loads `$HOME/.Xresources` file using `xrdb`, but with `-nocpp` option to sk
 
 ## See also
 
+*   [Xfce - Documentation](http://docs.xfce.org/)
+*   [Xfce - Wiki](http://wiki.xfce.org)
 *   [Xfce - About](http://www.xfce.org/about/)
-*   [http://docs.xfce.org/](http://docs.xfce.org/) - The complete documentation.
+*   [Xfce - Tour](https://xfce.org/about/tour)
+*   [Wikipedia:Xfce](https://en.wikipedia.org/wiki/Xfce "wikipedia:Xfce")
 *   [Xfce-Look](http://www.xfce-look.org/) - Themes, wallpapers, and more.
-*   [Xfce Wikia](http://xfce.wikia.com/wiki/Frequently_Asked_Questions) - How to edit the auto generated menu with the menu editor
-*   [Xfce Wiki](http://wiki.xfce.org)
+*   [Xfce Wikia](http://xfce.wikia.com/wiki/Main_Page)

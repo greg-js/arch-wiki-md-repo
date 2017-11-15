@@ -535,12 +535,12 @@ Steam connects through UDP 27036, 27031 and TCP 27036, 27037\. You need to add t
 
 	Related: [steam-for-linux#5030](https://github.com/ValveSoftware/steam-for-linux/issues/5030)
 
-As of 2017-11-10, Steam for Linux has a bug which causes it to forget the password of some users.
+Steam for Linux has a bug which causes it to forget the password of some users.
 
-As a workaround, after logging in to Steam, run the following in your terminal:
+As a workaround, after logging in to Steam, run
 
 ```
-$ chmod 555 ~/.steam/registry.vdf
+$ chmod -w ~/.steam/registry.vdf
 
 ```
 

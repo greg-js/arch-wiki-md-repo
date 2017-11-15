@@ -1,3 +1,8 @@
+Related articles
+
+*   [Sound system](/index.php/Sound_system "Sound system")
+*   [envy24control](/index.php/Envy24control "Envy24control")
+
 Modern Linux systems are more than capable of supporting your (semi-)professional audio needs. Latencies of 5ms down to even as low as 1ms can be achieved with good hardware and proper configuration.
 
 ## Contents
@@ -62,7 +67,7 @@ Other packages you may need that are available from the [AUR](/index.php/AUR "AU
 *   [wineasio](https://aur.archlinux.org/packages/wineasio/)
 *   [vst-bridge](https://github.com/abique/vst-bridge)
 
-See also [List of applications#Audio systems](/index.php/List_of_applications#Audio_systems "List of applications") and [List of applications#Sound editing](/index.php/List_of_applications#Sound_editing "List of applications").
+See also [List of applications#Audio systems](/index.php/List_of_applications#Audio_systems "List of applications"), [List of applications#Sound editing](/index.php/List_of_applications#Sound_editing "List of applications"), and [awesome-linuxaudio](https://github.com/nodiscc/awesome-linuxaudio).
 
 ### System Configuration
 

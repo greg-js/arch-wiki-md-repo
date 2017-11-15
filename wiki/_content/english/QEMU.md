@@ -127,7 +127,7 @@ Unlike other virtualization programs such as [VirtualBox](/index.php/VirtualBox 
 *   [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)
 *   [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
 *   [qemu-launcher](https://www.archlinux.org/packages/?name=qemu-launcher)
-*   [qtemu](https://www.archlinux.org/packages/?name=qtemu)
+*   [qtemu](https://aur.archlinux.org/packages/qtemu/)
 *   [aqemu](https://aur.archlinux.org/packages/aqemu/)
 
 Additional front-ends with QEMU support are available for [libvirt](/index.php/Libvirt "Libvirt").

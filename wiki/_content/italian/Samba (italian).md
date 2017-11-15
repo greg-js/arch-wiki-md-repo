@@ -673,7 +673,7 @@ Veto files = /*.exe/*.com/*.dll/*.bat/*.vbs/*.tmp/*.mp3/*.avi/*.mp4/*.wmv/*.wma/
 
 ### "Sfogliando" la rete si ottiene una finestra vuota
 
-Nonostante samba sia funzionante e ben configurato, sfogliando la rete Windows in cerca di condivisioni usando un gestore file basato su [gvfs](https://www.archlinux.org/packages/?name=gvfs) (Nautilus, PCManFM, e altri) non si ottiene altro che una finestra vuota. Con samba 4.7 sono cambiati i protocolli predefinii e sembra causa di problemi con i gestori di file. Come soluzione temporanea è possibile aggiungere la seguente voce nel file di configurazione `smb.conf`:
+Nonostante samba sia funzionante e ben configurato, sfogliando la rete Windows in cerca di condivisioni usando un gestore file basato su [gvfs](https://www.archlinux.org/packages/?name=gvfs) (Nautilus, PCManFM, e altri) non si ottiene altro che una finestra vuota. Con samba 4.7 sono cambiati i protocolli predefiniti e sembra causa di problemi con i gestori di file. Come soluzione temporanea è possibile aggiungere la seguente voce nel file di configurazione `smb.conf`:
 
  `/etc/samba/smb.conf` 
 ```

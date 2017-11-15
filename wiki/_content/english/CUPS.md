@@ -385,3 +385,4 @@ See [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting
 *   [OpenSuSE CUPS in a Nutshell - a quick CUPS overview](https://en.opensuse.org/SDB:CUPS_in_a_Nutshell)
 *   [Gentoo's printing guide](https://wiki.gentoo.org/wiki/Printing)
 *   [Debian's Printing portal - detailed technical guides](https://wiki.debian.org/Printing "debian:Printing")
+*   [Debian's printing overview - a basic view of the CUPS printing system](https://wiki.debian.org/SystemPrinting "debian:SystemPrinting")

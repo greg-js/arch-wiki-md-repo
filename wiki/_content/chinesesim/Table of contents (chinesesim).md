@@ -2,7 +2,7 @@
 
 目前因为中文文档和分类尚不齐全，有需要的请浏览英语语种的网页。
 
-| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(162)</small> |
+| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(161)</small> |
 | <small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(22)</small> |
 | <small>1.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(2) (同时还属于 [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)"))</small> |
 | <small>1.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(20)</small> |
@@ -66,7 +66,7 @@
 | <small>4.14.</small> [存储设备](/index.php/Category:Storage_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Storage (简体中文)") <small>(6)</small> |
 | <small>4.14.1.</small> [光存储设备](/index.php/Category:Optical_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Optical (简体中文)") <small>(2)</small> |
 | <small>5.</small> [帮助](/index.php/Category:Help_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Help (简体中文)") <small>(10)</small> |
-| <small>6.</small> [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)") <small>(33)</small> |
+| <small>6.</small> [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)") <small>(34)</small> |
 | <small>6.1.</small> [域名解析](/index.php/Category:Domain_Name_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Domain Name System (简体中文)") <small>(5)</small> |
 | <small>6.2.</small> [FTP](/index.php/Category:File_Transfer_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File Transfer Protocol (简体中文)") <small>(2)</small> |
 | <small>6.3.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(4) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |

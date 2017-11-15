@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Creating_Packages](/index.php/Creating_Packages "Creating Packages") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-04-23，点击[这里](https://wiki.archlinux.org/index.php?title=Creating_Packages&diff=0&oldid=363482)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Creating_Packages](/index.php/Creating_Packages "Creating Packages") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-15，点击[这里](https://wiki.archlinux.org/index.php?title=Creating_Packages&diff=0&oldid=492423)可以查看翻译后英文页面的改动。
 
 相关文章
 
@@ -7,6 +7,7 @@
 *   [makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")
 *   [pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")
 *   [PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")
+*   [.SRCINFO](/index.php/.SRCINFO ".SRCINFO")
 *   [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS")
 *   [Creating packages for other distributions](/index.php/Creating_packages_for_other_distributions "Creating packages for other distributions")
 *   [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot")
@@ -23,8 +24,8 @@
 *   [3 创建PKGBUILD](#.E5.88.9B.E5.BB.BAPKGBUILD)
     *   [3.1 定义PKGBUILD变量](#.E5.AE.9A.E4.B9.89PKGBUILD.E5.8F.98.E9.87.8F)
     *   [3.2 PKGBUILD 函数](#PKGBUILD_.E5.87.BD.E6.95.B0)
-        *   [3.2.1 pkgver()](#pkgver.28.29)
-        *   [3.2.2 prepare()](#prepare.28.29)
+        *   [3.2.1 prepare()](#prepare.28.29)
+        *   [3.2.2 pkgver()](#pkgver.28.29)
         *   [3.2.3 build()](#build.28.29)
         *   [3.2.4 check()](#check.28.29)
         *   [3.2.5 package()](#package.28.29)
@@ -34,11 +35,12 @@
 *   [6 总结](#.E6.80.BB.E7.BB.93)
     *   [6.1 注意事项](#.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9)
 *   [7 更详细的规则](#.E6.9B.B4.E8.AF.A6.E7.BB.86.E7.9A.84.E8.A7.84.E5.88.99)
-*   [8 参考](#.E5.8F.82.E8.80.83)
+*   [8 PKGBUILD 生成器](#PKGBUILD_.E7.94.9F.E6.88.90.E5.99.A8)
+*   [9 参考](#.E5.8F.82.E8.80.83)
 
 ## 概述
 
-Arch Linux 中的软件包是通过 [makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)") 工具以及存储在 [PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)") 文件中的信息编译的。当运行`makepkg`时，系统将自动在当前目录下搜索 `PKGBUILD`文件,然后根据`PKGBUILD`文件的指示，把软件源码重新打包。 成功编译后得到的二进制文件和可以得到的其他信息如包的版本信息和依赖关系等， 都将被打包到一个文件叫`name.pkg.tar.xz` 里，它可以很容易的通过`pacman -Up <package file>`安装。
+Arch Linux 中的软件包是通过 [makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)") 工具以及存储在 [PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)") 文件中的信息编译的。运行`makepkg`时，系统将自动在当前目录下搜索 `PKGBUILD`文件,然后根据`PKGBUILD`把软件源码重新打包。成功编译后得到的二进制文件和可以得到的其他信息如包的版本信息和依赖关系等，都将被打包到一个文件叫`name.pkg.tar.xz` 里，可以通过`pacman -Up <package file>`进行安装。
 
 一个 Arch 软件包仅仅是一个使用 xz 压缩的 tar 压缩包，或者叫 'tarball'。它包含了以下由 makepkg 生成的文件：
 
@@ -65,11 +67,6 @@ Arch Linux 中的软件包是通过 [makepkg](/index.php/Makepkg_(%E7%AE%80%E4%B
 ### 必需的软件包
 
 首先，确定你已安装必须的工具包。安装 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/)应该足够了；它包含**make**和其它一些从源码编译时所需要的工具。
-
-```
-# pacman -S base-devel
-
-```
 
 创建包的一个很重要的工具是[makepkg](/index.php/Makepkg "Makepkg")（由[pacman](https://www.archlinux.org/packages/?name=pacman)提供），它主要做以下工作：
 
@@ -101,17 +98,13 @@ make install
 
 当你运行`makepkg`时，它会在当前工作目录寻找一个`PKGBUILD`文件。如果找到`PKGBUILD`文件，它会下载该软件的源代码，根据`PKGBUILD`文件中的指令编译它。PKGBUILD中的指令必须能完全被[Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) "wikipedia:Bash (Unix shell)")解释。成功完成后，最后的二进制文件和包的元信息（即包的版本、依赖）被一起打包在`pkgname.pkg.tar.xz`文件包中，这个文件包可以使用`pacman -U *<package file>*`来安装。
 
-要开始制作一个包，你应该先创建一个空工作目录，（建议`~/abs/**pkgname**`），进入该目录，创建一个`PKGBUILD`文件。你可以复制PKGBUILD模板（位于/usr/share/pacman/PKGBUILD.proto）到工作目录，或者复制一个类似包的PKGBUILD也可以。如果你只想在别人的基础上更改一些选项的话，后一种方法比较方便。
+要开始制作一个包，你应该先创建一个空工作目录，进入该目录，创建一个`PKGBUILD`文件。你可以复制PKGBUILD模板（位于/usr/share/pacman/）到工作目录，或者复制一个类似包的PKGBUILD也可以。如果你只想在别人的基础上更改一些选项的话，后一种方法比较方便。
 
 ### 定义PKGBUILD变量
 
 PKGBUILD文件的编写例子可以在`/usr/share/pacman/`处找到。PKGBUILD文件中可能用到的一些变量意义的解释可以在[PKGBUILD](/index.php/PKGBUILD "PKGBUILD")中找到。
 
-*makepkg* 定义了三个变量，你应该在编译和安装的过程中使用它们：
-
-	`startdir`
-
-	指向`PKGBUILD`文件所在目录的绝对路径。这个变量过去常常和T`/src`或`/pkg`后缀组合使用，但现在更流行的用法是使用`srcdir`和`pkgdir`变量。注意，`$startdir/src`作用效果 **不能** 保证等同于`$srcdir`。这些变量的使用已经被废弃，不建议继续使用。
+*makepkg* 定义了两个变量，你应该在编译和安装的过程中使用它们：
 
 	`srcdir`
 
@@ -133,32 +126,32 @@ PKGBUILD文件的编写例子可以在`/usr/share/pacman/`处找到。PKGBUILD�
 
 **注意:** `package()` 函数是每个 PKGBUILD 中必须的函数, 不能省略.
 
+#### prepare()
+
+此函数会执行用于预处理源文件以进行构建的命令, 例如 patching. 此函数执行在 build() 之前, 软件包解压之后. 如果解压过程被跳过 (`makepkg -e`), 那么 `prepare()` 函数就不会被执行.
+
+**注意:** (从 [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) 中可以知道, 该函数运行在 `bash -e` 模式下, 意味着任何以非零状态退出的命令都会造成该函数中止.
+
 #### pkgver()
 
-从 pacman 4.1 开始, 可以通过 makepkg 更新 pkgver 变量. `pkgver()` 会在抓取并解压源文件后执行.
+`pkgver()` 会在抓取并解压源文件，执行 prepare() 后后执行此函数。
 
 如果你正在[制作 git/svn/hg 等](/index.php/VCS_PKGBUILD_Guidelines "VCS PKGBUILD Guidelines")构建过程相同, 但源文件可能每天甚至每小时更新一次的软件包的时候, 这一特性是十分有用的. 过去的方法是把日期写入到 pkgver 变量中, 但这样一来 makepkg 会在即使软件没有更新的情况下依然重新构建软件包, 因为它会认为软件包的版本改变了. 其他与此有关的命令有 `git describe`, `hg identify -ni` 等等. 请在提交 PKGBUILD 前做好测试, 因为如果 `pkgver()` 执行失败, 整个构建过程都会终止.
 
 **注意:** pkgver 不能含有空格或连接符 (`-`). 通常都会用 sed 来进行修改.
 
-#### prepare()
-
-Pacman 4.1 引入了 `prepare()` 函数. 在这一函数中, 那些用于预处理源文件以进行构建的命令会被执行, 例如 patching. 这一函数执行在 build() 函数之前, 软件包解压之后. 如果解压过程被跳过 (`makepkg -e`), 那么 `prepare()` 函数就不会被执行.
-
-**注意:** (从 [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) 中可以知道, 该函数运行在 `bash -e` 模式下, 意味着任何以非零状态退出的命令都会造成该函数中止.
-
 #### build()
 
 现在你需要编写`PKGBUILD`文件中的`build()`函数。这个函数使用通用的shell命令来自动编译软件并创建软件的安装目录。这允许*makepkg*无需详查你的文件系统就可以打包你的软件。
 
-在`build()`函数中第一步就是进入由解压源码包所生成的目录。 *makepkg* 会在执行 `build()` 函数之前更改当前目录为 `$srcdir`; 因此, 大多数情况下第一条命令是这样的：
+在`build()`函数中第一步就是进入由解压源码包所生成的目录。 *makepkg* 会在执行 `build()` 函数之前更改当前目录为 `$srcdir`; 因此, 大多数情况下第一条命令是这样的(参考示例文件`/usr/share/pacman/PKGBUILD.proto`)：
 
 ```
 cd "$srcdir/$pkgname-$pkgver"
 
 ```
 
-现在，你需要把你当时手动编译软件时用到的命令一一列上。`build()`基本上会自动运行你当时手动输入的命令并在伪root环境下编译该软件。如果你要打包的软件使用了一个配置脚本，最好在配置中加上`--prefix=/usr`。许多软件都将自己安装到`/usr/local`下，我们仅仅推荐当你手动从源码安装时这么做。所有的Arch Linux软件包都应当使用`/usr`目录。根据示例文件`/usr/share/pacman/PKGBUILD.proto`，接下来的两行经常是这样的：
+现在，你需要把你当时手动编译软件时用到的命令一一列上。`build()`基本上会自动运行你当时手动输入的命令并在伪root环境下编译该软件。如果你要打包的软件使用了一个配置脚本，最好在配置中加上`--prefix=/usr`。许多软件都将自己安装到`/usr/local`下，我们仅仅推荐当你手动从源码安装时这么做。所有的Arch Linux软件包都应当使用`/usr`目录。
 
 ```
 ./configure --prefix=/usr
@@ -183,15 +176,7 @@ make DESTDIR="$pkgdir/" install
 
 **Note:** 有时候在`Makefile`里没有使用`DESTDIR`；你可能需要使用`prefix`来替代。如果软件包是用*autoconf*/*automake*来创建的，那就使用`DESTDIR`；如果`DESTDIR`不起作用，试试`make prefix="$pkgdir/usr/" install`。如果这还不起作用的话，你就需要深入检查软件的安装命令了。
 
-在一些很罕见的情况下，软件只有安装在单一目录下时才能运行。在这种情况下你还是老老实实把它安装到`$pkgdir/opt`下吧。
-
-通常，软件在安装过程中会在`pkg`目录下先创建一系列子目录。如果没有的话，*makepkg*会报错，你需要在`build()`函数中提前手动创建这些目录。
-
-在过去，没有`package()`函数。所以，把文件复制到 "pkg" 目录下的工作放在`build()`函数的最后。如果`package()`函数不存在的话，`build()`以伪root权限运行。对于新的软件包, `package()` 函数是必需的且通过 *fakeroot* 运行, 而 `build()` 函数没有任何特别的权限.
-
-`makepkg --repackage` 命令只运行`package()`函数,它只是将文件打包成`*.pkg.*`，并不运行编译过程。如果你只是更改了PKGBUILD中的依赖，用这个命令来打包可以节省很多时间。
-
-**注意:** `package()` 函数是 PKGBUILD 中唯一必需的函数. 如果一定要把文件分别复制到相应的目录才能安装一个程序, 把这些操作放在 `package()` 函数中, 不要放在 `build()` 函数里.
+`makepkg --repackage` 命令只运行`package()`函数,它只是将文件打包成软件包，并不运行编译过程。如果你只是更改了PKGBUILD中的依赖，用这个命令来打包可以节省很多时间。
 
 ## 测试PKGBUILD文件
 
@@ -247,10 +232,19 @@ Namcap将会做以下工作：
 
 [CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Node.js](/index.php/Node.js_package_guidelines "Node.js package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
 
+## PKGBUILD 生成器
+
+某些软件包的 PKGBUILD 可以通过工具自动生成。
+
+**Note:** 用户需要在提交文件到 [AUR](/index.php/AUR "AUR") 前确保软件包满足高质量标准。
+
+*   [Go](/index.php/Go "Go"): [go-makepkg](https://github.com/seletskiy/go-makepkg)
+*   [Haskell](/index.php/Haskell "Haskell"): [cblrepo](https://github.com/magthe/cblrepo)
+*   [Python](/index.php/Python "Python"): [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/), [PyPI2PKGBUILD](https://github.com/anntzer/pypi2pkgbuild)
+*   [Ruby](/index.php/Ruby "Ruby"): [gem2arch](https://aur.archlinux.org/packages/gem2arch/), [pacgem](https://aur.archlinux.org/packages/pacgem/)
+
 ## 参考
 
 *   [How to correctly create a patch file](https://bbs.archlinux.org/viewtopic.php?id=91408).
-
 *   [Arch Linux Classroom IRC Logs of classes about creating PKGBUILDs](https://archwomen.org/media/project_classroom/classlogs/).
-
 *   [Fakeroot approach for package installation](http://www.linuxfromscratch.org/hints/downloads/files/fakeroot.txt)

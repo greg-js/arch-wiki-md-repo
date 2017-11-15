@@ -463,7 +463,7 @@ where `*displayName*` is the name of the display device e.g. `DFP-4`. You can fi
 
 ## Overclocking with nvidia-settings GUI not working
 
-Workaround is to use nvidia-settings CLI to query and set certain variables after enabling overclocking(as explained in [NVIDIA/Tips and tricks#Enabling overclocking](/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking "NVIDIA/Tips and tricks"). [nvidia-settings(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nvidia-settings.1) for more information.
+Workaround is to use nvidia-settings CLI to query and set certain variables after enabling overclocking (as explained in [NVIDIA/Tips and tricks#Enabling overclocking](/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking "NVIDIA/Tips and tricks"), see [nvidia-settings(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nvidia-settings.1) for more information).
 
 Example to query all variables:
 
@@ -479,9 +479,16 @@ Example to set PowerMizerMode to prefer performance mode:
 
 ```
 
-Example to set multiple variables at once(Overclock on performance level [3] by 50Mhz, overclock MemoryTransferRate by 50Mhz, Over Voltage by 100 microvolts)
+Example to set fan speed to fixed 21%:
 
 ```
- nvidia-setting -a GPUGraphicsClockOffset[3]=50 -a GPUMemoryTransferRateOffset[3]=50 -a GPUOverVoltageOffset=100
+nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan:0]/GPUTargetFanSpeed=21
+
+```
+
+Example to set multiple variables at once (overclock GPU by 50MHz, overclock video memory by 50MHz, increase GPU voltage by 100mV):
+
+```
+ nvidia-settings -a GPUGraphicsClockOffsetAllPerformanceLevels=50 -a GPUMemoryTransferRateOffsetGPUGraphicsClockOffsetAllPerformanceLevels=50 -a GPUOverVoltageOffset=100
 
 ```

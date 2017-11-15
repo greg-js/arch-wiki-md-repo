@@ -1,4 +1,4 @@
-There are two popular ways of configuring a Linux terminal to work transparently over a wallpaper, without any borders, menu bars or toolbars. This is very popular among developers because of its practical and coolness factor. Example: for use it to view source-code or get an interactive process status of the system with htop. Something like conky, but not quite.
+There are two popular ways of configuring a Linux terminal to work transparently over a wallpaper, without any borders, menu bars or toolbars. This is very popular among developers because of its practical and coolness factor. Example: using it to view source-code or to get an interactive process status of the system with htop. Something like conky, but not quite.
 
 ## Contents
 

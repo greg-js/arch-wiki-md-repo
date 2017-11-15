@@ -18,6 +18,8 @@ From the webpage:
         *   [2.3.1 Installation](#Installation_2)
         *   [2.3.2 Adding VMs to your topology](#Adding_VMs_to_your_topology_2)
 *   [3 Connecting devices](#Connecting_devices)
+*   [4 VPCS](#VPCS)
+*   [5 Wireshark packet capture](#Wireshark_packet_capture)
 
 ## Installation
 
@@ -98,3 +100,25 @@ Instructions taken (and ported) from [GNS3 forums](http://forum.gns3.net/topic11
 ## Connecting devices
 
 When devices have been added to your topology you will need to connect them. Select the link-icon (the bottom icon in the left sidebar, looks sort of like a mouse or ethernet-port+rj45 connector), click on a device (like a switch). Next, click on the device (like a VM) you want to connect to the switch. You will be promted to select the NIC which should be used. When you have created all the links you want, click the link-icon in the left sidebar to deselect it, otherwise GNS3 will still be in 'create link'-mode.
+
+## VPCS
+
+VPCS is a simple virtual PC simulator, supported by GNS3 and useful to enhance the simulation of a full working network topology. It can be downloaded from [Sourceforge](https://sourceforge.net/projects/vpcs/files/). The VPCS's executable should be placed inside ~/GNS3 to keep it simple, then GNS3 must be instructed to search the `path/to/executable` (using GNS3 gui, the option is easily found under "Preferences").
+
+**Note:** VPCS 0.8b is affected from [this](https://gns3.com/discussions/vpcs-it-just-just-allow-type-one) bug.
+
+## Wireshark packet capture
+
+[Wireshark](/index.php/Wireshark "Wireshark") can be used with GNS3 to "sniff" packets from the links between devices of a virtual topology. Install it, create a symlink under `~/GNS3/wireshark/` directory, then change the settings to instruct GNS3 to use the right version; e.g. if using [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk), opting for Wireshark Live Traffic Capture, go to Preferences, Packet capture preferences and change:
+
+```
+tail -f -c +0b %c | wireshark -o "gui.window_title:%d" -k -i -
+
+```
+
+to
+
+```
+tail -f -c +0b %c | wireshark-gtk -o "gui.window_title:%d" -k -i -
+
+```

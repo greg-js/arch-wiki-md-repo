@@ -619,6 +619,10 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 	[https://okular.kde.org/](https://okular.kde.org/) || [okular](https://www.archlinux.org/packages/?name=okular)
 
+*   **PDF Chain** — A graphical interface allowing to manipulate PDF documents (concatenate, burst, watermark, attach files...)
+
+	[http://pdfchain.sourceforge.net/](http://pdfchain.sourceforge.net/) || [pdfchain](https://aur.archlinux.org/packages/pdfchain/)
+
 *   **PdfMod** — You can reorder, rotate, and remove pages, export images from a document, edit the title, subject, author, and keywords, and combine documents via drag and drop.
 
 	[https://wiki.gnome.org/Apps/PdfMod](https://wiki.gnome.org/Apps/PdfMod) || [pdfmod](https://www.archlinux.org/packages/?name=pdfmod)

@@ -104,7 +104,7 @@ Type=Application
 
 ### Run ~/.xinitrc as a session
 
-Installing [xinit-xsession](https://aur.archlinux.org/packages/xinit-xsession/) will provide an option to run your .xinitrc as a session. Simply set 'xinitrc' as your session in your display manager's settings.
+Installing [xinit-xsession](https://aur.archlinux.org/packages/xinit-xsession/) will provide an option to run your [xinitrc](/index.php/Xinitrc "Xinitrc") as a session. Simply set `xinitrc` as the session in your display manager's settings and make sure that the `~/.xinitrc` file is executable.
 
 ### Starting applications without a window manager
 

@@ -1,23 +1,21 @@
-Questo documento vi guiderà attraverso il processo di installazione di [Arch Linux](/index.php/Arch_Linux_(Italiano) "Arch Linux (Italiano)") utilizzando il sistema live avviato con l'immagine ufficiale di installazione. Prima di installare, è consigliato dare una lettura alle [FAQ (Italiano)](/index.php/FAQ_(Italiano) "FAQ (Italiano)").
+Questo documento vuole essere una guida per l'installazione di [Arch Linux](/index.php/Arch_Linux_(Italiano) "Arch Linux (Italiano)") utilizzando un sistema *live* avviato con l'immagine ufficiale di installazione. Prima di installare, è consigliato dare una lettura alle [FAQ (Italiano)](/index.php/FAQ_(Italiano) "FAQ (Italiano)").
 
-[Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") contiene diverse altre guide all'installazione per casi specifici.
-
-L'[Arch wiki](/index.php/Main_page_(Italiano) "Main page (Italiano)") mantenuto dalla community è una risorsa eccellente e deve essere la prima risorsa da consultare in caso di problemi. Sono disponibili anche il canale [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") (per la comunità italiana: [irc://irc.azzurra.org/archlinux](irc://irc.azzurra.org/archlinux) o [irc://irc.freenode.net/#archlinux.it](irc://irc.freenode.net/#archlinux.it), mentre per il supporto internazionale: [irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), ed il [forum italiano](http://www.archlinux.it/forum/) o [internazionale](https://bbs.archlinux.org/) per ricercare ulteriori risposte. Inoltre, assicurarsi di leggere le pagine `man` per qualsiasi comando sconosciuto; di solito può essere invocato tramite `man "command"`.
+L'[Arch wiki](/index.php/Main_page_(Italiano) "Main page (Italiano)") mantenuto dalla community è una risorsa eccellente e deve essere la prima risorsa da consultare in caso di problemi. Sono disponibili anche il canale [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ed il [forum italiano](http://www.archlinux.it/forum/) o [internazionale](https://bbs.archlinux.org/) per ricercare ulteriori risposte. Inoltre, assicurarsi di leggere le pagine [man page](/index.php/Man_page "Man page") per qualsiasi comando sconosciuto. Per farsi un'idea di massima sulla configurazione necessaria e` possibile consultare [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7).
 
 ## Contents
 
-*   [1 Download](#Download)
+*   [1 Prima dell'installazione](#Prima_dell.27installazione)
+    *   [1.1 Impostare il corretto layout della tastiera](#Impostare_il_corretto_layout_della_tastiera)
+    *   [1.2 Verificare il boot mode](#Verificare_il_boot_mode)
+    *   [1.3 Connettersi ad Internet](#Connettersi_ad_Internet)
+    *   [1.4 Aggiornare l'orologio di sistema](#Aggiornare_l.27orologio_di_sistema)
+    *   [1.5 Partizionare il disco](#Partizionare_il_disco)
+    *   [1.6 Formattare le partizioni](#Formattare_le_partizioni)
+    *   [1.7 Mount the file systems](#Mount_the_file_systems)
 *   [2 Installazione](#Installazione)
-    *   [2.1 Layout di tastiera](#Layout_di_tastiera)
-    *   [2.2 Partizionare i dischi](#Partizionare_i_dischi)
-    *   [2.3 Formattare le partizioni](#Formattare_le_partizioni)
-    *   [2.4 Montare le partizioni](#Montare_le_partizioni)
-    *   [2.5 Connessione alla rete](#Connessione_alla_rete)
-        *   [2.5.1 Wireless](#Wireless)
-    *   [2.6 Installare il sistema base](#Installare_il_sistema_base)
-    *   [2.7 Configurare il sistema](#Configurare_il_sistema)
-    *   [2.8 Installare e configurare un boot loader](#Installare_e_configurare_un_boot_loader)
-    *   [2.9 Smontare le partizioni montate](#Smontare_le_partizioni_montate)
+    *   [2.1 Configurare il sistema](#Configurare_il_sistema)
+    *   [2.2 Installare e configurare un boot loader](#Installare_e_configurare_un_boot_loader)
+    *   [2.3 Smontare le partizioni montate](#Smontare_le_partizioni_montate)
 *   [3 Post-Installazione](#Post-Installazione)
     *   [3.1 Gestione Utenti](#Gestione_Utenti)
     *   [3.2 Gestione dei Pacchetti](#Gestione_dei_Pacchetti)
@@ -27,52 +25,106 @@ L'[Arch wiki](/index.php/Main_page_(Italiano) "Main page (Italiano)") mantenuto 
     *   [3.6 Font](#Font)
 *   [4 Appendice](#Appendice)
 
-## Download
+## Prima dell'installazione
 
-Scarica la nuova ISO di Arch Linux ISO dalla [pagina di download](http://www.archlinux.it/download/).
+Arch Linux dovrebbe essere installabile su ogni macchina compatibile con l'architetture [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") e con un minimo di 512 MB di RAM. L'installazione base con solo i pacchetti presenti nel gruppo [base](https://www.archlinux.org/groups/x86_64/base/) richiede circa 800 MB di spazio su disco rigido. Siccome durante la fase di installazione vengono scaricati i pacchetti aggiornati direttamente dai repository remoti, una connessione ad internet e` fondamentale durante il processo.
 
-*   Viene distribuita una sola immagine da essere utilizzata su architetture i686 e x86_64 per installare Arch Linux tramite la rete. Le immagini che contenevano il repository [core] non sono più distribuite.
-*   Le immagini sono firmate ed è altamente raccomandato verificare la firma prima di usarle: questo si può fare scaricando il file *.sig* dalla pagina di download (o uno dei mirror elencati qui ) per la stessa directory del file *.iso* e quindi verificarlo tramite `pacman-key -v *iso-file*.sig`
-*   Le immagini possono essere masterizzate su CD, montate come ISO, o scritte direttamente [su penna USB](/index.php/USB_Installation_Media_(Italiano) "USB Installation Media (Italiano)"). Le ISO servono ad installare un nuovo sistema di Arch Linux; un sistema Arch Linux può sempre essere aggiornato tramite `pacman -Syu`.
+Scaricare e avviare un disco di installazione come spiegato in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). Ora ci si dovrebbe trovare di fronte ad una [console virtuale](https://en.wikipedia.org/wiki/Virtual_Console "w:Virtual Console"). L'utente *root* dovrebbe gia` essere loggato. La shell di default e` [Zsh](/index.php/Zsh "Zsh"). I comandi piu` comuni come [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) possono essere [autocompletati](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") dal tasto *tab*.
 
-## Installazione
+Per switchare su un'altra console - per esempio per visualizzare questa guida tramite [elinks](/index.php/Elinks "Elinks") durante il processo di installazione - usare la [combinazione di tasti](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*freccia*`. Per [editare](/index.php/Textedit "Textedit") testo e files [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") e [vim](/index.php/Vim#Usage "Vim") sono disponibili.
 
-### Layout di tastiera
+### Impostare il corretto layout della tastiera
 
-Sono disponibili diverse mappature per molti paesi e tipi di tastiere, e un comando come `loadkeys it` basta per impostare la mappatura desiderata.
+Di default la tastiera e` [mappata](/index.php/Console_keymap "Console keymap") su un layout [statunitense](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). La lista dei possibili layout e` disponibile tramite `ls /usr/share/kbd/keymaps/**/*.map.gz`. Per modificare il layout aggiungere il rispettivo filename a [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omettendo estensione e percorso completo. Ad esempio, il comando `loadkeys it` impostera` sul sistema il layout italiano.
+
+I [font](/index.php/Console_fonts "Console fonts") utilizzabili sulla console si trovano in `/usr/share/kbd/consolefonts/` e possono essere selezionati tramite [setfont(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
+
+### Verificare il boot mode
+
+Se si boota su una scheda madre sulla quale e` abilitato [UEFI](/index.php/UEFI "UEFI"), [Archiso](/index.php/Archiso "Archiso") [avviera`](/index.php/Boot "Boot") Arch Linux di conseguenza tramite [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Per verificarlo si possono controllare le [efivars](/index.php/UEFI#UEFI_variables "UEFI") directory:
 
 ```
-# loadkeys it
+ # ls /sys/firmware/efi/efivars
 
 ```
 
-Ulteriori file per la mappatura dei tasti possono essere trovati in `/usr/share/kbd/keymaps/` (è possibile omettere il percorso keymap e l'estensione del file quando si utilizza loadkeys).
+Se questa directory non esiste significa che il boot di Arch Linux e` avvenuto in modalita` [BIOS](https://en.wikipedia.org/wiki/BIOS "w:BIOS"). Per ulteriori dettagli fare riferimento alla documentazione della propria scheda madre.
 
-### Partizionare i dischi
+### Connettersi ad Internet
 
-Si legga la pagina sul [partizionamento](/index.php/Partitioning_(Italiano) "Partitioning (Italiano)") per maggiori dettagli.
+L'immagine di installazione di Arch Linux di default [abilita](/index.php/Enable "Enable") un demone [dhcpcd](/index.php/Dhcpcd "Dhcpcd") per le intefacce [wired](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules). La connessione puo` essere controllata con
 
-Ricordarsi di creare tutti i dispositivi a blocchi accatastati per [LVM](/index.php/LVM_(Italiano) "LVM (Italiano)"), [disk encryption](/index.php/Disk_encryption "Disk encryption"), o [RAID](/index.php/RAID_(Italiano) "RAID (Italiano)"), prima di procedere.
+```
+# ping archlinux.org
+
+```
+
+Se la connessione risulta non disponibile, [fermare](/index.php/Stop "Stop") il servizio *dhcpcd* con `systemctl stop dhcpcd@`, `Tab` e vedere [Network configuration](/index.php/Network_configuration "Network configuration").
+
+Per connessioni **wireless**, [iw(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) e [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") sono disponibili. Vedere [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") per ulteriori informazioni.
+
+### Aggiornare l'orologio di sistema
+
+Usare il comando [timedatectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1) per assicurarsi che l'orologio sia corretto:
+
+```
+# timedatectl set-ntp true
+
+```
+
+Per controllare lo status del servizio: `timedatectl status`.
+
+### Partizionare il disco
+
+Quando riconosciuti dal disco di installazione, ai dischi viene associato un *block device* come `/dev/sda`. Per identificare questi devices, usare [lsblk](/index.php/Lsblk "Lsblk") o *fdisk* — i risultati che finiscono con `rom`, `loop` o `airoot` possono essere ignorati:
+
+```
+# fdisk -l
+
+```
+
+Le seguenti *partizioni* (mostrate con un suffisso numerico) sono fondamentali:
+
+*   Una partizione per la directory root `/`.
+*   Se [UEFI](/index.php/UEFI "UEFI") e` abilitato, una [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+
+Opzionalmente una partizione di [Swap](/index.php/Swap_(Italiano) "Swap (Italiano)") puo` essere impostata.
+
+Per modificare la *tabella delle partizioni*, usare [fdisk](/index.php/Fdisk "Fdisk") o [parted](/index.php/Parted "Parted"). Vedere [Partitioning](/index.php/Partitioning "Partitioning") per informazioni piu` accurate.
+
+Se si necessita di [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") o [RAID](/index.php/RAID "RAID"), agire ora.
 
 ### Formattare le partizioni
 
-Si legga [File System](/index.php/File_systems_(Italiano) "File systems (Italiano)") e opzionalmente [Swap](/index.php/Swap_(Italiano) "Swap (Italiano)") per maggiori dettagli.
+Una volta che le partizioni sono state create, vanno formattate con un [file system](/index.php/File_system "File system") appropriato. Per esempio, per formattare la root su `/dev/*sda1*` in `*ext4*`, il comando e`:
 
-Se si sta utilizzando (U) EFI avrete probabilmente bisogno di un'altra partizione per ospitare la partizione di sistema UEFI. Si legga [questo articolo](/index.php/Unified_Extensible_Firmware_Interface_(Italiano)#Creare_una_partizione_di_sistema_UEFI_con_Linux "Unified Extensible Firmware Interface (Italiano)").
+```
+# mkfs.*ext4* /dev/*sda1*
 
-### Montare le partizioni
+```
 
-Ora si deve montare la partizione di root su `/mnt`. Dopodiche si dovrebbero anche creare le directory per montare le altre partizioni (`/mnt/boot`, `/mnt/home`, ..) e attivare la partizione di "swap *se si desidera che vengano rilevate da "genfstab".*
+Vedere [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") per dettagli.
 
-### Connessione alla rete
+### Mount the file systems
 
-Un servizio di DHCP è già abilitato per tutti i dispositivi disponibili. Se è necessario impostare un indirizzo IP statico o utilizzare strumenti di gestione, come [Netctl](/index.php/Netctl "Netctl"), si dovrebbe fermare in primo luogo questo primo servizio: `systemctl stop dhcpcd.service`. Per maggiori informazioni si veda la pagina [Configurazione della Rete](/index.php/Configurazione_della_Rete "Configurazione della Rete").
+[Montare](/index.php/Mount "Mount") il filesiste della partizione di root in `/mnt`, per esempio:
 
-#### Wireless
+```
+# mount /dev/*sda1* /mnt
 
-Eseguire `wifi-menu` per impostare una connessione senza fili, per maggiori dettagli si leggano le pagine [Configurazione Wireless](/index.php/Wireless_Setup_(Italiano) "Wireless Setup (Italiano)") e [Netctl](/index.php/Netctl "Netctl").
+```
 
-### Installare il sistema base
+Creare i punti di mount delle altre partizioni create e montarle di conseguenza, Ad esempio:
+
+```
+# mkdir /mnt/*boot*
+# mount /dev/*sda2* /mnt/*boot*
+
+```
+
+[genfstab](https://git.archlinux.org/arch-install-scripts.git/tree/genfstab.in) rilevera` i punti di mount dei file system e della partizione di swap.
+
+## Installazione
 
 Prima di procedere è necessario modificare il file `/etc/pacman.d/mirrorlist` per usare i [mirror](/index.php/Mirrors_(Italiano) "Mirrors (Italiano)") di vostro gradimento. Questa copia del mirrorlist sarà pure installato sul vostro nuovo sistema da `pacstrap`, quindi conviene impostarlo come si deve.
 

@@ -1,3 +1,7 @@
+Related articles
+
+*   [Streaming media](/index.php/Streaming_media "Streaming media")
+
 **Note:** As <a class="mw-selflink selflink">uShare</a> is unmaintained (last release was 2007), users may wish to use [ReadyMedia](/index.php/ReadyMedia "ReadyMedia"), which is actively developed and just as simple to set up, and does not require manually refreshing its database.
 
 [uShare](http://ushare.geexbox.org/) is a UPnP program developed by GeeXboX that allows you to stream media from your computer to your Xbox 360 or PlayStation 3 along with other media devices. While there are other UPnP programs available, such as [FUPPES](https://github.com/uvoelkel/fuppes), [ps3mediaserver](https://github.com/ps3mediaserver/ps3mediaserver), [MediaTomb](/index.php/MediaTomb "MediaTomb") and [ReadyMedia](/index.php/ReadyMedia "ReadyMedia") (each of which are available in [community] or the [AUR](/index.php/AUR "AUR") if you so choose), uShare is relatively easy to configure and works well *out of the box*.

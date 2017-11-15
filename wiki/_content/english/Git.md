@@ -708,6 +708,8 @@ Connecting on a port other than 22 can be configured on a per-host basis in `/et
     url = ssh://*user*@*foobar*.com:443/~*my_repository*/repo.git
 ```
 
+You are able to secure the SSH user account even more allowing only push and pull commands on this user account. This is done by replacing the default login shell by git-shell. Described in [https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server](https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server)
+
 ### Smart HTTP
 
 Git is able to use the HTTP(S) protocol as efficiently as the SSH or Git protocols, by utilizing the git-http-backend. Furthermore it is not only possible to clone or pull from repositories, but also to push into repositories over HTTP(S).
@@ -734,8 +736,8 @@ This assumes your Git repositories are located at `/srv/git` and that you want t
 
 For more detailed documentation, visit the following links:
 
-*   [http://progit.org/2010/03/04/smart-http.html](http://progit.org/2010/03/04/smart-http.html)
-*   [https://www.kernel.org/pub/software/scm/git/docs/v1.7.10.1/git-http-backend.html](https://www.kernel.org/pub/software/scm/git/docs/v1.7.10.1/git-http-backend.html)
+*   [https://git-scm.com/book/en/v2/Git-on-the-Server-Smart-HTTP](https://git-scm.com/book/en/v2/Git-on-the-Server-Smart-HTTP)
+*   [https://git-scm.com/docs/git-http-backend](https://git-scm.com/docs/git-http-backend)
 
 ### Git
 

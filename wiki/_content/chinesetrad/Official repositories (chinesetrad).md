@@ -1,3 +1,13 @@
+相關文章
+
+*   [鏡像站 (英)](/index.php/Mirrors "Mirrors")
+*   [Arch 使用者倉庫](/index.php/Arch_User_Repository_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch User Repository (正體中文)")
+*   [非官方使用者倉庫 (英)](/index.php/Unofficial_User_Repositories "Unofficial User Repositories")
+*   [PKGBUILD (英)](/index.php/PKGBUILD "PKGBUILD")
+*   [makepkg (英)](/index.php/Makepkg "Makepkg")
+*   [Pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)")
+*   [Arch 組建系統](/index.php/Arch_Build_System_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Build System (正體中文)")
+
 **翻譯狀態：** 本文章是 [Official_Repositories](/index.php/Official_Repositories "Official Repositories") 的翻譯版本。最近一次的翻譯時間：2014-01-24。點擊[本連結](https://wiki.archlinux.org/index.php?title=Official_Repositories&diff=0&oldid=291049)查看英文頁面之後的變更。
 
 [軟體倉庫](https://en.wikipedia.org/wiki/software_repository "wikipedia:software repository")是存放軟體包的地點，安裝過程中可以從這些軟體庫取得軟體包。

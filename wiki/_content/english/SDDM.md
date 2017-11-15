@@ -141,7 +141,7 @@ See [Xrandr#Configuration](/index.php/Xrandr#Configuration "Xrandr").
 
 ### DPI settings
 
-Sometimes it's useful to set up correct monitor's PPI settings on a "Display Manager" level. To do so you need to find "ServerArguments" parameter in sddm.conf and add -dpi %YOUR RESOLUTION at the end of the string.
+Sometimes it is useful to set up correct monitor's PPI settings on a "Display Manager" level. To do so you need to find "ServerArguments" parameter in sddm.conf and add -dpi %YOUR RESOLUTION at the end of the string.
 
 For example:
 
@@ -232,4 +232,4 @@ EndSection
 
 ### SDDM takes long time to load when your home directory is encrypted
 
-See [dm-crypt/Mounting at login#SDDM](https://wiki.archlinux.org/index.php/Dm-crypt/Mounting_at_login#SDDM)
+See [Dm-crypt/Mounting at login#SDDM](/index.php/Dm-crypt/Mounting_at_login#SDDM "Dm-crypt/Mounting at login").

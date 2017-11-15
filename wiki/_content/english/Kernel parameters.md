@@ -115,6 +115,12 @@ For more information on configuring LILO, see the [LILO](/index.php/LILO "LILO")
 
 ### rEFInd
 
+*   Press `+`, `F2`, or `Insert` on the desired menu entry and press it again on the submenu entry. Add kernel parameters at the end of the string:
+
+	 `root=PARTUUID=978e3e81-8048-4ae1-8a06-aa727458e8ff rw initrd=\boot\initramfs-linux.img *quiet splash*` 
+
+	Press `Enter` to boot with these parameters.
+
 *   To make the change persistent after reboot, edit `/boot/refind_linux.conf` and append them to all/required lines, for example
 
 	 `"Boot using default options"   "root=PARTUUID=978e3e81-8048-4ae1-8a06-aa727458e8ff rw *quiet splash*"` 

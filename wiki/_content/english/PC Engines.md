@@ -50,7 +50,7 @@ LANG=C picocom --baud 38400 /dev/ttyUSB0
 Enter cli mode by pressing "Tab", prompt should look like this:
 
 ```
-kernel ....
+linux boot/x86_64/vmlinuz archisobasedir=arch archisolabel=ARCH_201710 initrd=boot/intel_ucode.img,boot/x86_64/archiso.img
 
 ```
 

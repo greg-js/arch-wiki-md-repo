@@ -350,7 +350,7 @@ Select `Encoding: CP1251` (for Cyrillic).
 
 ## See also
 
-*   [Pidgin How To](https://developer.pidgin.im/wiki/Using%20Pidgin)
-*   [Pidgin homepage](http://pidgin.im)
+*   [Using Pidgin](https://developer.pidgin.im/wiki/Using%20Pidgin)
+*   [Wikipedia:Pidgin_(software)](https://en.wikipedia.org/wiki/Pidgin_(software) "wikipedia:Pidgin (software)")
 *   [History import Kopete to Pidgin](http://lukav.com/wordpress/2008/03/30/history-import-kopete-to-pidgin)
 *   [Connecting to HipChat using Pidgin](https://confluence.atlassian.com/hipchatkb/connecting-to-hipchat-using-pidgin-751436267.html)

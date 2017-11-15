@@ -524,9 +524,9 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 	[http://josm.openstreetmap.de/](http://josm.openstreetmap.de/) || [josm](https://www.archlinux.org/packages/?name=josm)
 
-*   **Marble** — Virtual Globe and World Atlas that can be used to learn more about the Earth. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+*   **[Marble](https://en.wikipedia.org/wiki/Marble_(software) "wikipedia:Marble (software)")** — Virtual Globe and World Atlas that can be used to learn more about the Earth. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
-	[https://www.kde.org/applications/education/marble](https://www.kde.org/applications/education/marble) || KDE: [marble](https://www.archlinux.org/packages/?name=marble), Qt: [marble-qt](https://www.archlinux.org/packages/?name=marble-qt)
+	[https://marble.kde.org/](https://marble.kde.org/) || KDE: [marble](https://www.archlinux.org/packages/?name=marble), Qt: [marble-qt](https://www.archlinux.org/packages/?name=marble-qt)
 
 *   **Merkaartor** — OpenStreetMap editor.
 

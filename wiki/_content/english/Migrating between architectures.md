@@ -194,14 +194,14 @@ Install the [linux](https://www.archlinux.org/packages/?name=linux) package.
 
 #### Install lib32-glibc
 
-Install the [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) fallback. You will need to add the [multilib](/index.php/Multilib "Multilib") repository in `/etc/pacman.conf` if you have not done so already.
+Install the [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) fallback together with the 64-bit version of [glibc](https://www.archlinux.org/packages/?name=glibc). You will need to add the [multilib](/index.php/Multilib "Multilib") repository in `/etc/pacman.conf` if you have not done so already.
 
 ```
-# pacman -S lib32-glibc
+# pacman -S glibc lib32-glibc 
 
 ```
 
-**Note:** If this fails due to an existing file from a differently named package, use pacman's `--force` option.
+**Warning:** If you do not install the 64-bit version of glibc at the same time as lib32-glibc, the lib32-glibc install will not be able to function. However, pacman will not warn you about this, as the 32-bit glibc package also satisfies the dependency.
 
 #### Reboot
 

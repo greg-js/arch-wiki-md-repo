@@ -1,3 +1,7 @@
+Related articles
+
+*   [Common Access Card](/index.php/Common_Access_Card "Common Access Card")
+
 This page explains how to setup your system in order to use a [smart card](https://en.wikipedia.org/wiki/Smart_card "wikipedia:Smart card") reader.
 
 ## Contents
@@ -97,4 +101,4 @@ If using packages from the GnuTLS suite, such as p11tool, the the OpenSC driver 
 
 ## See also
 
-*   [https://wiki.debian.org/Smartcards](https://wiki.debian.org/Smartcards)
+*   [Debian:Smartcards](https://wiki.debian.org/Smartcards "debian:Smartcards")

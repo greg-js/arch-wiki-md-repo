@@ -5,18 +5,19 @@
 *   [1 mkinitcpio](#mkinitcpio)
     *   [1.1 Examples](#Examples)
 *   [2 Boot loader](#Boot_loader)
-    *   [2.1 Using encrypt hook](#Using_encrypt_hook)
-        *   [2.1.1 cryptdevice](#cryptdevice)
-        *   [2.1.2 root](#root)
-        *   [2.1.3 resume](#resume)
-        *   [2.1.4 cryptkey](#cryptkey)
-        *   [2.1.5 crypto](#crypto)
-    *   [2.2 Using sd-encrypt hook](#Using_sd-encrypt_hook)
-        *   [2.2.1 rd.luks.uuid](#rd.luks.uuid)
-        *   [2.2.2 rd.luks.name](#rd.luks.name)
-        *   [2.2.3 rd.luks.options](#rd.luks.options)
-        *   [2.2.4 rd.luks.key](#rd.luks.key)
-        *   [2.2.5 Timeout](#Timeout)
+    *   [2.1 Kernel parameters](#Kernel_parameters)
+        *   [2.1.1 root](#root)
+        *   [2.1.2 resume](#resume)
+    *   [2.2 Using encrypt hook](#Using_encrypt_hook)
+        *   [2.2.1 cryptdevice](#cryptdevice)
+        *   [2.2.2 cryptkey](#cryptkey)
+        *   [2.2.3 crypto](#crypto)
+    *   [2.3 Using sd-encrypt hook](#Using_sd-encrypt_hook)
+        *   [2.3.1 rd.luks.uuid](#rd.luks.uuid)
+        *   [2.3.2 rd.luks.name](#rd.luks.name)
+        *   [2.3.3 rd.luks.options](#rd.luks.options)
+        *   [2.3.4 rd.luks.key](#rd.luks.key)
+        *   [2.3.5 Timeout](#Timeout)
 *   [3 crypttab](#crypttab)
     *   [3.1 Mounting at boot time](#Mounting_at_boot_time)
         *   [3.1.1 Mounting a stacked blockdevice](#Mounting_a_stacked_blockdevice)
@@ -27,10 +28,11 @@
 
 When encrypting a system it is necessary to regenerate the initial ramdisk after properly configuring [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). Depending on the particular scenarios, a subset of the following hooks will have to be enabled:
 
-*   `encrypt`: always needed when encrypting the root partition, or a partition that needs to be mounted *before* root. It is not needed in all the other cases, as system initialization scripts like `/etc/crypttab` take care of unlocking other encrypted partitions. This hook must be placed *after* the `udev` hook, if that is used.
-*   `sd-encrypt`: systemd version of `encrypt` hook and used instead of `encrypt` hook. Must be used with `systemd` hook.
-*   `keymap`: provides support for foreign keymaps for typing encryption passwords; it must come *before* the `encrypt` hook. Setting your keymap is done in [`/etc/vconsole.conf`](/index.php/Keymap#Persistent_configuration "Keymap").
-*   `keyboard`: needed to make keyboards work in early userspace.
+| busybox | systemd | Use case |
+| `encrypt` | `sd-encrypt` | Always needed when encrypting the root partition, or a partition that needs to be mounted *before* root. It is not needed in all the other cases, as system initialization scripts like `/etc/crypttab` take care of unlocking other encrypted partitions. This hook must be placed *after* the `udev` or `systemd` hook. |
+| `keyboard` | Needed to make keyboards work in early userspace. |
+| `keymap` | `sd-vconsole` | Provides support for non-US keymaps for typing encryption passwords; it must come *before* the `encrypt` hook. Set your keymap in [`/etc/vconsole.conf`](/index.php/Keymap#Persistent_configuration "Keymap"). |
+| `consolefont` | Loads an alternative console font in early userspace. Set your font in [`/etc/vconsole.conf`](/index.php/Fonts#Persistent_configuration "Fonts"). |
 
 [Other hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") needed should be clear from other manual steps followed during the installation of the system.
 
@@ -62,20 +64,9 @@ For example using [GRUB](/index.php/GRUB#Root_partition "GRUB") the relevant par
 
 The kernel parameters you need to specify depend on whether or not you are using the `encrypt` hook or the `sd-encrypt` hook.
 
-### Using encrypt hook
+### Kernel parameters
 
-#### cryptdevice
-
-This parameter will make the system prompt for the passphrase to unlock the device containing the encrypted root on a cold boot. It is parsed by the `encrypt` hook to identify which device contains the encrypted system:
-
-```
-cryptdevice=*device*:*dmname*
-
-```
-
-*   `*device*` is the path to the device backing the encrypted device. Usage of [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") is advisable.
-*   `*dmname*` is the **d**evice-**m**apper name given to the device after decryption, which will be available as `/dev/mapper/*dmname*`.
-*   If a LVM contains the [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system"), the LVM gets activated first and the volume group containing the logical volume of the encrypted root serves as *device*. It is then followed by the respective volume group to be mapped to root. The parameter follows the form of `cryptdevice=*/dev/mapper/vgname-lvname*:*dmname*`.
+[Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") like `root` and `resume` are specified the same way for both `encrypt` and `sd-encrypt` hooks.
 
 #### root
 
@@ -100,6 +91,21 @@ resume=*device*
 ```
 
 *   `*device*` is the device file of the decrypted (swap) filesystem used for suspend2disk. If swap is on a separate partition, it will be in the form of `/dev/mapper/swap`. See also [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
+
+### Using encrypt hook
+
+#### cryptdevice
+
+This parameter will make the system prompt for the passphrase to unlock the device containing the encrypted root on a cold boot. It is parsed by the `encrypt` hook to identify which device contains the encrypted system:
+
+```
+cryptdevice=*device*:*dmname*
+
+```
+
+*   `*device*` is the path to the device backing the encrypted device. Usage of [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") is advisable.
+*   `*dmname*` is the **d**evice-**m**apper name given to the device after decryption, which will be available as `/dev/mapper/*dmname*`.
+*   If a LVM contains the [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system"), the LVM gets activated first and the volume group containing the logical volume of the encrypted root serves as *device*. It is then followed by the respective volume group to be mapped to root. The parameter follows the form of `cryptdevice=*/dev/mapper/vgname-lvname*:*dmname*`.
 
 #### cryptkey
 

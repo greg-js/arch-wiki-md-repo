@@ -210,7 +210,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 ##### Raster editors
 
-See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.org/wiki/Comparison_of_raster_graphics_editors "wikipedia:Comparison of raster graphics editors").
+See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.org/wiki/Comparison_of_raster_graphics_editors "wikipedia:Comparison of raster graphics editors") and [libgphoto2 frontends](/index.php/Libgphoto2#Other_frontend_applications_for_libgphoto2 "Libgphoto2").
 
 *   **AzPainter** — A Painting software.
 
@@ -382,6 +382,10 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 	[http://www.makehuman.org/](http://www.makehuman.org/) || [makehuman](https://aur.archlinux.org/packages/makehuman/)
 
+*   **[Sweet Home 3D](https://en.wikipedia.org/wiki/Sweet_Home_3D "wikipedia:Sweet Home 3D")** — Interior design software application for the planning and development of floor plans
+
+	[http://sweethome3d.com/](http://sweethome3d.com/) || [sweethome3d](https://www.archlinux.org/packages/?name=sweethome3d)
+
 *   **[POV-Ray](https://en.wikipedia.org/wiki/POV-Ray "wikipedia:POV-Ray")** — Script-based raytracer for creating 3D graphics.
 
 	[http://www.povray.org/](http://www.povray.org/) || [povray](https://www.archlinux.org/packages/?name=povray)
@@ -402,9 +406,7 @@ See also: [Taking a screenshot](/index.php/Taking_a_screenshot "Taking a screens
 
 #### Audio systems
 
-See the main article: [Sound system](/index.php/Sound_system "Sound system").
-
-See also [Wikipedia:Sound server](https://en.wikipedia.org/wiki/Sound_server "wikipedia:Sound server").
+See also the main article [Sound system](/index.php/Sound_system "Sound system") and [Wikipedia:Sound server](https://en.wikipedia.org/wiki/Sound_server "wikipedia:Sound server").
 
 *   **wineasio** — Provides an ASIO to JACK driver for *wine*. ASIO is the most common Windows low-latency driver, so is commonly used in audio workstation programs.
 
@@ -714,6 +716,8 @@ See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc d
 
 #### Sound editing
 
+See also [Professional audio](/index.php/Professional_audio "Professional audio").
+
 *   **[Ardour](https://en.wikipedia.org/wiki/Ardour_(software) "wikipedia:Ardour (software)")** — Multichannel hard disk recorder and digital audio workstation.
 
 	[http://ardour.org/](http://ardour.org/) || [ardour](https://www.archlinux.org/packages/?name=ardour)
@@ -997,6 +1001,10 @@ Screencast utilities allow you to create a video of your desktop or individual w
 *   **FFcast** — FFmpeg-based screencast tool written in Bash.
 
 	[https://github.com/lolilolicon/FFcast](https://github.com/lolilolicon/FFcast) || [ffcast](https://aur.archlinux.org/packages/ffcast/)
+
+*   **[FFmpeg](/index.php/FFmpeg#Screen_cast "FFmpeg")** — Complete, cross-platform solution to record, convert and stream audio and video.
+
+	[http://www.ffmpeg.org/](http://www.ffmpeg.org/) || [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg)
 
 *   **peek** — Simple screencast tool that produces GIF animations.
 

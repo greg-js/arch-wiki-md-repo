@@ -301,7 +301,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **[Seahorse](https://en.wikipedia.org/wiki/Seahorse_(software) "wikipedia:Seahorse (software)")** — GNOME application for managing encryption keys and passwords in the GnomeKeyring.
 
-	[https://wiki.gnome.org/Apps/Seahorse/](https://wiki.gnome.org/Apps/Seahorse/) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
+	[http://library.gnome.org/users/seahorse/stable/](http://library.gnome.org/users/seahorse/stable/) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
 
 *   **steghide** — A steganography utility that is able to hide data in various kinds of image and audio files.
 

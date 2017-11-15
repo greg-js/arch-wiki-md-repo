@@ -181,6 +181,11 @@ See the [original bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686
 
 ### Disable Vertical Synchronization (VSYNC)
 
+Useful when:
+
+*   Chomium/Chrome has lags and slow performance due to GPU and runs smoothly with --disable-gpu switch
+*   glxgears test does not show desired performance
+
 The intel-driver uses [Triple Buffering](http://www.intel.com/support/graphics/sb/CS-004527.htm) for vertical synchronization, this allows for full performance and avoids tearing. To turn vertical synchronization off (e.g. for benchmarking) use this `.drirc` in your home directory:
 
  `~/.drirc` 
@@ -374,7 +379,10 @@ The solution is to disable frame buffer compression which will imperceptibly inc
 
 ### Corruption/Unresponsiveness in Chromium and Firefox
 
-If you experience corruption or unresponsiveness in Chromium and/or Firefox [set the AccelMethod to "uxa"](#SNA_issues).
+If you experience corruption, unresponsiveness, lags or slow performance in Chromium and/or Firefox:
+
+*   [Set the AccelMethod to "uxa"](#SNA_issues)
+*   [Disable VSYNC](#Disable_Vertical_Synchronization_.28VSYNC.29)
 
 ### Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips
 

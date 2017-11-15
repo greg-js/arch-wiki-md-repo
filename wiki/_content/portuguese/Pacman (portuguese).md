@@ -7,8 +7,8 @@ Artigos relacionados
 *   [pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database")
 *   [pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta")
 *   [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks")
-*   [FAQ#Package management](/index.php/FAQ#Package_management "FAQ")
-*   [System maintenance](/index.php/System_maintenance "System maintenance")
+*   [FAQ (Português)#Gerenciamento de pacote](/index.php/FAQ_(Portugu%C3%AAs)#Gerenciamento_de_pacote "FAQ (Português)")
+*   [System maintenance (Português)](/index.php/System_maintenance_(Portugu%C3%AAs) "System maintenance (Português)")
 *   [Arch Build System (Português)](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
 *   [Official repositories (Português)](/index.php/Official_repositories_(Portugu%C3%AAs) "Official repositories (Português)")
 *   [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
@@ -24,14 +24,14 @@ Pacman é escrito na linguagem de programação C e usa o formato de pacote `.pk
 ## Contents
 
 *   [1 Uso](#Uso)
-    *   [1.1 Instalando Pacotes](#Instalando_Pacotes)
+    *   [1.1 Instalando pacotes](#Instalando_pacotes)
         *   [1.1.1 Instalando pacotes específicos](#Instalando_pacotes_espec.C3.ADficos)
         *   [1.1.2 Instalando grupos de pacotes](#Instalando_grupos_de_pacotes)
     *   [1.2 Removendo pacotes](#Removendo_pacotes)
     *   [1.3 Atualizando pacotes](#Atualizando_pacotes)
     *   [1.4 Consultando base de dados do pacote](#Consultando_base_de_dados_do_pacote)
         *   [1.4.1 Estrutura da base de dados](#Estrutura_da_base_de_dados)
-    *   [1.5 Limpeza do cache do pacote](#Limpeza_do_cache_do_pacote)
+    *   [1.5 Limpando o cache de pacotes](#Limpando_o_cache_de_pacotes)
     *   [1.6 Comandos adicionais](#Comandos_adicionais)
     *   [1.7 Motivo de instalação](#Motivo_de_instala.C3.A7.C3.A3o)
     *   [1.8 Atualizações parciais não são suportadas](#Atualiza.C3.A7.C3.B5es_parciais_n.C3.A3o_s.C3.A3o_suportadas)
@@ -68,7 +68,7 @@ O que se segue é apenas uma pequena amostra das operações que o pacman pode e
 
 **Dica:** Para usuários que utilizaram outras distribuições linux antes, ver o artigo [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta") será útil.
 
-### Instalando Pacotes
+### Instalando pacotes
 
 **Nota:** Alguns pacotes muitas vezes têm uma série de [dependências opcionais](/index.php/PKGBUILD_(Portugu%C3%AAs)#optdepends "PKGBUILD (Português)") de pacotes que fornecem funcionalidades adicionais para a aplicação, embora não seja estritamente necessário para executá-lo. Ao instalar um pacote, o *pacman* irá listar suas dependências opcionais entre as mensagens de saída, porém elas não serão encontrados no arquivo `pacman.log`: utilize o comando [pacman -Si](#Consultando_base_de_dados_do_pacote) para visualizar as dependências opcionais de um pacote, juntamente com uma breve descrição das funcionalidades de cada um.
 
@@ -189,8 +189,8 @@ O pacman salva arquivos de configuração importantes ao remover certos aplicati
 
 **Atenção:**
 
-*   Os usuários devem seguir as orientações em [System maintenance#Upgrading the system](/index.php/System_maintenance#Upgrading_the_system "System maintenance") para atualizar os seus sistemas regularmente e nao executar o seguinte comando as cegas.
-*   Arch suporta apenas atualizações completa de sistema. Veja [System maintenance#Partial upgrades are unsupported](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance") e [#Instalando Pacotes](#Instalando_Pacotes) para mais detalhes.
+*   Os usuários devem seguir as orientações em [System maintenance (Português)#Atualizando o sistema](/index.php/System_maintenance_(Portugu%C3%AAs)#Atualizando_o_sistema "System maintenance (Português)") para atualizar os seus sistemas regularmente e nao executar o seguinte comando as cegas.
+*   Arch suporta apenas atualizações completa de sistema. Veja [System maintenance (Português)#Sem suporte a atualizações parciais](/index.php/System_maintenance_(Portugu%C3%AAs)#Sem_suporte_a_atualiza.C3.A7.C3.B5es_parciais "System maintenance (Português)") e [#Instalando Pacotes](#Instalando_Pacotes) para mais detalhes.
 
 *Pacman* pode atualizar todos os pacotes no sistema com apenas um comando. Isso pode demorar um pouco dependendo de como anda a atualização do sistema. Este comando pode sincronizar as bases de dados do repositório *e* atualizar os pacotes do sistema (excluindo pacotes "locais" que não estão nos repositórios configurados):
 
@@ -357,7 +357,7 @@ which-2.20-6
 
 O arquivo `depends` lista os pacotes que este pacote depende, enquanto a `desc` possui uma descrição do pacote, como o tamanho do arquivo e o hash do MD5.
 
-### Limpeza do cache do pacote
+### Limpando o cache de pacotes
 
 O *pacman* armazena seus pacotes baixados em `/var/cache/pacman/pkg/` e não remove as versões antigas ou desinstaladas automaticamente, portanto, é necessário limpar deliberadamente essa pasta periodicamente para impedir que essa pasta cresça indefinidamente em tamanho.
 

@@ -258,3 +258,4 @@ If you notice that using some wine apps, redshift seems to reset temporarily upo
 	[sct](https://aur.archlinux.org/packages/sct/) || [sct](https://aur.archlinux.org/packages/sct/)
 
 *   [xflux-gui-git](https://aur.archlinux.org/packages/xflux-gui-git/)
+*   [Wikipedia:Redshift_(software)](https://en.wikipedia.org/wiki/Redshift_(software) "wikipedia:Redshift (software)")

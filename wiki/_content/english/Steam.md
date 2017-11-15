@@ -4,6 +4,8 @@ Related articles
 *   [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshooting")
 *   [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting")
 *   [Gamepad](/index.php/Gamepad "Gamepad")
+*   [Games](/index.php/Games "Games")
+*   [List of games](/index.php/List_of_games "List of games")
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam (software)"):
 
@@ -207,3 +209,4 @@ See [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshoot
 *   [Gentoo Wiki article](https://wiki.gentoo.org/wiki/Steam)
 *   [The Big List of DRM-Free Games on Steam](https://pcgamingwiki.com/wiki/The_Big_List_of_DRM-Free_Games_on_Steam) at PCGamingWiki
 *   [List of DRM-free games](http://steam.wikia.com/wiki/List_of_DRM-free_games) at Wikia
+*   [Steam Linux store](http://store.steampowered.com/browse/linux)

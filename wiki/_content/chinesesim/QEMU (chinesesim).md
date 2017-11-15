@@ -108,7 +108,7 @@
 与其他的虚拟方案如 [VirtualBox](/index.php/VirtualBox "VirtualBox") 和 [VMware](/index.php/VMware "VMware")不同, QEMU不提供用户图形界面来管理虚拟机 (除了运行虚拟机时出现的窗口), 也没有提供一种持久保存虚拟机设置方式. 必须每一次在命令行上指定所有运行虚拟机的参数,除非你已经创建了一个自定义的脚本来启动你的虚拟机. 有几个程序为 QEMU 提供图形界面：
 
 *   [qemu-launcher](https://www.archlinux.org/packages/?name=qemu-launcher)
-*   [qtemu](https://www.archlinux.org/packages/?name=qtemu)
+*   [qtemu](https://aur.archlinux.org/packages/qtemu/)
 *   [aqemu](https://aur.archlinux.org/packages/aqemu/)
 
 [libvirt](/index.php/Libvirt "Libvirt") 也有支持 QEME 的额外前端界面。

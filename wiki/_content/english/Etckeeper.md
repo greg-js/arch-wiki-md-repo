@@ -1,3 +1,8 @@
+Related articles
+
+*   [Git](/index.php/Git "Git")
+*   [Cron](/index.php/Cron "Cron")
+
 [Etckeeper](http://etckeeper.branchable.com/) lets you keep `/etc` under version control.
 
 ## Contents
@@ -44,7 +49,7 @@ See [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") for more inform
 
 ### Cron
 
-There is a `[cron script](https://github.com/joeyh/etckeeper/blob/master/debian/cron.daily)` in the source distribution. You can use this script to automatically commit changes on a schedule.
+There is a `[cron script](https://git.joeyh.name/index.cgi/etckeeper.git/tree/debian/cron.daily)` in the source distribution. You can use this script to automatically commit changes on a schedule.
 
 For example, to make it run daily:
 
@@ -56,7 +61,7 @@ See [cron#cronie](/index.php/Cron#cronie "Cron"), [cron](/index.php/Cron "Cron")
 
 ### Incron
 
-To automatically create commits on **every** file modification inside `/etc/`, use [incron](https://www.archlinux.org/packages/?name=incron). It utilizes native filesystem signalling through [inotify(7)](http://man7.org/linux/man-pages/man7/inotify.7.html).
+To automatically create commits on **every** file modification inside `/etc/`, use [incron](https://www.archlinux.org/packages/?name=incron). It utilizes native filesystem signalling through [inotify(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/inotify.7).
 
 See: [[1]](http://inotify.aiken.cz/?section=incron&page=doc&lang=en), [[2]](https://linux.die.net/man/8/incrond)
 

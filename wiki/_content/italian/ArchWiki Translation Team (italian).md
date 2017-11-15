@@ -1,4 +1,11 @@
-La [comunità ufficiale italiana](http://www.archlinux.it/) di Arch Linux ha fondato l'**ArchWiki Translation Team**, un gruppo aperto e collaborativo di utenti, con lo scopo di allineare la documentazione italiana con quella inglese e tenerla costantemente aggiornata, in modo da offrire il miglior servizio possibile alla propria comunità. Se volete aiutarci ad avere una documentazione sempre efficace, aggiornata e più ampia possibile, considerate la possibilità di unirvi a [questo progetto](http://www.archlinux.it/forum/viewtopic.php?f=19&t=8483). Non bisogna preoccuparsi del tempo da dedicare, ogni aiuto è ben accetto compatibilmente con il tempo a propria disposizione.
+Articoli correlati
+
+*   [Help:Editing (Italiano)](/index.php/Help:Editing_(Italiano) "Help:Editing (Italiano)")
+*   [Help:Style (Italiano)](/index.php/Help:Style_(Italiano) "Help:Style (Italiano)")
+*   [Help:Reading](/index.php/Help:Reading "Help:Reading")
+*   [ArchWiki:About (Italiano)](/index.php/ArchWiki:About_(Italiano) "ArchWiki:About (Italiano)")
+
+La [comunità ufficiale italiana](http://www.archlinux.it/) di Arch Linux ha fondato l'<a class="mw-selflink selflink">ArchWiki Translation Team</a>, un gruppo aperto e collaborativo di utenti, con lo scopo di allineare la documentazione italiana con quella inglese e tenerla costantemente aggiornata, in modo da offrire il miglior servizio possibile alla propria comunità. Se volete aiutarci ad avere una documentazione sempre efficace, aggiornata e più ampia possibile, considerate la possibilità di unirvi a [questo progetto](http://www.archlinux.it/forum/viewtopic.php?f=19&t=8483). Non bisogna preoccuparsi del tempo da dedicare, ogni aiuto è ben accetto compatibilmente con il tempo a propria disposizione.
 
 ## Contents
 
@@ -120,6 +127,7 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [Arch64 FAQ (Italiano)](/index.php/Arch64_FAQ_(Italiano) "Arch64 FAQ (Italiano)") | 2014-03-03 | Veleno77 | n/a | n/a |
 | [ATI (Italiano)](/index.php/ATI_(Italiano) "ATI (Italiano)") | 2013-07-22 | 4javier | n/a | n/a |
 | [Beginners' guide (Italiano)](/index.php/Beginners%27_guide_(Italiano) "Beginners' guide (Italiano)") | 2014-03-09 | Veleno77 | [Guida per Principianti](/index.php/Guida_per_Principianti "Guida per Principianti") | n/a |
+| [Code of conduct (Italiano)](/index.php/Code_of_conduct_(Italiano) "Code of conduct (Italiano)") | 2017-11-09 | smlb | [Code of conduct](/index.php/Code_of_conduct "Code of conduct") | n/a |
 | [Configuring Network (Italiano)](/index.php/Configuring_Network_(Italiano) "Configuring Network (Italiano)") | 2012-10-04 | icetux | [Configurazione della Rete](/index.php/Configurazione_della_Rete "Configurazione della Rete") | n/a |
 | [CUPS (Italiano)](/index.php/CUPS_(Italiano) "CUPS (Italiano)") | 2013-02-27 | umby213 | n/a | n/a |
 | [FAQ (Italiano)](/index.php/FAQ_(Italiano) "FAQ (Italiano)") | 2012-08-20 | umby213 | [Domande Frequenti](/index.php/Domande_Frequenti "Domande Frequenti") | in allineamento --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 09:46, 15 December 2012 (UTC) |

@@ -73,7 +73,7 @@ The following table lists basic shell commands every Linux user should be famili
 
 [cat](https://en.wikipedia.org/wiki/cat_(Unix) is a standard Unix utility that concatenates and lists files.
 
-*   Because *cat* is not a built-in shell, on many occasions you may find it more convenient to use a [redirection](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), for example in scripts, or if you care a lot about performance. In fact `< *file*` does the same as `cat *file*`.
+*   Because *cat* is not built into the shell, on many occasions you may find it more convenient to use a [redirection](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), for example in scripts, or if you care a lot about performance. In fact `< *file*` does the same as `cat *file*`.
 
 *   *cat* is able to work with multiple lines:
 
@@ -130,7 +130,7 @@ Instead, find takes a set of directories and matches each file under them agains
 
 *iconv* converts the encoding of characters from one codeset to another.
 
-The following command will convert the file `*foo*` from ISO-8859-15 to UTF-8 saving it to `*foo*.utf`:
+The following command will convert the file `*foo*` from ISO-8859-15 to UTF-8, saving it to `*foo*.utf`:
 
 ```
 $ iconv -f ISO-8859-15 -t UTF-8 *foo* > *foo*.utf
@@ -143,7 +143,7 @@ See [iconv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) for more detai
 
 **Tip:** You can use [recode](https://www.archlinux.org/packages/?name=recode) instead of iconv if you do not want to touch the mtime.
 
-Unlike [sed](#sed), *iconv* does not provide an option to convert a file in place. However, `sponge` can be used to handle it, it comes with [moreutils](https://www.archlinux.org/packages/?name=moreutils).
+Unlike [sed](#sed), *iconv* does not provide an option to convert a file in place. However, `sponge` from the [moreutils](https://www.archlinux.org/packages/?name=moreutils) package can help:
 
 ```
 $ iconv -f WINDOWS-1251 -t UTF-8 *foobar*.txt | sponge *foobar*.txt
@@ -187,7 +187,7 @@ The [Network configuration](/index.php/Network_configuration "Network configurat
 
 [Install](/index.php/Install "Install") the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. The package contains an `updatedb.timer` unit, which invokes a database update each day. The timer is enabled right after installation, [start](/index.php/Start "Start") it manually if you want to use it before reboot. You can also manually run *updatedb* as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so *locate* may not discover files on external devices. See [updatedb(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8) for details.
 
-The *locate* command is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by *locate*. This problem is minimised by regular, typically scheduled use of the *updatedb* command, which (as the name suggests) updates the database.
+The *locate* command is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by *locate*.
 
 Before *locate* can be used, the database will need to be created. To do this, execute `updatedb` as root.
 
@@ -201,11 +201,11 @@ See [List of applications#Terminal pagers](/index.php/List_of_applications#Termi
 
 ### Vim as alternative pager
 
-[Vim](/index.php/Vim "Vim") includes a script to view the content of text files, compressed files, binaries, directories. Add the following line to your shell configuration file to use it as a pager:
+[Vim](/index.php/Vim "Vim") includes a script to view the content of text files, compressed files, binaries and directories. Add the following line to your shell configuration file to use it as a pager:
 
  `~/.bashrc`  `alias less='/usr/share/vim/vim80/macros/less.sh'` 
 
-There is also an alternative to *less.sh* macro, which may work as the `PAGER` environment variable. Install [vimpager](https://www.archlinux.org/packages/?name=vimpager) and add the following to your shell configuration file:
+There is also an alternative to the *less.sh* macro, which may work as the `PAGER` environment variable. Install [vimpager](https://www.archlinux.org/packages/?name=vimpager) and add the following to your shell configuration file:
 
  `~/.bashrc` 
 ```
@@ -337,7 +337,7 @@ This alias suspends *rm* after three seconds, asks confirmation to delete three 
 
 Zsh users may want to put `noglob` before `timeout` to avoid implicit expansions.
 
-To remove directories known to be empty, use *rmdir* as it fails in case of files inside the target.
+To remove directories believed to be empty, use *rmdir* as it fails if there are files inside the target.
 
 ## sed
 
@@ -345,7 +345,7 @@ To remove directories known to be empty, use *rmdir* as it fails in case of file
 
 Here is a handy [list](http://sed.sourceforge.net/sed1line.txt) of *sed* one-liners examples.
 
-**Tip:** More powerful alternatives are [AWK](https://en.wikipedia.org/wiki/AWK "wikipedia:AWK") and even [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") language.
+**Tip:** More powerful alternatives are [AWK](https://en.wikipedia.org/wiki/AWK "wikipedia:AWK") and the [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") language.
 
 ## seq
 

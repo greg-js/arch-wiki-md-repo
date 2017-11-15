@@ -385,7 +385,7 @@ Se você frequentemente compila códigos que usam gcc - digamos, um pacote git o
 
 Muitos pacotes AUR são apresentados nas versões regulares ("estáveis") e de desenvolvimento ("instáveis"). Um pacote de desenvolvimento geralmente possui um sufixo como `-cvs`, `-svn`, `-git`, `-hg`, `-bzr` ou `-darcs`. Enquanto os pacotes de desenvolvimento não são destinados a usos regulares, eles podem oferecer novos recursos ou correções de erros. Por esses pacotes baixarem o mais novo código-fonte disponível ao executar o `makepkg`, uma versão de pacote para relacionar possíveis atualizações não está diretamente disponível para eles. Da mesma forma, esses pacotes não podem realizar uma verificação de autenticidade da soma de verificação (*checksum*), dependendo dos mantenedor(es) do repositório Git.
 
-Veja também [System maintenance#Use proven software packages](/index.php/System_maintenance#Use_proven_software_packages "System maintenance") ("Use pacotes de software aprovados").
+Veja também [System maintenance (Português)#Use pacotes de software aprovados](/index.php/System_maintenance_(Portugu%C3%AAs)#Use_pacotes_de_software_aprovados "System maintenance (Português)").
 
 ### Por que foo desapareceu do AUR?
 

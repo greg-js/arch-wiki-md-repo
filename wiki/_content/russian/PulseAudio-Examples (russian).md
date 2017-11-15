@@ -24,10 +24,12 @@
 *   [7 ALSA monitor source](#ALSA_monitor_source)
 *   [8 Наблюдение конкретного вывода](#.D0.9D.D0.B0.D0.B1.D0.BB.D1.8E.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BD.D0.BA.D1.80.D0.B5.D1.82.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4.D0.B0)
 *   [9 PulseAudio через JACK](#PulseAudio_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_JACK)
-    *   [9.1 Новый новый способ](#.D0.9D.D0.BE.D0.B2.D1.8B.D0.B9_.D0.BD.D0.BE.D0.B2.D1.8B.D0.B9_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1)
-    *   [9.2 Новый способ](#.D0.9D.D0.BE.D0.B2.D1.8B.D0.B9_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1)
-    *   [9.3 Старый способ](#.D0.A1.D1.82.D0.B0.D1.80.D1.8B.D0.B9_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1)
-        *   [9.3.1 QjackCtl с скриптами загрузки/выключения](#QjackCtl_.D1.81_.D1.81.D0.BA.D1.80.D0.B8.D0.BF.D1.82.D0.B0.D0.BC.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8.2F.D0.B2.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [9.1 Метод KXStudio](#.D0.9C.D0.B5.D1.82.D0.BE.D0.B4_KXStudio)
+    *   [9.2 Ручная настройка устройств вывода](#.D0.A0.D1.83.D1.87.D0.BD.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4.D0.B0)
+    *   [9.3 Новый новый способ](#.D0.9D.D0.BE.D0.B2.D1.8B.D0.B9_.D0.BD.D0.BE.D0.B2.D1.8B.D0.B9_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1)
+    *   [9.4 Новый способ](#.D0.9D.D0.BE.D0.B2.D1.8B.D0.B9_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1)
+    *   [9.5 Старый способ](#.D0.A1.D1.82.D0.B0.D1.80.D1.8B.D0.B9_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1)
+        *   [9.5.1 QjackCtl с скриптами загрузки/выключения](#QjackCtl_.D1.81_.D1.81.D0.BA.D1.80.D0.B8.D0.BF.D1.82.D0.B0.D0.BC.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8.2F.D0.B2.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D1.8F)
 *   [10 PulseAudio через OSS](#PulseAudio_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_OSS)
 *   [11 Запуск PulseAudio из chroot (напр. 32-бит chroot в 64-битной истеме)](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_PulseAudio_.D0.B8.D0.B7_chroot_.28.D0.BD.D0.B0.D0.BF.D1.80._32-.D0.B1.D0.B8.D1.82_chroot_.D0.B2_64-.D0.B1.D0.B8.D1.82.D0.BD.D0.BE.D0.B9_.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B5.29)
 *   [12 Отключение автоматического запуска сервера PulseAudio](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B0.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B3.D0.BE_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0_.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80.D0.B0_PulseAudio)
@@ -507,6 +509,59 @@ pactl load-module module-null-sink sink_name=<имя>
 ## PulseAudio через JACK
 
 [JACK Audio Connection Kit](/index.php/JACK_Audio_Connection_Kit "JACK Audio Connection Kit") популярен для работы со звуком и широко поддерживается аудиоприложениями Linux. Он занимает совместную с PulseAudio нишу, но с акцентом в сторону профессиональной работы со звуком. Он может предложить аудиомониторинг с низкой временной задержкой вместе с большим контролем за вводом и выводом множественных звуковых устройств ввода-вывода.
+
+### Метод KXStudio
+
+Это рекомендуемый способ, так как он был [официально одобрен разработчиками JACK](https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_PulseOnJack)
+
+Эта настройка работает с обоими пакетами [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus) и [jack2](https://www.archlinux.org/packages/?name=jack2).
+
+В текущий момент JACK обладает способностью переключаться между ALSA, PulseAudio и JACK. Это дает вам возможность одновременно запускать JACK и PulseAudio и получать их вывод без каких-либо дополнительных настроек или команд терминала.
+
+Перед началом последующих действий рекомендуется удалить пакет [qjackctl](https://www.archlinux.org/packages/?name=qjackctl), если вы его используете.
+
+Начните с установки [cadence](https://aur.archlinux.org/packages/cadence/) из AUR. Как только вы установите и запустите его, в нижнем правом углу экрана должен появиться JACK bridge configuration. ALSA audio bridge следует настроить как ALSA -> PulseAudio -> JACK и включить PulseAudio bridge. Убедитесь с помощью `pavucontrol`, что все устройства ввода и вывода, не относящиеся к JACK, выключены (muted). Воспользуйтесь кнопкой Force Restart для запуска JACK, и, если все запустилось успешно, вывод программ PulseAudio будет перенаправлен через JACK.
+
+### Ручная настройка устройств вывода
+
+Этот способ позволяет обеспечить одновременную работу JACK и PulseAudio и обмен выводом между собой. В этом случае используется ручная настройка систем, которая обеспечивает связь между JACK и PulseAudio. Эта конфигурация не опирается на скрипты или команды, и полностью основана на работе с настройками.
+
+Рассматриваемый метод работает только с jackdbus (JACK2 скомпилированный с поддержкой D-Bus). Вам также потребуется пакет [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack). Убедитесь, что файл `/etc/pulse/default.pa` содержит строку:
+
+```
+load-module module-jackdbus-detect *options*
+
+```
+
+Где `*options*` может быть любой опцией, поддерживаемой этим модулем, обычно `channels=2`.
+
+Как описано на странице [Jack-DBUS Packaging](https://github.com/jackaudio/jackaudio.github.com/wiki/JackDbusPackaging):
+
+*Автозапуск сервера реализован в качестве вызова D-Bus, который автоматически активирует сервис JACK D-Bus, если он еще не был запущен, и запускает сервер JACK. Правильное взаимодействие с PulseAudio обеспечивается механизмом "получения/отдачи" ("acquire/release") звуковой карты, основанным на D-Bus. Когда запускается сервер JACK, он запрашивает получение звуковой карты у данного D-Bus сервиса, и PulseAudio безоговорочно отдает управление над ней. В тот момент, когда сервер JACK заканчивает свою работу, он освобождает звуковую карту, которая вновь может быть занята PulseAudio.*
+
+`module-jackdbus-detect.so` динамически загружает и выгружает модули module-jack-sink и module-jack-source, когда jackdbus запускается и останавливается.
+
+Если PulseAudio не работает, проверьте с помощью `pavucontrol`, появились ли соответствующие программы на вкладке воспроизведения. Если нет, то добавьте следующее в файл `~/.asoundrc` или `/etc/asound.conf` для перенаправления ALSA на PulseAudio:
+
+```
+pcm.pulse {
+    type pulse
+}
+
+ctl.pulse {
+    type pulse
+}
+
+pcm.!default {
+    type pulse
+}
+ctl.!default {
+    type pulse
+}
+
+```
+
+В случае, если он все также не работает, проверьте с помощью `pavucontrol` вкладку воспроизведения и убедитесь, что соответствующие программы осуществляют вывод через PulseAudio JACK Sink, а не через звуковую карту (которую в текущий момент контролирует JACK, и это не сработает). Также убедитесь, что на графике JACK PulseAudio JACK Source соединен с системным аудио выходом.
 
 ### Новый новый способ
 

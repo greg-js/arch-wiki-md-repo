@@ -12,6 +12,7 @@ The Oculus Rift is a virtual reality head-mounted display developed by [Oculus V
     *   [3.1 Kernel log spamming by DK2 camera](#Kernel_log_spamming_by_DK2_camera)
     *   [3.2 Camera misbehaving after suspend/resume](#Camera_misbehaving_after_suspend.2Fresume)
     *   [3.3 Inaccurate latency readings for legacy applications](#Inaccurate_latency_readings_for_legacy_applications)
+    *   [3.4 Oculus DK1 not showing as monitor or showing disconnected when running xrandr](#Oculus_DK1_not_showing_as_monitor_or_showing_disconnected_when_running_xrandr)
 
 ## Installation
 
@@ -82,3 +83,16 @@ If you try to suspend/resume and then use the Rift, the camera will have issues 
 ### Inaccurate latency readings for legacy applications
 
 For some reason, it seems that using `ovrd > 0.5.0` with applications compiled against 0.4.4 and below gives a latency reading of many millions of milliseconds (most likely a signed/unsigned change). This means timewarp is always clamped at maximum, and gives a 'swimming' view when using legacy applications. There isn't an ideal fix for this yet, although it is possible to install an old version of the SDK and use that instead.
+
+### Oculus DK1 not showing as monitor or showing disconnected when running xrandr
+
+Latest NVIDIA Drivers have added an AllowHMD option to specify if a screen should use a HMD device (like the Oculus DK1) as a standard monitor. NVIDIA has set this to NO by default, which causes the DK1 to show as disconnected, causing a lot of confusion. It can be fixed by running:
+
+```
+nvidia-xconfig --allow-hmd=yes
+
+```
+
+or by manually adding `Option "AllowHMD" "yes"` to the Screen section of your /etc/X11/xorg.conf.
+
+took from: [https://forums.oculus.com/developer/discussion/34407/gnu-linux-plans#Comment_566814](https://forums.oculus.com/developer/discussion/34407/gnu-linux-plans#Comment_566814)

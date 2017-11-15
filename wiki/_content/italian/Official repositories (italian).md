@@ -1,3 +1,13 @@
+Articoli correlati
+
+*   [Mirrors (Italiano)](/index.php/Mirrors_(Italiano) "Mirrors (Italiano)")
+*   [Arch User Repository (Italiano)](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)")
+*   [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
+*   [PKGBUILD (Italiano)](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)")
+*   [makepkg (Italiano)](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)")
+*   [pacman (Italiano)](/index.php/Pacman_(Italiano) "Pacman (Italiano)")
+*   [Arch Build System (Italiano)](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)")
+
 Un [software repository](https://en.wikipedia.org/wiki/software_repository "wikipedia:software repository") è un "magazzino" di dati da cui i pacchetti di software possono essere recuperati e installati su un computer. Gli Arch Linux [package maintainers](/index.php/Package_Maintainer "Package Maintainer") (sviluppatori e [Trusted Users](/index.php/Trusted_Users "Trusted Users")) mantengono un certo numero di repository ufficiali, contenenti i pacchetti del software, da quello più essenziale a quello extra, facilmente accessibili via [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)"). Questo articolo delinea questi repository ufficialmente supportati.
 
 ## Contents

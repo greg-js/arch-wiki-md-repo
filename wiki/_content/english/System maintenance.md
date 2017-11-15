@@ -1,3 +1,7 @@
+Related articles
+
+*   [General recommendations](/index.php/General_recommendations "General recommendations")
+
 Regular system maintenance is necessary for the proper function of Arch over a period of time. Timely maintenance is a practice many users get accustomed to.
 
 ## Contents

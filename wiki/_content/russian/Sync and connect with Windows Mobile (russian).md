@@ -1,4 +1,4 @@
-Эта страница является руководством по подключению вашего устройства Windows Mobile к Archlinux, после прочтения которого вы сможете подключать и синхронизировать ваше мобильное устройство так же, как и в Windows. Для достижения этой цели используется [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")-приложение [synce-kde](https://www.archlinux.org/packages/?name=synce-kde), но пользователи [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)") и *box могут не беспокоиться: его [qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)")-зависимости очень маленькие.
+Эта страница является руководством по подключению вашего устройства Windows Mobile к Archlinux, после прочтения которого вы сможете подключать и синхронизировать ваше мобильное устройство так же, как и в Windows. Для достижения этой цели используется [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")-приложение [synce-kde](https://aur.archlinux.org/packages/synce-kde/), но пользователи [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)") и *box могут не беспокоиться: его [qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)")-зависимости очень маленькие.
 
 ## Contents
 
@@ -13,7 +13,7 @@
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") следующие пакеты:
 
 1.  [synce-odccm](https://aur.archlinux.org/packages/synce-odccm/)
-2.  [synce-kde](https://www.archlinux.org/packages/?name=synce-kde)
+2.  [synce-kde](https://aur.archlinux.org/packages/synce-kde/)
 3.  [synce-sync-engine](https://www.archlinux.org/packages/?name=synce-sync-engine)
 
 ## Подключение к телефону

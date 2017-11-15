@@ -143,24 +143,25 @@ Veja as páginas [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português
 
 ### Eu encontrei um erro no pacote X. O que eu devo fazer?
 
-Primeiramente você precisa descobrir se o erro é algo que a equipe do Arch pode consertar. Algumas vezes não é (aquele travamento no firefox pode ser falha da equipe do Mozilla) - isto é chamado de *upstream error*. Se for um problema do Arch, existe uma série de coisas que você pode fazer:
+Primeiro, você precisa descobrir se esse erro é algo que a equipe do Arch possa consertar. Algumas vezes não é (aquele travamento no firefox pode ser falha da equipe do Mozilla); isto é chamado de *upstream error* ("erro do upstream"). Se for um problema do Arch, existe uma série de coisas que você pode fazer:
 
 1.  Procurar informações no fórum. Veja se alguém teve o mesmo problema.
-2.  Informar o mantenedor do pacote. Rode um "pacman -Qi <nome do pacote>" para obter esta informação.
-3.  Relatar o bug, com informações detalhadas, em [https://bugs.archlinux.org](https://bugs.archlinux.org)
-4.  Se desejar, você pode criar um tópico no fórum descrevendo o problema e informando que você já relatou o mesmo. Isto ajuda a prevenir que várias pessoas relatem o mesmo erro.
+2.  Fazer um [relatório de erro](/index.php/Bug_report "Bug report"), com informações detalhadas, em [https://bugs.archlinux.org](https://bugs.archlinux.org)
+3.  Se desejar, você pode criar um tópico no fórum descrevendo o problema e informando que você já relatou o mesmo. Isto ajuda a prevenir que várias pessoas relatem o mesmo erro.
 
 ### Os pacotes do Arch precisam usar uma nomenclatura única. ".pkg.tar.gz" e "pkg.tar.xz" é muito longo e/ou confuso
 
-Isto vem sendo discutido na lista de discussão do Arch. Alguns propuseram uma extensão .pac. Até onde se sabe. não há nenhuma intenção em modificar a extensão dos pacotes. Como Tobias Kieslich, um dos desenvolvedores do Arch, colocou, "Um pacote **é** gzipped tarball!! E ele pode ser aberto, verificado e manipulado por qualquer aplicação tar. Além disso, o mime-type é automaticamente detectado pela maioria das aplicações".
+Isto foi discutido na lista de discussão do Arch. Alguns propuseram uma extensão de arquivo .pac. Até onde se sabe, não há nenhum plano para modificar a extensão dos pacotes. Como Tobias Kieslich, um dos desenvolvedores do Arch, colocou, *"Um pacote **é** tarball gzipado [xz]!! E ele pode ser aberto, verificado e manipulado por qualquer aplicação tar. Além disso, o tipo mime é automaticamente detectado pela maioria dos aplicativos"*.
 
 ### O pacman precisa de uma biblioteca para que outros aplicativos possam acessar facilmente informações dos pacotes
 
-Já está sendo desenvolvida uma biblioteca para o pacman.
+Pacman é um front-end para [libalpm](https://www.archlinux.org/pacman/libalpm.3.html), acrônimo para *"Arch Linux Package Management"* ("Gerenciamento de Pacote do Arch Linux"), que permite front-ends alternativos, como um front-end gráfico, serem escritos.
 
 ### O pacman precisa do recurso X!
 
-Você leu o [The Arch Way](/index.php/The_Arch_Way "The Arch Way"), o [Arch Linux](/index.php/Arch_Linux "Arch Linux")? A filosofia do Arch é "Keep It Simple". Se você acha que sua ideia tem fundamento, e que ela não viola esta filosofia, então você pode discuti-la no [fórum](https://bbs.archlinux.org/). Você pode, também, verificar [isso](https://bugs.archlinux.org), um lugar onde você pode fazer pedidos, caso você os considere importantes.
+Se você acha que sua ideia tem fundamento, então você pode discuti-la na [pacman-dev](https://lists.archlinux.org/listinfo/pacman-dev/). Verifique também [https://bugs.archlinux.org](https://bugs.archlinux.org) por requisições existentes por recursos.
+
+Porém, a melhor forma de ter um recurso adicionado ao pacman ou Arch Linux é implementá-lo você mesmo. O patch ou código pode ou não ser aceito oficialmente, mas talvez outros vão apreciar, testar e contribuir para seu esforço.
 
 ### Eu acabei de instalar o Pacote X. Como eu o inicio?
 
@@ -173,75 +174,75 @@ $ pacman -Qlq *nome-pacote* | grep /usr/bin/
 
 ### Por que há alguma uma única versão de cada biblioteca compartilhada nos repositórios oficiais?
 
-Several distributions, such as Debian, have different versions of shared libraries packaged as different packages: `libfoo1`, `libfoo2`, `libfoo3` and so on. In this way it is possible to have applications compiled against different versions of `libfoo` installed on the same system.
+Diversas distribuições, como o Debian, possuem diferentes versões de bibliotecas compartilhadas empacotadas como pacotes diferentes: `libfoo1`, `libfoo2`, `libfoo3` e por aí vai. Nesta forma, é possível ter aplicativos compilados com diferentes versões de `libfoo` instaladas no mesmo sistema.
 
-In case of a distribution like Arch, only the latest stable versions of packages are officially supported. By dropping support for outdated software, package maintainers are able to spend more time ensuring that the newest versions work as expected. As soon as a new version of a shared library becomes available from upstream, it is added to the repositories and affected packages are rebuilt to use the new version.
+No caso de uma distribuição como o Arch, apenas as últimas versões estáveis recebem suporte oficial. Ao descartar suporte a um software desatualizado, mantenedores de pacote conseguem gastar mais tempo assegurando que as versões mais novas funcionam conforme esperado. Assim que uma nova versão de uma biblioteca compartilhada é disponibilizada pelo upstream, ela é adicionada aos repositórios e pacotes afetados são recompilados para usar a nova versão.
 
 ### E se eu executar uma atualização completa do sistema e houver uma atualização para uma biblioteca compartilhada, mas não para os aplicativos que dependem dela?
 
-This scenario should not happen at all. Assuming an application called `foobaz` is in one of the official repositories and builds successfully against a new version of a shared library called `libbaz`, it will be updated along with `libbaz`. If, however, it doesn't build successfully, `foobaz` package will have a versioned dependency (e.g. *libbaz 1.5*), and will be removed by pacman during `libbaz` upgrade, due to a conflict.
+Esse cenário não deve acontecer. Presumindo que um aplicativo chamado `foobaz` está em um dos repositórios oficiais e compila com sucesso com a nova versão da biblioteca compartilhada chamada `libbaz`, ele será atualizado junto com `libbaz`. Se, porém, ele não compilar com sucesso, o pacote `foobaz` terá uma dependência versionada (p.ex.: *libbaz 1.5*) e será removido pelo pacman durante a atualização de `libbaz`, por causa de um conflito.
 
-If `foobaz` is a package that you built yourself and installed from AUR, you should try rebuilding `foobaz` against the new version of `libbaz`. If the build fails, report the bug to the `foobaz` developers.
+Se `foobaz` é um pacote que você mesmo compilou e instalou do AUR, você deve tentar recompilar `foobaz` com a nova versão de `libbaz`. Se a compilação falhar, relate o erro aos desenvolvedores do `foobaz`.
 
 ### É possível haver uma atualização de versão maior do kernel no repositório e que alguns dos pacotes de driver não tenham sido atualizados?
 
-No, it is not possible. Major kernel updates (e.g. *linux 3.5.0-1* to *linux 3.6.0-1*) are always accompanied by rebuilds of all supported kernel driver packages. On the other hand, if you have an unsupported driver package installed on your system, such as [catalyst](https://aur.archlinux.org/packages/catalyst/), then a kernel update might break things for you if you do not rebuild it for the new kernel. Users are responsible for updating any unsupported driver packages that they have installed.
+Não, não é possível. Atualizações de versões maiores do kernel (p.ex. *linux 3.5.0-1* para *linux 3.6.0-1*) são sempre acompanhadas por recompilações de todos os pacotes de drivers de kernel. Por outro lado, se você tiver um pacote de driver sem suporte em seu sistema, tal como [catalyst](https://aur.archlinux.org/packages/catalyst/), então a atualização de kernel pode quebrar coisas se você não recompilá-lo para o novo kernel. Os usuários são responsáveis por atualizar quaisquer pacotes de driver sem suporte que eles tenham instalado.
 
 ### O que fazer antes de atualizar?
 
-Follow the [System maintenance#Upgrading the system](/index.php/System_maintenance#Upgrading_the_system "System maintenance") section.
+Siga a seção [System maintenance (Português)#Atualizando o sistema](/index.php/System_maintenance_(Portugu%C3%AAs)#Atualizando_o_sistema "System maintenance (Português)").
 
 ### Uma atualização de pacote foi lançada, mas o pacman diz que o sistema está atualizado
 
-*pacman* mirrors are not synced immediately. It may take over 24 hours before an update is available to you. The only options are be patient or use another mirror. [MirrorStatus](https://www.archlinux.org/mirrors/status/) can help you identify an up-to-date mirror.
+Mirrors do *pacman* não são sincronizados imediatamente. Leva cerca de 24 horas antes que uma atualização esteja disponível para você. As únicas opções são ser paciente ou usar um outro mirror. [MirrorStatus](https://www.archlinux.org/mirrors/status/) pode lhe ajudar a identificar um mirror atualizado.
 
 ### Upstream do projeto *X* lançou uma nova versão. Quanto tempo vai levar para o pacote do Arch ser atualizado para essa nova versão?
 
-Package updates will be released when they are ready. The specifc amount of time can be as short as a few hours after upstream releases a minor bugfix update to as long as several weeks after a large package group's major update. The amount of time from an upstream's new version to Arch releasing a new package depends on the specific packages and the availability of the package maintainers. Additionally, some packages spend some time in the [testing](/index.php/Testing "Testing") repository, so this can prolong the time before a package is updated. [Package maintainers](/index.php/Package_maintainer "Package maintainer") attempt to work quickly to bring stable updates to the repositories. If you find a package in the official repositories that is out of date, go to that package's page at the [package website](https://www.archlinux.org/packages/) and flag it.
+Atualizações de pacotes serão lançadas quando elas estiverem prontas. A quantidade específica de tempo pode ser tão curta quanto algumas horas após o upstream lançar uma atualização menor de correção de erros e tão longa quanto várias semanas após a atualização de versão maior de um grupo grande de pacotes. A quantidade de tempo de uma nova versão do upstream até o Arch lançar um novo pacote depende dos pacotes específicos e da disponibilidade dos mantenedores de pacote. Adicionalmente, alguns pacotes ficam algum tempo no repositório [testing](/index.php/Testing_(Portugu%C3%AAs) "Testing (Português)"), então isso pode prolongar o tempo antes de um pacote ser atualizado. Cada [mantenedor de pacote](/index.php/Mantenedor_de_pacote "Mantenedor de pacote") tenta trabalhar rapidamente para trazer atualizações estáveis para os repositórios. Se você encontrar um pacote nos repositórios oficiais que está desatualizado, vá até a página do pacote no [site de pacotes](https://www.archlinux.org/packages/) e sinalize-o como tal.
 
 ## Instalação
 
 ### O Arch precisa de um instalador. Talvez um instalador gráfico?
 
-A discussão sobre um "melhor" instalador é uma opinião subjetiva. A melhor maneira de lidar com isso é colocar o instalador no "jeito arch". Se esta opinião sobre um melhor instalador fosse reforçada com mais argumentos concretos, o desenvolvimento adicional do instalador poderia ser levado em conta. *O Windows usa um instalador baseado em texto*.
+Já que a instalação não ocorre com frequência (leia o resto deste artigo para saber mais sobre lançamento contínuo - *rolling release*), isso não é uma prioridade alta para os desenvolvedores ou usuários. O [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação") foi completamente atualizado para usar o método de linha de comando. Se você ainda está interessado em usar um instalador, considere usar [Archboot](/index.php/Archboot "Archboot").
 
 ### Eu instalei o Arch e agora eu estou em um shell! O que faço agora?
 
-See [General recommendations](/index.php/General_recommendations "General recommendations").
+Veja [Recomendações gerais](/index.php/Recomenda%C3%A7%C3%B5es_gerais "Recomendações gerais").
 
 ### Qual ambiente de área de trabalho ou gerenciador de janelas eu devo usar?
 
-Since many are available to you, use the one you like the most to fit your needs. Have a look at the [Desktop environment](/index.php/Desktop_environment "Desktop environment") and [Window manager](/index.php/Window_manager "Window manager") articles.
+Já que há muitos disponíveis para você, use o que você preferir para atender suas necessidades. Dê uma olhada nos artigos [Desktop environment](/index.php/Desktop_environment "Desktop environment") e [Window manager](/index.php/Window_manager "Window manager").
 
 ### O que faz do Arch único entre outras distribuições "minimalistas"?
 
-See [Arch compared to other distributions](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions").
+Veja [Arch comparado com outras distribuições](/index.php/Arch_comparado_com_outras_distribui%C3%A7%C3%B5es "Arch comparado com outras distribuições").
 
 ## 64 bit
 
 ### Como eu determino se meu processador é compatível com x86_64?
 
-If your processor is [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") compatible, you will have the `lm` flag in `/proc/cpuinfo`. For example,
+Se seu processador é compatível com [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64"), você terá a flag `lm` no `/proc/cpuinfo`. Por exemplo,
 
 ```
 $ grep -w lm /proc/cpuinfo
 
 ```
 
-Under Windows, using the freeware [CPU-Z](http://www.cpuid.com/cpuz.php) helps determine whether your CPU is 64-bit compatible. CPUs with AMD's instruction set "AMD64" or Intel's solution "EM64T" should be compatible with the x86_64 releases and binary packages.
+No Windows, usar o freeware [CPU-Z](http://www.cpuid.com/cpuz.php) ajuda a determinar se seu CPU é compatível com 64-bit. CPUs com conjunto de instruções da AMD "AMD64" ou a solução da Intel "EM64T" devem ser compatíveis com os pacotes binários e lançamentos de x86_64.
 
 ### Por que 64 bit?
 
-It is faster under most circumstances and as an added bonus also inherently more secure due to the nature of [Address space layout randomization (ASLR)](https://en.wikipedia.org/wiki/Address_space_layout_randomization "wikipedia:Address space layout randomization") in combination with [Position-independent code (PIC)](https://en.wikipedia.org/wiki/Position-independent_code "wikipedia:Position-independent code") and the [NX Bit](https://en.wikipedia.org/wiki/NX_Bit "wikipedia:NX Bit") which is not available in the stock i686 kernel due to disabled PAE. If your computer has more than 4GB of RAM, only a 64-bit OS will be able to fully utilize it.
+É mais rápido sob a maioria das circunstâncias e, como um bônus adicional, também mais seguro em razão da natureza de [Aleatorização do layout de espaço do endereço (ASLR)](https://en.wikipedia.org/wiki/Address_space_layout_randomization "wikipedia:Address space layout randomization") em combinação com [Código independente de posição (PIC)](https://en.wikipedia.org/wiki/Position-independent_code "wikipedia:Position-independent code") e [Bit NX](https://en.wikipedia.org/wiki/pt:Bit_NX "wikipedia:pt:Bit NX") que não está disponível em kernels padrão de i686 por causa do PAE desabilitado. Se seu computador tem mais de 4GB de RAM, somente um SO 64 bits será capaz de usá-lo totalmente.
 
-Programmers also increasingly tend to care less about 32-bit ("legacy") as "new" x86 CPUs typically support the 64-bit extensions.
+Os programadores também têm de preocupado cada vez menos em relação a 32 bits ("legado"), pois as "novas" CPUs x86 geralmente oferecem suporte às extensões de 64 bits.
 
-There are many more reasons we could list here to tell you to avoid 32-bit, but between the kernel, userspace and individual programs it is simply not viable to list every last thing that 64-bit does much better these days.
+Há muitas outras razões que podemos listar aqui para dizer-lhe para evitar 32 bits, mas entre o kernel, o espaço de usuários e os programas individuais, simplesmente não é viável listar todas as últimas coisas que o 64 bits faz muito melhor nos dias de hoje.
 
 ### Como eu troco de i686 para x86_64 sem reinstalar?
 
-No. All packages need to be reinstalled for the new architecture and configuration changes may be necessary. However, you do not need to repartition or reformat your hard drives during installation, so it is possible to migrate all of your old data. A forum thread has been created [here](https://bbs.archlinux.org/viewtopic.php?id=64485) which outlines steps taken to migrate an install from 32 to 64 bit without losing any configurations/settings/data using a large external hard drive.
+Não. Todos os pacotes precisam ser reinstalados para uma nova arquitetura e alterações de configuração podem ser necessários. Porém, você não precisa reparticionar seus discos rígidos durante a instalação, de forma que é possível migrar todos os seus dados antigos. Um tópico de fórum foi criado [aqui](https://bbs.archlinux.org/viewtopic.php?id=64485) que delineia os passos feitos para migrar uma instalação de 32 para 64 bits sem perder quaisquer configurações/definições/dados usando um disco rígido grande e externo.
 
-However, you can also start the system with the 64-bit installation ISO, mount the disk, backup anything you may want to keep that is not a 32-bit binary (e.g: `/home` & `/etc`), and install.
+Porém, você também pode iniciar o sistema com a ISO de instalação de 64 bits, montagem do disco, cópia de segurança de qualquer coisa que você deseje manter que não seja um binário de 32 bits (p.ex.: `/home` & `/etc`) e instalar.
 
-You may also want to read about [migrating between architectures](/index.php/Migrating_between_architectures "Migrating between architectures").
+Você também pode querer ler sobre [migração entre arquiteturas](/index.php/Migrating_between_architectures "Migrating between architectures").

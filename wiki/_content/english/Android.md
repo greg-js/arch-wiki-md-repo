@@ -66,7 +66,7 @@ There are few methods of exploring your device:
 For more advanced usage, development, flashing and restore:
 
 *   [#Android Debug Bridge (ADB)](#Android_Debug_Bridge_.28ADB.29) mostly for development purposes.
-*   [[#Restoring Android] for flashing and restoring Android firmwares (includes fastboot).
+*   [#Restoring Android](#Restoring_Android) for flashing and restoring Android firmwares (includes fastboot).
 
 ## Android development
 

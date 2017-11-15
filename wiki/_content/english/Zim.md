@@ -78,3 +78,5 @@ This error message indicates that Zim is not able to find the trash directory as
 *   [Zim homepage](http://www.zim-wiki.org/)
 *   [Zim official manual](http://zim-wiki.org/manual/Start.html)
 *   [A short screencast](http://www.youtube.com/watch?v=yBZpWgzO9Ps)
+*   [Zim community documentation](https://github.com/jaap-karssenberg/zim-wiki/wiki)
+*   [Getting work done in Zim](http://www.glump.net/content/getting-work-done-in-zim/getting-work-done-in-zim.html)

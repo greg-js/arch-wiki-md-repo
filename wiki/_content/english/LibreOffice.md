@@ -33,6 +33,7 @@ From [Home - LibreOffice](https://www.libreoffice.org/):
     *   [7.9 LibreOffice toolbars unreadable with dark themes](#LibreOffice_toolbars_unreadable_with_dark_themes)
     *   [7.10 LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme](#LibreOffice_toolbars_unreadable_with_dark_Breeze.2FPlasma_5_theme)
     *   [7.11 AutoText expected default behaviour not functional in system locales other than en_US](#AutoText_expected_default_behaviour_not_functional_in_system_locales_other_than_en_US)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -244,3 +245,9 @@ If this still does not work correctly, try using the `gen` interface instead. [[
 ### AutoText expected default behaviour not functional in system locales other than en_US
 
 If expected default AutoText behaviour is not present (for example, typing `fn` in a document in Writer and then pressing the `F3` key does not result in the automatic insertion of a numbered function) when the system locale is not `en_US` you need to add the default `en_US` AutoText templates to your AutoText path. To do this, go to *Tools > AutoText*, then click on *Path...* and add the following path to the list: `/usr/lib/libreoffice/share/autotext/en-US`. AutoText should now work as expected by default.
+
+## See also
+
+*   [Libreoffice Extensions](https://extensions.libreoffice.org/extensions)
+*   [Libreoffice Templates](https://extensions.libreoffice.org/templates)
+*   [Wikipedia:LibreOffice](https://en.wikipedia.org/wiki/LibreOffice "wikipedia:LibreOffice")

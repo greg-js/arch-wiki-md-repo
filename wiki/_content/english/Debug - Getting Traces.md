@@ -191,6 +191,8 @@ You can also debug an already running application, e.g.:
 
 ```
 
+To debug an application that has already crashed, you will want to invoke gdb on its [core dump](/index.php/Core_dump#Examining_a_core_dump "Core dump").
+
 ## Conclusion
 
 Use the complete stack trace to inform developers of a bug you have discovered before. This will be highly appreciated by them and will help to improve your favorite program.

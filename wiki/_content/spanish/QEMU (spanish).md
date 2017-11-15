@@ -1,3 +1,8 @@
+Related articles
+
+*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
+*   [Libvirt](/index.php/Libvirt "Libvirt")
+
 De acuerdo con [la wiki de QEMU](http://wiki.qemu.org/Main_Page), "QEMU es un emulador genérico y de código abierto de máquinas virtuales."
 
 Cuando se utiliza como un emulador de máquina, QEMU pede correr sistemas operativos y programas hechos para una máquina en particular (por ej. una placa ARM) en una máquina diferente (e.j. tu PC x86). Usando la traducción dinámica, se consigue un rendimiento muy bueno.
@@ -104,7 +109,7 @@ Instala el paquete [qemu](https://www.archlinux.org/packages/?name=qemu) (ó [qe
 A diferencia de otros programas de virtualización como [VirtualBox](/index.php/VirtualBox "VirtualBox") y [VMware](/index.php/VMware "VMware"), QEMU no proporciona una interfaz gráfica de usuario para administrar máquinas virtuales (a parte de la ventana que aparece cuando se ejecuta una máquina virtual), tampoco proporciona una forma de crear una máquina virtual persistente con valores guardados. Todos los parámetros para ejecutar una máquina virtual deben especificarse en la línea de comandos en cada puesta en marcha, a menos que haga un script personalizadp para iniciar su máquina(s) virtual. Sin embargo, hay varios front-end GUI para QEMU:
 
 *   [qemu-launcher](https://www.archlinux.org/packages/?name=qemu-launcher)
-*   [qtemu](https://www.archlinux.org/packages/?name=qtemu)
+*   [qtemu](https://aur.archlinux.org/packages/qtemu/)
 *   [aqemu](https://aur.archlinux.org/packages/aqemu/)
 
 front-ends con soporte para QEMU están disponibles por [libvirt](/index.php/Libvirt "Libvirt").

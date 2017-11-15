@@ -17,14 +17,13 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [1.5 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
     *   [1.6 Turn off the disk cache](#Turn_off_the_disk_cache)
     *   [1.7 Longer interval to save session](#Longer_interval_to_save_session)
-    *   [1.8 Immediate rendering of pages](#Immediate_rendering_of_pages)
-    *   [1.9 Referrer header control](#Referrer_header_control)
-    *   [1.10 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
-    *   [1.11 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
-    *   [1.12 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
-    *   [1.13 Enable Electrolysis](#Enable_Electrolysis)
-    *   [1.14 Enable HTTP Cache](#Enable_HTTP_Cache)
-    *   [1.15 Disable Pocket](#Disable_Pocket)
+    *   [1.8 Referrer header control](#Referrer_header_control)
+    *   [1.9 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
+    *   [1.10 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
+    *   [1.11 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
+    *   [1.12 Enable Electrolysis](#Enable_Electrolysis)
+    *   [1.13 Enable HTTP Cache](#Enable_HTTP_Cache)
+    *   [1.14 Disable Pocket](#Disable_Pocket)
 *   [2 Appearance](#Appearance)
     *   [2.1 Fonts](#Fonts)
         *   [2.1.1 Configure the DPI value](#Configure_the_DPI_value)
@@ -92,25 +91,19 @@ In this case the **Content process limit** for the current [user](/index.php/Use
 
 ### Enable OpenGL Off-Main-Thread Compositing (OMTC)
 
-**Warning:** If OpenGL OMTC is disabled for a specific hardware, it may be due to stability issues, high system resources consumption, driver bugs or a number of different variables, and so instead of speeding things up it might slow them down. Proceed with force-enabling it at your own risk, benchmark if you aren’t sure.
-
-**Note:** Since Firefox version 40 basic software OMTC is enabled by default except on machines mentioned above.
-
-To enable OpenGL OMTC go to `about:config` and enable `layers.acceleration.force-enabled`.
-
-Restart Firefox for changes to take effect.
+Basic software OMTC is enabled by default.
 
 To check if OpenGL OMTC is enabled, go to `about:support` and under the "Graphics" section look for "Compositing". If it reports "Basic", OpenGL OMTC is disabled; if it reports "OpenGL" it is enabled.
 
-If the above changes do not enable GPU acceleration, try setting the environment variable as follows: `export MOZ_USE_OMTC=1`. Then run Firefox [[2]](http://featherweightmusings.blogspot.se/2013/11/no-more-main-thread-opengl-in-firefox.html).
+If OpenGL OMTC is disabled, you can force-enable it by going to `about:config` and enabling `layers.acceleration.force-enabled`. Restart Firefox for changes to take effect.
+
+**Warning:** If OpenGL OMTC is disabled for a specific hardware, it may be due to stability issues, high system resources consumption, driver bugs or a number of different variables, and so instead of speeding things up it might slow them down. Proceed with force-enabling it at your own risk, benchmark if you aren’t sure.
 
 For more information on OMTC in Firefox read here: [https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing](https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing)
 
 ### Set AzureContentBackend to Skia instead of Cairo
 
-**Note:** Since Firefox 51 skia is the default content backend.
-
-[Skia](https://skia.org/) is a 2D open-source graphics library to eventually supersede Cairo as the default Azure backend on Linux.
+[Skia](https://skia.org/) is a 2D open-source graphics library which has superseded Cairo as the default Azure backend on Linux.
 
 To set Skia as the default go to `about:config` and set:
 
@@ -159,14 +152,6 @@ If you want to disable this feature, then you will need to change the following 
 
 *   `browser.sessionstore.resume_from_crash` false
 
-### Immediate rendering of pages
-
-Mozilla applications render web pages incrementally - they display what has been received of a page before the entire page has been downloaded. Since the start of a web page normally does not have much useful information to display, Mozilla applications will wait a short interval before first rendering a page. This preference controls that interval. Note that if you are on slower connections (dial up) changing this setting might make web pages load for longer times even though the page appears faster.
-
-This setting can be created in the `about:config` page as
-
-*   nglayout.initialpaint.delay with a value of 0.
-
 ### Referrer header control
 
 The HTTP `Referer` header can be extensively configured via `about:config`. See [Security/Referrer](https://wiki.mozilla.org/Security/Referrer) on the Mozilla wiki for the available preferences.
@@ -175,7 +160,7 @@ The HTTP `Referer` header can be extensively configured via `about:config`. See 
 
 **Warning:** This procedure may damage the databases in such a way that sessions are not saved properly.
 
-Starting with Firefox 3.0, bookmarks, history, passwords are kept in SQLite databases. SQLite databases become fragmented over time and empty spaces appear all around. But, since there are no managing processes checking and optimizing the database, these factors eventually result in a performance hit. A good way to improve start-up and some other bookmarks and history related tasks is to defragment and trim unused space from these databases.
+Firefox keeps bookmarks, history, passwords in SQLite databases. SQLite databases become fragmented over time and empty spaces appear all around. But, since there are no managing processes checking and optimizing the database, these factors eventually result in a performance hit. A good way to improve start-up and some other bookmarks and history related tasks is to defragment and trim unused space from these databases.
 
 You can use [profile-cleaner](https://aur.archlinux.org/packages/profile-cleaner/) to do this, while Firefox is **not** running:
 
@@ -184,7 +169,7 @@ You can use [profile-cleaner](https://aur.archlinux.org/packages/profile-cleaner
 | urlclassifier3.sqlite | 37 M | 30 M | 19 % |
 | places.sqlite | 16 M | 2.4 M | 85 % |
 
-Recent (as of H2 2016) versions of Firefox, provide a tool to defragment and optimize the places database, which is the source of most slowdowns and profile corruptions. To access this tool, open the `about:support` page. In the resulting page, search for `Places Database` and click the `Verify Integrity` button.
+Firefox provides a tool to defragment and optimize the places database, which is the source of most slowdowns and profile corruptions. To access this tool, open the `about:support` page, search for `Places Database` and click the `Verify Integrity` button.
 
 ### Cache the entire profile into RAM via tmpfs
 
@@ -196,7 +181,9 @@ In `about:config`, set the string value to a blank for both of these: `browser.n
 
 ### Enable Electrolysis
 
-In Firefox 48 (45 ESR) or later, Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to *true* in `about:config`. It may be needed to force-enable Electrolysis [[3]](https://wiki.mozilla.org/Electrolysis#Force_Enable), although this is generally not recommended and may cause issues.
+**Note:** Electrolysis should always be enabled in Firefox 57 and later
+
+Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to *true* in `about:config`. It may be needed to force-enable Electrolysis [[2]](https://wiki.mozilla.org/Electrolysis#Force_Enable), although this is generally not recommended and may cause issues.
 
 To check if Electrolysis is enabled, go to `about:support` and under the "Application Basics" section look for "Multiprocess Windows". If it reports "0/1 (Disabled)", Electrolysis is disabled; if it reports "1/1 (Enabled by user)" it is enabled. Note that the given numbers **/** indicate the number of open Firefox windows, e.g. 0/2 meaning non of the two Firefox-windows are using Electrolysis, and 2/2 means it is enabled for both windows.
 
@@ -207,8 +194,6 @@ In `about:config`, set `browser.cache.use_new_backend` to 1.
 ### Disable Pocket
 
 If you don't use the Pocket-service, you may want to disable it by setting `extensions.pocket.enabled` to *false* in `about:config`.
-
-**Note:** on 45ESR the keys are `browser.pocket...`
 
 ## Appearance
 
@@ -222,7 +207,7 @@ Modifying the following value can help improve the way fonts looks in Firefox if
 
 Note that the above method only affects the Firefox user interface's DPI settings. Web page contents still use a DPI value of 96, which may look ugly or, in the case of high-resolution displays, may be rendered too small to read. A solution is to change `layout.css.devPixelsPerPx` to system's DPI divided by 96\. For example, if your system's DPI is 144, then the value to add is 144/96 = 1.5\. Changing `layout.css.devPixelsPerPx` to **1.5** makes web page contents use a DPI of 144, which looks much better.
 
-See also [HiDPI#Firefox](/index.php/HiDPI#Firefox "HiDPI") for information about HiDPI displays and [[4]](https://www.sven.de/dpi/) for calculating the DPI.
+See also [HiDPI#Firefox](/index.php/HiDPI#Firefox "HiDPI") for information about HiDPI displays and [[3]](https://www.sven.de/dpi/) for calculating the DPI.
 
 #### Default font settings from Microsoft Windows
 

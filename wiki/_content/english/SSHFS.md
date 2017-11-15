@@ -6,7 +6,7 @@ Related articles
 *   [SSH](/index.php/SSH "SSH")
 *   [sftpman](/index.php/Sftpman "Sftpman")
 
-[SSHFS](https://github.com/libfuse/sshfs) is a FUSE-based filesystem client for mounting directories over [SSH](/index.php/SSH "SSH").
+[SSHFS](https://github.com/libfuse/sshfs) is a FUSE-based filesystem client for mounting remote directories over a [SSH](/index.php/SSH "SSH") connection.
 
 ## Contents
 

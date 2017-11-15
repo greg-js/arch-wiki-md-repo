@@ -146,9 +146,11 @@ If there is no Bluetooth icon visible in Dolphin and in the system tray, enable 
 
 *Blueberry* is an alternative front-end for GNOME Bluetooth, which works in all desktop environments. It can be installed with the [blueberry](https://www.archlinux.org/packages/?name=blueberry) package. It provides a configuration tool (*blueberry*) and a system tray applet (*blueberry-tray*).
 
+**Note:** *Blueberry* doesn't support receiving files through Obex Object Push, see *blueman* below if you want to be able to receive files.
+
 ### Blueman
 
-See [Blueman](/index.php/Blueman "Blueman").
+[Blueman](/index.php/Blueman "Blueman") is a full featured Bluetooth manager. It provides a graphical settings panel `blueman-manager` and a system tray applet `blueman-manager`. See [Blueman](/index.php/Blueman "Blueman") for more details.
 
 ## Using Obex for sending and receiving files
 

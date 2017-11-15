@@ -57,15 +57,13 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
 
 ## Installation
 
-**Note:** If you want to use RVM refer to the article [#Running GitLab with rvm](#Running_GitLab_with_rvm) before starting with the installation
-
-**Note:** This article covers installing and configuring GitLab without HTTPS at first. If needed, see [#Advanced Configuration](#Advanced_Configuration) to set up SSL
+**Note:** This article covers installing and configuring GitLab without HTTPS at first. If needed, see [#Advanced Configuration](#Advanced_Configuration) to set up SSL.
 
 GitLab requires [Redis](/index.php/Redis "Redis") and a database backend. If you plan to run it on the same machine, first install either [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
 
 [Install](/index.php/Install "Install") the [gitlab](https://www.archlinux.org/packages/?name=gitlab) package.
 
-In order to receive mail notifications, a mail server must be installed and configured. See the following for more information: [Category:Mail server](/index.php/Category:Mail_server "Category:Mail server")
+In order to receive mail notifications, a mail server must be installed and configured. See [Category:Mail server](/index.php/Category:Mail_server "Category:Mail server") for details.
 
 ## Configuration
 
@@ -419,7 +417,7 @@ If you want to integrate Gitlab into a running web server instead of using its b
 
 ##### Node.js
 
-You can easily set up an http proxy on port 443 to proxy traffic to the GitLab application on port 8080 using http-master for Node.js. After you have creates your domain's OpenSSL keys and have gotten you CA certificate (or self signed it), then go to [https://github.com/CodeCharmLtd/http-master](https://github.com/CodeCharmLtd/http-master) to learn how easy it is to proxy requests to GitLab using HTTPS. http-master is built on top of [node-http-proxy](https://github.com/nodejitsu/node-http-proxy).
+You can easily set up an http proxy on port 443 to proxy traffic to the GitLab application on port 8080 using http-master for Node.js. After you have created your domain's OpenSSL keys and have gotten you CA certificate (or self signed it), then go to [https://github.com/CodeCharmLtd/http-master](https://github.com/CodeCharmLtd/http-master) to learn how easy it is to proxy requests to GitLab using HTTPS. http-master is built on top of [node-http-proxy](https://github.com/nodejitsu/node-http-proxy).
 
 #### Nginx and unicorn
 

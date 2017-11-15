@@ -1,3 +1,7 @@
+Related articles
+
+*   [Gogs](/index.php/Gogs "Gogs")
+
 [Gitea](https://gitea.io/) is a community managed fork of [Gogs](/index.php/Gogs "Gogs"), lightweight code hosting solution written in Go and published under the MIT license.
 
 ## Contents
@@ -38,6 +42,8 @@ When running Gitea for the first time it should redirect to `[http://localhost:3
 The user configuration file should be located at `/etc/gitea/app.ini`. Do **not** edit the main configuration file (`/var/lib/gitea/conf/app.ini`), since this file is included in the binary and will be overwritten on each update. Instead copy (if not exists) `/var/lib/gitea/conf/app.ini` to `/etc/gitea/app.ini`.
 
 Gitea application and repository data will be saved into */var/lib/gitea*, however it is possible to set custom locations in `/etc/gitea/app.ini`.
+
+Gitea relies on bash for operations like cloning in ssh; bash should therefore be the shell of the user running gitea.
 
 ### MariaDB/MySQL
 

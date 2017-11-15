@@ -658,3 +658,5 @@ Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-
 ## See also
 
 *   [State of Text Rendering](http://behdad.org/text/)
+*   [Font Library](https://fontlibrary.org/en) - Fonts under Free licenses
+*   [Fonts on screenshots.debian.net](https://screenshots.debian.net/packages?search=fonts&show=with)

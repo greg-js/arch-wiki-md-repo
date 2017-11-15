@@ -96,7 +96,7 @@ Arch é um sistema *rolling release* e tem uma mudança rápida de pacote, entã
 
 ## Gerenciamento de pacote
 
-Essa seção contém informações úteis relacionadas ao gerenciamento de pacote. Para mais, por favor veja [FAQ#Package management](/index.php/FAQ#Package_management "FAQ") e [Category:Package management (Português)](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)").
+Essa seção contém informações úteis relacionadas ao gerenciamento de pacote. Para mais, por favor veja [FAQ (Português)#Gerenciamento de pacote](/index.php/FAQ_(Portugu%C3%AAs)#Gerenciamento_de_pacote "FAQ (Português)") e [Category:Package management (Português)](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)").
 
 **Note:** É imprescindível se manter atualizado com as alterações no Arch Linux que exigem intervenção manual *antes* de atualizar seu sistema. Inscreva-se na [lista de discussão arch-announce](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) ou confira a página inicial pelas [últimas notícias do Arch](https://www.archlinux.org/) toda vez antes de atualizar. Alternativamente, você pode achar útil se inscrever [neste feed RSS](https://www.archlinux.org/feeds/news/) ou seguir [@archlinux](https://twitter.com/archlinux) no Twitter.
 

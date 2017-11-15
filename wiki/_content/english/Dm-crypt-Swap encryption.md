@@ -49,10 +49,7 @@ swap      /dev/disk/by-id/ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-partX  /dev/
 
 After a reboot to activate the encrypted swap, you will note that running `swapon -s` shows an arbitrary device mapper entry (e.g. `/dev/dm-1`) for it, while the `lsblk` command shows **crypt** in the `FSTYPE` column. Due to fresh encryption each boot, the UUID for `/dev/mapper/swap` will change every time.
 
-**Note:**
-
-*   If the partition chosen for swap was previously a LUKS partition, crypttab will not overwrite the partition to create a swap partition. This is a safety measure to prevent data loss from accidental mis-identification of the swap partition in crypttab. In order to use such a partition the [LUKS header must be overwritten](/index.php/Dm-crypt/Drive_preparation#Wipe_LUKS_header "Dm-crypt/Drive preparation") once.
-*   If you use the `sd-encrypt` hook and `luks.*` kernel parameters for the rootfs while also using `/etc/crypttab` for the swap then systemd will complain about `Not creating device 'swap' because it was not specified on the kernel command line.`. To fix this issue just use `rd.luks.*` parameters instead.
+**Note:** If the partition chosen for swap was previously a LUKS partition, crypttab will not overwrite the partition to create a swap partition. This is a safety measure to prevent data loss from accidental mis-identification of the swap partition in crypttab. In order to use such a partition the [LUKS header must be overwritten](/index.php/Dm-crypt/Drive_preparation#Wipe_LUKS_header "Dm-crypt/Drive preparation") once.
 
 ### UUID and LABEL
 
@@ -107,9 +104,9 @@ Assuming you have setup LVM on LUKS with a swap logical volume (at `/dev/MyStora
 
 then run `grub-mkconfig -o /boot/grub/grub.cfg` to update GRUB's configuration file. To add the mkinitcpio hook, edit the following line in `mkinitcpio.conf`
 
- `/etc/mkinitcpio.conf`  `HOOKS="... encrypt lvm2 **resume** ... filesystems ..."` 
+ `/etc/mkinitcpio.conf`  `HOOKS=(... encrypt lvm2 **resume** ... filesystems ...)` 
 
-then run `mkinitcpio -p linux` to update the [initramfs](/index.php/Initramfs "Initramfs") image.
+then [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 ### mkinitcpio hook
 
@@ -207,16 +204,11 @@ HELPEOF
 Add the hook `openswap` in the `HOOKS` array in `/etc/mkinitcpio.conf`, before `filesystem` but after `encrypt`. Do not forget to add the `resume` hook after `openswap`.
 
 ```
-HOOKS="... encrypt openswap resume filesystems ..."
+HOOKS=(... encrypt openswap resume filesystems ...)
 
 ```
 
-Regenerate the boot image:
-
-```
-# mkinitcpio -p linux
-
-```
+[Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 Add the mapped partition to `/etc/fstab` by adding the following line:
 
@@ -261,14 +253,14 @@ The `resume_offset` of the swap-file points to the start (extent zero) of the fi
 Add the `resume` hook to your `etc/mkinitcpio.conf` file and [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") afterward:
 
 ```
-HOOKS="... encrypt **resume** ... filesystems ..."
+HOOKS=(... encrypt **resume** ... filesystems ...)
 
 ```
 
 If you use a USB keyboard to enter your decryption password, then the `keyboard` module **must** appear in front of the `encrypt` hook, as shown below. Otherwise, you will not be able to boot your computer because you could not enter your decryption password to decrypt your Linux root partition! (If you still have this problem after adding `keyboard`, try `usbinput`, though this is deprecated.)
 
 ```
-HOOKS="... **keyboard** encrypt ..."
+HOOKS=(... **keyboard** encrypt ...)
 
 ```
 

@@ -780,7 +780,7 @@ See [Time#Time synchronization](/index.php/Time#Time_synchronization "Time").
 
 ### System monitoring
 
-See also [Category:Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification").
+See also [Category:Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") and [awesome-sysadmin](https://github.com/n1trux/awesome-sysadmin#monitoring).
 
 *   **[Conky](/index.php/Conky "Conky")** — Lightweight, scriptable system monitor.
 

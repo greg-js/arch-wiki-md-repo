@@ -464,3 +464,4 @@ BFQ is an io-scheduler that comes as a feature of [linux-zen](https://www.archli
 *   [SIG/Games](https://fedoraproject.org/wiki/SIGs/Games#Gaming_News_sites) - OS/Linux gaming news sites and lists at Fedora's wiki
 *   [live.linux-gamers](http://live.linux-gamers.net) - Arch-based live gaming distro
 *   [Gaming on Linux](http://www.gamingonlinux.com/) - Active Linux gaming news and editorial source and community
+*   [/r/linux_gaming wiki](https://www.reddit.com/r/linux_gaming/wiki/index) on Reddit

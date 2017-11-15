@@ -95,7 +95,7 @@
 | <small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(5)</small> |
 | <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(12)</small> |
 | <small>5.3.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(8)</small> |
-| <small>5.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(14) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
+| <small>5.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(13) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>5.5.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(21)</small> |
 | <small>5.6.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(18) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>5.7.</small> [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration") <small>(11)</small> |
@@ -144,7 +144,7 @@
 | <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(20)</small> |
 | <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small> |
 | <small>6.11.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(26)</small> |
-| <small>6.11.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(14) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
+| <small>6.11.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(13) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.11.3.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(8) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.11.4.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(19) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.11.5.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(14) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |

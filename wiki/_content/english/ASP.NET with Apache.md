@@ -13,7 +13,7 @@ From [Mod_Mono's site](http://www.mono-project.com/Mod_mono/):
 
 ## Installing
 
-The setup requires [mono](https://www.archlinux.org/packages/?name=mono) and [mod_mono](https://www.archlinux.org/packages/?name=mod_mono) for Apache compliance. Package [xsp](https://aur.archlinux.org/packages/xsp/) is a simple webserver for ASP.NET, optionally installed for testing the configuration.
+The setup requires [mono](https://www.archlinux.org/packages/?name=mono) and [mod_mono](https://aur.archlinux.org/packages/mod_mono/) for Apache compliance. Package [xsp](https://aur.archlinux.org/packages/xsp/) is a simple webserver for ASP.NET, optionally installed for testing the configuration.
 
 ## Configuring
 

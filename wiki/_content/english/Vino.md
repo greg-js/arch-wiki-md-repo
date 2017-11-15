@@ -7,6 +7,7 @@
     *   [1.2 Alternative Desktop Environments](#Alternative_Desktop_Environments)
 *   [2 Configuration](#Configuration)
 *   [3 Running on a headless server](#Running_on_a_headless_server)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -90,3 +91,7 @@ $ dbus-launch gsettings set org.gnome.Vino alternative-port 5910
 $ dbus-launch gsettings set org.gnome.Vino use-alternative-port true
 
 ```
+
+## See also
+
+*   [Vino design document](http://people.gnome.org/~markmc/remote-desktop.html)

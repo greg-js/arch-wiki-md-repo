@@ -266,14 +266,11 @@ Type=oneshot
 ExecStart=/usr/bin/certbot renew --quiet --agree-tos
 ```
 
-You'll probably want your web server to reload the certificates after each time they're renewed. You can realize that by adding one of these lines to the `certbot.service` file:
-
-*   Apache: `ExecStartPost=/bin/systemctl reload httpd.service`
-*   nginx: `ExecStartPost=/bin/systemctl reload nginx.service`
+You'll probably want your web server to reload the certificates after each time they're renewed. This can be done by adding `--post-hook "systemctl reload nginx.service"` to the `ExecStart` command. Of course use `httpd.service` instead of `nginx.service` if appropriate.
 
 **Note:** Before adding a [timer](/index.php/Systemd/Timers "Systemd/Timers"), check that the service is working correctly and is not trying to prompt anything.
 
-Add a timer to check for certificate renewal twice a day and include a randomized delay so that everyone's requests for renewal will be evenly spread over the day to lighten the Let's Encrypt server load [[1]](https://certbot.eff.org/#arch-nginx):
+Add a timer to check for certificate renewal twice a day and include a randomized delay so that everyone's requests for renewal will be spread over the day to lighten the Let's Encrypt server load [[1]](https://certbot.eff.org/#arch-nginx):
 
  `/etc/systemd/system/certbot.timer` 
 ```
@@ -316,7 +313,7 @@ Description=Let's Encrypt renewal
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/certbot renew --pre-hook "/usr/bin/systemctl stop httpd.service" --post-hook "/usr/bin/systemctl start httpd.service" --quiet --agree-tos --quiet --agree-tos
+ExecStart=/usr/bin/certbot renew --pre-hook "/usr/bin/systemctl stop httpd.service" --post-hook "/usr/bin/systemctl start httpd.service" --quiet --agree-tos
 ```
 
 ## See also

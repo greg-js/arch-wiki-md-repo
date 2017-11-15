@@ -1,3 +1,7 @@
+Related articles
+
+*   [Smartcards](/index.php/Smartcards "Smartcards")
+
 This page explains how to setup Arch to use a US Department of Defense [Common Access Card](https://en.wikipedia.org/wiki/Common_Access_Card "wikipedia:Common Access Card") (CAC).
 
 ## Contents

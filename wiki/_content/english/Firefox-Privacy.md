@@ -14,14 +14,13 @@ This article overviews configuration settings and some useful extensions which e
     *   [1.1 Enable tracking protection](#Enable_tracking_protection)
     *   [1.2 Change browser time zone](#Change_browser_time_zone)
     *   [1.3 Change user agent and platform](#Change_user_agent_and_platform)
-    *   [1.4 Disable battery API](#Disable_battery_API)
-    *   [1.5 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
-    *   [1.6 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
-    *   [1.7 Disable telemetry](#Disable_telemetry)
-    *   [1.8 Enable Do Not Track Header (DNT)](#Enable_Do_Not_Track_Header_.28DNT.29)
-    *   [1.9 Disable geolocation](#Disable_geolocation)
-    *   [1.10 Disable Safe Browsing service](#Disable_Safe_Browsing_service)
-    *   [1.11 Disable WebGL](#Disable_WebGL)
+    *   [1.4 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
+    *   [1.5 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
+    *   [1.6 Disable telemetry](#Disable_telemetry)
+    *   [1.7 Enable Do Not Track Header (DNT)](#Enable_Do_Not_Track_Header_.28DNT.29)
+    *   [1.8 Disable geolocation](#Disable_geolocation)
+    *   [1.9 Disable Safe Browsing service](#Disable_Safe_Browsing_service)
+    *   [1.10 Disable WebGL](#Disable_WebGL)
 *   [2 Extensions](#Extensions)
     *   [2.1 HTTPS Everywhere](#HTTPS_Everywhere)
     *   [2.2 uBlock Origin](#uBlock_Origin)
@@ -49,7 +48,7 @@ In addition, see the following links:
 
 *   [How to stop Firefox from making automatic connections](https://support.mozilla.org/t5/Protect-your-privacy/How-to-stop-Firefox-from-making-automatic-connections/ta-p/1748) - Is an annotated list of corresponding Firefox functionality and settings to disable it case-by-case.
 *   [ffprofile.com](https://ffprofile.com/) - You select which features you want to enable and disable and in the end you get a download link for a zip-file with your profile template. You can for example disable some functions, which send data to Mozilla and Google, or disable several annoying Firefox functions like Mozilla Hello or the Pocket integration.
-*   [user.js Firefox hardening stuff](https://github.com/pyllyukko/user.js) - This is a user.js configuration file for Mozilla Firefox that's supposed to harden Firefox's settings and make it more secure.
+*   [pyllyukko/user.js](https://github.com/pyllyukko/user.js) - Firefox configuration hardening and documentation
 
 ### Enable tracking protection
 
@@ -93,12 +92,6 @@ Select a known common platform that corresponds with your user agent.
 
 **Tip:** The value `Win32` is used as the platform for the Tor browser, corresponding with the user agent provided above.
 
-### Disable battery API
-
-Firefox is disabling the battery API for web content starting with Firefox 52, the API will still be available for add-ons [[1]](https://bugzilla.mozilla.org/show_bug.cgi?id=1313580) [[2]](https://www.theguardian.com/technology/2016/nov/01/firefox-disable-battery-status-api-tracking)
-
-Battery status API may be used to fingerprint the user[[3]](http://eprint.iacr.org/2015/616.pdf). To disable it, set `dom.battery.enabled` to `false` in `about:config`.
-
 ### WebRTC exposes LAN IP address
 
 To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC "wikipedia:WebRTC")'s peer-to-peer (and JavaScript), open `about:config` and set:
@@ -126,7 +119,7 @@ Set `toolkit.telemetry.enabled` to `false` and/or disable it under Preferences, 
 
 ### Enable Do Not Track Header (DNT)
 
-**Note:** The user has no control over whether the request is honoured or not.
+**Note:** The remote server may choose to not honour the Do Not Track request.
 
 Set `privacy.donottrackheader.enabled` to `true` or toggle it in *Preferences > Privacy > Manage your Do Not Track settings*.
 
@@ -147,7 +140,7 @@ In addition disable download checking, by setting `browser.safebrowsing.download
 
 ### Disable WebGL
 
-WebGL is a potential security risk.[[4]](http://security.stackexchange.com/questions/13799/is-webgl-a-security-concern) Set `webgl.disabled` to `true` in `about:config` if you want to disable it.
+WebGL is a potential security risk.[[1]](http://security.stackexchange.com/questions/13799/is-webgl-a-security-concern) Set `webgl.disabled` to `true` in `about:config` if you want to disable it.
 
 ## Extensions
 
@@ -169,11 +162,11 @@ uBlock Origin: [Github](https://github.com/gorhill/uBlock); [Firefox Add-ons](ht
 
 ### AdNauseam
 
-[AdNauseam](https://adnauseam.io/) is a lightweight browser extension that blends software tool and artware intervention to fight back against tracking by advertising networks. AdNauseam works like an ad-blocker (it is built atop uBlock-Origin) to silently simulate clicks on each blocked ad, confusing trackers as to one's real interests [[5]](https://github.com/dhowe/AdNauseam/).
+[AdNauseam](https://adnauseam.io/) is a lightweight browser extension that blends software tool and artware intervention to fight back against tracking by advertising networks. AdNauseam works like an ad-blocker (it is built atop uBlock-Origin) to silently simulate clicks on each blocked ad, confusing trackers as to one's real interests [[2]](https://github.com/dhowe/AdNauseam/).
 
 ### Adblock Plus
 
-[Adblock Plus](https://adblockplus.org/en/) was a popular extension to block ads. Now that it is not blocking some ads on purpose [[6]](https://adblockplus.org/acceptable-ads), it may be a better idea to use a different blocker like uBlock Origin.
+[Adblock Plus](https://adblockplus.org/en/) was a popular extension to block ads. Now that it is not blocking some ads on purpose [[3]](https://adblockplus.org/acceptable-ads), it may be a better idea to use a different blocker like uBlock Origin.
 
 ### Privacy Badger
 

@@ -928,3 +928,4 @@ You can also edit the connection (and persist it to disk) or delete it. NetworkM
 ## See also
 
 *   [NetworkManager for Administrators Part 1](http://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)
+*   [Wikipedia:NetworkManager](https://en.wikipedia.org/wiki/NetworkManager "wikipedia:NetworkManager")
