@@ -6,7 +6,7 @@ Related articles
 *   [Linux-ck](/index.php/Linux-ck "Linux-ck")
 *   [sysctl](/index.php/Sysctl "Sysctl")
 
-According to [Wikipedia](https://en.wikipedia.org/wiki/Kernel_(computing) "wikipedia:Kernel (computing)"):
+According to [Wikipedia](https://en.wikipedia.org/wiki/Kernel_(operating_system) "wikipedia:Kernel (operating system)"):
 
 	The kernel is a computer program that constitutes the central core of a computer's operating system. It has complete control over everything that occurs in the system. As such, it is the first program loaded on startup, and then manages the remainder of the startup, as well as input/output requests from software, translating them into data processing instructions for the central processing unit. It is also responsible for managing memory, and for managing and communicating with computing peripherals, like printers, speakers, etc. The kernel is a fundamental part of a modern computer's operating system.
 
@@ -26,8 +26,6 @@ There are various alternative kernels available for Arch Linux in addition to th
         *   [2.2.4 Tiny-Patches](#Tiny-Patches)
         *   [2.2.5 -pf](#-pf)
     *   [2.3 Individual patches](#Individual_patches)
-        *   [2.3.1 Reiser4](#Reiser4)
-        *   [2.3.2 fbsplash](#fbsplash)
 *   [3 Compilation](#Compilation)
     *   [3.1 Using the Arch Build System](#Using_the_Arch_Build_System)
     *   [3.2 Traditional](#Traditional)
@@ -175,15 +173,10 @@ See [linux-pf](/index.php/Linux-pf "Linux-pf") for more information.
 
 ### Individual patches
 
-These are patches which can be simply included in any build of a vanilla kernel or incorporated (probably with some major tweaking) into another patchset.
+These are patches which can be simply included in any build of a vanilla kernel or incorporated (probably with some major tweaking) into another patchset:
 
-#### Reiser4
-
-[Reiser4](/index.php/Reiser4 "Reiser4")
-
-#### fbsplash
-
-[fbsplash](/index.php/Fbsplash "Fbsplash")
+*   [Reiser4](/index.php/Reiser4 "Reiser4")
+*   [fbsplash](/index.php/Fbsplash "Fbsplash")
 
 ## Compilation
 

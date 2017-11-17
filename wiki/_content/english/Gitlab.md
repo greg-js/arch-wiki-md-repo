@@ -320,9 +320,9 @@ Finally run the following commands to check your installation:
 
 ```
 # cd /usr/share/webapps/gitlab
-# sudo -u gitlab -H git config --global user.name  "GitLab"
-# sudo -u gitlab -H git config --global user.email "example@example.com"
-# sudo -u gitlab -H git config --global core.autocrlf "input"
+# su - gitlab -s /bin/sh -c 'git config --global user.name  "GitLab"'
+# su - gitlab -s /bin/sh -c 'git config --global user.email "example@example.com"'
+# su - gitlab -s /bin/sh -c 'git config --global core.autocrlf "input"'
 
 ```
 

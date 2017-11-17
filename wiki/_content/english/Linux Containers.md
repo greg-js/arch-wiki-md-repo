@@ -496,3 +496,4 @@ This is a bug in upstream but still not cherry-picked in official repository
 *   [LXC 1.0 Blog Post Series](https://www.stgraber.org/2013/12/20/lxc-1-0-blog-post-series/)
 *   [LXC@developerWorks](http://www.ibm.com/developerworks/linux/library/l-lxc-containers/)
 *   [Docker Installation on ArchLinux](http://docs.docker.io/en/latest/installation/archlinux/)
+*   [LXC articles on l3net](http://l3net.wordpress.com/tag/lxc/)

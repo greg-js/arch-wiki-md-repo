@@ -6,7 +6,7 @@ Related articles
 
 On systems based on SysVinit, **init** is the first process that is executed once the Linux kernel loads. The default init program used by the kernel is `/sbin/init` provided by [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) (by default on new installs, see [systemd](/index.php/Systemd "Systemd")) or [sysvinit](https://aur.archlinux.org/packages/sysvinit/). The word **init** will always refer to sysvinit in this article.
 
-**inittab** is the startup configuration file for init located in `/etc`. It contains directions for init on what programs and scripts to run when entering a specific runlevel.
+**inittab** is the startup configuration file for init located in `/etc`. It contains directions for init on what programs and scripts to run when entering a specific [runlevel](https://en.wikipedia.org/wiki/runlevel "wikipedia:runlevel").
 
 Although a SysVinit-based Arch system does use init, most of the work is delegated to the [#Main Boot Scripts](#Main_Boot_Scripts). This article concentrates on init and inittab.
 
@@ -68,7 +68,7 @@ init(1)-+-acpid(3432)
 
 ```
 
-Besides usual initialization of system (as the name suggests), init also handles rebooting, shutdown and booting into recovery mode (single-user mode). To support these, inittab groups entries into different **runlevel**s. The runlevels Arch uses are 0 for halt, 1 (aliased as S) for single-user mode, 3 for normal booting (multi-user mode), 5 for X and 6 for reboot. Other distros may adopt other conventions, but the meanings of 0, 1 and 6 are universal.
+Besides usual initialization of system (as the name suggests), init also handles rebooting, shutdown and booting into recovery mode (single-user mode). To support these, inittab groups entries into different [**runlevel**s](https://en.wikipedia.org/wiki/Runlevel "wikipedia:Runlevel"). The runlevels Arch uses are 0 for halt, 1 (aliased as S) for single-user mode, 3 for normal booting (multi-user mode), 5 for X and 6 for reboot. Other distros may adopt other conventions, but the meanings of 0, 1 and 6 are universal.
 
 Upon execution, init scans inittab and carry out appropriate actions. An entry in inittab takes the form
 

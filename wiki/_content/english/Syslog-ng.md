@@ -42,6 +42,32 @@ Sources are defined using the "source" directive. These incoming messages are th
 
 If you use a current [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng), it is not necessary to change the option because <a class="mw-selflink selflink">syslog-ng</a> pulls the messages from the journal. If you have set `ForwardToSyslog=yes` you should revert it to `ForwardToSyslog=no` in order to avoid the overhead associated with the socket and to avoid [needless error messages in the log](https://github.com/balabit/syslog-ng/issues/314). If on the other hand you do not want to store your logs twice and turn *journald'*s `Storage=none`, you **will** need `ForwardToSyslog=yes`, as *syslog-ng* tries to follow the 'journald' journal file.
 
+Note that for syslog-ng 3.12, the systemd unit file now requires an [instance indicator](/index.php/Systemd#Using_units "Systemd"). The default instance indicator defines the variables called in the `ExecStart` line of `/usr/lib/systemd/system/syslog-ng@.service`:
+
+```
+ExecStart=/usr/bin/syslog-ng -F $OTHER_OPTIONS --cfgfile $CONFIG_FILE --control $CONTROL_FILE --persist-file $PERSIST_FILE --pidfile $PID_FILE
+
+```
+
+If the default instance indicator is not included, you can add it manually by creating `/etc/default/syslog-ng@default` and populating it the following definitions. Note that the paths may vary:
+
+```
+CONFIG_FILE=/etc/syslog-ng/syslog-ng.conf
+PERSIST_FILE=/var/lib/syslog-ng/syslog-ng.persist
+CONTROL_FILE=/var/run/syslog-ng.ctl
+PID_FILE=/var/run/syslog-ng.pid
+OTHER_OPTIONS="--enable-core"
+
+```
+
+Once that is in place, syslog-ng can be started/enabled as:
+
+```
+systemctl start syslog-ng@default
+systemctl enable syslog-ng@default
+
+```
+
 ## Sources
 
 syslog-ng receives log messages from a source. To define a source you should follow the following syntax:

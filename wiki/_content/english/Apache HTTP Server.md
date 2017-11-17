@@ -6,6 +6,7 @@ Related articles
 *   [Adminer](/index.php/Adminer "Adminer")
 *   [XAMPP](/index.php/XAMPP "XAMPP")
 *   [mod_perl](/index.php/Mod_perl "Mod perl")
+*   [nginx](/index.php/Nginx "Nginx")
 
 The [Apache HTTP Server](https://en.wikipedia.org/wiki/Apache_HTTP_Server "wikipedia:Apache HTTP Server"), or Apache for short, is a very popular web server, developed by the Apache Software Foundation.
 

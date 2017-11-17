@@ -1,0 +1,1 @@
+[[1]](http://www.synapticinfotech.us)

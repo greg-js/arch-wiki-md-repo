@@ -639,7 +639,7 @@ And repeat for the HDD:
 
 ### Configuring the boot loader
 
-Configure [GRUB](/index.php/GRUB "GRUB") for the encrypted system by editing `/etc/defaults/grub` with the following. Note that the `:allow-discards` option enables TRIM support on the SSDs, if you do not wish to use it you should omit this.
+Configure [GRUB](/index.php/GRUB "GRUB") for the encrypted system by editing `/etc/default/grub` with the following. Note that the `:allow-discards` option enables TRIM support on the SSDs, if you do not wish to use it you should omit this.
 
 ```
 GRUB_CMDLINE_LINUX="cryptdevice=/dev/md0:cryptroot:allow-discards root=/dev/mapper/cryptroot"

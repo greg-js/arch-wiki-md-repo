@@ -134,6 +134,7 @@ server {
 
 server {
         listen 80;
+        listen [::]:80; # Also listen on IPv6
         server_name domainname2.dom;
         root /usr/share/nginx/domainname2.dom/html;
         ...

@@ -1,3 +1,12 @@
+Related articles
+
+*   [Bash/Functions](/index.php/Bash/Functions "Bash/Functions")
+*   [Environment variables](/index.php/Environment_variables "Environment variables")
+*   [Readline](/index.php/Readline "Readline")
+*   [Color Bash Prompt](/index.php/Color_Bash_Prompt "Color Bash Prompt")
+*   [Fortune](/index.php/Fortune "Fortune")
+*   [Pkgfile](/index.php/Pkgfile "Pkgfile")
+
 **Bash** (Bourne-again Shell) - это [оболочка командной строки](/index.php/Command-line_shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Command-line shell (Русский)")/язык программирования, созданная [GNU Project](/index.php/GNU_Project "GNU Project"). Название является отсылкой к предшественнику - давно устаревшей Bourne shell. Bash можно запустить на большинстве UNIX-like систем, включая GNU/Linux.
 
 ## Contents
@@ -85,7 +94,7 @@ export VARIABLE=content
 
 ### Автодополнение (клавиша Tab)
 
-[Wikipedia:Автодополнение](https://en.wikipedia.org/wiki/%D0%90%D0%B2%D1%82%D0%BE%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5 "wikipedia:Автодополнение") - это возможность автоматически заканчивать не полностью введенные команды путем нажатия клавиши `Tab` дважды (возможность присутствует по умолчанию).
+[Wikipedia:ru:Автодополнение](https://en.wikipedia.org/wiki/ru:%D0%90%D0%B2%D1%82%D0%BE%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5 "wikipedia:ru:Автодополнение") - это возможность автоматически заканчивать не полностью введенные команды путем нажатия клавиши `Tab` дважды (возможность присутствует по умолчанию).
 
 #### Однократное нажатие Tab
 

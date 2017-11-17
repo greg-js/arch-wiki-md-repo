@@ -109,7 +109,7 @@ See [Desktop environment#Custom window manager](/index.php/Desktop_environment#C
 
 **Note:** Local configuration files will always override global equivalents.
 
-Four key files form the basis of the openbox configuration, each serving a unique role. They are: `rc.xml`, `menu.xml`, `autostart`, and `environment`. Although these files are discussed in more detail below, to start configuring Openbox, it will first be necessary to create a **local** Openbox profile (i.e for your specific user account) based on them. This can be done by copying them from the **global** `/etc/xdg/openbox` profile (applicable to any and all users) as a template:
+Four key files form the basis of the [openbox configuration](http://openbox.org/wiki/Configuration), each serving a unique role. They are: `rc.xml`, `menu.xml`, `autostart`, and `environment`. Although these files are discussed in more detail below, to start configuring Openbox, it will first be necessary to create a **local** Openbox profile (i.e for your specific user account) based on them. This can be done by copying them from the **global** `/etc/xdg/openbox` profile (applicable to any and all users) as a template:
 
 ```
 $ cp -R /etc/xdg/openbox ~/.config/

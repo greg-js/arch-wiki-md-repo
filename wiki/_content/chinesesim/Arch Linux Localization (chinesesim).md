@@ -433,3 +433,4 @@ remote_charsets=gb2312
 *   [youdao-dict](https://aur.archlinux.org/packages/youdao-dict/)：有道词典（图形界面），屏幕取词翻译。
 *   [goldendict](https://www.archlinux.org/packages/?name=goldendict)：默认都不带字典，可下载相应字典包（支持Babylon的词库格式.BGL，已经不再维护的StarDict的词库格式（.ifo/.dict/.idx/.syn），Dictd的词库格式（.index/.dict(.dz) ，ABBYY Lingvo 的词库格式（.dsl/.lsa/.dat），mdict的词库格式等等。可在互联网上下载这些词典的词库文件导入的goldendict使用（可能有版权问题）。
 *   [moedict](https://aur.archlinux.org/packages/moedict/)一个跨多平台的汉语词典，除汉字、词、成语等，还包含客家话、闽南话、简单的外文翻译、笔顺书写等等，[萌典在线地址](https://www.moedict.tw/%E8%90%8C)。
+*   [linedict](https://aur.archlinux.org/packages/linedict/)一个通过爬取有道翻译网页得到结果的在线英汉词典,部分支持英汉翻译，模仿dmenu在屏幕顶端显示结果，使用方便，由于[ydcv](https://www.archlinux.org/packages/?name=ydcv)使用的api将在2017年底失效，而有道新的api有免费使用次数限制，linedict是一个较好的替代品

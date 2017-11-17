@@ -12,11 +12,15 @@ pass is a simple password manager for the command line. Pass is a shell script t
 *   [4 Extensions](#Extensions)
 *   [5 Advanced usage](#Advanced_usage)
 *   [6 Multiple pass Contexts (e.g. Teaming)](#Multiple_pass_Contexts_.28e.g._Teaming.29)
-*   [7 Integration into git](#Integration_into_git)
-    *   [7.1 Usage](#Usage)
+*   [7 Git integration](#Git_integration)
+    *   [7.1 Git helper usage](#Git_helper_usage)
         *   [7.1.1 git Configuration](#git_Configuration)
         *   [7.1.2 Mapping File](#Mapping_File)
         *   [7.1.3 Password Store Layout](#Password_Store_Layout)
+    *   [7.2 Central git server for Pass in combination with GnuPG(SSH example)](#Central_git_server_for_Pass_in_combination_with_GnuPG.28SSH_example.29)
+        *   [7.2.1 install a bare Git repository for Pass on the server](#install_a_bare_Git_repository_for_Pass_on_the_server)
+        *   [7.2.2 import authorized public SSH keys](#import_authorized_public_SSH_keys)
+        *   [7.2.3 on the client](#on_the_client)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -151,13 +155,11 @@ Add these for bash-completion to your `*~/.bash_completion*` and make sure [bash
 
 Now you can initialize into `*~/.pass/red*` and `*~/.pass/blue*` and have two pass contexts with the `*passred*` and `*passblue*` aliases. You can generalize this further into as many contexts as you like.
 
-## Integration into git
+## Git integration
 
-You can use `pass` as a credentials helper for `git`. [Install](/index.php/Install "Install") the [pass-git-helper](https://aur.archlinux.org/packages/pass-git-helper/) or [pass-git-helper-git](https://aur.archlinux.org/packages/pass-git-helper-git/) package.
+### Git helper usage
 
-### Usage
-
-Detail are described in the [github README file](https://github.com/languitar/pass-git-helper).
+You can use `pass` as a credentials helper for `git`. [Install](/index.php/Install "Install") the [pass-git-helper](https://aur.archlinux.org/packages/pass-git-helper/) or [pass-git-helper-git](https://aur.archlinux.org/packages/pass-git-helper-git/) package. Detail are described in the [github README file](https://github.com/languitar/pass-git-helper).
 
 #### `git` Configuration
 
@@ -187,6 +189,28 @@ You can use wildcards in the host part, as shown in the example.
 As usual with pass, the helper assumes that the password is contained in the first line of the passwordstore entry. Additionally, if a second line is present, this line is interpreted as the username.
 
 For this to work, you have to use `pass insert --multiline` to create a multi line password store entry.
+
+### Central git server for Pass in combination with GnuPG(SSH example)
+
+You are able to setup a password management system by setting up a central git server for Pass. This allows you to synchronize your central password repository through multiple client environments.
+
+#### install a bare Git repository for Pass on the server
+
+server $ git init --bare ~/.password-store
+
+#### import authorized public SSH keys
+
+TODO
+
+#### on the client
+
+This section assumes you have configured GnuPG and have a key pair to encrypt passwords. On your local client ensure you have a local password store on the client: $ pass init <gpg key id>
+
+Enable management of local changes through git: $ pass git init
+
+Add your remote Git repository: $ pass git remote add origin user@server:~/.password-store
+
+TODO:
 
 ## See also
 

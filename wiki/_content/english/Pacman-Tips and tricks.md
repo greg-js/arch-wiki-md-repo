@@ -12,6 +12,7 @@ For general methods to improve the flexibility of the provided tips or pacman it
         *   [1.1.1 With size](#With_size)
         *   [1.1.2 By date](#By_date)
         *   [1.1.3 Not in a specified group or repository](#Not_in_a_specified_group_or_repository)
+        *   [1.1.4 Development packages](#Development_packages)
     *   [1.2 Listing files owned by a package with size](#Listing_files_owned_by_a_package_with_size)
     *   [1.3 Identify files not owned by any package](#Identify_files_not_owned_by_any_package)
     *   [1.4 Removing unused packages (orphans)](#Removing_unused_packages_.28orphans.29)
@@ -138,6 +139,15 @@ List all installed packages that are in the *repo_name* repository:
 
 ```
 $ comm -12 <(pacman -Qtq | sort) <(pacman -Slq *repo_name* | sort)
+
+```
+
+#### Development packages
+
+To list all development/unstable packages, run:
+
+```
+$ pacman -Qq | awk '/^.+(-cvs|-svn|-git|-hg|-bzr|-darcs)$/'
 
 ```
 

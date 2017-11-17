@@ -100,4 +100,6 @@ Many other optional GNU tools are available in the [official repositories](/inde
 
 ## See also
 
-For a list of all current GNU projects, see [All GNU Packages](https://www.gnu.org/software/software.html#allgnupkgs).
+*   [All GNU Packages](https://www.gnu.org/software/software.html#allgnupkgs) - Current GNU projects
+*   [The GNU Manifesto](https://www.gnu.org/gnu/manifesto)
+*   [Wikipedia:List of GNU packages](https://en.wikipedia.org/wiki/List_of_GNU_packages "wikipedia:List of GNU packages")

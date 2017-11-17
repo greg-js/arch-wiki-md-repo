@@ -23,6 +23,8 @@ Installing it will install the `snapd` daemon as well as *snap-confine*, which m
 
 **Tip:** `snapd` installs a script in `/etc/profile.d/` to export the paths of binaries installed with the snapd package and desktop entries. Reboot once to make this change take effect.
 
+An alternative package [snapd-git](https://aur.archlinux.org/packages/snapd-git/) that builds directly from master branch is available through [AUR](/index.php/AUR "AUR"). During installation the package will replace both `snapd` and `snap-confine` packages.
+
 ## Configuration
 
 The package ships several systemd unit files, which manage several tasks like automatically refreshing all installed snaps once a new version is released.

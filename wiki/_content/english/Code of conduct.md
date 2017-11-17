@@ -175,13 +175,13 @@ Threads seeking advice about computer product recommendations are discouraged. S
 
 #### Old threads/"necro-bumping"
 
-Do your part to keep the forums tidy. Posting in old threads, or "necrobumping" is generally discouraged in the technical issue subforums, since it can potentially create disjointed "zombie" information; outdated posts with data which is no longer relevant due to Arch's rolling nature, combined with more recent posts reflecting more current circumstance. Furthermore, technical support threads should remain succinct, and multiple pages are to be avoided if possible.
+Do your part to keep the forums tidy. As the wiki is where Arch is documented, posting in old threads ("necrobumping") is generally discouraged in the technical issue subforums, since it can potentially create disjointed "zombie" information; outdated posts with data which is no longer relevant due to Arch's rolling nature, combined with more recent posts reflecting more current circumstance.
 
-**Rules of thumb**
+*Rules of thumb*
 
-*   If you have a question, start a new thread and link to the old if relevant.
+*   If you have a question, start a new thread and link to the old if relevant. You can also report the old thread so staff can close it.
 *   If you have something to add and judge that your information is related, but more up-to-date, start a new thread and link to the old if desired, but avoid duplicating effort by posting information already contained in the Arch wiki.
-*   If you have a version-agnostic or corresponding solution, necrobumping can be appropriate.
+*   If you have a version-agnostic or corresponding solution, necrobumping *may* be appropriate if the thread is not more than a year or two old.
 
 #### No power-posting/empty posts
 

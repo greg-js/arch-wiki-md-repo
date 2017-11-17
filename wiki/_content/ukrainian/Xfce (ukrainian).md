@@ -1,3 +1,8 @@
+Related articles
+
+*   [Improve GTK Application Looks](/index.php/Improve_GTK_Application_Looks "Improve GTK Application Looks")
+*   [Autostart applications#Graphical](/index.php/Autostart_applications#Graphical "Autostart applications")
+
 ## Contents
 
 *   [1 Що таке Xfce?](#.D0.A9.D0.BE_.D1.82.D0.B0.D0.BA.D0.B5_Xfce.3F)

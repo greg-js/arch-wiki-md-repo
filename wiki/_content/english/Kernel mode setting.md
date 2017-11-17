@@ -50,12 +50,12 @@ The proprietary [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") driver do
 
 KMS is typically initialized after the [initramfs stage](/index.php/Arch_boot_process#initramfs "Arch boot process"). However it is possible to already enable KMS during the initramfs stage. Add the module `radeon`/`amdgpu` (for ATI/AMD cards), `i915` (for Intel integrated graphics) or `nouveau` (for Nvidia cards) to the `MODULES` line in `/etc/mkinitcpio.conf`. For example:
 
- `/etc/mkinitcpio.conf`  `MODULES="... i915 ..."` 
+ `/etc/mkinitcpio.conf`  `MODULES=(... i915 ...)` 
 **Note:** Intel users might need to add `intel_agp` before `i915` to suppress the ACPI errors. This might be required for resuming from hibernation to work with changed display configuration!
 
 If you are using a custom EDID file (not applicable for the built-in resolutions), you should embed it into initramfs as well:
 
- `/etc/mkinitcpio.conf`  `FILES="/usr/lib/firmware/edid/your_edid.bin"` 
+ `/etc/mkinitcpio.conf`  `FILES=(/usr/lib/firmware/edid/your_edid.bin)` 
 
 Rebuild your initial ramdisk image (see [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")).
 

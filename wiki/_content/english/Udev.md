@@ -435,11 +435,11 @@ $ udevadm info /dev/sdb | grep ID_SERIAL
 
 Then we create a rule in `/etc/udev/rules.d/` and set variables for either udisks or udisks2.
 
-For udisks, set `UDISKS_SYSTEM_INTERNAL="0"`, which will mark the device as "removable" and thus "eligible for automounting". See [udisks(7)](http://udisks.freedesktop.org/docs/1.0.5/udisks.7.html) for details.
+For udisks, set `UDISKS_SYSTEM_INTERNAL="0"`, which will mark the device as "removable" and thus "eligible for automounting". See [udisks(7)](http://manpages.ubuntu.com/manpages/trusty/man7/udisks.7.html) for details.
 
  `/etc/udev/rules.d/50-external-myhomedisk.rules`  `ENV{ID_SERIAL_SHORT}=="*serial_number*", ENV{UDISKS_SYSTEM_INTERNAL}="0"` 
 
-For udisks2, set `UDISKS_AUTO="1"` to mark the device for automounting and `UDISKS_SYSTEM="0"` to mark the device as "removable". See [udisks(8)](http://udisks.freedesktop.org/docs/1.93.0/udisks.8.html) for details.
+For udisks2, set `UDISKS_AUTO="1"` to mark the device for automounting and `UDISKS_SYSTEM="0"` to mark the device as "removable". See [udisks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8) for details.
 
  `/etc/udev/rules.d/99-removable.rules`  `ENV{ID_SERIAL_SHORT}=="*serial_number*", ENV{UDISKS_AUTO}="1", ENV{UDISKS_SYSTEM}="0"` 
 

@@ -12,8 +12,9 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 *   [6 Default fonts](#Default_fonts)
     *   [6.1 Japanese](#Japanese)
     *   [6.2 Chinese](#Chinese)
-*   [7 Patched packages](#Patched_packages)
-*   [8 See also](#See_also)
+*   [7 System-wide Noto Emoji fonts](#System-wide_Noto_Emoji_fonts)
+*   [8 Patched packages](#Patched_packages)
+*   [9 See also](#See_also)
 
 ## Hinted fonts
 
@@ -386,6 +387,62 @@ or
 </fontconfig>
 
 ```
+
+## System-wide Noto Emoji fonts
+
+**Note:** This example configuration enables Noto Emoji fonts to be used with [GNOME](/index.php/GNOME "GNOME") and [Chromium](/index.php/Chromium "Chromium").
+Firefox excluded due to [multiple font configuration bugs](https://bugzilla.mozilla.org/buglist.cgi?quicksearch=fontconfig).
+
+[Install](/index.php/Install "Install") the [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) package. It provides both black-and-white and color font variant and sample configuration files for both.
+
+Enable substitution for common color emoji fonts to Noto Color Emoji font:
+
+ `# ln -s /etc/fonts/conf.avail/66-noto-color-emoji.conf /etc/fonts/conf.d/` 
+
+Enable Noto Emoji black-and-white font as [default text presentation of emoji](https://en.wikipedia.org/wiki/Emoji#Emoji_versus_text_presentation "wikipedia:Emoji"):
+
+ `# ln -s /etc/fonts/conf.avail/66-noto-emoji.conf /etc/fonts/conf.d/` 
+
+Enable Noto Color Emoji as fallback for primary font families:
+
+ `/etc/fonts/local.conf` 
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <match>
+    <test name="family">
+      <string>serif</string>
+    </test>
+    <edit name="family" mode="prepend" binding="weak">
+      <string>Noto Color Emoji</string>
+    </edit>
+  </match>
+
+  <match>
+    <test name="family">
+      <string>sans-serif</string>
+    </test>
+    <edit name="family" mode="prepend" binding="weak">
+      <string>Noto Color Emoji</string>
+    </edit>
+  </match>
+
+  <match>
+    <test name="family">
+      <string>monospace</string>
+    </test>
+    <edit name="family" mode="prepend" binding="weak">
+      <string>Noto Color Emoji</string>
+    </edit>
+  </match>
+</fontconfig>
+```
+
+Change Default, Serif and Sans-serif fonts in Chromium other than DejaVu to not contain emoji:
+
+*   Open chrome://settings/fonts
+*   To match [GNOME](/index.php/GNOME "GNOME") select Cantarell 15px (11pt)
 
 ## Patched packages
 

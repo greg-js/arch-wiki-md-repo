@@ -235,7 +235,7 @@ Arquivos neste vetor devem usar caminhos **relativos** sem a barra inicial (`/`)
 
 Ao atualizar, novas versões podem ser salvadas como `file.pacnew` para evitar sobrescrever um arquivo que já existe e foi previamente modificado pelo usuário. De forma similar, quando o pacote é removido, os arquivos modificados pelo usuário serão preservados como `file.pacsave` a menos que o pacote tenha sido removido com o comando `pacman -Rn`.
 
-Veja também [Pacnew and Pacsave files](/index.php/Pacnew_and_Pacsave_files "Pacnew and Pacsave files").
+Veja também os [arquivos Pacnew e Pacsave](/index.php/Arquivos_Pacnew_e_Pacsave "Arquivos Pacnew e Pacsave").
 
 ### options
 

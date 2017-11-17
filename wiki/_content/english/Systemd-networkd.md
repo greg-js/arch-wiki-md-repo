@@ -103,6 +103,8 @@ Name=enp1s0
 [Network]
 Address=10.1.10.9/24
 Gateway=10.1.10.1
+DNS=10.1.10.1
+#DNS=8.8.8.8
 
 ```
 
@@ -228,7 +230,7 @@ These files are aimed at setting network configuration variables, especially for
 #### [Route]
 
 *   `Gateway=` this option is **mandatory** unless DHCP is used
-*   `Destination` the destination prefix of the route, possibly followed by a slash and the prefix length
+*   `Destination=` the destination prefix of the route, possibly followed by a slash and the prefix length
 
 If `Destination` is not present in `[Route]` section this section is treated as a default route.
 

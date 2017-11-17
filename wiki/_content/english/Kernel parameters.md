@@ -130,7 +130,7 @@ For more information on configuring LILO, see the [LILO](/index.php/LILO "LILO")
 ```
 menuentry "Arch Linux" {
 	...
-	options  "root=PARTUUID=978e3e81-8048-4ae1-8a06-aa727458e8ff rw quiet splash"
+	options  "root=PARTUUID=978e3e81-8048-4ae1-8a06-aa727458e8ff rw *quiet splash*"
 	...
 }
 
@@ -175,6 +175,12 @@ This list is not comprehensive. For a complete list of all options, please see t
 | resume= | Specify a swap device to use when waking from [hibernation](/index.php/Hibernation "Hibernation"). |
 | nomodeset | Disable [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). |
 | zswap.enabled | Enable [Zswap](/index.php/Zswap "Zswap"). |
+| panic= | Time before automatic reboot on kernel panic. |
+| debug | Enable kernel debugging (events log level). |
+| mem= | Force usage of a specific amount of memory amount of memory to be used. |
+| maxcpus= | Maximum number of processors that an SMP kernel will bring up during bootup. |
+| selinux= | Disable or enable SELinux at boot time. |
+| netdev= | Network devices parameters. |
 | video=<videosetting> | Override framebuffer video defaults. |
 
  [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") uses `ro` as default value when neither `rw` or `ro` is set by the [boot loader](/index.php/Boot_loader "Boot loader"). Boot loaders may set the value to use, for example GRUB uses `rw` by default (see [FS#36275](https://bugs.archlinux.org/task/36275) as a reference).

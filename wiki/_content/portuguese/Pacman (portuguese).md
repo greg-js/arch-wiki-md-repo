@@ -1,17 +1,17 @@
 Artigos relacionados
 
-*   [Creating packages (Português)](/index.php/Creating_packages_(Portugu%C3%AAs) "Creating packages (Português)")
-*   [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages")
+*   [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes")
+*   [Fazendo downgrade de pacotes](/index.php/Fazendo_downgrade_de_pacotes "Fazendo downgrade de pacotes")
 *   [pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing")
-*   [pacman/Pacnew and Pacsave](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave")
+*   [pacman/Pacnew e Pacsave](/index.php/Pacman/Pacnew_e_Pacsave "Pacman/Pacnew e Pacsave")
 *   [pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database")
 *   [pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta")
 *   [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks")
 *   [FAQ (Português)#Gerenciamento de pacote](/index.php/FAQ_(Portugu%C3%AAs)#Gerenciamento_de_pacote "FAQ (Português)")
-*   [System maintenance (Português)](/index.php/System_maintenance_(Portugu%C3%AAs) "System maintenance (Português)")
-*   [Arch Build System (Português)](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
-*   [Official repositories (Português)](/index.php/Official_repositories_(Portugu%C3%AAs) "Official repositories (Português)")
-*   [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
+*   [Manutenção do sistema](/index.php/Manuten%C3%A7%C3%A3o_do_sistema "Manutenção do sistema")
+*   [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
+*   [Repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais")
+*   [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
 
 O [gerenciador de pacote](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system") **[pacman](https://www.archlinux.org/pacman/)** é uma das grandes vantagens do Arch Linux. Combina um simples pacote no formato binário, com um fácil uso de [sistema de compilação](/index.php/Arch_Build_System "Arch Build System"). A meta do pacman é tornar o mais fácil possivel gerenciar pacotes, sejam eles dos [oficiais repositórios Arch](/index.php/Official_repositories "Official repositories") ou das próprias compilações do usuário.
 
@@ -29,12 +29,12 @@ Pacman é escrito na linguagem de programação C e usa o formato de pacote `.pk
         *   [1.1.2 Instalando grupos de pacotes](#Instalando_grupos_de_pacotes)
     *   [1.2 Removendo pacotes](#Removendo_pacotes)
     *   [1.3 Atualizando pacotes](#Atualizando_pacotes)
-    *   [1.4 Consultando base de dados do pacote](#Consultando_base_de_dados_do_pacote)
+    *   [1.4 Consultando base de dados de pacotes](#Consultando_base_de_dados_de_pacotes)
         *   [1.4.1 Estrutura da base de dados](#Estrutura_da_base_de_dados)
     *   [1.5 Limpando o cache de pacotes](#Limpando_o_cache_de_pacotes)
     *   [1.6 Comandos adicionais](#Comandos_adicionais)
     *   [1.7 Motivo de instalação](#Motivo_de_instala.C3.A7.C3.A3o)
-    *   [1.8 Atualizações parciais não são suportadas](#Atualiza.C3.A7.C3.B5es_parciais_n.C3.A3o_s.C3.A3o_suportadas)
+    *   [1.8 Pesquisar por um pacote que contenha um arquivo específico](#Pesquisar_por_um_pacote_que_contenha_um_arquivo_espec.C3.ADfico)
 *   [2 Configuração](#Configura.C3.A7.C3.A3o)
     *   [2.1 Opções gerais](#Op.C3.A7.C3.B5es_gerais)
         *   [2.1.1 Pular pacotes para não serem atualizados](#Pular_pacotes_para_n.C3.A3o_serem_atualizados)
@@ -72,7 +72,7 @@ O que se segue é apenas uma pequena amostra das operações que o pacman pode e
 
 **Nota:** Alguns pacotes muitas vezes têm uma série de [dependências opcionais](/index.php/PKGBUILD_(Portugu%C3%AAs)#optdepends "PKGBUILD (Português)") de pacotes que fornecem funcionalidades adicionais para a aplicação, embora não seja estritamente necessário para executá-lo. Ao instalar um pacote, o *pacman* irá listar suas dependências opcionais entre as mensagens de saída, porém elas não serão encontrados no arquivo `pacman.log`: utilize o comando [pacman -Si](#Consultando_base_de_dados_do_pacote) para visualizar as dependências opcionais de um pacote, juntamente com uma breve descrição das funcionalidades de cada um.
 
-**Atenção:** Ao instalar pacotes no Arch, evite atualizar a lista de pacotes sem [atualizar o sistema](#Atualizando_pacotes) (por exemplo, quando um [pacote não é encontrado](#Eu_recebo_um_erro_ao_instalar_um_pacote:_.22n.C3.A3o_encontrou_em_sincronia_com_base_de_dados.22) nos repositórios oficiais). Na prática, execute o comando `pacman -Sy**u** *nome_pacote*` em vez de `pacman -Sy *nome_pacote*`, pois isso pode levar a problemas de dependências.
+**Atenção:** Ao instalar pacotes no Arch, evite atualizar a lista de pacotes sem [atualizar o sistema](#Atualizando_pacotes) (por exemplo, quando um [pacote não é encontrado](#Eu_recebo_um_erro_ao_instalar_um_pacote:_.22n.C3.A3o_encontrou_em_sincronia_com_base_de_dados.22) nos repositórios oficiais). Na prática, execute o comando `pacman -Sy *nome_pacote*` em vez de `pacman -Sy**u** *nome_pacote*`, pois isso pode levar a problemas de dependências. Veja [Manutenção do sistema#Sem suporte a atualizações parciais](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Sem_suporte_a_atualiza.C3.A7.C3.B5es_parciais "Manutenção do sistema")
 
 #### Instalando pacotes específicos
 
@@ -209,7 +209,7 @@ Antes de atualizar, é aconselhável visitar [a página Arch Linux Brasil](https
 
 Se alguém encontrar problemas que não podem ser resolvidos por estas instruções, certifique-se de pesquisar no fórum. É provável que os outros já tenham encontrado o mesmo problema e publicaram as instruções para resolvê-lo.
 
-### Consultando base de dados do pacote
+### Consultando base de dados de pacotes
 
 Pacman consulta a base de dados do pacote local com a flag `-Q`, veja:
 
@@ -274,7 +274,7 @@ $ pacman -Ql *package_name*
 
 ```
 
-Para pacotes não instalados, use [pkgfile](/index.php/Pkgfile "Pkgfile").
+Para pacotes não instalados, use [pkgfile](/index.php/Pkgfile_(Portugu%C3%AAs) "Pkgfile (Português)").
 
 Para obter uma lista dos arquivos instalados por um pacote remoto:
 
@@ -370,7 +370,7 @@ A opção interna para remover todos os pacotes em cache que não estão instala
 
 **Atenção:**
 
-*   Apenas faça isso quando estiver certeza de que as versões anteriores dos pacotes não são mais necessárias, por exemplo, para um [downgrade](/index.php/Downgrade "Downgrade") posterior. `pacman -Sc` deixa as versões dos pacotes atualmente instalados, as versões antigas teriam que ser recuperadas por outros meios, como o [Archive](/index.php/Archive "Archive") (*Arch Linux Archive*).
+*   Apenas faça isso quando estiver certeza de que as versões anteriores dos pacotes não são mais necessárias, por exemplo, para um [downgrade](/index.php/Downgrade_(Portugu%C3%AAs) "Downgrade (Português)") posterior. `pacman -Sc` deixa as versões dos pacotes atualmente instalados, as versões antigas teriam que ser recuperadas por outros meios, como o [Archive](/index.php/Archive "Archive") (*Arch Linux Archive*).
 *   É possível esvaziar completamente a pasta cache com `pacman -Scc`. Além disso, isso também impede a reinstalação de um pacote diretamente da pasta de cache em caso de necessidade, exigindo um novo download. Isso deve ser evitado a menos que seja necessário ter espaço em disco imediatamente.
 
 Devido às limitações acima, considere uma alternativa para ter mais controle sobre quais pacotes e quantos são excluídos do cache:
@@ -466,13 +466,30 @@ Use `--asexplicit` para a operação oposta.
 
 **Dica:** A instalação de dependências opcionais com o `--asdeps` o causará de tal forma que, se você remover pacotes órfãos, o pacman também removerá as dependências opcionais.
 
-### Atualizações parciais não são suportadas
+### Pesquisar por um pacote que contenha um arquivo específico
 
-Arch é um rolling release, e novas versões de [bibliotecas](https://en.wikipedia.org/wiki/Library_(computing) serão colocadas nos repositórios. Os desenvolvedores e usuários confiáveis reconstruirão todos os pacotes nos repositórios que precisam ser reconstruídos com as bibliotecas. Se o sistema tem pacotes instalados localmente (tal como pacotes [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)"), os usuários deverão recontruí-los quando suas dependências receberem uma colisão [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname").
+Sincronize a base de dados de arquivos:
 
-Isso significa que as atualizações parciais são **não suportadas**. Não use `pacman -Sy package` ou equivalente como `pacman -Sy` e depois `pacman -S package`. Sempre atualize antes de instalar um pacote -- especialmente se o pacman atualizou as sincronização de repositórios. Tenha muito cuidado ao usar `IgnorePkg` e `IgnoreGroup`, pelo mesmo motivo.
+```
+# pacman -Fy
 
-Se um cenário de atualização parcial foi criado e os binários estão quebrados porque não conseguem encontrar as bibliotecas que estão ligadas, **não "conserte" o problema simplesmente pelo symlinking**. Bibliotecas recebem colisões [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") quando elas **não são compatíveis**. Um simples `pacman -Syu` para um espelho devidamente sincronizado resolverá o problema, desde que pacman não esteja quebrado.
+```
+
+Pesquise por um pacote contendo um arquivo, p.ex.:
+
+```
+# pacman -Fs pacman
+core/pacman 5.0.1-4
+    usr/bin/pacman
+    usr/share/bash-completion/completions/pacman
+extra/xscreensaver 5.36-1
+    usr/lib/xscreensaver/pacman
+
+```
+
+**Dica:** Você pode definir um trabalho cron ou um temporizador do systemd para sincronizar a base de dados de arquivos regularmente.
+
+Para funcionalidade avançada, instale o [pkgfile](/index.php/Pkgfile_(Portugu%C3%AAs) "Pkgfile (Português)"), que usa uma base de dados separada com todos os arquivos e seus pacotes associados.
 
 ## Configuração
 
@@ -571,7 +588,7 @@ A dica mais importante para se lembrar é não "às cegas" atualizar o sistema A
 
 Se uma atualização do pacote é esperada/conhecida por causar de problemas, empacotadores garantirão que pacman exiba uma mensagem apropriada quando o pacote é atualizado. Se enfrentar problemas após uma atualização, verifique a saída do pacman, veja o log (`/var/log/pacman.log`).
 
-Neste ponto, **só depois de garantir que não há nenhuma informação disponível através de pacman, não há nenhuma notícia relativa em [http://www.archlinux-br.org/](http://www.archlinux-br.org/), e não há mensagem no fórum sobre a atualização**, considere a busca de ajuda no fórum, através [IRC](/index.php/IRC_channel "IRC channel"), ou [downgrade do pacote problemático](/index.php/Downgrading_packages "Downgrading packages").
+Neste ponto, **só depois de garantir que não há nenhuma informação disponível através de pacman, não há nenhuma notícia relativa em [http://www.archlinux-br.org/](http://www.archlinux-br.org/), e não há mensagem no fórum sobre a atualização**, considere a busca de ajuda no fórum, através do [IRC](/index.php/IRC_channel "IRC channel"), ou [fazendo downgrade do pacote problemático](/index.php/Downgrading_packages_(Portugu%C3%AAs) "Downgrading packages (Português)").
 
 ### Eu sei que uma atualização para o pacote ABC foi lançada, mas pacman diz que o meu sistema está atualizado!
 
@@ -633,7 +650,7 @@ Se receber um erro "arquivos conflitantes", note que o pacman substituirá manua
 
 ### Preciso de um pacote com um arquivo específico. Como faço para saber o que ele dispõe?
 
-Instale [pkgfile](/index.php/Pkgfile "Pkgfile") que usa um banco de dados separado com todos os arquivos e seus pacotes associados.
+Instale [pkgfile](/index.php/Pkgfile_(Portugu%C3%AAs) "Pkgfile (Português)") que usa um banco de dados separado com todos os arquivos e seus pacotes associados.
 
 ### Pacman está completamente quebrado! Como faço para reinstalá-lo?
 

@@ -100,7 +100,7 @@ A few third-party utilities providing various levels of automation for these tas
 
 You can use one of the following tools:
 
-*   **[Dotpac](/index.php/Dotpac "Dotpac")** — Basic interactive script with ncurses-based text interface and helpful walkthrough. No merging or auto-merging features.
+*   **dotpac** — Basic interactive script with ncurses-based text interface and helpful walkthrough. No merging or auto-merging features.
 
 	[https://github.com/AladW/dotpac](https://github.com/AladW/dotpac) || [dotpac](https://aur.archlinux.org/packages/dotpac/)
 

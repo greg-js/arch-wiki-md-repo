@@ -18,14 +18,14 @@ To install Jupyter Notebook, [install](/index.php/Install "Install") the [jupyte
 
 ## Running
 
-To start the notebook server, run:
+To start the notebook server, e.g. from a directory containing some *.ipynb* notebook files to be served, run:
 
 ```
 $ jupyter notebook
 
 ```
 
-Then open a browser and navigate to [http://localhost:8888/](http://localhost:8888/).
+Then open a browser and navigate to [http://localhost:8888](http://localhost:8888).
 
 ## Kernels
 

@@ -26,10 +26,8 @@
 *   [9 PulseAudio через JACK](#PulseAudio_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_JACK)
     *   [9.1 Метод KXStudio](#.D0.9C.D0.B5.D1.82.D0.BE.D0.B4_KXStudio)
     *   [9.2 Ручная настройка устройств вывода](#.D0.A0.D1.83.D1.87.D0.BD.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4.D0.B0)
-    *   [9.3 Новый новый способ](#.D0.9D.D0.BE.D0.B2.D1.8B.D0.B9_.D0.BD.D0.BE.D0.B2.D1.8B.D0.B9_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1)
-    *   [9.4 Новый способ](#.D0.9D.D0.BE.D0.B2.D1.8B.D0.B9_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1)
-    *   [9.5 Старый способ](#.D0.A1.D1.82.D0.B0.D1.80.D1.8B.D0.B9_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1)
-        *   [9.5.1 QjackCtl с скриптами загрузки/выключения](#QjackCtl_.D1.81_.D1.81.D0.BA.D1.80.D0.B8.D0.BF.D1.82.D0.B0.D0.BC.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8.2F.D0.B2.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [9.3 Настройка с помощью скриптов](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_.D1.81.D0.BA.D1.80.D0.B8.D0.BF.D1.82.D0.BE.D0.B2)
+    *   [9.4 Путем остановки PulseAudio](#.D0.9F.D1.83.D1.82.D0.B5.D0.BC_.D0.BE.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_PulseAudio)
 *   [10 PulseAudio через OSS](#PulseAudio_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_OSS)
 *   [11 Запуск PulseAudio из chroot (напр. 32-бит chroot в 64-битной истеме)](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_PulseAudio_.D0.B8.D0.B7_chroot_.28.D0.BD.D0.B0.D0.BF.D1.80._32-.D0.B1.D0.B8.D1.82_chroot_.D0.B2_64-.D0.B1.D0.B8.D1.82.D0.BD.D0.BE.D0.B9_.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B5.29)
 *   [12 Отключение автоматического запуска сервера PulseAudio](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B0.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B3.D0.BE_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0_.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80.D0.B0_PulseAudio)
@@ -563,61 +561,26 @@ ctl.!default {
 
 В случае, если он все также не работает, проверьте с помощью `pavucontrol` вкладку воспроизведения и убедитесь, что соответствующие программы осуществляют вывод через PulseAudio JACK Sink, а не через звуковую карту (которую в текущий момент контролирует JACK, и это не сработает). Также убедитесь, что на графике JACK PulseAudio JACK Source соединен с системным аудио выходом.
 
-### Новый новый способ
+### Настройка с помощью скриптов
 
-Эта конфигурация работает только с jackdbus(JACK2 совмещённый с D-Bus пожжержкой). Он также тербует пакет [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack). Убедитесь, что `/etc/pulse/default.pa` содержит строку:
+Этот способ позволяет JACK и PulseAudio осуществлять вывод одновременно. Основной упор здесь делается на использование скриптов, автоматически запускаемых QJackCTL, для управления особенностями поведения устройств вывода JACK и PulseAudio.
 
-```
-load-module module-jackdbus-detect *options*
+Идея данного подхода строится на том, что прерывание PulseAudio - это плохо, так как может повлечь за собой аварийную остановку приложений, которые используют PulseAudio, и сломать весь вывод звука в целом.
 
-```
+Пошагово наши действия можно расписать так:
 
-Как описано на странице [Jack-DBUS Packaging](https://github.com/jackaudio/jackaudio.github.com/wiki/JackDbusPackaging):
+1.  PulseAudio освобождает звуковую карту
+2.  запускается JACK и принимает управление звуковой картой на себя
+3.  скрипт перенаправляет PulseAudio на JACK
+4.  приложения PulseAudio вручную направляются на вывод JACK (pavucontrol может помочь справится с данной задачей)
+5.  используются требуемые приложения JACK
+6.  скриптом происходит остановка перенаправления PulseAudio на JACK
+7.  останавливается JACK и освобождается звуковая карта
+8.  PulseAudio возвращает управление звуковой картой и перенаправляет звук на нее напрямую
 
-*Автозапуск сервера реализован как вызов D-Bus, который автоматически запускает JACK D-Bus службу, в случае, если она уже запущена, он запускает JACK сервер.* Правильная воздействие с PulseAudio происходит, используя чере аудио карту,основаннуй на D-Bus механизме "acquire/release".Когда JACK сервер стартует, он просит D-Bus службу получить аудио карту и PulseAudio безоговорочно "отпустит" её. Когда JACK сервер останавливается, он "отпускает" аудио карту и она снова может быть подхвачена PulseAduio.
+С помощью QJackCTL настройте следующие скрипты:
 
-`module-jackdbus-detect.so` динамически загружает и выгружает module-jack-sink и module-jack-source когда jackdbus стартует/останавливается.
-
-Если звук в PulseAudio не работает, проверьте `pavucontrol` чтобы проверить, появляются ли нужные программы во вкладку playback. Если нет - добавьте следующее в `~/.asound.conf` или `/etc/asound.conf`, чтобы перенаправлять ALSA в PulseAudio:
-
-```
-pcm.pulse {
-    type pulse
-}
-
-ctl.pulse {
-    type pulse
-}
-
-pcm.!default {
-    type pulse
-}
-ctl.!default {
-    type pulse
-}
-
-```
-
-Если всё ещё не работает, проверьте `pavucontrol`, во вкладке playback, и удостоверьтесь,что нужные программы выводят звук в PulseAduio JACK вместо вашей звуковой карты.
-
-### Новый способ
-
-Основная идея: аварийно останавливать PulseAduio - плохая идея, это может рушить приложения, использующие PulseAudio.
-
-Как работает эта настройка:
-
-1.  PulseAudio отпускает звуковую карту
-2.  JACK подзватывает звуковую карту и запускается
-3.  Скрипт перенаправляет PulseAudio в JACK
-4.  вручную отправлять PulseAudio приложения в JACK вывод (pavucontrol может быть полезным)
-5.  использовать JACK программы и т.д.
-6.  через скрипт, перестать перенаправлять PulseAudio в JACK
-7.  остановить JACK и отпустить звуковую карту
-8.  PulseAudio подхватывает звуковую карту и всё работает как обычно
-
-Через QJackCTL, настройте эти скрипты:
-
-`pulse-jack-pre-start.sh` устанавливает скрипт при загрузке
+`pulse-jack-pre-start.sh` скрипт должен быть настроен как исполняемый и выполняться из скрипта запуска системы
 
 ```
 #!/bin/bash
@@ -625,7 +588,7 @@ pacmd suspend true
 
 ```
 
-`pulse-jack-post-start.sh` устанавливает скрипт после загрузки
+`pulse-jack-post-start.sh` также нужно сделать исполняемым и выполнять после запуска системы
 
 ```
 #!/bin/bash
@@ -636,7 +599,7 @@ pacmd set-default-source jack_in
 
 ```
 
-`pulse-jack-pre-stop.sh` "выполнять при выключении"
+`pulse-jack-pre-stop.sh` "должен выполняться при выключении системы"
 
 ```
 #!/bin/bash
@@ -648,7 +611,7 @@ sleep 5
 
 ```
 
-`pulse-jack-post-stop.sh` "исполнять послы выключения"
+`pulse-jack-post-stop.sh` "должен выполняться после выключения системы"
 
 ```
 #!/bin/bash
@@ -656,107 +619,42 @@ pacmd suspend false
 
 ```
 
-### Старый способ
+### Путем остановки PulseAudio
 
-JACK-Audio-Connection-Kit популярен для аудио работы и широко распростаранён в аудио приложениях для Linux. По функционалу он похож на PulseAudip, но с упором на профессиональную работу с аудио. Ardour and Audacity, например, хорошо работают с Jack.
+Этот способ основывается на скрипте, который автоматически прерывает выполнение PulseAudio, когда запускается JACK, и автоматически запускает PulseAudio, когда JACK завершает работу. Такой подход дает выигрыш в производительности за счет меньшей нагрузки на ЦПУ, в отличии от вариантов, в которых запущены обе программы. Но он может приводить к ошибкам в запущенных приложениях, использующих PulseAudio, и не позволяет осуществлять одновременный вывод (с JACK и PulseAudio).
 
-В PulseAudio есть module-jack-source и module-jack-sink допускает PulseAudio запускаться как звуковой сервер поверх демона JACK. Это позволяет использовать настраивать приложения отдельно, позволяя воспроизводить в приложениях, при этом позволяя приложенияем для работы со звуком подключаться к JACK. Тем не менее, это не даёт PulseAudio записывать напрямую в буфер звуковой карты, увеличивая нагрузку на процессор.
+При использовании предыдущего метода, применяется QjackCtl для выполнения скриптов загрузки/выгрузки PulseAudio во время запуска и остановки системы. Это приводит к выключению модулей PulseAudio, которые отвечают за автоматическое распознавание аппаратных устройств, и может стать одной из причин, по которой пользователи могут захотеть воспользоваться текущим вариантом. Рассматриваемая настройка подготовлена для связки PulseAudio и JACK, хотя и может быть изменена для загрузки/выгрузки иных не-JACK конфигураций, но корректный запуск/остановка PulseAudio при использовании его программами может стать проблемой.
 
-Просто попробуйте запустить PA поверх JACK, пусть PA загрузить нужные модули при старте:
+**Примечание:** padevchooser в следующем примере устарел. Он был заменен pasystray
 
-```
-pulseaudio -L module-jack-sink -L module-jack-source
-
-```
-
-Чтобы использовать PA с JACK, JACK должен быть запущен перед PulseAUdio, использую метод, который вы предпочтёте. PulseAudio нужно запуститься при этом загрузиа два нужным модулей. Измените `/etc/pulse/default.pa`,и измените следующую область:
+Следующий пример можно использовать и изменять, при необходимости, как стартовый скрипт, запускающий демон PulseAudio и загружающий программу *padevchooser* (при необходимости, требуется сборка из AUR). Назовем его `jack_startup`:
 
 ```
-### Load audio drivers statically (it is probably better to not load
-### these drivers manually, but instead use module-hal-detect --
-### see below -- for doing this automatically)
-#load-module module-alsa-sink
-#load-module module-alsa-source device=hw:1,0
-#load-module module-oss device="/dev/dsp" sink_name=output source_name=input
-#load-module module-oss-mmap device="/dev/dsp" sink_name=output source_name=input
-#load-module module-null-sink
-#load-module module-pipe-sink
-
-### Automatically load driver modules depending on the hardware available
-.ifexists module-udev-detect.so
-load-module module-udev-detect
-.else
-### Alternatively use the static hardware detection module (for systems that
-### lack udev support)
-load-module module-detect
-.endif
-
-```
-
-на следующее:
-
-```
-### Load audio drivers statically (it is probably better to not load
-### these drivers manually, but instead use module-hal-detect --
-### see below -- for doing this automatically)
-#load-module module-alsa-sink
-#load-module module-alsa-source device=hw:1,0
-#load-module module-oss device="/dev/dsp" sink_name=output source_name=input
-#load-module module-oss-mmap device="/dev/dsp" sink_name=output source_name=input
-#load-module module-null-sink
-#load-module module-pipe-sink
-load-module module-jack-source
-load-module module-jack-sink
-
-### Automatically load driver modules depending on the hardware available
-#.ifexists module-udev-detect.so
-#load-module module-udev-detect
-#.else
-### Alternatively use the static hardware detection module (for systems that
-### lack udev support)
-#load-module module-detect
-#.endif
-
-```
-
-Вообще, это предотвращает загрузку module-udev-detect. module-udev-detect будет пытатся захватить звкуовую карту (JACK уже сделал это, так что это приведёт к ошибке). Кстати, источники JACK должны быть явно загружены.
-
-#### QjackCtl с скриптами загрузки/выключения
-
-Использоуя настроки описанные выше, используйте QjackCtl чтобы выполнять скрипты во вреся запуска и выключения PulseAudio. Одной из причин, почему пользователи хотят это использовать - оно выключает автоопределение аппаратуры. Именна эта настройка - для использования PulseAudio с JACK, хотя скрипты и могут быть изменены для загрузки других скриптов кроме JACK.
-
-**Note:** padevchooser в следующем примере устарел. Он заменён pasystray
-
-Следующий пример может быть использован и измененён как скрипт загрузки, который делает PulseAudio демона и загружает *padevchooser* программу (опционално, его можно взять в AUR), которая называется `jack_startup`:
-
-```
-#!/bin/bash
+#!/bin/bash	
 #Load PulseAudio and PulseAudio Device Chooser
-
 pulseaudio -D
 padevchooser&
 
 ```
 
-также как и скрипт выключения останавливает PulseAudio и "Выбор Устройств Pulse Audio", он также вызывает `jack_shutdown` в домашней директории:
+Аналогичный скрипт для остановки PulseAudio и Pulse Audio Device Chooser, который назовем `jack_shutdown` и также разместим в домашней директории:
 
 ```
-#!/bin/bash
-#Kill PulseAudio and PulseAudio Device Chooser
-
-pulseaudio --kill
-killall padevchooser
+#!/bin/bash	
+#Kill PulseAudio and PulseAudio Device Chooser		
+pulseaudio --kill	
+killall padevchooser	
 
 ```
 
-Оба скрипта должны быть сделаны исполняемыми:
+Оба скрипта сделаем исполняемыми:
 
 ```
 chmod +x jack_startup jack_shutdown
 
 ```
 
-затем, с загруженным QjackCtl, нажмите на кнопку *Setup* и затем вкладку *Options* и поставьте голочки: "Execute Script after Startup:" и "Execute Script on Shutdown:" и установите "use the ... button" или введите путь до скриптов (предпологается, что скрипты находятся в домашней директории) `~/jack_startup` и `~/jack_shutdown`, убедитесь что сохранили всё.
+затем запустим QjackCtl, нажмем на кнопку *Setup* и перейдем на вкладку *Options*, где отметим обе опции "Execute Script after Startup:" и "Execute Script on Shutdown:", в которые добавим адреса до наших скриптов (с помощью кнопки ... или вписав путь до файлов) `~/jack_startup` и `~/jack_shutdown`, при условии, что они располагаются в домашней директории. Сохраним изменения.
 
 ## PulseAudio через OSS
 

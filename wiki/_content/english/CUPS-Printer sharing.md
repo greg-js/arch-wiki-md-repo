@@ -1,3 +1,8 @@
+Related articles
+
+*   [Samba](/index.php/Samba "Samba")
+*   [CUPS](/index.php/CUPS "CUPS")
+
 This article contains instruction on sharing printers between systems, be it between two GNU/Linux systems or between a GNU/Linux system and Microsoft Windows.
 
 ## Contents
@@ -59,7 +64,7 @@ Listen <hostname>:631
 
 ```
 
-There are more configuration possibilities, including automatic methods, which are described in detail in [Using Network Printers](http://localhost:631/help/network.html).
+There are more configuration possibilities, including automatic methods, which are described in detail in [Using Network Printers](https://www.cups.org/doc/network.html) and [cupsd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cupsd.conf.5).
 
 After making any modifications, [restart](/index.php/Restart "Restart") the `org.cups.cupsd` service.
 

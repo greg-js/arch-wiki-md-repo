@@ -82,4 +82,4 @@ O pacote [downgrade](https://aur.archlinux.org/packages/downgrade/) é um script
 
 ## Retornar do [testing]
 
-See [Official repositories#Disabling testing repositories](/index.php/Official_repositories#Disabling_testing_repositories "Official repositories").
+Veja [Repositórios oficiais#Desabilitando repositórios de teste](/index.php/Reposit%C3%B3rios_oficiais#Desabilitando_reposit.C3.B3rios_de_teste "Repositórios oficiais").

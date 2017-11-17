@@ -1,3 +1,8 @@
+Související články
+
+*   [Arch Build System (Česky)](/index.php/Arch_Build_System_(%C4%8Cesky) "Arch Build System (Česky)")
+*   [Pacman (Česky)](/index.php/Pacman_(%C4%8Cesky) "Pacman (Česky)")
+
 Tento průvodce vás provede procesem návratu k předchozí (starší) verzi balíčku. Návrat k předchozí verzi (tzv. downgrade) se obvykle nedoporučuje, ale může to být nutné v případě, že nový balíček obsahuje chyby.
 
 Než přistoupíte k návratu k předchozí verzi, zvažte dobře důvody, proč to děláte. Pokud je to kvůli chybě v balíčku, pomozte prosím Archu i původním vývojářům tím, že obětujete několik minut nahlášení chyby pomocí [Arch Bug Tracker](https://bugs.archlinux.org) nebo přímo vývojářům balíku. Protože je Arch Linux tzv. "rolling release" distribucí, budete pravděpodobě neustále setkávat s novými balíčky a čas od času i s nějakou tou chybou.

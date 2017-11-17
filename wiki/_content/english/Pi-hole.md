@@ -18,22 +18,35 @@ Pi-hole is a shell-script based project that manages blocklists of known adverti
             *   [1.2.2.1 Lighttpd](#Lighttpd)
             *   [1.2.2.2 Nginx](#Nginx)
         *   [1.2.3 FTL](#FTL)
-*   [2 Configuration of the router and of Pi-hole](#Configuration_of_the_router_and_of_Pi-hole)
-    *   [2.1 Preferred method](#Preferred_method)
-    *   [2.2 Fallback method](#Fallback_method)
-*   [3 Using Pi-hole together with OpenVPN](#Using_Pi-hole_together_with_OpenVPN)
-*   [4 Pi-hole Standalone](#Pi-hole_Standalone)
-    *   [4.1 Installation](#Installation_2)
-    *   [4.2 Initial configuration](#Initial_configuration_2)
-        *   [4.2.1 Dnsmasq](#Dnsmasq_2)
-        *   [4.2.2 Openresolve](#Openresolve)
-*   [5 See also](#See_also)
+    *   [1.3 Configuration of the router and of Pi-hole](#Configuration_of_the_router_and_of_Pi-hole)
+        *   [1.3.1 Preferred method](#Preferred_method)
+        *   [1.3.2 Fallback method](#Fallback_method)
+    *   [1.4 Using Pi-hole together with OpenVPN](#Using_Pi-hole_together_with_OpenVPN)
+*   [2 Pi-hole Standalone](#Pi-hole_Standalone)
+    *   [2.1 Installation](#Installation_2)
+    *   [2.2 Initial configuration](#Initial_configuration_2)
+        *   [2.2.1 Dnsmasq](#Dnsmasq_2)
+        *   [2.2.2 Configuring host name resolution](#Configuring_host_name_resolution)
+            *   [2.2.2.1 Manually](#Manually)
+            *   [2.2.2.2 Openresolve](#Openresolve)
+*   [3 Using Pi-hole](#Using_Pi-hole)
+    *   [3.1 Forced update of ad-serving domains list](#Forced_update_of_ad-serving_domains_list)
+    *   [3.2 Protect web interface access (server package only)](#Protect_web_interface_access_.28server_package_only.29)
+    *   [3.3 Temporarily disable Pi-hole](#Temporarily_disable_Pi-hole)
+*   [4 See also](#See_also)
 
 ## Pi-hole Server
 
 ### Installation
 
 [Install](/index.php/Install "Install") [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) and [pi-hole-server](https://aur.archlinux.org/packages/pi-hole-server/).
+The pi-hole server package installs two timers (and relative services), both statically enabled:
+
+*   pi-hole-gravity.timer will weekly update Pi-hole blacklisted servers list.
+*   pi-hole-logtruncate.timer will daily clean LAN DNS requests log.
+
+If you do not like default timers timings (from upstrem project) you can, of course, [edit](/index.php/Edit "Edit") them or preventing from being executed by [masking](/index.php/Systemd#Using_units "Systemd") them.
+You need to manually start them or simply reboot after your configuration is finished.
 
 ### Initial configuration
 
@@ -119,13 +132,13 @@ Copy the package provided default config for Pi-hole:
 
 #### FTL
 
-FTL is part of Pi-hole project. It is a database-like wrapper/API providing the frontend to Pi-hole's DNS query log. One can configure FTL in `/etc/pihole/pihole-FTL.conf`. [Read](https://github.com/pi-hole/FTL#ftls-config-file) project documentation for details.
-
+FTL is part of Pi-hole project. It is a database-like wrapper/API providing the frontend to Pi-hole's DNS query log. FTL is the only way the Pi-hole web interface accesses data collected by dnsmasq usage and is therefore a requirement.
+One can configure FTL in `/etc/pihole/pihole-FTL.conf`. [Read](https://github.com/pi-hole/FTL#ftls-config-file) project documentation for details.
 `pi-hole-ftl.service` is statically enabled; re/start it.
 
-## Configuration of the router and of Pi-hole
+### Configuration of the router and of Pi-hole
 
-### Preferred method
+#### Preferred method
 
 Most users will want the all of the following functionality:
 
@@ -153,16 +166,15 @@ On Pi-hole, login to the web interface ([http://pi.hole](http://pi.hole)), selec
 
 **Tip:** A simple check to see that the router is setup correctly is to first renew a DHCP lease, then inspect the contents of `/etc/resolv.conf` on the target client machine. One should see the IP address of the Pi-hole box, not the IP address of the router.
 
-### Fallback method
+**Note:** For a full network and Pi-hole functionality, you may need to disable, if present on your router firmware, the `dns-rebind` feature.
+
+#### Fallback method
 
 **Note:** The above configuration may not be possible on some routers depending on the feature set exposed the firmware. The configuration above is confirmed to work on some popular open-source firmwares such as [LEDE/OpenWRT](https://forum.lede-project.org/t/lede-pi-hole-works-perfectly-need-to-understand-why-so-i-can-configure-tomatousb-the-same-way/8274), [DD-WRT](https://www.dd-wrt.com/site/index), and [TomatoUSB](http://www.linksysinfo.org/index.php?threads/redefining-dns-from-router-to-a-box-running-pi-hole.73576/#post-292078) to name a few.
 
-Users unable to configure the router as directed above are referred to [this guide](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) for setup instructions that gives most of the functionality in the list above. Key limitations of using this method include:
+Users unable to configure the router as directed above are referred to [this upstream guide](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) for setup instructions of their routers.
 
-1.  Per-host tracking on Pi-hole (i.e. logging of DNS requests tied to individual machines by their respective hostnames).
-2.  The ability to resolve hostnames on the LAN.
-
-## Using Pi-hole together with OpenVPN
+### Using Pi-hole together with OpenVPN
 
 One can use both [OpenVPN](/index.php/OpenVPN "OpenVPN") (server) together with Pi-hole to effectively route the remote traffic from the clients though Pi-hole's DNS thus dropping ads for the clients. A reduction in cellular data usage is expected since ads are never allowed to load. Make sure `/etc/openvpn/server/server.conf` contains two key lines as illustrated below replacing the literal "xxx.xxx.xxx.xxx" with the IP address of the box running Pi-hole:
 
@@ -188,15 +200,45 @@ The Archlinux Pi-hole Standalone variant is born from the need to use Pi-hole se
 ### Installation
 
 [Install](/index.php/Install "Install") the [pi-hole-standalone](https://aur.archlinux.org/packages/pi-hole-standalone/) package.
+The pi-hole standalone package install a statically enabled timer (and relative services) will weekly update Pi-hole blacklisted servers list. If you do not like default timer timings (from upstrem project) you can, of course, [edit](/index.php/Edit "Edit") it or preventing from being executed by [masking](/index.php/Systemd#Using_units "Systemd") it.
+You need to manually start `pi-hole-gravity.timer` or simply reboot after your configuration is finished.
 
 ### Initial configuration
 
 #### Dnsmasq
 
-Setup is identical to the steps described in [#Dnsmasq](#Dnsmasq).
+Ensure that the following line in `/etc/dnsmasq.conf` is uncommented:
 
-#### Openresolve
+ `/etc/dnsmasq.conf` 
+```
+[...]
+conf-dir=/etc/dnsmasq.d/,*.conf
 
+```
+
+[Enable](/index.php/Enable "Enable") `dnsmasq.service` and re/start it.
+
+#### Configuring host name resolution
+
+The Pi-hole standalone package to work properly requires that a unique DNS is set on your machine. That DNS address need to be your machine itself.
+This can be done in several ways.
+
+##### Manually
+
+If no service on your machine automatically handles the `/etc/resolv.conf` file, you can easily edit it to insert the following **unique** item `nameserver`
+
+ `/etc/resolv.conf` 
+```
+[...]
+nameserver 127.0.0.1
+
+```
+
+**Note:** No other `nameserver` items need to be present in the config file.
+
+##### Openresolve
+
+It is likely that is the [openresolv](https://www.archlinux.org/packages/?name=openresolv) service to handle `/etc/resolv.conf` if you use a network connection manager such as [netctl](https://www.archlinux.org/packages/?name=netctl), [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) or others. If it is your case, you must force [openresolv](https://www.archlinux.org/packages/?name=openresolv) to use **localhost** as name server.
 Edit `/etc/resolvconf.conf` to uncomment the name_servers line:
 
  `/etc/resolvconf.conf` 
@@ -212,6 +254,67 @@ and update resolvconf:
 # resolvconf -u
 
 ```
+
+## Using Pi-hole
+
+As previously mentioned, Pi-hole offers the ability to be configured and used both through the command line and through its web interface (only server package)
+
+### Forced update of ad-serving domains list
+
+If you need to update the blocked domain list, on the machine running Pi-hole you can run
+
+```
+pihole -g
+
+```
+
+or, server package only, via web interface ([http://pi.hole](http://pi.hole)) go to **Tools/Update Lists** and execute **Update Lists**.
+
+### Protect web interface access (server package only)
+
+Pi-hole web interface can be password protected to prevent unauthorized use. On the machine running Pi-hole you can run
+
+```
+pihole -a -p <pwd>
+
+```
+
+where `<pwd>` is the password you want to assign. You can leave it blank for tipical *nix password request and confirmation.
+To disable password login retype
+
+```
+pihole -a -p
+
+```
+
+leaving **all** blank.
+
+### Temporarily disable Pi-hole
+
+Pi-hole can be easily paused through its web interface ([http://pi.hole](http://pi.hole)): go to **Disable** and choose the suspension option that best suits your case.
+It is possible via CLI too by executing
+
+```
+pihole disable [time]
+
+```
+
+If you leave `time` blank disabling will be permanent until later manual reenabling.
+`time` can be expressed in seconds or minutes with syntax #s and #m. For example, to disable Pi-hole for 5 minutes only, you can execute
+
+```
+pihole disable 5m
+
+```
+
+At any time you can reenable Pi-hole by executing
+
+```
+pihole enable
+
+```
+
+or, via web interface, clicking on **Enable**.
 
 ## See also
 

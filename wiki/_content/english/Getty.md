@@ -1,3 +1,7 @@
+Related articles
+
+*   [Display manager](/index.php/Display_manager "Display manager")
+
 A [getty](https://en.wikipedia.org/wiki/getty_(Unix) "w:getty (Unix)") is the generic name for a program which manages a terminal line and its connected terminal. Its purpose is to protect the system from unauthorized access. Generally, each getty process is started by [systemd](/index.php/Systemd "Systemd") and manages a single terminal line.
 
 ## Contents
@@ -103,3 +107,5 @@ This overrides only `TTYVTDisallocate` for *agetty* on TTY1, and leaves the glob
 ## See also
 
 *   [Systemd#Change default target to boot into](/index.php/Systemd#Change_default_target_to_boot_into "Systemd")
+*   [The TTY demystified](http://www.linusakesson.net/programming/tty/)
+*   [Wikipedia:Tty (unix)](https://en.wikipedia.org/wiki/Tty_(unix) "wikipedia:Tty (unix)")

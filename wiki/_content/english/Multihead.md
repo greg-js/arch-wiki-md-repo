@@ -411,3 +411,4 @@ Note that:
 ## See also
 
 *   ['How I got Dual Monitors with Nouveau Driver' forums thread](https://bbs.archlinux.org/viewtopic.php?pid=652861)
+*   [Six-headed, Six-user Linux System](http://linuxgazette.net/124/smith.html)

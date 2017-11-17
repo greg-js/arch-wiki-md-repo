@@ -85,6 +85,8 @@ and append the key to the list of keys in `~/.config/autostart-scripts/ssh-add.s
 
 There is an addon to make Firefox store passwords with [KDE5 Wallet](https://addons.mozilla.org/addon/kde5-wallet-password-integrati/).
 
+**Note:** As of Firefox 57 this addon is not supported anymore. Make sure to set up a masterpassword in order to get a basic protection for your stored passwords.
+
 ## KDE Wallet for Chrome and Chromium
 
 Chrome/Chromium has built in wallet integration. To enable it, run Chromium with the `--password-store=kwallet` or `--password-store=detect` argument. To make the change persistent, see [Chromium/Tips and tricks#Making flags persistent](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks"). (Setting CHROMIUM_USER_FLAGS will not work.)

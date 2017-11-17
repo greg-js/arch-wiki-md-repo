@@ -101,6 +101,8 @@ PersistentKeepalive = 25
 
 Bring this interface up by using `wg-quick up wg0`, and use `wg-quick down wg0` to bring it down.
 
+To bring this up automatically one can use `systemctl enable wg-quick@wg0`
+
 ## Troubleshooting
 
 ### DKMS module not available

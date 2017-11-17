@@ -1,3 +1,9 @@
+Related articles
+
+*   [xdg-menu](/index.php/Xdg-menu "Xdg-menu")
+*   [Default applications](/index.php/Default_applications "Default applications")
+*   [XDG Base Directory support](/index.php/XDG_Base_Directory_support "XDG Base Directory support")
+
 User directories are a set of common user directories located within the `$HOME` directory, including `Documents`, `Downloads`, `Music`, and `Desktop`. Identified by unique icons within a file manager, they will commonly be automatically sourced by numerous programs and applications. [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) is a program that will automatically generate these directories. See the [freedesktop.org](https://www.freedesktop.org/wiki/Software/xdg-user-dirs) website for further information.
 
 **Tip:** This program will be especially helpful for those who wish to use a file manager to manage their desktop for a [Window manager](/index.php/Window_manager "Window manager") such as [Openbox](/index.php/Openbox "Openbox"), as it will also automatically create a `~/Desktop` directory.

@@ -694,5 +694,4 @@ done
 ## See also
 
 *   [ThinkWiki:How to reduce power consumption](http://www.thinkwiki.org/wiki/How_to_reduce_power_consumption)
-*   [Ubuntu Wiki's Power Saving Tweaks](https://wiki.ubuntu.com/Kernel/PowerManagement/PowerSavingTweaks)
 *   [How to get longer battery life on Linux](http://ivanvojtko.blogspot.sk/2016/04/how-to-get-longer-battery-life-on-linux.html)

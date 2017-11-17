@@ -11,7 +11,7 @@
 *   [pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")
 *   [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks")
 
-**翻译状态：** 本文是英文页面 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-31，点击[这里](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=493230)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-16，点击[这里](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=495729)可以查看翻译后英文页面的改动。
 
 **PKGBUILD**是一个shell脚本，包含 [Arch Linux](/index.php/Arch_Linux "Arch Linux") 在构建软件包时需要的信息。本页面讨论PKGUILD中使用的变量。若要获取PKGBUILD中函数的信息，请参考[创建软件包](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating packages (简体中文)") 和 [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
 
@@ -122,11 +122,11 @@ epoch=1
 
 ### arch
 
-一个架构数组，表示 PKGBUILD 可以编译和使用的架构。Arch 官方仅支持 `i686` 和 `x86_64`, 但是 [Arch Linux ARM](http://archlinuxarm.org/) 项目提供了其它架构支持，`arm` - armv5, `armv6h` - armv6 hardfloat, `armv7h` - armv7 hardfloat, `aarch64` - armv8 64bit.
+一个架构数组，表示 PKGBUILD 可以编译和使用的架构。Arch 官方仅支持 `x86_64`, 但是其它项目提供了其它架构支持，[Arch Linux 32](https://archlinux32.org/) 提供了 `i686` 支持，[Arch Linux ARM](http://archlinuxarm.org/) 项目提供 `arm` - armv5, `armv6h` - armv6 hardfloat, `armv7h` - armv7 hardfloat, `aarch64` - armv8 64bit 支持。
 
-如果软件包编译后和架构无关(shell脚本、字体、主题、各种扩展等)，请使用 `arch=('any')`. 请注意这个值意味着软件仅需编译一次，然后可以在所有架构上使用。软件包会以 `-any` 为后缀，而不是 `-i686`, `-x86_64` 等.
+如果软件包编译后和架构无关(shell脚本、字体、主题、各种扩展等)，请使用 `arch=('any')`. 请注意这个值意味着软件仅需编译一次，然后可以在所有架构上使用。软件包会以 `-any` 为后缀，而不是 `-x86_64` 等.
 
-如果软件包可以在任何架构上编译，但是编译后只能在一个架构中运行，请列出所有支持的架构例如 `arch=('i686' 'x86_64')`.
+如果软件包可以在任何架构上编译，但是编译后只能在一个架构中运行，请列出所有支持的架构例如 `arch=('x86_64')`.
 
 ### url
 
@@ -164,7 +164,7 @@ epoch=1
 
 ## 依赖关系
 
-**注意:** 架构相关的变量可以通过下划线加架构的方式指定：`depends_i686=()`, `optdepends_x86_64=()`.
+**注意:** 架构相关的变量可以通过下划线加架构的方式指定：`depends_x86_64=()`, `optdepends_x86_64=()`.
 
 ### depends
 
@@ -292,7 +292,7 @@ $ pacman -Qc *pkgname*
 
 **注意:**
 
-*   架构相关的变量可以通过下划线加架构的方式指定：`source_i686=()`. 记得要同时提供对应的校验和：`sha256sums_x86_64=()`
+*   架构相关的变量可以通过下划线加架构的方式指定：`source_x86_64=()`. 记得要同时提供对应的校验和：`sha256sums_x86_64=()`
 *   因为所有包的 [SRCDEST](/index.php/Makepkg#Package_output "Makepkg") 的值必须相同，所以下载的文件的文件名需要唯一。你可以为下载的文件指定不同的文件名： `source=('*filename*::*fileuri*')`,选择的 `*filename*` 最好和软件包名相关: `source=("project_name::hg+https://googlefontdirectory.googlecode.com/hg/")` 
 
 ### noextract
@@ -333,7 +333,7 @@ PGP 指纹列表。如果使用，*makepkg* 仅接受这里定义的签名，并
 
 ## 完整性
 
-**注意:** 架构相关的变量可以通过下划线加架构的方式指定：`depends_i686=()`, `optdepends_x86_64=()`.
+**注意:** 架构相关的变量可以通过下划线加架构的方式指定：`depends_x86_64=()`, `optdepends_x86_64=()`.
 
 数组中的变量是 [#source](#source) 数组中对应文件的校验和。可以插入 `SKIP` 跳过某个未测试文件的校验。
 

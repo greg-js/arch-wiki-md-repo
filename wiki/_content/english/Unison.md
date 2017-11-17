@@ -168,7 +168,8 @@ When syncing configuration files which would vary (e.g., due to endemic applicat
 ## See also
 
 *   [Wikipedia:Unison (file synchronizer)](https://en.wikipedia.org/wiki/Unison_(file_synchronizer) "wikipedia:Unison (file synchronizer)")
-*   [Official website](http://www.cis.upenn.edu/~bcpierce/unison/)
+*   [Official website](https://www.cis.upenn.edu/~bcpierce/unison/)
+*   [User Manual and Reference Guide](https://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html)
 *   [Yahoo! user group](http://tech.groups.yahoo.com/group/unison-users)
 *   *[Liberation through data replication](http://www.pgbovine.net/unison_guide.htm)* by Philip Guo
 *   *[Setting up Unison for your mom](http://www.pgbovine.net/unison-for-your-mom.htm)* by Philip Guo

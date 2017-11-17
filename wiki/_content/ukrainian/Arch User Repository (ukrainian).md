@@ -1,3 +1,8 @@
+Related articles
+
+*   [AUR helpers](/index.php/AUR_helpers "AUR helpers")
+*   [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines")
+
 Arch User Repository (AUR) — це сховище пакунків, кероване спільнотою Arch. Воно містить описи пакунків (так звані PKGBUILD), що полегшують зібрання пакета з джерела ([makepkg](/index.php/Makepkg "Makepkg")) та його встановлення ([pacman](/index.php/Pacman "Pacman")). Метою AUR є організація й розповсюдження нових пакунків, створених користувачами, а також надання доступу до популярних пакунків через сховища [[community](#.5Bcommunity.5D)]. Ця стаття пояснює, як використовувати AUR.
 
 Чимало пакунків, що отримують місце в офіційних сховищах, створюються в AUR. Завдяки AUR користувачі можуть внести свій вклад у розвиток пакунку за рахунок супроводу PKGBUILD й пов’язаних файлів. Спільнота AUR має можливість проголосувати за пакунок у цьому сховищі чи проти нього; пакунок, за який проголосувало достатньо користувачів, потрапляє до сховища [community], що доступний прямо через [pacman](/index.php/Pacman "Pacman") чи [abs](/index.php/ABS "ABS").

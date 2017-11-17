@@ -1,6 +1,7 @@
 Related articles
 
 *   [XDG Base Directory support](/index.php/XDG_Base_Directory_support "XDG Base Directory support")
+*   [X resources](/index.php/X_resources "X resources")
 
 This article collects user repositories with custom configuration files, commonly known as *dotfiles*.
 
@@ -163,3 +164,4 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 *   [XMonad Config Archive](http://wiki.haskell.org/Xmonad/Config_archive)
 *   [dotshare.it](http://dotshare.it)
 *   [dotfiles.github.io](https://dotfiles.github.io/)
+*   [terminal.sexy](https://terminal.sexy/) - Terminal color scheme designer

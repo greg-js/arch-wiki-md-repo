@@ -28,8 +28,8 @@ Configuration:
 *   Using **libvirt**: XML domain, helper scripts, IOMMU groups, etc available in [my VFIO repository](https://github.com/DragoonAethis/VFIO).
 *   **Guest OS**: Windows 8.1 Pro.
 *   The entire HDD is passed to the VM as a raw device (formatted as a single NTFS partition).
-*   HDMI audio is used, couldn't get audio output from QEMU to work properly. (Host uses ALSA only.)
-*   Keyboard and mouse is passed to the guest VM and shared with the host with Synergy.
+*   USB keyboard and mouse are passed to the guest VM and shared with the host with Synergy.
+*   Virtualized audio is working: PulseAudio on the host is configured to accept TCP connections, and the envvars required for QEMU to use PA are pointed at the PA server running on 127.0.0.1\. This way it's not required to change the QEMU user, everything works flawlessly. (Exact details in the repo.)
 *   Bridged networking (with NetworkManager's and [this tutorial's](https://www.happyassassin.net/2014/07/23/bridged-networking-for-libvirt-with-networkmanager-2014-fedora-21/) help) is used. `bridge0` is created, `eth0` interface is bound to it. STP disabled, VirtIO NIC is configured in the VM and that VM is seen in the network just as any other computer (and is being assigned an IP address from the router itself, can communicate freely with other computers).
 
 ### Manbearpig3130's Virtual Gaming Machine

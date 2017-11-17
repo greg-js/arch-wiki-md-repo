@@ -65,6 +65,7 @@ This article provides information on basic system diagnostics relating to perfor
     *   [6.3 SMB](#SMB)
     *   [6.4 DNS](#DNS)
 *   [7 Watchdogs](#Watchdogs)
+*   [8 See also](#See_also)
 
 ## The basics
 
@@ -294,7 +295,7 @@ Avoiding unnecessary access to slow storage drives is good for performance and a
 
 #### Show disk writes
 
-The [iotop](https://www.archlinux.org/packages/?name=iotop) package can sort by disk writes, and show how much and how frequently programs are writing to the disk. See [iotop(8)](http://man7.org/linux/man-pages/man8/iotop.8.html) for details.
+The [iotop](https://www.archlinux.org/packages/?name=iotop) package can sort by disk writes, and show how much and how frequently programs are writing to the disk. See [iotop(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iotop.8) for details.
 
 #### Relocate files to tmpfs
 
@@ -516,3 +517,7 @@ After you disabled watchdogs, you can *optionally* avoid the loading of the modu
 Either action will speed up your boot and shutdown, because one less module is loaded. Additionally disabling watchdog timers increases performance and [lowers power consumption](/index.php/Power_management#Disabling_NMI_watchdog "Power management").
 
 See [[9]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[10]](https://bbs.archlinux.org/viewtopic.php?id=165834), [[11]](http://0pointer.de/blog/projects/watchdog.html), and [[12]](https://www.kernel.org/doc/Documentation/watchdog/watchdog-parameters.txt) for more information.
+
+## See also
+
+*   [Red Hat Performance Tuning Guide](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Performance_Tuning_Guide/index.html)

@@ -6,3 +6,7 @@ Arch Linux has the following IPMI-related packages:
 *   [openipmi](https://www.archlinux.org/packages/?name=openipmi)
 *   [ipmiutil](https://aur.archlinux.org/packages/ipmiutil/)
 *   [ipmitool](https://www.archlinux.org/packages/?name=ipmitool)
+
+## See also
+
+*   [Wikipedia:out-of-band management](https://en.wikipedia.org/wiki/out-of-band_management "wikipedia:out-of-band management")

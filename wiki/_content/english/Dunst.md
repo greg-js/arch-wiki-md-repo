@@ -1,3 +1,7 @@
+Related articles
+
+*   [Desktop Notifications](/index.php/Desktop_Notifications "Desktop Notifications")
+
 [Dunst](http://knopwob.org/dunst/index.html) is a lightweight replacement for the notification-daemons provided by most desktop environments.
 
 ## Contents
@@ -37,7 +41,9 @@ These can be used in conjunction with HTML markup. For example the `format` can 
 
 ### Icon Sets
 
-Icons are set in the option `icon_folders`. Status and devices icons are needed.
+**Note:** As of version 1.2.0, Dunst looks for nonstandard icon names, and will likely complain that it can't load the `info` or `emblem-important` icons. This will be fixed in the next release.[[2]](https://github.com/dunst-project/dunst/pull/406)
+
+Icons are set in the option `icon_folders`. Status and devices icons are needed. By default, Dunst looks for the [gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme) icons.
 
 ```
 # Paths to default icons.

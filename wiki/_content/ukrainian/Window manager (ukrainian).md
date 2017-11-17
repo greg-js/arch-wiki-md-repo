@@ -1,3 +1,8 @@
+Related articles
+
+*   [Desktop Environment (Українська)](/index.php/Desktop_Environment_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Desktop Environment (Українська)")
+*   [Xorg (Українська)](/index.php?title=Xorg_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0)&action=edit&redlink=1 "Xorg (Українська) (page does not exist)")
+
 Віконний Менеджер (WM) один з компонентів системи графічного користувацького інтерфейсу (GUI). Користувачі можуть віддавати перевагу встановленню повністю допрацьованої системи [Оточення робочого столу](/index.php/Desktop_environment_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Desktop environment (Українська)"), яка забезпечує повний користувальницький інтерфейс: віконний менеджер і пов'язані панелі інструментів, панелі, аплети, додатки і т.д.
 
 ## Contents

@@ -318,7 +318,7 @@ nnoremap <C-l> :TlistToggle<CR>
 
 ### Tutorials
 
-*   [vim Tutorial and Primer](http://www.danielmiessler.com/study/vim/)
+*   [vim Tutorial and Primer](https://danielmiessler.com/study/vim/)
 *   [vi Tutorial and Reference Guide](http://usalug.org/vi.html)
 *   [Graphical vi-Vim Cheat Sheet and Tutorial](http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html)
 *   [Vim Introduction and Tutorial](http://blog.interlinked.org/tutorials/vim_tutorial.html)
@@ -344,7 +344,8 @@ nnoremap <C-l> :TlistToggle<CR>
 *   [nion's](https://web.archive.org/web/20131020125020/http://nion.modprobe.de/setup/vimrc)
 *   [A detailed configuration from Amir Salihefendic](http://amix.dk/vim/vimrc.html)
 *   [Bart Trojanowski](https://web.archive.org/web/20131004071740/http://www.jukie.net/~bart/conf/vimrc)
-*   [Steve Francia'http://vimawesome.com/s Vim Distribution](https://github.com/spf13/spf13-vim)
+*   [Steve Francia's Vim Distribution](https://github.com/spf13/spf13-vim)
+*   [Vim Awesome](http://vimawesome.com/) - Vim Plugins
 *   [W4RH4WK's Vim configuration](https://github.com/W4RH4WK/dotVim)
 *   [Fast vimrc/colorscheme from askapache](https://www.askapache.com/linux/fast-vimrc/)
 *   [Basic vimrc](https://gist.github.com/anonymous/c966c0757f62b451bffa)

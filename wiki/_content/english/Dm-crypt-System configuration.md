@@ -90,7 +90,7 @@ resume=*device*
 
 ```
 
-*   `*device*` is the device file of the decrypted (swap) filesystem used for suspend2disk. If swap is on a separate partition, it will be in the form of `/dev/mapper/swap`. See also [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
+*   `*device*` is the device file of the decrypted (swap) filesystem used for [suspend to disk](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate"). If swap is on a separate partition, it will be in the form of `/dev/mapper/swap`. See also [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
 
 ### Using encrypt hook
 

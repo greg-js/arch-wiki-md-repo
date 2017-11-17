@@ -57,7 +57,6 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [farseerfc](https://aur.archlinux.org/packages.php?K=farseerfc&SeB=m) | Jiachen Yang | farseerfc[at]gmail[dot]com |
 | [felixonmars](https://aur.archlinux.org/packages.php?K=felixonmars&SeB=m) | Felix Yan | felixonmars@archlinux.org |
 | [flexiondotorg](https://aur.archlinux.org/packages.php?K=flexiondotorg&SeB=m) | Martin Wimpress | [martin+arch@flexion.org](mailto:martin+arch@flexion.org) |
-| [foutrelis](https://aur.archlinux.org/packages.php?K=foutrelis&SeB=m) | Evangelos Foutras | evangelos@foutrelis.com |
 | [Foxboron](https://aur.archlinux.org/packages.php?K=Foxboron&SeB=m) | Morten Linderud | foxboron@archlinux.org |
 | [foxxx0](https://aur.archlinux.org/packages.php?K=foxxx0&SeB=m) | Thore Bödecker | me [at] foxxx0 [dot] de |
 | [giniu](https://aur.archlinux.org/packages.php?K=giniu&SeB=m) | [Andrzej Giniewicz](/index.php/User:Giniu "User:Giniu") | gginiu@gmail.com |
@@ -118,6 +117,7 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [encelo](https://aur.archlinux.org/packages.php?K=encelo&SeB=m) | Angelo Theodorou |
 | [even](https://aur.archlinux.org/packages.php?K=even&SeB=m) | Kessia Pinheiro |
 | [falconindy](https://aur.archlinux.org/packages.php?K=falconindy&SeB=m) | Dave Reisner |
+| [foutrelis](https://aur.archlinux.org/packages.php?K=foutrelis&SeB=m) | Evangelos Foutras |
 | [filoktetes](https://aur.archlinux.org/packages.php?K=filoktetes&SeB=m) | Robert Emil Berge |
 | [firmicus](https://aur.archlinux.org/packages.php?K=firmicus&SeB=m) | François Charette |
 | [ganja_guru](https://aur.archlinux.org/packages.php?K=ganja_guru&SeB=m) | Varun Acharya |

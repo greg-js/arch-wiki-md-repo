@@ -26,8 +26,7 @@ Please note that our official wiki also supports internationalized content. In a
     *   [1.19 Sweden](#Sweden)
     *   [1.20 Taiwan](#Taiwan)
     *   [1.21 Turkey](#Turkey)
-    *   [1.22 Ukraine](#Ukraine)
-    *   [1.23 Vietnam](#Vietnam)
+    *   [1.22 Vietnam](#Vietnam)
 *   [2 Related Pages](#Related_Pages)
 
 ## International Communities
@@ -163,11 +162,6 @@ This list is by no means complete. If you know of a community that is not listed
 *   Homepage : [http://archtr.org/](http://archtr.org/)
 *   Forum  : [http://archtr.org/forum/](http://archtr.org/forum/)
 *   Wiki  : [http://archtr.org/wiki/](http://archtr.org/wiki/)
-
-### Ukraine
-
-*   Forum: [http://archlinux.org.ua/](http://archlinux.org.ua/)
-*   Wiki: [Main page (Українська)](/index.php/Main_page_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Main page (Українська)")
 
 ### Vietnam
 

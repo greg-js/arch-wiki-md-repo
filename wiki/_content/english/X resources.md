@@ -1,3 +1,7 @@
+Related articles
+
+*   [dotfiles](/index.php/Dotfiles "Dotfiles")
+
 **Xresources** is a user-level configuration *dotfile*, typically located at `~/.Xresources`. It can be used to set [X resources](https://en.wikipedia.org/wiki/X_resources "wikipedia:X resources"), which are configuration parameters for X client applications.
 
 They can do many operations, including:

@@ -556,7 +556,7 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 
 A section of the Unicode standard is designated for pictographic characters called "emoji".
 
-*   [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) - Google's own emoji font, like on Android or Google Hangouts.
+*   [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) - Google's own emoji font, like on Android or Google Hangouts. See [system-wide configuration example](/index.php/Font_configuration/Examples#System-wide_Noto_Emoji_fonts "Font configuration/Examples").
 *   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) - provides many Unicode symbols, including emoji, in outline style.
 *   [ttf-emojione-color](https://aur.archlinux.org/packages/ttf-emojione-color/) - a color and B&W emoji SVGinOT font built from EmojiOne.
 *   [ttf-twemoji-color](https://aur.archlinux.org/packages/ttf-twemoji-color/) - Twitter's open-sourced emoji glyphs.

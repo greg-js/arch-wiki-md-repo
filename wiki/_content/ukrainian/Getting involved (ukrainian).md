@@ -1,3 +1,9 @@
+Related articles
+
+*   [Arch User Repository (Українська)](/index.php/Arch_User_Repository_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Arch User Repository (Українська)")
+*   [Help:Editing (Українська)](/index.php/Help:Editing_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Help:Editing (Українська)")
+*   [Help:Style (Українська)](/index.php?title=Help:Style_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0)&action=edit&redlink=1 "Help:Style (Українська) (page does not exist)")
+
 В біології, [мутулізм](https://uk.wikipedia.org/wiki/Мутулізм) - взаємокорисний механізм співіснування декількох організмів. Даний принцип можна застосувати і по відношенню до активних і мотивованих учасників спільноти Arch, які бажають прийняти участь у її розвитку та внести свій вклад в улюблений дистрибутив GNU/Linux. Така діяльність приносить користь не лише учасникам спільноти Arch, а й, потенційно, всім фанам [вільного програмного забезпечення](https://uk.wikipedia.org/wiki/Вільне_та_відкрите_програмне_забезпечення).
 
 ## Contents

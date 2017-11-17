@@ -1,6 +1,7 @@
 Related articles
 
 *   [cgroups](/index.php/Cgroups "Cgroups")
+*   [Performance](/index.php/Performance "Performance")
 
 This article provides information on prioritizing process threads in real time, as opposed to at startup only. It shows how you can control CPU, memory, and other resource utilization of individual processes, or all processes run by a particular group.
 

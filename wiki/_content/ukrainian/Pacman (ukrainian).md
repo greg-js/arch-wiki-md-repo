@@ -1,3 +1,15 @@
+Related articles
+
+*   [Downgrading Packages](/index.php/Downgrading_Packages "Downgrading Packages")
+*   [Improve Pacman Performance](/index.php/Improve_Pacman_Performance "Improve Pacman Performance")
+*   [pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
+*   [pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta")
+*   [pacman Tips](/index.php/Pacman_Tips "Pacman Tips")
+*   [Pacman package signing](/index.php/Pacman_package_signing "Pacman package signing")
+*   [FAQ#Package_Management](/index.php/FAQ#Package_Management "FAQ")
+*   [Pacman-key](/index.php/Pacman-key "Pacman-key")
+*   [Pacnew and Pacsave Files](/index.php/Pacnew_and_Pacsave_Files "Pacnew and Pacsave Files")
+
 **[Pacman](https://archlinux.org/index.php/Pacman_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0))** це [менеджер пакунків](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system"), який є однією з основних характерних особливостей Arch Linux. Він поєднує в собі простий формат двійкових пакунків з простою у використанні [Arch Build System](/index.php/Arch_Build_System "Arch Build System")(система збірки Арча, скорочено [ABS](/index.php/ABS "ABS")). Мета розробників pacman - зробити його, як можна легшим у керуванні пакунками, чи є вони з [офіційних репозиторіїв Arch](/index.php/Official_repositories "Official repositories") або власні версії користувачів.
 
 Pacman тримає систему в актуальному стані за допомогою синхронізації списків пакунків з головного сервера. Ця модель, сервер / клієнт, також дозволяє користувачам завантажувати / встановлювати пакунки з допомогою простої команди, повністю з усіма необхідними залежностями.
@@ -76,7 +88,7 @@ NoExtract=usr/lib/systemd/system/*
 
 ```
 
-### [Репозиторії](https://en.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D1%96%D0%B9 "wikipedia:Репозиторій")
+### [Репозиторії](https://en.wikipedia.org/wiki/uk:%D0%A0%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D1%96%D0%B9 "wikipedia:uk:Репозиторій")
 
 Ця секція визначає, які [репозиторії](/index.php/Official_repositories "Official repositories") використовуються. Вони можуть бути зазначені у `/etc/pacman.conf` прямо або включені з іншого файлу (наприклад, `/etc/pacman.d/mirrorlist`), що робить його необхідним для підтримання лише одного списку. Докладніше про налаштування дзеркал читайте [тут](/index.php/Mirrors "Mirrors").
 

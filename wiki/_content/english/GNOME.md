@@ -215,8 +215,6 @@ The configuration is usually performed user-specific, this section does not cove
 
 ### System settings
 
-Control panel settings of note.
-
 #### Color
 
 The daemon `colord` reads the display's EDID and extracts the appropriate color profile. Most color profiles are accurate and no setup is required; however for those that are not accurate, or for older displays, color profiles can be put in `~/.local/share/icc/` and directed to.
@@ -570,15 +568,15 @@ For further information, refer to the [app-folders schema](https://git.gnome.org
 
 ## See also
 
-*   [The Official Website of GNOME](https://www.gnome.org/)
-*   [Extensions for GNOME-shell](https://extensions.gnome.org/)
-*   [GNOME Shell Cheat Sheet](https://wiki.gnome.org/Projects/GnomeShell/CheatSheet), commands, keyboard shortcuts and other tips for using GNOME Shell.
-*   Themes, icons, and backgrounds:
+*   [Official Website](https://www.gnome.org/)
+*   [GNOME-Shell Extensions](https://extensions.gnome.org/)
+*   [GNOME Shell Cheat Sheet](https://wiki.gnome.org/Projects/GnomeShell/CheatSheet)
+*   Customization (themes, icons...):
     *   [Personalize GNOME](https://wiki.gnome.org/Personalization)
     *   [GNOME Look](https://www.gnome-look.org/)
-*   GTK+/GNOME programs:
+*   GNOME applications:
     *   [GNOME Apps Index](https://wiki.gnome.org/Apps)
-*   [Customizing the GNOME Shell](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html)
+    *   [Wikipedia:GNOME Core Applications](https://en.wikipedia.org/wiki/GNOME_Core_Applications "wikipedia:GNOME Core Applications")
 *   GNOME Source/Mirrors:
     *   [GNOME Git Repository](https://git.gnome.org/browse/)
     *   [GNOME Github Mirror](https://github.com/GNOME)

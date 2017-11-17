@@ -1,3 +1,7 @@
+Related articles
+
+*   [Однаковий вигляд для QT та GTK застосунків](/index.php/Uniform_look_for_Qt_and_GTK_applications_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Uniform look for Qt and GTK applications (Українська)")
+
 GTK+, GIMP Toolkit, спочатку був зроблений для [GIMP](/index.php/GIMP "GIMP") але тепер дуже популярний інструментарій прив’язаний до багатьох мов.
 
 ## Contents

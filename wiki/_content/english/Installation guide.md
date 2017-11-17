@@ -55,14 +55,14 @@ If the directory does not exist, the system may be booted in [BIOS](https://en.w
 
 ### Connect to the Internet
 
-The installation image [enables](/index.php/Enable "Enable") the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon on boot for [wired](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) network devices. The connection may be checked with:
+The installation image enables the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon on boot for [wired](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) network devices. The connection may be [checked](/index.php/Network_configuration#Check_the_connection "Network configuration") with:
 
 ```
 # ping archlinux.org
 
 ```
 
-If no connection is available, [stop](/index.php/Stop "Stop") the *dhcpcd* service with `systemctl stop dhcpcd@`, `Tab` and see [Network configuration](/index.php/Network_configuration "Network configuration").
+If no connection is available, [stop](/index.php/Stop "Stop") the *dhcpcd* service with `systemctl stop dhcpcd@`, `Tab` and see [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration").
 
 For **wireless** connections, [iw(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) and [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") are available. See [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
 

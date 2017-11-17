@@ -22,7 +22,6 @@ There are multiple low level interfaces (backends) providing basic functionality
 *   [1 Low level interfaces](#Low_level_interfaces)
     *   [1.1 kernel (swsusp)](#kernel_.28swsusp.29)
     *   [1.2 uswsusp](#uswsusp)
-    *   [1.3 tuxonice](#tuxonice)
 *   [2 High level interfaces](#High_level_interfaces)
     *   [2.1 systemd](#systemd)
     *   [2.2 pm-utils](#pm-utils)
@@ -54,12 +53,6 @@ See [kernel documentation](https://www.kernel.org/doc/Documentation/power/states
 The uswsusp ('Userspace Software Suspend') is a wrapper around the kernel's suspend-to-RAM mechanism, which performs some graphics adapter manipulations from userspace before suspending and after resuming.
 
 See main article [Uswsusp](/index.php/Uswsusp "Uswsusp").
-
-### tuxonice
-
-TuxOnIce is a fork of the kernel implementation of suspend/hibernate that provides kernel patches to improve the default implementation. It requires a custom kernel to achieve this purpose.
-
-See main article [TuxOnIce](/index.php/TuxOnIce "TuxOnIce").
 
 ## High level interfaces
 

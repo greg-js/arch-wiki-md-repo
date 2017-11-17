@@ -352,7 +352,7 @@ A package update likely added an invalid `*filename*.conf` to the directory `/et
 *   [Fix the Most Common Problems](http://www.tuxradar.com/content/how-fix-most-common-linux-problems)
 *   [A how-to in troubleshooting for newcomers](https://www.reddit.com/r/archlinux/comments/tjjwr/archlinux_a_howto_in_troubleshooting_for_newcomers/)
 *   [List of Tools for UBCD](http://wiki.ultimatebootcd.com/index.php?title=Tools) - Memtest-like tools to add to grub.cfg on UltimateBootCD.com
-*   [BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition") on Wikipedia
-*   [Using sysrq](https://fedoraproject.org/wiki/QA/Sysrq\x20QA/Sysrq) on Fedoraproject.org
+*   [Wikipedia:BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
+*   [REISUB](/index.php/REISUB "REISUB")
 *   [Debug Logging to a Serial Console](http://freedesktop.org/wiki/Software/systemd/Debugging#Debug_Logging_to_a_Serial_Console) on Freedesktop.org
 *   [How to Isolate Linux ACPI Issues](https://web.archive.org/web/20120217124742/http://www.lesswatts.org/projects/acpi/debug.php) on Archive.org

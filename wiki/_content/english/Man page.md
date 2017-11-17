@@ -2,7 +2,7 @@ Related articles
 
 *   [Color output in console#man](/index.php/Color_output_in_console#man "Color output in console")
 
-**man pages**—abbreviation for "manual pages"—are the form of documentation that is available on almost all UNIX-like operating systems, including Arch Linux. The command used to display them is `man`.
+[man pages](https://en.wikipedia.org/wiki/Man_page "wikipedia:Man page")—abbreviation for "manual pages"—are the form of documentation that is available on almost all UNIX-like operating systems, including Arch Linux. The command used to display them is `man`.
 
 In spite of their scope, man pages are designed to be self-contained documents, consequentially limiting themselves to referring to other man pages when discussing related subjects. This is in sharp contrast with the hyperlink-aware info files, GNU's attempt at replacing the traditional man page format.
 
@@ -34,7 +34,7 @@ $ man *page_name*
 
 ```
 
-Manuals are sorted into several sections. For a full listing see the section entitled "Sections of the manual pages" in [man-pages(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
+Manuals are sorted into several [sections](https://en.wikipedia.org/wiki/Man_page#Manual_sections "wikipedia:Man page"). For a full listing see the section entitled "Sections of the manual pages" in [man-pages(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
 
 Man pages are usually referred to by their name, followed by their section number in parentheses. Often there are multiple man pages of the same name, such as [man(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man.1) and [man(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man.7). In this case, give man the section number followed by the name of the man page, for example:
 
@@ -198,6 +198,7 @@ There are several online databases of man pages, including:
 *   [FreeBSD man pages](http://www.freebsd.org/cgi/man.cgi)
 *   [Linux and Solaris 10 man pages](http://www.manpages.spotlynx.com/)
 *   [Linux man pages at die.net](http://linux.die.net/man/)
+*   [Linux man pages at man.cx](http://man.cx/)
 *   [NetBSD manual pages](http://netbsd.gw.com/cgi-bin/man-cgi)
 *   [Mac OS X manual pages](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
 *   [On-line UNIX manual pages](http://unixhelp.ed.ac.uk/alphabetical/index.html)
@@ -232,7 +233,7 @@ Here follows a non-exhaustive list of noteworthy pages that might help you under
 *   [terminfo(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5)
 *   [utf-8(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/utf-8.7)
 
-More generally, have a look at category 7 pages:
+More generally, have a look at [category 7 (miscellaneous) pages](http://man7.org/linux/man-pages/dir_section_7.html):
 
 ```
 $ man -s 7 -k ".*" 

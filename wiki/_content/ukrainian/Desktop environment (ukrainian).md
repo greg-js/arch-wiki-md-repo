@@ -1,3 +1,10 @@
+Related articles
+
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [Default applications](/index.php/Default_applications "Default applications")
+
 Оточення Робочого Столу (DE) це повні системи графічного інтерфейсу користувача (GUI).
 
 Оточення робочого столу зазвичай включають, але не обмежуються цим:

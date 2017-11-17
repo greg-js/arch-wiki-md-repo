@@ -136,7 +136,7 @@ If you just wanted to run this same config, but only backup daily, you would nee
 
 ### Back up
 
-This is the section where you tell *rsnapshot* which files you actually want to back up. You put a `backup` parameter first, followed by the full path to the directory or network path you're backing up. The third column is the relative path you want to back up to inside the snapshot root.
+This is the section where you tell *rsnapshot* which files you actually want to back up. You put a `backup` parameter first, followed by the full path to the directory or network path you are backing up. The third column is the relative path you want to back up to inside the snapshot root.
 
  `/etc/rsnapshot.conf` 
 ```

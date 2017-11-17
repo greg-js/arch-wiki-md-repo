@@ -441,3 +441,4 @@ Consider iptables to open port `873` and user authentication.
 
 *   More usage examples can be searched in the [Community Contributions](https://bbs.archlinux.org/viewforum.php?id=27) and [General Programming](https://bbs.archlinux.org/viewforum.php?id=33) forums
 *   [Howto – local and remote snapshot backup using rsync with hard links](http://www.pointsoftware.ch/en/howto-local-and-remote-snapshot-backup-using-rsync-with-hard-links/) Includes file deduplication with hard-links, MD5 integrity signature, 'chattr' protection, filter rules, disk quota, retention policy with exponential distribution (backups rotation while saving more recent backups than older)
+*   [Using SSH keys/identity files with rsync](https://stackoverflow.com/questions/5527068/how-do-you-use-an-identity-file-with-rsync)

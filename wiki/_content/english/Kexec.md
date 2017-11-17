@@ -1,4 +1,8 @@
-**Kexec** is a system call that enables you to load and boot into another kernel from the currently running kernel. This is useful for kernel developers or other people who need to reboot very quickly without waiting for the whole BIOS boot process to finish. Note that kexec may not work correctly for you due to devices *not* fully re-initializing when using this method, however this is rarely the case.
+Related articles
+
+*   [Systemd](/index.php/Systemd "Systemd")
+
+[Kexec](https://en.wikipedia.org/wiki/Kexec "wikipedia:Kexec") is a system call that enables you to load and boot into another kernel from the currently running kernel. This is useful for kernel developers or other people who need to reboot very quickly without waiting for the whole BIOS boot process to finish. Note that kexec may not work correctly for you due to devices *not* fully re-initializing when using this method, however this is rarely the case.
 
 ## Contents
 

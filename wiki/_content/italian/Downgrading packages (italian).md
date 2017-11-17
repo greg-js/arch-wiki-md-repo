@@ -1,3 +1,9 @@
+Articoli correlati
+
+*   [Arch Build System (Italiano)](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)")
+*   [pacman (Italiano)](/index.php/Pacman_(Italiano) "Pacman (Italiano)")
+*   [LVM (Italiano)](/index.php/LVM_(Italiano) "LVM (Italiano)")
+
 Questa guida vi mostrerà come effettuare il downgrade di un pacchetto ad una versione precedente. Il declassamento di un pacchetto non viene normalmente raccomandato ed è spesso necessario solo quando viene introdotto un bug nel pacchetto corrente.
 
 Prima di iniziare l'operazione di declassamento, considerare il perché lo si sta facendo. Se la causa è un bug, si prega di aiutare sia Arch che gli sviluppatori, dedicando pochi minuti del proprio tempo per inviare la notifica dei bug nel bug tracker Arch o sul progetto madre del programma stesso. Dal momento che Arch è una distribuzione rolling release, probabilmente si lavora di continuo con pacchetti nuovissimi e talvolta è possibile incappare in qualche problema di bug.

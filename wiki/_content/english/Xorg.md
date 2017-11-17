@@ -12,7 +12,7 @@ Related articles
 
 From [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
-	The X.Org project provides an open source implementation of the X Window System. The development work is being done in conjunction with the freedesktop.org community. The X.Org Foundation is the educational non-profit corporation whose Board serves this effort, and whose Members lead this work.
+	The X.Org project provides an open source implementation of the [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System"). The development work is being done in conjunction with the freedesktop.org community. The X.Org Foundation is the educational non-profit corporation whose Board serves this effort, and whose Members lead this work.
 
 **Xorg** is the most popular display server among Linux users. Its ubiquity has led to making it an ever-present requisite for GUI applications, resulting in massive adoption from most distributions. See the [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") Wikipedia article or visit the [Xorg website](http://www.x.org/wiki/) for more details.
 
@@ -66,6 +66,7 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
         *   [8.11.1 Broken redirection](#Broken_redirection)
     *   [8.12 Why do I get a green screen whenever I try to watch a video?](#Why_do_I_get_a_green_screen_whenever_I_try_to_watch_a_video.3F)
     *   [8.13 SocketCreateListener error](#SocketCreateListener_error)
+*   [9 See also](#See_also)
 
 ## Installation
 
@@ -733,3 +734,7 @@ Your color depth is set wrong. It may need to be 24 instead of 16, for example.
 ### SocketCreateListener error
 
 If X terminates with error message "SocketCreateListener() failed", you may need to delete socket files in `/tmp/.X11-unix`. This may happen if you have previously run Xorg as root (e.g. to generate an `xorg.conf`).
+
+## See also
+
+*   [Xplain](https://magcius.github.io/xplain/article/) - In-depth explanation of the X Window System

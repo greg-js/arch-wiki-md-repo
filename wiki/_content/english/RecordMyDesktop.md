@@ -90,5 +90,5 @@ $ recordmydesktop --device pulse
 
 ## External Links
 
-*   [recordMyDesktop Homepage](http://recordmydesktop.sourceforge.net/about.php)
+*   [Wikipedia:RecordMyDesktop](https://en.wikipedia.org/wiki/RecordMyDesktop "wikipedia:RecordMyDesktop")
 *   [using ffmpeg directly](https://github.com/kaihendry/recordmydesktop2.0)

@@ -17,6 +17,7 @@ Being a plugin based emulator allows more configurability, including setting scr
     *   [5.3 PE.Op.S OSS Audio Driver outputs no sound](#PE.Op.S_OSS_Audio_Driver_outputs_no_sound)
     *   [5.4 PCSXR segfaults when launching a game or the BIOS](#PCSXR_segfaults_when_launching_a_game_or_the_BIOS)
     *   [5.5 Opening the Pete's plugin interface doesn't work: error while loading shared libraries: libgtk-1.2.so.0](#Opening_the_Pete.27s_plugin_interface_doesn.27t_work:_error_while_loading_shared_libraries:_libgtk-1.2.so.0)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -92,3 +93,7 @@ You may also want to investigate the cause of the segfault by examining the [Cor
 ### Opening the Pete's plugin interface doesn't work: error while loading shared libraries: libgtk-1.2.so.0
 
 Install [lib32-gtk](https://aur.archlinux.org/packages/lib32-gtk/). If pacman fails to resolve the dependencies, it's because they're not available on the official repos. Check the dependencies with `less PKGBUILD` and install them manually from the [AUR](/index.php/AUR "AUR").
+
+## See also
+
+[Wikipedia:PCSX-Reloaded](https://en.wikipedia.org/wiki/PCSX-Reloaded "wikipedia:PCSX-Reloaded")]

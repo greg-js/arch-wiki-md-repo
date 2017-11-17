@@ -132,7 +132,7 @@ Ao atualizar o sistema, certifique-se de prestar atenção aos avisos de alerta 
 
 ### Lide prontamente com os novos arquivos de configuração
 
-Quando o pacman é chamado, arquivos `.pacnew` e `.pacsave` podem ser criados. Pacman fornece aviso quando isso acontece e usuários devem lidar com esses arquivos imediatamente. Veja a página [Pacnew and Pacsave files](/index.php/Pacnew_and_Pacsave_files "Pacnew and Pacsave files") para instruções de detalhada.
+Quando o pacman é chamado, arquivos `.pacnew` e `.pacsave` podem ser criados. Pacman fornece aviso quando isso acontece e usuários devem lidar com esses arquivos imediatamente. Veja a página de [arquivos Pacnew e Pacsave](/index.php/Arquivos_Pacnew_e_Pacsave "Arquivos Pacnew e Pacsave") para instruções de detalhada.
 
 Também, pense em outros arquivos de configuração que você pode ter copiado ou criado. Se um pacote possuir um exemplo de configuração que você copiou para seu diretório home, verifique se um novo foi criado.
 
@@ -142,7 +142,7 @@ Se uma atualização de pacote é esperada/sabido causar problemas, empacotadore
 
 **Dica:** Você pode usar um visualização de log como o [wat-git](https://aur.archlinux.org/packages/wat-git/) para pesquisar por logs do pacman.
 
-A esse ponto, somente após garantir que não haja informações disponíveis pelo pacman, que não há notícia relacionada no [https://www.archlinux.org/](https://www.archlinux.org/) e que não haja tópicos no fórum sobre a atualização, considere pedir ajuda no [fórum](https://bbs.archlinux.org), pelo [IRC](/index.php/IRC "IRC") ou [retrocedendo](/index.php/Downgrading "Downgrading") versão do pacote danoso.
+A esse ponto, somente após garantir que não haja informações disponíveis pelo pacman, que não há notícia relacionada no [https://www.archlinux.org/](https://www.archlinux.org/) e que não haja tópicos no fórum sobre a atualização, considere pedir ajuda no [fórum](https://bbs.archlinux.org), pelo [IRC](/index.php/IRC "IRC") ou [fazendo downgrade](/index.php/Fazendo_downgrade "Fazendo downgrade") da versão do pacote danoso.
 
 ## Use o gerenciador de pacotes para instalar softwares
 

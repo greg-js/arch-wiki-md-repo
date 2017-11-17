@@ -1196,3 +1196,4 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [Lists of Linux games on Wikipedia](https://en.wikipedia.org/wiki/Category:Linux_games "wikipedia:Category:Linux games")
 *   [http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 *   [LGames - open source games for Linux](http://lgames.sourceforge.net/about.php)
+*   Debian [games portal](https://wiki.debian.org/Game/Links "debian:Game/Links"), [links](https://wiki.debian.org/Games/Links "debian:Games/Links"), and [suggested games](https://wiki.debian.org/Games/Suggested "debian:Games/Suggested")
