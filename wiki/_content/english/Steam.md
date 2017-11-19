@@ -57,6 +57,16 @@ For the [SteamCMD](https://developer.valvesoftware.com/wiki/SteamCMD), a command
 
 Steam can also be installed with [Flatpak](/index.php/Flatpak "Flatpak") as `com.valvesoftware.Steam` from [Flathub](https://flathub.org/).
 
+```
+pacman -S flatpak
+
+```
+
+```
+flatpak install --from [https://flathub.org/repo/appstream/com.valvesoftware.Steam.flatpakref](https://flathub.org/repo/appstream/com.valvesoftware.Steam.flatpakref)
+
+```
+
 The Flatpak application currently does not support themes.
 
 By default Steam won't be able to access your home directory, you can run the following command to allow it, so that it behaves like on Ubuntu or SteamOS:
@@ -65,6 +75,8 @@ By default Steam won't be able to access your home directory, you can run the fo
 flatpak override com.valvesoftware.Steam --filesystem=/home/$USER
 
 ```
+
+Note: Some games don't work fully or at all. May be wise to use a flatpak steam install, as a backup way to access steam, in case an arch update prevents Steam from launching correctly.
 
 ## Usage
 

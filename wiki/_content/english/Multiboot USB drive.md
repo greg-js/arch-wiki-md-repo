@@ -288,5 +288,6 @@ The package [multibootusb](https://aur.archlinux.org/packages/multibootusb/) can
 *   GRUB:
     *   [https://help.ubuntu.com/community/Grub2/ISOBoot/Examples](https://help.ubuntu.com/community/Grub2/ISOBoot/Examples)
     *   [https://help.ubuntu.com/community/Grub2/ISOBoot](https://help.ubuntu.com/community/Grub2/ISOBoot)
+    *   [GRUB Live ISO Multiboot](https://github.com/thias/glim) - GRUB configurations for booting ISO images
 *   Syslinux:
     *   [Boot an ISO image](http://www.syslinux.org/wiki/index.php?title=Boot_an_Iso_image)

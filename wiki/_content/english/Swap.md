@@ -7,7 +7,7 @@ Related articles
 *   [ZFS#Swap_volume](/index.php/ZFS#Swap_volume "ZFS")
 *   [Dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption")
 
-This page provides an introduction to swap space and paging on GNU/Linux. It covers creation and activation of swap partitions and swap files.
+This page provides an introduction to [swap space and paging](https://en.wikipedia.org/wiki/Paging "wikipedia:Paging") on GNU/Linux. It covers creation and activation of swap partitions and swap files.
 
 From [All about Linux swap space](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space):
 
@@ -209,7 +209,9 @@ See [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swa
 
 ## Performance
 
-Swap values can be adjusted to help performance.
+Swap operations are usually significantly slower than directly accessing data in RAM. Disabling swap entirely to improve performance can sometimes lead to a degradation, since it decreases the memory available for VFS caches, causing more frequent and costly disk I/O. Increasing swap space can be a remediation for frequent [out of memory](https://en.wikipedia.org/wiki/Out_of_memory "wikipedia:Out of memory") conditions, where the Linux kernel OOM killer mechanism will automatically attempt to free up memory by killing processes.
+
+Swap values can be adjusted to help performance:
 
 ### Swappiness
 

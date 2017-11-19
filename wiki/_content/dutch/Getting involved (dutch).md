@@ -55,8 +55,6 @@ Een van de makkelijkste manieren om betrokken te raken is deel te nemen aan de [
 Andere nuttige pagina's voor opruimen:
 
 *   [Verzoeken](/index.php/ArchWiki:Requests "ArchWiki:Requests")
-*   [Rapporten](/index.php/ArchWiki:Reports "ArchWiki:Reports")
-*   [Spam](/index.php/ArchWiki:Spam "ArchWiki:Spam")
 *   [Gebroken redirects](/index.php/Special:BrokenRedirects "Special:BrokenRedirects")
 *   [Dubbele redirects](/index.php/Special:DoubleRedirects "Special:DoubleRedirects")
 *   [Korte pagina's](/index.php/Special:ShortPages "Special:ShortPages")

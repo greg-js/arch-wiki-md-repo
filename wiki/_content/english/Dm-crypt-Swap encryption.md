@@ -22,8 +22,6 @@ To enable this feature, simply uncomment the line beginning with `swap` in `/etc
 swap      /dev/sd*X#*    /dev/urandom   swap,cipher=aes-xts-plain64,size=256
 ```
 
-**Tip:** It is possible to use an encrypted [swapfile](/index.php/Swapfile "Swapfile") instead: `/etc/crypttab`  `swap      /swapfile    /dev/urandom   swap,cipher=aes-xts-plain64,size=256` 
-
 This will map `/dev/sd*X#*` to `/dev/mapper/swap` as a swap partition that can be added in `/etc/fstab` like a normal swap. If you had a non-encrypted swap partition before, do not forget to disable it - or re-use its [fstab](/index.php/Fstab "Fstab") entry by changing the device to `/dev/mapper/swap`. The default options should be sufficient for most usage. For other options see and an explanation of each column, see [crypttab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5) as well as [point cryptsetup FAQ 2.3](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup).
 
 **Warning:** All contents of the named device will be permanently **deleted**. It is dangerous to use the kernel's simple naming for a swap device, since their naming order (*e.g.* `/dev/sda`, `/dev/sdb`) changes upon each boot. Options are:

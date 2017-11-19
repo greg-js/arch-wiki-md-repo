@@ -209,7 +209,7 @@ read -r max < "$path"/max_brightness
 
 xrandr --output eDP-1 --brightness "$(luminance)"
 
-inotifywait -me modify --format * "$path"/actual_brightness | while read; do*
+inotifywait -me modify --format '' "$path"/actual_brightness | while read; do
     xrandr --output eDP-1 --brightness "$(luminance)"
 done
 

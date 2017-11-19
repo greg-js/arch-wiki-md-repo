@@ -7,226 +7,221 @@ This article covers the installation and setup of disk quota.
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Usage](#Usage)
-    *   [2.1 Journaled quota](#Journaled_quota)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Example configuration](#Example_configuration)
-*   [4 Managing](#Managing)
-    *   [4.1 Basics](#Basics)
-    *   [4.2 Copying quota settings](#Copying_quota_settings)
-        *   [4.2.1 To one or several users](#To_one_or_several_users)
-        *   [4.2.2 To all users](#To_all_users)
-    *   [4.3 Other commands](#Other_commands)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Setup the filesystem](#Setup_the_filesystem)
+    *   [2.2 Create quota index](#Create_quota_index)
+*   [3 Usage](#Usage)
+    *   [3.1 Enable quota for user/group](#Enable_quota_for_user.2Fgroup)
+    *   [3.2 Specify a grace period](#Specify_a_grace_period)
+    *   [3.3 Reports](#Reports)
+    *   [3.4 Copy quota settings](#Copy_quota_settings)
+        *   [3.4.1 To one or several users](#To_one_or_several_users)
+        *   [3.4.2 To groups](#To_groups)
+        *   [3.4.3 To all users](#To_all_users)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Quota warnings](#Quota_warnings)
+    *   [4.2 Stats](#Stats)
 *   [5 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [quota-tools](https://www.archlinux.org/packages/?name=quota-tools) package.
 
-## Usage
+## Configuration
 
-First, edit `/etc/fstab` to enable the quota mount option(s) on selected file systems. For example, edit an entry
+### Setup the filesystem
 
-```
-/dev/sda1 /home ext4 defaults 1 1
+Edit [fstab](/index.php/Fstab "Fstab") to enable the quota mount option(s) on selected file systems, e.g.:
 
-```
+ `/etc/fstab`  `/dev/sda3 /home ext4 defaults**,usrquota** 0 2` 
 
-as follows:
+To additionally enable the group quota mount option:
 
-```
-/dev/sda1 /home ext4 defaults**,usrquota** 1 1
+ `/etc/fstab`  `/dev/sda3 /home ext4 defaults**,usrquota,grpquota** 0 2` 
 
-```
+If supported by the [kernel](/index.php/Kernel "Kernel") and [file system](/index.php/File_systems#Journaling "File systems") it is recommended to use journaled quota instead:
 
-or, to additionally enable the group quota mount option:
+ `/etc/fstab`  `/dev/sda3 /home ext4 defaults**,usrjquota=aquota.user,jqfmt=vfsv1** 0 2` 
 
-```
-/dev/sda1 /home ext4 defaults**,usrquota,grpquota** 1 1
+Append `grpjquota=aquota.group` to enable group quota.
 
-```
-
-**Note:** These quota options are possibly obsolete. See [#Journaled quota](#Journaled_quota).
-
-After adding the options remount
+Remount the partition to apply the change:
 
 ```
  # mount -vo remount /home
 
 ```
 
-and create the quota index:
+### Create quota index
+
+To create the quota index for `/home`:
 
 ```
- # quotacheck -vgum /home
+ # quotacheck -vucm /home
 
 ```
 
-If you added quota options for more partitions, you may also use `quotacheck -vguma` as root.
+Append the `-g` parameter to also create a group index.
+
+To enable disk quotas for the desired file system:
+
+```
+# quotaon -v /home
+
+```
+
+To disable disk quotas for the file system:
+
+```
+# quotaoff -v /home
+
+```
+
+## Usage
+
+### Enable quota for user/group
 
 **Tip:**
 
-If the command returns with
+*   To find out how many 1 kilobyte blocks are there for a partition use `$ df`.
+*   You may use a online bytes converter to calculate the correct amount of blocks [[1]](http://whatsabyte.com/P1/byteconverter.htm).
+*   The command `# setquota` may be used as an alternative of `# edquota` [[2]](https://gehrcke.de/2013/05/setting-up-quotas-on-a-local-linux-file-system/).
 
-*   `[...]Quotafile $FILE was probably truncated. Cannot save quota settings...`, you can try removing the previously created files `aquota*`.
-*   `quotacheck: Mountpoint (or device) /home not found or has no quota enabled. quotacheck: Cannot find filesystem to check or filesystem not mounted with quota option.` and you are using a custom kernel, make sure quota support is enabled in your kernel.
+**Note:** Block size is statically set to 1k regardless of filesystem block size [[3]](http://stackoverflow.com/questions/2506288/detect-block-size-for-quota-in-linux/2506311#2506311).
 
-If it continues to throw an error, you can additionally try to use options `"-F vfsold` or `-F vfsv0` afterwards. Note that as of kernel 3.1.6-1, Arch does not support `vfsv1` anymore.
+Quotas are configured using `# edquota` that will be opened in the default configured text editor:
 
-If trying to remount the filesystem returns with
-
-*   `mount: /home not mounted already, or bad option` you might have enabled quotas already, run `quotaoff /home` as root and the remount again.
-
-Finally, enable quotas:
-
+ `# edquota *user*` 
 ```
-# quotaon -av
-
-```
-
-After this configuration the systemd units `quotaon.service` and `systemd-quotacheck.service` will perform the disk quota check without further configuration at least each boot.[[1]](https://bugs.archlinux.org/task/31391) Both are started automatically, if `/etc/fstab` quota mount options are parsed.
-
-### Journaled quota
-
-Enabling journaling for disk quota adds the same benefits journalled file systems do for forced shutdowns, meaning that data is less likely to become corrupt.
-
-Setting up journaled quota is the same as above, except for the mount options:
-
-```
-/dev/sda1 /home ext4 defaults**,usrjquota=aquota.user,jqfmt=vfsv1** 1 1
-
-```
-
-or additionally, enable the group quota mount option;
-
-```
-/dev/sda1 /home ext4 defaults**,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv1** 1 1
-
-```
-
-The vfsv1 format is necessary for supporting quotas more than 4TB. You need at least kernel 2.6.33 for quota_v2 support. If your kernel is older, you have to use vfsv0.
-
-## Configuration
-
-**Tip:** To find out how many 1K blocks are there for a partition use `df`
-
-Replace `$USER` as appropriate:
-
- `# edquota *$USER*` 
-```
-Disk quotas for user **$USER** (uid 1000):
+Disk quotas for user *user* (uid 1000):
   Filesystem                   blocks       soft       hard     inodes     soft     hard
-  /dev/sda1                      1944          0          0        120        0        0
+  /dev/sda3                        24          0          0          6        0        0
 
 ```
-
-**Note:** to edit group quotas, use `edquota -g $GROUP`.
 
 	blocks
 
-	Number of 1k blocks currently used by `$USER`.
-
-**Note:** Block size is statically set to 1k regardless of filesystem block size. [Explanation](http://stackoverflow.com/questions/2506288/detect-block-size-for-quota-in-linux/2506311#2506311)
-
-	inodes
-
-	Number of entries by `$USER` in directory file.
+	Indicates number of 1k blocks currently used by the user/group.
 
 	soft
 
-	Max number of blocks/inodes `$USER` may have on partition before warning is issued and grace period countdown begins. If set to "0" (zero) then no limit is enforced.
+	Indicates max number of blocks for the user/group before a warning is issued and grace period countdown begins. If set to "0" (zero) then no limit is enforced.
 
 	hard
 
-	Max number of blocks/inodes `$USER` may have on partition. If set to "0" (zero) then no limit is enforced.
+	Indicates max number of blocks for the user/group can use. If maximum amount has been reached, no further disk space can be used. If set to "0" (zero) then no limit is enforced.
 
-Configure the `soft` limit grace period:
+	inodes
+
+	Indicates the current inodes amount used by the user/group.
+
+	soft
+
+	Indicates the soft inode limit for the user/group.
+
+	hard
+
+	Indicates the hard inode limit for the user/group.
+
+Consider the following configuration for *ftpuser1*:
+
+ `# edquota *ftpuser1*` 
+```
+Disk quotas for user ftpuser1 (uid *1000*):
+  Filesystem                   blocks       soft       hard     inodes     soft     hard
+  /dev/sda3                        24    1000000    1048576          6        0        0
 
 ```
-# edquota -t
 
-```
+In this case if *ftpuser1* uses over 976MB of space a warning will be issued. If the hard limit of 1TB has been reached the user will be unable to write any more data.
 
-### Example configuration
-
-Consider the following configuration for *user1*:
-
- `# edquota *user1*` 
-```
-Disk quotas for user *user1* (uid *1000*):
-Filesystem      blocks      soft      hard      inodes      soft      hard
-*/dev/sda1*       695879      10000     15000     6741        0         0
-
-```
-
-The `soft` limit means that once *user1* uses over 10MB of space a warning gets issues, and after the time set by `edquota -t` the soft limit gets enforced.
-
-The `hard` limit is stricter, so to speak; a user can never write more data once this limit is reached.
+See [#Specify a grace period](#Specify_a_grace_period) to give users a specific amount of time to reduce storage usage when they hit their soft limit.
 
 **Warning:** The `hard` limit applies to all files written by and for the respective user/group, including temporary files by started applications, which may crash at this point.
 
-**Tip:** If a problem is encountered with the defined quotas, you should first try to correct them with `edquota *user1*` from a root console. Alternatively, `quotaoff -a` as root disables all quotas at runtime and the `quotacheck.mode=skip` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") can be used at boot to temporarily disable the `systemd-quotacheck.service`.
+### Specify a grace period
 
-## Managing
+To give current users some time to reduce their file usage, a grace period can be configured. This specifies the allowed time a user/group can exceed their soft limit and while under their hard limit:
 
-Check for quota limits and advanced operations.
-
-### Basics
-
-Use this command to check for quotas on a specific partition:
-
+ `# edquota -t` 
 ```
-# repquota /home
+Grace period before enforcing soft limits for users:
+Time units may be: days, hours, minutes, or seconds
+  Filesystem             Block grace period     Inode grace period
+  /dev/sda3              7days                  7days
 
 ```
 
-Use this command to check for all quotas that apply to a user:
+The grace period can be set in seconds, minutes, hours, days, weeks or months.
+
+### Reports
+
+Shows all configured quotas:
 
 ```
-# quota -u $USER
-
-```
-
-for groups;
-
-```
-# quota -g $GROUP
+# repquota -a
 
 ```
 
-### Copying quota settings
+Shows quotas on a specific partition:
+
+```
+# repquota */home*
+
+```
+
+Show quotas that apply to a [user](/index.php/User "User")/[group](/index.php/Group "Group"):
+
+```
+# quota -u *user*
+
+```
+
+```
+# quota -g *group*
+
+```
+
+### Copy quota settings
 
 #### To one or several users
 
-To copy quota settings from `*user1*` to `*user2*`, use this:
+To copy quota settings from `*user1*` to `*user2*`:
 
 ```
 # edquota -p *user1* *user2*
 
 ```
 
-To copy quota settings to several other users, append `*user3*`, `*user4*`, and so on, to the command.
+To copy quota settings to several other users, append `*user3*` `*user4*` ...
 
-Use `edquota -g -p *group1* *group2* ...` to copy settings for groups.
+#### To groups
+
+To copy quota settings from `*group1*` to `*group2*`:
+
+```
+# edquota -g -p *group1* *group2*
+
+```
 
 #### To all users
 
-The idea is to modify the quota settings for one user and copy the setting to all other users. Set the quota for `*user1*` and apply the quota to users with a UID greater than 999.
+The idea is to modify the quota settings for one user and copy the setting to all other users. Set the quota for `*user1*` and apply the quota to users with a UID greater than 999:
 
 ```
 # edquota -p *user1* $(awk -F: '$3 > 999 {print $1}' /etc/passwd)
 
 ```
 
-### Other commands
+## Tips and tricks
 
-There are several useful commands:
+### Quota warnings
 
-*   `repquota -a` shows the status on disk usage
-*   `warnquota` can be used to warn the users about their quota, configuration in `/etc/warnquota.conf`
-*   `setquota` is a non-interactive quota setting - useful for scripting.
+The command `warnquota` can be used to warn the users about their quota. Configuration is available in `/etc/warnquota.conf`.
 
-Lasty, `quotastats` is used to give thorough information about the quota system:
+### Stats
+
+The command `quotastats` can be used to give more information about the current quota usage:
 
  `$ quotastats` 
 ```
@@ -249,3 +244,4 @@ Number of in use dquot entries (user/group): -1946
 *   [http://www.sf.net/projects/linuxquota/](http://www.sf.net/projects/linuxquota/)
 *   [http://www.yolinux.com/TUTORIALS/LinuxTutorialQuotas.html](http://www.yolinux.com/TUTORIALS/LinuxTutorialQuotas.html)
 *   [RHEL7: Disk Quotas](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/ch-disk-quotas.html)
+*   [https://www.digitalocean.com/community/tutorials/how-to-enable-user-and-group-quotas](https://www.digitalocean.com/community/tutorials/how-to-enable-user-and-group-quotas)

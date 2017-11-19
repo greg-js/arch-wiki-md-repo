@@ -2,25 +2,24 @@
 
 С домашней страницы [проекта](https://aria2.github.io/):
 
-	*aria2 - это легкая мультипротокольная и многопоточная консольная утилита. Она поддерживает [HTTP](https://en.wikipedia.org/wiki/ru:HTTP и [Metalink](https://en.wikipedia.org/wiki/ru:Metalink "wikipedia:ru:Metalink"). aria2 можно управлять с помощью встроенных интерфейсов [JSON-RPC](https://en.wikipedia.org/wiki/ru:JSON-RPC "wikipedia:ru:JSON-RPC") и [XML-RPC](https://en.wikipedia.org/wiki/ru:XML-RPC "wikipedia:ru:XML-RPC").*
+	*aria2 - это легкая мультипротокольная и многопоточная консольная утилита загрузки. Она поддерживает [HTTP](https://en.wikipedia.org/wiki/ru:HTTP и [Metalink](https://en.wikipedia.org/wiki/ru:Metalink "wikipedia:ru:Metalink"). aria2 можно управлять с помощью встроенных интерфейсов [JSON-RPC](https://en.wikipedia.org/wiki/ru:JSON-RPC "wikipedia:ru:JSON-RPC") и [XML-RPC](https://en.wikipedia.org/wiki/ru:XML-RPC "wikipedia:ru:XML-RPC").*
 
 ## Contents
 
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
 *   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
     *   [2.1 aria2.conf](#aria2.conf)
-    *   [2.2 Пример .bash_alias (псевдонимов Bash)](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_.bash_alias_.28.D0.BF.D1.81.D0.B5.D0.B2.D0.B4.D0.BE.D0.BD.D0.B8.D0.BC.D0.BE.D0.B2_Bash.29)
-    *   [2.3 Пример aria2.conf](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_aria2.conf)
-        *   [2.3.1 Детали опций](#.D0.94.D0.B5.D1.82.D0.B0.D0.BB.D0.B8_.D0.BE.D0.BF.D1.86.D0.B8.D0.B9)
-            *   [2.3.1.1 Пример входного файла #1](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_.D0.B2.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_.231)
-            *   [2.3.1.2 Пример входного файла #2](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_.D0.B2.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_.232)
-        *   [2.3.2 Дополнительные замечания](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F)
-    *   [2.4 Пример aria2.rapidshare](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_aria2.rapidshare)
-        *   [2.4.1 Детали опций](#.D0.94.D0.B5.D1.82.D0.B0.D0.BB.D0.B8_.D0.BE.D0.BF.D1.86.D0.B8.D0.B9_2)
-        *   [2.4.2 Дополнительные замечания](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F_2)
-    *   [2.5 Пример aria2.bittorrent](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_aria2.bittorrent)
-        *   [2.5.1 Детали опций](#.D0.94.D0.B5.D1.82.D0.B0.D0.BB.D0.B8_.D0.BE.D0.BF.D1.86.D0.B8.D0.B9_3)
-    *   [2.6 Пример aria2.daemon](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_aria2.daemon)
+    *   [2.2 Пример aria2.conf](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_aria2.conf)
+        *   [2.2.1 Детали опций](#.D0.94.D0.B5.D1.82.D0.B0.D0.BB.D0.B8_.D0.BE.D0.BF.D1.86.D0.B8.D0.B9)
+            *   [2.2.1.1 Пример входного файла #1](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_.D0.B2.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_.231)
+            *   [2.2.1.2 Пример входного файла #2](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_.D0.B2.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_.232)
+        *   [2.2.2 Дополнительные замечания](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F)
+    *   [2.3 Пример aria2.rapidshare](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_aria2.rapidshare)
+        *   [2.3.1 Описание опций](#.D0.9E.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D0.BF.D1.86.D0.B8.D0.B9)
+        *   [2.3.2 Дополнительные замечания](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F_2)
+    *   [2.4 Пример aria2.bittorrent](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_aria2.bittorrent)
+        *   [2.4.1 Описание опций](#.D0.9E.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D0.BF.D1.86.D0.B8.D0.B9_2)
+    *   [2.5 Пример aria2.daemon](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_aria2.daemon)
 *   [3 Интерфейс](#.D0.98.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81)
     *   [3.1 Веб-интерфейсы](#.D0.92.D0.B5.D0.B1-.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D1.8B)
     *   [3.2 Другие интерфейсы](#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D1.8B)
@@ -39,13 +38,13 @@
 
 Также можете поставить [aria2-systemd](https://github.com/GutenYe/systemd-units/tree/master/aria2) для использования aria2 в качестве [демона](/index.php/Daemon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Daemon (Русский)").
 
-**Note:** Для запуска пакета aria2 используется команда `aria2c`. Данное наименование было сохранено для обратной совместимости.
+**Примечание:** Для запуска пакета aria2 используется команда `aria2c`. Данное наименование было сохранено для обратной совместимости.
 
 ## Настройка
 
 ### aria2.conf
 
-aria2 смотрит файл `$XDG_CONFIG_HOME/aria2/aria2.conf` для установки глобальных параметров по умолчанию. Это поведение может быть изменено переключателем `--conf-path`:
+aria2 использует файл `$XDG_CONFIG_HOME/aria2/aria2.conf` для установки глобальных параметров по умолчанию. Это поведение может быть изменено переключателем `--conf-path`:
 
 *   Скачайте `aria2.example.rar` используя параметры, указанные в файле настроек `/file/aria2.rapidshare`
 
@@ -56,7 +55,7 @@ $ aria2c --conf-path=/file/aria2.rapidshare http://rapidshare.com/files/12345678
 
 Если существует `$XDG_CONFIG_HOME/aria2/aria2.conf` и параметры, указанные в `/file/aria2.rapidshare` нужны, то переключатель `--no-conf` должен быть добавлен к команде:
 
-*   Не использовать файл настроек по умолчанию и скачать `aria2.example.rar` используя параметры, указанные в файле настроек `/file/aria2.rapidshare`
+*   Не использовать файл настроек по умолчанию и скачать `aria2.example.rar`, используя параметры, указанные в файле настроек `/file/aria2.rapidshare`
 
 ```
 $ aria2c --no-conf --conf-path=/file/aria2.rapidshare http://rapidshare.com/files/12345678/aria2.example.rar
@@ -67,14 +66,6 @@ $ aria2c --no-conf --conf-path=/file/aria2.rapidshare http://rapidshare.com/file
 
 ```
 $ touch $XDG_CONFIG_HOME/aria2/aria2.conf
-
-```
-
-### Пример .bash_alias (псевдонимов Bash)
-
-```
-alias down='aria2c --conf-path=${HOME}/.aria2/aria2.conf'
-alias rapid='aria2c --conf-path=/file/aria2.rapidshare'
 
 ```
 
@@ -99,13 +90,13 @@ $ aria2c dir=${HOME}/Desktop file-allocation=none input-file=${HOME}/.aria2/inpu
 
 ```
 
-**Примечание:** The example aria2.conf above may incorrectly use the $HOME variable. Some users have reported the curly brace syntax to explicitly create a separate ${HOME} subdirectory in the aria2 working directory. Such a directory may be difficult to traverse as bash will consider it to be the $HOME environment variable. For now, it is recommended to use absolute path names in aria2.conf.
+**Примечание:** Пример файла aria2.conf, приведенный выше, может неверно использовать переменную $HOME. Некоторые пользователи сообщали о том, что использование фигурных скобок приводит к созданию отдельной поддиректории ${HOME} в рабочем каталоге aria2\. Такую директорию может быть сложно обработать, так как bash будет принимать ее за переменную окружения $HOME. В текущий момент рекомендуется использовать абсолютные пути в aria2.conf.
 
 #### Детали опций
 
 	`continue`
 
-	Продолжить загрузку частично загруженного файла.
+	Продолжить загрузку частично загруженного файла, если существует соответствующий файл управления.
 
 	`dir=${HOME}/Desktop`
 
@@ -117,7 +108,7 @@ $ aria2c dir=${HOME}/Desktop file-allocation=none input-file=${HOME}/.aria2/inpu
 
 	`input-file=${HOME}/.aria2/input.conf`
 
-	Скачать список построчно, или разделённых TAB'ом URI, найденных в `$XDG_CONFIG_HOME/aria2/input.conf`
+	Скачать список построчно, или разделённых TAB'ом URI, найденных в `./aria2/input.conf`
 
 	`log-level=warn`
 
@@ -134,8 +125,6 @@ $ aria2c dir=${HOME}/Desktop file-allocation=none input-file=${HOME}/.aria2/inpu
 	`on-download-complete=exit`
 
 	Выполнить команду `exit` и выйти из оболочки, когда сессия загрузки завершена.
-
-Для больших опций, смотрите [Основные параметры (Рус)](http://aria2.sourceforge.net/manual/ru/html/aria2c.html#id3).
 
 ##### Пример входного файла #1
 
@@ -164,9 +153,9 @@ http://aria2.net/files/stable/aria2-1.10.0/aria2-1.10.0.tar.bz2
 
 	 `--file-allocation=falloc`
 
-	Рекомендуется для новых файловых систем, таких как ext4 (с поддержкой экстентов), Btrfs, или XFS, он выделяет большие файлы (ГБ) практически мгновенно. Не используйте falloc с наследием файловых систем, таких как ext3, prealloc потребляет примерно такое же количество времени в качестве стандартного распределения, возможна блокировка процесса aria2\. Подробнее о [возможных параметрах и рекомендациях](http://aria2.sourceforge.net/manual/ru/html/aria2c.html#cmdoption--file-allocation).
+	Рекомендуется для новых файловых систем, таких как ext4 (с поддержкой экстентов), btrfs или xfs, потому что он выделяет большие файлы (ГБ) практически мгновенно. Не используйте falloc с устаревшими файловыми системами, такими как ext3, так как prealloc потребляет примерно такое же количество времени как и стандартное распределение, возможна блокировка процессов загрузки aria2.
 
-**Совет:** Также смотрите `aria2c --help=#all` и страницу man aria2.
+**Совет:** Для ознакомления с полным перечнем опций настройки смотрите `aria2c --help=#all` и страницу документации aria2.
 
 ### Пример aria2.rapidshare
 
@@ -184,15 +173,15 @@ summary-interval=120
 
 ```
 
-#### Детали опций
+#### Описание опций
 
 	`http-user=USER_NAME`
 
-	Установите HTTP [имя пользователя](https://en.wikipedia.org/wiki/User_(computing) как USER_NAME для входа в систему защищённого паролем. Это влияет на все [URIs](https://en.wikipedia.org/wiki/ru:Uniform_Resource_Identifier "wikipedia:ru:Uniform Resource Identifier").
+	Устанавливает HTTP [имя пользователя](https://en.wikipedia.org/wiki/User_(computing) как USER_NAME для входа в систему защищённую паролем. Это влияет на все [URIs](https://en.wikipedia.org/wiki/ru:Uniform_Resource_Identifier "wikipedia:ru:Uniform Resource Identifier").
 
 	`http-passwd=PASSWORD`
 
-	Установите HTTP [Пароль](https://en.wikipedia.org/wiki/ru:%D0%9F%D0%B0%D1%80%D0%BE%D0%BB%D1%8C "wikipedia:ru:Пароль") как PASSWORD для входа в систему защищённого паролем. то влияет на все URIs.
+	Устанавливает HTTP [Пароль](https://en.wikipedia.org/wiki/ru:%D0%9F%D0%B0%D1%80%D0%BE%D0%BB%D1%8C "wikipedia:ru:Пароль") как PASSWORD для входа в систему защищённую паролем. Это влияет на все URIs.
 
 	`allow-overwrite=true`
 
@@ -204,7 +193,7 @@ summary-interval=120
 
 	`file-allocation=falloc`
 
-	Указать метод резервирования места для файла [posix_fallocate()](http://www.kernel.org/doc/man-pages/online/pages/man2/fallocate.2.html). (По умолчанию: prealloc) [Подробнее о возможных значениях](http://aria2.sourceforge.net/manual/ru/html/aria2c.html#cmdoption--file-allocation).
+	Указать метод резервирования места для файла [posix_fallocate()](http://www.kernel.org/doc/man-pages/online/pages/man2/fallocate.2.html). (По умолчанию: prealloc)
 
 	`enable-http-pipelining=true`
 
@@ -258,7 +247,7 @@ seed-time=240
 
 ```
 
-#### Детали опций
+#### Описание опций
 
 	`bt-seed-unverified=false`
 
@@ -307,7 +296,7 @@ rpc-passwd=rpcpass
 
 ## Интерфейс
 
-**Примечание:** Настройки осуществляемые во фронтэндах не влияют на собственные настройки `aria2`, и неясно, повторяют ли различные интерфейсы настройку `aria2`, если обычная была сделана. Пользователи должны гарантировать, что их желаемые параметры эффективно реализуется в рамках отдельных утилит, и что они хранятся постоянно (Uget, например, имеет командную строку своего собственного `aria2`, который прилипает после перезагрузки)
+**Примечание:** Настройки осуществляемые во фронтэндах не влияют на собственные настройки `aria2`, и неясно, повторяют ли различные интерфейсы настройку `aria2`, если обычная была сделана. Пользователи должны гарантировать, что их желаемые параметры эффективно реализуется в рамках отдельных утилит, и что они хранятся постоянно (Uget, например, имеет командную строку своего собственного `aria2`, который сохраняется после перезагрузки)
 
 ### Веб-интерфейсы
 
@@ -337,7 +326,7 @@ rpc-passwd=rpcpass
 
 	[https://github.com/baskerville/diana](https://github.com/baskerville/diana) || [diana-git](https://aur.archlinux.org/packages/diana-git/)
 
-*   **downloadm** — Загрузки ускоритель/менеджер использующий aria2c как бакэнд.
+*   **downloadm** — Ускоритель/менеджер загрузки использующий aria2c как бакэнд.
 
 	[http://sourceforge.net/projects/downloadm/](http://sourceforge.net/projects/downloadm/) || [downloadm](https://aur.archlinux.org/packages/downloadm/)
 
@@ -356,16 +345,6 @@ rpc-passwd=rpcpass
 *   **yaner** — GTK+ интерфейс для менеджера загрузок aria2.
 
 	[http://iven.github.com/Yaner](http://iven.github.com/Yaner) || [yaner-git](https://aur.archlinux.org/packages/yaner-git/)
-
-Это удобно для добавления функции монитора на основе diana в файле настроек оболочки:
-
-```
-da(){
-watch -ctn 1 "(echo -e '\033[32mGID\t\t Name\t\t\t\t\t\t\t%\tDown\tSize\tSpeed\tUp\tS/L\tTime\033[36m'; \
-diana list| cut -c -112; echo -e '\033[37m'; diana stats)"
-}
-
-```
 
 ## Советы и хитрости
 

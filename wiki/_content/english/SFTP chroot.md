@@ -41,6 +41,17 @@ Access files with *sftp* or [SSHFS](/index.php/SSHFS "SSHFS"). Many standard [FT
 
 ### Setup the filesystem
 
+**Note:**
+
+*   Readers may select a file access scheme on their own. For example, optionally create a subdirectory for an incoming (writable) space and/or a read-only space. This need not be done directly under `/srv/ssh/jail` - it can be accomplished on the live partition which will be mounted via a bind mount as well.
+*   It is also possible chrooting into `/home` directory thus skipping the usage of bind, however the desired user home directory should be owned by root:
+
+```
+# chmod root:root /home/<username>
+# chmod 0755 /home/<username>
+
+```
+
 Bind mount the live [filesystem](/index.php/Filesystem "Filesystem") to be shared to this directory. In this example, `/mnt/data/share` is to be used, owned by [user](/index.php/User "User") `root` and has octal [permissions](/index.php/Permissions "Permissions") of `755`:
 
 ```
@@ -58,8 +69,6 @@ Add entries to [fstab](/index.php/Fstab "Fstab") to make the bind mount survive 
 
 ```
 
-**Note:** Readers may select a file access scheme on their own. For example, optionally create a subdirectory for an incoming (writable) space and/or a read-only space. This need not be done directly under `/srv/ssh/jail` - it can be accomplished on the live partition which will be mounted via a bind mount as well.
-
 ### Create an unprivileged user
 
 **Note:** You do not need to create a group, it is possible to use `Match User` instead of `Match Group`.
@@ -71,24 +80,17 @@ Create the `sftponly` [group](/index.php/Group "Group"):
 
 ```
 
-Create a [user](/index.php/User "User") that uses `sftponly` as main group:
+Create a [user](/index.php/User "User") that uses *sftponly* as main group and has [shell](/index.php/Shell "Shell") login access denied:
 
 ```
-# useradd -g sftponly -d */srv/ssh/jail* *username*
+# useradd -g sftponly -s /usr/bin/nologin -d */srv/ssh/jail* *username*
 
 ```
 
-Set a (complex) password - to prevent `account is locked` error:
+Set a (complex) password to prevent `account is locked` error:
 
 ```
 # passwd *username*
-
-```
-
-You may deny [shell](/index.php/Shell "Shell") login access for the user:
-
-```
-# usermod -s /sbin/nologin *username*
 
 ```
 

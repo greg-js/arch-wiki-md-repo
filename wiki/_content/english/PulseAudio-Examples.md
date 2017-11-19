@@ -342,8 +342,8 @@ Make sure to replace alsa_output.pci-0000_05_00.0.analog-surround-40 with the so
 Similar to the example above, you can also split a 7.1 configuration into 5.1 surround and stereo output devices. Set your card to 7.1 mode, then add the following lines to `/etc/pulse/default.pa`:
 
 ```
- load-module module-remap-sink sink_name=Surround properties=device.description="Surround" remix=no master=alsa_output.pci-0000_00_14.2.analog-surround-71 channels=6 master_channel_map=front-left,front-right,rear-left,rear-right,front-center,lfe channel_map=front-left,front-right,rear-left,rear-right,front-center,lfe
- load-module module-remap-sink sink_name=Stereo properties=device.description="Stereo" remix=no master=alsa_output.pci-0000_00_14.2.analog-surround-71 channels=2 master_channel_map=side-left,side-right channel_map=front-left,front-right
+ load-module module-remap-sink sink_name=Surround sink_properties="device.description='Surround'" remix=no master=alsa_output.pci-0000_00_14.2.analog-surround-71 channels=6 master_channel_map=front-left,front-right,rear-left,rear-right,front-center,lfe channel_map=front-left,front-right,rear-left,rear-right,front-center,lfe
+ load-module module-remap-sink sink_name=Stereo sink_properties="device.description='Stereo'" remix=no master=alsa_output.pci-0000_00_14.2.analog-surround-71 channels=2 master_channel_map=side-left,side-right channel_map=front-left,front-right
 
 ```
 
@@ -744,7 +744,7 @@ To disable the pulseaudio daemon completely, and thereby preventing it from star
 Remap a stereo input-sink to a mono sink by creating a virtual sink. It would be useful if you only have one speaker. Add to `/etc/pulse/default.pa`:
 
 ```
-load-module module-remap-sink master=alsa_output.pci-0000_00_1f.5.analog-stereo sink_name=mono properties=device.description="Mono" channels=2 channel_map=mono,mono
+load-module module-remap-sink master=alsa_output.pci-0000_00_1f.5.analog-stereo sink_name=mono sink_properties="device.description='Mono'" channels=2 channel_map=mono,mono
 # Optional: Select new remap as default
 set-default-sink mono
 

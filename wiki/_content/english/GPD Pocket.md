@@ -4,15 +4,17 @@ Notes to get Arch Linux on the [GPD Pocket](https://www.indiegogo.com/projects/g
 
 *   [1 Specs](#Specs)
 *   [2 Installation](#Installation)
-    *   [2.1 Power and Fan](#Power_and_Fan)
-    *   [2.2 WiFi](#WiFi)
-    *   [2.3 Bluetooth](#Bluetooth)
-    *   [2.4 Xorg](#Xorg)
-    *   [2.5 Mouse Scroll Emulation](#Mouse_Scroll_Emulation)
-    *   [2.6 Sound](#Sound)
-    *   [2.7 SDDM](#SDDM)
-    *   [2.8 Touchscreen Gestures](#Touchscreen_Gestures)
-    *   [2.9 KDE Display](#KDE_Display)
+    *   [2.1 Backlight and Early KMS](#Backlight_and_Early_KMS)
+    *   [2.2 Power and Fan](#Power_and_Fan)
+    *   [2.3 WiFi](#WiFi)
+    *   [2.4 Bluetooth](#Bluetooth)
+    *   [2.5 Xorg](#Xorg)
+    *   [2.6 Mouse Scroll Emulation](#Mouse_Scroll_Emulation)
+    *   [2.7 Sound](#Sound)
+    *   [2.8 SDDM](#SDDM)
+    *   [2.9 Touchscreen Gestures](#Touchscreen_Gestures)
+    *   [2.10 KDE Display](#KDE_Display)
+    *   [2.11 GNOME Wayland / GDM](#GNOME_Wayland_.2F_GDM)
 *   [3 Known Issues](#Known_Issues)
 *   [4 Acknowledgements:](#Acknowledgements:)
 
@@ -41,6 +43,12 @@ Server = https://github.com/njkli/$repo/releases/download/$arch
 ```
 
 Install fan control and custom kernel and more using `# pacman -S --force gpd-pocket-support`.
+
+### Backlight and Early KMS
+
+Backlight control requires **pwm_lpss** and **pwm_lpss_platform** kernel modules, which is included in the **linux-jwrdegoede** (AKA. Hans) kernel, but not in the vanilla kernel up to 4.14-2\. Hans kernel is a dependency of gpd-pocket-support.
+
+If you wish to setup [KMS in early userspace](https://wiki.archlinux.org/index.php/Kernel_mode_setting#Early_KMS_start), remember to include the above 2 modules together with **i915**, otherwise these modules would not load afterwards.
 
 ### Power and Fan
 
@@ -149,8 +157,8 @@ Copy chtrt5645.conf and HiFi.conf from [here](https://github.com/nexus511/gpd-ub
  `/etc/pulse/default.pa` 
 ```
 set-card-profile alsa_card.platform-cht-bsw-rt5645 HiFi
-set-default-sink alsa_output.platform-cht-bsw-rt5645.HiFi__hw_chtrt5645__sink  
-set-sink-port alsa_output.platform-cht-bsw-rt5645.HiFi__hw_chtrt5645__sink [Out] Speaker  
+set-default-sink alsa_output.platform-cht-bsw-rt5645.HiFi__hw_chtrt5645_0__sink  
+set-sink-port alsa_output.platform-cht-bsw-rt5645.HiFi__hw_chtrt5645_0__sink [Out] Speaker  
 
 ```
 
@@ -184,9 +192,53 @@ Install [touchegg](https://aur.archlinux.org/packages/touchegg/) then copy confi
 
 In System Settings > Display and Monitor change Orientation to 90° Clockwise, and Scale Display to a comfortable size.
 
+### GNOME Wayland / GDM
+
+Edit ~/.config/monitors.xml (this file might not be present by default)
+
+ `~/.config/monitors.xml` 
+```
+<monitors version="2">
+  <configuration>
+    <logicalmonitor>
+      <x>0</x>
+      <y>0</y>
+      <scale>2</scale>
+      <primary>yes</primary>
+      <transform>
+        <rotation>right</rotation>
+        <flipped>no</flipped>
+      </transform>
+      <monitor>
+        <monitorspec>
+          <connector>DSI-1</connector>
+          <vendor>unknown</vendor>
+          <product>unknown</product>
+          <serial>unknown</serial>
+        </monitorspec>
+        <mode>
+          <width>1200</width>
+          <height>1920</height>
+          <rate>60.384620666503906</rate>
+        </mode>
+      </monitor>
+    </logicalmonitor>
+  </configuration>
+</monitors>
+
+```
+
+This sets the correct rotation (`<rotation>right</rotation>`) and a scale factor of 2 (`<scale>2</scale>`). For fractional scaling, see [HiDPI#GNOME](/index.php/HiDPI#GNOME "HiDPI").
+
+For [GDM](/index.php/GDM "GDM"), copy the above ~/.config/monitors.xml to /var/lib/gdm/.config/monitors.xml to set the correct rotation.
+
 ## Known Issues
 
-Battery status, Wifi, and Bluetooth do not work on Arch Kernel 4.12.10-1 use Hans Kernel.
+Battery status, screen brightness control, Wifi, and Bluetooth do not work on Arch Kernel 4.12.10-1\. Use Hans kernel.
+
+Battery status, screen brightness control, and Bluetooth do not work on Arch Kernel 4.13.12-1\. Use Hans kernel.
+
+Screen brightness control, and Bluetooth do not work on Arch Kernel 4.14-2\. Use Hans kernel.
 
 ## Acknowledgements:
 

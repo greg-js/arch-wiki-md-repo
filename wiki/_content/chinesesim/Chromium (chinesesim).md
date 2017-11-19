@@ -80,13 +80,6 @@
 
 *Pepper Flash* 是使用了新的 Pepper plugin API 的 Flash Player 插件。要在 Chromium 中使用，可以从包[pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash)来安装。
 
-添加以下内容 (请将版本号替换为当前最新版本) 到`~/.config/chrome-dev-flags.conf`.
-
-```
---ppapi-flash-path=/usr/lib/PepperFlash/libpepflashplayer.so --ppapi-flash-version=25.0.0.171
-
-```
-
 并且要在`chrome://settings/content`中启用Flash。
 
 ### Widevine内容解密插件

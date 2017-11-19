@@ -837,4 +837,3 @@ A setting in Windows 8/10 called "Hiberboot", "Hybrid Boot" or "Fast Boot" can p
 *   [Wikipedia:BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 *   [How to configure GRUB](http://web.archive.org/web/20160424042444/http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html#Editing_etcgrub.d05_debian_theme)
 *   [Boot with GRUB](http://www.linuxjournal.com/article/4622)
-*   [GRUB Live ISO Multiboot](https://github.com/thias/glim) - GRUB configurations for booting ISO images

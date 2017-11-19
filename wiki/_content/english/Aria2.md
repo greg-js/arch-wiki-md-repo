@@ -389,6 +389,5 @@ DLAGENTS=('ftp::/usr/bin/aria2c -UWget -s4 %u -o %o'
 
 ## See also
 
-*   [aria2 wiki](http://sourceforge.net/apps/trac/aria2/wiki) - Official site
-*   [aria2 usage examples](http://sourceforge.net/apps/trac/aria2/wiki/UsageExample) - Official site
-*   [aria2c downloader through VPN tunnel](http://gotux.net/arch-linux/aria2c-downloader-through-vpn-tunnel/) - Unofficial site
+*   [aria2 manual](https://aria2.github.io/manual/en/html/index.html) - Official site
+*   [aria2 usage examples](https://aria2.github.io/manual/en/html/aria2c.html#example) - Official site

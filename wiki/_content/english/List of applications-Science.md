@@ -136,6 +136,10 @@ See also [Wikipedia:Comparison of numerical analysis software](https://en.wikipe
 
 	[http://englab.bugfest.net](http://englab.bugfest.net) || [englab](https://aur.archlinux.org/packages/englab/)
 
+*   **[FFTW](https://en.wikipedia.org/wiki/FFTW "wikipedia:FFTW")** — A [Fast Fourier Transform](https://en.wikipedia.org/wiki/Fast_Fourier_transform "wikipedia:Fast Fourier transform") library for computing discrete Fourier transforms. Used for a wide variety of numerical applications, which includes spectral methods.
+
+	[https://www.fftw.org/](https://www.fftw.org/) || [fftw](https://www.archlinux.org/packages/?name=fftw) [fftw-mpi](https://aur.archlinux.org/packages/fftw-mpi/) [fftw-mpich](https://aur.archlinux.org/packages/fftw-mpich/)
+
 *   **[FreeMat](https://en.wikipedia.org/wiki/FreeMat "wikipedia:FreeMat")** — Matlab-like program that supports many of its functions and features a codeless interface to external C, C++, and Fortran code, further parallel distributed algorithm development (via MPI), and 3D visualization capabilities.
 
 	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://www.archlinux.org/packages/?name=freemat)

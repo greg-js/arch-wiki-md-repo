@@ -8,6 +8,8 @@
 *   [4 Extensions](#Extensions)
     *   [4.1 gd](#gd)
     *   [4.2 imagemagick](#imagemagick)
+        *   [4.2.1 using AUR](#using_AUR)
+        *   [4.2.2 using *pecl*](#using_pecl)
     *   [4.3 pthreads](#pthreads)
     *   [4.4 PCNTL](#PCNTL)
     *   [4.5 MySQL/MariaDB](#MySQL.2FMariaDB)
@@ -110,14 +112,27 @@ extension=gd.so
 
 ### imagemagick
 
-For [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) install [php-imagick](https://aur.archlinux.org/packages/php-imagick/) or install it manually using `# pecl install imagick`. The *pecl* binary is included in the [php-pear](https://aur.archlinux.org/packages/php-pear/) package. Then add
+Installation consists of installing [imagemagick](https://www.archlinux.org/packages/?name=imagemagick), its PHP extension library (`imagick.so`) and enabling this extension in PHP configuration.
+
+#### using AUR
+
+Install [php-imagick](https://aur.archlinux.org/packages/php-imagick/), [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) will be also installed as a dependency. Installing the package will automatically include this extension in PHP's configuration by creating `/etc/php/conf.d/imagick.ini`.
+
+#### using *pecl*
+
+First, install [imagemagick](https://www.archlinux.org/packages/?name=imagemagick). The *pecl* binary is included in the [php-pear](https://aur.archlinux.org/packages/php-pear/) package. After installing *pecl*, install the *imagemagick* PHP extension with
 
 ```
-extension=imagick.so
+ # pecl install imagick
 
 ```
 
-to `/etc/php/php.ini`.
+Then include this extension using
+
+```
+ # echo 'extension=imagick.so'>/etc/php/conf.d/imagick.ini
+
+```
 
 ### pthreads
 

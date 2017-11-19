@@ -127,6 +127,8 @@ Alternatively you can disable console blanking permanently using the following c
 
 ```
 
+Changing 0 (after the semicolon) to e.g. 3, will keep the screen on for 3 minutes, before entering standby mode.
+
 ### Pipe the output to a cat to see the escapes
 
 ```

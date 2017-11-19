@@ -14,8 +14,9 @@ Related articles
     *   [1.3 Starting services](#Starting_services)
     *   [1.4 Creating usershare path](#Creating_usershare_path)
     *   [1.5 Adding a user](#Adding_a_user)
-    *   [1.6 Changing Samba user's password](#Changing_Samba_user.27s_password)
-    *   [1.7 Required ports](#Required_ports)
+    *   [1.6 Listing users](#Listing_users)
+    *   [1.7 Changing Samba user's password](#Changing_Samba_user.27s_password)
+    *   [1.8 Required ports](#Required_ports)
 *   [2 Client configuration](#Client_configuration)
     *   [2.1 List Public Shares](#List_Public_Shares)
     *   [2.2 NetBIOS/WINS host names](#NetBIOS.2FWINS_host_names)
@@ -69,14 +70,9 @@ To share files with Samba, [install](/index.php/Install "Install") the [samba](h
 
 Samba is configured in `/etc/samba/smb.conf`, if this file doesn't exist smbd will fail to start.
 
-To get started you can copy the default config file from [here](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD) to
+To get started you can copy the default config file from [samba git repository](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD) to `/etc/samba/smb.conf`.
 
-```
-wget "[https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD)" -O /etc/samba/smb.conf
-
-```
-
-The available options are documented in the [smb.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) man page. Whenever you modify the file run the `testparm` command to check for syntactic errrors.
+The available options are documented in the [smb.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) man page. Whenever you modify the file run the [testparm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/testparm.1) command to check for syntactic errrors.
 
 ### Creating a share
 
@@ -167,6 +163,15 @@ If you want the new user only to be allowed to remotely access the file server s
 *   disabling SSH logons - edit `/etc/ssh/sshd_conf`, change option `AllowUsers`
 
 Also see [Security](/index.php/Security "Security") for hardening your system.
+
+### Listing users
+
+Samba users can be listed using the [pdbedit(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pdbedit.8) command:
+
+```
+# pdbedit -L -v
+
+```
 
 ### Changing Samba user's password
 
@@ -530,7 +535,7 @@ Nmap run completed -- 256 IP addresses (2 hosts up) scanned in 7.255 seconds
 
 The first result is another system; the second happens to be the client from where this scan was performed.
 
-3\. Now that systems with port 139 open are revealed, use `nmblookup` to check for NetBIOS names:
+3\. Now that systems with port 139 open are revealed, use [nmblookup(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmblookup.1) to check for NetBIOS names:
 
 ```
 $ nmblookup -A 192.168.1.1

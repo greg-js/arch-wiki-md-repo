@@ -3,6 +3,8 @@ Related articles
 *   [Advanced Linux Sound Architecture (Русский)](/index.php/Advanced_Linux_Sound_Architecture_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Advanced Linux Sound Architecture (Русский)")
 *   [Desktop notifications (Русский)](/index.php/Desktop_notifications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop notifications (Русский)")
 
+**Состояние перевода:** На этой странице представлен перевод статьи [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting"). Дата последней синхронизации: 17 ноября 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&diff=0&oldid=495356).
+
 [Volnoti](https://github.com/davidbrazdil/volnoti) - это, в соответствии с описанием на странице Github,
 
 	"*Легковесный демон сообщений об уровне громкости для GNU/Linux и иных POSIX операционных систем. Он использует GTK+ и D-Bus и должен работать с любым оконным менеджером. Основной целью было создание демона сообщений уровня громкости для легковесных оконных менеджеров таких как LXDE или XMonad. Известно, что он работает с большим списком оконных менеджеров, включая GNOME, KDE, Xfce, LXDE, XMonad, i3 и многими другими*"

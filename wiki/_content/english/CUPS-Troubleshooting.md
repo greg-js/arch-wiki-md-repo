@@ -27,10 +27,11 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [5.2 CUPS: Job is shown as complete but the printer does nothing](#CUPS:_Job_is_shown_as_complete_but_the_printer_does_nothing)
     *   [5.3 CUPS: '"foomatic-rip" not available/stopped with status 3'](#CUPS:_.27.22foomatic-rip.22_not_available.2Fstopped_with_status_3.27)
     *   [5.4 CUPS: "Filter failed"](#CUPS:_.22Filter_failed.22)
-        *   [5.4.1 Missing foomatic-db](#Missing_foomatic-db)
-        *   [5.4.2 Bad permissions](#Bad_permissions)
-        *   [5.4.3 Avahi not enabled](#Avahi_not_enabled)
-        *   [5.4.4 Out-of-date plugin](#Out-of-date_plugin)
+        *   [5.4.1 Missing ghostscript](#Missing_ghostscript)
+        *   [5.4.2 Missing foomatic-db](#Missing_foomatic-db)
+        *   [5.4.3 Bad permissions](#Bad_permissions)
+        *   [5.4.4 Avahi not enabled](#Avahi_not_enabled)
+        *   [5.4.5 Out-of-date plugin](#Out-of-date_plugin)
     *   [5.5 CUPS: prints only an empty and an error-message page on HP LaserJet](#CUPS:_prints_only_an_empty_and_an_error-message_page_on_HP_LaserJet)
     *   [5.6 HPLIP 3.13: Plugin is installed, but HP Device Manager complains it is not](#HPLIP_3.13:_Plugin_is_installed.2C_but_HP_Device_Manager_complains_it_is_not)
     *   [5.7 hp-toolbox: "Unable to communicate with device"](#hp-toolbox:_.22Unable_to_communicate_with_device.22)
@@ -55,6 +56,7 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [6.10 Printer becomes stuck after a problem](#Printer_becomes_stuck_after_a_problem)
     *   [6.11 Samsung: URF ERROR - Incomplete Session by time out](#Samsung:_URF_ERROR_-_Incomplete_Session_by_time_out)
     *   [6.12 Brother: Printer prints multiple copies](#Brother:_Printer_prints_multiple_copies)
+    *   [6.13 Regular user cannot change properties of the printer or remove certain jobs](#Regular_user_cannot_change_properties_of_the_printer_or_remove_certain_jobs)
 
 ## Introduction
 
@@ -260,6 +262,10 @@ make sure [hplip](https://www.archlinux.org/packages/?name=hplip) has been [inst
 
 A "filter failed" error can be caused by any number of issues. The CUPS error log (by default `/var/log/cups/error_log`) should record which filter failed and why.
 
+#### Missing ghostscript
+
+Install [ghostscript](https://www.archlinux.org/packages/?name=ghostscript) (`/usr/lib/cups/filter/gstoraster` needs it to run).
+
 #### Missing foomatic-db
 
 Install [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) and [foomatic-db-ppds](https://www.archlinux.org/packages/?name=foomatic-db-ppds). This fixes it in some cases.
@@ -431,3 +437,7 @@ This error is usually encountered when printing files over the network through I
 ### Brother: Printer prints multiple copies
 
 Sometimes the printer will print multiple copies of a document (for instance a MFC-9330CDW printed 10 copies). The solution is to [update the printer firmware](/index.php/CUPS/Printer-specific_problems#Updating_the_firmware "CUPS/Printer-specific problems").
+
+### Regular user cannot change properties of the printer or remove certain jobs
+
+If a regular user needs to be able to change the printers properties or manage the printer queue, the user may need to be added to the `sys` group.

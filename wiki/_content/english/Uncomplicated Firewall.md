@@ -161,7 +161,7 @@ COMMIT
 
 ## Rate limiting with ufw
 
-ufw has the ability to deny connections from an IP address that has attempted to initiate 6 or more connections in the last 30 seconds. Users should consider using this option for services such as sshd.
+ufw has the ability to deny connections from an IP address that has attempted to initiate 6 or more connections in the last 30 seconds. Users should consider using this option for services such as [SSH](/index.php/SSH "SSH").
 
 Using the above basic configuration, to enable rate limiting we would simply replace the allow parameter with the limit parameter. The new rule will then replace the previous.
 

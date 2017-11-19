@@ -77,7 +77,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 	[https://sugarlabs.org/](https://sugarlabs.org/) || [sugar](https://www.archlinux.org/packages/?name=sugar) + [sugar-fructose](https://www.archlinux.org/groups/x86_64/sugar-fructose/)
 
-*   **[Xfce](/index.php/Xfce "Xfce")** — Xfce embodies the traditional UNIX philosophy of modularity and re-usability. It consists of a number of components that provide the full functionality one can expect of a modern desktop environment, while remaining relatively light. They are packaged separately and you can pick among the available packages to create the optimal personal working environment.
+*   **[Xfce](/index.php/Xfce "Xfce")** — Xfce embodies the traditional [UNIX philosophy](https://en.wikipedia.org/wiki/UNIX_philosophy "wikipedia:UNIX philosophy") of modularity and re-usability. It consists of a number of components that provide the full functionality one can expect of a modern desktop environment, while remaining relatively light. They are packaged separately and you can pick among the available packages to create the optimal personal working environment.
 
 	[http://www.xfce.org/](http://www.xfce.org/) || [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/)
 

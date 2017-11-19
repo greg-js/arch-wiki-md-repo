@@ -59,12 +59,13 @@ Original Post: [https://bbs.archlinux.org/viewtopic.php?id=133074](https://bbs.a
 3.  BIOS/UEFI vendor: Phoenix SecureCore Tiano
 4.  Could create a working entry in UEFI Boot menu using efibootmgr.
 5.  Have not managed to launch UEFI shell.
-6.  Filesystem of UEFI System Partition : FAT16\. FAT32 does *NOT* work. More info at [https://bbs.archlinux.org/viewtopic.php?id=131149](https://bbs.archlinux.org/viewtopic.php?id=131149).
+6.  Filesystem of UEFI System Partition : FAT16 OR FAT32 with a sufficiently large ESP. FAT32 does *NOT* work with a smaller partition size. More info at [https://bbs.archlinux.org/viewtopic.php?id=131149](https://bbs.archlinux.org/viewtopic.php?id=131149).
+7.  Stub loader does not work either directly or with a boot loader such as refind. EFI boot requires a boot manager such as grub.
 
 ### Additional notes
 
 *   Works fine with MBR partition map in BIOS mode.
-*   Also works fine with GPT partition map in UEFI mode but ONLY if the EFI partition is formatted as fat 16.
+*   Also works fine with GPT partition map in UEFI mode but ONLY if the EFI partition is formatted as fat 16 OR the partition is large enough to officially support fat 32.
 *   Cannot get it to boot from a GPT disk in BIOS mode.
 *   I did not try archboot.
 

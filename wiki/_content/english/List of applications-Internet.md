@@ -620,7 +620,7 @@ See also [Wikipedia:List of FTP server software](https://en.wikipedia.org/wiki/L
 
 	[https://www.openssh.com](https://www.openssh.com) || [openssh](https://www.archlinux.org/packages/?name=openssh)
 
-#### [BitTorrent](https://en.wikipedia.org/wiki/BitTorrent "wikipedia:BitTorrent") clients
+#### BitTorrent clients
 
 See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients "wikipedia:Comparison of BitTorrent clients").
 

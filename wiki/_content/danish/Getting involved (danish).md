@@ -1,3 +1,8 @@
+Related articles
+
+*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+*   [Help:Editing](/index.php/Help:Editing "Help:Editing")
+
 I biologi er [mutualisme](https://en.wikipedia.org/wiki/Mutualism_(biology) et samarbejde mellem to organismer. Dette princip kan også bruges om proaktive og motiverede medlemmer af Arch-fællesskabet, som er interesserede i at involvere sig i udviklingen af deres yndlingsdistribution af GNU/Linux. Det kommer ikke kun dem og Arch Linux til gode, men potentielt alle fans af [fri og open source software](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software").
 
 ## Contents
@@ -46,7 +51,6 @@ If you feel capable of [editing wiki pages](/index.php/Help:Editing "Help:Editin
 Other useful pages for cleanup:
 
 *   [Requests](/index.php/ArchWiki:Requests "ArchWiki:Requests")
-*   [Reports](/index.php/ArchWiki:Reports "ArchWiki:Reports")
 *   [Broken redirects](/index.php/Special:BrokenRedirects "Special:BrokenRedirects")
 *   [Double redirects](/index.php/Special:DoubleRedirects "Special:DoubleRedirects")
 *   [Short pages](/index.php/Special:ShortPages "Special:ShortPages")

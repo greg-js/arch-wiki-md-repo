@@ -19,9 +19,9 @@ Elasticsearch requires at least OpenJDK 7, see [Java](/index.php/Java "Java").
 
 [Start/enable](/index.php/Start/enable "Start/enable") `elasticsearch.service`.
 
-Ensure Elasticsearch is running and accessible by using [curl](https://www.archlinux.org/packages/?name=curl), `curl -X GET '<protocol>://<host>:<port>'`:
+Ensure Elasticsearch is running and accessible by using [curl](https://www.archlinux.org/packages/?name=curl), `curl '<protocol>://<host>:<port>'`:
 
- `curl -X GET [http://127.0.0.1:9200](http://127.0.0.1:9200)` 
+ `curl [http://127.0.0.1:9200](http://127.0.0.1:9200)` 
 ```
 {
   "name" : "Sunder",

@@ -27,4 +27,4 @@ $ telnet localhost
 
 Try a root login to see if your configuration permits it and the security implications that implies.
 
-Hint: If you receive junk codes form a remote telnet server sending non-ascii chars with a non-unicode encoding, you might want to try [luit](https://www.archlinux.org/packages/extra/x86_64/xorg-luit/) to solve this problem.
+**Tip:** If you receive junk codes form a remote telnet server sending non-ascii chars with a non-unicode encoding, you might want to try [xorg-luit](https://www.archlinux.org/packages/?name=xorg-luit) to solve this problem.

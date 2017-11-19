@@ -42,7 +42,7 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
 *   [6 Firmware updates](#Firmware_updates)
 *   [7 Fingerprint reader](#Fingerprint_reader)
 *   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 xorg freezes at starup](#xorg_freezes_at_starup)
+    *   [8.1 xorg freezes at startup](#xorg_freezes_at_startup)
 *   [9 Notes](#Notes)
 *   [10 External links](#External_links)
 
@@ -196,7 +196,7 @@ The fingerprint reader is a Validity/Synaptics model with USB id `138a:0090`. Th
 
 ## Troubleshooting
 
-### xorg freezes at starup
+### xorg freezes at startup
 
 If Xorg freezes as soon as it starts, even before printing any logs, and you are trying to use the Intel card with the nvidia one disabled, you need to add kernel parameter `acpi_rev_override=1` as explained in [#Disable discrete GPU](#Disable_discrete_GPU) above.
 

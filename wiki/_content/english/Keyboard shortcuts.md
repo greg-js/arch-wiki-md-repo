@@ -42,22 +42,13 @@ A common idiom to remember this is "**R**eboot **E**ven **I**f **S**ystem **U**t
 *   On Lenovo laptops `SysRq` is often configured as `Fn+S`. To use it press and hold `Alt` then press `Fn+s`, **release** `Fn` and `s` still holding `Alt` followed by the keys above.
 *   You may need to press `Ctrl` along with `Alt`. So for example, full key shortcut would be `Ctrl+Alt+SysRq+b`.
 
-See [Magic SysRq key - Wikipedia](https://en.wikipedia.org/wiki/Magic_SysRq_key "wikipedia:Magic SysRq key") for more details.
-
-Other kernel keyboard shortcuts include:
-
-| Keyboard Shortcut | Description |
-| `Alt+SysRq+D` | Display all existing file locks |
-| `Alt+SysRq+F` | Summon the kernel [OOM](https://en.wikipedia.org/wiki/Out_of_memory "wikipedia:Out of memory") killer, which will kill a process to free up memory |
-| `Alt+SysRq+K` | Kill everything running in the current virtual console (VT) |
-| `Alt+SysRq+M` | Output the current memory information |
-| `Alt+SysRq+O` | Shutdown the machine |
-| `Alt+SysRq+T` | Display a list of current tasks |
-| `Alt+SysRq+N` | Resets the nice level of high and real-time priority processes |
+See [Wikipedia:Magic SysRq key](https://en.wikipedia.org/wiki/Magic_SysRq_key "wikipedia:Magic SysRq key") for more details.
 
 ### Terminal
 
 #### Virtual console
+
+See [Wikipedia:Virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console")
 
 | Keyboard Shortcut | Description |
 | `Ctrl+Alt+Del` | Reboots Computer (specified by the symlink `/usr/lib/systemd/system/ctrl-alt-del.target`) |

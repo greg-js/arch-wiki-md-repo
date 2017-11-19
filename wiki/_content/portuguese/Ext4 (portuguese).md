@@ -31,54 +31,54 @@ De [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4) (traduzido):
 
 ## Criar um novo sistema de arquivos ext4
 
-To format a partition do:
+Para formatar uma partição, faça:
 
 ```
-# mkfs.ext4 /dev/*partition*
+# mkfs.ext4 /dev/*partição*
 
 ```
 
-**Tip:** See [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) for more options; edit `/etc/mke2fs.conf` to view/configure default options.
+**Dica:** Veja [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) para mais opções; edite `/etc/mke2fs.conf` para ver/configurar as opções padrões.
 
 ### Proporção de bytes por inode
 
-From [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8):
+Traduzido de [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8):
 
-	***mke2fs** creates an inode for every* bytes-per-inode *bytes of space on the disk. The larger the* bytes-per-inode *ratio, the fewer inodes will be created.*
+	***mke2fs** cria um inode para todos os* bytes por inode *de espaço no disco. Quanto maior proporção de* bytes por inode*, menos inodes serão criados.*
 
-Creating a new file, directory, symlink etc. requires at least one free [inode](https://en.wikipedia.org/wiki/Inode "wikipedia:Inode"). If the inode count is too low, no file can be created on the filesystem even though there is still space left on it.
+A criação de um novo arquivo, diretório, link simbólico etc. exige pelo menos um [inode](https://en.wikipedia.org/wiki/pt:N%C3%B3-i "wikipedia:pt:Nó-i") livre. Se a contagem de inodes for pequena demais, nenhum arquivo pode ser criado no sistema de arquivos mesmo se ainda houver espaço restante nele.
 
-Because it is not possible to change either the bytes-per-inode ratio or the inode count after the filesystem is created, `mkfs.ext4` uses by default a rather low ratio of one inode every 16384 bytes (16 KiB) to avoid this situation.
+Porque não é possível alterar a proporção de bytes por inode ou a contagem de inodes após o sistema de arquivos ser criado, o `mkfs.ext4` usa, por padrão, uma proporção relativamente baixa de um inode a cada 16384 bytes (16 KB) para evitar essa situação.
 
-However, for partitions with size in the hundreds or thousands of GB and average file size in the megabyte range, this usually results in a much too large inode number because the number of files created never reaches the number of inodes.
+Porém, para partições com tamanho em centenas ou milhares de GB e tamanho de arquivo médio na faixa de megabytes, isso geralmente resulta em um número muito grande de inodes porque o número de arquivos criados nunca alcança o número de inodes.
 
-This results in a waste of disk space, because all those unused inodes each take up 256 bytes on the filesystem (this is also set in `/etc/mke2fs.conf` but should not be changed). 256 * several millions = quite a few gigabytes wasted in unused inodes.
+Isso resulta em um desperdício de espaço em disco, porque todos arquivos inodes não usados ocupam até 256 bytes no sistema de arquivos (isso também é definido em `/etc/mke2fs.conf`, mas não deve ser alterado). 256 * vários milhões = alguns poucos gigabytes desperdiçados em inodes não usados.
 
-This situation can be evaluated by comparing the `{I}Use%` figures provided by `df` and `df -i`:
+Essa situação pode ser avaliada comparando as figuras `{I}Uso%` fornecidas pelo `df` e `df -i`:
 
  `$ df -h /home` 
 ```
-Filesystem              Size    Used   Avail  **Use%**   Mounted on
+Sist. Arq.              Tam.   Usado   Dispo.  **Uso%**  Montado em
 /dev/mapper/lvm-home    115G    56G    59G    **49%**    /home
 ```
  `$ df -hi /home` 
 ```
-Filesystem              Inodes  IUsed  IFree  **IUse%**  Mounted on
+Sist. Arq.              Inodes IUsado ILivre **IUso%**   Montado em
 /dev/mapper/lvm-home    1.8M    1.1K   1.8M   **1%**     /home
 ```
 
-To specify a different bytes-per-inode ratio, you can use the `-T *usage-type*` option which hints at the expected usage of the filesystem using types defined in `/etc/mke2fs.conf`. Among those types are the bigger `largefile` and `largefile4` which offer more relevant ratios of one inode every 1 MiB and 4 MiB respectively. It can be used as such:
+Para especificar uma proporção de bytes por inode diferente, você pode usar a opção `-T *tipo-de-uso*` que sugere o uso esperado do sistema de arquivos usando tipos definidos em `/etc/mke2fs.conf`. Além daqueles tipos estão `largefile` e `largefile4` maiores, que oferecem proporções mais relevantes de um inode a cada 1 MB e 4 MB, respectivamente. Pode-se usar da seguinte forma:
 
 ```
-# mkfs.ext4 -T largefile /dev/*device*
+# mkfs.ext4 -T largefile /dev/*dispositivo*
 
 ```
 
-The bytes-per-inode ratio can also be set directly via the `-i` option: *e.g.* use `-i 2097152` for a 2 MiB ratio and `-i 6291456` for a 6 MiB ratio.
+A proporção de bytes por inode também pode ser definida diretamente via a opção `-i`: *p.ex.:* use `-i 2097152` para uma proporção 2 MB e `-i 6291456` para uma proporção 6 MB.
 
-**Tip:** Conversely, if you are setting up a partition dedicated to host millions of small files like emails or newsgroup items, you can use smaller *usage-type* values such as `news` (one inode for every 4096 bytes) or `small` (same plus smaller inode and block sizes).
+**Dica:** Por outro lado, se você está configurando uma partição dedicada a hospedar milhões de arquivos pequenos, como emails e itens de newsgroups, você pode usar valores menores de *tipo-de-uso* como `news` (um inode para cada 4096 bytes) ou `small` (idem, somado a tamanhos de bloco e inode menores).
 
-**Warning:** If you make a heavy use of symbolic links, make sure to keep the inode count high enough with a low bytes-per-inode ratio, because while not taking more space every new symbolic link consumes one new inode and therefore the filesystem may run out of them quickly.
+**Atenção:** Se você faz uso intenso de links simbólicos, certifique-se de manter a contagem de inodes alta o suficiente com uma proporção baixa de bytes por inode, porque, apesar de não usar muito espaço, todo novo link simbólico consume um novo inode e, portanto, o sistema de arquivos pode esgotá-los rapidamente.
 
 ### Blocos reservados
 

@@ -1,3 +1,11 @@
+Related articles
+
+*   [rTorrent](/index.php/RTorrent "RTorrent")
+*   [systemd](/index.php/Systemd "Systemd")
+*   [systemd/User](/index.php/Systemd/User "Systemd/User")
+*   [iptables](/index.php/Iptables "Iptables")
+*   [OpenSSL](/index.php/OpenSSL "OpenSSL")
+
 [Deluge](http://deluge-torrent.org/) is a full-featured BitTorrent application written in Python 2\. It has a variety of features, including but not limited to: a client/server model, DHT support, magnet links, a plugin system, UPnP support, full-stream encryption, proxy support, and three different client applications. When the server daemon is running, users can connect to it via a console client, a GTK+-based GUI, or a Web-based UI. A full list of features can be viewed [here](http://dev.deluge-torrent.org/wiki/About).
 
 ## Contents
@@ -185,15 +193,17 @@ The GTK+ client has a number of useful plugins:
 
 ### Web
 
-A web-client is also provided should users not want GTK or shell-based access to the daemon. Just as with deluge daemon mentioned above, the web client as can be started several different ways:
+A web-client is also provided should users not want GTK or shell-based access to the daemon.
+
+The [python2-mako](https://www.archlinux.org/packages/?name=python2-mako) dependency is needed for the web client to work. When the web client is initially started, it will create `$HOME/.config/deluge/web.conf`. The password in this file is hashed with SHA1 and salted. The default password is "deluge".
+
+Just as with deluge daemon mentioned above, the web client as can be started several different ways:
 
 1.  Systemd system service (runs as the deluge user).
 2.  Systemd user service (runs as another user).
 3.  Running it directly (runs as another user).
 
 **Tip:** For the highest level of security, running `deluge-web` via the systemd system service (`deluge-web.service`) is recommended since the deluge user has no shell access (limited account) or other group affiliation on the host system. In addition to the security benefits of running as the non-privileged deluge user, the system service can also run at boot without the need to start Xorg or a client.
-
-The [python2-mako](https://www.archlinux.org/packages/?name=python2-mako) dependency is needed for the web client to work. When the web client is initially started, it will create `$HOME/.config/deluge/web.conf`. The password in this file is hashed with SHA1 and salted. The default password is "deluge".
 
 Several things to note:
 

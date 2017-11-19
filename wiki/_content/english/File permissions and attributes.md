@@ -21,14 +21,15 @@ Related articles
     *   [2.3 Bulk chmod](#Bulk_chmod)
 *   [3 Changing ownership](#Changing_ownership)
 *   [4 Access Control Lists](#Access_Control_Lists)
-*   [5 File attributes](#File_attributes)
-    *   [5.1 chattr and lsattr](#chattr_and_lsattr)
-*   [6 Extended attributes](#Extended_attributes)
-    *   [6.1 User extended attributes](#User_extended_attributes)
-    *   [6.2 Capabilities](#Capabilities)
-*   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 Preserve root](#Preserve_root)
-*   [8 See also](#See_also)
+*   [5 Umask](#Umask)
+*   [6 File attributes](#File_attributes)
+    *   [6.1 chattr and lsattr](#chattr_and_lsattr)
+*   [7 Extended attributes](#Extended_attributes)
+    *   [7.1 User extended attributes](#User_extended_attributes)
+    *   [7.2 Capabilities](#Capabilities)
+*   [8 Tips and tricks](#Tips_and_tricks)
+    *   [8.1 Preserve root](#Preserve_root)
+*   [9 See also](#See_also)
 
 ## Viewing permissions
 
@@ -384,9 +385,18 @@ After: `drwxr-xr-x 5 archie root 4096 Jul 6 16:01 Backup`
 
 Now the partition can have data written to it by the new owner, archie, without altering the permissions (as the owner triad already had `rwx` permissions).
 
+**Note:**
+
+*   `chown` always clears the setuid and setgid bits.
+*   Non-root users cannot use `chown` to "give away" files they own to another user.
+
 ## Access Control Lists
 
 [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists") provides an additional, more flexible permission mechanism for file systems by allowing to set permissions for any user or group to any file.
+
+## Umask
+
+The [umask](/index.php/Umask "Umask") utility is used to control the file-creation mode mask, which determines the initial value of file permission bits for newly created files.
 
 ## File attributes
 
@@ -463,3 +473,4 @@ Use the `--preserve-root` flag to prevent `chmod` from acting recursively on `/`
 *   [wikipedia:Extended file attributes#Linux](https://en.wikipedia.org/wiki/Extended_file_attributes#Linux "wikipedia:Extended file attributes")
 *   [Extended attributes: the good, the not so good, the bad.](http://www.lesbonscomptes.com/pages/extattrs.html)
 *   [Backup and restore file permissions in Linux](http://www.concrete5.org/documentation/how-tos/designers/backup-and-restore-file-permissions-in-linux/)
+*   [Why is “chmod -R 777 /” destructive?](https://serverfault.com/questions/364677/why-is-chmod-r-777-destructive)

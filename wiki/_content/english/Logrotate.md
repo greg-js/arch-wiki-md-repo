@@ -13,11 +13,12 @@ By default, logrotate's *rotation* consists of renaming existing log files with 
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 exim log not rotated](#exim_log_not_rotated)
-    *   [3.2 Check logrotate status](#Check_logrotate_status)
-    *   [3.3 Skipping log because parent directory has insecure permission](#Skipping_log_because_parent_directory_has_insecure_permission)
-*   [4 See also](#See_also)
+*   [3 Usage](#Usage)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 exim log not rotated](#exim_log_not_rotated)
+    *   [4.2 Check logrotate status](#Check_logrotate_status)
+    *   [4.3 Skipping log because parent directory has insecure permission](#Skipping_log_because_parent_directory_has_insecure_permission)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -27,7 +28,7 @@ By default, logrotate runs daily using a [systemd timer](/index.php/Systemd/Time
 
 ## Configuration
 
-The primary configuration file for logrotate which sets default parameters is `/etc/logrotate.conf`; additional application-specific configuration files are included from the `/etc/logrotate.d` directory. Values set in application-specific configuration files override those same parameters in the primary configuration file.
+The primary configuration file for logrotate which sets default parameters is `/etc/logrotate.conf`; additional application-specific configuration files are included from the `/etc/logrotate.d` directory. Values set in application-specific configuration files override those same parameters in the primary configuration file. See [logrotate.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/logrotate.conf.5) for configuration examples and a reference of available directives.
 
 To verify if logrotate works correctly run the following command which will produce debug output:
 
@@ -36,12 +37,39 @@ logrotate -d
 
 ```
 
-To test your logrotate script, for example your nginx logrotate script in */etc/logrotate.d* directory, use:
+## Usage
+
+logrotate is usually run through [Cron](/index.php/Cron "Cron") jobs.
+
+To run logrotate manually:
 
 ```
-logrotate -f -v /etc/logrotate.d/nginx
+logrotate /etc/logrotate.conf
 
 ```
+
+To rotate a single log file:
+
+```
+logrotate /etc/logrotate.d/mylog
+
+```
+
+To simulate running your configuration file (*dry run*):
+
+```
+logrotate -d /etc/logrotate.d/mylog
+
+```
+
+To force running rotations even when conditions are not met, run
+
+```
+logrotate -vf /etc/logrotate.d/mylog
+
+```
+
+See [logrotate(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/logrotate.8) for more details.
 
 ## Troubleshooting
 
@@ -55,12 +83,14 @@ To fix this, add the user `exim` to the group `log`. Then change the group of th
 
 ### Check logrotate status
 
-Run `cat /var/lib/logrotate.status` to see which logrotate files were rotated.
+Logrotate rotations are usually logged to `/var/lib/logrotate.status` (the `-s` option allows you to specify another state file):
 
+ `/var/lib/logrotate.status` 
 ```
 "/var/log/mysql/query.log" 2016-3-20-5:0:0
 "/var/log/samba/samba-smbd.log" 2016-3-21-5:0:0
 "/var/log/httpd/access_log" 2016-3-20-5:0:0
+...
 
 ```
 

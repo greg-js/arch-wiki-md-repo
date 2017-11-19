@@ -76,7 +76,7 @@ The [Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tut
 
 	[https://launchpad.net/ubuntu/+source/pbuilder](https://launchpad.net/ubuntu/+source/pbuilder) || [pbuilder-ubuntu](https://aur.archlinux.org/packages/pbuilder-ubuntu/)
 
-**[quilt](https://en.wikipedia.org/wiki/Quilt "wikipedia:Quilt")** — Manage a series of patches by keeping track of the changes each patch makes
+**[quilt](https://en.wikipedia.org/wiki/Quilt_(software) "wikipedia:Quilt (software)")** — Manage a series of patches by keeping track of the changes each patch makes
 
 	[http://savannah.nongnu.org/projects/quilt](http://savannah.nongnu.org/projects/quilt) || [quilt](https://www.archlinux.org/packages/?name=quilt)
 

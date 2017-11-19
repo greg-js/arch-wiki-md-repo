@@ -61,7 +61,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ### 连接到因特网
 
-守护进程 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 已被默认[启用](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules)来探测**有线**设备, 并会尝试连接。如需验证网络是否正常, 可以使用 [ping](/index.php/Ping "Ping"):
+守护进程 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 已被默认[启用](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules)来探测[有线](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules)设备, 并会尝试连接。如需验证网络是否正常, 可以使用 [ping](/index.php/Ping "Ping"):
 
 ```
 # ping -c 3 archlinux.org

@@ -12,10 +12,10 @@
 ## Contents
 
 *   [1 Brother](#Brother)
-    *   [1.1 Network printers](#Network_printers)
-    *   [1.2 Custom drivers](#Custom_drivers)
-        *   [1.2.1 Manually installing from the RPM packages](#Manually_installing_from_the_RPM_packages)
-    *   [1.3 Updating the firmware](#Updating_the_firmware)
+    *   [1.1 Сетевые принтеры](#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.8B)
+    *   [1.2 Пользовательские драйверы](#.D0.9F.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B8.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B)
+        *   [1.2.1 Установка вручную из пакетов RPM](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B2.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E_.D0.B8.D0.B7_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2_RPM)
+    *   [1.3 Обновление прошивки](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D1.88.D0.B8.D0.B2.D0.BA.D0.B8)
 *   [2 Canon](#Canon)
     *   [2.1 CARPS](#CARPS)
     *   [2.2 USB over IP (BJNP)](#USB_over_IP_.28BJNP.29)
@@ -25,67 +25,67 @@
         *   [4.1.1 escputil](#escputil)
         *   [4.1.2 mtink](#mtink)
         *   [4.1.3 Stylus-toolbox](#Stylus-toolbox)
-    *   [4.2 Custom drivers](#Custom_drivers_2)
+    *   [4.2 Custom drivers](#Custom_drivers)
         *   [4.2.1 Avasys](#Avasys)
 *   [5 HP](#HP)
     *   [5.1 HPLIP Driver](#HPLIP_Driver)
 *   [6 Konica](#Konica)
 *   [7 Lexmark](#Lexmark)
     *   [7.1 Utilities](#Utilities_2)
-    *   [7.2 Custom drivers](#Custom_drivers_3)
+    *   [7.2 Custom drivers](#Custom_drivers_2)
 *   [8 Oki](#Oki)
 *   [9 Ricoh](#Ricoh)
 *   [10 Samsung](#Samsung)
 *   [11 Xerox or FujiXerox](#Xerox_or_FujiXerox)
-    *   [11.1 Custom drivers](#Custom_drivers_4)
+    *   [11.1 Custom drivers](#Custom_drivers_3)
         *   [11.1.1 Phaser 3100MFP](#Phaser_3100MFP)
         *   [11.1.2 Phaser 6000B](#Phaser_6000B)
         *   [11.1.3 Phaser 6125N](#Phaser_6125N)
 
 ## Brother
 
-| Printer | Driver/filter | Notes |
+| Принтер | Драйвер/фильтр | Примечание |
 | DCP-135C | [brother-dcp135c](https://aur.archlinux.org/packages/brother-dcp135c/) |
 | DCP-150C | [brother-dcp150c](https://aur.archlinux.org/packages/brother-dcp150c/) |
-| DCP-7020 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or Brother's driver. |
+| DCP-7020 | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | Или драйвер Brother. |
 | DCP-7030 | [brother-dcp7030](https://aur.archlinux.org/packages/brother-dcp7030/) |
 | DCP-7065DN | [brother-dcp7065dn](https://aur.archlinux.org/packages/brother-dcp7065dn/) |
 | FAX-2820 | [brother-cups-wrapper-laser](https://aur.archlinux.org/packages/brother-cups-wrapper-laser/) |
-| FAX-2840 | [brother-fax2840](https://aur.archlinux.org/packages/brother-fax2840/) | Or [foomatic](/index.php/CUPS#Foomatic "CUPS") - works mostly with `hpijs-pcl5e.ppd`. Same as the HL-2170W. |
+| FAX-2840 | [brother-fax2840](https://aur.archlinux.org/packages/brother-fax2840/) | Или [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") - работает в основном с `hpijs-pcl5e.ppd`. То же, что и HL-2170W. |
 | FAX-2940 | [brother-fax2940](https://aur.archlinux.org/packages/brother-fax2940/) |
-| HL-2030 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or [brother-hl2030](https://aur.archlinux.org/packages/brother-hl2030/) |
-| HL-2035 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Should be compatible with any drivers for the HL-2030. |
-| HL-2040 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or [brother-hl2040](https://aur.archlinux.org/packages/brother-hl2040/) |
-| HL-2130 | [foomatic](/index.php/CUPS#Foomatic "CUPS") (using the HL-2140 driver) | Or [hplip](https://www.archlinux.org/packages/?name=hplip) |
-| HL-2140 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or [brother-hl2140](https://aur.archlinux.org/packages/brother-hl2140/) |
-| HL-2170W | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or Brother's driver. |
-| HL-2230 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Same as HL-2170W. Select HL-2170W as the driver in CUPS admin when adding a printer. |
+| HL-2030 | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | Или [brother-hl2030](https://aur.archlinux.org/packages/brother-hl2030/) |
+| HL-2035 | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | Должен быть совместим с любыми драйверами для HL-2030. |
+| HL-2040 | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | Или [brother-hl2040](https://aur.archlinux.org/packages/brother-hl2040/) |
+| HL-2130 | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") (с использованием драйвера HL-2140) | Или [hplip](https://www.archlinux.org/packages/?name=hplip) |
+| HL-2140 | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | Или [brother-hl2140](https://aur.archlinux.org/packages/brother-hl2140/) |
+| HL-2170W | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | Или драйвер Brother. |
+| HL-2230 | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | То же, что и HL-2170W. Выберите HL-2170W в качестве драйвера в администраторе CUPS при добавлении принтера. |
 | HL-2250DN | [brother-hl2250dn](https://aur.archlinux.org/packages/brother-hl2250dn/) |
 | HL-2270DW | [brother-hl2270dw](https://aur.archlinux.org/packages/brother-hl2270dw/) |
 | HL-2280DW | [brother-hl2280dw](https://aur.archlinux.org/packages/brother-hl2280dw/) |
 | HL-2340DW | [brother-hll2340dw](https://aur.archlinux.org/packages/brother-hll2340dw/) |
-| HL-3045CN | Install Brother's driver. |
-| HL-3140CW | [brother-hl3140cw](https://aur.archlinux.org/packages/brother-hl3140cw/) | Use IPP and Brother's driver to avoid page-shrinking and endless blank printouts |
+| HL-3045CN | Установите драйвер Brother. |
+| HL-3140CW | [brother-hl3140cw](https://aur.archlinux.org/packages/brother-hl3140cw/) | Используйте драйвер IPP и Brother, чтобы избежать сокращения страниц и бесконечных распечаток |
 | HL-3150CDW | [brother-hl3150cdw](https://aur.archlinux.org/packages/brother-hl3150cdw/) |
 | HL-3170CDW | [brother-hl3170cdw](https://aur.archlinux.org/packages/brother-hl3170cdw/) |
-| HL-5140 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or Brother's driver. |
-| HL-5340 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Using the *Generic PCL 6/PCL XL Printer - CUPS+Gutenprint* ([gutenprint](https://www.archlinux.org/packages/?name=gutenprint) and [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds)). Or Brother's driver, which may result in failed prints with postscript errors. |
+| HL-5140 | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | Или драйвер Brother. |
+| HL-5340 | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | Используйте *Generic PCL 6/PCL XL Printer - CUPS+Gutenprint* ([gutenprint](https://www.archlinux.org/packages/?name=gutenprint) и [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds)). Или драйвер Brother, который может привести к сбою печати с ошибками postscript. |
 | HL-L2300D | [brother-hll2300d](https://aur.archlinux.org/packages/brother-hll2300d/) |
 | HL-L2380DW | [brother-hll2380dw](https://aur.archlinux.org/packages/brother-hll2380dw/) |
 | MFC-420CN | [brother-mfc-420cn](https://aur.archlinux.org/packages/brother-mfc-420cn/) |
 | MFC-440CN | [brother-mfc-440cn](https://aur.archlinux.org/packages/brother-mfc-440cn/) |
 | MFC-465CN | [brother-mfc-465cn](https://aur.archlinux.org/packages/brother-mfc-465cn/) |
 | MFC-7360N | [brother-mfc7360n](https://aur.archlinux.org/packages/brother-mfc7360n/) |
-| MFC-9320CW | Install Brother's driver. |
+| MFC-9320CW | Установите драйвер Brother. |
 | MFC-9332CDW | [brother-mfc-9332cdw](https://aur.archlinux.org/packages/brother-mfc-9332cdw/) |
-| MFC-9840CDW | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or Brother's driver. This printer also works with the generic PCL-6 driver from the [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) package. Use **pcl_p1** for the printer's address when using the PCL-6 driver. |
+| MFC-9840CDW | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | Или драйвер Brother. Этот принтер также работает с универсальным драйвером PCL-6 из пакета [gutenprint](https://www.archlinux.org/packages/?name=gutenprint). Используйте **pcl_p1**, как адрес принтера при использовании драйвера PCL-6. |
 | MFC-J470DW | [brother-mfc-j470dw](https://aur.archlinux.org/packages/brother-mfc-j470dw/) |
 | MFC-J5520DW | [brother-mfc-j5520dw](https://aur.archlinux.org/packages/brother-mfc-j5520dw/) |
 | MFC-J5910DW | [brother-mfc-j5910dw](https://aur.archlinux.org/packages/brother-mfc-j5910dw/) |
-| MFC-J650DW | Install Brother's driver. |
+| MFC-J650DW | Установите драйвер Brother. |
 | MFC-J885DW | [brother-mfc-j885dw](https://aur.archlinux.org/packages/brother-mfc-j885dw/) |
 | MFC-J985DW | [brother-mfc-j985dw](https://aur.archlinux.org/packages/brother-mfc-j985dw/) |
-| MFC-L2700DW | [brother-mfc-l2700dw](https://aur.archlinux.org/packages/brother-mfc-l2700dw/) | Please look also at the comments section of the AUR package page. |
+| MFC-L2700DW | [brother-mfc-l2700dw](https://aur.archlinux.org/packages/brother-mfc-l2700dw/) | Пожалуйста, посмотрите также комментарии на странице пакета в aur. |
 | QL-500 | [brother-ql500](https://aur.archlinux.org/packages/brother-ql500/) |
 | QL-570 | [brother-ql570](https://aur.archlinux.org/packages/brother-ql570/) |
 | QL-580N | [brother-ql580n](https://aur.archlinux.org/packages/brother-ql580n/) |
@@ -101,29 +101,29 @@
 | TD-2130N | [brother-td2130n](https://aur.archlinux.org/packages/brother-td2130n/) |
 | TD-4000 | [brother-td4000](https://aur.archlinux.org/packages/brother-td4000/) |
 | TD-4100N | [brother-td4100n](https://aur.archlinux.org/packages/brother-td4100n/) |
-| Printer | Driver/filter | Notes |
+| Принтер | Драйвер/фильтр | Примечание |
 
-### Network printers
+### Сетевые принтеры
 
-For network printers, use `ipp://**printer_ip**/ipp/port1` as printer address. For some older printers, this might not work. If not, try `lpd://**printer_ip**/BINARY_P1` instead.
+Для сетевых принтеров используйте `ipp://**printer_ip**/ipp/port1` в качестве адреса принтера. Для некоторых старых принтеров это может не сработать. Если не сработало, попробуйте `lpd://**printer_ip**/BINARY_P1`.
 
-Some printers use the socket protocol. For these printers, use `socket://**printer_ip**:9100`. For http, use `http://**printer_ip**/POSTSCRIPT_P1`.
+Некоторые принтеры используют протокол сокета. Для этих принтеров используйте `socket://**printer_ip**:9100`. Для http используйте `http://**printer_ip**/POSTSCRIPT_P1`.
 
-### Custom drivers
+### Пользовательские драйверы
 
-Brother provides custom drivers on their website, either in source tarball, rpm, or deb form. [Packaging Brother printer drivers](/index.php/Packaging_Brother_printer_drivers "Packaging Brother printer drivers") covers creating [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") from the existing RPM packages.
+Brother предоставляет пользовательские драйверы на своем веб-сайте либо в исходном архиве, так и в формате rpm или deb. [Сборка драйверов принтера Brother](/index.php/Packaging_Brother_printer_drivers "Packaging Brother printer drivers") охватывает создание [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)") из существующих пакетов RPM.
 
-**Note:** The source packages might be a better alternative to the rpm packages, provided they contain all the needed files.
+**Примечание:** Исходные пакеты могут быть лучшей альтернативой пакетам rpm, если они содержат все необходимые файлы.
 
-#### Manually installing from the RPM packages
+#### Установка вручную из пакетов RPM
 
-**Важно:** This should ideally be automated in a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
+**Важно:** В идеале это должно быть автоматизировано в [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)")
 
-[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [rpmextract](https://www.archlinux.org/packages/?name=rpmextract), and extract both rpm packages using `rpmextract.sh`. Extracting both files will create a var and a usr directory - move the contents of both directories into the corresponding root directories.
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [rpmextract](https://www.archlinux.org/packages/?name=rpmextract) и извлеките оба пакета rpm с помощью `rpmextract.sh`. Извлечение обоих файлов создаст каталог var и usr - переместите содержимое обоих каталогов в соответствующие корневые каталоги.
 
-Run the cups wrapper file in `/usr/local/Brother/cupswrapper`. This should automatically install and configure your brother printer.
+Запустите файл оболочки CUPS в `/usr/local/Brother/cupswrapper`. Это должно автоматически установить и настроить ваш принтер brother.
 
-### Updating the firmware
+### Обновление прошивки
 
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [net-snmp](https://www.archlinux.org/packages/?name=net-snmp) и запустите:
 
@@ -132,7 +132,7 @@ snmpwalk -c public $PRINTER_IP | grep -A 1 3.6.1.4.1.2435.2.4.3.99.3.1.6.1.2
 
 ```
 
-At this point, you will have the relevant data to get a valid firmware download link from Brother. The file should look similar to the one below:
+На этом этапе у вас будут соответствующие данные, чтобы получить ссылку на прошивку от Brother. Файл должен выглядеть примерно так:
 
  `request.xml` 
 ```
@@ -173,14 +173,14 @@ At this point, you will have the relevant data to get a valid firmware download 
 
 ```
 
-Post this file to Brother:
+Отправьте этот файл Brother:
 
 ```
 curl -X POST -d @request.xml [https://firmverup.brother.co.jp/kne_bh7_update_nt_ssl/ifax2.asmx/fileUpdate](https://firmverup.brother.co.jp/kne_bh7_update_nt_ssl/ifax2.asmx/fileUpdate) -H "Content-Type:text/xml" > response.xml
 
 ```
 
-In `response.xml` you will find a `<PATH>` tag that contains the firmware download URL. Next, download the firmware, push it to the printer, and let the printer process it. Before that is done, change the Admin password to something known, it will be used as the user to log into the FTP site (VERY bad practice, don't do this).
+В `response.xml` вы найдете тег `<PATH>`, содержащий URL-адрес загрузки прошивки. Затем загрузите прошивку, нажмите ее на принтер и дайте принтеру обработать ее. Прежде чем это сделать, измените пароль администратора на что-то известное, он будет использоваться как пользователь для входа на сайт FTP (ОЧЕНЬ плохая практика, не делайте этого).
 
 ```
 wget [http://update-akamai.brother.co.jp/CS/LZ4266_W.djf](http://update-akamai.brother.co.jp/CS/LZ4266_W.djf)
@@ -192,14 +192,14 @@ ftp $PRINTER_IP
 
 ```
 
-With that, the printer will restart, and the latest firmware will be installed and (hopefully) your printing woes will be solved.
+При этом принтер перезагрузится, и последняя версия прошивки будет установлена и (надеюсь) проблемы с печатью будут решены.
 
 ## Canon
 
-There are many possible drivers for Canon printers. [Many Canon printers](http://gimp-print.sourceforge.net/p_Supported_Printers.php) are supported by [gutenprint](https://www.archlinux.org/packages/?name=gutenprint). Some of Canon's LBP, iR, and MF printers use a driver supporting the UFR II/UFR II LT/LIPSLX protocols, which is available as [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) or [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/). Others use the [#CARPS](#CARPS) or [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") drivers.
+Существует много возможных драйверов для принтеров Canon. [Многие принтеры Canon](http://gimp-print.sourceforge.net/p_Supported_Printers.php) поддерживаются [gutenprint](https://www.archlinux.org/packages/?name=gutenprint). Некоторые из принтеров Canon LBP, iR и MF используют драйвер, поддерживающий протоколы UFR II/UFR II LT/LIPSLX, который доступен как [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) или [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/). Другие используют драйверы [#CARPS](#CARPS) или [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT").
 
-| Printer | Driver/filter | Notes |
-| iP4300 | [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) | Or use Canon's [cnijfilter-ip4300](https://aur.archlinux.org/packages/cnijfilter-ip4300/) driver, or the [TurboPrint](http://www.turboprint.info/) driver. |
+| Принтер | Драйвер/фильтр | Примечание |
+| iP4300 | [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) | Или используйте драйвер Canon [cnijfilter-ip4300](https://aur.archlinux.org/packages/cnijfilter-ip4300/) или драйвер [TurboPrint](http://www.turboprint.info/). |
 | LBP810 | [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") |
 | LBP1120 |
 | LBP1210 |
@@ -230,17 +230,17 @@ There are many possible drivers for Canon printers. [Many Canon printers](http:/
 | LBP6310dn |
 | LBP7010C |
 | LBP7018C |
-| LBP7200Cdn (network mode) |
+| LBP7200Cdn (сетевой режим) |
 | LBP7200C series |
 | LBP7210Cdn |
 | LBP9100C |
 | MF4720w | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) |
 | MG4200 series | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) |
-| TS8050 | [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) | Without [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) printing will fail with a filter error or you might get "Rendering Completed" and nothing will print |
+| TS8050 | [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) | Без [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) печать завершится ошибкой фильтра или вы можете получить "рендеринг завершен", а принтер ничего не напечатает |
 | TS9020 | [canon-ts9020](https://aur.archlinux.org/packages/canon-ts9020/) |
-| Printer | Driver/filter | Notes |
+| Принтер | Драйвер/фильтр | Примечание |
 
-Some Canon printers will use a similar setup to the iP4500, so consider modifying the [cnijfilter-ip4500](https://aur.archlinux.org/packages/cnijfilter-ip4500/) package for other, similar printers.
+Некоторые принтеры Canon будут использовать аналогичную настройку для iP4500, поэтому рассмотрите возможность изменения пакета [cnijfilter-ip4500](https://aur.archlinux.org/packages/cnijfilter-ip4500/) для других аналогичных принтеров.
 
 ### CARPS
 

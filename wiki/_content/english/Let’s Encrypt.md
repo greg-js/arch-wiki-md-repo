@@ -6,20 +6,19 @@ The official client is called **Certbot**, which allows to request valid X.509 c
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Webroot](#Webroot)
-        *   [2.1.1 Obtain certificate(s)](#Obtain_certificate.28s.29)
-    *   [2.2 Manual](#Manual)
+    *   [2.1 Plugins](#Plugins)
+        *   [2.1.1 Nginx](#Nginx)
+    *   [2.2 Webroot](#Webroot)
+        *   [2.2.1 Obtain certificate(s)](#Obtain_certificate.28s.29)
+    *   [2.3 Manual](#Manual)
 *   [3 Advanced Configuration](#Advanced_Configuration)
     *   [3.1 Webserver Configuration](#Webserver_Configuration)
-        *   [3.1.1 nginx](#nginx)
+        *   [3.1.1 nginx](#nginx_2)
     *   [3.2 Multiple domains](#Multiple_domains)
-        *   [3.2.1 nginx](#nginx_2)
+        *   [3.2.1 nginx](#nginx_3)
         *   [3.2.2 Apache](#Apache)
     *   [3.3 Automatic renewal](#Automatic_renewal)
         *   [3.3.1 systemd](#systemd)
-            *   [3.3.1.1 Alternative services](#Alternative_services)
-                *   [3.3.1.1.1 nginx](#nginx_3)
-                *   [3.3.1.1.2 Apache](#Apache_2)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -35,12 +34,31 @@ Plugins are available for automated configuration and installation of the issued
 
 Consult the [Certbot documentation](https://certbot.eff.org/docs/) for more information about creation and usage of certificates.
 
+### Plugins
+
+#### Nginx
+
+The plugin [certbot-nginx](https://www.archlinux.org/packages/?name=certbot-nginx) provides an automatic configuration for [nginx](/index.php/Nginx "Nginx") [server-blocks](/index.php/Nginx#Server_blocks "Nginx"):
+
+```
+# certbot --nginx
+
+```
+
+To renew certificates, simple run:
+
+```
+# certbot renew
+
+```
+
+See [#Automatic renewal](#Automatic_renewal) to keep installed certificates valid.
+
 ### Webroot
 
 **Note:**
 
 *   The Webroot method requires **HTTP on port 80** for Certbot to validate.
-    *   For Certbot to validate using **HTTPS on port 443**, the Nginx (**--nginx**) or Apache (**--apache**) plugin must be used instead of the Webroot (**--webroot**) method.
 *   The Server Name must match that of it's corresponding DNS.
 *   Permissions may need to be altered on the host to allow read-access to `[http://domain.tld/.well-known](http://domain.tld/.well-known)`.
 
@@ -96,11 +114,6 @@ See [#Automatic renewal](#Automatic_renewal) as alternative approach.
 
 ### Manual
 
-**Note:**
-
-*   The running webserver has to temporarily stopped.
-*   Automatic renewal is not available when performing manual install, see [#Webroot](#Webroot) instead.
-
 If there is no plugin for your web server, use the following command:
 
 ```
@@ -139,49 +152,14 @@ An example of the server `domain.tld` using the signed SSL-certificate of Let's 
  `/etc/nginx/servers-available/domain.tld` 
 ```
 
-# redirect to https
-server {
-  listen 80;
-  listen [::]:80;
-  server_name domain.tld;
-  return 301 https://$host$request_uri;
-}
-
 server {
   listen 443 ssl http2;
   listen [::]:443 ssl http2;
   ssl_certificate /etc/letsencrypt/live/domain.tld/fullchain.pem;
   ssl_certificate_key /etc/letsencrypt/live/domain.tld/privkey.pem;
   ssl_trusted_certificate /etc/letsencrypt/live/domain.tld/chain.pem;
-  ssl_session_timeout 1d;
-  ssl_session_cache shared:SSL:50m;
-  ssl_session_tickets off;
-  ssl_prefer_server_ciphers on;
-  add_header Strict-Transport-Security max-age=15768000;
-  ssl_stapling on;
-  ssl_stapling_verify on;
   server_name domain.tld;
   ..
-}
-
-# A subdomain uses the same SSL-certifcate:
-server {
-  listen 443 ssl http2;
-  listen [::]:443 ssl http2;
-  ssl_certificate /etc/letsencrypt/live/domain.tld/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/domain.tld/privkey.pem;
-  ssl_trusted_certificate /etc/letsencrypt/live/domain.tld/chain.pem;
-  ..
-  server_name sub.domain.tld;
-  ..
-}
-
-# ACME challenge
-location ^~ /.well-known {
-  allow all;
-  alias /var/lib/letsencrypt/.well-known/;
-  default_type "text/plain";
-  try_files $uri =404;
 }
 
 ```
@@ -266,11 +244,11 @@ Type=oneshot
 ExecStart=/usr/bin/certbot renew --quiet --agree-tos
 ```
 
-You'll probably want your web server to reload the certificates after each time they're renewed. This can be done by adding `--post-hook "systemctl reload nginx.service"` to the `ExecStart` command. Of course use `httpd.service` instead of `nginx.service` if appropriate.
+You'll probably want your web server to reload the certificates after each time they're renewed. This can be done by adding `--post-hook "systemctl reload nginx.service"` to the `ExecStart` command [[1]](https://certbot.eff.org/docs/using.html#renewing-certificates). Of course use `httpd.service` instead of `nginx.service` if appropriate.
 
 **Note:** Before adding a [timer](/index.php/Systemd/Timers "Systemd/Timers"), check that the service is working correctly and is not trying to prompt anything.
 
-Add a timer to check for certificate renewal twice a day and include a randomized delay so that everyone's requests for renewal will be spread over the day to lighten the Let's Encrypt server load [[1]](https://certbot.eff.org/#arch-nginx):
+Add a timer to check for certificate renewal twice a day and include a randomized delay so that everyone's requests for renewal will be spread over the day to lighten the Let's Encrypt server load [[2]](https://certbot.eff.org/#arch-nginx):
 
  `/etc/systemd/system/certbot.timer` 
 ```
@@ -287,34 +265,6 @@ WantedBy=timers.target
 ```
 
 [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `certbot.timer`.
-
-##### Alternative services
-
-When using the standalone method you should stop your webserver before executing the renew request, and start your webserver when Certbot is finished. We use the renew hooks of `certbot` for this because they only get executed when certbot actually renews our certificates (See [https://certbot.eff.org/docs/using.html#renewing-certificates](https://certbot.eff.org/docs/using.html#renewing-certificates) for more information).
-
-###### nginx
-
- `/etc/systemd/system/certbot.service` 
-```
-[Unit]
-Description=Let's Encrypt renewal
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/certbot renew --pre-hook "/usr/bin/systemctl stop nginx.service" --post-hook "/usr/bin/systemctl start nginx.service" --quiet --agree-tos
-```
-
-###### Apache
-
- `/etc/systemd/system/certbot.service` 
-```
-[Unit]
-Description=Let's Encrypt renewal
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/certbot renew --pre-hook "/usr/bin/systemctl stop httpd.service" --post-hook "/usr/bin/systemctl start httpd.service" --quiet --agree-tos
-```
 
 ## See also
 

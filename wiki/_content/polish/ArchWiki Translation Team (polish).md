@@ -14,7 +14,7 @@
 12.  Jeśli chcemy stworzyć stronę ArchWiki ale ze zlokalizowaną nazwą odwiedź `https://wiki.archlinux.org/index.php/*Zlokalizowana nazwa przetłumaczonej strony*`.
 13.  Stwórz nową stronę i wrzuć tam ten kod: `#REDIRECT [[Moja_Strona_(język)]]` 
 
-Na przykład: Stworzyłem tą **ArchWiki Translation Team (Polski)** stronę, wrzuciłem do niej tłumaczenie tej strony [ArchWiki Translation Team](/index.php/ArchWiki_Translation_Team "ArchWiki Translation Team") i dodałem stronę [Zespół tłumaczy ArchWiki](/index.php/Zesp%C3%B3%C5%82_t%C5%82umaczy_ArchWiki "Zespół tłumaczy ArchWiki") z przetłumaczonym tytułem, która *tylko* przekierowuje.
+Na przykład: Stworzyłem tą <a class="mw-selflink selflink">ArchWiki Translation Team (Polski)</a> stronę, wrzuciłem do niej tłumaczenie tej strony [ArchWiki Translation Team](/index.php/ArchWiki_Translation_Team "ArchWiki Translation Team") i dodałem stronę [Zespół tłumaczy ArchWiki](/index.php/Zesp%C3%B3%C5%82_t%C5%82umaczy_ArchWiki "Zespół tłumaczy ArchWiki") z przetłumaczonym tytułem, która *tylko* przekierowuje.
 
 ## Lista stron
 

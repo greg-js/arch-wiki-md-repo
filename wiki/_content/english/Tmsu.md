@@ -22,5 +22,4 @@ tmsu creates symlinks between files, folders and the related tags. That is, it c
 ## See also
 
 *   [Reddit discussion](http://en.reddit.com/r/linux/comments/woear/tmsu_is_a_program_that_allows_you_to_organise/)
-*   [tmsu extensions](https://github.com/Dieterbe/tmsu-helpers)
 *   [tagsistant](https://aur.archlinux.org/packages/tagsistant/) (alternative semantic filesystem)

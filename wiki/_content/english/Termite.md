@@ -1,4 +1,4 @@
-[Termite](https://www.github.com/thestinger/termite) is a minimal VTE-based [terminal emulator](/index.php/Category:Terminal_emulators "Category:Terminal emulators"). It is a *modal* application, similar to [Vim](/index.php/Vim "Vim"), with an insert mode and command mode where keybindings have different functions. Termite is based on the [VTE](https://developer.gnome.org/vte/unstable/) library.
+[Termite](https://www.github.com/thestinger/termite) is a minimal VTE-based [terminal emulator](/index.php/Category:Terminal_emulators "Category:Terminal emulators"). It is a *modal* application, similar to [Vim](/index.php/Vim "Vim"), with an insert mode and selection mode where keybindings have different functions. Termite is based on the [VTE](https://developer.gnome.org/vte/unstable/) library.
 
 The configuration file allows to change colors and set some options. Termite supports transparency along with both the 256 color and true color (16 million colors) palettes. It has a similar look and feel to [urxvt](/index.php/Urxvt "Urxvt").
 
@@ -20,9 +20,9 @@ Install the [termite](https://www.archlinux.org/packages/?name=termite) package,
 
 ## Usage
 
-Termite starts in insert mode by default. Text may be selected using the mouse, or by using command-mode keys. In insert mode, `Ctrl+Shift+c` is used to copy selected text to the [X](/index.php/X "X") clipboard, `Ctrl+Shift+v` to paste. `Ctrl+Tab` starts scrollback completion, and `Ctrl+Shift+Up` / `Ctrl+Shift+Down` scroll the screen up or down.
+Termite starts in insert mode by default. Text may be selected using the mouse, or by using selection-mode keys. In insert mode, `Ctrl+Shift+c` is used to copy selected text to the [X](/index.php/X "X") clipboard, `Ctrl+Shift+v` to paste. `Ctrl+Tab` starts scrollback completion, and `Ctrl+Shift+Up` / `Ctrl+Shift+Down` scroll the screen up or down.
 
-`Ctrl+Shift+Space` enters command-mode. Many commands are borrowed from [Vim](/index.php/Vim "Vim"), for example `v` for visual mode, `Shift+v` for visual line mode, `Ctrl+v` for visual block mode, `y` to copy ("yank") selected text, `/` and `?` for searching, `w`, `b`, `^`, `$` for movement, and `Escape` to go back to insert mode.
+`Ctrl+Shift+Space` enters selection-mode, similar to vim's normal-mode. Many commands are borrowed from [Vim](/index.php/Vim "Vim"), for example `v` for visual mode, `Shift+v` for visual line mode, `Ctrl+v` for visual block mode, `y` to copy ("yank") selected text, `/` and `?` for searching, `w`, `b`, `^`, `$` for movement, and `Escape` to go back to insert mode.
 
 ## Configuration
 

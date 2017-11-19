@@ -1,3 +1,8 @@
+Related articles
+
+*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+*   [Help:Editing](/index.php/Help:Editing "Help:Editing")
+
 В биологията, [мутуализъм](https://en.wikipedia.org/wiki/Mutualism_biology) "wikipedia:Mutualism biology)") се нарича връзка между два индивида, при която те имат взаимна полза. Този принцип може също да се приложи и за активните и мотивирани членове на Arch обществото, които искат да допринесат за развитието на тяхната любима дистрибуция, като по този начин имат полза не само те, но и всички останали ползващи Arch Linux, също така и всички фенове на [свободния отворен софтуер](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software").
 
 ## Contents
@@ -46,7 +51,6 @@ If you feel capable of [editing wiki pages](/index.php/Help:Editing "Help:Editin
 Other useful pages for cleanup:
 
 *   [Requests](/index.php/ArchWiki:Requests "ArchWiki:Requests")
-*   [Reports](/index.php/ArchWiki:Reports "ArchWiki:Reports")
 *   [Broken redirects](/index.php/Special:BrokenRedirects "Special:BrokenRedirects")
 *   [Double redirects](/index.php/Special:DoubleRedirects "Special:DoubleRedirects")
 *   [Short pages](/index.php/Special:ShortPages "Special:ShortPages")

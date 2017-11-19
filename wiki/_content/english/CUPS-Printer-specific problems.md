@@ -252,6 +252,7 @@ Some Canon printers use Canon's proprietary USB over IP BJNP protocol to communi
 
 | Printer | Driver/filter | Notes |
 | 1250C | [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/) | See [http://cybercom.net/~dcoffin/hbpl](http://cybercom.net/~dcoffin/hbpl), the patch has been merged into upstream. The printer may also work with the [Xerox Phaser 6000B driver](#Phaser_6000B). |
+| C1660NW | [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/) | The printer may also work with the [Xerox Phaser 6000B driver](#Phaser_6000B). |
 | E515,
 
 E515dw

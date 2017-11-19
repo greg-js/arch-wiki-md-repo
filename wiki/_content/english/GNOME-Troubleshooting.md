@@ -31,6 +31,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [27 gnome-shell / gnome-session crashes on session startup](#gnome-shell_.2F_gnome-session_crashes_on_session_startup)
 *   [28 Low OpenGL performance and stuttering on proprietary NVIDIA driver](#Low_OpenGL_performance_and_stuttering_on_proprietary_NVIDIA_driver)
 *   [29 GNOME Wayland session not available](#GNOME_Wayland_session_not_available)
+*   [30 gnome-control-center is empty and does not list any categories](#gnome-control-center_is_empty_and_does_not_list_any_categories)
 
 ## Shell freezes
 
@@ -359,3 +360,13 @@ MUTTER_ALLOW_HYBRID_GPUS=1
 ```
 
 To avoid [problems](https://bbs.archlinux.org/viewtopic.php?pid=1744592#p1744592) with some chipsets enable [Early KMS](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting").
+
+## gnome-control-center is empty and does not list any categories
+
+Under alternative window managers (i3 for example), *gnome-control-center* starts as an empty window. You need to set the variable `XDG_CURRENT_DESKTOP` to `GNOME` to start it (either in a script or exporting the variable in `~/.profile`).
+
+```
+ export XDG_CURRENT_DESKTOP=GNOME
+ gnome-control-center &
+
+```

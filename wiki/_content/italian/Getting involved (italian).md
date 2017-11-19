@@ -1,3 +1,9 @@
+Articoli correlati
+
+*   [Arch User Repository (Italiano)](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)")
+*   [Help:Editing (Italiano)](/index.php/Help:Editing_(Italiano) "Help:Editing (Italiano)")
+*   [Help:Style (Italiano)](/index.php/Help:Style_(Italiano) "Help:Style (Italiano)")
+
 In biologia, il [mutualismo](https://en.wikipedia.org/wiki/it:Mutualismo "wikipedia:it:Mutualismo") è l'interazione tra due organismi dalla quale entrambi ricavano un beneficio. Questo principio si può anche applicare ai membri volenterosi e motivati della comunità di Arch che vogliono essere coinvolti e contribuire alla loro distribuzione GNU/Linux preferita. Da questa partecipazione traggono vantaggio non solo i membri della comunità e i loro compagni *Arcieri* (da *Archers*), ma potenzialmente tutti i fan del [software libero ed open source](https://en.wikipedia.org/wiki/it:Free_and_open_source_software "wikipedia:it:Free and open source software").
 
 Quest'articolo descrive vari modi in cui gli utenti di Arch (sia nuovi che veterani) possono contribuire a questa comunità. Notare che questa non è una lista esaustiva.
@@ -58,7 +64,6 @@ Se ci si sente in grado di [editare pagine wiki](/index.php/Help:Editing_(Italia
 Altre pagine utili per la manutenzione:
 
 *   [Richieste](/index.php/ArchWiki:Requests "ArchWiki:Requests")
-*   [Segnalazioni](/index.php/ArchWiki:Reports "ArchWiki:Reports")
 *   [Redirect interrotti](/index.php/Special:BrokenRedirects "Special:BrokenRedirects")
 *   [Redirect doppi](/index.php/Special:DoubleRedirects "Special:DoubleRedirects")
 *   [Articoli corti](/index.php/Special:ShortPages "Special:ShortPages")

@@ -93,7 +93,7 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 	[http://afick.sourceforge.net/](http://afick.sourceforge.net/) || [afick](https://aur.archlinux.org/packages/afick/)
 
-*   **Lynis** — Security and system auditing tool to harden Unix/Linux systems.
+*   **[Lynis](https://en.wikipedia.org/wiki/Lynis "wikipedia:Lynis")** — Security and system auditing tool to harden Unix/Linux systems.
 
 	[https://cisofy.com/lynis/](https://cisofy.com/lynis/) || [lynis](https://www.archlinux.org/packages/?name=lynis)
 
@@ -117,7 +117,7 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 	[http://www.la-samhna.de/samhain/index.html](http://www.la-samhna.de/samhain/index.html) || [samhain](https://aur.archlinux.org/packages/samhain/)
 
-*   **Tiger** — Security tool that can be use both as a security audit and intrusion detection system.
+*   **[Tiger](https://en.wikipedia.org/wiki/Tiger_(security_software) "wikipedia:Tiger (security software)")** — Security tool that can be use both as a security audit and intrusion detection system.
 
 	[http://www.nongnu.org/tiger/](http://www.nongnu.org/tiger/) || [tiger](https://aur.archlinux.org/packages/tiger/)
 

@@ -589,37 +589,31 @@ This agent can be used directly, by matching KeeAgent socket: `KeePass -> Tools 
 
 ### Key ignored by the server
 
-If it appears that the SSH server is ignoring your keys, ensure that you have the proper permissions set on all relevant files.
-For the local machine:
+*   If it appears that the SSH server is ignoring your keys, ensure that you have the proper permissions set on all relevant files.
+
+	For the local machine:
 
 ```
-$ chmod 700 ~/
-$ chmod 700 ~/.ssh
+$ chmod 700 ~/ ~/.ssh
 $ chmod 600 ~/.ssh/id_ecdsa
 
 ```
 
-For the remote machine:
+	For the remote machine:
 
 ```
-$ chmod 700 ~/
-$ chmod 700 ~/.ssh
+$ chmod 700 ~/ ~/.ssh
 $ chmod 600 ~/.ssh/authorized_keys
 
 ```
 
-If that does not solve the problem you may try temporarily setting `StrictModes` to `no` in `sshd_config`. If authentication with StrictModes off is successful, it is likely an issue with file permissions persists.
+	If that does not solve the problem you may try temporarily setting `StrictModes` to `no` in `sshd_config`. If authentication with StrictModes off is successful, it is likely an issue with file permissions persists.
 
-Make sure the remote machine supports the type of keys you are using:
+*   Make sure keys in `~/.ssh/authorized_keys` are entered correctly and only use one single line.
 
-```
-Some servers do not support ECDSA keys.
+*   Make sure the remote machine supports the type of keys you are using: some servers do not support ECDSA keys, try using RSA or DSA keys instead, see [#Generating an SSH key pair](#Generating_an_SSH_key_pair).
 
-```
-
-Try using RSA or DSA keys instead, see [#Generating an SSH key pair](#Generating_an_SSH_key_pair).
-
-You may want to use debug mode and monitor the output while connecting:
+*   You may want to use debug mode and monitor the output while connecting:
 
 ```
 # /usr/bin/sshd -d

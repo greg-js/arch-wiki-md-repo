@@ -18,7 +18,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [st](https://www.archlinux.org/packages/?name=st) or [st-git](https://aur.archlinux.org/packages/st-git/) package.
+[Install](/index.php/Install "Install") the [st-git](https://aur.archlinux.org/packages/st-git/) package.
 
 ## Configuration
 

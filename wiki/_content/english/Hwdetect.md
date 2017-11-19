@@ -1,3 +1,7 @@
+Related articles
+
+*   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
+
 [hwdetect](https://projects.archlinux.org/svntogit/packages.git/tree/hwdetect/trunk/hwdetect) is a hardware detection script primarily used to load or list modules for use in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). As such, it informs its user about which kernel modules are required to drive the hardware. This is in contrast to many other tools, that only query the hardware, and show raw information, leaving the user with the task to associate that information with the required drivers. The script makes use of information exported by the [sysfs](https://en.wikipedia.org/wiki/Sysfs "wikipedia:Sysfs") subsystem employed by the Linux kernel.
 
 ## Contents
@@ -46,7 +50,7 @@ Depending on what is used, copy the module names to replace the `MODULES` sectio
 
 ### Unused modules
 
-To generated a list of modules currently not used, use the following script:
+To generate a list of modules currently not used, use the following script:
 
 ```
 #!/bin/bash

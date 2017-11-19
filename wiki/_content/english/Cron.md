@@ -236,7 +236,15 @@ The basic format for a crontab is:
 *   *month* values can be from 1 to 12.
 *   *day_of_week* values can be from 0 to 6, with 0 denoting Sunday.
 
-Multiple times may be specified with a comma, a range can be given with a hyphen, and the asterisk symbol is a wildcard character. Spaces are used to separate fields. For example, the line:
+Spaces are used to separate fields. To fine-tune your schedule you may also use one of the following symbols:
+
+| Symbol | Description |
+| ***** | Wildcard, specifies every possible time interval |
+| **,** | List multiple values separated by a comma. |
+| **-** | Specify a range between two numbers, separated by a hyphen |
+| **/** | Specify a periodicity/frequency using a slash |
+
+For example, the line:
 
 ```
 */5 9-16 * 1-5,9-12 1-5 ~/bin/i_love_cron.sh
@@ -359,6 +367,25 @@ Periodical settings can also be entered as in this crontab template:
 # mm  hh  DD  MM  W /path/progam [--option]...  ( W = weekday: 0-6 [Sun=0] )
   21  01  *   *   * /usr/bin/systemctl hibernate
   @weekly           $HOME/.local/bin/trash-empty
+
+```
+
+Here are some self-explanatory crontab syntax examples:
+
+```
+30 4 echo "It is now 4:30 am."
+0 22 echo "It is now 10 pm."
+30 15 25 12 echo "It is 3:30pm on Christmas Day."
+30 3 * * * echo "Remind me that it's 3:30am every day."
+0 * * * * echo "It is the start of a new hour."
+0 6 1,15 * * echo "At 6am on the 1st and 15th of every month."
+0 6 * * 2,3,5 echo "At 6am on Tuesday, Wednesday and Thursdays."
+59 23 * * 1-5 echo "Just before midnight on weekdays."
+0 */2 * * * echo "Every two hours."
+0 20 * * 4 echo "8pm on a Thursday."
+0 20 * * Thu echo "8pm on a Thursday."
+*/15 9-17 * * 2-5 echo "Every 15 minutes from 9am-5pm on weekdays."
+@yearly echo "Happy New Year!"
 
 ```
 
@@ -550,3 +577,4 @@ See the crontab [man page](/index.php/Man_page "Man page") for further informati
 ## See also
 
 *   [Gentoo Linux Cron Guide](http://www.gentoo.org/doc/en/cron-guide.xml)
+*   [crontab.guru](https://crontab.guru/) - online editor for cronjob expressions

@@ -160,18 +160,16 @@ Use the `-localhost` flag with x11vnc for it to bind to the local interface. Onc
 Simple example (from [http://www.karlrunge.com/x11vnc/index.html#tunnelling](http://www.karlrunge.com/x11vnc/index.html#tunnelling) ):
 
 ```
-$ ssh -t -L 5900:localhost:5900 remote_host 'sudo x11vnc -display :0 -auth /home/USER/.Xauthority'
+$ ssh -t -L 5900:localhost:5900 remote_host 'x11vnc -localhost -display :0'
 
 ```
-
-where USER is the username of the user who is running the X server.
 
 (You will likely have to provide passwords/passphrases to login from your current location into your remote_host Unix account; we assume you have a login account on remote_host and it is running the SSH server)
 
 And then in another terminal window on your current machine run the command:
 
 ```
-$ vncviewer -encodings "copyrect tight zrle hextile" localhost:0
+$ vncviewer -PreferredEncoding=ZRLE localhost:0
 
 ```
 

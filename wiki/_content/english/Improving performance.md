@@ -317,7 +317,7 @@ Using a journaling filesystem such as ext4 on an SSD **without** a journal is an
 
 #### Swap space
 
-See [Swap#Swappiness](/index.php/Swap#Swappiness "Swap").
+See [Swap#Performance](/index.php/Swap#Performance "Swap").
 
 ### Storage I/O scheduling with ionice
 
@@ -521,3 +521,4 @@ See [[9]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[10]](https://bbs
 ## See also
 
 *   [Red Hat Performance Tuning Guide](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Performance_Tuning_Guide/index.html)
+*   [Linux Performance Measurements using vmstat](https://www.thomas-krenn.com/en/wiki/Linux_Performance_Measurements_using_vmstat)

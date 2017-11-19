@@ -1,3 +1,9 @@
+Related articles
+
+*   [SSHFS](/index.php/SSHFS "SSHFS")
+*   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
+*   [Pure-FTPd](/index.php/Pure-FTPd "Pure-FTPd")
+
 The [Secure copy (SCP)](https://en.wikipedia.org/wiki/Secure_copy "wikipedia:Secure copy") is a protocol to transfer files via a [Secure Shell](/index.php/Secure_Shell "Secure Shell") connection. The [SSH file transfer protocol (SFTP)](https://en.wikipedia.org/wiki/SSH_file_transfer_protocol "wikipedia:SSH file transfer protocol") is a related protocol, also relying on a secure shell back-end. Both protocols allow secure file transfers, encrypting passwords and transferred data. The SFTP protocol, however, features additional capabilities like, for example, resuming broken transfers or remote file manipulation like deletion.
 
 ## Contents

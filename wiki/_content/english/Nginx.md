@@ -116,15 +116,16 @@ If the group is omitted, a group whose name equals that of *user* is used.
 
 #### Server blocks
 
-It is possible to serve multiple domains using `server` blocks. It may be referred as "VirtualHosts", however this is an [Apache](/index.php/Apache "Apache") term. The usage of `server` blocks also differs from [Apache](http://wiki.nginx.org/ServerBlockExample).
+It is possible to serve multiple domains using `server` blocks. These are comparable to "VirtualHosts" in [Apache](/index.php/Apache "Apache"). Also see the [upstream examples](https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/).
 
-In the example below the server listens for incoming connections for two domains: `domainname1.dom` and `domainname2.dom`:
+In the example below the server listens for incoming connections on IPv4 and IPv6 ports 80 for two domains, `domainname1.dom` and `domainname2.dom`:
 
  `/etc/nginx/nginx.conf` 
 ```
 ...
 server {
         listen 80;
+        listen [::]:80;
         server_name domainname1.dom;
         root /usr/share/nginx/domainname1.dom/html;
         location / {
@@ -134,7 +135,7 @@ server {
 
 server {
         listen 80;
-        listen [::]:80; # Also listen on IPv6
+        listen [::]:80;
         server_name domainname2.dom;
         root /usr/share/nginx/domainname2.dom/html;
         ...

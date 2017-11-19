@@ -64,7 +64,7 @@ PulseAudio can be configured in multiple ways depending on your needs and uses m
 
 #### `daemon.conf`
 
-This is the main configuration file to configure the daemon itself. It defines base settings like the default sample rates used by modules, resampling methods, realtime scheduling and various other settings related to the server process. These can not be changed at runtime without restarting the PulseAudio daemon. Most defaults make sense here and are self-explaining, see the `pulse-daemon.conf` [man](/index.php/Man "Man") page for additional information. Boolean options accepts any of these: `true`, `yes`, `on` and `1` as well as `false`, `no`, `off` and `0`.
+This is the main configuration file to configure the daemon itself. It defines base settings like the default sample rates used by modules, resampling methods, realtime scheduling and various other settings related to the server process. These can not be changed at runtime without restarting the PulseAudio daemon. Most defaults make sense here and are self-explaining, see the [pulse-daemon.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pulse-daemon.conf.5) manpage for additional information. Boolean options accepts any of these: `true`, `yes`, `on` and `1` as well as `false`, `no`, `off` and `0`.
 
 <caption>Notable configuration options</caption>
 | Option | Description |<caption></caption>

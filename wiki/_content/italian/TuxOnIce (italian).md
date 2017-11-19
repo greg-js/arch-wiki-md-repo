@@ -27,7 +27,7 @@ I file di configurazione di hibernate-script sono in `/etc/hibernate`.
 
 ## Ricreare initramfs
 
-Se si vuole usare un initramfs (cosa che Arch fa di default) è necessario aggiungere "resume" agli HOOKS di [mkinitcpio](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)"). In più, se si vuole usare la compressione veloce LZO aggiungere "lzo" all'array MODULES dello stesso file. Un esempio di `/etc/mkinitpio.conf`:
+Se si vuole usare un initramfs (cosa che Arch fa di default) è necessario aggiungere "resume" agli HOOKS di [mkinitcpio](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)"). In più, se si vuole usare la compressione veloce LZO aggiungere "lzo" all'array MODULES dello stesso file. Un esempio di `/etc/mkinitcpio.conf`:
 
 ```
 MODULES="lzo"

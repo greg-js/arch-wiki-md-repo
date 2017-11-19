@@ -3,7 +3,7 @@
 1.  Als je niet bekend bent met het schrijven of veranderen van artikels, zie [Help:Editing](/index.php/Help:Editing "Help:Editing").
 2.  Zie [Help:i18n](/index.php/Help:I18n "Help:I18n") voor een uitvoerige leiddraad over vertalingen in ArchWiki.
 3.  [Login](/index.php/Special:UserLogin "Special:UserLogin") om pagina's te kunnen veranderen.
-4.  Kies een artikel dat je wil vertalen. Dit kan een [willekeurige pagina](/index.php/Special:Random "Special:Random") zijn, of een van de artikels opgenomen in [ArchWiki Translation Day#List of priority pages](/index.php/ArchWiki_Translation_Day#List_of_priority_pages "ArchWiki Translation Day"). Neem bijvoorbeeld dit artikel: **ArchWiki Translation Team (Nederlands)**.
+4.  Kies een artikel dat je wil vertalen. Dit kan een [willekeurige pagina](/index.php/Special:Random "Special:Random") zijn, of een van de artikels opgenomen in [ArchWiki Translation Day#List of priority pages](/index.php/ArchWiki_Translation_Day#List_of_priority_pages "ArchWiki Translation Day"). Neem bijvoorbeeld dit artikel: <a class="mw-selflink selflink">ArchWiki Translation Team (Nederlands)</a>.
 5.  Klik "Edit" bovenaan op de pagina.
 6.  Je hebt een simpele tekstverwerker ter beschikking. Voeg een verwijzing toe voor de nieuwe taal, een zogenaamde [interwiki link](https://en.wikipedia.org/wiki/nl:Help:Gebruik_van_interwiki-links "wikipedia:nl:Help:Gebruik van interwiki-links"). In ons voorbeeld is dit `[[nl:ArchWiki Translation Team]]`. Zie [Help:i18n#Interlanguage links](/index.php/Help:I18n#Interlanguage_links "Help:I18n").
 7.  Kopieer de volledige inhoud van het artikel.

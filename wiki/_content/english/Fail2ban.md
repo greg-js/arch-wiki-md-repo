@@ -1,6 +1,7 @@
 Related articles
 
 *   [sshguard](/index.php/Sshguard "Sshguard")
+*   [Security](/index.php/Security "Security")
 
 **Warning:** Using an IP blacklist will stop trivial attacks but it relies on an additional daemon and successful logging (the partition containing /var can become full, especially if an attacker is pounding on the server). Additionally, if the attacker knows your IP address, they can send packets with a spoofed source header and get you locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to the problem of brute forcing without these problems.
 
@@ -19,6 +20,7 @@ Related articles
     *   [3.1 Default jails](#Default_jails)
     *   [3.2 Paths](#Paths)
     *   [3.3 Custom SSH jail](#Custom_SSH_jail)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -120,3 +122,12 @@ LogLevel VERBOSE
 ```
 
 in your `/etc/ssh/sshd_config`. Else, password failures are not logged correctly.
+
+## See also
+
+*   [Using a Fail2Ban Jail to Whitelist a User](http://www.the-art-of-web.com/system/fail2ban-action-whitelist/)
+*   [Optimising your Fail2Ban filters](http://www.the-art-of-web.com/system/fail2ban-filters/)
+*   [Fail2Ban and sendmail](http://www.the-art-of-web.com/system/fail2ban-sendmail/)
+*   [Fail2Ban and iptables](http://www.the-art-of-web.com/system/fail2ban/)
+*   [Fail2Ban 0.8.3 Howto](http://www.the-art-of-web.com/system/fail2ban-howto/)
+*   [Monitoring the fail2ban log](http://www.the-art-of-web.com/system/fail2ban-log/)

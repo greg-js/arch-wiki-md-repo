@@ -1237,6 +1237,7 @@ submenu "ISO boot" {
  # search -s root -l Arch_home
  insmod regexp
  probe -s root_uuid -u $root
+ arch=x86_64
 
  # вместо этой строки вставляем основной код, начиная с for 
 }
@@ -1251,6 +1252,7 @@ submenu "ISO boot" {
  root_uuid=ef6daeca-9278-40df-8c3b-55cf093ab215
  search -s root -u $root_uuid
  insmod regexp
+ arch=x86_64
 
  # вместо этой строки вставляем основной код, начиная с for 
 }

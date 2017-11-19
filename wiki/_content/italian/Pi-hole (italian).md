@@ -18,22 +18,39 @@ Pi-hole è un progetto basato su script di shell che gestisce liste di blocco di
             *   [1.2.2.1 Lighttpd](#Lighttpd)
             *   [1.2.2.2 Nginx](#Nginx)
         *   [1.2.3 FTL](#FTL)
-*   [2 Configurazione del router e di Pi-hole](#Configurazione_del_router_e_di_Pi-hole)
-    *   [2.1 Metodo consigliato](#Metodo_consigliato)
-    *   [2.2 Metodo alternativo](#Metodo_alternativo)
-*   [3 Usare Pi-hole attraverso OpenVPN](#Usare_Pi-hole_attraverso_OpenVPN)
-*   [4 Pi-hole Standalone](#Pi-hole_Standalone)
-    *   [4.1 Installazione](#Installazione_2)
-    *   [4.2 Configurazione iniziale](#Configurazione_iniziale_2)
-        *   [4.2.1 Dnsmasq](#Dnsmasq_2)
-        *   [4.2.2 Openresolve](#Openresolve)
-*   [5 Risorse](#Risorse)
+    *   [1.3 Configurazione del router e di Pi-hole](#Configurazione_del_router_e_di_Pi-hole)
+        *   [1.3.1 Metodo consigliato](#Metodo_consigliato)
+        *   [1.3.2 Metodo alternativo](#Metodo_alternativo)
+            *   [1.3.2.1 Metodo automatico: Impostare il server DNS Server nelle impostazioni del router](#Metodo_automatico:_Impostare_il_server_DNS_Server_nelle_impostazioni_del_router)
+            *   [1.3.2.2 Metodo manuale: Configura manualemente il DNS per ogni tuo dispositivo](#Metodo_manuale:_Configura_manualemente_il_DNS_per_ogni_tuo_dispositivo)
+        *   [1.3.3 Metodo Pi-hole centrico](#Metodo_Pi-hole_centrico)
+    *   [1.4 Usare Pi-hole attraverso OpenVPN](#Usare_Pi-hole_attraverso_OpenVPN)
+*   [2 Pi-hole Standalone](#Pi-hole_Standalone)
+    *   [2.1 Installazione](#Installazione_2)
+    *   [2.2 Configurazione iniziale](#Configurazione_iniziale_2)
+        *   [2.2.1 Dnsmasq](#Dnsmasq_2)
+        *   [2.2.2 Configurare la risoluzione dei nomi](#Configurare_la_risoluzione_dei_nomi)
+            *   [2.2.2.1 Manualmente](#Manualmente)
+            *   [2.2.2.2 Openresolve](#Openresolve)
+*   [3 Usare Pi-hole](#Usare_Pi-hole)
+    *   [3.1 Gestione dei DNS di Pi-hole](#Gestione_dei_DNS_di_Pi-hole)
+    *   [3.2 Aggiornamento forzato della lista dei domini pubblicitari](#Aggiornamento_forzato_della_lista_dei_domini_pubblicitari)
+    *   [3.3 Proteggere lìaccesso all'interfaccia web (solo pacchetto server)](#Proteggere_l.C3.ACaccesso_all.27interfaccia_web_.28solo_pacchetto_server.29)
+    *   [3.4 Disabilitare temporaneamente Pi-hole](#Disabilitare_temporaneamente_Pi-hole)
+*   [4 Risorse](#Risorse)
 
 ## Pi-hole Server
 
 ### Installazione
 
 Installa [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) e [pi-hole-server](https://aur.archlinux.org/packages/pi-hole-server/).
+Il pacchetto Pi-hole server installa 2 timers (e relativi servizi), entrambi abilitati staticamente:
+
+*   pi-hole-gravity.timer aggiornerà settimanalmente la lista nera dei server di Pi-hole.
+*   pi-hole-logtruncate.timer ripulirà giornalmente il log delle richieste LAN.
+
+Se non dovessi essere d'accordo con le temporizzazioni predefinite dei timers (ereditate dal progetto principale) puoi, ovviamente, modificarli o evitare che vengano eseguiti mascherandoli.
+Devi farli partire manualmente o semplicemente riavvia a configurazione terminata.
 
 ### Configurazione iniziale
 
@@ -119,13 +136,12 @@ Abilita `nginx.service` `php-fpm.service` e ri/avvia i servizi.
 
 #### FTL
 
-FTL è parte del progetto Pi-hole. E' un interfaccia simil-database/fornitore di API sul log delle richieste DNS di Pi-hole. E' possibile configurare FTL attraverso il file `/etc/pihole/pihole-FTL.conf`. [Leggi](https://github.com/pi-hole/FTL#ftls-config-file) la documentazione del progetto per i dettagli.
+FTL è parte del progetto Pi-hole. E' un interfaccia simil-database/fornitore di API sul log delle richieste DNS di Pi-hole. FTL è l'unico modo in cui l'interfaccia web di Pi-hole accede ai dati raccolti sull'uso di dnsmasq ed è quindi una dipendenza.
+E' possibile configurare FTL attraverso il file `/etc/pihole/pihole-FTL.conf`. [Leggi](https://github.com/pi-hole/FTL#ftls-config-file) la documentazione del progetto per i dettagli. `pi-hole-ftl.service` è abilitato staticamente; ri/avvialo.
 
-`pi-hole-ftl.service` è abilitato staticamente; ri/avvialo.
+### Configurazione del router e di Pi-hole
 
-## Configurazione del router e di Pi-hole
-
-### Metodo consigliato
+#### Metodo consigliato
 
 La maggior parte degli utenti hanno bisogno delle seguenti funzionalità:
 
@@ -153,16 +169,105 @@ Sulla macchina Pi-hole, entra nell'interfaccia web ([http://pi.hole](http://pi.h
 
 **Tip:** Un semplice controllo per vedere se il router è configurato correttamente consiste nel rinnovare l'indirizzo IP rilasciato dal DHCP e controllare il contenuto di `/etc/resolv.conf` sulla macchina client. Sarebbe corretto vedere l'indirizzo IP della macchina Pi-hole e non l'IP del router.
 
-### Metodo alternativo
+**Note:** Per una piena funzionalità della rete e di Pi-hole, potrebbe essere necessario disabilitare, se presente nel firmware del router, la funzionalità `dns-rebind`.
 
 **Note:** La configurazione consigliata potrebbe non essere possibile su alcuni router a seconda delle possibilità offerte dal firmware. La configurazione consigliata è confermata funzionante su alcuni popolari firmware open-source come [LEDE/OpenWRT](https://forum.lede-project.org/t/lede-pi-hole-works-perfectly-need-to-understand-why-so-i-can-configure-tomatousb-the-same-way/8274), [DD-WRT](https://www.dd-wrt.com/site/index), e [TomatoUSB](http://www.linksysinfo.org/index.php?threads/redefining-dns-from-router-to-a-box-running-pi-hole.73576/#post-292078) per nominarne alcuni.
 
-Gli utenti impossibilitati di configurare il router come precedentemente esposto possono fare riferimento a [questa guida](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) per ottenere quasi tutte le funzionalità richieste. Le limitazioni chiave di utilizzo di questo metodo includono:
+#### Metodo alternativo
 
-1.  Monitoraggio degli host sulla macchina Pi-hole (p.e.: log delle richieste DNS legate a singole macchine dai rispettivi hostname).
-2.  La risoluzione dei nomi sulla LAN.
+Gli utenti impossibilitati nel configurare il router come precedentemente indicato possono fare riferimento a [questa guida ufficiale](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) per le istruzioni sulla configurazione.
+Per completezza, un sunto di tale quida viene riportato a seguire.
+Possono essere seguiti due metodi:
 
-## Usare Pi-hole attraverso OpenVPN
+##### Metodo automatico: Impostare il server DNS Server nelle impostazioni del router
+
+Questa è la via più veloce per fare usare Pi-hole ai tuoi dispositivi. Se imposti in questa maniera le opzioni DHCP del tuo router, qualsiasi dispositivo che si connette alla LAN bloccherà immediatamente la pubblicità.
+
+**Tip:** Assicurati di agire nella sezione **LAN** e non in quella **WAN**.
+
+Vai alla **sezione DHCP Server** del tuo router e imposta l'indirizzo IP della macchina che esegue Pi-hole come unico server DNS per la tua **LAN**.
+
+**Warning:** Se hai già dei dispositivi connessi alla rete al momento di questi cambiamenti, non vedrai la pubblicità bloccata fino al rinnovo delle impostazioni DHCP. Per semplicità, riavvia quei dispositivi.
+
+**Note:** Nota che il tuo Pi-hole dovrebbe risultare l'unico server DNS in quanto è Pi-hole stesso a redirigere le richieste agli altri server. Se imposti altri server sul router, è possibile che il filtraggio della pubblicità ne risenta negativamente.
+
+##### Metodo manuale: Configura manualemente il DNS per ogni tuo dispositivo
+
+E' possibile configurare manulamente ogni dispositivo per far si che usi Pi-hole come suo DNS server. Hai solo bisogno dell'indirizzo IP del tuo Pi-hole e seguire le seguenti istruzioni a seconda del tuo sistema operativo.
+
+**Linux**
+In diversi Desktop Environment moderni per Linux, l'impostazione dei DNS è fatta attraverso Network Manager.
+
+1.  Clicca Sistema > Preferenze > Connessioni di rete
+2.  Seleziona la connessione che vuoi configurare
+3.  Clicca Modifica
+4.  Seleziona la linguetta impostazioni IPv4 o IPv6
+5.  Se è selezionato il metodo Automatico (DHCP), seleziona invece Automatico (DHCP) solo indirizzi. Se il metodo è impostato su qualcos'altro, non cambiarlo.
+6.  Nella casella di testo Server DNS, inserisci l'IP di Pi-hole
+7.  Clicca Salva per applicare i cambiamenti
+8.  Ripeti la procedura per ogni connesione di rete che vuoi modificare.
+
+Se non usi Network Manager, segui le specifiche istruzioni sul tuo gestore di connesione per la modifica manuale dei DNS.
+Se non usi alcun gestore di connesione i tuoi server DNS sono elencati nel file `/etc/resolv.conf`: modificalo in modo da inserire la seguente **unica** voce `nameserver`:
+
+ `/etc/resolv.conf` 
+```
+[...]
+nameserver <Pi-hole_box_IP>
+
+```
+
+dove `<Pi-hole_box_IP>` l'indirizzo IP della macchina che esegue Pi-hole.
+
+**macOS**
+
+1.  Clicca Apple > Preferenze di sistema > Rete
+2.  Seleziona la connessione di cui vuoi configurare il DNS
+3.  Clicca Avanzate
+4.  Seleziona la linguetta DNS
+5.  Clicca + per rimpiazzare qualsiasi indirizzo esistente, o aggiungi, l'indirizzo IP di Pi-hole in cima alla lista:
+6.  Clicca Applica > OK
+7.  Ripeti la procedura per ogni connesione di rete che vuoi modificare.
+
+**Windows**
+Le impostazioni DNS sono specificate nelle finestra delle proprietà TCP/IP della connessione di rete selezionata.
+
+1.  Vai al Pannelleo di controllo
+2.  Clicca Rete e Internet > Centro di connessione e condivisione di rete > Modifica impostazione scheda
+3.  Seleziona la connessione che vuoi configurare
+4.  Click col destro sulla connessione > Proprietà
+5.  Seleziona la linguetta Rete
+6.  Seleziona Protocollo Internet Versione 4 (TCP/IPv4) o Protocollo Internet Versione 6 (TCP/IPv6)
+7.  Clicca Proprietà
+8.  Clicca Avanzate
+9.  Seleziona la linguetta DNS
+10.  Clicca OK
+11.  Seleziona Usa i seguenti server DNS
+12.  Rimpiazza gli indirizzi con quello del tuo Pi-hole
+13.  Riavvia la connessione selezionata al punto 3
+14.  Ripeti la procedura per ogni connesione di rete che vuoi modificare.
+
+#### Metodo Pi-hole centrico
+
+Può essere seguito anche un altro metodo per configurare la tua LAN. E' possibile impostare la macchina che esegue Pi-hole come server DHCP e disattivare tutti i servizi di rete sul tuo router, relegandolo a semplice gateway/natter.
+
+**Warning:** Dnsmasq dovrebbe essere appena installato o dovrebbe usare il file di configurazione predefinito fornito dal pacchetto Pi-hole. Le seguenti istruzioni potrebbero sovrascrivere le tue personalizzazioni di dnsmasq ove presenti.
+
+Per semplicità di configurazione ed esposizione, sarà seguito solo il metodo di configurazione via interfaccia web:
+
+*   Vai nell'interfaccia di configurazione del tuo router e disabilità il servizio DHCP. Prendi nota dell'indirizzo IP del router.
+*   Vai nell'interfaccia web di Pi-hole ([http://pi.hole](http://pi.hole))
+*   Vai a **Settings/Pi-hole DHCP Server**
+*   Abilita **DHCP server enabled**
+*   Imposta l'intervallo DHCP per la tua LAN valorizzando le caselle di testo **From** e **To**. Per esempio: da 192.168.1.2 a 192.168.1.100
+*   Imposta l'inrizzo IP del router nella casella di testo **Router**. Per esempio: 192.168.1.1
+*   Opzionale: Da **Advanced DHCP settings** abilita **Enable IPv6 support (SLAAC + RA)** se vuoi il supporto e le funzionalità IPv6.
+*   Opzionale: Se abbisogni di rilasci statici del DHCP li puoi configurare andando nella sezione **DHCP leases/Static DHCP leases configuration**.
+*   Save per applicare i cambiamenti.
+
+**Warning:** Se hai già dei dispositivi connessi alla rete al momento di questi cambiamenti, non vedrai la pubblicità bloccata fino al rinnovo delle impostazioni DHCP. Per semplicità, riavvia quei dispositivi.
+
+### Usare Pi-hole attraverso OpenVPN
 
 E' possibile usare [OpenVPN](/index.php/OpenVPN "OpenVPN") (server) assieme a Pi-hole per redirigere il traffico remoto dei client al DNS di Pi-hole e rimuovere loro la pubblicità. E' logico aspettarsi una riduzione del traffico cellulare in quanto i banner pubblicitari non vengono nemmeno caricati. Assicurati che il file `/etc/openvpn/server/server.conf` contenga le due linee indicate qui sotto sostituendo "xxx.xxx.xxx.xxx" con l'indirizzo IP della macchina che esegue Pi-hole:
 
@@ -188,16 +293,46 @@ La variante Standalone di Pi-hole per Archlinux è nata dalla necessità di usar
 ### Installazione
 
 Installa il pacchetto [pi-hole-standalone](https://aur.archlinux.org/packages/pi-hole-standalone/).
+Il pacchetto Pi-hole standalone installa un timer (e relativo service) staticamente abilitato che aggiornerà settimanalmente la lista nera dei server di Pi-hole. Se non dovessi essere d'accordo con le temporizzazioni predefinite del timer (ereditata dal progetto principale) puoi, ovviamente, modificarlo o evitare che venga eseguito mascherandolo.
+Devi far partire manualmente `pi-hole-gravity.timer` o semplicemente riavvia a configurazione terminata.
 
 ### Configurazione iniziale
 
 #### Dnsmasq
 
-La configurazione è identica ai passaggi descritti in [#Dnsmasq](#Dnsmasq).
+Assicurati che la seguente riga in `/etc/dnsmasq.conf` sia non commentata:
 
-#### Openresolve
+ `/etc/dnsmasq.conf` 
+```
+[...]
+conf-dir=/etc/dnsmasq.d/,*.conf
 
-Modifica `/etc/resolvconf.conf` e rimuovi il commento alla linea name_servers:
+```
+
+Abilita `dnsmasq.service` e ri/avvia il servizio.
+
+#### Configurare la risoluzione dei nomi
+
+Il pacchetto Pi-hole standalone per funzionare correttamente richiede che sia impostato un unico server DNS sulla tua macchina. L'indirizzo DNS deve essere quello della tua stessa macchina.
+Questo può essere fatto in diverse maniere.
+
+##### Manualmente
+
+Se sulla tua macchina nessun servizio gestisce automaticamente il file `/etc/resolv.conf`, puoi facilemente modificarlo in modo da inserire una **unica** voce `nameserver`:
+
+ `/etc/resolv.conf` 
+```
+[...]
+nameserver 127.0.0.1
+
+```
+
+**Note:** nessun'altra voce `nameserver` deve essere presente nel file di configurazione.
+
+##### Openresolve
+
+E' probabile che sia il servizio [openresolv](https://www.archlinux.org/packages/?name=openresolv) a gestire `/etc/resolv.conf` nel caso in cui sia usato un gestore di connessioni come [netctl](https://www.archlinux.org/packages/?name=netctl), [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) o altri. Se è il tuo caso, occorre forzare [openresolv](https://www.archlinux.org/packages/?name=openresolv) ad usare **localhost** come server dei nomi.
+Modifica `/etc/resolvconf.conf` in modo da togliere il commento alla riga name_servers:
 
  `/etc/resolvconf.conf` 
 ```
@@ -212,6 +347,85 @@ e aggiorna resolvconf:
 # resolvconf -u
 
 ```
+
+## Usare Pi-hole
+
+Come precedentemente menzionato, Pi-hole offre la possibiltà di essere usato e configurato sia da riga di comando sia dalla sua interfaccia web (solo pacchetto server).
+
+### Gestione dei DNS di Pi-hole
+
+Alla prima installazione, Pi-hole è configurato in maniera predefinita per usare i DNS di Google per risolvere i nomi richiesti dalla tua LAN. Se vuoi cambiare i server o semplicemente aggiungerne altri, sulla macchina che esegue Pi-hole puoi eseguire
+
+```
+pihole -a setdns [DNS1],[DNS2],...
+
+```
+
+seguito da una lista di server DNS separati da virgole che vuoi che userà Pi-hole. Per esempio, se in aggiunta ai DNS di Google vuoi aggiungere quelli di Comodo esegui
+
+```
+pihole -a setdns 8.8.8.8,8.8.4.4,8.26.56.26,8.20.246.20
+
+```
+
+Per il solo pacchetto server, puoi fare la stessa cosa via interfaccia web ([http://pi.hole](http://pi.hole)) andando su **Settings** e aggiungendo i server DNS desiderati nella sezione **Upstream DNS Servers**. **Save** per applicare i cambiamenti.
+
+### Aggiornamento forzato della lista dei domini pubblicitari
+
+Se hai la necessità di aggiornare la lista dei domini bloccati, sulla macchina Pi-hole puoi eseguire
+
+```
+pihole -g
+
+```
+
+o, sul solo pacchetto server, via interfaccia web ([http://pi.hole](http://pi.hole)) vai su **Tools/Update Lists** ed esegui **Update Lists**.
+
+### Proteggere lìaccesso all'interfaccia web (solo pacchetto server)
+
+L'interfaccia web di Pi-hole può venire protetta da password contro uni non autorizzati. Sulla macchina Pi-hole puoi eseguire
+
+```
+pihole -a -p <pwd>
+
+```
+
+dove `<pwd>` è la password da assegnare. Puoi lascare il campo vuoto per ottenere la classica richiesta e conferma password alla *nix.
+Per disattivare la password di accesso riesegui
+
+```
+pihole -a -p
+
+```
+
+lasciando **tutto** vuoto.
+
+### Disabilitare temporaneamente Pi-hole
+
+Pi-hole può venire facilmente messo in pausa attraverso la sua intefaccia web ([http://pi.hole](http://pi.hole)): vai su **Disable** e scegli l'opzione di disabilitazione che preferisci.
+E' possibile anche via CLI eseguendo
+
+```
+pihole disable [time]
+
+```
+
+Lasciando `time` vuoto la disabilitazione sarà permanente fino alla successiva manuale riabilitazione.
+`time` può essere espresso in secondi o minuti con la sintassi #s e #m. Per esempio, per disabilitare Pi-hole per soli 5 minuti, puoi eseguire
+
+```
+pihole disable 5m
+
+```
+
+In qualsiasi momento è possibile riabilitare Pi-hole con
+
+```
+pihole enable
+
+```
+
+o, via interfaccia web, cliccando su **Enable**.
 
 ## Risorse
 

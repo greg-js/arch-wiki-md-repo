@@ -22,4 +22,4 @@
 여기는 한글로 번역된 문서들을 연결하는 곳입니다.
 
 | Page | Language | Notes |
-| **ArchWiki Translation Team (한국어)** | 한국어 | - |
+| <a class="mw-selflink selflink">ArchWiki Translation Team (한국어)</a> | 한국어 | - |

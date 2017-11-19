@@ -53,6 +53,8 @@ For optional further configuration, see the following sections.
 
 ### Advanced options
 
+See the [full list of Apache configuration directives](https://httpd.apache.org/docs/trunk/mod/directives.html) and the [directive quick reference](https://httpd.apache.org/docs/trunk/mod/quickreference.htm).
+
 These options in `/etc/httpd/conf/httpd.conf` might be interesting for you:
 
 ```
@@ -138,7 +140,7 @@ Restart `httpd.service` to apply any changes. See also [Umask#Set the mask value
 
 **Warning:** If you plan on implementing SSL/TLS, know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how to apply appropriate changes to the web server, visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
 
-[openssl](https://www.archlinux.org/packages/?name=openssl) provides TLS/SSL support and is installed by default on Arch installations.
+[OpenSSL](/index.php/OpenSSL "OpenSSL") provides TLS/SSL support and is installed by default on Arch installations.
 
 In `/etc/httpd/conf/httpd.conf`, uncomment the following three lines:
 
@@ -559,6 +561,9 @@ and restart `httpd.service`.
 
 ## See also
 
-*   [Apache Official Website](http://www.apache.org/)
-*   [Tutorial for creating self-signed certificates](http://www.akadia.com/services/ssh_test_certificate.html)
-*   [Apache Wiki Troubleshooting](http://wiki.apache.org/httpd/CommonMisconfigurations)
+*   [Apache Official Website](https://www.apache.org/)
+*   [Apache documentation](https://httpd.apache.org/docs/2.4/)
+*   [Apache wiki](https://wiki.apache.org/httpd/)
+*   [Apache documentation - Security Tips](https://httpd.apache.org/docs/current/misc/security_tips.html)
+*   [Apache Wiki - Troubleshooting](https://wiki.apache.org/httpd/CommonMisconfigurations)
+*   [Apache](https://wiki.debian.org/Apache "debian:Apache") on wiki.debian.org

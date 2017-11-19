@@ -8,7 +8,7 @@ Related articles
 *   [Pkgfile](/index.php/Pkgfile "Pkgfile")
 *   [Command-line shell](/index.php/Command-line_shell "Command-line shell")
 
-**Bash** (Bourne-again Shell) is a [command-line shell](/index.php/Command-line_shell "Command-line shell")/programming language by the [GNU Project](/index.php/GNU_Project "GNU Project"). Its name is a homaging reference to its predecessor: the long-deprecated Bourne shell. Bash can be run on most UNIX-like operating systems, including GNU/Linux.
+[Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) (Bourne-again Shell) is a [command-line shell](/index.php/Command-line_shell "Command-line shell")/programming language by the [GNU Project](/index.php/GNU_Project "GNU Project"). Its name is a homaging reference to its predecessor: the long-deprecated Bourne shell. Bash can be run on most UNIX-like operating systems, including GNU/Linux.
 
 ## Contents
 
@@ -300,13 +300,15 @@ export IGNOREEOF=100
 *   [Readline Init File Syntax](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html)
 *   [The Bourne-Again Shell](http://www.aosabook.org/en/bash.html) - The third chapter of *The Architecture of Open Source Applications*
 *   [Shellcheck](http://shellcheck.net) - Check bash scripts for common errors
+*   [PS1 generator](http://bashrcgenerator.com/.bashrc) - generate your .bashrc/PS1 bash prompt with a drag and drop interface
 
 ### Tutorials
 
-*   [BashGuide on Greg's Wiki](http://mywiki.wooledge.org/BashGuide)
-*   [BashFAQ on Greg's Wiki](http://mywiki.wooledge.org/BashFAQ)
+*   [Greg's Wiki](http://mywiki.wooledge.org/)
+*   [Greg's Wiki: BashGuide](http://mywiki.wooledge.org/BashGuide)
+*   [Greg's Wiki: BashFAQ](http://mywiki.wooledge.org/BashFAQ)
 *   [Bash Hackers Wiki](http://wiki.bash-hackers.org/doku.php)
-*   [Bash Hackers: List of Bash online-tutorials](http://wiki.bash-hackers.org/scripting/tutoriallist)
+*   [Bash Hackers Wiki: List of Bash online tutorials](http://wiki.bash-hackers.org/scripting/tutoriallist)
 *   [Quote Tutorial](http://www.grymoire.com/Unix/Quote.html)
 
 ### Community

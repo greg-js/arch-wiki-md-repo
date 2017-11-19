@@ -1,4 +1,4 @@
-**Readline** is a library by the [GNU Project](/index.php/GNU_Project "GNU Project"), used by [Bash](/index.php/Bash "Bash") and other CLI-interface programs to edit and interact with the command line. Before reading this page please refer to the library home [page](http://www.gnu.org/s/readline/) as only subtle configuration will be introduced here.
+[readline](http://www.gnu.org/s/readline/) is a library by the [GNU Project](/index.php/GNU_Project "GNU Project"), used by [Bash](/index.php/Bash "Bash") and other CLI-interface programs to edit and interact with the command line. See [readline(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/readline.3) for more information.
 
 ## Contents
 
@@ -9,26 +9,17 @@
 *   [5 Colorized completion](#Colorized_completion)
 *   [6 Macros](#Macros)
 *   [7 Disabling control echo](#Disabling_control_echo)
+*   [8 See also](#See_also)
 
 ## Editing mode
 
-By default Readline uses Emacs style shortcuts for interacting with command line. However, vi style editing interface is also supported. Either way, rich sets of shortcut keys are provided for editing [without using the far-away cursor keys](/index.php/Keyboard_without_cursor_keys "Keyboard without cursor keys").
+By default *readline* uses Emacs style shortcuts for interacting with command line. However, [vi](/index.php/Vi "Vi") style editing interface is also supported by adding the following to `~/.inputrc`:
 
-If you are a [vi](/index.php/Vi "Vi") or [vim](/index.php/Vim "Vim") user, you may want to put the following line in your `~/.inputrc` to enable vi-like keybindings in all Readline based programs:
+ `~/.inputrc`  ` set editing-mode vi` 
 
-```
-set editing-mode vi
+Alternatively, to set it only for [bash](/index.php/Bash "Bash") by adding the following line to `~/.bashrc`:
 
-```
-
-Alternatively, you can set it only for Bash by adding the following line to `~/.bashrc`:
-
-```
-set -o vi
-
-```
-
-You may find either [vi](http://www.catonmat.net/download/bash-vi-editing-mode-cheat-sheet.pdf) or [emacs](http://www.catonmat.net/download/readline-emacs-editing-mode-cheat-sheet.pdf) cheat sheets useful.
+ `~/.bashrc`  ` set -o vi` 
 
 ## Fast word movement
 
@@ -199,9 +190,14 @@ As a last example, quickly send a command in the background with `Ctrl+Alt+B`, d
 
 ## Disabling control echo
 
-Due to an update to [readline](https://www.archlinux.org/packages/?name=readline), the terminal now echoes `^C` after `Ctrl+C` is pressed. For users who wish to disable this, simply add the following to `~/.inputrc`:
+*readline* causes the terminal to echoe `^C` after `Ctrl+C` is pressed. For users who wish to disable this, simply add the following to `~/.inputrc`:
 
 ```
 set echo-control-characters off
 
 ```
+
+## See also
+
+*   [vi readline editing cheat sheat](http://www.catonmat.net/download/bash-vi-editing-mode-cheat-sheet.pdf)
+*   [emacs readline editing cheat sheet](http://www.catonmat.net/download/readline-emacs-editing-mode-cheat-sheet.pdf)

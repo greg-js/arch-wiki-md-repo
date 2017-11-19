@@ -78,7 +78,8 @@ If you now log out and log in again, you will be greeted by the other shell.
 ## See also
 
 *   [Evolution of shells in Linux](http://www.ibm.com/developerworks/linux/library/l-linux-shells/index.html) on the IBM developerWorks
-*   [Goosh](http://www.goosh.org/) is the unofficial Google shell, which implements a shell interface over the commonly used Google search interface.
-*   [>_ .bashrc PS1 generator](http://bashrcgenerator.com/) generate your .bashrc/PS1 bash prompt easily with a drag and drop interface.
 *   [terminal.sexy](https://terminal.sexy/) — Terminal Color Scheme Designer
-*   [Hyperpolyglot](http://hyperpolyglot.org/unix-shells) — Hyperpolyglot entry about shell
+*   [Hyperpolyglot](http://hyperpolyglot.org/unix-shells) — Side-by-side comparison of shell syntaxes
+*   [UNIX Power Tools](http://docstore.mik.ua/orelly/unix/upt/index.htm) — General command-line tool usage
+*   [commandlinefu.com](https://www.commandlinefu.com/commands/browse) — Command-line snippets sharing
+*   [List_of_applications#Terminal_emulators](/index.php/List_of_applications#Terminal_emulators "List of applications")

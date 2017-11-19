@@ -137,7 +137,7 @@ Once your new settings have been tested and meet your needs, edit the `default.p
 
 **Tip:** leave the `load-module module-default-device-restore` line in the `default.pa` file untouched. It will allow you to restart the server in its default state, thus dismissing any wrong setting.
 
-It is important to understand that the "sources" (processes, capture devices) and "sinks" (sound cards, servers, other processes) accessible and selectable through PulseAudio depend upon the current hardware "Profile" selected. These "Profiles" are those ALSA "pcms" listed by the command `aplay -L`, and more specifically by the command `pacmd list-cards`, which will include a line "index:", a list beginning "profiles:", and a line "active profile: <...>" in the output, among other things.
+It is important to understand that the "sources" (processes, capture devices) and "sinks" (sound cards, servers, other processes) accessible and selectable through PulseAudio depend upon the current hardware "Profile" selected. These "Profiles" are those ALSA "pcms" listed by the command `aplay -L`, and more specifically by the command `pacmd list-cards`, which will include a line "index:", a list beginning "profiles:", and a line "active profile: <...>" in the output, among other things. "Profiles" correspond to different card input/output configurations, notably the number of available input/output channels.
 
 The "active profile" can be set with the command `pacmd set-card-profile INDEX PROFILE`, with *no* comma separating INDEX and PROFILE, where INDEX is just the number on the line "index:" and a PROFILE name is everything shown from the beginning of any line under "profile:" to just *before* the colon and first space, as shown by the command `pacmd list-cards`. For instance, `pacmd set-card-profile 0 output:analog-stereo+input:analog-stereo`.
 
@@ -408,7 +408,9 @@ See also the official guide [[3]](https://xmms2.org/wiki/Using_the_application).
 
 ### KDE Plasma Workspaces and Qt4
 
-PulseAudio will automatically be used by KDE/Qt4 applications. It is supported by default in the KDE sound mixer. For more information see the [KDE page in the PulseAudio wiki](https://www.freedesktop.org/wiki/Software/PulseAudio/Desktops/KDE/). One useful tidbit from that page is to add `load-module module-device-manager` to `/etc/pulse/default.pa`.
+PulseAudio will automatically be used by KDE/Qt4 applications. It is supported by default in the KDE sound mixer. For more information see the [KDE page in the PulseAudio wiki](https://www.freedesktop.org/wiki/Software/PulseAudio/Desktops/KDE/).
+
+One useful tidbit from that page is that `load-module module-device-manager` should be loaded. This usually happens automatically at login through the script `/usr/bin/start-pulseaudio-x11`; if you find that the module is not loaded automatically you can consider adding it manually to `/etc/pulse/default.pa`. See [#Switch on connect](#Switch_on_connect) for possible conflicts with the `module-switch-on-connect`.
 
 If the phonon-gstreamer backend is used for Phonon, GStreamer should also be configured as described in [#GStreamer](#GStreamer).
 

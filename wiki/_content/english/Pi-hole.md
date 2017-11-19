@@ -21,6 +21,9 @@ Pi-hole is a shell-script based project that manages blocklists of known adverti
     *   [1.3 Configuration of the router and of Pi-hole](#Configuration_of_the_router_and_of_Pi-hole)
         *   [1.3.1 Preferred method](#Preferred_method)
         *   [1.3.2 Fallback method](#Fallback_method)
+            *   [1.3.2.1 Automatic method: Set Your DNS Server In Your Router's Settings](#Automatic_method:_Set_Your_DNS_Server_In_Your_Router.27s_Settings)
+            *   [1.3.2.2 Manual Method: Manual configure DNS entry for your devices](#Manual_Method:_Manual_configure_DNS_entry_for_your_devices)
+        *   [1.3.3 Pi-hole centric method](#Pi-hole_centric_method)
     *   [1.4 Using Pi-hole together with OpenVPN](#Using_Pi-hole_together_with_OpenVPN)
 *   [2 Pi-hole Standalone](#Pi-hole_Standalone)
     *   [2.1 Installation](#Installation_2)
@@ -30,9 +33,10 @@ Pi-hole is a shell-script based project that manages blocklists of known adverti
             *   [2.2.2.1 Manually](#Manually)
             *   [2.2.2.2 Openresolve](#Openresolve)
 *   [3 Using Pi-hole](#Using_Pi-hole)
-    *   [3.1 Forced update of ad-serving domains list](#Forced_update_of_ad-serving_domains_list)
-    *   [3.2 Protect web interface access (server package only)](#Protect_web_interface_access_.28server_package_only.29)
-    *   [3.3 Temporarily disable Pi-hole](#Temporarily_disable_Pi-hole)
+    *   [3.1 Pi-hole DNS management](#Pi-hole_DNS_management)
+    *   [3.2 Forced update of ad-serving domains list](#Forced_update_of_ad-serving_domains_list)
+    *   [3.3 Protect web interface access (server package only)](#Protect_web_interface_access_.28server_package_only.29)
+    *   [3.4 Temporarily disable Pi-hole](#Temporarily_disable_Pi-hole)
 *   [4 See also](#See_also)
 
 ## Pi-hole Server
@@ -40,7 +44,7 @@ Pi-hole is a shell-script based project that manages blocklists of known adverti
 ### Installation
 
 [Install](/index.php/Install "Install") [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) and [pi-hole-server](https://aur.archlinux.org/packages/pi-hole-server/).
-The pi-hole server package installs two timers (and relative services), both statically enabled:
+The Pi-hole server package installs two timers (and relative services), both statically enabled:
 
 *   pi-hole-gravity.timer will weekly update Pi-hole blacklisted servers list.
 *   pi-hole-logtruncate.timer will daily clean LAN DNS requests log.
@@ -168,11 +172,101 @@ On Pi-hole, login to the web interface ([http://pi.hole](http://pi.hole)), selec
 
 **Note:** For a full network and Pi-hole functionality, you may need to disable, if present on your router firmware, the `dns-rebind` feature.
 
-#### Fallback method
-
 **Note:** The above configuration may not be possible on some routers depending on the feature set exposed the firmware. The configuration above is confirmed to work on some popular open-source firmwares such as [LEDE/OpenWRT](https://forum.lede-project.org/t/lede-pi-hole-works-perfectly-need-to-understand-why-so-i-can-configure-tomatousb-the-same-way/8274), [DD-WRT](https://www.dd-wrt.com/site/index), and [TomatoUSB](http://www.linksysinfo.org/index.php?threads/redefining-dns-from-router-to-a-box-running-pi-hole.73576/#post-292078) to name a few.
 
-Users unable to configure the router as directed above are referred to [this upstream guide](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) for setup instructions of their routers.
+#### Fallback method
+
+Users unable to configure the router as directed above are referred to [this upstream guide](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) for setup instructions.
+For completeness, an overview of the guide will be provided below.
+You can follow two methods:
+
+##### Automatic method: Set Your DNS Server In Your Router's Settings
+
+This is the fastest way to get all of your devices using Pi-hole. If you set this configuration via your router's DHCP options, any device that connects to your network will immediately begin blocking ads.
+
+**Tip:** Make sure you adjust this setting under your **LAN** settings and not the **WAN**.
+
+Go to the **DHCP Server section** of your router and set your Pi-hole box IP address as your unique DNS server for your **LAN**.
+
+**Warning:** If you have existing network devices on your network when you make this change, you will not see ads getting blocked until the DHCP lease is renewed. For simplicity, restart those devices.
+
+**Note:** Note that your Pi-hole should be the only DNS server set here as Pi-hole already delivers the other upstream servers. If you set another server in your router, it's possible your ad blocking will be negatively affected..
+
+##### Manual Method: Manual configure DNS entry for your devices
+
+You can manually configure each device to use Pi-hole as their DNS server. You just need the IP address of your Pi-hole and then follow the instructions below for your operating system.
+
+**Linux**
+In many of modern Linux Desktop Environment, DNS settings are configured through Network Manager.
+
+1.  Click System > Preferences > Network Connections
+2.  Select the connection for which you want to configure
+3.  Click Edit
+4.  Select the IPv4 Settings or IPv6 Settings tab
+5.  If the selected method is Automatic (DHCP), open the dropdown and select Automatic (DHCP) addresses only instead. If the method is set to something else, do not change it.
+6.  In the DNS servers field, enter your Pi's IP addresses
+7.  Click Apply to save the change
+8.  Repeat the procedure for additional network connections you want to change.
+
+If you don't use Network Manager, plese refer to your connection manager instruction for specific DNS manual settings.
+If you don't use a connection manager at all your DNS settings are specified in `/etc/resolv.conf`: edit it to insert the following **unique** `nameserver` item:
+
+ `/etc/resolv.conf` 
+```
+[...]
+nameserver <Pi-hole_box_IP>
+
+```
+
+where `<Pi-hole_box_IP>` is IP address of the machine that run Pi-hole.
+
+**macOS**
+
+1.  Click Apple > System Preferences > Network
+2.  Highlight the connection for which you want to configure DNS
+3.  Click Advanced
+4.  Select the DNS tab
+5.  Click + to replace any listed addresses with, or add, your Pi's IP addresses at the top of the list:
+6.  Click Apply > OK
+7.  Repeat the procedure for additional network connections you want to change.
+
+**Windows**
+DNS settings are specified in the TCP/IP Properties window for the selected network connection.
+
+1.  Go to the Control Panel
+2.  Click Network and Internet > Network and Sharing Center > Change adapter settings
+3.  Select the connection for which you want to configure
+4.  Right-click Local Area Connection > Properties
+5.  Select the Networking tab
+6.  Select Internet Protocol Version 4 (TCP/IPv4) or Internet Protocol Version 6 (TCP/IPv6)
+7.  Click Properties
+8.  Click Advanced
+9.  Select the DNS tab
+10.  Click OK
+11.  Select Use the following DNS server addresses
+12.  Replace those addresses with the IP addresses of your Pi
+13.  Restart the connection you selected in step 3
+14.  Repeat the procedure for additional network connections you want to change.
+
+#### Pi-hole centric method
+
+You can follow another method to configure your LAN. You can set up the machine running Pi-hole as a DHCP server and turn off all network services on your router, relegating it to a simple gateway/natter.
+
+**Warning:** Dnsmasq should be just installed or you should use the default Pi-hole dnsmasq configuration provided with the package. The following instructions may overwrite your dnsmasq customizations if present.
+
+For semplicity of configuration and exposure, only the method via web interface will be followed:
+
+*   Go to your router configuration interface and turn off DHCP service. Take note of your router IP address.
+*   Go to Pi-hole web interface ([http://pi.hole](http://pi.hole))
+*   Go to **Settings/Pi-hole DHCP Server**
+*   Check **DHCP server enabled**
+*   Set DHCP range for your LAN valorizing **From** and **To** boxes. For example: From 192.168.1.2 To 192.168.1.100
+*   Set your router IP address into **Router** box. For example: 192.168.1.1
+*   Optional: From **Advanced DHCP settings** check **Enable IPv6 support (SLAAC + RA)** if you want IPv6 support and functionality.
+*   Optional: If you need some static DHCP lease you can configure them going to **DHCP leases/Static DHCP leases configuration** section.
+*   Save to apply changes.
+
+**Warning:** If you have existing network devices on your network when you make this change, you will not see ads getting blocked until the DHCP lease is renewed. For simplicity, restart those devices.
 
 ### Using Pi-hole together with OpenVPN
 
@@ -200,7 +294,7 @@ The Archlinux Pi-hole Standalone variant is born from the need to use Pi-hole se
 ### Installation
 
 [Install](/index.php/Install "Install") the [pi-hole-standalone](https://aur.archlinux.org/packages/pi-hole-standalone/) package.
-The pi-hole standalone package install a statically enabled timer (and relative services) will weekly update Pi-hole blacklisted servers list. If you do not like default timer timings (from upstrem project) you can, of course, [edit](/index.php/Edit "Edit") it or preventing from being executed by [masking](/index.php/Systemd#Using_units "Systemd") it.
+The Pi-hole standalone package install a statically enabled timer (and relative service) will weekly update Pi-hole blacklisted servers list. If you do not like default timer timings (from upstrem project) you can, of course, [edit](/index.php/Edit "Edit") it or preventing from being executed by [masking](/index.php/Systemd#Using_units "Systemd") it.
 You need to manually start `pi-hole-gravity.timer` or simply reboot after your configuration is finished.
 
 ### Initial configuration
@@ -225,7 +319,7 @@ This can be done in several ways.
 
 ##### Manually
 
-If no service on your machine automatically handles the `/etc/resolv.conf` file, you can easily edit it to insert the following **unique** item `nameserver`
+If no service on your machine automatically handles the `/etc/resolv.conf` file, you can easily edit it to insert the following **unique** item `nameserver`:
 
  `/etc/resolv.conf` 
 ```
@@ -257,11 +351,29 @@ and update resolvconf:
 
 ## Using Pi-hole
 
-As previously mentioned, Pi-hole offers the ability to be configured and used both through the command line and through its web interface (only server package)
+As previously mentioned, Pi-hole offers the ability to be configured and used both through the command line and through its web interface (server package only).
+
+### Pi-hole DNS management
+
+At first installation, Pi-hole is defaulted to use Google DNS for name resolution of your LAN requests. If you want to change servers or simply add others on the machine running Pi-hole you can execute
+
+```
+pihole -a setdns [DNS1],[DNS2],...
+
+```
+
+followed by a comma separated list of DNS servers you want Pi-hole will use. For example, if in addition to Google's DNS you want to add those of Comodo run
+
+```
+pihole -a setdns 8.8.8.8,8.8.4.4,8.26.56.26,8.20.246.20
+
+```
+
+For server package only, you can manage this via web interface ([http://pi.hole](http://pi.hole)) going to **Settings** and adding desired DNS servers in **Upstream DNS Servers** section. **Save** to apply changes.
 
 ### Forced update of ad-serving domains list
 
-If you need to update the blocked domain list, on the machine running Pi-hole you can run
+If you need to update the blocked domain list, on the machine running Pi-hole you can execute
 
 ```
 pihole -g
@@ -272,7 +384,7 @@ or, server package only, via web interface ([http://pi.hole](http://pi.hole)) go
 
 ### Protect web interface access (server package only)
 
-Pi-hole web interface can be password protected to prevent unauthorized use. On the machine running Pi-hole you can run
+Pi-hole web interface can be password protected to prevent unauthorized use. On the machine running Pi-hole you can execute
 
 ```
 pihole -a -p <pwd>

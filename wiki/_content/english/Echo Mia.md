@@ -1,25 +1,18 @@
-This article will discuss how to setting up the Echo Mia (Midi) soundcard to work under Arch, and how to resolve the hardware mixing issue in ALSA. It also implies that [ALSA](/index.php/ALSA "ALSA") is set up properly. Proper software mixing is found to be possible with dmix with a slightly tweaked ~/.asoundrc.
+This article will discuss how to setting up the Echo Mia (Midi) soundcard to work under Arch, and how to resolve the hardware mixing issue in ALSA. It also implies that [ALSA](/index.php/ALSA "ALSA") is set up properly. Proper software mixing is found to be possible with dmix with a slightly tweaked `~/.asoundrc`.
 
-The Arch kernel includes the Mia modules necessary, however the firmware needs to be installed. The alsa-firmware package can be obtained from the AUR. After the firmware is installed, you should consider blacklisting other sound card modules in /etc/rc.conf, or reindex them in /etc/modprobe.d/.
+## Installation
 
-If the soundcard is not recognized at boot time, the modules can be built from sources.
-
-```
-wget [ftp://ftp.alsa-project.org/pub/driver/alsa-driver-1.0.18.tar.bz2](ftp://ftp.alsa-project.org/pub/driver/alsa-driver-1.0.18.tar.bz2)
-cd alsa-driver-1.0.18
-./configure --with-cards=mia
-make
-sudo make install
-
-```
+The Arch kernel includes the Mia modules necessary, however the firmware needs to be obtained by installing the [alsa-firmware](https://www.archlinux.org/packages/?name=alsa-firmware) package. After the firmware is installed, you should consider [blacklisting](/index.php/Blacklisting "Blacklisting") other sound card modules.
 
 Reboot again, confirm that the module is loaded, and is able to play sound.
 
-The Echomixer should be installed from the alsa-tools package, found on the AUR. Echomixer makes it easier to set up and manage the virtual channels (subdevices) of your soundcard.
+The *echomixer* program should be installed from the [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) package. *echomixer* makes it easier to set up and manage the virtual channels (subdevices) of your soundcard.
+
+## Hardware mixing
 
 When the card is set up, and plays sound correctly, the last part is tricking to make the hardware mixing work as it should. If hardware mixing is already working properly, the last part of this page should be of no interest. However, if the sound card is unable to have more than one stream at the same time, this fix should work around it.
 
-As suspected in this forum thread, [https://bbs.archlinux.org/viewtopic.php?id=36508](https://bbs.archlinux.org/viewtopic.php?id=36508), Mia is unable to let ALSA pick a free subdevice for the sound card. A stereo stream is considered as two streams for Mia, but ALSA thinks this as one stream, leading to the crash that it will pick a busy subdevice each time it tries to play another stream. To work around this, we have to force ALSA to pick other subdevices. We can do this by splitting the card into four different devices. Example of /etc/asound.conf
+As suspected in this forum thread [[1]](https://bbs.archlinux.org/viewtopic.php?id=36508), Mia is unable to let ALSA pick a free subdevice for the sound card. A stereo stream is considered as two streams for Mia, but ALSA thinks this as one stream, leading to the crash that it will pick a busy subdevice each time it tries to play another stream. To work around this, we have to force ALSA to pick other subdevices. We can do this by splitting the card into four different devices. Example of `/etc/asound.conf`:
 
 ```
 # /etc/asound.conf

@@ -7,7 +7,7 @@ Related articles
 
 **amdgpu** is the open source graphics driver for the latest AMD Radeon graphics cards.
 
-At the moment there is support for [Volcanic Islands (VI)](https://www.x.org/wiki/RadeonFeature/) and experimental support for [Sea Islands (CI)](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) and [Southern Islands (SI)](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code) cards. AMD has absolutely no plans for supporting the pre-GCN GPUs.
+At the moment there is support for [Volcanic Islands (VI) and newer](https://www.x.org/wiki/RadeonFeature/) and experimental support for [Sea Islands (CI)](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) and [Southern Islands (SI)](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code) cards. AMD has absolutely no plans for supporting the pre-GCN GPUs.
 
 Owners of unsupported AMD/ATI video cards may use the [Radeon open source](/index.php/ATI "ATI") or [AMD's proprietary](/index.php/AMD_Catalyst "AMD Catalyst") driver instead.
 
@@ -16,7 +16,8 @@ Owners of unsupported AMD/ATI video cards may use the [Radeon open source](/inde
 *   [1 Selecting the right driver](#Selecting_the_right_driver)
 *   [2 Installation](#Installation)
     *   [2.1 Enable Southern Islands (SI) and Sea Islands (CIK) support](#Enable_Southern_Islands_.28SI.29_and_Sea_Islands_.28CIK.29_support)
-    *   [2.2 AMDGPU PRO](#AMDGPU_PRO)
+    *   [2.2 Enable AMD DC on pre-Vega cards](#Enable_AMD_DC_on_pre-Vega_cards)
+    *   [2.3 AMDGPU PRO](#AMDGPU_PRO)
 *   [3 Loading](#Loading)
     *   [3.1 Enable early KMS](#Enable_early_KMS)
 *   [4 Xorg configuration](#Xorg_configuration)
@@ -57,6 +58,14 @@ The following workarounds are available:
 *   [Blacklist](/index.php/Blacklist "Blacklist") the `radeon` module.
 
 Also, since kernel 4.13, adding the `amdgpu.si_support=1 radeon.si_support=0` or `amdgpu.cik_support=1 radeon.cik_support=0` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") is [required](http://www.phoronix.com/scan.php?page=article&item=linux-413-gcn101&num=1). Otherwise, AMDGPU will not start and you will end up with either radeon being used instead or the display being frozen during the boot.
+
+### Enable AMD DC on pre-Vega cards
+
+**Note:** AMD DC is only available since kernel 4.15
+
+AMD DC (display code) is a new display stack that brings support for atomic mode-setting and HDMI/DP audio. It is enabled by default for GCN5/Vega cards and later.
+
+To enable it for older cards (GCN2/CIK, GCN3/VI, GCN4/Polaris; GCN1/SI is not supported), add the `amdgpu.dc=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). For more info, see [this article](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-DC-Accepted).
 
 ### AMDGPU PRO
 
