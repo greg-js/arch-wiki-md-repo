@@ -44,6 +44,7 @@ From the [official website](http://www.mathworks.com/products/matlab/):
     *   [5.15 Some dropdown menus cannot be selected](#Some_dropdown_menus_cannot_be_selected)
     *   [5.16 Not starting - licensing error](#Not_starting_-_licensing_error)
     *   [5.17 MATLAB crashes with "Failure loading desktop class" on startup](#MATLAB_crashes_with_.22Failure_loading_desktop_class.22_on_startup)
+*   [6 Matlab in a systemd-nspawn](#Matlab_in_a_systemd-nspawn)
 
 ## Overview
 
@@ -554,3 +555,48 @@ export _JAVA_OPTIONS=
 ```
 
 to your MATLAB launcher script. Optionally re-add other Java options.
+
+## Matlab in a systemd-nspawn
+
+Matlab can be run within a systemd-nspawn container to maintain a static system and avoid the library issues that often plague matlab installs after significant updates to libraries in Arch. Refer to [https://wiki.archlinux.org/index.php/Systemd-nspawn](https://wiki.archlinux.org/index.php/Systemd-nspawn) for detailed information on setting up such containers.
+
+The following lists instruction to get a MATLAB 2017b install running in a minimal debian 9 environment. It assumes matlab is already installed as normal in "/usr/local/MATLAB/R2017b".
+
+Use xhost[[9]](https://wiki.archlinux.org/index.php/Xhost) to allow the nspawn environment to use the existing X server instance.
+
+Create a minimal debian environment in a folder ("deb9" here) with:
+
+```
+$ debootstrap --arch=amd64 stretch deb9
+
+```
+
+Set a password for the root user and then boot the environment with:
+
+```
+$ systemd-nspawn --bind-ro=/dev/dri --bind=/tmp/.X11-unix --bind=/usr/local/MATLAB/ -b -D deb9
+
+```
+
+Install the following packages to have the requisite libraries in the nspawn environment for MATLAB. "mesa-utils" and "usbutils" can be installed to debug graphics acceleration and usb interfaces for I/O with MATLAB.
+
+```
+$ apt-get install xorg build-essential libgtk2.0-0 libnss3 libasound2 
+
+```
+
+Install the MATLAB-support (from contrib source) package in the environment for some convenient integration.
+
+```
+$ apt-get install matlab-support
+
+```
+
+Set the $DISPLAY variable to use your existing X server instance.
+
+```
+$ export DISPLAY=:0
+
+```
+
+MATLAB can be launched from within the environment normally by using the binary at $MATLABROOT/bin.

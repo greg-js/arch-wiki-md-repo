@@ -1,6 +1,6 @@
-Questo documento vuole essere una guida per l'installazione di [Arch Linux](/index.php/Arch_Linux_(Italiano) "Arch Linux (Italiano)") utilizzando un sistema *live* avviato con l'immagine ufficiale di installazione. Prima di installare, è consigliato dare una lettura alle [FAQ (Italiano)](/index.php/FAQ_(Italiano) "FAQ (Italiano)").
+Questo documento vuole essere una guida per l'installazione di [Arch Linux](/index.php/Arch_Linux_(Italiano) "Arch Linux (Italiano)") utilizzando un sistema *live* avviato con l'immagine ufficiale di installazione. Prima di installare, è consigliato dare una lettura alle [FAQ](/index.php/FAQ_(Italiano) "FAQ (Italiano)"). Per le convenzioni usate leggere [Help:Reading](/index.php/Help:Reading "Help:Reading").
 
-L'[Arch wiki](/index.php/Main_page_(Italiano) "Main page (Italiano)") mantenuto dalla community è una risorsa eccellente e deve essere la prima risorsa da consultare in caso di problemi. Sono disponibili anche il canale [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ed il [forum italiano](http://www.archlinux.it/forum/) o [internazionale](https://bbs.archlinux.org/) per ricercare ulteriori risposte. Inoltre, assicurarsi di leggere le pagine [man page](/index.php/Man_page "Man page") per qualsiasi comando sconosciuto. Per farsi un'idea di massima sulla configurazione necessaria e` possibile consultare [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7).
+Per istruzioni piu` dettagliate sui vari programmi vedere le rispettive [man page](/index.php/Man_page "Man page") e le rispettive pagine [ArchWiki](/index.php/ArchWiki:About_(Italiano) "ArchWiki:About (Italiano)") che normalmente verranno linkate di volta in volta nella guida. Per un aiuto piu` interattivo si possono sfruttare i [canali IRC](/index.php/IRC_channel "IRC channel"), il [forum internazionale](https://bbs.archlinux.org/) e il [forum italiano](https://www.archlinux.it/forum/).
 
 ## Contents
 
@@ -13,29 +13,32 @@ L'[Arch wiki](/index.php/Main_page_(Italiano) "Main page (Italiano)") mantenuto 
     *   [1.6 Formattare le partizioni](#Formattare_le_partizioni)
     *   [1.7 Mount the file systems](#Mount_the_file_systems)
 *   [2 Installazione](#Installazione)
-    *   [2.1 Configurare il sistema](#Configurare_il_sistema)
-    *   [2.2 Installare e configurare un boot loader](#Installare_e_configurare_un_boot_loader)
-    *   [2.3 Smontare le partizioni montate](#Smontare_le_partizioni_montate)
-*   [3 Post-Installazione](#Post-Installazione)
-    *   [3.1 Gestione Utenti](#Gestione_Utenti)
-    *   [3.2 Gestione dei Pacchetti](#Gestione_dei_Pacchetti)
-    *   [3.3 Gestione dei Servizi](#Gestione_dei_Servizi)
-    *   [3.4 Suono](#Suono)
-    *   [3.5 Display server](#Display_server)
-    *   [3.6 Font](#Font)
-*   [4 Appendice](#Appendice)
+    *   [2.1 Selezionare il mirror corretto](#Selezionare_il_mirror_corretto)
+    *   [2.2 Installare i pacchetti base](#Installare_i_pacchetti_base)
+*   [3 Configurare il sistema](#Configurare_il_sistema)
+    *   [3.1 Fstab](#Fstab)
+    *   [3.2 Chroot](#Chroot)
+    *   [3.3 Time zone](#Time_zone)
+    *   [3.4 Locale](#Locale)
+    *   [3.5 Hostname](#Hostname)
+    *   [3.6 Configurazione della rete](#Configurazione_della_rete)
+    *   [3.7 Initramfs](#Initramfs)
+    *   [3.8 Password di root](#Password_di_root)
+    *   [3.9 Boot loader](#Boot_loader)
+*   [4 Reboot](#Reboot)
+*   [5 Post-Installazione](#Post-Installazione)
 
 ## Prima dell'installazione
 
-Arch Linux dovrebbe essere installabile su ogni macchina compatibile con l'architetture [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") e con un minimo di 512 MB di RAM. L'installazione base con solo i pacchetti presenti nel gruppo [base](https://www.archlinux.org/groups/x86_64/base/) richiede circa 800 MB di spazio su disco rigido. Siccome durante la fase di installazione vengono scaricati i pacchetti aggiornati direttamente dai repository remoti, una connessione ad internet e` fondamentale durante il processo.
+Arch Linux dovrebbe essere installabile su ogni macchina compatibile con l'architettura [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") e con un minimo di 512 MB di RAM. L'installazione base con solo i pacchetti presenti nel gruppo [base](https://www.archlinux.org/groups/x86_64/base/) richiede circa 800 MB di spazio su disco rigido. Siccome durante la fase di installazione vengono scaricati i pacchetti aggiornati direttamente dai repository remoti, una connessione ad internet e` fondamentale durante il processo.
 
 Scaricare e avviare un disco di installazione come spiegato in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). Ora ci si dovrebbe trovare di fronte ad una [console virtuale](https://en.wikipedia.org/wiki/Virtual_Console "w:Virtual Console"). L'utente *root* dovrebbe gia` essere loggato. La shell di default e` [Zsh](/index.php/Zsh "Zsh"). I comandi piu` comuni come [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) possono essere [autocompletati](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") dal tasto *tab*.
 
-Per switchare su un'altra console - per esempio per visualizzare questa guida tramite [elinks](/index.php/Elinks "Elinks") durante il processo di installazione - usare la [combinazione di tasti](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*freccia*`. Per [editare](/index.php/Textedit "Textedit") testo e files [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") e [vim](/index.php/Vim#Usage "Vim") sono disponibili.
+Per switchare su un'altra console - per esempio per visualizzare questa guida tramite [ELinks](/index.php/ELinks "ELinks") durante il processo di installazione - usare la [combinazione di tasti](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*freccia*`. Per [editare](/index.php/Textedit "Textedit") testo e files sono disponibili gli editor: [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") e [vim](/index.php/Vim#Usage "Vim").
 
 ### Impostare il corretto layout della tastiera
 
-Di default la tastiera e` [mappata](/index.php/Console_keymap "Console keymap") su un layout [statunitense](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). La lista dei possibili layout e` disponibile tramite `ls /usr/share/kbd/keymaps/**/*.map.gz`. Per modificare il layout aggiungere il rispettivo filename a [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omettendo estensione e percorso completo. Ad esempio, il comando `loadkeys it` impostera` sul sistema il layout italiano.
+Di default la tastiera e` [mappata](/index.php/Console_keymap "Console keymap") su un layout [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). La lista dei possibili layout e` disponibile tramite `ls /usr/share/kbd/keymaps/**/*.map.gz`. Per modificare il layout aggiungere il rispettivo filename a [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omettendo estensione e percorso completo. Ad esempio, il comando `loadkeys it` impostera` sul sistema il layout italiano.
 
 I [font](/index.php/Console_fonts "Console fonts") utilizzabili sulla console si trovano in `/usr/share/kbd/consolefonts/` e possono essere selezionati tramite [setfont(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
@@ -126,96 +129,155 @@ Creare i punti di mount delle altre partizioni create e montarle di conseguenza,
 
 ## Installazione
 
-Prima di procedere è necessario modificare il file `/etc/pacman.d/mirrorlist` per usare i [mirror](/index.php/Mirrors_(Italiano) "Mirrors (Italiano)") di vostro gradimento. Questa copia del mirrorlist sarà pure installato sul vostro nuovo sistema da `pacstrap`, quindi conviene impostarlo come si deve.
+### Selezionare il mirror corretto
 
-Utilizzando lo script [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) potete installare il sistema base.
+I pacchetti da installare verranno scaricati da [server mirror](/index.php/Mirrors "Mirrors") che sono definiti in `/etc/pacman.d/mirrorlist`. Sul sistema live, tutti i mirror sono abilitati e sono ordinati in base allo stato di sincronizzazione e alla velocita` rilevati al momento della generazione dell'immagine iso.
+
+Il mirror che si trovera` piu` in alto nella lista sara` quello a priorita` maggiore quando si andra` a scaricare un pacchetto. E` sicuramente buona norma modificare questo file, inserendo in alto i mirror geograficamente piu` vicini all'Italia.
+
+Questo file, verra` poi copiato sul sistema installato da *pacstrap*.
+
+### Installare i pacchetti base
+
+Usare [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) per installare il gruppo di pacchetti [base](https://www.archlinux.org/groups/x86_64/base/):
 
 ```
 # pacstrap /mnt base 
 
 ```
 
-Altri pacchetti possono essere installati aggiungendo i loro nomi al comando precedente (separati da uno spazio), incluso il bootloader che si desidera.
+Questo gruppo non include tutti i pacchetti disponibili sulla live come [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) o firmware per specifiche schede di rete; vedere [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) per informazioni.
 
-### Configurare il sistema
-
-*   Generare un file [fstab](/index.php/Fstab_(Italiano) "Fstab (Italiano)") con il seguente comando (sarebbe preferibile utilizzare come nomenclatura gli UUID o i label, nel caso aggiungere rispettivamente le opzioni `-U` o `-L`):
-
-	 `# genfstab -p /mnt >> /mnt/etc/fstab` 
-
-*   Effettuare un [chroot](/index.php/Chroot "Chroot") nel nostro nuovo sistema appena installato:
-
-	 `# arch-chroot /mnt` 
-
-*   Scrivere il proprio hostname in `/etc/hostname`.
-*   Creare un link simbolico di `/usr/share/zoneinfo/Zone/SubZone` in `/etc/localtime` . Rimpiazzare `Zone` e `Subzone` in base alle vostre esigenze. Per esempio:
-
-	 `# ln -s /usr/share/zoneinfo/Europe/Rome /etc/localtime` 
-
-*   De-commentare i *locale* che si vuole utilizzare in `/etc/locale.gen` e generarlo con il comando `locale-gen`.
-*   Impostare le proprie [preferenze sul locale](/index.php/Locale_(Italiano)#Impostare_il_locale_a_livello_di_sistema "Locale (Italiano)") in `/etc/locale.conf`.
-*   Aggiungere un [font](/index.php/Fonts#Console_fonts "Fonts") e una [mappatura della tastiera](/index.php/KEYMAP "KEYMAP") che si desidera utilizzare per la console in `/etc/vconsole.conf`
-*   Configurare `/etc/mkinitcpio.conf` in base alle proprie esigenze (si legga [mkinitcpio](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)")) e creare un RAM disk iniziale con:
-
-	 `# mkinitcpio -p linux` 
-
-*   Impostare una password di *root* con `passwd`.
-*   Configurare nuovamente la connessione di rete per l'ambiente appena installato. Si consultino [Configurazione della Rete](/index.php/Configurazione_della_Rete "Configurazione della Rete") e [Wireless Setup](/index.php/Wireless_Setup_(Italiano) "Wireless Setup (Italiano)").
-
-### Installare e configurare un boot loader
-
-Si veda la pagina [Boot loaders](/index.php/Boot_loaders "Boot loaders") per le scelte disponibili.
-
-### Smontare le partizioni montate
-
-Se si è ancora in ambiente environment, digitare prima di tutto `exit` o `Ctrl+D` per uscire da chroot. Prima si sono montate le partizioni sotto `/mnt`. In questa fase procederemo a smontarle tutte.
+Per [installare](/index.php/Install "Install") altri pacchetti o altri gruppi come ad esempio [base-devel](https://www.archlinux.org/packages/?name=base-devel) aggiungere a i loro nomi a *pacstrap* separati da spazi, ad esempio:
 
 ```
-# umount -R /mnt
+# pacstrap /mnt base base-devel
 
 ```
 
-Si riavvii il sistema e si prosegua nella configurazione del proprio sistema.
+o usare direttamente [pacman](/index.php/Pacman "Pacman") dopo lo step [#Chroot](#Chroot).
+
+## Configurare il sistema
+
+### Fstab
+
+Generare un file [fstab](/index.php/Fstab_(Italiano) "Fstab (Italiano)") (usare `-U` o `-L` per definire ci si vuole riferire alla partizioni con [UUID](/index.php/UUID "UUID") o labels rispettivamente):
+
+```
+# genfstab -p /mnt >> /mnt/etc/fstab
+
+```
+
+Controllare il risultato in `/mnt/etc/fstab` ed editare in caso di errore.
+
+### Chroot
+
+Effettuare un [chroot](/index.php/Chroot "Chroot") nel nuovo nuovo sistema:
+
+```
+# arch-chroot /mnt
+
+```
+
+### Time zone
+
+Settare la propria [Time zone](/index.php/Time_zone "Time zone"):
+
+```
+# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+
+```
+
+Lanciare [hwclock(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) per generare `/etc/adjtime`:
+
+```
+# hwclock --systohc
+
+```
+
+Questo comando assume che il proprio orologio hardware sia impostato su [UTC](https://en.wikipedia.org/wiki/UTC). Per dettagli vedere [Time#Time standard](/index.php/Time#Time_standard "Time").
+
+### Locale
+
+Decommentare `en_US.UTF-8 UTF-8` e altre [localizzazioni](/index.php/Localization "Localization") necessarie in `/etc/locale.gen` e generarle con:
+
+```
+# locale-gen
+
+```
+
+Settare la [variabile](/index.php/Variable "Variable") `LANG` in [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5), ad esempio:
+
+ `/etc/locale.conf`  `LANG=*it_IT.UTF-8*` 
+
+Se si e` [settato un layout della tastiera](#Impostare_il_corretto_layout_della_tastiera), rendere persistente questa modifica in [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5):
+
+ `/etc/vconsole.conf`  `KEYMAP=*us'*` 
+
+### Hostname
+
+Creare il file [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5):
+
+ `/etc/hostname` 
+```
+*mio_hostname*
+
+```
+
+Aggiungere il proprio hostname anche al file [hosts(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
+
+ `/etc/hosts` 
+```
+127.0.0.1	localhost.localdomain	localhost
+::1		localhost.localdomain	localhost
+**127.0.1.1	*mio_hostname*.localdomain	*mio_hostname***
+
+```
+
+Per informazioni piu` approfondite vedere [Network configuration#Set the hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration").
+
+### Configurazione della rete
+
+Il nuovo sistema installato non ha nessuna connessione attiva di default. Vedere [Network configuration#Network managers](/index.php/Network_configuration#Network_managers "Network configuration").
+
+Per [configurare reti wireless](/index.php/Wireless_configuration "Wireless configuration"), [installare](/index.php/Install "Install") il pacchetto [iw](https://www.archlinux.org/packages/?name=iw) e [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant). Opzionalmente installare [dialog](https://www.archlinux.org/packages/?name=dialog) per poter usare *wifi-menu*.
+
+### Initramfs
+
+Creare una nuova *initramfs* normalmente non e` richiesto, in quanto [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") viene richiamato ad ogni installazione del pacchetto [linux](https://www.archlinux.org/packages/?name=linux) tramite *pacstrap*.
+
+Per configuazioni speciali, modificare il file [mkinitcpio.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) e ricreare la initramfs a mano con il comando:
+
+```
+# mkinitcpio -p linux
+
+```
+
+### Password di root
+
+Impostare una [password](/index.php/Password "Password") per l'utente root:
+
+```
+# passwd
+
+```
+
+### Boot loader
+
+Leggere [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") per vedere quali siano le principali scelte e configurazioni disponibili.
+
+Se si usa una CPU Intel, installare il pacchetto [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) e [abilitare l'aggiornamento del microcode](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
+
+## Reboot
+
+Uscire dall'ambiente chroot con `exit` o premendo `Ctrl+D`.
+
+Opzionalmente smontare a mano le partizioni con `umount -R /mnt`: questo potrebbe portare a qualche warning di partizione "busy" (occupata, quindi impossibile da smontare), trovarne la causa con [fuser(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1).
+
+Riavviare la macchina con un `reboot`. Tutte le partizioni vengono smontate automaticamente da systemd. Ricordare di rimuovere il *media* di installazione e di loggarsi sulla nuova Arch Linux tramite l'utente root appena creato.
 
 ## Post-Installazione
 
-### Gestione Utenti
+Vedere [General recommendations](/index.php/General_recommendations "General recommendations") per la gestione del sistema e per tutorials post installazione (gestione di utenti, interfacce grafiche, suoni, configurazione di eventuali touchpad...)
 
-Aggiungere gli account utente che si richiedono come come descritto in [Gestione degli utenti](/index.php/Users_and_groups_(Italiano)#Gestione_degli_utenti "Users and groups (Italiano)"). Non è consigliabile utilizzare l'account di root per un uso regolare, o esporlo tramite [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)") su un server. L'account di root deve essere utilizzato solo per le attività amministrative.
-
-### Gestione dei Pacchetti
-
-Leggere [Pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)") e [FAQ-Gestione dei Pacchettiper](/index.php/FAQ_(Italiano)#Gestione_Pacchetti "FAQ (Italiano)") avere le risposte in materia di installazione dei pacchetti, l'aggiornamento e la gestione.
-
-### Gestione dei Servizi
-
-Arch Linux usa come init [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)"), he è il sistema responsabile dei servizi per Linux. Per mantenere la vostra installazione di Arch Linux, è una buona idea per imparare le basi sul suo utilizzo. L'interazione con systemd è fatto attraverso il comando `systemctl`. Si legga [Uso base di systemctl](/index.php/Systemd_(Italiano)#Uso_base_di_systemctl "Systemd (Italiano)") per ulteriori informazioni.
-
-### Suono
-
-[ALSA](/index.php/Advanced_Linux_Sound_Architecture_(Italiano) "Advanced Linux Sound Architecture (Italiano)") di solito funziona automaticamente. Ha bisogno solo di essere riattivato. Installare [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) (che contiene `alsamixer`) e seguire [queste](/index.php/Advanced_Linux_Sound_Architecture_(Italiano)#Togliere_il_muto_ai_canali "Advanced Linux Sound Architecture (Italiano)") istruzioni.
-
-ALSA è incluso con il kernel ed è raccomandato. Se non dovesse funzionare, [OSS](/index.php/Open_Sound_System_(Italiano) "Open Sound System (Italiano)") è una valida alternativa. Se si dispone di avanzati requisiti audio, dare un'occhiata al [sistema audio](/index.php/Sound_system_(Italiano) "Sound system (Italiano)") per una panoramica dei vari articoli.
-
-### Display server
-
-L'X Window System (comunemente chiamato **X11**, o semplicemente **X**) consente di disegnare su schermo le finestre. Fornisce il toolkit standard per visualizzare interfacce utente grafiche (Graphical User Interface, GUI). Si veda [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") per maggiori informazioni.
-
-[Wayland](/index.php/Wayland "Wayland") è un nuovo protocollo server display e l'implementazione di riferimento Weston è disponibile. Il supporto per le applicazioni è molto scarsa in questa fase iniziale di sviluppo.
-
-### Font
-
-Si potrebbe desiderare di installare un set di caratteri TrueType, in quanto solo font bitmap non scalabili sono inclusi di default. Dejavu è un font di uso generico di alta qualità e con una buona copertura [Unicode](https://en.wikipedia.org/wiki/it:Unicode "wikipedia:it:Unicode") :
-
-```
-# pacman -S ttf-dejavu
-
-```
-
-Fare riferimento a [Font Configuration](/index.php/Font_configuration_(Italiano) "Font configuration (Italiano)") per sapere come configurare il rendering dei font e a [Fonts](/index.php/Fonts_(Italiano) "Fonts (Italiano)") per i suggerimenti sui tipi di caratteri e le istruzioni di installazione.
-
-## Appendice
-
-Per un elenco dei programmi maggiormente utilizzati e si veda l'articolo [applicazioni comuni](/index.php/List_of_applications_(Italiano) "List of applications (Italiano)").
-
-Si veda anche [Raccomandazioni Generali](/index.php/Raccomandazioni_Generali "Raccomandazioni Generali") per consigli post-installazione, come la configurazione del touchpad o il rendering dei font.
+Per una lista di applicazioni che potrebbero tornare utili leggere: [List of applications](/index.php/List_of_applications "List of applications").

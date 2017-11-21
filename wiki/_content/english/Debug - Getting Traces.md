@@ -199,7 +199,7 @@ Use the complete stack trace to inform developers of a bug you have discovered b
 
 ## See also
 
-*   [Debian - How To Get a Backtrace](https://wiki.debian.org/HowToGetABacktrace)
+*   [Debian Wiki - How To Get a Backtrace](https://wiki.debian.org/HowToGetABacktrace "debian:HowToGetABacktrace")
 *   [Gentoo Wiki - Backtraces with Gentoo](https://wiki.gentoo.org/wiki/Project:Quality_Assurance/Backtraces)
 *   [Fedora - StackTraces](http://fedoraproject.org/wiki/StackTraces)
 *   [GNOME - Getting Stack Traces](https://wiki.gnome.org/Community/GettingInTouch/Bugzilla/GettingTraces/Details#obtain-a-stacktrace)

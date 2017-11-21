@@ -9,7 +9,7 @@ See [VirtualBox](/index.php/VirtualBox "VirtualBox") for the main article.
         *   [1.2.2 Manual conversion](#Manual_conversion)
     *   [1.3 Create the VM configuration for your hypervisor](#Create_the_VM_configuration_for_your_hypervisor)
 *   [2 Virtual machine launch management](#Virtual_machine_launch_management)
-    *   [2.1 Starting virtual machines with a service](#Starting_virtual_machines_with_a_service)
+    *   [2.1 Starting virtual machines with a service (autostart)](#Starting_virtual_machines_with_a_service_.28autostart.29)
     *   [2.2 Starting virtual machines with a keyboard shortcut](#Starting_virtual_machines_with_a_keyboard_shortcut)
 *   [3 Use specific device in the virtual machine](#Use_specific_device_in_the_virtual_machine)
     *   [3.1 Using USB webcam / microphone](#Using_USB_webcam_.2F_microphone)
@@ -89,7 +89,7 @@ Finally, ask your hypervisor to use the existing virtual disk you have converted
 
 ## Virtual machine launch management
 
-### Starting virtual machines with a service
+### Starting virtual machines with a service (autostart)
 
 Find hereafter the implementation details of a systemd service that will be used to consider a virtual machine as a service.
 
@@ -103,16 +103,21 @@ After=systemd-modules-load.service
 [Service]
 User=*username*
 Group=vboxusers
-ExecStart=/usr/bin/VBoxHeadless -s %i
-ExecStop=/usr/bin/VBoxManage controlvm %i savestate
+ExecStart=/usr/bin/VBoxManage startvm %i --type *startmode*
+ExecStop=/usr/bin/VBoxManage controlvm %i *stopmode*
+RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-**Note:** Replace `*username*` with a user that is a member of the `vboxusers` group. Make sure the user chosen is the same user that will create/import virtual machines, otherwise the user will not see the VM appliances.
+**Note:**
 
-**Note:** If you have multiple virtual machines managed by Systemd and they are not stopping properly, try to add `RemainAfterExit=true` and `KillMode=none` at the end of `[Service]` section.
+*   Replace `*username*` with a user that is a member of the `vboxusers` group. Make sure the user chosen is the same user that will create/import virtual machines, otherwise the user will not see the VM appliances.
+*   Replace `*startmode*` with a VM frontend type, usually `gui`, `headless` or `separate`
+*   Replace `*stopmode*` with desired state switch, usually `savestate` or `acpipowerbutton`
+
+**Note:** If you have multiple virtual machines managed by Systemd and they are not stopping properly, try to add `KillMode=none` and `TimeoutStopSec=40` at the end of `[Service]` section.
 
 [Enable](/index.php/Enable "Enable") the `vboxvmservice@*your_virtual_machine_name*` systemd unit in order to launch the virtual machine at next boot. To launch it directly, simply [start](/index.php/Start "Start") the systemd unit.
 

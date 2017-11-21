@@ -962,7 +962,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 ### Real-time
 
-*   **[0 A.D.](https://en.wikipedia.org/wiki/0_A.D. "wikipedia:0 A.D.")** — 3D and historically-based real-time strategy game, alpha stage. Based on the Age of Empires series.
+*   **[0 A.D.](https://en.wikipedia.org/wiki/0_A.D._(video_game) "wikipedia:0 A.D. (video game)")** — 3D and historically-based real-time strategy game, alpha stage. Based on the Age of Empires series.
 
 	[https://play0ad.com/](https://play0ad.com/) || [0ad](https://www.archlinux.org/packages/?name=0ad)
 

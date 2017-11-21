@@ -33,6 +33,7 @@ By default, ZeroNet uses clearnet and Tor if available. To enable Tor support yo
 [Append](/index.php/Append "Append") or edit the following options in `/etc/tor/torrc`:
 
 ```
+ControlPort 9051
 DataDirectoryGroupReadable 1
 CookieAuthentication 1
 CookieAuthFileGroupReadable 1

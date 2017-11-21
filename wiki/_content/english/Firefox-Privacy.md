@@ -182,8 +182,6 @@ Disconnect can also stop side-jacking, which utilizes stolen cookies to steal pe
 
 ### NoScript
 
-**Warning:** In 2009, NoScript silently modified user's Adblock Plus exstension to disable adblocking for its ads. NoScipt apologized later. [ABP's Reaction](https://adblockplus.org/blog/attention-noscript-users) [Response](https://hackademix.net/2009/05/04/dear-adblock-plus-and-noscript-users-dear-mozilla-community/)
-
 [NoScript](http://noscript.net/) is an extension which disables JavaScript, Java, Flash and other plugins on any website not specifically whitelisted by the user. This extension will protect you from exploitation of security vulnerabilities by not letting anything but trusted sites (e.g: your bank, webmail) serve you executable content.
 
 Once installed you can configure settings for NoScript by either clicking its icon on the toolbar or right clicking a page and navigating to NoScript. You will then have the option to enable/disable scripts for the current page, as well as any third party scripts that the page is linking to. Alternatively you can choose to enable scripts temporarily for that session only.
@@ -191,8 +189,6 @@ Once installed you can configure settings for NoScript by either clicking its ic
 Be aware a lot of modern websites use scripts for layout purposes, hence content may look different. For example, failed rendering due to missing fonts might occur on websites that load fonts at runtime via scripts, which were blocked by NoScript.
 
 For more detailed configuration see the [NoScript FAQ](http://noscript.net/faq).
-
-**Note:** Ever though NoScript is free software, it has not been developed openly, there is no repository nor a bug tracker of it.
 
 ### uMatrix
 

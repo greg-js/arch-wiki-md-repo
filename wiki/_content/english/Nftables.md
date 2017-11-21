@@ -739,7 +739,9 @@ Be sure to make your changes permanent when satisifed.
 ## See also
 
 *   [netfilter nftables wiki](https://wiki.nftables.org/)
+*   [debian:nftables](https://wiki.debian.org/nftables "debian:nftables")
+*   [gentoo:nftables](https://wiki.gentoo.org/wiki/nftables "gentoo:nftables")
 *   [First release of nftables](https://lwn.net/Articles/324251/)
 *   [nftables quick howto](https://home.regit.org/netfilter-en/nftables-quick-howto/)
 *   [The return of nftables](https://lwn.net/Articles/564095/)
-*   [What comes after ‘iptables’? It’s successor, of course: `nftables`](http://developers.redhat.com/blog/2016/10/28/what-comes-after-iptables-its-successor-of-course-nftables/)
+*   [What comes after ‘iptables’? Its successor, of course: `nftables`](http://developers.redhat.com/blog/2016/10/28/what-comes-after-iptables-its-successor-of-course-nftables/)

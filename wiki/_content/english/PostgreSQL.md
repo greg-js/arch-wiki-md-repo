@@ -376,9 +376,12 @@ hhvm.extensions[pgsql] = pgsql.so
 
 ## Upgrading PostgreSQL
 
-Upgrading major PostgreSQL versions (i.e. from `9.*x*` to `9.*y*`) requires some extra maintenance.
+Upgrading major PostgreSQL versions requires some extra maintenance.
 
-**Note:** Official PostgreSQL [upgrade documentation](https://www.postgresql.org/docs/current/static/upgrading.html) should be followed.
+**Note:**
+
+*   Official PostgreSQL [upgrade documentation](https://www.postgresql.org/docs/current/static/upgrading.html) should be followed.
+*   From version `10.0` onwards PostgreSQL [changed its versioning scheme](https://www.postgresql.org/about/news/1786/). Earlier upgrade from version `9.*x*` to `9.*y*` was considered as major upgrade. Now upgrade from version `10.*x*` to `10.*y*` is considered as minor upgrade and upgrade from version `10.*x*` to `11.*y*` is considered as major upgrade.
 
 **Warning:** The following instructions could cause data loss. **Use at your own risk**.
 

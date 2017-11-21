@@ -6,7 +6,7 @@
 *   [Secure Shell (Русский)](/index.php/Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Secure Shell (Русский)")
 *   [sftpman](/index.php/Sftpman "Sftpman")
 
-[SSHFS](https://github.com/libfuse/sshfs) - клиент файловой системы на основе FUSE для монтирования каталогов через [SSH](/index.php/SSH_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SSH (Русский)").
+[SSHFS](https://github.com/libfuse/sshfs) - клиент файловой системы на основе FUSE для монтирования удаленных каталогов через подключение [SSH](/index.php/SSH_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SSH (Русский)").
 
 ## Contents
 
@@ -64,14 +64,14 @@ SSH запросит пароль, если необходимо. Если вы 
 Чтобы размонтировать удаленную систему:
 
 ```
-$ fusermount -u *local_mount_point*
+$ fusermount -u *mountpoint*
 
 ```
 
 Например:
 
 ```
-$ fusermount -u /mnt/sessy
+$ fusermount -u /local/path
 
 ```
 

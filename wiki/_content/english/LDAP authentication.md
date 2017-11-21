@@ -431,7 +431,8 @@ Once you have logged in with a user the credentials will be cached and you will 
 ## Resources
 
 *   [The official page of the nss-pam-ldapd packet](http://arthurdejong.org/nss-pam-ldapd/setup)
-*   The PAM and NSS page at the Debian Wiki [1](http://wiki.debian.org/LDAP/NSS) [2](http://wiki.debian.org/LDAP/PAM)
+*   [Debian Wiki - LDAP/NSS](https://wiki.debian.org/LDAP/NSS "debian:LDAP/NSS")
+*   [Debian Wiki - LDAP/PAM](https://wiki.debian.org/LDAP/PAM "debian:LDAP/PAM")
 *   [Using LDAP for single authentication](https://www.fatofthelan.com/technical/using-ldap-for-single-authentication/)
 *   [Heterogeneous Network Authentication Introduction](http://www.cs.dixie.edu/ldap/)
 *   [Discussion on suse's mailing lists about nss-pam-ldapd](http://readlist.com/lists/suse.com/suse-linux-e/36/182642.html)

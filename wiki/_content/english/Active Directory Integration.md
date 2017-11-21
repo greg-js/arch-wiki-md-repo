@@ -845,12 +845,12 @@ The file 'username.keytab' is not machinespecific and can therefore be copied ar
 
 ## See also
 
-*   [Wikipedia: Active Directory](https://en.wikipedia.org/wiki/Active_Directory "wikipedia:Active Directory")
-*   [Wikipedia: Samba](https://en.wikipedia.org/wiki/Samba_(software) "wikipedia:Samba (software)")
-*   [Wikipedia: Kerberos](https://en.wikipedia.org/wiki/Kerberos_(protocol) "wikipedia:Kerberos (protocol)")
-*   [Samba: Documentation](http://www.samba.org/samba/docs)
-*   [Samba Wiki: Samba & Active Directory](http://wiki.samba.org/index.php/Samba_&_Active_Directory)
-*   [Samba Man Page: smb.conf](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html)
+*   [Wikipedia - Active Directory](https://en.wikipedia.org/wiki/Active_Directory "wikipedia:Active Directory")
+*   [Wikipedia - Samba](https://en.wikipedia.org/wiki/Samba_(software) "wikipedia:Samba (software)")
+*   [Wikipedia - Kerberos](https://en.wikipedia.org/wiki/Kerberos_(protocol) "wikipedia:Kerberos (protocol)")
+*   [Samba - Documentation](http://www.samba.org/samba/docs)
+*   [Samba Wiki - Samba & Active Directory](http://wiki.samba.org/index.php/Samba_&_Active_Directory)
+*   [`smb.conf(5)` manpage](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html)
 
 ### Commercial Solutions
 

@@ -147,7 +147,6 @@ If you are using self-signed certificates, the client refuses to connect unless 
 ### Use inotify
 
 [Inotify](https://en.wikipedia.org/wiki/Inotify "w:Inotify") (inode notify) is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications. Syncthing does not support *inotify* yet but there is an official extension module which talks to the Syncthing REST API. The usage of *inotify* avoids expensive rescans every minute. The *inotify* extension can be installed with the [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify) package. [Restart](/index.php/Restart "Restart") `syncthing.service` for change to take effect.
-
 **Note:** There is no need to [enable](/index.php/Enable "Enable") the `syncthing-inotify` service when using the `syncthing` service.
 
 Alternatively, *inotify* support is provided by [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) (which does not depend on [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify)) but in this case *inotify* will only work while the GUI is running.

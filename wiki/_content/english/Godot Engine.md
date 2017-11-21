@@ -24,4 +24,15 @@ To be able to export your project, you will need prebuilt binaries. If using the
 
 ## See also
 
-*   [https://github.com/godotengine/godot](https://github.com/godotengine/godot)
+*   [Godot (game engine) on Wikipedia](https://en.wikipedia.org/wiki/Godot_(game_engine) "wikipedia:Godot (game engine)")
+*   [Godot documentation](http://docs.godotengine.org/en/stable/)
+*   [Godot source code](https://github.com/godotengine/godot)
+*   [Godot: the Game-Changer for GameDevs](https://willnationsdev.wordpress.com/2017/07/21/godot-the-game-changer-for-gamedevs/) - Introduction and comparison with other engines
+*   [/r/godot](https://www.reddit.com/r/godot/) community on reddit.com
+*   [Godot Engine Resources tutorials](https://www.youtube.com/user/Link4ns/playlists)
+*   [Gamesfromscratch video tutorials](https://www.youtube.com/playlist?list=PLS9MbmO_ssyAXRl-_ktrebQBFxjSQt7UX)
+*   [KidsCanCode video tutorials](https://www.youtube.com/channel/UCNaPQ5uLX5iIEHUCLmfAgKg/playlists)
+*   [Andreas Esau video tutorials](https://www.youtube.com/user/ndee85/playlists)
+*   [Heartbeast video tutorials](https://www.youtube.com/playlist?list=PL9FzW-m48fn1iR6WL4mjXtGi8P4TaPIAp)
+*   [GDQuest video tutorials](https://www.youtube.com/channel/UCxboW7x0jZqFdvMdCFKTMsQ/playlists)
+*   [Jose Moreno video tutorials](https://www.youtube.com/playlist?list=PLjuYP3iuWoM2hLxtTfvsQA6FzOhRIUMOf)

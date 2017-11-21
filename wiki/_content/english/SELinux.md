@@ -1,3 +1,9 @@
+Related articles
+
+*   [Security](/index.php/Security "Security")
+*   [AppArmor](/index.php/AppArmor "AppArmor")
+*   [TOMOYO Linux](/index.php/TOMOYO_Linux "TOMOYO Linux")
+
 Security-Enhanced Linux (SELinux) is a Linux feature that provides a variety of security policies, including U.S. Department of Defense style mandatory access controls (MAC), through the use of Linux Security Modules (LSM) in the Linux kernel. It is not a Linux distribution, but rather a set of modifications that can be applied to Unix-like operating systems, such as Linux and BSD.
 
 Running SELinux under a Linux distribution requires three things: An SELinux enabled kernel, SELinux Userspace tools and libraries, and SELinux Policies (mostly based on the Reference Policy). Some common Linux programs will also need to be patched/compiled with SELinux features.
@@ -222,7 +228,7 @@ All SELinux related packages belong to the *selinux* group in the AUR.
 
 ### Preparing the Kernel
 
-Only ext2, ext3, ext4, JFS, XFS and BtrFS filesystems are supported to use SELinux. By default, the Arch Kernel does not have the SELinux LSM enabled. If you are using Arch Linux packaged kernel ([linux](https://www.archlinux.org/packages/?name=linux)), there is an AUR package which adds the configuration options for SELinux, [linux-selinux](https://aur.archlinux.org/packages/linux-selinux/). Otherwise, when you are using a custom kernel, please do make sure that Xattr (Extended Attributes), `CONFIG_AUDIT` and `CONFIG_SECURITY_SELINUX` are enabled in your config. (Source: [Debian Wiki](http://wiki.debian.org/SELinux/Setup#kernel))
+Only ext2, ext3, ext4, JFS, XFS and BtrFS filesystems are supported to use SELinux. By default, the Arch Kernel does not have the SELinux LSM enabled. If you are using Arch Linux packaged kernel ([linux](https://www.archlinux.org/packages/?name=linux)), there is an AUR package which adds the configuration options for SELinux, [linux-selinux](https://aur.archlinux.org/packages/linux-selinux/). Otherwise, when you are using a custom kernel, please do make sure that Xattr (Extended Attributes), `CONFIG_AUDIT` and `CONFIG_SECURITY_SELINUX` are enabled in your config. (Source: [Debian Wiki](https://wiki.debian.org/SELinux/Setup#kernel "debian:SELinux/Setup"))
 
 Here is the complete list of options which need to be enabled on Linux 4.3.3 to use SELinux :
 

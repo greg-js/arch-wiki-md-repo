@@ -4,7 +4,7 @@ Related articles
 *   [Arch based distributions](/index.php/Arch_based_distributions "Arch based distributions")
 *   [Pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta")
 
-This page attempts to draw a comparison between Arch Linux and other popular GNU/Linux [distributions](https://en.wikipedia.org/wiki/Linux_distribution "wikipedia:Linux distribution") and UNIX-like [operating systems](https://en.wikipedia.org/wiki/Operating_system "wikipedia:Operating system"). The summaries that follow are brief descriptions that may help a person decide if Arch Linux will suit his or her needs. Although reviews and descriptions can be useful, first-hand experience is invariably the best way to compare distributions.
+This page attempts to draw a comparison between Arch Linux and other popular GNU/Linux distributions and UNIX-like operating systems. The summaries that follow are brief descriptions that may help a person decide if Arch Linux will suit his or her needs. Although reviews and descriptions can be useful, first-hand experience is invariably the best way to compare distributions.
 
 For a more complete comparison, see [w:Comparison of operating systems](https://en.wikipedia.org/wiki/Comparison_of_operating_systems "w:Comparison of operating systems") and [w:Comparison of Linux distributions](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions").
 
@@ -63,7 +63,7 @@ These distributions offer a broad range of advantages and strengths, and can be 
 
 *   Debian has a more vehement stance on free software but still includes non-free software in its non-free repos. Arch is more lenient, and therefore inclusive, concerning *non-free packages* as defined by GNU.
 
-*   Debian focuses on stringent testing of the Stable branch, which is "frozen" and supported up to [five years](https://wiki.debian.org/LTS). Arch packages are more current than Debian Stable, being more comparable to the Debian Testing and Unstable branches, and has no fixed release schedule.
+*   Debian focuses on stringent testing of the Stable branch, which is "frozen" and supported up to [five years](https://wiki.debian.org/LTS "debian:LTS"). Arch packages are more current than Debian Stable, being more comparable to the Debian Testing and Unstable branches, and has no fixed release schedule.
 
 *   Debian is available for many architectures, including alpha, arm, hppa, i386, x86_64, ia64, m68k, mips, mipsel, powerpc, s390, and sparc, whereas Arch is officially x86_64, with community ports for i686 ([Arch Linux 32](https://archlinux32.org/)) and ARM ([Arch Linux ARM](https://archlinuxarm.org/)) only.
 
@@ -152,6 +152,5 @@ Mandriva Linux (formerly Mandrake Linux) was created in 1998 with the goal of ma
 
 ## See also
 
-*   [Wikipedia:List of Linux distributions](https://en.wikipedia.org/wiki/List_of_Linux_distributions "wikipedia:List of Linux distributions")
 *   [DistroWatch](http://distrowatch.com/) - Linux distributions news and reviews
 *   [The Live CD List](http://www.livecdlist.com) - List of Live operating systems images

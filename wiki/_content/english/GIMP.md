@@ -26,3 +26,5 @@ GIMP requires the [poppler-glib](https://www.archlinux.org/packages/?name=popple
 ## See also
 
 *   [Wikipedia:GIMP](https://en.wikipedia.org/wiki/GIMP "wikipedia:GIMP")
+*   [debian:GIMP](https://wiki.debian.org/GIMP "debian:GIMP")
+*   [Resources | GIMP Magazine](https://gimpmagazine.org/resources/) - Index of GIMP resources, tutorials, communities

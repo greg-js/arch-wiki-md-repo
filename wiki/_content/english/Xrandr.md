@@ -363,6 +363,6 @@ $ xrandr --output HDMI1 --set "Broadcast RGB" "Full"
 ## See also
 
 *   [https://wiki.ubuntu.com/X/Config/Resolution](https://wiki.ubuntu.com/X/Config/Resolution)
-*   [RandR 1.2 tutorial](http://wiki.debian.org/XStrikeForce/HowToRandR12)
+*   [Debian Wiki - RandR 1.2 tutorial](https://wiki.debian.org/XStrikeForce/HowToRandR12 "debian:XStrikeForce/HowToRandR12")
 *   [Xorg RandR 1.2 on ThinkWiki](http://www.thinkwiki.org/wiki/Xorg_RandR_1.2)
 *   [FAQVideoModes - more information about modelines](http://www.x.org/wiki/FAQVideoModes#ObtainingmodelinesfromWindowsprogramPowerStrip)

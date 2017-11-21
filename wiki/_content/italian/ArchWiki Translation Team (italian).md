@@ -122,7 +122,7 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [AMD Catalyst (Italiano)](/index.php/AMD_Catalyst_(Italiano) "AMD Catalyst (Italiano)") | 2013-02-27 | umby213 | n/a | n/a |
 | [Arch boot process (Italiano)](/index.php/Arch_boot_process_(Italiano) "Arch boot process (Italiano)") | 2014-01-05 | Kynikos | n/a | Cedibile |
 | [Arch Build System (Italiano)](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)") | 2013-07-21 | 4javier | n/a | n/a |
-| [Arch Linux (Italiano)](/index.php/Arch_Linux_(Italiano) "Arch Linux (Italiano)") | 2012-11-06 | icetux | n/a | n/a |
+| [Arch Linux (Italiano)](/index.php/Arch_Linux_(Italiano) "Arch Linux (Italiano)") | 2017-11-20 | umby213 | n/a | n/a |
 | [Arch User Repository (Italiano)](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)") | 2014-01-05 | Kynikos | n/a | Cedibile |
 | [Arch64 FAQ (Italiano)](/index.php/Arch64_FAQ_(Italiano) "Arch64 FAQ (Italiano)") | 2014-03-03 | Veleno77 | n/a | n/a |
 | [ATI (Italiano)](/index.php/ATI_(Italiano) "ATI (Italiano)") | 2013-07-22 | 4javier | n/a | n/a |
@@ -135,7 +135,7 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [GNOME (Italiano)](/index.php/GNOME_(Italiano) "GNOME (Italiano)") | 2011-12-3 | Cylon | n/a | In allineamento |
 | [GRUB2 (Italiano)](/index.php/GRUB2_(Italiano) "GRUB2 (Italiano)") | 2012-01-19 | Hilinus | n/a | n/a |
 | [Help:Style (Italiano)](/index.php/Help:Style_(Italiano) "Help:Style (Italiano)") | 2014-01-12 | Kynikos | n/a | Cedibile |
-| [Installation guide (Italiano)](/index.php/Installation_guide_(Italiano) "Installation guide (Italiano)") | 2014-03-03 | Veleno77 | [Guida all'installazione](/index.php/Guida_all%27installazione "Guida all'installazione") | n/a |
+| [Installation guide (Italiano)](/index.php/Installation_guide_(Italiano) "Installation guide (Italiano)") | 2017-11-20 | umby213 | [Guida all'installazione](/index.php/Guida_all%27installazione "Guida all'installazione") | n/a |
 | [Intel (Italiano)](/index.php/Intel_(Italiano) "Intel (Italiano)") | 2014-03-09 | Veleno77 | n/a | n/a |
 | [KDE (Italiano)](/index.php/KDE_(Italiano) "KDE (Italiano)") | 2014-03-06 | Veleno77 | n/a | n/a |
 | [Laptop (Italiano)](/index.php/Laptop_(Italiano) "Laptop (Italiano)") | 2013-09-22 | Nierro | n/a | n/a |

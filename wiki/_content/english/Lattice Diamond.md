@@ -11,7 +11,7 @@ ArchLinux is not officially supported by [Lattice Diamond](http://www.latticesem
 
 ## Prerequisites
 
-Currently, the available AUR package, works only for the 64-bit version of the suite. So you will need a working 64-bit installation of Arch Linux.
+Lattice provides only 64-bit builds of the suite. So you will need a working 64-bit installation of Arch Linux.
 
 ## Installation
 
@@ -19,7 +19,7 @@ Just install [lattice-diamond](https://aur.archlinux.org/packages/lattice-diamon
 
 ### Licensing
 
-You can request a free license to [Lattice Semiconductor](http://www.latticesemi.com/Support/Licensing.aspx) (registration needed). These licenses are node-locked (tied to the MAC of your Ethernet card). Once you have the license file, copy it to `/usr/local/diamond/3.9_x64/license/license.dat`, or you will not be able to start the suite.
+You can request a free license to [Lattice Semiconductor](http://www.latticesemi.com/Support/Licensing.aspx) (registration needed). These licenses are node-locked (tied to the MAC of your Ethernet card). Once you have the license file, copy it to `/usr/local/diamond/3.10_x64/license/license.dat`, or you will not be able to start the suite.
 
 ## Troubleshooting
 

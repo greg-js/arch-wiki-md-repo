@@ -8,7 +8,7 @@ Related articles
 *   [Pkgfile](/index.php/Pkgfile "Pkgfile")
 *   [Command-line shell](/index.php/Command-line_shell "Command-line shell")
 
-[Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) (Bourne-again Shell) is a [command-line shell](/index.php/Command-line_shell "Command-line shell")/programming language by the [GNU Project](/index.php/GNU_Project "GNU Project"). Its name is a homaging reference to its predecessor: the long-deprecated Bourne shell. Bash can be run on most UNIX-like operating systems, including GNU/Linux.
+[Bash](https://www.gnu.org/software/bash/) (Bourne-again Shell) is a [command-line shell](/index.php/Command-line_shell "Command-line shell")/programming language by the [GNU Project](/index.php/GNU_Project "GNU Project"). Its name is a homaging reference to its predecessor: the long-deprecated Bourne shell. Bash can be run on most UNIX-like operating systems, including GNU/Linux.
 
 ## Contents
 
@@ -296,6 +296,7 @@ export IGNOREEOF=100
 
 ## See also
 
+*   [Wikipedia:Bash (Unix shell)](https://en.wikipedia.org/wiki/Bash_(Unix_shell) "wikipedia:Bash (Unix shell)")
 *   [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bashref.html), or `/usr/share/doc/bash/bashref.html`
 *   [Readline Init File Syntax](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html)
 *   [The Bourne-Again Shell](http://www.aosabook.org/en/bash.html) - The third chapter of *The Architecture of Open Source Applications*

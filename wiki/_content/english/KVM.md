@@ -224,9 +224,8 @@ vm.nr_hugepages = 550
 
 See also:
 
-*   [https://www.kernel.org/doc/Documentation/vm/hugetlbpage.txt](https://www.kernel.org/doc/Documentation/vm/hugetlbpage.txt)
-*   [http://wiki.debian.org/Hugepages](http://wiki.debian.org/Hugepages)
-*   [http://www.linux-kvm.com/content/get-performance-boost-backing-your-kvm-guest-hugetlbfs](http://www.linux-kvm.com/content/get-performance-boost-backing-your-kvm-guest-hugetlbfs)
+*   [summary of hugetlbpage support in the Linux kernel](https://www.kernel.org/doc/Documentation/vm/hugetlbpage.txt)
+*   [Debian Wiki - Hugepages](https://wiki.debian.org/Hugepages "debian:Hugepages")
 
 ## See also
 

@@ -530,6 +530,26 @@ When importing a pool that contains encrypted datasets: ZFS will by default not 
 
 ```
 
+You can automate this at boot with a custom systemd unit. For example:
+
+ `/etc/systemd/system/zfs-key@.service` 
+```
+[Unit]
+Description=Load storage encryption keys
+Before=systemd-user-sessions.service
+Before=zfs-mount.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/bash -c '/usr/bin/zfs load-key zpool/%i <<< $(systemd-ask-password "Encrypted storage password (%i): ")'
+
+```
+
+and enable a service instance for each encrypted volume: `# systemctl enable zfs-key@zpool/dataset`.
+
+The Before= reference to systemd-user-sessions.service ensures that systemd-ask-password is invoked before the local IO devices are handed over to the system UI
+
 ### Scrub
 
 ZFS pools should be scrubbed at least once a week. To scrub the pool:

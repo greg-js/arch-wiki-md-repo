@@ -1,6 +1,6 @@
 | [English](/index.php/Category:English "Category:English") <small>(1)</small> |
 | <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(23)</small> |
-| <small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(19) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
+| <small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(20) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
 | <small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(48)</small> |
 | <small>1.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(13)</small> |
@@ -43,7 +43,7 @@
 | <small>2.18.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(28) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>2.19.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(21)</small> |
 | <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(49)</small> |
-| <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(19) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
+| <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(20) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(48)</small> |
 | <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
 | <small>3.2.</small> [Framework](/index.php/Category:Framework "Category:Framework") <small>(3)</small> |
@@ -94,7 +94,7 @@
 | <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(75)</small> |
 | <small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(5)</small> |
 | <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(12)</small> |
-| <small>5.3.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(9)</small> |
+| <small>5.3.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(8)</small> |
 | <small>5.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(13) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>5.5.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(21)</small> |
 | <small>5.6.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(18) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |

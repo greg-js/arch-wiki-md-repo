@@ -13,8 +13,6 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
 
 *   [1 Bumblebee: Optimus for Linux](#Bumblebee:_Optimus_for_Linux)
 *   [2 Installation](#Installation)
-    *   [2.1 Installing Bumblebee with Intel/NVIDIA](#Installing_Bumblebee_with_Intel.2FNVIDIA)
-    *   [2.2 Installing Bumblebee with Intel/Nouveau](#Installing_Bumblebee_with_Intel.2FNouveau)
 *   [3 Usage](#Usage)
     *   [3.1 Test](#Test)
     *   [3.2 General usage](#General_usage)
@@ -69,8 +67,6 @@ It tries to mimic the Optimus technology behavior; using the dedicated GPU for r
 
 Before installing Bumblebee, check your BIOS and activate Optimus (older laptops call it "switchable graphics") if possible (BIOS doesn't have to provide this option). If neither "Optimus" or "switchable" is in the bios, still make sure both gpu's will be enabled and that the integrated graphics (igfx) is initial display (primary display). The display should be connected to the onboard integrated graphics, not the discrete graphics card. If integrated graphics had previously been disabled and discrete graphics drivers installed, be sure to remove `/etc/X11/xorg.conf` or the conf file in `/etc/X11/xorg.conf.d` related to the discrete graphics card.
 
-### Installing Bumblebee with Intel/NVIDIA
-
 [Install](/index.php/Install "Install"):
 
 *   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - The main package providing the daemon and client programs.
@@ -91,30 +87,6 @@ In order to use Bumblebee, it is necessary to add your regular *user* to the `bu
 ```
 
 Also [enable](/index.php/Enable "Enable") `bumblebeed.service`. Reboot your system and follow [#Usage](#Usage).
-
-### Installing Bumblebee with Intel/Nouveau
-
-**Warning:** This method is deprecated and [will not work anymore](https://github.com/Bumblebee-Project/Bumblebee/issues/773). Use the nvidia module instead. If you want nouveau, use [PRIME](/index.php/PRIME "PRIME").
-
-Install:
-
-*   [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) - experimental 3D acceleration driver.
-*   [mesa](https://www.archlinux.org/packages/?name=mesa) - Mesa classic DRI with Gallium3D drivers and 3D graphics libraries.
-
-**Note:** If, when using `primusrun` on a system with the nouveau driver, you are getting:
-```
-primus: fatal: failed to load any of the libraries: /usr/$LIB/nvidia/libGL.so.1 
-/usr/$LIB/nvidia/libGL.so.1: Cannot open shared object file: No such file or directory
-
-```
-
-You should add the following in `/usr/bin/primus` after `PRIMUS_libGL`:
-
-```
-export PRIMUS_libGLa='/usr/$LIB/libGL.so.1'
-
-```
-If you want, create a new script (for example *primusnouveau*).
 
 ## Usage
 

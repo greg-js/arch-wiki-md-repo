@@ -20,9 +20,12 @@ From [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4):
         *   [2.2.1 Rationale](#Rationale_2)
         *   [2.2.2 Procedure](#Procedure_2)
 *   [3 Using file-based encryption](#Using_file-based_encryption)
-*   [4 Tips and tricks](#Tips_and_tricks)
+*   [4 Improve performance](#Improve_performance)
     *   [4.1 E4rat](#E4rat)
-    *   [4.2 Barriers and performance](#Barriers_and_performance)
+    *   [4.2 Disable access time update](#Disable_access_time_update)
+    *   [4.3 Increase commit interval](#Increase_commit_interval)
+    *   [4.4 No barrier](#No_barrier)
+    *   [4.5 Disable journaling](#Disable_journaling)
 *   [5 Enabling metadata checksums](#Enabling_metadata_checksums)
     *   [5.1 New filesystem](#New_filesystem)
     *   [5.2 Existing filesystem](#Existing_filesystem)
@@ -266,25 +269,48 @@ This completes setting up encryption for a directory named `*/encrypted*`. If yo
 
 In both cases it is better to copy (`cp`) files instead, because that leaves the option to securely delete the unencrypted original with *shred* or a similar tool.
 
-## Tips and tricks
+## Improve performance
 
 ### E4rat
 
-[E4rat](/index.php/E4rat "E4rat") is a preload application designed for the ext4 filesystem. It monitors files opened during boot, optimizes their placement on the partition to improve access time, and preloads them at the very beginning of the boot process. [E4rat](/index.php/E4rat "E4rat") does not offer improvements with [SSDs](/index.php/SSD "SSD"), whose access time is negligible compared to hard disks.
+[E4rat](/index.php/E4rat "E4rat") is a preload application designed for the ext4 filesystem. It monitors files opened during boot, optimizes their placement on the partition to improve access time, and preloads them at the very beginning of the boot process. E4rat does not offer improvements with [SSDs](/index.php/SSD "SSD"), whose access time is negligible compared to hard disks.
 
-### Barriers and performance
+### Disable access time update
+
+With the `noatime` option, the access timestamps on the filesystem are not updated.
+
+ `/etc/fstab`  `/dev/sda5    /    ext4    defaults,**noatime**    0    1` 
+
+### Increase commit interval
+
+The sync interval for data and metadata can be increased by providing a higher time delay to the `commit` option.
+
+The default 5 sec means that if the power is lost, one will lose as much as the latest 5 seconds of work. It forces a full sync of all data/journal to physical media every 5 seconds. The filesystem will not be damaged though, thanks to the journaling. The following fstab illustrates the use of `commit`:
+
+ `/etc/fstab`  `/dev/sda5    /    ext4    defaults,noatime,**commit=999**    0    1` 
+
+### No barrier
+
+**Warning:** Disabling barriers when disks cannot guarantee caches are properly written in case of power failure can lead to severe file system corruption and data loss.
 
 Since kernel 2.6.30, ext4 performance has decreased due to changes that serve to improve data integrity.[[7]](http://www.phoronix.com/scan.php?page=article&item=ext4_then_now&num=1)
 
 	Most file systems (XFS, ext3, ext4, reiserfs) send write barriers to disk after fsync or during transaction commits. Write barriers enforce proper ordering of writes, making volatile disk write caches safe to use (at some performance penalty). If your disks are battery-backed in one way or another, disabling barriers may safely improve performance.
 
-	Sending write barriers can be disabled using the `barrier=0` mount option (for ext3, ext4, and reiserfs), or using the `nobarrier` mount option (for XFS).
-
-**Warning:** Disabling barriers when disks cannot guarantee caches are properly written in case of power failure can lead to severe file system corruption and data loss.
-
 To turn barriers off add the option `barrier=0` to the desired filesystem. For example:
 
- `/etc/fstab`  `/dev/sda5    /    ext4    noatime,barrier=0    0    1` 
+ `/etc/fstab`  `/dev/sda5    /    ext4    noatime,**barrier=0**    0    1` 
+
+### Disable journaling
+
+**Warning:** Using a filesystem without journaling can result in data loss in case of sudden dismount like power failure or kernel lockup.
+
+Disabling the journal with *ext4* can be done with the following command on an unmounted disk:
+
+```
+# tune2fs -O ^has_journal /dev/sdXN
+
+```
 
 ## Enabling metadata checksums
 

@@ -1839,7 +1839,7 @@ More information: [FS#54472](https://bugs.archlinux.org/task/54472), [[3]](https
 *   [Lastest docs](http://git.qemu.org/?p=qemu.git;a=tree;f=docs)
 *   [QEMU on Windows](http://qemu.weilnetz.de/)
 *   [Wikipedia](https://en.wikipedia.org/wiki/Qemu "wikipedia:Qemu")
-*   [QEMU - Debian Wiki](https://wiki.debian.org/QEMU)
+*   [Debian Wiki - QEMU](https://wiki.debian.org/QEMU "debian:QEMU")
 *   [QEMU Networking on gnome.org](https://people.gnome.org/~markmc/qemu-networking.html)
 *   [Networking QEMU Virtual BSD Systems](http://bsdwiki.reedmedia.net/wiki/networking_qemu_virtual_bsd_systems.html)
 *   [QEMU on gnu.org](https://www.gnu.org/software/hurd/hurd/running/qemu.html)

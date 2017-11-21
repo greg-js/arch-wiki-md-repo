@@ -37,11 +37,14 @@ Pacman é escrito na linguagem de programação C e usa o formato de pacote `.pk
     *   [1.8 Pesquisar por um pacote que contenha um arquivo específico](#Pesquisar_por_um_pacote_que_contenha_um_arquivo_espec.C3.ADfico)
 *   [2 Configuração](#Configura.C3.A7.C3.A3o)
     *   [2.1 Opções gerais](#Op.C3.A7.C3.B5es_gerais)
-        *   [2.1.1 Pular pacotes para não serem atualizados](#Pular_pacotes_para_n.C3.A3o_serem_atualizados)
-        *   [2.1.2 Pular um grupos de pacotes para não serem atualizados](#Pular_um_grupos_de_pacotes_para_n.C3.A3o_serem_atualizados)
-        *   [2.1.3 Pular arquivos para não serem instalados no sistema](#Pular_arquivos_para_n.C3.A3o_serem_instalados_no_sistema)
-    *   [2.2 Repositórios](#Reposit.C3.B3rios)
-    *   [2.3 Segurança de pacotes](#Seguran.C3.A7a_de_pacotes)
+        *   [2.1.1 Comparando versões antes de atualizar](#Comparando_vers.C3.B5es_antes_de_atualizar)
+        *   [2.1.2 Pular pacotes para não serem atualizados](#Pular_pacotes_para_n.C3.A3o_serem_atualizados)
+        *   [2.1.3 Pular um grupos de pacotes para não serem atualizados](#Pular_um_grupos_de_pacotes_para_n.C3.A3o_serem_atualizados)
+        *   [2.1.4 Pular arquivos para não serem instalados no sistema](#Pular_arquivos_para_n.C3.A3o_serem_instalados_no_sistema)
+        *   [2.1.5 Manter vários arquivos de configuração](#Manter_v.C3.A1rios_arquivos_de_configura.C3.A7.C3.A3o)
+        *   [2.1.6 Hooks](#Hooks)
+    *   [2.2 Repositórios e espelhos](#Reposit.C3.B3rios_e_espelhos)
+        *   [2.2.1 Segurança de pacote](#Seguran.C3.A7a_de_pacote)
 *   [3 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
     *   [3.1 Uma atualização para o pacote XYZ quebrou meu sistema!](#Uma_atualiza.C3.A7.C3.A3o_para_o_pacote_XYZ_quebrou_meu_sistema.21)
     *   [3.2 Eu sei que uma atualização para o pacote ABC foi lançada, mas pacman diz que o meu sistema está atualizado!](#Eu_sei_que_uma_atualiza.C3.A7.C3.A3o_para_o_pacote_ABC_foi_lan.C3.A7ada.2C_mas_pacman_diz_que_o_meu_sistema_est.C3.A1_atualizado.21)
@@ -497,20 +500,39 @@ Os ajustes do Pacman estão localizados em `/etc/pacman.conf`. Este é o local o
 
 ### Opções gerais
 
-Opções gerais estão na seção `[options]`. Leia a página de manual ou olhe no padrão `pacman.conf` para obter informações sobre o que pode ser feito aqui.
+Opções gerais estão na seção `[options]`. Leia [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) ou olhe no `pacman.conf` padrão para obter informações sobre o que pode ser feito aqui.
+
+#### Comparando versões antes de atualizar
+
+Para ver versões antigas e novas dos pacotes disponíveis, descomente a linha "VerbosePkgLists" em `/etc/pacman.conf`. A saída de `pacman -Syu` será algo como:
+
+```
+Pacote (6)            Versão antiga  Versão nova    Alteração   Tamanho de download
+
+extra/libmariadbclient  10.1.9-4     10.1.10-1      0.03 MiB       4.35 MiB
+extra/libpng            1.6.19-1     1.6.20-1       0.00 MiB       0.23 MiB
+extra/mariadb           10.1.9-4     10.1.10-1      0.26 MiB      13.80 MiB
+
+```
 
 #### Pular pacotes para não serem atualizados
 
-Para pular a atualização de um pacote específico, faça:
+**Atenção:** Tenha cuidado ao pular pacotes, já que não há suporte a [atualizações parciais](/index.php/Atualiza%C3%A7%C3%B5es_parciais "Atualizações parciais").
+
+Para pular a atualização de um pacote específico quando estiver [atualizando](#Atualizando_pacotes) o sistema, faça:
 
 ```
 IgnorePkg=linux
 
 ```
 
-Para vários pacotes use uma lista separada por espaço, ou use adicionais linhas `IgnorePkg`.
+Para vários pacotes use uma lista separada por espaço, ou use adicionais linhas `IgnorePkg`. Além disso, padrões de *glob* podem ser usados. Se você deseja pular pacotes apenas uma vez, você também pode usar a opção `--ignore` na linha de comando - dessa vez com uma lista separada por vírgula.
+
+Ainda será possível atualizar pacotes ignorados usando `pacman -S`: neste caso, *pacman* lhe lembrará de que os pacotes têm incluídos em uma declaração de `IgnorePkg`.
 
 #### Pular um grupos de pacotes para não serem atualizados
+
+**Atenção:** Tenha cuidado ao pular grupos de pacotes, já que não há suporte a [atualizações parciais](/index.php/Atualiza%C3%A7%C3%B5es_parciais "Atualizações parciais").
 
 Tal como acontece com os pacotes, pular um grupo de pacote inteiro também é possível:
 
@@ -521,62 +543,45 @@ IgnoreGroup=gnome
 
 #### Pular arquivos para não serem instalados no sistema
 
-Para pular sempre a instalação de lista de diretórios sob `NoExtract`. Por exemplo, para evitar a instalação de units [systemd](/index.php/Systemd "Systemd") use:
+Para pular sempre a instalação de lista de diretórios sob `NoExtract`. Por exemplo, para evitar a instalação de units de [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") use:
 
 ```
 NoExtract=usr/lib/systemd/system/*
 
 ```
 
-### Repositórios
+Regras posteriores sobrescrevem as anteriores e podem negar uma regra adicionando antes `!`.
 
-A seção define quais [repositórios](/index.php/Official_repositories "Official repositories") usar, como referido no `/etc/pacman.conf`. Podem ser mencionados aqui diretamente ou incluídos de outro arquivo (como `/etc/pacman.d/mirrorlist`), tornando-se assim necessário manter apenas uma lista. Veja [aqui](/index.php/Mirrors "Mirrors") para configuração de espelho.
+**Dica:** O *pacman* emite mensagens de avisos sobre locales faltando ao atualizar um pacote para os quais os locales foram limpados com *localepurge* ou *bleachbit*. Comentando a opção `CheckSpace` em `pacman.conf` suprime aviso, mas considera que a funcionalidade de verificação de espaço será desabilitada para todos os pacotes.
 
- `/etc/pacman.conf` 
+#### Manter vários arquivos de configuração
+
+Se você tiver vários arquivos de configuração (ex.: configuração principal e configuração com repositório [testing](/index.php/Testing_(Portugu%C3%AAs) "Testing (Português)") habilitado) e você gostaria de compartilhar opções entre configurações, você pode usar a opção `Include` declarada nos arquivos de configuração, ex.:
+
 ```
-#[testing]
-#SigLevel = PackageRequired
-#Include = /etc/pacman.d/mirrorlist
+Include = */caminho/para/configurações/comuns*
 
-[core]
-SigLevel = PackageRequired
-Include = /etc/pacman.d/mirrorlist
-
-[extra]
-SigLevel = PackageRequired
-Include = /etc/pacman.d/mirrorlist
-
-#[community-testing]
-#SigLevel = PackageRequired
-#Include = /etc/pacman.d/mirrorlist
-
-[community]
-SigLevel = PackageRequired
-Include = /etc/pacman.d/mirrorlist
-
-# If you want to run 32 bit applications on your x86_64 system,
-# enable the multilib repositories as required here.
-
-#[multilib-testing]
-#SigLevel = PackageRequired
-#Include = /etc/pacman.d/mirrorlist
-
-#[multilib]
-#SigLevel = PackageRequired
-#Include = /etc/pacman.d/mirrorlist
-
-# An example of a custom package repository.  See the pacman manpage for
-# tips on creating your own repositories.
-#[custom]
-#SigLevel = Optional TrustAll
-#Server = file:///home/custompkgs
 ```
 
-Cuidados devem ser tomados ao usar o repositório [testing]. Ele está em desenvolvimento ativo e a atualização pode fazer que alguns pacotes parem de funcionar. As pessoas que usam o repositório [testing] são encorajadas a se increver em [arch-dev-public mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public) para obter informações atualizadas.}}
+sendo que arquivo `*/caminho/para/configurações/comuns*` contém as mesmas opções para ambas configurações.
 
-### Segurança de pacotes
+#### Hooks
 
-Pacman suporta 4 assinaturas de pacotes, que adiciona um nível extra de segurança para os pacotes. A configuração padrão, `SigLevel = Required DatabaseOptional`, habilita a verificação de assinaturas para todos os pacotes em um nível global: este pode ser substituido por linhas por repositório `SigLevel`, como mostrado acima. Para mais detalhes sobre pacote de assinatura e verificação de assinatura, dê uma olhada em [pacman-key](/index.php/Pacman-key "Pacman-key").
+*pacman* pode executar hooks de pré- e pós-transação do diretório `/usr/share/libalpm/hooks/`; mais diretórios podem ser especificados com a opção `HookDir` no `pacman.conf`, que tem como padrão `/etc/pacman.d/hooks`. Nomes de arquivo hook devem ser sufixados com *.hook*.
+
+Para mais informações sobre hooks do alpm, veja [alpm-hooks(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/alpm-hooks.5).
+
+### Repositórios e espelhos
+
+Além da seção especial [[options]](#Op.C3.A7.C3.B5es_gerais), cada outra `[section]` no `pacman.conf` define um repositório de pacote a ser usado. Um *repositório* é uma coleção *lógica* de pacotes, que são armazenados *fisicamente* em um ou mais servidores: por esse motivo, cada servidor é chamado de um *espelho* para o repositório.
+
+Repositórios são distinguidos entre [oficial](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") e [não oficiais](/index.php/Unofficial_user_repositories "Unofficial user repositories"). A ordem de repositórios no arquivo de configuração importa; repositórios listados primeiro terão precedências sobre os listados posteriormente quando pacotes nos dois repositórios tiverem nomes idênticos, independentemente do número da versão. Para usar um repositório após adicioná-lo, você precisará [atualizar](#Atualizando_pacotes) todo o sistema primeiro.
+
+Cada seção de repositório permite definir a lista de seus espelhos diretamente ou em um arquivo externo por meio da diretiva `Include`: por exemplo, os espelhos para os repositórios oficiais são incluídos no `/etc/pacman.d/mirrorlist`. Veja o artigo [Mirrors](/index.php/Mirrors "Mirrors") para configuração de espelho.
+
+#### Segurança de pacote
+
+O *pacman* oferece suporte a assinaturas de pacotes, que adiciona uma camada extra de segurança para os pacotes. A configuração padrão, `SigLevel = Required DatabaseOptional`, habilita verificação de assinatura para todos os pacotes em um nível global: isso pode ser sobrescrito por linhas `SigLevel` para cada repositório. Para mais detalhes sobre assinatura de pacote e verificação de assinatura, dê uma olhada em [pacman-key](/index.php/Pacman-key "Pacman-key").
 
 ## Solução de problemas
 

@@ -82,35 +82,35 @@ A proporção de bytes por inode também pode ser definida diretamente via a op�
 
 ### Blocos reservados
 
-By default, 5% of the filesystem blocks will be reserved for the super-user, to avoid fragmentation and "*allow root-owned daemons to continue to function correctly after non-privileged processes are prevented from writing to the filesystem*" (from [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8)).
+Por padrão, 5% dos blocos de sistema de arquivos serão reservados para o superusuário, para evitar fragmentação e "*permitir daemons do root continuarem a funcionar corretamente após processos sem privilégios serem impedidos de escrever no sistema de arquivos*" (traduzido de [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8)).
 
-For modern high-capacity disks, this is higher than necessary if the partition is used as a long-term archive or not crucial to system operations (like `/home`). See [this email](http://www.redhat.com/archives/ext3-users/2009-January/msg00026.html) for the opinion of ext4 developer Ted Ts'o on reserved blocks.
+Para discos modernos de alta capacidade, isso é mais alto do que necessário se a partição for usada como um arquivo de longo prazo ou não crucial para operações do sistema (como `/home`). Veja [esse e-mail](http://www.redhat.com/archives/ext3-users/2009-January/msg00026.html) para a opinião do desenvolvedor do ext4 Ted Ts'o sobre blocos reservados.
 
-It is generally safe to reduce the percentage of reserved blocks to free up disk space when the partition is either:
+Geralmente é seguro reduzir a percentagem de blocos reservados para liberar espaço de disco quando a partição é:
 
-*   Very large (for example > 50G)
-*   Used as long-term archive, i.e., where files will not be deleted and created very often
+*   Grande demais (por exemplo > 50G); ou
+*   Usado como arquivo de longo prazo, isto é, onde arquivos não serão excluídos e criados com muita frequência
 
-The `-m` option of ext4-related utilities allows to specify the percentage of reserved blocks.
+A opção `-m` de utilitários relacionados ao ext4 permitem especificar a percentagem de blocos reservados.
 
-To totally prevent reserving blocks upon filesystem creation, use:
-
-```
-# mkfs.ext4 -m 0 /dev/*device*
+Para impedir totalmente de reservar blocos na criação do sistema de arquivos, use:
 
 ```
-
-To reduce it to 1% afterwards, use:
-
-```
-# tune2fs -m 1 /dev/*device*
+# mkfs.ext4 -m 0 /dev/*dispositivo*
 
 ```
 
-You can use [findmnt(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/findmnt.8) to find the device name:
+Para reduzi-lo para 1% posteriormente, use:
 
 ```
-$ findmnt */the/mount/point*
+# tune2fs -m 1 /dev/*dispositivo*
+
+```
+
+Você pode usar [findmnt(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/findmnt.8) para localizar o nome do dispositivo:
+
+```
+$ findmnt */o/ponto/de/montagem*
 
 ```
 

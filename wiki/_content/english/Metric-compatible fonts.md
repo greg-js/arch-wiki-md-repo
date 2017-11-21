@@ -250,4 +250,4 @@ The following example configuration uses the [#Chrome OS](#Chrome_OS) fonts, add
 
 ## See also
 
-*   [Substituting Calibri and Cambria fonts](https://wiki.debian.org/SubstitutingCalibriAndCambriaFonts) (Debian Wiki)
+*   [Debian Wiki - Substituting Calibri and Cambria fonts](https://wiki.debian.org/SubstitutingCalibriAndCambriaFonts "debian:SubstitutingCalibriAndCambriaFonts")

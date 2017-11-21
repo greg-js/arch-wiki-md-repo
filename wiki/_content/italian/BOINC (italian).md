@@ -15,7 +15,9 @@
 
 Dal sito ufficiale di BOINC: *Sfrutta il tempo morto del tuo pc (Linux, Mac o Windows) per curare malattie, studi sull'effetto serra, scoprire stelle e astri nel cielo, e aiutare tanti altri tipi di ricerca scientifica. E' sicuro e molto semplice.*
 
-Wikipedia: *Il Berkeley Open Infrastructure for Network Computing (BOINC) è un'applicazione software di calcolo distribuito creata per gestire progetti di ricerca che richiedono una potenza di calcolo così elevata da essere da essere difficilmente raggiungibile persino con un supercomputer, ma accessibile attraverso la collaborazione di migliaia di personal computer sparsi in tutto il mondo, coordinati attraverso Internet. Viene sviluppata da un gruppo di lavoro dell'Università di Berkeley diretto da David Anderson.*
+[Wikipedia](https://en.wikipedia.org/wiki/it:Berkeley_Open_Infrastructure_for_Network_Computing "wikipedia:it:Berkeley Open Infrastructure for Network Computing"):
+
+*Il Berkeley Open Infrastructure for Network Computing (BOINC) è un'applicazione software di calcolo distribuito creata per gestire progetti di ricerca che richiedono una potenza di calcolo così elevata da essere da essere difficilmente raggiungibile persino con un supercomputer, ma accessibile attraverso la collaborazione di migliaia di personal computer sparsi in tutto il mondo, coordinati attraverso Internet. Viene sviluppata da un gruppo di lavoro dell'Università di Berkeley diretto da David Anderson.*
 
 ### Installare BOINC
 

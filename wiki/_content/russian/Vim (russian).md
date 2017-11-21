@@ -1,3 +1,7 @@
+Related articles
+
+*   [List of applications/Documents#Vi_text_editors](/index.php/List_of_applications/Documents#Vi_text_editors "List of applications/Documents")
+
 [Vim](https://en.wikipedia.org/wiki/ru:Vim "wikipedia:ru:Vim") - консольный текстовый редактор, являющийся расширенной версией [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") с дополнительными функциями, которые включают в себя: подсветку синтаксиса, полноценную систему помощи, встроенную поддержку скриптов (vimscript), визуальный режим для простоты выделения и сравнение файлов (vimdiff).
 
 ## Contents
@@ -305,7 +309,7 @@ nnoremap <C-l> :TlistToggle<CR>
 
 ### Руководства
 
-*   [vim Tutorial and Primer](http://www.danielmiessler.com/study/vim/)
+*   [vim Tutorial and Primer](https://danielmiessler.com/study/vim/)
 *   [vi Tutorial and Reference Guide](http://usalug.org/vi.html)
 *   [Graphical vi-Vim Cheat Sheet and Tutorial](http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html)
 *   [Vim Introduction and Tutorial](http://blog.interlinked.org/tutorials/vim_tutorial.html)
@@ -331,9 +335,10 @@ nnoremap <C-l> :TlistToggle<CR>
 *   [nion](https://web.archive.org/web/20131020125020/http://nion.modprobe.de/setup/vimrc)
 *   [Детальная конфигурация от Amir Salihefendic](http://amix.dk/vim/vimrc.html)
 *   [Bart Trojanowski](https://web.archive.org/web/20131004071740/http://www.jukie.net/~bart/conf/vimrc)
-*   [Дистрибьютор Vim Steve Francia](https://github.com/spf13/spf13-vim)
+*   [Steve Francia's Vim Distribution](https://github.com/spf13/spf13-vim)
+*   [Vim Awesome](http://vimawesome.com/) - Vim Plugins
 *   [Конфигурация Vim W4RH4W](https://github.com/W4RH4WK/dotVim)
-*   [vimrc/colorscheme от askapache](http://www.askapache.com/linux/fast-vimrc.html)
+*   [Fast vimrc/colorscheme from askapache](https://www.askapache.com/linux/fast-vimrc/)
 *   [Базовый vimrc](https://gist.github.com/anonymous/c966c0757f62b451bffa)
 *   [Usevim](http://www.usevim.com/)
 

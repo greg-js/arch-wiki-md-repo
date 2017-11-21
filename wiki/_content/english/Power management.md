@@ -60,7 +60,7 @@ In Arch Linux, power management consists of two main parts:
 
 ## Userspace tools
 
-Using these tools can replace setting a lot of settings by hand. Only run **one** of these tools to avoid possible conflicts as they all work more or less similarly. Have a look at the [power management category](/index.php/Category:Power_management "Category:Power management") to get an overview on what power management options exist in Archlinux.
+Using these tools can replace setting a lot of settings by hand. Only run **one** of these tools to avoid possible conflicts as they all work more or less similarly. Have a look at the [power management category](/index.php/Category:Power_management "Category:Power management") to get an overview on what power management options exist in Arch Linux.
 
 These are the more popular scripts and tools designed to help power saving:
 

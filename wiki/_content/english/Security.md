@@ -507,7 +507,7 @@ Manual [chroot](/index.php/Chroot "Chroot") jails can also be constructed.
 
 ### Other virtualization options
 
-Using other, more full virtualization options such as [VirtualBox](/index.php/VirtualBox "VirtualBox"), [KVM](/index.php/KVM "KVM"), or [Xen](/index.php/Xen "Xen") can also improve security in the event you plan on running risky applications or browsing dangerous websites.
+Using full virtualization options such as [VirtualBox](/index.php/VirtualBox "VirtualBox"), [KVM](/index.php/KVM "KVM"), [Xen](/index.php/Xen "Xen") or [Qubes OS](https://www.qubes-os.org/) (based on Xen) can also improve isolation and security in the event you plan on running risky applications or browsing dangerous websites.
 
 ## Network and firewalls
 

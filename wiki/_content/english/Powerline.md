@@ -34,13 +34,13 @@ There are many vim plugin managers available which are able to install and updat
 ```
 call plug#begin('*path/to/vim/plugins/directory*')
 
-Plug 'powerline/powerline', { 'rtp': 'powerline/bindings/vim' }
+Plug 'powerline/powerline'
 
 call plug#end()
 
 ```
 
-Substitute `*path/to/vim/plugins/directory*` with the actual directory, such as `~/.vim/plugged`, and run the vim-plug command `:PlugInstall` within vim. This will download Powerline from the [Powerline GitHub page](https://github.com/powerline/powerline) to the specified plugin directory and add it to vim.
+Substitute `*path/to/vim/plugins/directory*` with the actual directory, such as `~/.vim/plugged`, or `~/.local/share/nvim/plugged` for Neovim, and run the vim-plug command `:PlugInstall` within vim. This will download Powerline from the [Powerline GitHub page](https://github.com/powerline/powerline) to the specified plugin directory and add it to vim.
 
 ### Fonts
 
@@ -58,11 +58,11 @@ Depending on where you want to use Powerline, you might need to install addition
 
 	[powerline-vim](https://www.archlinux.org/packages/?name=powerline-vim)
 
+After installing the package, you may need to add `let g:powerline_pycmd="py3"` or `let g:powerline_pycmd="py"` to your vimrc if you have more than one version of python installed.
+
 **Tip:** By default, the statusline (and therefore Powerline) only appears when there are multiple windows open. To show it all the time, use `:set laststatus=2`
 
-	[i3](/index.php/I3 "I3")
-
-	[python-i3-git](https://aur.archlinux.org/packages/python-i3-git/)
+**Tip:** This package installs Powerline to `/usr/share/vim/vimfiles/plugin`, which vim is configured to check by default, meaning this will install Powerline in vim for all users and may require additional configuration. If this is not intended, consider either using a vim plugin manager, or installing the [powerline](https://www.archlinux.org/packages/?name=powerline) package and adding `set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim` to your vimrc.
 
 ## Usage
 
@@ -78,8 +78,8 @@ POWERLINE_BASH_SELECT=1
 
 ```
 
-Close and reopen your terminal and it should be working. If not, check if Python version has changed and then update this page.
+Close and reopen your terminal and it should be working. If not, check the [Powerline bash prompt](https://powerline.readthedocs.io/en/latest/usage/shell-prompts.html#bash-prompt) usage instructions to ensure that it has not changed.
 
 ### Other plugins
 
-For detailed usage instructions, such as configuring your system to use Powerline with shell prompts, window manager widgets, etc., please refer to the [Usage section](https://powerline.readthedocs.io/en/latest/usage.html#usage) of the [Powerline documentation](https://powerline.readthedocs.io/en/latest/index.html).
+For detailed usage instructions, such as configuring your system to use Powerline with other shells, window manager widgets, etc., please refer to the [Usage section](https://powerline.readthedocs.io/en/latest/usage.html#usage) of the [Powerline documentation](https://powerline.readthedocs.io/en/latest/index.html).

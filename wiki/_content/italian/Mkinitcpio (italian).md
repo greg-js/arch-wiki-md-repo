@@ -1,4 +1,8 @@
-**mkinitcpio** è un generatore initramfs di ultima generazione [initramfs](https://it.wikipedia.org/wiki/Initrd).
+Articoli correlati
+
+*   [Arch Boot Process (Italiano)](/index.php/Arch_Boot_Process_(Italiano) "Arch Boot Process (Italiano)")
+
+**mkinitcpio** è un generatore initramfs di ultima generazione [initramfs](https://en.wikipedia.org/wiki/it:Initrd "wikipedia:it:Initrd").
 
 ## Contents
 
@@ -533,4 +537,4 @@ $lsinitcpio -a /boot/initramfs-linux.imq
 
 *   Documentazione del kernel Linux: [initramfs](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/filesystems/ramfs-rootfs-initramfs.txt;hb=HEAD)
 *   Documentazione del kernel Linux: [initrd](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/initrd.txt;hb=HEAD)
-*   Articolo Wikipedia: [initrd](https://it.wikipedia.org/wiki/initrd)
+*   [Wikipedia - initrd](https://en.wikipedia.org/wiki/it:initrd "wikipedia:it:initrd")

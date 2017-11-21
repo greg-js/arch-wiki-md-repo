@@ -4,8 +4,6 @@
 
 *   [1 Installation](#Installation)
 *   [2 Easy configuration](#Easy_configuration)
-    *   [2.1 paprefs](#paprefs)
-    *   [2.2 pavucontrol](#pavucontrol)
 *   [3 Advanced configuration](#Advanced_configuration)
     *   [3.1 Configuration files](#Configuration_files)
         *   [3.1.1 daemon.conf](#daemon.conf)
@@ -41,16 +39,14 @@ PulseAudio only requires the [pulseaudio](https://www.archlinux.org/packages/?na
 
 By default, PulseAudio is configured to automatically detect all sound cards and manage them. It takes control of all detected ALSA devices and redirect all audio streams to itself, making the PulseAudio daemon the central configuration point. The daemon should work mostly out of the box, only requiring a few minor tweaks using the GUI configuration tools. All settings are saved in `~/.config/pulse` and automatically restored when the daemon starts. Use the following tools to configure the daemon to your taste:
 
-### [paprefs](https://www.archlinux.org/packages/?name=paprefs)
+*   [paprefs](https://www.archlinux.org/packages/?name=paprefs)
+    *   Simultaneous output to all sound cards
+    *   Network device streaming and discovery (requires [Avahi](/index.php/Avahi "Avahi") daemon to be installed and running): play sound on any computer on your network from any computer.
 
-*   Simultaneous output to all sound cards
-*   Network device streaming and discovery (requires [Avahi](/index.php/Avahi "Avahi") daemon to be installed and running): play sound on any computer on your network from any computer.
-
-### [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)
-
-*   Per-application volume control
-*   Manage input and output devices volumes and outputs
-*   Sound card configuration to select input/output ports to use and enable/disable devices
+*   [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)
+    *   Per-application volume control
+    *   Manage input and output devices volumes and outputs
+    *   Sound card configuration to select input/output ports to use and enable/disable devices
 
 **Warning:** Do **not** attempt to change the ALSA configuration files while using the default PulseAudio configuration. The default configuration grabs the hardware devices directly in order to allow all the on-the-fly configurations using the GUIs. Changes to the ALSA configurations will very likely be ignored by PulseAudio and ALSA applications will break randomly while trying to access an ALSA device already used by PulseAudio. If you intend to change the ALSA configurations, also configure PulseAudio manually to output to your own ALSA device and play nice with your configuration.
 
@@ -62,7 +58,7 @@ While PulseAudio usually runs fine out of the box and requires only minimal conf
 
 PulseAudio can be configured in multiple ways depending on your needs and uses multiple different configuration files. Configuration files are read from `~/.config/pulse/` first, then from `/etc/pulse/` for system-wide defaults. People usually change the system-wide version unless they intend to have multiple users with different configurations.
 
-#### `daemon.conf`
+#### daemon.conf
 
 This is the main configuration file to configure the daemon itself. It defines base settings like the default sample rates used by modules, resampling methods, realtime scheduling and various other settings related to the server process. These can not be changed at runtime without restarting the PulseAudio daemon. Most defaults make sense here and are self-explaining, see the [pulse-daemon.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pulse-daemon.conf.5) manpage for additional information. Boolean options accepts any of these: `true`, `yes`, `on` and `1` as well as `false`, `no`, `off` and `0`.
 
@@ -81,7 +77,7 @@ This is the main configuration file to configure the daemon itself. It defines b
 | default-fragments | Audio samples are splitted into multiple fragments of `default-fragment-size-msec` each. The larger the buffer is, the less likely audio will skip when the system is overloaded, but will also increase the overall latency. Increase this value if you have issues. |<caption></caption>
 | default-fragment-size-msec | The size in milliseconds of each fragment. This is the amount of data that will be processed at once by the daemon. TODO: Verify |
 
-#### `default.pa`
+#### default.pa
 
 This file is a startup script and is used to configure modules. It is actually parsed and read after the daemon has finished initializing and additional commands can be sent at runtime using `$ pactl` or `$ pacmd`. The startup script can also be provided on the command line by starting PulseAudio in a terminal using `$ pulseaudio -nC`. This will make the daemon load the CLI module and will accept the configuration directly from the command line, and output resulting information or error messages on the same terminal. This can be useful when debugging the daemon or just to test various modules before setting them permanently on disk. The manual page is quite self explaining, please consult [pulse-cli-syntax(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pulse-cli-syntax.5) for the details of the syntax.
 
@@ -96,7 +92,7 @@ In order to configure the daemon, you will mostly only need the very basic comma
 
 There are plenty more commands available that are useful at runtime to control the daemon, see the `pactl` manpage for more details. Everything that an be made in `pavucontrol` can also be made on the command line, useful for bash scripts.
 
-#### `client.conf`
+#### client.conf
 
 This is the configuration file read by every PulseAudio client applications. It is used to configure runtime options for individual clients. It can be used to set the configure the default sink and source statically as well as allowing (or disallowing) clients to automatically start the server if not currently running.
 

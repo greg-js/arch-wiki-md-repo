@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-01，点击[这里](https://wiki.archlinux.org/index.php?title=Display+Power+Management+Signaling&diff=0&oldid=481650)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-20，点击[这里](https://wiki.archlinux.org/index.php?title=Display+Power+Management+Signaling&diff=0&oldid=497169)可以查看翻译后英文页面的改动。
 
 **[DPMS](https://en.wikipedia.org/wiki/VESA_Display_Power_Management_Signaling "wikipedia:VESA Display Power Management Signaling")** (显示电源管理信号，简称DPMS) 可以在计算机一定时间无操作时，将显示器置于节电模式。具体的时间设置可以参考 [[1]](http://linux.die.net/man/3/dpmssettimeouts). 注意有些显示器在不同 DPMS 状态下表现不变。
 
@@ -130,6 +130,8 @@ $ setterm -blank 0 -powerdown 0
 # echo -ne "\033[9;0]" >> /etc/issue
 
 ```
+
+将分号后的 0 修改为 3 会在 3 分钟后进入休眠模式。
 
 ### 通过 cat 显示输出中的转义
 

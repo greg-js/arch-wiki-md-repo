@@ -38,7 +38,7 @@ This article provides information on basic system diagnostics relating to perfor
         *   [2.7.1 Show disk writes](#Show_disk_writes)
         *   [2.7.2 Relocate files to tmpfs](#Relocate_files_to_tmpfs)
         *   [2.7.3 Compiling in tmpfs](#Compiling_in_tmpfs)
-        *   [2.7.4 Disabling journaling on the filesystem](#Disabling_journaling_on_the_filesystem)
+        *   [2.7.4 Optimize the filesystem](#Optimize_the_filesystem)
         *   [2.7.5 Swap space](#Swap_space)
     *   [2.8 Storage I/O scheduling with ionice](#Storage_I.2FO_scheduling_with_ionice)
 *   [3 CPU](#CPU)
@@ -192,11 +192,13 @@ See also [[2]](http://unix.stackexchange.com/questions/107703/why-is-my-pc-freez
 
 **Warning:** Only the CFQ scheduler supports setting IO priorities with ionice. Some background processes rely on this capability to perform background IO unobtrusively by reducing their IO priority, for example KDE's file indexer baloo. Using a different scheduler than the default CFQ scheduler can worsen the user experience on desktops. [[5]](https://blogs.kde.org/2014/10/15/ubuntus-linux-scheduler-or-why-baloo-might-be-slowing-your-system-1404)
 
-The kernel officially supports the following schedulers for storage disk in-/output (IO):
+The official Linux kernel supports the following schedulers for storage disk in-/output (IO):
 
 *   [CFQ](https://en.wikipedia.org/wiki/CFQ "wikipedia:CFQ") scheduler (Completely Fair Queuing)
 *   [NOOP](https://en.wikipedia.org/wiki/NOOP_scheduler "wikipedia:NOOP scheduler")
-*   [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "wikipedia:Deadline scheduler").
+*   [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "wikipedia:Deadline scheduler")
+*   [BFQ](http://algo.ing.unimo.it/people/paolo/disk_sched/) (Budget Fair Queueing)
+*   [Kyber](https://lwn.net/Articles/720071/)
 
 Unofficial support is available through the [BFQ](/index.php/Linux-ck#How_to_enable_the_BFQ_I.2FO_Scheduler "Linux-ck") (Budget Fair Queueing) which is compiled into the [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel as well as many kernels in the [AUR](/index.php/AUR "AUR").
 
@@ -309,11 +311,9 @@ Relocate files, such as your browser profile, to a [tmpfs](/index.php/Tmpfs "Tmp
 
 See [Makepkg#Improving compile times](/index.php/Makepkg#Improving_compile_times "Makepkg").
 
-#### Disabling journaling on the filesystem
+#### Optimize the filesystem
 
-**Warning:** Using a filesystem with journaling disabled is data loss as a result of an ungraceful dismount (i.e. post power failure, kernel lockup, etc.). With modern SSDs, [Ted Tso](http://tytso.livejournal.com/61830.html) advocates that journaling can be enabled with minimal added read/write cycles under most circumstances.
-
-Using a journaling filesystem such as ext4 on an SSD **without** a journal is an option to decrease read/writes. With *ext4*, this is done by enabling the `nointegrity` option. See [Fstab](/index.php/Fstab "Fstab").
+See [ext4#Improve_performance](/index.php/Ext4#Improve_performance "Ext4").
 
 #### Swap space
 

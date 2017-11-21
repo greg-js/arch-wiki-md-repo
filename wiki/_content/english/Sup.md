@@ -29,7 +29,29 @@
 
 Sup only works with Ruby 2.3.3\. Arch moved to a newer Ruby which makes sup crash. Sup is at the moment not being actively maintained to keep up with new versions of Ruby.
 
-You can temporarily install sup using this workaround using [RVM](/index.php/RVM "RVM").
+You can temporarily install sup using this workaround using [RVM](/index.php/RVM "RVM"). After installing RVM, do the following (this follows the solution given [here](https://github.com/sup-heliotrope/sup/issues/532#issuecomment-274184299))
+
+Install Ruby 2.3.3 with RVM
+
+```
+$ rvm install 2.3.3
+
+```
+
+Switch to this version and install `xapian-ruby` and `sup`
+
+```
+$ gem install xapian-ruby
+$ gem install sup
+
+```
+
+Run `sup` with `rvm 2.3.3 do sup`. It is recommended to add an alias of this to your `.bashrc` or `zshrc`
+
+```
+$ echo "alias sup=rvm 2.3.3 do sup" >> ~/.bashrc
+
+```
 
 ## Configuration
 

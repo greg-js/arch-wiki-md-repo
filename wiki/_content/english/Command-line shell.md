@@ -1,6 +1,5 @@
 Related articles
 
-*   [Bash](/index.php/Bash "Bash")
 *   [dotfiles](/index.php/Dotfiles "Dotfiles")
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"):

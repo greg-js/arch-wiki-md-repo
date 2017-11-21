@@ -234,11 +234,11 @@ For [GDM](/index.php/GDM "GDM"), copy the above ~/.config/monitors.xml to /var/l
 
 ## Known Issues
 
-Battery status, screen brightness control, Wifi, and Bluetooth do not work on Arch Kernel 4.12.10-1\. Use Hans kernel.
+Battery/usb-c power source status, screen brightness control, Wifi, and Bluetooth do not work on Arch Kernel 4.12.10-1\. Use Hans kernel.
 
-Battery status, screen brightness control, and Bluetooth do not work on Arch Kernel 4.13.12-1\. Use Hans kernel.
+Battery/usb-c power source status, screen brightness control, and Bluetooth do not work on Arch Kernel 4.13.12-1\. Use Hans kernel.
 
-Screen brightness control, and Bluetooth do not work on Arch Kernel 4.14-2\. Use Hans kernel.
+Usb-c power source status, screen brightness control do not work on Arch Kernel 4.14-2\. Use Hans kernel.
 
 ## Acknowledgements:
 

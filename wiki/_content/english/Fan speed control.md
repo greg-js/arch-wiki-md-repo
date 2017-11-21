@@ -303,11 +303,11 @@ WantedBy=multi-user.target
 
 The embedded controller (EC) regulates fan speed. However, in order to take control over it, add `fan_control=1` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
-Current fan control daemons available in the [AUR](/index.php/AUR "AUR") are [simpfand-git](https://aur.archlinux.org/packages/simpfand-git/) and [thinkfan](https://aur.archlinux.org/packages/thinkfan/).
+Current fan control daemons available in the [AUR](/index.php/AUR "AUR") are [simpfand-git](https://aur.archlinux.org/packages/simpfand-git/) and [thinkfan](https://aur.archlinux.org/packages/thinkfan/) (recommended).
 
 ### Installation
 
-Install [thinkfan](https://aur.archlinux.org/packages/thinkfan/). Then have a look at the files:
+Install [thinkfan](https://aur.archlinux.org/packages/thinkfan/). Optionally but recommended, install [lm-sensors](https://www.archlinux.org/packages/?name=lm-sensors). Then have a look at the files:
 
 ```
 # pacman -Ql thinkfan
@@ -321,7 +321,14 @@ options thinkpad_acpi fan_control=1
 
 ```
 
-So fan control is enabled by default.
+So fan control is enabled by default. Alternatively, you can enabled fan control as follows:
+
+```
+$ echo "options thinkpad_acpi fan_control=1" > /etc/modprobe.d/thinkfan.conf
+
+```
+
+Now, load the module:
 
 ```
 $ su
@@ -332,7 +339,21 @@ $ su
 
 You should see that the fan level is "auto" by default, but you can echo a level command to the same file to control the fan speed manually. The thinkfan daemon will do this automatically.
 
-You will need to copy one of the example config files (e.g. /usr/share/doc/thinkfan/examples/thinkfan.conf.simple) to /etc/thinkfan.conf, and modify to taste. This file specifies which sensors to read, and which interface to use to control the fan. Some systems have /proc/acpi/ibm/fan available; on others, you will need to specify something like
+Set thinkfan to run at startup by editing `/etc/default/thinkfan` and adding the following line:
+
+```
+START=yes
+
+```
+
+Finally, enable the thinkfan systemd service:
+
+```
+$ systemctl enable thinkfan
+
+```
+
+To configure the temperature thresholds, you will need to copy one of the example config files (e.g. /usr/share/doc/thinkfan/examples/thinkfan.conf.simple) to /etc/thinkfan.conf, and modify to taste. This file specifies which sensors to read, and which interface to use to control the fan. Some systems have /proc/acpi/ibm/fan available; on others, you will need to specify something like
 
 ```
 hwmon /sys/devices/virtual/thermal/thermal_zone0/temp

@@ -1,4 +1,4 @@
-This **Laptop main page** contains links to article (sections) needed for configuring a laptop for the best experience. Setting up a laptop is in many ways the same as setting up a desktop. However, there are a few key differences. Arch Linux provides all the tools and programs necessary to take complete control of your laptop. These programs and utilities are highlighted below, with appropriate tips tutorials.
+This **Laptop main page** contains links to articles (sections) needed for configuring a laptop for the best experience. Setting up a laptop is in many ways the same as setting up a desktop. However, there are a few key differences. Arch Linux provides all the tools and programs necessary to take complete control of your laptop. These programs and utilities are highlighted below, with appropriate tips tutorials.
 
 To gain an overview of the reported/achieved Linux hardware compatibility of a particular laptop model, see the results per vendor of below subpages.
 

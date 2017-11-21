@@ -158,7 +158,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ### 背光灯
 
-If you use a tool like [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) in its default configuration, nothing happens, because the path to the backlighting variable is not standard. To fix this issue, you have to use a X-Org configuration file:
+使用[xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight)和默认配置，你无法控制背光灯，因为背光灯路径不符合标准。想要解决这个问题，你需新建一个X-Org配置文件：
 
  `/etc/X11/xorg.conf.d/10-backlight.conf` 
 ```

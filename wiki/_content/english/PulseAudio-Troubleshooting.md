@@ -28,6 +28,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
         *   [2.5.4 Restart PulseAudio to apply the new settings (4/5)](#Restart_PulseAudio_to_apply_the_new_settings_.284.2F5.29)
         *   [2.5.5 Finally check by recording and playing it back (5/5)](#Finally_check_by_recording_and_playing_it_back_.285.2F5.29)
         *   [2.5.6 Another Possible Cause](#Another_Possible_Cause)
+        *   [2.5.7 If using a USB microphone](#If_using_a_USB_microphone)
     *   [2.6 No microphone on Steam or Skype with enable-remixing = no](#No_microphone_on_Steam_or_Skype_with_enable-remixing_.3D_no)
     *   [2.7 Microphone distorted due to automatic adjustment](#Microphone_distorted_due_to_automatic_adjustment)
 *   [3 Audio quality](#Audio_quality)
@@ -455,6 +456,10 @@ pulseaudio --start
 ```
 
 Now `arecord` hopefully works. You may still need to change the `RecordStream from` setting to `Remapped Built-in Audio Analog Stereo` of a specific application in the `Recording` tab of `pavucontrol`.
+
+#### If using a USB microphone
+
+Try plugging it into a different port (eg: ports at the back rather than front).
 
 ### No microphone on Steam or Skype with enable-remixing = no
 

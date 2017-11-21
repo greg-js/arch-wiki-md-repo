@@ -1,3 +1,8 @@
+Related articles
+
+*   [dtach](/index.php/Dtach "Dtach")
+*   [tmux](/index.php/Tmux "Tmux")
+
 [GNU Screen](https://www.gnu.org/software/screen/) is a wrapper that allows separation between the text program and the shell from which it was launched. This allows the user to, for example, start a text program in a terminal in X, kill X, and continue to interact with the program.
 
 ## Contents
@@ -37,7 +42,7 @@ Some users find the default escape key `Ctrl+a` inconvenient. The escape key can
 
 ### Common Commands
 
-*   `Ctrl+a` `?` Displays commands and its defaults (VERY important)
+*   `Ctrl+a` `?` Displays commands and their defaults
 *   `Ctrl+a` `:` Enter to the command prompt of screen
 *   `Ctrl+a` `"` Window list
 *   `Ctrl+a` `0` opens window 0

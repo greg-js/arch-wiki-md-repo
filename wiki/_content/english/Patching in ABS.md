@@ -64,7 +64,7 @@ Most developers create patches from the parent directory of the directory that i
 
 ## Using quilt
 
-A simpler way to create patches is using [quilt](https://www.archlinux.org/packages/?name=quilt) which has better job to manage many patches, such as applying patches, refreshing patches, and reverting patched files to original state. [quilt](https://www.archlinux.org/packages/?name=quilt) is used on [Debian](https://wiki.debian.org/UsingQuilt) to manage their patches. See [Using Quilt](http://www.shakthimaan.com/downloads/glv/quilt-tutorial/quilt-doc.pdf) for basic information about basic quilt usage to generate, apply patches, and reverting patched files.
+A simpler way to create patches is using [quilt](https://www.archlinux.org/packages/?name=quilt) which has better job to manage many patches, such as applying patches, refreshing patches, and reverting patched files to original state. [quilt](https://www.archlinux.org/packages/?name=quilt) is used on [Debian](https://wiki.debian.org/UsingQuilt "debian:UsingQuilt") to manage their patches. See [Using Quilt](http://www.shakthimaan.com/downloads/glv/quilt-tutorial/quilt-doc.pdf) for basic information about basic quilt usage to generate, apply patches, and reverting patched files.
 
 ## See also
 

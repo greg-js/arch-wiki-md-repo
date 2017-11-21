@@ -598,40 +598,24 @@ if (__name__ == "__main__"):
 
 ## UEFI 支持
 
-Libvirt can suport UEFI virtual machines through QEMU and [OVMF](https://github.com/tianocore/edk2).
-
-Currently this is possible in Arch Linux through a workaround. [This ovmf packaging bug](https://bugs.archlinux.org/index.php?do=details&action=details.addvote&task_id=47101) needs to be resolved for this to work out of the box or with minimal configuration of `/etc/libvirt/qemu.conf`.
+Libvirt 可以通过 qemu 和 [OVMF](https://github.com/tianocore/edk2) 来支持 UEFI 虚拟机。
 
 ### OVMF - QEMU workaround
 
-*   Build [ovmf](https://www.archlinux.org/packages/?name=ovmf) from the [ABS](/index.php/ABS "ABS") with `makepkg`.
-*   Copy the `OVMF_CODE.fd` and `OVMF_VARS.fd` files either for 64 or 32 bit to the default qemu location.
+*   安装 [ovmf](https://www.archlinux.org/packages/?name=ovmf) 。
+*   添加下面的内容到 `/etc/libvirt/qemu.conf` 。
 
  `/etc/libvirt/qemu.conf` 
 ```
-#nvram = [
-#   "/usr/share/OVMF/OVMF_CODE.fd:/usr/share/OVMF/OVMF_VARS.fd",
-#   "/usr/share/OVMF/OVMF_CODE.secboot.fd:/usr/share/OVMF/OVMF_VARS.fd",
-#   "/usr/share/AAVMF/AAVMF_CODE.fd:/usr/share/AAVMF/AAVMF_VARS.fd"
-#]
+nvram = [
+    "/usr/share/ovmf/ovmf_code_x64.bin:/usr/share/ovmf/ovmf_vars_x64.bin"
+]
 
 ```
 
-```
-# mkdir /usr/share/OVMF
-# cp src/edk2/Build/OvmfX64/RELEASE_GCC49/FV/OVMF_CODE.fd src/edk2/Build/OvmfX64/RELEASE_GCC49/FV/OVMF_VARS.fd /usr/share/OVMF/ 
+*   重启 `libvirtd`
 
-```
-
-*   Restart `libvirtd`
-
-```
- # systemctl stop libvirtd
- # systemctl start libvirtd
-
-```
-
-Now you are ready to create a uefi virtual machine. Create a new virtual machine through [virt-manager](https://www.archlinux.org/packages/?name=virt-manager). When you get to the final page of the 'New VM' wizard, do the following:
+现在你可以创建一个 UEFI 虚拟机了。 你可以通过 [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) 来创建。 When you get to the final page of the 'New VM' wizard, do the following:
 
 *   Click 'Customize before install', then select 'Finish'
 *   On the 'Overview' screen, Change the 'Firmware' field to select the 'UEFI x86_64' option.

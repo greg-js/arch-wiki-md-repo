@@ -1,49 +1,84 @@
-Arch Linux è una distribuzione indipendente sviluppata per [x86-64](https://en.wikipedia.org/wiki/it:x86-64 "wikipedia:it:x86-64"), abbastanza versatile ed adatta ad ogni ruolo. Il suo sviluppo si concentra sulla semplicità, il minimalismo e l'eleganza del codice. Arch è installato come sistema di base minimale (configurato dall'utente) sul quale viene costruito il proprio ambiente ideale, installando solo ciò che è necessario in base alle proprie necessità. Le GUI delle utility di configurazione non sono fornite ufficialmente e la maggior parte della configurazione del sistema viene eseguita dalla Shell e da un editor di testo. Basata sul modello rolling-release, Arch si sforza di rimanere all'avanguardia, e di solito offre le ultime versioni stabili della maggior parte dei software.
+Arch Linux è una distribuzione GNU/Linux indipendente, sviluppata per un uso general-purpose, rilasciata per l'architettura [x86-64](https://en.wikipedia.org/wiki/it:x86-64 "wikipedia:it:x86-64"). La versione dei pacchetti disponibili per Arch Linux tende ad essere sempre l'ultima stabile possibile. Il modello di sviluppo seguito e` il rolling release. L'installazione di default e` molto minimale, sara` poi l'utente a decidere come dovra` prendere forma il proprio sistema.
 
 ## Contents
 
-*   [1 Storia](#Storia)
-*   [2 Semplicità](#Semplicit.C3.A0)
-*   [3 Modernità](#Modernit.C3.A0)
-*   [4 Gestore Pacchetti](#Gestore_Pacchetti)
-*   [5 Integrità Sorgenti](#Integrit.C3.A0_Sorgenti)
-*   [6 Comunità](#Comunit.C3.A0)
-*   [7 Sommario](#Sommario)
+*   [1 Pricipi](#Pricipi)
+    *   [1.1 Semplicita`](#Semplicita.60)
+    *   [1.2 Modernita`](#Modernita.60)
+    *   [1.3 Pragmatismo](#Pragmatismo)
+    *   [1.4 Centralita` dell'utente](#Centralita.60_dell.27utente)
+    *   [1.5 Versatilita`](#Versatilita.60)
+*   [2 Storia](#Storia)
+    *   [2.1 I primi anni](#I_primi_anni)
+    *   [2.2 Gli anni di mezzo](#Gli_anni_di_mezzo)
+    *   [2.3 Nascita di ArchWiki](#Nascita_di_ArchWiki)
+    *   [2.4 L'era di Griffin](#L.27era_di_Griffin)
+    *   [2.5 Arch Install Script](#Arch_Install_Script)
+    *   [2.6 L'era di Systemd](#L.27era_di_Systemd)
+    *   [2.7 Fine del supporto a i686](#Fine_del_supporto_a_i686)
+
+## Pricipi
+
+### Semplicita`
+
+Il concetto di semplicita` a cui si fa riferimento e` *senza aggiunte o modifiche*. Arch Linux rilascia i software come gli sviluppatori originari in [upstream](https://en.wikipedia.org/wiki/Upstream_(software_development)) li hanno pensati. I cambiamenti in downstream sono ridotti all'osso.
+
+Anche le configurazioni di default sono quelle previste dagli sviluppatori in upstream, le eventuali modifiche specifiche della distribuzione sono minime e solitamente si tratta solo di modificare i percorsi dei file di sistema. Non vengono forniti automatismi di nessun genere, ad esempio non viene avviato nessun servizio a seguito dell'installazione di un determinato pacchetto. Alcuni pacchetti vengono *splittati* con il principale scopo di non sprecare troppo spazio su disco. Interfacce grafiche di configurazione non sono ufficialmente fornite (in downstream), gli utenti infatti sono incoraggiati a configurare tramite shell ed editor testuali.
+
+### Modernita`
+
+Arch Linux mantiene nei propri repository solo l'ultima versione stabile di ogni pacchetto. Il sistema di rilascio scelto e` *rolling release* che prevede una sola installazione con continui aggiornamenti.
+
+Arch Linux incorpora tutte le nuove caratteristiche disponibili per ogni utente GNU/Linux, come il sistema di init [systemd](/index.php/Systemd "Systemd"), moderni [file system](/index.php/File_system "File system"), LVM2, software RAID, il tutto supportato dall'ultima versione disponibile del kernel.
+
+### Pragmatismo
+
+Arch Linux prima di essere una distribuzione ideologica e` pragmatica. I principi qui presentati sono solo utili linee guide. Infatti ogni decisione riguardante la pacchettizzazione e` presa caso per caso e con il consenso di piu` sviluppatori. Le analisi tecniche svolte e la discussione sono alla base delle scelte, questo ha la precedenza su politica o opinioni popolari.
+
+Il grande numero dei pacchetti disponibili nei repository ufficiali sono sia open source sia closed in modo che sia l'utente a scegliere quale usare.
+
+### Centralita` dell'utente
+
+Arch Linux e` *user-centric* a differenza di molte altre distribuzioni che sono *user-friendly*. Questa distribuzione e` pensata per coprire le necessita` di chi contribuisce, cercare di aumentare il numero di utenti non e` lo scopo di Arch Linux. Il normale target di utenza e` quello di utenti GNU/Linux avanzati o chiunque abbia una buona attitudine al DIY, alla lettura e alla comprensione della documentazione.
+
+Ogni utente e` incoraggiato a [partecipare](/index.php/Getting_involved "Getting involved") e contribuire alla distribuzione. Ogni aiuto a riportare e risolvere [bug](https://bugs.archlinux.org/) o sviluppare il core [project](https://projects.archlinux.org/) e` apprezzato. Gli sviluppatori di Arch Linux sono volontari e spesso i contributori piu` attivi si ritrovano a diventare parte del team. Gli *archer* possono liberamente contribuire grazie ad [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), possono contribuire alla [documentazione](/index.php/Main_page "Main page"), partecipare a [forum](https://www.archlinux.it/forum/index.php), mailing list o [canali IRC](/index.php/IRC_Channels "IRC Channels"). Arch Linux e` un sistema operativo globale, usato da molti utente sparsi in tutto il mondo, esistono molte [community internazionali](/index.php/International_communities "International communities") che offrono aiuto e documentazione localizzata.
+
+### Versatilita`
+
+Arch Linux e` general-purpose. Dall'installazione solo l'interfaccia a riga di comando e` disponibile. Invece di fornire molti pacchetti da subito, Arch Linux lascia all'utente la possibilita` di decidere quali pacchetti installare. I [repository](/index.php/Official_repositories "Official repositories") di Arch Linux contengono migliaia di pacchett compilati i per l'architettura [x86-64](https://en.wikipedia.org/wiki/x86-64). Il supporto a [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture)) e` cessato a novembre 2017.
+
+Arch Linux usa come package manager [pacman](/index.php/Pacman "Pacman"), un programma leggero, funzionale e potente, il quale permette di aggiornare tutto il sistema con un solo comando. Arch Linux fornisce anche [Arch Build System](/index.php/Arch_Build_System "Arch Build System"), un sistema *port-like* per aiutare nella ricompilazione da sorgente dei vari pacchetti, il quale puo` essere sincronizzato con un solo comando. In piu`, l' *Arch User Repository* contiene migliaia di [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") supportati dalla comunita`, per poter compilare grazie a [makepkg](/index.php/Makepkg "Makepkg") le applicazioni non presenti nei repository. E` anche possibile mantenere facilmente un proprio repository personalizzato.
 
 ## Storia
 
-	*Articolo principale: [Storia di Arch Linux](/index.php?title=History_of_Arch_Linux_(Italiano)&action=edit&redlink=1 "History of Arch Linux (Italiano) (page does not exist)")*
+### I primi anni
 
-Arch Linux è stata fondata dal programmatore canadese Judd Vinet. Il suo primo rilascio formale, Arch Linux 0.1, avvenne l'11 marzo 2002\. Anche se Arch è completamente indipendente, trae ispirazione dalla semplicità di altre distribuzioni, tra cui [Slackware](http://slackware.com), [CRUX](http://www.crux.nu) e [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution "wikipedia:Berkeley Software Distribution"). Nel 2007, Judd Vinet si è dimesso da Project Lead per perseguire altri interessi ed è stato sostituito dal programmatore Americano Aaron Griffin, che oggi continua a portare avanti il progetto.
+Arch Linux è stata fondata dal programmatore canadese Judd Vinet. Il suo primo rilascio formale, Arch Linux 0.1, avvenne l'11 marzo 2002\. Anche se Arch è completamente indipendente, trae ispirazione dalla semplicità di altre distribuzioni, tra cui [Slackware](http://slackware.com), [CRUX](http://www.crux.nu) e [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution "wikipedia:Berkeley Software Distribution"). Judd inizio` anche a sviluppare un programma, chiamato [pacman](/index.php/Pacman "Pacman") in grado di gestire installazione, rimozione e aggiornamento dei pacchetti.
 
-## Semplicità
+### Gli anni di mezzo
 
-Seguendo [Il Metodo Arch](/index.php/Il_Metodo_Arch "Il Metodo Arch"), Arch Linux è leggera, flessibile, semplice e mira ad essere molto simile a UNIX. Al momento dell'installazione viene fornito un ambiente minimale (senza GUI) compilato per architetture i686/x86-64: invece di andare a rimuovere i pacchetti non necessari e non desiderati, all'utente corrente viene offerta la possibilità di costruire tutto dalle fondamenta, senza alcun modello di default scelto preventivamente. La sua filosofia di progettazione e realizzazione la rendono facilmente estendibile ed adattabile a qualsiasi sistema si vuole ottenere, da una console minimalista al più grandioso degli ambienti desktop disponibili: è l’utente che decide cosa diventerà il suo sistema Arch.
+La crescita della comunita` di Arch Linux tra 2002 e 2011 e` stata costante, come si vede da [questo](https://wiki.archlinux.org/images/8/8d/Archstats2002-2011.png) grafico riguardante il numero di post sui forum e ai bug report.
 
-Il semplice sistema di init di Arch è fortemente ispirato dal metodo *BSD, incorporando tutti i riferimenti in un solo file *single file* (rc.conf) piuttosto che in una struttura di directory SysVinit che contengono dozzine di link simbolici per ogni runlevel. La configurazione del sistema è ottenuta attraverso la modifica di semplici file di testo.
+### Nascita di ArchWiki
 
-## Modernità
+L'8 luglio 2005 nasce [ArchWiki](/index.php/ArchWiki:About#History "ArchWiki:About") su piattaforma MediaWiki.
 
-Arch Linux si sforza di mantenere gli ultimi rilasci delle versioni stabili del software fornito, fino a quando ciò non causerà errori di sistema. Esso è basato su un sistema [rolling-release](https://en.wikipedia.org/wiki/it:Rolling_release "wikipedia:it:Rolling release"), che consente di installare una sola volta con costanti aggiornamenti, senza mai dover reinstallare o eseguire elaborati upgrade di sistema inclusi nel passaggio da una versione all'altra. Mediante l'esecuzione di un comando, il sistema Arch sarà aggiornato ed all'avanguardia.
+### L'era di Griffin
 
-Arch include molte delle tecnologie più recenti disponibili per gli utenti GNU/Linux, tra cui il sistema init [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)"), file systems moderni (Ext2/3/4, Reiser, XFS, JFS, BTRFS), LVM2/EVMS, software RAID, il supporto a udev e initcpio (con [mkinitcpio](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)")), oltre alle ultime versioni del kernel disponibili.
+Nel 2007, Judd Vinet decide di abbandonare il progetto, lasciando le redini a [Aaron Griffin](https://bbs.archlinux.org/viewtopic.php?id=38024), conosciuto sul web come Phrakture, il quale e` leader di Arch Linux tuttora.
 
-## Gestore Pacchetti
+Nel corso degli anni la comunita` ha continuato a crescere e maturare ricevendo anche una discreta [notorieta`](/index.php/Arch_Linux_Press_Review "Arch Linux Press Review").
 
-Arch è sostenuto da [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)"), un semplice [gestore di pacchetti](https://en.wikipedia.org/wiki/it:Package_manager "wikipedia:it:Package manager") binari, che permette di aggiornare l'intero sistema con un solo comando. Pacman è scritto in *C* e progettato da zero per essere leggero, semplice e molto veloce. Arch offre anche la [Arch Build System](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)"), un porte-like per rendere più facile la compilazione e l'installazione dei pacchetti da sorgenti, che può anche essere sincronizzato con un unico comando. È anche possibile ricompilare l'intero sistema soltanto con un comando.
+Gli sviluppatori di Arch Linux rimangono comunque volontari non pagati. Non ci sono prospettive di monetizzare in futuro quindi Arch e` *free* in ogni senso. I piu` curiosi sulla storia dello sviluppo di Arch Linux potranno visitare: [Arch entry in the Internet Archive Wayback Machine](http://web.archive.org/web/*/archlinux.org) e [News Archives](https://www.archlinux.org/news/).
 
-Supportando architetture i686 e x86-64,i [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") forniscono diverse migliaia di pacchetti di alta qualità per soddisfare le varie esigenze software. Inoltre, Arch incoraggia la crescita della comunità ed il contributo, offrendo l'[Arch User Repository](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)"), che contiene molte migliaia di utenti manteiner di script PKGBUILD, la compilazione e l'installazione dei pacchetti da sorgenti, utilizzando l'applicazione *makepkg*. È anche possibile, per tutti gli utenti, creare e gestire facilmente i propri repository personalizzati.
+### Arch Install Script
 
-## Integrità Sorgenti
+Il 15 luglio 2012 viene rilasciata la prima iso senza lo storico [installer](https://www.archlinux.org/news/install-media-20120715-released/) a menu testuale in favore degli Arch Install Scripts.
 
-Arch fornisce software vanilla senza patch; i pacchetti fanno riferimento a sorgenti [upstream](https://en.wikipedia.org/wiki/upstream_(software_development) puri, come l’autore originario intendeva distribuirli. Solo in rari casi i pacchetti vengono patchati, per evitare errori gravi in caso di disallineamenti di versioni che possono verificarsi in un modello rolling-release.
+### L'era di Systemd
 
-## Comunità
+Tra il 2012 e il 2013 il tradizionale sistema di init System V viene deprecato in favore di Systemd. [https://www.archlinux.org/news/install-medium-20121006-introduces-systemd/](https://www.archlinux.org/news/install-medium-20121006-introduces-systemd/)][[1]](https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/)[[2]](https://www.archlinux.org/news/end-of-initscripts-support/)[[3]](https://www.archlinux.org/news/final-sysvinit-deprecation-warning/)
 
-La comunità Arch è molto affidabile, vivace ed accogliente: tutti gli "Arcieri" sono invitati a partecipare e dare il loro contributo alla distribuzione, partecipando allo sviluppo del software di base, alla manutenzione dei pacchetti, alla segnalazione e risoluzione dei [bugs](https://bugs.archlinux.org/), al miglioramento della [documentazione ArchWiki](/index.php/Main_page_(Italiano) "Main page (Italiano)") , aiutando gli altri utenti alla soluzione di problemi o semplicemente scambiando opinioni nel [forum](https://bbs.archlinux.org/), nella [mailing lists](https://mailman.archlinux.org/mailman/listinfo/), nei [canali IRC](/index.php?title=IRC_Channels_(Italiano)&action=edit&redlink=1 "IRC Channels (Italiano) (page does not exist)"), o tramite la condivisione della propria conoscenza o addirittura tramite lo sviluppo autonomo di applicazioni. Arch Linux è il sistema operativo scelto da molte persone in tutto il mondo, ed esistono diverse [comunità internazionali](/index.php?title=International_Communities_(Italiano)&action=edit&redlink=1 "International Communities (Italiano) (page does not exist)") che danno una mano per offrire e fornire la documentazione in diverse lingue.
+### Fine del supporto a i686
 
-Vedere [Getting Involved](/index.php/Getting_involved_(Italiano) "Getting involved (Italiano)") per diventare un membro attivo della comunità.
-
-## Sommario
-
-Per riassumere: Arch Linux è una distribuzione semplice e versatile, progettata per soddisfare le esigenze degli utenti Linux più competenti. È potente e facile da gestire, rendendola una distro ideale per server e workstation. Si è liberi di fare la propria scelta: se si condivide questa visione di ciò che dovrebbe essere una distribuzione GNU/Linux, allora siete benvenuti ed incoraggiati ad utilizzarla liberamente, ad essere coinvolti ed a contribuire alla comunità. Benvenuti in Arch!
+Il 25 gennaio 2017 viene [annunciato](https://www.archlinux.org/news/phasing-out-i686-support/) che il supporto all'architettura i686 finira` per via del sempre minor interesse di community e sviluppatori.
