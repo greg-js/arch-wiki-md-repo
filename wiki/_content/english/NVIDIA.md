@@ -14,10 +14,11 @@ This article covers the proprietary [NVIDIA](http://www.nvidia.com) graphics car
 *   [1 Installation](#Installation)
     *   [1.1 Unsupported drivers](#Unsupported_drivers)
     *   [1.2 Custom kernel](#Custom_kernel)
-    *   [1.3 Pure Video HD](#Pure_Video_HD)
-    *   [1.4 DRM kernel mode setting](#DRM_kernel_mode_setting)
-    *   [1.5 Hardware accelerated video decoding with XvMC](#Hardware_accelerated_video_decoding_with_XvMC)
-        *   [1.5.1 Pacman hook](#Pacman_hook)
+    *   [1.3 DRM kernel mode setting](#DRM_kernel_mode_setting)
+        *   [1.3.1 Pacman hook](#Pacman_hook)
+    *   [1.4 Hardware accelerated video decoding](#Hardware_accelerated_video_decoding)
+        *   [1.4.1 VDPAU](#VDPAU)
+        *   [1.4.2 XvMC](#XvMC)
 *   [2 Configuration](#Configuration)
     *   [2.1 Minimal configuration](#Minimal_configuration)
     *   [2.2 Automatic configuration](#Automatic_configuration)
@@ -53,7 +54,11 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 
 3\. Install the appropriate driver for your card:
 
-*   For GeForce 400 series cards and newer [NVCx and newer], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia), [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) (for [DKMS](/index.php/DKMS "DKMS") support) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package (both based on Nvidia's short lived branch). If these packages do not work, [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) may have a newer driver version that offers support. There is also [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), which is built from Nvidia's [long lived branch](http://www.phoronix.com/scan.php?page=news_item&px=OTkxOA).
+*   For GeForce 400 series cards and newer [NVCx and newer], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package.
+
+*   If these packages do not work, [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) may have a newer driver version that offers support.
+*   There is also [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), which is built from Nvidia's [long lived branch](http://www.phoronix.com/scan.php?page=news_item&px=OTkxOA).
+
 *   For GeForce 8000/9000, ION and 100-300 series cards [NV5x, NV8x, NV9x and NVAx] from around 2006-2010, [install](/index.php/Install "Install") the [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) or [nvidia-340xx-lts](https://www.archlinux.org/packages/?name=nvidia-340xx-lts) package.
 *   For GeForce 6000/7000 series cards [NV4x and NV6x] from around 2004-2006, [install](/index.php/Install "Install") the [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) or [nvidia-304xx-lts](https://www.archlinux.org/packages/?name=nvidia-304xx-lts) package.
 
@@ -82,10 +87,6 @@ If you are using a custom kernel, compilation of the Nvidia kernel modules can b
 
 Install the [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) package (or a specific branch such as [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)). The Nvidia module will be rebuilt after every Nvidia or kernel update thanks to the DKMS [Pacman Hook](/index.php/Pacman#Hooks "Pacman").
 
-### Pure Video HD
-
-At least a video card with second generation [PureVideo HD](https://en.wikipedia.org/wiki/Nvidia_PureVideo#Table_of_GPUs_containing_a_PureVideo_SIP_block "wikipedia:Nvidia PureVideo") is required for [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") using VDPAU.
-
 ### DRM kernel mode setting
 
 **Warning:** Enabling KMS causes [GDM](/index.php/GDM "GDM") and [GNOME](/index.php/GNOME "GNOME") to default to [Wayland](/index.php/Wayland "Wayland"), which currently suffers from very poor performance: [FS#53284](https://bugs.archlinux.org/task/53284). A workaround is to use the *GNOME on Xorg* session instead.
@@ -95,10 +96,6 @@ At least a video card with second generation [PureVideo HD](https://en.wikipedia
 [nvidia](https://www.archlinux.org/packages/?name=nvidia) 364.16 adds support for DRM [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). To enable this feature, add the `nvidia-drm.modeset=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), and add `nvidia`, `nvidia_modeset`, `nvidia_uvm` and `nvidia_drm` to your [initramfs#MODULES](/index.php/Initramfs#MODULES "Initramfs").
 
 **Warning:** Do not forget to run [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") every time there is a [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver update. See [#Pacman hook](#Pacman_hook) to automate these steps.
-
-### Hardware accelerated video decoding with XvMC
-
-Accelerated decoding of MPEG-1 and MPEG-2 videos via [XvMC](/index.php/XvMC "XvMC") are supported on GeForce4, GeForce 5 FX, GeForce 6 and GeForce 7 series cards. See [XvMC](/index.php/XvMC "XvMC") for details.
 
 #### Pacman hook
 
@@ -120,6 +117,16 @@ Exec=/usr/bin/mkinitcpio -P
 ```
 
 Make sure the `Target` package set in this hook is the one you've installed in steps above (e.g. `nvidia`, `nvidia-dkms`, `nvidia-lts` or `nvidia-ck-something`).
+
+### Hardware accelerated video decoding
+
+#### VDPAU
+
+At least a video card with second generation [PureVideo HD](https://en.wikipedia.org/wiki/Nvidia_PureVideo#Table_of_GPUs_containing_a_PureVideo_SIP_block "wikipedia:Nvidia PureVideo") is required for [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") using VDPAU.
+
+#### XvMC
+
+Accelerated decoding of MPEG-1 and MPEG-2 videos via [XvMC](/index.php/XvMC "XvMC") are supported on GeForce4, GeForce 5 FX, GeForce 6 and GeForce 7 series cards. See [XvMC](/index.php/XvMC "XvMC") for details.
 
 ## Configuration
 

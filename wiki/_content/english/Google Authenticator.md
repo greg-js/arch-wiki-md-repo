@@ -1,4 +1,4 @@
-[Google Authenticator](https://github.com/google/google-authenticator) provides a two-step authentication procedure using one-time passcodes (OTP). The OTP generator application is available for iOS, Android and Blackberry. Similar to [S/KEY Authentication](/index.php/S/KEY_Authentication "S/KEY Authentication") the authentication mechanism integrates into the Linux [PAM](/index.php/PAM "PAM") system. This guide shows the installation and configuration of this mechanism.
+[Google Authenticator](https://github.com/google/google-authenticator) provides a two-step authentication procedure using one-time passcodes ([OTP](https://en.wikipedia.org/wiki/One-time_pad "wikipedia:One-time pad")). The OTP generator application is available for iOS, Android and Blackberry. Similar to [S/KEY Authentication](/index.php/S/KEY_Authentication "S/KEY Authentication") the authentication mechanism integrates into the Linux [PAM](/index.php/PAM "PAM") system. This guide shows the installation and configuration of this mechanism.
 
 For the reverse operation (generating codes compatible with Google Authenticator under Linux) see [#Code generation](#Code_generation) below.
 

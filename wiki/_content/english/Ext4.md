@@ -20,12 +20,12 @@ From [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4):
         *   [2.2.1 Rationale](#Rationale_2)
         *   [2.2.2 Procedure](#Procedure_2)
 *   [3 Using file-based encryption](#Using_file-based_encryption)
-*   [4 Improve performance](#Improve_performance)
+*   [4 Improving performance](#Improving_performance)
     *   [4.1 E4rat](#E4rat)
-    *   [4.2 Disable access time update](#Disable_access_time_update)
-    *   [4.3 Increase commit interval](#Increase_commit_interval)
-    *   [4.4 No barrier](#No_barrier)
-    *   [4.5 Disable journaling](#Disable_journaling)
+    *   [4.2 Disabling access time update](#Disabling_access_time_update)
+    *   [4.3 Increasing commit interval](#Increasing_commit_interval)
+    *   [4.4 Turning barriers off](#Turning_barriers_off)
+    *   [4.5 Disabling journaling](#Disabling_journaling)
 *   [5 Enabling metadata checksums](#Enabling_metadata_checksums)
     *   [5.1 New filesystem](#New_filesystem)
     *   [5.2 Existing filesystem](#Existing_filesystem)
@@ -269,19 +269,19 @@ This completes setting up encryption for a directory named `*/encrypted*`. If yo
 
 In both cases it is better to copy (`cp`) files instead, because that leaves the option to securely delete the unencrypted original with *shred* or a similar tool.
 
-## Improve performance
+## Improving performance
 
 ### E4rat
 
-[E4rat](/index.php/E4rat "E4rat") is a preload application designed for the ext4 filesystem. It monitors files opened during boot, optimizes their placement on the partition to improve access time, and preloads them at the very beginning of the boot process. E4rat does not offer improvements with [SSDs](/index.php/SSD "SSD"), whose access time is negligible compared to hard disks.
+[E4rat](/index.php/E4rat "E4rat") is a preload application designed for the ext4 filesystem. It monitors files opened during boot, optimizes their placement on the partition to improve access time, and preloads them at the very beginning of the boot process. *E4rat* does not offer improvements with [SSDs](/index.php/SSD "SSD"), whose access time is negligible compared to hard disks.
 
-### Disable access time update
+### Disabling access time update
 
-With the `noatime` option, the access timestamps on the filesystem are not updated.
+The *ext4* file system records information about when a file was last accessed and there is a cost associated with recording it. With the `noatime` option, the access timestamps on the filesystem are not updated.
 
  `/etc/fstab`  `/dev/sda5    /    ext4    defaults,**noatime**    0    1` 
 
-### Increase commit interval
+### Increasing commit interval
 
 The sync interval for data and metadata can be increased by providing a higher time delay to the `commit` option.
 
@@ -289,19 +289,17 @@ The default 5 sec means that if the power is lost, one will lose as much as the 
 
  `/etc/fstab`  `/dev/sda5    /    ext4    defaults,noatime,**commit=999**    0    1` 
 
-### No barrier
+### Turning barriers off
 
-**Warning:** Disabling barriers when disks cannot guarantee caches are properly written in case of power failure can lead to severe file system corruption and data loss.
+**Warning:** Disabling barriers for disks without battery-backed cache is not recommended and can lead to severe file system corruption and data loss.
 
-Since kernel 2.6.30, ext4 performance has decreased due to changes that serve to improve data integrity.[[7]](http://www.phoronix.com/scan.php?page=article&item=ext4_then_now&num=1)
+*Ext4* enables write barriers by default. It ensures that file system metadata is correctly written and ordered on disk, even when write caches lose power. This goes with a performance cost especially for applications that use *fsync* heavily or create and delete many small files. For disks that have a write cache that is battery-backed in one way or another, disabling barriers may safely improve performance.
 
-	Most file systems (XFS, ext3, ext4, reiserfs) send write barriers to disk after fsync or during transaction commits. Write barriers enforce proper ordering of writes, making volatile disk write caches safe to use (at some performance penalty). If your disks are battery-backed in one way or another, disabling barriers may safely improve performance.
-
-To turn barriers off add the option `barrier=0` to the desired filesystem. For example:
+To turn barriers off, add the option `barrier=0` to the desired filesystem. For example:
 
  `/etc/fstab`  `/dev/sda5    /    ext4    noatime,**barrier=0**    0    1` 
 
-### Disable journaling
+### Disabling journaling
 
 **Warning:** Using a filesystem without journaling can result in data loss in case of sudden dismount like power failure or kernel lockup.
 
@@ -380,6 +378,6 @@ Keep in mind that the intel module consistently performs 10x faster than the gen
 *   [Official Ext4 wiki](https://ext4.wiki.kernel.org/)
 *   [Ext4 Disk Layout](https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout) described in its wiki
 *   [Ext4 Encryption](http://lwn.net/Articles/639427/) LWN article
-*   Kernel commits for ext4 encryption [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[9]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
+*   Kernel commits for ext4 encryption [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
 *   [e2fsprogs Changelog](http://e2fsprogs.sourceforge.net/e2fsprogs-release.html)
 *   [Ext4 Metadata Checksums](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums)

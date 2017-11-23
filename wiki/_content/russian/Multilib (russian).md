@@ -1,3 +1,7 @@
+Ссылки по теме
+
+*   [Install bundled 32-bit system in Arch64](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64")
+
 Репозиторий *multilib* позволяет запускать и собирать 32-битные приложения в 64-битной версии Arch Linux. Он содержит пакеты с 32-битными версиями библиотек, которые используются для запуска 32-битных программ. Эти библиотеки располагаются в каталоге `/usr/lib32`.
 
 ## Contents

@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Aria2](/index.php/Aria2 "Aria2"). Дата последней синхронизации: 8 февраля 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Aria2&diff=0&oldid=419572).
+**Состояние перевода:** На этой странице представлен перевод статьи [Aria2](/index.php/Aria2 "Aria2"). Дата последней синхронизации: 21 ноября 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Aria2&diff=0&oldid=497127).
 
 С домашней страницы [проекта](https://aria2.github.io/):
 
@@ -26,10 +26,8 @@
 *   [4 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
     *   [4.1 Скачать пакеты без установки](#.D0.A1.D0.BA.D0.B0.D1.87.D0.B0.D1.82.D1.8C_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B_.D0.B1.D0.B5.D0.B7_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
     *   [4.2 pacman XferCommand](#pacman_XferCommand)
-    *   [4.3 Минимальная пользовательская сборка](#.D0.9C.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B0.D1.8F_.D1.81.D0.B1.D0.BE.D1.80.D0.BA.D0.B0)
-    *   [4.4 Запуск aria2c при загрузке системы](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_aria2c_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
-    *   [4.5 Изменение User Agent](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_User_Agent)
-    *   [4.6 Использование Aria2 с makepkg](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_Aria2_.D1.81_makepkg)
+    *   [4.3 Изменение User Agent](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_User_Agent)
+    *   [4.4 Использование Aria2 с makepkg](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_Aria2_.D1.81_makepkg)
 *   [5 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
@@ -273,7 +271,7 @@ seed-time=240
 
 ### Пример aria2.daemon
 
-Эта настройка может быть использована для запуска Aria2 в качестве службы. Также может использоваться в сочетании с несколькими фронтэндами, перечисленными ниже. Обратите внимание, что RPC-пользователя и rpc-pass устарели, но большинство фронтэндов не были ещё портированы на новую аутентификацию. Не забудьте изменить пароль пользователя, и каталог Загрузки.
+Эта настройка может быть использована для запуска Aria2 в качестве службы. Также может использоваться в сочетании с несколькими интерфейсами, перечисленными ниже. Обратите внимание, что RPC-пользователя и rpc-pass устарели, но большинство интерфейсов не были ещё портированы на новую аутентификацию. Не забудьте изменить пароль пользователя, и каталог Загрузки.
 
 ```
 continue
@@ -350,48 +348,22 @@ rpc-passwd=rpcpass
 
 ### Скачать пакеты без установки
 
-Просто воспользуйтесь командой ниже:
+Просто воспользуйтесь командой, приведенной ниже:
 
 ```
  # pacman -Sp packages | aria2c -i -
 
 ```
 
-`pacman -Sp` Список адресов пакетов на стандартный вывод вместо их загрузки, затем `|` пайпинг к следующей команде. И, наконец `-i` `aria2c -i -` переход к aria2c означает, что URL-адреса для скачиваемых файлов следует читать из указанного файла, но если `-` пропущен, то читать URL-адреса из стандартного ввода.
+`pacman -Sp` покажет список адресов пакетов в стандартном выводе (stdout) вместо того, чтобы загрузить, затем `|` передаст их для следующей команды. И, наконец `-i` в `aria2c -i -` скажет aria2c, что URL-адреса для скачиваемых файлов должны быть считаны из указанного файла, но так как добавлен `-`, значит URL-адреса нужно брать из стандартного ввода (stdin).
 
 ### pacman XferCommand
 
-aria2 может быть использован в качестве менеджера загрузки по умолчанию для менеджера пакетов [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)"). Для подробностей смотрите статью ArchWiki [Повышение производительности pacman](/index.php/Improve_pacman_performance_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_aria2 "Improve pacman performance (Русский)").
-
-### Минимальная пользовательская сборка
-
-Можно получить выгоду в производительности, путем удаления неиспользуемых функций и протоколов. Дальнейшее повышение может быть достигнуто путем удаления поддержки внешних библиотек в пользовательской сборке. Доступные варианты видны через `./configure --help`. Смотрите страницу [сисетму сборки Arch](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)") для более подробной информации.
-
-### Запуск aria2c при загрузке системы
-
-Save the following [systemd](/index.php/Systemd "Systemd") service file, adjust username and config path according to your setup. Ensure your config is set to deamonize (use `daemon=true`).
-
- `/etc/systemd/system/aria2c.service` 
-```
-[Unit]
-Description=Aria2c download manager
-After=network.target
-
-[Service]
-User=aria2
-Type=forking
-ExecStart=/usr/bin/aria2c --conf-path=/home/aria2/.aria2/aria2.daemon
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-Then [start and/or enable](/index.php/Systemd#Using_units "Systemd") the service.
+Смотрите [pacman/Tips and tricks#aria2](/index.php/Pacman/Tips_and_tricks#aria2 "Pacman/Tips and tricks").
 
 ### Изменение User Agent
 
-Некоторые сайты могут фильтровать запросы на основе вашего User Agent, Aria2 не известный загрузчик, но он может использовать известные загрузчики или представляться браузером. Просто используйте опцию -U, как это:
+Некоторые сайты могут фильтровать запросы на основе вашего User Agent, поскольку Aria2 малоизвестный загрузчик, может оказаться полезным изменить User Agent, представляясь известным загрузчиком или браузером. Просто используйте опцию -U, как здесь:
 
 ```
 $ aria2c -UWget http://some-url-to-download/file.xyz
@@ -402,7 +374,7 @@ $ aria2c -UWget http://some-url-to-download/file.xyz
 
 ### Использование Aria2 с makepkg
 
-Вы можете использовать [Aria2](/index.php/Aria2 "Aria2") вместо curl для скачивания файлов-исходников, просто измените переменную `DLAGENTS` следующим образом:
+Вы можете использовать <a class="mw-selflink selflink">Aria2 (Русский)</a> вместо curl для скачивания файлов-исходников, просто измените переменную `DLAGENTS` следующим образом:
 
  `/etc/makepkg.conf` 
 ```
@@ -415,12 +387,9 @@ DLAGENTS=('ftp::/usr/bin/aria2c -UWget -s4 %u -o %o'
 [...]
 ```
 
-**Примечание:** Используйте параметр `-UWget` для изменения пользовательского агента на Wget. Это может предотвратить проблемы при загрузке с сайтов, которые фильтрует запросы, основанные на агенте пользователя (user agent), чтобы избежать проблемы доступа к URL-адресу. Смотрите [#Изменение User Agent](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_User_Agent)
-.
+**Примечание:** Используйте параметр `-UWget` для изменения пользовательского агента на Wget. Это может предотвратить проблемы при загрузке с сайтов, которые фильтрует запросы, основанные на агенте пользователя (user agent), чтобы избежать проблемы доступа к URL-адресу. Поскольку Aria2 малоизвестный загрузчик, он может быть ошибочно распознан как браузер. Изменение пользовательского агента на Wget может решить большинство проблем.
 
 ## Смотрите также
 
-*   [Руководство](http://aria2.sourceforge.net/manual/ru/html/aria2c.html) - Официальное руководство aria2 на Русском
-*   [aria2](http://sourceforge.net/projects/aria2/) - Официальный сайт
-*   [aria2 usage examples](http://sourceforge.net/apps/trac/aria2/wiki/UsageExample) - Official site
-*   [aria2c downloader through VPN tunnel](http://gotux.net/arch-linux/aria2c-downloader-through-vpn-tunnel/) - Unofficial site
+*   [Руководство](https://aria2.github.io/manual/ru/html/index.html) - Официальное руководство aria2 на Русском
+*   [Примеры использования](https://aria2.github.io/manual/ru/html/aria2c.html#id28) - официальный сайт

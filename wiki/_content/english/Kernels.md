@@ -167,9 +167,9 @@ Patch releases against the mainstream Linux kernel have been discontinued. The d
 
 #### -pf
 
-[linux-pf](https://aur.archlinux.org/packages/linux-pf/) is yet another Linux kernel fork which provides you with a handful of awesome features not merged into mainline. It is based on neither existing Linux fork nor patchset, although some unofficial ports may be used if required patches have not been released officially. The most prominent patches of linux-pf are TuxOnIce, the CK patchset (most notably BFS), AUFS3, LinuxIMQ, l7 filter and BFQ.
+[linux-pf](https://aur.archlinux.org/packages/linux-pf/) is yet another Linux kernel fork which provides you with a handful of awesome features not merged into mainline. It is based on neither existing Linux fork nor patchset, although some unofficial ports may be used if required patches have not been released officially. The most prominent patches of linux-pf are PDS CPU scheduler and UKSM.
 
-See [linux-pf](/index.php/Linux-pf "Linux-pf") for more information.
+Official site: [https://pfactum.github.io/pf-kernel/](https://pfactum.github.io/pf-kernel/)
 
 ### Individual patches
 

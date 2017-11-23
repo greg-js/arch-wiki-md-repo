@@ -25,7 +25,7 @@
 
 ## Installation
 
-When using GNOME, [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) is installed automatically as a part of the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group. Otherwise [install](/index.php/Install "Install") the [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) package. Install [libsecret](https://www.archlinux.org/packages/?name=libsecret) to allow applications to use your keyrings. [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) is deprecated.
+When using GNOME, [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) is installed automatically as a part of the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group. Otherwise [install](/index.php/Install "Install") the [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) package. Install [libsecret](https://www.archlinux.org/packages/?name=libsecret) to allow applications to use your keyrings. [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) is deprecated, however, some applications (e.g., owncloud's client) may require it.
 
 Extra utilities related to GNOME keyring include:
 

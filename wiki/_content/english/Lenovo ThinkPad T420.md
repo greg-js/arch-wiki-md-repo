@@ -7,6 +7,7 @@ This article covers the installation and configuration of Arch Linux on a Lenovo
     *   [2.1 Fingerprint reader](#Fingerprint_reader)
     *   [2.2 Some Media keys](#Some_Media_keys)
     *   [2.3 Untested](#Untested)
+    *   [2.4 Dock](#Dock)
 *   [3 Laptop Settings](#Laptop_Settings)
     *   [3.1 ACPI](#ACPI)
     *   [3.2 Tp_smapi](#Tp_smapi)
@@ -49,6 +50,10 @@ See [Fingerprint-gui](/index.php/Fingerprint-gui "Fingerprint-gui") for more inf
 ### Untested
 
 *   Firewire
+
+### Dock
+
+See [dockd](/index.php/Dockd "Dockd").
 
 ## Laptop Settings
 

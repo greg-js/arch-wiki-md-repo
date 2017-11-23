@@ -816,6 +816,7 @@ There are several tools for benchmarking a RAID. The most notable improvement is
 *   [Introduction to RAID](http://www.linux-mag.com/id/7924/), [Nested-RAID: RAID-5 and RAID-6 Based Configurations](http://www.linux-mag.com/id/7931/), [Intro to Nested-RAID: RAID-01 and RAID-10](http://www.linux-mag.com/id/7928/), and [Nested-RAID: The Triple Lindy](http://www.linux-mag.com/id/7932/) in Linux Magazine
 *   [HowTo: Speed Up Linux Software Raid Building And Re-syncing](http://www.cyberciti.biz/tips/linux-raid-increase-resync-rebuild-speed.html)
 *   [RAID5-Server to hold all your data](http://fomori.org/blog/?p=94)
+*   [Wikipedia:Non-RAID drive architectures](https://en.wikipedia.org/wiki/Non-RAID_drive_architectures "wikipedia:Non-RAID drive architectures")
 
 **Active bugs**
 
@@ -827,6 +828,7 @@ There are several tools for benchmarking a RAID. The most notable improvement is
 *   [Debian mdadm FAQ](http://anonscm.debian.org/gitweb/?p=pkg-mdadm/mdadm.git;a=blob_plain;f=debian/FAQ;hb=HEAD)
 *   [mdadm source code](http://www.kernel.org/pub/linux/utils/raid/mdadm/)
 *   [Software RAID on Linux with mdadm](http://www.linux-mag.com/id/7939/) in Linux Magazine
+*   [Wikipedia - mdadm](https://en.wikipedia.org/wiki/mdadm "wikipedia:mdadm")
 
 **Forum threads**
 

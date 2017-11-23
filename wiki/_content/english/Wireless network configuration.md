@@ -164,7 +164,9 @@ Just like other network interfaces, the wireless ones are controlled with *ip* f
 
 You will need to install a basic set of tools for managing the wireless connection. [Install](/index.php/Install "Install") one of the following:
 
-*   **iw** — *iw* only supports the nl80211 (netlink) standard. It does not support the older WEXT (Wireless EXTentions) standard. If *iw* does not see your card, this may be the reason.
+**Note:** For WPA/WPA2 encryption, *wpa_supplicant* is required.
+
+*   **iw** — *iw* only supports the nl80211 (netlink) standard, the older WEXT (Wireless EXTentions) standard is not supported. If *iw* does not see your card, this may be the reason.
 
 	[https://wireless.kernel.org/en/users/Documentation/iw](https://wireless.kernel.org/en/users/Documentation/iw) || [iw](https://www.archlinux.org/packages/?name=iw)
 
@@ -172,13 +174,11 @@ You will need to install a basic set of tools for managing the wireless connecti
 
 	[http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html](http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html) || [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools)
 
-**Tip:** For a comparison of commands between *iw* and *wireless_tools*, see [#iw and wireless_tools comparison](#iw_and_wireless_tools_comparison).
-
-For WPA/WPA2 encryption, you will also need:
-
-*   **[WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")** — wpa_supplicant is a cross-platform supplicant with support for WEP, WPA and WPA2 (IEEE 802.11i / RSN (Robust Secure Network)). It is suitable for desktops, laptops and embedded systems and works with both WEXT and nl80211.
+*   **[WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")** — *wpa_supplicant* is a cross-platform supplicant with support for WEP, WPA and WPA2 (IEEE 802.11i / RSN (Robust Secure Network)). It works with both WEXT and nl80211.
 
 	[http://hostap.epitest.fi/wpa_supplicant/](http://hostap.epitest.fi/wpa_supplicant/) || [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant)
+
+**Tip:** For a comparison of commands between *iw* and *wireless_tools*, see [#iw and wireless_tools comparison](#iw_and_wireless_tools_comparison).
 
 **Note:**
 
@@ -285,9 +285,7 @@ Depending on the encryption, you need to associate your wireless device with the
 *   **WEP**
     *   using a hexadecimal or ASCII key (the format is distinguished automatically, because a WEP key has a fixed length): `# iw dev *interface* connect "*your_essid*" key 0:*your_key*` 
     *   using a hexadecimal or ASCII key, specifying the third set up key as default (keys are counted from zero, four are possible): `# iw dev *interface* connect "*your_essid*" key d:2:*your_key*` 
-*   **WPA/WPA2** According to what you got from [#Discover access points](#Discover_access_points), issue this command: `# wpa_supplicant -i *interface* -c <(wpa_passphrase "*your_SSID*" "*your_key*")` 
-
-If this does not work, you may need to adjust the options. If connected successfully, continue in a new terminal (or quit `wpa_supplicant` with `Ctrl+c` and add the `-B` switch to the above command to run it in the background). [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") contains more information on options and on how to create a permanent configuration file for the wireless access point.
+*   **WPA/WPA2** - See [WPA supplicant#Connecting with wpa passphrase](/index.php/WPA_supplicant#Connecting_with_wpa_passphrase "WPA supplicant").
 
 Regardless of the method used, you can check if you have associated successfully:
 
@@ -776,7 +774,7 @@ These modules are fully supported in the kernel, but they require additional fir
 
 [udev](/index.php/Udev "Udev") should load the driver automatically, otherwise load `iwl3945` or `iwl4965` manually. See [Kernel modules](/index.php/Kernel_modules "Kernel modules") for details.
 
-If you have problems connecting to networks in general or your link quality is very poor, try to disable 802.11n:
+If you have problems connecting to networks in general, random failures with your card on bootup or your link quality is very poor, try to disable 802.11n:
 
  `/etc/modprobe.d/iwl4965.conf`  `options iwl4965 11n_disable=1` 
 

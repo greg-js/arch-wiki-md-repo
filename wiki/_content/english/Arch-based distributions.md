@@ -8,7 +8,7 @@ Related articles
 
 **Warning:** Arch-based distributions are **not** supported by the Arch community or developers. See [Code of conduct#Arch Linux distribution support *only*](/index.php/Code_of_conduct#Arch_Linux_distribution_support_.2Aonly.2A "Code of conduct")
 
-This is a listing of Linux distributions which are [derived](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy") from Arch Linux **either in whole or in part**.
+This is a listing of OS distributions which are [derived](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy") from Arch Linux **either in whole or in part**.
 
 ## Contents
 
@@ -18,18 +18,21 @@ This is a listing of Linux distributions which are [derived](/index.php/Develope
     *   [2.2 2016](#2016)
     *   [2.3 2015](#2015)
     *   [2.4 2014](#2014)
-    *   [2.5 2012](#2012)
-    *   [2.6 2011](#2011)
-    *   [2.7 2010](#2010)
-    *   [2.8 2009](#2009)
-    *   [2.9 2008](#2008)
-    *   [2.10 2007](#2007)
-    *   [2.11 2006](#2006)
-    *   [2.12 2004](#2004)
+    *   [2.5 2013](#2013)
+    *   [2.6 2012](#2012)
+    *   [2.7 2011](#2011)
+    *   [2.8 2010](#2010)
+    *   [2.9 2009](#2009)
+    *   [2.10 2008](#2008)
+    *   [2.11 2007](#2007)
+    *   [2.12 2006](#2006)
+    *   [2.13 2004](#2004)
 *   [3 See also](#See_also)
 
 ## Active
 
+*   [Alfheim Linux](https://sourceforge.net/projects/alfheim-linux/)
+*   [ALOBE](https://sourceforge.net/projects/alobearchlinuxoldboyeditionv1)
 *   [Antergos](https://sourceforge.net/projects/antergos/)
 *   [ArchBox](https://sourceforge.net/projects/archbox-linux/)
 *   [ArchEX](https://sourceforge.net/projects/archex/)
@@ -39,6 +42,7 @@ This is a listing of Linux distributions which are [derived](/index.php/Develope
 *   [ArchStrike](https://archstrike.org/)
 *   [Arch XFerience](https://sourceforge.net/projects/arch-xferience/)
 *   [Artix Linux](https://sourceforge.net/projects/artix-linux/)
+*   [Astian OS](https://sourceforge.net/projects/astian-os/)
 *   [Audiophile Linux](http://www.ap-linux.com/)
 *   [BBQLinux](https://sourceforge.net/projects/bbqlinux/)
 *   [BlackArch Linux](https://blackarch.org/)
@@ -46,18 +50,20 @@ This is a listing of Linux distributions which are [derived](/index.php/Develope
 *   [Chakra](https://sourceforge.net/projects/chakra/)
 *   [Condres OS](https://sourceforge.net/projects/condres-os-gnu-linux/)
 *   [DidJiX](http://easy.open.and.free.fr/didjix/)
-*   [Frugalware](https://frugalware.org/)
 *   [Hyperbola](http://hyperbola.info/)
 *   [KaOS](https://sourceforge.net/projects/kaosx/)
 *   [LinHES](http://linhes.org/)
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
 *   [MorpheusArch](https://sourceforge.net/projects/morpheusarch-lxqt/)
+*   [MSYS2](https://sourceforge.net/projects/msys2/)
 *   [Namib](https://sourceforge.net/projects/namib-gnu-linux/)
 *   [Netrunner Rolling](https://sourceforge.net/projects/netrunneros/)
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
 *   [Obarun](https://web.obarun.org/)
 *   [PacBSD](https://www.pacbsd.org/)
 *   [Parabola](https://www.parabola.nu/)
+*   [PuppyRus-A](https://sourceforge.net/projects/puppyrusa/)
+*   [RaspArch](https://sourceforge.net/projects/rasparch)
 *   [Revenge OS](https://sourceforge.net/projects/obrevenge/)
 *   [Sonar](https://sourceforge.net/projects/sonargnulinux)
 *   [TalkingArch](https://talkingarch.tk/)
@@ -72,30 +78,47 @@ These distributions are no longer developed, but show some of the history surrou
 ### 2017
 
 *   [Archphile](https://sourceforge.net/projects/archphile/)
+*   [Ctlos Linux](https://sourceforge.net/projects/ctlos/)
+*   [Feliz](https://sourceforge.net/projects/feliz/)
 *   [Nurunner Linux](https://nurunner.mkxt.net/)
 
 ### 2016
 
 *   [alphaOS](https://sourceforge.net/projects/alphaos/)
 *   [Apricity OS](https://sourceforge.net/projects/apricityos/)
+*   [archodi](https://sourceforge.net/projects/archodi/)
 *   [Architect](https://sourceforge.net/projects/architect-linux)
+*   [arch rescue kit](https://sourceforge.net/projects/archrescue/)
 *   [arkOS](https://github.com/arkOScloud)
 *   [Arquetype CRT](https://twitter.com/ArquetypeLinux)
 *   [Miraclx OS](https://sourceforge.net/projects/miraclx-os/)
+*   [niixarch](https://sourceforge.net/projects/niixarch/)
 *   [PacBang](https://sourceforge.net/projects/architect-linux/)
 
 ### 2015
 
+*   [ArBer Linux](https://sourceforge.net/projects/arber/)
 *   [ArchAssault](https://sourceforge.net/projects/archassault/)
 *   [Bridge Linux](https://sourceforge.net/projects/bridgelinux/)
+*   [justbrowsing](https://sourceforge.net/projects/justbrowsing/)
 *   [Kademar](https://kademar.org/productos/version-de-escritorio/)
+*   [mooOS](https://sourceforge.net/projects/mooos/)
 *   [PoliArch](https://sourceforge.net/projects/poliarch/)
 *   [Tux Hat Linux](https://sourceforge.net/projects/tuxhatlinux/)
 
 ### 2014
 
 *   [Arch Linux MIPS](https://github.com/Arch-Linux-MIPS)
+*   [C.H.A.O.S.](https://sourceforge.net/projects/chaosdistro/)
+*   [Delta](https://sourceforge.net/projects/deltalinux-obs/)
+*   [devilzarch](https://sourceforge.net/projects/devilzarch/)
+*   [instarch](https://sourceforge.net/projects/instarch/)
 *   [Mesk Linux](https://sourceforge.net/projects/mesklinux/)
+
+### 2013
+
+*   [ArchE17](https://sourceforge.net/projects/arche17)
+*   [Lucifer's Linux](https://sourceforge.net/projects/luciferslinux/)
 
 ### 2012
 
@@ -106,6 +129,8 @@ These distributions are no longer developed, but show some of the history surrou
 *   [Kahel OS](https://sourceforge.net/projects/kahelos/)
 *   [LDR](https://web.archive.org/web/20120314025441/http://www.tommed.co.uk/ldr/)
 *   [Nosonja](https://sourceforge.net/projects/nosonja/)
+*   [SadOS](https://sourceforge.net/projects/sados/)
+*   [San Francisco Linux](https://sourceforge.net/projects/sfpenguin/)
 
 ### 2011
 
@@ -116,6 +141,8 @@ These distributions are no longer developed, but show some of the history surrou
 
 ### 2010
 
+*   [AmeOS](https://sourceforge.net/projects/ameosdist/)
+*   [ArchOne](https://sourceforge.net/projects/archone/)
 *   [ArchPwn](http://www.archpwn.org/)
 *   [Elegance](https://sourceforge.net/projects/elegance-linux/)
 *   [UKnow4Kids](https://sourceforge.net/projects/uknow4kids/)

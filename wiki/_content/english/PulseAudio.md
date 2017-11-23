@@ -3,7 +3,7 @@ Related articles
 *   [PulseAudio/Examples](/index.php/PulseAudio/Examples "PulseAudio/Examples")
 *   [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting")
 
-[PulseAudio](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio") serves as a proxy to sound applications using existing kernel sound components like [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS"). Since ALSA is included in Arch Linux by default, the most common deployment scenarios include PulseAudio with ALSA.
+[PulseAudio](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio") PulseAudio is a general purpose sound server intended to run as a middleware between your applications and your hardware devices, either using [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS"). It also offers easy network streaming accross local devices using [Avahi](/index.php/Avahi "Avahi") if enabled. While its main purpose is to ease audio configuration, its modular design allows more advanced users to configure the daemon precisely to best suit their needs.
 
 ## Contents
 
@@ -40,14 +40,18 @@ Related articles
     *   [6.6 Music Player Daemon (MPD)](#Music_Player_Daemon_.28MPD.29)
     *   [6.7 MPlayer](#MPlayer)
     *   [6.8 guvcview](#guvcview)
-*   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 Keyboard volume control](#Keyboard_volume_control)
-    *   [7.2 Play sound from a non-interactive shell (systemd service, cron)](#Play_sound_from_a_non-interactive_shell_.28systemd_service.2C_cron.29)
-    *   [7.3 X11 Bell Events](#X11_Bell_Events)
-    *   [7.4 Switch on connect](#Switch_on_connect)
-    *   [7.5 Script for switching analogic outputs](#Script_for_switching_analogic_outputs)
-*   [8 Troubleshooting](#Troubleshooting)
-*   [9 See also](#See_also)
+*   [7 Networked audio](#Networked_audio)
+    *   [7.1 Basic setup with direct connection](#Basic_setup_with_direct_connection)
+        *   [7.1.1 On the server](#On_the_server)
+        *   [7.1.2 On the client](#On_the_client)
+*   [8 Tips and tricks](#Tips_and_tricks)
+    *   [8.1 Keyboard volume control](#Keyboard_volume_control)
+    *   [8.2 Play sound from a non-interactive shell (systemd service, cron)](#Play_sound_from_a_non-interactive_shell_.28systemd_service.2C_cron.29)
+    *   [8.3 X11 Bell Events](#X11_Bell_Events)
+    *   [8.4 Switch on connect](#Switch_on_connect)
+    *   [8.5 Script for switching analogic outputs](#Script_for_switching_analogic_outputs)
+*   [9 Troubleshooting](#Troubleshooting)
+*   [10 See also](#See_also)
 
 ## Installation
 
@@ -68,7 +72,8 @@ Some PulseAudio modules have been [split](https://www.archlinux.org/news/pulseau
 
 There are a number of front-ends available for controlling the PulseAudio daemon:
 
-*   GTK GUIs: [paprefs](https://www.archlinux.org/packages/?name=paprefs) and [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)
+*   Configuration/volume control (graphical): [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)
+*   General daemon configuration (graphical): [paprefs](https://www.archlinux.org/packages/?name=paprefs)
 *   Volume control via mapped keyboard keys: [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/), [pavolume-git](https://aur.archlinux.org/packages/pavolume-git/)
 *   Console (CLI) mixers: [ponymix](https://www.archlinux.org/packages/?name=ponymix) and [pamixer](https://www.archlinux.org/packages/?name=pamixer)
 *   Console (curses) mixer: [pulsemixer](https://aur.archlinux.org/packages/pulsemixer/)
@@ -89,7 +94,7 @@ By default, PulseAudio is configured to automatically detect all sound cards and
 
 PulseAudio will first look for configuration files in the home directory `~/.config/pulse`, then system-wide `/etc/pulse`.
 
-PulseAudio runs as a server daemon that can run either system-wide or on per-user basis using a client/server architecture. The daemon by itself does nothing without its modules except to provide an API and host dynamically loaded modules. The audio routing and processing tasks are all handled by various modules. You can find a detailed list of all available modules at [Pulseaudio Loadable Modules](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/). To enable them you can just add a line `load-module <module-name-from-list>` to `~/.config/pulse/default.pa`.
+PulseAudio runs as a server daemon that can run either system-wide or on per-user basis using a client/server architecture. The daemon by itself does nothing without its **modules** except to provide an API and host dynamically loaded modules. The audio routing and processing tasks are all handled by various modules. You can find a detailed list of all available modules at [Pulseaudio Loadable Modules](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/). To enable them you can just add a line `load-module <module-name-from-list>` to `~/.config/pulse/default.pa`.
 
 **Tip:**
 
@@ -105,7 +110,7 @@ Defines base settings like the default sample rates used by modules, resampling 
 
 <caption>Notable configuration options</caption>
 | Option | Description |<caption></caption>
-| system-instance | Run the daemon as a system-wide instance. Highly discouraged as it can introduce security issues. Useful on (headless) systems that have no real local users. Defaults to `no`. |<caption></caption>
+| system-instance | If set to `yes`, run the daemon as a [system-wide](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/SystemWide/) instance. [Highly discouraged](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/WhatIsWrongWithSystemWide/) as it can introduce security issues. Useful on [Multiseat](/index.php/Xorg_multiseat "Xorg multiseat") systems, or headless systems that have no real local users. Defaults to `no`. |<caption></caption>
 | avoid-resampling | With `avoid-resampling = yes`, PulseAudio automatically configures the hardware to the sample rate which the application uses, if the hardware supports this sample rate (needs [PA 11](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/11.0/) or higher) |<caption></caption>
 | resample-method | Which resampler to use when audio with incompatible sample rates needs to be passed between modules (e.g. playback of 96kHz audio on hardware which only supports 48kHz). The available resamplers can be listed with `$ pulseaudio --dump-resample-methods`. Choose the best tradeoff between CPU usage and audio quality for the present use-case.
 **Tip:** In some cases PulseAudio will generate a high CPU load. This can happen when multiple streams are resampled (individually). If this is a common use-case in a workflow, it should be considered to create an additional sink at a matching sample rate which can then be fed into the main sink, resampling only once.
@@ -452,6 +457,45 @@ to
 ```
 
 And then either restarting PulseAudio or your computer will only idle the input source instead of suspending it. guvcview will then correctly record audio from the device.
+
+## Networked audio
+
+### Basic setup with direct connection
+
+##### On the server
+
+Edit `~/.config/pulse/default.pa` or `/etc/pulse/default.pa` ( or `/etc/pulse/system.pa` if PulseAudio is started in system mode ) and add the following line :
+
+```
+ load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;172.16.0.0/16
+
+```
+
+Here only client from the IPs or IPs range specified here can stream sound.
+
+To allow access from everywhere :
+
+```
+ load-module module-native-protocol-tcp auth-anonymous=true
+
+```
+
+**Note:** If `auth-ip-acl` neither `auth-anonymous` are specified, authentification is done via `~/.pulse-cookie` which must be the same on clients and server.
+
+By default PulseAudio listens on port `tcp/4713` for incoming connections, you may need to open this port in your [firewall](/index.php/Firewall "Firewall").
+
+##### On the client
+
+Edit `~/.config/pulse/client.conf` or `/etc/pulse/client.conf`, to respectively apply this directive to one user or to all, and add :
+
+```
+ default-server = *server-address*
+
+```
+
+*server-address* can be a simple domain-name or IPv4, for more see [the documentation](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/ServerStrings/)
+
+It is also possible to set the server address in the environment variable `$PULSE_SERVER`.
 
 ## Tips and tricks
 

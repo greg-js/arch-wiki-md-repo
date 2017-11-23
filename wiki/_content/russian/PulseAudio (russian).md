@@ -5,12 +5,12 @@
 
 **Состояние перевода:** На этой странице представлен перевод статьи [PulseAudio](/index.php/PulseAudio "PulseAudio"). Дата последней синхронизации: 10 октября 2015‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=PulseAudio&diff=0&oldid=403994).
 
-[PulseAudio](https://en.wikipedia.org/wiki/ru:PulseAudio или [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)"). Он служит в качестве прокси для звуковых приложений, используя существующие звуковые компоненты, такие как ядро [ALSA](/index.php/ALSA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ALSA (Русский)") или [OSS](/index.php/OSS "OSS"). ALSA включена в Arch Linux по умолчанию, использование PulseAudio вместе с ALSA является наиболее распространённым сценарием.
+[PulseAudio](https://en.wikipedia.org/wiki/ru:PulseAudio "wikipedia:ru:PulseAudio") - это многофункциональный звуковой сервер, предназначенный для работы в качестве прослойки между вашими приложениями и аппаратными устройствами, либо [ALSA](/index.php/ALSA "ALSA") или [OSS](/index.php/OSS "OSS"). Он также с легкостью может передавать аудио по сети между локальными устройствами используя [Avahi](/index.php/Avahi "Avahi"), если тот доступен. Несмотря на то, что основная цель заключена в простоте настройки звука, его модульная архитектура позволяет более опытным пользователям конфигурировать демон в соответствии со своими нуждами.
 
 ## Contents
 
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [1.1 Модули PulseAudio](#.D0.9C.D0.BE.D0.B4.D1.83.D0.BB.D0.B8_PulseAudio)
+    *   [1.1 Интерфейсы](#.D0.98.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D1.8B)
 *   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
     *   [2.1 Файлы настроек](#.D0.A4.D0.B0.D0.B9.D0.BB.D1.8B_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA)
         *   [2.1.1 daemon.conf](#daemon.conf)
@@ -49,22 +49,36 @@
 
 ## Установка
 
-*   Требуется пакет: [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio)
-*   Дополнительно: графические интерефейсы GTK: [paprefs](https://www.archlinux.org/packages/?name=paprefs) и [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)
-*   Дополнительно: регулировка звука с помощью мультимедиа клавиш на клавиатуре: [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/)
-*   Дополнительно: консольные (CLI) микшеры: [ponymix](https://www.archlinux.org/packages/?name=ponymix) и [pamixer-git](https://aur.archlinux.org/packages/pamixer-git/)
-*   Дополнительно: консольный (с поддержкой курсора) микшер: [pulsemixer](https://aur.archlinux.org/packages/pulsemixer/)
-*   Дополнительно: web-интерфейс для регулировка звука: [PaWebControl](https://github.com/Siot/PaWebControl)
-*   Дополнительно: иконка в системном трее: [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/)
-*   Дополнительно: апплет KDE4 плазма: [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix) и [kdeplasma-applets-veromix](https://aur.archlinux.org/packages/kdeplasma-applets-veromix/) (Если KMix/Veromix не удается подключиться к PulseAudio при загрузке, вы можете отредактировать `/etc/pulse/client.conf` включив `autospawn = yes` вместо `autospawn = no`.)
-*   Дополнительно: KF5 плазма аплет: [kmix](https://www.archlinux.org/packages/?name=kmix) и [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa)
-*   Если вы хотите использовать Гарнитуру Bluetooth или другое Bluetooth Аудио Устройство вместе с PulseAudio смотрите статью [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset").
+Установите пакет [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio).
 
-**Примечание:** Some confusion can be made between [ALSA](/index.php/ALSA "ALSA") and PulseAudio. ALSA both includes a Linux kernel component with sound card drivers, and a userspace component, `libalsa`. [[1]](http://www.alsa-project.org/main/index.php/Download) PulseAudio only builds on the kernel component, but offers compability with `libalsa` through [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa). [[2]](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/#index14h3)
+Некоторые модули PulseAudio были [отделены](https://www.archlinux.org/news/pulseaudio-split/) от основного пакета и должны быть установлены самостоятельно, если требуются:
 
-### Модули PulseAudio
+*   [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth): поддержка Bluetooth (Bluez)
+*   [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer): эквалайзер устройств вывода (qpaeq)
+*   [pulseaudio-gconf](https://www.archlinux.org/packages/?name=pulseaudio-gconf): поддержка GConf (paprefs)
+*   [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack): определение устройств вывода, источников [JACK](/index.php/JACK "JACK") и jackdbus
+*   [pulseaudio-lirc](https://www.archlinux.org/packages/?name=pulseaudio-lirc): инфракрасный контроль громкости (LIRC)
+*   [pulseaudio-zeroconf](https://www.archlinux.org/packages/?name=pulseaudio-zeroconf): поддержка Zeroconf (Avahi/DNS-SD)
 
-Некоторые модули PulseAudio были [убраны](https://www.archlinux.org/news/pulseaudio-split/) из основного пакета и должны быть установлены отдельно, если это необходимо.
+**Примечание:** При взаимодействии [ALSA](/index.php/ALSA "ALSA") и PulseAudio могут быть некоторые проблемы. ALSA включает компоненты ядра Linux с драйверами звуковой карты, также как и компоненты окружения пользователя, `libalsa`.[[1]](http://www.alsa-project.org/main/index.php/Download) PulseAudio строится только на компонентах ядра, но предлагает совместимость с `libalsa` через [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa).[[2]](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/#index14h3)
+
+### Интерфейсы
+
+Существует множество интерфейсов для управления демоном PulseAudio:
+
+*   Настройка/управление громкостью (графический): [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)
+*   Базовая настройка демона (графический): [paprefs](https://www.archlinux.org/packages/?name=paprefs)
+*   Управление громкостью через установленные сочетания клавиш клавиатуры: [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/), [pavolume-git](https://aur.archlinux.org/packages/pavolume-git/)
+*   Консольные (CLI) микшеры: [ponymix](https://www.archlinux.org/packages/?name=ponymix) и [pamixer](https://www.archlinux.org/packages/?name=pamixer)
+*   Консольные (curses) микшеры: [pulsemixer](https://aur.archlinux.org/packages/pulsemixer/)
+*   Контроль громкости по сети: [PaWebControl](https://github.com/Siot/PaWebControl)
+*   Иконки панели задач: [pasystray](https://aur.archlinux.org/packages/pasystray/), [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/), [pasystray-gtk2-standalone](https://aur.archlinux.org/packages/pasystray-gtk2-standalone/), и [pasystray-gtk3-standalone](https://aur.archlinux.org/packages/pasystray-gtk3-standalone/)
+
+**Совет:** Неавтономная (non-standalone) версия `pasystray` может быть установлена сразу и с GTK2, и с GTK3\. Выбор производится при установке. Версия в виде отдельной программы (standalone) устанавливает только одну.
+
+*   Plasma-апплет KF5: [kmix](https://www.archlinux.org/packages/?name=kmix) и [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa)
+*   Плагин Xfce4: [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin), [pa-applet-git](https://aur.archlinux.org/packages/pa-applet-git/)
+*   Если вы хотите использовать Bluetooth гарнитуру или другие Bluetooth аудио устройства с PulseAudio, смотрите раздел статьи [Bluetooth гарнитура](/index.php?title=Bluetooth_%D0%B3%D0%B0%D1%80%D0%BD%D0%B8%D1%82%D1%83%D1%80%D0%B0&action=edit&redlink=1 "Bluetooth гарнитура (page does not exist)").
 
 ## Настройка
 

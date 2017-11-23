@@ -1,3 +1,7 @@
+Related articles
+
+*   [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration")
+
 **X-Video Motion Compensation (XvMC)** is an extension for the X.Org Server. The XvMC API allows video programs to offload portions of the video decoding process to the GPU video-hardware. Particularly, features that have the tendency of heavily depending on the processor. Since XvMC acceleration takes the load off the CPU, thereby reducing processor requirements for video playback, it is an ideal solution for HDTV video playback scenarios.
 
 **Note:** XvMC is obsoleted by VA-API and VDPAU nowadays, which have better support for recent GPUs, see [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
@@ -70,7 +74,6 @@ or
 
 ## References
 
-*   [XvMC (from MythTV wiki)](http://www.mythtv.org/wiki/XvMC)
 *   [MPlayer 1.0rc1 + XvMC Nov 2006](http://www.murga-linux.com/puppy/viewtopic.php?t=13216)
 *   [Using older machines for HDTV video playback](http://www.penlug.org/twiki/bin/view/Main/LinuxHardwareInfoNvidia5200)
-*   [Xine's xxmc plugin](http://www.grogy.com/local_doc/share/doc/xine-lib/README_xxmc.html)
+*   [Xine's xxmc plugin](http://solar.gmu.edu/meetings/cdaw/data/cdaw1/xine/share/doc/xine/README_xxmc.html)

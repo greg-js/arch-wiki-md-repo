@@ -1,3 +1,10 @@
+Artigos relacionados
+
+*   [Installation guide](/index.php/Installation_guide "Installation guide")
+*   [Guia dos iniciantes](/index.php/Guia_dos_iniciantes "Guia dos iniciantes")
+*   [Installing with Software RAID or LVM](/index.php/Installing_with_Software_RAID_or_LVM "Installing with Software RAID or LVM")
+*   [Convert a single drive system to RAID](/index.php/Convert_a_single_drive_system_to_RAID "Convert a single drive system to RAID")
+
 O objetivo deste guia é permitir a utilização de um arranjo RAID criado através de uma controladora RAID on-board e assim permitir o dual-boot do GNU/L*i*nux com o Windows a partir de partições dentro do conjunto RAID usando o GRUB. Ao utilizar os chamados "Fake RAID"ou "Host RAID", os arranjos RAID serão atingidos a partir de `/dev/mapper/chipsetName_randomName` e não `/dev/sdX`.
 
 ## Contents

@@ -1,43 +1,22 @@
-[PulseAudio](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio") PulseAudio is a general purpose sound server intended to run as a middleware between your applications and your hardware devices, either using [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS"). In its default configuration, PulseAudio attemps to make controlling and routing audio streams to the correct place easier with its own graphical configuration tools and deep integration in some desktop environments, like the sound applet in [GNOME](/index.php/GNOME "GNOME") or plasma-pa in [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma"). It also offers easy network streaming accross local devices using [Avahi](/index.php/Avahi "Avahi") if enabled. While its main purpose is to ease audio configuration, its modular design allows more advanced users to configure the daemon precisely to best suit their needs.
-
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Easy configuration](#Easy_configuration)
-*   [3 Advanced configuration](#Advanced_configuration)
-    *   [3.1 Configuration files](#Configuration_files)
-        *   [3.1.1 daemon.conf](#daemon.conf)
-        *   [3.1.2 default.pa](#default.pa)
-        *   [3.1.3 client.conf](#client.conf)
-    *   [3.2 Connection & authentication](#Connection_.26_authentication)
-        *   [3.2.1 Environment variables](#Environment_variables)
-        *   [3.2.2 X11 properties](#X11_properties)
-*   [4 Modules](#Modules)
-    *   [4.1 Protocols](#Protocols)
-    *   [4.2 ALSA](#ALSA)
-    *   [4.3 JACK](#JACK)
-    *   [4.4 Filters & Routing](#Filters_.26_Routing)
-*   [5 Further resources](#Further_resources)
-
-## Installation
-
-PulseAudio only requires the [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) package to run, but you may also want to install various other tools to help you configure it and integrate better with your desktop environment.
-
-<caption>PulseAudio packages</caption>
-| Package | Usage |<caption></caption>
-| [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) (required) | The main daemon, commandline tools and libraries. |<caption></caption>
-| [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) | Provides an `/etc/asound.conf` configuration file that sets the [ALSA](/index.php/ALSA "ALSA") default plugin to pulse, thus redirecting playback and capture to PulseAudio. Highly recommended to avoid conflicts between ALSA applications and PulseAudio if you intend to run PulseAudio all the time and use the default configuration. |<caption></caption>
-| [paprefs](https://www.archlinux.org/packages/?name=paprefs) | A GUI for general daemon configuration. |<caption></caption>
-| [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) | An advanced volume control GUI: allows to change the volume of individual streams and configure the ports of all sound cards. |<caption></caption>
-| [ponymix](https://www.archlinux.org/packages/?name=ponymix) and [pamixer-git](https://aur.archlinux.org/packages/pamixer-git/) | CLI mixers similar to pavucontrol. |<caption></caption>
-| [PaWebControl](https://github.com/Siot/PaWebControl) | A web GUI similar to [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) to remotely control volumes (like from a mobile device). |<caption></caption>
-| [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/) | A system tray for volume adjustment as well as a few basic operations like switching sinks and sources. |<caption></caption>
-| [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix) | KDE's default volume control applet with similar functions to pavucontrol. |<caption></caption>
-| [kdeplasma-applets-veromix](https://aur.archlinux.org/packages/kdeplasma-applets-veromix/) | An advanced PulseAudio applet for KDE. |
+*   [1 Easy configuration](#Easy_configuration)
+*   [2 Advanced configuration](#Advanced_configuration)
+    *   [2.1 Configuration files](#Configuration_files)
+        *   [2.1.1 daemon.conf](#daemon.conf)
+        *   [2.1.2 default.pa](#default.pa)
+        *   [2.1.3 client.conf](#client.conf)
+    *   [2.2 Connection & authentication](#Connection_.26_authentication)
+        *   [2.2.1 Environment variables](#Environment_variables)
+        *   [2.2.2 X11 properties](#X11_properties)
+*   [3 Modules](#Modules)
+    *   [3.1 Protocols](#Protocols)
+    *   [3.2 ALSA](#ALSA)
+    *   [3.3 JACK](#JACK)
+    *   [3.4 Filters & Routing](#Filters_.26_Routing)
+*   [4 Further resources](#Further_resources)
 
 ## Easy configuration
-
-By default, PulseAudio is configured to automatically detect all sound cards and manage them. It takes control of all detected ALSA devices and redirect all audio streams to itself, making the PulseAudio daemon the central configuration point. The daemon should work mostly out of the box, only requiring a few minor tweaks using the GUI configuration tools. All settings are saved in `~/.config/pulse` and automatically restored when the daemon starts. Use the following tools to configure the daemon to your taste:
 
 *   [paprefs](https://www.archlinux.org/packages/?name=paprefs)
     *   Simultaneous output to all sound cards
@@ -64,7 +43,6 @@ This is the main configuration file to configure the daemon itself. It defines b
 
 <caption>Notable configuration options</caption>
 | Option | Description |<caption></caption>
-| system-instance | If set to `yes`, the daemon will run as a system-wide instance. Highly discouraged as it can introduce security issues. Can be used when multiple users will use sound at the same time, either remotely or locally using [Xorg multiseat](/index.php/Xorg_multiseat "Xorg multiseat"). Defaults to `no`. |<caption></caption>
 | realtime-scheduling | If your kernel supports realtime scheduling (for instance, [Kernels#-rt](/index.php/Kernels#-rt "Kernels") or [Kernels#-ck](/index.php/Kernels#-ck "Kernels")), set this to `yes` to ensure PulseAudio can deliver low-latency glitch-free playback. You can adjust `realtime-priority` as well to have it use the correct priority, especially when [JACK](/index.php/JACK "JACK") is also running on the system. |<caption></caption>
 | exit-idle-time | If you want to run PulseAudio only when needed and use ALSA otherwise, you can set a delay in seconds after which the daemon will automatically shutdown after all clients are disconnected. Set it to -1 to disable this feature. |<caption></caption>
 | resample-method | When PulseAudio needs to pass audio from one module to another using incompatible sample-rate (for example, playback at 96kHz to a card that only supports a maximum of 48kHz), specifies which resampler to use. You can use the command `$ pulseaudio --dump-resample-methods` to list all available resamplers and choose the best tradeoff between CPU usage and audio quality for your taste.

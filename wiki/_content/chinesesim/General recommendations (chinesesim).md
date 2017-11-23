@@ -146,6 +146,8 @@ Pacman 是 Arch 的软件包管理器。[pacman](/index.php/Pacman_(%E7%AE%80%E4
 
 如果安装的是 Arch Linux x86_64，并计划使用 32 位程序，建议[启用 [multilib] 仓库](/index.php/Multilib "Multilib")。
 
+你可能想要安装[pkgstats](/index.php/Pkgstats "Pkgstats")，让软件使用情况的统计更加准确。
+
 ### Arch编译系统（ABS）
 
 **Ports**是BSD发行版最初使用的一套系统，它是本地系统中包含各种软件编译脚本的目录树。

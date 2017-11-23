@@ -79,7 +79,7 @@ Finally restart the `redis.service`.
 
 To solve warning messages as `*you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis.*`, you may want to permanently disable this feature:
 
- `/etc/tmpfiles.d/local.conf` 
+ `/etc/tmpfiles.d/redis.conf` 
 ```
 w /sys/kernel/mm/transparent_hugepage/enabled - - - - never
 w /sys/kernel/mm/transparent_hugepage/defrag - - - - never

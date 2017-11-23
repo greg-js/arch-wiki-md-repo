@@ -239,7 +239,7 @@ To add a user to other groups use (`*additional_groups*` is a comma-separated li
 
 **Warning:** If the `-a` option is omitted in the *usermod* command above, the user is removed from all groups not listed in `*additional_groups*` (i.e. the user will be member only of those groups listed in `*additional_groups*`).
 
-Alternatively, *gpasswd* may be used. Though the username can only be added (or removed) from one group at a time.
+Alternatively, *gpasswd* may be used. Though the username can only be added (or removed) from one group at a time:
 
 ```
 # gpasswd --add *username* *group*
@@ -269,7 +269,7 @@ To mark a user's password as expired, requiring them to create a new password th
 
 ```
 
-User accounts may be deleted with the *userdel* command.
+User accounts may be deleted with the *userdel* command:
 
 ```
 # userdel -r *username*
@@ -277,6 +277,13 @@ User accounts may be deleted with the *userdel* command.
 ```
 
 The `-r` option specifies that the user's home directory and mail spool should also be deleted.
+
+To change the user's login shell:
+
+```
+# usermod -s */bin/bash* *username*
+
+```
 
 **Tip:** The [adduser](https://aur.archlinux.org/packages/adduser/) script allows carrying out the jobs of *useradd*, *chfn* and *passwd* interactively. See also [FS#32893](https://bugs.archlinux.org/task/32893).
 

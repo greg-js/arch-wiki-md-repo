@@ -162,16 +162,18 @@ See the man page on [cp(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cp.1) for 
 
 Btrfs supports transparent compression, meaning every file on the partition is automatically compressed. This not only reduces the size of files, but also [improves performance](http://www.phoronix.com/scan.php?page=article&item=btrfs_compress_2635&num=1), in particular if using the [lzo algorithm](http://www.phoronix.com/scan.php?page=article&item=btrfs_lzo_2638&num=1), in some specific use cases (e.g. single thread with heavy file IO), while obviously harming performance on other cases (e.g. multithreaded and/or cpu intensive tasks with large file IO).
 
-Compression is enabled using the `compress=zlib` or `compress=lzo` mount options. Only files created or modified after the mount option is added will be compressed. However, it can be applied quite easily to existing files (e.g. after a conversion from ext3/4) using the `btrfs filesystem defragment -c*alg*` command, where `*alg*` is either `zlib` or `lzo`. In order to re-compress the whole file system with [lzo](https://www.archlinux.org/packages/?name=lzo), run the following command:
+Compression is enabled using the `compress` mount option, which can be set to `zlib`, `lzo`, or `no` (for no compression). Only files created or modified after the mount option is added will be compressed.
+
+To apply compression to existing files, use the `btrfs filesystem defragment -c*alg*` command, where `*alg*` is either `zlib` or `lzo`. For example, in order to re-compress the whole file system with [lzo](https://www.archlinux.org/packages/?name=lzo), run the following command:
 
 ```
 # btrfs filesystem defragment -r -v -clzo /
 
 ```
 
-**Tip:** Compression can also be enabled per-file without using the `compress` mount option; simply apply `chattr +c` to the file. When applied to directories, it will cause new files to be automatically compressed as they come.
+**Tip:** Compression can also be enabled per-file without using the `compress` mount option; to do so apply `chattr +c` to the file. When applied to directories, it will cause new files to be automatically compressed as they come.
 
-When installing Arch to an empty Btrfs partition, use the `compress` option when [mounting](/index.php/Mounting "Mounting") the file system: `mount -o compress=lzo /dev/sd*xY* /mnt/`. During configuration, add `compress=lzo` to the mount options of the root file system in [fstab](/index.php/Fstab "Fstab").
+To enable compression when installing Arch to an empty Btrfs partition, use the `compress` option when [mounting](/index.php/Mounting "Mounting") the file system: `mount -o compress=lzo /dev/sd*xY* /mnt/`. During configuration, add `compress=lzo` to the mount options of the root file system in [fstab](/index.php/Fstab "Fstab").
 
 ### Subvolumes
 
@@ -292,33 +294,7 @@ More information about enabling and using TRIM can be found in [Solid State Driv
 
 ### Displaying used/free space
 
-General linux userspace tools such as `/usr/bin/df` will inaccurately report free space on a Btrfs partition. It is recommended to use `/usr/bin/btrfs` to query a Btrfs partition. Below is an illustration of this effect, first querying using `df -h`, and then using `btrfs filesystem df`:
-
- `$ df -h /` 
-```
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/sda3       119G  3.0G  116G   3% /
-
-```
- `$ btrfs filesystem df /` 
-```
-Data: total=3.01GB, used=2.73GB
-System: total=4.00MB, used=16.00KB
-Metadata: total=1.01GB, used=181.83MB
-```
-
-Notice that `df -h` reports 3.0GB used but `btrfs filesystem df` reports 2.73GB for the data. This is due to the way Btrfs allocates space into the pool. The true disk usage is the sum of all three 'used' values which is inferior to 3.0GB as reported by `df -h`.
-
-**Note:** If you see an entry of type `unknown` in the output of `btrfs filesystem df` at kernel >= 3.15, this is a display bug. As of [this patch](http://thread.gmane.org/gmane.comp.file-systems.btrfs/34419), the entry means GlobalReserve, which is kind of a buffer for changes not yet flushed. This entry is displayed as `unknown, single` in RAID setups and is not possible to re-balance.
-
-Another useful command to show a less verbose readout of used space is `btrfs filesystem show`:
-
-```
-# btrfs filesystem show /dev/sda3
-
-```
-
-A more verbose command combining the information of `df` and `show` which directly links the free and used space is `btrfs filesystem usage`. It is supposed to replace the `btrfs filesystem df` command in the long run:
+General linux userspace tools such as `df` will inaccurately report free space on a Btrfs partition. It is recommended to use `btrfs filesystem usage` to query Btrfs partitions. For example:
 
 ```
 # btrfs filesystem usage /
@@ -326,6 +302,8 @@ A more verbose command combining the information of `df` and `show` which direct
 ```
 
 **Note:** The `btrfs filesystem usage` command does not currently work correctly with `RAID5/RAID6` RAID levels.
+
+See [[4]](https://btrfs.wiki.kernel.org/index.php/FAQ#How_much_free_space_do_I_have.3F) for more information.
 
 ### Defragmentation
 
@@ -376,7 +354,7 @@ You can also run the scrub by [starting](/index.php/Starting "Starting") `btrfs-
 
 #### Balance
 
-"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[4]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
+"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[5]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
 
 On a single-device filesystem a balance may be also useful for (temporarily) reducing the amount of allocated but unused (meta)data chunks. Sometimes this is needed for fixing ["filesystem full" issues](https://btrfs.wiki.kernel.org/index.php/FAQ#Help.21_Btrfs_claims_I.27m_out_of_space.2C_but_it_looks_like_I_should_have_lots_left.21).
 
@@ -443,7 +421,7 @@ Existing Btrfs file systems can use something like [EncFS](/index.php/EncFS "Enc
 
 ### Swap file
 
-Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This is due to swap files requiring a function that Btrfs intentionally does not have for possibility of file system corruption [[5]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). Patches for swapfile support are already available [[6]](https://lkml.org/lkml/2014/12/9/718) and may be included in an upcoming kernel release. As an alternative a swap file can be mounted on a loop device with poorer performance but will not be able to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) to automate this.
+Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This is due to swap files requiring a function that Btrfs intentionally does not have for possibility of file system corruption [[6]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). Patches for swapfile support are already available [[7]](https://lkml.org/lkml/2014/12/9/718) and may be included in an upcoming kernel release. As an alternative a swap file can be mounted on a loop device with poorer performance but will not be able to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) to automate this.
 
 ### TLP
 

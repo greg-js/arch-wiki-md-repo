@@ -219,8 +219,6 @@ There are two kinds of caching in PHP: *opcode*/*bytecode* caching and *userland
 *   [Zend OPCache](https://en.wikipedia.org/wiki/Zend_Opcache "wikipedia:Zend Opcache") provides only *opcode* caching.
 *   [APCu](https://github.com/krakjoe/apcu/) provides only *userland* caching.
 
-For optimal caching, you should enable **both**. To do this, follow *both* [#OPCache](#OPCache) *and* [#APCu](#APCu).
-
 ### OPCache
 
 OPCache comes bundled with the standard PHP distribution, therefore to enable it you simply have to add or uncomment the following line in your [PHP configuration file](#Configuration):

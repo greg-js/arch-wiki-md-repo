@@ -18,7 +18,7 @@
 
 ## Specifications
 
-On manufacturer site: [[1]](http://www.dell.com/ru/business/p/vostro-3360/pd)
+On manufacturer site: [[1]](http://www.dell.com/en/business/p/vostro-3360/pd)
 
 lspci output:
 
@@ -90,7 +90,7 @@ Works out-of-the-box. You don't need GSPCA for that.
 
 ### Card reader
 
-Works out-of-the-box. Notice that rts5139 driver is in staging, so be ready to complain on bugs.
+Works out-of-the-box.
 
 ### Video
 
@@ -98,103 +98,25 @@ Intel HD4000 works out-of-the-box.
 
 ### Sound
 
-Works out-of-the-box:
-
-```
-CONFIG_SND_HDA_INTEL=m
-CONFIG_SND_HDA_PREALLOC_SIZE=4096
-CONFIG_SND_HDA_HWDEP=y
-CONFIG_SND_HDA_RECONFIG=y
-CONFIG_SND_HDA_INPUT_BEEP=y
-CONFIG_SND_HDA_INPUT_BEEP_MODE=1
-CONFIG_SND_HDA_INPUT_JACK=y
-CONFIG_SND_HDA_PATCH_LOADER=y
-CONFIG_SND_HDA_CODEC_HDMI=y
-CONFIG_SND_HDA_CODEC_CIRRUS=y
-CONFIG_SND_HDA_GENERIC=y
-CONFIG_SND_HDA_POWER_SAVE_DEFAULT=0
-
-```
-
-Other HDA codecs are unnecessary.
-
-Note that full sound support including internal mic support appeared in 3.9 kernel, do consider using it. PulseAudio works OK as well.
+Works out-of-the-box. Cirrus HDA codec is in use.
 
 ### Multimedia keys
 
-No way to make hardware ones work. Brightness, volume and mediaplayer keys work OK. For touchpad toggling consider using my desktop-scripts: [[2]](https://github.com/pfactum/desktop-scripts)
+Fn keys work out of the box. Three extra keys on the top right side are not working and require either dell-wmi driver patching (work in progress [[2]](http://lkml.iu.edu/hypermail/linux/kernel/1711.2/02894.html)) or DSDT mangling.
 
 ### Fingerprint Reader
 
-Test libfprintd version with VFS5011 Fingerprint Reader support is available here: [[3]](https://github.com/ars3niy/fprint_vfs5011). Work OK.
+libfprintd has upstreamed VFS5011 protocol, so it works out of the box.
 
 ## Actions
 
 ### Brightness adjustment
 
-It's OK to pass the following options to kernel via bootloader:
-
-```
-acpi_osi=Linux acpi_backlight=vendor
-
-```
-
-to use native brightness control module. Otherwise it's level won't be stored. But if you use KDE, remove this one:
-
-```
-acpi_backlight=vendor
-
-```
-
-otherwise KDE won't be able to adjust brightness.
+Works out of the box. Both KDE 5 slider and Fn keys work okay.
 
 ### Hibernation
 
-It works, but requires several tricks to take bugs away. Create tricks.sh file in /usr/lib/systemd/system-sleep/ folder with the following content:
-
-```
-#!/bin/sh
-
-case $1/$2 in
-pre/hibernate)
-        echo never >/sys/kernel/mm/transparent_hugepage/enabled
-        echo 1 >/sys/power/tuxonice/replace_swsusp
-        echo 1 >/sys/power/tuxonice/compression/enabled
-        echo 1 >/sys/power/tuxonice/user_interface/enable_escape
-        echo 1 >/sys/power/tuxonice/user_interface/default_console_level
-        echo lzo >/sys/power/tuxonice/compression/algorithm
-        echo shutdown >/sys/power/disk
-        ifconfig wlan0 down
-        uksmctl -d
-        sync
-        ;;
-post/hibernate)
-        hdparm -B 253 /dev/sda
-        uksmctl -a
-        echo madvise >/sys/kernel/mm/transparent_hugepage/enabled
-        ;;
-pre/suspend)
-        uksmctl -d
-        sync
-        ;;
-post/suspend)
-        hdparm -B 253 /dev/sda
-        uksmctl -a
-        ;;
-esac
-
-```
-
-and make it executable. It you don't use pf-kernel, remove all strings related to TuxOnIce, UKSM and Transparent Hugepages.
-
-Also it's nice to pass the following option to kernel via bootloader:
-
-```
-i8042.nopnp
-
-```
-
-otherwise errors during hibernation may occur. They do not interrupt hibernation, just pollute the screen. Everything works without this option.
+Works out of the box if you follow [Power_management/Suspend_and_hibernate#Hibernation](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate") guide.
 
 ### Suspend to RAM
 

@@ -128,7 +128,7 @@ Direct rendering is disabled, most likely your OpenGL drivers have not been inst
 
 ### Sound
 
-By default sound issues may arise when running Wine applications. Ensure only one sound device is selected in *winecfg*. Currently, the [Alsa](/index.php/Alsa "Alsa") driver is the best supported.
+By default sound issues may arise when running Wine applications. Ensure only one sound device is selected in *winecfg*.
 
 *   If you want to use the [ALSA](/index.php/ALSA "ALSA") driver in Wine, you will need to install [lib32-alsa-lib](https://www.archlinux.org/packages/?name=lib32-alsa-lib) and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins).
 *   If you want to use the [PulseAudio](/index.php/PulseAudio "PulseAudio") driver in Wine, you will need to install the [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) package.

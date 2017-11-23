@@ -81,7 +81,7 @@ $ newgrp docker
 
 ### Storage driver
 
-The docker storage driver (or graph driver) has huge impact on performance. Its job is to store layers of container images efficiently, that is when several images share a layer, only one layer uses disk space. The compatible option, `devicemapper` offers suboptimal performance, which is outright terrible on rotating disks. Additionally, `devicemappper` is not recommended in production.
+The docker storage driver (or graph driver) has a huge impact on performance. Its job is to store layers of container images efficiently, that is when several images share a layer, only one layer uses disk space. The compatible option, `devicemapper` offers suboptimal performance, which is outright terrible on rotating disks. Additionally, `devicemappper` is not recommended in production.
 
 As Arch linux ships new kernels, there is no point using the compatibility option. A good, modern choice is `overlay2`.
 
@@ -424,3 +424,4 @@ Then, try the following steps to resolve the error. Stop the service, back up `/
 
 *   [Arch Linux on docs.docker.com](https://docs.docker.com/engine/installation/linux/archlinux/)
 *   [Are Docker containers really secure?](http://opensource.com/business/14/7/docker-security-selinux) — opensource.com
+*   [Wikipedia:Docker (software)](https://en.wikipedia.org/wiki/Docker_(software) "wikipedia:Docker (software)")

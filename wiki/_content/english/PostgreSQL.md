@@ -36,7 +36,7 @@ Then, switch to the default PostgreSQL user *postgres* by executing the followin
 
 	 `$ sudo -u postgres -i` 
 
-*   Otherwise:
+*   Otherwise use [su](/index.php/Su "Su"):
 
 ```
 $ su
@@ -403,8 +403,8 @@ When you are ready, upgrade the following packages: [postgresql](https://www.arc
 ```
 # systemctl stop postgresql.service
 # mv /var/lib/postgres/data /var/lib/postgres/olddata
-# mkdir /var/lib/postgres/data
-# chown postgres:postgres /var/lib/postgres/data
+# mkdir /var/lib/postgres/data /var/lib/data/postgres/tmp
+# chown postgres:postgres /var/lib/postgres/data /var/lib/data/postgres/tmp
 [postgres]$ initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data'
 
 ```
@@ -412,10 +412,12 @@ When you are ready, upgrade the following packages: [postgresql](https://www.arc
 The upgrade invocation will likely look something like the following. **Do not run this command blindly without understanding what it does!** Reference the [upstream pg_upgrade documentation](https://www.postgresql.org/docs/current/static/pgupgrade.html) for details.
 
 ```
-[postgres]$ cd /tmp
+[postgres]$ cd /var/lib/data/postgres/tmp
 [postgres]$ pg_upgrade -b /opt/pgsql-9.6/bin -B /usr/bin -d /var/lib/postgres/olddata -D /var/lib/postgres/data
 
 ```
+
+pg_upgrade will perform the upgrade and create some scripts in `/var/lib/data/postgres/tmp`. Follow the instructions given on screen and act accordingly. You may delete `/var/lib/data/postgres/tmp` directory once the upgrade is completely over.
 
 ### Manual dump and reload
 

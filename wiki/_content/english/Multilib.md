@@ -1,3 +1,7 @@
+Related articles
+
+*   [Install bundled 32-bit system in Arch64](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64")
+
 The *multilib* repository is an [official repository](/index.php/Official_repositories "Official repositories") which allows the user to run and build 32-bit applications on 64-bit installations of Arch Linux.
 
 ## Contents

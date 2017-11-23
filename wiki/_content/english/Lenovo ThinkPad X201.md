@@ -17,6 +17,7 @@ The [Lenovo X201](https://support.lenovo.com/us/en/documents/migr-75044) is a du
 *   [1 Configuration](#Configuration)
     *   [1.1 Backlight](#Backlight)
     *   [1.2 Hibernation](#Hibernation)
+    *   [1.3 Dock](#Dock)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Overheating](#Overheating)
     *   [2.2 No speaker output](#No_speaker_output)
@@ -35,6 +36,10 @@ Append the `acpi_backlight=video` [kernel parameter](/index.php/Kernel_parameter
 ### Hibernation
 
 See [Power management/Suspend and hibernate#Hibernation](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate").
+
+### Dock
+
+See [dockd](/index.php/Dockd "Dockd").
 
 ## Troubleshooting
 

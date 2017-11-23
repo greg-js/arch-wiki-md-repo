@@ -85,7 +85,7 @@ $ free -h
 **Note:** [hdparm](https://www.archlinux.org/packages/?name=hdparm) indicates only the pure read speed of a hard drive, and is not a valid benchmark. A value higher than 40MB/s (while idle) is however acceptable on an average system.
 
 ```
-# hdparm -t /dev/sdx
+# hdparm -t /dev/sdX
 
 ```
 
@@ -142,7 +142,7 @@ If using a traditional spinning HDD, your partition layout can influence the sys
 
 ### Choosing and tuning your filesystem
 
-Choosing the best filesystem for a specific system is very important because each has its own strengths. The [File systems](/index.php/File_systems "File systems") article provides a short summary of the most popular ones. You can also find relevant articles [here](/index.php/Category:File_systems "Category:File systems").
+Choosing the best filesystem for a specific system is very important because each has its own strengths. The [File systems](/index.php/File_systems "File systems") article provides a short summary of the most popular ones. You can also find relevant articles in [Category:File systems](/index.php/Category:File_systems "Category:File systems").
 
 #### Mount options
 
@@ -151,7 +151,7 @@ The [noatime](/index.php/Fstab#atime_options "Fstab") option is known to improve
 Other mount options are filesystem specific, therefore see the relevant articles for the filesystems:
 
 *   [Ext3](/index.php/Ext3 "Ext3")
-*   [Ext4#Tips and tricks](/index.php/Ext4#Tips_and_tricks "Ext4")
+*   [Ext4#Improving performance](/index.php/Ext4#Improving_performance "Ext4")
 *   [JFS Filesystem#Optimizations](/index.php/JFS_Filesystem#Optimizations "JFS Filesystem")
 *   [XFS](/index.php/XFS "XFS")
 *   [Btrfs#Defragmentation](/index.php/Btrfs#Defragmentation "Btrfs") and [Btrfs#Compression](/index.php/Btrfs#Compression "Btrfs")
@@ -484,7 +484,7 @@ See [Samba#Improve performance](/index.php/Samba#Improve_performance "Samba")
 
 ### DNS
 
-Every time a connection is made, the system must first resolve a fully qualified domain name to an IP address before the actual connection can be established. Response times of network requests can be improved by caching DNS queries locally. Common tools for this purpose include [pdnsd](/index.php/Pdnsd "Pdnsd"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [unbound](/index.php/Unbound "Unbound") and [rescached](/index.php/Rescached "Rescached").
+Every time a connection is made, the system must first resolve a fully qualified domain name to an IP address before the actual connection can be established. Response times of network requests can be improved by caching DNS queries locally. Common tools for this purpose include [pdnsd](/index.php/Pdnsd "Pdnsd"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [unbound](/index.php/Unbound "Unbound") and [rescached](/index.php/Rescached "Rescached"). The systemd service `systemd-resolved` provides network name resolution to local applications and does DNS caching by default, see [systemd-resolved(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) for details.
 
 ## Watchdogs
 

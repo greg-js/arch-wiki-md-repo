@@ -7,6 +7,7 @@ The Lenovo ThinkPad X220 is a small-form-factor laptop with Intel Mobile i5/i7 C
     *   [1.2 Fingerprint reader](#Fingerprint_reader)
     *   [1.3 Graphics](#Graphics)
     *   [1.4 Trackpoint and Clickpad](#Trackpoint_and_Clickpad)
+    *   [1.5 Dock](#Dock)
 *   [2 Issues](#Issues)
     *   [2.1 Boot fails (UEFI/GPT)](#Boot_fails_.28UEFI.2FGPT.29)
     *   [2.2 Reboot loop after resume from suspend](#Reboot_loop_after_resume_from_suspend)
@@ -32,6 +33,10 @@ The graphics driver is provided by the [xf86-video-intel](https://www.archlinux.
 ### Trackpoint and Clickpad
 
 See [TrackPoint](/index.php/TrackPoint "TrackPoint").
+
+### Dock
+
+See [dockd](/index.php/Dockd "Dockd").
 
 ## Issues
 

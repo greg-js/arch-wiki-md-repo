@@ -1,10 +1,16 @@
+Related articles
+
+*   [Laptop](/index.php/Laptop "Laptop")
+*   [Laptop/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo")
+
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 CPU](#CPU)
     *   [2.2 Bumblebee](#Bumblebee)
-    *   [2.3 Poweroff](#Poweroff)
+    *   [2.3 Bluetooth](#Bluetooth)
+    *   [2.4 Poweroff](#Poweroff)
 
 ## Installation
 
@@ -19,6 +25,10 @@ Install [this BIOS update](http://pcsupport.lenovo.com/de/de/downloads/ds120370)
 ### Bumblebee
 
 [Until bbswitch is updated to support the new power management method](/index.php/Bumblebee#Broken_power_management_with_kernel_4.8 "Bumblebee"), add `pcie_port_pm=off` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
+### Bluetooth
+
+If you have a very weak bluetooth signal when using wifi, [set the module option](/index.php/Kernel_modules#Setting_module_options "Kernel modules") `bt_coex_active=0` of the `iwlwifi` module. See [https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1721271](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1721271) for more information.
 
 ### Poweroff
 

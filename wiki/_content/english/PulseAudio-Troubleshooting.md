@@ -778,7 +778,7 @@ If one experiences choppy sound in applications using [OpenAL](https://en.wikipe
 
  `/etc/openal/alsoft.conf`  `frequency = 48000` 
 
-Setting the PCM volume above 0 dB can cause [clipping](https://en.wikipedia.org/wiki/Clipping_(audio) "wikipedia:Clipping (audio)"). Running `alsamixer` will allow you to see if this is the problem and if so fix it. Note that ALSA may not [correctly export](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/PulseAudioStoleMyVolumes) the dB information to PulseAudio. Try the following:
+Setting the PCM volume above 0 dB can cause [clipping](https://en.wikipedia.org/wiki/Clipping_(audio) "wikipedia:Clipping (audio)"). Running `alsamixer` will allow you to see if this is the problem and if so fix it. Note that ALSA may not [correctly export](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/PulseAudioStoleMyVolumes/) the dB information to PulseAudio. Try the following:
 
  `/etc/pulse/default.pa`  `load-module module-udev-detect ignore_dB=1` 
 

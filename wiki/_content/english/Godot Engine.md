@@ -28,6 +28,7 @@ To be able to export your project, you will need prebuilt binaries. If using the
 *   [Godot documentation](http://docs.godotengine.org/en/stable/)
 *   [Godot source code](https://github.com/godotengine/godot)
 *   [Godot: the Game-Changer for GameDevs](https://willnationsdev.wordpress.com/2017/07/21/godot-the-game-changer-for-gamedevs/) - Introduction and comparison with other engines
+*   [awesome-godot](https://github.com/Calinou/awesome-godot/) - free/libre plugins, scripts and add-ons for Godot
 *   [/r/godot](https://www.reddit.com/r/godot/) community on reddit.com
 *   [Godot Engine Resources tutorials](https://www.youtube.com/user/Link4ns/playlists)
 *   [Gamesfromscratch video tutorials](https://www.youtube.com/playlist?list=PLS9MbmO_ssyAXRl-_ktrebQBFxjSQt7UX)

@@ -34,7 +34,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [connman](https://www.archlinux.org/packages/?name=connman) package. [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) and [bluez](https://www.archlinux.org/packages/?name=bluez) are optional dependencies required for Wi-Fi and Bluetooth functionality respectively.
+[Install](/index.php/Install "Install") the [connman](https://www.archlinux.org/packages/?name=connman) package. [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), [bluez](https://www.archlinux.org/packages/?name=bluez), and [openvpn](https://www.archlinux.org/packages/?name=openvpn) are optional dependencies required for Wi-Fi, Bluetooth, and VPN functionality respectively.
 
 Before [enabling](/index.php/Enabling "Enabling") `connman.service`, ensure any existing [network configuration](/index.php/Network_configuration "Network configuration") is disabled.
 

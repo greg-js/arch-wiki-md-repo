@@ -307,7 +307,7 @@ Current fan control daemons available in the [AUR](/index.php/AUR "AUR") are [si
 
 ### Installation
 
-Install [thinkfan](https://aur.archlinux.org/packages/thinkfan/). Optionally but recommended, install [lm-sensors](https://www.archlinux.org/packages/?name=lm-sensors). Then have a look at the files:
+Install [thinkfan](https://aur.archlinux.org/packages/thinkfan/). Optionally but recommended, install [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors). Then have a look at the files:
 
 ```
 # pacman -Ql thinkfan

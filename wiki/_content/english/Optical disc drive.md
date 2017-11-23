@@ -21,7 +21,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Opt
     *   [1.4 Converting img/ccd to an ISO image](#Converting_img.2Fccd_to_an_ISO_image)
     *   [1.5 Learning the name of your optical drive](#Learning_the_name_of_your_optical_drive)
     *   [1.6 Reading the volume label of a CD or DVD](#Reading_the_volume_label_of_a_CD_or_DVD)
-    *   [1.7 Reading an ISO image from a CD, DVD, or BD](#Reading_an_ISO_image_from_a_CD.2C_DVD.2C_or_BD)
+    *   [1.7 Creating an ISO image from a CD, DVD, or BD](#Creating_an_ISO_image_from_a_CD.2C_DVD.2C_or_BD)
     *   [1.8 Erasing CD-RW and DVD-RW](#Erasing_CD-RW_and_DVD-RW)
     *   [1.9 Formatting DVD-RW](#Formatting_DVD-RW)
     *   [1.10 Formatting BD-RE and BD-R](#Formatting_BD-RE_and_BD-R)
@@ -208,7 +208,7 @@ $ dd if=*/dev/sr0* bs=1 skip=32808 count=32
 
 ```
 
-### Reading an ISO image from a CD, DVD, or BD
+### Creating an ISO image from a CD, DVD, or BD
 
 You should determine the size of the ISO file system before copying it to hard disk. Most media types deliver more data than was written to them with the most recent burn run.
 

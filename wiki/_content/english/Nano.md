@@ -22,24 +22,24 @@
 
 ## Configuration
 
-The look, feel, and function of nano is typically controlled by way of either command-line arguments, or configuration commands within the file `~/.nanorc`.
+The look, feel, and function of nano is typically controlled by way of either command-line arguments, or configuration commands within the file `~/.config/nano/nanorc`.
 
-A sample configuration file is installed upon program installation and is located at `/etc/nanorc`. To customize your nano configuration, first create a local copy at `~/.nanorc`:
-
-```
-$ cp /etc/nanorc ~/.nanorc
+A sample configuration file is installed upon program installation and is located at `/etc/nanorc`. To customize your nano configuration, first create a local copy at `~/.config/nano/nanorc`:
 
 ```
+$ cp /etc/nanorc ~/.config/nano/nanorc
 
-Proceed to establish the nano console environment by setting and/or unsetting commands within `~/.nanorc` file.
+```
+
+Proceed to establish the nano console environment by setting and/or unsetting commands within `~/.config/nano/nanorc` file.
 
 **Tip:** [nanorc(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nanorc.5) details the complete list configuration commands available for nano.
 
-**Note:** Command-line arguments override and take precedence over the configuration commands established in `~/.nanorc`
+**Note:** Command-line arguments override and take precedence over the configuration commands established in `~/.config/nano/nanorc`
 
 ### Syntax highlighting
 
-Nano ships with predefined [syntax highlighting](https://en.wikipedia.org/wiki/Syntax_highlighting "wikipedia:Syntax highlighting") rules, defined in `/usr/share/nano/*.nanorc`. To enable them, add the following line to your `~/.nanorc` or to `/etc/nanorc`:
+Nano ships with predefined [syntax highlighting](https://en.wikipedia.org/wiki/Syntax_highlighting "wikipedia:Syntax highlighting") rules, defined in `/usr/share/nano/*.nanorc`. To enable them, add the following line to your `~/.config/nano/nanorc` or to `/etc/nanorc`:
 
 ```
 include "/usr/share/nano/*.nanorc"
@@ -65,7 +65,7 @@ Unlike most interactive programs, suspension is not enabled by default. To chang
 
 ### Text wrapping
 
-Unlike many text editors, *nano* wraps text. To disable this put this in your `~/.nanorc`
+Unlike many text editors, *nano* wraps text. To disable this put this in your `~/.config/nano/nanorc`
 
 ```
 set nowrap

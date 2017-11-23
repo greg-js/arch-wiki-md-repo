@@ -25,6 +25,7 @@ Installation instructions for the Lenovo ThinkPad T400.
     *   [6.1 Mute](#Mute)
 *   [7 ACPI](#ACPI)
 *   [8 SUSPEND-RESUME](#SUSPEND-RESUME)
+*   [9 Dock](#Dock)
 
 ## System Specification
 
@@ -325,5 +326,9 @@ case "$1" in
 esac
 
 ```
+
+## Dock
+
+See [dockd](/index.php/Dockd "Dockd").
 
 From [http://ubuntu-virginia.ubuntuforums.org/showpost.php?p=6105510&postcount=12](http://ubuntu-virginia.ubuntuforums.org/showpost.php?p=6105510&postcount=12) petri4 on the ubuntu forums.

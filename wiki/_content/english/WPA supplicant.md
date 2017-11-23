@@ -30,7 +30,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) package.
+[Install](/index.php/Install "Install") the [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) package, which includes the main program *wpa_supplicant*, the passphrase tool *wpa_passphrase*, and the text front-end *wpa_cli*.
 
 Optionally also install [wpa_supplicant_gui](https://www.archlinux.org/packages/?name=wpa_supplicant_gui), which provides *wpa_gui*, a graphical front-end for *wpa_supplicant*.
 
@@ -46,7 +46,7 @@ This connection method allows scanning for the available networks, making use of
 
 In order to use *wpa_cli*, a control interface must be specified for *wpa_supplicant*, and it must be given the rights to update the configuration. Do this by creating a minimal configuration file:
 
- `/etc/wpa_supplicant/example.conf` 
+ `/etc/wpa_supplicant/wpa_supplicant.conf` 
 ```
 ctrl_interface=/run/wpa_supplicant
 update_config=1
@@ -55,11 +55,11 @@ update_config=1
 Now start *wpa_supplicant* with:
 
 ```
-# wpa_supplicant -B -i *interface* -c /etc/wpa_supplicant/example.conf
+# wpa_supplicant -B -i *interface* -c /etc/wpa_supplicant/wpa_supplicant.conf
 
 ```
 
-**Tip:** To discover your wireless network interface name, issue the `ip link` command.
+**Tip:** To discover your wireless network interface name, see [Network configuration#Device names](/index.php/Network_configuration#Device_names "Network configuration").
 
 At this point run:
 
@@ -70,7 +70,7 @@ At this point run:
 
 This will present an interactive prompt (`>`), which has tab completion and descriptions of completed commands.
 
-**Tip:** The default location of the control socket is `/var/run/wpa_supplicant/`, custom path can be set manually with the `-p` option to match the *wpa_supplicant* configuration. It is also possible to specify the interface to be configured with the `-i` option, otherwise the first found wireless interface managed by *wpa_supplicant* will be used.
+**Tip:** The default location of the control socket is `/var/run/wpa_supplicant/`. A custom path can be set manually with the `-p` option to match the *wpa_supplicant* configuration. It is also possible to specify the interface to be configured with the `-i` option; otherwise, the first found wireless interface managed by *wpa_supplicant* will be used.
 
 Use the `scan` and `scan_results` commands to see the available networks:
 
@@ -80,24 +80,24 @@ OK
 <3>CTRL-EVENT-SCAN-RESULTS
 > scan_results
 bssid / frequency / signal level / flags / ssid
-00:00:00:00:00:00 2462 -49 [WPA2-PSK-CCMP][ESS] MYSSID
-11:11:11:11:11:11 2437 -64 [WPA2-PSK-CCMP][ESS] ANOTHERSSID
+00:00:00:00:00:00 2462 -49 [WPA2-PSK-CCMP][ESS] *MYSSID*
+11:11:11:11:11:11 2437 -64 [WPA2-PSK-CCMP][ESS] *ANOTHERSSID*
 
 ```
 
-To associate with `MYSSID`, add the network, set the credentials and enable it:
+To associate with `*MYSSID*`, add the network, set the credentials and enable it:
 
 ```
 > add_network
 0
-> set_network 0 ssid "MYSSID"
-> set_network 0 psk "passphrase"
+> set_network 0 ssid "*MYSSID*"
+> set_network 0 psk "*passphrase*"
 > enable_network 0
 <2>CTRL-EVENT-CONNECTED - Connection to 00:00:00:00:00:00 completed (reauth) [id=0 id_str=]
 
 ```
 
-If the SSID does not have password authentication, you must explicitly configure the network as keyless by replacing the command `set_network 0 psk "passphrase"` with `set_network 0 key_mgmt NONE`.
+If the SSID does not have password authentication, you must explicitly configure the network as keyless by replacing the command `set_network 0 psk "*passphrase*"` with `set_network 0 key_mgmt NONE`.
 
 **Note:**
 
@@ -112,30 +112,25 @@ OK
 
 ```
 
-Once association is complete, all that is left to do is obtain an IP address as indicated in the [#Overview](#Overview), for example:
-
-```
-# dhcpcd *interface*
-
-```
+Once association is complete, you must obtain an IP address, for example, using [dhcpcd](/index.php/Dhcpcd#Running "Dhcpcd").
 
 ## Connecting with wpa_passphrase
 
 This connection method allows quickly connecting to a network whose SSID is already known, making use of *wpa_passphrase*, a command line tool which generates the minimal configuration needed by *wpa_supplicant*. For example:
 
- `$ wpa_passphrase MYSSID passphrase` 
+ `$ wpa_passphrase *MYSSID* *passphrase*` 
 ```
 network={
-    ssid="MYSSID"
-    #psk="passphrase"
+    ssid="*MYSSID*"
+    #psk="*passphrase*"
     psk=59e0d07fa4c7741797a4e394f38a5c321e3bed51d54ad5fcbd3f84bc7415d73d
 }
 ```
 
-This means that *wpa_supplicant* can be associated with *wpa_passphrase* and simply started with:
+This means that *wpa_supplicant* can be associated with *wpa_passphrase* and started with:
 
 ```
-# wpa_supplicant -B -i *interface* -c <(wpa_passphrase MYSSID passphrase)
+# wpa_supplicant -B -i *interface* -c <(wpa_passphrase *MYSSID* *passphrase*)
 
 ```
 
@@ -150,16 +145,11 @@ See also [Help:Reading#Regular user or root](/index.php/Help:Reading#Regular_use
 
 **Tip:**
 
-*   Use quotes, if the input contains spaces. For example: `"secret passphrase"`
-*   To discover your wireless network interface name, issue the `ip link` command.
-*   Some unusually complex passphrases may require input from a file, e.g. `wpa_passphrase MYSSID < passphrase.txt`, or here strings, e.g. `wpa_passphrase MYSSID <<< "passphrase"`.
+*   Use quotes, if the input contains spaces. For example: `"secret passphrase"`.
+*   To discover your wireless network interface name, see [Network_configuration#Get current device names](/index.php/Network_configuration#Get_current_device_names "Network configuration").
+*   Some unusually complex passphrases may require input from a file, e.g. `wpa_passphrase *MYSSID* < passphrase.txt`, or here strings, e.g. `wpa_passphrase *MYSSID* <<< "*passphrase*"`.
 
-Finally, you should obtain an IP address as indicated in the [#Overview](#Overview), for example:
-
-```
-# dhcpcd *interface*
-
-```
+Finally, you should obtain an IP address (e.g., using [Dhcpcd#Running](/index.php/Dhcpcd#Running "Dhcpcd")).
 
 ## Advanced usage
 

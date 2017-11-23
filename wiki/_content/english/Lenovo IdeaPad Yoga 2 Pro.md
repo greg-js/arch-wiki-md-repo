@@ -37,6 +37,8 @@ Be aware, adding nomodeset prevents the kernel from identifying the monitor. As 
 
 ## The ideapad_laptop module
 
+**Note:** This should not be needed as of kernel 4.3
+
 Several problems come up if the ideapad_laptop module is in use. Namely, it blocks the network card and generates a massive stream of warning from the USB subsystem such as:
 
 ```

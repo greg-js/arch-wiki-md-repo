@@ -467,7 +467,7 @@ See the [systemd-tmpfiles(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-
 
 A timer is a unit configuration file whose name ends with *.timer* and encodes information about a timer controlled and supervised by *systemd*, for timer-based activation. See [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers").
 
-**Note:** Timers can replace *cron* functionality to a great extent. See [systemd/Timers#As a cron replacement](/index.php/Systemd/Timers#As_a_cron_replacement "Systemd/Timers").
+**Note:** Timers can replace [cron](/index.php/Cron "Cron") functionality to a great extent. See [systemd/Timers#As a cron replacement](/index.php/Systemd/Timers#As_a_cron_replacement "Systemd/Timers").
 
 ## Mounting
 

@@ -202,11 +202,13 @@ default-character-set = utf8mb4
 
 ```
 
+[Restart](/index.php/Restart "Restart") `mariadb.service` to apply the changes.
+
 See [#Database maintenance](#Database_maintenance) to optimize and check the database health.
 
 ### Increase character limit
 
-The character-limit depends on the character-set in use [[3]](http://mechanics.flite.com/blog/2014/07/29/using-innodb-large-prefix-to-avoid-error-1071/) [[4]](https://dev.mysql.com/doc/refman/5.5/en/innodb-parameters.html#sysvar_innodb_large_prefix) [[5]](https://easyengine.io/tutorials/mysql/enable-innodb-file-per-table/).
+**Note:** The character-limit depends on the character-set in use [[3]](http://mechanics.flite.com/blog/2014/07/29/using-innodb-large-prefix-to-avoid-error-1071/) [[4]](https://dev.mysql.com/doc/refman/5.5/en/innodb-parameters.html#sysvar_innodb_large_prefix) [[5]](https://easyengine.io/tutorials/mysql/enable-innodb-file-per-table/).
 
 For InnoDB execute the following commands to support a higher character-limit:
 
@@ -228,7 +230,7 @@ Query OK, 0 rows affected (0.00 sec)
 
 ```
 
-[Append](/index.php/Append "Append") the following lines to `/etc/mysql/my.cfg` always use a higher character-limit:
+[Append](/index.php/Append "Append") the following lines in `/etc/mysql/my.cfg` to always use a higher character-limit:
 
 ```
 [mysqld]
@@ -238,7 +240,7 @@ innodb_large_prefix = 1
 
 ```
 
-[Restart](/index.php/Restart "Restart") `mysqld` to apply the changes.
+[Restart](/index.php/Restart "Restart") `mariadb.service` to apply the changes.
 
 On table creating append the `ROW_FORMAT` as seen in the example:
 

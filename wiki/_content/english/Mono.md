@@ -1,4 +1,6 @@
-Mono is an open source, cross-platform, implementation of C# and the CLR that is binary compatible with Microsoft.NET.
+From [Wikipedia](https://en.wikipedia.org/wiki/Mono_(software) "wikipedia:Mono (software)"):
+
+	*Mono is a [...] project to create a [.NET Framework](https://en.wikipedia.org/wiki/.NET_Framework compiler and a [Common Language Runtime](https://en.wikipedia.org/wiki/Common_Language_Runtime "wikipedia:Common Language Runtime").*
 
 ## Contents
 

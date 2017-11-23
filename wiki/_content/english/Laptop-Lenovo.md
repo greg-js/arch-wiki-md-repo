@@ -34,6 +34,7 @@
         *   [3.9.1 tpacpi-bat](#tpacpi-bat)
         *   [3.9.2 ThinkPad Edge E420s Delay with Space Bar](#ThinkPad_Edge_E420s_Delay_with_Space_Bar)
     *   [3.10 Lenovo IdeaPad Y700](#Lenovo_IdeaPad_Y700)
+    *   [3.11 Auto-switching monitors when docking ThinkPads](#Auto-switching_monitors_when_docking_ThinkPads)
 *   [4 See also](#See_also)
 
 ## IBM/Lenovo
@@ -309,6 +310,10 @@ Solution: Update BIOS (at least 1.08).
 ### Lenovo IdeaPad Y700
 
 *   The subwoofer does not work out of the box and it seems that there is no solution yet.
+
+### Auto-switching monitors when docking ThinkPads
+
+See [dockd](/index.php/Dockd "Dockd").
 
 ## See also
 

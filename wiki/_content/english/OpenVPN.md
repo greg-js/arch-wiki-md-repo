@@ -76,6 +76,7 @@ OpenVPN requires TUN/TAP support, which is already configured in the default ker
  Device Drivers
   --> Network device support
     [M] Universal TUN/TAP device driver support
+
 ```
 
 Read [Kernel modules](/index.php/Kernel_modules "Kernel modules") for more information.
@@ -602,7 +603,7 @@ Otherwise, you will need to allow dns leak. **Be sure to trust your dns server!*
 
 #### vpnfailsafe
 
-Alternatively, the [vpnfailsafe](https://github.com/wknapik/vpnfailsafe) ([vpnfailsafe-git](https://aur.archlinux.org/packages/vpnfailsafe-git/)) script can be used by the client to prevent DNS leaks and ensure that all traffic to the internet goes over the VPN. If the VPN tunnel goes down, internet access will be cut off, except for connections to the VPN server(s). The script contains the functionality of [update-resolv-conf](#Update_resolv-conf_script), so the two don't need to be combined.
+Alternatively, the [vpnfailsafe](https://github.com/wknapik/vpnfailsafe) ([vpnfailsafe-git](https://aur.archlinux.org/packages/vpnfailsafe-git/)) script can be used by the client to prevent DNS leaks and ensure that all traffic to the internet goes over the VPN. If the VPN tunnel goes down, internet access will be cut off, except for connections to the VPN server(s). The script contains the functionality of [update-resolv-conf](#Update_resolv-conf_script), so the two do not need to be combined.
 
 ## L3 IPv4 routing
 
@@ -706,6 +707,7 @@ chroot /srv
 script-security 2
 up /etc/openvpn/client/client.up 
 plugin /usr/lib/openvpn/plugins/openvpn-plugin-down-root.so "/etc/openvpn/client/client.down tun0"
+
 ```
 
 ### Update resolv-conf script
@@ -864,4 +866,4 @@ Unmanaged=true
 
 ## See also
 
-*   [OpenVPN Official Site](https://openvpn.net/index.php/open-source.html)
+*   [Wikipedia:OpenVPN](https://en.wikipedia.org/wiki/OpenVPN "wikipedia:OpenVPN")

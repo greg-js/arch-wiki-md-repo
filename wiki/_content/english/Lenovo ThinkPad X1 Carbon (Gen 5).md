@@ -23,6 +23,7 @@ Related articles
         *   [2.5.1 Ethernet](#Ethernet)
         *   [2.5.2 USB](#USB)
     *   [2.6 HP Thunderbolt 3 Dock](#HP_Thunderbolt_3_Dock)
+    *   [2.7 Lenovo p27h-10 (USB Type C)](#Lenovo_p27h-10_.28USB_Type_C.29)
 
 ## Model description
 
@@ -163,3 +164,7 @@ In order for the internal USB hub in the dock to work without having to boot wit
 ### HP Thunderbolt 3 Dock
 
 The HP Thunderbolt 3 Dock is working out of the box.
+
+### Lenovo p27h-10 (USB Type C)
+
+Charging while using the monitor via USB-Type-C is working but the dock functionality needs investigation (e.g. speakers, mouse, directly from the monitor).

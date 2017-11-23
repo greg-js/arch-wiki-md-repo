@@ -79,9 +79,9 @@ In Arch, some shell scripts are written for [Bash](/index.php/Bash "Bash") and a
 
 #### Modify .bashrc to drop into fish
 
-Keep your default shell as Bash and simply add the line `exec fish` to the appropriate [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash"), such as `.bashrc`. This will allow Bash to properly source `/etc/profile` and all files in `/etc/profile.d`. Because *fish* replaces the bash process, exiting *fish* will also exit the terminal. Compared to the following options, this is the most universal solution, since it works both on a local machine and on an SSH server.
+Keep your default shell as Bash and simply add the line `exec fish` to the appropriate [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash"), such as `.bashrc`. This will allow Bash to properly source `/etc/profile` and all files in `/etc/profile.d`. Because fish replaces the Bash process, exiting fish will also exit the terminal. Compared to the following options, this is the most universal solution, since it works both on a local machine and on a SSH server.
 
-**Tip:** Use `bash --norc` to enter bash manually without dropping to fish after setting up as above.
+**Tip:** In this setup, use `bash --norc` to manually enter Bash without executing the commands from `~/.bashrc` which would run `exec fish` and drop back into fish.
 
 #### Use terminal emulator options
 

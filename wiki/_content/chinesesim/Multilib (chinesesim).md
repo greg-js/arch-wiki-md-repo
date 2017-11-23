@@ -1,3 +1,7 @@
+Related articles
+
+*   [Install bundled 32-bit system in Arch64](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64")
+
 **翻译状态：** 本文是英文页面 [Multilib](/index.php/Multilib "Multilib") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-04-07，点击[这里](https://wiki.archlinux.org/index.php?title=Multilib&diff=0&oldid=429996)可以查看翻译后英文页面的改动。
 
 *multilib* 仓库让用户可以在 64 位 Arch Linux 系统上运行和编译 32 位程序。

@@ -11,9 +11,10 @@ This article describes how both new and experienced Arch users can contribute to
     *   [1.4 Report installed packages](#Report_installed_packages)
     *   [1.5 Fix and report bugs](#Fix_and_report_bugs)
     *   [1.6 Inform about security issues](#Inform_about_security_issues)
-    *   [1.7 Create and adopt AUR packages](#Create_and_adopt_AUR_packages)
-    *   [1.8 Official software projects](#Official_software_projects)
-    *   [1.9 Donate money](#Donate_money)
+    *   [1.7 Help test packages](#Help_test_packages)
+    *   [1.8 Create and adopt AUR packages](#Create_and_adopt_AUR_packages)
+    *   [1.9 Official software projects](#Official_software_projects)
+    *   [1.10 Donate money](#Donate_money)
 *   [2 Community projects](#Community_projects)
     *   [2.1 Groups](#Groups)
     *   [2.2 Software](#Software)
@@ -53,6 +54,10 @@ However, ineffective use can be counter-productive. Please read the [Reporting b
 ### Inform about security issues
 
 New vulnerabilites are found all the time. Help the [Arch Security Team](/index.php/Arch_Security_Team "Arch Security Team") keep track of new vulnerabilities.
+
+### Help test packages
+
+Packages on the testing repositories need to be tried out and signed off before they are promoted to the main repositories. Help the [Arch Testing Team](/index.php/Arch_Testing_Team "Arch Testing Team") test new packages.
 
 ### Create and adopt AUR packages
 

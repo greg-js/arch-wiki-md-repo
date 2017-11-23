@@ -3,6 +3,8 @@ Related articles
 *   [Kernel modules (Русский)](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel modules (Русский)")
 *   [Advanced Linux Sound Architecture (Русский)](/index.php/Advanced_Linux_Sound_Architecture_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Advanced Linux Sound Architecture (Русский)")
 
+**Состояние перевода:** На этой странице представлен перевод статьи [PC speaker](/index.php/PC_speaker "PC speaker"). Дата последней синхронизации: 21 ноября 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=PC_speaker&diff=0&oldid=497536).
+
 Хотим мы этого или нет, компьютер часто издает звуковые сигналы и другие звуки. Они происходят из различных источников и, как правило, вы можете настроить условие или время для их срабатывания. Для случаев, когда нет звуковой карты или динамиков, и требуется простое аудио оповещение, смотрите раздел [#Beep](#Beep).
 
 Звуковой сигнал компьютера может раздасться из встроенного динамика, колонок или наушников, которые подключены к звуковой карте (в некоторых случаях шум может быть неожиданно громким).
@@ -45,7 +47,7 @@ PC speaker может быть отключен [выгрузкой](/index.php/
 
 ```
 
-[Размещение в черном списке в командной строке ядра](/index.php/Kernel_modules#Using_kernel_command_line_2 "Kernel modules") - еще один способ добиться похожего эффекта. Просто добавьте `modprobe.blacklist=pcspkr` к вашей строке начальной загрузки ядра.
+[Размещение в черном списке в командной строке ядра](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.97.D0.B0.D0.BF.D1.80.D0.B5.D1.82_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8 "Kernel modules (Русский)") - еще один способ добиться похожего эффекта. Просто добавьте `modprobe.blacklist=pcspkr` к вашей строке начальной загрузки ядра.
 
 ### Xorg
 
@@ -81,7 +83,7 @@ $ amixer set *channel* 0% mute
 
 ```
 
-Для включения звука обратитесь к странице руководства [Advanced Linux Sound Architecture#Unmuting the channels](/index.php/Advanced_Linux_Sound_Architecture#Unmuting_the_channels "Advanced Linux Sound Architecture").
+Для включения звука обратитесь к странице руководства [Advanced Linux Sound Architecture (Русский)#Включить звук каналов](/index.php/Advanced_Linux_Sound_Architecture_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C_.D0.B7.D0.B2.D1.83.D0.BA_.D0.BA.D0.B0.D0.BD.D0.B0.D0.BB.D0.BE.D0.B2 "Advanced Linux Sound Architecture (Русский)").
 
 **Совет:** Если вы используете PulseAudio и канал PC speaker не отображается в устройствах ALSA по умолчанию, попробуйте выбрать устройства соответствующей звуковой карты - прокси-контроль PulseAudio может не отображать PC speaker
 
@@ -134,7 +136,7 @@ Beep - это улучшенная программа для подачи зву
 
 ### Доступ для обычных (non-root) пользователей
 
-По умолчанию, `beep` не будет работать, если запущена не с правами суперпользователя. Другие пользователи могут использовать ее при помощи [sudo](/index.php/Sudo "Sudo"). Для передачи группе `users` возможности вызывать `sudo beep` без пароля (например, для использования в скриптах), [следует отредактировать](/index.php/Sudo#Using_visudo "Sudo") `/etc/sudoers`:
+По умолчанию, `beep` не будет работать, если запущена не с правами суперпользователя. Другие пользователи могут использовать ее при помощи [sudo](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Sudo (Русский)"). Для передачи группе `users` возможности вызывать `sudo beep` без пароля (например, для использования в скриптах), [следует отредактировать](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_visudo "Sudo (Русский)") `/etc/sudoers`:
 
 ```
 %users ALL=(ALL) NOPASSWD: /usr/bin/beep

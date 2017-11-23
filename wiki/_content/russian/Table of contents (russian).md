@@ -60,7 +60,7 @@
  <small>4.4.</small> [Displays](/index.php/Category:Displays "Category:Displays") <small>(3)</small> |
 | <small>4.4.</small> [Видеокарты](/index.php/Category:Graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Graphics (Русский)") <small>(16)</small> | <small>4.5.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(34)</small> |
 | <small>4.5.</small> [Обнаружение устройств и решение проблем](/index.php/Category:Hardware_detection_and_troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Hardware detection and troubleshooting (Русский)") <small>(4)</small> | <small>4.6.</small> [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting") <small>(8)</small> |
-| <small>4.6.</small> [Изображения](/index.php/Category:Imaging_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Imaging (Русский)") <small>(2)</small> | <small>4.7.</small> [Imaging](/index.php/Category:Imaging "Category:Imaging") <small>(7)</small> |
+| <small>4.6.</small> [Изображения](/index.php/Category:Imaging_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Imaging (Русский)") <small>(1)</small> | <small>4.7.</small> [Imaging](/index.php/Category:Imaging "Category:Imaging") <small>(7)</small> |
 | <small>4.7.</small> [Устройства ввода](/index.php/Category:Input_devices_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Input devices (Русский)") <small>(4)</small> | <small>4.8.</small> [Input devices](/index.php/Category:Input_devices "Category:Input devices") <small>(15)</small> |
  <small>4.8.1.</small> [Graphics tablet](/index.php/Category:Graphics_tablet "Category:Graphics tablet") <small>(1)</small> |
 | <small>4.7.1.</small> [Клавиатуры](/index.php/Category:Keyboards_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Keyboards (Русский)") <small>(7)</small> | <small>4.8.2.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(21)</small> |
@@ -72,12 +72,12 @@
  <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(68)</small> |
  <small>4.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
  <small>4.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(2)</small> |
-| <small>4.8.1.</small> [Dell](/index.php/Category:Dell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Dell (Русский)") <small>(1)</small> | <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(61)</small> |
+| <small>4.8.1.</small> [Dell](/index.php/Category:Dell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Dell (Русский)") <small>(0)</small> | <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(61)</small> |
 | <small>4.8.2.</small> [Fujitsu](/index.php/Category:Fujitsu_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Fujitsu (Русский)") <small>(1)</small> | <small>4.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(5)</small> |
  <small>4.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>4.8.3.</small> [HP](/index.php/Category:HP_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:HP (Русский)") <small>(1)</small> | <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(54)</small> |
  <small>4.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(10)</small> |
- <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(80)</small> |
+ <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(81)</small> |
  <small>4.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(5)</small> |
  <small>4.9.14.</small> [Nokia](/index.php/Category:Nokia "Category:Nokia") <small>(1)</small> |
 | <small>4.8.4.</small> [Samsung](/index.php/Category:Samsung_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Samsung (Русский)") <small>(1)</small> | <small>4.9.15.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(11)</small> |
@@ -89,7 +89,7 @@
 | <small>4.10.</small> [Модемы](/index.php/Category:Modems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Modems (Русский)") <small>(4) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small> | <small>4.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(18) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
  <small>4.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(22)</small> |
 | <small>4.11.</small> [Принтеры](/index.php/Category:Printers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Printers (Русский)") <small>(3)</small> | <small>4.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(8)</small> |
-| <small>4.12.</small> [Звук](/index.php/Category:Sound_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Sound (Русский)") <small>(10)</small> | <small>4.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(17)</small> |
+| <small>4.12.</small> [Звук](/index.php/Category:Sound_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Sound (Русский)") <small>(9)</small> | <small>4.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(17)</small> |
 | <small>4.13.</small> [Накопители информации](/index.php/Category:Storage_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Storage (Русский)") <small>(5)</small> | <small>4.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(17)</small> |
 | <small>4.13.1.</small> [Оптические](/index.php/Category:Optical_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Optical (Русский)") <small>(1)</small> | <small>4.16.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small> |
  <small>4.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11)</small> |
@@ -144,7 +144,7 @@
 | <small>6.5.2.</small> [Шрифты](/index.php/Category:Fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Fonts (Русский)") <small>(5)</small> | <small>6.5.2.</small> [Fonts](/index.php/Category:Fonts "Category:Fonts") <small>(7)</small> |
 | <small>6.6.</small> [Файловые системы](/index.php/Category:File_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:File systems (Русский)") <small>(36)</small> | <small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(76)</small> |
 | <small>6.7.</small> [Переводы](/index.php/Category:Internationalization_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Internationalization (Русский)") <small>(1)</small> | <small>6.7.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(16)</small> |
-| <small>6.8.</small> [Ядро](/index.php/Category:Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Kernel (Русский)") <small>(10)</small> | <small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(35)</small> |
+| <small>6.8.</small> [Ядро](/index.php/Category:Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Kernel (Русский)") <small>(10)</small> | <small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(34)</small> |
 | <small>6.9.</small> [Управление пакетами](/index.php/Category:Package_management_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Package management (Русский)") <small>(21)</small> | <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(30)</small> |
 | <small>6.10.</small> [Управление питанием](/index.php/Category:Power_management_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Power management (Русский)") <small>(9)</small> | <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
 | <small>6.11.</small> [Скрипты](/index.php/Category:Scripts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Scripts (Русский)") <small>(2)</small> |

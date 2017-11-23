@@ -104,7 +104,7 @@ USER_NAME   ALL=(ALL) ALL
 
 ```
 
-To allow a user to run all commands as any user but only the machine with hostname `HOST_NAME`:
+To allow a user to run all commands as any user but only on the machine with hostname `HOST_NAME`:
 
 ```
 USER_NAME   HOST_NAME=(ALL) ALL

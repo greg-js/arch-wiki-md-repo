@@ -83,7 +83,9 @@ you will find it more helpful to formulate your issue in the context of the syst
 
 With all the information in front of you you should have a good idea as to what is going on with the system and you can now start working on a proper fix.
 
-If you require any additional support, it can be found on [the forums](https://bbs.archlinux.org) or IRC at irc.freenode.net #archlinux See [IRC channels](/index.php/IRC_channels "IRC channels") for other options.
+If you require any additional support, it can be found on [the forums](https://bbs.archlinux.org) or IRC at irc.freenode.net #archlinux. See [IRC channels](/index.php/IRC_channels "IRC channels") for other options.
+
+**Note:** [Support is provided for Arch Linux *only*](/index.php/Code_of_conduct#Arch_Linux_distribution_support_.2Aonly.2A "Code of conduct") and not [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions").
 
 When asking for support post the **complete** output/logs, not just what you think are the significant sections. Sources of information include:
 

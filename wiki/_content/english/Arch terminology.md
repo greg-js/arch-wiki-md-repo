@@ -197,7 +197,7 @@ Trusted users follow the [AUR Trusted User Guidelines](/index.php/AUR_Trusted_Us
 
 Usually udev runs as udevd(8) and receives uevents directly from the kernel if a device is added/removed to/from the system.
 
-If udev receives a device event, it matches its configured rules against the available device attributes provided in sysfs to identify the device. Rules that match may provide additional device information or specify a device node name and multiple symlink names and instruct udev to run additional programs as part of the device event handling.
+If udev receives a device event, it matches its configured rules against the available device attributes provided in [sysfs](https://en.wikipedia.org/wiki/sysfs "wikipedia:sysfs") to identify the device. Rules that match may provide additional device information or specify a device node name and multiple symlink names and instruct udev to run additional programs as part of the device event handling.
 
 ## [wiki](https://en.wikipedia.org/wiki/Wiki "wikipedia:Wiki")
 

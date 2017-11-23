@@ -74,7 +74,7 @@ Esse documento é um índice anotado de artigos populares e informações import
 
 ## Administração do sistema
 
-Essa seção lida com tarefas administrativas e gerenciamento do sistema. Para mais, por favor veja [Utilitários centrais](/index.php/Core_utilities "Core utilities") e [Category:System administration](/index.php/Category:System_administration "Category:System administration").
+Essa seção lida com tarefas administrativas e gerenciamento do sistema. Para mais, por favor veja [Utilitários centrais](/index.php/Core_utilities "Core utilities") e [Category:System administration (Português)](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)").
 
 ### Usuários e grupos
 
@@ -88,11 +88,11 @@ Os comandos [su](/index.php/Su "Su") e [sudo](/index.php/Sudo "Sudo") permitem q
 
 ### Gerenciamento de serviço
 
-Arch Linux usa [systemd](/index.php/Systemd "Systemd") como o processo [init](/index.php/Init "Init"), que é um gerenciador de sistema e serviço para Linux. Para dar manutenção em sua instalação do Arch Linux, é uma boa ideia aprender os básicos sobre ele. Interação com o *systemd* é feita com o comando *systemctl*. Leia o [systemd#Basic systemctl usage](/index.php/Systemd#Basic_systemctl_usage "Systemd") para mais informações.
+Arch Linux usa [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") como o processo [init](/index.php/Init "Init"), que é um gerenciador de sistema e serviço para Linux. Para dar manutenção em sua instalação do Arch Linux, é uma boa ideia aprender os básicos sobre ele. Interação com o *systemd* é feita com o comando *systemctl*. Leia o [systemd (Português)#Uso básico systemctl](/index.php/Systemd_(Portugu%C3%AAs)#Uso_b.C3.A1sico_systemctl "Systemd (Português)") para mais informações.
 
 ### Manutenção de sistema
 
-Arch é um sistema *rolling release* e tem uma mudança rápida de pacote, então usuários levam algum tempo para fazer [manutenção do sistema](/index.php/System_maintenance "System maintenance"). Leia [Segurança](/index.php/Security "Security") para recomendações e boas párticas de *hardening* do sistema.
+Arch é um sistema *rolling release* e tem uma mudança rápida de pacote, então usuários levam algum tempo para fazer [manutenção do sistema](/index.php/Manuten%C3%A7%C3%A3o_do_sistema "Manutenção do sistema"). Leia [Segurança](/index.php/Security "Security") para recomendações e boas párticas de *hardening* do sistema.
 
 ## Gerenciamento de pacote
 

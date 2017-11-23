@@ -148,7 +148,7 @@ Usare [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pa
 
 Questo gruppo non include tutti i pacchetti disponibili sulla live come [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) o firmware per specifiche schede di rete; vedere [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) per informazioni.
 
-Per [installare](/index.php/Install "Install") altri pacchetti o altri gruppi come ad esempio [base-devel](https://www.archlinux.org/packages/?name=base-devel) aggiungere a i loro nomi a *pacstrap* separati da spazi, ad esempio:
+Per [installare](/index.php/Install "Install") altri pacchetti o altri gruppi come ad esempio [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) aggiungere a i loro nomi a *pacstrap* separati da spazi, ad esempio:
 
 ```
 # pacstrap /mnt base base-devel

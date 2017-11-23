@@ -5,8 +5,9 @@
     *   [2.1 Integrated Graphics](#Integrated_Graphics)
     *   [2.2 Discrete Graphics](#Discrete_Graphics)
     *   [2.3 NVidia Optimus](#NVidia_Optimus)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Screen freezes before login prompt when using discrete graphics](#Screen_freezes_before_login_prompt_when_using_discrete_graphics)
+*   [3 Using a dock](#Using_a_dock)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Screen freezes before login prompt when using discrete graphics](#Screen_freezes_before_login_prompt_when_using_discrete_graphics)
 
 ## Installation
 
@@ -35,6 +36,10 @@ You will not get the power-savings of running from the intel-gfx and turning the
 If you choose this option, set "OS Detection for NVIDIA Optimus" BIOS Option to Disabled.
 
 See the [Bumblebee](/index.php/Bumblebee "Bumblebee") page for details on how to use both cards with linux.
+
+## Using a dock
+
+See [dockd](/index.php/Dockd "Dockd").
 
 ## Troubleshooting
 

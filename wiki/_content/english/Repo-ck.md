@@ -152,7 +152,7 @@ Server = http://repo-ck.com/$arch
 
 ```
 
-Alternatively, change the [pacman](/index.php/Pacman "Pacman") downloader to [wget](/index.php/Improve_pacman_performance#Using_wget "Improve pacman performance"), which automatically resumes downloads.
+Alternatively, change the [pacman](/index.php/Pacman "Pacman") downloader to [wget](/index.php/Pacman/Tips_and_tricks#wget "Pacman/Tips and tricks"), which automatically resumes downloads.
 
 See [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1422475#p1422475) for an explanation of these issues.
 

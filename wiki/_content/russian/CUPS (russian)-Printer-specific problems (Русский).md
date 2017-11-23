@@ -18,26 +18,26 @@
     *   [1.3 Обновление прошивки](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D1.88.D0.B8.D0.B2.D0.BA.D0.B8)
 *   [2 Canon](#Canon)
     *   [2.1 CARPS](#CARPS)
-    *   [2.2 USB over IP (BJNP)](#USB_over_IP_.28BJNP.29)
+    *   [2.2 USB через IP (BJNP)](#USB_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_IP_.28BJNP.29)
 *   [3 Dell](#Dell)
 *   [4 Epson](#Epson)
-    *   [4.1 Utilities](#Utilities)
+    *   [4.1 Утилиты](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B)
         *   [4.1.1 escputil](#escputil)
         *   [4.1.2 mtink](#mtink)
         *   [4.1.3 Stylus-toolbox](#Stylus-toolbox)
-    *   [4.2 Custom drivers](#Custom_drivers)
+    *   [4.2 Пользовательские драйверы](#.D0.9F.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B8.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B_2)
         *   [4.2.1 Avasys](#Avasys)
 *   [5 HP](#HP)
     *   [5.1 HPLIP Driver](#HPLIP_Driver)
 *   [6 Konica](#Konica)
 *   [7 Lexmark](#Lexmark)
-    *   [7.1 Utilities](#Utilities_2)
-    *   [7.2 Custom drivers](#Custom_drivers_2)
+    *   [7.1 Utilities](#Utilities)
+    *   [7.2 Custom drivers](#Custom_drivers)
 *   [8 Oki](#Oki)
 *   [9 Ricoh](#Ricoh)
 *   [10 Samsung](#Samsung)
 *   [11 Xerox or FujiXerox](#Xerox_or_FujiXerox)
-    *   [11.1 Custom drivers](#Custom_drivers_3)
+    *   [11.1 Custom drivers](#Custom_drivers_2)
         *   [11.1.1 Phaser 3100MFP](#Phaser_3100MFP)
         *   [11.1.2 Phaser 6000B](#Phaser_6000B)
         *   [11.1.3 Phaser 6125N](#Phaser_6125N)
@@ -244,62 +244,62 @@ ftp $PRINTER_IP
 
 ### CARPS
 
-Some of Canon's printers use Canon's proprietary Canon Advanced Raster Printing System (CARPS) driver. [Rainbow Software](http://www.rainbow-software.org/2014/01/23/cups-driver-for-canon-carps-printers/) have managed to reverse engineer the CARPS data format and have successfully created a CARPS CUPS driver, which is available as [carps-cups](https://aur.archlinux.org/packages/carps-cups/). The project's [GitHub](https://github.com/ondrej-zary/carps-cups) page includes a list of working printers.
+Некоторые из принтеров Canon используют проприетарный драйвер Canon Advanced Raster Printing System (CARPS). [Rainbow Software](http://www.rainbow-software.org/2014/01/23/cups-driver-for-canon-carps-printers/) удалось перепроектировать формат данных CARPS и успешно создать драйвер CUPS CARPS, который доступен как [carps-cups](https://aur.archlinux.org/packages/carps-cups/). На странице [GitHub](https://github.com/ondrej-zary/carps-cups) проекта представлен список поддерживающих принтеров.
 
-### USB over IP (BJNP)
+### USB через IP (BJNP)
 
-Some Canon printers use Canon's proprietary USB over IP BJNP protocol to communicate over the network. There is a CUPS backend for this, which is available as [cups-bjnp](https://aur.archlinux.org/packages/cups-bjnp/).
+Некоторые принтеры Canon используют проприетарный протокол USB по протоколу IP BJNP для связи по сети. Для этого есть бэкэнд CUPS, который доступен как [cups-bjnp](https://aur.archlinux.org/packages/cups-bjnp/).
 
 ## Dell
 
-| Printer | Driver/filter | Notes |
-| 1250C | [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/) | See [http://cybercom.net/~dcoffin/hbpl](http://cybercom.net/~dcoffin/hbpl), the patch has been merged into upstream. The printer may also work with the [Xerox Phaser 6000B driver](#Phaser_6000B). |
+| Принтер | Драйвер/фильтр | Примечание |
+| 1250C | [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/) | Смотрите [http://cybercom.net/~dcoffin/hbpl](http://cybercom.net/~dcoffin/hbpl), патч был объединен в восходящий поток. Принтер также работает с драйвером [Xerox Phaser 6000B](#Phaser_6000B). |
 | E515,
 
 E515dw
 
- | Install [Dell's driver](http://downloads.dell.com/FOLDER03040853M/1/Printer_E515dw_Driver_Dell_A00_LINUX.zip). | Both *e515dwcupswrapper-3.2.0-1.i386.deb* and *e515dwlpr-3.2.0-1.i386.deb* need to be installed. You could either write a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), use [debtap](https://aur.archlinux.org/packages/debtap/), or use [dpkg](https://aur.archlinux.org/packages/dpkg/) (using dpkg is not recommended as the files will not be managed by [pacman](/index.php/Pacman "Pacman")). The driver works on both the x86_64 and i386 platforms, but may require [multilib](/index.php/Multilib "Multilib"). |
-| Printer | Driver/filter | Notes |
+ | Установите [драйвер Dell](http://downloads.dell.com/FOLDER03040853M/1/Printer_E515dw_Driver_Dell_A00_LINUX.zip). | Должны быть установлены как *e515dwcupswrapper-3.2.0-1.i386.deb*, так и *e515dwlpr-3.2.0-1.i386.deb*. Вы можете написать [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)"), используя [debtap](https://aur.archlinux.org/packages/debtap/), или использовать [dpkg](https://aur.archlinux.org/packages/dpkg/) (использование dpkg не рекомендуется, так как файлы не будут управляться с помощью [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)")). Драйвер работает как на платформах x86_64, так и на i386, но может потребоваться [multilib](/index.php/Multilib_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Multilib (Русский)"). |
+| Принтер | Драйвер/фильтр | Примечание |
 
 ## Epson
 
-[epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) is a driver for the Epson Inkjet Printer Driver (ESC/P-R) for Linux.
+[epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) - драйвер принтера Epson Inkjet (ESC/P-R) для Linux.
 
-There is a large selection of printer drivers/filters available in the [AUR](/index.php/AUR "AUR").
+В [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)") имеется большой выбор драйверов/фильтров для принтеров Epson.
 
-| Printer | Driver/filter | Notes |
+| Принтер | Драйвер/фильтр | Примечание |
 | AcuLaser CX11(NF) | [epson-alcx11-filter](https://aur.archlinux.org/packages/epson-alcx11-filter/) |
-| AcuLaser C900 | This printer uses Epson's driver, with a device URI of '**usb://EPSON/AL-C900'**, and may need the pipsplus service to be running. |
+| AcuLaser C900 | Этот принтер использует драйвер Epson с URI устройства '**usb://EPSON/AL-C900'**, и для его запуска может понадобиться служба pipsplus. |
 | TX125 | [epson-inkjet-printer-n10-nx127](https://aur.archlinux.org/packages/epson-inkjet-printer-n10-nx127/) |
-| LP-S5000 | This printer requires a [custom driver from Avasys](#Avasys). |
-| Printer | Driver/filter | Notes |
+| LP-S5000 | Этот принтер требует [пользовательский драйвер от Avasys](#Avasys). |
+| Принтер | Драйвер/фильтр | Примечание |
 
-### Utilities
+### Утилиты
 
 #### escputil
 
-escputil is part of the [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) package, and performs some utility functions on Epson printers such as nozzle cleaning.
+escputil является частью пакета [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) и выполняет некоторые служебные функции на принтерах Epson, таких как очистка сопел.
 
 #### mtink
 
-This is a printer status monitor which enables to get the remaining ink quantity, to print test patterns, to reset printer and to clean nozzle. It use an intuitive graphical user interface.
+Это монитор состояния принтера, который позволяет получить оставшееся количество чернил, распечатать тестовые шаблоны, сбросить принтер и очистить сопло. Он использует интуитивно понятный графический интерфейс пользователя.
 
 #### Stylus-toolbox
 
-This is a GUI using escputil and cups drivers. It supports nearly all USB printer of Epson and displays ink quantity, can clean and align print heads and print test patterns.
+Это графический интерфейс с использованием драйверов escputil и cups. Он поддерживает почти все USB-принтеры Epson и отображает количество чернил, может очищать и выравнивать печатающие головки и печатать тестовые образцы.
 
-### Custom drivers
+### Пользовательские драйверы
 
 #### Avasys
 
-**Warning:** This section involves installing packages without [pacman](/index.php/Pacman "Pacman"). These directions should ideally be automated with a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+**Важно:** Этот раздел включает установку пакетов без [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)"). В идеале эти направления должны быть автоматизированы с помощью [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)").
 
-"Source" code of the driver is available on the [avasys website](http://www.avasys.jp), in Japanese, however it includes a 32 bit binary which will cause problem on 64 bit system.
+"Исходный" код драйвера доступен на [веб-сайте avasys](http://www.avasys.jp) с японским языком. Он содержит 32-битный двоичный код, который вызовет проблему в 64-битной системе.
 
-*   [Install](/index.php/Install "Install") the [psutils](https://www.archlinux.org/packages/?name=psutils), [bc](https://www.archlinux.org/packages/?name=bc), [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5) packages ([lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5) on 64bit).
+*   [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакеты [psutils](https://www.archlinux.org/packages/?name=psutils), [bc](https://www.archlinux.org/packages/?name=bc), [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5) ([lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5) для 64-битной).
 
-*   Download the source code of the driver.
-*   Compile and install the driver.
+*   Загрузите исходный код драйвера.
+*   Скомпилируйте и установите драйвер.
 
 ```
 $ ./configure --prefix=/usr
@@ -308,7 +308,7 @@ $ make
 
 ```
 
-If you have any problems on a 64 system, some other lib32 libraries may be required. Please adjust this page if that is the case.
+Если у вас есть проблемы в 64-битной системе, могут потребоваться некоторые другие библиотеки lib32\. Пожалуйста, исправьте эту страницу, если это так.
 
 ## HP
 
