@@ -1,3 +1,8 @@
+Related articles
+
+*   [AUR helpers](/index.php/AUR_helpers "AUR helpers")
+*   [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines")
+
 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) је репозиторијум који води заједница и намењен је корисницима Arch линукса. Садржи описе пакета ([PKGBUILDs](/index.php/PKGBUILD "PKGBUILD")) који дозвољавају компајлирање пакета из извора коришћењем [makepkg](/index.php/Makepkg "Makepkg") и инсталирање уз помоћ [pacman](/index.php/Pacman "Pacman"). AUR је креиран да би се организовали и делили нови пакети из заједнице и да би се омогућило да се популарни пакети брже додају у [[community]](#.5Bcommunity.5D) репозиторијум. Овај документ објашњава како корисници могу да приступе и искористе AUR.
 
 Добар део нових пакета који улазе у официјалне репозиторијуме потичу из AUR-а. У AUR-у, корисници могу да допринесу својим пакетима (PKGBUILD и слични фајлови). AUR заједница има могућност гласања за и против пакета у AUR-у. Ако пакет постане довољно популаран -- под условом да има компатибилну лиценцу и добру технику паковања -- он може да уђе у [community] репозиторијум (директно доступан преко `pacman` или `abs`).

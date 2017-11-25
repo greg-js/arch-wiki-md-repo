@@ -1,3 +1,7 @@
+Articoli correlati
+
+*   [GTK+_(Italiano)](/index.php/GTK%2B_(Italiano) "GTK+ (Italiano)")
+
 Questo articolo descrive la configurazione dettagliata delle Qt e GTK+ per assicurare uno stile delle applicazioni uniforme. Questo articolo copre configurazione, motore dei temi, trucchi e troubleshooting.
 
 ## Contents

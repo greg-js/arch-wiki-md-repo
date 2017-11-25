@@ -107,17 +107,17 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 
 *   全局代理
 
-使用[Iptables_(简体中文)](/index.php/Iptables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Iptables (简体中文)")等工具，桌面环境用户可使用桌面设置中网络设置里的代理功能。
+使用[Iptables (简体中文)](/index.php/Iptables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Iptables (简体中文)")等工具，桌面环境用户可使用桌面设置中网络设置里的代理功能。
 
 **注意:** 使用全局代理会使所有的连接通过shadowsocks服务器中转，一般不建议使用全局代理。
 
 *   程序设置自身代理
 
-不少程序都能在其设置中添加代理，只需要在其设置中找到网络相关配置，添加socks v5代理，参照本地配置文件中的ip和port填写即可。例如浏览器的配置可参考下文[Shadowsocks_(简体中文)#浏览器配置](/index.php/Shadowsocks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.B5.8F.E8.A7.88.E5.99.A8.E9.85.8D.E7.BD.AE "Shadowsocks (简体中文)")）。
+不少程序都能在其设置中添加代理，只需要在其设置中找到网络相关配置，添加socks v5代理，参照本地配置文件中的ip和port填写即可。例如浏览器的配置可参考下文[#浏览器配置](#.E6.B5.8F.E8.A7.88.E5.99.A8.E9.85.8D.E7.BD.AE)）。
 
 *   使用工具进行临时代理
 
-例如[proxychains](https://www.archlinux.org/packages/?name=proxychains)（参看[Proxy_settings#Using_a_SOCKS_proxy](/index.php/Proxy_settings#Using_a_SOCKS_proxy "Proxy settings")）和[redsocks-git](https://aur.archlinux.org/packages/redsocks-git/)。
+例如[proxychains](https://www.archlinux.org/packages/?name=proxychains)（参看[Proxy settings#Using a SOCKS proxy](/index.php/Proxy_settings#Using_a_SOCKS_proxy "Proxy settings")）和[redsocks-git](https://aur.archlinux.org/packages/redsocks-git/)。
 
 *   转换为http代理
 
@@ -146,7 +146,7 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 
 ##### 浏览器配置
 
-**提示：** 浏览器直接使用[SOCKS](https://en.wikipedia.org/wiki/SOCKS "wikipedia:SOCKS")代理时，你可能需要使用[privoxy](/index.php/Privoxy "Privoxy")等辅助程序，因为一般浏览器会泄漏你的DNS请求，从而减少你的匿名，参看前文[Shadowsocks_(简体中文)#配置代理](/index.php/Shadowsocks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE.E4.BB.A3.E7.90.86 "Shadowsocks (简体中文)")中转化为http代理一节。
+**提示：** 浏览器直接使用[SOCKS](https://en.wikipedia.org/wiki/SOCKS "wikipedia:SOCKS")代理时，你可能需要使用[privoxy](/index.php/Privoxy "Privoxy")等辅助程序，因为一般浏览器会泄漏你的DNS请求，从而减少你的匿名，参看前文[#配置代理](#.E9.85.8D.E7.BD.AE.E4.BB.A3.E7.90.86)中转化为http代理一节。
 
 *   firefox
 

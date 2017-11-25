@@ -892,7 +892,7 @@ Use the `--key-file` option when opening the LUKS device:
 
 ### Unlocking a secondary partition at boot
 
-If the keyfile for a secondary file system is itself stored inside an encrypted root, it is safe while the system is powered off but can be sourced to automatically unlock the mount during with boot via [crypttab](/index.php/Crypttab "Crypttab"). Following from the first example above using [UUID](/index.php/Persistent_block_device_naming#by-uuid "Persistent block device naming"):
+If the keyfile for a secondary file system is itself stored inside an encrypted root, it is safe while the system is powered off but can be sourced to automatically unlock the mount during with boot via [crypttab](/index.php/Crypttab "Crypttab"). Following from the first example above using [UUID](/index.php/UUID "UUID"):
 
  `/etc/crypttab` 
 ```

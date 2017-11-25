@@ -1,3 +1,8 @@
+Related articles
+
+*   [Arch Linux](/index.php/Arch_Linux "Arch Linux")
+*   [The Arch Way](/index.php/The_Arch_Way "The Arch Way")
+
 Halaman ini berisi tentang perbandingan antara Archlinux dengan distribusi GNU/Linux lain serta sistem operasi yang menyerupai UNIX. Sehingga Anda dapat tahu apakah Archlinux adalah sistem operasi yang cocok untuk Anda atau tidak.Namun,mencoba secara langsung Archlinux adalah cara terbaik untuk membandingkan Archlinux dengan sistem operasi lainnya.
 
 ## Contents

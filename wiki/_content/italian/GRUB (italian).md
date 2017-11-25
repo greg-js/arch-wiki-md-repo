@@ -1,3 +1,13 @@
+Articoli correlati
+
+*   [GRUB Legacy (Italiano)](/index.php/GRUB_Legacy_(Italiano) "GRUB Legacy (Italiano)")
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
+*   [Master Boot Record (Italiano)](/index.php/Master_Boot_Record_(Italiano) "Master Boot Record (Italiano)")
+*   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
+*   [Unified Extensible Firmware Interface (Italiano)](/index.php/Unified_Extensible_Firmware_Interface_(Italiano) "Unified Extensible Firmware Interface (Italiano)")
+*   [GRUB EFI Examples](/index.php/GRUB_EFI_Examples "GRUB EFI Examples")
+
 [GRUB](http://www.gnu.org/software/grub/) - da non confondere con [GRUB Legacy](/index.php/GRUB_Legacy_(Italiano) "GRUB Legacy (Italiano)") - è la nuova versione del GRand Unified Bootloader. GRUB deriva da [PUPA](http://www.nongnu.org/pupa/), un progetto di ricerca mirato al miglioramento di GRUB Legacy: esso è stato infatti totalmente riscritto, ripulendo il codice assicurando al tempo stesso una maggior modularità e portabilità. [[1]](http://www.gnu.org/software/grub/grub-faq.html#q1)
 
 In sintesi, il *bootloader* è il primo programma ad essere eseguito quando il computer si avvia. Ha il compito di caricare e trasferire il controllo al Kernel Linux, il quale, di contro, inizializza il resto del sistema operativo.

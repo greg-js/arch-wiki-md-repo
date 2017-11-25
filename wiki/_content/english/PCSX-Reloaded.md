@@ -1,4 +1,4 @@
-[PCSX-Reloaded](https://pcsxr.codeplex.com/), also known as PCSXR, PCSXr or PCSX-r, is a plugin based console emulator built on top of the [PSEmu Pro](https://en.wikipedia.org/wiki/PSEmu_Pro) plugin interface, which allows playing Play Station 1 games on a PC.
+[PCSX-Reloaded](https://pcsxr.codeplex.com/), also known as PCSXR, PCSXr or PCSX-r, is a plugin based console emulator built on top of the [PSEmu Pro](https://en.wikipedia.org/wiki/PSEmu_Pro "wikipedia:PSEmu Pro") plugin interface, which allows playing Play Station 1 games on a PC.
 
 Being a plugin based emulator allows more configurability, including setting screen resolutions and texture qualities higher than those supported by the original console.
 
@@ -88,7 +88,7 @@ Segfaults are [confirmed to happen](https://bbs.archlinux.org/viewtopic.php?pid=
 
 Open the file `~/.pcsxr/pcsxr.cfg` and change the `Cpu` property's value from `0` to `1` to fix it.
 
-You may also want to investigate the cause of the segfault by examining the [Core dump](/index.php/Core_dump "Core dump") with [coredumpctl](https://wiki.archlinux.org/index.php/Core_dump#Examining_a_core_dump).
+You may also want to investigate the cause of the segfault by examining the [Core dump](/index.php/Core_dump "Core dump") with [coredumpctl](/index.php/Core_dump#Examining_a_core_dump "Core dump").
 
 ### Opening the Pete's plugin interface doesn't work: error while loading shared libraries: libgtk-1.2.so.0
 

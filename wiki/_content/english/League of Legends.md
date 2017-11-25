@@ -274,7 +274,7 @@ This option should switch to the OpenGL renderer.
 
 **Warning:** This can cause some moderate to severe graphic bugs and blurry textures, depending on setup.
 
-If you are using mesa and are not using proprietary graphics drivers, you will need to set the following [[Environment Variables](https://wiki.archlinux.org/index.php/Environment_variables)] before launching the game, otherwise in-game text will not render properly:
+If you are using mesa and are not using proprietary graphics drivers, you will need to set the following [Environment variables](/index.php/Environment_variables "Environment variables") before launching the game, otherwise in-game text will not render properly:
 
 ```
  export MESA_GL_VERSION_OVERRIDE=4.5COMPAT

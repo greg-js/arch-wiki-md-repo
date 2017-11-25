@@ -1,3 +1,11 @@
+Artículos relacionados
+
+*   [Desktop Environment (Español)](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)")
+*   [Window Manager (Español)](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)")
+*   [Thunar (Español)](/index.php/Thunar_(Espa%C3%B1ol) "Thunar (Español)")
+*   [LXDE (Español)](/index.php/LXDE_(Espa%C3%B1ol) "LXDE (Español)")
+*   [GNOME (Español)](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)")
+
 De Xfce - [Acerca de](http://www.xfce.org/about):
 
 *Xfce encarna la filosofía tradicional UNIX de modularidad y reutilización. Se compone de una serie de componentes que proporcionan toda la funcionalidad que se puede esperar de un moderno entorno de escritorio. Se empaquetan por separado y puede escogerse entre los paquetes disponibles para crear elentorno de trabajo personal óptimo.*

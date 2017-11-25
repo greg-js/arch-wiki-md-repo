@@ -182,7 +182,7 @@ To use OpenJDK, you have to install the [IcedTea](http://icedtea.classpath.org/w
 
 If you want to use Oracle's JRE, install the [jre](https://aur.archlinux.org/packages/jre/) package.
 
-**Note:** If you experience any problems with the Java plugin (e.g. it is not recognized by the browser), you can try this [solution](#Plugins_are_installed_but_not_working).
+**Note:** If you experience any problems with the Java plugin (e.g. it is not recognized by the browser), you can try [#Firefox: plugins are installed but not working](#Firefox:_plugins_are_installed_but_not_working).
 
 ## Pipelight
 

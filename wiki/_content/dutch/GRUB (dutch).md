@@ -1,3 +1,10 @@
+Related articles
+
+*   [GRUB2](/index.php/GRUB2 "GRUB2")
+*   [grub-gfx](/index.php/Grub-gfx "Grub-gfx")
+*   [LILO](/index.php/LILO "LILO")
+*   [MBR](/index.php/MBR "MBR")
+
 [GNU GRUB (Legacy)](https://www.gnu.org/software/grub/grub-legacy.en.html) is een [multiboot](http://www.gnu.org/software/grub/manual/multiboot/) bootloader onderhouden door het [GNU Project](/index.php/GNU_Project "GNU Project"). Het is een afgeleide van the GRand Unified Bootloader, dewelke origineel ontworpen en geimplementeerd werd door Erich Stefan Boleyn.
 
 Kort samengevat is de *bootloader* het eerste software programma dat wordt aangesproken wanneer de computer start. Het is verantwoordelijk voor het laden en transferen van de controle naar de linux kernel. De kernel op zijn beurt initialiseert de rest van het besturingssysteem.

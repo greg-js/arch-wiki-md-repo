@@ -74,6 +74,7 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
     *   [4.6 id_dsa refused by OpenSSH 7.0](#id_dsa_refused_by_OpenSSH_7.0)
     *   [4.7 No matching key exchange method found by OpenSSH 7.0](#No_matching_key_exchange_method_found_by_OpenSSH_7.0)
     *   [4.8 tmux/screen session killed when disconnecting from SSH](#tmux.2Fscreen_session_killed_when_disconnecting_from_SSH)
+    *   [4.9 SSH session stops responding](#SSH_session_stops_responding)
 *   [5 See also](#See_also)
 
 ## OpenSSH
@@ -975,6 +976,10 @@ The best resolution for these failures is to upgrade/configure the server to not
 If your processes get killed at the end of the session, it is possible that you are using socket activation and it gets killed by [systemd](https://www.archlinux.org/packages/?name=systemd) when it notices that the SSH session process exited. In that case there are two solutions. One is to avoid using socket activation by using `ssh.service` instead of `ssh.socket`. The other is to set `KillMode=process` in the Service section of `ssh@.service`.
 
 The `KillMode=process` setting may also be useful with the classic `ssh.service`, as it avoids killing the SSH session process or the [screen](https://www.archlinux.org/packages/?name=screen) or [tmux](https://www.archlinux.org/packages/?name=tmux) processes when the server gets stopped or restarted.
+
+### SSH session stops responding
+
+SSH responds to [flow control commands](https://en.wikipedia.org/wiki/Software_flow_control "wikipedia:Software flow control") `XON` and `XOFF`. It will freeze/hang/stop responding when you hit `Ctrl+s`. Use `Ctrl+q` to resume your session.
 
 ## See also
 

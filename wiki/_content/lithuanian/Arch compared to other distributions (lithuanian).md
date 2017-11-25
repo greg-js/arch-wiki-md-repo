@@ -1,3 +1,8 @@
+Related articles
+
+*   [Arch Linux (Lietuviškai)](/index.php/Arch_Linux_(Lietuvi%C5%A1kai) "Arch Linux (Lietuviškai)")
+*   [The Arch Way (Lietuviškai)](/index.php/The_Arch_Way_(Lietuvi%C5%A1kai) "The Arch Way (Lietuviškai)")
+
 Šitas puslapis bando sulyginti Arch Linux su kitomis populiariomis GNU/Linux distribucijomis ir UNIX tipo operacinėmis sistemomis. Sekantys apibūdinimai yra trumpi apibūdinimai, kurios galėtų padėti žmogui apsispręsti ar Arch Linux gali patenkinti jo poreikius. Nors apžvalgos ir apibūdinimai gali būti naudingi, patirtis iš pirmų rankų visada yra geriausias būdas palyginti distribucijas.
 
 ## Contents

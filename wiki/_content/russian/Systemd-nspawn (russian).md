@@ -74,7 +74,7 @@ Related articles
 
 После запуска контейнера, войдите в систему как "root" без пароля.
 
-Контейнер может быть выключен, запустив `poweroff` внутри контейнера. От root, контейнеры можно управлять с помощью метода [machinectl](#machinectl) инструмент.
+Контейнер может быть выключен, запустив `poweroff` внутри контейнера. От root, контейнеры можно управлять с помощью метода [machinectl](#machinectl)инструмент.
 
 **Note:** To terminate the *session* from within the container, hold `Ctrl` and rapidly press `]` three times. Non-US keyboard users should use `%` instead of `]`.
 

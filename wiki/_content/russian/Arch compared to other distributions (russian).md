@@ -1,3 +1,9 @@
+Ссылки по теме
+
+*   [Arch Linux (Русский)](/index.php/Arch_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Linux (Русский)")
+*   [The Arch Way (Русский)](/index.php/The_Arch_Way_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "The Arch Way (Русский)")
+*   [Arch based distributions (active)](/index.php/Arch_based_distributions_(active) "Arch based distributions (active)")
+
 Эта страница написана с целью показать сходства и различия между Arch и другими популярными дистрибутивами GNU/Linux. Этот вопрос задают очень часто, и хорошо было бы иметь стандартный ответ. Тем не менее, учтите: лучший способ сравнить дистрибутивы между собой — установить и попробовать самому. Текст ниже призван лишь дать достаточно информации, чтобы вы решили, подходит вам Arch или нет.
 
 ## Contents

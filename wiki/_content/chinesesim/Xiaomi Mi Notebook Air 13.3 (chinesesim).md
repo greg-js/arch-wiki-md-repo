@@ -37,7 +37,7 @@
 *   安全-> 关闭 Secure Boot
 *   点击设置密码，但是把"新密码"一栏留空，可以实现重置密码
 
-请参考 [Installation_guide_(简体中文)](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")获取更多安装帮助，安装过程应该不会有什么问题。
+请参考 [Installation guide (简体中文)](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")获取更多安装帮助，安装过程应该不会有什么问题。
 
 **Note:** 你的SSD硬盘叫 `nvme0n1`, 而不是 `sda`.
 
@@ -89,7 +89,7 @@ EndSection
 
 ### Fn功能键
 
-默认Fn键是使能的，比如 按 F1 可以静音。 如果按这些Fn功能键没有反应，那么很可能你使用的是窗口管理器 [Window_manager_(简体中文)](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)") 而不是桌面环境 [Desktop_environment_(简体中文)](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")。这时你需要添加相应的配置，比如利用[Xbindkeys](/index.php/Xbindkeys "Xbindkeys") 或 [i3](/index.php/I3 "I3")的 `bindsym`。
+默认Fn键是使能的，比如 按 F1 可以静音。 如果按这些Fn功能键没有反应，那么很可能你使用的是窗口管理器 [Window manager (简体中文)](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)") 而不是桌面环境 [Desktop environment (简体中文)](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")。这时你需要添加相应的配置，比如利用[Xbindkeys](/index.php/Xbindkeys "Xbindkeys") 或 [i3](/index.php/I3 "I3")的 `bindsym`。
 
 大多数Fn功能键返回特定的键码，下面是一张表格：
 

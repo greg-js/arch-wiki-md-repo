@@ -30,7 +30,7 @@ Other drivers may be installed manually instead:
 *   PowerVR: [https://imgtec.com/vulkan](https://imgtec.com/vulkan)
 *   Adreno: [https://developer.qualcomm.com/software/adreno-gpu-sdk/gpu](https://developer.qualcomm.com/software/adreno-gpu-sdk/gpu)
 
-For Vulkan application development, [install](/index.php/Install "Install") [vulkan-headers](https://www.archlinux.org/packages/?name=vulkan-headers), and optional [vulkan-validation-layers](https://www.archlinux.org/packages/?name=vulkan-validation-layers).
+For Vulkan application development, [install](/index.php/Install "Install") [vulkan-headers](https://www.archlinux.org/packages/?name=vulkan-headers), and optional [vulkan-validation-layers](https://www.archlinux.org/packages/?name=vulkan-validation-layers) (you can find vulkaninfo tool in here).
 
 ## Vulkan Hardware Database
 

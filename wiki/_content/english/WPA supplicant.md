@@ -42,7 +42,7 @@ Once the authentication is successful, it will be possible to connect to the net
 
 ## Connecting with wpa_cli
 
-This connection method allows scanning for the available networks, making use of *wpa_cli*, a command line tool which can be used to interactively configure *wpa_supplicant* at runtime. See [wpa_cli(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8) for details.
+This connection method allows scanning for available networks, making use of *wpa_cli*, a command line tool which can be used to configure *wpa_supplicant*. See [wpa_cli(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8) for details.
 
 In order to use *wpa_cli*, a control interface must be specified for *wpa_supplicant*, and it must be given the rights to update the configuration. Do this by creating a minimal configuration file:
 
@@ -70,7 +70,10 @@ At this point run:
 
 This will present an interactive prompt (`>`), which has tab completion and descriptions of completed commands.
 
-**Tip:** The default location of the control socket is `/var/run/wpa_supplicant/`. A custom path can be set manually with the `-p` option to match the *wpa_supplicant* configuration. It is also possible to specify the interface to be configured with the `-i` option; otherwise, the first found wireless interface managed by *wpa_supplicant* will be used.
+**Tip:**
+
+*   The default location of the control socket is `/var/run/wpa_supplicant/`. A custom path can be set manually with the `-p` option to match the *wpa_supplicant* configuration.
+*   It is possible to specify the interface to be configured with the `-i` option; otherwise, the first found wireless interface managed by *wpa_supplicant* will be used.
 
 Use the `scan` and `scan_results` commands to see the available networks:
 
@@ -146,7 +149,7 @@ See also [Help:Reading#Regular user or root](/index.php/Help:Reading#Regular_use
 **Tip:**
 
 *   Use quotes, if the input contains spaces. For example: `"secret passphrase"`.
-*   To discover your wireless network interface name, see [Network_configuration#Get current device names](/index.php/Network_configuration#Get_current_device_names "Network configuration").
+*   To discover your wireless network interface name, see [Network configuration#Get current device names](/index.php/Network_configuration#Get_current_device_names "Network configuration").
 *   Some unusually complex passphrases may require input from a file, e.g. `wpa_passphrase *MYSSID* < passphrase.txt`, or here strings, e.g. `wpa_passphrase *MYSSID* <<< "*passphrase*"`.
 
 Finally, you should obtain an IP address (e.g., using [Dhcpcd#Running](/index.php/Dhcpcd#Running "Dhcpcd")).
@@ -382,7 +385,8 @@ with a capital "v" (see [FS#51358](https://bugs.archlinux.org/task/51358)). You 
 
 ## See also
 
-*   [WPA Supplicant home](https://w1.fi/wpa_supplicant/)
+*   [wpa_supplicant home](https://w1.fi/wpa_supplicant/)
+*   [wpa_supplicant README](http://w1.fi/cgit/hostap/plain/wpa_supplicant/README) - contains full documentation of project, including *wpa_cli* commands not listed in manpage.
 *   [wpa_cli usage examples](https://gist.github.com/buhman/7162560)
 *   [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8)
 *   [wpa_supplicant.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.conf.5)

@@ -190,7 +190,7 @@ There is an extension which allows the use of an on-screen virtual keyboard. Fur
 
 ### Force a password store
 
-Since current Opera uses the same engine as Chromium does, you can force Opera to use a specific password store by launching it with the `--password-store` flag. For more details see [Chromium/Tips_and_tricks#Force_a_password_store](/index.php/Chromium/Tips_and_tricks#Force_a_password_store "Chromium/Tips and tricks").
+Since current Opera uses the same engine as Chromium does, you can force Opera to use a specific password store by launching it with the `--password-store` flag. For more details see [Chromium/Tips and tricks#Force a password store](/index.php/Chromium/Tips_and_tricks#Force_a_password_store "Chromium/Tips and tricks").
 
 ## Troubleshooting
 

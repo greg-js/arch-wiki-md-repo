@@ -1,3 +1,8 @@
+Related articles
+
+*   [AUR User Guidelines](/index.php/AUR_User_Guidelines "AUR User Guidelines")
+*   [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines")
+
 Biedt een overzicht van het Arch User Repository.
 
 ## Contents

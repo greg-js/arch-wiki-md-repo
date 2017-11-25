@@ -251,7 +251,7 @@ Note this model option is undocumented in the list of models available online, b
 
 **Note:** Reports **as of September 2013** suggest this model option is no longer required and should work automatically; but **as of October 2017** it still appears to be required for the microphone (but not the speakers).
 
-For additional microphone troubleshooting tips, see [Advanced_Linux_Sound_Architecture/Troubleshooting#Microphone](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Microphone "Advanced Linux Sound Architecture/Troubleshooting").
+For additional microphone troubleshooting tips, see [Advanced Linux Sound Architecture/Troubleshooting#Microphone](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Microphone "Advanced Linux Sound Architecture/Troubleshooting").
 
 ### Touchpad
 

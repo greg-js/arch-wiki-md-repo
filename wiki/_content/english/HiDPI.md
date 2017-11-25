@@ -401,7 +401,7 @@ According to [[3]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono app
 
 ### MATLAB
 
-Recent versions (R2017b) of [MATLAB](/index.php/Matlab "Matlab") allow to set the scale factor:
+Recent versions (R2017b) of [Matlab](/index.php/Matlab "Matlab") allow to set the scale factor:
 
 ```
 >> s = settings;s.matlab.desktop.DisplayScaleFactor
@@ -472,7 +472,7 @@ xrandr --output eDP-1 --auto --pos 0x(DxF) --output HDMI-1 --auto --scale [E]x[F
 
 You may adjust the "sharpness" parameter on your monitor settings to adjust the blur level introduced with scaling.
 
-**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available.[[4]](https://bbs.archlinux.org/viewtopic.php?pid=1670840)
+**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available. [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1670840) A potential workaround exists with configuring `ForceFullCompositionPipeline=On` on the `CurrentMetaMode` via `nvidia-settings`. For more info see [[5]](https://askubuntu.com/a/979551/763549).
 
 ### Mirroring
 

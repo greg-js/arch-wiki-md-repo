@@ -291,7 +291,7 @@ set record = +Sent
 
 ```
 
-Gmail saves automatically sent e-mail to `+[Gmail]/Sent`, so we do not want duplicates.
+Gmail automatically saves sent e-mail to `+[Gmail]/Sent`, so we do not want duplicates.
 
 ```
 unset record
@@ -934,7 +934,7 @@ See the [Mutt Reference](http://www.mutt.org/doc/manual/#index-format), [strftim
 
 By default Mutt uses the `%L` format string in the `index_format` variable, which will display:
 
-*   "To <list-name>", tf an address in the "To:" or "Cc:" header field matches an address defined by the user's `subscribe` command.
+*   "To <list-name>", if an address in the "To:" or "Cc:" header field matches an address defined by the user's `subscribe` command.
 *   Otherwise it displays the author name, or recipient name if the message is from you.
 
 If you use multiple email addresses in the same mailbox, make sure to configure the [alternates variable](https://dev.mutt.org/trac/wiki/UseCases/MultiAccounts#Settinguptheaddresses:alternates), so that Mutt knows which messages were from you.

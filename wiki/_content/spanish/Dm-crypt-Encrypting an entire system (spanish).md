@@ -241,7 +241,7 @@ Este método no permite abarcar volúmenes lógicos distribuidos en varios disco
 
 **Sugerencia:** Existen dos variantes de esta configuración:
 
-*   Las instrucciones de [Dm-crypt/Specialties#Encrypted system using a remote LUKS header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_remote_LUKS_header "Dm-crypt/Specialties") utilizan esta configuración con un encabezado LUKS remoto sobre un dispositivo USB para lograr una autenticación de dos factores con él.
+*   Las instrucciones de [Dm-crypt/Specialties#Encrypted system using a detached LUKS header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") utilizan esta configuración con un encabezado LUKS remoto sobre un dispositivo USB para lograr una autenticación de dos factores con él.
 *   Las instrucciones de [Pavel Kogan's blog](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/) muestran cómo cifrar la partición `/boot` mientras se mantiene sobre la partición principal de LUKS utilizando GRUB, pero sea consciente de este fallo [FS#43663](https://bugs.archlinux.org/task/43663).
 *   Las instrucciones de [Downgrading packages](/index.php/Downgrading_packages#Downgrading_the_kernel_on_a_system_using_LVM_on_LUKS "Downgrading packages") muestran cómo realizar el mantenimiento, desde la ISO, del sistema instalado.
 
@@ -491,7 +491,7 @@ Los discos cifrados con dm-crypt *plain* pueden ser más resistentes a los daño
 **Tip:** Si el cifrado sin cabeceras es su objetivo, pero no está seguro acerca de la falta de derivación de clave con el modo *plain*, entonces dispone de dos alternativas:
 
 *   [tcplay](/index.php/Tcplay "Tcplay") que ofrece cifrado sin cabeceras, pero con la función PBKDF2, o
-*   la modalidad LUKS de dm-crypt utilizando la opción `--header` de *cryptsetup*. No se podrá utilizar el hook estándar *encrypt*, pero dicho hook [puede ser modificado](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_remote_LUKS_header "Dm-crypt/Specialties").
+*   la modalidad LUKS de dm-crypt utilizando la opción `--header` de *cryptsetup*. No se podrá utilizar el hook estándar *encrypt*, pero dicho hook [puede ser modificado](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties").
 
 El escenario utiliza una memoria USB para el dispositivo de arranque y otra para almacenar la clave de cifrado. El esquema de particionado del disco es:
 

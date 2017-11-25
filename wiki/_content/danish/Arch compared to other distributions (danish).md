@@ -1,3 +1,8 @@
+Related articles
+
+*   [Arch Linux (Dansk)](/index.php/Arch_Linux_(Dansk) "Arch Linux (Dansk)")
+*   [The Arch Way (Dansk)](/index.php/The_Arch_Way_(Dansk) "The Arch Way (Dansk)")
+
 Denne side forsøger at drage sammenligninger mellem Arch Linux og andre populære GNU/Linux-distributioner og <tt>UNIX</tt>-lignende operativsystemer. De følgende opsummeringer er korte beskrivelser som kan hjælpe med at beslutte om Arch Linux vil dække dine behov. Selvom gennemgange og beskrivelser kan være nyttige, er førstehåndsoplevelser uanfægteligt den bedste måde til at sammenligne distributioner.
 
 ## Contents

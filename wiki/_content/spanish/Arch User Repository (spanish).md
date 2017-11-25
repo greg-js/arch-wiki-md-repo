@@ -1,3 +1,14 @@
+Artículos relacionados
+
+*   [AUR helpers](/index.php/AUR_helpers "AUR helpers")
+*   [AurJson](/index.php/AurJson "AurJson")
+*   [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines")
+*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
+*   [makepkg](/index.php/Makepkg "Makepkg")
+*   [pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
+*   [Official repositories (Español)](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
+*   [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)")
+
 Arch User Repository (AUR) es un repositorio promovido por los usuarios de la comunidad de Arch. Este contiene descripciones de los paquetes ([PKGBUILD](/index.php/PKGBUILD "PKGBUILD")) que le permiten compilar un paquete desde el código fuente con [makepkg](/index.php/Makepkg "Makepkg") y luego instalarlo a través de [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)"). AUR fue creado para organizar y compartir paquetes nuevos de la comunidad y ayudar a acelerar la inclusión de los paquetes más populares en el repositorio [[community]](#.5Bcommunity.5D). Este documento explica cómo los usuarios pueden acceder y utilizar AUR.
 
 Un buen número de paquetes nuevos que entran en los repositorios oficiales tienen su origen en AUR. En AUR, los usuarios pueden aportar sus propias compilaciones de paquetes (PKGBUILD y los archivos relacionados). La comunidad de AUR tiene la posibilidad de votar a favor o en contra de los paquetes de AUR. Si un paquete llega a ser lo suficientemente popular —siempre que tenga una licencia compatible y la técnica de un buen empaquetado— puede ser introducido en el repositorio [community] (directamente accesible por [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") o [abs](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)")).

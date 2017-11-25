@@ -113,7 +113,7 @@ $ alpine -p "{mailserver.org:143/user=jimbob123/tls}remote_pinerc"
 
 ```
 
-It may be desirable to make this command an alias in your [.bashrc](https://wiki.archlinux.org/index.php/Bash#Aliases).
+It may be desirable to make this command an alias in your [.bashrc](/index.php/Bash#Aliases "Bash").
 
 ## Tips and Tricks
 

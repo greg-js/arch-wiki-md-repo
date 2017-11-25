@@ -13,7 +13,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [lemonbar](https://aur.archlinux.org/packages/lemonbar/) package, or [lemonbar-git](https://aur.archlinux.org/packages/lemonbar-git/) for the development version.
+[Install](/index.php/Install "Install") the [lemonbar-git](https://aur.archlinux.org/packages/lemonbar-git/) package.
 
 ## Configuration
 
@@ -101,7 +101,7 @@ done
 
 #### XFT fonts
 
-The default lemonbar version does not support XFT fonts. To get support for XFT fonts, you need to install [lemonbar-xft-git](https://aur.archlinux.org/packages/lemonbar-xft-git/), which replaces [lemonbar](https://aur.archlinux.org/packages/lemonbar/).
+The default lemonbar version does not support XFT fonts. To get support for XFT fonts, you need to install [lemonbar-xft-git](https://aur.archlinux.org/packages/lemonbar-xft-git/), which replaces [lemonbar-git](https://aur.archlinux.org/packages/lemonbar-git/).
 
 To use different font with lemonbar, you need to pass `-f` option when starting lemonbar e.g. `lemonbar -f "Roboto Medium"`.
 

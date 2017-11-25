@@ -465,7 +465,7 @@ $ systemctl list-units --type=target
 
 В Arch Linux каталог `/var/log/journal/` является частью пакета [systemd](https://www.archlinux.org/packages/?name=systemd), и по умолчанию (когда в конфигурационном файле `/etc/systemd/journald.conf` параметр `Storage=` имеет значение `auto`) журнал записывается именно в `/var/log/journal/`. Если вы или какая-то программа удалит этот каталог, *systemd* **не** пересоздаст его автоматически и вместо этого будет писать свои журналы по непостоянному пути `/run/systemd/journal`. Однако, папка будет пересоздана, когда вы установите `Storage=persistent` и выполните `systemctl restart systemd-journald` (или перезагрузитесь).
 
-Сообщения в журнале классифицируются по приоритету и объектам. Классификация записей соответствует классическому протоколу [Syslog](https://en.wikipedia.org/wiki/Syslog) ([RFC 5424](https://tools.ietf.org/html/rfc5424)).
+Сообщения в журнале классифицируются по приоритету и объектам. Классификация записей соответствует классическому протоколу [Syslog](https://en.wikipedia.org/wiki/Syslog "wikipedia:Syslog") ([RFC 5424](https://tools.ietf.org/html/rfc5424)).
 
 ### Фильтрация вывода
 

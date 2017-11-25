@@ -1,5 +1,11 @@
 **翻譯狀態：** 本文章是 [General_Recommendations](/index.php/General_Recommendations "General Recommendations") 的翻譯版本。最近一次的翻譯時間：2014-01-22。點擊[本連結](https://wiki.archlinux.org/index.php?title=General_Recommendations&diff=0&oldid=283108)查看英文頁面之後的變更。
 
+相關文章
+
+*   [常見問答集](/index.php/FAQ_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "FAQ (正體中文)")
+*   [新手教學](/index.php/Beginners%27_Guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' Guide (正體中文)")
+*   [應用程式清單 (英)](/index.php/List_of_applications "List of applications")
+
 這份註釋索引文件列舉了其他熱門文章和重要資訊，善用這些資源可以幫您新安裝的 Arch 系統提升和新增功能。這裡所列出的頁面需要使用 [pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 從[官方倉庫](/index.php/Official_repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official repositories (正體中文)")安裝額外的軟體包，至於來自非官方的 [Arch 使用者倉庫](/index.php/Arch_User_Repository_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch User Repository (正體中文)")的軟體包，需要配置 [makepkg](/index.php/Makepkg "Makepkg")，另外可搭配 [AUR 幫助程式](/index.php/AUR_helper "AUR helper")使用。因此在繼續之前，應該徹底瞭解軟體包的管理概念。這裡假設讀者已經閱讀[新手教學](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)")或[安裝指南](/index.php/Installation_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Installation guide (正體中文)")，按照步驟安裝一個基本的 Arch Linux 系統。
 
 ## Contents

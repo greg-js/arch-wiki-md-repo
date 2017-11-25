@@ -1,3 +1,9 @@
+Ссылки по теме
+
+*   [ATI (Русский)](/index.php/ATI_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ATI (Русский)")
+*   [Intel graphics (Русский)](/index.php/Intel_graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Intel graphics (Русский)")
+*   [Nouveau (Русский)](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)")
+
 [Kernel Mode Setting](https://en.wikipedia.org/wiki/Mode_setting "wikipedia:Mode setting") (KMS) представляет собой метод для задания разрешения дисплея и глубины в пространстве ядра, а не в пространстве пользователя.
 
 Реализация KMS в ядре Linux активирует родное расширение в [framebuffer](/index.php/Framebuffer "Framebuffer") и допускает мгновенное переключение консолей (tty). KMS содержит новые технологии (такие как DRI2) которые помогают снизить количество артефактов и увеличить производительность в 3D, даже при включенном режиме энергосбережения.

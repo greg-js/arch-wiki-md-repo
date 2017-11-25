@@ -1,3 +1,10 @@
+Related articles
+
+*   [FAQ (Polski)](/index.php?title=FAQ_(Polski)&action=edit&redlink=1 "FAQ (Polski) (page does not exist)")
+*   [Installation guide (Polski)](/index.php/Installation_guide_(Polski) "Installation guide (Polski)")
+*   [Beginners' guide (Polski)](/index.php/Beginners%27_guide_(Polski) "Beginners' guide (Polski)")
+*   [List of applications (Polski)](/index.php?title=List_of_applications_(Polski)&action=edit&redlink=1 "List of applications (Polski) (page does not exist)")
+
 Ten dokument to zbiór popularnych artykułów i przydatnych informacji o dodawaniu funkcjonalności do zainstalowanego systemu Arch. Zakłada się, że czytelnicy przeczytali i wykonali instrukcje zawarte w [Beginners' guide (Polski)](/index.php/Beginners%27_guide_(Polski) "Beginners' guide (Polski)") lub [Installation guide (Polski)](/index.php/Installation_guide_(Polski) "Installation guide (Polski)") i zainstalowali podstawowy system. Zaznajomienie się z informacjami zawartymi w [#Administracja systemem](#Administracja_systemem) i [#Zarządzanie pakietami](#Zarz.C4.85dzanie_pakietami) jest *wymagane* do zrozumienia innych sekcji tej strony i pozostałych stron na wiki.
 
 ## Contents

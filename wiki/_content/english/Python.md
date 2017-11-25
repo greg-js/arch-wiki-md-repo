@@ -3,6 +3,7 @@ Related articles
 *   [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines")
 *   [Python/Virtual environment](/index.php/Python/Virtual_environment "Python/Virtual environment")
 *   [mod_wsgi](/index.php/Mod_wsgi "Mod wsgi")
+*   [Django](/index.php/Django "Django")
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wikipedia:Python (programming language)"):
 
@@ -232,3 +233,5 @@ Do not forget to make it [executable](/index.php/Executable "Executable"). After
 *   [Think Python](http://www.greenteapress.com/thinkpython/)
 *   [Pythonspot](https://pythonspot.com)
 *   [Learn Python Step by Step](http://www.techbeamers.com/python-tutorial-step-by-step/)
+*   [awesome-python](https://github.com/vinta/awesome-python) - A curated list of Python frameworks, libraries, software and resources.
+*   [boltons](https://github.com/mahmoud/boltons) - Constructs/recipes/snippets that would be handy in the standard library.

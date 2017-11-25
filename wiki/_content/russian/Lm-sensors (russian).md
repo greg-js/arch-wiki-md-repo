@@ -1,3 +1,9 @@
+Ссылки по теме
+
+*   [Fan Speed Control (Русский)](/index.php/Fan_Speed_Control_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fan Speed Control (Русский)")
+*   [hddtemp (Русский)](/index.php/Hddtemp_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Hddtemp (Русский)")
+*   [monitorix](/index.php/Monitorix "Monitorix")
+
 [lm_sensors](http://lm-sensors.org/) (Linux-monitoring sensors) - свободное ПО, состоящее из драйверов и утилит, позволяющее отслеживать температуру, напряжение, скорость вращения вентиляторов в вашей системе. Следует помнить, что набор датчиков индивидуален для каждой системы, поэтому некоторые возможности могут быть недоступны. 
 
 ## Contents

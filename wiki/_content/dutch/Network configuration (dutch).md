@@ -191,7 +191,7 @@ Zie [#netwerk managers](#netwerk_managers) voor een opsomming van opties voor ee
 
 ### Statisch IP adres
 
-Een statisch IP adres kan via de meeste, standaard, [netwerk managers](#network_managers) geconfigureerd worden. Welke manager ook gebruikt wordt, de volgend informatie zal voorhanden moeten zijn:
+Een statisch IP adres kan via de meeste, standaard, [netwerk managers](#netwerk_managers) geconfigureerd worden. Welke manager ook gebruikt wordt, de volgend informatie zal voorhanden moeten zijn:
 
 *   statisch IP adres
 *   Subnet mask, of mogelijk de [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing"), zoals `/24` de CIDR notatie is van het netmask `255.255.255.0`.
@@ -211,7 +211,7 @@ Echter, in een netwerk met meerdere guests (computers en/of servers) is het hand
 
 #### Handmatige toewijzing statisch adres
 
-Kan uitgevoerd worden met gebruik van het [iproute2](https://www.archlinux.org/packages/?name=iproute2) pakket. Dit is tevens een goode manier om de instellingen te testen, daar de aansluiting, op deze manier gemaakt, niet permanent is en bij een herstart verdwijnt. Allereerdt zor dat de [netwerk interface](#Device_names) geactiveerd is:
+Kan uitgevoerd worden met gebruik van het [iproute2](https://www.archlinux.org/packages/?name=iproute2) pakket. Dit is tevens een goode manier om de instellingen te testen, daar de aansluiting, op deze manier gemaakt, niet permanent is en bij een herstart verdwijnt. Allereerdt zor dat de [netwerk interface](#Device_namen) geactiveerd is:
 
 ```
 # ip link set *interface* up

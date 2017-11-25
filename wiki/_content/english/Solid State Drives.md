@@ -187,7 +187,7 @@ As noted in [#Hdparm shows "frozen" state](#Hdparm_shows_.22frozen.22_state) set
 
 It is possible that the issue you are encountering is a firmware bug which is not Linux specific, so before trying to troubleshoot an issue affecting the SSD device, you should first check if updates are available for:
 
-*   The [SSD's firmware](/index.php/Solid_State_Drives#Firmware "Solid State Drives")
+*   The [SSD's firmware](#Firmware)
 *   The [motherboard's BIOS/UEFI firmware](/index.php/Flashing_BIOS_from_Linux "Flashing BIOS from Linux")
 
 Even if it is a firmware bug it might be possible to avoid it, so if there are no updates to the firmware or you hesitant on updating firmware then the following might help.

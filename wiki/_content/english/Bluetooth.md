@@ -485,6 +485,26 @@ bluez5 removed support for the HSP/HFP profiles (telephony headset for [TeamSpea
 
 If you are experiencing that your Thinkpad Bluetooth Laser Mouse rapidly connects and then (after a few milliseconds) disconnects again every few seconds (when you move the mouse or press a button), try pairing it with the code `0000` instead pairing without a code.
 
+If the above is unhelpful, the issue may be in the device timeout settings. Edit/create the file `/etc/bluetooth/input.conf` and apply the following changes:
+
+```
+# Configuration file for the input service
+# This section contains options which are not specific to any
+# particular interface
+[General]
+
+# Set idle timeout (in minutes) before the connection will
+# be disconnect (defaults to 0 for no timeout)
+IdleTimeout=0
+
+#Enable HID protocol handling in userspace input profile
+#Defaults to false(hidp handled in hidp kernel module)
+UserspaceHID=true
+
+```
+
+These changes will prevent device timeout in order to remain connected. The second setting enables userspace HID handling for bluetooth devices. Restart `bluetooth.service` to test changes. You also may need a reboot and to re-pair the device.
+
 ### Foxconn / Hon Hai / Lite-On Broadcom device
 
 Some of these devices require the firmware to be flashed into the device at boot. The firmware is not provided but can converted from a Microsoft Windows *.hex* file into a *.hcd* using [hex2hcd](https://github.com/jessesung/hex2hcd) (which is installed with [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils)).

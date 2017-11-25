@@ -304,7 +304,7 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
 ### 内核参数
 
-如果你的根文件系统位于逻辑分卷，则`root=` [内核参数](/index.php?title=%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0&action=edit&redlink=1 "内核参数 (page does not exist)")必须指向一个映射设备，比如`/dev/mapper/*vg-name*-*lv-name*`。
+如果你的根文件系统位于逻辑分卷，则`root=` [内核参数](/index.php/%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0 "内核参数")必须指向一个映射设备，比如`/dev/mapper/*vg-name*-*lv-name*`。
 
 你可能还需要`dolvm`的支持。
 
@@ -426,7 +426,7 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
 ###### 调整分区大小
 
-最后，你可以用你喜欢的[分区工具](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.86.E5.8C.BA.E5.B7.A5.E5.85.B7_2 "Partitioning (简体中文)")来缩小该分区。
+最后，你可以用你喜欢的[分区工具](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.86.E5.8C.BA.E5.B7.A5.E5.85.B7 "Partitioning (简体中文)")来缩小该分区。
 
 #### 逻辑卷
 

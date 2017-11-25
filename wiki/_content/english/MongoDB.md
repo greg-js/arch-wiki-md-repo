@@ -61,7 +61,7 @@ After running the repair as root, the files will be owned by the root user, whil
 
 ```
 
-Finally, if you copied the configuration file from mongodb [documentation](https://docs.mongodb.com/manual/reference/configuration-options/), remove these two lines and [restart](/index.php/Systemd#Using_units "Systemd") mongodb.service:
+Finally, if you copied the configuration file from mongodb [documentation](https://docs.mongodb.com/manual/reference/configuration-options/), remove these two lines and [restart](/index.php/Restart "Restart") mongodb.service:
 
  `/etc/mongodb.conf` 
 ```

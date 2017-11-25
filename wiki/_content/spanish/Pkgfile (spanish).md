@@ -44,7 +44,7 @@ core/archlinux-keyring usr/share/pacman/keyrings/archlinux-trusted
 core/archlinux-keyring usr/share/pacman/keyrings/archlinux.gpg
 ```
 
-Lo último se puede comparar con `pacman -Ql` (vea [Consultar la base de datos de paquetes](/index.php/Pacman_(Espa%C3%B1ol)#Consulta_de_bases_de_datos_de_paquetes "Pacman (Español)")), salvo que este se aplica a paquetes remotos.
+Lo último se puede comparar con `pacman -Ql` (vea [Consultar la base de datos de paquetes](/index.php/Pacman_(Espa%C3%B1ol)#Consultar_la_base_de_datos_de_los_paquetes "Pacman (Español)")), salvo que este se aplica a paquetes remotos.
 
 ## Comando no encontrado
 

@@ -1,3 +1,8 @@
+Articoli correlati
+
+*   [Arch Boot Process (Italiano)](/index.php/Arch_Boot_Process_(Italiano) "Arch Boot Process (Italiano)")
+*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
+
 [Syslinux](https://en.wikipedia.org/wiki/SYSLINUX [Wikipedia:FAT](https://en.wikipedia.org/wiki/FAT e [Btrfs](/index.php/Btrfs "Btrfs").
 
 **Nota:** Syslinux non può accedere a files che non si trovino nella partizione sulla quale è installato. Se si necessita della funzionalità multi-fs, si utilizzi un bootloader alternativo come [GRUB](/index.php/GRUB_(Italiano) "GRUB (Italiano)").

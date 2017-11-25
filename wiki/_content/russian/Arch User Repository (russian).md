@@ -1,3 +1,15 @@
+Ссылки по теме
+
+*   [Инструменты для работы с AUR](/index.php/%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B_%D0%B4%D0%BB%D1%8F_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B_%D1%81_AUR "Инструменты для работы с AUR")
+*   [AurJson](/index.php/AurJson "AurJson")
+*   [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines")
+*   [PKGBUILD (Русский)](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)")
+*   [Makepkg (Русский)](/index.php/Makepkg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Makepkg (Русский)")
+*   [pacman (Русский)](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)")
+*   [AUR Metadata](/index.php/AUR_Metadata "AUR Metadata")
+*   [Официальные репозитории](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8 "Официальные репозитории")
+*   [Arch Build System (Русский)](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)")
+
 Пользовательский репозиторий Arch (Arch User Repository, AUR) — это поддерживаемое сообществом хранилище ПО для пользователей Arch. Он содержит описания пакетов (файлы [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)")), которые позволят вам скомпилировать пакет из исходников с помощью [makepkg](/index.php/Makepkg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Makepkg (Русский)") и затем установить его, используя [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D1.8B "Pacman (Русский)"). AUR был создан, чтобы объединить и предоставить в общий доступ новые пакеты от сообщества и способствовать скорому включению популярных пакетов в репозиторий [community](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#community "Official repositories (Русский)"). На этой странице вы можете узнать как получить доступ к AUR и как его использовать.
 
 Большое количество пакетов, которые включаются в официальные репозитории, начинают свой путь с AUR. В AUR пользователи могут добавлять свои собственные сборки пакетов (`PKGBUILD` и другие необходимые файлы). Сообществу предоставлена возможность голосовать за эти пакеты или против них. Если пакет становится популярным, распространяется под подходящей лицензией и может быть собран без дополнительных сложностей, то, вероятно, он будет перенесен в репозиторий *community* (непосредственно доступный при помощи утилит [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") и [abs](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)")).

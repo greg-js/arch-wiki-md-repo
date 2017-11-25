@@ -1,3 +1,8 @@
+相關文章
+
+*   [Arch 使用者倉庫](/index.php/Arch_User_Repository "Arch User Repository")
+*   [非官方使用者倉庫](/index.php/Unofficial_User_Repositories "Unofficial User Repositories")
+
 生物學裡，[互利共生(Mutualism)](https://en.wikipedia.org/wiki/Mutualism "wikipedia:Mutualism")：是指在生物界中某兩物種間的一種互相依賴、雙方獲利的專性共生關係。這一觀念同樣適用於 Arch 社群裡主動積極想參與並貢獻一己之力於其所喜愛的 GNU / Linux 發行版的成員。這種參與不僅有利於社群的成員和他們的Archers同胞們，也能造福所有[自由和開放源碼軟體_(en)](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software")愛好者.
 
 ## Contents

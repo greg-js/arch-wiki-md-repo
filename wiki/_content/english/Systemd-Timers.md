@@ -27,8 +27,8 @@ Timers are [systemd](/index.php/Systemd "Systemd") unit files whose name ends in
 
 Timers are *systemd* unit files with a suffix of `.timer`. Timers are like other [unit configuration files](/index.php/Systemd#Writing_unit_files "Systemd") and are loaded from the same paths but include a `[Timer]` section which defines when and how the timer activates. Timers are defined as one of two types:
 
-*   **Monotonic timers** activate after a time span relative to a varying starting point. They stop if the computer is temporarily suspended or shut down. There are number of different monotonic timers but all have the form of: `On*Type*Sec=`. `OnBootSec` and `OnActiveSec` are common monotonic timers.
-*   **Realtime timers** (a.k.a. wallclock timers) activate on a calendar event (like cronjobs). The option `OnCalendar=` is used to define them.
+*   **Realtime timers** (a.k.a. wallclock timers) activate on a calendar event, the same way that cronjobs do. The option `OnCalendar=` is used to define them.
+*   **Monotonic timers** activate after a time span relative to a varying starting point. They stop if the computer is temporarily suspended or shut down. There are number of different monotonic timers but all have the form: `On*Type*Sec=`. Common monotonic timers include `OnBootSec` and `OnActiveSec`.
 
 For a full explanation of timer options, see the [systemd.timer(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5). The argument syntax for calendar events and time spans is defined in [systemd.time(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.time.7).
 

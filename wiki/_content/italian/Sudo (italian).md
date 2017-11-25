@@ -1,3 +1,8 @@
+Articoli correlati
+
+*   [Users and groups](/index.php/Users_and_Groups_(Italiano) "Users and Groups (Italiano)")
+*   [su](/index.php/Su "Su")
+
 Sudo (su "do") consente all'amministratore di sistema di delegare a certi utenti (o gruppi di utenti) il permesso e potere di eseguire alcuni, o tutti, i comandi in qualità di root, fornendo nel contempo traccia di tutti i comandi e le azioni eseguite.[[1]](http://www.gratisoft.us/sudo/)
 
 ## Contents

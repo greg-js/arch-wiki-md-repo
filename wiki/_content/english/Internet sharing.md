@@ -124,7 +124,7 @@ After that, you have to masquerade the `net0` adresses for `internet0`:
 
 ```
 
-You may want to add some more firewall restrictions on the forwarding (assuming the filter table already exists, like configured in [Nftables#Simple IP/IPv6 firewall](/index.php/Nftables#Simple_IP.2FIPv6_firewall "Nftables")):
+You may want to add some more firewall restrictions on the forwarding (assuming the filter table already exists, like configured in [Nftables#Simple IPv4/IPv6 firewall](/index.php/Nftables#Simple_IPv4.2FIPv6_firewall "Nftables")):
 
 ```
 # nft add chain inet filter forward { type filter hook forward priority 0 \; policy drop}

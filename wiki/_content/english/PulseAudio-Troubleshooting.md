@@ -551,7 +551,7 @@ and check if the module is activated by starting `pavucontrol`. Under `Recoding`
 
 Here is a list of possible 'aec_args' for 'aec_method=webrtc' with their default values [[2]](https://github.com/pulseaudio/pulseaudio/blob/master/src/modules/echo-cancel/webrtc.cc)[[3]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3):
 
-*   `analog_gain_control=1` - Analog AGC - 'Automatic Gain Control' done over changing the volume directly - Will most likely lead to [distortions](/index.php/PulseAudio/Troubleshooting#Microphone_distorted_due_to_automatic_adjustment "PulseAudio/Troubleshooting").
+*   `analog_gain_control=1` - Analog AGC - 'Automatic Gain Control' done over changing the volume directly - Will most likely lead to [distortions](#Microphone_distorted_due_to_automatic_adjustment).
 *   `digital_gain_control=0` - Digital AGC - 'Automatic Gain Control' done in post processing (higher CPU load).
 *   `experimental_agc=0` - Allow enabling of the webrtc experimental AGC mechanism.
 *   `agc_start_volume=85` - Initial volume when using AGC - Possible values 0-255 - A too low initial volume may prevent the AGC algorithm from ever raising the volume high enough [[4]](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/9.0/).
@@ -568,7 +568,7 @@ Here is a list of possible 'aec_args' for 'aec_method=webrtc' with their default
 *   `mic_geometry=x1,y1,z1,x2,y2,z2` - Only with "beamforming=1".
 *   `target_direction=a,e,r` - Only with "beamforming=1".
 
-If you are using the [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancelation "PulseAudio/Troubleshooting"), you probably don't want other applications to do additional audio post processing.
+If you are using the [module-echo-cancel](#Enable_Echo.2FNoise-Cancelation), you probably don't want other applications to do additional audio post processing.
 Here is a list for disabling audio post processing in following applications:
 
 *   Mumble:

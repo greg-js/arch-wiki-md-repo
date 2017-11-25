@@ -362,7 +362,7 @@ WantedBy=*default*.target
 
 Add `SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"` to `~/.pam_environment`. Then [enable](/index.php/Enable "Enable") or [start](/index.php/Start "Start") the service.
 
-**Note:** If you use GNOME, this environment variable is overridden by default. See [GNOME/Keyring#Disable_keyring_daemon_components](/index.php/GNOME/Keyring#Disable_keyring_daemon_components "GNOME/Keyring").
+**Note:** If you use GNOME, this environment variable is overridden by default. See [GNOME/Keyring#Disable keyring daemon components](/index.php/GNOME/Keyring#Disable_keyring_daemon_components "GNOME/Keyring").
 
 #### ssh-agent as a wrapper program
 
@@ -572,7 +572,7 @@ If you use the [GNOME](/index.php/GNOME "GNOME") desktop, the [GNOME Keyring](/i
 
 ### Store SSH keys with Kwallet
 
-For instructions on how to use kwallet to store your SSH keys, see [KDE Wallet#Using the KDE Wallet to store ssh keys](/index.php/KDE_Wallet#Using_the_KDE_Wallet_to_store_ssh_keys "KDE Wallet").
+For instructions on how to use kwallet to store your SSH keys, see [KDE Wallet#Using the KDE Wallet to store ssh key passhprases](/index.php/KDE_Wallet#Using_the_KDE_Wallet_to_store_ssh_key_passhprases "KDE Wallet").
 
 ### KeePass2 with KeeAgent plugin
 

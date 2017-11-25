@@ -1,3 +1,7 @@
+Ссылки по теме
+
+*   [Install from SSH (Русский)](/index.php/Install_from_SSH_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Install from SSH (Русский)")
+
 Этот документ описывает bootstrapping process, нужный для того, чтобы установить Arch Linux из уже работающего хоста Linux. После bootstrapping, установка продолжается так, как описано в [руководстве по установке](/index.php/Installation_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Installation guide (Русский)") Arch Linux.
 
 Установка Arch Linux из-под другого Linux полезна для:

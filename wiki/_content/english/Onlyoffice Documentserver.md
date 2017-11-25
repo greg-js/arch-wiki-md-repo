@@ -10,7 +10,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [onlyoffice-documentserver](https://aur.archlinux.org/packages/onlyoffice-documentserver/) package. Further you will need [Postgresql](/index.php/Postgresql "Postgresql") as a database backend and the [Redis](/index.php/Redis "Redis") and [rabbitmq](https://www.archlinux.org/packages/?name=rabbitmq) services installed.
+[Install](/index.php/Install "Install") the [onlyoffice-documentserver](https://aur.archlinux.org/packages/onlyoffice-documentserver/) package. Further you will need [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") as a database backend and the [Redis](/index.php/Redis "Redis") and [rabbitmq](https://www.archlinux.org/packages/?name=rabbitmq) services installed.
 
 ## Configuration
 

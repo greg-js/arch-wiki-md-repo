@@ -1,32 +1,3 @@
-## Що це таке
+Redirect to:
 
-`TIMEZONE` — це змінна, що вказується у файлі `/etc/rc.conf`. Вона вказує, час в якій часовій зоні показує годинник комп'ютера.
-
-## Що це може бути
-
-Повний перелік часових зон можна вивести на екран використавши команду:
-
-```
-pacman -Ql tzdata | grep zoneinfo | grep -v posix | grep -v right | grep -v .tab | grep -v /$ | sed "s@glibc /usr/share/zoneinfo/@ @"
-
-```
-
-## UTC чи localtime
-
-Апаратний годинник може бути встановлений на UTC або на local time. За звичай, на Linux машинах його встанолюють на час за Грівнічем (UTC). Якщо ж на машині встановлена ще й Microsoft Windows, його встановлюють на локальний час (local time).
-
-Налаштування режиму апаратного годинника відбувається шляхом правки змінної `HARDWARECLOCK`:
-
-```
-HARDWARECLOCK="UTC"
-
-```
-
-або
-
-```
-HARDWARECLOCK="localtime"
-
-```
-
-**Зауваження:** В поточній версії ініт-скрипти дозволяють встановлювати значення `HARDWARECLOCK`, відмінне від `"UTC"`, або порожне значення, — це рівнозначно `HARDWARECLOCK="localtime"`.
+*   [ArchWiki:Archive](/index.php/ArchWiki:Archive "ArchWiki:Archive")

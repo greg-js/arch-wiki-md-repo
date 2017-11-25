@@ -1,3 +1,11 @@
+Ссылки по теме
+
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
+*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
+*   [grub-gfx (Русский)](/index.php/Grub-gfx_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Grub-gfx (Русский)")
+*   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
+
 [GNU GRUB](http://www.gnu.org/software/grub/) это [Многосистемный](http://www.gnu.org/software/grub/manual/multiboot/) загрузчик. Он является ответвлением от GRUB,(GRand Unified Bootloader), который был разработан Эриком Стефаном Болейном (Erich Stefan Boleyn).
 
 Вкратце, *загрузчик* - это первая программа, которая загружается при старте компьютера. Она отвечает за загрузку и передачу управления ядру Linux. Ядро, в свою очередь, запускает остальную часть операционной системы.

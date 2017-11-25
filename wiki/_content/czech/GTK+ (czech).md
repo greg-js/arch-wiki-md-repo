@@ -1,3 +1,7 @@
+Související články
+
+*   [Uniform Look for QT and GTK Applications](/index.php/Uniform_Look_for_QT_and_GTK_Applications "Uniform Look for QT and GTK Applications")
+
 Tento článek popisuje konfiguraci témat GTK+ aplikací. GTK+ (GIMP Toolkit) je multiplatformní knihovna pro tvorbu grafických uživatelských rozhraní, původně stvořená pro [gimp](https://www.archlinux.org/packages/?name=gimp), ale v současnosti velmi oblíbená s bindingy pro mnoho programovacích jazyků. Tento článek prozkoumává nástroje pro konfigurací GTK+ témat, stylu, ikon, fontů a velikosti fontů. Popíše též detailní ruční konfiguraci.
 
 ## Contents

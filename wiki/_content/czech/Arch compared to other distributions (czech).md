@@ -1,3 +1,8 @@
+Související články
+
+*   [Arch Linux (Česky)](/index.php/Arch_Linux_(%C4%8Cesky) "Arch Linux (Česky)")
+*   [The Arch Way (Česky)](/index.php/The_Arch_Way_(%C4%8Cesky) "The Arch Way (Česky)")
+
 Tato stránka srovnává Arch Linux s ostatními populárními distribucemi GNU/Linuxu a UNIX-like operačními systémy. Následující přehled obsahuje stručné popisy, které vám mohou pomoci rozhodnout, jestli Arch Linux bude vyhovovat vašim potřebám. Mějte prosím na paměti, že nejlepším způsobem jak porovnat Arch s ostatními distribucemi je, že si ho nainstalujete a vyzkoušíte sami.
 
 ## Contents

@@ -149,7 +149,7 @@ Kolumna "dm-crypt +/- LUKS" oznacza funkcje cryptu dm dla LUKS ("+") i zwykłych
 | Główne zalety | longest-existing one; possibly the fastest; works on legacy systems | de-facto standard for block device encryption on Linux; very flexible | very portable, well-polished, self-contained solution | slightly faster than EncFS; individual encrypted files portable between systems | easiest one to use; supports non-root administration |
 | Dostępność w Arch Linux | musi ręcznie skompilować niestandardowe jądro | *kernel modules:* already shipped with default kernel; *tools:* [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) [core] | [truecrypt 7.1a-2](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/truecrypt&id=efe03070990f9e3554508bd982b1bd5a654aa095) [extra] (read-only features in later versions) | *kernel module:* already shipped with default kernel; *tools:* [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) [community] | [encfs](https://www.archlinux.org/packages/?name=encfs) [community] |
 | Licencja | GPL | GPL | custom
-[[1]](#See_also) | GPL | GPL |
+[[1](#See_also)] | GPL | GPL |
 | 
 
 ##### Podstawowa klasyfikacja
@@ -177,7 +177,7 @@ Kolumna "dm-crypt +/- LUKS" oznacza funkcje cryptu dm dla LUKS ("+") i zwykłych
 | Może być używany do szyfrowania przestrzeni wymiany | ✔ | ✔ | ✔ | ✖ | ✖ |
 | Może być używany bez wcześniejszego przydzielenia określonej ilości miejsca dla zaszyfrowanego kontenera danych | ✖ | ✖ | ✖ | ✔ | ✔ |
 | Może być używany do ochrony istniejących systemów plików bez blokowania dostępu do urządzenia, np. NFS lub Samba, przechowywanie w chmurze itp. | ✖
-[[2]](#See_also) | ✖ | ✖ | ✔ | ✔ |
+[[2](#See_also)] | ✖ | ✖ | ✔ | ✔ |
 | Umożliwia kopie zapasowe zaszyfrowanego pliku w trybie offline | ✖ | ✖ | ✖ | ✔ | ✔ |
 | 
 
@@ -213,9 +213,9 @@ Kolumna "dm-crypt +/- LUKS" oznacza funkcje cryptu dm dla LUKS ("+") i zwykłych
 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
 | Obsługa wielowątkowości |  ? | ✔
-[[8]](#See_also) | ✔ |  ? |  ? |
+[[8](#See_also)] | ✔ |  ? |  ? |
 | wsparcie szyfrowania sprzętowa akceleracja | ✔ | ✔ | ✔ | ✔ | ✔
-[[13]](#See_also) |
+[[13](#See_also)] |
 | 
 
 ##### Block device encryption specific
@@ -242,22 +242,22 @@ Kolumna "dm-crypt +/- LUKS" oznacza funkcje cryptu dm dla LUKS ("+") i zwykłych
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
 | Obsługiwane wersje jądra Linux | 2.0 lub nowszy | CBC-mode since 2.6.4, ESSIV 2.6.10, LRW 2.6.20, XTS 2.6.24 |  ? |  ? | 2.4 lub nowszy |
 | Szyfrowane dane można również uzyskać z poziomu systemu Windows | ✔
-(with [[3]](#See_also), [[14]](#See_also)) | ?
-(with [[4]](#See_also), [[14]](#See_also)) | ✔ |  ? |  ?
-[[9]](#See_also) |
+(with [[3](#See_also)], [[14](#See_also)]) | ?
+(with [[4](#See_also)], [[14](#See_also)]) | ✔ |  ? |  ?
+[[9](#See_also)] |
 | Zaszyfrowane dane można również uzyskać z systemu Mac OS X. |  ? |  ? | ✔ |  ? | ✔
-[[5]](#See_also) |
+[[5](#See_also)] |
 | Szyfrowane dane można również uzyskać z FreeBSD |  ? |  ? | ✖ |  ? | ✔
-[[6]](#See_also) |
+[[6](#See_also)] |
 | Używany przez |  ? | Debian/Instalator Ubuntu (szyfrowanie systemu)
 Instalator Fedory |  ? | Instalator Ubuntu (home dir encryption)
-Chromium OS (encryption of cached user data [[7]](#See_also)) |  ? |
+Chromium OS (encryption of cached user data [[7](#See_also)]) |  ? |
 
 ## Przygotowanie
 
 ### Wybór konfiguracji
 
-Która konfiguracja szyfrowania dysków jest odpowiednia, ponieważ zależy to od swoich celów (przeczytaj [#Dlaczego warto używać szyfrowania?](#Dlaczego_warto_u.C5.BCywa.C4.87_szyfrowania.3F) Powyżej i parametrów systemu.
+Która konfiguracja szyfrowania dysków jest odpowiednia, ponieważ zależy to od swoich celów (przeczytaj [#Po co używać szyfrowania?](#Po_co_u.C5.BCywa.C4.87_szyfrowania.3F) Powyżej i parametrów systemu.
 
 Między innymi będziesz musiał odpowiedzieć na następujące pytania:
 
@@ -484,7 +484,7 @@ Szyfrowanie dysków wykorzystuje "szyfry blokowe", które działają na blokach 
 | [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "wikipedia:Advanced Encryption Standard") | 128 bitów | 128, 192 i 256 bitów | *zatwierdzony przez NSA do ochrony informacji poufnych "SECRET" i "TOP SECRET" w USA (przy użyciu klucza o rozmiarze 192 lub 256 bitów* |
 | [Blowfish](https://en.wikipedia.org/wiki/Blowfish_(cipher) | 64 bitów | 32–448 bitów | *jeden z pierwszych bezpiecznych szyfrów, które stały się publicznie dostępne, a więc bardzo dobrze rozwinięty w Linuksie* |
 | [Twofish](https://en.wikipedia.org/wiki/Twofish "wikipedia:Twofish") | 128 bitów | 128, 192 i 256 bitów | *rozwinięty jako następca Blowfish, ale nie osiągnął tak powszechnego wykorzystania* |
-| [Serpent](https://en.wikipedia.org/wiki/Serpent_(cipher) | 128 bitów | 128, 192 i 256 bitów | Uważany za najbardziej bezpieczny z pięciu finalistów konkursu AES[[10]](#See_also)[[11]](#See_also)[[12]](#See_also). |
+| [Serpent](https://en.wikipedia.org/wiki/Serpent_(cipher) | 128 bitów | 128, 192 i 256 bitów | Uważany za najbardziej bezpieczny z pięciu finalistów konkursu AES[[10](#See_also)][[11](#See_also)][[12](#See_also)]. |
 
 Szyfrowanie / odszyfrowywanie sektora (patrz wyżej) uzyskuje się przez podzielenie go na małe bloki odpowiadające rozmiarowi bloku szyfru i po pewnym zestawie reguł (tak zwanym "trybie działania"), jak nałożyć kolejno szyfr na poszczególne bloki
 

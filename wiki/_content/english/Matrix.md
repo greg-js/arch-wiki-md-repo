@@ -34,7 +34,7 @@ The default synapse configuration enables the webclient feature. Unless you have
 
 **Note:** From the [developers website:](https://matrix.org/docs/projects/client/matrix-console.html) Matrix.org’s original reference AngularJS webclient has major performance issues and is not being actively maintained. Please see Riot and matrix-react-sdk for better alternatives.
 
-**Note:** Their is a bug with disabling the web_client. You need to edit multiple linses, see the issue [https://github.com/matrix-org/synapse/issues/2113](https://github.com/matrix-org/synapse/issues/2113)
+**Note:** There is a bug with disabling the web_client. You need to edit multiple lines, see the issue [https://github.com/matrix-org/synapse/issues/2113](https://github.com/matrix-org/synapse/issues/2113)
 
 ## Service
 

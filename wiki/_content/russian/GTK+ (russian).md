@@ -1,3 +1,10 @@
+Ссылки по теме
+
+*   [Единый вид приложений Qt и GTK](/index.php/%D0%95%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9_%D0%B2%D0%B8%D0%B4_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9_Qt_%D0%B8_GTK "Единый вид приложений Qt и GTK")
+*   [Qt (Русский)](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)")
+*   [GNU Project](/index.php/GNU_Project "GNU Project")
+*   [GTK+/Development](/index.php/GTK%2B/Development "GTK+/Development")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [GTK+](/index.php/GTK%2B "GTK+"). Дата последней синхронизации: 26 февраля 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=422340).
 
 C [сайта GTK+](http://www.gtk.org):

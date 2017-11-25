@@ -247,7 +247,7 @@ DEVPATH=="/devices/pci0000:00/0000:00:1f.2/host4/*", ENV{UDISKS_SYSTEM}="0"
 
 Because *udev* loads all modules asynchronously, they are initialized in a different order. This can result in devices randomly switching names. A *udev* rule can be added to use static device names.
 
-See also [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for block devices and [Network configuration#Device names](/index.php/Network_configuration#Device_names "Network configuration") for network devices.
+See also [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for block devices and [Network configuration#Change device name](/index.php/Network_configuration#Change_device_name "Network configuration") for network devices.
 
 #### Video devices
 

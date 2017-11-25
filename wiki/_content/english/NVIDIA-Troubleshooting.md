@@ -406,60 +406,7 @@ Alternatively, it may be that your monitor's EDID is incorrect. See [#Override E
 
 ## Override EDID
 
-**Note:** See [Kernel mode setting#Forcing modes and EDID](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting") for more information.
-
-If your monitor is providing wrong EDID information, the nvidia-driver will pick a very small solution. Nvidia's driver options change, this guide refers to nvidia 346.47-11.
-
-Aside from manually setting modelines in the xorg config, you have to allow non-edid modes and disable edid in the device section:
-
- `/etc/X11/xorg.conf.d/10-monitor.conf` 
-```
-Section "Monitor"
-    Identifier     "Monitor0"
-    VendorName     "Unknown"
-    ModelName      "Unknown"
-    HorizSync       30-94
-    VertRefresh     56-76
-    DisplaySize    518.4 324.0
-    Option         "DPMS"
-    # 1920x1200 59.95 Hz (CVT 2.30MA-R) hsync: 74.04 kHz; pclk: 154.00 MHz
-    Modeline "1920x1200R"  154.00  1920 1968 2000 2080  1200 1203 1209 1235 +hsync -vsync
-EndSection
-
-Section "Device"
-    Identifier     "Device0"
-    Driver         "nvidia"
-    VendorName     "NVIDIA Corporation"
-    Option         "UseEdidFreqs" "FALSE"
-    Option         "UseEDID" "FALSE"
-    Option         "ModeValidation" "AllowNonEdidModes"
-EndSection
-
-Section "Screen"
-    Identifier     "Screen0"
-    Device         "Device0"
-    Monitor        "Monitor0"
-    DefaultDepth    24
-    SubSection     "Display"
-        Depth       24
-        Modes      "1920x1200R"
-    EndSubSection
-EndSection
-```
-
-Alternatively, it may be that your monitor's EDID is actually correct and the driver does not trust it. To force it to use the EDID anyway, set the `IgnoreEDIDChecksum` option for the X11 Device.
-
-**Warning:** If the EDID is actually incorrect, ignoring the checksum could cause hardware damage. Only attempt this if you know for a fact that the monitor's mode is correctly detected in some case (e.g. different OS, different driver, different output).
-
-```
-Section "Device"
-    Identifier "Device0"
-    Driver "nvidia"
-    Option "IgnoreEDIDChecksum" "*displayName*"
-EndSection
-```
-
-where `*displayName*` is the name of the display device e.g. `DFP-4`. You can find the display device name in your Xorg log; it is *not* the same as the output name (e.g. `DVI-I-0`) that you would see in [Xrandr](/index.php/Xrandr "Xrandr") output.
+See [Kernel mode setting#Forcing modes and EDID](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting") and [Xrandr#Troubleshooting](/index.php/Xrandr#Troubleshooting "Xrandr").
 
 ## Overclocking with nvidia-settings GUI not working
 

@@ -1,3 +1,19 @@
+Ссылки по теме
+
+*   [Откат пакетов](/index.php/%D0%9E%D1%82%D0%BA%D0%B0%D1%82_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2 "Откат пакетов")
+*   [Ускорение работы pacman](/index.php/%D0%A3%D1%81%D0%BA%D0%BE%D1%80%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B_pacman "Ускорение работы pacman")
+*   [Графические оболочки для pacman](/index.php/%D0%93%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D0%BE%D0%B1%D0%BE%D0%BB%D0%BE%D1%87%D0%BA%D0%B8_%D0%B4%D0%BB%D1%8F_pacman "Графические оболочки для pacman")
+*   [pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta")
+*   [pacman/Советы и приёмы](/index.php/Pacman/%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%8B_%D0%B8_%D0%BF%D1%80%D0%B8%D1%91%D0%BC%D1%8B "Pacman/Советы и приёмы")
+*   [pacman package signing](/index.php/Pacman_package_signing "Pacman package signing")
+*   [ЧаВо#Управление пакетами](/index.php/%D0%A7%D0%B0%D0%92%D0%BE#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B0.D0.BC.D0.B8 "ЧаВо")
+*   [pacman-key (Русский)](/index.php/Pacman-key_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman-key (Русский)")
+*   [Файлы Pacnew и Pacsave](/index.php/%D0%A4%D0%B0%D0%B9%D0%BB%D1%8B_Pacnew_%D0%B8_Pacsave "Файлы Pacnew и Pacsave")
+*   [Список приложений/Утилиты#Управление пакетами](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9/%D0%A3%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B0.D0.BC.D0.B8 "Список приложений/Утилиты")
+*   [Arch Build System (Русский)](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)")
+*   [Официальные репозитории](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8 "Официальные репозитории")
+*   [Arch User Repository (Русский)](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)")
+
 [Система управления пакетами](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%D0%BC%D0%B8 или же собраны самостоятельно.
 
 *pacman* поддерживает систему в актуальном состоянии, синхронизируя пакеты с сервером. Такая клиент-серверная модель позволяет пользователю скачивать/устанавливать пакеты со всеми требуемыми зависимостями всего одной командой.

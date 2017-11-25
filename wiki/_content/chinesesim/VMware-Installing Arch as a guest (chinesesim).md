@@ -120,7 +120,7 @@ Open-VM-Tools 会从文件 `/etc/arch-release` 读取系统版本信息，但这
 
 #### 多用户目标
 
-**注意:** 对“目标”术语的解释见：[Systemd_(简体中文)#目标（target）](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.9B.AE.E6.A0.87.EF.BC.88target.EF.BC.89 "Systemd (简体中文)")
+**注意:** 对“目标”术语的解释见：[Systemd (简体中文)#目标（target）](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.9B.AE.E6.A0.87.EF.BC.88target.EF.BC.89 "Systemd (简体中文)")
 
 本小节的操作步骤可以帮你将系统启动至 `multi-user.target`。如果你想要启动至 `graphical.target` 那么请跳过本小节。
 

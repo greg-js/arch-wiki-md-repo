@@ -114,9 +114,9 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 	[https://github.com/shimmerproject/Blackbird](https://github.com/shimmerproject/Blackbird) || [xfce-theme-blackbird](https://aur.archlinux.org/packages/xfce-theme-blackbird/)
 
-*   **Flat-Plat** — A Material Design-like flat theme for GTK3, GTK2, and GNOME-Shell.
+*   **Materia Theme** — A Material Design-like flat theme for GTK3, GTK2, and GNOME-Shell.
 
-	[https://github.com/nana-4/Flat-Plat](https://github.com/nana-4/Flat-Plat) || [flatplat-theme-git](https://aur.archlinux.org/packages/flatplat-theme-git/)
+	[https://github.com/nana-4/materia-theme](https://github.com/nana-4/materia-theme) || [materia-theme](https://aur.archlinux.org/packages/materia-theme/)
 
 *   **Gnome-breeze** — A GTK theme created to match with the new Plasma 5 Breeze.
 

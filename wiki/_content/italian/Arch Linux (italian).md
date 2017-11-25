@@ -21,7 +21,7 @@ Arch Linux è una distribuzione GNU/Linux indipendente, sviluppata per un uso ge
 
 ### Semplicita`
 
-Il concetto di semplicita` a cui si fa riferimento e` *senza aggiunte o modifiche*. Arch Linux rilascia i software come gli sviluppatori originari in [upstream](https://en.wikipedia.org/wiki/Upstream_(software_development)) li hanno pensati. I cambiamenti in downstream sono ridotti all'osso.
+Il concetto di semplicita` a cui si fa riferimento e` *senza aggiunte o modifiche*. Arch Linux rilascia i software come gli sviluppatori originari in [upstream](https://en.wikipedia.org/wiki/Upstream_(software_development) li hanno pensati. I cambiamenti in downstream sono ridotti all'osso.
 
 Anche le configurazioni di default sono quelle previste dagli sviluppatori in upstream, le eventuali modifiche specifiche della distribuzione sono minime e solitamente si tratta solo di modificare i percorsi dei file di sistema. Non vengono forniti automatismi di nessun genere, ad esempio non viene avviato nessun servizio a seguito dell'installazione di un determinato pacchetto. Alcuni pacchetti vengono *splittati* con il principale scopo di non sprecare troppo spazio su disco. Interfacce grafiche di configurazione non sono ufficialmente fornite (in downstream), gli utenti infatti sono incoraggiati a configurare tramite shell ed editor testuali.
 
@@ -45,7 +45,7 @@ Ogni utente e` incoraggiato a [partecipare](/index.php/Getting_involved "Getting
 
 ### Versatilita`
 
-Arch Linux e` general-purpose. Dall'installazione solo l'interfaccia a riga di comando e` disponibile. Invece di fornire molti pacchetti da subito, Arch Linux lascia all'utente la possibilita` di decidere quali pacchetti installare. I [repository](/index.php/Official_repositories "Official repositories") di Arch Linux contengono migliaia di pacchett compilati i per l'architettura [x86-64](https://en.wikipedia.org/wiki/x86-64). Il supporto a [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture)) e` cessato a novembre 2017.
+Arch Linux e` general-purpose. Dall'installazione solo l'interfaccia a riga di comando e` disponibile. Invece di fornire molti pacchetti da subito, Arch Linux lascia all'utente la possibilita` di decidere quali pacchetti installare. I [repository](/index.php/Official_repositories "Official repositories") di Arch Linux contengono migliaia di pacchett compilati i per l'architettura [x86-64](https://en.wikipedia.org/wiki/x86-64 e` cessato a novembre 2017.
 
 Arch Linux usa come package manager [pacman](/index.php/Pacman "Pacman"), un programma leggero, funzionale e potente, il quale permette di aggiornare tutto il sistema con un solo comando. Arch Linux fornisce anche [Arch Build System](/index.php/Arch_Build_System "Arch Build System"), un sistema *port-like* per aiutare nella ricompilazione da sorgente dei vari pacchetti, il quale puo` essere sincronizzato con un solo comando. In piu`, l' *Arch User Repository* contiene migliaia di [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") supportati dalla comunita`, per poter compilare grazie a [makepkg](/index.php/Makepkg "Makepkg") le applicazioni non presenti nei repository. E` anche possibile mantenere facilmente un proprio repository personalizzato.
 

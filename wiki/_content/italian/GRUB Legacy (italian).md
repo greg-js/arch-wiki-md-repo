@@ -1,3 +1,12 @@
+Articoli correlati
+
+*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
+*   [GRUB2 (Italiano)](/index.php/GRUB2_(Italiano) "GRUB2 (Italiano)")
+*   [grub-gfx (Italiano)](/index.php/Grub-gfx_(Italiano) "Grub-gfx (Italiano)")
+*   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
+*   [LILO](/index.php/LILO "LILO")
+*   [MBR](/index.php/MBR "MBR")
+
 [GNU GRUB (Legacy)](http://www.gnu.org/software/grub/grub-legacy.html) è un bootloader [multiboot](http://www.gnu.org/software/grub/manual/multiboot/) mantenuto dal [GNU Project](/index.php/GNU_Project "GNU Project"). Deriva da GRUB, il GRand Unified Bootloader, che è stato originariamente progettato e realizzato da Erich Stefan Boleyn.
 
 Brevemente, il *bootloader* è il primo programma che si avvia quando si accende il computer. È il responsabile del controllo di caricamento e di trasferimento al kernel Linux. Il kernel, a sua volta, inizializza il resto del sistema operativo.

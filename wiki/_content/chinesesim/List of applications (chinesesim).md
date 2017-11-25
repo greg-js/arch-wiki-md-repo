@@ -6,6 +6,11 @@
 
 [互联网](/index.php/List_of_Applications/Internet_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Internet (简体中文)") – [多媒体](/index.php/List_of_Applications/Multimedia_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Multimedia (简体中文)") – [工具](/index.php/List_of_Applications/Utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Utilities (简体中文)") – [文档](/index.php/List_of_Applications/Documents_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Documents (简体中文)") – [安全](/index.php/List_of_Applications/Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Security (简体中文)") – [科学](/index.php/List_of_Applications/Science_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Science (简体中文)") – [其它](/index.php/List_of_Applications/Other_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Other (简体中文)")
 
+Related articles
+
+*   [Core_utilities_(简体中文)](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Core utilities (简体中文)")
+*   [List_of_Games_(简体中文)](/index.php/List_of_Games_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Games (简体中文)")
+
 本文按照不同分类列出常用的应用程序，是寻找软件包的索引。许多段落分成终端和图形应用程序。
 
 **Tip:**
@@ -88,7 +93,7 @@
             *   [2.2.1.2 图形环境](#.E5.9B.BE.E5.BD.A2.E7.8E.AF.E5.A2.83_3)
         *   [2.2.2 图形和图像处理](#.E5.9B.BE.E5.BD.A2.E5.92.8C.E5.9B.BE.E5.83.8F.E5.A4.84.E7.90.86)
             *   [2.2.2.1 位图编辑器](#.E4.BD.8D.E5.9B.BE.E7.BC.96.E8.BE.91.E5.99.A8)
-            *   [2.2.2.2 矢量图处理 - 绘画](#.E7.9F.A2.E9.87.8F.E5.9B.BE.E5.A4.84.E7.90.86_-_.E7.BB.98.E7.94.BB)
+            *   [2.2.2.2 Vector graphics - illustration](#Vector_graphics_-_illustration)
             *   [2.2.2.3 矢量图处理 - CAD](#.E7.9F.A2.E9.87.8F.E5.9B.BE.E5.A4.84.E7.90.86_-_CAD)
             *   [2.2.2.4 三维建模与渲染](#.E4.B8.89.E7.BB.B4.E5.BB.BA.E6.A8.A1.E4.B8.8E.E6.B8.B2.E6.9F.93)
         *   [2.2.3 截取屏幕](#.E6.88.AA.E5.8F.96.E5.B1.8F.E5.B9.95)
@@ -251,9 +256,41 @@
 
 ## 互联网
 
-**Note:** For possibly more up to date selection of applications, try checking the [AUR 'network' category](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&C=13&SeB=nd&SB=n&SO=a&PP=50)
-
 ### 网络管理
+
+*   **[ConnMan](/index.php/ConnMan "ConnMan")** — Daemon for managing internet connections within embedded devices running the Linux operating system. Comes with a command-line client, plus Enlightenment, ncurses, GTK and Dmenu clients are available.
+
+	[https://01.org/connman](https://01.org/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
+
+*   **[dhcpcd](/index.php/Dhcpcd "Dhcpcd")** — RFC2131 compliant DHCP client daemon.
+
+	[https://roy.marples.name/projects/dhcpcd](https://roy.marples.name/projects/dhcpcd) || [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd)
+
+*   **Kea** — An open source implementation of the Dynamic Host Configuration Protocol (DHCP) servers.
+
+	[https://www.isc.org/kea/](https://www.isc.org/kea/) || [kea](https://www.archlinux.org/packages/?name=kea)
+
+*   **[netctl](/index.php/Netctl "Netctl")** — Simple and robust tool to manage network connections via profiles. Intended for use with [systemd](/index.php/Systemd "Systemd").
+
+	[https://projects.archlinux.org/netctl.git/](https://projects.archlinux.org/netctl.git/) || [netctl](https://www.archlinux.org/packages/?name=netctl)
+
+*   **[NetworkManager](/index.php/NetworkManager "NetworkManager")** — Manager that provides wired, wireless, mobile broadband and OpenVPN detection with configuration and automatic connection.
+
+	[https://wiki.gnome.org/Projects/NetworkManager](https://wiki.gnome.org/Projects/NetworkManager) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
+
+*   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Native [systemd](/index.php/Systemd "Systemd") daemon that manages network configuration. It includes support for basic network configuration through [udev](/index.php/Udev "Udev").
+
+	[http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
+
+*   **[Wicd](/index.php/Wicd "Wicd")** — Wireless and wired connection manager with few dependencies. Comes with an ncurses interface, and a GTK interface [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk) is available.
+
+	[https://launchpad.net/wicd](https://launchpad.net/wicd) || [wicd](https://www.archlinux.org/packages/?name=wicd)
+
+*   **[Wifi Radar](/index.php/Wifi_Radar "Wifi Radar")** — *WiFi Radar* is a Python/PyGTK2 utility for managing wireless (and **only** wireless) profiles. It enables you to scan for available networks and create profiles for your preferred networks.
+
+	[http://wifi-radar.tuxfamily.org/](http://wifi-radar.tuxfamily.org/) || [wifi-radar](https://www.archlinux.org/packages/?name=wifi-radar)
+
+See also [Network configuration#Network managers](/index.php/Network_configuration#Network_managers "Network configuration") and [Wireless network configuration#Automatic setup](/index.php/Wireless_network_configuration#Automatic_setup "Wireless network configuration") for feature comparisons.
 
 ### 网络浏览器
 
@@ -617,7 +654,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **mu/mu4e** — Email indexer (mu) and client for emacs (mu4e). Xapian based for fast searches.
 
-	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://aur.archlinux.org/packages/mu/)
+	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://www.archlinux.org/packages/?name=mu)
 
 *   **[Mutt](/index.php/Mutt "Mutt")** — Small but very powerful text-based mail client.
 
@@ -873,7 +910,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt-based Jabber client which supports video conferencing (since version 0.13).
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psimedia](https://aur.archlinux.org/packages/psimedia/)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/) [psimedia](https://aur.archlinux.org/packages/psimedia/)
 
 *   **Psi+** — Enhanced version of the Psi Jabber client with many new [features](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version).
 
@@ -1001,7 +1038,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 ##### 客户端
 
-**Note:** Some [IM clients](#Instant_messaging) also offer voice and video communication
+**Note:** Some [IM clientsalso](#Instant_messaging) offer voice and video communication
 
 ###### SIP
 
@@ -1175,7 +1212,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 #### Usenet 新闻播报与新闻抓取
 
-Some [email clients](#Email_clients) also support NNTP. This section mainly lists NNTP-only client.
+Some [email clientsalso](#Email_clients) support NNTP. This section mainly lists NNTP-only client.
 
 See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/List_of_Usenet_newsreaders "wikipedia:List of Usenet newsreaders"), [Wikipedia:Comparison of Usenet newsreaders](https://en.wikipedia.org/wiki/Comparison_of_Usenet_newsreaders "wikipedia:Comparison of Usenet newsreaders").
 
@@ -1585,19 +1622,53 @@ pacman -Ss gimp
 
 	[http://www.digikam.org/](http://www.digikam.org/) || [digikam](https://www.archlinux.org/packages/?name=digikam)
 
-##### 矢量图处理 - 绘画
+##### Vector graphics - illustration
+
+See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.org/wiki/Comparison_of_vector_graphics_editors "wikipedia:Comparison of vector graphics editors").
+
+*   **[Asymptote](https://en.wikipedia.org/wiki/Asymptote_(vector_graphics_language) "wikipedia:Asymptote (vector graphics language)")** — 一个描述性的矢量图形语言(比如PGF / TikZ和Metapost)，具有类c语法和LaTex支持。
+
+	[http://asymptote.sourceforge.net](http://asymptote.sourceforge.net) || [asymptote](https://www.archlinux.org/packages/?name=asymptote)
+
+*   **Dia** — 一个基于GTK+的创意软件。
+
+	[http://live.gnome.org/Dia](http://live.gnome.org/Dia) || [dia](https://www.archlinux.org/packages/?name=dia)
+
+*   **[Graphviz](https://en.wikipedia.org/wiki/Graphviz "wikipedia:Graphviz")** — 使用描述性的DOT语言绘图。
+
+	[http://www.graphviz.org](http://www.graphviz.org) || [graphviz](https://www.archlinux.org/packages/?name=graphviz)
+
+*   **Gravit** — 专业的矢量图形设计工具。
+
+	[https://gravit.io/](https://gravit.io/) || [gravit-git](https://aur.archlinux.org/packages/gravit-git/)
 
 *   **[Inkscape](https://en.wikipedia.org/wiki/Inkscape "wikipedia:Inkscape")** — 一个开源的矢量图编辑器，功能类似于Illustrator、CorelDraw以及Xara X。它使用W3C标准可放大矢量图格式（SVG）。Inkscape支持众多的高级SVG功能（如标记、克隆、Alpha通道混合等）。并且具有一套认真设计的基于工作流程的界面。它可以很方便地编辑节点，执行复杂的路径操作，描绘位图等等等等。其开发者以其社区维护的开发方法致力于维护一个正在发展中的用户与开发者社区。
 
 	[http://inkscape.org/](http://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
 
-*   **Xara** — 一个高级矢量图软件。
+*   **Mockingbot** — 中文名：墨刀，一个可协作的原型图设计工具。
 
-	[http://www.xaraxtreme.org/](http://www.xaraxtreme.org/) || [xaralx](https://aur.archlinux.org/packages/xaralx/)
+	[http://http://mockingbot.com/](http://http://mockingbot.com/) || [mockingbot](https://aur.archlinux.org/packages/mockingbot/)
 
-*   **Dia** — 一个基于GTK+的创意软件。
+*   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — 矢量图形设计工具，Calligra套件的一部分。
 
-	[http://live.gnome.org/Dia](http://live.gnome.org/Dia) || [dia](https://www.archlinux.org/packages/?name=dia)
+	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
+
+*   **[Pencil Project](https://en.wikipedia.org/wiki/Pencil2D "wikipedia:Pencil2D")** — 开源的原型设计工具。
+
+	[http://pencil.evolus.vn/](http://pencil.evolus.vn/) || [pencil](https://aur.archlinux.org/packages/pencil/)
+
+*   **qasm2circ** — latex的量子电路生成工具
+
+	[http://www.media.mit.edu/quanta/qasm2circ/](http://www.media.mit.edu/quanta/qasm2circ/) || [qasm2circ](https://aur.archlinux.org/packages/qasm2circ/)
+
+*   **[sK1](https://en.wikipedia.org/wiki/SK1_(program) "wikipedia:SK1 (program)")** — .替代Adobe Illustrator或绘图软件。
+
+	[http://sk1project.net/](http://sk1project.net/) || [sk1](https://www.archlinux.org/packages/?name=sk1)
+
+*   **[yEd](https://en.wikipedia.org/wiki/yEd "wikipedia:yEd")** — 通用绘图程序流程图、网络图、UML图,BPMN图、思维导图、组织图、实体关系图。
+
+	[http://www.yworks.com/en/products_yed_about.html](http://www.yworks.com/en/products_yed_about.html) || [yed](https://aur.archlinux.org/packages/yed/)
 
 ##### 矢量图处理 - CAD
 
@@ -2366,7 +2437,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[MonoDevelop](https://en.wikipedia.org/wiki/MonoDevelop "wikipedia:MonoDevelop")** — Cross-platform IDE targeted for the Mono and .NET frameworks.
 
-	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop](https://www.archlinux.org/packages/?name=monodevelop)
+	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop](https://aur.archlinux.org/packages/monodevelop/)
 
 *   **MPLAB** — IDE for Microchip PIC and dsPIC development
 
@@ -2594,7 +2665,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **qtfm** — 小型轻量级文件管理器,完全基于Qt
 
-	[http://www.qtfm.org/](http://www.qtfm.org/) || [qtfm](https://www.archlinux.org/packages/?name=qtfm)
+	[http://www.qtfm.org/](http://www.qtfm.org/) || [qtfm](https://aur.archlinux.org/packages/qtfm/)
 
 *   **ROX-Filer** — 小型快速文件管理器,可以管理桌面背景和面板(可选)
 
@@ -2650,7 +2721,7 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 *   **[Strigi](https://en.wikipedia.org/wiki/Strigi "wikipedia:Strigi")** — 爬虫，Qt GUI，快速
 
-	[http://strigi.sourceforge.net/](http://strigi.sourceforge.net/) || [strigi](https://www.archlinux.org/packages/?name=strigi)
+	[http://strigi.sourceforge.net/](http://strigi.sourceforge.net/) || [strigi](https://aur.archlinux.org/packages/strigi/)
 
 *   **[Tracker](https://en.wikipedia.org/wiki/MetaTracker_(software) "wikipedia:MetaTracker (software)")** — 一体化索引，搜索工具，元数据
 
@@ -3261,7 +3332,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[http://www.xfce.org/](http://www.xfce.org/) || [mousepad](https://www.archlinux.org/packages/?name=mousepad)
 
-*   **[Nedit](https://en.wikipedia.org/wiki/NEdit "wikipedia:NEdit")** — [lesstif](https://www.archlinux.org/packages/?name=lesstif) 桌面环境自带的文本编辑器。
+*   **[Nedit](https://en.wikipedia.org/wiki/NEdit "wikipedia:NEdit")** — Motif 桌面环境自带的文本编辑器。
 
 	[http://www.nedit.org/](http://www.nedit.org/) || [nedit](https://www.archlinux.org/packages/?name=nedit)
 
@@ -3315,7 +3386,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 #### 电子书阅读
 
-**Note:** Some [PDF and DjVu viewers](#PDF_and_DjVu) also support other e-book formats.
+**Note:** Some [PDF and DjVu viewersalso](#PDF_and_DjVu) support other e-book formats.
 
 *   **[Calibre](https://en.wikipedia.org/wiki/Calibre_(software) "wikipedia:Calibre (software)")** — E-book library management application that can also convert between different formats and sync with a variety of e-book readers. Supported formats include CBZ, CBR, CBC, CHM, DJVU, EPUB, FictionBook, HTML, HTMLZ, LIT, LRF, Mobipocket, ODT, PDF, PRC, PDB, PML, RB, RTF, SNB, TCR, TXT and TXTZ.
 
@@ -3426,7 +3497,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **qpdfview** — Tabbed document viewer. It uses Poppler for PDF support, libspectre for PS support, DjVuLibre for DjVu support, CUPS for printing support and the Qt toolkit for its interface.
 
-	[https://launchpad.net/qpdfview](https://launchpad.net/qpdfview) || [qpdfview](https://aur.archlinux.org/packages/qpdfview/)
+	[https://launchpad.net/qpdfview](https://launchpad.net/qpdfview) || [qpdfview](https://www.archlinux.org/packages/?name=qpdfview)
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Pdf viewer/note taking application.
 
@@ -3636,7 +3707,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **XMind** — Brainstorming and mind mapping application. It provides a rich set of different visualization styles, and allows sharing of created mind maps via their website.
 
-	[http://www.xmind.net](http://www.xmind.net) || [xmind](https://www.archlinux.org/packages/?name=xmind)
+	[http://www.xmind.net](http://www.xmind.net) || [xmind](https://aur.archlinux.org/packages/xmind/)
 
 ### 字符选择器
 
@@ -4708,7 +4779,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **Kupfer** — Convenient command and access tool for the GNOME desktop that can launch applications, open documents and access different types of objects and act on them.
 
-	[https://wiki.gnome.org/Apps/Kupfer](https://wiki.gnome.org/Apps/Kupfer) || [kupfer](https://aur.archlinux.org/packages/kupfer/)
+	[https://wiki.gnome.org/Apps/Kupfer](https://wiki.gnome.org/Apps/Kupfer) || [kupfer](https://www.archlinux.org/packages/?name=kupfer)
 
 *   **[Launchy](https://en.wikipedia.org/wiki/Launchy "wikipedia:Launchy")** — Very popular cross-platform application launcher with a plugin-based system used to provide extra functionality.
 
@@ -4796,7 +4867,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **[GnuCash](https://en.wikipedia.org/wiki/GnuCash "wikipedia:GnuCash")** — Financial application that implements a double-entry book-keeping system with features for small business accounting.
 
-	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://www.archlinux.org/packages/?name=gnucash)
+	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://aur.archlinux.org/packages/gnucash/)
 
 *   **[Grisbi](https://en.wikipedia.org/wiki/Grisbi "wikipedia:Grisbi")** — Personal finance system which manages third party, expenditure and receipt categories, as well as budgetary lines, financial years, and other information that makes it suitable for associations.
 

@@ -32,12 +32,9 @@ RubyGems is a package manager for Ruby modules (called *gems*), somewhat compara
 
 ### Setup
 
-Before you use RubyGems, you should add `$(ruby -e "print Gem.user_dir")/bin` to your `$PATH`. You can do this by adding the following line to `~/.bashrc`:
+To allow using `gem`, [append](/index.php/Append "Append") `$(ruby -e 'print Gem.user_dir')/bin` to current [user](/index.php/User "User") `PATH` [environment variable](/index.php/Environment_variable "Environment variable"):
 
-```
-PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
-
-```
+ `~/.profile`  `PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"` 
 
 This is required for executable gems to work without typing out the full location, although libraries will work without having to modify your path.
 
@@ -179,9 +176,11 @@ bundle exec *main_executable_name.rb*
 
 ### Managing RubyGems using pacman
 
-Instead of managing gems with `gem`, you can use `pacman`, or some [AUR](/index.php/AUR "AUR") helper. Ruby packages follow the naming convention ruby-[gemname]. This option provides the following advantages:
+Instead of managing gems with `gem`, you can use [pacman](/index.php/Pacman "Pacman"), or an [AUR](/index.php/AUR "AUR") helper. Ruby packages follow the naming convention ruby-*gemname*.
 
-*   Gems are updated along with the rest of your system. As a result, you never need to run `gem update`: `# pacman -Syu` suffices.
+This option provides the following advantages:
+
+*   Gems are updated along with the rest of your system.
 *   Installed gems are available system-wide, instead of being available only to the user who installed them.
 
 **Note:** There are also tools integrating *gem* with *pacman* by automatically generating PKGBUILDs for specified gems: see [Creating packages#PKGBUILD generators](/index.php/Creating_packages#PKGBUILD_generators "Creating packages").
@@ -206,3 +205,4 @@ If you have bugreports or code improvements - file at github [https://github.com
 *   Bundler - [http://bundler.io/](http://bundler.io/)
 *   [why's (poignant) Guide to Ruby](https://en.wikipedia.org/wiki/Why%27s_(poignant)_Guide_to_Ruby "wikipedia:Why's (poignant) Guide to Ruby")
 *   [Learn Ruby The Hard Way](http://ruby.learncodethehardway.org/)
+*   [Comparison of Bundler and RVM workflows](http://blog.hyfather.com/blog/2011/10/18/bundler/)

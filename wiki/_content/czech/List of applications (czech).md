@@ -108,7 +108,7 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 *   **[Transmission](/index.php/Transmission "Transmission")** — Jednoduchý a snadno použitelný BitTorrent klient s démon verzí a GTK+, Qt GUI, web a CLI front-endy
 
-	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli) [transmission-remote-gtk](https://aur.archlinux.org/packages/transmission-remote-gtk/) (vzdálení klienti fungují s démonem z -cli balíčku)
+	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli) [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk) (vzdálení klienti fungují s démonem z -cli balíčku)
 
 #### Grafické rozhraní
 
@@ -286,11 +286,11 @@ See also [Wikipedia:Comparison of instant messaging clients#XMPP clients](https:
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Jabber klient používající Qt toolkit
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/)
 
 *   **Psi+** — Vylepšená verze Psi s mnoha novými [funkcemi](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version)
 
-	[https://code.google.com/p/psi-dev/](https://code.google.com/p/psi-dev/) || [psi-plus](https://aur.archlinux.org/packages/psi-plus/)
+	[https://code.google.com/p/psi-dev/](https://code.google.com/p/psi-dev/) || [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — XMPP klient bohatý na funkce, od autora ejabberd XMPP serveru
 
@@ -422,7 +422,7 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt Jabber klient podporující video konference (od verze 0.13)
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psi-plus](https://aur.archlinux.org/packages/psi-plus/)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/) [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
 
 *   **[QuteCom](https://en.wikipedia.org/wiki/QuteCom "wikipedia:QuteCom")** — Softphone umožňující svobodné PC-to-PC videohovory, a to integraci kontaktů v jednom místě (dříve Wengo Phone)
 

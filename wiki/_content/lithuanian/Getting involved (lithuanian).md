@@ -1,3 +1,8 @@
+Related articles
+
+*   [Arch User Repository (Lietuviškai)](/index.php?title=Arch_User_Repository_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "Arch User Repository (Lietuviškai) (page does not exist)")
+*   [Help:Editing (Lietuviškai)](/index.php?title=Help:Editing_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "Help:Editing (Lietuviškai) (page does not exist)")
+
 Biologiškai, [mutualism](https://en.wikipedia.org/wiki/Mutualism_(biology) yra bendradarbiavimas tarp dviejų organizmų su tarpusavio nauda. Šitas principas taikomas inicijuoti ir motyvuoti Arch bendruomenės narius, norinčius prisidėti ir padėti jų mėgstamos GNU/Linux distribucijos. Toks prisidėjimas naudingas ne tik bendruomenės nariui, bet ir kitiems draugams Archeriams kaip ir visiems [nemokamos ir atviros programinės įrangos](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software") fanams.
 
 ## Contents

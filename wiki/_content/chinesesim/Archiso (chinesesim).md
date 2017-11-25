@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Archiso](/index.php/Archiso "Archiso") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-07-30，点击[这里](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=481230)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Archiso](/index.php/Archiso "Archiso") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-25，点击[这里](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=498359)可以查看翻译后英文页面的改动。
 
 相关文章
 
@@ -23,17 +23,17 @@
 *   [3 构建ISO](#.E6.9E.84.E5.BB.BAISO)
     *   [3.1 重建ISO](#.E9.87.8D.E5.BB.BAISO)
 *   [4 使用ISO](#.E4.BD.BF.E7.94.A8ISO)
-*   [5 Tips and tricks](#Tips_and_tricks)
+*   [5 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
     *   [5.1 在沒有互联网连接的情况下安装 Archiso](#.E5.9C.A8.E6.B2.92.E6.9C.89.E4.BA.92.E8.81.94.E7.BD.91.E8.BF.9E.E6.8E.A5.E7.9A.84.E6.83.85.E5.86.B5.E4.B8.8B.E5.AE.89.E8.A3.85_Archiso)
-        *   [5.1.1 安装 archiso 到新的根](#.E5.AE.89.E8.A3.85_archiso_.E5.88.B0.E6.96.B0.E7.9A.84.E6.A0.B9)
+        *   [5.1.1 安装 archiso 到新的 root](#.E5.AE.89.E8.A3.85_archiso_.E5.88.B0.E6.96.B0.E7.9A.84_root)
         *   [5.1.2 Chroot 并配置基本系统](#Chroot_.E5.B9.B6.E9.85.8D.E7.BD.AE.E5.9F.BA.E6.9C.AC.E7.B3.BB.E7.BB.9F)
             *   [5.1.2.1 恢复 journald 的配置](#.E6.81.A2.E5.A4.8D_journald_.E7.9A.84.E9.85.8D.E7.BD.AE)
-            *   [5.1.2.2 Remove special udev rule](#Remove_special_udev_rule)
+            *   [5.1.2.2 删除特殊的 udev 规则](#.E5.88.A0.E9.99.A4.E7.89.B9.E6.AE.8A.E7.9A.84_udev_.E8.A7.84.E5.88.99)
             *   [5.1.2.3 禁用和移除 archiso 创建的服务](#.E7.A6.81.E7.94.A8.E5.92.8C.E7.A7.BB.E9.99.A4_archiso_.E5.88.9B.E5.BB.BA.E7.9A.84.E6.9C.8D.E5.8A.A1)
             *   [5.1.2.4 移除 Live 环境的特殊脚本](#.E7.A7.BB.E9.99.A4_Live_.E7.8E.AF.E5.A2.83.E7.9A.84.E7.89.B9.E6.AE.8A.E8.84.9A.E6.9C.AC)
-            *   [5.1.2.5 Importing archlinux keys](#Importing_archlinux_keys)
-            *   [5.1.2.6 Configure the system](#Configure_the_system)
-            *   [5.1.2.7 Enable graphical login (optional)](#Enable_graphical_login_.28optional.29)
+            *   [5.1.2.5 导入archlinux密钥](#.E5.AF.BC.E5.85.A5archlinux.E5.AF.86.E9.92.A5)
+            *   [5.1.2.6 配置系统](#.E9.85.8D.E7.BD.AE.E7.B3.BB.E7.BB.9F)
+            *   [5.1.2.7 启用图形登录（可选）](#.E5.90.AF.E7.94.A8.E5.9B.BE.E5.BD.A2.E7.99.BB.E5.BD.95.EF.BC.88.E5.8F.AF.E9.80.89.EF.BC.89)
 *   [6 See also](#See_also)
     *   [6.1 Documentation and tutorials](#Documentation_and_tutorials)
     *   [6.2 Example customization template](#Example_customization_template)
@@ -346,17 +346,17 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 
 有关各种选项，请参见 [Category:Getting_and_installing_Arch_(简体中文)#安装方式](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85.E6.96.B9.E5.BC.8F "Category:Getting and installing Arch (简体中文)") 部分。
 
-## Tips and tricks
+## 提示和技巧
 
 ### 在沒有互联网连接的情况下安装 Archiso
 
 若你想在没有互联网连接或者你不想重复下载你想要的包的情况下安装 archiso（例如[官方的每月发布版](https://www.archlinux.org/download/)）：
 
-首先，按照[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")，并跳过一些步骤（如[连接到因特网](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BF.9E.E6.8E.A5.E5.88.B0.E5.9B.A0.E7.89.B9.E7.BD.91 "Installation guide (简体中文)")），直到[#安装基本系统](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85.E5.9F.BA.E6.9C.AC.E7.B3.BB.E7.BB.9F "Installation guide (简体中文)")之前。
+首先，按照[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")，并跳过一些步骤（如[连接到因特网](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BF.9E.E6.8E.A5.E5.88.B0.E5.9B.A0.E7.89.B9.E7.BD.91 "Installation guide (简体中文)")），直到[安装基本系统](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85.E5.9F.BA.E6.9C.AC.E7.B3.BB.E7.BB.9F "Installation guide (简体中文)")之前。
 
-#### 安装 archiso 到新的根
+#### 安装 archiso 到新的 root
 
-复制 Live 环境的*所有文件*到新的根目录，而不是使用 `pacstrap`(which would try to download from the remote repositories)：
+复制 Live 环境的*所有文件*到新的根目录，而不是使用 `pacstrap`(这将尝试从远程存储库下载)：
 
 ```
  # time cp -ax / /mnt
@@ -394,9 +394,9 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 
 ```
 
-##### Remove special udev rule
+##### 删除特殊的 udev 规则
 
-[This rule of udev](https://projects.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) starts the dhcpcd automatically if there are any wired network interfaces.
+如果有任何有线网络接口，[udev 的这个规则](https://projects.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules)会自动启动dhcpcd。
 
 ```
 # rm /etc/udev/rules.d/81-dhcpcd.rules
@@ -416,7 +416,7 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 
 ##### 移除 Live 环境的特殊脚本
 
-There are some scripts installed in the live system by archiso scripts, which are unnecessary for the new system:
+在 live 系统中通过 archiso 脚本安装了一些脚本，这对于新系统是不必要的：
 
 ```
 # rm /etc/systemd/system/getty@tty1.service.d/autologin.conf
@@ -426,9 +426,9 @@ There are some scripts installed in the live system by archiso scripts, which ar
 
 ```
 
-##### Importing archlinux keys
+##### 导入archlinux密钥
 
-In order to use the official repositories, we need to import the archlinux master keys ([pacman/Package signing#Initializing the keyring](/index.php/Pacman/Package_signing#Initializing_the_keyring "Pacman/Package signing")). This step is usually done by pacstrap but can be achieved with
+为了使用官方存储库，我们需要导入 archlinux 主密钥（[Pacman/Package_signing_(简体中文)#初始化密钥环](/index.php/Pacman/Package_signing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9D.E5.A7.8B.E5.8C.96.E5.AF.86.E9.92.A5.E7.8E.AF "Pacman/Package signing (简体中文)")）。这一步通常是通过 pacstrap 完成的，但是可以通过
 
 ```
 # pacman-key --init
@@ -436,15 +436,15 @@ In order to use the official repositories, we need to import the archlinux maste
 
 ```
 
-**Note:** Keyboard or mouse activity is needed to generate entropy and speed-up the first step.
+**注意:** Keyboard or mouse activity is needed to generate entropy and speed-up the first step.
 
-##### Configure the system
+##### 配置系统
 
-Now you can follow the skipped steps of the [Installation guide#Configure the system](/index.php/Installation_guide#Configure_the_system "Installation guide") section (setting a locale, timezone, hostname, etc.) and finish the installation by creating an initial ramdisk as described in [Installation guide#Initramfs](/index.php/Installation_guide#Initramfs "Installation guide").
+现在，您可以按照 [Installation_guide_(简体中文)#配置系统](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE.E7.B3.BB.E7.BB.9F "Installation guide (简体中文)") 中跳过的步骤（设置语言环境，时区，主机名等），并通过创建初始 ramdisk 来完成安装，如 [Installation_guide_(简体中文)#Initramfs](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Initramfs "Installation guide (简体中文)")。
 
-##### Enable graphical login (optional)
+##### 启用图形登录（可选）
 
-If using a display manager like GDM, you may want to change the systemd default target from multi-user.target to one that allows graphical login.
+如果使用像GDM这样的显示管理器，则可能需要将 systemd 默认目标从 multi-user.target 更改为允许图形登录的目标。
 
 ```
 # systemctl disable multi-user.target

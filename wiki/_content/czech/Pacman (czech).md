@@ -1,3 +1,9 @@
+Související články
+
+*   [Downgrading Packages (Česky)](/index.php/Downgrading_Packages_(%C4%8Cesky) "Downgrading Packages (Česky)")
+*   [Pacnew and Pacsave Files (Česky)](/index.php/Pacnew_and_Pacsave_Files_(%C4%8Cesky) "Pacnew and Pacsave Files (Česky)")
+*   [pacman GUI Frontends (Česky)](/index.php/Pacman_GUI_Frontends_(%C4%8Cesky) "Pacman GUI Frontends (Česky)")
+
 Správce balíčků **[pacman](https://archlinux.org/pacman/)** je jedním z hlavních rysů Arch Linuxu. Kombinuje jednoduchý binární formát balíčků se sestavovacím systémem jednoduchým na použití (viz [makepkg](/index.php?title=Makepkg_(%C4%8Cesky)&action=edit&redlink=1 "Makepkg (Česky) (page does not exist)") a [Arch Build System](/index.php/Arch_Build_System_(%C4%8Cesky) "Arch Build System (Česky)")). Cílem pacmana je umožnit jednoduchou správu balíčků, ať už pocházejí z oficiálních repozitářů Archu nebo jsou sestaveny samotnými uživateli.
 
 pacman udržuje systém aktuální pomocí synchronizace seznamů balíčků s hlavním serverem. Tento model server/klient též umožňuje stáhnutí/instalaci balíčků jedním jednoduchým příkazem, a to včetně všech vynucených závislostí.

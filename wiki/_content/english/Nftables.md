@@ -68,14 +68,14 @@ You can check the ruleset with
 
 nftables' user-space utility *nft* performs most of the rule-set evaluation before handing rule-sets to the kernel. Rules are stored in chains, which in turn are stored in tables. The following sections indicate how to create and modify these constructs.
 
-All changes below are temporary. To make changes permanent, save your ruleset to `/etc/nftables` which is loaded by `nftables.service`:
+All changes below are temporary. To make changes permanent, save your ruleset to `/etc/nftables.conf` which is loaded by `nftables.service`:
 
 ```
 # nft list ruleset > /etc/nftables.conf
 
 ```
 
-**Note:** `nft list` does not output variable definitions, if you have any in `/etc/nftables` they will be lost. Any variables used in rules will be replaced by that variable value.
+**Note:** `nft list` does not output variable definitions, if you have any in `/etc/nftables.conf` they will be lost. Any variables used in rules will be replaced by that variable value.
 
 To read input from a file use the `-f` flag:
 
@@ -642,7 +642,7 @@ Add the input, forward, and output base chains. The policy for input and forward
 
 ```
 
-Add two regular chains that will be associate with tcp and udp:
+Add two regular chains that will be associated with tcp and udp:
 
 ```
 # nft add chain inet filter TCP
@@ -674,59 +674,59 @@ Drop any invalid traffic:
 New echo requests (pings) will be accepted:
 
 ```
-# nft add rule inet filter input icmp type echo-request ct state new accept
+# nft add rule inet filter input ip protocol icmp icmp type echo-request ct state new accept
 
 ```
 
 New upd traffic will jump to the UDP chain:
 
 ```
-# nft add rule ip filter input ip protocol udp ct state new jump UDP
+# nft add rule inet filter input ip protocol udp ct state new jump UDP
 
 ```
 
 New tcp traffic will jump to the TCP chain:
 
 ```
-# nft add rule ip filter input tcp flags & (fin|syn|rst|ack) == syn ct state new jump TCP
+# nft add rule inet filter input ip protocol tcp tcp flags \& \(fin\|syn\|rst\|ack\) == syn ct state new jump TCP
 
 ```
 
 Reject all traffic that was not processed by other rules:
 
 ```
-# nft add rule ip filter input ip protocol udp reject
-# nft add rule ip filter input ip protocol tcp reject with tcp reset
-# nft add rule ip filter input counter reject with icmp type prot-unreachable
+# nft add rule inet filter input ip protocol udp reject
+# nft add rule inet filter input ip protocol tcp reject with tcp reset
+# nft add rule inet filter input counter reject with icmp type prot-unreachable
 
 ```
 
-Add this point you should decide what ports you want to open to incoming connections, which are handled by the TCP and UDP chains. For example to open connections for a web server add:
+At this point you should decide what ports you want to open to incoming connections, which are handled by the TCP and UDP chains. For example to open connections for a web server add:
 
 ```
-# nft add rule ip filter TCP tcp dport 80 accept
+# nft add rule inet filter TCP tcp dport 80 accept
 
 ```
 
 To accept HTTPS connections for a webserver on port 443:
 
 ```
-# nft add rule ip filter TCP tcp dport 443 accept
+# nft add rule inet filter TCP tcp dport 443 accept
 
 ```
 
 To accept SSH traffic on port 22:
 
 ```
-# nft add rule ip filter TCP tcp dport 22 accept
+# nft add rule inet filter TCP tcp dport 22 accept
 
 ```
 
 To accept incoming DNS requests:
 
 ```
-# nft add rule ip filter TCP tcp dport 53 accept
-# nft add rule ip filter UDP tcp dport 53 accept
+# nft add rule inet filter TCP tcp dport 53 accept
+# nft add rule inet filter UDP tcp dport 53 accept
 
 ```
 

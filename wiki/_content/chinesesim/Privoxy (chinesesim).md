@@ -97,7 +97,7 @@ plusone.google.com
 
 ## 使用
 
-使用[Systemd_(简体中文)](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") 启用privoxy服务。
+使用[Systemd (简体中文)](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") 启用privoxy服务。
 
 对程序进行代理设置，默认的地址是:
 
@@ -122,7 +122,7 @@ http_proxy="http://localhost:8118"
 
 ```
 
-参看[Proxy_settings](/index.php/Proxy_settings "Proxy settings")
+参看[Proxy settings](/index.php/Proxy_settings "Proxy settings")
 
 ## 参阅
 

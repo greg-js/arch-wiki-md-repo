@@ -1,3 +1,8 @@
+Related articles
+
+*   [Arch Linux](/index.php/Arch_Linux "Arch Linux")
+*   [The Arch Way](/index.php/The_Arch_Way "The Arch Way")
+
 Ez az oldal megpróbálja felvázolni az Arch Linux és más népszerű GNU/Linux disztribúciók, illetve <tt>UNIX</tt>-szerű operációs rendszerek közti hasonlóságokat és különbségeket. A következő leírások csak rövid összefoglalók, melyek célja, hogy segítsen az olvasónak eldönteni, hogy az Arch Linux megfelel-e igényeinek. Még ha ezek az összefoglalók törekednek is a minél jobb leírásra, a döntést a rendszer tényleges kipróbálása után érdemes meghozni.
 
 ## Contents

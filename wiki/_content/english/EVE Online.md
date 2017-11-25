@@ -90,7 +90,7 @@ In this section, you will prepare a fresh *Wine configuration* suitable for inst
 
 **Tip:** Wine writes *alot* of diagnostic messages to `stdout` which you can safely ignore unless you experience problems.
 
-**Tip:** If you have [Firejail](/index.php/Firejail "Firejail") installed and the `Wine configuration` window does not appear, see [EVE Online#Firejail incompatibility](/index.php/EVE_Online#Firejail_incompatibility "EVE Online") for a resolution.
+**Tip:** If you have [Firejail](/index.php/Firejail "Firejail") installed and the `Wine configuration` window does not appear, see [#Firejail incompatibility](#Firejail_incompatibility) for a resolution.
 
 	5\. On the `Applications` tab, click the `Windows Version` drop-down box and select `Windows 10`.
 

@@ -1,3 +1,11 @@
+Related articles
+
+*   [Downgrading Packages](/index.php/Downgrading_Packages "Downgrading Packages")
+*   [Improve Pacman Performance](/index.php/Improve_Pacman_Performance "Improve Pacman Performance")
+*   [pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
+*   [pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta")
+*   [pacman Tips](/index.php/Pacman_Tips "Pacman Tips")
+
 Manajer paket **[pacman](https://archlinux.org/pacman/)** adalah salah satu fitur utama dari Arch Linux. Menggabungkan sebuah format paket biner sederhana dengan sebuah sistem pembangunan yang mudah digunakan (lihat [makepkg](/index.php/Makepkg "Makepkg") dan [Arch Build System](/index.php/Arch_Build_System "Arch Build System")). Tujuan dari pacman adalah memungkinkan pengaturan paket-paket dengan mudah, baik yang berasal dari repositori resmi Arch maupun yang dibangun sendiri oleh para pengguna.
 
 pacman menjaga sistem tetap up to date dengan sinkronisasi daftar paket dengan server master. Model server/klien juga memungkinkan Anda untuk mengunduh/memasang paket dengan perintah sederhana, lengkap dengan semua dependensi yang diperlukan.

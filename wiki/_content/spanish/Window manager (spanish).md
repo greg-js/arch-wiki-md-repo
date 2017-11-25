@@ -1,3 +1,11 @@
+Artículos relacionados
+
+*   [Desktop environment (Español)](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)")
+*   [Display manager (Español)](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)")
+*   [Xorg (Español)](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)")
+*   [xinitrc (Español)](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)")
+*   [Start X at login (Español)](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)")
+
 Un [gestor de ventanas](https://en.wikipedia.org/wiki/es:Gestor_de_ventanas (siglas en inglés DE), que proporciona una interfaz gráfica de usuario completa, incluyendo iconos, ventanas, barras de herramientas, fondos de pantalla y widgets de escritorio.
 
 ## Contents

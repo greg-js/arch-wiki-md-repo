@@ -1,3 +1,10 @@
+Related articles
+
+*   [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts")
+*   [Fonts](/index.php/Fonts "Fonts")
+*   [Font configuration](/index.php/Font_configuration "Font configuration")
+*   [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
+
 This article explains how to install TrueType Microsoft fonts and emulate Windows' font rendering.
 
 **Tip:** See [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts") for alternatives.
@@ -6,8 +13,9 @@ This article explains how to install TrueType Microsoft fonts and emulate Window
 
 *   [1 Installation](#Installation)
     *   [1.1 Using fonts from a Windows partition](#Using_fonts_from_a_Windows_partition)
-    *   [1.2 Current packages](#Current_packages)
-    *   [1.3 Legacy packages](#Legacy_packages)
+    *   [1.2 Extracting fonts from a Windows ISO](#Extracting_fonts_from_a_Windows_ISO)
+    *   [1.3 Current packages](#Current_packages)
+    *   [1.4 Legacy packages](#Legacy_packages)
 *   [2 Fontconfig rules useful for MS Fonts](#Fontconfig_rules_useful_for_MS_Fonts)
 *   [3 Windows 8](#Windows_8)
 
@@ -46,6 +54,12 @@ Then regenerate the fontconfig cache:
 # fc-cache -f
 
 ```
+
+### Extracting fonts from a Windows ISO
+
+The fonts can also be found in a Windows ISO file.
+
+Extract the `/sources/install.esd` file in the ISO and look for a `Windows/Fonts` directory within this file. The format of this file is ESD *(Windows Electronic Software Download)* and it can be extracted with [p7zip](/index.php/P7zip "P7zip").
 
 ### Current packages
 

@@ -198,7 +198,7 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 *   **[Transmission](/index.php/Transmission "Transmission")** — Client BitTorrent semplice e funzionale, disponibile in vari front end come , GTK+, Qt, Web e Cli.
 
-	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli) [transmission-remote-gtk](https://aur.archlinux.org/packages/transmission-remote-gtk/) (Client remoti che lavorano con il demone del pacchetto -cli)
+	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli) [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk) (Client remoti che lavorano con il demone del pacchetto -cli)
 
 #### Interfaccia grafica
 
@@ -380,11 +380,11 @@ See also [Wikipedia:Comparison of instant messaging clients#XMPP-related feature
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Client jabber basato sulle Qt.
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/)
 
 *   **Psi+** — Versione estesa del client Psi Jabber con molte nuove [caratteristiche](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version).
 
-	[https://code.google.com/p/psi-dev/](https://code.google.com/p/psi-dev/) || [psi-plus](https://aur.archlinux.org/packages/psi-plus/)
+	[https://code.google.com/p/psi-dev/](https://code.google.com/p/psi-dev/) || [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Client XMPP facile da hackerare ricco di funzionalità, dall'autore del server ejabberd XMPP.
 
@@ -530,7 +530,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Client jabber Qt-based con supporto alla video conferenza (since version 0.13).
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psi-plus](https://aur.archlinux.org/packages/psi-plus/)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/) [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
 
 *   **[QuteCom](https://en.wikipedia.org/wiki/QuteCom "wikipedia:QuteCom")** — Applicazione softphone che permette di effettuare liberamente chiamate e video da PC a PC, e può integrare tutti i propri contatti IM in un unico posto (Comunemente chiamato Wengo Phone).
 
@@ -700,7 +700,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 ### Gestori di rete
 
-*   **[Connman](/index.php/Connman "Connman")** — Demone per la gestione delle connessioni internet nel raggio di dispositivi embedded che eseguono il sistema operativo Linux . Il Connection Manager è progettato per essere leggero e per utilizzare il minor numero di risorse possibili, in modo che possa essere facilmente integrato
+*   **[ConnMan](/index.php/ConnMan "ConnMan")** — Demone per la gestione delle connessioni internet nel raggio di dispositivi embedded che eseguono il sistema operativo Linux . Il Connection Manager è progettato per essere leggero e per utilizzare il minor numero di risorse possibili, in modo che possa essere facilmente integrato
 
 	[https://connman.net/](https://connman.net/) || [connman](https://www.archlinux.org/packages/?name=connman)
 
@@ -1499,7 +1499,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **rubyripper** — Applicazione che cerca di fornire una registrazione sicura attraverso un ripping multiplo della stessa traccia. Effettua la correzione di eventuali differenze.
 
-	[http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://www.archlinux.org/packages/?name=rubyripper)
+	[http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://aur.archlinux.org/packages/rubyripper/)
 
 *   **[Sound Juicer](https://en.wikipedia.org/wiki/Sound_Juicer "wikipedia:Sound Juicer")** — CD ripper per GNOME.
 
@@ -1955,7 +1955,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **qtFM** — Un piccolo e leggero file manager per i desktop Linux basato sulle Qt.
 
-	[http://www.qtfm.org/](http://www.qtfm.org/) || [qtfm](https://www.archlinux.org/packages/?name=qtfm)
+	[http://www.qtfm.org/](http://www.qtfm.org/) || [qtfm](https://aur.archlinux.org/packages/qtfm/)
 
 *   **[ROX](/index.php/ROX "ROX")** — Un piccolo e veloce file manager che può opzionalmente gestire il background del desktop e i pannelli.
 
@@ -2155,7 +2155,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **qpdfview** — Un visualizzatore a schede per PDF che utilizza le librerie Poppler e Qt.
 
-	[https://launchpad.net/qpdfview](https://launchpad.net/qpdfview) || [qpdfview](https://aur.archlinux.org/packages/qpdfview/)
+	[https://launchpad.net/qpdfview](https://launchpad.net/qpdfview) || [qpdfview](https://www.archlinux.org/packages/?name=qpdfview)
 
 *   **[Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf")** — Un visualizzatore che può decodificare i formati LZW e leggere i PDF criptati.
 
@@ -2233,7 +2233,7 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 *   **[Strigi](https://en.wikipedia.org/wiki/Strigi "wikipedia:Strigi")** — Un veloce scansione dei motori di ricerca desktop con una GUI Qt.
 
-	[http://strigi.sourceforge.net/](http://strigi.sourceforge.net/) || [strigi](https://www.archlinux.org/packages/?name=strigi)
+	[http://strigi.sourceforge.net/](http://strigi.sourceforge.net/) || [strigi](https://aur.archlinux.org/packages/strigi/)
 
 ### Elaboratore testi
 
@@ -3389,7 +3389,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[MonoDevelop](https://en.wikipedia.org/wiki/MonoDevelop "wikipedia:MonoDevelop")** — IDE multi-piattaforma orientato allo sviluppo per Mono e .NET frameworks.
 
-	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop](https://www.archlinux.org/packages/?name=monodevelop)
+	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop](https://aur.archlinux.org/packages/monodevelop/)
 
 *   **[NetBeans](/index.php/Netbeans "Netbeans")** — IDE per sviluppare con Java, JavaScript, PHP, Python, Ruby, Groovy, C, C++, Scala, Clojure, e altri linguaggi.
 
@@ -3455,7 +3455,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **Kupfer** — Comodo comando e uno strumento di accesso per il desktop GNOME che può lanciare applicazioni, aprire documenti e accedere a differenti tipi di oggetti e agire su di essi.
 
-	[https://live.gnome.org/Kupfer](https://live.gnome.org/Kupfer) || [kupfer](https://aur.archlinux.org/packages/kupfer/)
+	[https://live.gnome.org/Kupfer](https://live.gnome.org/Kupfer) || [kupfer](https://www.archlinux.org/packages/?name=kupfer)
 
 *   **[Launchy](https://en.wikipedia.org/wiki/Launchy "wikipedia:Launchy")** — Lanciatore di applicazioni molto popolare e multi-piattaforma, basato su un sistema di plugin che ne estende le funzionalità.
 
@@ -3481,7 +3481,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **[GnuCash](https://en.wikipedia.org/wiki/GnuCash "wikipedia:GnuCash")** — Applicazione finanziaria che implementa un sistema di contabilità in partita doppia con funzioni per contabilità delle piccole imprese.
 
-	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://www.archlinux.org/packages/?name=gnucash)
+	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://aur.archlinux.org/packages/gnucash/)
 
 *   **[Grisbi](https://en.wikipedia.org/wiki/Grisbi "wikipedia:Grisbi")** — Sistema di finanza personale per la gestione di conti terzi, le spese e le categorie ricevute, così come le linee di bilancio, esercizi, e altre informazioni che lo rende adatto per le associazioni.
 

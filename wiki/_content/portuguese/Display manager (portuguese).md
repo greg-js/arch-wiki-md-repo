@@ -1,3 +1,7 @@
+Artigos relacionados
+
+*   [Start_X_at_Boot_(Português)](/index.php/Start_X_at_Boot_(Portugu%C3%AAs) "Start X at Boot (Português)")
+
 Um [gestor de display](https://en.wikipedia.org/wiki/X_display_manager_(program_type) "wikipedia:X display manager (program type)"), ou gerenciador de login, é tipicamente uma interface gráfica de usuário que é exibida no final do processo de inicialização no lugar do shell padrão. Há várias implementações de gestores de display, assim como existem vários tipos de [gerenciadores de janelas](/index.php/Window_manager "Window manager") e [ambientes desktop](/index.php/Desktop_environment "Desktop environment"). Geralmente, há uma certa quantidade de personalização e themeability disponível com cada um
 
 ## Contents

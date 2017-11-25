@@ -698,8 +698,6 @@ Also multiple snapshots can be taken and each one can be merged with the origin 
 
 The snapshot can be mounted and backed up with **dd** or **tar**. The size of the backup file done with **dd** will be the size of the files residing on the snapshot volume. To restore just create a snapshot, mount it, and write or extract the backup to it. And then merge it with the origin.
 
-It is important to have the *dm_snapshot* module listed in the MODULES variable of `/etc/mkinitcpio.conf`, otherwise the system will not boot. If you do this on an already installed system, make sure to [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
-
 Snapshots are primarily used to provide a frozen copy of a file system to make backups; a backup taking two hours provides a more consistent image of the file system than directly backing up the partition.
 
 See [Create root filesystem snapshots with LVM](/index.php/Create_root_filesystem_snapshots_with_LVM "Create root filesystem snapshots with LVM") for automating the creation of clean root file system snapshots during system startup for backup and rollback.

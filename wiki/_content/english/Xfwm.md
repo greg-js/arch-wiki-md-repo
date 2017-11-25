@@ -1,3 +1,10 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Xfce](/index.php/Xfce "Xfce")
+*   [Xorg](/index.php/Xorg "Xorg")
+
 **xfwm** is the window manager for the [Xfce](/index.php/Xfce "Xfce") environment.
 
 ## Contents

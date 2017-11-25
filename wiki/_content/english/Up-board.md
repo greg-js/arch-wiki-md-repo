@@ -13,7 +13,7 @@ The [up-board](http://up-board.org) is a Intel based SOC.
 
 The up-board features a [UEFI](/index.php/UEFI "UEFI") only setup (no BIOS emulation). The standard UEFI installation process may be followed. [systemd-boot](/index.php/Systemd-boot "Systemd-boot") works well as a simple bootloader.
 
-**Note:** The installation disk for the up-board is `/dev/mmcblk0`. [GPT](/index.php/Partitioning#GUID_Partition_Table "Partitioning") is the recommended partition type.
+**Note:** The installation disk for the up-board is `/dev/mmcblk0`. [GPT](/index.php/GPT "GPT") is the recommended partition type.
 
 ## GPIO
 

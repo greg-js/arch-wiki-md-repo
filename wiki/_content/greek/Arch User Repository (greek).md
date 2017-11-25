@@ -1,3 +1,8 @@
+Σχετικά άρθρα
+
+*   [AUR User Guidelines](/index.php/AUR_User_Guidelines "AUR User Guidelines")
+*   [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines")
+
 ## Contents
 
 *   [1 Γενικά](#.CE.93.CE.B5.CE.BD.CE.B9.CE.BA.CE.AC)

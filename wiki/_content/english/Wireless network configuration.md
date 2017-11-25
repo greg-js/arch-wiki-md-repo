@@ -285,7 +285,7 @@ Depending on the encryption, you need to associate your wireless device with the
 *   **WEP**
     *   using a hexadecimal or ASCII key (the format is distinguished automatically, because a WEP key has a fixed length): `# iw dev *interface* connect "*your_essid*" key 0:*your_key*` 
     *   using a hexadecimal or ASCII key, specifying the third set up key as default (keys are counted from zero, four are possible): `# iw dev *interface* connect "*your_essid*" key d:2:*your_key*` 
-*   **WPA/WPA2** - See [WPA supplicant#Connecting with wpa passphrase](/index.php/WPA_supplicant#Connecting_with_wpa_passphrase "WPA supplicant").
+*   **WPA/WPA2** - See [WPA supplicant#Connecting with wpa_passphrase](/index.php/WPA_supplicant#Connecting_with_wpa_passphrase "WPA supplicant").
 
 Regardless of the method used, you can check if you have associated successfully:
 

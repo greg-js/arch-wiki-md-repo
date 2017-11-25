@@ -1,3 +1,15 @@
+Σχετικά άρθρα
+
+*   [Downgrading Packages](/index.php/Downgrading_Packages "Downgrading Packages")
+*   [Improve Pacman Performance](/index.php/Improve_Pacman_Performance "Improve Pacman Performance")
+*   [Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
+*   [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta")
+*   [Pacman Tips](/index.php/Pacman_Tips "Pacman Tips")
+*   [Pacman package signing](/index.php/Pacman_package_signing "Pacman package signing")
+*   [FAQ#Package Management](/index.php/FAQ#Package_Management "FAQ")
+*   [pacman-key](/index.php/Pacman-key "Pacman-key")
+*   [Pacnew and Pacsave Files](/index.php/Pacnew_and_Pacsave_Files "Pacnew and Pacsave Files")
+
 O Pacman είναι ο [διαχειριστής πακέτων](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system") του Arch Linux. Ο διαχειριστής πακέτων κάνει την εγκατάσταση, αναβάθμιση ή αφαίρεση λογισμικού. Αυτό το άρθρο καλύπτει την βασική του χρήση καθώς και συμβουλές αντιμετώπισης προβλημάτων.
 
 ## Contents

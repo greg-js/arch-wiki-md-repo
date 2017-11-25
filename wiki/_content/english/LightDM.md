@@ -455,7 +455,7 @@ See [PulseAudio#Running](/index.php/PulseAudio#Running "PulseAudio").
 
 Some LightDM themes try to access the user avatar located in HOME. If your HOME is encrypted, LightDM cannot access it and hangs. To prevent this from happening, you can either:
 
-*   Set your avatar as explained in [LightDM#Changing_your_avatar](/index.php/LightDM#Changing_your_avatar "LightDM")
+*   Set your avatar as explained in [#Changing your avatar](#Changing_your_avatar)
 *   for [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) only: `hide-user-image = true` in `/etc/lightdm/lightdm-gtk-greeter.conf`
 
 ### Missing power buttons in GTK greeter

@@ -1,10 +1,15 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [List of applications](/index.php/List_of_applications "List of applications"). Дата последней синхронизации: 2014-08-30\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=List_of_applications&diff=0&oldid=333092).
 
-****Список приложений****
+**<a class="mw-selflink selflink">Список приложений</a>**
 
 * * *
 
 [Интернет](/index.php/List_of_applications/Internet_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Internet (Русский)") – [Мультимедиа](/index.php/List_of_applications/Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Multimedia (Русский)") – [Утилиты](/index.php/List_of_applications/Utilities_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Utilities (Русский)") – [Документы](/index.php/List_of_applications/Documents_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Documents (Русский)") – [Безопасность](/index.php/List_of_applications/Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Security (Русский)") – [Наука](/index.php/List_of_applications/Science_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Science (Русский)") – [Другие](/index.php/List_of_applications/Other_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Other (Русский)")
+
+Ссылки по теме
+
+*   [Базовые утилиты](/index.php/%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5_%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B "Базовые утилиты")
+*   [Список игр](/index.php/List_of_games "List of games")
 
 Эта статья представляет собой общий список приложений, отсортированных по категориям, для тех, кто ищет необходимые пакеты. Во многих разделах консольные и графические приложения отделены друг от друга.
 
@@ -230,7 +235,7 @@
 
 ### Управление подключениями
 
-*   **[Connman](/index.php/Connman "Connman")** — Демон для управления интернет-подключениями со встраиваемых устройств в операционной системе Linux. Имеет консольную версию, а также версии Enlightenment, GTK и Dmenu
+*   **[ConnMan](/index.php/ConnMan "ConnMan")** — Демон для управления интернет-подключениями со встраиваемых устройств в операционной системе Linux. Имеет консольную версию, а также версии Enlightenment, GTK и Dmenu
 
 	[https://01.org/connman](https://01.org/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 
@@ -554,7 +559,7 @@
 
 *   **[Transmission](/index.php/Transmission "Transmission")** — Простой и легкий в использовании клиент BitTorrent, который может работать как демон или через фронтенды GTK+, Qt GUI, web и CLI
 
-	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) [transmission-remote-gtk](https://aur.archlinux.org/packages/transmission-remote-gtk/) (клиент удаленного доступа работает с демоном, доступным в пакете -cli)
+	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk) (клиент удаленного доступа работает с демоном, доступным в пакете -cli)
 
 *   **[Vuze](https://en.wikipedia.org/wiki/ru:Vuze "wikipedia:ru:Vuze")** — Клиент BitTorrent с богатым функционалом, написанный на Java (прежнее название - Azureus)
 
@@ -606,7 +611,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **mu/mu4e** — Индексатор электронной почты (mu) и клиент для emacs (mu4e). Основан на Xapian для быстрого поиска
 
-	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://aur.archlinux.org/packages/mu/)
+	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://www.archlinux.org/packages/?name=mu)
 
 *   **[Mutt](/index.php/Mutt "Mutt")** — Небольшой, но очень мощный консольный почтовый клиент
 
@@ -790,7 +795,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Psi](https://en.wikipedia.org/wiki/ru:Psi клиент Jabber
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/)
 
 *   **Psi+** — Расширенная версия клиента Psi с большим количеством новых [возможностей](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version)
 
@@ -948,7 +953,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Psi](https://en.wikipedia.org/wiki/ru:Psi "wikipedia:ru:Psi")** — Основанный на Qt клиент Jabber, поддерживающий видеоконференции (начиная с версии 0.13)
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psi-plus-git](https://aur.archlinux.org/packages/psi-plus-git/)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/) [psi-plus-git](https://aur.archlinux.org/packages/psi-plus-git/)
 
 *   **[QuteCom](https://en.wikipedia.org/wiki/QuteCom "wikipedia:QuteCom")** — Приложение VoIP, которое позволяет вам бесплатно совершать голосовые и видео звонки с компьютера на компьютер и объединить все ваши IM-контакты в одном месте (прежнее название - Wengo Phone)
 
@@ -2250,7 +2255,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[MonoDevelop](https://en.wikipedia.org/wiki/ru:MonoDevelop "wikipedia:ru:MonoDevelop")** — Кроссплатформенная IDE, направленная на фреймворки Mono и .NET
 
-	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop](https://www.archlinux.org/packages/?name=monodevelop)
+	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop](https://aur.archlinux.org/packages/monodevelop/)
 
 *   **[NetBeans](/index.php/Netbeans "Netbeans")** — Интегрированная среда разработки (IDE) для Java, JavaScript, PHP, Python, Ruby, Groovy, C, C++, Scala, Clojure и других языков
 
@@ -2522,7 +2527,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **qtFM** — Небольшой, легковесный файловый менеджер для Linux, основанный на чистом Qt
 
-	[http://www.qtfm.org/](http://www.qtfm.org/) || [qtfm](https://www.archlinux.org/packages/?name=qtfm)
+	[http://www.qtfm.org/](http://www.qtfm.org/) || [qtfm](https://aur.archlinux.org/packages/qtfm/)
 
 *   **[ROX](/index.php/ROX "ROX")** — Небольшой и быстрый файловый менеджер, который имеет возможность управлять фоновым изображением рабочего стола и панелями
 
@@ -2586,7 +2591,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Strigi](https://en.wikipedia.org/wiki/ru:Strigi "wikipedia:ru:Strigi")** — Быстрый поисковый движок с интерфейсом Qt
 
-	[http://strigi.sourceforge.net/](http://strigi.sourceforge.net/) || [strigi](https://www.archlinux.org/packages/?name=strigi)
+	[http://strigi.sourceforge.net/](http://strigi.sourceforge.net/) || [strigi](https://aur.archlinux.org/packages/strigi/)
 
 *   **[Tracker](https://en.wikipedia.org/wiki/ru:Tracker_(%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D0%B8%D0%BA) "wikipedia:ru:Tracker (локальный поисковик)")** — Все в одном: индексатор, поисковая утилита и база метаданных
 
@@ -2970,7 +2975,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://siag.nu/](http://siag.nu/) || [siag-office](https://aur.archlinux.org/packages/siag-office/)
 
-*   **[SoftMaker Office](https://en.wikipedia.org/wiki/ru:SoftMaker_Office "wikipedia:ru:SoftMaker Office")** — Полноценный, надежный, молниеносный и совместимый с форматами Microsoft Office офисный пакет, предоставляющий текстовый процессор, а также приложения для редактирования электронных таблиц и презентаций
+*   **[SoftMaker Office](https://en.wikipedia.org/wiki/ru:SoftMaker_Office "wikipedia:ru:SoftMaker Office")** — Полноценный, надежный, молниеносный и совместимый с форматами Microsoft Office офисный пакет, предоставляющий текстовый процессор, а также приложения для редактирования электронных таблиц и презентаций. Для запуска программы вам понадобится получить активационный ключ на сайте, нажав download и указав свой email.
 
 	[http://www.freeoffice.com/](http://www.freeoffice.com/) || [freeoffice](https://aur.archlinux.org/packages/freeoffice/)
 
@@ -3278,7 +3283,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://www.xfce.org/](http://www.xfce.org/) || [mousepad](https://www.archlinux.org/packages/?name=mousepad)
 
-*   **[Nedit](https://en.wikipedia.org/wiki/ru:NEdit "wikipedia:ru:NEdit")** — Текстовый редактор для среды [lesstif](https://www.archlinux.org/packages/?name=lesstif)
+*   **[Nedit](https://en.wikipedia.org/wiki/ru:NEdit "wikipedia:ru:NEdit")** — Текстовый редактор для среды Motif
 
 	[http://www.nedit.org/](http://www.nedit.org/) || [nedit](https://www.archlinux.org/packages/?name=nedit)
 
@@ -3436,7 +3441,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **qpdfview** — Программа просмотра документов с вкладками. Использует библиотеку Poppler для поддержки PDF, libspectre - для PS, DjVuLibre - для DjVu, CUPS - для печати и тулкит Qt - для отображения собственного интерфейса
 
-	[https://launchpad.net/qpdfview](https://launchpad.net/qpdfview) || [qpdfview](https://aur.archlinux.org/packages/qpdfview/)
+	[https://launchpad.net/qpdfview](https://launchpad.net/qpdfview) || [qpdfview](https://www.archlinux.org/packages/?name=qpdfview)
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Приложение просмотра PDF и создания заметок
 
@@ -4564,7 +4569,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Kupfer** — Удобная утилита для окружения GNOME, способная запускать приложения, открывать документы и давать доступ к действиям с различными типами объектов
 
-	[https://live.gnome.org/Kupfer](https://live.gnome.org/Kupfer) || [kupfer](https://aur.archlinux.org/packages/kupfer/)
+	[https://live.gnome.org/Kupfer](https://live.gnome.org/Kupfer) || [kupfer](https://www.archlinux.org/packages/?name=kupfer)
 
 *   **[Launchy](https://en.wikipedia.org/wiki/ru:Launchy "wikipedia:ru:Launchy")** — Очень популярная кроссплатформенная утилита запуска приложений, использующая плагины для предоставления дополнительного функционала
 
@@ -4620,7 +4625,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[GnuCash](https://en.wikipedia.org/wiki/ru:GnuCash "wikipedia:ru:GnuCash")** — Финансовое приложение, реализующее систему бухгалтерского учета с двойной записью, с функциями, полезными для ведения бухгалтерии на малых предприятиях
 
-	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://www.archlinux.org/packages/?name=gnucash)
+	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://aur.archlinux.org/packages/gnucash/)
 
 *   **[Grisbi](https://en.wikipedia.org/wiki/ru:Grisbi "wikipedia:ru:Grisbi")** — Персональная финансовая система, которую можно использовать, в том числе, и на предприятиях
 

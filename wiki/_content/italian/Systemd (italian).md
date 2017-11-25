@@ -9,7 +9,7 @@ Articoli correlati
 
 Dalla pagina web del [progetto](http://freedesktop.org/wiki/Software/systemd):
 
-	**systemd** è un gestore di sistema e di servizi per Linux, compatibile con gli initscript SysV e LSB. **systemd** fornisce una notevole capacità di parallelizzazione, usa socket e [D-Bus](/index.php/D-Bus "D-Bus") per l'avvio dei demoni, offre un avvio su richiesta dei demoni, tiene traccia dei processi con l'utilizzo del [control groups](/index.php/Cgroups "Cgroups") di Linux, supporta lo snapshotting e il restore dello stato del sistema, mantiene i punti di mount e di automount e implementa un elaborato servizio di controllo logico basato sulle relazioni delle dipendenze.
+	**systemd** è un gestore di sistema e di servizi per Linux. Fornisce un manager di sistema e servizi che e` avviato con PID 1 e avvia il resto del sistema. **systemd** fornisce una notevole capacità di parallelizzazione, usa socket e [D-Bus](/index.php/D-Bus "D-Bus") per l'avvio dei demoni, offre un avvio su richiesta dei demoni, tiene traccia dei processi con l'utilizzo del [control groups](/index.php/Cgroups "Cgroups") di Linux, supporta lo snapshotting e il restore dello stato del sistema, mantiene i punti di mount e di automount e implementa un elaborato servizio di controllo logico basato sulle relazioni delle dipendenze. **systemd** supporta SysV e LSB, inoltre sostituisce sysvinit. Include un demone per il logging, utility per controllare aspetti base del sistema come hostname, data, locale, lista degli utenti loggati; puo` avviare containers e macchine virtuali. Fornisce demoni per gestire la rete, sincronizzazione dell'orario, forwarding di log e name resolution.
 
 **Nota:** Per una dettagliata spiegazione del motivo per cui Arch è passato a systemd, leggi questo [post](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530).
 
@@ -72,6 +72,13 @@ Il principale comando usato per controllare systemd è `systemctl`. Alcuni degli
 
 ### Analizzare lo stato del sistema
 
+Mostra lo stato del sistema:
+
+```
+$ systemctl status 
+
+```
+
 Lista della unità attive:
 
 ```
@@ -102,86 +109,96 @@ $ systemctl list-unit-files
 
 ### Usare le unità
 
-Le unità possono essere, per esempio, servizi (`.service`), punti di montaggio (`.mount`), dispositivi (`.device`) oppure i sockets (`.socket`).
+Le unità possono essere, per esempio, servizi (`.service`), punti di mount (`.mount`), dispositivi (`.device`) oppure sockets (`.socket`).
 
 Quando si usa `systemctl`, occorre generalmente specificare sempre il nome completo dell'unità compreso il suffisso, per esempio `sshd.socket`. Esistono tuttavia delle scorciatoie quando si specifica l'unità nei seguenti comandi `systemctl`:
 
-*   Se non si specifica il suffisso, per systemctl sarà sottointeso `.service`. Per esempio, `netcfg` e `netcfg.service` sono equivalenti.
-*   I punti di montaggio saranno automaticamente tradotti nella appropriata unità `.mount`. Per esempio, specificare `/home` è equivalente a `home.mount`.
-*   Come i punti di montaggio, anche i dispositivi sono automaticamente tradotti nell'appropriata unità `.device`, quindi specificare `/dev/sda2` è equivalente a `dev-sda2.device`.
+*   Se non si specifica il suffisso, per systemctl sarà sottointeso `.service`. Per esempio, `netctl` e `netctl.service` sono equivalenti.
+*   I punti di mount saranno automaticamente tradotti nella appropriata unità `.mount`. Per esempio, specificare `/home` è equivalente a `home.mount`.
+*   Come i punti di mount, anche i dispositivi sono automaticamente tradotti nell'appropriata unità `.device`, quindi specificare `/dev/sda2` è equivalente a `dev-sda2.device`.
 
 Vedi [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) per dettagli.
 
-Attivare immediatamente una unità:
+**Nota:** Alcune unit contengono una `@` (e.g. `*name@string.service*`: questo significa che sono [istanze](http://0pointer.de/blog/projects/instances.html) di un `template`, il cui filename non contiene la parte `*string*` (e.g. `*name@.service*`). `*string*` e` chiamato identificatore dell'istanza ed e` simile all'argomento passato al template quando viene richiamato con il comando *systemctl*: nelle unit verra` sostituico con `*%i*`. Per essere piu` accurati, prima di tentare di istanziare `*name@.estensione*`, `systemd` cerchera` una unit con il nome esatto.
+
+**Attivare** immediatamente una unità:
 
 ```
-# systemctl start <unit>
-
-```
-
-Fermare immediatamente una unità:
-
-```
-# systemctl stop <unit>
+# systemctl start *unit*
 
 ```
 
-Far ripartire una unità:
+**Fermare immediatamente** una unità:
 
 ```
-# systemctl restart <unit>
-
-```
-
-Chiedere ad una unità di ricaricare la sua configurazione:
-
-```
-# systemctl reload <unit>
+# systemctl stop *unit*
 
 ```
 
-Mostrare lo stato di una unità, compreso se sta funzionando o no:
+**Riavviare** una unità:
 
 ```
-$ systemctl status <unit>
-
-```
-
-Controllare se una unità è già attivata o no:
-
-```
-$ systemctl is-enabled <unit>
+# systemctl restart *unit*
 
 ```
 
-Attivare l'avvio automatico al boot:
+**Ricaricare la configurazione** di una unit:
 
 ```
-# systemctl enable <unit>
-
-```
-
-**Nota:** I servizi senza una sezione `[Install]`, sono solitamente evocati automaticamente da altri servizi. Ma se occorre installarli manualmente usare il seguente comando rimpiazzando `foo` con il nome del servizio.
-```
-# ln -s /usr/lib/systemd/system/"foo".service /etc/systemd/system/graphical.target.wants/
+# systemctl reload *unit*
 
 ```
 
-Disattivare l'avvio automatico al boot:
+**Mostrare lo stato** di una unità, compreso se sta funzionando o no:
 
 ```
-# systemctl disable <unit>
+$ systemctl status *unit*
+
+```
+
+**Controllare** se una unità è già attivata o no:
+
+```
+$ systemctl is-enabled *unit*
+
+```
+
+**Attivare l'avvio automatico** al boot:
+
+```
+# systemctl enable *unit*
+
+```
+
+Attivare l'avvio automatico al boot e avviare immediatamente una unit:
+
+```
+# systemctl enable --now *unit*
+
+```
+
+**Disattivare l'avvio automatico** al boot:
+
+```
+# systemctl disable `unit`
+
+```
+
+*Unmask* di una unit:
+
+```
+# systemctl unmask *unit*
 
 ```
 
 Mostra la pagina del manuale associata a una unità (non supportato dai files .unit):
 
 ```
-$ systemctl help <unit>
+$ systemctl help *unit*
 
 ```
 
-Ricaricare systemd, controllo per nuove o modificate unità:
+**Ricaricare systemd**, controllo per nuove o modificate unità:
 
 ```
 # systemctl daemon-reload

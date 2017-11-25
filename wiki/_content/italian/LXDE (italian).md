@@ -1,3 +1,13 @@
+Articoli correlati
+
+*   [Desktop Environment (Italiano)](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)")
+*   [Display Manager (Italiano)](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)")
+*   [Window Manager (Italiano)](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)")
+*   [Openbox (Italiano)](/index.php/Openbox_(Italiano) "Openbox (Italiano)")
+*   [PCManFM (Italiano)](/index.php/PCManFM_(Italiano) "PCManFM (Italiano)")
+*   [LXDM (Italiano)](/index.php/LXDM_(Italiano) "LXDM (Italiano)")
+*   [GTK+_(Italiano)](/index.php/GTK%2B_(Italiano) "GTK+ (Italiano)")
+
 From [LXDE.org | Lightweight X11 Desktop Environment](http://lxde.org/):
 
 	*Il 'Lightweight X11 Desktop Environment' è un ambiente desktop estremamente veloce , performante e con un buon risparmio energetico. Gestito da una comunità internazionale di sviluppatori, si presenta con una bella interfaccia, supporto multi-lingua, tasti di scelta rapida standard e funzionalità aggiuntive come la navigazione a schede dei file. LXDE utilizza meno CPU e RAM di altri ambienti desktop. E 'progettato appositamente per i computer cloud con basse specifiche hardware, come i netbook, i dispositivi MID (Mobile ad esempio) o computer datati.*

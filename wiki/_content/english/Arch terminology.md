@@ -20,15 +20,14 @@ This page is intended to be a page to demystify common terms used among the Arch
 *   [16 package](#package)
 *   [17 Package maintainer](#Package_maintainer)
 *   [18 pacman](#pacman)
-*   [19 pacman.conf](#pacman.conf)
-*   [20 PKGBUILD](#PKGBUILD)
-*   [21 repository/repo](#repository.2Frepo)
-*   [22 RTFM](#RTFM)
-*   [23 testing/[testing]](#testing.2F.5Btesting.5D)
-*   [24 The Arch Way](#The_Arch_Way)
-*   [25 TU, Trusted User](#TU.2C_Trusted_User)
-*   [26 udev](#udev)
-*   [27 wiki](#wiki)
+*   [19 PKGBUILD](#PKGBUILD)
+*   [20 repository/repo](#repository.2Frepo)
+*   [21 RTFM](#RTFM)
+*   [22 testing/[testing]](#testing.2F.5Btesting.5D)
+*   [23 The Arch Way](#The_Arch_Way)
+*   [24 TU, Trusted User](#TU.2C_Trusted_User)
+*   [25 udev](#udev)
+*   [26 wiki](#wiki)
 
 ## ABS
 
@@ -147,10 +146,6 @@ The [pacman](/index.php/Pacman "Pacman") [package manager](https://en.wikipedia.
 *pacman* keeps the system up to date by synchronizing package lists with the master server. This server/client model also allows the user to download/install packages with a simple command, complete with all required dependencies.
 
 NB: Pacman was written by Judd Vinet, the creator of Arch Linux. It is used as a package management tool by other distributions as well, such as FrugalWare, Rubix, UfficioZero (in Italy, based on Ubuntu), and, of course, [Arch based distributions](/index.php/Arch_based_distributions "Arch based distributions") such as Archie and AEGIS.
-
-## pacman.conf
-
-This is the configuration file of [pacman](/index.php/Pacman "Pacman"). It is located in `/etc`. For a full explanation of its powers, type this at the command `man pacman.conf`.
 
 ## PKGBUILD
 

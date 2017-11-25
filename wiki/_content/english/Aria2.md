@@ -380,7 +380,7 @@ You can use <a class="mw-selflink selflink">Aria2</a> instead of curl to downloa
 DLAGENTS=('ftp::/usr/bin/aria2c -UWget -s4 %u -o %o'
           'http::/usr/bin/aria2c -UWget -s4 %u -o %o'
           'https::/usr/bin/aria2c -UWget -s4 %u -o %o'
-          'rsync::/usr/bin/rsync -z %u %o'
+          'rsync::/usr/bin/rsync --no-motd -z %u %o'
           'scp::/usr/bin/scp -C %u %o')
 [...]
 ```

@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [Desktop Environment (Español)](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)")
+*   [Window Manager (Español)](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)")
+*   [Start X at Login (Español)](/index.php/Start_X_at_Login_(Espa%C3%B1ol) "Start X at Login (Español)")
+
 El [gestor de pantalla](https://en.wikipedia.org/wiki/es:X_Display_Manager y de [entornos de escritorios](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)"). Estos gestores suelen proporcionar un cierto grado de personalización y disponibilidad de temas con cada uno.
 
 ## Contents

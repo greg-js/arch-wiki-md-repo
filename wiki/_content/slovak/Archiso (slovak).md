@@ -1,3 +1,8 @@
+Related articles
+
+*   [Remastering the Install ISO](/index.php/Remastering_the_Install_ISO "Remastering the Install ISO")
+*   [Archiso as pxe server](/index.php/Archiso_as_pxe_server "Archiso as pxe server")
+
 **Archiso** je malá skupina bashových skriptov schopných vybudovať plne funkčný Arch Linux obraz pre CD a USB. Je to nástroj na generovanie oficiálnych CD/USB obrazov, avšak je to veľmi všeobecný nástroj a potenciálne môže byť využitý na generovanie hocičoho od záchranných systémov, inštalačných diskov, špeciálne zameraných CD/DVD/USB systémov a ktovie čoho ešte. Srdcom a dušou Archisa je mkarchiso. Všetky jeho možnosti sú popísané v jeho výpise použitie, takže tu nebude popísané jeho priame použitie. Miesto toho bude tento wiki článok v pozícii príručky pre veľmi rýchle vytvorenie live média.
 
 ## Contents

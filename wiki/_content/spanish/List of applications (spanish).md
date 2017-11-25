@@ -1,8 +1,12 @@
-****Lista de aplicaciones****
+**<a class="mw-selflink selflink">Lista de aplicaciones</a>**
 
 * * *
 
 [Internet](/index.php/List_of_applications/Internet_(Espa%C3%B1ol) "List of applications/Internet (Español)") – [Multimedia](/index.php/List_of_applications/Multimedia_(Espa%C3%B1ol) "List of applications/Multimedia (Español)") – [Utilidades](/index.php/List_of_applications/Utilities_(Espa%C3%B1ol) "List of applications/Utilities (Español)") – [Documentos](/index.php/List_of_applications/Documents_(Espa%C3%B1ol) "List of applications/Documents (Español)") – [Seguridad](/index.php/List_of_applications/Security_(Espa%C3%B1ol) "List of applications/Security (Español)") – [Ciencia](/index.php/List_of_applications/Science_(Espa%C3%B1ol) "List of applications/Science (Español)") – [Otras](/index.php/List_of_applications/Other_(Espa%C3%B1ol) "List of applications/Other (Español)")
+
+Artículos relacionados
+
+*   [List of games (Español)](/index.php/List_of_games_(Espa%C3%B1ol) "List of games (Español)")
 
 Este artículo contiene un listado general de aplicaciones, ordenadas por categorías, a modo de referencia para aquellos que buscan determinados paquetes. Muchas de las secciones se dividen en aplicaciones de consola y aplicaciones gráficas.
 
@@ -196,7 +200,7 @@ Este artículo contiene un listado general de aplicaciones, ordenadas por catego
 
 *   **[Transmission](/index.php/Transmission "Transmission")** — Cliente BitTorrent simple y fácil de usar con una versión demonio, GTK+, interfaz Qt, front-ends web y CLI .
 
-	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli) [transmission-remote-gtk](https://aur.archlinux.org/packages/transmission-remote-gtk/) (los clientes remotos trabajan con el demonio del paquete -cli)
+	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli) [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk) (los clientes remotos trabajan con el demonio del paquete -cli)
 
 #### Interfez gráfica
 
@@ -396,11 +400,11 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Cliente Jabber basado en Qt.
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/)
 
 *   **Psi+** — Versión mejorada del cliente Jabber Psi con nuevas [características](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version).
 
-	[https://code.google.com/p/psi-dev/](https://code.google.com/p/psi-dev/) || [psi-plus](https://aur.archlinux.org/packages/psi-plus/)
+	[https://code.google.com/p/psi-dev/](https://code.google.com/p/psi-dev/) || [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Cliente XMPP, rico en características y fácil de hackear, del autor del servidor XMPP ejabberd.
 
@@ -550,7 +554,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Cliente Jabber basado en Qt con soporte para videoconferencia (desde la versión 0.13).
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psi-plus](https://aur.archlinux.org/packages/psi-plus/)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/) [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
 
 *   **[QuteCom](https://en.wikipedia.org/wiki/QuteCom "wikipedia:QuteCom")** — Software de telefonía que permite realizar llamadas de voz y vídeo gratis de PC a PC, e integrar todos los contactos de mensajería instantánea en un solo lugar (antes llamado Wengo Phone).
 
@@ -672,7 +676,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **mu/mu4e** — Indexador de email (mu) y cliente para emacs (mu4e). Basado en xapian para las búsquedas rápidas.
 
-	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://aur.archlinux.org/packages/mu/)
+	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://www.archlinux.org/packages/?name=mu)
 
 *   **[Mutt](/index.php/Mutt "Mutt")** — Pequeño, pero muy potente, cliente de correo electrónico basado en texto.
 
@@ -726,7 +730,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 ### Gestores de conexiones de red
 
-*   **[Connman](/index.php/Connman "Connman")** — Demonio para la gestión de las conexiones a Internet en dispositivos integrados que ejecutan el sistema operativo Linux. El gestor de conexión está diseñado para ser liviano y utilizar la menor cantidad posible de recursos, lo que lo hace fácilmente integrable.
+*   **[ConnMan](/index.php/ConnMan "ConnMan")** — Demonio para la gestión de las conexiones a Internet en dispositivos integrados que ejecutan el sistema operativo Linux. El gestor de conexión está diseñado para ser liviano y utilizar la menor cantidad posible de recursos, lo que lo hace fácilmente integrable.
 
 	[https://connman.net/](https://connman.net/) || [connman](https://www.archlinux.org/packages/?name=connman)
 
@@ -1563,7 +1567,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **rubyripper** — Extractor de audio que intenta entregar un registro seguro a través de múltiples extracciones de la misma pista y la corrección de cualquier diferencia.
 
-	[http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://www.archlinux.org/packages/?name=rubyripper)
+	[http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://aur.archlinux.org/packages/rubyripper/)
 
 *   **[Sound Juicer](https://en.wikipedia.org/wiki/Sound_Juicer "wikipedia:Sound Juicer")** — Extractor de CD para GNOME.
 
@@ -2053,7 +2057,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **qtFM** — Pequeño, administrador de archivos ligero para escritorios Linux basado en Qt puro.
 
-	[http://www.qtfm.org/](http://www.qtfm.org/) || [qtfm](https://www.archlinux.org/packages/?name=qtfm)
+	[http://www.qtfm.org/](http://www.qtfm.org/) || [qtfm](https://aur.archlinux.org/packages/qtfm/)
 
 *   **[ROX](/index.php/ROX "ROX")** — Gestor de archivos pequeño y rápido que puede manejar opcionalmente el fondo del escritorio y los paneles .
 
@@ -2253,7 +2257,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **qpdfview** — Visor de PDF con pestañas, que usa las bibliotecas Poppler y Qt.
 
-	[https://launchpad.net/qpdfview](https://launchpad.net/qpdfview) || [qpdfview](https://aur.archlinux.org/packages/qpdfview/)
+	[https://launchpad.net/qpdfview](https://launchpad.net/qpdfview) || [qpdfview](https://www.archlinux.org/packages/?name=qpdfview)
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Aplicación para visualizar PDF y tomar notas.
 
@@ -2333,7 +2337,7 @@ Véanse los artículos de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page
 
 *   **[Strigi](https://en.wikipedia.org/wiki/Strigi "wikipedia:Strigi")** — Motor de búsqueda de rápido rastreo en el escritorio, con una interfaz gráfica Qt.
 
-	[http://strigi.sourceforge.net/](http://strigi.sourceforge.net/) || [strigi](https://www.archlinux.org/packages/?name=strigi)
+	[http://strigi.sourceforge.net/](http://strigi.sourceforge.net/) || [strigi](https://aur.archlinux.org/packages/strigi/)
 
 *   **[Tracker](https://en.wikipedia.org/wiki/MetaTracker_(software) "wikipedia:MetaTracker (software)")** — Indexador todo en uno, herramienta de búsqueda y base de datos de metadatos.
 
@@ -3252,7 +3256,7 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 *   **Kupfer** — Conveniente comando y herramienta de acceso para el escritorio GNOME capaz de lanzar aplicaciones, abrir documentos y acceder a diferentes tipos de objetos y actuar sobre ellos.
 
-	[https://live.gnome.org/Kupfer](https://live.gnome.org/Kupfer) || [kupfer](https://aur.archlinux.org/packages/kupfer/)
+	[https://live.gnome.org/Kupfer](https://live.gnome.org/Kupfer) || [kupfer](https://www.archlinux.org/packages/?name=kupfer)
 
 *   **[Launchy](https://en.wikipedia.org/wiki/Launchy "wikipedia:Launchy")** — Lanzador de aplicaciones multiplataforma muy popular con un sistema basado en plugins usado para aportarle funcionalidades extra.
 
@@ -3320,7 +3324,7 @@ Vea también [Wikipedia:Comparison of accounting software](https://en.wikipedia.
 
 *   **[GnuCash](https://en.wikipedia.org/wiki/GnuCash "wikipedia:GnuCash")** — Aplicación financiera que implementa una sistema de contabilidad por partida doble con características para contabilidad en pequeñas empresas.
 
-	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://www.archlinux.org/packages/?name=gnucash)
+	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://aur.archlinux.org/packages/gnucash/)
 
 *   **[Grisbi](https://en.wikipedia.org/wiki/Grisbi "wikipedia:Grisbi")** — Sistema de finanzas personal que gestiona categorías de gastos y recibos de terceros, así como presupuestos, pago de impuestos, y otra información que lo hace apropiados para asociaciones.
 

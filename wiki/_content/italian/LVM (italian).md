@@ -1,3 +1,8 @@
+Articoli correlati
+
+*   [Software RAID and LVM](/index.php/Software_RAID_and_LVM "Software RAID and LVM")
+*   [System Encryption with LUKS](/index.php/System_Encryption_with_LUKS "System Encryption with LUKS")
+
 Questo articolo fornirà un esempio su come installare e configurare Arch Linux utilizzando il Logical Volume Manager (LVM).
 
 ## Contents

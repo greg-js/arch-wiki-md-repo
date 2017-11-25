@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [GTK+](/index.php/GTK%2B "GTK+")
+*   [Qt](/index.php/Qt "Qt")
+
 Los programas basados en [Qt](https://en.wikipedia.org/wiki/Qt_(toolkit) y [GTK+](/index.php/GTK%2B "GTK+") utilizan diferentes conjuntos de "widgets" para conformar sus interfaces gráficas de usuario. Cada uno presenta entre otras cosas, diferentes temas, estilos y juegos de íconos por defecto, así que su "aspecto y tacto" difieren significativamente. Este artículo le ayudará a conseguir que tanto sus aplicaciones Qt como las GTK+ sean parecidas para lograr una experiencia de escritorio más uniforme e "integrada".
 
 *"Qt (pronunciado "cute" en inglés) es un marco de trabajo para desarrollo de aplicaciones multiplataforma, ampliamente usado para el desarrollo de programas con interfaz gráfica (en cuyo caso se le conoce como un conjunto de "widgets"), aunque también es utilizado para desarrollar programas no gráficos tales como herramientas de consola y servidores."*

@@ -1,5 +1,21 @@
 **翻譯狀態：** 本文章是 [pacman](/index.php/Pacman "Pacman") 的翻譯版本。最近一次的翻譯時間：2013-12-22。點擊[本連結](https://wiki.archlinux.org/index.php?title=pacman&diff=0&oldid=289055)查看英文頁面之後的變更。
 
+相關文章
+
+*   [降級軟體包 (英)](/index.php/Downgrading_packages "Downgrading packages")
+*   [增進 Pacman 效能 (英)](/index.php/Improve_pacman_performance "Improve pacman performance")
+*   [Pacman GUI 前端 (英)](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
+*   [Pacman Rosetta (英)](/index.php/Pacman_Rosetta "Pacman Rosetta")
+*   [Pacman 提示 (英)](/index.php/Pacman_tips "Pacman tips")
+*   [Pacman 軟體包簽署 (英)](/index.php/Pacman_package_signing "Pacman package signing")
+*   [常見問答#軟體包管理](/index.php/FAQ_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E8.BB.9F.E9.AB.94.E5.8C.85.E7.AE.A1.E7.90.86 "FAQ (正體中文)")
+*   [pacman-key (英)](/index.php/Pacman-key "Pacman-key")
+*   [Pacnew 和 Pacsave 檔案](/index.php/Pacnew_and_Pacsave_files "Pacnew and Pacsave files")
+*   [應用程式清單/工具#軟體包管理 (英)](/index.php/List_of_Applications/Utilities#Package_management "List of Applications/Utilities")
+*   [Arch 組建系統](/index.php/Arch_Build_System_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Build System (正體中文)")
+*   [官方軟體庫](/index.php/Official_Repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official Repositories (正體中文)")
+*   [Arch 使用者倉庫](/index.php/Arch_User_Repository_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch User Repository (正體中文)")
+
 **[Pacman](https://www.archlinux.org/pacman/)** [軟體包管理員](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system")是 Arch Linux 的主要特色工具，結合了二進位軟體包格式和容易使用的[組建系統](/index.php/Arch_Build_System_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Build System (正體中文)")。輕鬆管理軟體是 Pacman 的目標，無論這些軟體包是來自[官方軟體庫](/index.php/Official_repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official repositories (正體中文)")還是由使用者自建。
 
 Pacman 會和主要伺服器同步軟體包清單，來保持系統處於最新狀態。在主從式架構之下，使用者只要用簡單的指令就可以下載並安裝軟體包，並補足所有相依的軟體包。

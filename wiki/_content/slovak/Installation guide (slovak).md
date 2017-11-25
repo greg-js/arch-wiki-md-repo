@@ -1,3 +1,10 @@
+Related articles
+
+*   [Category:Accessibility](/index.php/Category:Accessibility "Category:Accessibility")
+*   [Installation guide](/index.php/Installation_guide "Installation guide")
+*   [Install from SSH](/index.php/Install_from_SSH "Install from SSH")
+*   [General recommendations](/index.php/General_recommendations "General recommendations")
+
 ## Contents
 
 *   [1 Úvod](#.C3.9Avod)

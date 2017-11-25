@@ -1,3 +1,8 @@
+相關文章
+
+*   [Arch Linux](/index.php/Arch_Linux_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Linux (正體中文)")
+*   [Arch 的設計哲學](/index.php/The_Arch_Way_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "The Arch Way (正體中文)")
+
 **翻譯狀態：** 本文章是 [Arch_Compared_to_Other_Distributions](/index.php/Arch_Compared_to_Other_Distributions "Arch Compared to Other Distributions") 的翻譯版本。最近一次的翻譯時間：2014-01-25。點擊[本連結](https://wiki.archlinux.org/index.php?title=Arch_Compared_to_Other_Distributions&diff=0&oldid=293646)查看英文頁面之後的變更。
 
 這個頁面會將 Arch Linux 和其他流行的 GNU/Linux 發行版與類 UNIX 作業系統做個比較。您可以藉由下面的簡短描述，看看 Arch Linux 是否真的符合自己的需要。儘管在比較各家發行版本上有不少評價和說法，但最好的方式還是動手來安裝體驗。

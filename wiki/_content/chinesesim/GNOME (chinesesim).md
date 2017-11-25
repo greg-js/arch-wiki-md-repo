@@ -439,7 +439,7 @@ GNOME Shell 可以使用第三方扩展来定制。这些扩展提供了一些�
 
 另外，想要在屏幕底部显示一个任务栏，但又不想使用 GNOME Classic 的用户可以考虑使用 Window list 扩展 (由 [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) 提供).
 
-在安装完一个扩展之后可能需要[重启 GNOME shell](#.E9.87.8D.E5.90.AF_GNOME_shell) 。故障排除信息参照[安装扩展导致GNOME停止工作](#.E5.AE.89.E8.A3.85.E6.89.A9.E5.B1.95.E5.AF.BC.E8.87.B4GNOME.E5.81.9C.E6.AD.A2.E5.B7.A5.E4.BD.9C)。
+在安装完一个扩展之后可能需要[重启 GNOME shell](#.E9.87.8D.E5.90.AF_GNOME_shell)  。故障排除信息参照[安装扩展导致GNOME停止工作](#.E5.AE.89.E8.A3.85.E6.89.A9.E5.B1.95.E5.AF.BC.E8.87.B4GNOME.E5.81.9C.E6.AD.A2.E5.B7.A5.E4.BD.9C)。
 
 #### 输入法
 

@@ -24,8 +24,7 @@
     *   [1.19 Suecia](#Suecia)
     *   [1.20 Taiwán](#Taiw.C3.A1n)
     *   [1.21 Turquía](#Turqu.C3.ADa)
-    *   [1.22 Ucrania](#Ucrania)
-    *   [1.23 Vietnam](#Vietnam)
+    *   [1.22 Vietnam](#Vietnam)
 
 ## Comunidades Internacionales
 
@@ -157,11 +156,6 @@ Esta lista no está en ninguna manera completa. Si sabe de una comunidad que no 
 *   Página principal: [http://archtr.org/](http://archtr.org/)
 *   Foro: [http://archtr.org/forum/](http://archtr.org/forum/)
 *   Wiki: [http://archtr.org/wiki/](http://archtr.org/wiki/)
-
-### Ucrania
-
-*   Foro: [http://archlinux.org.ua/](http://archlinux.org.ua/)
-*   Wiki: [Main page (Українська)](/index.php/Main_page_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Main page (Українська)")
 
 ### Vietnam
 

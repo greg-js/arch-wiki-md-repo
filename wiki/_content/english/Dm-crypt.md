@@ -35,7 +35,7 @@ See [dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_ent
 
 ## System configuration
 
-[dm-crypt/System configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration") illustrates how to configure [mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration"), the [boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and the [crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration") file when encrypting a system.
+[dm-crypt/System configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration") illustrates how to configure [mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration"), the [boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and the [crypttab](/index.php/Crypttab "Crypttab") file when encrypting a system.
 
 ## Swap device encryption
 

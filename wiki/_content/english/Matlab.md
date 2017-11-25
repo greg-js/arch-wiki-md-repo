@@ -558,11 +558,11 @@ to your MATLAB launcher script. Optionally re-add other Java options.
 
 ## Matlab in a systemd-nspawn
 
-Matlab can be run within a systemd-nspawn container to maintain a static system and avoid the library issues that often plague matlab installs after significant updates to libraries in Arch. Refer to [https://wiki.archlinux.org/index.php/Systemd-nspawn](https://wiki.archlinux.org/index.php/Systemd-nspawn) for detailed information on setting up such containers.
+Matlab can be run within a systemd-nspawn container to maintain a static system and avoid the library issues that often plague matlab installs after significant updates to libraries in Arch. Refer to [Systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") for detailed information on setting up such containers.
 
 The following lists instruction to get a MATLAB 2017b install running in a minimal debian 9 environment. It assumes matlab is already installed as normal in "/usr/local/MATLAB/R2017b".
 
-Use xhost[[9]](https://wiki.archlinux.org/index.php/Xhost) to allow the nspawn environment to use the existing X server instance.
+Use [Xhost](/index.php/Xhost "Xhost") to allow the nspawn environment to use the existing X server instance.
 
 Create a minimal debian environment in a folder ("deb9" here) with:
 

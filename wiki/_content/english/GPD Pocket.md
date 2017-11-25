@@ -48,7 +48,7 @@ Install fan control and custom kernel and more using `# pacman -S --force gpd-po
 
 Backlight control requires **pwm_lpss** and **pwm_lpss_platform** kernel modules, which is included in the **linux-jwrdegoede** (AKA. Hans) kernel, but not in the vanilla kernel up to 4.14-2\. Hans kernel is a dependency of gpd-pocket-support.
 
-If you wish to setup [KMS in early userspace](https://wiki.archlinux.org/index.php/Kernel_mode_setting#Early_KMS_start), remember to include the above 2 modules together with **i915**, otherwise these modules would not load afterwards.
+If you wish to setup [KMS in early userspace](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting"), remember to include the above 2 modules together with **i915**, otherwise these modules would not load afterwards.
 
 ### Power and Fan
 

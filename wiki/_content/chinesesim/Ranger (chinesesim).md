@@ -1,6 +1,11 @@
-**翻译状态：** 本文是英文页面 [Ranger](/index.php/Ranger "Ranger") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-07-18，点击[这里](https://wiki.archlinux.org/index.php?title=Ranger&diff=0&oldid=376988)可以查看翻译后英文页面的改动。
+Related articles
 
-**ranger** 是一个基于文本的由 Python 编写的文件管理器。不同层级的目录分别在一个面板的三列中进行展示. 可以通过快捷键, 书签, 鼠标以及历史命令在它们之间移动. 当选中文件或目录时, 会自动显示文件或目录的内容.
+*   [Midnight Commander](/index.php/Midnight_Commander "Midnight Commander")
+*   [vifm](/index.php/Vifm "Vifm")
+
+**翻译状态：** 本文是英文页面 [Ranger](/index.php/Ranger "Ranger") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-24，点击[这里](https://wiki.archlinux.org/index.php?title=Ranger&diff=0&oldid=494276)可以查看翻译后英文页面的改动。
+
+[ranger](http://ranger.nongnu.org/) 是一个基于文本的文件管理器，以 Python 编写。不同层级的目录分别在一个面板的三列中进行展示. 可以通过快捷键, 书签, 鼠标以及历史命令在它们之间移动. 当选中文件或目录时, 会自动显示文件或目录的内容.
 
 主要特性有: vi 风格的快捷键, 书签, 选择, 标签, 选项卡, 命令历史, 创建符号链接的能力, 多种终端模式, 以及任务视图. ranger 可以定制命令和快捷键，包括绑定到外部脚本。最接近的竞争者是 [Vifm](/index.php/Vifm "Vifm")， 它有 2 个面板以及 vi 风格的快捷键，但是总体特性相对较少。
 
@@ -29,17 +34,7 @@
 
 ## 安装
 
-[ranger](https://www.archlinux.org/packages/?name=ranger) 可以使用 [pacman](/index.php/Pacman "Pacman") 从 [official repositories](/index.php/Official_repositories "Official repositories") 安装. 在 [AUR](/index.php/AUR "AUR") 还包含 [ranger-git](https://aur.archlinux.org/packages/ranger-git/)。
-
-Optional, for file previews with "scope.sh":
-
-*   [libcaca](https://www.archlinux.org/packages/?name=libcaca) (img2txt) 用于图片预览
-*   [highlight](https://www.archlinux.org/packages/?name=highlight) 用于高亮代码
-*   [atool](https://www.archlinux.org/packages/?name=atool) 用于存档预览
-*   [lynx](https://www.archlinux.org/packages/?name=lynx), [w3m](https://www.archlinux.org/packages/?name=w3m) 或 [elinks](https://www.archlinux.org/packages/?name=elinks) 用于 html 页面预览
-*   [poppler](https://www.archlinux.org/packages/?name=poppler) (pdftotext) 用于 pdf 预览
-*   [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) 用于浏览 bit-torrent 信息
-*   [mediainfo](https://www.archlinux.org/packages/?name=mediainfo) 或 [perl-image-exiftool](https://www.archlinux.org/packages/?name=perl-image-exiftool) 用于浏览媒体文件信息
+安装 [ranger](https://www.archlinux.org/packages/?name=ranger) 包，或其开发版 [ranger-git](https://aur.archlinux.org/packages/ranger-git/)。
 
 ## 用法
 
@@ -47,10 +42,7 @@ Optional, for file previews with "scope.sh":
 
 <caption></caption>
 | 快捷键 | 命令 |
-| `?` | 打开帮助手册 |
-| `1?` | 列出所有快捷键 |
-| `2?` | 列出所有命令 |
-| `3?` | 列出所有选项 |
+| `?` | 打开帮助手册或列出快捷键、命令以及设置项 |
 | `l`, `Enter` | 打开文件 |
 
 ## 定制
@@ -103,25 +95,23 @@ class empty(Command):
 
 ### 配色方案
 
-在 `~/.config/ranger` 中创建子目录 `colorschemes`:
+Ranger 配备了四个配色方案：`默认`、`丛林`、`积雪`和`烈日`。 下列命令可自定义配色：
 
 ```
-mkdir ~/.config/ranger/colorschemes
+ set colorscheme *scheme*
 
 ```
 
-然后把新的配色方案 `*newscheme*.py` 复制到那个文件夹. 在 `~/.config/ranger/rc.conf` 文件中改变默认的配色方案:
-
-```
-set colorscheme *newscheme*
-
-```
+自定义配色方案放在 `~/.config/ranger/colorschemes`。
 
 ### 文件关联
 
-修改 `~/.config/ranger/rifle.conf`。因为开头的行先被执行，你应该把你的修改放在文件的开始处。 例如，如下的代码会使用 kile 打开一个 tex 文件。
+Ranger 使用自己的文件打开程序，名为`rifle`，它的配置文件为 `~/.config/ranger/rifle.conf`。如果该文件不存在，可运行 `ranger --copy-config=rifle` 生成。例如，如下的代码指定 [kile](https://www.archlinux.org/packages/?name=kile) 为打开 tex 文件的默认程序。
 
- `ext tex = kile "$@"` 
+```
+ext tex = kile "$@"
+
+```
 
 使用 [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) 来打开所有文件:
 

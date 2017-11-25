@@ -28,7 +28,7 @@
 
 [安装](/index.php/Pacman "Pacman") 软件包 [autofs](https://www.archlinux.org/packages/?name=autofs)。
 
-**提示:** 你将不再需要载入`autofs4` 模式.
+**提示：** 你将不再需要载入`autofs4` 模式.
 
 ## 配置
 

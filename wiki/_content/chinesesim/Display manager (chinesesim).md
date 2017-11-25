@@ -1,3 +1,9 @@
+相关文章
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Start X at login](/index.php/Start_X_at_login "Start X at login")
+
 **翻译状态：** 本文是英文页面 [Display_manager](/index.php/Display_manager "Display manager") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-12-28，点击[这里](https://wiki.archlinux.org/index.php?title=Display_manager&diff=0&oldid=413644)可以查看翻译后英文页面的改动。
 
 [显示管理器](https://en.wikipedia.org/wiki/X_display_manager_(program_type) "wikipedia:X display manager (program type)")或登录管理器是一个在启动最后显示的图形界面。和窗口管理器一样，显示管理器有很多种。通常每个显示管理器都能进行一些定制。

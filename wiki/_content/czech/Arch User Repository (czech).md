@@ -1,3 +1,8 @@
+Související články
+
+*   [AUR User Guidelines (Česky)](/index.php/AUR_User_Guidelines_(%C4%8Cesky) "AUR User Guidelines (Česky)")
+*   [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines")
+
 ## Contents
 
 *   [1 Souhrnně](#Souhrnn.C4.9B)

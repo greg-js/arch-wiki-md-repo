@@ -1,3 +1,14 @@
+Artículos relacionados
+
+*   [Arch Boot Process (Español)](/index.php/Arch_Boot_Process_(Espa%C3%B1ol) "Arch Boot Process (Español)")
+*   [Boot loaders (Español)](/index.php/Boot_loaders_(Espa%C3%B1ol) "Boot loaders (Español)")
+*   [Master Boot Record (Español)](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)")
+*   [GUID Partition Table (Español)](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)")
+*   [Unified Extensible Firmware Interface (Español)](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)")
+*   [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy")
+*   [GRUB/EFI examples](/index.php/GRUB/EFI_examples "GRUB/EFI examples")
+*   [GRUB/Tips and tricks (Español)](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol) "GRUB/Tips and tricks (Español)")
+
 **Estado de la traducción:** este artículo es una versión traducida de [GRUB](/index.php/GRUB "GRUB"). Fecha de la última traducción/revisión: **2015-06-23**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=379250).
 
 [GRUB](https://www.gnu.org/software/grub/) —no confundir con [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy")— es la nueva generación de GRand Unified Bootloader (GRUB). GRUB deriva de [PUPA](http://www.nongnu.org/pupa/), un proyecto de investigación destinado a mejorar lo que hoy es GRUB Legacy. GRUB ha sido totalmente reescrito a fin de proporcionar una mayor modularidad y portabilidad [[1]](https://www.gnu.org/software/grub/grub-faq).

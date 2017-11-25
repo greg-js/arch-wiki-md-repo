@@ -308,8 +308,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [thecalculator](https://aur.archlinux.org/packages/thecalculator/) | [KWrite/Kate](http://kate-editor.org/)
 [kwrite](https://www.archlinux.org/packages/?name=kwrite) [kate](https://www.archlinux.org/packages/?name=kate) | [Gwenview](http://gwenview.sourceforge.net/)
 [gwenview](https://www.archlinux.org/packages/?name=gwenview) | theMedia
-[themedia](https://aur.archlinux.org/packages/themedia/) | theWeb
-[theweb](https://aur.archlinux.org/packages/theweb/) | [LightDM](/index.php/LightDM "LightDM") Contemporary Greeter
+[themedia](https://aur.archlinux.org/packages/themedia/) | [Konqueror](http://www.konqueror.org/)
+[konqueror](https://www.archlinux.org/packages/?name=konqueror) | [LightDM](/index.php/LightDM "LightDM") Contemporary Greeter
 [lightdm-webkit-theme-contemporary](https://aur.archlinux.org/packages/lightdm-webkit-theme-contemporary/) |
 | [Trinity](/index.php/Trinity "Trinity") | TQt | TWin | Kicker | Konsole | Konqueror | KCalc | Kwrite / Kate | Kuickshow | Kaffeine | Konqueror | TDM |
 | [Xfce](/index.php/Xfce "Xfce") | [GTK+](/index.php/GTK%2B "GTK+") 2/3

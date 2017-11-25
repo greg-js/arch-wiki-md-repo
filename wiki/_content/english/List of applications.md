@@ -34,7 +34,7 @@ This article is a general list of applications sorted by category, as a referenc
             *   [1.2.2.2 Blink-based](#Blink-based)
                 *   [1.2.2.2.1 Chromium spin-offs](#Chromium_spin-offs)
                 *   [1.2.2.2.2 Browsers based on qt5-webengine](#Browsers_based_on_qt5-webengine)
-                *   [1.2.2.2.3 Other browsers based on Chromium's Content module](#Other_browsers_based_on_Chromium.27s_Content_module)
+                *   [1.2.2.2.3 Browsers based on electron/muon](#Browsers_based_on_electron.2Fmuon)
             *   [1.2.2.3 WebKit-based](#WebKit-based)
                 *   [1.2.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
                 *   [1.2.2.3.2 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
@@ -386,10 +386,6 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(software) "wikipedia:Gecko (software)").
 
-*   **[Conkeror](https://en.wikipedia.org/wiki/Conkeror "wikipedia:Conkeror")** — Keyboard-based browser modeled after [Emacs](/index.php/Emacs "Emacs") using [XULRunner](https://en.wikipedia.org/wiki/XULRunner "wikipedia:XULRunner"). Customizable via JavaScript.
-
-	[http://conkeror.org/](http://conkeror.org/) || [conkeror](https://aur.archlinux.org/packages/conkeror/)
-
 *   **[Firefox](/index.php/Firefox "Firefox")** — Extensible browser from Mozilla based on Gecko with fast rendering.
 
 	[https://mozilla.com/firefox](https://mozilla.com/firefox) || [firefox](https://www.archlinux.org/packages/?name=firefox)
@@ -484,19 +480,15 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 	[https://github.com/The-Compiler/qutebrowser](https://github.com/The-Compiler/qutebrowser) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
 
-###### Other browsers based on Chromium's Content module
+###### Browsers based on electron/muon
 
-*   **[Brave](https://en.wikipedia.org/wiki/Brave_(web_browser) "wikipedia:Brave (web browser)")** — Web browser that blocks ads and trackers by default. Based on the [Muon](https://github.com/brave/muon) platform.
+*   **[Brave](https://en.wikipedia.org/wiki/Brave_(web_browser) "wikipedia:Brave (web browser)")** — Web browser that blocks ads and trackers by default. Based on the [Muon](https://github.com/brave/muon) platform (fork of Electron).
 
 	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/) or [brave-bin](https://aur.archlinux.org/packages/brave-bin/)
 
 *   **Min** — A smarter, faster web browser based on the [Electron](http://electron.atom.io/) platform.
 
 	[https://minbrowser.github.io/min/](https://minbrowser.github.io/min/) || [min](https://www.archlinux.org/packages/?name=min)
-
-*   **theWeb** — A web browser based on Qt using the [Chromium Embedded Framework](https://bitbucket.org/chromiumembedded/cef), with Linux integration (such as MPRIS) in mind.
-
-	[https://github.com/vicr123/theweb](https://github.com/vicr123/theweb) || [theweb](https://aur.archlinux.org/packages/theweb/)
 
 ##### WebKit-based
 
@@ -810,7 +802,7 @@ See also [Wikipedia:List of FTP server software](https://en.wikipedia.org/wiki/L
 
 	[https://www.openssh.com](https://www.openssh.com) || [openssh](https://www.archlinux.org/packages/?name=openssh)
 
-#### [BitTorrent](https://en.wikipedia.org/wiki/BitTorrent "wikipedia:BitTorrent") clients
+#### BitTorrent clients
 
 See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients "wikipedia:Comparison of BitTorrent clients").
 
@@ -4653,7 +4645,7 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 	[http://afick.sourceforge.net/](http://afick.sourceforge.net/) || [afick](https://aur.archlinux.org/packages/afick/)
 
-*   **Lynis** — Security and system auditing tool to harden Unix/Linux systems.
+*   **[Lynis](https://en.wikipedia.org/wiki/Lynis "wikipedia:Lynis")** — Security and system auditing tool to harden Unix/Linux systems.
 
 	[https://cisofy.com/lynis/](https://cisofy.com/lynis/) || [lynis](https://www.archlinux.org/packages/?name=lynis)
 
@@ -4677,7 +4669,7 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 	[http://www.la-samhna.de/samhain/index.html](http://www.la-samhna.de/samhain/index.html) || [samhain](https://aur.archlinux.org/packages/samhain/)
 
-*   **Tiger** — Security tool that can be use both as a security audit and intrusion detection system.
+*   **[Tiger](https://en.wikipedia.org/wiki/Tiger_(security_software) "wikipedia:Tiger (security software)")** — Security tool that can be use both as a security audit and intrusion detection system.
 
 	[http://www.nongnu.org/tiger/](http://www.nongnu.org/tiger/) || [tiger](https://aur.archlinux.org/packages/tiger/)
 
@@ -5046,6 +5038,10 @@ See also [Wikipedia:Comparison of numerical analysis software](https://en.wikipe
 *   **EngLab** — Cross-compile mathematical platform with a C like syntax.
 
 	[http://englab.bugfest.net](http://englab.bugfest.net) || [englab](https://aur.archlinux.org/packages/englab/)
+
+*   **[FFTW](https://en.wikipedia.org/wiki/FFTW "wikipedia:FFTW")** — A [Fast Fourier Transform](https://en.wikipedia.org/wiki/Fast_Fourier_transform "wikipedia:Fast Fourier transform") library for computing discrete Fourier transforms. Used for a wide variety of numerical applications, which includes spectral methods.
+
+	[https://www.fftw.org/](https://www.fftw.org/) || [fftw](https://www.archlinux.org/packages/?name=fftw) [fftw-mpi](https://aur.archlinux.org/packages/fftw-mpi/) [fftw-mpich](https://aur.archlinux.org/packages/fftw-mpich/)
 
 *   **[FreeMat](https://en.wikipedia.org/wiki/FreeMat "wikipedia:FreeMat")** — Matlab-like program that supports many of its functions and features a codeless interface to external C, C++, and Fortran code, further parallel distributed algorithm development (via MPI), and 3D visualization capabilities.
 

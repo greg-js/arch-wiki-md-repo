@@ -44,7 +44,7 @@ $ su
 
 ```
 
-See [su(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/su.1) or [sudo(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8) for their usage.
+See [sudo(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8) or [su(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/su.1) for their usage.
 
 **Note:** Commands that should be run as the postgres user are prefixed by `[postgres]$` in this article.
 
@@ -423,15 +423,22 @@ pg_upgrade will perform the upgrade and create some scripts in `/var/lib/data/po
 
 You could also do something like this (after the upgrade and install of [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade)).
 
-**Note:** Below are the commands for PostgreSQL 9.6\. You can find similar commands in `/opt/` for PostgreSQL 9.2.
+**Note:**
+
+*   Below are the commands for PostgreSQL 9.6\. You can find similar commands in `/opt/` for PostgreSQL 9.2.
+*   If you had customized your `pg_hba.conf` file, you may have to temporarily modify it to allow full access to old database cluster from local system. After upgrade is complete set your customization to new database cluster as well and [restart](/index.php/Restart "Restart") `postgresql.service`.
 
 ```
 # systemctl stop postgresql.service
-# /opt/pgsql-9.6/bin/pg_ctl -D /var/lib/postgres/olddata/ start
-# pg_dumpall >> old_backup.sql
-# /opt/pgsql-9.6/bin/pg_ctl -D /var/lib/postgres/olddata/ stop
+# mv /var/lib/postgres/data /var/lib/postgres/olddata
+# mkdir /var/lib/postgres/data
+# chown postgres:postgres /var/lib/postgres/data
+[postgres]$ initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data'
+[postgres]$ /opt/pgsql-9.6/bin/pg_ctl -D /var/lib/postgres/olddata/ start
+[postgres]$ pg_dumpall -f /tmp/old_backup.sql
+[postgres]$ /opt/pgsql-9.6/bin/pg_ctl -D /var/lib/postgres/olddata/ stop
 # systemctl start postgresql.service
-# psql -f old_backup.sql postgres
+[postgres]$ psql -f /tmp/old_backup.sql postgres
 
 ```
 

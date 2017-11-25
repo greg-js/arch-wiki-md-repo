@@ -1,3 +1,8 @@
+相关文章
+
+*   [Users and Groups (简体中文)](/index.php/Users_and_Groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Users and Groups (简体中文)")
+*   [su](/index.php/Su "Su")
+
 **翻译状态：** 本文是英文页面 [Sudo](/index.php/Sudo "Sudo") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-13，点击[这里](https://wiki.archlinux.org/index.php?title=Sudo&diff=0&oldid=437107)可以查看翻译后英文页面的改动。
 
 [sudo](http://www.gratisoft.us/sudo/)(substitute user do) 使得系统管理员可以授权特定用户或用户组作为 root 或他用户执行某些（或所有）命令，同时还能够对命令及其参数提供审核跟踪。

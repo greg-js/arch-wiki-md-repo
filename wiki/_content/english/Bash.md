@@ -300,7 +300,7 @@ export IGNOREEOF=100
 *   [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bashref.html), or `/usr/share/doc/bash/bashref.html`
 *   [Readline Init File Syntax](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html)
 *   [The Bourne-Again Shell](http://www.aosabook.org/en/bash.html) - The third chapter of *The Architecture of Open Source Applications*
-*   [Shellcheck](http://shellcheck.net) - Check bash scripts for common errors
+*   [Shellcheck](http://shellcheck.net) - Check bash scripts for common errors (based on [shellcheck](https://github.com/koalaman/shellcheck))
 *   [PS1 generator](http://bashrcgenerator.com/.bashrc) - generate your .bashrc/PS1 bash prompt with a drag and drop interface
 
 ### Tutorials

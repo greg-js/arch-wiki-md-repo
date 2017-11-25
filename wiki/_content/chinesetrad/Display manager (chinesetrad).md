@@ -1,5 +1,11 @@
 **翻譯狀態：** 本文章是 [Display_Manager](/index.php/Display_Manager "Display Manager") 的翻譯版本。最近一次的翻譯時間：2014-01-22。點擊[本連結](https://wiki.archlinux.org/index.php?title=Display_Manager&diff=0&oldid=293587)查看英文頁面之後的變更。
 
+相關文章
+
+*   [桌面環境 (英)](/index.php/Desktop_environment "Desktop environment")
+*   [視窗管理員 (英)](/index.php/Window_manager "Window manager")
+*   [登入時啟動 X](/index.php/Start_X_at_Login_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Start X at Login (正體中文)")
+
 [顯示管理員](https://en.wikipedia.org/wiki/X_display_manager_(program_type) "wikipedia:X display manager (program type)")，又稱登入管理員，在開機過程結束後顯示圖形登入介面，取代原本的 shell。目前顯示管理員的種類如同[視窗管理員](/index.php/Window_manager "Window manager")與[桌面環境](/index.php/Desktop_environment "Desktop environment")般多樣化。每套顯示管理員都有一定量的自訂化與佈景可供使用。
 
 ## Contents

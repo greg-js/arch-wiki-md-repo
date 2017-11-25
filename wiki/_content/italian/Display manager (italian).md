@@ -1,3 +1,9 @@
+Articoli correlati
+
+*   [Desktop Environment (Italiano)](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)")
+*   [Window Manager (Italiano)](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)")
+*   [Start X at Login (Italiano)](/index.php/Start_X_at_Login_(Italiano) "Start X at Login (Italiano)")
+
 Un [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_type) e [gestori di finestre](/index.php/Window_manager_(Italiano) "Window manager (Italiano)"). Solitamente è possibile, entro certi limiti, personalizzare il loro aspetto.
 
 ## Contents

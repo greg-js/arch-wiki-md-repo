@@ -135,7 +135,7 @@ For it to be recognized by ModemManager, you also need to set the kernel module 
 
 ### Fan control
 
-To optimize fan control, install and setup [thinkfan](https://wiki.archlinux.org/index.php/Fan_speed_control#ThinkPad_laptops). Then use the following configuration:
+To optimize fan control, install and setup [thinkfan](/index.php/Fan_speed_control#ThinkPad_laptops "Fan speed control"). Then use the following configuration:
 
  `/etc/thinkfan.conf` 
 ```

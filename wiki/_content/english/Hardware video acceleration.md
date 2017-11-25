@@ -69,7 +69,7 @@ There are several ways to achieve this on Linux:
 *   [Except](https://en.wikipedia.org/wiki/Nvidia_PureVideo "wikipedia:Nvidia PureVideo") GeForce 8800 Ultra, 8800 GTX, 8800 GTS (320/640 MB).
 *   Except GeForce GTX 970 and GTX 980.
 
-<caption>Nvidia NVDEC/NVENC ([Nvidia](/index.php/Nvidia "Nvidia") only)</caption>
+<caption>Nvidia NVDEC/NVENC ([NVIDIA](/index.php/NVIDIA "NVIDIA") only)</caption>
  Decoding (NVDEC) | Encoding (NVENC) |
 | MPEG-2 | ✓ | ✗ |
 | VC-1 | ✓ | ✗ |

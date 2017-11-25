@@ -451,7 +451,7 @@ Then, add the new mapping.
 
 ```
 
-See [Xmodmap#Activating_the_custom_table](/index.php/Xmodmap#Activating_the_custom_table "Xmodmap") to have `~/.Xmodmap` loaded on login.
+See [Xmodmap#Activating the custom table](/index.php/Xmodmap#Activating_the_custom_table "Xmodmap") to have `~/.Xmodmap` loaded on login.
 
 After making this change, test the LED and screen locking. If you find that you need to press Scroll Lock twice to lock screens, enable `halfDuplexScrollLock` on all screens in `section: screens`.
 

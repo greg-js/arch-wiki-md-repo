@@ -1,3 +1,12 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Xfwm](/index.php/Xfwm "Xfwm")
+*   [Thunar](/index.php/Thunar "Thunar")
+*   [LXDE](/index.php/LXDE "LXDE")
+*   [GNOME](/index.php/GNOME "GNOME")
+
 [Xfce](http://www.xfce.org)는 현재 GTK+ 2를 기반으로 하는 모듈식의 저용량 [데스크탑 환경](/index.php/Desktop_environment "Desktop environment")이다. 완벽한 사용자 경험을 제공하기 위해 Xfce는 창 관리자, 파일 관리자, 데스크탑과 패널을 포함한다.
 
 ## Contents

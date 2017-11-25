@@ -116,7 +116,7 @@ Works out of the box. Both KDE 5 slider and Fn keys work okay.
 
 ### Hibernation
 
-Works out of the box if you follow [Power_management/Suspend_and_hibernate#Hibernation](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate") guide.
+Works out of the box if you follow [Power management/Suspend and hibernate#Hibernation](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate") guide.
 
 ### Suspend to RAM
 

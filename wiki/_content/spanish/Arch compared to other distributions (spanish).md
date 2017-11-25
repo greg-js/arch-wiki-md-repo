@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)")
+*   [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)")
+
 Esta página pretende mostrar una comparación entre Arch Linux y otras distribuciones de GNU/Linux y sistemas operativos basados en UNIX. Los resúmenes que siguen son breves descripciones que pueden ayudar a un usario a decidir si Arch Linux se adapta a sus necesidades. Aunque las revisiones y descripciones pueden ser útiles, la propia experiencia es siempre la mejor manera de comparar las distribuciones.
 
 ## Contents

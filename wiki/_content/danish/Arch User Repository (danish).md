@@ -1,3 +1,12 @@
+Related articles
+
+*   [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines")
+*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+*   [AUR Q & A](/index.php/AUR_Q_%26_A "AUR Q & A")
+*   [Aurbuild](/index.php/Aurbuild "Aurbuild")
+*   [Pacman (Dansk)](/index.php/Pacman_(Dansk) "Pacman (Dansk)")
+*   [Main page (Dansk)](/index.php/Main_page_(Dansk) "Main page (Dansk)")
+
 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) er en fællesskabsdrevet softwarekilde til Arch Linux' brugere. Denne artikel viser den alm. bruger, hvordan man tilgår kilden, og hvordan man arbejder med den.
 
 ## Contents

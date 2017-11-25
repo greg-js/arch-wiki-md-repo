@@ -11,9 +11,10 @@ This article contains scanner or manufacturer-specific instructions for [SANE](/
 *   [3 Canon](#Canon)
     *   [3.1 Scanning over the network with Canon Pixma all-in-one printer/scanners](#Scanning_over_the_network_with_Canon_Pixma_all-in-one_printer.2Fscanners)
 *   [4 Epson](#Epson)
-    *   [4.1 Epson Perfection V550 Photo](#Epson_Perfection_V550_Photo)
-    *   [4.2 Epson Perfection 1270](#Epson_Perfection_1270)
-    *   [4.3 Epson Perfection 1670/2480/2580/3490/3590](#Epson_Perfection_1670.2F2480.2F2580.2F3490.2F3590)
+    *   [4.1 Image Scan v3](#Image_Scan_v3)
+    *   [4.2 Epson Perfection V550 Photo](#Epson_Perfection_V550_Photo)
+    *   [4.3 Epson Perfection 1270](#Epson_Perfection_1270)
+    *   [4.4 Epson Perfection 1670/2480/2580/3490/3590](#Epson_Perfection_1670.2F2480.2F2580.2F3490.2F3590)
 *   [5 Fujitsu](#Fujitsu)
     *   [5.1 S300M](#S300M)
 *   [6 HP](#HP)
@@ -129,6 +130,20 @@ For network (including Wi-Fi) scanners, install [iscan](https://www.archlinux.or
 net {IP_OF_SCANNER}
 
 ```
+
+### Image Scan v3
+
+Some models require "Image Scan 3", which is different from "Image Scan! for Linux" and is not available in the official repositores. Install [imagescan](https://aur.archlinux.org/packages/imagescan/) for the base program. It should detect supported USB scanners automatically by default. If you want to make use of a network scanner you also have to install [imagescan-plugin-networkscan](https://aur.archlinux.org/packages/imagescan-plugin-networkscan/). Then edit `/etc/utsushi/utsushi.conf`, and enter the ip address of your scanner to it.
+
+```
+[devices]
+myscanner.udi    = esci:networkscan://<ip-address-here>:1865
+myscanner.vendor = Epson
+myscanner.model  = Model-name
+
+```
+
+When you then start Image Scan v3, the name of the scan should be visible in the top left corner. If a connection problem happened, an error dialog will be shown.
 
 ### Epson Perfection V550 Photo
 

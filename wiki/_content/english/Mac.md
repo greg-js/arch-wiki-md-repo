@@ -1538,7 +1538,7 @@ For Dual Graphics see [MacBookPro11,x#Graphics](/index.php/MacBookPro11,x#Graphi
 
 **Note:** (Kernel 4.10.8, MacBook Pro 11,4) If you experience system lock ups and/or tearing in Xorg, remove the .[xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) completely, including any config file you made for it. Xorg will default to its modesetting DDX driver. The performance of this driver is good and the locks go away. See also: [Intel graphics](/index.php/Intel_graphics "Intel graphics")
 
-**Note:** If you are experiencing flickering issues with Xorg, you can set *i915.enable_rc6* to 0 parameter into the kernel parameters which will disable to power saving of [Intel Graphics](/index.php/Intel_Graphics "Intel Graphics").
+**Note:** If you are experiencing flickering issues with Xorg, you can set *i915.enable_rc6* to 0 parameter into the kernel parameters which will disable to power saving of [Intel graphics](/index.php/Intel_graphics "Intel graphics").
 
 #### 2012 - 2014 models
 

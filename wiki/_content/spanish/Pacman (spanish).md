@@ -69,13 +69,13 @@ El [gestor de paquetes](https://en.wikipedia.org/wiki/Package_management_system 
 
 ## Utilización
 
-Lo que sigue es una pequeña muestra de las operaciones que se pueden realizar con *pacman*. Para leer más ejemplos, remítase a [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html#_examples).
+Lo que sigue es una pequeña muestra de las operaciones que se pueden realizar con *pacman*. Para leer más ejemplos, remítase a [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8).
 
 **Sugerencia:** para aquellos usuarios que han utilizado antes otras distribuciones de Linux, el artículo [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta") les puede resultar útil.
 
 ### Instalar paquetes
 
-**Nota:** los paquetes suelen tener [dependencias opcionales](/index.php/PKGBUILD#optdepends "PKGBUILD"), dependencias que proporcionan características adicionales a la aplicación, sin ser necesarias para su funcionamiento. Al instalar un paquete, *pacman* mostrará sus dependencias opcionales sin registrarlas en `pacman.log`: utilice la orden [pacman -Si](#Consultar_la_base_de_datos_de_paquetes) para ver las dependencias opcionales de un paquete así como una breve descripción de sus funcionalidades.
+**Nota:** los paquetes suelen tener [dependencias opcionales](/index.php/PKGBUILD#optdepends "PKGBUILD"), dependencias que proporcionan características adicionales a la aplicación, sin ser necesarias para su funcionamiento. Al instalar un paquete, *pacman* mostrará sus dependencias opcionales sin registrarlas en `pacman.log`: utilice la orden [pacman -Si](#Consultar_la_base_de_datos_de_los_paquetes) para ver las dependencias opcionales de un paquete así como una breve descripción de sus funcionalidades.
 
 **Advertencia:** al instalar paquetes en Arch, evite actualizar la lista de paquetes sin [actualizar el sistema](#Actualizar_paquetes) (imagine, por ejemplo, el caso de un [paquete que ya no se mantiene](#Los_paquetes_no_se_pueden_recibir_en_la_instalaci.C3.B3n) en los repositorios). En la práctica, **no** es aconsejable ejecutar `pacman -Sy *nombre_paquete*`, sino más bien `pacman -Sy**u** *nombre_paquete*`, ya que la primera orden podría ocasionar problemas de dependencia. Consulte [System maintenance#Partial upgrades are unsupported](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance") y [BBS#89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
 
@@ -485,11 +485,11 @@ Para obtener funcionalidades avanzadas instale [pkgfile](/index.php/Pkgfile "Pkg
 
 ## Configuración
 
-La configuración de *pacman* se encuentra en el archivo `/etc/pacman.conf`. Este es el archivo donde el usuario configura el programa para que funcione de la manera deseada. Se puede encontrar información en profundidad sobre el archivo de configuración en [pacman.conf(5)](https://www.archlinux.org/pacman/pacman.conf.5.html).
+La configuración de *pacman* se encuentra en el archivo `/etc/pacman.conf`. Este es el archivo donde el usuario configura el programa para que funcione de la manera deseada. Se puede encontrar información en profundidad sobre el archivo de configuración en [pacman.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5).
 
 ### Opciones Generales
 
-Las opciones generales están en la sección `[options]`. Lea la página del manual de [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) o eche un vistazo al archivo predefinido `pacman.conf` para obtener información adicional.
+Las opciones generales están en la sección `[options]`. Lea la página del manual de [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) o eche un vistazo al archivo predefinido `pacman.conf` para obtener información adicional.
 
 #### Comparar versiones antes de actualizar
 
@@ -558,11 +558,11 @@ Donde el archivo `*/ruta/a/configuraciones/comunes*` contiene las mismas opcione
 
 *pacman* puede ejecutar hooks antes y después de la transacción, desde el directorio `/usr/share/libalpm/hooks/`; se pueden especificar más directorios con la opción `HookDir` en `pacman.conf`, cuya ruta por defecto es `/etc/pacman.d/hooks`. Los nombres de los archivos hooks deben tener el sufijo *.hook*.
 
-Para obtener más información sobre los hooks de alpm, consulte [alpm-hooks(5)](https://www.archlinux.org/pacman/alpm-hooks.5.html).
+Para obtener más información sobre los hooks de alpm, consulte [alpm-hooks(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/alpm-hooks.5).
 
 ### Repositorios y servidores de réplicas
 
-Además de la sección especial [[options]](#General_options), cada valor `[section]` en `pacman.conf` define un repositorio de paquetes para ser utilizado. Un «repositorio» es una colección «lógica» de paquetes, los cuales están «físicamente» almacenados en uno o más servidores: por esta razón cada servidor se llama «espejo» (mirror) del repositorio.
+Además de la sección especial [[options](#General_options)], cada valor `[section]` en `pacman.conf` define un repositorio de paquetes para ser utilizado. Un «repositorio» es una colección «lógica» de paquetes, los cuales están «físicamente» almacenados en uno o más servidores: por esta razón cada servidor se llama «espejo» (mirror) del repositorio.
 
 Los repositorios se dividen en [oficiales](/index.php/Official_repositories "Official repositories") y [no oficiales](/index.php/Unofficial_user_repositories "Unofficial user repositories"). El orden de los repositorios en el archivo de configuración es importante; los repositorios listados primero en dicho archivo de configuración tendrán prioridad sobre los listados más adelante respecto de los paquetes presentes en dos repositorios cuando estos tengan nombres idénticos, independientemente del número de versión. Para usar un repositorio después de agregarlo, necesitará primero [actualizar](#Upgrading_packages) todo el sistema.
 
@@ -760,7 +760,7 @@ Si recibe este mensaje de error con los [mirrors](/index.php/Mirrors "Mirrors") 
 ## Véase también
 
 *   [Pacman Home Page](https://www.archlinux.org/pacman/)
-*   [libalpm(3)](https://www.archlinux.org/pacman/libalpm.3.html)
-*   [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html)
-*   [pacman.conf(5)](https://www.archlinux.org/pacman/pacman.conf.5.html)
-*   [repo-add(8)](https://www.archlinux.org/pacman/repo-add.8.html)
+*   [libalpm(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3)
+*   [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)
+*   [pacman.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5)
+*   [repo-add(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/repo-add.8)

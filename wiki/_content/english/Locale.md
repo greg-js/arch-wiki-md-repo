@@ -1,3 +1,7 @@
+Related articles
+
+*   [Environment variables](/index.php/Environment_variables "Environment variables")
+
 Locales are used by [glibc](https://www.archlinux.org/packages/?name=glibc) and other locale-aware programs or libraries for rendering text, correctly displaying regional monetary values, time and date formats, alphabetic idiosyncrasies, and other locale-specific standards.
 
 ## Contents
@@ -22,7 +26,7 @@ Locales are used by [glibc](https://www.archlinux.org/packages/?name=glibc) and 
 
 ## Generating locales
 
-Locale names are typically of the form `language[_territory][.codeset][@modifier]`, where *language* is an [ISO 639 language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes "w:List of ISO 639-1 codes"), *territory* is an [ISO 3166 country code](https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes "w:ISO 3166-1"), and *codeset* is a [character set](https://en.wikipedia.org/wiki/Character_encoding "w:Character encoding") or encoding identifier like [ISO-8859-1](https://en.wikipedia.org/wiki/ISO/IEC_8859-1 "w:ISO/IEC 8859-1") or [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "w:UTF-8"). See [setlocale(3)](http://man7.org/linux/man-pages/man3/setlocale.3.html).
+Locale names are typically of the form `language[_territory][.codeset][@modifier]`, where *language* is an [ISO 639 language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes "w:List of ISO 639-1 codes"), *territory* is an [ISO 3166 country code](https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes "w:ISO 3166-1"), and *codeset* is a [character set](https://en.wikipedia.org/wiki/Character_encoding "w:Character encoding") or encoding identifier like [ISO-8859-1](https://en.wikipedia.org/wiki/ISO/IEC_8859-1 "w:ISO/IEC 8859-1") or [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "w:UTF-8"). See [setlocale(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setlocale.3).
 
 For a list of enabled locales, run:
 
@@ -75,7 +79,7 @@ $ localedef --list-archive
 
 ```
 
-Alternatively, using [localectl(1)](http://man7.org/linux/man-pages/man1/localectl.1.html):
+Alternatively, using [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1):
 
 ```
 $ localectl list-locales
@@ -95,7 +99,7 @@ Alternatively, run:
 
 ```
 
-See [#Variables](#Variables) and [locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html) for details.
+See [#Variables](#Variables) and [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) for details.
 
 ### Overriding system locale per user session
 
@@ -156,7 +160,7 @@ $ export LANG=C
 *   `LC_TELEPHONE`
 *   [LC_TIME](#LC_TIME:_date_and_time_format)
 
-Full meaning of the above `LC_*` variables can be found on manpage [locale(7)](http://man7.org/linux/man-pages/man7/locale.7.html), whereas details of their definition are described on [locale(5)](http://man7.org/linux/man-pages/man5/locale.5.html).
+Full meaning of the above `LC_*` variables can be found on manpage [locale(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.7), whereas details of their definition are described on [locale(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.5).
 
 ### LANG: default locale
 
@@ -177,7 +181,7 @@ LANGUAGE=en_AU:en_GB:en
 If `LC_TIME` is set to `en_US.UTF-8`, for example, the date format will be "MM/DD/YYYY". If wanting to use the the ISO 8601 date format of "YYYY-MM-DD" use:
 
  `locale.conf`  `LC_TIME=en_DK.UTF-8` 
-**Note:** Programs do not necessarily respect this variable to format the date. For example, [date(1)](http://man7.org/linux/man-pages/man1/date.1.html) uses its own parameters to do so.
+**Note:** Programs do not necessarily respect this variable to format the date. For example, [date(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/date.1) uses its own parameters to do so.
 
 ### LC_COLLATE: collation
 

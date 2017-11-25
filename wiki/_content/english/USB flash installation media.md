@@ -223,7 +223,7 @@ This method is more complicated than writing the image directly with `dd`, but i
 
 ```
 
-*   *   Unmount the partition (`umount /mnt/usb`) and install the MBR or GPT partition table to the USB device as described in the page mentioned.
+*   *   Unmount the partition (`umount /mnt/usb`).
 
 *   Mark the partition as active (or “bootable”).
 

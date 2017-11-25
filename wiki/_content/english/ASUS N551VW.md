@@ -83,7 +83,7 @@ No problems with keyboard keys, function keys not tested. TBC
 
 ## Touchpad
 
-This is Elantech touchpad. Please follow instructions from here: [Elantech touchpads](https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Elantech_touchpads)
+This is Elantech touchpad. Please follow instructions from here: [Elantech touchpads](/index.php/Touchpad_Synaptics#Elantech_touchpads "Touchpad Synaptics")
 
 TBC
 

@@ -57,7 +57,7 @@ For example, to make it run daily:
 2.  Put script as `/etc/cron.daily/*script_name*`.
 3.  Permit execution of file for *root* (`# chmod u+x /etc/cron.daily/*script_name*`).
 
-See [cron#cronie](/index.php/Cron#cronie "Cron"), [cron](/index.php/Cron "Cron") for more information.
+See [cron#Cronie](/index.php/Cron#Cronie "Cron"), [cron](/index.php/Cron "Cron") for more information.
 
 ### Incron
 

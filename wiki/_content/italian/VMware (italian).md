@@ -1,3 +1,8 @@
+Articoli correlati
+
+*   [Installing Arch Linux in VMware](/index.php/Installing_Arch_Linux_in_VMware "Installing Arch Linux in VMware")
+*   [VirtualBox (Italiano)](/index.php/VirtualBox_(Italiano) "VirtualBox (Italiano)")
+
 Questo articolo tratta l'installazione di VMware in Arch, si potrebbe essere invece interessati a [Installare Arch Linux in VMware](/index.php/Installing_Arch_Linux_in_VMware "Installing Arch Linux in VMware").
 
 **Note:** Questo articolo supporta **solo** l'ultima versione di VMware, ovvero VMware Workstation 8 e VMware Player 4.

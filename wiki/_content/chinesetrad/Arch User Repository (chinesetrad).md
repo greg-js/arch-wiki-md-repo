@@ -1,3 +1,15 @@
+相關文章
+
+*   [AUR helpers](/index.php/AUR_helpers "AUR helpers")
+*   [AurJson](/index.php/AurJson "AurJson")
+*   [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines")
+*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
+*   [makepkg](/index.php/Makepkg "Makepkg")
+*   [Pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)")
+*   [AUR Metadata](/index.php/AUR_Metadata "AUR Metadata")
+*   [官方軟體庫](/index.php/Official_repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official repositories (正體中文)")
+*   [Arch 組建系統](/index.php/Arch_Build_System_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Build System (正體中文)")
+
 Arch 使用者軟體倉庫 (AUR) 是由社群推動的使用者軟體庫。它包含了軟體包描述單 ([PKGBUILD](/index.php/PKGBUILD "PKGBUILD"))，可以用 [makepkg](/index.php/Makepkg "Makepkg") 從原始碼編譯軟體包，並透過 [Pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 安裝。 透過 AUR 可以在社群間分享、組織新進軟體包，熱門的軟體包有機會被收錄進 [community](#community) 軟體庫。這份文件將解釋如何存取、使用 AUR。
 
 官方軟體庫中有不少發跡於 AUR 的新軟體包。在 AUR 下，使用者可以貢獻自己的軟體包組建資料 (PKGBUILD 與相關檔案)。AUR 社群可以投票支持/反對 AUR 的軟體包。若一個軟體包變得熱門 — 加上授權相容和優良的打包技術 — 就有機會被收錄進 *community* 軟體庫 (可直接透過 [Pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 或 [ABS](/index.php/Arch_Build_System_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Build System (正體中文)") 存取)。

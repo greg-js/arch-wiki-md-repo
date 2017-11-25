@@ -1,3 +1,11 @@
+Related articles
+
+*   [Unazadjivanje paketa](/index.php?title=Unazadjivanje_paketa&action=edit&redlink=1 "Unazadjivanje paketa (page does not exist)")
+*   [Unapredjivanje pacman performansi](/index.php?title=Unapredjivanje_pacman_performansi&action=edit&redlink=1 "Unapredjivanje pacman performansi (page does not exist)")
+*   [pacman frontendovi sa GUI-jem](/index.php?title=Pacman_frontendovi_sa_GUI-jem&action=edit&redlink=1 "Pacman frontendovi sa GUI-jem (page does not exist)")
+*   [pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta")
+*   [pacman saveti](/index.php?title=Pacman_saveti&action=edit&redlink=1 "Pacman saveti (page does not exist)")
+
 **[pacman](https://archlinux.org/pacman/)** paket menadzer je jedan od glavnih funkcija Arch Linux-a. On kombinuje jednostavni formati binarnih paketa sa jednostavnim sistemom za izgradnju paketa (pogledajte [makepkg (Српски)](/index.php/Makepkg_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Makepkg (Српски)") i [Arch Build System (Српски)](/index.php?title=Arch_Build_System_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8)&action=edit&redlink=1 "Arch Build System (Српски) (page does not exist)"). Cilj pacman-a je da ucini mogucim jednostavno upravljanje paketima, bez obzira da li su oni iz oficijalnih Arch repozitorijuma ili ih je korisnik sam napravio.
 
 pacman zadrzava sistem aktuelnim tako sto sinhronizuje paket liste sa master serverom. Ovaj server/klijent model takodje pruza mogucnost da preuzmete/instalirate pakete sa jednostavnom komandom, zajedno sa svim neophodnim zavisnostima.

@@ -1,3 +1,10 @@
+Artículos relacionados
+
+*   [FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)")
+*   [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)")
+*   [Beginners' guide (Español)](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)")
+*   [List of applications (Español)](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)")
+
 **Estado de la traducción:** este artículo es una versión traducida de [General recommendations](/index.php/General_recommendations "General recommendations"). Fecha de la última traducción/revisión: **2016-04-11**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=428560).
 
 El presente documento contiene un índice con anotaciones a otros artículos de divulgación e información importantes para mejorar y añadir funcionalidades al sistema Arch instalado. Se presume que los lectores han leído y seguido la [Guía para principiantes](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)") o la [Guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") para instalar un sistema básico de Arch Linux. Es *necesario*, en primer lugar, haber leído y comprendido los conceptos explicados en [#Gestionar el sistema](#Gestionar_el_sistema) y [#Gestionar los paquetes](#Gestionar_los_paquetes) antes de continuar con las otras secciones de esta página y de otros artículos de la wiki.

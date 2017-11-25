@@ -1,4 +1,15 @@
-**Arch User Repository** (AUR) è un repository sostenuto dalla comunità per utenti Arch. Contiene le descrizioni dei pacchetti (i [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)")) che ti permettono di compilare i sorgenti grazie al comando [makepkg](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)") e quindi installarli con [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)"). AUR È stato creato per creare e scambiare pacchetti tra la comunità e per aiutarne lo sviluppo, inclusi i pacchetti del repository [community](#community). Questo documento spiega come accedere ed installare i pacchetti presenti in AUR.
+Articoli correlati
+
+*   [AUR helpers](/index.php/AUR_helpers "AUR helpers")
+*   [AurJson](/index.php/AurJson "AurJson")
+*   [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines")
+*   [PKGBUILD (Italiano)](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)")
+*   [makepkg (Italiano)](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)")
+*   [pacman (Italiano)](/index.php/Pacman_(Italiano) "Pacman (Italiano)")
+*   [Official repositories (Italiano)](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)")
+*   [Arch Build System (Italiano)](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)")
+
+<a class="mw-selflink selflink">Arch User Repository</a> (AUR) è un repository sostenuto dalla comunità per utenti Arch. Contiene le descrizioni dei pacchetti (i [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)")) che ti permettono di compilare i sorgenti grazie al comando [makepkg](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)") e quindi installarli con [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)"). AUR È stato creato per creare e scambiare pacchetti tra la comunità e per aiutarne lo sviluppo, inclusi i pacchetti del repository [community](#community). Questo documento spiega come accedere ed installare i pacchetti presenti in AUR.
 
 Un buon numero di nuovi pacchetti che entrano nei repository ufficiali, partono prima in AUR. In AUR gli utenti sono in grado di contribuire con i propri pacchetti (PKGBUILD). La AUR community può votare pro o contro i pacchetti presenti in AUR. Se un pacchetto diventa abbastanza popolare, sempre che venga incontro alle esigenze di pacchettizzazione e alle licenze, può entrare a far parte del repository *community* (direttamente accessibile da [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)") o [abs](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)")).
 

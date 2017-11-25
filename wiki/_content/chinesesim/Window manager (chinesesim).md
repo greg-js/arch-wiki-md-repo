@@ -1,3 +1,10 @@
+相关文章
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [xinitrc](/index.php/Xinitrc "Xinitrc")
+*   [Start X at Login](/index.php/Start_X_at_Login "Start X at Login")
+
 窗口管理器（window manager，简称WM）是图形用户界面的一部分。用户可以选择安装[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")，他们通常已经提供了完整的用户界面，包括图标、窗口、工具栏、壁纸和桌面部件。
 
 ## Contents

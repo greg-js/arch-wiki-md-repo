@@ -150,7 +150,7 @@ The [bind](#Setup_the_filesystem) path needs to be fully owned by `root`, howeve
 ```
 # mkdir /srv/ssh/www/demo/public_html
 # chown www-demo:sftponly /srv/ssh/www/demo/public_html
-# chmod 775 /srv/ssh/www/demo/public_html
+# chmod 755 /srv/ssh/www/demo/public_html
 
 ```
 

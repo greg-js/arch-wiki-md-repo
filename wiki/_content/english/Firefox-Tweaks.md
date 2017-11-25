@@ -518,7 +518,7 @@ in the *<keyboard>* section of your `~/.config/openbox/rc.xml` file.
 
 ### Plugins do not work with latest version
 
-There can be compatibility issues with plugins not working with the latest Firefox version (e.g. [Pentadactyl](http://5digits.org/pentadactyl/index)). If possible, try installing the nightly/beta builds available, or temporarily [downgrade](/index.php/Downgrading_packages "Downgrading packages") Firefox.
+There can be compatibility issues with plugins not working with the latest Firefox version (e.g. [Pentadactyl](http://5digits.org/pentadactyl/index)). If possible, try installing the nightly/beta builds available, or temporarily [downgrade](/index.php/Downgrade "Downgrade") Firefox.
 
 [Disable Add-on Compatibility Checks](https://addons.mozilla.org/firefox/addon/checkcompatibility/) plugin should take care of spurious compatibility issues when the plugins get disabled, even though they work just fine with the new version.
 
