@@ -41,7 +41,7 @@ GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_P
     *   [6.7 Wrong focus events with tiling window managers](#Wrong_focus_events_with_tiling_window_managers)
     *   [6.8 Thumbnail support for GTK+ 2 file dialog](#Thumbnail_support_for_GTK.2B_2_file_dialog)
     *   [6.9 Button/menu icons in some apps in GNOME Wayland session](#Button.2Fmenu_icons_in_some_apps_in_GNOME_Wayland_session)
-    *   [6.10 Printers not shown in the GTK print dialog](#Printers_not_shown_in_the_GTK_print_dialog)
+    *   [6.10 GTK+ 3 without polkit](#GTK.2B_3_without_polkit)
     *   [6.11 Some GTK+ 2 themes only change the UI color palette](#Some_GTK.2B_2_themes_only_change_the_UI_color_palette)
 *   [7 Examples](#Examples)
 *   [8 See also](#See_also)
@@ -579,11 +579,9 @@ gtk-menu-images=1
 
 Simply set them to 0 or remove the whole file to use GNOME defaults.
 
-### Printers not shown in the GTK print dialog
+### GTK+ 3 without polkit
 
-From GTK 3.22 onwards, one needs to additionally install [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends) to get the list of printers in the GTK print dialog.
-
-Note for those who do not want to install polkit (and do not want to hassle with AUR packages like [gtk3-light](https://aur.archlinux.org/packages/gtk3-light/) [gtk3-nobroadway-nowayland-nocolord](https://aur.archlinux.org/packages/gtk3-nobroadway-nowayland-nocolord/) [gtk3-print-backends-nocolord](https://aur.archlinux.org/packages/gtk3-print-backends-nocolord/) [colord-nopolkit](https://aur.archlinux.org/packages/colord-nopolkit/)): Although colord is needed for printing if GTK or gtk3-print-backends were compiled with colord support, printing works fine without polkit installed; at least with a monochrome printer and package versions gtk3-print-backends=3.22.19-2 and colord=1.4.1-1.
+GTK+3 depends on polkit through colord, which is required for printing. However printing works fine without polkit installed; at least with a monochrome printer and package versions gtk3-print-backends=3.22.19-2 and colord=1.4.1-1.
 
 ### Some GTK+ 2 themes only change the UI color palette
 

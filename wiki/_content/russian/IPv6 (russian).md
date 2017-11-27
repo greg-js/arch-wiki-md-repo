@@ -1,3 +1,7 @@
+Ссылки по теме
+
+*   [IPv6 tunnel broker setup](/index.php/IPv6_tunnel_broker_setup "IPv6 tunnel broker setup")
+
 По умолчанию в Arch Linux включена поддержка IPv6\. Если вы ищете информацию о туннелировании IPv6 через брокера, смотрите [IPv6 tunnel broker setup](/index.php/IPv6_tunnel_broker_setup "IPv6 tunnel broker setup").
 
 ## Contents

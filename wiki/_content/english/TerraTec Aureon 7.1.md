@@ -2,21 +2,24 @@ The Terratec Aureon 7.1 USB is an affordable external sound card which supports 
 
 ## Contents
 
-*   [1 Set the card as the default device](#Set_the_card_as_the_default_device)
-*   [2 Enable volume control](#Enable_volume_control)
-*   [3 Hotkeys](#Hotkeys)
-*   [4 Configure mplayer for surround sound (optional)](#Configure_mplayer_for_surround_sound_.28optional.29)
-*   [5 Tips](#Tips)
+*   [1 Installation](#Installation)
+    *   [1.1 Set the card as the default device](#Set_the_card_as_the_default_device)
+    *   [1.2 Enable volume control](#Enable_volume_control)
+    *   [1.3 Hotkeys](#Hotkeys)
+    *   [1.4 Configure mplayer for surround sound (optional)](#Configure_mplayer_for_surround_sound_.28optional.29)
+*   [2 Tips](#Tips)
 
-#### Set the card as the default device
+## Installation
+
+### Set the card as the default device
 
 If you have multiple sound cards, you need to set the Terratec card as a default. Create the following file
 
  `/etc/modprobe.d/alsa.conf`  `options snd slots=snd_usb_audio` 
 
-Rebooting or restarting the ALSA (sudo /etc/rd.d/alsa restart) may be required for the changes to take effect.
+Rebooting may be required for the changes to take effect.
 
-#### Enable volume control
+### Enable volume control
 
 This card doesn't have hardware volume control, so you need to create software Master control. Create the following file in your home folder
 
@@ -40,9 +43,9 @@ pcm.!default {
 
 ```
 
-Again, restart alsa, then open a music player, play a file and close the player. Then check alsamixer, as you should have a Master volume control.
+Again, restart alsa, then open a music player, play a file and close the player. Then check *alsamixer*, as you should have a Master volume control.
 
-#### Hotkeys
+### Hotkeys
 
 The sound card has external hotkeys for volume change and mute. You can capture the button presses by installing [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") and using the following config:
 
@@ -65,7 +68,7 @@ The sound card has external hotkeys for volume change and mute. You can capture 
 
 ```
 
-As you can see, alsamixer doesn't handle mute for this mixer, which is why you can use a simple mute.sh script, which stores the volume level in volume.txt. Be sure to change the file path to mute.sh accordingly.
+As you can see, *alsamixer* doesn't handle mute for this mixer, which is why you can use a simple *mute.sh* script, which stores the volume level in `volume.txt`. Be sure to change the file path to *mute.sh* accordingly.
 
 ```
 #!/bin/bash
@@ -83,7 +86,7 @@ fi
 
 ```
 
-#### Configure mplayer for surround sound (optional)
+### Configure mplayer for surround sound (optional)
 
 Add the following codec settings for *mplayer*:
 
@@ -95,6 +98,6 @@ ao=alsa
 
 [Kodi](/index.php/Kodi "Kodi") can be used for media playback too, as most receivers do no support the AAC codec. [Kodi](/index.php/Kodi "Kodi") will re-encode AAC to a common codec (AC3 probably) in realtime, so you can watch most surround sound media files. It also has a self-explanatory configuration system using a GUI.
 
-#### Tips
+## Tips
 
-To change volume using amixer and hotkeys, use the following command (for example): `amixer set 'Master' 5+`.
+To change volume using *amixer* and hotkeys, use the following command (for example): `amixer set 'Master' 5+`.

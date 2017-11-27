@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Ccache](/index.php/Ccache "Ccache") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-01-03，点击[这里](https://wiki.archlinux.org/index.php?title=Ccache&diff=0&oldid=450899)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Ccache](/index.php/Ccache "Ccache") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-27，点击[这里](https://wiki.archlinux.org/index.php?title=Ccache&diff=0&oldid=485957)可以查看翻译后英文页面的改动。
 
 [Ccache](http://ccache.samba.org) 是一个编译工具，可以加速 gcc 对同一个程序的多次编译。尽管第一次编译会花费长一点的时间，有了`ccache`，后续的编译将变得非常非常快。
 
@@ -11,8 +11,9 @@
     *   [2.3 启用 colorgcc 支持](#.E5.90.AF.E7.94.A8_colorgcc_.E6.94.AF.E6.8C.81)
 *   [3 Misc](#Misc)
     *   [3.1 修改缓存目录](#.E4.BF.AE.E6.94.B9.E7.BC.93.E5.AD.98.E7.9B.AE.E5.BD.95)
-    *   [3.2 CLI](#CLI)
-    *   [3.3 makechrootpkg](#makechrootpkg)
+    *   [3.2 设置最大缓存大小](#.E8.AE.BE.E7.BD.AE.E6.9C.80.E5.A4.A7.E7.BC.93.E5.AD.98.E5.A4.A7.E5.B0.8F)
+    *   [3.3 CLI](#CLI)
+    *   [3.4 makechrootpkg](#makechrootpkg)
 *   [4 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
@@ -20,6 +21,12 @@
 [安装](/index.php/Pacman "Pacman") 位于 [官方软件仓库](/index.php/Official_repositories "Official repositories") 的 [ccache](https://www.archlinux.org/packages/?name=ccache) 软件包。
 
 ## 配置
+
+可以用配置文件修改默认行为，优先级由高到低为:
+
+1.  环境变量
+2.  单个 Cache 的配置文件(`$HOME/.ccache/ccache.conf`)
+3.  系统配置文件 (`/etc/ccache.conf`)
 
 ### 为 makepkg 启用 ccache
 
@@ -74,12 +81,24 @@ gcj:/usr/bin/gcj
 
 ### 修改缓存目录
 
-可以将缓存目录 `~/.ccache` 配置到其它地方，例如 SSD 或 ramdisk:
+可以将缓存目录 `~/.ccache` 配置到其它地方，例如 SSD 或 [ramdisk](/index.php/Ramdisk "Ramdisk"):
+
+要在修改当前 shell 的缓存目录：
 
 ```
-export CCACHE_DIR=/ramdisk/ccache             # ccache 将使用这个环境变量给出的缓存目录
+$ export CCACHE_DIR=/ramdisk/ccache
 
 ```
+
+要修改默认缓存目录：
+
+ `/home/*user*/.ccache/ccache.conf`  `cache_dir = /ramdisk/ccache` 
+
+### 设置最大缓存大小
+
+默认值是 5G，可以通过配置修改：
+
+ `/home/<user>/.ccache/ccache.conf`  `max_size = 2.0G` 
 
 ### CLI
 

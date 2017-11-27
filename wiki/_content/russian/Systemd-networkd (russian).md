@@ -326,7 +326,7 @@ RouteMetric=20
 
 Если вы используете *systemd-nspawn*, вам, возможно, потребуется изменить `systemd-nspawn@.service` и добавить параметры загрузки в строку `ExecStart`. Для исчерпывающего списка варианттов, обратитесь к [systemd-nspawn(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1). Обратите внимание, если вы хотите, использовать автоматическую настройку DNS от DHCP, то Вам необходимо включить `systemd-resolved` и символьную ссылку `/run/systemd/resolve/resolv.conf` на `/etc/resolv.conf`. Для большей информации, смотрите `systemd-resolved.service(8)`.
 
-**Совет:** Before you start to configure your container network, it is useful to:
+Before you start to configure your container network, it is useful to:
 
 *   disable all your [netctl](/index.php/Netctl "Netctl") services. This will avoid any potential conflicts with `systemd-networkd` and make all your configurations easier to test. Furthermore, odds are high you will end with few or even no [netctl](/index.php/Netctl "Netctl") activated profiles. The `netctl list` command will output a list of all your profiles, with the activated one being starred.
 *   disable the `systemd-nspawn@.service` and use the `systemd-nspawn -bnD /path_to/your_container/` command as root to boot the container. To log off and shutdown inside the container `systemctl poweroff` is used as root. Once the network setting meets your requirements, [enable and start](/index.php/Systemd#Basic_systemctl_usage "Systemd") `systemd-nspawn@.service`
@@ -336,11 +336,15 @@ RouteMetric=20
 *   * make sure *packet forwarding* is [enabled](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") if you want to let containers access the internet. Make sure that your `.network` file does not accidentally turn off forwarding because if you do not have a `IPForward=1` setting in it, `systemd-networkd` will turn off forwarding on this interface, even if you have it enabled globally.
 *   when the daemon is started the systemd `networkctl` command displays the status of network interfaces.
 
-**Примечание:** For the set-up described below,
+}}
+
+For the set-up described below,
 
 *   we will limit the output of the `ip a` command to the concerned interfaces
 *   we assume the *host* is your main OS you are booting to and the *container* is your guest virtual machine
 *   all interface names and IP addresses are only examples
+
+}}
 
 ### Основная DHCP сеть
 

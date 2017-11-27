@@ -116,6 +116,8 @@ It is recommended (especially for beginners) to use [playonlinux](https://www.ar
 
 An emulator is a program which serves to replicate the functions of another platform or system so as to allow applications and games to be run in environments they were not programmed for.
 
+See also [Category:Emulators](/index.php/Category:Emulators "Category:Emulators") and the [Emulation General wiki](http://emulation.gametechwiki.com/index.php/Main_Page).
+
 **Note:** For possibly more up to date selection of emulators, try checking the [AUR 'emulators' category](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&L=0&C=5&SeB=nd&SB=n&SO=a&PP=25)
 
 **Warning:** Owning a high-level emulator is not illegal, but distribution of any type of copyrighted ROMs and unauthorized emulation (without written permission of the copyright holder allowing the user to do so) are **illegal**. Consequently, Arch Linux does not distribute this copyrighted content, including game ROMs and ripped console BIOSs. You are fully responsible for whatever usage of the emulators obtained from the [official repositories](/index.php/Official_repositories "Official repositories") or the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") you make, as well as any legal repercussion that result. Arch Linux bears no responsibility at all.

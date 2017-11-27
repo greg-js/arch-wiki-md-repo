@@ -460,6 +460,8 @@ And then either restarting PulseAudio or your computer will only idle the input 
 
 ## Networked audio
 
+Play sound through the outputs of another computer on the network
+
 ### Basic setup with direct connection
 
 ##### On the server

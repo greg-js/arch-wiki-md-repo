@@ -18,9 +18,10 @@ Related articles
         *   [3.2.2 LightDM](#LightDM)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Disable during media playback](#Disable_during_media_playback)
-        *   [4.1.1 mplayer/mpv](#mplayer.2Fmpv)
-        *   [4.1.2 Kodi](#Kodi)
-        *   [4.1.3 Flash](#Flash)
+        *   [4.1.1 mpv](#mpv)
+        *   [4.1.2 mplayer](#mplayer)
+        *   [4.1.3 Kodi](#Kodi)
+        *   [4.1.4 Flash](#Flash)
     *   [4.2 Animated wallpaper](#Animated_wallpaper)
 *   [5 Troubleshooting](#Troubleshooting)
 *   [6 See also](#See_also)
@@ -113,9 +114,25 @@ xscreensaver.newLoginCommand: dm-tool switch-to-greeter
 
 ### Disable during media playback
 
-#### mplayer/mpv
+#### mpv
 
-Add the following to `~/.mplayer/config` or `~/.mpv/config`:
+By default [mpv](/index.php/Mpv "Mpv") turns off the screensaver at startup and turns it on again on exit. The screensaver is always re-enabled when the player is paused. The option can be controlled in mpv's config file located in `~/.config/mpv/mpv.conf`:
+
+```
+stop-screensaver = "yes"
+
+```
+
+This is not supported on all video outputs or platforms. If you face some issues you might use the `heartbeat-cmd` which runs a command every 30 seconds (by default). The following can be added in the config file:
+
+```
+heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
+
+```
+
+#### mplayer
+
+Add the following to `~/.mplayer/config`:
 
 ```
 heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"

@@ -1,4 +1,4 @@
-| [العربية](/index.php/Category:%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9 "Category:العربية")‎ <small>(47)</small> |
+| [العربية](/index.php/Category:%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9 "Category:العربية")‎ <small>(46)</small> |
 | <small>1.</small> [About Arch](/index.php/Category:About_Arch_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:About Arch (العربية)")‎ <small>(9)</small> |
 | <small>1.1.</small> [ArchWiki](/index.php/Category:ArchWiki_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:ArchWiki (العربية)")‎ <small>(1)</small> |
 | <small>1.2.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Getting and installing Arch (العربية)")‎ <small>(3)</small> |
@@ -9,10 +9,10 @@
 | <small>2.2.1.</small> [Web browser](/index.php/Category:Web_browser_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Web browser (العربية)")‎ <small>(1)</small> |
 | <small>3.</small> [Hardware](/index.php/Category:Hardware_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Hardware (العربية)")‎ <small>(1)</small> |
 | <small>3.1.</small> [CPU](/index.php/Category:CPU_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:CPU (العربية)")‎ <small>(1)</small> |
-| <small>4.</small> [Networking](/index.php/Category:Networking_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Networking (العربية)")‎ <small>(2)</small> |
+| <small>4.</small> [Networking](/index.php/Category:Networking_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Networking (العربية)")‎ <small>(1)</small> |
 | <small>4.1.</small> [Internet applications](/index.php/Category:Internet_applications_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Internet applications (العربية)")‎ <small>(0) (also in [Applications](/index.php/Category:Applications_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Applications (العربية)")‎)</small> |
 | <small>4.1.1.</small> [Web browser](/index.php/Category:Web_browser_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Web browser (العربية)")‎ <small>(1)</small> |
-| <small>4.2.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Secure Shell (العربية)")‎ <small>(1) (also in [Security](/index.php/Category:Security_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Security (العربية)")‎)</small> |
+| <small>4.2.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Secure Shell (العربية)")‎ <small>(0) (also in [Security](/index.php/Category:Security_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Security (العربية)")‎)</small> |
 | <small>5.</small> [Package development](/index.php/Category:Package_development_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Package development (العربية)")‎ <small>(2)</small> |
 | <small>6.</small> [System administration](/index.php/Category:System_administration_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:System administration (العربية)")‎ <small>(5)</small> |
 | <small>6.1.</small> [Boot process](/index.php/Category:Boot_process_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Boot process (العربية)")‎ <small>(4)</small> |
@@ -23,6 +23,6 @@
 | <small>6.4.</small> [Package management](/index.php/Category:Package_management_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Package management (العربية)")‎ <small>(4)</small> |
 | <small>6.5.</small> [Power management](/index.php/Category:Power_management_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Power management (العربية)")‎ <small>(1)</small> |
 | <small>6.6.</small> [Security](/index.php/Category:Security_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Security (العربية)")‎ <small>(1)</small> |
-| <small>6.6.1.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Secure Shell (العربية)")‎ <small>(1) (also in [Networking](/index.php/Category:Networking_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Networking (العربية)")‎)</small> |
+| <small>6.6.1.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Secure Shell (العربية)")‎ <small>(0) (also in [Networking](/index.php/Category:Networking_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Networking (العربية)")‎)</small> |
 | <small>6.7.</small> [System recovery](/index.php/Category:System_recovery_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:System recovery (العربية)")‎ <small>(2)</small> |
 | <small>6.8.</small> [Virtualization](/index.php/Category:Virtualization_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Virtualization (العربية)")‎ <small>(1)</small> |

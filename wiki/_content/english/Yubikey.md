@@ -72,6 +72,7 @@ A small section of this article also works for *Fido U2F* USB keys : [#Enabling
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Yubikey not acting as HID device](#Yubikey_not_acting_as_HID_device)
     *   [9.2 ykman fails to connect to the Yubikey](#ykman_fails_to_connect_to_the_Yubikey)
+    *   [9.3 Yubikey fails to bind within a guest VM](#Yubikey_fails_to_bind_within_a_guest_VM)
 
 ## Introduction
 
@@ -606,3 +607,26 @@ You may also need to [install](/index.php/Install "Install") the package [libu2f
 ### ykman fails to connect to the Yubikey
 
 If the manager fails to connect to the Yubikey, make sure you have started `pcscd.service` or `pcscd.socket`.
+
+### Yubikey fails to bind within a guest VM
+
+Assuming the Yubikey is available to the guest, the issue results from a driver binding to the device on the host. To unbind the device, the bus and port information is needed from `dmesg` on the host:
+
+```
+$ dmesg | grep -B1 Yubico | tail -n 2 | head -n 1 | sed -E 's/^\[[^]]+\] usb ([^:]*):.*/\1/'
+
+```
+
+The resulting USB id should be of the form `X-Y.Z` or `X-Y`. Then, on the host, use `find` to search `/sys/bus/usb/drivers` for which driver the Yubikey is binded to (e.g. `usbhid` or `usbfs`).
+
+```
+$ find /sys/bus/usb/drivers -name "*X-Y.Z*"
+
+```
+
+To unbind the device, use the result from the previous command (i.e. `/sys/bus/usb/drivers/<DRIVER>/X-Y.Z:1.0`):
+
+```
+# echo 'X-Y.Z:1.0' > /sys/bus/usb/drivers/<DRIVER>/unbind
+
+```

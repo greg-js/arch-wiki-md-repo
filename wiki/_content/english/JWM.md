@@ -15,10 +15,8 @@ Configuration is done via a single [XML](https://en.wikipedia.org/wiki/XML "wiki
     *   [4.2 Logout and refresh](#Logout_and_refresh)
         *   [4.2.1 Reboot and shutdown](#Reboot_and_shutdown)
         *   [4.2.2 Conky](#Conky)
-    *   [4.3 Minimal build](#Minimal_build)
-        *   [4.3.1 Minimal PKGBUILD example](#Minimal_PKGBUILD_example)
-    *   [4.4 Minimal font suggestions](#Minimal_font_suggestions)
-    *   [4.5 Manual tiling support](#Manual_tiling_support)
+    *   [4.3 Minimal font suggestions](#Minimal_font_suggestions)
+    *   [4.4 Manual tiling support](#Manual_tiling_support)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Additional troubleshooting](#Additional_troubleshooting)
     *   [5.2 All windows are transparent using compton](#All_windows_are_transparent_using_compton)
@@ -128,42 +126,6 @@ See [Allow users to shutdown](/index.php/Allow_users_to_shutdown "Allow users to
     <Option>notitle</Option>
     <Option>sticky</Option>
 </Group>
-```
-
-### Minimal build
-
-Gains in UI response can be gleaned by not using menu icons and by disabling the use of [Xft](https://en.wikipedia.org/wiki/Xft "wikipedia:Xft") fonts. Further gains can be accomplished by removing support for external libraries with a custom build. The result is also a reduction in resource requirements. A minimal build compiled with Xft support and using Xft fonts is allocated approximately 3 MB of resident and 1.5 MB of shared memory. The same build compiled without Xft support is allocated under 1.5 MB and approximately 1.2 MB, respectively. See the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") page for further details.
-
-#### Minimal PKGBUILD example
-
- `PKGBUILD` 
-```
-pkgname=jwm
-pkgver=2.1.0
-pkgrel=3
-pkgdesc="A lightweight window manager for the X11 Window System"
-arch=('i686' 'x86_64')
-url="[http://joewing.net/programs/jwm/](http://joewing.net/programs/jwm/)"
-license=('GPL2')
-depends=('libx11')
-backup=('etc/system.jwmrc')
-source=([http://joewing.net/programs/jwm/releases/jwm-$pkgver.tar.bz2](http://joewing.net/programs/jwm/releases/jwm-$pkgver.tar.bz2))
-md5sums=('e8fab21b2410eb82032b7c3472af642c')
-
-build() {
-  cd "$srcdir/$pkgname-$pkgver"
-  ./configure --prefix=/usr --sysconfdir=/etc --disable-fribidi \
-  --disable-confirm --disable-icons --disable-png \ 
-  --disable-xpm --disable-jpeg --disable-xinerama \
-  --disable-xft --disable-xrender --disable-debug 
-  make
-}
-
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  make BINDIR="$pkgdir/usr/bin" MANDIR="$pkgdir/usr/share/man" \
-       SYSCONF="$pkgdir/etc" install
-}
 ```
 
 ### Minimal font suggestions

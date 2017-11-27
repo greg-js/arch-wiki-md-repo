@@ -28,7 +28,6 @@ Quest'articolo descrive vari modi in cui gli utenti di Arch (sia nuovi che veter
     *   [9.1 Come posso aiutare da sviluppatore?](#Come_posso_aiutare_da_sviluppatore.3F)
     *   [9.2 Come posso divenire un Arch developer?](#Come_posso_divenire_un_Arch_developer.3F)
     *   [9.3 Come posso aiutare da artista?](#Come_posso_aiutare_da_artista.3F)
-*   [10 Eventi](#Eventi)
 
 ## Donazioni
 
@@ -186,11 +185,3 @@ In genere, i nuovi sviluppatori sono scelti da quelli già esistenti man mano ch
 
 Si è liberi ed anzi incoraggiati a condividere wallpaper, splash screen, tavolozze di colori, widget, temi, ecc. con la comunità sul forum.
 Visitare anche: [https://www.archlinux.org/art/](https://www.archlinux.org/art/)
-
-## Eventi
-
-*   [Arch Linux Event Calendar](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar")
-*   [Bug Day](/index.php/Bug_Day "Bug Day")
-*   [AUR Cleanup Day](/index.php/AUR_Cleanup_Day "AUR Cleanup Day")
-*   [Midyear Cleanup](/index.php/Midyear_Cleanup "Midyear Cleanup")
-*   [Christmas Cleanup](/index.php/Christmas_Cleanup "Christmas Cleanup")

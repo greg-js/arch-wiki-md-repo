@@ -77,6 +77,8 @@ This list is by no means complete. If you know of a community that is not listed
 *   Homepage: [https://www.archlinux.de/](https://www.archlinux.de/)
 *   Forum: [https://bbs.archlinux.de/](https://bbs.archlinux.de/)
 *   Wiki: [https://wiki.archlinux.de/](https://wiki.archlinux.de/)
+*   Arch Linux User Group Berlin: [https://archlinux.berlin/](https://archlinux.berlin/)
+*   Arch Linux User Group Luxembourg: [https://wiki.c3l.lu/doku.php?id=events:alugl](https://wiki.c3l.lu/doku.php?id=events:alugl)
 
 ### Greece
 

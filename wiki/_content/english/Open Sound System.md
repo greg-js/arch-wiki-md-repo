@@ -80,9 +80,7 @@ Some advantages and disadvantages compared to using the Advanced Linux Sound Arc
 
 [Install](/index.php/Install "Install") the [oss](https://aur.archlinux.org/packages/oss/) package. There is also a development version of OSS available with the [oss-git](https://aur.archlinux.org/packages/oss-git/) package.
 
-This will install the OSS, run the OSS install script (temporarily disabling the ALSA modules) and install the OSS kernel modules. Since ALSA is enabled by default in the boot scripts, you need to disable it so it does not conflict with OSS. You can do this by blacklisting the module:
-
- `/etc/modprobe.d/alsa_blacklist.conf`  `install soundcore /bin/false` 
+This will install the OSS, run the OSS install script (temporarily disabling the ALSA modules) and install the OSS kernel modules. Since ALSA is enabled by default in the boot scripts, you need to disable it so it does not conflict with OSS. You can do this by [blacklisting](/index.php/Blacklisting "Blacklisting") the `soundcore` module.
 
 After blacklisting the module, you can [enable](/index.php/Daemon "Daemon") the **oss** daemon to start at boot.
 

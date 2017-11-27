@@ -54,8 +54,6 @@ Kiti naudingi puslapiai švarai palaikyti:
 
 Atidaryti (arba uždaryti) klaidos pranešimus [Arch Linux klaidų seklyje](https://bugs.archlinux.org/) yra vienas iš būdų padėti bendruomenei. Tačiau, neefektingas klaidų seklio naudojimas gali palaužti produktyvumą, vietoj to, kad būti naudingu. [Šitas straipsnis](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") padės kiekvienam kaip teisingai informuoti bendruomenę apie klaidą ir kaip aplamai gaudyti klaidas.
 
-Žiūrėkite taip pat: [Klaidų gaudymo diena](/index.php/Bug_Squashing_Day "Bug Squashing Day")
-
 ## AUR
 
 [Arch vartotojų saugykla](/index.php/Arch_User_Repository "Arch User Repository") yra bendruomenės valdoma PKGBUILD skriptų saugykla Arch vartotojams. Paketai AUR're yra statomi pasitelkiant į pagalbą PKGBUILD skriptus, kurie nėra pusiau sukompiliuoti binariniai paketai iš oficialios saugyklos. AUR buvo sukurtas organizuoti ir dalintis naujais paketais iš bendruomenės, taip pagreitinant populiarų paketų įtraukimą į `[community]` saugyklą.

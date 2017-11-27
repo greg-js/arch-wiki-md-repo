@@ -14,7 +14,7 @@ From the project [home page](http://folding.stanford.edu/):
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [foldingathome](https://aur.archlinux.org/packages/foldingathome/) package.
+[Install](/index.php/Install "Install") the [foldingathome](https://aur.archlinux.org/packages/foldingathome/) package. In order to use your GPU for folding (highly recommended), you'll need the appropriate [OpenCL](/index.php/GPGPU#OpenCL "GPGPU") package for your GPU. Nvidia users can also use [CUDA](/index.php/GPGPU#CUDA "GPGPU").
 
 ## Configuration
 

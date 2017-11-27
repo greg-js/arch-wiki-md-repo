@@ -20,39 +20,37 @@ Questo articolo è un elenco generale delle applicazioni ordinati per categoria,
         *   [1.1.1 Console](#Console)
         *   [1.1.2 Interfaccia grafica](#Interfaccia_grafica)
     *   [1.2 Client eDonkey](#Client_eDonkey)
-    *   [1.3 eMoney](#eMoney)
-        *   [1.3.1 Bitcoin](#Bitcoin)
-    *   [1.4 Messaggistica instantanea](#Messaggistica_instantanea)
-        *   [1.4.1 Client multiprotocollo](#Client_multiprotocollo)
-            *   [1.4.1.1 Console](#Console_2)
-            *   [1.4.1.2 Interfaccia grafica](#Interfaccia_grafica_2)
-        *   [1.4.2 Jabber/XMPP](#Jabber.2FXMPP)
-            *   [1.4.2.1 Client da console](#Client_da_console)
-            *   [1.4.2.2 Client da interfaccia grafica](#Client_da_interfaccia_grafica)
-            *   [1.4.2.3 Servers](#Servers)
-        *   [1.4.3 Client IRC](#Client_IRC)
-            *   [1.4.3.1 Console](#Console_3)
-            *   [1.4.3.2 Interfaccia grafica](#Interfaccia_grafica_3)
-    *   [1.5 Softphone](#Softphone)
-        *   [1.5.1 Clients](#Clients)
-        *   [1.5.2 Utilità](#Utilit.C3.A0)
-    *   [1.6 Client Pastebin](#Client_Pastebin)
-    *   [1.7 Client Email](#Client_Email)
-        *   [1.7.1 Console](#Console_4)
-        *   [1.7.2 Interfaccia grafica](#Interfaccia_grafica_4)
-    *   [1.8 Gestori di rete](#Gestori_di_rete)
-    *   [1.9 Aggregatori di notizie](#Aggregatori_di_notizie)
-        *   [1.9.1 Console](#Console_5)
-        *   [1.9.2 Interfaccia grafica](#Interfaccia_grafica_5)
-    *   [1.10 Web browser](#Web_browser)
-        *   [1.10.1 Console](#Console_6)
-        *   [1.10.2 Interfaccia grafica](#Interfaccia_grafica_6)
-    *   [1.11 Programmi per Blog](#Programmi_per_Blog)
-    *   [1.12 Client per microblogging](#Client_per_microblogging)
-    *   [1.13 FTP](#FTP)
-        *   [1.13.1 Client FTP](#Client_FTP)
-        *   [1.13.2 FTP Servers](#FTP_Servers)
-    *   [1.14 Altro](#Altro)
+    *   [1.3 Messaggistica instantanea](#Messaggistica_instantanea)
+        *   [1.3.1 Client multiprotocollo](#Client_multiprotocollo)
+            *   [1.3.1.1 Console](#Console_2)
+            *   [1.3.1.2 Interfaccia grafica](#Interfaccia_grafica_2)
+        *   [1.3.2 Jabber/XMPP](#Jabber.2FXMPP)
+            *   [1.3.2.1 Client da console](#Client_da_console)
+            *   [1.3.2.2 Client da interfaccia grafica](#Client_da_interfaccia_grafica)
+            *   [1.3.2.3 Servers](#Servers)
+        *   [1.3.3 Client IRC](#Client_IRC)
+            *   [1.3.3.1 Console](#Console_3)
+            *   [1.3.3.2 Interfaccia grafica](#Interfaccia_grafica_3)
+    *   [1.4 Softphone](#Softphone)
+        *   [1.4.1 Clients](#Clients)
+        *   [1.4.2 Utilità](#Utilit.C3.A0)
+    *   [1.5 Client Pastebin](#Client_Pastebin)
+    *   [1.6 Client Email](#Client_Email)
+        *   [1.6.1 Console](#Console_4)
+        *   [1.6.2 Interfaccia grafica](#Interfaccia_grafica_4)
+    *   [1.7 Gestori di rete](#Gestori_di_rete)
+    *   [1.8 Aggregatori di notizie](#Aggregatori_di_notizie)
+        *   [1.8.1 Console](#Console_5)
+        *   [1.8.2 Interfaccia grafica](#Interfaccia_grafica_5)
+    *   [1.9 Web browser](#Web_browser)
+        *   [1.9.1 Console](#Console_6)
+        *   [1.9.2 Interfaccia grafica](#Interfaccia_grafica_6)
+    *   [1.10 Programmi per Blog](#Programmi_per_Blog)
+    *   [1.11 Client per microblogging](#Client_per_microblogging)
+    *   [1.12 FTP](#FTP)
+        *   [1.12.1 Client FTP](#Client_FTP)
+        *   [1.12.2 FTP Servers](#FTP_Servers)
+    *   [1.13 Altro](#Altro)
 *   [2 Multimedia](#Multimedia)
     *   [2.1 Visualizzatori di immagini](#Visualizzatori_di_immagini)
         *   [2.1.1 Console](#Console_7)
@@ -241,24 +239,6 @@ eDonkey è ancora la seconda più grande rete p2p (see [Internet Study 2008/2009
 *   **KaMule** — Front-end grafico di KDE per aMule.
 
 	[http://kde-apps.org/content/show.php?content=150270](http://kde-apps.org/content/show.php?content=150270) || [kamule](https://aur.archlinux.org/packages/kamule/)
-
-### eMoney
-
-#### Bitcoin
-
-Si veda l'articolo principale: [Bitcoin](/index.php/Bitcoin "Bitcoin").
-
-*   **Armory** — Client Bitcoin ricco di caratteristiche come il supporto per portafogli multipli, importazione delle chiavi e backup.
-
-	[https://github.com/etotheipi/BitcoinArmory](https://github.com/etotheipi/BitcoinArmory) || [armory-git](https://aur.archlinux.org/packages/armory-git/)
-
-*   **[Bitcoin](/index.php/Bitcoin "Bitcoin")** — Applicazione per gestire, un p2p di valuta.
-
-	Official website : [http://bitcoin.org/](http://bitcoin.org/) || [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon) [bitcoin-qt](https://www.archlinux.org/packages/?name=bitcoin-qt)
-
-*   **Electrum** — Semplice client per usare Bitcoin.
-
-	[http://electrum.org/](http://electrum.org/) || [electrum](https://www.archlinux.org/packages/?name=electrum)
 
 ### Messaggistica instantanea
 

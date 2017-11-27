@@ -1,24 +1,19 @@
-## Contents
-
-*   [1 Introduction](#Introduction)
-*   [2 Installation](#Installation)
-*   [3 Fn keys](#Fn_keys)
-*   [4 Laptop Mode Tools & powersaving](#Laptop_Mode_Tools_.26_powersaving)
-*   [5 Graphics](#Graphics)
-*   [6 Wireless](#Wireless)
-*   [7 Hardware information](#Hardware_information)
-    *   [7.1 lspci](#lspci)
-    *   [7.2 lsusb](#lsusb)
-
-## Introduction
-
-How to install Arch Linux on the [Asus Eee PC 1001px](http://www.asus.com/Notebooks_Ultrabooks/Eee_PC_1001PX_Seashell/).
+The [Asus Eee PC 1001PX](https://www.asus.com/Laptops/Eee_PC_1001PX_Seashell/) is a 10.1" laptop with an Intel Atom N450 processor.
 
 The same model was sold in Europe under the name [Eee PC R101](http://www.notebookcheck.net/Review-Asus-Eee-PC-R101-Netbook.33855.0.html).
 
-## Installation
+## Contents
 
-The Intel Atom 450N supports x86_64-instructions and 64bit-Arch runs perfectly fine.
+*   [1 Installation](#Installation)
+*   [2 Fn keys](#Fn_keys)
+*   [3 Laptop Mode Tools & powersaving](#Laptop_Mode_Tools_.26_powersaving)
+*   [4 Graphics](#Graphics)
+*   [5 Wireless](#Wireless)
+*   [6 Hardware information](#Hardware_information)
+    *   [6.1 lspci](#lspci)
+    *   [6.2 lsusb](#lsusb)
+
+## Installation
 
 To boot from an USB stick it is necessary to deactivate the "Boot Booster"-option in the BIOS or otherwise the Asus seems to skip all detection scans and will just boot from harddisk. Press F2 repeatedly during the fortunately short POST to enter the BIOS. Deactivate "Boot Booster" and select your USB stick as the first HDD in the HDD list. (The "Removable Device" in the main boot devices list is something different.)
 

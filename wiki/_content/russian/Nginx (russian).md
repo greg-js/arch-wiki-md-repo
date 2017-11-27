@@ -32,12 +32,11 @@
 *   [5 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [5.1 Валидация конфигурации](#.D0.92.D0.B0.D0.BB.D0.B8.D0.B4.D0.B0.D1.86.D0.B8.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D0.B8)
     *   [5.2 При доступе с локального IP перенаправляется на localhost](#.D0.9F.D1.80.D0.B8_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B5_.D1.81_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_IP_.D0.BF.D0.B5.D1.80.D0.B5.D0.BD.D0.B0.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D1.8F.D0.B5.D1.82.D1.81.D1.8F_.D0.BD.D0.B0_localhost)
-    *   [5.3 Права доступа](#.D0.9F.D1.80.D0.B0.D0.B2.D0.B0_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0)
-    *   [5.4 Ошибка: Страница, которую вы ищите, временно недоступна. Пожалуйста, попробуйте позже. (502 Bad Gateway)](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0:_.D0.A1.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86.D0.B0.2C_.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.83.D1.8E_.D0.B2.D1.8B_.D0.B8.D1.89.D0.B8.D1.82.D0.B5.2C_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE_.D0.BD.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.BD.D0.B0._.D0.9F.D0.BE.D0.B6.D0.B0.D0.BB.D1.83.D0.B9.D1.81.D1.82.D0.B0.2C_.D0.BF.D0.BE.D0.BF.D1.80.D0.BE.D0.B1.D1.83.D0.B9.D1.82.D0.B5_.D0.BF.D0.BE.D0.B7.D0.B6.D0.B5._.28502_Bad_Gateway.29)
-    *   [5.5 Ошибка: No input file specified](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0:_No_input_file_specified)
-    *   [5.6 Ошибка: "File not found" в браузере или "Primary script unknown" в лог-файле](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0:_.22File_not_found.22_.D0.B2_.D0.B1.D1.80.D0.B0.D1.83.D0.B7.D0.B5.D1.80.D0.B5_.D0.B8.D0.BB.D0.B8_.22Primary_script_unknown.22_.D0.B2_.D0.BB.D0.BE.D0.B3-.D1.84.D0.B0.D0.B9.D0.BB.D0.B5)
-    *   [5.7 Ошибка: chroot: '/usr/sbin/nginx' No such file or directory](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0:_chroot:_.27.2Fusr.2Fsbin.2Fnginx.27_No_such_file_or_directory)
-    *   [5.8 Альтернативный скрипт для systemd](#.D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D1.8B.D0.B9_.D1.81.D0.BA.D1.80.D0.B8.D0.BF.D1.82_.D0.B4.D0.BB.D1.8F_systemd)
+    *   [5.3 Ошибка: Страница, которую вы ищите, временно недоступна. Пожалуйста, попробуйте позже. (502 Bad Gateway)](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0:_.D0.A1.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86.D0.B0.2C_.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.83.D1.8E_.D0.B2.D1.8B_.D0.B8.D1.89.D0.B8.D1.82.D0.B5.2C_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE_.D0.BD.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.BD.D0.B0._.D0.9F.D0.BE.D0.B6.D0.B0.D0.BB.D1.83.D0.B9.D1.81.D1.82.D0.B0.2C_.D0.BF.D0.BE.D0.BF.D1.80.D0.BE.D0.B1.D1.83.D0.B9.D1.82.D0.B5_.D0.BF.D0.BE.D0.B7.D0.B6.D0.B5._.28502_Bad_Gateway.29)
+    *   [5.4 Ошибка: No input file specified](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0:_No_input_file_specified)
+    *   [5.5 Ошибка: "File not found" в браузере или "Primary script unknown" в лог-файле](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0:_.22File_not_found.22_.D0.B2_.D0.B1.D1.80.D0.B0.D1.83.D0.B7.D0.B5.D1.80.D0.B5_.D0.B8.D0.BB.D0.B8_.22Primary_script_unknown.22_.D0.B2_.D0.BB.D0.BE.D0.B3-.D1.84.D0.B0.D0.B9.D0.BB.D0.B5)
+    *   [5.6 Ошибка: chroot: '/usr/sbin/nginx' No such file or directory](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0:_chroot:_.27.2Fusr.2Fsbin.2Fnginx.27_No_such_file_or_directory)
+    *   [5.7 Альтернативный скрипт для systemd](#.D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D1.8B.D0.B9_.D1.81.D0.BA.D1.80.D0.B8.D0.BF.D1.82_.D0.B4.D0.BB.D1.8F_systemd)
 *   [6 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
@@ -649,22 +648,6 @@ server_name_in_redirect off;
 ```
 
 По умолчанию, nginx перенаправляет любые запросы на указанное в опции `server_name` имя.
-
-### Права доступа
-
-Может быть необходимо дать правильные права на `/usr/share/nginx*` (например, позволить пользователям `читать`, `писать` и `изменять` файлы и/или каталоги).
-
-Следующий скрипт может быть полезен для восстановления и/или установки прав доступа:
-
-```
-#!/bin/sh
-chown -R http:http /usr/share/nginx # сделать владельца/группу файлов/каталогов  'http'
-find /usr/share/nginx -type d -exec chmod 775 {} \; # позволить пользователям членам группы 'http' изменять каталоги
-find /usr/share/nginx -type f -exec chmod 664 {} \; # позволить пользователям членам группы 'http' изменять файлы
-
-```
-
-Вы можете захотеть [хронически](/index.php/Cron "Cron") запускать этот скрипт, предотвращая ошибки с правами доступа.
 
 ### Ошибка: Страница, которую вы ищите, временно недоступна. Пожалуйста, попробуйте позже. (502 Bad Gateway)
 

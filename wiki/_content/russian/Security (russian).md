@@ -1,4 +1,7 @@
-**Важно:** Любые действия, выполняемые от root, несут потенциальную угрозу! Обязательно создайте обычного пользователя для повседневных задач.
+Ссылки по теме
+
+*   [List of applications/Security (Русский)](/index.php/List_of_applications/Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Security (Русский)")
+*   [Category:Security (Русский)](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)")
 
 Описываются возможные методы повышения уровня безопасности и защиты информации в системах на базе ArchLinux.
 

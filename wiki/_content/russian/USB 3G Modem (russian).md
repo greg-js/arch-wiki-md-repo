@@ -1,3 +1,9 @@
+Ссылки по теме
+
+*   [wvdial](/index.php/Wvdial "Wvdial")
+*   [Direct Modem Connection](/index.php/Direct_Modem_Connection "Direct Modem Connection")
+*   [3G and GPRS modems with pppd](/index.php/3G_and_GPRS_modems_with_pppd "3G and GPRS modems with pppd")
+
 Сегодня многие операторы сотовой связи во всём мире предлагают своим абонентам небольшие USB модемы для доступа к Интернету по технологиям UMTS, GSM или EDGE. В этой статье описывается, как подключить и произвести первичную настройку такого модема в Arch Linux.
 
 ## Contents

@@ -399,10 +399,6 @@ Enable substitution for common color emoji fonts to Noto Color Emoji font:
 
  `# ln -s /etc/fonts/conf.avail/66-noto-color-emoji.conf /etc/fonts/conf.d/` 
 
-Enable Noto Emoji black-and-white font as [default text presentation of emoji](https://en.wikipedia.org/wiki/Emoji#Emoji_versus_text_presentation "wikipedia:Emoji"):
-
- `# ln -s /etc/fonts/conf.avail/66-noto-emoji.conf /etc/fonts/conf.d/` 
-
 Enable Noto Color Emoji as fallback for primary font families:
 
  `/etc/fonts/local.conf` 
@@ -439,10 +435,7 @@ Enable Noto Color Emoji as fallback for primary font families:
 </fontconfig>
 ```
 
-Change Default, Serif and Sans-serif fonts in Chromium other than DejaVu to not contain emoji:
-
-*   Open chrome://settings/fonts
-*   To match [GNOME](/index.php/GNOME "GNOME") select Cantarell 15px (11pt)
+Change Default, Serif and Sans-serif fonts in Chromium to font that does not contain emoji (not DejaVu) otherwise some emoji will look like text.
 
 ## Patched packages
 

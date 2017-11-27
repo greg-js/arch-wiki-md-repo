@@ -1377,7 +1377,7 @@ And verify that `/etc/fstab` is consistent. If anything goes wrong, just boot in
 
 ## QEMU Monitor
 
-While QEMU is running, a monitor console is provided in order to provide several ways to interact with the virtual machine running. The QEMU Monitor offers interesting capabilities such as obtaining information about the current virtual machine, hotplugging devices, creating snapshots of the current state of the virtual machine, etc. To see the list of all commands, run `help` or `?` in the QEMU monitor console or review the relevant section of the [official QEMU documentation](http://download.qemu-project.org/qemu-doc.html#pcsys_005fmonitor).
+While QEMU is running, a monitor console is provided in order to provide several ways to interact with the virtual machine running. The QEMU Monitor offers interesting capabilities such as obtaining information about the current virtual machine, hotplugging devices, creating snapshots of the current state of the virtual machine, etc. To see the list of all commands, run `help` or `?` in the QEMU monitor console or review the relevant section of the [official QEMU documentation](https://qemu.weilnetz.de/doc/qemu-doc.html#pcsys_005fmonitor).
 
 ### Accessing the monitor console
 

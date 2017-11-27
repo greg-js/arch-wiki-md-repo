@@ -19,7 +19,7 @@ This document is not an intended as a complete guide to Active Directory nor Sam
 *   [1 Terminology](#Terminology)
 *   [2 Configuration](#Configuration)
     *   [2.1 Active Directory Configuration](#Active_Directory_Configuration)
-        *   [2.1.1 Updating the GPO](#Updating_the_GPO)
+        *   [2.1.1 GPO Considerations](#GPO_Considerations)
     *   [2.2 Linux Host Configuration](#Linux_Host_Configuration)
     *   [2.3 Installation](#Installation)
     *   [2.4 Updating DNS](#Updating_DNS)
@@ -74,13 +74,22 @@ If you are not familiar with Active Directory, there are a few keywords that are
 
 This section works with the default configuration of Windows Server 2012 R2.
 
-#### Updating the GPO
+#### GPO Considerations
 
-It may be necessary to disable *Digital Sign Communication (Always)* in the AD group policies. Dive into:
+Digital signing is enabled by default in Windows Server, and must be enabled at both the client and server level. For certain versions of samba, Linux clients may experience issues connecting to the domain and/or shares. It's recommended you add the following parameters to your smb.conf file:
+
+```
+client signing = auto 
+server signing = auto
+```
+
+If that is not successful, you can disable *Digital Sign Communication (Always)* in the AD group policies. In your AD Group Policy editor, locate:
 
 `Local policies` -> `Security policies` -> `Microsoft Network Server` -> `Digital sign communication (Always)` -> activate `define this policy` and use the `disable` radio button.
 
 If you use Windows Server 2008 R2, you need to modify that in GPO for Default Domain Controller Policy -> Computer Setting -> Policies -> Windows Setting -> Security Setting -> Local Policies -> Security Option -> *Microsoft network client: Digitally sign communications (always)*
+
+Please note that disabling this GPO affects the security of all members of the domain.
 
 ### Linux Host Configuration
 
@@ -167,6 +176,8 @@ Let us assume that your AD is named example.com. Let us further assume your AD i
 
 #### Creating a Kerberos Ticket
 
+**Note:** The keys and commands are user specific: sudo will be root, so your non-elevated account can connect to a different AD user with a separate key. If you only have one domain, it is not necessary to type @EXAMPLE.COM
+
 Now you can query the AD domain controllers and request a kerberos ticket (**uppercase is necessary**):
 
  `kinit administrator@EXAMPLE.COM` 
@@ -226,8 +237,10 @@ In this section, we will focus on getting Authentication to work first by editin
   security = ads
   encrypt passwords = yes
   password server = pdc.example.com
+  client signing = auto
+  server signing = auto
 
-  idmap config * : backend = rid
+  idmap config * : backend = tdb
   idmap config * : range = 10000-20000
 
   winbind use default domain = Yes
@@ -468,7 +481,7 @@ LMNT Token: ffff
 LM20 Token: ffff
 
 ```
- `# net ads status -U administrator | less` 
+ `# net ads status -U administrator%password | less` 
 ```
 objectClass: top
 objectClass: person
@@ -725,9 +738,9 @@ It should look something like this:
 
 ```
 
-Restart the winbind.service using 'systemctl restart winbind.service' with root privileges.
+Restart the winbind daemon using 'systemctl restart winbindd.service' with root privileges.
 
- `# systemctl restart winbind.service` 
+ `# systemctl restart winbindd.service` 
 
 Check if everything works by getting a machine ticket for your system by running
 

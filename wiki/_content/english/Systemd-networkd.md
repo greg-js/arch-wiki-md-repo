@@ -286,14 +286,14 @@ If you are using *systemd-nspawn*, you may need to modify the `systemd-nspawn@.s
 
 Note that if you want to take advantage of automatic DNS configuration from DHCP, you need to enable `systemd-resolved` and symlink `/run/systemd/resolve/resolv.conf` to `/etc/resolv.conf`. See [systemd-resolved.service(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.service.8) for more details.
 
-**Tip:** Before you start to configure your container network, it is useful to:
+Before you start to configure your container network, it is useful to:
 
 *   disable all your [netctl](/index.php/Netctl "Netctl") (host and container), [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (host and container), <a class="mw-selflink selflink">systemd-networkd</a> (container only) and `systemd-nspawn@.service` (host only) services to avoid potential conflicts and to ease debugging
 *   make sure [packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") is enabled if you want to let containers access the internet. Make sure that your `.network` file does not accidentally turn off forwarding because if you do not have a `IPForward=1` setting in it, `systemd-networkd` will turn off forwarding on this interface, even if you have it enabled globally.
 *   make sure you do not have any [iptables](/index.php/Iptables "Iptables") rules which can block traffic
 *   when the daemon is started the systemd `networkctl` command displays the status of network interfaces.
 
-**Note:** For the set-up described below,
+For the set-up described below,
 
 *   we will limit the output of the `ip a` command to the concerned interfaces
 *   we assume the *host* is your main OS you are booting to and the *container* is your guest virtual machine

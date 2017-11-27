@@ -58,8 +58,6 @@ server:
 
 ```
 
-See also [#Example configuration](#Example_configuration).
-
 ### Local DNS server
 
 If you want to use *unbound* as your local DNS server, set your nameserver to `127.0.0.1` in your [resolv.conf](/index.php/Resolv.conf "Resolv.conf"). You will want to have your nameserver be [preserved](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf").

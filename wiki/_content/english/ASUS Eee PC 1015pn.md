@@ -1,4 +1,4 @@
-Asus 1015PN is a dual-core netbook with Nvidia IOn graphics for better gaming. It works fine with Linux OSs. This article provides some information on hardwares specs and some knowledge base about it.
+The [ASUS Eee PC 1015PN](https://www.asus.com/Laptops/Eee_PC_1015PN/) is a 10.1" laptop. It works fine with Linux. This article provides some information on hardware specs and some knowledge base about it.
 
 ## Contents
 

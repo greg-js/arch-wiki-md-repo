@@ -22,13 +22,12 @@ These options are explained in detail below.
 
 *   [1 Disabling switchable graphics](#Disabling_switchable_graphics)
 *   [2 Using nvidia](#Using_nvidia)
-    *   [2.1 Alternative configuration](#Alternative_configuration)
-    *   [2.2 Display Managers](#Display_Managers)
-        *   [2.2.1 LightDM](#LightDM)
-        *   [2.2.2 SDDM](#SDDM)
-        *   [2.2.3 GDM](#GDM)
-    *   [2.3 Checking 3D](#Checking_3D)
-    *   [2.4 Further Information](#Further_Information)
+    *   [2.1 Display Managers](#Display_Managers)
+        *   [2.1.1 LightDM](#LightDM)
+        *   [2.1.2 SDDM](#SDDM)
+        *   [2.1.3 GDM](#GDM)
+    *   [2.2 Checking 3D](#Checking_3D)
+    *   [2.3 Further Information](#Further_Information)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Tearing/Broken VSync](#Tearing.2FBroken_VSync)
     *   [3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29)
@@ -100,53 +99,6 @@ xrandr --dpi 96
 If you get a black screen when starting X, make sure that there are no ampersands after the two `xrandr` commands in `~/.xinitrc`. If there are ampersands, it seems that the window manager can run before the `xrandr` commands finish executing, leading to a black screen.
 
 If the black screen persists, see the [#Alternative configuration](#Alternative_configuration) below.
-
-### Alternative configuration
-
-If you experience Xorg-server crashes since release 1.17.1 with above configuration, modify the section for the Intel device in `/etc/X11/xorg.conf` as follows:
-
- `# nano /etc/X11/xorg.conf` 
-```
-Section "Device"
-    Identifier  "intel"
-    Driver      "modesetting"
-    BusID       "PCI:0:2:0"
-    Option      "AccelMethod"  "sna"
-    #Option      "TearFree" "True"
-    #Option      "Tiling" "True"
-    #Option      "SwapbuffersWait" "True"
-EndSection
-```
-
-As above, the `BusID` must match for the output of the *lspci* command. Search for the line with "VGA compatible controller", that contains something Intel. For example:
-
-```
-$ lspci |grep VGA
-00:02.0 VGA compatible controller: Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 0b)
-
-```
-
-**Tip:** The three last commented out options may (without #) result in positive effects on the tearing, but exchange for some performance cost. Note the `TearFree` option may be used for `"sna"` acceleration only, see [Intel graphics](/index.php/Intel_graphics "Intel graphics"). You can use either `"sna"` or `"uxa"` in `"AccelMethod"` option. For further experimenting, a working `xorg.conf` from a Lenovo Ideapad Z50-70 59-432128 is here: [[2]](http://pastebin.com/tMtPz381).
-
-If X starts but nothing appears on the screen, check if `/var/log/xorg.conf` contains a following line or similar:
-
- `/var/log/xorg.conf` 
-```
-[ 16112.937] (EE) Screen 1 deleted because of no matching config section.
-
-```
-
-If so, the problem may disappear when you change your ServerLayout section of `/etc/X11/xorg.conf`:
-
- `/etc/X11/xorg.conf` 
-```
-Section "ServerLayout"
-    Identifier "layout"
-    Screen **1** "nvidia"
-    Inactive "intel"
-EndSection
-
-```
 
 ### Display Managers
 
@@ -224,7 +176,7 @@ $ glxinfo | grep NVIDIA
 
 ### Further Information
 
-For more information, look at NVIDIA's official page on the topic [[3]](http://us.download.nvidia.com/XFree86/Linux-x86/370.28/README/randr14.html).
+For more information, look at NVIDIA's official page on the topic [[2]](http://us.download.nvidia.com/XFree86/Linux-x86/370.28/README/randr14.html).
 
 ## Troubleshooting
 
@@ -279,7 +231,7 @@ Check if `$ lspci | grep VGA` outputs something similar to:
 
 ```
 
-NVIDIA drivers now offer Optimus support since 319.12 Beta [[4]](http://www.nvidia.com/object/linux-display-amd64-319.12-driver.html) with kernels above and including 3.9.
+NVIDIA drivers now offer Optimus support since 319.12 Beta [[3]](http://www.nvidia.com/object/linux-display-amd64-319.12-driver.html) with kernels above and including 3.9.
 
 Another solution is to install the [Intel](/index.php/Intel "Intel") driver to handle the screens, then if you want 3D software you should run them through [Bumblebee](/index.php/Bumblebee "Bumblebee") to tell them to use the NVIDIA card.
 

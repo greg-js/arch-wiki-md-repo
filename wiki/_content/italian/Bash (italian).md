@@ -1,3 +1,9 @@
+Articoli correlati
+
+*   [Readline (Italiano)](/index.php/Readline_(Italiano) "Readline (Italiano)")
+*   [Environment variables](/index.php/Environment_variables "Environment variables")
+*   [Color Bash Prompt (Italiano)](/index.php/Color_Bash_Prompt_(Italiano) "Color Bash Prompt (Italiano)")
+
 **Bash** (Bourne-again Shell) è una shell/linguaggio di programmazione appartenente al [progetto GNU](/index.php/GNU_Project "GNU Project"). Il suo nome è un omaggio al suo predecessore: la deprecata da tempo Bourne shell. Bash può essere eseguita su molti sistemi operativi UNIX-like, incluso GNU/Linux. Arch utilizza Bash per tutti i suoi init-scripts(script di avvio).
 
 ## Contents

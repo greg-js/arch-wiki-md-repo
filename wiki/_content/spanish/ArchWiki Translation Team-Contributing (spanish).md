@@ -1,6 +1,6 @@
 <center>**Navegación**</center>
 
-<center>[Portada](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)") — [Equipo y traductores](/index.php/ArchWiki_Translation_Team/About_(Espa%C3%B1ol) "ArchWiki Translation Team/About (Español)") — **Colaboración y mantenimiento** — [Guía de estilo](/index.php/ArchWiki_Translation_Team/Style_(Espa%C3%B1ol) "ArchWiki Translation Team/Style (Español)") — [Tablas de traducciones](/index.php/ArchWiki_Translation_Team/Board_(Espa%C3%B1ol) "ArchWiki Translation Team/Board (Español)") — [Glosario](/index.php/ArchWiki_Translation_Team/Glossary_(Espa%C3%B1ol) "ArchWiki Translation Team/Glossary (Español)")</center>
+<center>[Portada](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)") — [Equipo y traductores](/index.php/ArchWiki_Translation_Team/About_(Espa%C3%B1ol) "ArchWiki Translation Team/About (Español)") — <a class="mw-selflink selflink">Colaboración y mantenimiento</a> — [Guía de estilo](/index.php/ArchWiki_Translation_Team/Style_(Espa%C3%B1ol) "ArchWiki Translation Team/Style (Español)") — [Tablas de traducciones](/index.php/ArchWiki_Translation_Team/Board_(Espa%C3%B1ol) "ArchWiki Translation Team/Board (Español)") — [Glosario](/index.php/ArchWiki_Translation_Team/Glossary_(Espa%C3%B1ol) "ArchWiki Translation Team/Glossary (Español)")</center>
 
 * * *
 
@@ -22,7 +22,6 @@ El peor enemigo de la calidad en la traducción es que todo el proceso de la tra
 *   [2 Mantenimiento](#Mantenimiento)
     *   [2.1 Criterios de prioridad para traducir los artículos](#Criterios_de_prioridad_para_traducir_los_art.C3.ADculos)
     *   [2.2 Criterios de actuación](#Criterios_de_actuaci.C3.B3n)
-*   [3 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Colaboración
 
@@ -224,8 +223,3 @@ En todo artículo que traduzca o actualice deberá prestar atención a los sigui
 	**Respecto al seguimiento o adopción de una o varias traducciones**
 
 *   Si tiene la intención de hacerle el seguimiento a una o varias páginas, introduzca su nombre de usuario en la columna «Mantenedor», al lado de la entrada del título de la página. Podría ser una buena idea poner en seguimiento la versión inglesa, dentro de las opciones de su cuenta de usuario (vaya a la pestaña Preferencias→Seguimiento), para que le mantenga al tanto de las posibles modificaciones que sufra el artículo en ingés.
-
-## Véase también
-
-*   [Arch Linux Event Calendar](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar")
-*   [Linux conferences](/index.php/Linux_conferences "Linux conferences")

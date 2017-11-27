@@ -1,5 +1,11 @@
 **翻译状态：** 本文是英文页面 [Reporting_bug_guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-13，点击[这里](https://wiki.archlinux.org/index.php?title=Reporting_bug_guidelines&diff=0&oldid=433639)可以查看翻译后英文页面的改动。
 
+Related articles
+
+*   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
+*   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
+*   [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces")
+
 在 [Arch Linux 问题跟踪系统](https://bugs.archlinux.org/) 报告问题是 [帮助社区](/index.php/Getting_involved_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Getting involved (简体中文)") 的一种方式。然而，质量不高的问题报告却会起反作用，浪费开发者的时间。此文档将像那些愿意帮助社区的人给出有效报告问题和解决问题的指南。
 
 参见 Simon Tatham 的 [如何有效的报告问题](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html)。
@@ -25,7 +31,6 @@
     *   [3.3 软件新版本发布时更新问题报告](#.E8.BD.AF.E4.BB.B6.E6.96.B0.E7.89.88.E6.9C.AC.E5.8F.91.E5.B8.83.E6.97.B6.E6.9B.B4.E6.96.B0.E9.97.AE.E9.A2.98.E6.8A.A5.E5.91.8A)
     *   [3.4 关闭已经解决的问题](#.E5.85.B3.E9.97.AD.E5.B7.B2.E7.BB.8F.E8.A7.A3.E5.86.B3.E7.9A.84.E9.97.AE.E9.A2.98)
     *   [3.5 问题的状态](#.E9.97.AE.E9.A2.98.E7.9A.84.E7.8A.B6.E6.80.81)
-*   [4 另见](#.E5.8F.A6.E8.A7.81)
 
 ## 开始之前
 
@@ -227,9 +232,3 @@ Here is a general usage of severities: 常见的严重等级有这几种:
 *   **Closed**(已关闭) - 可能因为这不是个 Bug [有些不该提交 Bug 报告的原因](#.E6.9C.89.E4.BA.9B.E4.B8.8D.E8.AF.A5.E6.8F.90.E4.BA.A4_Bug_.E6.8A.A5.E5.91.8A.E7.9A.84.E5.8E.9F.E5.9B.A0) 或者已经被解决.
 
 像开发者和 TU 这样的人负责管理和更新各个 Bug 的状态.
-
-## 另见
-
-*   [Bug Day](/index.php/Bug_Day "Bug Day")，Bug日。
-*   [Midyear Cleanup](/index.php/Midyear_Cleanup "Midyear Cleanup")，年中杀虫会。
-*   [Christmas Cleanup](/index.php/Christmas_Cleanup "Christmas Cleanup")，圣诞节杀虫会。

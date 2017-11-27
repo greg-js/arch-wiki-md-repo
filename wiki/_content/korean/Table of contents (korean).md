@@ -1,4 +1,4 @@
-| [한국어](/index.php/Category:%ED%95%9C%EA%B5%AD%EC%96%B4 "Category:한국어") <small>(9)</small> |
+| [한국어](/index.php/Category:%ED%95%9C%EA%B5%AD%EC%96%B4 "Category:한국어") <small>(8)</small> |
 | <small>1.</small> [Applications](/index.php/Category:Applications_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Applications (한국어)") <small>(0)</small> |
 | <small>1.1.</small> [Application launchers](/index.php/Category:Application_launchers_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Application launchers (한국어)") <small>(1)</small> |
 | <small>1.2.</small> [File managers](/index.php/Category:File_managers_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:File managers (한국어)") <small>(1)</small> |

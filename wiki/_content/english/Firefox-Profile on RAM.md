@@ -12,7 +12,7 @@ Because data placed therein cannot survive a shutdown, a script responsible for 
 
 ## Contents
 
-*   [1 Relocate cache only to RAM](#Relocate_cache_only_to_RAM)
+*   [1 Relocate cache to RAM only](#Relocate_cache_to_RAM_only)
 *   [2 Place profile in RAM using tools](#Place_profile_in_RAM_using_tools)
 *   [3 Place profile in RAM manually](#Place_profile_in_RAM_manually)
     *   [3.1 Before you start](#Before_you_start)
@@ -23,18 +23,9 @@ Because data placed therein cannot survive a shutdown, a script responsible for 
         *   [3.3.3 Sync at login/logout](#Sync_at_login.2Flogout)
 *   [4 See also](#See_also)
 
-## Relocate cache only to RAM
+## Relocate cache to RAM only
 
-When a page is loaded, it can be cached so it doesn't need to be downloaded to be redisplayed. For e-mail and news, messages and attachments are cached as well. Firefox can be configured to use only RAM as cache storage. Configuration files, bookmarks, extensions etc. will be written to drive as usual. For this:
-
-*   open `about:config` in the address bar
-*   set `browser.cache.disk.enable` to "false" (double click the line)
-*   verify that `browser.cache.memory.enable` is set to "true" ([default value](http://kb.mozillazine.org/Browser.cache.memory.enable))
-*   add the entry (right click->new->integer) `browser.cache.memory.capacity` and set it to the amount of KB you'd like to spare, or to -1 for [automatic](http://kb.mozillazine.org/Browser.cache.memory.capacity#-1) cache size selection. (Skipping this step has the same effect as setting the value to -1.)
-
-Main disadvantages of this method are that the content of currently browsed webpages is lost if browser crashes or after a reboot, and that the settings need to be configured for each user individually.
-
-A workaround for the first drawback is to use [anything-sync-daemon](/index.php/Anything-sync-daemon "Anything-sync-daemon") or similar periodically-syncing script so that cache gets copied over to the drive on a regular basis.
+See [Firefox/Tweaks#Turn off the disk cache](/index.php/Firefox/Tweaks#Turn_off_the_disk_cache "Firefox/Tweaks").
 
 ## Place profile in RAM using tools
 

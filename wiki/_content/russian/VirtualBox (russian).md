@@ -1,3 +1,9 @@
+Ссылки по теме
+
+*   [Category:Hypervisors (Русский)](/index.php/Category:Hypervisors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Hypervisors (Русский)")
+*   [PhpVirtualBox](/index.php/PhpVirtualBox "PhpVirtualBox")
+*   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
+
 [VirtualBox](https://www.virtualbox.org) - это [гипервизор](https://en.wikipedia.org/wiki/ru:%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D0%B2%D0%B8%D0%B7%D0%BE%D1%80 интерфейс, а также можно не управлять ими или управлять с помощью [SDL](https://en.wikipedia.org/wiki/ru:Simple_DirectMedia_Layer "wikipedia:ru:Simple DirectMedia Layer") утилит командной строки.
 
 Чтобы интегрировать в гостевую систему функции хост системы, такие как общие папки и общий буфер обмена, видео ускорение и режим бесшовной интеграции окон, для некоторых гостевых операционных систем предоставляются *дополнения гостевой ОС*.

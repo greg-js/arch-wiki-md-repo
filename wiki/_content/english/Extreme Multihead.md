@@ -133,7 +133,7 @@ The previous section outlined how to access other systems usually not close to y
 
 ### Synergy
 
-Using a tool called `synergy` it is possible for a single keyboard and mouse to access several systems as though all their monitors were a single desktop. [quicksynergy](https://aur.archlinux.org/packages/quicksynergy/) provides a convenient wrapper for the application.
+Using a tool called [Synergy](/index.php/Synergy "Synergy") it is possible for a single keyboard and mouse to access several systems as though all their monitors were a single desktop. [quicksynergy](https://aur.archlinux.org/packages/quicksynergy/) provides a convenient wrapper for the application.
 
 ### Xdmx
 

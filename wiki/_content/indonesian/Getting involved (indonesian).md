@@ -62,8 +62,6 @@ Dalam jangka panjang,target yang harus dicapai adalah menjadikan Archwiki lebih 
 
 Membuka (dan menutup) laporan masalah di [Arch Linux Bugtracker](https://bugs.archlinux.org/) adalah salah satu cara untuk membantu dengan cara menolong komunitas melalui laporan masalah Anda.Bagaimanapun,penggunaan yang tidak efektif dari bug-tracker akan menimbulkan kontra-produktif dan menjadi sia-sia.[Artikel ini](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") akan memberikan Anda petunjuk untuk membantu komunitas secara efektif dengan cara melaporkan atau mencari masalah untuk diselesaikan.
 
-Lihat juga : [Hari pembersihan masalah](/index.php/Bug_Squashing_Day "Bug Squashing Day")
-
 ## Sekilas Tentang AUR
 
 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") adalah repositori yang dibawakan oleh komunitas menggunakan PKGBUILDs untuk pengguna Archlinux.Paket yang terdapat di AUR dibuat menggunakan PKGBUILDs dan tidak mempunyai binari secara langsung ada seperti repositori resmi.Sehingga semua paket dari AUR akan dikompilasi secara manual disistem Archlinux Anda untuk kemudian diinstall nantinya.AUR dibuat untuk mengontrol dan membagikan paket baru dari komunitas serta membuat sebuah paket lebih dikenal oleh semua pengguna sehingga dapat dimasukkan nanti ke dalam repositori `[komunitas]`.

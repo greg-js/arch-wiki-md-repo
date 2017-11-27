@@ -8,7 +8,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 
 **Note:**
 
-*   This article is about the latest major VMware versions, meaning VMware Workstation Pro and Player 12.5.
+*   This article is about the latest major VMware versions, meaning VMware Workstation Pro and Player 12.5\. [WARNING: Stale, *not* the latest major Version, it is 14.0.0 which is missing from this page].
 *   For older versions, use the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package.
 
 ## Contents

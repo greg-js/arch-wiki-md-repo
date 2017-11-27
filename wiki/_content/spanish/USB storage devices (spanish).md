@@ -1,3 +1,7 @@
+Related articles
+
+*   [Mount](/index.php/Mount "Mount")
+
 Este documento describe cómo usar las populares memorias USB con Linux. No obstante, también es válido para otros dispositivos, como las cámaras digitales que actúan como si fueran meros dispositivos USB de almacenamiento.
 
 ## Contents

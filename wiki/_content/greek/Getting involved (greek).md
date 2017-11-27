@@ -17,8 +17,7 @@ Related articles
     *   [1.5 Διόρθωση και αναφορά σφαλμάτων](#.CE.94.CE.B9.CF.8C.CF.81.CE.B8.CF.89.CF.83.CE.B7_.CE.BA.CE.B1.CE.B9_.CE.B1.CE.BD.CE.B1.CF.86.CE.BF.CF.81.CE.AC_.CF.83.CF.86.CE.B1.CE.BB.CE.BC.CE.AC.CF.84.CF.89.CE.BD)
     *   [1.6 Δημιουργία και υιοθέτηση AUR πακέτων](#.CE.94.CE.B7.CE.BC.CE.B9.CE.BF.CF.85.CF.81.CE.B3.CE.AF.CE.B1_.CE.BA.CE.B1.CE.B9_.CF.85.CE.B9.CE.BF.CE.B8.CE.AD.CF.84.CE.B7.CF.83.CE.B7_AUR_.CF.80.CE.B1.CE.BA.CE.AD.CF.84.CF.89.CE.BD)
     *   [1.7 Επίσημη έργα λογισμικού](#.CE.95.CF.80.CE.AF.CF.83.CE.B7.CE.BC.CE.B7_.CE.AD.CF.81.CE.B3.CE.B1_.CE.BB.CE.BF.CE.B3.CE.B9.CF.83.CE.BC.CE.B9.CE.BA.CE.BF.CF.8D)
-    *   [1.8 Συμμετοχή σε εκδηλώσεις](#.CE.A3.CF.85.CE.BC.CE.BC.CE.B5.CF.84.CE.BF.CF.87.CE.AE_.CF.83.CE.B5_.CE.B5.CE.BA.CE.B4.CE.B7.CE.BB.CF.8E.CF.83.CE.B5.CE.B9.CF.82)
-    *   [1.9 Δωρεά χρημάτων](#.CE.94.CF.89.CF.81.CE.B5.CE.AC_.CF.87.CF.81.CE.B7.CE.BC.CE.AC.CF.84.CF.89.CE.BD)
+    *   [1.8 Δωρεά χρημάτων](#.CE.94.CF.89.CF.81.CE.B5.CE.AC_.CF.87.CF.81.CE.B7.CE.BC.CE.AC.CF.84.CF.89.CE.BD)
 *   [2 Κοινοτικά έργα](#.CE.9A.CE.BF.CE.B9.CE.BD.CE.BF.CF.84.CE.B9.CE.BA.CE.AC_.CE.AD.CF.81.CE.B3.CE.B1)
     *   [2.1 Ομάδες](#.CE.9F.CE.BC.CE.AC.CE.B4.CE.B5.CF.82)
     *   [2.2 Λογισμικό](#.CE.9B.CE.BF.CE.B3.CE.B9.CF.83.CE.BC.CE.B9.CE.BA.CF.8C)
@@ -64,10 +63,6 @@ To [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"
 ### Επίσημη έργα λογισμικού
 
 Μπορείτε να συμμετάσχετε στην ανάπτυξη των [επίσημων έργων λογισμικού του Arch Linux](https://projects.archlinux.org/).
-
-### Συμμετοχή σε εκδηλώσεις
-
-Υπάρχουν ετήσιες και μηνιαίες εκδηλώσεις για διόρθωση σφαλμάτων, μετάφραση και καθαρισμό. Μπορείτε να βρείτε τις προσεχείς εκδηλώσεις που θα πραγματοποιηθούν στο [Ημερολόγιο Εκδηλώσεων του Arch Linux](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar").
 
 ### Δωρεά χρημάτων
 

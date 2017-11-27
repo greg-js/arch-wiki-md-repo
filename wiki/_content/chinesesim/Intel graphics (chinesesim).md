@@ -2,7 +2,6 @@
 
 相关文章
 
-*   [Intel GMA 500](/index.php/Intel_GMA_500 "Intel GMA 500")
 *   [Intel GMA3600](/index.php/Intel_GMA3600 "Intel GMA3600")
 *   [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")
 *   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting")
@@ -18,7 +17,7 @@ Intel显卡和相应芯片组、cpu的完整型号参考[维基百科上的 Inte
 **注意:**
 
 *   有些人建议不要安装Intel驱动，而应该使用通用的 modesetting 驱动。 参见 [[1]](https://packages.debian.org/sid/x11/xserver-xorg-video-intel) 与 [[2]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/).
-*   开源驱动不支持基于PowerVR的显卡([GMA 500](/index.php/Intel_GMA_500 "Intel GMA 500") 和 [GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600") 系列)。
+*   开源驱动不支持基于PowerVR的显卡([GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600") 系列)。
 
 ## Contents
 

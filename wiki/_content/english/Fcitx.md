@@ -264,14 +264,13 @@ Then you should add `Pinyin` or `Shuangpin` input method to actived input method
 
 For some reasons, [KDE](/index.php/KDE "KDE") doesn't handle keyboard layouts properly. For example, if you switch from US (English) to LT (Lithuanian), all numbers on the keyboard should produce Lithuanian letters, but they still produce numbers as the output. This can be fixed by these steps:
 
-1.  Install required packages mentioned [here](#KDE).
-2.  Turn off `fcitx` if it's running in the background.
-3.  Disable stuff related to KDE:
+1.  Turn off `fcitx` if it's running in the background.
+2.  Disable stuff related to KDE:
     1.  At *System settings --> Input devices --> Layouts (tab)* make sure that "Configure layouts" is unchecked.
     2.  At *System settings --> Input devices --> Advanced (tab)* make sure that "Configure keyboard options" is unchecked.
-4.  Open terminal and type `fcitx` to start it. You can close terminal - `fcitx` will still be running in the background.
-5.  Set up your needed layouts (Right click on the system tray icon, then "Configure").
-6.  Right click on the system tray icon, then "Exit"
+3.  Open terminal and type `fcitx` to start it. You can close terminal - `fcitx` will still be running in the background.
+4.  Set up your needed layouts (Right click on the system tray icon, then "Configure").
+5.  Right click on the system tray icon, then "Exit"
 
 At this point you should have working layouts, native KDE layouts switch icon should appear and you can switch them by mouse scroll or click on it.
 

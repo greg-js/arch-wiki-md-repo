@@ -35,7 +35,7 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GN
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Failure to start with AMD Catalyst driver](#Failure_to_start_with_AMD_Catalyst_driver)
     *   [4.2 Failure on logout](#Failure_on_logout)
-    *   [4.3 Xorg 1.16](#Xorg_1.16)
+    *   [4.3 Rootless Xorg](#Rootless_Xorg)
     *   [4.4 Use Xorg backend](#Use_Xorg_backend)
     *   [4.5 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
 *   [5 See also](#See_also)
@@ -491,9 +491,9 @@ GdmXserverTimeout=60
 
 ```
 
-### Xorg 1.16
+### Rootless Xorg
 
-See [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
+See [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg").
 
 ### Use Xorg backend
 

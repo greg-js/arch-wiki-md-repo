@@ -1,3 +1,8 @@
+Ссылки по теме
+
+*   [Fstab (Русский)](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)")
+*   [Автозапуск](/index.php/Autostarting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Autostarting (Русский)")
+
 Эта статья призвана описать процесс загрузки Arch Linux и перечислить вовлеченные в процесс загрузки системные файлы, предоставляя ссылки на соответствующие статьи в вики там, где это потребуется. Arch славится своей приверженностью стилю загрузки [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution "wikipedia:Berkeley Software Distribution"), в отличии более распространенного [SysV](https://en.wikipedia.org/wiki/UNIX_System_V "wikipedia:UNIX System V"). Это означает, что существует небольшое различие между уровнями выполнения([Wikipedia:runlevel](https://en.wikipedia.org/wiki/runlevel "wikipedia:runlevel")), поскольку система по умолчанию сконфигурирована использовать и запускать одни и те же модули и процессы на всех уровнях выполнения. Преимуществом такой схемы выступает то, что пользователю становится легче настроить процесс запуска (см. [rc.conf](/index.php/Rc.conf "Rc.conf")); с другой стороны, некоторые способы углубленного конфигурирования (какие были в SysV) потеряны. Тем, кого это не устраивает, будет полезно обратиться к статье [Adding Runlevels](/index.php/Adding_Runlevels "Adding Runlevels"). Чтобы узнать больше о различиях между стилями инициализации BSD и SysV см. [Wikipedia:Init](https://en.wikipedia.org/wiki/Init "wikipedia:Init")
 
 ## Contents

@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [Bash](/index.php/Bash "Bash")
+*   [Environment variables](/index.php/Environment_variables "Environment variables")
+
 Existe una gran variedad de posibilidades para mejorar el indicador de bash y personalizandolo ayudara a ser más productivo en la linea de comandos. Se puede agregar información adicional al indicador, o simplemente colorearlo para hacer el indicador más atractivo.
 
 ## Contents

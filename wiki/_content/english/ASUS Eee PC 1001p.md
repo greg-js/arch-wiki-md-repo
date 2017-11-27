@@ -1,3 +1,5 @@
+The [ASUS Eee PC 1001P](https://www.asus.com/Laptops/Eee_PC_1001P_Seashell/) is a 10.1" laptop with an Intel Atom N450 processor.
+
 ## Contents
 
 *   [1 Issues](#Issues)
@@ -10,7 +12,7 @@
 
 ### ACPI and Intel KMS
 
-Screen goes black when [Intel KMS](/index.php/Intel#KMS_.28Kernel_Mode_Setting.29 "Intel") and ACPI is on. Brightness controls are not working.
+Screen goes black when [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") and ACPI is on. Brightness controls are not working.
 
 **Solution**: Add the following to your kernel parameter list:
 

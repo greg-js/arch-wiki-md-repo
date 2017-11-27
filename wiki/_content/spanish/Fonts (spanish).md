@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [MS Fonts](/index.php/MS_Fonts "MS Fonts")
+*   [Configuración de fuentes Xorg.](/index.php?title=Configuraci%C3%B3n_de_fuentes_Xorg.&action=edit&redlink=1 "Configuración de fuentes Xorg. (page does not exist)")
+
 ## Contents
 
 *   [1 Introducción](#Introducci.C3.B3n)

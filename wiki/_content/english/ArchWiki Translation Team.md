@@ -3,7 +3,7 @@
 1.  If you do not know how to edit wiki pages, read [Help:Editing](/index.php/Help:Editing "Help:Editing").
 2.  Read [Help:i18n](/index.php/Help:I18n "Help:I18n"), which contains comprehensive guidelines for ArchWiki internationalization and localization.
 3.  [Login](/index.php/Special:UserLogin "Special:UserLogin") to be able to edit the wiki.
-4.  Choose a page to translate. You can use the [random page function](/index.php/Special:Random "Special:Random") or translate a page in the [list of priority pages](/index.php/ArchWiki_Translation_Day#List_of_priority_pages "ArchWiki Translation Day"). Let us take this very page as an example: <a class="mw-selflink selflink">ArchWiki Translation Team</a>.
+4.  Choose a page to translate. You can use the [random page function](/index.php/Special:Random "Special:Random") Let us take this very page as an example: <a class="mw-selflink selflink">ArchWiki Translation Team</a>.
 5.  At the top of the page, click the "edit" tab in the horizontal menu.
 6.  Add an interlanguage link for the language you are going to create. See [Help:i18n#Interlanguage links](/index.php/Help:I18n#Interlanguage_links "Help:I18n").
 7.  Copy the entire page's source code.

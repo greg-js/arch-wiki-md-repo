@@ -61,8 +61,6 @@ In the long run, the goal is a professional and easily-navigated wiki, such that
 
 Opening (and closing) bug reports on the [Arch Linux Bug Tracker](https://bugs.archlinux.org/) is one of the possible ways to help the community. However, ineffective use of the bug-tracker can be counter-productive instead of being useful. [This article](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") will guide anyone wanting to help the community efficiently by reporting or hunting bugs.
 
-See also: [Bug Squashing Day](/index.php/Bug_Squashing_Day "Bug Squashing Day")
-
 ## AUR
 
 The [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") is a community-driven repository of [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for Arch users. Packages in the AUR are built by the PKGBUILDs and are not pre-built binaries like from the official repositories. The AUR was created to organize and share new packages from the community and to help expedite popular packages' inclusion into the `[community]` repository.

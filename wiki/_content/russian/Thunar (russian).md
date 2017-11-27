@@ -13,7 +13,6 @@ Thunar - это новый файловый менеджер, создаваем
     *   [2.4 Эскизы Thunar](#.D0.AD.D1.81.D0.BA.D0.B8.D0.B7.D1.8B_Thunar)
     *   [2.5 Общий доступ Thunar](#.D0.9E.D0.B1.D1.89.D0.B8.D0.B9_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF_Thunar)
         *   [2.5.1 Установка дополнения](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F)
-        *   [2.5.2 Настройка дополнения](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F)
 *   [3 Советы и подсказки](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D0.BF.D0.BE.D0.B4.D1.81.D0.BA.D0.B0.D0.B7.D0.BA.D0.B8)
     *   [3.1 Запуск Thunar как демона](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_Thunar_.D0.BA.D0.B0.D0.BA_.D0.B4.D0.B5.D0.BC.D0.BE.D0.BD.D0.B0)
     *   [3.2 Исправление отображения русских букв](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D1.80.D1.83.D1.81.D1.81.D0.BA.D0.B8.D1.85_.D0.B1.D1.83.D0.BA.D0.B2)
@@ -107,119 +106,6 @@ Multimedia - Audio CDs: `amarok --cdplay %d`
 #### Установка дополнения
 
 Установите пакет [thunar-shares-plugin](https://aur.archlinux.org/packages/thunar-shares-plugin/).
-
-#### Настройка дополнения
-
-Выполните описанные ниже действия от имени суперпользователя.
-
-This marks the named objects for automatic export to the environment of subsequently executed commands:
-
-```
-export USERSHARES_DIR="/var/lib/samba/*usershares*"
-export USERSHARES_GROUP="*sambashare*"
-
-```
-
-Создайте папку общих файлов впользователя в `/var/lib/samba`:
-
-```
-mkdir -p ${USERSHARES_DIR}
-
-```
-
-Создайте группу `sambashare`:
-
-```
-groupadd ${USERSHARES_GROUP}
-
-```
-
-Смените владельца папки и группы, которые вы только что создали:
-
-```
-chown root:${USERSHARES_GROUP} ${USERSHARES_DIR}
-
-```
-
-Измените разрешения папки с общими файлами так, чтобы пользователи в группе *sambashare* могли читать, писать и выполнять файлы:
-
-```
-chmod 01770 ${USERSHARES_DIR}
-
-```
-
-Откройте свой любимый текстовый редактор (например, [Nano](/index.php/Nano_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nano (Русский)")) и создайте файл `/etc/samba/smb.conf`:
-
-```
- ##This is the main Samba configuration file. You should read the
- ##smb.conf(5) manual page in order to understand the options listed
- ##here. Samba has a huge number of configurable options (perhaps too
- ##many!) most of which are not shown in this example
- ##
- ##For a step to step guide on installing, configuring and using samba, 
- ## read the Samba-HOWTO-Collection. This may be obtained from:
- ##  [http://www.samba.org/samba/docs/Samba-HOWTO-Collection.pdf](http://www.samba.org/samba/docs/Samba-HOWTO-Collection.pdf)
- ##
- ## Many working examples of smb.conf files can be found in the 
- ## Samba-Guide which is generated daily and can be downloaded from: 
- ##  [http://www.samba.org/samba/docs/Samba-Guide.pdf](http://www.samba.org/samba/docs/Samba-Guide.pdf)
- ##
- ## Any line which starts with a ; (semi-colon) or a # (hash) 
- ## is a comment and is ignored. In this example we will use a #
- ## for commentry and a ; for parts of the config file that you
- ## may wish to enable
- ##
- ## NOTE: Whenever you modify this file you should run the command "testparm"
- ## to check that you have not made any basic syntactic errors. 
- ##
- #[global]
- #  workgroup = WORKGROUP
- #  security = share
- #  server string = My Share
- #  load printers = yes
- #  log file = /var/log/samba/%m.log
- #  max log size = 50
- #  usershare path = /var/lib/samba/usershares
- #  usershare max shares = 100
- #  usershare allow guests = yes
- #  usershare owner only = yes
- #  
- #
- # #Windows Internet Name Serving Support Section:
- #
- # #WINS Support - Tells the NMBD component of Samba to enable it's WINS Server
- #;   wins support = yes
- #
- ## WINS Server - Tells the NMBD components of Samba to be a WINS Client
- ##	Note: Samba can be either a WINS Server, or a WINS Client, but NOT both
- #;   wins server = w.x.y.z
- #
- ##WINS Proxy - Tells Samba to answer name resolution queries on
- ## behalf of a non WINS capable client, for this to work there must be
- ## at least one	WINS Server on the network. The default is NO.
- #;   wins proxy = yes
-
-```
-
-Сохраните файл. Затем добавьте вашего пользователя в группу *sambashares*:
-
-```
-gpasswd -a *имя пользователя* ${USERSHARES_GROUP}
-
-```
-
-Перезапустите Samba:
-
-```
-/etc/rc.d/samba restart
-
-```
-
-Выйдите из системы и войдите снова. Теперь у вас есть возможность щёлкнуть правой кнопкой на любой папке и открыть к ней доступ из сети.
-
-Для того, чтобы samba запускалась во время загрузки компьютера, добавьте *samba* в список демонов в файл `/etc/rc.conf`.
-
-Если вы хотите узнать больше, загляните на страницу [Samba](/index.php/Samba_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Samba (Русский)")
 
 ## Советы и подсказки
 

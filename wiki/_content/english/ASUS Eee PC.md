@@ -1,54 +1,27 @@
 ## Contents
 
-*   [1 Eee 700 Series and 900](#Eee_700_Series_and_900)
-*   [2 Eee 900A](#Eee_900A)
-*   [3 Eee 901, 904, and 1000(H)](#Eee_901.2C_904.2C_and_1000.28H.29)
-*   [4 Eee 904HA](#Eee_904HA)
-*   [5 Eee T101MT](#Eee_T101MT)
-*   [6 Eee 1000HE](#Eee_1000HE)
-*   [7 Eee 1001P](#Eee_1001P)
-*   [8 Eee 1001PX](#Eee_1001PX)
-*   [9 Eee 1005HA(B)](#Eee_1005HA.28B.29)
-*   [10 Eee 1005P(E)](#Eee_1005P.28E.29)
-*   [11 Eee 1011PX](#Eee_1011PX)
-*   [12 Eee 1015B](#Eee_1015B)
-*   [13 Eee 1015 BX](#Eee_1015_BX)
-*   [14 Eee 1015 PE/PEM](#Eee_1015_PE.2FPEM)
-    *   [14.1 Hardware](#Hardware)
-    *   [14.2 Installation](#Installation)
-*   [15 Eee 1015 PN](#Eee_1015_PN)
-*   [16 Eee 1025C](#Eee_1025C)
-*   [17 Eee 1201T](#Eee_1201T)
-*   [18 Eee 1201N](#Eee_1201N)
-*   [19 Eee 1215N](#Eee_1215N)
-*   [20 Eee 1215B](#Eee_1215B)
-    *   [20.1 Audio](#Audio)
-    *   [20.2 Power Management](#Power_Management)
-    *   [20.3 USB 3.0 on battery](#USB_3.0_on_battery)
-
-# Eee 700 Series and 900
-
-See [ASUS Eee PC 701](/index.php/ASUS_Eee_PC_701 "ASUS Eee PC 701").
-
-# Eee 900A
-
-See [Asus Eee PC 900A](/index.php/Asus_Eee_PC_900A "Asus Eee PC 900A").
-
-# Eee 901, 904, and 1000(H)
-
-The 901, 904, and 1000(H) all seem to share much-of, if not all the same hardware. See [ASUS Eee PC 901](/index.php/ASUS_Eee_PC_901 "ASUS Eee PC 901").
-
-# Eee 904HA
-
-[ASUS Eee PC 904HA](/index.php/ASUS_Eee_PC_904HA "ASUS Eee PC 904HA")
+*   [1 Eee T101MT](#Eee_T101MT)
+*   [2 Eee 1001P](#Eee_1001P)
+*   [3 Eee 1001PX](#Eee_1001PX)
+*   [4 Eee 1005P(E)](#Eee_1005P.28E.29)
+*   [5 Eee 1011PX](#Eee_1011PX)
+*   [6 Eee 1015B](#Eee_1015B)
+*   [7 Eee 1015 BX](#Eee_1015_BX)
+*   [8 Eee 1015 PE/PEM](#Eee_1015_PE.2FPEM)
+    *   [8.1 Hardware](#Hardware)
+    *   [8.2 Installation](#Installation)
+*   [9 Eee 1015 PN](#Eee_1015_PN)
+*   [10 Eee 1201T](#Eee_1201T)
+*   [11 Eee 1201N](#Eee_1201N)
+*   [12 Eee 1215N](#Eee_1215N)
+*   [13 Eee 1215B](#Eee_1215B)
+    *   [13.1 Audio](#Audio)
+    *   [13.2 Power Management](#Power_Management)
+    *   [13.3 USB 3.0 on battery](#USB_3.0_on_battery)
 
 # Eee T101MT
 
 [ASUS Eee PC T101MT](/index.php/ASUS_Eee_PC_T101MT "ASUS Eee PC T101MT")
-
-# Eee 1000HE
-
-[ASUS Eee PC 1000HE](/index.php/ASUS_Eee_PC_1000HE "ASUS Eee PC 1000HE")
 
 # Eee 1001P
 
@@ -57,10 +30,6 @@ The 901, 904, and 1000(H) all seem to share much-of, if not all the same hardwar
 # Eee 1001PX
 
 [ASUS Eee PC 1001px](/index.php/ASUS_Eee_PC_1001px "ASUS Eee PC 1001px")
-
-# Eee 1005HA(B)
-
-[ASUS Eee PC 1005HA](/index.php/ASUS_Eee_PC_1005HA "ASUS Eee PC 1005HA")
 
 # Eee 1005P(E)
 
@@ -194,10 +163,6 @@ Due to the limitations of having 4 partitions per drive I installed arch on the 
 # Eee 1015 PN
 
 [ASUS Eee PC 1015pn](/index.php/ASUS_Eee_PC_1015pn "ASUS Eee PC 1015pn")
-
-# Eee 1025C
-
-[ASUS Eee PC 1025c](/index.php/ASUS_Eee_PC_1025c "ASUS Eee PC 1025c")
 
 # Eee 1201T
 

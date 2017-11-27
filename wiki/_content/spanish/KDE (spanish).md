@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [Guía oficial de Instalación](/index.php/Gu%C3%ADa_oficial_de_Instalaci%C3%B3n "Guía oficial de Instalación")
+*   [Guía para Principiantes](/index.php/Gu%C3%ADa_para_Principiantes "Guía para Principiantes")
+
 KDE es un proyecto de software que comprende actualmente un [desktop environment](/index.php/Desktop_environment "Desktop environment") conocido como Plasma, una colección de bibliotecas y Frameworks (KDE Frameworks) y varias aplicaciones (KDE Applications). KDE upstream tiene un [UserBase wiki](https://userbase.kde.org/) bien mantenido. Allí se puede encontrar información detallada sobre la mayoría de las aplicaciones de KDE.
 
 ## Contents

@@ -7,6 +7,8 @@
 | Card Reader | **Working** |
 | Function Keys | **Working** |
 
+The [ASUS Eee PC 1005P](https://www.asus.com/Laptops/Eee_PC_1005P_Seashell/) is a 10.1" laptop with an Intel Atom N450 processor.
+
 This article describes both the 1005P and the 1005PE, since the only difference of the 1005PE is wlan n and a bigger harddrive.
 
 ## Contents

@@ -4,7 +4,7 @@
 | Ethernet | Working | r8169 |
 | Wireless | Working | iwlwifi |
 | Audio | Working | snd_hda_intel or via HDMI |
-| Touchpad | TBC | Elantech |
+| Touchpad | Working | Elantech |
 | Camera | Working | uvcvideo |
 | Card Reader | Working | rtsx_usb? |
 | Bluetooth | Not Tested | bluetooth? |
@@ -84,8 +84,6 @@ No problems with keyboard keys, function keys not tested. TBC
 ## Touchpad
 
 This is Elantech touchpad. Please follow instructions from here: [Elantech touchpads](/index.php/Touchpad_Synaptics#Elantech_touchpads "Touchpad Synaptics")
-
-TBC
 
 # Troubleshooting
 

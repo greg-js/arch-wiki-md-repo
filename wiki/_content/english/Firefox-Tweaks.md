@@ -12,18 +12,17 @@ This page contains advanced Firefox configuration options and performance tweaks
 *   [1 Performance](#Performance)
     *   [1.1 Change Performance settings](#Change_Performance_settings)
     *   [1.2 Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29)
-    *   [1.3 Set AzureContentBackend to Skia instead of Cairo](#Set_AzureContentBackend_to_Skia_instead_of_Cairo)
-    *   [1.4 Enable Accelerated Azure Canvas](#Enable_Accelerated_Azure_Canvas)
-    *   [1.5 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
-    *   [1.6 Turn off the disk cache](#Turn_off_the_disk_cache)
-    *   [1.7 Longer interval to save session](#Longer_interval_to_save_session)
-    *   [1.8 Referrer header control](#Referrer_header_control)
-    *   [1.9 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
-    *   [1.10 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
-    *   [1.11 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
-    *   [1.12 Enable Electrolysis](#Enable_Electrolysis)
-    *   [1.13 Enable HTTP Cache](#Enable_HTTP_Cache)
-    *   [1.14 Disable Pocket](#Disable_Pocket)
+    *   [1.3 Enable Accelerated Azure Canvas](#Enable_Accelerated_Azure_Canvas)
+    *   [1.4 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
+    *   [1.5 Turn off the disk cache](#Turn_off_the_disk_cache)
+    *   [1.6 Longer interval to save session](#Longer_interval_to_save_session)
+    *   [1.7 Referrer header control](#Referrer_header_control)
+    *   [1.8 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
+    *   [1.9 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
+    *   [1.10 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
+    *   [1.11 Enable Electrolysis](#Enable_Electrolysis)
+    *   [1.12 Enable HTTP Cache](#Enable_HTTP_Cache)
+    *   [1.13 Disable Pocket](#Disable_Pocket)
 *   [2 Appearance](#Appearance)
     *   [2.1 Fonts](#Fonts)
         *   [2.1.1 Configure the DPI value](#Configure_the_DPI_value)
@@ -101,18 +100,6 @@ If OpenGL OMTC is disabled, you can force-enable it by going to `about:config` a
 
 For more information on OMTC in Firefox read here: [https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing](https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing)
 
-### Set AzureContentBackend to Skia instead of Cairo
-
-[Skia](https://skia.org/) is a 2D open-source graphics library which has superseded Cairo as the default Azure backend on Linux.
-
-To set Skia as the default go to `about:config` and set:
-
-*   `gfx.content.azure.backends skia,cairo`
-
-Restart Firefox for changes to take effect.
-
-To confirm the default Azure backend go to `about:support` and under the "Graphics" section look for "AzureContentBackend" and check if it reports "skia".
-
 ### Enable Accelerated Azure Canvas
 
 **Warning:** Accelerated Azure Canvas may cause invalid/corrupt rendering of images on unsupported devices and/or drivers, see [#Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29).
@@ -136,9 +123,19 @@ This effectively makes the file empty and then read-only so Firefox cannot write
 
 ### Turn off the disk cache
 
-Every object loaded (html pages, jpeg images, css stylesheets, gif banners) is saved in the Firefox cache, to be loaded in the future without to download it again from the server, but only fraction of these objects will be really reused without download (usually the 30%). This because of too short expiration times for the objects, updates or simply the user behavior (to load new pages instead the ones already visited). The Firefox cache is divided in memory and disk cache and using the disk cache results to frequent disk writes, because every time an object loaded it is written to the disk and some older object is removed.
+Every object loaded (html page, jpeg image, css stylesheet, gif banner) is saved in the Firefox cache for future use without the need to download it again. It is estimated that only a fraction of these objects will be reused (usually about 30%). This because of too short object expiration time, updates or simply user behavior (loading new pages instead of returning to the ones already visited). The Firefox cache is divided into memory and disk cache and the latter results in frequent disk writes: newly loaded objects are written to memory and older objects are removed.
 
-*   Turn on the following option under Preferences -> Advanced -> Network -> *"Cached Web Content: Override automatic cache management"* and specify zero in *"Limit cache to"*.
+It can be set by **turning on** the option *Preferences > Privacy & Security > Cached Web Content - Override automatic cache management* and specify **0** in *> Limit cache to ... MB of space*.
+
+An alternative approach is to use `about:config` settings:
+
+*   set `browser.cache.disk.enable` to "false" (double click the line)
+*   verify that `browser.cache.memory.enable` is set to "true" ([default value](http://kb.mozillazine.org/Browser.cache.memory.enable))
+*   add the entry (right click->new->integer) `browser.cache.memory.capacity` and set it to the amount of KB you'd like to spare, or to -1 for [automatic](http://kb.mozillazine.org/Browser.cache.memory.capacity#-1) cache size selection. (Skipping this step has the same effect as setting the value to -1.)
+
+Main disadvantages of this method are that the content of currently browsed webpages is lost if browser crashes or after a reboot, and that the settings need to be configured for each user individually.
+
+A workaround for the first drawback is to use [anything-sync-daemon](/index.php/Anything-sync-daemon "Anything-sync-daemon") or similar periodically-syncing script so that cache gets copied over to the drive on a regular basis.
 
 ### Longer interval to save session
 
@@ -494,6 +491,8 @@ You can enable [DNSSEC](/index.php/DNSSEC "DNSSEC") support for safer browsing.
 ### Adding magnet protocol association
 
 In `about:config` set `network.protocol-handler.expose.magnet` to **false**.
+
+In the case you couldn't find `network.protocol-handler.expose.magnet` in search, right click in the black space below, click on `new` then click `Boolean`, a small window will open, paste `network.protocol-handler.expose.magnet` and click `OK` then select **false**.
 
 The next time you open a magnet link, you will be prompted with a `Launch Application` dialogue. From there simply select your chosen torrent client. This technique can also be used with other protocols.
 

@@ -4,7 +4,6 @@ Related articles
 *   [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")
 *   [systemd](/index.php/Systemd "Systemd")
 *   [pm-utils](/index.php/Pm-utils "Pm-utils")
-*   [hibernate-script](/index.php/Hibernate-script "Hibernate-script")
 *   [Power management](/index.php/Power_management "Power management")
 
 Currently there are three methods of suspending available: **suspend to RAM** (usually called just **suspend**), **suspend to disk** (usually known as **hibernate**), and **hybrid suspend** (sometimes aptly called **suspend to both**):
@@ -81,6 +80,8 @@ Even if your swap partition is smaller than RAM, you still have a big chance of 
 	*`/sys/power/image_size` controls the size of the image created by the suspend-to-disk mechanism. It can be written a string representing a non-negative integer that will be used as an upper limit of the image size, in bytes. The suspend-to-disk mechanism will do its best to ensure the image size will not exceed that number. However, if this turns out to be impossible, it will try to suspend anyway using the smallest image possible. In particular, if "0" is written to this file, the suspend image will be as small as possible. Reading from this file will display the current image size limit, which is set to 2/5 of available RAM by default.*
 
 You may either decrease the value of `/sys/power/image_size` to make the suspend image as small as possible (for small swap partitions), or increase it to possibly speed up the hibernation process.
+
+See [Systemd#Temporary_files](/index.php/Systemd#Temporary_files "Systemd") to make this change persistent.
 
 ### Required kernel parameters
 

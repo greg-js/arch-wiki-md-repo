@@ -1,4 +1,4 @@
-| [Српски](/index.php/Category:%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8 "Category:Српски") <small>(7)</small> |
+| [Српски](/index.php/Category:%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8 "Category:Српски") <small>(6)</small> |
 | <small>1.</small> [About Arch](/index.php/Category:About_Arch_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:About Arch (Српски)") <small>(6)</small> |
 | <small>1.1.</small> [ArchWiki](/index.php/Category:ArchWiki_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:ArchWiki (Српски)") <small>(1)</small> |
 | <small>1.1.1.</small> [Help](/index.php/Category:Help_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Help (Српски)") <small>(1)</small> |

@@ -1,3 +1,8 @@
+相关文章
+
+*   [Uswsusp](/index.php/Uswsusp "Uswsusp")
+*   [Tuxonice](/index.php/Tuxonice "Tuxonice")
+
 **pm-utils** 是一个全新的电源挂起和电源状态设置框架。它被设计来替代 `powersave` 包中的相关脚本。
 
 通常HAL使用pm-utilsl来执行一系列的hacks来解决驱动所不能提供的电源挂起方面的操作。可以很方便的在特定目录当中配置自定义的挂钩，挂钩可以由管理员来建立或者是被包含在安装包当中，如果安装包需要监视电源的挂起和电源状态的改变。

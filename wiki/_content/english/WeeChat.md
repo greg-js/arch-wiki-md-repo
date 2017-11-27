@@ -24,13 +24,12 @@ Related articles
     *   [7.3 Exec command](#Exec_command)
     *   [7.4 Key Bindings](#Key_Bindings)
     *   [7.5 SSH connection lost when idle](#SSH_connection_lost_when_idle)
-    *   [7.6 OTR](#OTR)
-    *   [7.7 Slack](#Slack)
-        *   [7.7.1 IRC gateway](#IRC_gateway)
-            *   [7.7.1.1 Upload file](#Upload_file)
-        *   [7.7.2 Native client](#Native_client)
-    *   [7.8 Desktop notifications](#Desktop_notifications)
-    *   [7.9 Mobile device notifications](#Mobile_device_notifications)
+    *   [7.6 Slack](#Slack)
+        *   [7.6.1 IRC gateway](#IRC_gateway)
+            *   [7.6.1.1 Upload file](#Upload_file)
+        *   [7.6.2 Native client](#Native_client)
+    *   [7.7 Desktop notifications](#Desktop_notifications)
+    *   [7.8 Mobile device notifications](#Mobile_device_notifications)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Errors loading plugins](#Errors_loading_plugins)
 *   [9 Getting Help](#Getting_Help)
@@ -228,23 +227,6 @@ This has nothing to do with WeeChat itself, but losing connection when idle won'
  `# /etc/ssh/sshd_config`  `ClientAliveInterval 300` 
 
 Or have a look at [Mosh](https://mosh.org).
-
-### OTR
-
-Install [python2-potr](https://aur.archlinux.org/packages/python2-potr/) and enable the script **otr.py**. Then:
-
-```
-/query <nick>
-/otr start
-
-```
-
-Get help on the plugin with:
-
-```
-/help otr
-
-```
 
 ### Slack
 

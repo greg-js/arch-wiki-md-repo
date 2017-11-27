@@ -1,3 +1,7 @@
+Related articles
+
+*   [Rxvt-unicode/Советы и хитрости](/index.php/Rxvt-unicode/%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%8B_%D0%B8_%D1%85%D0%B8%D1%82%D1%80%D0%BE%D1%81%D1%82%D0%B8 "Rxvt-unicode/Советы и хитрости")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode"). Дата последней синхронизации: 29 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Rxvt-unicode&diff=0&oldid=428493).
 
 [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) это очень настраиваемый [эмулятор терминала](https://en.wikipedia.org/wiki/ru:%D0%AD%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80_%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D0%B0 для того, чтобы свести к минимуму использование системных ресурсов. Некоторые из наиболее выдающихся особенностей rxvt-Unicode включают международную языковую поддержку через [Юникод](https://en.wikipedia.org/wiki/ru:%D0%AE%D0%BD%D0%B8%D0%BA%D0%BE%D0%B4 "wikipedia:ru:Юникод"), способность отображать различные типы шрифтов и поддержку расширений [Perl](https://en.wikipedia.org/wiki/ru:Perl "wikipedia:ru:Perl"). Разработан Марк Леманном и сообществом разработчиков.

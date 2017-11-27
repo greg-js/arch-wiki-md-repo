@@ -37,7 +37,7 @@ lspci:
 00:00.0 Host bridge: Intel Corporation Xeon E3-1200 v6/7th Gen Core Processor Host Bridge/DRAM Registers (rev 02)
 00:02.0 VGA compatible controller: Intel Corporation HD Graphics 620 (rev 02)
 00:04.0 Signal processing controller: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem (rev 02)
-00:13.0 Non-VGA unclassified device: Intel Corporation Device 9d35 (rev 21)
+00:13.0 Non-VGA unclassified device: Intel Corporation Sunrise Point-LP Integrated Sensor Hub (rev 21)
 00:14.0 USB controller: Intel Corporation Sunrise Point-LP USB 3.0 xHCI Controller (rev 21)
 00:14.2 Signal processing controller: Intel Corporation Sunrise Point-LP Thermal subsystem (rev 21)
 00:15.0 Signal processing controller: Intel Corporation Sunrise Point-LP Serial IO I2C Controller #0 (rev 21)
@@ -47,7 +47,7 @@ lspci:
 00:1c.0 PCI bridge: Intel Corporation Sunrise Point-LP PCI Express Root Port #5 (rev f1)
 00:1f.0 ISA bridge: Intel Corporation Sunrise Point-LP LPC Controller (rev 21)
 00:1f.2 Memory controller: Intel Corporation Sunrise Point-LP PMC (rev 21)
-00:1f.3 Audio device: Intel Corporation Device 9d71 (rev 21)
+00:1f.3 Audio device: Intel Corporation Sunrise Point-LP HD Audio (rev 21)
 00:1f.4 SMBus: Intel Corporation Sunrise Point-LP SMBus (rev 21)
 01:00.0 Network controller: Intel Corporation Wireless 3165 (rev 79)
 

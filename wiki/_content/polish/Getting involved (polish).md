@@ -15,13 +15,12 @@ W biologii, [mutualizm](https://en.wikipedia.org/wiki/Mutualism_(biology) jest z
     *   [1.4 Naprawa i zgłaszanie błędów](#Naprawa_i_zg.C5.82aszanie_b.C5.82.C4.99d.C3.B3w)
     *   [1.5 Tworzenie i zarządzanie pakietami AUR](#Tworzenie_i_zarz.C4.85dzanie_pakietami_AUR)
     *   [1.6 Wsparcie oficjalnych projektów](#Wsparcie_oficjalnych_projekt.C3.B3w)
-    *   [1.7 Uczestnictwo w spotkaniach](#Uczestnictwo_w_spotkaniach)
-    *   [1.8 Dotacje pieniężne](#Dotacje_pieni.C4.99.C5.BCne)
-    *   [1.9 Projekty społeczności](#Projekty_spo.C5.82eczno.C5.9Bci)
-        *   [1.9.1 Grupy](#Grupy)
-        *   [1.9.2 Oprogramowanie](#Oprogramowanie)
-        *   [1.9.3 Usługi](#Us.C5.82ugi)
-        *   [1.9.4 Inne](#Inne)
+    *   [1.7 Dotacje pieniężne](#Dotacje_pieni.C4.99.C5.BCne)
+    *   [1.8 Projekty społeczności](#Projekty_spo.C5.82eczno.C5.9Bci)
+        *   [1.8.1 Grupy](#Grupy)
+        *   [1.8.2 Oprogramowanie](#Oprogramowanie)
+        *   [1.8.3 Usługi](#Us.C5.82ugi)
+        *   [1.8.4 Inne](#Inne)
 
 ## Oficjalne Projekty Arch Linux
 
@@ -56,10 +55,6 @@ Wspomóc społeczność możesz poprzez tworzenie nowych lub przejmowanie już i
 ### Wsparcie oficjalnych projektów
 
 Możesz wspomóc w rozwoju [official Arch Linux software projects](https://projects.archlinux.org/).
-
-### Uczestnictwo w spotkaniach
-
-Mamy wiele rocznych i comiesięcznych spotkań mających na celu usuwanie błędów, tworzeniu tłumaczeń oraz porządkowaniu materiałów. Informacje o nadchodzących wydarzeniach możesz znaleźć w [Arch Linux Event Calendar](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar").
 
 ### Dotacje pieniężne
 

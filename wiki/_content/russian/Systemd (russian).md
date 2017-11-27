@@ -47,24 +47,19 @@
     *   [7.4 Journald в связке с классическим демоном syslog](#Journald_.D0.B2_.D1.81.D0.B2.D1.8F.D0.B7.D0.BA.D0.B5_.D1.81_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.BC_.D0.B4.D0.B5.D0.BC.D0.BE.D0.BD.D0.BE.D0.BC_syslog)
     *   [7.5 Перенаправить журнал на /dev/tty12](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BD.D0.B0.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D1.82.D1.8C_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB_.D0.BD.D0.B0_.2Fdev.2Ftty12)
     *   [7.6 Команда просмотра другого журнала](#.D0.9A.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D0.B0_.D0.BF.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80.D0.B0_.D0.B4.D1.80.D1.83.D0.B3.D0.BE.D0.B3.D0.BE_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.B0)
-*   [8 Оптимизация](#.D0.9E.D0.BF.D1.82.D0.B8.D0.BC.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F)
-    *   [8.1 Анализ процесса загрузки](#.D0.90.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7_.D0.BF.D1.80.D0.BE.D1.86.D0.B5.D1.81.D1.81.D0.B0_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8)
-        *   [8.1.1 Использование systemd-analyze](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_systemd-analyze)
-        *   [8.1.2 Использование systemd-bootchart](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_systemd-bootchart)
-        *   [8.1.3 Использование bootchart2](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_bootchart2)
-*   [9 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [9.1 Изучение ошибок systemd](#.D0.98.D0.B7.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA_systemd)
-    *   [9.2 Диагностика проблем с загрузкой системы](#.D0.94.D0.B8.D0.B0.D0.B3.D0.BD.D0.BE.D1.81.D1.82.D0.B8.D0.BA.D0.B0_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D1.81_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
-    *   [9.3 Диагностика проблем в работе определенной службы](#.D0.94.D0.B8.D0.B0.D0.B3.D0.BD.D0.BE.D1.81.D1.82.D0.B8.D0.BA.D0.B0_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D0.B2_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B5_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D1.81.D0.BB.D1.83.D0.B6.D0.B1.D1.8B)
-    *   [9.4 Выключение/перезагрузка происходят ужасно долго](#.D0.92.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5.2F.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.BF.D1.80.D0.BE.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D1.8F.D1.82_.D1.83.D0.B6.D0.B0.D1.81.D0.BD.D0.BE_.D0.B4.D0.BE.D0.BB.D0.B3.D0.BE)
-    *   [9.5 По-видимому, процессы с кратким сроком жизни не оставляют записей в логах](#.D0.9F.D0.BE-.D0.B2.D0.B8.D0.B4.D0.B8.D0.BC.D0.BE.D0.BC.D1.83.2C_.D0.BF.D1.80.D0.BE.D1.86.D0.B5.D1.81.D1.81.D1.8B_.D1.81_.D0.BA.D1.80.D0.B0.D1.82.D0.BA.D0.B8.D0.BC_.D1.81.D1.80.D0.BE.D0.BA.D0.BE.D0.BC_.D0.B6.D0.B8.D0.B7.D0.BD.D0.B8_.D0.BD.D0.B5_.D0.BE.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D1.8F.D1.8E.D1.82_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B5.D0.B9_.D0.B2_.D0.BB.D0.BE.D0.B3.D0.B0.D1.85)
-    *   [9.6 Отключение журналирования аварийных дампов памяти приложений](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B0.D0.B2.D0.B0.D1.80.D0.B8.D0.B9.D0.BD.D1.8B.D1.85_.D0.B4.D0.B0.D0.BC.D0.BF.D0.BE.D0.B2_.D0.BF.D0.B0.D0.BC.D1.8F.D1.82.D0.B8_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9)
-    *   [9.7 Сообщение об ошибке при перезагрузке или выключении](#.D0.A1.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B5_.D0.BF.D1.80.D0.B8_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5_.D0.B8.D0.BB.D0.B8_.D0.B2.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B8)
-        *   [9.7.1 cgroup : option or name mismatch, new: 0x0 "", old: 0x4 "systemd"](#cgroup_:_option_or_name_mismatch.2C_new:_0x0_.22.22.2C_old:_0x4_.22systemd.22)
-        *   [9.7.2 watchdog watchdog0: watchdog did not stop!](#watchdog_watchdog0:_watchdog_did_not_stop.21)
-    *   [9.8 Время загрузки системы увеличивается с течением времени](#.D0.92.D1.80.D0.B5.D0.BC.D1.8F_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D1.83.D0.B2.D0.B5.D0.BB.D0.B8.D1.87.D0.B8.D0.B2.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D1.81_.D1.82.D0.B5.D1.87.D0.B5.D0.BD.D0.B8.D0.B5.D0.BC_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.B8)
-    *   [9.9 systemd-tmpfiles-setup.service fails to start at boot](#systemd-tmpfiles-setup.service_fails_to_start_at_boot)
-*   [10 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [8 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+    *   [8.1 Изучение ошибок systemd](#.D0.98.D0.B7.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA_systemd)
+    *   [8.2 Диагностика проблем с загрузкой системы](#.D0.94.D0.B8.D0.B0.D0.B3.D0.BD.D0.BE.D1.81.D1.82.D0.B8.D0.BA.D0.B0_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D1.81_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+    *   [8.3 Диагностика проблем в работе определенной службы](#.D0.94.D0.B8.D0.B0.D0.B3.D0.BD.D0.BE.D1.81.D1.82.D0.B8.D0.BA.D0.B0_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D0.B2_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B5_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D1.81.D0.BB.D1.83.D0.B6.D0.B1.D1.8B)
+    *   [8.4 Выключение/перезагрузка происходят ужасно долго](#.D0.92.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5.2F.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.BF.D1.80.D0.BE.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D1.8F.D1.82_.D1.83.D0.B6.D0.B0.D1.81.D0.BD.D0.BE_.D0.B4.D0.BE.D0.BB.D0.B3.D0.BE)
+    *   [8.5 По-видимому, процессы с кратким сроком жизни не оставляют записей в логах](#.D0.9F.D0.BE-.D0.B2.D0.B8.D0.B4.D0.B8.D0.BC.D0.BE.D0.BC.D1.83.2C_.D0.BF.D1.80.D0.BE.D1.86.D0.B5.D1.81.D1.81.D1.8B_.D1.81_.D0.BA.D1.80.D0.B0.D1.82.D0.BA.D0.B8.D0.BC_.D1.81.D1.80.D0.BE.D0.BA.D0.BE.D0.BC_.D0.B6.D0.B8.D0.B7.D0.BD.D0.B8_.D0.BD.D0.B5_.D0.BE.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D1.8F.D1.8E.D1.82_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B5.D0.B9_.D0.B2_.D0.BB.D0.BE.D0.B3.D0.B0.D1.85)
+    *   [8.6 Отключение журналирования аварийных дампов памяти приложений](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B0.D0.B2.D0.B0.D1.80.D0.B8.D0.B9.D0.BD.D1.8B.D1.85_.D0.B4.D0.B0.D0.BC.D0.BF.D0.BE.D0.B2_.D0.BF.D0.B0.D0.BC.D1.8F.D1.82.D0.B8_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9)
+    *   [8.7 Сообщение об ошибке при перезагрузке или выключении](#.D0.A1.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B5_.D0.BF.D1.80.D0.B8_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5_.D0.B8.D0.BB.D0.B8_.D0.B2.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B8)
+        *   [8.7.1 cgroup : option or name mismatch, new: 0x0 "", old: 0x4 "systemd"](#cgroup_:_option_or_name_mismatch.2C_new:_0x0_.22.22.2C_old:_0x4_.22systemd.22)
+        *   [8.7.2 watchdog watchdog0: watchdog did not stop!](#watchdog_watchdog0:_watchdog_did_not_stop.21)
+    *   [8.8 Время загрузки системы увеличивается с течением времени](#.D0.92.D1.80.D0.B5.D0.BC.D1.8F_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D1.83.D0.B2.D0.B5.D0.BB.D0.B8.D1.87.D0.B8.D0.B2.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D1.81_.D1.82.D0.B5.D1.87.D0.B5.D0.BD.D0.B8.D0.B5.D0.BC_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.B8)
+    *   [8.9 systemd-tmpfiles-setup.service fails to start at boot](#systemd-tmpfiles-setup.service_fails_to_start_at_boot)
+*   [9 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Основы использования systemctl
 
@@ -548,56 +543,6 @@ MaxLevelConsole=info
 $ journalctl -D */mnt*/var/log/journal -xe
 
 ```
-
-## Оптимизация
-
-### Анализ процесса загрузки
-
-#### Использование systemd-analyze
-
-Systemd предоставляет инструмент под названием `systemd-analyze`, позволяющий проанализировать процесс загрузки вашей системы, чтобы можно было увидеть, какие файлы юнитов тормозят загрузку. Соответственно, вы можете оптимизировать вашу систему. Для использования данного инструмента вам потребуется установить пакеты [python2-cairo](https://www.archlinux.org/packages/?name=python2-cairo) и [python2-gobject](https://www.archlinux.org/packages/?name=python2-gobject).
-
-Чтобы увидеть, сколько времени было потрачено на подготовку пространства ядра и пространства пользователя во время загрузки, просто выполните команду:
-
-```
-$ systemd-analyze
-
-```
-
-**Tip:**
-
-*   Если вы дополните хуком `timestamp` ваш массивr `HOOKS` в конфигурационном файле `/etc/[mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio").conf` и пересоберете ваш образ initramfs командой `mkinitcpio -p linux`, systemd-analyze сколько времени затрачивается на initramfs.
-
-*   Если вы загружаетесь при помощи [UEFI](/index.php/UEFI "UEFI") и используете загрузчик, в который имплементирова [Boot Loader Interface](http://www.freedesktop.org/wiki/Software/systemd/BootLoaderInterface) от systemd (что в настоящий момент применено только в [gummiboot (Русский)](/index.php/Gummiboot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Gummiboot (Русский)") ), systemd-analyze дополнительно сможет показать, сколько времени затрачено на прошивку EFI сам загрузчик.
-
-Чтобы увидеть список запускаемых файлов юнитов, отсортированный по потраченному каждым из них на загрузку времени, выполните команду:
-
-```
-$ systemd-analyze blame
-
-```
-
-Вы также можете создать файл SVG, показывающий процесс загрузки в графическом виде, наподобие [Bootchart](/index.php/Bootchart "Bootchart"):
-
-```
-$ systemd-analyze plot > plot.svg
-
-```
-
-#### Использование systemd-bootchart
-
-Bootchart объединен с systemd с 17 октября 2012 года и вы можете использовать его для загрузки также, как и оригинальный bootchart. Добавьте следующие команду к строке инициализации ядра:
-
-```
-initcall_debug printk.time=y init=/usr/lib/systemd/systemd-bootchart
-
-```
-
-#### Использование bootchart2
-
-Вы также можете использовать версию bootchart для визуализации последовательности при загрузке системы. Из-за невозможности использовать стандартные установки bootchart (так как нельзя добавить в командную строку ядра вторую запись init), вам придется воспользоваться пакетом [bootchart2-git](https://aur.archlinux.org/packages/bootchart2-git/), поставляемым с недокументированной службой *systemd*. После установки *bootchart2* [включите](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2) службу *bootchart*.
-
-За дальнейшей и детализированной информацией об использовании данной версии *bootchart* oбратитесь к [документации (англ.)](https://github.com/mmeeks/bootchart).
 
 ## Решение проблем
 

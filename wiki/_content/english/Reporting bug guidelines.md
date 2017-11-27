@@ -1,3 +1,9 @@
+Related articles
+
+*   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
+*   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
+*   [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces")
+
 Opening (and closing) bug reports on the [Arch Linux Bugtracker](https://bugs.archlinux.org/) is one of many possible ways to [help the community](/index.php/Getting_involved "Getting involved"). However, poorly-formed bug reports can be counter-productive. When bugs are incorrectly reported, developers waste time investigating and closing invalid reports. This document will guide anyone wanting to help the community by efficiently reporting and hunting bugs.
 
 See also: [How to Report Bugs Effectively](https://www.chiark.greenend.org.uk/~sgtatham/bugs.html) by Simon Tatham
@@ -23,7 +29,6 @@ See also: [How to Report Bugs Effectively](https://www.chiark.greenend.org.uk/~s
     *   [3.3 Updating the bug report when a new version of the related software is out](#Updating_the_bug_report_when_a_new_version_of_the_related_software_is_out)
     *   [3.4 Closing when solved](#Closing_when_solved)
     *   [3.5 More about bug status](#More_about_bug_status)
-*   [4 See also](#See_also)
 
 ## Before reporting
 
@@ -228,7 +233,3 @@ During its life a bug goes through several states:
 *   **Closed** - Either this is not a valid bug (see [#Reasons for not being a bug](#Reasons_for_not_being_a_bug)) or a solution has been found and released.
 
 Some people (developers, TUs...) are responsible for dispatching the bugs and change their status.
-
-## See also
-
-*   [Bug Day](/index.php/Bug_Day "Bug Day")

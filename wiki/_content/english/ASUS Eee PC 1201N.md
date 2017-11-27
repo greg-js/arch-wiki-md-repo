@@ -1,6 +1,6 @@
-This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the Asus Eee PC **1201N** and **1201PN**.
+This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the Asus Eee PC [1201N](https://www.asus.com/Laptops/Eee_PC_1201N_Seashell/) and [1201PN](https://www.asus.com/Laptops/Eee_PC_1201PN_Seashell/).
 
-The Asus Eee PC **1201NL** should be similar, but has a 32-bit CPU and thus requires [Arch Linux 32](https://archlinux32.org/).
+The Asus Eee PC [1201NL](https://www.asus.com/Laptops/Eee_PC_1201NL_Seashell/) should be similar, but has a 32-bit Intel Atom N270 CPU and thus requires [Arch Linux 32](https://archlinux32.org/).
 
 ## Contents
 

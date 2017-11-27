@@ -10,6 +10,8 @@
 | Hibernate | **Working** | pm-utils |
 | Multi-input touchpad | **Working** |
 
+The [ASUS Eee PC 1201T](https://www.asus.com/Laptops/Eee_PC_1201T/) is a 12.1" laptop.
+
 ## Contents
 
 *   [1 Hardware](#Hardware)

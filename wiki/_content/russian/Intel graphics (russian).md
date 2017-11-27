@@ -1,7 +1,6 @@
 Ссылки по теме
 
 *   [Intel GMA3600](/index.php/Intel_GMA3600 "Intel GMA3600")
-*   [Poulsbo](/index.php/Poulsbo "Poulsbo")
 *   [Xorg](/index.php/Xorg "Xorg")
 *   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting")
 *   [Xrandr](/index.php/Xrandr "Xrandr")
@@ -13,7 +12,7 @@
 
 Всеобъемлющий список моделей видеокарт и соответствующих чипсетов и процессоров доступен в [английской Википедии](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units").
 
-**Примечание:** Основанные на PowerVR видеокарты ([GMA 500](/index.php/Poulsbo "Poulsbo") и [GMA 3600](/index.php/Intel_GMA3600 "Intel GMA3600") серии) не поддерживаются свободными драйверами.
+**Примечание:** Основанные на PowerVR видеокарты [GMA 3600](/index.php/Intel_GMA3600 "Intel GMA3600") серии) не поддерживаются свободными драйверами.
 
 ## Contents
 

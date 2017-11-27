@@ -76,28 +76,26 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [3.2.5 archlinuxgr](#archlinuxgr)
         *   [3.2.6 archlinuxgr-kde4](#archlinuxgr-kde4)
         *   [3.2.7 arsch](#arsch)
-        *   [3.2.8 brtln](#brtln)
-        *   [3.2.9 cinnamon](#cinnamon)
-        *   [3.2.10 heftig](#heftig)
-        *   [3.2.11 home_fusion809_Arch_Extra](#home_fusion809_Arch_Extra)
-        *   [3.2.12 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
-        *   [3.2.13 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
-        *   [3.2.14 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.15 jkanetwork](#jkanetwork)
-        *   [3.2.16 matrixim](#matrixim)
-        *   [3.2.17 mesa-git](#mesa-git)
-        *   [3.2.18 mingw-w64](#mingw-w64)
-        *   [3.2.19 neo_chen](#neo_chen)
-        *   [3.2.20 noware](#noware)
-        *   [3.2.21 ownstuff](#ownstuff)
-        *   [3.2.22 pantheon](#pantheon)
-        *   [3.2.23 pietma](#pietma)
-        *   [3.2.24 pnsft-pur](#pnsft-pur)
-        *   [3.2.25 QOwnNotes](#QOwnNotes)
-        *   [3.2.26 rakudo](#rakudo)
-        *   [3.2.27 rust-git](#rust-git)
-        *   [3.2.28 trinity](#trinity)
-        *   [3.2.29 zrootfs](#zrootfs)
+        *   [3.2.8 heftig](#heftig)
+        *   [3.2.9 home_fusion809_Arch_Extra](#home_fusion809_Arch_Extra)
+        *   [3.2.10 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
+        *   [3.2.11 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
+        *   [3.2.12 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
+        *   [3.2.13 jkanetwork](#jkanetwork)
+        *   [3.2.14 matrixim](#matrixim)
+        *   [3.2.15 mesa-git](#mesa-git)
+        *   [3.2.16 mingw-w64](#mingw-w64)
+        *   [3.2.17 neo_chen](#neo_chen)
+        *   [3.2.18 noware](#noware)
+        *   [3.2.19 ownstuff](#ownstuff)
+        *   [3.2.20 pantheon](#pantheon)
+        *   [3.2.21 pietma](#pietma)
+        *   [3.2.22 pnsft-pur](#pnsft-pur)
+        *   [3.2.23 QOwnNotes](#QOwnNotes)
+        *   [3.2.24 rakudo](#rakudo)
+        *   [3.2.25 rust-git](#rust-git)
+        *   [3.2.26 trinity](#trinity)
+        *   [3.2.27 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -826,28 +824,6 @@ Server = http://archlinuxgr.tiven.org/archlinux-kde4/$arch
 ```
 [arsch]
 Server = http://arsch.orgizm.net/$arch
-
-```
-
-#### brtln
-
-*   **Maintainer:** [Bartłomiej Piotrowski](https://www.archlinux.org/people/trusted-users/#bpiotrowski)
-*   **Description:** Some VCS packages.
-
-```
-[brtln]
-Server = https://pkgbuild.com/~barthalion/brtln/$arch/
-
-```
-
-#### cinnamon
-
-*   **Maintainer:** [jnbek](https://github.com/jnbek)
-*   **Description:** Stable and actively developed Cinnamon packages (Applets, Themes, Extensions), plus others (Hotot, qBitTorrent, GTK themes, Perl modules, and more).
-
-```
-[cinnamon]
-Server = http://archlinux.zoelife4u.org/cinnamon/$arch
 
 ```
 

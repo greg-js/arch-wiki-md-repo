@@ -1,9 +1,3 @@
-**Notice: Kernel Panic Issue**
-
-	Kernels 3.10.6 - 3.10.10 cause kernel panics with the brcmsmac WiFi driver.
-
-	If you need one of these kernels, see [section](#brcmsmac_WiFi_driver_kernel_panic) below for work-around. Otherwise, update kernel to 3.11.1+
-
 | **Device** | **Status** | **Module** |
 | Ethernet | **Working** | atl1c [[1]](http://www.linuxfoundation.org/collaborate/workgroups/networking/alx) |
 | Wireless | **Working** | [brcmsmac](/index.php/Broadcom_wireless#brcmsmac.2Fbrcmfmac "Broadcom wireless"); [broadcom-wl](/index.php/Broadcom_wireless#broadcom-wl "Broadcom wireless") |
@@ -13,7 +7,7 @@
 | Card Reader | **Working** | [usb-storage](/index.php/USB_storage_devices#Getting_a_kernel_that_supports_usb_storage "USB storage devices") |
 | Function Keys | **Partial** | eeepc-wmi [[2]](http://acpi4asus.sourceforge.net/) |
 
-This page includes general information regarding Asus EEE PC 1215n and related notes on installing/using Arch Linux on it.
+This page includes general information regarding [ASUS Eee PC 1215N](https://www.asus.com/Laptops/Eee_PC_1215N/) and related notes on installing/using Arch Linux on it.
 
 ## Contents
 
@@ -28,7 +22,6 @@ This page includes general information regarding Asus EEE PC 1215n and related n
     *   [3.1 Nvidia graphic card](#Nvidia_graphic_card)
     *   [3.2 Bluetooth](#Bluetooth)
     *   [3.3 CPU power consumption](#CPU_power_consumption)
-    *   [3.4 brcmsmac WiFi driver kernel panic](#brcmsmac_WiFi_driver_kernel_panic)
 
 # System Specs
 
@@ -201,7 +194,3 @@ Turning on bluetooth freezes the system. Need to do hard reset. No more info abo
 ## CPU power consumption
 
 There is a kernel parameter which must be added in linux 3.0 kernel to use energy saving feature of the intel driver: `pcie_aspm=force i915.i915_enable_rc6=1`, see [this thread](https://bbs.archlinux.org/viewtopic.php?id=125954).
-
-## brcmsmac WiFi driver kernel panic
-
-After connecting to an access point, the system's kernel will panic. To stop the connection, press your WiFi toggle button while booting Arch to temporarily disable your wireless. Your kernel can be patched to correct the issue until the kernel is officially updated. Use 'sudo pacman -U /path/to/kernel/patch.pkg.tar.xz' to install. [Patch](https://bbs.archlinux.org/viewtopic.php?pid=1314588#p1314588).

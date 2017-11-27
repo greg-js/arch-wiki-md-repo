@@ -22,7 +22,7 @@
     *   [4.7 Использование хуков](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.85.D1.83.D0.BA.D0.BE.D0.B2)
     *   [4.8 Проблемы с соединением после пробуждения](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D1.81.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5.D0.BC_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D1.83.D0.B6.D0.B4.D0.B5.D0.BD.D0.B8.D1.8F)
 *   [5 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [5.1 Job for netctl@XXX.service failed](#Job_for_netctl.40XXX.service_failed)
+    *   [5.1 Job for netctl@wlan(...).service failed](#Job_for_netctl.40wlan.28....29.service_failed)
     *   [5.2 dhcpcd: ipv4_addroute: File exists](#dhcpcd:_ipv4_addroute:_File_exists)
     *   [5.3 Таймаут при DHCP-подключении](#.D0.A2.D0.B0.D0.B9.D0.BC.D0.B0.D1.83.D1.82_.D0.BF.D1.80.D0.B8_DHCP-.D0.BF.D0.BE.D0.B4.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B8)
     *   [5.4 Тайм-аут соединения](#.D0.A2.D0.B0.D0.B9.D0.BC-.D0.B0.D1.83.D1.82_.D1.81.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F)
@@ -482,17 +482,17 @@ WantedBy=suspend.target
 
 ## Решение проблем
 
-### Job for netctl@XXX.service failed
+### Job for netctl@wlan(...).service failed
 
-Иногда возникают проблемы с подключением к беспроводной сети с использованием *netctl*, сопровождаемые следующим сообщением:
+**Важно:** Этот раздел подразумевает что все сетевые сервисы отключены перед запуском *netctl* профиля/сервиса. За деталями смотрите [#Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0).
+
+Если возникают проблемы с подключением к беспроводной сети с использованием *netctl*, сопровождаемые следующим сообщением:
 
  `# netctl start wlan0-ssid` 
 ```
 Job for netctl@wlan0\x2ssid.service failed. See 'systemctl status netctl@wlan0\x2ssid.service' and 'journalctl -xn' for details.
 
 ```
-
-При этом, в выводе `journalctl -xn` наблюдается следующее:
 
 1\. Если сетевой интерфейс (в нашем примере `wlan0`) уже был запущен
 
@@ -515,23 +515,7 @@ network[2322]: The interface of network profile 'wlan0-ssid' is already up
 
 ```
 
-2\. Если сетевой интерфейс был остановлен, то:
-
-```
-dhcpcd[261]: wlan0: ipv4_sendrawpacket: Network is down
-
-```
-
-Один из способов это исправить — использовать другой DHCP-клиент, например [dhclient](https://www.archlinux.org/packages/?name=dhclient). После установки пакета настройте клиент:
-
- `/etc/netctl/wlan0-ssid` 
-```
-...
-DHCPClient='dhclient'
-
-```
-
-Добавление опции `ForceConnect` также может помочь:
+2\. Если ошибка продолжается, попробуйте еще раз с опцией `ForceConnect`:
 
  `/etc/netctl/wlan0-ssid` 
 ```

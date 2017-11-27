@@ -1,3 +1,12 @@
+Ссылки по теме
+
+*   [PHP](/index.php/PHP "PHP")
+*   [MySQL (Русский)](/index.php/MySQL_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MySQL (Русский)")
+*   [PhpMyAdmin (Русский)](/index.php/PhpMyAdmin_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PhpMyAdmin (Русский)")
+*   [Adminer](/index.php/Adminer "Adminer")
+*   [Xampp (Русский)](/index.php/Xampp_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xampp (Русский)")
+*   [mod_perl](/index.php/Mod_perl "Mod perl")
+
 [Apache HTTP Server](https://en.wikipedia.org/wiki/ru:Apache "wikipedia:ru:Apache"), или сокращенно Apache — популярный веб-сервер, разработанный Apache Software Foundation.
 
 Apache часто используется вместе с языком сценариев PHP и СУБД MySQL. Такую комбинацию обычно называют [LAMP](https://en.wikipedia.org/wiki/ru:LAMP "wikipedia:ru:LAMP") (**L**inux, **A**pache, **M**ySQL, **P**HP). Эта статья объясняет, как настроить Apache и как интегрировать с ним [PHP](/index.php/PHP "PHP") и [MySQL](/index.php/MySQL "MySQL").

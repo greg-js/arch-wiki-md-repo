@@ -20,6 +20,7 @@ The configuration file for DNS resolvers is `/etc/resolv.conf`. From [resolv.con
     *   [2.5 Yandex](#Yandex)
     *   [2.6 DNS.WATCH](#DNS.WATCH)
     *   [2.7 UncensoredDNS](#UncensoredDNS)
+    *   [2.8 Quad9](#Quad9)
 *   [3 Preserve DNS settings](#Preserve_DNS_settings)
     *   [3.1 Prevent NetworkManager modifications](#Prevent_NetworkManager_modifications)
     *   [3.2 Use openresolv](#Use_openresolv)
@@ -208,6 +209,24 @@ nameserver 2a01:3a0:53:53::  ## unicast.censurfridns.dk
 ```
 
 **Note:** Its servers listen to port 5353 as well as the standard port 53\. This can be used in case your ISP hijacks port 53.
+
+### Quad9
+
+[Quad9](https://quad9.net/#/) is a free DNS service; its primary unique feature is a blocklist which avoids resolving known malicious domains. The addresses below are worldwide anycast.
+
+```
+# Quad9 IPv4 nameservers
+nameserver 9.9.9.9    ## "secure", with blocklist and DNSSEC
+nameserver 9.9.9.10    ## no blocklist, no DNSSEC
+
+```
+
+```
+# Quad9 IPv6 nameservers
+nameserver 2620:fe::fe    ## "secure", with blocklist and DNSSEC
+nameserver 2620:fe::10    ## no blocklist, no DNSSEC
+
+```
 
 ## Preserve DNS settings
 

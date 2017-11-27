@@ -89,10 +89,6 @@ $ pacman -Ql cinnamon | awk -F'[_.]' '/cs_.+\.py/ {print $2}'
 
 ```
 
-	Printers
-
-	For configure printers, install [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer) and the [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends) package.
-
 	Networking
 
 	To add support for the networking module, enable [Network Manager](/index.php/NetworkManager#Configuration "NetworkManager"). In order for NetworkManager to store Wi-Fi passwords, you will need to also install [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring").

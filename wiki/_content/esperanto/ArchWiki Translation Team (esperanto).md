@@ -6,9 +6,6 @@ Vikio estas aro de interligitaj dokumentoj, kiu estas ĝisdatigita de siaj mem u
 
 | Paĝo | Alidirektiloj | Versio | Tradukisto |
 | [Main Page (Esperanto)](/index.php/Main_Page_(Esperanto) "Main Page (Esperanto)") | Ĉefpaĝo | [Main page](/index.php/Main_page "Main page"), [7 dec 2012](https://wiki.archlinux.org/index.php?title=Main_Page&diff=239290&oldid=214059) | [Airon90](/index.php/User:Airon90 "User:Airon90") |
-| [ArchWiki Translation Team (Esperanto)](#top) | - | [ArchWiki Translation Team (Italiano)](/index.php/ArchWiki_Translation_Team_(Italiano) "ArchWiki Translation Team (Italiano)") (parte) | [Airon90](/index.php/User:Airon90 "User:Airon90") |
-| [ArchWiki Translation Day (Esperanto)](/index.php/ArchWiki_Translation_Day_(Esperanto) "ArchWiki Translation Day (Esperanto)") | - | [ArchWiki Translation Day](/index.php/ArchWiki_Translation_Day "ArchWiki Translation Day"), [21 nov 2012](https://wiki.archlinux.org/index.php?title=ArchWiki_Translation_Day&oldid=236269) | [Airon90](/index.php/User:Airon90 "User:Airon90") |
+| <a class="mw-selflink selflink">ArchWiki Translation Team (Esperanto)</a> | - | [ArchWiki Translation Team (Italiano)](/index.php/ArchWiki_Translation_Team_(Italiano) "ArchWiki Translation Team (Italiano)") (parte) | [Airon90](/index.php/User:Airon90 "User:Airon90") |
 
 ## Vidu pli
-
-*   [Tago de la traduko de ArchVikio](/index.php/ArchWiki_Translation_Day_(Esperanto) "ArchWiki Translation Day (Esperanto)")

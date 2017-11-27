@@ -1,3 +1,7 @@
+Related articles
+
+*   [ThinkPad docks](/index.php/ThinkPad_docks "ThinkPad docks")
+
 | [Laptop main page](/index.php/Laptop "Laptop") |
 | [Acer](/index.php/Laptop/Acer "Laptop/Acer") - [Apple](/index.php/Laptop/Apple "Laptop/Apple") - [Asus](/index.php/Laptop/Asus "Laptop/Asus") - [Compaq](/index.php/Laptop/Compaq "Laptop/Compaq") (discontinued) - [Dell](/index.php/Laptop/Dell "Laptop/Dell") - [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") - [HP](/index.php/Laptop/HP "Laptop/HP") - <a class="mw-selflink selflink">IBM/Lenovo</a> - [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") - [Sony](/index.php/Laptop/Sony "Laptop/Sony") - [Toshiba](/index.php/Laptop/Toshiba "Laptop/Toshiba") - [Other](/index.php/Laptop/Other "Laptop/Other") |
 
@@ -34,7 +38,6 @@
         *   [3.9.1 tpacpi-bat](#tpacpi-bat)
         *   [3.9.2 ThinkPad Edge E420s Delay with Space Bar](#ThinkPad_Edge_E420s_Delay_with_Space_Bar)
     *   [3.10 Lenovo IdeaPad Y700](#Lenovo_IdeaPad_Y700)
-    *   [3.11 Auto-switching monitors when docking ThinkPads](#Auto-switching_monitors_when_docking_ThinkPads)
 *   [4 See also](#See_also)
 
 ## IBM/Lenovo
@@ -82,9 +85,6 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| [IBM ThinkPad T21](/index.php/IBM_ThinkPad_T21 "IBM ThinkPad T21") | Yes* | Yes | Yes | NA | NA | Yes* | NA | NA | See below |
-| [IBM ThinkPad T23](/index.php/IBM_ThinkPad_T23 "IBM ThinkPad T23") | Yes | Yes | Yes | NA | NA | Yes | NA | NA |
-| [IBM ThinkPad T42](/index.php/IBM_ThinkPad_T42 "IBM ThinkPad T42") | Yes | Yes | Yes | Yes | NA | Yes | NA | NA |
 | IBM ThinkPad T60 | Yes | Yes | Yes | Yes | Yes | Yes |  ? | NA |
 | IBM ThinkPad T60p | Yes | Yes | Yes | Yes | Yes | Yes |  ? | NA | ThinkFinger |
 | [IBM ThinkPad T61](/index.php/IBM_ThinkPad_T61 "IBM ThinkPad T61") | Yes | Yes | Yes | Yes | Yes | Yes | NA |
@@ -310,10 +310,6 @@ Solution: Update BIOS (at least 1.08).
 ### Lenovo IdeaPad Y700
 
 *   The subwoofer does not work out of the box and it seems that there is no solution yet.
-
-### Auto-switching monitors when docking ThinkPads
-
-See [dockd](/index.php/Dockd "Dockd").
 
 ## See also
 

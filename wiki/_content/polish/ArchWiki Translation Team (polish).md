@@ -3,7 +3,7 @@
 1.  Jeśli nie wiesz jak edytować strony wiki, przeczytaj [Help:Editing (Polski)](/index.php/Help:Editing_(Polski) "Help:Editing (Polski)").
 2.  Przeczytaj [Help:i18n](/index.php/Help:I18n "Help:I18n"). Strona zawiera wskazówki do internacjonalizacji i lokalizacji ArchWiki.
 3.  [Zaloguj się](/index.php/Special:UserLogin "Special:UserLogin"), aby edytować wiki.
-4.  Wybierz stronę do przetłumaczenia. Możesz użyć [funkcji losującej stronę](/index.php/Special:Random "Special:Random") lub przetłumaczyć niektóre strony z [listy stron o największym priorytecie](/index.php/ArchWiki_Translation_Day#List_of_priority_pages "ArchWiki Translation Day"). Dla przykładu wybierzmy [Moja Strona](/index.php?title=Moja_Strona&action=edit&redlink=1 "Moja Strona (page does not exist)").
+4.  Wybierz stronę do przetłumaczenia. Możesz użyć [funkcji losującej stronę](/index.php/Special:Random "Special:Random"). Dla przykładu wybierzmy [Moja Strona](/index.php?title=Moja_Strona&action=edit&redlink=1 "Moja Strona (page does not exist)").
 5.  Idź do wybranej strony i z poziomego meny u góry wybierz przycisk **edytuj** .
 6.  Skopiuj cały tekst źródłowy strony.
 7.  Potem odwiedź stronę [Moja Strona (język)](/index.php?title=Moja_Strona_(j%C4%99zyk)&action=edit&redlink=1 "Moja Strona (język) (page does not exist)") poprzez wpisanie następującego linku w Twojej przeglądarce: `https://wiki.archlinux.org/index.php/Moja_Strona_(*język*)`, gdzie *język* jest [nazwą języka](/index.php/Help:I18n#Languages "Help:I18n").

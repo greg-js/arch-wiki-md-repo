@@ -1,6 +1,6 @@
-envy24control is an application included in the alsa-tools package. It enables controlling the digital mixer, channel gains, and other hardware settings for sound cards based on the VIA Ice1712 chipset (A.K.A. Envy24).
+*envy24control* is an application included in the [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) package. It enables controlling the digital mixer, channel gains, and other hardware settings for sound cards based on the VIA Ice1712 chipset (A.K.A. Envy24).
 
-envy24control's user interface is loosely based on the Delta Control Panel software included with the purchase of M-Audio Delta series audio cards -- most of the tabs, controls, and capabilities are similar in the two applications. However, because they are two separate applications, the user manual for Delta Control Panel software is only marginally useful for envy24control users. This article aims to provide usage guidance for those using ice1712-based cards and envy24control with Arch Linux.
+*envy24control'*s user interface is loosely based on the Delta Control Panel software included with the purchase of M-Audio Delta series audio cards -- most of the tabs, controls, and capabilities are similar in the two applications. However, because they are two separate applications, the user manual for Delta Control Panel software is only marginally useful for *envy24control* users. This article aims to provide usage guidance for those using ice1712-based cards and *envy24control* with Arch Linux.
 
 ## Contents
 
@@ -26,7 +26,6 @@ envy24control's user interface is loosely based on the Delta Control Panel softw
         *   [3.5.1 DAC faders](#DAC_faders)
         *   [3.5.2 ADC faders](#ADC_faders)
         *   [3.5.3 Tips and tricks](#Tips_and_tricks_4)
-    *   [3.6 Profiles](#Profiles)
 *   [4 Usage examples](#Usage_examples)
     *   [4.1 Recording a single track in Ardour (Ardour does monitoring)](#Recording_a_single_track_in_Ardour_.28Ardour_does_monitoring.29)
         *   [4.1.1 envy24control settings](#envy24control_settings)
@@ -40,13 +39,13 @@ envy24control's user interface is loosely based on the Delta Control Panel softw
 
 ## Installation
 
-envy24control is included with the [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) package.
+[Install](/index.php/Install "Install") the [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) package, which includes *envy24control*.
 
-**Note:** [mudita24-svn](https://aur.archlinux.org/packages/mudita24-svn/) is an alternative to envy24control available in the [AUR](/index.php/AUR "AUR"). It is identical to envy24control, except that it has some clearer UI labels, peak meter indicators, and a few other bells and whistles.
+**Note:** [mudita24-svn](https://aur.archlinux.org/packages/mudita24-svn/) is an alternative to *envy24control* available in the [AUR](/index.php/AUR "AUR"). It is identical to *envy24control*, except that it has some clearer UI labels, peak meter indicators, and a few other bells and whistles.
 
 ## Supported cards
 
-envy24control is designed to control ice1712-based cards, including, but not limited to:
+*envy24control* is designed to control ice1712-based cards, including, but not limited to:
 
 *   M-Audio Delta 1010
 *   M-Audio Delta 1010LT
@@ -72,11 +71,11 @@ envy24control is designed to control ice1712-based cards, including, but not lim
 
 ### Understanding your sound card
 
-If you have one of the cards in the list above, know that it has a hardware digital audio mixer built into it (the Ice1712 chip). This mixer accepts digital audio streams from hardware inputs and outgoing streams from software audio devices (such as those provided by [JACK](/index.php/JACK "JACK")), mixes them internally, and then sends the mixed output to the card's hardware outputs. envy24control controls this mixer.
+If you have one of the cards in the list above, know that it has a hardware digital audio mixer built into it (the Ice1712 chip). This mixer accepts digital audio streams from hardware inputs and outgoing streams from software audio devices (such as those provided by [JACK](/index.php/JACK "JACK")), mixes them internally, and then sends the mixed output to the card's hardware outputs. *envy24control* controls this mixer.
 
 #### Read your sound card manual
 
-It is vital that you understand your sound card's features and capabilities. If you do not, envy24control will not make working with the card any clearer or easier. It is more likely to do just the opposite. Save yourself some frustration: read the manual.
+It is vital that you understand your sound card's features and capabilities. If you do not, *envy24control* will not make working with the card any clearer or easier. It is more likely to do just the opposite. Save yourself some frustration: read the manual.
 
 ## Application overview
 
@@ -143,13 +142,13 @@ The two rightmost columns, "S/PDIF Out 1/2 (L/R)", function identically as the a
 
 #### Tips and tricks
 
-*   Typically, you would select the same option for both the L and R of a stereo output pair. (In fact, the Delta Control Panel software that ships with M-Audio sound cards forces this behavior: there is no separate L and R channel on this page. The envy24control developers provided additional flexibility in this regard.)
+*   Typically, you would select the same option for both the L and R of a stereo output pair. (In fact, the Delta Control Panel software that ships with M-Audio sound cards forces this behavior: there is no separate L and R channel on this page. The *envy24control* developers provided additional flexibility in this regard.)
 
 *   Depending on your card, the number of *"playback_X"* channels available in [JACK](/index.php/JACK "JACK")'s Connections dialog will vary. Usually, the two highest-numbered channels are "S/PDIF Out 1/2 (L/R)." This may or may not be the case with your configuration; take a few minutes to experiment and make a note.
 
 *   Learn to use the "Digital Mix" option. It is an extremely powerful feature that allows you to take some of the audio processing load off your recording software by handling the monitor mix with your card's hardware instead. This also provides the added benefit of near-zero latency while monitoring. See [#Usage examples](#Usage_examples).
 
-*   It should be fairly clear by now that the on-board mixer and patchbay / router in your sound card is highly versatile. You may want to re-read this page and make some practice adjustments to become proficient in routing and mixing with envy24control. If in the process you end up confused, you can set the card back to its default configuration by selecting the topmost option in all of the columns on the "Patchbay / Router" page.
+*   It should be fairly clear by now that the on-board mixer and patchbay / router in your sound card is highly versatile. You may want to re-read this page and make some practice adjustments to become proficient in routing and mixing with *envy24control*. If in the process you end up confused, you can set the card back to its default configuration by selecting the topmost option in all of the columns on the "Patchbay / Router" page.
 
 ### Hardware Settings
 
@@ -176,7 +175,7 @@ The codec sample rate can be locked to a specific rate by selecting *Locked*. Wh
 
 #### Actual Rate
 
-This displays the current codec sample rate of the card. Depending on your settings, this may vary as it's controlled by applications such as [JACK](/index.php/JACK "JACK") or Ardour and/or by envy24control itself. See [#Master Clock](#Master_Clock) and [#Rate State](#Rate_State) for details.
+This displays the current codec sample rate of the card. Depending on your settings, this may vary as it's controlled by applications such as [JACK](/index.php/JACK "JACK") or Ardour and/or by *envy24control* itself. See [#Master Clock](#Master_Clock) and [#Rate State](#Rate_State) for details.
 
 ### Analog Volume
 
@@ -201,10 +200,6 @@ The ADC faders control attenuation or amplification of incoming analog audio sig
 **Note:** Using the ADC's amplifier is typically not ideal because you're likely amplifying a weak signal -- noise and all. The ideal solution is to find an external way to boost your audio source's signal. For example, use a mic preamp, route your guitar through a direct box, etc.
 
 *   The numbering of the faders is zero-based. So, "DAC 0" corresponds to "H/W Out 1 (L)", "DAC 1" corresponds to "H/W Out 2 (R)", and so on. This is also true for the "ADC" faders.
-
-### Profiles
-
-TODO
 
 ## Usage examples
 
@@ -295,7 +290,7 @@ As with the first example, this example also assumes you have a mono audio sourc
 
 ## See also
 
-envy24control is loosely based on the UI and functionality provided by the Windows/Mac Delta Control Panel software that ships with M-Audio Delta series hardware. The documentation in the cards' user manual loosely applies; be prepared to spend some time experimenting and getting familiar with your card's capabilities and the software. Some manuals for popular Delta series cards:
+*envy24control* is loosely based on the UI and functionality provided by the Windows/Mac Delta Control Panel software that ships with M-Audio Delta series hardware. The documentation in the cards' user manual loosely applies; be prepared to spend some time experimenting and getting familiar with your card's capabilities and the software. Some manuals for popular Delta series cards:
 
 *   [Delta 1010LT](http://www.m-audio.com/images/global/manuals/Delta1010LT-Manual.pdf)
 *   [Delta 44](http://www.m-audio.com/images/global/manuals/Delta44_Manual.pdf)

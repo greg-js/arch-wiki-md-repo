@@ -1,3 +1,11 @@
+Related articles
+
+*   [SCP and SFTP](/index.php/SCP_and_SFTP "SCP and SFTP")
+*   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
+*   [Pure-FTPd](/index.php/Pure-FTPd "Pure-FTPd")
+*   [Secure Shell (简体中文)](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)")
+*   [sftpman](/index.php/Sftpman "Sftpman")
+
 **翻译状态：** 本文是英文页面 [SSHFS](/index.php/SSHFS "SSHFS") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-07-03，点击[这里](https://wiki.archlinux.org/index.php?title=SSHFS&diff=0&oldid=481165)可以查看翻译后英文页面的改动。
 
 [SSHFS](https://github.com/libfuse/sshfs) 是一个通过 [SSH](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)") 挂载基于 FUSE 的文件系统的客户端程序。

@@ -56,7 +56,6 @@ Si assume che i lettori abbiano letto e seguito la [Guida per Principianti](/ind
     *   [9.1 acpid](#acpid)
     *   [9.2 Regolazione della frequenza della CPU](#Regolazione_della_frequenza_della_CPU)
     *   [9.3 Laptop](#Laptop)
-    *   [9.4 Sospensione e Ibernazione](#Sospensione_e_Ibernazione)
 *   [10 Amministrazione del sistema](#Amministrazione_del_sistema)
     *   [10.1 Mantenimento dei log](#Mantenimento_dei_log)
     *   [10.2 Privilege escalation](#Privilege_escalation)
@@ -258,10 +257,6 @@ I processori moderni possono ridurre la propria frequenza e tensione per ridurre
 ### Laptop
 
 Per pagine dedicate ai computer portatili, insieme a guide di installazione specifiche per un determinato modello, si veda [Category:Laptops (Italiano)](/index.php/Category:Laptops_(Italiano) "Category:Laptops (Italiano)"). Per uno sguardo globale sulle raccomandazioni d'uso per i laptop si veda [Laptop (Italiano)](/index.php/Laptop_(Italiano) "Laptop (Italiano)").
-
-### Sospensione e Ibernazione
-
-Diverse opzioni sono disponibili per gli utenti che desiderano sospendere in RAM (stand-by) o sospendere su disco (ibernazione) il proprio computer. [pmutils](/index.php?title=Pmutils&action=edit&redlink=1 "Pmutils (page does not exist)") descrive un metodo comune, mentre [hibernate-script](/index.php/Hibernate-script "Hibernate-script") è un alternativa più vecchia che non dipende da Xorg. [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") è un'opzione la cui popolarità è in crescita, pur sostenendo di offrire più vantaggi delle altre opzioni, richiede una patch per il kernel oppure il pacchetto [linux-ice](https://aur.archlinux.org/packages/linux-ice/) disponibile su [AUR](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Amministrazione del sistema
 

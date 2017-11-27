@@ -44,9 +44,9 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
 *   [6 Logical volume types](#Logical_volume_types)
     *   [6.1 Snapshots](#Snapshots)
         *   [6.1.1 Configuration](#Configuration)
-    *   [6.2 LVM Cache (lvmcache)](#LVM_Cache_.28lvmcache.29)
-        *   [6.2.1 Create](#Create)
-        *   [6.2.2 Remove](#Remove)
+    *   [6.2 LVM cache](#LVM_cache)
+        *   [6.2.1 Create cache](#Create_cache)
+        *   [6.2.2 Remove cache](#Remove_cache)
 *   [7 Graphical configuration](#Graphical_configuration)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Changes that could be required due to changes in the Arch-Linux defaults](#Changes_that_could_be_required_due_to_changes_in_the_Arch-Linux_defaults)
@@ -146,7 +146,7 @@ Quick overview:
 *   Continue with [Installation guide#Format the partitions](/index.php/Installation_guide#Format_the_partitions "Installation guide").
 *   When you reach the “Create initial ramdisk environment” step in the Installation guide, add the `lvm` hook to `/etc/mkinitcpio.conf` (see below for details).
 
-**Warning:** `/boot` cannot reside in LVM when using a boot loader, which does not support LVM, you must create a separate `/boot` partition and format it directly. Only [GRUB](/index.php/GRUB "GRUB") is known to support LVM.
+**Warning:** `/boot` cannot reside in LVM when using a boot loader which does not support LVM, you must create a separate `/boot` partition and format it directly. Only [GRUB](/index.php/GRUB "GRUB") is known to support LVM.
 
 ### Create partitions
 
@@ -706,13 +706,13 @@ See [Create root filesystem snapshots with LVM](/index.php/Create_root_filesyste
 
 If you have LVM volumes not activated via the [initramfs](/index.php/Initramfs "Initramfs"), [enable](/index.php/Enable "Enable") `lvm-monitoring.service`, which is provided by the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package.
 
-### LVM Cache (lvmcache)
+### LVM cache
 
 From [lvmcache(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvmcache.7):
 
 	*The cache logical volume type uses a small and fast LV to improve the performance of a large and slow LV. It does this by storing the frequently used blocks on the faster LV. LVM refers to the small fast LV as a cache pool LV. The large slow LV is called the origin LV. Due to requirements from dm-cache (the kernel driver), LVM further splits the cache pool LV into two devices - the cache data LV and cache metadata LV. The cache data LV is where copies of data blocks are kept from the origin LV to increase speed. The cache metadata LV holds the accounting information that specifies where data blocks are stored (e.g. on the origin LV or on the cache data LV). Users should be familiar with these LVs if they wish to create the best and most robust cached logical volumes. All of these associated LVs must be in the same VG.*
 
-#### Create
+#### Create cache
 
 The fast method is creating a PV (if necessary) on the fast disk and add it to the existing volume group:
 
@@ -737,7 +737,7 @@ Obviously, if you want your cache to be bigger, you can change the `-L` paramete
 
 If a specific `--cachemode` is not indicated, the system will assume `writethrough` as default.
 
-#### Remove
+#### Remove cache
 
 If you ever need to undo the one step creation operation above:
 

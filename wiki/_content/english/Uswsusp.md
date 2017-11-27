@@ -1,6 +1,5 @@
 Related articles
 
-*   [hibernate-script](/index.php/Hibernate-script "Hibernate-script")
 *   [Pm-utils](/index.php/Pm-utils "Pm-utils")
 *   [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")
 
@@ -169,7 +168,7 @@ Now you could try to suspend directly calling s2disk from the command line:
 
 ```
 
-It is probably necessary to resort to a userspace tool which calls internally s2disk, like [Pm-utils](/index.php/Pm-utils "Pm-utils") or hibernate-script. See [Suspending to Disk with hibernate-script](/index.php/Suspending_to_Disk_with_hibernate-script "Suspending to Disk with hibernate-script") about details for defining the ususpend-disk method as default.
+It is probably necessary to resort to a userspace tool which calls internally s2disk, like [Pm-utils](/index.php/Pm-utils "Pm-utils").
 
 ### With systemd
 

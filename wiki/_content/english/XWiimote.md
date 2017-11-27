@@ -16,7 +16,6 @@ This article is about the Nintendo Wii Remote Linux kernel driver. This driver i
     *   [4.3 I cannot connect my wiimote](#I_cannot_connect_my_wiimote)
     *   [4.4 Cannot use Wiimote in Dolphin-emu after pairing with xwiimote](#Cannot_use_Wiimote_in_Dolphin-emu_after_pairing_with_xwiimote)
     *   [4.5 My Wii Remote is still not working](#My_Wii_Remote_is_still_not_working)
-    *   [4.6 Auto-Reconnect is not working after pairing with red sync-button](#Auto-Reconnect_is_not_working_after_pairing_with_red_sync-button)
 *   [5 See also](#See_also)
 
 ## Prerequisites
@@ -168,26 +167,6 @@ Dolphin uses its own driver so pressing the resync button on the wiimote while d
 The XWiimote software stack is actively developed. Please report your problems at [XWiimote@GitHub](http://www.github.com/dvdhrm/xwiimote/issues).
 
 There are also other projects which provide Wii Remote support for linux. See the [Wii Remote article](/index.php/Wiimote "Wiimote") for the cwiid project.
-
-### Auto-Reconnect is not working after pairing with red sync-button
-
-It seems that the wiimote needs to be connected directly after pairing in order to store the binding (??) and reconnect automatically to the host.
-
-Use the following sequence in bluetoothctl:
-
-```
-power on
-agent on
-<press red sync button>
-scan on
-pair <MAC of the found wiimote, use TAB for autocompletion>           # **note:** we do not explicitly connect, we just pair!
-connect <MAC of the wiimote>                                          # there seems to be a pretty short timeout, so execute this **immediately after the pairing command**
-trust <MAC of the wiimote>
-disconnect <MAC of the wiimote>
-
-```
-
-The wiimote should disconnect and the power led go off. Pressing the power button on the wiimote should now re-establish the connection to the host without any further actions.
 
 ## See also
 

@@ -68,7 +68,7 @@ The following packages are available:
 
 **OpenJ9** — Formerly IBM, now Eclipse's implementation of JRE.
 
-	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk8-j9-bin](https://aur.archlinux.org/packages/jdk8-j9-bin/) [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/)
+	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk8-j9-bin](https://aur.archlinux.org/packages/jdk8-j9-bin/) [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/) [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/)
 
 **Java SE** — Oracle's implementation of JRE and JDK.
 

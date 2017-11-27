@@ -24,39 +24,37 @@ Este artículo contiene un listado general de aplicaciones, ordenadas por catego
         *   [1.1.1 Consola](#Consola)
         *   [1.1.2 Interfez gráfica](#Interfez_gr.C3.A1fica)
     *   [1.2 Clientes eDonkey](#Clientes_eDonkey)
-    *   [1.3 eMoney](#eMoney)
-        *   [1.3.1 Bitcoin](#Bitcoin)
-    *   [1.4 Mensajería instantánea](#Mensajer.C3.ADa_instant.C3.A1nea)
-        *   [1.4.1 Clientes multiprotocolo](#Clientes_multiprotocolo)
-            *   [1.4.1.1 Consola](#Consola_2)
-            *   [1.4.1.2 Interfaz gráfica](#Interfaz_gr.C3.A1fica)
-        *   [1.4.2 Jabber/XMPP](#Jabber.2FXMPP)
-            *   [1.4.2.1 Consola](#Consola_3)
-            *   [1.4.2.2 Interfaz gráfica](#Interfaz_gr.C3.A1fica_2)
-            *   [1.4.2.3 Servidores](#Servidores)
-        *   [1.4.3 Clientes IRC](#Clientes_IRC)
-            *   [1.4.3.1 Consola](#Consola_4)
-            *   [1.4.3.2 Interfaz gráfica](#Interfaz_gr.C3.A1fica_3)
-    *   [1.5 Software telefónico](#Software_telef.C3.B3nico)
-        *   [1.5.1 Clientes](#Clientes)
-        *   [1.5.2 Utilidades](#Utilidades)
-    *   [1.6 Clientes pastebin](#Clientes_pastebin)
-    *   [1.7 Clientes de e-mail](#Clientes_de_e-mail)
-        *   [1.7.1 Consola](#Consola_5)
-        *   [1.7.2 Interfaz gráfica](#Interfaz_gr.C3.A1fica_4)
-    *   [1.8 Gestores de conexiones de red](#Gestores_de_conexiones_de_red)
-    *   [1.9 Agregadores de noticias](#Agregadores_de_noticias)
-        *   [1.9.1 Consola](#Consola_6)
-        *   [1.9.2 Interfaz gráfica](#Interfaz_gr.C3.A1fica_5)
-    *   [1.10 Navegadores web](#Navegadores_web)
-        *   [1.10.1 Consola](#Consola_7)
-        *   [1.10.2 Interfaz gráfica](#Interfaz_gr.C3.A1fica_6)
-    *   [1.11 Software de blog y CMS](#Software_de_blog_y_CMS)
-    *   [1.12 Clientes de microblogging](#Clientes_de_microblogging)
-    *   [1.13 Protocolo de Tranferencia de Archivos (siglas en inglés FTP)](#Protocolo_de_Tranferencia_de_Archivos_.28siglas_en_ingl.C3.A9s_FTP.29)
-        *   [1.13.1 Clientes FTP](#Clientes_FTP)
-        *   [1.13.2 Servidores FTP](#Servidores_FTP)
-    *   [1.14 Otros](#Otros)
+    *   [1.3 Mensajería instantánea](#Mensajer.C3.ADa_instant.C3.A1nea)
+        *   [1.3.1 Clientes multiprotocolo](#Clientes_multiprotocolo)
+            *   [1.3.1.1 Consola](#Consola_2)
+            *   [1.3.1.2 Interfaz gráfica](#Interfaz_gr.C3.A1fica)
+        *   [1.3.2 Jabber/XMPP](#Jabber.2FXMPP)
+            *   [1.3.2.1 Consola](#Consola_3)
+            *   [1.3.2.2 Interfaz gráfica](#Interfaz_gr.C3.A1fica_2)
+            *   [1.3.2.3 Servidores](#Servidores)
+        *   [1.3.3 Clientes IRC](#Clientes_IRC)
+            *   [1.3.3.1 Consola](#Consola_4)
+            *   [1.3.3.2 Interfaz gráfica](#Interfaz_gr.C3.A1fica_3)
+    *   [1.4 Software telefónico](#Software_telef.C3.B3nico)
+        *   [1.4.1 Clientes](#Clientes)
+        *   [1.4.2 Utilidades](#Utilidades)
+    *   [1.5 Clientes pastebin](#Clientes_pastebin)
+    *   [1.6 Clientes de e-mail](#Clientes_de_e-mail)
+        *   [1.6.1 Consola](#Consola_5)
+        *   [1.6.2 Interfaz gráfica](#Interfaz_gr.C3.A1fica_4)
+    *   [1.7 Gestores de conexiones de red](#Gestores_de_conexiones_de_red)
+    *   [1.8 Agregadores de noticias](#Agregadores_de_noticias)
+        *   [1.8.1 Consola](#Consola_6)
+        *   [1.8.2 Interfaz gráfica](#Interfaz_gr.C3.A1fica_5)
+    *   [1.9 Navegadores web](#Navegadores_web)
+        *   [1.9.1 Consola](#Consola_7)
+        *   [1.9.2 Interfaz gráfica](#Interfaz_gr.C3.A1fica_6)
+    *   [1.10 Software de blog y CMS](#Software_de_blog_y_CMS)
+    *   [1.11 Clientes de microblogging](#Clientes_de_microblogging)
+    *   [1.12 Protocolo de Tranferencia de Archivos (siglas en inglés FTP)](#Protocolo_de_Tranferencia_de_Archivos_.28siglas_en_ingl.C3.A9s_FTP.29)
+        *   [1.12.1 Clientes FTP](#Clientes_FTP)
+        *   [1.12.2 Servidores FTP](#Servidores_FTP)
+    *   [1.13 Otros](#Otros)
 *   [2 Multimedia](#Multimedia)
     *   [2.1 Visores de imágenes](#Visores_de_im.C3.A1genes)
         *   [2.1.1 Consola](#Consola_8)
@@ -249,32 +247,6 @@ eDonkey es la segunda red p2p más grande (véase [Internet Study 2008/2009](htt
 *   **KaMule** — Front-end gráfico de KDE para aMule.
 
 	[http://kde-apps.org/content/show.php?content=150270](http://kde-apps.org/content/show.php?content=150270) || [kamule](https://aur.archlinux.org/packages/kamule/)
-
-### eMoney
-
-#### Bitcoin
-
-	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Bitcoin "wikipedia:es:Bitcoin")
-
-	*«Bitcoin es una moneda electrónica descentralizada concebida en 2009 por Satoshi Nakamoto. El nombre se aplica también al protocolo diseñado por el mismo autor y a la red P2P que lo sustenta.»*
-
-[Bitcoin](/index.php/Bitcoin "Bitcoin")
-
-*   **Armory** — Cliente Bitcoin con características tales como soporte para múltiples carteras, importar claves y copias de seguridad.
-
-	[https://github.com/eotheipi/BitcoinArmory](https://github.com/eotheipi/BitcoinArmory) || [armory-git](https://aur.archlinux.org/packages/armory-git/)
-
-*   **[Bitcoin](/index.php/Bitcoin "Bitcoin")** — Herramienta oficial para gestionar Bitcoins.
-
-	[http://bitcoin.org/](http://bitcoin.org/) || [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon) [bitcoin-qt](https://www.archlinux.org/packages/?name=bitcoin-qt)
-
-*   **Electrum** — Un cliente Bitcoin fácil de usar.
-
-	[http://electrum.org/](http://electrum.org/) || [electrum](https://www.archlinux.org/packages/?name=electrum)
-
-*   **MultiBit** — Un cliente de escritorio Bitcoin liviano impulsado por la biblioteca BitCoinJ.
-
-	[https://multibit.org/](https://multibit.org/) || [multibit](https://www.archlinux.org/packages/?name=multibit)
 
 ### Mensajería instantánea
 

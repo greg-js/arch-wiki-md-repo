@@ -129,7 +129,7 @@ end
 
 ```
 
-**Note:** This route requires you to manually add various other environment variables, such as `$MOZ_PLUGIN_PATH`. It is a huge amount of work to get a seamless experience with fish as your default shell using this method. A better idea would be [#Not setting fish as default shell](#Not_setting_fish_as_default_shell).
+**Note:** This route requires you to manually add various other environment variables, such as `$MOZ_PLUGIN_PATH`. It is a huge amount of work to get a seamless experience with fish as your default shell using this method. A better idea would be [#不要把fish设为默认shell](#.E4.B8.8D.E8.A6.81.E6.8A.8Afish.E8.AE.BE.E4.B8.BA.E9.BB.98.E8.AE.A4shell).
 
 ### 关闭问候语
 

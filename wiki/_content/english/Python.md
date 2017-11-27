@@ -105,7 +105,7 @@ A similar approach in tricking the environment, which also relies on `#!/usr/bin
 
 **Warning:** Python versions before 2.7 and 3.4 have not received any updates—including security patches—since at least 2014\. Using older versions for Internet-facing applications or untrusted code may be dangerous and is not recommended.
 
-Old versions of Python are available via the [AUR](/index.php/AUR "AUR") and may be useful for historical curiosity, old applications that do not run on current versions, or for testing Python programs intended to run on a distribution that comes with an older version (e.g. RHEL 5.x has Python 2.4, or Ubuntu 12.04 has Python 3.2):
+Old versions of Python are available via the [AUR](/index.php/AUR "AUR") and may be useful for historical curiosity, old applications that do not run on current versions, or for testing Python programs intended to run on a distribution that comes with an older version:
 
 *   Python 3.5: [python35](https://aur.archlinux.org/packages/python35/)
 *   Python 3.4: [python34](https://aur.archlinux.org/packages/python34/)

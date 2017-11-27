@@ -39,6 +39,15 @@ Update the plugins and vulnerability data:
 
 ```
 
+As of openvas-manager-7.0.2 & openvas-scanner-5.1.1 - greenbone-gvm-tools drive nvt, scap and cert plugins and vulnerability data sync through the following commands :-
+
+```
+# greenbone-nvt-sync
+# greenbone-scapdata-sync
+# greenbone-certdata-sync
+
+```
+
 Start the scanner service:
 
 ```

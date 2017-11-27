@@ -60,7 +60,6 @@
     *   [6.6 Ignore specific devices](#Ignore_specific_devices)
     *   [6.7 Connect faster](#Connect_faster)
         *   [6.7.1 Disabling IPv6](#Disabling_IPv6)
-        *   [6.7.2 Use OpenDNS servers](#Use_OpenDNS_servers)
     *   [6.8 Enable DNS Caching](#Enable_DNS_Caching)
     *   [6.9 Настройка подмены MAC-адреса на случайный](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BF.D0.BE.D0.B4.D0.BC.D0.B5.D0.BD.D1.8B_MAC-.D0.B0.D0.B4.D1.80.D0.B5.D1.81.D0.B0_.D0.BD.D0.B0_.D1.81.D0.BB.D1.83.D1.87.D0.B0.D0.B9.D0.BD.D1.8B.D0.B9)
     *   [6.10 Включение IPv6 Privacy Extensions](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_IPv6_Privacy_Extensions)
@@ -734,27 +733,6 @@ Slow connection or reconnection to the network may be due to superfluous IPv6 qu
 *   Go to the "IPv6 Settings" tab.
 *   In the "Method" dropdown, choose "Ignore/Disabled".
 *   Click on "Save".
-
-#### Use OpenDNS servers
-
-Create `/etc/resolv.conf.opendns` with the [alternative DNS server addresses](/index.php/Resolv.conf#Alternative_DNS_servers "Resolv.conf").
-
-And have the dispatcher replace the discovered DHCP servers with the OpenDNS ones:
-
- `/etc/NetworkManager/dispatcher.d/dns-servers-opendns` 
-```
-#!/bin/bash
-# Use OpenDNS servers over DHCP discovered servers
-
-cp -f /etc/resolv.conf.opendns /etc/resolv.conf
-```
-
-Make the script executable:
-
-```
-# chmod +x /etc/NetworkManager/dispatcher.d/dns-servers-opendns
-
-```
 
 ### Enable DNS Caching
 

@@ -9,10 +9,9 @@ Related articles
 *   [1 Creating a F2FS partition](#Creating_a_F2FS_partition)
 *   [2 Mounting a F2FS partition](#Mounting_a_F2FS_partition)
 *   [3 Grow an F2FS partition](#Grow_an_F2FS_partition)
-*   [4 Install Arch Linux on F2FS partition](#Install_Arch_Linux_on_F2FS_partition)
-*   [5 Checking and repair](#Checking_and_repair)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 GRUB with root on F2FS](#GRUB_with_root_on_F2FS)
+*   [4 Checking and repair](#Checking_and_repair)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 GRUB with root on F2FS](#GRUB_with_root_on_F2FS)
 
 ## Creating a F2FS partition
 
@@ -52,18 +51,6 @@ Then expand the filesystem to fill the new partition using:
 where `*/dev/sdxY*` is the target F2FS volume to grow. See [resize.f2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resize.f2fs.8) for supported options.
 
 **Note:** If you're using GPT, the partition's GUID (seen in `/dev/disk/by-partuuid/`) might change, but the filesystem UUID (seen in `/dev/disk/by-uuid/`) should stay the same.
-
-## Install Arch Linux on F2FS partition
-
-With the latest [installation media](https://www.archlinux.org/download/) it is possible to install Arch linux with root located on a F2FS filesystem:
-
-1.  Create the root partition as F2FS as described in section [#Creating a F2FS partition](#Creating_a_F2FS_partition).
-2.  If your [bootloader](/index.php/Bootloader "Bootloader") does not support F2FS, create a separate `/boot` partition using a filesystem that it does.
-3.  Continue from [Installation guide#Mount the file systems](/index.php/Installation_guide#Mount_the_file_systems "Installation guide") until [chrooted](/index.php/Change_root "Change root").
-4.  Install [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) on the newly installed system as well.
-5.  Regenerate the [initramfs](/index.php/Initramfs "Initramfs") while chrooted.
-
-Be sure to also check out the [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key") page if you are installing Arch on a USB flash drive (in particular the part about editing `/etc/mkinitcpio.conf` is important, otherwise your system will not boot).
 
 ## Checking and repair
 

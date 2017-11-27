@@ -1,3 +1,9 @@
+Related articles
+
+*   [ATI](/index.php/ATI "ATI")
+*   [NVIDIA](/index.php/NVIDIA "NVIDIA")
+*   [Xorg](/index.php/Xorg "Xorg")
+
 Mivel az Intel készít és támogat is nyílt forráskodú drivereket, így az Intel grafikus kártyák lényegében "plug-and-play" (bonyolultabb beállítási igények nélkül) működnek.
 
 **Note:** Parancssorban való, [X](/index.php/X "X") kiszolgáló nélküli, használathoz ezt nézd meg: [Uvesafb](/index.php/Uvesafb "Uvesafb").

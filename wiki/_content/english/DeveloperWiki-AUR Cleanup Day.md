@@ -9,7 +9,6 @@
     *   [3.2 Packages to Keep](#Packages_to_Keep)
     *   [3.3 Possible reasons](#Possible_reasons_2)
 *   [4 Remove from Filesystem](#Remove_from_Filesystem)
-*   [5 See also](#See_also)
 
 ## About
 
@@ -173,8 +172,3 @@ Removed $count directories.
 ";
 
 ```
-
-## See also
-
-*   [Bug Day](/index.php/Bug_Day "Bug Day")
-*   [Arch Linux Event Calendar](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar")

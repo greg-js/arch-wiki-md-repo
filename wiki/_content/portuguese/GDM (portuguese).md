@@ -1,3 +1,11 @@
+Artigos relacionados
+
+*   [GNOME (Português)](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)")
+*   [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")
+*   [Display manager (Português)](/index.php/Display_manager_(Portugu%C3%AAs) "Display manager (Português)")
+*   [LightDM](/index.php/LightDM "LightDM")
+*   [LXDM](/index.php/LXDM "LXDM")
+
 Dá página do [GDM - GNOME Display Manager](http://projects.gnome.org/gdm/about.html):
 
 	*GDM é sigla para GNOME Display Manager (Gerenciador de Display do GNOME, numa tradução para o português). É um o pequeno programa que roda em segundo plano, carrega suas sessões do X, se apresenta a você como uma tela de login e lhe impede o acesso caso tenha esquecido sua senha. Ele faz praticamente tudo que você gostaria de ver no xdm, mas sem os problemas do mesmo. O GDM não utiliza nenhum código do XDM. Suporta o XDMCP e na verdade, estende-o um pouco a lugares que faltavam no xdm(mas ainda compatível com o XDMCP do xdm).*

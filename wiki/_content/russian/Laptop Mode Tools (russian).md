@@ -1,3 +1,13 @@
+Ссылки по теме
+
+*   [acpid](/index.php/Acpid "Acpid")
+*   [systemd (Русский)](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)")
+*   [cpufrequtils (Русский)](/index.php/Cpufrequtils_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Cpufrequtils (Русский)")
+*   [pm-utils (Русский)](/index.php/Pm-utils_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pm-utils (Русский)")
+*   [Laptop (Русский)](/index.php/Laptop_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Laptop (Русский)")
+*   [Powertop](/index.php/Powertop "Powertop")
+*   [TLP](/index.php/TLP "TLP")
+
 [Laptop Mode Tools](http://samwel.tk/laptop_mode/) — набор инструментов для гибкого управления энергосбережением.
 
 ## Contents

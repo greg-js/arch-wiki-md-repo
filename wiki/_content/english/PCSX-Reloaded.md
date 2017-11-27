@@ -96,4 +96,5 @@ Install [lib32-gtk](https://aur.archlinux.org/packages/lib32-gtk/). If pacman fa
 
 ## See also
 
-[Wikipedia:PCSX-Reloaded](https://en.wikipedia.org/wiki/PCSX-Reloaded "wikipedia:PCSX-Reloaded")]
+*   [Wikipedia:PCSX-Reloaded](https://en.wikipedia.org/wiki/PCSX-Reloaded "wikipedia:PCSX-Reloaded")
+*   [Emulation General wiki - Playstation emulators](http://emulation.gametechwiki.com/index.php/PlayStation_emulators)

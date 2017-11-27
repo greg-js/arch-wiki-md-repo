@@ -17,13 +17,12 @@
     *   [3.10 Показывать информацию об обновлениях пакетов](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D0.B8.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D1.8E_.D0.BE.D0.B1_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
     *   [3.11 Показывать прогноз погоды](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D0.B3.D0.BD.D0.BE.D0.B7_.D0.BF.D0.BE.D0.B3.D0.BE.D0.B4.D1.8B)
     *   [3.12 Показывать RSS ленты](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_RSS_.D0.BB.D0.B5.D0.BD.D1.82.D1.8B)
-    *   [3.13 Показывать рейтинг Arch Linux на Distrowatch](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D1.80.D0.B5.D0.B9.D1.82.D0.B8.D0.BD.D0.B3_Arch_Linux_.D0.BD.D0.B0_Distrowatch)
-    *   [3.14 Показывать состояние rTorrent](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D0.B5_rTorrent)
-    *   [3.15 Показывать состояние вашего WordPress блога](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D0.B5_.D0.B2.D0.B0.D1.88.D0.B5.D0.B3.D0.BE_WordPress_.D0.B1.D0.BB.D0.BE.D0.B3.D0.B0)
-    *   [3.16 Показывать количество новых писем из Gmail](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D0.BA.D0.BE.D0.BB.D0.B8.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.BE_.D0.BD.D0.BE.D0.B2.D1.8B.D1.85_.D0.BF.D0.B8.D1.81.D0.B5.D0.BC_.D0.B8.D0.B7_Gmail)
-        *   [3.16.1 Аналогичные способы](#.D0.90.D0.BD.D0.B0.D0.BB.D0.BE.D0.B3.D0.B8.D1.87.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B)
-    *   [3.17 Показывать новые письма (IMAP + SSL)](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D0.BD.D0.BE.D0.B2.D1.8B.D0.B5_.D0.BF.D0.B8.D1.81.D1.8C.D0.BC.D0.B0_.28IMAP_.2B_SSL.29)
-    *   [3.18 Исправление прокручивания для кодировки UTF-8](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.BA.D1.80.D1.83.D1.87.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BE.D0.B4.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B8_UTF-8)
+    *   [3.13 Показывать состояние rTorrent](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D0.B5_rTorrent)
+    *   [3.14 Показывать состояние вашего WordPress блога](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D0.B5_.D0.B2.D0.B0.D1.88.D0.B5.D0.B3.D0.BE_WordPress_.D0.B1.D0.BB.D0.BE.D0.B3.D0.B0)
+    *   [3.15 Показывать количество новых писем из Gmail](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D0.BA.D0.BE.D0.BB.D0.B8.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.BE_.D0.BD.D0.BE.D0.B2.D1.8B.D1.85_.D0.BF.D0.B8.D1.81.D0.B5.D0.BC_.D0.B8.D0.B7_Gmail)
+        *   [3.15.1 Аналогичные способы](#.D0.90.D0.BD.D0.B0.D0.BB.D0.BE.D0.B3.D0.B8.D1.87.D0.BD.D1.8B.D0.B5_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B)
+    *   [3.16 Показывать новые письма (IMAP + SSL)](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D0.BD.D0.BE.D0.B2.D1.8B.D0.B5_.D0.BF.D0.B8.D1.81.D1.8C.D0.BC.D0.B0_.28IMAP_.2B_SSL.29)
+    *   [3.17 Исправление прокручивания для кодировки UTF-8](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.BA.D1.80.D1.83.D1.87.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.BE.D0.B4.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B8_UTF-8)
 *   [4 Примеры конфигурации от пользователей](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D0.B8_.D0.BE.D1.82_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9)
     *   [4.1 Graysky](#Graysky)
     *   [4.2 Пример скрипта с поддержкой nvidia](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_.D1.81.D0.BA.D1.80.D0.B8.D0.BF.D1.82.D0.B0_.D1.81_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.BE.D0.B9_nvidia)
@@ -341,10 +340,6 @@ ${rss [https://bbs.archlinux.org/extern.php?action=feed&type=rss](https://bbs.ar
 
 *   Последние сообщения: [http://archlinux.org.ru/forum/feeds/posts/](http://archlinux.org.ru/forum/feeds/posts/)
 *   Последние темы: [http://archlinux.org.ru/forum/feeds/topics/](http://archlinux.org.ru/forum/feeds/topics/)
-
-### Показывать рейтинг Arch Linux на Distrowatch
-
-Смотрите [это обсуждение](https://bbs.archlinux.org/viewtopic.php?id=88779).
 
 ### Показывать состояние rTorrent
 

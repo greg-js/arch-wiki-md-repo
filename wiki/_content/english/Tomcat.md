@@ -18,6 +18,8 @@ Tomcat is an open source Java [Servlet container](https://en.wikipedia.org/wiki/
     *   [6.1 Migrating from previous versions of Tomcat](#Migrating_from_previous_versions_of_Tomcat)
     *   [6.2 Using Tomcat with a different JRE/JDK](#Using_Tomcat_with_a_different_JRE.2FJDK)
     *   [6.3 Security configuration](#Security_configuration)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Tomcat service is started, but page is not loaded](#Tomcat_service_is_started.2C_but_page_is_not_loaded)
 
 ## Installation
 
@@ -256,3 +258,26 @@ Paste the hashed part in place of the clear password in `tomcat-users.xml` and a
 Note that this may not be relevant because only root and/or tomcat is supposed to have read/write access to that file. If an intruder manages to gain root access then he would not need such passwords to mess with your applications/data anyway. Be sure to keep restricted RW access to that file!
 
 *   Always know what you are deploying
+
+## Troubleshooting
+
+### Tomcat service is started, but page is not loaded
+
+First check `/etc/tomcat7/tomcat-users.xml` for any syntax error. If everything is fine and `tomcat7` is correctly running, type `journalctl -r` to check the logs for any exception thrown (see [Logging](https://wiki.archlinux.org/index.php/Tomcat#Logging)). If you read anything like `java.lang.Exception: Socket bind failed: [98] Address already in use`, this is due to some other service listening on the same port. For instance, it is possible that [Apache](https://wiki.archlinux.org/index.php/Apache_HTTP_Server) and Tomcat are listening on the same port (if for example you have Apache running on port 8080 with [Nginx](https://wiki.archlinux.org/index.php/Nginx) serving it as a proxy on port 80). If this is the case, edit the `/etc/tomcat7/server.xml` file and change the Connector port to something else under `<Service name="Catalina">`:
+
+ `/etc/tomcat7/server.xml` 
+```
+<?xml version='1.0' encoding='utf-8'?>
+...
+...
+<Service name="Catalina">
+    <Connector executor="tomcatThreadPool"
+                 port="8090" protocol="HTTP/1.1"
+                 connectionTimeout="20000"
+                 redirectPort="8443" />
+...
+...
+</Service>
+```
+
+Finally [restart](https://wiki.archlinux.org/index.php/Systemd#Using_units) `tomcat7` and `httpd` services.

@@ -60,7 +60,7 @@
 
 ### Master Boot Record
 
-[Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record") (MBR) 是存储设备最开始的 512 字节。包含操作系统启动加载器和分区表，在 [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") 系统的 [启动流程](/index.php/Boot_process "Boot process") 中扮演重要角色。请参阅 [Wikipedia:Master boot record#Disk partitioning](https://en.wikipedia.org/wiki/Master_boot_record#Disk_partitioning "wikipedia:Master boot record")。
+[Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record "w:Master boot record") (MBR) 是存储设备最开始的 512 字节。包含操作系统启动加载器和分区表，在 [BIOS](https://en.wikipedia.org/wiki/BIOS "w:BIOS") 系统的 [启动流程](/index.php/Boot_process "Boot process") 中扮演重要角色。请参阅 [Wikipedia:Master boot record#Disk partitioning](https://en.wikipedia.org/wiki/Master_boot_record#Disk_partitioning "wikipedia:Master boot record")。
 
 **Note:** MBR 并不位于某个分区中，而是分区前，设备的最开始部分。无分区设备的启动扇区或分区中的启动扇区被称为 [Volume boot record](https://en.wikipedia.org/wiki/Volume_boot_record "w:Volume boot record")。
 
@@ -78,16 +78,15 @@
 
 #### 引导记录
 
-MBR 前面的 446 字节是启动代码区域，在 BIOS 系统中通常包含启动加载器的第一部分。请参阅
-请参考 [Wikipedia](https://en.wikipedia.org/wiki/zh:Main_Page "wikipedia:zh:Main Page") 以获取更多关于本主题的信息: **[主引导记录](https://en.wikipedia.org/wiki/zh:%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95 "wikipedia:zh:主引导记录")**
+MBR 前面的 446 字节是启动代码区域，在 BIOS 系统中通常包含启动加载器的第一部分。请参阅[Wikipedia:主引导记录](https://en.wikipedia.org/wiki/%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95 "wikipedia:主引导记录")
 
 ### GUID 分区表
 
 GPT方案中只有一种分区类型，**主分区**。磁盘和RAID卷中包含的分区数量没有限制。
 
-[GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") (GPT) 是 [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") 标准定义的分区规范。使用 [globally unique identifiers](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") (GUIDs), 或 Linux 中的 UUID 定义分区和 [分区类型](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table"). 设计上是为了替换 [#Master Boot Record](#Master_Boot_Record)。
+[GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "w:GUID Partition Table") (GPT) 是 [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") 标准定义的分区规范。使用 [globally unique identifiers](https://en.wikipedia.org/wiki/Globally_unique_identifier "w:Globally unique identifier") (GUIDs), 或 Linux 中的 UUID 定义分区和 [分区类型](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table"). 设计上是为了替换 [#Master Boot Record](#Master_Boot_Record)。
 
-请参考 [Wikipedia](https://en.wikipedia.org/wiki/zh:Main_Page "wikipedia:zh:Main Page") 以获取更多关于本主题的信息: **[GUID磁碟分割表](https://en.wikipedia.org/wiki/zh:GUID%E7%A3%81%E7%A2%9F%E5%88%86%E5%89%B2%E8%A1%A8 "wikipedia:zh:GUID磁碟分割表")**
+[Wikipedia:GUID磁碟分割表](https://en.wikipedia.org/wiki/GUID%E7%A3%81%E7%A2%9F%E5%88%86%E5%89%B2%E8%A1%A8 "wikipedia:GUID磁碟分割表")
 
 ### 选择 GPT 还是 MBR
 
@@ -108,7 +107,7 @@ GPT方案中只有一种分区类型，**主分区**。磁盘和RAID卷中包含
 
 Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GPT](/index.php/GPT "GPT") 分区方案。请参考[Btrfs Partitioning](/index.php/Btrfs#Partitioning "Btrfs")以获取更多信息。
 
-请参考 [Wikipedia](https://en.wikipedia.org/wiki/zh:Main_Page "wikipedia:zh:Main Page") 以获取更多关于本主题的信息: **[Btrfs](https://en.wikipedia.org/wiki/zh:Btrfs "wikipedia:zh:Btrfs")**
+[Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs")
 
 ### 备份
 
@@ -284,7 +283,7 @@ partitionmanager |
 
 ## 分区对齐
 
-恰当的分区对齐有助于提升性能和使用寿命。这是由硬件层面和文件系统层面的每次[块](https://en.wikipedia.org/wiki/Block_(data_storage) I/O 操作特性决定的。对齐的关健是分区大小（至少）是*块大小*的倍数，*块大小*取决于选用的硬件设备。如果分区没有以*块大小*的整数倍对齐，对齐文件系统就失去意义了，因为从分区的起始偏移开始就是有偏差的。
+恰当的分区对齐有助于提升性能和使用寿命。这是由硬件层面和文件系统层面的每次[块](https://en.wikipedia.org/wiki/Block_(data_storage) "w:Block (data storage)") I/O 操作特性决定的。对齐的关健是分区大小（至少）是*块大小*的倍数，*块大小*取决于选用的硬件设备。如果分区没有以*块大小*的整数倍对齐，对齐文件系统就失去意义了，因为从分区的起始偏移开始就是有偏差的。
 
 [fdisk/gdisk](/index.php/Fdisk "Fdisk") 和 [parted](/index.php/Parted#Alignment "Parted") 会自动处理分区对齐。[GNU Parted#Check alignment](/index.php/GNU_Parted#Check_alignment "GNU Parted") 介绍了如何验证分区是否对齐。
 

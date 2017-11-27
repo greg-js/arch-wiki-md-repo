@@ -23,6 +23,7 @@ From the project [home page](https://www.videolan.org/vlc/):
     *   [6.4 Failed to open VDPAU backend](#Failed_to_open_VDPAU_backend)
     *   [6.5 Video output overlaps the desktop, does not scale nor position properly](#Video_output_overlaps_the_desktop.2C_does_not_scale_nor_position_properly)
     *   [6.6 No playback via SFTP of media files names containing spaces](#No_playback_via_SFTP_of_media_files_names_containing_spaces)
+    *   [6.7 Screen Tearing](#Screen_Tearing)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -241,6 +242,10 @@ Exec=/usr/bin/vlc --started-from-file %F
 ```
 
 [[1]](https://bugs.launchpad.net/ubuntu/+source/vlc/+bug/239431/comments/11)
+
+### Screen Tearing
+
+If you experience screen tearing while playing video, try setting Video output from Automatic to OpenGL Video Output (XCB) in preferences.
 
 ## See also
 

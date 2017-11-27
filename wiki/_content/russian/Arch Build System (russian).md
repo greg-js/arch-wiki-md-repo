@@ -1,3 +1,15 @@
+Ссылки по теме
+
+*   [Стандарты создания пакетов для Arch](/index.php/%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D1%8B_%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2_%D0%B4%D0%BB%D1%8F_Arch "Стандарты создания пакетов для Arch")
+*   [Пользовательский репозиторий Arch](/index.php/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B9_Arch "Пользовательский репозиторий Arch")
+*   [Создание пакетов](/index.php/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2 "Создание пакетов")
+*   [Сборка ядра через ABS](/index.php/Kernels_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9A.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.86.D0.B8.D1.8F_.D1.8F.D0.B4.D1.80.D0.B0 "Kernels (Русский)")
+*   [makepkg (Русский)](/index.php/Makepkg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Makepkg (Русский)")
+*   [Официальные репозитории](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8 "Официальные репозитории")
+*   [pacman (Русский)](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)")
+*   [PKGBUILD (Русский)](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)")
+*   [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). Дата последней синхронизации: 6 сентября 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=398463).
 
 В этой статье представлен обзор системы сборки Arch (сокращенно ABS) и пошаговое руководство для начинающих. Это не исчерпывающее руководство. Если вам нужна дополнительная информация, обратитесь к man страницам.

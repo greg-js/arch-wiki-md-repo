@@ -244,7 +244,7 @@ port 587
 protocol smtp
 
 auth on
-# 允許 SMTP 驗證
+# 允許 SMTP 驗證，on參數msmtp會爲你選擇一個最佳方案
 tls on
 # 允許 TLS/SSL 加密連接，以保證電郵安全。如果指定了 Gmail 的 TLS 通訊埠，
 #那么它必須：要麼使用 tls_trust_file 指定一個信任的服務器證書， 要麼就關閉
@@ -267,8 +267,8 @@ password mypassword
 
  `chmod 600 ~/.msmtprc` 
 
-用 1.4.11 版的 msmtp 時，必然要涉及到設定 TLS 。 [msmtp, TLS, and ArchLinux](http://mychael.gotdns.com/blog/2007/04/18/msmtp-tls-and-archlinux/) 對于如何配置 msmtp 的認証作出了指導。
-如果你確實不知道上哪裡去找 ca-certificates.crt 這個 Gmail 信任的根證書，那么就 [自己申請一個吧](http://www.thawte.com/roots/)。不然，你就只能以 SSL 方式來連接 Gmail ；如果一定要用 TLS 方式，那也要設置 `tls_certcheck off`
+用 1.4.11 版的 msmtp 時，必然要涉及到設定 TLS 。 [msmtp, 传输层安全](http://msmtp.sourceforge.net/doc/msmtp.html#Transport-Layer-Security) 和 [msmtp, TLS, and ArchLinux](http://mychael.gotdns.com/blog/2007/04/18/msmtp-tls-and-archlinux/)對于如何配置 msmtp 的認証作出了指導。
+你可以用--serverinfo --tls --tls-certcheck=off来获取服务器证书和指纹信息。配置示例：tls_trust_file /etc/ssl/certs/ca-certificates.crt 或者 tls_fingerprint 01:23:45:67: … 。对于某些服务器，您可能需要禁用tls_starttls。如果你確實不知道上哪裡去找 ca-certificates.crt 這個 Gmail 信任的根證書，那么就 [自己申請一個吧](http://www.thawte.com/roots/)。
 
 ### 讓 Mutt 配合 msmtp 發送電郵
 

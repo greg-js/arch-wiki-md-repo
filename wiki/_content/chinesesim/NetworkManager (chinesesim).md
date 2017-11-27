@@ -123,7 +123,7 @@ NetworkManager 的 VPN 支持基于一个插件系统。如果需要通过 Netwo
 
 存储连接密码，安装并配置 [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")。
 
-注意对某个连接启用了勾选框选项 `对其他用户可用` 时，NetworkManager将密码明文存储，即使相应的文件只能被root访问（或者其他使用 `nm-applet` 的用户）。参照 [#Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)。
+注意对某个连接启用了勾选框选项 `对其他用户可用` 时，NetworkManager将密码明文存储，即使相应的文件只能被root访问（或者其他使用 `nm-applet` 的用户）。参照 [#加密的Wi-Fi密码](#.E5.8A.A0.E5.AF.86.E7.9A.84Wi-Fi.E5.AF.86.E7.A0.81)。
 
 在没有系统托盘的情况下运行 `nm-applet`，可以使用 [trayer](https://www.archlinux.org/packages/?name=trayer) 或者 [stalonetray](https://www.archlinux.org/packages/?name=stalonetray)。比如，你可以在自己的路径中添加这样的脚本：
 

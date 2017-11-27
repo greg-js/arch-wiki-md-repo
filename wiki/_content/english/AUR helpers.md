@@ -21,10 +21,6 @@ AUR helpers are written to automate certain tasks for the [Arch User Repository]
 
 This is a list of helper utilities that search, download and/or build packages.
 
-*   **apacman** — A fork of packer.
-
-	[https://github.com/oshazard/apacman](https://github.com/oshazard/apacman) || [apacman](https://aur.archlinux.org/packages/apacman/)
-
 *   **aura** — A package manager for Arch Linux written in Haskell. ([Forum page](https://bbs.archlinux.org/viewtopic.php?id=155778))
 
 	[https://github.com/aurapm/aura](https://github.com/aurapm/aura) || [aura-bin](https://aur.archlinux.org/packages/aura-bin/)
@@ -172,28 +168,27 @@ The columns have the following meaning:
 *   *Syntax*: P stands for [Pacman](/index.php/Pacman "Pacman")-like, S for specific.
 
 | Name | Written In | Secure | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Shell completion | Syntax | Specificity |
-| apacman | Bash | No [[1]](https://github.com/oshazard/apacman/issues/8) | No [[2]](https://github.com/oshazard/apacman/search?utf8=%E2%9C%93&q=export) | No | No | No | No | None | P | Fork of *packer* |
-| aura | Haskell | Yes | Yes | Yes | No | No [[3]](https://github.com/aurapm/aura/issues/353) | No | bash/zsh | P | Downgrade, [ABS](/index.php/ABS "ABS"), [powerpill](/index.php/Powerpill "Powerpill") support, multilingual, requires [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") |
+| aura | Haskell | Yes | Yes | Yes | No | No [[1]](https://github.com/aurapm/aura/issues/353) | No | bash/zsh | P | Downgrade, [ABS](/index.php/ABS "ABS"), [powerpill](/index.php/Powerpill "Powerpill") support, multilingual, requires [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") |
 | auracle | C++ | Yes | N/A | Yes | Yes | N/A | No | N/A | S | No automatic builds |
 | aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | N/A | S | Emacs integration, no automatic builds |
-| aurget | Bash | Optional | Yes | No | No | No [[4]](https://github.com/pbrisbin/aurget/issues/40) | No | bash/zsh | P | sort by votes |
+| aurget | Bash | Optional | Yes | No | No | No [[2]](https://github.com/pbrisbin/aurget/issues/40) | No | bash/zsh | P | sort by votes |
 | aurutils | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | zsh | S | [vifm](/index.php/Vifm "Vifm"), [PCRE](https://en.wikipedia.org/wiki/PCRE "w:PCRE"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support |
 | bauerbill | Python | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Trust management, ABS support, extends Powerpill |
 | burgaur | Python/C | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | P | Wrapper for *cower* |
 | pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Minimizes user interaction, multilingual, sort by votes/popularity |
 | packer | Bash | No | Yes | No | No | No | No | None | P | - |
 | pbget | Python | Yes | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds |
-| PKGBUILDer | Python | Optional | Yes | Yes | Yes | Partial [[5]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | None | P | Automatic builds by default, use `-F` to disable; multilingual |
-| prm | Bash | Yes [[6]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds, ABS support |
-| repoctl | Go | Yes | N/A | Yes [[7]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/A | N/A | No | zsh | S | No automatic builds, local repository support |
-| spinach | Bash | Yes [[8]](https://github.com/floft/spinach/commit/545574700812eb369b9537370f085ec9e5c3f01a) | Yes | No | No | No | No | None | S | - |
-| trizen | Perl | Yes | Yes | Yes [[9]](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | Yes | Yes [[10]](https://github.com/trizen/trizen/commit/3c94434c66ede793758f2bf7de84d68e3174e2ac) | Yes [[11]](https://github.com/trizen/trizen/commit/6fb0cc9e0ab66b8cca9493b0618ba4bab5fd2252) | None | P | AUR comments |
+| PKGBUILDer | Python | Optional | Yes | Yes | Yes | Partial [[3]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | None | P | Automatic builds by default, use `-F` to disable; multilingual |
+| prm | Bash | Yes [[4]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds, ABS support |
+| repoctl | Go | Yes | N/A | Yes [[5]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/A | N/A | No | zsh | S | No automatic builds, local repository support |
+| spinach | Bash | Yes [[6]](https://github.com/floft/spinach/commit/545574700812eb369b9537370f085ec9e5c3f01a) | Yes | No | No | No | No | None | S | - |
+| trizen | Perl | Yes | Yes | Yes [[7]](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | Yes | Yes [[8]](https://github.com/trizen/trizen/commit/3c94434c66ede793758f2bf7de84d68e3174e2ac) | Yes [[9]](https://github.com/trizen/trizen/commit/6fb0cc9e0ab66b8cca9493b0618ba4bab5fd2252) | None | P | AUR comments |
 | wrapaur | Bash | Yes | Yes | No | No | No | Yes | None | S | Mirror updates, print news and AUR comments |
 | yaah | Bash | Yes | N/A | Yes | N/A | N/A | Optional | bash | S | No automatic builds |
-| yaourt | Bash/C | No (*yaourt -Si*) [[12]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[13]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | No [[14]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No [[15]](https://github.com/archlinuxfr/yaourt/issues/186) | No [[16]](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | bash/zsh/fish | P | Backup, ABS support, AUR comments, multilingual |
+| yaourt | Bash/C | No (*yaourt -Si*) [[10]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[11]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | No [[12]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No [[13]](https://github.com/archlinuxfr/yaourt/issues/186) | No [[14]](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | bash/zsh/fish | P | Backup, ABS support, AUR comments, multilingual |
 | yay | Go | Yes | Yes | Yes | No | Partial | No | bash/zsh/fish | P | sort by votes |
 
-**Note:** [Pacman](/index.php/Pacman "Pacman") 4.2\. introduced architecture specific fields. [[17]](http://allanmcrae.com/2014/12/pacman-4-2-released/) However, as of 06 April 2016, [AurJson](/index.php/AurJson "AurJson") combines all entries in a single field: [FS#48796](https://bugs.archlinux.org/task/48796). Helpers relying on the RPC may use the below workarounds to retrieve dependencies:
+**Note:** [Pacman](/index.php/Pacman "Pacman") 4.2\. introduced architecture specific fields. [[15]](http://allanmcrae.com/2014/12/pacman-4-2-released/) However, as of 06 April 2016, [AurJson](/index.php/AurJson "AurJson") combines all entries in a single field: [FS#48796](https://bugs.archlinux.org/task/48796). Helpers relying on the RPC may use the below workarounds to retrieve dependencies:
 
-*   [bauerbill](https://aur.archlinux.org/packages/bauerbill/) [[18]](https://bbs.archlinux.org/viewtopic.php?pid=1617235#p1617235), [pkgbuilder](https://aur.archlinux.org/packages/pkgbuilder/) [[19]](https://github.com/Kwpolska/pkgbuilder/blob/65d9d74ef05f8996b81afb1cd005e3c337afa8b2/pkgbuilder/build.py#L198): Retrieve specific fields from [.SRCINFO](/index.php/.SRCINFO ".SRCINFO")
-*   [aurutils](https://aur.archlinux.org/packages/aurutils/) [[20]](https://github.com/AladW/aurutils/issues/80), [pacaur](https://aur.archlinux.org/packages/pacaur/) [[21]](https://github.com/rmarquis/pacaur/issues/465), [trizen](https://aur.archlinux.org/packages/trizen/) [[22]](https://github.com/trizen/trizen/commit/6a8ff9dc8cc83af783b8475dfbe89988dbc8a553): Strip the `lib32-` prefix on `i686` systems
+*   [bauerbill](https://aur.archlinux.org/packages/bauerbill/) [[16]](https://bbs.archlinux.org/viewtopic.php?pid=1617235#p1617235), [pkgbuilder](https://aur.archlinux.org/packages/pkgbuilder/) [[17]](https://github.com/Kwpolska/pkgbuilder/blob/65d9d74ef05f8996b81afb1cd005e3c337afa8b2/pkgbuilder/build.py#L198): Retrieve specific fields from [.SRCINFO](/index.php/.SRCINFO ".SRCINFO")
+*   [aurutils](https://aur.archlinux.org/packages/aurutils/) [[18]](https://github.com/AladW/aurutils/issues/80), [pacaur](https://aur.archlinux.org/packages/pacaur/) [[19]](https://github.com/rmarquis/pacaur/issues/465), [trizen](https://aur.archlinux.org/packages/trizen/) [[20]](https://github.com/trizen/trizen/commit/6a8ff9dc8cc83af783b8475dfbe89988dbc8a553): Strip the `lib32-` prefix on `i686` systems

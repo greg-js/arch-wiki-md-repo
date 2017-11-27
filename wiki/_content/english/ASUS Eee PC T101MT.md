@@ -11,12 +11,12 @@
 | Touchscreen | **Working** | 3.0.0 |
 | Multi-Touch | **Working** |
 
+The [ASUS Eee PC T101MT](https://www.asus.com/Laptops/Eee_PC_T101MT/) is a 10.1" laptop with an Intel Atom N450 processor.
+
 ## Contents
 
 *   [1 Installing Arch](#Installing_Arch)
-    *   [1.1 Camera](#Camera)
-    *   [1.2 Function Keys](#Function_Keys)
-    *   [1.3 Installing OpenBox](#Installing_OpenBox)
+    *   [1.1 Function Keys](#Function_Keys)
 *   [2 Rotating the touch screen](#Rotating_the_touch_screen)
     *   [2.1 Xbindkeys](#Xbindkeys)
     *   [2.2 On Screen Keyboard](#On_Screen_Keyboard)
@@ -30,49 +30,6 @@
 ## Installing Arch
 
 This wiki page supplements these pages: [Installation guide](/index.php/Installation_guide "Installation guide") and [ASUS Eee PC 701](/index.php/ASUS_Eee_PC_701 "ASUS Eee PC 701"). Please refer to those guides *first* before following the eeepc-specific pointers on this page.
-
-### Camera
-
-Is working fine with Ekiga
-
-If Skype displays the image upside-down
-to fix this use command:
-
-for x86_x64
-
-```
-LD_PRELOAD=/usr/lib32/libv4l/v4l1compat.so skype
-
-```
-
-for i686
-
-```
-LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so skype
-
-```
-
-To make this happen automatically just create a script named skyp (or anything you want it to be)
-
-```
-#!/bin/bash
-
-#get the architecture of the system
-arch=`uname -m`
-
-#corrects upside down webcam in skype
-case $arch in
-     x86_64)
-       LD_PRELOAD=/usr/lib32/libv4l/v4l1compat.so skype;
-       ;;
-     i686)
-       LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so skype;
-       ;;
-esac
-
-```
-
-Save this script as "skyp" and '#chmod +x skyp'. Move this script to '/usr/bin/' with '#mv skyp /usr/bin/'. From now on typing in skyp should load skype with the proper webcam orientation.
 
 ### Function Keys
 
@@ -101,10 +58,6 @@ In openbox, editting ~/.config/rc.xml and appending (under <keyboard>); this was
 ```
 
 will make the audio keys work if alsa is installed.
-
-### Installing OpenBox
-
-OpenBox can be installed by issuing #pacman -S openbox. Follow the instructions on screen to copy the openbox scripts to '~/.config/openbox/'.
 
 ## Rotating the touch screen
 

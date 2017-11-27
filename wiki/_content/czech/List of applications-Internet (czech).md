@@ -11,23 +11,21 @@
         *   [1.1.1 Konzole](#Konzole)
         *   [1.1.2 Grafické rozhraní](#Grafick.C3.A9_rozhran.C3.AD)
     *   [1.2 eDonkey Clients](#eDonkey_Clients)
-    *   [1.3 eMoney](#eMoney)
-        *   [1.3.1 Bitcoin](#Bitcoin)
-    *   [1.4 Chatovací klienti](#Chatovac.C3.AD_klienti)
-        *   [1.4.1 Multiprotokoloví klienti](#Multiprotokolov.C3.AD_klienti)
-            *   [1.4.1.1 Konzole](#Konzole_2)
-            *   [1.4.1.2 Grafické rozhraní](#Grafick.C3.A9_rozhran.C3.AD_2)
-        *   [1.4.2 Jabber/XMPP klienti](#Jabber.2FXMPP_klienti)
-            *   [1.4.2.1 Konzole](#Konzole_3)
-            *   [1.4.2.2 Grafické rozhraní](#Grafick.C3.A9_rozhran.C3.AD_3)
-        *   [1.4.3 IRC klienti](#IRC_klienti)
-            *   [1.4.3.1 Konzole](#Konzole_4)
-            *   [1.4.3.2 Grafické rozhraní](#Grafick.C3.A9_rozhran.C3.AD_4)
-    *   [1.5 Softphone](#Softphone)
-        *   [1.5.1 Klienti](#Klienti)
-        *   [1.5.2 Nástroje](#N.C3.A1stroje)
-    *   [1.6 Prohlížeče](#Prohl.C3.AD.C5.BEe.C4.8De)
-    *   [1.7 Emailoví klienti](#Emailov.C3.AD_klienti)
+    *   [1.3 Chatovací klienti](#Chatovac.C3.AD_klienti)
+        *   [1.3.1 Multiprotokoloví klienti](#Multiprotokolov.C3.AD_klienti)
+            *   [1.3.1.1 Konzole](#Konzole_2)
+            *   [1.3.1.2 Grafické rozhraní](#Grafick.C3.A9_rozhran.C3.AD_2)
+        *   [1.3.2 Jabber/XMPP klienti](#Jabber.2FXMPP_klienti)
+            *   [1.3.2.1 Konzole](#Konzole_3)
+            *   [1.3.2.2 Grafické rozhraní](#Grafick.C3.A9_rozhran.C3.AD_3)
+        *   [1.3.3 IRC klienti](#IRC_klienti)
+            *   [1.3.3.1 Konzole](#Konzole_4)
+            *   [1.3.3.2 Grafické rozhraní](#Grafick.C3.A9_rozhran.C3.AD_4)
+    *   [1.4 Softphone](#Softphone)
+        *   [1.4.1 Klienti](#Klienti)
+        *   [1.4.2 Nástroje](#N.C3.A1stroje)
+    *   [1.5 Prohlížeče](#Prohl.C3.AD.C5.BEe.C4.8De)
+    *   [1.6 Emailoví klienti](#Emailov.C3.AD_klienti)
 
 ## Internet
 
@@ -102,24 +100,6 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 *   **KaMule** — Grafický front-end z prostředí KDE pro aMule
 
 	[http://kde-apps.org/content/show.php?content=150270](http://kde-apps.org/content/show.php?content=150270) || [kamule](https://aur.archlinux.org/packages/kamule/)
-
-### eMoney
-
-#### Bitcoin
-
-Viz hlavní článek: [Bitcoin](/index.php/Bitcoin "Bitcoin").
-
-*   **Armory** — Bitcoin klient s funkcemi jako např. podpora několika správců hesel, import klíčů a zálohování
-
-	[https://github.com/etotheipi/BitcoinArmory](https://github.com/etotheipi/BitcoinArmory) || [armory-git](https://aur.archlinux.org/packages/armory-git/)
-
-*   **[Bitcoin](/index.php/Bitcoin "Bitcoin")** — Oficiální nástroj pro správu Bitcoinů, P2P měny
-
-	[http://bitcoin.org/](http://bitcoin.org/) || [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon) [bitcoin-qt](https://www.archlinux.org/packages/?name=bitcoin-qt)
-
-*   **Electrum** — Snadno použitelný Bitcoin klient.
-
-	[http://electrum.org/](http://electrum.org/) || [electrum](https://www.archlinux.org/packages/?name=electrum)
 
 ### Chatovací klienti
 

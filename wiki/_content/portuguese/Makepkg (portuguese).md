@@ -223,7 +223,7 @@ $ makepkg -s
 
 ```
 
-Note que essas dependências devem estar disponíveis nos repositórios configurados, consulte [pacman (Português)#Repositórios](/index.php/Pacman_(Portugu%C3%AAs)#Reposit.C3.B3rios "Pacman (Português)") para detalhes. Alternativa para instalação manual de dependência antes da construção (`pacman -S --asdeps dep1 dep2`).
+Note que essas dependências devem estar disponíveis nos repositórios configurados, consulte [pacman (Português)#Repositórios e espelhos](/index.php/Pacman_(Portugu%C3%AAs)#Reposit.C3.B3rios_e_espelhos "Pacman (Português)") para detalhes. Alternativa para instalação manual de dependência antes da construção (`pacman -S --asdeps dep1 dep2`).
 
 Uma vez que todas as dependências estão satisfeita e os pacotes construídos, um arquivo de pacote (`pkgname-pkgver.pkg.tar.xz`) será criado no diretório. Para instalação, como root:
 

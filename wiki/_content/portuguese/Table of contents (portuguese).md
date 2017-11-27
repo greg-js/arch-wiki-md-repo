@@ -14,7 +14,7 @@
 | <small>4.1.</small> [Graphics](/index.php/Category:Graphics_(Portugu%C3%AAs) "Category:Graphics (Português)") <small>(1)</small> |
 | <small>4.2.</small> [Sound](/index.php/Category:Sound_(Portugu%C3%AAs) "Category:Sound (Português)") <small>(3)</small> |
 | <small>5.</small> [HOWTOs](/index.php/Category:HOWTOs_(Portugu%C3%AAs) "Category:HOWTOs (Português)") <small>(6)</small> |
-| <small>6.</small> [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)") <small>(2)</small> |
+| <small>6.</small> [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)") <small>(1)</small> |
 | <small>6.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System_(Portugu%C3%AAs) "Category:Domain Name System (Português)") <small>(2)</small> |
 | <small>6.2.</small> [Internet applications](/index.php/Category:Internet_applications_(Portugu%C3%AAs) "Category:Internet applications (Português)") <small>(1)</small> |
 | <small>6.2.1.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat_(Portugu%C3%AAs) "Category:Internet Relay Chat (Português)") <small>(2)</small> |

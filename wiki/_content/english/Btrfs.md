@@ -560,7 +560,7 @@ See [Btrfsck](https://btrfs.wiki.kernel.org/index.php/Btrfsck) for more informat
     *   [Btrfs Wiki](https://btrfs.wiki.kernel.org/)
 *   **Performance related**
     *   [Btrfs on raw disks?](http://superuser.com/questions/432188/should-i-put-my-multi-device-btrfs-filesystem-on-disk-partitions-or-raw-devices)
-    *   [Varying leafsize and nodesize in Btrfs](http://comments.gmane.org/gmane.comp.file-systems.btrfs/19440)
+    *   [Varying leafsize and nodesize in Btrfs](https://www.spinics.net/lists/linux-btrfs/msg18652.html)
     *   [Btrfs support for efficient SSD operation (data blocks alignment)](http://comments.gmane.org/gmane.comp.file-systems.btrfs/15646)
     *   [Is Btrfs optimized for SSDs?](https://btrfs.wiki.kernel.org/index.php/FAQ#Is_Btrfs_optimized_for_SSD.3F)
     *   **Phoronix mount option benchmarking**

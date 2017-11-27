@@ -1,3 +1,9 @@
+Artigos relacionados
+
+*   [CD Burning](/index.php/CD_Burning "CD Burning")
+*   [Archiso](/index.php/Archiso "Archiso")
+*   [Multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive")
+
 ##### Método *nix
 
 Insira um dispositivo flash vazio ou expansível, determine o seu caminho, e grave o ISO para o dispositivo com o programa `dd`:

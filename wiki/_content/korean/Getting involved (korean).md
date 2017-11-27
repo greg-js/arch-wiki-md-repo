@@ -12,8 +12,7 @@
     *   [1.5 버그(bug) 보고 및 수정](#.EB.B2.84.EA.B7.B8.28bug.29_.EB.B3.B4.EA.B3.A0_.EB.B0.8F_.EC.88.98.EC.A0.95)
     *   [1.6 AUR 패키지를 만들거나 승인(adoption)하기](#AUR_.ED.8C.A8.ED.82.A4.EC.A7.80.EB.A5.BC_.EB.A7.8C.EB.93.A4.EA.B1.B0.EB.82.98_.EC.8A.B9.EC.9D.B8.28adoption.29.ED.95.98.EA.B8.B0)
     *   [1.7 공식 소프트웨어 프로젝트들](#.EA.B3.B5.EC.8B.9D_.EC.86.8C.ED.94.84.ED.8A.B8.EC.9B.A8.EC.96.B4_.ED.94.84.EB.A1.9C.EC.A0.9D.ED.8A.B8.EB.93.A4)
-    *   [1.8 행사에 참여하기](#.ED.96.89.EC.82.AC.EC.97.90_.EC.B0.B8.EC.97.AC.ED.95.98.EA.B8.B0)
-    *   [1.9 재정적 기부](#.EC.9E.AC.EC.A0.95.EC.A0.81_.EA.B8.B0.EB.B6.80)
+    *   [1.8 재정적 기부](#.EC.9E.AC.EC.A0.95.EC.A0.81_.EA.B8.B0.EB.B6.80)
 *   [2 자주 묻는 질문과 그 답변](#.EC.9E.90.EC.A3.BC_.EB.AC.BB.EB.8A.94_.EC.A7.88.EB.AC.B8.EA.B3.BC_.EA.B7.B8_.EB.8B.B5.EB.B3.80)
     *   [2.1 어떻게 하면 아치 개발자가 될 수 있을까?](#.EC.96.B4.EB.96.BB.EA.B2.8C_.ED.95.98.EB.A9.B4_.EC.95.84.EC.B9.98_.EA.B0.9C.EB.B0.9C.EC.9E.90.EA.B0.80_.EB.90.A0_.EC.88.98_.EC.9E.88.EC.9D.84.EA.B9.8C.3F)
     *   [2.2 어떻게 하면 신뢰받는 사용자(Trusted User)가 될 수 있을까?](#.EC.96.B4.EB.96.BB.EA.B2.8C_.ED.95.98.EB.A9.B4_.EC.8B.A0.EB.A2.B0.EB.B0.9B.EB.8A.94_.EC.82.AC.EC.9A.A9.EC.9E.90.28Trusted_User.29.EA.B0.80_.EB.90.A0_.EC.88.98_.EC.9E.88.EC.9D.84.EA.B9.8C.3F)
@@ -52,10 +51,6 @@
 ### 공식 소프트웨어 프로젝트들
 
 [공식 아치 리눅스 소프트웨어 프로젝트들](https://git.archlinux.org/)의 개발에 참여하는 것도 가능하다.
-
-### 행사에 참여하기
-
-버그 수정, 번역과 손질(cleanup) 등을 위한 연례 및 월례 행사들에 참여해 보자. 다가오는 행사 일정은 [아치 리눅스 행사 달력](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar")에서 확인 가능하다.
 
 ### 재정적 기부
 

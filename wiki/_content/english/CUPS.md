@@ -39,8 +39,6 @@ Related articles
 
 [Install](/index.php/Install "Install") the [cups](https://www.archlinux.org/packages/?name=cups) package.
 
-For GTK3 printing support, see [Gtk#Printers not shown in the GTK print dialog](/index.php/Gtk#Printers_not_shown_in_the_GTK_print_dialog "Gtk").
-
 If you intend to "print" into a PDF document, also install the [cups-pdf](https://www.archlinux.org/packages/?name=cups-pdf) package. By default, pdf files are stored in `/var/spool/cups-pdf/$USER`. The location can be changed in `/etc/cups/cups-pdf.conf`.
 
 [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `org.cups.cupsd.service`.

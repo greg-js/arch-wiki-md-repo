@@ -58,7 +58,7 @@ Suspend to disk: OK.
 CPU frequency scaling: untested | Untested | Hot keys: web, mail, and wireless work. Blue *e* on the left: not working
 Synaptic touchpad: OK
  | Not everything worked fine on fresh installation. Requires some work. |
-| Aspire 5735z [[1]](http://panam.acer.com/acerpanam/notebook/0000/Acer/Aspire5735Z/Aspire5735Zsp3.shtml) | archlinux-2014.09.03-dual | Intel GMA 4500M | OK | OK | OK | Untested | Suspend to RAM: OK.
+| Aspire 5735z | archlinux-2014.09.03-dual | Intel GMA 4500M | OK | OK | OK | Untested | Suspend to RAM: OK.
 Suspend to disk: OK.
 CPU frequency scaling: untested | Untested | Hot keys: OK (except Bluetooth: untested)
 Synaptic Touchpad: OK |

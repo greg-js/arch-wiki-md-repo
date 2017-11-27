@@ -1,6 +1,5 @@
 相关文章
 
-*   [Android notifier](/index.php/Android_notifier "Android notifier")
 *   [Android tethering](/index.php/Android_tethering "Android tethering")
 
 **翻译状态：** 本文是英文页面 [Android](/index.php/Android "Android") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-26，点击[这里](https://wiki.archlinux.org/index.php?title=Android&diff=0&oldid=451481)可以查看翻译后英文页面的改动。

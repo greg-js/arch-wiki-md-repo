@@ -15,14 +15,14 @@
 | <small>8.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Getting and installing Arch (Ελληνικά)") <small>(3)</small> |
 | <small>9.</small> [Hardware](/index.php/Category:Hardware_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Hardware (Ελληνικά)") <small>(0)</small> |
 | <small>9.1.</small> [CPU](/index.php/Category:CPU_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:CPU (Ελληνικά)") <small>(1)</small> |
-| <small>9.2.</small> [Graphics](/index.php/Category:Graphics_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Graphics (Ελληνικά)") <small>(1)</small> |
+| <small>9.2.</small> [Graphics](/index.php/Category:Graphics_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Graphics (Ελληνικά)") <small>(0)</small> |
 | <small>10.</small> [Networking](/index.php/Category:Networking_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Networking (Ελληνικά)") <small>(1)</small> |
 | <small>10.1.</small> [Firewalls](/index.php/Category:Firewalls_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Firewalls (Ελληνικά)") <small>(1) (επίσης σε [Security](/index.php/Category:Security_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Security (Ελληνικά)"))</small> |
 | <small>10.2.</small> [Wireless networking](/index.php/Category:Wireless_networking_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Wireless networking (Ελληνικά)") <small>(1)</small> |
 | <small>11.</small> [Package development](/index.php/Category:Package_development_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Package development (Ελληνικά)") <small>(3)</small> |
 | <small>12.</small> [Package management](/index.php/Category:Package_management_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Package management (Ελληνικά)") <small>(4)</small> |
 | <small>13.</small> [Software](/index.php/Category:Software_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Software (Ελληνικά)") <small>(0)</small> |
-| <small>13.1.</small> [X server](/index.php/Category:X_server_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:X server (Ελληνικά)") <small>(4)</small> |
+| <small>13.1.</small> [X server](/index.php/Category:X_server_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:X server (Ελληνικά)") <small>(3)</small> |
 | <small>14.</small> [System administration](/index.php/Category:System_administration_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:System administration (Ελληνικά)") <small>(0)</small> |
 | <small>14.1.</small> [Audio/Video](/index.php/Category:Audio/Video_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Audio/Video (Ελληνικά)") <small>(2)</small> |
 | <small>14.2.</small> [Desktop environments](/index.php/Category:Desktop_environments_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Desktop environments (Ελληνικά)") <small>(0)</small> |

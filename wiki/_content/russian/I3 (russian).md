@@ -183,16 +183,6 @@ exec --no-startup-id xfce4-panel --disable-wm-check
 
 ```
 
-В качестве альтернативы используйте `startx`, это может быть сделано в вашем [xinitrc](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)"):
-
- `~/.xinitrc` 
-```
-xfce4-panel --disable-wm-check &
-
-```
-
-**Примечание:** Особенности панелей, которые являются специфическими к [Окружению рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") (например, виджеты для управления рабочими пространствами/сессиями) скорее всего не будут работать, хотя функциональность i3 должна оставаться неизменной.
-
 Можно отключить i3bar закомментировав секцию `bar{ }` в `~/.config/i3/config` или используя:
 
  `~/.config/i3/config` 
@@ -328,7 +318,7 @@ $ export TERMINAL=*Ваш Терминал*
 
 ### Быстро перейти к необходимому окну
 
-Добавьте в`.i3/config`: [[4]](https://faq.i3wm.org/question/853/how-to-jump-to-urgent-workspace/)
+Добавьте в`.i3/config`: [[3]](https://faq.i3wm.org/question/853/how-to-jump-to-urgent-workspace/)
 
 ```
 bindsym $mod+x [urgent=latest] focus
@@ -412,7 +402,7 @@ chmod u+x ~/load_layout.sh
 
 **Совет:** При использовании только терминальных приложений, рассмотрим мультиплексор, такой как [tmux](/index.php/Tmux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Tmux (Русский)").
 
-Смотрите также [[5]](https://faq.i3wm.org/question/138/multiple-scratchpad/i3).
+Смотрите также [[4]](https://faq.i3wm.org/question/138/multiple-scratchpad/i3).
 
 ### Хранитель экрана и управление питанием
 
@@ -468,10 +458,10 @@ bindsym $mod+Pause mode "$mode_system"
 
 **Примечание:**
 
-*   `sleep 1` adds a small delay to prevent possible race conditions with suspend [[6]](https://bugs.launchpad.net/ubuntu/+source/unity-2d/+bug/830348)
-*   The `-i` argument for `systemctl poweroff` causes a shutdown even if other users are logged-in (this requires [polkit](https://www.archlinux.org/packages/?name=polkit)), or when *logind* (wrongly) assumes so. [[7]](https://bugs.freedesktop.org/show_bug.cgi?id=62676)
+*   `sleep 1` adds a small delay to prevent possible race conditions with suspend [[5]](https://bugs.launchpad.net/ubuntu/+source/unity-2d/+bug/830348)
+*   The `-i` argument for `systemctl poweroff` causes a shutdown even if other users are logged-in (this requires [polkit](https://www.archlinux.org/packages/?name=polkit)), or when *logind* (wrongly) assumes so. [[6]](https://bugs.freedesktop.org/show_bug.cgi?id=62676)
 *   If you use [xss-lock-git](https://aur.archlinux.org/packages/xss-lock-git/), call `xset s activate` to start the locker. With [xautolock](https://www.archlinux.org/packages/?name=xautolock) the command is `xautolock -locknow`
-*   Вы можете использовать отдельный скрипт для более сложного поведения, и ссылаться на него в режиме. Смотрите [[8]](https://gist.github.com/anonymous/c8cd0a59bf4acb273068) для примера.
+*   Вы можете использовать отдельный скрипт для более сложного поведения, и ссылаться на него в режиме. Смотрите [[7]](https://gist.github.com/anonymous/c8cd0a59bf4acb273068) для примера.
 
 Для получения альтернативных блокировщиков экрана, смотрите [этот список](/index.php/List_of_applications/Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.91.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0 "List of applications/Security (Русский)").
 
@@ -497,7 +487,7 @@ for_window [class="Uzbl-core"] focus child, layout tabbed, focus
 
 ### Переменные рабочих областей
 
-Так как рабочих областей в i3 определено много, будет полезно присвоить переменные рабочим областям. Например [[9]](https://github.com/dkeg/bloat2.0/blob/master/i3config#L55):
+Так как рабочих областей в i3 определено много, будет полезно присвоить переменные рабочим областям. Например [[8]](https://github.com/dkeg/bloat2.0/blob/master/i3config#L55):
 
 ```
 set $WS1 term
@@ -579,7 +569,7 @@ $ find /sys/devices -name *network_interface*
 
 ### Общее
 
-Во многих случаях, ошибки фиксируются в разрабатываемой версии [i3-git](https://aur.archlinux.org/packages/i3-git/) (из [AUR](/index.php/AUR "AUR")) и в апстриме попросят воспроизвести какие-либо ошибки в этой версии. [[10]](http://i3wm.org/docs/debugging.html) Смотрите также [Debug - Getting Traces#General](/index.php/Debug_-_Getting_Traces#General "Debug - Getting Traces").
+Во многих случаях, ошибки фиксируются в разрабатываемой версии [i3-git](https://aur.archlinux.org/packages/i3-git/) (из [AUR](/index.php/AUR "AUR")) и в апстриме попросят воспроизвести какие-либо ошибки в этой версии. [[9]](http://i3wm.org/docs/debugging.html) Смотрите также [Debug - Getting Traces#General](/index.php/Debug_-_Getting_Traces#General "Debug - Getting Traces").
 
 ### Кнопки в строке сообщений i3 не работают
 
@@ -587,7 +577,7 @@ $ find /sys/devices -name *network_interface*
 
 ### Неисправная строка оболочки в тайловом терминале
 
-i3 v4.3 и выше игнорирует размер инкремента подсказки для тайловых окон [[11]](https://www.mail-archive.com/i3-discuss@i3.zekjur.net/msg00709.html). This may cause terminals to wrap lines prematurely, amongst other issues. As a workaround, make the offending window floating, before tiling it again.
+i3 v4.3 и выше игнорирует размер инкремента подсказки для тайловых окон [[10]](https://www.mail-archive.com/i3-discuss@i3.zekjur.net/msg00709.html). This may cause terminals to wrap lines prematurely, amongst other issues. As a workaround, make the offending window floating, before tiling it again.
 
 ### Курсор мыши остается в режиме ожидания
 
@@ -605,7 +595,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 
 ### Не реагируют сочетания клавиш
 
-Некоторые утилиты, такие как [scrot](/index.php/Taking_a_screenshot#scrot "Taking a screenshot") могут не работать при использовании регулярных горячих клавиш (выполнятся после нажатия клавиш). В таких случаях, выполняйте команду после ключа "освобождения" с параметром `--release` [[12]](http://i3wm.org/docs/userguide.html#keybindings):
+Некоторые утилиты, такие как [scrot](/index.php/Taking_a_screenshot#scrot "Taking a screenshot") могут не работать при использовании регулярных горячих клавиш (выполнятся после нажатия клавиш). В таких случаях, выполняйте команду после ключа "освобождения" с параметром `--release` [[11]](http://i3wm.org/docs/userguide.html#keybindings):
 
 ```
 bindsym --release Print exec --no-startup-id scrot
@@ -615,7 +605,7 @@ bindsym --release Shift+Print exec --no-startup-id scrot -s
 
 ### Тиринг (разрыв картинки по горизонтали)
 
-i3 [не должным образом осуществляет двойную буферизацию](https://github.com/i3/i3/issues/661) следовательно, может появится тиринг или мерцание. Чтобы предотвратить это, установите и настройте [compton](/index.php/Compton_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Compton (Русский)"). [[13]](https://faq.i3wm.org/question/3279/do-i-need-a-composite-manager-compton/?answer=3282#post-id-3282)
+i3 [не должным образом осуществляет двойную буферизацию](https://github.com/i3/i3/issues/661) следовательно, может появится тиринг или мерцание. Чтобы предотвратить это, установите и настройте [compton](/index.php/Compton_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Compton (Русский)"). [[12]](https://faq.i3wm.org/question/3279/do-i-need-a-composite-manager-compton/?answer=3282#post-id-3282)
 
 ## Смотри также
 

@@ -1,29 +1,3 @@
-## Contents
+Redirect to:
 
-*   [1 About](#About)
-    *   [1.1 When?](#When.3F)
-    *   [1.2 Where?](#Where.3F)
-    *   [1.3 Who?](#Who.3F)
-*   [2 See also](#See_also)
-
-## About
-
-Bug Day is a day dedicated to raising awareness about our overflowing [bug tracker](https://bugs.archlinux.org/). The goal of the day is to get the community involved in trying to help us eliminate as many bugs as possible.
-
-### When?
-
-Bug Day happens whenever a developer gets bored.
-
-### Where?
-
-The bugs themselves are documented on the [bug tracker](https://bugs.archlinux.org)
-
-Discussion about the bugs should be taking place in **#archlinux-bugs** on [IRC](/index.php/IRC "IRC"). We will try to have at least one developer active during bug day.
-
-### Who?
-
-**Everyone** is allowed, invited, and encouraged to participate in Bug Day.
-
-## See also
-
-*   [Arch Linux Event Calendar](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar")
+*   [ArchWiki:Archive](/index.php/ArchWiki:Archive "ArchWiki:Archive")

@@ -1,4 +1,4 @@
-This page includes general information regarding Asus EEE PC 1015b and related notes on installing/using Arch Linux on it.
+This page includes general information regarding [Asus EEE PC 1015B](https://www.asus.com/Laptops/Eee_PC_1015B/) and related notes on installing/using Arch Linux on it.
 
 ## Contents
 

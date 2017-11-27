@@ -1,14 +1,13 @@
 Articoli correlati
 
 *   [Intel GMA3600](/index.php/Intel_GMA3600 "Intel GMA3600")
-*   [Poulsbo](/index.php/Poulsbo "Poulsbo")
 *   [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)")
 
 Da quando Intel fornisce e sviluppa driver open source, le schede video Intel sono essenzialmente plug-and-play.
 
 Per un elenco completo dei modelli GPU-Intel e dei corrispondenti chipset e CPU, si veda [questo confronto su wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units").
 
-**Nota:** Le schede basate su chip PowerVR (serie [GMA 500](/index.php/Poulsbo "Poulsbo") e [GMA 3600](/index.php/Intel_GMA3600 "Intel GMA3600")) non sono supportate dai driver opensource
+**Nota:** Le schede basate su chip PowerVR (serie [GMA 3600](/index.php/Intel_GMA3600 "Intel GMA3600")) non sono supportate dai driver opensource
 
 ## Contents
 

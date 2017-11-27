@@ -1,5 +1,13 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"). Дата последней синхронизации: 2 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=423687).
 
+Ссылки по теме
+
+*   [Указания по созданию отчета об ошибке](/index.php/%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B8%D1%8F_%D0%BF%D0%BE_%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E_%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%B0_%D0%BE%D0%B1_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B5 "Указания по созданию отчета об ошибке")
+*   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
+*   [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces")
+*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
+*   [IRC Collaborative Debugging](/index.php/IRC_Collaborative_Debugging "IRC Collaborative Debugging")
+
 General troubleshooting - Устранение общих неполадок в системе. Эта статья дает советы по устранению общих проблем. Для решения проблем, связанных с конкретной программой, посетите соответствующую страницу Wiki.
 
 ## Contents

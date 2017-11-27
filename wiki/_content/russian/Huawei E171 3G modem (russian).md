@@ -1,3 +1,9 @@
+Ссылки по теме
+
+*   [wvdial](/index.php/Wvdial "Wvdial")
+*   [Direct Modem Connection](/index.php/Direct_Modem_Connection "Direct Modem Connection")
+*   [3G and GPRS modems with pppd](/index.php/3G_and_GPRS_modems_with_pppd "3G and GPRS modems with pppd")
+
 Это не статья, скорее небольшая заметка по использованию модема Huawei E171 без NetworkManager. Подключение осуществляется с помощью утилиты gnome-ppp, вместо которой можно использовать консольную утилиту wvdial.
 
 ## Contents

@@ -210,7 +210,7 @@ Runtime hooks - хуки выполняемые в initramfs. Располага
  | -- |
 | **udev** | **systemd** | Добавляет udev в образ ram-диска | Udev автоматически создает файл устройства для корня и загружает необходимые модули для его работы. Рекомендуется использовать. |
 | **usr** | Добавляет поддержку отделного `/usr` раздела. | Монтирует раздел `/usr` после монтирования корневой файловой системы. |
-| **resume** | -- | Необходим для работы спящего режима (suspend to disk). Работает с *swsusp* и *[TuxOnIce](/index.php/TuxOnIce "TuxOnIce")*. Хук **systemd** поддерживает только *swsusp*. См. [Hibernation](/index.php/Hibernation "Hibernation"). |
+| **resume** | -- | Необходим для работы спящего режима (suspend to disk). Работает с *swsusp*. Хук **systemd** поддерживает только *swsusp*. См. [Hibernation](/index.php/Hibernation "Hibernation"). |
 | **btrfs** | -- | Sets the required modules to enable [Btrfs](/index.php/Btrfs "Btrfs") for using multiple devices with Btrfs. This hook is not required for using Btrfs on a single device. | Runs `btrfs device scan` to assemble a multi-device Btrfs root file system when **udev** hook or **systemd** hook is not present. The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package is required for this hook. |
 | **autodetect** | меньшает размер initramfs пытаясь определить какие модули вам нужны. Проверьте список модулей которые он добавил. Он должен запускаться раньше других подсистем. Все обработчики выполняемые до него будут включать все модули. | -- |
 | **modconf** | Добавляет конфигурационные файлы modprobe `/etc/modprobe.d` и `/usr/lib/modprobe.d` | -- |

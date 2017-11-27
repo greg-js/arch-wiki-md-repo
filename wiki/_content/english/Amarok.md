@@ -1,7 +1,5 @@
 [Amarok](https://amarok.kde.org/) is a music player and organizer for Linux with an intuitive [Qt](/index.php/Qt "Qt") interface that integrates very well with [KDE](/index.php/KDE "KDE").
 
-Amarok 2 has not yet and will not implement all features from [Amarok 1.4](/index.php/Amarok_1.4 "Amarok 1.4")[[1]](http://amarok.kde.org/blog/archives/809-Missing-features-in-Amarok-2.html), so if you are not satisfied with the new version and would rather have the old one back, refer to that article.
-
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -42,15 +40,11 @@ Install [moodbar](https://aur.archlinux.org/packages/moodbar/) from the [AUR](/i
 
 Then go to *Settings > Configure Amarok* and check "Show moodbar in progress slider".
 
-**Note:** As of February 19th Amarok 2 does **not** generate moodfiles, you can either try to follow this tutorial [[2]](http://amarok.kde.org/wiki/Moodbar) to create them yourself or get Amarok1 from AUR and let it generate all the .mood files for you. For the Amarok1 solution go to *Settings > Configure Amarok*, and in the general tab check the "use moods" and "store moods data files with music" boxes.
+**Note:** As of February 19th Amarok 2 does **not** generate moodfiles, you can either try to follow this tutorial [[1]](http://amarok.kde.org/wiki/Moodbar) to create them yourself or get Amarok1 from AUR and let it generate all the .mood files for you. For the Amarok1 solution go to *Settings > Configure Amarok*, and in the general tab check the "use moods" and "store moods data files with music" boxes.
 
 ## SHOUTcast
 
-For reasons which have not been adequately explained Amarok developers have removed the SHOUTcast Internet radio features from version 2.1.90 onwards. See the [discussion page](/index.php/Talk:Amarok_2#Shoutcast "Talk:Amarok 2"), the forum [here](http://forum.kde.org/viewtopic.php?f=116&t=83718) and the thread starting [here](http://mail.kde.org/pipermail/amarok/2009-November/009696.html).
-
-You can get back SHOUTcast by using the "SHOUTcast service" script. Start Amarok, go *Tools > Script Manager > Get More Scripts*, search for *SHOUTcast* install *Shoutcast Service*, restart Amarok. Then you have it in "Internet" context.
-
-[Amarok 1.4](/index.php/Amarok_1.4 "Amarok 1.4") and [VLC](/index.php/VLC "VLC") continue to support the SHOUTcast Internet radio station index and streaming as before.
+To get SHOUTcast use the "SHOUTcast service" script. Start Amarok, go *Tools > Script Manager > Get More Scripts*, search for *SHOUTcast* install *Shoutcast Service*, restart Amarok. Then you have it in "Internet" context.
 
 See also: [How can I use Amarok to stream to my own radio station?](https://userbase.kde.org/Amarok/Manual/Various/FAQ/en#How_can_I_use_Amarok_to_stream_to_my_own_radio_station.3F), which recommends [Internet DJ Console](http://giss.tv/sahabuntu/doc/idjc.html), available in the AUR ([idjc](https://aur.archlinux.org/packages/idjc/)).
 

@@ -101,9 +101,9 @@ Arch-specific groups that you can engage in.
 
 	A Google Plus community for Arch Linux users to interact, post questions, or general Arch Linux news conversations.
 
-	[Arch Linux User Group](/index.php/Arch_Linux_User_Group "Arch Linux User Group")
+	[International communities](/index.php/International_communities "International communities")
 
-	Local meet-up for users.
+	Local communities and meet-up places for users.
 
 	[Arch Women](http://archwomen.org/)
 

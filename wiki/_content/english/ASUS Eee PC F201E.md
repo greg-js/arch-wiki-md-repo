@@ -1,17 +1,14 @@
-## Contents
-
-*   [1 Overview](#Overview)
-*   [2 Hardware Support](#Hardware_Support)
-    *   [2.1 Video](#Video)
-    *   [2.2 Audio](#Audio)
-        *   [2.2.1 No headphone sound](#No_headphone_sound)
-*   [3 References](#References)
-
-# Overview
-
-The Asus Eee PC F201E is a lightweight notebook/ultrabook which is similar to the [X201E](http://www.asus.com/Notebooks_Ultrabooks/X201E/). Apparently it is only sold in Germany.
+The Asus Eee PC F201E is a lightweight notebook/ultrabook which is similar to the [X201E](https://www.asus.com/Laptops/X201E/). Apparently it is only sold in Germany.
 
 The F201E has a 11.6" screen, and a 1.1 GHz Intel Celeron 847 processor. It comes with 4GB RAM, a 500GB hard disk drive, integrated Intel HD graphics, a HD web camera, and a 30 Watt 2-cell battery for up to 5 hours of usage.
+
+## Contents
+
+*   [1 Hardware Support](#Hardware_Support)
+    *   [1.1 Video](#Video)
+    *   [1.2 Audio](#Audio)
+        *   [1.2.1 No headphone sound](#No_headphone_sound)
+*   [2 References](#References)
 
 # Hardware Support
 

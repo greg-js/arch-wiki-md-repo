@@ -1,3 +1,8 @@
+Související články
+
+*   [Arch Build System (Česky)](/index.php/Arch_Build_System_(%C4%8Cesky) "Arch Build System (Česky)")
+*   [Creating Packages (Česky)](/index.php/Creating_Packages_(%C4%8Cesky) "Creating Packages (Česky)")
+
 `PKGBUILD` je textový soubor, ve kterém je přesně určeno, jak se bude vytvářet určitý binární balíček. Více [zde](/index.php/Creating_packages "Creating packages"). Tento článek pouze popisuje proměnné, které lze při vytváření tohoto souboru použít.
 
 ## Sestavování balíčků

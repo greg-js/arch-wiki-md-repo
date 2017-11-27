@@ -1,3 +1,10 @@
+Ссылки по теме
+
+*   [Laptop (Русский)](/index.php/Laptop_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Laptop (Русский)")
+*   [Pm-utils (Русский)](/index.php/Pm-utils_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pm-utils (Русский)")
+*   [CPU Frequency Scaling (Русский)](/index.php/CPU_Frequency_Scaling_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CPU Frequency Scaling (Русский)")
+*   [Laptop Mode Tools (Русский)](/index.php/Laptop_Mode_Tools_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Laptop Mode Tools (Русский)")
+
 Статья поможет дополнительно снизить энергопотребление и нагрев вашего компьютера с помощью Processor Hardware Control.
 
 ## Contents

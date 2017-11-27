@@ -60,7 +60,7 @@ For further information, please check the manpages or [the github repository](ht
 
 ## kGraft
 
-KGraft hasn't been tested in Arch environment, so is not supported as of this writing.
+KGraft hasn't been tested in Arch environment.
 
 ## See also
 

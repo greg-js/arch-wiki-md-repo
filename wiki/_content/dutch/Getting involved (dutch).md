@@ -65,8 +65,6 @@ Op lang termijn is het doel een professionele en gemakkelijk te navigeren wiki, 
 
 Bugs rapporten op de [Arch Linux Bugtracker](https://bugs.archlinux.org/) is een van de mogelijke manieren om de gemeenschap te helpen. Inefficiënt gebruik van de bug-tracker kan contraproductief zijn in plaats van nuttig. [Dit artikel](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") zal iedereen die aan de gemeenschap efficiënt helpen met het aanmelden of voor de jacht bugs.
 
-Zie ook: [Bug squashen Day](/index.php/Bug_Squashing_Day "Bug Squashing Day")
-
 ## AUR
 
 Het [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") is een community-gedreven repository van PKGBUILDs voor Arch gebruikers. Pakketten in de AUR worden gebouwd door de PKGBUILDs en zijn niet pre-built binary's, zoals uit de officiële repositories. De AUR is gemaakt om zich te organiseren en nieuwe pakketten te delen van de gemeenschap en om de populaire pakketten te versnellen.

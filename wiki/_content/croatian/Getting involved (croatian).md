@@ -9,8 +9,7 @@ U biologiji, mutualizam je interakcija između dvaju organizama od kojih svaki p
     *   [1.4 *Fix*evi i bug izvještaji](#Fixevi_i_bug_izvje.C5.A1taji)
     *   [1.5 Pravljanje i usvajanje AUR paketa](#Pravljanje_i_usvajanje_AUR_paketa)
     *   [1.6 Službeni softverski projekti](#Slu.C5.BEbeni_softverski_projekti)
-    *   [1.7 Sudjelovati u događanjima](#Sudjelovati_u_doga.C4.91anjima)
-    *   [1.8 Doniratinje novca](#Doniratinje_novca)
+    *   [1.7 Doniratinje novca](#Doniratinje_novca)
 *   [2 Projekti u zajednici](#Projekti_u_zajednici)
     *   [2.1 Grupe](#Grupe)
     *   [2.2 Software](#Software)
@@ -54,10 +53,6 @@ Možete pomoći sa kreiranjem i usvajanjem paketa.
 ### Službeni softverski projekti
 
 Možete se uključiti u razvoj [službenih Arch Linux programskih projekata](https://projects.archlinux.org/).
-
-### Sudjelovati u događanjima
-
-Postoje godišnji i mjesečni događaji za *bugfixing*, prevođenje i čišćenje. Možete pogledati nadolazeće događaje u [Arch Linux Kalendaru događanja](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar").
 
 ### Doniratinje novca
 

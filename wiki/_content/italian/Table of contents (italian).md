@@ -27,17 +27,17 @@
 | <small>4.</small> [Hardware](/index.php/Category:Hardware_(Italiano) "Category:Hardware (Italiano)") <small>(1)</small> |
 | <small>4.1.</small> [Bluetooth](/index.php/Category:Bluetooth_(Italiano) "Category:Bluetooth (Italiano)") <small>(1)</small> |
 | <small>4.2.</small> [CPU](/index.php/Category:CPU_(Italiano) "Category:CPU (Italiano)") <small>(3)</small> |
-| <small>4.3.</small> [Grafica](/index.php/Category:Graphics_(Italiano) "Category:Graphics (Italiano)") <small>(7)</small> |
+| <small>4.3.</small> [Grafica](/index.php/Category:Graphics_(Italiano) "Category:Graphics (Italiano)") <small>(6)</small> |
 | <small>4.4.</small> [Rilevamento Hardware e risoluzione dei problemi](/index.php/Category:Hardware_detection_and_troubleshooting_(Italiano) "Category:Hardware detection and troubleshooting (Italiano)") <small>(4)</small> |
 | <small>4.5.</small> [Fotografia](/index.php/Category:Imaging_(Italiano) "Category:Imaging (Italiano)") <small>(2)</small> |
 | <small>4.6.</small> [Dispositivi di input](/index.php/Category:Input_devices_(Italiano) "Category:Input devices (Italiano)") <small>(2)</small> |
 | <small>4.6.1.</small> [Tastiere](/index.php/Category:Keyboards_(Italiano) "Category:Keyboards (Italiano)") <small>(1)</small> |
 | <small>4.6.2.</small> [Mouse](/index.php/Category:Mice_(Italiano) "Category:Mice (Italiano)") <small>(1)</small> |
-| <small>4.7.</small> [Portatili](/index.php/Category:Laptops_(Italiano) "Category:Laptops (Italiano)") <small>(5)</small> |
-| <small>4.7.1.</small> [ASUS](/index.php/Category:ASUS_(Italiano) "Category:ASUS (Italiano)") <small>(1)</small> |
+| <small>4.7.</small> [Portatili](/index.php/Category:Laptops_(Italiano) "Category:Laptops (Italiano)") <small>(4)</small> |
+| <small>4.7.1.</small> [ASUS](/index.php/Category:ASUS_(Italiano) "Category:ASUS (Italiano)") <small>(0)</small> |
 | <small>4.8.</small> [Schede madre e BIOS](/index.php/Category:Mainboards_and_BIOS_(Italiano) "Category:Mainboards and BIOS (Italiano)") <small>(1)</small> |
 | <small>4.9.</small> [Modem](/index.php/Category:Modems_(Italiano) "Category:Modems (Italiano)") <small>(1)</small> |
-| <small>4.10.</small> [Altri componenti hardware](/index.php/Category:Other_hardware_(Italiano) "Category:Other hardware (Italiano)") <small>(3)</small> |
+| <small>4.10.</small> [Altri componenti hardware](/index.php/Category:Other_hardware_(Italiano) "Category:Other hardware (Italiano)") <small>(2)</small> |
 | <small>4.11.</small> [Stampanti](/index.php/Category:Printers_(Italiano) "Category:Printers (Italiano)") <small>(1)</small> |
 | <small>4.12.</small> [Suono](/index.php/Category:Sound_(Italiano) "Category:Sound (Italiano)") <small>(3)</small> |
 | <small>4.13.</small> [Storage](/index.php/Category:Storage_(Italiano) "Category:Storage (Italiano)") <small>(3)</small> |
@@ -48,7 +48,7 @@
 | <small>5.2.1.</small> [Client Email](/index.php/Category:Email_clients_(Italiano) "Category:Email clients (Italiano)") <small>(2)</small> |
 | <small>5.2.2.</small> [Browser Web](/index.php/Category:Web_browser_(Italiano) "Category:Web browser (Italiano)") <small>(3)</small> |
 | <small>5.3.</small> [Server Proxy](/index.php/Category:Proxy_servers_(Italiano) "Category:Proxy servers (Italiano)") <small>(1) (anche in [Sicurezza](/index.php/Category:Security_(Italiano) "Category:Security (Italiano)"))</small> |
-| <small>5.4.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Italiano) "Category:Secure Shell (Italiano)") <small>(4) (anche in [Sicurezza](/index.php/Category:Security_(Italiano) "Category:Security (Italiano)"))</small> |
+| <small>5.4.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Italiano) "Category:Secure Shell (Italiano)") <small>(2) (anche in [Sicurezza](/index.php/Category:Security_(Italiano) "Category:Security (Italiano)"))</small> |
 | <small>5.5.</small> [Small Business Server](/index.php/Category:Small_Business_Server_(Italiano) "Category:Small Business Server (Italiano)") <small>(6)</small> |
 | <small>5.6.</small> [Reti Virtuali Private (VPN)](/index.php/Category:Virtual_Private_Network_(Italiano) "Category:Virtual Private Network (Italiano)") <small>(1) (anche in [Sicurezza](/index.php/Category:Security_(Italiano) "Category:Security (Italiano)"))</small> |
 | <small>5.7.</small> [Server Web](/index.php/Category:Web_server_(Italiano) "Category:Web server (Italiano)") <small>(5)</small> |
@@ -75,8 +75,8 @@
 | <small>6.11.</small> [Risparmio energetico](/index.php/Category:Power_management_(Italiano) "Category:Power management (Italiano)") <small>(8)</small> |
 | <small>6.12.</small> [Sicurezza](/index.php/Category:Security_(Italiano) "Category:Security (Italiano)") <small>(12)</small> |
 | <small>6.12.1.</small> [Server Proxy](/index.php/Category:Proxy_servers_(Italiano) "Category:Proxy servers (Italiano)") <small>(1) (anche in [Gestione Reti](/index.php/Category:Networking_(Italiano) "Category:Networking (Italiano)"))</small> |
-| <small>6.12.2.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Italiano) "Category:Secure Shell (Italiano)") <small>(4) (anche in [Gestione Reti](/index.php/Category:Networking_(Italiano) "Category:Networking (Italiano)"))</small> |
+| <small>6.12.2.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Italiano) "Category:Secure Shell (Italiano)") <small>(2) (anche in [Gestione Reti](/index.php/Category:Networking_(Italiano) "Category:Networking (Italiano)"))</small> |
 | <small>6.12.3.</small> [Reti Virtuali Private (VPN)](/index.php/Category:Virtual_Private_Network_(Italiano) "Category:Virtual Private Network (Italiano)") <small>(1) (anche in [Gestione Reti](/index.php/Category:Networking_(Italiano) "Category:Networking (Italiano)"))</small> |
 | <small>6.13.</small> [Recupero del Sistema](/index.php/Category:System_recovery_(Italiano) "Category:System recovery (Italiano)") <small>(7)</small> |
 | <small>6.14.</small> [Virtualizzazione](/index.php/Category:Virtualization_(Italiano) "Category:Virtualization (Italiano)") <small>(3)</small> |
-| <small>6.15.</small> [X server](/index.php/Category:X_server_(Italiano) "Category:X server (Italiano)") <small>(14)</small> |
+| <small>6.15.</small> [X server](/index.php/Category:X_server_(Italiano) "Category:X server (Italiano)") <small>(13)</small> |

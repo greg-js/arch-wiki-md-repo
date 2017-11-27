@@ -1,6 +1,4 @@
-Взято [отсюда](http://www.squid-cache.org):
-
-	*Squid - кеширующий прокси-сервер поддерживающий HTTP, HTTPS, FTP, и многое другое. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages. Squid has extensive access controls and makes a great server accelerator. It runs on Unix and Windows and is licensed under the GNU GPL.*
+*Squid - кеширующий прокси-сервер поддерживающий HTTP, HTTPS, FTP, и многое другое. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages. Squid has extensive access controls and makes a great server accelerator. It runs on Unix and Windows and is licensed under the GNU GPL.*
 
 Помимо того что squid отлично работает в больших корпорациях и школах, он может быть использован и дома. Если вы ищите более легкий однопользовательский прокси, вам следует взглянуть на [Polipo](/index.php/Polipo "Polipo") ([website](http://www.pps.jussieu.fr/~jch/software/polipo/)).
 

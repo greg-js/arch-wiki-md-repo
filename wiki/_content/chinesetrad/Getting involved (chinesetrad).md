@@ -62,8 +62,6 @@
 
 你還可以通過到[Arch Linux Bugtracker](https://bugs.archlinux.org/)匯報bug幫助我們。但回報無意義的問題反而會浪費大家的時間。如有意參與其中，請先閱讀[Bug匯報指南](/index.php/Reporting_bug_guidelines "Reporting bug guidelines")。
 
-參見： [Bug Squashing Day](/index.php/Bug_Squashing_Day "Bug Squashing Day")
-
 ## AUR
 
 [Arch用戶軟體倉庫](/index.php/Arch_User_Repository "Arch User Repository")是一個大眾主導的軟體倉庫，包含了大量用戶提交的PKGBUILD。不同於官方軟體庫二進制包的形式，AUR中的軟體包以PKGBUILD的形式供用戶使用，由用戶自行編譯。用戶通過AUR分享軟體，其中一些熱門軟體會選入`[community]`軟體倉庫。

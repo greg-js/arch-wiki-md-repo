@@ -1,3 +1,9 @@
+Articoli correlati
+
+*   [Scientific Applications (Italiano)](/index.php/Scientific_Applications_(Italiano) "Scientific Applications (Italiano)")
+*   [Sage-mathematics](/index.php/Sage-mathematics "Sage-mathematics")
+*   [Matlab](/index.php/Matlab "Matlab")
+
 Mathematica è un programma commerciale usato in campo scientifico, matematico e ingegneristico. Qui viene spiegato come installarlo.
 
 ## Contents

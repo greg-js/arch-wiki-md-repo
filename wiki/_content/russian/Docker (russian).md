@@ -1,3 +1,10 @@
+Ссылки по теме
+
+*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
+*   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
+*   [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd")
+*   [Vagrant](/index.php/Vagrant "Vagrant")
+
 [Docker](http://www.docker.io) — это утилита для упаковки, загрузки и запуска любых приложений через легковесный контейнер.
 
 ## Contents

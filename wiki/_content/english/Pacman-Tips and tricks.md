@@ -26,11 +26,12 @@ For general methods to improve the flexibility of the provided tips or pacman it
     *   [2.2 Custom local repository](#Custom_local_repository)
     *   [2.3 Network shared pacman cache](#Network_shared_pacman_cache)
         *   [2.3.1 Read-only cache](#Read-only_cache)
-        *   [2.3.2 Read-write cache](#Read-write_cache)
-        *   [2.3.3 two-way with rsync](#two-way_with_rsync)
-        *   [2.3.4 Dynamic reverse proxy cache using nginx](#Dynamic_reverse_proxy_cache_using_nginx)
-        *   [2.3.5 Synchronize pacman package cache using synchronization programs](#Synchronize_pacman_package_cache_using_synchronization_programs)
-        *   [2.3.6 Preventing unwanted cache purges](#Preventing_unwanted_cache_purges)
+        *   [2.3.2 Distributed read-only cache](#Distributed_read-only_cache)
+        *   [2.3.3 Read-write cache](#Read-write_cache)
+        *   [2.3.4 two-way with rsync](#two-way_with_rsync)
+        *   [2.3.5 Dynamic reverse proxy cache using nginx](#Dynamic_reverse_proxy_cache_using_nginx)
+        *   [2.3.6 Synchronize pacman package cache using synchronization programs](#Synchronize_pacman_package_cache_using_synchronization_programs)
+        *   [2.3.7 Preventing unwanted cache purges](#Preventing_unwanted_cache_purges)
     *   [2.4 Recreate a package from the file system](#Recreate_a_package_from_the_file_system)
     *   [2.5 List of installed packages](#List_of_installed_packages)
     *   [2.6 Listing all changed files from packages](#Listing_all_changed_files_from_packages)
@@ -332,9 +333,13 @@ If you happen to run several Arch boxes on your LAN, you can share packages so t
 
 If you are looking for a quick and dirty solution, you can simply run a standalone webserver which other computers can use as a first mirror: `darkhttpd /var/cache/pacman/pkg`. Just add this server at the top of your mirror list. Be aware that you might get a lot of 404 errors, due to cache misses, depending on what you do, but pacman will try the next (real) mirrors when that happens.
 
-#### Read-write cache
+#### Distributed read-only cache
 
-**Tip:** See [pacserve](/index.php/Pacserve "Pacserve") for an alternative solution than what follows.
+There are Arch-specific tools for automatically discovering other computers on your network offering a package cache. Try [pacserve](/index.php/Pacserve "Pacserve"), [pkgdistcache](https://aur.archlinux.org/packages/pkgdistcache/), or [paclan](https://aur.archlinux.org/packages/paclan/). pkgdistcache uses Avahi instead of plain UDP which may work better in certain home networks that route instead of bridge between WiFi and Ethernet.
+
+Historically, there was [PkgD](https://bbs.archlinux.org/viewtopic.php?id=64391) and [multipkg](https://github.com/toofishes/multipkg), but they are no longer maintained.
+
+#### Read-write cache
 
 In order to share packages between multiple computers, simply share `/var/cache/pacman/` using any network-based mount protocol. This section shows how to use shfs or sshfs to share a package cache plus the related library-directories between multiple computers on the same local network. Keep in mind that a network shared cache can be slow depending on the file-system choice, among other factors.
 
