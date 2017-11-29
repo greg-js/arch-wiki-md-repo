@@ -14,8 +14,8 @@ If you have an up-to-date system with the standard Arch kernel and a modern [Des
     *   [2.2 Identifying device](#Identifying_device)
     *   [2.3 Mounting USB memory](#Mounting_USB_memory)
         *   [2.3.1 As root](#As_root)
-        *   [2.3.2 As normal user with mount](#As_normal_user_with_mount)
-        *   [2.3.3 As normal user with fstab](#As_normal_user_with_fstab)
+        *   [2.3.2 As root, for non-root access](#As_root.2C_for_non-root_access)
+        *   [2.3.3 In fstab, for non-root access](#In_fstab.2C_for_non-root_access)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 No USB storage devices are acknowledged by the system](#No_USB_storage_devices_are_acknowledged_by_the_system)
 
@@ -71,7 +71,7 @@ If `mount` does not recognize the format of the device you can try to use the `-
 *   If mounting your stick does not work you can try to repartition it, see [Format a device](/index.php/Format_a_device "Format a device").
 *   See [[1]](https://gist.github.com/anonymous/a69093a51f83b53d9fc5) for example mount/unmount scripts using [sudo](/index.php/Sudo "Sudo").
 
-#### As normal user with mount
+#### As root, for non-root access
 
 If you want non-root users to be able to write to the USB stick, you can issue the following command:
 
@@ -80,7 +80,7 @@ If you want non-root users to be able to write to the USB stick, you can issue t
 
 ```
 
-#### As normal user with fstab
+#### In fstab, for non-root access
 
 See [Writing on a FAT32 partition as a normal user](/index.php/Writing_on_a_FAT32_partition_as_a_normal_user "Writing on a FAT32 partition as a normal user") if you want normal user to do the mount/unmount action.
 

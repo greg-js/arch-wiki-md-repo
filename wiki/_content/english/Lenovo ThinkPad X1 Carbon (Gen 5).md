@@ -14,6 +14,7 @@ Related articles
     *   [1.2 Fingerprint Reader](#Fingerprint_Reader)
     *   [1.3 Bug: Fans blowing at max speed after resuming](#Bug:_Fans_blowing_at_max_speed_after_resuming)
     *   [1.4 Bug: Trackpoint/Trackpad not working](#Bug:_Trackpoint.2FTrackpad_not_working)
+    *   [1.5 Bug: System occasionally hanging during startup](#Bug:_System_occasionally_hanging_during_startup)
 *   [2 Configuration](#Configuration)
     *   [2.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
     *   [2.2 Display](#Display)
@@ -91,6 +92,17 @@ kernel: psmouse serio1: issuing reconnect request
 ```
 
 Installing [linux-tp-x1-carbon-5th](https://aur.archlinux.org/packages/linux-tp-x1-carbon-5th/) fixes this, see [https://gist.github.com/ursm/6d1007f44a1d6beeb670b3c3a6a78ea4](https://gist.github.com/ursm/6d1007f44a1d6beeb670b3c3a6a78ea4) . Note that this only works on the Elantech trackpoint (LEN0073).
+
+### Bug: System occasionally hanging during startup
+
+I run Arch Linux with KDE, and every second or third boot my system hangs on startup before X starts. From the syslog, I found out that the hangup is somehow related to NetworkManager, probably some kind of race condition. I found a way to prevent these hangups, by forcing NetworkManager to wait a little bit before starting. Just create the file **/etc/systemd/system/NetworkManager.service.d/override.conf** with this content:
+
+```
+[Service]
+ExecStartPre=/bin/sleep 2
+```
+
+The bug has been reported here: [https://bugzilla.gnome.org/show_bug.cgi?id=790919](https://bugzilla.gnome.org/show_bug.cgi?id=790919)
 
 ## Configuration
 

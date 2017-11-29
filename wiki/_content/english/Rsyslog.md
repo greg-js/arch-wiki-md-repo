@@ -1,3 +1,7 @@
+Related articles
+
+*   [syslog-ng](/index.php/Syslog-ng "Syslog-ng")
+
 [rsyslog](http://www.rsyslog.com/) is an alternate logger to [syslog-ng](/index.php/Syslog-ng "Syslog-ng") and offers many benefits over [syslog-ng](/index.php/Syslog-ng "Syslog-ng").
 
 ## Contents

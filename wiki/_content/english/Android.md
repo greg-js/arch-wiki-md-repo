@@ -136,6 +136,7 @@ $ newgrp sdkusers
 Install the desired Android SDK Platform package from the [AUR](/index.php/AUR "AUR"):
 
 *   [android-platform](https://aur.archlinux.org/packages/android-platform/) (latest)
+*   [android-platform-26](https://aur.archlinux.org/packages/android-platform-26/)
 *   [android-platform-25](https://aur.archlinux.org/packages/android-platform-25/)
 *   [android-platform-24](https://aur.archlinux.org/packages/android-platform-24/)
 *   [android-platform-23](https://aur.archlinux.org/packages/android-platform-23/)

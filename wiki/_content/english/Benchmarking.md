@@ -102,7 +102,7 @@ Timing buffered disk reads:  x MB in  y seconds = z MB/sec
 
 ```
 
-**Note:** One should run the above command 4-5 times and manually average the results for an accurate evaluation of read speed per the hdparm man page.
+**Note:** One should run the above command 2-3 times and manually average the results for an accurate evaluation of read speed per the hdparm man page.
 
 ### Unigine Engine
 

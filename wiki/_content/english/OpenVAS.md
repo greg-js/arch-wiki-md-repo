@@ -16,17 +16,10 @@ Install the [openvas](https://www.archlinux.org/groups/x86_64/openvas/) package 
 
 ## Initial setup
 
-Create a certificate for the server, choosing the default values if desired:
+Create certificates for the server+client, default values were used
 
 ```
-# openvas-mkcert
-
-```
-
-Create a client certificate:
-
-```
-# openvas-mkcert-client -n -i
+# openvas-manage-certs -a
 
 ```
 

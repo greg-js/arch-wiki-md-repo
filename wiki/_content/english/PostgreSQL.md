@@ -4,8 +4,6 @@ Related articles
 
 [PostgreSQL](https://www.postgresql.org/) is an open source, community driven, standard compliant object-relational database system.
 
-This document describes how to set up PostgreSQL. It also describes how to configure PostgreSQL to be accessible from a remote client. Among other applications, PostgreSQL can be substituted for MySQL as part of the [LAMP](/index.php/LAMP "LAMP") web stack.
-
 ## Contents
 
 *   [1 Installing PostgreSQL](#Installing_PostgreSQL)
@@ -86,7 +84,7 @@ initializing pg_authid ... ok
 
 If these are the kind of lines you see, then the process succeeded. Return to the regular user using `exit`.
 
-As root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `postgresql.service`.
+As root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `postgresql.service`. See [#Upgrading PostgreSQL](#Upgrading_PostgreSQL) for necessary steps before installing new versions of the PostgreSQL packages.
 
 **Tip:** If you change the root to something other than `/var/lib/postgres`, you will have to [edit](/index.php/Edit "Edit") the service file. If the root is under `home`, make sure to set `ProtectHome` to false.
 
@@ -403,8 +401,8 @@ When you are ready, upgrade the following packages: [postgresql](https://www.arc
 ```
 # systemctl stop postgresql.service
 # mv /var/lib/postgres/data /var/lib/postgres/olddata
-# mkdir /var/lib/postgres/data /var/lib/data/postgres/tmp
-# chown postgres:postgres /var/lib/postgres/data /var/lib/data/postgres/tmp
+# mkdir /var/lib/postgres/data /var/lib/postgres/tmp
+# chown postgres:postgres /var/lib/postgres/data /var/lib/postgres/tmp
 [postgres]$ initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data'
 
 ```
@@ -412,12 +410,12 @@ When you are ready, upgrade the following packages: [postgresql](https://www.arc
 The upgrade invocation will likely look something like the following. **Do not run this command blindly without understanding what it does!** Reference the [upstream pg_upgrade documentation](https://www.postgresql.org/docs/current/static/pgupgrade.html) for details.
 
 ```
-[postgres]$ cd /var/lib/data/postgres/tmp
+[postgres]$ cd /var/lib/postgres/tmp
 [postgres]$ pg_upgrade -b /opt/pgsql-9.6/bin -B /usr/bin -d /var/lib/postgres/olddata -D /var/lib/postgres/data
 
 ```
 
-pg_upgrade will perform the upgrade and create some scripts in `/var/lib/data/postgres/tmp`. Follow the instructions given on screen and act accordingly. You may delete `/var/lib/data/postgres/tmp` directory once the upgrade is completely over.
+pg_upgrade will perform the upgrade and create some scripts in `/var/lib/postgres/tmp`. Follow the instructions given on screen and act accordingly. You may delete `/var/lib/postgres/tmp` directory once the upgrade is completely over.
 
 ### Manual dump and reload
 

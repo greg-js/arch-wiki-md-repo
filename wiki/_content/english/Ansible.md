@@ -13,8 +13,9 @@ From [docs.ansible.com](http://docs.ansible.com/):
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 User account creation](#User_account_creation)
     *   [3.2 Python binary location](#Python_binary_location)
-    *   [3.3 Unarchive](#Unarchive)
-*   [4 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Unarchive](#Unarchive)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -78,7 +79,7 @@ $ ansible-playbook --ask-become-pass syu.yml
 
 ### Vault
 
-A [vault](http://docs.ansible.com/ansible/latest/playbooks_vault.html#using-vault-in-playbooks) can be used to keep sensitive data in an encrypted form, rather than plaintext, in playbooks or roles. The vault password can be stored in plaintext in a file. It can be created with `echo myvaultpassword > vault_pass.txt` to be used later on with Ansible as follows:
+A [vault](http://docs.ansible.com/ansible/latest/playbooks_vault.html#using-vault-in-playbooks) can be used to keep sensitive data in an encrypted form, rather than plaintext, in playbooks or roles. The vault password can be stored in plaintext in a file, for example `vault_pass.txt` containing `myvaultpassword`, to be used later on in Ansible commands as follows:
 
 ```
 $ ansible-playbook site.yml --vault-id vault_pass.txt
@@ -110,13 +111,13 @@ other_plain_text: othervalue
 
 ### User account creation
 
-Ansible is able to manage user accounts and in particular to create new ones. This is achieved in playbooks with the [user module](http://docs.ansible.com/ansible/latest/user_module.html) which takes an optional `password` argument to set the user's password. It is the **hashed value of the password** that needs to be provided to the module. The hashing can simply be performed on the fly within Ansible using one of the internal [hashing filters](http://docs.ansible.com/ansible/latest/playbooks_filters.html#hash-filters):
+Ansible can manage user accounts and in particular it is able to create new ones. This is achieved in playbooks with the [user module](http://docs.ansible.com/ansible/latest/user_module.html) which takes an optional `password` argument to set the user's password. It is the **hashed value of the password** that needs to be provided to the module. The hashing can simply be performed on the fly within Ansible using one of its internal [hashing filters](http://docs.ansible.com/ansible/latest/playbooks_filters.html#hash-filters):
 
 ```
 - user:
-   name: madhead
-   password: "{{ 'user_password' | password_hash('sha512', 'permsalt') }}"
-   shell: /usr/bin/nologin
+  name: *madhead*
+  password: "{{ '*user_password*' | password_hash('sha512', '*mypermsalt*') }}"
+  shell: /usr/bin/nologin
 
 ```
 
@@ -127,12 +128,12 @@ With this approach it is recommended to vault-encrypt *user_password* so that it
 Alternatively, the hashing can be performed outside Ansible. The following commands return respectively the MD5 and the SHA512 hashed values of *user_password*:
 
 ```
-$ openssl passwd -1 user_password
+$ openssl passwd -1 *user_password*
 
 ```
 
 ```
-$ python -c 'import crypt; print(crypt.crypt("user_password", crypt.mksalt(crypt.METHOD_SHA512)))'
+$ python -c 'import crypt; print(crypt.crypt("*user_password*", crypt.mksalt(crypt.METHOD_SHA512)))'
 
 ```
 
@@ -156,6 +157,8 @@ ansible_python_interpreter=/usr/bin/python2
 ```
 
 More information about Python versions is available in [[1]](https://docs.ansible.com/ansible/python_3_support.html), [[2]](http://docs.ansible.com/faq.html#how-do-i-handle-python-pathing-not-having-a-python-2-x-in-usr-bin-python-on-a-remote-machine) and [[3]](http://docs.ansible.com/intro_inventory.html#list-of-behavioral-inventory-parameters).
+
+## Troubleshooting
 
 ### Unarchive
 

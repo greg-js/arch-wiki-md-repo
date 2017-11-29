@@ -23,10 +23,27 @@
 
 ### Alternate installations
 
-It is not uncommon to need or desire to work in different versions of [nodejs](https://www.archlinux.org/packages/?name=nodejs). A preferred method among node users is to use [NVM](https://github.com/creationix/nvm) (Node Version Manger). [nvm](https://aur.archlinux.org/packages/nvm/) allows for cheap and easy alternative installs. Usage is well documented on the project's GitHub but is as simple as:
+It is not uncommon to need or desire to work in different versions of [nodejs](https://www.archlinux.org/packages/?name=nodejs). A preferred method among node users is to use [NVM](https://github.com/creationix/nvm) (Node Version Manger). [nvm](https://aur.archlinux.org/packages/nvm/) allows for cheap and easy alternative installs.
+
+You can set it up by adding this to your shell's startup file:
 
 ```
-$ nvm install VERSION_NUM
+# Set up Node Version Manager
+export NVM_DIR="$HOME/.nvm"                            # You can change this if you want.
+export NVM_SOURCE="/usr/share/nvm"                     # The AUR package installs it to here.
+[ -s "$NVM_SOURCE/nvm.sh" ] && . "$NVM_SOURCE/nvm.sh"  # Load NVM
+
+```
+
+Usage is well documented on the project's GitHub but is as simple as:
+
+```
+$ nvm install 8.0
+Downloading and installing node v8.0.0...
+[..]
+
+$ nvm use 8.0
+Now using node v8.0.0 (npm v5.0.0)
 
 ```
 

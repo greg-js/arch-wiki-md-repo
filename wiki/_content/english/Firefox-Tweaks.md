@@ -15,14 +15,13 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [1.3 Enable Accelerated Azure Canvas](#Enable_Accelerated_Azure_Canvas)
     *   [1.4 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
     *   [1.5 Turn off the disk cache](#Turn_off_the_disk_cache)
-    *   [1.6 Longer interval to save session](#Longer_interval_to_save_session)
+    *   [1.6 Longer interval between session information record](#Longer_interval_between_session_information_record)
     *   [1.7 Referrer header control](#Referrer_header_control)
     *   [1.8 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
     *   [1.9 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
     *   [1.10 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
     *   [1.11 Enable Electrolysis](#Enable_Electrolysis)
-    *   [1.12 Enable HTTP Cache](#Enable_HTTP_Cache)
-    *   [1.13 Disable Pocket](#Disable_Pocket)
+    *   [1.12 Disable Pocket](#Disable_Pocket)
 *   [2 Appearance](#Appearance)
     *   [2.1 Fonts](#Fonts)
         *   [2.1.1 Configure the DPI value](#Configure_the_DPI_value)
@@ -42,24 +41,26 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [2.3.3 Add [pdf] after links to PDF files](#Add_.5Bpdf.5D_after_links_to_PDF_files)
         *   [2.3.4 Block ads](#Block_ads)
         *   [2.3.5 Remove fullscreen warning](#Remove_fullscreen_warning)
-*   [3 Miscellaneous](#Miscellaneous)
-    *   [3.1 Enable additional media codecs](#Enable_additional_media_codecs)
-        *   [3.1.1 Widevine and Netflix/Amazon Video](#Widevine_and_Netflix.2FAmazon_Video)
-    *   [3.2 Mouse wheel scroll speed](#Mouse_wheel_scroll_speed)
-    *   [3.3 Pixel-perfect trackpad scrolling](#Pixel-perfect_trackpad_scrolling)
-    *   [3.4 Change the order of search engines in the Firefox Search Bar](#Change_the_order_of_search_engines_in_the_Firefox_Search_Bar)
-    *   [3.5 "I'm Feeling Lucky" mode](#.22I.27m_Feeling_Lucky.22_mode)
-    *   [3.6 Secure DNS with DNSSEC validator](#Secure_DNS_with_DNSSEC_validator)
-    *   [3.7 Adding magnet protocol association](#Adding_magnet_protocol_association)
-    *   [3.8 Prevent accidental closing](#Prevent_accidental_closing)
-    *   [3.9 Plugins do not work with latest version](#Plugins_do_not_work_with_latest_version)
-    *   [3.10 Jerky or choppy scrolling](#Jerky_or_choppy_scrolling)
-    *   [3.11 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
-    *   [3.12 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
-    *   [3.13 Enable touchscreen gestures](#Enable_touchscreen_gestures)
-    *   [3.14 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
-    *   [3.15 Make URL bar behave like on Windows regarding mouse clicks](#Make_URL_bar_behave_like_on_Windows_regarding_mouse_clicks)
-*   [4 See also](#See_also)
+*   [3 Mouse and keyboard](#Mouse_and_keyboard)
+    *   [3.1 Mouse wheel scroll speed](#Mouse_wheel_scroll_speed)
+    *   [3.2 Pixel-perfect trackpad scrolling](#Pixel-perfect_trackpad_scrolling)
+    *   [3.3 Enable touchscreen gestures](#Enable_touchscreen_gestures)
+    *   [3.4 Mouse click on URL bar's behavior](#Mouse_click_on_URL_bar.27s_behavior)
+    *   [3.5 Set backspace's behavior](#Set_backspace.27s_behavior)
+*   [4 Miscellaneous](#Miscellaneous)
+    *   [4.1 Enable additional media codecs](#Enable_additional_media_codecs)
+        *   [4.1.1 Widevine and Netflix/Amazon Video](#Widevine_and_Netflix.2FAmazon_Video)
+    *   [4.2 Change the order of search engines in the Firefox Search Bar](#Change_the_order_of_search_engines_in_the_Firefox_Search_Bar)
+    *   [4.3 "I'm Feeling Lucky" mode](#.22I.27m_Feeling_Lucky.22_mode)
+    *   [4.4 Secure DNS with DNSSEC validator](#Secure_DNS_with_DNSSEC_validator)
+    *   [4.5 Adding magnet protocol association](#Adding_magnet_protocol_association)
+    *   [4.6 Prevent accidental closing](#Prevent_accidental_closing)
+    *   [4.7 Plugins do not work with latest version](#Plugins_do_not_work_with_latest_version)
+    *   [4.8 Jerky or choppy scrolling](#Jerky_or_choppy_scrolling)
+    *   [4.9 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
+    *   [4.10 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
+    *   [4.11 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
+*   [5 See also](#See_also)
 
 ## Performance
 
@@ -123,31 +124,28 @@ This effectively makes the file empty and then read-only so Firefox cannot write
 
 ### Turn off the disk cache
 
-Every object loaded (html page, jpeg image, css stylesheet, gif banner) is saved in the Firefox cache for future use without the need to download it again. It is estimated that only a fraction of these objects will be reused (usually about 30%). This because of too short object expiration time, updates or simply user behavior (loading new pages instead of returning to the ones already visited). The Firefox cache is divided into memory and disk cache and the latter results in frequent disk writes: newly loaded objects are written to memory and older objects are removed.
+Every object loaded (html page, jpeg image, css stylesheet, gif banner) is saved in the Firefox cache for future use without the need to download it again. It is estimated that only a fraction of these objects will be reused, usually about 30%. This because of very short object expiration time, updates or simply user behavior (loading new pages instead of returning to the ones already visited). The Firefox cache is divided into memory and disk cache and the latter results in frequent disk writes: newly loaded objects are written to memory and older objects are removed.
 
-It can be set by **turning on** the option *Preferences > Privacy & Security > Cached Web Content - Override automatic cache management* and specify **0** in *> Limit cache to ... MB of space*.
+The disk cache can be turned off by enabling *Preferences > Privacy & Security > Cached Web Content - Override automatic cache management* and setting to `0` *Limit cache to ... MB of space*.
 
 An alternative approach is to use `about:config` settings:
 
-*   set `browser.cache.disk.enable` to "false" (double click the line)
-*   verify that `browser.cache.memory.enable` is set to "true" ([default value](http://kb.mozillazine.org/Browser.cache.memory.enable))
-*   add the entry (right click->new->integer) `browser.cache.memory.capacity` and set it to the amount of KB you'd like to spare, or to -1 for [automatic](http://kb.mozillazine.org/Browser.cache.memory.capacity#-1) cache size selection. (Skipping this step has the same effect as setting the value to -1.)
+*   Set `browser.cache.disk.enable` to `false`
+*   Verify that `browser.cache.memory.enable` is set to `true`, more information about this option can be found in the [browser.cache.memory Mozilla article](http://kb.mozillazine.org/Browser.cache.memory.enable)
+*   Add the entry (*right click > new > integer*) `browser.cache.memory.capacity` and set it to the amount of KB you want to spare, or to `-1` for [automatic](http://kb.mozillazine.org/Browser.cache.memory.capacity#-1) cache size selection (skipping this step has the same effect as setting the value to `-1`)
 
-Main disadvantages of this method are that the content of currently browsed webpages is lost if browser crashes or after a reboot, and that the settings need to be configured for each user individually.
+This method has some drawbacks:
 
-A workaround for the first drawback is to use [anything-sync-daemon](/index.php/Anything-sync-daemon "Anything-sync-daemon") or similar periodically-syncing script so that cache gets copied over to the drive on a regular basis.
+*   The content of currently browsed webpages is lost if the browser crashes or after a reboot, this can be avoided using [anything-sync-daemon](/index.php/Anything-sync-daemon "Anything-sync-daemon") or any similar periodically-syncing script so that cache gets copied over to the drive on a regular basis
+*   The settings need to be configured for each user individually
 
-### Longer interval to save session
+### Longer interval between session information record
 
-The Firefox session store automatically saves the current status (opened urls, cookies, history and bookmarks) to the disk every 15 seconds. It may be too frequent for the user needs, resulting in a frequent disk access.
+Firefox stores the current session status (opened urls, cookies, history and form data) to the disk on a regular basis. It is used to recover a previous session in case of crash. The default setting is to save the session every 15 seconds, resulting in frequent disk access.
 
-This setting can be found on the `about:config` page (try searching for *sessionstore*).
+To increase the save interval to 10 minutes for example, change in `about:config` the setting of `browser.sessionstore.interval` to `600000`
 
-*   `browser.sessionstore.interval` 300000
-
-If you want to disable this feature, then you will need to change the following setting from true to false.
-
-*   `browser.sessionstore.resume_from_crash` false
+To disable completely this feature, change `browser.sessionstore.resume_from_crash` to `false`
 
 ### Referrer header control
 
@@ -183,10 +181,6 @@ In `about:config`, set the string value to a blank for both of these: `browser.n
 Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to *true* in `about:config`. It may be needed to force-enable Electrolysis [[2]](https://wiki.mozilla.org/Electrolysis#Force_Enable), although this is generally not recommended and may cause issues.
 
 To check if Electrolysis is enabled, go to `about:support` and under the "Application Basics" section look for "Multiprocess Windows". If it reports "0/1 (Disabled)", Electrolysis is disabled; if it reports "1/1 (Enabled by user)" it is enabled. Note that the given numbers **/** indicate the number of open Firefox windows, e.g. 0/2 meaning non of the two Firefox-windows are using Electrolysis, and 2/2 means it is enabled for both windows.
-
-### Enable HTTP Cache
-
-In `about:config`, set `browser.cache.use_new_backend` to 1.
 
 ### Disable Pocket
 
@@ -359,19 +353,7 @@ The extension [Classic Theme Restorer](https://addons.mozilla.org/firefox/addon/
 
 #### Unreadable input fields with KDE Breeze Dark theme
 
-If you are using KDE desktop in conjunction with Breeze Dark theme, you might find that some input fields have dark background, which makes text unreadable. A very nice solution to this issue is to use a non-dark GTK theme along with a dark Firefox theme. By using a non-dark GTK theme pages will look nicely (no more unreadable input fields). Similarly, by using a dark Firefox theme your browser will look the way you want (requires Firefox 56 or later).
-
-Using non-dark GTK theme:
-
-*   Got to *System Settings --> Application Style (under Appearance section) --> Gnome Application Style (GTK)*
-*   Then set the "*Select a GTK3 Theme*" drop-down list to "*Breeze*". You should have no problem if you have different values in the other options.
-*   Click on the *Apply* button
-
-Using a dark Firefox theme:
-
-*   One theme that looks very nice with Breeze Dark theme is [FT DeepDark (by steva)](https://addons.mozilla.org/en-US/firefox/addon/ft-deepdark), but obviously you can you choose the one you want.
-*   Install the Firefox dark theme of your choice.
-*   Restart Firefox.
+If you are using [KDE](/index.php/KDE "KDE") desktop in conjunction with Breeze Dark theme, you might find that some input fields have dark background, which makes text unreadable. A solution to this issue is to use a non-dark GTK theme along with a dark Firefox theme. Similarly, by using a dark Firefox theme your browser will look the way you want (requires Firefox 56 or later).
 
 ### Web content CSS settings
 
@@ -419,6 +401,48 @@ See [floppymoose.com](http://www.floppymoose.com) for an example of how to use `
 
 Warning about video displayed in full screen mode ("… is now fullscreen") can be disabled by setting "full-screen-api.warning.timeout" to 0 in about:config
 
+## Mouse and keyboard
+
+### Mouse wheel scroll speed
+
+To modify the default values (i.e. speed-up) of the mouse wheel scroll speed, go to `about:config` and search for `mousewheel.acceleration`. This will show the available options, modifying the following:
+
+*   Set `mousewheel.acceleration.start` to `-1`.
+*   Set `mousewheel.acceleration.factor` to the desired number (`10` to `20` are common values).
+
+Mozilla's recommendation for increasing the mousewheel scroll speed is to:
+
+*   Set `mousewheel.default.delta_multiplier_y` between `200` and `500` (default: `100`)
+
+Alternatively you can install the [SmoothWheel add-on](http://smoothwheel.mozdev.org/).
+
+### Pixel-perfect trackpad scrolling
+
+To enable one-to-one trackpad scrolling (as can be witnessed with GTK3 applications like Nautilus), set the `MOZ_USE_XINPUT2=1` [environment variable](/index.php/Environment_variable "Environment variable") before starting Firefox.
+
+If scrolling is undesirably jerky, try enabling Firefox's "Smooth Scrolling" option in Preferences > Advanced.
+
+### Enable touchscreen gestures
+
+Make sure `dom.w3c_touch_events.enabled` is either set to 1 (*enabled*) or 2 (*default, auto-detect*).
+
+Run `export MOZ_USE_XINPUT2=1` before launching Firefox. To make this change persistent, add that command to `/etc/profile.d/firefox.sh`.
+
+### Mouse click on URL bar's behavior
+
+To make the url bar behaves like in Windows regarding mouse clicks: a single click selects everything, a double click selects a single word until a punctuation sign and a triple click selects everything again, set the following in `about:config`:
+
+```
+browser.urlbar.clickSelectsAll; true
+browser.urlbar.doubleClickSelectsAll; false
+layout.word_select.stop_at_punctuation; true (default)
+
+```
+
+### Set backspace's behavior
+
+The backspace key performs differently in Firefox in Linux, Windows or Mac. To associate it with "back one page", set `browser.backspace_action` to `0`.
+
 ## Miscellaneous
 
 ### Enable additional media codecs
@@ -440,25 +464,6 @@ The first time you visit a Widevine-enabled page Firefox will display a prompt b
 
 **Note:** Please make sure to check the *Play DRM content* option under Content-Preference.
 
-### Mouse wheel scroll speed
-
-To modify the default values (i.e. speed-up) of the mouse wheel scroll speed, go to `about:config` and search for `mousewheel.acceleration`. This will show the available options, modifying the following:
-
-*   Set `mousewheel.acceleration.start` to **-1**.
-*   Set `mousewheel.acceleration.factor` to the desired number (10 to 20 are common values).
-
-Mozilla's recommendation for increasing the mousewheel scroll speed is to:
-
-*   Set `mousewheel.default.delta_multiplier_y` to between **200-500** (default: 100)
-
-Alternatively you can install the [SmoothWheel add-on](http://smoothwheel.mozdev.org/).
-
-### Pixel-perfect trackpad scrolling
-
-To enable one-to-one trackpad scrolling (as can be witnessed with GTK3 applications like Nautilus), set the `MOZ_USE_XINPUT2=1` [environment variable](/index.php/Environment_variable "Environment variable") before starting Firefox.
-
-If scrolling is undesirably jerky, try enabling Firefox's "Smooth Scrolling" option in Preferences > Advanced.
-
 ### Change the order of search engines in the Firefox Search Bar
 
 To change the order search engines are displayed in:
@@ -470,11 +475,7 @@ To change the order search engines are displayed in:
 
 Some search engines have a "feeling lucky" feature. For example, Google has "I'm Feeling Lucky", and DuckDuckGo has "I'm Feeling Ducky".
 
-To activate them:
-
-1.  Type `about:config` in the address bar.
-2.  Search for the string `keyword.url`.
-3.  Modify its value (if any) to the URL of the search engine.
+To activate them, search for `keyword.url` in `about:config` and modify its value (if any) to the URL of the search engine.
 
 For Google, set it to:
 
@@ -571,12 +572,6 @@ Once your container is booted, run the Xorg binary like so:
 
 This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.org/firefox/addon/findbar-tweak/) extension.
 
-### Enable touchscreen gestures
-
-Make sure `dom.w3c_touch_events.enabled` is either set to 1 (*enabled*) or 2 (*default, auto-detect*).
-
-Run `export MOZ_USE_XINPUT2=1` before launching Firefox. To make this change persistent, add that command to `/etc/profile.d/firefox.sh`.
-
 ### Disable WebRTC audio post processing
 
 If you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancelation "PulseAudio/Troubleshooting"), you probably don't want Firefox to do additional audio post processing.
@@ -586,19 +581,6 @@ To disable audio post processing, disable the following preferences:
 *   `media.getusermedia.aec_enabled` (Acoustic Echo Cancellation)
 *   `media.getusermedia.agc_enabled` (Automatic Gain Control)
 *   `media.getusermedia.noise_enabled` (Noise suppression)
-
-### Make URL bar behave like on Windows regarding mouse clicks
-
-In `about:config`, set the following settings:
-
-```
-browser.urlbar.clickSelectsAll true
-browser.urlbar.doubleClickSelectsAll false
-layout.word_select.stop_at_punctuation true
-
-```
-
-This will make a single click in the URL bar select everything, a double click selects a single word until a punctuation and a triple click selects everything again.
 
 ## See also
 

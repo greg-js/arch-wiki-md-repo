@@ -32,19 +32,31 @@ RubyGems is a package manager for Ruby modules (called *gems*), somewhat compara
 
 ### Setup
 
-To allow using `gem`, [append](/index.php/Append "Append") `$(ruby -e 'print Gem.user_dir')/bin` to current [user](/index.php/User "User") `PATH` [environment variable](/index.php/Environment_variable "Environment variable"):
+[Append](/index.php/Append "Append") `$(ruby -e 'print Gem.user_dir')/bin` to the `PATH` [environment variable](/index.php/Environment_variable "Environment variable") to allow RubyGems to be executed:
 
  `~/.profile`  `PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"` 
 
 This is required for executable gems to work without typing out the full location, although libraries will work without having to modify your path.
 
-If the method above does not work, you can try adding these lines at the end of your shell configuration file instead:
+To allow installing RubyGems through the current [user](/index.php/User "User"), e.g. on *Your user account isn't allowed to install to the system RubyGems.*, export `GEM_HOME` to the local path:
 
 ```
- #Setting the GEM_PATH and GEM_HOME variables may not be necessary, check 'gem env' output to verify whether both variables already exist 
- GEM_HOME=$(ls -t -U | ruby -e 'puts Gem.user_dir')
- GEM_PATH=$GEM_HOME
- export PATH=$PATH:$GEM_HOME/bin
+$ export GEM_HOME=$HOME/.gem
+
+```
+
+You may want to append this variable to `.profile` instead:
+
+ `~/.profile` 
+```
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+export GEM_HOME=$HOME/.gem
+```
+
+Use `gem env` to view the current RubyGems environment:
+
+```
+$ gem env
 
 ```
 

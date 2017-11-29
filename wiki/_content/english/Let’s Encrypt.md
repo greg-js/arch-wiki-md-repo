@@ -68,7 +68,6 @@ The use of this method is recommend over a manual install; it offers automatic r
 
 **Tip:** The following initial [nginx server](/index.php/Nginx#Server_blocks "Nginx") configuration may be helpful to obtain a first-time certificate: `/etc/nginx/servers-available/domain.tld` 
 ```
-
 server {
   listen 80;
   listen [::]:80;
@@ -151,7 +150,6 @@ An example of the server `domain.tld` using the signed SSL-certificate of Let's 
 
  `/etc/nginx/servers-available/domain.tld` 
 ```
-
 server {
   listen 443 ssl http2;
   listen [::]:443 ssl http2;
@@ -183,7 +181,6 @@ Create a file containing the location block and include this inside a server blo
 
  `/etc/nginx/conf.d/letsencrypt.conf` 
 ```
-
 location ^~ /.well-known {
   allow all;
   alias /var/lib/letsencrypt/.well-known/;

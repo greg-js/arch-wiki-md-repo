@@ -365,7 +365,13 @@ In order for the U2F functionality to work with Chromium you need to install the
 
 #### Firefox
 
-To enable U2F support in Firefox, you need to install [this addon](https://github.com/prefiks/u2f4moz). Native support is currently [work in progress](https://bugzilla.mozilla.org/show_bug.cgi?id=1065729).
+To enable U2F support in Firefox, you need to install [this addon](https://github.com/prefiks/u2f4moz). U2F is natively supported in Firefox from version 57\. To activate it, you need to: 1\. Open the Firefox advanced preferences at `about:config`. 2\. Search for "webauth" 3\. Enable (value = true) these two:
+
+```
+ * security.webauth.u2f
+ * security.webauth.webauthn_enable_usbtoken
+
+```
 
 ## Static Password
 

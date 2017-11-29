@@ -944,9 +944,9 @@ Confirm that it is running by running
 
 ### Collabora Online Office integration
 
-Install [nextcloud-app-collabora-online](https://aur.archlinux.org/packages/nextcloud-app-collabora-online/) from the [AUR](/index.php/AUR "AUR"). This app needs a “CODE” backend.
+Install [nextcloud-app-collabora-online](https://aur.archlinux.org/packages/nextcloud-app-collabora-online/) from the [AUR](/index.php/AUR "AUR"). This app needs a “CODE” backend, with 2 possible choices:
 
-***CODE backend using the official Docker image***
+**Solution with Docker: *CODE backend using the official Docker image***
 
 Add following reverse proxy settings to your nextcloud domain config, in this case for [Nginx](/index.php/Nginx "Nginx"):
 
@@ -990,7 +990,7 @@ docker rm CONTAINER_ID
 
 Now you can enable the Collabora Online app in your Nextcloud instance. In the last step, you have to configure your domain in the administrator settings regarding the Collabora Online app.
 
-***CODE backend integrated into Archlinux***
+**Solution without Docker: *CODE backend using an Archlinux package***
 
 The [collabora-online-server-nodocker](https://aur.archlinux.org/packages/collabora-online-server-nodocker/) package brings to your Archlinux installation 1º Collabora Office (the desktop suite), and 2º the “CODE” (Collabora Online Development Edition) server, which is based on “lool” (LibreOffice OnLine).
 

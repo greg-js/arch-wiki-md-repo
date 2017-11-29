@@ -231,7 +231,14 @@ You have two solutions to use [Optimus](/index.php/Optimus "Optimus") on a lapto
 
 ### Vertical Sync
 
-In [Xfce](/index.php/Xfce "Xfce"), xfwm4 4.13 has an improved [compositor](https://github.com/xfce-mirror/xfwm4/blob/master/COMPOSITOR) - its Xpresent method is smoother than using [Compton](/index.php/Compton "Compton").
+Xorg compositors are prone to show issues with Nouveau. Unlike most of them, [compton](https://www.archlinux.org/packages/?name=compton) offers lots of options to tweak for a smoother and tearing free result. A configuration which is expected to deliver a good result would be the following:
+
+```
+compton -b --paint-on-overlay --unredir-if-possible --backend xr_glx_hybrid --vsync drm --glx-swap-method -1 --glx-no-stencil
+
+```
+
+**Tip:** Don't forget to turn off compositing of your DE's window manager like KWin when using a different compositor.
 
 ## Troubleshooting
 

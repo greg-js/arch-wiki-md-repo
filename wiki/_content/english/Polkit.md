@@ -1,3 +1,9 @@
+Related articles
+
+*   [Session](/index.php/Session "Session")
+*   [Sudo](/index.php/Sudo "Sudo")
+*   [Users and groups](/index.php/Users_and_groups "Users and groups")
+
 From [polkit homepage](http://www.freedesktop.org/wiki/Software/polkit/):
 
 	*polkit is an application-level toolkit for defining and handling the policy that allows unprivileged processes to speak to privileged processes: It is a framework for centralizing the decision making process with respect to granting access to privileged operations for unprivileged applications.*
@@ -41,7 +47,7 @@ If you are using a graphical environment, make sure that a graphical authenticat
 *   [mate-polkit](https://www.archlinux.org/packages/?name=mate-polkit), which provides `/usr/lib/mate-polkit/polkit-mate-authentication-agent-1`
 *   [polkit-efl-git](https://aur.archlinux.org/packages/polkit-efl-git/), which provides `/usr/bin/polkit-efl-authentication-agent-1`
 *   [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome), which provides `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1`
-*   [polkit-kde-agent](https://www.archlinux.org/packages/?name=polkit-kde-agent), which provides `/usr/lib/polkit-kde/polkit-kde-authentication-agent-1`
+*   [polkit-kde-agent](https://www.archlinux.org/packages/?name=polkit-kde-agent), which provides `/usr/lib/polkit-kde-authentication-agent-1`
 *   [ts-polkitagent](https://aur.archlinux.org/packages/ts-polkitagent/), which provides `/usr/lib/ts-polkitagent`
 *   [xfce-polkit-git](https://aur.archlinux.org/packages/xfce-polkit-git/), which provides `/usr/lib/xfce-polkit/xfce-polkit`
 

@@ -1,3 +1,8 @@
+Related articles
+
+*   [Xmodmap](/index.php/Xmodmap "Xmodmap")
+*   [Sxhkd](/index.php/Sxhkd "Sxhkd")
+
 Xbindkeys is a program that allows to bind commands to certain keys or key combinations on the keyboard. Xbindkeys works with multimedia keys and is independent of the window manager and desktop environment.
 
 ## Contents
@@ -34,14 +39,14 @@ Here is an example configuration file that binds Fn key combos on a laptop to [p
 
 ```
 # Increase volume
-"pamixer --increase 5"
+"pactl set-sink-volume 0 +1000"
    XF86AudioRaiseVolume
 
 ```
 
 ```
 # Decrease volume
-"pamixer --decrease 5"
+"pactl set-sink-volume 0 -1000"
    XF86AudioLowerVolume
 
 ```
@@ -98,7 +103,7 @@ The XF86Audio* and other multimedia keys [[1]](http://wiki.linuxquestions.org/wi
 
 ```
 # Decrease volume on pressing Super-minus
-"amixer set Master playback 1-"
+"pactl set-sink-volume 0 -1000"
    m:0x50 + c:20
    Mod2+Mod4 + minus
 

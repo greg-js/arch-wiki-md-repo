@@ -357,7 +357,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 ##### Vi text editors
 
-*   **Kakoune** — Vim inspired. Less keystrokes. Multiple selections. Orthogonal design.
+*   **Kakoune** — Vim inspired. Fewer keystrokes. Multiple selections. Orthogonal design.
 
 	[https://github.com/mawww/kakoune](https://github.com/mawww/kakoune) || [kakoune-git](https://aur.archlinux.org/packages/kakoune-git/)
 

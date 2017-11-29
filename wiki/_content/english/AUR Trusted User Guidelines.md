@@ -31,19 +31,19 @@ The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-use
 6.  Remind a [BBS admin](https://bbs.archlinux.org/userlist.php?username=&show_group=1&sort_by=username&sort_dir=ASC&search=Submit) to change your account on forums.
 7.  Ask some TU for the #archlinux-tu@freenode key and hang out with us in the channel. You do not have to do this, but it would be neat since this is where most dark secrets are spilled and where many new ideas are conceived.
 8.  Create a PGP key for [package signing](/index.php/Package_signing "Package signing") or use your existing PGP key. Make sure the key also contains an encryption subkey so you can receive encrypted verification tokens.
-9.  Send Ionuț Bîru (ibiru@archlinux.org) or Florian Pritz (bluewind@xinu.at) an email with all the information based on this [template](https://www.archlinux.org/people/trusted-users/) to have access on dev interface (archweb).
-10.  Send a signed email to Florian:
+9.  Send a signed email to Florian Pritz (bluewind@xinu.at):
     *   Attach one SSH public key. If you do not have one, use `ssh-keygen` to generate one. Check the [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") wiki page for more information about SSH keys.
     *   Ask him to whitelist you from arch-dev-public.
     *   Tell him if you want an @archlinux.org email.
-11.  Ask your sponsor:
+    *   All the information based on this [template](https://www.archlinux.org/people/trusted-users/) to have access on dev interface (archweb).
+10.  Ask your sponsor:
     *   to give you TU status on the AUR.
     *   to open a new task in the "Keyring" project of the bug tracker following the instructions in [this message](https://lists.archlinux.org/pipermail/arch-dev-public/2013-September/025456.html) in order to have your PGP key signed by three master key holders.
-12.  Install the [devtools](https://www.archlinux.org/packages/?name=devtools) package.
-13.  [Configure your private ssh key](/index.php/Arch_User_Repository#Authentication "Arch User Repository") for `orion.archlinux.org` and `repos.archlinux.org` hosts.
-14.  Ssh to yourname@orion.archlinux.org (once you have permissions).
-15.  If you are not upgraded to a Trusted User group on bug tracker in two days, report this as a bug to arch-dev-public.
-16.  Start contributing!
+11.  Install the [devtools](https://www.archlinux.org/packages/?name=devtools) package.
+12.  [Configure your private ssh key](/index.php/Arch_User_Repository#Authentication "Arch User Repository") for `orion.archlinux.org` and `repos.archlinux.org` hosts.
+13.  Ssh to yourname@orion.archlinux.org (once you have permissions).
+14.  If you are not upgraded to a Trusted User group on bug tracker in two days, report this as a bug to arch-dev-public.
+15.  Start contributing!
 
 ## The TU and the AUR
 

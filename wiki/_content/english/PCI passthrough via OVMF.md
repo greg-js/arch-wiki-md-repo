@@ -54,6 +54,8 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [10.7 X doesnt start after enabling vfio_pci](#X_doesnt_start_after_enabling_vfio_pci)
     *   [10.8 Chromium ignores integrated graphics for acceleration](#Chromium_ignores_integrated_graphics_for_acceleration)
     *   [10.9 VM only uses one core](#VM_only_uses_one_core)
+    *   [10.10 Passthrough seems to work but no output is displayed](#Passthrough_seems_to_work_but_no_output_is_displayed)
+    *   [10.11 virt-manager has permission issues](#virt-manager_has_permission_issues)
 *   [11 See also](#See_also)
 
 ## Prerequisites
@@ -1033,6 +1035,34 @@ This can be fixed by [explicitly telling Chromium which GPU you want to use](/in
 ### VM only uses one core
 
 For some users, even if IOMMU is enabled and the core count is set to more than 1, the VM still only uses one CPU core and thread. To solve this enable "Manually set CPU topology" in `virt-manager` and set it to the desirable amount of CPU sockets, cores and threads. Keep in mind that "Threads" refers to the thread count per CPU, not the total count.
+
+### Passthrough seems to work but no output is displayed
+
+Make sure if you are using virt-manager that UEFI firmware is selected for your virtual machine. Also, make sure you have passed the correct device to the VM.
+
+### virt-manager has permission issues
+
+If you are getting a permission error with virt-manager add the following to your /etc/libvirt/qemu.conf
+
+```
+group="kvm"
+user="*user*"
+
+```
+
+If that does not work make sure your user account is added to the kvm and libvirt groups
+
+```
+groups *user*
+
+```
+
+If kvm and libvirt are not listed add your user to each group
+
+```
+usermod -a -G kvm, libvirt *user*
+
+```
 
 ## See also
 

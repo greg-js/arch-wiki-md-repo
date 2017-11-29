@@ -47,6 +47,8 @@ Nginx is often used together with a scripting language such as [PHP](/index.php/
 
 Using the mainline branch is recommended. The main reason to use the stable branch is that you are concerned about possible impacts of new features, such as incompatibility with third-party modules or the inadvertent introduction of bugs in new features [[1]](https://www.nginx.com/blog/nginx-1-6-1-7-released/).
 
+**Note:** All nginx modules available in the [official repositories](/index.php/Official_repositories "Official repositories") require the *nginx* package (as opposed to *nginx-mainline*) as a dependency. It may be wise to review the list of modules for any you might need/want before making the *nginx* vs *nginx-mainline* decision. Modules for *nginx-mainline* can be found in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+
 For a Ruby on Rails setup with nginx, see [Ruby on Rails#The Perfect Rails Setup](/index.php/Ruby_on_Rails#The_Perfect_Rails_Setup "Ruby on Rails").
 
 For a chroot-based installation for additional security, see [#Installation in a chroot](#Installation_in_a_chroot).

@@ -21,6 +21,7 @@ Spotify also offers free users the ability to create playlist which can be shuff
         *   [2.5.1 blockify](#blockify)
         *   [2.5.2 spotblock](#spotblock)
         *   [2.5.3 Spotify-AdKiller](#Spotify-AdKiller)
+        *   [2.5.4 Hosts file](#Hosts_file)
     *   [2.6 Remote Control](#Remote_Control)
         *   [2.6.1 Send commands via SSH](#Send_commands_via_SSH)
         *   [2.6.2 Grab the Spotify window via SSH](#Grab_the_Spotify_window_via_SSH)
@@ -296,6 +297,30 @@ By placing this script at `/usr/local/bin/spotify`, it gets preferred to `/usr/b
 #### Spotify-AdKiller
 
 [Spotify-AdKiller](https://github.com/SecUpwN/Spotify-AdKiller) ([spotify-adkiller-git](https://aur.archlinux.org/packages/spotify-adkiller-git/)) is another alternative to block Spotify ads.
+
+#### Hosts file
+
+You may also add the following lines to your hosts file to block ads in Spotify :
+
+ `/etc/hosts` 
+```
+# Block spotify ads
+127.0.0.1 media-match.com
+127.0.0.1 adclick.g.doublecklick.net
+127.0.0.1 www.googleadservices.com
+127.0.0.1 open.spotify.com
+127.0.0.1 pagead2.googlesyndication.com
+127.0.0.1 desktop.spotify.com
+127.0.0.1 googleads.g.doubleclick.net
+127.0.0.1 pubads.g.doubleclick.net
+127.0.0.1 audio2.spotify.com
+127.0.0.1 www.omaze.com
+127.0.0.1 omaze.com
+127.0.0.1 bounceexchange.com
+127.0.0.1 spclient.wg.spotify.com
+127.0.0.1 securepubads.g.doubleclick.net
+
+```
 
 ### Remote Control
 

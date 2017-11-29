@@ -64,14 +64,14 @@ SSH will ask for the password, if needed. If you do not want to type in the pass
 To unmount the remote system:
 
 ```
-$ fusermount -u *mountpoint*
+$ fusermount3 -u *mountpoint*
 
 ```
 
 Example:
 
 ```
-$ fusermount -u /local/path
+$ fusermount3 -u /local/path
 
 ```
 

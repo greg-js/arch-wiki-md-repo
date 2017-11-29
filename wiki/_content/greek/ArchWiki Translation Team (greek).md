@@ -96,13 +96,11 @@ H οργάνωση της μετάφρασης γίνεται στην πλατ�
 ### Templates που έχουν μεταφραστεί
 
 | Template | Συμμετέχοντες | Ποσοστό |
-| [Expansion_(Ελληνικά)](/index.php/Template:Expansion_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Template:Expansion (Ελληνικά)") | [Opanos](/index.php/User:Opanos "User:Opanos") - [NikTh](/index.php/User:NikTh "User:NikTh") | 100% |
 | [Template_(Ελληνικά)](/index.php/Template:Template_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Template:Template (Ελληνικά)") | [NikTh](/index.php/User:NikTh "User:NikTh") | 100% |
 | [Note_(Ελληνικά)](/index.php/Template:Note_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Template:Note (Ελληνικά)") | [NikTh](/index.php/User:NikTh "User:NikTh") | 100% |
 | [Warning_(Ελληνικά)](/index.php/Template:Warning_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Template:Warning (Ελληνικά)") | [NikTh](/index.php/User:NikTh "User:NikTh") | 100% |
 | [Tip_(Ελληνικά)](/index.php/Template:Tip_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Template:Tip (Ελληνικά)") | [NikTh](/index.php/User:NikTh "User:NikTh") | 100% |
 | [Translateme_(Ελληνικά)](/index.php/Template:Translateme_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Template:Translateme (Ελληνικά)") | [NikTh](/index.php/User:NikTh "User:NikTh") | 100% |
-| [Out_of_date_(Ελληνικά)](/index.php/Template:Out_of_date_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Template:Out of date (Ελληνικά)") | [NikTh](/index.php/User:NikTh "User:NikTh") | 100% |
 | [Beginners'_Guide_navigation_(Ελληνικά)](/index.php?title=Template:Beginners%27_Guide_navigation_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC)&action=edit&redlink=1 "Template:Beginners' Guide navigation (Ελληνικά) (page does not exist)") | [NikTh](/index.php/User:NikTh "User:NikTh") | 100% |
 | [Related articles start (Ελληνικά)](/index.php/Template:Related_articles_start_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Template:Related articles start (Ελληνικά)") | [NikTh](/index.php/User:NikTh "User:NikTh") | 100% |
 | [Poor writing (Ελληνικά)](/index.php/Template:Poor_writing_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Template:Poor writing (Ελληνικά)") | [Sudowoodo](/index.php/User:Sudowoodo "User:Sudowoodo") | 100% |

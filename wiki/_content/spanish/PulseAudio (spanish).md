@@ -1,5 +1,3 @@
-(Traducción al español en curso)
-
 **PulseAudio** es un servidor de sonido para sistemas POSIX y Win32 . Permite tener varios programas reproduciendo sonido en una maquina, entre otras características mas avanzadas.
 
 ## Contents

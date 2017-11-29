@@ -1,3 +1,12 @@
+Related articles
+
+*   [Advanced Linux Sound Architecture/Example Configurations](/index.php/Advanced_Linux_Sound_Architecture/Example_Configurations "Advanced Linux Sound Architecture/Example Configurations")
+*   [Advanced Linux Sound Architecture/Troubleshooting](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting "Advanced Linux Sound Architecture/Troubleshooting")
+*   [Sound system](/index.php/Sound_system "Sound system")
+*   [Disable PC Speaker Beep](/index.php/Disable_PC_Speaker_Beep "Disable PC Speaker Beep")
+*   [PulseAudio](/index.php/PulseAudio "PulseAudio")
+*   [Open Sound System](/index.php/Open_Sound_System "Open Sound System")
+
 The [Advanced Linux Sound Architecture](https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture "wikipedia:Advanced Linux Sound Architecture") (**ALSA**) provides kernel driven sound card drivers. It replaces the original Open Sound System (OSS).
 
 Besides the sound device drivers, ALSA also bundles a user space driven library for application developers. They can then use those ALSA drivers for high level API development. This enables direct (kernel) interaction with sound devices through ALSA libraries.
@@ -874,6 +883,8 @@ To toggle mute/unmute of the volume:
 amixer set Master toggle
 
 ```
+
+**Tip:** When holding a volume key down, and `amixer` gets invoked many times in rapid succession, the Left and Right channel volumes may start to diverge. Consider using `pactl`, see [PulseAudio#Keyboard volume control](/index.php/PulseAudio#Keyboard_volume_control "PulseAudio").
 
 ### Virtual sound device using snd-aloop
 

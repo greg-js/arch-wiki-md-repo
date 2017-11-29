@@ -32,9 +32,9 @@ Related articles
 
 [Install](/index.php/Install "Install") either [firejail](https://www.archlinux.org/packages/?name=firejail), [firejail-git](https://aur.archlinux.org/packages/firejail-git/) or the [firejail-apparmor](https://aur.archlinux.org/packages/firejail-apparmor/) package. A GUI application for use with Firejail is also available, [firetools](https://aur.archlinux.org/packages/firetools/).
 
-**Note:** The User-namespace (`CONFIG_USER_NS=Y`) is not set in the [kernel](/index.php/Kernel "Kernel") configuration. Impact on Firejail users is [deemed negligable](https://github.com/netblue30/firejail/issues/1347). See [FS#36969](https://bugs.archlinux.org/task/36969) for details why this namespace is disabled by default. User-namespaces are [enabled](/index.php/Security#Sandboxing_applications "Security") by default in [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package.
+**Note:** The User-namespace (`CONFIG_USER_NS=Y`) is not set in the [kernel](/index.php/Kernel "Kernel") configuration. Impact on Firejail users is [deemed negligible](https://github.com/netblue30/firejail/issues/1347). See [FS#36969](https://bugs.archlinux.org/task/36969) for details why this namespace is disabled by default. User-namespaces are [enabled](/index.php/Security#Sandboxing_applications "Security") by default in [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package.
 
-**Warning:** While upstream is gradually adopting whitellists, (cf `/etc/firejail/firefox.profile`,) most of the supplied profiles still rely heavily on blacklists. This means that anything not explicitly forbidden by the profile will be accessible to the application. For example, if you have btrfs snapshots available in `/mnt/btrfs`, a jailed program may be forbidden from accessing `$HOME/.ssh`, but would still be able to access `/mnt/btrfs/@some-snapshot/$HOME/.ssh`. Make sure to audit your profiles, see [#Testing profiles](#Testing_profiles)
+**Warning:** While upstream is gradually adopting whitelists, (cf `/etc/firejail/firefox.profile`,) most of the supplied profiles still rely heavily on blacklists. This means that anything not explicitly forbidden by the profile will be accessible to the application. For example, if you have btrfs snapshots available in `/mnt/btrfs`, a jailed program may be forbidden from accessing `$HOME/.ssh`, but would still be able to access `/mnt/btrfs/@some-snapshot/$HOME/.ssh`. Make sure to audit your profiles, see [#Testing profiles](#Testing_profiles)
 
 ## Configuration
 
@@ -93,7 +93,7 @@ You can manually do this for individual applications by executing:
 *   `firecfg` doesn't work with some cli shells such as: `tar`, `curl`, `wget`, `git` and `ssh` which need to be symlinked manually.
 *   Symbolic links to `gzip` and `xz` interfere with `makepkg`'s ability to preload `libfakeroot.so`. See [BBS#230913](https://bbs.archlinux.org/viewtopic.php?id=230913).
 
-**Warning:** Upstream provides profiles for `gpg` and `gpg-agent`. If gpg is symlinked with the supplied profile, pacman will be unable to update the archlinux-keyring.
+**Warning:** Upstream provides profiles for `gpg` and `gpg-agent`. If gpg is symlinked with the supplied profile, pacman will be unable to update [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring).
 
 ### Verifying Firejail is being used
 
@@ -120,13 +120,13 @@ Whitelists are restrictive:
 
 The basic process is:
 
-1.  Copy the default profile,(which uses blacklists,) to your work folder and give it a unique name:
+1.  Copy the default profile (which uses blacklists) to your work folder and give it a unique name:
 2.  Change the line `include /etc/firejail/default.local` to `include /etc/firejail/ProfileName.local`
 3.  Gradually comment/uncomment the various options while checking at each stage that the application runs inside the new sandbox
 4.  Desirable options not available in the copied default profile can be found by consulting the manual
 5.  [Build a whitelist](https://firejail.wordpress.com/documentation-2/building-whitelisted-profiles/) of permitted locations. For portability, it may be advisable to place at least some of this list it in a `.local` file
 6.  Test the profile for security holes, see [#Testing profiles](#Testing_profiles)
-7.  Once satisfied, copy your new profile to either `/etc/firejail/` or `~/,config/firejail/`
+7.  Once satisfied, copy your new profile to either `/etc/firejail/` or `~/.config/firejail/`
 
 You may find the following to be useful:
 
@@ -139,8 +139,8 @@ You may find the following to be useful:
 **Note:**
 
 *   The idea is to be as restrictive as possible, while still maintaining usability. This may involve sacrificing potentially dangerous functionality and a change in cavalier work habits.
-*   By default, seccomp filters work on a blacklist, (which can be found in the manual.) It is possible to use `seccomp.keep` to build a custom whitelist of filters for an application. [[1]](https://firejail.wordpress.com/documentation-2/seccomp-guide/).
-*   The list of possible options for a firejail profile is extensive, and users should consult man(5) firejail-profile.
+*   By default, seccomp filters work on a blacklist (which can be found in the manual). It is possible to use `seccomp.keep` to build a custom whitelist of filters for an application. [[1]](https://firejail.wordpress.com/documentation-2/seccomp-guide/).
+*   The list of possible options for a firejail profile is extensive, and users should consult the firejail-profile(5) man page.
 
 #### Persistent local customisation
 
@@ -237,7 +237,7 @@ echo "enable-shm = no" >> ~/.config/pulse/client.conf
 
 ### Hidepid
 
-if you have hidepid installed, Firemon can only be run as root. This, among other things, will cause problems with the Firetools GUI incorrectly reporting "Capabilities", "Protocols" and the status of "Seccomp". See [[3]](https://github.com/netblue30/firejail/issues/1564)
+If you have hidepid installed, Firemon can only be run as root. This, among other things, will cause problems with the Firetools GUI incorrectly reporting "Capabilities", "Protocols" and the status of "Seccomp". See [[3]](https://github.com/netblue30/firejail/issues/1564)
 
 ## Tips and tricks
 

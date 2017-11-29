@@ -43,6 +43,7 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
 *   [7 Fingerprint reader](#Fingerprint_reader)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 xorg freezes at startup](#xorg_freezes_at_startup)
+    *   [8.2 PCIe Bus Error in system logs](#PCIe_Bus_Error_in_system_logs)
 *   [9 Notes](#Notes)
 *   [10 External links](#External_links)
 
@@ -200,6 +201,19 @@ The fingerprint reader is a Validity/Synaptics model with USB id `138a:0090`. Th
 
 If Xorg freezes as soon as it starts, even before printing any logs, and you are trying to use the Intel card with the nvidia one disabled, you need to add kernel parameter `acpi_rev_override=1` as explained in [#Disable discrete GPU](#Disable_discrete_GPU) above.
 
+### PCIe Bus Error in system logs
+
+If you have an NVMe disk and depending of your BIOS version (but even with 1.5.0 from october 2017), you may have a lot of system error logs like:
+
+```
+Nov 25 22:36:08 xxxxx kernel: pcieport 0000:00:1c.0: PCIe Bus Error: severity=Corrected, type=Data Link Layer, id=00e0(Transmitter ID)
+Nov 25 22:36:08 xxxxx kernel: pcieport 0000:00:1c.0:   device [8086:a110] error status/mask=00001000/00002000
+Nov 25 22:36:08 xxxxx kernel: pcieport 0000:00:1c.0:    [12] Replay Timer Timeout
+
+```
+
+This can be corrected with the kernel boot option `pci=nommconf` (see [here](https://unix.stackexchange.com/questions/327730/what-causes-this-pcieport-00000003-0-pcie-bus-error-aer-bad-tlp) for explanation).
+
 ## Notes
 
 The suspend function key is not printed on the keyboard, but it's actually mapped to `Fn`+`Insert`.
@@ -207,3 +221,4 @@ The suspend function key is not printed on the keyboard, but it's actually mappe
 ## External links
 
 *   [Dell XPS 15 9560 (Early 2017) Thread on the Arch Forums](https://bbs.archlinux.org/viewtopic.php?id=223056)
+*   [Tutorial about how to change CPU thermal paste on XPS15 to avoid throttling](https://www.ultrabookreview.com/14875-fix-throttling-xps-15/)

@@ -41,6 +41,7 @@ From the [awesome website](https://awesomewm.org/):
     *   [3.10 Titlebars](#Titlebars)
     *   [3.11 Battery notification](#Battery_notification)
     *   [3.12 Media Controls](#Media_Controls)
+    *   [3.13 Steam Keyboard](#Steam_Keyboard)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Debugging rc.lua](#Debugging_rc.lua)
         *   [4.1.1 awmtt](#awmtt)
@@ -500,6 +501,23 @@ It is possible to control both volume and media playback via a combination of am
    end)
 
 ```
+
+### Steam Keyboard
+
+The on screen Steam Keyboard that can be activated by the [Steam Controller](/index.php/Gamepad#Steam_Controller "Gamepad") appears to freeze after trying to type one character. This is because the client that is supposed to receive the input has to be focussed to receive it and the keyboard will wait until this input is succesfully send. Manually focussing another client will send the input to this client and unfreeze the keyboard again until the next character is entered.
+
+The trick to getting the keyboard to work correctly is to prevent it ever receiving focus. Add the following signal to your config (or merge with an existing client focus signal):
+
+```
+client.connect_signal("focus", function(c)
+    if awful.rules.match(c, { name = "^Steam Keyboard$" }) then
+        awful.client.focus.history.previous()
+    end
+end)
+
+```
+
+This will return the focus to the last client whenever the keyboard receives focus. As the input to the keyboard is handled by the [Steam](/index.php/Steam "Steam") client and as such doesn't need focus, inputting text will now work correctly.
 
 ## Troubleshooting
 

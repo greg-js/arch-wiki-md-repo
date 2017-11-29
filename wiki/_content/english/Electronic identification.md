@@ -1,3 +1,8 @@
+Related articles
+
+*   [Common Access Card](/index.php/Common_Access_Card "Common Access Card")
+*   [Smartcards](/index.php/Smartcards "Smartcards")
+
 An [electronic identification](https://en.wikipedia.org/wiki/Electronic_identification "w:Electronic identification") ("eID") is an electronic identification solution of citizens or organizations, for example in view to access benefits or services provided by government authorities, banks or other companies. Apart from online authentication many eICs also give users the option to sign electronic documents with a digital signature.
 
 ## Contents
@@ -30,6 +35,8 @@ Install the [chrome-token-signing](https://aur.archlinux.org/packages/chrome-tok
 For Google Chrome and Chromium you also will probably want to run [esteid-update-nssdb](https://github.com/open-eid/linux-installer/blob/master/esteid-update-nssdb) script that enables TLS client authentication in the browser.
 
 If you still cannot login from [Firefox](/index.php/Firefox "Firefox") with your ID-card you should install [esteidfirefoxplugin](https://aur.archlinux.org/packages/esteidfirefoxplugin/).
+
+If you updated your certificates due to [https://www.id.ee/?lang=en&id=38241](https://www.id.ee/?lang=en&id=38241), then for signing you need to use a patched version of opensc (see [https://github.com/OpenSC/OpenSC/issues/1176](https://github.com/OpenSC/OpenSC/issues/1176)). Consider [opensc-esteid](https://aur.archlinux.org/packages/opensc-esteid/).
 
 ### Sweden
 

@@ -70,13 +70,13 @@ $ mkdir -p ~/go/src
 The `~/go/src` directory is used to store the sources of the packages. When compiling Go will also create `bin` for executables and `pkg` to cache individual packages. You'll probably want to add `~/go/bin` to the `$PATH` [environment variable](/index.php/Environment_variable "Environment variable") to run installed Go:
 
 ```
-export PATH="$PATH:~/go/bin"
+export PATH="$PATH:$HOME/go/bin"
 
 ```
 
 Run `go help gopath` for more information.
 
-**Tip:** `$GOPATH` works like `$PATH` and can contain multiple entries, this can be useful to split out packages downloaded with `go get` and your own source code; e.g. `GOPATH=~/go:~/mygo`
+**Tip:** `$GOPATH` works like `$PATH` and can contain multiple entries, this can be useful to split out packages downloaded with `go get` and your own source code; e.g. `GOPATH=$HOME/go:$HOME/mygo`
 
 ### Enable cross compilation for other platforms
 

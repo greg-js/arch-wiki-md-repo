@@ -1,3 +1,8 @@
+Related articles
+
+*   [Laptop](/index.php/Laptop "Laptop")
+*   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
+
 From the [project page](http://linrunner.de/en/tlp/tlp.html):
 
 	TLP brings you the benefits of advanced power management for Linux without the need to understand every technical detail. TLP comes with a default configuration already optimized for battery life, so you may just install and forget it. Nevertheless TLP is highly customizable to fulfill your specific requirements.
@@ -6,15 +11,14 @@ From the [project page](http://linrunner.de/en/tlp/tlp.html):
 
 *   [1 Installation](#Installation)
     *   [1.1 ThinkPads only](#ThinkPads_only)
-*   [2 Start](#Start)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Btrfs](#Btrfs)
-    *   [3.2 Bumblebee with NVIDIA driver](#Bumblebee_with_NVIDIA_driver)
-    *   [3.3 Radio Device Wizard](#Radio_Device_Wizard)
-    *   [3.4 Command line](#Command_line)
-*   [4 Debugging](#Debugging)
-*   [5 Features intentionally excluded](#Features_intentionally_excluded)
-*   [6 See also](#See_also)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Btrfs](#Btrfs)
+    *   [2.2 Bumblebee with NVIDIA driver](#Bumblebee_with_NVIDIA_driver)
+    *   [2.3 Radio Device Wizard](#Radio_Device_Wizard)
+    *   [2.4 Command line](#Command_line)
+*   [3 Debugging](#Debugging)
+*   [4 Features intentionally excluded](#Features_intentionally_excluded)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -32,15 +36,6 @@ For advanced battery functions, i.e. charge thresholds and recalibration, instal
 *   [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) – acpi-call is needed for battery charge thresholds and recalibration on Sandy Bridge and newer models (X220/T420, X230/T430 et al.)
 
 See the TLP FAQ, section ["Which kernel module?"](http://linrunner.de/en/tlp/docs/tlp-faq.html#kernmod), for details.
-
-## Start
-
-After installation TLP will be automatically activated upon system start. To start it immediately without reboot or to apply changed settings, use:
-
-```
-# tlp start
-
-```
 
 ## Configuration
 

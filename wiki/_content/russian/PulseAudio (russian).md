@@ -20,7 +20,8 @@
 *   [3 Выполнение](#.D0.92.D1.8B.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5)
 *   [4 Настройка бакэндов](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B1.D0.B0.D0.BA.D1.8D.D0.BD.D0.B4.D0.BE.D0.B2)
     *   [4.1 ALSA](#ALSA)
-        *   [4.1.1 ALSA/dmix без захвата аппаратного устройства](#ALSA.2Fdmix_.D0.B1.D0.B5.D0.B7_.D0.B7.D0.B0.D1.85.D0.B2.D0.B0.D1.82.D0.B0_.D0.B0.D0.BF.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BD.D0.BE.D0.B3.D0.BE_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0)
+        *   [4.1.1 Раскрытие источников, устройств вывода и микшеров PulseAudio для ALSA](#.D0.A0.D0.B0.D1.81.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.B8.D1.81.D1.82.D0.BE.D1.87.D0.BD.D0.B8.D0.BA.D0.BE.D0.B2.2C_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4.D0.B0_.D0.B8_.D0.BC.D0.B8.D0.BA.D1.88.D0.B5.D1.80.D0.BE.D0.B2_PulseAudio_.D0.B4.D0.BB.D1.8F_ALSA)
+        *   [4.1.2 ALSA/dmix без захвата аппаратного устройства](#ALSA.2Fdmix_.D0.B1.D0.B5.D0.B7_.D0.B7.D0.B0.D1.85.D0.B2.D0.B0.D1.82.D0.B0_.D0.B0.D0.BF.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BD.D0.BE.D0.B3.D0.BE_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0)
     *   [4.2 OSS](#OSS)
         *   [4.2.1 ossp](#ossp)
         *   [4.2.2 Оболочка padsp](#.D0.9E.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B0_padsp)
@@ -171,17 +172,68 @@ PulseAudio на Arch имеет `pulseaudio.socket`, который включе
 
 ```
 
+#### Раскрытие источников, устройств вывода и микшеров PulseAudio для ALSA
+
+[pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) также содержит необходимые конфигурационные файлы для разрешения приложениям ALSA использовать устройство PulseAudio по умолчанию. Плагин ALSA `pulse` более гибкий чем этот:
+
+ `~/.asoundrc (or /etc/asound.conf)` 
+```
+# Create an alsa input/output using specific PulseAudio sources/sinks
+ pcm.pulse-example1 {
+     type pulse
+     device "my-combined-sink" # name of a source or sink
+     fallback "pulse-example2" # if combined not available
+ }
+
+ pcm.pulse-example2 {
+     type pulse
+     device "other-sound-card" # name of a source or sink
+     # example: device "alsa_output.pci-0000_00_1b.0.analog-stereo"
+ }
+
+ # Create an alsa mixer using specific PulseAudio sources/sinks
+ # these can be tested with "alsamixer -D pulse-example3"
+ ctl.pulse-example3 {
+     type pulse
+     device "my-output" # name of source or sink to control
+
+     # example: always control the laptop speakers:
+     # device "alsa_output.pci-0000_00_1b.0.analog-stereo"
+     fallback "pulse-example4" # supports fallback too
+ }
+
+ # Mixers also can control a specific source and sink, separately:
+ ctl.pulse-example4 {
+     type pulse
+     sink "my-usb-headphones"
+     source "my-internal-mic"
+
+     # example: output to HDMI, record using internal
+     sink "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1"
+     source "alsa_input.pci-0000_00_1b.0.analog-stereo"
+ }
+
+ # These can override the default mixer (example: for pnmixer integration)
+ ctl.!default {
+     type pulse
+     sink "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1"
+     source "alsa_input.pci-0000_00_1b.0.analog-stereo"
+ }
+```
+
+Для знакомства со всеми доступными настройками доступен [исходный код](http://git.alsa-project.org/?p=alsa-plugins.git;a=tree;f=pulse;hb=HEAD).
+
 #### ALSA/dmix без захвата аппаратного устройства
 
-**Примечание:** Этот раздел описывает альтернативную настройку, которая, как правило, **не** рекомендуется .
+**Примечание:** Этот раздел описывает альтернативную настройку, которая, как правило, **не** рекомендуется.
 
-Вы возможно захотите использовать ALSA непосредственно в большинстве Ваших приложений, при этом елси есть необходимость использовать приложения требующие PulseAudio. Следующие шаги позволяют Вам заставлять PulseAudio использовать dmix вместо того, чтобы "захватывать" устройство ALSA.
+Вы, возможно, захотите использовать ALSA непосредственно в большинстве Ваших приложений, при этом, если есть необходимость, иметь возможность использовать приложения требующие PulseAudio. Следующие шаги позволяют Вам заставлять PulseAudio использовать dmix вместо того, чтобы "захватывать" устройство ALSA.
 
 *   Удалите пакет [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa), обеспечивающий уровень совместимости между приложениями ALSA и PulseAudio. После этого Ваши приложения ALSA будут использовать ALSA напрямую, без "зацепки" Pulse.
 
 *   Отредактируйте `/etc/pulse/default.pa`.
 
-	Найдите и расскоментируйте строки, загружающие драйверы бэкэнда. Добавьте параметры **device** (устройство) следующим образом. Затем найдите и закомментируйте строки, загружающие модули автоматического обнаружения.
+	Найдите и расскоментируйте строки, загружающие драйверы бэкэнда. Добавьте параметры **device** (устройства) следующим образом. Затем найдите и закомментируйте строки, загружающие модули автоматического обнаружения.
 
 ```
 load-module module-alsa-sink **device=dmix**
@@ -215,7 +267,10 @@ $ chmod +x ~/.kde4/env/kmix_disable_pulse.sh
 
 Программы использующие OSS могут работать с PulseAudio путем его загрузки с padsp (включенный с PulseAudio):
 
+```
 $ padsp OSSпрограмма
+
+```
 
 Несколько примеров:
 
@@ -242,7 +297,7 @@ exec padsp /usr/bin/OSSprogram "$@"
 
 ### OpenAL
 
-Приложение OpenAL должно использовать PulseAudio по умолчанию, но может быть настроено так, чтобы использовать именно его: `/etc/openal/alsoft.conf`  `drivers=pulse, alsa` 
+Приложение OpenAL должно использовать PulseAudio по умолчанию, но может быть настроено так, чтобы использовать именно его: `/etc/openal/alsoft.conf`  `drivers=pulse,alsa` 
 
 ### libao
 
@@ -250,7 +305,7 @@ exec padsp /usr/bin/OSSprogram "$@"
 
  `/etc/libao.conf`  `default_driver=pulse` 
 
-Обязательно удалите опцию alsa драйвера `dev=default` или настройте его для определения определенного имени устройства вывода Pulse (sink) или его числа.
+Обязательно удалите опцию alsa драйвера `dev=default` или настройте его для определения конкретного имени устройства вывода Pulse (sink) или его числа.
 
 **Примечание:** Вы можете держать libao стандартно на вывод драйвера *alsa* и его устройств по умолчанию, если Вы устанавливаете [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa), так как устройством вывода по умолчанию ALSA **является** PulseAudio.
 

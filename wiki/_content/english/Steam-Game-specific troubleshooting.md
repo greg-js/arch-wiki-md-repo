@@ -1272,27 +1272,20 @@ The game does not allow you to change its resolution on a multi-monitor setup on
 
 The game does not properly support pulseaudio, so you will have to use ALSA. Add this to the games launch options in Steam: "SDL_AUDIODRIVER=alsa %command%" In your $HOME directory create the file ".asoundrc" get your card/device number with "aplay -l" Add the following to your .asoundrc (replace card and device no with the one you got from "aplay -l")
 
-pcm.!default {
-
 ```
-   type hw
-   card 0
-   device 0
-
-```
-
-}
+pcm.!default { 
+    type hw
+    card 0
+    device 0
+} 
 
 ctl.!default {
-
-```
-   type hw
-   card 0
-   device 0 
-
-```
-
+    type hw
+    card 0
+    device 0 
 }
+
+```
 
 Before starting the game make sure to kill pulseaudio with "pulseaudio -k"
 
@@ -1432,11 +1425,18 @@ In the game, go to the options and set all audio to the proper volume.
 ### Game Does not Starts
 
 ```
+$ rm ~/.local/share/Steam/SteamApps/common/Pyre/lib64/libSDL2-2.0.so.0
+
+```
+
+If this doesn't work, downgrade sdl2.
+
+```
 $ pacman -U [https://archive.archlinux.org/packages/s/sdl2/sdl2-2.0.6-2-x86_64.pkg.tar.xz](https://archive.archlinux.org/packages/s/sdl2/sdl2-2.0.6-2-x86_64.pkg.tar.xz)
 
 ```
 
-There is a problem with current SLD2 version 2.0.7\. A simple downgrade to 2.0.6 works fine. Afret downgrade don't forget to add sdl2 to IgnorePkg in /etc/pacman.conf.
+Then add sdl2 to IgnorePkg in /etc/pacman.conf.
 
 `IgnorePkg = sdl2`
 
