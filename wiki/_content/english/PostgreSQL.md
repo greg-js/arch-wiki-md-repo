@@ -390,7 +390,7 @@ IgnorePkg = postgresql postgresql-libs
 
 ```
 
-This will ensure you do not accidentally upgrade the database to an incompatible version. When an upgrade is available, pacman will notify you that it is skipping the upgrade because of the entry in `pacman.conf`. Minor version upgrades (e.g. 9.0.3 to 9.0.4) are safe to perform. However, if you do an accidental upgrade to a different major version (e.g. 9.0.x to 9.1.x), you might not be able to access any of your data. Always check the [PostgreSQL home page](https://www.postgresql.org/) to be sure of what steps are required for each upgrade. For a bit about why this is the case, see the [versioning policy](https://www.postgresql.org/support/versioning).
+This will ensure you do not accidentally upgrade the database to an incompatible version. When an upgrade is available, pacman will notify you that it is skipping the upgrade because of the entry in `pacman.conf`. Minor version upgrades are safe to perform. However, if you do an accidental upgrade to a different major version, you might not be able to access any of your data. Always check the [PostgreSQL home page](https://www.postgresql.org/) to be sure of what steps are required for each upgrade. For a bit about why this is the case, see the [versioning policy](https://www.postgresql.org/support/versioning).
 
 There are two main ways to upgrade your PostgreSQL database. Read the official documentation for details.
 

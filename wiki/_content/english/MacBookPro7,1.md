@@ -1,3 +1,10 @@
+Related articles
+
+*   [Mac](/index.php/Mac "Mac")
+*   <a class="mw-selflink selflink">MacBookPro7,1</a>
+*   [MacBookPro8,1/8,2/8,3 (2011)](/index.php/MacBookPro8,1/8,2/8,3_(2011) "MacBookPro8,1/8,2/8,3 (2011)")
+*   [MacBookPro9,2 (Mid-2012)](/index.php/MacBookPro9,2_(Mid-2012) "MacBookPro9,2 (Mid-2012)")
+
 This page contains tips on installing Arch Linux on a Mid 2010 13" MacBook Pro.
 
 ## Contents

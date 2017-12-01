@@ -851,15 +851,6 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://xonotic.org](http://xonotic.org) || [xonotic](https://www.archlinux.org/packages/?name=xonotic)
 
-*   Blood Frontier – FPS multijugador orientado a equipos basado en el motor (Sauerbraten) de Cube2.
-*   [Tesseract](http://tesseract-fps.sourceforge.net)
-*   [Futuristic Arenas](http://www.javagameplay.com/futuristicarenas/medium.html)
-*   [Jake 2](http://www.bytonic.de/downloads/jake2_jogl11.jnlp)
-*   [Scared](http://www.pulpgames.net/scared/)
-*   [True Combat: Elite(TCE)](http://www.truecombatelite.com/) - Completamente gratuito, realista, es una modificación de Enemy Territory basado en equipos.
-*   [TUER](http://tuer.sourceforge.net)
-*   [Ancient Arenas](http://www.javagameplay.com/ancientarenas/medium.html)
-
 ## Simulación
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/Simulation_game "wikipedia:Simulation game")

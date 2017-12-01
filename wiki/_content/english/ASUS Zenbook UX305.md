@@ -1,3 +1,13 @@
+| **Device** | **Status** |
+| [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
+| [Wireless](/index.php/Wireless "Wireless") | Yes |
+| [ALSA](/index.php/ALSA "ALSA") | Yes |
+| [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
+| Camera | Yes |
+| [Power management](/index.php/Power_management "Power management") | Yes |
+| [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
+| SD card reader | Yes |
+
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the [ASUS Zenbook UX305](https://www.asus.com/Notebooks/ASUS-ZenBook-UX305FA/specifications/).
 
 Hardware reference from UX305-FB041H. Model available since **12 feb 2015**.
@@ -7,7 +17,8 @@ Hardware reference from UX305-FB041H. Model available since **12 feb 2015**.
 *   [1 Hardware lists](#Hardware_lists)
 *   [2 Compatibility](#Compatibility)
     *   [2.1 Touchpad](#Touchpad)
-        *   [2.1.1 Middle click](#Middle_click)
+        *   [2.1.1 Palm detection](#Palm_detection)
+        *   [2.1.2 Middle click](#Middle_click)
     *   [2.2 Wifi](#Wifi)
     *   [2.3 Graphics](#Graphics)
     *   [2.4 QHD+ Pentile Display](#QHD.2B_Pentile_Display)
@@ -26,6 +37,8 @@ See [[2]](https://gist.github.com/precurse/6dc1990cd000551c8f11) for UX305CA (Sk
 
 Works after installing [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput).
 
+#### Palm detection
+
 If default Palm Detection doesn't work well, one can manually disable part of the trackpad by setting AreaEdge properties.
 
 You can do this on the fly or add these parameters in the config file:
@@ -38,19 +51,12 @@ You can do this on the fly or add these parameters in the config file:
 
 #### Middle click
 
-EDIT by sputnick 20160424: With ASUS Zenbook UX305UA-FC057T, I can't figure out how to simulate middle click (to paste) even after running
+Three finger tap for middle click simulation should work under [libinput](/index.php/Libinput "Libinput") by default.
+
+If you are still using the old [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) driver, you can enable Middle click by running:
 
 ```
-synclient TapButton3=2
-
-```
-
-thanks to add workaround if you have one. This post didn't help me [https://askubuntu.com/questions/761931/cant-simulate-middle-click-with-my-trackpad-asus-zenbook-ux305ua-fc057t](https://askubuntu.com/questions/761931/cant-simulate-middle-click-with-my-trackpad-asus-zenbook-ux305ua-fc057t)
-
-Edit by [H3g3m0n](/index.php?title=User:H3g3m0n&action=edit&redlink=1 "User:H3g3m0n (page does not exist)") ([talk](/index.php/User_talk:H3g3m0n "User talk:H3g3m0n")) 23:12, 26 May 2016 (UTC): @sputnick Button3 is actually right click. The following works for three finger middleclick on my UX305FA:
-
-```
-synclient TapButton1=1 TapButton2=3 TapButton3=2
+$ synclient TapButton1=1 TapButton2=3 TapButton3=2
 
 ```
 
@@ -91,6 +97,8 @@ For Firefox and Thunderbird, add the below property in the about:config area
 ```
 
 ### Function Keys
+
+As of [linux](https://www.archlinux.org/packages/?name=linux) 4.10, pressing `Fn+F5` (brightness down) and `Fn+F6` (brightness up) works without additional configuration on the UX305CA.
 
 Kernel 3.16 with `acpi_listen`, when pressing `Fn+F12` (volup), `Fn+F11` (voldown), `Fn+F10` (mute), `F9` (disable mousepad):
 

@@ -12,11 +12,6 @@ HDAPS意为"硬盘主动防护系统",它在硬盘受到突然冲击时(比如�
 *   [2 保护](#.E4.BF.9D.E6.8A.A4)
     *   [2.1 hdapsd](#hdapsd)
 *   [3 图形界面工具](#.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2.E5.B7.A5.E5.85.B7)
-    *   [3.1 gnome-hdaps-applet](#gnome-hdaps-applet)
-    *   [3.2 kdeplasma-applets-hdaps-monitor](#kdeplasma-applets-hdaps-monitor)
-    *   [3.3 xfce4-hdaps applet](#xfce4-hdaps_applet)
-    *   [3.4 HDAPSicon](#HDAPSicon)
-    *   [3.5 hdaps-gl](#hdaps-gl)
 *   [4 参见](#.E5.8F.82.E8.A7.81)
 
 ## 震动检测
@@ -78,27 +73,23 @@ ExecStart=/usr/bin/hdapsd --sensitivity=40 -blp
 
 ## 图形界面工具
 
-这里有一些显示hdapsd状态的软件,通过它们你很容易知道发生了些什么.你可以选择不安装它们,不过它们很方便.
+这里有一些显示hdapsd状态的软件,通过它们你很容易知道发生了些什么.你可以选择不安装它们.
 
-### gnome-hdaps-applet
+**HDAPS monitor** — KDE4 plasmoid对于HDAPS.
 
-这是一个GNOME面板小程序 (Note: XFCE也可以使用GNOME面板小程序) ,它可以显示硬盘的当前状态. 软件包位于[AUR](/index.php/AUR "AUR"): [gnome-hdaps-applet](https://aur.archlinux.org/packages/gnome-hdaps-applet/). 如果你不想默认显示hda或sda,请在编译前修改[PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+	[https://store.kde.org/content/show.php/?content=103481](https://store.kde.org/content/show.php/?content=103481) || [kdeplasma-applets-hdaps-monitor](https://aur.archlinux.org/packages/kdeplasma-applets-hdaps-monitor/)
 
-### kdeplasma-applets-hdaps-monitor
+**xfce4-hdaps** — Xfce4面板小程序.
 
-对于KDE4, 这儿有一个plasmoid的[HDAPS面板小程序](http://kde-look.org/content/show.php/HDAPS+monitor?content=103481). [kdeplasma-applets-hdaps-monitor](https://aur.archlinux.org/packages/kdeplasma-applets-hdaps-monitor/) 在[AUR](/index.php/AUR "AUR")上.
+	[http://michael.orlitzky.com/code/xfce4-hdaps.xhtml](http://michael.orlitzky.com/code/xfce4-hdaps.xhtml) || [xfce4-hdaps](https://aur.archlinux.org/packages/xfce4-hdaps/)
 
-### xfce4-hdaps applet
+**HDAPSicon** — （之前的thinkhdaps）是一个独立的GTK小程序.运行时会在通知区显示图标.
 
-这是一个Xfce4面板小程序. 它也在[AUR](/index.php/AUR "AUR")上: [xfce4-hdaps](https://aur.archlinux.org/packages/xfce4-hdaps/). 安装后将它添加到面板.
+	[https://github.com/thpani/thinkhdaps](https://github.com/thpani/thinkhdaps) || [hdapsicon-git](https://aur.archlinux.org/packages/hdapsicon-git/)
 
-### HDAPSicon
+**hdaps-gl** — 一个简单的OpenGL程序 ,它以3D动画的形式显示您的ThinkPad的状态,和联想的Windows下的软件很像.
 
-HDAPSicon（之前的thinkhdaps）是一个独立的GTK小程序.运行时会在通知区显示图标. [hdapsicon-git](https://aur.archlinux.org/packages/hdapsicon-git/)也在AUR上.
-
-### hdaps-gl
-
-这是一个简单的OpenGL程序 ,它以3D动画的形式显示您的ThinkPad的状态,和联想的Windows下的软件很像. [hdaps-gl](https://aur.archlinux.org/packages/hdaps-gl/) 在AUR上.
+	[https://github.com/evgeni/hdapsd](https://github.com/evgeni/hdapsd) || [hdaps-gl](https://aur.archlinux.org/packages/hdaps-gl/)
 
 ## 参见
 

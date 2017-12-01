@@ -54,27 +54,24 @@ This article is a general list of applications sorted by category, as a referenc
                 *   [1.4.6.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
                 *   [1.4.6.2.2 Other](#Other_2)
         *   [1.4.7 Other P2P networks](#Other_P2P_networks)
-        *   [1.4.8 Web content downloaders](#Web_content_downloaders)
-            *   [1.4.8.1 Console](#Console_4)
-            *   [1.4.8.2 Graphical](#Graphical_4)
-        *   [1.4.9 Pastebin clients](#Pastebin_clients)
+        *   [1.4.8 Pastebin clients](#Pastebin_clients)
     *   [1.5 Communication](#Communication)
         *   [1.5.1 Email clients](#Email_clients)
-            *   [1.5.1.1 Console](#Console_5)
-            *   [1.5.1.2 Graphical](#Graphical_5)
+            *   [1.5.1.1 Console](#Console_4)
+            *   [1.5.1.2 Graphical](#Graphical_4)
         *   [1.5.2 Mail servers](#Mail_servers)
         *   [1.5.3 Instant messaging](#Instant_messaging)
             *   [1.5.3.1 IRC clients](#IRC_clients)
-                *   [1.5.3.1.1 Console](#Console_6)
-                *   [1.5.3.1.2 Graphical](#Graphical_6)
+                *   [1.5.3.1.1 Console](#Console_5)
+                *   [1.5.3.1.2 Graphical](#Graphical_5)
             *   [1.5.3.2 XMPP (Jabber) clients](#XMPP_.28Jabber.29_clients)
-                *   [1.5.3.2.1 Console](#Console_7)
-                *   [1.5.3.2.2 Graphical](#Graphical_7)
+                *   [1.5.3.2.1 Console](#Console_6)
+                *   [1.5.3.2.2 Graphical](#Graphical_6)
             *   [1.5.3.3 XMPP servers](#XMPP_servers)
             *   [1.5.3.4 Other](#Other_3)
             *   [1.5.3.5 Multi-protocol clients](#Multi-protocol_clients)
-                *   [1.5.3.5.1 Console](#Console_8)
-                *   [1.5.3.5.2 Graphical](#Graphical_8)
+                *   [1.5.3.5.1 Console](#Console_7)
+                *   [1.5.3.5.2 Graphical](#Graphical_7)
             *   [1.5.3.6 Lan messengers](#Lan_messengers)
         *   [1.5.4 VoIP / Softphone](#VoIP_.2F_Softphone)
             *   [1.5.4.1 Clients](#Clients)
@@ -85,8 +82,8 @@ This article is a general list of applications sorted by category, as a referenc
             *   [1.5.4.3 Utilities](#Utilities)
     *   [1.6 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
         *   [1.6.1 News aggregators](#News_aggregators)
-            *   [1.6.1.1 Console](#Console_9)
-            *   [1.6.1.2 Graphical](#Graphical_9)
+            *   [1.6.1.1 Console](#Console_8)
+            *   [1.6.1.2 Graphical](#Graphical_8)
         *   [1.6.2 Podcast clients](#Podcast_clients)
         *   [1.6.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
         *   [1.6.4 Blog engines](#Blog_engines)
@@ -98,8 +95,8 @@ This article is a general list of applications sorted by category, as a referenc
     *   [2.1 Codecs](#Codecs)
     *   [2.2 Image](#Image)
         *   [2.2.1 Image viewers](#Image_viewers)
-            *   [2.2.1.1 Console](#Console_10)
-            *   [2.2.1.2 Graphical](#Graphical_10)
+            *   [2.2.1.1 Console](#Console_9)
+            *   [2.2.1.2 Graphical](#Graphical_9)
         *   [2.2.2 Graphics and image manipulation](#Graphics_and_image_manipulation)
             *   [2.2.2.1 Raster editors](#Raster_editors)
             *   [2.2.2.2 Vector graphics - illustration](#Vector_graphics_-_illustration)
@@ -119,13 +116,13 @@ This article is a general list of applications sorted by category, as a referenc
         *   [2.3.7 Sound editing](#Sound_editing)
     *   [2.4 Video](#Video)
         *   [2.4.1 Video players](#Video_players)
-            *   [2.4.1.1 Console](#Console_11)
-            *   [2.4.1.2 Graphical](#Graphical_11)
+            *   [2.4.1.1 Console](#Console_10)
+            *   [2.4.1.2 Graphical](#Graphical_10)
         *   [2.4.2 Subtitles](#Subtitles)
         *   [2.4.3 DVD ripping](#DVD_ripping)
         *   [2.4.4 Video editors](#Video_editors)
-            *   [2.4.4.1 Console](#Console_12)
-            *   [2.4.4.2 Graphical](#Graphical_12)
+            *   [2.4.4.1 Console](#Console_11)
+            *   [2.4.4.2 Graphical](#Graphical_11)
         *   [2.4.5 Screencast](#Screencast)
     *   [2.5 Mobile phone managers](#Mobile_phone_managers)
     *   [2.6 Digital camera managers](#Digital_camera_managers)
@@ -145,13 +142,13 @@ This article is a general list of applications sorted by category, as a referenc
     *   [3.6 Build automation](#Build_automation)
     *   [3.7 Files](#Files)
         *   [3.7.1 File managers](#File_managers)
-            *   [3.7.1.1 Console](#Console_13)
-            *   [3.7.1.2 Graphical](#Graphical_13)
+            *   [3.7.1.1 Console](#Console_12)
+            *   [3.7.1.2 Graphical](#Graphical_12)
         *   [3.7.2 Trash management](#Trash_management)
         *   [3.7.3 File synchronization](#File_synchronization)
         *   [3.7.4 Archiving and compression tools](#Archiving_and_compression_tools)
-            *   [3.7.4.1 Console](#Console_14)
-            *   [3.7.4.2 Graphical](#Graphical_14)
+            *   [3.7.4.1 Console](#Console_13)
+            *   [3.7.4.2 Graphical](#Graphical_13)
         *   [3.7.5 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
         *   [3.7.6 Batch renamers](#Batch_renamers)
         *   [3.7.7 Search and replace](#Search_and_replace)
@@ -161,8 +158,8 @@ This article is a general list of applications sorted by category, as a referenc
     *   [3.10 Clock synchronization](#Clock_synchronization)
     *   [3.11 System monitoring](#System_monitoring)
     *   [3.12 System information viewers](#System_information_viewers)
-        *   [3.12.1 Console](#Console_15)
-        *   [3.12.2 Graphical](#Graphical_15)
+        *   [3.12.1 Console](#Console_14)
+        *   [3.12.2 Graphical](#Graphical_14)
     *   [3.13 Keyboard layout switchers](#Keyboard_layout_switchers)
     *   [3.14 Power management](#Power_management)
     *   [3.15 Clipboard managers](#Clipboard_managers)
@@ -176,15 +173,15 @@ This article is a general list of applications sorted by category, as a referenc
     *   [4.5 Scientific documents](#Scientific_documents)
     *   [4.6 Translation and localization](#Translation_and_localization)
     *   [4.7 Text editors](#Text_editors)
-        *   [4.7.1 Console](#Console_16)
+        *   [4.7.1 Console](#Console_15)
             *   [4.7.1.1 Vi text editors](#Vi_text_editors)
-        *   [4.7.2 Graphical](#Graphical_16)
+        *   [4.7.2 Graphical](#Graphical_15)
             *   [4.7.2.1 Collaborative text editors](#Collaborative_text_editors)
     *   [4.8 Readers and Viewers](#Readers_and_Viewers)
         *   [4.8.1 E-book applications](#E-book_applications)
         *   [4.8.2 PDF and DjVu](#PDF_and_DjVu)
-            *   [4.8.2.1 Console](#Console_17)
-            *   [4.8.2.2 Graphical](#Graphical_17)
+            *   [4.8.2.1 Console](#Console_16)
+            *   [4.8.2.2 Graphical](#Graphical_16)
         *   [4.8.3 Terminal pagers](#Terminal_pagers)
         *   [4.8.4 CHM](#CHM)
         *   [4.8.5 Comic book (comix/manga)](#Comic_book_.28comix.2Fmanga.29)
@@ -193,15 +190,15 @@ This article is a general list of applications sorted by category, as a referenc
         *   [4.10.1 Engines](#Engines)
         *   [4.10.2 Layout analyzers and user interfaces](#Layout_analyzers_and_user_interfaces)
     *   [4.11 Note taking organizers](#Note_taking_organizers)
-        *   [4.11.1 Console](#Console_18)
-        *   [4.11.2 Graphical](#Graphical_18)
+        *   [4.11.1 Console](#Console_17)
+        *   [4.11.2 Graphical](#Graphical_17)
     *   [4.12 Mind-mapping tools](#Mind-mapping_tools)
     *   [4.13 Character Selector](#Character_Selector)
     *   [4.14 Stylus notes taking](#Stylus_notes_taking)
     *   [4.15 Bibliographic reference managers](#Bibliographic_reference_managers)
     *   [4.16 Barcode generators and readers](#Barcode_generators_and_readers)
-        *   [4.16.1 Console](#Console_19)
-        *   [4.16.2 Graphical](#Graphical_19)
+        *   [4.16.1 Console](#Console_18)
+        *   [4.16.2 Graphical](#Graphical_18)
 *   [5 Security](#Security)
     *   [5.1 Network security](#Network_security)
     *   [5.2 Threat and vulnerability detection](#Threat_and_vulnerability_detection)
@@ -245,8 +242,8 @@ This article is a general list of applications sorted by category, as a referenc
         *   [7.2.1 Flashcards](#Flashcards)
         *   [7.2.2 Education management engines](#Education_management_engines)
     *   [7.3 Time management](#Time_management)
-        *   [7.3.1 Console](#Console_20)
-        *   [7.3.2 Graphical](#Graphical_20)
+        *   [7.3.1 Console](#Console_19)
+        *   [7.3.2 Graphical](#Graphical_19)
     *   [7.4 Recipe management](#Recipe_management)
     *   [7.5 Accessibility](#Accessibility)
         *   [7.5.1 Screen reading](#Screen_reading)
@@ -258,8 +255,8 @@ This article is a general list of applications sorted by category, as a referenc
     *   [7.10 Terminal multiplexers](#Terminal_multiplexers)
     *   [7.11 Desktop environments](#Desktop_environments)
         *   [7.11.1 Window managers](#Window_managers)
-            *   [7.11.1.1 Console](#Console_21)
-            *   [7.11.1.2 Graphical](#Graphical_21)
+            *   [7.11.1.1 Console](#Console_20)
+            *   [7.11.1.2 Graphical](#Graphical_20)
             *   [7.11.1.3 Composite managers](#Composite_managers)
         *   [7.11.2 Window tilers](#Window_tilers)
         *   [7.11.3 Taskbars](#Taskbars)
@@ -634,9 +631,29 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[http://lftp.yar.ru/](http://lftp.yar.ru/) || [lftp](https://www.archlinux.org/packages/?name=lftp)
 
+*   **Plowshare** — A set of command-line tools designed for managing file-sharing websites (aka Hosters).
+
+	[https://github.com/mcrapet/plowshare](https://github.com/mcrapet/plowshare) || [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/)
+
+*   **[pyLoad](/index.php/PyLoad "PyLoad")** — Downloader written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.
+
+	[https://pyload.net/](https://pyload.net/) || [pyload](https://aur.archlinux.org/packages/pyload/)
+
 *   **snarf** — Command-line URL retrieval tool. Supports HTTP and FTP.
 
 	[http://www.xach.com/snarf/](http://www.xach.com/snarf/) || [snarf](https://www.archlinux.org/packages/?name=snarf)
+
+*   **[Streamlink](/index.php/Streamlink "Streamlink")** — Launch streams from various streaming services in a custom video player.
+
+	[https://streamlink.github.io/](https://streamlink.github.io/) || [streamlink](https://www.archlinux.org/packages/?name=streamlink)
+
+*   **You-Get** — Download media contents (videos, audios, images) from the Web.
+
+	[https://you-get.org/](https://you-get.org/) || [you-get](https://www.archlinux.org/packages/?name=you-get)
+
+*   **youtube-dl** — Download videos from YouTube and many other web sites.
+
+	[https://rg3.github.io/youtube-dl/](https://rg3.github.io/youtube-dl/) || [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl)
 
 *   **[Wget](https://en.wikipedia.org/wiki/Wget "wikipedia:Wget")** — A network utility to retrieve files from the Web. Supports HTTP and FTP.
 
@@ -644,13 +661,29 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 ##### Graphical
 
+*   **4K Video Downloader** — Quickly download videos from YouTube in high-quality..
+
+	[https://www.4kdownload.com/products/product-videodownloader](https://www.4kdownload.com/products/product-videodownloader) || [4kvideodownloader](https://aur.archlinux.org/packages/4kvideodownloader/)
+
+*   **ClipGrab** — Downloader and converter for YouTube, Vimeo and many other online video sites.
+
+	[https://clipgrab.org/](https://clipgrab.org/) || [clipgrab-qt5](https://aur.archlinux.org/packages/clipgrab-qt5/)
+
 *   **FatRat** — Download manager with support for HTTP, FTP, SFTP, BitTorrent and Metalink.
 
 	[http://fatrat.dolezel.info/](http://fatrat.dolezel.info/) || [fatrat-git](https://aur.archlinux.org/packages/fatrat-git/)
 
+*   **FreeRapid** — Java-based downloader that supports downloading from file-sharing services.
+
+	[http://wordrider.net/freerapid/](http://wordrider.net/freerapid/) || [freerapid](https://aur.archlinux.org/packages/freerapid/)
+
 *   **[Gwget](https://en.wikipedia.org/wiki/Wget#GWget "wikipedia:Wget")** — Download manager for GNOME. Supports HTTP and FTP.
 
 	[https://projects.gnome.org/gwget/](https://projects.gnome.org/gwget/) || [gwget](https://www.archlinux.org/packages/?name=gwget)
+
+*   **[JDownloader](/index.php/JDownloader "JDownloader")** — Java-based downloader for one-click hosting sites.
+
+	[http://jdownloader.org/](http://jdownloader.org/) || [jdownloader2](https://aur.archlinux.org/packages/jdownloader2/)
 
 *   **[KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet")** — Download manager for KDE. Supports HTTP, FTP, BitTorrent and Metalink. Part of [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
 
@@ -899,48 +932,6 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 *   **Sendanywhere** — GTK2 client for the cross platform P2P file sharing service, Sendanywhere. Allow users to send files of any type and size to other Android, iOS, and Desktop devices.
 
 	[https://www.send-anywhere.com](https://www.send-anywhere.com) || [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/)
-
-#### Web content downloaders
-
-##### Console
-
-*   **Plowshare** — A set of command-line tools designed for managing file-sharing websites (aka Hosters).
-
-	[https://github.com/mcrapet/plowshare](https://github.com/mcrapet/plowshare) || [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/)
-
-*   **[pyLoad](/index.php/PyLoad "PyLoad")** — Downloader written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.
-
-	[https://pyload.net/](https://pyload.net/) || [pyload](https://aur.archlinux.org/packages/pyload/)
-
-*   **[Streamlink](/index.php/Streamlink "Streamlink")** — Launch streams from various streaming services in a custom video player.
-
-	[https://streamlink.github.io/](https://streamlink.github.io/) || [streamlink](https://www.archlinux.org/packages/?name=streamlink)
-
-*   **youtube-dl** — Download videos from YouTube and many other web sites.
-
-	[https://rg3.github.io/youtube-dl/](https://rg3.github.io/youtube-dl/) || [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl)
-
-*   **You-Get** — Download media contents (videos, audios, images) from the Web.
-
-	[https://you-get.org/](https://you-get.org/) || [you-get](https://www.archlinux.org/packages/?name=you-get)
-
-##### Graphical
-
-*   **4K Video Downloader** — Quickly download videos from YouTube in high-quality..
-
-	[https://www.4kdownload.com/products/product-videodownloader](https://www.4kdownload.com/products/product-videodownloader) || [4kvideodownloader](https://aur.archlinux.org/packages/4kvideodownloader/)
-
-*   **ClipGrab** — Downloader and converter for YouTube, Vimeo and many other online video sites.
-
-	[https://clipgrab.org/](https://clipgrab.org/) || [clipgrab-qt5](https://aur.archlinux.org/packages/clipgrab-qt5/)
-
-*   **FreeRapid** — Java-based downloader that supports downloading from file-sharing services.
-
-	[http://wordrider.net/freerapid/](http://wordrider.net/freerapid/) || [freerapid](https://aur.archlinux.org/packages/freerapid/)
-
-*   **[JDownloader](/index.php/JDownloader "JDownloader")** — Java-based downloader for one-click hosting sites.
-
-	[http://jdownloader.org/](http://jdownloader.org/) || [jdownloader2](https://aur.archlinux.org/packages/jdownloader2/)
 
 #### Pastebin clients
 
@@ -4896,6 +4887,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 *   **KeePassXC** — A community fork of KeePassX with more active development.
 
 	[https://keepassxc.org/](https://keepassxc.org/) || [keepassxc](https://www.archlinux.org/packages/?name=keepassxc)
+
+*   **LastPass** — Hosted password manager.
+
+	[https://www.lastpass.com/](https://www.lastpass.com/) || [lastpass-cli](https://www.archlinux.org/packages/?name=lastpass-cli)
 
 *   **MyPasswords** — What you need for managing your passwords, including the passwords of your online accounts, bank accounts and ... with the corresponding URLs.
 

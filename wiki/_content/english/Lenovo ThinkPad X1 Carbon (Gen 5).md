@@ -95,14 +95,16 @@ Installing [linux-tp-x1-carbon-5th](https://aur.archlinux.org/packages/linux-tp-
 
 ### Bug: System occasionally hanging during startup
 
-I run Arch Linux with KDE, and every second or third boot my system hangs on startup before X starts. From the syslog, I found out that the hangup is somehow related to NetworkManager, probably some kind of race condition. I found a way to prevent these hangups, by forcing NetworkManager to wait a little bit before starting. Just create the file **/etc/systemd/system/NetworkManager.service.d/override.conf** with this content:
+I run Arch Linux with KDE and SDDM as login manager, and every second or third boot my system hangs on startup before X starts. This is caused by a bug in version 0.16.0 of SDDM, reported here:
+
+[https://github.com/sddm/sddm/issues/905](https://github.com/sddm/sddm/issues/905)
+
+It can be solved by letting SDDM wait a little bit before starting. Just create the file **/etc/systemd/system/sddm.service.d/override.conf** with this content:
 
 ```
 [Service]
 ExecStartPre=/bin/sleep 2
 ```
-
-The bug has been reported here: [https://bugzilla.gnome.org/show_bug.cgi?id=790919](https://bugzilla.gnome.org/show_bug.cgi?id=790919)
 
 ## Configuration
 

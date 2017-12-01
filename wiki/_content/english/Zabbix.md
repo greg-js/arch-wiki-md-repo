@@ -24,11 +24,11 @@
 
 #### Zabbix-server installation
 
-*   Install [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server). This will include the necessary scripts in order to use MariaDB or postgresql. This wiki assumes you will be using MariaDB
+Install [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server). This will include the necessary scripts in order to use MariaDB or postgresql. This wiki assumes you will be using MariaDB
 
 #### Zabbix-frontend installation
 
-Just install the [zabbix-frontend-php](https://www.archlinux.org/packages/?name=zabbix-frontend-php) package.
+Install the [zabbix-frontend-php](https://www.archlinux.org/packages/?name=zabbix-frontend-php) package.
 
 You also have to choose a web server with PHP support if you want to use *zabbix-frontend*, e.g.:
 
@@ -71,25 +71,6 @@ $ mysql -u zabbix -p zabbix < /usr/share/zabbix-server/mysql/schema.sql
 $ mysql -u zabbix -p zabbix < /usr/share/zabbix-server/mysql/images.sql
 $ mysql -u zabbix -p zabbix < /usr/share/zabbix-server/mysql/data.sql
 
-```
-
-**Note:** If you using PHP 7.1 you need to edit `/srv/http/zabbix/include/func.inc.php`:
-```
-function str2mem($val) {
-    $val = trim($val);
-    $last = strtolower(substr($val, -1));
-    switch ($last) {
-            case 'g':
-                    $val = (int) $val * 1024;
-                    /* falls through */
-            case 'm':
-                    $val = (int) $val * 1024;
-                    /* falls through */
-            case 'k':
-                    $val = (int) $val * 1024;
-    }
-    return $val;
-}
 ```
 
 ### Starting

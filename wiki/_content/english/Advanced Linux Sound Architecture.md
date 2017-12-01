@@ -884,8 +884,6 @@ amixer set Master toggle
 
 ```
 
-**Tip:** When holding a volume key down, and `amixer` gets invoked many times in rapid succession, the Left and Right channel volumes may start to diverge. Consider using `pactl`, see [PulseAudio#Keyboard volume control](/index.php/PulseAudio#Keyboard_volume_control "PulseAudio").
-
 ### Virtual sound device using snd-aloop
 
 You might want a jack alternative to create a virtual recording or play device in order to mix different sources, using the snd-aloop module:

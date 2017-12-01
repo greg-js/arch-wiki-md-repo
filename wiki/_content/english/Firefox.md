@@ -16,6 +16,7 @@ Related articles
         *   [2.1.1 arch-firefox-search](#arch-firefox-search)
 *   [3 Configuration](#Configuration)
     *   [3.1 Multimedia playback](#Multimedia_playback)
+        *   [3.1.1 Open-with extension](#Open-with_extension)
     *   [3.2 Dictionaries for spell checking](#Dictionaries_for_spell_checking)
     *   [3.3 KDE/GNOME integration](#KDE.2FGNOME_integration)
 *   [4 Plugins](#Plugins)
@@ -158,6 +159,17 @@ security.sandbox.content.write_path_whitelist
 ```
 
 **Note:** The trailing slash on `/dev/snd/` is important, otherwise apulse will report "Permission denied" errors.
+
+#### Open-with extension
+
+1.  Install [Open-with](https://addons.mozilla.org/firefox/addon/open-with/) add-on.
+2.  Open `about:openwith`, select *Add...*
+3.  In the dialog select a video streaming capable player (e.g. [/usr/bin/mpv](/index.php/Mpv "Mpv")).
+4.  (Optional step) Add needed arguments to the player (e.g. you may want `--force-window --ytdl` for *mpv*)
+5.  (Optional step) Choose how to display the dialogs using the left panel.
+6.  Right click on links or visit pages containing videos. If the site is supported, the player will open as expected.
+
+The same procedure can be used to associate video downloaders such as *youtube-dl*.
 
 ### Dictionaries for spell checking
 

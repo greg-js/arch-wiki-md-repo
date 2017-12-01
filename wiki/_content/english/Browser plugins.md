@@ -31,9 +31,6 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
 *   [5 Java (IcedTea)](#Java_.28IcedTea.29)
 *   [6 Pipelight](#Pipelight)
 *   [7 Multimedia playback](#Multimedia_playback)
-    *   [7.1 Other plugins](#Other_plugins)
-    *   [7.2 Open-with Firefox extension](#Open-with_Firefox_extension)
-    *   [7.3 youtube-dl](#youtube-dl)
 *   [8 Google Hangouts](#Google_Hangouts)
 *   [9 MozPlugger](#MozPlugger)
 *   [10 Troubleshooting](#Troubleshooting)
@@ -154,7 +151,7 @@ repeat noisy swallow(evince) fill: evince "$file"
 
 (replace `evince` with something else if it is not your viewer of choice).
 
-If this is not enough, you may need to change 2 values in `about:config`:
+When using Firefox, you may need to change 2 values in `about:config`:
 
 *   Change `pdfjs.disabled`'s value to *true*;
 *   Change `plugin.disable_full_page_plugin_for_types`'s value to an empty value.
@@ -166,7 +163,6 @@ Restart and it should work like a charm!
 Third-party online payment sites in China tend to use a "security plugin" for the password field. They are not supported anymore in Firefox 52+. You could try [palemoon](https://aur.archlinux.org/packages/palemoon/) for NPAPI support.
 
 *   [upeditor](https://aur.archlinux.org/packages/upeditor/) for UnionPay Online Pay (银联在线支付).
-*   [aliedit](https://aur.archlinux.org/packages/aliedit/) for Alipay (支付宝).
 
 ## Citrix
 
@@ -192,7 +188,7 @@ See [Pipelight](/index.php/Pipelight "Pipelight").
 
 Many browsers support the [GStreamer](/index.php/GStreamer "GStreamer") framework to play multimedia inside HTML5 `<audio>` and `<video>` elements. Check the optional dependencies of the browser package (or of the web engine, e.g. [webkit2gtk](https://www.archlinux.org/packages/?name=webkit2gtk) or [qt5-webkit](https://www.archlinux.org/packages/?name=qt5-webkit)) to see if GStreamer is supported. See [GStreamer#Installation](/index.php/GStreamer#Installation "GStreamer") for the description of each plugin.
 
-### Other plugins
+For media formats that are not natively supported by your browser (e.g. most browsers don't play `.mkv` files), the following plugins are available:
 
 *   **Rosa Media Player Plugin** — Qt-based browser plugin also based on MPlayer.
 
@@ -201,21 +197,6 @@ Many browsers support the [GStreamer](/index.php/GStreamer "GStreamer") framewor
 *   **VLC Plugin** — NPAPI-based plugin that uses VLC technologies.
 
 	[https://code.videolan.org/videolan/npapi-vlc](https://code.videolan.org/videolan/npapi-vlc) || [npapi-vlc](https://www.archlinux.org/packages/?name=npapi-vlc)
-
-### Open-with Firefox extension
-
-1.  Install [Open-with](https://addons.mozilla.org/firefox/addon/open-with/) add-on.
-2.  Open `about:openwith`, select *Add...*
-3.  In the dialog select a video streaming capable player (e.g. [/usr/bin/mpv](/index.php/Mpv "Mpv")).
-4.  (Optional step) Add needed arguments to the player (e.g. you may want `--force-window --ytdl` for *mpv*)
-5.  (Optional step) Choose how to display the dialogs using the left panel.
-6.  Right click on links or visit pages containing videos. If the site is supported, the player will open as expected.
-
-The same procedure can be used to associate video downloaders such as *youtube-dl*.
-
-### youtube-dl
-
-Install [Watch with MPV](https://addons.mozilla.org/en-US/firefox/addon/watch-with-mpv/) for playback of [supported sites](http://rg3.github.io/youtube-dl/supportedsites.html) with an external player of your choice ([mpv](/index.php/Mpv "Mpv") by default). Add `--player-operation-mode=pseudo-gui` to *Additional player parameters* for websites with audio only streams.
 
 ## Google Hangouts
 
@@ -297,7 +278,7 @@ define(MP_AUDIO_STREAM,[controls stream noisy ignore_errors: mpv -really-quiet $
 ...
 ```
 
-For a more complete list of MozPlugger options see [this page](http://www.linuxmanpages.com/man7/mozplugger.7.php).
+For a more complete list of MozPlugger options see [mozplugger(7)](https://www.freebsd.org/cgi/man.cgi?query=mozplugger).
 
 ## Troubleshooting
 

@@ -8,19 +8,13 @@ If you plan on using PostgreSQL, install [php-pgsql](https://www.archlinux.org/p
 
 tt-rss is installed into `/usr/share/webapps/tt-rss/`; you'll need to make this directory available from your web server. The simplest way is to do :
 
-- With [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") :
+*   With [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") :
 
-```
-# ln -s /usr/share/webapps/tt-rss /srv/http/tt-rss 
+	 `# ln -s /usr/share/webapps/tt-rss /srv/http/tt-rss` 
 
-```
+*   With [Nginx](/index.php/Nginx "Nginx") :
 
-- With [Nginx](/index.php/Nginx "Nginx") :
-
-```
-# ln -s /usr/share/webapps/tt-rss /usr/share/nginx/html/tt-rss
-
-```
+	 `# ln -s /usr/share/webapps/tt-rss /usr/share/nginx/html/tt-rss` 
 
 ### Set up php and database
 
@@ -44,24 +38,18 @@ Or create a user and database in PostgreSQL, e.g.:
 
 ```
 
-You also need to add some paths to `/etc/php/php.ini` (starting with PHP 7.0 it is [unset by default](https://www.archlinux.org/news/php-70-packages-released/), so no change is required):
-
-```
-...
-open_basedir = ... :/usr/share/webapps/:/etc/webapps/:/var/lib/tt-rss
-...
-
-```
-
-In the same file, enable the following modules:
+In `/etc/php/php.ini`, enable the following modules:
 
 ```
 extension=curl.so
 extension=iconv.so
-extension=mysqli.so # extension=pdo_mysql.so might be an alternative
+extension=mysqli.so # for MySQL; extension=pdo_mysql.so might be an alternative
+extension=pgsql.so # for PostgreSQL; extension=pdo_pgsql.so might be an alternative
 extension=soap.so
 
 ```
+
+*If* `open_basedir` is set in `/etc/php/php.ini` (it isn't by default), add `/var/lib/tt-rss` to it.
 
 Application initialization can be done either automatically or manually.
 

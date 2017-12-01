@@ -17,8 +17,7 @@ This article covers all non-specific (ie, not related to any one printer) troubl
 *   [3 Networking issues](#Networking_issues)
     *   [3.1 Unable to locate printer](#Unable_to_locate_printer)
     *   [3.2 Old CUPS server](#Old_CUPS_server)
-    *   [3.3 CUPS identifies printer but cannot connect to it](#CUPS_identifies_printer_but_cannot_connect_to_it)
-    *   [3.4 Shared printer works locally but remote machine fails to print](#Shared_printer_works_locally_but_remote_machine_fails_to_print)
+    *   [3.3 Shared printer works locally but remote machine fails to print](#Shared_printer_works_locally_but_remote_machine_fails_to_print)
 *   [4 USB printers](#USB_printers)
     *   [4.1 Conflict with SANE](#Conflict_with_SANE)
     *   [4.2 Conflict with usblp](#Conflict_with_usblp)
@@ -150,12 +149,6 @@ Even if CUPS can detect networked printers, you may still end up with an "Unable
 ### Old CUPS server
 
 As of CUPS version 1.6, the client defaults to IPP 2.0\. If the server uses CUPS <= 1.5 / IPP <= 1.1, the client does not downgrade the protocol automatically and thus cannot communicate with the server. A workaround is to append the `version=1.1` option documented at [[1]](https://www.cups.org/doc/network.html#TABLE2) to the URI.
-
-### CUPS identifies printer but cannot connect to it
-
-Enable debug logging. If you see `Executing backend "/usr/lib/cups/backend/dnssd"...` over and over switch from dnssd to socket in the printer configuration.
-
-Example: `socket://192.168.11.6:9100`. The port number can be confirmed via [nmap](/index.php/Nmap "Nmap") or `telnet *your-printer-ip* 9100`.
 
 ### Shared printer works locally but remote machine fails to print
 

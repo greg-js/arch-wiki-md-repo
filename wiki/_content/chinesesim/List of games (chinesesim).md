@@ -918,14 +918,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://mutantfactions.net](http://mutantfactions.net) || [mutantfactions](https://aur.archlinux.org/packages/mutantfactions/)
 
-*   Blood Frontier – Team oriented multiplayer FPS based on the Cube2 (Sauerbraten) engine
-*   [Futuristic Arenas](http://www.javagameplay.com/futuristicarenas/medium.html)
-*   [Jake 2](http://www.bytonic.de/downloads/jake2_jogl11.jnlp)
-*   [Scared](http://www.pulpgames.net/scared/)
-*   [True Combat: Elite(TCE)](http://www.truecombatelite.com/) - Completely free, realistic, team-based modification for Enemy Territory.
-*   [TUER](http://tuer.sourceforge.net)
-*   [Ancient Arenas](http://www.javagameplay.com/ancientarenas/medium.html)
-
 ## 模拟
 
 *   **Beyond The Red Line** — Completely free stand-alone conversion of Freespace 2 based on the TV show Battlestar Galactica. Presumed abandoned, see Diaspora: Shattered Armistice for an alternative.

@@ -68,6 +68,7 @@ As a result:
     *   [8.3 Emergency chroot repair with archzfs](#Emergency_chroot_repair_with_archzfs)
     *   [8.4 Bind mount](#Bind_mount)
         *   [8.4.1 fstab](#fstab)
+    *   [8.5 Monitoring / Mailing on Events](#Monitoring_.2F_Mailing_on_Events)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -492,7 +493,7 @@ $ man zpool
 
 ### Native encryption
 
-Native ZFS encryption has been made available in 0.7.0.r26 or newer provided by packages like [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/), [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/) or other development builds.
+Native ZFS encryption has been made available in 0.7.0.r26 or newer provided by packages like [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/), [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/) or other development builds. Despite the fact that version 0.7 has been released, this feature is still not enabled in the stable version as of 0.7.3, so a development build still needs to be used. An easy of telling if encryption is available in the version of zfs, you have installed, is to check for the ZFS_PROP_ENCRYPTION definition in /usr/src/zfs-*/include/sys/fs/zfs.h.
 
 *   Supported encryption options: `aes-128-ccm`, `aes-192-ccm`, `aes-256-ccm`, `aes-128-gcm`, `aes-192-gcm` and `aes-256-gcm`. When encryption is set to `on`, `aes-256-ccm` will be used.
 *   Supported keyformats: `passphrase`, `raw`, `hex`
@@ -1003,6 +1004,31 @@ See [systemd.mount](http://www.freedesktop.org/software/systemd/man/systemd.moun
 /mnt/zfspool		/srv/nfs4/music		none	bind,defaults,nofail,x-systemd.requires=zfs-mount.service	0 0
 
 ```
+
+### Monitoring / Mailing on Events
+
+See [ZED: The ZFS Event Daemon](https://ramsdenj.com/2016/08/29/arch-linux-on-zfs-part-3-followup.html) for more information.
+
+At the minimum, an email forwarder, such as [msmtp](/index.php/Msmtp "Msmtp"), is required to accomplish this. Make sure it is working correctly.
+
+Uncomment the following in the configuration file:
+
+ `/etc/zfs/zed.d/zed.rc` 
+```
+ ZED_EMAIL_ADDR="root"
+ ZED_EMAIL_PROG="mail"
+ ZED_NOTIFY_VERBOSE=0
+ ZED_EMAIL_OPTS="-s '@SUBJECT@' @ADDRESS@"
+
+```
+
+Update 'root' in `ZED_EMAIL_ADDR="root"` to the email address you want to receive notifications at.
+
+If you want to receive an email no matter the state of your pool, you will want to set `ZED_NOTIFY_VERBOSE=1`.
+
+Start and enable `zfs-zed.service`.
+
+If you set verbose to 1, you can test by running a scrub.
 
 ## See also
 

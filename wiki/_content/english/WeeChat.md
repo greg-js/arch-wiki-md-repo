@@ -44,10 +44,11 @@ Related articles
 
 WeeChat is going to have multiple interfaces at some point, run **weechat-[interface]** to start WeeChat.
 
-As WeeChat currently only has an Ncurses interface. The command to start WeeChat is:
+The current implementation only comes with `weechat-ncurses`. Therefore, the following commands are interchangeable until other interfaces are implemented:
 
 ```
 $ weechat
+$ weechat-ncurses
 
 ```
 

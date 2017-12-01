@@ -32,7 +32,7 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
     *   [6.2 Silence 'Picked up _JAVA_OPTIONS' message on command line](#Silence_.27Picked_up_JAVA_OPTIONS.27_message_on_command_line)
     *   [6.3 GTK LookAndFeel](#GTK_LookAndFeel)
     *   [6.4 Better 2D performance](#Better_2D_performance)
-    *   [6.5 Non-reparenting window managers](#Non-reparenting_window_managers)
+    *   [6.5 Non-reparenting window managers / Grey window / Programs not drawing properly](#Non-reparenting_window_managers_.2F_Grey_window_.2F_Programs_not_drawing_properly)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -300,7 +300,7 @@ export _JAVA_OPTIONS='-Dsun.java2d.opengl=true'
 
 ```
 
-### Non-reparenting window managers
+### Non-reparenting window managers / Grey window / Programs not drawing properly
 
 Non-reparenting window managers user should set the following environment variable in their `.xinitrc`
 
@@ -308,6 +308,8 @@ Non-reparenting window managers user should set the following environment variab
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 ```
+
+Not setting this may result in java programs not being drawn properly.
 
 ## See also
 

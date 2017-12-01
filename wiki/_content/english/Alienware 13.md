@@ -11,6 +11,7 @@ See the [Installation guide](/index.php/Installation_guide "Installation guide")
 *   [5 Keyboard lights](#Keyboard_lights)
 *   [6 OLED screen brightness](#OLED_screen_brightness)
 *   [7 OLED screen doesn't light up after resume](#OLED_screen_doesn.27t_light_up_after_resume)
+*   [8 Switching Windows from RAID to AHCI mode](#Switching_Windows_from_RAID_to_AHCI_mode)
 
 ## Getting Linux to boot
 
@@ -229,3 +230,23 @@ xrandr -d :0.0 --output eDP-1 --off && xrandr -d :0.0 --output eDP-1 --auto
 ```
 
 I have added it to a script so that I can easily run it if the monitor is off after resume: You can add it to a keyboard shortcut, or use run command, whichever is easier.
+
+## Switching Windows from RAID to AHCI mode
+
+The stock installation of Windows is in RAID mode which makes linux unable to see the NVME disks. However once installed in RAID mode, Windows refuses to boot when the disk is in AHCI mode. You can however fix that by following those steps:
+
+1.  Right-click the Windows Start Menu. **Choose Command Prompt (Admin).**
+    *   If you don’t see Command Prompt listed, it’s because you have already been updated to a later version of Windows. If so, use this method instead to get to the Command Prompt:
+        1.  Click the Start Button and type cmd
+        2.  Right-click the result and select **Run as administrator**
+2.  Type this command and press ENTER: **bcdedit /set {current} safeboot minimal**
+    *   If this command does not work for you, try **bcdedit /set safeboot minimal**
+3.  Restart the computer and enter BIOS Setup (the key to press varies between systems).
+4.  Change the SATA Operation mode to AHCI from either IDE or RAID (again, the language varies).
+5.  Save changes and exit Setup and Windows will automatically boot to Safe Mode.
+6.  Right-click the Windows Start Menu once more. Choose **Command Prompt (Admin)**.
+7.  Type this command and press ENTER: **bcdedit /deletevalue {current} safeboot**
+    *   If you had to try the alternate command above, you will likely need to do so here also: **bcdedit /deletevalue safeboot**
+8.  Reboot once more and Windows will automatically start with AHCI drivers enabled.
+
+Source: [[1]](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/)

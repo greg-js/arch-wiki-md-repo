@@ -29,14 +29,15 @@
     *   [4.4 OpenAL](#OpenAL)
     *   [4.5 libao](#libao)
 *   [5 Эквалайзер](#.D0.AD.D0.BA.D0.B2.D0.B0.D0.BB.D0.B0.D0.B9.D0.B7.D0.B5.D1.80)
-    *   [5.1 Загрузка модуля эквалайзера и протокола dbus](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8F_.D1.8D.D0.BA.D0.B2.D0.B0.D0.BB.D0.B0.D0.B9.D0.B7.D0.B5.D1.80.D0.B0_.D0.B8_.D0.BF.D1.80.D0.BE.D1.82.D0.BE.D0.BA.D0.BE.D0.BB.D0.B0_dbus)
+    *   [5.1 Загрузка устройства вывода эквалайзера и модуля dbus-protocol](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4.D0.B0_.D1.8D.D0.BA.D0.B2.D0.B0.D0.BB.D0.B0.D0.B9.D0.B7.D0.B5.D1.80.D0.B0_.D0.B8_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8F_dbus-protocol)
     *   [5.2 Графический интерфейс](#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81)
-    *   [5.3 Загрузка эквалайзера и модуля DBus при каждой загрузке](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D1.8D.D0.BA.D0.B2.D0.B0.D0.BB.D0.B0.D0.B9.D0.B7.D0.B5.D1.80.D0.B0_.D0.B8_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8F_DBus_.D0.BF.D1.80.D0.B8_.D0.BA.D0.B0.D0.B6.D0.B4.D0.BE.D0.B9_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5)
+    *   [5.3 Загрузка эквалайзера и модуля DBus при каждой загрузке системы](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D1.8D.D0.BA.D0.B2.D0.B0.D0.BB.D0.B0.D0.B9.D0.B7.D0.B5.D1.80.D0.B0_.D0.B8_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8F_DBus_.D0.BF.D1.80.D0.B8_.D0.BA.D0.B0.D0.B6.D0.B4.D0.BE.D0.B9_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+    *   [5.4 Альтернативные эквалайзеры](#.D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D1.8B.D0.B5_.D1.8D.D0.BA.D0.B2.D0.B0.D0.BB.D0.B0.D0.B9.D0.B7.D0.B5.D1.80.D1.8B)
 *   [6 Приложения](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
     *   [6.1 QEMU](#QEMU)
     *   [6.2 AlsaMixer.app](#AlsaMixer.app)
     *   [6.3 XMMS2](#XMMS2)
-    *   [6.4 Рабочая область KDE и Qt4](#.D0.A0.D0.B0.D0.B1.D0.BE.D1.87.D0.B0.D1.8F_.D0.BE.D0.B1.D0.BB.D0.B0.D1.81.D1.82.D1.8C_KDE_.D0.B8_Qt4)
+    *   [6.4 Рабочая область KDE Plasma и Qt4](#.D0.A0.D0.B0.D0.B1.D0.BE.D1.87.D0.B0.D1.8F_.D0.BE.D0.B1.D0.BB.D0.B0.D1.81.D1.82.D1.8C_KDE_Plasma_.D0.B8_Qt4)
     *   [6.5 Audacious](#Audacious)
     *   [6.6 Java/OpenJDK 6](#Java.2FOpenJDK_6)
     *   [6.7 Music Player Daemon (MPD)](#Music_Player_Daemon_.28MPD.29)
@@ -311,11 +312,13 @@ exec padsp /usr/bin/OSSprogram "$@"
 
 ## Эквалайзер
 
+**Важно:** Модуль эквалайзера считается нестабильным и может быть удалён из PulseAudio. Больше информации об этом можно найти здесь [список рассылки (англ.)](https://lists.freedesktop.org/archives/pulseaudio-discuss/2014-March/020174.html).
+
 PulseAudio имеет интегрированную систему эквалайзера с 10 полосами. Для использования эквалайзера, сделайте следующее:
 
 Установите [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer):
 
-### Загрузка модуля эквалайзера и протокола dbus
+### Загрузка устройства вывода эквалайзера и модуля dbus-protocol
 
 ```
 $ pactl load-module module-equalizer-sink
@@ -327,11 +330,14 @@ $ pactl load-module module-dbus-protocol
 
 выполните:
 
+```
 $ qpaeq
+
+```
 
 **Примечание:** Если qpaeq не произвёл никакого эффекта, установите [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) и измените "ALSA Playback on" на "FFT based equalizer on ...", во время работы медиапроигрывателя.
 
-### Загрузка эквалайзера и модуля DBus при каждой загрузке
+### Загрузка эквалайзера и модуля DBus при каждой загрузке системы
 
 Отредактируйте файл `/etc/pulse/default.pa` или `~/.config/pulse/default.pa` вашим редактором, и добавьте следующие строки:
 
@@ -344,41 +350,17 @@ load-module module-dbus-protocol
 
 **Примечание:** Устройство вывода эквалайзера должно быть загружено после того, как основное устройство вывода уже доступно.
 
+### Альтернативные эквалайзеры
+
+[pulseaudio-equalizer-ladspa](https://aur.archlinux.org/packages/pulseaudio-equalizer-ladspa/) (основан на [swh-plugins](https://www.archlinux.org/packages/?name=swh-plugins)) может использоваться как альтернатива [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer).
+
+[pulseeffects](https://aur.archlinux.org/packages/pulseeffects/) применяет ограничение пиковой громкости, компрессию, реверберацию, авто уровень гроскости и 15-полосный эквалайзер к выводу приложений Pulseaudio.
+
 ## Приложения
 
 ### QEMU
 
-Аудио драйвер, используемый QEMU, установлен с переменной окружения `QEMU_AUDIO_DRV`:
-
-```
-$ export QEMU_AUDIO_DRV=pa
-
-```
-
-Выполните следующую команду для связывания параметров настроек QEMU с PulseAudio:
-
-```
-$ qemu-system-x86_64 -audio-help | awk '/Name: pa/' RS=
-
-```
-
-Перечисленные опции могут быть экспортированы как переменные окружения, например:
-
-```
-$ export QEMU_PA_SINK=alsa_output.pci-0000_04_01.0.analog-stereo.monitor
-$ export QEMU_PA_SOURCE=input
-```
-
-Чтобы получить список поддерживаемых драйверов эмуляции аудио:
-
-```
-$ qemu-system-x86_64 -soundhw help
-
-```
-
-Для гостевого использования, например, драйвера `ac97`, команда с QEMU `-soundhw ac97`.
-
-**Примечание:** Эмулирование драйвера видеокарты для гостевой машины может также вызвать проблему с качеством звука. Тестируйте один за другим, чтобы заставить его работать. Вы можете перечислить возможные варианты с поомщью `qemu-system-x86_64 -h | grep vga`.
+Обратитесь к [QEMU (Русский)#Host](/index.php/QEMU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Host "QEMU (Русский)") для детального описания настройки pulseaudio в [QEMU (Русский)](/index.php/QEMU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "QEMU (Русский)").
 
 ### AlsaMixer.app
 
@@ -424,9 +406,11 @@ $ nyxmms2 server config output.plugin alsa
 
 Смотрите также официальное руководство [[3]](https://xmms2.org/wiki/Using_the_application).
 
-### Рабочая область KDE и Qt4
+### Рабочая область KDE Plasma и Qt4
 
-PulseAudio будет автоматически использоваться приложениями KDE/Qt4\. Это поддерживается по умолчанию в микшере звука KDE. Для получения дополнительной информации посмотрите [страницу KDE, в wiki PulseAudio](http://www.pulseaudio.org/wiki/KDE). Один полезный совет с той страници: добавить `load-module module-device-manager` в `/etc/pulse/default.pa`.
+PulseAudio будет автоматически использоваться приложениями KDE/Qt4\. Это поддерживается по умолчанию в микшере звука KDE. Для получения дополнительной информации посмотрите [страницу KDE, в wiki PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/Desktops/KDE/).
+
+Один полезный совет с этой страницы заключён в том, что следует загружать `load-module module-device-manager`. Обычно это происходит автоматически при входе в систему с помощью скрипта `/usr/bin/start-pulseaudio-x11`, но если этого не произошло, вы можете добавить его вручную в файл `/etc/pulse/default.pa`. О возможных конфликтах с `module-switch-on-connect` смотрите [#Включать при соединении](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.B8_.D1.81.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D0.B5.D0.BD.D0.B8.D0.B8).
 
 Если бэкэнд phonon-gstreamer используется для Phonon, GStreamer должен также быть настроен, как описано в [#GStreamer](#GStreamer).
 

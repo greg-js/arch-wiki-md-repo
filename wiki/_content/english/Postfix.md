@@ -1,3 +1,15 @@
+Related articles
+
+*   [Postfix with SASL](/index.php/Postfix_with_SASL "Postfix with SASL")
+*   [Amavis](/index.php/Amavis "Amavis")
+*   [Virtual user mail system](/index.php/Virtual_user_mail_system "Virtual user mail system")
+*   [Courier MTA](/index.php/Courier_MTA "Courier MTA")
+*   [Exim](/index.php/Exim "Exim")
+*   [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD")
+*   [OpenDMARC](/index.php/OpenDMARC "OpenDMARC")
+*   [OpenDKIM](/index.php/OpenDKIM "OpenDKIM")
+*   [SOGo](/index.php/SOGo "SOGo")
+
 From [Postfix's site](http://www.postfix.org/):
 
 	Postfix attempts to be fast, easy to administer, and secure, while at the same time being sendmail compatible enough to not upset existing users. Thus, the outside has a sendmail-ish flavor, but the inside is completely different.
@@ -22,23 +34,27 @@ The goal of this article is to setup Postfix and explain what the basic configur
     *   [4.2 See that you have received a email](#See_that_you_have_received_a_email)
 *   [5 Extra](#Extra)
     *   [5.1 PostfixAdmin](#PostfixAdmin)
-    *   [5.2 Secure SMTP (sending)](#Secure_SMTP_.28sending.29)
-    *   [5.3 Secure SMTP (receiving)](#Secure_SMTP_.28receiving.29)
-        *   [5.3.1 STARTTLS over SMTP (port 587)](#STARTTLS_over_SMTP_.28port_587.29)
-        *   [5.3.2 SMTPS (port 465)](#SMTPS_.28port_465.29)
-    *   [5.4 SpamAssassin](#SpamAssassin)
-        *   [5.4.1 Spam Assassin rule update](#Spam_Assassin_rule_update)
-        *   [5.4.2 SpamAssassin stand-alone generic setup](#SpamAssassin_stand-alone_generic_setup)
-        *   [5.4.3 SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)](#SpamAssassin_combined_with_Dovecot_LDA_.2F_Sieve_.28Mailfiltering.29)
-        *   [5.4.4 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_.2F_Sieve)
-        *   [5.4.5 Call ClamAV from SpamAssassin](#Call_ClamAV_from_SpamAssassin)
-    *   [5.5 Using Razor](#Using_Razor)
-    *   [5.6 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
-    *   [5.7 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
-    *   [5.8 Rule-based mail processing](#Rule-based_mail_processing)
-    *   [5.9 DANE (DNSSEC)](#DANE_.28DNSSEC.29)
-        *   [5.9.1 Resource Record](#Resource_Record)
-        *   [5.9.2 Configuration](#Configuration_2)
+    *   [5.2 Postgrey](#Postgrey)
+        *   [5.2.1 Installation](#Installation_2)
+        *   [5.2.2 Configuration](#Configuration_2)
+        *   [5.2.3 Troubleshooting](#Troubleshooting)
+    *   [5.3 Secure SMTP (sending)](#Secure_SMTP_.28sending.29)
+    *   [5.4 Secure SMTP (receiving)](#Secure_SMTP_.28receiving.29)
+        *   [5.4.1 STARTTLS over SMTP (port 587)](#STARTTLS_over_SMTP_.28port_587.29)
+        *   [5.4.2 SMTPS (port 465)](#SMTPS_.28port_465.29)
+    *   [5.5 SpamAssassin](#SpamAssassin)
+        *   [5.5.1 Spam Assassin rule update](#Spam_Assassin_rule_update)
+        *   [5.5.2 SpamAssassin stand-alone generic setup](#SpamAssassin_stand-alone_generic_setup)
+        *   [5.5.3 SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)](#SpamAssassin_combined_with_Dovecot_LDA_.2F_Sieve_.28Mailfiltering.29)
+        *   [5.5.4 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_.2F_Sieve)
+        *   [5.5.5 Call ClamAV from SpamAssassin](#Call_ClamAV_from_SpamAssassin)
+    *   [5.6 Using Razor](#Using_Razor)
+    *   [5.7 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
+    *   [5.8 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
+    *   [5.9 Rule-based mail processing](#Rule-based_mail_processing)
+    *   [5.10 DANE (DNSSEC)](#DANE_.28DNSSEC.29)
+        *   [5.10.1 Resource Record](#Resource_Record)
+        *   [5.10.2 Configuration](#Configuration_3)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -326,6 +342,59 @@ Include conf/extra/httpd-postfixadmin.conf
 **Note:** If you go to yourdomain/postfixadmin/setup.php and it says do not find config.inc.php, add `/etc/webapps/postfixadmin` to the `open_basedir` line in `/etc/php/php.ini`.
 
 **Note:** If you get a blank page check the syntax of the file with `php -l /etc/webapps/postfixadmin/config.inc.php`.
+
+### Postgrey
+
+[Postgrey](http://postgrey.schweikert.ch/) can be used to enable greylisting for a Postfix mail server.
+
+#### Installation
+
+[Install](/index.php/Install "Install") the [postgrey](https://www.archlinux.org/packages/?name=postgrey) package. To get it running quickly edit the Postfix configuration file and add these lines:
+
+ `/etc/postfix/main.cf` 
+```
+smtpd_recipient_restrictions =
+  check_policy_service inet:127.0.0.1:10030
+
+```
+
+Then [start/enable](/index.php/Start/enable "Start/enable") the `postgrey` service. Afterwards, reload the `postfix` service. Now greylisting should be enabled.
+
+#### Configuration
+
+Configuration is done via editing the `greylist.service` file. First copy it over to edit it.
+
+```
+# cp /usr/lib/systemd/system/postgrey.service /etc/systemd/system/
+
+```
+
+Now you can edit it. For example, to add automatic whitelisting (successful deliveries are whitelisted and don't have to wait any more), you could add the `--auto-whitelist-clients=N` option and replace `N` by a suitably small number (or leave it at its default of 5).
+
+...actually, the preferred method should be the override:
+
+```
+cat /etc/systemd/system/postgrey.service.d/override.conf
+
+```
+
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/postgrey --inet=127.0.0.1:10030 \
+       --pidfile=/run/postgrey/postgrey.pid \
+       --group=postgrey --user=postgrey \
+       --daemonize \
+       --greylist-text="Greylisted for %%s seconds" \
+       --auto-whitelist-clients
+
+```
+
+#### Troubleshooting
+
+If you specify --unix=/path/to/socket and the socket file is not created ensure you have removed the default --inet=127.0.0.1:10030 from the service file.
+
+For a full documentation of possible options see `perldoc postgrey`.
 
 ### Secure SMTP (sending)
 

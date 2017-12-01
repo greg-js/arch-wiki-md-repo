@@ -60,6 +60,8 @@ Check `/etc/cron.daily/` and similar directories to see which jobs are present. 
 
 cron registers the output from *stdout* and *stderr* and attempts to send it as email to the user's spools via the `sendmail` command. Cronie disables mail output if `/usr/bin/sendmail` is not found. In order for mail to be written to a user's spool, there must be an smtp daemon running on the system, e.g. [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd). Otherwise, you can install a package that provides the sendmail command, and configure it to send mail to a remote mail exchanger. You can also log the messages by using the `-m` option and writing a custom script.
 
+**Tip:** One can send the output to local system users using [Postfix#Local mail](/index.php/Postfix#Local_mail "Postfix").
+
 1.  [Edit](/index.php/Edit "Edit") the `cronie.service` unit.
 2.  Install [esmtp](https://www.archlinux.org/packages/?name=esmtp), [msmtp](/index.php/Msmtp "Msmtp"), [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd), [ssmtp](/index.php/SSMTP "SSMTP"), or write a custom script.
 

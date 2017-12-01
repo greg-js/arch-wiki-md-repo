@@ -1,3 +1,10 @@
+Related articles
+
+*   [Chrome OS devices/Chromebook](/index.php/Chrome_OS_devices/Chromebook "Chrome OS devices/Chromebook")
+*   [Chrome OS devices/Custom firmware](/index.php/Chrome_OS_devices/Custom_firmware "Chrome OS devices/Custom firmware")
+*   [Installation guide](/index.php/Installation_guide "Installation guide")
+*   [Laptop](/index.php/Laptop "Laptop")
+
 **Warning:** This article relies on third-party scripts and modifications, and may irreparably damage your hardware or data. Proceed at your own risk.
 
 This article was created to provide information on how to get Arch installed on the series of Chrome OS devices built by Acer, HP, Samsung, Toshiba, and Google. Currently this page is being overhauled, and more model specific pages are being built with some of the information listed below.

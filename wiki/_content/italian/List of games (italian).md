@@ -811,16 +811,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://xonotic.org](http://xonotic.org) || [xonotic](https://www.archlinux.org/packages/?name=xonotic)
 
-*   Blood Frontier – Team oriented multiplayer FPS based on the Cube2 (Sauerbraten) engine
-*   [Tesseract](http://tesseract-fps.sourceforge.net)
-*   [Futuristic Arenas](http://www.javagameplay.com/futuristicarenas/medium.html)
-*   [Jake 2](http://www.bytonic.de/downloads/jake2_jogl11.jnlp)
-*   [Scared](http://www.pulpgames.net/scared/)
-*   [Steam under Linux](http://developer.valvesoftware.com/wiki/Steam_under_Linux)
-*   [True Combat: Elite(TCE)](http://www.truecombatelite.com/) - Completely free, realistic, team-based modification for Enemy Territory.
-*   [TUER](http://tuer.sourceforge.net)
-*   [Ancient Arenas](http://www.javagameplay.com/ancientarenas/medium.html)
-
 ## Simulazione
 
 *   **Beyond The Red Line** — Conversione completamente gratuito stand-alone di Freespace 2 sulla base delle serie TV Battlestar Galactica.

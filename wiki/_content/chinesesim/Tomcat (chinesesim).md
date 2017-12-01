@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Tomcat](/index.php/Tomcat "Tomcat") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-12，点击[这里](https://wiki.archlinux.org/index.php?title=Tomcat&diff=0&oldid=490070)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Tomcat](/index.php/Tomcat "Tomcat") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-30，点击[这里](https://wiki.archlinux.org/index.php?title=Tomcat&diff=0&oldid=498974)可以查看翻译后英文页面的改动。
 
 Tomcat 是一个由 Apache Software Foundation 开发的开源的 Java [Servlet 容器](https://en.wikipedia.org/wiki/Java_Servlet#Servlet_containers "wikipedia:Java Servlet")。想要了解更多的配置信息，请参阅 [Tomcat and Apache](/index.php/Tomcat_and_Apache "Tomcat and Apache") 。
 
@@ -20,6 +20,8 @@ Tomcat 是一个由 Apache Software Foundation 开发的开源的 Java [Servlet 
     *   [6.1 从以前版本的 Tomcat 中迁移](#.E4.BB.8E.E4.BB.A5.E5.89.8D.E7.89.88.E6.9C.AC.E7.9A.84_Tomcat_.E4.B8.AD.E8.BF.81.E7.A7.BB)
     *   [6.2 使用不同版本的 JRE/JDK 来运行 Tomcat](#.E4.BD.BF.E7.94.A8.E4.B8.8D.E5.90.8C.E7.89.88.E6.9C.AC.E7.9A.84_JRE.2FJDK_.E6.9D.A5.E8.BF.90.E8.A1.8C_Tomcat)
     *   [6.3 安全配置](#.E5.AE.89.E5.85.A8.E9.85.8D.E7.BD.AE)
+*   [7 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
+    *   [7.1 Tomcat 服务已经启动，但是无法加载页面](#Tomcat_.E6.9C.8D.E5.8A.A1.E5.B7.B2.E7.BB.8F.E5.90.AF.E5.8A.A8.EF.BC.8C.E4.BD.86.E6.98.AF.E6.97.A0.E6.B3.95.E5.8A.A0.E8.BD.BD.E9.A1.B5.E9.9D.A2)
 
 ## 安装
 
@@ -88,7 +90,7 @@ INFO: The APR based Apache Tomcat Native library which allows optimal performanc
 
 [启动](/index.php/Start "Start") `tomcat7` 服务。
 
-一旦 Tomcat 启动了，你可以通过访问这个页面来查看结果：[http://localhost:8080](http://localhost:8080) 。如果显示了一个漂亮的 Tomcat 本地页面，表明你的 Servlet 容器正在运行，并且可以装载你的 web 程序了。如果启动脚本失败了，又或者你在浏览器里只看到了一个 Java 错误页面，你可以通过 [systemd的 journalctl](/index.php/Systemd#Journal "Systemd") 命令来查看启动日志。Google 上有 Tomcat 日志里常见问题的解决办法。
+一旦 Tomcat 启动了，你可以通过访问这个页面来查看结果：[http://localhost:8080](http://localhost:8080) 。如果显示了一个漂亮的 Tomcat 本地页面，表明你的 Servlet 容器正在运行，并且可以装载你的 web 程序了。如果启动脚本失败了，又或者你在浏览器里只看到了一个 Java 错误页面，你可以通过 [systemd的 journalctl](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.97.A5.E5.BF.97 "Systemd (简体中文)") 命令来查看启动日志。Google 上有 Tomcat 日志里常见问题的解决办法。
 
 **Note:** To improve security, Arch Linux's Tomcat packages use the [jsvc](http://commons.apache.org/daemon/jsvc.html) binary from Apache's [common-daemons](http://commons.apache.org/daemon/). Tomcat's `systemd` service runs this Apache binary with root privileges which itself starts Tomcat with an underprivileged user (`tomcat7:tomcat7` in Arch Linux). This prevents malicious code that could be executed in a bad web application from causing too much damage. This also enables the use of ports under 1024 if needed. See `man jsvc` for options available and pass them through the `CATALINA_OPTS` environment variable declared in `/etc/conf.d/tomcat7`.
 
@@ -260,3 +262,26 @@ NEW_PASSWORD:b7bbb48a5b7749f1f908eb3c0c021200c72738ce
 注意，这个方法可能意义并不大。因为只有 root 和/或者 tomcat 能读写这个文件，而如果一个入侵者成功获得了 root 权限，那么他将不需要这些密码来混乱你的程序和数据。请确保对这个文件的读写限制！
 
 *   永远弄清楚你在部署什么
+
+## 故障排除
+
+### Tomcat 服务已经启动，但是无法加载页面
+
+首先，检查 `/etc/tomcat7/tomcat-users.xml` 有没有语法错误。如果一切正常并且 `tomcat7` 正在运行，输入 `journalctl -r` 查看log，看看有没有抛出什么异常（参照 [Logging](https://wiki.archlinux.org/index.php/Tomcat#Logging) ）。 如果你看到有类似 `java.lang.Exception: Socket bind failed: [98] Address already in use` 的异常，说明其它服务正在监听这个端口。例如，有可能 [Apache](https://wiki.archlinux.org/index.php/Apache_HTTP_Server) 和 Tomcat 都在监听同一个端口（例如你在8080端口运行的 Apache 使用在80端口运行的[Nginx](https://wiki.archlinux.org/index.php/Nginx) 作为代理）。如果是这种情况，编辑 `/etc/tomcat7/server.xml` 文件，然后修改 `<Service name="Catalina">` 下的 Connector port 为其它的值：
+
+ `/etc/tomcat7/server.xml` 
+```
+<?xml version='1.0' encoding='utf-8'?>
+...
+...
+<Service name="Catalina">
+    <Connector executor="tomcatThreadPool"
+                 port="8090" protocol="HTTP/1.1"
+                 connectionTimeout="20000"
+                 redirectPort="8443" />
+...
+...
+</Service>
+```
+
+最后 [重启](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") `tomcat7` 和 `httpd` 服务。

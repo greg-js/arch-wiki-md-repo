@@ -441,7 +441,7 @@ layout.word_select.stop_at_punctuation; true (default)
 
 ### Set backspace's behavior
 
-The backspace key performs differently in Firefox in Linux, Windows or Mac. To associate it with "back one page", set `browser.backspace_action` to `0`.
+The backspace key performs differently in Firefox in Linux, Windows or Mac. To associate it with "back one page", set `browser.backspace_action` to `0` in `about:config`.
 
 ## Miscellaneous
 

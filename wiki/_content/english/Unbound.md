@@ -324,6 +324,13 @@ server:
 
 **Note:** In order to return some OK statuses on those hosts, you can change the 127.0.0.1 redirection to a server you control and have that server respond with empty 204 replies, see [this page](http://www.shadowandy.net/2014/04/adblocking-nginx-serving-1-pixel-gif-204-content.htm)
 
+**Tip:** To convert a hosts file from another source to the unbound format do:
+```
+$ cat hosts | grep '^0\.0\.0\.0' | awk '{print "local-zone: \""$2"\" redirect
+local-data: \""$2" A 0.0.0.0\""}' > /etc/unbound/adservers
+
+```
+
 ### Adding an authoritative DNS server
 
 For users who wish to run both a validating, recursive, caching DNS server as well as an authoritative DNS server on a single machine then it may be useful to refer to the wiki page [nsd](/index.php/Nsd "Nsd") which gives an example of a configuration for such a system. Having one server for authoritative DNS queries and a separate DNS server for the validating, recursive, caching DNS functions gives increased security over a single DNS server providing all of these functions. Many users have used bind as a single DNS server, and some help on migration from bind to the combination of running nsd and bind is provided in the [nsd](/index.php/Nsd "Nsd") wiki page.

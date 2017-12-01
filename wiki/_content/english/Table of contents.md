@@ -62,7 +62,7 @@
 | <small>4.8.1.</small> [Graphics tablet](/index.php/Category:Graphics_tablet "Category:Graphics tablet") <small>(1)</small> |
 | <small>4.8.2.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(20)</small> |
 | <small>4.8.3.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(15)</small> |
-| <small>4.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(20)</small> |
+| <small>4.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(21)</small> |
 | <small>4.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(31)</small> |
 | <small>4.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
 | <small>4.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(11)</small> |
@@ -95,7 +95,7 @@
 | <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(12)</small> |
 | <small>5.3.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(8)</small> |
 | <small>5.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(13) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
-| <small>5.5.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(21)</small> |
+| <small>5.5.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(20)</small> |
 | <small>5.6.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(17) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>5.7.</small> [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration") <small>(11)</small> |
 | <small>5.8.</small> [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring") <small>(8)</small> |

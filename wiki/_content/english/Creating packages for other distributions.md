@@ -148,7 +148,7 @@ $ dpkg-buildpackage -d -us -uc -S
 
 **mock** — Takes Source RPMs and builds RPMs from them in a chroot
 
-	[http://fedoraproject.org/wiki/Projects/Mock](http://fedoraproject.org/wiki/Projects/Mock) || [mock-git](https://aur.archlinux.org/packages/mock-git/)
+	[http://fedoraproject.org/wiki/Projects/Mock](http://fedoraproject.org/wiki/Projects/Mock) || [mock](https://aur.archlinux.org/packages/mock/)
 
 ### See also
 

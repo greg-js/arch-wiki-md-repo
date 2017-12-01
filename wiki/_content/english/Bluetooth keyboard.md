@@ -101,6 +101,8 @@ Pairing successful
 
 ```
 
+**Note:** Some keyboards, such as Microsoft Surface Ergonomic, will send a pass code (e.g. "[agent] Passkey: 501334") which has to be typed in on the bluetooth keyboard followed by the key Enter in order to pair successfully. Use "paired-devices" command to double check if the pairing succeeded.
+
 Next, make this a trusted device (this allows the device to establish the connection on itself). Again, the BT-MAC address is the address of the keyboard device:
 
  `[bluetooth]# trust 01:02:03:04:05:06` 

@@ -393,7 +393,7 @@ or
 **Note:** This example configuration enables Noto Emoji fonts to be used with [GNOME](/index.php/GNOME "GNOME") and [Chromium](/index.php/Chromium "Chromium").
 Firefox excluded due to [multiple font configuration bugs](https://bugzilla.mozilla.org/buglist.cgi?quicksearch=fontconfig).
 
-[Install](/index.php/Install "Install") the [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) package. It provides both black-and-white and color font variant and sample configuration files for both.
+[Install](/index.php/Install "Install") the [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) package. It provides color emoji font and sample configuration file.
 
 Enable substitution for common color emoji fonts to Noto Color Emoji font:
 

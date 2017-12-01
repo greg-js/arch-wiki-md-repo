@@ -39,6 +39,7 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [alucryd](https://aur.archlinux.org/packages.php?K=alucryd&SeB=m) | Maxime Gauduin | alucryd@archlinux.org |
 | [Ambrevar](https://aur.archlinux.org/packages.php?K=Ambrevar&SeB=m) | [Pierre Neidhardt](/index.php/User:Ambrevar "User:Ambrevar") | ambrevar@gmail.com |
 | [anatolik](https://aur.archlinux.org/packages.php?K=anatolik&SeB=m) | Anatol Pomozov | anatol dot pomozov + arch at gmail |
+| [andrewSC](https://aur.archlinux.org/packages.php?K=andrewSC&SeB=m) | Andrew Crerar | andrew (at) crerar (dot) io |
 | [anthraxx](https://aur.archlinux.org/packages.php?K=anthraxx&SeB=m) | [Levente Polyak](/index.php/User:Anthraxx "User:Anthraxx") | anthraxx [at] archlinux [dot] org |
 | [arcanis](https://aur.archlinux.org/packages/?SeB=m&K=arcanis) | Evgeniy Alekseev | arcanis DOT arch AT gmail DOT com |
 | [ArchangeGabriel](https://aur.archlinux.org/packages.php?K=ArchangeGabriel&SeB=m) | Bruno Pagani | bruno.n.pagani@gmail.com |

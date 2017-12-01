@@ -64,7 +64,7 @@
  <small>4.8.1.</small> [Graphics tablet](/index.php/Category:Graphics_tablet "Category:Graphics tablet") <small>(1)</small> |
 | <small>4.7.1.</small> [Клавиатуры](/index.php/Category:Keyboards_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Keyboards (Русский)") <small>(7)</small> | <small>4.8.2.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(20)</small> |
 | <small>4.7.2.</small> [Мыши](/index.php/Category:Mice_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Mice (Русский)") <small>(2)</small> | <small>4.8.3.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(15)</small> |
-| <small>4.8.</small> [Ноутбуки](/index.php/Category:Laptops_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Laptops (Русский)") <small>(3)</small> | <small>4.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(20)</small> |
+| <small>4.8.</small> [Ноутбуки](/index.php/Category:Laptops_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Laptops (Русский)") <small>(3)</small> | <small>4.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(21)</small> |
  <small>4.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(31)</small> |
  <small>4.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
  <small>4.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(11)</small> |
@@ -100,7 +100,7 @@
 | <small>5.4.</small> [Интернет приложения](/index.php/Category:Internet_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Internet applications (Русский)") <small>(14) (Также в [Приложения](/index.php/Category:Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Applications (Русский)"))</small> |
 | <small>5.4.1.</small> [Интернет чат (IRC)](/index.php/Category:Internet_Relay_Chat_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Internet Relay Chat (Русский)") <small>(2)</small> |
 | <small>5.4.2.</small> [Веб браузер](/index.php/Category:Web_browser_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Web browser (Русский)") <small>(6)</small> |
- <small>5.5.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(21)</small> |
+ <small>5.5.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(20)</small> |
 | <small>5.5.</small> [Модемы](/index.php/Category:Modems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Modems (Русский)") <small>(4) (Также в [Аппаратная часть](/index.php/Category:Hardware_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Hardware (Русский)"))</small> | <small>5.6.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(17) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>5.6.</small> [Менеджеры сетей](/index.php/Category:Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Network configuration (Русский)") <small>(2)</small> | <small>5.7.</small> [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration") <small>(11)</small> |
 | <small>5.7.</small> [Сетевой мониторинг](/index.php/Category:Network_monitoring_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Network monitoring (Русский)") <small>(2)</small> | <small>5.8.</small> [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring") <small>(8)</small> |

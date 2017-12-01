@@ -35,7 +35,7 @@ Now you can either edit `~/.xbindkeysrc` to set keybindings, or you can do that 
 
 ### Volume control
 
-Here is an example configuration file that binds Fn key combos on a laptop to [pamixer](https://www.archlinux.org/packages/?name=pamixer) commands that adjust sound volume. Note that pound (#) symbols can be used to create comments.
+Here is an example configuration file that binds Fn key combos on a laptop to *pactl* commands that adjust sound volume. Note that pound (#) symbols can be used to create comments.
 
 ```
 # Increase volume

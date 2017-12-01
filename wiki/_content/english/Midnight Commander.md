@@ -61,11 +61,11 @@ In prominent view are two vertical panes. Either can list directory contents, sh
 
 Below, a command line is visible, connected to a subshell. This shell is generally of the same type *mc* was launched from, and may be switched to at will (`Ctrl-O`), see `**The subshell support**`. On this command line, *cd* is interpreted by Midnight Commander, and not passed to the shell for execution. As such, special completion (such as from [Zsh](/index.php/Zsh "Zsh")) is unavailable. Files in the pane interact with the command line; for example, `Alt+Enter` copies the name of a (selected) file to the command line.
 
-Keybindings are generally similar to [GNU Emacs](/index.php/GNU_Emacs "GNU Emacs"). A more strict emacs keymap can be enabled (see `**Redefine hotkey bindings**`). New users may however use Lynx-like (arrow) keybindings (enabled in `F9 > Options > Panel options`) and mouse clicks for navigation.
+Keybindings are generally similar to [GNU Emacs](/index.php/GNU_Emacs "GNU Emacs"). A more strict emacs keymap can be enabled (see `**Redefine hotkey bindings**`). New users may however use Lynx-like (arrow) keybindings (enabled in *`F9` > Options > Panel options*) and mouse clicks for navigation.
 
 ### Modules
 
-These can be called via the *mc* interface (with *Use internal* enabled in `F9 > Options > Configuration`), or separately as symbolic links to the *mc* binary.
+These can be called via the *mc* interface (with *Use internal* enabled in *`F9` > Options > Configuration), or separately as symbolic links to the* mc *binary.*
 
 *   *mcedit* - Text and binary file editor, with regex replace, syntax highlighting, macros and shell piping, see [mcedit(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mcedit.1)
 *   *mcview* - Text and hex viewer with goto marks and regex search
@@ -190,7 +190,7 @@ With certain terminal definitions such as `screen-256color` or `xterm-termite`, 
 
 Settings will be stored in the `~/.config/mc/ini` file, for example for `screen-256color`:
 
-**Note:** The following example assumes F13–F20 are bound to `Shift+F3`–`Shift+F10`.
+**Note:** The following example assumes `F13`–`F20` are bound to `Shift+F3`–`Shift+F10`.
 
 ```
 [terminal:screen-256color]
@@ -228,9 +228,9 @@ urxvt does not have this limitation, which Slang (the library mc uses for text d
 The solution is to configure mc to explicitly use bold colors as desired, e.g. by editing the default skin as follows:
 
 ```
-mkdir ~/.local/share/mc/skins 
-cp /usr/share/mc/skins/default.ini ~/.local/share/mc/skins/
-sed -i -E 's/^(.* = (gray|brightred|brightgreen|yellow|brightblue|brightmagenta|brightcyan|white);.*)$/\0;bold/' ~/.local/share/mc/skins/default.ini
+$ mkdir ~/.local/share/mc/skins 
+$ cp /usr/share/mc/skins/default.ini ~/.local/share/mc/skins/
+$ sed -i -E 's/^(.* = (gray|brightred|brightgreen|yellow|brightblue|brightmagenta|brightcyan|white);.*)$/\0;bold/' ~/.local/share/mc/skins/default.ini
 
 ```
 
@@ -240,5 +240,5 @@ Another common workaround is to set `TERM=xterm`, however this causes other issu
 
 ## See also
 
-*   [man mc(1)](https://linux.die.net/man/1/mc)
+*   [mc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1)
 *   [Draft of documentation](https://www.midnight-commander.org/wiki/doc)

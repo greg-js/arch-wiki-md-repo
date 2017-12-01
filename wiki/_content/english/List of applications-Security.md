@@ -345,6 +345,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 	[https://keepassxc.org/](https://keepassxc.org/) || [keepassxc](https://www.archlinux.org/packages/?name=keepassxc)
 
+*   **LastPass** — Hosted password manager.
+
+	[https://www.lastpass.com/](https://www.lastpass.com/) || [lastpass-cli](https://www.archlinux.org/packages/?name=lastpass-cli)
+
 *   **MyPasswords** — What you need for managing your passwords, including the passwords of your online accounts, bank accounts and ... with the corresponding URLs.
 
 	[https://sourceforge.net/projects/mypasswords7/](https://sourceforge.net/projects/mypasswords7/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>

@@ -130,8 +130,6 @@ dhcp-range=10.0.0.2,10.0.0.255,255.255.255.0,1h # 定义局域网中 DHCP 地址
 
 ## IPv6 tips
 
-Useful reading: [IPv6](/index.php/IPv6 "IPv6") and the [wikipedia:IPv6](https://en.wikipedia.org/wiki/IPv6 "wikipedia:IPv6").
-
 ### Unique Local Addresses
 
 You can use your router in IPv6 mode even if you do not have an IPv6 address from your ISP. Unless you disable IPv6 all interfaces should have been assigned a unique `fe80::/10` address.
@@ -207,4 +205,4 @@ To properly hand out IPv6s to the network clients we will need to use an adverti
 ## 参阅
 
 *   [Simple stateful firewall (简体中文)](/index.php/Simple_stateful_firewall_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Simple stateful firewall (简体中文)")
-*   [Internet sharing (简体中文)](/index.php?title=Internet_sharing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "Internet sharing (简体中文) (page does not exist)")
+*   [Internet sharing (简体中文)](/index.php/Internet_sharing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Internet sharing (简体中文)")

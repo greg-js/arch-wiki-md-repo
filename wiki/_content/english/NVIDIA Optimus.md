@@ -98,8 +98,6 @@ xrandr --dpi 96
 
 If you get a black screen when starting X, make sure that there are no ampersands after the two `xrandr` commands in `~/.xinitrc`. If there are ampersands, it seems that the window manager can run before the `xrandr` commands finish executing, leading to a black screen.
 
-If the black screen persists, see the [#Alternative configuration](#Alternative_configuration) below.
-
 ### Display Managers
 
 If you are using a display manager then you will need to create or edit a display setup script for your display manager instead of using `~/.xinitrc`.

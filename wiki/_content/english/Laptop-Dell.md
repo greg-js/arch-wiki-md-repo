@@ -58,6 +58,7 @@ install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Precision M4800 | 2014.04.01 | System not usable if booted without kernel parameter `nomodeset`. Nvidia Quadro K2100M works with [nvidia](https://www.archlinux.org/packages/?name=nvidia), but [Nouveau](/index.php/Nouveau "Nouveau") does not work because it requires KMS. | Untested | Yes | Yes | Untested | Untested | No modem | N/A | `nomodeset` is *required* to boot to a usable system, both with the Arch installation media and post-installation. |
+| Precision 7710 | 2017.11.01 | [AMD/ATI] Venus XTX [Radeon HD 8890M / R9 M275X/M375X] (rev 83) works without problems. | Intel Corporation Sunrise Point-H HD Audio (rev 31) with Pulse Audio works | yes | Intel Corporation Wireless 8260 (rev 3a) output works; microphone not detected by pulse audio; HDMI audio device untested | not tested | Suspend works if no BIOS hard drive password. Hibernate untested. | N/A | Solid experience using XFCE; all defaults. Lots of errors when booting up about the video card, etc., but no noticeable problems. xcalib -a -i; is very slow -- not sure why. |
 
 ## Studio
 

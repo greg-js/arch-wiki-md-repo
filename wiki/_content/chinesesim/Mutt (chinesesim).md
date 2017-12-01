@@ -52,7 +52,7 @@ AUR 中有许多不同的 mutt 包，每个都提供了不同的补丁，NeoMutt
 
 本章节包含 [#IMAP](#IMAP), [#POP3](#POP3), [#Maildir](#Maildir) 和 [#SMTP](#SMTP) 的配置。
 
-Mutt 默认识别两个位置的配置文件： `〜/ .muttrc` 和 `〜/ .mutt / muttrc`。 任何一个配置文件都可以工作。 如果决定将初始化文件放在其他地方，使用
+Mutt 默认识别两个位置的配置文件： `~/.muttrc` 和 `~/.mutt/muttrc`。 任何一个配置文件都可以工作。 如果决定将初始化文件放在其他地方，使用
 
 ```
  `$ mutt -F /path/to/.muttrc`。

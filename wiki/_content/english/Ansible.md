@@ -1,6 +1,6 @@
-From [docs.ansible.com](http://docs.ansible.com/):
+From [www.ansible.com](https://www.ansible.com/how-ansible-works):
 
-	*Ansible is an IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates.*
+	*Ansible is a radically simple IT automation engine that automates cloud provisioning, configuration management, application deployment, intra-service orchestration, and many other IT needs.*
 
 ## Contents
 
@@ -19,9 +19,9 @@ From [docs.ansible.com](http://docs.ansible.com/):
 
 ## Installation
 
-On the control machine (server, master), [Install](/index.php/Install "Install") the [ansible](https://www.archlinux.org/packages/?name=ansible) package. [python](https://www.archlinux.org/packages/?name=python) is also required (Python versions 2.6, 2.7 or 3.5 and higher are supported).
+On the control machine (master), [install](/index.php/Install "Install") the [ansible](https://www.archlinux.org/packages/?name=ansible) package. [python](https://www.archlinux.org/packages/?name=python) is also required (Python versions 2.6, 2.7 or 3.5 and higher are supported).
 
-On the managed machines (clients, slaves), where you want to automate deployment or configuration tasks, you need a way to communicate, which is normally [SSH](/index.php/SSH "SSH"). Note that a functioning [SSH key](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys") setup eases the use of Ansible but is not required.
+On the managed machines (nodes), where you want to automate deployment or configuration tasks, you need a way to communicate, which is normally [SSH](/index.php/SSH "SSH"). Note that a functioning [SSH key](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys") setup eases the use of Ansible but is not required.
 
 ## Basic usage
 

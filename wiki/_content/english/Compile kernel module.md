@@ -1,3 +1,8 @@
+Related articles
+
+*   [Kernel](/index.php/Kernel "Kernel")
+*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
+
 Sometimes you may wish to compile Linux's [Kernel module](/index.php/Kernel_module "Kernel module") without recompiling the whole kernel.
 
 **Note:** You can only replace existing module if it is compiled as module (M) and not builtin (y) into kernel.
@@ -53,14 +58,35 @@ $ make oldconfig
 
 ## Module compilation
 
-Then prepare source for compilation with
+In order to load our module cleanly, we must find the value of the EXTRAVERSION component of the current kernel version number so we can match the version number exactly in our kernel source. EXTRAVERSION is a variable set in the kernel top-level Makefile, but the Makefile in a vanilla kernel source will have EXTRAVERSION empty; it is set only as part of the Arch kernel build process. The value of the current kernel's EXTRAVERSION (usually `-1`) can be found in one of two ways:
+
+1.  Look at the top of `/usr/lib/modules/$(uname -r)/build/Makefile`
+2.  Run `uname -r` and look for the string between the third kernel version number and `-ARCH` (the Arch-specific setting for LOCALVERSION as set in the kernel .config file). For example, with a kernel version of `4.9.65-1-ARCH`, the EXTRAVERSION is `-1`.
+
+Once the EXTRAVERSION value is known, we prepare the source for module compilation:
 
 ```
-$ make prepare && make scripts
+$ make EXTRAVERSION=<YOUR EXTRAVERSION HERE> modules_preapre
 
 ```
 
-And finally compile wanted module by specifying its directory. (You can find module location with modinfo or find)
+Example:
+
+```
+$ make EXTRAVERSION=-1 modules_prepare
+
+```
+
+Alternatively, if you are happy to load modules with modprobe using the `--force-vermagic` option to ignore mismatches in the kernel version number, you can simply run:
+
+```
+$ make modules_prepare
+
+```
+
+**Note:** While the Makefile at `/usr/lib/modules/$(uname -r)/build/Makefile` could be copied over the Makefile in the kernel source to avoid manually specifying the EXTRAVERSION on the command line, that could cause a different kernel version mismatch to occur. If the kernel source has been obtained through a version control tool such as git, simply copying over the Makefile would cause the working copy to be dirty, which the kernel build process would recognize, causing it to append `+` to the LOCALVERSION configuration setting. For example: `4.9.65-1-ARCH+`.
+
+Finally, compile wanted module by specifying its directory. (You can find module location with modinfo or find)
 
 ```
 $ make M=fs/btrfs

@@ -11,6 +11,8 @@
 
 *   [1 交换空间](#.E4.BA.A4.E6.8D.A2.E7.A9.BA.E9.97.B4)
 *   [2 交换分区](#.E4.BA.A4.E6.8D.A2.E5.88.86.E5.8C.BA)
+    *   [2.1 通过 Systemd 激活](#.E9.80.9A.E8.BF.87_Systemd_.E6.BF.80.E6.B4.BB)
+    *   [2.2 关闭交换分区](#.E5.85.B3.E9.97.AD.E4.BA.A4.E6.8D.A2.E5.88.86.E5.8C.BA)
 *   [3 交换文件](#.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6)
     *   [3.1 手动方式](#.E6.89.8B.E5.8A.A8.E6.96.B9.E5.BC.8F)
         *   [3.1.1 建立交换文件](#.E5.BB.BA.E7.AB.8B.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6)
@@ -25,7 +27,7 @@
 
 ## 交换空间
 
-交换空间通常是一个磁盘分区，但是也可以是一个文件。必要的话，用户可以在安装 Arch Linux 或之后的任何时间建立交换空间。对于 RAM 小于 1GB 的用户，交换空间通常是推荐的，但是对于拥有大量的物理内存的用户来说是否使用主要看个人口味了(尽管它对于休眠到硬盘支持是必须的)。
+交换空间通常是一个磁盘分区，但是也可以是一个文件。用户可以在安装 Arch Linux 的时候创建交换空间，或者在安装后的任何时间建立交换空间。对于 RAM 小于 1GB 的用户，交换空间通常是推荐的，但是对于拥有大量的物理内存的用户来说是否使用主要看个人口味了(尽管它对于休眠到硬盘支持是必须的)。
 
 要检查交换空间的状态，使用
 
@@ -41,14 +43,18 @@ $ free -m
 
 ```
 
+**注意:** 连续交换文件和交换分区之间没有性能之别，两者的处理方式是一样的。
+
 ## 交换分区
 
-交换分区可以用大多数 GNU/Linux 分区工具(例如 `fdisk`, `cfdisk`)创建。交换分区被分配为类型 **82**.
+交换分区可以用大多数 GNU/Linux 分区工具(例如 `fdisk`, `cfdisk`)创建。交换分区被分配为类型 `82`。尽管可以使用任何分区类型作为交换分区，但是在大多数情况下，建议使用 `82`，因为 [systemd](/index.php/Systemd "Systemd") 会自动检测并挂载它（见下文）。
+
+A swap partition can be created with most GNU/Linux [partitioning tools](/index.php/Partitioning_tools "Partitioning tools"). Swap partitions are typically designated as type `82`. Even though it is possible to use any partition type as swap, it is recommended to use type `82` in most cases since [systemd](/index.php/Systemd "Systemd") will automatically detect it and mount it (see below).
 
 想安装一个 Linux 交换区域，使用 `mkswap` 命令。例如：
 
 ```
-# mkswap /dev/sda2
+# mkswap /dev/sd*xy*
 
 ```
 
@@ -57,16 +63,51 @@ $ free -m
 想要启用一个设备作为交换分区：
 
 ```
-# swapon /dev/sda2
+# swapon /dev/sd*xy*
 
 ```
 
 想要启动时自动启用交换分区，添加一个条目到 [fstab](/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fstab (简体中文)"):
 
 ```
-/dev/sda2 none swap defaults 0 0
+UUID=<UUID> none swap defaults 0 0
 
 ```
+
+UUID可以通过以下命令获得：
+
+```
+lsblk -no UUID /dev/sd*xy*
+
+```
+
+**提示：** UUID 和 LABEL 应该比使用由内核给出的设备名称更受青睐，因为设备顺序可能在将来发生变化。 请参阅：[fstab](/index.php/Fstab "Fstab")。
+
+**注意:**
+
+*   如果交换分区位于使用 GPT 的设备上，那么 [fstab](/index.php/Fstab "Fstab") 中的 swap 条目是可选的，参阅下一小节。
+*   如果使用支持 [TRIM](/index.php/TRIM "TRIM") 的 SSD，请考虑在 [fstab](/index.php/Fstab "Fstab") 的 swap 条目中使用 `defaults,discard`。 如果使用 *swapon* 命令手动激活交换分区，则使用 `-d`/`--discard` 参数实现相同功能。详细信息，请参阅 [swapon(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/swapon.8)。
+
+**Warning:** Enabling discard on RAID setups using mdadm will cause system lockup on boot and during runtime, if using swapon.
+
+**警告:** 在使用 madam 进行 RAID 设置时，如果开启 swapon 命令的 discard 参数，将导致系统在启动和运行时锁定。
+
+### 通过 Systemd 激活
+
+[systemd](/index.php/Systemd "Systemd") 通过两种机制来激活 swap 分区。两种都是 `/usr/lib/systemd/system-generators` 内的可执行文件。 generators 在启动时运行并为 mounts 创建本地 systemd 单元。第一种机制是通过 `systemd-fstab-generator` 读取 fstab 来生成单元，包括 swap 单元。 第二种机制是通过 `systemd-gpt-auto-generator` 检查根磁盘来生成单位。这个机制仅在 GPT 磁盘上运行，并可通过类型代码 `82` 识别交换分区。
+
+### 关闭交换分区
+
+关闭交换分区使用下面的命令:
+
+```
+# swapoff /dev/sd*xy*
+
+```
+
+也可以使用 `-a` 参数来关闭所有的交换分区。
+
+因为 swap 通过 systemd 管理， 因此会在下一次系统启动时再次激活。 要永久禁用该特性，运行 `systemctl --type swap` 来查找 *.swap* 单元，然后 [mask](/index.php/Mask "Mask") 它。
 
 ## 交换文件
 

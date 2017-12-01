@@ -39,27 +39,24 @@
                 *   [1.4.6.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
                 *   [1.4.6.2.2 Other](#Other_2)
         *   [1.4.7 Other P2P networks](#Other_P2P_networks)
-        *   [1.4.8 Web content downloaders](#Web_content_downloaders)
-            *   [1.4.8.1 Console](#Console_4)
-            *   [1.4.8.2 Graphical](#Graphical_4)
-        *   [1.4.9 Pastebin clients](#Pastebin_clients)
+        *   [1.4.8 Pastebin clients](#Pastebin_clients)
     *   [1.5 Communication](#Communication)
         *   [1.5.1 Email clients](#Email_clients)
-            *   [1.5.1.1 Console](#Console_5)
-            *   [1.5.1.2 Graphical](#Graphical_5)
+            *   [1.5.1.1 Console](#Console_4)
+            *   [1.5.1.2 Graphical](#Graphical_4)
         *   [1.5.2 Mail servers](#Mail_servers)
         *   [1.5.3 Instant messaging](#Instant_messaging)
             *   [1.5.3.1 IRC clients](#IRC_clients)
-                *   [1.5.3.1.1 Console](#Console_6)
-                *   [1.5.3.1.2 Graphical](#Graphical_6)
+                *   [1.5.3.1.1 Console](#Console_5)
+                *   [1.5.3.1.2 Graphical](#Graphical_5)
             *   [1.5.3.2 XMPP (Jabber) clients](#XMPP_.28Jabber.29_clients)
-                *   [1.5.3.2.1 Console](#Console_7)
-                *   [1.5.3.2.2 Graphical](#Graphical_7)
+                *   [1.5.3.2.1 Console](#Console_6)
+                *   [1.5.3.2.2 Graphical](#Graphical_6)
             *   [1.5.3.3 XMPP servers](#XMPP_servers)
             *   [1.5.3.4 Other](#Other_3)
             *   [1.5.3.5 Multi-protocol clients](#Multi-protocol_clients)
-                *   [1.5.3.5.1 Console](#Console_8)
-                *   [1.5.3.5.2 Graphical](#Graphical_8)
+                *   [1.5.3.5.1 Console](#Console_7)
+                *   [1.5.3.5.2 Graphical](#Graphical_7)
             *   [1.5.3.6 Lan messengers](#Lan_messengers)
         *   [1.5.4 VoIP / Softphone](#VoIP_.2F_Softphone)
             *   [1.5.4.1 Clients](#Clients)
@@ -70,8 +67,8 @@
             *   [1.5.4.3 Utilities](#Utilities)
     *   [1.6 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
         *   [1.6.1 News aggregators](#News_aggregators)
-            *   [1.6.1.1 Console](#Console_9)
-            *   [1.6.1.2 Graphical](#Graphical_9)
+            *   [1.6.1.1 Console](#Console_8)
+            *   [1.6.1.2 Graphical](#Graphical_8)
         *   [1.6.2 Podcast clients](#Podcast_clients)
         *   [1.6.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
         *   [1.6.4 Blog engines](#Blog_engines)
@@ -444,9 +441,29 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[http://lftp.yar.ru/](http://lftp.yar.ru/) || [lftp](https://www.archlinux.org/packages/?name=lftp)
 
+*   **Plowshare** — A set of command-line tools designed for managing file-sharing websites (aka Hosters).
+
+	[https://github.com/mcrapet/plowshare](https://github.com/mcrapet/plowshare) || [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/)
+
+*   **[pyLoad](/index.php/PyLoad "PyLoad")** — Downloader written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.
+
+	[https://pyload.net/](https://pyload.net/) || [pyload](https://aur.archlinux.org/packages/pyload/)
+
 *   **snarf** — Command-line URL retrieval tool. Supports HTTP and FTP.
 
 	[http://www.xach.com/snarf/](http://www.xach.com/snarf/) || [snarf](https://www.archlinux.org/packages/?name=snarf)
+
+*   **[Streamlink](/index.php/Streamlink "Streamlink")** — Launch streams from various streaming services in a custom video player.
+
+	[https://streamlink.github.io/](https://streamlink.github.io/) || [streamlink](https://www.archlinux.org/packages/?name=streamlink)
+
+*   **You-Get** — Download media contents (videos, audios, images) from the Web.
+
+	[https://you-get.org/](https://you-get.org/) || [you-get](https://www.archlinux.org/packages/?name=you-get)
+
+*   **youtube-dl** — Download videos from YouTube and many other web sites.
+
+	[https://rg3.github.io/youtube-dl/](https://rg3.github.io/youtube-dl/) || [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl)
 
 *   **[Wget](https://en.wikipedia.org/wiki/Wget "wikipedia:Wget")** — A network utility to retrieve files from the Web. Supports HTTP and FTP.
 
@@ -454,13 +471,29 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 ##### Graphical
 
+*   **4K Video Downloader** — Quickly download videos from YouTube in high-quality..
+
+	[https://www.4kdownload.com/products/product-videodownloader](https://www.4kdownload.com/products/product-videodownloader) || [4kvideodownloader](https://aur.archlinux.org/packages/4kvideodownloader/)
+
+*   **ClipGrab** — Downloader and converter for YouTube, Vimeo and many other online video sites.
+
+	[https://clipgrab.org/](https://clipgrab.org/) || [clipgrab-qt5](https://aur.archlinux.org/packages/clipgrab-qt5/)
+
 *   **FatRat** — Download manager with support for HTTP, FTP, SFTP, BitTorrent and Metalink.
 
 	[http://fatrat.dolezel.info/](http://fatrat.dolezel.info/) || [fatrat-git](https://aur.archlinux.org/packages/fatrat-git/)
 
+*   **FreeRapid** — Java-based downloader that supports downloading from file-sharing services.
+
+	[http://wordrider.net/freerapid/](http://wordrider.net/freerapid/) || [freerapid](https://aur.archlinux.org/packages/freerapid/)
+
 *   **[Gwget](https://en.wikipedia.org/wiki/Wget#GWget "wikipedia:Wget")** — Download manager for GNOME. Supports HTTP and FTP.
 
 	[https://projects.gnome.org/gwget/](https://projects.gnome.org/gwget/) || [gwget](https://www.archlinux.org/packages/?name=gwget)
+
+*   **[JDownloader](/index.php/JDownloader "JDownloader")** — Java-based downloader for one-click hosting sites.
+
+	[http://jdownloader.org/](http://jdownloader.org/) || [jdownloader2](https://aur.archlinux.org/packages/jdownloader2/)
 
 *   **[KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet")** — Download manager for KDE. Supports HTTP, FTP, BitTorrent and Metalink. Part of [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
 
@@ -709,48 +742,6 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 *   **Sendanywhere** — GTK2 client for the cross platform P2P file sharing service, Sendanywhere. Allow users to send files of any type and size to other Android, iOS, and Desktop devices.
 
 	[https://www.send-anywhere.com](https://www.send-anywhere.com) || [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/)
-
-#### Web content downloaders
-
-##### Console
-
-*   **Plowshare** — A set of command-line tools designed for managing file-sharing websites (aka Hosters).
-
-	[https://github.com/mcrapet/plowshare](https://github.com/mcrapet/plowshare) || [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/)
-
-*   **[pyLoad](/index.php/PyLoad "PyLoad")** — Downloader written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.
-
-	[https://pyload.net/](https://pyload.net/) || [pyload](https://aur.archlinux.org/packages/pyload/)
-
-*   **[Streamlink](/index.php/Streamlink "Streamlink")** — Launch streams from various streaming services in a custom video player.
-
-	[https://streamlink.github.io/](https://streamlink.github.io/) || [streamlink](https://www.archlinux.org/packages/?name=streamlink)
-
-*   **youtube-dl** — Download videos from YouTube and many other web sites.
-
-	[https://rg3.github.io/youtube-dl/](https://rg3.github.io/youtube-dl/) || [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl)
-
-*   **You-Get** — Download media contents (videos, audios, images) from the Web.
-
-	[https://you-get.org/](https://you-get.org/) || [you-get](https://www.archlinux.org/packages/?name=you-get)
-
-##### Graphical
-
-*   **4K Video Downloader** — Quickly download videos from YouTube in high-quality..
-
-	[https://www.4kdownload.com/products/product-videodownloader](https://www.4kdownload.com/products/product-videodownloader) || [4kvideodownloader](https://aur.archlinux.org/packages/4kvideodownloader/)
-
-*   **ClipGrab** — Downloader and converter for YouTube, Vimeo and many other online video sites.
-
-	[https://clipgrab.org/](https://clipgrab.org/) || [clipgrab-qt5](https://aur.archlinux.org/packages/clipgrab-qt5/)
-
-*   **FreeRapid** — Java-based downloader that supports downloading from file-sharing services.
-
-	[http://wordrider.net/freerapid/](http://wordrider.net/freerapid/) || [freerapid](https://aur.archlinux.org/packages/freerapid/)
-
-*   **[JDownloader](/index.php/JDownloader "JDownloader")** — Java-based downloader for one-click hosting sites.
-
-	[http://jdownloader.org/](http://jdownloader.org/) || [jdownloader2](https://aur.archlinux.org/packages/jdownloader2/)
 
 #### Pastebin clients
 

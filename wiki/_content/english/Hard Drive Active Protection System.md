@@ -10,10 +10,6 @@
 *   [2 Shock protection](#Shock_protection)
     *   [2.1 hdapsd](#hdapsd)
 *   [3 GUI Utilities](#GUI_Utilities)
-    *   [3.1 kdeplasma-applets-hdaps-monitor](#kdeplasma-applets-hdaps-monitor)
-    *   [3.2 xfce4-hdaps](#xfce4-hdaps)
-    *   [3.3 HDAPSicon](#HDAPSicon)
-    *   [3.4 hdaps-gl](#hdaps-gl)
 *   [4 See also](#See_also)
 
 ## Shock detection
@@ -77,23 +73,23 @@ And reload the configuration.
 
 ## GUI Utilities
 
-Utilities exist to monitor hdapsd's status so you know what is going on while you are using your laptop. These are entirely optional, but very handy.
+Utilities exist to monitor hdapsd's status so you know what is going on while you are using your laptop. These are entirely optional.
 
-### kdeplasma-applets-hdaps-monitor
+**HDAPS monitor** — KDE4 plasmoid for HDAPS monitoring.
 
-For KDE4 there is a plasmoid for HDAPS monitoring [HDAPS monitor](http://kde-look.org/content/show.php/HDAPS+monitor?content=103481). The package [kdeplasma-applets-hdaps-monitor](https://aur.archlinux.org/packages/kdeplasma-applets-hdaps-monitor/) is available in [AUR](/index.php/AUR "AUR").
+	[https://store.kde.org/content/show.php/?content=103481](https://store.kde.org/content/show.php/?content=103481) || [kdeplasma-applets-hdaps-monitor](https://aur.archlinux.org/packages/kdeplasma-applets-hdaps-monitor/)
 
-### xfce4-hdaps
+**xfce4-hdaps** — Xfce4 panel applet that can represents the current status of your hard drive.
 
-This is a Xfce4 panel applet that can represents the current status of your hard drive. Available in [AUR](/index.php/AUR "AUR"): [xfce4-hdaps](https://aur.archlinux.org/packages/xfce4-hdaps/). After install, add this applet to a panel.
+	[http://michael.orlitzky.com/code/xfce4-hdaps.xhtml](http://michael.orlitzky.com/code/xfce4-hdaps.xhtml) || [xfce4-hdaps](https://aur.archlinux.org/packages/xfce4-hdaps/)
 
-### HDAPSicon
+**HDAPSicon** — Formerly thinkhdaps, standalone GTK+ applet for HDAPS disk protection status.
 
-HDAPSicon, formerly thinkhdaps, is a standalone GTK applet for HDAPS disk protection status. While running will show applet icon in the notification area. Available in AUR: [hdapsicon-git](https://aur.archlinux.org/packages/hdapsicon-git/).
+	[https://github.com/thpani/thinkhdaps](https://github.com/thpani/thinkhdaps) || [hdapsicon-git](https://aur.archlinux.org/packages/hdapsicon-git/)
 
-### hdaps-gl
+**hdaps-gl** — Simple OpenGL application showing the 3D animation of your Thinkpad. Similar to the apllication Lenovo distributes with Windows.
 
-Simple OpenGL application showing the 3D animation of your Thinkpad. Similar to the apllication Lenovo distributes with Windows. [hdaps-gl](https://aur.archlinux.org/packages/hdaps-gl/) is available in AUR.
+	[https://github.com/evgeni/hdapsd](https://github.com/evgeni/hdapsd) || [hdaps-gl](https://aur.archlinux.org/packages/hdaps-gl/)
 
 ## See also
 

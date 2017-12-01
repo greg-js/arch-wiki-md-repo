@@ -1,3 +1,7 @@
+Related articles
+
+*   [Chromebook](/index.php/Chromebook "Chromebook")
+
 This is a work in progress with information about the HP Chromebook 14 (FALCO)
 
 The HP Chromebook 14 (and newer chromebooks in general) features a "legacy boot" mode that makes it easy to boot Linux and other operating systems. The legacy boot mode is provided by the [SeaBIOS](http://www.coreboot.org/SeaBIOS) payload of coreboot. SeaBIOS behaves like a traditional BIOS that boots into the GPT of a disk, and from there into your standard bootloaders like Syslinux and GRUB.
