@@ -94,6 +94,8 @@ nameserver 2a05:dfc7:5::5353
 
 ```
 
+For an automated renewal of your DNS servers with the most responsive OpenNIC servers, the script [nm-opennic](https://github.com/kewlfft/nm-opennic/) can be used if you have [NetworkManager](/index.php/NetworkManager "NetworkManager").
+
 **Note:** Use of OpenNIC DNS servers will allow host name resolution in the traditional Top-Level Domain (TLD) registries, but also in OpenNIC or afiliated operated namespaces (.o, .libre, .dyn...)
 
 ### Cisco Umbrella (formerly OpenDNS)
@@ -237,7 +239,7 @@ nameserver 2620:fe::10    ## no blocklist, no DNSSEC
 
 ### Prevent NetworkManager modifications
 
-To stop NetworkManager from modifying `/etc/resolv.conf`, edit `/etc/NetworkManager/NetworkManager.conf` and add the following in the `[main]` section:
+To stop *NetworkManager* from modifying `/etc/resolv.conf`, edit `/etc/NetworkManager/NetworkManager.conf` and add the following in the `[main]` section:
 
 ```
 dns=none

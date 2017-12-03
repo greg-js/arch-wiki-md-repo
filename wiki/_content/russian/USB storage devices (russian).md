@@ -102,7 +102,7 @@ ACTION=="add", ENV{DEVTYPE}=="partition", DRIVERS=="usb-storage", ENV{SYSTEMD_WA
 
 ```
 
-Теперь скрипт **/ust/lib/udev/domount**, вот улучшенная версия скрипта которая поддерживает русские символы:
+Теперь скрипт **/usr/lib/udev/domount**, вот улучшенная версия скрипта которая поддерживает русские символы:
 
 ```
 #!/bin/sh
@@ -110,7 +110,7 @@ ACTION=="add", ENV{DEVTYPE}=="partition", DRIVERS=="usb-storage", ENV{SYSTEMD_WA
 MYUID=1000              # Ваш uid
 MYGID=100               # группа users
 MYLOGIN=user            # ваш логин
-TERM=xterm         		# ваш эмулятор терминала
+TERM=xterm         	# ваш эмулятор терминала
 MYSHELL=bash            # ваш шелл
 export DISPLAY=:0       # Ваш X дисплей
 

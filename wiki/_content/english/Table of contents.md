@@ -76,7 +76,7 @@
 | <small>4.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
 | <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(80)</small> |
 | <small>4.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(3)</small> |
-| <small>4.9.14.</small> [Nokia](/index.php/Category:Nokia "Category:Nokia") <small>(0)</small> |
+| <small>4.9.14.</small> [Nokia](/index.php?title=Category:Nokia&action=edit&redlink=1 "Category:Nokia (page does not exist)") <small>(0)</small> |
 | <small>4.9.15.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(7)</small> |
 | <small>4.9.16.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(11)</small> |
 | <small>4.9.17.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(15)</small> |

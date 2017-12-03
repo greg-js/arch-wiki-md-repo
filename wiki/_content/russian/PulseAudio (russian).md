@@ -39,14 +39,17 @@
     *   [6.3 XMMS2](#XMMS2)
     *   [6.4 Рабочая область KDE Plasma и Qt4](#.D0.A0.D0.B0.D0.B1.D0.BE.D1.87.D0.B0.D1.8F_.D0.BE.D0.B1.D0.BB.D0.B0.D1.81.D1.82.D1.8C_KDE_Plasma_.D0.B8_Qt4)
     *   [6.5 Audacious](#Audacious)
-    *   [6.6 Java/OpenJDK 6](#Java.2FOpenJDK_6)
-    *   [6.7 Music Player Daemon (MPD)](#Music_Player_Daemon_.28MPD.29)
-    *   [6.8 MPlayer](#MPlayer)
-    *   [6.9 guvcview](#guvcview)
-*   [7 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
-    *   [7.1 Регулировка звука клавиатурой](#.D0.A0.D0.B5.D0.B3.D1.83.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B7.D0.B2.D1.83.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D0.BE.D0.B9)
-*   [8 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-*   [9 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+    *   [6.6 Music Player Daemon (MPD)](#Music_Player_Daemon_.28MPD.29)
+    *   [6.7 MPlayer](#MPlayer)
+    *   [6.8 guvcview](#guvcview)
+*   [7 Сетевой звук](#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D0.BE.D0.B9_.D0.B7.D0.B2.D1.83.D0.BA)
+    *   [7.1 Базовая настройка с прямым подключением](#.D0.91.D0.B0.D0.B7.D0.BE.D0.B2.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81_.D0.BF.D1.80.D1.8F.D0.BC.D1.8B.D0.BC_.D0.BF.D0.BE.D0.B4.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5.D0.BC)
+        *   [7.1.1 На сервере](#.D0.9D.D0.B0_.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80.D0.B5)
+        *   [7.1.2 На клиентской машине](#.D0.9D.D0.B0_.D0.BA.D0.BB.D0.B8.D0.B5.D0.BD.D1.82.D1.81.D0.BA.D0.BE.D0.B9_.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D0.B5)
+*   [8 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
+    *   [8.1 Регулировка звука клавиатурой](#.D0.A0.D0.B5.D0.B3.D1.83.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B7.D0.B2.D1.83.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D0.BE.D0.B9)
+*   [9 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+*   [10 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
 
@@ -416,11 +419,7 @@ PulseAudio будет автоматически использоваться п
 
 ### Audacious
 
-[Audacious](/index.php/Audacious_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Audacious (Русский)") изначально поддерживает PulseAudio. Для его использования установите Audacious Настройки -> Audio -> Current output plugin to 'PulseAudio Output Plugin'.
-
-### Java/OpenJDK 6
-
-Создайте "обертку" для исполняемой программы Java, использующей padsp, как замечено на странице [Java sound with PulseAudio](/index.php/Java#Java_sound_with_PulseAudio "Java").
+[Audacious](/index.php/Audacious_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Audacious (Русский)") изначально поддерживает PulseAudio. Для его использования установите Audacious Настройки -> Audio -> Current output plugin как 'PulseAudio Output Plugin'.
 
 ### Music Player Daemon (MPD)
 
@@ -428,13 +427,13 @@ PulseAudio будет автоматически использоваться п
 
 ### MPlayer
 
-[MPlayer](/index.php/MPlayer "MPlayer") изначально поддерживает вывод PulseAudio с опцией `-ao pulse`. Это также может быть настроено для установки по умолчанию на вывод PulseAudio, в `~/.mplayer/config` для конкретного пользователя, или для всей системы `/etc/mplayer/mplayer.conf`:
+[MPlayer](/index.php/MPlayer "MPlayer") изначально поддерживает вывод PulseAudio с опцией `-ao pulse`. Он также может быть настроен для использования вывода PulseAudio по умолчанию, в `~/.mplayer/config` для конкретного пользователя, или для всей системы `/etc/mplayer/mplayer.conf`:
 
  `/etc/mplayer/mplayer.conf`  `ao=pulse` 
 
 ### guvcview
 
-[guvcview](https://www.archlinux.org/packages/?name=guvcview) при использовании входа PulseAudio от [Веб-камеры](/index.php/Webcam_setup_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Webcam setup (Русский)"), аудиовход может быть в "приостановленном" режиме, в результате чего звук не будет записываться. Вы можете проверить это путем выполнения:
+[guvcview](https://www.archlinux.org/packages/?name=guvcview) при использовании входа PulseAudio от [Веб-камеры](/index.php/Webcam_setup_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Webcam setup (Русский)"), может перевести аудиовход в "приостановленный" режим, в результате чего звук не будет записываться. Вы можете проверить это путем выполнения:
 
 ```
 $ pactl list sources
@@ -455,7 +454,48 @@ load-module module-suspend-on-idle
 
 ```
 
-И затем перезапустите PulseAudio или Ваш компьютер. Теперь аудиовход будет "бездействовать", вметсо того, чтобы находиться в "приостановленном" режиме. Теперь guvcview будет писать звук правильно.
+И затем перезапустите PulseAudio или Ваш компьютер только займет аудиовход вместо того, чтобы находиться в "приостановленном" режиме. Теперь guvcview будет писать звук правильно.
+
+## Сетевой звук
+
+Проигрывание звука через аудиовыходы других компьютеров сети
+
+### Базовая настройка с прямым подключением
+
+##### На сервере
+
+Отредактируйте `~/.config/pulse/default.pa` или `/etc/pulse/default.pa` (или `/etc/pulse/system.pa`, если PulseAudio запускается в системном режиме) и добавьте следующую строку:
+
+```
+ load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;172.16.0.0/16
+
+```
+
+Теперь только клиент с конкретным IP или диапазоном IP, определённым здесь, может получать звук.
+
+Для разрешения общего доступа:
+
+```
+ load-module module-native-protocol-tcp auth-anonymous=true
+
+```
+
+**Примечание:** Если ни `auth-ip-acl`, ни `auth-anonymous` не установлены, аутентификация осуществляется посредством `~/.pulse-cookie`, который должен быть одинаковым и на клиенте и на сервере.
+
+По умолчанию для входящих соединений PulseAudio слушает порт `tcp/4713`, поэтому вам может потребоваться открыть этот порт в [брандмауэре](/index.php/Firewall "Firewall").
+
+##### На клиентской машине
+
+Отредактируйте `~/.config/pulse/client.conf` или `/etc/pulse/client.conf` для установки этих настроек для одного пользователя или для всех и добавьте:
+
+```
+ default-server = *server-address*
+
+```
+
+*server-address* может быть простым именем домена или IPv4, больше информации можно найти в [the документации](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/ServerStrings/)
+
+Также можно установить адрес сервера в переменной окружения `$PULSE_SERVER`.
 
 ## Советы и хитрости
 

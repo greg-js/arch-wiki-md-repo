@@ -24,7 +24,7 @@ For a standalone version install [evince-no-gnome](https://aur.archlinux.org/pac
 
 ### Printer does not show up
 
-See [GTK+#Printers not shown in the GTK print dialog](/index.php/GTK%2B#Printers_not_shown_in_the_GTK_print_dialog "GTK+").
+Upgrade [gtk3](https://www.archlinux.org/packages/?name=gtk3) to version `3.22.26+47+g3a1a7135a2-1` or higher. In previous GTK+ 3 versions, the printer GTK+ printer backends were included in a separate package. [[1]](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/gtk3&id=54e7af64837e18355122e62ff565970620db3537)
 
 ### Zoom-in is limited
 

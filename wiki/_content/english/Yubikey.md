@@ -80,8 +80,8 @@ The Yubikey is a small [USB Security token](https://en.wikipedia.org/wiki/Securi
 
 *   generating [One-Time Passwords](https://en.wikipedia.org/wiki/One-time_password "wikipedia:One-time password") (OTP) - using either AES based Yubico OTP algorithm or OATH-HOTP following RFC 4226)
 *   outputting a up to 63 char long static password
-*   handeling [Challenge - Response requests](https://en.wikipedia.org/wiki/Challenge%E2%80%93response_authentication "wikipedia:Challenge–response authentication"), using either Yubico OTP mode or HMAC-SHA1 mode)
-*   handeling [U2F](https://en.wikipedia.org/wiki/Universal_2nd_Factor "wikipedia:Universal 2nd Factor") requests (Yubikey 4 and Yubikey NEO)
+*   handling [Challenge - Response requests](https://en.wikipedia.org/wiki/Challenge%E2%80%93response_authentication "wikipedia:Challenge–response authentication"), using either Yubico OTP mode or HMAC-SHA1 mode)
+*   handling [U2F](https://en.wikipedia.org/wiki/Universal_2nd_Factor "wikipedia:Universal 2nd Factor") requests (Yubikey 4 and Yubikey NEO)
 *   acting as smartcard (using the [CCID protocol](https://en.wikipedia.org/wiki/CCID_(protocol) "wikipedia:CCID (protocol)")) (Yubikey 4 and Yubikey NEO) - allowing storage of signing, encrypting, authenticating (RSA) keys to be used for instance for SSH login (authentication), Email signature/encryption, git commit signature, etc.
 
 It is manufactured by [Yubico](http://www.yubico.com/). The current top models are YubiKey 4 (yk4) and YubiKey NEO. The main difference: yk4 has no NFC support, NEO does.
@@ -133,7 +133,7 @@ A touch on the button always has one of these functions (depending on the contex
 
 #### Two different ways to press the button
 
-If the OTP mode is activated, the button can differenciate 2 different types of touch:
+If the OTP mode is activated, the button can differentiate 2 different types of touch:
 
 *   short
 *   long
@@ -255,7 +255,7 @@ You can upload a "VV" credential using the Yubico personalization tool GUI or ma
 
 VV credentials are not less secure than CC. However some services may choose to trust only CC credentials as they believe that the user process is more prone to security vulnerabilities.
 
-This is because you could have maleware on your machine or someone intercepting your key when sending it to the YubiCloud. Despite this scenario being extremely unlikely to happen, it needs consideration from service providers.
+This is because you could have malware on your machine or someone intercepting your key when sending it to the YubiCloud. Despite this scenario being extremely unlikely to happen, it needs consideration from service providers.
 
 ### Limitations of the passwords typed by YubiKey via USB-keyboard -- or "Why do my password look so weak ?"
 

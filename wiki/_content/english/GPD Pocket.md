@@ -9,12 +9,13 @@ Notes to get Arch Linux on the [GPD Pocket](https://www.indiegogo.com/projects/g
     *   [2.3 WiFi](#WiFi)
     *   [2.4 Bluetooth](#Bluetooth)
     *   [2.5 Xorg](#Xorg)
-    *   [2.6 Mouse Scroll Emulation](#Mouse_Scroll_Emulation)
-    *   [2.7 Sound](#Sound)
-    *   [2.8 SDDM](#SDDM)
-    *   [2.9 Touchscreen Gestures](#Touchscreen_Gestures)
-    *   [2.10 KDE Display](#KDE_Display)
-    *   [2.11 GNOME Wayland / GDM](#GNOME_Wayland_.2F_GDM)
+    *   [2.6 Mouse Scroll Emulation (Xorg)](#Mouse_Scroll_Emulation_.28Xorg.29)
+    *   [2.7 Mouse Scroll Emulation (Wayland)](#Mouse_Scroll_Emulation_.28Wayland.29)
+    *   [2.8 Sound](#Sound)
+    *   [2.9 SDDM](#SDDM)
+    *   [2.10 Touchscreen Gestures](#Touchscreen_Gestures)
+    *   [2.11 KDE Display](#KDE_Display)
+    *   [2.12 GNOME Wayland / GDM](#GNOME_Wayland_.2F_GDM)
 *   [3 Known Issues](#Known_Issues)
 *   [4 Acknowledgements:](#Acknowledgements:)
 
@@ -132,7 +133,7 @@ EndSection
 
 Alternatively you can copy the files from [here](https://github.com/nexus511/gpd-ubuntu-packages/tree/master/packages/gpdpocket-xorg/files/config).
 
-### Mouse Scroll Emulation
+### Mouse Scroll Emulation (Xorg)
 
 /etc/X11/xorg.conf.d/80-trackpoint.conf to scroll while holding right click.
 
@@ -149,6 +150,12 @@ Section "InputClass"
 EndSection
 
 ```
+
+### Mouse Scroll Emulation (Wayland)
+
+The above configuration for mouse scroll emulation only works for Xorg. Under Wayland, such configuration is supposed to be exposed by the compistor, and unfortunaly, some compositors (e.g. GNOME Wayland) does not expose these configurations properly. However, the regarding functionality is still available in `libinput`. Since these compositors normally loads `/etc/profile.d`, `LD_PRELOAD` can be used to hook into `libinput` and force apply these configurations.
+
+A sample implementation of this approach is available [here](https://github.com/PeterCxy/scroll-emulation).
 
 ### Sound
 

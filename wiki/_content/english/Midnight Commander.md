@@ -3,7 +3,7 @@ Related articles
 *   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
 *   [ranger](/index.php/Ranger "Ranger")
 
-[Midnight Commander](https://en.wikipedia.org/wiki/Midnight_Commander "wikipedia:Midnight Commander") is an orthodox (two-pane) file manager, supporting standard file operations, virtual filesystems, panelizing of external commands, and user menus. It also includes an internal viewer, editor, and visual diff tool.
+[Midnight Commander](https://midnight-commander.org/) is an orthodox (two-pane) file manager, supporting standard file operations, virtual filesystems, panelizing of external commands, and user menus. It also includes an internal viewer, editor, and visual diff tool.
 
 As it is based on versatile text interfaces, such as Ncurses or S-Lang, it works on a regular console, inside an X Window terminal, over [SSH](/index.php/SSH "SSH") connections and all kinds of remote shells.
 
@@ -35,6 +35,10 @@ As it is based on versatile text interfaces, such as Ncurses or S-Lang, it works
 
 ### Skins
 
+Midnight Commander comes with multiple skins by default. You can set the skin in *Options > Appearance*.
+
+Additional third-party skins can be installed separately:
+
 *   **mc-solarized-git** — Solarized color scheme for Midnight Commander
 
 	[https://github.com/nkulikov/mc-solarized-skin](https://github.com/nkulikov/mc-solarized-skin) || [mc-solarized-git](https://aur.archlinux.org/packages/mc-solarized-git/)
@@ -45,7 +49,7 @@ As it is based on versatile text interfaces, such as Ncurses or S-Lang, it works
 
 *   **mc-skin-candy** — Candy color scheme (256color)
 
-	[candy256.ini](https://raw.githubusercontent.com/izmntuk/archiso/testing/configs/alter/airootfs/usr/share/mc/skins/candy256.ini) ||
+	[candy256.ini](https://raw.githubusercontent.com/izmntuk/archiso/testing/configs/alter/airootfs/usr/share/mc/skins/candy256.ini) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 See also `**Skins**` in mc(1).
 
@@ -61,11 +65,11 @@ In prominent view are two vertical panes. Either can list directory contents, sh
 
 Below, a command line is visible, connected to a subshell. This shell is generally of the same type *mc* was launched from, and may be switched to at will (`Ctrl-O`), see `**The subshell support**`. On this command line, *cd* is interpreted by Midnight Commander, and not passed to the shell for execution. As such, special completion (such as from [Zsh](/index.php/Zsh "Zsh")) is unavailable. Files in the pane interact with the command line; for example, `Alt+Enter` copies the name of a (selected) file to the command line.
 
-Keybindings are generally similar to [GNU Emacs](/index.php/GNU_Emacs "GNU Emacs"). A more strict emacs keymap can be enabled (see `**Redefine hotkey bindings**`). New users may however use Lynx-like (arrow) keybindings (enabled in *`F9` > Options > Panel options*) and mouse clicks for navigation.
+Keybindings are generally similar to [GNU Emacs](/index.php/GNU_Emacs "GNU Emacs"). A more strict emacs keymap can be enabled (see `**Redefine hotkey bindings**`). New users may however use Lynx-like (arrow) keybindings (enabled in *Options > Panel options*) and mouse clicks for navigation.
 
 ### Modules
 
-These can be called via the *mc* interface (with *Use internal* enabled in *`F9` > Options > Configuration), or separately as symbolic links to the* mc *binary.*
+These can be called via the *mc* interface (with *Use internal* enabled in *Options > Configuration), or separately as symbolic links to the* mc *binary.*
 
 *   *mcedit* - Text and binary file editor, with regex replace, syntax highlighting, macros and shell piping, see [mcedit(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mcedit.1)
 *   *mcview* - Text and hex viewer with goto marks and regex search
@@ -107,7 +111,7 @@ Categories=Utility;
 
 ### Trash support
 
-Midnight Commander does [not support](https://www.midnight-commander.org/ticket/3072) a trash can by default.
+Midnight Commander does [not support](https://midnight-commander.org/ticket/3072) a trash can by default.
 
 #### Using libtrash
 
@@ -241,4 +245,4 @@ Another common workaround is to set `TERM=xterm`, however this causes other issu
 ## See also
 
 *   [mc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1)
-*   [Draft of documentation](https://www.midnight-commander.org/wiki/doc)
+*   [Draft of documentation](https://midnight-commander.org/wiki/doc)

@@ -1,4 +1,12 @@
-[dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) provides services as a DNS cacher and a DHCP server. As a Domain Name Server (DNS) it can cache DNS queries to improve connection speeds to previously visited sites, and as a DHCP server dnsmasq can be used to provide internal IP addresses and routes to computers on a LAN. Either or both of these services can be implemented. dnsmasq is considered to be lightweight and easy to configure; it is designed for personal computer use or for use on a network with less than 50 computers. It also comes with a [PXE](/index.php/PXE "PXE") server.
+Related articles
+
+*   [BIND](/index.php/BIND "BIND")
+*   [DNSCrypt](/index.php/DNSCrypt "DNSCrypt")
+*   [DNSSEC](/index.php/DNSSEC "DNSSEC")
+*   [Pdnsd](/index.php/Pdnsd "Pdnsd")
+*   [unbound](/index.php/Unbound "Unbound")
+
+[dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) provides services as a DNS cacher and a DHCP server. As a Domain Name Server (DNS) it can cache DNS queries to improve connection speeds to previously visited sites, and as a DHCP server dnsmasq can be used to provide internal IP addresses and routes to computers on a LAN. Either or both of these services can be implemented. dnsmasq is considered to be lightweight and easy to configure; it is designed for personal computer use or for use on a network with fewer than 50 computers. It also comes with a [PXE](/index.php/PXE "PXE") server.
 
 ## Contents
 

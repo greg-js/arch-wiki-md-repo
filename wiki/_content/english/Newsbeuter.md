@@ -2,6 +2,8 @@ From the [project web page](http://newsbeuter.org/):
 
 	Newsbeuter is an open-source RSS/Atom feed reader for text terminals. It runs on Linux, FreeBSD, Mac OS X and other Unix-like operating systems. Newsbeuter's great configurability and vast number of features make it a perfect choice for people that need a slick and fast feed reader that can be completely controlled via keyboard.
 
+Development on Newsbeuter has ceased, and it has been [forked](https://groups.google.com/forum/#!topic/newsbeuter/RPtlWX8CPGU) into [newsboat](https://www.archlinux.org/packages/?name=newsboat).
+
 ## Contents
 
 *   [1 Installation](#Installation)

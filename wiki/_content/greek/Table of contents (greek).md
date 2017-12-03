@@ -15,7 +15,7 @@
 | <small>8.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Getting and installing Arch (Ελληνικά)") <small>(3)</small> |
 | <small>9.</small> [Hardware](/index.php/Category:Hardware_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Hardware (Ελληνικά)") <small>(0)</small> |
 | <small>9.1.</small> [CPU](/index.php/Category:CPU_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:CPU (Ελληνικά)") <small>(1)</small> |
-| <small>9.2.</small> [Graphics](/index.php/Category:Graphics_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Graphics (Ελληνικά)") <small>(0)</small> |
+| <small>9.2.</small> [Graphics](/index.php?title=Category:Graphics_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC)&action=edit&redlink=1 "Category:Graphics (Ελληνικά) (page does not exist)") <small>(0)</small> |
 | <small>10.</small> [Networking](/index.php/Category:Networking_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Networking (Ελληνικά)") <small>(1)</small> |
 | <small>10.1.</small> [Firewalls](/index.php/Category:Firewalls_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Firewalls (Ελληνικά)") <small>(1) (επίσης σε [Security](/index.php/Category:Security_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Security (Ελληνικά)"))</small> |
 | <small>10.2.</small> [Wireless networking](/index.php/Category:Wireless_networking_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Wireless networking (Ελληνικά)") <small>(1)</small> |

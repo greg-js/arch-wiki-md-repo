@@ -361,6 +361,8 @@ fi
 
 In this example we want to connect automatically to a previously defined VPN connection after connecting to a specific Wi-Fi network. First thing to do is to create the dispatcher script that defines what to do after we are connected to the network.
 
+**Note:** This script will require [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) in order to use `iwgetid`.
+
 ##### Create the dispatcher script
 
  `/etc/NetworkManager/dispatcher.d/vpn-up` 

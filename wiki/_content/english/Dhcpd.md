@@ -1,3 +1,7 @@
+Related articles
+
+*   [dhcpcd](/index.php/Dhcpcd "Dhcpcd")
+
 dhcpd is the [Internet Systems Consortium](http://www.isc.org/downloads/dhcp/) DHCP Server. It is useful for instance on a machine acting as a router on a LAN.
 
 **Note:** *dhcpd* (DHCP **(server)** daemon) is not the same as [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (DHCP **client** daemon).
@@ -78,7 +82,7 @@ subnet 139.96.30.0 netmask 255.255.255.0 {
 
 ```
 
-`domain-name-servers` option contains addresses of DNS servers which are supplied to clients. In our example we are using Google's public DNS servers. If you know a local DNS servers (for example, provided by your ISP), you should use it. If you've configured your own DNS on a local machine, then use its address in your subnet (e. g. `139.96.30.100` in our example).
+`domain-name-servers` option contains addresses of DNS servers which are supplied to clients. In our example we are using Google's public DNS servers. If you know a local DNS server (for example, provided by your ISP), you should use it. If you've configured your own DNS on a local machine, then use its address in your subnet (e. g. `139.96.30.100` in our example).
 
 `subnet-mask` and `routers` defines a subnet mask and a list of available routers on the subnet. In most cases for small networks you can use `255.255.255.0` as a mask and specify an IP address of the machine on which you're configuring DHCP server as a router.
 

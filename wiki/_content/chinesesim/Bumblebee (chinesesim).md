@@ -5,7 +5,7 @@
 *   [NVIDIA (简体中文)](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NVIDIA (简体中文)")
 *   [Intel图形卡](/index.php/Intel_Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel Graphics (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Bumblebee](/index.php/Bumblebee "Bumblebee") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-02-25，点击[这里](https://wiki.archlinux.org/index.php?title=Bumblebee&diff=0&oldid=359259)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Bumblebee](/index.php/Bumblebee "Bumblebee") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-12-01，点击[这里](https://wiki.archlinux.org/index.php?title=Bumblebee&diff=0&oldid=359259)可以查看翻译后英文页面的改动。
 
 引自 Bumblebee [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
 
@@ -15,7 +15,6 @@
 
 *   [1 Bumblebee: Linux上的 Optimus](#Bumblebee:_Linux.E4.B8.8A.E7.9A.84_Optimus)
 *   [2 安装](#.E5.AE.89.E8.A3.85)
-    *   [2.1 为 Intel/Nouveau 安装 Bumblebee](#.E4.B8.BA_Intel.2FNouveau_.E5.AE.89.E8.A3.85_Bumblebee)
 *   [3 用法](#.E7.94.A8.E6.B3.95)
     *   [3.1 测试](#.E6.B5.8B.E8.AF.95)
     *   [3.2 一般用法](#.E4.B8.80.E8.88.AC.E7.94.A8.E6.B3.95)
@@ -62,69 +61,39 @@ Bumblebee 试图模拟 Optimus 技术的行为；当需要的时候，使用独�
 
 ## 安装
 
-安装 Bumblebee 之前，检查你的 BIOS 并尽可能激活 Optimus (老式电脑称之为"可切换显卡"，BIOS有可能没有提供此项设置)，并且为次要显卡安装 [Intel 驱动](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel graphics (简体中文)")。
+安装 Bumblebee 之前，检查你的 BIOS 并尽可能激活 Optimus (老式电脑称之为"可切换显卡"，BIOS有可能没有提供此项设置)。如果 "Optimus" 和 "switchable" 都没有在BIOS里，就保证两种GPU都已启用并且集成显卡是主要显示设备。显示应该连接在主板上的集成显卡，而不是独立显卡。如果集成显卡之前被禁用而安装了独立显卡的驱动，那就删除 `/etc/X11/xorg.conf` 或者有关独立显卡的 `/etc/X11/xorg.conf.d` 中的文件。
 
-安装:
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装"):
 
 *   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - 提供守护进程以及程序的主要安装包。
-*   [mesa](https://www.archlinux.org/packages/?name=mesa) - 开源的**OpenGL**标准实现。
-*   合适的NVIDIA 驱动，参看[NVIDIA#安装](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85 "NVIDIA (简体中文)") 。
-*   [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) - Intel 驱动。
+*   [mesa](https://www.archlinux.org/packages/?name=mesa) - 开源的 **OpenGL** 标准实现。
+*   对于合适的NVIDIA驱动，参看[NVIDIA#安装](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85 "NVIDIA (简体中文)") 。
+*   [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) - Intel 驱动（可选）。
 
-对于32位程序 (必须启用[Multilib](/index.php/Multilib "Multilib"))在64位机器上的支持，安装:
+对于32位程序 (必须启用[Multilib](/index.php/Multilib "Multilib")）在64位机器上的支持，安装:
 
-*   [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils)
-*   [lib32-nvida-utils](https://www.archlinux.org/packages/?name=lib32-nvida-utils)，或者[lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils)，或者 [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils) ，匹配64位的版本。
+*   [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) - 为32位应用提供的渲染/显示桥。
+*   [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils) - 和64位的包相对应。
 
-要使用 Bumblebee ，请确保添加相关用户到 `bumblebee` 组：
+要使用 Bumblebee，请确保添加你的用户到 `bumblebee` 组：
 
 ```
 # gpasswd -a *user* bumblebee
 
 ```
 
-其中 *user* 是要添加的用户登录名。之后注销，并重新登录，以使组变更生效。
-
-并 [启用](/index.php/Enable "Enable") `bumblebeed.service`.重启系统并使用 `[optirun](#Usage)` 开启 Optimus NVIDIA 渲染。
-
-**提示：** 如果你想改善Bumblebee性能的话，请跳至[speed optimization](/index.php/Bumblebee#Optimizing_speed "Bumblebee").
-
-### 为 Intel/Nouveau 安装 Bumblebee
-
-**注意:** 我们不赞成使用这种方法，并且也很可能不再有效。请使用 nvidia 驱动作为替代。如果你想保留 nouveau, 使用 [PRIME](/index.php/PRIME "PRIME").
-
-安装:
-
-*   [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) - 实验性的3D加速驱动。
-*   [mesa](https://www.archlinux.org/packages/?name=mesa) - Mesa 使用 Gallium3D 驱动和3D图形库的传统DRI.
-
-**提示：** 如果你使用`priumsrun`，需要获取：
-```
- primus: fatal: failed to load any of the libraries: /usr/$LIB/nvidia/libGL.so.1 
- /usr/$LIB/nvidia/libGL.so.1: Cannot open shared object file: No such file or directory
-
-```
-
-再添加一下内容到`/usr/bin/primus`的`PRIMUS_libGL`之后：
-
-```
-export PRIMUS_libGLa='/usr/$LIB/libGL.so.1'
-
-```
-你还可以新建一个脚本来实现它(例如*primusnouveau*)。
+并 [启用](/index.php/Enable "Enable") `bumblebeed.service`。重启系统并参考[#用法](#.E7.94.A8.E6.B3.95)。
 
 ## 用法
 
 ### 测试
 
-测试 Bumblebee 是否支持你的 Optimus 系统:
+安装 [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) 并使用 `glxgears` 测试 Bumblebee 是否工作：
 
 ```
 $ optirun glxgears -info
 
 ```
-
-如果在终端中看到一个关于你的 Nvidia 的提示，恭喜你，Bumblebee 和 Optimus 已经开始工作了。
 
 如果失败，尝试下列命令:
 
@@ -144,7 +113,7 @@ $ optirun glxspheres32
 
 如果一个内有动画的窗口出现，那么 Optimus 和 Bumblebee 正在工作。
 
-**注意:** 如果 `glxgears` 失败但 `glxspheres*XX*` 有效，替换所有 "`glxgears`" 为 "`glxspheres*XX*`".
+**注意:** 如果 `glxgears` 失败但 `glxspheres*XX*` 有效，替换所有 "`glxgears`" 为 "`glxspheres*XX*`"。
 
 ### 一般用法
 
@@ -153,19 +122,21 @@ $ optirun [options] *application* [application-parameters]
 
 ```
 
-例如，用 Optimus 启动Windows程序:
+例如，用 Optimus 启动 Windows 程序:
 
 ```
 $ optirun wine application.exe
 
 ```
 
-另外，用 Optimus 打开NVIDIA设置面板:
+另外，用 Optimus 打开 NVIDIA 设置面板:
 
 ```
 $ optirun -b none nvidia-settings -c :8
 
 ```
+
+**注意:** 一个打了补丁的 [nvdock](https://www.archlinux.org/packages/?name=nvdock) 版本可用： [nvdock-bumblebee](https://aur.archlinux.org/packages/nvdock-bumblebee/)
 
 更多 `optirun` 的选项参见手册页:
 
@@ -240,16 +211,31 @@ VGL_READBACK=sync optirun glxgears
 
 #### Primusrun
 
-考虑到其电量消耗和比 `optirun` 更好的性能，`primusrun` (包 [primus](https://www.archlinux.org/packages/?name=primus)) 将成为默认选择。你需要单独运行这个程序 (它不像 `optirun` ，不接受运行参数)，但将来它会由 optirun 启动。
+**注意:** 因为合成会损害性能，所以不建议在合成窗口管理器（compositing WM）工作时使用primus。参照 [#Primus issues under compositing window managers](#Primus_issues_under_compositing_window_managers)。
 
-用法:
+`primusrun` (来自 [primus](https://www.archlinux.org/packages/?name=primus)) 正成为默认选项，因为其耗电量更低并且有时可以提供比 `optirun`/`virtualgl`更好的性能。它可以独立运行，但不能接受 `optirun` 的选项。将 `primus` 设置为 `optirun` 的桥接可提供更过的灵活性。
+
+对于64位系统上32位程序的支持，安装 [lib32-primus](https://www.archlinux.org/packages/?name=lib32-primus)（须启用[multilib](/index.php/Multilib "Multilib")）。
+
+用法（独立运行）：
 
 ```
 $ primusrun glxgears
 
 ```
 
-**提示：** 如果你想禁用 `VSYNC`参见 [Bumblebee#Primusrun mouse delay (disable VSYNC)](/index.php/Bumblebee#Primusrun_mouse_delay_.28disable_VSYNC.29 "Bumblebee"). 这也能降低输入延迟并稍微提升性能。
+`optirun` 的桥接：
+
+默认的配置将 `virtualgl` 作为桥接。在命令行上将其覆盖：
+
+```
+$ optirun -b primus glxgears
+
+```
+
+或者，在 `/etc/bumblebee/bumblebee.conf` 中设置 `Bridge=primus` 使其永久生效。
+
+**提示：** 如果要禁用 `VSYNC` 请参考 [#Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_.28disable_VSYNC.29)。这也可以取消鼠标延迟并轻微提高性能。
 
 ### 电源管理
 

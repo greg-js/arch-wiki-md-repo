@@ -438,6 +438,13 @@ E105: PANIC: Failed to lock page for guest RAM!
 
 A collection of patches needed for the VMware host modules to build against recent kernels can be found from the following GitHub repository, [vmware-host-modules](https://github.com/mkubecek/vmware-host-modules/tree/b50848c985f1a6c0a341187346d77f0119d0a835).
 
+The modules can be patched installing the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package and executing:
+
+```
+# vmware-patch -f
+
+```
+
 ### Installer Fails to Start
 
 If you just get back to the prompt when opening the `.bundle`, then you probably have a deprecated or broken version of the VMware installer and it should removed (you may also refer to the [uninstallation](#Uninstallation) section of this article):

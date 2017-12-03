@@ -7,6 +7,7 @@ This page is for those who prefer to limit the verbosity of their system to a st
 *   [3 startx](#startx)
 *   [4 fsck](#fsck)
 *   [5 Remove console cursor blinking](#Remove_console_cursor_blinking)
+*   [6 Make GRUB silent](#Make_GRUB_silent)
 
 ## Kernel parameters
 
@@ -28,7 +29,7 @@ quiet loglevel=3 vga=current
 
 Note that this only seems to work if both `quiet` and `loglevel=<level>` are both used, and they must be in that order (quiet first). The loglevel parameter will only change that which is printed to the console, the levels of dmesg itself will not be affected and will still be available through the journal as well as the `dmesg` command. For more information, see the `Documentation/kernel-parameters.txt` file of the [linux-docs](https://www.archlinux.org/packages/?name=linux-docs) package.
 
-If you also want to stop systemd from printing its version number when booting, you should also append `udev.log-priority=3` to your kernel commandline ([source](http://www.freedesktop.org/software/systemd/man/systemd-udevd.service.html#Kernel%20command%20line)). If systemd is used in an [initramfs](/index.php/Initramfs "Initramfs"), append `rd.udev.log-priority=3` instead.
+If you also want to stop systemd from printing its version number when booting, you should also append `udev.log_priority=3` to your kernel commandline ([source](http://www.freedesktop.org/software/systemd/man/systemd-udevd.service.html#Kernel%20command%20line)). If systemd is used in an [initramfs](/index.php/Initramfs "Initramfs"), append `rd.udev.log_priority=3` instead.
 
 If you are using the `systemd` hook in the [initramfs](/index.php/Initramfs "Initramfs"), you may get systemd messages during initramfs initialization. You can pass `rd.systemd.show_status=false` to disable them, or `rd.systemd.show_status=auto` to only suppress successful messages (so in case of errors you can still see them). Actually, `auto` is already passed to `systemd.show_status=auto` when `quiet` is used, however for some motive sometimes systemd inside initramfs does not get it. Below are the parameters that you need to pass to your kernel to get a completely clean boot with systemd in your [initramfs](/index.php/Initramfs "Initramfs"):
 
@@ -99,3 +100,9 @@ To recover the cursor in the TTY, run:
 # setterm -cursor on >> /etc/issue
 
 ```
+
+## Make GRUB silent
+
+To hide GRUB welcome and boot messages, you may install unofficial [grub-silent](https://aur.archlinux.org/packages/grub-silent/) package.
+
+It is required to reinstall [GRUB](/index.php/GRUB "GRUB") and regenerate `grub.cfg` file.

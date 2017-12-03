@@ -15,6 +15,7 @@
         *   [3.3.1 Set a common user-agent](#Set_a_common_user-agent)
         *   [3.3.2 Set a common HTTP_ACCEPT header](#Set_a_common_HTTP_ACCEPT_header)
         *   [3.3.3 Disable reading from canvas](#Disable_reading_from_canvas)
+        *   [3.3.4 Disable WebGL](#Disable_WebGL)
     *   [3.4 dwb-like session handling](#dwb-like_session_handling)
 *   [4 See also](#See_also)
 
@@ -119,7 +120,7 @@ Additionally see [Firefox/Privacy#Configuration tweaks](/index.php/Firefox/Priva
 
 #### Set a common user-agent
 
-Several user agents are available as options when using `:set content.headers.user_agent`. Another, possibly more generic user-agent is:
+Several user agents are available as options when using `set content.headers.user_agent`. Another, possibly more generic user-agent is:
 
 ```
 Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0
@@ -133,11 +134,11 @@ Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0
 
 #### Set a common HTTP_ACCEPT header
 
-The following is a common HTTP_ACCEPT header. Simply type the following commands:
+The following is a common HTTP_ACCEPT header. Simply type the following commands at the prompt
 
 ```
-:set content.headers.accept_language en-US,en;q=0.5
-:set content.headers.custom '{"accept": "text/html, */*; q=0.01"}'
+set content.headers.accept_language en-US,en;q=0.5
+set content.headers.custom '{"accept": "text/html, */*; q=0.01"}'
 
 ```
 
@@ -153,6 +154,10 @@ $ qutebrowser --qt-flag disable-reading-from-canvas
 See [issue #2235](https://github.com/qutebrowser/qutebrowser/issues/2235) for more information.
 
 **Note:** Some websites depend on canvas reading for content rendering and other functionality. Adding this option may cause them to not work properly [[2]](https://github.com/qutebrowser/qutebrowser/issues/2908).
+
+#### Disable WebGL
+
+Set `content.webgl` to `false` to disable WebGL.
 
 ### dwb-like session handling
 

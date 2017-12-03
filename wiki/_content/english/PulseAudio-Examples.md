@@ -530,7 +530,7 @@ The [JACK Audio Connection Kit](/index.php/JACK_Audio_Connection_Kit "JACK Audio
 
 ### The KXStudio method
 
-This is the recommended method as it is [officially endorsed by the JACK developers](https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_PulseOnJack)
+This is the recommended method as it is [officially endorsed by the JACK developers](https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_PulseOnJack).
 
 This configuration works with both [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus) and [jack2](https://www.archlinux.org/packages/?name=jack2) packages.
 
@@ -538,7 +538,7 @@ JACK now has native features for bridging between ALSA, PulseAudio, and JACK. Th
 
 If you are using [qjackctl](https://www.archlinux.org/packages/?name=qjackctl), it is recommended to uninstall it before beginning this.
 
-Begin by installing [cadence](https://aur.archlinux.org/packages/cadence/) from the AUR. Once installed and started, JACK bridge configuration is found in the bottom right of the window. The ALSA audio bridge should be set to ALSA -> PulseAudio -> JACK, and the PulseAudio bridge should be enabled. Make sure in `pavucontrol` that all output devices besides Jack sink are muted, and all input devices besides Jack input are muted. Start JACK using the Force Restart button, and if it starts successfully PulseAudio programs should begin outputting to JACK.
+Begin by installing [cadence](https://aur.archlinux.org/packages/cadence/) from the AUR, as well as [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack). Once installed and started, JACK bridge configuration is found in the bottom right of the window. The ALSA audio bridge should be set to ALSA -> PulseAudio -> JACK, and the PulseAudio bridge should be enabled. Make sure in `pavucontrol` that all output devices besides Jack sink are muted, and all input devices besides Jack input are muted. Start JACK using the Force Restart button, and if it starts successfully PulseAudio programs should begin outputting to JACK.
 
 ### The manual sink configuration method
 

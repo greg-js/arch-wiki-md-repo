@@ -61,8 +61,6 @@ The goal of this article is to setup Postfix and explain what the basic configur
 
 [Install](/index.php/Install "Install") the [postfix](https://www.archlinux.org/packages/?name=postfix) package.
 
-**Note:** A logging package like [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng) must be set up before logs will appear in /var/log/mail.log
-
 ## Configuration
 
 ### master.cf

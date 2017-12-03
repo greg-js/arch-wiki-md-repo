@@ -227,7 +227,7 @@ There may cases for which you need to manually modify the EXEC line of the `.des
 
 ### PulseAudio
 
-If Firejail causes PulseAudio to misbehave, there is a [known issue.](https://firejail.wordpress.com/support/known-problems/) A temporary workaround:
+If Firejail causes PulseAudio to misbehave, there is a [known issue.](https://firejail.wordpress.com/support/known-problems/) A temporary workaround: (Note: it appears this workaround should be in the relevant file *in* the sandboxes if `--private` is used.)
 
 ```
 cp /etc/pulse/client.conf ~/.config/pulse/

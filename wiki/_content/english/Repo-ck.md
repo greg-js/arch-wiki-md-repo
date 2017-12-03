@@ -128,10 +128,6 @@ There is at least one mirror available:
 
 *   [https://mirror.archlinux.no/repo-ck/](https://mirror.archlinux.no/repo-ck/)
 
-Europe, IPv4+IPv6:
-
-*   [http://repo-ck.segfault.gq](http://repo-ck.segfault.gq)
-
 ## Troubleshooting
 
 ### Support

@@ -34,7 +34,7 @@
 | <small>4.6.1.</small> [Tastiere](/index.php/Category:Keyboards_(Italiano) "Category:Keyboards (Italiano)") <small>(1)</small> |
 | <small>4.6.2.</small> [Mouse](/index.php/Category:Mice_(Italiano) "Category:Mice (Italiano)") <small>(1)</small> |
 | <small>4.7.</small> [Portatili](/index.php/Category:Laptops_(Italiano) "Category:Laptops (Italiano)") <small>(4)</small> |
-| <small>4.7.1.</small> [ASUS](/index.php/Category:ASUS_(Italiano) "Category:ASUS (Italiano)") <small>(0)</small> |
+| <small>4.7.1.</small> [ASUS](/index.php?title=Category:ASUS_(Italiano)&action=edit&redlink=1 "Category:ASUS (Italiano) (page does not exist)") <small>(0)</small> |
 | <small>4.8.</small> [Schede madre e BIOS](/index.php/Category:Mainboards_and_BIOS_(Italiano) "Category:Mainboards and BIOS (Italiano)") <small>(1)</small> |
 | <small>4.9.</small> [Modem](/index.php/Category:Modems_(Italiano) "Category:Modems (Italiano)") <small>(1)</small> |
 | <small>4.10.</small> [Altri componenti hardware](/index.php/Category:Other_hardware_(Italiano) "Category:Other hardware (Italiano)") <small>(2)</small> |

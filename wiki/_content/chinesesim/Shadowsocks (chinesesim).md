@@ -113,15 +113,15 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 
 *   程序设置自身代理
 
-不少程序都能在其设置中添加代理，只需要在其设置中找到网络相关配置，添加socks v5代理，参照本地配置文件中的ip和port填写即可。例如浏览器的配置可参考下文[#浏览器配置](#.E6.B5.8F.E8.A7.88.E5.99.A8.E9.85.8D.E7.BD.AE)）。
+不少程序都能在其设置中添加代理，只需要在其设置中找到网络相关配置，添加socks v5代理，参照本地配置文件中的ip和port填写即可（例如浏览器的配置可参考下文[#浏览器配置](#.E6.B5.8F.E8.A7.88.E5.99.A8.E9.85.8D.E7.BD.AE)）。
 
 *   使用工具进行临时代理
 
-例如[proxychains](https://www.archlinux.org/packages/?name=proxychains)（参看[Proxy settings#Using a SOCKS proxy](/index.php/Proxy_settings#Using_a_SOCKS_proxy "Proxy settings")）和[redsocks-git](https://aur.archlinux.org/packages/redsocks-git/)。
+例如[proxychains-ng](https://www.archlinux.org/packages/?name=proxychains-ng)（参看[Proxy settings#Using a SOCKS proxy](/index.php/Proxy_settings#Using_a_SOCKS_proxy "Proxy settings")）和[redsocks-git](https://aur.archlinux.org/packages/redsocks-git/)。
 
 *   转换为http代理
 
-直接指走socks代理似乎不能远程dns解析，这未必是用户的期望（尤其是在浏览器上使用时），可使用privoxy等软件转化socks代理为http代理。可使用[privoxy](https://www.archlinux.org/packages/?name=privoxy)和[squid](https://www.archlinux.org/packages/?name=squid)。 以[Privoxy](/index.php/Privoxy "Privoxy")为例，编辑privoxy配置文件，添加socks5转发（不要漏下1080后面的点)：
+直接走socks代理有时未必是用户的期望，可使用privoxy等软件转化socks代理为http代理。可使用[privoxy](https://www.archlinux.org/packages/?name=privoxy)和[squid](https://www.archlinux.org/packages/?name=squid)。 以[Privoxy](/index.php/Privoxy "Privoxy")为例，编辑privoxy配置文件，添加socks5转发（不要漏下1080后面的点)：
 
 ```
  forward-socks5 / 127.0.0.1:1080 .
@@ -149,20 +149,12 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 **提示：** 浏览器直接使用[SOCKS](https://en.wikipedia.org/wiki/SOCKS "wikipedia:SOCKS")代理时，你可能需要使用[privoxy](/index.php/Privoxy "Privoxy")等辅助程序，因为一般浏览器会泄漏你的DNS请求，从而减少你的匿名，参看前文[#配置代理](#.E9.85.8D.E7.BD.AE.E4.BB.A3.E7.90.86)中转化为http代理一节。
 
 *   firefox
-
-可使用firefox的连接设置，打开设置-高级-连接，在其中选用socks v5进行配置。 或者使用扩展，以foxyproxy为例： 安装[foxyproxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/?src=userprofile)：打开浏览器右上角菜单，进入扩展管理，在搜索框中输入foxyproxy，安装foxyproxy，添加socks v5代理。
-
-订阅白名单规则，以gfwlist为例，可从[gfwlist](https://github.com/gfwlist/gfwlist)]获取被屏蔽的网址规则列表，点击该项目的gfwlist.txt文件，进入后点击"raw"查看源码，可从浏览器地址栏获取[该文件URL](https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt)。然后打开foxyproxy,在规则订阅（pattern subscrib)选项卡中添加一个新的订阅规则，规则订阅URL栏填写刚才用"raw"查看的[gfwlist.txt地址](https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt)，代理项选择使先前添加的socks v5代理，设置一个自动更新规则的间隔时间（Refresh Rate），格式（Format)选择FoxyProxy，混淆（obfuscation）选择Base64，保存后使其生效。
-
-其余扩展使用方法类似，例如switchyomega可参照下文chromium中的switchyomega设置。
+    *   直接在首选项-常规-网络代理中设置“手动代理”或者“自动代理配置的URL（PAC）”（生成pac可使用[genpac](https://github.com/JinnLynn/genpac)，或者使用现成的pac如[gfwlist to pac](https://github.com/search?utf8=%E2%9C%93&q=gfwlist+pac&type=)）。
+    *   使用扩展如[foxyproxy](https://getfoxyproxy.org/)或[switchyomega](https://github.com/FelisCatus/SwitchyOmega)等。
 
 *   Chrome/Chromium
 
-[Chrome/Chromium](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)")使用使用插件switchomega配置示例例：
-
-安装 [Proxy SwitchyOmega插件](https://chrome.google.com/webstore/detail/padekgcemlokbadohgkifijomclgjgif)（[Proxy SwitchySharp](https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm)已停止维护），若商店打不开的话可以直接下载Github上面的[crx文件](https://github.com/FelisCatus/SwitchyOmega/releases)可参考[该扩展提供的图解流程](https://github.com/FelisCatus/SwitchyOmega)。
-
-添加gfwlist规则：参阅[Google Chrome + SwitchyOmega + GFWList](https://github.com/FelisCatus/SwitchyOmega/wiki/GFWList)
+使用插件如[switchomega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)(使用方法参看[SwitchyOmega-wiki](https://github.com/FelisCatus/SwitchyOmega/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
 
 ### 服务端
 

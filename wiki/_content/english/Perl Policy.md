@@ -263,7 +263,7 @@ build() {
    ./Build install; } || return 1
 
  # remove perllocal.pod and .packlist
- find "$pkgdir" -name .packlist -o -name perllocal.pod -delete 
+ find "$pkgdir" \( -name .packlist -o -name perllocal.pod \) -delete 
 }
 
 ```

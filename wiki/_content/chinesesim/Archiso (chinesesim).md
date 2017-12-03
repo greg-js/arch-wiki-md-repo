@@ -34,9 +34,9 @@
             *   [5.1.2.5 导入archlinux密钥](#.E5.AF.BC.E5.85.A5archlinux.E5.AF.86.E9.92.A5)
             *   [5.1.2.6 配置系统](#.E9.85.8D.E7.BD.AE.E7.B3.BB.E7.BB.9F)
             *   [5.1.2.7 启用图形登录（可选）](#.E5.90.AF.E7.94.A8.E5.9B.BE.E5.BD.A2.E7.99.BB.E5.BD.95.EF.BC.88.E5.8F.AF.E9.80.89.EF.BC.89)
-*   [6 See also](#See_also)
-    *   [6.1 Documentation and tutorials](#Documentation_and_tutorials)
-    *   [6.2 Example customization template](#Example_customization_template)
+*   [6 参阅](#.E5.8F.82.E9.98.85)
+    *   [6.1 文档和教程](#.E6.96.87.E6.A1.A3.E5.92.8C.E6.95.99.E7.A8.8B)
+    *   [6.2 示例自定义模板](#.E7.A4.BA.E4.BE.8B.E8.87.AA.E5.AE.9A.E4.B9.89.E6.A8.A1.E6.9D.BF)
 
 ## 安装和配置
 
@@ -452,13 +452,13 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 
 ```
 
-## See also
+## 参阅
 
-### Documentation and tutorials
+### 文档和教程
 
-*   [Archiso project page](https://projects.archlinux.org/archiso.git)
-*   [Official documentation](https://projects.archlinux.org/archiso.git/tree/docs)
+*   [Archiso 项目页面](https://projects.archlinux.org/archiso.git)
+*   [官方文档](https://projects.archlinux.org/archiso.git/tree/docs)
 
-### Example customization template
+### 示例自定义模板
 
 *   [A live DJ distribution powered by ArchLinux and built with Archiso](http://easy.open.and.free.fr/didjix/)

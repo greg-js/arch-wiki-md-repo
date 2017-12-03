@@ -422,11 +422,6 @@ An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepk
 
 ### List of installed packages
 
-**Tip:**
-
-*   These tasks can be automated. See [packup](https://aur.archlinux.org/packages/packup/), [pacmanity](https://aur.archlinux.org/packages/pacmanity/), [bacpac](https://aur.archlinux.org/packages/bacpac/), and [pug](https://aur.archlinux.org/packages/pug/) for examples.
-*   To skip already installed packages, use `--needed`.
-
 Keeping a list of explicitly installed packages can be useful to speed up installation on a new system:
 
 ```
@@ -443,7 +438,10 @@ To install packages from the list backup, run:
 
 ```
 
-**Tip:** Use `comm -13 <(pacman -Qqdt | sort) <(pacman -Qqdtt | sort) > optdeplist.txt` to also create a list of the installed optional dependencies which can be reinstalled with `--asdeps`.
+**Tip:**
+
+*   To skip already installed packages, use `--needed`.
+*   Use `comm -13 <(pacman -Qqdt | sort) <(pacman -Qqdtt | sort) > optdeplist.txt` to also create a list of the installed optional dependencies which can be reinstalled with `--asdeps`.
 
 In case the list includes foreign packages, such as [AUR](/index.php/AUR "AUR") packages, remove them first:
 
@@ -458,6 +456,8 @@ To remove all the packages on your system that are not mentioned in the list:
 # pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort pkglist.txt))
 
 ```
+
+**Tip:** These tasks can be automated. See [bacpac](https://aur.archlinux.org/packages/bacpac/), [packup](https://aur.archlinux.org/packages/packup/), [pacmanity](https://aur.archlinux.org/packages/pacmanity/), and [pug](https://aur.archlinux.org/packages/pug/) for examples.
 
 ### Listing all changed files from packages
 

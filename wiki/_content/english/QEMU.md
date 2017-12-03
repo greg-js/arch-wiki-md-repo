@@ -108,6 +108,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [12.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
     *   [12.11 Could not access KVM kernel module: Permission denied](#Could_not_access_KVM_kernel_module:_Permission_denied)
     *   [12.12 Missing performance graphs in virt-manager](#Missing_performance_graphs_in_virt-manager)
+    *   [12.13 Certain windows games or applications results in a bluescreen](#Certain_windows_games_or_applications_results_in_a_bluescreen)
 *   [13 See also](#See_also)
 
 ## Installation
@@ -1827,6 +1828,26 @@ to
 [Install](/index.php/Install "Install") [python2-cairo](https://www.archlinux.org/packages/?name=python2-cairo).
 
 More information: [FS#54472](https://bugs.archlinux.org/task/54472), [[3]](https://bbs.archlinux.org/viewtopic.php?id=230319).
+
+### Certain windows games or applications results in a bluescreen
+
+If you encounter an error mentioning `MSR` while running
+
+```
+ dmesg -wH
+
+```
+
+adding
+
+```
+ echo 1 > /sys/module/kvm/parameters/ignore_msrs
+
+```
+
+to your startup script should fix the issue
+
+See [[4]](http://lkml.iu.edu/hypermail/linux/kernel/0908.2/01472.html) for more information.
 
 ## See also
 

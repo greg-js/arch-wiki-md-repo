@@ -466,7 +466,7 @@ Play sound through the outputs of another computer on the network
 
 ##### On the server
 
-Edit `~/.config/pulse/default.pa` or `/etc/pulse/default.pa` ( or `/etc/pulse/system.pa` if PulseAudio is started in system mode ) and add the following line :
+Edit `~/.config/pulse/default.pa` or `/etc/pulse/default.pa` (or `/etc/pulse/system.pa` if PulseAudio is started in system mode) and add the following line:
 
 ```
  load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;172.16.0.0/16
