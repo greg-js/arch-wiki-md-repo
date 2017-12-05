@@ -8,7 +8,7 @@ Related articles
 *   [Pkgfile](/index.php/Pkgfile "Pkgfile")
 *   [Command-line shell](/index.php/Command-line_shell "Command-line shell")
 
-[Bash](https://www.gnu.org/software/bash/) (Bourne-again Shell) is a [command-line shell](/index.php/Command-line_shell "Command-line shell")/programming language by the [GNU Project](/index.php/GNU_Project "GNU Project"). Its name is a homaging reference to its predecessor: the long-deprecated Bourne shell. Bash can be run on most UNIX-like operating systems, including GNU/Linux.
+[Bash](https://www.gnu.org/software/bash/) (Bourne-again Shell) is a [command-line shell](/index.php/Command-line_shell "Command-line shell")/programming language by the [GNU Project](/index.php/GNU_Project "GNU Project"). Its name is a homaging reference to its predecessor, the long-deprecated Bourne shell. Bash can be run on most UNIX-like operating systems, including GNU/Linux.
 
 ## Contents
 

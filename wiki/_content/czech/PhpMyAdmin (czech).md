@@ -9,10 +9,10 @@
 
 ## Instalace
 
-Pro instalaci programu [phpMyAdmin](http://www.phpmyadmin.net/) nainstalujte balíčky *phpmyadmin* a *php-mcrypt* spuštěním:
+Pro instalaci programu [phpMyAdmin](http://www.phpmyadmin.net/) nainstalujte balíček [phpmyadmin](https://www.archlinux.org/packages/?name=phpmyadmin) spuštěním:
 
 ```
-# pacman -S phpmyadmin php-mcrypt
+# pacman -S phpmyadmin
 
 ```
 

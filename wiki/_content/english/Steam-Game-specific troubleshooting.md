@@ -79,12 +79,13 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [34.1 No sound](#No_sound_3)
 *   [35 Dota 2](#Dota_2)
     *   [35.1 In-game font is unreadable](#In-game_font_is_unreadable)
-    *   [35.2 The game does not start](#The_game_does_not_start)
-    *   [35.3 Game runs on the wrong screen](#Game_runs_on_the_wrong_screen)
-    *   [35.4 Game does not start with libxcb-dri3 error message](#Game_does_not_start_with_libxcb-dri3_error_message)
-    *   [35.5 Steam overlay](#Steam_overlay)
-    *   [35.6 Chinese tips and player names not shown](#Chinese_tips_and_player_names_not_shown)
-    *   [35.7 Chinese input method problem](#Chinese_input_method_problem)
+    *   [35.2 The game said there is an error with libpangoft2](#The_game_said_there_is_an_error_with_libpangoft2)
+    *   [35.3 The game does not start](#The_game_does_not_start)
+    *   [35.4 Game runs on the wrong screen](#Game_runs_on_the_wrong_screen)
+    *   [35.5 Game does not start with libxcb-dri3 error message](#Game_does_not_start_with_libxcb-dri3_error_message)
+    *   [35.6 Steam overlay](#Steam_overlay)
+    *   [35.7 Chinese tips and player names not shown](#Chinese_tips_and_player_names_not_shown)
+    *   [35.8 Chinese input method problem](#Chinese_input_method_problem)
 *   [36 Devil Daggers](#Devil_Daggers)
 *   [37 Drox Operative](#Drox_Operative)
 *   [38 Dwarfs F2P](#Dwarfs_F2P)
@@ -521,7 +522,7 @@ If you are getting an instant crash/close upon launch, make sure you have the fo
 
 ## Civilization VI
 
-As with Civ V, you need to add `env LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%` to your [launch options](/index.php/Launch_option "Launch option").
+Either run with steam-native (see [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues")) or add `env LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%` to your [launch options](/index.php/Launch_option "Launch option"). The latter will disable the Steam overlay.
 
 Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
@@ -561,6 +562,18 @@ Presumably this fix will prevent any automated bug reports from reaching Aspyr, 
 ## Deus Ex: Mankind divided
 
 Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
+
+This is also necessary: if you dont have this library the game wont start:
+
+pacman -S librtmp0
+
+Also if you have bumblebee you have to go on on Steam Application -> Library -> DeusEx -> Properties -> Set Launch Options and set:
+
+LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 optirun %command%
+
+Click OK
+
+Launch the game as usual
 
 ## The Clockwork Man
 
@@ -820,6 +833,28 @@ Dependencies:
 ### In-game font is unreadable
 
 Add `MESA_GL_VERSION_OVERRIDE=2.1` to your [launch options](/index.php/Launch_option "Launch option").
+
+### The game said there is an error with libpangoft2
+
+Problem description: the library provided with the game don't work, the game don't start.
+
+1\. Add the system library:
+
+pacman -s pango
+
+2\. Rename the game provided libraries:
+
+cd '~/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64'
+
+mv /home/alex/libpango-1.0.so /home/alex/libpango-1.0.so.old
+
+mv /home/alex/libpangoft2-1.0.so /home/alex/libpangoft2-1.0.so.old
+
+3\. ONLY if you have bumblebee you have to go on on Steam Application -> Library -> Dota2 -> Properties -> Set Launch Options and set:
+
+LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 optirun %command%
+
+4\. Launch the game
 
 ### The game does not start
 

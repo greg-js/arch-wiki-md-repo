@@ -17,8 +17,8 @@ GnuPG讓你可以可以加密及簽署你的檔案及通認資料，其特色在
     *   [2.1 資料夾位置](#.E8.B3.87.E6.96.99.E5.A4.BE.E4.BD.8D.E7.BD.AE)
     *   [2.2 設定檔](#.E8.A8.AD.E5.AE.9A.E6.AA.94)
     *   [2.3 新使用者的預設參數](#.E6.96.B0.E4.BD.BF.E7.94.A8.E8.80.85.E7.9A.84.E9.A0.90.E8.A8.AD.E5.8F.83.E6.95.B8)
-*   [3 Usage](#Usage)
-    *   [3.1 Create key pair](#Create_key_pair)
+*   [3 使用方法](#.E4.BD.BF.E7.94.A8.E6.96.B9.E6.B3.95)
+    *   [3.1 建立鑰匙](#.E5.BB.BA.E7.AB.8B.E9.91.B0.E5.8C.99)
     *   [3.2 List keys](#List_keys)
     *   [3.3 Export your public key](#Export_your_public_key)
     *   [3.4 Import a public key](#Import_a_public_key)
@@ -103,31 +103,31 @@ gnupg資料來預設為`700`權限，而裡面的檔案則為`600`權限。只�
 
 此指令將會各別生成`/home/user1/.gnupg`和`/home/user2/.gnupg`，並且從樣版資料夾中複製檔案，但若使用者已先產生GnuPG家目錄，則不會有改動。
 
-## Usage
+## 使用方法
 
-**Note:** Whenever a *`user-id`* is required in a command, it can be specified with your key ID, fingerprint, a part of your name or email address, etc. GnuPG is flexible on this.
+**Note:** 無論指令執行時是否可以獲取*`user-id`*，請在指令執行時給予key ID、指紋、你的名字或email，而GnuPG會自動判斷你給的資訊。
 
-### Create key pair
+### 建立鑰匙
 
-Generate a key pair by typing in a terminal:
+藉由以下指令產生一對鑰匙：
 
 ```
 $ gpg --full-gen-key
 
 ```
 
-**Tip:** Use the `--expert` option for getting alternative ciphers like [ECC](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography "wikipedia:Elliptic curve cryptography").
+**Tip:** 可加入`--expert` 選擇不同的加密方式，例如：[ECC](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography "wikipedia:Elliptic curve cryptography").
 
-The command will prompt for answers to several questions. For general use most people will want:
+這個指令會有一些問題跟提示，大部分的使用者可參考如下設定：
 
-*   the RSA (sign only) and a RSA (encrypt only) key.
-*   a keysize of the default value (2048). A larger keysize of 4096 "gives us almost nothing, while costing us quite a lot"[[1]](https://www.gnupg.org/faq/gnupg-faq.html#no_default_of_rsa4096).
-*   an expiration date. A period of a year is good enough for the average user. This way even if access is lost to the keyring, it will allow others to know that it is no longer valid. Later, if necessary, the expiration date can be extended without having to re-issue a new key.
-*   your name and email address. You can add multiple identities to the same key later (*e.g.*, if you have multiple email addresses you want to associate with this key).
-*   *no* optional comment. Since the semantics of the comment field are [not well-defined](https://lists.gnupg.org/pipermail/gnupg-devel/2015-July/030150.html), it has limited value for identification.
-*   [a secure passphrase](/index.php/Security#Choosing_secure_passwords "Security").
+*   RSA (sign only) 或 RSA (encrypt only) key.
+*   keysize建議值為2048，4096並不會有額外的好處但卻更耗損資源，請參[[1]](https://www.gnupg.org/faq/gnupg-faq.html#no_default_of_rsa4096)。
+*   設定過期時間，建議一年，在屆滿時可以再行延展而不用重新產生鑰匙。
+*   你的名字跟email設定，你也可以將多個email綁在同一對鑰匙上。
+*   如果需要設定額外註釋請參考[TOFU Design](https://lists.gnupg.org/pipermail/gnupg-devel/2015-July/030150.html)，但並不建議填寫。
+*   密碼可參考[a secure passphrase](/index.php/Security#Choosing_secure_passwords "Security").
 
-**Note:** The name and email address you enter here will be seen by anybody who imports your key.
+**Note:** 名字與email將會被人往後匯入你的公鑰的人看到。
 
 ### List keys
 

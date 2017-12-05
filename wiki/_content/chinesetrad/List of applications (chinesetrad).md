@@ -1580,7 +1580,7 @@ See also: [Burning CD/DVD with GUI](/index.php/Optical_disc_drive#Burning_CD.2FD
 
 *   **[Grip](https://en.wikipedia.org/wiki/Grip_(software) "wikipedia:Grip (software)")** — Fast and light CD ripper within the GNOME project that resembles [Audiograbber](https://en.wikipedia.org/wiki/Audiograbber "wikipedia:Audiograbber").
 
-	[http://sourceforge.net/projects/grip/](http://sourceforge.net/projects/grip/) || [grip](https://www.archlinux.org/packages/?name=grip)
+	[http://sourceforge.net/projects/grip/](http://sourceforge.net/projects/grip/) || [grip](https://aur.archlinux.org/packages/grip/)
 
 *   **KAudioCreator** — Program for ripping and encoding Audio CDs and encoding files from disk.
 

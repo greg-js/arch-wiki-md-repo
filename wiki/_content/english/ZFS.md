@@ -149,11 +149,12 @@ To manually start the daemon:
 
 See [https://github.com/archzfs/archzfs/issues/72](https://github.com/archzfs/archzfs/issues/72) for more information.
 
-In order to mount zfs pools automatically on boot you need to enable the following services:
+In order to mount zfs pools automatically on boot you need to enable the following services and targets:
 
 ```
 # systemctl enable zfs-import-cache
 # systemctl enable zfs-mount
+# systemctl enable zfs-import.target
 
 ```
 

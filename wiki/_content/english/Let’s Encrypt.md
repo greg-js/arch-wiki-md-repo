@@ -127,11 +127,11 @@ When preferring to use DNS challenge (TXT record) use:
 
 ```
 
-This will automatically verify your domain and create a private key and certificate pair. These are placed in `/etc/letsencrypt/live/*your.domain*/`.
+This will automatically verify your domain and create a private key and certificate pair. These are placed in `/etc/letsencrypt/archive/*your.domain*/` and symlinked from `/etc/letsencrypt/live/*your.domain*/`.
 
-You can then manually configure your web server to use the key and certificate in that directory.
+You can then manually configure your web server to reference the private key, certificate and full certificate chain in the symlinked directory.
 
-**Note:** Running this command multiple times will create multiple sets of files with a trailing number in `/etc/letsencrypt/live/*your.domain*/` so take care to rename them in that directory or in the webserver config file.
+**Note:** Running this command multiple times, or renewing certificates will create multiple sets of files with a trailing number in `/etc/letsencrypt/archive/*your.domain*/`. Certbot automatically updates the symlinks in `/etc/letsencrypt/live/*your.domain*/` to point to the latest instances of files so there is no need to update your webserver to point to the new key material.
 
 ## Advanced Configuration
 
@@ -241,7 +241,7 @@ Type=oneshot
 ExecStart=/usr/bin/certbot renew --quiet --agree-tos
 ```
 
-You'll probably want your web server to reload the certificates after each time they're renewed. This can be done by adding `--post-hook "systemctl reload nginx.service"` to the `ExecStart` command [[1]](https://certbot.eff.org/docs/using.html#renewing-certificates). Of course use `httpd.service` instead of `nginx.service` if appropriate.
+You'll probably want your web server to reload the certificates after each time they're renewed. This can be done by adding `--deploy-hook "systemctl reload nginx.service"` to the `ExecStart` command [[1]](https://certbot.eff.org/docs/using.html#renewing-certificates). Of course use `httpd.service` instead of `nginx.service` if appropriate.
 
 **Note:** Before adding a [timer](/index.php/Systemd/Timers "Systemd/Timers"), check that the service is working correctly and is not trying to prompt anything.
 

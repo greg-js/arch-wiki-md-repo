@@ -1,27 +1,19 @@
+[DOSBox](http://www.dosbox.com/) je x86 PC DOS emulátor pro spuštění starých her nebo programů.
+
 ## Contents
 
-*   [1 Úvod](#.C3.9Avod)
-*   [2 Instalace](#Instalace)
-*   [3 Konfigurace](#Konfigurace)
-*   [4 Použití](#Pou.C5.BEit.C3.AD)
-*   [5 Další zdroje](#Dal.C5.A1.C3.AD_zdroje)
-
-# Úvod
-
-[DOSBox](http://www.dosbox.com/) je emulátor DOSu na x86 PC, umožňující běh starých dosových her a programů.
+*   [1 Instalace](#Instalace)
+*   [2 Konfigurace](#Konfigurace)
+*   [3 Použití](#Pou.C5.BEit.C3.AD)
+*   [4 Další zdroje](#Dal.C5.A1.C3.AD_zdroje)
 
 # Instalace
 
-Instalace je velmi jednoduchá:
-
-```
-# pacman -S dosbox
-
-```
+Instalace je velmi jednoduchá, stačí nainstalovat balíček [dosbox](https://www.archlinux.org/packages/?name=dosbox).
 
 # Konfigurace
 
-Žádná počáteční konfigurace není nutná, avšak oficiální DOSBox manuál odkazuje na konfigurační soubor pojmenovaný "dosbox.conf". Defaultně však tento soubor neexistuje.
+Žádná počáteční konfigurace není nutná, avšak oficiální DOSBox manuál odkazuje na konfigurační soubor pojmenovaný `dosbox.conf`. Defaultně však tento soubor neexistuje.
 
 Pro jeho vytvoření jednoduše spusťte <tt>dosbox</tt> bez jakýchkoli parametrů:
 
@@ -37,7 +29,7 @@ Poté v příkazovém řádku DOSu napište:
 
 ```
 
-Konfigurační soubor "dosbox.conf" bude vytvořen v aktuální složce.
+Konfigurační soubor `dosbox.conf` bude vytvořen v aktuální složce.
 
 # Použití
 

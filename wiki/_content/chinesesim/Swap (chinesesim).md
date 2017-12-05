@@ -17,8 +17,8 @@
     *   [3.1 手动方式](#.E6.89.8B.E5.8A.A8.E6.96.B9.E5.BC.8F)
         *   [3.1.1 建立交换文件](#.E5.BB.BA.E7.AB.8B.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6)
         *   [3.1.2 删除交换文件](#.E5.88.A0.E9.99.A4.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6)
-        *   [3.1.3 恢复交换文件](#.E6.81.A2.E5.A4.8D.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6)
-    *   [3.2 systemd-swap](#systemd-swap)
+    *   [3.2 自动化](#.E8.87.AA.E5.8A.A8.E5.8C.96)
+        *   [3.2.1 systemd-swap](#systemd-swap)
 *   [4 使用 USB 设备交换](#.E4.BD.BF.E7.94.A8_USB_.E8.AE.BE.E5.A4.87.E4.BA.A4.E6.8D.A2)
 *   [5 交换测试](#.E4.BA.A4.E6.8D.A2.E6.B5.8B.E8.AF.95)
 *   [6 性能优化](#.E6.80.A7.E8.83.BD.E4.BC.98.E5.8C.96)
@@ -113,22 +113,22 @@ lsblk -no UUID /dev/sd*xy*
 
 相比于使用一个磁盘分区作为交换空间，使用交换文件可以更方便地随时调整大小或者移除。当磁盘空间有限（例如常规大小的SSD）时，使用交换文件更加理想。
 
-**注意:** BTRFS 文件系统暂时不支持交换文件。
+**注意:** BTRFS 文件系统暂时不支持交换文件。不注意此警告可能会导致文件系统损坏。 虽然在通过循环设备挂载时 Btrfs 上可能会使用交换文件，但这会导致交换性能严重下降。
 
 ### 手动方式
 
 #### 建立交换文件
 
-作为root，利用`fallocate`来创建一个所需大小的交换文件（也可以使用`dd`来创建，但这会花费更多时间）。例如，创建一个512 MB的交换文件：
+用root账号，使用 `fallocate` 命令来创建一个所需大小的交换文件（M = [Mebibytes](https://en.wikipedia.org/wiki/Mebibyte "wikipedia:Mebibyte"), G = [Gibibytes](https://en.wikipedia.org/wiki/Gibibyte "wikipedia:Gibibyte")）。例如，创建一个512 MB的交换文件：
 
 ```
 # fallocate -l 512M /swapfile
-或
-# dd if=/dev/zero of=/swapfile bs=1M count=512
 
 ```
 
-为交换文件设置权限：（出于安全考虑，交换文件不应被用户可读）
+**注意:** *fallocate* 命令用在 [F2FS](/index.php/F2FS "F2FS") 或 [XFS](/index.php/XFS "XFS") 文件系统时可能会引起问题。[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1129205#c3) 代替方式是使用 *dd* 命令，但是要慢一点: `# dd if=/dev/zero of=/swapfile bs=1M count=512` 
+
+为交换文件设置权限：（交换文件全局可读是一个巨大的本地漏洞）
 
 ```
 # chmod 600 /swapfile
@@ -149,12 +149,9 @@ lsblk -no UUID /dev/sd*xy*
 
 ```
 
-为了开机自动挂载，还需要在`/etc/fstab`中添加如下的一行：
+最后，编辑 `/etc/fstab`， 在其中添加如下的一行：
 
-```
-/swapfile none swap defaults 0 0
-
-```
+ `/etc/fstab`  `/swapfile none swap defaults 0 0` 
 
 #### 删除交换文件
 
@@ -174,31 +171,13 @@ lsblk -no UUID /dev/sd*xy*
 
 ```
 
-#### 恢复交换文件
+最后从 `/etc/fstab` 中删除相关条目
 
-Resuming the system from a swap file after hibernation requires an addition parameter to the kernel compared to resuming from a swap partition. The additional parameter is `resume_offset=<Swap File Offset>`.
+### 自动化
 
-The value of `<Swap File Offset>` can be obtained from the output of `filefrag -v`; The output is in a table format; the required value is located in the `physical` column from the first row. Eg:
+#### systemd-swap
 
-```
-# filefrag -v /swapfile
-Filesystem type is: ef53
-File size of /swapfile is 4290772992 (1047552 blocks, blocksize 4096)
-ext logical  physical  expected  length flags
-  0       0     7546880                6144 
-  1    6144  7557120  7553023   2048 
-  2    8192  7567360  7559167   2048 
-...
-
-```
-
-From the example `<Swap FIle Offset>` is `7546880`.
-
-**Note:** Please note that in kernel `resume` parameter you still have to type path to partition (e.g. `resume=/dev/sda1`) not to swapfile explicitly! Parameter `resume_offset` is for informing system where swapfile starts on hard disk.
-
-### systemd-swap
-
-[Install](/index.php/Install "Install") the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package. Set `swapfu_enabled=1` in the *Swap File Universal* section of `/etc/systemd/swap.conf`. [Start/enable](/index.php/Start/enable "Start/enable") the `systemd-swap` service. Visit the [authors GitHub](https://github.com/Nefelim4ag/systemd-swap) page for more information and setting up the [recommend configuration](https://github.com/Nefelim4ag/systemd-swap/blob/master/README.md#about-configuration).
+[安装](/index.php/Install "Install") 软件包 [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap)。设置 `/etc/systemd/swap.conf` 文件的 *Swap File Universal* 一节下的 `swapfu_enabled=1`。 [启动/启用](/index.php/Start/enable "Start/enable") `systemd-swap` 服务。 访问 [作者的 GitHub](https://github.com/Nefelim4ag/systemd-swap) 页面来获取更多的信息，或者设置 [推荐的配置](https://github.com/Nefelim4ag/systemd-swap/blob/master/README.md#about-configuration)。
 
 ## 使用 USB 设备交换
 

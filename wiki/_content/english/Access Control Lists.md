@@ -22,7 +22,7 @@ The [acl](https://www.archlinux.org/packages/?name=acl) package is a dependency 
 
 To enable ACL, the filesystem must be mounted with the `acl` option. You can use [fstab](/index.php/Fstab "Fstab") to make it permanent on your system.
 
-There is a possibility that the `acl` option is already active as default mount option on the filesystem. [Btrfs](/index.php/Btrfs "Btrfs") does and ext* filesystems do too. Use the following command to check ext* formatted partitions for the option:
+There is a possibility that the `acl` option is already active as default mount option on the filesystem. [Btrfs](/index.php/Btrfs "Btrfs") does and Ext2/[3](/index.php/Ext3 "Ext3")/[4](/index.php/Ext4 "Ext4") filesystems do too. Use the following command to check ext* formatted partitions for the option:
 
  `# tune2fs -l /dev/sd*XY* | grep "Default mount options:"` 
 ```
@@ -185,20 +185,20 @@ other::---
 
 ## Granting execution permissions for private files to a Web Server
 
-The following technique describes how a process like a web server can be granted access to files that reside in a user's home directory, without compromising security by giving the whole world access.
+The following technique describes how a process like a web server (e.g. [nginx](/index.php/Nginx "Nginx"), [apache](/index.php/Apache "Apache")) can be granted access to files that reside in a user's home directory, without compromising security by giving the whole world access.
 
-In the following we assume that the web server runs as the user `webserver` and grant it access to `geoffrey`'s home directory `/home/geoffrey`.
+In the following we assume that the web server runs as the user `http` and grant it access to `geoffrey`'s home directory `/home/geoffrey`.
 
-The first step is granting execution permission to `webserver` so it can access `geoffrey`'s home:
+The first step is granting execution permission to `http` so it can access `geoffrey`'s home:
 
 ```
-# setfacl -m "u:webserver:--x" /home/geoffrey
+# setfacl -m "u:http:--x" /home/geoffrey
 
 ```
 
 *Remember*: Execution permissions to a directory are necessary for a process to list the directory's content.
 
-Since `webserver` is now able to access files in `/home/geoffrey`, `other` no longer needs access, so it can be safely removed:
+Since `http` is now able to access files in `/home/geoffrey`, `other` no longer needs access, so it can be safely removed:
 
 ```
 # chmod o-rx /home/geoffrey
@@ -214,18 +214,18 @@ getfacl: Removing leading '/' from absolute path names
 # owner: geoffrey
 # group: geoffrey
 user::rwx
-user:webserver:--x
+user:http:--x
 group::r-x
 mask::r-x
 other::---
 
 ```
 
-As the above output shows, `other`'s no longer have any permissions, but `webserver` still is able to access the files, thus security might be considered increased.
+As the above output shows, `other`'s no longer have any permissions, but `http` still is able to access the files, thus security might be considered increased.
 
 ## See also
 
-*   [getfacl(1)](http://man7.org/linux/man-pages/man1/getfacl.1.html)
-*   [setfacl(1)](http://man7.org/linux/man-pages/man1/setfacl.1.html)
+*   [getfacl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/getfacl.1)
+*   [setfacl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setfacl.1)
 *   An old but still relevant (and thorough) [guide](http://vanemery.net/Linux/ACL/linux-acl.html) to ACL
 *   [How to set default file permissions for all folders/files in a directory?](http://unix.stackexchange.com/questions/1314/how-to-set-default-file-permissions-for-all-folders-files-in-a-directory)

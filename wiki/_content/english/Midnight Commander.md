@@ -51,11 +51,11 @@ Additional third-party skins can be installed separately:
 
 	[candy256.ini](https://raw.githubusercontent.com/izmntuk/archiso/testing/configs/alter/airootfs/usr/share/mc/skins/candy256.ini) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
-See also `**Skins**` in mc(1).
+See also `**Skins**` in [mc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1).
 
 ## Usage
 
-The below section provides a short overview on usage of Midnight commander. References to mc(1) and the Help function (`F1`, available in every dialog) are made in this article as `**Section**`.
+The below section provides a short overview on usage of Midnight commander. References to [mc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1) and the Help function (`F1`, available in every dialog) are made in this article as `**Section**`.
 
 **Tip:** All hints are available in `/usr/share/mc/hints/`.
 

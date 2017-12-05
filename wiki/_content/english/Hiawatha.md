@@ -9,11 +9,11 @@
     *   [2.3 CGI](#CGI)
         *   [2.3.1 Interpreters for CGI scripts](#Interpreters_for_CGI_scripts)
     *   [2.4 FastCGI](#FastCGI)
-    *   [2.5 Reverse Proxy](#Reverse_Proxy)
+    *   [2.5 Reverse proxy](#Reverse_proxy)
 *   [3 Enable SSL/TLS](#Enable_SSL.2FTLS)
     *   [3.1 Basics](#Basics)
-    *   [3.2 Self-Signed Certificate](#Self-Signed_Certificate)
-    *   [3.3 Let's Encrypt Certificate](#Let.27s_Encrypt_Certificate)
+    *   [3.2 Self-signed certificate](#Self-signed_certificate)
+    *   [3.3 Let's Encrypt certificate](#Let.27s_Encrypt_certificate)
         *   [3.3.1 Install](#Install)
         *   [3.3.2 Obtain a certificate](#Obtain_a_certificate)
         *   [3.3.3 Auto renewal](#Auto_renewal)
@@ -85,7 +85,7 @@ For further details see the official [HowTo](https://www.hiawatha-webserver.org/
 
 Hiawatha supports two different methods to send information to the FastCGI process: the webserver can communicate over either a *Unix domain socket* or a *TCP connection*. The communication type is defined in the `FastCGIServer` section via the field `ConnectTo`.
 
-### Reverse Proxy
+### Reverse proxy
 
 This example shows a reverse proxy configuration which forwards requests to `https://service.domain.net` to another local running web service on port `8181`:
 
@@ -105,7 +105,7 @@ VirtualHost {
 
 ### Basics
 
-First, you need a *X.509 SSL/TLS* certificate to use TLS. If you do not, you can obtain one for free from [#Let's Encrypt](#Let.27s_Encrypt) certificate authority.
+First, you need a *X.509 SSL/TLS* certificate to use TLS. If you do not, you can use a [#Self-signed certificate](#Self-signed_certificate) or use one for free from [#Let's Encrypt](#Let.27s_Encrypt) certificate authority.
 
 The order of the items in the certificate file is important and has to be as follows:
 
@@ -147,15 +147,14 @@ VirtualHost {
 
 ```
 
-### Self-Signed Certificate
+### Self-signed certificate
 
 If you only need a local self-signed certificate for webdevelopment eg. you can easily do this with
 
 ```
 # cd /etc/hiawatha/tls
-# openssl req -new -x509 -nodes -newkey rsa:4096 -keyout server.key -out server.crt -days 1095
-# chmod 400 server.key
-# cat server.key server.crt > /etc/hiawatha/tls/serverkey.pem
+# openssl req -new -x509 -nodes -newkey rsa:4096 -keyout *serverkey.pem* -out *serverkey.pem* -days 1095
+# chmod 400 *serverkey.pem*
 
 ```
 
@@ -163,7 +162,7 @@ Make sure you did add the SSL bundle path to your `hiawatha.conf` as stated in [
 
 As this solution doesn't use an official certificate authority (CA), you will have to add a security exception the first time you connect to your website.
 
-### Let's Encrypt Certificate
+### Let's Encrypt certificate
 
 #### Install
 

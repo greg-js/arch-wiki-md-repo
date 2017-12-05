@@ -7,10 +7,11 @@
     *   [2.1 Enabling MQTT](#Enabling_MQTT)
     *   [2.2 Enabling HTTP admin](#Enabling_HTTP_admin)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Changed hostname](#Changed_hostname)
-    *   [3.2 Upgraded RabbitMQ to latest version and cannot start](#Upgraded_RabbitMQ_to_latest_version_and_cannot_start)
-    *   [3.3 Erlang cookie error](#Erlang_cookie_error)
-    *   [3.4 can't establish TCP connection](#can.27t_establish_TCP_connection)
+    *   [3.1 Service stop hangs for a minutes](#Service_stop_hangs_for_a_minutes)
+    *   [3.2 Changed hostname](#Changed_hostname)
+    *   [3.3 Upgraded RabbitMQ to latest version and cannot start](#Upgraded_RabbitMQ_to_latest_version_and_cannot_start)
+    *   [3.4 Erlang cookie error](#Erlang_cookie_error)
+    *   [3.5 can't establish TCP connection](#can.27t_establish_TCP_connection)
 *   [4 References](#References)
 
 ## Installation
@@ -55,6 +56,10 @@ To allow remote machines to connect to the HTTP admin page edit/create `/etc/rab
 ```
 
 ## Troubleshooting
+
+### Service stop hangs for a minutes
+
+Rabbitmq package install epmd (Erlang Port Mapping Daemons) as dependency. If you run rabbitmq server via systemd, it will start detached epmd process, that will not be stopped with `systemctl stop`. You can avoid this, if add `After=epmd.service` in `[Unit]` section. Don't forget to reload daemons.
 
 ### Changed hostname
 

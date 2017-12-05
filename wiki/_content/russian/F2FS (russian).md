@@ -1,3 +1,7 @@
+Ссылки по теме
+
+*   [File systems](/index.php/File_systems "File systems")
+
 [F2FS](https://en.wikipedia.org/wiki/ru:F2FS "wikipedia:ru:F2FS") (Flash-Friendly File System) — файловая система, ориентированная на использование с накопителями на основе NAND флэш-памяти. Поддержка файловой системы F2FS включена в ядро Linux начиная с 3.8.
 
 ## Создание раздела F2FS

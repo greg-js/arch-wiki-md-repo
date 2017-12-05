@@ -106,13 +106,13 @@ Extensions for current and older versions of PHP are also available in [AUR](/in
 For [php-gd](https://www.archlinux.org/packages/?name=php-gd) uncomment the line in `/etc/php/php.ini`:
 
 ```
-extension=gd.so
+extension=gd
 
 ```
 
 ### imagemagick
 
-Installation consists of installing [imagemagick](https://www.archlinux.org/packages/?name=imagemagick), its PHP extension library (`imagick.so`) and enabling this extension in PHP configuration.
+Installation consists of installing [imagemagick](https://www.archlinux.org/packages/?name=imagemagick), its PHP extension library, and adding `extension=imagick` to the PHP configuration.
 
 #### using AUR
 
@@ -130,7 +130,7 @@ First, install [imagemagick](https://www.archlinux.org/packages/?name=imagemagic
 Then include this extension using
 
 ```
- # echo 'extension=imagick.so'>/etc/php/conf.d/imagick.ini
+ # echo 'extension=imagick'>/etc/php/conf.d/imagick.ini
 
 ```
 
@@ -144,7 +144,7 @@ Instruction can be found on the [PHP pthreads extension](/index.php/PHP_pthreads
 
 PCNTL allows you to create process directly into the server side machine. While this may seen as something you would want, it also gives the power to PHP to mess things up really badly. So it is a PHP extension that cannot be loaded like other more convenient extension. This is because of the great power it gives to PHP. To enable it PCNTL has to be compiled into PHP.
 
-The php package on ArchLinux is currently built with "--enable-pcntl", so that it should be available by default.
+The php package on Arch Linux is currently built with "--enable-pcntl", so that it should be available by default.
 
 ### MySQL/MariaDB
 
@@ -153,12 +153,12 @@ Install and configure MySQL/MariaDB as described in [MariaDB](/index.php/MariaDB
 Uncomment [the following lines](https://secure.php.net/manual/en/mysqlinfo.api.choosing.php) in `/etc/php/php.ini`:
 
 ```
-extension=pdo_mysql.so
-extension=mysqli.so
+extension=pdo_mysql
+extension=mysqli
 
 ```
 
-**Warning:** `mysql.so` was [removed](https://secure.php.net/manual/en/migration70.removed-exts-sapis.php) in PHP 7.0.
+**Warning:** `extension=mysql` was [removed](https://secure.php.net/manual/en/migration70.removed-exts-sapis.php) in PHP 7.0.
 
 You can add minor privileged MySQL users for your web scripts. You might also want to edit `/etc/mysql/my.cnf` and uncomment the `skip-networking` line so the MySQL server is only accessible by the localhost. You have to restart MySQL for changes to take effect.
 
@@ -173,8 +173,8 @@ Uncomment the line of the package, e.g. `/etc/php/conf.d/redis.ini`.
 Install and configure [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), then install the [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql) package and uncomment the following lines in `/etc/php/php.ini`:
 
 ```
-extension=pdo_pgsql.so
-extension=pgsql.so
+extension=pdo_pgsql
+extension=pgsql
 
 ```
 
@@ -183,8 +183,8 @@ extension=pgsql.so
 Install and configure [SQLite](/index.php/SQLite "SQLite"), then install the [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) package and uncomment the following lines in `/etc/php/php.ini`:
 
 ```
-extension=pdo_sqlite.so
-extension=sqlite3.so
+extension=pdo_sqlite
+extension=sqlite3
 
 ```
 
@@ -193,7 +193,7 @@ extension=sqlite3.so
 XDebug allows you to easily debug php code using modified var_dump() function. Install [xdebug](https://www.archlinux.org/packages/?name=xdebug) and uncomment the lines at `/etc/php/conf.d/xdebug.ini`:
 
 ```
-zend_extension=xdebug.so
+zend_extension=xdebug
 xdebug.remote_enable=on
 xdebug.remote_host=127.0.0.1
 xdebug.remote_port=9000
@@ -208,7 +208,7 @@ xdebug.remote_handler=dbgp
 Install [php-imap](https://www.archlinux.org/packages/?name=php-imap) and uncomment the line at `/etc/php/php.ini`:
 
 ```
-extension=imap.so
+extension=imap
 
 ```
 
@@ -223,7 +223,7 @@ There are two kinds of caching in PHP: *opcode*/*bytecode* caching and *userland
 
 OPCache comes bundled with the standard PHP distribution, therefore to enable it you simply have to add or uncomment the following line in your [PHP configuration file](#Configuration):
 
- `/etc/php/php.ini`  `zend_extension=opcache.so` 
+ `/etc/php/php.ini`  `zend_extension=opcache` 
 
 A list of its options and suggested settings can be found in its [official entry](https://secure.php.net/manual/en/book.opcache.php) on the PHP website.
 
@@ -234,7 +234,7 @@ A list of its options and suggested settings can be found in its [official entry
 APCu can be installed with the [php-apcu](https://www.archlinux.org/packages/?name=php-apcu) package. You can then enable it by uncommenting the following line in `/etc/php/conf.d/apcu.ini`, or adding it to your [PHP configuration file](#Configuration):
 
 ```
-extension=apcu.so
+extension=apcu
 
 ```
 
@@ -343,7 +343,7 @@ PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 Ensure the zip extension is enabled.
 
- `$ grep zip /etc/php/php.ini`  `extension=zip.so` 
+ `$ grep zip /etc/php/php.ini`  `extension=zip` 
 
 ### /etc/php/php.ini not parsed
 

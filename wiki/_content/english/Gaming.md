@@ -460,7 +460,7 @@ BFQ is an io-scheduler that comes as a feature of [linux-zen](https://www.archli
 
 ## See also
 
-*   [OSGameClones](http://osgameclones.com/) - List of open source game clones
+*   [List of games](/index.php/List_of_games "List of games")
 *   [Free Gamer](http://freegamer.blogspot.com/) - Open source games blog
 *   [FreeGameDev](http://forum.freegamedev.net/) - Free/open source game development community
 *   [SIG/Games](https://fedoraproject.org/wiki/SIGs/Games#Gaming_News_sites) - OS/Linux gaming news sites and lists at Fedora's wiki

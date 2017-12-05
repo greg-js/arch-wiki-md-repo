@@ -63,13 +63,13 @@ and notes |
 To verify TRIM support, run:
 
 ```
-# lsblk -D
+# lsblk --discard
 
 ```
 
-And check the values of DISC-GRAN and DISC-MAX columns. Non-zero values indicate TRIM support.
+And check the values of DISC-GRAN (discard granularity) and DISC-MAX (discard max bytes) columns. Non-zero values indicate TRIM support.
 
-Or [install](/index.php/Install "Install") [hdparm](https://www.archlinux.org/packages/?name=hdparm) package and run:
+Alternatively, [install](/index.php/Install "Install") [hdparm](https://www.archlinux.org/packages/?name=hdparm) package and run:
 
  `# hdparm -I /dev/sda | grep TRIM` 
 ```

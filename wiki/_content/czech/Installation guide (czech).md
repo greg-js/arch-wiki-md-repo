@@ -4,7 +4,7 @@ Komunitou spravovaná [ArchWiki](/index.php/Main_page_(%C4%8Cesky) "Main page (�
 
 ## Contents
 
-*   [1 Před instalaci](#P.C5.99ed_instalaci)
+*   [1 Před instalací](#P.C5.99ed_instalac.C3.AD)
     *   [1.1 UEFI](#UEFI)
     *   [1.2 Rozložení klávesnice](#Rozlo.C5.BEen.C3.AD_kl.C3.A1vesnice)
     *   [1.3 Připojte se k Internetu](#P.C5.99ipojte_se_k_Internetu)
@@ -37,9 +37,9 @@ Komunitou spravovaná [ArchWiki](/index.php/Main_page_(%C4%8Cesky) "Main page (�
     *   [4.7 Fonty](#Fonty)
 *   [5 Závěr](#Z.C3.A1v.C4.9Br)
 
-## Před instalaci
+## Před instalací
 
-Arch Linux by měl běžet na jakémkoliv [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) kompatibilním stroji s alespoň 256 MB RAM. Základní instalace se všemi balíčky ze skupiny [base](https://www.archlinux.org/groups/x86_64/base/) by měla zabírat méně než 800 MB místa na disku.
+Arch Linux by měl být spustitelný na libovolném počítači kompatibilním s [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") s min. 512 MB RAM. Základní instalace se všemi balíčky ze skupiny [base](https://www.archlinux.org/groups/x86_64/base/) by měla zabírat méně než 800 MB místa na disku.
 
 ISO Arch Linuxu stáhněte z [Arch Linux download page](https://www.archlinux.org/download/).
 
@@ -66,7 +66,12 @@ Pro mnohé země a typy klávesnic (včetně té české) jsou již příslušn�
 
 ### Připojte se k Internetu
 
-Služba DHCP je již povolena pro všechna dostupná síťová rozhraní. Ověřte funkčnost připojení, např. příkazem `ping google.com`.
+Služba DHCP je již povolena pro všechna dostupná síťová rozhraní. Ověřte funkčnost připojení, např. příkazem:
+
+```
+# ping archlinux.org 
+
+```
 
 Pokud potřebujete nastavit statickou IP adresu nebo použít nějaký nástroj pro správu připojení (např. [Netctl](/index.php/Netctl "Netctl")), měli byste tuto službu nejdříve zastavit (nahraďte `enp0s25` správným síťovým rozhraním):
 

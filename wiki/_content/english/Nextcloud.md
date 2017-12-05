@@ -116,7 +116,7 @@ See also [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman")
 
 **Tip:** For all prerequisite PHP modules, see upstream documentation: [Nextcloud 12.0](https://docs.nextcloud.com/server/12/admin_manual/installation/source_installation.html#prerequisites-label).
 
-Install [PHP#gd](/index.php/PHP#gd "PHP"), [php-intl](https://www.archlinux.org/packages/?name=php-intl) and [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt) as additional modules.
+Install [PHP#gd](/index.php/PHP#gd "PHP") and [php-intl](https://www.archlinux.org/packages/?name=php-intl) as additional modules.
 
 Some apps(News for example) require the iconv.so extension, if you wish to use these apps, uncomment the extension in `/etc/php/php.ini`.
 
@@ -383,7 +383,7 @@ php-set = extension=iconv.so
 ;php-set = extension=curl.so    # enabled by default in global php.ini
 php-set = extension=bz2.so
 php-set = extension=intl.so
-php-set = extension=mcrypt.so
+;php-set = extension=mcrypt.so  # not available in PHP 7.2
 
 ;; required for specific apps
 ;php-set = extension=ldap.so    # for LDAP integration

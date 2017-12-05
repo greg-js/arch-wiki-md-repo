@@ -57,7 +57,11 @@ hdapsd可以接收HDAPS传感器的信息并判断是否受到冲击,如果是�
 
 设置hdaps时你应该检查硬盘的[SMART](/index.php/SMART "SMART")信息中的"Load cycle count". 如果检测太过于敏感的话,磁头将会不停地进行停放操作,load cycle count将会上升很快.
 
-[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85 "Pacman (简体中文)")[hdapsd](https://www.archlinux.org/packages/?name=hdapsd)后,通过`hdapsd.service`来[启动](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") hdapsd的守护进程.
+[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85 "Pacman (简体中文)")[hdapsd](https://www.archlinux.org/packages/?name=hdapsd)后,通过 `hdapsd@device.service` 来[启动](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") hdapsd 守护进程，但是不需要设置为开机启动。
+
+软件包会安装 udev 规则， udev 会对每个机械磁盘启用 hdapsd 实例。
+
+更多信息请参考 [hdapsd github 页面](https://github.com/evgeni/hdapsd#systemd-and-udev-integration:Link)。
 
 你可以在hdaps的unit file里调整参数(详见[systemd的文章](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BF.AE.E6.94.B9.E7.8E.B0.E5.AD.98.E5.8D.95.E5.85.83.E6.96.87.E4.BB.B6 "Systemd (简体中文)")). 比如以下面的文件覆盖默认的service文件将调整hdaps的灵敏度与记录:
 

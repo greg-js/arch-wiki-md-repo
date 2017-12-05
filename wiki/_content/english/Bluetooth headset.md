@@ -244,6 +244,16 @@ $ pacmd list-sinks | egrep -o 'bluez_card[^>]*'
 
 The fragment size can be set in the config file `/etc/pulse/daemon.conf` and takes effect after a restart of PulseAudio (for more details please see [PulseAudio/Troubleshooting#Setting the default fragment number and buffer size in PulseAudio](/index.php/PulseAudio/Troubleshooting#Setting_the_default_fragment_number_and_buffer_size_in_PulseAudio "PulseAudio/Troubleshooting")).
 
+Perhaps it will help to add "options ath9k btcoex_enable = 1" to the `/etc/modprobe.d/ath9k.conf` (with the appropriate bluetooth adapter):
+
+ `/etc/modprobe.d/ath9k.conf` 
+```
+# possibly fix for sound glitches
+options ath9k btcoex_enable = 1
+```
+
+Then restart.
+
 #### Connecting works, but I cannot play sound
 
 Make sure that you see the following messages in your system log:

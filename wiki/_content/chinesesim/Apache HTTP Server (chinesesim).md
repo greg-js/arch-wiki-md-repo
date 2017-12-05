@@ -7,7 +7,7 @@ Related articles
 *   [XAMPP](/index.php/XAMPP "XAMPP")
 *   [mod_perl](/index.php/Mod_perl "Mod perl")
 
-**翻译状态：** 本文是英文页面 [Apache_HTTP_Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-31，点击[这里](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&diff=0&oldid=487235)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Apache_HTTP_Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-12-04，点击[这里](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&diff=0&oldid=500853)可以查看翻译后英文页面的改动。
 
 LAMP是指在许多web 服务器上使用的一个软件组合：Linux,Apache,MySQL/MariaDB以及PHP。
 
@@ -25,10 +25,11 @@ LAMP是指在许多web 服务器上使用的一个软件组合：Linux,Apache,My
         *   [2.4.1 管理多个主机](#.E7.AE.A1.E7.90.86.E5.A4.9A.E4.B8.AA.E4.B8.BB.E6.9C.BA)
 *   [3 扩展](#.E6.89.A9.E5.B1.95)
     *   [3.1 PHP](#PHP)
-        *   [3.1.1 使用 apache2-mpm-worker 和 mod_fcgid](#.E4.BD.BF.E7.94.A8_apache2-mpm-worker_.E5.92.8C_mod_fcgid)
-        *   [3.1.2 使用 php-fpm 和 mod_proxy_fcgi](#.E4.BD.BF.E7.94.A8_php-fpm_.E5.92.8C_mod_proxy_fcgi)
-    *   [3.2 MariaDB](#MariaDB)
-    *   [3.3 HTTP2](#HTTP2)
+        *   [3.1.1 使用 libphp](#.E4.BD.BF.E7.94.A8_libphp)
+        *   [3.1.2 使用 apache2-mpm-worker 和 mod_fcgid](#.E4.BD.BF.E7.94.A8_apache2-mpm-worker_.E5.92.8C_mod_fcgid)
+        *   [3.1.3 使用 apache2-mpm-worker 和 mod_fcgid](#.E4.BD.BF.E7.94.A8_apache2-mpm-worker_.E5.92.8C_mod_fcgid_2)
+        *   [3.1.4 测试 PHP](#.E6.B5.8B.E8.AF.95_PHP)
+    *   [3.2 HTTP2](#HTTP2)
 *   [4 问题处理](#.E9.97.AE.E9.A2.98.E5.A4.84.E7.90.86)
     *   [4.1 Apache 的状态和日志](#Apache_.E7.9A.84.E7.8A.B6.E6.80.81.E5.92.8C.E6.97.A5.E5.BF.97)
     *   [4.2 启动后出现 Error: PID file /run/httpd/httpd.pid not readable](#.E5.90.AF.E5.8A.A8.E5.90.8E.E5.87.BA.E7.8E.B0_Error:_PID_file_.2Frun.2Fhttpd.2Fhttpd.pid_not_readable)
@@ -50,6 +51,8 @@ Apache 配置文件位于 `/etc/httpd/conf`，主要的配置文件是 `/etc/htt
 启动 `httpd.service` [systemd 服务](/index.php/Systemd#Using_units "Systemd")，Apache 就会启动，从浏览器中访问 [http://localhost/](http://localhost/) 会显示一个简单的索引页面。
 
 ### 高级选项
+
+请参考 [Apache 完整 directives 配置选项](https://httpd.apache.org/docs/trunk/mod/directives.html) 和 [directive 快速参考](https://httpd.apache.org/docs/trunk/mod/quickreference.htm).
 
 请关注一下 `/etc/httpd/conf/httpd.conf` 中的下面选项:
 
@@ -134,7 +137,7 @@ $ chmod -R o+r ~/public_html
 
 **警告:** 如果计划使用 SSL/TLS，请注意某些版本和实现 [依然](https://weakdh.org/#affected) [有安全漏洞](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). 访问 [http://disablessl3.com/](http://disablessl3.com/) 和 [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html) 可以查看当前的安全漏洞和服务器处理方式。
 
-[openssl](https://www.archlinux.org/packages/?name=openssl) 提供了 TLS/SSL 支持，默认已经安装在 Arch 中。
+[OpenSSL](/index.php/OpenSSL "OpenSSL") 提供了 TLS/SSL 支持，默认已经安装在 Arch 中。
 
 在 `/etc/httpd/conf/httpd.conf` 中，取消下面行的注释:
 
@@ -270,7 +273,13 @@ Include conf/vhosts/domainname2.dom
 
 ### PHP
 
-首先，[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [php](https://www.archlinux.org/packages/?name=php) 和 [php-apache](https://www.archlinux.org/packages/?name=php-apache)。
+首先，参考 [PHP](/index.php/PHP "PHP") 页面，完成 PHP 的安装。
+
+有多种方式可以在 Apache 下使用 PHP，[#使用 libphp](#.E4.BD.BF.E7.94.A8_libphp) 最简单，但是扩展性最差，libphp 还需要修改 mpm 模块，可能影响其它扩展，比如和 [#HTTP2](#HTTP2) 不兼容。
+
+#### 使用 libphp
+
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")软件包 [php-apache](https://www.archlinux.org/packages/?name=php-apache)。
 
 [php-apache](https://www.archlinux.org/packages/?name=php-apache) 中包含的 `libphp7.so` 不支持 `mod_mpm_event`，仅支持 `mod_mpm_prefork`([FS#39218](https://bugs.archlinux.org/task/39218))。需要在 `/etc/httpd/conf/httpd.conf` 中注释掉:
 
@@ -314,17 +323,6 @@ httpd.service: control process exited, code=exited status=1
 ```
 
 [重启](/index.php/Systemd#Using_units "Systemd") `httpd.service`。
-
-要测试PHP，在 apache 文档根目录（即`/srv/http/`或`~public_html`）中创建test.php文件，在其中写入：
-
-```
-<?php phpinfo(); ?>
-
-```
-
-然后访问： [http://localhost/test.php](http://localhost/test.php) 或者 [http://localhost/~myname/test.php](http://localhost/~myname/test.php)
-
-高级的配置和扩展，请设置 [PHP](/index.php/PHP "PHP").
 
 #### 使用 apache2-mpm-worker 和 mod_fcgid
 
@@ -392,59 +390,77 @@ Include conf/extra/php7_module.conf
 
 [重启](/index.php/Restart "Restart") `httpd.service`.
 
-#### 使用 php-fpm 和 mod_proxy_fcgi
+#### 使用 apache2-mpm-worker 和 mod_fcgid
 
-**Note:** Unlike the widespread setup with ProxyPass, the proxy configuration with SetHandler respects other Apache directives like DirectoryIndex. This ensures a better compatibility with software designed for libphp7, mod_fastcgi and mod_fcgid. If you still want to try ProxyPass, experiment with a line like this: `ProxyPassMatch ^/(.*\.php(/.*)?)$ unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/srv/http/$1` 
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) 和 [php-cgi](https://www.archlinux.org/packages/?name=php-cgi)。
 
-[Install](/index.php/Install "Install") the [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) package.
+创建需要的目录并建立软链接:
 
-Enable proxy modules:
-
- `/etc/httpd/conf/httpd.conf` 
 ```
-LoadModule proxy_module modules/mod_proxy.so
-LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so
+# mkdir /srv/http/fcgid-bin
+# ln -s /usr/bin/php-cgi /srv/http/fcgid-bin/php-fcgid-wrapper
 
 ```
 
-Create `/etc/httpd/conf/extra/php-fpm.conf` with the following content:
+创建 `/etc/httpd/conf/extra/php-fcgid.conf`，内容是:
 
- `/etc/httpd/conf/extra/php-fpm.conf` 
+ `/etc/httpd/conf/extra/php-fcgid.conf` 
 ```
-<FilesMatch \.php$>
-    SetHandler "proxy:unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/"
-</FilesMatch>
+# Required modules: fcgid_module
 
-```
-
-And include it at the bottom of `/etc/httpd/conf/httpd.conf`:
-
-```
-Include conf/extra/php-fpm.conf
-
-```
-
-**Note:** The pipe between `sock` and `fcgi` is not allowed to be surrounded by a space! `localhost` can be replaced by any string. More [here](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html)
-
-You can configure PHP-FPM in `/etc/php/php-fpm.d/www.conf`, but the default setup should work fine.
-
-**Note:**
-
-If you have added the following lines to `httpd.conf`, remove them, as they are no longer needed:
-
-```
-LoadModule php7_module modules/libphp7.so
-Include conf/extra/php7_module.conf
+<IfModule fcgid_module>
+    AddHandler php-fcgid .php
+    AddType application/x-httpd-php .php
+    Action php-fcgid /fcgid-bin/php-fcgid-wrapper
+    ScriptAlias /fcgid-bin/ /srv/http/fcgid-bin/
+    SocketPath /var/run/httpd/fcgidsock
+    SharememPath /var/run/httpd/fcgid_shm
+        # If you don't allow bigger requests many applications may fail (such as WordPress login)
+        FcgidMaxRequestLen 536870912
+        # Path to php.ini – defaults to /etc/phpX/cgi
+        DefaultInitEnv PHPRC=/etc/php/
+        # Number of PHP childs that will be launched. Leave undefined to let PHP decide.
+        #DefaultInitEnv PHP_FCGI_CHILDREN 3
+        # Maximum requests before a process is stopped and a new one is launched
+        #DefaultInitEnv PHP_FCGI_MAX_REQUESTS 5000
+    <Location /fcgid-bin/>
+        SetHandler fcgid-script
+        Options +ExecCGI
+    </Location>
+</IfModule>
 
 ```
 
-[Restart](/index.php/Restart "Restart") `httpd.service` and `php-fpm.service`.
+编辑 `/etc/httpd/conf/httpd.conf`，启用 actions 模块：
 
-### MariaDB
+```
+LoadModule actions_module modules/mod_actions.so
 
-按照[PHP#MySQL/MariaDB](/index.php/PHP#MySQL.2FMariaDB "PHP") 配置 MySQL/MariaDB。
+```
 
-完成后 [重启](/index.php/Restart "Restart") `httpd.service` 服务。
+并添加如下配置:
+
+```
+LoadModule fcgid_module modules/mod_fcgid.so
+Include conf/extra/httpd-mpm.conf
+Include conf/extra/php-fcgid.conf
+
+```
+
+[Restart](/index.php/Restart "Restart") `httpd.service`.
+
+#### 测试 PHP
+
+在 apache 文档根目录（即`/srv/http/`或`~public_html`）中创建test.php文件，在其中写入：
+
+```
+<?php phpinfo(); ?>
+
+```
+
+然后访问： [http://localhost/test.php](http://localhost/test.php) 或者 [http://localhost/~myname/test.php](http://localhost/~myname/test.php)
+
+高级的配置和扩展，请设置 [PHP](/index.php/PHP "PHP").
 
 ### HTTP2
 
@@ -532,5 +548,6 @@ ProxyTimeout 300
 ## 参阅
 
 *   [Apache 官方网站](http://www.apache.org/)
+*   [Apache wiki](https://wiki.apache.org/httpd/)
 *   [生成ssh_test_certificate的教程](http://www.akadia.com/services/ssh_test_certificate.html)
 *   [Apache故障排除Wiki](http://wiki.apache.org/httpd/CommonMisconfigurations)

@@ -502,7 +502,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **[Grip](https://en.wikipedia.org/wiki/Grip_(software) "wikipedia:Grip (software)")** — Programma leggero e veloce per il ripping dei CD parte del progetto GNOME e che somiglia ad [Audiograbber](https://en.wikipedia.org/wiki/Audiograbber "wikipedia:Audiograbber").
 
-	[http://sourceforge.net/projects/grip/](http://sourceforge.net/projects/grip/) || [grip](https://www.archlinux.org/packages/?name=grip)
+	[http://sourceforge.net/projects/grip/](http://sourceforge.net/projects/grip/) || [grip](https://aur.archlinux.org/packages/grip/)
 
 *   **KAudioCreator** — Programma per il ripping e la decodifica Audio dei CD, e la decodifica di file dal disco.
 

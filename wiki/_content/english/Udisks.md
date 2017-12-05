@@ -151,7 +151,7 @@ At start-up and when a drive is connected, udisksd will apply configuration stor
 
 For example, to set standby timeout to 240 (20 minutes) for a drive, add the following:
 
- `/etc/udisks/*DriveId*.conf` 
+ `/etc/udisks2/*DriveId*.conf` 
 ```
 [ATA]
 StandbyTimeout=240

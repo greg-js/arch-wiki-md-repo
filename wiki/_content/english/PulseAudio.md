@@ -475,7 +475,7 @@ Edit `~/.config/pulse/default.pa` or `/etc/pulse/default.pa` (or `/etc/pulse/sys
 
 Here only client from the IPs or IPs range specified here can stream sound.
 
-To allow access from everywhere :
+To allow access from everywhere:
 
 ```
  load-module module-native-protocol-tcp auth-anonymous=true

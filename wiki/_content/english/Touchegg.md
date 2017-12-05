@@ -19,9 +19,9 @@ The configuration file is found in `~/.config/touchegg/touchegg.conf`.
 
 It is a basic XML file that defines various gestures. Please note that at this time `TAP_AND_HOLD`, `PINCH`, and `ROTATE`, do not appear to work.
 
-The list of triggers can be found [here](http://code.google.com/p/touchegg/wiki/AllGestures).
+The list of triggers can be found [here](https://github.com/JoseExposito/touchegg/wiki/All-gestures-supported-by-Touch%C3%A9gg).
 
-The list of actions can be found [here](http://code.google.com/p/touchegg/wiki/AllActions).
+The list of actions can be found [here](https://github.com/JoseExposito/touchegg/wiki/All-actions-supported-by-Touch%C3%A9gg).
 
 ### Gnome Shell
 

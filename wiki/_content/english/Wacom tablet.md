@@ -595,14 +595,21 @@ Later you can apply them in `/etc/X11/xorg.conf` as shown below or you use the a
 
 For standard (**16:9**) widescreen monitors with Wacom tablets it is a typical problem that your strokes are slightly more horizontally oriented than they physically were (so for example a perfectly drawn circle with the pen will turn into a horizontal ellipse in the computer) because the tablet drawing surface proportions are larger on the vertical axis by default (**16:10**) than your monitors aspect ratio and this inconsistency will subtly distort your strokes. It is possible to force the proportions of the drawing surface to match the aspect ratio of your monitor to solve this problem by cutting off the bottom of the drawing surface to accommodate for the differences in vertical resolution with the below options. This is an alternative to the "Force Proportions" option in the Windows driver settings. It is generally recommended to do this to ensure maximum accuracy of your tablet input.
 
-To get the tablets default values run the following command (where "device name or ID" would be for your stylus):
+To get the tablets current values run the following command (where "device name or ID" would be for your stylus):
 
 ```
    xsetwacom --get "device name or ID" Area
 
 ```
 
-After this you can figure out your tablet's resolution by dividing the values with the ratio **11.25** (so **21600/11.25=1920** and **13500/11.25=1200**), so to convert this to **1920x1080** (**16:9**) resolution, do **1080*11.25=12150** then to set the proportions with xsetwacom:
+The following command will reset the Area back to default:
+
+```
+   xsetwacom --set "device name or ID" ResetArea
+
+```
+
+Calculate your tablet's resolution by dividing the values with the ratio **11.25** (so **21600/11.25=1920** and **13500/11.25=1200**), so to convert this to **1920x1080** (**16:9**) resolution, do **1080*11.25=12150** then to set the proportions with xsetwacom:
 
 ```
    xsetwacom --set "device name or ID" Area 0 0 21600 12150
@@ -612,6 +619,8 @@ After this you can figure out your tablet's resolution by dividing the values wi
 Here is how to do the same in the xorg configuration file:
 
 ```
+   Option "TopX" "0"
+   Option "TopY" "0"
    Option "BottomX" "21600"
    Option "BottomY" "12150"
 

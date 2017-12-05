@@ -41,7 +41,7 @@ This is just one example; there are many more options available should you desir
 
 ### Set the wallpaper
 
-feh can be used to set the desktop wallpaper, for example for [window managers](/index.php/Window_manager "Window manager") without this feature such as [Openbox](/index.php/Openbox "Openbox"), [Fluxbox](/index.php/Fluxbox "Fluxbox"), and [xmonad](/index.php/Xmonad "Xmonad").
+`feh` can be used to set the desktop wallpaper, for example for [window managers](/index.php/Window_manager "Window manager") without this feature such as [Openbox](/index.php/Openbox "Openbox"), [Fluxbox](/index.php/Fluxbox "Fluxbox"), and [xmonad](/index.php/Xmonad "Xmonad").
 
 The following command is an example of how to set the initial background:
 
@@ -68,6 +68,15 @@ $ ~/.fehbg &
 ```
 
 To change the background image, edit the file `~/.fehbg` which gets created after running the command `feh --bg-scale /path/to/image.file` mentioned above.
+
+One can explicitly disable the creation of the `~/.fehbg`, by passing the `--no-fehbg` flag as well.
+
+To setup different wallpapers for different monitors one should pass as many file paths as many monitors are available. For example, for a dual monitor setup it would be:
+
+```
+$ feh --bg-center path/to/file/for/first/monitor path/to/file/for/second/monitor
+
+```
 
 ### Open SVG images
 

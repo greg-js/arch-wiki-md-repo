@@ -14,12 +14,12 @@ The configuration file for DNS resolvers is `/etc/resolv.conf`. From [resolv.con
     *   [1.1 Testing](#Testing)
 *   [2 Alternative DNS servers](#Alternative_DNS_servers)
     *   [2.1 OpenNIC](#OpenNIC)
-    *   [2.2 Cisco Umbrella (formerly OpenDNS)](#Cisco_Umbrella_.28formerly_OpenDNS.29)
-    *   [2.3 Google](#Google)
-    *   [2.4 Comodo](#Comodo)
-    *   [2.5 Yandex](#Yandex)
-    *   [2.6 DNS.WATCH](#DNS.WATCH)
-    *   [2.7 UncensoredDNS](#UncensoredDNS)
+    *   [2.2 DNS.WATCH](#DNS.WATCH)
+    *   [2.3 UncensoredDNS](#UncensoredDNS)
+    *   [2.4 Cisco Umbrella (formerly OpenDNS)](#Cisco_Umbrella_.28formerly_OpenDNS.29)
+    *   [2.5 Google](#Google)
+    *   [2.6 Comodo](#Comodo)
+    *   [2.7 Yandex](#Yandex)
     *   [2.8 Quad9](#Quad9)
 *   [3 Preserve DNS settings](#Preserve_DNS_settings)
     *   [3.1 Prevent NetworkManager modifications](#Prevent_NetworkManager_modifications)
@@ -97,6 +97,37 @@ nameserver 2a05:dfc7:5::5353
 For an automated renewal of your DNS servers with the most responsive OpenNIC servers, the script [nm-opennic](https://github.com/kewlfft/nm-opennic/) can be used if you have [NetworkManager](/index.php/NetworkManager "NetworkManager").
 
 **Note:** Use of OpenNIC DNS servers will allow host name resolution in the traditional Top-Level Domain (TLD) registries, but also in OpenNIC or afiliated operated namespaces (.o, .libre, .dyn...)
+
+### DNS.WATCH
+
+[DNS.WATCH](https://dns.watch/) focuses on neutrality and security and provides two servers located in Germany with no logging and with DNSSEC enabled. Note they welcome commercial sponsorship.
+
+```
+# dns.watch IPv4 nameservers
+nameserver 84.200.69.80    # resolver1.dns.watch 
+nameserver 84.200.70.40    # resolver2.dns.watch
+
+```
+
+### UncensoredDNS
+
+[UncensoredDNS](http://censurfridns.dk) is a free uncensored DNS service. It is run by a private individual and consists in one anycast served by multiple servers and one unicast node hosted in Denmark.
+
+```
+# censurfridns.dk IPv4 nameservers
+nameserver 91.239.100.100    ## anycast.censurfridns.dk
+nameserver 89.233.43.71      ## unicast.censurfridns.dk
+
+```
+
+```
+# censurfridns.dk IPv6 nameservers
+nameserver 2001:67c:28a4::   ## anycast.censurfridns.dk
+nameserver 2a01:3a0:53:53::  ## unicast.censurfridns.dk
+
+```
+
+**Note:** Its servers listen to port 5353 as well as the standard port 53\. This can be used in case your ISP hijacks port 53.
 
 ### Cisco Umbrella (formerly OpenDNS)
 
@@ -181,40 +212,9 @@ nameserver 2a02:6b8:0:1::feed:a11 # Alternate IPv6 DNS
 
 Yandex.DNS' speed is the same in the three modes. In *Basic* mode, there is no traffic filtering. In *Safe* mode, protection from infected and fraudulent sites is provided. *Family* mode enables protection from dangerous sites and blocks sites with adult content.
 
-### DNS.WATCH
-
-[DNS.WATCH](https://dns.watch/) focuses on neutrality and security and provides two servers located in Germany with no logging and with DNSSEC enabled. Note they welcome commercial sponsorship.
-
-```
-# dns.watch IPv4 nameservers
-nameserver 84.200.69.80    # resolver1.dns.watch 
-nameserver 84.200.70.40    # resolver2.dns.watch
-
-```
-
-### UncensoredDNS
-
-[UncensoredDNS](http://censurfridns.dk) is a free uncensored DNS service. It is run by a private individual and consists in one anycast served by multiple servers and one unicast node hosted in Denmark.
-
-```
-# censurfridns.dk IPv4 nameservers
-nameserver 91.239.100.100    ## anycast.censurfridns.dk
-nameserver 89.233.43.71      ## unicast.censurfridns.dk
-
-```
-
-```
-# censurfridns.dk IPv6 nameservers
-nameserver 2001:67c:28a4::   ## anycast.censurfridns.dk
-nameserver 2a01:3a0:53:53::  ## unicast.censurfridns.dk
-
-```
-
-**Note:** Its servers listen to port 5353 as well as the standard port 53\. This can be used in case your ISP hijacks port 53.
-
 ### Quad9
 
-[Quad9](https://quad9.net/#/) is a free DNS service; its primary unique feature is a blocklist which avoids resolving known malicious domains. The addresses below are worldwide anycast.
+[Quad9](https://quad9.net/#/) is a free DNS service founded by [IBM](https://www.ibm.com/security), [Packet Clearing House](https://www.pch.net) and [Global Cyber Alliance](https://www.globalcyberalliance.org); its primary unique feature is a blocklist which avoids resolving known malicious domains. The addresses below are worldwide anycast.
 
 ```
 # Quad9 IPv4 nameservers

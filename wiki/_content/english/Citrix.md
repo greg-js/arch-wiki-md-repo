@@ -1,16 +1,16 @@
+[Citrix Receiver](https://en.wikipedia.org/wiki/Citrix_Receiver "wikipedia:Citrix Receiver") is the client component of XenDesktop and XenApp, developed by Citrix Systems.
+
 ## Contents
 
-*   [1 Install from AUR](#Install_from_AUR)
-    *   [1.1 Install Package](#Install_Package)
-    *   [1.2 Google Chromium](#Google_Chromium)
+*   [1 Installation](#Installation)
+    *   [1.1 Google Chromium](#Google_Chromium)
 *   [2 Manual Install](#Manual_Install)
     *   [2.1 Citrix Receiver (icaclient) Installation](#Citrix_Receiver_.28icaclient.29_Installation)
 *   [3 TLS/SSL Certificates](#TLS.2FSSL_Certificates)
-*   [4 Troubleshooting](#Troubleshooting)
+*   [4 Audio Support](#Audio_Support)
+*   [5 Troubleshooting](#Troubleshooting)
 
-## Install from AUR
-
-#### Install Package
+## Installation
 
 [Install](/index.php/Install "Install") the [icaclient](https://aur.archlinux.org/packages/icaclient/) package.
 
@@ -124,6 +124,12 @@ There may be several reasons for this:
 
 1.  Upgrade your client to 13.1 or later. Citrix now supports SHA-2 hashes in the ICA client version 13.1.0.285639.
 2.  Contact your CA and have your certificate re-keyed with a SHA-1 hash.
+
+## Audio Support
+
+Citrix Receiver uses [ALSA](https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture "wikipedia:Advanced Linux Sound Architecture"). If you use [Pulse Audio](https://en.wikipedia.org/wiki/Pulse_Audio "wikipedia:Pulse Audio"), install [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa).
+
+To get audio input into Citrix Receiver, in `~/.ICAClient/wfclient.ini`, add `AllowAudioInput=True` anywhere in the `[WFClient]` section.
 
 ## Troubleshooting
 

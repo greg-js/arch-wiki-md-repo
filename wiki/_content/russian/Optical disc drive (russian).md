@@ -672,7 +672,7 @@ Nero Linux предоставляет следующие возможности:
 
 *   **[Grip](https://en.wikipedia.org/wiki/ru:Grip "wikipedia:ru:Grip")** — Быстрый и лёгкий CD риппер внутри проекта GNOME, который похож на [Audiograbber](https://en.wikipedia.org/wiki/ru:Audiograbber "wikipedia:ru:Audiograbber").
 
-	[http://sourceforge.net/projects/grip/](http://sourceforge.net/projects/grip/) || [grip](https://www.archlinux.org/packages/?name=grip)
+	[http://sourceforge.net/projects/grip/](http://sourceforge.net/projects/grip/) || [grip](https://aur.archlinux.org/packages/grip/)
 
 *   **KAudioCreator** — Программа для риппинга и кодирования Audio CD и кодирования файлов с диска.
 

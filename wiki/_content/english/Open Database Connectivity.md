@@ -55,6 +55,8 @@ UsageCount      = 1
 
 ```
 
+The configuration file of FreeTDS itself is `/etc/freetds/freetds.conf`.
+
 ### Myodbc
 
 Myodbc is ODBC driver/connector for mariadb.

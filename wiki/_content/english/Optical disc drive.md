@@ -646,7 +646,7 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 *   **[Grip](https://en.wikipedia.org/wiki/Grip_(software) "wikipedia:Grip (software)")** — Fast and light CD ripper within the GNOME project that resembles [Audiograbber](https://en.wikipedia.org/wiki/Audiograbber "wikipedia:Audiograbber").
 
-	[https://sourceforge.net/projects/grip/](https://sourceforge.net/projects/grip/) || [grip](https://www.archlinux.org/packages/?name=grip).
+	[https://sourceforge.net/projects/grip/](https://sourceforge.net/projects/grip/) || [grip](https://aur.archlinux.org/packages/grip/).
 
 *   **[K3b](https://en.wikipedia.org/wiki/K3b "wikipedia:K3b")** — Feature-rich and easy to handle CD/DVD burning and ripping application based on KDElibs.
 

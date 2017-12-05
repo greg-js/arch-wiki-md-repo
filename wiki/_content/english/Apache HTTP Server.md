@@ -24,9 +24,10 @@ Apache is often used together with a scripting language such as PHP and database
         *   [2.4.1 Managing many virtual hosts](#Managing_many_virtual_hosts)
 *   [3 Extensions](#Extensions)
     *   [3.1 PHP](#PHP)
-        *   [3.1.1 Using php-fpm and mod_proxy_fcgi](#Using_php-fpm_and_mod_proxy_fcgi)
-        *   [3.1.2 Using apache2-mpm-worker and mod_fcgid](#Using_apache2-mpm-worker_and_mod_fcgid)
-        *   [3.1.3 MySQL/MariaDB](#MySQL.2FMariaDB)
+        *   [3.1.1 Using libphp](#Using_libphp)
+        *   [3.1.2 Using php-fpm and mod_proxy_fcgi](#Using_php-fpm_and_mod_proxy_fcgi)
+        *   [3.1.3 Using apache2-mpm-worker and mod_fcgid](#Using_apache2-mpm-worker_and_mod_fcgid)
+        *   [3.1.4 Test if PHP works](#Test_if_PHP_works)
     *   [3.2 HTTP2](#HTTP2)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Apache Status and Logs](#Apache_Status_and_Logs)
@@ -277,7 +278,13 @@ A very basic vhost file will look like this:
 
 ### PHP
 
-To use [PHP](/index.php/PHP "PHP"), first [install](/index.php/Install "Install") [php-apache](https://www.archlinux.org/packages/?name=php-apache) package (which will pull in [php](https://www.archlinux.org/packages/?name=php)).
+First install PHP as explained in on the [PHP](/index.php/PHP "PHP") page.
+
+There are multiple methods to use PHP with Apache. [#Using libphp](#Using_libphp) is probably the easiest, but also the least scalable. libphp also requires you to change the mpm module, which may cause problems with other extensions (e.g. it is not compatible with [#HTTP2](#HTTP2)).
+
+#### Using libphp
+
+[Install](/index.php/Install "Install") the [php-apache](https://www.archlinux.org/packages/?name=php-apache) package.
 
 In `/etc/httpd/conf/httpd.conf`, comment the line:
 
@@ -323,17 +330,6 @@ Include conf/extra/php7_module.conf
 
 Restart `httpd.service` using [systemd](/index.php/Systemd#Using_units "Systemd").
 
-To test whether PHP was correctly configured: create a file called `test.php` in your Apache `DocumentRoot` directory (e.g. `/srv/http/` or `~/public_html`) with the following contents:
-
-```
-<?php phpinfo(); ?>
-
-```
-
-To see if it works go to: [http://localhost/test.php](http://localhost/test.php) or [http://localhost/~myname/test.php](http://localhost/~myname/test.php)
-
-For advanced configuration and extensions, please read [PHP](/index.php/PHP "PHP").
-
 #### Using php-fpm and mod_proxy_fcgi
 
 **Note:** Unlike the widespread setup with ProxyPass, the proxy configuration with SetHandler respects other Apache directives like DirectoryIndex. This ensures a better compatibility with software designed for libphp7, mod_fastcgi and mod_fcgid. If you still want to try ProxyPass, experiment with a line like this: `ProxyPassMatch ^/(.*\.php(/.*)?)$ unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/srv/http/$1` 
@@ -353,6 +349,7 @@ Create `/etc/httpd/conf/extra/php-fpm.conf` with the following content:
 
  `/etc/httpd/conf/extra/php-fpm.conf` 
 ```
+DirectoryIndex index.php index.html
 <FilesMatch \.php$>
     SetHandler "proxy:unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/"
 </FilesMatch>
@@ -369,16 +366,6 @@ Include conf/extra/php-fpm.conf
 **Note:** The pipe between `sock` and `fcgi` is not allowed to be surrounded by a space! `localhost` can be replaced by any string. More [here](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html)
 
 You can configure PHP-FPM in `/etc/php/php-fpm.d/www.conf`, but the default setup should work fine.
-
-**Note:**
-
-If you have added the following lines to `httpd.conf`, remove them, as they are no longer needed:
-
-```
-LoadModule php7_module modules/libphp7.so
-Include conf/extra/php7_module.conf
-
-```
 
 [Restart](/index.php/Restart "Restart") `httpd.service` and `php-fpm.service`.
 
@@ -439,29 +426,22 @@ Include conf/extra/php-fcgid.conf
 
 ```
 
-**Note:**
-
-If you have added the following lines to `httpd.conf`, remove them, as they are no longer needed:
-
-```
-LoadModule php7_module modules/libphp7.so
-Include conf/extra/php7_module.conf
-
-```
-
 [Restart](/index.php/Restart "Restart") `httpd.service`.
 
-#### MySQL/MariaDB
+#### Test if PHP works
 
-Follow the instructions in [PHP#MySQL/MariaDB](/index.php/PHP#MySQL.2FMariaDB "PHP").
+To test whether PHP was correctly configured: create a file called `test.php` in your Apache `DocumentRoot` directory (e.g. `/srv/http/` or `~/public_html`) with the following contents:
 
-When configuration is complete, restart `httpd.service` to apply all the changes.
+```
+<?php phpinfo(); ?>
+
+```
+
+To see if it works go to: [http://localhost/test.php](http://localhost/test.php) or [http://localhost/~myname/test.php](http://localhost/~myname/test.php)
 
 ### HTTP2
 
-To enable HTTP/2 support, install the [nghttp2](https://www.archlinux.org/packages/?name=nghttp2) package.
-
-Then uncomment the following line in `httpd.conf`:
+To enable HTTP/2 support, uncomment the following line in `httpd.conf`:
 
 ```
 LoadModule http2_module modules/mod_http2.so

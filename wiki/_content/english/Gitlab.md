@@ -3,7 +3,7 @@ Related articles
 *   [Gitolite](/index.php/Gitolite "Gitolite")
 *   [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on Rails")
 
-From [GitLab's homepage:](https://about.gitlab.com/)
+From [GitLab's homepage](https://about.gitlab.com/):
 
 	GitLab offers git repository management, code reviews, issue tracking, activity feeds and wikis. Enterprises install GitLab on-premise and connect it with LDAP and Active Directory servers for secure authentication and authorization. A single GitLab server can handle more than 25,000 users but it is also possible to create a high availability setup with multiple active servers.
 
@@ -22,8 +22,7 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
         *   [2.5.2 PostgreSQL](#PostgreSQL)
     *   [2.6 Firewall](#Firewall)
     *   [2.7 Initialize Gitlab database](#Initialize_Gitlab_database)
-    *   [2.8 Configure Git User](#Configure_Git_User)
-    *   [2.9 Adjust modifier bits](#Adjust_modifier_bits)
+    *   [2.8 Adjust modifier bits](#Adjust_modifier_bits)
 *   [3 Start and test GitLab](#Start_and_test_GitLab)
 *   [4 Upgrade database on updates](#Upgrade_database_on_updates)
 *   [5 Advanced Configuration](#Advanced_Configuration)
@@ -216,7 +215,7 @@ It should not be set as world readable, e.g. only processes running under the `g
 
 ```
 
-For more info and other ways to create/manage MySQL databases, see the [MariaDB documentation](https://mariadb.org/docs/) and the [GitLab official (generic) install guide](https://github.com/gitlabhq/gitlabhq/blob/6-5-stable/doc/install/installation.md).
+For more info and other ways to create/manage MySQL databases, see the [MariaDB documentation](https://mariadb.org/docs/) and the [GitLab official (generic) install guide](https://github.com/gitlabhq/gitlabhq/blob/master/doc/install/installation.md).
 
 #### PostgreSQL
 
@@ -315,16 +314,6 @@ Finally run the following commands to check your installation:
 *   The *gitlab:env:info* and *gitlab:check* commands will show a fatal error related to git. This is OK.
 *   If *gitlab:check* fails with *Check GitLab API access: FAILED. code: 401*, see [#401 Unauthorized on all API access](#401_Unauthorized_on_all_API_access) and [#/etc/webapps/gitlab/secret is empty](#.2Fetc.2Fwebapps.2Fgitlab.2Fsecret_is_empty) of the troubleshoot section to resolve this.
 *   The *gitlab:check* will complain about missing initscripts. This is nothing to worry about, as [systemd](/index.php/Systemd "Systemd") service files are used instead (which GitLab does not recognize).
-
-### Configure Git User
-
-```
-# cd /usr/share/webapps/gitlab
-# su - gitlab -s /bin/sh -c 'git config --global user.name  "GitLab"'
-# su - gitlab -s /bin/sh -c 'git config --global user.email "example@example.com"'
-# su - gitlab -s /bin/sh -c 'git config --global core.autocrlf "input"'
-
-```
 
 ### Adjust modifier bits
 

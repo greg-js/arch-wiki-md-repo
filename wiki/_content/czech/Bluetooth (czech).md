@@ -1,3 +1,5 @@
+[Bluetooth](http://www.bluetooth.org/) je standard pro bezdrátové propojení mobilních telefonů, počítačů a dalších elektronických zařízení krátkého dosahu. V Linuxu je kanonická implementace balíku protokolů Bluetooth [BlueZ](http://www.bluez.org/).
+
 ## Contents
 
 *   [1 Instalace](#Instalace)
@@ -27,32 +29,31 @@
 
 ## Instalace
 
-Pro použití bluetooth musíte mít nainstalován balíček [bluez](http://www.bluez.org):
+Nainstalujte balíčky [bluez](https://www.archlinux.org/packages/?name=bluez) a [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils). Balíček [bluez](https://www.archlinux.org/packages/?name=bluez) poskytuje sadu protokolů Bluetooth a balíček, [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) poskytuje nástroj `bluetoothctl`.
 
 ```
-# pacman -S bluez
-
-```
-
-Jakmile je balík bluez nainstalován, musí se spustit bluetooth a dbus daemon:
-
-```
-# /etc/rc.d/dbus start
-# /etc/rc.d/bluetooth start
+# pacman -S bluez bluez-utils
 
 ```
 
-Dbus daemon se používá ke čtení nastavení a pro párování zařízení. Bluetooth daemon je potřeba pro komunikaci přes protokol Bluetooth. Je důležité, aby byl dbus spušten **dříve** než bluetooth. Jesliže dbus neběží a bluetooth daemon byl spuštěn, nastartujte znovu dbus a bluetooth daemona restartujte:
+Vložte obecný ovladač bluetooth, pokud již nebyl vložen:
 
 ```
-# /etc/rc.d/bluetooth restart
+# modprobe btusb
 
 ```
 
-Pokud chcete spouštět bluetooth automaticky při startu počítače, přidejte bluetooth mezi pole daemonů v souboru rc.conf (daemon musí být umístěn až za dbus):
+Přes systemd nastartujte službu `bluetooth.service`.
 
 ```
-DAEMONS=(... bluetooth)
+# systemctl start bluetooth.service
+
+```
+
+Můžete také povolit automatický start při bootu.
+
+```
+# systemctl enable bluetooth.service
 
 ```
 

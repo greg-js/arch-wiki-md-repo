@@ -580,7 +580,12 @@ If you get a segmentation fault or error message when trying to play local files
 
 ```
 
-- it's caused by a missing libavcodec dependency. For PulseAudio users, installing [ffmpeg-compat-54](https://aur.archlinux.org/packages/ffmpeg-compat-54/) should fix it.
+- it's caused by a missing libavcodec dependency. For PulseAudio users, installing [ffmpeg-compat-54](https://aur.archlinux.org/packages/ffmpeg-compat-54/) should fix it. If you get PGP verification errors when you install it you might have to import the correct PGP key.
+
+```
+   $ gpg --keyserver pgp.mit.edu --recv-keys FCF986EA15E6E293A5644F10B4322F04D67658D8
+
+```
 
 ### Not respecting window manager rules
 

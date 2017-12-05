@@ -193,9 +193,7 @@ default-character-set = utf8mb4
 
 [mysqld]
 collation_server = utf8mb4_unicode_ci
-character_set_client = utf8mb4
 character_set_server = utf8mb4
-skip-character-set-client-handshake
 
 [mysql]
 default-character-set = utf8mb4

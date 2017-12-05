@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [ATI](/index.php/ATI "ATI") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-07，点击[这里](https://wiki.archlinux.org/index.php?title=ATI&diff=0&oldid=484693)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [ATI](/index.php/ATI "ATI") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-12-04，点击[这里](https://wiki.archlinux.org/index.php?title=ATI&diff=0&oldid=495878)可以查看翻译后英文页面的改动。
 
 相关文章
 
@@ -61,9 +61,10 @@
 
 **注意:** 如果你之前安装过私有驱动(catalyst)，请参见[这里](/index.php/AMD_Catalyst_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.8D.B8.E8.BD.BD "AMD Catalyst (简体中文)")来卸载
 
-[安装](/index.php/Install "Install")软件包[xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati).它为2D加速提供DDX驱动,而作为其依赖的[mesa](https://www.archlinux.org/packages/?name=mesa)提供 DRI 支持和 3D 加速。
+[[Install|安装]软件包 [mesa](https://www.archlinux.org/packages/?name=mesa)，它提供 DRI 和 3D 加速。
 
-若需要x86_64下的32位支持,可以从[multilib](/index.php/Multilib "Multilib")安装 [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa).
+*   若需要x86_64下的32位支持,可以从 [multilib](/index.php/Multilib "Multilib") 安装 [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa).
+*   要使用 [Xorg](/index.php/Xorg "Xorg") 2D 加速 DDX 驱动，请安装软件包 [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati).
 
 [加速视频解码](#.E5.90.AF.E5.8A.A8.E8.A7.86.E9.A2.91.E5.8A.A0.E9.80.9F) 由 [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) 和 [lib32-mesa-vdpau](https://www.archlinux.org/packages/?name=lib32-mesa-vdpau) 包提供支持。
 
@@ -133,7 +134,7 @@ Option "AccelMethod" "glamor"
 
 ```
 
-使用 Glamor 加速方式时可以启用 **ShadowPrimary** 选项，它将启用一个被称为 "shadow primary" 的缓冲区来供CPU快速存取像素信息，并给每个显示控制器 (CRTC) 分离出单独的 scanout 缓冲区。这将提升某些 2D 工作的性能，但可能会降低其他（比如3D）工作的性能。注意当前启用这个选项会禁用 "EnablePageFlip" 选项。
+使用 Glamor 加速方式时可以启用 **ShadowPrimary** 选项，它将启用一个被称为 "shadow primary" 的缓冲区来供CPU快速存取像素信息，并给每个显示控制器 (CRTC) 分离出单独的 scanout 缓冲区。这将提升某些 2D 工作的性能，但可能会降低其他（比如3D）工作的性能。
 
 ```
 Option "ShadowPrimary" "on"

@@ -33,9 +33,7 @@ Related articles
 
 ## Installation
 
-**Note:** Using the precompiled package disallows configuration, since dwm is configured by editing its source code . See [#Configuration](#Configuration) for more information.
-
-[Install](/index.php/Install "Install") the [dwm](https://www.archlinux.org/packages/?name=dwm) package. Alternatively, make changes to the source code, then compile dwm using [ABS](/index.php/ABS "ABS") or the [dwm-git](https://aur.archlinux.org/packages/dwm-git/) package for the development version.
+Download the [dwm](https://aur.archlinux.org/packages/dwm/) or [dwm-git](https://aur.archlinux.org/packages/dwm-git/) (for the development version) package, and make any required configuration changes before building. See [#Configuration](#Configuration) for more information.
 
 ## Starting dwm
 

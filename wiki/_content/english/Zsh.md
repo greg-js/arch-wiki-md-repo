@@ -68,7 +68,7 @@ $ zsh /usr/share/zsh/functions/Newuser/zsh-newuser-install -f
 
 See [Command-line shell#Changing your default shell](/index.php/Command-line_shell#Changing_your_default_shell "Command-line shell").
 
-**Tip:** If replacing [bash](https://www.archlinux.org/packages/?name=bash), users may want to move some code from `~/.bashrc` to `~/.zshrc` (e.g. the prompt and the [aliases](/index.php/Bash#Aliases "Bash")) and from `~/.bash_profile` to `~/.zprofile` (e.g. [the code that starts the X Window System](/index.php/Xinitrc#Autostart_X_at_login "Xinitrc")).
+**Tip:** If replacing [bash](https://www.archlinux.org/packages/?name=bash), users may want to move some code from `~/.bashrc` to `~/.zshrc` (e.g. the prompt and the [aliases](/index.php/Bash#Aliases "Bash")) and from `~/.bash_profile` to `~/.zprofile` (e.g. [the code that starts the X Window System](/index.php/Xinit#Autostart_X_at_login "Xinit")).
 
 ## Startup/Shutdown files
 
@@ -179,7 +179,9 @@ setopt COMPLETE_ALIASES
 
 ### Key bindings
 
-Zsh does not use [readline](/index.php/Readline "Readline"), instead it uses its own and more powerful Zsh Line Editor, ZLE. It does not read `/etc/inputrc` or `~/.inputrc`. ZLE has an [emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. If one of the `$VISUAL` or `$EDITOR` environment variables contain the string `vi` then vi mode will be used; otherwise, it will default to emacs mode. Set the mode explicitly with `bindkey -e` or `bindkey -v` respectively for emacs mode or vi mode.
+Zsh does not use [readline](/index.php/Readline "Readline"), instead it uses its own and more powerful Zsh Line Editor, ZLE. It does not read `/etc/inputrc` or `~/.inputrc`.
+
+ZLE has an [emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. If one of the `$VISUAL` or `$EDITOR` environment variables contain the string `vi` then vi mode will be used; otherwise, it will default to emacs mode. Set the mode explicitly with `bindkey -e` or `bindkey -v` respectively for emacs mode or vi mode.
 
 See [ZshWiki: zle:bindkeys](http://zshwiki.org/home/zle/bindkeys) for instructions on keybinding setup.
 
@@ -202,7 +204,12 @@ By doing this, only the past commands matching the current line up to the curren
 
 ### Prompts
 
-**Note:** Zsh introduced a bug in 5.3 with multi-line prompts. Tab completion will move your cursor up deleting a line of your prompt. See [[1]](https://www.zsh.org/mla/workers//2017/msg00021.html) for more details. For temporary workarounds you can either use Zsh 5.2, or attempt a number of workarounds listed [[2]](https://github.com/sorin-ionescu/prezto/issues/1245).
+Zsh supports:
+
+*   left side prompts: `PS1` (or `PROMPT`), `PS2`, `PS3`, `PS4`.
+*   right side prompts: `RPS1` (or `RPROMPT`), `RPS2` (or `RPROMPT2`).
+
+See [Parameters Used By The Shell](http://zsh.sourceforge.net/Doc/Release/Parameters.html#Parameters-Used-By-The-Shell) or [zshparam(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshparam.1) for their explanation.
 
 #### Prompt themes
 
@@ -238,23 +245,23 @@ $ prompt -p
 
 #### Customized prompt
 
-For users who are dissatisfied with the prompts mentioned above (or want to expand their usefulness), Zsh offers the possibility to build a custom prompt. Zsh supports a left- and right-sided prompt additional to the single, left-sided prompt that is common to all shells. Customize it by using `PROMPT=` with prompt escapes.
+For users who are dissatisfied with the prompt themes mentioned above (or want to expand their usefulness), Zsh offers the possibility to build a custom prompt. Zsh supports a left- and right-sided prompt additional to the single, left-sided prompt that is common to all shells. Customize it by using `PROMPT=` with prompt escapes.
 
 See [Prompt Expansion](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html) for a list of prompt variables and conditional substrings, or take a look at the [zshmisc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1) manpage.
 
 ##### Colors
 
-Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt").
+Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt"). See [Visual effects](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects) or [zshmisc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1) for prompt escapes to set foreground color, background color and other visual effects.
 
-See [Visual effects](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects) in [zshmisc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1) for prompt escapes to set foreground color, background color and other visual effects.
-
-Colors can be specified by [numeric color code](https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg) or by name (see [zshzle(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshzle.1) section [CHARACTER HIGHLIGHTING](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Character-Highlighting)). Most terminals support the following colors by name:
+[Colors](http://zsh.sourceforge.net/FAQ/zshfaq03.html#l42) can be specified by numeric color code or by name (see [Character Highlighting](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Character-Highlighting) or [zshzle(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshzle.1)). Most terminals support the following colors by name:
 
 | Possible color values |
 | `black` or `0` | `red` or `1` |
 | `green` or `2` | `yellow` or `3` |
 | `blue` or `4` | `magenta` or `5` |
 | `cyan` or `6` | `white` or `7` |
+
+See [xterm-256color chart](https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg) for color codes supported by terminal emulators compatible with xterm 256 colors.
 
 **Note:** Bold text does not necessarily use the same colors as normal text. For example, `%F{yellow}*text*%f` looks brown or a very dark yellow, while `%F{yellow}%B*text*%b%f` looks like bright or regular yellow.
 
@@ -309,7 +316,7 @@ See [dotfiles#Repositories](/index.php/Dotfiles#Repositories "Dotfiles") for mor
 
 ### Autostart X at login
 
-See [Xinitrc#Autostart X at login](/index.php/Xinitrc#Autostart_X_at_login "Xinitrc").
+See [xinit#Autostart X at login](/index.php/Xinit#Autostart_X_at_login "Xinit").
 
 ### The "command not found" hook
 
@@ -325,7 +332,7 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 
 ### The ttyctl command
 
-[[3]](http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-tty_002c-freezing) describes the `ttyctl` command in Zsh. This may be used to "freeze/unfreeze" the terminal. Many programs change the terminal state, and often do not restore terminal settings on exiting abnormally. To avoid the need to manually reset the terminal, use the following:
+[[1]](http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-tty_002c-freezing) describes the `ttyctl` command in Zsh. This may be used to "freeze/unfreeze" the terminal. Many programs change the terminal state, and often do not restore terminal settings on exiting abnormally. To avoid the need to manually reset the terminal, use the following:
 
  `~/.zshrc` 
 ```
@@ -377,7 +384,7 @@ to print the dirstack. Use `cd -<NUM>` to go back to a visited folder. Use autoc
 
 cdr allows you to change the working directory to a previous working directory from a list maintained automatically. It stores all entries in files that are maintained across sessions and (by default) between terminal emulators in the current session.
 
-See [Remembering Recent Directories](http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Recent-Directories) in [zshcontrib(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshcontrib.1).
+See [Remembering Recent Directories](http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Recent-Directories) or [zshcontrib(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshcontrib.1).
 
 ### Help command
 
@@ -403,7 +410,7 @@ autoload -Uz run-help-svk
 autoload -Uz run-help-svn
 ```
 
-For example `run-help git commit` command will now open the man page [git-commit(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/git-commit.1) instead of [git(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/git.1).
+For example `run-help git commit` command will now open the [man page](/index.php/Man_page "Man page") [git-commit(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/git-commit.1) instead of [git(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/git.1).
 
 ### Fish-like syntax highlighting
 
@@ -484,6 +491,8 @@ bindkey '^[[1;3D'      cdUndoKey
 
 ### xterm title
 
+If your terminal emulator supports it you can set its title from Zsh. This allows dynamically changing the the title to display relevant information about the shell state, for example showing the user name and current directory or the currently executing command.
+
 xterm title is set with [xterm escape sequences](http://tldp.org/HOWTO/Xterm-Title-3.html#ss3.1). For example:
 
 ```
@@ -498,9 +507,16 @@ My xterm title
 
 ```
 
-An simple way to have a dynamic title is to set the title in a [hook function](http://zsh.sourceforge.net/Doc/Release/Functions.html#Hook-Functions), particularly `precmd` and `preexec`.
+An simple way to have a dynamic title is to set the title in a hook functions `precmd` and `preexec`. See [Hook Functions](http://zsh.sourceforge.net/Doc/Release/Functions.html#Hook-Functions) or [zshmisc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1).
 
-By using `print -P` you can take advantage of prompt escapes. Title printing can be split up in multiple commands as long as they are sequential.
+By using `print -P` you can take advantage of prompt escapes.
+
+**Tip:** Title printing can be split up in multiple commands as long as they are sequential.
+
+**Warning:**
+
+*   Do not use `-P` option of `print` when printing variables to prevent them from being parsed as prompt escapes.
+*   Use `q` [parameter expansion flag](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Parameter-Expansion-Flags) when printing variables to prevent them from being parsed as escape sequences.
 
  `~/.zshrc` 
 ```
@@ -521,11 +537,6 @@ if [[ "$TERM" == (screen*|xterm*|rxvt*) ]]; then
 fi
 
 ```
-
-**Warning:**
-
-*   Do not use `-P` option of `print` when printing variables to prevent them from being parsed as prompt escapes.
-*   Use `q` [parameter expansion flag](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Parameter-Expansion-Flags) when printing variables to prevent them from being parsed as escape sequences.
 
 ## Uninstallation
 
@@ -565,7 +576,7 @@ To this:
 *   [A User's Guide to ZSH](http://zsh.sourceforge.net/Guide/zshguide.html)
 *   [The Z Shell Manual](http://zsh.sourceforge.net/Doc/Release/index-frame.html) (different format available [here](http://zsh.sourceforge.net/Doc/))
 *   [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html)
-*   [zsh-lovers(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zsh-lovers.1) (available as [zsh-lovers](https://www.archlinux.org/packages/?name=zsh-lovers) package)
 *   [Zsh Wiki](http://zshwiki.org/home/)
+*   [zsh-lovers(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zsh-lovers.1) (available as [zsh-lovers](https://www.archlinux.org/packages/?name=zsh-lovers) package)
 *   [Gentoo: Zsh/Guide](https://wiki.gentoo.org/wiki/Zsh/Guide "gentoo:Zsh/Guide")
 *   [Bash2Zsh Reference Card](http://www.bash2zsh.com/zsh_refcard/refcard.pdf)

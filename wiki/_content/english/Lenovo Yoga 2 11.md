@@ -60,16 +60,16 @@ confirmed the wifi card was working. I was able to get a connection by setting u
 
 ## Hardware
 
-Tested model 20332 on **Kernel 3.16.1** (stable).
+Tested model 20332 on **Kernel 3.16.1** (stable) and **Kernel 4.14.3** (stable).
 
 | Device | Working? (Yes/No) |
 | Video | Yes (xf86-video-intel and intel-dri for 3D) |
 | Ethernet | N/A |
-| Wireless | Yes (module: ath9k) |
+| Wireless | Yes (module: ath9k or broadcom-wl; check lspci output) |
 | Bluetooth | Yes (module: bluetooth) |
 | Audio | Yes (module: snd_hda_intel) |
-| Web Camera | Yes (tested with Skype) |
-| Card Reader | Not Tested |
+| Web Camera | Yes (module: uvcvideo; tested with Skype) |
+| Card Reader | Yes (module: usb_storage) |
 
 ### lspci
 

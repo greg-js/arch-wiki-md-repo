@@ -10,6 +10,8 @@ pacman udržuje systém aktuální pomocí synchronizace seznamů balíčků s h
 
 Narozdíl od většiny ostatních správců balíčků je pacman napsán v programovacím jazyku C. Používá formát balíčků .tar.gz a v současnosti migruje k používání formátu .tar.xz (komprese LZMA2).
 
+**Tip:** Balíček [pacman](https://www.archlinux.org/packages/?name=pacman) obsahuje další užitečné nástroje jako [makepkg](/index.php/Makepkg "Makepkg"), **pactree**, **vercmp**, a [checkupdates](/index.php/Checkupdates "Checkupdates"). Pro zobrazení úplného seznamu spusťe `pacman -Qlq pacman | grep bin`
+
 ## Contents
 
 *   [1 Konfigurace](#Konfigurace)

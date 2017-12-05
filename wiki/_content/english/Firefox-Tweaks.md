@@ -40,7 +40,6 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [2.3.2 Block certain parts of a domain](#Block_certain_parts_of_a_domain)
         *   [2.3.3 Add [pdf] after links to PDF files](#Add_.5Bpdf.5D_after_links_to_PDF_files)
         *   [2.3.4 Block ads](#Block_ads)
-        *   [2.3.5 Remove fullscreen warning](#Remove_fullscreen_warning)
 *   [3 Mouse and keyboard](#Mouse_and_keyboard)
     *   [3.1 Mouse wheel scroll speed](#Mouse_wheel_scroll_speed)
     *   [3.2 Pixel-perfect trackpad scrolling](#Pixel-perfect_trackpad_scrolling)
@@ -50,16 +49,17 @@ This page contains advanced Firefox configuration options and performance tweaks
 *   [4 Miscellaneous](#Miscellaneous)
     *   [4.1 Enable additional media codecs](#Enable_additional_media_codecs)
         *   [4.1.1 Widevine and Netflix/Amazon Video](#Widevine_and_Netflix.2FAmazon_Video)
-    *   [4.2 Change the order of search engines in the Firefox Search Bar](#Change_the_order_of_search_engines_in_the_Firefox_Search_Bar)
-    *   [4.3 "I'm Feeling Lucky" mode](#.22I.27m_Feeling_Lucky.22_mode)
-    *   [4.4 Secure DNS with DNSSEC validator](#Secure_DNS_with_DNSSEC_validator)
-    *   [4.5 Adding magnet protocol association](#Adding_magnet_protocol_association)
-    *   [4.6 Prevent accidental closing](#Prevent_accidental_closing)
-    *   [4.7 Plugins do not work with latest version](#Plugins_do_not_work_with_latest_version)
-    *   [4.8 Jerky or choppy scrolling](#Jerky_or_choppy_scrolling)
-    *   [4.9 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
-    *   [4.10 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
-    *   [4.11 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
+    *   [4.2 Remove full screen warning](#Remove_full_screen_warning)
+    *   [4.3 Change the order of search engines in the Firefox Search Bar](#Change_the_order_of_search_engines_in_the_Firefox_Search_Bar)
+    *   [4.4 "I'm Feeling Lucky" mode](#.22I.27m_Feeling_Lucky.22_mode)
+    *   [4.5 Secure DNS with DNSSEC validator](#Secure_DNS_with_DNSSEC_validator)
+    *   [4.6 Adding magnet protocol association](#Adding_magnet_protocol_association)
+    *   [4.7 Prevent accidental closing](#Prevent_accidental_closing)
+    *   [4.8 Plugins do not work with latest version](#Plugins_do_not_work_with_latest_version)
+    *   [4.9 Jerky or choppy scrolling](#Jerky_or_choppy_scrolling)
+    *   [4.10 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
+    *   [4.11 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
+    *   [4.12 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
 *   [5 See also](#See_also)
 
 ## Performance
@@ -105,9 +105,11 @@ For more information on OMTC in Firefox read here: [https://wiki.mozilla.org/Pla
 
 **Warning:** Accelerated Azure Canvas may cause invalid/corrupt rendering of images on unsupported devices and/or drivers, see [#Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29).
 
-Go to `about:config`, accept the warning, right click and create a new boolean value. Set the name as `gfx.canvas.azure.accelerated` and set it to *true*.
+Go to `about:config`, accept the warning, right click and create a new boolean value. Set the name as `gfx.canvas.azure.accelerated` and set it to `true`.
 
 To verify restart Firefox then go to `about:support` and search for `AzureCanvasAccelerated` which should be set to *1*.
+
+The acceleration efficiency can be tested by comparing the speed of a [javascript demo](http://js1k.com/2016-elemental/demo/2445) with and without the setting.
 
 ### Stop urlclassifier3.sqlite from being created again
 
@@ -397,10 +399,6 @@ a[href$=".pdf"]:after {
 
 See [floppymoose.com](http://www.floppymoose.com) for an example of how to use `userContent.css` as a basic ad-blocker.
 
-#### Remove fullscreen warning
-
-Warning about video displayed in full screen mode ("… is now fullscreen") can be disabled by setting "full-screen-api.warning.timeout" to 0 in about:config
-
 ## Mouse and keyboard
 
 ### Mouse wheel scroll speed
@@ -464,6 +462,10 @@ The first time you visit a Widevine-enabled page Firefox will display a prompt b
 
 **Note:** Please make sure to check the *Play DRM content* option under Content-Preference.
 
+### Remove full screen warning
+
+Warning about video displayed in full screen mode ("… is now fullscreen") can be disabled by setting `full-screen-api.warning.timeout` to `0` in `about:config`.
+
 ### Change the order of search engines in the Firefox Search Bar
 
 To change the order search engines are displayed in:
@@ -491,11 +493,9 @@ You can enable [DNSSEC](/index.php/DNSSEC "DNSSEC") support for safer browsing.
 
 ### Adding magnet protocol association
 
-In `about:config` set `network.protocol-handler.expose.magnet` to **false**.
+In `about:config` set `network.protocol-handler.expose.magnet` to `false`. In case it does not exist, it needs to be created, right click on a free area and select *New > Boolean*, input `network.protocol-handler.expose.magnet` and set it to `false`.
 
-In the case you couldn't find `network.protocol-handler.expose.magnet` in search, right click in the black space below, click on `new` then click `Boolean`, a small window will open, paste `network.protocol-handler.expose.magnet` and click `OK` then select **false**.
-
-The next time you open a magnet link, you will be prompted with a `Launch Application` dialogue. From there simply select your chosen torrent client. This technique can also be used with other protocols.
+The next time you open a magnet link, you will be prompted with a *Launch Application* dialogue. From there simply select your chosen torrent client. This technique can also be used with other protocols.
 
 ### Prevent accidental closing
 

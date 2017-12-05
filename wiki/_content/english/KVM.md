@@ -34,20 +34,18 @@ This article does not cover features common to multiple emulators using KVM as a
 KVM requires that the virtual machine host's processor has virtualization support (named VT-x for Intel processors and AMD-V for AMD processors). You can check whether your processor supports hardware virtualization with the following command:
 
 ```
-$ lscpu
+$ lscpu | grep Virtualization
 
 ```
 
-Your processor supports virtualization only if there is a line telling you so.
-
-You can also run:
+Alternatively:
 
 ```
 $ egrep --color=auto 'vmx|svm|0xc0f' /proc/cpuinfo
 
 ```
 
-If nothing is displayed after running that command, then your processor does **not** support hardware virtualization, and you will **not** be able to use KVM.
+If nothing is displayed after running either command, then your processor does **not** support hardware virtualization, and you will **not** be able to use KVM.
 
 **Note:** You may need to enable virtualization support in your BIOS.
 

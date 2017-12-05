@@ -19,12 +19,7 @@ Spíše než to nabízí sudo *dočasné* navýšení práv pro jednotlivé př�
 
 ## Instalace
 
-Pro instalaci suda zadejte:
-
-```
-# pacman -S sudo
-
-```
+Nainstalujte balíček [sudo](https://www.archlinux.org/packages/?name=sudo).
 
 Ve výchozím nastavení uživatelům není dovoleno sudo spustit. Pro instrukce viz [#Konfigurace](#Konfigurace).
 
@@ -86,7 +81,7 @@ UŽIVATELSKÉ_JMÉNO   HOSTNAME=(ALL) ALL
 
 kde UŽIVATELSKÉ_JMÉNO je uživatelské jméno dotyčného uživatele.
 
-Povolení členům [skupiny](/index.php?title=Groups_(%C4%8Cesky)&action=edit&redlink=1 "Groups (Česky) (page does not exist)") kolo použít sudo bez výzvy k zadání hesla:
+Povolení členům [skupiny](/index.php?title=Groups_(%C4%8Cesky)&action=edit&redlink=1 "Groups (Česky) (page does not exist)") `kolo` použít sudo bez výzvy k zadání hesla:
 
 ```
 %kolo      ALL=(ALL) NOPASSWD: ALL
@@ -124,9 +119,17 @@ Pro otestování zadejte `sudo -K` pro ukončení současného sezení a nechce 
 
 ### Heslo roota
 
-Uživatelé mohou sudo nakonfigurovat tak, aby místo jejich vlastního uživatelského hesla chtělo heslo uživatele root. Toho lze docílit přidáním volby "rootpw" na řádek Defaults v souboru `/etc/sudoers`:
+Uživatelé mohou sudo nakonfigurovat tak, aby místo jejich vlastního uživatelského hesla chtělo heslo uživatele root. Toho lze docílit přidáním volby `rootpw` na řádek Defaults v souboru `/etc/sudoers`:
 
 ```
 Defaults timestamp_timeout=0,rootpw
+
+```
+
+Chcete-li zabránit odhalení hesla uživatele root, můžete jej omezit na určitou skupinu:
+
+```
+Defaults:%kolo targetpw
+%kolo ALL=(ALL) ALL
 
 ```

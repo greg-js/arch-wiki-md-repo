@@ -107,8 +107,8 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [12.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
     *   [12.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
     *   [12.11 Could not access KVM kernel module: Permission denied](#Could_not_access_KVM_kernel_module:_Permission_denied)
-    *   [12.12 Missing performance graphs in virt-manager](#Missing_performance_graphs_in_virt-manager)
-    *   [12.13 Certain windows games or applications results in a bluescreen](#Certain_windows_games_or_applications_results_in_a_bluescreen)
+    *   [12.12 "System Thread Exception Not Handled" when booting a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_a_Windows_VM)
+    *   [12.13 Certain Windows games/applications crashing/causing a bluescreen](#Certain_Windows_games.2Fapplications_crashing.2Fcausing_a_bluescreen)
 *   [13 See also](#See_also)
 
 ## Installation
@@ -1823,31 +1823,27 @@ to
 
 ```
 
-### Missing performance graphs in virt-manager
+### "System Thread Exception Not Handled" when booting a Windows VM
 
-[Install](/index.php/Install "Install") [python2-cairo](https://www.archlinux.org/packages/?name=python2-cairo).
+Windows 8 or Windows 10 guests may raise a generic compatibility exception at boot, namely "System Thread Exception Not Handled", which tends to be caused by legacy drivers acting strangely on real machines. On KVM machines this issue can generally be solved by setting the CPU model to `core2duo`.
 
-More information: [FS#54472](https://bugs.archlinux.org/task/54472), [[3]](https://bbs.archlinux.org/viewtopic.php?id=230319).
+### Certain Windows games/applications crashing/causing a bluescreen
 
-### Certain windows games or applications results in a bluescreen
+Occasionally, applications running in the VM may crash unexpectedly, whereas they'd run normally on a physical machine. If, while running `dmesg -wH`, you encounter an error mentioning `MSR`, the reason for those crashes is that KVM injects a [General protection fault](https://en.wikipedia.org/wiki/General_protection_fault "wikipedia:General protection fault") (GPF) when the guest tries to access unsupported [Model-specific registers](https://en.wikipedia.org/wiki/Model-specific_register "wikipedia:Model-specific register") (MSRs) - this often results in guest applications/OS crashing. A number of those issues can be solved by passing the `ignore_msrs=1` option to the KVM module, which will ignore unimplemented MSRs.
 
-If you encounter an error mentioning `MSR` while running
-
+ `/etc/modprobe.d/kvm.conf` 
 ```
- dmesg -wH
-
-```
-
-adding
-
-```
- echo 1 > /sys/module/kvm/parameters/ignore_msrs
-
+...
+options kvm ignore_msrs=1
+...
 ```
 
-to your startup script should fix the issue
+Cases where adding this option might help:
 
-See [[4]](http://lkml.iu.edu/hypermail/linux/kernel/0908.2/01472.html) for more information.
+*   GeForce Experience complaining about an unsupported CPU being present.
+*   StarCraft 2 and L.A. Noire reliably blue-screening Windows 10 with `KMODE_EXCEPTION_NOT_HANDLED`. The blue screen information does not identify a driver file in these cases.
+
+**Warning:** While this is normally safe and some applications might not work without this, silently ignoring unknown MSR accesses could potentially break other software within the VM or other VMs.
 
 ## See also
 

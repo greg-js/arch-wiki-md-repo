@@ -5,9 +5,9 @@
 *   [Firefox (简体中文)](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")
 *   [Opera](/index.php/Opera "Opera")
 
-**翻译状态：** 本文是英文页面 [Chromium](/index.php/Chromium "Chromium") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-31，点击[这里](https://wiki.archlinux.org/index.php?title=Chromium&diff=0&oldid=447735)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Chromium](/index.php/Chromium "Chromium") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-12-04，点击[这里](https://wiki.archlinux.org/index.php?title=Chromium&diff=0&oldid=496319)可以查看翻译后英文页面的改动。
 
-[Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) 是一款来自 "The Chromium Project" 的开源图形网络浏览器，基于 [WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebKit")渲染引擎。
+[Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) 是一款来自 "The Chromium Project" 的开源图形网络浏览器，基于 [Blink](https://en.wikipedia.org/wiki/Blink_(web_engine) 渲染引擎。
 
 ## Contents
 
@@ -21,16 +21,15 @@
 *   [3 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
 *   [4 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
     *   [4.1 字体](#.E5.AD.97.E4.BD.93)
-    *   [4.2 卡顿](#.E5.8D.A1.E9.A1.BF)
-    *   [4.3 PDF 插件中的字体问题](#PDF_.E6.8F.92.E4.BB.B6.E4.B8.AD.E7.9A.84.E5.AD.97.E4.BD.93.E9.97.AE.E9.A2.98)
-    *   [4.4 在浏览器和Flash播放器插件强制使用3D加速功能](#.E5.9C.A8.E6.B5.8F.E8.A7.88.E5.99.A8.E5.92.8CFlash.E6.92.AD.E6.94.BE.E5.99.A8.E6.8F.92.E4.BB.B6.E5.BC.BA.E5.88.B6.E4.BD.BF.E7.94.A83D.E5.8A.A0.E9.80.9F.E5.8A.9F.E8.83.BD)
-    *   [4.5 WebGL](#WebGL)
-    *   [4.6 界面混乱](#.E7.95.8C.E9.9D.A2.E6.B7.B7.E4.B9.B1)
+    *   [4.2 PDF 插件中的字体问题](#PDF_.E6.8F.92.E4.BB.B6.E4.B8.AD.E7.9A.84.E5.AD.97.E4.BD.93.E9.97.AE.E9.A2.98)
+    *   [4.3 在浏览器和Flash播放器插件强制使用3D加速功能](#.E5.9C.A8.E6.B5.8F.E8.A7.88.E5.99.A8.E5.92.8CFlash.E6.92.AD.E6.94.BE.E5.99.A8.E6.8F.92.E4.BB.B6.E5.BC.BA.E5.88.B6.E4.BD.BF.E7.94.A83D.E5.8A.A0.E9.80.9F.E5.8A.9F.E8.83.BD)
+    *   [4.4 WebGL](#WebGL)
+    *   [4.5 界面混乱](#.E7.95.8C.E9.9D.A2.E6.B7.B7.E4.B9.B1)
 *   [5 资源](#.E8.B5.84.E6.BA.90)
 
 ## 安装
 
-稳定版的 Chromium, 可以[安装](/index.php/Pacman "Pacman") 软件包 [chromium](https://www.archlinux.org/packages/?name=chromium)。
+稳定版的 Chromium, 可以[安装](/index.php/Pacman "Pacman") 软件包 [chromium](https://www.archlinux.org/packages/?name=chromium)。要使用打印功能，请参考 [Gtk#Printers not shown in the GTK print dialog](/index.php/Gtk#Printers_not_shown_in_the_GTK_print_dialog "Gtk").
 
 其它版本：
 
@@ -48,7 +47,7 @@
 
 *   **Chromium with [VA-API](/index.php/VA-API "VA-API") support** — 增加了启用 VA-API 的补丁
 
-	[https://www.chromium.org/](https://www.chromium.org/) || [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)
+	[https://chromium-review.googlesource.com/c/chromium/src/+/532294](https://chromium-review.googlesource.com/c/chromium/src/+/532294) || [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)
 
 [AUR](/index.php/AUR "AUR")中还有包含 Flash Player 和 Widevine [EME](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions "wikipedia:Encrypted Media Extensions")(支持 Netflix)的二进制版的[google-chrome](https://aur.archlinux.org/packages/google-chrome/) 和
 
@@ -60,7 +59,7 @@
 
 	[https://www.google.com/chrome](https://www.google.com/chrome) || [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/)
 
-**Note:** Google Chrome 停止了 32 位支持，仅支持 64 位安装。
+**Note:** 从 54 版本开始，本地客户端支持 (NaCl) 功能已经被 [chromium](https://www.archlinux.org/packages/?name=chromium) 移除，打开 NaCl 程序会显示错误: "This plugin is not supported". [google-chrome](https://aur.archlinux.org/packages/google-chrome/) 软件包支持 NaCl.
 
 在[Chromium 与 Chrome 比较](https://code.google.com/p/chromium/wiki/ChromiumBrowserVsGoogleChrome) 可以查看Chromium vs Chrome和版本号的区别。
 
@@ -74,29 +73,27 @@
 
 ### Flash播放器
 
-**注意:** Chromium 不再支持 Netscape plugin API (NPAPI)，[flashplugin](https://www.archlinux.org/packages/?name=flashplugin) 已经无法工作。
+使用 Google Chrome 时会自动安装 Flash 播放器。
 
-可以使用 Google Chrome (新Pepper API)提供的 Flash.
-
-*Pepper Flash* 是使用了新的 Pepper plugin API 的 Flash Player 插件。要在 Chromium 中使用，可以从包[pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash)来安装。
+要在 Chromium 中使用，可以安装软件包 [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash)。
 
 并且要在`chrome://settings/content`中启用Flash。
 
 ### Widevine内容解密插件
 
-Widevine 是Google的 Encrypted Media Extensions (媒体加密拓建，即EME) 内容解密组件。它用来看Netflix这一类的付费的视频内容，并已经内置在Chrome中。
+Widevine 是 Google 的 Encrypted Media Extensions (媒体加密拓建，即EME) 内容解密组件。它用来看 Netflix 这一类的付费的视频内容，并已经内置在Chrome中。
 
-要安装Chromium的Widevine CDM，安装 [chromium-widevine](https://aur.archlinux.org/packages/chromium-widevine/) 软件包。
+要安装 Chromium 的 Widevine CDM，安装 [chromium-widevine](https://aur.archlinux.org/packages/chromium-widevine/) 软件包。
 
-请确保 `chrome://plugins` 中的插件已经启用。
+请启用 `chrome://settings/content/protectedContent` 中的 *Allow sites to play protected content*。
 
 ### 在Chromium中打开pdf文件
 
-Chromium 和 Google Chrome 已经内置了 *Chromium PDF Viewer* 插件，所以不需要再安装其它三方插件。如果不plugin, so installing a third-party plugin is not required.要使用 pdf.js, 请先在 `chrome://plugins` 中禁用 *Chromium PDF Viewer* ，然后参考 [Browser plugins#PDF.js](/index.php/Browser_plugins#PDF.js "Browser plugins") 进行设置。
+Chromium 和 Google Chrome 已经内置了 *Chromium PDF Viewer* 插件，所以不需要再安装其它三方插件。如果不要使用 pdf.js, 请先在 `chrome://plugins` 中禁用 *Chromium PDF Viewer*。
 
 ### 证书管理
 
-Chromium 使用 [NSS](/index.php/Nss "Nss") 管理证书，可以通过`Settings` → `Show advanced settings...` → `Manage Certificates...` 设置。
+Chromium 使用 [NSS](/index.php/Nss "Nss") 管理证书，可以通过`chrome://settings/certificates`.设置。
 
 ## 提示和技巧
 
@@ -107,12 +104,6 @@ Chromium 使用 [NSS](/index.php/Nss "Nss") 管理证书，可以通过`Settings
 ### 字体
 
 **Note:** Chromium does not fully integrate with fontconfig/GTK/Pango/X/etc. due to its sandbox. For more information, see the [Linux Technical FAQ](https://dev.chromium.org/developers/linux-technical-faq).
-
-### 卡顿
-
-chrome 及 chromium 在中文环境下使用可能会极其卡顿，原因在于Google Chrome UI 的缺省字体继承自 Gnome 桌面设置（而不是 chrome://settings/）, 地址栏弹出框的缺省字体也是继承自 Gnome 桌面设置。字体名称的标准名称和本地化名称不相同导致了 Skia 缓存无法命中。Skia 缓存无法命中导致 fontconfig 频繁被调用， 而该调用非常消耗 CPU 时间，导致chrome卡顿。因此不要使用文泉驿这样拥有本地化名称的字体，推荐使用Noto Sans CJK系列字体。
-
-AdBlock Plus 最近系列版本占用明显增大，也可能导致卡顿，建议换用ublock origin来减少占用，对于一些低配置电脑效果明显。
 
 ### PDF 插件中的字体问题
 

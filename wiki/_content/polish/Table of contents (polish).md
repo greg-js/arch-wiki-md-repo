@@ -9,8 +9,7 @@
 | <small>4.2.</small> [Printers](/index.php/Category:Printers_(Polski) "Category:Printers (Polski)") <small>(1)</small> |
 | <small>5.</small> [Networking](/index.php/Category:Networking_(Polski) "Category:Networking (Polski)") <small>(2)</small> |
 | <small>5.1.</small> [Proxy servers](/index.php/Category:Proxy_servers_(Polski) "Category:Proxy servers (Polski)") <small>(1)</small> |
-| <small>5.2.</small> [Secure Shell](/index.php?title=Category:Secure_Shell_(Polski)&action=edit&redlink=1 "Category:Secure Shell (Polski) (page does not exist)") <small>(0)</small> |
-| <small>5.3.</small> [Web server](/index.php/Category:Web_server_(Polski) "Category:Web server (Polski)") <small>(1)</small> |
+| <small>5.2.</small> [Web server](/index.php/Category:Web_server_(Polski) "Category:Web server (Polski)") <small>(1)</small> |
 | <small>6.</small> [Pages sorted by topic](/index.php/Category:Pages_sorted_by_topic_(Polski) "Category:Pages sorted by topic (Polski)") <small>(0)</small> |
 | <small>6.1.</small> [About Arch](/index.php/Category:About_Arch_(Polski) "Category:About Arch (Polski)") <small>(6)</small> |
 | <small>6.1.1.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(Polski) "Category:Getting and installing Arch (Polski)") <small>(2) (również w [Pages sorted by topic](/index.php/Category:Pages_sorted_by_topic_(Polski) "Category:Pages sorted by topic (Polski)"))</small> |
