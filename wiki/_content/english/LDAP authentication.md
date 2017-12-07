@@ -336,7 +336,25 @@ Finally set the file permissions `chmod 600 /etc/sssd/sssd.conf` otherwise sssd 
 
 #### 2\. NSCD Configuration
 
-Disable caching for both the passwd and group entries in `/etc/nscd.conf` as it will interfere with sssd caching.
+Disable caching for passwd, group and netgroup entries in `/etc/nscd.conf` as it will interfere with sssd caching.
+
+Keep caching enabled for hosts entries otherwise some services may fail to start.
+
+ `/etc/nscd.conf` 
+```
+# Begin /etc/nscd.conf
+*[...]*
+enable-cache		passwd		**no**
+*[...]*
+enable-cache		group		**no**
+*[...]*
+enable-cache		hosts		yes
+*[...]*
+enable-cache		netgroup	**no**
+*[...]*
+# End /etc/nscd.conf
+
+```
 
 #### 3\. NSS Configuration
 

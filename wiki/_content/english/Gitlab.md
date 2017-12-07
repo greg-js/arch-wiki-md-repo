@@ -15,14 +15,15 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
 *   [2 Configuration](#Configuration)
     *   [2.1 Preliminary Notes](#Preliminary_Notes)
     *   [2.2 GitLab](#GitLab)
-    *   [2.3 GitLab Shell](#GitLab_Shell)
-    *   [2.4 Redis](#Redis)
-    *   [2.5 Database backend](#Database_backend)
-        *   [2.5.1 MariaDB](#MariaDB)
-        *   [2.5.2 PostgreSQL](#PostgreSQL)
-    *   [2.6 Firewall](#Firewall)
-    *   [2.7 Initialize Gitlab database](#Initialize_Gitlab_database)
-    *   [2.8 Adjust modifier bits](#Adjust_modifier_bits)
+    *   [2.3 Custom port for Unicorn](#Custom_port_for_Unicorn)
+    *   [2.4 Secret strings](#Secret_strings)
+    *   [2.5 Redis](#Redis)
+    *   [2.6 Database backend](#Database_backend)
+        *   [2.6.1 MariaDB](#MariaDB)
+        *   [2.6.2 PostgreSQL](#PostgreSQL)
+    *   [2.7 Firewall](#Firewall)
+    *   [2.8 Initialize Gitlab database](#Initialize_Gitlab_database)
+    *   [2.9 Adjust modifier bits](#Adjust_modifier_bits)
 *   [3 Start and test GitLab](#Start_and_test_GitLab)
 *   [4 Upgrade database on updates](#Upgrade_database_on_updates)
 *   [5 Advanced Configuration](#Advanced_Configuration)
@@ -32,26 +33,17 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
         *   [5.2.2 Let's Encrypt](#Let.27s_Encrypt)
     *   [5.3 Web server configuration](#Web_server_configuration)
         *   [5.3.1 Node.js](#Node.js)
-        *   [5.3.2 Nginx and unicorn](#Nginx_and_unicorn)
-            *   [5.3.2.1 Alternative Example](#Alternative_Example)
-        *   [5.3.3 Apache and unicorn](#Apache_and_unicorn)
-            *   [5.3.3.1 Configure Unicorn](#Configure_Unicorn)
-            *   [5.3.3.2 Create a virtual host for Gitlab](#Create_a_virtual_host_for_Gitlab)
-            *   [5.3.3.3 Enable host and start unicorn](#Enable_host_and_start_unicorn)
+        *   [5.3.2 Nginx](#Nginx)
+        *   [5.3.3 Apache](#Apache)
     *   [5.4 Gitlab-workhorse](#Gitlab-workhorse)
 *   [6 Useful Tips](#Useful_Tips)
-    *   [6.1 Fix Rake Warning](#Fix_Rake_Warning)
-    *   [6.2 Hook into /var](#Hook_into_.2Fvar)
-    *   [6.3 Hidden options](#Hidden_options)
-    *   [6.4 Backup and restore](#Backup_and_restore)
-    *   [6.5 Sending mails from Gitlab via SMTP](#Sending_mails_from_Gitlab_via_SMTP)
+    *   [6.1 Hidden options](#Hidden_options)
+    *   [6.2 Backup and restore](#Backup_and_restore)
+    *   [6.3 Sending mails from Gitlab via SMTP](#Sending_mails_from_Gitlab_via_SMTP)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 HTTPS is not green (gravatar not using https)](#HTTPS_is_not_green_.28gravatar_not_using_https.29)
-    *   [7.2 401 Unauthorized on all API access](#401_Unauthorized_on_all_API_access)
-    *   [7.3 Error at push bad line length character: API](#Error_at_push_bad_line_length_character:_API)
-    *   [7.4 Errors after updating](#Errors_after_updating)
-    *   [7.5 /etc/webapps/gitlab/secret is empty](#.2Fetc.2Fwebapps.2Fgitlab.2Fsecret_is_empty)
-    *   [7.6 Gitlab-Unicorn cannot access non-default repositories directory](#Gitlab-Unicorn_cannot_access_non-default_repositories_directory)
+    *   [7.2 Errors after updating](#Errors_after_updating)
+    *   [7.3 Gitlab-Unicorn cannot access non-default repositories directory](#Gitlab-Unicorn_cannot_access_non-default_repositories_directory)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -68,7 +60,9 @@ In order to receive mail notifications, a mail server must be installed and conf
 
 ### Preliminary Notes
 
-The [gitlab](https://www.archlinux.org/packages/?name=gitlab) package installs GitLab's files in a manner that more closely follows standard Linux conventions:
+GitLab is composed of multiple components, see the [architecture overview](https://docs.gitlab.com/ce/development/architecture.html) page.
+
+The [gitlab](https://www.archlinux.org/packages/?name=gitlab) package installs GitLab's files in a manner that more closely follow standard Linux conventions:
 
 | Description | [GitLab's Official](https://github.com/gitlabhq/gitlabhq/blob/master/doc/install/installation.md) | [gitlab](https://www.archlinux.org/packages/?name=gitlab) |
 | Configuration File GitShell | `/home/git/gitlab-shell/config.yml` | `/etc/webapps/gitlab-shell/config.yml` |
@@ -96,31 +90,9 @@ Finally set the correct permissions to the *uploads* directory:
 
 ```
 
-### GitLab Shell
+### Custom port for Unicorn
 
-**Note:** You can leave the `gitlab_url` with default value if you intend to host GitLab on the same host.
-
-Edit `/etc/webapps/gitlab-shell/config.yml` and set `gitlab_url:` to the prefer url and port:
-
- `/etc/webapps/gitlab-shell/config.yml` 
-```
-# GitLab user. git by default
-user: gitlab
-
-# Url to gitlab instance. Used for api calls. Should end with a slash.
-# Default: [http://localhost:8080/](http://localhost:8080/)
-# You only have to change the default if you have configured Unicorn
-# to listen on a custom port, or if you have configured Unicorn to
-# only listen on a Unix domain socket.
-gitlab_url: "[http://localhost:8080/](http://localhost:8080/)" #
-
-http_settings:
-#  user: someone
-#  password: somepass
-...
-```
-
-Update the `/etc/webapps/gitlab/unicorn.rb` configuration if the port and/or hostname is different from the default:
+GitLab Unicorn is the main component which processes most of the user requests. By default, it listens on the `127.0.0.1:8080` address which can be changed in the `/etc/webapps/gitlab/unicorn.rb` file:
 
  `/etc/webapps/gitlab/unicorn.rb` 
 ```
@@ -128,11 +100,39 @@ listen "/run/gitlab/gitlab.socket", :backlog => 1024
 listen "**127.0.0.1:8080**", :tcp_nopush => true
 ```
 
+If the Unicorn address is changed, the configuration of other components which communicate with Unicorn have to be updated as well:
+
+*   For GitLab Shell, update the `gitlab_url` variable in `/etc/webapps/gitlab-shell/config.yml`.
+
+**Tip:** According to the comment in the config file, UNIX socket path can be specified with URL-escaped slashes (i.e. `http+unix://%2Frun%2Fgitlab%2Fgitlab.socket` for the default `/run/gitlab/gitlab.socket`). Additionally, un-escaped slashes can be used to specify the [relative URL root](https://docs.gitlab.com/ce/install/relative_url.html) (e.g. `/gitlab`).
+
+*   For GitLab Workhorse, [edit](/index.php/Edit "Edit") the `gitlab-workhorse.service` and update the `-authBackend` option.
+
+### Secret strings
+
+Make sure that the files `/etc/webapps/gitlab/secret` and `/etc/webapps/gitlab-shell/secret` files contain something. Their content should be kept secret because they are used for the generation of authentication tokens etc.
+
+For example, random strings can be generated with the following commands:
+
+```
+# hexdump -v -n 64 -e '1/1 "%02x"' /dev/urandom > /etc/webapps/gitlab/secret
+# chown root:gitlab /etc/webapps/gitlab/secret
+# chmod 640 /etc/webapps/gitlab/secret
+
+```
+
+```
+# hexdump -v -n 64 -e '1/1 "%02x"' /dev/urandom > /etc/webapps/gitlab-shell/secret
+# chown root:gitlab /etc/webapps/gitlab-shell/secret
+# chmod 640 /etc/webapps/gitlab-shell/secret
+
+```
+
 ### Redis
 
 In order to provide sufficient performance you will need a cache database. [Install](/index.php/Redis#Installation "Redis") and [configure](/index.php/Redis#Configuration "Redis") a Redis instance, being careful to the section dedicated to listening via a socket.
 
-*   Add the user *git* and *gitlab* to the *redis* [group](/index.php/Group "Group").
+*   Add the *gitlab* user to the *redis* [group](/index.php/Group "Group").
 
 *   Update the configuration files:
 
@@ -312,7 +312,6 @@ Finally run the following commands to check your installation:
 **Note:**
 
 *   The *gitlab:env:info* and *gitlab:check* commands will show a fatal error related to git. This is OK.
-*   If *gitlab:check* fails with *Check GitLab API access: FAILED. code: 401*, see [#401 Unauthorized on all API access](#401_Unauthorized_on_all_API_access) and [#/etc/webapps/gitlab/secret is empty](#.2Fetc.2Fwebapps.2Fgitlab.2Fsecret_is_empty) of the troubleshoot section to resolve this.
 *   The *gitlab:check* will complain about missing initscripts. This is nothing to worry about, as [systemd](/index.php/Systemd "Systemd") service files are used instead (which GitLab does not recognize).
 
 ### Adjust modifier bits
@@ -328,13 +327,9 @@ Finally run the following commands to check your installation:
 
 ## Start and test GitLab
 
-**Note:** See [#Troubleshooting](#Troubleshooting) and log files inside the `/usr/share/webapps/gitlab/log` directory for troubleshooting.
-
 Make sure [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") and [Redis](/index.php/Redis "Redis") are running and setup correctly.
 
-After starting the database backends, we can start GitLab with its webserver (Unicorn) by [starting](/index.php/Start "Start") both the `gitlab-sidekiq` and `gitlab-unicorn` systemd units.
-
-To automatically launch GitLab at startup, enable the `gitlab.target`, `gitlab-sidekiq` and `gitlab-unicorn` services.
+Then [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `gitlab.target`.
 
 Now test your GitLab instance by visiting [http://localhost:8080](http://localhost:8080) or [http://yourdomain.com](http://yourdomain.com), you should be prompted to create a password:
 
@@ -343,6 +338,8 @@ username: root
 password: You'll be prompted to create one on your first visit.
 
 ```
+
+See [#Troubleshooting](#Troubleshooting) and log files inside the `/usr/share/webapps/gitlab/log/` directory for troubleshooting.
 
 ## Upgrade database on updates
 
@@ -408,34 +405,14 @@ If you want to integrate Gitlab into a running web server instead of using its b
 
 You can easily set up an http proxy on port 443 to proxy traffic to the GitLab application on port 8080 using http-master for Node.js. After you have created your domain's OpenSSL keys and have gotten you CA certificate (or self signed it), then go to [https://github.com/CodeCharmLtd/http-master](https://github.com/CodeCharmLtd/http-master) to learn how easy it is to proxy requests to GitLab using HTTPS. http-master is built on top of [node-http-proxy](https://github.com/nodejitsu/node-http-proxy).
 
-#### Nginx and unicorn
+#### Nginx
 
-Copy `/usr/share/doc/gitlab/nginx.conf.example` or `/usr/share/doc/gitlab/nginx-ssl.conf.example` to `/etc/nginx/servers-available/gitlab`. See [Nginx#Managing server entries](/index.php/Nginx#Managing_server_entries "Nginx") for more information.
+See [Nginx#Configuration](/index.php/Nginx#Configuration "Nginx") for basic *nginx* configuration and [Nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") for enabling HTTPS. The sample in this section also assumes that server blocks are managed with [Nginx#Managing server entries](/index.php/Nginx#Managing_server_entries "Nginx").
 
-Update the `/etc/nginx/servers-available/gitlab` file and [restart](/index.php/Restart "Restart") the nginx service.
-
-If you are unable to authenticate, add the following headers to `/etc/nginx/servers-available/gitlab`:
-
-```
-proxy_set_header    X-Forwarded-Ssl     on; # Only when using SSL
-proxy_set_header    X-Frame-Options     SAMEORIGIN; 
-
-```
-
-##### Alternative Example
-
-**Note:** You may need to change `localhost:8080` with the correct gitlab address and `example.com` to your desired server name.
-
-**Tip:** See [Nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") before enabling SSL.
-
-Create a file `/etc/nginx/servers-available/gitlab` with the following content:
+Create and edit the configuration based on the following snippet. See the [upstream GitLab repository](https://gitlab.com/gitlab-org/gitlab-ce/tree/master/lib/support/nginx) for more examples.
 
  `/etc/nginx/servers-available/gitlab` 
 ```
-# Created by: Sameer Naik
-# Contributor: francoism90
-# Source: [https://gist.github.com/sameersbn/becd1c976c3dc4866ef8](https://gist.github.com/sameersbn/becd1c976c3dc4866ef8)
-
 upstream gitlab-workhorse {
   server unix:/run/gitlab/gitlab-workhorse.socket fail_timeout=0;
 }
@@ -443,83 +420,53 @@ upstream gitlab-workhorse {
 server {
   listen 80;
   #listen 443 ssl; # uncomment to enable ssl
-  keepalive_timeout 70;
   server_name example.com
-  server_tokens off;
+
   #ssl_certificate ssl/example.com.crt;
   #ssl_certificate_key ssl/example.com.key;
-  charset utf-8;
-  root /dev/null;
-
-  # Increase this if you want to upload larger attachments
-  client_max_body_size 20m;
 
   location / {
-      proxy_read_timeout 300;
-      proxy_connect_timeout 300;
+      # unlimited upload size in nginx (so the setting in GitLab applies)
+      client_max_body_size 0;
+
+      # proxy timeout should match the timeout value set in /etc/webapps/gitlab/unicorn.rb
+      proxy_read_timeout 60;
+      proxy_connect_timeout 60;
       proxy_redirect off;
 
-      proxy_set_header X-Forwarded-Proto $scheme;
       proxy_set_header Host $http_host;
       proxy_set_header X-Real-IP $remote_addr;
       proxy_set_header X-Forwarded-Ssl on;
       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
       proxy_set_header X-Forwarded-Proto $scheme;
-      proxy_set_header X-Frame-Options SAMEORIGIN;
 
-      proxy_pass [http://gitlab-workhorse](http://gitlab-workhorse);
-  }  
+      proxy_pass http://gitlab-workhorse;
+  }
+
+  error_page 404 /404.html;
+  error_page 422 /422.html;
+  error_page 500 /500.html;
+  error_page 502 /502.html;
+  error_page 503 /503.html;
+  location ~ ^/(404|422|500|502|503)\.html$ {
+    root /usr/share/webapps/gitlab/public;
+    internal;
+  }
 }
-```
-
-#### Apache and unicorn
-
-[Install](/index.php/Install "Install") [apache](https://www.archlinux.org/packages/?name=apache) from the [official repositories](/index.php/Official_repositories "Official repositories").
-
-##### Configure Unicorn
-
-As the official installation guide instructs, copy the unicorn configuration file:
-
-```
-# sudo -u git -H cp /usr/share/webapps/gitlab/config/unicorn.rb.example /usr/share/webapps/gitlab/config/unicorn.rb
 
 ```
 
-Now edit `config/unicorn.rb` and add a listening port by uncommenting the following line:
+#### Apache
 
-```
-listen "127.0.0.1:8080"
+Install and configure the [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"). You can use these [upstream recipes](https://gitlab.com/gitlab-org/gitlab-recipes/tree/master/web-server/apache) to get started with the configuration file for GitLab's virtual host.
 
-```
-
-**Tip:** You can set a custom port if you want. Just remember to also include it in Apache's virtual host. See below.
-
-##### Create a virtual host for Gitlab
-
-Create a configuration file for Gitlab’s virtual host and insert the lines below adjusted accordingly. For the ssl section see [LAMP#SSL](/index.php/LAMP#SSL "LAMP"). If you do not need it, remove it. Notice that the SSL virtual host needs a specific IP instead of generic. Also if you set a custom port for Unicorn, do not forget to set it at the BalanceMember line.
-
-You can use these [examples](https://gitlab.com/gitlab-org/gitlab-recipes/tree/master/web-server/apache) to get you started.
-
-##### Enable host and start unicorn
-
-Enable your Gitlab virtual host and reload [Apache](/index.php/Apache "Apache"):
-
- `/etc/httpd/conf/httpd.conf`  ` Include /etc/httpd/conf/extra/gitlab.conf` 
-
-Copy the Apache gitlab.conf file
-
-```
-# cp /usr/share/doc/gitlab/apache.conf.example /etc/httpd/conf/extra/gitlab.conf
-
-```
-
-Finally [start](/index.php/Start "Start") `gitlab-unicorn.service`.
+For the SSL configuration see [Apache HTTP Server#TLS/SSL](/index.php/Apache_HTTP_Server#TLS.2FSSL "Apache HTTP Server"). If you do not need it, remove it. Notice that the SSL virtual host needs a specific IP instead of generic. Also if you set a custom port for Unicorn, do not forget to set it at the `BalanceMember` line.
 
 ### Gitlab-workhorse
 
 Since 8.0 GitLab uses separate HTTP server [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) for large HTTP requests like Git push/pull. If you want to use this instead of SSH, install the [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) package, enable `gitlab-workhorse.service` and configure web server for this. [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) should now be preferred over `gitlab-unicorn` according to the GitLab team: [https://gitlab.com/gitlab-org/gitlab-ce/issues/22528#note_16036216](https://gitlab.com/gitlab-org/gitlab-ce/issues/22528#note_16036216)
 
-**Note:** Unicorn is still needed so don't disable or stop `gitlab-unicorn.service`. If you've changed the port Unicorn listens at, [edit](/index.php/Edit "Edit") the `-authBackend` setting in `gitlab-workhorse.service` accordingly
+**Note:** Unicorn is still needed so don't disable or stop `gitlab-unicorn.service`.
 
 By default [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) listens on `/run/gitlab/gitlab-workhorse.socket`. You can [edit](/index.php/Edit "Edit") `gitlab-workhorse.service` and change the parameter `-listenAddr` to make it listen on an address, for example `-listenAddr 127.0.0.1:8181`. If listening on an address you also need to set the network type to `-listenNetwork tcp`
 
@@ -539,27 +486,6 @@ upstream gitlab {
 ```
 
 ## Useful Tips
-
-### Fix Rake Warning
-
-When running rake tasks for the gitlab project, this error will occur: `fatal: Not a git repository (or any of the parent directories): .git`. This is a bug in bundler, and it can be safely ignored. However, if you want to git rid of the error, the following method can be used:
-
-```
-# cd /usr/share/webapps/gitlab
-# sudo -u gitlab git init
-# sudo -u gitlab git commit -m "initial commit" --allow-empty
-```
-
-### Hook into /var
-
-```
-# mkdir -m700 /var/log/gitlab /var/tmp/gitlab
-# chown gitlab:gitlab /var/log/gitlab /var/tmp/gitlab
-# sudo -u gitlab -i
-# cd ~/gitlab
-# d=log; mv $d/* /var/$d/gitlab; rm -f $d/.gitkeep; rm -r $d && ln -s /var/$d/gitlab $d
-# d=tmp; mv $d/* /var/$d/gitlab; rm -f $d/.gitkeep; rm -r $d && ln -s /var/$d/gitlab $d
-```
 
 ### Hidden options
 
@@ -649,8 +575,6 @@ Gmail will reject mails received this way (and send you a mail that it did). You
 
 ## Troubleshooting
 
-Sometimes things may not work as expected. Be sure to visit the [Trouble Shooting Guide](https://github.com/gitlabhq/gitlab-public-wiki/wiki/Trouble-Shooting-Guide).
-
 ### HTTPS is not green (gravatar not using https)
 
 Redis caches gravatar images, so if you have visited your GitLab with http, then enabled https, gravatar will load up the non-secure images. You can clear the cache by doing
@@ -662,28 +586,6 @@ RAILS_ENV=production bundle-2.3 exec rake cache:clear
 ```
 
 as the gitlab user.
-
-### 401 Unauthorized on all API access
-
-Make 100% sure, that the files `/etc/webapps/gitlab/secret` and `/etc/webapps/gitlab-shell/secret` files contain something!
-
-### Error at push bad line length character: API
-
-If you get the following error while trying to push
-
-```
-fatal: protocol error: bad line length character: API
-
-```
-
-Check that your `/etc/webapps/gitlab-shell/secret` matches `/usr/share/webapps/gitlab/.gitlab_shell_secret`
-
-If it is not the same, recreate the file with the following command
-
-```
-ln -s /etc/webapps/gitlab-shell/secret /usr/share/webapps/gitlab/.gitlab_shell_secret
-
-```
 
 ### Errors after updating
 
@@ -714,24 +616,6 @@ Finally, restart the gitlab services and test your site.
 
 ```
 # systemctl restart gitlab-unicorn gitlab-sidekiq gitlab-workhorse
-
-```
-
-### /etc/webapps/gitlab/secret is empty
-
-This file is usually generated while installing the [gitlab-shell](https://www.archlinux.org/packages/?name=gitlab-shell) and the [gitlab](https://www.archlinux.org/packages/?name=gitlab) packages, but in some cases it may need to be generated manually.
-
-```
-# hexdump -v -n 64 -e '1/1 "%02x"' /dev/urandom > /etc/webapps/gitlab-shell/secret
-# chown root:gitlab /etc/webapps/gitlab-shell/secret
-# chmod 640 /etc/webapps/gitlab-shell/secret
-
-```
-
-```
-# hexdump -v -n 64 -e '1/1 "%02x"' /dev/urandom > /etc/webapps/gitlab/secret
-# chown root:gitlab /etc/webapps/gitlab/secret
-# chmod 640 /etc/webapps/gitlab/secret
 
 ```
 

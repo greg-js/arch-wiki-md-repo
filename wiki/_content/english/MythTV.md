@@ -14,14 +14,11 @@
         *   [5.1.2 Setting up the master backend](#Setting_up_the_master_backend)
         *   [5.1.3 Enable the mythbackend daemon](#Enable_the_mythbackend_daemon)
     *   [5.2 Troubleshooting](#Troubleshooting)
-        *   [5.2.1 XvMCW](#XvMCW)
-        *   [5.2.2 PVR150](#PVR150)
-        *   [5.2.3 Opening DVB frontend device failed](#Opening_DVB_frontend_device_failed)
+        *   [5.2.1 PVR150](#PVR150)
+        *   [5.2.2 Opening DVB frontend device failed](#Opening_DVB_frontend_device_failed)
 *   [6 Frontend setup](#Frontend_setup)
-    *   [6.1 Nvidia XvMC Setup](#Nvidia_XvMC_Setup)
 *   [7 MythTV Plugins](#MythTV_Plugins)
     *   [7.1 MythWeb](#MythWeb)
-    *   [7.2 Mythweather](#Mythweather)
 *   [8 Hints to a Happy Myth System](#Hints_to_a_Happy_Myth_System)
     *   [8.1 Using GDM to autologin your Mythfrontend](#Using_GDM_to_autologin_your_Mythfrontend)
     *   [8.2 Using XDM to Automically Login to your MythFrontend](#Using_XDM_to_Automically_Login_to_your_MythFrontend)
@@ -210,10 +207,6 @@ This should populate your mysql database with TV listings for the next two weeks
 
 ### Troubleshooting
 
-#### XvMCW
-
-If you get a libXvMCW.so.1 shared library error, [install](/index.php/Install "Install") [libxvmc](https://www.archlinux.org/packages/?name=libxvmc).
-
 #### PVR150
 
 If you cannot open /dev/video0 of your PVR150, install the firmware, located in the [ivtv-utils](https://www.archlinux.org/packages/?name=ivtv-utils) package.
@@ -262,16 +255,6 @@ Compared to the backend, getting a frontend running is trivially simple. The fro
 
 On the other hand, the frontend has more options than a luxury car. All of those are an article on their own. There are a few notable options that should be set to ensure a good working setup. If you do not have an interlaced monitor (and almost nobody does), you will need to deinterlace your television output. Go into the TV playback menu and select kernel deinterlacing or bob2x deinterlacing. Try both and see which you like better. Also, in the general settings page, it is good to set up your [Alsa setup] settings, but those vary so greatly it is not worth suggesting values here.
 
-One problem I encountered running mythfrontend 0.20.0.2007013 on fglrx was that the colors were mixed up. People were blue-skinned etc. It turns out there is a hack for ATI cards in the source, but it is not enabled. Uncomment #define USE_ATI_PROPRIETARY_DRIVER_XVIDEO_HACK in libs/libmythtv/videoout_xv.cpp and rebuild. (this will change names in svn and so future versions)
-
-### Nvidia XvMC Setup
-
-Assuming you have loaded the proprietary Nvidia drivers from pacman you may need to [create](/index.php/Textedit "Textedit") `/etc/X11/XvMCConfig` with the following line:
-
- `libXvMCNVIDIA_dynamic.so.1` 
-
-This will allow Mythfrontend to use the XvMC environment for acceleration. Restart Mythfrontend
-
 ## MythTV Plugins
 
 There are a number of plugins available for MythTV in the AUR. They range from RSS readers to DVD players. Take a look at them. Simply installing the package on the frontend computer should impart the intended functionality. There is rarely any additional setup, and when there is, the install file will mention it.
@@ -279,12 +262,6 @@ There are a number of plugins available for MythTV in the AUR. They range from R
 ### MythWeb
 
 [MythWeb](/index.php/MythWeb "MythWeb") is a web interface for MythTV. Instructions for configuring MythWeb in Arch Linux can be found on the [MythWeb](/index.php/MythWeb "MythWeb") page.
-
-### Mythweather
-
-As of 7-10-08 Mythweather is broken in Extra
-
-extra/mythweather 0.21-1 (mythtv-extras)
 
 ## Hints to a Happy Myth System
 

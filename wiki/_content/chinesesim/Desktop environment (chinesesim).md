@@ -1,8 +1,8 @@
 相关文章
 
-*   [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")
-*   [Window manager](/index.php/Window_manager "Window manager")
-*   [Default applications](/index.php/Default_applications "Default applications")
+*   [显示管理器](/index.php/%E6%98%BE%E7%A4%BA%E7%AE%A1%E7%90%86%E5%99%A8 "显示管理器")
+*   [窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")
+*   [默认应用程序](/index.php/%E9%BB%98%E8%AE%A4%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F "默认应用程序")
 
 [桌面环境](https://en.wikipedia.org/wiki/Desktop_environment "wikipedia:Desktop environment")通过汇集使用相同组件库的程序，为用户提供了*完全的*图形用户界面。
 

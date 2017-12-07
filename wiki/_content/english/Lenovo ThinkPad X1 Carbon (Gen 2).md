@@ -604,7 +604,7 @@ This fingerprint reader requires libfprint to be build from the current git ([ht
 
 The SIM-card must be inserted in the back of the laptop.
 
-This is usually a Sierra Wireless EM7345\. It uses the cdc_mbim kernel module from kernel 3.14 forward. Since Gnome 3.14.1 it works with NetworkManager after installing modemmanager.
+This is usually a Sierra Wireless EM7345\. It uses the cdc_mbim kernel module from kernel 3.14 forward. Since Gnome 3.14.1 it works with NetworkManager after installing modemmanager (after a reboot to catch the udev event).
 
 ### GPS
 

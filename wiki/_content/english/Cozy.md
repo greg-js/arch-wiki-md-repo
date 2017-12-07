@@ -1,3 +1,7 @@
+Related articles
+
+*   [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs")
+
 [Cozy](https://cozy.io) is a personal cloud platform free, and self-hostable, written in [Node.js](/index.php/Node.js "Node.js") (the future version, v3, will be written in [Go](/index.php/Go "Go") instead).
 
 The platform aims at simplifying the use of a personal cloud and at allowing the users to take back ownership of their privacy. Its base applications' features include hosting, sharing and synchronising files, pictures, contacts and calendars, along with an email client.
@@ -56,6 +60,8 @@ To create an administrator, first generate the credentials (with [pwgen](https:/
 # curl -X PUT $(head -n1 /etc/cozy/couchdb.login):$(tail -n1 /etc/cozy/couchdb.login)@127.0.0.1:5984/_global_changes
 
 ```
+
+**Note:** You should also take a look at [CouchDB#Single_node_setup_.26_Security](/index.php/CouchDB#Single_node_setup_.26_Security "CouchDB").
 
 ### Starting the controller
 

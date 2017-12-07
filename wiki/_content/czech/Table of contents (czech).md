@@ -9,7 +9,7 @@
 | <small>2.1.</small> [Command shells](/index.php/Category:Command_shells_(%C4%8Cesky) "Category:Command shells (Česky)") <small>(1)</small> |
 | <small>2.2.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving_(%C4%8Cesky) "Category:Data compression and archiving (Česky)") <small>(1)</small> |
 | <small>2.3.</small> [Emulátory](/index.php/Category:Emulators_(%C4%8Cesky) "Category:Emulators (Česky)") <small>(3)</small> |
-| <small>2.4.</small> [Správci souborů](/index.php/Category:File_managers_(%C4%8Cesky) "Category:File managers (Česky)") <small>(1)</small> |
+| <small>2.4.</small> [Správci souborů](/index.php/Category:File_managers_(%C4%8Cesky) "Category:File managers (Česky)") <small>(2)</small> |
 | <small>2.5.</small> [Internetové aplikace](/index.php/Category:Internet_applications_(%C4%8Cesky) "Category:Internet applications (Česky)") <small>(7) (také v [Síťování](/index.php/Category:Networking_(%C4%8Cesky) "Category:Networking (Česky)"))</small> |
 | <small>2.6.</small> [Multimedia](/index.php/Category:Multimedia_(%C4%8Cesky) "Category:Multimedia (Česky)") <small>(2)</small> |
 | <small>2.6.1.</small> [Přehrávače](/index.php/Category:Multimedia_players_(%C4%8Cesky) "Category:Multimedia players (Česky)") <small>(2)</small> |

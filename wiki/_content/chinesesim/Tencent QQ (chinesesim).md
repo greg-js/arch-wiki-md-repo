@@ -213,7 +213,7 @@ $ wineconsole .wine/drive_c/run-qqlight.bat
 *   安装[wine](https://www.archlinux.org/packages/?name=wine)、[wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) 和 [wine-mono](https://www.archlinux.org/packages/?name=wine-mono)
 
 ```
-$ pacman -S wine wine_gecko wine-mono
+$ pacman -S wine wine_gecko wine-mono winetricks
 
 ```
 
@@ -228,7 +228,14 @@ $ winetricks riched20
 
 *   字体替换
 
-解决中文乱码问题。新建一个reg文件，例如名为wine-fonts.reg，写入如下内容：
+解决中文乱码问题。新建一个reg文件，例如名为wine-fonts.reg
+
+```
+$ gedit wine-fonts.reg
+
+```
+
+写入如下内容：
 
 ```
  REGEDIT4
@@ -251,11 +258,11 @@ $ winetricks riched20
 保存后运行：
 
 ```
- $gedit wine-fonts.reg
+ $ wine regedit
 
 ```
 
-也打开regedit图形界面，点击注册表-导入注册表文件，然后选择wine-fonts.reg即可。
+打开regedit图形界面，点击注册表-导入注册表文件，然后选择wine-fonts.reg即可。
 
 #### 安装及配置
 

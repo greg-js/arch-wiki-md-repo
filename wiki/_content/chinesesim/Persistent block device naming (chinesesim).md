@@ -1,10 +1,16 @@
+Related articles
+
+*   [fstab (简体中文)](/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fstab (简体中文)")
+*   [udev (简体中文)](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)")
+*   [LVM (简体中文)](/index.php/LVM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LVM (简体中文)")
+
 **翻译状态：** 本文是英文页面 [Persistent_block_device_naming](/index.php/Persistent_block_device_naming "Persistent block device naming") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-31，点击[这里](https://wiki.archlinux.org/index.php?title=Persistent_block_device_naming&diff=0&oldid=423674)可以查看翻译后英文页面的改动。
 
 本文讲述如何为你的块设备提供持久化命名。udev的导入使之成为可能，也使之优于基于总线的命名法。如果你的机器上有不止一个 SATA, SCSI 或 IDE 磁盘控制器，那么它们所对应的设备节点将会依随机次序添加。这样就可能导致每次引导时设备的名字如 `/dev/**sda**` 与 `/dev/**sdb**` 互换了，最终导致系统不可引导、kernel panic、或者设备不可见。持久化命名法可以解决这些问题。
 
 **注意:**
 
-*   持久设备名有一些超出本文范围的限制，比如虽然 [mkinitcpio](/index.php/Mkinitcpio#init "Mkinitcpio") 支持某个方法，systemd 会对支持的设备名添加额外的限制(例如 [FS#42884](https://bugs.archlinux.org/task/42884))。
+*   持久设备名有一些超出本文范围的限制，比如虽然 [mkinitcpio](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mkinitcpio (简体中文)") 支持某个方法，但 systemd 会对支持的设备名添加额外的限制(例如 [FS#42884](https://bugs.archlinux.org/task/42884))。
 *   如果你使用 [LVM2](/index.php/LVM2 "LVM2")，本文将不适用。因为 LVM 自动处理这一问题。
 
 ## Contents
@@ -63,54 +69,54 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 SYSTEM -> ../../sda2
 
 ```
 
-The labels of your filesystems can be changed. Following are some methods for changing labels on common filesystems:
+可以修改文件系统的标签。下面列出常见文件系统标签的修改方法：
 
 	swap 
 
-	`swaplabel -L <label> /dev/XXX` using [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+	`swaplabel -L <label> /dev/XXX` 用 [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
 	ext2/3/4 
 
-	`e2label /dev/XXX <label>` using [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs)
+	`e2label /dev/XXX <label>` 用 [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs)
 
 	btrfs 
 
-	`btrfs filesystem label /dev/XXX <label>` using [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)
+	`btrfs filesystem label /dev/XXX <label>` 用 [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)
 
 	reiserfs 
 
-	`reiserfstune -l <label> /dev/XXX` using [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs)
+	`reiserfstune -l <label> /dev/XXX` 用 [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs)
 
 	jfs 
 
-	`jfs_tune -L <label> /dev/XXX` using [jfsutils](https://www.archlinux.org/packages/?name=jfsutils)
+	`jfs_tune -L <label> /dev/XXX` 用 [jfsutils](https://www.archlinux.org/packages/?name=jfsutils)
 
 	xfs 
 
-	`xfs_admin -L <label> /dev/XXX` using [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs)
+	`xfs_admin -L <label> /dev/XXX` 用 [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs)
 
 	fat/vfat 
 
-	`dosfslabel /dev/XXX <label>` using [dosfstools](https://www.archlinux.org/packages/?name=dosfstools)
+	`dosfslabel /dev/XXX <label>` 用 [dosfstools](https://www.archlinux.org/packages/?name=dosfstools)
 
 	fat/vfat 
 
-	`mlabel -i /dev/XXX ::<label>` using [mtools](https://www.archlinux.org/packages/?name=mtools)
+	`mlabel -i /dev/XXX ::<label>` 用 [mtools](https://www.archlinux.org/packages/?name=mtools)
 
 	ntfs 
 
-	`ntfslabel /dev/XXX <label>` using [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g)
+	`ntfslabel /dev/XXX <label>` 用 [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g)
 
 	zfs 
 
 	这个文件系统不支持 `/dev/disk/by-label`, 但可以使用 [#by-partlabel](#by-partlabel)
 
-**Note:**
+**注意:**
 
 *   Changing the filesystem label of the root partition has to be done from a "live" GNU/Linux distribution because the partition needs to be unmounted first.
-*   Labels have to be unambiguous to prevent any possible conflicts;
-*   Labels can be up to 16 characters long.
-*   Label 是文件系统的一个属性，所以无法持久的表示单一磁盘阵列设备.
+*   标签必须是唯一的，以防止可能的冲突。
+*   标签最多可以有16个字符。
+*   标签是文件系统的一个属性，所以无法持久地表示单一磁盘阵列设备。
 
 ### by-uuid
 
@@ -197,35 +203,35 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 d0d0d110-0a71-4ed6-936a-304969ea36af -> .
 
 ### 引导管理器
 
-To use persistent names in your boot manager, the following prerequisites must be met:
+要在引导管理器中使用持久化名称，需要满足下列先决条件：
 
-*   You are using a [mkinitcpio](/index.php/Mkinitcpio#Configuration "Mkinitcpio") initial RAM disk image
-*   You have udev enabled in `/etc/mkinitcpio.conf`
+*   使用 [mkinitcpio](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE "Mkinitcpio (简体中文)") 初始化 RAM 磁盘镜像
+*   在 `/etc/mkinitcpio.conf` 中启用了 udev
 
-In the above example, `/dev/sda1` is the root partition. In the [GRUB](/index.php/GRUB "GRUB") `grub.cfg` file, the *linux* line looks like this:
+在上面的例子中，`/dev/sda1` 是引导分区。在 [GRUB](/index.php/GRUB "GRUB") 的 `grub.cfg` 文件中，*linux* 这行如下：
 
 ```
 linux /boot/vmlinuz-linux root=/dev/sda1 rw quiet
 
 ```
 
-Depending on which naming scheme you would prefer, change it to one of the following:
+根据选定的命名方案，将该行内容修改为如下之一：
 
 ```
 linux /boot/vmlinuz-linux root=/dev/disk/by-label/root_myhost rw quiet
 
 ```
 
-or:
+或者：
 
 ```
 linux /boot/vmlinuz-linux root=UUID=2d781b26-0285-421a-b9d0-d4a0d3b55680 rw quiet
 
 ```
 
-If you are using [LILO](/index.php/LILO "LILO"), then do not try this with the `root=...` configuration option; it will not work. Use `append="root=..."` or `addappend="root=..."` instead. Read the LILO man page for more information on `append` and `addappend`.
+如果使用 [LILO](/index.php/LILO "LILO")，请勿使用 `root=...` 配置选项，它不会工作。而应代之以 `append="root=..."` 或 `addappend="root=..."`。详情参阅 LILO 的 man 文档中的 `append` 和 `addappend` 章节。
 
-There is an alternative way to use the label embedded in the filesystem. For example if (as above) the filesystem in `/dev/sda1` is labeled `root_myhost`, you would give this line to GRUB:
+有一个替代的方法处理嵌入配置行中的文件系统标签。如上例中 `/dev/sda1` 文件系统标签为 `root_myhost`，可以在 GRUB 的 配置行中这样写：
 
 ```
 linux /boot/vmlinuz-linux root=LABEL=root_myhost rw quiet

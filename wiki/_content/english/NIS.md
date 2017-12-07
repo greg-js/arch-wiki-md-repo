@@ -257,6 +257,20 @@ See [section 7 of The Linux NIS HOWTO](http://www.tldp.org/HOWTO/NIS-HOWTO/setti
 
 Due a problem with sandboxing on systemd-logind, which deneys any IP connections from and to the systemd-logind service it may be nessesary to edit
 
+IMHO, the best practical solution ist to override the system's default systemd-logind.service by a modified local version:
+
+```
+cp -a /usr/lib/systemd/system/systemd-logind.service /etc/systemd/system
+nano /etc/systemd/system/systemd-logind.service 
+and comment out this line  IPAddressDeny=any into
+# IPAddressDeny=any
+
+```
+
+This solution surrives an update of the systemd toolchain and keeps working after a reboot.
+
+Workig, but not very recommended solution:
+
 ```
 /usr/lib/systemd/system/systemd-logind.service 
 and comment out this line  IPAddressDeny=any into

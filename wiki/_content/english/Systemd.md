@@ -738,11 +738,9 @@ systemd-modules-load.service - Load Kernel Modules
 Aug 25 12:22:31 mypc systemd[1]: **Started Load Kernel Modules**.
 ```
 
-Often you can solve these kind of problems like shown above. For further investigation look at [#Diagnosing boot problems](#Diagnosing_boot_problems).
-
 ### Diagnosing boot problems
 
-*systemd* has several options for diagnosing problems with the boot process. See [boot debugging](/index.php/Boot_debugging "Boot debugging") and the [systemd debugging documentation](http://freedesktop.org/wiki/Software/systemd/Debugging/).
+*systemd* has several options for diagnosing problems with the boot process. See [boot debugging](/index.php/Boot_debugging "Boot debugging") for more general instructions and options to capture boot messages before *systemd* takes over the [boot process](/index.php/Boot_process "Boot process"). Also see the [systemd debugging documentation](http://freedesktop.org/wiki/Software/systemd/Debugging/).
 
 ### Diagnosing problems with a specific service
 

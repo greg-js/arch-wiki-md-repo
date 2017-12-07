@@ -119,6 +119,8 @@ The values refer to the `*colorname[]` array in the same file; you can use defau
 
 Tools exists to facilitate the creation of color palettes. e.g. [terminal.sexy](http://terminal.sexy) that has a set of pre-made ones and exports directly to the st config format.
 
+For those wanting the solarized color scheme, there is a patch that implements it at [suckless.org](https://st.suckless.org/patches/solarized/) - AUR version [here](https://aur.archlinux.org/packages/st-solarized/).
+
 ### Desktop entry
 
 To simplify launching *st* with a decent font e.g. [adobe-source-code-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-code-pro-fonts), you can also create a [desktop entry](/index.php/Desktop_entry "Desktop entry"):

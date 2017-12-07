@@ -8,7 +8,8 @@
 *   [3 Configuration](#Configuration)
     *   [3.1 Creating a self-signed certificate](#Creating_a_self-signed_certificate)
     *   [3.2 Creating administrator users](#Creating_administrator_users)
-*   [4 See also](#See_also)
+*   [4 Single node setup & Security](#Single_node_setup_.26_Security)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -25,7 +26,7 @@ After installation [Start/Enable](/index.php/Systemd#Using_units "Systemd") the 
 
 ```
 
-see [Single Node Setup](http://docs.couchdb.org/en/latest/install/index.html) for more.
+see [Single Node Setup](http://docs.couchdb.org/en/latest/install/index.html) for more. Also, you might want to take a look at [CouchDB#Single node setup & Security](/index.php/CouchDB#Single_node_setup_.26_Security "CouchDB").
 
 ## Usage
 
@@ -81,6 +82,18 @@ Futon can be accessed over SSL on port 6984 via [https://localhost:6984/_utils/]
 Before a server admin is configured, all clients have admin privileges. To create an admin user, click on "Fix this" link at bottom right of Futon interface.
 
 See [create a read-only database](http://lizconlan.github.com/sandbox/securing-couchdb.html) for locking down databases and further security.
+
+## Single node setup & Security
+
+If you run CouchDB in a single node setup, you might want to increase security by not binding unnecessarily on public network interfaces. Two process are actually doing so: `epmd` and `beam.smp`. The first one is quite easy to work around, you can simply add the following systemd drop-in addition to `couchdb.service`:
+
+ `/etc/systemd/system/couchdb.service.d/10-bind-locally.conf` 
+```
+[Service]
+Environment=ERL_EPMD_ADDRESS=127.0.0.1
+```
+
+The second one likely requires more work and a solution is yet to be found.
 
 ## See also
 

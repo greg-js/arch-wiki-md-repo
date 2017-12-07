@@ -80,7 +80,7 @@ Permissions on a Linux system are normally set to 755 for folders and 644 for fi
 
 ```
 # Mount internal Windows partition with linux compatible permissions, i.e. 755 for directories (dmask=022) and 644 for files (fmask=133)
-UUID=01CD2ABB65E17DE0 /run/media/user1/Windows ntfs-3g uid=user1,gid=users,dmask=022,fmask=133 0 0
+/dev/*NTFS-partition*  /mnt/windows  ntfs-3g uid=*username*,gid=users,dmask=022,fmask=133 0 0
 
 ```
 

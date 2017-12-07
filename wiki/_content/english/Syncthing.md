@@ -23,6 +23,7 @@ Related articles
     *   [6.1 Use inotify](#Use_inotify)
     *   [6.2 Stop journal spam](#Stop_journal_spam)
     *   [6.3 Run in VirtualBox](#Run_in_VirtualBox)
+    *   [6.4 Running through a proxy](#Running_through_a_proxy)
 *   [7 Troubleshooting](#Troubleshooting)
 
 ## Installation
@@ -180,6 +181,36 @@ $ VBoxManage modifyvm *myvmname* --natpf1 "syncthing,tcp,,22001,,22001"
 In this setup, relaying should not be necessary: local devices can connect to the VM on port 22001 while global devices are accessible as long as they have themselves an open port.
 
 **Note:** local discovery in this setup is limited because the discovery listening port 21027 is already used by the host. The guest is therefore not able to build a table of local announcements though it can still broadcast to the local network via the VM NAT and announce itself. The steps described above allow to run a functioning server in the default NAT configuration but bridged networking is recommended for an optimal setup.
+
+### Running through a proxy
+
+Sometimes it is necessary to run Syncthing as service through a proxy. According to [https://docs.syncthing.net/users/proxying.html](https://docs.syncthing.net/users/proxying.html) it is necessary to specify `all_proxy` environment variable, and it must indicate a socks5 proxy type.
+
+If the service is ran from an script or command line, you can add this before call to Syncthing:
+
+```
+export all_proxy="socks5://proxy_address:proxy_port"
+export no_proxy="127.0.0.1"
+
+```
+
+But if you run Syncthing as a systemd service, you must edit service configuration to add this variable. For example:
+
+ `/etc/systemd/system/multi-user.target.wants/syncthing@*myuser*.service` 
+```
+[Service]
+Environment="all_proxy=socks5://proxy_address:proxy_port"
+Environment="no_proxy=127.0.0.1"
+```
+
+After that, you must reload systemd daemons configurations:
+
+```
+# systemctl daemon-reload
+
+```
+
+and [restart](/index.php/Restart "Restart") the `syncthing@*myuser*.service`.
 
 ## Troubleshooting
 

@@ -100,7 +100,13 @@ Note also that DPI in the above example is expressed in 1024ths of an inch.
 
 ### KDE
 
-KDE plasma 5 provides excellent support for HiDPI screens out of the box. You can set the correct DPI by [#Using KDE system settings](#Using_KDE_system_settings). Alternatives are to use [SDDM#DPI settings](/index.php/SDDM#DPI_settings "SDDM") or the [#X Server](#X_Server). However, it seems that Gtk+ applications ignore both SDDM and X settings. You can fix this by creating a custom login session as follows:
+KDE plasma 5 provides excellent support for HiDPI screens out of the box: You can set the correct DPI by [#Using KDE system settings](#Using_KDE_system_settings).
+
+Alternatives are to use [SDDM#DPI settings](/index.php/SDDM#DPI_settings "SDDM") or the [#X Server](#X_Server). However, it seems that Gtk+ applications ignore both SDDM and X settings. You can fix this by creating a custom login session as follows.
+
+**Note:**
+
+Playing with GDK_SCALE and GDK_DPI_SCALE values can be useful in case you want to tune GTK app scale in KDE without affecting QT app. For example you may want to do not use the Scale value in KDE Display setting as not integer values creates issues with some QT application fonts.
 
 ```
 # cp /usr/share/xsessions/plasma.desktop /usr/share/xsessions/plasma-custom.desktop
@@ -109,7 +115,22 @@ KDE plasma 5 provides excellent support for HiDPI screens out of the box. You ca
 
 ```
 
-Create `/usr/bin/startkde-custom` with the following contents:
+Create `/usr/bin/startkde-custom`.
+
+Example for a generic 13" 1920x1080 (You may need to adjust these values depending on your display):
+
+```
+#!/bin/bash
+## GDK_SCALE only integer values (ex. 1 2 3 )
+export GDK_SCALE=1 
+## GDK_DPI_SCALE can be non integer (ex. 1.1 1.2 )
+export GDK_DPI_SCALE=1.2
+export XCURSOR_SIZE=48
+/usr/bin/startkde "$@"
+
+```
+
+Example for a 15" Retina Macbook Pro (The negative dpi scale ensures that the text is sized correctly):
 
 ```
 #!/bin/bash
@@ -120,8 +141,6 @@ export XCURSOR_SIZE=48
 
 ```
 
-The negative dpi scale ensures that the text is sized correctly on a 15" Retina Macbook Pro. You may need to adjust these values depending on your display.
-
 Do not forget to ensure that the script can be executed (`# chmod +x /usr/bin/startkde-custom`). Logout and choose your new custom session (you may need to restart your display manager for it to show up) and GTK+ applications should be scaled correctly.
 
 #### Using KDE system settings
@@ -130,7 +149,7 @@ You can use KDE's settings to fine tune font, icon, and widget scaling. This sol
 
 To adjust font, widget, and icon scaling together:
 
-1.  System Settings → Display and Monitor → Display Configuration → Scale Display (note: if you set a not integer value it may create issue with the font render in some application )
+1.  System Settings → Display and Monitor → Display Configuration → Scale Display
 2.  Drag the slider to the desired size
 3.  Restart for the settings to take effect
 
@@ -143,6 +162,17 @@ To adjust only icon scaling:
 
 1.  System Settings → Icons → Advanced
 2.  Choose the desired icon size for each category listed. This should take effect immediately.
+
+**Display Scale not integer bug :**
+
+When you use not integer values for Display Scale it causes font render issue in some QT application ( ex. okular ).
+
+A workaround for this is to:
+
+1.  Set the scale value to 1
+2.  Adjust your font and icons and use the "Force fonts DPI" ( this affects all apps, also GTK but not create issue with the fonts )
+3.  Restart KDE
+4.  If required tune the GTK apps using the variables GDK_SCALE/GDK_DPI_SCALE (as described above)
 
 #### Tray icons with fixed size
 

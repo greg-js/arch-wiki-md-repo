@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [General troubleshooting](/index.php?title=General_troubleshooting&redirect=no "General troubleshooting")
+*   [General troubleshooting#Boot problems](/index.php/General_troubleshooting#Boot_problems "General troubleshooting")

@@ -313,7 +313,7 @@ See [Makepkg#Improving compile times](/index.php/Makepkg#Improving_compile_times
 
 #### Optimize the filesystem
 
-See [ext4#Improve_performance](/index.php/Ext4#Improve_performance "Ext4").
+[Filesystems](/index.php/Filesystems "Filesystems") may provide performance improvements instructions for each filesystem, e.g. [Ext4#Improving performance](/index.php/Ext4#Improving_performance "Ext4").
 
 #### Swap space
 

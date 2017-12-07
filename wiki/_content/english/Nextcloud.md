@@ -1,8 +1,6 @@
 Related articles
 
 *   [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server")
-*   [LAMP](/index.php/LAMP "LAMP")
-*   [LEMP](/index.php/LEMP "LEMP")
 *   [Nginx](/index.php/Nginx "Nginx")
 *   [OpenSSL](/index.php/OpenSSL "OpenSSL")
 *   [WebDAV](/index.php/WebDAV "WebDAV")
@@ -118,7 +116,7 @@ See also [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman")
 
 Install [PHP#gd](/index.php/PHP#gd "PHP") and [php-intl](https://www.archlinux.org/packages/?name=php-intl) as additional modules.
 
-Some apps(News for example) require the iconv.so extension, if you wish to use these apps, uncomment the extension in `/etc/php/php.ini`.
+Some apps(News for example) require the iconv extension, if you wish to use these apps, uncomment the extension in `/etc/php/php.ini`.
 
 Depending on which database backend will be used:
 
@@ -369,41 +367,40 @@ php-set = output_buffering=off
 
 ; load all extensions only in this instance of php, no need to edit global php.ini
 ;; required core modules
-php-set = extension=gd.so
-php-set = extension=iconv.so
-;php-set = extension=zip.so     # enabled by default in global php.ini
+php-set = extension=gd
+php-set = extension=iconv
+;php-set = extension=zip     # enabled by default in global php.ini
 
 ;; database connectors
 ;; uncomment your selected driver
-;php-set = extension=pdo_sqlite.so
-;php-set = extension=pdo_mysql.so
-;php-set = extension=pdo_pgsql.so
+;php-set = extension=pdo_sqlite
+;php-set = extension=pdo_mysql
+;php-set = extension=pdo_pgsql
 
 ;; recommended extensions
-;php-set = extension=curl.so    # enabled by default in global php.ini
-php-set = extension=bz2.so
-php-set = extension=intl.so
-;php-set = extension=mcrypt.so  # not available in PHP 7.2
+;php-set = extension=curl    # enabled by default in global php.ini
+php-set = extension=bz2
+php-set = extension=intl
 
 ;; required for specific apps
-;php-set = extension=ldap.so    # for LDAP integration
-;php-set = extension=ftp.so     # for FTP storage / external user authentication
-;php-set = extension=imap.so    # for external user authentication, requires php-imap
+;php-set = extension=ldap    # for LDAP integration
+;php-set = extension=ftp     # for FTP storage / external user authentication
+;php-set = extension=imap    # for external user authentication, requires php-imap
 
 ;; recommended for specific apps
-;php-set = extension=exif.so    # for image rotation in pictures app, requires exiv2
-;php-set = extension=gmp.so     # for SFTP storage
+;php-set = extension=exif    # for image rotation in pictures app, requires exiv2
+;php-set = extension=gmp     # for SFTP storage
 
 ;; for preview generation
 ;; provided by packages in AUR
-; php-set = extension=imagick.so
+; php-set = extension=imagick
 
 ; opcache
-php-set = zend_extension=opcache.so
+php-set = zend_extension=opcache
 
 ; user cache
 ; provided by php-acpu, to be enabled **either** here **or** in /etc/php/conf.d/apcu.ini
-php-set = extension=apcu.so
+php-set = extension=apcu
 ; per https://github.com/krakjoe/apcu/blob/simplify/INSTALL
 php-set = apc.ttl=7200
 php-set = apc.enable_cli=1
@@ -698,7 +695,7 @@ You may see the following error in the ownCloud sync client:
 
 ```
 
-This is caused by an issue with the File Locking app, which is often not sufficient to keep conflicts from occurring on some webserver configurations. A more complete [Transactional File Locking](https://docs.nextcloud.com/server/12/admin_manual/configuration_files/files_locking_transactional.html) is available that rids these errors, but you must be using the Redis php-caching method. Install [redis](https://www.archlinux.org/packages/?name=redis) and [php-redis](https://aur.archlinux.org/packages/php-redis/), comment out your current php-cache mechanism, and then in `/etc/php/conf.d/redis.ini` uncomment `extension=redis.so`. Then in `config.php` make the following changes:
+This is caused by an issue with the File Locking app, which is often not sufficient to keep conflicts from occurring on some webserver configurations. A more complete [Transactional File Locking](https://docs.nextcloud.com/server/12/admin_manual/configuration_files/files_locking_transactional.html) is available that rids these errors, but you must be using the Redis php-caching method. Install [redis](https://www.archlinux.org/packages/?name=redis) and [php-redis](https://aur.archlinux.org/packages/php-redis/), comment out your current php-cache mechanism, and then in `/etc/php/conf.d/redis.ini` uncomment `extension=redis`. Then in `config.php` make the following changes:
 
 ```
    'memcache.local' => '\OC\Memcache\Redis',

@@ -51,13 +51,13 @@ Include conf/extra/httpd-zoneminder.conf
 Edit `/etc/php/php.ini`. Ensure the following extensions are enabled by uncommenting these lines:
 
 ```
- extension=ftp.so
- extension=gd.so
- extension=gettext.so
- extension=mcrypt.so
- extension=pdo_mysql.so
- extension=sockets.so
- extension=zip.so
+ extension=ftp
+ extension=gd
+ extension=gettext
+ extension=mcrypt
+ extension=pdo_mysql
+ extension=sockets
+ extension=zip
 
 ```
 
@@ -162,7 +162,7 @@ That is, add the **http** user to the **video** group.
 
 If you observe an error like, **libv4l2: error turning on stream: No space left on device** when using multiple USB video devices (such as multiple webcams), you may need to increase the bandwidth on the bus.
 
-Test first by stopping the **zoneminder** service, then:
+Test first by stopping `zoneminder.service`, then:
 
 ```
 $ rmmod uvcvideo
@@ -170,7 +170,7 @@ $ modprobe uvcvideo quirks=128
 
 ```
 
-Start the **zoneminder** service and if the issue is resolved, perist the change by adding the module option to **/etc/modprobe.d/uvcvideo.conf**. for example:
+Start `zoneminder.service` and if the issue is resolved, persist the change by adding the module option to `/etc/modprobe.d/uvcvideo.conf`. for example:
 
 ```
 options uvcvideo nodrop=1 quirks=128

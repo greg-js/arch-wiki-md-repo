@@ -56,6 +56,8 @@ Alternatively, install [xmonad-git](https://aur.archlinux.org/packages/xmonad-gi
 
 **Note:** If you choose to use the [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") repositories, you need to install the *haskell-xmonad* package instead of [xmonad](https://www.archlinux.org/packages/?name=xmonad), as they have different dependencies.
 
+**Note:** Remember to run `xmonad --recompile` after you upgrade xmonad, otherwise it might have problems finding shared libraries the next time you start it.
+
 ## Starting xmonad
 
 Select *Xmonad* from the session menu in a [display manager](/index.php/Display_manager "Display manager") of choice.

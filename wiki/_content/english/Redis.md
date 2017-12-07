@@ -32,9 +32,11 @@ bind 127.0.0.1
 *   Accept connections on the specified port (default is 6379), specify `port 0` to disable listing on TCP:
 
 ```
-port 6379 
+port 6379
 
 ```
+
+**Note:** If you change the default port, [edit](/index.php/Edit "Edit") `redis.service` and update the `ExecStop` command accordingly. Either specify the port with `-p` or the socket path with `-s`.
 
 ### Listen on socket
 
@@ -55,19 +57,6 @@ unixsocket /run/redis/redis.sock
 unixsocketperm 770
 
 ```
-
-*   Create the directory which contains the socket:
-
-```
-# mkdir /run/redis
-# chown redis:redis /run/redis
-# chmod 755 /run/redis
-
-```
-
-*   Create a [tmpfile](/index.php/Tmpfile "Tmpfile") to persist the directory which contains the socket:
-
- `/etc/tmpfiles.d/redis.conf`  `d /run/redis 0755 redis redis -` 
 
 *   Add users (e.g. *git*, *http*) to the *redis* [group](/index.php/Group "Group") so they can access and use the socket.
 

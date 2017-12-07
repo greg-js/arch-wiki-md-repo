@@ -1190,7 +1190,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [LGames - open source games for Linux](http://lgames.sourceforge.net/about.php)
 *   Debian [games portal](https://wiki.debian.org/Game/Links "debian:Game/Links"), [links](https://wiki.debian.org/Games/Links "debian:Games/Links"), and [suggested games](https://wiki.debian.org/Games/Suggested "debian:Games/Suggested")
 *   [./play.it list of games](https://wiki.dotslashplay.it/en/start)
-*   [Wikipedia:Category:Linux_games](https://en.wikipedia.org/wiki/Category:Linux_games "wikipedia:Category:Linux games")
+*   [Wikipedia:Category:Linux games](https://en.wikipedia.org/wiki/Category:Linux_games "wikipedia:Category:Linux games")
 *   [Wikipedia:Humble Bundle](https://en.wikipedia.org/wiki/Humble_Bundle "wikipedia:Humble Bundle")
 *   [Wikipedia:Game engine recreation](https://en.wikipedia.org/wiki/Game_engine_recreation "wikipedia:Game engine recreation")
 *   [Source ports](https://en.wikipedia.org/wiki/Source_port "wikipedia:Source port"): [Open Source Game Clones](https://osgameclones.com/), [Engine Reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)

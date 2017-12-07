@@ -199,6 +199,10 @@ Several GUI applications are available to quickly and easily configure your Open
 
 	[http://pastebin.com/012YgXTk](http://pastebin.com/012YgXTk) || [ob-autostart](https://aur.archlinux.org/packages/ob-autostart/)
 
+*   **obapps** — Graphical tool for configuring application settings in Openbox.
+
+	[https://sourceforge.net/projects/obapps/](https://sourceforge.net/projects/obapps/) || [obapps](https://aur.archlinux.org/packages/obapps/)
+
 Programs and applications relating to the configuration of Openbox's desktop menu are discussed in the [Menus](#Menus) section.
 
 ## Openbox reconfiguration

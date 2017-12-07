@@ -242,7 +242,7 @@ IOMMU group 13 06:00.1 Audio device: NVIDIA Corporation GM204 High Definition Au
 
 **Note:** You cannot specify which device to isolate using vendor-device ID pairs if the host GPU and the guest GPU share the same pair (i.e : if both are the same model). If this is your case, read [#Using identical guest and host GPUs](#Using_identical_guest_and_host_GPUs) instead.
 
-[linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) have pci-stub built as a module. You will need to add it to MODULES array in `mkinitpcio.comf`:
+[linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) have pci-stub built as a module. You will need to add it to MODULES array in `mkinitpcio.conf`:
 
  `/etc/mkinitcpio.conf`  `MODULES=(... pci-stub ...)` 
 
@@ -336,7 +336,7 @@ If your CPU supports hardware multitasking, also known as Hyper-threading on Int
 
 This is the abridged content of `/proc/cpuinfo` on a quad-core machine with hyper-threading.
 
- `$ cat /proc/cpuinfo | grep -e "processor" -e "core id" -e "^$"` 
+ `$ grep -e "processor" -e "core id" -e "^$" /proc/cpuinfo` 
 ```
 processor	: 0
 core id		: 0
@@ -448,7 +448,7 @@ After loading one or more of these modules, `lsmod | grep virtio` executed on th
 
 #### CPU pinning with isolcpus
 
-Alternatively, make sure that you have isolated CPUs properly. In this example, I will assume you are using CPUs 4-7. Use the kernel parameters `isolcpus nohz_full rcb_nocbs` to completely isolate the CPUs from the kernel.
+Alternatively, make sure that you have isolated CPUs properly. In this example, let us assume you are using CPUs 4-7. Use the kernel parameters `isolcpus nohz_full rcb_nocbs` to completely isolate the CPUs from the kernel.
 
  `sudo vim /etc/defaults/grub` 
 ```
@@ -473,7 +473,7 @@ See [this reddit comment](https://www.reddit.com/r/VFIO/comments/6vgtpx/high_dpc
 
 Previously, Nested Page Tables (NPT) had to be disabled on AMD systems running KVM to improve GPU performance because of a [very old bug](https://sourceforge.net/p/kvm/bugs/230/), but the trade off was decreased CPU performance, including stuttering. There is now a [kernel patch](https://patchwork.kernel.org/patch/10027525/)that resolves this issue, you can get it by installing [linux-npt](https://aur.archlinux.org/packages/linux-npt/) or compiling the kernel yourself with the patch applied.
 
-**Note:** Several Ryzen users (see [this Reddit thread](https://www.reddit.com/r/VFIO/comments/78i3jx/possible_fix_for_the_npt_issue_discussed_on_iommu/)) have tested the patch, including myself, and can confirm that it works amazingly well, bringing GPU passthrough performance up to near native quality.
+**Note:** Several Ryzen users (see [this Reddit thread](https://www.reddit.com/r/VFIO/comments/78i3jx/possible_fix_for_the_npt_issue_discussed_on_iommu/)) have tested the patch, and can confirm that it works, bringing GPU passthrough performance up to near native quality.
 
 ### Further Tuning
 
@@ -849,10 +849,9 @@ $ cd rom-parser && make
 Dump the GPU VBIOS:
 
 ```
-# cd /sys/bus/pci/devices/0000:01:00.0/
-# echo 1 > rom
-# cat rom > /tmp/image.rom
-# echo 0 > rom
+# echo 1 > /sys/bus/pci/devices/0000:01:00.0/rom
+# cat /sys/bus/pci/devices/0000:01:00.0/rom > /tmp/image.rom
+# echo 0 > /sys/bus/pci/devices/0000:01:00.0/rom
 
 ```
 
@@ -927,7 +926,7 @@ If the external ROM did not work as it should in the guest, you will have to fla
 In order to avoid the irreparable damage to your graphics adapter it is necessary to unload the NVIDIA kernel driver first:
 
 ```
-# rmmod nvidia_modeset nvidia 
+# modprobe -r nvidia_modeset nvidia 
 
 ```
 
@@ -966,9 +965,9 @@ The procedure to enable it is quite complex, instructions and an overview of the
 
 Other hints can be found on the [lime-technology's wiki](https://lime-technology.com/wiki/index.php/UnRAID_6/VM_Guest_Support#Enable_MSI_for_Interrupts_to_Fix_HDMI_Audio_Support), or on this article on [VFIO tips and tricks](https://vfio.blogspot.it/2014/09/vfio-interrupts-and-how-to-coax-windows.html).
 
-Some tools named `MSI_util` or similar are available on the Internet, but they did not work for me on Windows 10 64bit.
+Some tools named `MSI_util` or similar are available on the Internet, but they do not work on Windows 10 64bit.
 
-In order to fix the issues enabling MSI on the 0 function of my nVidia card (`01:00.0 VGA compatible controller: NVIDIA Corporation GM206 [GeForce GTX 960] (rev a1) (prog-if 00 [VGA controller])`) was not enough; I also enabled it on the other function (`01:00.1 Audio device: NVIDIA Corporation Device 0fba (rev a1)`) and that seems to have fixed the issue.
+In order to fix the issues enabling MSI on the 0 function of a nVidia card (`01:00.0 VGA compatible controller: NVIDIA Corporation GM206 [GeForce GTX 960] (rev a1) (prog-if 00 [VGA controller])`) was not enough; it will also be required to enable it on the other function (`01:00.1 Audio device: NVIDIA Corporation Device 0fba (rev a1)`) to fix the issue.
 
 ### No HDMI audio output on host when intel_iommu is enabled
 

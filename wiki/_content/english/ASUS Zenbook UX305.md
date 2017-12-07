@@ -44,19 +44,18 @@ If default Palm Detection doesn't work well, one can manually disable part of th
 You can do this on the fly or add these parameters in the config file:
 
 ```
- $ synclient AreaLeftEdge=500
- $ synclient AreaRightEdge=2500
+$ /usr/bin/synclient AreaLeftEdge=500 AreaRightEdge=2500
 
 ```
 
 #### Middle click
 
-Three finger tap for middle click simulation should work under [libinput](/index.php/Libinput "Libinput") by default.
+Three finger tap should work with [libinput](/index.php/Libinput "Libinput").
 
-If you are still using the old [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) driver, you can enable Middle click by running:
+If you are still using the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) driver, you can enable three finger tapping by running:
 
 ```
-$ synclient TapButton1=1 TapButton2=3 TapButton3=2
+$ /usr/bin/synclient TapButton1=1 TapButton2=3 TapButton3=2
 
 ```
 
@@ -98,7 +97,7 @@ For Firefox and Thunderbird, add the below property in the about:config area
 
 ### Function Keys
 
-As of [linux](https://www.archlinux.org/packages/?name=linux) 4.10, pressing `Fn+F5` (brightness down) and `Fn+F6` (brightness up) works without additional configuration on the UX305CA.
+As of [linux](https://www.archlinux.org/packages/?name=linux) 4.10, pressing `Fn+F5` (brightness down) and `Fn+F6` (brightness up) works without additional configuration on the UX305CA. `Fn+F7` (blank display) still doesn't work.
 
 Kernel 3.16 with `acpi_listen`, when pressing `Fn+F12` (volup), `Fn+F11` (voldown), `Fn+F10` (mute), `F9` (disable mousepad):
 
@@ -110,7 +109,7 @@ Kernel 3.16 with `acpi_listen`, when pressing `Fn+F12` (volup), `Fn+F11` (voldow
 
 ```
 
-The light(sensor?) button (fn+a) returns:
+The ambient light sensor button (fn+a) returns:
 
 ```
  PNP0C14:00 000000ff 00000000
@@ -135,6 +134,7 @@ No effect so far. Investigate.
 
 ## See also
 
+*   [https://wiki.debian.org/InstallingDebianOn/Asus/UX305FA](https://wiki.debian.org/InstallingDebianOn/Asus/UX305FA)
 *   [ASUS Zenbook UX303](/index.php/ASUS_Zenbook_UX303 "ASUS Zenbook UX303")
 *   [https://wiki.debian.org/InstallingDebianOn/Asus/UX31a](https://wiki.debian.org/InstallingDebianOn/Asus/UX31a)
 *   [https://wiki.debian.org/InstallingDebianOn/Asus/UX301LA](https://wiki.debian.org/InstallingDebianOn/Asus/UX301LA)

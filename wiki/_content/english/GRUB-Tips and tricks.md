@@ -189,6 +189,26 @@ Multiple resolutions can be specified, including the default `auto`, so it is re
 
 If this method does not work for you, the deprecated `vga=` method will still work. Just add it next to the `"GRUB_CMDLINE_LINUX_DEFAULT="` line in `/etc/default/grub` for example: `"GRUB_CMDLINE_LINUX_DEFAULT="quiet splash vga=792"` will give you a `1024x768` resolution.
 
+**Tip:** `hwinfo --framebuffer` will present the code of each mode in hexadecimal format. To convert it to decimal you can simply use a [Bash](/index.php/Bash "Bash") console. For example, consider we want to use the following mode: `# hwinfo --framebuffer` 
+```
+*[...]*
+Mode 0x034a: 1600x1200 (+6400), 24 bits
+*[...]*
+```
+
+To convert the mode code to decimal run the following in a Bash console:
+
+```
+$ echo $((16#*hexcode*))
+
+```
+
+In this example:
+
+ `$ echo $((16#034a))`  `842` 
+
+So the correct kernel parameter would be `vga=842` for our `1600x1200x24` resolution example.
+
 ### 915resolution hack
 
 Sometimes for Intel graphic adapters neither `# hwinfo --framebuffer` nor `videoinfo` will show you the desired resolution. In this case you can use the `915resolution` hack. This hack will temporarily modify video BIOS and add needed resolution. See [915resolution's home page](http://915resolution.mango-lang.org/). The package can be found here: [915resolution](https://aur.archlinux.org/packages/915resolution/)
@@ -475,21 +495,23 @@ This will only work if /boot is not a btrfs, because grub cannot write to btrfs.
 
 To change the default selected entry, edit `/etc/default/grub` and change the value of `GRUB_DEFAULT`:
 
-Using numbers :
-
-```
-GRUB_DEFAULT=0
-
-```
-
-Grub identifies entries in generated menu counted from zero. That means 0 for the first entry which is the default value, 1 for the second and so on.
-
-Or using menu titles :
+Using menu titles :
 
 ```
 GRUB_DEFAULT='Advanced options for Arch Linux>Arch Linux, with Linux linux'
 
 ```
+
+Using numbers :
+
+```
+ GRUB_DEFAULT="1>2"
+
+```
+
+Grub identifies entries in generated menu counted from zero. That means 0 for the first entry which is the default value, 1 for the second and so on. Main and submenu entries are separated by a `>`.
+
+The example above boots the third entry from the main menu 'Advanced options for Arch Linux'.
 
 ### Boot non-default entry only once
 

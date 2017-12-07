@@ -1,3 +1,18 @@
+Related articles
+
+*   [Systemd (简体中文)](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")
+*   [网络配置](/index.php/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE "网络配置")
+*   [Dnsmasq (简体中文)](/index.php/Dnsmasq_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dnsmasq (简体中文)")
+*   [软AP](/index.php/%E8%BD%AFAP "软AP")
+*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
+*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
+*   [无线网络配置](/index.php/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE "无线网络配置")
+*   [WPA_supplicant (简体中文)](/index.php/WPA_supplicant_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPA supplicant (简体中文)")
+*   [WPA2 Enterprise](/index.php/WPA2_Enterprise "WPA2 Enterprise")
+*   [网桥](/index.php/%E7%BD%91%E6%A1%A5 "网桥")
+*   [Netctl (简体中文)#绑定](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.BB.91.E5.AE.9A "Netctl (简体中文)")
+*   [互联网应用#网络管理](/index.php/%E4%BA%92%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8#.E7.BD.91.E7.BB.9C.E7.AE.A1.E7.90.86 "互联网应用")
+
 ## Contents
 
 *   [1 支持可移除设备的网络接口绑定](#.E6.94.AF.E6.8C.81.E5.8F.AF.E7.A7.BB.E9.99.A4.E8.AE.BE.E5.A4.87.E7.9A.84.E7.BD.91.E7.BB.9C.E6.8E.A5.E5.8F.A3.E7.BB.91.E5.AE.9A)
@@ -35,7 +50,7 @@ reboot 5;
 timeout 10;
 retry 20;
 
-# [RFC 4361](//tools.ietf.org/html/rfc4361)          Node-specific Identifiers for DHCPv4     February 2006
+# RFC 4361          Node-specific Identifiers for DHCPv4     February 2006
 send dhcp-client-identifier 00:02:00:02:2e:2d:01:bd:c3:92:9a:44:2a:c4 ;
 send host-name "laptop";
 ```

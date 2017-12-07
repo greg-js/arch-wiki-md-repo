@@ -20,6 +20,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [6.1 Mouse pointer gets stuck in one direction](#Mouse_pointer_gets_stuck_in_one_direction)
 *   [7 ARK: Survival Evolved](#ARK:_Survival_Evolved)
     *   [7.1 Game does not start, displays text window with unreadable text](#Game_does_not_start.2C_displays_text_window_with_unreadable_text)
+    *   [7.2 Gray Water](#Gray_Water)
 *   [8 Audiosurf 2](#Audiosurf_2)
 *   [9 BADLAND: Game of the Year Edition](#BADLAND:_Game_of_the_Year_Edition)
 *   [10 Beat Cop](#Beat_Cop)
@@ -380,6 +381,12 @@ If that does not fix the issue, try unplugging any joysticks or joystick adapter
 ### Game does not start, displays text window with unreadable text
 
 Add `MESA_GL_VERSION_OVERRIDE=4.0` and `MESA_GLSL_VERSION_OVERRIDE=400` to your [launch options](/index.php/Launch_option "Launch option").
+
+### Gray Water
+
+Download TheCenter map and copy Water_DepthBlur_MIC.uasset from that map into TheIsland as described here: [https://www.gamingonlinux.com/articles/heres-a-way-to-fix-the-broken-water-in-ark-survival-evolved-on-linux.10530](https://www.gamingonlinux.com/articles/heres-a-way-to-fix-the-broken-water-in-ark-survival-evolved-on-linux.10530)
+
+Ragnarok uses TheIsland's texture, so the same procedure fixes the issue on Ragnarok as well.
 
 ## Audiosurf 2
 

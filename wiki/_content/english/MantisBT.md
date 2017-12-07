@@ -21,7 +21,7 @@ Choose your favorite [web server](/index.php/Category:Web_server "Category:Web s
 
 ## Configuration
 
-*mantisbt* has a decent [administration guide](https://mantisbt.org/docs/master-1.2.x/en/administration_guide/), that can be followed for setting it up.
+*mantisbt* has a decent [administration guide](https://mantisbt.org/docs/master/en-US/Admin_Guide/html-desktop/), that can be followed for setting it up.
 
 **Warning:** Currently the package has bug [FS#49141](https://bugs.archlinux.org/task/49141) that will prevent you from being able to do the initial signup using the administrator account on a new setup. Applying the fix mentioned in the bug report fixes this issue though.
 

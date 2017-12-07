@@ -1,4 +1,10 @@
-**翻译状态：** 本文是英文页面 [LXQt](/index.php/LXQt "LXQt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-03-12，点击[这里](https://wiki.archlinux.org/index.php?title=LXQt&diff=0&oldid=468701)可以查看翻译后英文页面的改动。
+相关文章
+
+*   [LXDE (简体中文)](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)")
+*   [Desktop environment (简体中文)](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")
+*   [Window manager (简体中文)](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)")
+
+**翻译状态：** 本文是英文页面 [LXQt](/index.php/LXQt "LXQt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-12-06，点击[这里](https://wiki.archlinux.org/index.php?title=LXQt&diff=0&oldid=494557)可以查看翻译后英文页面的改动。
 
 2013年间，洪任諭（“PCMan”）启动了将 [LXDE](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)") 移植到 [Qt](/index.php/Qt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Qt (简体中文)") 的项目。LXDE-Qt 的[首个预览版](http://blog.lxde.org/?p=1013)发布于2013年7月3日。而在2013年7月21日，Razor-qt（一个与LXDE类似的桌面）与 LXDE 宣布合并，产生了 [LXQt](http://lxqt.org)。这个桌面集合了 Razor-qt 和 LXDE 的组件。尽管 LXDE 目前的精力已经集中到 LXQt，GTK+ 2 的版本依然在维护。
 
@@ -34,7 +40,9 @@
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
-*   如果需要，可安装锁屏组件，如：[slock](https://www.archlinux.org/packages/?name=slock) 或 [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver)。Both are confirmed to integrate with LXQt, others may too.如果需要禁用屏幕锁，设置*LXQT 会话设置->挂起前锁屏*
+*   如果需要，可安装锁屏组件，如：[slock](https://www.archlinux.org/packages/?name=slock) 或 [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver)。二者均已包含在 LXQt 安装包中，其它锁屏程序也可能会集成其中。如果需要在挂起/休眠前禁用屏幕锁，设置*LXQT 会话设置->挂起前锁屏*
+
+**提示：** LXQt 在会话中使用 [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) 中的 *xdg-screensaver* 作为屏幕锁，它只能与 XScreenSaver 和 [xautolock](https://www.archlinux.org/packages/?name=xautolock) 协同工作。你可以使用它，也可以自行选用其他屏幕锁。比如，with *slock* you can follow [Slock#Lock on suspend](/index.php/Slock#Lock_on_suspend "Slock") as well as install patched [xdg-utils-slock](https://aur.archlinux.org/packages/xdg-utils-slock/) to obtain feelings expected by LXQt
 
 *   某些 LXQt 面板插件的某些功能需要安装额外的包。可查阅 [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel) 的 [可选依赖](/index.php/PKGBUILD#optdepends "PKGBUILD")。
 

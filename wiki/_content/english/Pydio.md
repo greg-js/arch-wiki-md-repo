@@ -10,11 +10,10 @@ Make sure to adjust following variables to these minimal values in your `php.ini
 
  `/etc/php/php.ini` 
 ```
-extension=exif.so
-extension=gd.so
-extension=mcrypt.so
-extension=iconv.so
-extension=mysqli.so
+extension=exif
+extension=gd
+extension=iconv
+extension=mysqli
 session.save_path = "/tmp"
 output_buffering = Off
 

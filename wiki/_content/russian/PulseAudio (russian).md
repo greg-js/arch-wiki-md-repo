@@ -3,7 +3,7 @@
 *   [PulseAudio/Примеры](/index.php/PulseAudio/%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B "PulseAudio/Примеры")
 *   [PulseAudio/Решение проблем](/index.php/PulseAudio/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC "PulseAudio/Решение проблем")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [PulseAudio](/index.php/PulseAudio "PulseAudio"). Дата последней синхронизации: 10 октября 2015‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=PulseAudio&diff=0&oldid=403994).
+**Состояние перевода:** На этой странице представлен перевод статьи [PulseAudio](/index.php/PulseAudio "PulseAudio"). Дата последней синхронизации: 6 декабря 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=PulseAudio&diff=0&oldid=500843).
 
 [PulseAudio](https://en.wikipedia.org/wiki/ru:PulseAudio "wikipedia:ru:PulseAudio") - это многофункциональный звуковой сервер, предназначенный для работы в качестве прослойки между вашими приложениями и аппаратными устройствами, либо [ALSA](/index.php/ALSA "ALSA") или [OSS](/index.php/OSS "OSS"). Он также с легкостью может передавать аудио по сети между локальными устройствами используя [Avahi](/index.php/Avahi "Avahi"), если тот доступен. Несмотря на то, что основная цель заключена в простоте настройки звука, его модульная архитектура позволяет более опытным пользователям конфигурировать демон в соответствии со своими нуждами.
 
@@ -51,6 +51,7 @@
     *   [8.2 Проигрывание звука через неинтерактивную оболочку (служба systemd, cron)](#.D0.9F.D1.80.D0.BE.D0.B8.D0.B3.D1.80.D1.8B.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B2.D1.83.D0.BA.D0.B0_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_.D0.BD.D0.B5.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D0.B0.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D1.83.D1.8E_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D1.83_.28.D1.81.D0.BB.D1.83.D0.B6.D0.B1.D0.B0_systemd.2C_cron.29)
     *   [8.3 Сигналы событий X11](#.D0.A1.D0.B8.D0.B3.D0.BD.D0.B0.D0.BB.D1.8B_.D1.81.D0.BE.D0.B1.D1.8B.D1.82.D0.B8.D0.B9_X11)
     *   [8.4 Переключение при подключении](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.B4.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B8)
+    *   [8.5 Скрипт для переключения аналоговых выходов](#.D0.A1.D0.BA.D1.80.D0.B8.D0.BF.D1.82_.D0.B4.D0.BB.D1.8F_.D0.BF.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B0.D0.BD.D0.B0.D0.BB.D0.BE.D0.B3.D0.BE.D0.B2.D1.8B.D1.85_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.BE.D0.B2)
 *   [9 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
 *   [10 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
@@ -598,9 +599,60 @@ load-module module-switch-on-connect
 
 В KDE/Plasma5, кроме того, вам следует отключить module-device-manager. Как только запускается Plasma5, она загружает (через start-pulseaudio-x11) модуль module-device-manager для pulseaudio для управления устройствами. Но этот модуль, очевидно, конфликтует с module-switch-on-connect. Таким образом, вам следует отключить этот модуль, отредактировав файл /bin/start-pulseaudio-x11 и закомментировав строки, относящиеся к KDE. Затем выполните выход и вход в систему для перезапуска сессии pulseaudio. Теперь переключение по подключению должно работать.
 
+### Скрипт для переключения аналоговых выходов
+
+Некоторые звуковые карты обладают несколькими аналоговыми выходами, которые можно переключать через профили Pulseaudio. Но переключение вручную может быть неудобным, и вы можете использовать для этого следующую команду:
+
+```
+$ pactl set-sink-port 'number of the card' 'port'
+
+```
+
+Таким образом, выбранный вами порт станет выходом по умолчанию. Пример:
+
+```
+$ pactl set-sink-port 0 "analog-output;output-speaker" 
+
+```
+
+Список портов можно получить, используя:
+
+```
+$ pactl list
+
+```
+
+Текущий выход можно отобразить командой:
+
+```
+$ pactl list sinks | grep "active profile"| cut -d ' ' -f 3-
+
+```
+
+Эти операции можно автоматизировать простым скриптом. Затем пользователь может назначить его на ярлык:
+
+ `~/pa.sh (или любое другое название)` 
+```
+#!/bin/bash
+# Этот скрипт использует уведомления kdialog для предупреждения пользователя о том, что текущий профиль изменён. Пользователь может доработать его для своих нужд или совсем изменить.
+
+CURRENT_PROFILE=$(pactl list sinks | grep "active profile"| cut -d ' ' -f 3-)
+
+if [ "$CURRENT_PROFILE" = "analog-output;output-speaker" ] ; then
+        pactl set-sink-port 0 "analog-output;output-headphones-1"
+        kdialog --title "Pulseaudio" --passivepopup "Headphone" 2 & 
+else 
+        pactl set-sink-port 0 "analog-output;output-speaker"      
+        kdialog --title "Pulseaudio" --passivepopup  "Speaker" 2 &
+fi
+
+```
+
+Этот скрипт предназначен для переключения между двумя профилями. Сначала он проверяет текущий профиль, а затем заменяет его. Пользователям необходимо изменить поле 'active profile' в соответствии с языком, который предоставил pactl. Пользователям, возможно, понадобится изменить номер карты и выхода для настройки под свою конкретную систему.
+
 ## Решение проблем
 
-Смотрите [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting").
+Смотрите [PulseAudio/Troubleshooting (Русский)](/index.php/PulseAudio/Troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PulseAudio/Troubleshooting (Русский)").
 
 ## Смотрите также
 

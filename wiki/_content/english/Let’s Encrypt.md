@@ -8,17 +8,16 @@ The official client is called **Certbot**, which allows to request valid X.509 c
 *   [2 Configuration](#Configuration)
     *   [2.1 Plugins](#Plugins)
         *   [2.1.1 Nginx](#Nginx)
+            *   [2.1.1.1 Managing server blocks](#Managing_server_blocks)
     *   [2.2 Webroot](#Webroot)
-        *   [2.2.1 Obtain certificate(s)](#Obtain_certificate.28s.29)
+        *   [2.2.1 Mapping ACME-challange requests](#Mapping_ACME-challange_requests)
+            *   [2.2.1.1 nginx](#nginx_2)
+            *   [2.2.1.2 Apache](#Apache)
+        *   [2.2.2 Obtain certificate(s)](#Obtain_certificate.28s.29)
     *   [2.3 Manual](#Manual)
 *   [3 Advanced Configuration](#Advanced_Configuration)
-    *   [3.1 Webserver Configuration](#Webserver_Configuration)
-        *   [3.1.1 nginx](#nginx_2)
-    *   [3.2 Multiple domains](#Multiple_domains)
-        *   [3.2.1 nginx](#nginx_3)
-        *   [3.2.2 Apache](#Apache)
-    *   [3.3 Automatic renewal](#Automatic_renewal)
-        *   [3.3.1 systemd](#systemd)
+    *   [3.1 Automatic renewal](#Automatic_renewal)
+        *   [3.1.1 systemd](#systemd)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -38,6 +37,8 @@ Consult the [Certbot documentation](https://certbot.eff.org/docs/) for more info
 
 #### Nginx
 
+**Warning:** Configuration files may be rewritten when using the plugin. Creating a **backup** first is recommended.
+
 The plugin [certbot-nginx](https://www.archlinux.org/packages/?name=certbot-nginx) provides an automatic configuration for [nginx](/index.php/Nginx "Nginx") [server-blocks](/index.php/Nginx#Server_blocks "Nginx"):
 
 ```
@@ -45,14 +46,61 @@ The plugin [certbot-nginx](https://www.archlinux.org/packages/?name=certbot-ngin
 
 ```
 
-To renew certificates, simple run:
+To renew certificates:
 
 ```
 # certbot renew
 
 ```
 
-See [#Automatic renewal](#Automatic_renewal) to keep installed certificates valid.
+To change certificates without modifying nginx config files:
+
+```
+# certbot --nginx certonly
+
+```
+
+See [Nginx on Arch Linux](https://certbot.eff.org/#arch-nginx) for more information and [#Automatic renewal](#Automatic_renewal) to keep installed certificates valid.
+
+##### Managing server blocks
+
+The following example may be used in each [server-blocks](/index.php/Nginx#Server_blocks "Nginx") when managing these files manually:
+
+ `/etc/nginx/sites-available/example` 
+```
+server {
+  listen 443 ssl http2;
+  listen [::]:443 ssl http2; # Listen on IPv6
+  ssl_certificate /etc/letsencrypt/live/*domain*/fullchain.pem; # managed by Certbot
+  ssl_certificate_key /etc/letsencrypt/live/*domain*/privkey.pem; # managed by Certbot
+  include /etc/letsencrypt/options-ssl-nginx.conf;
+  ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+  ..
+}
+</nowiki>
+```
+
+See [nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") for more information.
+
+It's also possible to create a separated config file and include it in each server block:
+
+ `/etc/nginx/conf/001-cerbot.conf` 
+```
+ssl_certificate /etc/letsencrypt/live/*domain*/fullchain.pem; # managed by Certbot
+ssl_certificate_key /etc/letsencrypt/live/*domain*/privkey.pem; # managed by Certbot
+include /etc/letsencrypt/options-ssl-nginx.conf;
+ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+```
+ `/etc/nginx/sites-available/example` 
+```
+server {
+  listen 443 ssl http2;
+  listen [::]:443 ssl http2; # Listen on IPv6
+  include conf/001-certbot.conf;
+  ..
+}
+
+```
 
 ### Webroot
 
@@ -64,25 +112,68 @@ See [#Automatic renewal](#Automatic_renewal) to keep installed certificates vali
 
 When using the webroot method the Certbot client places a challenge response inside `/path/to/domain.tld/html/.well-known/acme-challenge/` which is used for validation.
 
-The use of this method is recommend over a manual install; it offers automatic renewal and easier certificate management.
+The use of this method is recommend over a manual install; it offers automatic renewal and easier certificate management. However the usage of [#Plugins](#Plugins) may be the preferred since it allows automatic configuration and installation.
 
-**Tip:** The following initial [nginx server](/index.php/Nginx#Server_blocks "Nginx") configuration may be helpful to obtain a first-time certificate: `/etc/nginx/servers-available/domain.tld` 
+#### Mapping ACME-challange requests
+
+Management of can be made easier by mapping all HTTP-requests for `.well-known/acme-challenge` to a single folder, e.g. `/var/lib/letsencrypt`.
+
+The path has then to be writable for Cerbot and the web server (e.g. [nginx](/index.php/Nginx "Nginx") or [Apache](/index.php/Apache "Apache") running as user *http*):
+
+```
+# mkdir -p /var/lib/letsencrypt/.well-known
+# chgrp http /var/lib/letsencrypt
+# chmod g+s /var/lib/letsencrypt
+
+```
+
+##### nginx
+
+Create a file containing the location block and include this inside a server block:
+
+ `/etc/nginx/conf.d/letsencrypt.conf` 
+```
+location ^~ /.well-known/acme-challenge/ {
+  allow all;
+  root /var/lib/letsencrypt/;
+  default_type "text/plain";
+  try_files $uri =404;
+}
+
+```
+
+Example of a server configuration:
+
+ `/etc/nginx/servers-available/domain.conf` 
 ```
 server {
-  listen 80;
-  listen [::]:80;
-  server_name domain.tld;
-  root /usr/share/nginx/html;
-  location / {
-    index index.htm index.html;
-  }
-
-  # ACME challenge
-  location ^~ /.well-known/acme-challenge/ {
-    default_type "text/plain";
-    root /var/lib/letsencrypt;
-  }
+  server_name domain.tld
+   ..
+  include conf.d/letsencrypt.conf;
 }
+
+```
+
+##### Apache
+
+Create the file `/etc/httpd/conf/extra/httpd-acme.conf`:
+
+ `/etc/httpd/conf/extra/httpd-acme.conf` 
+```
+Alias /.well-known/acme-challenge/ "/var/lib/letsencrypt/.well-known/acme-challenge/"
+<Directory "/var/lib/letsencrypt/">
+    AllowOverride None
+    Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+    Require method GET POST OPTIONS
+</Directory>
+
+```
+
+Including this in `/etc/httpd/conf/httpd.conf`:
+
+ `/etc/httpd/conf/httpd.conf` 
+```
+Include conf/extra/httpd-acme.conf
 
 ```
 
@@ -135,96 +226,6 @@ You can then manually configure your web server to reference the private key, ce
 
 ## Advanced Configuration
 
-### Webserver Configuration
-
-Instead of using plugins for automatic configuration, it may be preferred to enable SSL for a server manually.
-
-**Tip:**
-
-*   Mozilla has a useful [SSL/TLS article](https://wiki.mozilla.org/Security/Server_Side_TLS) which includes an [automated tool](https://mozilla.github.io/server-side-tls/ssl-config-generator/) to help create a more secure configuration.
-*   [Cipherli.st](https://cipherli.st) provides strong SSL implementation examples and tutorial for most modern webservers.
-
-#### nginx
-
-An example of the server `domain.tld` using the signed SSL-certificate of Let's Encrypt:
-
- `/etc/nginx/servers-available/domain.tld` 
-```
-server {
-  listen 443 ssl http2;
-  listen [::]:443 ssl http2;
-  ssl_certificate /etc/letsencrypt/live/domain.tld/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/domain.tld/privkey.pem;
-  ssl_trusted_certificate /etc/letsencrypt/live/domain.tld/chain.pem;
-  server_name domain.tld;
-  ..
-}
-
-```
-
-### Multiple domains
-
-Management of can be made easier by mapping all HTTP-requests for `/.well-known/acme-challenge/` to a single folder, e.g. `/var/lib/letsencrypt`.
-
-The path has then to be writable for the Let's Encrypt client and the web server (e.g. [nginx](/index.php/Nginx "Nginx") or [Apache](/index.php/Apache "Apache") running as user *http*):
-
-```
-# mkdir -p /var/lib/letsencrypt/.well-known
-# chgrp http /var/lib/letsencrypt
-# chmod g+s /var/lib/letsencrypt
-
-```
-
-#### nginx
-
-Create a file containing the location block and include this inside a server block:
-
- `/etc/nginx/conf.d/letsencrypt.conf` 
-```
-location ^~ /.well-known {
-  allow all;
-  alias /var/lib/letsencrypt/.well-known/;
-  default_type "text/plain";
-  try_files $uri =404;
-}
-
-```
-
-Example of a server configuration:
-
- `/etc/nginx/servers-available/domain.conf` 
-```
-server {
-  server_name domain.tld
-   ..
-  include conf.d/letsencrypt.conf;
-}
-
-```
-
-#### Apache
-
-Create the file `/etc/httpd/conf/extra/httpd-acme.conf`:
-
- `/etc/httpd/conf/extra/httpd-acme.conf` 
-```
-Alias /.well-known/acme-challenge/ "/var/lib/letsencrypt/.well-known/acme-challenge/"
-<Directory "/var/lib/letsencrypt/">
-    AllowOverride None
-    Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
-    Require method GET POST OPTIONS
-</Directory>
-
-```
-
-Including this in `/etc/httpd/conf/httpd.conf`:
-
- `/etc/httpd/conf/httpd.conf` 
-```
-Include conf/extra/httpd-acme.conf
-
-```
-
 ### Automatic renewal
 
 #### systemd
@@ -241,7 +242,7 @@ Type=oneshot
 ExecStart=/usr/bin/certbot renew --quiet --agree-tos
 ```
 
-You'll probably want your web server to reload the certificates after each time they're renewed. This can be done by adding `--deploy-hook "systemctl reload nginx.service"` to the `ExecStart` command [[1]](https://certbot.eff.org/docs/using.html#renewing-certificates). Of course use `httpd.service` instead of `nginx.service` if appropriate.
+If you do not use a plugin to manage the web server configuration automatically, the web server has to be reloaded manually to reload the certificates each time they are renewed. This can be done by adding `--deploy-hook "systemctl reload nginx.service"` to the `ExecStart` command [[1]](https://certbot.eff.org/docs/using.html#renewing-certificates). Of course use `httpd.service` instead of `nginx.service` if appropriate.
 
 **Note:** Before adding a [timer](/index.php/Systemd/Timers "Systemd/Timers"), check that the service is working correctly and is not trying to prompt anything.
 

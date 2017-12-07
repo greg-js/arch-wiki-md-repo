@@ -346,7 +346,7 @@ ttyctl -f
 
 Zsh can be configured to remember the DIRSTACKSIZE last visited folders. This can then be used to *cd* them very quickly. You need to add some lines to your configuration file:
 
- `.zshrc` 
+ `~/.zshrc` 
 ```
 DIRSTACKFILE="$HOME/.cache/zsh/dirs"
 if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then

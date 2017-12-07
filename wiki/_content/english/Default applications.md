@@ -73,7 +73,7 @@ $ update-mime-database ~/.local/share/mime
 
 ```
 
-Of course this will not have any affect if no desktop entries are associated with the MIME type. You may need to create new [desktop entries](/index.php/Desktop_entries "Desktop entries") or modify [#mimeapps.list](#XDG_standard).
+Of course this will not have any effect if no desktop entries are associated with the MIME type. You may need to create new [desktop entries](/index.php/Desktop_entries "Desktop entries") or modify [#mimeapps.list](#XDG_standard).
 
 ### Desktop entries
 

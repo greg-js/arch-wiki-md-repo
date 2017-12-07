@@ -44,7 +44,7 @@ Related articles
 
 ## Configuration
 
-To configure dnsmasq, you need to edit `/etc/dnsmasq.conf`. The file contains extensive comments explaining its options.
+To configure dnsmasq, you need to edit `/etc/dnsmasq.conf`. The file contains extensive comments explaining its options. For all available options see [dnsmasq(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8).
 
 **Warning:** dnsmasq by default enables its DNS server. If you do not require it, you need to explicitly disable it by setting DNS port to `0`: `/etc/dnsmasq.conf`  `port=0` 
 

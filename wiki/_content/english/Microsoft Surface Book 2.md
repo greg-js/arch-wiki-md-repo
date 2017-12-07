@@ -1,3 +1,15 @@
+| **Device** | **Status** | **Modules** |
+| Intel | Working | xf86-video-intel |
+| Nvidia | Working | nvidia *or* nvidia-dkms |
+| Wireless | Working | mwifiex |
+| Audio | Working | snd_hda_intel |
+| Touchpad | Working | xf86-input-synaptics |
+| Touchscreen | Working | intel_ipts |
+| Camera | Not Working |
+| Card Reader | Working |
+| Bluetooth | Untested | btusb |
+| Battery Stats | Not Working |
+
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on Microsoft Surface Book 2 devices.
 
 ## Contents

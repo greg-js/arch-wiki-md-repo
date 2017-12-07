@@ -1,5 +1,11 @@
 **翻译状态：** 本文是英文页面 [Default_Applications](/index.php/Default_Applications "Default Applications") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=Default_Applications&diff=0&oldid=444827)可以查看翻译后英文页面的改动。
 
+相关文章
+
+*   [桌面配置项](/index.php/%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E9%A1%B9 "桌面配置项")
+*   [桌面环境](/index.php/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83 "桌面环境")
+*   [窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")
+
 Setting default applications per file type involves detection of the file type as the first step. Since the application launcher cannot fully understand all file types, the detection is based on reading only a small part of the file. There are two common ways to determine the file type:
 
 *   using the file name extension, for example *.html* or *.jpeg*
@@ -15,27 +21,27 @@ The scope of this article are the freedesktop [Association between MIME types an
 
 ## Contents
 
-*   [1 MIME types and desktop entries](#MIME_types_and_desktop_entries)
-*   [2 Set default applications](#Set_default_applications)
-    *   [2.1 Default mimeapps.list files](#Default_mimeapps.list_files)
-    *   [2.2 Configuration of the mimeapps.list file](#Configuration_of_the_mimeapps.list_file)
-    *   [2.3 Shared MIME-info database](#Shared_MIME-info_database)
-        *   [2.3.1 Example: .xml and related .desktop configuration](#Example:_.xml_and_related_.desktop_configuration)
-*   [3 Utilities to manage MIME types](#Utilities_to_manage_MIME_types)
-    *   [3.1 Examples of usage](#Examples_of_usage)
-        *   [3.1.1 Detect MIME-type](#Detect_MIME-type)
+*   [1 MIME 类型与桌面配置项](#MIME_.E7.B1.BB.E5.9E.8B.E4.B8.8E.E6.A1.8C.E9.9D.A2.E9.85.8D.E7.BD.AE.E9.A1.B9)
+*   [2 设置默认应用程序](#.E8.AE.BE.E7.BD.AE.E9.BB.98.E8.AE.A4.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
+    *   [2.1 默认 mimeapps.list 文件](#.E9.BB.98.E8.AE.A4_mimeapps.list_.E6.96.87.E4.BB.B6)
+    *   [2.2 mimeapps.list 文件的配置内容](#mimeapps.list_.E6.96.87.E4.BB.B6.E7.9A.84.E9.85.8D.E7.BD.AE.E5.86.85.E5.AE.B9)
+    *   [2.3 共享的 MIME 信息数据库](#.E5.85.B1.E4.BA.AB.E7.9A.84_MIME_.E4.BF.A1.E6.81.AF.E6.95.B0.E6.8D.AE.E5.BA.93)
+        *   [2.3.1 范例：.xml 与关联的桌面配置项](#.E8.8C.83.E4.BE.8B.EF.BC.9A.xml_.E4.B8.8E.E5.85.B3.E8.81.94.E7.9A.84.E6.A1.8C.E9.9D.A2.E9.85.8D.E7.BD.AE.E9.A1.B9)
+*   [3 MIME 类型的管理工具](#MIME_.E7.B1.BB.E5.9E.8B.E7.9A.84.E7.AE.A1.E7.90.86.E5.B7.A5.E5.85.B7)
+    *   [3.1 用例](#.E7.94.A8.E4.BE.8B)
+        *   [3.1.1 侦测 MIME 类型](#.E4.BE.A6.E6.B5.8B_MIME_.E7.B1.BB.E5.9E.8B)
         *   [3.1.2 Set use of MIME-type by default](#Set_use_of_MIME-type_by_default)
-    *   [3.2 Application launchers](#Application_launchers)
+    *   [3.2 应用程序加载器](#.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E5.8A.A0.E8.BD.BD.E5.99.A8)
         *   [3.2.1 xdg-open](#xdg-open)
         *   [3.2.2 mimeopen](#mimeopen)
         *   [3.2.3 mailcap](#mailcap)
-    *   [3.3 Extended practical examples](#Extended_practical_examples)
+    *   [3.3 扩展练习实例](#.E6.89.A9.E5.B1.95.E7.BB.83.E4.B9.A0.E5.AE.9E.E4.BE.8B)
         *   [3.3.1 xdg-open](#xdg-open_2)
-            *   [3.3.1.1 Set the default browser](#Set_the_default_browser)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Variables in .desktop files that affect application launch](#Variables_in_.desktop_files_that_affect_application_launch)
+            *   [3.3.1.1 设置默认浏览器](#.E8.AE.BE.E7.BD.AE.E9.BB.98.E8.AE.A4.E6.B5.8F.E8.A7.88.E5.99.A8)
+*   [4 排错](#.E6.8E.92.E9.94.99)
+    *   [4.1 桌面配置项文件中影响应用程序加载的变量](#.E6.A1.8C.E9.9D.A2.E9.85.8D.E7.BD.AE.E9.A1.B9.E6.96.87.E4.BB.B6.E4.B8.AD.E5.BD.B1.E5.93.8D.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E5.8A.A0.E8.BD.BD.E7.9A.84.E5.8F.98.E9.87.8F)
 
-## MIME types and desktop entries
+## MIME 类型与桌面配置项
 
 MIME-types are specified by two slash (`/`) parts: *Type/Extension*, for example `video/x-ms-wmv`. The second part of the MIME-type is expanding faster, for example with new applications or data encoding standards.
 
@@ -70,7 +76,7 @@ $ grep -e 'mime-type type=' -e '<comment>'  /usr/share/mime/packages/freedesktop
 
 If you ever require to create a custom association of a new file extension to a MIME-type, see the the short [#Example: .xml and related .desktop configuration](#Example:_.xml_and_related_.desktop_configuration) and the [Association between MIME types and applications](http://standards.freedesktop.org/mime-apps-spec/mime-apps-spec-1.0.html) standard.
 
-## Set default applications
+## 设置默认应用程序
 
 In order to set a default application, you need to
 
@@ -79,7 +85,7 @@ In order to set a default application, you need to
 
 Any manual configuration of the [#Shared MIME-info database](#Shared_MIME-info_database) is only required, if the application is not setup correctly or desktop does not comply to the standard yet.
 
-### Default mimeapps.list files
+### 默认 mimeapps.list 文件
 
 The `mimeapps.list` file stores the configuration for the default application to open a MIME-type. There are different locations for it:
 
@@ -101,7 +107,7 @@ The `*$desktop*` in the following list denotes the name of the related desktop e
 | `/usr/local/share/applications/mimeapps.list`
 `/usr/share/applications/mimeapps.list` | distribution-provided defaults |
 
-### Configuration of the mimeapps.list file
+### mimeapps.list 文件的配置内容
 
 The file contains two main sections for default and additional alternatives to open files of a MIME-type. The second and the third section (`[Removed Associations]`) are optional.
 
@@ -134,13 +140,13 @@ mimetype1=foo5.desktop
 
 Multiple *.desktop* files for a single MIME-type must be semicolon-separated. Not supported entries are ignored in `mimeapps.list`. The DE/WM then searches for the first match to the needed MIME-type them in the default path for *.desktop* files.
 
-**Tip:** To get a quick overview of how many and which *.desktop* files can be associated with a certain MIME-type, you can use the [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) utility, e.g. `lsdesktopf --gen-mimeapps`.
+**提示：** To get a quick overview of how many and which *.desktop* files can be associated with a certain MIME-type, you can use the [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) utility, e.g. `lsdesktopf --gen-mimeapps`.
 
-**Note:** Arch Linux itself does not provide system-wide presets for associations, but other distributions and specific desktop environments may do so via packaged `mimeapps.list` files, or the older and deprecated `defaults.list` files.
+**注意:** Arch Linux itself does not provide system-wide presets for associations, but other distributions and specific desktop environments may do so via packaged `mimeapps.list` files, or the older and deprecated `defaults.list` files.
 
 Your choice of desktop environment, or none, will affect how your default applications are associated. Further, note that some packages use additional work-around presets, for example Mozilla's packages install a `/etc/mime.types` file.
 
-### Shared MIME-info database
+### 共享的 MIME 信息数据库
 
 In background to the `mimeapps.list` files, the system holds a database of MIME-type information registered via the installed applications' *.desktop* files, the [Shared MIME-info Database](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-0.11.html#idm139839923550176). It is created automatically as soon as an application depending on it is installed, via the following [pacman#Hooks](/index.php/Pacman#Hooks "Pacman"):
 
@@ -154,7 +160,7 @@ In background to the `mimeapps.list` files, the system holds a database of MIME-
 
 These files keep track of which MIME-types are associated with which *.desktop* files overall. When an application is installed, updated or removed, the pacman hooks keep the database updated accordingly.
 
-**Warning:** The database files are not meant to be edited directly.
+**警告:** The database files are not meant to be edited directly.
 
 Application specific configuration is stored in *.xml* files and further files of the database (see [.xml source files](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-0.11.html#idm139839923550176)) are stored in *.keys* and *.mime* files that are located in `/usr/share/mime-info/`.
 
@@ -175,7 +181,7 @@ Any user-specific *.xml* configuration may be stored in:
 
 ```
 
-#### Example: .xml and related .desktop configuration
+#### 范例：.xml 与关联的桌面配置项
 
 The following is a short example to *create* files to associate an application with a MIME-type. It only needs to be followed, if the application has **not** setup and registered its configuration sufficiently.
 
@@ -195,7 +201,7 @@ Create and edit `~/.local/share/mime/packages/application-x-foobar.xml`:
 </mime-info>
 ```
 
-**Tip:** To see all file name extensions in *.xml* configuration or database files, that available in *glob pattern*, with their description in *comment* use [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/): `lsdesktopf --gdx -gfx`.
+**提示：** To see all file name extensions in *.xml* configuration or database files, that available in *glob pattern*, with their description in *comment* use [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/): `lsdesktopf --gdx -gfx`.
 
 Create a related [desktop entry](/index.php/Desktop_entry "Desktop entry") file:
 
@@ -224,7 +230,7 @@ Programs that use MIME-types, such as file managers, should now open `*.foo` fil
 
 See also [Environment variables#Examples](/index.php/Environment_variables#Examples "Environment variables") about global variables that can be used in start-up scripts to set default applications for specific actions.
 
-## Utilities to manage MIME types
+## MIME 类型的管理工具
 
 Many of the file managers has options to set up and configure associations of mime types with programs.
 
@@ -260,11 +266,11 @@ regex | SQLite database
 | [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | [file](https://www.archlinux.org/packages/?name=file)
 [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) |
 
-### Examples of usage
+### 用例
 
 Here is a short description about how to use command line tools to show MIME-type of a file or set preferred program as default to open MIME-type.
 
-#### Detect MIME-type
+#### 侦测 MIME 类型
 
 Tools detecting MIME-type by reading meta-data from header of the file or detecting by magic number that is in two bytes identifier in the begin of the file. See [File header](https://en.wikipedia.org/wiki/File_format#File_header "wikipedia:File format").
 
@@ -299,7 +305,7 @@ Here is shown options only for single file associations, for more options read t
 | mimeo | --prefer 'regex:^Type/(Extension**1** |Extension?**2**)$' **.desktop* | Show / Set / Launch | script | terminal |
 | mimeopen | --ask-default *(interactive)* | Set / Launch | script | terminal |
 
-### Application launchers
+### 应用程序加载器
 
 #### xdg-open
 
@@ -338,7 +344,7 @@ The *.mailcap* file format is used by mail programs such as [mutt](https://www.a
 
 ```
 
-### Extended practical examples
+### 扩展练习实例
 
 #### xdg-open
 
@@ -367,7 +373,7 @@ $ xdg-mime default emacs.desktop $(grep '^text/x-*' /usr/share/mime/types)
 
 ```
 
-##### Set the default browser
+##### 设置默认浏览器
 
 To set the default application for `http(s)://` internet protocols:
 
@@ -398,9 +404,9 @@ $ xdg-mime default netsurf.desktop text/html
 
 ```
 
-## Troubleshooting
+## 排错
 
-### Variables in .desktop files that affect application launch
+### 桌面配置项文件中影响应用程序加载的变量
 
 Desktop environments and file managers supporting the specifications launch programs according to definition in the *.desktop* files. See [Desktop entries#Application entry](/index.php/Desktop_entries#Application_entry "Desktop entries").
 

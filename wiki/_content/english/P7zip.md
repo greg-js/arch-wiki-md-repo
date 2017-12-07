@@ -1,4 +1,4 @@
-p7zip is command line port of [7-Zip](https://en.wikipedia.org/wiki/7zip "wikipedia:7zip") for [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") systems, including Linux.
+[p7zip](http://p7zip.sourceforge.net/) is command line port of [7-Zip](https://en.wikipedia.org/wiki/7zip "wikipedia:7zip") for [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") systems, including Linux.
 
 ## Contents
 
@@ -9,7 +9,7 @@ p7zip is command line port of [7-Zip](https://en.wikipedia.org/wiki/7zip "wikipe
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [p7zip](https://www.archlinux.org/packages/?name=p7zip) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [p7zip](https://www.archlinux.org/packages/?name=p7zip) package.
 
 The command to run the program is the following:
 
@@ -23,21 +23,21 @@ $ 7z
 To extract all files from an archive to the current directory without using directory names, run:
 
 ```
-$ 7za e <archive name>
+$ 7z e <archive name>
 
 ```
 
 To extract with full paths, run:
 
 ```
-$ 7za x <archive name>
+$ 7z x <archive name>
 
 ```
 
 To extract into a new directory, run:
 
 ```
-$ 7za x -o<folder name> <archive name>
+$ 7z x -o<folder name> <archive name>
 
 ```
 
@@ -45,12 +45,11 @@ $ 7za x -o<folder name> <archive name>
 
 The package includes three binaries, `/usr/bin/7z`, `/usr/bin/7za`, and `/usr/bin/7zr`. Their manual pages explain the differences:
 
-*   7z uses plugins to handle archives.
-*   7za is a stand-alone executable. 7za handles fewer archive formats than 7z, but does not need any others.
-*   7zr is a stand-alone executable. 7zr handles fewer archive formats than 7z, but does not need any others. 7zr is a "light-version" of 7za that only handles 7z archives.
+*   [7z(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/7z.1) uses plugins to handle archives.
+*   [7za(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/7za.1) is a stand-alone executable. 7za handles fewer archive formats than 7z, but does not need any others.
+*   [7zr(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/7zr.1) is a stand-alone executable. 7zr handles fewer archive formats than 7z, but does not need any others. 7zr is a "light-version" of 7za that only handles 7z archives.
 
 ## See also
 
-*   [Homepage.](http://p7zip.sourceforge.net/)
 *   [7zip homepage.](http://www.7-zip.org/download.html)
 *   [How to use 7zip on Linux command Line.](https://www.ibm.com/developerworks/community/blogs/6e6f6d1b-95c3-46df-8a26-b7efd8ee4b57/entry/how_to_use_7zip_on_linux_command_line144?lang=en)

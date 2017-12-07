@@ -12,7 +12,7 @@
 | Accelerometer | Not tested yet |
 | Hardware Buttons | Working |
 
-The [Acer Switch Alpha 12](https://www.acer.com/ac/en/US/content/series/switchalpha12) is a two 2 in 1 [Tablet PC](/index.php/Tablet_PC "Tablet PC") devices, equipped with a 12 inch display that supports for 2160 x 1440 pixels. This installation was done on the version SA5-271-38U0 which is a version with an i3-6100 CPU and 4GB of RAM. Please note I was not using Arch-Linux directly, but used the derivate Antergos for the installation.
+The [Acer Switch Alpha 12](https://www.acer.com/ac/en/US/content/series/switchalpha12) is a two 2 in 1 [Tablet PC](/index.php/Tablet_PC "Tablet PC") device, equipped with a 12 inch display that supports for 2160 x 1440 pixels. This installation was done on the version SA5-271-38U0 which is a version with an i3-6100 CPU and 4GB of RAM. Please note I was not using Arch-Linux directly, but used the derivate Antergos for the installation.
 
 ## Installation
 
