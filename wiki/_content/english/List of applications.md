@@ -1307,7 +1307,7 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 *   **[naim](https://en.wikipedia.org/wiki/naim_(software) "wikipedia:naim (software)")** — Ncurses chat client with support for ICQ, IRC and the Lily CMC.
 
-	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://www.archlinux.org/packages/?name=naim)
+	[https://github.com/nmlorg/naim](https://github.com/nmlorg/naim) || [naim](https://www.archlinux.org/packages/?name=naim)
 
 *   **pork** — Programmable, ncurses-based IRC client that mostly looks and feels like ircII.
 
@@ -1839,7 +1839,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Phototonic** — Fast and functional image viewer and organizer (Qt).
 
-	[http://oferkv.github.io/phototonic/](http://oferkv.github.io/phototonic/) || [phototonic](https://aur.archlinux.org/packages/phototonic/)
+	[https://github.com/oferkv/phototonic/](https://github.com/oferkv/phototonic/) || [phototonic](https://aur.archlinux.org/packages/phototonic/)
 
 *   **PhotoQt** — Fast and highly configurable image viewer with a simple and nice interface.
 
@@ -2045,7 +2045,7 @@ See also [Wikipedia:List of computer-aided design editors](https://en.wikipedia.
 
 See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wikipedia.org/wiki/Comparison_of_3D_computer_graphics_software "wikipedia:Comparison of 3D computer graphics software").
 
-*   **[Art of Illusion](https://en.wikipedia.org/wiki/Art_of_Illusion "wikipedia:Art of Illusion")** — 3D modeling and rendering studio written in Java.
+*   **Art of Illusion** — 3D modeling and rendering studio written in Java.
 
 	[http://www.artofillusion.org/](http://www.artofillusion.org/) || [aoi](https://aur.archlinux.org/packages/aoi/)
 
@@ -2481,7 +2481,7 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 	[https://github.com/linuxdeepin/deepin-movie](https://github.com/linuxdeepin/deepin-movie) || [deepin-movie](https://www.archlinux.org/packages/?name=deepin-movie)
 
-*   **[Dragon Player](https://en.wikipedia.org/wiki/Kdemultimedia#Dragon_Player "wikipedia:Kdemultimedia")** — Simple video player for KDE. Part of the [kdemultimedia](https://www.archlinux.org/groups/x86_64/kdemultimedia/) group.
+*   **[Dragon Player](https://en.wikipedia.org/wiki/Dragon_Player "wikipedia:Dragon Player")** — Simple video player for KDE. Part of the [kdemultimedia](https://www.archlinux.org/groups/x86_64/kdemultimedia/) group.
 
 	[https://www.kde.org/applications/multimedia/dragonplayer/](https://www.kde.org/applications/multimedia/dragonplayer/) || [dragon](https://www.archlinux.org/packages/?name=dragon)
 
@@ -2795,7 +2795,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[https://github.com/jwilm/alacritty](https://github.com/jwilm/alacritty) || [alacritty-git](https://aur.archlinux.org/packages/alacritty-git/)
 
-*   **[aterm](https://en.wikipedia.org/wiki/aterm "wikipedia:aterm")** — Xterm replacement with transparency support. It has been deprecated in favour of urxvt since 2008.
+*   **aterm** — Xterm replacement with transparency support. It has been deprecated in favour of urxvt since 2008.
 
 	[http://aterm.sourceforge.net/](http://aterm.sourceforge.net/) || [aterm](https://aur.archlinux.org/packages/aterm/)
 
@@ -3455,6 +3455,10 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 	[http://www.marzocca.net/linux/baobab](http://www.marzocca.net/linux/baobab) || [baobab](https://www.archlinux.org/packages/?name=baobab)
 
+*   **duc** — A library and suite of tools for inspecting disk usage.
+
+	[http://duc.zevv.nl/](http://duc.zevv.nl/) || [duc](https://aur.archlinux.org/packages/duc/)
+
 *   **[Filelight](https://en.wikipedia.org/wiki/Filelight "wikipedia:Filelight")** — Disk usage analyzer that creates an interactive map of concentric, segmented rings that help visualise disk usage on your computer.
 
 	[http://methylblue.com/filelight/](http://methylblue.com/filelight/) || [filelight](https://www.archlinux.org/packages/?name=filelight)
@@ -3471,9 +3475,9 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 	[http://dev.yorhel.nl/ncdu](http://dev.yorhel.nl/ncdu) || [ncdu](https://www.archlinux.org/packages/?name=ncdu)
 
-*   **duc** — A library and suite of tools for inspecting disk usage.
+*   **qdirstat** — Qt-based directory statistics (KDirStat/K4DirStat without any KDE - from the original KDirStat author).
 
-	[http://duc.zevv.nl/](http://duc.zevv.nl/) || [duc](https://aur.archlinux.org/packages/duc/)
+	[https://github.com/shundhammer/qdirstat](https://github.com/shundhammer/qdirstat) || [qdirstat](https://aur.archlinux.org/packages/qdirstat/)
 
 ### Clock synchronization
 
@@ -3865,7 +3869,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[https://wiki.gnome.org/Apps/Gtranslator](https://wiki.gnome.org/Apps/Gtranslator) || [gtranslator](https://www.archlinux.org/packages/?name=gtranslator)
 
-*   **[Lokalize](https://en.wikipedia.org/wiki/Lokalize "wikipedia:Lokalize")** — Standard [KDE](/index.php/KDE "KDE") tool for software translation. It includes basic editing of PO files, support for glossary, translation memory, project managing, etc. It belongs to [kdesdk](https://www.archlinux.org/groups/x86_64/kdesdk/)
+*   **Lokalize** — Standard [KDE](/index.php/KDE "KDE") tool for software translation. It includes basic editing of PO files, support for glossary, translation memory, project managing, etc. It belongs to [kdesdk](https://www.archlinux.org/groups/x86_64/kdesdk/)
 
 	[https://userbase.kde.org/Lokalize](https://userbase.kde.org/Lokalize) || [lokalize](https://www.archlinux.org/packages/?name=lokalize)
 
@@ -4452,7 +4456,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **Semantik** — A mind-mapping application for KDE.
 
-	[https://ita1024.github.io/semantik/](https://ita1024.github.io/semantik/) || [semantik](https://aur.archlinux.org/packages/semantik/)
+	[https://waf.io/semantik.html](https://waf.io/semantik.html) || [semantik](https://aur.archlinux.org/packages/semantik/)
 
 *   **TreeSheets** — The ultimate replacement for spreadsheets, mind mappers, outliners, PIMs, text editors and small databases.
 

@@ -9,16 +9,16 @@
     *   [2.3 CGI](#CGI)
         *   [2.3.1 Interpreters for CGI scripts](#Interpreters_for_CGI_scripts)
     *   [2.4 FastCGI](#FastCGI)
-    *   [2.5 Reverse proxy](#Reverse_proxy)
-*   [3 Enable SSL/TLS](#Enable_SSL.2FTLS)
-    *   [3.1 Basics](#Basics)
-    *   [3.2 Self-signed certificate](#Self-signed_certificate)
-    *   [3.3 Let's Encrypt certificate](#Let.27s_Encrypt_certificate)
-        *   [3.3.1 Install](#Install)
-        *   [3.3.2 Obtain a certificate](#Obtain_a_certificate)
-        *   [3.3.3 Auto renewal](#Auto_renewal)
-            *   [3.3.3.1 Automation with cron](#Automation_with_cron)
-            *   [3.3.3.2 Automation with a systemd timer](#Automation_with_a_systemd_timer)
+    *   [2.5 Enable SSL/TLS](#Enable_SSL.2FTLS)
+    *   [2.6 Reverse proxy](#Reverse_proxy)
+*   [3 Certificates](#Certificates)
+    *   [3.1 Self-signed certificate](#Self-signed_certificate)
+    *   [3.2 Let's Encrypt certificate](#Let.27s_Encrypt_certificate)
+        *   [3.2.1 Install](#Install)
+        *   [3.2.2 Obtain a certificate](#Obtain_a_certificate)
+        *   [3.2.3 Auto renewal](#Auto_renewal)
+            *   [3.2.3.1 Automation with cron](#Automation_with_cron)
+            *   [3.2.3.2 Automation with a systemd timer](#Automation_with_a_systemd_timer)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -85,25 +85,7 @@ For further details see the official [HowTo](https://www.hiawatha-webserver.org/
 
 Hiawatha supports two different methods to send information to the FastCGI process: the webserver can communicate over either a *Unix domain socket* or a *TCP connection*. The communication type is defined in the `FastCGIServer` section via the field `ConnectTo`.
 
-### Reverse proxy
-
-This example shows a reverse proxy configuration which forwards requests to `https://service.domain.net` to another local running web service on port `8181`:
-
- `/etc/hiawatha/hiawatha.conf` 
-```
-VirtualHost {
-        Hostname = service.domain.net
-        WebsiteRoot = /var/www/domain
-        StartFile = index.html
-        ReverseProxy .* http://127.0.0.1:8181/
-        RequireTLS = yes
-}
-
-```
-
-## Enable SSL/TLS
-
-### Basics
+### Enable SSL/TLS
 
 First, you need a *X.509 SSL/TLS* certificate to use TLS. If you do not, you can use a [#Self-signed certificate](#Self-signed_certificate) or use one for free from [#Let's Encrypt](#Let.27s_Encrypt) certificate authority.
 
@@ -146,6 +128,24 @@ VirtualHost {
 }
 
 ```
+
+### Reverse proxy
+
+This example shows a reverse proxy configuration which forwards requests to `https://service.domain.net` to another local running web service on port `8181`:
+
+ `/etc/hiawatha/hiawatha.conf` 
+```
+VirtualHost {
+        Hostname = service.domain.net
+        WebsiteRoot = /var/www/domain
+        StartFile = index.html
+        ReverseProxy .* http://127.0.0.1:8181/
+        RequireTLS = yes
+}
+
+```
+
+## Certificates
 
 ### Self-signed certificate
 

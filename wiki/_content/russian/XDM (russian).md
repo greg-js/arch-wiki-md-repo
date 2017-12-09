@@ -73,7 +73,7 @@ xlogin*geometry: 300x175-0-0
 *   Обновите `/etc/pacman.conf` , чтобы сделанные изменения не были затёрты:
 
 ```
-~NoUpgrade = etc/X11/xdm/Xsetup_0 etc/X11/xdm/Xresources
+NoUpgrade = etc/X11/xdm/Xsetup_0 etc/X11/xdm/Xresources
 
 ```
 

@@ -103,7 +103,7 @@ Since kernel v4.14 you can workaround this by adding `psmouse.synaptics_intertou
 
 ### Bug: System occasionally hanging during startup
 
-I run Arch Linux with KDE and SDDM as login manager, and every second or third boot my system hangs on startup before X starts. This is caused by a bug in version 0.16.0 of SDDM, reported here:
+Using the SDDM login manager, the system hangs on every second or third boot on startup before X starts. This is caused by a bug in version 0.16.0 of SDDM, reported here:
 
 [https://github.com/sddm/sddm/issues/905](https://github.com/sddm/sddm/issues/905)
 
@@ -113,6 +113,8 @@ It can be solved by letting SDDM wait a little bit before starting. Just create 
 [Service]
 ExecStartPre=/bin/sleep 2
 ```
+
+**this bug is fixed as of sddm-0.16.0-3**
 
 ## Configuration
 

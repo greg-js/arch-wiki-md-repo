@@ -160,7 +160,7 @@ Option "TearFree" "true"
 
 ### No HDMI/DP Audio
 
-The open source AMDGPU driver relies on the DAL code that is [about to be pulled into the kernel (4.15)](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-DC-PULL-REQUEST). Until DAL is mainlined, audio support for HDMI and DisplayPort will not be available. The only current way to get HDMI and DisplayPort audio is to install the [#AMDGPU PRO](#AMDGPU_PRO) driver or the linux-amd-staging-drm-next-git kernel from the aur (or really any linux-amd-* kernel).
+The open source AMDGPU driver relies on the [DC](#Enable_AMD_DC_on_pre-Vega_cards) (formerly *DAL*) code that was [pulled into the 4.15 kernel](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-DC-Accepted). Until 4.15 Kernel is available in [official repositories](/index.php/Official_repositories "Official repositories"), audio support for HDMI and DisplayPort will not be available, unless using 4.15 [kernel](/index.php/Kernels "Kernels"), for example from [AUR](/index.php/Arch_User_Repository "Arch User Repository"). Another way to get HDMI and DisplayPort audio is to install the [AMDGPU PRO](#AMDGPU_PRO) driver or the [linux-amd-staging-drm-next-git](https://aur.archlinux.org/packages/linux-amd-staging-drm-next-git/) (or really any linux-amd-*) kernel.
 
 ### Incorrect screen position on HDMI
 
@@ -171,7 +171,7 @@ Use `amdgpu.audio=0` as [kernel parameter](/index.php/Kernel_parameter "Kernel p
 *   "(EE) AMDGPU(0): [DRI2] DRI2SwapBuffers: drawable has no back or front?" error after opening glxgears, can open Xorg server but OpenGL apps crash.
 *   "(EE) AMDGPU(0): Given depth (32) is not supported by amdgpu driver" error, Xorg won't start.
 
-Setting the screen's depth under Xorg to 16 or 32 will cause problems/crash. To avoid that, you should use a standard screen depth of 24 by adding this to your "screen" section (assuming you have one, assuming you don't add this to `/etc/X11/xorg.conf.d/10-screen.conf`).
+Setting the screen's depth under Xorg to 16 or 32 will cause problems/crash. To avoid that, you should use a standard screen depth of 24 by adding this to your "screen" section (assuming you have one; if you don't add this to `/etc/X11/xorg.conf.d/10-screen.conf`).
 
 ```
 Section "Screen"

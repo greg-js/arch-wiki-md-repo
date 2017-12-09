@@ -17,7 +17,7 @@
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Integration with applications](#Integration_with_applications)
     *   [5.2 Flushing passphrases](#Flushing_passphrases)
-    *   [5.3 GNOME Keyring and Git](#GNOME_Keyring_and_Git)
+    *   [5.3 Git integration](#Git_integration)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Passwords are not remembered](#Passwords_are_not_remembered)
 *   [7 Known issues](#Known_issues)
@@ -25,7 +25,7 @@
 
 ## Installation
 
-When using GNOME, [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) is installed automatically as a part of the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group. Otherwise [install](/index.php/Install "Install") the [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) package. Install [libsecret](https://www.archlinux.org/packages/?name=libsecret) to allow applications to use your keyrings. [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) is deprecated, however, some applications (e.g., owncloud's client) may require it.
+When using GNOME, [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) is installed automatically as a part of the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group. Otherwise [install](/index.php/Install "Install") the [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) package. Install [libsecret](https://www.archlinux.org/packages/?name=libsecret) to allow applications to use your keyrings. [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) is deprecated, however, some applications may require it.
 
 Extra utilities related to GNOME keyring include:
 
@@ -33,11 +33,11 @@ Extra utilities related to GNOME keyring include:
 
 	[https://wiki.gnome.org/Projects/Libsecret](https://wiki.gnome.org/Projects/Libsecret) || [libsecret](https://www.archlinux.org/packages/?name=libsecret)
 
-*   **gnome-keyring-query** — Provides a simple command-line tool for querying passwords from the password store of the GNOME Keyring.
+*   **gnome-keyring-query** — Provides a simple command-line tool for querying passwords from the password store of the GNOME Keyring. (uses the deprecated [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring))
 
 	[http://www.gentoo-wiki.info/HOWTO_Use_gnome-keyring_to_store_SSH_passphrases](http://www.gentoo-wiki.info/HOWTO_Use_gnome-keyring_to_store_SSH_passphrases) || [gnome-keyring-query](https://aur.archlinux.org/packages/gnome-keyring-query/)
 
-*   **gkeyring** — Query passwords from the command line, the [Git](/index.php/Git "Git") version can list all passwords without needing to know name or id of the item
+*   **gkeyring** — Query passwords from the command line. (uses the deprecated [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring))
 
 	[https://github.com/kparal/gkeyring](https://github.com/kparal/gkeyring) || [gkeyring](https://aur.archlinux.org/packages/gkeyring/), [gkeyring-git](https://aur.archlinux.org/packages/gkeyring-git/)
 
@@ -222,24 +222,16 @@ gnome-keyring-daemon -r -d
 
 This command starts gnome-keyring-daemon, shutting down previously running instances.
 
-### GNOME Keyring and Git
+### Git integration
 
 The GNOME keyring is useful in conjuction with [Git](/index.php/Git "Git") when you are pushing over HTTPS.
 
-First install the package [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) from the [official repositories](/index.php/Official_repositories "Official repositories").
-
-Next compile the helper:
-
-```
-$ cd /usr/share/git/credential/gnome-keyring
-# make
-
-```
+Install the [libsecret](https://www.archlinux.org/packages/?name=libsecret) package.
 
 Set Git up to use the helper:
 
 ```
-$ git config --global credential.helper /usr/lib/git-core/git-credential-gnome-keyring
+$ git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
 
 ```
 

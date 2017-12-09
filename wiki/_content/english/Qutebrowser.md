@@ -98,10 +98,10 @@ The userscript provides many options to accomodate most workflows and special ci
 
 ### Turn on spell checking
 
-First, download the dictionaries you want using [this script](https://github.com/qutebrowser/qutebrowser/blob/master/scripts/install_dict.py). For example, to install the English dictionary do:
+First, download the appropriate dictionary to `/usr/share/qt5/qtwebengine_dicionaries/` from [[1]](https://chromium.googlesource.com/chromium/deps/hunspell_dictionaries.git/+/master/). The file will have a suffix of `.bdic`. For example, for English (US):
 
 ```
-# python install_dict.py en-US
+# wget [https://chromium.googlesource.com/chromium/deps/hunspell_dictionaries.git/+/master/en-US-8-0.bdic?format=TEXT](https://chromium.googlesource.com/chromium/deps/hunspell_dictionaries.git/+/master/en-US-8-0.bdic?format=TEXT) -o /usr/share/qt5/qtwebengine_dictionaries/en-US-8-0.bdic
 
 ```
 
@@ -114,7 +114,7 @@ Then set the following in qutebrowser:
 
 ### Minimize fingerprinting
 
-Websites may be able to identify you based on combining information on screen size, user-agent, HTTP_ACCEPT headers, and more. See [[1]](https://panopticlick.eff.org/) for more information and to test the uniqueness of your browser. Below are a few steps that can be taken to make your qutebrowser installation more "generic".
+Websites may be able to identify you based on combining information on screen size, user-agent, HTTP_ACCEPT headers, and more. See [[2]](https://panopticlick.eff.org/) for more information and to test the uniqueness of your browser. Below are a few steps that can be taken to make your qutebrowser installation more "generic".
 
 Additionally see [Firefox/Privacy#Configuration tweaks](/index.php/Firefox/Privacy#Configuration_tweaks "Firefox/Privacy") for more ideas.
 
@@ -153,7 +153,7 @@ $ qutebrowser --qt-flag disable-reading-from-canvas
 
 See [issue #2235](https://github.com/qutebrowser/qutebrowser/issues/2235) for more information.
 
-**Note:** Some websites depend on canvas reading for content rendering and other functionality. Adding this option may cause them to not work properly [[2]](https://github.com/qutebrowser/qutebrowser/issues/2908).
+**Note:** Some websites depend on canvas reading for content rendering and other functionality. Adding this option may cause them to not work properly [[3]](https://github.com/qutebrowser/qutebrowser/issues/2908).
 
 #### Disable WebGL
 

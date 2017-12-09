@@ -34,10 +34,6 @@
 
 ### Графические
 
-*   **[Entrance](/index.php/Enlightenment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Enlightenment (Русский)")** — очень экспериментальная реализация, основанная на EFL.
-
-	[http://enlightenment.org/](http://enlightenment.org/) || [entrance-git](https://aur.archlinux.org/packages/entrance-git/)
-
 *   **[GDM](/index.php/GDM "GDM")** — экранный менеджер [GNOME](/index.php/GNOME "GNOME").
 
 	[http://projects.gnome.org/gdm/](http://projects.gnome.org/gdm/) || [gdm](https://www.archlinux.org/packages/?name=gdm)

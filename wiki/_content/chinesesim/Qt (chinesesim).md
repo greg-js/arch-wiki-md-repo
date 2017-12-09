@@ -1,3 +1,9 @@
+相关文章
+
+*   [KDE (简体中文)](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")
+*   [Uniform Look for QT and GTK Applications (简体中文)](/index.php/Uniform_Look_for_QT_and_GTK_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Uniform Look for QT and GTK Applications (简体中文)")
+*   [GTK+ (简体中文)](/index.php/GTK%2B_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GTK+ (简体中文)")
+
 **翻译状态：** 本文是英文页面 [Qt](/index.php/Qt "Qt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-11-15，点击[这里](https://wiki.archlinux.org/index.php?title=Qt&diff=0&oldid=456523)可以查看翻译后英文页面的改动。
 
 [Qt](http://qt-project.org/) 是一个跨平台的应用程序和组件工具，使用标准 C++编写，通过大量使用代码生成器 [Meta Object Compiler(moc)](http://qt-project.org/doc/qt-4.8/moc.html)以及数个宏来扩展语言的功能。它有一些更重要的特性包括：
@@ -114,13 +120,13 @@ Qt4 已经包含数种样式，例如 GTK+ 样式、Windows 样式、CDE 样式�
 
 ### Qt5
 
-Qt5 decides the style to use based on what desktop environment is used:
+Qt5基于当前使用的桌面环境来决定所使用的样式：
 
 *   In KDE Plasma, it uses the actually selected Qt style. It can be configured using *KDE System Settings* (*systemsettings5*), the settings can be found in *Appearance > Application Style > Widget Style*.
 *   In Cinnamon, GNOME, MATE, LXDE, Xfce, it uses GTK+ ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
 *   In other desktop environments, it uses Fusion.
 
-To force a specific style, you can set the `QT_STYLE_OVERRIDE` [environment variable](/index.php/Environment_variable "Environment variable"). Specifically, set it to `gtk2` if you want to use the [GTK+](/index.php/GTK%2B "GTK+") theme (Note: you will need to install the Qt style plugins mention below to get the GTK+ style). Qt5 applications also support the `-style` flag, which you can use to launch a Qt5 application with a specific style.
+如果要强制指定一种样式，你可以设置`QT_STYLE_OVERRIDE`环境变量（[environment variable](/index.php/Environment_variable "Environment variable")）。特别的，如果你想要使用[GTK+](/index.php/GTK%2B "GTK+")主题，把它设置成`gtk2`（注意：你将需要安装在下文中提到的Qt样式插件来获取GTK+样式）。Qt5应用同时也支持`-style`标志，你可以用它来使用指定的样式运行一个Qt5应用程序。
 
 The following styles are included in Qt5: *Fusion*, *Windows*. Others can be installed from the official repositories:
 
@@ -176,7 +182,7 @@ To automatically set `QT_QPA_PLATFORMTHEME` for user session, add the following 
 
 This will export `QT_QPA_PLATFORMTHEME` environment variable for the whole user session. Note that this doesn't work on [enlightenment](/index.php/Enlightenment "Enlightenment") because it has its own custom environment variable setting instead of getting it from `~/.profile` file.
 
-If the below errors are received, and some icons still do not appear in some of the apps, install [oxygen](https://www.archlinux.org/packages/?name=oxygen) and [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons):
+如果遇到了下列错误，并且一些图标依然不在一些应用程序中出现，安装[oxygen](https://www.archlinux.org/packages/?name=oxygen)和[oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons)：
 
 ```
 Icon theme "oxygen" not found.

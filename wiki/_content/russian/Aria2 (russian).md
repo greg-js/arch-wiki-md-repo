@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Aria2](/index.php/Aria2 "Aria2"). Дата последней синхронизации: 21 ноября 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Aria2&diff=0&oldid=497127).
+**Состояние перевода:** На этой странице представлен перевод статьи [Aria2](/index.php/Aria2 "Aria2"). Дата последней синхронизации: 7 декабря 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Aria2&diff=0&oldid=498209).
 
 С домашней страницы [проекта](https://aria2.github.io/):
 
@@ -382,7 +382,7 @@ $ aria2c -UWget http://some-url-to-download/file.xyz
 DLAGENTS=('ftp::/usr/bin/aria2c -UWget -s4 %u -o %o'
           'http::/usr/bin/aria2c -UWget -s4 %u -o %o'
           'https::/usr/bin/aria2c -UWget -s4 %u -o %o'
-          'rsync::/usr/bin/rsync -z %u %o'
+          'rsync::/usr/bin/rsync --no-motd -z %u %o'
           'scp::/usr/bin/scp -C %u %o')
 [...]
 ```

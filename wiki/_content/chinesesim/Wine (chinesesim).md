@@ -502,9 +502,9 @@ echo ':DOSWin:M::MZ::/usr/bin/wine:' > /proc/sys/fs/binfmt_misc/register
 
 ```
 
-To make the setting permanent, create a configuration file in `/etc/tmpfiles.d` with the following contents: 测试效果，若一切正常，可以使该设置永久生效。在 `/etc/tmpfiles.d` 目录创建新的配置文件，内容为：
+To make the setting permanent, create a configuration file in `/etc/binfmt.d` with the following contents: 测试效果，若一切正常，可以使该设置永久生效。在 `/etc/binfmt.d` 目录创建新的配置文件，内容为：
 
- `/etc/tmpfiles.d/enable-doswin-exe.conf`  `w /proc/sys/fs/binfmt_misc/register - - - - :DOSWin:M::MZ::/usr/bin/wine:` 
+ `/etc/tmpfiles.d/wine.conf`  `:DOSWin:M::MZ::/usr/bin/wine:` 
 
 说明一下，和 initscripts 不同，systemd 会自动挂载 `/proc/sys/fs/binfmt_misc`，所以只需要通过临时文件机制向内核写入配置即可。
 

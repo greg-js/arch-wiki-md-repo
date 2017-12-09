@@ -18,6 +18,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 *   [1 Installation](#Installation)
 *   [2 Loading](#Loading)
     *   [2.1 Enable early KMS](#Enable_early_KMS)
+    *   [2.2 Enable GuC / HuC firmware loading](#Enable_GuC_.2F_HuC_firmware_loading)
 *   [3 Xorg configuration](#Xorg_configuration)
 *   [4 Module-based Powersaving Options](#Module-based_Powersaving_Options)
     *   [4.1 RC6 sleep modes (enable_rc6)](#RC6_sleep_modes_.28enable_rc6.29)
@@ -74,6 +75,27 @@ If it does not happen, then:
 [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) is supported by Intel chipsets that use the i915 DRM driver and is mandatory and enabled by default.
 
 Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for instuctions on how to enable KMS as soon as possible at the boot process.
+
+### Enable GuC / HuC firmware loading
+
+Some video features (e.g. CBR rate control on SKL low-power encoding mode) may require the use of an updated GPU firmware, which is currently (as of 4.41) not enabled by default.
+
+It is necessary to add `i915.enable_guc_loading=1` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to enable it.
+
+You can verify that it's enabled by checking dmesg for
+
+```
+[    2.142029] [drm] GuC loaded (firmware i915/skl_guc_ver6_1.bin [version 6.1])
+
+```
+
+Alternatively, check:
+
+```
+$ cat /sys/kernel/debug/dri/0/i915_huc_load_status
+$ cat /sys/kernel/debug/dri/0/i915_guc_load_status
+
+```
 
 ## Xorg configuration
 

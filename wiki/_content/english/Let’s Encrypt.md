@@ -35,9 +35,9 @@ Consult the [Certbot documentation](https://certbot.eff.org/docs/) for more info
 
 ### Plugins
 
-#### Nginx
+**Warning:** Configuration files may be rewritten when using a plugin. Creating a **backup** first is recommended.
 
-**Warning:** Configuration files may be rewritten when using the plugin. Creating a **backup** first is recommended.
+#### Nginx
 
 The plugin [certbot-nginx](https://www.archlinux.org/packages/?name=certbot-nginx) provides an automatic configuration for [nginx](/index.php/Nginx "Nginx") [server-blocks](/index.php/Nginx#Server_blocks "Nginx"):
 

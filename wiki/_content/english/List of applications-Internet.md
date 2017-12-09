@@ -1117,7 +1117,7 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 *   **[naim](https://en.wikipedia.org/wiki/naim_(software) "wikipedia:naim (software)")** — Ncurses chat client with support for ICQ, IRC and the Lily CMC.
 
-	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://www.archlinux.org/packages/?name=naim)
+	[https://github.com/nmlorg/naim](https://github.com/nmlorg/naim) || [naim](https://www.archlinux.org/packages/?name=naim)
 
 *   **pork** — Programmable, ncurses-based IRC client that mostly looks and feels like ircII.
 

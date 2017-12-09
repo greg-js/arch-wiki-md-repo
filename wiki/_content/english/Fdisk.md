@@ -151,14 +151,14 @@ To later restore this layout you can run:
 Using *sgdisk* you can create a binary backup consisting of the protective MBR, the main GPT header, the backup GPT header, and one copy of the partition table:
 
 ```
-# sgdisk -b=sgdisk-sda.bak
+# sgdisk -b=sgdisk-sda.bak /dev/sda
 
 ```
 
 You can later restore the backup by running:
 
 ```
-# sgdisk -l=sgdisk-sda.bak
+# sgdisk -l=sgdisk-sda.bak /dev/sda
 
 ```
 

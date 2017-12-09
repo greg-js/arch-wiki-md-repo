@@ -497,3 +497,4 @@ Note that some motherboards (this is the case in a Packard Bell laptop) only all
 *   [efitools README](https://git.kernel.org/cgit/linux/kernel/git/jejb/efitools.git/tree/README)
 *   [Will your computer's "Secure Boot" turn out to be "Restricted Boot"?](https://www.fsf.org/campaigns/secure-boot-vs-restricted-boot) — Free Software Foundation
 *   [Free Software Foundation recommendations for free operating system distributions considering Secure Boot](https://www.fsf.org/campaigns/secure-boot-vs-restricted-boot/statement/campaigns/secure-boot-vs-restricted-boot/whitepaper-web)
+*   [Intel's UEFI Secure Boot Tutorial](https://firmware.intel.com/messages/219)

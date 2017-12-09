@@ -162,9 +162,11 @@ See the man page on [cp(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cp.1) for 
 
 Btrfs supports transparent compression, meaning every file on the partition is automatically compressed. This not only reduces the size of files, but also [improves performance](http://www.phoronix.com/scan.php?page=article&item=btrfs_compress_2635&num=1), in particular if using the [lzo algorithm](http://www.phoronix.com/scan.php?page=article&item=btrfs_lzo_2638&num=1), in some specific use cases (e.g. single thread with heavy file IO), while obviously harming performance on other cases (e.g. multithreaded and/or cpu intensive tasks with large file IO).
 
-Compression is enabled using the `compress` mount option, which can be set to `zlib`, `lzo`, or `no` (for no compression). Only files created or modified after the mount option is added will be compressed.
+Compression is enabled using the `compress` mount option, which can be set to `zlib`, `lzo`, `zstd`, or `no` (for no compression). Only files created or modified after the mount option is added will be compressed.
 
-To apply compression to existing files, use the `btrfs filesystem defragment -c*alg*` command, where `*alg*` is either `zlib` or `lzo`. For example, in order to re-compress the whole file system with [lzo](https://www.archlinux.org/packages/?name=lzo), run the following command:
+**Note:** Systems using older kernels or [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) without `zstd` support may be unable to read or repair your filesystem if you use this option.
+
+To apply compression to existing files, use the `btrfs filesystem defragment -c*alg*` command, where `*alg*` is either `zlib`, `lzo` or `zstd`. For example, in order to re-compress the whole file system with [lzo](https://www.archlinux.org/packages/?name=lzo), run the following command:
 
 ```
 # btrfs filesystem defragment -r -v -clzo /

@@ -5,9 +5,8 @@ Spotify also offers free users the ability to create playlist which can be shuff
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Third-party clients](#Third-party_clients)
-    *   [1.2 Official Linux client](#Official_Linux_client)
-    *   [1.3 Official Windows client through Wine](#Official_Windows_client_through_Wine)
+    *   [1.1 Official Linux client](#Official_Linux_client)
+    *   [1.2 Third-party clients](#Third-party_clients)
 *   [2 Tips & tricks](#Tips_.26_tricks)
     *   [2.1 Global media hotkeys](#Global_media_hotkeys)
         *   [2.1.1 MPRIS](#MPRIS)
@@ -31,20 +30,22 @@ Spotify also offers free users the ability to create playlist which can be shuff
     *   [3.2 Using search causes the whole interface to blink and then crash](#Using_search_causes_the_whole_interface_to_blink_and_then_crash)
     *   [3.3 Blinking images and improper rendering while using Spotify Linux with DWM](#Blinking_images_and_improper_rendering_while_using_Spotify_Linux_with_DWM)
     *   [3.4 Broken search, browsing or radio](#Broken_search.2C_browsing_or_radio)
-    *   [3.5 SpotifyHelper.exe crashes (Windows client)](#SpotifyHelper.exe_crashes_.28Windows_client.29)
-    *   [3.6 Wrong launcher icon (Windows client)](#Wrong_launcher_icon_.28Windows_client.29)
-    *   [3.7 Deadlock GUI Thread](#Deadlock_GUI_Thread)
-    *   [3.8 PulseAudio](#PulseAudio)
-    *   [3.9 Album art and images are missing, show up as squares](#Album_art_and_images_are_missing.2C_show_up_as_squares)
-    *   [3.10 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
-    *   [3.11 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
-    *   [3.12 Can't play local files](#Can.27t_play_local_files)
-    *   [3.13 Not respecting window manager rules](#Not_respecting_window_manager_rules)
+    *   [3.5 Deadlock GUI Thread](#Deadlock_GUI_Thread)
+    *   [3.6 PulseAudio](#PulseAudio)
+    *   [3.7 Album art and images are missing, show up as squares](#Album_art_and_images_are_missing.2C_show_up_as_squares)
+    *   [3.8 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
+    *   [3.9 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
+    *   [3.10 Can't play local files](#Can.27t_play_local_files)
+    *   [3.11 Not respecting window manager rules](#Not_respecting_window_manager_rules)
 *   [4 See also](#See_also)
 
 ## Installation
 
-Choose which client you would prefer. The Linux client is receiving good reviews. However, if you are comfortable with wine and its configuration, you might want to choose the windows client. Please note that you do **not** need to install both. There is also the online player at [https://open.spotify.com/](https://open.spotify.com/).
+Initially, Spotify was unavailable for Linux and the workaround was to run it under [Wine](/index.php/Wine "Wine"). However, [as of 2010](https://news.spotify.com/uk/2010/07/12/linux/), a native Linux client is available. Although it's officially unsupported, the Linux client is actively maintained and the developers have indicated that they will "try to make sure it keeps pace with its Mac and Windows siblings". [[1]](https://www.spotify.com/int/download/linux/) Alternatively, there is also also an [online player](https://open.spotify.com/).
+
+### Official Linux client
+
+[Install](/index.php/Install "Install") it with the [spotify](https://aur.archlinux.org/packages/spotify/) package. If you wish to play local files you will need to install [zenity](https://www.archlinux.org/packages/?name=zenity) and [ffmpeg0.10](https://aur.archlinux.org/packages/ffmpeg0.10/) as well.
 
 ### Third-party clients
 
@@ -64,46 +65,13 @@ Choose which client you would prefer. The Linux client is receiving good reviews
 
 	[https://www.tomahawk-player.org/](https://www.tomahawk-player.org/) || [tomahawk](https://aur.archlinux.org/packages/tomahawk/) [tomahawk-git](https://aur.archlinux.org/packages/tomahawk-git/) [tomahawk-qt5](https://aur.archlinux.org/packages/tomahawk-qt5/)
 
-### Official Linux client
-
-[Install](/index.php/Install "Install") it with the [spotify](https://aur.archlinux.org/packages/spotify/) package. If you wish to play local files you will need to install [zenity](https://www.archlinux.org/packages/?name=zenity) and [ffmpeg0.10](https://aur.archlinux.org/packages/ffmpeg0.10/) as well.
-
-### Official Windows client through Wine
-
-First, install [Wine](/index.php/Wine "Wine").
-
-Obtaining Spotify can be done by registering for an account on their website, the application does not offer in-app registration. Obtain the application from [https://www.spotify.com/us/download/windows/](https://www.spotify.com/us/download/windows/).
-
-After you have registered and downloaded your copy of the installer you will need to run the application through Wine, depending on your setup you may be able to run the application by right clicking the file. If not terminal will work just fine, as long as you run the below command in the directory of your download.
-
-```
-$ wine SpotifySetup.exe
-
-```
-
-Once the application is successfully installed you may run Spotify by using one of the following commands in terminal, or in the ALT+F2 launcher:
-
-If you use a x86_64 copy of Arch Linux, you will have to run it like this:
-
-```
-$ wine "$HOME/.wine/drive_c/Program Files (x86)/Spotify/spotify.exe"
-
-```
-
-If you use a x86 copy of Arch Linux, you can use this command just fine:
-
-```
-$ wine "$HOME/.wine/drive_c/Program Files/Spotify/spotify.exe"
-
-```
-
-If you have any additional problems, I recommend setting the winecfg to Windows XP or Windows 7 emulation.
-
 ## Tips & tricks
 
 ### Global media hotkeys
 
-The official Linux client has support for media keys like `XF86AudioPlay`, but out of the box they only work inside Spotify. We can use for example [xbindkeys](/index.php/Xbindkeys "Xbindkeys") to catch the global media keypresses, and then forward them to Spotify using one of the methods below. If you use xbindkeys, ensure that Spotify is restarted after installation and key configuration otherwise the key events will not be properly caught.
+**Tip:** Many [desktop environments](/index.php/Desktop_environments "Desktop environments") come with keyboard shortcuts which work with the Spotify client out of the box e.g. under [Cinnamon](/index.php/Cinnamon "Cinnamon") (Preferences -> Keyboard -> Shortcuts -> Sound and Media), several default bindings are set up to control the player, and these can easily be changed by pressing the preferred keys.
+
+For environments in which controlling Spotify via the keyboard doesn't work automatically, the official Linux client has support for media keys like `XF86AudioPlay`. We can use for example [xbindkeys](/index.php/Xbindkeys "Xbindkeys") to catch the global media keypresses, and then forward them to Spotify using one of the methods below. If you use xbindkeys, ensure that Spotify is restarted after installation and key configuration otherwise the key events will not be properly caught.
 
 #### MPRIS
 
@@ -476,19 +444,6 @@ If various tabs like browsing only show a blank screen, the search field doesn't
 
 Try setting the environment variable `LC_NUMERIC` to `en_US.utf8` before starting Spotify.
 
-### SpotifyHelper.exe crashes (Windows client)
-
-If SpotifyHelper.exe crashes when starting Spotify, disable the d3d9 library with `winecfg`. Go to the "Libraries" tab, choose "d3d9" and click Add. To disable it, click edit and select the "Disable" option.
-
-### Wrong launcher icon (Windows client)
-
-If the Spotify icon does not show up correctly in your launcher, add the following line to `~/.local/share/applications/wine/Programs/Spotify.desktop`:
-
-```
-StartupWMClass=spotify.exe
-
-```
-
 ### Deadlock GUI Thread
 
 Can occur under tiling window managers, such as Awesome, when double-clicking new song or playlist. Edit the file `~/.config/spotify/Users/[1-9]*-user/prefs` to add or change the following:
@@ -500,13 +455,13 @@ ui.track_notifications_enabled=false
 
 Restart Spotify. Note that several causes appear to exist for this problem, and this particular fix only applies to select versions of Spotify client, i3 and Awesome, and it may be that additional root causes exist for the Debian and Ubuntu users reporting this issue. Observed with Spotify 0.9.17.1.g9b85d436 and Awesome 3.4.15 and i3-gaps 4.13-2 and Spotify 1.0.64.407.g9bd02c2d.
 
-**Note:** As of Spotify 1.0.17.75-2, `ui.track_notifications_enabled=false` seems to be ignored. On the other hand some, users report not experimenting the deadlock anymore as of Awesome 3.5.6\. Deadlocks could be caused by scripts called by Awesome, which rely on buggy spotify dbus properties. See [[1]](https://github.com/acrisci/playerctl/issues/20).
+**Note:** As of Spotify 1.0.17.75-2, `ui.track_notifications_enabled=false` seems to be ignored. On the other hand some, users report not experimenting the deadlock anymore as of Awesome 3.5.6\. Deadlocks could be caused by scripts called by Awesome, which rely on buggy spotify dbus properties. See [[2]](https://github.com/acrisci/playerctl/issues/20).
 
 **Note:** This issue has multiple causes, so keep track of what you change while researching this. Update this section with additional scenarios and fixes.
 
 ### PulseAudio
 
-See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting") and [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1393465#p1393465)
+See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting") and [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1393465#p1393465)
 
 ### Album art and images are missing, show up as squares
 
@@ -536,7 +491,7 @@ iptables -A UDP -p udp --dport 57621 -j ACCEPT -m comment --comment spotify
 
 It is also possible to restrict the source and destination to the local network.
 
-If you are using Spotify Connect to play music on a wireless speaker or AVR, your firewall needs to be configured for Spotify's mDNS lookup of those. Sadly, it uses a random unprivileged port [[3]](https://community.spotify.com/t5/Desktop-Linux-Windows-Web-Player/Spotify-Connect-and-iptables-netfilter/td-p/1235049) which makes these firewall rules rather nasty. Fortunately, you can restrict the rules to source port 1900 or 5353.
+If you are using Spotify Connect to play music on a wireless speaker or AVR, your firewall needs to be configured for Spotify's mDNS lookup of those. Sadly, it uses a random unprivileged port [[4]](https://community.spotify.com/t5/Desktop-Linux-Windows-Web-Player/Spotify-Connect-and-iptables-netfilter/td-p/1235049) which makes these firewall rules rather nasty. Fortunately, you can restrict the rules to source port 1900 or 5353.
 
 ```
 iptables -A UDP -p udp --sport 1900 --dport 1025:65535 -j ACCEPT -m comment --comment spotify
@@ -593,7 +548,6 @@ Window manager that try to apply specific rules like starting it on a determined
 
 ## See also
 
-*   [playerctl](https://github.com/acrisci/playerctl): A command-line utility and library for controlling media players
-*   [SpotCommander](/index.php/SpotCommander "SpotCommander"): A web based remote control for Spotify
-*   [http://www.spotify.com/int/help/faq/wine/](http://www.spotify.com/int/help/faq/wine/)
-*   [http://www.spotify.com/int/download/previews/](http://www.spotify.com/int/download/previews/)
+*   [playerctl](https://github.com/acrisci/playerctl) — A command-line utility and library for controlling media players
+*   [SpotCommander](/index.php/SpotCommander "SpotCommander") — A web based remote control for Spotify
+*   [Spotify for Linux](http://www.spotify.com/int/download/previews/) — Spotify's homepage for the Linux client

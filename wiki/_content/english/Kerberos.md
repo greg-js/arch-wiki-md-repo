@@ -84,8 +84,7 @@ Re-enter KDC database master key to verify: ***
 Finally, enable and start the Kerberos services:
 
 ```
-# systemctl enable krb5-kdc krb5-kadmind
-# systemctl start krb5-kdc krb5-kadmind
+# systemctl enable --now krb5-kdc krb5-kadmind
 
 ```
 

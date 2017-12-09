@@ -738,7 +738,7 @@ to hide the menu while displaying only the timeout. Press any key to bring up th
 
 **Note:** For UEFI, Syslinux uses the same binary for disk booting and network booting. Loading files from TFTP or other network protocols will require network booting Syslinux.
 
-<a class="mw-selflink selflink">PXELINUX</a> is provided by the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package.
+PXELINUX is provided by the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package.
 
 For BIOS clients, copy the `{l,}pxelinux.0` bootloader to the boot directory of the client. For version 5.00 and newer, also copy `ldlinux.c32` from the same package:
 

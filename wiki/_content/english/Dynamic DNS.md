@@ -32,12 +32,14 @@ Some of the compatible services are listed below, but you can also check the [ex
 <caption>ddclient compatible services</caption>
 | Service | Cost | Available Records | Hostname Limit | Config Notes | Alternative tools |
 | [Now-DNS](http://now-dns.com/) | Free | A, AAAA | unlimited | Use protocol `dyndns2`, server `now-dns.com/update` |
-| [ChangeIP](http://www.changeip.com/) | Free or paid | A, AAAA, CNAME, MX, codomains | 7 free |
+| [ChangeIP](http://www.changeip.com/) | Free or paid | A, AAAA, CNAME, MX, codomains | 7 free | [example](https://sourceforge.net/p/ddclient/wiki/protocols/#changeip) |
 | [DNSdynamic](http://www.dnsdynamic.org/) | Free | [example](https://www.dnsdynamic.org/api.php) |
-| [Duck DNS](https://www.duckdns.org/) | Free | [duckdns](https://aur.archlinux.org/packages/duckdns/) |
+| [Duck DNS](https://www.duckdns.org/) | Free | [example](https://sourceforge.net/p/ddclient/wiki/protocols/#duckdns) | [duckdns](https://aur.archlinux.org/packages/duckdns/) |
 | [FreeDNS](http://freedns.afraid.org/) | Free or paid | CNAME, A, AAAA, MX, NS, TXT, LOC, RP, HINFO, SRV | 5 free | [example](http://freedns.afraid.org/scripts/freedns.clients.php) | [afraid-dyndns-uv](https://aur.archlinux.org/packages/afraid-dyndns-uv/), [petrified](https://aur.archlinux.org/packages/petrified/) |
 | [No-IP](http://www.noip.com/) | Free or paid | 3 free, 25+ paid | Use protocol `noip`, server `dynupdate.no-ip.com` | [noip](https://aur.archlinux.org/packages/noip/) |
 | [nsupdate.info](https://www.nsupdate.info/) | Free and open source | A, AAAA | Use protocol `dyndns2` | [inadyn-fork](https://aur.archlinux.org/packages/inadyn-fork/) |
+| [Dyn DNS](https://dyn.com/dns/) | Free or paid | A, CNAME, MX | [example](https://sourceforge.net/p/ddclient/wiki/protocols/#dyndns2) | [ndyndns](https://aur.archlinux.org/packages/ndyndns/) |
+| [Namecheap](https://www.namecheap.com/) | Paid | A, CNAME | [example](https://sourceforge.net/p/ddclient/wiki/protocols/#namecheap) | [ndyndns](https://aur.archlinux.org/packages/ndyndns/) |
 | [Dynu](https://www.dynu.com/) | Free or paid | 4 free, 500 paid | [example](https://www.dynu.com/DynamicDNS/IPUpdateClient/DDClient) |
 
 **Note:** Free users of no-ip are required to manually confirm their domain(s) every 30 days. Domain confirmation is not required for Enhanced users though. More info at [Why is My Hostname Pending Deletion?](http://www.noip.com/support/knowledgebase/why-is-my-hostname-pending-deletion/)
@@ -93,3 +95,5 @@ The following DDNS providers are not compatible with [ddclient](#ddclient) so up
 ### Loopia.se
 
 If you use loopia.se as name server, you can query updates of DNS records via *curl* as described in the [official documentation](https://support.loopia.se/wiki/curl/).
+
+If you use 2FA for login, or by some other reason would rather use the LoopiaAPI via a python script to change the DNS dynamically, you should follow the instructions [on this page](https://support.loopia.se/wiki/uppdatera-dynamisk-ip-adress-med-loopiaapi/). The python file is well written and easy to understand, and basically all you need to do is to generate an API key on your login at Loopia kundzon first.

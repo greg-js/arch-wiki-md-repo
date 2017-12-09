@@ -18,6 +18,7 @@
     *   [13.1 Audio](#Audio)
     *   [13.2 Power Management](#Power_Management)
     *   [13.3 USB 3.0 on battery](#USB_3.0_on_battery)
+*   [14 Eee 1215P](#Eee_1215P)
 
 # Eee T101MT
 
@@ -224,3 +225,7 @@ Information about the usb 3.0 device can be obtained with `lsusb` and `udevadmn 
 # Disable autosuspend for USB 3.0 port
 SUBSYSTEM=="usb", ATTR{version}==" 3.00", ATTR{power/control}="on"
 ```
+
+# Eee 1215P
+
+Everything works fine (as of December 8, 2017), but need to use `acpi_osi=""` kernel parameter.

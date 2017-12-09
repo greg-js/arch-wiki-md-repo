@@ -195,7 +195,7 @@ SDDM loads the keyboard layout specified in `/etc/X11/xorg.conf.d/00-keyboard.co
 
 ### No user Icon
 
-SDDM reads user icon from either `~/.face.icon` or `*FacesDir*/username.face.icon`
+SDDM reads user icon from either `~/.face.icon` or `*FacesDir*/username.face.icon`. The user icon must be saved in PNG format.
 
 You need to make sure that SDDM user have permissions to read those files.
 

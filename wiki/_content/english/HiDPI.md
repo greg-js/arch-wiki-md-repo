@@ -11,8 +11,7 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 *   [1 Desktop environments](#Desktop_environments)
     *   [1.1 GNOME](#GNOME)
     *   [1.2 KDE](#KDE)
-        *   [1.2.1 Using KDE system settings](#Using_KDE_system_settings)
-        *   [1.2.2 Tray icons with fixed size](#Tray_icons_with_fixed_size)
+        *   [1.2.1 Tray icons with fixed size](#Tray_icons_with_fixed_size)
     *   [1.3 Xfce](#Xfce)
     *   [1.4 Cinnamon](#Cinnamon)
     *   [1.5 Enlightenment](#Enlightenment)
@@ -99,51 +98,6 @@ Noting that variants must be specified in the usual way (wrapped in <>).
 Note also that DPI in the above example is expressed in 1024ths of an inch.
 
 ### KDE
-
-KDE plasma 5 provides excellent support for HiDPI screens out of the box: You can set the correct DPI by [#Using KDE system settings](#Using_KDE_system_settings).
-
-Alternatives are to use [SDDM#DPI settings](/index.php/SDDM#DPI_settings "SDDM") or the [#X Server](#X_Server). However, it seems that Gtk+ applications ignore both SDDM and X settings. You can fix this by creating a custom login session as follows.
-
-**Note:**
-
-Playing with GDK_SCALE and GDK_DPI_SCALE values can be useful in case you want to tune GTK app scale in KDE without affecting QT app. For example you may want to do not use the Scale value in KDE Display setting as not integer values creates issues with some QT application fonts.
-
-```
-# cp /usr/share/xsessions/plasma.desktop /usr/share/xsessions/plasma-custom.desktop
-# sed -i 's/\/usr\/bin\/startkde/\/usr\/bin\/startkde-custom/g' /usr/share/xsessions/plasma-custom.desktop
-# sed -i 's/Plasma/Plasma (custom)/g' /usr/share/xsessions/plasma-custom.desktop
-
-```
-
-Create `/usr/bin/startkde-custom`.
-
-Example for a generic 13" 1920x1080 (You may need to adjust these values depending on your display):
-
-```
-#!/bin/bash
-## GDK_SCALE only integer values (ex. 1 2 3 )
-export GDK_SCALE=1 
-## GDK_DPI_SCALE can be non integer (ex. 1.1 1.2 )
-export GDK_DPI_SCALE=1.2
-export XCURSOR_SIZE=48
-/usr/bin/startkde "$@"
-
-```
-
-Example for a 15" Retina Macbook Pro (The negative dpi scale ensures that the text is sized correctly):
-
-```
-#!/bin/bash
-export GDK_SCALE=2
-export GDK_DPI_SCALE=-1
-export XCURSOR_SIZE=48
-/usr/bin/startkde "$@"
-
-```
-
-Do not forget to ensure that the script can be executed (`# chmod +x /usr/bin/startkde-custom`). Logout and choose your new custom session (you may need to restart your display manager for it to show up) and GTK+ applications should be scaled correctly.
-
-#### Using KDE system settings
 
 You can use KDE's settings to fine tune font, icon, and widget scaling. This solution affects both Qt and Gtk+ applications.
 

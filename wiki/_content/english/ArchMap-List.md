@@ -122,6 +122,7 @@ You can use the following website to get your device's coordinates along with a 
 41.386209,-73.081745 "omgpro" # Seymour, CT, USA
 33.9998,-84.0139 "Frem" # Lawrenceville, GA, USA
 48.3674,-89.2698 "gp_aaron" # Thunder Bay, ON, Canada
+39.540992,-119.814764 "robu3" # Nevada, USA
 48.3214,-89.366 "swazo" # Thunder Bay, ON, Canada
 55.3471,9.4851 "timmy" # Christiansfeld, Denmark
 -6.1808,106.8239 "metromini" # Jakarta, Indonesia

@@ -219,7 +219,7 @@ For more info and other ways to create/manage MySQL databases, see the [MariaDB 
 
 #### PostgreSQL
 
-Login to PostgreSQL and create the `gitlabhq_production` database with along with it's user. Remember to change `your_username_here` and `your_password_here` to the real values:
+Login to PostgreSQL and create the `gitlabhq_production` database with along with its user. Remember to change `your_username_here` and `your_password_here` to the real values:
 
 ```
 # psql -d template1
@@ -233,7 +233,7 @@ template1=# CREATE DATABASE gitlabhq_production OWNER your_username_here;
 template1=# \q
 ```
 
-**Note:** The reason for creating the user as a superuser is that GitLab is trying to be "smart" and install extensions (not just create them in it's own userspace). And this is only allowed by superusers in Postgresql.
+**Note:** The reason for creating the user as a superuser is that GitLab is trying to be "smart" and install extensions (not just create them in its own userspace). And this is only allowed by superusers in Postgresql.
 
 Try connecting to the new database with the new user to verify it works:
 

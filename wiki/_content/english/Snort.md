@@ -57,6 +57,8 @@ include $RULE_PATH/snort.rules
 
 ### Inline mode
 
+Inline mode means that packets pass *through* snort, rather than being diverted to snort. In this mode, snort can drop packets and abort exploitation attempts in real-time. In this mode, snort acts as an intrusion prevention system (IPS).
+
 If you are planning on using Snort in inline mode add these lines to the bottom of the configuration:
 
 ```
@@ -94,6 +96,8 @@ systemctl start snort@ens1:ens4
 ```
 
 ### IDS mode
+
+In intrusion detection mode (IDS), packets are diverted to snort. Snort can not drop packets, which means that it can only notify you that a exploitation attempt is occuring, or have already occured.
 
 To start Snort in IDS mode run:
 

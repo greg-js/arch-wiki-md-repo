@@ -500,9 +500,11 @@ Note that these variables are respected by *xinit*, but not by *startx*.
 
 `~/.bash_logout`
 
- | [[92]](http://savannah.gnu.org/support/?108134) | A specified `bashrc` can be sourced from `/etc/bashrc`
+ | [[92]](http://savannah.gnu.org/support/?108134) | `$ export HISTFILE="$XDG_DATA_HOME"/bash/history`
 
-`$ export HISTFILE="$XDG_DATA_HOME"/bash/history`
+A specified `bashrc` can be sourced from `/etc/bashrc`.
+
+Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive shells.
 
  |
 | [bazaar](/index.php/Bazaar "Bazaar") | `~/.bazaar`

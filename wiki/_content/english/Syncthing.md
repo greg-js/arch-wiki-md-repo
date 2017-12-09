@@ -184,26 +184,26 @@ In this setup, relaying should not be necessary: local devices can connect to th
 
 ### Running through a proxy
 
-Sometimes it is necessary to run Syncthing as service through a proxy. According to [https://docs.syncthing.net/users/proxying.html](https://docs.syncthing.net/users/proxying.html) it is necessary to specify `all_proxy` environment variable, and it must indicate a socks5 proxy type.
+Syncthing can be run through a proxy to enable use behind a corporate firewalls or tunneling via SSH. According to the [using proxies](https://docs.syncthing.net/users/proxying.html) documentation it is necessary to set the `all_proxy` environment variable, and it must indicate a *socks5* proxy type.
 
-If the service is ran from an script or command line, you can add this before call to Syncthing:
+*   If the service is run from a script or from the command line, you must set the variables beforehand as follows:
 
 ```
-export all_proxy="socks5://proxy_address:proxy_port"
+export all_proxy="socks5://*proxy_address*:*proxy_port*"
 export no_proxy="127.0.0.1"
 
 ```
 
-But if you run Syncthing as a systemd service, you must edit service configuration to add this variable. For example:
+*   If it is run as a service, you must define the variables in the service configuration file as follows:
 
  `/etc/systemd/system/multi-user.target.wants/syncthing@*myuser*.service` 
 ```
 [Service]
-Environment="all_proxy=socks5://proxy_address:proxy_port"
+Environment="all_proxy=socks5://*proxy_address*:*proxy_port*"
 Environment="no_proxy=127.0.0.1"
 ```
 
-After that, you must reload systemd daemons configurations:
+You must then reload systemd daemons configurations:
 
 ```
 # systemctl daemon-reload

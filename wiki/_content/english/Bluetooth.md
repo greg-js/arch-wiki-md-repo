@@ -150,7 +150,7 @@ If there is no Bluetooth icon visible in Dolphin and in the system tray, enable 
 
 ### Blueman
 
-[Blueman](/index.php/Blueman "Blueman") is a full featured Bluetooth manager. It provides a graphical settings panel `blueman-manager` and a system tray applet `blueman-manager`. See [Blueman](/index.php/Blueman "Blueman") for more details.
+[Blueman](/index.php/Blueman "Blueman") is a full featured Bluetooth manager. It provides a graphical settings panel `blueman-manager` and a system tray applet `blueman-applet`. See [Blueman](/index.php/Blueman "Blueman") for more details.
 
 ## Using Obex for sending and receiving files
 
