@@ -23,7 +23,7 @@ Building in a clean chroot prevents missing dependencies in packages, whether du
 
 To quickly build a package in a clean chroot without any further tinkering, one can use the helper scripts from the [devtools](https://www.archlinux.org/packages/?name=devtools) package.
 
-These helper scripts should be called in the same directory where the PKGBUILD is, just like with makepkg. For instance, `extra-i686-build` automatically sets up a chroot from a clean chroot matrix in `/var/lib/archbuild`, updates it, and builds a package for the extra repository. For multilib builds there is just `multilib-build` without an architecture. Consult the table below for information on which script to use when building for a specific repository and architecture.
+These helper scripts should be called in the same directory where the PKGBUILD is, just like with makepkg. For instance, `extra-x86_64-build` automatically sets up a chroot from a clean chroot matrix in `/var/lib/archbuild`, updates it, and builds a package for the extra repository. For multilib builds there is just `multilib-build` without an architecture. Consult the table below for information on which script to use when building for a specific repository and architecture.
 
 The `-c` parameter resets the chroot matrix, which can be useful in case of breakage. It is not needed for building in a clean chroot.
 
@@ -32,11 +32,8 @@ The `-c` parameter resets the chroot matrix, which can be useful in case of brea
 **Note:** If the objective is to build a [core] package for your own local usage, it may be desirable to use the stable repositories instead of the testing. In this case you may simply use the extra build scripts.
 
 | Target repository | Architecture | Build script to use | Pacman configuration file used |
-| extra / community | i686 | extra-i686-build | /usr/share/devtools/pacman-extra.conf |
 | extra / community | x86_64 | extra-x86_64-build | /usr/share/devtools/pacman-extra.conf |
-| testing / community-testing | i686 | testing-i686-build | /usr/share/devtools/pacman-testing.conf |
 | testing / community-testing | x86_64 | testing-x86_64-build | /usr/share/devtools/pacman-testing.conf |
-| staging / community-staging | i686 | staging-i686-build | /usr/share/devtools/pacman-staging.conf |
 | staging / community-staging | x86_64 | staging-x86_64-build | /usr/share/devtools/pacman-staging.conf |
 | multilib | x86_64 | multilib-build | /usr/share/devtools/pacman-multilib.conf |
 | multilib-testing | x86_64 | multilib-testing-build | /usr/share/devtools/pacman-multilib-testing.conf |
@@ -114,7 +111,7 @@ Passing the -c flag to makechrootpkg ensures that the working chroot (named `$CH
 Packages can be installed manually to the working chroot by using:
 
 ```
-# makechrootpkg -r $CHROOT -I package-1.0-1-i686.pkg.tar.xz
+# makechrootpkg -r $CHROOT -I package-1.0-1-x86_64.pkg.tar.xz
 
 ```
 

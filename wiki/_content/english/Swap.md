@@ -162,18 +162,10 @@ Finally, edit [fstab](/index.php/Fstab "Fstab") to add an entry for the swap fil
 
 #### Remove swap file
 
-To remove a swap file, the current swap file must be turned off.
-
-As root:
+To remove a swap file, it must be turned off first and then can be removed:
 
 ```
 # swapoff -a
-
-```
-
-Remove swap file:
-
-```
 # rm -f /swapfile
 
 ```

@@ -1,3 +1,7 @@
+Related articles
+
+*   [Diskless system](/index.php/Diskless_system "Diskless system")
+
 From [Wikipedia:Preboot Execution Environment](https://en.wikipedia.org/wiki/Preboot_Execution_Environment "wikipedia:Preboot Execution Environment"):
 
 	*The Preboot eXecution Environment (PXE, also known as Pre-Execution Environment; sometimes pronounced "pixie") is an environment to boot computers using a network interface independently of data storage devices (like hard disks) or installed operating systems.*
@@ -29,12 +33,13 @@ Next mount the image:
 
 ```
 # mkdir -p /mnt/archiso
-# mount -o loop,ro archlinux-2017.04.01-x86_64.iso /mnt/archiso
+# mount -o loop,ro archlinux-2017.12.01-x86_64.iso /mnt/archiso
+
 ```
 
 ## Server setup
 
-You will need to setup a DHCP, TFTP, and HTTP server to configure networking, load pxelinux/kernel/initramfs, and finally load the root filesystem (respectively).
+You will need to setup a DHCP, [TFTP](/index.php/TFTP "TFTP"), and [HTTP server](/index.php/List_of_applications/Internet#Web_servers "List of applications/Internet") to configure networking, load pxelinux/kernel/initramfs, and finally load the root filesystem (respectively).
 
 ### Network
 
@@ -43,11 +48,12 @@ Bring up your wired NIC, and assign it an address appropriately.
 ```
 # ip link set eth0 up
 # ip addr add 192.168.0.1/24 dev eth0
+
 ```
 
 ### DHCP + TFTP
 
-You will need both a DHCP and TFTP server to configure networking on the install target and to facilitate the transfer of files between the PXE server and client; *dnsmasq* does both, and is extremely easy to set up.
+You will need both a DHCP and TFTP server to configure networking on the install target and to facilitate the transfer of files between the PXE server and client; [dnsmasq](/index.php/Dnsmasq "Dnsmasq") does both, and is extremely easy to set up.
 
 [Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package.
 
@@ -71,7 +77,7 @@ tftp-root=/mnt/archiso
 
 ### HTTP
 
-Thanks to recent changes in [archiso](/index.php/Archiso "Archiso"), it is now possible to boot from HTTP (archiso_pxe_http initcpio hook) or NFS (archiso_pxe_nfs initcpio hook); among all alternatives, darkhttpd is by far the most trivial to setup (and the lightest-weight).
+Thanks to recent changes in [archiso](/index.php/Archiso "Archiso"), it is now possible to boot from HTTP (`archiso_pxe_http` initcpio hook) or NFS (`archiso_pxe_nfs` initcpio hook); among all alternatives, darkhttpd is by far the most trivial to setup (and the lightest-weight).
 
 First, [install](/index.php/Install "Install") the [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd) package.
 
@@ -81,19 +87,20 @@ Then start *darkhttpd* using our `/mnt/archiso` as the document root:
 ```
 darkhttpd/1.8, copyright (c) 2003-2011 Emil Mikulic.
 listening on: http://0.0.0.0:80/
+
 ```
 
-Note that it is important that the server is running on port 80\. If you start *darkhttpd* without root access it will default to 8080\. The client will try to access port 80 and the boot will fail.
+Note that it is important that the server is running on port `80`. If you start *darkhttpd* without root access it will default to `8080`. The client will try to access port 80 and the boot will fail.
 
 ## Installation
 
-For this portion you will need to figure out how to tell the client to attempt a PXE boot; in the corner of the screen along with the normal post messages, usually there will be some hint on which key to press to try PXE booting first. On an IBM x3650 *F12* brings up a boot menu, the first option of which is *Network*; on a Dell PE 1950/2950 pressing *F12* initiates PXE booting directly.
+For this portion you will need to figure out how to tell the client to attempt a PXE boot; in the corner of the screen along with the normal post messages, usually there will be some hint on which key to press to try PXE booting first. On an IBM x3650 `F12` brings up a boot menu, the first option of which is *Network*; on a Dell PE 1950/2950 pressing `F12` initiates PXE booting directly.
 
 ### Boot
 
 Looking at [journald](/index.php/Systemd#Journal "Systemd") on the PXE server will provide some additional insight to what exactly is going on during the early stages of the PXE boot process:
 
- `# journalctl -u dnsmasq -f` 
+ `# journalctl -u dnsmasq.service -f` 
 ```
 dnsmasq-dhcp[2544]: DHCPDISCOVER(eth1) 00:1a:64:6a:a2:4d 
 dnsmasq-dhcp[2544]: DHCPOFFER(eth1) 192.168.0.110 00:1a:64:6a:a2:4d 
@@ -111,6 +118,7 @@ dnsmasq-tftp[2544]: sent /mnt/archiso/arch/boot/syslinux/archiso_pxe64.cfg to 19
 dnsmasq-tftp[2544]: sent /mnt/archiso/arch/boot/syslinux/archiso_tail.cfg to 192.168.0.110
 dnsmasq-tftp[2544]: sent /mnt/archiso/arch/boot/syslinux/vesamenu.c32 to 192.168.0.110
 dnsmasq-tftp[2544]: sent /mnt/archiso/arch/boot/syslinux/splash.png to 192.168.0.110
+
 ```
 
 After you load `pxelinux.0` and `archiso.cfg` via TFTP, you will (hopefully) be presented with a [syslinux](/index.php/Syslinux "Syslinux") boot menu with several options, where you can select *Boot Arch Linux (x86_64) (HTTP)*.
@@ -139,9 +147,12 @@ Unless you want all traffic to be routed through your PXE server (which will not
 
 You can also kill *darkhttpd*; the target has already downloaded the root filesystem, so it is no longer needed. While you are at it, you can also unmount the installation image:
 
- `# umount /mnt/archiso` 
+```
+# umount /mnt/archiso
 
-At this point you can follow the [official installation guide](/index.php/Installation_guide "Installation guide").
+```
+
+At this point you can follow the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ## Alternate Methods
 
@@ -149,15 +160,22 @@ As implied in the syslinux menu, there are several other alternatives:
 
 ### NFS
 
-You will need to set up an [NFS server](/index.php/NFS "NFS") with an export at the root of your mounted installation media, which would be `/mnt/archiso` if you followed the [earlier sections](#Preparation) of this guide. After setting up the server, add the following line to your `/etc/exports` file:
+You will need to set up an [NFS server](/index.php/NFS "NFS") with an export at the root of your mounted installation media, which would be `/mnt/archiso` if you followed [#Preparation](#Preparation). After setting up the server, add the following line to your `/etc/exports` file:
 
- `/etc/exports`  `/mnt/archiso 192.168.0.0/24(ro,no_subtree_check)` 
+ `/etc/exports` 
+```
+/mnt/archiso 192.168.0.0/24(ro,no_subtree_check)
+
+```
 
 If the server was already running, re-export the filesystems with `exportfs -r -a -v`.
 
 The default settings in the installer expect to find the NFS at `/run/archiso/bootmnt`, so you will need to edit the boot options. To do this, press Tab on the appropriate boot menu choice and edit the `archiso_nfs_srv` option accordingly:
 
- `archiso_nfs_srv=${pxeserver}:/mnt/archiso` 
+```
+archiso_nfs_srv=${pxeserver}:/mnt/archiso
+
+```
 
 Alternatively, you can use `/run/archiso/bootmnt` for the entire process.
 
@@ -167,38 +185,37 @@ After the kernel loads, the Arch bootstrap image will copy the root filesystem v
 
 [Install](/index.php/Install "Install") the [nbd](https://www.archlinux.org/packages/?name=nbd) package and configure it:
 
- `# vim /etc/nbd-server/config` 
+ `/etc/nbd-server/config` 
 ```
 [generic]
 [archiso]
     readonly = true
-    exportname = /srv/archlinux-2017.04.01-x86_64.iso
+    exportname = /srv/archlinux-2017.12.01-x86_64.iso
 ```
 
 [Start](/index.php/Start "Start") `nbd.service`.
 
 ### Existing PXE Server
 
-If you have an existing PXE server with a syslinux system setup (e.g. a combination of BIND+DHCPd+TFTPd), you can add the following menu items to your pxelinux.cfg file in order to boot Arch via your preferred method:
+If you have an existing PXE server with a [PXELINUX](/index.php/PXELINUX "PXELINUX") system setup (e.g. a combination of DHCP and [TFTP](/index.php/TFTP "TFTP")), you can add the following menu items to your `pxelinux.cfg` file in order to boot Arch via your preferred method:
 
- `# vim /srv/tftp/arch.menu` 
 ```
 LABEL 2
         MENU LABEL Arch Linux x86_64
-        LINUX /path/to/extracted/Arch/ISO/arch/boot/x86_64/vmlinuz
-        INITRD /path/to/extracted/Arch/ISO/arch/boot/intel_ucode.img,/path/to/extracted/Arch/ISO/arch/boot/x86_64/archiso.img
-        APPEND archisobasedir=arch archiso_nfs_srv=${nfsserver}:/path/to/extracted/Arch/ISO/ ip=:::::eth0:dhcp
-        SYSAPPEND 3
+        LINUX */path/to/extracted/Arch/ISO*/arch/boot/x86_64/vmlinuz
+        INITRD */path/to/extracted/Arch/ISO*/arch/boot/intel_ucode.img,*/path/to/extracted/Arch/ISO*/arch/boot/x86_64/archiso.img
+        APPEND archisobasedir=arch archiso_http_srv=*http://httpserver/path/to/extracted/Arch/ISO*/ ip=::
+        SYSAPPEND 2
         TEXT HELP
-        Arch Linux 2016.03 x86_64
+        Arch Linux 2017.12.01 x86_64
         ENDTEXT
 ```
 
-You can replace archiso_nfs_srv with any of the supported methods listed above (HTTP, NBD). Adding the ip= instruction is necessary to instruct the kernel to bring up the network interface before it attempts to mount the installation medium over the network.
+You can replace `archiso_http_srv` with `archiso_nfs_srv` for NFS or `archiso_nbd_srv` for NBD. Adding the `ip=` instruction is necessary to instruct the kernel to bring up the network interface before it attempts to mount the installation medium over the network.
 
 ### DHCP interface rename bug
 
-As of November 2015 there is [FS#36749](https://bugs.archlinux.org/task/36749) that causes default [predictable network interface renaming](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/) to fail and then dhcp client to fail because of it. A workaround is to add the kernel boot parameter net.ifnames=0 to disable predictable interface names.
+[FS#36749](https://bugs.archlinux.org/task/36749) causes default [predictable network interface renaming](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/) to fail and then dhcp client to fail because of it. A workaround is to add the kernel boot parameter `net.ifnames=0` to disable predictable interface names.
 
 ### Low memory systems
 

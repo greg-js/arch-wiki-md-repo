@@ -162,11 +162,11 @@ Enlightenment 的“通知”扩展模块提供了一个通知服务器。
 
 下列更多主题用于定制 Enlightenment 外观：
 
-*   [exchange.enlightenment.org](http://exchange.enlightenment.org/theme)
-*   [e17-stuff.org](http://e17-stuff.org/index.php?xcontentmode=7000)*（译注：页面已失效）*
+*   [enlightenment-themes.org](https://www.enlightenment-themes.org/)
 *   [relighted.c0n.de](http://relighted.c0n.de/#100) 默认主题的 200 种不同颜色组合
 *   [git.enlightenment.org](http://git.enlightenment.org/themes)（用 git 抓取喜欢的主题，运行 'make' 生成 .edj 后缀的主题文件）
 *   [packages.bodhilinux.com](http://packages.bodhilinux.com/bodhi/pool/stable/b/) 这里有一堆不错的主题（需从 .deb 包中释放出 .edj 文件，可以用 ArchLinux 的基础组件 bsdtar 释放）。在他们的维基上还提供了一个很不错的分类 [[2]](https://web.archive.org/web/20140120083020/http://art.bodhilinux.com/doku.php?id=bodhi_e17_themes_v3)。
+*   [exchange.enlightenment.org](https://web.archive.org/web/20161025233126/https://exchange.enlightenment.org/theme) (archived)
 
 你可以在主题设置对话框中安装这些 .edj 文件格式的主题，或者把它们放在 `~/.e/e/themes` 目录中。
 

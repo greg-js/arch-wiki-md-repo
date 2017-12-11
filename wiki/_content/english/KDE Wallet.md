@@ -6,7 +6,9 @@
 *   [2 Using the KDE Wallet to store ssh key passhprases](#Using_the_KDE_Wallet_to_store_ssh_key_passhprases)
 *   [3 KDE Wallet for Firefox](#KDE_Wallet_for_Firefox)
 *   [4 KDE Wallet for Chrome and Chromium](#KDE_Wallet_for_Chrome_and_Chromium)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 KWalletManager won't run](#KWalletManager_won.27t_run)
+*   [6 See also](#See_also)
 
 ## Unlock KDE Wallet automatically on login
 
@@ -90,6 +92,17 @@ There is an addon to make Firefox store passwords with [KDE5 Wallet](https://add
 ## KDE Wallet for Chrome and Chromium
 
 Chrome/Chromium has built in wallet integration. To enable it, run Chromium with the `--password-store=kwallet` or `--password-store=detect` argument. To make the change persistent, see [Chromium/Tips and tricks#Making flags persistent](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks"). (Setting CHROMIUM_USER_FLAGS will not work.)
+
+## Troubleshooting
+
+### KWalletManager won't run
+
+Review the configuration in
+
+```
+System Settings > Account Details > KDE Wallet
+
+```
 
 ## See also
 

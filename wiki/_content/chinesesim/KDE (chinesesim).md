@@ -198,7 +198,7 @@ Plasmoid包含短的脚本（plasmoid scripts）或者编译过的（plasmoid bi
 
 ##### 系统托盘中的声音应用
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa) 或 [kmix](https://www.archlinux.org/packages/?name=kmix) (从程序启动器启动 Kmix)。前者以被自动安装，无需其他设定。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa) 或 [kmix](https://www.archlinux.org/packages/?name=kmix) (从程序启动器启动 Kmix)。前者已被自动安装，无需其他设定。
 
 **注意:** 要调整 [音量增减的步长](https://bugs.kde.org/show_bug.cgi?id=313579#c28)，将诸如 `VolumePercentageStep=1` 一行添加到 `~/.kde4/share/config/kmixrc` 的 `[Global]` 一节中。
 

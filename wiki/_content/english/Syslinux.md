@@ -37,7 +37,7 @@ Related articles
     *   [3.10 Clear menu](#Clear_menu)
     *   [3.11 Keyboard layout](#Keyboard_layout)
     *   [3.12 Hiding the menu](#Hiding_the_menu)
-    *   [3.13 Pxelinux](#Pxelinux)
+    *   [3.13 PXELINUX](#PXELINUX)
     *   [3.14 Booting ISO9660 image files with memdisk](#Booting_ISO9660_image_files_with_memdisk)
     *   [3.15 Serial console](#Serial_console)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -734,7 +734,7 @@ Use the option:
 
 to hide the menu while displaying only the timeout. Press any key to bring up the menu.
 
-### Pxelinux
+### PXELINUX
 
 **Note:** For UEFI, Syslinux uses the same binary for disk booting and network booting. Loading files from TFTP or other network protocols will require network booting Syslinux.
 

@@ -6,37 +6,39 @@ Related articles
 *   [Pdnsd](/index.php/Pdnsd "Pdnsd")
 *   [unbound](/index.php/Unbound "Unbound")
 
-[dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) provides services as a DNS cacher and a DHCP server. As a Domain Name Server (DNS) it can cache DNS queries to improve connection speeds to previously visited sites, and as a DHCP server dnsmasq can be used to provide internal IP addresses and routes to computers on a LAN. Either or both of these services can be implemented. dnsmasq is considered to be lightweight and easy to configure; it is designed for personal computer use or for use on a network with fewer than 50 computers. It also comes with a [PXE](/index.php/PXE "PXE") server.
+[dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) provides a local [DNS server](https://en.wikipedia.org/wiki/Name_server "wikipedia:Name server"), a [DHCP server](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol") with support for [DHCPv6](https://en.wikipedia.org/wiki/DHCPv6 "wikipedia:DHCPv6") and [PXE](https://en.wikipedia.org/wiki/Preboot_Execution_Environment "wikipedia:Preboot Execution Environment"), and a [TFTP server](https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol "wikipedia:Trivial File Transfer Protocol"). It is designed to be lightweight and have a small footprint, suitable for resource constrained routers and firewalls. dnsmasq can also be configured to cache DNS queries for improved DNS lookup speeds to previously visited sites.
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-*   [3 DNS cache setup](#DNS_cache_setup)
-    *   [3.1 DNS addresses file](#DNS_addresses_file)
-        *   [3.1.1 resolv.conf](#resolv.conf)
-            *   [3.1.1.1 More than three nameservers](#More_than_three_nameservers)
-        *   [3.1.2 dhcpcd](#dhcpcd)
-        *   [3.1.3 dhclient](#dhclient)
-    *   [3.2 NetworkManager](#NetworkManager)
-        *   [3.2.1 Custom configuration](#Custom_configuration)
-        *   [3.2.2 IPv6](#IPv6)
-        *   [3.2.3 Other methods](#Other_methods)
-    *   [3.3 Test](#Test)
-*   [4 DHCP server setup](#DHCP_server_setup)
-    *   [4.1 Test](#Test_2)
-*   [5 TFTP server setup](#TFTP_server_setup)
-*   [6 PXE setup](#PXE_setup)
-*   [7 Start the daemon](#Start_the_daemon)
-*   [8 Tips and tricks](#Tips_and_tricks)
-    *   [8.1 Prevent OpenDNS redirecting Google queries](#Prevent_OpenDNS_redirecting_Google_queries)
-    *   [8.2 View leases](#View_leases)
-    *   [8.3 Adding a custom domain](#Adding_a_custom_domain)
-    *   [8.4 Override addresses](#Override_addresses)
-    *   [8.5 More than one instance](#More_than_one_instance)
-        *   [8.5.1 Static](#Static)
-        *   [8.5.2 Dynamic](#Dynamic)
-*   [9 See also](#See_also)
+*   [3 Start the daemon](#Start_the_daemon)
+*   [4 DNS cache setup](#DNS_cache_setup)
+    *   [4.1 DNS addresses file](#DNS_addresses_file)
+        *   [4.1.1 resolv.conf](#resolv.conf)
+            *   [4.1.1.1 More than three nameservers](#More_than_three_nameservers)
+        *   [4.1.2 dhcpcd](#dhcpcd)
+        *   [4.1.3 dhclient](#dhclient)
+    *   [4.2 NetworkManager](#NetworkManager)
+        *   [4.2.1 Custom configuration](#Custom_configuration)
+        *   [4.2.2 IPv6](#IPv6)
+        *   [4.2.3 Other methods](#Other_methods)
+    *   [4.3 Test](#Test)
+*   [5 Server setup](#Server_setup)
+    *   [5.1 DNS server](#DNS_server)
+        *   [5.1.1 Adding a custom domain](#Adding_a_custom_domain)
+    *   [5.2 DHCP server](#DHCP_server)
+        *   [5.2.1 Test](#Test_2)
+    *   [5.3 TFTP server](#TFTP_server)
+    *   [5.4 PXE server](#PXE_server)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 Prevent OpenDNS redirecting Google queries](#Prevent_OpenDNS_redirecting_Google_queries)
+    *   [6.2 View leases](#View_leases)
+    *   [6.3 Override addresses](#Override_addresses)
+    *   [6.4 More than one instance](#More_than_one_instance)
+        *   [6.4.1 Static](#Static)
+        *   [6.4.2 Dynamic](#Dynamic)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -53,6 +55,19 @@ To configure dnsmasq, you need to edit `/etc/dnsmasq.conf`. The file contains ex
 $ dnsmasq --test
 
 ```
+
+## Start the daemon
+
+[Start/enable](/index.php/Start/enable "Start/enable") `dnsmasq.service`.
+
+To see if dnsmasq started properly, check the system's journal:
+
+```
+$ journalctl -u dnsmasq.service
+
+```
+
+The network will also need to be restarted so the DHCP client can create a new `/etc/resolv.conf`.
 
 ## DNS cache setup
 
@@ -101,6 +116,7 @@ Now DNS queries will be resolved first with dnsmasq, only checking external serv
 ```
 ...
 nohook resolv.conf
+
 ```
 
 It is also possible to write protect your resolv.conf:
@@ -206,7 +222,32 @@ Running the command again will use the cached DNS IP and result in a faster look
 
 ```
 
-## DHCP server setup
+## Server setup
+
+### DNS server
+
+#### Adding a custom domain
+
+It is possible to add a custom domain to hosts in your (local) network:
+
+```
+local=/home.lan/
+domain=home.lan
+
+```
+
+In this example it is possible to ping a host/device (e.g. defined in your `/etc/hosts` file) as `*hostname*.home.lan`.
+
+Uncomment `expand-hosts` to add the custom domain to hosts entries:
+
+```
+expand-hosts
+
+```
+
+Without this setting, you will have to add the domain to entries of `/etc/hosts`.
+
+### DHCP server
 
 By default dnsmasq has the DHCP functionality turned off, if you want to use it you must turn it on in (`/etc/dnsmasq.conf`). Here are the important settings:
 
@@ -230,27 +271,32 @@ dhcp-host=aa:bb:cc:dd:ee:ff,192.168.111.50
 
 ```
 
-### Test
+See [dnsmasq(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for more options.
+
+#### Test
 
 From a computer that is connected to the one with dnsmasq on it, configure it to use DHCP for automatic IP address assignment, then attempt to log into the network normally.
 
-## TFTP server setup
+### TFTP server
 
-Create a directory for TFTP root (e.g. `/srv/tftp`) to put transferable files in.
+dnsmasq has built-in [TFTP](/index.php/TFTP "TFTP") server.
 
-To use dnsmasq's TFTP secure mode [chown](/index.php/Chown "Chown") TFTP root and all files in it to `dnsmasq` user.
+To use it, create a directory for TFTP root (e.g. `/srv/tftp`) to put transferable files in.
 
-Enable TFTP in `dnsmasq.conf`
+For increased security it is advised to use dnsmasq's TFTP secure mode. In secure mode only files owned by the `dnsmasq` user will be served over TFTP. You will need to [chown](/index.php/Chown "Chown") TFTP root and all files in it to `dnsmasq` user to use this feature.
+
+Enable TFTP in `dnsmasq.conf`:
 
  `/etc/dnsmasq.conf` 
 ```
 enable-tftp
 tftp-root=/srv/tftp
 tftp-secure
-
 ```
 
-## PXE setup
+See [dnsmasq(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for more options.
+
+### PXE server
 
 PXE requires DHCP and TFTP servers, both functions can be provided by dnsmasq.
 
@@ -261,8 +307,8 @@ bind-dynamic
 dhcp-range=*192.168.0.1*,proxy
 ```
 
-1.  set up [TFTP server](#TFTP_server_setup) and [DHCP server](#DHCP_server_setup)
-2.  copy and configure a PXE compatible bootloader (e.g. [PXELINUX](/index.php/Syslinux#Pxelinux "Syslinux")) on TFTP root
+1.  set up [#TFTP server](#TFTP_server) and [#DHCP server](#DHCP_server)
+2.  copy and configure a PXE compatible bootloader (e.g. [PXELINUX](/index.php/PXELINUX "PXELINUX")) on TFTP root
 3.  enable PXE in `/etc/dnsmasq.conf`:
 
 **Note:**
@@ -298,17 +344,9 @@ dhcp-boot=tag:bios,"bios/lpxelinux.0"
 
 ```
 
-The rest is up to the bootloader.
+See [dnsmasq(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for more options.
 
-## Start the daemon
-
-[Start/enable](/index.php/Start/enable "Start/enable") `dnsmasq.service`.
-
-To see if dnsmasq started properly, check the system's journal:
-
- `$ journalctl -u dnsmasq` 
-
-The network will also need to be restarted so the DHCP client can create a new `/etc/resolv.conf`.
+The rest is up to the [bootloader](/index.php/Bootloader "Bootloader").
 
 ## Tips and tricks
 
@@ -320,28 +358,7 @@ To prevent OpenDNS from redirecting all Google queries to their own search serve
 
 ### View leases
 
- `$ cat /var/lib/misc/dnsmasq.leases` 
-
-### Adding a custom domain
-
-It is possible to add a custom domain to hosts in your (local) network:
-
-```
-local=/home.lan/
-domain=home.lan
-
-```
-
-In this example it is possible to ping a host/device (e.g. defined in your hosts file) as `hostname.home.lan`.
-
-Uncomment `expand-hosts` to add the custom domain to hosts entries:
-
-```
-expand-hosts
-
-```
-
-Without this setting, you will have to add the domain to entries of /etc/hosts.
+dnsmasq's issued DHCP leased can be viewed in `/var/lib/misc/dnsmasq.leases`.
 
 ### Override addresses
 

@@ -23,11 +23,12 @@ ASUS [announced](https://www.asus.com/News/q0npwWGXCqpxoVf8) UX430 and UX530 mod
     *   [1.3 Audio](#Audio)
     *   [1.4 Touchpad](#Touchpad)
 *   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 Headphones audio is too low](#Headphones_audio_is_too_low)
-    *   [2.2 Fan spins all the time](#Fan_spins_all_the_time)
-    *   [2.3 Microcode](#Microcode)
-    *   [2.4 Nvidia issues with Bumblebee](#Nvidia_issues_with_Bumblebee)
-    *   [2.5 Headset Microphone](#Headset_Microphone)
+    *   [2.1 Linux kernel 4.13+ issues](#Linux_kernel_4.13.2B_issues)
+    *   [2.2 Headphones audio is too low](#Headphones_audio_is_too_low)
+    *   [2.3 Fan spins all the time](#Fan_spins_all_the_time)
+    *   [2.4 Microcode](#Microcode)
+    *   [2.5 Nvidia issues with Bumblebee](#Nvidia_issues_with_Bumblebee)
+    *   [2.6 Headset Microphone](#Headset_Microphone)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Power saving and performance](#Power_saving_and_performance)
     *   [3.2 Extract Windows 10 license key](#Extract_Windows_10_license_key)
@@ -54,6 +55,12 @@ See [Libinput](/index.php/Libinput "Libinput").
 
 # Troubleshooting
 
+## Linux kernel 4.13+ issues
+
+Kernel version 4.13 and further versions have unstable CPU frequencies staying at minimum of 800Mhz-1600Mhz instead of 400-700Mhz. This wastes battery and generates heat, causing fan to spin more aggressively. Use kernel version 4.12 or earlier as a temporary fix until [upstream bug](https://bugzilla.kernel.org/show_bug.cgi?id=197469) is fixed.
+
+Another issue about 4.13+ kernel versions - virtual machines, running under KVM/QEMU crashes/hungs at any time. [upstream bug](https://bugzilla.kernel.org/show_bug.cgi?id=197449) has already been raised, but has no attention at all.
+
 ## Headphones audio is too low
 
 You may notice that the audio through the headphones is too low ([upstream bug](https://bugs.launchpad.net/ubuntu/+source/alsa-driver/+bug/1648183)).
@@ -62,9 +69,16 @@ In order to fix it, install [alsa-tools](https://www.archlinux.org/packages/?nam
 
  `/usr/local/bin/fix_headphones_audio.sh` 
 ```
-#!/bin/sh
-/usr/bin/hda-verb /dev/snd/hwC0D0 0x20 SET_COEF_INDEX 0x67
-/usr/bin/hda-verb /dev/snd/hwC0D0 0x20 SET_PROC_COEF 0x3000
+#!/bin/bash
+while true; do
+	DEVICE=`ls /dev/snd/hwC[[:print:]]*D0 | head -n 1`
+	if [ ! -z "$DEVICE" ]; then
+		hda-verb "$DEVICE" 0x20 SET_COEF_INDEX 0x67
+		hda-verb "$DEVICE" 0x20 SET_PROC_COEF 0x3000
+		break
+	fi
+	sleep 1
+done
 
 ```
 
@@ -74,14 +88,14 @@ Then create a [systemd](/index.php/Systemd "Systemd") script with the following 
 ```
 [Unit]
 Description=Fix headphones audio after boot & resume.
-After=graphical.target suspend.target hibernate.target
+After=multi-user.target suspend.target hibernate.target
 
 [Service]
 Type=oneshot
 ExecStart=/bin/sh '/usr/local/bin/fix_headphones_audio.sh'
 
 [Install]
-WantedBy=graphical.target suspend.target hibernate.target
+WantedBy=multi-user.target suspend.target hibernate.target
 
 ```
 
@@ -89,9 +103,7 @@ And finally, [start and enable](/index.php/Systemd#Using_units "Systemd") `fix_h
 
 ## Fan spins all the time
 
-**Note:** Kernel version 4.13 has unstable CPU frequencies staying at minimum of 800Mhz-900Mhz instead of 400Mhz. This wastes battery and generates heat, causing fan to spin more aggressively. Use kernel version 4.12 or earlier as a temporary fix until [upstream bug](https://bugzilla.kernel.org/show_bug.cgi?id=197469) is fixed.
-
-See [Fan speed control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control").
+See [Fan speed control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control"). Also see [#Linux_kernel_4.13.2B_issues](#Linux_kernel_4.13.2B_issues)
 
 ## Microcode
 

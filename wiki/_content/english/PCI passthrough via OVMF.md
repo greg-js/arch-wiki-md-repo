@@ -49,7 +49,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [10.2 UEFI (OVMF) Compatability in VBIOS](#UEFI_.28OVMF.29_Compatability_in_VBIOS)
     *   [10.3 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
     *   [10.4 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
-    *   [10.5 X doesnt start after enabling vfio_pci](#X_doesnt_start_after_enabling_vfio_pci)
+    *   [10.5 X doesn't start after enabling vfio_pci](#X_doesn.27t_start_after_enabling_vfio_pci)
     *   [10.6 Chromium ignores integrated graphics for acceleration](#Chromium_ignores_integrated_graphics_for_acceleration)
     *   [10.7 VM only uses one core](#VM_only_uses_one_core)
     *   [10.8 Passthrough seems to work but no output is displayed](#Passthrough_seems_to_work_but_no_output_is_displayed)
@@ -973,21 +973,19 @@ In order to fix the issues enabling MSI on the 0 function of a nVidia card (`01:
 
 If after enabling `intel_iommu` the HDMI output device of Intel GPU becomes unusable on the host then setting the option `igfx_off` (i.e. `intel_iommu=on,igfx_off`) might bring the audio back, please read `Graphics Problems?` in [Intel-IOMMU.txt](https://www.kernel.org/doc/Documentation/Intel-IOMMU.txt) for details about setting `igfx_off`.
 
-### X doesnt start after enabling vfio_pci
+### X doesn't start after enabling vfio_pci
 
-This is related to the host gpu being detected as a secondary gpu, which cases X to error, when it tries to load a driver for the guest gpu. To circumvent this, a xorg conf specifying the BusID for the host gpu is necessary. The correct BusID can be acquired from lspci or the Xorg log.
+This is related to the host GPU being detected as a secondary GPU, which causes X to fail/crash when it tries to load a driver for the guest GPU. To circumvent this, a Xorg configuration file specifying the BusID for the host GPU is required. The correct BusID can be acquired from lspci or the Xorg log. [Source →](https://www.redhat.com/archives/vfio-users/2016-August/msg00025.html)
 
- `10-radeon.conf` 
+ `/etc/X11/xorg.conf.d/10-intel.conf` 
 ```
 Section "Device"
-        Identifier "Radeon GPU"
-        Driver "radeon"
-        BusID  "PCI:3:0:0"
+        Identifier "Intel GPU"
+        Driver "modesetting"
+        BusID  "PCI:0:2:0"
 EndSection
 
 ```
-
-[Source](https://www.redhat.com/archives/vfio-users/2016-August/msg00025.html)
 
 ### Chromium ignores integrated graphics for acceleration
 

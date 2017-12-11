@@ -49,10 +49,11 @@ As a result:
     *   [6.5 Exporting a storage pool](#Exporting_a_storage_pool)
     *   [6.6 Renaming a zpool](#Renaming_a_zpool)
     *   [6.7 Setting a different mount point](#Setting_a_different_mount_point)
-    *   [6.8 Swap volume](#Swap_volume)
-    *   [6.9 Automatic snapshots](#Automatic_snapshots)
-        *   [6.9.1 ZFS Automatic Snapshot Service for Linux](#ZFS_Automatic_Snapshot_Service_for_Linux)
-        *   [6.9.2 ZFS Snapshot Manager](#ZFS_Snapshot_Manager)
+    *   [6.8 Access Control Lists](#Access_Control_Lists)
+    *   [6.9 Swap volume](#Swap_volume)
+    *   [6.10 Automatic snapshots](#Automatic_snapshots)
+        *   [6.10.1 ZFS Automatic Snapshot Service for Linux](#ZFS_Automatic_Snapshot_Service_for_Linux)
+        *   [6.10.2 ZFS Snapshot Manager](#ZFS_Snapshot_Manager)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Creating a zpool fails](#Creating_a_zpool_fails)
     *   [7.2 ZFS is using too much RAM](#ZFS_is_using_too_much_RAM)
@@ -519,7 +520,7 @@ To use a key instead of using a passphrase:
 You can also manually load the keys and then mount the encrypted dataset:
 
 ```
-# zfs load-key pool/dataset # load key for a specific dataset
+# zfs load-key <nameofzpool>/<nameofdataset> # load key for a specific dataset
 # zfs load-key -a # load all keys
 # zfs load-key -r zpool/dataset # load all keys in a dataset
 
@@ -628,6 +629,18 @@ The mount point for a given zpool can be moved at will with one command:
 # zfs set mountpoint=/foo/bar poolname
 
 ```
+
+### Access Control Lists
+
+To use [ACL](/index.php/ACL "ACL") on a ZFS pool:
+
+```
+# zfs set acltype=posixacl <nameofzpool>/<nameofdataset>
+# zfs set xattr=sa <nameofzpool>/<nameofdataset>
+
+```
+
+Setting `xattr` is recommended for performance reasons [[4]](https://github.com/zfsonlinux/zfs/issues/170#issuecomment-27348094).
 
 ### Swap volume
 

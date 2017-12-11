@@ -10,6 +10,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
 
 *   NFS is not encrypted. Tunnel NFS through an encrypted protocol like [Kerberos](/index.php/Kerberos "Kerberos"), or [tinc](/index.php/Tinc "Tinc") when dealing with sensitive data.
 *   Unlike [Samba](/index.php/Samba "Samba"), NFS doesn't have any user authentication by default, client access is restricted by their IP-address/[hostname](/index.php/Hostname "Hostname").
+*   NFS expects the [user](/index.php/User "User") and/or [group](/index.php/Group "Group") ID's are the same on both the client and server. It is however possible to overrule the UID/GID by using `anonuid`/`anongid` with `all_squash` in `/etc/exports`.
 
 ## Contents
 
@@ -63,6 +64,8 @@ Consider this following example wherein:
 
 ```
 
+**Note:** [ZFS](/index.php/ZFS "ZFS") filesystems require special handling of bindmounts, see [ZFS#Bind mount](/index.php/ZFS#Bind_mount "ZFS").
+
 To make it stick across reboots, add the bind mount to `fstab`:
 
  `/etc/fstab` 
@@ -71,17 +74,13 @@ To make it stick across reboots, add the bind mount to `fstab`:
 
 ```
 
-**Note:** The permissions on the server filesystem is what NFS will honor so ensure that connecting users have the desired access.
-
-**Note:** [ZFS](/index.php/ZFS "ZFS") filesystems require special handling of bindmounts, see [ZFS#Bind mount](/index.php/ZFS#Bind_mount "ZFS").
-
 Add directories to be shared and limit them to a range of addresses via a CIDR or hostname(s) of client machines that will be allowed to mount them in `/etc/exports`:
 
  `/etc/exports` 
 ```
-/srv/nfs       192.168.1.0/24(rw,fsid=root,crossmnt)
-/srv/nfs/music 192.168.1.0/24(rw) # Use whatever export options you see fit
-
+/srv/nfs        192.168.1.0/24(rw,sync,crossmnt,no_subtree_check) # or *ro* 'readonly' instead of *rw*
+/srv/nfs/music  192.168.1.0/24(rw,sync,no_subtree_check)
+/srv/nfs/public 192.168.1.0/24(ro,all_squash,insecure,no_subtree_check) desktop(rw,sync,all_squash,anonuid=99,anongid=99,no_subtree_check) # map to user/group - in this case *nobody*
 ```
 
 It should be noted that modifying `/etc/exports` while the server is running will require a re-export for changes to take effect:
@@ -91,7 +90,14 @@ It should be noted that modifying `/etc/exports` while the server is running wil
 
 ```
 
-For more information about all available options see [exports(5)](http://man7.org/linux/man-pages/man5/exports.5.html).
+To view the current loaded exports state in more detail, use:
+
+```
+# exportfs -v
+
+```
+
+For more information about all available options see [exports(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/exports.5).
 
 **Tip:** [ip2cidr](http://ip2cidr.com/) is a tool to convert an IP ranges to correctly structured CDIR specification.
 
@@ -276,7 +282,7 @@ servername:/music   /mountpoint/on/client   nfs   rsize=8192,wsize=8192,timeo=14
 
 ```
 
-**Note:** Consult [nfs(5)](http://man7.org/linux/man-pages/man5/nfs.5.html) and [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) for more mount options.
+**Note:** Consult [nfs(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nfs.5) and [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) for more mount options.
 
 Some additional mount options to consider are include:
 
@@ -290,7 +296,7 @@ Some additional mount options to consider are include:
 
 	_netdev
 
-	The `_netdev` option tells the system to wait until the network is up before trying to mount the share. systemd assumes this for NFS, but anyway it is good practice to use it for all types of networked file systems
+	The `_netdev` option tells the system to wait until the network is up before trying to mount the share - [systemd](/index.php/Systemd "Systemd") assumes this for NFS, although [automount](/index.php/NFS#Mount_using_.2Fetc.2Ffstab_with_systemd "NFS") may be a more preferred solution.
 
 **Note:** Setting the sixth field (`fs_passno`) to a nonzero value may lead to unexpected behaviour, e.g. hangs when the systemd automount waits for a check which will never happen.
 
@@ -556,3 +562,4 @@ There is a dedicated article [NFS Troubleshooting](/index.php/NFS_Troubleshootin
 *   [NFS Performance Management](http://publib.boulder.ibm.com/infocenter/pseries/v5r3/index.jsp?topic=/com.ibm.aix.prftungd/doc/prftungd/nfs_perf.htm)
 *   [Microsoft Services for Unix NFS Client info](http://blogs.msdn.com/sfu/archive/2008/04/14/all-well-almost-about-client-for-nfs-configuration-and-performance.aspx)
 *   [NFS on Snow Leopard](https://blogs.oracle.com/jag/entry/nfs_on_snow_leopard) (Dead Link => [Archive.org Mirror](https://web.archive.org/web/20151212160906/https://blogs.oracle.com/jag/entry/nfs_on_snow_leopard))
+*   [http://chschneider.eu/linux/server/nfs.shtml](http://chschneider.eu/linux/server/nfs.shtml)

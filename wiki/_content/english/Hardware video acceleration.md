@@ -40,19 +40,19 @@ There are several ways to achieve this on Linux:
 
  |
 | Decoding |
-| MPEG2 | GMA 4500 and newer |  ? | Radeon HD 4000 and newer | See VDPAU. |
-| MPEG4 | ✗ | Radeon HD 6000 and newer |
-| H.264 | GMA 4500, Ironlake Graphics and newer | Radeon HD 4000 and newer |
-| HEVC (H.265) | Cherryview/Braswell and newer | ✗ |
-| VC1 | Sandy Bridge Graphics and newer | Radeon HD 4000 and newer |
-| VP8 | Broadwell and newer | ✗ | ✗ |
-| VP9 | Broxton and newer | ✗ |
+| MPEG2 | GMA 4500 and newer | Radeon HD 4000 and newer? | Radeon HD 4000 and newer | See VDPAU. |
+| MPEG4 | ✗ |  ? | Radeon HD 6000 and newer |
+| H.264 | GMA 4500, Ironlake Graphics and newer | Radeon HD 4000 and newer? | Radeon HD 4000 and newer |
+| HEVC (H.265) | Cherryview/Braswell and newer | Radeon HD 6000 and newer? | ✗ |
+| VC1 | Sandy Bridge Graphics and newer | Radeon HD 4000 and newer? | Radeon HD 4000 and newer |
+| VP8 | Broadwell and newer |  ? | ✗ | ✗ |
+| VP9 | Broxton and newer |  ? | ✗ |
 | Encoding |
 | MPEG2 | Ivy Bridge Graphics and newer |  ? | ✗ | ✗ |
-| H.264 | Sandy Bridge Graphics and newer |
-| HEVC (H.265) | Skylake and newer |
-| VP8 | Cherryview/Braswell and newer |
-| VP9 | Kaby Lake and newer |
+| H.264 | Sandy Bridge Graphics and newer | Radeon HD 4000 and newer? |
+| HEVC (H.265) | Skylake and newer |  ? |
+| VP8 | Cherryview/Braswell and newer |  ? |
+| VP9 | Kaby Lake and newer |  ? |
 
 <caption>VDPAU</caption>
  [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)
@@ -267,6 +267,15 @@ The default driver names, used if there is no other configuration present, are g
 ```
 
 In this case `radeonsi` is the default for both VA-API and VDPAU.
+
+For GDM users:
+
+ `# sudo journalctl -b | grep VDPAU` 
+```
+(II) NVIDIA(0): [DRI2]   VDPAU driver: nvidia
+(II) NVIDIA(0): [DRI2]   VDPAU driver: nvidia
+
+```
 
 This does not represent the *configuration* however. The values above will not change even if you override them.
 

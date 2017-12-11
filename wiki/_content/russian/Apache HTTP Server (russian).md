@@ -279,7 +279,7 @@ Include conf/vhosts/domainname2.dom
 
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [PHP](/index.php/PHP "PHP") с пакетами [php](https://www.archlinux.org/packages/?name=php) и [php-apache](https://www.archlinux.org/packages/?name=php-apache), доступными в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
-**Примечание:** `libphp5.so` входящий в [php-apache](https://www.archlinux.org/packages/?name=php-apache), не работает с `mod_mpm_event` ([FS#39218](https://bugs.archlinux.org/task/39218)). Вместо него следует использовать `mod_mpm_prefork`. В противном случае, вы получите следующее сообщение об ошибке:
+**Примечание:** `libphp7.so` входящий в [php-apache](https://www.archlinux.org/packages/?name=php-apache), не работает с `mod_mpm_event` ([FS#39218](https://bugs.archlinux.org/task/39218)). Вместо него следует использовать `mod_mpm_prefork`. В противном случае, вы получите следующее сообщение об ошибке:
 ```
 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.  You need to recompile PHP.
 AH00013: Pre-configuration failed
@@ -292,7 +292,7 @@ httpd.service: control process exited, code=exited status=1
 
 на
 
- `LoadModule mpm_prefork_module modules/mod_mpm_prefork.so` Также вы можете просто использовать `mod_proxy_fcgi` (смотрите [#Использование php5 c php-fpm и mod_proxy_fcgi](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_php5_c_php-fpm_.D0.B8_mod_proxy_fcgi)).
+ `LoadModule mpm_prefork_module modules/mod_mpm_prefork.so` Также вы можете просто использовать `mod_proxy_fcgi` (смотрите [#Использование php7 c php-fpm и mod_proxy_fcgi](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_php7_c_php-fpm_.D0.B8_mod_proxy_fcgi)).
 
 Чтобы включить модуль PHP, добавьте следующие строки в `/etc/httpd/conf/httpd.conf`:
 
@@ -310,7 +310,7 @@ httpd.service: control process exited, code=exited status=1
 
 ```
 
-**Примечание:** Если вы не обнаружите библиотеку `libphp5.so` в каталоге (`/etc/httpd/modules`), то вероятнее всего, что вы не установили [php-apache](https://www.archlinux.org/packages/?name=php-apache).
+**Примечание:** Если вы не обнаружите библиотеку `libphp7.so` в каталоге (`/etc/httpd/modules`), то вероятнее всего, что вы не установили [php-apache](https://www.archlinux.org/packages/?name=php-apache).
 
 Если ваш корневой каталог `DocumentRoot` не `/srv/http`, добавьте его в список `open_basedir` в `/etc/php/php.ini`:
 
@@ -370,7 +370,7 @@ extension=mcrypt.so
 
 ```
 
-Не забудьте добавить индексные файлы `/etc/httpd/conf/extra/php5_module.conf`, если это необходимо:
+Не забудьте добавить индексные файлы `/etc/httpd/conf/extra/php7_module.conf`, если это необходимо:
 
 ```
 DirectoryIndex index.php index.phtml index.html

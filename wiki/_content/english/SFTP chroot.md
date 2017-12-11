@@ -47,7 +47,7 @@ Access files with *sftp* or [SSHFS](/index.php/SSHFS "SSHFS"). Many standard [FT
 *   It is also possible chrooting into `/home` directory thus skipping the usage of bind, however the desired user home directory should be owned by root:
 
 ```
-# chmod root:root /home/<username>
+# chown root:root /home/<username>
 # chmod 0755 /home/<username>
 
 ```

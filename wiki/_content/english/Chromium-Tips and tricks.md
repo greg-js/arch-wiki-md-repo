@@ -36,6 +36,7 @@ The following tips and tricks should work for both Chromium and Chrome unless ex
         *   [3.4.1 ScriptBlock](#ScriptBlock)
         *   [3.4.2 ScriptSafe](#ScriptSafe)
         *   [3.4.3 Vanilla Cookie Manager](#Vanilla_Cookie_Manager)
+        *   [3.4.4 TrackMeNot](#TrackMeNot)
     *   [3.5 Do Not Track](#Do_Not_Track)
     *   [3.6 Force a password store](#Force_a_password_store)
 *   [4 Making flags persistent](#Making_flags_persistent)
@@ -311,6 +312,9 @@ Popular privacy extensions for the [Firefox](/index.php/Firefox "Firefox") brows
 *   [Privacy Badger](https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp?hl=en)
 *   [Disconnect](https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo?hl=en)
 *   [Decentraleyes](https://chrome.google.com/webstore/detail/decentraleyes/ldpochfccmkkmhdbclfhpagapcfdljkj?hl=en)
+*   [AdNauseam](https://github.com/dhowe/AdNauseam/releases)
+
+**Tip:** If you have difficulties installing [AdNauseam](https://github.com/dhowe/AdNauseam/releases) (*Apps, extensions, and user scripts cannot be added from this website*), go to the [extensions](#Browsing_experience) and drag the downloaded **.crx** file over there.
 
 #### ScriptBlock
 
@@ -337,6 +341,12 @@ You could turn off cookies completely or just shut off third-party cookies. But 
 With Vanilla you can select which cookies you want to keep on a whitelist. All unwanted cookies are deleted automatically (or manually if you prefer).
 
 Vanilla Cookie Manager on [GitHub](https://github.com/laktak/vanilla-chrome) or in the [Chrome Web Store](https://chrome.google.com/webstore/detail/vanilla-cookie-manager/gieohaicffldbmiilohhggbidhephnjj).
+
+#### TrackMeNot
+
+TrackMeNot periodically issues randomized search-queries to popular search engines and helps you hide your real ones in a cloud of 'ghost' queries.
+
+Extension is available in the [Chrome Web Store](https://chrome.google.com/webstore/detail/trackmenot/cgllkjmdafllcidaehjejjhpfkmanmka?hl=en-US)
 
 ### Do Not Track
 

@@ -1421,7 +1421,7 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 *   **Nikola** — A static site generator written in Python, with incremental rebuilds and multiple markup formats.
 
-	[https://getnikola.com/](https://getnikola.com/) || [python-nikola](https://aur.archlinux.org/packages/python-nikola/)
+	[https://getnikola.com/](https://getnikola.com/) || [nikola](https://aur.archlinux.org/packages/nikola/)
 
 *   **Pelican** — A static site generator, powered by Python.
 

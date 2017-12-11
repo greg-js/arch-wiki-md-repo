@@ -74,10 +74,10 @@ Add `auth optional pam_gnome_keyring.so` at the end of the `auth` section and `s
 auth       required     pam_securetty.so
 auth       requisite    pam_nologin.so
 auth       include      system-local-login
-**auth       optional     pam_gnome_keyring.so**
+**-auth      optional     pam_gnome_keyring.so**
 account    include      system-local-login
 session    include      system-local-login
-**session    optional     pam_gnome_keyring.so        auto_start**
+**-session   optional     pam_gnome_keyring.so auto_start**
 ```
 
 Next, add `password optional pam_gnome_keyring.so` to the end of `/etc/pam.d/passwd`.
@@ -89,7 +89,7 @@ Next, add `password optional pam_gnome_keyring.so` to the end of `/etc/pam.d/pas
 #password	required	pam_cracklib.so difok=2 minlen=8 dcredit=2 ocredit=2 retry=3
 #password	required	pam_unix.so sha512 shadow use_authtok
 password	required	pam_unix.so sha512 shadow nullok
-**password	optional	pam_gnome_keyring.so**
+**-password	optional	pam_gnome_keyring.so**
 ```
 
 **Note:**
@@ -136,18 +136,15 @@ exec i3
 When using a display manager, the keyring works out of the box for most cases. The following display managers automatically unlock the keyring once you log in:
 
 *   [GDM](/index.php/GDM "GDM")
-*   [SLiM](/index.php/SLiM "SLiM")
 *   [LightDM](/index.php/LightDM "LightDM")
 *   [LXDM](/index.php/LXDM "LXDM")
 *   [SDDM](/index.php/SDDM "SDDM")
-
-**Note:** You may need to install [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring)
 
 For GDM, note the keyring [must be](https://wiki.gnome.org/Projects/GnomeKeyring/Pam) named *login* to be automatically unlocked.
 
 To enable the keyring for applications run through the terminal, such as SSH, add the following to your `~/.bash_profile`, `~/.zshenv`, or similar:
 
- `~/.zshenv` 
+ `~/.bash_profile` 
 ```
 if [ -n "$DESKTOP_SESSION" ];then
     eval $(gnome-keyring-daemon --start)

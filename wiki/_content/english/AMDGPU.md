@@ -44,7 +44,7 @@ Depending on the card you have, find the right driver in [Xorg#AMD](/index.php/X
 *   For the DDX driver (which provides 2D acceleration in [Xorg](/index.php/Xorg "Xorg")), install the [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) package.
 *   For [Vulkan](/index.php/Vulkan "Vulkan") support, install the [vulkan-radeon](https://www.archlinux.org/packages/?name=vulkan-radeon) package.
 
-Support for [accelerated video decoding](#Enabling_video_acceleration) is provided by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) and [lib32-mesa-vdpau](https://www.archlinux.org/packages/?name=lib32-mesa-vdpau) packages.
+Support for [accelerated video decoding](#Enabling_video_acceleration) is provided by [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) and [lib32-libva-mesa-driver](https://www.archlinux.org/packages/?name=lib32-libva-mesa-driver) or [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) for VA-API and [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) and [lib32-mesa-vdpau](https://www.archlinux.org/packages/?name=lib32-mesa-vdpau) packages for VDPAU.
 
 ### Enable Southern Islands (SI) and Sea Islands (CIK) support
 
@@ -171,7 +171,7 @@ Use `amdgpu.audio=0` as [kernel parameter](/index.php/Kernel_parameter "Kernel p
 *   "(EE) AMDGPU(0): [DRI2] DRI2SwapBuffers: drawable has no back or front?" error after opening glxgears, can open Xorg server but OpenGL apps crash.
 *   "(EE) AMDGPU(0): Given depth (32) is not supported by amdgpu driver" error, Xorg won't start.
 
-Setting the screen's depth under Xorg to 16 or 32 will cause problems/crash. To avoid that, you should use a standard screen depth of 24 by adding this to your "screen" section (assuming you have one; if you don't add this to `/etc/X11/xorg.conf.d/10-screen.conf`).
+Setting the screen's depth under Xorg to 16 or 32 will cause problems/crash. To avoid that, you should use a standard screen depth of 24 by adding this to your "screen" section (assuming you have one; if you don't, add this to `/etc/X11/xorg.conf.d/10-screen.conf`).
 
 ```
 Section "Screen"

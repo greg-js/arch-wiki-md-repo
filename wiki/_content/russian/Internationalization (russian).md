@@ -81,7 +81,7 @@ pacman -S terminus-font
 
 ```
 LOCALE="ru_RU.UTF-8"
-KEYMAP="ru" # Или ru-mab для раскладки с переключением по Ctrl-Shift
+KEYMAP="ru" # Или ru-mab для раскладки с переключением по Ctrl-Shift или ruwin_alt_sh-UTF-8 для переключение по Alt-Shift
 FONT="ter-v16n" # Можно поэкспериментировать с другими шрифтами ter-v* из /usr/share/kbd/consolefonts
 CONSOLEMAP=""
 

@@ -28,7 +28,7 @@ To modify service parameters edit `/etc/conf.d/atftpd`.
 
 ### dnsmasq
 
-See [dnsmasq#TFTP server setup](/index.php/Dnsmasq#TFTP_server_setup "Dnsmasq").
+See [dnsmasq#TFTP server](/index.php/Dnsmasq#TFTP_server "Dnsmasq").
 
 ## Client
 

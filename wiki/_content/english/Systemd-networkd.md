@@ -45,7 +45,8 @@ Related articles
     *   [3.3 Static IP network](#Static_IP_network)
 *   [4 Management and desktop integration](#Management_and_desktop_integration)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 resolve not searching the local domain](#resolve_not_searching_the_local_domain)
+    *   [5.1 Mount services at boot fail](#Mount_services_at_boot_fail)
+    *   [5.2 systemd-resolve not searching the local domain](#systemd-resolve_not_searching_the_local_domain)
 *   [6 See also](#See_also)
 
 ## Basic usage
@@ -552,9 +553,13 @@ The [networkd-dispatcher](https://aur.archlinux.org/packages/networkd-dispatcher
 
 ## Troubleshooting
 
-### resolve not searching the local domain
+### Mount services at boot fail
 
-Systemd's `resolve` may not search the local domain when given just the hostname, even when `UseDomains=yes` or `Domains=[domain-list]` is present in the appropriate `.network` file, and that file produces the expected `search [domain-list]` in `resolv.conf`. If you run into this problem:
+If running services like [Samba](/index.php/Samba "Samba")/[NFS](/index.php/NFS "NFS") which fail if they are started before the network is up, you may want to [enable](/index.php/Enable "Enable") the `systemd-networkd-wait-online.service`. This is, however, rarely necessary because most networked daemons start up okay, even if the network has not been configured yet.
+
+### systemd-resolve not searching the local domain
+
+systemd-resolved may not search the local domain when given just the hostname, even when `UseDomains=yes` or `Domains=[domain-list]` is present in the appropriate `.network` file, and that file produces the expected `search [domain-list]` in `resolv.conf`. If you run into this problem:
 
 *   Trim `/etc/nsswitch.conf`'s `hosts` database (e.g., by removing `[!UNAVAIL=return]` option after `resolve` service)
 *   Switch to using fully-qualified domain names

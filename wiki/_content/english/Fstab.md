@@ -181,6 +181,8 @@ If your external device requires another systemd unit to be loaded (for example 
 
  `/etc/fstab`  `//host/share        /net/share        cifs        noauto,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10,workgroup=workgroup,credentials=/foo/credentials        0 0` 
 
+However it is also possible to [enable](/index.php/Enable "Enable") [NetworkManager-wait-online](/index.php/NetworkManager#Enable_NetworkManager_Wait_Online "NetworkManager") or [systemd-networkd-wait-online](/index.php/Systemd-networkd#Mount_services_at_boot_fail "Systemd-networkd") instead.
+
 ### Filepath spaces
 
 Since spaces are used in `fstab` to delimit fields, if any field (*PARTLABEL*, *LABEL* or the mount point) contains spaces, these spaces must be replaced by escape characters `\` followed by the 3 digit octal code `040`:

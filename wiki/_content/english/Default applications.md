@@ -45,7 +45,7 @@ Technically, every MIME type should be registered with the [IANA](https://en.wik
 
 ### MIME database
 
-The system maintains a database of recognized MIME types: the [Shared MIME-info Database](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-0.11.html#idm139839923550176). The database is built from the XML files installed by packages in `/usr/share/mime/packages` using the tools from the [shared-mime-info](https://www.archlinux.org/packages/?name=shared-mime-info) package.
+The system maintains a database of recognized MIME types: the [Shared MIME-info Database](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-0.11.html#idm139839923550176). The database is built from the XML files installed by packages in `/usr/share/mime/packages` using the tools from [shared-mime-info](https://www.archlinux.org/packages/?name=shared-mime-info).
 
 The files in `/usr/share/mime/` should not be directly edited, however it is possible to maintain a separate database on a per-user basis in the `~/.local/share/mime/` tree.
 

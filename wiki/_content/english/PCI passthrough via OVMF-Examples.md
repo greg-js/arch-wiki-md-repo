@@ -9,6 +9,7 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
     *   [1.2 Manbearpig3130's Virtual Gaming Machine](#Manbearpig3130.27s_Virtual_Gaming_Machine)
     *   [1.3 Bretos' Virtual Gaming Setup](#Bretos.27_Virtual_Gaming_Setup)
     *   [1.4 Skeen's Virtual Gaming Rack Machine](#Skeen.27s_Virtual_Gaming_Rack_Machine)
+    *   [1.5 droserasprout poor man's setup](#droserasprout_poor_man.27s_setup)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
@@ -119,6 +120,29 @@ Quirks:
     *   No further attempts at powercycling the GPU from the host has been done (Yet).
 *   [Passing VM audio to host via PulseAudio](/index.php/PCI_passthrough_via_OVMF#Passing_VM_audio_to_host_via_PulseAudio "PCI passthrough via OVMF") results in heavy crackling.
     *   Using [Message-Signaled Interrupts](/index.php/PCI_passthrough_via_OVMF#Slowed_down_audio_pumped_through_HDMI_on_the_video_card "PCI passthrough via OVMF") have not been attempted (Yet).
+
+### droserasprout poor man's setup
+
+Hardware:
+
+*   **CPU**: Intel Core i3-6100
+*   **Motherboard**: ASRock H110M2 D3 (BIOS version 0603)
+*   **Host GPU**: Intel HD 530
+*   **Guest GPU**: Sapphire Radeon R7 360
+*   **RAM**: Apacer 8Gb 75.C93DE.G040C, Kingston 4Gb 99U5401-011.A00LF
+
+Configuration:
+
+*   **Kernel**: linux-lts 4.9.67-1 (vanilla)
+*   **Host OS**: Arch Linux
+*   **Guest OS**: Windows 10 Pro 1709 (build 16299.98)
+*   Using **libvirt/QEMU**: See my configs and IOMMU groups on [Github](https://github.com/droserasprout/win10-vfio-configs)
+*   HDD partition is passed to the VM as a raw virtio device.
+*   HD Audio is passed too. Works fine with both playing and recording, no latency issues or glitches. After VM is powered off host audio works fine too.
+*   Guest's latency is slightly better when CPU cores are isolated for VM.
+*   i2c-dev module added to bypass 'EDID signature' error when switching HDMI. Without it I had to switch video output before starting VM for some reason.
+*   intremap=no_x2apic_optout kernel option added to bypass motherboard firmware falsely reporting x2APIC method is not supported. Seems to have a strong influence on the guest's latency.
+*   Overall performance is pretty close to the native OS setup.
 
 ## Adding your own setup
 

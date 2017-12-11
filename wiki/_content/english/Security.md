@@ -467,6 +467,8 @@ Arch enables the Yama LSM by default, providing a `kernel.yama.ptrace_scope` fla
 
 ### hidepid
 
+**Warning:** This may cause issues for certain applications like an application running in a [sandbox](/index.php/Sandbox "Sandbox") and [Xorg](/index.php/Xorg "Xorg") (see workaround).
+
 The kernel has the ability to hide other users' processes, normally accessible via `/proc`, from unprivileged users by mounting the `proc` filesystem with the `hidepid=` and `gid=` options documented [here](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/proc.txt#n1919).
 
 This greatly complicates an intruder's task of gathering information about running processes, whether some daemon runs with elevated privileges, whether other user runs some sensitive program, whether other users run any program at all, makes it impossible to learn whether any user runs a specific program (given the program doesn't reveal itself by its behaviour), and, as an additional bonus, poorly written programs passing sensitive information via program arguments are now protected against local eavesdroppers.

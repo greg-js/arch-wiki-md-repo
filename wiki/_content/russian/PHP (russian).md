@@ -59,7 +59,7 @@ display_errors=On
 
 ```
 
-*   Не забудьте добавить файл индекса с расширением *.phtml* (если вам это нужно) в `/etc/httpd/conf/extra/php5_module.conf`:
+*   Не забудьте добавить файл индекса с расширением *.phtml* (если вам это нужно) в `/etc/httpd/conf/extra/php7_module.conf`:
 
 ```
 DirectoryIndex index.php index.phtml index.html

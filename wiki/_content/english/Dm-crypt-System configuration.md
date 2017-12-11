@@ -236,6 +236,13 @@ rd.luks.options=timeout=10s,swap,cipher=aes-cbc-essiv:sha256,size=256
 #### rd.luks.key
 
 ```
+rd.luks.key=UUID=*mykeyfile*
+
+```
+
+or
+
+```
 rd.luks.key=*mykeyfile*
 
 ```

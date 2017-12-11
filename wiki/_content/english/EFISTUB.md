@@ -48,7 +48,7 @@ Furthermore, you will need to keep the files on the ESP up-to-date with later ke
 
 #### Using systemd
 
-[Systemd](/index.php/Systemd "Systemd") features event triggered tasks. In this particular case, the ability to detect a change in path is used to sync the EFISTUB kernel and initramfs files when they are updated in `/boot`.
+[Systemd](/index.php/Systemd "Systemd") features event triggered tasks. In this particular case, the ability to detect a change in path is used to sync the EFISTUB kernel and initramfs files when they are updated in `/boot`. The file watched for changes is `initramfs-linux-fallback.img` since this is the last file built by mkinitcpio, to make sure all files have been built before starting the copy. The *systemd* path and service files to be created are:
 
  `/etc/systemd/system/efistub-update.path` 
 ```
@@ -62,8 +62,6 @@ PathChanged=/boot/initramfs-linux-fallback.img
 WantedBy=multi-user.target
 WantedBy=system-update.target
 ```
-
-**Note:** This watches for changes to `initramfs-linux-fallback.img` since this is the last file built by mkinitcpio. This is to avoid a potential race condition where systemd could copy older files before they are all done being built.
  `/etc/systemd/system/efistub-update.service` 
 ```
 [Unit]
@@ -76,9 +74,9 @@ ExecStart=/usr/bin/cp -f /boot/initramfs-linux.img *esp*/EFI/arch/initramfs-linu
 ExecStart=/usr/bin/cp -f /boot/initramfs-linux-fallback.img *esp*/EFI/arch/initramfs-linux-fallback.img
 ```
 
-**Tip:** For [Secure Boot](/index.php/Secure_Boot "Secure Boot") (with your own keys), you can set up the service to also sign the image (using [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools)): `ExecStart=/usr/bin/sbsign --key */path/to/db.key* --cert */path/to/db.crt* --output *esp*/EFI/arch/vmlinuz-linux *esp*/EFI/arch/vmlinuz_linux` 
-
 Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `efistub-update.path`.
+
+**Tip:** For [Secure Boot](/index.php/Secure_Boot "Secure Boot") with your own keys, you can set up the service to also sign the image using [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools): `ExecStart=/usr/bin/sbsign --key */path/to/db.key* --cert */path/to/db.crt* --output *esp*/EFI/arch/vmlinuz-linux *esp*/EFI/arch/vmlinuz_linux` 
 
 #### Using incron
 

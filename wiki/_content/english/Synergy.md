@@ -301,14 +301,12 @@ XINIT_CMD='/usr/bin/synergyc -d FATAL -n galileo-fire 10.66.66.2:24800'
 
 ```
 
-*   Otherwise, if you are using a [display manager](/index.php/Display_manager "Display manager") (kdm, gdm, [SLiM](/index.php/SLiM "SLiM"), ...), or a stand-alone [window manager](/index.php/Window_manager "Window manager") (Openbox, ...), you could exploit its start-up script and add the following:
+*   Otherwise, if you are using a [display manager](/index.php/Display_manager "Display manager") ([GDM](/index.php/GDM "GDM"), [SDDM](/index.php/SDDM "SDDM"), ...), or a stand-alone [window manager](/index.php/Window_manager "Window manager") (Openbox, ...), you could exploit its start-up script and add the following:
 
 ```
 synergyc server-host-name
 
 ```
-
-For example, using *kdm* you should edit `/usr/share/config/kdm/Xsetup`.
 
 *   To start the Synergy client with systemd, create a service file:
 

@@ -227,17 +227,20 @@ There may cases for which you need to manually modify the EXEC line of the `.des
 
 ### PulseAudio
 
-If Firejail causes PulseAudio to misbehave, there is a [known issue.](https://firejail.wordpress.com/support/known-problems/) A temporary workaround: (Note: it appears this workaround should be in the relevant file *in* the sandboxes if `--private` is used.)
+**Note:** Using PulseAudio version 9.0 or later should fix this issue.
+
+If Firejail causes [PulseAudio](/index.php/PulseAudio "PulseAudio") issues with sandboxed applications [[3]](https://firejail.wordpress.com/support/known-problems/#pulseaudio), the following command may be used:
 
 ```
-cp /etc/pulse/client.conf ~/.config/pulse/
-echo "enable-shm = no" >> ~/.config/pulse/client.conf
+$ firecfg --fix-sound
 
 ```
+
+This commands creates a custom `~/.config/pulse/client.conf` file for the *current* user with `enable-shm = no` and possible other workarounds.
 
 ### Hidepid
 
-If you have hidepid installed, Firemon can only be run as root. This, among other things, will cause problems with the Firetools GUI incorrectly reporting "Capabilities", "Protocols" and the status of "Seccomp". See [[3]](https://github.com/netblue30/firejail/issues/1564)
+If you have [hidepid](/index.php/Hidepid "Hidepid") installed, Firemon can only be run as root. This, among other things, will cause problems with the Firetools GUI incorrectly reporting "Capabilities", "Protocols" and the status of "Seccomp". See [[4]](https://github.com/netblue30/firejail/issues/1564)
 
 ## Tips and tricks
 

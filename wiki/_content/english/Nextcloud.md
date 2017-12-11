@@ -519,7 +519,7 @@ To sync contacts with [Thunderbird](/index.php/Thunderbird "Thunderbird"), see [
 
 #### Mounting files with davfs2
 
-If you want to mount your ownCloud permanently install [davfs2](https://www.archlinux.org/packages/?name=davfs2) (as described in [Davfs](/index.php/Davfs "Davfs")) first.
+If you want to mount your ownCloud permanently install [davfs2](https://www.archlinux.org/packages/?name=davfs2) (as described in [davfs2](/index.php/Davfs2 "Davfs2")) first.
 
 Considering your ownCloud were at `[https://own.example.com](https://own.example.com)`, your WebDAV URL would be `[https://own.example.com/remote.php/webdav](https://own.example.com/remote.php/webdav)` (as of ownCloud 6.0).
 
@@ -538,9 +538,9 @@ You can also create an entry for this in `/etc/fstab`
 
 ```
 
-**Tip:** In order to allow automount you can also store your username (and password if you like) in a file as described in [Davfs#Storing credentials](/index.php/Davfs#Storing_credentials "Davfs").
+**Tip:** In order to allow automount you can also store your username (and password if you like) in a file as described in [davfs2#Storing credentials](/index.php/Davfs2#Storing_credentials "Davfs2").
 
-**Note:** If creating/copying files is not possible, while the same operations work on directories, see [Davfs#Creating/copying files not possible and/or freezes](/index.php/Davfs#Creating.2Fcopying_files_not_possible_and.2For_freezes "Davfs").
+**Note:** If creating/copying files is not possible, while the same operations work on directories, see [davfs2#Creating/copying files not possible and/or freezes](/index.php/Davfs2#Creating.2Fcopying_files_not_possible_and.2For_freezes "Davfs2").
 
 ### Mounting files in GNOME Files (Nautilus)
 

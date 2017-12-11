@@ -1,8 +1,12 @@
+Related articles
+
+[Daemons](/index.php/Daemons "Daemons")
+
 From the [IPFS README.md on GitHub](https://github.com/ipfs/ipfs):
 
-	**IPFS** (the [InterPlanetary File System](https://en.wikipedia.org/wiki/IPFS "wikipedia:IPFS")) is a new hypermedia distribution protocol, addressed by content and identities. **IPFS** enables the creation of completely distributed applications. It aims to make the web faster, safer, and more open.
+	<a class="mw-selflink selflink">IPFS</a> (the [InterPlanetary File System](https://en.wikipedia.org/wiki/IPFS "wikipedia:IPFS")) is a new hypermedia distribution protocol, addressed by content and identities. <a class="mw-selflink selflink">IPFS</a> enables the creation of completely distributed applications. It aims to make the web faster, safer, and more open.
 
-	**IPFS** is a distributed file system that seeks to connect all computing devices with the same system of files. In some ways, this is similar to the original aims of the Web, but IPFS is actually more similar to a single bittorrent swarm exchanging git objects.
+	<a class="mw-selflink selflink">IPFS</a> is a distributed file system that seeks to connect all computing devices with the same system of files. In some ways, this is similar to the original aims of the Web, but IPFS is actually more similar to a single bittorrent swarm exchanging git objects.
 
 ## Contents
 
@@ -36,7 +40,7 @@ This starts your node, available via the `ipfs` cli, or the web interface on [lo
 
 ## Using a service to start the daemon
 
-For convenience you can automate the startup of **IPFS** daemon using a [Systemd/User](/index.php/Systemd/User "Systemd/User") service. This ensures that the daemon starts when you log in, and that it is restarted if it crashes.
+For convenience you can automate the startup of <a class="mw-selflink selflink">IPFS</a> daemon using a [Systemd/User](/index.php/Systemd/User "Systemd/User") service. This ensures that the daemon starts when you log in, and that it is restarted if it crashes.
 
  `~/.config/systemd/user/ipfs.service` 
 ```
@@ -163,3 +167,4 @@ Note that when using ipns the address would have an ipns prefix instead of ipfs:
 *   [IPFS Homepage](https://ipfs.io)
 *   [IPFS Examples](https://github.com/ipfs/examples/tree/master/examples)
 *   [Awesome IPFS](https://github.com/ipfs/awesome-ipfs)
+*   [IPFS and pacman](https://github.com/ipfs/notes/issues/84)

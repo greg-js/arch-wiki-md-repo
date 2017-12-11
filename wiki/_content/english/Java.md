@@ -54,6 +54,10 @@ The following packages are available:
 
 	[http://openjdk.java.net/projects/jdk7/](http://openjdk.java.net/projects/jdk7/) || [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src)
 
+**IBM J9 7** — IBM's implementation of the seventh edition of JRE.
+
+	[https://developer.ibm.com/javasdk/downloads/sdk7/](https://developer.ibm.com/javasdk/downloads/sdk7/) || [jdk7-j9-bin](https://aur.archlinux.org/packages/jdk7-j9-bin/) [jdk7r1-j9-bin](https://aur.archlinux.org/packages/jdk7r1-j9-bin/)
+
 **OpenJDK 8** — The open-source implementation of the eight edition of Java SE.
 
 	[http://openjdk.java.net/projects/jdk8/](http://openjdk.java.net/projects/jdk8/) || [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src)
@@ -62,13 +66,17 @@ The following packages are available:
 
 	[http://openjdk.java.net/projects/openjfx/](http://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
 
+**IBM J9 8** — IBM's implementation of the eighth edition of JRE.
+
+	[https://developer.ibm.com/javasdk/downloads/sdk8/](https://developer.ibm.com/javasdk/downloads/sdk8/) || [jdk8-j9-bin](https://aur.archlinux.org/packages/jdk8-j9-bin/)
+
 **OpenJDK 9** — The open-source implementation of the ninth edition of Java SE.
 
 	[http://openjdk.java.net/projects/jdk9/](http://openjdk.java.net/projects/jdk9/) || [jre9-openjdk-headless](https://www.archlinux.org/packages/?name=jre9-openjdk-headless) [jre9-openjdk](https://www.archlinux.org/packages/?name=jre9-openjdk) [jdk9-openjdk](https://www.archlinux.org/packages/?name=jdk9-openjdk) [openjdk9-doc](https://www.archlinux.org/packages/?name=openjdk9-doc) [openjdk9-src](https://www.archlinux.org/packages/?name=openjdk9-src)
 
-**OpenJ9** — Formerly IBM, now Eclipse's implementation of JRE.
+**OpenJ9** — Eclipse's implementation of JRE, contributed by IBM.
 
-	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk8-j9-bin](https://aur.archlinux.org/packages/jdk8-j9-bin/) [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/) [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/)
+	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/) [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/)
 
 **Java SE** — Oracle's implementation of JRE and JDK.
 

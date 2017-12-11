@@ -140,7 +140,7 @@ NetworkManager VPN support is based on a plug-in system. If you need VPN support
 
 ### PPPoE / DSL support
 
-[Install](/index.php/Install "Install") [rp-pppoe](https://www.archlinux.org/packages/?name=rp-pppoe) for PPPoE / DSL connection support.
+[Install](/index.php/Install "Install") [rp-pppoe](https://www.archlinux.org/packages/?name=rp-pppoe) for PPPoE / DSL connection support. To actually add pppoe connection you must use `nm-connection-editor` from the command line and add new DSL/PPPoE connection.
 
 ## Front-ends
 
