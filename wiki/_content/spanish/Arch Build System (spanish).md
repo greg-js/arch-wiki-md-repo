@@ -1,3 +1,14 @@
+Artículos relacionados
+
+*   [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
+*   [Creating packages](/index.php/Creating_packages "Creating packages")
+*   [Kernel Compilation with ABS](/index.php/Kernel_Compilation_with_ABS "Kernel Compilation with ABS")
+*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
+*   [makepkg](/index.php/Makepkg "Makepkg")
+*   [pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
+*   [Official repositories (Español)](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
+*   [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)")
+
 Este artículo proporciona una visión general de Arch Build System, junto con una guía para principiantes. No es una guía de referencia completa. Si necesita más información, consulte las páginas *man*.
 
 **Nota:** ABS se sincroniza una vez al día, por lo que puede quedarse desfasado respecto a los paquetes que ya están disponibles en los repositorios.

@@ -26,6 +26,7 @@ There are several ways to achieve this on Linux:
     *   [4.2 Configuring VDPAU](#Configuring_VDPAU)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Failed to open VDPAU backend](#Failed_to_open_VDPAU_backend)
+    *   [5.2 VAAPI init failed](#VAAPI_init_failed)
 
 ## Support
 
@@ -268,14 +269,7 @@ The default driver names, used if there is no other configuration present, are g
 
 In this case `radeonsi` is the default for both VA-API and VDPAU.
 
-For GDM users:
-
- `# sudo journalctl -b | grep VDPAU` 
-```
-(II) NVIDIA(0): [DRI2]   VDPAU driver: nvidia
-(II) NVIDIA(0): [DRI2]   VDPAU driver: nvidia
-
-```
+**Note:** If you use [GDM](/index.php/GDM "GDM"), run `journalctl -b | grep -iE 'vdpau | dri driver'` instead.
 
 This does not represent the *configuration* however. The values above will not change even if you override them.
 
@@ -316,3 +310,7 @@ The correct driver name depends on your setup:
 This happens when you use [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) without overriding `VDPAU_DRIVER`. VDPAU does not know what driver to use in this case for some reason and guesses wrongly. See [#Configuring VDPAU](#Configuring_VDPAU).
 
 However you may want to configure your media player to use VA-API instead, getting far better results. See [#Software](#Software).
+
+### VAAPI init failed
+
+An error along the lines of `libva: /usr/lib/dri/i965_drv_video.so init failed` is encountered. This can happen because of improper detection of Wayland. One solution is to unset `$DISPLAY` so that mpv, mplayer, VLC, etc. do not assume it is X11\. Another mpv-specific solution is to add the parameter `--opengl-backend=wayland`.

@@ -75,14 +75,17 @@ Opzionalmente, è possibile scegliere un server web per usare l'interfaccia ammi
 
 Il pacchetto AUR fornisce file di configurazione di esempio sia per [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) che per [nginx](https://www.archlinux.org/packages/?name=nginx). Altri server web possono tranquillamente eseguire l'interfaccia web, ma non sono al momento supportati.
 
-Tutti i server web abbisognano della seguente modifica per abilitate l'estensione per i socket:
+Tutti i server web abbisognano del pacchetto [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) e della seguente modifica per abilitate l'estensione per sqlite e per i socket:
 
  `/etc/php/php.ini` 
 ```
+extension=pdo_sqlite
 [...]
 extension=sockets.so
-[...]
+extension=sqlite3
 ```
+
+Any webserver will require to install the [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) package and the following edit to enable sqlite and sockets extension:
 
 Per ragioni di sicurezza, se vuoi popolare la direttiva [PHP open_basedir](/index.php/PHP#Configuration "PHP"), l'interfaccia web di amministrazione di Pi-hole necessita l'accesso ai seguenti file e cartelle:
 

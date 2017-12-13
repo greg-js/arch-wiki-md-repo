@@ -1,3 +1,9 @@
+Articoli correlati
+
+*   [CUPS printer sharing](/index.php/CUPS_printer_sharing "CUPS printer sharing")
+*   [CUPS printer-specific problems](/index.php/CUPS_printer-specific_problems "CUPS printer-specific problems")
+*   [Samba (Italiano)](/index.php/Samba_(Italiano) "Samba (Italiano)")
+
 Dal sito di [CUPS](http://www.cups.org/index.php):
 
 	"*[CUPS](https://en.wikipedia.org/wiki/it:CUPS "wikipedia:it:CUPS") è il sistema di stampa, standard e open source, sviluppato da Apple Inc. per Mac OS® X e altri sistemi operativi UNIX®-like.*"

@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [Sound system (Español)](/index.php/Sound_system_(Espa%C3%B1ol) "Sound system (Español)")
+*   [Disable PC speaker beep (Español)](/index.php/Disable_PC_speaker_beep_(Espa%C3%B1ol) "Disable PC speaker beep (Español)")
+
 La [Arquitectura Avanzada para el Sonido en Linux](https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture "wikipedia:Advanced Linux Sound Architecture") (conocido con el acrónimo **ALSA**) es un componente del kernel destinado a sustituir el original Open Sound System (Open OSSv3) para proporcionar controladores de dispositivos para las tarjetas de sonido. Además de los controladores de dispositivos de sonido, **ALSA** también pone a disposición una amplia biblioteca en el espacio de usuario para los desarrolladores de aplicaciones que quieran utilizar las funciones del controlador mediante un API de alto nivel con una interacción directa con los controladores del kernel.
 
 **Nota:** Para un entorno de sonido alternativo, consulte la página [Open Sound System](/index.php/Open_Sound_System_(Espa%C3%B1ol) "Open Sound System (Español)")

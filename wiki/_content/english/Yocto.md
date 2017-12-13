@@ -19,17 +19,7 @@ For this guide the focus will be on YP Core 1.8 (Fido) and newer.
 
 [Install](/index.php/Install "Install") the [git](https://www.archlinux.org/packages/?name=git), [diffstat](https://www.archlinux.org/packages/?name=diffstat), [unzip](https://www.archlinux.org/packages/?name=unzip), [texinfo](https://www.archlinux.org/packages/?name=texinfo), [python](https://www.archlinux.org/packages/?name=python), [chrpath](https://www.archlinux.org/packages/?name=chrpath), [wget](https://www.archlinux.org/packages/?name=wget), [xterm](https://www.archlinux.org/packages/?name=xterm), [sdl](https://www.archlinux.org/packages/?name=sdl), [socat](https://www.archlinux.org/packages/?name=socat) and [cpio](https://www.archlinux.org/packages/?name=cpio) packages.
 
-**Note:** For the 64-bit version of Arch Linux, [Install](/index.php/Install "Install") the [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) package from the official [multilib](/index.php/Multilib "Multilib") repository.
-
-You may receive the following conflicts:
-
-```
-:: gcc-multilib and gcc are in conflict. Remove gcc? [y/N] y
-:: gcc-libs-multilib and gcc-libs are in conflict. Remove gcc-libs? [y/N] y
-
-```
-
-Resolve these by choosing `y` (we actually want the multilib versions).
+Enable the [multilib](/index.php/Multilib "Multilib") repository and install the [multilib-devel](https://www.archlinux.org/groups/x86_64/multilib-devel/) group.
 
 Clone the official git repository. In this example the *morty* branch is used.
 

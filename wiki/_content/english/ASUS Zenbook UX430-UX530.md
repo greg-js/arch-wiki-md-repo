@@ -23,7 +23,7 @@ ASUS [announced](https://www.asus.com/News/q0npwWGXCqpxoVf8) UX430 and UX530 mod
     *   [1.3 Audio](#Audio)
     *   [1.4 Touchpad](#Touchpad)
 *   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 Linux kernel 4.13+ issues](#Linux_kernel_4.13.2B_issues)
+    *   [2.1 Linux kernel 4.13 issues](#Linux_kernel_4.13_issues)
     *   [2.2 Headphones audio is too low](#Headphones_audio_is_too_low)
     *   [2.3 Fan spins all the time](#Fan_spins_all_the_time)
     *   [2.4 Microcode](#Microcode)
@@ -55,11 +55,13 @@ See [Libinput](/index.php/Libinput "Libinput").
 
 # Troubleshooting
 
-## Linux kernel 4.13+ issues
+## Linux kernel 4.13 issues
 
-Kernel version 4.13 and further versions have unstable CPU frequencies staying at minimum of 800Mhz-1600Mhz instead of 400-700Mhz. This wastes battery and generates heat, causing fan to spin more aggressively. Use kernel version 4.12 or earlier as a temporary fix until [upstream bug](https://bugzilla.kernel.org/show_bug.cgi?id=197469) is fixed.
+**Bug references**: [197469](https://bugzilla.kernel.org/show_bug.cgi?id=197469) and [197449](https://bugzilla.kernel.org/show_bug.cgi?id=197449)
 
-Another issue about 4.13+ kernel versions - virtual machines, running under KVM/QEMU crashes/hungs at any time. [upstream bug](https://bugzilla.kernel.org/show_bug.cgi?id=197449) has already been raised, but has no attention at all.
+**Description**: Unstable CPU frequencies staying at minimum of 800Mhz-1600Mhz instead of 400-700Mhz. This wastes battery and generates heat, causing fan to spin more aggressively. Also KVM crashes running Windows 10 VM with all available VirtIO features.
+
+**Fix**: Use kernel version 4.12.* (or earlier) or 4.14.4 (or further). Avoid any 4.13.* versions.
 
 ## Headphones audio is too low
 
@@ -103,7 +105,7 @@ And finally, [start and enable](/index.php/Systemd#Using_units "Systemd") `fix_h
 
 ## Fan spins all the time
 
-See [Fan speed control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control"). Also see [#Linux_kernel_4.13.2B_issues](#Linux_kernel_4.13.2B_issues)
+See [Fan speed control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control"). Also see [#Linux_kernel_4.13_issues](#Linux_kernel_4.13_issues)
 
 ## Microcode
 

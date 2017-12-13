@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [CUPS printer sharing](/index.php/CUPS_printer_sharing "CUPS printer sharing")
+*   [CUPS printer-specific problems](/index.php/CUPS_printer-specific_problems "CUPS printer-specific problems")
+*   [Samba](/index.php/Samba "Samba")
+
 De la [web de CUPS](http://www.cups.org/index.php):
 
 	«*[CUPS](https://en.wikipedia.org/wiki/es:Common_Unix_Printing_System "wikipedia:es:Common Unix Printing System") es el sistema de impresión, basado en estándares y de código abierto, desarrollado por Apple Inc. para Mac OS® X y otros sistemas operativos basados en UNIX®*».

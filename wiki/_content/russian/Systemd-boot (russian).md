@@ -1,19 +1,23 @@
+Ссылки по теме
+
+*   [Arch boot process (Русский)](/index.php/Arch_boot_process_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch boot process (Русский)")
+*   [Загрузчики](/index.php/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA%D0%B8 "Загрузчики")
+*   [Unified Extensible Firmware Interface (Русский)](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unified Extensible Firmware Interface (Русский)")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Дата последней синхронизации: 2016-01-22\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd-boot&diff=0&oldid=416510).
 
-**systemd-boot** (ранее назывался **gummiboot**) - это простой UEFI менеджер загрузки, который запускает настроенные EFI образы. Записью по умолчанию является настроенный паттерн (glob) или меню на экране. Включен в systemd с версии [systemd](https://www.archlinux.org/packages/?name=systemd) 220-2.
+**systemd-boot**, ранее известный как **gummiboot** - это простой UEFI менеджер загрузки, который исполняет настроенные EFI образы. Запись по умолчанию выбирается с помощью настроенного шаблона (glob) или меню на экране. Включен в пакет [systemd](https://www.archlinux.org/packages/?name=systemd), который устанавливается на системе Arch по умолчанию.
 
-Его легко настраивать, но от умеет только запускать исполняемые EFI файлы, ядро Linux [EFISTUB](/index.php/EFISTUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "EFISTUB (Русский)"), UEFI Shell, grub.efi, Windows Boot Manager и тому подобные.
-
-**Важно:** systemd-boot всего лишь предоставляет меню для загрузки EFISTUB ядер. В случае, если у вас возникают проблемы с загрузкой EFISTUB ядер, как в [FS#33745](https://bugs.archlinux.org/task/33745), вы можете использовать загрузчик, который не использует EFISTUB, например [GRUB (Русский)](/index.php/GRUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GRUB (Русский)"), [Syslinux (Русский)](/index.php/Syslinux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Syslinux (Русский)") или [ELILO](/index.php/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA%D0%B8#ELILO "Загрузчики").
-
-**Примечание:** В этой статье точку монтирования [Системного Раздела EFI](/index.php/UEFI#EFI_System_Partition "UEFI") (также известного как ESP) будем обозначать как `$esp`.
+Прост в настройке, но способен только на запуск исполняемых EFI файлов, таких как ядро Linux [EFISTUB](/index.php/EFISTUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "EFISTUB (Русский)"), UEFI Shell, GRUB, Windows Boot Manager.
 
 ## Contents
 
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
     *   [1.1 Загрузка в режиме EFI](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.B2_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_EFI)
-    *   [1.2 Загрузка в режиме Legacy](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.B2_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_Legacy)
-    *   [1.3 Обновления](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [1.2 Загрузка в режиме BIOS](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.B2_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_BIOS)
+    *   [1.3 Обновлениe](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8e)
+        *   [1.3.1 Вручную](#.D0.92.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E)
+        *   [1.3.2 Автоматически](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8)
 *   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
     *   [2.1 Базовая настройка](#.D0.91.D0.B0.D0.B7.D0.BE.D0.B2.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
     *   [2.2 Добавление загрузочных записей](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BE.D1.87.D0.BD.D1.8B.D1.85_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B5.D0.B9)
@@ -21,7 +25,8 @@
         *   [2.2.2 Установки с LVM корневой директорией](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_.D1.81_LVM_.D0.BA.D0.BE.D1.80.D0.BD.D0.B5.D0.B2.D0.BE.D0.B9_.D0.B4.D0.B8.D1.80.D0.B5.D0.BA.D1.82.D0.BE.D1.80.D0.B8.D0.B5.D0.B9)
         *   [2.2.3 Установки с зашифрованной корневой директорией](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_.D1.81_.D0.B7.D0.B0.D1.88.D0.B8.D1.84.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D0.BE.D0.B9_.D0.BA.D0.BE.D1.80.D0.BD.D0.B5.D0.B2.D0.BE.D0.B9_.D0.B4.D0.B8.D1.80.D0.B5.D0.BA.D1.82.D0.BE.D1.80.D0.B8.D0.B5.D0.B9)
         *   [2.2.4 Установка корневого подраздела btrfs](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BA.D0.BE.D1.80.D0.BD.D0.B5.D0.B2.D0.BE.D0.B3.D0.BE_.D0.BF.D0.BE.D0.B4.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0_btrfs)
-        *   [2.2.5 EFI Shells или другие EFI приложения](#EFI_Shells_.D0.B8.D0.BB.D0.B8_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D0.B5_EFI_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
+        *   [2.2.5 Установки с ZFS корневой директорией](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_.D1.81_ZFS_.D0.BA.D0.BE.D1.80.D0.BD.D0.B5.D0.B2.D0.BE.D0.B9_.D0.B4.D0.B8.D1.80.D0.B5.D0.BA.D1.82.D0.BE.D1.80.D0.B8.D0.B5.D0.B9)
+        *   [2.2.6 EFI Shells или другие EFI приложения](#EFI_Shells_.D0.B8.D0.BB.D0.B8_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D0.B5_EFI_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
     *   [2.3 Дополнительная безопасность](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.B1.D0.B5.D0.B7.D0.BE.D0.BF.D0.B0.D1.81.D0.BD.D0.BE.D1.81.D1.82.D1.8C)
     *   [2.4 Поддержка гибернации](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0_.D0.B3.D0.B8.D0.B1.D0.B5.D1.80.D0.BD.D0.B0.D1.86.D0.B8.D0.B8)
 *   [3 Клавиши в загрузочном меню](#.D0.9A.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_.D0.B2_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BE.D1.87.D0.BD.D0.BE.D0.BC_.D0.BC.D0.B5.D0.BD.D1.8E)
@@ -34,60 +39,88 @@
 
 ### Загрузка в режиме EFI
 
-1.  Для начала убедитесь, что вы загружены в режиме UEFI
-2.  Проверьте [есть доступ к вашим переменным EFI](/index.php/UEFI#Requirements_for_UEFI_Variables_support_to_work_properly "UEFI")
-3.  Убедитесь, что ваш Системный Раздел EFI правильно примонтирован. `$esp` используется для обозначения точки монтирования в этой статье.
-    **Примечание:** systemd-boot не умеет загружать EFI приложения из других разделов. Поэтому настоятельно рекомендуется монтировать ваш ESP в `/boot`. Смотрите [#Обновления](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F) для более подробной информации или если вы хотите отделить `/boot` от ESP.
+1.  Убедитесь, что вы загружены в режиме UEFI.
+2.  Проверьте [доступны ли EFI переменные](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").
+3.  Корректно примонтируйте [Системный Раздел EFI](/index.php/EFI_System_Partition "EFI System Partition") (ESP). В этой статье `*esp*` используется для обозначения точки монтирования.
+    **Примечание:** *systemd-boot* EFI не может загружать бинарные файлы из других разделов. По этой причине, рекомендуется монтировать ваш ESP в `/boot`. В случае, если вы хотите разделить `/boot` с ESP, обратитесь к [#Обновления](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F) для большей информации.
 
-4.  Скопируйте ваше ядро и initramfs на этот раздел.
-    **Примечание:** Для того, что-бы автоматически держать ядро обновленным в ESP, смотрите [EFISTUB](/index.php/EFISTUB#Using_systemd "EFISTUB") для использования предназначенных для этого юнитов systemd.
+4.  Если ESP **не** примонтирован к `/boot`, копируйте ваше ядро и initramfs в ESP.
+    **Примечание:** Чтобы сохранить автоматическое обновление ядра в ESP, взгляните на [EFISTUB#Using systemd](/index.php/EFISTUB#Using_systemd "EFISTUB") для адаптации некоторых юнитов systemd. Если ваш Системный Раздел EFI монтируется автоматически, вам, вероятно, потребуется добавить `vfat` в файл внутри `/etc/modules-load.d/`. Тогда в текущем запущенном ядре во время загрузки будет установлен модуль `vfat`, до того, как произойдет обновление ядра, которое может заменить модуль для текущей версии, что сделает невозможным монтирование `/boot/efi` до перезагрузки.
 
-5.  Наконец, введите следующую команду для установки systemd-boot: `# bootctl --path=*$esp* install` Она скопирует образ systemd-boot на Системный Раздел EFI (`$esp/EFI/systemd/systemd-bootx64.efi` и `$esp/EFI/Boot/BOOTX64.EFI` - оба идентичны - на x64 системах) и добавьте systemd-boot как приложение EFI для загрузки по умолчанию.
+5.  Введите следующую команду для установки *systemd-boot*: `# bootctl --path=*esp* install` Она скопирует двоичный файл *systemd-boot* на Системный Раздел EFI (`*esp*/EFI/systemd/systemd-bootx64.efi` и `*esp*/EFI/Boot/BOOTX64.EFI` - оба идентичны на x86-64 системах) и добавит *systemd-boot* как EFI приложение по умолчанию (загрузочная запись по умолчанию), загружаемое с помощью EFI Boot Manager.
+6.  Наконец, для правильного функционирования вы должны [настроить](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0) загрузчик.
 
-### Загрузка в режиме Legacy
+### Загрузка в режиме BIOS
 
-**Примечание:** Это нерекомендованный процесс
+**Важно:** Это нерекомендованный процесс
 
-Вы с таким же успехом можете установить systemd-boot, если загружаетесь в режиме legacy OS. Тем не менее, от вас всё равно требуется позже сказать прошивке запускать EFI файл systemd-boot'а при загрузке:
+Вы с таким же успехом можете установить systemd-boot, если загружаетесь в режиме BIOS. Тем не менее, от вас всё равно требуется сообщить прошивке запускать EFI файл *systemd-boot* при загрузке:
 
-*   у вас есть работающие EFI shell где-нибудь;
-*   ваш интерфейс прошивки предоставляет вам способ правильной настройки EFI файла, который будет загружен во время загрузки.
+*   у вас есть работающий EFI shell где-нибудь.
+*   ваш интерфейс прошивки предоставляет вам соответствующий способ настройки EFI файла, который будет загружен во время загрузки.
 
-**Примечание:** Например, это возможно на Dell Latitude сериях, так как EFI Shell не может записывать в ПЗУ компьютера.
+Если вы имеете такую возможность, процесс установки будет проще: перейдите в ваш EFI shell или интерфейс настройки вашей прошивки и измените EFI файл по умолчанию вашей машины на `esp/EFI/systemd/systemd-bootx64.efi` ( или `systemd-bootia32.efi` если у вас 32 битная системная прошивка).
 
-Если вы можете это сделать, то установка проще: перейдите в ваш EFI shell или в ваш интерфейс настройки прошивки и измените EFI файл по умолчанию вашей машины на `$esp/EFI/systemd/systemd-bootx64.efi`(`systemd-bootia32.efi` на i686 системах).
+**Примечание:** интерфейс прошивки в Dell Latitude сериях предоставляет все необходимое, чтобы установить EFI загрузку, но EFI Shell не сможет осуществить запись в ПЗУ компьютера.
 
-### Обновления
+### Обновлениe
 
-systemd-boot (bootctl(1), systemd-efi-boot-generator(8)) подразумевает, что ваша ESP смонтирована в `/boot`. В отличие от предыдущего пакета *gummiboot*, который автоматически обновляется с помощью `post_install` скрипта, обновления systemd-boot теперь обрабатываются пользователем вручную:
+В отличие от предыдущего отдельного пакета *gummiboot*, который автоматически обновляется с помощью `post_install` скрипта, обновления systemd-boot теперь должны производиться пользователем вручную. Однако, эта процедура может быть автоматизирована с использованием pacman hooks.
 
-```
-# bootctl update  
+#### Вручную
 
-```
-
-Если ESP не смонтирован на `/boot`, опция `--path=` может передать его, например:
+*systemd-boot* (bootctl(1)) предполагает, что ваш Системный Раздел EFI примонтирован в `/boot`.
 
 ```
-# bootctl --path=/boot/$esp update
+# bootctl update
 
+```
+
+Если ESP не примонтирован в `/boot`, опцией `--path=` можно явно указать точку монтирования, например:
+
+```
+# bootctl --path=*esp* update
+
+```
+
+**Примечание:** Также эту команду следует использовать при переходе с *gummiboot*, перед удалением этого пакета. Однако, если этот пакет уже был удален, выполните `bootctl --path=*esp* install`.
+
+#### Автоматически
+
+[AUR (Русский)](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)") пакет [systemd-boot-pacman-hook](https://aur.archlinux.org/packages/systemd-boot-pacman-hook/) предоставляет [Pacman hook](/index.php/Pacman#Hooks "Pacman") для автоматизации процесса обновления. [Установка](/index.php/Install "Install") этого пакета добавит hook, который будет выполняться при каждом обновлении пакета [systemd](https://www.archlinux.org/packages/?name=systemd).
+
+В качестве альтернативы, вы можете разместить следующий pacman hook в каталоге /etc/pacman.d/hooks/:
+
+Alternatively, place the following pacman hook in the /etc/pacman.d/hooks/ directory:
+
+ `/etc/pacman.d/hooks/systemd-boot.hook` 
+```
+[Trigger]
+Type = Package
+Operation = Upgrade
+Target = systemd
+
+[Action]
+Description = Updating systemd-boot...
+When = PostTransaction
+Exec = /usr/bin/bootctl update
 ```
 
 ## Настройка
 
 ### Базовая настройка
 
-Базовая конфигурация хранится в `$esp/loader/loader.conf`, в которой доступно всего три опции:
+Базовая конфигурация хранится в файле `*esp*/loader/loader.conf` и состоит из трех опций:
 
-*   `default` – выбираемая по умолчанию запись (без суффикса `.conf`); может быть звёздочкой, например `arch-*`
+*   `default` – выбираемая по умолчанию запись (без суффикса `.conf`); можно использовать подстановку, например `arch-*`
 
-*   `timeout` – задержка меню в секундах. Если таймаут не задан, то меню будет отображаться только если удерживать клавишу пробел при загрузке.
+*   `timeout` – задержка меню в секундах. Если таймаут не задан, то меню будет отображаться, только если удерживать клавишу `Space` (другие клавиши тоже могут работать) при загрузке.
 
-*   `editor` - следует ли включить редактор параметров ядра или нет. `1` (по умолчанию) - включить, `0` - отключить. Пользователь может добавить `init=/bin/bash` что-бы обойти пароль администратора и получить полный доступ, поэтому настоятельно рекомендуется установить этот параметр в `0`.
+*   `editor` - следует ли включить редактор параметров ядра. `1` (по умолчанию) - включить, `0` - отключить; Поскольку пользователь может добавить `init=/bin/bash` для обхода пароля администратора и получить полный доступ, настоятельно рекомендуется установить эту опцию в `0`.
 
 Пример:
 
- `$esp/loader/loader.conf` 
+ `*esp*/loader/loader.conf` 
 ```
 default  arch
 timeout  4
@@ -95,17 +128,20 @@ editor   0
 
 ```
 
-Обратите внимание, что первые 2 опции могут быть изменены в самом меню загрузки, которое будет хранить их как переменные EFI.
+**Примечание:** Обратите внимание, что первые 2 опции могут быть изменены в самом меню загрузки, эти изменения будут храниться как переменные EFI.
 
-**Примечание:** Если таймаут не настроен, что является настройкой по умолчанию и не нажата клавиша при загрузке, опция по умолчанию выполняется сразу же.
+**Совет:** Пример базового конфигурационного файла расположен как `/usr/share/systemd/bootctl/loader.conf`.
 
 ### Добавление загрузочных записей
 
-**Примечание:** bootctl будет автоматически проверять наличие "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) и "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`). Для тех, что будут найдены, записи также будут автоматически сгенерированы. Тем не менее, он не будет автоматически искать другие EFI приложения (в отличие от [rEFInd (Русский)](/index.php/REFInd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "REFInd (Русский)")), поэтому для загрузки ядра записи должны быть созданы вручную. Если вы используете двойную загрузку с Windows, настоятельно рекомендуется отключить [Быстрый запуск](/index.php/Dual_boot_with_Windows_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.91.D1.8B.D1.81.D1.82.D1.80.D1.8B.D0.B9_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA "Dual boot with Windows (Русский)")
+**Примечание:**
 
-**Совет:** Вы можете узнать PARTUUID вашего корневого раздела с помощью команды `blkid -s PARTUUID -o value /dev/sdxY`, где 'x' - это буква устройства, а 'Y' - это номер раздела. Это нужно только для вашего корневого раздела, а не для $esp.
+*   *bootctl* будет автоматически проверять наличие "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) и "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`) во время загрузки, так же как специально подготовленные файлы ядра, найденные в `\EFI\Linux`. После обнаружения соответствующие записи с заголовками `auto-windows`, `auto-efi-shell` и `auto-efi-default` будут автоматически сгенерированы. Эти записи не требуют ручной настройки загрузчика. Однако, другие EFI приложения не будут обнаружены автоматически (не в случае с [rEFInd (Русский)](/index.php/REFInd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "REFInd (Русский)")), поэтому для зарузки ядра Linux, записи должны быть созданы вручную.
+*   Если вы используете двойную загрузку с Windows, настоятельно рекомендуется отключить [Быстрый запуск](/index.php/Dual_boot_with_Windows_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.91.D1.8B.D1.81.D1.82.D1.80.D1.8B.D0.B9_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA "Dual boot with Windows (Русский)")
+*   Не забудте загрузить intel [microcode](/index.php/Microcode "Microcode") с `initrd` если это применимо в вашем случае.
+*   Вы можете узнать PARTUUID вашего корневого раздела с помощью команды `blkid -s PARTUUID -o value /dev/sd*xY*`, где `*x*` - это буква устройства, а `*Y*` - это номер раздела. Это нужно только для вашего корневого раздела, не для `*esp*`.
 
-Для загрузки bootctl составляет пункты меню из `$esp/loader/entries/*.conf` файлов – каждый найденный файл должен содержать только одну загрузочную запись. Возможными опциями являются:
+*bootctl* ищет элементы для загрузочного меню в `*esp*/loader/entries/*.conf` – каждый найденный файл должен содержать точно одну загрузочную запись. Возможными опциями являются:
 
 *   `title` – название операционной системы. **Обязательная.**
 
@@ -123,7 +159,7 @@ editor   0
 
 Вот пример записи для корневого раздела без LVM или LUKS:
 
- `$esp/loader/entries/arch.conf` 
+ `*esp*/loader/entries/arch.conf` 
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -131,13 +167,17 @@ initrd         /initramfs-linux.img
 options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw
 ```
 
-Пожалуйста, обратите внимание, что в вышеприведённом примере PARTUUID/PARTLABEL идентифицируют GPT раздел, а это не то же самое, что UUID/LABEL, которые идентифицируют файловую систему. Использование PARTUUID/PARTLABEL бывает полезным, потому что они инвариантны (то есть неизменяемы), если вы переформатируете раздел в другую файловую систему или если по какой-то причине изменятся обозначения /dev/sd*. Также оно может быть полезно, если у вас нет файловой системы на разделе (или вы используете LUKS, который не поддерживает метки томов).
+Пожалуйста, обратите внимание, что в вышеприведённом примере `PARTUUID`/`PARTLABEL` идентифицируют GPT раздел, а это не то же самое, что UUID/LABEL, которые идентифицируют файловую систему. Использование `PARTUUID`/`PARTLABEL` бывает полезным, потому что они инвариантны (то есть неизменяемы), если вы переформатируете раздел в другую файловую систему или если по какой-то причине изменятся обозначения /dev/sd*. Также оно может быть полезно, если у вас нет файловой системы на разделе (или вы используете LUKS, который не поддерживает метки `LABEL`).
+
+**Совет:** Пример файла записи расположен как `/usr/share/systemd/bootctl`.
 
 #### Установки с LVM корневой директорией
 
+**Важно:** *systemd-boot* не может использоваться без отдельной `/boot` файловой системы вне LVM.
+
 Вот пример для корневой директории, использующей [логический менеджер разделов](/index.php/LVM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LVM (Русский)"):
 
- `$esp/loader/entries/arch-lvm.conf` 
+ `*esp*/loader/entries/arch-lvm.conf` 
 ```
 title          Arch Linux (LVM)
 linux          /vmlinuz-linux
@@ -157,17 +197,27 @@ options  root=UUID=<UUID identifier> rw
 
 #### Установки с зашифрованной корневой директорией
 
-Вот пример конфигурационного файла для зашифрованного корневого раздела ([DM-Crypt / LUKS](/index.php/System_Encryption_with_LUKS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "System Encryption with LUKS (Русский)")):
+Ниже приведен пример конфигурационного файла для зашифрованного корневого раздела ([DM-Crypt / LUKS](/index.php/Dm-crypt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dm-crypt (Русский)")) с использованием `encrypt` [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook:
 
- `$esp/loader/entries/arch-encrypted.conf` 
+ `*esp*/loader/entries/arch-encrypted.conf` 
 ```
 title Arch Linux Encrypted
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
-options cryptdevice=UUID=<UUID>:<mapped-name> root=UUID=<luks-UUID> quiet ro
+options cryptdevice=UUID=<UUID>:<mapped-name> root=/dev/mapper/<mapped-name> quiet rw
 ```
 
-В этом примере используется UUID; если хотите, можете заменить UUID на PARTUUID. Обратите внимание, что `<luks-UUID>` обозначает UUID актуальной расшифрованой корневой файловой системы (тот, что находится в `/dev/mapper/<mapped-name>`), а не UUID устройства. Смотрите [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
+В этом примере используется UUID; если хотите, можете заменить UUID на `PARTUUID`. Вы можете также заменить `/dev` путь на регулярный UUID. `mapped-name` - название, которое вы желаете использовать. See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
+
+Если вы используете LVM, ваша опция cryptdevice будет выглядеть следующим образом:
+
+ `*esp*/loader/entries/arch-encrypted-lvm.conf` 
+```
+title Arch Linux Encrypted LVM
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options cryptdevice=UUID=<UUID>:MyVolGroup root=/dev/mapper/MyVolGroup-MyVolRoot quiet rw
+```
 
 Вы также можете добавить другие EFI приложения, такие как `\EFI\arch\grub.efi`.
 
@@ -175,7 +225,7 @@ options cryptdevice=UUID=<UUID>:<mapped-name> root=UUID=<luks-UUID> quiet ro
 
 При загрузке с подраздела [btrfs](/index.php/Btrfs "Btrfs") как корневого, замените `options` строку на `rootflags=subvol=<root subvolume>`. В примере ниже, корневой раздел монтируется как btrfs подраздел с именем 'ROOT' (например, `mount -o subvol=ROOT /dev/sdxY /mnt`):
 
- `$esp/loader/entries/arch-btrfs-subvol.conf` 
+ `*esp*/loader/entries/arch-btrfs-subvol.conf` 
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -185,16 +235,30 @@ options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw rootflags=s
 
 Если это невозможно сделать, то это приведет к ошибке: `ERROR: Root device mounted successfully, but /sbin/init does not exist.`
 
+#### Установки с ZFS корневой директорией
+
+В случае загрузки из [ZFS](/index.php/ZFS "ZFS") dataset, добавьте `zfs=<root dataset>` к строке `options`. Здесь в корневом dataset установлено значение 'zroot/ROOT/default':
+
+ `*esp*/loader/entries/arch-zfs.conf` 
+```
+title          Arch Linux ZFS
+linux          /vmlinuz-linux
+initrd         /initramfs-linux.img
+options        zfs=zroot/ROOT/default rw
+```
+
+When booting off of a ZFS dataset ensure that it has had the `bootfs` property set with `zpool set bootfs=<root dataset> <zpool>`.
+
 #### EFI Shells или другие EFI приложения
 
 В случае, если вы установили EEFI Shells или другие EFI приложения в ESP, вы можете использовать следующие фрагменты:
 
- `$esp/loader/entries/uefi-shell-v1-x86_64.conf` 
+ `*esp*/loader/entries/uefi-shell-v1-x86_64.conf` 
 ```
 title  UEFI Shell x86_64 v1
 efi    /EFI/shellx64_v1.efi
 ```
- `$esp/loader/entries/uefi-shell-v2-x86_64.conf` 
+ `*esp*/loader/entries/uefi-shell-v2-x86_64.conf` 
 ```
 title  UEFI Shell x86_64 v2
 efi    /EFI/shellx64_v2.efi

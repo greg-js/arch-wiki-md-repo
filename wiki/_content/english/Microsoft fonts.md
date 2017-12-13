@@ -43,7 +43,7 @@ Alternatively, copy the Windows fonts to `/usr/share/fonts`:
 
 ```
 # mkdir /usr/share/fonts/WindowsFonts
-# cp /windows/Windows/Fonts/* /usr/share/fonts/WindowsFonts
+# cp -r /windows/Windows/Fonts/ /usr/share/fonts/WindowsFonts
 # chmod 755 /usr/share/fonts/WindowsFonts/*
 
 ```

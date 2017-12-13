@@ -111,7 +111,7 @@ Partial list of views within ncmpcpp:
 
 ### Playback modes
 
-Noticed the control panel in the upper right; shown in alternative mode:
+Notice the control panel in the upper right; shown in alternative mode:
 
 ```
 1:40/4:16 1082 kbps                            ──┤ Criminal ├──                                       Vol: 98%

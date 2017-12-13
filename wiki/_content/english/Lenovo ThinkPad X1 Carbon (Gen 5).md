@@ -32,7 +32,7 @@ Related articles
 
 Lenovo ThinkPad X1 Carbon, Gen 5.
 
-To ensure you have this version, run *dmidecode*:
+To ensure you have this version, [install](/index.php/Install "Install") the package [dmidecode](https://www.archlinux.org/packages/?name=dmidecode) and run:
 
 ```
 # dmidecode -t system | grep Version

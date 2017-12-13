@@ -1,3 +1,10 @@
+Articoli correlati
+
+*   [Power saving](/index.php/Power_saving "Power saving")
+*   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools_(Italiano) "Laptop Mode Tools (Italiano)")
+*   [pm-utils](/index.php/Pm-utils_(Italiano) "Pm-utils (Italiano)")
+*   [PHC](/index.php/PHC "PHC")
+
 [Cpufreq](https://www.kernel.org/doc/Documentation/cpu-freq/index.txt) consente al sistema operativo di scalare la velocità della CPU verso l'alto o verso il basso in modo da risparmiare energia. Le frequenze della CPU possono essere scalati automaticamente a seconda del carico del sistema, in risposta agli eventi ACPI, o manualmente da programmi userspace. Gestori della variazione
 
 CPU frequency scaling è implementato nel kernel Linux, l'infrastruttura è chiamata *cpufreq*. Dalla versione del kernel 3.4 i moduli necessari sono caricati automaticamente e il governatore raccomandato [ondemand](#Gestori_della_variazione) è abilitato in maniera predefinita. Tuttavia gli strumenti a livello utente come [cpupower](https://www.archlinux.org/packages/?name=cpupower), [acpid](/index.php/Acpid_(Italiano) "Acpid (Italiano)") , [laptop-mode-tools](/index.php/Laptop_Mode_Tools_(Italiano) "Laptop Mode Tools (Italiano)") o le GUI fornite dagli ambienti desktop possono essere ancora utilizzati per la configurazione avanzata.

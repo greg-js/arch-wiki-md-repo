@@ -2,9 +2,12 @@
 
 Given the ever decreasing cost of disks and raid systems, it is now practical and cost effective to backup a large number of machines onto a server's local disk or network storage. For some sites this might be the complete backup solution. For other sites additional permanent archives could be created by periodically backing up the server to tape.
 
+Note that BackupPC only provides file-based backups and restores. In particular, it is not suitable out-of-the-box for "hot" database backups (although pre-backup hooks can be used to dump databases and do "cold" backups); you will need tools like [xtrabackup](/index.php/Xtrabackup "Xtrabackup") for that purpose. Also, BackupPC only offers limited handling of opened files. Make sure to read about the [limitations of BackupPC](http://backuppc.sourceforge.net/faq/limitations.html) and test a backup-and-restore cycle before you actually need to resort to it for real.
+
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Placing data directories on a separate partition](#Placing_data_directories_on_a_separate_partition)
 *   [2 Apache configuration](#Apache_configuration)
     *   [2.1 Edit Apache configuration](#Edit_Apache_configuration)
         *   [2.1.1 General settings](#General_settings)
@@ -21,7 +24,15 @@ Given the ever decreasing cost of disks and raid systems, it is now practical an
 
 [Install](/index.php/Install "Install") [backuppc](https://www.archlinux.org/packages/?name=backuppc) from the [official repositories](/index.php/Official_repositories "Official repositories"). Install [rsync](https://www.archlinux.org/packages/?name=rsync) and [perl-file-rsyncp](https://www.archlinux.org/packages/?name=perl-file-rsyncp) if you want to use [rsync](/index.php/Rsync "Rsync") as a transport, and [rrdtool](https://www.archlinux.org/packages/?name=rrdtool) to display usage data in the CGI interface.
 
-Start **backuppc** [systemd](/index.php/Systemd "Systemd") [daemon](/index.php/Daemon "Daemon") and, if you wish to have running at boot time enable it.
+Start the **backuppc** [systemd](/index.php/Systemd "Systemd") [daemon](/index.php/Daemon "Daemon") and, if you wish to have it running at boot time, enable it.
+
+### Placing data directories on a separate partition
+
+The BackupPC pool is stored by default under `/var/lib/backuppc`, which also serves as the home directory for the backuppc user. This path can be changed via the `$Conf{TopDir`} entry in `/etc/backuppc/config.pl`. Typical reasons are that you keep your system on a fast, but expensive and small, [SSD](/index.php/SSD "SSD") and need to store the backups on a traditional hard disk, or that you want to keep the backup pool on a partition managed by an [LVM](/index.php/LVM "LVM") to be able to resize to partition according to changing demands.
+
+The documentation suggests to not change the `$Conf{TopDir`} entry, but instead use symlinks. However, be careful when doing so because package upgrades for backuppc will replace symlinks for both `/var/lib/backuppc` or any of the default subdirectories `cpool`, `pc` or `pool` by empty directories **without any warning**.
+
+Thus, it is recommended to either use bind mounts in [fstab](/index.php/Fstab "Fstab") instead of symlinks, or to deliberately ignore the recommendation in `/etc/backuppc/config.pl` and change `$Conf{TopDir`} nevertheless.
 
 ## Apache configuration
 

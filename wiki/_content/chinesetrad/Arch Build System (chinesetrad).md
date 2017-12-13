@@ -1,3 +1,14 @@
+相關文章
+
+*   [Arch 打包標準 (英)](/index.php/Arch_packaging_standards "Arch packaging standards")
+*   [建立軟體包 (英)](/index.php/Creating_packages "Creating packages")
+*   [核心編譯與 ABS (英)](/index.php/Kernel_Compilation_with_ABS "Kernel Compilation with ABS")
+*   [PKGBUILD (英)](/index.php/PKGBUILD "PKGBUILD")
+*   [makepkg (英)](/index.php/Makepkg "Makepkg")
+*   [pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)")
+*   [官方倉庫](/index.php/Official_repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official repositories (正體中文)")
+*   [使用者倉庫](/index.php/Arch_User_Repository_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch User Repository (正體中文)")
+
 **翻譯狀態：** 本文章是 [Arch_Build_System](/index.php/Arch_Build_System "Arch Build System") 的翻譯版本。最近一次的翻譯時間：2014-01-30。點擊[本連結](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=284196)查看英文頁面之後的變更。
 
 本文提供 Arch 組建系統的概覽，以及帶領初學者進行一遍操作。此文非完整的參考指南！如果需要更多資訊，請參考 man 手冊頁。

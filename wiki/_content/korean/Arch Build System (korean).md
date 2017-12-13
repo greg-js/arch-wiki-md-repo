@@ -1,3 +1,15 @@
+Related articles
+
+*   [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
+*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+*   [Creating packages](/index.php/Creating_packages "Creating packages")
+*   [Kernel Compilation with ABS](/index.php/Kernel_Compilation_with_ABS "Kernel Compilation with ABS")
+*   [makepkg](/index.php/Makepkg "Makepkg")
+*   [makepkg.conf](/index.php/Makepkg.conf "Makepkg.conf")
+*   [pacman](/index.php/Pacman "Pacman")
+*   [pacman Tips](/index.php/Pacman_Tips "Pacman Tips")
+*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
+
 이 문서는 초보자를 위한 빠른 설명과 함께 아치 빌드 시스템의 개요를 제공합니다. 이 문서의 내용은 완벽한 안내서가 아닙니다! 더 많은 정보가 필요하면, 맨 페이지를 참조 해주세요.
 
 ## Contents

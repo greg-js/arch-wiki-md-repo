@@ -68,7 +68,7 @@
 *   planet [done]
 *   bugs [done]
 *   archweb [done]
-*   patchwork [wip]
+*   patchwork [done]
 *   projects
 
 ## soyuz.archlinux.org ([[2]](https://www.hetzner.de/de/hosting/produkte_rootserver/px61ssd))

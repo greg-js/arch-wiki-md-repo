@@ -250,7 +250,7 @@ COMPRESSGZ=(**pigz** -c -f -n)
 
 **Warning:** Errors have been reported when using this method to build the [linux](https://www.archlinux.org/packages/?name=linux) package. The [chroot method](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system") is preferred and has been verified to work for building the kernel packages.
 
-First, enable the [multilib](/index.php/Multilib "Multilib") repository and [install](/index.php/Install "Install") [multilib-devel](https://www.archlinux.org/groups/x86_64/multilib-devel/). Reply yes when asked about removing the conflicting `gcc` and `gcc-libs` packages; gcc-multilib is capable of building both 64-bit and 32-bit software.
+First, enable the [multilib](/index.php/Multilib "Multilib") repository and [install](/index.php/Install "Install") [multilib-devel](https://www.archlinux.org/groups/x86_64/multilib-devel/).
 
 Then create a 32-bit configuration file
 

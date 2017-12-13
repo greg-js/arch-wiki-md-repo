@@ -191,6 +191,8 @@ Você também pode depurar um aplicativo em execução, p.ex.:
 
 ```
 
+Para depurar um aplicativo que já travou, você vai querer usar o gdb [despejo de núcleo](/index.php/Core_dump#Examining_a_core_dump "Core dump").
+
 ## Conclusão
 
 Use o rastro de pilha completo para informar os desenvolvedores de um erro que você descobriu. Isso será muito apreciado por eles e ajudará a melhorar o seu programa favorito

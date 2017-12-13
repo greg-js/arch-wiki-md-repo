@@ -159,7 +159,7 @@ A sample implementation of this approach is available [here](https://github.com/
 
 ### Sound
 
-Copy chtrt5645.conf and HiFi.conf from [here](https://github.com/nexus511/gpd-ubuntu-packages/tree/master/packages/gpdpocket-audio/files) to /usr/share/alsa/ucm/chtrt5645/. Append the following lines into /etc/pulse/default.pa.
+Copy chtrt5645.conf and HiFi.conf from [here](https://fedorapeople.org/%7Ejwrdegoede/chtrt5645/) to /usr/share/alsa/ucm/chtrt5645/. Append the following lines into /etc/pulse/default.pa.
 
  `/etc/pulse/default.pa` 
 ```
@@ -171,6 +171,8 @@ set-sink-port alsa_output.platform-cht-bsw-rt5645.HiFi__hw_chtrt5645_0__sink [Ou
 
 Turn off realtime_scheduleing by editing /etc/pulse/daemon.conf.
 `realtime-scheduling = no`
+
+**Note:** You might need to manually select the correct output (Speaker) sometimes through pactl or your desktop's settings page.
 
 ### SDDM
 

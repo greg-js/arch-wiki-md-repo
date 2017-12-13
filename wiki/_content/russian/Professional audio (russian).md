@@ -3,12 +3,12 @@ Related articles
 *   [Sound system (Русский)](/index.php/Sound_system_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Sound system (Русский)")
 *   [envy24control](/index.php/Envy24control "Envy24control")
 
-Modern Linux systems are more than capable of supporting your (semi-)professional audio needs. Latencies of 5ms down to even as low as 1ms can be achieved with good hardware and proper configuration.
+Современные Linux системы способны удовлетворить любые ваши (полу-)профессиональные аудио потребности. При использовании хорошего аппаратного обеспечения и надлежащей конфигурации можно добиться временной задержки от 5 мс до 1 мс.
 
 ## Contents
 
-*   [1 Getting Started](#Getting_Started)
-    *   [1.1 System Configuration](#System_Configuration)
+*   [1 Начало работы](#.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.8B)
+    *   [1.1 Настройка системы](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
         *   [1.1.1 Checklist](#Checklist)
     *   [1.2 JACK](#JACK)
         *   [1.2.1 FireWire](#FireWire)
@@ -34,13 +34,13 @@ Modern Linux systems are more than capable of supporting your (semi-)professiona
 *   [9 Linux and Arch Linux Pro Audio in the News](#Linux_and_Arch_Linux_Pro_Audio_in_the_News)
 *   [10 Mailing list](#Mailing_list)
 
-## Getting Started
+## Начало работы
 
-Some of the major pro audio applications are already available from the official and community Arch Linux repositories. For anything which is not, you can either add a binary repository (see further down below) or if you prefer to compile, search the AUR. Nothing stops you from building directly off of upstream releases, but then you might as well run LFS.
+Некоторые основные профессиональные аудио приложения уже доступны из официального репозитория или репозитория сообщества Arch Linux. Для всего остального вы можете либо добавить бинарный репозиторий (смотрите ниже) либо, если вы предпочитаете компиляцию, поискать приложение в AUR. Никто не останавливает вас от непосредственной сборки новых выпусков, но, с тем же успехом, вы могли бы пользоваться LFS.
 
-Start by installing [JACK](/index.php/JACK "JACK").
+Начните с установки [JACK](/index.php/JACK "JACK").
 
-The following packages are a good start to build a full-featured pro audio system:
+Следующие пакеты являются хорошим базисом для построения полнофункциональной профессиональной аудио системы:
 
 *   [qjackctl](https://www.archlinux.org/packages/?name=qjackctl)
 *   [patchage](https://www.archlinux.org/packages/?name=patchage)
@@ -56,7 +56,7 @@ The following packages are a good start to build a full-featured pro audio syste
 *   [dssi](https://www.archlinux.org/packages/?name=dssi)
 *   [guitarix2](https://www.archlinux.org/packages/?name=guitarix2)
 
-Other packages you may need that are available from the [AUR](/index.php/AUR "AUR"):
+Другие пакеты, которые могут вам понадобиться, доступны через [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"):
 
 *   [qsampler](https://aur.archlinux.org/packages/qsampler/) (also see [LinuxSampler](/index.php/LinuxSampler "LinuxSampler"))
 *   [mhwaveedit](https://aur.archlinux.org/packages/mhwaveedit/)
@@ -67,9 +67,9 @@ Other packages you may need that are available from the [AUR](/index.php/AUR "AU
 *   [wineasio](https://aur.archlinux.org/packages/wineasio/)
 *   [vst-bridge](https://github.com/abique/vst-bridge)
 
-See also [List of applications#Audio systems](/index.php/List_of_applications#Audio_systems "List of applications"), [List of applications#Sound editing](/index.php/List_of_applications#Sound_editing "List of applications"), and [awesome-linuxaudio](https://github.com/nodiscc/awesome-linuxaudio).
+Смотрите также [List of applications (Русский)#Аудиосистемы](/index.php/List_of_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.90.D1.83.D0.B4.D0.B8.D0.BE.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B "List of applications (Русский)"), [List of applications (Русский)#Редакторы аудио](/index.php/List_of_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.BE.D1.80.D1.8B_.D0.B0.D1.83.D0.B4.D0.B8.D0.BE "List of applications (Русский)"), и [awesome-linuxaudio](https://github.com/nodiscc/awesome-linuxaudio).
 
-### System Configuration
+### Настройка системы
 
 You may want to consider the following often seen system optimizations:
 

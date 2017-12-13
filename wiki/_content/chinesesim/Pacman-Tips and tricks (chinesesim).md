@@ -55,7 +55,7 @@ Pacman 本身也是 bash 程序，所以有些通用优化请参考 [Core utilit
 *   所有明确安装的，存在于数据库而且不是直接或可选依赖的软件包: `pacman -Qent`.
 *   所有外部软件包 (通常是手动下载安装，或者已经从数据库中删除): `pacman -Qm`.
 *   所有从数据库中安装的软件包: `pacman -Qn`.
-*   按正则表打折查询软件包: `pacman -Qs *regex*`.
+*   按正则表达式查询软件包: `pacman -Qs *regex*`.
 *   按正则表达式查询软件包，自定义输出格式：`expac -s "%-30n %v" *regex*` (需要安装 [expac](https://www.archlinux.org/packages/?name=expac)).
 
 ### 显示所有软件包及其大小

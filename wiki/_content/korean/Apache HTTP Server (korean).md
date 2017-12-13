@@ -1,3 +1,12 @@
+Related articles
+
+*   [PHP](/index.php/PHP "PHP")
+*   [MySQL](/index.php/MySQL "MySQL")
+*   [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")
+*   [Adminer](/index.php/Adminer "Adminer")
+*   [XAMPP](/index.php/XAMPP "XAMPP")
+*   [mod_perl](/index.php/Mod_perl "Mod perl")
+
 [Apache HTTP Server](https://en.wikipedia.org/wiki/Apache_HTTP_Server "wikipedia:Apache HTTP Server")(생략해서 Apache라고도 한다)는 아파치 소프트웨어 재단에서 개발된 유명한 웹 서버이다.
 
 아파치는 보통 MySQL 같은 데이터베이스와 PHP 등의 스크립트 언어와 함께 사용된다. 이러ᅟ한 아파치와의 연동을 흔히 [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle) stack (**L**inux, **A**pache, **M**ySQL, **P**HP)이라고 불린다. 이 문서에서는 아파치 서버 구축 방법과 [PHP](/index.php/PHP "PHP"), [MySQL](/index.php/MySQL "MySQL") 연동 방법에 대해서 설명한다.

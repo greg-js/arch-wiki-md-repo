@@ -75,12 +75,15 @@ Users may optionally choose a web server for the Pi-hole web interface.
 
 The AUR package provides example config files for both [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and [nginx](https://www.archlinux.org/packages/?name=nginx). Other web servers can also run the WebUI, but are currently unsupported.
 
-Any webserver will require the following edit to enable the sockets extension:
+Any webserver will require to install the [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) package and the following edit to enable sqlite and sockets extension:
 
  `/etc/php/php.ini` 
 ```
 [...]
+extension=pdo_sqlite
+[...]
 extension=sockets.so
+extension=sqlite3
 [...]
 ```
 

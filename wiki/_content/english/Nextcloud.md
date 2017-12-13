@@ -658,14 +658,14 @@ This is most likely a certificate issue. Recreate it, and do not leave the commo
 The cause is probably a new app that you installed. To fix that, you can use the occ command as described [here](https://docs.nextcloud.com/server/12/admin_manual/configuration_server/occ_command.html). So with
 
 ```
-sudo -u http php /usr/share/webapps/owncloud/occ app:list
+sudo -u http php /usr/share/webapps/nextcloud/occ app:list
 
 ```
 
-you can list all apps (if you installed owncloud in the standard directory), and with
+you can list all apps (if you installed nextcloud in the standard directory), and with
 
 ```
-sudo -u http php /usr/share/webapps/owncloud/occ app:disable <nameOfExtension>
+sudo -u http php /usr/share/webapps/nextcloud/occ app:disable <nameOfExtension>
 
 ```
 

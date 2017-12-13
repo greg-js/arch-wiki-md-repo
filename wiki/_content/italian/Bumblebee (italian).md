@@ -1,3 +1,10 @@
+Articoli correlati
+
+*   [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
+*   [Nouveau](/index.php/Nouveau_(Italiano) "Nouveau (Italiano)")
+*   [NVIDIA](/index.php/NVIDIA_(Italiano) "NVIDIA (Italiano)")
+*   [Intel](/index.php/Intel_Graphics_(Italiano) "Intel Graphics (Italiano)")
+
 Tratto da Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
 
 "*Bumblebee è una soluzione per rendere la tecnologia di Nvidia Optimus, presente sui computer portatili predisposti, disponibile nei sistemi GNU/Linux. Tale caratteristica coinvolge due schede grafiche con due differenti profili di consumo di alimentazione, che collegati in modo stratificato condividono un singolo framebuffer.*"

@@ -1,3 +1,10 @@
+Articoli correlati
+
+*   [DVD Playing](/index.php/DVD_Playing "DVD Playing")
+*   [GStreamer](/index.php/GStreamer "GStreamer")
+*   [Mplayer](/index.php/MPlayer_(Italiano) "MPlayer (Italiano)")
+*   [VLC media player](/index.php/VLC_media_player "VLC media player")
+
 Da [wikipedia](https://en.wikipedia.org/wiki/it:Codec "wikipedia:it:Codec"):
 
 	*In elettronica, informatica e telecomunicazioni un codec è un programma o un dispositivo che si occupa di codificare e/o decodificare digitalmente un segnale analogico.*

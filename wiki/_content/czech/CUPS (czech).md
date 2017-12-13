@@ -1,4 +1,10 @@
-"*[cups](https://www.archlinux.org/packages/?name=cups) je open source program, který slouží ke správě tisku. Vyvíjí ho společnost Apple Inc. pro Mac OS® X další [UNIX-like](https://en.wikipedia.org/wiki/cs:UN*X "wikipedia:cs:UN*X") operační systémy.*".
+Související články
+
+*   [CUPS printer sharing](/index.php/CUPS_printer_sharing "CUPS printer sharing")
+*   [CUPS printer-specific problems](/index.php/CUPS_printer-specific_problems "CUPS printer-specific problems")
+*   [Samba (Česky)](/index.php/Samba_(%C4%8Cesky) "Samba (Česky)")
+
+	"*[cups](https://www.archlinux.org/packages/?name=cups) je open source program, který slouží ke správě tisku. Vyvíjí ho společnost Apple Inc. pro Mac OS® X další [UNIX-like](https://en.wikipedia.org/wiki/cs:UN*X "wikipedia:cs:UN*X") operační systémy.*".
 
 Ačkoliv jsou zde jiné programy pro správu tisku a tiskáren jako například balíčky LPRNG, **C**ommon **U**nix **P**rinting **S**ystem je ze všech nejpoužívanější, protože je relativně jednoduchý na ovládání.
 

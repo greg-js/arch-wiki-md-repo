@@ -1,6 +1,6 @@
 As PCI passthrough is quite tricky to get right (both on the hardware and software configuration sides), this page presents **working, complete** VFIO setups. Feel free to look up users' scripts, BIOS/UEFI configuration, configuration files and specific hardware. If you have a problem, it might have been stumbled upon by other VFIO users and fixed in the examples below.
 
-**Note:** If you've got VFIO working properly, please post your own setup according to the template on the bottom.
+**Note:** If you have got VFIO working properly, please post your own setup according to the template on the bottom.
 
 ## Contents
 
@@ -75,7 +75,7 @@ Configuration:
 *   **Host OS**: Arch Linux
 *   **Guest OS**: Windows 10 Pro
 *   Using **libvirt/QEMU**: GitHub config repository: [[1]](https://github.com/Bretos/vfio)
-*   Issues you've encountered: AUDIO. Had to get USB audio adapter and pass it through.
+*   Issues you have encountered: AUDIO. Had to get USB audio adapter and pass it through.
 *   No issues other than audio. Works like a charm.
 
 ### Skeen's Virtual Gaming Rack Machine
@@ -98,9 +98,9 @@ Configuration:
 *   **Guest OS**: Windows 10 Home (10_1703_N, International Edition)
 *   Using **libvirt QEMU/KVM with OVMF**: See [Github](https://github.com/Skeen/libvirt-gpu-passthrough)
 
-Issues you've encountered:
+Issues you have encountered:
 
-*   Identifical GPUs; solved [using this section on the wiki](/index.php/PCI_passthrough_via_OVMF#Using_identical_guest_and_host_GPUs "PCI passthrough via OVMF"), but with the script from the [corresponding discussion page](/index.php/Talk:PCI_passthrough_via_OVMF#Using_identical_guest_and_host_GPUs_-_did_not_work_for_me. "Talk:PCI passthrough via OVMF"). Several adaptations for Debian were required too, but aren't applicable for this forum.
+*   Identifical GPUs; solved [using this section on the wiki](/index.php/PCI_passthrough_via_OVMF#Using_identical_guest_and_host_GPUs "PCI passthrough via OVMF"), but with the script from the [corresponding discussion page](/index.php/Talk:PCI_passthrough_via_OVMF#Using_identical_guest_and_host_GPUs_-_did_not_work_for_me. "Talk:PCI passthrough via OVMF"). Several adaptations for Debian were required too, but are not applicable for this forum.
 *   "Error 43: Driver failed to load";
     *   Spoofing vendor_id caused Windows to crash during boot-up.
     *   Linux VMs complain unable to find GPU from Grub2, and booted into blind-mode, but would still pick up the graphics card during the boot process, and would remain functional until VM reboot.
@@ -150,17 +150,19 @@ Add a new section with your nickname, CPU, motherboard and GPU models, then copy
 
 ```
 Hardware:
+
 * '''CPU''': 
 * '''Motherboard''': (Revision , BIOS/UEFI Version: )
 * '''GPU''': 
 * '''RAM''': 
 
 Configuration:
+
 * '''Kernel''': Kernel version (vanilla/CK/Zen/ACS-patched or not).
 * Using '''libvirt/QEMU''': link to domain XMLs/scripts/notes (Git repo preferred).
-* Issues you've encountered, special steps taken to make something work a bit better, etc.
+* Issues you have encountered, special steps taken to make something work a bit better, etc.
 * Describe your setup loosely here, so that when other wiki users are looking for something, they can easily skim through available setups.
 
 ```
 
-Replace proper sections with your own data. Make sure to provide the exact motherboard model, revision (if possible - should be on both the motherboard itself and the box it came in) and BIOS/UEFI version you're using. Describe your exact software setup and add a link to your configuration files. (GitHub, GitLab, BitBucket, etc can host a public repository which you may update once in a while, but uploading them to pastebins is fine, too. **Don't** post the entire config file contents here.)
+Replace proper sections with your own data. Make sure to provide the exact motherboard model, revision (if possible - should be on both the motherboard itself and the box it came in) and BIOS/UEFI version you are using. Describe your exact software setup and add a link to your configuration files. (GitHub, GitLab, BitBucket, etc can host a public repository which you may update once in a while, but uploading them to pastebins is fine, too. **Do not** post the entire config file contents here.)

@@ -324,7 +324,7 @@ The *pwck* command can be used to verify the integrity of the user database. It 
 
 ```
 
-Note that the Arch Linux defaults of the files are created as *.pacnew* files by new releases of the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package. Unless Pacman outputs related messages for action, these *.pacnew* files can, and should, be disregarded/removed. New required default users and groups are added automatically by the packages' install script.
+**Note:** Arch Linux defaults of the files are created as *.pacnew* files by new releases of the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package. Unless Pacman outputs related messages for action, these *.pacnew* files can, and should, be disregarded/removed. New required default users and groups are added or re-added as needed by [systemd-sysusers(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
 
 ## Group management
 

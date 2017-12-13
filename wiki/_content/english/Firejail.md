@@ -80,6 +80,8 @@ To use Firejail by default for all applications for which it has profiles, run t
 
 This creates symbolic links in `/usr/local/bin` pointing to `/usr/bin/firejail`, for all programs for which firejail has default profiles. Once this is done, you only need to prefix a program with *firejail* if you want to run it with some custom security setting.
 
+Please be aware that in order for this to work, `/usr/local/bin` must be before `/usr/bin/` in your `PATH`.
+
 You can manually do this for individual applications by executing:
 
 ```

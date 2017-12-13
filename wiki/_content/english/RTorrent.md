@@ -470,13 +470,12 @@ To enable it, add the following to your `~/rtorrent.rc`:
 
 **Note:** If you are having trouble with this tip, it is probably easier to follow [this](https://github.com/rakshasa/rtorrent/wiki/Common-Tasks-in-rTorrent#move-completed-torrents-to-a-fixed-location).
 
-It is possible to have rtorrent sort completed torrent data to specific folders based on which 'watch' folder you drop the *.torrent into while continuing to seed. Many examples show how to do this with torrents downloaded by rtorrent. The problem is when you try to drop in 100% done torrent data and then have rtorrent check the data and resume, it will not be sorted.
+It is possible to have rtorrent organize completed torrent data to specific folders based on which 'watch' folder you drop the *.torrent into while continuing to seed.
 
 As a solution, use the following example in your `~/.rtorrent.rc`. Make sure to change the paths.
 
 ```
-# location where new torrent data is placed, and where you should place your
-# 'complete' data before you place your *.torrent file into the watch folder
+# default path for in progress downloads
 directory = /home/user/torrents/incomplete
 
 # schedule a timer event named 'watch_directory_1':
@@ -484,70 +483,41 @@ directory = /home/user/torrents/incomplete
 # 2) triggers at 10 second intervals thereafter
 # 3) Upon trigger, attempt to load (and start) new *.torrent files found in /home/user/torrents/watch/
 # 4) set a variable named 'custom1' with the value "/home/user/torrents/complete"
-# NOTE: if you do not want it to automatically start the torrent, change 'load_start' to 'load'
-schedule = watch_directory_1,10,10,"load_start=/home/user/torrents/watch/*.torrent,d.set_custom1=/home/user/torrents/complete"
+# NOTE: if you do not want it to automatically start the torrent, change 'load.start' to 'load'
+schedule = watch_directory_1,10,10,"load.start=/home/user/torrents/watch/*.torrent,d.set_custom1=/home/user/torrents/complete"
 
-# insert a method with the alias 'checkdirs1'
-# 1) returns true if the current path of the torrent data is not equal to the value of custom1
-# 2) otherwise, returns false
-system.method.insert=checkdirs1,simple,"not=\"$equal={d.get_custom1=,d.get_base_path=}\""
-
-# insert a method with the alias 'movecheck1'
-# 1) returns true if all 3 commands return true ('result of checkdirs1' && 'torrent is 100% done', 'custom1 variable is set')
-# 2) otherwise, returns false
-system.method.insert=movecheck1,simple,"and={checkdirs1=,d.get_complete=,d.get_custom1=}"
-
-# insert a method with the alias 'movedir1'
-# (a series of commands, separated by ';') 
-# 1) "set path of torrent to equal the value of custom1";
-# 2) "mv -u <current data path> <custom1 path>";
-# 3) "clear custom1", "stop the torrent","resume the torrent"
-# 4) stop the torrent
-# 5) start the torrent (to get the torrent to update the 'base path')
-system.method.insert=movedir1,simple,"d.set_directory=$d.get_custom1=;execute=mv,-u,$d.get_base_path=,$d.get_custom1=;d.set_custom1=;d.stop=;d.start="
-
-# set a key with the name 'move_hashed1' that is triggered by the hash_done event.
-# 1) When hashing of a torrent completes, this custom key will be triggered.
-# 2) when triggered, execute the 'movecheck1' method and check the return value.
-# 3) if the 'movecheck' method returns 'true', execute the 'movedir1' method we inserted above.
-# NOTE-0: *Only* data that has had their hash checked manually with ^R [^R = Control r].
-# Or on a rtorrent restart[which initiates a hash check]. Will the data move; ~/torrents/incomplete => ~/torrents/complete for example.
-# NOTE-1: 'branch' is an 'if' conditional statement: if(movecheck1){movedir1}
-system.method.set_key=event.download.hash_done,move_hashed1,"branch={$movecheck1=,movedir1=}"
+# upon completion, move content to path specified above via custom1
+method.insert = d.get_data_full_path, simple, "branch=((d.is_multi_file)),((cat,(d.directory))),((cat,(d.directory),/,(d.name)))"
+method.insert = d.move_to_complete, simple, "execute=mkdir,-p,$argument.1=; execute=cp,-rp,$argument.0=,$argument.1=; d.stop=; d.directory.set=$argument.1=; d.start=;d.save_full_session=; execute=rm, -r, $argument.0="
+method.set_key = event.download.finished,move_complete,"d.move_to_complete=$d.get_data_full_path=,$d.custom1="
 ```
 
-You can add additional watch folders and rules should you like to sort your torrents into special folders.
-
-For example, if you would like the torrents to download in:
-
-```
-/home/user/torrents/incomplete
-
-```
-
-and then sort the torrent data based on which folder you dropped the *.torrent into:
-
-```
-/home/user/torrents/watch => /home/user/torrents/complete
-/home/user/torrents/watch/iso => /home/user/torrents/complete/iso
-/home/user/torrents/watch/music => /home/user/torrents/complete/music
-
-```
-
-You can have the following in your .rtorrent.rc:
+You can add additional watch directories and corresponding completion directories like so:
 
 ```
 directory = /home/user/torrents/incomplete
-schedule = watch_directory_1,10,10,"load_start=/home/user/torrents/watch/*.torrent,d.set_custom1=/home/user/torrents/complete"
 
-schedule = watch_directory_2,10,10,"load_start=/home/user/torrents/watch/iso/*.torrent,d.set_custom1=/home/user/torrents/complete/iso"
+schedule = watch_directory_1,10,10,"load.start=/home/user/torrents/watch/*.torrent,d.set_custom1=/home/user/torrents/complete"
+schedule = watch_directory_2,10,10,"load.start=/home/user/torrents/watch/iso/*.torrent,d.set_custom1=/home/user/torrents/complete/iso"
+schedule = watch_directory_3,10,10,"load.start=/home/user/torrents/watch/music/*.torrent,d.set_custom1=/home/user/torrents/complete/music"
 
-schedule = watch_directory_3,10,10,"load_start=/home/user/torrents/watch/music/*.torrent,d.set_custom1=/home/user/torrents/complete/music"
+method.insert = d.get_data_full_path, simple, "branch=((d.is_multi_file)),((cat,(d.directory))),((cat,(d.directory),/,(d.name)))"
+method.insert = d.move_to_complete, simple, "execute=mkdir,-p,$argument.1=; execute=cp,-rp,$argument.0=,$argument.1=; d.stop=; d.directory.set=$argument.1=; d.start=;d.save_full_session=; execute=rm, -r, $argument.0="
+method.set_key = event.download.finished,move_complete,"d.move_to_complete=$d.get_data_full_path=,$d.custom1="
+```
 
-system.method.insert=checkdirs1,simple,"not=\"$equal={d.get_custom1=,d.get_base_path=}\""
-system.method.insert=movecheck1,simple,"and={checkdirs1=,d.get_complete=,d.get_custom1=}"
-system.method.insert=movedir1,simple,"d.set_directory=$d.get_custom1=;execute=mv,-u,$d.get_base_path=,$d.get_custom1=;d.set_custom1=;d.stop=;d.start="
-system.method.set_key=event.download.hash_done,move_hashed1,"branch={$movecheck1=,movedir1=}"
+You can also specify incomplete directories per watch directory:
+
+```
+directory = /home/user/torrents/incomplete
+
+schedule = watch_directory_1,10,10,"load.start=/home/user/torrents/watch/*.torrent,d.directory.set=/home/user/torrents/incomplete,d.set_custom1=/home/user/torrents/complete"
+schedule = watch_directory_2,10,10,"load.start=/home/user/torrents/watch/iso/*.torrent,d.directory.set=/home/user/torrents/incomplete/iso,d.set_custom1=/home/user/torrents/complete/iso"
+schedule = watch_directory_3,10,10,"load.start=/home/user/torrents/watch/music/*.torrent,d.directory.set=/home/user/torrents/incomplete/music,d.set_custom1=/home/user/torrents/complete/music"
+
+method.insert = d.get_data_full_path, simple, "branch=((d.is_multi_file)),((cat,(d.directory))),((cat,(d.directory),/,(d.name)))"
+method.insert = d.move_to_complete, simple, "execute=mkdir,-p,$argument.1=; execute=cp,-rp,$argument.0=,$argument.1=; d.stop=; d.directory.set=$argument.1=; d.start=;d.save_full_session=; execute=rm, -r, $argument.0="
+method.set_key = event.download.finished,move_complete,"d.move_to_complete=$d.get_data_full_path=,$d.custom1="
 ```
 
 Also see [completion moving via a bash script](https://rtorrent-docs.readthedocs.io/en/latest/use-cases.html#versatile-move-on-completion), and via [pyrocore's rtcontrol](https://pyrocore.readthedocs.io/en/latest/howto.html#moving-all-data-for-selected-items-to-a-new-location) (there is an AUR package).
@@ -819,16 +789,15 @@ Follow the [official documentation](https://pyrocore.readthedocs.io/) for instal
 
 ## See also
 
+*   [RTorrent/RuTorrent](/index.php/RTorrent/RuTorrent "RTorrent/RuTorrent")
+*   [GNU Screen](/index.php/GNU_Screen "GNU Screen")
 *   [The rTorrent Handbook](http://rtorrent-docs.rtfd.io/) - Includes an explanation of basic and advanced configuration, a scripting guide, and a (not yet) complete command reference with an auto-generated index.
 *   [Manpage for rtorrent](http://linux.die.net/man/1/rtorrent)
-*   [Screen Tips](/index.php/Screen_Tips "Screen Tips")
 *   [Comparison of BitTorrent clients](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients "wikipedia:Comparison of BitTorrent clients") on Wikipedia
 *   [rTorrent Community Wiki](https://github.com/rtorrent-community/rtorrent-community.github.io/wiki) - Public place for information on rTorrent and any project related to rTorrent, regarding setup, configuration, operations, and development.
 *   [pyrocore](https://github.com/pyroscope/pyrocore) - Collection of command line tools for rTorrent. It provides commands for creating and modifying torrent files, moving data on completion without having multiple watch folders, and mass-controlling download items via rTorrent's XML-RPC interface: searching, start/stop, deleting items with or without their data, etc. It also offers a documented [Python](/index.php/Python "Python") API.
-*   [ruTorrent with Lighttpd](/index.php/Rutorrent_with_lighttpd "Rutorrent with lighttpd")
-*   [How-to install rTorrent and Hellanzb on CentOS 5 64-bit VPS](http://wiki.theaveragegeek.com/howto/installing_rtorrent_and_hellanzb_on_centos5_64-bit_vps)
 *   [Installation guide for rTorrent and Pyroscope on Linux](https://rtorrent-ps.readthedocs.io/en/latest/install.html#manual-turn-key-system-setup) - Collection of tools for the BitTorrent protocol and especially the rTorrent client
-*   [mktorrent](http://mktorrent.sourceforge.net/) - Command line application used to generate torrent files, which is available as [mktorrent](https://www.archlinux.org/packages/?name=mktorrent) in the [official repositories](/index.php/Official_repositories "Official repositories").
+*   [mktorrent](https://github.com/Rudde/mktorrent) - Command line application used to generate torrent files, which is available as [mktorrent](https://www.archlinux.org/packages/?name=mktorrent) in the [official repositories](/index.php/Official_repositories "Official repositories").
 *   [docktorrent](https://github.com/kfei/docktorrent) - Using Docker, rTorrent and ruTorrent to run a full-featured BitTorrent box.
 *   [reptyr](https://github.com/nelhage/reptyr) - another tool to take over a program's TTY (it is in the standard repos). The process may have started being attached to a terminal or to a socket in tmux, screen or dtach.
 *   [neercs](http://caca.zoy.org/wiki/neercs) - a more screen/tmux like tool than reptyr, but, like reptyr, neercs can also "steal" a process that may have started slaved to a terminal or to a socket in tmux, screen or dtach. [neercs-git](https://aur.archlinux.org/packages/neercs-git/)

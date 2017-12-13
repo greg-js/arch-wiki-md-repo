@@ -262,13 +262,46 @@ E515dw
 
 ## Epson
 
-[epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) is a driver for the Epson Inkjet Printer Driver (ESC/P-R) for Linux.
-
-There is a large selection of printer drivers/filters available in the [AUR](/index.php/AUR "AUR").
+[epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) and [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) are sets of drivers using the Epson Inkjet Printer Driver (ESC/P-R) for Linux.
 
 | Printer | Driver/filter | Notes |
 | AcuLaser CX11(NF) | [epson-alcx11-filter](https://aur.archlinux.org/packages/epson-alcx11-filter/) |
 | AcuLaser C900 | This printer uses Epson's driver, with a device URI of '**usb://EPSON/AL-C900'**, and may need the pipsplus service to be running. |
+| EP-50V | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
+| EP-879A |
+| EP-880A |
+| ET-2700 |
+| ET-2750 |
+| ET-3700 |
+| ET-3750 |
+| ET-4750 |
+| EW-M571T |
+| EW-M670FT |
+| L4150 |
+| L4160 |
+| L6160 |
+| L6170 |
+| L6190 |
+| PM-520 |
+| PX-M5080F |
+| PX-M5081F |
+| PX-M680F |
+| PX-M7070FX |
+| PX-M780F |
+| PX-M781F |
+| PX-S5080 |
+| PX-S7070X |
+| WF-3720 |
+| WF-4720 |
+| WF-4730 |
+| WF-4740 |
+| WF-7210 |
+| WF-7710 |
+| WF-7720 |
+| WF-C869R |
+| XP-15000 |
+| XP-6000 |
+| XP-8500 |
 | TX125 | [epson-inkjet-printer-n10-nx127](https://aur.archlinux.org/packages/epson-inkjet-printer-n10-nx127/) |
 | LP-S5000 | This printer requires a [custom driver from Avasys](#Avasys). |
 | Printer | Driver/filter | Notes |

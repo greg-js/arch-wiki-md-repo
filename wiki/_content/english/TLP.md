@@ -84,7 +84,7 @@ You can display informations about the currently used Mode(AC/BAT) and applied c
 
 ## Features intentionally excluded
 
-*   Fan control. See [Fan speed control](/index.php/Fan_speed_control "Fan speed control") and [ThinkPad Fan Control](/index.php/ThinkPad_Fan_Control "ThinkPad Fan Control")
+*   Fan control. See [Fan speed control](/index.php/Fan_speed_control "Fan speed control")
 
 *   Backlight brightness. See [Backlight](/index.php/Backlight "Backlight")
 

@@ -213,6 +213,9 @@ It's quite common for modern IMAP/SMTP servers to only allow encrypted authentic
        // certificate is not self-signed if cafile provided
        'allow_self_signed' => false,
        'cafile'  => '/etc/ssl/certs/Your_CA_certificate.pem',
+       // For Letsencrypt use the following two lines and remove the 'cafile' option above.
+       //'ssl_cert => '/etc/letsencrypt/live/mail.my_domain.org/fullchain.pem'
+       //'ssl_key'  => '/etc/letsencrypt/live/mail.my_domain.org/privkey.pem'
        // probably optional parameters
        'ciphers' => 'TLSv1+HIGH:!aNull:@STRENGTH',
        'peer_name'         => 'mail.my_domain.org',
@@ -225,6 +228,9 @@ It's quite common for modern IMAP/SMTP servers to only allow encrypted authentic
        // certificate is not self-signed if cafile provided
        'allow_self_signed' => false,
        'cafile'  => '/etc/ssl/certs/Your_CA_certificate.pem',
+       // For Letsencrypt use the following two lines and remove the 'cafile' option above.
+       //'ssl_cert => '/etc/letsencrypt/live/mail.my_domain.org/fullchain.pem'
+       //'ssl_key'  => '/etc/letsencrypt/live/mail.my_domain.org/privkey.pem'
        // probably optional parameters
        'ciphers' => 'TLSv1+HIGH:!aNull:@STRENGTH',
        'peer_name'         => 'mail.my_domain.org',

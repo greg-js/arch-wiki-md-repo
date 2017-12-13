@@ -63,7 +63,7 @@ Você pode **não** querer usar o Arch, se:
 
 ### A quais arquiteturas o Arch oferece suporte?
 
-O Arch só oferece suporte à arquitetura x86_64 (algumas vezes chamada de amd64). Suporte à i686 está sendo desativado e será completamente retirado em Novembro de 2017[[1]](http://www.archlinux-br.org/noticias/260/): se você ainda está usando um sistema 32 bits, você pode se interessar em ler [#Como eu troco de i686 para x86_64 sem reinstalar?](#Como_eu_troco_de_i686_para_x86_64_sem_reinstalar.3F).
+O Arch só oferece suporte à arquitetura x86_64 (algumas vezes chamada de amd64). Suporte à i686 foi desativado em Novembro de 2017[[1]](http://www.archlinux-br.org/noticias/260/). Se sua máquina ainda usa a versão i686 do Arch, mas uma CPU x86_64, veja [#Como eu troco de i686 para x86_64 sem reinstalar?](#Como_eu_troco_de_i686_para_x86_64_sem_reinstalar.3F). Se sua máquina não possuir suporte, considere trocar para [Arch Linux 32](https://archlinux32.org/).
 
 ### O Arch oferece suporte a CPUs ARM?
 

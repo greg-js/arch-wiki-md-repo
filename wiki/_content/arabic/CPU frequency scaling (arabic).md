@@ -1,3 +1,9 @@
+Related articles
+
+*   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
+*   [pm-utils](/index.php/Pm-utils "Pm-utils")
+*   [PHC](/index.php/PHC "PHC")
+
 cpufreq تعني بنية النواة التحتية التي تقوم بتغيير تردد وحدة المعالجة المركزية، تسمح هذه التقنية لنظام التشغيل من أن يقوم بتغيير تردد المعالج زيادةً أو نقصاناً من أجل توفير استهلاك الطاقة، من الممكن أن يتم تغيير التردد تلقائياً automatically بحسب احتياجات النظام واستجابةً لأحداث ACPI (واجهة التهيئة المتقدمة للطاقة Advanced Configuration Power Interface) أو يدوياً عن طريق البرامج.
 
 منذ إصدار النواة رقم 3.4 فإن الوحدات modules الضرورية يتم تحميلها تلقائياً بالإضافة إلى تفعيل مخطط الطاقة [ondemand governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling") (العمل عند الطلب) الذي ينصح بالعمل عليه بشكل افتراضي. غير أن برامج مثل [cpupower](#cpupower), [acpid](/index.php/Acpid "Acpid"), [laptop-mode-tools](/index.php/Laptop-mode-tools "Laptop-mode-tools") أو بعض الأدوات ذات الواجهة الرسومية GUI ما زالت تُستخدم للتهيئة المتقدمة.

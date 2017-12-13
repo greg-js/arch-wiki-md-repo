@@ -1,3 +1,11 @@
+相关文章
+
+*   [Nemo](/index.php/Nemo "Nemo")
+*   [GNOME](/index.php/GNOME "GNOME")
+*   [MATE](/index.php/MATE "MATE")
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+
 **翻译状态：** 本文是英文页面 [Cinnamon](/index.php/Cinnamon "Cinnamon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-12，点击[这里](https://wiki.archlinux.org/index.php?title=Cinnamon&diff=0&oldid=436684)可以查看翻译后英文页面的改动。
 
 [Cinnamon](http://cinnamon.linuxmint.com/) 是一个提供先进创新的特点和传统的用户体验的Linux桌面。然而，底层的技术是基于 [GNOME](/index.php/GNOME "GNOME") 的分支. 在Cinnamon 2.2版本中，Cinnamon已经是一个完整的桌面环境，不仅仅是一个GNOME的前端。

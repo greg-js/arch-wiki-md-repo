@@ -17,7 +17,7 @@ ArchLinux is not officially supported by Vivado, but as happens with [Xilinx ISE
 
 ## Prerequisites
 
-Xilinx Vivado can be downloaded from its official website [[1]](http://www.xilinx.com/products/design-tools/vivado.html). Vivado only supports 64-bit systems, so you will need a working 64-bit ArchLinux install. It's recommended to download "Vivado HLx 2015.4: Full Installer For Linux Single File Download Image Including SDK" tarball, but make sure not to be in a hurry, as it's a large download (near 9 GB). Update tarballs can also be downloaded and installed later.
+Xilinx Vivado can be downloaded from its official website [[1]](http://www.xilinx.com/products/design-tools/vivado.html). It's recommended to download "Vivado HLx 2015.4: Full Installer For Linux Single File Download Image Including SDK" tarball, but make sure not to be in a hurry, as it's a large download (near 9 GB). Update tarballs can also be downloaded and installed later.
 
 ### Dependencies
 

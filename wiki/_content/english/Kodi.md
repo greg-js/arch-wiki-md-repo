@@ -3,57 +3,57 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Autostarting at boot or starting on-demand](#Autostarting_at_boot_or_starting_on-demand)
-        *   [2.1.1 Kodi-standalone-service](#Kodi-standalone-service)
-        *   [2.1.2 Xsession with LightDM](#Xsession_with_LightDM)
-        *   [2.1.3 Socket activation](#Socket_activation)
-        *   [2.1.4 Start from remote control with LIRC / irexec](#Start_from_remote_control_with_LIRC_.2F_irexec)
-    *   [2.2 Sharing a database across multiple nodes](#Sharing_a_database_across_multiple_nodes)
-        *   [2.2.1 Setup an NFS server](#Setup_an_NFS_server)
-        *   [2.2.2 Install and setup the MySQL server](#Install_and_setup_the_MySQL_server)
-        *   [2.2.3 Setup Kodi to use the MySQL library and the NFS exports](#Setup_Kodi_to_use_the_MySQL_library_and_the_NFS_exports)
-            *   [2.2.3.1 Setup Kodi to use the common MySQL database](#Setup_Kodi_to_use_the_common_MySQL_database)
-            *   [2.2.3.2 Setup network shares](#Setup_network_shares)
-        *   [2.2.4 Cloning the configuration to other nodes on the network](#Cloning_the_configuration_to_other_nodes_on_the_network)
-    *   [2.3 Using a remote control](#Using_a_remote_control)
-        *   [2.3.1 Using the Android or iOS app](#Using_the_Android_or_iOS_app)
-        *   [2.3.2 Using a physical remote control](#Using_a_physical_remote_control)
-    *   [2.4 HDMI-CEC with Pulse Eight USB-CEC](#HDMI-CEC_with_Pulse_Eight_USB-CEC)
-*   [3 Tips and Tricks](#Tips_and_Tricks)
-    *   [3.1 Keep a log of what is watched](#Keep_a_log_of_what_is_watched)
-    *   [3.2 CLI tool for kodi](#CLI_tool_for_kodi)
-    *   [3.3 Enable Hardware video acceleration](#Enable_Hardware_video_acceleration)
-    *   [3.4 Adjusting CD/DVD drive speed](#Adjusting_CD.2FDVD_drive_speed)
-    *   [3.5 Use port 80 for webserver](#Use_port_80_for_webserver)
-    *   [3.6 Using ALSA](#Using_ALSA)
-    *   [3.7 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
-    *   [3.8 TV is not detected unless powered on first](#TV_is_not_detected_unless_powered_on_first)
-        *   [3.8.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
-        *   [3.8.2 USB DAC not working](#USB_DAC_not_working)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Accessing kodi logs](#Accessing_kodi_logs)
-    *   [4.2 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
-    *   [4.3 Video tearing on Intel HD Graphics](#Video_tearing_on_Intel_HD_Graphics)
-    *   [4.4 Soft subtitles not displaying](#Soft_subtitles_not_displaying)
-    *   [4.5 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
-    *   [4.6 Kodi hangs on exit, fully occupying one CPU core, UI unresponsive](#Kodi_hangs_on_exit.2C_fully_occupying_one_CPU_core.2C_UI_unresponsive)
-*   [5 See also](#See_also)
+*   [2 Running](#Running)
+*   [3 Running standalone](#Running_standalone)
+    *   [3.1 Kodi-standalone-service](#Kodi-standalone-service)
+    *   [3.2 Xsession with LightDM](#Xsession_with_LightDM)
+    *   [3.3 Socket activation](#Socket_activation)
+    *   [3.4 Start from remote control with LIRC / irexec](#Start_from_remote_control_with_LIRC_.2F_irexec)
+    *   [3.5 Sharing a database across multiple nodes](#Sharing_a_database_across_multiple_nodes)
+        *   [3.5.1 Setup an NFS server](#Setup_an_NFS_server)
+        *   [3.5.2 Install and setup the MySQL server](#Install_and_setup_the_MySQL_server)
+        *   [3.5.3 Setup Kodi to use the MySQL library and the NFS exports](#Setup_Kodi_to_use_the_MySQL_library_and_the_NFS_exports)
+            *   [3.5.3.1 Setup Kodi to use the common MySQL database](#Setup_Kodi_to_use_the_common_MySQL_database)
+            *   [3.5.3.2 Setup network shares](#Setup_network_shares)
+        *   [3.5.4 Cloning the configuration to other nodes on the network](#Cloning_the_configuration_to_other_nodes_on_the_network)
+    *   [3.6 Using a remote control](#Using_a_remote_control)
+        *   [3.6.1 Using the Android or iOS app](#Using_the_Android_or_iOS_app)
+        *   [3.6.2 Using a physical remote control](#Using_a_physical_remote_control)
+    *   [3.7 HDMI-CEC with Pulse Eight USB-CEC](#HDMI-CEC_with_Pulse_Eight_USB-CEC)
+*   [4 Tips and Tricks](#Tips_and_Tricks)
+    *   [4.1 Keep a log of what is watched](#Keep_a_log_of_what_is_watched)
+    *   [4.2 CLI tool for kodi](#CLI_tool_for_kodi)
+    *   [4.3 Enable Hardware video acceleration](#Enable_Hardware_video_acceleration)
+    *   [4.4 Adjusting CD/DVD drive speed](#Adjusting_CD.2FDVD_drive_speed)
+    *   [4.5 Use port 80 for webserver](#Use_port_80_for_webserver)
+    *   [4.6 Using ALSA](#Using_ALSA)
+    *   [4.7 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
+    *   [4.8 TV is not detected unless powered on first](#TV_is_not_detected_unless_powered_on_first)
+        *   [4.8.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
+        *   [4.8.2 USB DAC not working](#USB_DAC_not_working)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Accessing kodi logs](#Accessing_kodi_logs)
+    *   [5.2 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
+    *   [5.3 Video tearing on Intel HD Graphics](#Video_tearing_on_Intel_HD_Graphics)
+    *   [5.4 Soft subtitles not displaying](#Soft_subtitles_not_displaying)
+    *   [5.5 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
+    *   [5.6 Kodi hangs on exit, fully occupying one CPU core, UI unresponsive](#Kodi_hangs_on_exit.2C_fully_occupying_one_CPU_core.2C_UI_unresponsive)
+*   [6 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [kodi](https://www.archlinux.org/packages/?name=kodi) package. Be sure to install the optional dependencies listed by pacman that apply to your specific use-case.
+[Install](/index.php/Install "Install") the [kodi](https://www.archlinux.org/packages/?name=kodi) package. Be sure to install the optional dependencies listed by pacman that apply to your specific use-case. All of the official addons in the [kodi-addons](https://www.archlinux.org/groups/x86_64/kodi-addons/) group are disabled by default and need to be enabled in Kodi's addon menu after installation.
 
 **Note:** Users of Arch ARM should be aware that several different kodi packages with specific hardware support are available.
 
-## Configuration
-
-### Autostarting at boot or starting on-demand
+## Running
 
 The [kodi](https://www.archlinux.org/packages/?name=kodi) package supplies two binaries for two different use cases:
 
 1.  `/usr/bin/kodi` is meant to be run by any user on a on-demand basis. Use it like any other program on the system.
-2.  `/usr/bin/kodi-standalone` is meant to be run by an unprivileged user.
+2.  `/usr/bin/kodi-standalone` is meant to be run as the only graphical application, for example on an HTPC. See [#Running standalone](#Running_standalone) for more information.
+
+## Running standalone
 
 Setting up the system and running the standalone binary is advantageous for several reasons:
 

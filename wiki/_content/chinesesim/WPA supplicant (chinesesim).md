@@ -139,7 +139,7 @@ network={
 
 ```
 
-**注意:** 由于存在进程替换，这个命令**不能**带着 [sudo](/index.php/Sudo "Sudo") 执行，必须切换到 root 身份。否则会报错：
+**注意:** 由于存在进程替换，这个命令**不能**以 [sudo](/index.php/Sudo "Sudo") 方式执行，必须切换到 root 身份。否则会报错：
 ```
 Successfully initialized wpa_supplicant
 Failed to open config file '/dev/fd/63', error: No such file or directory
@@ -154,7 +154,7 @@ Failed to read or parse configuration '/dev/fd/63'
 *   要找出无线网卡的名字，使用 `ip link` 命令。
 *   某些不常用的复杂通行字要求从文件输入，例如：`wpa_passphrase MYSSID < passphrase.txt`；或者从命令行输入，例如：`wpa_passphrase MYSSID <<< "passphrase"`。
 
-之后就可以像[#概述](#.E6.A6.82.E8.BF.B0)中所述获取 IP 地址：
+之后就可以像[#概览](#.E6.A6.82.E8.A7.88)中所述获取 IP 地址：
 
 ```
 # dhcpcd *interface*

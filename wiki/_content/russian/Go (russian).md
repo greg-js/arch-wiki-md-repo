@@ -1,4 +1,6 @@
-[Go](http://golang.org/) — язык программирования, главными особенностями которого является быстрая компиляции, сборка мусора и многопоточность.
+Цитата из [официальной документации по golang](https://golang.org/doc/)
+
+	*[Go](http://golang.org/) выразительный, лаконичный, чистый и эффективный язык. Его механизмы параллельности позволяют легко создавать программы, которые получают максимальную отдачу от многоядерных и сетевых машин, в то время как новая система типов позволяет создать гибкую и модульную программу. Go не только быстро компилирует в машинный код, но также имеет сборщик мусора и run-time рефлексию. Он быстр, статически типизирован и компилируемый язык но при этом выглядит как динамически типизированный и интерпретируемый язык.*
 
 ## Contents
 
@@ -30,58 +32,60 @@
 
 ### Проверка установки
 
-Для проверки работоспособности создайте простенькую программу:
+Для примера, скомпилируем первую программу из книги [Алан А. А. Донован, Брайан У. Керниган "Язык программирования Go"](http://www.gopl.io/)
 
- `test.go` 
+ `helloworld.go` 
 ```
 package main
 
+import "fmt"
+
 func main() {
-    println("Привет, Арч!")
+	fmt.Println("Hello, мир")
 }
 
 ```
 
-Запуск программы с помощью интерпретатора:
+Запуск кода с помощью интерпретатора:
 
- `$ go run test.go` 
+ `$ go run helloworld.go` 
 ```
-Привет, Арч!
+Hello, мир
 
 ```
 
 Компиляция стандартным компилятором *gc*:
 
 ```
-$ go build test.go
+$ go build helloworld.go
 
 ```
 
 аналогичен
 
 ```
-$ go build -compiler=gc test.go
+$ go build -compiler=gc helloworld.go
 
 ```
 
 Компиляция с помощью *gccgo*:
 
 ```
-$ gccgo test.go -o test
+$ gccgo helloworld.go -o helloworld
 
 ```
 
 аналогичен
 
 ```
-$ go build -compiler=gccgo test.go
+$ go build -compiler=gccgo helloworld.go
 
 ```
 
 Компиляция с помощью *gccgo* и [*gold-линковщика*](/index.php/Gold_linker_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Gold linker (Русский)"):
 
 ```
-$ gccgo test.go -fuse-ld=gold -o test
+$ gccgo helloworld.go -fuse-ld=gold -o helloworld
 
 ```
 
@@ -233,12 +237,9 @@ $ go build -ldflags '-w -s' test.go
 ## Смотрите также
 
 *   [Официальный веб-сайт языка Go (en)](http://golang.org/)
-*   [Интерактивный тур обучения Go (en)](http://tour.golang.org)
+*   [Тур по Go](https://go-tour-ru-ru.appspot.com/list)
 *   [Статья в Википедии](https://en.wikipedia.org/wiki/ru:Go "wikipedia:ru:Go")
-*   [Русская группа в G+](https://groups.google.com/forum/#!forum/golang-ru)
-*   [Хаб на Habrahabr про Go](http://habrahabr.ru/hub/go/)
-*   [Веб-ресурс посвящённый Go](http://4gophers.com/)
-*   [Примеры с кратким описанием](http://gobyexample.ru/)
+*   [Go в примерах](http://gobyexample.ru/)
 *   [Awesome Go](http://awesome-go.com/)
 *   [IDE и плагины для Go](https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins)
-*   [Руководство по созданию пакетов для AUR программ написанных на языке Go](/index.php/Go_package_guidelines "Go package guidelines")
+*   [Руководство создания пакетов(AUR) для Go](/index.php/Go_package_guidelines "Go package guidelines")

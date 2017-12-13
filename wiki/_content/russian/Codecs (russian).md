@@ -1,3 +1,11 @@
+Ссылки по теме
+
+*   [Воспроизведение DVD](/index.php/Optical_disc_drive_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.92.D0.BE.D1.81.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_DVD "Optical disc drive (Русский)")
+
+*   [GStreamer](/index.php/GStreamer "GStreamer")
+*   [MPlayer (Русский)](/index.php/MPlayer_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MPlayer (Русский)")
+*   [Медиапроигрыватель VLC](/index.php/VLC_media_player "VLC media player")
+
 Цитата из [Википедии](https://en.wikipedia.org/wiki/ru:%D0%9A%D0%BE%D0%B4%D0%B5%D0%BA "wikipedia:ru:Кодек"):
 
 	*Ко́дек (англ. codec, от coder/decoder — кодировщик/декодировщик или compressor/decompressor) — устройство или программа, способная выполнять преобразование данных или сигнала.*

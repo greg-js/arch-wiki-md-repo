@@ -21,8 +21,7 @@ Fan control can bring various benefits to your system, such as quieter working s
 *   [4 Dell laptops](#Dell_laptops)
     *   [4.1 Installation](#Installation_2)
     *   [4.2 Configuration](#Configuration_3)
-    *   [4.3 Disable BIOS fan speed control](#Disable_BIOS_fan_speed_control)
-    *   [4.4 Installation as a service](#Installation_as_a_service)
+    *   [4.3 Installation as a service](#Installation_as_a_service)
 *   [5 ThinkPad laptops](#ThinkPad_laptops)
     *   [5.1 Installation](#Installation_3)
     *   [5.2 Running](#Running)
@@ -251,33 +250,6 @@ set config(2)  {{2 2}  65 128  65 128}
 ```
 
 This example starts the fan at low speed when the CPU temperature reaches 55 °C, switching to high speed at 75 °C. The fan will switch back to low speed once the temperature drops to 65 °C, and turns off completely at 45 °C.
-
-### Disable BIOS fan speed control
-
-It may be necessary to turn off control of the fan speed by the BIOS to prevent it from "fighting" with `i8kmon`. On some laptops, this can be done using the `smm` utility. **This utility is extremely dangerous as it writes directly to an I/O port to invoke the processor's [System Management Mode](https://en.wikipedia.org/wiki/System_Management_Mode "wikipedia:System Management Mode"). Use it at your own risk.**
-
-`smm` must be compiled and installed manually. On a 64-bit system, [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) is required. Locate the file `smm.c` in the `i8kutils` source and compile it:
-
-```
-$ gcc -m32 -o smm smm.c
-
-```
-
-To disable BIOS fan speed control, run (as root):
-
-```
-# ./smm 30a3
-
-```
-
-To enable it again:
-
-```
-# ./smm 31a3
-
-```
-
-**Note:** This method may disable other power management features of the BIOS as well, such as notifying Linux when the power button is pressed.
 
 ### Installation as a service
 

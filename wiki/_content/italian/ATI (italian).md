@@ -1,3 +1,9 @@
+Articoli correlati
+
+*   [AMD Catalyst (Italiano)](/index.php/AMD_Catalyst_(Italiano) "AMD Catalyst (Italiano)")
+*   [KMS](/index.php/KMS "KMS")
+*   [Xorg (Italiano)](/index.php/Xorg_(Italiano) "Xorg (Italiano)")
+
 I possessori di schede video **AMD** possono scegliere tra i [driver proprietari](/index.php/AMD_Catalyst_(Italiano) "AMD Catalyst (Italiano)") ATI/AMD ([catalyst](https://aur.archlinux.org/packages/catalyst/)) e i driver open source([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)).
 
 Attualmente, le performance dei driver open source non sono *alla pari* con i driver proprietari in termini di prestazioni 3D e mancano di alcune caratteristiche, come il supporto TV-out. Tuttavia, offrono un miglior supporto dual-head, un'eccellente accelerazione 2D, e forniscono l'accelerazione 3D necessaria ai vari [Window Manager](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") che sfruttano le accelerazioni OpenGL, come [Compiz](/index.php/Compiz_(Italiano) "Compiz (Italiano)") o KWin.

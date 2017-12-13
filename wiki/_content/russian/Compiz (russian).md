@@ -1,3 +1,10 @@
+Ссылки по теме
+
+*   [Compiz#Troubleshooting](/index.php/Compiz#Troubleshooting "Compiz")
+*   [Compiz/Configuration](/index.php/Compiz/Configuration "Compiz/Configuration")
+*   [Composite](/index.php/Composite "Composite")
+*   [Xcompmgr (Русский)](/index.php/Xcompmgr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xcompmgr (Русский)")
+
 Compiz это [композитный оконный менеджер](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager"). Он представляет собой самостоятельный оконный менеджер и не может использоваться совместно с другими оконными менеджерами, такими как [Openbox](/index.php/Openbox "Openbox"), [Fluxbox](/index.php/Fluxbox "Fluxbox"), [Enlightenment](/index.php/Enlightenment "Enlightenment"). Пользователи, которые не хотят расставаться со своим оконным менеджером, но желающие добавить к нему пару эффектов, могут использовать в этих целях [Xcompmgr](/index.php/Xcompmgr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xcompmgr (Русский)").
 
 ## Contents

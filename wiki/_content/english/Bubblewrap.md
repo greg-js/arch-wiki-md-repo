@@ -1,3 +1,8 @@
+Related articles
+
+*   [Security](/index.php/Security "Security")
+*   [Flatpak](/index.php/Flatpak "Flatpak")
+
 [bubblewrap](https://github.com/projectatomic/bubblewrap) is a lightweight [setuid](https://en.wikipedia.org/wiki/Setuid "wikipedia:Setuid") sandbox application developed from [Flatpak](https://en.wikipedia.org/wiki/Flatpak "wikipedia:Flatpak") with a small installation footprint and minimal resource requirements. While the application package is named bubblewrap, the actual executable binary and manpage reference is *bwrap*. bubblewrap is expected to [anchor the sandbox mechanism](https://blog.torproject.org/blog/q-and-yawning-angel) of the [Tor Browser](https://www.torproject.org/projects/torbrowser.html) (Linux) in the future. Notable features include support for cgroup/IPC/mount/network/PID/user/UTS [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces") and [seccomp](https://en.wikipedia.org/wiki/Seccomp "wikipedia:Seccomp") filtering. Note that bubblewrap drops all [capabilities](/index.php/Capabilities "Capabilities") within a sandbox and that child tasks cannot gain greater privileges than its parent. Notable feature exclusions include the lack of explicit support for blacklisting/whitelisting file paths.
 
 **Warning:** Unlike when using a separate user and a separate log-in session, bubblewrap not only exposes security vulnerabilities in the kernel but also in the window compositor. Users should be aware that running untrustworthy code in bubblewrap is still not safe.
@@ -452,7 +457,7 @@ The `/usr/bin/chromium` bind is only necessary for programs not using XDG conven
 
 ### New Session
 
-There is a security issue with TIOCSTI, (CVE-2017-522) which allows sandbox escape. To prevent this, bubblewrap has introduced the new option '--new-session' which calls setsid(). However this causes some behavioural issues that are hard to work with in some cases. For instance, it makes shell job control not work for the bwrap command.
+There is a security issue with TIOCSTI, (CVE-2017-5226) which allows sandbox escape. To prevent this, bubblewrap has introduced the new option '--new-session' which calls setsid(). However this causes some behavioural issues that are hard to work with in some cases. For instance, it makes shell job control not work for the bwrap command.
 
 It is recommended to use this if possible, but if not the developers recommend that the issue is neutralized in some other way, for instance using SECCOMP, which is what flatpak does: [https://github.com/flatpak/flatpak/commit/902fb713990a8f968ea4350c7c2a27ff46f1a6c4](https://github.com/flatpak/flatpak/commit/902fb713990a8f968ea4350c7c2a27ff46f1a6c4)
 

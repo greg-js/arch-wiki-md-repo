@@ -78,7 +78,9 @@ To execute the CFG file:
 
 Enemy Territory was developed during a time when [OSS](/index.php/OSS "OSS") was still the 'official' Linux's sound system but was superseded by [ALSA](/index.php/ALSA "ALSA"). As a result, Enemy Territory might not be able to emit sound.
 
-This problem can be solved by installing [et-sdl-sound](https://aur.archlinux.org/packages/et-sdl-sound/). If you are using an x86_64 architecture, you might need to [install](/index.php/Install "Install") the [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) before installing [et-sdl-sound](https://aur.archlinux.org/packages/et-sdl-sound/). Once et-sdl-sound is installed, you can launch the game using the following command:
+This problem can be solved by enabling the [multilib](/index.php/Multilib "Multilib") repository, installing the [multilib-devel](https://www.archlinux.org/groups/x86_64/multilib-devel/) group, and finally installing [et-sdl-sound](https://aur.archlinux.org/packages/et-sdl-sound/).
+
+Once et-sdl-sound is installed, you can launch the game using the following command:
 
 ```
 $ enemy-territory.sdl

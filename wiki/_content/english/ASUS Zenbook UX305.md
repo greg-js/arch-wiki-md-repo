@@ -1,13 +1,3 @@
-| **Device** | **Status** |
-| [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
-| [Wireless](/index.php/Wireless "Wireless") | Yes |
-| [ALSA](/index.php/ALSA "ALSA") | Yes |
-| [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
-| Camera | Yes |
-| [Power management](/index.php/Power_management "Power management") | Yes |
-| [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
-| SD card reader | Yes |
-
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the [ASUS Zenbook UX305](https://www.asus.com/Notebooks/ASUS-ZenBook-UX305FA/specifications/).
 
 Hardware reference from UX305-FB041H. Model available since **12 feb 2015**.
@@ -33,9 +23,21 @@ See [[2]](https://gist.github.com/precurse/6dc1990cd000551c8f11) for UX305CA (Sk
 
 ## Compatibility
 
+| **Device** | **Status** |
+| [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
+| [Wireless](/index.php/Wireless "Wireless") | Yes |
+| [ALSA](/index.php/ALSA "ALSA") | Yes |
+| [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
+| Camera | Yes |
+| [Power management](/index.php/Power_management "Power management") | Yes |
+| [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
+| SD card reader | Yes |
+
 ### Touchpad
 
 Works after installing [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput).
+
+UX305CA users will require [linux](https://www.archlinux.org/packages/?name=linux) 4.5 or later in order for touchpad to work.
 
 #### Palm detection
 
@@ -65,7 +67,7 @@ Intel Dual Band wifi. Should work with recent kernels. 3.10+ with iwlwifi. See [
 
 ### Graphics
 
-As of [linux](https://www.archlinux.org/packages/?name=linux) 3.16, virtual terminals show a blank screen.
+As of [linux](https://www.archlinux.org/packages/?name=linux) 4.0 with corresponding Intel drivers, no additional configuration is required to get X server to work.
 
 UEFI results with memory changes for the Intel graphic card:
 
@@ -76,13 +78,6 @@ UEFI results with memory changes for the Intel graphic card:
 ```
 
 Bug: [https://bugzilla.redhat.com/show_bug.cgi?id=1151757](https://bugzilla.redhat.com/show_bug.cgi?id=1151757)
-
-```
- Kernel 3.16 boots with usable tty/x11 via bootparam: nomodeset
-
-```
-
-See also [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics").
 
 ### QHD+ Pentile Display
 

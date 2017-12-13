@@ -10,9 +10,10 @@ From [Wikipedia](https://en.wikipedia.org/wiki/flatpak "wikipedia:flatpak"): "[F
     *   [3.1 List available runtimes and applications](#List_available_runtimes_and_applications)
     *   [3.2 Install a runtime or application](#Install_a_runtime_or_application)
     *   [3.3 List installed runtimes and applications](#List_installed_runtimes_and_applications)
-    *   [3.4 Update a runtime or application](#Update_a_runtime_or_application)
-    *   [3.5 Uninstall a runtime or application](#Uninstall_a_runtime_or_application)
-    *   [3.6 Adding Flatpak .desktop files to your menu](#Adding_Flatpak_.desktop_files_to_your_menu)
+    *   [3.4 Run applications](#Run_applications)
+    *   [3.5 Update a runtime or application](#Update_a_runtime_or_application)
+    *   [3.6 Uninstall a runtime or application](#Uninstall_a_runtime_or_application)
+    *   [3.7 Adding Flatpak .desktop files to your menu](#Adding_Flatpak_.desktop_files_to_your_menu)
 *   [4 Creating a custom base runtime](#Creating_a_custom_base_runtime)
     *   [4.1 Creating apps with pacman](#Creating_apps_with_pacman)
 *   [5 See also](#See_also)
@@ -77,6 +78,15 @@ To list installed runtimes and applications do:
 
 ```
 $ flatpak list
+
+```
+
+### Run applications
+
+Flatpak applications can also be run from the command line:
+
+```
+$ flatpak run *name*
 
 ```
 

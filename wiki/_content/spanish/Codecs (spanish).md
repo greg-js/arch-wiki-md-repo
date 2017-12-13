@@ -1,3 +1,10 @@
+Artículos relacionados
+
+*   [DVD Playing](/index.php/DVD_Playing "DVD Playing")
+*   [GStreamer (Español)](/index.php/GStreamer_(Espa%C3%B1ol) "GStreamer (Español)")
+*   [MPlayer](/index.php/MPlayer "MPlayer")
+*   [VLC media player](/index.php/VLC_media_player "VLC media player")
+
 Desde [wikipedia](https://en.wikipedia.org/wiki/es:C%C3%B3dec "wikipedia:es:Códec"):
 
 	*Un códec es un dispositivo o programa de ordenador capaz de codificar y/o decodificar un flujo de datos digitales o señal analógica.*

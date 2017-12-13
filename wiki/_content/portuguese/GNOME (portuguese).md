@@ -215,8 +215,6 @@ A configuração geralmente é realizada para cada usuário, essa seção não c
 
 ### Configurações do sistema
 
-As configurações do painel de controle de nota.
-
 #### Cor
 
 O daemon `colord` lê o EDID da tela e extrai o perfil de cor apropriado. A maioria dos perfis de cor são precisos e nenhuma configuração é necessária; porém, para aqueles que não forem precisos, ou para telas antigas, perfis de cores podem ser colocadas em `~/.local/share/icc/` e direcionado para ele.

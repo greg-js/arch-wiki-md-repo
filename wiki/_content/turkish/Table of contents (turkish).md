@@ -8,7 +8,7 @@ Tam anlamıyla bütün sayfaları Türkçe'ye çevrilmediği için bazı bağın
 * * *
 
 | [Türkçe](/index.php/Category:T%C3%BCrk%C3%A7e "Category:Türkçe") <small>(1)</small> |
-| <small>1.</small> [Arch Hakkında](/index.php?title=Category:About_Arch_(T%C3%BCrk%C3%A7e)&action=edit&redlink=1 "Category:About Arch (Türkçe) (page does not exist)") <small>(23)</small> |
+| <small>1.</small> [Arch Hakkında](/index.php/Category:About_Arch_(T%C3%BCrk%C3%A7e) "Category:About Arch (Türkçe)") <small>(23)</small> |
 | <small>1.1.</small> [Arch'ı geliştirme](/index.php?title=Category:Arch_development_(T%C3%BCrk%C3%A7e)&action=edit&redlink=1 "Category:Arch development (Türkçe) (page does not exist)") <small>(20) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
 | <small>1.1.1.</small> [Paket geliştirme](/index.php?title=Category:Package_development_(T%C3%BCrk%C3%A7e)&action=edit&redlink=1 "Category:Package development (Türkçe) (page does not exist)") <small>(48)</small> |
 | <small>1.1.2.</small> [Pacman'i geliştirme](/index.php?title=Category:Pacman_development_(T%C3%BCrk%C3%A7e)&action=edit&redlink=1 "Category:Pacman development (Türkçe) (page does not exist)") <small>(4)</small> |
@@ -16,7 +16,7 @@ Tam anlamıyla bütün sayfaları Türkçe'ye çevrilmediği için bazı bağın
 | <small>1.2.1.</small> [Yardım](/index.php?title=Category:Help_(T%C3%BCrk%C3%A7e)&action=edit&redlink=1 "Category:Help (Türkçe) (page does not exist)") <small>(15)</small> |
 | <small>1.3.</small> [Classroom](/index.php?title=Category:Classroom_(T%C3%BCrk%C3%A7e)&action=edit&redlink=1 "Category:Classroom (Türkçe) (page does not exist)") <small>(2)</small> |
 | <small>1.4.</small> [Etkinlikler](/index.php?title=Category:Events_(T%C3%BCrk%C3%A7e)&action=edit&redlink=1 "Category:Events (Türkçe) (page does not exist)") <small>(4)</small> |
-| <small>1.5.</small> [Arch'ı edinme ve yükleme](/index.php?title=Category:Getting_and_installing_Arch_(T%C3%BCrk%C3%A7e)&action=edit&redlink=1 "Category:Getting and installing Arch (Türkçe) (page does not exist)") <small>(32)</small> |
+| <small>1.5.</small> [Arch'ı edinme ve yükleme](/index.php/Category:Getting_and_installing_Arch_(T%C3%BCrk%C3%A7e) "Category:Getting and installing Arch (Türkçe)") <small>(32)</small> |
 | <small>1.6.</small> [Canlı Arch sistemleri](/index.php?title=Category:Live_Arch_systems_(T%C3%BCrk%C3%A7e)&action=edit&redlink=1 "Category:Live Arch systems (Türkçe) (page does not exist)") <small>(3)</small> |
 | <small>2.</small> [Uygulamalar](/index.php?title=Category:Applications_(T%C3%BCrk%C3%A7e)&action=edit&redlink=1 "Category:Applications (Türkçe) (page does not exist)") <small>(20)</small> |
 | <small>2.1.</small> [Ulaşabilirlik](/index.php?title=Category:Accessibility_(T%C3%BCrk%C3%A7e)&action=edit&redlink=1 "Category:Accessibility (Türkçe) (page does not exist)") <small>(8)</small> |
