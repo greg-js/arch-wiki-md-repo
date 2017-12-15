@@ -1,3 +1,10 @@
+Related articles
+
+*   [Network Configuration (Česky)](/index.php/Network_Configuration_(%C4%8Cesky) "Network Configuration (Česky)")
+*   [Wireless Setup (Česky)](/index.php/Wireless_Setup_(%C4%8Cesky) "Wireless Setup (Česky)")
+*   [Netctl (Česky)](/index.php/Netctl_(%C4%8Cesky) "Netctl (Česky)")
+*   [Wicd](/index.php/Wicd "Wicd")
+
 [NetworkManager](http://projects.gnome.org/NetworkManager/) je program pro poskytování detekce a konfigurace pro systém automatického připojování k síti. Funkcionalita NetworkManageru může být použitelná jak pro bezdrátové tak i pro drátové sítě. Pro bezdrátové sítě, NetworkManager upřednostňuje známé bezdrátové sítě a má schopnost vhodně přepínat do nejspolehlivějších sítí. NetworkManager-vnímající aplikace mohou přepínat mezi online a offline módem. NetworkManager také upřednostňuje kabelové spoje před bezdrátovými, obsahuje podporu modemových připojení a určitých druhů VPN. NetworkManager byl původně vyvinut společností RedHat a nyní je hostován projektem [GNOME](/index.php/GNOME "GNOME").
 
 ## Contents

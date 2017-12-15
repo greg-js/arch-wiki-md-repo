@@ -1,3 +1,9 @@
+Ссылки по теме
+
+*   [Ярлыки приложений](/index.php/%D0%AF%D1%80%D0%BB%D1%8B%D0%BA%D0%B8_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9 "Ярлыки приложений")
+*   [Окружение рабочего стола](/index.php/%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Окружение рабочего стола")
+*   [Оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Default applications](/index.php/Default_applications "Default applications"). Дата последней синхронизации: 18 августа 2017‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Default_applications&diff=0&oldid=485854).
 
 Часто используется несколько приложений, способных обрабатывать данные определенного типа, поэтому пользователи и даже некоторые пакеты собирают списки приложений по умолчанию для каждого типа [#MIME](#MIME_types). Хотя стандартная установка Arch Linux не определяет приложения по умолчанию, [окружение рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") может это сделать. Некоторые окружения рабочего стола также предоставляют графический интерфейс или файловый менеджер, которые могут интерактивно настраивать приложения по умолчанию. Если вы не используете окружение рабочего стола, вам может потребоваться установить дополнительное программное обеспечение для удобного управления приложениями по умолчанию.
@@ -129,7 +135,7 @@ image/jpeg=foo.desktop
 
 ### mailcap
 
-Формат [mailcap(4)](http://linux.die.net/man/4/mailcap) используется почтовыми программами, такими как [mutt](https://www.archlinux.org/packages/?name=mutt) и [sylpheed](https://www.archlinux.org/packages/?name=sylpheed) для открытия нетекстовых файлов. Чтобы эти программы использовали [xdg-open](#xdg-utils), отредактируйте `~/.mailcap`:
+Формат [mailcap(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mailcap.4) используется почтовыми программами, такими как [mutt](https://www.archlinux.org/packages/?name=mutt) и [sylpheed](https://www.archlinux.org/packages/?name=sylpheed) для открытия нетекстовых файлов. Чтобы эти программы использовали [xdg-open](#xdg-utils), отредактируйте `~/.mailcap`:
 
  `~/.mailcap` 
 ```

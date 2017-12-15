@@ -43,8 +43,7 @@ Pi-hole is a shell-script based project that manages blocklists of known adverti
 
 ### Installation
 
-[Install](/index.php/Install "Install") [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) and [pi-hole-server](https://aur.archlinux.org/packages/pi-hole-server/).
-The Pi-hole server package installs two timers (and relative services), both statically enabled:
+[Install](/index.php/Install "Install") [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) and [pi-hole-server](https://aur.archlinux.org/packages/pi-hole-server/). The Pi-hole server package installs two timers (and relative services), both statically enabled:
 
 *   pi-hole-gravity.timer will weekly update Pi-hole blacklisted servers list.
 *   pi-hole-logtruncate.timer will daily clean LAN DNS requests log.
@@ -73,9 +72,9 @@ Users may optionally choose a web server for the Pi-hole web interface.
 
 **Note:** Pi-hole does not strictly require a web interface as many commands are possible via the CLI interface.
 
-The AUR package provides example config files for both [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and [nginx](https://www.archlinux.org/packages/?name=nginx). Other web servers can also run the WebUI, but are currently unsupported.
+Example config files that work out-of-the-box are provided for both [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and [nginx](https://www.archlinux.org/packages/?name=nginx). Other web servers can also run the WebUI, but are currently unsupported.
 
-Any webserver will require to install the [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) package and the following edit to enable sqlite and sockets extension:
+Install [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) and enable the relevant extensions detailed here:
 
  `/etc/php/php.ini` 
 ```
@@ -87,7 +86,7 @@ extension=sqlite3
 [...]
 ```
 
-For security reason, if you want to populate [PHP open_basedir](/index.php/PHP#Configuration "PHP") directive, Pi-hole administration web interface needs access to following files and directories:
+For security reasons, one can populate the [PHP open_basedir](/index.php/PHP#Configuration "PHP") directive however, the Pi-hole administration web interface will need access to following files and directories:
 
 ```
 /srv/http/pihole:/run/pihole-ftl/pihole-FTL.port:/run/log/pihole/pihole.log:/run/log/pihole-ftl/pihole-FTL.log:/etc/pihole:/etc/hosts:/etc/hostname:/etc/dnsmasq.d/03-pihole-wildcard.conf:/proc/meminfo:/proc/cpuinfo:/sys/class/thermal/thermal_zone0/temp:/tmp
@@ -97,6 +96,8 @@ For security reason, if you want to populate [PHP open_basedir](/index.php/PHP#C
 ##### Lighttpd
 
 [Install](/index.php/Install "Install") [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi).
+
+Copy the package provided default config for Pi-hole:
 
 ```
 # cp /usr/share/pihole/configs/lighttpd.example.conf /etc/lighttpd/lighttpd.conf
@@ -140,7 +141,20 @@ Copy the package provided default config for Pi-hole:
 #### FTL
 
 FTL is part of Pi-hole project. It is a database-like wrapper/API providing the frontend to Pi-hole's DNS query log. FTL is the only way the Pi-hole web interface accesses data collected by dnsmasq usage and is therefore a requirement.
-One can configure FTL in `/etc/pihole/pihole-FTL.conf`. [Read](https://github.com/pi-hole/FTL#ftls-config-file) project documentation for details.
+It's possible to configure FTL editing `/etc/pihole/pihole-FTL.conf` with following parameters (the option shown first is the default):
+
+*   SOCKET_LISTENING=localonly|all (Listen only for local socket connections or permit all connections)
+*   TIMEFRAME=rolling24h|yesterday|today (Rolling data window, up to 48h (today + yesterday), or up to 24h (only today, as in Pi-hole v2.x ))
+*   QUERY_DISPLAY=yes|no (Display all queries? Set to no to hide query display)
+*   AAAA_QUERY_ANALYSIS=yes|no (Allow FTL to analyze AAAA queries from pihole.log?)
+*   MAXDBDAYS=365 (How long should queries be stored in the database? Setting this to 0 disables the database altogether)
+*   RESOLVE_IPV6=yes|no (Should FTL try to resolve IPv6 addresses to host names?)
+*   RESOLVE_IPV4=yes|no (Should FTL try to resolve IPv4 addresses to host names?)
+*   DBINTERVAL=1.0 (How often do we store queries in FTL's database [minutes]?)
+*   DBFILE=/etc/pihole/pihole-FTL.db (Specify path and filename of FTL's SQLite long-term database. Setting this to DBFILE= disables the database altogether)
+
+**Tip:** If Pi-hole is running on a solide state device (Single-board computers SD, SSD, M.2/NVMe device, etc...) it is recommended to set the DBINTERVAL value at least to 60.0 to extend it's life.
+
 `pi-hole-ftl.service` is statically enabled; re/start it.
 
 ### Configuration of the router and of Pi-hole

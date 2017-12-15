@@ -1,3 +1,7 @@
+Articoli correlati
+
+*   [CD Burning (Italiano)](/index.php/CD_Burning_(Italiano) "CD Burning (Italiano)")
+
 Questa pagina illustra come posizionare un media d'installazione di Arch su un supporto USB: *chiavette USB*, HD esterni ecc. Il risultato sarà simile ad un LiveCD che perderà tutti i cambiamenti e le impostazioni una volta rimosso.
 
 Nel caso si sia interessati ad installare Arch Linux su un supporto USB si veda [questa pagina](/index.php/Installing_Arch_Linux_on_a_USB_key_(Italiano) "Installing Arch Linux on a USB key (Italiano)").

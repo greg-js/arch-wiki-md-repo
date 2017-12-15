@@ -3,7 +3,7 @@
 *   [CUPS (Русский)](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CUPS (Русский)")
 *   [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems"). Дата последней синхронизации: 17 ноября 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&diff=0&oldid=497004).
+**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems"). Дата последней синхронизации: 12 декабря 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&diff=0&oldid=501760).
 
 Эта статья содержит инструкции по настройки [CUPS](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CUPS (Русский)") для конкретных моделей принтеров. Если ваш принтер не упомянается здесь, или если ни один из перечисленных драйверов не работает, посмотрите на сайте [OpenPrinting](http://www.openprinting.org/printers).
 
@@ -28,16 +28,16 @@
     *   [4.2 Пользовательские драйверы](#.D0.9F.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B8.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B_2)
         *   [4.2.1 Avasys](#Avasys)
 *   [5 HP](#HP)
-    *   [5.1 HPLIP Driver](#HPLIP_Driver)
+    *   [5.1 Драйвер HPLIP](#.D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_HPLIP)
 *   [6 Konica](#Konica)
 *   [7 Lexmark](#Lexmark)
-    *   [7.1 Utilities](#Utilities)
-    *   [7.2 Custom drivers](#Custom_drivers)
+    *   [7.1 Утилиты](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B_2)
+    *   [7.2 Пользовательские драйверы](#.D0.9F.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B8.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B_3)
 *   [8 Oki](#Oki)
 *   [9 Ricoh](#Ricoh)
 *   [10 Samsung](#Samsung)
-*   [11 Xerox or FujiXerox](#Xerox_or_FujiXerox)
-    *   [11.1 Custom drivers](#Custom_drivers_2)
+*   [11 Xerox или FujiXerox](#Xerox_.D0.B8.D0.BB.D0.B8_FujiXerox)
+    *   [11.1 Пользовательские драйверы](#.D0.9F.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B8.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B_4)
         *   [11.1.1 Phaser 3100MFP](#Phaser_3100MFP)
         *   [11.1.2 Phaser 6000B](#Phaser_6000B)
         *   [11.1.3 Phaser 6125N](#Phaser_6125N)
@@ -254,6 +254,7 @@ ftp $PRINTER_IP
 
 | Принтер | Драйвер/фильтр | Примечание |
 | 1250C | [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/) | Смотрите [http://cybercom.net/~dcoffin/hbpl](http://cybercom.net/~dcoffin/hbpl), патч был объединен в восходящий поток. Принтер также работает с драйвером [Xerox Phaser 6000B](#Phaser_6000B). |
+| C1660NW | [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/) | Принтер также работает с [Драйвером Xerox Phaser 6000B](#Phaser_6000B). |
 | E515,
 
 E515dw
@@ -263,13 +264,46 @@ E515dw
 
 ## Epson
 
-[epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) - драйвер принтера Epson Inkjet (ESC/P-R) для Linux.
-
-В [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)") имеется большой выбор драйверов/фильтров для принтеров Epson.
+[epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) и [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) - это набор драйверов для струйных принтеров Epson Inkjet (ESC/P-R) для Linux..
 
 | Принтер | Драйвер/фильтр | Примечание |
 | AcuLaser CX11(NF) | [epson-alcx11-filter](https://aur.archlinux.org/packages/epson-alcx11-filter/) |
 | AcuLaser C900 | Этот принтер использует драйвер Epson с URI устройства '**usb://EPSON/AL-C900'**, и для его запуска может понадобиться служба pipsplus. |
+| EP-50V | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
+| EP-879A |
+| EP-880A |
+| ET-2700 |
+| ET-2750 |
+| ET-3700 |
+| ET-3750 |
+| ET-4750 |
+| EW-M571T |
+| EW-M670FT |
+| L4150 |
+| L4160 |
+| L6160 |
+| L6170 |
+| L6190 |
+| PM-520 |
+| PX-M5080F |
+| PX-M5081F |
+| PX-M680F |
+| PX-M7070FX |
+| PX-M780F |
+| PX-M781F |
+| PX-S5080 |
+| PX-S7070X |
+| WF-3720 |
+| WF-4720 |
+| WF-4730 |
+| WF-4740 |
+| WF-7210 |
+| WF-7710 |
+| WF-7720 |
+| WF-C869R |
+| XP-15000 |
+| XP-6000 |
+| XP-8500 |
 | TX125 | [epson-inkjet-printer-n10-nx127](https://aur.archlinux.org/packages/epson-inkjet-printer-n10-nx127/) |
 | LP-S5000 | Этот принтер требует [пользовательский драйвер от Avasys](#Avasys). |
 | Принтер | Драйвер/фильтр | Примечание |
@@ -312,11 +346,11 @@ $ make
 
 ## HP
 
-See also [CUPS/Troubleshooting#HP issues](/index.php/CUPS/Troubleshooting#HP_issues "CUPS/Troubleshooting").
+Смотрите также [CUPS/Troubleshooting#HP issues](/index.php/CUPS/Troubleshooting#HP_issues "CUPS/Troubleshooting").
 
-Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip), but some may use [hpoj](https://aur.archlinux.org/packages/hpoj/).
+Большинство принтеров HP будут работать с [hplip](https://www.archlinux.org/packages/?name=hplip), но некоторые - при использование [hpoj](https://aur.archlinux.org/packages/hpoj/).
 
-| Printer | Driver/filter | Notes |
+| Принтер | Драйвер/фильтр | Примечание |
 | DeskJet 710C | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
 | DeskJet 712C |
 | DeskJet 720C |
@@ -325,81 +359,81 @@ Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip
 | DeskJet 820Cxi |
 | DeskJet 1000Cse |
 | DeskJet 1000Cxi |
-| LaserJet P1606dn | [hplip](https://www.archlinux.org/packages/?name=hplip) + [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) | Or [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/), or [AirPrint](/index.php/CUPS#CUPS "CUPS"). |
-| Photosmart 2575 | [hplip](https://www.archlinux.org/packages/?name=hplip) | Or use the hpijs driver in [foomatic](/index.php/CUPS#Foomatic "CUPS"). |
-| Printer | Driver/filter | Notes |
+| LaserJet P1606dn | [hplip](https://www.archlinux.org/packages/?name=hplip) + [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) | или [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/), или [AirPrint](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#CUPS "CUPS (Русский)"). |
+| Photosmart 2575 | [hplip](https://www.archlinux.org/packages/?name=hplip) | Или используйте драйвер hpijs с [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)"). |
+| Принтер | Драйвер/фильтр | Примечание |
 
-###### HPLIP Driver
+###### Драйвер HPLIP
 
-[hplip](https://www.archlinux.org/packages/?name=hplip) provides drivers for HP DeskJet, OfficeJet, Photosmart, Business Inkjet, and some LaserJet printers, and also provides an easy to use setup tool.
+[hplip](https://www.archlinux.org/packages/?name=hplip) предоставляет драйверы для принтеров HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых принтеров LaserJet, а также предоставляет простой в использовании инструмент настройки.
 
-To run the setup tool with the GUI qt frontend:
+Чтобы запустить средство настройки с графическим интерфейсом пользователя:
 
 ```
 # hp-setup -u
 
 ```
 
-To run the setup tool with the command line frontend:
+Чтобы запустить средство настройки с интерфейсом командной строки:
 
 ```
 # hp-setup -i
 
 ```
 
-To set up directly the configuration of a network connected HP printer:
+Чтобы настроить непосредственно конфигурацию подключенного к сети принтера HP:
 
 ```
 # hp-setup -i *<ip address>*
 
 ```
 
-To run systray spool manager:
+Чтобы запустить systray spool manager:
 
 ```
 $ hp-systray
 
 ```
 
-To generate a URI for a given ip address:
+Чтобы создать URI для заданного IP-адреса:
 
 ```
 # hp-makeuri *<ip address>*
 
 ```
 
-PPD files are in `/usr/share/ppd/HP/`.
+Файлы PPD находятся в `/usr/share/ppd/HP/`.
 
-For printers that require the proprietary HP plugin (like the Laserjet Pro P1102w or 1020), install the [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) package from [AUR](/index.php/AUR "AUR").
+Для принтеров, которым требуется проприетарный плагин HP (таким как, Laserjet Pro P1102w или 1020), установите пакет [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)").
 
-**Note:**
+**Примечание:**
 
-[hplip](https://www.archlinux.org/packages/?name=hplip) depends on [foomatic-db-engine](https://www.archlinux.org/packages/?name=foomatic-db-engine) which prevents the drivers list from appearing when a printer is added to CUPS via the web user interface (following error : "Unable to get list of printer drivers"). Possible workarounds:
+[hplip](https://www.archlinux.org/packages/?name=hplip) зависит от [foomatic-db-engine](https://www.archlinux.org/packages/?name=foomatic-db-engine), который запрещает появление списка драйверов при добавлении принтера в CUPS через веб-интерфейс (следующая ошибка: "Не удается получить список драйверов принтера"). Возможные обходные пути:
 
-*   **Either:** Install [hplip](https://www.archlinux.org/packages/?name=hplip) first, then retrieve the PPD file that matches your printer from `/usr/share/ppd/HP/`. Next, remove [hplip](https://www.archlinux.org/packages/?name=hplip) entirely as well as any unnecessary dependencies. Finally, install the printer manually using the CUPS web UI, selecting the PPD file you retrieved, and then re-install [hplip](https://www.archlinux.org/packages/?name=hplip). After a reboot, you should have a fully working printer.
-*   **Or:** Remove [hplip](https://www.archlinux.org/packages/?name=hplip), [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) and [foomatic-db-engine](https://www.archlinux.org/packages/?name=foomatic-db-engine) along with any unnecessary dependencies. Reinstall [hplip](https://www.archlinux.org/packages/?name=hplip) and restart CUPS. Install your printer using the CUPS web UI, which should now be able to find the drivers automatically. No reboot needed.
+*   **Либо:** Установите первым [hplip](https://www.archlinux.org/packages/?name=hplip), затем извлеките файл PPD, соответствующий вашему принтеру, из `/usr/share/ppd/HP/`. Далее удалите [hplip](https://www.archlinux.org/packages/?name=hplip) полностью, а также любые ненужные зависимости. Наконец, установите принтер вручную через веб-интерфейс CUPS, выбрав файл PPD, который вы извлекли, а затем переустановите [hplip](https://www.archlinux.org/packages/?name=hplip). После перезагрузки у вас должен быть полностью работающий принтер.
+*   **Или:** Удалите [hplip](https://www.archlinux.org/packages/?name=hplip), [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) и [foomatic-db-engine](https://www.archlinux.org/packages/?name=foomatic-db-engine) вместе с любыми ненужными зависимостями. Переустановите [hplip](https://www.archlinux.org/packages/?name=hplip) и перезапустите CUPS. Установите ваш принтер с помощью веб-интерфейса CUPS, который теперь сможет автоматически найти драйверы. Перезагрузка не требуется.
 
 ## Konica
 
-| Printer | Driver/filter | Notes |
-| Minolta Magicolor 1600W | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
+| Принтер | Драйвер/фильтр | Примечание |
+| Minolta Magicolor 1600W | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") |
 | Minolta Magicolor 1680MF |
 | Minolta Magicolor 1690MF |
 | Minolta Magicolor 2480MF |
 | Minolta Magicolor 2490MF |
 | Minolta Magicolor 2530DL |
 | Minolta Magicolor 4690MF |
-| Printer | Driver/filter | Notes |
+| Принтер | Драйвер/фильтр | Примечание |
 
 ## Lexmark
 
-### Utilities
+### Утилиты
 
-Lexmark provides a utility called lexijtools with the drivers.
+Lexmark предоставляет утилиту с именем lexijtools с драйверами.
 
-### Custom drivers
+### Пользовательские драйверы
 
-Lexmark does provide Linux drivers for all their hardware. The following packages are required:
+Lexmark предоставляет драйверы Linux для всего своего оборудования. Требуются следующие пакеты:
 
 *   [cups](https://www.archlinux.org/packages/?name=cups)
 *   [sane](https://www.archlinux.org/packages/?name=sane)
@@ -410,10 +444,10 @@ Lexmark does provide Linux drivers for all their hardware. The following package
 *   [libxi](https://www.archlinux.org/packages/?name=libxi)
 *   [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5)
 *   [krb5](https://www.archlinux.org/packages/?name=krb5)
-*   [lua](https://www.archlinux.org/packages/?name=lua) (for the automated installer)
-*   [Java](/index.php/Java "Java") (for the automated installer, and some of the Lexmark tools)
+*   [lua](https://www.archlinux.org/packages/?name=lua) (для установщика)
+*   [Java](/index.php/Java_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Java (Русский)") (для установщика и некоторых инструментов Lexmark)
 
-The drivers will need to be [downloaded](http://support.lexmark.com/index?page=driversdownloads) from Lexmark's website. Preferably, create a package (see [Creating packages](/index.php/Creating_packages "Creating packages")) and install it. Here is a basic [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") that still needs work but will give an idea of what is required.
+Драйверы необходимо [загрузить](http://support.lexmark.com/index?page=driversdownloads) с веб-сайта Lexmark. Предпочтительно создать пакет (смотрите [Создание пакетов](/index.php/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2 "Создание пакетов")) и установить его. Вот [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)"), который все еще нуждается в доработке, но дает представление о том, что нужно сделать.
 
  `PKGBUILD` 
 ```
@@ -443,49 +477,49 @@ package() {
 
 ```
 
-Keep in mind you can use the automated installer but doing so will leave the resulting changes untracked. The PPD will be installed into `/usr/local/lexmark/lxk08/etc/` or similar, depending on the printer model.
+Имейте в виду, что вы можете использовать автоматический установщик, но при этом оставленные изменения нельзя устранить через [Pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)"). PPD будет установлен в `/usr/local/lexmark/lxk08/etc/` или аналогично, в зависимости от модели принтера.
 
 ## Oki
 
-| Printer | Driver/filter | Notes |
-| C110 | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
-| MC561 | [foomatic-db-nonfree](/index.php/CUPS#Foomatic "CUPS") |
-| Printer | Driver/filter | Notes |
+| Принтер | Драйвер/фильтр | Примечание |
+| C110 | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") |
+| MC561 | [foomatic-db-nonfree](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") |
+| Принтер | Драйвер/фильтр | Примечание |
 
 ## Ricoh
 
-Install [openprinting-ppds-pxlmono-ricoh](https://aur.archlinux.org/packages/openprinting-ppds-pxlmono-ricoh/) if your device is black and white, or [openprinting-ppds-pxlcolor-ricoh](https://aur.archlinux.org/packages/openprinting-ppds-pxlcolor-ricoh/) if it's color. Note that Ricoh copiers are sometimes branded as Savin, Gestetner, Lanier, Rex-Rotary, Nashuatec, and/or IKON. So, if you have a device bearing one of these brands, it may be supported by these drivers as well.
+Если ваше устройство черно-белое, установите [openprinting-ppds-pxlmono-ricoh](https://aur.archlinux.org/packages/openprinting-ppds-pxlmono-ricoh/), а если цветное - [openprinting-ppds-pxlcolor-ricoh](https://aur.archlinux.org/packages/openprinting-ppds-pxlcolor-ricoh/). Обратите внимание, что копировальные устройства Ricoh иногда называются Savin, Gestetner, Lanier, Rex-Rotary, Nashuatec и/или IKON. Итак, если у вас есть устройство с одним из этих брендов, оно также поддерживается этими драйверами.
 
-*   [List of supported black and white models](https://www.openprinting.org/driver/pxlmono-Ricoh)
-*   [List of supported color models](https://www.openprinting.org/driver/pxlcolor-Ricoh)
+*   [Список поддерживаемых черно-белых моделей](https://www.openprinting.org/driver/pxlmono-Ricoh)
+*   [Список поддерживаемых цветных моделей](https://www.openprinting.org/driver/pxlcolor-Ricoh)
 
 ## Samsung
 
-For printers requiring the *cnijfilter* drivers, search for the correct driver [in the AUR](https://aur.archlinux.org/packages.php?K=cnijfilter)
+Для принтеров, требующим драйверы *cnijfilter*, найдите правильный драйвер [в AUR](https://aur.archlinux.org/packages.php?K=cnijfilter)
 
-| Printer | Driver/filter | Notes |
+| Принтер | Драйвер/фильтр | Примечание |
 | ML-2010 | [splix](https://www.archlinux.org/packages/?name=splix) |
 | SCX-4200 | [splix](https://www.archlinux.org/packages/?name=splix) |
-| Newer printers? | [samsung-unified-driver](https://aur.archlinux.org/packages/samsung-unified-driver/) |
-| Printer | Driver/filter | Notes |
+| Новые принтеры? | [samsung-unified-driver](https://aur.archlinux.org/packages/samsung-unified-driver/) |
+| Принтер | Драйвер/фильтр | Примечание |
 
-## Xerox or FujiXerox
+## Xerox или FujiXerox
 
-| Printer | Driver/filter | Notes |
-| DocuPrint 203A | [hplip](https://www.archlinux.org/packages/?name=hplip) | Using the **DocuPrint P8e(hpijs)** driver, or the Brother driver on FujiXerox's website (see [#Brother](#Brother) for more information on how to install custom Brother drivers). |
-| Phaser 3100MFP | Install Xerox's driver | See [#Phaser 3100MFP](#Phaser_3100MFP) for more instructions. |
-| Phaser 6115MFP | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
-| Phaser 6121MFP | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
+| Принтер | Драйвер/фильтр | Примечание |
+| DocuPrint 203A | [hplip](https://www.archlinux.org/packages/?name=hplip) | Используйте драйвер **DocuPrint P8e(hpijs)** или драйвер Brother на веб-сайте FujiXerox (смотрите [#Brother](#Brother) для получения дополнительной информации о том, как установить пользовательские драйверы Brother). |
+| Phaser 3100MFP | Установите драйвер Xerox | Подробнее смотрите [#Phaser 3100MFP](#Phaser_3100MFP). |
+| Phaser 6115MFP | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") |
+| Phaser 6121MFP | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") |
 |  ? | [fxlinuxprint](https://aur.archlinux.org/packages/fxlinuxprint/) |
-| Printer | Driver/filter | Notes |
+| Принтер | Драйвер/фильтр | Примечание |
 
-### Custom drivers
+### Пользовательские драйверы
 
 #### Phaser 3100MFP
 
-**Warning:** This section involves installing packages without [pacman](/index.php/Pacman "Pacman"). These directions should ideally be automated with a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+**Важно:** Этот раздел включает в себя установку пакетов без [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)"). В идеале эти направления должны быть автоматизированы с помощью [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)").
 
-Once you have downloaded the drivers, execute the driver installer and accept the licence:
+После того, как вы загрузили драйверы, выполните установку драйвера и примите лицензию:
 
 ```
 # cd printer
@@ -493,16 +527,16 @@ Once you have downloaded the drivers, execute the driver installer and accept th
 
 ```
 
-Note that the driver is 32 bit, so some 32 bit libraries will be required on an x86_64 system.
+Обратите внимание, что драйвер 32-битный, поэтому в системе x86_64 потребуется некоторые 32-битные библиотеки.
 
-For the scanner, create an /etc/sane.d directory if it doesn't already exist, because it's need by the installer:
+Для сканера создайте каталог /etc/sane.d, если он еще не существует, потому что это необходимо установщику:
 
 ```
 # mkdir -p /etc/sane.d
 
 ```
 
-Now install the driver:
+Теперь установите драйвер:
 
 ```
 # cd scanner/
@@ -510,21 +544,21 @@ Now install the driver:
 
 ```
 
-Again, on an x86_64 install, 32 bit libraries will be needed.
+Опять же, при установке x86_64 потребуются 32-битные библиотеки.
 
 #### Phaser 6000B
 
-[Install](/index.php/Install "Install") the [xerox-phaser-6010](https://github.com/aur-archive/xerox-phaser-6010) package (archived from the AUR). The driver may require older versions of [nettle](https://www.archlinux.org/packages/?name=nettle) and [gnutls](https://www.archlinux.org/packages/?name=gnutls) to be installed, since the binary blob linked against older versions of the shared libraries provided by those packages. The oldest known-good versions are `nettle-2.7.1-1` and `gnutls-3.3.13-1`.
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [xerox-phaser-6010](https://github.com/aur-archive/xerox-phaser-6010) (архивированный из AUR). Драйвер может потребовать более ранние версии [nettle](https://www.archlinux.org/packages/?name=nettle) и [gnutls](https://www.archlinux.org/packages/?name=gnutls) поскольку двоичный blob связан с более старыми версиями разделяемых библиотек, предоставляемых этими пакетами. Самые старые хорошо известные версии `nettle-2.7.1-1` и `gnutls-3.3.13-1`.
 
 #### Phaser 6125N
 
-**Warning:** This section involves installing packages without [pacman](/index.php/Pacman "Pacman"). These directions should ideally be automated with a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+**Важно:** Этот раздел включает в себя установку пакетов без [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)"). В идеале эти направления должны быть автоматизированы с помощью [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)").
 
-FujiXerox does not support Linux on this model. An old rpm [is available](http://onlinesupport.fujixerox.com/tiles/common/hc_drivers_download.jsp?system=%27Linux%27&shortdesc=null&xcrealpath=http://www.fujixeroxprinters.com/downloads/uploaded/dpc525a_linux_.0.0.tar_81c2.zip) but does not seem to work.
+FujiXerox не поддерживает Linux на этой модели. Есть старый [rpm-пакет](http://onlinesupport.fujixerox.com/tiles/common/hc_drivers_download.jsp?system=%27Linux%27&shortdesc=null&xcrealpath=http://www.fujixeroxprinters.com/downloads/uploaded/dpc525a_linux_.0.0.tar_81c2.zip), но, похоже, он не работает.
 
-A slightly adapted [custom driver](https://rickvanderzwet.nl/trac/personal/wiki/XeroxPhaser6125N) has been found to work out of the box.
+Известно, что слегка адаптированный [пользовательский драйвер](https://rickvanderzwet.nl/trac/personal/wiki/XeroxPhaser6125N) работает из коробки.
 
-To install the tarball, run
+Чтобы установить tarball, запустите
 
 ```
 # tar -C / --keep-newer-files -xvzf cups-xerox-phaser-6125n-1.0.0.tar.gz

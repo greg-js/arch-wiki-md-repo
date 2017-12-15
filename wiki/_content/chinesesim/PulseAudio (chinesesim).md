@@ -1,3 +1,8 @@
+Related articles
+
+*   [PulseAudio/Examples](/index.php/PulseAudio/Examples "PulseAudio/Examples")
+*   [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting")
+
 **翻译状态：** 本文是英文页面 [PulseAudio](/index.php/PulseAudio "PulseAudio") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-01-26，点击[这里](https://wiki.archlinux.org/index.php?title=PulseAudio&diff=0&oldid=349898)可以查看翻译后英文页面的改动。
 
 [PulseAudio](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio") 是在[GNOME](/index.php/GNOME "GNOME") 或 [KDE](/index.php/KDE "KDE")等桌面环境中广泛使用的音频服务。它在内核音频组件（比如[ALSA](/index.php/ALSA "ALSA") 和 [OSS](/index.php/OSS "OSS")）和应用程序之间充当代理的角色。由于Arch Linux默认包含ALSA，PulseAudio经常和ALSA协同使用。

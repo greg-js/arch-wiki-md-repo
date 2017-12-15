@@ -76,7 +76,7 @@ openvpn_password
 
 ### Enable VPN on Boot
 
-For systemd service configuration, see [OpenVPN#systemd_service_configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN").
+For systemd service configuration, see [OpenVPN#systemd service configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN").
 
 ## References
 

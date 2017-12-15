@@ -1,3 +1,8 @@
+相關文章
+
+*   [CD 燒錄 (英)](/index.php/CD_Burning "CD Burning")
+*   [Archiso (英)](/index.php/Archiso "Archiso")
+
 **翻譯狀態：** 本文章是 [USB_Flash_Installation_Media](/index.php/USB_Flash_Installation_Media "USB Flash Installation Media") 的翻譯版本。最近一次的翻譯時間：2014-02-02。點擊[本連結](https://wiki.archlinux.org/index.php?title=USB_Flash_Installation_Media&diff=0&oldid=295276)查看英文頁面之後的變更。
 
 本頁面將討論各種將 Arch Linux 映像寫入 USB 裝置 (又稱「快閃碟」、「USB 隨身碟」、「USB 鍵」等)，並在 BIOS 和 UEFI 系統上開機的跨平台方式。裝載進 USB 裝置的 LiveUSB (類似於 LiveCD) 系統可以用來安裝 Arch Linux，系統維護或救援資料，其本質為 [SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS") 系統，關機之後所有的變更都會消失無蹤。

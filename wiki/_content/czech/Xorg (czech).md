@@ -1,3 +1,9 @@
+Související články
+
+*   [ATI](/index.php/ATI "ATI")
+*   [Intel (Česky)](/index.php/Intel_(%C4%8Cesky) "Intel (Česky)")
+*   [NVIDIA (Česky)](/index.php/NVIDIA_(%C4%8Cesky) "NVIDIA (Česky)")
+
 **Xorg** je veřejná open-source implementace systému X window verze 11\. Jelikož je Xorg nejpopulárnější volbou mezi uživateli Linuxu, jeho všudypřítomnost vedla k tomu, že se stal základním předpokladem pro provozování grafických aplikací a byl tak masově adoptován většinou distribucí. Pro více informací viz článek [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") na Wikipedii nebo můžete navštívit [stránky Xorg (anglicky)](http://www.x.org/wiki/).
 
 ## Contents

@@ -1,3 +1,13 @@
+Related articles
+
+*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
+*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+*   [makepkg](/index.php/Makepkg "Makepkg")
+*   [Mirrors](/index.php/Mirrors "Mirrors")
+*   [pacman](/index.php/Pacman "Pacman")
+*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
+*   [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
+
 A [software repository](https://en.wikipedia.org/wiki/software_repository "wikipedia:software repository") is a storage location from which software packages are retrieved for installation.
 
 Arch Linux **official repositories** contain essential and popular software, readily accessible via [pacman](/index.php/Pacman "Pacman"). They are maintained by [package maintainers](/index.php/Arch_terminology#Package_maintainer "Arch terminology").

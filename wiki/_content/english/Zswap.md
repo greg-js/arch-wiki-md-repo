@@ -32,7 +32,7 @@ To enable zswap at runtime, execute the following command:
 
 To enable zswap permanently:
 
-*   Either add to your [kernel parameters](/index.php/Kernel_parameters#configuration "Kernel parameters") `zswap.enabled=1`
+*   Either add to your [kernel parameters](/index.php/Kernel_parameters#Configuration "Kernel parameters") `zswap.enabled=1`
 
 *   Alternatively, you can use [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) which is a script to manage swap spaces, in this case the line `zswap_enabled=1` must be present in `/etc/systemd/swap.conf` and you must [start/enable](/index.php/Start/enable "Start/enable") `systemd-swap.service`.
 

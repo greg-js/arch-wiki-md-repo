@@ -1,3 +1,9 @@
+Related articles
+
+*   [proot](/index.php/Proot "Proot")
+*   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
+*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
+
 [Chroot](https://en.wikipedia.org/wiki/Chroot "wikipedia:Chroot") is an operation that changes the apparent root directory for the current running process and their children. A program that is run in such a modified environment cannot access files and commands outside that environmental directory tree. This modified environment is called a *chroot jail*.
 
 ## Contents

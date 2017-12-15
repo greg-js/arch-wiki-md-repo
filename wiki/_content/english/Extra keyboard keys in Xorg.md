@@ -1,3 +1,11 @@
+Related articles
+
+*   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
+*   [Extra keyboard keys in console](/index.php/Extra_keyboard_keys_in_console "Extra keyboard keys in console")
+*   [Map scancodes to keycodes](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes")
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [Xmodmap](/index.php/Xmodmap "Xmodmap")
+
 ## Contents
 
 *   [1 Mapping keysyms to actions](#Mapping_keysyms_to_actions)

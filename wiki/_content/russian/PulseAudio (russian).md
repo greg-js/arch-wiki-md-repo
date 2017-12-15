@@ -417,7 +417,7 @@ $ nyxmms2 server config output.plugin alsa
 
 PulseAudio будет автоматически использоваться приложениями KDE/Qt4\. Это поддерживается по умолчанию в микшере звука KDE. Для получения дополнительной информации посмотрите [страницу KDE, в wiki PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/Desktops/KDE/).
 
-Один полезный совет с этой страницы заключён в том, что следует загружать `load-module module-device-manager`. Обычно это происходит автоматически при входе в систему с помощью скрипта `/usr/bin/start-pulseaudio-x11`, но если этого не произошло, вы можете добавить его вручную в файл `/etc/pulse/default.pa`. О возможных конфликтах с `module-switch-on-connect` смотрите [#Включать при соединении](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.B8_.D1.81.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D0.B5.D0.BD.D0.B8.D0.B8).
+Один полезный совет с этой страницы заключён в том, что следует загружать `load-module module-device-manager`. Обычно это происходит автоматически при входе в систему с помощью скрипта `/usr/bin/start-pulseaudio-x11`, но если этого не произошло, вы можете добавить его вручную в файл `/etc/pulse/default.pa`. О возможных конфликтах с `module-switch-on-connect` смотрите [#Переключение при подключении](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.B4.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B8).
 
 Если бэкэнд phonon-gstreamer используется для Phonon, GStreamer должен также быть настроен, как описано в [#GStreamer](#GStreamer).
 

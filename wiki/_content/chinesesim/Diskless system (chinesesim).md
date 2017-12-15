@@ -27,7 +27,7 @@ From [Wikipedia:Diskless node](https://en.wikipedia.org/wiki/Diskless_node "wiki
 *   [3 配置客户端](#.E9.85.8D.E7.BD.AE.E5.AE.A2.E6.88.B7.E7.AB.AF)
     *   [3.1 引导](#.E5.BC.95.E5.AF.BC)
         *   [3.1.1 GRUB](#GRUB)
-        *   [3.1.2 Pxelinux](#Pxelinux)
+        *   [3.1.2 PXELINUX](#PXELINUX)
     *   [3.2 Additional mountpoints](#Additional_mountpoints)
         *   [3.2.1 NBD root](#NBD_root)
         *   [3.2.2 Program state directories](#Program_state_directories)
@@ -224,11 +224,11 @@ menuentry "Arch Linux" {
 
 [GRUB](/index.php/GRUB "GRUB") dark-magic will `set root=(tftp,10.0.0.1)` automatically, so that the kernel and initramfs are transferred via TFTP without any additional configuration, though you might want to set it explicitly if you have any other non-tftp menuentries.
 
-**Note:** Modify your kernel line as-necessary, refer to [Pxelinux](/index.php/Syslinux#Pxelinux "Syslinux") for NBD-related options
+**Note:** Modify your kernel line as-necessary, refer to [PXELINUX](/index.php/PXELINUX "PXELINUX") for NBD-related options
 
-#### Pxelinux
+#### PXELINUX
 
-[Pxelinux](/index.php/Syslinux "Syslinux") is provided by [syslinux](https://www.archlinux.org/packages/?name=syslinux), see [here](/index.php/Syslinux#Pxelinux "Syslinux") for detail.
+PXELINUX is provided by [syslinux](https://www.archlinux.org/packages/?name=syslinux), see [PXELINUX](/index.php/PXELINUX "PXELINUX") for detail.
 
 ### Additional mountpoints
 

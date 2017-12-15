@@ -44,9 +44,10 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
     *   [13.2 Not waking from suspend](#Not_waking_from_suspend)
     *   [13.3 Power Drain after waking from standby](#Power_Drain_after_waking_from_standby)
     *   [13.4 Popping sound on headphones/external speakers](#Popping_sound_on_headphones.2Fexternal_speakers)
-    *   [13.5 Coil Whine](#Coil_Whine)
-    *   [13.6 Freezing after waking from suspend](#Freezing_after_waking_from_suspend)
-    *   [13.7 Continuous hissing sound with headphones](#Continuous_hissing_sound_with_headphones)
+    *   [13.5 Crackling sound with screen changes](#Crackling_sound_with_screen_changes)
+    *   [13.6 Coil Whine](#Coil_Whine)
+    *   [13.7 Freezing after waking from suspend](#Freezing_after_waking_from_suspend)
+    *   [13.8 Continuous hissing sound with headphones](#Continuous_hissing_sound_with_headphones)
 *   [14 Fingerprint sensor](#Fingerprint_sensor)
 *   [15 See Also](#See_Also)
 
@@ -195,7 +196,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [Aukey USB-C Hub HDMI 4 Port](https://www.amazon.co.uk/gp/product/B01H3K387Q/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) | USB-C, 4xUSB-A, HDMI | Working |
 | [Belkin USB-C to VGA Adapter](http://www.belkin.com/us/p/P-F2CU037/) | VGA | Working |
 | [Cable Matters USB-C Multiport Adapter](https://www.amazon.com/dp/B01C316EIK) | 4K HDMI or VGA, USB 3.0, Gigabit Ethernet | Working |
-| [Dell DA200](https://www.amazon.com/dp/B012DT6KW2) | USB-A, Ethernet, HDMI, VGA | Working |
+| [Dell DA200](https://www.amazon.com/dp/B012DT6KW2) | USB-A, Ethernet, HDMI (max. 1920x1080), VGA | Working |
 | [Dell TB16](https://www.amazon.com/Dell-3GMVT-Thunderbolt-Dock-black/dp/B06XN6XWD7/) | USB-C Power, VGA, mDP, HDMI, DP, Thunderbolt, Ethernet (only 100Mbit Mode), 2x USB 2.0, 3x USB 3.0 (Disable Thunderbolt Security in BIOS) | Working |
 | [Dell WD15 130W](https://www.amazon.com/dp/B01FN1YK92) | 3xUSB-A 3.0, 2xUSB-A 2.0, Ethernet, HDMI, Mini DisplayPort, VGA, Line Out, Line In | Working |
 | [i-Tec USB-C Dual Display MST Dock](https://www.i-tec-europe.eu/?lng=en&t=3&v=443) | HDMI, DP (4K@30Hz Single Monitor, 1920x1200@60Hz Dual Monitor), Gbit Ethernet, 3xUSB-A, USB-C, Sound, Charging @ 60W | Working |
@@ -367,6 +368,12 @@ Have a look at [ALSA/Troubleshooting#Pops when starting and stopping playback](/
 
 If you are using [tlp](https://www.archlinux.org/packages/?name=tlp), it will activate power saving by default when on battery. Edit `/etc/default/tlp` and disable it.
 
+### Crackling sound with screen changes
+
+Not enabling the GuC can cause weird crackling, white noise sound when the display is changing its contents. The sound also appears to be coming from the card itself or the screen, without any speakers connected.
+
+This can be fixed by adding the kernel parameter `i915.enable_guc_loading=1` as described in [Intel graphics](/index.php/Intel_graphics "Intel graphics").
+
 ### Coil Whine
 
 Unfortunately Dell still did not fix this issue and the sound for my model was very loud. The issue seems to be connected to the graphic card. For some users, it is possible to reduce it a lot by activating frame buffer compression "enable_fbc=1" [Intel graphics#Module-based Powersaving Options](/index.php/Intel_graphics#Module-based_Powersaving_Options "Intel graphics"). The coil whine will then start again under heavy graphic load. For the touchscreen model, this may be very often, due to the high resolution screen. In a similar vein, the display can be run at a lower resolution, again reducing the load on the graphics card.
@@ -418,4 +425,4 @@ Dell officially does not support fingerprint reader functionality [[2]](http://e
 ## See Also
 
 *   [Arch Forum thread for Dell XPS 13 (9360)](https://bbs.archlinux.org/viewtopic.php?id=217865)
-*   [Service Manual for Dell XPS 13 (9360)](http://topics-cdn.dell.com/pdf/xps-13-9360-laptop_Service%20Manual_en-us.pdf)
+*   [Service Manual for Dell XPS 13 (9360)](http://topics-cdn.dell.com/pdf/xps-13-9360-laptop_service%20manual2_en-us.pdf)

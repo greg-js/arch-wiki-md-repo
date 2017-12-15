@@ -13,8 +13,6 @@ Related articles
     *   [2.1 Compile the package from source](#Compile_the_package_from_source)
     *   [2.2 Use pre-compiled packages](#Use_pre-compiled_packages)
 *   [3 How to enable the BFQ I/O Scheduler](#How_to_enable_the_BFQ_I.2FO_Scheduler)
-    *   [3.1 Enable BFQ for all devices](#Enable_BFQ_for_all_devices)
-    *   [3.2 Enable BFQ only for specific devices](#Enable_BFQ_only_for_specific_devices)
 *   [4 More about MuQSS](#More_about_MuQSS)
     *   [4.1 Check if MuQSS is enabled](#Check_if_MuQSS_is_enabled)
     *   [4.2 MuQSS patched kernels and systemd](#MuQSS_patched_kernels_and_systemd)
@@ -91,22 +89,27 @@ If user prefers to spend no time to compile on their own, the unofficial repo ma
 
 Budget Fair Queueing is a disk scheduler which allows each process/thread to be assigned a portion of the disk throughput. Its creator shares the results of many benchmarks ([results](http://algo.ing.unimo.it/people/paolo/disk_sched/results.php) and [video](http://www.youtube.com/watch?v=KhZl9LjCKuU)) which show the latency performance improvement.
 
-Due to CK's patchset defaults, BFQ is built into [linux-ck](/index.php/AUR "AUR") but the above-mentioned scheduler must be enabled manually. User has several options to do that.
-
-### Enable BFQ for all devices
-
-If compiling from the [AUR](/index.php/AUR "AUR"), simply set the BFQ flag to "y" in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") prior to building:
+As of Linux kernel version 4.12, BFQ has been accepted into the mainline kernel. However, it is only available for blk-mq (Multi-Queue Block) so you will have to pass the kernel boot option ***scsi_mod.use_blk_mq=1*** and manually select BFQ by issuing the following for each of your devices:
 
 ```
-_BFQ_enable_="y"
+ echo bfq > /sys/block/sda/queue/scheduler
 
 ```
 
-Users of [repo-ck](/index.php/Repo-ck "Repo-ck") or those who have not modified the PKGBUILD prior to compile the package can append `elevator=bfq` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+where *sda* is the disk in this example.
 
-### Enable BFQ only for specific devices
+An alternative method is to create the file *20-block.rules* in /etc/udev/rules.d with the below in it:
 
-An alternative method is to instruct the kernel at runtime to use BFQ on a device-by-device basis. For configuration examples see the [Improving performance#Tuning IO schedulers](/index.php/Improving_performance#Tuning_IO_schedulers "Improving performance") section.
+```
+ ACTION=="add|change", SUBSYSTEM=="block", ATTR{queue/scheduler}="bfq"
+
+```
+
+This will set BFQ as default during boot for all the disks.
+
+You can also instruct the kernel to use BFQ on a device-by-device basis. For configuration examples see the [Improving performance#Tuning IO schedulers](/index.php/Improving_performance#Tuning_IO_schedulers "Improving performance") section.
+
+**Note:** Setting `elevator=bfq` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") doesn't work anymore.
 
 ## More about MuQSS
 

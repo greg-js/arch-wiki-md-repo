@@ -1,3 +1,10 @@
+Související články
+
+*   [Arch User Repository (Česky)](/index.php/Arch_User_Repository_(%C4%8Cesky) "Arch User Repository (Česky)")
+*   [Arch Build System (Česky)](/index.php/Arch_Build_System_(%C4%8Cesky) "Arch Build System (Česky)")
+*   [pacman (Česky)](/index.php/Pacman_(%C4%8Cesky) "Pacman (Česky)")
+*   [Mirrors](/index.php/Mirrors "Mirrors")
+
 *Jelikož je kolem oficiálních repozitářů spousta zmatků, tento článek se pokouší vysvětlit jejich význam.*
 
 ## Contents

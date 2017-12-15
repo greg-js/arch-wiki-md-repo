@@ -37,7 +37,6 @@ Wiping a disk is done by writing new data over every single bit.
     *   [6.4 shred](#shred)
     *   [6.5 Badblocks](#Badblocks)
     *   [6.6 hdparm](#hdparm)
-    *   [6.7 secure-delete](#secure-delete)
 
 ## Common use cases
 
@@ -395,14 +394,5 @@ For letting badblocks (from the [e2fsprogs](https://www.archlinux.org/packages/?
 Some drives support **Enhanced Secure Erase**, which uses distinct patterns defined by the manufacturer. If the output of `hdparm -I` for the device indicates a manifold time advantage for the **Enhanced** erasure, the device probably has a hardware encryption feature and the wipe will be performed to the encryption keys only.
 
 For detailed instructions on using ATA Secure Erase, see the [Linux ATA wiki](https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase).
-
-### secure-delete
-
-The [secure-delete](https://aur.archlinux.org/packages/secure-delete/) package from [AUR](/index.php/AUR "AUR") provides several utilites for secure erasion, including `sfill`, which deletes only free space in a specified mount. For example:
-
-```
-# sfill -v /
-
-```
 
 See [the tools list](http://superuser.com/questions/19326/how-to-wipe-free-disk-space-in-linux) for more info.

@@ -65,10 +65,10 @@ from ranger.api.commands import *
 
 ```
 
-To add a keybind that moves files to a created directory `~/.Trash/` with `DD`, add to `~/.config/ranger/rc.conf`:
+To add a keybind that moves files to your trash directory `~/.local/share/Trash/files/` with `DD`, add to `~/.config/ranger/rc.conf`:
 
 ```
-map DD shell mv -t /home/${USER}/.Trash %s
+map DD shell mv /home/${USER}/.local/share/Trash/files/ %s
 
 ```
 

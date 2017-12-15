@@ -428,7 +428,7 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 
 ##### 导入archlinux密钥
 
-为了使用官方存储库，我们需要导入 archlinux 主密钥（[Pacman/Package_signing_(简体中文)#初始化密钥环](/index.php/Pacman/Package_signing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9D.E5.A7.8B.E5.8C.96.E5.AF.86.E9.92.A5.E7.8E.AF "Pacman/Package signing (简体中文)")）。这一步通常是通过 pacstrap 完成的，但是可以通过
+为了使用官方存储库，我们需要导入 archlinux 主密钥（[Pacman/Package signing (简体中文)#初始化密钥环](/index.php/Pacman/Package_signing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9D.E5.A7.8B.E5.8C.96.E5.AF.86.E9.92.A5.E7.8E.AF "Pacman/Package signing (简体中文)")）。这一步通常是通过 pacstrap 完成的，但是可以通过
 
 ```
 # pacman-key --init
@@ -440,7 +440,7 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 
 ##### 配置系统
 
-现在，您可以按照 [Installation_guide_(简体中文)#配置系统](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE.E7.B3.BB.E7.BB.9F "Installation guide (简体中文)") 中跳过的步骤（设置语言环境，时区，主机名等），并通过创建初始 ramdisk 来完成安装，如 [Installation_guide_(简体中文)#Initramfs](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Initramfs "Installation guide (简体中文)")。
+现在，您可以按照 [Installation guide (简体中文)#配置系统](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE.E7.B3.BB.E7.BB.9F "Installation guide (简体中文)") 中跳过的步骤（设置语言环境，时区，主机名等），并通过创建初始 ramdisk 来完成安装，如 [Installation guide (简体中文)#Initramfs](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Initramfs "Installation guide (简体中文)")。
 
 ##### 启用图形登录（可选）
 

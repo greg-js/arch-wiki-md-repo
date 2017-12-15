@@ -22,6 +22,7 @@ Related articles
     *   [4.1 Start ntpd on network connection](#Start_ntpd_on_network_connection)
     *   [4.2 Using ntpd with GPS](#Using_ntpd_with_GPS)
     *   [4.3 Running in a chroot](#Running_in_a_chroot)
+    *   [4.4 Restrict listening sockets](#Restrict_listening_sockets)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Cannot assign requested address](#Cannot_assign_requested_address)
 *   [6 See also](#See_also)
@@ -320,6 +321,24 @@ Finally, restart `ntpd` daemon again. Once it restarted you can verify that the 
 should now link to `/var/lib/ntp` instead of `/`.
 
 It is relatively difficult to be sure that your driftfile configuration is actually working without waiting a while, as *ntpd* does not read or write it very often. If you get it wrong, it will log an error; if you get it right, it will update the timestamp. If you do not see any errors about it after a full day of running, and the timestamp is updated, you should be confident of success.
+
+### Restrict listening sockets
+
+You can limit sockets *ntpd* is listening to using the *interface* option:
+
+```
+interface [listen | ignore | drop] [all | ipv4 | ipv6 | wildcard | name | address[/prefixlen]]
+
+```
+
+like
+
+ `/etc/ntp.conf` 
+```
+interface listen lo
+interface listen enp3s0
+interface ignore enp5s0
+```
 
 ## Troubleshooting
 

@@ -73,7 +73,7 @@ Arch Linux 现在只支持 x86_64 (有时称为amd64) 架构，[对 i686 架构�
 
 ### Arch 遵循 [FHS](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html) 吗?
 
-Arch Linux 遵循适用于 [systemd](/index.php/Systemd "Systemd") 服务管理器的文件系统架构，[file-hierarchy(7)](http://man7.org/linux/man-pages/man7/file-hierarchy.7.html) 包含了每个文件夹的解释和设计。 `/bin`, `/sbin` 和 `/usr/sbin` 现在是 `/usr/bin` 的符号链接，`/lib` (以及 `/lib64`) 是 `/usr/lib` 的符号链接。
+Arch Linux 遵循适用于 [systemd](/index.php/Systemd "Systemd") 服务管理器的文件系统架构，[file-hierarchy(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) 包含了每个文件夹的解释和设计。 `/bin`, `/sbin` 和 `/usr/sbin` 现在是 `/usr/bin` 的符号链接，`/lib` (以及 `/lib64`) 是 `/usr/lib` 的符号链接。
 
 ### Arch Linux 支持 ARM 处理器吗?
 

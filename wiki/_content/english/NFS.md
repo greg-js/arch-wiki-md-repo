@@ -296,7 +296,7 @@ Some additional mount options to consider are include:
 
 	_netdev
 
-	The `_netdev` option tells the system to wait until the network is up before trying to mount the share - [systemd](/index.php/Systemd "Systemd") assumes this for NFS, although [automount](/index.php/NFS#Mount_using_.2Fetc.2Ffstab_with_systemd "NFS") may be a more preferred solution.
+	The `_netdev` option tells the system to wait until the network is up before trying to mount the share - [systemd](/index.php/Systemd "Systemd") assumes this for NFS, although [automount](#Mount_using_.2Fetc.2Ffstab_with_systemd) may be a more preferred solution.
 
 **Note:** Setting the sixth field (`fs_passno`) to a nonzero value may lead to unexpected behaviour, e.g. hangs when the systemd automount waits for a check which will never happen.
 

@@ -469,9 +469,7 @@ Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/inde
 
 *   [Create an editable USB Flash Installation](/index.php/USB_flash_installation_media#Using_manual_formatting "USB flash installation media"). Since we are going to use GRUB, you only need to follow the steps up until the `syslinux` part
 
-*   Backup `EFI/boot/loader.efi` to `EFI/boot/gummiboot.efi`
-
-*   [Create a GRUB standalone image](/index.php/GRUB/Tips_and_tricks#GRUB_standalone "GRUB/Tips and tricks") for i686 system and copy the generated `grub*.efi` to the USB as `EFI/boot/loader.efi` and/or `EFI/boot/bootia32.efi`
+*   [Create a GRUB standalone image](/index.php/GRUB/Tips_and_tricks#GRUB_standalone "GRUB/Tips and tricks") for 32-bit EFI system and copy the generated `grub*.efi` to the USB as `EFI/boot/bootia32.efi`
 
 *   Create `EFI/boot/grub.cfg` with the following contents (replace `ARCH_YYYYMM` with the required archiso label e.g. `ARCH_201507`):
 
@@ -499,17 +497,7 @@ menuentry "Arch Linux archiso x86_64" {
     set gfxpayload=keep
     search --no-floppy --set=root --label ARCH_YYYYMM
     linux /arch/boot/x86_64/vmlinuz archisobasedir=arch archisolabel=ARCH_YYYYMM add_efi_memmap
-    initrd /arch/boot/x86_64/archiso.img
-}
-
-menuentry "UEFI Shell x86_64 v2" {
-    search --no-floppy --set=root --label ARCH_YYYYMM
-    chainloader /EFI/shellx64_v2.efi
-}
-
-menuentry "UEFI Shell x86_64 v1" {
-    search --no-floppy --set=root --label ARCH_YYYYMM
-    chainloader /EFI/shellx64_v1.efi
+    initrd /arch/boot/intel_ucode.img /arch/boot/x86_64/archiso.img
 }
 
 ```
@@ -538,16 +526,6 @@ menuentry "Arch Linux x86_64 Archboot" {
     search --no-floppy --set=root --file /boot/vmlinuz_x86_64
     linux /boot/vmlinuz_x86_64 cgroup_disable=memory loglevel=7 add_efi_memmap
     initrd /boot/initramfs_x86_64.img
-}
-
-menuentry "UEFI Shell x86_64 v2" {
-    search --no-floppy --set=root --file /boot/vmlinuz_x86_64
-    chainloader /EFI/tools/shellx64_v2.efi
-}
-
-menuentry "UEFI Shell x86_64 v1" {
-    search --no-floppy --set=root --file /boot/vmlinuz_x86_64
-    chainloader /EFI/tools/shellx64_v1.efi
 }
 
 ```

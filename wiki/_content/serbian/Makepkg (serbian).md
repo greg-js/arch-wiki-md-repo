@@ -1,3 +1,12 @@
+Related articles
+
+*   [Creating packages](/index.php/Creating_packages "Creating packages")
+*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
+*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+*   [pacman](/index.php/Pacman "Pacman")
+*   [Official repositories](/index.php/Official_repositories "Official repositories")
+*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
+
 makepkg is used for compiling and building packages suitable for installation with [pacman](/index.php/Pacman "Pacman"), Arch Linux's package manager. makepkg is a script that automates the building of packages; it can download and validate source files, check dependencies, configure build-time settings, compile the sources, install into a temporary root, make customizations, generate meta-info, and package everything together.
 
 makepkg is provided by the [pacman](https://www.archlinux.org/packages/?name=pacman) package.

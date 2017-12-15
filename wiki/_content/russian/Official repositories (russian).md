@@ -1,3 +1,13 @@
+Ссылки по теме
+
+*   [Система сборки Arch](/index.php/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B8_Arch "Система сборки Arch")
+*   [Пользовательский репозиторий Arch](/index.php/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B9_Arch "Пользовательский репозиторий Arch")
+*   [makepkg (Русский)](/index.php/Makepkg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Makepkg (Русский)")
+*   [Зеркала](/index.php/%D0%97%D0%B5%D1%80%D0%BA%D0%B0%D0%BB%D0%B0 "Зеркала")
+*   [pacman (Русский)](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)")
+*   [PKGBUILD (Русский)](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)")
+*   [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Official repositories](/index.php/Official_repositories "Official repositories"). Дата последней синхронизации: 28 июня 2017‎‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Official_repositories&diff=0&oldid=480578).
 
 [Репозиторий](https://en.wikipedia.org/wiki/ru:%D0%A0%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B9 "wikipedia:ru:Репозиторий") — это хранилище пакетов программ, которые можно загрузить и установить на компьютер.

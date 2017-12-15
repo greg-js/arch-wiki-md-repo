@@ -28,11 +28,9 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [vsftpd](https://www.archlinux.org/packages/?name=vsftpd).
+[Install](/index.php/Install "Install") [vsftpd](https://www.archlinux.org/packages/?name=vsftpd) and [Start/Enable](/index.php/Systemd#Using_units "Systemd") the `vsftpd.service` daemon.
 
-[Start/Enable](/index.php/Systemd#Using_units "Systemd") the `vsftpd.service` daemon.
-
-See the [#Using xinetd](#Using_xinetd) for procedures to use vsftpd with xinetd.
+Tu use [xinetd](https://en.wikipedia.org/wiki/xinetd "wikipedia:xinetd") for monitoring and controlling vsftpd connections, see [#Using xinetd](#Using_xinetd).
 
 ## Configuration
 

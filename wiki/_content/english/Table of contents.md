@@ -47,7 +47,7 @@
 | <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
 | <small>3.2.</small> [Framework](/index.php/Category:Framework "Category:Framework") <small>(3)</small> |
 | <small>3.3.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
-| <small>3.4.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(23)</small> |
+| <small>3.4.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(24)</small> |
 | <small>3.5.</small> [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System") <small>(16)</small> |
 | <small>3.6.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4)</small> |
 | <small>4.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(2)</small> |

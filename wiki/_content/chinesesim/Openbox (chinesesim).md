@@ -1,3 +1,9 @@
+相关文章
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Window manager](/index.php/Window_manager "Window manager")
+
 Openbox 是一个轻量级、可高度定制以及支持大量标准的窗口管理器。它的特性在 [官方网站](http://icculus.org/openbox/) 有详细的文档说明。这篇文章是关于在 Arch Linux 下 运行 Openbox。
 
 ## Contents

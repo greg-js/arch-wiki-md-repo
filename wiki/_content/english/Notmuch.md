@@ -204,7 +204,7 @@ macro index \\\\ "<vfolder-from-query>" "Search mailbox"
 One choice is to maintain a tag of emails you wish to remove from your disk, for example, "killed". Then, you can run this to delete them permanently:
 
 ```
- notmuch search --output=files tag:killed | xargs -r rm
+ notmuch search --output=files --format=text0 tag:killed | xargs -0 rm
  notmuch new
 
 ```

@@ -1,3 +1,10 @@
+Ссылки по теме
+
+*   [CD прожиг](/index.php/Optical_disc_drive_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Burning "Optical disc drive (Русский)")
+
+*   [Archiso (Русский)](/index.php/Archiso_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Archiso (Русский)")
+*   [Multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive")
+
 ## Contents
 
 *   [1 Для GNU/Linux](#.D0.94.D0.BB.D1.8F_GNU.2FLinux)

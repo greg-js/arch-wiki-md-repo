@@ -1,3 +1,7 @@
+Related articles
+
+*   [Dual boot with Windows/SafeBoot](/index.php/Dual_boot_with_Windows/SafeBoot "Dual boot with Windows/SafeBoot")
+
 This is an article detailing different methods of Arch/Windows coexistence.
 
 ## Contents
@@ -142,7 +146,7 @@ bcdedit /create /d "Linux" /application BOOTSECTOR
 
 ```
 
-*   BCDEdit will return an alphanumeric identifier for this entry that I will refer to as {ID} in the remaining steps. You will need to replace {ID} by the actual returned identifier. An example of {ID} is {d7294d4e-9837-11de-99ac-f3f3a79e3e93}.
+*   BCDEdit will return a [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) for this entry that I will refer to as {ID} in the remaining steps. You will need to replace {ID} by the actual returned identifier. An example of {ID} is {d7294d4e-9837-11de-99ac-f3f3a79e3e93}.
 
 ```
 bcdedit /set {ID} device partition=c:

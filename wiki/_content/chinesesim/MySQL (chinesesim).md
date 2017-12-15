@@ -1,3 +1,8 @@
+Related articles
+
+*   [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")
+*   [Adminer](/index.php/Adminer "Adminer")
+
 **翻译状态：** 本文是英文页面 [MySQL](/index.php/MySQL "MySQL") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-07，点击[这里](https://wiki.archlinux.org/index.php?title=MySQL&diff=0&oldid=435153)可以查看翻译后英文页面的改动。
 
 MySQL是一个广泛使用的多线程多用户式数据库。具体特性请参看[官方网站](http://www.mysql.com/)。

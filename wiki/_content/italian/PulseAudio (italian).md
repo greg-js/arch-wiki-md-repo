@@ -1,3 +1,8 @@
+Articoli correlati
+
+*   [PulseAudio/Examples (Italiano)](/index.php/PulseAudio/Examples_(Italiano) "PulseAudio/Examples (Italiano)")
+*   [PulseAudio/Troubleshooting (Italiano)](/index.php/PulseAudio/Troubleshooting_(Italiano) "PulseAudio/Troubleshooting (Italiano)")
+
 [PulseAudio](https://en.wikipedia.org/wiki/PulseAudio e [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)") e funge da proxy per le applicazioni che richiedano l'utilizzo dell'audio utilizzando componenti come [ALSA](/index.php/ALSA_(Italiano) "ALSA (Italiano)") od [OSS](/index.php/OSS_(Italiano) "OSS (Italiano)"). Dal momento che Alsa viene incluso in Arch Linux di default, i casi di utilizzo più comuni proposti di seguito coprono l'utilizzo di PulseAudio con Alsa.
 
 ## Contents

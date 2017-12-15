@@ -33,7 +33,7 @@ Related articles
     *   [9.3 The shell script method](#The_shell_script_method)
     *   [9.4 The PulseAudio kill method](#The_PulseAudio_kill_method)
 *   [10 PulseAudio through OSS](#PulseAudio_through_OSS)
-*   [11 PulseAudio from within a chroot (e.g. 32-bit chroot in 64-bit install)](#PulseAudio_from_within_a_chroot_.28e.g._32-bit_chroot_in_64-bit_install.29)
+*   [11 PulseAudio from within a chroot](#PulseAudio_from_within_a_chroot)
 *   [12 Disabling automatic spawning of PulseAudio server](#Disabling_automatic_spawning_of_PulseAudio_server)
 *   [13 Disabling pulseaudio daemon altogether](#Disabling_pulseaudio_daemon_altogether)
 *   [14 Remap stereo to mono](#Remap_stereo_to_mono)
@@ -687,7 +687,7 @@ load-module module-oss
 
 Then start PulseAudio as usual, making sure that sinks and sources are defined for OSS devices.
 
-## PulseAudio from within a chroot (e.g. 32-bit chroot in 64-bit install)
+## PulseAudio from within a chroot
 
 Since a chroot sets up an alternative root for the running/jailing of applications, PulseAudio must be installed within the chroot itself (`pacman -S pulseaudio` within the chroot environment).
 

@@ -4,7 +4,7 @@
 *   [Загрузчики](/index.php/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA%D0%B8 "Загрузчики")
 *   [Unified Extensible Firmware Interface (Русский)](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unified Extensible Firmware Interface (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Дата последней синхронизации: 2016-01-22\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd-boot&diff=0&oldid=416510).
+**Состояние перевода:** На этой странице представлен перевод статьи [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Дата последней синхронизации: 2017-12-14\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd-boot&diff=0&oldid=502616).
 
 **systemd-boot**, ранее известный как **gummiboot** - это простой UEFI менеджер загрузки, который исполняет настроенные EFI образы. Запись по умолчанию выбирается с помощью настроенного шаблона (glob) или меню на экране. Включен в пакет [systemd](https://www.archlinux.org/packages/?name=systemd), который устанавливается на системе Arch по умолчанию.
 
@@ -27,8 +27,8 @@
         *   [2.2.4 Установка корневого подраздела btrfs](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BA.D0.BE.D1.80.D0.BD.D0.B5.D0.B2.D0.BE.D0.B3.D0.BE_.D0.BF.D0.BE.D0.B4.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0_btrfs)
         *   [2.2.5 Установки с ZFS корневой директорией](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_.D1.81_ZFS_.D0.BA.D0.BE.D1.80.D0.BD.D0.B5.D0.B2.D0.BE.D0.B9_.D0.B4.D0.B8.D1.80.D0.B5.D0.BA.D1.82.D0.BE.D1.80.D0.B8.D0.B5.D0.B9)
         *   [2.2.6 EFI Shells или другие EFI приложения](#EFI_Shells_.D0.B8.D0.BB.D0.B8_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D0.B5_EFI_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
-    *   [2.3 Дополнительная безопасность](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.B1.D0.B5.D0.B7.D0.BE.D0.BF.D0.B0.D1.81.D0.BD.D0.BE.D1.81.D1.82.D1.8C)
-    *   [2.4 Поддержка гибернации](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0_.D0.B3.D0.B8.D0.B1.D0.B5.D1.80.D0.BD.D0.B0.D1.86.D0.B8.D0.B8)
+    *   [2.3 Поддержка гибернации](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0_.D0.B3.D0.B8.D0.B1.D0.B5.D1.80.D0.BD.D0.B0.D1.86.D0.B8.D0.B8)
+    *   [2.4 Редактор параметров ядра с защитой паролем](#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.BE.D1.80_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D0.BE.D0.B2_.D1.8F.D0.B4.D1.80.D0.B0_.D1.81_.D0.B7.D0.B0.D1.89.D0.B8.D1.82.D0.BE.D0.B9_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D0.B5.D0.BC)
 *   [3 Клавиши в загрузочном меню](#.D0.9A.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_.D0.B2_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BE.D1.87.D0.BD.D0.BE.D0.BC_.D0.BC.D0.B5.D0.BD.D1.8E)
 *   [4 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [4.1 Создание записи вручную с помощью efibootmgr](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B8_.D0.B2.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_efibootmgr)
@@ -41,8 +41,8 @@
 
 1.  Убедитесь, что вы загружены в режиме UEFI.
 2.  Проверьте [доступны ли EFI переменные](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").
-3.  Корректно примонтируйте [Системный Раздел EFI](/index.php/EFI_System_Partition "EFI System Partition") (ESP). В этой статье `*esp*` используется для обозначения точки монтирования.
-    **Примечание:** *systemd-boot* EFI не может загружать бинарные файлы из других разделов. По этой причине, рекомендуется монтировать ваш ESP в `/boot`. В случае, если вы хотите разделить `/boot` с ESP, обратитесь к [#Обновления](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F) для большей информации.
+3.  Корректно примонтируйте [Системный Раздел EFI](/index.php/EFI_System_Partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "EFI System Partition (Русский)") (ESP). В этой статье `*esp*` используется для обозначения точки монтирования.
+    **Примечание:** *systemd-boot* EFI не может загружать бинарные файлы из других разделов. По этой причине, рекомендуется монтировать ваш ESP в `/boot`. В случае, если вы хотите разделить `/boot` с ESP, обратитесь к [#Обновлениe](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8e) для большей информации.
 
 4.  Если ESP **не** примонтирован к `/boot`, копируйте ваше ядро и initramfs в ESP.
     **Примечание:** Чтобы сохранить автоматическое обновление ядра в ESP, взгляните на [EFISTUB#Using systemd](/index.php/EFISTUB#Using_systemd "EFISTUB") для адаптации некоторых юнитов systemd. Если ваш Системный Раздел EFI монтируется автоматически, вам, вероятно, потребуется добавить `vfat` в файл внутри `/etc/modules-load.d/`. Тогда в текущем запущенном ядре во время загрузки будет установлен модуль `vfat`, до того, как произойдет обновление ядра, которое может заменить модуль для текущей версии, что сделает невозможным монтирование `/boot/efi` до перезагрузки.
@@ -90,8 +90,6 @@
 [AUR (Русский)](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)") пакет [systemd-boot-pacman-hook](https://aur.archlinux.org/packages/systemd-boot-pacman-hook/) предоставляет [Pacman hook](/index.php/Pacman#Hooks "Pacman") для автоматизации процесса обновления. [Установка](/index.php/Install "Install") этого пакета добавит hook, который будет выполняться при каждом обновлении пакета [systemd](https://www.archlinux.org/packages/?name=systemd).
 
 В качестве альтернативы, вы можете разместить следующий pacman hook в каталоге /etc/pacman.d/hooks/:
-
-Alternatively, place the following pacman hook in the /etc/pacman.d/hooks/ directory:
 
  `/etc/pacman.d/hooks/systemd-boot.hook` 
 ```
@@ -167,15 +165,15 @@ initrd         /initramfs-linux.img
 options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw
 ```
 
-Пожалуйста, обратите внимание, что в вышеприведённом примере `PARTUUID`/`PARTLABEL` идентифицируют GPT раздел, а это не то же самое, что UUID/LABEL, которые идентифицируют файловую систему. Использование `PARTUUID`/`PARTLABEL` бывает полезным, потому что они инвариантны (то есть неизменяемы), если вы переформатируете раздел в другую файловую систему или если по какой-то причине изменятся обозначения /dev/sd*. Также оно может быть полезно, если у вас нет файловой системы на разделе (или вы используете LUKS, который не поддерживает метки `LABEL`).
+Пожалуйста, обратите внимание, что в вышеприведённом примере `PARTUUID`/`PARTLABEL` идентифицируют GPT раздел, а это не то же самое, что `UUID`/`LABEL`, которые идентифицируют файловую систему. Использование `PARTUUID`/`PARTLABEL` бывает полезным, потому что они инвариантны (то есть неизменяемы), если вы переформатируете раздел в другую файловую систему или если по какой-то причине изменятся обозначения /dev/sd*. Также оно может быть полезно, если у вас нет файловой системы на разделе (или вы используете LUKS, который не поддерживает метки `LABEL`).
 
 **Совет:** Пример файла записи расположен как `/usr/share/systemd/bootctl`.
 
 #### Установки с LVM корневой директорией
 
-**Важно:** *systemd-boot* не может использоваться без отдельной `/boot` файловой системы вне LVM.
+**Важно:** *systemd-boot* не может использоваться без отдельной файловой системы `/boot` вне LVM.
 
-Вот пример для корневой директории, использующей [логический менеджер разделов](/index.php/LVM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LVM (Русский)"):
+Следующий пример для корневой директории с использованием [логического менеджера разделов](/index.php/LVM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LVM (Русский)"):
 
  `*esp*/loader/entries/arch-lvm.conf` 
 ```
@@ -197,7 +195,7 @@ options  root=UUID=<UUID identifier> rw
 
 #### Установки с зашифрованной корневой директорией
 
-Ниже приведен пример конфигурационного файла для зашифрованного корневого раздела ([DM-Crypt / LUKS](/index.php/Dm-crypt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dm-crypt (Русский)")) с использованием `encrypt` [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook:
+Ниже приведен пример конфигурационного файла для зашифрованного корневого раздела ([DM-Crypt / LUKS](/index.php/Dm-crypt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dm-crypt (Русский)")) с использованием `encrypt` [mkinitcpio (Русский)](/index.php/Mkinitcpio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mkinitcpio (Русский)") hook:
 
  `*esp*/loader/entries/arch-encrypted.conf` 
 ```
@@ -207,7 +205,7 @@ initrd /initramfs-linux.img
 options cryptdevice=UUID=<UUID>:<mapped-name> root=/dev/mapper/<mapped-name> quiet rw
 ```
 
-В этом примере используется UUID; если хотите, можете заменить UUID на `PARTUUID`. Вы можете также заменить `/dev` путь на регулярный UUID. `mapped-name` - название, которое вы желаете использовать. See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
+В этом примере используется UUID; если хотите, можете заменить UUID на `PARTUUID`. Вы можете также заменить `/dev` путь на регулярный UUID. `mapped-name` - название, которое вы желаете использовать. Смотрите [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
 
 Если вы используете LVM, ваша опция cryptdevice будет выглядеть следующим образом:
 
@@ -223,7 +221,7 @@ options cryptdevice=UUID=<UUID>:MyVolGroup root=/dev/mapper/MyVolGroup-MyVolRoot
 
 #### Установка корневого подраздела btrfs
 
-При загрузке с подраздела [btrfs](/index.php/Btrfs "Btrfs") как корневого, замените `options` строку на `rootflags=subvol=<root subvolume>`. В примере ниже, корневой раздел монтируется как btrfs подраздел с именем 'ROOT' (например, `mount -o subvol=ROOT /dev/sdxY /mnt`):
+При загрузке с подраздела [Btrfs (Русский)](/index.php/Btrfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Btrfs (Русский)") в роли корневого, добавьте к строке `options` `rootflags=subvol=<root subvolume>`. В примере ниже, корневой раздел монтируется как btrfs подраздел с именем 'ROOT' (например, `mount -o subvol=ROOT /dev/sdxY /mnt`):
 
  `*esp*/loader/entries/arch-btrfs-subvol.conf` 
 ```
@@ -251,7 +249,7 @@ When booting off of a ZFS dataset ensure that it has had the `bootfs` property s
 
 #### EFI Shells или другие EFI приложения
 
-В случае, если вы установили EEFI Shells или другие EFI приложения в ESP, вы можете использовать следующие фрагменты:
+В случае, если вы установили EFI Shells или другие EFI приложения в ESP, вы можете использовать следующие фрагменты:
 
  `*esp*/loader/entries/uefi-shell-v1-x86_64.conf` 
 ```
@@ -264,15 +262,19 @@ title  UEFI Shell x86_64 v2
 efi    /EFI/shellx64_v2.efi
 ```
 
-### Дополнительная безопасность
-
-Вы должны знать, что параметры командной строки для ядра могут быть отредактированы с помощью меню загрузки systemd-boot'а (смотрите [#Клавиши в загрузочном меню](#.D0.9A.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_.D0.B2_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BE.D1.87.D0.BD.D0.BE.D0.BC_.D0.BC.D0.B5.D0.BD.D1.8E)) при нажатии `e`. Это главная дыра в безопасности, так как если вы переопределите аргумент ядра `init=`, например на `init=/bin/bash`, это загрузит вашу машину непосредственно с правами root без каких либо паролей, легко обходя существующий пароль root'а! Поскольку gummiboot в настоящий момент не имеет функциии защиты паролем и не имеет возможности предотвратить изменения параметров ядра, вы должны убедиться в том, что вы задали пароль на аппаратном уровне (UEFI/BIOS), который предотвратит загрузку компьютера до того, как введён правильный пароль.
-
-Поскольку безопасность состоит из нескольких уровней, а физический доступ сразу же обходит любые системы безопасности, возможно вам пригодится шифрование вашего диска с помощью [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), особенно если ваша машина является ноутбуком. Однако, это уже другой вопрос, не относящийся к systemd-boot.
-
 ### Поддержка гибернации
 
-Пожалуйста, прочтите статью [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate").
+Пожалуйста, прочтите статью [Power management/Suspend and hibernate (Русский)](/index.php/Power_management/Suspend_and_hibernate_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Power management/Suspend and hibernate (Русский)").
+
+### Редактор параметров ядра с защитой паролем
+
+В качестве альтернативы можете установить [systemd-boot-password](https://aur.archlinux.org/packages/systemd-boot-password/) который поддерживает `password` опцию базовой конфигурации. Используйте `sbpctl generate` для генерации значения для этой опции.
+
+Установка *systemd-boot-password* следующей командой:
+
+ `# sbpctl install *esp*` 
+
+С включенным редактором будет запрошен ваш пароль, перед тем как вы сможете редактировать параметры ядра.
 
 ## Клавиши в загрузочном меню
 
@@ -283,7 +285,7 @@ efi    /EFI/shellx64_v2.efi
 *   `d` - выбрать загрузочную запись по умолчанию (хранится в энергонезависимой EFI переменной)
 *   `-/T` - уменьшить таймаут (хранится в энергонезависимой EFI переменной)
 *   `+/t` - увеличить таймаут (хранится в энергонезависимой EFI переменной)
-*   `e` - редактировать командную строку ядра
+*   `e` - редактировать командную строку ядра. Не имеет эффекта, если опция конфигурации `editor` установлена в `0`.
 *   `v` - показать версию gummiboot и UEFI
 *   `Q` - выйти
 *   `P` - отобразить текущую конфигурацию
@@ -312,22 +314,7 @@ efi    /EFI/shellx64_v2.efi
 
 ### Меню не отображается после обновления Windows
 
-Допустим, если вы обновились с Windows 8 до Windows 8.1 и вы больше не видите загрузочного меню после этого обновления, (то есть сразу грузится Windows):
-
-*   Убедитесь, что как Secure Boot (настраивается в UEFI), так и Fast Startup (настраивается в опциях питания в Windows) отключены.
-*   Убедитесь, что в вашем UEFI Linux Boot Manager первичнее, чем Windows Boot Manager (настраивается в UEFI настройках, таких как Hard Disk Drive Priority).
-
-**Примечание:** Windows 8.x+, включая Windows 10, будут перезаписывать любой выбор порядка загрузки, который вы делаете и устанавливать себя в качестве приоритетной загрузки после каждого запуска. Изменение порядка загрузки в прошивке UEFI продлится только до следующей Windows 10 загрузки. Вы должны знать *Change Boot Option* ключ для вашей материнской платы.
-
-Для того, чтобы Windows 8.X не изменяли порядок загрузки, вы должны настроить групповые политики для Windows и выполнить скрипт (*.bat*) при запуске. В Windows:
-
-1.  Откройте командную строку с правами администратора. Выполните `bcdedit /enum firmware`
-2.  Найдите приложение, в котором в описании "Linux", например "Linux Boot Manager"
-3.  Скопируйте ID, включая скобки, например `{31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`.
-4.  Создайте bat-файл (например, `bootorder.bat`) со следующим содержанием: `bcdedit /set {fwbootmgr} DEFAULT {*скопированный_ID*}` (например, `bcdedit /set {fwbootmgr} DEFAULT {31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`).
-5.  Откройте *gpedit* и в *Local Computer Policy > Computer Configuration > Windows Settings > Scripts(Startup/Shutdown)*, выберите *Startup*. Должно открыться окно с заголовком *Startup Properties*.
-6.  Во вкладке *Scripts*, нажмите кнопку *Add*
-7.  Нажмите *Browse* и выберите созданный bat-файл.
+Обратитесь к разделу соответствующей статьи: [UEFI (Русский)#Windows изменяет порядок загрузки](/index.php/UEFI_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Windows_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D1.8F.D0.B5.D1.82_.D0.BF.D0.BE.D1.80.D1.8F.D0.B4.D0.BE.D0.BA_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8 "UEFI (Русский)").
 
 ## Смотрите также
 

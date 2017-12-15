@@ -9,7 +9,7 @@ Related articles
 
 *   [1 Начало работы](#.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.8B)
     *   [1.1 Настройка системы](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
-        *   [1.1.1 Checklist](#Checklist)
+        *   [1.1.1 Контрольный перечень](#.D0.9A.D0.BE.D0.BD.D1.82.D1.80.D0.BE.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D0.BF.D0.B5.D1.80.D0.B5.D1.87.D0.B5.D0.BD.D1.8C)
     *   [1.2 JACK](#JACK)
         *   [1.2.1 FireWire](#FireWire)
         *   [1.2.2 Jack Flash](#Jack_Flash)
@@ -31,7 +31,7 @@ Related articles
 *   [7 Restricted Software](#Restricted_Software)
     *   [7.1 Steinberg's SDKs](#Steinberg.27s_SDKs)
 *   [8 Arch Linux Pro Audio Project](#Arch_Linux_Pro_Audio_Project)
-*   [9 Linux and Arch Linux Pro Audio in the News](#Linux_and_Arch_Linux_Pro_Audio_in_the_News)
+*   [9 Linux и Arch Linux Pro Audio в новостях](#Linux_.D0.B8_Arch_Linux_Pro_Audio_.D0.B2_.D0.BD.D0.BE.D0.B2.D0.BE.D1.81.D1.82.D1.8F.D1.85)
 *   [10 Mailing list](#Mailing_list)
 
 ## Начало работы
@@ -71,15 +71,15 @@ Related articles
 
 ### Настройка системы
 
-You may want to consider the following often seen system optimizations:
+Могут оказаться полезными следующие часто используемые настройки системы:
 
-*   Add yourself to the *audio* [group](/index.php/Group "Group").
-*   Add the `threadirqs` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
-*   Install [linux-rt](https://aur.archlinux.org/packages/linux-rt/) kernel.
-*   Set the [cpufreq](/index.php/Cpufreq "Cpufreq") governor to *performance*.
-*   Add *noatime* to [fstab](/index.php/Fstab "Fstab") (see [Improving performance#Mount options](/index.php/Improving_performance#Mount_options "Improving performance")).
+*   Добавление себя в [группу](/index.php/Users_and_groups_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.93.D1.80.D1.83.D0.BF.D0.BF.D1.8B "Users and groups (Русский)") *audio*.
+*   Добавление [параметра ядра](/index.php/Kernel_parameters_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel parameters (Русский)") `threadirqs`.
+*   Установка ядра [linux-rt](https://aur.archlinux.org/packages/linux-rt/).
+*   Настройка регулятора [cpufreq](/index.php/CPU_frequency_scaling_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CPU frequency scaling (Русский)") на *performance* (производительность).
+*   Добавление параметра *noatime* в [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)") (смотрите [Improving performance#Mount options](/index.php/Improving_performance#Mount_options "Improving performance")).
 
-Realtime configuration has mostly been automated. There is no longer any need to edit files like `/etc/security/limits.conf` for realtime access. However, if you must change the settings, see `/etc/security/limits.d/99-audio.conf` and `/usr/lib/udev/rules.d/40-hpet-permissions.rules` (these files are provided by [jack](https://www.archlinux.org/packages/?name=jack) or [jack2](https://www.archlinux.org/packages/?name=jack2)). Additionaly, you may want to increase the highest requested RTC interrupt frequency (default is 64 Hz) by [running the following at boot](/index.php/Systemd_FAQ#How_can_I_make_a_script_start_during_the_boot_process.3F "Systemd FAQ"):
+Настройка в реальном времени в основном автоматизирована. Нет больше необходимости вносить правки в файлы вроде `/etc/security/limits.conf` для получения доступа реального времени. Тем не менее, если вам необходимо изменить настройки, смотрите `/etc/security/limits.d/99-audio.conf` и `/usr/lib/udev/rules.d/40-hpet-permissions.rules` (эти файлы поставляются с пакетами [jack](https://www.archlinux.org/packages/?name=jack) или [jack2](https://www.archlinux.org/packages/?name=jack2)). Дополнительно, вы можете захотеть увеличить максимально запрашиваемую частоту прерывания RTC (по умолчанию 64 Hz), запустив [следующее при загрузке системы](/index.php/Systemd_FAQ#How_can_I_make_a_script_start_during_the_boot_process.3F "Systemd FAQ"):
 
 ```
 echo 2048 > /sys/class/rtc/rtc0/max_user_freq
@@ -87,7 +87,7 @@ echo 2048 > /proc/sys/dev/hpet/max-user-freq
 
 ```
 
-By default, swap frequency defined by "swappiness" is set to 60\. By reducing this number to 10, the system will wait much longer before trying to write to disk. Then, there is *inotify* which watches for changes to files and reports them to applications requesting this information. When working with lots of audio data, a lot of watches will need to be kept track of, so they will need to be increased. These two settings can be adjusted in `/etc/sysctl.d/99-sysctl.conf`.
+По умолчанию, частота обращения к swap определяется параметром "swappiness" и имеет значение 60\. При уменьшении этого числа до 10, система будет ждать гораздо дольше перед тем, как попытается начать запись на диск. Далее, параметр *inotify* следит за изменениями, вносимыми в файлы, и сообщает о них приложениям при соответствующих запросах. Когда ведётся работа с большим объёмом аудио данных, требуется множество контролёров, поэтому необходимо увеличить их число. Две этих настройки можно произвести в файле `/etc/sysctl.d/99-sysctl.conf`.
 
 ```
 vm.swappiness = 10
@@ -95,7 +95,7 @@ fs.inotify.max_user_watches = 524288
 
 ```
 
-You may also want to maximize the PCI latency timer of the PCI sound card and raise the latency timer of all other PCI peripherals (default is 64).
+Вы также можете захотеть увеличить таймер задержки PCI для звуковой карты формата PCI и повысить значение таймера задержки всех остальных PCI устройств (по умолчанию 64).
 
 ```
 $ setpci -v -d *:* latency_timer=**b0**
@@ -103,7 +103,7 @@ $ setpci -v -s *$SOUND_CARD_PCI_ID* latency_timer=**ff** # eg. SOUND_CARD_PCI_ID
 
 ```
 
-The SOUND_CARD_PCI_ID can be obtained like so:
+Значение SOUND_CARD_PCI_ID может быть получено таким образом:
 
  `$ lspci ¦ grep -i audio` 
 ```
@@ -111,43 +111,43 @@ The SOUND_CARD_PCI_ID can be obtained like so:
 **03:01.0** Multimedia audio controller: VIA Technologies Inc. VT1720/24 [Envy24PT/HT] PCI Multi-Channel Audio Controller (rev 01)
 ```
 
-#### Checklist
+#### Контрольный перечень
 
-The steps below are mostly to double-check that you have a working multimedia system:
+Представленные ниже пункты по большей части приведены для того, чтобы вы могли удостовериться, что у вас работающая мультимедиа система:
 
-*   Have I set up sound properly? See [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS").
+*   Тщательно ли я настроил звук? Смотрите [ALSA](/index.php/Advanced_Linux_Sound_Architecture_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Advanced Linux Sound Architecture (Русский)") или [OSS](/index.php/OSS "OSS").
 
 ```
 $ speaker-test
 
 ```
 
-*   Am I in the audio group? See [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS").
+*   Включен ли я в группу audio? Смотрите [ALSA](/index.php/Advanced_Linux_Sound_Architecture_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Advanced Linux Sound Architecture (Русский)") или [OSS](/index.php/OSS "OSS").
 
 ```
 $ groups | grep audio
 
 ```
 
-*   Is PulseAudio, OSS or something else grabbing my device?
+*   Захвачено ли устройство с помощью PulseAudio, OSS или чего-то иного?
 
 ```
 $ lsof +c 0 /dev/snd/pcm* /dev/dsp*
 
 ```
 
--OR-
+-ИЛИ-
 
 ```
 $ fuser -fv /dev/snd/pcm* /dev/dsp*  
 
 ```
 
-*   Is PAM-security and realtime working OK?
+*   Работают ли PAM-security (подключаемые модули аутентификации) и режим реального времени?
 
-See: [Realtime for Users#PAM-enabled login](/index.php/Realtime_for_Users#PAM-enabled_login "Realtime for Users") (Pay special attention especially if you do not run KDM, GDM or Slim.)
+Смотрите: [Realtime for Users#PAM-enabled login](/index.php/Realtime_for_Users#PAM-enabled_login "Realtime for Users") (Обратите особое внимание, особенно если вы не запускали KDM, GDM или Slim.)
 
-*   Have I rebooted after having done all that?
+*   Перезагрузился ли я после всех проделанных изменений?
 
 ### JACK
 
@@ -568,13 +568,13 @@ History: [https://bbs.archlinux.org/viewtopic.php?id=30547](https://bbs.archlinu
 
 For all your Arch- and ArchAudio-related audio issues hop on to **IRC**: #archaudio @ Freenode
 
-## Linux and Arch Linux Pro Audio in the News
+## Linux и Arch Linux Pro Audio в новостях
 
-*   [Build a Serious Multimedia Production Workstation with Arch](https://www.linux.com/learn/tutorials/607117-build-a-serious-multimedia-production-workstation-with-arch-linux) - Linux.com article, July 2012
+*   [Построй систему для производства серьёзной мультимедиа продукции с Arch](https://www.linux.com/learn/tutorials/607117-build-a-serious-multimedia-production-workstation-with-arch-linux) - Linux.com статья, июль 2012
 
-*   [An Arch Tale](http://www.linuxjournal.com/content/arch-tale) - Article by fellow musician and writer Dave Phillips, October 2011
+*   [Практика использования Arch](http://www.linuxjournal.com/content/arch-tale) - Статья от музыканта и писателя Dave Phillips, октябрь 2011
 
-*   [From Windows to Linux: a sound decision](http://www.itwire.com/opinion-and-analysis/open-sauce/36698-from-windows-to-linux-a-sound-decision) - Interview with Geoff "songshop" Beasley, February 2010
+*   [С Windows на Linux: разумное решение](http://www.itwire.com/opinion-and-analysis/open-sauce/36698-from-windows-to-linux-a-sound-decision) - интервью с Geoff "songshop" Beasley, февраль 2010
 
 ## Mailing list
 

@@ -81,7 +81,7 @@ Even if your swap partition is smaller than RAM, you still have a big chance of 
 
 You may either decrease the value of `/sys/power/image_size` to make the suspend image as small as possible (for small swap partitions), or increase it to possibly speed up the hibernation process.
 
-See [Systemd#Temporary_files](/index.php/Systemd#Temporary_files "Systemd") to make this change persistent.
+See [Systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd") to make this change persistent.
 
 ### Required kernel parameters
 

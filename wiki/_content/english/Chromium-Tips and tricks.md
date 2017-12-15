@@ -314,8 +314,6 @@ Popular privacy extensions for the [Firefox](/index.php/Firefox "Firefox") brows
 *   [Decentraleyes](https://chrome.google.com/webstore/detail/decentraleyes/ldpochfccmkkmhdbclfhpagapcfdljkj?hl=en)
 *   [AdNauseam](https://github.com/dhowe/AdNauseam/releases)
 
-**Tip:** If you have difficulties installing [AdNauseam](https://github.com/dhowe/AdNauseam/releases) (*Apps, extensions, and user scripts cannot be added from this website*), go to the [extensions](#Browsing_experience) and drag the downloaded **.crx** file over there.
-
 #### ScriptBlock
 
 ScriptBlock is similar to NoScript, which is a Firefox add-on. Both extensions stop a website from executing any kind of JavaScript. However, ScriptBlock is a much simpler design thus it's easier to use. It blocks JavaScript by default. You can allow and temporary allow JavaScripts. Once you allow them to run, it lets all the JavaScripts run on that page so you might want ScriptBlock to work in conjunction with [Privacy Badger](https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp?hl=en).

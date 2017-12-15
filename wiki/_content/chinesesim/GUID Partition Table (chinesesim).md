@@ -1,3 +1,10 @@
+相关文章
+
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")
+*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
+*   [Partitioning](/index.php/Partitioning "Partitioning")
+
 **翻译状态：** 本文是英文页面 [GUID_Partition_Table](/index.php/GUID_Partition_Table "GUID Partition Table") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-02-27，点击[这里](https://wiki.archlinux.org/index.php?title=GUID_Partition_Table&diff=0&oldid=355829)可以查看翻译后英文页面的改动。
 
 全局唯一标识分区表（GUID Partition Table，缩写：GPT）是一个实体硬盘的分区表的结构布局的标准。它是[统一可扩展固件接口](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")标准的一部分，它使用[全局唯一标识](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier")来标识设备。它是新一代分区表格式，用以解决 [MBR](/index.php/MBR "MBR") 分区表的缺点，同时带来了一些优点。

@@ -198,7 +198,7 @@ Please try to write concise commit messages. If the package is simply an upstrea
 
 ### Update the Repository
 
-Use `db-update`. It will find new packages for any repository and it manages both `i686` and `x86_64` architectures at once, if present.
+Using `db-update` will find new packages for any repository.
 
 For example:
 

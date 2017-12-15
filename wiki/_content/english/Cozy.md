@@ -61,7 +61,7 @@ To create an administrator, first generate the credentials (with [pwgen](https:/
 
 ```
 
-**Note:** You should also take a look at [CouchDB#Single_node_setup_.26_Security](/index.php/CouchDB#Single_node_setup_.26_Security "CouchDB").
+**Note:** You should also take a look at [CouchDB#Single node setup & Security](/index.php/CouchDB#Single_node_setup_.26_Security "CouchDB").
 
 ### Starting the controller
 

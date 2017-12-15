@@ -164,8 +164,6 @@ rEFInd EFI binary will be signed with supplied key and certificate.
 
 **Tip:** rEFInd can boot Linux in many ways. See [The rEFInd Boot Manager: Methods of Booting Linux](http://www.rodsbooks.com/refind/linux.html) for coverage of the various approaches.
 
-**Note:** For 32-bit EFI, replace **x64** with **ia32** in the commands below.
-
 If the `refind-install` script does not work for you, rEFInd can be set up manually.
 
 First, copy the executable to the ESP:

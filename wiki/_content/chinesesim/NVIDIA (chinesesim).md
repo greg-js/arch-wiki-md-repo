@@ -1,3 +1,8 @@
+相关文章
+
+*   [Nouveau](/index.php/Nouveau "Nouveau")
+*   [Xorg (简体中文)](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")
+
 本文包含安装和配置 [NVIDIA](http://www.nvidia.com) *专有* 显卡驱动的信息。想要了解开源驱动的信息，参见 [Nouveau](/index.php/Nouveau "Nouveau").
 
 ## Contents

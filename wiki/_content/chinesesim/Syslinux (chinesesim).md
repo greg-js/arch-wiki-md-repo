@@ -1,3 +1,8 @@
+相关文章
+
+*   [Arch Boot Process (简体中文)](/index.php/Arch_Boot_Process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Boot Process (简体中文)")
+*   [Boot loaders (简体中文)](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")
+
 **翻译状态：** 本文是英文页面 [Syslinux](/index.php/Syslinux "Syslinux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-04-21，点击[这里](https://wiki.archlinux.org/index.php?title=Syslinux&diff=0&oldid=471645)可以查看翻译后英文页面的改动。
 
 [Syslinux](https://en.wikipedia.org/wiki/SYSLINUX "wikipedia:SYSLINUX")是一个优秀的启动加载器集合，可以从硬盘、光盘或通过 [PXE](/index.php/PXE "PXE") 的网络引导启动系统。支持的 [文件系统](/index.php/File_systems "File systems") 包括 [FAT](https://en.wikipedia.org/wiki/File_Allocation_Table "wikipedia:File Allocation Table"), [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2"), [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4")和非压缩的单设备 [Btrfs](/index.php/Btrfs "Btrfs").

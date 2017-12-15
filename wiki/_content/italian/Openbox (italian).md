@@ -1,3 +1,15 @@
+Articoli correlati
+
+*   [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)")
+*   [Fluxbox](/index.php/Fluxbox_(Italiano) "Fluxbox (Italiano)")
+*   [Enlightenment](/index.php/Enlightenment_(Italiano) "Enlightenment (Italiano)")
+*   [E17](/index.php/E17_(Italiano) "E17 (Italiano)")
+*   [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)")
+*   [Xfce](/index.php/Xfce_(Italiano) "Xfce (Italiano)")
+*   [LXDE](/index.php/LXDE_(Italiano) "LXDE (Italiano)")
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [Compiz Stand-alone](/index.php/Compiz#As_a_standalone_WM "Compiz")
+
 Openbox è un window manager leggero ed estremamente configurabile con un estensivo supporto di standard. Le sue funzionalità sono ben documentate sul [sito ufficiale](http://openbox.org). Questo articolo riguarderà Openbox su Arch Linux.
 
 ## Contents

@@ -1,3 +1,9 @@
+Articoli correlati
+
+*   [Font Configuration (Italiano)](/index.php/Font_Configuration_(Italiano) "Font Configuration (Italiano)")
+*   [Java Fonts - Sun JRE](/index.php/Java_Fonts_-_Sun_JRE "Java Fonts - Sun JRE")
+*   [MS Fonts](/index.php/MS_Fonts "MS Fonts")
+
 Documenta l'installazione e l'utilizzo dei Fonts su Arch Linux.
 
 **Nota:** Certi pacchetti font possono imporre *alcune* limitazioni legali.

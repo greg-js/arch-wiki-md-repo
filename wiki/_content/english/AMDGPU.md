@@ -160,7 +160,7 @@ Option "TearFree" "true"
 
 ### No HDMI/DP Audio
 
-The open source AMDGPU driver relies on the [DC](#Enable_AMD_DC_on_pre-Vega_cards) (formerly *DAL*) code that was [pulled into the 4.15 kernel](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-DC-Accepted). Until 4.15 Kernel is available in [official repositories](/index.php/Official_repositories "Official repositories"), audio support for HDMI and DisplayPort will not be available, unless using 4.15 [kernel](/index.php/Kernels "Kernels"), for example from [AUR](/index.php/Arch_User_Repository "Arch User Repository"). Another way to get HDMI and DisplayPort audio is to install the [AMDGPU PRO](#AMDGPU_PRO) driver or the [linux-amd-staging-drm-next-git](https://aur.archlinux.org/packages/linux-amd-staging-drm-next-git/) (or really any linux-amd-*) kernel.
+The open source AMDGPU driver relies on the [DC](#Enable_AMD_DC_on_pre-Vega_cards) (formerly *DAL*) code that was [pulled into the 4.15 kernel](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-DC-Accepted). Until 4.15 Kernel is available in [official repositories](/index.php/Official_repositories "Official repositories"), audio support for HDMI and DisplayPort will not be available, unless using 4.15 [kernel](/index.php/Kernel "Kernel"), for example from [AUR](/index.php/AUR "AUR"). Another way to get HDMI and DisplayPort audio is to install the [AMDGPU PRO](#AMDGPU_PRO) driver or the [linux-amd-staging-drm-next-git](https://aur.archlinux.org/packages/linux-amd-staging-drm-next-git/) (or really any linux-amd-*) kernel.
 
 ### Incorrect screen position on HDMI
 

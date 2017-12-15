@@ -37,7 +37,7 @@ The biggest feature of WordPress is its ease in configuration and administration
 
 ## Installation
 
-WordPress requires [PHP](/index.php/PHP "PHP") and [MySQL](/index.php/MySQL "MySQL") to be installed and configured. See the [LAMP](/index.php/LAMP "LAMP") wiki article for more information. During configuration, be aware that some WordPress features require [PHP extensions](http://wordpress.stackexchange.com/questions/42098/what-are-php-extensions-and-libraries-wp-needs-and-or-uses) that may not be turned on by default.
+WordPress requires [Apache](/index.php/Apache "Apache"), [PHP](/index.php/PHP "PHP") and [MySQL](/index.php/MySQL "MySQL") to be installed and configured. See the respective pages for information. During PHP configuration, be aware that some WordPress features require [PHP extensions](http://wordpress.stackexchange.com/questions/42098/what-are-php-extensions-and-libraries-wp-needs-and-or-uses) that may not be turned on by default.
 
 ### Installation using pacman
 
@@ -74,7 +74,7 @@ Make sure your `/etc/hosts` file is setup correctly. This will be important when
 
 ### Configure apache
 
-**Note:** You will need [Apache](/index.php/Apache "Apache") configured to run with [PHP](/index.php/PHP "PHP") and [MySQL](/index.php/MySQL "MySQL"). Check [LAMP#PHP](/index.php/LAMP#PHP "LAMP") and [LAMP#MySQL/MariaDB](/index.php/LAMP#MySQL.2FMariaDB "LAMP") sections for instructions.
+**Note:** You will need [Apache](/index.php/Apache "Apache") configured to run with [PHP](/index.php/PHP "PHP") and [MySQL](/index.php/MySQL "MySQL").
 
 You will need to create a config file for apache to find your WordPress install. Create the following file and edit it your favorite text editor:
 

@@ -1,3 +1,10 @@
+Related articles
+
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")
+*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
+*   [Partitioning](/index.php/Partitioning "Partitioning")
+
 A GUID Partíciós Tábla (GPT) egy új stílusú particionálási mód, mely része a [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") Specifikációnak, és mely a [globálisan egyedi azonosítót](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") hasznája az eszközök felismeréséhez. Sokban különbözik a [Master Boot Record (Magyar)](/index.php/Master_Boot_Record_(Magyar) "Master Boot Record (Magyar)")-tól (mely a leginkább használt particionálási mód volt a BIOS érában) és nem kevés előnnyel rendelkezik az MBR-rel szemben.
 
 **Figyelem:** Ha Windows-szal együttes dual bootot használunk, ne feledjük, hogy a Windows nem képes GPT lemezt BIOS módban indítani. Ha már Windowst telepítettünk egy MBR módban particionált lemezre, mely így BIOS módban indít, ne konvertáljuk a meghajtót GPT-be, mert a Windows az általunk használt rendszerbetöltő típusától függetlenül képtelen lesz elindulni. Ilyenkor a Windowst UEFI módben kell telepíteni, majd valamely [UEFI Rendszerbetöltőt](/index.php/UEFI_Bootloaders "UEFI Bootloaders") kell használni a Windows indítására. Ez sajnos a Windows használatának korlátja.

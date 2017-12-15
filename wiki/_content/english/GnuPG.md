@@ -824,19 +824,19 @@ Make sure `gpg-agent` and `dirmngr` are not running with `killall gpg-agent dirm
 If your keyring is stored on a vFat filesystem (e.g. a USB drive), `gpg-agent` will fail to create the required sockets (vFat does not support sockets), you can create redirects to a location that handles sockets, e.g. `/dev/shm`:
 
 ```
-# export GNUPGHOME=/custom/gpg/home                                                                
+# export GNUPGHOME=/custom/gpg/home
 # printf '%%Assuan%%
 socket=/dev/shm/S.gpg-agent
-' > $GNUPGHOME/S.gpg-agent                      
+' > $GNUPGHOME/S.gpg-agent
 # printf '%%Assuan%%
 socket=/dev/shm/S.gpg-agent.browser
-' > $GNUPGHOME/S.gpg-agent.browser      
+' > $GNUPGHOME/S.gpg-agent.browser
 # printf '%%Assuan%%
 socket=/dev/shm/S.gpg-agent.extra
-' > $GNUPGHOME/S.gpg-agent.extra          
+' > $GNUPGHOME/S.gpg-agent.extra
 # printf '%%Assuan%%
 socket=/dev/shm/S.gpg-agent.ssh
-' > $GNUPGHOME/S.gpg-agent.ssh              
+' > $GNUPGHOME/S.gpg-agent.ssh
 
 ```
 

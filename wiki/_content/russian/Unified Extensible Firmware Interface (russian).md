@@ -30,7 +30,9 @@
         *   [8.3.1 bcfg](#bcfg)
         *   [8.3.2 edit](#edit)
 *   [9 Совместимое оборудование](#.D0.A1.D0.BE.D0.B2.D0.BC.D0.B5.D1.81.D1.82.D0.B8.D0.BC.D0.BE.D0.B5_.D0.BE.D0.B1.D0.BE.D1.80.D1.83.D0.B4.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-*   [10 См. также](#.D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [10 Исправление проблем](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+    *   [10.1 Windows изменяет порядок загрузки](#Windows_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D1.8F.D0.B5.D1.82_.D0.BF.D0.BE.D1.80.D1.8F.D0.B4.D0.BE.D0.BA_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8)
+*   [11 См. также](#.D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Загрузка ОС с помощью BIOS
 
@@ -346,6 +348,27 @@ FS0:\efi\grub\> edit grub.cfg
 ## Совместимое оборудование
 
 Main page [Unified Extensible Firmware Interface/Hardware](/index.php/Unified_Extensible_Firmware_Interface/Hardware "Unified Extensible Firmware Interface/Hardware")
+
+## Исправление проблем
+
+### Windows изменяет порядок загрузки
+
+Допустим, если вы обновились с Windows 8 до Windows 8.1 и вы больше не видите загрузочного меню после этого обновления, (то есть сразу грузится Windows):
+
+*   Убедитесь, что как Secure Boot (настраивается в UEFI), так и Fast Startup (настраивается в опциях питания в Windows) отключены.
+*   Убедитесь, что в вашем UEFI Linux Boot Manager первичнее, чем Windows Boot Manager (настраивается в UEFI настройках, таких как Hard Disk Drive Priority).
+
+**Примечание:** Windows 8.x+, включая Windows 10, будут перезаписывать любой выбор порядка загрузки, который вы делаете и устанавливать себя в качестве приоритетной загрузки после каждого запуска. Изменение порядка загрузки в прошивке UEFI продлится только до следующей Windows 10 загрузки. Вы должны знать *Change Boot Option* ключ для вашей материнской платы.
+
+Для того, чтобы Windows 8.X не изменяли порядок загрузки, вы должны настроить групповые политики для Windows и выполнить скрипт (*.bat*) при запуске. В Windows:
+
+1.  Откройте командную строку с правами администратора. Выполните `bcdedit /enum firmware`
+2.  Найдите приложение, в котором в описании "Linux", например "Linux Boot Manager"
+3.  Скопируйте ID, включая скобки, например `{31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`.
+4.  Создайте bat-файл (например, `bootorder.bat`) со следующим содержанием: `bcdedit /set {fwbootmgr} DEFAULT {*скопированный_ID*}` (например, `bcdedit /set {fwbootmgr} DEFAULT {31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`).
+5.  Откройте *gpedit* и в *Local Computer Policy > Computer Configuration > Windows Settings > Scripts(Startup/Shutdown)*, выберите *Startup*. Должно открыться окно с заголовком *Startup Properties*.
+6.  Во вкладке *Scripts*, нажмите кнопку *Add*
+7.  Нажмите *Browse* и выберите созданный bat-файл.
 
 ## См. также
 

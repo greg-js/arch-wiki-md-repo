@@ -1,3 +1,11 @@
+Artículos relacionados
+
+*   [Desktop Environment (Español)](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)")
+*   [Display Manager (Español)](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)")
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [Window Manager (Español)](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)")
+*   [Oblogout](/index.php/Oblogout "Oblogout")
+
 Openbox es un gestor de ventanas ligero, altamente configurable y con amplia compatibilidad con los estándares. Sus posibilidades están bien documentadas en el [Sitio Web Oficial](http://openbox.org/wiki). Este artículo se referirá a como ejecutar Openbox en Arch Linux.
 
 ## Contents

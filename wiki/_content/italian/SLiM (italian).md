@@ -1,3 +1,7 @@
+Articoli correlati
+
+*   [Display Manager (Italiano)](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)")
+
 [SLiM](http://slim.berlios.de/) è l'acronimo di Simple Login Manager (semplice gestore di login). SLiM è un login manager semplice, leggero e facilmente configurabile, adatto per essere usato su piattaforme con poche risorse. SLiM è molto utile anche a chi vuole un login manager che non dipenda da [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") o [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)"), ed è perfetto per chi usa [Xfce](/index.php/Xfce_(Italiano) "Xfce (Italiano)"), [openbox](/index.php/Openbox_(Italiano) "Openbox (Italiano)"), [fluxbox](/index.php/Fluxbox_(Italiano) "Fluxbox (Italiano)") ecc.
 
 ## Contents

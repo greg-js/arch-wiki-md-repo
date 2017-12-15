@@ -1,3 +1,10 @@
+相关文章
+
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [Boot loaders (简体中文)](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")
+*   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
+*   [Unified Extensible Firmware Interface (简体中文)](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)")
+
 **翻译状态：** 本文是英文页面 [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-04，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd-boot&diff=0&oldid=443307)可以查看翻译后英文页面的改动。
 
 **systemd-boot** (以前被称为**gummiboot**) 是可以执行 EFI 镜像文件的简单 UEFI 启动管理器。启动的内容可以通过一个配置(glob)或者屏幕菜单选择。Arch 默认安装的 [systemd](https://www.archlinux.org/packages/?name=systemd) 提供了这个功能。

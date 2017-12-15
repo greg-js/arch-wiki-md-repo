@@ -73,9 +73,9 @@ Opzionalmente, è possibile scegliere un server web per usare l'interfaccia ammi
 
 **Note:** Pi-hole non richiede forzatamente l'uso dell'interfaccia web in quanto molti comandi sono disponibili via CLI.
 
-Il pacchetto AUR fornisce file di configurazione di esempio sia per [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) che per [nginx](https://www.archlinux.org/packages/?name=nginx). Altri server web possono tranquillamente eseguire l'interfaccia web, ma non sono al momento supportati.
+File di configurazione già funzionanti sono forniti sia per [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) che per [nginx](https://www.archlinux.org/packages/?name=nginx). Altri server web possono tranquillamente eseguire l'interfaccia web, ma non sono al momento supportati.
 
-Tutti i server web abbisognano del pacchetto [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) e della seguente modifica per abilitate l'estensione per sqlite e per i socket:
+Installa [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) e abilita le necessarie estensioni di seguito elencate:
 
  `/etc/php/php.ini` 
 ```
@@ -84,8 +84,6 @@ extension=pdo_sqlite
 extension=sockets.so
 extension=sqlite3
 ```
-
-Any webserver will require to install the [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) package and the following edit to enable sqlite and sockets extension:
 
 Per ragioni di sicurezza, se vuoi popolare la direttiva [PHP open_basedir](/index.php/PHP#Configuration "PHP"), l'interfaccia web di amministrazione di Pi-hole necessita l'accesso ai seguenti file e cartelle:
 
@@ -97,6 +95,8 @@ Per ragioni di sicurezza, se vuoi popolare la direttiva [PHP open_basedir](/inde
 ##### Lighttpd
 
 Installa [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) e [php-cgi](https://www.archlinux.org/packages/?name=php-cgi).
+
+Copia il file di configurazione fornito dal pacchetto:
 
 ```
 # cp /usr/share/pihole/configs/lighttpd.example.conf /etc/lighttpd/lighttpd.conf
@@ -140,7 +140,21 @@ Abilita `nginx.service` `php-fpm.service` e ri/avvia i servizi.
 #### FTL
 
 FTL è parte del progetto Pi-hole. E' un interfaccia simil-database/fornitore di API sul log delle richieste DNS di Pi-hole. FTL è l'unico modo in cui l'interfaccia web di Pi-hole accede ai dati raccolti sull'uso di dnsmasq ed è quindi una dipendenza.
-E' possibile configurare FTL attraverso il file `/etc/pihole/pihole-FTL.conf`. [Leggi](https://github.com/pi-hole/FTL#ftls-config-file) la documentazione del progetto per i dettagli. `pi-hole-ftl.service` è abilitato staticamente; ri/avvialo.
+E' possibile configurare FTL modificando il file `/etc/pihole/pihole-FTL.conf` con i seguenti parametri (la prima opzione è la predefinita):
+
+*   SOCKET_LISTENING=localonly|all (Ascoltare solamente connessioni locali o tutte)
+*   TIMEFRAME=rolling24h|yesterday|today (Finestra temporale dei dati ultime 24h relative, fino a 48h (oggi + ieri), o fino a 24h (solo oggi, come in Pi-hole v2.x ))
+*   QUERY_DISPLAY=yes|no (Mostrare tutte le richieste? Impostarlo a no per nasconderle)
+*   AAAA_QUERY_ANALYSIS=yes|no (Permette a FTL di analizzare le richieste AAAA da pihole.log?)
+*   MAXDBDAYS=365 (Per quanto tempo le richieste devono venire conservate nel database?)
+*   RESOLVE_IPV6=yes|no (FTL deve provare di risolvere gli indirizzi IPv6?)
+*   RESOLVE_IPV4=yes|no (FTL deve provare di risolvere gli indirizzi IPv4?)
+*   DBINTERVAL=1.0 (Quanto spesso devono essere scritte le richieste nel database FTL [minuti]?)
+*   DBFILE=/etc/pihole/pihole-FTL.db (Specifica percorso e nome del database SQLite a lungo termine di FTL. Impostandolo a DBFILE= disabilita il database)
+
+**Tip:** Se Pi-hole è installato su una unità a stato solito (SD dei mini PC, SSD, unità M.2/NVMe, etc...) si raccomanda di settare il valore di DBINTERVAL almeno a 60.0 per prolungarne la vita.
+
+`pi-hole-ftl.service` è abilitato staticamente; ri/avvialo.
 
 ### Configurazione del router e di Pi-hole
 

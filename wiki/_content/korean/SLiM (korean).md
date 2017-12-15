@@ -1,3 +1,7 @@
+관련 항목
+
+*   [Display Manager](/index.php/Display_Manager "Display Manager")
+
 [SLiM](http://slim.berlios.de/)은 간단한 로그인 관리자입니다. SLiM은 간단합니다. SLiM은 가벼우며 쉽게 설정할 수 있습니다. SLiM은 [GNOME](/index.php/GNOME "GNOME") 또는 [KDE](/index.php/KDE "KDE")에 의존되지 않으며 단독으로 사용할 수 있습니다. [Xfce](/index.php/Xfce "Xfce"), [Openbox](/index.php/Openbox "Openbox"), [Fluxbox](/index.php/Fluxbox "Fluxbox") 등 가벼운 데스크톱을 좋아하는 분들은 시스템을 가볍게 할 수 있습니다.
 
 ## Contents

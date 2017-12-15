@@ -189,26 +189,6 @@ Multiple resolutions can be specified, including the default `auto`, so it is re
 
 If this method does not work for you, the deprecated `vga=` method will still work. Just add it next to the `"GRUB_CMDLINE_LINUX_DEFAULT="` line in `/etc/default/grub` for example: `"GRUB_CMDLINE_LINUX_DEFAULT="quiet splash vga=792"` will give you a `1024x768` resolution.
 
-**Tip:** `hwinfo --framebuffer` will present the code of each mode in hexadecimal format. To convert it to decimal you can simply use a [Bash](/index.php/Bash "Bash") console. For example, consider we want to use the following mode: `# hwinfo --framebuffer` 
-```
-*[...]*
-Mode 0x034a: 1600x1200 (+6400), 24 bits
-*[...]*
-```
-
-To convert the mode code to decimal run the following in a Bash console:
-
-```
-$ echo $((16#*hexcode*))
-
-```
-
-In this example:
-
- `$ echo $((16#034a))`  `842` 
-
-So the correct kernel parameter would be `vga=842` for our `1600x1200x24` resolution example.
-
 ### 915resolution hack
 
 Sometimes for Intel graphic adapters neither `# hwinfo --framebuffer` nor `videoinfo` will show you the desired resolution. In this case you can use the `915resolution` hack. This hack will temporarily modify video BIOS and add needed resolution. See [915resolution's home page](http://915resolution.mango-lang.org/). The package can be found here: [915resolution](https://aur.archlinux.org/packages/915resolution/)
@@ -618,9 +598,9 @@ To do so, first create the necessary directory, and then copy across the grub `.
 
 ### GRUB standalone
 
-This section assumes you are creating a standalone GRUB for x86_64 systems (x86_64-efi). For i686 systems, replace `x86_64-efi` with `i386-efi` where appropriate.
+This section assumes you are creating a standalone GRUB for x86_64 systems (x86_64-efi). For 32-bit (IA32) EFI systems, replace `x86_64-efi` with `i386-efi` where appropriate.
 
-It is possible to create a `grubx64_standalone.efi` application which has all the modules embedded in a tar archive within the UEFI application, thus removing the need for having a separate directory populated with all of the GRUB UEFI modules and other related files. This is done using the `grub-mkstandalone` command (included in [grub](https://www.archlinux.org/packages/?name=grub)) as follows:
+It is possible to create a `grubx64_standalone.efi` application which has all the modules embedded in a tar archive within the UEFI application, thus removing the need to have a separate directory populated with all of the GRUB UEFI modules and other related files. This is done using the `grub-mkstandalone` command (included in [grub](https://www.archlinux.org/packages/?name=grub)) as follows:
 
 ```
 # echo 'configfile ${cmdpath}/grub.cfg' > /tmp/grub.cfg

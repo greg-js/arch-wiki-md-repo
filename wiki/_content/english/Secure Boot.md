@@ -200,15 +200,15 @@ Install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools).
 
 You will need:
 
-	`.key`
+	*.key*
 
 	PEM format **private** key for EFI binary signing.
 
-	`.crt`
+	*.crt*
 
 	PEM format certificate for *sbsign*.
 
-	`.cer`
+	*.cer*
 
 	DER format certificate for *MokManager*.
 
@@ -279,23 +279,23 @@ To generate keys, [install](/index.php/Install "Install") [efitools](https://www
 
 You will need private keys and certificates in multiple formats:
 
-	`.key`
+	*.key*
 
 	PEM format **private** keys for EFI binary and EFI signature list signing.
 
-	`.crt`
+	*.crt*
 
 	PEM format certificates for *sbsign*.
 
-	`.cer`
+	*.cer*
 
 	DER format certificates for firmware.
 
-	`.esl`
+	*.esl*
 
 	Certificates in EFI Signature List for *KeyTool* and/or firmware.
 
-	`.auth`
+	*.auth*
 
 	Certificates in EFI Signature List with authentication header (i.e. a signed certificate update file) for *KeyTool* and/or firmware.
 
@@ -423,7 +423,7 @@ Copy all `*.cer`, `*.esl`, `*.auth` to a FAT formatted file system (you can use 
 
 Launch firmware setup utility or KeyTool and enroll **db**, **KEK** and **PK** certificates.
 
-If the used tool supports it prefer using `.auth` and `.esl` over `.cer`.
+If the used tool supports it prefer using *.auth* and *.esl* over *.cer*.
 
 **Warning:** Enrolling Platform Key sets Secure Boot in "User Mode", so it should be enrolled last.
 

@@ -49,7 +49,7 @@ Install fan control and custom kernel and more using `# pacman -S --force gpd-po
 
 Backlight control requires **pwm_lpss** and **pwm_lpss_platform** kernel modules, which is included in the **linux-jwrdegoede** (AKA. Hans) kernel, but not in the vanilla kernel up to 4.14-2\. Hans kernel is a dependency of gpd-pocket-support.
 
-If you wish to setup [KMS in early userspace](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting"), remember to include the above 2 modules together with **i915**, otherwise these modules would not load afterwards.
+If you wish to setup [KMS in early userspace](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting"), remember to include the above 2 modules **BEFORE i915**, otherwise these modules would not load afterwards.
 
 ### Power and Fan
 
@@ -66,6 +66,8 @@ DISK_IOSCHED="deadline"
 ```
 
 Copy fan config `# cp /etc/default/gpd-fan.example /etc/default/gpd-fan` and uncomment settings.
+
+**Note:** If you use the latest version of `linux-jwrdegoede` (Hans kernel 4.15.0-rc3), a kernel driver `gpd_pocket_fan` is already present in the kernel. In this case, you should either disable or mask the `gpd-fan` systemd service or disable the kernel module using `/etc/modprobe.d`
 
 ### WiFi
 
@@ -173,6 +175,8 @@ Turn off realtime_scheduleing by editing /etc/pulse/daemon.conf.
 `realtime-scheduling = no`
 
 **Note:** You might need to manually select the correct output (Speaker) sometimes through pactl or your desktop's settings page.
+
+**Note:** After upgrading the system, it is possible that these steps of sound setup need to be done again. Alsa upstream is [discussing](http://mailman.alsa-project.org/pipermail/alsa-devel/2017-December/129105.html) on merging per-board UCM configuration, with which we won't need to do these manually any more.
 
 ### SDDM
 

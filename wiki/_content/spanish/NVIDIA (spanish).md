@@ -1,3 +1,10 @@
+Artículos relacionados
+
+*   [Nouveau (Español)](/index.php/Nouveau_(Espa%C3%B1ol) "Nouveau (Español)")
+*   [Bumblebee (Español)](/index.php/Bumblebee_(Espa%C3%B1ol) "Bumblebee (Español)")
+*   [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
+*   [Xorg (Español)](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)")
+
 Este artículo trata sobre la instalación y configuración de los controladores *propietarios* para la tarjeta gráfica [NVIDIA](http://www.nvidia.com). Si, por el contrario, desea obtener información acerca de los controladores de código abierto, consulte [Nouveau](/index.php/Nouveau_(Espa%C3%B1ol) "Nouveau (Español)").
 
 ## Contents

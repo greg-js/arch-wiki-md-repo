@@ -207,7 +207,7 @@ A [discussion thread](https://bbs.archlinux.org/viewtopic.php?id=129762) has bee
 
 **Note:** This method works, but is not very elegant requiring duplication of distccd on all nodes AND need to have a 32-bit chroots on all nodes.
 
-Assuming the user has a [32-bit chroot](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64") setup and configured on **each node** of the distcc cluster, the strategy is to have two separate instances of distccd running on different ports on each node -- one runs in the native x86_64 environment and the other in the x86 chroot on a modified port. Start makepkg via a [schroot command](/index.php/Install_bundled_32-bit_system_in_64-bit_system#Schroot "Install bundled 32-bit system in 64-bit system") invoking makepkg.
+Assuming the user has a [32-bit chroot](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system") setup and configured on **each node** of the distcc cluster, the strategy is to have two separate instances of distccd running on different ports on each node -- one runs in the native x86_64 environment and the other in the x86 chroot on a modified port. Start makepkg via a [schroot command](/index.php/Install_bundled_32-bit_system_in_64-bit_system#Schroot "Install bundled 32-bit system in 64-bit system") invoking makepkg.
 
 ##### Add port numbers to DISTCC_HOSTS on the i686 chroot
 

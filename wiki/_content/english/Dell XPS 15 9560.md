@@ -1,21 +1,21 @@
 **Note:** This page refers to the 9560 revision of the XPS 15\. Most of it also applies to the Precision 5520
 
 | **Device/Functionality** | **Status** |
-| Suspend | Buggy |
-| Hibernate | Working |
-| Integrated Graphics | Working |
-| Discrete Nvidia Graphics | Modify |
-| Wifi | Working |
-| Bluetooth | Working |
-| rfkill | Working |
+| [Suspend](#Suspend_and_Hibernate) | Buggy |
+| [Hibernate](#Suspend_and_Hibernate) | Working |
+| [Integrated Graphics](#Graphics) | Working |
+| [Discrete Nvidia Graphics](#Graphics) | Modify |
+| [Wifi](#Wifi_and_Bluetooth) | Working |
+| [Bluetooth](#Wifi_and_Bluetooth) | Working |
+| [rfkill](#Wifi_and_Bluetooth) | Working |
 | Audio | Working |
-| Touchpad | Working |
+| [Touchpad](#Touchpad) | Working |
 | Webcam | Working |
 | Card Reader | Working |
 | Function/Multimedia Keys | Working |
-| Power Management | Modify |
-| EFI firmware updates | Working |
-| Fingerprint reader | Not working |
+| [Power Management](#Power_Saving) | Modify |
+| [EFI firmware updates](#UEFI) | Working |
+| [Fingerprint reader](#Fingerprint_reader) | Not working |
 
 This page contains recommendations for running Arch Linux on the Dell XPS 15 9560 (late 2016). With some configuration almost all the hardware is well supported. Exceptions are the fingerprint reader, occasional locks on resuming from suspend experienced by some users, and the lack of support for PRIME render offload to the discrete GPU in the Nvidia proprietary driver.
 

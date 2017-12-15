@@ -96,32 +96,30 @@ ssh orion.archlinux.org /community/db-repo-remove community arch pkgname
 
 ```
 
-Here and in the following text, *arch* can be one of *i686* or *x86_64* which are the two architectures supported by Arch Linux.
+Here and in the following text, *arch* should be *x86_64* which is the only architecture supported by Arch Linux since [i686 support has been deprecated](https://www.archlinux.org/news/the-end-of-i686-support/).
 
-**Note:** If you are editing packages of the *any* architecture you can simply run the x64 scripts which will also work.
+**Note:** If you are editing packages of the *any* architecture you can simply run the x86_64 scripts which will also work.
 
 When you are done with editing the PKGBUILD, etc., you should **commit** the changes (`svn commit`).
 
-Build the package with `mkarchroot` or the helper scripts `extra-i686-build` and `extra-x86_64-build`. If you want to upload to testing you also need to build with the testing scripts `testing-i686-build` and `testing-x86_64-build`.
+Build the package with `mkarchroot` or the helper script `extra-x86_64-build`. If you want to upload to testing you also need to build with the testing script `testing-x86_64-build`.
 
 Sign the package with `gpg --detach-sign *.pkg.tar.xz`. If you are using a different PGP key for package signing you can add it to `~/.makepkg.conf` with `GPGKEY=<identifier>`.
 
-When you want to **release** a package, first copy the package along with its signatures to the *staging/community* directory on *orion.archlinux.org* using `scp` and then **tag** the package by going to the *pkgname/trunk* directory and issuing `archrelease community-arch`. This makes an svn copy of the trunk entries in a directory named *community-i686* or *community-x86_64* indicating that this package is in the community repository for that architecture. Note that the staging directory is different from the staging repository and every package needs to be uploaded the to staging directory. This process can be automated with the `communitypkg` script, see the summary below.
-
-***Note:** In some cases, especially for community packages, an x86_64 TU might bump the pkgrel by .1 (and not +1). This indicates that the change to the PKGBUILD is x86_64 specific and i686 maintainers **should not** rebuild the package for i686\. When the TU decides to bump the pkgrel, it should be done with the usual increment of +1\. However, a previous pkgrel=2.1 must not become pkgrel=3.1 when bumped by the TU and must instead be pkgrel=3\. In a nutshell, leave dot (.) releases exclusive to the x86_64 TU's to avoid confusion.*
+When you want to **release** a package, first copy the package along with its signatures to the *staging/community* directory on *orion.archlinux.org* using `scp` and then **tag** the package by going to the *pkgname/trunk* directory and issuing `archrelease community-arch`. This makes an svn copy of the trunk entries in a directory named *community-x86_64* indicating that this package is in the community repository for that architecture. Note that the staging directory is different from the staging repository and every package needs to be uploaded to the staging directory. This process can be automated with the `communitypkg` script, see the summary below.
 
 **Package update summary:**
 
 *   **Update** the package directory: `svn update some-package`.
 *   **Change** to the package trunk directory: `cd some-package/trunk`.
 *   **Edit** the PKGBUILD, make necessary changes, update hashes with `updpkgsums`.
-*   **Build** the package: either `makechrootpkg` or `extra-i686-build` and `extra-x86_64-build`. It is **mandatory** to build in a [clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot").
+*   **Build** the package: `makechrootpkg` or `extra-x86_64-build`. It is **mandatory** to build in a [clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot").
 *   **[Namcap](/index.php/Namcap "Namcap")** the PKGBUILD and the binary `pkg.tar.gz`.
 *   **Commit**, **Sign**, **Copy** and **Tag** the package using `communitypkg "commit message"`. This automates the following:
     *   **Commit** the changes to trunk: `svn commit`.
     *   **Sign** the package: `gpg --detach-sign *.pkg.tar.xz`.
     *   **Copy** the package and its signature to *orion.archlinux.org*: `scp *.pkg.tar.xz *.pkg.tar.xz.sig orion.archlinux.org:staging/community/`.
-    *   **Tag** the package: `archrelease community-{i686,x86_64`}.
+    *   **Tag** the package: `archrelease community-x86_64`.
 *   **Update** the repository: `ssh orion.archlinux.org /community/db-update`.
 
 Also see the *Miscellaneous* section in the [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") and [SSH keys#ssh-agent](/index.php/SSH_keys#ssh-agent "SSH keys"). For the section *Avoid having to enter your password all the time* use *orion.archlinux.org* instead of *gerolde.archlinux.org*.

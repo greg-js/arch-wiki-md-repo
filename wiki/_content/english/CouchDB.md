@@ -26,7 +26,7 @@ After installation [Start/Enable](/index.php/Systemd#Using_units "Systemd") the 
 
 ```
 
-see [Single Node Setup](http://docs.couchdb.org/en/latest/install/index.html) for more. Also, you might want to take a look at [CouchDB#Single node setup & Security](/index.php/CouchDB#Single_node_setup_.26_Security "CouchDB").
+see [Single Node Setup](http://docs.couchdb.org/en/latest/install/index.html) for more. Also, you might want to take a look at [#Single node setup & Security](#Single_node_setup_.26_Security).
 
 ## Usage
 

@@ -468,7 +468,7 @@ To enable it, add the following to your `~/rtorrent.rc`:
 
 ### Manage completed files
 
-**Note:** If you are having trouble with this tip, it is probably easier to follow [this](https://github.com/rakshasa/rtorrent/wiki/Common-Tasks-in-rTorrent#move-completed-torrents-to-a-fixed-location).
+**Note:** If you are having trouble with this tip, it may be easier to follow the [docs](https://github.com/rakshasa/rtorrent/wiki/Common-Tasks-in-rTorrent#move-completed-torrents-to-a-fixed-location).
 
 It is possible to have rtorrent organize completed torrent data to specific folders based on which 'watch' folder you drop the *.torrent into while continuing to seed.
 

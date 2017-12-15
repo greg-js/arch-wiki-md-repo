@@ -1,3 +1,10 @@
+Related articles
+
+*   [Octave](/index.php/Octave "Octave")
+*   [Sage-mathematics](/index.php/Sage-mathematics "Sage-mathematics")
+*   [Mathematica](/index.php/Mathematica "Mathematica")
+*   [Matlab](/index.php/Matlab "Matlab")
+
 From the [official website](http://www.maplesoft.com/products/maple/):
 
 	*Maple is a high-level language and interactive environment for numerical computation, visualization, and programming. Using Maple, you can analyze data, develop algorithms, and create models and applications. The language, tools, and built-in math functions enable you to explore multiple approaches and reach a solution faster than with spreadsheets or traditional programming languages, such as C/C++ or Java.*

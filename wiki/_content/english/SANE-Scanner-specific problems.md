@@ -282,6 +282,6 @@ where xx.xx.xx.xx is the static ip address of the printer.
 
 ### Snapscan e40
 
-Firmware Snape40.bin needed. Found it [here](https://sites.google.com/site/rameyarnaud/media/books/agfa-scanners-with-linux).
+Firmware `Snape40.bin` from [here](https://sites.google.com/site/rameyarnaud/media/books/agfa-scanners-with-linux) is required.
 
-The scanner doesn't like usb autosuspend. If it need to be turned off and on again for each scan disable autosuspend. (using eg. powertop)
+If USB autosuspend is enabled, the printer may need to be turned off and on again before each scan. USB autosuspend can be disabled using [powertop](/index.php/Powertop "Powertop").

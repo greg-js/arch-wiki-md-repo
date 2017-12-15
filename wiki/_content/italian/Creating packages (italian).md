@@ -1,3 +1,13 @@
+Articoli correlati
+
+*   [Arch Build System (Italiano)](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)")
+*   [Arch User Repository (Italiano)](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)")
+*   [Arch Packaging Standards (Italiano)](/index.php/Arch_Packaging_Standards_(Italiano) "Arch Packaging Standards (Italiano)")
+*   [makepkg (Italiano)](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)")
+*   [pacman (Italiano)](/index.php/Pacman_(Italiano) "Pacman (Italiano)")
+*   [PKGBUILD (Italiano)](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)")
+*   [VCS PKGBUILD Guidelines](/index.php/VCS_PKGBUILD_Guidelines "VCS PKGBUILD Guidelines")
+
 Questo articolo si propone di assistere gli utenti nella creazione dei propri pacchetti con il sistema di compilazione "ports-like" di Arch Linux. riguarda la creazione di un [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)"), un pacchetto con la descrizione dei file sorgente utilizzato da `makepkg` per creare un pacchetto binario dal codice sorgente. Se si è già in possesso di un `PKGBUILD`, vedere [makepkg](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)").
 
 ## Contents

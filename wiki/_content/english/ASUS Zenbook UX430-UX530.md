@@ -105,7 +105,7 @@ And finally, [start and enable](/index.php/Systemd#Using_units "Systemd") `fix_h
 
 ## Fan spins all the time
 
-See [Fan speed control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control"). Also see [#Linux_kernel_4.13_issues](#Linux_kernel_4.13_issues)
+See [Fan speed control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control"). Also see [#Linux kernel 4.13 issues](#Linux_kernel_4.13_issues)
 
 ## Microcode
 

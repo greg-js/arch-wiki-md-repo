@@ -9,12 +9,14 @@
 *   [2 catkin_make](#catkin_make)
 *   [3 catkin build](#catkin_build)
 *   [4 Rebuild when shared libraries are updated](#Rebuild_when_shared_libraries_are_updated)
+*   [5 Ros 2](#Ros_2)
+    *   [5.1 Usage Examples](#Usage_Examples)
 
 ## Installation Instructions
 
 ### Lunar
 
-ROS Lunar is available in AUR packages and seems to be working quite nicely although it lacks some simulators of the [ros-lunar-desktop-full](https://aur.archlinux.org/packages/ros-lunar-desktop-full/) package, the [ros-lunar-desktop](https://aur.archlinux.org/packages/ros-lunar-desktop/) is complete and seems to have everything functional.
+ROS Lunar is available in AUR packages and seems to be working quite nicely. The [ros-lunar-desktop-full](https://aur.archlinux.org/packages/ros-lunar-desktop-full/) is complete and seems to have everything functional.
 
 ### Kinetic
 
@@ -51,3 +53,111 @@ When you update a library that ROS depends on (e.g. Boost), all packages that li
 [https://seangreenslade.com/h/snippets/ros-find-outofdate.py](https://seangreenslade.com/h/snippets/ros-find-outofdate.py)
 
 (Note that the script requires [pyalpm](https://www.archlinux.org/packages/?name=pyalpm) to be installed.)
+
+## Ros 2
+
+**Warning:** Work in progress
+
+Build instructions are available at [https://github.com/ros2/ros2/wiki/Linux-Development-Setup](https://github.com/ros2/ros2/wiki/Linux-Development-Setup) (requires [python-vcstool](https://aur.archlinux.org/packages/python-vcstool/)). First fetch the sources:
+
+```
+$ mkdir -p ~/ros2_ws/src
+$ cd ~/ros2_ws
+$ wget [https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos](https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos)
+$ vcs-import src < ros2.repos
+
+```
+
+Presently some fixes are required:
+
+```
+$ cd ~/ros2_ws/src/ros2/rviz/
+$ git remote add racko [https://github.com/racko/rviz.git](https://github.com/racko/rviz.git)
+$ git fetch racko added_cmake_project_type fix_fallthrough fix_wrong_yaml_cpp
+$ git cherry-pick racko/added_cmake_project_type racko/fix_fallthrough racko/fix_wrong_yaml_cpp
+
+```
+
+Now you can build the workspace:
+
+```
+$ cd ~/ros2_ws
+$ src/ament/ament_tools/scripts/ament.py build --build-tests --symlink-install
+
+```
+
+This build may fail due to missing dependencies and you need to figure out which package you need to install by yourself (for now).
+
+Read [https://github.com/ros2/ros1_bridge/blob/master/README.md#build-the-bridge-from-source](https://github.com/ros2/ros1_bridge/blob/master/README.md#build-the-bridge-from-source) regarding Ros 1 / Ros 2 interoperability.
+
+### Usage Examples
+
+First source the workspace:
+
+```
+$ . ~/ros2_ws/install/local_setup.bash
+
+```
+
+Functionality comparable to `roscore`, `rosnode`, `rostopic`, `rosmsg`, `rospack`, `rosrun` and `rosservice` is available via `ros2`:
+
+```
+$ ros2 -h
+usage: ros2 [-h] Call `ros2 <command> -h` for more detailed usage. ... 
+
+ros2 is an extensible command-line tool for ROS 2.
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+Commands:
+  daemon    Various daemon related sub-commands
+  msg       Various msg related sub-commands
+  node      Various node related sub-commands
+  pkg       Various package related sub-commands
+  run       Run a package specific executable
+  security  Various security related sub-commands
+  service   Various service related sub-commands
+  srv       Various srv related sub-commands
+  topic     Various topic related sub-commands
+
+  Call `ros2 <command> -h` for more detailed usage.
+
+```
+
+A typical "Hello World" example starts with running a publisher node:
+
+```
+$ ros2 topic pub /chatter 'std_msgs/String' "data: 'Hello World'"
+
+```
+
+Then, in another terminal, you can run a subscriber (Don't forget to source the workspace in every new terminal):
+
+```
+$ ros2 topic echo /chatter
+
+```
+
+List existing nodes:
+
+```
+$ ros2 node list
+publisher_std_msgs_String
+
+```
+
+List topics:
+
+```
+$ ros2 topic list
+/chatter
+
+```
+
+Ros 2's version of rviz is
+
+```
+$ rviz2
+
+```

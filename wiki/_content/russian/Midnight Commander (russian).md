@@ -49,7 +49,7 @@ Midnight Commander имеет графический интерфейс, кот�
 
 ## Usage
 
-The below section provides a short overview on usage of Midnight commander. References to mc(1) and the Help function (`F1`, available in every dialog) are made in this article as `**Section**`.
+The below section provides a short overview on usage of Midnight commander. References to [mc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1) and the Help function (`F1`, available in every dialog) are made in this article as `**Section**`.
 
 **Tip:** All hints are available in `/usr/share/mc/hints/`.
 
@@ -101,7 +101,7 @@ export MC_KEYMAP=/etc/mc/mc.emacs.keymap
 
 ```
 
-Смотрите также mc(1) для получения более подробной информации.
+Смотрите также [mc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1) для получения более подробной информации.
 
 ### Навигация стрелками
 

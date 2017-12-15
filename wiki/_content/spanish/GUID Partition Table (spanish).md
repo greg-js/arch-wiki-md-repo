@@ -1,3 +1,10 @@
+Artículos relacionados
+
+*   [Arch Boot Process (Español)](/index.php/Arch_Boot_Process_(Espa%C3%B1ol) "Arch Boot Process (Español)")
+*   [Master Boot Record (Español)](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)")
+*   [Unified Extensible Firmware Interface (Español)](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)")
+*   [Partitioning (Español)](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)")
+
 GUID Partition Table (GPT) es un nuevo formato de particionado integrante de la especificación [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), que usa un [identificador único global](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") para los dispositivos. Es diferente del [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") (el estilo más comúnmente utilizado de partición) en muchos aspectos y tiene muchas ventajas.
 
 **Advertencia:** Si quiere un arranque dual con Windows en la misma unidad, recuerde que Windows no puede arrancar desde un disco con tabla GPT en modalidad BIOS. Si ya tiene instalado Windows en la unidad con tabla de particiones MBR para arrancar a través de la BIOS, no convierta la unidad a una tabla de particionado GPT, dado que Windows no podrá arrancar, independientemente del gestor de arranque que utilice para cargar Windows. Necesita instalar Windows en modo UEFI y utilizar uno de los [gestores de arranque de UEFI](/index.php/UEFI_Bootloaders "UEFI Bootloaders") para cargar en cadena Windows, si se está arrancando desde una unidad con tabla GPT. Esta es una limitación de Windows.

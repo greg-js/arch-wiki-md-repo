@@ -1,3 +1,10 @@
+Articoli correlati
+
+*   [Nouveau](/index.php/Nouveau_(Italiano) "Nouveau (Italiano)")
+*   [Bumblebee](/index.php/Bumblebee_(Italiano) "Bumblebee (Italiano)")
+*   [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
+*   [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)")
+
 Questo articolo tratta dell'installazione e configurazione dei driver proprietari per schede grafiche [NVIDIA](http://www.nvidia.com). Si veda [Nouveau](/index.php/Nouveau "Nouveau") per le informazioni sui driver open-source. Si consulti invece l'articolo [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") se disponete di un portatile che sfrutta questa tecnologia.
 
 ## Contents

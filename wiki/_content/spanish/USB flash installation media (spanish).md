@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [Optical Disc Drive (Español)](/index.php/Optical_Disc_Drive_(Espa%C3%B1ol) "Optical Disc Drive (Español)")
+*   [Archiso (Español)](/index.php/Archiso_(Espa%C3%B1ol) "Archiso (Español)")
+*   [Multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive")
+
 Esta página aborda varios métodos sobre cómo escribir la instatánea de Arch Linux en una unidad USB (también conocida por *«unidad flash», «lápiz USB», «llave USB»*, etc.) El resultado será un sistema de tipo LiveCD (*«LiveUSB»*, si se prefiere) que, debido a la naturaleza de [SquashFS](https://en.wikipedia.org/wiki/es:SquashFS "wikipedia:es:SquashFS"), descarta todos los cambios una vez que se apaga el equipo.
 
 Si desea realizar una instalación completa de Arch Linux desde una unidad USB (es decir, con valores persistentes), véase [Intatar Arch Linux en una llave USB](/index.php/Installing_Arch_Linux_on_a_USB_key_(Espa%C3%B1ol) "Installing Arch Linux on a USB key (Español)"). Si desea usar la llave USB arrancable de Arch Linux como un USB de rescate, consulte [Change Root](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)").

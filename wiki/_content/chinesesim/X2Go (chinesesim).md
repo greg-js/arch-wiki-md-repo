@@ -1,3 +1,5 @@
+Related articles
+
 **翻译状态：** 本文是英文页面 [X2Go](/index.php/X2Go "X2Go") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-08-20，点击[这里](https://wiki.archlinux.org/index.php?title=X2Go&diff=0&oldid=389933)可以查看翻译后英文页面的改动。
 
 [X2Go](http://wiki.x2go.org) 使你可以通过网络访问一台计算机的图形化桌面。访问时的网络传输使用了 [Secure Shell](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)") 协议，因而传输是加密的。

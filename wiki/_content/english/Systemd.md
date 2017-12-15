@@ -299,7 +299,7 @@ See the [systemd.service(5)](http://www.freedesktop.org/software/systemd/man/sys
 
 ### Editing provided units
 
-To avoid conflicts with pacman, unit files provided by packages should not be directly edited. There are two safe ways to modify a unit without touching the original file: create a new unit file which overrides the original unit or create drop-in snippets which are applied on top of the original unit. For both methods, you must reload the unit afterwards to apply your changes. This can be done either by editing the unit with `systemctl edit` (which reloads the unit automatically) or by reloading all units with:
+To avoid conflicts with pacman, unit files provided by packages should not be directly edited. There are two safe ways to modify a unit without touching the original file: create a new unit file which [overrides the original unit](#Replacement_unit_files) or create [drop-in snippets](#Drop-in_files) which are applied on top of the original unit. For both methods, you must reload the unit afterwards to apply your changes. This can be done either by editing the unit with `systemctl edit` (which reloads the unit automatically) or by reloading all units with:
 
 ```
 # systemctl daemon-reload
@@ -310,7 +310,7 @@ To avoid conflicts with pacman, unit files provided by packages should not be di
 
 *   You can use *systemd-delta* to see which unit files have been overridden or extended and what exactly has been changed.
 *   Use `systemctl cat *unit*` to view the content of a unit file and all associated drop-in snippets.
-*   Syntax highlighting for *systemd* unit files within [Vim](/index.php/Vim "Vim") can be enabled by installing [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd).
+*   The default syntax highlighting for *systemd* unit files within [Vim](/index.php/Vim "Vim") is the same as for [INI files](https://en.wikipedia.org/wiki/Ini_file "wikipedia:Ini file"). However, if you want something more systemd-specific, install [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd).
 
 #### Replacement unit files
 

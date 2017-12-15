@@ -1,8 +1,4 @@
-## Build 32-bit packages in a 64-bit environment
-
 **Note:** [devtools](https://www.archlinux.org/packages/?name=devtools) is needed. Because of circular dependencies, you may need to install [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) at the same time.
-
-**Note:** If you are using or plan to use either [Install bundled 32-bit system in Arch64](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64") you will need to use a different directory other than /opt/arch32 since this tutorial will conflict with the directory chosen in the other articles.
 
 This example uses mkarchroot to create the chroot environment. First, create /opt/arch32 or another directory of your choice. The next steps is to copy your existing pacman.conf and makepkg.conf file to /opt/arch32 or your chosen directory. In the following tutorial, substitute /opt/arch32 with your chosen directory if you decide to use a different directory.
 
@@ -13,8 +9,6 @@ This example uses mkarchroot to create the chroot environment. First, create /op
 Change `Architecture = auto` to `Architecture = i686`.
 
 You will also need to comment out any multi-lib repos.
-
-**Note:** *Thanks to Remy Oudompheng to pointing this out.* devtools (version 0.9.10 in [testing]) contains a ready-to-use /usr/share/devtools/makepkg-i686.conf. If you decide to use this conf file, you can skip the next step. You will need to copy /usr/share/devtools/makepkg-i686.conf to /opt/arch32/makepkg.conf if you decide to use devtools[from testing].
 
 **Edit /opt/arch32/makepkg.conf**
 

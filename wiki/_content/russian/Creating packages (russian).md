@@ -1,3 +1,15 @@
+Ссылки по теме
+
+*   [Arch Build System (Русский)](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)")
+*   [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
+*   [Arch User Repository (Русский)](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)")
+*   [Creating packages for other distributions](/index.php/Creating_packages_for_other_distributions "Creating packages for other distributions")
+*   [makepkg (Русский)](/index.php/Makepkg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Makepkg (Русский)")
+*   [pacman (Русский)](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)")
+*   [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS")
+*   [PKGBUILD (Русский)](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)")
+*   [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot")
+
 Документ [ABS - The Arch Build System](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)") дает хороший обзор инструментов и файлов, необходимых для создания и изменения пакетов для Arch Linux. Скорее всего, здесь вы найдете все, что нужно знать для настройки или пересборки существующих пакетов. В то же время, если вам нужно создать новый пакет, существует несколько дополнительных статей, которые помогут вам в этом. Этот документ изначально предполагает, что вы прочитали и поняли описание ABS.
 
 ## Contents
@@ -141,7 +153,7 @@
 
 ## Более подробные указания
 
-****Указания по созданию пакетов****
+**<a class="mw-selflink selflink">Указания по созданию пакетов</a>**
 
 * * *
 

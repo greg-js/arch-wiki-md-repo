@@ -87,7 +87,7 @@ Hiawatha supports two different methods to send information to the FastCGI proce
 
 ### Enable SSL/TLS
 
-First, you need a *X.509 SSL/TLS* certificate to use TLS. If you do not, you can use a [#Self-signed certificate](#Self-signed_certificate) or use one for free from [#Let's Encrypt](#Let.27s_Encrypt) certificate authority.
+First, you need a *X.509 SSL/TLS* certificate to use TLS. If you do not, you can use a [#Self-signed certificate](#Self-signed_certificate) or use one for free from [#Let's Encrypt certificate](#Let.27s_Encrypt_certificate) certificate authority.
 
 The order of the items in the certificate file is important and has to be as follows:
 
@@ -149,7 +149,7 @@ VirtualHost {
 
 ### Self-signed certificate
 
-If you only need a local self-signed certificate for webdevelopment eg. you can easily do this with
+If you only need a local self-signed certificate for webdevelopment eg. you can easily do this with:
 
 ```
 # cd /etc/hiawatha/tls
@@ -158,7 +158,7 @@ If you only need a local self-signed certificate for webdevelopment eg. you can 
 
 ```
 
-Make sure you did add the SSL bundle path to your `hiawatha.conf` as stated in [#Basics](#Basics) section.
+Make sure you did add the SSL bundle path to your `hiawatha.conf` as stated in [#Enable SSL/TLS](#Enable_SSL.2FTLS).
 
 As this solution doesn't use an official certificate authority (CA), you will have to add a security exception the first time you connect to your website.
 

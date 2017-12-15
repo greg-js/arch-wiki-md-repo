@@ -1,5 +1,11 @@
 **Estado de la traducción:** este artículo es una versión traducida de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"). Fecha de la última traducción/revisión: **2016-04-03**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=426982).
 
+Artículos relacionados
+
+*   [Arch terminology](/index.php/Arch_terminology "Arch terminology")
+*   [Arch User Repository#FAQ](/index.php/Arch_User_Repository#FAQ "Arch User Repository")
+*   [General troubleshooting (Español)](/index.php/General_troubleshooting_(Espa%C3%B1ol) "General troubleshooting (Español)")
+
 Además de las preguntas tratadas más abajo, es posible que encuentre interesante la lectura de los artículos [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)") y [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)"). Ambos artículos contienen información muy útil sobre Arch Linux.
 
 ## Contents
