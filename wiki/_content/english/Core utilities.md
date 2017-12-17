@@ -378,7 +378,7 @@ $ ss -au
 
 ```
 
-For more information see [ss(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) or `ss.html` from the [iproute2-doc](https://www.archlinux.org/packages/?name=iproute2-doc) package.
+For more information see [ss(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) or `ss.html` from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
 
 ## tar
 

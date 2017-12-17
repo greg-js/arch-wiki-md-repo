@@ -2,11 +2,10 @@
 
 *   [1 Directories that must be used](#Directories_that_must_be_used)
 *   [2 Creating chroots and building packages](#Creating_chroots_and_building_packages)
-*   [3 i686](#i686)
-*   [4 x86_64](#x86_64)
-*   [5 Packager && Makeflags](#Packager_.26.26_Makeflags)
-*   [6 Connecting to sigurd or gerolde from brynhild](#Connecting_to_sigurd_or_gerolde_from_brynhild)
-*   [7 Generating rebuilding list when soname is bumped](#Generating_rebuilding_list_when_soname_is_bumped)
+*   [3 x86_64](#x86_64)
+*   [4 Packager && Makeflags](#Packager_.26.26_Makeflags)
+*   [5 Connecting to sigurd or gerolde from brynhild](#Connecting_to_sigurd_or_gerolde_from_brynhild)
+*   [6 Generating rebuilding list when soname is bumped](#Generating_rebuilding_list_when_soname_is_bumped)
 
 ## Directories that must be used
 
@@ -17,12 +16,9 @@ All users should use **only** `~/packages` for storing packages builds and `~/sv
 Devtools 0.9.10 has build helpers that can be used.
 
 ```
-/usr/bin/extra-i686-build
 /usr/bin/extra-x86_64-build
 /usr/bin/multilib-build
-/usr/bin/staging-i686-build
 /usr/bin/staging-x86_64-build
-/usr/bin/testing-i686-build
 /usr/bin/testing-x86_64-build
 
 ```
@@ -30,22 +26,8 @@ Devtools 0.9.10 has build helpers that can be used.
 This can be used to _create_ and build packages. Chroots are created by default in /var/tmp/archbuild. To build packages that depend on each other you should use makechrootpkg directly.
 
 ```
-$ sudo extra-i686-build
+$ sudo extra-x86_64-build
 $ sudo testing-x86_64-build
-
-```
-
-## i686
-
-```
-$ setarch i686 sudo makechrootpkg -cr /var/lib/archbuild/extra-i686 -- -i
-
-```
-
-next package
-
-```
-$ setarch i686 sudo makechrootpkg -r /var/lib/archbuild/extra-i686
 
 ```
 

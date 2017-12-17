@@ -35,6 +35,7 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
         *   [4.4.1 nsswitch.conf](#nsswitch.conf)
         *   [4.4.2 Use host networking](#Use_host_networking)
         *   [4.4.3 Virtual Ethernet interfaces](#Virtual_Ethernet_interfaces)
+        *   [4.4.4 Use a network bridge](#Use_a_network_bridge)
     *   [4.5 Run on a non-systemd system](#Run_on_a_non-systemd_system)
     *   [4.6 Specify per-container settings](#Specify_per-container_settings)
     *   [4.7 Use Btrfs subvolume as container root](#Use_Btrfs_subvolume_as_container_root)
@@ -362,6 +363,10 @@ If the name of the container is `foo`, the name of the virtual Ethernet interfac
 When examining the interfaces with `ip link`, interface names will be shown with a suffix, such as `ve-foo@if2` and `host0@if9`. The `@ifN` is not actually part of the name of the interface; instead, `ip link` appends this information to indicate which "slot" the virtual Ethernet cable connects to on the other end.
 
 For example, a host virtual Ethernet interface shown as `ve-foo@if2` will connect to container `foo`, and inside the container to the second network interface -- the one shown with index 2 when running `ip link` inside the container. Similarly, in the container, the interface named `host0@if9` will connect to the 9th slot on the host.
+
+#### Use a network bridge
+
+If you have configured a network bridge on the host system in order to have an IP address assigned to the container as if it was a physical machine in your local network (see, for example, [systemd-networkd#DHCP with two distinct IP](/index.php/Systemd-networkd#DHCP_with_two_distinct_IP "Systemd-networkd") or [systemd-networkd#Static IP network](/index.php/Systemd-networkd#Static_IP_network "Systemd-networkd")) you can make systemd-nspawn use it by using the option `--network-bridge=*br0*`.
 
 ### Run on a non-systemd system
 

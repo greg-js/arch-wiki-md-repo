@@ -62,9 +62,9 @@ The rEFInd package includes the *refind-install* script to simplify the process 
 
 ```
 
-This will attempt to find and mount your [ESP](/index.php/ESP "ESP"), copy rEFInd files to `/EFI/refind/` on the ESP, and use `efibootmgr` to make rEFInd the default EFI boot application.
+This will attempt to find and mount your [ESP](/index.php/ESP "ESP"), copy rEFInd files to `*esp*/EFI/refind/`, and use `efibootmgr` to make rEFInd the default EFI boot application.
 
-Alternatively you can install rEFInd to the default/fallback boot path `/EFI/BOOT/BOOT*.EFI`. This is helpful for bootable USB flash drives or on systems that have issues with the NVRAM changes made by `efibootmgr`:
+Alternatively you can install rEFInd to the default/fallback boot path `*esp*/EFI/BOOT/bootx64.efi`. This is helpful for bootable USB flash drives or on systems that have issues with the NVRAM changes made by `efibootmgr`:
 
 ```
 # refind-install --usedefault */dev/sdXY*
@@ -85,7 +85,7 @@ After installing rEFInd's files to the ESP, verify that rEFInd has created `refi
 
 By default, rEFInd will scan all of your drives (that it has drivers for) and add a boot entry for each EFI bootloader it finds, which should include your kernel (since Arch enables [EFISTUB](/index.php/EFISTUB "EFISTUB") by default). So you may have a bootable system at this point.
 
-**Tip:** It is always a good idea to edit the default config `/EFI/refind/refind.conf` on the ESP to ensure that the default options work for you.
+**Tip:** It is always a good idea to edit the default config `*esp*/EFI/refind/refind.conf` to ensure that the default options work for you.
 
 **Warning:** When refind-install is run in chroot (e.g. in live system when installing Arch Linux) `/boot/refind-linux.conf` is populated with kernel options from the live system not the one on which it is installed. You need to adjust kernel options in `/boot/refind-linux.conf` manually.
 
@@ -174,7 +174,7 @@ First, copy the executable to the ESP:
 
 ```
 
-Then use [efibootmgr](/index.php/UEFI#efibootmgr "UEFI") to create a boot entry in the UEFI NVRAM, where `*/dev/sdX*` and `*Y*` are the device and partition number of your ESP. If you are installing rEFInd to the default UEFI path `/EFI/BOOT/BOOTX64.EFI`, you can probably skip this step.
+Then use [efibootmgr](/index.php/UEFI#efibootmgr "UEFI") to create a boot entry in the UEFI NVRAM, where `*/dev/sdX*` and `*Y*` are the device and partition number of your ESP. If you are installing rEFInd to the default UEFI path `*esp*/EFI/BOOT/bootx64.efi`, you can probably skip this step.
 
 ```
 # efibootmgr --create --disk */dev/sdX* --part *Y* --loader /EFI/refind/refind_x64.efi --label "rEFInd Boot Manager"
@@ -393,9 +393,13 @@ Now you can access your file system from UEFI shell.
 
 To allow kernel auto detection on a Btrfs subvolume uncomment and edit `also_scan_dirs` in `refind.conf`.
 
- `*esp*/EFI/refind/refind.conf`  `also_scan_dirs *subvolume*/boot` 
+ `*esp*/EFI/refind/refind.conf` 
+```
+also_scan_dirs *subvolume*/boot
 
-Next add `subvol=*subvolume*` to `rootflags` in `refind_linux.conf` and then predend `*subvolume*` to the initrd path.
+```
+
+Next add `subvol=*subvolume*` to `rootflags` in `refind_linux.conf` and then prepend `*subvolume*` to the initrd path.
 
  `/boot/refind_linux.conf`  `"Boot using standard options"  "root=PARTUUID=XXXXXXXX rootflags=rw,subvol=*subvolume* initrd=*subvolume*/boot/initramfs-linux.img"` 
 
@@ -432,7 +436,7 @@ A failure to do so will otherwise result in the following error message: `ERROR:
 
 ### VirtualBox
 
-Currently, VirtualBox will only boot the default `/EFI/BOOT/BOOT*.EFI` path, so `refind-install` needs to be used with at least the `--usedefault` option. See [VirtualBox#Installation in EFI mode](/index.php/VirtualBox#Installation_in_EFI_mode "VirtualBox") for more information.
+Currently, VirtualBox will only boot the default `*esp*/EFI/BOOT/bootx64.efi` path, so `refind-install` needs to be used with at least the `--usedefault` option. See [VirtualBox#Installation in EFI mode](/index.php/VirtualBox#Installation_in_EFI_mode "VirtualBox") for more information.
 
 ## See also
 

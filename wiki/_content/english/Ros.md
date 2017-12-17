@@ -58,7 +58,7 @@ When you update a library that ROS depends on (e.g. Boost), all packages that li
 
 **Warning:** Work in progress
 
-Build instructions are available at [https://github.com/ros2/ros2/wiki/Linux-Development-Setup](https://github.com/ros2/ros2/wiki/Linux-Development-Setup) (requires [python-vcstool](https://aur.archlinux.org/packages/python-vcstool/)). First fetch the sources:
+Build instructions are available at [https://github.com/ros2/ros2/wiki/Linux-Development-Setup](https://github.com/ros2/ros2/wiki/Linux-Development-Setup). First fetch the sources (requires [python-vcstool](https://aur.archlinux.org/packages/python-vcstool/)):
 
 ```
 $ mkdir -p ~/ros2_ws/src

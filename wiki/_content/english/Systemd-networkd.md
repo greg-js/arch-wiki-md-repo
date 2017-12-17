@@ -43,7 +43,7 @@ Related articles
         *   [3.2.5 Result](#Result)
         *   [3.2.6 Notice](#Notice)
     *   [3.3 Static IP network](#Static_IP_network)
-*   [4 Management and desktop integration](#Management_and_desktop_integration)
+*   [4 Management, status information, and desktop integration](#Management.2C_status_information.2C_and_desktop_integration)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Mount services at boot fail](#Mount_services_at_boot_fail)
     *   [5.2 systemd-resolve not searching the local domain](#systemd-resolve_not_searching_the_local_domain)
@@ -283,7 +283,7 @@ The service is available with [systemd](https://www.archlinux.org/packages/?name
 
 For debugging purposes, it is strongly advised to [install](/index.php/Install "Install") the [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [net-tools](https://www.archlinux.org/packages/?name=net-tools), and [iproute2](https://www.archlinux.org/packages/?name=iproute2) packages.
 
-If you are using *systemd-nspawn*, you may need to modify the `systemd-nspawn@.service` and append boot options to the `ExecStart` line. Please refer to [systemd-nspawn(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1) for an exhaustive list of options.
+If you are using [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn"), you may need to modify the `systemd-nspawn@.service` and append boot options to the `ExecStart` line. Please refer to [systemd-nspawn(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1) for an exhaustive list of options.
 
 Note that if you want to take advantage of automatic DNS configuration from DHCP, you need to enable `systemd-resolved` and symlink `/run/systemd/resolve/resolv.conf` to `/etc/resolv.conf`. See [systemd-resolved.service(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.service.8) for more details.
 
@@ -494,18 +494,13 @@ nameserver 192.168.1.254
 
 ### Static IP network
 
-Setting a static IP for each device can be helpful in case of deployed web services (e.g FTP, http, SSH). Each device will keep the same MAC address across reboots if your system `/usr/lib/systemd/network/99-default.link` file has the `MACAddressPolicy=persistent` option (it has by default). Thus, you will easily route any service on your Gateway to the desired device. First, we shall get rid of the system `/usr/lib/systemd/network/80-container-host0.network` file. To do it in a permanent way (e.g even after upgrades), do the following on container. This will mask the file `/usr/lib/systemd/network/80-container-host0.network` since files of the same name in `/etc/systemd/network` take priority over `/usr/lib/systemd/network`.
+Setting a static IP for each device can be helpful in case of deployed web services (e.g FTP, http, SSH). Each device will keep the same MAC address across reboots if your system `/usr/lib/systemd/network/99-default.link` file has the `MACAddressPolicy=persistent` option (it has by default). Thus, you will easily route any service on your Gateway to the desired device.
 
-```
-# ln -sf /dev/null /etc/systemd/network/80-container-host0.network
-
-```
-
-Then, [enable and start](/index.php/Systemd#Basic_systemctl_usage "Systemd") `systemd-networkd` on your container.
-
-The needed configuration files:
+The following configuration needs to be done for this setup:
 
 *   on host
+
+The configuration is very similar to that of [#DHCP with two distinct IP](#DHCP_with_two_distinct_IP). First, a virtual bridge interface needs to be created and the main physical interface needs to be bound to it. This task can be accomplished with the following two files, with contents equal to those available at the DHCP section.
 
 ```
 /etc/systemd/network/*MyBridge*.netdev
@@ -513,7 +508,7 @@ The needed configuration files:
 
 ```
 
-A modified *MyBridge*.network
+Next, you need to configure the IP and DNS of the newly created virtual bridge interface. The following *MyBridge*.network provides an example configuration:
 
  `/etc/systemd/network/*MyBridge*.network` 
 ```
@@ -529,6 +524,15 @@ Gateway=192.168.1.254
 
 *   on container
 
+First, we shall get rid of the system `/usr/lib/systemd/network/80-container-host0.network` file, which provides a DHCP configuration for the default network interface of the container. To do it in a permanent way (e.g. even after [systemd](https://www.archlinux.org/packages/?name=systemd) upgrades), do the following on the container. This will mask the file `/usr/lib/systemd/network/80-container-host0.network` since files of the same name in `/etc/systemd/network` take priority over `/usr/lib/systemd/network`. Keep in mind that this file can be kept if you only want a static IP on the host, and want the IP address of your containers to be assigned via DHCP.
+
+```
+# ln -sf /dev/null /etc/systemd/network/80-container-host0.network
+
+```
+
+Then, configure an static IP for the default `host0` network interface and [enable and start](/index.php/Systemd#Basic_systemctl_usage "Systemd") `systemd-networkd` on your container. An example configuration is provided below:
+
  `/etc/systemd/network/*MyVeth*.network` 
 ```
 [Match]
@@ -541,7 +545,7 @@ Gateway=192.168.1.254
 
 ```
 
-## Management and desktop integration
+## Management, status information, and desktop integration
 
 *systemd-networkd* doesn't have a proper interactive management interface via either command-line or GUI. *networkctl* (via CLI) just offers a simple dump of the network interface states.
 
@@ -550,6 +554,8 @@ When *networkd* is configured with [wpa_supplicant](/index.php/Wpa_supplicant "W
 [networkd-notify](https://github.com/wavexx/networkd-notify) can generate simple notifications in response to network interface state changes (such as connection/disconnection and re-association).
 
 The [networkd-dispatcher](https://aur.archlinux.org/packages/networkd-dispatcher/) daemon allows executing scripts in response to network interface state changes, similar to NetworkManager-dispatcher.
+
+For the DNS resolver *systemd-resolved*, information about current DNS servers can be visualized with `systemd-resolve --status`.
 
 ## Troubleshooting
 

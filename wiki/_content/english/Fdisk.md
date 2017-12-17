@@ -148,7 +148,7 @@ To later restore this layout you can run:
 
 ### Using sgdisk
 
-Using *sgdisk* you can create a binary backup consisting of the protective MBR, the main GPT header, the backup GPT header, and one copy of the partition table:
+Using *sgdisk* you can create a binary backup consisting of the protective MBR, the main GPT header, the backup GPT header, and one copy of the partition table. The example below will save the partition table of `/dev/sda` to a file `sgdisk-sda.bak`:
 
 ```
 # sgdisk -b=sgdisk-sda.bak /dev/sda

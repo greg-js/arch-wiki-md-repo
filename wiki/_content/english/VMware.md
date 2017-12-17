@@ -505,7 +505,7 @@ An easier workaround is to make VMWare use the system's version of zlib instead 
 
 It seems to be a problem with the file `/usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6`, missing `CXXABI_1.3.8`.
 
-If the system have installed [gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs) or [gcc-libs-multilib](https://www.archlinux.org/packages/?name=gcc-libs-multilib), that library is already installed. Therefore, it's possible to remove that file and vmplayer will use the one provided by gcc-libs instead. As root do:
+If the system have installed [gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs), that library is already installed. Therefore, it's possible to remove that file and vmplayer will use the one provided by gcc-libs instead. As root do:
 
 ```
 # mv /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6 /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6.bak

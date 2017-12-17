@@ -256,7 +256,7 @@
 
 *   **[st](/index.php/St "St")** — Простая реализация терминала для X
 
-	[http://st.suckless.org](http://st.suckless.org) || [st](https://www.archlinux.org/packages/?name=st)
+	[http://st.suckless.org](http://st.suckless.org) || [st](https://aur.archlinux.org/packages/st/)
 
 *   **Terminal** — Эмулятор терминала, поддерживающий несколько окон, буфер прокрутки и другие распространенные возможности. Часть GNUstep
 

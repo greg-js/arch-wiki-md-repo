@@ -131,6 +131,11 @@ The following setup has the disadvantage of having to insert an additional passp
 
 To format the encrypted container for the swap partition, create a keyslot for a user-memorizable passphrase.
 
+```
+# cryptsetup luksFormat /dev/<device>
+
+```
+
 Open the partition in `/dev/mapper`:
 
 ```

@@ -2,6 +2,8 @@ Related articles
 
 *   [Window manager](/index.php/Window_manager "Window manager")
 *   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
+[https://awesomewm.org/apidoc/documentation/90-FAQ.md.html](https://awesomewm.org/apidoc/documentation/90-FAQ.md.html)
+
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
 *   [Display manager](/index.php/Display_manager "Display manager")
 *   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
@@ -558,7 +560,7 @@ $ awmtt restart
 
 ### Log Files
 
-If you are using [LightDM](/index.php/LightDM "LightDM"), awesome will log errors to `$HOME/.xsession-errors`. If you use `.xinitrc` to start awesome, this [FAQ entry](http://awesome.naquadah.org/wiki/FAQ#Where_are_logs.2C_error_messages_or_something.3F) may be a helpful resource.
+If you are using [LightDM](/index.php/LightDM "LightDM"), awesome will log errors to `$HOME/.xsession-errors`. If you use `.xinitrc` to start awesome, the entry "Where are logs, error messages or something?" in [the FAQ](https://awesomewm.org/apidoc/documentation/90-FAQ.md.html) may be a helpful resource.
 
 ### Mod4 key
 

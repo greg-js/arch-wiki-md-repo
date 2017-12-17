@@ -19,8 +19,8 @@ Related articles
 *   [2 Realtime Kernel](#Realtime_Kernel)
     *   [2.1 AUR](#AUR)
 *   [3 MIDI](#MIDI)
-*   [4 Environment Variables](#Environment_Variables)
-*   [5 Tips and Tricks](#Tips_and_Tricks)
+*   [4 Переменные окружения](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BE.D0.BA.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
+*   [5 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
 *   [6 Hardware](#Hardware)
     *   [6.1 M-Audio Delta 1010](#M-Audio_Delta_1010)
     *   [6.2 M-Audio Fast Track Pro](#M-Audio_Fast_Track_Pro)
@@ -304,19 +304,19 @@ The first two are standard kernels with the CONFIG_PREEMPT_RT patch, while -ice 
 
 ## MIDI
 
-To decrease MIDI jitter when using external MIDI equipment jack2's -Xalsarawmidi option should be used. When doing this you need to use a2jmidid, too.
+Для уменьшения дрожания MIDI при использовании внешнего MIDI оснащения jack2, должна быть использована опция Xalsarawmidi. При этом вам также потребуется использовать a2jmidid.
 
-With [alsa-midi-latency-test](https://github.com/koppi/alsa-midi-latency-test) you could test how much jitter you get. PCI and PCIe cards are usually much better than USB MIDI devices.
+Вы можете проверить насколько сильно дрожание с помощью [alsa-midi-latency-test](https://github.com/koppi/alsa-midi-latency-test). PCI и PCIe карты зачастую показывают лучшие результаты по сравнению с устройствами USB MIDI.
 
-To work with MIDI, it is highly recommended that you install a2j ([a2jmidid](https://www.archlinux.org/packages/?name=a2jmidid)), a bridge between alsa midi and jack midi. It allows you to connect applications that only communicate with alsa midi to applications that only use jack midi. Laditray can also start/stop a2j.
+При работе с MIDI настоятельно рекомендуется установить a2j ([a2jmidid](https://www.archlinux.org/packages/?name=a2jmidid)) - связующее звено между alsa midi и jack midi. Это позволит вам соединить приложения, которые связаны только с alsa midi, с приложениями, которые связаны только с jack midi. Laditray также может запускать/останавливать a2j.
 
-	*See: [JACK#MIDI](/index.php/JACK#MIDI "JACK")*
+	*Смотрите: [JACK#MIDI](/index.php/JACK#MIDI "JACK")*
 
-## Environment Variables
+## Переменные окружения
 
-If you install things to non-standard directories, it is often necessary to set environment path variables so that applications know where to look (for plug-ins and other libraries). This usually affects only VST since users might have a Wine or external Windows location.
+Если вы что-то устанавливаете в нестандартный каталог, зачастую необходимо настроить переменные путей окружения, чтобы приложения знали где искать (для плагинов и других библиотек). Обычно это относится к VST, так как пользователи могут иметь Wine или внешние пути Windows.
 
-We would usually not have Linux plug-ins (LADSPA, LV2, DSSI, LXVST) beyond standard paths, so it is not necessary to export them. But if you do, be sure to include those standard paths as well since Arch does not do anything for *dssi* or *ladspa*, and some applications like *dssi-vst* will not look anywhere else if it finds predefined paths.
+Как правило, плагины Linux (LADSPA, LV2, DSSI, LXVST) располагаются по стандартным путям, поэтому не требуется их экспортировать. Но если это не так, убедитесь, что добавили эти стандартные пути, так как Arch ничего не будет делать для *dssi* или *ladspa*, и приложений вроде *dssi-vst*, и не будет смотреть где-то ещё, если найдет предустановленные пути.
 
  `~/.bashrc` 
 ```
@@ -328,19 +328,19 @@ export LV2_PATH=/usr/lib/lv2:/usr/local/lib/lv2:~/.lv2:/someother/custom/dir
 export DSSI_PATH=/usr/lib/dssi:/usr/local/lib/dssi:~/.dssi:/someother/custom/dir
 ```
 
-## Tips and Tricks
+## Советы и хитрости
 
-*   Disable WiFi and close any programs that don't need to be open when recording such as browsers. Many have reported disabling WiFi has led to more reliable JACK performance.
+*   Отключите WiFi и закройте все приложения, нетребующиеся для записи, такие как браузер. Многие отмечали, что отключение WiFi сказывается на производительности JACK.
 
-*   Some USB audio hardware is known not to work properly when plugged into USB 3 ports so try USB 2/1 ports instead.
+*   Известно, что некоторое USB аудио аппаратное обеспечение не работает с портами USB 3, попробуйте вместо этого использовать порты USB 2/1\.
 
-*   IRQ issues can occur and cause problems. An example is video hardware reserving the bus, causing needless interrupts in the system I/O path. See discussion at [FFADO IRQ Priorities How-To](http://subversion.ffado.org/wiki/IrqPriorities). If you have a realtime or a recent kernel, you can use [rtirq](https://aur.archlinux.org/packages/rtirq/) to adjust priorities of IRQ handling threads.
+*   Могут случаться ошибки IRQ, что создаёт проблемы. Пример, видео аппаратное обеспечение, резервирующее шину, приводящее к ненужным прерываниям в системном пути ввода-вывода. Смотрите обсуждение в [FFADO IRQ Priorities How-To](http://subversion.ffado.org/wiki/IrqPriorities). Если вы используете ядро реального времени или свежее ядро, вы можете использовать [rtirq](https://aur.archlinux.org/packages/rtirq/) для настройки приоритетов обработки потоков IRQ.
 
-*   Do not use the **irqbalance** daemon, or do so carefully [[1]](http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_MRG/1.3/html/Realtime_Tuning_Guide/sect-Realtime_Tuning_Guide-General_System_Tuning-Interrupt_and_Process_Binding.html).
+*   Не используйте службу **irqbalance**, или будьте с ней очень осторожны [[1]](http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_MRG/1.3/html/Realtime_Tuning_Guide/sect-Realtime_Tuning_Guide-General_System_Tuning-Interrupt_and_Process_Binding.html).
 
-*   If you need to use multiple audio devices with JACK2, the **alsa_in** and **alsa_out** utilities. can be used to have extra devices wrapped and show up as outputs in the JACK patchbay.
+*   Если вам необходимо использовать несколько аудио устройств с JACK2, можно воспользоваться вспомогательными программами **alsa_in** и **alsa_out** для скрытия лишних устройств и показывать их как вывод в JACK patchbay.
 
-*   Some daemons/processes can unexpectedly cause **xruns**. If you do not need it - kill it. No questions asked.
+*   Некоторые службы/процессы могут неожиданно вызывать **xruns**. Если вам это не нужно, отключите их. Без вопросов.
 
 ```
 $ ls /var/run/daemons
@@ -350,9 +350,9 @@ $ killall -9 $processname
 
 ```
 
-*   If you are facing a lot of *xruns* especially with [nvidia](https://www.archlinux.org/packages/?name=nvidia), disable your GPU throttling. This can be done via the card's control applet and for nvidia it is "prefer maximum performance" (thanks to a mail in LAU by Frank Kober).
+*   Если *xruns* было запущено много раз, особенно с [nvidia](https://www.archlinux.org/packages/?name=nvidia), отключите дросселирование GPU. Сделать это можно с помощью апплета управления картой и для nvidia это "prefer maximum performance" (спасибо за письмо в LAU от Frank Kober).
 
-*   You may like to read more on ALSA: [http://www.volkerschatz.com/noise/alsa.html](http://www.volkerschatz.com/noise/alsa.html)
+*   Если вы хотите узнать больше о ALSA: [http://www.volkerschatz.com/noise/alsa.html](http://www.volkerschatz.com/noise/alsa.html)
 
 ## Hardware
 

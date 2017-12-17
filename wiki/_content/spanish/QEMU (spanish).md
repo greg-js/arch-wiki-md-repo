@@ -108,7 +108,7 @@ Instala el paquete [qemu](https://www.archlinux.org/packages/?name=qemu) (ó [qe
 
 A diferencia de otros programas de virtualización como [VirtualBox](/index.php/VirtualBox "VirtualBox") y [VMware](/index.php/VMware "VMware"), QEMU no proporciona una interfaz gráfica de usuario para administrar máquinas virtuales (a parte de la ventana que aparece cuando se ejecuta una máquina virtual), tampoco proporciona una forma de crear una máquina virtual persistente con valores guardados. Todos los parámetros para ejecutar una máquina virtual deben especificarse en la línea de comandos en cada puesta en marcha, a menos que haga un script personalizadp para iniciar su máquina(s) virtual. Sin embargo, hay varios front-end GUI para QEMU:
 
-*   [qemu-launcher](https://www.archlinux.org/packages/?name=qemu-launcher)
+*   [qemu-launcher](https://aur.archlinux.org/packages/qemu-launcher/)
 *   [qtemu](https://aur.archlinux.org/packages/qtemu/)
 *   [aqemu](https://aur.archlinux.org/packages/aqemu/)
 

@@ -326,7 +326,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **[KVIrc](https://en.wikipedia.org/wiki/KVIrc "wikipedia:KVIrc")** — Qt IRC klient s rozsáhlou podporou témat
 
-	[http://kvirc.net/](http://kvirc.net/) || [kvirc](https://www.archlinux.org/packages/?name=kvirc)
+	[http://kvirc.net/](http://kvirc.net/) || [kvirc-git](https://aur.archlinux.org/packages/kvirc-git/)
 
 *   **Loqui** — GTK+ IRC klient s jedinou závislostí: [GNet](https://live.gnome.org/GNetLibrary)
 

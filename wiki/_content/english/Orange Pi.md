@@ -124,8 +124,8 @@ Follow general installation instruction above. Differences:
 ### UBoot
 
 ```
-# git clone [https://github.com/ARM-software/arm-trusted-firmware.git](https://github.com/ARM-software/arm-trusted-firmware.git)
-# git clone -b v2017.07 [git://git.denx.de/u-boot.git](git://git.denx.de/u-boot.git)
+# git clone  [https://github.com/apritzel/arm-trusted-firmware.git](https://github.com/apritzel/arm-trusted-firmware.git)
+# git clone [git://git.denx.de/u-boot.git](git://git.denx.de/u-boot.git)
 # cd arm-trusted-firmware
 # make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j4 PLAT=sun50iw1p1 DEBUG=1 bl31
 # cp build/sun50iw1p1/debug/bl31.bin ../u-boot/

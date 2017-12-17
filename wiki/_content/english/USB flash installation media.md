@@ -189,7 +189,7 @@ This method is more complicated than writing the image directly with `dd`, but i
 
 *   Make sure that the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package is installed on the system.
 
-*   If not done yet, create the partition table and/or partition on the device before continuing. The partition `/dev/sd**Xn**` must be formatted to FAT32.
+*   If not done yet, create the partition table and/or partition on the device before continuing. The partition `/dev/sd**Xn**` must be formatted to [FAT32](/index.php/FAT32 "FAT32").
 
 *   Mount the ISO image, mount the FAT32 filesystem located in the USB flash device, and copy the contents of the ISO image to it. Then unmount the ISO image, but keep the FAT32 partition mounted (this will be used in subsequent steps). Eg:
 

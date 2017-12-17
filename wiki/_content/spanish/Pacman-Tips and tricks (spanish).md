@@ -12,7 +12,8 @@ Para métodos generales para mejorar la flexibilidad de las sugerencias proporci
 *   [1 Mantenimiento](#Mantenimiento)
     *   [1.1 Listando paquetes](#Listando_paquetes)
         *   [1.1.1 Con el tamaño](#Con_el_tama.C3.B1o)
-        *   [1.1.2 Por fecha](#Por_fecha)
+    *   [1.2 Eliminación de paquetes no utilizados (huérfanos)](#Eliminaci.C3.B3n_de_paquetes_no_utilizados_.28hu.C3.A9rfanos.29)
+        *   [1.2.1 Por fecha](#Por_fecha)
 *   [2 Optimización](#Optimizaci.C3.B3n)
     *   [2.1 Velocidades de acceso a la base de datos](#Velocidades_de_acceso_a_la_base_de_datos)
     *   [2.2 Velocidades de descarga](#Velocidades_de_descarga)
@@ -53,6 +54,19 @@ Para listar los paquetes explícitamente instalados que no están en base ni en 
  $ Expac -HM "% 011m \ t% -20n \ t% 10d" $ (comm -23 <(pacman -Qqen | sort) <(pacman -Qqg base-devel | sort)) |  Ordenar -n
 
 ```
+
+### Eliminación de paquetes no utilizados (huérfanos)
+
+Para eliminar de forma *recursiva* los huérfanos y sus archivos de configuración:
+
+```
+# pacman -Rns $(pacman -Qtdq)
+
+```
+
+Si no se encontraron paquetes huérfanos, aparecerán errores de pacman con `error: no targets specified`. Esto se espera ya que no se pasaron argumentos a `pacman -Rns`.
+
+**Note:** Los argumentos `-Qt` enumeran sólo huérfanos verdaderos. Para incluir paquetes que son *opcionalmente* requeridos por otro paquete, pase el indicador `-t` dos veces (*i.e.*, `-Qtt`).
 
 #### Por fecha
 

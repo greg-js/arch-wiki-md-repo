@@ -51,6 +51,10 @@ Firefox can be [installed](/index.php/Installed "Installed") with the [firefox](
 
 Other alternatives include:
 
+*   **Firefox Developer Edition** — for developers
+
+	[https://www.mozilla.org/firefox/developer/](https://www.mozilla.org/firefox/developer/) || [firefox-developer-edition](https://www.archlinux.org/packages/?name=firefox-developer-edition)
+
 *   **Firefox Extended Support Release** — long-term supported version
 
 	[https://www.mozilla.org/firefox/organizations/](https://www.mozilla.org/firefox/organizations/) || [firefox-esr](https://aur.archlinux.org/packages/firefox-esr/) or [firefox-esr-bin](https://aur.archlinux.org/packages/firefox-esr-bin/)
@@ -58,10 +62,6 @@ Other alternatives include:
 *   **Firefox Beta** — cutting-edge version
 
 	[https://www.mozilla.org/firefox/channel/desktop/#beta](https://www.mozilla.org/firefox/channel/desktop/#beta) || [firefox-beta](https://aur.archlinux.org/packages/firefox-beta/) or [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)
-
-*   **Firefox Developer Edition** — for developers
-
-	[https://www.mozilla.org/firefox/developer/](https://www.mozilla.org/firefox/developer/) || [firefox-developer](https://aur.archlinux.org/packages/firefox-developer/)
 
 *   **Firefox Nightly** — nightly builds for testing ([experimental features](https://developer.mozilla.org/Firefox/Experimental_features))
 

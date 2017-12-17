@@ -222,7 +222,7 @@ Consulte [Comparison of tiling window managers](/index.php/Comparison_of_tiling_
 
 *   **[dwm](/index.php/Dwm "Dwm")** — dwm es un gestor de ventanas dinámico para X. Maneja las ventanas en estilos mosaicos y flotantes. Todos los diseños se pueden aplicar de forma dinámica, para la optimización del entorno con la aplicación en uso y para la tarea a ejecutar. No incluye una aplicación de bandeja del sistema ni lanzadores automáticos, aunque el menu se integra bien con él, ya que son del mismo autor. No tiene un archivo de configuración de texto. La configuración se realiza en su totalidad por la modificación del código fuente en C, y debe volver a compilarse y reiniciarse cada vez que se cambie. El tamaño del programa ya se encuentra en el límite de la línea autoimpuesta, restringiendo aún más el desarrollo.
 
-	[http://dwm.suckless.org/](http://dwm.suckless.org/) || [dwm](https://www.archlinux.org/packages/?name=dwm)
+	[http://dwm.suckless.org/](http://dwm.suckless.org/) || [dwm](https://aur.archlinux.org/packages/dwm/)
 
 *   **[echinus](/index.php/Echinus "Echinus")** — gestor de ventanas tiling y de ventanas flotantes simple y ligero para X11\. Comenzó como un fork de dwm con una configuración más fácil, pero con el tiempo equino se convirtió en un gestor de ventanas completo con soporte EWMH. Cuenta con un panel EWMH-compatible/barra de tareas, llamado [ourico](https://aur.archlinux.org/packages/ourico/)
 

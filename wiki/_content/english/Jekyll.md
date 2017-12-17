@@ -48,7 +48,7 @@ See [Ruby#RubyGems](/index.php/Ruby#RubyGems "Ruby") for more information on Gem
 
 ### AUR (alternate)
 
-Alternately, [ruby-jekyll](https://aur.archlinux.org/packages/ruby-jekyll/) can be installed from the [AUR](/index.php/AUR "AUR").
+Alternately, [jekyll](https://aur.archlinux.org/packages/jekyll/) can be installed from the [AUR](/index.php/AUR "AUR").
 
 ### Rubygems binary repository
 

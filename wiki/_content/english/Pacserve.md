@@ -10,7 +10,7 @@
 
 ## Installation
 
-You can either install [pacserve](https://aur.archlinux.org/packages/pacserve/) manually from the [AUR](/index.php/AUR "AUR"), or from one of the [xyne-any](/index.php/Unofficial_user_repositories#xyne-any "Unofficial user repositories"), [xyne-x86_64](/index.php/Unofficial_user_repositories#xyne-x86_64 "Unofficial user repositories") or [xyne-i686](/index.php/Unofficial_user_repositories#xyne-i686 "Unofficial user repositories") unofficial repositories.
+You can either install [pacserve](https://aur.archlinux.org/packages/pacserve/) manually from the [AUR](/index.php/AUR "AUR"), or from one of the [xyne-any](/index.php/Unofficial_user_repositories#xyne-any "Unofficial user repositories") or [xyne-x86_64](/index.php/Unofficial_user_repositories#xyne-x86_64 "Unofficial user repositories") unofficial repositories.
 
 Finally [start/enable](/index.php/Start/enable "Start/enable") `pacserve.service`.
 

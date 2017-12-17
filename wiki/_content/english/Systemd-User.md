@@ -63,7 +63,7 @@ The user instance of systemd does not inherit any of the [environment variables]
 4.  At any time, use `systemctl --user set-environment` or `systemctl --user import-environment`. Affects all user units started after setting the environment variables, but not the units that were already running.
 5.  Using the `dbus-update-activation-environment --systemd --all` command provided by [dbus](/index.php/Dbus "Dbus"). Has the same effect as `systemctl --user import-environment`, but also affects the D-Bus session. You can add this to the end of your shell initialization file.
 6.  For "global" environment variables for the user environment you can use the environment.d directories which are parsed by systemd generators. See [environment.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/environment.d.5) for more information.
-7.  You can also write an environment generator script which can produce environment variables that vary from user to user, this is probably the best way if you need per-user envirnments (this is the case for XDG_RUNTIME_DIR, DBUS_SESSION_BUS_ADDRESS, etc). See [systemd.environment-generator(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.environment-generator.7).
+7.  You can also write an environment generator script which can produce environment variables that vary from user to user, this is probably the best way if you need per-user environments (this is the case for XDG_RUNTIME_DIR, DBUS_SESSION_BUS_ADDRESS, etc). See [systemd.environment-generator(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.environment-generator.7).
 
 One variable you may want to set is `PATH`.
 

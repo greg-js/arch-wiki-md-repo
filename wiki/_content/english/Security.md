@@ -248,7 +248,7 @@ On systems with many, or untrusted users, it is important to limit the number of
 
 [Xorg](/index.php/Xorg "Xorg") often is considered as insecure. Thus it is recommended to avoid running Xorg as root, like it is usually the default configuration.
 
-See [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg") for more details how to run Xorg sessions without root privileges for Xorg process.
+See [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg") for more details how to run Xorg sessions without root privileges for Xorg process.
 
 ## Restricting root
 
@@ -256,7 +256,7 @@ The root user is, by definition, the most powerful user on a system. Because of 
 
 ### Use sudo instead of su
 
-Using [sudo](/index.php/Sudo "Sudo") for privileged access is preferable to [su](/index.php/Su "Su") for [a number of reasons](/index.php/Su#Security "Su").
+Using [sudo](/index.php/Sudo "Sudo") for privileged access is preferable to [su](/index.php/Su "Su") for [a number of reasons](/index.php/Su#Sudo.2C_an_alternative "Su").
 
 *   It keeps a log of which normal privilege user has run each privileged command.
 *   The root user password need not be given out to each user who requires root access.

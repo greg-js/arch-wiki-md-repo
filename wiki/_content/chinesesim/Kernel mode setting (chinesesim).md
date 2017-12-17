@@ -1,4 +1,10 @@
-**翻译状态：** 本文是英文页面 [Kernel_Mode_Setting](/index.php/Kernel_Mode_Setting "Kernel Mode Setting") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-16，点击[这里](https://wiki.archlinux.org/index.php?title=Kernel_Mode_Setting&diff=0&oldid=441731)可以查看翻译后英文页面的改动。
+相关文章
+
+*   [ATI](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)")
+*   [Intel](/index.php/Intel_Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel Graphics (简体中文)")
+*   [Nouveau](/index.php/Nouveau_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Nouveau (简体中文)")
+
+**翻译状态：** 本文是英文页面 [Kernel_Mode_Setting](/index.php/Kernel_Mode_Setting "Kernel Mode Setting") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-12-15，点击[这里](https://wiki.archlinux.org/index.php?title=Kernel_Mode_Setting&diff=0&oldid=496790)可以查看翻译后英文页面的改动。
 
 内核级[显示模式设置](https://en.wikipedia.org/wiki/Mode-setting "wikipedia:Mode-setting") (KMS) ，作用是可以在内核级别而不是最终用户级别切换显示分辨率和颜色深度。
 
@@ -20,7 +26,7 @@ Linux 内核的 KMS 实现支持在 framebuffer 中使用原生分辨率和即�
 
 ## 背景
 
-以前，设定显卡是在 X服务器上工作。所以虚拟终端不可能提供漂亮的图像效果。同时，每次使用`Ctrl+Alt+F1~7`从X切换到虚拟终端时，x服务器必须将显卡的控制权交给内核，这个流程显得低效并且会导致闪烁。将控制权切回到X服务器同样是一个“痛苦”的过程。
+以前，设定显卡是 X 服务器的工作。所以虚拟终端不可能提供漂亮的图像效果。同时，每次使用`Ctrl+Alt+F1~7`从X切换到虚拟终端时，x服务器必须将显卡的控制权交给内核，这个流程显得低效并且会导致闪烁。将控制权切回到X服务器同样是一个“痛苦”的过程。
 
 使用内核模式设置后，内核可以设定显卡的模式。这样开机启动即可看到漂亮的显示画面，在 X 图形界面 和 终端 之间也可以快速切换，还有其他的一些优点。
 
@@ -55,7 +61,7 @@ KMS通常是在[initramfs stage](/index.php/Arch_boot_process#initramfs "Arch bo
 例如对 Intel 显卡,将 `i915` 模块加入到 `/etc/mkinitcpio.conf` 的 `MODULES`行：
 
 ```
-MODULES="**i915**"
+MODULES=(**i915**)
 
 ```
 
@@ -63,7 +69,7 @@ MODULES="**i915**"
 
 如果您使用的是自定义的 [EDID](https://en.wikipedia.org/wiki/Extended_display_identification_data "wikipedia:Extended display identification data") 文件,你应该也把它添加到initramfs中：
 
- `/etc/mkinitcpio.conf`  `FILES="/lib/firmware/edid/your_edid.bin"` 
+ `/etc/mkinitcpio.conf`  `FILES=(/lib/firmware/edid/your_edid.bin)` 
 
 最后，重新生成内核镜像(详情参阅 [mkinitcpio (简体中文)](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mkinitcpio (简体中文)"))。
 
@@ -71,11 +77,11 @@ MODULES="**i915**"
 
 ### 字体太小
 
-[Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts")介绍了如何在终端中使用大字体。软件仓库中的 ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font)) 字体提供了很多字号，包括大字体。
+[Fonts (简体中文)#终端字体](/index.php/Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.BB.88.E7.AB.AF.E5.AD.97.E4.BD.93 "Fonts (简体中文)")介绍了如何在终端中使用大字体。软件仓库中的 ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font)) 字体提供了很多字号，比如更大一些的 `ter-132n`。 或者，可以[#禁用 KMS](#.E7.A6.81.E7.94.A8_KMS) 以切换为更低的分辨率，使得字体外观显得更大一些。
 
 ### 启动错误信息
 
-Polling for connected display devices on older systems can be quite expensive. Poll will happen periodically and can in worst cases take several hundred milliseconds, depending on the hardware. This will cause visible stalls, for example in video playback. These stalls might happen even when your video is on HDP output but you have other non HDP outputs in your hw configuration. If you experience stalls in display output occurring every 10 seconds, disabling polling might help.
+在比较老的系统上轮询已连接的显示设备的开销很大。在不同的硬件上甚至可能每几百毫秒就轮询一次。这会导致在视频播放等场景中可见的显示延迟，即使视频具有HDP输出，若硬件设置为其他非HDP输出仍会出现延迟。如果每10秒延迟一次，则应禁用轮询。
 
 如果启动时看到 0x00000010 (2) 错误码，(应该有 10 行文字，最后一行是错误码)，请使用
 
@@ -113,17 +119,18 @@ drm_kms_helper.edid_firmware=VGA-1:edid/your_edid.bin
 For the four built-in resolutions, see table below for the name to specify:
 
 | **Resolution** | **Name to specify** |
+| 800x600 | edid/800x600.bin |
 | 1024x768 | edid/1024x768.bin |
 | 1280x1024 | edid/1280x1024.bin |
 | 1600x1200 (kernel 3.10 or higher) | edid/1600x1200.bin |
 | 1680x1050 | edid/1680x1050.bin |
 | 1920x1080 | edid/1920x1080.bin |
 
-If you are doing early KMS, you must include the custom EDID file in the [initramfs](#Early_KMS_start) or you will run into problems.
+如果使用 KMS 早启动，则应将定制的 EDID 文件包含在 [initramfs](#KMS_.E6.97.A9.E5.90.AF.E5.8A.A8) 中，否则会运行错误。
 
-You can also construct your own EDID with the makefile included in the `Documentation/EDID` sources of the kernel. The full information can be read [here](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/EDID/HOWTO.txt) and [there](https://www.osadl.org/Single-View.111+M591850c02b5.0.html).
+可以用内核源码文档 `Documentation/EDID` 中的 makefile 文件构建自己 EDID。完整信息请阅读[这里](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/EDID/HOWTO.txt)和[这里](https://www.osadl.org/Single-View.111+M5315d29dd12.0.html)。
 
-**Warning:** The method described below is somehow incomplete because e.g. Xorg does not take into account the resolution specified, so users are encouraged to use the method described above; however, specifying resolution with `video=` command line may be useful in some scenarios
+**警告:** 下面描述的方法并不完整，e.g. Xorg does not take into account the resolution specified, so users are encouraged to use the method described above; however, specifying resolution with `video=` command line may be useful in some scenarios
 
 来自 [nouveau wiki](http://nouveau.freedesktop.org/wiki/KernelModeSetting):
 
@@ -180,4 +187,4 @@ VGA-1: disconnected
 
 ```
 
-**Note:** 有些[Xorg](/index.php/Xorg "Xorg") 驱动必须启用 KMS 才能工作，参阅所用驱动的页面。
+**注意:** 有些 [Xorg](/index.php/Xorg "Xorg") 驱动必须启用 KMS 才能工作，参阅所用驱动的页面。

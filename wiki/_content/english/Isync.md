@@ -19,7 +19,7 @@ Synchronization is based on unique message identifiers (UIDs), so no identificat
 
 ## Installing
 
-[Install](/index.php/Install "Install") the [isync](https://www.archlinux.org/packages/?name=isync) package or [isync-git](https://aur.archlinux.org/packages/isync-git/) for the development version.
+[Install](/index.php/Install "Install") the [isync](https://www.archlinux.org/packages/?name=isync) package.
 
 ## Configuring
 

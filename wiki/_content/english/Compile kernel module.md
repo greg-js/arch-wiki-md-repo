@@ -66,7 +66,7 @@ In order to load our module cleanly, we must find the value of the EXTRAVERSION 
 Once the EXTRAVERSION value is known, we prepare the source for module compilation:
 
 ```
-$ make EXTRAVERSION=<YOUR EXTRAVERSION HERE> modules_preapre
+$ make EXTRAVERSION=<YOUR EXTRAVERSION HERE> modules_prepare
 
 ```
 

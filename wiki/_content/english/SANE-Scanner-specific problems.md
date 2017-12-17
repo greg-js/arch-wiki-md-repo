@@ -2,28 +2,36 @@ This article contains scanner or manufacturer-specific instructions for [SANE](/
 
 ## Contents
 
-*   [1 BenQ/Acer](#BenQ.2FAcer)
-*   [2 Brother](#Brother)
-    *   [2.1 Network Scanning](#Network_Scanning)
-    *   [2.2 Invalid argument](#Invalid_argument)
-    *   [2.3 Scan-key-tool](#Scan-key-tool)
-    *   [2.4 xsane crashes](#xsane_crashes)
-*   [3 Canon](#Canon)
-    *   [3.1 Scanning over the network with Canon Pixma all-in-one printer/scanners](#Scanning_over_the_network_with_Canon_Pixma_all-in-one_printer.2Fscanners)
-*   [4 Epson](#Epson)
-    *   [4.1 Image Scan v3](#Image_Scan_v3)
-    *   [4.2 Epson Perfection V550 Photo](#Epson_Perfection_V550_Photo)
-    *   [4.3 Epson Perfection 1270](#Epson_Perfection_1270)
-    *   [4.4 Epson Perfection 1670/2480/2580/3490/3590](#Epson_Perfection_1670.2F2480.2F2580.2F3490.2F3590)
-*   [5 Fujitsu](#Fujitsu)
-    *   [5.1 S300M](#S300M)
-*   [6 HP](#HP)
-    *   [6.1 Alternative way to scan with network HP scanner](#Alternative_way_to_scan_with_network_HP_scanner)
-*   [7 Mustek](#Mustek)
-    *   [7.1 BearPaw 2400CU](#BearPaw_2400CU)
-*   [8 Samsung](#Samsung)
-*   [9 Agfa](#Agfa)
-    *   [9.1 Snapscan e40](#Snapscan_e40)
+*   [1 Agfa](#Agfa)
+    *   [1.1 Snapscan e40](#Snapscan_e40)
+*   [2 BenQ/Acer](#BenQ.2FAcer)
+*   [3 Brother](#Brother)
+    *   [3.1 Network Scanning](#Network_Scanning)
+    *   [3.2 Invalid argument](#Invalid_argument)
+    *   [3.3 Scan-key-tool](#Scan-key-tool)
+    *   [3.4 xsane crashes](#xsane_crashes)
+*   [4 Canon](#Canon)
+    *   [4.1 Scanning over the network with Canon Pixma all-in-one printer/scanners](#Scanning_over_the_network_with_Canon_Pixma_all-in-one_printer.2Fscanners)
+*   [5 Epson](#Epson)
+    *   [5.1 Image Scan v3](#Image_Scan_v3)
+    *   [5.2 Epson Perfection V550 Photo](#Epson_Perfection_V550_Photo)
+    *   [5.3 Epson Perfection 1270](#Epson_Perfection_1270)
+    *   [5.4 Epson Perfection 1670/2480/2580/3490/3590](#Epson_Perfection_1670.2F2480.2F2580.2F3490.2F3590)
+*   [6 Fujitsu](#Fujitsu)
+    *   [6.1 S300M](#S300M)
+*   [7 HP](#HP)
+    *   [7.1 Alternative way to scan with network HP scanner](#Alternative_way_to_scan_with_network_HP_scanner)
+*   [8 Mustek](#Mustek)
+    *   [8.1 BearPaw 2400CU](#BearPaw_2400CU)
+*   [9 Samsung](#Samsung)
+
+## Agfa
+
+### Snapscan e40
+
+Firmware `Snape40.bin` from [here](https://sites.google.com/site/rameyarnaud/media/books/agfa-scanners-with-linux) is required.
+
+If USB autosuspend is enabled, the printer may need to be turned off and on again before each scan. USB autosuspend can be disabled using [powertop](/index.php/Powertop "Powertop").
 
 ## BenQ/Acer
 
@@ -277,11 +285,3 @@ tcp xx.xx.xx.xx
 ```
 
 where xx.xx.xx.xx is the static ip address of the printer.
-
-## Agfa
-
-### Snapscan e40
-
-Firmware `Snape40.bin` from [here](https://sites.google.com/site/rameyarnaud/media/books/agfa-scanners-with-linux) is required.
-
-If USB autosuspend is enabled, the printer may need to be turned off and on again before each scan. USB autosuspend can be disabled using [powertop](/index.php/Powertop "Powertop").

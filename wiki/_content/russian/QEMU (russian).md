@@ -125,7 +125,7 @@ Unlike other virtualization programs such as [VirtualBox](/index.php/VirtualBox 
 
 *   [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)
 *   [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
-*   [qemu-launcher](https://www.archlinux.org/packages/?name=qemu-launcher)
+*   [qemu-launcher](https://aur.archlinux.org/packages/qemu-launcher/)
 *   [qtemu](https://aur.archlinux.org/packages/qtemu/)
 *   [aqemu](https://aur.archlinux.org/packages/aqemu/)
 

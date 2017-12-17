@@ -139,8 +139,6 @@ xss-lock -- i3lock -n -i *background_image.png* &
 
 ### Sleep hooks
 
-*systemd* does not use [pm-utils](/index.php/Pm-utils "Pm-utils") to put the machine to sleep when using `systemctl suspend`, `systemctl hibernate` or `systemctl hybrid-sleep`; *pm-utils* hooks, including any [custom hooks](/index.php/Pm-utils#Creating_your_own_hooks "Pm-utils"), will not be run. However, *systemd* provides two similar mechanisms to run custom scripts on these events.
-
 #### Suspend/resume service files
 
 Service files can be hooked into *suspend.target*, *hibernate.target* and *sleep.target* to execute actions before or after suspend/hibernate. Separate files should be created for user actions and root/system actions. [Enable](/index.php/Enable "Enable") the `suspend@*user*` and `resume@*user*` services to have them started at boot. Examples:

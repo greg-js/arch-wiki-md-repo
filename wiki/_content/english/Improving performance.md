@@ -338,7 +338,7 @@ See man ionice(1) and [[8]](https://www.cyberciti.biz/tips/linux-set-io-scheduli
 
 [Overclocking](https://en.wikipedia.org/wiki/Overclocking "w:Overclocking") improves the computational performance of the CPU by increasing its peak clock frequency. The ability to overclock depends on the combination of CPU model and motherboard model. It is most frequently done through the BIOS. Overclocking also has disadvantages and risks. It is neither recommended nor discouraged here.
 
-Many Intel chips will not correctly report their clock frequency to acpi_cpufreq and most other utilities. This will result in excessive messages in dmesg, which can be avoided by unloading and blacklisting the kernel module `acpi_cpufreq`. To read their clock speed use `i7z`, available through the `i7z` and [i7z-git](https://aur.archlinux.org/packages/i7z-git/) packages.
+Many Intel chips will not correctly report their clock frequency to acpi_cpufreq and most other utilities. This will result in excessive messages in dmesg, which can be avoided by unloading and blacklisting the kernel module `acpi_cpufreq`. To read their clock speed use *i7z* from the [i7z](https://www.archlinux.org/packages/?name=i7z) package.
 
 ### Frequency scaling
 

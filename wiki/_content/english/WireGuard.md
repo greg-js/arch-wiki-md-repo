@@ -103,6 +103,12 @@ Bring this interface up by using `wg-quick up wg0`, and use `wg-quick down wg0` 
 
 To bring this up automatically one can use `systemctl enable wg-quick@wg0`
 
+If you use NetworkManager, it may be necessary to also enable NetworkManager-wait-online.service `systemctl enable NetworkManager-wait-online.service`
+
+or if you're using systemd-networkd, to enable systemd-networkd-wait-online.service `systemctl enable systemd-networkd-wait-online.service`
+
+to wait until devices are network ready before attempting wireguard connection.
+
 ## Troubleshooting
 
 ### DKMS module not available

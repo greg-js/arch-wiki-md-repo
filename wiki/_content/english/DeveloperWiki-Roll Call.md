@@ -110,6 +110,9 @@
 *   Alexander Rødseth
 *   Alexandre Filgueira
 *   Anatol Pomozov
+*   Andrew Crerar
+    *   Packaging
+    *   AUR Requests
 *   Andrzej Giniewicz
 *   Antonio Rojas
 *   Balló György

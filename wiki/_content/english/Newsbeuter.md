@@ -24,7 +24,7 @@ Development on Newsbeuter has ceased, and it has been [forked](https://groups.go
 
 ## Installation
 
-Install the [newsbeuter](https://www.archlinux.org/packages/?name=newsbeuter) package. For the development version, install the [newsbeuter-git](https://aur.archlinux.org/packages/newsbeuter-git/) package.
+Install the [newsboat](https://www.archlinux.org/packages/?name=newsboat) package. For the development version, install the [newsbeuter-git](https://aur.archlinux.org/packages/newsbeuter-git/) or [newsboat-git](https://aur.archlinux.org/packages/newsboat-git/) package.
 
 ## Usage
 

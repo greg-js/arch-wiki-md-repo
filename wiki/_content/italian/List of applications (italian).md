@@ -3113,7 +3113,7 @@ Gli utenti utilizzano emulatori di terminale molto spesso, quindi non sorprende 
 
 *   **[st](/index.php/St "St")** — Un semplice terminale implementato per X.
 
-	[http://st.suckless.org](http://st.suckless.org) || [st](https://www.archlinux.org/packages/?name=st)
+	[http://st.suckless.org](http://st.suckless.org) || [st](https://aur.archlinux.org/packages/st/)
 
 *   **[Terminator](/index.php/Terminator "Terminator")** — Emulatore di terminale che supporta pannelli ridimensionabili.
 

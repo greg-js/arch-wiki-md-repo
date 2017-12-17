@@ -300,7 +300,7 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 *   **Gravit** — Vector graphics design tool - For Users of All Skills and Profession
 
-	[https://gravit.io/](https://gravit.io/) || [gravit-git](https://aur.archlinux.org/packages/gravit-git/)
+	[https://gravit.io/](https://gravit.io/) || [gravit](https://aur.archlinux.org/packages/gravit/)
 
 *   **[Inkscape](https://en.wikipedia.org/wiki/Inkscape "wikipedia:Inkscape")** — Vector graphics editor, with capabilities similar to [Illustrator](https://en.wikipedia.org/wiki/Adobe_Illustrator "wikipedia:Adobe Illustrator"), [CorelDraw](https://en.wikipedia.org/wiki/CorelDRAW "wikipedia:CorelDRAW"), or [Xara X](https://en.wikipedia.org/wiki/Xara_X "wikipedia:Xara X"), using the SVG (Scalable Vector Graphics) file format. Inkscape supports many advanced SVG features (markers, clones, alpha blending, etc.) and great care is taken in designing a streamlined interface. It is very easy to edit nodes, perform complex path operations, trace bitmaps and much more. It's developers also aim to maintain a thriving user and developer community by using open, community-oriented development.
 
@@ -558,11 +558,11 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **Noise** — Simple, fast, and good looking music player. The official elementary music player.
 
-	[https://launchpad.net/noise](https://launchpad.net/noise) || [noise-player](https://www.archlinux.org/packages/?name=noise-player)
+	[https://launchpad.net/noise](https://launchpad.net/noise) || [pantheon-music](https://www.archlinux.org/packages/?name=pantheon-music)
 
 *   **Nuvola Player** — Integrated Google Music, 8tracks and Hype Machine player.
 
-	[https://tiliado.eu/nuvolaplayer/](https://tiliado.eu/nuvolaplayer/) || [nuvolaplayer](https://aur.archlinux.org/packages/nuvolaplayer/)
+	[https://tiliado.eu/nuvolaplayer/](https://tiliado.eu/nuvolaplayer/) || [nuvolaplayer-git](https://aur.archlinux.org/packages/nuvolaplayer-git/)
 
 *   **pithos** — Python/GTK Pandora Radio desktop client.
 

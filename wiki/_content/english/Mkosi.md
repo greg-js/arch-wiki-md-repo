@@ -20,7 +20,7 @@ Related articles
 
 Install [mkosi](https://aur.archlinux.org/packages/mkosi/) or [mkosi-git](https://aur.archlinux.org/packages/mkosi-git/). Depending on what Distribution you want to build install further packages:
 
-| Distibution | Package |
+| Distribution | Package |
 | Arch | [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) |
 | Debian | [debootstrap](https://www.archlinux.org/packages/?name=debootstrap), [debian-archive-keyring](https://www.archlinux.org/packages/?name=debian-archive-keyring) |
 | Ubuntu |
@@ -29,7 +29,7 @@ Install [mkosi](https://aur.archlinux.org/packages/mkosi/) or [mkosi-git](https:
 
 ## Basic usage
 
-You can crate an image by calling mkosi as root
+You can create an image by calling mkosi as root
 
 ```
 # mkosi

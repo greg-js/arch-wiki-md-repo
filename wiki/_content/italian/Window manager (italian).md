@@ -214,7 +214,7 @@ Notion è un fork di Ion3.
 
 **[dwm](/index.php/Dwm "Dwm")** — dwm è un window manager dinamico per X. Gestisce il layout delle finestre in stile floating e tiling. Tutti i layout possono essere applicati in modo dinamico, ottimizzando l'ambiente per l'applicazione in uso e le operazioni svolte. Non include un vassoio delle applicazioni o un lanciatore automatico, anche se dmenu si integra bene con esso, in quanto sono dello stesso autore. Non ha un file di testo. La configurazione viene fatta interamente modificando il codice sorgente in C, e deve essere ricompilato e riavviato ogni volta che viene cambiato. La dimensione del programma è già al limite di linea autoimposto , limitandone un ulteriore sviluppo.
 
-	[http://dwm.suckless.org/](http://dwm.suckless.org/) || [dwm](https://www.archlinux.org/packages/?name=dwm)
+	[http://dwm.suckless.org/](http://dwm.suckless.org/) || [dwm](https://aur.archlinux.org/packages/dwm/)
 
 **[echinus](/index.php/Echinus "Echinus")** — Semplice e leggero "tiling e floating" window manager per X11\. Iniziato come un "fork" di dwm con una maggiore facilità di configurazione, echinus è diventato un window manager full-optional con supporto a EWMH.
 

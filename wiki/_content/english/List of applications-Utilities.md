@@ -140,7 +140,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 *   **[st](/index.php/St "St")** — Simple terminal implementation for X.
 
-	[http://st.suckless.org](http://st.suckless.org) || [st](https://www.archlinux.org/packages/?name=st)
+	[http://st.suckless.org](http://st.suckless.org) || [st](https://aur.archlinux.org/packages/st/)
 
 *   **Terminology** — Terminal emulator by the Enlightenment project team with innovative features: file thumbnails and media play like a media player.
 
@@ -364,7 +364,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[Spyder](https://en.wikipedia.org/wiki/Spyder_(software) "wikipedia:Spyder (software)")** — Scientific PYthon Development EnviRonment providing MATLAB-like features.
 
-	[https://github.com/spyder-ide/spyder](https://github.com/spyder-ide/spyder) || [spyder](https://www.archlinux.org/packages/?name=spyder) (Python 2) or [spyder3](https://www.archlinux.org/packages/?name=spyder3) (Python 3)
+	[https://github.com/spyder-ide/spyder](https://github.com/spyder-ide/spyder) || [spyder2](https://www.archlinux.org/packages/?name=spyder2) (Python 2) or [spyder3](https://www.archlinux.org/packages/?name=spyder3) (Python 3)
 
 *   **Thonny** — Python IDE for beginners.
 

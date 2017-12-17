@@ -77,6 +77,8 @@ Now create the chroot (the sub directory `root` is required because the `$CHROOT
 
 Edit `~/.makepkg.conf` to set the packager name and any makeflags. Also adjust the [mirrorlist](/index.php/Pacman#Repositories_and_mirrors "Pacman") in `$CHROOT/root/etc/pacman.d/mirrorlist` and enable the [testing](/index.php/Testing "Testing") repository in `$CHROOT/root/etc/pacman.conf`, if desired.
 
+**Note:** The `~` and `$HOME` variable are resolved to `/root/` by the *makechrootpkg* script (described below).
+
 #### Custom pacman.conf
 
 Alternatively, provide a custom `pacman.conf` and `makepkg.conf` with the following:

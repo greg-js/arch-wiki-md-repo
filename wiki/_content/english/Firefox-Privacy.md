@@ -11,16 +11,17 @@ This article overviews configuration settings and some useful extensions which e
 ## Contents
 
 *   [1 Configuration tweaks](#Configuration_tweaks)
-    *   [1.1 Enable tracking protection](#Enable_tracking_protection)
-    *   [1.2 Change browser time zone](#Change_browser_time_zone)
-    *   [1.3 Change user agent and platform](#Change_user_agent_and_platform)
-    *   [1.4 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
-    *   [1.5 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
-    *   [1.6 Disable telemetry](#Disable_telemetry)
-    *   [1.7 Enable Do Not Track Header (DNT)](#Enable_Do_Not_Track_Header_.28DNT.29)
-    *   [1.8 Disable geolocation](#Disable_geolocation)
-    *   [1.9 Disable Safe Browsing service](#Disable_Safe_Browsing_service)
-    *   [1.10 Disable WebGL](#Disable_WebGL)
+    *   [1.1 Enable Anti-Fingerprinting](#Enable_Anti-Fingerprinting)
+    *   [1.2 Enable tracking protection](#Enable_tracking_protection)
+    *   [1.3 Change browser time zone](#Change_browser_time_zone)
+    *   [1.4 Change user agent and platform](#Change_user_agent_and_platform)
+    *   [1.5 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
+    *   [1.6 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
+    *   [1.7 Disable telemetry](#Disable_telemetry)
+    *   [1.8 Enable Do Not Track Header (DNT)](#Enable_Do_Not_Track_Header_.28DNT.29)
+    *   [1.9 Disable geolocation](#Disable_geolocation)
+    *   [1.10 Disable Safe Browsing service](#Disable_Safe_Browsing_service)
+    *   [1.11 Disable WebGL](#Disable_WebGL)
 *   [2 Extensions](#Extensions)
     *   [2.1 HTTPS Everywhere](#HTTPS_Everywhere)
     *   [2.2 uBlock Origin](#uBlock_Origin)
@@ -49,6 +50,14 @@ In addition, see the following links:
 *   [How to stop Firefox from making automatic connections](https://support.mozilla.org/t5/Protect-your-privacy/How-to-stop-Firefox-from-making-automatic-connections/ta-p/1748) - Is an annotated list of corresponding Firefox functionality and settings to disable it case-by-case.
 *   [ffprofile.com](https://ffprofile.com/) - You select which features you want to enable and disable and in the end you get a download link for a zip-file with your profile template. You can for example disable some functions, which send data to Mozilla and Google, or disable several annoying Firefox functions like Mozilla Hello or the Pocket integration.
 *   [pyllyukko/user.js](https://github.com/pyllyukko/user.js) - Firefox configuration hardening and documentation
+
+### Enable Anti-Fingerprinting
+
+Mozilla has started an [anti-fingerprinting project in Firefox](https://wiki.mozilla.org/Security/Fingerprinting), as part of a project to upstream features from [Tor Browser](/index.php/Tor "Tor"). Many of these anti-fingerprinting features are enabled by setting `about:config`:
+
+*   `privacy.resistFingerprinting` `true`
+
+There is no user-facing documentation about this flag, and Mozilla doesn't recommend users enable it, since it will break a few websites (it exists mostly to make life easier for the Tor Browser developers). But it does automatically enable many of the features listed below (such as changing your reported timezone and user agent), as well as protection against other, lesser-known fingerprinting techniques. See the [tracking bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1333933) that lists many of these features.
 
 ### Enable tracking protection
 

@@ -235,7 +235,7 @@
 
 *   **[dwm](/index.php/Dwm "Dwm")** — Оконный менеджер Dynamic Window Manager для X. Управляет окнами в фреймовом, полноэкранном и стековом режимах. Все схемы размещения могут быть изменены динамически. Не включает в себя трей или панель запуска, хотя неплохо интегрируется с dmenu (все-таки, у них один автор). Настраивается модификацией кода C с последующей перекомпиляцией.
 
-	[http://dwm.suckless.org/](http://dwm.suckless.org/) || [dwm](https://www.archlinux.org/packages/?name=dwm)
+	[http://dwm.suckless.org/](http://dwm.suckless.org/) || [dwm](https://aur.archlinux.org/packages/dwm/)
 
 *   **[echinus](/index.php/Echinus "Echinus")** — Простой и легкий фреймовый и стековый оконный менеджер для X11\. Изначально являясь форком dwm с более простой настройкой, echinus стал полноценным репарентинговым оконным менеджером с поддержкой EWMH. Имеет панель задач [ourico](https://aur.archlinux.org/packages/ourico/), совместимую с EWMH.
 

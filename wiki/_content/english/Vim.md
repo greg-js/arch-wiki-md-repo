@@ -24,8 +24,9 @@ Related articles
     *   [5.6 Empty space at the bottom of gVim windows](#Empty_space_at_the_bottom_of_gVim_windows)
 *   [6 Plugins](#Plugins)
     *   [6.1 Installation](#Installation_2)
-        *   [6.1.1 Using a plugin manager](#Using_a_plugin_manager)
-        *   [6.1.2 From Arch repositories](#From_Arch_repositories)
+        *   [6.1.1 Using the built-in package manager](#Using_the_built-in_package_manager)
+        *   [6.1.2 Using a plugin manager](#Using_a_plugin_manager)
+        *   [6.1.3 From Arch repositories](#From_Arch_repositories)
     *   [6.2 cscope](#cscope)
     *   [6.3 Taglist](#Taglist)
 *   [7 See also](#See_also)
@@ -217,6 +218,10 @@ Adding plugins to Vim can increase your productivity. Plugins can alter Vim's UI
 **Tip:** For a list of popular plugins, see [Vim Awesome](http://vimawesome.com/)
 
 ### Installation
+
+#### Using the built-in package manager
+
+Vim 8 added the possibility to load natively third-party plugins. It is possible to use this functionality by storing third-party packages in `~/.vim/pack/foo`.
 
 #### Using a plugin manager
 

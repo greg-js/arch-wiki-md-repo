@@ -448,12 +448,12 @@ After loading one or more of these modules, `lsmod | grep virtio` executed on th
 
 #### CPU pinning with isolcpus
 
-Alternatively, make sure that you have isolated CPUs properly. In this example, let us assume you are using CPUs 4-7. Use the kernel parameters `isolcpus nohz_full rcb_nocbs` to completely isolate the CPUs from the kernel.
+Alternatively, make sure that you have isolated CPUs properly. In this example, let us assume you are using CPUs 4-7. Use the kernel parameters `isolcpus nohz_full rcu_nocbs` to completely isolate the CPUs from the kernel.
 
  `sudo vim /etc/defaults/grub` 
 ```
 ...
-GRUB_CMDLINE_LINUX="..your other params.. isolcpus=4-7 nohz_full=4-7 rcb_nocbs=4-7"
+GRUB_CMDLINE_LINUX="..your other params.. isolcpus=4-7 nohz_full=4-7 rcu_nocbs=4-7"
 ...
 
 ```

@@ -58,9 +58,8 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
     *   [9.5 Short lived processes do not seem to log any output](#Short_lived_processes_do_not_seem_to_log_any_output)
     *   [9.6 Boot time increasing over time](#Boot_time_increasing_over_time)
     *   [9.7 systemd-tmpfiles-setup.service fails to start at boot](#systemd-tmpfiles-setup.service_fails_to_start_at_boot)
-    *   [9.8 systemctl enable fails for symlinks in /etc/systemd/system](#systemctl_enable_fails_for_symlinks_in_.2Fetc.2Fsystemd.2Fsystem)
-    *   [9.9 systemd version printed on boot is not the same as installed package version](#systemd_version_printed_on_boot_is_not_the_same_as_installed_package_version)
-    *   [9.10 Disable emergency mode on remote machine](#Disable_emergency_mode_on_remote_machine)
+    *   [9.8 systemd version printed on boot is not the same as installed package version](#systemd_version_printed_on_boot_is_not_the_same_as_installed_package_version)
+    *   [9.9 Disable emergency mode on remote machine](#Disable_emergency_mode_on_remote_machine)
 *   [10 See also](#See_also)
 
 ## Basic systemctl usage
@@ -589,6 +588,8 @@ It is also possible to use the drop-in snippets configuration override mechanism
 SystemMaxUse=50M
 ```
 
+[Restart](/index.php/Restart "Restart") the `systemd-journald.service` after changing this setting to immediately apply the new limit.
+
 See [journald.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5) for more info.
 
 ### Clean journal files manually
@@ -637,7 +638,7 @@ $ journalctl -D */mnt*/var/log/journal -xe
 
 Arch Linux ships with `/usr/lib/systemd/system-preset/99-default.preset` containing `disable *`. This causes *systemctl preset* to disable all units by default, such that when a new package is installed, the user must manually enable the unit.
 
-If this behavior is not desired, simply create a symlink from `/etc/systemd/system-preset/99-default.preset` to `/dev/null` in order to override the configuration file. This will cause *systemctl preset* to enable all units that get installed—regardless of unit type—unless specified in another file in one *systemctl preset'*s configuration directories. User units are not affected. See the manpage for `systemd.preset` for more information.
+If this behavior is not desired, simply create a symlink from `/etc/systemd/system-preset/99-default.preset` to `/dev/null` in order to override the configuration file. This will cause *systemctl preset* to enable all units that get installed—regardless of unit type—unless specified in another file in one *systemctl preset'*s configuration directories. User units are not affected. See [systemd.preset(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.preset.5) for more information.
 
 **Note:** Enabling all units by default may cause problems with packages that contain two or more mutually exclusive units. *systemctl preset* is designed to be used by distributions and spins or system administrators. In the case where two conflicting units would be enabled, you should explicitly specify which one is to be disabled in a preset configuration file as specified in the manpage for `systemd.preset`.
 
@@ -651,7 +652,6 @@ Some examples on how sandboxing with systemd can be deployed:
 
 *   `CapabilityBoundingSet` defines a whitelisted set of allowed capabilities, but may also be used to blacklist a specific capability for a unit.
     *   The `CAP_SYS_ADM` capability, for example, which should be one of the [goals of a secure sandbox](https://lwn.net/Articles/486306/): `CapabilityBoundingSet=~ CAP_SYS_ADM`
-*   [Unbound#Sandboxing](/index.php/Unbound#Sandboxing "Unbound") shows a full-scale example of systemd features for sandboxing.
 
 ## Troubleshooting
 
@@ -783,22 +783,6 @@ The problem for some users has been due to `/var/log/journal` becoming too large
 Starting with systemd 219, `/usr/lib/tmpfiles.d/systemd.conf` specifies ACL attributes for directories under `/var/log/journal` and, therefore, requires ACL support to be enabled for the filesystem the journal resides on.
 
 See [Access Control Lists#Enabling ACL](/index.php/Access_Control_Lists#Enabling_ACL "Access Control Lists") for instructions on how to enable ACL on the filesystem that houses `/var/log/journal`.
-
-### systemctl enable fails for symlinks in /etc/systemd/system
-
-If `/etc/systemd/system/*foo*.service` is a symlink and `systemctl enable *foo*.service` is run, it will fail with this error:
-
-```
-Failed to issue method call: No such file or directory
-
-```
-
-This is a [design choice](https://bugzilla.redhat.com/show_bug.cgi?id=955379#c14) of systemd. As a workaround, enabling by absolute path works:
-
-```
-# systemctl enable */absolute/path/foo*.service
-
-```
 
 ### systemd version printed on boot is not the same as installed package version
 

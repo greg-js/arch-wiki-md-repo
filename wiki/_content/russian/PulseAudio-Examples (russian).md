@@ -30,7 +30,7 @@
     *   [9.3 Настройка с помощью скриптов](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_.D1.81.D0.BA.D1.80.D0.B8.D0.BF.D1.82.D0.BE.D0.B2)
     *   [9.4 Путем остановки PulseAudio](#.D0.9F.D1.83.D1.82.D0.B5.D0.BC_.D0.BE.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_PulseAudio)
 *   [10 PulseAudio через OSS](#PulseAudio_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_OSS)
-*   [11 Запуск PulseAudio из chroot (напр. 32-бит chroot в 64-битной истеме)](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_PulseAudio_.D0.B8.D0.B7_chroot_.28.D0.BD.D0.B0.D0.BF.D1.80._32-.D0.B1.D0.B8.D1.82_chroot_.D0.B2_64-.D0.B1.D0.B8.D1.82.D0.BD.D0.BE.D0.B9_.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B5.29)
+*   [11 Запуск PulseAudio из chroot](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_PulseAudio_.D0.B8.D0.B7_chroot)
 *   [12 Отключение автоматического запуска сервера PulseAudio](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B0.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B3.D0.BE_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0_.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80.D0.B0_PulseAudio)
 *   [13 Отключение демона pulseaudio полностью](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.B5.D0.BC.D0.BE.D0.BD.D0.B0_pulseaudio_.D0.BF.D0.BE.D0.BB.D0.BD.D0.BE.D1.81.D1.82.D1.8C.D1.8E)
 *   [14 Изменить стерео на моно](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D1.81.D1.82.D0.B5.D1.80.D0.B5.D0.BE_.D0.BD.D0.B0_.D0.BC.D0.BE.D0.BD.D0.BE)
@@ -680,7 +680,7 @@ load-module module-oss
 
 Затем запустите PulseAudio как обычно, убедитесь что все источники объявлены для OSS усройств.
 
-## Запуск PulseAudio из chroot (напр. 32-бит chroot в 64-битной истеме)
+## Запуск PulseAudio из chroot
 
 Так как chroot представляет собственный root для запуска/остановки приложений, PulseAudio должен быть установлен из самого chroot (`pacman -S pulseaudio` в окружении chroot).
 

@@ -11,7 +11,7 @@
 
 ## Installación
 
-Instalar el paquete [libpam-google-authenticator](https://aur.archlinux.org/packages/libpam-google-authenticator/) desde [AUR](/index.php/AUR "AUR"). La versión de desarrollo también está disponible cómo [google-authenticator-libpam-git](https://aur.archlinux.org/packages/google-authenticator-libpam-git/).
+Instalar el paquete [libpam-google-authenticator](https://www.archlinux.org/packages/?name=libpam-google-authenticator) desde [AUR](/index.php/AUR "AUR"). La versión de desarrollo también está disponible cómo [google-authenticator-libpam-git](https://aur.archlinux.org/packages/google-authenticator-libpam-git/).
 
 ## Configurando PAM
 

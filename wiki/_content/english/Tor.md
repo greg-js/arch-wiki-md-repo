@@ -75,11 +75,9 @@ See [Wikipedia:Tor (anonymity network)](https://en.wikipedia.org/wiki/Tor_(anony
 
 [Install](/index.php/Install "Install") the [tor](https://www.archlinux.org/packages/?name=tor) package.
 
+Usually, you will access Tor using Tor Browser, available as the [tor-browser](https://www.archlinux.org/packages/?name=tor-browser) package or a [portable executable](https://www.torproject.org/projects/torbrowser.html.en).
+
 The [arm](https://www.archlinux.org/packages/?name=arm) (Anonymizing Relay Monitor) package provides a terminal status monitor for bandwidth usage, connection details and more.
-
-For a GUI, you can use [vidalia](https://aur.archlinux.org/packages/vidalia/).
-
-**Warning:** Vidalia is discontinued and no longer supported by the Tor Project. Please see [https://blog.torproject.org/blog/plain-vidalia-bundles-be-discontinued-dont-panic](https://blog.torproject.org/blog/plain-vidalia-bundles-be-discontinued-dont-panic)
 
 ## Configuration
 
@@ -257,7 +255,7 @@ To use a program over tor, configure it to use `127.0.0.1` or localhost as a SOC
 
 ## Web browsing
 
-The Tor Project currently only supports web browsing with tor through the [Tor Browser Bundle](https://aur.archlinux.org/packages/?K=tor-browser), which can be downloaded from the AUR. It is built with a patched version of the Firefox extended support releases. Tor can also be used with regular [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium") and other browsers, but this is [not recommended](https://www.torproject.org/docs/faq.html.en#TBBOtherBrowser) by the Tor Project.
+The Tor Project currently only supports web browsing with tor through the [Tor Browser](https://aur.archlinux.org/packages/?K=tor-browser), which can be downloaded from the AUR. It is built with a patched version of the Firefox extended support releases. Tor can also be used with regular [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium") and other browsers, but this is [not recommended](https://www.torproject.org/docs/faq.html.en#TBBOtherBrowser) by the Tor Project.
 
 **Tip:** For makepkg to verify the signature on the AUR source tarball download for TBB, import the [signing keys from the Tor Project](https://www.torproject.org/docs/signing-keys.html.en) (currently 2E1AC68ED40814E0) as explained in [GnuPG#Import a public key](/index.php/GnuPG#Import_a_public_key "GnuPG").
 

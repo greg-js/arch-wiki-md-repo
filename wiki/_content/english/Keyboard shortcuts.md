@@ -11,8 +11,7 @@ This article provides a list of (not commonly known) default keyboard shortcuts 
 *   [2 User customization](#User_customization)
     *   [2.1 Readline](#Readline_2)
     *   [2.2 X11](#X11)
-    *   [2.3 Firefox](#Firefox)
-    *   [2.4 Key binding for X-selection-paste](#Key_binding_for_X-selection-paste)
+    *   [2.3 Key binding for X-selection-paste](#Key_binding_for_X-selection-paste)
 *   [3 Tips and tricks](#Tips_and_tricks)
 *   [4 See also](#See_also)
 
@@ -122,16 +121,12 @@ set keymap vi-insert
 
 See [Keyboard configuration in Xorg#Frequently used XKB options](/index.php/Keyboard_configuration_in_Xorg#Frequently_used_XKB_options "Keyboard configuration in Xorg") for some common shortcuts, that are disabled by default.
 
-### Firefox
-
-Use the [customizable-shortcuts](https://addons.mozilla.org/en-us/firefox/addon/customizable-shortcuts/) add-on.
-
 ### Key binding for X-selection-paste
 
 Users who prefer to work rather with the keyboard than the mouse may benefit from a key binding to the paste operation of the **middle mouse button**. This is especially useful in a keyboard-centered environment. A workflow example is:
 
 1.  In Firefox, select a string you want to google for (with the mouse).
-2.  Hit `Ctrl+k` to enter the "Google search" field.
+2.  Hit `Ctrl+k` to enter the "search engine" field.
 3.  Hit `F12` to paste the buffer, instead of moving the mouse pointer to the field and center-click to paste.
 
 **Note:** `Shift+Insert` has a similar yet different functionality, see [#X11](#X11): `Shift+Insert` inserts the clipboard buffer, not the x-selection-paste buffer. In some applications, these two buffers are mirrored.

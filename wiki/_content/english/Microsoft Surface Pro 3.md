@@ -122,7 +122,7 @@ Depending on the desktop environment you are using, you might want to use differ
 
 The recommended bootloader for UEFI with Secure Boot enabled is [systemd-boot](/index.php/Systemd-boot "Systemd-boot")
 
-To boot with Secure Boot, you will need the following packages: [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) [prebootloader](https://www.archlinux.org/packages/?name=prebootloader)
+To boot with Secure Boot, you will need the following packages: [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) [efitools](https://www.archlinux.org/packages/?name=efitools)
 
 Ref: [Surface Pro 3 and Secure Boot post-install](https://bbs.archlinux.org/viewtopic.php?pid=1570523#p1570523)
 

@@ -14,7 +14,7 @@
 
 ## 安装
 
-安装 [libpam-google-authenticator](https://aur.archlinux.org/packages/libpam-google-authenticator/) 软件包或开发者版本 [google-authenticator-libpam-git](https://aur.archlinux.org/packages/google-authenticator-libpam-git/)。
+安装 [libpam-google-authenticator](https://www.archlinux.org/packages/?name=libpam-google-authenticator) 软件包或开发者版本 [google-authenticator-libpam-git](https://aur.archlinux.org/packages/google-authenticator-libpam-git/)。
 
 ## 设置插入式验证模块(**P**luggable **A**uthentication **M**odules)
 

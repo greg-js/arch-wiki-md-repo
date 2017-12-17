@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-09，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=492758)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-12-16，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=502797)可以查看翻译后英文页面的改动。
 
 [vsftpd](https://security.appspot.com/vsftpd.html) (Very Secure FTP Daemon) 是一个为UNIX类系统开发的轻量,稳定和安全的FTP服务器端.
 
@@ -13,8 +13,8 @@
     *   [2.5 限制用户登录](#.E9.99.90.E5.88.B6.E7.94.A8.E6.88.B7.E7.99.BB.E5.BD.95)
     *   [2.6 限制连接数](#.E9.99.90.E5.88.B6.E8.BF.9E.E6.8E.A5.E6.95.B0)
     *   [2.7 使用 xinetd](#.E4.BD.BF.E7.94.A8_xinetd)
-    *   [2.8 使用 SSL 使 FTP 安全](#.E4.BD.BF.E7.94.A8_SSL_.E4.BD.BF_FTP_.E5.AE.89.E5.85.A8)
-    *   [2.9 动态 DNS](#.E5.8A.A8.E6.80.81_DNS)
+    *   [2.8 使用 SSL/TLS 来保护 FTP](#.E4.BD.BF.E7.94.A8_SSL.2FTLS_.E6.9D.A5.E4.BF.9D.E6.8A.A4_FTP)
+    *   [2.9 在被动模式下解析主机名](#.E5.9C.A8.E8.A2.AB.E5.8A.A8.E6.A8.A1.E5.BC.8F.E4.B8.8B.E8.A7.A3.E6.9E.90.E4.B8.BB.E6.9C.BA.E5.90.8D)
     *   [2.10 端口配置](#.E7.AB.AF.E5.8F.A3.E9.85.8D.E7.BD.AE)
     *   [2.11 配置 iptables](#.E9.85.8D.E7.BD.AE_iptables)
 *   [3 小技巧](#.E5.B0.8F.E6.8A.80.E5.B7.A7)
@@ -30,11 +30,9 @@
 
 ## 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [vsftpd](https://www.archlinux.org/packages/?name=vsftpd).
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [vsftpd](https://www.archlinux.org/packages/?name=vsftpd) 然后 [启动/启用](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") `vsftpd.service` 守护程序。
 
-[启动/启用](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") `vsftpd.service` 守护程序。
-
-有关通过 xinetd 使用 vsftpd 的过程，请参阅 [#使用 xinetd](#.E4.BD.BF.E7.94.A8_xinetd)。
+使用 [xinetd](https://en.wikipedia.org/wiki/xinetd "wikipedia:xinetd") 监视和控制 vsftpd 连接，请参见 [#使用 xinetd](#.E4.BD.BF.E7.94.A8_xinetd)。
 
 ## 配置
 
@@ -191,78 +189,71 @@ listen=NO
 
 ```
 
-### 使用 SSL 使 FTP 安全
+### 使用 SSL/TLS 来保护 FTP
 
-生成一个SSL证书，如这样：
+首先，您需要一个 *X.509 SSL/TLS* 证书才能使用TLS。如果您没有，可以轻松生成如下的自签名证书：
 
 ```
 # cd /etc/ssl/certs
-# openssl req -x509 -nodes -days 7300 -newkey rsa:2048 -keyout /etc/ssl/certs/vsftpd.pem -out /etc/ssl/certs/vsftpd.pem
-# chmod 600 /etc/ssl/certs/vsftpd.pem
+# openssl req -x509 -nodes -days 7300 -newkey rsa:2048 -keyout vsftpd.pem -out vsftpd.pem
+# chmod 600 vsftpd.pem
 
 ```
 
-您将被询问有关您公司等的许多问题，如果您的证书是不需要信任的，那么您填写的内容并不重要。但是您将使用这些内容加密！如果您计划在使用此功能方面取得信任，则可以从 CA 如 thawte,verisign 获得一个。
+你会被问到关于你公司的问题，等等。由于你的证书不是一个可信任的，所填的内容并不重要，它将被用于加密。要使用可信证书，您可以从 [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") 这样的证书颁发机构获得证书。
 
-编辑您的配置 `/etc/vsftpd.conf`
+然后，编辑配置文件：
 
+ `/etc/vsftpd.conf` 
 ```
-#这个很重要
 ssl_enable=YES
 
-#选择你想要的
-# 如果你接受 anon-connections 你可能要启用这个
+# 选择你想要的
+# 如果你接受匿名连接你可能要启用这个
 # allow_anon_ssl=NO
 
-#选择你想要的
-# 我猜这是一个性能上的问题
-# force_local_data_ssl=NO
+# 默认情况下所有非匿名登录被迫使用 SSL 发送和接收密码和数据，设置为 NO，以允许不安全的连接
+force_local_logins_ssl=NO
+force_local_data_ssl=NO
 
-#选择你想要的
+# 选择你想要的
 force_local_logins_ssl=YES
 
-#你至少应该启用这个如果你启用 ssl...
+# 如果启用SSL，则至少应启用 TLS v1
 ssl_tlsv1=YES
-#选择你想要的
-ssl_sslv2=YES
-#选择你想要的
+# 这些选项将允许或阻止 SSL v2 和 v3 协议连接。 TLS v1连接是首选。
+ssl_sslv2=NO
 ssl_sslv3=YES
-#给出您当前生成的 *.pem 文件的正确路径
+# 给出您的 *.pem 文件的正确路径
 rsa_cert_file=/etc/ssl/certs/vsftpd.pem
-# *.pem 文件包含密钥和证书
+# .pem 文件也包含私钥
 rsa_private_key_file=/etc/ssl/certs/vsftpd.pem
-
 ```
 
-### 动态 DNS
+### 在被动模式下解析主机名
 
-确保在 `/etc/vsftpd.conf` 中放入以下两行：
+要覆盖 vsftpd 在被动模式下通过服务器的主机名发布的IP地址，并在启动时解析DNS，在 `/etc/vsftpd.conf` 中增加以下两行：
 
 ```
 pasv_addr_resolve=YES
-pasv_address=yourdomain.noip.info
+pasv_address=*yourdomain.org*
 
 ```
 
-定期更新 pasv_address 并重新启动服务器的脚本是**不必要**的，因为它可以在别处被找到！
+**注意:**
 
-**注意:** 您将无法通过 LAN 连接到被动模式。尝试在局域网 PC 的 FTP 客户端上的活动模式。
+*   对于动态DNS，定期更新 *pasv_address* 并重新启动服务器是不必要的，因为它有时可以被读取。
+*   您可能无法通过 LAN 以被动模式连接，在这种情况下，请尝试使用主动模式而不是LAN客户端。
 
 ### 端口配置
 
-特别是对于暴露于 Web 的私有 FTP 服务器，建议将监听端口更改为标准端口 21 以外的其他服务器。可以使用 `/etc/vsftpd.conf` 中的以下行来完成此操作：
+对于暴露于 Web 的 FTP 服务器，为了减少服务器受到攻击的可能性，可以将侦听端口改为除标准端口 21 以外的端口。要将被动模式端口限制为打开端口，可以提供一个范围。这些端口配置更改可以使用以下几行完成：
 
+ `/etc/vsftpd.conf` 
 ```
 listen_port=2211
-
-```
-
-此外，定制的端口范围可以由以下行给出：
-
-```
-pasv_min_port=49152
-pasv_max_port=65534
-
+pasv_min_port=5000
+pasv_max_port=5003
 ```
 
 ### 配置 iptables

@@ -1,3 +1,7 @@
+Related articles
+
+*   [MuPDF](/index.php/MuPDF "MuPDF")
+
 [llpp](http://repo.or.cz/w/llpp.git) is a lightweight, fast and featureful PDF, EPUB, XPS and CBZ viewer based on [MuPDF](/index.php/MuPDF "MuPDF").
 
 ## Contents
@@ -12,7 +16,7 @@
     *   [4.1 Reload File](#Reload_File)
     *   [4.2 Remote Interface](#Remote_Interface)
     *   [4.3 Clean up history](#Clean_up_history)
-    *   [4.4 Inverse search using Synctex and Vim](#Inverse_search_using_Synctex_and_Vim)
+    *   [4.4 Inverse search using Synctex and Vim/Emacs](#Inverse_search_using_Synctex_and_Vim.2FEmacs)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -122,7 +126,7 @@ gc.py done.
 
 ```
 
-### Inverse search using Synctex and Vim
+### Inverse search using Synctex and Vim/Emacs
 
 To use the synctex capability of llpp, add the line bellow to your <tt>~/.config/llpp.conf</tt> under the <tt>defaults</tt> tag:
 
@@ -145,8 +149,12 @@ page=$(($2 + 1)) # The page number star at zero in llpp
 x=$3
 y=$4
 
+# for vim
 synctex edit -o "$page:$x:$y:$pdf_file" \
-       -x "gvim --servername synctex --remote-wait-silent +%{line} %{input}"
+       -x "gvim --servername synctex --remote-wait-silent +%{line} '%{input}'"
+
+# for emacs
+# synctex edit -o "$page:$x:$y:$pdf_file" -x "emacsclient +%{line} '%{input}'" 
 
 ```
 

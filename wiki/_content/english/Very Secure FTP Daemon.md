@@ -11,8 +11,8 @@
     *   [2.5 Limiting user login](#Limiting_user_login)
     *   [2.6 Limiting connections](#Limiting_connections)
     *   [2.7 Using xinetd](#Using_xinetd)
-    *   [2.8 Using SSL to Secure FTP](#Using_SSL_to_Secure_FTP)
-    *   [2.9 Dynamic DNS](#Dynamic_DNS)
+    *   [2.8 Using SSL/TLS to secure FTP](#Using_SSL.2FTLS_to_secure_FTP)
+    *   [2.9 Resolve hostname in passive mode](#Resolve_hostname_in_passive_mode)
     *   [2.10 Port configurations](#Port_configurations)
     *   [2.11 Configuring iptables](#Configuring_iptables)
 *   [3 Tips and tricks](#Tips_and_tricks)
@@ -28,9 +28,9 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [vsftpd](https://www.archlinux.org/packages/?name=vsftpd) and [Start/Enable](/index.php/Systemd#Using_units "Systemd") the `vsftpd.service` daemon.
+[Install](/index.php/Install "Install") [vsftpd](https://www.archlinux.org/packages/?name=vsftpd) and [start/enable](/index.php/Start/enable "Start/enable") the `vsftpd.service` daemon.
 
-Tu use [xinetd](https://en.wikipedia.org/wiki/xinetd "wikipedia:xinetd") for monitoring and controlling vsftpd connections, see [#Using xinetd](#Using_xinetd).
+To use [xinetd](https://en.wikipedia.org/wiki/xinetd "wikipedia:xinetd") for monitoring and controlling vsftpd connections, see [#Using xinetd](#Using_xinetd).
 
 ## Configuration
 
@@ -188,78 +188,69 @@ Otherwise connection will fail:
 
 Instead of starting the vsftpd daemon start and [enable](/index.php/Enable "Enable") `xinetd.service`.
 
-### Using SSL to Secure FTP
+### Using SSL/TLS to secure FTP
 
-Generate an SSL Cert, e.g. like that:
+First, you need a *X.509 SSL/TLS* certificate to use TLS. If you do not have one, you can easily generate a self-signed certificate as follows:
 
 ```
 # cd /etc/ssl/certs
-# openssl req -x509 -nodes -days 7300 -newkey rsa:2048 -keyout /etc/ssl/certs/vsftpd.pem -out /etc/ssl/certs/vsftpd.pem
-# chmod 600 /etc/ssl/certs/vsftpd.pem
+# openssl req -x509 -nodes -days 7300 -newkey rsa:2048 -keyout vsftpd.pem -out vsftpd.pem
+# chmod 600 vsftpd.pem
 
 ```
 
-You will be asked a lot of Questions about your Company etc., as your Certificate is not a trusted one it doesn't really matter what you fill in. You will use this for encryption! If you plan to use this in a matter of trust get one from a CA like thawte, verisign etc.
+You will be asked questions about your company, etc. As your certificate is not a trusted one, it does not really matter what is filled in, it will be used for encryption. To use a trusted certificate, you can get one from a certificate authority like [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt").
 
-edit your configuration `/etc/vsftpd.conf`
+Then, edit the configuration file:
 
+ `/etc/vsftpd.conf` 
 ```
-#this is important
 ssl_enable=YES
 
-#choose what you like, if you accept anon-connections
-# you may want to enable this
+#choose what you like, if you accept anonymous connections, you may want to enable this
 # allow_anon_ssl=NO
 
-#choose what you like,
-# it's a matter of performance i guess
-# force_local_data_ssl=NO
+#by default all non anonymous logins and forced to use SSL to send and receive password and data, set to NO to allow non secure connections
+force_local_logins_ssl=NO
+force_local_data_ssl=NO
 
-#choose what you like
-force_local_logins_ssl=YES
-
-#you should at least enable this if you enable ssl...
+#you should at least enable TLS v1 if you enable SSL
 ssl_tlsv1=YES
-#choose what you like
-ssl_sslv2=YES
-#choose what you like
+#these options will permit or prevent SSL v2 and v3 protocol connections. TLS v1 connections are preferred. 
+ssl_sslv2=NO
 ssl_sslv3=YES
-#give the correct path to your currently generated *.pem file
-rsa_cert_file=/etc/ssl/certs/vsftpd.pem
-#the *.pem file contains both the key and cert
-rsa_private_key_file=/etc/ssl/certs/vsftpd.pem
 
+#give the correct path to your .pem file
+rsa_cert_file=/etc/ssl/certs/vsftpd.pem
+#the .pem file also contains the private key
+rsa_private_key_file=/etc/ssl/certs/vsftpd.pem
 ```
 
-### Dynamic DNS
+### Resolve hostname in passive mode
 
-Make sure you put the following two lines in `/etc/vsftpd.conf`:
+To override the IP address vsftpd advertises in passive mode by the hostname of your server and have it DNS resolved at startup, add the following two lines in `/etc/vsftpd.conf`:
 
 ```
 pasv_addr_resolve=YES
-pasv_address=yourdomain.noip.info
+pasv_address=*yourdomain.org*
 
 ```
 
-It is **not** necessary to use a script that updates pasv_address periodically and restarts the server, as it can be found elsewhere!
+**Note:**
 
-**Note:** You won't be able to connect in passive mode via LAN anymore. Try the active mode on your LAN PC's FTP client.
+*   For dynamic DNS, it is **not** necessary to periodically update *pasv_address* and restart the server as it can sometimes be read.
+*   You may not be able to connect in passive mode via LAN anymore, in this case try the active mode instead from the LAN clients.
 
 ### Port configurations
 
-Especially for private FTP servers that are exposed to the web it's recommended to change the listening port to something other than the standard port 21\. This can be done using the following lines in `/etc/vsftpd.conf`:
+For FTP servers that are exposed to the web, to reduce the likelihood of the server being attacked, the listening port can be changed to something other than the standard port 21\. To limit the passive mode ports to open ports, a range can be provided. These port configurations changes can be done using the following lines:
 
+ `/etc/vsftpd.conf` 
 ```
 listen_port=2211
 
-```
-
-Furthermore a custom passive port range can be given by:
-
-```
-pasv_min_port=49152
-pasv_max_port=65534
-
+pasv_min_port=5000
+pasv_max_port=5003
 ```
 
 ### Configuring iptables

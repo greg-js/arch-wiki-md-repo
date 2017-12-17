@@ -101,7 +101,6 @@ $ ls /etc/OpenCL/vendors
 *   **JavaScript/HTML5**: [WebCL](http://www.khronos.org/webcl/)
 *   **[Python](/index.php/Python "Python")**: [python-pyopencl](https://www.archlinux.org/packages/?name=python-pyopencl)
 *   **[D](/index.php/D "D")**: [cl4d](https://bitbucket.org/trass3r/cl4d/wiki/Home)
-*   **[Haskell](/index.php/Haskell "Haskell")**: OpenCLRaw: [haskell-openclraw-git](https://aur.archlinux.org/packages/haskell-openclraw-git/)
 *   **[Java](/index.php/Java "Java")**: [JOCL](http://jogamp.org/jocl/www/) (a part of [JogAmp](http://jogamp.org/))
 *   **[Mono/.NET](/index.php/Mono "Mono")**: [Open Toolkit](http://sourceforge.net/projects/opentk/)
 *   **[Go](/index.php/Go "Go")**: [OpenCL bindings for Go](https://github.com/samuel/go-opencl)

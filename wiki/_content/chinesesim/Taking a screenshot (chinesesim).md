@@ -33,7 +33,7 @@ rm /tmp/{0,1}.png
 
 ## scrot
 
-**注意:** 根据 [这个帖子](http://comments.gmane.org/gmane.comp.misc.suckless/6901), [scrot](https://www.archlinux.org/packages/?name=scrot)无法与[dwm](https://www.archlinux.org/packages/?name=dwm)或[xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys)一起工作.
+**注意:** 根据 [这个帖子](http://comments.gmane.org/gmane.comp.misc.suckless/6901), [scrot](https://www.archlinux.org/packages/?name=scrot)无法与[dwm](https://aur.archlinux.org/packages/dwm/)或[xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys)一起工作.
 
 **注意：本节 scrot 内容来自[Linuxtoy](http://linuxtoy.org/)上的[scrot从入门到精通](http://linuxtoy.org/archives/mastering-scrot.html)一文，为了适应 Arch Linux 的使用环境和 Wiki 版面要求，对其部分内容和格式重新做了编排。**
 

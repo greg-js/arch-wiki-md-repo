@@ -61,7 +61,7 @@
 
 與 [VirtualBox](/index.php/VirtualBox "VirtualBox") 和 [VMware](/index.php/VMware "VMware")等虛擬化方案不同, QEMU不提供GUI界面来管理虛擬機器 (除了執行虛擬機時出現的視窗), 也沒有提供一种持久保存虛擬機設定方式. 必須每一次在命令列上指定所有執行虛擬機器的參數,除非你已經創建了一個Script來啟動你的虛擬機. 然而，有幾種使用者圖形界面前端的QEMU：
 
-*   [qemu-launcher](https://www.archlinux.org/packages/?name=qemu-launcher)
+*   [qemu-launcher](https://aur.archlinux.org/packages/qemu-launcher/)
 *   [qtemu](https://aur.archlinux.org/packages/qtemu/)
 *   [aqemu](https://aur.archlinux.org/packages/aqemu/)
 

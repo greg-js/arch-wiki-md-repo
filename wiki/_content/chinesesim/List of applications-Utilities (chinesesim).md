@@ -259,7 +259,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[st](/index.php/St "St")** — 简单，在Ｘ下可用。
 
-	[http://st.suckless.org](http://st.suckless.org) || [st](https://www.archlinux.org/packages/?name=st)
+	[http://st.suckless.org](http://st.suckless.org) || [st](https://aur.archlinux.org/packages/st/)
 
 *   **Terminal** — 支持多窗口，滚动缓冲以及众多理想功能，从属 GNUstep.
 

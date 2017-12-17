@@ -15,10 +15,9 @@
         *   [2.3.1 PHP](#PHP)
             *   [2.3.1.1 Using php-cgi](#Using_php-cgi)
             *   [2.3.1.2 Using php-fpm](#Using_php-fpm)
-        *   [2.3.2 Ruby on Rails](#Ruby_on_Rails)
-        *   [2.3.3 Python FastCGI](#Python_FastCGI)
-            *   [2.3.3.1 Server name indication](#Server_name_indication)
-        *   [2.3.4 Redirect http requests to https](#Redirect_http_requests_to_https)
+        *   [2.3.2 Python FastCGI](#Python_FastCGI)
+            *   [2.3.2.1 Server name indication](#Server_name_indication)
+        *   [2.3.3 Redirect http requests to https](#Redirect_http_requests_to_https)
     *   [2.4 Output compression](#Output_compression)
 *   [3 See also](#See_also)
 
@@ -327,14 +326,6 @@ fastcgi.server = (
 )
 
 ```
-
-#### Ruby on Rails
-
-Install and configure FastCGI (see [#FastCGI](#FastCGI) above).
-
-Install [ruby](/index.php/Ruby "Ruby") from [official repositories](/index.php/Official_repositories "Official repositories") and [ruby-fcgi](https://aur.archlinux.org/packages/ruby-fcgi/) from [AUR](/index.php/AUR "AUR").
-
-Follow instructions on [RubyOnRails](/index.php/RubyOnRails "RubyOnRails").
 
 #### Python FastCGI
 

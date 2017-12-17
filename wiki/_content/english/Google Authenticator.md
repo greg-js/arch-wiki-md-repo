@@ -16,7 +16,7 @@ For the reverse operation (generating codes compatible with Google Authenticator
 
 ## Installation
 
-Install [libpam-google-authenticator](https://aur.archlinux.org/packages/libpam-google-authenticator/) package. Development version is also available with [google-authenticator-libpam-git](https://aur.archlinux.org/packages/google-authenticator-libpam-git/).
+Install [libpam-google-authenticator](https://www.archlinux.org/packages/?name=libpam-google-authenticator) package. Development version is also available with [google-authenticator-libpam-git](https://aur.archlinux.org/packages/google-authenticator-libpam-git/).
 
 ## Setting up the PAM
 

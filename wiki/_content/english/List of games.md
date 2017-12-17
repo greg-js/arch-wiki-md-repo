@@ -61,10 +61,6 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[http://clonekeen.sourceforge.net/](http://clonekeen.sourceforge.net/) || [clonekeen](https://aur.archlinux.org/packages/clonekeen/)
 
-*   **[Freedink](https://en.wikipedia.org/wiki/Dink_Smallwood "wikipedia:Dink Smallwood")** — Free and enhanced version of the action-adventure "Dink Smallwood".
-
-	[https://www.freedink.org/](https://www.freedink.org/) || [freedink](https://aur.archlinux.org/packages/freedink/)
-
 *   **[Gish](https://en.wikipedia.org/wiki/Gish_(video_game) "wikipedia:Gish (video game)")** — 2D physics platformer about adventures of ball of tar.
 
 	[https://github.com/freegish/freegish](https://github.com/freegish/freegish) || [freegish-git](https://aur.archlinux.org/packages/freegish-git/)
@@ -85,7 +81,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **KSpaceDuel** — Player attempts to destroy opponent’s satellite and controll their own one to keep it orbiting. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/)
 
-	[https://kde.org/applications/games/kspaceduel/](https://kde.org/applications/games/kspaceduel/) || [kdegames-kspaceduel](https://www.archlinux.org/packages/?name=kdegames-kspaceduel)
+	[https://kde.org/applications/games/kspaceduel/](https://kde.org/applications/games/kspaceduel/) || [kspaceduel](https://www.archlinux.org/packages/?name=kspaceduel)
 
 *   **[Liquid War](https://en.wikipedia.org/wiki/Liquid_War "wikipedia:Liquid War")** — 2D multiplayer game with a simple and unique game mechanic. It could be classified as a fast-paced strategy.
 
@@ -173,7 +169,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **ksnakeduel** — *Snake*-like game for 2 players which compete to survive longer than the opponent. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
-	[https://www.kde.org/applications/games/ksnakeduel/](https://www.kde.org/applications/games/ksnakeduel/) || [kdegames-ksnakeduel](https://www.archlinux.org/packages/?name=kdegames-ksnakeduel)
+	[https://www.kde.org/applications/games/ksnakeduel/](https://www.kde.org/applications/games/ksnakeduel/) || [ksnakeduel](https://www.archlinux.org/packages/?name=ksnakeduel)
 
 *   **LTris** — Arcade version of Tetris
 
@@ -251,7 +247,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **Kajongg** — An implementation of [Mahjong](https://en.wikipedia.org/wiki/Mahjong "wikipedia:Mahjong") for 4 players. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
-	[https://www.kde.org/applications/games/kajongg/](https://www.kde.org/applications/games/kajongg/) || [kdegames-kajongg](https://www.archlinux.org/packages/?name=kdegames-kajongg)
+	[https://www.kde.org/applications/games/kajongg/](https://www.kde.org/applications/games/kajongg/) || [kajongg](https://www.archlinux.org/packages/?name=kajongg)
 
 *   **KHangMan** — [Hangman](https://en.wikipedia.org/wiki/Hangman_(game) "wikipedia:Hangman (game)"). Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
@@ -267,7 +263,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **Lskat** — A variation of [Skat](https://en.wikipedia.org/wiki/Skat "wikipedia:Skat") card game for two players. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/)
 
-	[https://www.kde.org/applications/games/lskat/](https://www.kde.org/applications/games/lskat/) || [kdegames-lskat](https://www.archlinux.org/packages/?name=kdegames-lskat)
+	[https://www.kde.org/applications/games/lskat/](https://www.kde.org/applications/games/lskat/) || [lskat](https://www.archlinux.org/packages/?name=lskat)
 
 *   **Mah-Jong** — Chinese Classical mahjong (not solitaire) with network support
 
@@ -323,7 +319,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **GCompris** — Educational software suite comprising of numerous activities for children aged 2 to 10.
 
-	[https://gcompris.net/](https://gcompris.net/) || [gcompris](https://www.archlinux.org/packages/?name=gcompris)
+	[https://gcompris.net/](https://gcompris.net/) || [gcompris-qt](https://www.archlinux.org/packages/?name=gcompris-qt)
 
 *   **katomic** — Slide elements so they resemble a chemical molecule. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
@@ -401,7 +397,7 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 *   **KGoldrunner** — A platform game with the goal of collecting gold. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
-	[https://www.kde.org/applications/games/kgoldrunner/](https://www.kde.org/applications/games/kgoldrunner/) || [kdegames-kgoldrunner](https://www.archlinux.org/packages/?name=kdegames-kgoldrunner)
+	[https://www.kde.org/applications/games/kgoldrunner/](https://www.kde.org/applications/games/kgoldrunner/) || [kgoldrunner](https://www.archlinux.org/packages/?name=kgoldrunner)
 
 *   **Knyttstories** — Platformer with adventure elements, heavy exploration and downloadable levels.
 
@@ -479,7 +475,7 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 *   **Kigo** — *Go* for KDE. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
-	[https://www.kde.org/applications/games/kigo/](https://www.kde.org/applications/games/kigo/) || [kdegames-kigo](https://www.archlinux.org/packages/?name=kdegames-kigo)
+	[https://www.kde.org/applications/games/kigo/](https://www.kde.org/applications/games/kigo/) || [kigo](https://www.archlinux.org/packages/?name=kigo)
 
 *   **Killbots** — A turn-based game with an objective of avoiding robots that are trying to kill the player. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
@@ -515,11 +511,11 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 *   **Ksudoku** — Sudoku game and more for KDE. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
-	[http://ksudoku.sourceforge.net/](http://ksudoku.sourceforge.net/) || [kdegames-ksudoku](https://www.archlinux.org/packages/?name=kdegames-ksudoku)
+	[http://ksudoku.sourceforge.net/](http://ksudoku.sourceforge.net/) || [ksudoku](https://www.archlinux.org/packages/?name=ksudoku)
 
 *   **Kubrick** — A Rubik’s cube solving game. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
-	[https://www.kde.org/applications/games/kubrick/](https://www.kde.org/applications/games/kubrick/) || [kdegames-kubrick](https://www.archlinux.org/packages/?name=kdegames-kubrick)
+	[https://www.kde.org/applications/games/kubrick/](https://www.kde.org/applications/games/kubrick/) || [kubrick](https://www.archlinux.org/packages/?name=kubrick)
 
 *   **Palapeli** — Jigsaw puzzle game. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
@@ -759,10 +755,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **ZDoom** — Enhanced Doom port with additional support for Heretic, Hexen and Strife.
 
 	[https://www.zdoom.org/](https://www.zdoom.org/) || [zdoom](https://aur.archlinux.org/packages/zdoom/)
-
-*   **Doom Retro** — DOOM Retro is the classic, refined DOOM source port. Based on Chocolate DOOM with enhancements from other source ports.
-
-	[http://doomretro.com/](http://doomretro.com/) || [doom-retro-git](https://aur.archlinux.org/packages/doom-retro-git/)
 
 *   [Doom 3](https://en.wikipedia.org/wiki/Doom_3 "wikipedia:Doom 3")
 
@@ -1068,7 +1060,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **Konquest** — A turn-based game in which the player wage wars by managing a fleet of spaceships and conquering other planets. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
-	[https://www.kde.org/applications/games/konquest/](https://www.kde.org/applications/games/konquest/) || [kdegames-konquest](https://www.archlinux.org/packages/?name=kdegames-konquest)
+	[https://www.kde.org/applications/games/konquest/](https://www.kde.org/applications/games/konquest/) || [konquest](https://www.archlinux.org/packages/?name=konquest)
 
 *   **[Simutrans](https://en.wikipedia.org/wiki/Simutrans "wikipedia:Simutrans")** — Another Transport simulation that works on linux with sdl.
 
@@ -1083,10 +1075,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 	[https://openrct2.org/](https://openrct2.org/) || [openrct2](https://aur.archlinux.org/packages/openrct2/)
 
 ## Visual novels
-
-*   **[Don't take it personally](https://en.wikipedia.org/wiki/Don%27t_take_it_personally,_babe,_it_just_ain%27t_your_story "wikipedia:Don't take it personally, babe, it just ain't your story")** — Almost kinetic visual novel that tells a story of a new high school literature teacher, set in a prestigious private high school, and on the social networks of 2027.
-
-	[http://scoutshonour.com/donttakeitpersonallybabeitjustaintyourstory/](http://scoutshonour.com/donttakeitpersonallybabeitjustaintyourstory/) || [donttakeitpersonally](https://aur.archlinux.org/packages/donttakeitpersonally/)
 
 *   **[Juniper's Knot](https://en.wikipedia.org/wiki/Juniper%27s_Knot "wikipedia:Juniper's Knot")** — Short game about boy and fiend.
 
@@ -1133,8 +1121,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 | **[Foobillard++](https://en.wikipedia.org/wiki/Foobillard%2B%2B "w:Foobillard++")**
 - [foobillardplus.sourceforge.net](http://foobillardplus.sourceforge.net/) | C | Simulation | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [foobillard++](https://www.archlinux.org/packages/?name=foobillard%2B%2B) | Successor to Foobillard, OpenGL billiard game for Linux. |
 | **[Freeciv](https://en.wikipedia.org/wiki/Freeciv "w:Freeciv")**
-- [freeciv.wikia.com](http://freeciv.wikia.com/wiki/Main_Page) | C/C++ | <abbr title="Turn-based strategy game">TBS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [freeciv](https://www.archlinux.org/packages/?name=freeciv)
-[freeciv-git](https://aur.archlinux.org/packages/freeciv-git/) | Multiuser clone of the famous Microprose game of Civilization. Scripted using a Lua API. |
+- [freeciv.wikia.com](http://freeciv.wikia.com/wiki/Main_Page) | C/C++ | <abbr title="Turn-based strategy game">TBS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [freeciv](https://www.archlinux.org/packages/?name=freeciv) | Multiuser clone of the famous Microprose game of Civilization. Scripted using a Lua API. |
 | **[Freecol](https://en.wikipedia.org/wiki/Freecol "w:Freecol")**
 - [freecol.org](http://www.freecol.org/) | Java | <abbr title="Turn-based strategy game">TBS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [freecol](https://www.archlinux.org/packages/?name=freecol)
 [freecol-git](https://aur.archlinux.org/packages/freecol-git/) | Turn-based strategy game based on Colonization. |

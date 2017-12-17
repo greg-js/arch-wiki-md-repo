@@ -166,7 +166,7 @@ by default, in that order, but a custom path can be set by adding `env wpa_suppl
 
 **Note:** The hook stops at the first configuration file found, thus you should take this into consideration if you have several *wpa_supplicant* configuration files, otherwise *dhcpcd* might end up using the wrong file.
 
-If you manage wireless connections with *wpa_supplicant* itself, the hook may create unwanted connection events. For example, if you stop *wpa_supplicant* the hook may bring the interface up again. Also, if you use [netctl-auto](/index.php/Netctl#Automatic_switching_of_profiles "Netctl"), *wpa_supplicant* is started automatically with `/run/network/wpa_supplicant_*interface*.conf` for config, so starting it again from the hook is unnecessary and may result in boot-time parse errors of the `/etc/wpa_supplicant/wpa_supplicant.conf` file, which only contains dummy values in the default packaged version.
+If you manage wireless connections with *wpa_supplicant* itself, the hook may create unwanted connection events. For example, if you stop *wpa_supplicant* the hook may bring the interface up again. Also, if you use [netctl-auto](/index.php/Netctl#Special_systemd_units "Netctl"), *wpa_supplicant* is started automatically with `/run/network/wpa_supplicant_*interface*.conf` for config, so starting it again from the hook is unnecessary and may result in boot-time parse errors of the `/etc/wpa_supplicant/wpa_supplicant.conf` file, which only contains dummy values in the default packaged version.
 
 To disable the hook, add `nohook wpa_supplicant` to `dhcpcd.conf`.
 
