@@ -79,37 +79,38 @@ Generally, every administrative task that you would normally do after a fresh in
 
 #### Custom local repository
 
-You can also [create a custom local repository](/index.php/Custom_local_repository "Custom local repository") for the purpose of preparing custom packages or packages from [AUR](/index.php/AUR "AUR")/[ABS](/index.php/ABS "ABS"). When doing so with packages for both architectures, you should follow a certain directory order to not run into problems.
+For the purpose of preparing custom packages or packages from [AUR](/index.php/AUR "AUR")/[ABS](/index.php/ABS "ABS"), you could also [create a custom local repository](/index.php/Custom_local_repository "Custom local repository"). If you are looking to support multiple architectures then precautions should be taken to prevent errors from occurring. Each architecture should have its own directory tree:
 
-For instance:
+ `$ tree ~/customrepo/ | sed "s/$(uname -m)/<arch>/g"` 
+```
+/home/archie/customrepo/
+└── <arch>
+    ├── customrepo.db -> customrepo.db.tar.xz
+    ├── customrepo.db.tar.xz
+    ├── customrepo.files -> customrepo.files.tar.xz
+    ├── customrepo.files.tar.xz
+    └── personal-website-git-b99cce0-1-<arch>.pkg.tar.xz
 
-*   `~/customrepo`
-    *   `~/customrepo/x86_64`
-        *   `~/customrepo/x86_64/foo-x86_64.pkg.tar.xz`
-        *   `~/customrepo/x86_64/customrepo.db.tar.gz`
-        *   `~/customrepo/x86_64/customrepo.db` (symlink created by `repo-add`)
-    *   `~/customrepo/i686`
-        *   `~/customrepo/i686/foo-i686.pkg.tar.xz`
-        *   `~/customrepo/i686/customrepo.db.tar.gz`
-        *   `~/customrepo/i686/customrepo.db` (symlink created by `repo-add`)
+1 directory, 5 files
+
+```
 
 You can then add your repository by putting the following into `~/archlive/pacman.conf`, above the other repository entries (for top priority):
 
+ `~/archlive/pacman.conf` 
 ```
+...
 # custom repository
 [customrepo]
-SigLevel = Optional TrustAll
+SigLevel = Optional TrustAlly
 Server = file:///home/**user**/customrepo/$arch
-
+...
 ```
 
-So, the build scripts just look for the appropriate packages.
-
-If this is not the case you will be running into error messages similar to this:
+The *repo-add* executable checks if the package is appropriate. If this is not the case you will be running into error messages similar to this:
 
 ```
-error: failed to prepare transaction (package architecture is not valid)
-:: package foo-i686 does not have a valid architecture
+==> ERROR: '/home/archie/customrepo/<arch>/foo-<arch>.pkg.tar.xz' does not have a valid database archive extension.
 
 ```
 

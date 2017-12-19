@@ -277,12 +277,15 @@ E515dw
 | ET-4750 |
 | EW-M571T |
 | EW-M670FT |
-| L4150 |
+| L380 | [epson-inkjet-printer-201601w](https://aur.archlinux.org/packages/epson-inkjet-printer-201601w/) |
+| L382 |
+| L4150 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | L4160 |
 | L6160 |
 | L6170 |
 | L6190 |
-| PM-520 |
+| LP-S5000 | This printer requires a [custom driver from Avasys](#Avasys). |
+| PM-520 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | PX-M5080F |
 | PX-M5081F |
 | PX-M680F |
@@ -291,7 +294,8 @@ E515dw
 | PX-M781F |
 | PX-S5080 |
 | PX-S7070X |
-| WF-3720 |
+| TX125 | [epson-inkjet-printer-n10-nx127](https://aur.archlinux.org/packages/epson-inkjet-printer-n10-nx127/) |
+| WF-3720 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | WF-4720 |
 | WF-4730 |
 | WF-4740 |
@@ -302,8 +306,6 @@ E515dw
 | XP-15000 |
 | XP-6000 |
 | XP-8500 |
-| TX125 | [epson-inkjet-printer-n10-nx127](https://aur.archlinux.org/packages/epson-inkjet-printer-n10-nx127/) |
-| LP-S5000 | This printer requires a [custom driver from Avasys](#Avasys). |
 | Printer | Driver/filter | Notes |
 
 ### Utilities

@@ -6130,6 +6130,7 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 *   [awesome-sysadmin](https://github.com/n1trux/awesome-sysadmin) - Software for system administrators
 *   [awesome-linuxaudio](https://github.com/nodiscc/awesome-linuxaudio) - Software for audio/video/live production
 *   [PRISM Break](https://prism-break.org/en/all/) - Software against mass surveillance
+*   [Privacy Tools](https://www.privacytools.io/) - Knowledge and tools to protect your privacy against global mass surveillance.
 *   [lin-app.com](http://lin-app.com/) - Commercial applications and games for Linux
 
 **Arch Linux forum threads**

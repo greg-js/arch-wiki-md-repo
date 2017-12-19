@@ -82,7 +82,7 @@ polkit.addRule(function(action, subject) {
 Для монтирования устройств с *udisks* или *udisks2* удалите разрешение SUID из *udevil*:
 
 ```
-# chmod-s/usr/bin/udevil
+# chmod -s /usr/bin/udevil
 
 ```
 
@@ -194,5 +194,5 @@ KERNEL == «sda2», ENV {UDISKS_IGNORE} = «1»
 
 ## Смотрите также
 
-*   [Gentoo wiki udisks (Англ.)](http://wiki.gentoo.org/wiki/Udisksi)
+*   [Gentoo wiki udisks (Англ.)](https://wiki.gentoo.org/wiki/Udisks)
 *   [Введение в udisks (Англ.)](http://blog.fpmurphy.com/2011/08/introduction-to-udisks.html?output=pdf)

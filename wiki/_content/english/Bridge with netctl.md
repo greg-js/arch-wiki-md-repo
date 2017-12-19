@@ -1,3 +1,8 @@
+Related articles
+
+*   [Network bridge](/index.php/Network_bridge "Network bridge")
+*   [netctl](/index.php/Netctl "Netctl")
+
 Make sure [netctl](/index.php/Netctl "Netctl") is installed.
 
 Copy `/etc/netctl/examples/bridge` to `/etc/netctl/bridge`.
@@ -53,4 +58,4 @@ You can bridge any combination of network devices editing `BindsToInterfaces` op
 
 If any of the bridged devices (e.g. `eth0`, `tap0`) had [dhcpcd](/index.php/Dhcpcd "Dhcpcd") enabled, [stop and disable](/index.php/Systemd#Using_units "Systemd") the `dhcpcd@eth0.service` daemon. Or set `IP=no` to the netctl profiles.
 
-Finally, [start and enable](/index.php/Netctl#Just_one_profile "Netctl") your `/etc/netctl/bridge`.
+Finally, [start and enable](/index.php/Netctl#Starting_a_profile "Netctl") your `/etc/netctl/bridge`.

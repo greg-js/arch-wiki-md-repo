@@ -1,6 +1,8 @@
 [Let’s Encrypt](https://letsencrypt.org/) is a free, automated, and open [certificate authority](https://en.wikipedia.org/wiki/Certificate_authority "wikipedia:Certificate authority") utilizing the [ACME](https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment "wikipedia:Automated Certificate Management Environment") protocol.
 
-The official client is called **Certbot**, which allows to request valid X.509 certificates straight from the command line. A minimal client with manual CSR creation is available at [acme-tiny](https://aur.archlinux.org/packages/acme-tiny/), clients suitable for scripts are [simp_le-git](https://aur.archlinux.org/packages/simp_le-git/) and [letsencrypt-cli](https://aur.archlinux.org/packages/letsencrypt-cli/).
+It is recommended to start with the **certbot** client, which allows to request valid X.509 certificates straight from the command line.
+
+If you would like to try other clients, a minimal client with manual certificate signing request *(CSR)* creation is available at [acme-tiny](https://aur.archlinux.org/packages/acme-tiny/). Clients suitable for scripts are [simp_le-git](https://aur.archlinux.org/packages/simp_le-git/) and [letsencrypt-cli](https://aur.archlinux.org/packages/letsencrypt-cli/).
 
 ## Contents
 
@@ -10,7 +12,7 @@ The official client is called **Certbot**, which allows to request valid X.509 c
         *   [2.1.1 Nginx](#Nginx)
             *   [2.1.1.1 Managing server blocks](#Managing_server_blocks)
     *   [2.2 Webroot](#Webroot)
-        *   [2.2.1 Mapping ACME-challange requests](#Mapping_ACME-challange_requests)
+        *   [2.2.1 Mapping ACME-challenge requests](#Mapping_ACME-challenge_requests)
             *   [2.2.1.1 nginx](#nginx_2)
             *   [2.2.1.2 Apache](#Apache)
         *   [2.2.2 Obtain certificate(s)](#Obtain_certificate.28s.29)
@@ -114,7 +116,7 @@ When using the webroot method the Certbot client places a challenge response ins
 
 The use of this method is recommend over a manual install; it offers automatic renewal and easier certificate management. However the usage of [#Plugins](#Plugins) may be the preferred since it allows automatic configuration and installation.
 
-#### Mapping ACME-challange requests
+#### Mapping ACME-challenge requests
 
 Management of can be made easier by mapping all HTTP-requests for `.well-known/acme-challenge` to a single folder, e.g. `/var/lib/letsencrypt`.
 

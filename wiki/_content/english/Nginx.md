@@ -1,4 +1,4 @@
-[nginx](https://en.wikipedia.org/wiki/nginx "wikipedia:nginx") (pronounced "engine X"), is a free, open-source, high-performance HTTP server and reverse proxy, as well as an IMAP/POP3 proxy server, written by Igor Sysoev in 2005\. According to Netcraft's [April 2015 Web Server Survey](http://news.netcraft.com/archives/2015/04/20/april-2015-web-server-survey.html), nginx now hosts 14.48% of all domains worldwide, while [Apache](/index.php/Apache "Apache") hosts about 38.39%. nginx is now well known for its stability, rich feature set, simple configuration, and low resource consumption.
+[nginx](https://en.wikipedia.org/wiki/nginx "wikipedia:nginx") (pronounced "engine X"), is a free, open-source, high-performance HTTP server and reverse proxy, as well as an IMAP/POP3 proxy server, written by Igor Sysoev in 2005\. nginx is well known for its stability, rich feature set, simple configuration, and low resource consumption.
 
 Nginx is often used together with a scripting language such as [PHP](/index.php/PHP "PHP") and database such as [MySQL](/index.php/MySQL "MySQL"). This combination is often referred to as a LEMP stack (Linux, EngineX, MySQL, PHP).
 
@@ -148,19 +148,11 @@ server {
 
 [Restart](/index.php/Restart "Restart") `nginx.service` to apply any changes.
 
-You should configure a DNS-server like [BIND](/index.php/BIND "BIND") or [dnsmasq](/index.php/Dnsmasq "Dnsmasq") so that these domain names could be resolved for connecting clients.
-
-For now you can just add them manually in `/etc/hosts` replacing `192.168.0.101` with the actual IP address of server:
-
-```
-192.168.0.101 domainname1.dom
-192.168.0.101 domainname2.dom
-
-```
+Make sure the hostnames are resolvable by setting up a DNS-server like [BIND](/index.php/BIND "BIND") or [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), or have a look at [Network configuration#Local network hostname resolution](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration").
 
 ##### Managing server entries
 
-It may be easier to use an [Apache](/index.php/Apache "Apache") like [Virtual hosts](/index.php/Apache#Managing_many_virtual_hosts "Apache") system.
+It is possible to put different `server` blocks in different files. This allows you to easily enable or disable certain sites.
 
 Create the following directories:
 
@@ -511,10 +503,10 @@ nginx requires a bunch of files to run properly. Before copying them over, creat
 # mkdir -p $JAIL/www/cgi-bin
 # mkdir -p $JAIL/{run,tmp}
 # cd $JAIL; ln -s usr/lib lib
+# cd $JAIL; ln -s usr/lib lib64
+# cd $JAIL/usr; ln -s lib lib64
 
 ```
-
-**Note:** If using a 64 bit kernel you will need to create symbolic links `lib64` and `usr/lib64` to `usr/lib`: `cd $JAIL; ln -s usr/lib lib64` and `cd $JAIL/usr; ln -s lib lib64`.
 
 Then mount `$JAIL/tmp` and `$JAIL/run` as tmpfs's. The size should be limited to ensure an attacker cannot eat all the RAM.
 
@@ -565,11 +557,6 @@ libc.so.6 => /usr/lib/libc.so.6 (0x00007f57ea6ca000)
 /lib64/ld-linux-x86-64.so.2 (0x00007f57ec604000)
 ```
 
-```
-# cp /lib64/ld-linux-x86-64.so.2 $JAIL/lib
-
-```
-
 For files residing in `/usr/lib` you may try the following one-liner:
 
 ```
@@ -577,7 +564,14 @@ For files residing in `/usr/lib` you may try the following one-liner:
 
 ```
 
-**Note:** Do not try to copy `linux-vdso.so`: it is not a real library and does not exist in `/usr/lib`. Also `ld-linux-x86-64.so` will likely be listed in `/lib64` for a 64 bit system.
+And the following for `ld-linux-x86-64.so`:
+
+```
+# cp /lib64/ld-linux-x86-64.so.2 $JAIL/lib
+
+```
+
+**Note:** Do not try to copy `linux-vdso.so`: it is not a real library and does not exist in `/usr/lib`.
 
 Copy over some miscellaneous but necessary libraries and system files.
 

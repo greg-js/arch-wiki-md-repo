@@ -164,7 +164,7 @@ Udev 自动侦测规则文件的变化，所以修改会立即生效，无需重
 
 ## Udisks
 
-参阅 [Udisks](/index.php/Udisks "Udisks").
+参阅 [Udisks](/index.php/Udisks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udisks (简体中文)").
 
 ## 提示与技巧
 

@@ -1,5 +1,5 @@
-| [Português](/index.php/Category:Portugu%C3%AAs "Category:Português") <small>(12)</small> |
-| <small>1.</small> [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)") <small>(14)</small> |
+| [Português](/index.php/Category:Portugu%C3%AAs "Category:Português") <small>(11)</small> |
+| <small>1.</small> [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)") <small>(15)</small> |
 | <small>1.1.</small> [Desenvolvimento do Arch](/index.php/Category:Arch_development_(Portugu%C3%AAs) "Category:Arch development (Português)") <small>(1)</small> |
 | <small>1.1.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(10)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Portugu%C3%AAs) "Category:ArchWiki (Português)") <small>(5)</small> |

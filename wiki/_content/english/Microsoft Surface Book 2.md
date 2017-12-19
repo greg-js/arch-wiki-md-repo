@@ -60,7 +60,7 @@ Disabling Secure Boot is not necessary, but makes things easier.
 
 ## Booting
 
-The information in [Boot loaders](/index.php/Boot_loaders "Boot loaders") applies here. {Pkg|refind-efi} works well.
+The information in [Boot loaders](/index.php/Boot_loaders "Boot loaders") applies here. [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) works well.
 
 ### Boot from USB
 

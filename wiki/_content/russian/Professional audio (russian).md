@@ -151,31 +151,31 @@ $ fuser -fv /dev/snd/pcm* /dev/dsp*
 
 ### JACK
 
-The aim here is to find the best possible combination of buffer size and periods, given the hardware you have. **Frames/Period = 256** is a sane starter. For onboard and USB devices, try **Periods/Buffer = 3**. Commonly used values are: 256/3, 256/2, 128/3.
+Главная задача здесь заключена в поиске лучшего соотношения размера буффера (buffer size) и частот (periods), которое может обеспечить ваше программное обеспечение. Разумнее всего начинать со значения **Frames/Period = 256**. Попробуйте использовать **Periods/Buffer = 3** для встроенных и USB устройств. Наиболее распространённые значения: 256/3, 256/2, 128/3.
 
-Also, the sample rate must match the hardware sample rate. To check what sample and bit rates your device supports:
+Кроме того, частота семплирования должна совпадать с частотой семплирования аппаратного обеспечения. Для проверки возможности поддержки вашим устройством частоты семплирования и битрейта:
 
 ```
 $ cat /proc/asound/card0/codec#0
 
 ```
 
-Replace *card0* and *codec#0* depending on what you have. You will be looking for **rates** or *VRA* in **Extended ID**. A common sample rate across many of today's devices is **48000 Hz**. Others common rates include 44100 Hz and 96000 Hz.
+Измените *card0* и *codec#0* на ваши значения. Следует обратить внимание на **rates** или *VRA* в **Extended ID**. Современные устройства чаще всего обладают частотой семплирования **48000 Hz**. Чуть менее распространены значения 44100 Hz и 96000 Hz.
 
-Almost always, when recording or sequencing with external gear is concerned, **realtime** is a must. Also, you may like to set maximum priority (at least 10 lower than system limits defined in `/etc/security/limits.d/99-audio.conf`); the highest is for the device itself).
+Почти всегда при записи или сведении с использованием внешних устройств требуется работа в режиме реального времени (**realtime**). Также, вам, возможно, захочется установить максимальный приоритет (как минимум в 10 раз меньше чем ограничения системы, определённые в файле `/etc/security/limits.d/99-audio.conf`; наивысший для самого устройства).
 
-Start jack with the options you just found out:
+Запустите jack с опциями, которые вы получили ранее:
 
 ```
 $ /usr/bin/jackd -R -P89 -dalsa -dhw:0 -r48000 -p256 -n3
 
 ```
 
-[qjackctl](https://www.archlinux.org/packages/?name=qjackctl), [cadence](https://aur.archlinux.org/packages/cadence/) and [patchage](https://www.archlinux.org/packages/?name=patchage) can all be used to as GUIs to monitor JACK's status and simplify its configuration .
+[qjackctl](https://www.archlinux.org/packages/?name=qjackctl), [cadence](https://aur.archlinux.org/packages/cadence/) и [patchage](https://www.archlinux.org/packages/?name=patchage) могут быть использованы как графическая оболочка для контроля за статусом JACK и упрощением его настройки.
 
-**Note:** Once you set up JACK, try different audio applications to test your configuration results. I spent days trying to troubleshoot JACK xrun issues with LMMS which in the end turned out to be the problem with the latter.
+**Примечание:** Как только вы закончите конфигурацию JACK, проверьте ваши настройки, запустив различные аудио приложения. Я потратил целый день, разбираясь с проблемой работы JACK xrun с LMMS, что в конце концов оказалось проблемой с последним.
 
-*Further reading: [Linux Magazine article](http://www.linux-magazine.com/content/download/63041/486886/version/1/file/JACK_Audio_Server.pdf)*
+*Дополнительная информация: [Linux Magazine article](http://www.linux-magazine.com/content/download/63041/486886/version/1/file/JACK_Audio_Server.pdf)*
 
 #### FireWire
 

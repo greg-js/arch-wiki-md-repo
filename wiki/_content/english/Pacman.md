@@ -336,7 +336,7 @@ See [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and 
 
 #### Database structure
 
-The pacman databases are normally located at `/var/lib/pacman/sync`. For each repository specified in `/etc/pacman.conf` there will be a corresponding database file located there. Database files are tar-gzipped archives containing one directory for each package, for example for the [which](https://www.archlinux.org/packages/?name=which) package:
+The *pacman* databases are normally located at `/var/lib/pacman/sync`. For each repository specified in `/etc/pacman.conf` there will be a corresponding database file located there. Database files are tar-gzipped archives containing one directory for each package, for example for the [which](https://www.archlinux.org/packages/?name=which) package:
 
 ```
 % tree which-2.20-6 
@@ -620,7 +620,7 @@ This error manifests as `Not found in sync db`, `Target not found` or `Failed re
 
 Firstly, ensure the package actually exists (and watch out for typos!). If certain the package exists, your package list may be out-of-date or your repositories may be incorrectly configured. Try running `pacman -Syyu` to force a refresh of all package lists and upgrade.
 
-It could also be that the repository containing the package is not enabled on your system, e.g. the package could be in the *multilib* repository, but *multilib* is not enabled in your *pacman.conf*.
+It could also be that the repository containing the package is not enabled on your system, e.g. the package could be in the *multilib* repository, but *multilib* is not enabled in your `pacman.conf`.
 
 See also [FAQ#Why is there only a single version of each shared library in the official repositories?](/index.php/FAQ#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories.3F "FAQ").
 
@@ -659,7 +659,7 @@ In the case that *pacman* crashes with a "database write" error while removing p
 1.  Boot using the Arch installation media. Preferably use a recent media so that the *pacman* version matches/is newer than the system.
 2.  Mount the system's root filesystem, e.g. `mount /dev/sdaX /mnt` as root, and check the mount has sufficient space with `df -h`
 3.  Mount the proc and sysfs filesystems as well: `mount -t {proc,sysfs} /dev/sdaX {/mnt/proc, /mnt/sys}`
-4.  If the system uses default database and directory locations, you can now update the system's pacman database and upgrade it via `pacman --root=/mnt --cachedir=/mnt/var/cache/pacman/pkg -Syyu` as root.
+4.  If the system uses default database and directory locations, you can now update the system's *pacman* database and upgrade it via `pacman --root=/mnt --cachedir=/mnt/var/cache/pacman/pkg -Syyu` as root.
 5.  After the upgrade, one way to double-check for not upgraded but still broken packages: `find /mnt/usr/lib -size 0`
 6.  Followed by a re-install of any still broken package via `pacman --root /mnt --cachedir=/mnt/var/cache/pacman/pkg -S *package*`.
 
@@ -739,7 +739,7 @@ You will then need to reinstall all the foreign packages, which can be listed wi
 
 ### "Cannot open shared object file" error
 
-It looks like previous *pacman* transaction removed or corrupted shared libraries needed for pacman itself.
+It looks like previous *pacman* transaction removed or corrupted shared libraries needed for *pacman* itself.
 
 To recover from this situation you need to unpack required libraries to your filesystem manually. First find what package contains the missed library and then locate it in the *pacman* cache (`/var/cache/pacman/pkg/`). Unpack required shared library to the filesystem. This will allow to run *pacman*.
 

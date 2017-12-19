@@ -40,6 +40,7 @@ This article overviews configuration settings and some useful extensions which e
     *   [2.15 Random User Agent](#Random_User_Agent)
     *   [2.16 Privacy Settings](#Privacy_Settings)
     *   [2.17 Stop Fingerprinting](#Stop_Fingerprinting)
+*   [3 Remove system-wide hidden extensions](#Remove_system-wide_hidden_extensions)
 
 ## Configuration tweaks
 
@@ -248,3 +249,17 @@ For more information on cross-site requests and RequestPolicy visit [here](https
 ### Stop Fingerprinting
 
 [Stop Fingerprinting](https://addons.mozilla.org/firefox/addon/stop-fingerprinting/) disables / modifies some browser APIs that would otherwise allow browser fingerprinting.
+
+## Remove system-wide hidden extensions
+
+Several extensions, hidden to the user, are installed by default in `/usr/lib/firefox/browser/features`. Many can be safely removed via `rm *extension-name*.xpi` in order to completely remove unwanted features. Many of these extensions are not enabled by default and have a menu option for enabling or disabling. Note that any files removed will return upon update of the [firefox](https://www.archlinux.org/packages/?name=firefox) package. Below are a few examples of these extensions and their features.
+
+*   `activity-stream@mozilla.org.xpi` - "Activity Stream" which replaces the new tab page. See [[4]](https://github.com/mozilla/activity-stream)
+
+*   `firefox@getpocket.com.xpi` - [Pocket](https://getpocket.com/firefox/)
+
+*   `followonsearch@mozilla.com.xpi` - Search telemetry. See also [#Disable telemetry](#Disable_telemetry).
+
+*   `shield-recipe-client@mozilla.org.xpi` [SHIELD studies](https://support.mozilla.org/en-US/kb/shield)
+
+See also [[5]](https://dxr.mozilla.org/mozilla-release/source/browser/extensions/) for a full list of system extensions including README files describing their functions.

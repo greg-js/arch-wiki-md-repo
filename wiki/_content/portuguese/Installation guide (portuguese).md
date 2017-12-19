@@ -1,6 +1,6 @@
 Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Reading (Português)](/index.php/Help:Reading_(Portugu%C3%AAs) "Help:Reading (Português)").
 
-Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index.php/ArchWiki:About_(Portugu%C3%AAs) "ArchWiki:About (Português)") ou as [páginas de manual](/index.php/Man_page_(Portugu%C3%AAs) "Man page (Português)") dos vários programas, ambos relacionados neste guia. Veja [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) para uma visão geral da configuração. Para uma ajuda interativa, o [canal IRC](/index.php/Canal_IRC "Canal IRC") e os [fóruns](https://bbs.archlinux.org/) também estão disponíveis.
+Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index.php/ArchWiki:About_(Portugu%C3%AAs) "ArchWiki:About (Português)") ou as [páginas de manual](/index.php/Man_page_(Portugu%C3%AAs) "Man page (Português)") dos vários programas, ambos relacionados neste guia. Para uma ajuda interativa, o [canal IRC](/index.php/Canal_IRC "Canal IRC") e os [fóruns](https://bbs.archlinux.org/) também estão disponíveis.
 
 ## Contents
 
@@ -38,9 +38,7 @@ Para trocar para um console diferente — por exemplo, para ver esse guia com [E
 
 ### Definir o layout do teclado
 
-O [mapa de teclas de console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") padrão é [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Para listar todos os layouts disponíveis, execute `ls /usr/share/kbd/keymaps/**/*.map.gz`.
-
-Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omitindo caminho e extensão de arquivo. Por exemplo, execute `loadkeys br-abnt2` para definir um layout de teclado [ABNT (brasileiro)](https://en.wikipedia.org/wiki/File:KB_Portuguese_Brazil.svg "w:File:KB Portuguese Brazil.svg").
+O [mapa de teclas de console](/index.php/Mapa_de_teclas_de_console "Mapa de teclas de console") padrão é [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Para listar todos os layouts disponíveis, execute `ls /usr/share/kbd/keymaps/**/*.map.gz`. Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omitindo caminho e extensão de arquivo. Por exemplo, execute `loadkeys br-abnt2` para definir um layout de teclado [ABNT (brasileiro)](https://en.wikipedia.org/wiki/File:KB_Portuguese_Brazil.svg "w:File:KB Portuguese Brazil.svg").
 
 [Fontes de console](/index.php/Console_fonts "Console fonts") estão localizadas em `/usr/share/kbd/consolefonts/` e, de forma semelhante, podem ser definidas com [setfont(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
@@ -57,14 +55,14 @@ Se o diretório não existir, o sistema pode ser inicializado no modo [BIOS](htt
 
 ### Conectar à Internet
 
-A imagem de instalação [habilita](/index.php/Habilita "Habilita") o *daemon* [dhcpcd](/index.php/Dhcpcd "Dhcpcd") na inicialização para dispositivos [cabeados](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) e vai tentar iniciar uma conexão. Verifique se a conectividade da internet está disponível, por exemplo com [ping](/index.php/Ping "Ping"):
+A imagem de instalação habilita o *daemon* [dhcpcd](/index.php/Dhcpcd "Dhcpcd") na inicialização para dispositivos de rede [cabeada](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules). A conexão pode ser [verificada](/index.php/Configura%C3%A7%C3%A3o_de_rede#Verificando_a_conex.C3.A3o "Configuração de rede") com:
 
 ```
 # ping archlinux.org
 
 ```
 
-Se nenhum estiver disponível, [pare](/index.php/Pare "Pare") o serviço *dhcpcd* com `systemctl stop dhcpcd@<TAB>` e veja [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Drivers_de_dispositivos "Configuração de rede").
+Se nenhuma conexão estiver disponível, [pare](/index.php/Pare "Pare") o serviço *dhcpcd* com `systemctl stop dhcpcd@`, `Tab` e veja [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Drivers_de_dispositivos "Configuração de rede").
 
 Para conexões **sem fio** (*wireless*), [iw(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) e [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") estão disponíveis. Veja [Configuração de rede sem fio](/index.php/Wireless_network_configuration "Wireless network configuration").
 
@@ -112,7 +110,7 @@ Veja [File systems#Create a file system](/index.php/File_systems#Create_a_file_s
 
 ### Montar os sistemas de arquivos
 
-[Monte](/index.php/File_systems#Mount_a_file_system "File systems") o sistema de arquivos da partição raiz em `/mnt`, por exemplo:
+[Monte](/index.php/Mount "Mount") o sistema de arquivos da partição raiz em `/mnt`, por exemplo:
 
 ```
 # mount /dev/*sda1* /mnt
@@ -268,7 +266,7 @@ Defina a [senha](/index.php/Password "Password") do *root* (também conhecido co
 
 Você pode escolher entre [GRUB](/index.php/GRUB "GRUB") ou [Syslinux](/index.php/Syslinux "Syslinux").
 
-Veja [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") para escolhas disponíveis e configurações.
+Um gerenciador de boot compatível com o Linux deve ser instalado para inicializar o Arch Linux. Veja [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") para escolhas disponíveis e configurações.
 
 Se você tiver um CPU Intel, instale o pacote [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) também, e [habilite atualizações de *microcode*](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
 

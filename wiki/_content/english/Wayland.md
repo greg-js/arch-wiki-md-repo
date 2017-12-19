@@ -424,7 +424,7 @@ This change in input grabbing breaks current applications' behavior, meaning:
 *   Hotkey combinations and modifiers will be caught by the compositor and won't be sent to remote desktop and virtual machine windows.
 *   The mouse pointer will not be restricted to the application's window which might cause a parallax effect where the location of the mouse pointer inside the window of the virtual machine or remote desktop is displaced from the host's mouse pointer.
 
-Wayland solves this by adding protocol extensions for Wayland and XWayland. Support for these extensions is needed to be added to Wayland compositors, XWayland and in the case of native Wayland clients to widget toolkits (e.g GTK, QT) and probably also to the applications themselves. ATM there is no Wayland compositor which support all of these extensions.
+Wayland solves this by adding protocol extensions for Wayland and XWayland. Support for these extensions is needed to be added to Wayland compositors, XWayland and in the case of native Wayland clients to widget toolkits (e.g GTK, QT) and probably also to the applications themselves.
 
 The related extensions are:
 
@@ -432,6 +432,10 @@ The related extensions are:
 *   [Compositor shortcuts inhibit protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/keyboard-shortcuts-inhibit/keyboard-shortcuts-inhibit-unstable-v1.xml) (native Wayland only), added in [wayland-protocols 1.9](https://lists.freedesktop.org/archives/wayland-devel/2017-July/034459.html)
 *   [Relative pointer protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/relative-pointer/relative-pointer-unstable-v1.xml), added in [wayland-protocols 1.1](https://lists.freedesktop.org/archives/wayland-devel/2016-February/027029.html), XWayland support [already been added](https://lists.x.org/archives/xorg-devel/2016-September/050975.html) in [xorg-server 1.19](https://lists.x.org/archives/xorg-announce/2016-October/002734.html)
 *   [Pointer constraints protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/pointer-constraints/pointer-constraints-unstable-v1.xml), added in [wayland-protocols 1.1](https://lists.freedesktop.org/archives/wayland-devel/2016-February/027029.html), XWayland support [already been added](https://lists.x.org/archives/xorg-devel/2016-September/050975.html) in [xorg-server 1.19](https://lists.x.org/archives/xorg-announce/2016-October/002734.html)
+
+Supporting Wayland compositors:
+
+*   Mutter, development tree of future 3.28 release [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=783342)[[3]](https://git.gnome.org/browse/mutter/commit/?id=072afa5)[[4]](https://git.gnome.org/browse/mutter/commit/src/wayland/meta-wayland-inhibit-shortcuts.c?id=2ca087172451380d63dbd47e6980f93aa68be12f). Gnome 3.28 expected to fully support these extensions, and maybe even 3.27.4, its next development release.
 
 ## See also
 

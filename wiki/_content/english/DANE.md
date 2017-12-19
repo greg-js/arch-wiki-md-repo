@@ -1,5 +1,7 @@
 [DANE](https://en.wikipedia.org/wiki/DNS-based_Authentication_of_Named_Entities "w:DNS-based Authentication of Named Entities") (DNS-based Authentication of Named Entities) is a protocol to allow X.509 certificates, commonly used for Transport Layer Security (TLS), to be bound to DNS names using Domain Name System Security Extensions (DNSSEC).
 
+**Warning:** This is not a trivial article. Be aware that you make sure you know what you are doing. You better read [Common Mistakes](https://dane.sys4.de/common_mistakes) before.
+
 ## Resource Record
 
 TLSA resource record is an own type of DNS record. It consists of port number and protocol of the service secured by it. An example record for port 25 over tcp could look like `_25._tcp.example.com IN TLSA 3 0 1 $DATA`. The TLSA parameters `3 0 1` are explaining the data following it. The first number is the Certificate Usage Field, the second is the Selector Field and the third is named Matching Type Field.

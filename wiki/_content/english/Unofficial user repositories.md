@@ -51,23 +51,22 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [3.1.26 jlk](#jlk)
         *   [3.1.27 jrpi](#jrpi)
         *   [3.1.28 jrpi-haskell](#jrpi-haskell)
-        *   [3.1.29 linux-kalterfx](#linux-kalterfx)
-        *   [3.1.30 llvm-svn](#llvm-svn)
-        *   [3.1.31 markzz](#markzz)
-        *   [3.1.32 miffe](#miffe)
-        *   [3.1.33 mikelpint](#mikelpint)
-        *   [3.1.34 mobile](#mobile)
-        *   [3.1.35 qt-debug](#qt-debug)
-        *   [3.1.36 quarry](#quarry)
-        *   [3.1.37 repo-ck](#repo-ck)
-        *   [3.1.38 seblu](#seblu)
-        *   [3.1.39 seiichiro](#seiichiro)
-        *   [3.1.40 sergej-repo](#sergej-repo)
-        *   [3.1.41 siosm-aur](#siosm-aur)
-        *   [3.1.42 subtitlecomposer](#subtitlecomposer)
-        *   [3.1.43 tredaelli-systemd](#tredaelli-systemd)
-        *   [3.1.44 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-        *   [3.1.45 xyne-x86_64](#xyne-x86_64)
+        *   [3.1.29 llvm-svn](#llvm-svn)
+        *   [3.1.30 markzz](#markzz)
+        *   [3.1.31 miffe](#miffe)
+        *   [3.1.32 mikelpint](#mikelpint)
+        *   [3.1.33 mobile](#mobile)
+        *   [3.1.34 qt-debug](#qt-debug)
+        *   [3.1.35 quarry](#quarry)
+        *   [3.1.36 repo-ck](#repo-ck)
+        *   [3.1.37 seblu](#seblu)
+        *   [3.1.38 seiichiro](#seiichiro)
+        *   [3.1.39 sergej-repo](#sergej-repo)
+        *   [3.1.40 siosm-aur](#siosm-aur)
+        *   [3.1.41 subtitlecomposer](#subtitlecomposer)
+        *   [3.1.42 tredaelli-systemd](#tredaelli-systemd)
+        *   [3.1.43 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+        *   [3.1.44 xyne-x86_64](#xyne-x86_64)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 andrwe](#andrwe)
         *   [3.2.2 alucryd](#alucryd)
@@ -80,22 +79,23 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [3.2.9 home_fusion809_Arch_Extra](#home_fusion809_Arch_Extra)
         *   [3.2.10 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
         *   [3.2.11 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
-        *   [3.2.12 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.13 jkanetwork](#jkanetwork)
-        *   [3.2.14 matrixim](#matrixim)
-        *   [3.2.15 mesa-git](#mesa-git)
-        *   [3.2.16 mingw-w64](#mingw-w64)
-        *   [3.2.17 neo_chen](#neo_chen)
-        *   [3.2.18 noware](#noware)
-        *   [3.2.19 ownstuff](#ownstuff)
-        *   [3.2.20 pantheon](#pantheon)
-        *   [3.2.21 pietma](#pietma)
-        *   [3.2.22 pnsft-pur](#pnsft-pur)
-        *   [3.2.23 QOwnNotes](#QOwnNotes)
-        *   [3.2.24 rakudo](#rakudo)
-        *   [3.2.25 rust-git](#rust-git)
-        *   [3.2.26 trinity](#trinity)
-        *   [3.2.27 zrootfs](#zrootfs)
+        *   [3.2.12 home_post-factum_Arch_Extra](#home_post-factum_Arch_Extra)
+        *   [3.2.13 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
+        *   [3.2.14 jkanetwork](#jkanetwork)
+        *   [3.2.15 matrixim](#matrixim)
+        *   [3.2.16 mesa-git](#mesa-git)
+        *   [3.2.17 mingw-w64](#mingw-w64)
+        *   [3.2.18 neo_chen](#neo_chen)
+        *   [3.2.19 noware](#noware)
+        *   [3.2.20 ownstuff](#ownstuff)
+        *   [3.2.21 pantheon](#pantheon)
+        *   [3.2.22 pietma](#pietma)
+        *   [3.2.23 pnsft-pur](#pnsft-pur)
+        *   [3.2.24 QOwnNotes](#QOwnNotes)
+        *   [3.2.25 rakudo](#rakudo)
+        *   [3.2.26 rust-git](#rust-git)
+        *   [3.2.27 trinity](#trinity)
+        *   [3.2.28 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -524,19 +524,6 @@ Server = https://jrpi.mooo.com/Repositórios/haskell/
 
 ```
 
-#### linux-kalterfx
-
-*   **Maintainer**: [Anna Ivanova](https://aur.archlinux.org/account/kalterfive)
-*   **Upstream page**: [https://deadsoftware.ru/files/linux-kalterfx](https://deadsoftware.ru/files/linux-kalterfx)
-*   **Description**: Kernel packages based on the [-pf](/index.php/Kernels#-pf "Kernels") kernel, with applied [reiser4](/index.php/Reiser4 "Reiser4") and UKSM patches
-*   **Key** ([key.asc](https://keybase.io/kalterfive/key.asc)): `24E3A929`
-
-```
-[linux-kalterfx]
-Server = https://deadsoftware.ru/files/linux-kalterfx/repo/$arch
-
-```
-
 #### llvm-svn
 
 *   **Maintainer:** [Luchesar V. ILIEV (kerberizer)](/index.php/User:Kerberizer "User:Kerberizer")
@@ -870,6 +857,18 @@ Server = https://download.opensuse.org/repositories/home:/Minerva_W:/Science/Arc
 ```
 [home_Pival81_arch_xapps_Arch_Extra]
 Server = https://download.opensuse.org/repositories/home:/Pival81:/arch:/xapps/Arch_Extra/$arch 
+
+```
+
+#### home_post-factum_Arch_Extra
+
+*   **Maintainer**: [Oleksandr Natalenko aka post-factum](https://aur.archlinux.org/account/post-factum)
+*   **Upstream page**: [https://pfactum.github.io/pf-kernel/](https://pfactum.github.io/pf-kernel/)
+*   **Description**: [pf-kernel](/index.php/Kernels#-pf "Kernels") binaries and various stuff I use
+
+```
+[home_post-factum_Arch_Extra]
+Server = http://download.opensuse.org/repositories/home:/post-factum/Arch_Extra/$arch
 
 ```
 

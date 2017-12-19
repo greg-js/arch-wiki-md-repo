@@ -328,14 +328,14 @@ WantedBy=default.target
 To start the service for your user:
 
 ```
-# systemctl --user start synergyc
+$ systemctl --user start synergyc
 
 ```
 
 To start the service at login for your user:
 
 ```
-# systemctl --user enable synergyc
+$ systemctl --user enable synergyc
 
 ```
 

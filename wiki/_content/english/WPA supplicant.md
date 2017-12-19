@@ -247,9 +247,9 @@ followed by a method to obtain an ip address manually as indicated in the [#Over
 The *wpa_supplicant* package provides multiple [systemd](/index.php/Systemd "Systemd") service files:
 
 *   `wpa_supplicant.service` - uses [D-Bus](/index.php/D-Bus "D-Bus"), recommended for [NetworkManager](/index.php/NetworkManager "NetworkManager") users.
-*   `wpa_supplicant@.service` - accepts the interface name as an argument and starts the *wpa_supplicant* daemon for this interface. It reads a `/etc/wpa_supplicant/wpa_supplicant-*interface*.conf` configuration file.
-*   `wpa_supplicant-nl80211@.service` - also interface specific, but explicitly forces the `nl80211` driver (see below). The configuration file path is `/etc/wpa_supplicant/wpa_supplicant-nl80211-*interface*.conf`.
-*   `wpa_supplicant-wired@.service` - also interface specific, uses the `wired` driver. The configuration file path is `/etc/wpa_supplicant/wpa_supplicant-wired-*interface*.conf`.
+*   `wpa_supplicant@*interface*.service` - accepts the interface name as an argument and starts the *wpa_supplicant* daemon for this interface. It reads a `/etc/wpa_supplicant/wpa_supplicant-*interface*.conf` configuration file.
+*   `wpa_supplicant-nl80211@*interface*.service` - also interface specific, but explicitly forces the `nl80211` driver (see below). The configuration file path is `/etc/wpa_supplicant/wpa_supplicant-nl80211-*interface*.conf`.
+*   `wpa_supplicant-wired@*interface*.service` - also interface specific, uses the `wired` driver. The configuration file path is `/etc/wpa_supplicant/wpa_supplicant-wired-*interface*.conf`.
 
 To enable wireless at boot, enable an instance of one of the above services on a particular wireless interface. For example, [enable](/index.php/Enable "Enable") the `wpa_supplicant@*interface*` systemd unit.
 

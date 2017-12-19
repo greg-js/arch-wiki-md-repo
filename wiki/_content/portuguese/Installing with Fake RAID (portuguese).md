@@ -39,7 +39,7 @@ Apesar da terminologia, "Fake RAID" via dmraid é uma implementação RAID via s
 
 Antes de tudo:
 
-*   Tenha em mãos os guias que precisará (além deste guia podem ser necessários o [Beginners' guide (Português)](/index.php/Beginners%27_guide_(Portugu%C3%AAs) "Beginners' guide (Português)") ou [Installation guide](/index.php/Installation_guide "Installation guide")) abertos em outra máquina ou impressos.
+*   Tenha em mãos os guias que precisará (além deste guia pode ser necessário o [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação")) abertos em outra máquina ou impressos.
 *   Baixe a imagem e queime o disco da última versão do disco de instalação do Arch.
 *   Faça o Backup de seus dados importantes.
 

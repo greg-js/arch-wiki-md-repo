@@ -34,7 +34,7 @@ This article does not cover features common to multiple emulators using KVM as a
 KVM requires that the virtual machine host's processor has virtualization support (named VT-x for Intel processors and AMD-V for AMD processors). You can check whether your processor supports hardware virtualization with the following command:
 
 ```
-$ lscpu | grep Virtualization
+$ LANG=LC_All lscpu | grep Virtualization
 
 ```
 

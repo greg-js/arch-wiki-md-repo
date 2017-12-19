@@ -1,6 +1,6 @@
-*systemd-firstboot* allows for the setting of basic system settings before or during the first boot of a newly created system image. The four manipulable settings are the system [timezone](/index.php/Time "Time"), [locale](/index.php/Locale "Locale"), [hostname](/index.php/Hostname "Hostname"), the root password, as well as automated generation of a machine id.
+Starting with version 216 of [systemd](/index.php/Systemd "Systemd"), the command *systemd-firstboot* allows for setting of basic system settings before or during the first boot of a newly created system. The tool is able of initialize the following system settings: [timezone](/index.php/Time "Time"), [locale](/index.php/Locale "Locale"), [hostname](/index.php/Hostname "Hostname"), the root password, as well as automated generation of a machine ID.
 
-As *systemd-firstboot* interacts with the filesystem directly, and doesn't make use of related systemd services (such as timedatectl, hostnamectl or localectl), it should not be executed on an already running system.
+As *systemd-firstboot* interacts with the filesystem directly and doesn't make use of the related systemd services (such as timedatectl, hostnamectl or localectl), it should not be executed on an already running system.
 
 Settings can be specified non-interactively when externally used on filesystem images, or interactively if executed during the early boot process.
 
@@ -82,7 +82,7 @@ StandardError=tty
 
 #### Finalize installation
 
-Continue installing as per the Installation Guide. Unless more configuration is to be undertaken, exit the chroot, unmount the partitions and shut down. Upon the next boot, *systemd-firstboot* will execute. Presuming **no other changes to system configuration are made**, removing the files above and rebooting will trigger systemd-firstboot again, in case you wish to test whether the installation worked.
+Continue installing as per the [Installation guide](/index.php/Installation_guide "Installation guide"). Unless more configuration is to be undertaken, exit the chroot, unmount the partitions and shut down. Upon the next boot, *systemd-firstboot* will execute. Presuming **no other changes to system configuration are made**, removing the files above and rebooting will trigger systemd-firstboot again, in case you wish to test whether the installation worked.
 
 ## See also
 

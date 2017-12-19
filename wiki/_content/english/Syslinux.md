@@ -247,7 +247,7 @@ If this does not work, you can also try:
 
 ```
 
-where `/dev/sdXY` is the physical disk and `Y` is the number of the bootloader partition.
+where `/dev/sdXY` is the partition containing the bootloader.
 
 *   Create or edit `*esp*/EFI/syslinux/syslinux.cfg` by following [#Configuration](#Configuration).
 

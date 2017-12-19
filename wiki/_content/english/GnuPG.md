@@ -856,3 +856,4 @@ Occurs when attempting to sign keys on a non-standard keyring while a yubikey is
 *   [gpg.conf recommendations and best practices](https://help.riseup.net/en/security/message-security/openpgp/gpg-best-practices)
 *   [Torbirdy gpg.conf](https://github.com/ioerror/torbirdy/blob/master/gpg.conf)
 *   [/r/GPGpractice - a subreddit to practice using GnuPG.](https://www.reddit.com/r/GPGpractice/)
+*   [Protecting code integrity with PGP](https://github.com/lfit/itpol/blob/master/protecting-code-integrity.md)

@@ -6,14 +6,13 @@ From [Wikipedia:Clipboard (computing)](https://en.wikipedia.org/wiki/Clipboard_(
 
 *   [1 History](#History)
 *   [2 Background](#Background)
-*   [3 How to use the selections (clipboards)](#How_to_use_the_selections_.28clipboards.29)
-*   [4 Application specific notes](#Application_specific_notes)
-    *   [4.1 CLIPBOARD in vim](#CLIPBOARD_in_vim)
-*   [5 Disable paste on middle mouse click](#Disable_paste_on_middle_mouse_click)
-    *   [5.1 Firefox](#Firefox)
-    *   [5.2 GTK](#GTK)
-*   [6 List of clipboard managers](#List_of_clipboard_managers)
-*   [7 See also](#See_also)
+*   [3 Application specific notes](#Application_specific_notes)
+    *   [3.1 CLIPBOARD in vim](#CLIPBOARD_in_vim)
+    *   [3.2 Disable paste on middle mouse click](#Disable_paste_on_middle_mouse_click)
+        *   [3.2.1 Firefox](#Firefox)
+        *   [3.2.2 GTK](#GTK)
+*   [4 List of clipboard managers](#List_of_clipboard_managers)
+*   [5 See also](#See_also)
 
 ## History
 
@@ -21,19 +20,18 @@ In X10, "cut buffers" were introduced. These were limited buffers that stored ar
 
 ## Background
 
-The [ICCCM](https://tronche.com/gui/x/icccm/) (Inter-Client Communication Conventions Manual) standard defines three "selections": PRIMARY, SECONDARY, and CLIPBOARD. Despite the naming, all three are basically "clipboards". Rather than the old "cut buffers" system where arbitrary applications could modify data stored in the cut buffers, only one application may control or "own" a selection at one time. This prevents inconsistencies in the operation of the selections. However, in some cases, this can produce strange outcomes, such as a bidirectional shared clipboard with Windows (which uses a single-clipboard system) in a virtual machine.
+The [ICCCM](https://tronche.com/gui/x/icccm/) (Inter-Client Communication Conventions Manual) standard defines three "selections": PRIMARY, SECONDARY, and CLIPBOARD. Despite the naming, all three are basically "clipboards". Rather than the old "cut buffers" system where arbitrary applications could modify data stored in the cut buffers, only one application may control or "own" a selection at one time. This prevents inconsistencies in the operation of the selections.
 
-Of the three selections, users should only be concerned with PRIMARY and CLIPBOARD. SECONDARY is only used inconsistently and was intended as an alternate to PRIMARY. When some applications treat PRIMARY and CLIPBOARD differently, this can cause confusion and, in some cases, inconsistent or undesirable results, but the majority of applications shows the behaviour detailed in the next section.
+Of the three selections, users should only be concerned with PRIMARY and CLIPBOARD. SECONDARY is only used inconsistently and was intended as an alternate to PRIMARY. The majority of programs for Xorg, including [Qt](/index.php/Qt "Qt") and [GTK+](/index.php/GTK%2B "GTK+") applications, treat the the PRIMARY and CLIPBOARD selections in the [following way](https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt):
 
-## How to use the selections (clipboards)
+*   The CLIPBOARD selection is used for explicit copy/paste commands involving keyboard shortcuts or menu items. Hence, it behaves like the single-clipboard system on Windows. Unlike PRIMARY, it can also handle [multiple data formats](https://stackoverflow.com/questions/3571179/how-does-x11-clipboard-handle-multiple-data-formats).
+*   The PRIMARY selection is used for the currently selected text, even if it is not explicitly copied, and for middle-mouse-click pasting. In some cases, pasting is also possible with a keyboard shortcut.
 
-There are two common selections (clipboards), which can have different values stored in them. Synchronization of both is possible with [clipboard managers](#List_of_clipboard_managers).
+See the [Keyboard shortcuts](/index.php/Keyboard_shortcuts "Keyboard shortcuts") page which lists the default shortcuts in many programs.
 
-The CLIPBOARD selection is accessed using keyboard shortcuts, while application specific, these are most commonly `ctrl+c` for copying, `ctrl+v` for pasting and `ctlr+x` for cutting.
+It is also important to realize that according to the selection protocols, nothing is copied anywhere [until it is pasted](https://unix.stackexchange.com/questions/213840/how-to-toggle-or-turn-off-text-selection-being-sent-to-the-clipboard/213843#213843). For example, if you select some word in a terminal window, close the terminal and then want to paste it somewhere else, it will not work because the terminal is gone and the text has not been copied anywhere.
 
-The PRIMARY selection speeds up the copying task by copying the text to the clipboard as soon as it was selected with the mouse, without the need for entering a keyboard shortcut. Pasting is triggered by pressing the middle mouse button (or some emulation of it).
-
-**Note:** The clipboard may also contain other items than text, such as images or folders.
+**Note:** [Clipboard managers](#List_of_clipboard_managers) can significantly change the user experience, for example they might synchronize the PRIMARY and CLIPBOARD selections to emulate a single-clipboard system.
 
 ## Application specific notes
 
@@ -41,11 +39,11 @@ The PRIMARY selection speeds up the copying task by copying the text to the clip
 
 See [Vim#Clipboard](/index.php/Vim#Clipboard "Vim").
 
-## Disable paste on middle mouse click
+### Disable paste on middle mouse click
 
 Currently the only simple way to completely disable pasting with the middle mouse button across all applications is to disable the middle mouse button, which then also loses its other functions such as closing tabs. The applications listed below have specific settings to disable it.
 
-### Firefox
+#### Firefox
 
 To stop firefox from acting on middle mouse clicks, set the following options in `about:config`.
 
@@ -56,7 +54,7 @@ middlemouse.paste false
 
 ```
 
-### GTK
+#### GTK
 
  `.config/gtk-3.0` 
 ```

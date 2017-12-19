@@ -95,7 +95,7 @@ PGP keys are too large (2048 bits or more) for humans to work with, so they are 
 
 ### Adding developer keys
 
-The official developer and TU keys are signed by the master keys, so you do not need to use *pacman-key* to sign them yourself. Whenever *pacman* encounters a key it does not recognize, it will prompt to download it from a `keyserver` configured in `/etc/pacman.d/gnupg/gpg.conf` (or by using the `--keyserver` option on the command line). Wikipedia maintains a [list of keyservers](https://en.wikipedia.org/wiki/Key_server_(cryptographic) "wikipedia:Key server (cryptographic)").
+The official developer and [Trusted Users](/index.php/Trusted_Users "Trusted Users") *(TU)* keys are signed by the master keys, so you do not need to use *pacman-key* to sign them yourself. Whenever *pacman* encounters a key it does not recognize, it will prompt to download it from a `keyserver` configured in `/etc/pacman.d/gnupg/gpg.conf` (or by using the `--keyserver` option on the command line). Wikipedia maintains a [list of keyservers](https://en.wikipedia.org/wiki/Key_server_(cryptographic) "wikipedia:Key server (cryptographic)").
 
 Once you have downloaded a developer key, you will not have to download it again, and it can be used to verify any other packages signed by that developer.
 
@@ -103,18 +103,17 @@ Once you have downloaded a developer key, you will not have to download it again
 
 ### Adding unofficial keys
 
-You can use this method, for example, to add your own key to the *pacman* keyring, or when enabling signed [unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories").
+This method can be used, for example, to add your own key to the *pacman* keyring, or to enable signed [unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories").
 
-First get the key ID (`*keyid*`) from the owner of the key. Then you need to add the key to the keyring:
+First, get the **key ID** (`*keyid*`) from its owner. Then add it to the keyring using one of the two methods:
 
-*   If the key is found on a keyserver, import it with: `# pacman-key -r *keyid*` 
+1.  If the key is found on a keyserver, import it with: `# pacman-key -r *keyid*` 
+2.  If otherwise a link to a keyfile is provided, download it and then run: `# pacman-key --add */path/to/downloaded/keyfile*` 
 
-*   If otherwise a link to a keyfile is provided, download it and then run: `# pacman-key --add */path/to/downloaded/keyfile*` 
-
-Always be sure to verify the fingerprint, as you would with a master key, or any other key which you are going to sign.
+It is recommended to verify the fingerprint, as with any master key or any other key you are going to sign:
 
 ```
-$ pacman-key -f *keyid*
+$ pacman-key --finger *keyid*
 
 ```
 

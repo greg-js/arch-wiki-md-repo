@@ -13,7 +13,7 @@
 
 The following packages provide VSCode:
 
-*   [visual-studio-code](https://aur.archlinux.org/packages/visual-studio-code/)
+*   [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)
 *   [visual-studio-code-oss](https://aur.archlinux.org/packages/visual-studio-code-oss/)
 *   [visual-studio-code-git](https://aur.archlinux.org/packages/visual-studio-code-git/)
 *   *code-oss* from the unofficial [pkgbuild-current](/index.php/Unofficial_user_repositories#pkgbuild-current "Unofficial user repositories") repository. Further details can be found in its README [here](https://github.com/fusion809/PKGBUILDs/blob/master/README.md).

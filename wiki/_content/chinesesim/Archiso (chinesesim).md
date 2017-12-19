@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Archiso](/index.php/Archiso "Archiso") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-25，点击[这里](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=498359)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Archiso](/index.php/Archiso "Archiso") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-12-18，点击[这里](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=503025)可以查看翻译后英文页面的改动。
 
 相关文章
 
@@ -90,35 +90,38 @@ Archiso 附带2个预定义配置（ profiles ）: *releng* 和*baseline*。
 
 #### 自定义本地库
 
-若需准备自定义包或是自 [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")/[ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)") 安装包，你也可以[创建自定义本地资源库](/index.php/Custom_local_repository "Custom local repository")。当这样处理两种架构的软件包时，您应该遵循一定的目录顺序，才不会出现问题。 例如：
+为了准备自定义包或是从 [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")/[ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)") 安装包，你也可以 [创建自定义本地资源库](/index.php/Custom_local_repository "Custom local repository")。如果您希望支持多种体系结构，则应采取预防措施来防止发生错误。每个架构应该有自己的目录树：
 
-*   `~/customrepo`
-    *   `~/customrepo/x86_64`
-        *   `~/customrepo/x86_64/foo-x86_64.pkg.tar.xz`
-        *   `~/customrepo/x86_64/customrepo.db.tar.gz`
-        *   `~/customrepo/x86_64/customrepo.db` (由 `repo-add` 创建的符号链接)
-    *   `~/customrepo/i686`
-        *   `~/customrepo/i686/foo-i686.pkg.tar.xz`
-        *   `~/customrepo/i686/customrepo.db.tar.gz`
-        *   `~/customrepo/i686/customrepo.db` (由 `repo-add` 创建的符号链接)
+ `$ tree ~/customrepo/ | sed "s/$(uname -m)/<arch>/g"` 
+```
+/home/archie/customrepo/
+└── <arch>
+    ├── customrepo.db -> customrepo.db.tar.xz
+    ├── customrepo.db.tar.xz
+    ├── customrepo.files -> customrepo.files.tar.xz
+    ├── customrepo.files.tar.xz
+    └── personal-website-git-b99cce0-1-<arch>.pkg.tar.xz
+
+1 directory, 5 files
+
+```
 
 如此后，您可以添加您的仓库——把下面的句子加入 `~/archlive/pacman.conf`，并置于其他仓库条目上面（优先级最高）：
 
+ `~/archlive/pacman.conf` 
 ```
-# 自定义仓库
+...
+# custom repository
 [customrepo]
-SigLevel = Optional TrustAll
+SigLevel = Optional TrustAlly
 Server = file:///home/**user**/customrepo/$arch
-
+...
 ```
 
-这样，构建脚本将会寻找合适的包。
-
-如果不是这样，你将得到与此类似的错误消息：
+*repo-add* 可执行文件检查软件包是否合适。如果不，那么你将得到与此类似的错误消息：
 
 ```
-error: failed to prepare transaction (package architecture is not valid)
-:: package foo-i686 does not have a valid architecture
+==> ERROR: '/home/archie/customrepo/<arch>/foo-<arch>.pkg.tar.xz' does not have a valid database archive extension.
 
 ```
 

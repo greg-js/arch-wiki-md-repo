@@ -1,3 +1,7 @@
+Related articles
+
+*   [SickBeard](/index.php/SickBeard "SickBeard")
+
 [Sick Rage](https://www.sickrage.tv/) is an automatic video library manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.
 
 ## Contents
@@ -46,4 +50,4 @@ For some you will need to enable the web-interface to work.
 
 ### First time usage
 
-Sick Rage is a web-application that can be accessed on [http://localhost:8081](http://localhost:8081), when Sick Rage reports that it doesn't know it's version, just hit the update button. It will check for updates, restart itself and set it's current version. The settings are pretty straightforward. If you already have a storage of series, just point Sick Rage to it and it will analyze it and try to add your already downloaded series to it's own list.
+Sick Rage is a web-application that can be accessed on [http://localhost:8081](http://localhost:8081), when Sick Rage reports that it doesn't know its version, just hit the update button. It will check for updates, restart itself and set its current version. The settings are pretty straightforward. If you already have a storage of series, just point Sick Rage to it and it will analyze it and try to add your already downloaded series to its own list.

@@ -68,9 +68,9 @@ $ curl "http(s)://host:port/sabnzbd/api?mode=shutdown&apikey=API-key"
 **Tip:**
 
 *   SABnzbd can only be accessed on the running computer. Change `host = 127.0.0.1` in `/opt/sabnzbd/sabnzbd.ini` to `host = 0.0.0.0` (or the host IP-address) to allow access from another computer.
-*   SABnzbd listens on port `8085`. Change `port = 8085` in `sabnzbd.ini` to the preferred port.
+*   SABnzbd listens on port `8080`. Change `port = 8080` in `sabnzbd.ini` to the preferred port.
 
-After starting SABnzbd, access the web-interface by browsing to [http://127.0.0.1:8085](http://127.0.0.1:8085).
+After starting SABnzbd, access the web-interface by browsing to [http://127.0.0.1:8080](http://127.0.0.1:8080).
 
 ## See also
 

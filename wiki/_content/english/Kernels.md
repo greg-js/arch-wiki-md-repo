@@ -23,8 +23,7 @@ There are various alternative kernels available for Arch Linux in addition to th
         *   [2.2.1 -ck](#-ck)
         *   [2.2.2 -rt](#-rt)
         *   [2.2.3 -bld](#-bld)
-        *   [2.2.4 Tiny-Patches](#Tiny-Patches)
-        *   [2.2.5 -pf](#-pf)
+        *   [2.2.4 -pf](#-pf)
     *   [2.3 Individual patches](#Individual_patches)
 *   [3 Compilation](#Compilation)
     *   [3.1 Using the Arch Build System](#Using_the_Arch_Build_System)
@@ -158,12 +157,6 @@ BLD is best described as a O(1) CPU picking technique. Which is done by reorderi
 Google Code web page: [https://code.google.com/p/bld/](https://code.google.com/p/bld/) *(old)*
 
 Github web page: [https://github.com/rmullick/bld-patches](https://github.com/rmullick/bld-patches)
-
-#### Tiny-Patches
-
-The goal of [Linux Tiny](http://elinux.org/Linux_Tiny) is to reduce its memory and disk footprint, as well as to add features to aid working on small systems. Target users are developers of embedded system and users of small or legacy machines such as 386s.
-
-Patch releases against the mainstream Linux kernel have been discontinued. The developers chose to focus on a few patches and spend their time trying to get them merged into the mainline kernel.
 
 #### -pf
 

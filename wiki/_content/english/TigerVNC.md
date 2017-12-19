@@ -91,7 +91,7 @@ exec startlxqt
 
 ```
 
-make sure {bc|~/.vnc/xstartup} has a execute permission:
+make sure `~/.vnc/xstartup` has a execute permission:
 
 ```
  chmod u+x ~/.vnc/xstartup

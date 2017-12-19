@@ -536,7 +536,7 @@ Since version 2.8 amdapp-sdk is providing aparapiUtil as well as aparapi's sampl
 
 Version 2.8 does not provide Profiler functionality, it has been moved to CodeXL.
 
-You can find more information about AMD APP SDK [here](http://developer.amd.com/tools/heterogeneous-computing/amd-accelerated-parallel-processing-app-sdk/).
+You can find more information about AMD APP SDK [here](https://developer.amd.com/amd-accelerated-parallel-processing-app-sdk/).
 
 #### amdapp-codexl
 
