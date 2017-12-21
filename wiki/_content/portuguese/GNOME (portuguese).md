@@ -568,15 +568,15 @@ Para mais informações, veja o [esquema app-folders](https://git.gnome.org/brow
 
 ## Veja também
 
-*   [O site oficial do GNOME](https://www.gnome.org/)
-*   [Extensões para o GNOME Shell](https://extensions.gnome.org/)
-*   [Folha de dicas do GNOME Shell](https://wiki.gnome.org/Projects/GnomeShell/CheatSheet), comandos, atalhos de teclados e outras dicas para o uso do GNOME Shell.
-*   Temas, ícones e planos de fundo:
+*   [Site oficial](https://www.gnome.org/)
+*   [GNOME-Shell Extensions](https://extensions.gnome.org/)
+*   [Folha de dicas do GNOME Shell](https://wiki.gnome.org/Projects/GnomeShell/CheatSheet)
+*   Personalização (temas, ícones...):
     *   [Personalize GNOME](https://wiki.gnome.org/Personalization)
     *   [GNOME Look](https://www.gnome-look.org/)
-*   Programas GTK+/GNOME:
+*   Aplicativos do GNOME:
     *   [Índice dos aplicativos do GNOME](https://wiki.gnome.org/Apps)
-*   [Customizing the GNOME Shell](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html)
+    *   [Aplicativos Centrais do GNOME](https://en.wikipedia.org/wiki/GNOME_Core_Applications "wikipedia:GNOME Core Applications")
 *   Código-fonte/Espelhos do GNOME:
     *   [Repositório Git do GNOME](https://git.gnome.org/browse/)
     *   [Espelho do GNOME no Github](https://github.com/GNOME)

@@ -33,14 +33,15 @@ Related articles
         *   [2.5.2 KDE](#KDE)
         *   [2.5.3 Other graphical environments](#Other_graphical_environments)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Improve performance](#Improve_performance)
-    *   [3.2 Disable printer share](#Disable_printer_share)
-    *   [3.3 Block certain file extensions on Samba share](#Block_certain_file_extensions_on_Samba_share)
-    *   [3.4 Discovering network shares](#Discovering_network_shares)
-    *   [3.5 Remote control of Windows computer](#Remote_control_of_Windows_computer)
-    *   [3.6 Share files without a username and password](#Share_files_without_a_username_and_password)
-        *   [3.6.1 Sample Passwordless Configuration](#Sample_Passwordless_Configuration)
-    *   [3.7 Build Samba without CUPS](#Build_Samba_without_CUPS)
+    *   [3.1 Disable SMB1 protocol for better security](#Disable_SMB1_protocol_for_better_security)
+    *   [3.2 Improve performance](#Improve_performance)
+    *   [3.3 Disable printer share](#Disable_printer_share)
+    *   [3.4 Block certain file extensions on Samba share](#Block_certain_file_extensions_on_Samba_share)
+    *   [3.5 Discovering network shares](#Discovering_network_shares)
+    *   [3.6 Remote control of Windows computer](#Remote_control_of_Windows_computer)
+    *   [3.7 Share files without a username and password](#Share_files_without_a_username_and_password)
+        *   [3.7.1 Sample Passwordless Configuration](#Sample_Passwordless_Configuration)
+    *   [3.8 Build Samba without CUPS](#Build_Samba_without_CUPS)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Failed to start Samba SMB/CIFS server](#Failed_to_start_Samba_SMB.2FCIFS_server)
     *   [4.2 Unable to overwrite files, permissions errors](#Unable_to_overwrite_files.2C_permissions_errors)
@@ -451,6 +452,16 @@ There are a number of useful programs, but they may need to have packages create
 *   LinNeighborhood, RUmba, xffm-samba plugin for Xffm are not available in the official repositories or the AUR. As they are not officially (or even unofficially supported), they may be obsolete and may not work at all.
 
 ## Tips and tricks
+
+### Disable SMB1 protocol for better security
+
+SMB1 protocol is considered a security risk and most clients at least support SMB2\. So it makes sense to deny connection attempts to the server via SMB1 protocol:
+
+ `/etc/samba/smb.conf` 
+```
+[global]
+server min protocol = SMB2
+```
 
 ### Improve performance
 

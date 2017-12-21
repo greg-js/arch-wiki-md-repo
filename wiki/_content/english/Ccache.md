@@ -1,3 +1,8 @@
+Related articles
+
+*   [Makepkg](/index.php/Makepkg "Makepkg")
+*   [Distcc](/index.php/Distcc "Distcc")
+
 [ccache](http://ccache.samba.org/) is a tool for the gcc compiler used to compile the same program over and over again with little downtime. While it may take a few seconds longer to compile a program the first time with `ccache`, subsequent compiles will be much, much faster.
 
 ## Contents

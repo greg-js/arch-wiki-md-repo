@@ -348,7 +348,7 @@ and set the `ExecStart=` option without the `--network-veth` parameter unlike th
 ```
 [Service]
 ExecStart=
-ExecStart=/usr/bin/systemd-nspawn --quiet --keep-unit --boot --link-journal=try-guest --machine=%I
+ExecStart=/usr/bin/systemd-nspawn --quiet --keep-unit --boot --link-journal=try-guest --machine=%i
 
 ```
 

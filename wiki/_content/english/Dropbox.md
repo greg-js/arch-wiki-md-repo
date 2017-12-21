@@ -66,9 +66,9 @@ If that does not work, uncheck the box and use one of the following methods inst
 
 ### Starting with your WM/DE
 
-For [KDE](/index.php/KDE "KDE") users, no further steps are required, as KDE saves running applications when logging out and restarts them automatically. Similarly for [Xfce](/index.php/Xfce "Xfce") users, dropbox will be restarted automatically next time you login since the `dropbox.desktop` file has been placed in `~/.config/autostart`.
+For [KDE](/index.php/KDE "KDE") users, no further steps are required, as KDE saves running applications when logging out and restarts them automatically. Similarly for [Xfce](/index.php/Xfce "Xfce") users, Dropbox will be restarted automatically next time you login since the `dropbox.desktop` file has been placed in `~/.config/autostart`.
 
-For [Cinnamon](/index.php/Cinnamon "Cinnamon") users, it's recommended to start Dropbox client by configuring Startup Applications with a little delay (Cinnamon issue [#4396](https://github.com/linuxmint/Cinnamon/issues/4396)). Starting dropbox with systemd works, running in background, but there's is no icon on systray due to some Cinnamon bugs ([#481](https://github.com/linuxmint/Cinnamon/issues/481), [#2846](https://github.com/linuxmint/Cinnamon/issues/2846)).
+For [Cinnamon](/index.php/Cinnamon "Cinnamon") users, it's recommended to start Dropbox client by configuring Startup Applications with a little delay (Cinnamon issue [#4396](https://github.com/linuxmint/Cinnamon/issues/4396)). Starting Dropbox with systemd works, running in background, but there's is no icon on systray due to some Cinnamon bugs ([#481](https://github.com/linuxmint/Cinnamon/issues/481), [#2846](https://github.com/linuxmint/Cinnamon/issues/2846)).
 
 If that does not work, you can start the Dropbox sync client along with your window manager by adding `/usr/bin/dropbox &` to your [xinitrc](/index.php/Xinitrc "Xinitrc") (or `~/.config/openbox/autostart`, depending on your setup).
 
@@ -190,7 +190,7 @@ If you have connectivity problem with [NetworkManager](/index.php/NetworkManager
 
 ### Using wicd
 
-Create /etc/wicd/scripts/postconnect/dropbox:
+Create `/etc/wicd/scripts/postconnect/dropbox`:
 
 ```
 #!/usr/bin/env bash
@@ -198,7 +198,7 @@ su -c 'DISPLAY=:0 /usr/bin/dbus-launch dropbox &' your_username
 
 ```
 
-or, if you use dropbox with systemd:
+or, if you use Dropbox with systemd:
 
 ```
 #!/usr/bin/env bash
@@ -206,7 +206,7 @@ systemctl restart dropbox@<user>
 
 ```
 
-Create /etc/wicd/scripts/postdisconnect/dropbox:
+Create `/etc/wicd/scripts/postdisconnect/dropbox`:
 
 ```
 #!/usr/bin/env bash
@@ -214,7 +214,7 @@ killall dropbox
 
 ```
 
-or, if you use dropbox with systemd:
+or, if you use Dropbox with systemd:
 
 ```
 #!/usr/bin/env bash
@@ -247,10 +247,10 @@ Several file managers such as Thunar, GNOME Files or its fork Nemo come with ext
 
 It may happen that Dropbox cannot connect successfully because it was loaded before an internet connection was established. This can happen on wireless connections, or fast loading machines on wired networks. The best solution to this problem, for wired and wireless connections, is [#Dropbox on laptops](#Dropbox_on_laptops) which will ensure that Dropbox is started only after the connection is established.
 
-An alternative solution, for those not using netctl or NetworkManager, is to delay the startup of dropbox:
+An alternative solution, for those not using netctl or NetworkManager, is to delay the startup of Dropbox:
 
 *   `cp ~/.config/autostart/dropbox.desktop ~/.config/autostart/dropbox-delayed.desktop`
-*   Prevent dropbox from doing a standard autostart by unchecking Dropbox - Preferences - General - Start Dropbox on system startup. This removes `~/.config/autostart/dropbox.desktop`.
+*   Prevent Dropbox from doing a standard autostart by unchecking Dropbox - Preferences - General - Start Dropbox on system startup. This removes `~/.config/autostart/dropbox.desktop`.
 *   Edit `~/.config/autostart/dropbox-delayed.desktop` and replace `Exec=dropbox` with `Exec=bash -c "sleep *timeout* && dropbox"`. Tweak the *timeout* parameter, the value of `3` is a good start.
 
 ### Dropbox does not start - "This is usually because of a permission error"

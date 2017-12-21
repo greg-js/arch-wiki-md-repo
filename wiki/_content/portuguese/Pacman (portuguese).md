@@ -46,23 +46,23 @@ Pacman é escrito na linguagem de programação C e usa o formato de pacote `.pk
     *   [2.2 Repositórios e espelhos](#Reposit.C3.B3rios_e_espelhos)
         *   [2.2.1 Segurança de pacote](#Seguran.C3.A7a_de_pacote)
 *   [3 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
-    *   [3.1 Uma atualização para o pacote XYZ quebrou meu sistema!](#Uma_atualiza.C3.A7.C3.A3o_para_o_pacote_XYZ_quebrou_meu_sistema.21)
-    *   [3.2 Eu sei que uma atualização para o pacote ABC foi lançada, mas pacman diz que o meu sistema está atualizado!](#Eu_sei_que_uma_atualiza.C3.A7.C3.A3o_para_o_pacote_ABC_foi_lan.C3.A7ada.2C_mas_pacman_diz_que_o_meu_sistema_est.C3.A1_atualizado.21)
-    *   [3.3 Eu recebo um erro durante a atualização: "o arquivo já existe no sistema de arquivos"!](#Eu_recebo_um_erro_durante_a_atualiza.C3.A7.C3.A3o:_.22o_arquivo_j.C3.A1_existe_no_sistema_de_arquivos.22.21)
-    *   [3.4 Eu recebo um erro ao instalar um pacote: "não encontrou em sincronia com base de dados"](#Eu_recebo_um_erro_ao_instalar_um_pacote:_.22n.C3.A3o_encontrou_em_sincronia_com_base_de_dados.22)
-    *   [3.5 Eu recebo um erro ao instalar um pacote: "alvo não foi encontrado"](#Eu_recebo_um_erro_ao_instalar_um_pacote:_.22alvo_n.C3.A3o_foi_encontrado.22)
-    *   [3.6 Pacman está atualizando várias vezes o mesmo pacote!](#Pacman_est.C3.A1_atualizando_v.C3.A1rias_vezes_o_mesmo_pacote.21)
-    *   [3.7 Pacman falha durante uma atualização!](#Pacman_falha_durante_uma_atualiza.C3.A7.C3.A3o.21)
-    *   [3.8 Eu instalei programa usando "make install"; esses arquivos não pertencem a nenhum pacote!](#Eu_instalei_programa_usando_.22make_install.22.3B_esses_arquivos_n.C3.A3o_pertencem_a_nenhum_pacote.21)
-    *   [3.9 Preciso de um pacote com um arquivo específico. Como faço para saber o que ele dispõe?](#Preciso_de_um_pacote_com_um_arquivo_espec.C3.ADfico._Como_fa.C3.A7o_para_saber_o_que_ele_disp.C3.B5e.3F)
-    *   [3.10 Pacman está completamente quebrado! Como faço para reinstalá-lo?](#Pacman_est.C3.A1_completamente_quebrado.21_Como_fa.C3.A7o_para_reinstal.C3.A1-lo.3F)
-    *   [3.11 Depois de atualizar meu sistema, eu recebo um erro "não é possível encontrar o dispositivo root" depois de reiniciar e o meu sistema não mais inicializará.](#Depois_de_atualizar_meu_sistema.2C_eu_recebo_um_erro_.22n.C3.A3o_.C3.A9_poss.C3.ADvel_encontrar_o_dispositivo_root.22_depois_de_reiniciar_e_o_meu_sistema_n.C3.A3o_mais_inicializar.C3.A1.)
-    *   [3.12 Assinatura de "Usuário <email@gmail.com>" e de confiança desconhecida, falha na instalação](#Assinatura_de_.22Usu.C3.A1rio_.3Cemail.40gmail.com.3E.22_e_de_confian.C3.A7a_desconhecida.2C_falha_na_instala.C3.A7.C3.A3o)
-    *   [3.13 Recebo "PackageName: assinatura do "User <email@archlinux.org>" é inválida"](#Recebo_.22PackageName:_assinatura_do_.22User_.3Cemail.40archlinux.org.3E.22_.C3.A9_inv.C3.A1lida.22)
-    *   [3.14 Recebo um erro "falha ao confirmar a transação (pacote inválido ou corrompido)"](#Recebo_um_erro_.22falha_ao_confirmar_a_transa.C3.A7.C3.A3o_.28pacote_inv.C3.A1lido_ou_corrompido.29.22)
-    *   [3.15 Recebo erro toda vez que uso pacman dizendo 'aviso: locale atual é inválida; usando padrão locale "C"'. O que eu faço?](#Recebo_erro_toda_vez_que_uso_pacman_dizendo_.27aviso:_locale_atual_.C3.A9_inv.C3.A1lida.3B_usando_padr.C3.A3o_locale_.22C.22.27._O_que_eu_fa.C3.A7o.3F)
-    *   [3.16 Como posso ter Pacman para minhas configurações de proxy?](#Como_posso_ter_Pacman_para_minhas_configura.C3.A7.C3.B5es_de_proxy.3F)
-    *   [3.17 Como faço para reinstalar todos os pacotes, mantendo informações sobre se algo foi explicitamente instalado ou como uma dependência?](#Como_fa.C3.A7o_para_reinstalar_todos_os_pacotes.2C_mantendo_informa.C3.A7.C3.B5es_sobre_se_algo_foi_explicitamente_instalado_ou_como_uma_depend.C3.AAncia.3F)
+    *   [3.1 Erro "falha em submeter a transação (arquivos conflitantes)"](#Erro_.22falha_em_submeter_a_transa.C3.A7.C3.A3o_.28arquivos_conflitantes.29.22)
+    *   [3.2 Erro "falha em submeter a transação (pacote inválido ou corrompido)"](#Erro_.22falha_em_submeter_a_transa.C3.A7.C3.A3o_.28pacote_inv.C3.A1lido_ou_corrompido.29.22)
+    *   [3.3 Erro "falha ao iniciar a transação (não foi possível travar a base de dados)"](#Erro_.22falha_ao_iniciar_a_transa.C3.A7.C3.A3o_.28n.C3.A3o_foi_poss.C3.ADvel_travar_a_base_de_dados.29.22)
+    *   [3.4 Pacotes não podem ser obtidos na instalação](#Pacotes_n.C3.A3o_podem_ser_obtidos_na_instala.C3.A7.C3.A3o)
+    *   [3.5 Reinstalação manual do pacman](#Reinstala.C3.A7.C3.A3o_manual_do_pacman)
+    *   [3.6 Pacman trava durante uma atualização](#Pacman_trava_durante_uma_atualiza.C3.A7.C3.A3o)
+    *   [3.7 Erro "Unable to find root device" após a reinicialização](#Erro_.22Unable_to_find_root_device.22_ap.C3.B3s_a_reinicializa.C3.A7.C3.A3o)
+    *   [3.8 Signature from "<email@exemplo.org>" is unknown trust, falha na instalação](#Signature_from_.22.3Cemail.40exemplo.org.3E.22_is_unknown_trust.2C_falha_na_instala.C3.A7.C3.A3o)
+    *   [3.9 Solicitação de importação de chaves PGP](#Solicita.C3.A7.C3.A3o_de_importa.C3.A7.C3.A3o_de_chaves_PGP)
+    *   [3.10 Erro: key "0123456789ABCDEF" could not be looked up remotely](#Erro:_key_.220123456789ABCDEF.22_could_not_be_looked_up_remotely)
+    *   [3.11 Signature from "User <email@archlinux.org>" is invalid, falha na instalação](#Signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.2C_falha_na_instala.C3.A7.C3.A3o)
+    *   [3.12 Erro 'aviso: locale atual é inválida; usando locale padrão "C"'](#Erro_.27aviso:_locale_atual_.C3.A9_inv.C3.A1lida.3B_usando_locale_padr.C3.A3o_.22C.22.27)
+    *   [3.13 Pacman não respeita as configurações de proxy](#Pacman_n.C3.A3o_respeita_as_configura.C3.A7.C3.B5es_de_proxy)
+    *   [3.14 Como faço para reinstalar todos os pacotes, mantendo informações sobre se algo foi explicitamente instalado ou como uma dependência?](#Como_fa.C3.A7o_para_reinstalar_todos_os_pacotes.2C_mantendo_informa.C3.A7.C3.B5es_sobre_se_algo_foi_explicitamente_instalado_ou_como_uma_depend.C3.AAncia.3F)
+    *   [3.15 Erro "cannot open shared object file"](#Erro_.22cannot_open_shared_object_file.22)
+    *   [3.16 Congelamento de downloads de pacote](#Congelamento_de_downloads_de_pacote)
+    *   [3.17 Falha ao obter arquivo 'core.db' do espelho](#Falha_ao_obter_arquivo_.27core.db.27_do_espelho)
 *   [4 Veja também](#Veja_tamb.C3.A9m)
 
 ## Uso
@@ -585,134 +585,158 @@ O *pacman* oferece suporte a assinaturas de pacotes, que adiciona uma camada ext
 
 ## Solução de problemas
 
-### Uma atualização para o pacote XYZ quebrou meu sistema!
+### Erro "falha em submeter a transação (arquivos conflitantes)"
 
-Arch Linux é uma distribuição de ponta rolling-release. Atualizações de pacotes disponíveis assim que são considerados estáveis ​​o suficiente para uso geral. No entanto, as atualizações, por vezes, exigem a intervenção do usuário: arquivos de configuração podem precisar ser atualizados, dependências opcionais podem alterar, etc.
-
-A dica mais importante para se lembrar é não "às cegas" atualizar o sistema Arch. Sempre leia a lista de pacotes a serem atualizados. Note se os pacotes "críticos" vão ser atualizados ([linux](https://www.archlinux.org/packages/?name=linux), [xorg-server](https://www.archlinux.org/packages/?name=xorg-server), e assim por diante). Se assim for, é geralmente uma boa idéia verificar se há alguma notícia no [http://www.archlinux-br.org/](http://www.archlinux-br.org/) e verifique as mensagens mais recentes no fórum para ver se as pessoas estão enfrentando problemas com o resultado de uma atualização.
-
-Se uma atualização do pacote é esperada/conhecida por causar de problemas, empacotadores garantirão que pacman exiba uma mensagem apropriada quando o pacote é atualizado. Se enfrentar problemas após uma atualização, verifique a saída do pacman, veja o log (`/var/log/pacman.log`).
-
-Neste ponto, **só depois de garantir que não há nenhuma informação disponível através de pacman, não há nenhuma notícia relativa em [http://www.archlinux-br.org/](http://www.archlinux-br.org/), e não há mensagem no fórum sobre a atualização**, considere a busca de ajuda no fórum, através do [IRC](/index.php/IRC_channel "IRC channel"), ou [fazendo downgrade do pacote problemático](/index.php/Downgrading_packages_(Portugu%C3%AAs) "Downgrading packages (Português)").
-
-### Eu sei que uma atualização para o pacote ABC foi lançada, mas pacman diz que o meu sistema está atualizado!
-
-Espelhos do Pacman não são sincronizados imediatamente. Pode demorar mais de 24 horas antes que uma atualização esteja disponível para você. As únicas opções é ser paciente ou usar outro espelho. [MirrorStatus](https://www.archlinux.org/mirrors/status/) pode ajudar a identificar um espelho atualizado.
-
-### Eu recebo um erro durante a atualização: "o arquivo já existe no sistema de arquivos"!
-
-ASIDE: *Tirado de [https://bbs.archlinux.org/viewtopic.php?id=56373](https://bbs.archlinux.org/viewtopic.php?id=56373) by Misfit138.*
+Se você vir o erro: [[2]](https://bbs.archlinux.org/viewtopic.php?id=56373)
 
 ```
-error: could not prepare transaction
-error: failed to commit transaction (conflicting files)
-package: /path/to/file exists in filesystem
-Errors occurred, no packages were upgraded.
+erro: não foi possível preparar transação
+erro: falha ao submeter transação (arquivos conflitantes)
+*pacote*: */caminho/para/arquivo* existe no sistema de arquivos
+Ocorreram erros e, portanto, nenhum pacote foi atualizado.
 
 ```
 
-Por que isso está acontecendo: pacman detectou um conflito de arquivo, e pelo projeto, não vai substituir os arquivos para você. Esta é uma característica do projeto, e não um defeito.
+Por que isso aconteceu: o *pacman* detectou um conflito de arquivo e, por design, não vai sobrescrever arquivos para você. Este é um recurso de design, não uma falha.
 
-O problema é usualmente simples de se resolver. Uma maneira segura é primeiro verificar se outro pacote possui o arquivo (`pacman -Qo /path/to/file`). Se o arquivo é de propriedade de outro pacote, [enviar relatório de bug](/index.php/Reporting_bug_guidelines "Reporting bug guidelines"). Se o arquivo não é propriedade de outro pacote, renomeie o 'existente no sistema de arquivo' e re-execute o comando atualizar. Se tudo correr bem, o arquivo pode então ser removido.
+O problema geralmente é trivial de resolver. Uma maneira segura é primeiro verificar se outro pacote possui o arquivo (`pacman -Qo */caminho/para/arquivo*`). Se o arquivo for de propriedade de outro pacote, [preencha um relatório de erro](/index.php/Reporting_bug_guidelines "Reporting bug guidelines"). Se o arquivo não for de outro pacote, renomeie o arquivo que "existe no sistema de arquivos" e execute novamente o comando de atualização. Se tudo correr bem, o arquivo pode então ser removido.
 
-Se você tinha instalado um programa manualmente, sem usar pacman ou interface, você tem que removê-lo e todos os seus arquivos e reinstalar corretamente usando pacman.
+Se você instalou um programa manualmente sem usar o *pacman* ou um frontend dele (p.ex.: por meio de `make install`), você tem que removê-lo e todos os seus arquivos para, depois, reinstalar adequadamente usando o *pacman*. Veja também [Pacman tips#Identify files not owned by any package](/index.php/Pacman_tips#Identify_files_not_owned_by_any_package "Pacman tips").
 
-Cada pacote instalado fornece arquivo `/var/lib/pacman/local/$package-$version/files` que contém metadata sobre este pacote. Se este arquivo for corrompido - é vazio ou ausente - que resulta no erro "o arquivo existe no sistema de arquivos" durante a atualização do pacote. Esse erro geralmente só diz respeito a um único pacote e, em vez de renomear manualmente e depois remover todos os arquivos que pertencem ao pacote em questão, você pode executar `pacman -S --force $package` para forçar o pacman substituir estes arquivos
+Todo pacote instalado fornece um arquivo `/var/lib/pacman/local/*$pacote-$versão*/files` que contém metadados sobre esse pacote. Se o arquivo ficar corrompido, vazio ou desaparecer, ele resulta em erros de `existe no sistema de arquivos` ao tentar atualizar o pacote. Tal erro geralmente está relacionado a um pacote. Em vez de renomear manualmente e posteriormente remover todos os arquivos que pertencem ao pacote em questão, você pode tentar excepcionalmente executar `pacman -S --force $pacote` para forçar o *pacman* a sobrescrever esses arquivos.
 
-**Não** execute `pacman -Syu --force`.
+**Atenção:** Tenha cuidado ao usar a opção `--force` (por exemplo, `pacman -Syu --force`), pois ela pode causar grandes problemas se usada inadequadamente. É altamente recomendado usar essa opção apenas quando as notícias do Arch instruem o usuário a fazê-lo.
 
-### Eu recebo um erro ao instalar um pacote: "não encontrou em sincronia com base de dados"
+### Erro "falha em submeter a transação (pacote inválido ou corrompido)"
 
-Primeiramente, verifique se o pacote realmente existe (e fique atento para os erros de digitação!). Se o determinado pacote existe sua lista de pacotes pode estar desatualizada ou seus repositórios podem estar configurados incorretamente. Tente executar `pacman-Syy.` para forçar uma atualização de todas as listas de pacotes
-
-### Eu recebo um erro ao instalar um pacote: "alvo não foi encontrado"
-
-Primeiramente, verifique se o pacote realmente existe (e fique atento para os erros de digitação!). Se o determinado pacote existe sua lista de pacotes pode estar desatualizada ou seus repositórios podem estar configurados incorretamente. Tente executar `pacman-Syy` para forçar uma atualização de todas as listas de pacotes.
-Pode ser também que o repositório que contém o pacote não está ativado em seu sistema, por exemplo, o pacote poderia estar no repositório *multilib*, mas *multilib* não está habilitado em seu *pacman.conf*.
-
-### Pacman está atualizando várias vezes o mesmo pacote!
-
-É devido a entradas duplicadas em `/var/lib/pacman/local/`, tal como duas instâncias `linux`. `pacman -Qi` emite a versão correta, mas `pacman -Qu` reconhece a versão antiga e, portanto, tentará atualizar.
-
-Solução: eliminar a entrada em `/var/lib/pacman/local/`.
-
-**Nota:** A versão 3.4 do pacman deveria exibir um erro de entradas duplicadas, que deveria deixar esta nota obsoleta.
-
-### Pacman falha durante uma atualização!
-
-No caso de colisão do pacman com um erro de "escrita de base de dados" enquanto remove um pacote, e falha ao reinstalar ou atualizar pacotes:
-
-1.  Inicialize usando a mídia de instalação do Arch
-2.  Monte seu sistema de arquivos root.
-3.  Atualize a base de dados do pacman via `pacman -Syy`.
-4.  Reinstale o pacote quebrado via `pacman -r /path/to/root -S package`.
-
-### Eu instalei programa usando "make install"; esses arquivos não pertencem a nenhum pacote!
-
-Se receber um erro "arquivos conflitantes", note que o pacman substituirá manualmente o programa instalado se adicionar com o `--force`, por exemplo,(`pacman -S --force`). Veja [Pacman tips#Identify files not owned by any package](/index.php/Pacman_tips#Identify_files_not_owned_by_any_package "Pacman tips") para um script que procura o arquivo de sistema por arquivos *rejeitados*.
-
-**Atenção:** Tome cuidado ao usar a opção `--force`, pois pode causar problemas graves se usada indevidamente. Recomenda-se usar esta opção apenas quando for requisitada em Arch notícias.
-
-### Preciso de um pacote com um arquivo específico. Como faço para saber o que ele dispõe?
-
-Instale [pkgfile](/index.php/Pkgfile_(Portugu%C3%AAs) "Pkgfile (Português)") que usa um banco de dados separado com todos os arquivos e seus pacotes associados.
-
-### Pacman está completamente quebrado! Como faço para reinstalá-lo?
-
-No caso de pacman está quebrado sem possibilidade de reparo, baixe manualmente os pacotes necessários ([openssl](https://www.archlinux.org/packages/?name=openssl), [libarchive](https://www.archlinux.org/packages/?name=libarchive), e [pacman](https://www.archlinux.org/packages/?name=pacman) e extraia eles no root. O binário pacman será restaurado juntamente com seu arquivo de configuração padrão. Depois disso, reinstale esses pacotes com pacman para manter a integridade do banco de dados do pacote. Informações adicionais e um exemplo de script (desatualizado) que automatiza o processo está disponível nesta [[2]](https://bbs.archlinux.org/viewtopic.php?id=95007) mensagem.
-
-### Depois de atualizar meu sistema, eu recebo um erro "não é possível encontrar o dispositivo root" depois de reiniciar e o meu sistema não mais inicializará.
-
-Muito provavelmente seus initramfs quebrou durante uma atualização do kernel (uso indevido da opção do pacman `--force` pode ser uma causa). Você tem duas opções:
-
-**1.** Tente a entrada *Fallback*.
-
-**Dica:** No caso de você ter removido esta entrada por alguma razão, você pode sempre pressionar a tecla `Tab` quando o gerenciador de boot aparecer (para Syslinux) ou `e` (para GRUB), renomear `initramfs-linux-fallback.img` e pressione `Enter` ou `b` (dependendo do seu gerenciador de boot) para inicializar com os novos parâmetros.
-
-	Quando o sistema iniciar, execute este comando (para amarzenar no Kernel [linux](https://www.archlinux.org/packages/?name=linux)) através do console ou de um terminal para reconstruir a imagem initramfs:
-
-	 `# mkinitcpio -p linux` 
-
-**2.** Se não funcionar, de um lançamento 2012 Arch (CD/DVD ou USB), execute:
-
-**Nota:** Se você não tem uma versão de 2012 ou se tem apenas alguma outra distribuição Linux "live" que possa aplicar [chroot](/index.php/Chroot "Chroot") usando o jeito antigo. Obviamente, não será mais simples que digitando o script `arch-chroot`.
+Procure por arquivos `*.part` (pacotes baixados parcialmente) em `/var/cache/pacman/pkg` e remove-os (muitas vezes causado pelo uso da opção `XferCommand` em `pacman.conf`).
 
 ```
-# mount /dev/sdxY /mnt         #Sua partição root.
-# mount /dev/sdxZ /mnt/boot    #Se usa uma partição /boot separada.
+# find /var/cache/pacman/pkg/ -iname "*.part" -exec rm {} \;
+
+```
+
+### Erro "falha ao iniciar a transação (não foi possível travar a base de dados)"
+
+Quando o *pacman* vai alterar a base de dados de pacotes, por exemplo instalar um pacote, ele cria um arquivo de trava em `/var/lib/pacman/db.lck`. Isso evita que uma outra instância do *pacman* tente alterar a base de dados de pacotes ao mesmo tempo.
+
+Se o *pacman* for interrompido enquanto altera a base de dados, esse arquivo de trava obsoleto pode permanecer. Se você tem certeza que nenhuma outra instância do *pacman* está em execução, então exclua o arquivo de trava:
+
+```
+# rm /var/lib/pacman/db.lck
+
+```
+
+### Pacotes não podem ser obtidos na instalação
+
+Esse erro se manifesta como `não encontrado na base de dados de sincronização`, `alvo não encontrado` ou `falha ao obter o arquivo`.
+
+Primeiramente, assegure-se de que o pacote realmente existe (e cuidado para erros de escrita!). Se você tem certeza que o pacote existe, sua lista de pacote pode estar desatualizada ou seus repositórios podem estar configurados incorretamente. Tente execute `pacman -Syyu` para forçar uma atualização de todas as listas de pacote e atualize.
+
+Pode ser também que aquele repositório contendo o pacote não está habilidade no seu sistema. Por exemplo, o pacote pode estar no repositório *multilib*, mas o *multilib* não está habilitado em seu `pacman.conf`.
+
+Veja também [FAQ (Português)#Por que há alguma uma única versão de cada biblioteca compartilhada nos repositórios oficiais?](/index.php/FAQ_(Portugu%C3%AAs)#Por_que_h.C3.A1_alguma_uma_.C3.BAnica_vers.C3.A3o_de_cada_biblioteca_compartilhada_nos_reposit.C3.B3rios_oficiais.3F "FAQ (Português)").
+
+### Reinstalação manual do pacman
+
+**Atenção:** É extremamente fácil quebrar seu sistema ainda mais, usando essa abordagem. Use isso apenas como um último recurso se o método do [#pacman trava durante uma atualização](#pacman_trava_durante_uma_atualiza.C3.A7.C3.A3o) não for uma opção.
+
+Mesmo se o *pacman* estiver terrivelmente quebrado, você pode corrigi-lo manualmente baixando os últimos pacotes e extraindo-os para os locais corretos. Os passos difíceis a se executar são
+
+1.  Determinar dependências para instalar
+2.  Baixar cada pacote de um espelho de sua escolha
+3.  Extrair cada pacote para a raiz
+4.  Reinstalar esses pacotes com `pacman -Sf` para atualizar a base de dados de pacote
+5.  Fazer uma atualização completa do sistema
+
+Se você tem um sistema do Arch saudável disponível, você pode ver a lista completa de dependências com
+
+```
+$ pacman -Q $(pactree -u pacman)
+
+```
+
+mas você pode precisar atualizar algumas delas, dependendo do seu problema. Um exemplo de extração de um pacote é
+
+```
+# tar -xvpwf *pacote.tar.xz* -C / --exclude .PKGINFO --exclude .INSTALL
+
+```
+
+Note que o uso da opção `w` para modo interativo. Executar não interativamente é muito arriscado já que você pode acabar sobrescrevendo um arquivo importante. Também tenha cuidado ao extrair pacotes na ordem correta (i.e. dependências primeiro). [Essa publicação no fórum](https://bbs.archlinux.org/viewtopic.php?id=95007) contém um exemplo deste processo no qual apenas duas dependências do *pacman* estava quebradas.
+
+### Pacman trava durante uma atualização
+
+No caso do *pacman* travar com um erro de "escrita da base de dados" enquanto remove pacotes, e a reinstalação ou atualização de pacotes falha a partir daí, faça o seguinte:
+
+1.  Inicialize usando a mídia de instalação do Arch. Preferivelmente use uma mídia recente, para que a versão do *pacman* seja igual ou mais nova do que a do sistema.
+2.  Monte o sistema de arquivos raiz do sistema (ex.: `mount /dev/sdaX /mnt`) como root e verifique se a montagem tem espaço suficiente com `df -h`
+3.  Monte os sistemas de arquivos proc e sysfs também: `mount -t {proc,sysfs} /dev/sdaX {/mnt/proc, /mnt/sys}`
+4.  Se o sistema usa locais padrão de base de dados e diretório, você pode agora atualizar a base de dados do *pacman* do sistema e atualizá-lo via `pacman --root=/mnt --cachedir=/mnt/var/cache/pacman/pkg -Syyu` como root.
+5.  Após a atualização, uma forma de verificar se pacotes não atualizados, mas ainda quebrados: `find /mnt/usr/lib -size 0`
+6.  Seguido pela reinstalação de qualquer pacote ainda quebrado via `pacman --root /mnt --cachedir=/mnt/var/cache/pacman/pkg -S *pacote*`.
+
+### Erro "Unable to find root device" após a reinicialização
+
+Muito provavelmente seus initramfs quebrou durante uma atualização do kernel (uso indevido da opção `--force` do pacman pode ser uma causa). Você tem duas opções; primeiro, tente a entrada *Fallback*.
+
+**Dica:** No caso de você ter removido o *Fallback*, você pode sempre pressionar a tecla `Tab` quando o gerenciador de boot aparecer (para Syslinux) ou `e` (para GRUB), renomear `initramfs-linux-fallback.img` e pressione `Enter` ou `b` (dependendo do seu gerenciador de boot) para inicializar com os novos parâmetros.
+
+Quando o sistema iniciar, execute este comando (para o Kernel [linux](https://www.archlinux.org/packages/?name=linux) padrão) através do console ou de um terminal para reconstruir a imagem initramfs:
+
+```
+# mkinitcpio -p linux
+
+```
+
+Se isso não funcionar, de uma versão atual do Arch (CD/DVD ou pendrive USB), [monte](/index.php/Mount "Mount") as partições *root* e *boot*. Então, faça um [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)") usando o *arch-chroot*:
+
+```
 # arch-chroot /mnt
 # pacman -Syu mkinitcpio systemd linux
+
 ```
 
-	Reinstalando o Kernel (o pacote [linux](https://www.archlinux.org/packages/?name=linux)) irá gerar automaticamente a imagem com `mkinitcpio -p linux`. Não precisa fazer separamente.
+**Nota:**
 
-	Depois, recomenda-se que você execute `exit`, `umount /mnt/{boot,}` e `reboot`.
+*   Se você não tem uma versão atual ou se tem apenas alguma outra distribuição Linux "live", você pode fazer [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)") usando o jeito antigo. Obviamente, terá que digitar mais do que simplesmente executar o script `arch-chroot`.
+*   Se *pacman* falhar com `não foi possível resolver máquina`, por favor [verifique sua conexão com a Internet](/index.php/Configura%C3%A7%C3%A3o_de_rede#Verificando_a_conex.C3.A3o "Configuração de rede").
+*   Se você não conseguir entrar no ambiente do arch-chroot ou chroot, mas precisa reinstalar os pacotes, você pode usar o comando `pacman -r /mnt -Syu foo bar` para usar o *pacman* em sua partição raiz.
 
-**Nota:** Se você não pode entrar no ambiente arch-chroot ou chroot, mas precisa reintalar os pacotes você pode usar o comando `pacman -r /mnt -Syu foo bar` para utilizar pacman em sua partição root.
+A reinstalação do kernel (o pacote [linux](https://www.archlinux.org/packages/?name=linux)) vai gerar automaticamente a imagem com `mkinitcpio -p linux`. Não precisa fazer separadamente.
 
-### Assinatura de "Usuário <email@gmail.com>" e de confiança desconhecida, falha na instalação
+Após, recomenda-se que você execute `exit`, `umount /mnt/{boot,}` e `reboot`.
+
+### Signature from "<email@exemplo.org>" is unknown trust, falha na instalação
 
 Siga [pacman-key#Resetting all the keys](/index.php/Pacman-key#Resetting_all_the_keys "Pacman-key"). Ou pode tentar atualizar manualmente [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) primeiro o pacote, ex. `pacman -S archlinux-keyring`.
 
-### Recebo "PackageName: assinatura do "User <email@archlinux.org>" é inválida"
+### Solicitação de importação de chaves PGP
+
+If [installing](/index.php/Installation_guide "Installation guide") Arch with an outdated ISO, you are likely prompted to import PGP keys. Agree to download the key to proceed. If you are unable to add the PGP key successfully, update the keyring or upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) (see [above](#Signature_from_.22User_.3Cemail.40example.org.3E.22_is_unknown_trust.2C_installation_failed)).
+
+### Erro: key "0123456789ABCDEF" could not be looked up remotely
+
+If packages are signed with new keys, which were only recently added to [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring), these keys are not locally available during update (chicken-egg-problem). The installed [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) does not contain the key, until it is updated. Pacman tries to bypass this by a lookup through a key-server, which might not be possible e.g. behind proxys or firewalls and results in the stated error. Upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) first as shown [above](#Signature_from_.22User_.3Cemail.40example.org.3E.22_is_unknown_trust.2C_installation_failed).
+
+### Signature from "User <email@archlinux.org>" is invalid, falha na instalação
+
+When the system time is faulty, signing keys are considered expired (or invalid) and signature checks on packages will fail with the following error:
 
 ```
-error: PackageName: assinatura do "User <email@archlinux.org>" é inválida
-error: falha ao confirmar a transação (pacote inválido ou corrompido (PGP signature))
-Erros ocorreram, nenhum pacote foi atualizado. 
+error: *package*: signature from "User <email@archlinux.org>" is invalid
+error: failed to commit transaction (invalid or corrupted package (PGP signature))
+Errors occured, no packages were upgraded.
 
 ```
-Isso acontece quando o relógio do sistema está errado. Ajuste a [hora](/index.php/Time "Time") e execute: `# hwclock -w` antes de tentar instalar/atualizar um pacote novamente.}}
 
-### Recebo um erro "falha ao confirmar a transação (pacote inválido ou corrompido)"
+Make sure to correct the [time](/index.php/Time "Time"), for example with `ntpd -qg` run as root, and run `hwclock -w` as root before subsequent installations or upgrades.
 
-Procure por arquivos `*.part` (pacotes baixados parcialmente) em `/var/cache/pacman/pkg` e remove eles (muitas vezes causado pelo uso da opção `XferCommand` em `pacman.conf`).
-
-### Recebo erro toda vez que uso pacman dizendo 'aviso: locale atual é inválida; usando padrão locale "C"'. O que eu faço?
+### Erro 'aviso: locale atual é inválida; usando locale padrão "C"'
 
 Como a própria mensagem de erro diz, sua locale está configurada incorretamente. Consulte [Locale](/index.php/Locale "Locale").
 
-### Como posso ter Pacman para minhas configurações de proxy?
+### Pacman não respeita as configurações de proxy
 
 Certifique-se que as variáveis de ambiente relevantes (`$http_proxy`, `$ftp_proxy` etc.) estão configuradas. Se você usa Pacman com [sudo](/index.php/Sudo "Sudo"), você precisa configurar o sudo para [passar essas variáveis ​​de ambiente para o Pacman](/index.php/Sudo#Environment_variables "Sudo").
 
@@ -720,6 +744,24 @@ Certifique-se que as variáveis de ambiente relevantes (`$http_proxy`, `$ftp_pro
 
 Para reinstalar todos os pacotes nativos: `pacman -S $(pacman -Qnq)` (a opção `-S` preserva a razão de instalação por padrão).
 Então você terá que reinstalar todos os pacotes externos, que podem ser listados com `pacman -Qmq`.
+
+### Erro "cannot open shared object file"
+
+It looks like previous *pacman* transaction removed or corrupted shared libraries needed for *pacman* itself.
+
+To recover from this situation you need to unpack required libraries to your filesystem manually. First find what package contains the missed library and then locate it in the *pacman* cache (`/var/cache/pacman/pkg/`). Unpack required shared library to the filesystem. This will allow to run *pacman*.
+
+Now you need to [reinstall](#Installing_specific_packages) the broken package. Note that you need to use `--force` flag as you just unpacked system files and *pacman* does not know about it. *pacman* will correctly replace our shared library file with one from package.
+
+That's it. Update the rest of the system.
+
+### Congelamento de downloads de pacote
+
+Some issues have been reported regarding network problems that prevent *pacman* from updating/synchronizing repositories. [[3]](https://bbs.archlinux.org/viewtopic.php?id=68944) [[4]](https://bbs.archlinux.org/viewtopic.php?id=65728) When installing Arch Linux natively, these issues have been resolved by replacing the default *pacman* file downloader with an alternative (see [Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance") for more details). When installing Arch Linux as a guest OS in [VirtualBox](/index.php/VirtualBox "VirtualBox"), this issue has also been addressed by using *Host interface* instead of *NAT* in the machine properties.
+
+### Falha ao obter arquivo 'core.db' do espelho
+
+If you receive this error message with correct [mirrors](/index.php/Mirrors "Mirrors"), try setting a different [name server](/index.php/Resolv.conf "Resolv.conf").
 
 ## Veja também
 

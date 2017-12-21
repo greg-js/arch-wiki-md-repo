@@ -193,6 +193,8 @@ where `my_remote_client_ip_address` is the IP address of the client.
 
 See the documentation for [pg_hba.conf](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html).
 
+**Note:** Neither sending your plain password nor the md5 hash (used in the example above) over the Internet is secure if it is not done over an SSL-secured connection. See [Secure TCP/IP Connections with SSL](https://www.postgresql.org/docs/current/static/ssl-tcp.html) for how to configure PostgreSQL with SSL.
+
 After this you should [restart](/index.php/Restart "Restart") `postgresql.service` for the changes to take effect.
 
 **Note:** PostgreSQL uses port `5432` by default for remote connections. Make sure this port is open and able to receive incoming connections.

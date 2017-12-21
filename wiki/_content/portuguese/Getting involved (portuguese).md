@@ -11,9 +11,10 @@ Este artigo descreve como usuários novos e experientes do Arch podem contribuir
     *   [1.4 Reporte pacotes instalados](#Reporte_pacotes_instalados)
     *   [1.5 Corrija e reporte bugs](#Corrija_e_reporte_bugs)
     *   [1.6 Informe sobre problemas de segurança](#Informe_sobre_problemas_de_seguran.C3.A7a)
-    *   [1.7 Crie e adote pacotes do AUR](#Crie_e_adote_pacotes_do_AUR)
-    *   [1.8 Projetos de software oficiais](#Projetos_de_software_oficiais)
-    *   [1.9 Doe dinheiro](#Doe_dinheiro)
+    *   [1.7 Ajude a testar pacotes](#Ajude_a_testar_pacotes)
+    *   [1.8 Crie e adote pacotes do AUR](#Crie_e_adote_pacotes_do_AUR)
+    *   [1.9 Projetos de software oficiais](#Projetos_de_software_oficiais)
+    *   [1.10 Doe dinheiro](#Doe_dinheiro)
 *   [2 Projetos da comunidade](#Projetos_da_comunidade)
     *   [2.1 Grupos](#Grupos)
     *   [2.2 Software](#Software)
@@ -53,6 +54,10 @@ Contudo, o uso inefetivo pode ser contra-produtivo. Por favor, leia [Diretrizes 
 ### Informe sobre problemas de segurança
 
 Novas vulnerabilidades são localizadas todo momento. Ajude a [Equipe de Segurança do Arch](/index.php/Arch_Security_Team "Arch Security Team") a se manter antenada a novas vulnerabilidades.
+
+### Ajude a testar pacotes
+
+Pacotes nos repositórios de teste precisam ser testados e assinados antes que ele sejam promovidos para os repositórios principas. Ajude a [Equipe de Teste do Arch](/index.php/Arch_Testing_Team "Arch Testing Team") a testar novos pacotes.
 
 ### Crie e adote pacotes do AUR
 
@@ -94,9 +99,9 @@ Grupos específicos do Arch, que podem ser de seu interesse.
 
 	Uma comunidade no Google Plus para usuários Arch Linux interagirem, fazer perguntas ou conversas de notícias em geral sobre o Arch Linux.
 
-	[Arch Linux User Group](/index.php/Arch_Linux_User_Group "Arch Linux User Group")
+	[Comunidades internacionais](/index.php/Comunidades_internacionais "Comunidades internacionais")
 
-	Local para usuários Arch se conhecerem
+	Comunidades locais e lugares para encontros de usuários.
 
 	[Arch Women](http://archwomen.org/)
 

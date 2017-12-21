@@ -20,9 +20,12 @@ De [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4) (traduzido):
         *   [2.2.1 Motivo](#Motivo_2)
         *   [2.2.2 Procedimento](#Procedimento_2)
 *   [3 Usando criptografia baseada em arquivos](#Usando_criptografia_baseada_em_arquivos)
-*   [4 Dicas e truques](#Dicas_e_truques)
+*   [4 Melhorando performance](#Melhorando_performance)
     *   [4.1 E4rat](#E4rat)
-    *   [4.2 Barreiras e desempenho](#Barreiras_e_desempenho)
+    *   [4.2 Desabilitando atualização de tempo de acesso](#Desabilitando_atualiza.C3.A7.C3.A3o_de_tempo_de_acesso)
+    *   [4.3 Aumentando o intervalo de commit](#Aumentando_o_intervalo_de_commit)
+    *   [4.4 Desligando barreiras](#Desligando_barreiras)
+    *   [4.5 Desabilitando journaling](#Desabilitando_journaling)
 *   [5 Habilitando somas de verificação de metadados](#Habilitando_somas_de_verifica.C3.A7.C3.A3o_de_metadados)
     *   [5.1 Novo sistema de arquivos](#Novo_sistema_de_arquivos)
     *   [5.2 Sistema de arquivos existente](#Sistema_de_arquivos_existente)
@@ -120,38 +123,38 @@ $ findmnt */o/ponto/de/montagem*
 
 #### Motivo
 
-A compromise between fully converting to ext4 and simply remaining with ext2/ext3 is to mount the partitions as ext4.
+Um compromisso entre a conversão total para ext4 e simplesmente permanecer com ext2/ext3 é montar as partições como ext4.
 
-**Pros:**
+**Vantagens:**
 
-*   Compatibility (the filesystem can continue to be mounted as ext3) – This allows users to still read the filesystem from other operating systems without ext4 support (e.g. Windows with ext2/ext3 drivers)
-*   Improved performance (though not as much as a fully-converted ext4 partition).[[1]](http://kernelnewbies.org/Ext4) [[2]](http://events.linuxfoundation.org/slides/2010/linuxcon_japan/linuxcon_jp2010_fujita.pdf)
+*   Compatibilidade (o sistema de arquivos pode continuar sendo montado como ext3) – Isso permite que os usuários ainda leiam o sistema de arquivos de outros sistemas operacionais sem suporte a ext4 (por exemplo, o Windows com drivers ext2/ext3)
+*   Melhor desempenho (embora não tanto como uma partição ext4 totalmente convertida).[[1]](http://kernelnewbies.org/Ext4) [[2]](http://events.linuxfoundation.org/slides/2010/linuxcon_japan/linuxcon_jp2010_fujita.pdf)
 
-**Cons:**
+**Desvantagens:**
 
-*   Fewer features of ext4 are used (only those that do not change the disk format such as multiblock allocation and delayed allocation)
+*   Menos recursos do ext4 são usados (apenas aqueles que não alteram o formato do disco, como a alocação de múltiplos blocos e a alocação atrasada)
 
-**Note:** Except for the relative novelty of ext4 (which can be seen as a risk), **there is no major drawback to this technique**.
+**Nota:** Exceto pela novidade relativa do ext4 (que pode ser visto como um risco), **não há nenhuma desvantagem importante para esta técnica**.
 
 #### Procedimento
 
-1.  Edit `/etc/fstab` and change the 'type' from ext2/ext3 to ext4 for any partitions you would like to mount as ext4.
-2.  Re-mount the affected partitions.
+1.  Edite `/etc/fstab` e altere o 'type' de ext2/ext3 para ext4 para quaisquer partições você gostaria de montar como ext4.
+2.  Monte novamente as partições afetadas.
 
 ### Convertendo partições ext2/ext3 para ext4
 
 #### Motivo
 
-To experience the benefits of ext4, an irreversible conversion process must be completed.
+Para experimentar os benefícios do ext4, um processo de conversão irreversível deve ser concluído.
 
-**Pros:**
+**Vantagens:**
 
-*   Improved performance and new features.[[3]](http://kernelnewbies.org/Ext4) [[4]](http://events.linuxfoundation.org/slides/2010/linuxcon_japan/linuxcon_jp2010_fujita.pdf)
+*   Desempenho melhorado e novos recursos.[[3]](http://kernelnewbies.org/Ext4) [[4]](http://events.linuxfoundation.org/slides/2010/linuxcon_japan/linuxcon_jp2010_fujita.pdf)
 
-**Cons:**
+**Desvantagens:**
 
-*   Partitions that contain mostly static files, such as a `/boot` partition, may not benefit from the new features. Also, adding a journal (which is implied by moving a ext2 partition to ext3/4) always incurs performance overhead.
-*   Irreversible (ext4 partitions cannot be 'downgraded' to ext2/ext3\. It is, however, backwards compatible until extent and other unique options are enabled)
+*   As partições que contêm principalmente arquivos estáticos, como uma partição `/boot`, podem não se beneficiar dos novos recursos. Além disso, adicionar um diário (que está implícito ao mover uma partição ext2 para ext3/4) sempre incorre em despesas gerais de desempenho.
+*   Irreversível (as partições ext4 não podem ser "rebaixadas" para ext2/ext3\. No entanto, é compatível com versões anteriores até que a extensão e outras opções exclusivas estejam habilitadas)
 
 #### Procedimento
 
@@ -266,25 +269,45 @@ This completes setting up encryption for a directory named `*/encrypted*`. If yo
 
 In both cases it is better to copy (`cp`) files instead, because that leaves the option to securely delete the unencrypted original with *shred* or a similar tool.
 
-## Dicas e truques
+## Melhorando performance
 
 ### E4rat
 
-[E4rat](/index.php/E4rat "E4rat") is a preload application designed for the ext4 filesystem. It monitors files opened during boot, optimizes their placement on the partition to improve access time, and preloads them at the very beginning of the boot process. [E4rat](/index.php/E4rat "E4rat") does not offer improvements with [SSDs](/index.php/SSD "SSD"), whose access time is negligible compared to hard disks.
+[E4rat](/index.php/E4rat "E4rat") is a preload application designed for the ext4 filesystem. It monitors files opened during boot, optimizes their placement on the partition to improve access time, and preloads them at the very beginning of the boot process. "E4rat" does not offer improvements with [SSDs](/index.php/SSD "SSD"), whose access time is negligible compared to hard disks.
 
-### Barreiras e desempenho
+### Desabilitando atualização de tempo de acesso
 
-Since kernel 2.6.30, ext4 performance has decreased due to changes that serve to improve data integrity.[[7]](http://www.phoronix.com/scan.php?page=article&item=ext4_then_now&num=1)
+The *ext4* file system records information about when a file was last accessed and there is a cost associated with recording it. With the `noatime` option, the access timestamps on the filesystem are not updated.
 
-	Most file systems (XFS, ext3, ext4, reiserfs) send write barriers to disk after fsync or during transaction commits. Write barriers enforce proper ordering of writes, making volatile disk write caches safe to use (at some performance penalty). If your disks are battery-backed in one way or another, disabling barriers may safely improve performance.
+ `/etc/fstab`  `/dev/sda5    /    ext4    defaults,**noatime**    0    1` 
 
-	Sending write barriers can be disabled using the `barrier=0` mount option (for ext3, ext4, and reiserfs), or using the `nobarrier` mount option (for XFS).
+### Aumentando o intervalo de commit
 
-**Warning:** Disabling barriers when disks cannot guarantee caches are properly written in case of power failure can lead to severe file system corruption and data loss.
+The sync interval for data and metadata can be increased by providing a higher time delay to the `commit` option.
 
-To turn barriers off add the option `barrier=0` to the desired filesystem. For example:
+The default 5 sec means that if the power is lost, one will lose as much as the latest 5 seconds of work.
 
- `/etc/fstab`  `/dev/sda5    /    ext4    noatime,barrier=0    0    1` 
+It forces a full sync of all data/journal to physical media every 5 seconds. The filesystem will not be damaged though, thanks to the journaling. The following fstab illustrates the use of `commit`:
+
+ `/etc/fstab`  `/dev/sda5    /    ext4   defaults,noatime,**commit=999**    0    1` 
+
+### Desligando barreiras
+
+**Warning:** Disabling barriers for disks without battery-backed cache is not recommended and can lead to severe file system corruption and data loss.
+
+*Ext4* enables write barriers by default. It ensures that file system metadata is correctly written and ordered on disk, even when write caches lose power. This goes with a performance cost especially for applications that use *fsync* heavily or create and delete many small files. For disks that have a write cache that is battery-backed in one way or another, disabling barriers may safely improve performance.
+
+To turn barriers off, add the option `barrier=0` to the desired filesystem. For example:
+
+ `/etc/fstab`  `/dev/sda5    /    ext4    noatime,**barrier=0**   0    1` 
+
+### Desabilitando journaling
+
+**Warning:** Using a filesystem without journaling can result in data loss in case of sudden dismount like power failure or kernel lockup.
+
+Disabling the journal with *ext4* can be done with the following command on an unmounted disk:
+
+1.  tune2fs -O ^has_journal /dev/sdXN
 
 ## Habilitando somas de verificação de metadados
 
@@ -354,6 +377,6 @@ Keep in mind that the intel module consistently performs 10x faster than the gen
 *   [Official Ext4 wiki](https://ext4.wiki.kernel.org/)
 *   [Ext4 Disk Layout](https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout) described in its wiki
 *   [Ext4 Encryption](http://lwn.net/Articles/639427/) LWN article
-*   Kernel commits for ext4 encryption [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[9]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
+*   Kernel commits for ext4 encryption [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
 *   [e2fsprogs Changelog](http://e2fsprogs.sourceforge.net/e2fsprogs-release.html)
 *   [Ext4 Metadata Checksums](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums)

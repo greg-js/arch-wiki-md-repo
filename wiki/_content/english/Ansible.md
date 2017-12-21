@@ -10,6 +10,7 @@ From [www.ansible.com](https://www.ansible.com/how-ansible-works):
     *   [2.2 Ping](#Ping)
     *   [2.3 Playbook](#Playbook)
     *   [2.4 Vault](#Vault)
+    *   [2.5 Package management](#Package_management)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 User account creation](#User_account_creation)
     *   [3.2 Python binary location](#Python_binary_location)
@@ -79,33 +80,39 @@ $ ansible-playbook --ask-become-pass syu.yml
 
 ### Vault
 
-A [vault](http://docs.ansible.com/ansible/latest/playbooks_vault.html#using-vault-in-playbooks) can be used to keep sensitive data in an encrypted form, rather than plaintext, in playbooks or roles. The vault password can be stored in plaintext in a file, for example `vault_pass.txt` containing `myvaultpassword`, to be used later on in Ansible commands as follows:
+A [vault](http://docs.ansible.com/ansible/latest/playbooks_vault.html#using-vault-in-playbooks) can be used to keep sensitive data in an encrypted form in playbooks or roles, rather than in plaintext. The vault password can be stored in plaintext in a file, for example `*vault_pass.txt*` containing `*myvaultpassword*`, to be used later on as a command parameter:
 
 ```
-$ ansible-playbook site.yml --vault-id vault_pass.txt
-
-```
-
-In order to encrypt the content `varcontent` of a variable named `varname`, the following command should be used:
-
-```
-$ ansible-vault encrypt_string --vault-id vault_pass.txt varcontent -n varname
+$ ansible-playbook *site.yml* --vault-id *vault_pass.txt*
 
 ```
 
-It returns directly the protected variable that can be inserted into a playbook. Encrypted and non-encrypted variables can be mixed together in a YAML file:
+In order to encrypt the content `*the var content*` of a variable named `*varname*` using the password stored in `*vault_pass.txt*`, the following command should be used:
+
+```
+$ ansible-vault encrypt_string --vault-id *vault_pass.txt* '*the var content*' -n *varname*
+
+```
+
+It returns directly the protected variable that can be inserted into a playbook. Encrypted and non-encrypted variables can be mixed together in a YAML file as illustrated below:
 
 ```
 notsecret: myvalue
-mysecret: !vault |
+mysecret: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           66386439653236336462626566653063336164663966303231363934653561363964363833313662
           6431626536303530376336343832656537303632313433360a626438346336353331386135323734
           62656361653630373231613662633962316233633936396165386439616533353965373339616234
           3430613539666330390a313736323265656432366236633330313963326365653937323833366536
           3462
-other_plain_text: othervalue
+other_not_secret: othervalue
 ```
+
+### Package management
+
+Ansible has a [pacman module](http://docs.ansible.com/ansible/latest/pacman_module.html) to handle installation, removal and system upgrades.
+
+For the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), unofficial modules, like [ansible-aur](https://github.com/cdown/ansible-aur), are available on GitHub.
 
 ## Tips and tricks
 

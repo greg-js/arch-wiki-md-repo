@@ -49,8 +49,6 @@ Using the mainline branch is recommended. The main reason to use the stable bran
 
 **Note:** All nginx modules available in the [official repositories](/index.php/Official_repositories "Official repositories") require the *nginx* package (as opposed to *nginx-mainline*) as a dependency. It may be wise to review the list of modules for any you might need/want before making the *nginx* vs *nginx-mainline* decision. Modules for *nginx-mainline* can be found in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
-For a Ruby on Rails setup with nginx, see [Ruby on Rails#The Perfect Rails Setup](/index.php/Ruby_on_Rails#The_Perfect_Rails_Setup "Ruby on Rails").
-
 For a chroot-based installation for additional security, see [#Installation in a chroot](#Installation_in_a_chroot).
 
 ## Running
@@ -206,7 +204,7 @@ Reload or restart `nginx.service` to enable the new configuration.
 *   Mozilla has a useful [SSL/TLS article](https://wiki.mozilla.org/Security/Server_Side_TLS) which includes [nginx specific](https://wiki.mozilla.org/Security/Server_Side_TLS#Nginx) configuration guidelines as well as an [automated tool](https://mozilla.github.io/server-side-tls/ssl-config-generator/) to help create a more secure configuration.
 *   [Cipherli.st](https://cipherli.st) provides strong SSL implementation examples and tutorial for most modern webservers.
 
-**Warning:** If you plan on implementing SSL/TLS, know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how to apply appropriate changes to nginx, visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
+**Warning:** If you plan on implementing TLS, know that some variations and implementations are [still vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security")[[2]](https://weakdh.org/#affected). For details on these current vulnerabilities within TLS and how to apply appropriate changes to nginx, visit [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
 
 Create a private key and self-signed certificate. This is adequate for most installations that do not require a [CSR](/index.php/OpenSSL#Making_requests "OpenSSL"):
 
@@ -258,7 +256,7 @@ http {
 server {
         listen 80;
         server_name localhost;
-        return 301 https://$server_name$request_uri;
+        return 301 https://$host$request_uri;
 }
 
 server {
@@ -775,7 +773,7 @@ Now we should be good to go. Go ahead and [start](/index.php/Start "Start") ngin
 
 ### Alternative script for systemd
 
-On pure systemd you can get advantages of chroot + systemd. [[2]](http://0pointer.de/blog/projects/changing-roots.html) Based on set [user group](http://wiki.nginx.org/CoreModule#user) an pid on:
+On pure systemd you can get advantages of chroot + systemd. [[3]](http://0pointer.de/blog/projects/changing-roots.html) Based on set [user group](http://wiki.nginx.org/CoreModule#user) an pid on:
 
  `/etc/nginx/nginx.conf` 
 ```

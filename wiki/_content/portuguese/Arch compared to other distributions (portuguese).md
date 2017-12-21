@@ -18,7 +18,7 @@ Para uma comparação mais completa, veja [w:Comparison of operating systems](ht
     *   [2.1 Debian](#Debian)
     *   [2.2 Fedora](#Fedora)
     *   [2.3 Slackware](#Slackware)
-*   [3 Amigável para iniciantes](#Amig.C3.A1vel_para_iniciantes)
+*   [3 Amigáveis para iniciantes](#Amig.C3.A1veis_para_iniciantes)
     *   [3.1 Ubuntu](#Ubuntu)
     *   [3.2 Linux Mint](#Linux_Mint)
     *   [3.3 openSUSE](#openSUSE)
@@ -100,50 +100,50 @@ Essas distribuições oferecem uma ampla gama de vantagens e pontos fortes e pod
 
 *   O Arch oferece o [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)"), um sistema de *ports* reais e também [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), uma coleção muito grande de PKGBUILDs contribuídos pelos usuários. O Slackware oferece um sistema similar, embora mais fino, em [slackbuilds.org](http://www.slackbuilds.org), que é um repositório semioficial de Slackbuilds, que é análogo ao Arch PKGBUILDs. Os usuários do Slackware geralmente serão bastante confortáveis com a maioria dos aspectos do Arch.
 
-## Amigável para iniciantes
+## Amigáveis para iniciantes
 
-Sometimes called "newbie distros", the beginner-friendly distributions share a lot of similarities, though Arch is quite different from them. Arch may be a better choice if you want to learn about GNU/Linux by building up from a small base, as an installation of Arch installs few packages in comparison. Specific differences between distributions are described below.
+Às vezes chamadas de "distros de novatos", as distribuições amigáveis para iniciantes compartilham muitas semelhanças, embora o Arch seja bastante diferente delas. O Arch pode ser uma escolha melhor se você quiser aprender sobre o GNU/Linux construindo a partir de uma base pequena, uma vez que uma instalação do Arch instala alguns pacotes em comparação. Diferenças específicas entre as distribuições são descritas abaixo.
 
 ### Ubuntu
 
-*   Ubuntu is a popular Debian-based distribution commercially sponsored by Canonical Ltd., while Arch is an independently developed system built from scratch.
+*   O Ubuntu é uma distribuição popular baseada no Debian e patrocinada comercialmente pela Canonical Ltd., enquanto a Arch é um sistema desenvolvido de forma independente criado a partir do zero.
 
-*   The two projects have very different goals and are targeted at a different user base. Arch is designed for users who desire a do-it-yourself approach, whereas Ubuntu provides a preconfigured system. Arch presents a simpler design from the base installation onward, relying on the user to customize it to their own specific needs. Many Arch users have started on Ubuntu and eventually migrated to Arch.
+*   Os dois projetos têm objetivos muito diferentes e são direcionados para uma base de usuários diferente. O Arch é projetado para usuários que desejam uma abordagem "faça você mesmo", enquanto o Ubuntu fornece um sistema pré-configurado. O Arch apresenta um design mais simples a partir da instalação base em diante, confiando no usuário para personalizá-lo para suas próprias necessidades específicas. Muitos usuários do Arch começaram no Ubuntu e, eventualmente, migraram para o Arch.
 
-*   Arch development is not biased towards any one particular user interface beyond what its community provide support for. Furthermore, Canonical's commercial nature has led them to some controversial decisions, such as the inclusion of advertisements in Unity's *Dash* menu and user data collection. Arch is an independent, community-driven project with no commercial agenda.
+*   O desenvolvimento do Arch não é direcionado a uma interface de usuário específica, além do que a comunidade oferece suporte. Além disso, a natureza comercial da Canonical levou-os a algumas decisões controversas, como a inclusão de propagandas no menu *Dash* da Unity e a coleta de dados do usuário. Arch é um projeto independente, liderado pela comunidade sem agenda comercial.
 
-*   Ubuntu moves between discrete releases every 6 months, whereas Arch is a rolling-release system.
+*   Ubuntu move entre lançamentos discretos a cada 6 meses, enquanto o Arch é um sistema de lançamento contínuo.
 
-*   Arch offers a ports-like package build system and the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), where users can share source packages for the [pacman](/index.php/Pacman "Pacman") package manager. Ubuntu uses the more complex [apt](https://en.wikipedia.org/wiki/Advanced_Packaging_Tool "wikipedia:Advanced Packaging Tool"), and allows redistribution of binary packages via [Personal Package Archives](https://launchpad.net/ubuntu/+ppas).
+*   O Arch oferece um sistema de compilação de pacotes de portas e o [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)"), onde os usuários podem compartilhar pacotes de origem para o gerenciador de pacotes [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"). O Ubuntu usa um [apt](https://en.wikipedia.org/wiki/pt:Advanced_Packaging_Tool "wikipedia:pt:Advanced Packaging Tool") mais complexo e permite a redistribuição de pacotes binários através de [Personal Package Archives](https://launchpad.net/ubuntu/+ppas).
 
-*   The two communities differ in some ways as well. The Arch community is much smaller and is strongly encouraged to contribute to the distribution. In contrast, the Ubuntu community is relatively large and can therefore tolerate a much larger percentage of users who do not actively contribute to development, packaging, or repository maintenance.
+*   As duas comunidades também diferem em alguns aspectos. A comunidade do Arch é muito menor e é fortemente encorajada a contribuir para a distribuição. Em contraste, a comunidade Ubuntu é relativamente grande e, portanto, pode tolerar uma porcentagem muito maior de usuários que não contribuem ativamente para o desenvolvimento, empacotamento ou a manutenção do repositório.
 
 ### Linux Mint
 
-*   [Linux Mint](http://www.linuxmint.com/) was born as an [Ubuntu](#Ubuntu) derivative, and later added the LMDE (Linux Mint Debian Edition) that is instead based on [#Debian](#Debian). On the other hand, Arch is an independent distribution that relies on its own [build system](/index.php/ABS "ABS") and [repositories](/index.php/Repositories "Repositories").
-*   Mint includes several graphical tools for easier maintenance, called *MintTools*. Arch only provides simple command-line tools like [pacman](/index.php/Pacman "Pacman") and leaves system management to be organized by the user.
-*   Mint mainly ships with [Cinnamon](/index.php/Cinnamon "Cinnamon") or [MATE](/index.php/MATE "MATE") as its GUI, and alternatively [KDE](/index.php/KDE "KDE") or [Xfce4](/index.php/Xfce4 "Xfce4").
-*   New versions of Mint are released every six months, about a month after Ubuntu. Each release is based on the most recent Ubuntu LTS and is supported for five years. Linux Mint Debian Edition (LMDE) is based on Debian Stable and only receives updates in Mint packages and security updates. Arch is instead a full rolling-release distribution.
+*   [Linux Mint](http://www.linuxmint.com/) nasceu como uma derivação do [Ubuntu](#Ubuntu) e, posteriormente, adicionou o LMDE (Linux Mint Debian Edition), que é baseado no [#Debian](#Debian). Por outro lado, o Arch é uma distribuição independente que depende do seu próprio [sistema de compilação](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e [repositórios](/index.php/Reposit%C3%B3rios "Repositórios").
+*   O Mint inclui várias ferramentas gráficas para facilitar a manutenção, chamadas *MintTools*. O Arch fornece apenas ferramentas de linha de comando simples, como o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") e deixa o gerenciamento do sistema ser organizado pelo usuário.
+*   O Mint é fornecido principalmente com [Cinnamon](/index.php/Cinnamon "Cinnamon") ou [MATE](/index.php/MATE "MATE") como sua interface gráfica e, alternativamente, [KDE](/index.php/KDE "KDE") ou [Xfce4](/index.php/Xfce4 "Xfce4").
+*   Novas versões do Mint são lançadas a cada seis meses, cerca de um mês após o Ubuntu. Cada lançamento é baseado no Ubuntu LTS mais recente e há suporte por cinco anos. O Linux Mint Debian Edition (LMDE) é baseado em Debian Stable e só recebe atualizações em pacotes do Mint e atualizações de segurança. O Arch é, em vez disso, uma distribuição completamente de lançamento contínuo.
 
 ### openSUSE
 
-openSUSE is centered around the RPM package format and its well-regarded YaST2 GUI-driven configuration tool. Arch does not offer such a facility. openSUSE, may therefore be more appropriate for users who want a more GUI-driven environment, automatic configuration, or expected functionality out of the box while still allowing depth of customization.
+O openSUSE é centrado em torno do formato do pacote RPM e da bem-considerada ferramenta de configuração orientada por interface gráfica YaST2\. O Arch não oferece tal facilidade. O openSUSE, portanto, pode ser mais apropriado para usuários que desejam um ambiente mais orientado a interface gráfica, configuração automática ou funcionalidade esperada fora da caixa enquanto ainda permite a profundidade de personalização.
 
 ### Mandriva/Mageia
 
-Mandriva Linux (formerly Mandrake Linux) was created in 1998 with the goal of making GNU/Linux easy to use for everyone; it is RPM-based and uses the urpmi package manager. Mageia is a Mandriva fork created by former Mandriva employees which opposes its parent distribution's commercial position, being a non-profit and community-driven project. Arch takes a simpler approach than Mandriva or Mageia, being text-based and relying on more manual configuration, and is aimed at intermediate to advanced users.
+O Mandriva Linux (anteriormente Mandrake Linux) foi criado em 1998 com o objetivo de tornar o GNU/Linux fácil de usar para todos; é baseado em RPM e usa o gerenciador de pacotes urpmi. Mageia é um *fork* do Mandriva criado por ex-funcionários do Mandriva que se opõe à posição comercial de sua distribuição principal, sendo um projeto sem fins lucrativos e orientado pela comunidade. O Arch assume uma abordagem mais simples do que Mandriva ou Mageia, sendo baseada em texto e confia mais na configuração manual e destina-se a usuários intermediários a avançados.
 
 ## Os *BSDs
 
-*   The *BSDs share a common origin and descend directly from the work done at UC Berkeley to produce a freely redistributable, free of cost, UNIX system. They are not GNU/Linux distributions, but rather, UNIX-like operating systems, and derived from the original AT&T UNIX code.
+*   Os *BSDs compartilham uma origem comum e descem diretamente do trabalho realizado na Universidade da Califórnia em Berkeley para produzir um sistema UNIX redistribuível livremente e sem custo. Eles não são distribuições GNU/Linux, mas sim sistemas operacionais semelhantes a UNIX, e derivam do código original do UNIX da AT&T.
 
-*   Arch and the *BSDs share the concept of a tightly-integrated base and ports system. However, unlike GNU/Linux distributions such as Arch, the *BSD kernel and userland programs (such as the shell and core utilities like *ls*, *cp*, *cat*, and *ps*) are developed together in a single source repository.
+*   O Arch e os *BSDs compartilham o conceito de um sistema base bem integrado e de *ports*. No entanto, ao contrário das distribuições GNU/Linux, como o Arch, o kernel e os programas de *userland* do BSD (como o shell e os utilitários principais, como *ls*, *cp*, *cat* e *ps*) são desenvolvidos juntos em um único repositório de fontes.
 
-*   The BSD license is generally more protective of the *coder*, in contrast to the GPL, which favors protection of the *code* itself. Arch is released under the GPL.
+*   A licença BSD geralmente é mais protetora do *codificador*, em contraste com a GPL, que favorece a proteção do *código* em si. O Arch é lançado sob a GPL.
 
-*   To learn more about the *BSD variants, see [Wikipedia:Comparison of BSD operating systems](https://en.wikipedia.org/wiki/Comparison_of_BSD_operating_systems "wikipedia:Comparison of BSD operating systems").
+*   Para aprender mais sobre as variantes *BSD, veja [Wikipedia:Comparison of BSD operating systems](https://en.wikipedia.org/wiki/Comparison_of_BSD_operating_systems "wikipedia:Comparison of BSD operating systems").
 
 ## Veja também
 
-*   [DistroWatch](http://distrowatch.com/) - Linux distributions news and reviews
-*   [The Live CD List](http://www.livecdlist.com) - List of Live operating systems images
+*   [DistroWatch](http://distrowatch.com/) - Notícias e análises de distribuições Linux
+*   [The Live CD List](http://www.livecdlist.com) - Lista de imagens de sistemas operacionais *live*

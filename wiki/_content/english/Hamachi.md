@@ -1,4 +1,4 @@
-[Hamachi](https://en.wikipedia.org/wiki/Hamachi_(software) is a proprietary (closed source) commercial VPN software. With Hamachi you can organize two or more computers with an Internet connection into their own virtual network for direct secure communication.
+[Hamachi](https://www.vpn.net/) is a proprietary, commercial VPN software by LogMeIn, Inc. With Hamachi you can organize two or more computers with an Internet connection into their own virtual network for direct secure communication.
 
 ## Contents
 
@@ -9,7 +9,6 @@
 *   [3 Running Hamachi](#Running_Hamachi)
     *   [3.1 Systemd](#Systemd)
 *   [4 GUI](#GUI)
-*   [5 See also](#See_also)
 
 ## Installation
 
@@ -79,7 +78,3 @@ The following GUI frontends for Hamachi are available in the AUR:
 
 *   [haguichi](https://aur.archlinux.org/packages/haguichi/) (Gtk3, Vala)
 *   [quamachi](https://aur.archlinux.org/packages/quamachi/) (Qt4, Python)
-
-## See also
-
-*   [Project home page](https://www.vpn.net/)

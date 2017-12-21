@@ -350,7 +350,7 @@ Press `Ctrl+c` to end the recording.
 To use [mpv](/index.php/Mpv "Mpv") to take snapshots from your webcam run this command from the terminal:
 
 ```
-$ mpv tv:// --tv-driver=v4l2 --tv-device=/dev/video0
+$ mpv av://v4l2:/dev/video0
 
 ```
 

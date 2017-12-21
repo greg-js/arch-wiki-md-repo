@@ -1,4 +1,4 @@
-This article describes a basic installation and configuration of tinc. For further details see the [tinc.conf man page](http://www.tinc-vpn.org/documentation/tinc.conf.5) and the [tinc documentation](http://tinc-vpn.org/docs/).
+This article describes a basic installation and configuration of tinc. For further details see the [tincd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tincd.8) page and the [tinc documentation](https://tinc-vpn.org/docs/).
 
 ***tinc** is a Virtual Private Network (VPN) daemon that uses tunnelling and encryption to create a secure private network between hosts on the Internet.*[[1]](http://tinc-vpn.org/)
 
@@ -24,12 +24,7 @@ This article describes a basic installation and configuration of tinc. For furth
 
 In this example, we will create a virtual private network *vpnname* between two hosts *alpha* and *beta*, where the former is the entry point for the latter, so that beta tries to connect to alpha on startup.
 
-For each virtual private network you have to create a separate directory in /etc/tinc, e.g.
-
-```
-# mkdir /etc/tinc/*vpnname*
-
-```
+For each virtual private network you have to create a separate directory `/etc/tinc/*network*`.
 
 You can also start by copying the sample configuration
 

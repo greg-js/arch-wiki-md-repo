@@ -42,12 +42,20 @@ To enable zswap permanently:
 
 Zswap has 4 customizable parameters. The live settings can be displayed using:
 
+ `$ grep -R . /sys/module/zswap/parameters` 
 ```
- $ grep . /sys/module/zswap/parameters/*
-/sys/module/zswap/parameters/compressor:lz4
 /sys/module/zswap/parameters/enabled:Y
-/sys/module/zswap/parameters/max_pool_percent:20
+/sys/module/zswap/parameters/max_pool_percent:25
 /sys/module/zswap/parameters/zpool:z3fold
+/sys/module/zswap/parameters/compressor:lz4
+
+```
+
+The boot time load message showing the initial configuration can be retrieved with:
+
+ `$ dmesg | grep zswap:` 
+```
+[    0.317569] zswap: loaded using pool lz4/z3fold
 
 ```
 
@@ -58,7 +66,7 @@ Zswap has 4 customizable parameters. The live settings can be displayed using:
 Each setting can be changed at runtime via the [sysfs](https://en.wikipedia.org/wiki/sysfs "wikipedia:sysfs") interface. For example using the following command to amend the first parameter of the list, `compressor`:
 
 ```
-  # echo lz4 > /sys/module/zswap/parameters/compressor
+# echo lz4 > /sys/module/zswap/parameters/compressor
 
 ```
 
@@ -88,9 +96,9 @@ There is no issue setting the compression to *lz4* at runtime using *sysfs* or v
 
 1.  Add `lz4 lz4_compress` to the [mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array.
 2.  Replace the ramdisk environment with a newly generated one: `# mkinitcpio -g /boot/*initramfs*.img` 
-3.  Add `zswap.compressor=lz4` to your kernel parameters.
-4.  Reboot
-5.  Check if zswap loaded using *lz4* with: `$ dmesg | grep zswap` it should look like: `[    0.318052] zswap: loaded using pool lz4/z3fold` 
+3.  Add `zswap.compressor=lz4` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
+On next reboot, see [#Current parameters](#Current_parameters) to check if zswap now uses *lz4* as compressor.
 
 ## See also
 

@@ -120,7 +120,7 @@ audio_output {
 }
 ```
 
-PulseAudio supports multiple advanced operations, e.g. transferring the audio to a different machine. For advanced configuration with MPD see [Music Player Daemon Community Wiki](http://mpd.wikia.com/wiki/PulseAudio).
+User will also have to edit `/etc/pulse/client.conf` and change the default *autospawn = no* line to *autospawn = yes* in order to allow the mpd user to use pulseaudio. It will be necessary to restart pulseaudio after making this modification.
 
 #### Changing user
 

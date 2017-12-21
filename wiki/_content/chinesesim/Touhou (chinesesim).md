@@ -22,7 +22,7 @@
 
 PC-98上的游戏可以使用 Linux-native X Neko Project II emulator ([xnp2](https://aur.archlinux.org/packages/xnp2/) in [AUR](/index.php/AUR "AUR"))来运行.
 
-以下的AUR包都需要[wine](/index.php/Wine "Wine")来运行(以及timidity++来播放MIDI音乐).有一个基于pythone的引擎正在开发中,并会用来代替wine.在AUR中的游戏都是免费试用版.你可以简单的用完整版把试用版换掉(如果你有完整版的话).
+以下的AUR包都需要[wine](/index.php/Wine "Wine")来运行(以及timidity++来播放MIDI音乐).有一个基于python的引擎正在开发中,并会用来代替wine.在AUR中的游戏都是免费试用版.你可以简单的用完整版把试用版换掉(如果你有完整版的话).
 
 下面是已经在AUR中打包好的:
 

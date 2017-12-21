@@ -12,6 +12,7 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
     *   [2.6 gtkqq](#gtkqq)
     *   [2.7 qtqq](#qtqq)
     *   [2.8 weechat-webqq](#weechat-webqq)
+    *   [2.9 SmartIM](#SmartIM)
 *   [3 独立开发](#.E7.8B.AC.E7.AB.8B.E5.BC.80.E5.8F.91)
     *   [3.1 libqq](#libqq)
 *   [4 官方版本](#.E5.AE.98.E6.96.B9.E7.89.88.E6.9C.AC)
@@ -99,6 +100,16 @@ telepathy的插件[telepathy-lwqq-git](https://aur.archlinux.org/packages/telepa
 
 在 [WeeChat](/index.php/WeeChat "WeeChat") 可使用的 QQ 插件脚本，使用 perl语言开发的 [Mojo-Webqq](https://github.com/sjdy521/Mojo-Webqq)库，基于 smartqq 协议 。 源码脚本可访问 [weechat-webqq](https://github.com/wxg4net/weechat-webqq) 获取
 
+### SmartIM
+
+SmartIM 是一个用java写的，包含简单的IM API封装的小程序，支持SmartQQ、微信。不过遗憾的是仍然需要扫描二维码。
+
+不支持图片，视频，表情和语音，不过支持依赖第三方服务器的文件传输。
+
+使用方法：只需将jar包下载下来，然后安装java-openjdk之后，就可以在终端通过“java -jar”的方式直接运行了。
+
+Github 地址： [Jamling/SmartIM](https://github.com/Jamling/SmartIM)。
+
 ## 独立开发
 
 ### libqq
@@ -129,7 +140,7 @@ AUR：[libqq-svn](https://aur.archlinux.org/packages/libqq-svn/)、[libqq-pidgin
 
 ### Wine QQ
 
-目前较为成熟的 Wine 模拟方案为[deepinwine-qq](https://aur.archlinux.org/packages/deepinwine-qq/)，也可以从 [ArchLinux CN 源](https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/) 安装 deepin-qq-im。
+目前较为成熟的 Wine 模拟方案为[deepin-qq-im](https://aur.archlinux.org/packages/deepin-qq-im/)，也可以从 [ArchLinux CN 源](https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/) 安装 deepin-qq-im。
 
 之前比较好的解决方案有 [清风老师](http://phpcj.org/wineqq/) 提供的 Wine QQ 方案等。
 
@@ -205,6 +216,8 @@ $ wineconsole .wine/drive_c/run-qqlight.bat
 ### Wine TIM
 
 [TIM](http://im.qq.com/download/)是腾讯推出的主打办公协同的QQ版本。
+
+同时，在 AUR 中，仍有已经稳定成熟的模拟方案：[deepin-wine-tim](https://aur.archlinux.org/packages/deepin-wine-tim/)。当然，你也可以选择按下文的方法手动安装配置。
 
 #### 安装前的准备
 

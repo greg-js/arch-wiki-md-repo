@@ -26,24 +26,19 @@ Related articles
     *   [3.1 Arch Linux](#Arch_Linux)
     *   [3.2 Debian](#Debian)
         *   [3.2.1 Manually](#Manually)
-*   [4 Arch Linux image with snapshot repository](#Arch_Linux_image_with_snapshot_repository)
-*   [5 Clean Remove Docker + Images](#Clean_Remove_Docker_.2B_Images)
-*   [6 Useful tips](#Useful_tips)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Cannot start a container with systemd 232](#Cannot_start_a_container_with_systemd_232)
-    *   [7.2 Deleting Docker Images in a BTRFS Filesystem](#Deleting_Docker_Images_in_a_BTRFS_Filesystem)
-    *   [7.3 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
-    *   [7.4 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes.2Fthreads_too_low)
-    *   [7.5 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
-*   [8 See also](#See_also)
+    *   [3.3 Arch Linux image with snapshot repository](#Arch_Linux_image_with_snapshot_repository)
+*   [4 Remove Docker and images](#Remove_Docker_and_images)
+*   [5 Useful tips](#Useful_tips)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Deleting Docker Images in a BTRFS Filesystem](#Deleting_Docker_Images_in_a_BTRFS_Filesystem)
+    *   [6.2 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
+    *   [6.3 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes.2Fthreads_too_low)
+    *   [6.4 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
+*   [7 See also](#See_also)
 
 ## Installation
 
-**Note:**
-
-*   Docker does not support i686 [[1]](https://github.com/docker/docker/issues/136).
-*   Docker needs the `loop` module on first usage. The following steps may be required before starting docker:
-
+**Note:** Docker needs the `loop` module on first usage. The following steps may be required before starting docker:
 ```
 # tee /etc/modules-load.d/loop.conf <<< "loop"
 # modprobe loop 
@@ -68,14 +63,7 @@ The error message from not enabling the loop module may look like this:
 
 If you want to be able to run docker as a regular user, add yourself to the `docker` [group](/index.php/Group "Group").
 
-**Warning:** Anyone added to the `docker` group is root equivalent. More information [here](https://github.com/docker/docker/issues/9976) and [here](http://docs.docker.com/engine/articles/security/).
-
-Then re-login or to make your current user session aware of this new group, you can use:
-
-```
-$ newgrp docker
-
-```
+**Warning:** Anyone added to the `docker` group is root equivalent. More information [here](https://github.com/docker/docker/issues/9976) and [here](https://docs.docker.com/engine/security/security/).
 
 ## Configuration
 
@@ -253,7 +241,7 @@ Build Debian image with [debootstrap](https://www.archlinux.org/packages/?name=d
 
 ```
 
-## Arch Linux image with snapshot repository
+### Arch Linux image with snapshot repository
 
 Arch Linux on Docker can become problematic when multiple images are created and updated each having different package versions. To keep Docker containers with consistent package versions, an unofficial [Docker image with a snapshot repository](https://registry.hub.docker.com/u/pritunl/archlinux/) is available. This allows installing new packages from the official repository as it was on the day that the snapshot was created.
 
@@ -270,7 +258,7 @@ Alternatively, you could use [Arch Linux Archive](/index.php/Arch_Linux_Archive 
 
 ```
 
-## Clean Remove Docker + Images
+## Remove Docker and images
 
 In case you want to remove Docker entirely you can do this by following the steps below:
 
@@ -339,10 +327,6 @@ To grab the IP address of a running container:
  `$ docker inspect --format '{{ .NetworkSettings.IPAddress }}' <container-name OR id> `  `172.17.0.37` 
 
 ## Troubleshooting
-
-### Cannot start a container with systemd 232
-
-Append `systemd.legacy_systemd_cgroup_controller=yes` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), see [bug report](https://github.com/opencontainers/runc/issues/1175) for details.
 
 ### Deleting Docker Images in a BTRFS Filesystem
 

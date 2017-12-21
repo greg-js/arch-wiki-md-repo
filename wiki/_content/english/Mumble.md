@@ -23,9 +23,9 @@ This page goes over installation and configuration of both the client portion of
 
 [Install](/index.php/Install "Install") the [mumble](https://www.archlinux.org/packages/?name=mumble) package (or [mumble-git](https://aur.archlinux.org/packages/mumble-git/) for the development version).
 
-For [JACK](/index.php/JACK "JACK") support, install the [mumble-jack](https://aur.archlinux.org/packages/mumble-jack/) package (or [mumble-jack-git](https://aur.archlinux.org/packages/mumble-jack-git/) for the development version).
+For [JACK](/index.php/JACK "JACK") support, install the [mumble-jack](https://aur.archlinux.org/packages/mumble-jack/) package.
 
-If you're on a x86_64 system and would like to use the Mumble overlay with 32-bit games, you'll need to install [lib32-libmumble](https://aur.archlinux.org/packages/lib32-libmumble/).
+To use the Mumble overlay with 32-bit games, install [lib32-libmumble](https://aur.archlinux.org/packages/lib32-libmumble/).
 
 ### Configuration
 

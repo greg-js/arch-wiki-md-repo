@@ -34,14 +34,14 @@ This article does not cover features common to multiple emulators using KVM as a
 KVM requires that the virtual machine host's processor has virtualization support (named VT-x for Intel processors and AMD-V for AMD processors). You can check whether your processor supports hardware virtualization with the following command:
 
 ```
-$ LANG=LC_All lscpu | grep Virtualization
+$ LC_ALL=C lscpu | grep Virtualization
 
 ```
 
 Alternatively:
 
 ```
-$ egrep --color=auto 'vmx|svm|0xc0f' /proc/cpuinfo
+$ grep -E --color=auto 'vmx|svm|0xc0f' /proc/cpuinfo
 
 ```
 
@@ -147,7 +147,7 @@ $ qemu-system-x86_64 -enable-kvm -cpu host
 Boot VM and check if vmx flag is present:
 
 ```
-$ egrep --color=auto 'vmx|svm' /proc/cpuinfo
+$ grep -E --color=auto 'vmx|svm' /proc/cpuinfo
 
 ```
 

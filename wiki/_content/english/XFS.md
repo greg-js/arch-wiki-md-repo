@@ -18,7 +18,8 @@ XFS is a high-performance journaling file system created by Silicon Graphics, In
         *   [4.4.1 Inspect fragmentation levels](#Inspect_fragmentation_levels)
         *   [4.4.2 Perform defragmentation](#Perform_defragmentation)
     *   [4.5 Free inode btree](#Free_inode_btree)
-*   [5 Root file system quota](#Root_file_system_quota)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Root file system quota](#Root_file_system_quota)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -81,7 +82,7 @@ See [How to calculate the correct sunit,swidth values for optimal performance](h
 
 ### Disable barrier
 
-You can increase performance by disabling barrier usage for the filesystem by adding the *nobarrier* mount option to the `/etc/fstab` file.
+You can increase performance by disabling barrier usage for the filesystem by adding the `nobarrier` mount option to [fstab](/index.php/Fstab "Fstab").
 
 ### Access time
 
@@ -133,23 +134,11 @@ or shortly (`finobt` depends `crc`)
 
 ```
 
-## Root file system quota
+## Troubleshooting
 
-XFS quota mount options (*uquota*, *gquota*, *prjquota*, ...) fail during re-mount of the file system. To enable quota for root file system, the mount option must be passed to initramfs as a kernel parameter `rootflags`. Subsequently, it should not be listed among mount options in `/etc/fstab` for the root (/) filesystem.
+### Root file system quota
 
-If [GRUB](/index.php/GRUB "GRUB") is used as a boot loader, add e.g. *prjquota* to `/etc/default/grub`:
-
-```
-GRUB_CMDLINE_LINUX_DEFAULT="rootflags=prjquota"
-
-```
-
-and regenerate the GRUB configuration file:
-
-```
-# grub-mkconfig -o /boot/grub/grub.cfg
-
-```
+XFS quota mount options (`uquota`, `gquota`, `prjquota`, etc.) fail during re-mount of the file system. To enable quota for root file system, the mount option must be passed to initramfs as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `rootflags=`. Subsequently, it should not be listed among mount options in `/etc/fstab` for the root (`/`) filesystem.
 
 **Note:** There are some differences of XFS Quota compared to standard Linux [Disk Quota](/index.php/Disk_Quota "Disk Quota"), this article [http://inai.de/linux/adm_quota](http://inai.de/linux/adm_quota) may be worth reading.
 

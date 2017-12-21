@@ -99,7 +99,7 @@ For these reasons, **you have to make sure** that the only two related Haskell p
 
 You can also use [Stack](https://www.haskellstack.org/) as an alternative build tool for Haskell packages, which will link statically by default. But if you still want to use Cabal to build using static linking, follow the next steps of this section to install your own compiled `cabal-install` from Hackage. For this purpose we are going to use the tool [Stack](https://haskellstack.org/) that will help us fetching all the dependencies required and building your own `cabal-install`.
 
-First you have to install [stack-static](https://aur.archlinux.org/packages/stack-static/) because you'll use it to bootstrap the compilation of your own Cabal and you don't want to pull as dependencies those packages from the official Arch repositories containing the `haskell-*` dynamic libraries.
+First you have to install [stack-bin](https://aur.archlinux.org/packages/stack-bin/) because you'll use it to bootstrap the compilation of your own Cabal and you don't want to pull as dependencies those packages from the official Arch repositories containing the `haskell-*` dynamic libraries.
 
 Then prepare Stack downloading the package index. Stack will be used with the only purpose of bootstrapping the compilation of your own `cabal-install` but using the already installed [ghc](https://www.archlinux.org/packages/?name=ghc) compiler:
 
@@ -210,7 +210,7 @@ If you want/can fix/reinstall whole user-wide Haskell package system - remove `~
 
 ### stack
 
-[Stack](https://haskellstack.org) is a build tool that focuses on automatically curated, consistent package sets rather than dependency resolution. This means it's easy to install a set of packages without concern of version conflicts as long as they co-exist within a given Stackage snapshot. It can be installed through either [stack](https://www.archlinux.org/packages/?name=stack) or [stack-static](https://aur.archlinux.org/packages/stack-static/). The latter provides statically linked binaries, thereby avoiding dozens of `haskell-*` dependencies. More information can be found at [§ Install/upgrade # Arch Linux](https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux).
+[Stack](https://haskellstack.org) is a build tool that focuses on automatically curated, consistent package sets rather than dependency resolution. This means it's easy to install a set of packages without concern of version conflicts as long as they co-exist within a given Stackage snapshot. It can be installed through either [stack](https://www.archlinux.org/packages/?name=stack), [stack-static](https://aur.archlinux.org/packages/stack-static/) or [stack-bin](https://aur.archlinux.org/packages/stack-bin/). The latter provides statically linked binaries, thereby avoiding dozens of `haskell-*` dependencies. More information can be found at [§ Install/upgrade # Arch Linux](https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux).
 
 ## See also
 

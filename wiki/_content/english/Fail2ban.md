@@ -101,8 +101,7 @@ ignoreip = 127.0.0.1/8
 [sshd]
 enabled  = true
 filter   = sshd
-action   = iptables[name=SSH, port=ssh, protocol=tcp]
-           sendmail-whois[name=SSH, dest=your@mail.org, sender=fail2ban@mail.com]
+action   = iptables
 backend  = systemd
 maxretry = 5
 findtime = 1d
@@ -112,7 +111,7 @@ bantime  = 2w
 
 fail2ban has IPv6 support since version 0.10\. Adapt your firewall accordingly, e.g. start and enable `ip6tables.service`.
 
-**Note:** If your firewall is [shorewall](/index.php/Shorewall "Shorewall"), replace `iptables[name=SSH, port=ssh, protocol=tcp]` with `shorewall`. You can also set `BLACKLIST` to `ALL` in `/etc/shorewall/shorewall.conf`, otherwise the rule added to ban an IP address will affect only new connections.
+**Note:** If your firewall is [shorewall](/index.php/Shorewall "Shorewall"), replace `iptables` with `shorewall`. You can also set `BLACKLIST` to `ALL` in `/etc/shorewall/shorewall.conf`, otherwise the rule added to ban an IP address will affect only new connections.
 
 Also do not forget to add/change:
 

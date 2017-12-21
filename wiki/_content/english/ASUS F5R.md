@@ -76,8 +76,6 @@ Please note that the Asus F5R needs the bcmwl5.inf driver.
 
 Other way is to use b43 driver: [Wireless network configuration#b43](/index.php/Wireless_network_configuration#b43 "Wireless network configuration")
 
-NetworkManager is also a cool option.
-
 ### Webcam
 
 Since there is no official support for the Asus Webcam, you need to install separate drivers from [the AUR](https://aur.archlinux.org/packages.php?ID=12669).

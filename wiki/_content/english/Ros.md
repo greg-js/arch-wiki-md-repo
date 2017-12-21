@@ -10,7 +10,8 @@
 *   [3 catkin build](#catkin_build)
 *   [4 Rebuild when shared libraries are updated](#Rebuild_when_shared_libraries_are_updated)
 *   [5 Ros 2](#Ros_2)
-    *   [5.1 Usage Examples](#Usage_Examples)
+    *   [5.1 Building from source](#Building_from_source)
+    *   [5.2 Usage Examples](#Usage_Examples)
 
 ## Installation Instructions
 
@@ -56,9 +57,13 @@ When you update a library that ROS depends on (e.g. Boost), all packages that li
 
 ## Ros 2
 
-**Warning:** Work in progress
+### Building from source
 
-Build instructions are available at [https://github.com/ros2/ros2/wiki/Linux-Development-Setup](https://github.com/ros2/ros2/wiki/Linux-Development-Setup). First fetch the sources (requires [python-vcstool](https://aur.archlinux.org/packages/python-vcstool/)):
+Build instructions are available at [https://github.com/ros2/ros2/wiki/Linux-Development-Setup](https://github.com/ros2/ros2/wiki/Linux-Development-Setup).
+
+Install build dependencies: [wget](https://www.archlinux.org/packages/?name=wget), [python](https://www.archlinux.org/packages/?name=python), [python-yaml](https://www.archlinux.org/packages/?name=python-yaml), [python-setuptools](https://www.archlinux.org/packages/?name=python-setuptools), [git](https://www.archlinux.org/packages/?name=git), [cmake](https://www.archlinux.org/packages/?name=cmake), [asio](https://www.archlinux.org/packages/?name=asio), [tinyxml](https://www.archlinux.org/packages/?name=tinyxml), [tinyxml2](https://www.archlinux.org/packages/?name=tinyxml2), [eigen](https://www.archlinux.org/packages/?name=eigen), [libxaw](https://www.archlinux.org/packages/?name=libxaw), [glu](https://www.archlinux.org/packages/?name=glu), [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), [opencv](https://www.archlinux.org/packages/?name=opencv), [python-vcstool](https://aur.archlinux.org/packages/python-vcstool/), [python-empy](https://aur.archlinux.org/packages/python-empy/).
+
+Fetch the sources:
 
 ```
 $ mkdir -p ~/ros2_ws/src
@@ -82,11 +87,9 @@ Now you can build the workspace:
 
 ```
 $ cd ~/ros2_ws
-$ src/ament/ament_tools/scripts/ament.py build --build-tests --symlink-install
+$ src/ament/ament_tools/scripts/ament.py build --symlink-install
 
 ```
-
-This build may fail due to missing dependencies and you need to figure out which package you need to install by yourself (for now).
 
 Read [https://github.com/ros2/ros1_bridge/blob/master/README.md#build-the-bridge-from-source](https://github.com/ros2/ros1_bridge/blob/master/README.md#build-the-bridge-from-source) regarding Ros 1 / Ros 2 interoperability.
 

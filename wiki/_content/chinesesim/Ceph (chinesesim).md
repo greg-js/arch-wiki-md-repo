@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Ceph](/index.php/Ceph "Ceph") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-13，点击[这里](https://wiki.archlinux.org/index.php?title=Ceph&diff=0&oldid=419278)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Ceph](/index.php/Ceph "Ceph") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-12-20，点击[这里](https://wiki.archlinux.org/index.php?title=Ceph&diff=0&oldid=491730)可以查看翻译后英文页面的改动。
 
 Ceph 是一个专注于分布式的、弹性可扩展的、高可靠的、性能优异的存储系统平台，可用于为[虚拟机](https://en.wikipedia.org/wiki/Virtual_Machine "wikipedia:Virtual Machine")提供块存储方案或通过 [FUSE](/index.php/File_systems#FUSE-based_file_systems "File systems") 提供常规的文件系统。Ceph 是个高度可配置的系统，管理者可以控制系统的各个方面。它提供了一个命令行界面用于监视和控制其存储集群。Ceph 也包含鉴证和授权功能，可兼容多种存储网关接口，如 [OpenStack Swift](https://en.wikipedia.org/wiki/OpenStack#Swift "wikipedia:OpenStack") 和 [Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3 "wikipedia:Amazon S3")。
 

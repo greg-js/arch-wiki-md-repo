@@ -1,10 +1,14 @@
+Related articles
+
+*   [PPTP server](/index.php/PPTP_server "PPTP server")
+
 pptpclient is a program implementing the Microsoft PPTP protocol. As such, it can be used to connect to a Microsoft VPN network (or any PPTP-based VPN) provided by a school or workplace.
 
 **Warning:** The PPTP protocol is inherently insecure. See [http://poptop.sourceforge.net/dox/protocol-security.phtml](http://poptop.sourceforge.net/dox/protocol-security.phtml) for details.
 
 ## Contents
 
-*   [1 Installing PPTP Client](#Installing_PPTP_Client)
+*   [1 Installation](#Installation)
 *   [2 Configure](#Configure)
     *   [2.1 Configure using *pptpsetup*](#Configure_using_pptpsetup)
     *   [2.2 Configure by hand](#Configure_by_hand)
@@ -21,11 +25,10 @@ pptpclient is a program implementing the Microsoft PPTP protocol. As such, it ca
 *   [5 Making A VPN Daemon and Connecting On Boot](#Making_A_VPN_Daemon_and_Connecting_On_Boot)
 *   [6 Troubleshooting](#Troubleshooting)
 *   [7 Remarks](#Remarks)
-*   [8 See also](#See_also)
 
-## Installing PPTP Client
+## Installation
 
-Install the [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) package.
+[Install](/index.php/Install "Install") the [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) package.
 
 ## Configure
 
@@ -318,12 +321,6 @@ If your client is timing out with "LCP: timeout sending Config-Requests", then y
 
 ```
 
-If you see «Error: either "to" is duplicate, or "uid" is a garbage.» then that's probably because the pptpclient package is [out of date](https://bbs.archlinux.org/viewtopic.php?pid=1705884#p1705884), flagged [2017-04-22](https://www.archlinux.org/packages/?sort=flag_date&maintainer=daniel).
-
 ## Remarks
 
 You can find more information about configuring pptpclient at their website: [pptpclient website](http://pptpclient.sourceforge.net/). The contents of this article were adapted from their Ubuntu How-To which also provides some hints on how to do things such as connecting on boot. These examples should be easy to adapt into daemons or other scripts to help automate your configuration.
-
-## See also
-
-[PPTP server](/index.php/PPTP_server "PPTP server")

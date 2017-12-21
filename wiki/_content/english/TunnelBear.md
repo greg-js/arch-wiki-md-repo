@@ -29,7 +29,7 @@ Pick the corresponding **.ovpn** that will be used (TunnelBear Japan is used as 
 Rename the extension & remove the space
 
 ```
-$ mv /etc/openvpn/client/TunnelBear\ Japan.ovpn /etc/openvpn/client/TunnelBearJapan.conf
+$ mv "/etc/openvpn/client/TunnelBear Japan.ovpn" /etc/openvpn/client/TunnelBearJapan.conf
 
 ```
 

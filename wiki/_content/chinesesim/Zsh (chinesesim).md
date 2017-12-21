@@ -126,7 +126,7 @@ $ zsh /usr/share/zsh/functions/Newuser/zsh-newuser-install -f
 
 **注意:**
 
-*   在 Arch 源中的 [zsh](https://www.archlinux.org/packages/?name=zsh) 所使用的文件路径和 Zsh 的 mam 手册中默认的不同（详见 [#全局配置文件](#.E5.85.A8.E5.B1.80.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)）
+*   在 Arch 源中的 [zsh](https://www.archlinux.org/packages/?name=zsh) 所使用的文件路径和 Zsh 的 man 手册中默认的不同（详见 [#全局配置文件](#.E5.85.A8.E5.B1.80.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)）
 *   `/etc/profile` 不是 Zsh 常规启动配置文件的一部分，但是 Arch 源中的 [zsh](https://www.archlinux.org/packages/?name=zsh) 会在 `/etc/zsh/zprofile` 里面加载它。用户应该注意 `/etc/profile` 里面设置的 `$PATH` 环境变量会覆盖掉 `~/.zshenv` 里面配置的任何 `$PATH`。为了防止这一点，请在 `~/.zshrc` 当中设置 `$PATH`（不推荐替换掉 `/etc/zsh/zprofile` 里面的[默认配置](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh)，因为这样会破坏其他提供了 `/etc/profile.d` 的软件包和 Zsh 的联动关系）
 
 ### 全局配置文件

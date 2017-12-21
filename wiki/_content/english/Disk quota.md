@@ -133,7 +133,7 @@ Disk quotas for user ftpuser1 (uid *1000*):
 
 ```
 
-In this case if *ftpuser1* uses over 976MB of space a warning will be issued. If the hard limit of 1TB has been reached the user will be unable to write any more data.
+In this case if *ftpuser1* uses over 976MB of space a warning will be issued. If the hard limit of 1GB has been reached the user will be unable to write any more data.
 
 See [#Specify a grace period](#Specify_a_grace_period) to give users a specific amount of time to reduce storage usage when they hit their soft limit.
 

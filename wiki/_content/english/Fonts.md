@@ -555,12 +555,48 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 
 A section of the Unicode standard is designated for pictographic characters called "emoji".
 
-*   [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) - Google's own emoji font, like on Android or Google Hangouts. See [system-wide configuration example](/index.php/Font_configuration/Examples#System-wide_Noto_Emoji_fonts "Font configuration/Examples").
+*   [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) - Google's own emoji font, like on Android or Google Hangouts.
 *   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) - provides many Unicode symbols, including emoji, in outline style.
 *   [ttf-emojione-color](https://aur.archlinux.org/packages/ttf-emojione-color/) - a color and B&W emoji SVGinOT font built from EmojiOne.
 *   [ttf-twemoji-color](https://aur.archlinux.org/packages/ttf-twemoji-color/) - Twitter's open-sourced emoji glyphs.
 
 [Kaomoji](https://en.wikipedia.org/wiki/Emoticon#Japanese_style "wikipedia:Emoticon") are sometimes referred to as "Japanese emoticons" and are composed of characters from various character sets, including CJK and Indic fonts. For example, the following set of packages covers most of existing kaomoji: [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming), and [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf).
+
+To enable emoji fonts add 'Emoji' generic family as fallback for main font families by adding this to your [Font configuration](/index.php/Font_configuration "Font configuration"):
+
+ `/etc/fonts/local.conf` 
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <match>
+    <test name="family">
+      <string>serif</string>
+    </test>
+    <edit name="family" mode="prepend" binding="weak">
+      <string>Emoji</string>
+    </edit>
+  </match>
+
+  <match>
+    <test name="family">
+      <string>sans-serif</string>
+    </test>
+    <edit name="family" mode="prepend" binding="weak">
+      <string>Emoji</string>
+    </edit>
+  </match>
+
+  <match>
+    <test name="family">
+      <string>monospace</string>
+    </test>
+    <edit name="family" mode="prepend" binding="weak">
+      <string>Emoji</string>
+    </edit>
+  </match>
+</fontconfig>
+```
 
 ### Math
 

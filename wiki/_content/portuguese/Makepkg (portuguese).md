@@ -1,11 +1,11 @@
 Artigos relacionados
 
-*   [Creating packages (Português)](/index.php/Creating_packages_(Portugu%C3%AAs) "Creating packages (Português)")
-*   [PKGBUILD (Português)](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
-*   [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
-*   [pacman (Português)](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
-*   [Official repositories (Português)](/index.php/Official_repositories_(Portugu%C3%AAs) "Official repositories (Português)")
-*   [Arch Build System (Português)](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
+*   [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes")
+*   [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
+*   [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
+*   [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
+*   [Repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais")
+*   [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
 
 Makepkg é usado para compilar e construir um pacote adequado para instalação com o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), gerenciador de pacotes do Arch Linux. Makepkg é um script automático para a construção do pacote; podendo fazer o download e validar o arquivo, checando as dependências, configurações do tempo de compilação, compilar o código, instalar temporariamente como root, fazer a personalização, gerar informações, e por fim, fazer todo empacotamento.
 
@@ -14,178 +14,67 @@ O Makepkg é fornecido pelos pacotes do [pacman](https://www.archlinux.org/packa
 ## Contents
 
 *   [1 Configuração](#Configura.C3.A7.C3.A3o)
-    *   [1.1 Arquitetura, compilação flags](#Arquitetura.2C_compila.C3.A7.C3.A3o_flags)
-        *   [1.1.1 MAKEFLAGS](#MAKEFLAGS)
+    *   [1.1 Informação do empacotador](#Informa.C3.A7.C3.A3o_do_empacotador)
     *   [1.2 Saída de pacote](#Sa.C3.ADda_de_pacote)
     *   [1.3 Verificação de assinatura](#Verifica.C3.A7.C3.A3o_de_assinatura)
-    *   [1.4 fakeroot](#fakeroot)
 *   [2 Uso](#Uso)
 *   [3 Dicas e Truques](#Dicas_e_Truques)
-    *   [3.1 Gerar novos md5sums](#Gerar_novos_md5sums)
-    *   [3.2 Makepkg fonte PKGBUILD duas vezes](#Makepkg_fonte_PKGBUILD_duas_vezes)
-    *   [3.3 AVISO: O pacote contém referência para $srcdir](#AVISO:_O_pacote_cont.C3.A9m_refer.C3.AAncia_para_.24srcdir)
-*   [4 Veja também](#Veja_tamb.C3.A9m)
+    *   [3.1 Criando pacotes otimizados](#Criando_pacotes_otimizados)
+        *   [3.1.1 MAKEFLAGS](#MAKEFLAGS)
+    *   [3.2 Mostrar pacotes com um empacote específico](#Mostrar_pacotes_com_um_empacote_espec.C3.ADfico)
+    *   [3.3 Melhorando os tempos de compilação](#Melhorando_os_tempos_de_compila.C3.A7.C3.A3o)
+        *   [3.3.1 tmpfs](#tmpfs)
+        *   [3.3.2 ccache](#ccache)
+    *   [3.4 Gerar novos checksums](#Gerar_novos_checksums)
+    *   [3.5 Usar outros algoritmos de compressão](#Usar_outros_algoritmos_de_compress.C3.A3o)
+    *   [3.6 Usando núcleos na compressão](#Usando_n.C3.BAcleos_na_compress.C3.A3o)
+    *   [3.7 Compilar pacotes 32 bits em um sistema 64 bits](#Compilar_pacotes_32_bits_em_um_sistema_64_bits)
+*   [4 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
+    *   [4.1 Makepkg algumas vezes falha ao assinar um pacote sem perguntar pela palavra-chave de assinatura](#Makepkg_algumas_vezes_falha_ao_assinar_um_pacote_sem_perguntar_pela_palavra-chave_de_assinatura)
+    *   [4.2 CFLAGS/CXXFLAGS/CPPFLAGS no makepkg.conf não funciona para pacotes baseados no QMAKE](#CFLAGS.2FCXXFLAGS.2FCPPFLAGS_no_makepkg.conf_n.C3.A3o_funciona_para_pacotes_baseados_no_QMAKE)
+    *   [4.3 Especificando diretório de instalação para pacotes baseados em QMAKE](#Especificando_diret.C3.B3rio_de_instala.C3.A7.C3.A3o_para_pacotes_baseados_em_QMAKE)
+    *   [4.4 AVISO: O pacote contém referência para $srcdir](#AVISO:_O_pacote_cont.C3.A9m_refer.C3.AAncia_para_.24srcdir)
+*   [5 Veja também](#Veja_tamb.C3.A9m)
 
 ## Configuração
 
-`/etc/makepkg.conf` é o principal arquivo de configuração para o makepkg. A maioria dos usuários desejam ajustar as opções de configuração para construção dos pacotes.
+Veja [makepkg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5) para detalhes sobre as opções de configuração do makepkg.
 
-### Arquitetura, compilação flags
+A configuração do sistema está disponível em `/etc/makepkg.conf`, mas alterações específicas para cada usu[ario podem ser feitas em `$XDG_CONFIG_HOME/pacman/makepkg.conf` ou `~/.makepkg.conf`. É recomendado revisar a configuração antes de compilar pacotes.
 
-As opções `MAKEFLAGS`, `CFLAGS`, e `CXXFLAGS` são usadas pelo [make](https://www.archlinux.org/packages/?name=make), [gcc](https://www.archlinux.org/packages/?name=gcc), e `g++` enquanto a compilação de programa é com makepkg. Por padrão, essas opções de gerar pacotes genéricos podem ser instalados em uma ampla variedade de máquinas. Um ganho de desempenho pode ser alcançado por compilação de ajuste para o computador. A desvantagem é que os pacotes compilados especificamente para o processador do computador podem não funcionar em outras máquinas.
+### Informação do empacotador
 
-**Nota:** Tenha em mente que nem todos os sistemas de compilação de pacote usarão suas variáveis ​​exportadas. Algumas as substituem no makefile original ou [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)").
- `/etc/makepkg.conf` 
+Cada pacote é marcado com metadados identificando, entre outros, também o *empacotador*. Por padrão, os pacotes compilados pelo usuário são marcados com `Empacotador desconhecido`. Se vários usuários estiverem compilando pacotes em um sistema, ou de outra forma distribuindo seus pacotes para outros usuários, é conveniente fornecer contato real. Isso pode ser feito configurando a variável `PACKAGER` em `makepkg.conf`.
+
+Para verificar isso em um pacote instalado:
+
+ `$ pacman -Qi *pacote*` 
 ```
 [...]
-
-#########################################################################
-# ARCHITECTURE, COMPILE FLAGS
-#########################################################################
-#
-CARCH="x86_64"
-CHOST="x86_64-unknown-linux-gnu"
-
-#-- Exclusivo: só vai funcionar em x86_64
-# -march (ou -mcpu) constrói exclusivamente para uma arquitetura
-# -mtune otimiza para uma arquitetura, mas constrói para toda família de processadores
-CPPFLAGS="-D_FORTIFY_SOURCE=2"
-CFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fstack-protector --param=ssp-buffer-size=4"
-CXXFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fstack-protector --param=ssp-buffer-size=4"
-LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro"
-#-- Make Flags: mude este para sistemas DistCC/SMP
-#MAKEFLAGS="-j2"
-
+Empacotador       : John Doe <john@doe.com>
 [...]
 
 ```
 
-O padrão makepkg.conf `CFLAGS` e `CXXFLAGS` são compatíveis com todas as máquinas dentro de suas respectivas arquiteturas.
-
-Em máquinas x86_64, há ganhos raramentes significativos o bastante de desempenho mundial que justifiquem investir o tempo para reconstruir os pacotes oficiais.
-
-A partir da versão 4.3.0, GCC disponibiliza o `-march=native` que permite auto-detecção da CPU e seleciona automaticamente as otimizações suportadas pela máquina local no tempo de execução GCC. Para usá-lo, basta modificar as configurações padrão, alterando as linhas `CFLAGS` e `CXXFLAGS`:
-
-```
-# -march=native também define correto o -mtune=
-CFLAGS="-march=native -O2 -pipe -fstack-protector --param=ssp-buffer-size=4 -D_FORTIFY_SOURCE=2"
-CXXFLAGS="${CFLAGS}"
-
-```
-
-**Dica:** Para ver quais flags o `march=native` define, execute:
-```
-$ gcc -march=native -E -v - </dev/null 2>&1 | sed -n 's/.* -v - //p'
-
-```
-
-Otimizar ainda mais para o tipo de CPU pode, teoricamente, aumentar o desempenho, pois o `-march=native` permite que todas as instruções disponíveis definem e melhorem o agendamento para uma determinada CPU. Isto é especialmente perceptível na reconstrução de aplicativos (por exemplo: áudio/ferramentas de decodificação de video, aplicações científicas, programas matemáticos pesados, etc.) que podem tiram uma boa vantagem de configurações de instruções mais recentes não habilitadas ao usar opções padrão (ou pacotes) fornecido pelo Arch Linux.
-
-É muito fácil reduzir o desempenho usando o CFLAGS "não-padrão", porque compiladores tendem fortemente passar o tamanho do código com loop, mal vetorização, louco inlining, etc. dependendo do compilador. A menos que possa verificar/benchmark que é mais rápido, há uma chance muito boa nisso!
-
-Veja a página de manual do GCC para uma lista completa de opções disponíveis. O artigo wiki Gentoo [Compilation Optimization Guide](http://www.gentoo.org/doc/en/gcc-optimization.xml) e [Safe CFLAGS](http://wiki.gentoo.org/wiki/Safe_CFLAGS) fornecem informações mais profundas.
-
-#### MAKEFLAGS
-
-A opção `MAKEFLAGS` pode ser usada para especificar opções adicionais a fazer. Usuários com sistemas multi-core/multi-processador podem especificar o número de tarefas para executar simultaneamente. Isto pode ser feito com o uso do `nproc` para determinar o número de processadores disponíveis, e.x. `-j4` *(onde 4 é a saída de `nproc`)*. Alguns especificamente do [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") substituem isso com `-j1`, por causa de corriqueira condições em determinadas versões ou simplesmente porque isso não é suportado, em primeiro lugar. Os pacotes que falham ao construir por causa disso devem ser [reportados](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") no bug tracker depois de ter certeza que o erro é de fato causado por sua MAKEFLAGS.
-
-Consulte [make(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/make.1) para obter uma lista completa das opções disponíveis.
+Para automaticamente produzir pacotes assinados, defina também a variável `GPGKEY` em `makepkg.conf`.
 
 ### Saída de pacote
 
-Em seguida, pode-se configurar onde os arquivos de origem e pacotes deverão ser colocados e identificá-los como empacotadores. Esta etapa é opcional, pacotes serão criados no diretório de trabalho, onde o makepkg é executado por padrão.
+Por padrão, *makepkg* cria os *tarballs* de pacote no diretório atual de trabalho e baixa os dados fonte diretamente para o diretório `src/`. Caminhos personalizados podem ser configurados, por exemplo, para manter todos os pacotes compilados em `~/build/pacotes/` e todos os fontes em `~/build/fontes/`.
 
- `/etc/makepkg.conf` 
-```
-[...]
+Configure as seguintes variáveis do `makepkg.conf`, se necessário:
 
-#########################################################################
-# PACKAGE OUTPUT
-#########################################################################
-#
-# Default: put built package and cached source in build directory
-#
-#-- Destination: specify a fixed directory where all packages will be placed
-#PKGDEST=/home/packages
-#-- Source cache: specify a fixed directory where source files will be cached
-#SRCDEST=/home/sources
-#-- Source packages: specify a fixed directory where all src packages will be placed
-#SRCPKGDEST=/home/srcpackages
-#-- Packager: name/email of the person or organization building packages
-#PACKAGER="John Doe <john@doe.com>"
-
-[...]
-
-```
-
-Por exemplo, crie o diretório:
-
-```
-$ mkdir /home/$USER/packages
-
-```
-
-Então modifique a variável `PKGDEST` em `/etc/makepkg.conf` adequadamente.
-
-A variável `PACKAGER` definirá o valor `packager` dentro dos arquivos de pacotes compilados metadata' `.PKGINFO`. Por padrão, usuários-pacotes compilados exibirão:
-
- `pacman -Qi package` 
-```
-[...]
-Packager       : Unknown Packager
-[...]
-
-```
-
-Depois:
-
- `pacman -Qi package` 
-```
-[...]
-Packager       : John Doe <john@doe.com>
-[...]
-
-```
-
-Será útil se vários usuários copilarem pacotes em um sistema, ou se você for distribuir seus pacotes para outros usuários.
+*   `PKGDEST` – diretório para armazenar pacotes resultantes
+*   `SRCDEST` – diretório para armazenar dados [fonte](/index.php/PKGBUILD_(Portugu%C3%AAs)#source "PKGBUILD (Português)") (links simbólicos serão colocados em `src/` se ele aponta para outro lugar)
+*   `SRCPKGDEST` – diretório para armazenar os pacotes fontes (compilado com `makepkg -S`)
 
 ### Verificação de assinatura
 
-O procedimento a seguir não é necessário para compilar com makepkg, para a sua configuração inicial, vá para [#Uso](#Uso). Para desativar temporariamente a verificação de assinatura chame o comando makepkg com a opção `--skippgpcheck`. Se um arquivo de assinatura na forma de .sig faz parte da array de orgigem [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"), makepkg valida a autenticidade dos arquivos de origem. Por exemplo, a assinatura pkgname-pkgver.tar.gz.sig é usada para verificar a integridade do arquivo pkgname-pkgver.tar.gz com o programa gpg. Se desejar, assinaturas de outros desenvolvedores podem ser adicionadas manualmente ao conjunto de chaves gpg. Veja no artigo [GnuPG](/index.php/GnuPG "GnuPG") para mais informação.
+**Nota:** A verificação de assinatura implementada no *makepkg* não usa o chaveiro do pacman; em vez disso, depende do chaveiro do usuário.
 
-**Nota:** A verificação de assinatura implementada no makepkg não usa o conjunto de chaves do pacman. Configure gpg como explicado abaixo para permitir que o makepkg leia o conjunto de chaves do pacman.
+Se um arquivo de assinatura na forma de `.sig` ou `.asc` é parte do vetor fonte do [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"), o *makepkg* tenta automaticamente [verificá-la](/index.php/GnuPG#Verify_a_signature "GnuPG"). No caso do chaveiro do usuário não contém a chave pública necessária para verificação de assinatura, o *makepkg* vai abortar a instalação com uma mensagem de que a chave PGP não pôde ser verificada.
 
-As chaves GPG devem ser armazenados no arquivo de usuário `~/.gnupg/pubring.gpg`. No caso de não conter a assinatura determinada, makepkg mostra um aviso.
-
- `makepkg` 
-```
-[...]
-==> Verifying source file signatures with gpg...
-pkgname-pkgver.tar.gz ... FAILED (unknown public key 1234567890)
-==> WARNING: Warnings have occurred while verifying the signatures.
-    Please make sure you really trust them.
-[...]
-
-```
-
-Para mostrar a lista atual de chaves GPG use o comando gpg.
-
- `gpg --list-keys` 
-
-Se não existe o arquivo pubring.gpg, ele será criado para você imediatamente. Agora você pode prosseguir com a configuração gpg para permitir a compilação de pacotes AUR submetidos pelos desenvolvedores do Arch Linux com verificação com sucesso de assinatura. Adicione a seguinte linha no final do arquivo de configuração gpg para incluir conjunto de chaves pacman no conjunto de chaves pessoal do usuário.
-
- `~/.gnupg/gpg.conf` 
-```
-[...]
-keyring /etc/pacman.d/gnupg/pubring.gpg
-
-```
-
-Quando for configurado como dito anteriormente, a saída de `gpg --list-keys` contém uma lista de conjunto de chaves e desenvolvedores. Agora makepkg pode compilar pacotes AUR apresentados pelos desenvolvedores Arch Linux com a verificação com sucesso de assinatura.
-
-### `fakeroot`
-
-Fakeroot é a permissão normal do usuário sem a necessidade do root para criar um pacote, sem poder alterar o sistema por completo. Se as tentativas de alterar o processo em construção fora do ambiente de compilação, os erros são abordados e mostra a falha – para verificar a qualidade/segurança/integridade nos PKGBUILDs para a distribuição. Por default, o fakeroot é habilitado no diretório “/etc/make.pkg”; o usuário por opção pode por **!** no BUILDENV para desabilitar.
+Se uma chave pública necessária para um pacote está faltando, o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") muito provavelmente vai conter uma entrada [validpgpkeys](/index.php/PKGBUILD_(Portugu%C3%AAs)#validpgpkeys "PKGBUILD (Português)") com os IDs de chaves necessárias. Você pode [importá-la](/index.php/GnuPG#Import_a_public_key "GnuPG") manualmente ou você pode localizá-la [em um servidor de chaves](/index.php/GnuPG#Use_a_keyserver "GnuPG") e importá-la de lá.
 
 ## Uso
 
@@ -241,18 +130,218 @@ $ makepkg -i
 
 ## Dicas e Truques
 
-### Gerar novos md5sums
+### Criando pacotes otimizados
 
-Desde [pacman 4.1](http://allanmcrae.com/2013/04/pacman-4-1-released/) `makepkg -g >> PKGBUILD` não é mais necessário como pacman-contrib foi [merged](https://projects.archlinux.org/pacman.git/tree/NEWS) juntamente com o script `updpkgsums` capaz de gerar novos checksums e substituí-los no PKGBUILD:
+Uma melhoria de desempenho do software empacotado pode ser conseguida ao permitir otimizações do compilador para a máquina host. A desvantagem é que os pacotes compilados para uma arquitetura de processador específica não serão executados corretamente em outras máquinas. Nas máquinas x86_64, raramente existem ganhos de desempenho reais reais significativos que justificariam investir o tempo para reconstruir pacotes oficiais.
+
+No entanto, é muito fácil reduzir o desempenho usando *flags* de compilação "não padronizadas". Muitas otimizações de compilação só são úteis em certas situações e não devem ser aplicadas indiscriminadamente em cada pacote. A menos que você possa verificar/avaliar que algo é mais rápido, há uma chance muito boa de não ser! O [Guia de Otimização de Compilação](http://www.gentoo.org/doc/en/gcc-optimization.xml) e artigo wiki [CFLAGS Seguras](http://wiki.gentoo.org/wiki/Safe_CFLAGS) do Gentoo (ambos em inglês) fornecem mais informações detalhadas sobre a otimização do compilador.
+
+As opções passadas para um compilador C/C++ (ex.: [gcc](https://www.archlinux.org/packages/?name=gcc) ou [clang](https://www.archlinux.org/packages/?name=clang)) são controladas pelas variáveis de ambiente `CFLAGS`, `CXXFLAGS` e`CPPFLAGS`. Da mesma forma, o sistema de compilação [make](https://www.archlinux.org/packages/?name=make) usa `MAKEFLAGS`. Para usar o sistema de compilação do Arch, o *makepkg* expõe essas variáveis de ambiente como opções de configuração no `makepkg.conf`. Os valores padrão são configurados para produzir pacotes genéricos que podem ser instalados em uma ampla gama de máquinas.
+
+**Nota:** Tenha em mente que nem todos os sistemas de compilação usam as variáveis configuradas no `makepkg.conf`. Por exemplo, *cmake* ignora a variável de ambiente das opções de pré-processador, `CPPFLAGS`. Consequentemente, muitos [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") contêm soluções alternativas com opções específicas para o sistema de compilação usado pelo software empacotado.
+
+O GCC pode detectar e habilitar automaticamente otimizações seguras específicas para cada arquitetura. Para usar esse recurso, primeiro remova os sinalizadores `-march` e `-mtune`, então adicione `-march = native`. Por exemplo,
+
+```
+CFLAGS="-march=native -O2 -pipe -fstack-protector-strong -fno-plt"
+CXXFLAGS="${CFLAGS}"
+
+```
+
+Para ver quais sinalizadores isso habilita em sua máquina, execute:
+
+```
+$ gcc -march=native -v -Q --help=target
+
+```
+
+**Note:**
+
+*   Se você especificar um valor diferente de `-march=native`, então `-Q --help=target` **não vai** funcionar como esperado.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1616694#p1616694) Você precisa passar por uma fase de compilação para descobrir quais opções estão realmente habilitadas. Veja [Encontre opções específicas da CPU](https://wiki.gentoo.org/wiki/Safe_CFLAGS#Find_CPU-specific_options) (inglês) no wiki do Gentoo para instruções.
+*   Para descobrir as opções ótimas para uma arquitetura x86 **32 bit**, você pode usar o script [gcccpuopt](https://github.com/pixelb/scripts/blob/master/scripts/gcccpuopt).
+
+#### MAKEFLAGS
+
+A opção `MAKEFLAGS` pode ser usada para especificar opções adicionais para fazer. Os usuários com sistemas multi-core/multiprocessador podem especificar o número de tarefas a serem executadas simultaneamente. Isso pode ser realizado com o uso de *nproc* para determinar o número de processadores disponíveis, ex.: `MAKEFLAGS="-j$(nproc)"`. Alguns [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") substituem especificamente isso com `-j1`, devido a condições de corrida em certas versões ou simplesmente porque não há suporte em primeiro lugar. Os pacotes que não conseguem ser compilados por causa disso devem ser [relatados](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") no rastreador de erros (ou no caso dos pacotes [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), para o mantenedor do pacote) depois de ter certeza de que o erro está realmente sendo causado pelo seu `MAKEFLAGS`.
+
+Veja [make(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/make.1) para uma lista completa de opções disponíveis.
+
+### Mostrar pacotes com um empacote específico
+
+Isso mostra todos os pacotes instalados no sistema com o empacotador chamado *nome-empacotador*:
+
+```
+$ expac "%n %p" | grep "*nome-empacotador*" | column -t
+
+```
+
+Isso mostra todos os pacotes instalados no sistema com o empacotador definido na variável `PACKAGER` do `/etc/makepkg`. Isso mostra apenas pacotes que estão em um repositório definido em `/etc/pacman.conf`.
+
+```
+$ . /etc/makepkg.conf; grep -xvFf <(pacman -Qqm) <(expac "%n\t%p" | grep "$PACKAGER$" | cut -f1)
+
+```
+
+### Melhorando os tempos de compilação
+
+#### tmpfs
+
+Como a compilação requer muitas operações de E/S e lidar com arquivos pequenos, mover o diretório de trabalhos para um [tmpfs](/index.php/Tmpfs "Tmpfs") pode trazer melhorias em tempos de compilação.
+
+A variável `BUILDDIR` pode ser temporariamente exportada para *makepkg* para definir o diretório de compilação para um tmpfs existente. Por exemplo:
+
+```
+$ BUILDDIR=/tmp/makepkg makepkg
+
+```
+
+**Atenção:** Evite compilar pacotes grandes no tmpfs para evitar ficar sem memória.
+
+Configuração persistente pode ser feita no `makepkg.conf` descomentando a opção `BUILDDIR`, que é encontrada no fim da seção `BUILD ENVIRONMENT` no arquivo padrão `/etc/makepkg.conf`. Definir esses valores para, por exemplo, `BUILDDIR=/tmp/makepkg` fará uso do `/tmp` [tmpfs](/index.php/Tmpfs "Tmpfs") padrão do Arch.
+
+**Nota:**
+
+*   A pasta [tmpfs](/index.php/Tmpfs "Tmpfs") deve ser montada sem a opção `noexec`; do contrário, ela vai evitar que scripts de compilação ou utilitários sejam executados.
+*   Tenha em mente que qualquer pacote compilado no [tmpfs](/index.php/Tmpfs "Tmpfs") não persistirá após reinicialização. Considere configurar a opção [PKGDEST](#Sa.C3.ADda_de_pacote) apropriadamente para mover o pacote compilado automaticamente para outro diretório (persistente).
+
+#### ccache
+
+O uso de [ccache](/index.php/Ccache "Ccache") pode melhorar os tempos de compilação ao armazenar em cache os resultados de compilações.
+
+### Gerar novos checksums
+
+Execute o seguinte comando no mesmo diretório que o arquivo PKGBUILD para gerar novas somas de verificação (*checksums*):
 
 ```
 $ updpkgsums
 
 ```
 
-### Makepkg fonte PKGBUILD duas vezes
+### Usar outros algoritmos de compressão
 
-Makepkg fontes a PKGBUILD duas vezes (uma quando executado, e a segunda sob fakeroot). Qualquer função não-padrão colocada no PKGBUILD será executada duas vezes também.
+Para acelerar o empacotamento e a instalação, com a consequência de ter arquivos de pacotes maiores, você pode alterar `PKGEXT`. Por exemplo, o seguinte torna o arquivo de pacote descompactado para apenas uma invocação:
+
+```
+$ PKGEXT='.pkg.tar' makepkg
+
+```
+
+Um outro exemplo abaixo mostra o uso do algoritmo lzop, com o pacote [lzo](https://www.archlinux.org/packages/?name=lzo) necessário:
+
+```
+$ PKGEXT='.pkg.tar.lzo' makepkg
+
+```
+
+Para fazer uma dessas configurações permanentes, configure `PKGEXT` em `/etc/makepkg.conf`.
+
+### Usando núcleos na compressão
+
+O [xz](https://www.archlinux.org/packages/?name=xz) oferece suporte a [multiprocessamento simétrico (SMP)](https://en.wikipedia.org/wiki/pt:Multiprocessamento_sim%C3%A9trico "wikipedia:pt:Multiprocessamento simétrico") por meio do sinalizador `--threads` para acelerar a compressão. Por exemplo, para deixar o makepkg usar quantos núcleos de CPU for possível para comprimir os pacotes, edite o vetor `COMPRESSXZ` em `/etc/makepkg.conf`:
+
+```
+COMPRESSXZ=(xz -c -z - **--threads=0**)
+
+```
+
+O [pigz](https://www.archlinux.org/packages/?name=pigz) é uma implementação paralela para o [gzip](https://www.archlinux.org/packages/?name=gzip) que, por padrão, usa todos os núcleos disponíveis na CPU (o sinalizador `-p/--processes` pode ser usado para empregar menos núcleos):
+
+```
+COMPRESSGZ=(**pigz** -c -f -n)
+
+```
+
+### Compilar pacotes 32 bits em um sistema 64 bits
+
+**Atenção:** Erros foram relatados ao usar esse método par compilar o pacote [linux](https://www.archlinux.org/packages/?name=linux). O [método de instalação](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system") é preferível e verificou-se que funciona para compilar os pacotes do kernel.
+
+Primeiro, habilite o repositório [multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)") e [instale](/index.php/Instale "Instale") [multilib-devel](https://www.archlinux.org/groups/x86_64/multilib-devel/).
+
+Então, crie um arquivo de configuração 32 bits
+
+ `~/.makepkg.i686.conf` 
+```
+CARCH="i686"
+CHOST="i686-unknown-linux-gnu"
+CFLAGS="-m32 -march=i686 -mtune=generic -O2 -pipe -fstack-protector-strong"
+CXXFLAGS="${CFLAGS}"
+LDFLAGS="-m32 -Wl,-O1,--sort-common,--as-needed,-z,relro"
+```
+
+e chame o makepkg assim
+
+```
+$ linux32 makepkg --config ~/.makepkg.i686.conf
+
+```
+
+## Solução de problemas
+
+### Makepkg algumas vezes falha ao assinar um pacote sem perguntar pela palavra-chave de assinatura
+
+Com o [gnupg 2.1](https://www.gnupg.org/faq/whats-new-in-2.1.html), gpg-agent agora é iniciado automaticamente pelo gpg. O problema surge no estágio do pacote de `makepkg --sign`. Para permitir os privilégios corretos, [fakeroot](https://www.archlinux.org/packages/?name=fakeroot) executa a função `package()` iniciando o gpg-agent dentro do mesmo ambiente *fakeroot*. Na saída, o *fakeroot* limpa os semáforos fazendo com que a "escrita" termine o *pipe* para fechar para aquela instância do gpg-agent que resultará em um erro de *pipe* quebrado. Se o mesmo gpg-agent estiver em execução quando `makepkg --sign` estiver próximo de executado, então o gpg-agent retorna código de saída 2; então a seguinte saída ocorre:
+
+```
+==> Assinando pacote...
+==> ATENÇÃO: Falha em assinar arquivo de pacote.
+
+```
+
+Esse erro está atualmente sendo rastreado: [FS#49946](https://bugs.archlinux.org/task/49946). Uma solução temporária de contorno para esse problema é executar `killall gpg-agent && makepkg --sign`. Esse problema está resolvido no [pacman-git](https://aur.archlinux.org/packages/pacman-git/), especificamento no hash de commit `c6b04c04653ba9933fe978829148312e412a9ea7`
+
+### CFLAGS/CXXFLAGS/CPPFLAGS no makepkg.conf não funciona para pacotes baseados no QMAKE
+
+Qmake configura automaticamente a variável `CFLAGS` e `CXXFLAGS` de acordo com o que você pensa que deveria ser a configuração correta. Para deixar o qmake usar as variáveis definidas no arquivo de configuração do makepkg, você deve editar o PKGBUILD e passar as variáveis [QMAKE_CFLAGS_RELEASE](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cflags-release) e [QMAKE_CXXFLAGS_RELEASE](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cxxflags-release) ao qmake. Por exemplo:
+
+ `PKGBUILD` 
+```
+...
+
+build() {
+  cd "$srcdir/$_pkgname-$pkgver-src"
+  qmake-qt4 "$srcdir/$_pkgname-$pkgver-src/$_pkgname.pro" \
+    PREFIX=/usr \
+    QMAKE_CFLAGS_RELEASE="${CFLAGS}"\
+    QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}"
+
+  make
+}
+
+...
+
+```
+
+Alternativamente, para uma configuração para todo sistema, você pode criar seu próprio `qmake.conf` e configurar a variável de ambiente [QMAKESPEC](http://doc.qt.io/qt-5/qmake-environment-reference.html#qmakespec).
+
+### Especificando diretório de instalação para pacotes baseados em QMAKE
+
+O makefile gerado pelo qmake usa a variável de ambiente INSTALL_ROOT para especificar onde o programa deve ser instalado. Então, essa função *package* deve funcionar:
+
+ `PKGBUILD` 
+```
+...
+
+package() {
+	cd "$srcdir/${pkgname%-git}"
+	make INSTALL_ROOT="$pkgdir" install
+}
+
+...
+
+```
+
+Note que o qmake também tem que ser configurado adequadamente. Por exemplo, coloque isso em seu arquivo .pro:
+
+ `SeuProjeto.pro` 
+```
+...
+
+target.path = /usr/local/bin
+INSTALLS += target
+
+...
+
+```
 
 ### AVISO: O pacote contém referência para $srcdir
 
@@ -269,4 +358,7 @@ $ grep -R "$(pwd)/src" pkg/
 
 ## Veja também
 
-*   [gcccpuopt](https://github.com/pixelb/scripts/blob/master/scripts/gcccpuopt): Um script para mostrar as opções gcc específicas da CPU adaptados para a CPU atual.
+*   [Página de manual makepkg(8)](https://www.archlinux.org/pacman/makepkg.8.html)
+*   [Página de manual makepkg.conf(5)](https://www.archlinux.org/pacman/makepkg.conf.5.html)
+*   [Um breve passeio no processo do makepkg](https://gist.github.com/Earnestly/bebad057f40a662b5cc3)
+*   [Código fonte do makepkg](https://projects.archlinux.org/pacman.git/tree/scripts/makepkg.sh.in)

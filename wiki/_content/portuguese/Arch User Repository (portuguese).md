@@ -35,23 +35,24 @@ Um bom número de novos pacotes que entram para os repositórios oficiais inicia
     *   [6.3 Outras requisições](#Outras_requisi.C3.A7.C3.B5es)
 *   [7 Repositórios Git para pacotes AUR3](#Reposit.C3.B3rios_Git_para_pacotes_AUR3)
 *   [8 Tradução da interface web](#Tradu.C3.A7.C3.A3o_da_interface_web)
-*   [9 FAQ](#FAQ)
-    *   [9.1 O que é o AUR?](#O_que_.C3.A9_o_AUR.3F)
-    *   [9.2 Que tipo de pacote é permitido no AUR?](#Que_tipo_de_pacote_.C3.A9_permitido_no_AUR.3F)
-    *   [9.3 Como posso votar em pacotes no AUR?](#Como_posso_votar_em_pacotes_no_AUR.3F)
-    *   [9.4 O que é um Trusted User / TU?](#O_que_.C3.A9_um_Trusted_User_.2F_TU.3F)
-    *   [9.5 Qual é a diferença entre o Arch User Repository e repositório [community]?](#Qual_.C3.A9_a_diferen.C3.A7a_entre_o_Arch_User_Repository_e_reposit.C3.B3rio_.5Bcommunity.5D.3F)
-    *   [9.6 Foo no AUR está desatualizado; o que faço?](#Foo_no_AUR_est.C3.A1_desatualizado.3B_o_que_fa.C3.A7o.3F)
-    *   [9.7 Foo no AUR não compila quando eu executo makepkg; o que devo fazer?](#Foo_no_AUR_n.C3.A3o_compila_quando_eu_executo_makepkg.3B_o_que_devo_fazer.3F)
-    *   [9.8 Como eu crio um PKGBUILD?](#Como_eu_crio_um_PKGBUILD.3F)
-    *   [9.9 Eu tenho um PKGBUILD que queria enviar; alguém pode verificá-lo para ver se ele tem algum erro?](#Eu_tenho_um_PKGBUILD_que_queria_enviar.3B_algu.C3.A9m_pode_verific.C3.A1-lo_para_ver_se_ele_tem_algum_erro.3F)
-    *   [9.10 Como que faz para um PKGBUILD ir para o repositório *community*?](#Como_que_faz_para_um_PKGBUILD_ir_para_o_reposit.C3.B3rio_community.3F)
-    *   [9.11 Como o posso agilizar processo de repetidas compilações?](#Como_o_posso_agilizar_processo_de_repetidas_compila.C3.A7.C3.B5es.3F)
-    *   [9.12 Qual é a diferença entre pacotes foo e foo-git](#Qual_.C3.A9_a_diferen.C3.A7a_entre_pacotes_foo_e_foo-git)
-    *   [9.13 Por que foo desapareceu do AUR?](#Por_que_foo_desapareceu_do_AUR.3F)
-    *   [9.14 Como eu descubro se algum dos meus pacotes instalados desapareceu do AUR?](#Como_eu_descubro_se_algum_dos_meus_pacotes_instalados_desapareceu_do_AUR.3F)
-    *   [9.15 Como eu posso obter uma lista de todos os pacotes do AUR?](#Como_eu_posso_obter_uma_lista_de_todos_os_pacotes_do_AUR.3F)
-*   [10 Veja também](#Veja_tamb.C3.A9m)
+*   [9 Sintaxe de comentário](#Sintaxe_de_coment.C3.A1rio)
+*   [10 FAQ](#FAQ)
+    *   [10.1 O que é o AUR?](#O_que_.C3.A9_o_AUR.3F)
+    *   [10.2 Que tipo de pacote é permitido no AUR?](#Que_tipo_de_pacote_.C3.A9_permitido_no_AUR.3F)
+    *   [10.3 Como posso votar em pacotes no AUR?](#Como_posso_votar_em_pacotes_no_AUR.3F)
+    *   [10.4 O que é um Trusted User / TU?](#O_que_.C3.A9_um_Trusted_User_.2F_TU.3F)
+    *   [10.5 Qual é a diferença entre o Arch User Repository e repositório [community]?](#Qual_.C3.A9_a_diferen.C3.A7a_entre_o_Arch_User_Repository_e_reposit.C3.B3rio_.5Bcommunity.5D.3F)
+    *   [10.6 Foo no AUR está desatualizado; o que faço?](#Foo_no_AUR_est.C3.A1_desatualizado.3B_o_que_fa.C3.A7o.3F)
+    *   [10.7 Foo no AUR não compila quando eu executo makepkg; o que devo fazer?](#Foo_no_AUR_n.C3.A3o_compila_quando_eu_executo_makepkg.3B_o_que_devo_fazer.3F)
+    *   [10.8 Como eu crio um PKGBUILD?](#Como_eu_crio_um_PKGBUILD.3F)
+    *   [10.9 Eu tenho um PKGBUILD que queria enviar; alguém pode verificá-lo para ver se ele tem algum erro?](#Eu_tenho_um_PKGBUILD_que_queria_enviar.3B_algu.C3.A9m_pode_verific.C3.A1-lo_para_ver_se_ele_tem_algum_erro.3F)
+    *   [10.10 Como que faz para um PKGBUILD ir para o repositório *community*?](#Como_que_faz_para_um_PKGBUILD_ir_para_o_reposit.C3.B3rio_community.3F)
+    *   [10.11 Como o posso agilizar processo de repetidas compilações?](#Como_o_posso_agilizar_processo_de_repetidas_compila.C3.A7.C3.B5es.3F)
+    *   [10.12 Qual é a diferença entre pacotes foo e foo-git](#Qual_.C3.A9_a_diferen.C3.A7a_entre_pacotes_foo_e_foo-git)
+    *   [10.13 Por que foo desapareceu do AUR?](#Por_que_foo_desapareceu_do_AUR.3F)
+    *   [10.14 Como eu descubro se algum dos meus pacotes instalados desapareceu do AUR?](#Como_eu_descubro_se_algum_dos_meus_pacotes_instalados_desapareceu_do_AUR.3F)
+    *   [10.15 Como eu posso obter uma lista de todos os pacotes do AUR?](#Como_eu_posso_obter_uma_lista_de_todos_os_pacotes_do_AUR.3F)
+*   [11 Veja também](#Veja_tamb.C3.A9m)
 
 ## Começando
 
@@ -300,6 +301,10 @@ O [Arquivo do AUR](https://github.com/aur-archive) no GitHub possui um repositó
 ## Tradução da interface web
 
 Veja [i18n.txt](https://projects.archlinux.org/aurweb.git/tree/doc/i18n.txt) na árvore de arquivos fontes do AUR para informações sobre criação e manutenção de tradução da interface web do AUR.
+
+## Sintaxe de comentário
+
+Desde o AUR [v4.6.0](https://lists.archlinux.org/pipermail/aur-general/2017-December/033697.html), há suporte à biblioteca [Python-Markdown](https://python-markdown.github.io/). Veja [[1]](https://python-markdown.github.io/#differences) para as diferenças com [Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown").
 
 ## FAQ
 

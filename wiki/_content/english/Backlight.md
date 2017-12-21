@@ -259,6 +259,10 @@ See [FS#27677](https://bugs.archlinux.org/task/27677) and [[2]](https://bugs.deb
 
 	[https://sources.archlinux.org/other/monica/](https://sources.archlinux.org/other/monica/) || [monica](https://www.archlinux.org/packages/?name=monica)
 
+*   **Enlighten** — Enlighten is a very small C utility to control the backlight brightness in Linux.
+
+	[https://github.com/HalosGhost/enlighten](https://github.com/HalosGhost/enlighten) || [enlighten-git](https://aur.archlinux.org/packages/enlighten-git/)
+
 ### setpci
 
 It is possible to set the register of the graphic card to adjust the backlight. It means you adjust the backlight by manipulating the hardware directly, which can be risky and generally is not a good idea. Not all of the graphic cards support this method.

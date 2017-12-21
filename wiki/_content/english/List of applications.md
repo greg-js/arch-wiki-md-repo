@@ -322,13 +322,17 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 
 	[https://openvpn.net/](https://openvpn.net/) || [openvpn](https://www.archlinux.org/packages/?name=openvpn)
 
-*   **[PPTP Client](/index.php/PPTP_Client "PPTP Client")** — To connect to PPTP VPNs, like Microsoft VPNs (MPPE).
+*   **[PPTP Client](/index.php/PPTP_Client "PPTP Client")** — To connect to PPTP VPNs, like Microsoft VPNs (MPPE). (insecure)
 
 	[http://pptpclient.sourceforge.net/](http://pptpclient.sourceforge.net/) || [pptpclient](https://www.archlinux.org/packages/?name=pptpclient)
 
 *   **[strongSwan](/index.php/StrongSwan "StrongSwan")** — IPsec-based VPN Solution.
 
 	[https://www.strongswan.org/](https://www.strongswan.org/) || [strongswan](https://www.archlinux.org/packages/?name=strongswan)
+
+*   **[tinc](/index.php/Tinc "Tinc")** — tinc is a free VPN daemon.
+
+	[https://www.tinc-vpn.org/](https://www.tinc-vpn.org/) || [tinc](https://www.archlinux.org/packages/?name=tinc)
 
 *   **[Vpnc](/index.php/Vpnc "Vpnc")** — To connect to Cisco 3000 VPN Concentrators.
 

@@ -19,7 +19,7 @@ Download [[1]](http://www.privateinternetaccess.com/openvpn/openvpn-strong.zip).
 
 **Tip:** Rename the `.opvn` extensions to `.conf` and remove or replace spaces in configuration file names to be able to use [OpenVPN#systemd service configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN").
 
-**Note:** You will need to [disable ipv6](/index.php/Disable_ipv6 "Disable ipv6") since it [is not supported by PIA](https://helpdesk.privateinternetaccess.com/hc/en-us/articles/232324908-Why-Do-You-Block-IPv6-).
+**Note:** You will need to [disable ipv6](/index.php/Disable_ipv6 "Disable ipv6") since it is not supported by PIA.[[2]](https://helpdesk.privateinternetaccess.com/hc/en-us/articles/232324908-Why-Do-You-Block-IPv6-)
 
 ### Usage
 

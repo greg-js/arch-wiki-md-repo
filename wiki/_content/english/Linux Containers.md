@@ -47,9 +47,7 @@ LXCs can be setup to run in either *privileged* or *unprivileged* configurations
 
 In general, running an *unprivileged* container is [considered safer](https://www.stgraber.org/2014/01/17/lxc-1-0-unprivileged-containers) than running a *privileged* container since *unprivileged* containers have an increased degree of isolation by virtue of their design. Key to this is the mapping of the root UID in the container to a non-root UID on the host which makes it more difficult for a hack within the container to lead to consequences on host system. In other words, if an attacker manages to escape the container, he or she should find themselves with no rights on the host.
 
-The Arch packages currently provide out-of-the-box support for *privileged* containers only. This is due to the current Arch [linux](https://www.archlinux.org/packages/?name=linux) kernel **not** shipping with user namespaces configured. This article contains information for users to run either type of container, but additional setup is required to use *unprivileged* containers at this time.
-
-**Note:** A request has been filed to include user namespace support in the kernel: [FS#36969](https://bugs.archlinux.org/task/36969). However, the request has been closed because of the numerous security issues caused by user namespaces, which are frequently discovered.
+The Arch packages currently provide out-of-the-box support for *privileged* containers. *Unprivileged* containers are only available for the system administrator without additional kernel configuration. This is due to the current Arch [linux](https://www.archlinux.org/packages/?name=linux) kernel shipping with user namespaces disabled for normal users. This article contains information for users to run either type of container, but additional setup is required to use *unprivileged* containers.
 
 ### An example to illustrate unprivileged containers
 
@@ -98,14 +96,13 @@ Installing [lxc](https://www.archlinux.org/packages/?name=lxc) and [arch-install
 
 Users wishing to run *unprivileged* containers need to complete several additional setup steps.
 
-Firstly, a custom kernel is required that has support for User namespaces. This option is available under **General setup>Namespaces support>User namespace** from an nconfig, or by simply modifying the kernel [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") with the following line inserted prior to the "make prepare" line:
+Firstly, a kernel is required that has support for **User Namespaces**. However, due to more general security concerns, the default Arch kernel does ship with User Namespaces enabled only for the *root* user. You have multiple options to use a kernel with `CONFIG_USER_NS` and thereby create *unprivileged* containers:
 
-```
-sed -i -e 's/# CONFIG_USER_NS is not set/CONFIG_USER_NS=y/' ./.config
-
-```
-
-See, [ABS](/index.php/ABS "ABS") for more on compiling a custom kernel.
+*   Use [linux](https://www.archlinux.org/packages/?name=linux) (v4.14.5 or later) and start your unprivileged containers only as *root*
+*   Use [linux](https://www.archlinux.org/packages/?name=linux) (v4.14.5 or later) and enable the *sysctl* setting `kernel.unprivileged_userns_clone` to allow normal users to run unprivileged containers. This can be done for the current session with `sysctl kernel.unprivileged_userns_clone=1` and can be made permanent with [sysctl.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5)
+*   Install the [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) kernel package along-side the default [linux](https://www.archlinux.org/packages/?name=linux) kernel. When you wish to run unprivileged LXD containers, boot with [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) by selecting it in the bootloader. [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) is compiled with `CONFIG_USER_NS`. Otherwise, run with [linux](https://www.archlinux.org/packages/?name=linux) as normal.
+*   Install the [linux-userns](https://aur.archlinux.org/packages/linux-userns/) or [linux-lts-userns](https://aur.archlinux.org/packages/linux-lts-userns/) packages from the [AUR](/index.php/AUR "AUR"). Both are compiled with `CONFIG_USER_NS`, the latter being the Long-Term Support version.
+*   Compile and install your own custom kernel with `CONFIG_USER_NS` enabled. See, [Kernels/Arch_Build_System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System") for more on compiling a custom kernel.
 
 Secondly, modify `/etc/lxc/default.conf` to contain the following lines:
 

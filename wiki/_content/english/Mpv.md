@@ -2,7 +2,7 @@ Related articles
 
 *   [MPlayer](/index.php/MPlayer "MPlayer")
 
-[mpv](https://mpv.io/) is a media player based on [MPlayer](/index.php/MPlayer "MPlayer") and MPlayer2\. It supports a wide variety of video file formats, audio and video codecs, and subtitle types. A comprehensive (although admittedly incomplete) list of differences between *mpv* and the aforementioned players can be found [here](https://github.com/mpv-player/mpv/blob/master/DOCS/mplayer-changes.rst).
+[mpv](https://mpv.io/) is a media player based on [MPlayer](/index.php/MPlayer "MPlayer") and the now unmaintained *mplayer2*. It supports a wide variety of video file formats, audio and video codecs, and subtitle types. A comprehensive (although admittedly incomplete) list of differences between *mpv* and the aforementioned players can be found [here](https://github.com/mpv-player/mpv/blob/master/DOCS/mplayer-changes.rst).
 
 ## Contents
 
@@ -19,6 +19,8 @@ Related articles
     *   [3.2 Lua](#Lua)
         *   [3.2.1 mpv-stats](#mpv-stats)
         *   [3.2.2 mpv-webm](#mpv-webm)
+    *   [3.3 C](#C)
+        *   [3.3.1 mpv-mpris](#mpv-mpris)
 *   [4 Vapoursynth](#Vapoursynth)
     *   [4.1 SVP 4 Linux (SmoothVideoProject)](#SVP_4_Linux_.28SmoothVideoProject.29)
 *   [5 Tips and Tricks](#Tips_and_Tricks)
@@ -26,20 +28,21 @@ Related articles
         *   [5.1.1 In GNOME Wayland](#In_GNOME_Wayland)
     *   [5.2 Save position on quit](#Save_position_on_quit)
     *   [5.3 Volume is too low](#Volume_is_too_low)
-    *   [5.4 Quickly cycle between aspect ratios](#Quickly_cycle_between_aspect_ratios)
-    *   [5.5 Ignoring aspect ratio](#Ignoring_aspect_ratio)
-    *   [5.6 Draw to the root window](#Draw_to_the_root_window)
-    *   [5.7 Always show GUI](#Always_show_GUI)
-    *   [5.8 Hide GUI for video files](#Hide_GUI_for_video_files)
-    *   [5.9 Restoring old OSC](#Restoring_old_OSC)
-    *   [5.10 Use as a browser plugin](#Use_as_a_browser_plugin)
-    *   [5.11 Improving mpv as a music player with Lua scripts](#Improving_mpv_as_a_music_player_with_Lua_scripts)
-    *   [5.12 Twitch.tv streaming over mpv](#Twitch.tv_streaming_over_mpv)
-    *   [5.13 youtube-dl and choosing formats](#youtube-dl_and_choosing_formats)
-    *   [5.14 youtube-dl audio with search](#youtube-dl_audio_with_search)
-    *   [5.15 Use mpv with a compositor](#Use_mpv_with_a_compositor)
-    *   [5.16 Creating a single screenshot](#Creating_a_single_screenshot)
-    *   [5.17 GNOME Blank screen (Wayland)](#GNOME_Blank_screen_.28Wayland.29)
+    *   [5.4 Play a DVD](#Play_a_DVD)
+    *   [5.5 Quickly cycle between aspect ratios](#Quickly_cycle_between_aspect_ratios)
+    *   [5.6 Ignoring aspect ratio](#Ignoring_aspect_ratio)
+    *   [5.7 Draw to the root window](#Draw_to_the_root_window)
+    *   [5.8 Always show GUI](#Always_show_GUI)
+    *   [5.9 Hide GUI for video files](#Hide_GUI_for_video_files)
+    *   [5.10 Restoring old OSC](#Restoring_old_OSC)
+    *   [5.11 Use as a browser plugin](#Use_as_a_browser_plugin)
+    *   [5.12 Improving mpv as a music player with Lua scripts](#Improving_mpv_as_a_music_player_with_Lua_scripts)
+    *   [5.13 Twitch.tv streaming over mpv](#Twitch.tv_streaming_over_mpv)
+    *   [5.14 youtube-dl and choosing formats](#youtube-dl_and_choosing_formats)
+    *   [5.15 youtube-dl audio with search](#youtube-dl_audio_with_search)
+    *   [5.16 Use mpv with a compositor](#Use_mpv_with_a_compositor)
+    *   [5.17 Creating a single screenshot](#Creating_a_single_screenshot)
+    *   [5.18 GNOME Blank screen (Wayland)](#GNOME_Blank_screen_.28Wayland.29)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 General debugging](#General_debugging)
     *   [6.2 Fix jerky playback and tearing](#Fix_jerky_playback_and_tearing)
@@ -52,7 +55,7 @@ Related articles
 
 ### Front ends
 
-mpv comes with a minimal GUI called On Screen Controller (OSC), that appears when moving the mouse. There are also other front ends available:
+mpv comes with a minimal GUI called On Screen Controller *(OSC)*, that appears when moving the mouse. There are also other front ends available:
 
 *   **Baka MPlayer** — Free and open source, cross-platform, *libmpv* based multimedia player (Qt 5).
 
@@ -220,6 +223,14 @@ There are a lot of interesting Lua scripts for mpv. If you would like to make yo
 
 [mpv-webm](https://github.com/ElegantMonkey/mpv-webm) (or simply *webm*) is a very easy to use Lua script that allows one to create WebM files while watching videos. It includes several features and does not have any extra dependencies (relies entirely on mpv).
 
+### C
+
+#### mpv-mpris
+
+The C plugin [mpv-mpris](https://github.com/hoyon/mpv-mpris) allows other applications to integrate with mpv via the MPRIS protocol. For example, with mpv-mpris installed, [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) can automatically pause video playback in mpv when a phone call arrives.
+
+Install [mpv-mpris](https://aur.archlinux.org/packages/mpv-mpris/) and follow the post-installation instructions displayed by Pacman.
+
 ## Vapoursynth
 
 Vapoursynth is an alternative to AviSynth that can be used on Linux and allows for Video manipulation via python scripts. Vapoursynths python scripts can be used as video filters for *mpv*.
@@ -301,6 +312,15 @@ To automatically save the current playback position on quit, start *mpv* with `-
 ### Volume is too low
 
 Set `volume-max=*value*` in your configuration file to a reasonable amount, such as `volume-max=600`. Additionally (or alternatively), you can utilize [dynamic range compression](https://en.wikipedia.org/wiki/Dynamic_range_compression "wikipedia:Dynamic range compression") with `af=acompressor`.
+
+### Play a DVD
+
+To start the main stream of a video DVD, use the command:
+
+```
+$ mpv dvd://
+
+```
 
 ### Quickly cycle between aspect ratios
 

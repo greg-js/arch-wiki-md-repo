@@ -349,14 +349,13 @@ nameserver 127.0.0.1
 
 ##### Openresolve
 
-It is likely that is the [openresolv](https://www.archlinux.org/packages/?name=openresolv) service to handle `/etc/resolv.conf` if you use a network connection manager such as [netctl](https://www.archlinux.org/packages/?name=netctl), [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) or others. If it is your case, you must force [openresolv](https://www.archlinux.org/packages/?name=openresolv) to use **localhost** as name server.
+It is likely that is the [openresolv](https://www.archlinux.org/packages/?name=openresolv) service to handle `/etc/resolv.conf` if you use a network connection manager such as [netctl](/index.php/Netctl "Netctl") or [NetworkManager](/index.php/NetworkManager "NetworkManager"). If it is your case, you must force [openresolv](https://www.archlinux.org/packages/?name=openresolv) to use **localhost** as name server.
 Edit `/etc/resolvconf.conf` to uncomment the name_servers line:
 
  `/etc/resolvconf.conf` 
 ```
 [...]
 name_servers=127.0.0.1
-
 ```
 
 and update resolvconf:

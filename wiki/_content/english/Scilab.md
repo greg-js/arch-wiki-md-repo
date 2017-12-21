@@ -2,7 +2,7 @@
 
 ## Installation
 
-Scilab is not in the official repositories of Arch Linux, so it must be installed either from [unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"), such as [pkgbuild-current](/index.php/Unofficial_user_repository#pkgbuild-current "Unofficial user repository"), or from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR).
+Scilab is not in the official repositories of Arch Linux, so it must be installed from the [AUR](/index.php/AUR "AUR"):
 
 *   [scilab](https://aur.archlinux.org/packages/scilab/)
 *   [scilab-bin](https://aur.archlinux.org/packages/scilab-bin/)

@@ -15,13 +15,13 @@ Related articles
         *   [1.2.2 Jack Flash](#Jack_Flash)
         *   [1.2.3 Quickscan JACK script](#Quickscan_JACK_script)
         *   [1.2.4 Desktop Effects vs JACK](#Desktop_Effects_vs_JACK)
-        *   [1.2.5 A General Example](#A_General_Example)
+        *   [1.2.5 Общий пример](#.D0.9E.D0.B1.D1.89.D0.B8.D0.B9_.D0.BF.D1.80.D0.B8.D0.BC.D0.B5.D1.80)
 *   [2 Realtime Kernel](#Realtime_Kernel)
     *   [2.1 AUR](#AUR)
 *   [3 MIDI](#MIDI)
 *   [4 Переменные окружения](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BE.D0.BA.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
 *   [5 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
-*   [6 Hardware](#Hardware)
+*   [6 Аппаратное обеспечение](#.D0.90.D0.BF.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BD.D0.BE.D0.B5_.D0.BE.D0.B1.D0.B5.D1.81.D0.BF.D0.B5.D1.87.D0.B5.D0.BD.D0.B8.D0.B5)
     *   [6.1 M-Audio Delta 1010](#M-Audio_Delta_1010)
     *   [6.2 M-Audio Fast Track Pro](#M-Audio_Fast_Track_Pro)
     *   [6.3 PreSonus Firepod](#PreSonus_Firepod)
@@ -264,9 +264,9 @@ The output should tell you where your system is lacking and will point you to pl
 
 In addition to the factors listed under the System Configuration section above as well as the settings checked by realTimeConfigQuickScan.pl, it is also worth noting that desktop environments can cause xruns and hence JACK audio glitches, especially memory/process intensive ones and those desktops that utilize composited desktop effects. It is recommended you disable desktop effects when using JACK. You are likely to get the least xruns and best performance by running a lightweight desktop or just a window manager instead.
 
-#### A General Example
+#### Общий пример
 
-A general configuration example is [JACK Audio Connection Kit#A shell-based example setup](/index.php/JACK_Audio_Connection_Kit#A_shell-based_example_setup "JACK Audio Connection Kit").
+Общий пример настройки доступен по ссылке [JACK Audio Connection Kit#A shell-based example setup](/index.php/JACK_Audio_Connection_Kit#A_shell-based_example_setup "JACK Audio Connection Kit").
 
 ## Realtime Kernel
 
@@ -354,28 +354,28 @@ $ killall -9 $processname
 
 *   Если вы хотите узнать больше о ALSA: [http://www.volkerschatz.com/noise/alsa.html](http://www.volkerschatz.com/noise/alsa.html)
 
-## Hardware
+## Аппаратное обеспечение
 
-The majority of sound cards and audio devices will work with no extra configuration or packages, simply set the sound card jack is using to them and restart.
+Подавляющее большинство звуковых карт и аудио устройств не потребуют дополнительных настроек или пакетов для работы. Просто укажите используемое гнездо звуковой карты и перезагрузите систему.
 
-This is not true for all devices, and so special cases are also listed.
+Но это справедливо не для всех устройств, в частности для тех что перечислены ниже.
 
 ### M-Audio Delta 1010
 
-The M-Audio Delta series cards are based on the VIA Ice1712 audio chipset. Cards using this chip require that you install the alsa-tools package, because it contains the [envy24control](/index.php/Envy24control "Envy24control") program. [Envy24control](/index.php/Envy24control "Envy24control") is a hardware level mixer/controller. You *can* use alsa-mixer but you will save yourself some hassle not to try it. Note that this section has no information on MIDI setup or usage.
+Серия звуковых карт M-Audio Delta основана на аудио чипсете VIA Ice1712. Карты, основанные на этом чипе, требуют установки пакета alsa-tools, так как в нём содержится приложение [envy24control](/index.php/Envy24control "Envy24control"). [Envy24control](/index.php/Envy24control "Envy24control") - это микшер/контроллер аппаратного уровня. Вы *можете* использовать alsa-mixer, но, поверьте, вы сохраните кучу нервов, если не будете пробовать этого. Обратите внимание, в этом разделе отсутствует информация о настройке или использовании MIDI.
 
-Open the mixer application:
+Запустите приложение-микшер:
 
 ```
 $ envy24control
 
 ```
 
-This application can be more than a bit confusing; see [envy24control](/index.php/Envy24control "Envy24control") for guidance on its use. That said, here is a very simple working setup for multitracking with Ardour.
+Это приложение может показаться очень запутанным; смотрите [envy24control](/index.php/Envy24control "Envy24control") для объяснения по работе с ним. Тем не менее, ниже приведёна очень простая работающая конфигурация для мультитрекинга с Ardour.
 
-1.  On the "Monitor Inputs" and "Monitor PCMs" tabs, set all monitor inputs and monitor PCM's to around 20.
-2.  On the "Patchbay / Router" tab, set all to PCM out.
-3.  On the "Hardware Settings" tab, verify that the Master Clock setting matches what is set in Qjackctl. If these do not match you will have xruns out of control!
+1.  На вкладках "Monitor Inputs" и "Monitor PCMs" установите значение 20 для всех контролируемых входов и PCM's.
+2.  На вкладке "Patchbay / Router" для всех значений выберите выход PCM.
+3.  На вкладке "Hardware Settings" убедитесь, что настройки Master Clock совпадают с настройками Qjackctl. Если это не так, то ваш xruns не контролируется!
 
 ### M-Audio Fast Track Pro
 
@@ -503,9 +503,9 @@ Volume levels are hardware and routing can be done through QjackCtl, even with m
 
 ### PreSonus AudioBox USB
 
-1.  Startup: It is called "USB" by ALSA.
-2.  Specs: Two mono TRS+XLR in, two mono TRS out, MIDI in and out, plus separate stereo headphone jack. Knob controls for both inputs, for main out, and for headphone, four in all.
-3.  Hardware: Works very well, audio and MIDI too. No software mixer controls at all.
+1.  Startup: ALSA именует устройство как "USB".
+2.  Specs: Два моно входа TRS+XLR, два моно выхода TRS, MIDI вход и выход, плюс отдельный стерео канал для наушников. Присутствуют регуляторы для управления обоими входами, основным выходом, и для наушников, всего четыре.
+3.  Hardware: Работает очень хорошо, и аудио и MIDI. Не управляется программным микшером.
 
 ### Tascam US-122
 

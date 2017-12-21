@@ -1,16 +1,13 @@
-From [OpenConnect](http://www.infradead.org/openconnect.html):
-
-	OpenConnect is a client for Cisco's AnyConnect SSL VPN, which is supported by the ASA5500 Series, by IOS 12.4(9)T or later on Cisco SR500, 870, 880, 1800, 2800, 3800, 7200 Series and Cisco 7301 Routers, and probably others.
+[OpenConnect](http://www.infradead.org/openconnect.html) is a client for Cisco's [AnyConnect SSL VPN](https://www.cisco.com/go/asm) and Pulse Secure's [Pulse Connect Secure](/index.php/Pulse_Connect_Secure "Pulse Connect Secure").
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
-    *   [2.1 NetworkManager](#NetworkManager)
-    *   [2.2 Command Line](#Command_Line)
-        *   [2.2.1 Juniper Pulse Client](#Juniper_Pulse_Client)
-    *   [2.3 Integration in netctl](#Integration_in_netctl)
-*   [3 See also](#See_also)
+    *   [2.1 Juniper Pulse Client](#Juniper_Pulse_Client)
+*   [3 Integration](#Integration)
+    *   [3.1 NetworkManager](#NetworkManager)
+    *   [3.2 netctl](#netctl)
 
 ## Installation
 
@@ -18,27 +15,17 @@ From [OpenConnect](http://www.infradead.org/openconnect.html):
 
 ## Usage
 
-OpenConnect can be used with NetworkManager, or manually via the command line.
-
-### NetworkManager
-
-[Install](/index.php/Install "Install") the [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect) package. Then configure and connect with *nm-applet* (network manager's tray icon utility from [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet)) or similar utility. After installation, [restart](/index.php/Restart "Restart") the `NetworkManager.service`.
-
-See [NetworkManager](/index.php/NetworkManager "NetworkManager") for details.
-
-### Command Line
-
-Simply run openconnect as root and enter your username and password when prompted:
+See [openconnect(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/openconnect.8). Simply run openconnect as root and enter your username and password when prompted:
 
 ```
 # openconnect *vpnserver*
 
 ```
 
-More advanced invocation with username and password:
+More advanced invocation with username and password. Input the password after running the command.
 
 ```
-# echo -n *password* | openconnect -u *user* --passwd-on-stdin *vpnserver*
+# openconnect -u *user* --passwd-on-stdin *vpnserver*
 
 ```
 
@@ -51,27 +38,24 @@ Often VPN provider are offering different authentication groups for different ac
 
 #### Juniper Pulse Client
 
-Here is an example of how to connect to a Juniper Pulse Secure Pulse Client. Only Openconnect version 7.06 and higher are compatible.
-
-The --no-cert-check switch is no longer compatible with Openconnect 7.06 and higher.
-
-Run this command below to get your ssl cert SHA1.
+In order to connect to a [Pulse Connect Secure](/index.php/Pulse_Connect_Secure "Pulse Connect Secure") server you need to know the SHA-1 of its certificate.
 
 ```
-# openconnect --servercert=sha1: --authgroup="single-Factor Pulse Clients" --protocol=nc <VPN_SERVER_ADDRESS>/dana-na/auth/url_6/welcome.cgi --pid-file="/var/run/work-vpn.pid" --user=<USER_NAME>
+# openconnect --servercert=sha1:<HASH> --authgroup="single-Factor Pulse Clients" --protocol=nc <VPN_SERVER_ADDRESS>/dana-na/auth/url_6/welcome.cgi --pid-file="/var/run/work-vpn.pid" --user=<USERNAME>
 
 ```
 
-It should return something like this: `# Server SSL certificate didn't match: sha1:8cde39f3bf9d770cb7d1f2379e86384ff12932bb`. Copy this into the comnmand below.
+## Integration
 
-```
-# openconnect --servercert=sha1:<SHA1_OF_THE_SSL_CERT_FROM_ABOVE> --authgroup="single-Factor Pulse Clients" --protocol=nc <VPN_SERVER_ADDRESS>/dana-na/auth/url_6/welcome.cgi --pid-file="/var/run/work-vpn.pid" --user=<YOU_USERNAME_HERE>
+### NetworkManager
 
-```
+[Install](/index.php/Install "Install") the [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect) package. Then configure and connect with *nm-applet* (network manager's tray icon utility from [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet)) or similar utility. After installation, [restart](/index.php/Restart "Restart") the `NetworkManager.service`.
 
-### Integration in netctl
+See [NetworkManager](/index.php/NetworkManager "NetworkManager") for details.
 
-A simple <tt>tuntap</tt> netctl.profile(5) can be used to integrate OpenConnect in the normal [Netctl](/index.php/Netctl "Netctl") workflow. For example:
+### netctl
+
+A simple `tuntap` netctl.profile(5) can be used to integrate OpenConnect in the normal [Netctl](/index.php/Netctl "Netctl") workflow. For example:
 
  `/etc/netctl/vpn` 
 ```
@@ -118,7 +102,3 @@ PASSWORD="`su ${LOCAL_USERNAME} -c "DISPLAY=${DISPLAY} pass ${REMOTE_USERNAME}" 
 ```
 
 Adjust the `DISPLAY` variable as necessary.
-
-## See also
-
-*   [OpenConnect](http://www.infradead.org/openconnect.html)

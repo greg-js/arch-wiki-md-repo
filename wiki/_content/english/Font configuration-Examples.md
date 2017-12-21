@@ -12,9 +12,8 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 *   [6 Default fonts](#Default_fonts)
     *   [6.1 Japanese](#Japanese)
     *   [6.2 Chinese](#Chinese)
-*   [7 System-wide Noto Emoji fonts](#System-wide_Noto_Emoji_fonts)
-*   [8 Patched packages](#Patched_packages)
-*   [9 See also](#See_also)
+*   [7 Patched packages](#Patched_packages)
+*   [8 See also](#See_also)
 
 ## Hinted fonts
 
@@ -388,55 +387,6 @@ or
 
 ```
 
-## System-wide Noto Emoji fonts
-
-**Note:** This example configuration enables Noto Emoji fonts to be used with [GNOME](/index.php/GNOME "GNOME") and [Chromium](/index.php/Chromium "Chromium").
-Firefox excluded due to [multiple font configuration bugs](https://bugzilla.mozilla.org/buglist.cgi?quicksearch=fontconfig).
-
-[Install](/index.php/Install "Install") the [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) package. It provides color emoji font and sample configuration file.
-
-Enable substitution for common color emoji fonts to Noto Color Emoji font:
-
- `# ln -s /etc/fonts/conf.avail/66-noto-color-emoji.conf /etc/fonts/conf.d/` 
-
-Enable Noto Color Emoji as fallback for primary font families:
-
- `/etc/fonts/local.conf` 
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-  <match>
-    <test name="family">
-      <string>serif</string>
-    </test>
-    <edit name="family" mode="prepend" binding="weak">
-      <string>Noto Color Emoji</string>
-    </edit>
-  </match>
-
-  <match>
-    <test name="family">
-      <string>sans-serif</string>
-    </test>
-    <edit name="family" mode="prepend" binding="weak">
-      <string>Noto Color Emoji</string>
-    </edit>
-  </match>
-
-  <match>
-    <test name="family">
-      <string>monospace</string>
-    </test>
-    <edit name="family" mode="prepend" binding="weak">
-      <string>Noto Color Emoji</string>
-    </edit>
-  </match>
-</fontconfig>
-```
-
-Change Default, Serif and Sans-serif fonts in Chromium to font that does not contain emoji (not DejaVu) otherwise some emoji will look like text.
-
 ## Patched packages
 
 **Warning:** AUR packages are maintained separately from applications in the [official repositories](/index.php/Official_repositories "Official repositories"). The whole graphical system can become inoperable, if the user-installed core graphical libraries become incompatible.
@@ -456,4 +406,3 @@ To restore the original packages, reinstall [freetype2](https://www.archlinux.or
 ## See also
 
 *   [Gentoo forums](http://forums.gentoo.org/viewtopic-p-7273876.html#7273876)
-*   [Infinality fontconfig](https://github.com/bohoomil/fontconfig-ultimate)

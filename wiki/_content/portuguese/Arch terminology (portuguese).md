@@ -22,15 +22,14 @@ A intenção desta página é desmistificar os termos comumente usados pela comu
 *   [16 package](#package)
 *   [17 Package maintainer](#Package_maintainer)
 *   [18 pacman](#pacman)
-*   [19 pacman.conf](#pacman.conf)
-*   [20 PKGBUILD](#PKGBUILD)
-*   [21 repository/repo](#repository.2Frepo)
-*   [22 RTFM](#RTFM)
-*   [23 testing/[testing]](#testing.2F.5Btesting.5D)
-*   [24 The Arch Way](#The_Arch_Way)
-*   [25 TU, Trusted User](#TU.2C_Trusted_User)
-*   [26 udev](#udev)
-*   [27 wiki](#wiki)
+*   [19 PKGBUILD](#PKGBUILD)
+*   [20 repository/repo](#repository.2Frepo)
+*   [21 RTFM](#RTFM)
+*   [22 testing/[testing]](#testing.2F.5Btesting.5D)
+*   [23 The Arch Way](#The_Arch_Way)
+*   [24 TU, Trusted User](#TU.2C_Trusted_User)
+*   [25 udev](#udev)
+*   [26 wiki](#wiki)
 
 ## ABS
 
@@ -150,10 +149,6 @@ O [gerenciador de pacotes](https://en.wikipedia.org/wiki/pt:sistema_gestor_de_pa
 
 Note: Pacman foi escrito por Judd Vinet, o criador do Arch Linux. Ele é usado como uma ferramenta de gerenciamento de pacote por outras distribuições também, tal como FrugalWare, Rubix, UfficioZero (na Itália, baseado no Ubuntu) e, é claro, [distribuições baseada no Arch](/index.php/Arch_based_distributions "Arch based distributions"), tal como Archie e AEGIS.
 
-## pacman.conf
-
-Esse é o arquivo de configuração do [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"). Ele está localizado no `/etc`. Para uma explicação completa de seus poderes, digite isso na linha de comando: `man pacman.conf`.
-
 ## PKGBUILD
 
 [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") são pequenos scripts que são usados para compilar pacotes do Arch Linux. Veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes") para mais detalhes.
@@ -199,7 +194,7 @@ Os Trusted Users seguem as [AUR Trusted User Guidelines (Português)](/index.php
 
 Geralmente o udev é executado como udevd(8) e recebe *uevents* diretamente do kernel se um dispositivo é adicionado/removido do sistema.
 
-Se o udev recebe um evento de dispositivo, ele compara suas regras configuradas com os atributos do dispositivo disponível fornecidos no sysfs para identificar o dispositivo. Regras que corresponderem podem fornecer informações adicionais do dispositivo ou especificar um nome de nó de dispositivo e múltiplos nomes de *symlink* e instruir udev a executar programas adicionais como parte da manipulação de evento do dispositivo.
+Se o udev recebe um evento de dispositivo, ele compara suas regras configuradas com os atributos do dispositivo disponível fornecidos no [sysfs](https://en.wikipedia.org/wiki/pt:sysfs "wikipedia:pt:sysfs") para identificar o dispositivo. Regras que corresponderem podem fornecer informações adicionais do dispositivo ou especificar um nome de nó de dispositivo e múltiplos nomes de *symlink* e instruir udev a executar programas adicionais como parte da manipulação de evento do dispositivo.
 
 ## [wiki](https://en.wikipedia.org/wiki/pt:Wiki "wikipedia:pt:Wiki")
 

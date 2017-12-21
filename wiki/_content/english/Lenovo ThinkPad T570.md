@@ -7,10 +7,9 @@ Related articles
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 CPU](#CPU)
+    *   [2.1 BIOS Update](#BIOS_Update)
     *   [2.2 Bumblebee](#Bumblebee)
     *   [2.3 Bluetooth](#Bluetooth)
-    *   [2.4 Poweroff](#Poweroff)
 
 ## Installation
 
@@ -18,9 +17,9 @@ Use the [Installation](/index.php/Installation "Installation") guide. Make sure 
 
 ## Configuration
 
-### CPU
+### BIOS Update
 
-Install [this BIOS update](http://pcsupport.lenovo.com/de/de/downloads/ds120370) (or a newer one) to fix a [serious bug concerning hyperthreading](https://lists.debian.org/debian-devel/2017/06/msg00308.html).
+Install [this BIOS update](https://support.lenovo.com/de/en/downloads/ds120370) (or a newer one) to fix a [serious bug concerning hyperthreading](https://lists.debian.org/debian-devel/2017/06/msg00308.html) and issues with thunderbolt [[1]](https://forums.lenovo.com/t5/ThinkPad-T400-T500-and-newer-T/ThinkPad-T470s-BIOS-bug-WOL-and-Thunderbolt-3/m-p/3707059) [[2]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1708043/) , which can affect you even if you don't use thunderbolt. [[3]](https://github.com/linrunner/TLP/issues/308) See [Flashing_BIOS_from_Linux](/index.php/Flashing_BIOS_from_Linux "Flashing BIOS from Linux") for details on how to install the BIOS without an optical drive; the [geteltorito](https://aur.archlinux.org/packages/geteltorito/) method is known to work on the T570.
 
 ### Bumblebee
 
@@ -28,8 +27,4 @@ Install [this BIOS update](http://pcsupport.lenovo.com/de/de/downloads/ds120370)
 
 ### Bluetooth
 
-If you have a very weak bluetooth signal when using wifi, [set the module option](/index.php/Kernel_modules#Setting_module_options "Kernel modules") `bt_coex_active=0` of the `iwlwifi` module. See [https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1721271](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1721271) for more information.
-
-### Poweroff
-
-Poweroff after shutdown does not work reliably. No workaround is known.
+If you have a very weak bluetooth signal when using wifi, make sure you have a recent [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware). See [https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1721271](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1721271) for more information.

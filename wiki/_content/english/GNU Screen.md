@@ -308,4 +308,4 @@ add following to ~/.screenrc
 *   [Arch Forums - Regarding 256 color issue with urxvt](https://bbs.archlinux.org/viewtopic.php?id=50647)
 *   [Arch Forums - .screenrc configs with screenshots](https://bbs.archlinux.org/viewtopic.php?id=55618)
 *   [Ratpoison - A window manager based on gnu screen](/index.php/Ratpoison "Ratpoison")
-*   [Xpra - An utility to detach/reattach X programs, in a way similar as screen does for command line based programs](/index.php/Xpra "Xpra")
+*   [Xpra - A utility to detach/reattach X programs, in a way similar as screen does for command line based programs](/index.php/Xpra "Xpra")

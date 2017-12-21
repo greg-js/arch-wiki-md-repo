@@ -41,6 +41,10 @@ This article explains different methods to take [screenshots](https://en.wikiped
 
 	[https://github.com/Roger/escrotum](https://github.com/Roger/escrotum) || [escrotum-git](https://aur.archlinux.org/packages/escrotum-git/)
 
+*   **Flameshot** — QT5 based software for interactive screenshot taking. Select the desired area, draw with different tools and enjoy the customization capabilities.
+
+	[https://github.com/lupoDharkael/flameshot](https://github.com/lupoDharkael/flameshot) || [flameshot](https://aur.archlinux.org/packages/flameshot/)
+
 *   **gnome-screenshot** — Despite its name its dependencies are only dconf, gtk3, and libcanberra.
 
 	[http://gnome.org](http://gnome.org) || [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot)

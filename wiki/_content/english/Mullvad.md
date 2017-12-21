@@ -1,4 +1,4 @@
-Mullvad is a VPN service based in Sweden which operates on [OpenVPN](/index.php/OpenVPN "OpenVPN") servers. They provide their own [GUI client](https://mullvad.net/download/) available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") as [mullvad](https://aur.archlinux.org/packages/mullvad/), but it can also be used with a configuration file for OpenVPN as explained in this article.
+[Mullvad](https://mullvad.net/en/) is a VPN service based in Sweden which operates on [OpenVPN](/index.php/OpenVPN "OpenVPN") servers. They provide their own [GUI client](https://mullvad.net/download/) available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") as [mullvad](https://aur.archlinux.org/packages/mullvad/), but it can also be used with a configuration file for OpenVPN as explained in this article.
 
 ## Configuring OpenVPN
 

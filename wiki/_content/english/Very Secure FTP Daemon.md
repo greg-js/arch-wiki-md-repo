@@ -199,7 +199,7 @@ First, you need a *X.509 SSL/TLS* certificate to use TLS. If you do not have one
 
 ```
 
-You will be asked questions about your company, etc. As your certificate is not a trusted one, it does not really matter what is filled in, it will be used for encryption. To use a trusted certificate, you can get one from a certificate authority like [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt").
+You will be asked questions about your company, etc. As your certificate is not a trusted one, it does not really matter what is filled in, it will just be used for encryption. To use a trusted certificate, you can get one from a certificate authority like [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt").
 
 Then, edit the configuration file:
 
@@ -243,7 +243,12 @@ pasv_address=*yourdomain.org*
 
 ### Port configurations
 
-For FTP servers that are exposed to the web, to reduce the likelihood of the server being attacked, the listening port can be changed to something other than the standard port 21\. To limit the passive mode ports to open ports, a range can be provided. These port configurations changes can be done using the following lines:
+It may be necessary to adjust the default FTP listening port and the passive mode data ports:
+
+*   For FTP servers exposed to the web, to reduce the likelihood of the server being attacked, the listening port can be changed to something other than the standard port 21\.
+*   To limit the passive mode ports to open ports, a range can be provided.
+
+The ports can be defined in the configuration file as illustrated below:
 
  `/etc/vsftpd.conf` 
 ```
@@ -444,7 +449,7 @@ vsftpd tries to display plain-text error messages in the SSL session. In order t
 
 ### vsftpd.service fails to run on boot
 
-If you have enabled the vsftpd service and it fails to run on boot, make sure it is set to load after network.target in the service file:
+If you have enabled `vsftpd.service` and it fails to run on boot, make sure it is set to load after `network.target` in the service file:
 
  `/usr/lib/systemd/system/vsftpd.service` 
 ```

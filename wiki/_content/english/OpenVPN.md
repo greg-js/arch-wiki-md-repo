@@ -65,7 +65,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 
 ## Install OpenVPN
 
-[Install](/index.php/Install "Install") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package, which supports both server and client mode.
+[Install](/index.php/Install "Install") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package, which provides both server and client mode.
 
 ## Kernel configuration
 
@@ -85,16 +85,20 @@ Read [Kernel modules](/index.php/Kernel_modules "Kernel modules") for more infor
 
 To connect to a VPN service provided by a third party, most of the following can most likely be ignored, especially regarding server setup. Begin with [#The client config profile](#The_client_config_profile) and skip ahead to [#Starting OpenVPN](#Starting_OpenVPN) after that. One should use the provider certificates and instructions, see [Category:VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") for examples that can be adapted to other providers. [OpenVPN (client) in Linux containers](/index.php/OpenVPN_(client)_in_Linux_containers "OpenVPN (client) in Linux containers") also has general applicable instructions, while it goes a step further by isolating an OpenVPN client process into a container.
 
-**Note:** Most free VPN providers will (often only) offer [PPTP](/index.php/PPTP_server "PPTP server"), which is drastically easier to setup and configure, but is [not secure](http://poptop.sourceforge.net/dox/protocol-security.phtml).
+**Note:** Most free VPN providers will (often only) offer [PPTP](/index.php/PPTP_server "PPTP server"), which is drastically easier to setup and configure, but [not secure](http://poptop.sourceforge.net/dox/protocol-security.phtml).
 
 ## Create a Public Key Infrastructure (PKI) from scratch
 
 When setting up an OpenVPN server, users need to create a [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure") which is detailed in the [Easy-RSA](/index.php/Easy-RSA "Easy-RSA") article. Once the needed certificates, private keys, and associated files are created via following the steps in the separate article, one should have 5 files in `/etc/openvpn/server` at this point:
 
-*   `/etc/openvpn/server/ca.crt`
-*   `/etc/openvpn/server/dh.pem`
-*   `/etc/openvpn/server/servername.crt` and `/etc/openvpn/server/servername.key`
-*   `/etc/openvpn/server/ta.key`
+```
+ca.crt
+dh.pem
+servername.crt
+servername.key
+ta.key
+
+```
 
 Alternatively, as of OpenVPN 2.4, one can use Easy-RSA to generate certificates and keys using elliptic curves. See the OpenVPN documentation for details.
 
@@ -102,7 +106,7 @@ Alternatively, as of OpenVPN 2.4, one can use Easy-RSA to generate certificates 
 
 **Note:** Unless otherwise explicitly stated, the rest of this article assumes a basic L3 IP routing configuration.
 
-OpenVPN is an extremely versatile piece of software and many configurations are possible, in fact machines can be both "servers" and "clients", blurring the distinction between server and client.
+OpenVPN is an extremely versatile piece of software and many configurations are possible, in fact machines can be both servers and clients.
 
 With the release of v2.4, server configurations are stored in `/etc/openvpn/server` and client configurations are stored in `/etc/openvpn/client` and each mode has its own respective systemd unit, namely, `openvpn-client@.service` and `openvpn-server@.service`.
 
@@ -112,21 +116,16 @@ The OpenVPN package comes with a collection of example configuration files for d
 
 *   Uses [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure") for authentication.
 *   Creates a VPN using a virtual TUN network interface (OSI L3 IP routing).
-*   Listens for client connections on UDP port 1194 (OpenVPN's [official IANA port number](https://en.wikipedia.org/wiki/Port_number "wikipedia:Port number")).
+*   Listens for client connections on UDP port 1194 (OpenVPN's official IANA port number[[1]](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=openvpn)).
 *   Distributes virtual addresses to connecting clients from the 10.8.0.0/24 subnet.
 
-For more advanced configurations, please see the official [OpenVPN 2.4 man page](https://community.openvpn.net/openvpn/wiki/Openvpn24ManPage) and the [OpenVPN documentation](http://openvpn.net/index.php/open-source/documentation).
+For more advanced configurations, please see the [openvpn(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/openvpn.8) man page and the [OpenVPN documentation](http://openvpn.net/index.php/open-source/documentation).
 
 ### The server configuration file
 
 **Note:** Note that if the server is behind a firewall or a NAT translating router, the OpenVPN port must be forward on to the server.
 
-Copy the example server configuration file to `/etc/openvpn/server/server.conf`:
-
-```
-# cp /usr/share/openvpn/examples/server.conf /etc/openvpn/server/server.conf
-
-```
+Copy the example server configuration file `/usr/share/openvpn/examples/server.conf` to `/etc/openvpn/server/server.conf`.
 
 Edit the file making a minimum of the following changes:
 
@@ -194,16 +193,11 @@ UDP
 *   Less reliable than TCP as no error correction is in use.
 *   Potentially faster than TCP.
 
-**Note:** It is generally a bad idea to use TCP for VPN unless your connection to the server is very stable. High reliability sounds great in theory but any disruption (packet drop, lag spikes, etc...) to the connection will potentially snowball into a [TCP Meltdown](http://sites.inka.de/bigred/devel/tcp-tcp.html)[[1]](http://adsabs.harvard.edu/abs/2005SPIE.6011..138H).
+**Note:** It is generally a bad idea to use TCP for VPN unless your connection to the server is very stable. High reliability sounds great in theory but any disruption (packet drop, lag spikes, etc...) to the connection will potentially snowball into a [TCP Meltdown](http://sites.inka.de/bigred/devel/tcp-tcp.html)[[2]](http://adsabs.harvard.edu/abs/2005SPIE.6011..138H).
 
 ### The client config profile
 
-Copy the example client configuration file to `/etc/openvpn/client/client.conf`:
-
-```
-# cp /usr/share/openvpn/examples/client.conf /etc/openvpn/client/client.conf
-
-```
+Copy the example client configuration file `/usr/share/openvpn/examples/client.conf` to `/etc/openvpn/client/`.
 
 Edit the following:
 
@@ -471,13 +465,13 @@ See [NetworkManager#Network services with NetworkManager dispatcher](/index.php/
 
 ### Gnome configuration
 
-If you would like to connect a client to an OpenVPN server through Gnome's built-in network configuration do the following. First, install `networkmanager-openvpn`. Then go to the Settings menu and choose Network. Click the plus sign to add a new connection and choose VPN. From there you can choose OpenVPN and manually enter the settings. You can also choose to import [#The client configuration file](#The_client_configuration_file), if you have already created one. Yet, be aware NetworkManager does not show error messages for options it does not import. To connect to the VPN simply turn the connection on and check the options are applied as you configured (e.g. via `journalctl -b -u NetworkManager`).
+If you would like to connect a client to an OpenVPN server through Gnome's built-in network configuration do the following. First, install [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn). Then go to the Settings menu and choose Network. Click the plus sign to add a new connection and choose VPN. From there you can choose OpenVPN and manually enter the settings. You can also choose to import [#The client configuration file](#The_client_configuration_file), if you have already created one. Yet, be aware NetworkManager does not show error messages for options it does not import. To connect to the VPN simply turn the connection on and check the options are applied as you configured (e.g. via `journalctl -b -u NetworkManager`).
 
 ## Routing all client traffic through the server
 
 **Note:** There are potential pitfalls when routing all traffic through a VPN server. Refer to [the OpenVPN documentation on this topic](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) for more information.
 
-By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server/server.conf`) [[2]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
+By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server/server.conf`) [[3]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
 
 ```
 push "redirect-gateway def1 bypass-dhcp"
@@ -538,14 +532,14 @@ Lastly, reload UFW:
 
 #### iptables
 
-In order to allow VPN traffic through your iptables firewall of your server, first create an iptables rule for NAT forwarding [[3]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
+In order to allow VPN traffic through your iptables firewall of your server, first create an iptables rule for NAT forwarding [[4]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
 
 ```
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
 ```
 
-If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[4]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
+If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[5]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
 
 **Warning:** There are security implications for the following rules if you do not trust all clients which connect to the server. Refer to the [OpenVPN documentation on this topic](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn) for more details.
 
@@ -590,9 +584,9 @@ Be sure to set up a script to restart OpenVPN if it goes down if you do not want
 
 ```
 
-**Warning:** DNS **will not** work **unless** you run your own dns server like [BIND](/index.php/BIND "BIND")
+**Warning:** DNS **will not** work **unless** you run your own DNS server like [BIND](/index.php/BIND "BIND")
 
-Otherwise, you will need to allow dns leak. **Be sure to trust your dns server!**
+Otherwise, you will need to allow dns leak. **Be sure to trust your DNS server!**
 
 ```
  # DNS

@@ -20,7 +20,7 @@ A test of pacman vs. powerpill on one system revealed a 4x speed up in the above
 
 ## Configuration
 
-Powerpill has a single configure file `/etc/powerpill/powerpill.json` you can edit to your liking. Refer to the *powerpill.json* man page for details.
+Powerpill has a single configure file `/etc/powerpill/powerpill.json` you can edit to your liking. Refer to the [powerpill.json(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/powerpill.json.1) man page for details.
 
 ## Using Reflector
 
@@ -28,25 +28,25 @@ By default, Powerpill is configured to use [Reflector](/index.php/Reflector "Ref
 
 ## Using rsync
 
-[Rsync](/index.php/Rsync "Rsync") support is available for some mirrors. When enabled, database synchronizations (`pacman -Sy`) and other operations may be much faster because a single connection is used. The *rsync* protocol itself also speeds up update checks and sometimes file transfers.
+[Rsync](/index.php/Rsync "Rsync") support is available for some mirrors. When enabled, database synchronizations (`pacman -Sy`) and other operations may be much faster because a single connection is used. The rsync protocol itself also speeds up update checks and sometimes file transfers.
 
-To find a suitable mirror with *rsync* support, use *reflector*:
+To find a suitable mirror with rsync support, use `reflector`:
 
 ```
 $ reflector -p rsync
 
 ```
 
-Alternatively, you can use this to filter the fastest *n* number of servers (option `-f`) as well as the *m* number of most recently updated servers (option `-l`):
+Alternatively, you can find the `*n*` fastest servers with the flag `-f *n*`, and the as the `*m*` with the flag `-l *m'*`*:*
 
 ```
 $ reflector -p rsync -f *n* -l *m*
 
 ```
 
-Select the mirror(s) you want to use. The `-c` option may also be used to filter by your nationality (`reflector --list-countries` to see a complete list, use quotes around the name, and this is case-sensitive!). Once done, edit `/etc/powerpill/powerpill.json`, scroll down to the *rsync* section, and add as many servers as you would like to the server field.
+Select the mirror(s) you want to use. The `-c` option may also be used to filter by your nationality (`reflector --list-countries` to see a complete list, use quotes around the name, and this is case-sensitive!). Once done, edit `/etc/powerpill/powerpill.json`, scroll down to the `rsync` section, and add as many servers as you would like to the server field.
 
-After that, all official database and packages will be downloaded from the *rsync* server whenever possible.
+After that, all official database and packages will be downloaded from the rsync server whenever possible.
 
 ## Basic usage
 
