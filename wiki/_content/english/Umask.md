@@ -68,7 +68,7 @@ When the `-S` option, standardized by POSIX, is used, the mask will be displayed
 
 You can set the umask value through the *umask* command. The string specifying the mode mask follows the same syntactic rules as the mode argument of [chmod](/index.php/Chmod "Chmod") (see the [POSIX Programmer's Manual](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/chmod.html#tag_20_17_13) for details).
 
-System-wide umask value can be set in `/etc/profile` or in the default [shell](/index.php/Shell "Shell") configuration files, e.g. `/etc/bash.bashrc`. Most Linux distributions, including Arch [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/profile?h=packages/filesystem) set a default value of `022`.
+System-wide umask value can be set in `/etc/profile` or in the default [shell](/index.php/Shell "Shell") configuration files, e.g. `/etc/bash.bashrc`. Most Linux distributions, including Arch [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/profile?h=packages/filesystem) set a default value of `022`. You can also set umask with `pam_umask.so` but it may be overridden by `/etc/profile` or similar.
 
 If you need to set a different value, you can either directly edit such file, thus affecting all users, or call `umask` from your shell's user configuration file, e.g. `~/.bashrc` to only change your umask, however these changes will only take effect after the next login. To change your umask during your current session only, simply run `umask` and type your desired value. For example, running `umask 077` will give you read and write permissions for new files, and read, write and execute permissions for new folders.
 

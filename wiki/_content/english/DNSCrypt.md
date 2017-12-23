@@ -181,7 +181,7 @@ PrivateDevices=true
 MemoryDenyWriteExecute=true
 NoNewPrivileges=true
 RestrictRealtime=true
-RestrictAddressFamilies=AF_INET
+RestrictAddressFamilies=AF_INET AF_INET6
 SystemCallArchitectures=native
 SystemCallFilter=~@clock @cpu-emulation @debug @keyring @ipc @module @mount @obsolete @raw-io
 

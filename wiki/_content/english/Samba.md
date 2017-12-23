@@ -807,7 +807,7 @@ To fix it, enable usershare as described in [#Creating usershare path](#Creating
 
 ### "Browsing" network fails with "Failed to retrieve share list from server"
 
-And you are using a firewall (iptables) because you do not trust your local (school, university, hotel) local network. This may be due to the following: When the smbclient is browsing the local network it sends out a broadcast request on udp port 137\. The servers on the network then reply to your client but as the source address of this reply is different from the destination address iptables saw when sending the request for the listing out, iptables will not recognize the reply as being "ESTABLISHED" or "RELATED", and hence the packet is dropped. A possible solution is to add:
+And you are using a firewall (iptables) because you do not trust your local (school, university, hotel) network. This may be due to the following: When the smbclient is browsing the local network it sends out a broadcast request on udp port 137\. The servers on the network then reply to your client but as the source address of this reply is different from the destination address iptables saw when sending the request for the listing out, iptables will not recognize the reply as being "ESTABLISHED" or "RELATED", and hence the packet is dropped. A possible solution is to add:
 ```
 iptables -t raw -A OUTPUT -p udp -m udp --dport 137 -j CT --helper netbios-ns
 

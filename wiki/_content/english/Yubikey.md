@@ -181,7 +181,7 @@ When you plug in your YubiKey one, connection mode will be chosen. The order of 
 
 #### How do I read the enabled (activated) modes ?
 
-`ykman mode` will tell you what modes are currently actiavted/enabled/available. This could output something like
+`ykman mode` will tell you what modes are currently activated/enabled/available. This could output something like
 
  `Current connection mode is: OTP+U2F+CCID` 
 
@@ -189,7 +189,7 @@ Meaning that currently the OTP, U2F and CCID subsystem of the key are enabled .
 
 #### How do I set the enabled (activated) modes ?
 
-`ykman mode <MODE>` will allow you to define which modes should be actiavted/enabled/available.
+`ykman mode <MODE>` will allow you to define which modes should be activated/enabled/available.
 
 *   `<MODE>` can be a string, such as "OTP+U2F+CCID", or a shortened form "o+u+c".
     With "+" you can combine multiple modes that you wish to be enabled.
@@ -232,7 +232,7 @@ There are several flags that can be set during the configuration of the slots. T
 
 ### The LED
 
-The YubiKey has a small green LED able to communicate with you. It's message to you actually depends on the currently used [USB connection mode](#The_.28USB_Connection.2FTransport.29_Modes_of_the_YubiKey) of your YubiKey.
+The YubiKey has a small green LED able to communicate with you. Its message to you actually depends on the currently used [USB connection mode](#The_.28USB_Connection.2FTransport.29_Modes_of_the_YubiKey) of your YubiKey.
 
 The possible messages are:
 

@@ -1,4 +1,4 @@
-[OpenConnect](http://www.infradead.org/openconnect.html) is a client for Cisco's [AnyConnect SSL VPN](https://www.cisco.com/go/asm) and Pulse Secure's [Pulse Connect Secure](/index.php/Pulse_Connect_Secure "Pulse Connect Secure").
+[OpenConnect](http://www.infradead.org/openconnect/) is a client for Cisco's [AnyConnect SSL VPN](https://www.cisco.com/go/asm) and Pulse Secure's [Pulse Connect Secure](/index.php/Pulse_Connect_Secure "Pulse Connect Secure").
 
 ## Contents
 

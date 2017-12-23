@@ -112,7 +112,7 @@ other_not_secret: othervalue
 
 Ansible has a [pacman module](http://docs.ansible.com/ansible/latest/pacman_module.html) to handle installation, removal and system upgrades.
 
-For the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), unofficial modules, like [ansible-aur](https://github.com/cdown/ansible-aur), are available on GitHub.
+For the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), unofficial modules are available on GitHub, like [ansible-aur](https://github.com/kewlfft/ansible-aur).
 
 ## Tips and tricks
 

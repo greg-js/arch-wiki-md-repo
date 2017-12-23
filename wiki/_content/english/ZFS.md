@@ -547,9 +547,12 @@ Type=oneshot
 RemainAfterExit=yes
 ExecStart=/usr/bin/bash -c '/usr/bin/zfs load-key zpool/%i <<< $(systemd-ask-password "Encrypted storage password (%i): ")'
 
+[Install]
+WantedBy=zfs-mount.service
+
 ```
 
-and enable a service instance for each encrypted volume: `# systemctl enable zfs-key@zpool/dataset`.
+and enable a service instance for each encrypted volume: `# systemctl enable zfs-key@dataset`.
 
 The Before= reference to systemd-user-sessions.service ensures that systemd-ask-password is invoked before the local IO devices are handed over to the system UI
 

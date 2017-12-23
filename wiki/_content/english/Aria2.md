@@ -30,7 +30,7 @@ From the project [home page](https://aria2.github.io/):
 
 ## Installation
 
-Install [aria2](https://www.archlinux.org/packages/?name=aria2) from [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [aria2](https://www.archlinux.org/packages/?name=aria2) package.
 
 You may also want to install [aria2-systemd](https://github.com/GutenYe/systemd-units/tree/master/aria2) to use aria2 as [daemon](/index.php/Daemon "Daemon").
 

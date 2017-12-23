@@ -1,3 +1,7 @@
+Related articles
+
+*   [Default applications](/index.php/Default_applications "Default applications")
+
 **翻译状态：** 本文是英文页面 [Environment_variables](/index.php/Environment_variables "Environment variables") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-07，点击[这里](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=436138)可以查看翻译后英文页面的改动。
 
 环境变量是一个有名称的对象，包含可被其它程序使用的数据。简单的说，它是一个名称和数值对。环境变量的值可以是文件系统上所有执行程序的位置，默认的编辑器，系统本地化设置等。Linux 新用户可能觉得这种管理变量的方式有点混乱。但是环境变量提供了一种在多个程序和进程间共享配置的方式。

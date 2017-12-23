@@ -46,6 +46,7 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [3.3 Enable touchscreen gestures](#Enable_touchscreen_gestures)
     *   [3.4 Mouse click on URL bar's behavior](#Mouse_click_on_URL_bar.27s_behavior)
     *   [3.5 Set backspace's behavior](#Set_backspace.27s_behavior)
+    *   [3.6 Disable middle mouse button clipboard paste](#Disable_middle_mouse_button_clipboard_paste)
 *   [4 Miscellaneous](#Miscellaneous)
     *   [4.1 Enable additional media codecs](#Enable_additional_media_codecs)
         *   [4.1.1 Widevine and Netflix/Amazon Video](#Widevine_and_Netflix.2FAmazon_Video)
@@ -440,6 +441,10 @@ layout.word_select.stop_at_punctuation; true (default)
 ### Set backspace's behavior
 
 The backspace key performs differently in Firefox in Linux, Windows or Mac. To associate it with "back one page", set `browser.backspace_action` to `0` in `about:config`.
+
+### Disable middle mouse button clipboard paste
+
+See [Clipboard#Firefox](/index.php/Clipboard#Firefox "Clipboard").
 
 ## Miscellaneous
 

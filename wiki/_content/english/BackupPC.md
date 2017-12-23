@@ -28,11 +28,83 @@ Start the **backuppc** [systemd](/index.php/Systemd "Systemd") [daemon](/index.p
 
 ### Placing data directories on a separate partition
 
-The BackupPC pool is stored by default under `/var/lib/backuppc`, which also serves as the home directory for the backuppc user. This path can be changed via the `$Conf{TopDir`} entry in `/etc/backuppc/config.pl`. Typical reasons are that you keep your system on a fast, but expensive and small, [SSD](/index.php/SSD "SSD") and need to store the backups on a traditional hard disk, or that you want to keep the backup pool on a partition managed by an [LVM](/index.php/LVM "LVM") to be able to resize to partition according to changing demands.
+The BackupPC pool is stored by default under `/var/lib/backuppc`, which also serves as the home directory for the backuppc user. This path can be changed via the `$Conf{TopDir}` entry in `/etc/backuppc/config.pl`. Typical reasons are that you keep your system on a fast, but expensive and small, [SSD](/index.php/SSD "SSD") and need to store the backups on a traditional hard disk, or that you want to keep the backup pool on a partition managed by an [LVM](/index.php/LVM "LVM") to be able to resize to partition according to changing demands.
 
-The documentation suggests to not change the `$Conf{TopDir`} entry, but instead use symlinks. However, be careful when doing so because package upgrades for backuppc will replace symlinks for both `/var/lib/backuppc` or any of the default subdirectories `cpool`, `pc` or `pool` by empty directories **without any warning**.
+The documentation suggests to not change the `$Conf{TopDir}` entry, but instead use symlinks. However, be careful when doing so because package upgrades for backuppc will replace symlinks for both `/var/lib/backuppc` or any of the default subdirectories `cpool`, `pc` or `pool` by empty directories **without any warning**.
 
-Thus, it is recommended to either use bind mounts in [fstab](/index.php/Fstab "Fstab") instead of symlinks, or to deliberately ignore the recommendation in `/etc/backuppc/config.pl` and change `$Conf{TopDir`} nevertheless.
+Thus, it is recommended to either use bind mounts in [fstab](/index.php/Fstab "Fstab") instead of symlinks, or to deliberately ignore the recommendation in `/etc/backuppc/config.pl` and change `$Conf{TopDir}` nevertheless. Alternatively, use [pacman](/index.php/Pacman "Pacman")'s pre- and post-[transaction hooks](/index.php/Pacman#Hooks "Pacman") such as the following (remember to make the shell scripts executable by `chmod a+x /etc/pacman.d/hooks/backuppc-restore-symlinks-*.sh`):
+
+ `/etc/pacman.d/hooks/backuppc-restore-symlinks-post.hook` 
+```
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = backuppc
+
+[Action]
+Description = Restore symlinks for BackupPC pool directories
+When = PostTransaction
+Exec = /etc/pacman.d/hooks/backuppc-restore-symlinks-post.sh
+```
+ `/etc/pacman.d/hooks/backuppc-restore-symlinks-post.sh` 
+```
+#!/usr/bin/bash
+
+if [ ! -d /tmp/backuppc-symlinks-cache ]; then
+    exit 0
+fi
+
+if [ -L /tmp/backuppc-symlinks-cache/backuppc ]; then
+    rmdir /var/lib/backuppc/{cpool,pc,pool,}
+    mv /tmp/backuppc-symlinks-cache/backuppc /var/lib/
+    echo "==> Restored /var/lib/backuppc => $(readlink /var/lib/backuppc)"
+fi
+
+for dir in cpool pc pool; do
+    if [ -L /tmp/backuppc-symlinks-cache/$dir ]; then
+        rmdir /var/lib/backuppc/$dir
+        mv /tmp/backuppc-symlinks-cache/$dir /var/lib/backuppc/
+        echo "==> Restored /var/lib/backuppc/${dir} => $(readlink /var/lib/backuppc/$dir)"
+    fi
+done
+
+if [ -f /tmp/backuppc-symlinks-cache/was-running ]; then
+    echo '==> BackupPC service was stopped for upgrade.'
+    echo '==> Check the configuration and run `systemctl start backuppc.service` to restart the service.'
+    rm -f /tmp/backuppc-symlinks-cache/was-running
+fi
+
+rmdir --ignore-fail-on-non-empty /tmp/backuppc-symlinks-cache &>/dev/null
+```
+ `/etc/pacman.d/hooks/backuppc-restore-symlinks-pre.hook` 
+```
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = backuppc
+
+[Action]
+Description = Stash symlinks for BackupPC pool directories
+When = PreTransaction
+Exec = /etc/pacman.d/hooks/backuppc-restore-symlinks-pre.sh
+```
+ `/etc/pacman.d/hooks/backuppc-restore-symlinks-pre.sh` 
+```
+#!/usr/bin/bash
+
+if systemctl is-active backuppc.service &>/dev/null; then
+    systemctl stop backuppc.service
+    mkdir -p /tmp/backuppc-symlinks-cache
+    touch /tmp/backuppc-symlinks-cache/was-running
+fi
+
+for dir in /var/lib/backuppc/{cpool,pc,pool,}; do
+    if [ -L $dir ]; then
+        mkdir -p /tmp/backuppc-symlinks-cache
+        mv $dir /tmp/backuppc-symlinks-cache
+    fi
+done
+```
 
 ## Apache configuration
 
@@ -150,6 +222,8 @@ Do not forget to clear the suid bit on the original Perl script if it was set (o
 ```
 
 Keep your web server with its usual user and backup should now be able to run correctly.
+
+**Note:** Keep in mind that the fix described in this section will be overwritten at every package upgrade, resulting in the BackupPC_Admin page displaying a message similar to *Error: Wrong user: my userid is 33, instead of 126(backuppc)*. You will have to reapply the whole modification manually again to fix it.
 
 ## Alternative nginx configuration
 

@@ -105,7 +105,7 @@ Works but currently requires [Hans de Goede's patched kernel](http://hansdegoede
 
 #### Adjusting screen brightness
 
-Works but currently requires [Hans de Goede's patched kernel](http://hansdegoede.livejournal.com/17445.html).
+Works out of the box since kernel 4.14. Earlier kernels require [Hans de Goede's patched kernel](http://hansdegoede.livejournal.com/17445.html).
 
 #### Suspend/resume/waking up when opening the lid
 

@@ -23,7 +23,7 @@ To run a Vulkan application, you will need to [install](/index.php/Install "Inst
 
 *   [Intel](/index.php/Intel "Intel"): [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel)
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA"): [nvidia](https://www.archlinux.org/packages/?name=nvidia)
-*   AMD: [vulkan-radeon](https://www.archlinux.org/packages/?name=vulkan-radeon) ([radeon](/index.php/Radeon "Radeon"), [AMDGPU](/index.php/AMDGPU "AMDGPU") [[3]](https://www.phoronix.com/scan.php?page=news_item&px=RADV-Vulkan-CTS-Conformant)) or [amdgpu-pro-vulkan](https://aur.archlinux.org/packages/amdgpu-pro-vulkan/) ([AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO"))
+*   AMD: [vulkan-radeon](https://www.archlinux.org/packages/?name=vulkan-radeon) ([radeon](/index.php/Radeon "Radeon"), [AMDGPU](/index.php/AMDGPU "AMDGPU") [[3]](https://www.phoronix.com/scan.php?page=news_item&px=RADV-Vulkan-CTS-Conformant)) or [amdgpu-pro-vulkan](https://aur.archlinux.org/packages/amdgpu-pro-vulkan/) ([AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO")) or [amdvlk-git](https://aur.archlinux.org/packages/amdvlk-git/)
 
 Other drivers may be installed manually instead:
 

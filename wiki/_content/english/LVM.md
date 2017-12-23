@@ -666,8 +666,6 @@ This will deactivate the volume group and allow you to unmount the container it 
 
 Besides simple logical volumes, LVM supports snapshots, logical volume caching, thin provisioned logical volumes and RAID.
 
-**Warning:** If you use any of the aforementioned LVM features, you need to [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `lvm2-monitor.service`. Failure to do so may result in data loss. See [FS#50420](https://bugs.archlinux.org/task/50420) for details.
-
 ### Snapshots
 
 LVM allows you to take a snapshot of your system in a much more efficient way than a traditional backup. It does this efficiently by using a COW (copy-on-write) policy. The initial snapshot you take simply contains hard-links to the inodes of your actual data. So long as your data remains unchanged, the snapshot merely contains its inode pointers and not the data itself. Whenever you modify a file or directory that the snapshot points to, LVM automatically clones the data, the old copy referenced by the snapshot, and the new copy referenced by your active system. Thus, you can snapshot a system with 35GB of data using just 2GB of free space so long as you modify less than 2GB (on both the original and snapshot). In order to be able to create snapshots you need to have unallocated space in your volume group. Snapshot like any other volume will take up space in the volume group. So, if you plan to use snapshots for backing up your root partition do not allocate 100% of your volume group for root logical volume.
@@ -853,7 +851,7 @@ With a large number of snapshots, `thin_check` runs for a long enough time so th
 
 ### Delay on shutdown
 
-If you use RAID, snapshots or thin provisioning and experience a delay on shutdown, see the warning in [#Logical volume types](#Logical_volume_types).
+If you use RAID, snapshots or thin provisioning and experience a delay on shutdown, make sure `lvm2-monitor.service` is [started](/index.php/Started "Started"). See [FS#50420](https://bugs.archlinux.org/task/50420).
 
 ## See also
 

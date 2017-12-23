@@ -33,11 +33,12 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GN
     *   [3.6 Setup default monitor settings](#Setup_default_monitor_settings)
     *   [3.7 Configure X server access permission](#Configure_X_server_access_permission)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Failure to start with AMD Catalyst driver](#Failure_to_start_with_AMD_Catalyst_driver)
-    *   [4.2 Failure on logout](#Failure_on_logout)
-    *   [4.3 Rootless Xorg](#Rootless_Xorg)
-    *   [4.4 Use Xorg backend](#Use_Xorg_backend)
-    *   [4.5 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
+    *   [4.1 Failure to use proprietary NVIDIA driver](#Failure_to_use_proprietary_NVIDIA_driver)
+    *   [4.2 Failure to start with AMD Catalyst driver](#Failure_to_start_with_AMD_Catalyst_driver)
+    *   [4.3 Failure on logout](#Failure_on_logout)
+    *   [4.4 Rootless Xorg](#Rootless_Xorg)
+    *   [4.5 Use Xorg backend](#Use_Xorg_backend)
+    *   [4.6 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -477,6 +478,10 @@ For instance, to grant GDM the right to access the X server, use the following c
  `# xhost +SI:localuser:gdm` 
 
 ## Troubleshooting
+
+### Failure to use proprietary NVIDIA driver
+
+GDM uses the [Wayland](/index.php/Wayland "Wayland") backend by default which conflicts with NVIDIA driver. Turning off the Wayland backend could enable proprietary NVIDIA driver.
 
 ### Failure to start with AMD Catalyst driver
 

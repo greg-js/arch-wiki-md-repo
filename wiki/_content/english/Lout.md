@@ -42,3 +42,9 @@ $ lout  example.koi8-r.lout example.ps
 $ ps2pdf example.ps example.pdf
 
 ```
+
+## See also
+
+*   [A User's Guide to the Lout Document Formatting System](https://src.fedoraproject.org/repo/pkgs/lout/user-guide.pdf/10b5825ad7e3e9d801aab159bce41545/user-guide.pdf)
+*   [An Expert’s Guide to the Lout Document Formatting System](https://src.fedoraproject.org/repo/pkgs/lout/expert-guide.pdf/6952736ef663234ad0585ac7de29ccd6/expert-guide.pdf)
+*   [Lout on Wikipedia](https://en.wikipedia.org/wiki/Lout_(software))

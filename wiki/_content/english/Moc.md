@@ -1,9 +1,10 @@
-**M**usic **O**n **C**onsole is a lightweight music player which consists of 2 parts, a server (Moc) and a player/interface (Mocp). This is similar to [mpd](/index.php/Mpd "Mpd"), but unlike *mpd*, Moc comes with an interface. Its server does not support remote access.
+[Music On Console](https://moc.daper.net/) (MOC) is a lightweight music player which consists of 2 parts, a server (Moc) and a player/interface (Mocp). This is similar to [mpd](/index.php/Mpd "Mpd"), but unlike *mpd*, Moc comes with an interface. Its server does not support remote access.
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
+    *   [2.1 Lynx like navigation](#Lynx_like_navigation)
 *   [3 Usage](#Usage)
 *   [4 Last.fm scrobbling](#Last.fm_scrobbling)
     *   [4.1 mocp-scrobbler](#mocp-scrobbler)
@@ -17,17 +18,36 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [moc](https://www.archlinux.org/packages/?name=moc) package. The latest development version is available as [moc-svn](https://aur.archlinux.org/packages/moc-svn/). For [PulseAudio](/index.php/PulseAudio "PulseAudio") support install [moc-pulse](https://aur.archlinux.org/packages/moc-pulse/) or [moc-pulse-git](https://aur.archlinux.org/packages/moc-pulse-git/).
+[Install](/index.php/Install "Install") the [moc](https://www.archlinux.org/packages/?name=moc) package. The latest development version is available as [moc-svn](https://aur.archlinux.org/packages/moc-svn/). For [PulseAudio](/index.php/PulseAudio "PulseAudio") support install [moc-pulse](https://aur.archlinux.org/packages/moc-pulse/) or [moc-pulse-svn](https://aur.archlinux.org/packages/moc-pulse-svn/) for the development version.
 
 ## Configuration
 
-The package includes a sample configuration file at `/usr/share/doc/moc/config.example`. To configure *moc*, copy this file to `~/.moc/config` and edit it.
+Sample configuration files can be found in `/usr/share/doc/moc/`. On *mocp* first run the local `~/.moc/` directory is created. To configure, copy the examples to it and edit accordingly.
 
-Themes are stored in `/usr/share/moc/themes` which are easy to understand and make, see example_theme for instructions.
+Themes are stored in `/usr/share/moc/themes` and can be set in `~/.moc/config`. See `/usr/share/moc/themes/example_theme` for more.
 
-For instructions about customizing the keybindings, read `/usr/share/doc/moc/keymap.example`.
+To change the default key bindings, see `/usr/share/doc/moc/keymap.example`.
 
 If you want to use Moc with [OSS](/index.php/OSS "OSS") v4.1, see [OSS#MOC](/index.php/OSS#MOC "OSS").
+
+### Lynx like navigation
+
+To change directories with the arrow keys uncomment in `~/.moc/config`:
+
+```
+Keymap = keymap
+
+```
+
+Edit the following in `~/.moc/keymap`:
+
+```
+go    = ENTER RIGHT
+go_up = U LEFT
+#seek_forward  = RIGHT
+#seek_backward = LEFT
+
+```
 
 ## Usage
 

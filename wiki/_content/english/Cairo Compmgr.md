@@ -1,3 +1,8 @@
+Related articles
+
+*   [Xcompmgr](/index.php/Xcompmgr "Xcompmgr")
+*   [Xorg](/index.php/Xorg "Xorg")
+
 Cairo Composite Manager is a versatile and extensible [composite manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") which uses cairo for rendering. Plugins can be used to add some cool effects to your desktop. It's capable of, but not limited to, rendering of drop shadows, setting window transparency, menu and window animations, and applying decorations.
 
 Like [Xcompmgr](/index.php/Xcompmgr "Xcompmgr"), it does not replace an existing window manager, which makes it ideal for users of lightweight window managers, like [Openbox](/index.php/Openbox "Openbox") and [Fluxbox](/index.php/Fluxbox "Fluxbox"), who seek a more elegant desktop.

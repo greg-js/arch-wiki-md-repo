@@ -57,16 +57,6 @@ For the [SteamCMD](https://developer.valvesoftware.com/wiki/SteamCMD), a command
 
 Steam can also be installed with [Flatpak](/index.php/Flatpak "Flatpak") as `com.valvesoftware.Steam` from [Flathub](https://flathub.org/).
 
-```
-pacman -S flatpak
-
-```
-
-```
-flatpak install --from [https://flathub.org/repo/appstream/com.valvesoftware.Steam.flatpakref](https://flathub.org/repo/appstream/com.valvesoftware.Steam.flatpakref)
-
-```
-
 The Flatpak application currently does not support themes. Also you currently can't run games via `optirun`/`primusrun`, see [Issue#869](https://github.com/flatpak/flatpak/issues/869) for more details.
 
 By default Steam won't be able to access your home directory, you can run the following command to allow it, so that it behaves like on Ubuntu or SteamOS:
@@ -75,8 +65,6 @@ By default Steam won't be able to access your home directory, you can run the fo
 flatpak override com.valvesoftware.Steam --filesystem=/home/$USER
 
 ```
-
-Note: Some games don't work fully or at all. May be wise to use a flatpak steam install, as a backup way to access steam, in case an arch update prevents Steam from launching correctly.
 
 ## Usage
 
@@ -89,7 +77,7 @@ To start Steam simply run `steam`.
 
 ### Directory structure
 
-`~/.steam/` by default contains the following symlinks:
+`~/.steam` by default contains the following symlinks:
 
 ```
 bin   -> ~/.steam/bin32
@@ -110,7 +98,7 @@ Games are installed in `~/.steam/root/steamapps/common/`.
 
 To set custom launch options for a game, right-click on it in your library, select Properties and click on the Set Launch Options button.
 
-When your launch options contain `%command%` Steam will replace it with the game's launch command, otherwise Steam will prefix the launch command to your launch options. The resulting command is then run in a [Bash](/index.php/Bash "Bash") shell, allowing you to set environment variables before `%command%`.
+When your launch options contain `%command%` Steam will replace it with the game's launch command, otherwise Steam will prefix the launch command to your launch options. The resulting command is then executed in a [Bash](/index.php/Bash "Bash") shell, allowing you to set environment variables before `%command%`.
 
 ### Big Picture Mode without a window manager
 

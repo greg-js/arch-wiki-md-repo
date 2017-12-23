@@ -310,7 +310,7 @@ rEFInd is compatible with the EFI system partition created by a UEFI Windows ins
 
 ## Tools
 
-rEFInd supports running various 3rd-party tools. Tools need to be installed separately. Edit `showtools` in `refind.conf` to choose which ones to show.
+rEFInd supports running various [3rd-party tools](http://www.rodsbooks.com/refind/installing.html#addons). Tools need to be installed separately. Edit `showtools` in `refind.conf` to choose which ones to show.
 
  `*esp*/EFI/refind/refind.conf` 
 ```

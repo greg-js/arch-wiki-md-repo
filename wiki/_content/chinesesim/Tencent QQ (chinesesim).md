@@ -232,7 +232,7 @@ $ pacman -S wine wine_gecko wine-mono winetricks
 
 *   使用内建函数库
 
-打开winecfg，在函数库一项中的”新增函数库顶替“中选择添加riched20，也可也执行以下命令添加：
+打开winecfg，在函数库一项中的“新增函数库顶替”中选择添加riched20，也可也执行以下命令添加：
 
 ```
 $ winetricks riched20
@@ -314,7 +314,24 @@ $ gedit wine-fonts.reg
 
 *   文件被占用
 
-打开进程管理器，搜索tx、qq、tim等关键字，杀掉这些进程（如tim.exe、TXPlatform.exe、QQExternal.exe、QQProctect.exe等等）即可。 原因是退出tim后，某些相关进程仍然在后台运行。
+打开进程管理器，杀死 TIM.exe 进程即可。 原因是退出tim后，某些相关进程仍然在后台运行。也可以使用如下脚本来启动 TIM，它会首先查找已有的 TIM.exe 进程，杀死该进程后启动新的 TIM：
+
+ `start-tim.sh` 
+```
+#!/bin/sh
+# script to start TIM
+# kill TIM before start TIM
+for pid in `pgrep TIM.exe`; do
+	if [ -n ${pid} ]; then
+		kill ${pid}
+	fi
+done
+# start TIM
+wine '~/.wine/drive_c/Program Files/Tencent/TIM/Bin/TIM.exe'
+
+```
+
+然后将上文中的 tim.desktop 中的 `Exec` 的值改为 `start-tim.sh` 即可．
 
 *   xfce4(xfwm4)下无法输入表情
 

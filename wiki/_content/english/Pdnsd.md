@@ -244,7 +244,7 @@ Flush cache:
 
 ### DNSCrypt
 
-pdnsd can be used with [DNSCrypt](/index.php/DNSCrypt "DNSCrypt"). DNSCrypt encrypts the domain name lookup. pdnsd then queries DNSCrypt when necessary. An example configuration is found in [DNSCrypt#Example: configuration for pdnsd](/index.php/DNSCrypt#Example:_configuration_for_pdnsd "DNSCrypt").
+pdnsd can be used with [DNSCrypt](/index.php/DNSCrypt "DNSCrypt"). DNSCrypt encrypts the domain name lookup. pdnsd then queries DNSCrypt when necessary. An example configuration is found in [DNSCrypt#pdnsd](/index.php/DNSCrypt#pdnsd "DNSCrypt").
 
 ## Troubleshooting
 

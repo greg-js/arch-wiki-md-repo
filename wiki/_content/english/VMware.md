@@ -8,12 +8,14 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 
 **Note:**
 
-*   This article is about the latest major VMware versions, meaning VMware Workstation Pro and Player 12.5\. [WARNING: Stale, *not* the latest major Version, it is 14.0.0 which is missing from this page].
+*   This article is about the latest major VMware versions, meaning VMware Workstation Pro and Player 12.5 and 14.0.0\.
 *   For older versions, use the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package.
 
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 VMware bundle](#VMware_bundle)
+    *   [1.2 Package build for x86_64](#Package_build_for_x86_64)
 *   [2 Configuration](#Configuration)
     *   [2.1 Kernel modules](#Kernel_modules)
     *   [2.2 systemd services](#systemd_services)
@@ -64,6 +66,10 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 *   [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) - needed by the `--console` installer
 *   [libcanberra](https://www.archlinux.org/packages/?name=libcanberra) - for event sounds
 
+Once the correct dependencies have been installed, you can either install using VMware bundle or [vmware-workstation](https://aur.archlinux.org/packages/vmware-workstation/). The latter is preferred if using *VMware Workstation* on x86_64.
+
+### VMware bundle
+
 Download the latest [VMware Workstation Pro](https://www.vmware.com/go/tryworkstation) or [Player](https://www.vmware.com/go/downloadplayer) (or a [beta](https://communities.vmware.com/community/vmtn/beta) version, if available).
 
 Start the installation:
@@ -91,6 +97,10 @@ For the `System service scripts directory`, use `/etc/init.d` (the default).
 # vmware-modconfig --console --install-all
 
 ```
+
+### Package build for x86_64
+
+These installation instructions are for the most recent version of *VMware Workstation*. Install [vmware-workstation](https://aur.archlinux.org/packages/vmware-workstation/). As desired, enable `vmware-networks.service` for guest network access, `vmware-usbarbitrator.service` for connecting USB devices to guest, and `vmware-hostd.service` for sharing virtual machines. Lastly, restart the host machine.
 
 ## Configuration
 

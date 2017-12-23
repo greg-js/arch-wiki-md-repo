@@ -11,11 +11,12 @@ Related articles
 *   [1 Configuration](#Configuration)
     *   [1.1 Kernel](#Kernel)
     *   [1.2 Screen](#Screen)
-    *   [1.3 Touchpad](#Touchpad)
-    *   [1.4 Backlight control keys](#Backlight_control_keys)
-    *   [1.5 Suspend to ram](#Suspend_to_ram)
-    *   [1.6 UMTS Modem](#UMTS_Modem)
-    *   [1.7 Fan control](#Fan_control)
+    *   [1.3 Brightness](#Brightness)
+    *   [1.4 Touchpad](#Touchpad)
+    *   [1.5 Backlight control keys](#Backlight_control_keys)
+    *   [1.6 Suspend to ram](#Suspend_to_ram)
+    *   [1.7 UMTS Modem](#UMTS_Modem)
+    *   [1.8 Fan control](#Fan_control)
 *   [2 USB BIOS update](#USB_BIOS_update)
 *   [3 Power Saving](#Power_Saving)
     *   [3.1 TLP](#TLP)
@@ -42,6 +43,21 @@ After saving the above files, make sure to regenerate your init ram image by the
 X230 has IPS or TN screen with 125.37 DPI. Refer to [HiDPI](/index.php/HiDPI "HiDPI") page for more information. It can be set with command `xrandr --dpi 125.37` using .xinitrc or other autostarts.
 
 See [Intel](/index.php/Intel "Intel") for driver choice.
+
+### Brightness
+
+If you experience that your brightness setting is not restored on resume from suspend, then create `/usr/share/X11/xorg.conf.d/20-intel.conf` with the following content.
+
+ `/usr/share/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+Identifier "card0"
+Driver "intel"
+Option "Backlight" "intel_backlight"
+BusID "PCI:0:2:0"
+EndSection
+
+```
 
 ### Touchpad
 

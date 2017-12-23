@@ -80,7 +80,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [34.1 No sound](#No_sound_3)
 *   [35 Dota 2](#Dota_2)
     *   [35.1 In-game font is unreadable](#In-game_font_is_unreadable)
-    *   [35.2 The game said there is an error with libpangoft2](#The_game_said_there_is_an_error_with_libpangoft2)
+    *   [35.2 Error with libpangoft2](#Error_with_libpangoft2)
     *   [35.3 The game does not start](#The_game_does_not_start)
     *   [35.4 Game runs on the wrong screen](#Game_runs_on_the_wrong_screen)
     *   [35.5 Game does not start with libxcb-dri3 error message](#Game_does_not_start_with_libxcb-dri3_error_message)
@@ -151,111 +151,113 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [66.2 Game starts, but some overlay text is missing and cutscenes shows black screen](#Game_starts.2C_but_some_overlay_text_is_missing_and_cutscenes_shows_black_screen)
     *   [66.3 Cutscenes are still black](#Cutscenes_are_still_black)
     *   [66.4 Cursor disappears](#Cursor_disappears)
-*   [67 Mark of the Ninja](#Mark_of_the_Ninja)
-    *   [67.1 Bad sound](#Bad_sound)
-*   [68 Metro: Last Light](#Metro:_Last_Light)
-*   [69 Metro: 2033 Redux](#Metro:_2033_Redux)
-    *   [69.1 No sound](#No_sound_5)
-*   [70 Middle-earth: Shadow of Mordor](#Middle-earth:_Shadow_of_Mordor)
-    *   [70.1 Floating heads](#Floating_heads)
-*   [71 Mount & Blade: Warband](#Mount_.26_Blade:_Warband)
-    *   [71.1 Segmentation fault (core dumped) with wayland](#Segmentation_fault_.28core_dumped.29_with_wayland)
-*   [72 Multiwinia](#Multiwinia)
-    *   [72.1 Crash on startup](#Crash_on_startup)
-*   [73 Natural Selection 2](#Natural_Selection_2)
-*   [74 Nuclear Throne](#Nuclear_Throne)
-    *   [74.1 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found_2)
-*   [75 Penumbra: Overture](#Penumbra:_Overture)
-    *   [75.1 Windowed mode](#Windowed_mode_2)
-*   [76 The Polynomial](#The_Polynomial)
-    *   [76.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
-*   [77 Portal 2](#Portal_2)
-    *   [77.1 Game does not start](#Game_does_not_start_9)
-    *   [77.2 Resolution too low](#Resolution_too_low)
-    *   [77.3 Missing non Latin font](#Missing_non_Latin_font)
-*   [78 Prison Architect](#Prison_Architect)
-    *   [78.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
-*   [79 Project Zomboid](#Project_Zomboid)
-    *   [79.1 No sound](#No_sound_6)
-*   [80 Pyre](#Pyre)
-    *   [80.1 Game Does not Starts](#Game_Does_not_Starts)
-*   [81 Redshirt](#Redshirt)
-*   [82 Revenge of the Titans](#Revenge_of_the_Titans)
-*   [83 Risk of Rain](#Risk_of_Rain)
-*   [84 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
-*   [85 Saints Row IV](#Saints_Row_IV)
-    *   [85.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
-    *   [85.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
-*   [86 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
-    *   [86.1 No audio](#No_audio_2)
-*   [87 Songbringer](#Songbringer)
-    *   [87.1 Launch error with wanyland](#Launch_error_with_wanyland)
-*   [88 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
-    *   [88.1 No audio](#No_audio_3)
-*   [89 Spacechem](#Spacechem)
-    *   [89.1 Game crash](#Game_crash)
-*   [90 Splice](#Splice)
-*   [91 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
-*   [92 The Stanley Parable](#The_Stanley_Parable)
-    *   [92.1 Game won't start](#Game_won.27t_start)
-*   [93 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
-*   [94 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
-    *   [94.1 Start with black screen](#Start_with_black_screen)
-*   [95 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
-    *   [95.1 No sound](#No_sound_7)
-*   [96 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
-*   [97 System Shock 2](#System_Shock_2)
-*   [98 Tabletop Simulator](#Tabletop_Simulator)
-    *   [98.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
-*   [99 Team Fortress 2](#Team_Fortress_2)
-    *   [99.1 HRTF setup](#HRTF_setup)
-    *   [99.2 Loading screen freeze](#Loading_screen_freeze)
-    *   [99.3 No audio](#No_audio_4)
-    *   [99.4 Slow loading textures](#Slow_loading_textures)
-*   [100 Terraria](#Terraria)
-*   [101 This War of Mine](#This_War_of_Mine)
-    *   [101.1 Game does not start](#Game_does_not_start_10)
-    *   [101.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
-*   [102 Ticket to Ride](#Ticket_to_Ride)
-*   [103 Tomb Raider](#Tomb_Raider)
-    *   [103.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
-    *   [103.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
-*   [104 Total War: Rome II](#Total_War:_Rome_II)
-*   [105 Tower Unite](#Tower_Unite)
-    *   [105.1 Graphical Glitches](#Graphical_Glitches)
-*   [106 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
-*   [107 Transistor](#Transistor)
-    *   [107.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_audio_issues)
-*   [108 Transmissions: Element 120](#Transmissions:_Element_120)
-    *   [108.1 Troubleshooting](#Troubleshooting)
-*   [109 Trine 2](#Trine_2)
-    *   [109.1 Colors](#Colors)
-    *   [109.2 Sound](#Sound)
-    *   [109.3 Resolution](#Resolution)
-*   [110 Tropico 5](#Tropico_5)
-    *   [110.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
-*   [111 Unity of Command](#Unity_of_Command)
-    *   [111.1 Squares](#Squares)
-    *   [111.2 No audio](#No_audio_5)
-*   [112 Unity3D](#Unity3D)
-    *   [112.1 Locale settings](#Locale_settings)
-    *   [112.2 Unity 5 sound problems](#Unity_5_sound_problems)
-    *   [112.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
-    *   [112.4 Chinese/Japanese/Korean display bug](#Chinese.2FJapanese.2FKorean_display_bug)
-*   [113 Unrest](#Unrest)
-*   [114 War Thunder](#War_Thunder)
-    *   [114.1 No audio](#No_audio_6)
-    *   [114.2 Blank screen](#Blank_screen)
-*   [115 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
-*   [116 Worms W.M.D](#Worms_W.M.D)
-*   [117 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [117.1 Game does not start](#Game_does_not_start_11)
-*   [118 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-*   [119 World of Goo](#World_of_Goo)
-    *   [119.1 Changing resolution](#Changing_resolution)
-*   [120 XCOM](#XCOM)
-    *   [120.1 Hangs on startup](#Hangs_on_startup)
-    *   [120.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+*   [67 Magicka 2](#Magicka_2)
+    *   [67.1 Indefinitely stuck at start](#Indefinitely_stuck_at_start)
+*   [68 Mark of the Ninja](#Mark_of_the_Ninja)
+    *   [68.1 Bad sound](#Bad_sound)
+*   [69 Metro: Last Light](#Metro:_Last_Light)
+*   [70 Metro: 2033 Redux](#Metro:_2033_Redux)
+    *   [70.1 No sound](#No_sound_5)
+*   [71 Middle-earth: Shadow of Mordor](#Middle-earth:_Shadow_of_Mordor)
+    *   [71.1 Floating heads](#Floating_heads)
+*   [72 Mount & Blade: Warband](#Mount_.26_Blade:_Warband)
+    *   [72.1 Segmentation fault (core dumped) with wayland](#Segmentation_fault_.28core_dumped.29_with_wayland)
+*   [73 Multiwinia](#Multiwinia)
+    *   [73.1 Crash on startup](#Crash_on_startup)
+*   [74 Natural Selection 2](#Natural_Selection_2)
+*   [75 Nuclear Throne](#Nuclear_Throne)
+    *   [75.1 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found_2)
+*   [76 Penumbra: Overture](#Penumbra:_Overture)
+    *   [76.1 Windowed mode](#Windowed_mode_2)
+*   [77 The Polynomial](#The_Polynomial)
+    *   [77.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
+*   [78 Portal 2](#Portal_2)
+    *   [78.1 Game does not start](#Game_does_not_start_9)
+    *   [78.2 Resolution too low](#Resolution_too_low)
+    *   [78.3 Missing non Latin font](#Missing_non_Latin_font)
+*   [79 Prison Architect](#Prison_Architect)
+    *   [79.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
+*   [80 Project Zomboid](#Project_Zomboid)
+    *   [80.1 No sound](#No_sound_6)
+*   [81 Pyre](#Pyre)
+    *   [81.1 Game Does not Starts](#Game_Does_not_Starts)
+*   [82 Redshirt](#Redshirt)
+*   [83 Revenge of the Titans](#Revenge_of_the_Titans)
+*   [84 Risk of Rain](#Risk_of_Rain)
+*   [85 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
+*   [86 Saints Row IV](#Saints_Row_IV)
+    *   [86.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
+    *   [86.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
+*   [87 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
+    *   [87.1 No audio](#No_audio_2)
+*   [88 Songbringer](#Songbringer)
+    *   [88.1 Launch error with wanyland](#Launch_error_with_wanyland)
+*   [89 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
+    *   [89.1 No audio](#No_audio_3)
+*   [90 Spacechem](#Spacechem)
+    *   [90.1 Game crash](#Game_crash)
+*   [91 Splice](#Splice)
+*   [92 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
+*   [93 The Stanley Parable](#The_Stanley_Parable)
+    *   [93.1 Game won't start](#Game_won.27t_start)
+*   [94 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
+*   [95 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
+    *   [95.1 Start with black screen](#Start_with_black_screen)
+*   [96 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
+    *   [96.1 No sound](#No_sound_7)
+*   [97 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
+*   [98 System Shock 2](#System_Shock_2)
+*   [99 Tabletop Simulator](#Tabletop_Simulator)
+    *   [99.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
+*   [100 Team Fortress 2](#Team_Fortress_2)
+    *   [100.1 HRTF setup](#HRTF_setup)
+    *   [100.2 Loading screen freeze](#Loading_screen_freeze)
+    *   [100.3 No audio](#No_audio_4)
+    *   [100.4 Slow loading textures](#Slow_loading_textures)
+*   [101 Terraria](#Terraria)
+*   [102 This War of Mine](#This_War_of_Mine)
+    *   [102.1 Game does not start](#Game_does_not_start_10)
+    *   [102.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
+*   [103 Ticket to Ride](#Ticket_to_Ride)
+*   [104 Tomb Raider](#Tomb_Raider)
+    *   [104.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
+    *   [104.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
+*   [105 Total War: Rome II](#Total_War:_Rome_II)
+*   [106 Tower Unite](#Tower_Unite)
+    *   [106.1 Graphical Glitches](#Graphical_Glitches)
+*   [107 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
+*   [108 Transistor](#Transistor)
+    *   [108.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_audio_issues)
+*   [109 Transmissions: Element 120](#Transmissions:_Element_120)
+    *   [109.1 Troubleshooting](#Troubleshooting)
+*   [110 Trine 2](#Trine_2)
+    *   [110.1 Colors](#Colors)
+    *   [110.2 Sound](#Sound)
+    *   [110.3 Resolution](#Resolution)
+*   [111 Tropico 5](#Tropico_5)
+    *   [111.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
+*   [112 Unity of Command](#Unity_of_Command)
+    *   [112.1 Squares](#Squares)
+    *   [112.2 No audio](#No_audio_5)
+*   [113 Unity3D](#Unity3D)
+    *   [113.1 Locale settings](#Locale_settings)
+    *   [113.2 Unity 5 sound problems](#Unity_5_sound_problems)
+    *   [113.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
+    *   [113.4 Chinese/Japanese/Korean display bug](#Chinese.2FJapanese.2FKorean_display_bug)
+*   [114 Unrest](#Unrest)
+*   [115 War Thunder](#War_Thunder)
+    *   [115.1 No audio](#No_audio_6)
+    *   [115.2 Blank screen](#Blank_screen)
+*   [116 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
+*   [117 Worms W.M.D](#Worms_W.M.D)
+*   [118 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+    *   [118.1 Game does not start](#Game_does_not_start_11)
+*   [119 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+*   [120 World of Goo](#World_of_Goo)
+    *   [120.1 Changing resolution](#Changing_resolution)
+*   [121 XCOM](#XCOM)
+    *   [121.1 Hangs on startup](#Hangs_on_startup)
+    *   [121.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
 
 ## Common steps
 
@@ -278,13 +280,7 @@ The package [adobe-air-sdk](https://aur.archlinux.org/packages/adobe-air-sdk/) i
 
 ```
 
-Adobe AIR requires you to accept its EULA:
-
-```
-$ mkdir -p ~/.appdata/Adobe/AIR
-$ echo 2 > ~/.appdata/Adobe/AIR/eulaAccepted
-
-```
+Adobe AIR requires you to accept its EULA by creating the file `~/.appdata/Adobe/AIR/eulaAccepted` containing `2`.
 
 ## Alien Isolation
 
@@ -320,21 +316,18 @@ When the game refuses to launch and prints one of the following error messages:
 ```
 readlink: extra operand ‘Yet’
 Try 'readlink --help' for more information.
+
 ```
 
-	 `This script must be run as a user with write priviledges to game directory` 
+```
+This script must be run as a user with write priviledges to game directory
 
-Open `*gamedir*/AndYetItMovesSteam.sh` and replace the line:
+```
+
+Open `*gamedir*/AndYetItMovesSteam.sh` and surround `${BASH_SOURCE[0]}` in the following line with double quotes.
 
 ```
 ayim_dir="$(dirname "$(readlink -f ${BASH_SOURCE[0]})")"
-
-```
-
-with:
-
-```
-ayim_dir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 
 ```
 
@@ -382,7 +375,7 @@ Add `MESA_GL_VERSION_OVERRIDE=4.0` and `MESA_GLSL_VERSION_OVERRIDE=400` to your 
 
 ### Gray Water
 
-Download TheCenter map and copy Water_DepthBlur_MIC.uasset from that map into TheIsland as described here: [https://www.gamingonlinux.com/articles/heres-a-way-to-fix-the-broken-water-in-ark-survival-evolved-on-linux.10530](https://www.gamingonlinux.com/articles/heres-a-way-to-fix-the-broken-water-in-ark-survival-evolved-on-linux.10530)
+Download TheCenter map and copy Water_DepthBlur_MIC.uasset from that map into TheIsland as described [here](https://www.gamingonlinux.com/articles/heres-a-way-to-fix-the-broken-water-in-ark-survival-evolved-on-linux.10530).
 
 Ragnarok uses TheIsland's texture, so the same procedure fixes the issue on Ragnarok as well.
 
@@ -398,12 +391,12 @@ Refer to [#Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_li
 
 ### "BeatCop.x86_64" is not responding
 
-Use BeatCop.x86 insteed.
+Use `BeatCop.x86` instead.
 
 Add the following line to [launch options](/index.php/Launch_option "Launch option"):
 
 ```
-~/.local/share/Steam/SteamApps/common/Beat\ Cop/BeatCop.x86 # %command%
+"$HOME/.local/share/Steam/SteamApps/common/Beat Cop/BeatCop.x86" # %command%
 
 ```
 
@@ -839,27 +832,11 @@ Dependencies:
 
 Add `MESA_GL_VERSION_OVERRIDE=2.1` to your [launch options](/index.php/Launch_option "Launch option").
 
-### The game said there is an error with libpangoft2
+### Error with libpangoft2
 
-Problem description: the library provided with the game don't work, the game don't start.
-
-1\. Add the system library:
-
-pacman -s pango
-
-2\. Rename the game provided libraries:
-
-cd '~/.local/share/Steam/steamapps/common/dota 2 beta/game/bin/linuxsteamrt64'
-
-mv /home/alex/libpango-1.0.so /home/alex/libpango-1.0.so.old
-
-mv /home/alex/libpangoft2-1.0.so /home/alex/libpangoft2-1.0.so.old
-
-3\. ONLY if you have bumblebee you have to go on on Steam Application -> Library -> Dota2 -> Properties -> Set Launch Options and set:
-
-LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 optirun %command%
-
-4\. Launch the game
+1.  [Install](/index.php/Install "Install") the [pango](https://www.archlinux.org/packages/?name=pango) package.
+2.  Remove `libpango-1.0.so` and `libpangoft2-1.0.so` in `*gamedir*/game/bin/linuxsteamrt64`.
+3.  If you are using Bumblebee add `LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 optiru` to your [launch options](/index.php/Launch_option "Launch option").
 
 ### The game does not start
 
@@ -1001,6 +978,13 @@ FTL may fail to run if you are using an opensource driver for your video card. T
 ### Game does not start
 
 You might get an error about missing `libudev.so.0`. See [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues").
+
+Add this line to [launch options](/index.php/Steam#Launch_options "Steam"):
+
+```
+LD_PRELOAD=/usr/lib/libudev.so.1 %command%
+
+```
 
 ## Garry's Mod
 
@@ -1295,6 +1279,24 @@ Turn off Vertical Sync in the Display options, and/or set POST FX to Low in the 
 Go to Options > Controls, and set mouse locking to unlocked.
 
 The options is visible only if you're navigating using your (invisible) mouse. It will not show up when navigating with a controller. One solution is to go to Options -> Controls with a controller before switching to the mouse and trying to blindly it the setting.
+
+## Magicka 2
+
+### Indefinitely stuck at start
+
+The game does not start if the output of the command "ip -s link" is longer than 4096 characters. That is because, in the function bitsquid::network_info(char*), where they query the networking information, they do not handle that case correctly. See [this picture](https://i.imgur.com/AOTLoTY.png) for reference. It was reported to upstream (Pieces Interactive) but Magicka 2 does not seem to be maintained anymore.
+
+A dirty fix is to wrap your ip binary, as such:
+
+```
+#!/bin/bash
+if [[ $@ == "-s link" ]]; then
+    echo "<paste a smaller subset of the normal output>"
+else
+    /path/to/your/real/ip "$@"
+fi
+
+```
 
 ## Mark of the Ninja
 

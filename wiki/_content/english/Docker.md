@@ -366,6 +366,22 @@ EOF
 
 **Note:** It has been observed that with systemd version 220 creating this file causes bridges used by Docker to lose their IP addresses. Running Docker with a manually-defined network, as described above, is known to work.
 
+To work around issues where the docker bridge looses its ip, you can set the bridge to *Unmanaged* by networkd:
+
+```
+# cat > /etc/systemd/network/50-docker.network <<EOF
+[Match]
+Name=docker0
+
+[Network]
+IPForward=kernel
+
+[Link]
+Unmanaged=true
+EOF
+
+```
+
 Finally [restart](/index.php/Restart "Restart") the `systemd-networkd` and `docker` services.
 
 ### Default number of allowed processes/threads too low

@@ -4,9 +4,9 @@
 *   [安装指南](/index.php/Installation_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation Guide (简体中文)")
 *   [软件列表](/index.php/List_of_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of applications (简体中文)")
 
-**翻译状态：** 本文是英文页面 [General_Recommendations](/index.php/General_Recommendations "General Recommendations") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-25，点击[这里](https://wiki.archlinux.org/index.php?title=General_Recommendations&diff=0&oldid=447656)可以查看翻译后英文页面的改动。
-
 本文是各种重要或常用的文章的详细索引。阅读本文前，读者应该先通过 [官方安装指南](/index.php/%E5%AE%98%E6%96%B9%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97 "官方安装指南") 安装 Arch Linux 基本系统。
+
+在阅读并理解 #系统管理 和 #软件包管理 中解释的概念后，可以帮助你阅读wiki中的其它文章。
 
 **注意:** 中国用户可以特别留意 [#中国大陆用户的推荐解决方案](#.E4.B8.AD.E5.9B.BD.E5.A4.A7.E9.99.86.E7.94.A8.E6.88.B7.E7.9A.84.E6.8E.A8.E8.8D.90.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88) 内容。
 
@@ -25,7 +25,7 @@
     *   [2.5 Arch用户软件源（AUR）](#Arch.E7.94.A8.E6.88.B7.E8.BD.AF.E4.BB.B6.E6.BA.90.EF.BC.88AUR.EF.BC.89)
 *   [3 启动](#.E5.90.AF.E5.8A.A8)
     *   [3.1 硬件自动探测](#.E7.A1.AC.E4.BB.B6.E8.87.AA.E5.8A.A8.E6.8E.A2.E6.B5.8B)
-    *   [3.2 微代码](#.E5.BE.AE.E4.BB.A3.E7.A0.81)
+    *   [3.2 Microcode](#Microcode)
     *   [3.3 保留启动信息](#.E4.BF.9D.E7.95.99.E5.90.AF.E5.8A.A8.E4.BF.A1.E6.81.AF)
     *   [3.4 开机启动 X](#.E5.BC.80.E6.9C.BA.E5.90.AF.E5.8A.A8_X)
     *   [3.5 开机时打开 Num Lock](#.E5.BC.80.E6.9C.BA.E6.97.B6.E6.89.93.E5.BC.80_Num_Lock)
@@ -168,9 +168,9 @@ Pacman 是 Arch 的软件包管理器。[pacman](/index.php/Pacman_(%E7%AE%80%E4
 
 默认情况下，[udev](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)")会在开机时自动探测硬件。禁止加载某些内核模块、手动选择要使用的模块。此外，[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")也使用udev探测硬件，用户也可以调整这方面配置。
 
-### 微代码
+### Microcode
 
-处理器可能有 [错误行为](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), kernel 可以通过更新启动时的 *微码* 来修正这些错误行为。 Intel 的处理器需要一个单独的包来达到这种效果。 参考 [Microcode](/index.php/Microcode "Microcode") 获取更多细节。
+处理器可能有 [错误行为](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), kernel 可以通过更新启动时的 *Microcode* 来修正这些错误行为。 Intel 的处理器需要一个单独的包来达到这种效果。 参考 [Microcode](/index.php/Microcode "Microcode") 获取更多细节。
 
 ### 保留启动信息
 
@@ -196,7 +196,7 @@ Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD
 
 ### 显卡驱动
 
-默认的**vesa**显卡驱动对于大多数显卡都是兼容的，但性能远不如专门的驱动。根据显卡制造商，参见：[ATI (简体中文)](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)")，[Intel (简体中文)](/index.php/Intel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel (简体中文)")，[NVIDIA (简体中文)](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NVIDIA (简体中文)")。
+默认的**vesa**显卡驱动对于大多数显卡都是兼容的，但是通过为ATI ， Intel或NVIDIA产品安装适当的驱动程序，可以明显地改善性能并利用附加功能。根据显卡制造商，分别参见：[ATI (简体中文)](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)")，[Intel (简体中文)](/index.php/Intel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel (简体中文)")，[NVIDIA (简体中文)](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NVIDIA (简体中文)")。
 
 ### 桌面环境
 
@@ -388,7 +388,7 @@ Linux 下的图形界面基本都使用 [GTK+](/index.php/GTK%2B "GTK+") 或者 
 
 ### 压缩文件
 
-压缩包，或归档，在GNU/Linux十分常用。[Tar](/index.php/Tar "Tar")是最常用的归档工具，此外还有Arch软件包使用的xz压缩包。参见：[Core utilities#extract](/index.php/Core_utilities#extract "Core utilities")。
+压缩包，或称为归档，在GNU/Linux十分常用。[Tar](/index.php/Tar "Tar")是最常用的归档工具，用户应该熟悉它的语法。此外还有Arch软件包使用的xz压缩包。参见：[Core utilities#extract](/index.php/Core_utilities#extract "Core utilities")。
 
 #### 控制台提示符
 
@@ -482,7 +482,7 @@ alias hosts='sudo wget [https://raw.githubusercontent.com/googlehosts/hosts/mast
 
 ### 电子商务
 
-很可惜并没有现成的维基页面，不过 [Acgtyrant](/index.php/User:Acgtyrant "User:Acgtyrant") 用户在其博客上提供了 [電子商務在 Arch Linux 下的簡易解決方案](http://arch.acgtyrant.com/2014/02/20/e-commerce/) 。
+很可惜并没有现成的维基页面，不过 [Acgtyrant](/index.php/User:Acgtyrant "User:Acgtyrant") 用户在其博客上提供了 [電子商務在 Arch Linux 下的簡易解決方案](http://arch.acgtyrant.com/2014/02/20/e-commerce/)。
 
 ### 校园网
 

@@ -59,14 +59,14 @@ To use *systemd-networkd*, [start/enable](/index.php/Start/enable "Start/enable"
 
 **Tip:** *systemd-resolved* is required only if you are specifying DNS entries in *.network* files or if you want to obtain DNS addresses from the network DHCP client. Alternatively you may manually manage `/etc/resolv.conf`.
 
-For compatibility with [resolv.conf](/index.php/Resolv.conf "Resolv.conf"), delete or rename the existing file and create the following symbolic link when using *systemd-resolved*:
+For compatibility with [resolv.conf](/index.php/Resolv.conf "Resolv.conf"), and redirect software which directly read this file to the local *systemd-resolved* stub DNS resolver, delete or rename the existing file and create the following symbolic link when using *systemd-resolved*:
 
 ```
-# ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+# ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 ```
 
-See [systemd-resolved(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8), [resolved.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5), and [Systemd README](https://github.com/systemd/systemd/blob/master/README#L205).
+For more information, see [systemd-resolved(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8), [resolved.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5), and [Systemd README](https://github.com/systemd/systemd/blob/master/README#L205).
 
 ### Configuration examples
 

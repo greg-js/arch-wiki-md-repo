@@ -196,11 +196,11 @@ net.ipv4.tcp_rfc1337 = 1
 
 ## sets the kernels reverse path filtering mechanism to value 1 (on)
 ## will do source validation of the packet's recieved from all the interfaces on the machine
-## protects from attackers that are using ip spoofing methods to do harm
+## protects from attackers that are using ip spoofing methods to do harm (default) 
 net.ipv4.conf.default.rp_filter = 1
 net.ipv4.conf.all.rp_filter = 1
 
-## tcp timestamps
+## tcp timestamp
 ## + protect against wrapping sequence numbers (at gigabit speeds)
 ## + round trip time calculation implemented in TCP
 ## - causes extra overhead and allows uptime detection by scanners like nmap
@@ -225,10 +225,10 @@ net.ipv4.conf.all.send_redirects = 0
 ## ICMP routing redirects (only secure)
 #net.ipv4.conf.default.secure_redirects = 1 (default)
 #net.ipv4.conf.all.secure_redirects = 1 (default)
-net.ipv4.conf.default.accept_redirects=0
-net.ipv4.conf.all.accept_redirects=0
-net.ipv6.conf.default.accept_redirects=0
-net.ipv6.conf.all.accept_redirects=0
+net.ipv4.conf.default.accept_redirects = 0
+net.ipv4.conf.all.accept_redirects = 0
+net.ipv6.conf.default.accept_redirects = 0
+net.ipv6.conf.all.accept_redirects = 0
 ```
 
 ## Virtual memory

@@ -106,7 +106,7 @@ With the executable bit set for calling with `$ ./hello-you`:
 
  `hello-you` 
 ```
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 use strict;
 use warnings;
@@ -144,14 +144,13 @@ The CPAN.pm module is included with Perl. It can be used interactively from the 
 
 Before first use, the module needs to be configured. This is done interactively from the shell with (some output omitted):
 
+ `$ cpan` 
 ```
-$ cpan
-
 CPAN.pm requires configuration, but most of it can be done automatically.
 If you answer 'no' below, you will enter an interactive dialog for each
 configuration option instead.
 
-Would you like to configure as much as possible automatically? [yes] 
+Would you like to configure as much as possible automatically? [yes]
 
 ```
 
@@ -159,12 +158,12 @@ Automated configuration will suit most users. Answering yes, the configuration w
 
 ```
 To install modules, you need to configure a local Perl library directory or
-escalate your privileges.  CPAN can help you by bootstrapping the local::lib
-module or by configuring itself to use 'sudo' (if available).  You may also
+escalate your privileges. CPAN can help you by bootstrapping the local::lib
+module or by configuring itself to use 'sudo' (if available). You may also
 resolve this problem manually if you need to customize your setup.
 
 What approach do you want?  (Choose 'local::lib', 'sudo' or 'manual')
- [local::lib] 
+ [local::lib]
 
 ```
 
@@ -173,7 +172,7 @@ If you want `cpan` to install modules in your home directory choose `local::lib`
 ```
 Autoconfiguration complete.
 
-commit: wrote '/home/toxygeneb/.cpan/CPAN/MyConfig.pm'
+commit: wrote '/home/*username*/.cpan/CPAN/MyConfig.pm'
 
 ```
 
@@ -201,7 +200,7 @@ The configuration file $HOME/.cpan/CPAN/MyConfig.pm can be edited with your text
 To simply install a modules pass them as parameters to `cpan` (multiple module names are separated by spaces):
 
 ```
-$ cpan Acme::MetaSyntactic 
+$ cpan Acme::MetaSyntactic
 
 ```
 
@@ -214,24 +213,21 @@ $ cpan
 
 Display information on a module:
 
+ `cpan[1]> m Acme::MetaSyntactic` 
 ```
-cpan[1]> m Acme::MetaSyntactic
-
-Reading '/home/toxygeneb/.cpan/Metadata'
+Reading '/home/*username*/.cpan/Metadata'
   Database was generated on Fri, 08 Dec 2017 02:17:03 GMT
 Module id = Acme::MetaSyntactic
     CPAN_USERID  BOOK (Philippe Bruhat (BooK) <book@cpan.org>)
     CPAN_VERSION 1.014
     CPAN_FILE    B/BO/BOOK/Acme-MetaSyntactic-1.014.tar.gz
     INST_FILE    (not installed)
-
 ```
 
 View module README:
 
+ `cpan[2]> readme Acme::MetaSyntactic` 
 ```
-cpan[2]> readme Acme::MetaSyntactic
-
 Acme::MetaSyntactic - Themed metasyntactic variables
 
 DESCRIPTION
@@ -241,7 +237,6 @@ When writing code examples, it's always easy at the beginning:
    my $foo = "bar";
    $foo .= "baz";   # barbaz
 ...
-
 ```
 
 Install a module:
@@ -310,24 +305,24 @@ cpan[1]> o conf init
 ### Perl 5
 
 *   [The Perl Programming Language (Perl homepage)](https://www.perl.org/)
-*   [Wikipedia Perl article](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl")
+*   [Wikipedia:Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl")
 *   [Perl Tutorials](https://learn.perl.org/tutorials/)
-*   [perl(1) man page](https://linux.die.net/man/1/perl)
-*   [perldoc man page](https://linux.die.net/man/1/perldoc)
+*   [perl(1perl)](http://jlk.fjfi.cvut.cz/arch/manpages/man/perl.1perl)
+*   [perldoc(1perl)](http://jlk.fjfi.cvut.cz/arch/manpages/man/perldoc.1perl)
 
 ### Perl 6
 
 *   [The Perl 6 Programming Language](https://perl6.org/)
-*   [Wikipedia Perl 6 article](https://en.wikipedia.org/wiki/Perl_6 "wikipedia:Perl 6")
+*   [Wikipedia:Perl 6](https://en.wikipedia.org/wiki/Perl_6 "wikipedia:Perl 6")
 *   [Getting started with Perl 6](https://perl6.org/getting-started/)
 *   [Rakudo](https://rakudo.org)
-*   [Rakudo Perl 6 on Wikipedia](https://en.wikipedia.org/wiki/Rakudo_Perl_6 "wikipedia:Rakudo Perl 6")
-*   [perl6(1) man page](https://linux.die.net/man/1/perl6)
+*   [wikipedia:Rakudo Perl 6](https://en.wikipedia.org/wiki/Rakudo_Perl_6 "wikipedia:Rakudo Perl 6")
+*   [perl6(1)](https://linux.die.net/man/1/perl6)
 
 ### CPAN
 
 *   [Comprehensive Perl Archive Network](https://www.cpan.org)
-*   [Wiki CPAN article](https://en.wikipedia.org/wiki/CPAN "wikipedia:CPAN")
+*   [wikipedia:CPAN](https://en.wikipedia.org/wiki/CPAN "wikipedia:CPAN")
 *   [CPAN / CPAN Shell / CPANPLUS Quick Reference Guide](http://joshr.com/src/docs/CPANQuickReference.pdf)
 
 ### Tutorials

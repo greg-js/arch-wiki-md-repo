@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [Install bundled 32-bit system in Arch64](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64")
+*   [proot](/index.php/Proot "Proot")
+*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
+
 [Chroot](https://en.wikipedia.org/wiki/Chroot "wikipedia:Chroot") es el proceso por el que se cambia el directorio root del disco aparente (y el actual proceso en marcha y sus descendientes) a otro directorio root. Al cambiar a otro directorio root no se puede acceder a los archivos y órdenes fuera de ese directorio. Este directorio se llama *jaula chroot*. El cambio de root se hace comúnmente para el mantenimiento del sistema, como puede ser volver a instalar el gestor de arranque o restablecer una contraseña olvidada.
 
 ## Contents

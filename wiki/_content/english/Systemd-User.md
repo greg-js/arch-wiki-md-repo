@@ -24,11 +24,11 @@ Related articles
     *   [4.2 Example with variables](#Example_with_variables)
     *   [4.3 Note about X applications](#Note_about_X_applications)
     *   [4.4 Reading the journal](#Reading_the_journal)
-*   [5 Some use cases](#Some_use_cases)
-    *   [5.1 Persistent terminal multiplexer](#Persistent_terminal_multiplexer)
-    *   [5.2 Window manager](#Window_manager)
-*   [6 Kill user processes on logout](#Kill_user_processes_on_logout)
-*   [7 Known issues](#Known_issues)
+*   [5 Temporary files](#Temporary_files)
+*   [6 Some use cases](#Some_use_cases)
+    *   [6.1 Persistent terminal multiplexer](#Persistent_terminal_multiplexer)
+    *   [6.2 Window manager](#Window_manager)
+*   [7 Kill user processes on logout](#Kill_user_processes_on_logout)
 *   [8 See also](#See_also)
 
 ## How it works
@@ -255,18 +255,27 @@ $ journalctl --user
 To specify a unit, one can use
 
 ```
+$ journalctl --user-unit myunit.service
+
+```
+
+Or, equivalently:
+
+```
 $ journalctl --user -u myunit.service
 
 ```
 
-For a user unit, use
+## Temporary files
+
+*systemd-tmpfiles* allows users to manage custom volatile and temporary files and directories just like in the system-wide way (see [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd")). User-specific configuration files are read from `~/.config/user-tmpfiles.d/` and `~/.local/share/user-tmpfiles.d/`, in that order. For this functionality to be used, it is needed to enable the necessary systemd user units for your user:
 
 ```
-$ journalctl --user --user-unit myunit.service
+$ systemctl --user enable systemd-tmpfiles-setup.service systemd-tmpfiles-clean.timer
 
 ```
 
-Note that there seems to be some sort of bug that can sometimes stop output from user services from being properly attributed to their service unit. Therefore, filtering by the `-u` may unwittingly exclude some of the output from the service units.
+The syntax of the configuration files is the same than those used system-wide. See the [systemd-tmpfiles(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8) and [tmpfiles.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) man pages for details.
 
 ## Some use cases
 
@@ -351,10 +360,6 @@ For example, to run `screen` you would do:
 $ systemd-run --scope --user screen -S *foo*
 
 ```
-
-## Known issues
-
-*   Enabling systemd user units [causes login problems](https://github.com/systemd/systemd/issues/2863).
 
 ## See also
 

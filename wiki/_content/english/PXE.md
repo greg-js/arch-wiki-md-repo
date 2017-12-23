@@ -211,7 +211,7 @@ LABEL 2
         ENDTEXT
 ```
 
-You can replace `archiso_http_srv` with `archiso_nfs_srv` for NFS or `archiso_nbd_srv` for NBD. Adding the `ip=` instruction is necessary to instruct the kernel to bring up the network interface before it attempts to mount the installation medium over the network.
+You can replace `archiso_http_srv` with `archiso_nfs_srv` for NFS or `archiso_nbd_srv` for NBD. Adding the `ip=` instruction is necessary to instruct the kernel to bring up the network interface before it attempts to mount the installation medium over the network. See [README.bootparams](https://git.archlinux.org/archiso.git/plain/docs/README.bootparams) for available boot parameters.
 
 ### DHCP interface rename bug
 

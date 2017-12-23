@@ -59,7 +59,7 @@ $ rsync -P source destination
 
 The `-P` option is the same as `--partial --progress`, which keeps partially transferred files and shows a progress bar during transfer.
 
-You may want to use the `-r --recursive` option to recurse into directories.
+You may want to use the `-r`/`--recursive` option to recurse into directories.
 
 Files can be copied locally as with cp, but the motivating purpose of rsync is to copy files remotely, i.e. between two different hosts. Remote locations can be specified with a host-colon syntax:
 

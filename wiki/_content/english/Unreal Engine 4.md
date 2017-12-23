@@ -55,7 +55,7 @@ To compile manually, refer to [the official instructions to build on Linux](http
 
 ### Compilation problems
 
-If the compilation fails you should try building the Editor using the Debug profile:
+If the compilation fails you should try building the Editor using the Debug profile[[2]](https://wiki.unrealengine.com/Building_On_Linux#Setting_up_on_Arch_Linux):
 
 ```
 $ make UE4Editor-Linux-Debug
@@ -93,7 +93,7 @@ The StarterContent project is installed to /opt/unreal-engine/Samples/StarterCon
 
 ### Marketplace Apps
 
-The launcher with the Unreal Marketplace is not available for Linux yet[[2]](https://forums.unrealengine.com/showthread.php?52166-Unreal-launcher-for-linux), so apps like the ContentExamples project cannot be installed from Linux[[3]](https://answers.unrealengine.com/questions/301869/download-content-from-marketplace-on-linux.html).
+The launcher with the Unreal Marketplace is not available for Linux yet[[3]](https://forums.unrealengine.com/showthread.php?52166-Unreal-launcher-for-linux), so apps like the ContentExamples project cannot be installed from Linux[[4]](https://answers.unrealengine.com/questions/301869/download-content-from-marketplace-on-linux.html).
 
 The marketplace apps can be downloaded using the [launcher](https://www.unrealengine.com/download) on Windows (Mac may also work), they are stored in:
 

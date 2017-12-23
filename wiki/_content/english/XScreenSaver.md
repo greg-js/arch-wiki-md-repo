@@ -21,7 +21,7 @@ Related articles
         *   [4.1.1 mpv](#mpv)
         *   [4.1.2 mplayer](#mplayer)
         *   [4.1.3 Kodi](#Kodi)
-        *   [4.1.4 Flash](#Flash)
+        *   [4.1.4 Browser HTML5 video/Flash](#Browser_HTML5_video.2FFlash)
     *   [4.2 Animated wallpaper](#Animated_wallpaper)
 *   [5 Troubleshooting](#Troubleshooting)
 *   [6 See also](#See_also)
@@ -143,9 +143,9 @@ heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
 
 [Kodi](/index.php/Kodi "Kodi") has no native support to disable XScreenSaver (it uses its own screensaver). [Install](/index.php/Install "Install") the [kodi-prevent-xscreensaver](https://aur.archlinux.org/packages/kodi-prevent-xscreensaver/) package as a workaround.
 
-#### Flash
+#### Browser HTML5 video/Flash
 
-There is no native way to disable XScreenSaver for [Flash](/index.php/Flash "Flash"), but there is script named [lightsOn](https://github.com/kodx/lightsOn) with support for Firefox's Flash plugin, Chromium's Flash plugin, MPlayer, and VLC.
+There is no native way to disable XScreenSaver for [Flash](/index.php/Flash "Flash") or HTML5 fullscreen video, but there is a script named [lightsonplus](https://github.com/devkral/lightsonplus) with support for Firefox's Flash plugin, Chromium's Flash plugin, HTML5 fullscreen video in Firefox and Chromium, MPlayer, and VLC.
 
 ### Animated wallpaper
 

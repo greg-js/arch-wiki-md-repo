@@ -155,6 +155,8 @@ editor   0
 
 For Linux, you can specify `linux *path-to-vmlinuz*` and `initrd *path-to-initramfs*`; this will be automatically translated to `efi *path*` and `options initrd=*path*` – this syntax is only supported for convenience and has no differences in function.
 
+**Tip:** The available boot entries which have been configured can be listed with the command `bootctl list`.
+
 #### Standard root installations
 
 Here is an example entry for a root partition without LVM or LUKS:

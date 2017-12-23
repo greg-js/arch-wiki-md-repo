@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-12-16，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=502797)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-12-21，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=503426)可以查看翻译后英文页面的改动。
 
 [vsftpd](https://security.appspot.com/vsftpd.html) (Very Secure FTP Daemon) 是一个为UNIX类系统开发的轻量,稳定和安全的FTP服务器端.
 
@@ -200,7 +200,7 @@ listen=NO
 
 ```
 
-你会被问到关于你公司的问题，等等。由于你的证书不是一个可信任的，所填的内容并不重要，它将被用于加密。要使用可信证书，您可以从 [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") 这样的证书颁发机构获得证书。
+你会被问到关于你公司的问题，等等。由于你的证书不是一个可信任的，所填的内容并不重要，它只会被用于加密。要使用可信证书，您可以从 [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") 这样的证书颁发机构获得证书。
 
 然后，编辑配置文件：
 
@@ -247,7 +247,12 @@ pasv_address=*yourdomain.org*
 
 ### 端口配置
 
-对于暴露于 Web 的 FTP 服务器，为了减少服务器受到攻击的可能性，可以将侦听端口改为除标准端口 21 以外的端口。要将被动模式端口限制为打开端口，可以提供一个范围。这些端口配置更改可以使用以下几行完成：
+可能需要调整默认FTP侦听端口和被动模式数据端口：
+
+*   对于暴露于 Web 的 FTP 服务器，为了减少服务器受到攻击的可能性，可以将侦听端口改为除标准端口 21 以外的端口。
+*   要限制被动模式将打开的端口，可以提供一个范围。
+
+这些端口配置更改可以使用以下几行完成：
 
  `/etc/vsftpd.conf` 
 ```
@@ -452,7 +457,7 @@ vsftpd 尝试在 SSL 会话中显示纯文本错误消息。 为了进行调试�
 
 ### vsftpd.service fails to run on boot
 
-如果您启用了vsftpd服务，并且无法在启动时运行，请确保它已在服务文件中设置为在 network.target 之后加载：
+如果您启用了 `vsftpd.service`，并且无法在启动时运行，请确保它已在服务文件中设置为在 `network.target` 之后加载：
 
  `/usr/lib/systemd/system/vsftpd.service` 
 ```

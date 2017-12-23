@@ -199,7 +199,7 @@ Esse comando presume que o relógio de hardware está definido para [UTC](https:
 
 ### Locale
 
-Descomente `pt_BR.UTF-8 UTF-8` e qualquer outra [localização](/index.php/Localization "Localization") em `/etc/locale.gen`, e gere-as com:
+Descomente `pt_BR.UTF-8 UTF-8` e qualquer outra [localização](/index.php/Localiza%C3%A7%C3%A3o "Localização") em `/etc/locale.gen`, e gere-as com:
 
 ```
 # locale-gen

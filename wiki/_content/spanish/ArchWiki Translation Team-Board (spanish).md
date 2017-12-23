@@ -220,6 +220,7 @@ Versión inglesa propuesta para su eliminación. |
 | [E4rat (Español)](/index.php/E4rat_(Espa%C3%B1ol) "E4rat (Español)") | Proceso de arranque | `2011-10` |
 | [Emacs (Español)](/index.php/Emacs_(Espa%C3%B1ol) "Emacs (Español)") | Editor de texto | `--` | Incompleto |
 | [Enlightenment (Español)](/index.php/Enlightenment_(Espa%C3%B1ol) "Enlightenment (Español)") | Entorno de escritorio | `2008-05` |
+| [Environment variables (Español)](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)") | Configuración del sistema | `2017-12` | [RQF7](/index.php?title=User:RQF7&action=edit&redlink=1 "User:RQF7 (page does not exist)") | En proceso. Falta sección de ejemplos |
 | [Epson TX125 (Español)](/index.php/Epson_TX125_(Espa%C3%B1ol) "Epson TX125 (Español)") | Hardware/impresoras | `2012-03` | El artículo inglés es tan solo un esbozo |
 | [Exaile (Español)](/index.php/Exaile_(Espa%C3%B1ol) "Exaile (Español)") | Reproductor de música | `2011-08` |
 | [Ext4 (Español)](/index.php/Ext4_(Espa%C3%B1ol) "Ext4 (Español)") | Sistema de archivos | `2010-01` |

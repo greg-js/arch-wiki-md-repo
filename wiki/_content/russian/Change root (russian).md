@@ -1,3 +1,9 @@
+Ссылки по теме
+
+*   [Install bundled 32-bit system in Arch64](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64")
+*   [proot](/index.php/Proot "Proot")
+*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
+
 [Chroot](https://en.wikipedia.org/wiki/ru:chroot "wikipedia:ru:chroot") — операция изменения корневого каталога диска для запущенного процесса и его дочерних процессов. Программа, запущенная в таком окружении не может получить доступ к файлам вне нового корневого каталога. Это измененное окружение называется *chroot jail*.
 
 ## Contents

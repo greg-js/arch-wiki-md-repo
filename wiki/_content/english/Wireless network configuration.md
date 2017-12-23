@@ -62,6 +62,7 @@ Configuring wireless is a two-part process; the first part is to identify and en
         *   [6.2.1 rtl8192cu](#rtl8192cu)
         *   [6.2.2 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
         *   [6.2.3 rtl88xxau](#rtl88xxau)
+        *   [6.2.4 rtl8822bu](#rtl8822bu)
     *   [6.3 Atheros](#Atheros)
         *   [6.3.1 ath5k](#ath5k)
         *   [6.3.2 ath9k](#ath9k)
@@ -693,6 +694,12 @@ Several packages provide the kernel drivers:
 | rtl8814au | 4.3.21 | [rtl8814au-dkms-git](https://aur.archlinux.org/packages/rtl8814au-dkms-git/) | Possibly works for rtl8813au too |
 
 These require [DKMS](/index.php/DKMS "DKMS") so make sure you have your proper kernel headers installed.
+
+#### rtl8822bu
+
+[rtl8822bu-dkms-git](https://aur.archlinux.org/packages/rtl8822bu-dkms-git/) provides a kernel module for the Realtek 8822bu chipset found in the Edimax EW7822ULC USB3 and Asus AC53 Nano USB 802.11ac adapter.
+
+This requires [DKMS](/index.php/DKMS "DKMS"), so make sure you have your proper kernel headers installed.
 
 ### Atheros
 

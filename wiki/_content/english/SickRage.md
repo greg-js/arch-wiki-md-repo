@@ -40,13 +40,13 @@ By default, the SickRage webui running on port 8081 is not protected by a passwo
 
 For some you will need to enable the web-interface to work.
 
-*   "Black Hole" (saves .torrent files to a directory)
-*   uTorrent
 *   [Transmission](/index.php/Transmission "Transmission")
 *   [Deluge](/index.php/Deluge "Deluge")
-*   Synologie DS
 *   [rtorrent](https://www.archlinux.org/packages/?name=rtorrent)
-*   [qbittorent](https://www.archlinux.org/packages/?name=qbittorent)
+*   [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent)
+*   "Black Hole" (saves .torrent files to a directory)
+*   uTorrent
+*   Synologie DS
 
 ### First time usage
 

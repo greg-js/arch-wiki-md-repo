@@ -529,6 +529,17 @@ hciconfig hci0 reset
 
 to get blueman working
 
+Using power management with [TLP](/index.php/TLP "TLP") might cause a problem. Excluding Bluetooth devices from USB autosuspend by setting:
+
+ `/etc/default/tlp` 
+```
+…
+USB_BLACKLIST_BTUSB=1
+
+```
+
+can resolve the issue.
+
 ### BIOS
 
 **XPS 9550 with InfinityEdge 4K**

@@ -106,8 +106,8 @@ A modo ilustrativo, vamos a crear una página ficticia, a fin de exponer someram
 3.  Pulsaremos Intro y se nos abrirá una pantalla que nos mostrará el siguiente mensaje, advirtiéndonos que la página aún no existe: *«En este momento no hay texto en esta página. Puedes buscar el título de esta página en otras páginas, buscar en los registros, o editar esta página».*
 4.  Si pinchamos en **«editar esta página»**, o en las pestañas **«página»** o **«crear»** situadas en la parte superior de dicha pantalla, se nos abrirá el recuadro de edición, donde podremos plasmar la traducción correspondiente.
 5.  En la página a editar (una vez abierto el recuedro de edición) observaremos los siguientes elementos:
-    - En la parte superior: Una barra de herramientas, con iconos, para dar formato al texto (opcional).
-    - En la parte central: Un recuadro para insertar el cuerpo de la edición.
+    - En la parte superior: una barra de herramientas, con iconos, para dar formato al texto (opcional).
+    - En la parte central: un recuadro para insertar el cuerpo de la edición.
     - En la parte inferior:
     → Campo para el **Resumen** de la edición.
     → Botones para: **Guardar la página**, **Mostrar previsualización**, **Mostrar Cambios**, **Cancelar** y **Ayuda de edición**.

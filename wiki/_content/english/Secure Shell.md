@@ -689,9 +689,10 @@ Please refer to the [SSHFS](/index.php/SSHFS "SSHFS") article to use sshfs to mo
 
 ### Keep alive
 
-Your ssh session will automatically log out if it is idle. To send a "keep alive" signal to the server every 120 seconds add the `ServerAliveInterval 120` option to your [client configuration](#Configuration). See also the `ServerAliveCountMax` and `TCPKeepAlive` options.
+By default, the SSH session automatically logs out if it has been idle for a certain time. To keep the session up, the client can send a keep-alive signal to the server if no data has been received for some time, or symmetrically the server can send messages at regular intervals if it has not heard from the client.
 
-Conversely, to keep incoming connections alive, set the `ClientAliveInterval` option in your [server configuration](#Configuration_2).
+*   On the **server** side, `ClientAliveInterval` sets the timeout in seconds after which if no data has been received from the client, *sshd* will send a request for response. The default is 0, no message is sent. See also the `ServerAliveCountMax` and `TCPKeepAlive` options. For example to request a response every 60 seconds from the client, set the `ClientAliveInterval 60` option in your [server configuration](#Configuration_2).
+*   On the **client** side, `ServerAliveInterval` controls the interval between the requests for response sent from the client to the server. For example to request a response every 120 seconds from the server, add the `ServerAliveInterval 120` option to your [client configuration](#Configuration).
 
 ### Automatically restart SSH tunnels with systemd
 

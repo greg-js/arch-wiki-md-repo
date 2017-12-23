@@ -293,14 +293,14 @@ There are ready-to-run/compile patched kernels available in the ABS and AUR.
 
 ### AUR
 
-From the [AUR](/index.php/AUR "AUR") itself, you have the following options:
+Из репозитория [AUR](/index.php/AUR "AUR") вам доступны следующие варианты:
 
 *   [linux-rt](https://aur.archlinux.org/packages/linux-rt/)
-*   [linux-rt-lts](https://aur.archlinux.org/packages/linux-rt-lts/) (Long Term Support, stable release)
+*   [linux-rt-lts](https://aur.archlinux.org/packages/linux-rt-lts/) (долгосрочная поддержка, стабильный выпуск)
 
-The first two are standard kernels with the CONFIG_PREEMPT_RT patch, while -ice includes patches some may consider to be nasty, while to others are a blessing.
+Два первых - это стандартные ядра с патчем CONFIG_PREEMPT_RT, в то время как -ice включают некоторые патчи, которые работают не на всех конфигурациях.
 
-	*See: [Real-Time Linux Wiki](https://rt.wiki.kernel.org/)*
+	*Смотрите: [Real-Time Linux Wiki](https://rt.wiki.kernel.org/)*
 
 ## MIDI
 

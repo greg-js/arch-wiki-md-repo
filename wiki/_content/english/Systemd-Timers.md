@@ -109,7 +109,10 @@ OnCalendar=Mon,Tue *-*-01..04 12:00:00
 
 ```
 
-**Tip:** Special event expressions like `daily` and `weekly` refer to *specific start times* and thus any timers sharing such calendar events will start simultaneously. Timers sharing start events can cause poor system performance if the timers' services compete for system resources. The `RandomizedDelaySec` option in the `[Timer]` section avoids this problem by randomly staggering the start time of each timer. See [systemd.timer(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5).
+**Tip:**
+
+*   `OnCalendar` time specifications can be tested in order to verify their validity and to calculate the next time the condition would elapse when used on a timer unit file with the `calendar` option of the *systemd-analyze* utility. For example, one can use `systemd-analyze calendar weekly` or `systemd-analyze calendar "Mon,Tue *-*-01..04 12:00:00"`.
+*   Special event expressions like `daily` and `weekly` refer to *specific start times* and thus any timers sharing such calendar events will start simultaneously. Timers sharing start events can cause poor system performance if the timers' services compete for system resources. The `RandomizedDelaySec` option in the `[Timer]` section avoids this problem by randomly staggering the start time of each timer. See [systemd.timer(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5).
 
 ## Transient .timer units
 

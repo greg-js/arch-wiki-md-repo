@@ -75,7 +75,7 @@ See [Wikipedia:Tor (anonymity network)](https://en.wikipedia.org/wiki/Tor_(anony
 
 [Install](/index.php/Install "Install") the [tor](https://www.archlinux.org/packages/?name=tor) package.
 
-Usually, you will access Tor using Tor Browser, available as the [tor-browser](https://www.archlinux.org/packages/?name=tor-browser) package or a [portable executable](https://www.torproject.org/projects/torbrowser.html.en).
+Usually, you will access Tor using Tor Browser, available as the [tor-browser](https://aur.archlinux.org/packages/tor-browser/) package or a [portable executable](https://www.torproject.org/projects/torbrowser.html.en).
 
 The [arm](https://www.archlinux.org/packages/?name=arm) (Anonymizing Relay Monitor) package provides a terminal status monitor for bandwidth usage, connection details and more.
 
