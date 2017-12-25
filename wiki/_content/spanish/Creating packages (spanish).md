@@ -119,13 +119,13 @@ Todos ellos contienen rutas *absolutas*, lo que significa que no tiene que preoc
 
 Hay cinco funciones, enumeradas aquí en el orden en que se ejecutan si todas existen. Si una no existe, simplemente se omite.
 
-**Nota:** : Esto no se aplica a la función `package()`, como se requiere en cada PKGBUILD.
+**Nota:** : Esto no se aplica a la función `package()`, como se requiere en cada PKGBUILD.
 
 #### prepare()
 
 Esta función, utiliza comandos para preparar las fuentes para la construcción que se ejecuta, como [parches](/index.php/Patching_in_ABS "Patching in ABS"). Esta función se ejecuta justo después de la extracción del paquete, antes de [pkgver()](#pkgver.28.29) y la función de build. Si la extracción se omite (`makepkg -e`), entonces `prepare()` no se ejecuta.
 
-**Nota:** : (Desde [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) La función se ejecuta en modo `bash -e`, significa que cualquier comando que aparezca con un estado distinto de cero hará que la función termine.
+**Nota:** : (Desde [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) La función se ejecuta en modo `bash -e`, significa que cualquier comando que aparezca con un estado distinto de cero hará que la función termine.
 
 #### pkgver()
 
@@ -154,7 +154,7 @@ make
 
 ```
 
-**Nota:** : Si su software no necesita construir nada, NO utilice la función `build()`. La función `build()` no es necesaria, pero la La función `package()` si lo es.
+**Nota:** : Si su software no necesita construir nada, NO utilice la función `build()`. La función `build()` no es necesaria, pero la La función `package()` si lo es.
 
 #### check()
 
@@ -171,7 +171,7 @@ make DESTDIR="$pkgdir/" install
 
 ```
 
-**Nota:** : A veces está el caso en que `DESTDIR` no se utiliza en el `Makefile`; puede que tenga que usar `prefix` en su lugar. Si el paquete está construido con *autoconf* / *automake*, use `DESTDIR`; esto es lo que se documenta en los [manuales](https://www.gnu.org/software/automake/manual/automake.html#Install). Si `DESTDIR` no funciona, trate de construir con `make prefix="$pkgdir/usr/" install`. Si eso no funciona, tendrá que buscar más en los comandos de instalación que son ejecutados por "`make <...> install`".
+**Nota:** : A veces está el caso en que `DESTDIR` no se utiliza en el `Makefile`; puede que tenga que usar `prefix` en su lugar. Si el paquete está construido con *autoconf* / *automake*, use `DESTDIR`; esto es lo que se documenta en los [manuales](https://www.gnu.org/software/automake/manual/automake.html#Install). Si `DESTDIR` no funciona, trate de construir con `make prefix="$pkgdir/usr/" install`. Si eso no funciona, tendrá que buscar más en los comandos de instalación que son ejecutados por "`make <...> install`".
 
 En algunos casos raros, el software espera ejecutarse desde un único directorio. En tales casos, es aconsejable simplemente copiarlos `$pkgdir/opt`.
 

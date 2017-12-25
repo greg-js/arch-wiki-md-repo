@@ -155,10 +155,7 @@ $ gcc -march=native -v -Q --help=target
 
 ```
 
-**Note:**
-
-*   Se você especificar um valor diferente de `-march=native`, então `-Q --help=target` **não vai** funcionar como esperado.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1616694#p1616694) Você precisa passar por uma fase de compilação para descobrir quais opções estão realmente habilitadas. Veja [Encontre opções específicas da CPU](https://wiki.gentoo.org/wiki/Safe_CFLAGS#Find_CPU-specific_options) (inglês) no wiki do Gentoo para instruções.
-*   Para descobrir as opções ótimas para uma arquitetura x86 **32 bit**, você pode usar o script [gcccpuopt](https://github.com/pixelb/scripts/blob/master/scripts/gcccpuopt).
+**Nota:** Se você especificar um valor diferente de `-march=native`, então `-Q --help=target` **não vai** funcionar como esperado.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1616694#p1616694) Você precisa passar por uma fase de compilação para descobrir quais opções estão realmente habilitadas. Veja [Encontre opções específicas da CPU](https://wiki.gentoo.org/wiki/Safe_CFLAGS#Find_CPU-specific_options) (inglês) no wiki do Gentoo para instruções.
 
 #### MAKEFLAGS
 

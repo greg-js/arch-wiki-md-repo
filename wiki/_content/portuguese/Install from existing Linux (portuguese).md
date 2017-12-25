@@ -80,7 +80,7 @@ Para executar um unsquash da imagem de arquitetura x86_64 (ou i686 respectivamen
 
  `# mount -o loop /squashfs-root/root-image.fs /arch` 
 
-*   Antes de executar o [chrooting](/index.php/Change_root "Change root") para o interior da imagem, precisaremos configurar alguns pontos de montagem adicionais,
+*   Antes de executar o [chroot](/index.php/Change_root_(Portugu%C3%AAs) "Change root (Português)") para mudar para o interior da imagem, precisaremos configurar alguns pontos de montagem adicionais,
 
 ```
 # mount -t proc none /arch/proc

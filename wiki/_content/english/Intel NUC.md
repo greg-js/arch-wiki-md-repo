@@ -13,11 +13,12 @@ The barebone kits consist of the board, in a plastic case with a fan, an externa
 *   [2 Performance](#Performance)
     *   [2.1 Boot](#Boot)
     *   [2.2 4K](#4K)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Audio plug](#Audio_plug)
-    *   [3.2 TPM](#TPM)
-    *   [3.3 Poweroff](#Poweroff)
-*   [4 Resources](#Resources)
+*   [3 Power management](#Power_management)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Audio plug](#Audio_plug)
+    *   [4.2 TPM](#TPM)
+    *   [4.3 Poweroff](#Poweroff)
+*   [5 Resources](#Resources)
 
 ## Installation
 
@@ -32,6 +33,8 @@ It is highly recommended to update the board BIOS prior to installation. See [of
 Intel NUCs support NVMe drives connected to the PCIe M.2 connector. See [Solid State Drives/NVMe](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe").
 
 **Note:** If the M.2 connector is not working, verify that it is enabled in BIOS.
+
+**Tip:** If supported by the NVMe and/or other devices connected to the PCIe-slot, you may want to **enable** *Native ACPI OS PCIe Support* in the *Power* section to allow power saving and possible cooling the device in idle.
 
 ### Graphics
 
@@ -58,6 +61,10 @@ Fastest boot times are achieved with [UEFI](/index.php/UEFI "UEFI") boot and dis
 ### 4K
 
 If you want to use 4K graphic output, open the BIOS settings and set *Devices and Peripherals* -> *Video* -> *IGD Minimum Memory* to 512 MB and *IGD Aperture Size* to 1024 MB.
+
+## Power management
+
+It is possible to reduce power usage, see [TLP](/index.php/TLP "TLP") and [Powertop](/index.php/Powertop "Powertop").
 
 ## Troubleshooting
 

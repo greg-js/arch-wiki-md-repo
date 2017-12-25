@@ -777,7 +777,7 @@ nvclock获取的温度跟nvidia-settings/nv-control获取的温度会有明显�
 
 ### 登陆时设置风扇速度
 
-您可以使用`nvidia-settings`的命令行借口来调整。首先确定您的Xorg的配置文件的`Device`节是否已经把Coolbits设置为4或者5.
+您可以使用`nvidia-settings`的命令行接口来调整。首先确定您的Xorg的配置文件的`Device`节是否已经把Coolbits设置为4或者5.
 
 ```
 Option "Coolbits" "4"

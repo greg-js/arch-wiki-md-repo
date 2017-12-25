@@ -268,7 +268,7 @@ In addition to being a convenient way to configure your webcam, [guvcview](http:
 
 ### Kopete
 
-Kopete is the [KDE](/index.php/KDE "KDE") instant messaging (IM) client. [Install](/index.php/Install "Install") it with the [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete) package.
+Kopete is the [KDE](/index.php/KDE "KDE") instant messaging (IM) client. [Install](/index.php/Install "Install") it with the [kopete](https://www.archlinux.org/packages/?name=kopete) package.
 
 ### Kamoso
 

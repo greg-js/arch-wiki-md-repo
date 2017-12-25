@@ -42,15 +42,22 @@ If you plan to use SSH to interact with your repositories, make sure to add the 
 
 ## First start
 
-After [starting](/index.php/Start "Start") `gogs.service`, you can access the running service over the url `http://[server]:3000`. At first load, you will be redirected to the installation page where you can configure some options. In the configuration file `/srv/gogs/conf/app.ini`, you can change more values (for example the port number).
+After [starting](/index.php/Start "Start") `gogs.service`, you can access the running service over the url `http://[server]:3000`. At first load, you will be redirected to the installation page where you can configure some options. In order to be able to save changes made using the initial configuration page the permissions of the configuration file (owned by root) will have to be modified (either temporary or permanently), for example:
+
+```
+# sudo chown gogs:gogs /etc/gogs/app.ini
+
+```
+
+In the configuration file `/etc/gogs/app.ini`, you can change more values (for example the port number).
 
 ## Configuration
 
-After the first start, Gogs has created a configuration file in the directory `/srv/gogs/config`. When you want to edit a configuration option, you need to edit this file.
+The Gogs configuration file is located at `/etc/gogs/app.ini`. When you want to edit a configuration option, you need to edit this file and restart the Gogs service before changes will take effect.
 
 ### .gitignore and license files
 
-Add the files into the directory `/srv/gogs/conf/gitignore` or `/srv/gogs/conf/license`. This directory is created during the [#First start](#First_start)
+A set of gitignore and license files are included in the package and are stored at `/usr/share/gogs/conf/gitignore` and `/usr/share/gogs/conf/license` respectively.
 
 You can get or create your own .gitignore files [here](http://www.gitignore.io/).
 
@@ -115,7 +122,7 @@ sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/share/gogs/gogs
 
 ```
 
-Configure gogs SSH server in `/srv/gogs/conf/app.ini`:
+Configure gogs SSH server in `/etc/gogs/conf/app.ini`:
 
 ```
 START_SSH_SERVER       = true

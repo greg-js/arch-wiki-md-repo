@@ -631,6 +631,13 @@ Alternatively, when mounting volumes locally use:
 
 ```
 
+Since [linux-4.14.4](https://bugs.archlinux.org/task/56781), UTF8 charset is enabled by default. So in order to mount volumes using ISO 8859-1 encoding, you need to set the following option:
+
+```
+--fs-options=utf8=no
+
+```
+
 ### Unmount error (device mapper)
 
 If you always get a message "device-mapper: remove ioctl failed: Device or resource busy" when attempting to dismount your truecrypt volume, the solution is to goto: Setting > Preferences > System Integration > Kernel Service and check the box

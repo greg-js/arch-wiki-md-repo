@@ -27,14 +27,14 @@
 [官方桌面版客户端](https://desktop.telegram.org/):
 
 *   [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) ：来自上游的预编译版本。
-*   [telegram-desktop](https://aur.archlinux.org/packages/telegram-desktop/) ：需要同时编译 Qt。
+*   [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) ：需要同时编译 Qt。
 *   [telegram-desktop-systemqt](https://aur.archlinux.org/packages/telegram-desktop-systemqt/) ：使用系统 Qt 的实验性版本。
 *   [telegram-desktop-systemqt-notoemoji](https://aur.archlinux.org/packages/telegram-desktop-systemqt-notoemoji/) 使用系统 Qt 并替换 Emoji 为 [Noto Color Emoji](https://github.com/googlei18n/noto-emoji) 的实验性版本。
 *   [telegram-desktop-systemqt-emojione](https://aur.archlinux.org/packages/telegram-desktop-systemqt-emojione/) 使用系统 Qt 并替换 Emoji 为 [Emoji One](https://emojione.com) 的实验性版本。
 
 其它非官方客户端:
 
-*   [cutegram](https://www.archlinux.org/packages/?name=cutegram), 由 [aseman](http://aseman.co/en/products/cutegram) 开发，基于 [Qt](/index.php/Qt "Qt") 但是与官方客户端设计不同。安装 [cutegram-git](https://aur.archlinux.org/packages/cutegram-git/) 获得最新的开发版本。
+*   [cutegram](https://aur.archlinux.org/packages/cutegram/), 由 [aseman](http://aseman.co/en/products/cutegram) 开发，基于 [Qt](/index.php/Qt "Qt") 但是与官方客户端设计不同。安装 [cutegram-git](https://aur.archlinux.org/packages/cutegram-git/) 获得最新的开发版本。
 
 ### 终端应用
 
@@ -50,8 +50,8 @@
 
 ## 提示和技巧
 
-*   [telegram-desktop](https://aur.archlinux.org/packages/telegram-desktop/) 需要下载 [qtbase-src](http://download.qt.io/official_releases/qt/5.7/5.7.0/submodules/qtbase-opensource-src-5.7.0.tar.xz) 来进行编译。
-*   非官方用户仓库 [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") 提供几个预编译的 AUR 上 Telegram 客户端的软件包，例如 [telegram-desktop](https://aur.archlinux.org/packages/telegram-desktop/) ，[telegram-desktop-systemqt](https://aur.archlinux.org/packages/telegram-desktop-systemqt/)，[telegram-desktop-systemqt-notoemoji](https://aur.archlinux.org/packages/telegram-desktop-systemqt-notoemoji/)。
+*   [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) 需要下载 [qtbase-src](http://download.qt.io/official_releases/qt/5.7/5.7.0/submodules/qtbase-opensource-src-5.7.0.tar.xz) 来进行编译。
+*   非官方用户仓库 [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") 提供几个预编译的 AUR 上 Telegram 客户端的软件包，例如 [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) ，[telegram-desktop-systemqt](https://aur.archlinux.org/packages/telegram-desktop-systemqt/)，[telegram-desktop-systemqt-notoemoji](https://aur.archlinux.org/packages/telegram-desktop-systemqt-notoemoji/)。
 
 ### 关于 Arch Linux 的 Telegram 频道
 

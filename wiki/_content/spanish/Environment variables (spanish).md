@@ -14,7 +14,8 @@ Una variable de entorno es un objeto con nombre que contiene información usada 
     *   [2.2 Por usuario](#Por_usuario)
         *   [2.2.1 Aplicaciones gráficas](#Aplicaciones_gr.C3.A1ficas)
     *   [2.3 Por sesión](#Por_sesi.C3.B3n)
-*   [3 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [3 Ejemplos](#Ejemplos)
+*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Utilidades
 
@@ -107,6 +108,77 @@ En estos casos, se puede definir la variable `PATH` solamente en la sesión actu
 $ export PATH="${PATH}:/home/nombre_de_usuario/tmp/usr/bin"
 
 ```
+
+## Ejemplos
+
+Esta sección enlista algunas variables de entorno comunes usadas por un sistema Linux y describe sus valores.
+
+*   `DE` indica el entorno de escritorio que está siendo usado (por sus siglas en inglés, *D*esktop *E*nviroment). [xdg-open](/index.php/Xdg-open "Xdg-open") la usa para seleccionar las aplicaciones por defecto según el entorno. Para usar esta característica se necesitan instalar algunos paquetes adicionales: para [GNOME](/index.php/GNOME "GNOME"), [libgnome](https://aur.archlinux.org/packages/libgnome/); para [Xfce](/index.php/Xfce "Xfce"), [exo](https://www.archlinux.org/packages/?name=exo). Algunos valores comunes para la variable `DE` son: `gnome`, `kde`, `xfce`, `lxde` and `mate`.
+
+	La variable de entorno `DE` necesita ser exportada antes de iniciar el administrador de ventanas. Por ejemplo:
+
+ `~/.xinitrc` 
+```
+export DE="xfce"
+exec openbox
+```
+
+	Esto hará que *xdg-open* use *exo-open* (el cuál es más amigable con el usuario) porque asume que está corriendo dentro de Xfce. Se puede utilizar *exo-preferred-applications* para configurar.
+
+*   `PATH` contiene una lista, separada por dos puntos, de directorios en los que el sistema buscará archivos ejecutables. Cuando un comando normal (por ejemplo, *ls*, *rc-upadte* o *ic|emerge*) es interpretado por el shell (por ejemplo, *bash* o *zsh*), este busca un archivo ejecutable con el mismo nombre en los directorios del `PATH` y lo ejecuta. Para correr un ejecutable cuyo directorio no está enlistado en el `PATH`, se debe escribir la ruta completa: `/bin/ls`.
+
+**Note:** Por razones de seguridad es recomendable no incluir el directorio actual (`.`) en el `PATH`: se puede conducir al usuario a ejecutar archivos malignos
+.
+
+*   `HOME` contiene la ruta del directorio del usuario actual. Esta variable puede ser usada por las aplicaciones para asociar archivos de configuración (entre otros) al usuario actual.
+
+*   `PWD` contiene la ruta al directori actual.
+
+*   `OLDPWD` contiene la ruta al directorio anterior al actual; esot es, el valor de `PWD` andes de ejecutar *cd*.
+
+*   `SHELL` contiene la ruta al [shell del usuario](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html#tag_08_03). Nótese que este no es necesariamente el mismo shell que se está ejecutando, aunque [Bash](/index.php/Bash "Bash") coloca esta variable al iniciar.
+
+*   `TERM` contiene el tipo de terminal que se está ejecutando, por ejemplo, `xterm-256color`. Es usado por programas que se ejecutan en la terminal y que desean ocupar características específicas a cada tipo.
+
+*   `PAGER` contiene el comando para correr el programa con el que se enlista el contenido de un archivo, por ejemplo, `/bin/less`.
+
+*   `EDITOR` contiene el comando para ejecutar el editor ligero de archivos de texto. Por ejemplo, se puede escribir un cambio interactivo entre *gedit* bajo [X](/index.php/X "X") o *nano*:
+
+```
+export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'gedit'; else echo 'nano'; fi)"
+
+```
+
+*   `VISUAL` contiene el comando para ejecutar el editor de texto usado para tareas más demandantes, tal como editar correo (por ejemplo, `vi`, [vim](/index.php/Vim "Vim"), [emacs](/index.php/Emacs "Emacs") etcétera).
+
+*   `MAIL` contiene la ubicación de los correos electrónicos de entrada. La configuración tradicional es `/var/spool/mail/$LOGNAME`.
+
+*   `BROWSER` contiene la ruta al navegador web. Es útil establecerla en un archivo de configuración de shell de manera que cambie de manera dinámica según el entorno gráfico:
+
+```
+if [ -n "$DISPLAY" ]; then
+    export BROWSER=firefox
+else 
+    export BROWSER=links
+fi
+
+```
+
+*   `ftp_proxy` y `http_proxy` contienen servidores FTP y HTTP, respectivamente:
+
+```
+ftp_proxy="ftp://192.168.0.1:21"
+http_proxy="http://192.168.0.1:80"
+
+```
+
+*   `MANPATH` contiene una lista separada por dos puntos con directorios en los cuales *man* busca páginas de manuales.
+
+**Note:** En `/etc/profile` hay un comentario que dice «Man es mucho mejor que nosotros en averiguar esto», por lo que, generalmente, es mucho mejor dejar esta variable con su valor por defecto: `/usr/share/man:/usr/local/share/man`
+
+*   `INFODIR` contiene una lista de directorios en los cuales el comando *info* busca páginas de información, por ejemplo, `/usr/share/info:/usr/local/share/info`.
+
+*   `TZ` Se puede usar para colocar una zona horaria, distinta de la del sistema, a un usuario.. Las zonas enlistadas en `/usr/share/zoneinfo/` se pueden usar como referencia.
 
 ## Véase también
 

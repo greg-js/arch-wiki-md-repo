@@ -35,11 +35,11 @@ dd if=/dev/zero of=/dev/sdX bs=1M count=8
 
 Use [fdisk](/index.php/Fdisk "Fdisk") to partition the SD card, and [format](/index.php/File_systems "File systems") it with `mkfs.ext4 -O ^metadata_csum,^64bit /dev/sdX1`.
 
-Mount the ext4 filesystem, replacing `sda1` with the formatted partition:
+Mount the ext4 filesystem, replacing `sdX1` with the formatted partition:
 
 ```
 # mkdir mnt
-# mount /dev/*sda1* mnt
+# mount /dev/*sdX1* /mnt
 
 ```
 
@@ -47,7 +47,7 @@ Download and extract the root filesystem:
 
 ```
 # wget [http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz](http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz)
-# bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C mnt/
+# bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C /mnt/
 
 ```
 
@@ -79,14 +79,14 @@ fi
 Compile it and write it to the SD-card using the package [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools)
 
 ```
-# mkimage -A arm -O linux -T script -C none -a 0 -e 0 -n "Orange Pi One boot script" -d boot.cmd mnt/boot/boot.scr
-# umount mnt
+# mkimage -A arm -O linux -T script -C none -a 0 -e 0 -n "Orange Pi One boot script" -d boot.cmd /mnt/boot/boot.scr
+# umount /mnt
 
 ```
 
 #### Compile and copy U-Boot bootloader
 
-The next step is creating a u-boot image. Make sure you have [arm-none-eabi-gcc](https://www.archlinux.org/packages/?name=arm-none-eabi-gcc), [dtc](https://www.archlinux.org/packages/?name=dtc), [git](https://www.archlinux.org/packages/?name=git) and [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools) installed on your system. If you compile for a different H3 Orange Pi than the One, replace orangepi_one_config accordingly. Then clone the u-boot source code and compile a Orange Pi image:
+The next step is creating a u-boot image. Make sure you have [arm-none-eabi-gcc](https://www.archlinux.org/packages/?name=arm-none-eabi-gcc), [dtc](https://www.archlinux.org/packages/?name=dtc), [git](https://www.archlinux.org/packages/?name=git), [swig](https://www.archlinux.org/packages/?name=swig) and [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools) installed on your system. If you compile for a different H3 Orange Pi than the One, replace orangepi_one_config accordingly. Then clone the u-boot source code and compile a Orange Pi image:
 
 ```
 $ git clone --depth 1 [git://git.denx.de/u-boot.git](git://git.denx.de/u-boot.git)

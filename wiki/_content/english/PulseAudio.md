@@ -59,12 +59,12 @@ Install the [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) pa
 
 Some PulseAudio modules have been [split](https://www.archlinux.org/news/pulseaudio-split/) from the main package and must be installed separately if needed:
 
-*   [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth): Bluetooth (Bluez) support
+*   [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth): [Bluetooth](/index.php/Bluetooth "Bluetooth") support (Bluez)
 *   [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer): Equalizer sink (qpaeq)
 *   [pulseaudio-gconf](https://www.archlinux.org/packages/?name=pulseaudio-gconf): GConf support (paprefs)
 *   [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack): [JACK](/index.php/JACK "JACK") sink, source and jackdbus detection
 *   [pulseaudio-lirc](https://www.archlinux.org/packages/?name=pulseaudio-lirc): Infrared (LIRC) volume control
-*   [pulseaudio-zeroconf](https://www.archlinux.org/packages/?name=pulseaudio-zeroconf): Zeroconf (Avahi/DNS-SD) support
+*   [pulseaudio-zeroconf](https://www.archlinux.org/packages/?name=pulseaudio-zeroconf): Zeroconf ([Avahi](/index.php/Avahi "Avahi")/DNS-SD) support
 
 **Note:** Some confusion may occur between [ALSA](/index.php/ALSA "ALSA") and PulseAudio. ALSA includes a Linux kernel component with sound card drivers, as well as a userspace component, `libalsa`.[[1]](http://www.alsa-project.org/main/index.php/Download) PulseAudio builds only on the kernel component, but offers compatibility with `libalsa` through [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa).[[2]](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/#index14h3)
 
@@ -249,7 +249,7 @@ load-module module-alsa-source **device=dsnoop**
 
 ```
 
-*   *Optional:* If you use [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix) you may want to control ALSA volume instead of PulseAudio volume:
+*   *Optional:* If you use [kmix](https://www.archlinux.org/packages/?name=kmix) you may want to control ALSA volume instead of PulseAudio volume:
 
 ```
 $ echo export KMIX_PULSEAUDIO_DISABLE=1 > ~/.kde4/env/kmix_disable_pulse.sh

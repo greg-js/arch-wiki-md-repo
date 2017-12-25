@@ -522,7 +522,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **[JuK](https://en.wikipedia.org/wiki/JuK "wikipedia:JuK")** — JuK is an audio jukebox application, supporting collections of MP3, Ogg Vorbis, and FLAC audio files.
 
-	[https://www.kde.org/applications/multimedia/juk/](https://www.kde.org/applications/multimedia/juk/) || [kdemultimedia-juk](https://www.archlinux.org/packages/?name=kdemultimedia-juk)
+	[https://www.kde.org/applications/multimedia/juk/](https://www.kde.org/applications/multimedia/juk/) || [juk](https://www.archlinux.org/packages/?name=juk)
 
 *   **Kaku** — An highly integrated music player supports different online platform like YouTube, SoundCloud, Vimeo and more.
 

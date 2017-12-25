@@ -61,7 +61,7 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 *   **[KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet")** — Správce stahování pro KDE podporující HTTP(S), FTP a BitTorrent. Součástí skupiny [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/)
 
-	[http://www.kde.org/applications/internet/kget/](http://www.kde.org/applications/internet/kget/) || [kdenetwork-kget](https://www.archlinux.org/packages/?name=kdenetwork-kget)
+	[http://www.kde.org/applications/internet/kget/](http://www.kde.org/applications/internet/kget/) || [kget](https://www.archlinux.org/packages/?name=kget)
 
 *   **[KTorrent](https://en.wikipedia.org/wiki/KTorrent "wikipedia:KTorrent")** — BitTorrent pro KDE bohatý na funkce
 
@@ -159,7 +159,7 @@ Mnoho zde uvedených klientů (včetně Pidgina a všech jeho forků) podporuje 
 
 *   **[Kopete](https://en.wikipedia.org/wiki/Kopete "wikipedia:Kopete")** — Uživatelsky přívětivý IM klient podporující AIM, ICQ, Windows Live Messenger, Yahoo, Jabber, Gadu-Gadu, Novell GroupWise Messenger a další IM sítě. Součástí skupiny balíčků [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/)
 
-	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
+	[http://kopete.kde.org/](http://kopete.kde.org/) || [kopete](https://www.archlinux.org/packages/?name=kopete)
 
 *   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — IM klient z prostředí KDE používající [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Míněn jako náhrada za Kopete.
 
@@ -435,7 +435,7 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Midori](/index.php/Midori_(%C4%8Cesky) "Midori (Česky)")** — odlehčený webový prohlížeč, založený na Gtk a WebKit.
 
-	[http://www.twotoasts.de/index.php?/pages/midori_summary.html](http://www.twotoasts.de/index.php?/pages/midori_summary.html) || [midori](https://www.archlinux.org/packages/?name=midori) [midori-gtk3](https://www.archlinux.org/packages/?name=midori-gtk3)
+	[http://www.twotoasts.de/index.php?/pages/midori_summary.html](http://www.twotoasts.de/index.php?/pages/midori_summary.html) || [midori](https://www.archlinux.org/packages/?name=midori)
 
 *   **[Netsurf](https://en.wikipedia.org/wiki/NetSurf "wikipedia:NetSurf")** — Prohlížeč s vlastním vykreslovacím jádrem, je napsán v programovacím jazyku C a je velice odlehčený.
 

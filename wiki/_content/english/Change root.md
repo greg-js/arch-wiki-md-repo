@@ -1,6 +1,6 @@
 Related articles
 
-*   [proot](/index.php/Proot "Proot")
+*   [PRoot](/index.php/PRoot "PRoot")
 *   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
 *   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
 
@@ -17,7 +17,7 @@ Related articles
     *   [3.2 Using chroot](#Using_chroot)
 *   [4 Run graphical applications from chroot](#Run_graphical_applications_from_chroot)
 *   [5 Without root privileges](#Without_root_privileges)
-    *   [5.1 Proot](#Proot)
+    *   [5.1 PRoot](#PRoot)
     *   [5.2 Fakechroot](#Fakechroot)
 *   [6 See also](#See_also)
 
@@ -197,9 +197,9 @@ as the user that owns the X server to see the value of DISPLAY. If the value is 
 
 Chroot requires root privileges, which may not be desirable or possible for the user to obtain in certain situations. There are, however, various ways to simulate chroot-like behavior using alternative implementations.
 
-### Proot
+### PRoot
 
-[Proot](/index.php/Proot "Proot") may be used to change the apparent root directory and use `mount --bind` without root privileges. This is useful for confining applications to a single directory or running programs built for a different CPU architecture, but it has limitations due to the fact that all files are owned by the user on the host system. Proot provides a `--root-id` argument that can be used as a workaround for some of these limitations in a similar (albeit more limited) manner to *fakeroot*.
+[PRoot](/index.php/PRoot "PRoot") may be used to change the apparent root directory and use `mount --bind` without root privileges. This is useful for confining applications to a single directory or running programs built for a different CPU architecture, but it has limitations due to the fact that all files are owned by the user on the host system. PRoot provides a `--root-id` argument that can be used as a workaround for some of these limitations in a similar (albeit more limited) manner to *fakeroot*.
 
 ### Fakechroot
 

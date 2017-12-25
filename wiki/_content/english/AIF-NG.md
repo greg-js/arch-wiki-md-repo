@@ -1,4 +1,8 @@
-NOTE: The [previous AIF](https://bbs.archlinux.org/viewtopic.php?id=58110) is [dead and gone](https://www.archlinux.org/news/install-media-20120715-released/). This is not a fork of that project. This is a means for unattended installs (like [Kickstart](https://en.wikipedia.org/wiki/Kickstart_(Linux) "wikipedia:Kickstart (Linux)")), and an [entirely new codebase](https://git.square-r00t.net/AIF-NG/).
+Related articles
+
+*   [AIF-NG/Configuration file](/index.php/AIF-NG/Configuration_file "AIF-NG/Configuration file")
+
+**Note:** The [previous AIF](https://bbs.archlinux.org/viewtopic.php?id=58110) is [dead and gone](https://www.archlinux.org/news/install-media-20120715-released/). This is not a fork of that project. This is a means for unattended installs (like [Kickstart](https://en.wikipedia.org/wiki/Kickstart_(Linux) "wikipedia:Kickstart (Linux)")), and an [entirely new codebase](https://git.square-r00t.net/AIF-NG/).
 
 The full upstream documentation is available [here](https://aif.square-r00t.net/). It is currently in development/review stages in preparation for proposal for inclusion on the official Arch installation media.
 

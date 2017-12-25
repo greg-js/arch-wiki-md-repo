@@ -4,7 +4,7 @@ Artigos relacionados
 *   [Display Manager](/index.php/Display_Manager "Display Manager")
 *   [Xinitrc](/index.php/Xinitrc "Xinitrc")
 
-Um [gestor de display](/index.php/Display_manager_(Portugu%C3%AAs) "Display manager (Português)") pode ser utilizado para prover uma tela de login e incializar o [servidor X](/index.php?title=Servidor_X&action=edit&redlink=1 "Servidor X (page does not exist)"). Este artigo explica como isto pode ser feito utilizando um terminal virtual existente.
+Um [gestor de display](/index.php/Display_manager_(Portugu%C3%AAs) "Display manager (Português)") pode ser utilizado para prover uma tela de login e incializar o [servidor X](/index.php/Servidor_X "Servidor X"). Este artigo explica como isto pode ser feito utilizando um terminal virtual existente.
 
 Para inciar o X manualmente, `startx` ou `xinit` são utilizados. Ambos executarão o `~/.xinitrc`, que pode ser customizado para iniciar um gerenciador de janelas de sua escolha como descrito no artigo [xinitrc](/index.php/Xinitrc "Xinitrc").
 

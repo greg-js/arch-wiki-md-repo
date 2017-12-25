@@ -97,7 +97,10 @@ Ou para alterar a localização por padrão:
 
 O valor padrão é 5 gigabyte, porém é possível usar um valor menor ou até mesmo mais alto:
 
- `/home/<usuário>/.ccache/ccache.conf`  `max_size = 2.0G` 
+```
+$ ccache --set-config=max_size=2.0G
+
+```
 
 ### Desabilitar o cacho via ambiente
 

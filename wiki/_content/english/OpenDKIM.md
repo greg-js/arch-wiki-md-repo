@@ -167,7 +167,19 @@ myselector._domainkey.example2.com example2.com:myselector:/etc/opendkim/myselec
 
 ```
 
-An existent `/etc/opendkim/TrustedHosts` file tells opendkim who to let use your keys. This is referenced by the `ExternalIgnoreList` directive in your conf file. Opendkim will ignore this list of hosts when verifying incoming mail. And, because it is also referenced by the `InternalHosts` directive, this same list of hosts will be considered “internal,” and opendkim will sign their outgoing mail. Example: `/etc/opendkim/TrustedHosts`
+An existent `/etc/opendkim/TrustedHosts` file tells opendkim who to let use your keys. This is referenced by the `ExternalIgnoreList` directive in your conf file. Opendkim will ignore this list of hosts when verifying incoming mail. And, because it is also referenced by the `InternalHosts` directive, this same list of hosts will be considered “internal,” and opendkim will sign their outgoing mail. Example:
+
+ `/etc/opendkim/TrustedHosts` 
+```
+127.0.0.1
+::1
+hostname.example1.com
+example1.com
+hostname.example2.com
+example2.com
+...
+
+```
 
 Change ownership of all files to opendkim:
 

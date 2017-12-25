@@ -448,7 +448,7 @@ By default every removable device is blacklisted. You just have to remove your d
 
 ### PIM
 
-KDE offers its own stack for personal information management. This includes emails, contacts, calendar, etc. To install all the PIM packages, you could use the meta-package [kde-meta-kdepim](https://www.archlinux.org/packages/?name=kde-meta-kdepim).
+KDE offers its own stack for personal information management. This includes emails, contacts, calendar, etc. To install all the PIM packages, you could use the meta-package [kdepim-meta](https://www.archlinux.org/packages/?name=kdepim-meta).
 
 #### Akonadi
 
@@ -458,7 +458,7 @@ Akonadi does not store any data by itself: the storage format depends on the nat
 
 ##### Installation
 
-Install [akonadi](https://www.archlinux.org/packages/?name=akonadi). For additional addons, install [kdepim-addons](https://www.archlinux.org/packages/?name=kdepim-addons). For EWS support, install [akonadi-ews-git](https://aur.archlinux.org/packages/akonadi-ews-git/).
+Install [akonadi](https://www.archlinux.org/packages/?name=akonadi). For additional addons, install [kdepim-addons](https://www.archlinux.org/packages/?name=kdepim-addons).
 
 **Note:** If you wish to use a database engine other than MariaDB/MySQL, then when installing the [akonadi](https://www.archlinux.org/packages/?name=akonadi) package, use the following command to skip installing the [mariadb](https://www.archlinux.org/packages/?name=mariadb) dependencies: `# pacman -S akonadi --assume-installed mariadb` 
 

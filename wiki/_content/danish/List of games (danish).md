@@ -1,3 +1,9 @@
+Related articles
+
+*   [Gaming](/index.php/Gaming "Gaming")
+*   [Common Applications](/index.php/Common_Applications "Common Applications")
+*   [Lightweight Applications](/index.php/Lightweight_Applications "Lightweight Applications")
+
 Denne sider viser kun populære spil for GNU/Linux. For at lære mere omkring kørsel af spil og relateret system konfigurations tips, se [Gaming](/index.php/Gaming "Gaming"). Se [Netbook Games](/index.php/Netbook_Games "Netbook Games") for spil lavet til netbooks.
 
 ## Contents
@@ -18,10 +24,9 @@ Denne sider viser kun populære spil for GNU/Linux. For at lære mere omkring k�
 *   [14 CLI spil](#CLI_spil)
 *   [15 Emulators](#Emulators)
 *   [16 Native - Kommercielle](#Native_-_Kommercielle)
-*   [17 Wine](#Wine)
-*   [18 Desktop Environment](#Desktop_Environment)
-*   [19 Eksterne links](#Eksterne_links)
-    *   [19.1 Linux spil databaser](#Linux_spil_databaser)
+*   [17 Desktop Environment](#Desktop_Environment)
+*   [18 Eksterne links](#Eksterne_links)
+    *   [18.1 Linux spil databaser](#Linux_spil_databaser)
 
 ## Spil Miljøer
 
@@ -305,31 +310,6 @@ For a full selection of emulators, try checking the [AUR 'emulators' category](h
 *   [VVVVVV](http://thelettervsixtim.es/) - Highly praised 2d puzzle platform indie game with a C64 retro theme, with a great chiptune soundtrack. You can buy the full version for £1.67, or play the [demo.](http://www.kongregate.com/games/TerryCavanagh/vvvvvv-demo/) in a browser.
 
 **Tip:** You may want to backup your save file, which is found at ~/.macromedia/Flash_Player/#SharedObjects/<string>/localhost ... ...
-
-## Wine
-
-*   **Dark Reign: The Future of War** - A realtime strategy. Runs great.
-
-**Tip:** run "winecfg" and disable "Vertex Shader" and "Pixel Shader" to make it run
-
-*   **Diablo 2 + Lord Of Destruction** - Hack 'n' slash. See [Diablo II](/index.php/Diablo_II "Diablo II").
-
-*   **Spelunky** - Indie Side Scroller.
-
-Edit or create `settings.cfg` in the appropriate game directory and enter:
-
-```
-   1
-   0
-   0
-   0
-   1
-   15
-   15
-
-```
-
-*   **Warcraft III et al** - See [WarCraft III](/index.php/WarCraft_III "WarCraft III").
 
 ## Desktop Environment
 

@@ -200,11 +200,11 @@ To run executables within a cabal sandbox, you must also set `PATH=$PATH:$PWD/.c
 
 #### Removing packages
 
-There is no easy way to do it. Cabal does not have removing process.
+There is no easy way to do it. Cabal does not have support this functionality.
 
 Consider installing to a sandbox instead, which can be deleted without affecting other sandboxes or your user-wide installation.
 
-One thing to make your life easier is use zsh auto completion to find all the haskell packages.
+One thing to make your life easier is use zsh auto completion to find all the Haskell packages.
 
 If you want/can fix/reinstall whole user-wide Haskell package system - remove `~/.cabal` and `~/.ghc` and start from scratch. This is often necessary when GHC is upgraded.
 

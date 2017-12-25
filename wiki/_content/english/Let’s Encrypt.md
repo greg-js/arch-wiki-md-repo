@@ -79,7 +79,6 @@ server {
   ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
   ..
 }
-</nowiki>
 ```
 
 See [nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") for more information.

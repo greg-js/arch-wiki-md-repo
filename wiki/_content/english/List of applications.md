@@ -692,7 +692,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **[KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet")** — Download manager for KDE. Supports HTTP, FTP, BitTorrent and Metalink. Part of [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
 
-	[https://www.kde.org/applications/internet/kget/](https://www.kde.org/applications/internet/kget/) || [kdenetwork-kget](https://www.archlinux.org/packages/?name=kdenetwork-kget)
+	[https://www.kde.org/applications/internet/kget/](https://www.kde.org/applications/internet/kget/) || [kget](https://www.archlinux.org/packages/?name=kget)
 
 *   **Persepolis** — Graphical front-end for aria2 download manager with lots of features. Supports HTTP and FTP.
 
@@ -1334,7 +1334,7 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 *   **[Kopete](https://en.wikipedia.org/wiki/Kopete "wikipedia:Kopete")** — User-friendly IM supporting ICQ, Yahoo, Jabber, Gadu-Gadu, Novell GroupWise Messenger, and other IM networks. Part of [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
 
-	[https://userbase.kde.org/Kopete](https://userbase.kde.org/Kopete) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
+	[https://userbase.kde.org/Kopete](https://userbase.kde.org/Kopete) || [kopete](https://www.archlinux.org/packages/?name=kopete)
 
 *   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — KDE instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Meant as a replacement for Kopete.
 
@@ -2202,7 +2202,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **[JuK](https://en.wikipedia.org/wiki/JuK "wikipedia:JuK")** — JuK is an audio jukebox application, supporting collections of MP3, Ogg Vorbis, and FLAC audio files.
 
-	[https://www.kde.org/applications/multimedia/juk/](https://www.kde.org/applications/multimedia/juk/) || [kdemultimedia-juk](https://www.archlinux.org/packages/?name=kdemultimedia-juk)
+	[https://www.kde.org/applications/multimedia/juk/](https://www.kde.org/applications/multimedia/juk/) || [juk](https://www.archlinux.org/packages/?name=juk)
 
 *   **Kaku** — An highly integrated music player supports different online platform like YouTube, SoundCloud, Vimeo and more.
 
@@ -4116,7 +4116,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code")** — Editor for building and debugging modern web and cloud applications.
 
-	[https://code.visualstudio.com](https://code.visualstudio.com) || [visual-studio-code](https://aur.archlinux.org/packages/visual-studio-code/)/[visual-studio-code-oss](https://aur.archlinux.org/packages/visual-studio-code-oss/) (open-source version)
+	[https://code.visualstudio.com](https://code.visualstudio.com) || [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/) or [visual-studio-code-oss](https://aur.archlinux.org/packages/visual-studio-code-oss/) (open-source version)
 
 *   **XEdit** — Simple text editor for the X Window System.
 

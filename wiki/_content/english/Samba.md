@@ -187,7 +187,7 @@ To change a user's password, use `smbpasswd`:
 
 ### Required ports
 
-If you are using a [firewall](/index.php/Firewall "Firewall"), do not forget to open required ports (usually 137-139 + 445). For a complete list please check [Samba port usage](https://wiki.samba.org/index.php/Samba_port_usage).
+If you are using a [firewall](/index.php/Firewall "Firewall"), do not forget to open required ports (usually 137-139 + 445). For a complete list please check [Samba port usage](https://www.samba.org/~tpot/articles/firewall.html).
 
 ## Client configuration
 

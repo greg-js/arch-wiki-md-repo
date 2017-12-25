@@ -81,4 +81,4 @@ If you now log out and log in again, you will be greeted by the other shell.
 *   [Hyperpolyglot](http://hyperpolyglot.org/unix-shells) — Side-by-side comparison of shell syntaxes
 *   [UNIX Power Tools](http://docstore.mik.ua/orelly/unix/upt/index.htm) — General command-line tool usage
 *   [commandlinefu.com](https://www.commandlinefu.com/commands/browse) — Command-line snippets sharing
-*   [List_of_applications#Terminal_emulators](/index.php/List_of_applications#Terminal_emulators "List of applications")
+*   [List of applications#Terminal emulators](/index.php/List_of_applications#Terminal_emulators "List of applications")

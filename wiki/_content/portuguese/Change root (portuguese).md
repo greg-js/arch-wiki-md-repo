@@ -1,14 +1,14 @@
 Artigos relacionados
 
-*   [proot](/index.php/Proot "Proot")
-*   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
+*   [PRoot (Português)](/index.php/PRoot_(Portugu%C3%AAs) "PRoot (Português)")
+*   [Linux Containers (Português)](/index.php/Linux_Containers_(Portugu%C3%AAs) "Linux Containers (Português)")
 *   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
 
 [Chroot](https://en.wikipedia.org/wiki/pt:Chroot "wikipedia:pt:Chroot") é uma operação que altera o diretório raiz aparente para o processo atual de execução e seus filhos. Um programa que é executado em tal ambiente modificado não consegue acessar os arquivos e comandos fora dessa árvore de diretórios ambiental. Esse ambiente modificado é chamado de um *prisão chroot* (ou *chroot jail*).
 
 ## Contents
 
-*   [1 Raciocínio](#Racioc.C3.ADnio)
+*   [1 Motivação](#Motiva.C3.A7.C3.A3o)
 *   [2 Requisitos](#Requisitos)
 *   [3 Uso](#Uso)
     *   [3.1 Usando arch-chroot](#Usando_arch-chroot)
@@ -17,66 +17,66 @@ Artigos relacionados
     *   [3.2 Usando chroot](#Usando_chroot)
 *   [4 Executar aplicativos gráficos a partir do chroot](#Executar_aplicativos_gr.C3.A1ficos_a_partir_do_chroot)
 *   [5 Sem privilégios de root](#Sem_privil.C3.A9gios_de_root)
-    *   [5.1 Proot](#Proot)
+    *   [5.1 PRoot](#PRoot)
     *   [5.2 Fakechroot](#Fakechroot)
 *   [6 Veja também](#Veja_tamb.C3.A9m)
 
-## Raciocínio
+## Motivação
 
-Changing root is commonly done for performing system maintenance on systems where booting and/or logging in is no longer possible. Common examples are:
+Alterar a raiz geralmente é feito para executar a manutenção do sistema em sistemas onde a inicialização e/ou a autenticação não são mais possíveis. Exemplos comuns são:
 
-*   Reinstalling the [bootloader](/index.php/Bootloader "Bootloader").
-*   Rebuilding the [initramfs image](/index.php/Mkinitcpio "Mkinitcpio").
-*   Upgrading or [downgrading packages](/index.php/Downgrading_packages "Downgrading packages").
-*   Resetting a [forgotten password](/index.php/Password_recovery "Password recovery").
-*   Building packages in a clean chroot, see [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot").
+*   Reinstalação do [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot").
+*   Reconstrução da [imagem de initramfs](/index.php/Mkinitcpio "Mkinitcpio").
+*   Atualizar ou [fazer downgrade de pacotes](/index.php/Fazer_downgrade_de_pacote "Fazer downgrade de pacote").
+*   Redefinir uma [senha esquecida](/index.php/Recupera%C3%A7%C3%A3o_de_senha "Recuperação de senha").
+*   Compilar pacotes em um *chroot* limpo, veja [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot").
 
-See also [Wikipedia:Chroot#Limitations](https://en.wikipedia.org/wiki/Chroot#Limitations "wikipedia:Chroot").
+Veja também [Wikipedia:Chroot#Limitations](https://en.wikipedia.org/wiki/Chroot#Limitations "wikipedia:Chroot").
 
 ## Requisitos
 
-*   Root privilege.
+*   Privilégio de *root*.
 
-*   Another Linux environment, e.g. a LiveCD or USB flash media, or from another existing Linux distribution.
+*   Outro ambiente Linux, como um LiveCD ou mídia flash USB (ex.: pendrive), ou outra distribuição Linux.
 
-*   Matching architecture environments; i.e. the chroot from and chroot to. The architecture of the current environment can be discovered with: `uname -m` (e.g. i686 or x86_64).
+*   Ambientes com igual arquitetura; i.e. o chroot de e chroot para. A arquitetura do ambiente atual pode ser descoberta com: `uname -m` (ex.: i686 ou x86_64).
 
-*   Kernel modules loaded that are needed in the chroot environment.
+*   Módulos de kernel carregados que são necessários no ambiente chroot.
 
-*   Swap enabled if needed: `# swapon /dev/sd*xY*` 
+*   Swap habilitado se necessário: `# swapon /dev/sd*xY*` 
 
-*   Internet connection established if needed.
+*   Conexão com a Internet estabelecida, se necessário.
 
 ## Uso
 
-**Note:**
+**Nota:**
 
-*   Some [systemd](/index.php/Systemd "Systemd") tools such as *localectl* and *timedatectl* can not be used inside a chroot, as they require an active [dbus](/index.php/Dbus "Dbus") connection. [[1]](https://github.com/systemd/systemd/issues/798#issuecomment-126568596)
-*   The file system that will serve as the new root (`/`) of your chroot must be accessible (i.e., decrypted, mounted).
+*   Algumas ferramentas do [systemd (Português)](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"), tal como *localectl* e *timedatectl*, não podem ser usados dentro de um chroot, pois eles exigem uma conexão [dbus](/index.php/Dbus "Dbus") ativa. [[1]](https://github.com/systemd/systemd/issues/798#issuecomment-126568596)
+*   O sistema de arquivos que vai servir como uma nova raiz (`/`) de seu chroot deve estar acessível (i.e., descriptografado, montado).
 
-There are two main options for using chroot, described below.
+Há duas opções principais para usar chroot, descritas abaixo.
 
 ### Usando arch-chroot
 
-The bash script `arch-chroot` is part of the [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) package. Before it runs `/usr/bin/chroot`, the script mounts api filesystems like `/proc` and makes `/etc/resolv.conf` available from the chroot.
+O script bash `arch-chroot` é parte do pacote [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts). Antes que ele execute `/usr/bin/chroot`, o script monta sistemas de arquivos de api como `/proc` e torna o `/etc/resolv.conf` disponível no chroot.
 
 #### Entrar em um chroot
 
-Run arch-chroot with the new root directory as first argument:
+Execute *arch-chroot* com o novo diretório raiz como o primeiro argumento:
 
 ```
-# arch-chroot */location/of/new/root*
+# arch-chroot */local/da/nova/raiz*
 
 ```
 
-For example, in the [installation guide](/index.php/Installation_guide "Installation guide") this directory would be `/mnt`:
+Por exemplo, no [guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação") esse diretório seria o `/mnt`:
 
 ```
 # arch-chroot /mnt
 
 ```
 
-To exit the chroot simply use:
+Para sair do chroot, basta usar:
 
 ```
 # exit
@@ -85,14 +85,14 @@ To exit the chroot simply use:
 
 #### Executar um único comando e sair
 
-To run a command from the chroot, and exit again append the command to the end of the line:
+Para executar um comando a partir do chroot e sair novamente, anexe o comando ao final da linha:
 
 ```
-# arch-chroot */location/of/new/root* *mycommand*
+# arch-chroot */local/da/nova/raiz* *meucomando*
 
 ```
 
-For example, to run `mkinitcpio -p linux` for a chroot located at `/mnt/arch` do:
+Por exemplo, para executar `mkinitcpio -p linux` para um chroot localizado em `/mnt/arch` faça:
 
 ```
 # arch-chroot /mnt/arch mkinitcpio -p linux
@@ -101,47 +101,47 @@ For example, to run `mkinitcpio -p linux` for a chroot located at `/mnt/arch` do
 
 ### Usando chroot
 
-**Warning:** When using `--rbind`, some subdirectories of `dev/` and `sys/` will not be unmountable. Attempting to unmount with `umount -l` in this situation will break your session, requiring a reboot. If possible, use `-o bind` instead.
+**Atenção:** Ao usar `--rbind`, alguns subdiretório de `dev/` e `sys/` não serão desmontáveis. Tentar desmontar com `umount -l` nesta situação vai quebrar a sua sessão, exigindo um *reboot*. Se possível, use `-o bind`.
 
-In the following example */location/of/new/root* is the directory where the new root resides.
+No exemplo a seguir, */local/da/nova/raiz* é o diretório no qual a nova raiz reside.
 
-First, mount the temporary api filesystems:
+Primeiro, monte os sistemas de arquivos de api temporários:
 
 ```
-# cd */location/of/new/root*
+# cd */local/da/nova/raiz*
 # mount -t proc proc proc/
 # mount --rbind /sys sys/
 # mount --rbind /dev dev/
 
 ```
 
-And optionally:
+E opcionalmente:
 
 ```
 # mount --rbind /run run/
 
 ```
 
-Next, in order to use an internet connection in the chroot environment copy over the DNS details:
+Em seguida, para usar uma conexão com a internet no ambiente *chroot* copie os detalhes do DNS:
 
 ```
 # cp /etc/resolv.conf etc/resolv.conf
 
 ```
 
-Finally, to change root into */location/of/new/root* using a bash shell:
+Finalmente, para alterar a raiz para */local/da/nova/raiz* usando um shell do bash:
 
 ```
-# chroot */location/of/new/root* /bin/bash
+# chroot */local/da/nova/raiz* /bin/bash
 
 ```
 
-**Note:** If you see the error:
+**Nota:** Se você vir o erro:
 
-*   `chroot: cannot run command '/usr/bin/bash': Exec format error`, it is likely that the architectures of the host environment and chroot environment do not match.
-*   `chroot: '/usr/bin/bash': permission denied`, remount with the exec permission: `mount -o remount,exec /mnt/arch`.
+*   `chroot: não foi possível executar o comando '/usr/bin/bash': Erro no formato exec`, é provável que as arquiteturas do ambiente hospedeiro e do ambiente *chroot* não sejam iguais.
+*   `chroot: '/usr/bin/bash': permissão negada`, remote com a permissão de execução: `mount -o remount,exec /mnt/arch`.
 
-After chrooting it may be necessary to load the local bash configuration:
+Após fazer o *chroot* pode ser necessário carregar a configuração local do bash:
 
 ```
 # source /etc/profile
@@ -149,44 +149,44 @@ After chrooting it may be necessary to load the local bash configuration:
 
 ```
 
-**Tip:** Optionally, create a unique prompt to be able to differentiate your chroot environment: `# export PS1="(chroot) $PS1"` 
+**Dica:** Opcionalmente, crie um prompt único ser possível diferenciar seu ambiente *chroot*: `# export PS1="(chroot) $PS1"` 
 
-When finished with the chroot, you can exit it via:
+Ao finalizar com o *chroot*, você pode sair dele via:
 
 ```
 # exit
 
 ```
 
-Then unmount the temporary file systems:
+Então, desmonte os sistemas de arquivos temporários:
 
 ```
 # cd /
-# umount --recursive */location/of/new/root*
+# umount --recursive */local/da/nova/raiz*
 
 ```
 
-**Note:** If there is an error mentioning something like: `umount: /path: device is busy` this usually means that either: a program (even a shell) was left running in the chroot or that a sub-mount still exists. Quit the program and use `mount` to find and `umount` sub-mounts). It may be tricky to `umount` some things and one can hopefully have `umount --force` work, as a last resort use `umount --lazy` which just releases them. In either case to be safe, `reboot` as soon as possible if these are unresolved to avoid possible future conflicts.
+**Nota:** Se houver um erro mencionando algo como: `umount: /caminho: dispositivo está ocupado` isso geralmente significa que: um programa (até mesmo um shell) foi mantido em execução no chroot ou que uma submontagem ainda existe. Saia do programa e use `mount` para localizar e desmonte (com `umount`) as submontagens. Pode ser complicado desmontar algumas coisas e pode-se ter sorte com o `umount --force`. Como um último recurso, use `umount --lazy` para apenas liberá-los. Em ambos casos, para ter segurança, reinicialize (com `reboot`) assim que possível se essas coisas ficarem não resolvidas para evitar possíveis conflitos futuros.
 
 ## Executar aplicativos gráficos a partir do chroot
 
-If you have an [X server](/index.php/X_server "X server") running on your system, you can start graphical applications from the chroot environment.
+Se você tiver um [servidor X](/index.php/Servidor_X "Servidor X") funcionando em seu sistema, você pode iniciar aplicativos gráficos a partir do ambiente chroot.
 
-To allow the chroot environment to connect to an X server, open a virtual terminal inside the X server (i.e. inside the desktop of the user that is currently logged in), then run the [xhost](/index.php/Xhost "Xhost") command, which gives permission to anyone to connect to the user's X server:
+Para permitir que o ambiente *chroot* se conecte a um servidor X, abra um terminal virtual dentro do servidor X (i.e. dentro do computador do usuário que está atualmente autenticado), então execute o comando [xhost](/index.php/Xhost_(Portugu%C3%AAs) "Xhost (Português)"), que dá a permissão para qualquer um se conectar ao servidor X do usuário:
 
 ```
 $ xhost +local:
 
 ```
 
-Then, to direct the applications to the X server from chroot, set the DISPLAY environment variable inside the chroot to match the DISPLAY variable of the user that owns the X server. So for example, run
+Então, para direcionar os aplicativos para o servidor X do *chroot*, defina a variável de ambiente DISPLAY dentro do *chroot* para corresponder a variável DISPLAY do usuário que possui o servidor X. Então, por exemplo, execute
 
 ```
 $ echo $DISPLAY
 
 ```
 
-as the user that owns the X server to see the value of DISPLAY. If the value is ":0" (for example), then in the chroot environment run
+como o usuário que possui o servidor X para ver o valor de DISPLAY. Se o valor for ": 0" (por exemplo), em seguida, no ambiente *chroot* é executado
 
 ```
 # export DISPLAY=:0
@@ -195,21 +195,21 @@ as the user that owns the X server to see the value of DISPLAY. If the value is 
 
 ## Sem privilégios de root
 
-Chroot requires root privileges, which may not be desirable or possible for the user to obtain in certain situations. There are, however, various ways to simulate chroot-like behavior using alternative implementations.
+O *chroot* requer privilégios de root, o que pode não ser desejável ou possível para o usuário obter em determinadas situações. Há, no entanto, várias maneiras de simular o comportamento de *chroot* com implementações alternativas.
 
-### Proot
+### PRoot
 
-[Proot](/index.php/Proot "Proot") may be used to change the apparent root directory and use `mount --bind` without root privileges. This is useful for confining applications to a single directory or running programs built for a different CPU architecture, but it has limitations due to the fact that all files are owned by the user on the host system. Proot provides a `--root-id` argument that can be used as a workaround for some of these limitations in a similar (albeit more limited) manner to *fakeroot*.
+[PRoot](/index.php/PRoot_(Portugu%C3%AAs) "PRoot (Português)") pode ser usado para alterar o diretório raiz aparente e usar `mount --bind` sem privilégios de root. Isso é útil para confinar aplicativos para um único diretório ou executar programas criados para uma arquitetura de CPU diferente, mas tem limitações devido ao fato de que todos os arquivos são de propriedade do usuário no sistema hospedeiro. O PRoot fornece um argumento `--root-id` que pode ser usado como uma solução alternativa para algumas dessas limitações de maneira semelhante (embora mais limitada) para *fakeroot*.
 
 ### Fakechroot
 
-[fakechroot](https://www.archlinux.org/packages/?name=fakechroot) is a library shim which intercepts the chroot call and fakes the results. It can be used in conjunction with [fakeroot](https://www.archlinux.org/packages/?name=fakeroot) to simulate a chroot as a regular user.
+[fakechroot](https://www.archlinux.org/packages/?name=fakechroot) é uma camada de biblioteca que intercepta a chamada do *chroot* e falsifica os resultados. Ele pode ser usado em conjunto com [fakeroot](https://www.archlinux.org/packages/?name=fakeroot) para simular um *chroot* como usuário comum.
 
 ```
-# fakechroot fakeroot chroot ~/my-chroot bash
+# fakechroot fakeroot chroot ~/meu-chroot bash
 
 ```
 
 ## Veja também
 
-*   [Basic Chroot](https://help.ubuntu.com/community/BasicChroot)
+*   [Básico de chroot](https://help.ubuntu.com/community/BasicChroot)

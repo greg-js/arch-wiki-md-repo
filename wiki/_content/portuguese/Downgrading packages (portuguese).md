@@ -40,7 +40,7 @@ Uma vez o pacote seja revertido, adicione-o temporariamente para a [seção Igno
 
 ### Fazendo downgrade do kernel
 
-Se você não consegue iniciar o sistema após uma atualização do kernel, então você pode fazer o downgrade do kernel usando um CD *live*. Use uma mídia de instalação do Arch Linux razoavelmente recente. Uma vez que ela tenha iniciado, monte a partição na qual seu sistema está instalado para `/mnt` e se você tiver `/boot` ou `/var` em partições separadas, monte-as lá também (p.ex. `mount /dev/sdc3 /mnt/boot`). Então, faça um [chroot](/index.php/Chroot "Chroot") no sistema:
+Se você não consegue iniciar o sistema após uma atualização do kernel, então você pode fazer o downgrade do kernel usando um CD *live*. Use uma mídia de instalação do Arch Linux razoavelmente recente. Uma vez que ela tenha iniciado, monte a partição na qual seu sistema está instalado para `/mnt` e se você tiver `/boot` ou `/var` em partições separadas, monte-as lá também (p.ex. `mount /dev/sdc3 /mnt/boot`). Então, faça um [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)") no sistema:
 
 ```
 # arch-chroot /mnt /bin/bash

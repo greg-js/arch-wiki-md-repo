@@ -3,55 +3,50 @@ Related articles
 *   [List of games](/index.php/List_of_games "List of games")
 *   [Xorg](/index.php/Xorg "Xorg")
 
-This page only contains information about running games and related system configuration tips. For lists of popular games for GNU/Linux see [List of games](/index.php/List_of_games "List of games").
+This page contains information about running games and related system configuration tips.
 
 ## Contents
 
 *   [1 Game environments](#Game_environments)
 *   [2 Getting games](#Getting_games)
-    *   [2.1 Native](#Native)
-    *   [2.2 Digital distribution](#Digital_distribution)
-    *   [2.3 Flash](#Flash)
-    *   [2.4 Java](#Java)
-    *   [2.5 Wine](#Wine)
-    *   [2.6 Emulators](#Emulators)
-        *   [2.6.1 Consoles](#Consoles)
-        *   [2.6.2 Other](#Other)
-*   [3 Running games](#Running_games)
-    *   [3.1 Multi-screen setups](#Multi-screen_setups)
-    *   [3.2 Keyboard grabbing](#Keyboard_grabbing)
-    *   [3.3 Starting games in a separate X server](#Starting_games_in_a_separate_X_server)
-    *   [3.4 Adjusting mouse detections](#Adjusting_mouse_detections)
-    *   [3.5 Mouse focus in GNOME](#Mouse_focus_in_GNOME)
-    *   [3.6 Binaural Audio with OpenAL](#Binaural_Audio_with_OpenAL)
-    *   [3.7 Tuning Pulseaudio](#Tuning_Pulseaudio)
-        *   [3.7.1 Enabling realtime priority and negative nice level](#Enabling_realtime_priority_and_negative_nice_level)
-        *   [3.7.2 Using higher quality remixing for better sound](#Using_higher_quality_remixing_for_better_sound)
-        *   [3.7.3 Matching hardware buffers to Pulse's buffering](#Matching_hardware_buffers_to_Pulse.27s_buffering)
-    *   [3.8 Double check your CPU frequency scaling settings](#Double_check_your_CPU_frequency_scaling_settings)
-*   [4 Improving framerates and responsiveness with scheduling policies](#Improving_framerates_and_responsiveness_with_scheduling_policies)
-    *   [4.1 For Wine programs](#For_Wine_programs)
-    *   [4.2 For everything else](#For_everything_else)
-        *   [4.2.1 Policies](#Policies)
-        *   [4.2.2 Nice levels](#Nice_levels)
-        *   [4.2.3 Core affinity](#Core_affinity)
-        *   [4.2.4 General case](#General_case)
-        *   [4.2.5 Optimus, and other helping programs](#Optimus.2C_and_other_helping_programs)
-*   [5 Using alternate kernels](#Using_alternate_kernels)
-    *   [5.1 Using BFQ](#Using_BFQ)
-*   [6 See also](#See_also)
+    *   [2.1 Digital distribution](#Digital_distribution)
+*   [3 Emulators](#Emulators)
+    *   [3.1 Consoles](#Consoles)
+    *   [3.2 Other](#Other)
+*   [4 Running games](#Running_games)
+    *   [4.1 Multi-screen setups](#Multi-screen_setups)
+    *   [4.2 Keyboard grabbing](#Keyboard_grabbing)
+    *   [4.3 Starting games in a separate X server](#Starting_games_in_a_separate_X_server)
+    *   [4.4 Adjusting mouse detections](#Adjusting_mouse_detections)
+    *   [4.5 Mouse focus in GNOME](#Mouse_focus_in_GNOME)
+    *   [4.6 Binaural Audio with OpenAL](#Binaural_Audio_with_OpenAL)
+    *   [4.7 Tuning PulseAudio](#Tuning_PulseAudio)
+        *   [4.7.1 Enabling realtime priority and negative nice level](#Enabling_realtime_priority_and_negative_nice_level)
+        *   [4.7.2 Using higher quality remixing for better sound](#Using_higher_quality_remixing_for_better_sound)
+        *   [4.7.3 Matching hardware buffers to Pulse's buffering](#Matching_hardware_buffers_to_Pulse.27s_buffering)
+    *   [4.8 Double check your CPU frequency scaling settings](#Double_check_your_CPU_frequency_scaling_settings)
+*   [5 Improving framerates and responsiveness with scheduling policies](#Improving_framerates_and_responsiveness_with_scheduling_policies)
+    *   [5.1 For Wine programs](#For_Wine_programs)
+    *   [5.2 For everything else](#For_everything_else)
+        *   [5.2.1 Policies](#Policies)
+        *   [5.2.2 Nice levels](#Nice_levels)
+        *   [5.2.3 Core affinity](#Core_affinity)
+        *   [5.2.4 General case](#General_case)
+        *   [5.2.5 Optimus, and other helping programs](#Optimus.2C_and_other_helping_programs)
+*   [6 Using alternate kernels](#Using_alternate_kernels)
+    *   [6.1 Using BFQ](#Using_BFQ)
 
 ## Game environments
 
 Different environments exist to play games in Linux:
 
-*   Native – Games written for Linux.
-*   Browser – you need only browser and Internet connection to play these types of games.
-    *   HTML5 games use canvas and WebGL technologies and work in all modern browsers but can be slow on weak machines.
+*   Native – games written for Linux.
+*   Web – games running in a web browser
+    *   HTML5 games use canvas and WebGL technologies and work in all modern browsers
     *   Plugin-based – you need to install plugin to play.
         *   [Java](/index.php/Java "Java") Webstart – used to install cross-platform games very easily.
-        *   [Flash](/index.php/Flash "Flash") games are very common on the Web.
-*   Specialized environments (software emulators) – – Required for running software designed for other architectures or systems, (Heed the copyright laws of your country!). Check the [list of emulators](/index.php/List_of_applications/Other#Emulators "List of applications/Other") for more details.
+        *   [Flash](/index.php/Flash "Flash")
+*   Specialized environments (software emulators) – Required for running software designed for other architectures or systems, (Heed the copyright laws of your country!). Check the [list of emulators](/index.php/List_of_applications/Other#Emulators "List of applications/Other") for more details.
     *   [Wine](/index.php/Wine "Wine") – allows running of some Windows games, as well as a large amount of Windows software. Performance in Wine varies, the additional CPU overhead will cause slowdown in some games while in some cases games may run faster. Consult [Wine AppDB](http://appdb.winehq.org/) for game-specific compatibility information.
     *   [Crossover Games](http://www.codeweavers.com/) – members of the Codeweavers team are prime supporters of Wine. Using Crossover Games makes the installation & setting up of some games easier, more reliable & even possible, when compared to using other methods. Crossover is a paid commercial product, which also provides a [forum](http://www.codeweavers.com/support/forums/) where the developers are very much involved in the community.
     *   [DOSBox](/index.php/DOSBox "DOSBox") is a minimal virtual machine which runs a full DOS-compatible environment. It can be used to run classic DOS titles.
@@ -61,68 +56,39 @@ Different environments exist to play games in Linux:
 
 ## Getting games
 
-### Native
-
-A good number are available in the [official repositories](/index.php/Official_repositories "Official repositories") or in the [AUR](/index.php/AUR "AUR"). [Loki](http://liflg.org/) provides installers for several games.
+A good number are available in the [official repositories](/index.php/Official_repositories "Official repositories") / the [AUR](/index.php/AUR "AUR"), see [List of games](/index.php/List_of_games "List of games").
 
 ### Digital distribution
 
-*   **[Desura](https://en.wikipedia.org/wiki/Desura "wikipedia:Desura")** — Digital distribution platform featuring indie games. It can be considered good source of games (if you do not care about security and bugs too much).
+Just because games are available for Linux doesn't mean that they are native, they might be pre-packaged with Wine or DOSBox.
+
+*   **[Desura](https://en.wikipedia.org/wiki/Desura "wikipedia:Desura")** — Digital distribution platform focusing on indie games.
 
 	[http://www.desura.com/](http://www.desura.com/) || [desura](https://aur.archlinux.org/packages/desura/)
 
-*   **[Steam](/index.php/Steam "Steam")** — Famous digital distribution and communications platform developed by Valve. It has a large library with over 1000 Linux games. These include popular titles like Dota 2, Counter Strike: Global Offensive, Team Fortress 2, several AAA games, and lots of indie titles.
+*   **[Steam](/index.php/Steam "Steam")** — Digital distribution and communications platform developed by Valve.
 
 	[http://store.steampowered.com](http://store.steampowered.com) || [steam](https://www.archlinux.org/packages/?name=steam)
-
-*   [Steam under Linux.](http://developer.valvesoftware.com/wiki/Steam_under_Linux)
-*   [See linux-games catalog.](http://store.steampowered.com/browse/linux/)
-*   Not all Steam titles are native, some are packaged to run using Wine.
-
-*   The [Humble Store](https://www.humblebundle.com/store)
 
 *   **[itch.io](https://en.wikipedia.org/wiki/itch.io "wikipedia:itch.io")** — Indie game store.
 
 	[https://itch.io/](https://itch.io/) || [itch](https://aur.archlinux.org/packages/itch/)
 
 *   [GOG.com](http://www.gog.com/games/linux)
+    *   GOG.com officially only supports Ubuntu and Linux Mint.
+    *   The [lgogdownloader](https://aur.archlinux.org/packages/lgogdownloader/) package can be used to download GOG titles from the command line.
 
-*   The [lgogdownloader](https://aur.archlinux.org/packages/lgogdownloader/) package can be used to download GOG titles from the command line.
-*   GOG.com only officially supports Ubuntu and Linux Mint. Bear this in mind if requesting support from them; you will not get a refund if you are having trouble running games on Arch.
-*   Many GOG.com titles come pre-packaged with DOSBox, ScummVM or Wine.
-
-### Flash
-
-Several huge Flash games portals exists, among them are:
-
-*   [https://armorgames.com/](https://armorgames.com/)
-*   [https://www.kongregate.com/](https://www.kongregate.com/)
-*   [https://www.newgrounds.com/](https://www.newgrounds.com/)
-
-### Java
-
-*   Lots of games smaller than 4kb (some are real masterpieces of game design) can be found at [http://www.java4k.com](http://www.java4k.com).
-*   [https://www.pogo.com/](https://www.pogo.com/) – biggest casual Java gaming portal
-*   [The Java Game Tome](http://www.javagametome.com/) - huge database of primarily casual games
-
-### Wine
-
-*   Centralized source of information about running games (and other applications) in [Wine](/index.php/Wine "Wine") is [Wine AppDB](http://appdb.winehq.org/).
-*   See also [Category:Wine](/index.php/Category:Wine "Category:Wine").
-
-It is recommended (especially for beginners) to use [playonlinux](https://www.archlinux.org/packages/?name=playonlinux), which pulls all necessary dependencies during installation, automatically downloads Windows tools at first start-up to configure and set-up native windows applications to launch properly. For more information, see [Official Website](https://www.playonlinux.com/en/).
-
-### Emulators
+## Emulators
 
 An emulator is a program which serves to replicate the functions of another platform or system so as to allow applications and games to be run in environments they were not programmed for.
 
-See also [Category:Emulators](/index.php/Category:Emulators "Category:Emulators") and the [Emulation General wiki](http://emulation.gametechwiki.com/index.php/Main_Page).
+See also [Category:Emulation](/index.php/Category:Emulation "Category:Emulation") and the [Emulation General wiki](http://emulation.gametechwiki.com/index.php/Main_Page).
 
 **Note:** For possibly more up to date selection of emulators, try checking the [AUR 'emulators' category](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&L=0&C=5&SeB=nd&SB=n&SO=a&PP=25)
 
 **Warning:** Owning a high-level emulator is not illegal, but distribution of any type of copyrighted ROMs and unauthorized emulation (without written permission of the copyright holder allowing the user to do so) are **illegal**. Consequently, Arch Linux does not distribute this copyrighted content, including game ROMs and ripped console BIOSs. You are fully responsible for whatever usage of the emulators obtained from the [official repositories](/index.php/Official_repositories "Official repositories") or the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") you make, as well as any legal repercussion that result. Arch Linux bears no responsibility at all.
 
-#### Consoles
+### Consoles
 
 See also [Wikipedia:List of video game console emulators](https://en.wikipedia.org/wiki/List_of_video_game_console_emulators "wikipedia:List of video game console emulators").
 
@@ -205,7 +171,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 	[http://www.zsnes.com/](http://www.zsnes.com/) || [zsnes](https://www.archlinux.org/packages/?name=zsnes)
 
-#### Other
+### Other
 
 *   **DOSBox** — Open-source DOS emulator which primarily focuses on running DOS Games.
 
@@ -328,7 +294,7 @@ snd_pitchquality 1 # Use high quality sounds
 
 ```
 
-### Tuning Pulseaudio
+### Tuning PulseAudio
 
 If you are using [PulseAudio](/index.php/PulseAudio "PulseAudio"), you may wish to tweak some default settings to make sure it is running optimally.
 
@@ -352,7 +318,7 @@ and restart pulseaudio.
 
 #### Using higher quality remixing for better sound
 
-Pulseaudio on Arch uses speex-float-0 by default to remix channels, which is considered a 'medium-low' quality remixing. If your system can handle the extra load, you may benefit from setting it to one of the following instead:
+PulseAudio on Arch uses speex-float-0 by default to remix channels, which is considered a 'medium-low' quality remixing. If your system can handle the extra load, you may benefit from setting it to one of the following instead:
 
 ```
 resample-method = speex-float-10
@@ -457,13 +423,3 @@ The stock Arch kernel provides a very good baseline for general usage. However, 
 ### Using BFQ
 
 BFQ is an io-scheduler that comes as a feature of [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) and [Linux-ck](/index.php/Linux-ck "Linux-ck"), and is optimized to be much more simplistic, but provides better interactivity and throughput for non-server workloads. To enable, simply add the kernel parameter *elevator=bfq* to your [bootloader](/index.php/Bootloader "Bootloader"). It is important to note that although most guides recommend using either *noop* or *deadline* for SSDs for their raw throughput, they are actually detrimental to interactivity when more than one thread is attempting to access the device. It is best to use *bfq* unless you desperately need the throughput advantage.
-
-## See also
-
-*   [List of games](/index.php/List_of_games "List of games")
-*   [Free Gamer](http://freegamer.blogspot.com/) - Open source games blog
-*   [FreeGameDev](http://forum.freegamedev.net/) - Free/open source game development community
-*   [SIG/Games](https://fedoraproject.org/wiki/SIGs/Games#Gaming_News_sites) - OS/Linux gaming news sites and lists at Fedora's wiki
-*   [live.linux-gamers](http://live.linux-gamers.net) - Arch-based live gaming distro
-*   [Gaming on Linux](http://www.gamingonlinux.com/) - Active Linux gaming news and editorial source and community
-*   [/r/linux_gaming wiki](https://www.reddit.com/r/linux_gaming/wiki/index) on Reddit

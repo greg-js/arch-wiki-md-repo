@@ -512,7 +512,7 @@ pcm.!surround51 {
 
 Sistema di mixaggio software di ALSA
 
-**Nota:** : Per versioni di ALSA uguali o superiori alla 1.0.9rc2 non vi è necessità di configurare dmix per le uscite audio analogiche. Dmix è abilitato di default se viene rilevata una scheda audio che non supporta il mixaggio via hardware.
+**Nota:** : Per versioni di ALSA uguali o superiori alla 1.0.9rc2 non vi è necessità di configurare dmix per le uscite audio analogiche. Dmix è abilitato di default se viene rilevata una scheda audio che non supporta il mixaggio via hardware.
 
 Se comunque non dovesse funzionare automaticamente è sufficiente creare il (o modificare l'esistente) file `~/.asoundrc` con questo contenuto:
 

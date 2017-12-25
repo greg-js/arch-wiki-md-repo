@@ -117,9 +117,7 @@ All of them contain *absolute* paths, which means, you do not have to worry abou
 
 ### PKGBUILD functions
 
-There are five functions, listed here in the order they are executed if all of them exist. If one does not exist, it is simply skipped.
-
-**Note:** This does not apply to the `package()` function, as it is required in every PKGBUILD
+There are five functions, listed here in the order they are executed. Beside the fifth function, `package()`, which is required in every PKGBUILD, if one function does not exist it is simply skipped.
 
 #### prepare()
 

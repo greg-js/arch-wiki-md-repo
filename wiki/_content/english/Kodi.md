@@ -10,7 +10,7 @@
     *   [3.3 Socket activation](#Socket_activation)
     *   [3.4 Start from remote control with LIRC / irexec](#Start_from_remote_control_with_LIRC_.2F_irexec)
     *   [3.5 Sharing a database across multiple nodes](#Sharing_a_database_across_multiple_nodes)
-        *   [3.5.1 Setup an NFS server](#Setup_an_NFS_server)
+        *   [3.5.1 NFS server export example](#NFS_server_export_example)
         *   [3.5.2 Install and setup the MySQL server](#Install_and_setup_the_MySQL_server)
         *   [3.5.3 Setup Kodi to use the MySQL library and the NFS exports](#Setup_Kodi_to_use_the_MySQL_library_and_the_NFS_exports)
             *   [3.5.3.1 Setup Kodi to use the common MySQL database](#Setup_Kodi_to_use_the_common_MySQL_database)
@@ -101,15 +101,17 @@ The [kodi-standalone-socket-activation](https://aur.archlinux.org/packages/kodi-
 
  `/etc/systemd/system/kodi@.service` 
 ```
+# This fails if the user does not have an X session.
 [Unit]
 Description=Launch Kodi on main display
+Conflicts=kodi.socket
 
 [Service]
-Type=oneshot
+Type=simple
 Environment=DISPLAY=:0.0
 Nice=-1
 ExecStart=/usr/bin/su %i /usr/bin/kodi
-ExecStartPost=/usr/bin/bash -c "sleep 15 && systemctl start kodi@%i.socket"
+ExecStopPost=/usr/bin/systemctl --no-block start kodi@%i.socket
 
 [Install]
 WantedBy=multi-user.target
@@ -194,17 +196,15 @@ These assumptions are used for the guide, substitute to reflect your setup:
 
 For additional info, refer to the [official Kodi wiki](http://kodi.wiki/index.php?title=HOW-TO:Share_libraries_using_MySQL/Setting_up_MySQL#tab=Arch_Linux).
 
-#### Setup an NFS server
+#### NFS server export example
 
-This section provides an example using NFS exports, but as mentioned above, any protocol that Kodi can read is acceptable.
+This section provides an example using exports, see [NFS](/index.php/NFS "NFS") for install and usage.
 
 **Warning:** Kodi is using [libnfs](https://www.archlinux.org/packages/?name=libnfs) to access NFS shares which only supports NFSv3 (see [#37](https://github.com/sahlberg/libnfs/issues/37) and [#156](https://github.com/sahlberg/libnfs/issues/156)). Therefore do not setup a NFSv4-only server or Kodi will only be able to list the shares but cannot access them.
 
 **Note:** Users only need one box on the LAN to serve the content, therefore, do not repeat this for each node. The following example assumes the user is running Arch Linux, but any NFS server will work, be it Linux or BSD, etc.
 
-The NFS server is provided by [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) and this only needs to be installed on the box serving up the content.
-
-Setup the shares:
+Setup [exports](/index.php/NFS#Configuration "NFS"):
 
 ```
 # mkdir -p /srv/nfs/{tv-shows,movies,music}
@@ -233,48 +233,11 @@ Share the content in `/etc/exports`:
 
 ```
 
-**Tip:** This example sets-up read-only exports. See [exports(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/exports.5) for additional options and configurations.
-
-Whenever changes are made to `/etc/exports`, always refresh the exports:
-
-```
-# exportfs -rav
-
-```
-
-[Start](/index.php/Start "Start") `rpcbind.service` and `nfs-server.service` and [enable](/index.php/Enable "Enable") them to start automatically.
-
-Optionally check with:
-
-```
-# showmount -e localhost
-Export list for localhost:
-/srv/nfs/tv-shows 192.168.0.0/24
-/srv/nfs/movies 192.168.0.0/24
-/srv/nfs/music 192.168.0.0/24
-
-```
-
-**Note:** If the box is using a firewall, ensure that it is not blocking connections. This is beyond the scope of this article.
-
 #### Install and setup the MySQL server
 
-The box running the library needs to be available 24/7 and is commonly the same box that holds the media.
+See [MariaDB](/index.php/MariaDB "MariaDB") for installation and configuration instructions.
 
-**Note:** The following example assumes the user is running Arch Linux, but any MySQL server will work, be it Linux or BSD, etc.
-
-The MySQL server is provided by [mariadb](https://www.archlinux.org/packages/?name=mariadb) and this only needs to be installed on one box that all nodes can access.
-
-[Start](/index.php/Start "Start") `mysqld.service` and [enable](/index.php/Enable "Enable") it to run at boot time.
-
-First time setup:
-
-```
-# mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
-# mysql_secure_installation
-   <<follow the in-script prompts and answer "Y" to all the questions>>
-
-```
+To create a database for Kodi, use the following commands:
 
 ```
 $ mysql -u root -p
@@ -285,17 +248,6 @@ MariaDB [(none)]> flush privileges;
 MariaDB [(none)]> \q
 
 ```
-
-One can optionally disable binary logging if the mysql server is only used for kodi by editing `/etc/mysql/my.cnf` and commenting the following line:
-
-```
-#log-bin=mysql-bin
-
-```
-
-No other setup to the MySQL server should be needed.
-
-**Note:** If the box is using a firewall, ensure that it is not blocking connections. This is beyond the scope of this article.
 
 #### Setup Kodi to use the MySQL library and the NFS exports
 

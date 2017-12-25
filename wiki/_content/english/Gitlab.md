@@ -60,7 +60,7 @@ In order to receive mail notifications, a mail server must be installed and conf
 
 ### Preliminary Notes
 
-GitLab is composed of multiple components, see the [architecture overview](https://docs.gitlab.com/ce/development/architecture.html) page.
+GitLab is composed of multiple components, see the [architecture overview page](https://docs.gitlab.com/ce/development/architecture.html).
 
 The [gitlab](https://www.archlinux.org/packages/?name=gitlab) package installs GitLab's files in a manner that more closely follow standard Linux conventions:
 

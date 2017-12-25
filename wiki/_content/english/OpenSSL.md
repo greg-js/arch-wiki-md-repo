@@ -409,3 +409,4 @@ $ openssl enc -d -md md5 -in encrypted -out decrypted
 *   [FreeBSD Handbook](http://www.freebsd.org/doc/en/books/handbook/openssl.html)
 *   [Step-by-step guide to create a signed SSL certificate](http://www.akadia.com/services/ssh_test_certificate.html)
 *   [OpenSSL Certificate Authority](https://jamielinux.com/docs/openssl-certificate-authority/)
+*   [Bulletproof SSL and TLS](https://www.feistyduck.com/books/bulletproof-ssl-and-tls/bulletproof-ssl-and-tls-introduction.pdf) by Ivan Ristić, a more formal introduction to SSL/TLS

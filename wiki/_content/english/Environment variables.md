@@ -137,7 +137,7 @@ exec openbox
 
 *   `PAGER` contains command to run the program used to list the contents of files, e.g., `/bin/less`.
 
-*   `EDITOR` contains the command to run the lightweight program used for editing files, e.g., `/usr/bin/nano`. For example, you can write an interactive switch between *gedit* under [X](/index.php/X "X") or *nano* in this example):
+*   `EDITOR` contains the command to run the lightweight program used for editing files, e.g., `/usr/bin/nano`. For example, you can write an interactive switch between *gedit* under [X](/index.php/X "X") or *nano*, in this example:
 
 ```
 export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'gedit'; else echo 'nano'; fi)"
@@ -159,7 +159,7 @@ fi
 
 ```
 
-*   `ftp_proxy and http_proxy` contains FTP and HTTP proxy server, respectively:
+*   `ftp_proxy` and `http_proxy` contains FTP and HTTP proxy server, respectively:
 
 ```
 ftp_proxy="ftp://192.168.0.1:21"
@@ -210,7 +210,7 @@ EDITOR           DEFAULT=nano
 #GNUPGHOME        DEFAULT=$XDG_CONFIG_HOME/gnupg
 ```
 
-**Note:** This file is read before everything, even `~/.{,bash_,z}profile` and `~/.zshenv`.
+**Note:** This file is read before everything, even `~/.profile`, `~/.bash_profile` and `~/.zshenv`.
 
 ## See also
 

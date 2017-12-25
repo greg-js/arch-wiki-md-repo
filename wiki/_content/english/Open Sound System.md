@@ -226,7 +226,7 @@ Other mixers that have support for OSS:
 
 *   **Kmix** — for [KDE](/index.php/KDE "KDE").
 
-	[http://www.kde.org/applications/multimedia/kmix/](http://www.kde.org/applications/multimedia/kmix/) || [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix)
+	[http://www.kde.org/applications/multimedia/kmix/](http://www.kde.org/applications/multimedia/kmix/) || [kmix](https://www.archlinux.org/packages/?name=kmix)
 
 *   **VolWheel** — After the installation, set it to [autostart](/index.php/Autostarting#Graphical "Autostarting") as needed, then enable OSS support by right-clicking on the system tray icon, choosing *Preferences* and then changing:
 

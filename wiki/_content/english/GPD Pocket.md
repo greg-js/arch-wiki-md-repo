@@ -105,14 +105,13 @@ Section "Device"
 	Driver      "intel" 
 	Option      "AccelMethod"     "sna" 
 	Option      "TearFree"        "true" 
-	Option      "DRI"             "3" 
 EndSection
 
 ```
 
-/etc/X11/xorg.conf.d/40-monior.conf to rotate the monitor.
+/etc/X11/xorg.conf.d/30-monior.conf to rotate the monitor.
 
- `/etc/X11/xorg.conf.d/40-monior.conf` 
+ `/etc/X11/xorg.conf.d/30-monior.conf` 
 ```
 Section "Monitor" 
 	Identifier "DSI1" 
@@ -121,9 +120,9 @@ EndSection
 
 ```
 
-/etc/X11/xorg.conf.d/99-touchscreen.conf to rotate the touchscreen.
+/etc/X11/xorg.conf.d/40-touchscreen.conf to rotate the touchscreen.
 
- `/etc/X11/xorg.conf.d/99-touchscreen.conf` 
+ `/etc/X11/xorg.conf.d/40-touchscreen.conf` 
 ```
 Section "InputClass" 
 	Identifier	"calibration" 
@@ -137,9 +136,9 @@ Alternatively you can copy the files from [here](https://github.com/nexus511/gpd
 
 ### Mouse Scroll Emulation (Xorg)
 
-/etc/X11/xorg.conf.d/80-trackpoint.conf to scroll while holding right click.
+/etc/X11/xorg.conf.d/50-trackpoint.conf to scroll while holding right click.
 
- `/etc/X11/xorg.conf.d/80-trackpoint.conf` 
+ `/etc/X11/xorg.conf.d/50-trackpoint.conf` 
 ```
 Section "InputClass"
         Identifier "GPD trackpoint"

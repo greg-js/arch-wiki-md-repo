@@ -254,7 +254,7 @@ O nome do script `.install` a ser incluído no pacote. Este deve ser o mesmo que
 *   `pre_remove` — O script é executado logo antes dos arquivos serem removidos. Um argumento é passado: versão antiga do pacote.
 *   `post_remove` — O script é executado logo após os arquivos serem removidos. Um argumento é passado: versão antiga do pacote.
 
-Cada função é executada em [chroot](/index.php/Chroot "Chroot") dentro do diretório de instalação do *pacman*. Veja [esse tópico](https://bbs.archlinux.org/viewtopic.php?pid=913891).
+Cada função é executada em [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)") dentro do diretório de instalação do *pacman*. Veja [esse tópico](https://bbs.archlinux.org/viewtopic.php?pid=913891).
 
 **Tip:**
 

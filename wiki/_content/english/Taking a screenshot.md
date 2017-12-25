@@ -85,7 +85,7 @@ This article explains different methods to take [screenshots](https://en.wikiped
 
 	[https://github.com/KDE/spectacle/](https://github.com/KDE/spectacle/) || [spectacle](https://www.archlinux.org/packages/?name=spectacle)
 
-*   **Xfce4 Screenshooter** — This application allows you to capture the entire screen, the active window or a selected region. You can set the delay that elapses before the screenshot is taken and the action that will be done with the screenshot: save it to a PNG file, copy it to the clipboard, open it using another application, or host it on ZimageZ, a free online image hosting service. Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
+*   **Xfce4 Screenshooter** — This application allows you to capture the entire screen, the active window or a selected region. You can set the delay that elapses before the screenshot is taken and the action that will be done with the screenshot: save it to a PNG file, copy it to the clipboard, open it using another application, or host it on free online image hosting services Imgur and ZimageZ. Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
 
 	[http://goodies.xfce.org/projects/applications/xfce4-screenshooter](http://goodies.xfce.org/projects/applications/xfce4-screenshooter) || [xfce4-screenshooter](https://www.archlinux.org/packages/?name=xfce4-screenshooter)
 

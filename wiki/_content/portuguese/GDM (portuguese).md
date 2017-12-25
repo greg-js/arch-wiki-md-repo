@@ -126,7 +126,7 @@ auth sufficient pam_succeed_if.so user ingroup nopasswdlogin
 
 **Verifique** se a linha vai ficar no lado direito contendo "pam_unix.so".
 
-Depois, adicione o grupo **nopasswdlogin** no seu sistema. Você pode realizar pelo gráfico também, em Sistemas > Administração > Usuários e Grupos. Veja em [Group](/index.php/Group "Group") a descrissão e os comandos de gerenciamento de grupo.
+Depois, adicione o grupo **nopasswdlogin** no seu sistema. Você pode realizar pelo gráfico também, em Sistemas > Administração > Usuários e Grupos. Veja em [Grupo](/index.php/Grupo "Grupo") a descrição e os comandos de gerenciamento de grupo.
 
 Agora, quando acessar em Sitemas > Administração > Usuários e Grupos (como root) e definir seu usuário para "Senha: não pediu no login" (você criou a opção "Nâo perguntar mas a senha de login"), seu usuário adicionou automaticamente no grupo "nopasswdlogin", agora simplesmente terá que clicar no seu nome de usuário e registrará a senha que vai ser ignorada totalmente!
 

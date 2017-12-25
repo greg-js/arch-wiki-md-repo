@@ -51,24 +51,25 @@ go_up = U LEFT
 
 ## Usage
 
-Run `mocp` to start the server and interface. Some useful shortcuts:
+Run `mocp` to start the server and interface. Some useful default shortcuts (press `h` for more):
 
-| Start playing a track | `Enter` |
-| Pause track | `Space` or `p` |
-| Play next track | `n` |
-| Play previous track | `b` |
-| Switch from playlist browsing to
-filesystem browsing (and vice versa) | `Tab` |
-| Add one track to the playlist | `a` |
-| Remove track from playlist | `d` |
-| Add a folder recursively to playlist | `Shift+a` |
-| Clear playlist | `Shift+c` |
-| Increase volume 5% | `.` (dot) |
-| Decrease volume 5% | `,` (comma) |
-| Increase volume 1% | `>` |
-| Decrease volume 1% | `<` |
-| Change volume to 10% | `meta+1` |
-| Change volume to 20% | `meta+2` |
+| Start playing at this file or go to this directory | `Enter` |
+| Pause | `Space` or `p` |
+| Play next file | `n` |
+| Play previous file | `b` |
+| Silent seek forward by 5s | `]` |
+| Silent seek backward by 5s | `[` |
+| Switch between playlist and file list | `Tab` |
+| Add a file/directory to the playlist | `a` |
+| Add a directory recursively to the playlist | `A` |
+| Delete an item from the playlist | `d` |
+| Clear the playlist | `C` |
+| Increase volume by 1% | `>` |
+| Decrease volume by 1% | `<` |
+| Increase volume by 5% | `.` (dot) |
+| Decrease volume by 5% | `,` (comma) |
+| Set volume to 10% | `Alt+1` |
+| Set volume to 90% | `Alt+9` |
 | Detach MOC from the server | `q` |
 | Quit | `Q` |
 

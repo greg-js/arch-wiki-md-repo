@@ -12,7 +12,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [dictd](https://www.archlinux.org/packages/?name=dictd) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [dictd](https://www.archlinux.org/packages/?name=dictd) package.
 
 ## Configuration
 

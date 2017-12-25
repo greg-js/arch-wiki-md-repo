@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Blizzard App](/index.php/Blizzard_App "Blizzard App")
+*   [ArchWiki:Archive](/index.php/ArchWiki:Archive "ArchWiki:Archive")

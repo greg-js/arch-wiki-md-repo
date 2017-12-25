@@ -5,12 +5,12 @@ Related articles
 *   [Chrony](/index.php/Chrony "Chrony")
 *   [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd")
 
-In an operating system, the time (clock) is determined by four parts: time value, time standard, time zone, and Daylight Saving Time (DST) if applicable. This article explains what they are and how to read/set them. Two clocks are present on systems: a hardware clock and a system clock which are also detailed in this article.
+In an operating system, the time (clock) is determined by four parts: time value, time standard, time zone, and Daylight Saving Time *(DST)* if applicable. This article explains what they are and how to read/set them. Two clocks are present on systems: a hardware clock and a system clock which are also detailed in this article.
 
 Standard behavior of most operating systems is:
 
 *   Set the system clock from the hardware clock on boot.
-*   Keep accurate time of the system clock with an NTP daemon, see [#Time synchronization](#Time_synchronization).
+*   Keep accurate time of the system clock, see [#Time synchronization](#Time_synchronization).
 *   Set the hardware clock from the system clock on shutdown.
 
 ## Contents
@@ -210,7 +210,10 @@ This will create an `/etc/localtime` symlink that points to a zoneinfo file unde
 
 ```
 
-**Tip:** The time zone can also be selected interactively with *tzselect*.
+**Tip:**
+
+*   The time zone can also be selected interactively with *tzselect*.
+*   The tool [tzupdate](https://aur.archlinux.org/packages/tzupdate/) automatically sets the timezone based on the geolocation of the IP address.
 
 See [timedatectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1), [localtime(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localtime.5) and [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) for details.
 

@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Dungeons & Dragons Online](/index.php/Dungeons_%26_Dragons_Online "Dungeons & Dragons Online")
+*   [ArchWiki:Archive](/index.php/ArchWiki:Archive "ArchWiki:Archive")

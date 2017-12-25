@@ -74,6 +74,7 @@ This will present an interactive prompt (`>`), which has tab completion and desc
 
 *   The default location of the control socket is `/var/run/wpa_supplicant/`. A custom path can be set manually with the `-p` option to match the *wpa_supplicant* configuration.
 *   It is possible to specify the interface to be configured with the `-i` option; otherwise, the first found wireless interface managed by *wpa_supplicant* will be used.
+*   If `scan_results` doesn't show any networks, try running a different wireless utility like `wifi-menu` first, exit the utility and try again to `scan` and `scan_results`.
 
 Use the `scan` and `scan_results` commands to see the available networks:
 

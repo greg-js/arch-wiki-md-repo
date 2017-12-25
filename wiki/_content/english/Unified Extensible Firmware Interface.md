@@ -461,7 +461,7 @@ This issue can occur due to [KMS](/index.php/KMS "KMS") issue. Try [Disabling KM
 
 ### Booting 64-bit kernel on 32-bit UEFI
 
-Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/index.php/Archboot "Archboot") iso use EFISTUB (via [systemd-boot](/index.php/Systemd-boot "Systemd-boot") Boot Manager for menu) for booting the kernel in UEFI mode. To boot 64-bit kernel with 32-bit UEFI you have to use [GRUB](/index.php/GRUB "GRUB") as the USB's UEFI bootloader by following the below section.
+Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/index.php/Archboot "Archboot") iso do not support booting on 32-bit (IA32) UEFI systems ([FS#53182](https://bugs.archlinux.org/task/53182)) since they use EFISTUB (via [systemd-boot](/index.php/Systemd-boot "Systemd-boot") Boot Manager for menu) for booting the kernel in UEFI mode. To boot 64-bit kernel with 32-bit UEFI you have to use [GRUB](/index.php/GRUB "GRUB") as the USB's UEFI bootloader by following the below section.
 
 #### Using GRUB
 
@@ -469,7 +469,13 @@ Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/inde
 
 *   [Create an editable USB Flash Installation](/index.php/USB_flash_installation_media#Using_manual_formatting "USB flash installation media"). Since we are going to use GRUB, you only need to follow the steps up until the `syslinux` part
 
-*   [Create a GRUB standalone image](/index.php/GRUB/Tips_and_tricks#GRUB_standalone "GRUB/Tips and tricks") for 32-bit EFI system and copy the generated `grub*.efi` to the USB as `EFI/boot/bootia32.efi`
+*   [Create a GRUB standalone image](/index.php/GRUB/Tips_and_tricks#GRUB_standalone "GRUB/Tips and tricks") for 32-bit EFI system:
+
+```
+# echo 'configfile ${cmdpath}/grub.cfg' > /tmp/grub.cfg
+# grub-mkstandalone -d /usr/lib/grub/i386-efi -O i386-efi --modules="part_gpt part_msdos" --locales="en@quot" --themes="" -o "*/mnt/usb/*EFI/boot/bootia32.efi" "boot/grub/grub.cfg=/tmp/grub.cfg" -v
+
+```
 
 *   Create `EFI/boot/grub.cfg` with the following contents (replace `ARCH_YYYYMM` with the required archiso label e.g. `ARCH_201507`):
 
@@ -493,7 +499,7 @@ if loadfont "${prefix}/fonts/unicode.pf2" ; then
     terminal_output gfxterm
 fi
 
-menuentry "Arch Linux archiso x86_64" {
+menuentry "Arch Linux archiso x86_64 UEFI USB" {
     set gfxpayload=keep
     search --no-floppy --set=root --label ARCH_YYYYMM
     linux /arch/boot/x86_64/vmlinuz archisobasedir=arch archisolabel=ARCH_YYYYMM add_efi_memmap

@@ -1,6 +1,5 @@
 Related articles
 
-*   [Steam/Wine](/index.php/Steam/Wine "Steam/Wine")
 *   [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshooting")
 *   [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting")
 *   [Gamepad](/index.php/Gamepad "Gamepad")

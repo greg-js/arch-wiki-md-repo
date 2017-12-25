@@ -13,7 +13,9 @@ This page explains how to setup your system in order to use a [smart card](https
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Smargo/TV Card reader](#Smargo.2FTV_Card_reader)
     *   [4.2 p11tool](#p11tool)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Firefox can't access data](#Firefox_can.27t_access_data)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -25,7 +27,7 @@ If the card reader does not have a PIN pad, [append](/index.php/Append "Append")
 
 [Start](/index.php/Start "Start") and/or [enable](/index.php/Enable "Enable") the `pcscd.service`.
 
-**Tip:** If you get the error `Failed to start pcscd.service: Unit pcscd.socket not found.`, just reload systemd units with this `systemctl daemon-reload`.
+**Tip:** If you get the error `Failed to start pcscd.service: Unit pcscd.socket not found.`, just reload systemd units with this `systemctl daemon-reload` command.
 
 ## Scan for card reader
 
@@ -98,6 +100,12 @@ Set `/dev/smargo` as the reader device when using softcam applications like OSCa
 If using packages from the GnuTLS suite, such as p11tool, the the OpenSC driver might not properly load. (This can be determined if you run `p11tool --list-tokens` and you do not see your hardware token in the list.) Users can create a file that allows the OpenSC driver to be properly loaded:
 
  `/usr/share/p11-kit/modules/opensc.module`  `module: opensc-pkcs11.so` 
+
+## Troubleshooting
+
+### Firefox can't access data
+
+If the browser is not able to use the smart card data, probably Firefox is not aware about the service which provides access to the device. This happens if you plug in the smart card reader with an already opened Firefox session. Simply close all instances of the browser to solve the issue.
 
 ## See also
 

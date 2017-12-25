@@ -5,11 +5,11 @@ Artigos relacionados
 *   [PKGBUILD (Português)](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
 *   [.SRCINFO (Português)](/index.php/.SRCINFO_(Portugu%C3%AAs) ".SRCINFO (Português)")
 *   [AurJson](/index.php/AurJson "AurJson")
-*   [AUR Trusted User Guidelines (Português)](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs) "AUR Trusted User Guidelines (Português)")
-*   [Official repositories (Português)](/index.php/Official_repositories_(Portugu%C3%AAs) "Official repositories (Português)")
+*   [Diretrizes de Trusted User do AUR](/index.php/Diretrizes_de_Trusted_User_do_AUR "Diretrizes de Trusted User do AUR")
+*   [Repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais")
 *   [Arch Build System (Português)](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
-*   [Creating packages (Português)](/index.php/Creating_packages_(Portugu%C3%AAs) "Creating packages (Português)")
-*   [AUR helpers (Português)](/index.php/AUR_helpers_(Portugu%C3%AAs) "AUR helpers (Português)")
+*   [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes")
+*   [Auxiliares do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR")
 
 O Arch User Repository (AUR) ou, em português, Repositório de Usuário do Arch é um repositório dirigido pela comunidade para usuários do Arch. Ele contém descrições de pacotes ([PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")) que permitem a você compilar um pacote de um fonte com o [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e depois instalar via [pacman](/index.php/Pacman_(Portugu%C3%AAs)#Comandos_adicionais "Pacman (Português)"). O AUR foi criado para organizar e compartilhar novos pacotes da comunidade e ajudar a acelerar a inclusão dos pacotes populares no repositório [community](/index.php/Community_(Portugu%C3%AAs) "Community (Português)"). Este documento explica como usuários podem acessar e utilizar o AUR.
 
@@ -82,7 +82,7 @@ As consultas pesquisam por nomes de pacotes e descrições por meio de uma compa
 
 A instalação de pacotes do AUR é um processo relativamente simples. Essencialmente:
 
-1.  Obtenha os arquivos de compilação, incluindo o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e possivelmente outros arquivos necessários, como unidades [systemd](/index.php/Systemd "Systemd") e patches (geralmente não o código em si).
+1.  Obtenha os arquivos de compilação, incluindo o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e possivelmente outros arquivos necessários, como unidades [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") e patches (geralmente não o código em si).
 2.  Certifique-se de que o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e os arquivos que o acompanham não são maliciosos ou duvidosos.
 3.  Execute `makepkg -si` no diretório onde os arquivos foram salvos. Isso vai baixar o código, resolver as dependências com o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), compilá-lo, empacotá-lo e instalar o pacote.
 
@@ -90,7 +90,7 @@ A instalação de pacotes do AUR é um processo relativamente simples. Essencial
 
 Primeiro, certifique-se de que as ferramentas necessárias estão instaladas, [instalando](/index.php/Instale "Instale") o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), o qual inclui [make](https://www.archlinux.org/packages/?name=make) e outras ferramentas necessárias para a compilação do código-fonte.
 
-**Note:** Os pacotes do AUR presumem que o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) está instalado, isto é, eles não listarão explicitamente os membros deste grupo como dependências
+**Nota:** Os pacotes do AUR presumem que o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) está instalado, isto é, eles não listarão explicitamente os membros deste grupo como dependências
 
 Em seguida, escolha o diretório de compilação adequado. Um diretório de compilação é apenas um diretório no qual o pacote será feito ou "compilado" e pode ser em qualquer diretório. Os exemplos nas seguintes seções usarão `~/builds` como o diretório de compilação.
 
@@ -127,7 +127,7 @@ $ curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/*nome_pacote*.tar.g
 
 Mude diretórios para o diretório contendo o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") do pacote.
 
-**Warning:** **Verifique com atenção todos os arquivos.** Verifique no `PKGBUILD` e em qualquer arquivo `.install` por comandos maliciosos. `PKGBUILD`s são scripts em [bash](/index.php/Bash "Bash") contendo funções para serem executadas pelo *makepkg*: essas funções podem conter *qualquer* comando válido ou sintaxe Bash válida. Então, é totalmente possível que um `PKGBUILD` contenha comandos perigosos por malícia ou ignorância por parte do autor. Já que o *makepkg* usa *fakeroot* (e nunca deveria ser executado como root), há ainda um certo nível de proteção, mas você nunca deveria contar somente nisso. Em caso de dúvida, não compile o pacote e procure ajuda nos fóruns ou na lista de discussão.
+**Atenção:** **Verifique com atenção todos os arquivos.** Verifique no `PKGBUILD` e em qualquer arquivo `.install` por comandos maliciosos. `PKGBUILD`s são scripts em [bash](/index.php/Bash "Bash") contendo funções para serem executadas pelo *makepkg*: essas funções podem conter *qualquer* comando válido ou sintaxe Bash válida. Então, é totalmente possível que um `PKGBUILD` contenha comandos perigosos por malícia ou ignorância por parte do autor. Já que o *makepkg* usa *fakeroot* (e nunca deveria ser executado como root), há ainda um certo nível de proteção, mas você nunca deveria contar somente nisso. Em caso de dúvida, não compile o pacote e procure ajuda nos fóruns ou na lista de discussão.
 
 ```
 $ cd *nome_pacote*
@@ -151,7 +151,7 @@ Outras flags úteis são
 *   `-r`/`--rmdeps` remove dependências de tempo de compilação após a compilação, já que elas não mais são necessárias. Porém, essas dependências pode precisar serem reinstaladas da próxima vez que o pacote for atualizado.
 *   `-c`/`--clean` limpa os arquivos temporários de compilação após a compilação, já que eles não mais são necessários. Esses arquivos geralmente são necessários apenas ao depurar o processo de compilação.
 
-**Note:** O exemplo acima é apenas um resumo breve do processo de compilação. É **altamente** recomendado ler os artigos [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") para mais detalhes.
+**Nota:** O exemplo acima é apenas um resumo breve do processo de compilação. É **altamente** recomendado ler os artigos [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") para mais detalhes.
 
 ## Feedback
 
@@ -165,7 +165,7 @@ Usuários podem **compartilhar** PKGBUILDs usando o Arch User Repository, o qual
 
 ### Enviando pacotes
 
-**Warning:** Antes de tentar enviar um pacote, espera-se que você esteja familiarizado com os [Arch Packaging Standards](/index.php/Arch_packaging_standards_(Portugu%C3%AAs) "Arch packaging standards (Português)") (*padrões de empacotamento do Arch*) e todos os artigos sob "Artigos relacionados". **Verifique cuidadosamente** se o que você está enviando está correto. Pacotes que violam as regras podem ser **excluídos** sem qualquer aviso.
+**Atenção:** Antes de tentar enviar um pacote, espera-se que você esteja familiarizado com os [Arch Packaging Standards](/index.php/Arch_packaging_standards_(Portugu%C3%AAs) "Arch packaging standards (Português)") (*padrões de empacotamento do Arch*) e todos os artigos sob "Artigos relacionados". **Verifique cuidadosamente** se o que você está enviando está correto. Pacotes que violam as regras podem ser **excluídos** sem qualquer aviso.
 
 Se você de alguma forma esta incerto sobre o pacote ou o processo de compilação/envio mesmo após ler essa seção duas vezes, envie o PKGBUILD para a [lista de discussão do AUR](https://mailman.archlinux.org/mailman/listinfo/aur-general), o [fórum do AUR](https://bbs.archlinux.org/viewforum.php?id=4) nos fóruns do Arch ou peça em nosso [canal IRC](/index.php/Canal_IRC "Canal IRC") por revisão pública antes de adicioná-lo ao AUR.
 
@@ -222,7 +222,7 @@ $ ssh-keygen -f ~/.ssh/aur
 
 ```
 
-**Tip:** Você pode adicionar múltiplas chaves públicas ao seu perfil separando-as com uma nova linha no campo de entrada.
+**Dica:** Você pode adicionar múltiplas chaves públicas ao seu perfil separando-as com uma nova linha no campo de entrada.
 
 #### Criando um novo pacote
 
@@ -235,7 +235,7 @@ warning: You appear to have cloned an empty repository.
 Checking connectivity... done.
 ```
 
-**Note:** Quando um pacote do AUR é excluído, o repositório git é mantido, de forma que é possível para um repositório do pacote excluído não estar vazio quando clonado se alguém estiver criando um pacote com o mesmo nome.
+**Nota:** Quando um pacote do AUR é excluído, o repositório git é mantido, de forma que é possível para um repositório do pacote excluído não estar vazio quando clonado se alguém estiver criando um pacote com o mesmo nome.
 
 Se você já criou um repositório git, você pode simplesmente criar um remoto para o repositório do AUR e então executar "fetch":
 
@@ -249,7 +249,7 @@ sendo `*nome_remoto*` o nome do remoto para a ser criado (*ex.:* "origin"). Veja
 
 O novo pacote aparecerá no AUR após você executar *push* no primeiro commit. Você pode adicionar os arquivos fontes à cópia local do repositório Git. Veja [#Enviando pacotes](#Enviando_pacotes).
 
-**Warning:** Seus commits do AUR serão autorizados de acordo com seu nome de usuário git e endereço de e-mail e é muito difícil de alterar commits após você ter enviado (veja [FS#45425](https://bugs.archlinux.org/task/45425)). Se você deseja enviar para o AUR sob um nome/e-mail diferente, você pode alterá-los para esse pacote via `git config user.name [...]` e `git config user.email [...]`. Reveja seus commits antes de enviá-los!
+**Atenção:** Seus commits do AUR serão autorizados de acordo com seu nome de usuário git e endereço de e-mail e é muito difícil de alterar commits após você ter enviado (veja [FS#45425](https://bugs.archlinux.org/task/45425)). Se você deseja enviar para o AUR sob um nome/e-mail diferente, você pode alterá-los para esse pacote via `git config user.name [...]` e `git config user.email [...]`. Reveja seus commits antes de enviá-los!
 
 #### Enviando pacotes
 
@@ -269,7 +269,7 @@ $ git push
 
 ```
 
-**Tip:**
+**Dica:**
 
 *   Se você inicialmente se esqueceu de fazer commit do `.SRCINFO` e adicionou-o em um commit posterior, o AUR ainda rejeitará seus *pushes* porque o `.SRCINFO` deve existir para *todo* commit. Para resolver esse problema, você pode usar [git rebase](https://git-scm.com/docs/git-rebase) com a opção `--root` ou [git filter-branch](https://git-scm.com/docs/git-filter-branch) com a opção `--tree-filter`.
 *   Para evitar arquivos não rastreados de commits e manter o diretório de trabalho o mais limpo possível, exclua todos os arquivos com `.gitignore` e force a adição de arquivos. Veja o [uso de gitignore](/index.php/Dotfiles#Using_gitignore "Dotfiles").
@@ -348,7 +348,7 @@ Para começar, você pode marcar pacotes como desatualizados. Se ele ficar desat
 
 Neste meio tempo, você pode tentar atualizar o pacote você mesmo editando o PKGBUILD - algumas atualizações não exigem qualquer alteração para o processo de compilação ou empacotamento, caso em que apenas atualizar o vetor `pkgver` ou `source` é suficiente.
 
-**Note:** [Pacotes VCS](/index.php/VCS_package_guidelines "VCS package guidelines") não são considerados desatualizados quando o pkgver altera, então **por favor** não sinalize-os pois o mantenedor irá simplesmente retirar a sinalização e ignorar você. Mantenedores do AUR não devem fazer commits para meramente incrementar o pkgver.
+**Nota:** [Pacotes VCS](/index.php/VCS_package_guidelines "VCS package guidelines") não são considerados desatualizados quando o pkgver altera, então **por favor** não sinalize-os pois o mantenedor irá simplesmente retirar a sinalização e ignorar você. Mantenedores do AUR não devem fazer commits para meramente incrementar o pkgver.
 
 ### Foo no AUR não compila quando eu executo makepkg; o que devo fazer?
 
@@ -384,7 +384,7 @@ Veja também [DeveloperWiki:Community repo candidates](/index.php/DeveloperWiki:
 
 ### Como o posso agilizar processo de repetidas compilações?
 
-Se você frequentemente compila códigos que usam gcc - digamos, um pacote git ou SVN - você pode encontrar [ccache](/index.php/Ccache "Ccache"), que é o diminutivo para "compiler cache", útil.
+Se você frequentemente compila códigos que usam gcc - digamos, um pacote git ou SVN - você pode encontrar [ccache](/index.php/Ccache_(Portugu%C3%AAs) "Ccache (Português)"), que é o diminutivo para "compiler cache", útil.
 
 ### Qual é a diferença entre pacotes foo e foo-git
 

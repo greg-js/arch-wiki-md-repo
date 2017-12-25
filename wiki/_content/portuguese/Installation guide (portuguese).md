@@ -34,7 +34,7 @@ Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://
 
 Baixe e inicialize a mídia de instalação como explicado em [Category:Getting and installing Arch (Português)](/index.php/Category:Getting_and_installing_Arch_(Portugu%C3%AAs) "Category:Getting and installing Arch (Português)"). Você será autenticado no primeiro [console virtual](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") como o usuário root e apresentado como um prompt shell [Zsh](/index.php/Zsh "Zsh"); comandos comuns como [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) podem ser [completados com tab](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
-Para trocar para um console diferente — por exemplo, para ver esse guia com [ELinks](/index.php/ELinks "ELinks") junto com a instalação — use o [atalho](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*seta*`. Para [editar](/index.php/Textedit "Textedit") arquivos de configuração, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") e [vim](/index.php/Vim#Usage "Vim") estão disponíveis.
+Para trocar para um console diferente — por exemplo, para ver esse guia com [ELinks](/index.php/ELinks "ELinks") junto com a instalação — use o [atalho](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*seta*`. Para [editar](/index.php/Edi%C3%A7%C3%A3o_de_texto "Edição de texto") arquivos de configuração, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") e [vim](/index.php/Vim#Usage "Vim") estão disponíveis.
 
 ### Definir o layout do teclado
 
@@ -165,7 +165,7 @@ Verifique o arquivo resultante em `/mnt/etc/fstab` em seguida e edite-o caso haj
 
 ### Chroot
 
-[Mude a raiz](/index.php/Change_root "Change root") para novo sistema:
+[Mude a raiz](/index.php/Change_root_(Portugu%C3%AAs) "Change root (Português)") para novo sistema:
 
 ```
 # arch-chroot /mnt
@@ -255,7 +255,7 @@ Para configurações especiais, modifique o arquivo [mkinitcpio.conf(5)](http://
 
 ### Senha do root
 
-Defina a [senha](/index.php/Password "Password") do *root* (também conhecido como "superusuário"):
+Defina a [senha](/index.php/Senha "Senha") do *root* (também conhecido como "superusuário"):
 
 ```
 # passwd

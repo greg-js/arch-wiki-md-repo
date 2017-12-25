@@ -78,9 +78,9 @@ Essa seção lida com tarefas administrativas e gerenciamento do sistema. Para m
 
 ### Usuários e grupos
 
-Uma nova instalação deixa você com apenas a conta de superusuário, mais conhecida como "root". Se autenticar como root por períodos prolongados de tempo, possivelmente expondo-o via [SSH](/index.php/SSH "SSH") em um servidor, [é inseguro](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). Em vez disso, você deve criar e usar uma conta de usuário desprivilegiada para a maioria das tarefas, apenas usando a conta root para administração do sistema. Veja [Users and groups#User management](/index.php/Users_and_groups#User_management "Users and groups") para detalhes.
+Uma nova instalação deixa você com apenas a conta de superusuário, mais conhecida como "root". Se autenticar como root por períodos prolongados de tempo, possivelmente expondo-o via [SSH](/index.php/SSH "SSH") em um servidor, [é inseguro](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). Em vez disso, você deve criar e usar uma conta de usuário desprivilegiada para a maioria das tarefas, apenas usando a conta root para administração do sistema. Veja [Usuários e grupos#Gerenciamento de usuário](/index.php/Usu%C3%A1rios_e_grupos#Gerenciamento_de_usu.C3.A1rio "Usuários e grupos") para detalhes.
 
-Usuários e grupos são mecanismo para *controle de acesso*; administradores podem ajustar participação e posse de grupos para conceder ou negar a usuários e serviços acesso a recursos do sistema. Leia o artigo [Usuários e grupos](/index.php/Users_and_groups "Users and groups") para detalhes e riscos de segurança em potencial.
+Usuários e grupos são mecanismo para *controle de acesso*; administradores podem ajustar participação e posse de grupos para conceder ou negar a usuários e serviços acesso a recursos do sistema. Leia o artigo [Usuários e grupos](/index.php/Usu%C3%A1rios_e_grupos "Usuários e grupos") para detalhes e riscos de segurança em potencial.
 
 ### Escalação de privilégios
 
@@ -318,7 +318,7 @@ Uma grande parte dos aplicativos com uma interface gráfica para sistemas Linux 
 
 ## Melhorias no console
 
-Essa seção se aplica a pequenas modificações que melhoram a praticidade de programas de console. Para mais, por favor veja [Category:Command shells](/index.php/Category:Command_shells "Category:Command shells").
+Essa seção se aplica a pequenas modificações que melhoram a praticidade de programas de console. Para mais, por favor veja [Category:Command shells (Português)](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)").
 
 ### Aliases
 
@@ -326,7 +326,7 @@ Fazer um *alias* de um comando, ou um grupo deles, é uma forma de economizar te
 
 ### Shells alternativos
 
-[Bash](/index.php/Bash "Bash") é o shell que está instalado por padrão em um sistema Arch. A mídia de instalação *live*, porém, usa [zsh](/index.php/Zsh "Zsh") com o pacote complementar [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config). Veja [Command-line shell#List of shells](/index.php/Command-line_shell#List_of_shells "Command-line shell") para mais alternativas.
+[Bash](/index.php/Bash "Bash") é o shell que está instalado por padrão em um sistema Arch. A mídia de instalação *live*, porém, usa [zsh](/index.php/Zsh "Zsh") com o pacote complementar [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config). Veja [Command-line shell (Português)#Lista de shells](/index.php/Command-line_shell_(Portugu%C3%AAs)#Lista_de_shells "Command-line shell (Português)") para mais alternativas.
 
 ### Adições ao Bash
 

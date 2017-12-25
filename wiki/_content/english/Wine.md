@@ -1,11 +1,11 @@
 Related articles
 
-*   [Steam/Wine](/index.php/Steam/Wine "Steam/Wine")
-*   [Foobar2000/Wine](/index.php/Foobar2000/Wine "Foobar2000/Wine")
 *   [CrossOver](/index.php/CrossOver "CrossOver")
 *   [Wine package guidelines](/index.php/Wine_package_guidelines "Wine package guidelines")
 
-[Wine](https://en.wikipedia.org/wiki/Wine_(software) is a *compatibility layer* capable of running Microsoft Windows applications on Unix-like operating systems. Programs running in Wine act as native programs would, without the performance/memory penalties of an emulator. See the [official project home](http://www.winehq.org/) and [wiki](https://wiki.winehq.org/) pages for longer introduction.
+[Wine](https://en.wikipedia.org/wiki/Wine_(software) is a *compatibility layer* capable of running Microsoft Windows applications on Unix-like operating systems. Programs running in Wine act as native programs would, without the performance/memory penalties of an emulator.
+
+**Warning:** If you can access a file or resource with your user account, programs running in Wine can too. See [#Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account) and [Security#Sandboxing applications](/index.php/Security#Sandboxing_applications "Security") for possible precautions.
 
 ## Contents
 
@@ -23,7 +23,7 @@ Related articles
         *   [2.7.2 Removing menu entries](#Removing_menu_entries)
     *   [2.8 Mono and Gecko](#Mono_and_Gecko)
     *   [2.9 Printing](#Printing)
-*   [3 Using Windows applications](#Using_Windows_applications)
+*   [3 Usage](#Usage)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Wineconsole](#Wineconsole)
     *   [4.2 Winetricks](#Winetricks)
@@ -31,34 +31,23 @@ Related articles
     *   [4.4 Unregister existing Wine file associations](#Unregister_existing_Wine_file_associations)
     *   [4.5 Prevent new Wine file associations](#Prevent_new_Wine_file_associations)
     *   [4.6 Dual Head with different resolutions](#Dual_Head_with_different_resolutions)
-    *   [4.7 exe-thumbnailer](#exe-thumbnailer)
-    *   [4.8 Changing the language](#Changing_the_language)
-    *   [4.9 Using Wine as an interpreter for Win16/Win32 binaries](#Using_Wine_as_an_interpreter_for_Win16.2FWin32_binaries)
-    *   [4.10 16-bit programs](#16-bit_programs)
-    *   [4.11 Burning optical media](#Burning_optical_media)
-    *   [4.12 Proper mounting of optical media images](#Proper_mounting_of_optical_media_images)
-    *   [4.13 Force OpenGL mode in games](#Force_OpenGL_mode_in_games)
-    *   [4.14 Show FPS overlay in games](#Show_FPS_overlay_in_games)
-    *   [4.15 Installing .NET Framework 4.0](#Installing_.NET_Framework_4.0)
-    *   [4.16 Installing Microsoft Office](#Installing_Microsoft_Office)
-        *   [4.16.1 Office 2010](#Office_2010)
-        *   [4.16.2 Office 2013](#Office_2013)
-        *   [4.16.3 Office 2016](#Office_2016)
-    *   [4.17 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
-*   [5 Third-party interfaces](#Third-party_interfaces)
-    *   [5.1 CrossOver](#CrossOver)
-    *   [5.2 PlayOnLinux/PlayOnMac](#PlayOnLinux.2FPlayOnMac)
-    *   [5.3 PyWinery](#PyWinery)
-    *   [5.4 Q4wine](#Q4wine)
+    *   [4.7 Changing the language](#Changing_the_language)
+    *   [4.8 Using Wine as an interpreter for Win16/Win32 binaries](#Using_Wine_as_an_interpreter_for_Win16.2FWin32_binaries)
+    *   [4.9 16-bit programs](#16-bit_programs)
+    *   [4.10 Burning optical media](#Burning_optical_media)
+    *   [4.11 Proper mounting of optical media images](#Proper_mounting_of_optical_media_images)
+    *   [4.12 Force OpenGL mode in games](#Force_OpenGL_mode_in_games)
+    *   [4.13 Show FPS overlay in games](#Show_FPS_overlay_in_games)
+    *   [4.14 Microsoft Office](#Microsoft_Office)
+    *   [4.15 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
+*   [5 Third-party applications](#Third-party_applications)
 *   [6 See also](#See_also)
 
 ## Installation
 
-**Warning:** If you can access a file or resource with your user account, programs running in Wine can too. Wine prefixes are **not** [sandboxes](https://en.wikipedia.org/wiki/Sandbox_(computer_security) "wikipedia:Sandbox (computer security)"). Consider using [virtualization](https://en.wikipedia.org/wiki/Virtualization "wikipedia:Virtualization") if security is important.
-
 Wine can be installed by enabling the [Multilib](/index.php/Multilib "Multilib") repository and [installing](/index.php/Install "Install") the [wine](https://www.archlinux.org/packages/?name=wine) (stable) or [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) (testing) package. [Wine Staging](https://wine-staging.com/) is a patched version of [Wine](https://www.winehq.org/), which contains bug fixes and features (e.g. [CSMT patch](#CSMT_patch)), which have not been integrated into the stable branch yet. See also [#Graphics drivers](#Graphics_drivers) and [#Sound](#Sound).
 
-You may also want to install [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) and [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) for applications that need support for Internet Explorer and .NET, respectively. These packages are not strictly required as Wine will download the relevant files as needed. However, having the files downloaded in advance allows you to work off-line and makes it so Wine does not download the files for each Wine prefix needing them.
+Consider installing [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) and [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) for applications that depend on Internet Explorer and .NET, respectively. These packages are not strictly required as Wine will download the relevant files as needed. However, having the files downloaded in advance allows you to work off-line and makes it so Wine does not download the files for each Wine prefix needing them.
 
 ## Configuration
 
@@ -279,22 +268,15 @@ WINEDLLOVERRIDES=mscoree=d;mshtml=d wine somewineapp
 
 In order to use your installed printers (both local and network) with wine applications in *win32 prefixes* (e.g. MS Word), install the [lib32-libcups](https://www.archlinux.org/packages/?name=lib32-libcups) package, reboot wine (*wineboot*) and restart your wine application.
 
-## Using Windows applications
+## Usage
 
-**Warning:** Do not run or install Wine applications as root! See [Running Wine as root](https://wiki.winehq.org/FAQ#Should_I_run_Wine_as_root.3F) for the official statement.
+**Warning:** Do not run or install Wine applications as root! See [Wine FAQ](https://wiki.winehq.org/FAQ#Should_I_run_Wine_as_root.3F) for details.
 
-See [Installing Windows Applications](https://wiki.winehq.org/FAQ#Installing_Windows_Applications) at WineHQ. See [#Desktop launcher menus](#Desktop_launcher_menus) for information on where the shortcuts were created.
+See [Wine FAQ](https://wiki.winehq.org/FAQ) and [Wine User's Guide](https://wiki.winehq.org/Wine_User%27s_Guide) for general information on Wine usage.
 
-See [Running applications](https://wiki.winehq.org/FAQ#Running_applications) at WineHQ. The `.desktop` files created by the installer should automatically appear as entries in any X menu or file manager applications. They can also be examined to determine what command to use to run the application from a terminal.
-
-See [How do I uninstall Windows applications?](https://wiki.winehq.org/FAQ#How_do_I_uninstall_Windows_applications.3F) at WineHQ.
+See [Wine Application Database (AppDB)](https://appdb.winehq.org/) for information on running Windows applications in Wine.
 
 ## Tips and tricks
-
-**Tip:** In addition to the links provided in the beginning of the article the following may be of interest:
-
-*   [The Wine Application Database (AppDB)](http://appdb.winehq.org/) - Information about running specific Windows applications (Known issues, ratings, guides, etc tailored to specific applications)
-*   [The WineHQ Forums](http://forum.winehq.org/) - A great place to ask questions *after* you have looked through the FAQ and AppDB
 
 ### Wineconsole
 
@@ -396,10 +378,6 @@ If you have issues with dual-head setups and different display resolutions you a
 
 Also installing [lib32-libxinerama](https://www.archlinux.org/packages/?name=lib32-libxinerama) might fix dual-head issues with wine.
 
-### exe-thumbnailer
-
-This is a small piece of UI code meant to be installed with (or even before) Wine. It provides thumbnails for executable files that show the embedded icons when available, and also gives the user a hint that Wine will be used to open it. Install it with the [exe-thumbnailer](https://aur.archlinux.org/packages/exe-thumbnailer/) package.
-
 ### Changing the language
 
 Some programs may not offer a language selection, they will guess the desired language upon the sytem locales. Wine will transfer the current environment (including the locales) to the application, so it should work out of the box. If you want to force a program to run in a specific locale (which is fully [generated](/index.php/Locale "Locale") on your system), you can call Wine with the following setting:
@@ -492,93 +470,42 @@ You should of course refer to your application's documentation and Wine's [AppDB
 
 Wine features an embedded FPS monitor which works for all graphical applications if the environment variable `WINEDEBUG=fps` is set. This will output the framerate to stdout. You can display the FPS on top of the window thanks to `osd_cat` from the [xosd](https://www.archlinux.org/packages/?name=xosd) package. See [winefps.sh](https://gist.github.com/anonymous/844aefd70bb50bf72b35) for a helper script.
 
-### Installing .NET Framework 4.0
+### Microsoft Office
 
-First create a new 32-bit Wine prefix:
+[Install](/index.php/Install "Install") the [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) [samba](https://www.archlinux.org/packages/?name=samba) and [lib32-libxml2](https://www.archlinux.org/packages/?name=lib32-libxml2) packages.
 
-```
-$ WINEARCH=win32 WINEPREFIX=~/win32 winecfg
-
-```
-
-Then install the following packages using winetricks
-
-```
-$ WINEARCH=win32 WINEPREFIX=~/win32 winetricks -q msxml3 dotnet40 corefonts
-
-```
-
-### Installing Microsoft Office
-
-#### Office 2010
-
-The 32-bit version of Office 2010 works without any problems. Activation over Internet also works.
-
-Start by installing the [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) [samba](https://www.archlinux.org/packages/?name=samba) [lib32-libxslt](https://www.archlinux.org/packages/?name=lib32-libxslt) [libwbclient](https://www.archlinux.org/packages/?name=libwbclient) [lib32-libxml2](https://www.archlinux.org/packages/?name=lib32-libxml2) packages.
-
-Proceed with launching the installer:
-
-```
-$ export WINEPREFIX=~/.wine
-$ export WINEARCH=win32
-$ wine /path/to/office_cd/setup.exe
-
-```
-
-If you do not want to setup Office 2010 in the default Wine prefix (`~/.wine`), create new one as described in [#WINEPREFIX](#WINEPREFIX) section. You could also put the above exports into your shell initialization script as also noted there.
-
-```
-**Tips**
-1\. You may be interested in Microsoft fonts, there are a number of ways to do so, see [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts") article.
-2\. If installation fails, ensure your wine prefix is 32-bit by running in terminal `head -5 ~/.wine/system.reg`
-3\. Ensure **Windows version is XP**.
-
-```
-
-Once installation has completed, open Word or Excel to activate over the Internet. After activation run *winecfg* and set `riched20` (under libraries) to `(native,builtin)`. This will enable PowerPoint to work and makes the drop-down list of countries visible for phone activation.
-
-For OneNote to work, run `winetricks wininet` and then make sure that `wininet` is set to `(native,builtin)`
-
-For additional info, see the [WineHQ](http://appdb.winehq.org/appview.php?iVersionId=4992) article.
-
-As an alternative to the above method, [playonlinux](https://www.archlinux.org/packages/?name=playonlinux) provides custom installer scripts that make the installation of Office 2003, 2007 and 2010 an ease. You just have to provide the *setup.exe* or ISO and the installer will guide you seamlessly through the installation procedure. You do not have to deal with the underlying Wine at all. The playonlinux installation for Office 2010 improves on the minimum installation instructions provided above by enabling xml conversions for Word documents created with certain earlier versions of Word.
-
-#### Office 2013
-
-The 32-bit version of Office 2013 works without any problems. See [the WineHQ page](https://appdb.winehq.org/objectManager.php?sClass=version&iId=26323) for more information.
-
-#### Office 2016
-
-The 32-bit version of Office 2016 should work. See [the WineHQ page](https://appdb.winehq.org/objectManager.php?sClass=version&iId=34941) for more information.
+See [Wine AppDB page](https://appdb.winehq.org/objectManager.php?sClass=application&iId=31) for more information.
 
 ### Running Wine under a separate user account
 
-**Note:** As of version 1.16, Xorg runs as a regular user by default. This means a special user has no access to X. The following approach only works when enabling root for Xorg; see [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
+**Note:** The following approach only works when enabling root for Xorg. See [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg") for more information.
 
 It may be desirable to run Wine under a specifically created user account in order to reduce concerns about Windows applications having access to your home directory.
 
 First, create a [user account](/index.php/Users_and_groups "Users and groups") for Wine:
 
 ```
- # useradd -m -s /bin/bash wineuser
+# useradd -m -s /bin/bash wineuser
 
 ```
 
 Afterwards, in order to open Wine applications using this new user account you need to add the new user to the X server permissions list:
 
 ```
- $ xhost +SI:localuser:wineuser
+$ xhost +SI:localuser:wineuser
 
 ```
 
 Finally, you can run Wine via the following command, which uses `env` to launch Wine with the environment variables it expects:
 
 ```
- $ sudo -u wineuser env HOME=/home/wineuser USER=wineuser USERNAME=wineuser LOGNAME=wineuser wine *arguments*
+$ sudo -u wineuser env HOME=/home/wineuser USER=wineuser USERNAME=wineuser LOGNAME=wineuser wine *arguments*
 
 ```
 
-**Tip:** It is possible to automate the process of running Windows applications with Wine via this method by using a shell script as follows: `/usr/local/bin/runaswine` 
+It is possible to automate the process of running Windows applications with Wine via this method by using a shell script as follows:
+
+ `/usr/local/bin/runaswine` 
 ```
 #!/bin/bash
 xhost +SI:localuser:wineuser
@@ -592,41 +519,40 @@ $ runaswine *"C:\path\to\application.exe"*
 
 ```
 
-**Tip:** In order to not be asked for a password each time Wine is run as another user the following entry can be added to the sudoers file: `*mainuser* ALL=(wineuser) NOPASSWD: ALL`. See [Sudo#Configuration](/index.php/Sudo#Configuration "Sudo") for more information.
+In order to not be asked for a password each time Wine is run as another user the following entry can be added to the sudoers file: `*mainuser* ALL=(wineuser) NOPASSWD: ALL`. See [Sudo#Configuration](/index.php/Sudo#Configuration "Sudo") for more information.
 
 It is recommended to run `winecfg` as the Wine user and remove all bindings for directories outside the home directory of the Wine user in the "Desktop Integration" section of the configuration window so no program run with Wine has read access to any file outside the special user's home directory.
 
 Keep in mind that audio will probably be non-functional in Wine programs which are run this way if [PulseAudio](/index.php/PulseAudio "PulseAudio") is used. See [PulseAudio/Examples#Allowing multiple users to use PulseAudio at the same time](/index.php/PulseAudio/Examples#Allowing_multiple_users_to_use_PulseAudio_at_the_same_time "PulseAudio/Examples") for information about allowing the Wine user to access the PulseAudio daemon of the principal user.
 
-## Third-party interfaces
+## Third-party applications
 
-These have their own sites, and are *not supported* in the official Wine forums/bugzilla.
+These have their own communities and websites, and are **not supported** by greater Wine community. See [Wine Wiki](https://wiki.winehq.org/Third_Party_Applications) for more details.
 
-### CrossOver
+*   **[CrossOver](/index.php/CrossOver "CrossOver")** — Paid, commercialized version of Wine which provides more comprehensive end-user support.
 
-[CrossOver](http://www.codeweavers.com/about/) Has its own [wiki page](/index.php/CrossOver "CrossOver").
+	[crossover](https://aur.archlinux.org/packages/crossover/) || [https://www.codeweavers.com/](https://www.codeweavers.com/)
 
-### PlayOnLinux/PlayOnMac
+*   **exe-thumbnailer** — Generates thumbnails for Windows executable files (.exe, .lnk, .msi, and .dll).
 
-[PlayOnLinux](http://www.playonlinux.com/) is a graphical Windows and DOS program manager. It contains scripts to assist the configuration and running of programs, it can manage multiple Wine versions and even use a specific version for each executable (e.g. because of regressions). If you need to know which Wine version works best for a certain game, try the [Wine Application Database](http://appdb.winehq.org/). You can find the [playonlinux](https://www.archlinux.org/packages/?name=playonlinux) package in [community](/index.php/Community "Community").
+	[exe-thumbnailer](https://aur.archlinux.org/packages/exe-thumbnailer/) || [https://github.com/exe-thumbnailer/exe-thumbnailer](https://github.com/exe-thumbnailer/exe-thumbnailer)
 
-**Tip:** PlayOnLinux supports [Bumblebee](/index.php/Bumblebee "Bumblebee"). Open POL console, type this command `POL_Config_Write BEFORE_WINE **optirun**` and hit enter. **optirun** command will be used and each application will be run using **optirun**. You can even use **primusrun** instead!
+*   **PlayOnLinux** — Graphical prefix manager for Wine. Contains scripts to assist with program installation and configuration.
 
-### PyWinery
+	[playonlinux](https://www.archlinux.org/packages/?name=playonlinux) || [https://www.playonlinux.com/](https://www.playonlinux.com/)
 
-[PyWinery](https://github.com/ergoithz/pywinery) is a graphical and simple wine-prefix manager which allows you to launch apps and manage configuration of separate prefixes, also have a button to open winetricks in the same prefix, to open prefix dir, *winecfg*, application uninstaller and wineDOS. You can install PyWinery with the [pywinery](https://aur.archlinux.org/packages/pywinery/) package. It is especially useful for having differents settings like DirectX games, office, programming, etc, and choose which prefix to use before you open an application or file.
+*   **PyWinery** — Simple graphical prefix manager for Wine.
 
-It is recommended using winetricks by default to open *.exe* files, so you can choose between any Wine configuration you have.
+	[pywinery](https://aur.archlinux.org/packages/pywinery/) || [https://github.com/ergoithz/pywinery](https://github.com/ergoithz/pywinery)
 
-### Q4wine
+*   **Q4Wine** — Graphical prefix manager for Wine. Can export [Qt](/index.php/Qt "Qt") themes into the Wine configuration for better integration.
 
-[Q4Wine](http://sourceforge.net/projects/q4wine/) is a graphical wine-prefix manager which allows you to manage configuration of prefixes. Notably it allows exporting [Qt](/index.php/Qt "Qt") themes into the Wine configuration so that they can integrate nicely. You can find the [q4wine](https://www.archlinux.org/packages/?name=q4wine) package in [multilib](/index.php/Multilib "Multilib").
+	[q4wine](https://www.archlinux.org/packages/?name=q4wine) || [https://sourceforge.net/projects/q4wine/](https://sourceforge.net/projects/q4wine/)
 
 ## See also
 
-*   [Official Wine website](http://www.winehq.com/)
-*   [Wine application database](http://appdb.winehq.org/)
-*   [Advanced configuring of video card and OpenGL in Wine; Speed up Wine](http://linuxgamingtoday.wordpress.com/2008/02/16/quick-tips-to-speed-up-your-gaming-in-wine/)
-*   [FileInfo](http://wiki.gotux.net/code:perl:fileinfo) - Find Win32 PE/COFF headers in exe/dll/ocx files under Linux/Unix environment.
-*   [Gentoo's Wine Wiki Page](https://wiki.gentoo.org/wiki/Wine)
-*   [How to run Spotify and Wine under a separate user account](http://www.bobulous.org.uk/misc/Spotify-Linux-Wine.html) by Bobulous.
+*   [Wine Homepage](https://www.winehq.org/)
+*   [Wine Wiki](https://wiki.winehq.org/)
+*   [Wine Application Database (AppDB)](https://appdb.winehq.org/) - Information about running specific Windows applications (Known issues, ratings, guides, etc tailored to specific applications)
+*   [Wine Forums](https://forum.winehq.org/) - A great place to ask questions *after* you have looked through the FAQ and AppDB
+*   [Wine - Gentoo Wiki](https://wiki.gentoo.org/wiki/Wine)

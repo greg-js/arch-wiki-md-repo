@@ -15,7 +15,7 @@
 
 下列安装包包含了 VSCode:
 
-*   [visual-studio-code](https://aur.archlinux.org/packages/visual-studio-code/)
+*   [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)
 *   [visual-studio-code-oss](https://aur.archlinux.org/packages/visual-studio-code-oss/)
 *   [visual-studio-code-git](https://aur.archlinux.org/packages/visual-studio-code-git/)
 *   *code-oss*，来自非官方的 [pkgbuild-current](/index.php/Unofficial_user_repositories#pkgbuild-current "Unofficial user repositories") ，更多信息可以在它的README 。[README](https://github.com/fusion809/PKGBUILDs/blob/master/README.md)中找到

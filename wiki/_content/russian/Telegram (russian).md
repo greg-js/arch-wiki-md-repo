@@ -27,14 +27,14 @@
 [Официальное приложение](https://desktop.telegram.org/):
 
 *   [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) скомпилированное приложение от [Telegram](https://desktop.telegram.org/).
-*   [telegram-desktop](https://aur.archlinux.org/packages/telegram-desktop/) требующее библиотеки [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)") для сборки.
+*   [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) требующее библиотеки [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)") для сборки.
 *   [telegram-desktop-systemqt](https://aur.archlinux.org/packages/telegram-desktop-systemqt/) экспериментальная сборка Telegram Desktop, использующая системные библиотеки Qt вместо встроенных.
 *   [telegram-desktop-systemqt-notoemoji](https://aur.archlinux.org/packages/telegram-desktop-systemqt-notoemoji/) экспериментальная сборка Telegram Desktop, использующая системные библиотеки Qt вместо встроенных и emoji от [Noto Color Emoji](https://github.com/googlei18n/noto-emoji).
 *   [telegram-desktop-systemqt-emojione](https://aur.archlinux.org/packages/telegram-desktop-systemqt-emojione/) экспериментальная сборка Telegram Desktop, использующая системные библиотеки Qt вместо встроенных и emoji от [EmojiOne](https://emojione.com/).
 
 Альтернативные неофициальные клиенты:
 
-*   [cutegram](https://www.archlinux.org/packages/?name=cutegram), клиент с открытым исходным кодом от иранского разработчика [aseman](http://aseman.co/en/products/cutegram). Пакет использует [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)") и отличается от официального клиента возможностями. Для последней разрабатываемой версии установите пакет [cutegram-git](https://aur.archlinux.org/packages/cutegram-git/).
+*   [cutegram](https://aur.archlinux.org/packages/cutegram/), клиент с открытым исходным кодом от иранского разработчика [aseman](http://aseman.co/en/products/cutegram). Пакет использует [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)") и отличается от официального клиента возможностями. Для последней разрабатываемой версии установите пакет [cutegram-git](https://aur.archlinux.org/packages/cutegram-git/).
 
 ### CLI/приложения для терминала
 
@@ -52,8 +52,8 @@
 
 ## Советы и хитрости
 
-*   Пакет [telegram-desktop](https://aur.archlinux.org/packages/telegram-desktop/) требует для сборки [qtbase-src](http://download.qt.io/official_releases/qt/5.7/5.7.0/submodules/qtbase-opensource-src-5.7.0.tar.xz), а это около 40MB дополнительных загрузок.
-*   Использование неофициального репозитория [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") для установки [telegram-desktop](https://aur.archlinux.org/packages/telegram-desktop/) и [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) позволяет не загружать [qtbase-src](http://download.qt.io/official_releases/qt/5.7/5.7.0/submodules/qtbase-opensource-src-5.7.0.tar.xz), упомянутый выше. Некоторые другие связанные с Telegram пакеты также доступны в этом репозитории.
+*   Пакет [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) требует для сборки [qtbase-src](http://download.qt.io/official_releases/qt/5.7/5.7.0/submodules/qtbase-opensource-src-5.7.0.tar.xz), а это около 40MB дополнительных загрузок.
+*   Использование неофициального репозитория [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") для установки [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) и [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) позволяет не загружать [qtbase-src](http://download.qt.io/official_releases/qt/5.7/5.7.0/submodules/qtbase-opensource-src-5.7.0.tar.xz), упомянутый выше. Некоторые другие связанные с Telegram пакеты также доступны в этом репозитории.
 
 ### Каналы в Telegram про Arch Linux
 

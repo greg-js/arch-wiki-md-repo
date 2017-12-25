@@ -185,7 +185,7 @@ Nesse exemplo a correta partição **root** seria **(hd0,1)**.
 
 Após salvar o arquivo de configuraçã, o instalador do GRUB irá **Falhar**. Mas ele copiará os arquivos para o /boot. **Não desista e reinicie** simplesmente siga as instruções:
 
-*   Mude para **tty1** e entre como [chroot](/index.php/Chroot "Chroot"):
+*   Mude para **tty1** e entre como [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)"):
 
 ```
 # mount -o bind /dev /mnt/dev

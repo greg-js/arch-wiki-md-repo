@@ -31,7 +31,7 @@ Vea [Wikipedia:Tor](https://es.wikipedia.org/wiki/Tor)para más información.
 
 [Instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [tor](https://www.archlinux.org/packages/?name=tor) está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
-Usually, you will access Tor using Tor Browser, available as the [tor-browser](https://www.archlinux.org/packages/?name=tor-browser) package or a [portable executable](https://www.torproject.org/projects/torbrowser.html.en).
+Usually, you will access Tor using Tor Browser, available as the [tor-browser](https://aur.archlinux.org/packages/tor-browser/) package or a [portable executable](https://www.torproject.org/projects/torbrowser.html.en).
 
 El [arm](https://www.archlinux.org/packages/?name=arm) (de sus siglas en ingles Anonymizing Relay Monitor) es un paquete que provee una terminal para monitorear el uso de banda ancha, detalles de la conexión y más.
 

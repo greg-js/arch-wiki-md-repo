@@ -6,22 +6,23 @@ Related articles
 
 *   [1 Exploring Android device](#Exploring_Android_device)
 *   [2 Android development](#Android_development)
-    *   [2.1 Android SDK core components](#Android_SDK_core_components)
-    *   [2.2 Android SDK platform API](#Android_SDK_platform_API)
-    *   [2.3 Android System Images](#Android_System_Images)
-    *   [2.4 Development environment](#Development_environment)
-        *   [2.4.1 Android Studio](#Android_Studio)
-        *   [2.4.2 Netbeans](#Netbeans)
-        *   [2.4.3 Eclipse](#Eclipse)
-    *   [2.5 Android Debug Bridge (ADB)](#Android_Debug_Bridge_.28ADB.29)
-        *   [2.5.1 Connect device](#Connect_device)
-        *   [2.5.2 Figure out device IDs](#Figure_out_device_IDs)
-        *   [2.5.3 Adding udev Rules](#Adding_udev_Rules)
-        *   [2.5.4 Configuring adb](#Configuring_adb)
-        *   [2.5.5 Detect the device](#Detect_the_device)
-        *   [2.5.6 General usage](#General_usage)
-        *   [2.5.7 Notes & Troubleshooting](#Notes_.26_Troubleshooting)
-    *   [2.6 NVIDIA Tegra platform](#NVIDIA_Tegra_platform)
+    *   [2.1 Android Studio](#Android_Studio)
+    *   [2.2 Manual SDK installation](#Manual_SDK_installation)
+        *   [2.2.1 Android SDK core components](#Android_SDK_core_components)
+        *   [2.2.2 Android SDK platform API](#Android_SDK_platform_API)
+        *   [2.2.3 Android System Images](#Android_System_Images)
+    *   [2.3 Other IDEs](#Other_IDEs)
+        *   [2.3.1 Netbeans](#Netbeans)
+        *   [2.3.2 Eclipse](#Eclipse)
+    *   [2.4 Android Debug Bridge](#Android_Debug_Bridge)
+        *   [2.4.1 Connect device](#Connect_device)
+        *   [2.4.2 Figure out device IDs](#Figure_out_device_IDs)
+        *   [2.4.3 Adding udev Rules](#Adding_udev_Rules)
+        *   [2.4.4 Configuring adb](#Configuring_adb)
+        *   [2.4.5 Detect the device](#Detect_the_device)
+        *   [2.4.6 General usage](#General_usage)
+        *   [2.4.7 Notes & Troubleshooting](#Notes_.26_Troubleshooting)
+    *   [2.5 NVIDIA Tegra platform](#NVIDIA_Tegra_platform)
 *   [3 Building Android](#Building_Android)
     *   [3.1 Required packages](#Required_packages)
     *   [3.2 Java Development Kit](#Java_Development_Kit)
@@ -35,16 +36,7 @@ Related articles
     *   [4.2 Samsung devices](#Samsung_devices)
         *   [4.2.1 Heimdall](#Heimdall)
         *   [4.2.2 Odin (Virtualbox)](#Odin_.28Virtualbox.29)
-*   [5 Alternative connection methods](#Alternative_connection_methods)
-    *   [5.1 Android File Transfer](#Android_File_Transfer)
-    *   [5.2 adb-sync](#adb-sync)
-    *   [5.3 AirDroid and AirMore](#AirDroid_and_AirMore)
-    *   [5.4 Send Anywhere](#Send_Anywhere)
-    *   [5.5 AndroidScreencast](#AndroidScreencast)
-    *   [5.6 FTP](#FTP)
-    *   [5.7 KDE Connect](#KDE_Connect)
-    *   [5.8 SSH Server](#SSH_Server)
-    *   [5.9 Samba](#Samba)
+*   [5 Connection software](#Connection_software)
 *   [6 Tips & Tricks](#Tips_.26_Tricks)
     *   [6.1 During Debugging "Source not found"](#During_Debugging_.22Source_not_found.22)
     *   [6.2 Linux distribution on the sdcard](#Linux_distribution_on_the_sdcard)
@@ -58,30 +50,51 @@ Related articles
 
 ## Exploring Android device
 
-There are few methods of exploring your device:
+When you connect a modern Android device via USB to a computer you can use [MTP](/index.php/MTP "MTP") to transfer files and [#Android Debug Bridge](#Android_Debug_Bridge) to debug it.
 
-*   [MTP](/index.php/MTP "MTP") over USB for files transferring.
-*   [#Alternative connection methods](#Alternative_connection_methods) (such as FTP, SSH).
+Files can generally be transferred with various protocols ([SSH](/index.php/SSH "SSH"), [FTP](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol"), [Samba](/index.php/Samba "Samba"), HTTP). You just need to setup a client and a server (via apps Android can act as either one).
 
-For more advanced usage, development, flashing and restore:
+For flashing and restoring Android firmware see [#Restoring Android](#Restoring_Android).
 
-*   [#Android Debug Bridge (ADB)](#Android_Debug_Bridge_.28ADB.29) mostly for development purposes.
-*   [#Restoring Android](#Restoring_Android) for flashing and restoring Android firmwares (includes fastboot).
+See [#Connection software](#Connection_software) for software available for Arch Linux that can be used to connect to Android.
 
 ## Android development
 
-There are 3 steps that need to be performed before you can develop Android applications on your Arch Linux box:
+To develop Android applications you need three things:
 
-1.  Install the Android SDK core component,
-2.  Install one or several Android SDK Platform packages,
-3.  Install one of the IDEs compatible with the Android SDK.
+*   the Android SDK core component
+*   one or several Android SDK Platform packages
+*   an IDE
 
-### Android SDK core components
+The official IDE for Android is [#Android Studio](#Android_Studio), which comes with its own SDK manager.
+
+### Android Studio
+
+[Android Studio](https://developer.android.com/studio/index.html) is the official Android development environment based on [IntelliJ Idea](https://www.jetbrains.com/idea/). It provides integrated Android developer tools for development and debugging.
+
+You can [install](/index.php/Install "Install") it with the [android-studio](https://aur.archlinux.org/packages/android-studio/) package. If you get an error about a missing SDK, refer to [#Android SDK platform API](#Android_SDK_platform_API) above.
+
+**Note:**
+
+*   If you are using a tiling window manager other than [i3](/index.php/I3 "I3"), you may need to apply one of the fixes mentioned in [this](https://code.google.com/p/android/issues/detail?id=57675) issue page.
+*   Make sure you properly [set the Java environment](/index.php/Java#Change_default_Java_environment "Java") otherwise android-studio will not start.
+
+Normally, apps are built through the Android Studio GUI. To build apps from the commandline (using e.g. `./gradlew assembleDebug`), add the following to your `~/.bashrc`:
+
+```
+export ANDROID_HOME=/opt/android-sdk
+
+```
+
+### Manual SDK installation
+
+If you are using [#Android Studio](#Android_Studio) and want the IDE to manage your SDK installation, you can skip this section.
+
+#### Android SDK core components
 
 **Note:**
 
 *   If you are running a 64-bit system, make sure the [multilib](/index.php/Multilib "Multilib") repository is enabled to avoid `error: target not found: lib32-*` error messages.
-*   If you plan to install [#Android Studio](#Android_Studio) and want the IDE to manage your SDK installation, you do not need to install these packages
 
 Before developing Android applications, you need to install the Android SDK, which is made of 4 distinct packages, all installable from [AUR](/index.php/AUR "AUR"):
 
@@ -129,52 +142,20 @@ $ newgrp sdkusers
 
 **Note:** As an alternative to a global install with the [AUR](/index.php/AUR "AUR") packages, the SDK can be installed to a user's home directory via [the upstream instructions](https://developer.android.com/sdk/index.html). You may also use the android-*-dummy packages in the [AUR](/index.php/AUR "AUR") to handle the system dependencies.
 
-### Android SDK platform API
-
-**Note:** If you plan to install [#Android Studio](#Android_Studio) and want the IDE to handle your SDK, you don't need to install these packages
+#### Android SDK platform API
 
 Install the desired Android SDK Platform package from the [AUR](/index.php/AUR "AUR"):
 
-*   [android-platform](https://aur.archlinux.org/packages/android-platform/) (latest)
-*   [android-platform-26](https://aur.archlinux.org/packages/android-platform-26/)
-*   [android-platform-25](https://aur.archlinux.org/packages/android-platform-25/)
-*   [android-platform-24](https://aur.archlinux.org/packages/android-platform-24/)
-*   [android-platform-23](https://aur.archlinux.org/packages/android-platform-23/)
-*   [android-platform-22](https://aur.archlinux.org/packages/android-platform-22/)
-*   [android-platform-21](https://aur.archlinux.org/packages/android-platform-21/)
-*   [android-platform-20](https://aur.archlinux.org/packages/android-platform-20/)
-*   [android-platform-19](https://aur.archlinux.org/packages/android-platform-19/)
-*   [android-platform-18](https://aur.archlinux.org/packages/android-platform-18/)
-*   [android-platform-17](https://aur.archlinux.org/packages/android-platform-17/)
-*   [android-platform-16](https://aur.archlinux.org/packages/android-platform-16/)
-*   [android-platform-15](https://aur.archlinux.org/packages/android-platform-15/)
-*   [android-platform-14](https://aur.archlinux.org/packages/android-platform-14/)
+*   [android-platform](https://aur.archlinux.org/packages/android-platform/) – the latest API
+*   the [AUR](/index.php/AUR "AUR") also contains older APIs[[1]](https://aur.archlinux.org/packages/?K=android-platform-)
 
-### Android System Images
+#### Android System Images
 
-Install the desired [Android system image](https://aur.archlinux.org/packages/?O=0&K=android+system+image) package from the [AUR](/index.php/AUR "AUR"). This step may not be necessary if installing Android Studio. The Images are needed for emulating a specific android device. They are not needed if you want to develop with an android phone.
+Install the desired [Android system image](https://aur.archlinux.org/packages/?K=android-+system+image) package from the [AUR](/index.php/AUR "AUR"). The Images are needed for emulating a specific android device. They are not needed if you want to develop with an android phone.
 
-### Development environment
+### Other IDEs
 
 Android Studio is the official Android development environment based on IntelliJ IDEA. Alternatively, you can use [Netbeans](/index.php/Netbeans "Netbeans") with the NBAndroid plugin. All are described below.
-
-#### Android Studio
-
-[Android Studio](https://developer.android.com/sdk/index.html) is the official Android development environment based on [IntelliJ Idea](https://www.jetbrains.com/idea/). It provides integrated Android developer tools for development and debugging.
-
-You can [install](/index.php/Install "Install") it with the [android-studio](https://aur.archlinux.org/packages/android-studio/) package. If you get an error about a missing SDK, refer to [#Android SDK platform API](#Android_SDK_platform_API) above.
-
-**Note:**
-
-*   If you are using a tiling window manager other than i3wm, you may need to apply one of the fixes mentioned in [this](https://code.google.com/p/android/issues/detail?id=57675) issue page.
-*   Make sure you properly [set the Java environment](/index.php/Java#Change_default_Java_environment "Java") otherwise android-studio will not start.
-
-Normally, apps are built through the Android Studio GUI. To build apps from the commandline (using e.g. `./gradlew assembleDebug`), add the following to your `~/.bashrc`:
-
-```
-export ANDROID_HOME=/opt/android-sdk
-
-```
 
 #### Netbeans
 
@@ -182,13 +163,13 @@ If you prefer using [Netbeans](/index.php/Netbeans "Netbeans") as your IDE and w
 
 Add the following URL: [http://nbandroid.org/release81/updates/updates.xml](http://nbandroid.org/release81/updates/updates.xml)
 
-Then go to **Available Plugins** and install the **Android** and **JUnit** plugins. Once you have installed go to *Tools > Options > Miscellaneous > Android*.
+Then go to *Available Plugins* and install the *Android* and *JUnit* plugins. Once you have installed go to *Tools > Options > Miscellaneous > Android*.
 
-and select the path where the SDK is installed (/opt/android-sdk by default). That is it, now you can create a new Android project and start developing using Netbeans.
+and select the path where the SDK is installed (`/opt/android-sdk` by default). That is it, now you can create a new Android project and start developing using Netbeans.
 
 #### Eclipse
 
-**Note:** The Eclipse ADT plugin is [no longer supported](http://android-developers.blogspot.nl/2016/11/support-ended-for-eclipse-android.html). Google recommends to use Android Studio instead.
+**Note:** The Eclipse ADT plugin is no longer supported. Google recommends to use Android Studio instead.[[2]](https://android-developers.googleblog.com/2016/11/support-ended-for-eclipse-android.html)
 
 The official, but deprecated, [Eclipse ADT](http://developer.android.com/sdk/eclipse-adt.html) plugin can be installed with the [eclipse-android](https://aur.archlinux.org/packages/eclipse-android/) package.
 
@@ -203,7 +184,7 @@ Enter the path to the Android SDK Location in *Windows > Preferences > Android*.
 
 **Note:** If the plugins do not show up in Eclipse after the AUR package has been upgraded, then eclipse probably has out-of-date caches. Running `sudo eclipse -clean` once should clear them. If the problem persists, uninstall eclipse and all the plugins, delete `/usr/share/eclipse`, and reinstall everything.
 
-### Android Debug Bridge (ADB)
+### Android Debug Bridge
 
 **Tip:**
 
@@ -356,9 +337,7 @@ $ gpg --recv-keys 702353E0F7E48EDB
 
 ```
 
-Additionally, LineageOS requires the following packages:
-
-*   [xml2](https://www.archlinux.org/packages/?name=xml2) [lzop](https://www.archlinux.org/packages/?name=lzop) [pngcrush](https://www.archlinux.org/packages/?name=pngcrush) [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
+Additionally, LineageOS requires the following packages: [xml2](https://www.archlinux.org/packages/?name=xml2), [lzop](https://www.archlinux.org/packages/?name=lzop), [pngcrush](https://www.archlinux.org/packages/?name=pngcrush), [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
 
 They can be installed with the [lineageos-devel](https://aur.archlinux.org/packages/lineageos-devel/) metapackage.
 
@@ -549,45 +528,12 @@ Check if configuration is working:
 
 which means that your device is visible to Odin & Windows operating system and is ready to be flashed.
 
-## Alternative connection methods
+## Connection software
 
-### Android File Transfer
-
-[android-file-transfer](https://www.archlinux.org/packages/?name=android-file-transfer) — reliable MTP client with minimalistic UI similar to Android File Transfer for Mac. It just works™.
-
-### adb-sync
-
-[adb-sync](https://github.com/google/adb-sync) (available in [adb-sync-git](https://aur.archlinux.org/packages/adb-sync-git/)) is a tool to synchronize files between a PC and an Android device using the ADB protocol.
-
-### AirDroid and AirMore
-
-[AirDroid](https://play.google.com/store/apps/details?id=com.sand.airdroid) and [AirMore](https://play.google.com/store/apps/details?id=com.airmore) are Android apps which provide file transfer and remote phone control from your web browser, via your local LAN or over the web.
-
-### Send Anywhere
-
-[sendanywhere](https://aur.archlinux.org/packages/sendanywhere/) is a truly cross-platform file transfer solution, which focuses on speed & simplicity.
-
-### AndroidScreencast
-
-[AndroidScreencast](http://xsavikx.github.io/AndroidScreencast) was developed to view and control your android device from a PC (using ADB).
-
-### FTP
-
-You run a FTP server on Arch and connect to it from your phone, or the other way around: run a FTP server on your phone and connect to it from Arch.
-
-See [List of applications/Internet#FTP](/index.php/List_of_applications/Internet#FTP "List of applications/Internet"). There are a lot of FTP clients/servers available for Android.
-
-### KDE Connect
-
-[kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) integrates your android device with the KDE desktop. Its features include synced notifications, clipboard sync, multimedia control, and file/URL sharing.
-
-### SSH Server
-
-There are many SSH servers available for Android, it allows you to transfer files using `scp` command. See also [SSH](/index.php/SSH "SSH").
-
-### Samba
-
-See [Samba](/index.php/Samba "Samba").
+*   [adb-sync](https://github.com/google/adb-sync) (available as [adb-sync-git](https://aur.archlinux.org/packages/adb-sync-git/)) – a tool to synchronize files between a PC and an Android device using the ADB protocol.
+*   [AndroidScreencast](http://xsavikx.github.io/AndroidScreencast) (available as [androidscreencast-bin](https://aur.archlinux.org/packages/androidscreencast-bin/)) – view and control your Android device from a PC (via ADB).
+*   [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) – integrates your Android device with the KDE desktop (featuring synced notifications & clipboard, multimedia control, and file/URL sharing).
+*   [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/) – cross-platform file sharing
 
 ## Tips & Tricks
 
@@ -681,12 +627,9 @@ In xfwm4, the vertical toolbar buttons window that's on the right of the emulato
 
 The bug is opened here [https://issuetracker.google.com/issues/37094173](https://issuetracker.google.com/issues/37094173)
 
-You can use the workaround described in the answer on StackOverflow [https://stackoverflow.com/a/42720450/1366471](https://stackoverflow.com/a/42720450/1366471)
+You can use the workaround described in [this StackOverflow answer](https://stackoverflow.com/a/42720450/1366471):
 
-```
-1) Go to xfwm4 settings
-2) Find Focus tab
-3) Change Focus Model to "Focus follow mouse"
-4) Disable "Automatically raise windows when they receive focus" option bellow.
-
-```
+1.  Go to xfwm4 settings
+2.  Find Focus tab
+3.  Change Focus Model to "Focus follow mouse"
+4.  Disable "Automatically raise windows when they receive focus" option bellow.

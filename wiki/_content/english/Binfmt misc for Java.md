@@ -37,8 +37,9 @@ The information in this article is almost entirely taken from the files **binfmt
         *   [1.3.1 jarwrapper](#jarwrapper)
         *   [1.3.2 javawrapper](#javawrapper)
         *   [1.3.3 javaclassname](#javaclassname)
-*   [2 Testing](#Testing)
-*   [3 Notes](#Notes)
+*   [2 A simple solution](#A_simple_solution)
+*   [3 Testing](#Testing)
+*   [4 Notes](#Notes)
 
 ## Setup
 
@@ -404,6 +405,34 @@ int main(int argc, char **argv)
 }
 
 ```
+
+## A simple solution
+
+This simple solution is suitable in most cases, no bugs are detected during execution. Create file **/etc/binfmt.d/java.conf**:
+
+```
+:Java:E::class::/usr/local/bin/javawrapper:
+
+```
+
+Create file **/usr/local/bin/javawrapper**:
+
+```
+#!/bin/sh
+file=${1%%.class}
+file=${file/.\//}
+java $file
+
+```
+
+Do not forget to set the perms:
+
+```
+chmod +x /usr/local/bin/javawrapper
+
+```
+
+Now you can test!
 
 ## Testing
 

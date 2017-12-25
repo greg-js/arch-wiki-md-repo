@@ -12,7 +12,7 @@
     *   [3.2 使用 chroot](#.E4.BD.BF.E7.94.A8_chroot)
 *   [4 在 chroot 中运行图形程序](#.E5.9C.A8_chroot_.E4.B8.AD.E8.BF.90.E8.A1.8C.E5.9B.BE.E5.BD.A2.E7.A8.8B.E5.BA.8F)
 *   [5 不使用 root 权限](#.E4.B8.8D.E4.BD.BF.E7.94.A8_root_.E6.9D.83.E9.99.90)
-    *   [5.1 Proot](#Proot)
+    *   [5.1 PRoot](#PRoot)
     *   [5.2 Fakechroot](#Fakechroot)
 *   [6 参阅](#.E5.8F.82.E9.98.85)
 
@@ -193,9 +193,9 @@ $ echo $DISPLAY
 
 Chroot 需要 root 权限，有时用户并没有这个权限，下面工具可用实现类似的功能：
 
-### Proot
+### PRoot
 
-[Proot](/index.php/Proot "Proot") 可用在没有 root 权限的情况下，用 `mount --bind` 设置可见根目录，这样可用为不同的 CPU 架构编译程序。这个程序的缺点是文件属于主机系统。可用用 `--root-id` 选项解决一部分问题。
+[PRoot](/index.php/PRoot "PRoot") 可用在没有 root 权限的情况下，用 `mount --bind` 设置可见根目录，这样可用为不同的 CPU 架构编译程序。这个程序的缺点是文件属于主机系统。可用用 `--root-id` 选项解决一部分问题。
 
 ### Fakechroot
 

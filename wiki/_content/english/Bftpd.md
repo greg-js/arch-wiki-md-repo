@@ -2,7 +2,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [bftpd](https://www.archlinux.org/packages/?name=bftpd).
+[Install](/index.php/Install "Install") the [bftpd](https://www.archlinux.org/packages/?name=bftpd) package.
 
 [Start/Enable](/index.php/Systemd#Using_units "Systemd") the `bftpd.service` daemon. An alternative `bftpd.socket` and `bftpd@.service` are also available.
 

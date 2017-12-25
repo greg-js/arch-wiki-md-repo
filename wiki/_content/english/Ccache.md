@@ -97,7 +97,10 @@ Or to change the location by default:
 
 The default value is 5 gigabyte, however it is possible to use a lower or even a higher value:
 
- `/home/<user>/.ccache/ccache.conf`  `max_size = 2.0G` 
+```
+$ ccache --set-config=max_size=2.0G
+
+```
 
 ### Disable the cache via environment
 
