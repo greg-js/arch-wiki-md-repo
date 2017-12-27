@@ -149,7 +149,7 @@ password required pam_unix.so use_authtok sha512 shadow
 
 The `password required pam_unix.so use_authtok` instructs the *pam_unix* module to not prompt for a password but rather to use the one provided by *pam_cracklib*.
 
-You can refer to the pam_cracklib(8) and pam_unix(8) man pages for more information.
+You can refer to the [pam_cracklib(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pam_cracklib.8) and [pam_unix(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pam_unix.8) man pages for more information.
 
 ## Storage
 
@@ -211,21 +211,31 @@ After installation make a normal user for daily use. Do not use the root user fo
 
 Add the following line to `/etc/pam.d/system-login` to add a delay of at least 4 seconds between failed login attempts:
 
- `/etc/pam.d/system-login`  `auth required pam_faildelay.so delay=4000000` 
+ `/etc/pam.d/system-login`  `auth optional pam_faildelay.so delay=4000000` 
 
 `4000000` is the time in microseconds to delay.
 
 ### Lockout user after three failed login attempts
 
-To further heighten the security it is possible to lockout a user after a specified number of failed login attempts. The user account can either be locked until the root user unlocks it, or automatically be unlocked after a set time. To lockout a user for ten minutes after three failed login attempts you have to modify `/etc/pam.d/system-login`:
+To further heighten the security it is possible to lockout a user after a specified number of failed login attempts. The user account can either be locked until the root user unlocks it, or automatically be unlocked after a set time.
+
+To lockout a user for ten minutes after three failed login attempts you have to modify `/etc/pam.d/system-login` to read as:
 
  `/etc/pam.d/system-login` 
 ```
+#%PAM-1.0
+
 auth required pam_tally2.so deny=3 unlock_time=600 onerr=succeed
-#auth required pam_tally.so onerr=succeed file=/var/log/faillog
 ```
 
-If you do not comment the second line every failed login attempt will be counted twice. That is all there is to it. If you feel adventurous, make three failed login attempts. Then you can see for yourself what happens. To unlock a user manually do:
+pam_tally is deprecated and superseded by pam_tally2, so you will want to comment out the pam_tally line:
+
+```
+#auth required pam_tally.so onerr=succeed file=/var/log/faillog
+
+```
+
+That is all there is to it. If you feel adventurous, make three failed login attempts. Then you can see for yourself what happens. To unlock a user manually do:
 
 ```
 # pam_tally2 --user *username* --reset
@@ -442,7 +452,9 @@ The kernel logs contain useful information for an attacker trying to exploit ker
 
 **Note:** [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) sets `kptr_restrict=2` by default rather than `0`.
 
-Enabling `kernel.kptr_restrict` will hide kernel symbol addresses in `/proc/kallsyms` from regular users without `CAP_SYSLOG`, making it more difficult for kernel exploits to resolve addresses/symbols dynamically. This will not help that much on a pre-compiled Arch Linux kernel, since a determined attacker could just download the kernel package and get the symbols manually from there, but if you're compiling your own kernel, this can help mitigating local root exploits. This will break some [perf](https://www.archlinux.org/packages/?name=perf) commands when used by non-root users (but many [perf](https://www.archlinux.org/packages/?name=perf) features require root access anyway). See [FS#34323](https://bugs.archlinux.org/task/34323) for more information.
+Setting `kernel.kptr_restrict` to 1 will hide kernel symbol addresses in `/proc/kallsyms` from regular users without `CAP_SYSLOG`, making it more difficult for kernel exploits to resolve addresses/symbols dynamically. This will not help that much on a pre-compiled Arch Linux kernel, since a determined attacker could just download the kernel package and get the symbols manually from there, but if you're compiling your own kernel, this can help mitigating local root exploits. This will break some [perf](https://www.archlinux.org/packages/?name=perf) commands when used by non-root users (but many [perf](https://www.archlinux.org/packages/?name=perf) features require root access anyway). See [FS#34323](https://bugs.archlinux.org/task/34323) for more information.
+
+Setting `kernel.kptr_restrict` to 2 will hide kernel symbol addresses in `/proc/kallsyms` regardless of privileges.
 
  `/etc/sysctl.d/50-kptr-restrict.conf`  `kernel.kptr_restrict = 1` 
 

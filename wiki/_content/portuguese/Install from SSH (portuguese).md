@@ -31,7 +31,7 @@ Neste exato momento, você deve estar logado como root(pois este é o comportame
 
 Configure então, a rede da máquina em questão.
 
-Supondo que a conexão é através de uma rede cabeada, um `dhclient` ou `dhcpcd` é o suficiente para obter um lease. Para maiores informações, visite [configurando a rede](/index.php/Configuring_network "Configuring network").
+Supondo que a conexão é através de uma rede cabeada, um `dhclient` ou `dhcpcd` é o suficiente para obter um lease. Para maiores informações, visite [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede").
 
 Se estiver em uma rede sem fio, os artigos [configuração de rede sem fio](/index.php/Wireless_Setup "Wireless Setup") e [Wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") dão maiores detalhes de como estabelecer uma conexão com o seu access point.
 

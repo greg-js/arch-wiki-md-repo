@@ -225,7 +225,7 @@ For some windows, such as preferences dialogs, it does not make sense for these 
 
 ### Fixing misbehaving Java applications
 
-See [Java#Non-reparenting window managers](/index.php/Java#Non-reparenting_window_managers "Java") for a solution.
+Try setting `export _JAVA_AWT_WM_NONREPARENTING=1`. Also see the [Java](/index.php/Java#Non-reparenting_window_managers_.2F_Grey_window_.2F_Programs_not_drawing_properly "Java") page.
 
 ### Fixing the extra topbar that does not disappear when changing resolution/monitors
 

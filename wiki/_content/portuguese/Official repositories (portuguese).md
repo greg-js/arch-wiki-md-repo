@@ -8,7 +8,7 @@ Artigos relacionados
 *   [PKGBUILD (Português)](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
 *   [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
 
-Um [repositório de software](https://en.wikipedia.org/wiki/software_repository "wikipedia:software repository") é um local de armazenamento a partir do qual pacotes de software são obtidos para instalação.
+Um [repositório de software](https://en.wikipedia.org/wiki/pt:Reposit%C3%B3rio "wikipedia:pt:Repositório") é um local de armazenamento a partir do qual pacotes de software são obtidos para instalação.
 
 **Repositórios oficiais** do Arch Linux contêm softwares essenciais e populares, prontamente acessíveis via [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"). Eles são mantidos por [mantenedores de pacote](/index.php/Arch_terminology_(Portugu%C3%AAs)#Package_maintainer "Arch terminology (Português)").
 
@@ -67,7 +67,7 @@ Esse repositório pode ser localizado em `.../multilib/os/` de seu *mirror* favo
 
 *multilib* contém softwares e bibliotecas 32 bits que podem ser usados para executar e compilar aplicativos 32 bits em instalações 64 bits (ex.: [wine](https://www.archlinux.org/packages/?name=wine), [steam](https://www.archlinux.org/packages/?name=steam), etc).
 
-Para mais informações, veja [Multilib](/index.php/Multilib "Multilib").
+Para mais informações, veja [Multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)").
 
 ### testing
 
@@ -99,7 +99,7 @@ Esse repositório é similar ao repositório *testing*, mas para pacotes que sã
 
 #### gnome-unstable
 
-Esse repositório contém a versão mais recente do ambiente gráfico do [GNOME](/index.php/GNOME "GNOME"), antes de ser movido para o repositório principal de teste *testing*.
+Esse repositório contém a versão mais recente do ambiente gráfico do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), antes de ser movido para o repositório principal de teste *testing*.
 
 Para habilitá-lo, adicione as seguintes linhas ao `/etc/pacman.conf`:
 

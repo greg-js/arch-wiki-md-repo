@@ -19,7 +19,7 @@ Use the [Installation](/index.php/Installation "Installation") guide. Make sure 
 
 ### BIOS Update
 
-Install [this BIOS update](https://support.lenovo.com/de/en/downloads/ds120370) (or a newer one) to fix a [serious bug concerning hyperthreading](https://lists.debian.org/debian-devel/2017/06/msg00308.html) and issues with thunderbolt [[1]](https://forums.lenovo.com/t5/ThinkPad-T400-T500-and-newer-T/ThinkPad-T470s-BIOS-bug-WOL-and-Thunderbolt-3/m-p/3707059) [[2]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1708043/) , which can affect you even if you don't use thunderbolt. [[3]](https://github.com/linrunner/TLP/issues/308) See [Flashing_BIOS_from_Linux](/index.php/Flashing_BIOS_from_Linux "Flashing BIOS from Linux") for details on how to install the BIOS without an optical drive; the [geteltorito](https://aur.archlinux.org/packages/geteltorito/) method is known to work on the T570.
+Install [this BIOS update](https://support.lenovo.com/de/en/downloads/ds120370) (or a newer one) to fix a [serious bug concerning hyperthreading](https://lists.debian.org/debian-devel/2017/06/msg00308.html) and issues with thunderbolt [[1]](https://forums.lenovo.com/t5/ThinkPad-T400-T500-and-newer-T/ThinkPad-T470s-BIOS-bug-WOL-and-Thunderbolt-3/m-p/3707059) [[2]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1708043/) , which can affect you even if you don't use thunderbolt. [[3]](https://github.com/linrunner/TLP/issues/308) See [Flashing BIOS from Linux](/index.php/Flashing_BIOS_from_Linux "Flashing BIOS from Linux") for details on how to install the BIOS without an optical drive; the [geteltorito](https://aur.archlinux.org/packages/geteltorito/) method is known to work on the T570.
 
 ### Bumblebee
 

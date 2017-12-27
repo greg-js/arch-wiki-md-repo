@@ -1,3 +1,7 @@
+Ссылки по теме
+
+*   [Файловые системы](/index.php/%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D0%B5_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B "Файловые системы")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [XFS](/index.php/XFS "XFS"). Дата последней синхронизации: 24 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=XFS&diff=0&oldid=482825).
 
 XFS is a high-performance journaling file system created by Silicon Graphics, Inc. XFS is particularly proficient at parallel IO due to its allocation group based design. This enables extreme scalability of IO threads, filesystem bandwidth, file and filesystem size when spanning multiple storage devices.
@@ -35,7 +39,7 @@ First unmount the XFS filesystem.
 
 ```
 
-Once unmounted, run the [xfs_repair(8)](http://man7.org/linux/man-pages/man8/xfs_repair.8.html) tool.
+Once unmounted, run the [xfs_repair(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xfs_repair.8) tool.
 
 ```
 # xfs_repair -v /dev/sda3
@@ -44,7 +48,7 @@ Once unmounted, run the [xfs_repair(8)](http://man7.org/linux/man-pages/man8/xfs
 
 ## Integrity
 
-xfsprogs 3.2.0 has introduced a new on-disk format (v5) that includes a metadata checksum scheme called [Self-Describing Metadata](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt). Based upon CRC32 it provides for example additional protection against metadata corruption during unexpected power losses. Checksum is enabled by default when using xfsprogs 3.2.3 or later. If you need read-write mountable xfs for older kernel, It can be easily disable using the `-m crc=0` switch when calling [mkfs.xfs(8)](http://man7.org/linux/man-pages/man8/mkfs.xfs.8.html).
+xfsprogs 3.2.0 has introduced a new on-disk format (v5) that includes a metadata checksum scheme called [Self-Describing Metadata](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt). Based upon CRC32 it provides for example additional protection against metadata corruption during unexpected power losses. Checksum is enabled by default when using xfsprogs 3.2.3 or later. If you need read-write mountable xfs for older kernel, It can be easily disable using the `-m crc=0` switch when calling [mkfs.xfs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.xfs.8).
 
 ```
 # mkfs.xfs -m crc=0 /dev/*target_partition*
@@ -72,7 +76,7 @@ As per [XFS wiki](http://xfs.org/index.php/XFS_FAQ#Q:_I_want_to_tune_my_XFS_file
 
 ### Stripe size and width
 
-If this filesystem will be on a striped RAID you can gain significant speed improvements by specifying the stripe size to the [mkfs.xfs(8)](http://man7.org/linux/man-pages/man8/mkfs.xfs.8.html) command.
+If this filesystem will be on a striped RAID you can gain significant speed improvements by specifying the stripe size to the [mkfs.xfs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.xfs.8) command.
 
 See [How to calculate the correct sunit,swidth values for optimal performance](http://xfs.org/index.php/XFS_FAQ#Q:_How_to_calculate_the_correct_sunit.2Cswidth_values_for_optimal_performance)
 
@@ -90,7 +94,7 @@ Also, `noatime` implies `nodiratime`, so there is never a need to specify **nodi
 
 Although the extent-based nature of XFS and the delayed allocation strategy it uses significantly improves the file system's resistance to fragmentation problems, XFS provides a filesystem defragmentation utility (*xfs_fsr*, short for XFS filesystem reorganizer) that can defragment the files on a mounted and active XFS filesystem. It can be useful to view XFS fragmentation periodically.
 
-[xfs_fsr(8)](http://man7.org/linux/man-pages/man8/xfs_fsr.8.html) improves the organization of mounted filesystems. The reorganization algorithm operates on one file at a time, compacting or otherwise improving the layout of the file extents (contiguous blocks of file data).
+[xfs_fsr(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xfs_fsr.8) improves the organization of mounted filesystems. The reorganization algorithm operates on one file at a time, compacting or otherwise improving the layout of the file extents (contiguous blocks of file data).
 
 #### Inspect fragmentation levels
 
@@ -103,7 +107,7 @@ To see how much fragmentation your file system currently has:
 
 #### Perform defragmentation
 
-To begin defragmentation, use the [xfs_fsr(8)](http://man7.org/linux/man-pages/man8/xfs_fsr.8.html) command:
+To begin defragmentation, use the [xfs_fsr(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xfs_fsr.8) command:
 
 ```
 # xfs_fsr /dev/sda3

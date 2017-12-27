@@ -24,7 +24,7 @@ proot -b /bin/bash:/bin/sh
 
 Isso disponibiliza o /bin/bash do hospedeiro no /bin/sh do convidado
 
-Internamente, o PRoot utiliza o emulador de modo de usuário [qemu](/index.php/Qemu "Qemu") para permitir que os programas sejam executados dentro do PRoot mesmo quando eles são compilados para uma arquitetura diferente do sistema hospedeiro.
+Internamente, o PRoot utiliza o emulador de modo de usuário [QEMU](/index.php/QEMU "QEMU") para permitir que os programas sejam executados dentro do PRoot mesmo quando eles são compilados para uma arquitetura diferente do sistema hospedeiro.
 
 ## Segurança
 

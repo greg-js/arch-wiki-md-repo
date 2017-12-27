@@ -11,6 +11,7 @@ DomainKeys Identified Mail (DKIM) is a digital email signing/verification techno
 *   [7 Multiple domains](#Multiple_domains)
 *   [8 Security](#Security)
 *   [9 Notes](#Notes)
+*   [10 See also](#See_also)
 
 ## The idea
 
@@ -99,6 +100,16 @@ Either add the following lines to `main.cf`:
 
 ```
 
+If you plan to integrate DKIM and DMARC you can use the following lines instead (via unix sockets):
+
+```
+ non_smtpd_milters = unix:/run/opendkim/opendkim.sock,
+                     unix:/run/opendmarc/dmarc.sock
+ smtpd_milters = unix:/run/opendkim/opendkim.sock,
+                 unix:/run/opendmarc/dmarc.sock
+
+```
+
 Or change smtpd options in `master.cf`:
 
 ```
@@ -149,6 +160,8 @@ InternalHosts           refile:/etc/opendkim/TrustedHosts
 
 ```
 
+**Note:** You have to create/move your DKIM keys in separate domain folders eg. `/etc/opendkim/keys/domain1.com/`. One seperate folder for each domain. Otherwise you will receive “dkim: FAILED, invalid (public key: not available)” error message with DKIM email test.
+
 Create the following two files to tell opendkim where to find the correct keys. You can use the same key for all the domains or generate a key for each domain. Make changes to match your settings. Add more lines as needed.
 
  `/etc/opendkim/KeyTable` 
@@ -167,12 +180,16 @@ myselector._domainkey.example2.com example2.com:myselector:/etc/opendkim/myselec
 
 ```
 
-An existent `/etc/opendkim/TrustedHosts` file tells opendkim who to let use your keys. This is referenced by the `ExternalIgnoreList` directive in your conf file. Opendkim will ignore this list of hosts when verifying incoming mail. And, because it is also referenced by the `InternalHosts` directive, this same list of hosts will be considered “internal,” and opendkim will sign their outgoing mail. Example:
+An existent `/etc/opendkim/TrustedHosts` file tells opendkim who to let use your keys. This is referenced by the `ExternalIgnoreList` directive in your conf file. Opendkim will ignore this list of hosts when verifying incoming mail.
+
+And, because it is also referenced by the `InternalHosts` directive, this same list of hosts will be considered “internal,” and opendkim will sign their outgoing mail. Don't forget to change `server_ip>` with your server's IP:
 
  `/etc/opendkim/TrustedHosts` 
 ```
 127.0.0.1
 ::1
+localhost
+<server_ip>
 hostname.example1.com
 example1.com
 hostname.example2.com
@@ -253,3 +270,8 @@ non_smtpd_milters = unix:/run/opendkim/opendkim.sock
 ## Notes
 
 While you are about to fight spam and increase people's trust in your server, you might want to take a look at [Sender Policy Framework](https://en.wikipedia.org/wiki/Sender_Policy_Framework "wikipedia:Sender Policy Framework"), which basically means adding a DNS Record stating which servers are authorized to send email for your domain.
+
+## See also
+
+*   [DKIM INspector](https://dmarcian.com/dkim-inspector/)
+*   [DKIM signature test via email.](http://www.appmaildev.com/en/dkim)

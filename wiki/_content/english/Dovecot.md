@@ -16,7 +16,7 @@ This article describes how to set up a mail server suitable for personal or smal
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Assumptions](#Assumptions)
-    *   [2.2 Create the SSL certificate](#Create_the_SSL_certificate)
+    *   [2.2 Generate DH parameters](#Generate_DH_parameters)
     *   [2.3 Dovecot configuration](#Dovecot_configuration)
     *   [2.4 PAM Authentication](#PAM_Authentication)
     *   [2.5 PAM Authentication with LDAP](#PAM_Authentication_with_LDAP)
@@ -41,7 +41,7 @@ This article describes how to set up a mail server suitable for personal or smal
 *   The common [Maildir](https://en.wikipedia.org/wiki/Maildir "wikipedia:Maildir") format is used to store the mail in the user's home directory.
 *   A [MDA](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") has already been set up to deliver mail to the local users.
 
-### Create the SSL certificate
+0===Create the SSL certificate===
 
 The [dovecot](https://www.archlinux.org/packages/?name=dovecot) package contains a script to generate the server SSL certificate.
 
@@ -59,7 +59,22 @@ Run `cp /etc/ssl/certs/dovecot.pem /etc/ca-certificates/trust-source/anchors/dov
 ssl_protocols = !SSLv3
 ssl_cipher_list = ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA
 ssl_prefer_server_ciphers = yes
-ssl_dh_parameters_length = 2048
+```
+
+### Generate DH parameters
+
+To generate a new DH parameters file (this will take very long):
+
+```
+# openssl dhparam -out /etc/dovecot/dh.pem 4096
+
+```
+
+then add the file to `/etc/dovecot/dovecot.conf`
+
+```
+ssl_dh = </etc/ssl/dh.pem
+
 ```
 
 ### Dovecot configuration

@@ -471,7 +471,9 @@ See [this reddit comment](https://www.reddit.com/r/VFIO/comments/6vgtpx/high_dpc
 
 ### Improving performance on AMD CPUs
 
-Previously, Nested Page Tables (NPT) had to be disabled on AMD systems running KVM to improve GPU performance because of a [very old bug](https://sourceforge.net/p/kvm/bugs/230/), but the trade off was decreased CPU performance, including stuttering. There is now a [kernel patch](https://patchwork.kernel.org/patch/10027525/)that resolves this issue, you can get it by installing [linux-npt](https://aur.archlinux.org/packages/linux-npt/) or compiling the kernel yourself with the patch applied.
+Previously, Nested Page Tables (NPT) had to be disabled on AMD systems running KVM to improve GPU performance because of a [very old bug](https://sourceforge.net/p/kvm/bugs/230/), but the trade off was decreased CPU performance, including stuttering.
+
+There is a [kernel patch](https://patchwork.kernel.org/patch/10027525/) that resolves this issue, which was accepted into kernel 4.14-stable and 4.9-stable. If you're running the official [linux](https://www.archlinux.org/packages/?name=linux) or [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel the patch has already been applied (make sure you're on the latest). If you're running another kernel you might need to manually patch yourself.
 
 **Note:** Several Ryzen users (see [this Reddit thread](https://www.reddit.com/r/VFIO/comments/78i3jx/possible_fix_for_the_npt_issue_discussed_on_iommu/)) have tested the patch, and can confirm that it works, bringing GPU passthrough performance up to near native quality.
 

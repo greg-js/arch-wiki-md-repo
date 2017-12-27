@@ -81,21 +81,22 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [3.2.11 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
         *   [3.2.12 home_post-factum_Arch_Extra](#home_post-factum_Arch_Extra)
         *   [3.2.13 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.14 jkanetwork](#jkanetwork)
-        *   [3.2.15 matrixim](#matrixim)
-        *   [3.2.16 mesa-git](#mesa-git)
-        *   [3.2.17 mingw-w64](#mingw-w64)
-        *   [3.2.18 neo_chen](#neo_chen)
-        *   [3.2.19 noware](#noware)
-        *   [3.2.20 ownstuff](#ownstuff)
-        *   [3.2.21 pantheon](#pantheon)
-        *   [3.2.22 pietma](#pietma)
-        *   [3.2.23 pnsft-pur](#pnsft-pur)
-        *   [3.2.24 QOwnNotes](#QOwnNotes)
-        *   [3.2.25 rakudo](#rakudo)
-        *   [3.2.26 rust-git](#rust-git)
-        *   [3.2.27 trinity](#trinity)
-        *   [3.2.28 zrootfs](#zrootfs)
+        *   [3.2.14 home-thaodan](#home-thaodan)
+        *   [3.2.15 jkanetwork](#jkanetwork)
+        *   [3.2.16 matrixim](#matrixim)
+        *   [3.2.17 mesa-git](#mesa-git)
+        *   [3.2.18 mingw-w64](#mingw-w64)
+        *   [3.2.19 neo_chen](#neo_chen)
+        *   [3.2.20 noware](#noware)
+        *   [3.2.21 ownstuff](#ownstuff)
+        *   [3.2.22 pantheon](#pantheon)
+        *   [3.2.23 pietma](#pietma)
+        *   [3.2.24 pnsft-pur](#pnsft-pur)
+        *   [3.2.25 QOwnNotes](#QOwnNotes)
+        *   [3.2.26 rakudo](#rakudo)
+        *   [3.2.27 rust-git](#rust-git)
+        *   [3.2.28 trinity](#trinity)
+        *   [3.2.29 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -864,11 +865,11 @@ Server = https://download.opensuse.org/repositories/home:/Pival81:/arch:/xapps/A
 
 *   **Maintainer**: [Oleksandr Natalenko aka post-factum](https://aur.archlinux.org/account/post-factum)
 *   **Upstream page**: [https://pfactum.github.io/pf-kernel/](https://pfactum.github.io/pf-kernel/)
-*   **Description**: [pf-kernel](/index.php/Kernels#-pf "Kernels") binaries and various stuff I use
+*   **Description**: [pf-kernel](/index.php/Kernels#Major_patchsets "Kernels") and other packages by its developer, post-factum
 
 ```
 [home_post-factum_Arch_Extra]
-Server = http://download.opensuse.org/repositories/home:/post-factum/Arch_Extra/$arch
+Server = https://download.opensuse.org/repositories/home:/post-factum/Arch_Extra/$arch
 
 ```
 
@@ -880,6 +881,18 @@ Server = http://download.opensuse.org/repositories/home:/post-factum/Arch_Extra/
 ```
 [home_tarakbumba_archlinux_Arch_Extra_standard]
 Server = https://download.opensuse.org/repositories/home:/tarakbumba:/archlinux/Arch_Extra_standard/$arch
+
+```
+
+#### home-thaodan
+
+*   **Maintainer**: [Thaodan](https://aur.archlinux.org/account/Thaodan)
+*   **Upstream page**: [https://gitlab.com/Thaodan/linux-pf](https://gitlab.com/Thaodan/linux-pf)
+*   **Description**: [pf-kernel](/index.php/Kernels#Major_patchsets "Kernels") and other packages by Thaodan
+
+```
+[home-thaodan]
+Server = https://thaodan.de/home/bidar/home-thaodan/$arch
 
 ```
 

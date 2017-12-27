@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [GNOME (Español)](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)")
+
 [Nautilus](http://live.gnome.org/Nautilus) es el gestor de archivos predeterminado para [GNOME](https://live.gnome.org/). [Desde el sitio web de Gnome](http://library.gnome.org/users/user-guide/stable/gosnautilus-22.html.en): *El gestor de archivos Nautilus proporciona un modo sencillo e integrado para administrar sus archivos y aplicaciones. Se puede utilizar el gestor de archivos para hacer lo siguiente:*
 
 *   Crear carpetas y documentos
@@ -24,6 +28,7 @@
     *   [3.1 Nautilus no puede explorar mis recursos compartidos de red Windows](#Nautilus_no_puede_explorar_mis_recursos_compartidos_de_red_Windows)
     *   [3.2 Nautilus no puede ver los recursos compartidos de red de apple](#Nautilus_no_puede_ver_los_recursos_compartidos_de_red_de_apple)
     *   [3.3 Nautilus ya no es el administrador de archivos por defecto](#Nautilus_ya_no_es_el_administrador_de_archivos_por_defecto)
+    *   [3.4 No se muestran las previsualizaciones de vídeo](#No_se_muestran_las_previsualizaciones_de_v.C3.ADdeo)
 
 ## Instalación
 
@@ -135,3 +140,7 @@ Si algunas aplicaciones como Firefox, entre otras, se niegan a tomar Nautilus co
 inode/directory=nautilus.desktop
 
 ```
+
+### No se muestran las previsualizaciones de vídeo
+
+Si no se muestran las previsualizaciones de vídeo, conforme a lo indicado en [No video thumbnails on nautilus](https://bbs.archlinux.org/viewtopic.php?id=168626) debes instalar los paquetes [ffmpegthumbnailer](https://www.archlinux.org/packages/?name=ffmpegthumbnailer), [gst-libav](https://www.archlinux.org/packages/?name=gst-libav), [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly), y eliminar el contenido de `~/.cache/thumbnailsfails/gnome-thumbnail-factory/`.

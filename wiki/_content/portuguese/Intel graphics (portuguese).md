@@ -1,7 +1,7 @@
 Artigos relacionados
 
 *   [Intel GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600")
-*   [Xorg](/index.php/Xorg "Xorg")
+*   [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)")
 *   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting")
 *   [Xrandr](/index.php/Xrandr "Xrandr")
 *   [Hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics")
@@ -9,7 +9,7 @@ Artigos relacionados
 
 A Intel provém e suporta drivers de código aberto (open source), portanto as GPU Intel são plug-and-play.
 
-Para uma lista abrangente dos modelos de GPU Intel e processadores, veja [this comparison on Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units").
+Para uma lista abrangente dos modelos de GPU Intel e processadores, veja [essa comparação no Wikipédia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units").
 
 **Nota:** PowerVR-based graphics ([GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600") series) não suportam os drivers open source.
 
@@ -50,15 +50,15 @@ Para uma lista abrangente dos modelos de GPU Intel e processadores, veja [this c
 
 Instale o pacote [mesa](https://www.archlinux.org/packages/?name=mesa), que fornece o driver DRI para aceleração 3D.
 
-*   Para o driver DDX (que fornecem a aceleração 2D no [Xorg](/index.php/Xorg "Xorg")), instale o pacote [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). (Alguns não recomendam a instalação do driver Intel, veja a nota abaixo)
+*   Para o driver DDX (que fornecem a aceleração 2D no [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)")), instale o pacote [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). (Alguns não recomendam a instalação do driver Intel, veja a nota abaixo)
 
-*   Para o suporte OpenGL, instale [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl). Se você usa x86_64 e precisa de suporte 32-bits, instale também [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) do repositporio [multilib](/index.php/Multilib "Multilib").
+*   Para o suporte OpenGL, instale [mesa](https://www.archlinux.org/packages/?name=mesa). Se você usa x86_64 e precisa de suporte 32-bits, instale também [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) do repositório [multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)").
 
 *   Para o suporte ao [Vulkan]] (*Ivy Bridge* em diante), instale [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel).
 
 Não se esqueça de checar [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-**Note:** Existe uma discussão ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch), [KDE](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)) em que alguns recomendam não se instalar o driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), deixando apenas o modesetting driver, que é o driver embutido no kernel. Veja [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4). Entretanto, o driver modesetting pode também causar alguns problemas [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
+**Nota:** Existe uma discussão ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch), [KDE](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)) em que alguns recomendam não se instalar o driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), deixando apenas o modesetting driver, que é o driver embutido no kernel. Veja [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg (Português)#Instalação do Xorg](/index.php/Xorg_(Portugu%C3%AAs)#Instala.C3.A7.C3.A3o_do_Xorg "Xorg (Português)"), and [modesetting(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4). Entretanto, o driver modesetting pode também causar alguns problemas [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
 
 ## Carregando
 
@@ -77,10 +77,9 @@ Em [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KM
 
 ## Configuração do Xorg
 
-Não é preciso nenhuma configuração para se rodar o [Xorg](/index.php/Xorg "Xorg").
+Não é preciso nenhuma configuração para se rodar o [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)").
 
-**Note:** A geração Skylake/HD 530 pode necessitar de configurações adicionais, veja[#Skylake support](#Skylake_support)
-!
+{{Nota|A geração Skylake/HD 530 pode necessitar de configurações adicionais, veja [#Suporte à Skylake](#Suporte_.C3.A0_Skylake)!
 
 No entanto, para tirar vantagem de algumas opções do driver, será necessário que se crie um arquivo de configuração do Xorg, similar ao que se encontra abaixo:
 
@@ -94,16 +93,16 @@ EndSection
 
 Opções adicionais devem ser adicionadas pelo usuário nas linhas abaixo de: `Driver`.
 
-**Note:**
+**Nota:**
 
 *   Talvez seja preciso indicar a `Option "AccelMethod"` ao se criar um arquivo de configuração, mesmo que seja para indicar o método padrão (`"sna"`); senão o X pode vir a travar.
 *   Pode-se ser necessário adicionar mais seções de {{|Device}} do que a apresentada acima. Indicaremos quando necessário.
 
-Para conhecer todas as opções que podem ser adicionadas ao driver, veja a [man page](/index.php/Man_page "Man page") para `intel`.
+Para conhecer todas as opções que podem ser adicionadas ao driver, veja a [man page](/index.php/Man_page_(Portugu%C3%AAs) "Man page (Português)") para `intel`.
 
 ## Opções de economia de energia
 
-O módulo do kernel `i915` permite configurações via [module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). Algumas delas modificam as opções de economia de energia.
+O módulo do kernel `i915` permite configurações via [opções de módulos](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). Algumas delas modificam as opções de economia de energia.
 
 Uma lista com todas as opções, suas descrições e valores padrão podem ser geradas com o seguinte comando:
 
@@ -119,9 +118,9 @@ Para checar o que está ativado, digite:
 
 ```
 
-Muitas opções tomam por padrão a íntegra -1, que assume os padrões do hardware. Contudo, é possível configurar opções mais agressivas de economia de energia utilizando [module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). Também é possível desabilitar a economia de energia por completo.
+Muitas opções tomam por padrão a íntegra -1, que assume os padrões do hardware. Contudo, é possível configurar opções mais agressivas de economia de energia utilizando [opções de módulo](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). Também é possível desabilitar a economia de energia por completo.
 
-**Warning:** Utilizar outras opções que não sejam as padrões dos chips é considerado experimental: [tainted](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=fc9740cebc3ab7c65f3c5f6ce0caf3e4969013ca).
+**Atenção:** Utilizar outras opções que não sejam as padrões dos chips é considerado experimental: [tainted](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=fc9740cebc3ab7c65f3c5f6ce0caf3e4969013ca).
 
 As opções abaixo são consideradas seguras:
 
@@ -162,7 +161,7 @@ kernel: drm: not enough stolen space for compressed buffer, disabling.
 
 ### Tear-free video (Video sem glitches)
 
-A aceleração SNA causa tearing em alguns computadores. Para concertar isso,ative a opção `"TearFree"` no driver, adicionando a seguinte linha a em sua configuração do Xorg: [configuration file](#Xorg_configuration):
+A aceleração SNA causa tearing em alguns computadores. Para concertar isso,ative a opção `"TearFree"` no driver, adicionando a seguinte linha a em sua configuração do Xorg: [arquivo de configuração](#Configura.C3.A7.C3.A3o_do_Xorg):
 
 ```
 Option "TearFree" "true"
@@ -171,7 +170,7 @@ Option "TearFree" "true"
 
 Veja [original bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686) para mais informação.
 
-**Note:**
+**Nota:**
 
 *   Esta opção pode não funcionar quando `SwapbuffersWait` é `false`.
 *   Esta opção pode diminuir a performance e aumentar o consumo de memória. [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123)
@@ -191,7 +190,7 @@ O driver intel [Triple Buffering](http://www.intel.com/support/graphics/sb/CS-00
 </device>
 ```
 
-**Warning:**
+**Atenção:**
 
 *   Não use [driconf](https://www.archlinux.org/packages/?name=driconf) para criar esse arquivo. É bugado e vai selecionar o driver errado.
 *   Para melhor performance pode-se também desligar o vsync, principalmente para jogos.
@@ -238,7 +237,7 @@ Veja [Backlight](/index.php/Backlight "Backlight").
 
 ### Problemas com SNA
 
-*SNA* é o método padrão de aceleração do driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). Se você enfrenta problemas com o *SNA* (e.g. pixelated graphics (gráficos pixelados?), texto corrompido, etc.), ente usar *UXA*, o que pode ser feito ao adicionar a seguinte linha ao seu arquivo de configuração Xorg: [configuration file](#Xorg_configuration):
+*SNA* é o método padrão de aceleração do driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). Se você enfrenta problemas com o *SNA* (e.g. pixelated graphics (gráficos pixelados?), texto corrompido, etc.), ente usar *UXA*, o que pode ser feito ao adicionar a seguinte linha ao seu arquivo de configuração Xorg: [arquivo de configuração](#Configura.C3.A7.C3.A3o_do_Xorg):
 
 ```
 Option      "AccelMethod"  "uxa"
@@ -249,7 +248,7 @@ Veja [intel(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4) sobre `Option
 
 ### Problemas com DRI3
 
-*DRI3* é padrão em [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). Podem surgir alguns problemas em alguns sistemas, como: [this](https://bugs.chromium.org/p/chromium/issues/detail?id=370022). Para mudar para *DRI2* adicione a seguinte linha ao seu arquivo de configuração do Xorg: [configuration file](#Xorg_configuration):
+*DRI3* é padrão em [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). Podem surgir alguns problemas em alguns sistemas, como: [this](https://bugs.chromium.org/p/chromium/issues/detail?id=370022). Para mudar para *DRI2* adicione a seguinte linha ao seu arquivo de configuração do Xorg: [arquivo de configuração](#Configura.C3.A7.C3.A3o_do_Xorg):
 
 ```
 Option "DRI" "2"
@@ -284,7 +283,7 @@ video=VGA-1:1280x800
 
 ### X trava com o driver intel
 
-Alguns problemas com o X travando, o bloqueio da GPU ou problemas com o congelamento do X podem ser corrigidos desativando o uso da GPU com a opção `NoAccel` - adicione as seguintes linhas ao seu[configuration file](#Xorg_configuration):
+Alguns problemas com o X travando, o bloqueio da GPU ou problemas com o congelamento do X podem ser corrigidos desativando o uso da GPU com a opção `NoAccel` - adicione as seguintes linhas ao seu[arquivo de configuração](#Configura.C3.A7.C3.A3o_do_Xorg):
 
 ```
   Option "NoAccel" "True"
@@ -330,7 +329,7 @@ Este problema está coberto em: [Xrandr](/index.php/Xrandr#Adding_undetected_res
 
 O Kernel 3.9 [contém](http://lists.freedesktop.org/archives/dri-devel/2013-January/033576.html) um novo modo "Automático" padrão para a propriedade "Broadcast RGB" no driver Intel. É quase equivalente a "Limited 16: 235" (em vez do antigo padrão "Full") sempre que uma saída HDMI / DP está em um [modo CEA](http://raspberrypi.stackexchange.com/questions/7332/what-is-the-difference-between-cea-and-dmt). Se um monitor não suporta o sinal em uma faixa de cores limitada, ele causará problemas nas cores.
 
-**Note:** Aguns monitores/TVs suportam as duas escalas de cores. Nesse caso, uma opção frequentemente conhecida como *Black Level* pode precisar ser ajustada para fazê-los lidar com o sinal corretamente. Algumas TVs podem manipular o sinal somente em alcance limitado. Definir RGB de difusão para "Completo" fará um "Collor Clipping". Você pode precisar configurá-lo para "Limited 16: 235" manualmente para evitar o "Clipping".
+**Nota:** Aguns monitores/TVs suportam as duas escalas de cores. Nesse caso, uma opção frequentemente conhecida como *Black Level* pode precisar ser ajustada para fazê-los lidar com o sinal corretamente. Algumas TVs podem manipular o sinal somente em alcance limitado. Definir RGB de difusão para "Completo" fará um "Collor Clipping". Você pode precisar configurá-lo para "Limited 16: 235" manualmente para evitar o "Clipping".
 
 Pode-se forçar o modo com: `xrandr --output <HDMI> --set "Broadcast RGB" "Full"` (substitua `<HDMI>` pelo dispositivo correto, rodando `xrandr`).
 
@@ -368,7 +367,7 @@ The solution is to disable frame buffer compression which will imperceptibly inc
 
 ### Corrupção/Falta de Resposta no Chromium e Firefox
 
-Se você tiver alguma corrupção ou falta de resposta no Chromium e/ou no Firefox [set the AccelMethod to "uxa"](#SNA_issues).
+Se você tiver alguma corrupção ou falta de resposta no Chromium e/ou no Firefox [configure o AccelMethod para "uxa"](#Problemas_com_SNA).
 
 ### Kernel crashing com kernels 4.0+ em placas Broadwell/Core-M
 
@@ -426,7 +425,7 @@ Aplicativos específicos, como os navegadores Chromium e Firefox, podem ser inst
 
 Outra opção que parece funcionar para alguns usuários é adicionar o parâmetro de inicialização do kernel `i915.enable_rc6=0`, o que fará com que a CPU / GPU permaneça em modos de alta potência, mas parece resolver a maioria Casos de GPU trava e sistema congela.
 
-**Note:** Se o sistema aparecer pendurado após "Loading Initial Ramdisk", certifique-se de que o tamanho de abertura IGD no BIOS seja inferior a 4GB.
+**Nota:** Se o sistema aparecer pendurado após "Loading Initial Ramdisk", certifique-se de que o tamanho de abertura IGD no BIOS seja inferior a 4GB.
 
 ### Lag em convidados do Windows (Máquinas Virtuais)
 

@@ -89,7 +89,7 @@ scrub status for e11013b3-b244-4d1a-a9c7-3956db1a699c
 
 When done, search the kernel log for I/O errors:
 
- `$ journalctl | fgrep 'BTRFS: i/o error'`  `Jan 16 23:14:19 my_server kernel: BTRFS: i/o error at logical 398602014720 on dev /dev/sdxy, sector **4621320**, root 5, inode 23839, offset 4378624, length 4096, links 1 (path: **my/damaged/file**)` 
+ `$ journalctl --output cat | grep 'BTRFS .* i/o error' | sort | uniq | less`  `Jan 16 23:14:19 my_server kernel: BTRFS: i/o error at logical 398602014720 on dev /dev/sdxy, sector **4621320**, root 5, inode 23839, offset 4378624, length 4096, links 1 (path: **my/damaged/file**)` 
 
 The output above reveals that sector `4621320` couldn't be read and it contains data for file `my/damaged/file`. The sector number can be directly used with [hdparm](/index.php/Hdparm "Hdparm") when reallocating (see [#Force the disk to reallocate bad block](#Force_the_disk_to_reallocate_bad_block)).
 

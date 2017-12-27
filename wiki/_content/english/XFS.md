@@ -140,7 +140,7 @@ or shortly (`finobt` depends `crc`)
 
 XFS quota mount options (`uquota`, `gquota`, `prjquota`, etc.) fail during re-mount of the file system. To enable quota for root file system, the mount option must be passed to initramfs as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `rootflags=`. Subsequently, it should not be listed among mount options in `/etc/fstab` for the root (`/`) filesystem.
 
-**Note:** There are some differences of XFS Quota compared to standard Linux [Disk Quota](/index.php/Disk_Quota "Disk Quota"), this article [http://inai.de/linux/adm_quota](http://inai.de/linux/adm_quota) may be worth reading.
+**Note:** There are some differences of XFS Quota compared to standard Linux [Disk quota](/index.php/Disk_quota "Disk quota"), this article [http://inai.de/linux/adm_quota](http://inai.de/linux/adm_quota) may be worth reading.
 
 ## See also
 

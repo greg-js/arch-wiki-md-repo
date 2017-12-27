@@ -13,13 +13,14 @@ Compton is a standalone composite manager, suitable for use with [window manager
     *   [4.1 Tabbed windows](#Tabbed_windows)
     *   [4.2 slock](#slock)
     *   [4.3 dwm & dmenu](#dwm_.26_dmenu)
-    *   [4.4 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
-    *   [4.5 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
-    *   [4.6 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
-    *   [4.7 Errors while trying to daemonize with nvidia drivers](#Errors_while_trying_to_daemonize_with_nvidia_drivers)
-    *   [4.8 Lag when using xft fonts](#Lag_when_using_xft_fonts)
-    *   [4.9 Flicker](#Flicker)
-    *   [4.10 Fullscreen tearing](#Fullscreen_tearing)
+    *   [4.4 Firefox](#Firefox)
+    *   [4.5 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
+    *   [4.6 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
+    *   [4.7 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
+    *   [4.8 Errors while trying to daemonize with nvidia drivers](#Errors_while_trying_to_daemonize_with_nvidia_drivers)
+    *   [4.9 Lag when using xft fonts](#Lag_when_using_xft_fonts)
+    *   [4.10 Flicker](#Flicker)
+    *   [4.11 Fullscreen tearing](#Fullscreen_tearing)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -65,21 +66,21 @@ $ compton -CG
 To autostart compton as a background ([Daemon](/index.php/Daemon "Daemon")) process for a session, the `-b` argument must be used:
 
 ```
-compton -b
+$ compton -b
 
 ```
 
 To disable all shadowing effects from the [Daemon](/index.php/Daemon "Daemon") process, the `-C` and `-G` arguments must again be added:
 
 ```
-compton -CGb
+$ compton -CGb
 
 ```
 
 Finally, this is an example where additional arguments that require values to be set have been used:
 
 ```
-compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
+$ compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
 
 ```
 
@@ -90,14 +91,14 @@ The default configuration is available in `/etc/xdg/compton.conf`. For modificat
 To use a custom configuration file with compton during a session, use the following command:
 
 ```
-compton --config *path/to/compton.conf*
+$ compton --config *path/to/compton.conf*
 
 ```
 
 To auto-start compton as a background ([Daemon](/index.php/Daemon "Daemon")) process for a session, specify the `-b` argument:
 
 ```
-compton --config *path/to/compton.conf* -b
+$ compton --config *path/to/compton.conf* -b
 
 ```
 
@@ -246,6 +247,17 @@ focus-exclude = "x = 0 && y = 0 && override_redirect = true";
 
 The override redirect property seems to be false for most windows- having this in the exclusion rule prevents other windows drawn in the upper left corner from being excluded (for example, when dwm statusbar is hidden, x0 y0 will match whatever is in dwm's master stack).
 
+### Firefox
+
+To disable shadows for Firefox elements add to shadow-exlude in `compton.conf`:
+
+```
+"class_g = 'Firefox' && argb",
+
+```
+
+See [[2]](https://github.com/chjj/compton/issues/201#issuecomment-45288510) for more information.
+
 ### Unable to change the background color with xsetroot
 
 Currently, compton is incompatible with `xsetroot`'s `-solid` option, a workaround is to use [hsetroot](https://aur.archlinux.org/packages/hsetroot/) to set the background color:
@@ -255,7 +267,7 @@ $ hsetroot -solid '#000000'
 
 ```
 
-For a detailed explanation, please see [https://github.com/chjj/compton/issues/162](https://github.com/chjj/compton/issues/162).
+See [[3]](https://github.com/chjj/compton/issues/162) for more information.
 
 ### Corrupted screen contents with Intel graphics
 
@@ -279,7 +291,7 @@ backend = "xrender";
 
 to your compton.conf file.
 
-For more info, please see [https://github.com/chjj/compton/issues/208](https://github.com/chjj/compton/issues/208)
+See [[4]](https://github.com/chjj/compton/issues/208) for more information.
 
 ### Errors while trying to daemonize with nvidia drivers
 
@@ -296,7 +308,7 @@ If you experience heavy lag when using Xft fonts in applications such as [xterm]
 
 or try using the xrender backend.
 
-See [[2]](https://github.com/chjj/compton/issues/152) for more information.
+See [[5]](https://github.com/chjj/compton/issues/152) for more information.
 
 ### Flicker
 
@@ -307,7 +319,7 @@ Applies to fully maximized windows (in sessions without any panels) with the def
 
 ```
 
-See [[3]](https://github.com/chjj/compton/issues/402) for more information.
+See [[6]](https://github.com/chjj/compton/issues/402) for more information.
 
 ### Fullscreen tearing
 

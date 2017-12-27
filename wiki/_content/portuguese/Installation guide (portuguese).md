@@ -62,7 +62,7 @@ A imagem de instalação habilita o *daemon* [dhcpcd](/index.php/Dhcpcd "Dhcpcd"
 
 ```
 
-Se nenhuma conexão estiver disponível, [pare](/index.php/Pare "Pare") o serviço *dhcpcd* com `systemctl stop dhcpcd@`, `Tab` e veja [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Drivers_de_dispositivos "Configuração de rede").
+Se nenhuma conexão estiver disponível, [pare](/index.php/Pare "Pare") o serviço *dhcpcd* com `systemctl stop dhcpcd@`, `Tab` e veja [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Driver_de_dispositivo "Configuração de rede").
 
 Para conexões **sem fio** (*wireless*), [iw(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) e [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") estão disponíveis. Veja [Configuração de rede sem fio](/index.php/Wireless_network_configuration "Wireless network configuration").
 
@@ -91,7 +91,7 @@ As seguintes *partições* (mostradas com um sufixo numérico) são exigidos par
 *   Uma partição para o diretório raiz `/`.
 *   Se [UEFI](/index.php/UEFI "UEFI") estiver habilitado, um [Partição de Sistema EFI](/index.php/EFI_System_Partition "EFI System Partition").
 
-[Espaço swap](/index.php/Swap_space "Swap space") pode ser definido em uma partição separada ou um [arquivo swap](/index.php/Swap_file "Swap file").
+[Espaço swap](/index.php/Espa%C3%A7o_swap "Espaço swap") pode ser definido em uma partição separada ou um [arquivo swap](/index.php/Arquivo_swap "Arquivo swap").
 
 Para modificar as *tabelas de partição*, use [fdisk](/index.php/Fdisk "Fdisk") ou [parted](/index.php/Parted "Parted"). Veja [Particionamento](/index.php/Partitioning "Partitioning") para mais informações.
 
@@ -264,9 +264,9 @@ Defina a [senha](/index.php/Senha "Senha") do *root* (também conhecido como "su
 
 ### Gerenciador de boot
 
-Você pode escolher entre [GRUB](/index.php/GRUB "GRUB") ou [Syslinux](/index.php/Syslinux "Syslinux").
+Você pode escolher entre [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") ou [Syslinux](/index.php/Syslinux "Syslinux").
 
-Um gerenciador de boot compatível com o Linux deve ser instalado para inicializar o Arch Linux. Veja [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") para escolhas disponíveis e configurações.
+Um gerenciador de boot compatível com o Linux deve ser instalado para inicializar o Arch Linux. Veja [Category:Boot loaders (Português)](/index.php/Category:Boot_loaders_(Portugu%C3%AAs) "Category:Boot loaders (Português)") para escolhas disponíveis e configurações.
 
 Se você tiver um CPU Intel, instale o pacote [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) também, e [habilite atualizações de *microcode*](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
 

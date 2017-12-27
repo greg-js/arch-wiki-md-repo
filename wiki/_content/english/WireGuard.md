@@ -15,6 +15,8 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [3.2 Client](#Client_2)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 DKMS module not available](#DKMS_module_not_available)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Store private keys in encrypted form](#Store_private_keys_in_encrypted_form)
 
 ## Installation
 
@@ -133,3 +135,16 @@ RTNETLINK answers: Operation not supported
 you probably miss the linux headers.
 
 These headers are available in [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) or [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers) depending of the kernel installed on your system.
+
+## Tips and tricks
+
+### Store private keys in encrypted form
+
+It may be desirable to store private keys in encrypted form, such as through use of [pass](https://www.archlinux.org/packages/?name=pass). Just replace the PrivateKey line under [Interface] in your config file with:
+
+```
+ PostUp = wg set %i private-key <(su user -c "export PASSWORD_STORE_DIR=/path/to/your/store/; pass WireGuard/private-keys/%i")
+
+```
+
+where user is your username. See the `wg-quick(8)` man page for more details.

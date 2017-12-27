@@ -676,16 +676,7 @@ Then replug the device making you trouble. The joystick and event devices should
 
 ### Steam Controller not pairing
 
-There are some unknown cases where the packaged udev rule for the Steam controller does not work ([FS#47330](https://bugs.archlinux.org/task/47330)). The most reliable workaround is to make the controller world readable. Copy the rule `/usr/lib/udev/rules.d/80-steam-controller-permission.rule` to `/etc/udev/rules.d` and set `MODE="0666"` e.g.
-
- `/etc/udev/rules.d/80-steam-controller-permission.rule` 
-```
-#USB devices
-SUBSYSTEM=="usb", ATTRS{idVendor}=="28de", MODE="0666", TAG+="uaccess"
-KERNEL=="uinput", SUBSYSTEM=="misc", OPTIONS+="static_node=uinput", TAG+="uaccess"
-```
-
-If you want your system to recognize the Steam controller after hot-swapping wireless/wired connections or when connected via micro-USB cable with the dongle plugged in, you may need a more complicated udev rule. Otherwise, the controller might stop working or behave like a mouse and keyboard after hot-swapping. The following rule was suggested by a Valve developer [[1]](https://steamcommunity.com/app/353370/discussions/0/490123197956024380/) which is also included in the package `steam-devices`
+There are some unknown cases where the packaged udev rule for the Steam controller does not work ([FS#47330](https://bugs.archlinux.org/task/47330)). The most reliable workaround is to make the controller world readable. Copy the rule `/usr/lib/udev/rules.d/70-steam-controller.rules` to `/etc/udev/rules.d` and set `MODE="0666"` e.g.
 
  `/etc/udev/rules.d/99-steam-controller-perms.rules` 
 ```

@@ -23,7 +23,7 @@
 
 ## Instalação
 
-[Instale](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) pelo [repositório oficial](/index.php/Official_repositories "Official repositories").
+[Instale](/index.php/Instale "Instale") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) pelo [repositório oficial](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais").
 
 ## Configuração do cache DNS
 
@@ -143,7 +143,7 @@ Quando *dnsmasq* é iniciado por `NetworkManager` arquivo de configuração em s
 
 #### Outros Métodos
 
-Outra opção está nas configurações do NetworkManager onde se pode listar as conexões e manualmente configurá-las. Veja [NetworkManager](/index.php/NetworkManager "NetworkManager") para mais informações (inglês).
+Outra opção está nas configurações do NetworkManager onde se pode listar as conexões e manualmente configurá-las. Veja [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") para mais informações (inglês).
 
 ## Configuração servidor DHCP
 
@@ -191,7 +191,7 @@ A rede precisa ser reiniciada para que o cliente DHCP execute as novas configura
 
 Para fazer um teste de velocidade escolha um web site que **não** foi visitado desde que *dnsmasq* foi iniciado.
 
-**Dica:** O comando *dig* é parte do pacote [dnsutils](https://www.archlinux.org/packages/?name=dnsutils)
+**Dica:** O comando *dig* é parte do pacote [bind-tools](https://www.archlinux.org/packages/?name=bind-tools)
 
 ```
 $ dig archlinux.org | grep "Query time"

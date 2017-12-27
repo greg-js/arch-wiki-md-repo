@@ -107,7 +107,7 @@ An alternative method is to create the file *20-block.rules* in /etc/udev/rules.
 
 This will set BFQ as default during boot for all the disks.
 
-You can also instruct the kernel to use BFQ on a device-by-device basis. For configuration examples see the [Improving performance#Tuning IO schedulers](/index.php/Improving_performance#Tuning_IO_schedulers "Improving performance") section.
+You can also instruct the kernel to use BFQ on a device-by-device basis. For configuration examples see the [Improving performance#IO schedulers](/index.php/Improving_performance#IO_schedulers "Improving performance") section.
 
 **Note:** Setting `elevator=bfq` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") doesn't work anymore.
 

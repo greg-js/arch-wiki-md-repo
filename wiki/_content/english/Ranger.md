@@ -296,22 +296,10 @@ set preview_images true
 
 Ranger can preview images using, for example, [w3m](https://www.archlinux.org/packages/?name=w3m); see `~/.config/ranger/rc.conf` for all available preview methods.
 
-Finally, replace the following lines under `pdf)` in `handle_extension()` (62-64 by default):
-
- `~/.config/ranger/scope.sh` 
-```
-           # Preview as text conversion
-           pdftotext -l 10 -nopgbrk -q -- "${FILE_PATH}" - && exit 5
-           exiftool "${FILE_PATH}" && exit 5                        
+Finally, replace the default `try pdftotext` command in `~/.config/ranger/scope.sh` with the following:
 
 ```
-
-with:
-
- `~/.config/ranger/scope.sh` 
-```
-           # Preview as image conversion
-           pdftoppm -jpeg -singlefile "${FILE_PATH}" "${IMAGE_CACHE_PATH//.jpg}" && exit 6
+try pdftoppm -jpeg -singlefile "$path" "${cached//.jpg}" && exit 6 || exit 1;;
 
 ```
 

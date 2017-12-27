@@ -10,11 +10,12 @@ Related articles
 *   [2 Installation](#Installation)
 *   [3 First start](#First_start)
 *   [4 Configuration](#Configuration)
-    *   [4.1 .gitignore and license files](#.gitignore_and_license_files)
-    *   [4.2 Database](#Database)
-        *   [4.2.1 SQLite](#SQLite)
-        *   [4.2.2 PostgreSQL](#PostgreSQL)
-        *   [4.2.3 MariaDB](#MariaDB)
+    *   [4.1 SSH](#SSH)
+    *   [4.2 .gitignore and license files](#.gitignore_and_license_files)
+    *   [4.3 Database](#Database)
+        *   [4.3.1 SQLite](#SQLite)
+        *   [4.3.2 PostgreSQL](#PostgreSQL)
+        *   [4.3.3 MariaDB](#MariaDB)
 *   [5 Theme](#Theme)
 *   [6 Restart after Upgrade](#Restart_after_Upgrade)
 *   [7 SSH port](#SSH_port)
@@ -55,6 +56,22 @@ In the configuration file `/etc/gogs/app.ini`, you can change more values (for e
 
 The Gogs configuration file is located at `/etc/gogs/app.ini`. When you want to edit a configuration option, you need to edit this file and restart the Gogs service before changes will take effect.
 
+### SSH
+
+In order to interact with the git repositories using ssh, and to be able to use the uploaded public keys:
+
+*   set `SSH_ROOTH_PATH` in `/etc/gogs/app.ini` to `/home/git/.ssh` (see also [documentation](https://gogs.io/docs/advanced/configuration_cheat_sheet))
+
+*   create `/home/git/.ssh` and hand over ownership to the `gogs` user:
+
+```
+> mkdir -p /home/git/.ssh
+> chown -R gogs:gogs /home/git/.ssh
+
+```
+
+Public keys will be added by the `gogs` user to `/home/git/.ssh/authorized_keys`
+
 ### .gitignore and license files
 
 A set of gitignore and license files are included in the package and are stored at `/usr/share/gogs/conf/gitignore` and `/usr/share/gogs/conf/license` respectively.
@@ -65,7 +82,7 @@ You can get or create your own .gitignore files [here](http://www.gitignore.io/)
 
 #### SQLite
 
-Install [sqlite](https://www.archlinux.org/packages/?name=sqlite) and select SQLite on the installation page.
+Install [sqlite](https://www.archlinux.org/packages/?name=sqlite) and select SQLite on the installation page. Use an absolute path in `/etc/gogs/app.ini` (`PATH` variable in the `[database]` section) for the SQLite database file. To be consistent with the other settings, use `/var/lib/gogs/data/gogs.db` (see also issue [4298](https://github.com/gogits/gogs/issues/4298)).
 
 #### PostgreSQL
 
@@ -122,7 +139,7 @@ sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/share/gogs/gogs
 
 ```
 
-Configure gogs SSH server in `/etc/gogs/conf/app.ini`:
+Configure gogs SSH server in `/etc/gogs/app.ini`:
 
 ```
 START_SSH_SERVER       = true

@@ -3,7 +3,7 @@
 ## Contents
 
 *   [1 Installing](#Installing)
-*   [2 Configuring (mandatory)](#Configuring_.28mandatory.29)
+*   [2 Configuring](#Configuring)
 *   [3 Loading modules](#Loading_modules)
     *   [3.1 Third-party modules](#Third-party_modules)
 *   [4 Starting/Stopping the daemon](#Starting.2FStopping_the_daemon)
@@ -11,20 +11,30 @@
 
 ## Installing
 
-**Note:** Before you begin, check that you do not have any user or group named `inspired` as the package will create and run using this user privileges (for security reasons).
+**Note:** Before you begin, check that you do not have any user or group named `inspircd` as the package will create and run using this user privileges (for security reasons).
 
 [Install](/index.php/Install "Install") the [inspircd](https://aur.archlinux.org/packages/inspircd/) package.
 
-## Configuring (mandatory)
+## Configuring
 
-This will depend a lot on your needs and system configuration so there's no default configuration. There is, however, an example (very well documented) configuration file located at `/etc/inspircd/inspircd.conf.example`. Read and edit this file carefully and when you're finished rename it to `inspircd.conf`. The `inspircd.conf`. file is formatted like an HTML document, which for most people is somewhat different to what they are used to. The format of an instruction within the configuration file looks like the following:
+The configuration file `/etc/inspircd/inspircd.conf` is **mandatory**, HTML-formatted and needs to be created when installing.
+
+How you set your configuration file will depend a lot on your needs and system configuration, reason why there's no configuration file set by default.
+
+**Tip:** You can use the example (and very well documented) configuration file located at `/usr/share/inspircd/examples/inspircd.conf.example`. Copy this file to `/etc/inspircd/inspircd.conf`, read and edit it carefully to fit your needs.
+
+Its HTML format may be somewhat different of what most of the people is used to. The format of an instruction within the configuration file looks like the following:
 
 ```
 <tagname variable="value">
 
 ```
 
-Note that are some `<die value="anything here">` lines in the example file to make sure you read the entire thing. You must remove these entries otherwise the server will not start. Further information is available at the [InspIRCd configuration](http://wiki.inspircd.org/Configuration) wiki page.
+**Note:** The example file has some `<die value="anything here">` lines in the example file to make sure you read the entire thing. You must remove these entries otherwise the server will not start.
+
+Make sure to set the pidfile to `/var/lib/inspircd/inspircd.pid`, as explained in the package's [install script](https://aur.archlinux.org/cgit/aur.git/tree/inspircd.install?h=inspircd).
+
+Further information is available at the [InspIRCd configuration](http://wiki.inspircd.org/Configuration) wiki page.
 
 ## Loading modules
 

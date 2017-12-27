@@ -121,3 +121,4 @@ Some contact form providers send mails impersonating the sender using its email 
 ## See also
 
 *   [SPF Record Checker](http://www.kitterman.com/spf/validate.html)
+*   [SPF Email test](http://www.appmaildev.com/en/spf)

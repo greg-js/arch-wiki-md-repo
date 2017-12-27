@@ -18,7 +18,7 @@ def kb_light_set(delta):
 
     current = kbd_backlight.GetBrightness()
     maximum = kbd_backlight.GetMaxBrightness()
-    new = max(0, current + delta)
+    new = max(0, min(current + delta, maximum))
 
     if 0 <= new  <= maximum:
         current = new
@@ -28,17 +28,22 @@ def kb_light_set(delta):
     return 100 * current / maximum
 
 if __name__ ==  '__main__':
-    if len(sys.argv) == 2:
+    if len(sys.argv) == 2 or len(sys.argv) == 3:
         if sys.argv[1] == "--up" or sys.argv[1] == "+":
-            # ./kb-light.py (+|-up) to increment
-            print(kb_light_set(1))
+            if len(sys.argv) == 3:
+                print(kb_light_set(int(sys.argv[2])))
+            else:
+                print(kb_light_set(17))
         elif sys.argv[1] == "--down" or sys.argv[1] == "-":
-            # ./kb-light.py (-|-down) to decrement
-            print(kb_light_set(-1))
+            if len(sys.argv) == 3:
+                print(kb_light_set(-int(sys.argv[2])))
+            else:
+                print(kb_light_set(-17))
         else:
             print("Unknown argument:", sys.argv[1])
     else:
-        print("Script takes exactly one argument.", len(sys.argv) - 1, "arguments provided.")
+        print("Script takes one or two argument.", len(sys.argv) - 1, "arguments provided.")
+
 ```
 
 ## Asus

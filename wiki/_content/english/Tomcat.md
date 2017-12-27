@@ -263,7 +263,7 @@ Note that this may not be relevant because only root and/or tomcat is supposed t
 
 ### Tomcat service is started, but page is not loaded
 
-First check `/etc/tomcat7/tomcat-users.xml` for any syntax error. If everything is fine and `tomcat7` is correctly running, type `journalctl -r` to check the logs for any exception thrown (see [Logging](https://wiki.archlinux.org/index.php/Tomcat#Logging)). If you read anything like `java.lang.Exception: Socket bind failed: [98] Address already in use`, this is due to some other service listening on the same port. For instance, it is possible that [Apache](https://wiki.archlinux.org/index.php/Apache_HTTP_Server) and Tomcat are listening on the same port (if for example you have Apache running on port 8080 with [Nginx](https://wiki.archlinux.org/index.php/Nginx) serving it as a proxy on port 80). If this is the case, edit the `/etc/tomcat7/server.xml` file and change the Connector port to something else under `<Service name="Catalina">`:
+First check `/etc/tomcat7/tomcat-users.xml` for any syntax error. If everything is fine and `tomcat7` is correctly running, type `journalctl -r` to check the logs for any exception thrown (see [Logging](#Logging)). If you read anything like `java.lang.Exception: Socket bind failed: [98] Address already in use`, this is due to some other service listening on the same port. For instance, it is possible that [Apache](/index.php/Apache "Apache") and Tomcat are listening on the same port (if for example you have Apache running on port 8080 with [Nginx](/index.php/Nginx "Nginx") serving it as a proxy on port 80). If this is the case, edit the `/etc/tomcat7/server.xml` file and change the Connector port to something else under `<Service name="Catalina">`:
 
  `/etc/tomcat7/server.xml` 
 ```
@@ -280,4 +280,4 @@ First check `/etc/tomcat7/tomcat-users.xml` for any syntax error. If everything 
 </Service>
 ```
 
-Finally [restart](https://wiki.archlinux.org/index.php/Systemd#Using_units) `tomcat7` and `httpd` services.
+Finally [restart](/index.php/Restart "Restart") `tomcat7` and `httpd` services.

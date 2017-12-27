@@ -114,7 +114,7 @@ Veja [chown(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](h
 
 ## Gerenciamento de usuário
 
-Para listar os usuários conectados no sistema, o comando *who* pode ser usado. Para listar todas as contas de usuários existentes, incluindo suas propriedades armazenadas na base de dados de [usuário](#Base_de_dados_de_usu.C3.A1rio), execute `passwd -Sa` como root. Veja [passwd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) para a descrição do formato de saída.
+Para listar os usuários conectados no sistema, o comando *who* pode ser usado. Para listar todas as contas de usuários existentes, incluindo suas propriedades armazenadas na base de dados de [usuário](#Base_de_dados_de_usu.C3.A1rios), execute `passwd -Sa` como root. Veja [passwd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) para a descrição do formato de saída.
 
 Para adicionar um novo usuário, use o comando *useradd*:
 
@@ -217,7 +217,7 @@ Para alterar o nome de login de um usuário:
 
 Alterar um nome de usuário é seguro e fácil quando feito corretamente, basta usar o comando [usermod](#Outros_exemplos_de_gerenciamento_de_usu.C3.A1rio). Se o usuário estiver associado a um grupo com o mesmo nome, você pode renomear isso com o comando [groupmod](#Gerenciamento_de_grupo).
 
-Alternativamente, o arquivo `/etc/passwd` pode ser editado diretamente, veja [#Base de dados de usuário](#Base_de_dados_de_usu.C3.A1rio) para uma introdução ao seu formato.
+Alternativamente, o arquivo `/etc/passwd` pode ser editado diretamente, veja [#Base de dados de usuários](#Base_de_dados_de_usu.C3.A1rios) para uma introdução ao seu formato.
 
 Também tenha em mente as notas a seguir:
 

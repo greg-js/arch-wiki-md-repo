@@ -54,6 +54,7 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [eworm](https://aur.archlinux.org/packages.php?K=eworm&SeB=m) | Christian Hesse | mail@eworm.de |
 | [Dragonlord](https://aur.archlinux.org/packages.php?K=Dragonlord&SeB=m) | [Jaroslav Lichtblau](/index.php/User:Drag0nl0rd "User:Drag0nl0rd") | dragonlord @ aur archlinux org |
 | [dvzrv](https://aur.archlinux.org/packages.php?K=dvzrv&SeB=m) | [David Runge](/index.php/User:Davezerave "User:Davezerave") | dave@sleepmap.de |
+| [eschwartz](https://aur.archlinux.org/packages.php?K=eschwartz&SeB=m) | Eli Schwartz | eschwartz@archlinux.org |
 | [Faidoc](https://aur.archlinux.org/packages.php?K=faidoc&SeB=m) | Alexandre Filgueira | alexfilgueira [at] cinnarch [dot] com |
 | [farseerfc](https://aur.archlinux.org/packages.php?K=farseerfc&SeB=m) | Jiachen Yang | farseerfc[at]gmail[dot]com |
 | [felixonmars](https://aur.archlinux.org/packages.php?K=felixonmars&SeB=m) | Felix Yan | felixonmars@archlinux.org |

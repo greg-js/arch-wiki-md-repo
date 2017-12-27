@@ -1,7 +1,3 @@
-Artigos relacionados
-
-*   [Install bundled 32-bit system in Arch64](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64")
-
 O repositório *multilib* é um [repositório oficial](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") que permite ao usuário executar a compilar aplicativos 32 bits em instalações 64 bits do Arch Linux.
 
 ## Contents
@@ -54,6 +50,6 @@ Então, [atualize](/index.php/Atualize "Atualize") o sistema.
 
 ## Veja também
 
-*   [Makepkg#Build 32-bit packages on a 64-bit system](/index.php/Makepkg#Build_32-bit_packages_on_a_64-bit_system "Makepkg")
+*   [Makepkg (Português)#Compilar pacotes 32 bits em um sistema 64 bits](/index.php/Makepkg_(Portugu%C3%AAs)#Compilar_pacotes_32_bits_em_um_sistema_64_bits "Makepkg (Português)")
 *   [FAQ (Português)#64 bit](/index.php/FAQ_(Portugu%C3%AAs)#64_bit "FAQ (Português)")
 *   Lista de discussão [arch-multilib](//mailman.archlinux.org/mailman/listinfo/arch-multilib)

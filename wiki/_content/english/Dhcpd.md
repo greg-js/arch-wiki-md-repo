@@ -130,6 +130,23 @@ WantedBy=multi-user.target
 
 This is a template unit, which binds it to a particular interface, for example `dhcpd4@*eth0*.service` where *eth0* is an interface shown with `ip link`.
 
+Sometimes we want to wait for the network to be configured, in this case the solution is to make service waits for network-online.target instead of network.target:
+
+ `/etc/systemd/system/dhcpd4@.service` 
+```
+[Unit]
+Wants=network-online.target
+After=network-online.target
+
+```
+
+To have this working we have to enable another service to make it work:
+
+```
+# systemctl enable systemd-networkd-wait-online
+
+```
+
 ### Use for PXE
 
 PXE Configuration is done with the following two options:

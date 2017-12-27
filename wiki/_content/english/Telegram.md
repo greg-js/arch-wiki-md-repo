@@ -1,5 +1,7 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/Telegram_(software) "wikipedia:Telegram (software)"): **Telegram** is a cloud-based instant messaging service. Telegram clients exist for both mobile (Android, iOS, Windows Phone, Ubuntu Touch) and desktop systems (Windows, OS X, Linux). Users can send messages and exchange photos, videos, stickers and files of any type. Telegram also provides optional end-to-end-encrypted messaging.
 
+The official clients are open-source but the code for recent versions is not always immediately published. The server-side code is closed-source and proprietary.
+
 ## Contents
 
 *   [1 Install](#Install)

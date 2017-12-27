@@ -1,3 +1,7 @@
+Related articles
+
+*   [File systems](/index.php/File_systems "File systems")
+
 [Reiser4](https://en.wikipedia.org/wiki/Reiser4 "wikipedia:Reiser4") is the successor filesystem for ReiserFS, developed from scratch by [Namesys](https://en.wikipedia.org/wiki/Namesys "wikipedia:Namesys") and [Hans Reiser](https://en.wikipedia.org/wiki/Hans_Reiser "wikipedia:Hans Reiser"). It is very efficient for handling small files (often used in `/var` for this purpose) and includes features such as cheap transparent compression and block suballocation. Because it is an atomic file system "your file system operations either entirely occur, or they entirely don't, and they do not corrupt due to half occurring." [Benchmarks](http://vizzzion.org/?id=reiser4) with other linux filesystems are also available.
 
 ## Contents
@@ -29,7 +33,7 @@
 
 1\. [Install](/index.php/Install "Install") the [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/) package
 
-2\. You will need a reiser4 patched kernel. Patches can be found here [http://sourceforge.net/projects/reiser4/files/reiser4-for-linux-3.x/](http://sourceforge.net/projects/reiser4/files/reiser4-for-linux-3.x/)
+2\. You will need a reiser4 patched kernel. Patches can be found here [https://sourceforge.net/projects/reiser4/files/](https://sourceforge.net/projects/reiser4/files/)
 
 3\. Bootloader *(Optional, only needed if you want to format your `/` (root) as **reiser4**)*
 

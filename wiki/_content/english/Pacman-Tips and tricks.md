@@ -346,7 +346,7 @@ Historically, there was [PkgD](https://bbs.archlinux.org/viewtopic.php?id=64391)
 
 #### Read-write cache
 
-In order to share packages between multiple computers, simply share `/var/cache/pacman/` using any network-based mount protocol. This section shows how to use [shfs](/index.php/Shfs "Shfs") or [sshfs](/index.php/Sshfs "Sshfs") to share a package cache plus the related library-directories between multiple computers on the same local network. Keep in mind that a network shared cache can be slow depending on the file-system choice, among other factors.
+In order to share packages between multiple computers, simply share `/var/cache/pacman/` using any network-based mount protocol. This section shows how to use [shfs](/index.php/Shfs "Shfs") or [SSHFS](/index.php/SSHFS "SSHFS") to share a package cache plus the related library-directories between multiple computers on the same local network. Keep in mind that a network shared cache can be slow depending on the file-system choice, among other factors.
 
 First, install any network-supporting filesystem packages: [shfs-utils](https://www.archlinux.org/packages/?name=shfs-utils), [sshfs](https://www.archlinux.org/packages/?name=sshfs), [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs), [samba](https://www.archlinux.org/packages/?name=samba) or [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils).
 

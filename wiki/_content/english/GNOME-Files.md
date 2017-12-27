@@ -131,6 +131,8 @@ $ gsettings set org.gnome.nautilus.preferences always-use-location-entry true
 
 See [File manager functionality#Thumbnail previews](/index.php/File_manager_functionality#Thumbnail_previews "File manager functionality").
 
+Sometimes video thumbnails are not shown. To solve it (as mentioned in [No video thumbnails on nautilus](https://bbs.archlinux.org/viewtopic.php?id=168626)), you must install [ffmpegthumbnailer](https://www.archlinux.org/packages/?name=ffmpegthumbnailer), [gst-libav](https://www.archlinux.org/packages/?name=gst-libav), [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly), and remove the content of `~/.cache/thumbnailsfails/gnome-thumbnail-factory/`.
+
 ### Create an empty document in Files 3.6 and above
 
 GNOME 3.6 brought changes to Files. The option to create an empty document has been removed from the right-click menu in Files. To get this option back one has to create a `~/Templates/` folder in your home folder and place an empty file inside the folder through your favorite Terminal by `touch ~/Templates/new` or by using any other file manager. Then just restart Files.

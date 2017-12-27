@@ -37,7 +37,7 @@
     *   [6.5 Possibly missing firmware for module XXXX](#Possibly_missing_firmware_for_module_XXXX)
     *   [6.6 mkinitcpio creates images with all the shared libraries missing](#mkinitcpio_creates_images_with_all_the_shared_libraries_missing)
     *   [6.7 Standard rescue procedures](#Standard_rescue_procedures)
-        *   [6.7.1 Boot succeeds on one machine and fails on another](#Boot_succeeds_on_one_machine_and_fails_on_another)
+        *   [6.7.1 Загрузка выполняется на одной машине и терпит неудачу на другой](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.B2.D1.8B.D0.BF.D0.BE.D0.BB.D0.BD.D1.8F.D0.B5.D1.82.D1.81.D1.8F_.D0.BD.D0.B0_.D0.BE.D0.B4.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D0.B5_.D0.B8_.D1.82.D0.B5.D1.80.D0.BF.D0.B8.D1.82_.D0.BD.D0.B5.D1.83.D0.B4.D0.B0.D1.87.D1.83_.D0.BD.D0.B0_.D0.B4.D1.80.D1.83.D0.B3.D0.BE.D0.B9)
 *   [7 Я параноик!](#.D0.AF_.D0.BF.D0.B0.D1.80.D0.B0.D0.BD.D0.BE.D0.B8.D0.BA.21)
     *   [7.1 Предупреждение о cpio](#.D0.9F.D1.80.D0.B5.D0.B4.D1.83.D0.BF.D1.80.D0.B5.D0.B6.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE_cpio)
     *   [7.2 Использование bsdtar для извлечения](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_bsdtar_.D0.B4.D0.BB.D1.8F_.D0.B8.D0.B7.D0.B2.D0.BB.D0.B5.D1.87.D0.B5.D0.BD.D0.B8.D1.8F)
@@ -621,11 +621,11 @@ If your machine fails to boot with an "Attempted to kill init!" kernel panic rig
 
 With an improper initial ram-disk a system often is unbootable. So follow a system rescue procedure like below:
 
-#### Boot succeeds on one machine and fails on another
+#### Загрузка выполняется на одной машине и терпит неудачу на другой
 
-*mkinitcpio'*s `autodetect` hook filters unneeded [kernel modules](/index.php/Kernel_modules "Kernel modules") in the primary initramfs scanning `/sys` and the modules loaded at the time it is run. If you transfer your `/boot` directory to another machine and the boot sequence fails during early userspace, it may be because the new hardware is not detected due to missing kernel modules. Note that USB 2.0 and 3.0 need different kernel modules.
+`autodetect` hook скрипта *mkinitcpio* фильтрует ненужные [kernel modules](/index.php/Kernel_modules "Kernel modules") в первичном initramfs путем сканирования /sys и модулей, загруженных во время запуска. Если вы переносите /boot каталог на другую машину и последовательность загрузки терпит неудачу на стадии early userspace, то это может проиходить, потому что новое аппаратное обеспечение не определено отсутствующими модулями ядра. Обратите внимание, что для USB 2.0 и 3.0 нужны разные модули ядра.
 
-To fix, first try choosing the [fallback](#Image_creation_and_activation) image from your [bootloader](/index.php/Bootloader "Bootloader"), as it is not filtered by `autodetect`. Once booted, run *mkinitcpio* on the new machine to rebuild the primary image with the correct modules. If the fallback image fails, try booting into an Arch Linux live CD/USB, chroot into the installation, and run *mkinitcpio* on the new machine. As a last resort, try [manually](#MODULES) adding modules to the initramfs.
+Чтобы исправить, сначала попробуйтей выбрать fallback образ в вашем [загрузчике](/index.php/Boot_loaders_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Boot loaders (Русский)"), поскольку он не фильтруется с помощью `autodetect`. После загрузки выполните *mkinitcpio* на новой машине, чтобы пересобрать первичный образ с корректными модулями. Если fallback образ не решил проблему, пропробуйте загрузиться в Arch Linux live CD/USB, выполнить chroot в установленную систему и выполнить *mkinitcpio* на новой машине. В крайнем случае, попробуйте [вручную](#MODULES) добавить модули в initramfs.
 
 ## Я параноик!
 

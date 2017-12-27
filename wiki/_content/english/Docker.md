@@ -30,29 +30,12 @@ Related articles
 *   [4 Remove Docker and images](#Remove_Docker_and_images)
 *   [5 Useful tips](#Useful_tips)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Deleting Docker Images in a BTRFS Filesystem](#Deleting_Docker_Images_in_a_BTRFS_Filesystem)
-    *   [6.2 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
-    *   [6.3 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes.2Fthreads_too_low)
-    *   [6.4 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
+    *   [6.1 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
+    *   [6.2 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes.2Fthreads_too_low)
+    *   [6.3 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
 *   [7 See also](#See_also)
 
 ## Installation
-
-**Note:** Docker needs the `loop` module on first usage. The following steps may be required before starting docker:
-```
-# tee /etc/modules-load.d/loop.conf <<< "loop"
-# modprobe loop 
-
-```
-
-You may need to reboot before the module is available.
-
-The error message from not enabling the loop module may look like this:
-
-```
-'overlay' not found as a supported filesystem on this host. Please ensure kernel is new enough and has overlay
-
-```
 
 [Install](/index.php/Install "Install") the [docker](https://www.archlinux.org/packages/?name=docker) package or, for the development version, the [docker-git](https://aur.archlinux.org/packages/docker-git/) package. Next [start](/index.php/Start "Start") and enable `docker.service` and verify operation:
 
@@ -141,20 +124,16 @@ Environment="HTTPS_PROXY=192.168.1.1:8080"
 
 Verify that the configuration has been loaded:
 
-```
-# systemctl show docker --property Environment
-Environment=HTTP_PROXY=192.168.1.1:8080 HTTPS_PROXY=192.168.1.1:8080
-
-```
+ `# systemctl show docker --property Environment`  `Environment=HTTP_PROXY=192.168.1.1:8080 HTTPS_PROXY=192.168.1.1:8080` 
 
 #### Container configuration
 
 The settings in the `docker.service` file will not translate into containers. To achieve this you must set `ENV` variables in your `Dockerfile` thus:
 
 ```
- FROM base/archlinux
- ENV http_proxy="http://192.168.1.1:3128"
- ENV https_proxy="https://192.168.1.1:3128"
+FROM base/archlinux
+ENV http_proxy="http://192.168.1.1:3128"
+ENV https_proxy="https://192.168.1.1:3128"
 
 ```
 
@@ -251,10 +230,10 @@ $ docker run --rm -t -i pritunl/archlinux:latest /bin/bash
 
 ```
 
-Alternatively, you could use [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") by freezing `/etc/pacman.d/mirrorlist`
+Alternatively, you could use [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") by freezing `/etc/pacman.d/mirrorlist`:
 
 ```
- Server=[https://archive.archlinux.org/repos/2020/01/02/$repo/os/$arch](https://archive.archlinux.org/repos/2020/01/02/$repo/os/$arch)
+Server=https://archive.archlinux.org/repos/2020/01/02/$repo/os/$arch
 
 ```
 
@@ -328,61 +307,9 @@ To grab the IP address of a running container:
 
 ## Troubleshooting
 
-### Deleting Docker Images in a BTRFS Filesystem
-
-Deleting docker images in a [btrfs](/index.php/Btrfs "Btrfs") filesystem leaves the images in `/var/lib/docker/btrfs/subvolumes/` with a size of 0\. When you try to delete this you get a permission error.
-
-```
- # docker rm bab4ff309870
- # rm -Rf /var/lib/docker/btrfs/subvolumes/*
- rm: cannot remove '/var/lib/docker/btrfs/subvolumes/85122f1472a76b7519ed0095637d8501f1d456787be1a87f2e9e02792c4200ab': Operation not permitted
-
-```
-
-This is caused by btrfs which created subvolumes for the docker images. So the correct command to delete them is:
-
-```
- # btrfs subvolume delete /var/lib/docker/btrfs/subvolumes/85122f1472a76b7519ed0095637d8501f1d456787be1a87f2e9e02792c4200ab
-
-```
-
 ### docker0 Bridge gets no IP / no internet access in containers
 
-Docker enables IP forwarding by itself, but by default systemd overrides the respective sysctl setting. The following disables this override (for all interfaces):
-
-```
-# cat > /etc/systemd/network/ipforward.network <<EOF
-[Network]
-IPForward=kernel
-EOF
-
-# cat > /etc/sysctl.d/99-docker.conf <<EOF
-net.ipv4.ip_forward = 1
-EOF
-
-# sysctl -w net.ipv4.ip_forward=1
-
-```
-
-**Note:** It has been observed that with systemd version 220 creating this file causes bridges used by Docker to lose their IP addresses. Running Docker with a manually-defined network, as described above, is known to work.
-
-To work around issues where the docker bridge looses its ip, you can set the bridge to *Unmanaged* by networkd:
-
-```
-# cat > /etc/systemd/network/50-docker.network <<EOF
-[Match]
-Name=docker0
-
-[Network]
-IPForward=kernel
-
-[Link]
-Unmanaged=true
-EOF
-
-```
-
-Finally [restart](/index.php/Restart "Restart") the `systemd-networkd` and `docker` services.
+Docker enables IP forwarding by itself, but by default [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") overrides the respective sysctl setting. Set `IPForward=yes` in the network profile. See [Internet sharing#Enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") for details.
 
 ### Default number of allowed processes/threads too low
 
@@ -396,25 +323,20 @@ fork failed: Resource temporarily unavailable
 
 ```
 
-then you might need to adjust the number of processes allowed by systemd. Default (see system.conf) is 500, which is pretty small for running several docker containers. You need to create a drop-in service file for this:
+then you might need to adjust the number of processes allowed by systemd. The default is 500 (see `system.conf`), which is pretty small for running several docker containers. [Edit](/index.php/Edit "Edit") the `docker.service` with the following snippet:
 
+ `# systemctl edit docker.service` 
 ```
-# mkdir /etc/systemd/system/docker.service.d
-# cat > /etc/systemd/system/docker.service.d/tasks.conf <<EOF
 [Service]
 TasksMax=infinity
-EOF
-# systemctl daemon-reload
-# systemctl restart docker.service
-
 ```
 
 ### Error initializing graphdriver: devmapper
 
-If `systemctl` fails to start docker and provides an error:
+If *systemctl* fails to start docker and provides an error:
 
 ```
- Error starting daemon: error initializing graphdriver: devmapper: Device docker-8:2-915035-pool is not a thin pool
+Error starting daemon: error initializing graphdriver: devmapper: Device docker-8:2-915035-pool is not a thin pool
 
 ```
 

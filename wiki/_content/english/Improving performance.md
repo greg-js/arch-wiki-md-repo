@@ -25,14 +25,7 @@ This article provides information on basic system diagnostics relating to perfor
         *   [2.3.1 Mount options](#Mount_options)
             *   [2.3.1.1 Reiserfs](#Reiserfs)
     *   [2.4 Tuning kernel parameters](#Tuning_kernel_parameters)
-        *   [2.4.1 USB storage devices](#USB_storage_devices)
-    *   [2.5 Tuning IO schedulers](#Tuning_IO_schedulers)
-        *   [2.5.1 Background](#Background)
-        *   [2.5.2 Change at runtime](#Change_at_runtime)
-        *   [2.5.3 Persisting the change](#Persisting_the_change)
-            *   [2.5.3.1 Kernel parameter (for a single device)](#Kernel_parameter_.28for_a_single_device.29)
-            *   [2.5.3.2 systemd-tmpfiles](#systemd-tmpfiles)
-            *   [2.5.3.3 Using udev for one device or HDD/SSD mixed environment](#Using_udev_for_one_device_or_HDD.2FSSD_mixed_environment)
+    *   [2.5 IO schedulers](#IO_schedulers)
     *   [2.6 Power management configuration](#Power_management_configuration)
     *   [2.7 Reduce disk reads/writes](#Reduce_disk_reads.2Fwrites)
         *   [2.7.1 Show disk writes](#Show_disk_writes)
@@ -172,53 +165,16 @@ Replace `/dev/sd**a1**` with the partition reserved for the journal, and `/dev/s
 
 There are several key tunables affecting the performance of block devices, see [sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl") for more information.
 
-#### USB storage devices
+### IO schedulers
 
-If USB drives like pendrives are slow to copy files, append these three lines in a [systemd](/index.php/Systemd "Systemd") tmpfile:
-
-(this should not be needed anymore: [[1]](https://lwn.net/Articles/475405/))
-
- `/etc/tmpfiles.d/local.conf` 
-```
-w /sys/kernel/mm/transparent_hugepage/enabled - - - - madvise
-w /sys/kernel/mm/transparent_hugepage/defrag - - - - madvise
-w /sys/kernel/mm/transparent_hugepage/khugepaged/defrag - - - - 0
-
-```
-
-See also [[2]](http://unix.stackexchange.com/questions/107703/why-is-my-pc-freezing-while-im-copying-a-file-to-a-pendrive), [[3]](http://lwn.net/Articles/572911/) and [[4]](http://lwn.net/Articles/467328/).
-
-### Tuning IO schedulers
-
-**Warning:** Only the CFQ scheduler supports setting IO priorities with ionice. Some background processes rely on this capability to perform background IO unobtrusively by reducing their IO priority, for example KDE's file indexer baloo. Using a different scheduler than the default CFQ scheduler can worsen the user experience on desktops. [[5]](https://blogs.kde.org/2014/10/15/ubuntus-linux-scheduler-or-why-baloo-might-be-slowing-your-system-1404)
-
-The official Linux kernel supports the following schedulers for storage disk in-/output (IO):
-
-*   [CFQ](https://en.wikipedia.org/wiki/CFQ "wikipedia:CFQ") scheduler (Completely Fair Queuing)
-*   [NOOP](https://en.wikipedia.org/wiki/NOOP_scheduler "wikipedia:NOOP scheduler")
-*   [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "wikipedia:Deadline scheduler")
-*   [BFQ](http://algo.ing.unimo.it/people/paolo/disk_sched/) (Budget Fair Queueing)
-*   [Kyber](https://lwn.net/Articles/720071/)
-
-Unofficial support is available through the [BFQ](/index.php/Linux-ck#How_to_enable_the_BFQ_I.2FO_Scheduler "Linux-ck") (Budget Fair Queueing) which is compiled into the [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel as well as many kernels in the [AUR](/index.php/AUR "AUR").
-
-A more contemporary option (since kernel version 3.16) is the [Multi-Queue Block IO Queuing Mechanism](https://www.thomas-krenn.com/en/wiki/Linux_Multi-Queue_Block_IO_Queueing_Mechanism_(blk-mq)) or blk-mq for short. Blk-mq leverages a CPU with multiple cores to map I/O queries to multiple queues. The tasks are distributed across multiple threads and therefore to multiple CPU cores (per-core software queues) and can speed up read/write operations vs. traditional I/O schedulers.
-
-One can enable blk-mq by adding the following to the kernel's boot line:
-
-```
-scsi_mod.use_blk_mq=y dm_mod.use_blk_mq=y
-
-```
-
-**Note:** Using blk_mq is an all-or-nothing proposition. When enabled all IO schedulers are disabled which is fine for SSDs but doing this may [negatively impact performance of rotational discs](https://mahmoudhatem.wordpress.com/2016/02/08/oracle-uek-4-where-is-my-io-scheduler-none-multi-queue-model-blk-mq/).
-
-#### Background
+Input/output (I/O) scheduler is a part of linux kernel responsible for deciding the order in which the block I/O operations will be submitted to storage devices.
 
 A HDD has spinning disks and head that move physically to the required location. Such structure leads to following characteristics:
 
 *   random latency is quite high, for modern HDDs it is ~10ms (ignoring a disk controller write buffer).
 *   sequential access provides much higher throughput. In this case the head needs to move less distance.
+
+The characteristics of a SSD are different. It does not have moving parts. Random access is as fast as sequential one. An SSD can handle multiple requests at the same time. Modern devices' throughput ~10K IO requests, which is higher than workload on most systems.
 
 If we have a lot of running processes that make IO requests to different parts of storage (i.e. random access) then we can expect that a disk handles ~100 IO requests per second. Because modern systems can easily generate load much higher than 100 requests per second we have a queue of requests that have to wait for access to the storage. One way to improve throughput is to linearize access, i.e. order waiting requests by its logical address and always choose the closest request. Historically this was the first Linux IO scheduler called **elevator** scheduler.
 
@@ -226,64 +182,60 @@ One of the problems with the elevator algorithm is that it makes suffer processe
 
 While these schedulers try to improve total throughput they also might leave some unlucky requests waiting for a very long time. As an example, imagine the majority of processes make requests at the beginning of storage space while an unlucky process makes a request at the other end of storage. So developers tried to make the algorithm more fair and the **deadline** scheduler was added. It has a queue ordered by address (the same as elevator). If some request sits in this queue for a long time then it moves to an "expired" queue ordered by expire time. The scheduler checks the expire queue first and processes requests from there and only then moves to elevator queue. It is important to understand that this algorithm sacrifices total throughput for fairness.
 
-CFQ (the default scheduler nowadays) aggregates all ideas from above and adds `cgroup` support that allows to reserve some amount of IO to a specific `cgroup`. It is useful on shared (and cloud) hosting - users who paid for 20 IO/s want to get their share if needed.
+CFQ aggregates all ideas from above and adds `cgroup` support that allows to reserve some amount of IO to a specific `cgroup`. It is useful on shared (and cloud) hosting - users who paid for 20 IO/s want to get their share if needed.
 
-The characteristics of a SSD are different. It does not have moving parts. Random access is as fast as sequential one. An SSD can handle multiple requests at the same time. Modern devices' throughput ~10K IO/s, which is higher than workload on most systems. Essentially a user cannot generate enough requests to saturate a SDD, the requests queue is effectively always empty. In this case IO scheduler does not provide any improvements. Thus, it is recommended to use the **noop** scheduler for an SSD.
+The official Linux kernel supports the following schedulers for storage disk IO:
 
-#### Change at runtime
+*   [CFQ](https://en.wikipedia.org/wiki/CFQ "w:CFQ")
+*   [NOOP](https://en.wikipedia.org/wiki/NOOP_scheduler "w:NOOP scheduler")
+*   [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "w:Deadline scheduler")
 
-It is possible to change the scheduler at runtime and even to use different schedulers for separate storage devices at the same time. Available schedulers can be queried by viewing the contents of `/sys/block/sd**X**/queue/scheduler` (the active scheduler is denoted by brackets):
+[Multi-Queue Block IO Queuing Mechanism](https://www.thomas-krenn.com/en/wiki/Linux_Multi-Queue_Block_IO_Queueing_Mechanism_(blk-mq)) (blk-mq) leverages a CPU with multiple cores to map I/O queries to multiple queues. The tasks are distributed across multiple threads and therefore to multiple CPU cores (per-core software queues) and can speed up read/write operations vs. traditional I/O schedulers.
 
- `$ cat /sys/block/sd**X**/queue/scheduler` 
+Enabling blk_mq disables non blk_mq schedulers above, but enables blk_mq shedulers:
+
+*   MQ Deadline - blk_mq adaptation of the legacy deadline scheduler
+*   [Kyber](https://lwn.net/Articles/720675/) - controls latency by throttling queue depths using scalable techniques
+*   [BFQ](https://algo.ing.unimo.it/people/paolo/disk_sched/) - proportional-share I/O scheduler, with some extra low-latency capabilities
+*   none
+
+To enable blk-mq add following to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
+
+```
+scsi_mod.use_blk_mq=1
+
+```
+
+To see available schedulers for device:
+
+ `$ cat /sys/block/**sda**/queue/scheduler` 
 ```
 noop deadline [cfq]
 
 ```
 
-Users can change the active scheduler at runtime without the need to reboot, for example:
+Active scheduler is enclosed in brackets. To change active scheduler for device:
 
 ```
-# echo noop > /sys/block/sd**X**/queue/scheduler
+# echo **deadline** > /sys/block/**sda**/queue/scheduler
 
 ```
 
-This method is non-persistent and will be lost upon rebooting.
-
-#### Persisting the change
-
-##### Kernel parameter (for a single device)
-
-If the sole storage device in the system is an SSD, consider setting the I/O scheduler for the entire system via the `elevator=noop` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
-
-##### systemd-tmpfiles
-
-If you have more than one storage device, or wish to avoid clutter on the kernel cmdline, you can set the I/O scheduler via `systemd-tmpfiles`:
-
- `/etc/tmpfiles.d/10_ioscheduler.conf`  `w /sys/block/sdX/queue/scheduler - - - - noop` 
-
-For more detail on `systemd-tmpfiles` see [Systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd").
-
-##### Using udev for one device or HDD/SSD mixed environment
-
-Though the above will undoubtedly work, it is probably considered a reliable workaround. Ergo, it would be preferred to use the system that is responsible for the devices in the first place to implement the scheduler. In this case it is udev, and to do this, all one needs is a simple [udev](/index.php/Udev "Udev") rule.
-
-To do this, create the following:
+For change to persist across reboots, create [udev](/index.php/Udev "Udev") rule instead:
 
  `/etc/udev/rules.d/60-schedulers.rules` 
 ```
-# set deadline scheduler for non-rotating disks
-ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="deadline"
+ACTION=="add|change", KERNEL=="sd*[!0-9]|sr*", ATTR{queue/scheduler}="**deadline**"
 
 ```
 
-Of course, set Deadline/CFQ to the desired schedulers. Changes should occur upon next boot. To check success of the new rule:
+Save it, and reload and trigger udev rules:
 
 ```
-$ cat /sys/block/sd**X**/queue/scheduler  # where **X** is the device in question
+# udevadm control --reload
+# udevadm trigger
 
 ```
-
-**Note:** In the example sixty is chosen because that is the number udev uses for its own persistent naming rules. Thus, it would seem that block devices are at this point able to be modified and this is a safe position for this particular rule. But the rule can be named anything so long as it ends in `.rules`.)
 
 ### Power management configuration
 
@@ -293,7 +245,7 @@ When dealing with traditional rotational disks (HDD's) you may want to [lower or
 
 Avoiding unnecessary access to slow storage drives is good for performance and also increasing lifetime of the devices, although on modern hardware the difference in life expectancy is usually negligible.
 
-**Note:** A 32GB SSD with a mediocre 10x write amplification factor, a standard 10000 write/erase cycle, and **10GB of data written per day**, would get an **8 years life expectancy**. It gets better with bigger SSDs and modern controllers with less write amplification. Also compare [[7]](http://techreport.com/review/25889/the-ssd-endurance-experiment-500tb-update) when considering whether any particular strategy to limit disk writes is actually needed.
+**Note:** A 32GB SSD with a mediocre 10x write amplification factor, a standard 10000 write/erase cycle, and **10GB of data written per day**, would get an **8 years life expectancy**. It gets better with bigger SSDs and modern controllers with less write amplification. Also compare [[1]](http://techreport.com/review/25889/the-ssd-endurance-experiment-500tb-update) when considering whether any particular strategy to limit disk writes is actually needed.
 
 #### Show disk writes
 
@@ -330,7 +282,7 @@ The I/O priority of a background process can be reduced to the "Idle" level by s
 
 ```
 
-See man ionice(1) and [[8]](https://www.cyberciti.biz/tips/linux-set-io-scheduling-class-priority.html) for more information.
+See [ionice(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ionice.1) and [[2]](https://www.cyberciti.biz/tips/linux-set-io-scheduling-class-priority.html) for more information.
 
 ## CPU
 
@@ -516,7 +468,7 @@ After you disabled watchdogs, you can *optionally* avoid the loading of the modu
 
 Either action will speed up your boot and shutdown, because one less module is loaded. Additionally disabling watchdog timers increases performance and [lowers power consumption](/index.php/Power_management#Disabling_NMI_watchdog "Power management").
 
-See [[9]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[10]](https://bbs.archlinux.org/viewtopic.php?id=165834), [[11]](http://0pointer.de/blog/projects/watchdog.html), and [[12]](https://www.kernel.org/doc/Documentation/watchdog/watchdog-parameters.txt) for more information.
+See [[3]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[4]](https://bbs.archlinux.org/viewtopic.php?id=165834), [[5]](http://0pointer.de/blog/projects/watchdog.html), and [[6]](https://www.kernel.org/doc/Documentation/watchdog/watchdog-parameters.txt) for more information.
 
 ## See also
 

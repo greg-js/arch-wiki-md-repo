@@ -267,7 +267,7 @@ NEW_PASSWORD:b7bbb48a5b7749f1f908eb3c0c021200c72738ce
 
 ### Tomcat 服务已经启动，但是无法加载页面
 
-首先，检查 `/etc/tomcat7/tomcat-users.xml` 有没有语法错误。如果一切正常并且 `tomcat7` 正在运行，输入 `journalctl -r` 查看log，看看有没有抛出什么异常（参照 [Logging](https://wiki.archlinux.org/index.php/Tomcat#Logging) ）。 如果你看到有类似 `java.lang.Exception: Socket bind failed: [98] Address already in use` 的异常，说明其它服务正在监听这个端口。例如，有可能 [Apache](https://wiki.archlinux.org/index.php/Apache_HTTP_Server) 和 Tomcat 都在监听同一个端口（例如你在8080端口运行的 Apache 使用在80端口运行的[Nginx](https://wiki.archlinux.org/index.php/Nginx) 作为代理）。如果是这种情况，编辑 `/etc/tomcat7/server.xml` 文件，然后修改 `<Service name="Catalina">` 下的 Connector port 为其它的值：
+首先，检查 `/etc/tomcat7/tomcat-users.xml` 有没有语法错误。如果一切正常并且 `tomcat7` 正在运行，输入 `journalctl -r` 查看log，看看有没有抛出什么异常（参照 [Logging](/index.php/Tomcat#Logging "Tomcat") ）。 如果你看到有类似 `java.lang.Exception: Socket bind failed: [98] Address already in use` 的异常，说明其它服务正在监听这个端口。例如，有可能 [Apache](/index.php/Apache_HTTP_Server "Apache HTTP Server") 和 Tomcat 都在监听同一个端口（例如你在8080端口运行的 Apache 使用在80端口运行的[Nginx](/index.php/Nginx "Nginx") 作为代理）。如果是这种情况，编辑 `/etc/tomcat7/server.xml` 文件，然后修改 `<Service name="Catalina">` 下的 Connector port 为其它的值：
 
  `/etc/tomcat7/server.xml` 
 ```

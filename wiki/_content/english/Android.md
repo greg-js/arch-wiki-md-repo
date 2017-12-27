@@ -413,7 +413,7 @@ This will clone the repositories. You **only** need to do this the first time yo
 *   You will need to specify a **branch** (release of Android) to check out with the `-b` switch. If you leave the switch out, you will get the so-called **master branch**.
 
 ```
-$ repo init -u [https://android.googlesource.com/platform/manifest](https://android.googlesource.com/platform/manifest) -b master
+$ repo init -u https://android.googlesource.com/platform/manifest -b master
 $ repo sync -j4
 
 ```
@@ -482,7 +482,7 @@ In some cases, you want to return to the stock Android after flashing custom ROM
 
 ### Fastboot
 
-Fastboot (as well as [ADB](#Android_Debug_Bridge_.28ADB.29)) is included in the [android-tools](https://www.archlinux.org/packages/?name=android-tools) package.
+Fastboot (as well as [ADB](#Android_Debug_Bridge)) is included in the [android-tools](https://www.archlinux.org/packages/?name=android-tools) package.
 
 **Note:** Restoring firmwares using `fastboot` can be quite tricky, but you might want to browse [XDA developers forums](http://www.xda-developers.com/) for a stock firmware, which is mostly a `*.zip` file, but inside of it, comes with the firmware files and `flash-all.sh` script. For example, [Google Nexus](https://developers.google.com/android/nexus/images) firmwares include `flash-all.sh` script or another example could be for OnePlus One - [XDA thread](http://forum.xda-developers.com/oneplus-one/general/guide-return-opo-to-100-stock-t2826541), where you can find firmwares with included `flash-all.sh` script.
 

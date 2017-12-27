@@ -1,7 +1,7 @@
 | **Device** | **Status** | **Modules** |
 | Display | Working | xf86-video-intel |
 | Touchscreen | Working | goodix |
-| Wireless | Working, with kernel patches | rt8723bs |
+| Wireless | Working, with kernel patches / kernel 4.13 | rt8723bs |
 | Audio | Working | snd_soc_rt5640 |
 | Touchpad | Working |
 | Battery Status | Working | battery_BATC |
@@ -27,6 +27,7 @@ With kernel 4.7.2 and newer surprisingly much is working or there is a way to ge
     *   [2.2 Bluetooth](#Bluetooth)
     *   [2.3 Touchpad (Cover)](#Touchpad_.28Cover.29)
     *   [2.4 Accelerometer](#Accelerometer)
+    *   [2.5 Hardware Buttons](#Hardware_Buttons)
 *   [3 Partially broken devices](#Partially_broken_devices)
     *   [3.1 microSD Reader](#microSD_Reader)
 *   [4 Broken devices](#Broken_devices)
@@ -42,7 +43,7 @@ With kernel 4.7.2 and newer surprisingly much is working or there is a way to ge
 
 ### Booting with UEFI bios (systemd-boot)
 
-Use an usb hub, a cheap usb wifi, an usb flash drive and an usb keyboard (or the keyboard cover) to install arch linux. You can enter the bios by pressing del several times and overrule the boot device. There isn't anything special to do, just prepare the flash drive and boot from it.
+The Teclast X16 is able to boot from usb mass storage devices connected to an usb hub. During the installation an usb keyboard (or the keyboard cover) is needed to install arch linux. You can enter the bios by pressing del several times and overrule the boot device. There isn't anything special to do, just prepare the flash drive and boot from it.
 
 ### Display
 
@@ -67,7 +68,7 @@ This is remembered during a reboot. Global shortcuts to change sound volume work
 
 ### WiFi
 
-This step will take quite long, you can stop here and use the tab with an USB Wi-Fi Dongle.
+Working since kernel >= 4.13, rtl8723bs_bt kernel module is included in linux >= 4.13, as well as the firmware binaries. This step is only necessary for older kernels.
 
 There is an issue with wpa_supplicant 1.2.6\. For the time beeing you have to downgrade wpa_supplicant to version 1.2.5\. See [https://github.com/hadess/rtl8723bs/issues/113](https://github.com/hadess/rtl8723bs/issues/113)
 
@@ -100,6 +101,17 @@ watch cat in_accel_x_raw in_accel_y_raw in_accel_z_raw
 ```
 
 Tip: this kernel module has to be compiled by yourself, search for bmc150 below modules/industrialio
+
+### Hardware Buttons
+
+Kernel >= 4.13: soc_button_array and gpio_keys has to be loaded after soc is initialized.
+
+/etc/modprobe.d/teclast_buttons.conf:
+
+```
+softdep soc_button_array pre: snd_soc_core post: gpio_keys
+
+```
 
 ## Partially broken devices
 

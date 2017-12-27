@@ -4,7 +4,7 @@ Related articles
 *   [I2P](/index.php/I2P "I2P")
 *   [Freenet](/index.php/Freenet "Freenet")
 
-[Tor](https://www.torproject.org)es una implementación 'open source' de 2da generación del [enrutamiento de cebolla](https://es.wikipedia.org/wiki/Encaminamiento_de_cebolla) que provee libre acceso a una red proxy anónimos. Su principal objetivo es proteger el [anónimato en Internet](https://en.wikipedia.org/wiki/Anonymity#Anonymity_on_the_Internet) del [análisis de tráfico](https://es.wikipedia.org/wiki/Análisis_de_tráfico).
+[Tor](https://www.torproject.org)es una implementación 'open source' de 2da generación del [enrutamiento de cebolla](https://es.wikipedia.org/wiki/Encaminamiento_de_cebolla) que provee libre acceso a una red proxy anónimos. Su principal objetivo es proteger el [anónimato en Internet](https://en.wikipedia.org/wiki/Anonymity#Anonymity_on_the_Internet "wikipedia:Anonymity") del [análisis de tráfico](https://es.wikipedia.org/wiki/Análisis_de_tráfico).
 
 ## Contents
 

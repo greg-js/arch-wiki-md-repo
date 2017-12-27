@@ -10,99 +10,54 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Kernel_(operating_system)
 
 	The kernel is a computer program that constitutes the central core of a computer's operating system. It has complete control over everything that occurs in the system. As such, it is the first program loaded on startup, and then manages the remainder of the startup, as well as input/output requests from software, translating them into data processing instructions for the central processing unit. It is also responsible for managing memory, and for managing and communicating with computing peripherals, like printers, speakers, etc. The kernel is a fundamental part of a modern computer's operating system.
 
-There are various alternative kernels available for Arch Linux in addition to the mainline [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:Linux kernel"). This article lists some of the options available in the repositories with a brief description of each. There is also a description of patches that can be applied to the system's kernel. The article ends with an overview of custom kernel compilation with links to various methods.
+There are various alternative kernels available for Arch Linux in addition to the stable [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:Linux kernel"). This article lists some of the options available in the repositories with a brief description of each. There is also a description of patches that can be applied to the system's kernel. The article ends with an overview of custom kernel compilation with links to various methods.
 
 ## Contents
 
-*   [1 Precompiled kernels](#Precompiled_kernels)
-    *   [1.1 Official packages](#Official_packages)
-    *   [1.2 AUR packages](#AUR_packages)
-*   [2 Patches and Patchsets](#Patches_and_Patchsets)
-    *   [2.1 How to install](#How_to_install)
-    *   [2.2 Major patchsets](#Major_patchsets)
-        *   [2.2.1 -ck](#-ck)
-        *   [2.2.2 -rt](#-rt)
-        *   [2.2.3 -bld](#-bld)
-        *   [2.2.4 -pf](#-pf)
-    *   [2.3 Individual patches](#Individual_patches)
-*   [3 Compilation](#Compilation)
-    *   [3.1 Using the Arch Build System](#Using_the_Arch_Build_System)
-    *   [3.2 Traditional](#Traditional)
+*   [1 Officially supported](#Officially_supported)
+*   [2 Compilation](#Compilation)
+    *   [2.1 Using Arch Build System](#Using_Arch_Build_System)
+    *   [2.2 Traditional](#Traditional)
+*   [3 Patches and patchsets](#Patches_and_patchsets)
+    *   [3.1 Major patchsets](#Major_patchsets)
+    *   [3.2 Other patchsets](#Other_patchsets)
 *   [4 See also](#See_also)
 
-## Precompiled kernels
+## Officially supported
 
-### Official packages
+*   **[Stable](https://www.kernel.org/category/releases.html)** — Vanilla Linux kernel and modules, with a few patches applied.
 
-	[linux](https://www.archlinux.org/packages/?name=linux)
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux](https://www.archlinux.org/packages/?name=linux)
 
-	The Linux kernel and modules from the *core* repository. Vanilla kernel with [a few patches applied](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/linux).
+*   **[Hardened](https://kernsec.org/wiki/index.php/Kernel_Self_Protection_Project)** — A security-focused Linux kernel applying a set of hardening patches to mitigate kernel and userspace exploits. It also enables more upstream kernel hardening features than [linux](https://www.archlinux.org/packages/?name=linux) along with user namespaces (with unprivileged usage disabled by default via a patch), audit and [SELinux](/index.php/SELinux "SELinux").
 
-	[linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened)
+	[https://github.com/copperhead/linux-hardened](https://github.com/copperhead/linux-hardened) || [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened)
 
-	A security-focused Linux kernel applying a set of [hardening patches](https://github.com/thestinger/linux-hardened) to mitigate kernel and userspace exploits. It also enables more upstream kernel hardening features than [linux](https://www.archlinux.org/packages/?name=linux) along with user namespaces (with unprivileged usage disabled by default via a patch), audit and [SELinux](/index.php/SELinux "SELinux").
+*   **[Longterm](https://www.kernel.org/category/releases.html)** — Long-term support (LTS) Linux kernel and modules.
 
-	[linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
 
-	Long term support (LTS) Linux kernel and modules from the *core* repository.
+*   **[ZEN Kernel](https://liquorix.net/)** — Result of a collaborative effort of kernel hackers to provide the best Linux kernel possible for everyday systems.
 
-	[linux-zen](https://www.archlinux.org/packages/?name=linux-zen)
+	[https://github.com/zen-kernel/zen-kernel](https://github.com/zen-kernel/zen-kernel) || [linux-zen](https://www.archlinux.org/packages/?name=linux-zen)
 
-	The [ZEN Kernel](https://github.com/zen-kernel/zen-kernel) is the result of a collaborative effort of kernel hackers to provide the best Linux kernel possible for everyday systems.
+## Compilation
 
-### AUR packages
+Arch Linux provides for several methods of kernel compilation.
 
-Note for [AUR](/index.php/AUR "AUR") packages, "pre-compiled" means the packages are (usually) maintained, tested and verified to be working. Some of the listed packages may also be available as binary packages via [Unofficial repositories](/index.php/Unofficial_repositories "Unofficial repositories").
+### Using Arch Build System
 
-	[linux-aufs_friendly](https://aur.archlinux.org/packages/linux-aufs_friendly/)
+Takes advantage of the high quality of existing [linux](https://www.archlinux.org/packages/?name=linux) [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and the benefits of [package management](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system").
 
-	The aufs-compatible linux kernel and modules, useful when using [docker](/index.php/Docker "Docker").
+See [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System").
 
-	[linux-ck](https://aur.archlinux.org/packages/linux-ck/)
+### Traditional
 
-	Linux Kernel built with Con Kolivas' ck1 patchset—see the [#-ck](#-ck) section or the [linux-ck](/index.php/Linux-ck "Linux-ck") page. Additional options which can be toggled on/off in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") include: BFQ scheduler, nconfig, localmodconfig and use running kernel's config.
+This involves manually downloading a source tarball, and compiling in your home directory as a normal user.
 
-	[linux-git](https://aur.archlinux.org/packages/linux-git/)
+See [Kernels/Traditional compilation](/index.php/Kernels/Traditional_compilation "Kernels/Traditional compilation").
 
-	Linux kernel and modules built using sources from [Linus Torvalds' Git repository](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git).
-
-	[linux-libre](https://aur.archlinux.org/packages/linux-libre/)
-
-	The Linux Kernels without "binary blobs".
-
-	[linux-lqx](https://aur.archlinux.org/packages/linux-lqx/)
-
-	[Liquorix](http://liquorix.net) is a distro kernel replacement built using a Debian-targeted configuration and the ZEN kernel sources. Designed for desktop, multimedia, and gaming workloads, it is often used as a Debian Linux performance replacement kernel. Damentz, the maintainer of the Liquorix patchset, is a developer for the ZEN patchset as well.
-
-	[linux-lts310](https://aur.archlinux.org/packages/linux-lts310/)
-
-	The Linux 3.10 Long-Term Support Kernel and modules.
-
-	[linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)
-
-	The Mainline Linux Kernel and modules.
-
-	[linux-mptcp](https://aur.archlinux.org/packages/linux-mptcp/)
-
-	The Linux Kernel and modules with [Multipath TCP](http://multipath-tcp.org/) support.
-
-	[linux-pf](https://aur.archlinux.org/packages/linux-pf/)
-
-	Linux kernel and modules with the pf-kernel patch [-ck patchset (BFS included), TuxOnIce, BFQ] and aufs3.
-
-	[linux-rt](https://aur.archlinux.org/packages/linux-rt/)
-
-	Linux kernel with the realtime patch set. Improves latency and introduces hard realtime support. [https://rt.wiki.kernel.org/](https://rt.wiki.kernel.org/)
-
-	[linux-vfio](https://aur.archlinux.org/packages/linux-vfio/)/[linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)
-
-	The Linux kernel and a few patches written by Alex Williamson (acs override and i915) to enable the ability to do PCI Passthrough with KVM on some machines.
-
-	[linux-kpatch](https://aur.archlinux.org/packages/linux-kpatch/)
-
-	The Linux kernel with [live patching](/index.php/Live_patching "Live patching") support.
-
-## Patches and Patchsets
+## Patches and patchsets
 
 There are lots of reasons to patch your kernel, the major ones are for performance or support for non-mainline features such as reiser4 file system support. Other reasons might include fun and to see how it is done and what the improvements are.
 
@@ -110,82 +65,75 @@ However, it is important to note that the best way to increase the speed of your
 
 The config files for the Arch kernel packages can be used as a starting point. They are in the Arch package source files, for example [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/linux) linked from [linux](https://www.archlinux.org/packages/?name=linux). The config file of your currently running kernel may also be available in your file system at `/proc/config.gz` if the `CONFIG_IKCONFIG_PROC` kernel option is enabled.
 
-### How to install
-
-The installation process of custom kernel packages relies on the Arch Build System (ABS). If you have not built any custom packages yet you may consult the following articles: [Arch Build System](/index.php/Arch_Build_System "Arch Build System") and [Creating packages](/index.php/Creating_packages "Creating packages").
-
 If you have not actually patched or customized a kernel before it is not that hard and there are many PKGBUILDs on the forum for individual patchsets. However, you are advised to start from scratch with a bit of research on the benefits of each patchset, rather than just arbitrarily picking one. This way you will learn much more about what you are doing rather than just choosing a kernel at startup and then be left wondering what it actually does.
-
-See [#Compilation](#Compilation).
-
-**Note:** Do not forget to change the boot options in your bootloader, e.g. [GRUB](/index.php/GRUB "GRUB"), to use the new kernel.
 
 ### Major patchsets
 
-First of all it is important to note that patchsets are developed by a variety of people. Some of these people are actually involved in the production of the linux kernel and others are hobbyists, which may reflect its level of reliability and stability.
+**Warning:** Patchsets are developed by a variety of people. Some of these people are actually involved in the production of the linux kernel and others are hobbyists, which may reflect its level of reliability and stability.
 
-It is also worth noting that some patchsets are built on the back of other patchsets (which may or may not be reflected in the title of the patch). Patchsets (and kernel updates) can be released **very** frequently and often it is not worth keeping up with ALL of them; so, do not go crazy, unless you make it your hobby!
+*   **[Linux-ck](/index.php/Linux-ck "Linux-ck")** — Contains patches by Con Kolivas designed to improve system responsiveness with specific emphasis on the desktop, but suitable to any workload.
 
-You can search Google for more sets, but remember to use quotes (`"-nitro"`, for example); otherwise, Google will deliberately **NOT** show the results you want!
+	[http://ck.kolivas.org/patches/](http://ck.kolivas.org/patches/) || [linux-ck](https://aur.archlinux.org/packages/linux-ck/)
 
-**Note:** This section is for **information only** - clearly no guarantees of stability or reliability are implied by inclusion on this page.
+*   **[pf-kernel](https://pfactum.github.io/pf-kernel/)** — Provides you with a handful of awesome features not merged into mainline. It is based on neither existing Linux fork nor patchset, although some unofficial ports may be used if required patches have not been released officially. The most prominent patches of linux-pf are PDS CPU scheduler and UKSM.
 
-#### -ck
+	[https://pfactum.github.io/pf-kernel/](https://pfactum.github.io/pf-kernel/) || Packages:
 
-[Linux-ck](/index.php/Linux-ck "Linux-ck") contains patches designed to improve system responsiveness with specific emphasis on the desktop, but suitable to any workload. The patches are created and maintained by Con Kolivas, his site is at [http://users.tpg.com.au/ckolivas/kernel/](http://users.tpg.com.au/ckolivas/kernel/). Con maintains a full set but also provides the patches broken down so you can add only those you prefer.
+*   [Repository](/index.php/Unofficial_user_repositories#home_post-factum_Arch_Extra "Unofficial user repositories") by pf-kernel developer, [post-factum](https://aur.archlinux.org/account/post-factum)
 
-The -ck patches can be found at [http://ck.kolivas.org/patches/](http://ck.kolivas.org/patches/)
+*   [Repository](/index.php/Unofficial_user_repositories#home-thaodan "Unofficial user repositories"), [linux-pf](https://aur.archlinux.org/packages/linux-pf/), [linux-pf-preset-default](https://aur.archlinux.org/packages/linux-pf-preset-default/), [linux-pf-lts](https://aur.archlinux.org/packages/linux-pf-lts/) by [Thaodan](https://aur.archlinux.org/account/Thaodan)
 
-#### -rt
+*   **[Realtime kernel](/index.php/Realtime_kernel "Realtime kernel")** — Maintained by a small group of core developers, led by Ingo Molnar. This patch allows nearly all of the kernel to be preempted, with the exception of a few very small regions of code ("raw_spinlock critical regions"). This is done by replacing most kernel spinlocks with mutexes that support priority inheritance, as well as moving all interrupt and software interrupts to kernel threads.
 
-See [Realtime kernel](/index.php/Realtime_kernel "Realtime kernel").
+	[https://wiki.linuxfoundation.org/realtime/start](https://wiki.linuxfoundation.org/realtime/start) || [linux-rt](https://aur.archlinux.org/packages/linux-rt/), [linux-rt-lts](https://aur.archlinux.org/packages/linux-rt-lts/)
 
-This patchset is maintained by a small group of core developers, led by Ingo Molnar. This patch allows nearly all of the kernel to be preempted, with the exception of a few very small regions of code ("raw_spinlock critical regions"). This is done by replacing most kernel spinlocks with mutexes that support priority inheritance, as well as moving all interrupt and software interrupts to kernel threads.
+### Other patchsets
 
-It further incorporates high resolution timers - a patch set, which is independently maintained.
+Some of the listed packages may also be available as binary packages via [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories").
 
-[as said from the [Real-Time Linux Wiki](https://rt.wiki.kernel.org/index.php/CONFIG_PREEMPT_RT_Patch)]
+*   **Aufs** — The aufs-compatible linux kernel and modules, useful when using [docker](/index.php/Docker "Docker").
 
-patch at [https://www.kernel.org/pub/linux/kernel/projects/rt/](https://www.kernel.org/pub/linux/kernel/projects/rt/)
+	[http://aufs.sourceforge.net/](http://aufs.sourceforge.net/) || [linux-aufs_friendly](https://aur.archlinux.org/packages/linux-aufs_friendly/)
 
-#### -bld
+*   **BLD** — Best described as a O(1) CPU picking technique. Which is done by reordering CPU runqueues based on runqueue loads. In other words, it keeps the scheduler aware of the load changes, which helps scheduler to keep runqueues in an order. This technique does not depend on scheduler ticks. The two most simple things in this technique are: load tracking and runqueue ordering; these are relatively simpler operations. Load tracking will be done whenever a load change happens on the system and based on this load change runqueue will be ordered. So, if we have an ordered runqueue from lowest to highest, then picking the less (or even busiest) runqueue is easy. Scheduler can pick the lowest runqueue without calculation and comparison at the time of placing a task in a runqueue. And while trying to distribute load at sched_exec and sched_fork our best choice is to pick the lowest busiest runqueue of the system. And in this way, system remains balanced without doing any load balancing. At the time of try_to_wake_up picking the idlest runqueue is topmost priority but it has been done as per domain basis to utilize CPU cache properly and it's an area where more concentration is requires.
 
-**Warning:** This patch is in development.
+	[https://github.com/rmullick/bld-patches](https://github.com/rmullick/bld-patches) || [linux-bld](https://aur.archlinux.org/packages/linux-bld/)
 
-BLD is best described as a O(1) CPU picking technique. Which is done by reordering CPU runqueues based on runqueue loads. In other words, it keeps the scheduler aware of the load changes, which helps scheduler to keep runqueues in an order. This technique does not depend on scheduler ticks. The two most simple things in this technique are: load tracking and runqueue ordering; these are relatively simpler operations. Load tracking will be done whenever a load change happens on the system and based on this load change runqueue will be ordered. So, if we have an ordered runqueue from lowest to highest, then picking the less (or even busiest) runqueue is easy. Scheduler can pick the lowest runqueue without calculation and comparison at the time of placing a task in a runqueue. And while trying to distribute load at sched_exec and sched_fork our best choice is to pick the lowest busiest runqueue of the system. And in this way, system remains balanced without doing any load balancing. At the time of try_to_wake_up picking the idlest runqueue is topmost priority but it has been done as per domain basis to utilize CPU cache properly and it's an area where more concentration is requires.
+*   **Git** — Linux kernel and modules built using sources from Linus Torvalds' Git repository
 
-Google Code web page: [https://code.google.com/p/bld/](https://code.google.com/p/bld/) *(old)*
+	[https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git) || [linux-git](https://aur.archlinux.org/packages/linux-git/)
 
-Github web page: [https://github.com/rmullick/bld-patches](https://github.com/rmullick/bld-patches)
+*   **[Kpatch](/index.php/Kernel_live_patching "Kernel live patching")** — The Linux kernel with live patching support.
 
-#### -pf
+	[https://github.com/dynup/kpatch](https://github.com/dynup/kpatch) || [linux-kpatch](https://aur.archlinux.org/packages/linux-kpatch/)
 
-[linux-pf](https://aur.archlinux.org/packages/linux-pf/) is yet another Linux kernel fork which provides you with a handful of awesome features not merged into mainline. It is based on neither existing Linux fork nor patchset, although some unofficial ports may be used if required patches have not been released officially. The most prominent patches of linux-pf are PDS CPU scheduler and UKSM.
+*   **Libre** — The Linux Kernels without "binary blobs".
 
-Official site: [https://pfactum.github.io/pf-kernel/](https://pfactum.github.io/pf-kernel/)
+	[https://www.fsfla.org/ikiwiki/selibre/linux-libre/](https://www.fsfla.org/ikiwiki/selibre/linux-libre/) || [linux-libre](https://aur.archlinux.org/packages/linux-libre/)
 
-### Individual patches
+*   **Liquorix** — Debian-targeted configuration and the ZEN kernel sources. Designed for desktop, multimedia, and gaming workloads, it is often used as a Debian Linux performance replacement kernel. Damentz, the maintainer of the Liquorix patchset, is a developer for the ZEN patchset as well.
 
-These are patches which can be simply included in any build of a vanilla kernel or incorporated (probably with some major tweaking) into another patchset:
+	[https://liquorix.net](https://liquorix.net) || [linux-lqx](https://aur.archlinux.org/packages/linux-lqx/)
 
-*   [Reiser4](/index.php/Reiser4 "Reiser4")
-*   [fbsplash](/index.php/Fbsplash "Fbsplash")
+*   **Longterm 3.10** — Long-term support (LTS) Linux 3.10 kernel and modules.
 
-## Compilation
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts310](https://aur.archlinux.org/packages/linux-lts310/)
 
-Arch Linux provides for several methods of kernel compilation.
+*   **Mainline** — The Mainline Linux Kernel and modules.
 
-### Using the Arch Build System
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)
 
-Using the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") takes advantage of the high quality of the existing [linux](https://www.archlinux.org/packages/?name=linux) [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and the benefits of [package management](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system"). The PKGBUILD is structured so that you can stop the build after the source is downloaded and configure the kernel.
+*   **MultiPath TCP** — The Linux Kernel and modules with Multipath TCP support.
 
-See [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System").
+	[https://multipath-tcp.org/](https://multipath-tcp.org/) || [linux-mptcp](https://aur.archlinux.org/packages/linux-mptcp/)
 
-### Traditional
+*   **[Reiser4](/index.php/Reiser4 "Reiser4")** — Successor filesystem for ReiserFS, developed from scratch by Namesys and Hans Reiser.
 
-This involves manually downloading a source tarball, and compiling in your home directory as a normal user. Once configured, two installation methods are available; the traditional manual method, or with [Makepkg](/index.php/Makepkg "Makepkg") + [Pacman](/index.php/Pacman "Pacman").
+	[https://sourceforge.net/projects/reiser4/files/](https://sourceforge.net/projects/reiser4/files/) || [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/)
 
-See [Kernels/Traditional compilation](/index.php/Kernels/Traditional_compilation "Kernels/Traditional compilation").
+*   **VFIO** — The Linux kernel and a few patches written by Alex Williamson (acs override and i915) to enable the ability to do PCI Passthrough with KVM on some machines.
+
+	[https://lwn.net/Articles/499240/](https://lwn.net/Articles/499240/) || [linux-vfio](https://aur.archlinux.org/packages/linux-vfio/), [linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)
 
 ## See also
 

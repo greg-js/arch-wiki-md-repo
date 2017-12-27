@@ -26,7 +26,7 @@ Related articles
 
 ## Installing PostgreSQL
 
-[Install](/index.php/Install "Install") the [postgresql](https://www.archlinux.org/packages/?name=postgresql) package. Then [set a password](/index.php/Users_and_groups#Other_examples_of_user_management "Users and groups") for the newly created *postgres* user.
+[Install](/index.php/Install "Install") the [postgresql](https://www.archlinux.org/packages/?name=postgresql) package. Then [set a password](/index.php/Users_and_groups#Example_adding_a_user "Users and groups") for the newly created *postgres* user.
 
 Then, switch to the default PostgreSQL user *postgres* by executing the following command:
 

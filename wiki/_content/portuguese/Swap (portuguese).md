@@ -1,3 +1,7 @@
+Artigos relacionados
+
+*   [fstab](/index.php/Fstab "Fstab")
+
 Uma livre tradução de [Tudo sobre o espaço de troca do Linux *(All about Linux swap space)*](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space):
 
 	*O Linux divide sua RAM* (random access memory) *física em pedaços de memória chamados páginas. A troca* (swapping) *é o processo no qual uma página de memória é copiada a um espaço pré-configurado no disco rígido, chamado de espaço de troca* (swap space)*, para liberar aquela página de memória. O tamanho combinado da memória física e do espaço de troca é a quantidade de memória virtual disponível.*
@@ -23,7 +27,7 @@ Para configurar um espaço de troca Linux, o comando `mkswap` é usado. Por exem
 
 ```
 
-**Warning:** Todos os dados na partição especificada serão pedidos.
+**Atenção:** Todos os dados na partição especificada serão pedidos.
 
 Para ativar o dispositivo para paginação:
 
@@ -119,4 +123,4 @@ ext logical  physical  expected  length flags
 
 Neste exemplo, o `<Swap File Offset>` é `7546880`.
 
-**Note:** Por favor, note que no parâmetro `resume` do kernel você ainda pode ter que adicionar o caminho da partição (por exemplo, `resume=/dev/sda1`), e não o caminho explícito do arquivo *swap*! O parâmetro `resume_offset` serve para informar o sistema onde o arquivo *swap* começa no disco rígido.
+**Nota:** Por favor, note que no parâmetro `resume` do kernel você ainda pode ter que adicionar o caminho da partição (por exemplo, `resume=/dev/sda1`), e não o caminho explícito do arquivo *swap*! O parâmetro `resume_offset` serve para informar o sistema onde o arquivo *swap* começa no disco rígido.

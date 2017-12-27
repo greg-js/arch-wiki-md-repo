@@ -1,9 +1,10 @@
 ## Contents
 
 *   [1 Introdução](#Introdu.C3.A7.C3.A3o)
-*   [2 Instalando o InspIRCd](#Instalando_o_InspIRCd)
-*   [3 Configurando (mandatório)](#Configurando_.28mandat.C3.B3rio.29)
+*   [2 Instalação](#Instala.C3.A7.C3.A3o)
+*   [3 Configuração](#Configura.C3.A7.C3.A3o)
 *   [4 Carregando módulos](#Carregando_m.C3.B3dulos)
+    *   [4.1 Módulos de terceiros](#M.C3.B3dulos_de_terceiros)
 *   [5 Iniciando/parando o daemon](#Iniciando.2Fparando_o_daemon)
 *   [6 Links externos](#Links_externos)
 
@@ -11,55 +12,63 @@
 
 O **InspIRCd** (Inspire IRC daemon) é um servidor de IRC leve e modular escrito em C++. Como é um dos poucos projectos escritos do zero evita cair num número de falhas de arquitectura e design que perseguem outros servidores mais antigos e derivados destes como o UnrealIRCd 3\. O InspIRCd é o servidor de IRC usado no conhecido [Chatspike IRC network](http://www.chatspike.net/).
 
-## Instalando o InspIRCd
+## Instalação
 
-Antes de começar assegure-se que faz o seguinte:
+**Nota:** Antes de começar, certifique-se de que você não tem um usuário ou grupo com nome `inspircd`, pois o pacote vai criar e executar usando os privilégios deste usuário (por motivos de segurança).
 
-1.  Verifique que não tem nenhum utilizador ou grupo chamado "irc" pois o daemon vai criar e correr usando os privilégios deste utilizador (por questões de segurança).
-2.  Leia como compilar pacotes do [AUR](/index.php/AUR "AUR") (veja [ABS](/index.php/ABS "ABS")) ou instale o [yaourt](/index.php/Yaourt "Yaourt") (**recomendado**) que automatiza todo o processo.
+[Instale](/index.php/Instale "Instale") o pacote [inspircd](https://aur.archlinux.org/packages/inspircd/).
 
-Agora que já instalou o [yaourt](/index.php/Yaourt "Yaourt") pode instalar o [InspIRCd](/index.php/InspIRCd "InspIRCd") correndo o seguinte comando:
+## Configuração
 
-```
-yaourt inspircd
+O arquivo de configuração `/etc/inspircd/inspircd.conf` é **obrigatório**, formatado em HTML e precisa ser criado na instalação.
 
-```
+Como você define seu arquivo de configuração dependerá muito das suas necessidades e configuração do sistema, motivo pelo qual não há nenhum arquivo de configuração definido por padrão.
 
-## Configurando (mandatório)
+**Dica:** Você pode usar o exemplo de arquivo de configuração (muito bem documentado) localizado em `/usr/share/inspircd/examples/inspircd.conf.example`. Copie este arquivo para `/etc/inspircd/inspircd.conf`, leia-o e edite-o cuidadosamente para atender às suas necessidades.
 
-Isto vai depender muito das suas necessidades e da configuração do sistema e portanto não há uma configuração predefinida. Há, no entanto, um ficheiro de configuração exemplo (muito bem documentado) localizado (como sempre) em **/etc/inspircd/inspircd.conf.example**. Leia e edite este ficheiro cuidadosamente e quando terminar mude o nome do ficheiro para **inspircd.conf**. O ficheiro inspircd.conf está formatado como um documento html, o que para a maioria das pessoas é de certa forma diferente do que estão habituadas. O formato de uma instrução dentro do ficheiro de configuração é semelhante ao seguinte:
+Seu formato HTML pode ser um pouco diferente do que a maioria das pessoas está acostumada. O formato de uma instrução dentro do arquivo de configuração se parece com o seguinte:
 
 ```
- <nometag variavel="valor">
+<nometag variable = "valor">
 
 ```
 
-Note que existem alguns **<die value="qualquer coisa aqui">** no ficheiro de exemplo para assegurar que todo o ficheiro é lido. Tem de remover estas entradas caso constrário o servidor não vai iniciar. Mais informações estão disponíveis na página [InspIRCd configuration](http://wiki.inspircd.org/Configuration) da wiki.
+**Nota:** O arquivo de exemplo tem algumas linhas `<die value="qualquer coisa aqui>` no arquivo exemplo para garantir que você leia a coisa toda. Você deve remover essas entradas, caso contrário o servidor não iniciará.
+
+Certifique-se de configurar o arquivo pid para `/var/lib/inspircd/inspircd.pid`, conforme explicado no pacote [script de instalação](https://aur.archlinux.org/cgit/aur.git/tree/inspircd.install?h=inspircd).
+
+Mais informações estão disponíveis na página wiki de [configuração do InspIRCd](http://wiki.inspircd.org/Configuration).
 
 ## Carregando módulos
 
-Por pré-definição, o InspIRCd não carrega nenhum módulo. Como todas as funcionalidades fora da[RFC 1459](http://tools.ietf.org/html/rfc1459) são encaradas como um módulo, sem carregar nenhum módulo o seu servidor não vai fazer nada que impressione. Pode carregar módulos adicionado por exemplo:
+Por pré-definição, o InspIRCd não carrega nenhum módulo. Como todas as funcionalidades fora da [RFC 1459](http://tools.ietf.org/html/rfc1459) são consideradas como um módulo, sem carregar nenhum módulo o seu servidor não vai fazer nada que impressione.
+
+Pode carregar módulos adicionado por exemplo:
 
 ```
 <module name="m_silence.so">
 
 ```
 
-Isto vai carregar o módulo m_silence (que disponibiliza a quase standard especificação SILENCE). Tem de reiniciar o daemon para que as alterações façam efeito. Uma lista dos módulos disponíveis está disponível na página wiki [InspIRCd modules](http://wiki.inspircd.org/modules).
+Isto vai carregar o módulo m_silence (que disponibiliza a quase especificação padrão SILENCE). Tem de reiniciar o daemon para que as alterações façam efeito. Uma lista dos módulos disponíveis está disponível na página wiki de [módulos do InspIRCd](http://wiki.inspircd.org/modules).
+
+### Módulos de terceiros
+
+Para instalar um módulo de terceiros, salve o `[módulo].cpp` dentro de `[dir-compilação]/inspircd/src/inspircd/src/modules/` e continue o processo de compilação. Se você já compilou e instalou o InspIRCd e ter os arquivos fonte intactos, compile o módulo com `./configure -modupdate; make` e copie-o para: `/usr/lib/inspircd/modules/`.
 
 ## Iniciando/parando o daemon
 
-Pode iniciar e parar o InspIRCd como habitual, correndo:
+Pode iniciar e parar o InspIRCd como habitual, executando:
 
 ```
 sudo /etc/rc.d/inspircd {start|stop|restart}
 
 ```
 
-A primeira inicialização pode falhar. Se tal acontecer tente reiniciar até que não obtenha nenhum erro. Depois disto não terá quaisquer problemas. A razão por de trás disto é que por uma questão de segurança o daemon não corre como root como normalmente acontece, portanto o script tem de assegurar-se que o utilizador **irc** tem permissões para ler e escrever os ficheiros pid e log. Para iniciar no boot adicione (como sempre) [inspircd] à lista de [daemons] no ficheiro **/etc/rc.conf file**.
+A primeira inicialização algumas vezes falha, então tente reiniciar até você não ter mais erros. Depois disto você deve não ter quaisquer problemas. A razão por de trás disto é que por uma questão de segurança o daemon não executa como *root* como normalmente acontece, portanto o script tem de assegurar-se que o usuário **irc** tem permissões para ler e escrever os arquivos pid e log. Para iniciar no boot adicione (como sempre) [inspircd] à lista de [daemons] no arquivo **/etc/rc.conf**.
 
 ## Links externos
 
-*   [Inspire IRCd (website)](http://www.inspircd.org)
+*   [Inspire IRCd (site)](http://www.inspircd.org)
 *   [Inspire IRCd (wiki)](http://wiki.inspircd.org/Main_Page)
-*   [Inspire IRCd (canal de irc)](irc://irc.inspircd.org/inspircd)
+*   [Inspire IRCd (canal irc)](irc://irc.inspircd.org/inspircd)

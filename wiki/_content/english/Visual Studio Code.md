@@ -14,8 +14,8 @@
 The following packages provide VSCode:
 
 *   [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)
-*   [visual-studio-code-oss](https://aur.archlinux.org/packages/visual-studio-code-oss/)
-*   [visual-studio-code-git](https://aur.archlinux.org/packages/visual-studio-code-git/)
+*   [code](https://aur.archlinux.org/packages/code/)
+*   [code-git](https://aur.archlinux.org/packages/code-git/)
 
 ### Debugging C#
 

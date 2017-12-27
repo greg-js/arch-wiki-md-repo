@@ -15,9 +15,9 @@ Related articles
 
 The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager") is one of the major distinguishing features of Arch Linux. It combines a simple binary package format with an easy-to-use [build system](/index.php/Arch_Build_System "Arch Build System"). The goal of *pacman* is to make it possible to easily manage packages, whether they are from the [official repositories](/index.php/Official_repositories "Official repositories") or the user's own builds.
 
-*pacman* keeps the system up to date by synchronizing package lists with the master server. This server/client model also allows the user to download/install packages with a simple command, complete with all required dependencies.
+*Pacman* keeps the system up to date by synchronizing package lists with the master server. This server/client model also allows the user to download/install packages with a simple command, complete with all required dependencies.
 
-*pacman* is written in the C programming language and uses the [tar](https://en.wikipedia.org/wiki/tar_(computing) "w:tar (computing)") format for packaging.
+*Pacman* is written in the C programming language and uses the [tar](https://en.wikipedia.org/wiki/tar_(computing) "w:tar (computing)") format for packaging.
 
 **Tip:** The [pacman](https://www.archlinux.org/packages/?name=pacman) package contains other useful tools such as [makepkg](/index.php/Makepkg "Makepkg"), **pactree**, **vercmp**, and [checkupdates](/index.php/Checkupdates "Checkupdates"). Run `pacman -Qlq pacman | grep bin` to see the full list.
 
@@ -51,14 +51,14 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
     *   [3.3 "Failed to init transaction (unable to lock database)" error](#.22Failed_to_init_transaction_.28unable_to_lock_database.29.22_error)
     *   [3.4 Packages cannot be retrieved on installation](#Packages_cannot_be_retrieved_on_installation)
     *   [3.5 Manually reinstalling pacman](#Manually_reinstalling_pacman)
-    *   [3.6 pacman crashes during an upgrade](#pacman_crashes_during_an_upgrade)
+    *   [3.6 Pacman crashes during an upgrade](#Pacman_crashes_during_an_upgrade)
     *   [3.7 "Unable to find root device" error after rebooting](#.22Unable_to_find_root_device.22_error_after_rebooting)
     *   [3.8 Signature from "User <email@example.org>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40example.org.3E.22_is_unknown_trust.2C_installation_failed)
     *   [3.9 Request on importing PGP keys](#Request_on_importing_PGP_keys)
     *   [3.10 Error: key "0123456789ABCDEF" could not be looked up remotely](#Error:_key_.220123456789ABCDEF.22_could_not_be_looked_up_remotely)
     *   [3.11 Signature from "User <email@archlinux.org>" is invalid, installation failed](#Signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.2C_installation_failed)
     *   [3.12 "Warning: current locale is invalid; using default "C" locale" error](#.22Warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.22_error)
-    *   [3.13 pacman does not honor proxy settings](#pacman_does_not_honor_proxy_settings)
+    *   [3.13 Pacman does not honor proxy settings](#Pacman_does_not_honor_proxy_settings)
     *   [3.14 How do I reinstall all packages, retaining information on whether something was explicitly installed or as a dependency?](#How_do_I_reinstall_all_packages.2C_retaining_information_on_whether_something_was_explicitly_installed_or_as_a_dependency.3F)
     *   [3.15 "Cannot open shared object file" error](#.22Cannot_open_shared_object_file.22_error)
     *   [3.16 Freeze of package downloads](#Freeze_of_package_downloads)
@@ -184,14 +184,14 @@ To remove a package, which is required by another package, without removing the 
 
 ```
 
-*pacman* saves important configuration files when removing certain applications and names them with the extension: *.pacsave*. To prevent the creation of these backup files use the `-n` option:
+*Pacman* saves important configuration files when removing certain applications and names them with the extension: *.pacsave*. To prevent the creation of these backup files use the `-n` option:
 
 ```
 # pacman -Rn *package_name*
 
 ```
 
-**Note:** *pacman* will not remove configurations that the application itself creates (for example "dotfiles" in the home folder).
+**Note:** *Pacman* will not remove configurations that the application itself creates (for example "dotfiles" in the home folder).
 
 ### Upgrading packages
 
@@ -200,7 +200,7 @@ To remove a package, which is required by another package, without removing the 
 *   Users are expected to follow the guidance in the [System maintenance#Upgrading the system](/index.php/System_maintenance#Upgrading_the_system "System maintenance") section to upgrade their systems regularly and not blindly run the following command.
 *   Arch only supports full system upgrades. See [System maintenance#Partial upgrades are unsupported](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance") and [#Installing packages](#Installing_packages) for details.
 
-*pacman* can update all packages on the system with just one command. This could take quite a while depending on how up-to-date the system is. The following command synchronizes the repository databases *and* updates the system's packages, excluding "local" packages that are not in the configured repositories:
+*Pacman* can update all packages on the system with just one command. This could take quite a while depending on how up-to-date the system is. The following command synchronizes the repository databases *and* updates the system's packages, excluding "local" packages that are not in the configured repositories:
 
 ```
 # pacman -Syu
@@ -209,9 +209,9 @@ To remove a package, which is required by another package, without removing the 
 
 ### Querying package databases
 
-*pacman* queries the local package database with the `-Q` flag, the sync database with the `-S` flag and the files database with the `-F` flag. See `pacman -Q --help`, `pacman -S --help` and `pacman -F --help` for the respective suboptions of each flag.
+*Pacman* queries the local package database with the `-Q` flag, the sync database with the `-S` flag and the files database with the `-F` flag. See `pacman -Q --help`, `pacman -S --help` and `pacman -F --help` for the respective suboptions of each flag.
 
-*pacman* can search for packages in the database, searching both in packages' names and descriptions:
+*Pacman* can search for packages in the database, searching both in packages' names and descriptions:
 
 ```
 $ pacman -Ss *string1* *string2* ...
@@ -350,7 +350,7 @@ The `depends` file lists the packages this package depends on, while `desc` has 
 
 ### Cleaning the package cache
 
-*pacman* stores its downloaded packages in `/var/cache/pacman/pkg/` and does not remove the old or uninstalled versions automatically, therefore it is necessary to deliberately clean up that folder periodically to prevent such folder to grow indefinitely in size.
+*Pacman* stores its downloaded packages in `/var/cache/pacman/pkg/` and does not remove the old or uninstalled versions automatically, therefore it is necessary to deliberately clean up that folder periodically to prevent such folder to grow indefinitely in size.
 
 The built-in option to remove all the cached packages that are not currently installed is:
 
@@ -425,7 +425,7 @@ Install a 'remote' package (not from a repository stated in *pacman'*s configura
 
 To inhibit the `-S`, `-U` and `-R` actions, `-p` can be used.
 
-*pacman* always lists packages to be installed or removed and asks for permission before it takes action.
+*Pacman* always lists packages to be installed or removed and asks for permission before it takes action.
 
 ### Installation reason
 
@@ -483,7 +483,7 @@ For advanced functionality install [pkgfile](/index.php/Pkgfile "Pkgfile"), whic
 
 ## Configuration
 
-*pacman'*s settings are located in `/etc/pacman.conf`: this is the place where the user configures the program to work in the desired manner. In-depth information about the configuration file can be found in [pacman.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5).
+*Pacman'*s settings are located in `/etc/pacman.conf`: this is the place where the user configures the program to work in the desired manner. In-depth information about the configuration file can be found in [pacman.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5).
 
 ### General options
 
@@ -539,7 +539,7 @@ NoExtract=usr/lib/systemd/system/*
 
 Later rules override previous ones, and you can negate a rule by prepending `!`.
 
-**Tip:** *pacman* issues warning messages about missing locales when updating a package for which locales have been cleared by *localepurge* or *bleachbit*. Commenting the `CheckSpace` option in `pacman.conf` suppresses such warnings, but consider that the space-checking functionality will be disabled for all packages.
+**Tip:** *Pacman* issues warning messages about missing locales when updating a package for which locales have been cleared by *localepurge* or *bleachbit*. Commenting the `CheckSpace` option in `pacman.conf` suppresses such warnings, but consider that the space-checking functionality will be disabled for all packages.
 
 #### Maintain several configuration files
 
@@ -554,7 +554,7 @@ where `*/path/to/common/settings*` file contains the same options for both confi
 
 #### Hooks
 
-*pacman* can run pre- and post-transaction hooks from the `/usr/share/libalpm/hooks/` directory; more directories can be specified with the `HookDir` option in `pacman.conf`, which defaults to `/etc/pacman.d/hooks`. Hook file names must be suffixed with *.hook*.
+*Pacman* can run pre- and post-transaction hooks from the `/usr/share/libalpm/hooks/` directory; more directories can be specified with the `HookDir` option in `pacman.conf`, which defaults to `/etc/pacman.d/hooks`. Hook file names must be suffixed with *.hook*.
 
 For more information on alpm hooks, see [alpm-hooks(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/alpm-hooks.5).
 
@@ -568,7 +568,7 @@ Each repository section allows defining the list of its mirrors directly or in a
 
 #### Package security
 
-*pacman* supports package signatures, which add an extra layer of security to the packages. The default configuration, `SigLevel = Required DatabaseOptional`, enables signature verification for all the packages on a global level: this can be overridden by per-repository `SigLevel` lines. For more details on package signing and signature verification, take a look at [pacman-key](/index.php/Pacman-key "Pacman-key").
+*Pacman* supports package signatures, which add an extra layer of security to the packages. The default configuration, `SigLevel = Required DatabaseOptional`, enables signature verification for all the packages on a global level: this can be overridden by per-repository `SigLevel` lines. For more details on package signing and signature verification, take a look at [pacman-key](/index.php/Pacman-key "Pacman-key").
 
 ## Troubleshooting
 
@@ -626,7 +626,7 @@ See also [FAQ#Why is there only a single version of each shared library in the o
 
 ### Manually reinstalling pacman
 
-**Warning:** It is extremely easy to break your system even worse using this approach. Use this only as a last resort if the method from [#pacman crashes during an upgrade](#pacman_crashes_during_an_upgrade) is not an option.
+**Warning:** It is extremely easy to break your system even worse using this approach. Use this only as a last resort if the method from [#Pacman crashes during an upgrade](#Pacman_crashes_during_an_upgrade) is not an option.
 
 Even if *pacman* is terribly broken, you can fix it manually by downloading the latest packages and extracting them to the correct locations. The rough steps to perform are
 
@@ -652,7 +652,7 @@ but you may only need to update a few of them depending on your issue. An exampl
 
 Note the use of the `w` flag for interactive mode. Running non-interactively is very risky since you might end up overwriting an important file. Also take care to extract packages in the correct order (i.e. dependencies first). [This forum post](https://bbs.archlinux.org/viewtopic.php?id=95007) contains an example of this process where only a couple *pacman* dependencies are broken.
 
-### pacman crashes during an upgrade
+### Pacman crashes during an upgrade
 
 In the case that *pacman* crashes with a "database write" error while removing packages, and reinstalling or upgrading packages fails thereafter, do the following:
 
@@ -727,7 +727,7 @@ Make sure to correct the [time](/index.php/Time "Time"), for example with `ntpd 
 
 As the error message says, your locale is not correctly configured. See [Locale](/index.php/Locale "Locale").
 
-### pacman does not honor proxy settings
+### Pacman does not honor proxy settings
 
 Make sure that the relevant environment variables (`$http_proxy`, `$ftp_proxy` etc.) are set up. If you use *pacman* with [sudo](/index.php/Sudo "Sudo"), you need to configure sudo to [pass these environment variables to pacman](/index.php/Sudo#Environment_variables "Sudo").
 
@@ -743,7 +743,7 @@ It looks like previous *pacman* transaction removed or corrupted shared librarie
 
 To recover from this situation you need to unpack required libraries to your filesystem manually. First find what package contains the missed library and then locate it in the *pacman* cache (`/var/cache/pacman/pkg/`). Unpack required shared library to the filesystem. This will allow to run *pacman*.
 
-Now you need to [reinstall](#Installing_specific_packages) the broken package. Note that you need to use `--force` flag as you just unpacked system files and *pacman* does not know about it. *pacman* will correctly replace our shared library file with one from package.
+Now you need to [reinstall](#Installing_specific_packages) the broken package. Note that you need to use `--force` flag as you just unpacked system files and *pacman* does not know about it. *Pacman* will correctly replace our shared library file with one from package.
 
 That's it. Update the rest of the system.
 

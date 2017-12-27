@@ -61,13 +61,47 @@ La web root si trova in **/opt/lampp/htdocs/**. Tutti i file inseriti in questa 
 
 Per aggiungere una cartella diversa da quella predefinita potete aggiungere un "alias".
 
-1.  Modificate il file httpd.conf con il vostro editor preferito. `nano /opt/lampp/etc/httpd.conf` 
-2.  Nella sezione alias, aggiungete un alias:
+*   Modificate il file httpd.conf con il vostro editor preferito.
+
+```
+# nano /opt/lampp/etc/httpd.conf
+
+```
+
+oppure
+
+```
+# vim /opt/lampp/etc/httpd.conf
+
+```
+
+*   trovato "DocumentRoot", vedrete qualcosa di simile:
+
+```
+DocumentRoot "/opt/lampp/htdocs"
+<Directory "/opt/lampp/htdocs">
+    ...    
+    ...
+
+</Directory>
+```
+
+*   Nella riga dopo "</Directory>" incollate questo, dove /home/web/ rappresenta, come esempio una cartella che avrete già creato:
+
+```
+<Directory "/home/web/">
+    Options Indexes FollowSymLinks ExecCGI Includes
+    AllowOverride All
+    Require all granted
+</Directory>
+```
+
+1.  Nella sezione alias, aggiungete un alias:
 
 ```
 <IfModule alias_module>
-    Alias /test /home/web
-        <directory /home/web>
+    Alias /test /home/web/
+        <directory /home/web/>
             AllowOverride FileInfo Limit Options Indexes
             Order allow,deny
             Allow from all

@@ -641,6 +641,8 @@ Both [acpilight](https://aur.archlinux.org/packages/acpilight/) or [kbdlight](ht
 
 As of 2017-11-12, [acpilight](https://aur.archlinux.org/packages/acpilight/) provides a "just-works" solution tested on a MacbookPro 8,1\.
 
+Alternatively you might want to check out the [Keyboard backlight](/index.php/Keyboard_backlight "Keyboard backlight") wiki page.
+
 ###### NVIDIA note
 
 If the brightness does not function correctly through pommed, make sure you have installed the [nvidia-bl](https://aur.archlinux.org/packages/nvidia-bl/) package and insert

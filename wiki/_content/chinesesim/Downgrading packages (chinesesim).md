@@ -12,7 +12,7 @@
 
 *   降级某个软件包可能需要降级相应的依赖包.如果依赖包数量巨大,参见[Arch Linux Archive (简体中文)#如何恢复所有包到指定日期](/index.php/Arch_Linux_Archive_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.A6.82.E4.BD.95.E6.81.A2.E5.A4.8D.E6.89.80.E6.9C.89.E5.8C.85.E5.88.B0.E6.8C.87.E5.AE.9A.E6.97.A5.E6.9C.9F "Arch Linux Archive (简体中文)").
 *   在修改配置文件和脚本时请小心.只要我们不绕过pacman的安全措施,它将为我们处理这些问题.
-*   如果软件包降级会引进 soname 变更，所有依赖包可能都需要降级或[重新编译](/index.php/Frequently_asked_questions#What_if_I_run_a_full_system_upgrade_and_there_will_be_an_update_for_a_shared_library.2C_but_not_for_the_apps_that_depend_on_it.3 "Frequently asked questions").
+*   如果软件包降级会引进 soname 变更，所有依赖包可能都需要降级或[重新编译](/index.php/Frequently_asked_questions#What_if_I_run_a_full_system_upgrade_and_there_will_be_an_update_for_a_shared_library.2C_but_not_for_the_apps_that_depend_on_it.3F "Frequently asked questions").
 
 ## Contents
 

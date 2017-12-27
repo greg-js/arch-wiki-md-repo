@@ -1,4 +1,4 @@
-[Pantheon](https://bbs.archlinux.org/viewtopic.php?id=152930) is the default desktop environment originally created for the [elementary OS](http://elementary.io/) distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with [GNOME](/index.php/GNOME "GNOME") Shell and MacOS.
+[Pantheon](https://bbs.archlinux.org/viewtopic.php?id=152930) is the default desktop environment originally created for the [elementary OS](http://elementary.io/) distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with [GNOME](/index.php/GNOME "GNOME") Shell and OSX.
 
 ## Contents
 
@@ -18,7 +18,7 @@
     *   [3.2 Pantheon Files](#Pantheon_Files)
         *   [3.2.1 Enable context menu entries](#Enable_context_menu_entries)
     *   [3.3 Terminal](#Terminal)
-        *   [3.3.1 Opacity (transparency)](#Opacity_.28transparency.29)
+        *   [3.3.1 Opacity](#Opacity)
 *   [4 Known Issues](#Known_Issues)
     *   [4.1 Usability](#Usability)
         *   [4.1.1 Cannot interact with the LightDM Pantheon greeter](#Cannot_interact_with_the_LightDM_Pantheon_greeter)
@@ -53,25 +53,20 @@ Server = https://pkgbuild.com/~alucryd/$repo/$arch
 
 ### Desktop Environment
 
-To get the basic Pantheon desktop interface, start by installing [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/), which pulls--among other dependencies--the core components:
+For the minimal Pantheon shell, install [pantheon-session-git](https://aur.archlinux.org/packages/pantheon-session-git/), which pulls--among other dependencies--the core components:
 
-*   [cerbere](https://aur.archlinux.org/packages/cerbere/): Watchdog service to keep core Pantheon apps running
-*   [gala-git](https://aur.archlinux.org/packages/gala-git/): Window Manager (development version)
-*   [wingpanel](https://aur.archlinux.org/packages/wingpanel/): Top panel
-*   [pantheon-applications-menu-git](https://aur.archlinux.org/packages/pantheon-applications-menu-git/): Application launcher (development version)
-
-You may additionally install these packages as well:
-
-*   [plank](https://www.archlinux.org/packages/?name=plank) or [plank-bzr](https://aur.archlinux.org/packages/plank-bzr/): MacOS-like Dock
-*   [wingpanel-git](https://aur.archlinux.org/packages/wingpanel-git/): Top panel (development version)
+*   [cerbere-git](https://aur.archlinux.org/packages/cerbere-git/): Watchdog service; restarts core components if they crash.
+*   [gala-git](https://aur.archlinux.org/packages/gala-git/): Window and composting manager
+*   [wingpanel-git](https://aur.archlinux.org/packages/wingpanel-git/): Top panel (launcher, clock, indicators)
+*   [pantheon-applications-menu-git](https://aur.archlinux.org/packages/pantheon-applications-menu-git/): Application launcher formerly known as "Slingshot"
+*   [plank](https://www.archlinux.org/packages/?name=plank): OSX-style Dock
 
 ### Services and Configuration
 
 These packages provide background services and default settings for Pantheon and elementary OS applications:
 
-*   [pantheon-default-settings-bzr](https://aur.archlinux.org/packages/pantheon-default-settings-bzr/): Default desktop appearance, behavior, and application configuration; pulls in theme packages [elementary-icon-theme](https://www.archlinux.org/packages/?name=elementary-icon-theme), [gtk-theme-elementary-bzr](https://aur.archlinux.org/packages/gtk-theme-elementary-bzr/), [pantheon-backgrounds-bzr](https://aur.archlinux.org/packages/pantheon-backgrounds-bzr/), and [plank-theme-pantheon-bzr](https://aur.archlinux.org/packages/plank-theme-pantheon-bzr/).
-*   [contractor](https://www.archlinux.org/packages/?name=contractor) or [contractor-git](https://aur.archlinux.org/packages/contractor-git/): Service for sharing data between apps
-*   [gnome-settings-daemon-elementary](https://aur.archlinux.org/packages/gnome-settings-daemon-elementary/): A patch against [gnome-settings-daemon-ubuntu](https://aur.archlinux.org/packages/gnome-settings-daemon-ubuntu/) to support [elementary-dpms-helper-bzr](https://aur.archlinux.org/packages/elementary-dpms-helper-bzr/) and [wingpanel-indicator-power-git](https://aur.archlinux.org/packages/wingpanel-indicator-power-git/)
+*   [pantheon-default-settings-git](https://aur.archlinux.org/packages/pantheon-default-settings-git/): Default appearance, behavior, and configuration; pulls in theme packages [elementary-icon-theme](https://www.archlinux.org/packages/?name=elementary-icon-theme), [gtk-theme-elementary-git](https://aur.archlinux.org/packages/gtk-theme-elementary-git/), and [elementary-wallpapers-git](https://aur.archlinux.org/packages/elementary-wallpapers-git/)
+*   [gnome-settings-daemon-elementary](https://aur.archlinux.org/packages/gnome-settings-daemon-elementary/): A patched [gnome-settings-daemon-ubuntu](https://aur.archlinux.org/packages/gnome-settings-daemon-ubuntu/) required by [elementary-dpms-helper-git](https://aur.archlinux.org/packages/elementary-dpms-helper-git/) and [wingpanel-indicator-power-git](https://aur.archlinux.org/packages/wingpanel-indicator-power-git/)
 *   [pantheon-print-git](https://aur.archlinux.org/packages/pantheon-print-git/): Print settings dialog
 *   [pantheon-polkit-agent-git](https://aur.archlinux.org/packages/pantheon-polkit-agent-git/): Polkit authentication agent
 
@@ -95,28 +90,27 @@ It is also recommended to install the following fonts:
 
 These are some of the original, patched, and selected packages that comprise the elementary OS software suite:
 
-*   [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files) or [pantheon-files-bzr](https://aur.archlinux.org/packages/pantheon-files-bzr/): File explorer developed from Marlin
+*   [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files) or [pantheon-files-git](https://aur.archlinux.org/packages/pantheon-files-git/): File explorer developed from Marlin
 *   [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) or [pantheon-terminal-git](https://aur.archlinux.org/packages/pantheon-terminal-git/): Terminal emulator
 *   [scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor) or [scratch-text-editor-git](https://aur.archlinux.org/packages/scratch-text-editor-git/): Text editor
 *   [pantheon-calculator](https://aur.archlinux.org/packages/pantheon-calculator/) or [pantheon-calculator-git](https://aur.archlinux.org/packages/pantheon-calculator-git/): Calculator
-*   [pantheon-music-git](https://aur.archlinux.org/packages/pantheon-music-git/): Audio player developed from [pantheon-music](https://www.archlinux.org/packages/?name=pantheon-music) (ex Noise Player)
-*   [pantheon-videos-git](https://aur.archlinux.org/packages/pantheon-videos-git/): Video player developed from [pantheon-videos](https://www.archlinux.org/packages/?name=pantheon-videos)
+*   [pantheon-music](https://www.archlinux.org/packages/?name=pantheon-music) or [pantheon-music-git](https://aur.archlinux.org/packages/pantheon-music-git/): Audio player formerly known as "Noise"
+*   [pantheon-videos](https://www.archlinux.org/packages/?name=pantheon-videos) or [pantheon-videos-git](https://aur.archlinux.org/packages/pantheon-videos-git/): Video player formerly known as "Audience"
 *   [pantheon-calendar-git](https://aur.archlinux.org/packages/pantheon-calendar-git/): Calendar developed from [maya-calendar](https://aur.archlinux.org/packages/maya-calendar/), integrates default calendar with [wingpanel-indicator-datetime-git](https://aur.archlinux.org/packages/wingpanel-indicator-datetime-git/)
 *   [epiphany-pantheon-bzr](https://aur.archlinux.org/packages/epiphany-pantheon-bzr/): Web browser, replacing [midori-granite](https://aur.archlinux.org/packages/midori-granite/)
-*   [pantheon-mail-git](https://aur.archlinux.org/packages/pantheon-mail-git/): Email client based on [geary](https://www.archlinux.org/packages/?name=geary)
+*   [pantheon-mail-git](https://aur.archlinux.org/packages/pantheon-mail-git/): Email client developed from [geary](https://www.archlinux.org/packages/?name=geary)
 *   [pantheon-screenshot](https://aur.archlinux.org/packages/pantheon-screenshot/) or [pantheon-screenshot-git](https://aur.archlinux.org/packages/pantheon-screenshot-git/): Screenshot tool
 *   [eidete-bzr](https://aur.archlinux.org/packages/eidete-bzr/): Simple screencaster
-*   [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos) or [pantheon-photos-git](https://aur.archlinux.org/packages/pantheon-photos-git/): Photo manager based on [shotwell](https://www.archlinux.org/packages/?name=shotwell)
+*   [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos) or [pantheon-photos-git](https://aur.archlinux.org/packages/pantheon-photos-git/): Photo manager developed from [shotwell](https://www.archlinux.org/packages/?name=shotwell)
 *   [pantheon-camera-git](https://aur.archlinux.org/packages/pantheon-camera-git/): Webcam app developed from [snap-photobooth](https://aur.archlinux.org/packages/snap-photobooth/)
 *   [elementary-scan-bzr](https://aur.archlinux.org/packages/elementary-scan-bzr/): Simple scan utility (does not build)
-*   [footnote-bzr](https://aur.archlinux.org/packages/footnote-bzr/): Note taking app
 *   [switchboard](https://aur.archlinux.org/packages/switchboard/) or [switchboard-git](https://aur.archlinux.org/packages/switchboard-git/): Pluggable settings manager similar to [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)
 
 ## Launching Pantheon
 
 ### Via [Display manager](/index.php/Display_manager "Display manager")
 
-[pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/) provides a [gnome-session](https://www.archlinux.org/packages/?name=gnome-session) entry for display managers such as [gdm](https://www.archlinux.org/packages/?name=gdm) or [lightdm](https://www.archlinux.org/packages/?name=lightdm).
+[pantheon-session-git](https://aur.archlinux.org/packages/pantheon-session-git/) provides a [gnome-session](https://www.archlinux.org/packages/?name=gnome-session) entry for display managers such as [gdm](https://www.archlinux.org/packages/?name=gdm) or [lightdm](https://www.archlinux.org/packages/?name=lightdm).
 
 ### Via [xinit](/index.php/Xinit "Xinit")
 
@@ -162,7 +156,7 @@ If you want to enable context menu entries such as for [file-roller](https://www
 
 ### Terminal
 
-#### Opacity (transparency)
+#### Opacity
 
 To make [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) (semi-)transparent, [set the dconf key](#Configuration) `org.pantheon.terminal.settings.opacity` to your desired opacity; for [pantheon-terminal-git](https://aur.archlinux.org/packages/pantheon-terminal-git/), the background color and transparency are set by `org.pantheon.terminal.settings.background`.
 

@@ -1,8 +1,8 @@
 Artigos relacionados
 
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager (Português)](/index.php/Display_manager_(Portugu%C3%AAs) "Display manager (Português)")
-*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição")
+*   [Gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela")
 *   [GTK+](/index.php/GTK%2B "GTK+")
 *   [GDM (Português)](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)")
 *   [GNOME/Tips and tricks](/index.php/GNOME/Tips_and_tricks "GNOME/Tips and tricks")
@@ -18,7 +18,7 @@ Artigos relacionados
 *   [MATE](/index.php/MATE "MATE")
 *   [Official repositories (Português)#gnome-unstable](/index.php/Official_repositories_(Portugu%C3%AAs)#gnome-unstable "Official repositories (Português)")
 
-[GNOME](https://www.gnome.org/) (pronunciado *gah-nohm* ou *nohm*) é um [ambiente de desktop](/index.php/Desktop_environment "Desktop environment"), ou *desktop environment*, que visa ser simples e fácil de usar. Ele é projetado por [O Projeto GNOME](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") e é composto interiramente de software livre e código aberto. O GNOME é uma parte do [Projeto GNU](https://en.wikipedia.org/wiki/pt:Projeto_GNU "wikipedia:pt:Projeto GNU"). O *display* padrão é o [Wayland](/index.php/Wayland "Wayland") em vez do [Xorg](/index.php/Xorg "Xorg").
+[GNOME](https://www.gnome.org/) (pronunciado *gah-nohm* ou *nohm*) é um [ambiente de desktop](/index.php/Desktop_environment "Desktop environment"), ou *desktop environment*, que visa ser simples e fácil de usar. Ele é projetado por [O Projeto GNOME](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") e é composto interiramente de software livre e código aberto. O GNOME é uma parte do [Projeto GNU](https://en.wikipedia.org/wiki/pt:Projeto_GNU "wikipedia:pt:Projeto GNU"). O *display* padrão é o [Wayland](/index.php/Wayland "Wayland") em vez do [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)").
 
 ## Contents
 
@@ -126,7 +126,7 @@ GNOME possui três sessões disponíveis, todos usando o GNOME Shell.
 
 ## Iniciando o GNOME
 
-O GNOME pode ser iniciado tanto graficamente, usando um [gerenciador de exibição](/index.php/Display_manager "Display manager"), ou manualmente pelo console.
+O GNOME pode ser iniciado tanto graficamente, usando um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição"), ou manualmente pelo console.
 
 **Nota:** Suporte para bloqueio de tela no GNOME é fornecido pelo GDM. Se o GNOME não for iniciado usando o GDM, você terá que usar outro bloqueador de tela para fornecer esta funcionalidade - veja [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
 
@@ -292,7 +292,7 @@ O bando de dados do Tracker pode ser consultado usando o comando *tracker-sparql
 
 ### Configurações avançadas
 
-Como anotado acima, muitas opções de configuração tal como alterar o tema do [GTK+](/index.php/GTK%2B "GTK+") ou o tema do [gerenciador de janelas](/index.php/Window_manager "Window manager"), não são expostas no painel de Configurações do sistema (*gnome-control-center*). Aqueles usuários que desejem alterar essas configurações pode desejar usar a Ferramenta de Ajustes do GNOME ([gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool)), uma ferramenta gráfica conveniente que expõe muitas das configurações.
+Como anotado acima, muitas opções de configuração tal como alterar o tema do [GTK+](/index.php/GTK%2B "GTK+") ou o tema do [gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela"), não são expostas no painel de Configurações do sistema (*gnome-control-center*). Aqueles usuários que desejem alterar essas configurações pode desejar usar a Ferramenta de Ajustes do GNOME ([gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool)), uma ferramenta gráfica conveniente que expõe muitas das configurações.
 
 Configurações do GNOME (que são armazenadas no banco de dados DConf) também podem ser alteradas usando o [*dconf-editor*](https://developer.gnome.org/dconf/unstable/dconf-editor.html) (uma ferramenta gráfica de configuração de DConf) ou a ferramenta de linha de comando [*gsettings*](https://developer.gnome.org/gio/stable/GSettings.html). A Ferramenta de Ajustes do GNOME não faz nada no plano de fundo do GUI; note que você não encontrará nela todas as configurações descritas nas seções a seguir.
 

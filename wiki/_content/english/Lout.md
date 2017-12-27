@@ -2,7 +2,7 @@
 
 ## Installation
 
-The [lout package](https://www.archlinux.org/packages/community/x86_64/lout) could be [Installed](/index.php/Install "Install") from the [official repositories](https://wiki.archlinux.org/index.php/Official_repositories).
+The [lout package](https://www.archlinux.org/packages/community/x86_64/lout) could be [Installed](/index.php/Install "Install") from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 In order to enable cyrillic printout, fonts need to be installed separately (e.g [lout-dejavu](https://aur.archlinux.org/packages/lout-dejavu-git) from [AUR](/index.php/AUR "AUR"))
 
@@ -28,7 +28,7 @@ Lout supports only one byte encoding, thus you need to use specific character ma
 
 ```
 
-[Core_utilities#iconv](/index.php/Core_utilities#iconv "Core utilities") could be used to obtain required encoding, before feed source to lout:
+[Core utilities#iconv](/index.php/Core_utilities#iconv "Core utilities") could be used to obtain required encoding, before feed source to lout:
 
 ```
 $ iconv -f utf-8 -t koi8-r example.lout example.koi8-r.lout
@@ -47,4 +47,4 @@ $ ps2pdf example.ps example.pdf
 
 *   [A User's Guide to the Lout Document Formatting System](https://src.fedoraproject.org/repo/pkgs/lout/user-guide.pdf/10b5825ad7e3e9d801aab159bce41545/user-guide.pdf)
 *   [An Expert’s Guide to the Lout Document Formatting System](https://src.fedoraproject.org/repo/pkgs/lout/expert-guide.pdf/6952736ef663234ad0585ac7de29ccd6/expert-guide.pdf)
-*   [Lout on Wikipedia](https://en.wikipedia.org/wiki/Lout_(software))
+*   [Lout on Wikipedia](https://en.wikipedia.org/wiki/Lout_(software) "wikipedia:Lout (software)")

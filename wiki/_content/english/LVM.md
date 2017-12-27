@@ -47,6 +47,9 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
     *   [6.2 LVM cache](#LVM_cache)
         *   [6.2.1 Create cache](#Create_cache)
         *   [6.2.2 Remove cache](#Remove_cache)
+    *   [6.3 RAID](#RAID)
+        *   [6.3.1 Setup RAID](#Setup_RAID)
+        *   [6.3.2 Configure mkinitcpio for RAID](#Configure_mkinitcpio_for_RAID)
 *   [7 Graphical configuration](#Graphical_configuration)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Changes that could be required due to changes in the Arch-Linux defaults](#Changes_that_could_be_required_due_to_changes_in_the_Arch-Linux_defaults)
@@ -245,6 +248,8 @@ This command will first set up the three partitions as physical volumes (if nece
 
 ### Create logical volumes
 
+**Tip:** If you wish to use snapshots, logical volume caching, thin provisioned logical volumes or RAID see [#Logical volume types](#Logical_volume_types).
+
 Now we need to create logical volumes on this volume group. You create a logical volume with the next command by giving the name of a new logical volume, its size, and the volume group it will live on:
 
 ```
@@ -335,7 +340,7 @@ Afterwards, you can continue in normal installation instructions with the [creat
 **Tip:**
 
 *   The `lvm2` and `sd-lvm2` hooks are installed by [lvm2](https://www.archlinux.org/packages/?name=lvm2), not [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio). If you are running *mkinitcpio* in an *arch-chroot* for a new installation, [lvm2](https://www.archlinux.org/packages/?name=lvm2) must be installed inside the *arch-chroot* for *mkinitcpio* to find the `lvm2` or `sd-lvm2` hook. If [lvm2](https://www.archlinux.org/packages/?name=lvm2) only exists outside the *arch-chroot*, *mkinitcpio* will output `Error: Hook 'lvm2' cannot be found`.
-*   If your root filesystem is on LVM RAID you will also need to add `dm-raid` and the appropriate RAID modules (e.g. `raid0`, `raid1`, `raid10` or `raid456`) to the MODULES section of `mkinitcpio.conf`.
+*   If your root filesystem is on LVM RAID see [#Configure mkinitcpio for RAID](#Configure_mkinitcpio_for_RAID).
 
 ### Kernel options
 
@@ -745,6 +750,66 @@ If you ever need to undo the one step creation operation above:
 ```
 
 This commits any pending writes still in the cache back to the origin LV, then deletes the cache. Other options are available and described in [lvmcache(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvmcache.7).
+
+### RAID
+
+From [lvmraid(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvmraid.7):
+
+	*[lvm(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.8) RAID is a way to create a Logical Volume (LV) that uses multiple physical devices to improve performance or tolerate device failures. In LVM, the physical devices are Physical Volumes (PVs) in a single Volume Group (VG).*
+
+LVM RAID supports RAID 0, RAID 1, RAID 4, RAID 5, RAID 6 and RAID 10\. See [Wikipedia:Standard RAID levels](https://en.wikipedia.org/wiki/Standard_RAID_levels "wikipedia:Standard RAID levels") for details on each level.
+
+#### Setup RAID
+
+Create physical volumes:
+
+```
+# pvcreate /dev/sda2 /dev/sdb2
+
+```
+
+Create volume group on the physical volumes:
+
+```
+# vgcreate VolGroup00 /dev/sda2 /dev/sdb2
+
+```
+
+Create logical volumes useing `lvcreate --type *raidlevel*`, see [lvmraid(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvmraid.7) and [lvcreate(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvcreate.8) for more options.
+
+```
+# lvcreate --type RaidLevel [OPTIONS] -n Name -L Size VG [PVs]
+
+```
+
+For example:
+
+```
+# lvcreate --type raid1 --mirrors 1 -L 20G -n myraid1vol VolGroup00 /dev/sda2 /dev/sdb2
+
+```
+
+will create a 20GiB mirrored logical volume named "myraid1vol" in VolGroup00 on `/dev/sda2` and `/dev/sdb2`.
+
+#### Configure mkinitcpio for RAID
+
+If your root filesystem is on LVM RAID additionally to `lvm2` or `sd-lvm2` hooks, you need to add `dm-raid` and the appropriate RAID modules (e.g. `raid0`, `raid1`, `raid10` or `raid456`) to the MODULES array in `mkinitcpio.conf`.
+
+For busybox based initramfs:
+
+ `/etc/mkinitcpio.conf` 
+```
+MODULES=(**dm-raid raid1**)
+HOOKS=(base **udev** ... block **lvm2** filesystems)
+```
+
+For systemd based initramfs:
+
+ `/etc/mkinitcpio.conf` 
+```
+MODULES=(**dm-raid raid1**)
+HOOKS=(base **systemd** ... block **sd-lvm2** filesystems)
+```
 
 ## Graphical configuration
 
