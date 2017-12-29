@@ -280,7 +280,7 @@ Vedi anche [List of applications (Italiano)#Fogli di calcolo](/index.php/List_of
 
 *   **[Kalzium](https://en.wikipedia.org/wiki/Kalzium "wikipedia:Kalzium")** — Tavola periodica degli elementi con editor di molecole e risolutore di equazioni del progetto [KDE](/index.php/KDE "KDE"). È incluso in [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
-	[http://edu.kde.org/kalzium/](http://edu.kde.org/kalzium/) || [kdeedu-kalzium](https://www.archlinux.org/packages/?name=kdeedu-kalzium)
+	[http://edu.kde.org/kalzium/](http://edu.kde.org/kalzium/) || [kalzium](https://www.archlinux.org/packages/?name=kalzium)
 
 #### Biochimica
 

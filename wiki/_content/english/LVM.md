@@ -793,13 +793,13 @@ will create a 20GiB mirrored logical volume named "myraid1vol" in VolGroup00 on 
 
 #### Configure mkinitcpio for RAID
 
-If your root filesystem is on LVM RAID additionally to `lvm2` or `sd-lvm2` hooks, you need to add `dm-raid` and the appropriate RAID modules (e.g. `raid0`, `raid1`, `raid10` or `raid456`) to the MODULES array in `mkinitcpio.conf`.
+If your root filesystem is on LVM RAID additionally to `lvm2` or `sd-lvm2` hooks, you need to add `dm-raid` and the appropriate RAID modules (e.g. `raid0`, `raid1`, `raid10` and/or `raid456`) to the MODULES array in `mkinitcpio.conf`.
 
 For busybox based initramfs:
 
  `/etc/mkinitcpio.conf` 
 ```
-MODULES=(**dm-raid raid1**)
+MODULES=(**dm-raid raid0 raid1 raid10 raid456**)
 HOOKS=(base **udev** ... block **lvm2** filesystems)
 ```
 
@@ -807,7 +807,7 @@ For systemd based initramfs:
 
  `/etc/mkinitcpio.conf` 
 ```
-MODULES=(**dm-raid raid1**)
+MODULES=(**dm-raid raid0 raid1 raid10 raid456**)
 HOOKS=(base **systemd** ... block **sd-lvm2** filesystems)
 ```
 

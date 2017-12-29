@@ -9,9 +9,8 @@ Designed to be cross-platform, it is known to work on Linux (x86, PowerPC and AR
 *   [1 Installation](#Installation)
 *   [2 Integration](#Integration)
     *   [2.1 PulseAudio](#PulseAudio)
-    *   [2.2 Lightweight desktops](#Lightweight_desktops)
-    *   [2.3 KDE / Phonon integration](#KDE_.2F_Phonon_integration)
-    *   [2.4 Hardware acceleration](#Hardware_acceleration)
+    *   [2.2 KDE / Phonon integration](#KDE_.2F_Phonon_integration)
+    *   [2.3 Hardware acceleration](#Hardware_acceleration)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -32,10 +31,6 @@ To make GStreamer useful, install the plugins packages you require.
 ### PulseAudio
 
 [PulseAudio](/index.php/PulseAudio "PulseAudio") support is provided by the [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) package.
-
-### Lightweight desktops
-
-To configure GStreamer, for example to change the audio output device, use *gstreamer-properties* from package [gstreamer-properties](https://aur.archlinux.org/packages/gstreamer-properties/). This can be run by each user or as root for all users. Per-user configuration files are under `$HOME/.gconf/system/gstreamer` and the global files are in `/etc/gconf/gconf.xml.defaults`.
 
 ### KDE / Phonon integration
 

@@ -56,7 +56,7 @@ O **Xorg** é uma implementação pública e código-aberto do sistema *X11 X Wi
 Antes de começar, tenha a certeza do seguinte:
 
 ```
-# Ter o [Pacman](/index.php/Pacman "Pacman") actualizado e configurado.
+# Ter o [Pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") atualizado e configurado.
 # Se está a correr outro servidor X pode fechá-lo agora. `ctrl+alt+backspace`
 # Fazer uma nota sobre *drivers* de terceiros (ex: driver nVidia ou ATI)
 
@@ -182,7 +182,7 @@ Utilizadores com placas nVidia podem utilizar isto:
 
 ```
 
-assim que tiverem os drivers [installed](/index.php/NVIDIA "NVIDIA").
+assim que tiverem os drivers [instalados](/index.php/NVIDIA "NVIDIA").
 
 ## Editar xorg.conf
 
@@ -706,7 +706,7 @@ The client connections are rejected by the X server's security mechanism, you ca
 
 See also:
 
-*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Display manager](/index.php/Display_manager_(Portugu%C3%AAs) "Display manager (Português)")
 *   [Start X at login](/index.php/Start_X_at_login "Start X at login")
 *   [Xorg Font Configuration](/index.php/Xorg_Font_Configuration "Xorg Font Configuration")
 *   Proprietary Video Drivers
@@ -714,10 +714,10 @@ See also:
     *   [NVIDIA](/index.php/NVIDIA "NVIDIA")
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
     *   [KDE](/index.php/KDE "KDE")
-    *   [GNOME](/index.php/GNOME "GNOME")
+    *   [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)")
     *   [Xfce](/index.php/Xfce "Xfce")
     *   [Enlightenment](/index.php/Enlightenment "Enlightenment")
-    *   [Fluxbox](/index.php/Fluxbox "Fluxbox")
+    *   [Fluxbox](/index.php/Fluxbox_(Portugu%C3%AAs) "Fluxbox (Português)")
 
 External Links:
 

@@ -1,4 +1,4 @@
-A variável KEYMAP é especificada no arquivo [`/etc/vconsole.conf`](/index.php/Systemd#Console_and_keymap "Systemd") (`/etc/rc.conf` usando o arquivo legado rc.conf). Ele define qual layout de teclado, ou como comumente é chamado *keymap*, será usado nos consoles virtuais. Os arquivos de layout de teclados são fornecidos pelo pacote [kbd](https://www.archlinux.org/packages/?name=kbd).
+A variável KEYMAP é especificada no arquivo `/etc/vconsole.conf` (`/etc/rc.conf` usando o arquivo legado rc.conf). Ele define qual layout de teclado, ou como comumente é chamado *keymap*, será usado nos consoles virtuais. Os arquivos de layout de teclados são fornecidos pelo pacote [kbd](https://www.archlinux.org/packages/?name=kbd).
 
 ## Layout do Teclado
 
@@ -12,7 +12,7 @@ Os mapas do teclado do Arch Linux menos comuns são encontrados no diretório `/
 | Belga | `KEYMAP="be-latin1.map.gz"` |
 | Português Brasileiro | `KEYMAP="br-abnt2.map.gz"` |
 | Franco Canadense | `KEYMAP="cf.map.gz"` |
-| Canadense multilíngua (Disponível no *[AUR](/index.php/Arch_User_Repository "Arch User Repository")*) | `KEYMAP="ca_multi.map.gz"` |
+| Canadense multilíngua (Disponível no *[AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)")*) | `KEYMAP="ca_multi.map.gz"` |
 | Colemak *(US)* | `KEYMAP="colemak"` |
 | Croata | `KEYMAP="croat.map.gz"` |
 | Tcheco | `KEYMAP="cz-lat2.map.gz"` |

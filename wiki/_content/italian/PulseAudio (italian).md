@@ -46,7 +46,7 @@ Articoli correlati
 *   Mixer da console (CLI) opzionali: [ponymix-git](https://aur.archlinux.org/packages/ponymix-git/) e [pamixer-git](https://aur.archlinux.org/packages/pamixer-git/)
 *   Controllo volume via web opzionale:
 *   Icona nella tray di sistema opzionale: [PaWebControl](https://github.com/Siot/PaWebControl)[pasystray-git](https://aur.archlinux.org/packages/pasystray-git/)
-*   Applet di Plasma per KDE: [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix) e [kdeplasma-applets-veromix](https://aur.archlinux.org/packages/kdeplasma-applets-veromix/) (Se KMix/Veromix non riescono a connettersi a PulseAudio all'avvio, potrebbe essere necessario modificare `/etc/pulse/client.conf` e modificare `autospawn = yes` in `autospawn = no`.)
+*   Applet di Plasma per KDE: [kmix](https://www.archlinux.org/packages/?name=kmix) e [kdeplasma-applets-veromix](https://aur.archlinux.org/packages/kdeplasma-applets-veromix/) (Se KMix/Veromix non riescono a connettersi a PulseAudio all'avvio, potrebbe essere necessario modificare `/etc/pulse/client.conf` e modificare `autospawn = yes` in `autospawn = no`.)
 
 ## Configurazione
 
@@ -136,7 +136,7 @@ load-module module-alsa-source **device=dsnoop**
 
 ```
 
-*   *Opzionale:* Se si utilizza [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix), si potrebbe voler controllare il volume di ALSA invece che quello di PulseAudio:
+*   *Opzionale:* Se si utilizza [kmix](https://www.archlinux.org/packages/?name=kmix), si potrebbe voler controllare il volume di ALSA invece che quello di PulseAudio:
 
 ```
 $ echo export KMIX_PULSEAUDIO_DISABLE=1 > ~/.kde4/env/kmix_disable_pulse.sh

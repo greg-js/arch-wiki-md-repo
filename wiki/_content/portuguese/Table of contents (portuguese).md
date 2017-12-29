@@ -1,7 +1,7 @@
 | [Português](/index.php/Category:Portugu%C3%AAs "Category:Português") <small>(11)</small> |
 | <small>1.</small> [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)") <small>(16)</small> |
 | <small>1.1.</small> [Desenvolvimento do Arch](/index.php/Category:Arch_development_(Portugu%C3%AAs) "Category:Arch development (Português)") <small>(1)</small> |
-| <small>1.1.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(11)</small> |
+| <small>1.1.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(14)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Portugu%C3%AAs) "Category:ArchWiki (Português)") <small>(5)</small> |
 | <small>1.2.1.</small> [Help](/index.php/Category:Help_(Portugu%C3%AAs) "Category:Help (Português)") <small>(15)</small> |
 | <small>1.3.</small> [Baixando e Instalando o Arch](/index.php/Category:Getting_and_installing_Arch_(Portugu%C3%AAs) "Category:Getting and installing Arch (Português)") <small>(5)</small> |
@@ -14,7 +14,7 @@
 | <small>4.</small> [Hardware](/index.php/Category:Hardware_(Portugu%C3%AAs) "Category:Hardware (Português)") <small>(0)</small> |
 | <small>4.1.</small> [Graphics](/index.php/Category:Graphics_(Portugu%C3%AAs) "Category:Graphics (Português)") <small>(1)</small> |
 | <small>4.2.</small> [Sound](/index.php/Category:Sound_(Portugu%C3%AAs) "Category:Sound (Português)") <small>(3)</small> |
-| <small>5.</small> [HOWTOs](/index.php/Category:HOWTOs_(Portugu%C3%AAs) "Category:HOWTOs (Português)") <small>(6)</small> |
+| <small>5.</small> [HOWTOs](/index.php/Category:HOWTOs_(Portugu%C3%AAs) "Category:HOWTOs (Português)") <small>(5)</small> |
 | <small>6.</small> [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)") <small>(3)</small> |
 | <small>6.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System_(Portugu%C3%AAs) "Category:Domain Name System (Português)") <small>(2)</small> |
 | <small>6.2.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol_(Portugu%C3%AAs) "Category:File Transfer Protocol (Português)") <small>(1)</small> |
@@ -33,7 +33,8 @@
 | <small>8.2.1.</small> [Gerenciadores de tela](/index.php/Category:Display_managers_(Portugu%C3%AAs) "Category:Display managers (Português)") <small>(3)</small> |
 | <small>8.2.2.</small> [GNOME](/index.php/Category:GNOME_(Portugu%C3%AAs) "Category:GNOME (Português)") <small>(2)</small> |
 | <small>8.2.3.</small> [Stacking WMs](/index.php/Category:Stacking_WMs_(Portugu%C3%AAs) "Category:Stacking WMs (Português)") <small>(2)</small> |
-| <small>8.3.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(12)</small> |
+| <small>8.2.4.</small> [Window managers](/index.php/Category:Window_managers_(Portugu%C3%AAs) "Category:Window managers (Português)") <small>(1)</small> |
+| <small>8.3.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(14)</small> |
 | <small>8.4.</small> [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)") <small>(4)</small> |
 | <small>9.</small> [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)") <small>(2)</small> |
 | <small>9.1.</small> [Daemons and system services](/index.php/Category:Daemons_and_system_services_(Portugu%C3%AAs) "Category:Daemons and system services (Português)") <small>(2)</small> |

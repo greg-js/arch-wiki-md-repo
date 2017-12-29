@@ -76,11 +76,11 @@ Antes de editar quaisquer arquivos de configuração, crie um backup de forma qu
 
 Mantenha uma lista de todos os pacotes instalados de forma que, se uma reinstalação completa for inevitável, seja mais fácil recriar o ambiente original.
 
-Veja [Pacman tips#List of installed packages](/index.php/Pacman_tips#List_of_installed_packages "Pacman tips") para detalhes.
+Veja [pacman/Dicas e truques#Lista de pacotes instalados](/index.php/Pacman/Dicas_e_truques#Lista_de_pacotes_instalados "Pacman/Dicas e truques") para detalhes.
 
 ### Banco de dados do pacman
 
-Veja [Pacman tips#Back-up the pacman database](/index.php/Pacman_tips#Back-up_the_pacman_database "Pacman tips").
+Veja [pacman/Dicas e truques#Fazer backup da base de dados do pacman](/index.php/Pacman/Dicas_e_truques#Fazer_backup_da_base_de_dados_do_pacman "Pacman/Dicas e truques").
 
 ### Cabeçalhos LUKS
 
@@ -152,7 +152,7 @@ O [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") faz um trab
 *   Se o programa que você deseja não estiver disponível, verifique se alguém criou um pacote no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). Siga o método naquele artigo para instalação.
 *   Por último, se o programa que você deseja não se encontra nos repositórios oficiais ou no AUR, aprenda como [criar um pacote](/index.php/Criar_um_pacote "Criar um pacote") para ele.
 
-Para limpar arquivos instalados inadequadamente, Veja [Pacman/Tips and tricks#Identify files not owned by any package](/index.php/Pacman/Tips_and_tricks#Identify_files_not_owned_by_any_package "Pacman/Tips and tricks").
+Para limpar arquivos instalados inadequadamente, Veja [Pacman/Dicas e truques#Identificar arquivos que pertençam a nenhum pacote](/index.php/Pacman/Dicas_e_truques#Identificar_arquivos_que_perten.C3.A7am_a_nenhum_pacote "Pacman/Dicas e truques").
 
 ### Escolha drivers código aberto
 
@@ -162,7 +162,7 @@ Sempre tente usar drivers de código aberto antes de recorrer a drivers propriet
 
 Seja cauteloso ao usar pacotes do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") ou um [repositório não oficial de usuários](/index.php/Unofficial_user_repository "Unofficial user repository"). A maioria é fornecida pelos usuários e, portanto, pode não ter os mesmos padrões que aqueles nos repositórios oficiais. Tenha cuidado com [auxiliares do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR") que automatizam a instalação de pacotes do AUR. **Sempre** verifique PKGBUILDs por sanidade e sinais de erro ou código malicioso antes de compilar a/ou instalar o pacote.
 
-Para simplificar a manutenção, limite a quantidade de pacotes não oficiais usados. Faça verificações periódicas de quais estão em uso e remova (ou substitua por suas contrapartes oficiais) quaisquer outros. Veja [pacman/Tips and tricks#Maintenance](/index.php/Pacman/Tips_and_tricks#Maintenance "Pacman/Tips and tricks") para comandos úteis.
+Para simplificar a manutenção, limite a quantidade de pacotes não oficiais usados. Faça verificações periódicas de quais estão em uso e remova (ou substitua por suas contrapartes oficiais) quaisquer outros. Veja [pacman/Dicas e truques#Manutenção](/index.php/Pacman/Dicas_e_truques#Manuten.C3.A7.C3.A3o "Pacman/Dicas e truques") para comandos úteis.
 
 ### Atualize o mirrorlist
 
@@ -187,7 +187,7 @@ Veja [Pacman (Português)#Limpando o cache de pacotes](/index.php/Pacman_(Portug
 
 Remova pacotes não usados do sistema para liberar espaço em disco e simplificar a manutenção
 
-See [Pacman/Tips and tricks#Removing unused packages (orphans)](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_.28orphans.29 "Pacman/Tips and tricks") for details.
+See [Pacman/Dicas e truques#Removendo pacotes não usados (órfãos)](/index.php/Pacman/Dicas_e_truques#Removendo_pacotes_n.C3.A3o_usados_.28.C3.B3rf.C3.A3os.29 "Pacman/Dicas e truques") for details.
 
 ### Arquivos de configuração antigos
 

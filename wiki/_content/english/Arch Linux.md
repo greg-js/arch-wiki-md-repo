@@ -45,7 +45,7 @@ All users are encouraged to [participate](/index.php/Getting_involved "Getting i
 
 ### Versatility
 
-Arch Linux is a general-purpose distribution. Upon installation, only a command-line environment is provided: rather than tearing out unneeded and unwanted packages, the user is offered the ability to build a custom system by choosing among thousands of high-quality packages provided in the [official repositories](/index.php/Official_repositories "Official repositories") for the [x86-64](https://en.wikipedia.org/wiki/x86-64 will [cease](https://www.archlinux.org/news/phasing-out-i686-support/) in November 2017.
+Arch Linux is a general-purpose distribution. Upon installation, only a command-line environment is provided: rather than tearing out unneeded and unwanted packages, the user is offered the ability to build a custom system by choosing among thousands of high-quality packages provided in the [official repositories](/index.php/Official_repositories "Official repositories") for the [x86-64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") architecture.
 
 Arch is backed by [pacman](/index.php/Pacman "Pacman"), a lightweight, simple and fast package manager that allows to upgrade the entire system with one command. Arch also provides the [Arch Build System](/index.php/Arch_Build_System "Arch Build System"), a ports-like system to make it easy to build and install packages from source, which can also be synchronized with one command. In addition, the *Arch User Repository* contains many thousands more of community-contributed [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") scripts for compiling installable packages from source using the [makepkg](/index.php/Makepkg "Makepkg") application. It is also possible for users to build and maintain their own custom repositories with ease.
 
@@ -81,4 +81,4 @@ Between 2012 and 2013 the traditional System V init system was replaced by syste
 
 ### Drop of i686 support
 
-On 2017-01-25 it was [announced](https://www.archlinux.org/news/phasing-out-i686-support/) that support for the i686 architecture would be phased out due to its decreasing popularity among the developers and the community.
+On 2017-01-25 it was [announced](https://www.archlinux.org/news/phasing-out-i686-support/) that support for the i686 architecture would be phased out due to its decreasing popularity among the developers and the community. By the [end of November 2017](https://www.archlinux.org/news/the-end-of-i686-support/), all i686 packages were removed from the mirrors.

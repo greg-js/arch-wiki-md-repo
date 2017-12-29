@@ -31,7 +31,7 @@ $ wg genkey | tee privatekey | wg pubkey > publickey
 
 ```
 
-The following demonstartes how to setup a simple connection between two peers.
+The following demonstrates how to setup a simple connection between two peers.
 
 #### Server
 
@@ -67,7 +67,7 @@ $ wg setconf wg0 /etc/wireguard/wg0.conf
 
 ## Setup a VPN server
 
-Wireguard comes with a tool to quickly create and tearn down VPN servers and clients, `wg-quick`. Note that the config file used here is not a valid config file that can be used with `wg setconf`.
+Wireguard comes with a tool to quickly create and tear down VPN servers and clients, `wg-quick`. Note that the config file used here is not a valid config file that can be used with `wg setconf`.
 
 #### Server
 

@@ -204,7 +204,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Administrador de archivos para el escritorio KDE.
 
-	[http://www.konqueror.org/](http://www.konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
+	[http://www.konqueror.org/](http://www.konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
 *   **[Krusader](https://en.wikipedia.org/wiki/Krusader "wikipedia:Krusader")** — Gestor de archivos de doble panel avanzado (estilo Midnight Commander) para el escritorio KDE.
 

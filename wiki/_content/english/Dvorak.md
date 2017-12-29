@@ -44,5 +44,5 @@ In Xorg, specify `es` as `XkbLayout` and `dvorak` as `XkbVariant`.
 
 	GUI
 
-*   [kdeedu-ktouch](https://www.archlinux.org/packages/?name=kdeedu-ktouch) (includes Dvorak lessons in English, French, German & Spanish)
+*   [ktouch](https://www.archlinux.org/packages/?name=ktouch) (includes Dvorak lessons in English, French, German & Spanish)
 *   [klavaro](https://www.archlinux.org/packages/?name=klavaro) Dvorak lessons: (BG; BR; DE_neo2; EO; FR; FR_bépo; TR; UK; US; US_BR; US_ES; US_SE)

@@ -204,7 +204,7 @@ Este artículo contiene un listado general de aplicaciones, ordenadas por catego
 
 *   **[KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet")** — Gestor de descargas de KDE que soporta HTTP(S), FTP y BitTorrent. Parte del paquete [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
 
-	[http://www.kde.org/applications/internet/kget/](http://www.kde.org/applications/internet/kget/) || [kdenetwork-kget](https://www.archlinux.org/packages/?name=kdenetwork-kget)
+	[http://www.kde.org/applications/internet/kget/](http://www.kde.org/applications/internet/kget/) || [kget](https://www.archlinux.org/packages/?name=kget)
 
 *   **[KTorrent](https://en.wikipedia.org/wiki/KTorrent "wikipedia:KTorrent")** — Cliente BitTorrent rico en características para KDE.
 
@@ -312,7 +312,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Kopete](https://en.wikipedia.org/wiki/Kopete "wikipedia:Kopete")** — Cliente de mensajería amigable compatible con AIM, ICQ, Windows Live Messenger, Yahoo, Jabber, Gadu-Gadu, Novell GroupWise Messenger, y otras redes de mensajería. Parte del paquete [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
 
-	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
+	[http://kopete.kde.org/](http://kopete.kde.org/) || [kopete](https://www.archlinux.org/packages/?name=kopete)
 
 *   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — Cliente de mensajería de KDE que usa [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)"). Se entiende como un reemplazo de Kopete.
 
@@ -738,7 +738,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **Newsbeuter** — Agregador RSS basado en ncurses con el diseño y teclas de atajo similar al cliente de email [Mutt](/index.php/Mutt "Mutt").
 
-	[http://newsbeuter.org](http://newsbeuter.org) || [newsbeuter](https://www.archlinux.org/packages/?name=newsbeuter)
+	[http://newsbeuter.org](http://newsbeuter.org) || [newsboat](https://www.archlinux.org/packages/?name=newsboat)
 
 *   **Rawdog** — «RSS Aggregator Without Delusions Of Grandeur» (*Agregador RSS sin delirios de grandeza*) que pasa RSS/CDF/Atom a una página HTML estática de artículos ordenados cronológicamente.
 
@@ -864,7 +864,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Navegador Web basado en Qt y KHTML, parte del grupo [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
 
-	[http://konqueror.org/](http://konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
+	[http://konqueror.org/](http://konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Altamente configurable, micronavegador basado en el motor WebKit y GTK+. Es muy rápido, extensible por Lua y licenciado bajo GNU GPLv3 license.
 
@@ -1174,11 +1174,11 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[KolourPaint](https://en.wikipedia.org/wiki/KolourPaint "wikipedia:KolourPaint")** — Editor gráfico raster de KDE, similar a Paint de Microsoft anterior a Windows 7, pero con algunas características adicionales, tales como soporte para la transparencia. Parte de los grupos [kde](https://www.archlinux.org/groups/x86_64/kde/) y [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/).
 
-	[http://kolourpaint.org](http://kolourpaint.org) || [kdegraphics-kolourpaint](https://www.archlinux.org/packages/?name=kdegraphics-kolourpaint)
+	[http://kolourpaint.org](http://kolourpaint.org) || [kolourpaint](https://www.archlinux.org/packages/?name=kolourpaint)
 
 *   **[Krita](https://en.wikipedia.org/wiki/Krita "wikipedia:Krita")** — Software de dibujo e ilustración digital basado en la plataforma KDE y en las bibliotecas de Calligra. Parte del grupo [calligra](https://www.archlinux.org/packages/?name=calligra).
 
-	[http://krita.org/](http://krita.org/) || [calligra-krita](https://www.archlinux.org/packages/?name=calligra-krita)
+	[http://krita.org/](http://krita.org/) || [krita](https://www.archlinux.org/packages/?name=krita)
 
 *   **Luminance HDR** — Interfaz gráfica de código abierto que tiene como objetivo proporcionar un programa para imágenes HDR.
 
@@ -1226,7 +1226,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Editor de gráficos vectoriales, que forma parte de la suite Calligra. Parte del grupo [calligra](https://www.archlinux.org/packages/?name=calligra).
 
-	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra-karbon](https://www.archlinux.org/packages/?name=calligra-karbon)
+	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[sK1](https://en.wikipedia.org/wiki/SK1_(program) "wikipedia:SK1 (program)")** — Reemplazo para Adobe Illustrator o CorelDraw, orientado al PostScript «preimpresión lista» y salida de PDF.
 
@@ -1761,10 +1761,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 #### Interfaz gráfica
 
-*   **[Avidemux](https://en.wikipedia.org/wiki/Avidemux "wikipedia:Avidemux")** — Editor de vídeo gratuito diseñado para cortar, filtrar y codificar tareas sencillas.
-
-	[http://fixounet.free.fr/avidemux/](http://fixounet.free.fr/avidemux/) || [avidemux-gtk](https://www.archlinux.org/packages/?name=avidemux-gtk) [avidemux-qt](https://www.archlinux.org/packages/?name=avidemux-qt)
-
+*   {{App|[Avidemux](https://en.wikipedia.org/wiki/Avidemux "wikipedia:Avidemux")|Editor de vídeo gratuito diseñado para cortar, filtrar y codificar tareas sencillas.|[http://fixounet.free.fr/avidemux/%7C](http://fixounet.free.fr/avidemux/%7C)[avidemux-qt](https://www.archlinux.org/packages/?name=avidemux-qt)
 *   **[Cinelerra (Community Version)](https://en.wikipedia.org/wiki/Cinelerra "wikipedia:Cinelerra")** — Editor de vídeo profesional y entorno de composición.
 
 	[http://cinelerra.org/](http://cinelerra.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
@@ -1821,7 +1818,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[XBMC](https://en.wikipedia.org/wiki/XBMC "wikipedia:XBMC")** — Aplicación para la organización de diversas colecciones y recuperar automáticamente informaciones acerca de ellos (vídeo, música, fotos).
 
-	[http://xbmc.org/](http://xbmc.org/) || [xbmc](https://www.archlinux.org/packages/?name=xbmc)
+	[http://xbmc.org/](http://xbmc.org/) || [kodi](https://www.archlinux.org/packages/?name=kodi)
 
 ## Utilidades
 
@@ -2005,7 +2002,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Administrador de archivos para el escritorio KDE.
 
-	[http://www.konqueror.org/](http://www.konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
+	[http://www.konqueror.org/](http://www.konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
 *   **[Krusader](https://en.wikipedia.org/wiki/Krusader "wikipedia:Krusader")** — Gestor de archivos de doble panel avanzado (estilo Midnight Commander) para el escritorio KDE.
 
@@ -2225,7 +2222,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[Okular](https://en.wikipedia.org/wiki/Okular "wikipedia:Okular")** — Potente visualizador de KDE.
 
-	[http://okular.kde.org/](http://okular.kde.org/) || [kdegraphics-okular](https://www.archlinux.org/packages/?name=kdegraphics-okular)
+	[http://okular.kde.org/](http://okular.kde.org/) || [okular](https://www.archlinux.org/packages/?name=okular)
 
 *   **qpdfview** — Visor de PDF con pestañas, que usa las bibliotecas Poppler y Qt.
 
@@ -2333,7 +2330,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[Calligra Words](https://en.wikipedia.org/wiki/Calligra_Words "wikipedia:Calligra Words")** — Potente procesador de textos incluido en la suite Calligra.
 
-	[http://www.calligra.org/words/](http://www.calligra.org/words/) || [calligra-words](https://www.archlinux.org/packages/?name=calligra-words)
+	[http://www.calligra.org/words/](http://www.calligra.org/words/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **gLabels** — Programa para crear etiquetas y tarjetas de visita.
 
@@ -2345,7 +2342,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown")** — Herramienta de conversión de texto a HTML que permite escribir usando un sencillo formato de texto plano.
 
-	[http://daringfireball.net/projects/markdown](http://daringfireball.net/projects/markdown) || [markdown](https://www.archlinux.org/packages/?name=markdown)
+	[http://daringfireball.net/projects/markdown](http://daringfireball.net/projects/markdown) || [discount](https://www.archlinux.org/packages/?name=discount)
 
 *   **[OpenOffice Writer](/index.php/OpenOffice "OpenOffice")** — Procesador de texto con todas las funciones, incluido en la suite OpenOffice.
 
@@ -2353,7 +2350,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **Pandoc** — Navaja suiza para convertir de un formato de marcadores en otro (compatibles con Markdown).
 
-	[http://johnmacfarlane.net/pandoc](http://johnmacfarlane.net/pandoc) || [haskell-pandoc](https://www.archlinux.org/packages/?name=haskell-pandoc)
+	[http://johnmacfarlane.net/pandoc](http://johnmacfarlane.net/pandoc) || [pandoc](https://www.archlinux.org/packages/?name=pandoc)
 
 *   **Pathetic Writer** — Procesador de texto mejorado basado en X incluido en Siag Office.
 
@@ -2377,7 +2374,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[Calligra Sheets](https://en.wikipedia.org/wiki/Calligra_Sheets "wikipedia:Calligra Sheets")** — Poderosa hoja de cálculo incluida en la suite Calligra.
 
-	[http://www.calligra.org/sheets/](http://www.calligra.org/sheets/) || [calligra-sheets](https://www.archlinux.org/packages/?name=calligra-sheets)
+	[http://www.calligra.org/sheets/](http://www.calligra.org/sheets/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[Gnumeric](/index.php/Gnumeric "Gnumeric")** — Programa de hoja de cálculo que forma parte del escritorio GNOME .
 
@@ -3505,7 +3502,7 @@ Vea también [Emuladores de videojuegos](https://en.wikipedia.org/wiki/es:Anexo:
 
 *   **higan** — Emulador multisistema enfocado en la exactitud, soporte para SNES, NES, GB, GBC, GBA.
 
-	[http://code.google.com/p/higan/](http://code.google.com/p/higan/) || [higan-gtk](https://www.archlinux.org/packages/?name=higan-gtk) [higan-qt](https://www.archlinux.org/packages/?name=higan-qt)
+	[http://code.google.com/p/higan/](http://code.google.com/p/higan/) || [higan](https://www.archlinux.org/packages/?name=higan)
 
 *   **mednafen** — Emulador multisistema mediante línea de comandos.
 

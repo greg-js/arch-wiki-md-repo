@@ -78,13 +78,13 @@ Next, you can either change the configuration of the default node (click its nam
 
 ### Local network setup
 
-In the typical case several machines, like laptops and androids, share a local area network (LAN) behind a network address translation (NAT) router, it is advised for a versatile configuration to:
+In the typical case several machines, like laptops and androids, share a local area network *(LAN)* behind a network address translation *(NAT)* router, it is advised for a versatile configuration to:
 
 *   Activate both local and global discovery on each node to allow discovery in all situations, including when a mobile device leaves the LAN and connects to the internet from the outside,
 
 *   Use a different [listen address port](https://docs.syncthing.net/users/config.html#listen-addresses) for each machine, like `tcp://:22010`, `tcp://:22011`, `tcp://:22012` and so forth. This will differentiate them on the global discovery servers and avoid the *"Connected to myself - should not happen"* message on the other local devices whenever they leave the NAT.
 
-*   Enable if possible [UPnP](https://en.wikipedia.org/wiki/universal_plug_and_play "wikipedia:universal plug and play") port forwarding or manually forward each port. When a node is discovered, Syncthing will first try to use the listening port of the new node. However, if the incoming port is closed on the remote server end, the local listening port will be used instead. If this one appears to be closed as well, Syncthing will attempt to use UPnP to open the port at the NAT router level. If this is not desirable or not possible, each port should be manually forwarded to the right machine on the LAN. Eventually, if no open port can be found on both sides, [relaying](https://docs.syncthing.net/users/relaying.html) will be used.
+*   Enable if possible [UPnP](https://en.wikipedia.org/wiki/universal_plug_and_play "wikipedia:universal plug and play") port forwarding or manually forward each port. When a new node is discovered, Syncthing will try to use its listening port. If this port happens to be closed, the local listening port will be used instead. If this one appears to be closed as well, Syncthing will attempt to use UPnP to open the port at the NAT router level. If this is not desirable or not possible, each port should be manually forwarded to the right machine on the LAN. Eventually, if no open port can be found on both sides, [relaying](https://docs.syncthing.net/users/relaying.html) will be used.
 
 ## Participate in the infrastructure
 
@@ -167,7 +167,7 @@ ExecStart=/bin/bash -c 'set -o pipefail; /usr/bin/syncthing -no-browser -no-rest
 
 ### Run in VirtualBox
 
-It is possible to have Syncthing connect both locally and globally within a [VirtualBox](/index.php/VirtualBox "VirtualBox") virtual machine (VM) while keeping its network adapter in the standard [NAT](https://www.virtualbox.org/manual/ch06.html#network_nat) mode (as opposed to [bridged networking](https://www.virtualbox.org/manual/ch06.html#network_bridged) attached to the host computer's adapter).
+It is possible to have Syncthing connect both locally and globally within a [VirtualBox](/index.php/VirtualBox "VirtualBox") virtual machine (VM) while keeping its network adapter in the [standard NAT](https://www.virtualbox.org/manual/ch06.html#network_nat) mode (as opposed to [bridged networking](https://www.virtualbox.org/manual/ch06.html#network_bridged) attached to the host computer's adapter).
 
 To enable this mode, Syncthing should listen to a port in the VM different from the listening port already used by the host. For example, if the default 22000 port is used by the host, one could use 22001 in the VM. The listening port in the VM can be changed through Syncthing's [Sync Protocol Listen Addresses](https://docs.syncthing.net/users/config.html#listen-addresses) to `tcp://:22001` in the GUI *Settings*.
 

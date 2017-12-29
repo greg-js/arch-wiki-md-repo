@@ -1,7 +1,7 @@
 Artigos relacionados
 
 *   [ArchWiki:IRC](/index.php/ArchWiki:IRC "ArchWiki:IRC")
-*   [International communities](/index.php/International_communities "International communities")
+*   [Comunidades internacionais](/index.php/Comunidades_internacionais "Comunidades internacionais")
 *   [phrik](/index.php/Phrik "Phrik")
 
 **Nota:** Não edite a [página em inglês](/index.php/IRC_channel "IRC channel") a menos que você seja um operador de canal no #archlinux. Você é bem-vindo para usar a [página de discussão](/index.php/Talk:IRC_channel "Talk:IRC channel").

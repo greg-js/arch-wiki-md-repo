@@ -1,4 +1,4 @@
-O Arch Linux é uma distribuição GNU/Linux x86_64 de uso geral desenvolvida independentemente que se empenha em fornecer as últimas versões estáveis da maioria dos softwares seguindo um modelo *rolling-release*. A instalação padrão é um sistema base mínimo, configurado pelo usuário para adicionar apenas o que é propositalmente necessário.
+O Arch Linux é uma distribuição GNU/Linux x86_64 de uso geral desenvolvida independentemente que se empenha em fornecer as últimas versões estáveis da maioria dos softwares seguindo um modelo de lançamento contínuo (*rolling-release*). A instalação padrão é um sistema base mínimo, configurado pelo usuário para adicionar apenas o que é propositalmente necessário.
 
 ## Contents
 
@@ -29,7 +29,7 @@ De uma forma similar, Arch provê os arquivos de configurações fornecidos pelo
 
 O Arch Linux se empenha em oferecer as últimas versões estáveis de seus pacotes desde que quebra sistemática de pacote possa ser razoavelmente evitado. Ele é baseado em um sistema de [rolling-release](https://en.wikipedia.org/wiki/pt:Rolling_release "wikipedia:pt:Rolling release"), que permite uma única instalação e upgrades contínuos.
 
-O Arch incorpora muitas das mais novas funcionalidades disponíveis para os usuários do GNU/Linux, incluindo o sistema de inicialização [systemd](/index.php/Systemd "Systemd"), [sistemas de arquivos](/index.php/File_systems "File systems") modernos, LVM2, RAID via software, suporte ao udev e initcpio (com [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")), bem como os últimos kernels.
+O Arch incorpora muitas das mais novas funcionalidades disponíveis para os usuários do GNU/Linux, incluindo o sistema de inicialização [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"), [sistemas de arquivos](/index.php/File_systems "File systems") modernos, LVM2, RAID via software, suporte ao udev e initcpio (com [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")), bem como os últimos kernels.
 
 ### Pragmatismo
 
@@ -41,7 +41,7 @@ O grande número de pacotes e scripts de compilação nos vários repositórios 
 
 Enquanto muitas distribuições GNU/Linux tentam ser mais *user-friendly*, o Arch Linux sempre foi e sempre será *user-centric*. O Arch Linux tem a intenção de preencher as necessidades daqueles contribuindo para ele em vez de tentar agradar a maior quantidade de usuários possível. Ele é direcionado para o usuário GNU/Linux avançado ou a qualquer outro com uma atividade "faça você mesmo" que esteja interessado em ler a documentação e resolver seus próprios problemas.
 
-Todos os usuários são incentivados a [participar](/index.php/Getting_involved_(Portugu%C3%AAs) "Getting involved (Português)") e contribuir com a distribuição. Relatar e ajudar a corrigir [falhas](https://bugs.archlinux.org/) é muito valioso e patches que aprimorem pacotes ou os [projetos](https://projects.archlinux.org/) centrais são muito bem-vindos: desenvolvedores do Arch são voluntários e contribuidores ativos frequentemente se verão se tornando parte da equipe. *Archers* podem contribuir livremente com pacotes para o [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)"), melhroar a [documentação do ArchWiki](/index.php/Main_page_(Portugu%C3%AAs) "Main page (Português)"), fornecer assistência técnica para outros ou apenas trocar opiniões nos [fóruns](https://bbs.archlinux.org/), [listas de discussões](https://mailman.archlinux.org/mailman/listinfo/) ou [canais IRC](/index.php/IRC_channels "IRC channels"). Arch Linux é o sistema operacional de escolha para muitos pacotes pelo mundo, e há várias [comunidades internacionais](/index.php/International_communities "International communities") que oferecem ajuda e fornecem documentação em muitos idiomas diferentes.
+Todos os usuários são incentivados a [participar](/index.php/Getting_involved_(Portugu%C3%AAs) "Getting involved (Português)") e contribuir com a distribuição. Relatar e ajudar a corrigir [falhas](https://bugs.archlinux.org/) é muito valioso e patches que aprimorem pacotes ou os [projetos](https://projects.archlinux.org/) centrais são muito bem-vindos: desenvolvedores do Arch são voluntários e contribuidores ativos frequentemente se verão se tornando parte da equipe. *Archers* podem contribuir livremente com pacotes para o [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)"), melhorar a [documentação do ArchWiki](/index.php/P%C3%A1gina_principal "Página principal"), fornecer assistência técnica para outros ou apenas trocar opiniões nos [fóruns](https://bbs.archlinux.org/), [listas de discussões](https://mailman.archlinux.org/mailman/listinfo/) ou [canais IRC](/index.php/Canais_IRC "Canais IRC"). Arch Linux é o sistema operacional de escolha para muitos pacotes pelo mundo, e há várias [comunidades internacionais](/index.php/Comunidades_internacionais "Comunidades internacionais") que oferecem ajuda e fornecem documentação em muitos idiomas diferentes.
 
 ### Versatilidade
 
@@ -67,7 +67,7 @@ Em 2005-07-08 o ArchWiki foi [configurado](/index.php/ArchWiki:About_(Portugu%C3
 
 No fim de 2007, Judd Vinet se afastou da participação ativa como desenvolvedor do Arch, e [transferiu sem problemas o reinado para o programador americano Aaron Griffin](https://bbs.archlinux.org/viewtopic.php?id=38024), também conhecido como Phrakture, que continua como líder do desenvolvimento do Arch até hoje.
 
-Com o passar dos anos, a comunidade do Arch continuou a crescer e amadurecer, e recentemente tem recebido uma quantidade incomum de [atenção e análises](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage") para uma distro Linux de seu tamanho.
+Com o passar dos anos, a comunidade do Arch continuou a crescer e amadurecer, e recentemente tem recebido uma quantidade incomum de [atenção e análises](/index.php/An%C3%A1lises_sobre_o_Arch_Linux "Análises sobre o Arch Linux") para uma distro Linux de seu tamanho.
 
 Os desenvolvedores do Arch continuam a ser voluntários não-pagos e de meio expediente, e não existem expectativas de monetizar o Arch Linux, de modo que ele continuará a ser livre em todos os sentidos da palavra. Aqueles curiosos para ler mais detalhes sobre a história do desenvolvimento do Arch podem navegar na [entrada sobre o Arch na Internet Archive Wayback Machine](http://web.archive.org/web/*/archlinux.org).
 

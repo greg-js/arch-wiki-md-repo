@@ -128,7 +128,7 @@ enable_psr=1
 
 ```
 
-Panel Self Refresh (PSR) is working for eDP 1.3 and up and does stop the creation of new frames when the screen content is static to save energy.
+Panel Self Refresh (PSR) is working for eDP 1.3 and up and does stop the creation of new frames when the screen content is static to save energy. If you experience problems with PSR try to set 'disable_power_well=0' or disable otherwise.
 
 ```
 NOT WORKING: semaphores=1 

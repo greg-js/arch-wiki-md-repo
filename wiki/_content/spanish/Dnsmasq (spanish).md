@@ -182,7 +182,7 @@ También será necesario reiniciar la red si se ha creado un archivo `/etc/resol
 
 ### Caching DNS
 
-Para hacer una prueba de velocidad de búsqueda, elija un sitio web que no haya visitado desde que dnsmasq se inició (*dig* es parte del paquete [dnsutils](https://www.archlinux.org/packages/?name=dnsutils)):
+Para hacer una prueba de velocidad de búsqueda, elija un sitio web que no haya visitado desde que dnsmasq se inició (*dig* es parte del paquete [bind-tools](https://www.archlinux.org/packages/?name=bind-tools)):
 
 ```
 $ dig archlinux.org | grep "Query time"

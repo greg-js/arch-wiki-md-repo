@@ -197,7 +197,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Un file manager per il desktop KDE.
 
-	[http://www.konqueror.org/](http://www.konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
+	[http://www.konqueror.org/](http://www.konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
 *   **[Krusader](https://en.wikipedia.org/wiki/Krusader "wikipedia:Krusader")** — Un avanzato file manager a due pannelli (in stile Midnight Commander) per il desktop KDE.
 

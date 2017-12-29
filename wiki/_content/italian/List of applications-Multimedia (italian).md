@@ -175,11 +175,11 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 *   **[KolourPaint](https://en.wikipedia.org/wiki/KolourPaint "wikipedia:KolourPaint")** — Editor raster liero per il desktop KDE, simile a Paint di Microsoft prima di Windows 7, ma ha alcune funzionalità aggiuntive come il supporto per la trasparenza.
 
-	[http://kolourpaint.org](http://kolourpaint.org) || [kdegraphics-kolourpaint](https://www.archlinux.org/packages/?name=kdegraphics-kolourpaint)
+	[http://kolourpaint.org](http://kolourpaint.org) || [kolourpaint](https://www.archlinux.org/packages/?name=kolourpaint)
 
 *   **[Krita](https://en.wikipedia.org/wiki/Krita "wikipedia:Krita")** — Software editor per la grafica digitale e illustrazioni, incluso nella piattaforma KDE. Utilizza le librerie di Calligra.
 
-	[http://krita.org/](http://krita.org/) || [calligra-krita](https://www.archlinux.org/packages/?name=calligra-krita)
+	[http://krita.org/](http://krita.org/) || [krita](https://www.archlinux.org/packages/?name=krita)
 
 *   **Luminance HDR** — Applicazione open source con interfaccia grafica che aiuta a fornire un flusso di lavoro per le immagini HDR.
 
@@ -227,7 +227,7 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 *   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Editor di grafica vettoriale, parte della suite Calligra.
 
-	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra-karbon](https://www.archlinux.org/packages/?name=calligra-karbon)
+	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[sK1](https://en.wikipedia.org/wiki/SK1_(program) "wikipedia:SK1 (program)")** — Rimpiazzo per Adobe Illustrator o CorelDraw, orientato per i formati "pronti alla stampa" PostScript e PDF.
 

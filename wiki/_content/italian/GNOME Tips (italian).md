@@ -515,7 +515,7 @@ makepkg --nobuild
 
 ```
 
-Così facendo, verranno scaricati e scompattati i sorgenti. Spostarsi in `src/libwnck-{version}/libwnck`. Aprire il file `tasklist.c` con un editor di testo, e cercare "scroll-event". Si vedrà qualcosa di simile a
+Così facendo, verranno scaricati e scompattati i sorgenti. Spostarsi in {{ic|src/libwnck-{version}/libwnck}}. Aprire il file `tasklist.c` con un editor di testo, e cercare "scroll-event". Si vedrà qualcosa di simile a
 
 ```
 g_signal_connect(obj, "scroll-event", G_CALLBACK(wnck_tasklist_scroll_cb), NULL);

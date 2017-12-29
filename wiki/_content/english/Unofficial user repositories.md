@@ -888,7 +888,7 @@ Server = https://download.opensuse.org/repositories/home:/tarakbumba:/archlinux/
 
 *   **Maintainer**: [Thaodan](https://aur.archlinux.org/account/Thaodan)
 *   **Upstream page**: [https://gitlab.com/Thaodan/linux-pf](https://gitlab.com/Thaodan/linux-pf)
-*   **Description**: [pf-kernel](/index.php/Kernels#Major_patchsets "Kernels") and other packages by Thaodan
+*   **Description**: [pf-kernel](/index.php/Kernels#Major_patchsets "Kernels") and other packages by pf-kernel fork developer, Thaodan
 
 ```
 [home-thaodan]

@@ -1,14 +1,14 @@
 Artigos relacionados
 
-*   [Arch packaging standards (Português)](/index.php/Arch_packaging_standards_(Portugu%C3%AAs) "Arch packaging standards (Português)")
-*   [Creating packages (Português)](/index.php/Creating_packages_(Portugu%C3%AAs) "Creating packages (Português)")
-*   [.SRCINFO (Português)](/index.php/.SRCINFO_(Portugu%C3%AAs) ".SRCINFO (Português)")
-*   [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
+*   [Padrões de empacotamento do Arch](/index.php/Arch_packaging_standards_(Portugu%C3%AAs) "Arch packaging standards (Português)")
+*   [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes")
+*   [.SRCINFO](/index.php/.SRCINFO_(Portugu%C3%AAs) ".SRCINFO (Português)")
+*   [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
 *   [Category:Package development (Português)](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)")
-*   [Arch Build System (Português)](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
-*   [makepkg (Português)](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
-*   [pacman (Português)](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
-*   [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks")
+*   [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
+*   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
+*   [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
+*   [Pacman/Dicas e truques](/index.php/Pacman/Dicas_e_truques "Pacman/Dicas e truques")
 *   [Getting PKGBUILDs from SVN (Português)](/index.php/Getting_PKGBUILDs_from_SVN_(Portugu%C3%AAs) "Getting PKGBUILDs from SVN (Português)")
 
 Esse artigo discute variáveis definíveis pelo mantenedor em um PKGBUILD. Para informações sobre funções do PKGBUILD e criação de pacotes em geral, veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes"). Leia também [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
@@ -79,9 +79,9 @@ Pacotes divididos devem ser definidos como um vetor, ex.: `pkgname=('foo' 'bar')
 
 A versão do pacote. Ela deve ser a mesma que a versão de lançamento pelo autor do pacote. Ela pode conter letras, números, pontos e sublinhados, mas **não** um hífen (`-`). Se o autor do software usa um hífen, substitua-o com um sublinhado (`_`). Se a variável `pkgver` é usada posteriormente no PKGBUILD, então o sublinhado pode ser facilmente substituído por um hífen, ex.: `source=("$pkgname-${pkgver//_/-}.tar.gz")`.
 
-**Note:** Se o *upstream* usa um versionamento com marca de tempo como `30102014`, certifique-se de usar a data reversa, i.e. `20141030` (formato [ISO 8601](https://en.wikipedia.org/wiki/pt:ISO_8601 "wikipedia:pt:ISO 8601")). Do contrário, ela não aparecerá como uma versão mais nova
+**Nota:** Se o *upstream* usa um versionamento com marca de tempo como `30102014`, certifique-se de usar a data reversa, i.e. `20141030` (formato [ISO 8601](https://en.wikipedia.org/wiki/pt:ISO_8601 "wikipedia:pt:ISO 8601")). Do contrário, ela não aparecerá como uma versão mais nova
 
-**Tip:**
+**Dica:**
 
 *   A ordem de valores incomuns pode ser testada com [vercmp](https://www.archlinux.org/pacman/vercmp.8.html), que é fornecido pelo pacote [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
 *   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") pode [atualizar](http://allanmcrae.com/2013/04/pacman-4-1-released/) automaticamente essa variável definindo uma função `pkgver()` no PKGBUILD. Veja [VCS package guidelines#The pkgver() function](/index.php/VCS_package_guidelines#The_pkgver.28.29_function "VCS package guidelines") para detalhes.
@@ -92,7 +92,7 @@ O número de lançamento. Geralmente é um número inteiro positivo que permite 
 
 ### epoch
 
-**Warning:** `epoch` só deve ser usado quando absolutamente necessário.
+**Atenção:** `epoch` só deve ser usado quando absolutamente necessário.
 
 Usado para forçar o pacote a ser visto como mais novo do que uma versão anterior com um *epoch* menor. Esse valor tem que ser um inteiro positivo; o padrão é 0\. É usado quando o esquema de numeração de versão de um pacote muda (ou é alfanumérico), quebrando a lógica de comparação de versão normal. Por exemplo:
 
@@ -142,7 +142,7 @@ A licença sob a qual o software é distribuído. O pacote [licenses](https://ww
     *   (L)GPL3 — (L)GPL3 ou qualquer versão posterior
 *   Se após pesquisar a questão nenhuma licença puder ser determinada, [PKGBUILD.proto](https://projects.archlinux.org/pacman.git/tree/proto/PKGBUILD.proto) sugere `unknown`. Porém, o *upstream* deve ser contatado sobre as condições sob as quais o software está (e não está) disponível.
 
-**Tip:** Alguns autores de software não fornecem arquivo de licença separados e descrevem regras de distribuição em uma seção de `ReadMe.txt` comum. Essa informação pode ser extraída para um arquivo separado durante a `build()` com alguma coisa como `sed -n '/**This software**/,/ **thereof.**/p' ReadMe.txt > LICENSE`
+**Dica:** Alguns autores de software não fornecem arquivo de licença separados e descrevem regras de distribuição em uma seção de `ReadMe.txt` comum. Essa informação pode ser extraída para um arquivo separado durante a `build()` com alguma coisa como `sed -n '/**This software**/,/ **thereof.**/p' ReadMe.txt > LICENSE`
 
 ### groups
 
@@ -150,7 +150,7 @@ O [grupo](/index.php/Criando_pacotes#Pacotes_meta_e_grupos "Criando pacotes") ao
 
 ## Dependências
 
-**Note:** Vetores extras específicos por arquitetura podem ser adicionados anexando um sublinhado e o nome da arquitetura. Por exemplo: `depends_i686=()` e `optdepends_x86_64=()`.
+**Nota:** Vetores extras específicos por arquitetura podem ser adicionados anexando um sublinhado e o nome da arquitetura. Por exemplo: `depends_i686=()` e `optdepends_x86_64=()`.
 
 ### depends
 
@@ -181,29 +181,29 @@ optdepends=('cups: printing support'
 
 Um vetor de pacotes que são necessários **apenas** para compilar o software. A versão mínima de dependência pode ser especificada no mesmo formato que no vetor `depends`. Os pacotes no vetor `depends` são implicitamente necessários para compilar o pacote, então eles não devem ser duplicados aqui.
 
-**Tip:** O comando a seguir pode ser usado para ver se um pacote em particular está no grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) ou obtido por um membro do grupo:
+**Dica:** O comando a seguir pode ser usado para ver se um pacote em particular está no grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) ou obtido por um membro do grupo:
 ```
 $ LC_ALL=C pacman -Si $(pactree -rl ''pacote'') 2>/dev/null | grep -q "^Groups *:.*base-devel"
 
 ```
 
-**Note:** Presume-se que o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) já esteja instalado ao compilar com *makepkg*. Membros deste grupo **não devem** ser incluídos no vetor `makedepends`.
+**Nota:** Presume-se que o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) já esteja instalado ao compilar com *makepkg*. Membros deste grupo **não devem** ser incluídos no vetor `makedepends`.
 
 ### checkdepends
 
 Um vetor de pacotes dos quais o software depende para executar sua suíte de testes, mas que não são necessários em tempo de execução. Pacotes nesta lista seguem o mesmo formato que `depends`. Essas dependências são consideradas apenas quando a função [check()](/index.php/Criando_pacotes#check.28.29 "Criando pacotes") estiver presente e for ser executada pelo makepkg.
 
-**Note:** Presume-se que o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) já esteja instalado ao compilar com *makepkg*. Membros deste grupo **não devem** ser incluídos no vetor `checkdepends`.
+**Nota:** Presume-se que o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) já esteja instalado ao compilar com *makepkg*. Membros deste grupo **não devem** ser incluídos no vetor `checkdepends`.
 
 ## Relações do pacote
 
-**Note:** Vetores extras específicos por arquitetura podem ser adicionados anexando um sublinhado e o nome da arquitetura. Por exemplo: `provides_i686=()` e `conflicts_x86_64=()`.
+**Nota:** Vetores extras específicos por arquitetura podem ser adicionados anexando um sublinhado e o nome da arquitetura. Por exemplo: `provides_i686=()` e `conflicts_x86_64=()`.
 
 ### provides
 
 Um vetor de pacotes adicionais dos quais o software fornece as funcionalidades (ou um pacote virtual como o `cron` ou `sh`). Pacotes fornecendo o mesmo item podem ser instalados lado a lado, a menos que um deles use um vetor `conflicts`.
 
-**Warning:** Uma versão que aquele pacote fornece deve ser mencionada (`pkgver` e talvez o `pkgrel`), se pacotes precisando do software exigirem uma. Por exemplo, um pacote modificado do *qt* na versão 3.3.8, chamado *qt-foobar*, deve usar `provides=('qt=3.3.8')`; usando `provides=('qt')` causaria as dependências a exigir uma versão específica do *qt* falharia. Não adicione `pkgname` ao vetor `provides`, pois isso é feito automaticamente.
+**Atenção:** Uma versão que aquele pacote fornece deve ser mencionada (`pkgver` e talvez o `pkgrel`), se pacotes precisando do software exigirem uma. Por exemplo, um pacote modificado do *qt* na versão 3.3.8, chamado *qt-foobar*, deve usar `provides=('qt=3.3.8')`; usando `provides=('qt')` causaria as dependências a exigir uma versão específica do *qt* falharia. Não adicione `pkgname` ao vetor `provides`, pois isso é feito automaticamente.
 
 ### conflicts
 
@@ -256,12 +256,12 @@ O nome do script `.install` a ser incluído no pacote. Este deve ser o mesmo que
 
 Cada função é executada em [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)") dentro do diretório de instalação do *pacman*. Veja [esse tópico](https://bbs.archlinux.org/viewtopic.php?pid=913891).
 
-**Tip:**
+**Dica:**
 
 *   Um protótipo de `.install` é fornecido em [/usr/share/pacman/proto.install](https://projects.archlinux.org/pacman.git/plain/proto/proto.install).
 *   [Hooks do pacman](/index.php/Pacman#Hooks "Pacman") fornecem funcionalidade similar.
 
-**Note:** Não termine o script com `exit`. Isso evitaria as funções contidas de serem executadas.
+**Nota:** Não termine o script com `exit`. Isso evitaria as funções contidas de serem executadas.
 
 ### changelog
 
@@ -282,12 +282,12 @@ Arquivos também podem ser fornecidos diretamente na localização do `PKGBUILD`
 
 Arquivos *.install* são reconhecidos automaticamente pelo *makepkg* e não devem ser incluídos no vetor de fontes. Arquivos no vetor de fontes com extensões *.sig*, *.sign* ou *.asc* são reconhecidos pelo *makepkg* como assinaturas PGP e serão usados automaticamente para verificar a integridade do arquivo fonte correspondente.
 
-**Note:**
+**Nota:**
 
 *   Vetores extras específicos por arquitetura podem ser adicionados anexando um sublinhado e o nome da arquitetura, ex.: `source_i686=()`. Deve haver um vetor de integridade correspondente com somas de verificação (*checksums*), ex.: `sha256sums_x86_64=()`.
 *   Nome de arquivos de fontes baixados devem ser globalmente únicos, porque a variável [SRCDEST](/index.php/Makepkg_(Portugu%C3%AAs)#Sa.C3.ADda_de_pacote "Makepkg (Português)") poderia ser o mesmo diretório para todos pacotes. Isso pode ser garantida especificando um nome de fonte alternativo com a sintaxe `source=('*nome-arquivo*::*uri-arquivo*')`, sendo que o `*nome-arquivo*` escolhido deve ser relativo ao nome do pacote: `source=("nome_projeto::hg+https://googlefontdirectory.googlecode.com/hg/")` 
 
-**Tip:** Se algum dos servidores impedirem você de baixar um arquivo por causa de *user-agents*, leia [Nonfree applications package guidelines#Custom DLAGENTS](/index.php/Nonfree_applications_package_guidelines#Custom_DLAGENTS "Nonfree applications package guidelines").
+**Dica:** Se algum dos servidores impedirem você de baixar um arquivo por causa de *user-agents*, leia [Nonfree applications package guidelines#Custom DLAGENTS](/index.php/Nonfree_applications_package_guidelines#Custom_DLAGENTS "Nonfree applications package guidelines").
 
 ### noextract
 
@@ -324,13 +324,13 @@ Um vetor de impressões digitais PGP. Se usado, *makepkg* só aceitará assinatu
 
 Apenas impressões digitais completas são aceitas. Elas devem estar em caixa alta e não devem conter caracteres em branco.
 
-**Note:** Você pode usar `gpg --list-keys --fingerprint <ID-CHAVE>` para localizar a impressão digital da chave apropriada.
+**Nota:** Você pode usar `gpg --list-keys --fingerprint <ID-CHAVE>` para localizar a impressão digital da chave apropriada.
 
 Por favor, leia [Makepkg (Português)#Verificação de assinatura](/index.php/Makepkg_(Portugu%C3%AAs)#Verifica.C3.A7.C3.A3o_de_assinatura "Makepkg (Português)") para mais informações.
 
 ## Integridade
 
-**Note:** Vetores extras específicos por arquitetura podem ser adicionados anexando um sublinhado e o nome da arquitetura. Por exemplo: `md5sums_i686=()`, `sha256sums_x86_64=()`.
+**Nota:** Vetores extras específicos por arquitetura podem ser adicionados anexando um sublinhado e o nome da arquitetura. Por exemplo: `md5sums_i686=()`, `sha256sums_x86_64=()`.
 
 Essas variáveis são vetores cujos itens são strings de *checksums* (soma de verificação) que serão usadas para verificar a integridade dos respectivos arquivos no vetor [source](#source). Você também pode inserir `SKIP` para um arquivo em particular e seu *checksum* não será testado.
 

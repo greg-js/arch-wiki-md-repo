@@ -185,7 +185,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [dillo](https://www.archlinux.org/packages/?name=dillo) | [XDM](/index.php/XDM "XDM")
 [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
 | [Enlightenment](/index.php/Enlightenment "Enlightenment") | [Elementary](https://www.enlightenment.org/about-efl)
-[elementary](https://www.archlinux.org/packages/?name=elementary) | Enlightenment
+[efl](https://www.archlinux.org/packages/?name=efl) | Enlightenment
 [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | Enlightenment
 [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | [Terminology](https://www.enlightenment.org/about-terminology)
 [terminology](https://www.archlinux.org/packages/?name=terminology) | Enligthenment
@@ -254,7 +254,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [kwrite](https://www.archlinux.org/packages/?name=kwrite) [kate](https://www.archlinux.org/packages/?name=kate) | [Gwenview](http://gwenview.sourceforge.net/)
 [gwenview](https://www.archlinux.org/packages/?name=gwenview) | [Dragon Player](http://www.kde.org/applications/multimedia/dragonplayer/)
 [kdemultimedia-dragonplayer](https://www.archlinux.org/packages/?name=kdemultimedia-dragonplayer) | [Konqueror](http://www.konqueror.org/)
-[kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror) | [KDM](/index.php/KDM "KDM")
+[konqueror](https://www.archlinux.org/packages/?name=konqueror) | [KDM](/index.php/KDM "KDM")
 [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/) |
 | [KDE Plasma](/index.php/KDE "KDE") 5 | [Qt](/index.php/Qt "Qt") 4/5
 [qt4](https://www.archlinux.org/packages/?name=qt4) [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")
@@ -266,7 +266,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [kwrite](https://www.archlinux.org/packages/?name=kwrite) [kate](https://www.archlinux.org/packages/?name=kate) | [Gwenview](http://gwenview.sourceforge.net/)
 [gwenview](https://www.archlinux.org/packages/?name=gwenview) | [Dragon Player](http://www.kde.org/applications/multimedia/dragonplayer/)
 [kdemultimedia-dragonplayer](https://www.archlinux.org/packages/?name=kdemultimedia-dragonplayer) | [Konqueror](http://www.konqueror.org/)
-[kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror) | [SDDM](/index.php/SDDM "SDDM")
+[konqueror](https://www.archlinux.org/packages/?name=konqueror) | [SDDM](/index.php/SDDM "SDDM")
 [sddm](https://www.archlinux.org/packages/?name=sddm) |
 | [LXDE](/index.php/LXDE "LXDE") | [GTK+](/index.php/GTK%2B "GTK+") 2
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) | [Openbox](/index.php/Openbox "Openbox")
@@ -306,15 +306,15 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 | [MATE](/index.php/MATE "MATE") (GTK+ 3) | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | Marco
-[marco-gtk3](https://www.archlinux.org/packages/?name=marco-gtk3) | MATE Panel
-[mate-panel-gtk3](https://www.archlinux.org/packages/?name=mate-panel-gtk3) | MATE Terminal
-[mate-terminal-gtk3](https://www.archlinux.org/packages/?name=mate-terminal-gtk3) | Caja
-[caja-gtk3](https://www.archlinux.org/packages/?name=caja-gtk3) | [Galculator](http://galculator.sourceforge.net/)
+[marco](https://www.archlinux.org/packages/?name=marco) | MATE Panel
+[mate-panel](https://www.archlinux.org/packages/?name=mate-panel) | MATE Terminal
+[mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal) | Caja
+[caja](https://www.archlinux.org/packages/?name=caja) | [Galculator](http://galculator.sourceforge.net/)
 [galculator](https://www.archlinux.org/packages/?name=galculator) | pluma
-[pluma-gtk3](https://www.archlinux.org/packages/?name=pluma-gtk3) | Eye of MATE
-[eom-gtk3](https://www.archlinux.org/packages/?name=eom-gtk3) | [Parole](http://docs.xfce.org/apps/parole/start)
+[pluma](https://www.archlinux.org/packages/?name=pluma) | Eye of MATE
+[eom](https://www.archlinux.org/packages/?name=eom) | [Parole](http://docs.xfce.org/apps/parole/start)
 [parole](https://www.archlinux.org/packages/?name=parole) | [Midori](/index.php/Midori "Midori")
-[midori-gtk3](https://www.archlinux.org/packages/?name=midori-gtk3) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
+[midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 | Maynard | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | Weston
@@ -337,7 +337,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor) | [Shotwell](https://en.wikipedia.org/wiki/Shotwell_(software) "wikipedia:Shotwell (software)")
 [shotwell](https://www.archlinux.org/packages/?name=shotwell) | [GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")
 [totem](https://www.archlinux.org/packages/?name=totem) | [Midori](/index.php/Midori "Midori")
-[midori-gtk3](https://www.archlinux.org/packages/?name=midori-gtk3) | [LightDM](/index.php/LightDM "LightDM") Pantheon Greeter
+[midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") Pantheon Greeter
 [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/) |
 | [ROX](/index.php/ROX "ROX") | [GTK+](/index.php/GTK%2B "GTK+") 2
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) | [OroboROX](http://rox.sourceforge.net/desktop/OroboROX.html)

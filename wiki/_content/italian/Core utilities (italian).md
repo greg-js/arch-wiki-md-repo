@@ -1,3 +1,10 @@
+Articoli correlati
+
+*   [Bash (Italiano)](/index.php/Bash_(Italiano) "Bash (Italiano)")
+*   [Zsh](/index.php/Zsh "Zsh")
+*   [General Recommendations (Italiano)](/index.php/General_Recommendations_(Italiano) "General Recommendations (Italiano)")
+*   [GNU Project](/index.php/GNU_Project "GNU Project")
+
 In questo articolo si trovano trucchi e consigli a proposito degli strumenti di base dei sistemi GNU/Linux, come **less**, **ls**, and **grep**. L'ambito di questa pagine include le utility contenute nel pacchetto [coreutils](https://www.archlinux.org/packages/?name=coreutils), ma non solo.
 
 ## Contents
@@ -74,7 +81,7 @@ export LESS='-R '
 
 Se si usa di frequente la linea di comando, può essere utile installare [lesspipe](https://www.archlinux.org/packages/?name=lesspipe), che permette anche di esplorare archivi.
 
-**lesspipe** garantisce inoltre la possibilità di trattare anche altri tipi di files, perciò costituisce una alternativa a strumenti dedicati, come [html2text](https://www.archlinux.org/packages/?name=html2text) nel caso dei files HTML.
+**lesspipe** garantisce inoltre la possibilità di trattare anche altri tipi di files, perciò costituisce una alternativa a strumenti dedicati, come [python-html2text](https://www.archlinux.org/packages/?name=python-html2text) nel caso dei files HTML.
 
 Rieffettuate il login o scrivete `source /etc/profile.d/lesspipe.sh` per cominciare a usare **lesspipe**.
 

@@ -13,7 +13,7 @@ Terlepas dari ruang lingkupnya, halaman panduan dirancang untuk menjadi dokumen 
 *   [5 Lebar halaman dinamis](#Lebar_halaman_dinamis)
 *   [6 Membaca halaman panduan lokal](#Membaca_halaman_panduan_lokal)
     *   [6.1 Mengonversi ke mode halaman HTML peramban](#Mengonversi_ke_mode_halaman_HTML_peramban)
-        *   [6.1.1 mdocml](#mdocml)
+        *   [6.1.1 mandoc](#mandoc)
         *   [6.1.2 man2html](#man2html)
         *   [6.1.3 man -H](#man_-H)
         *   [6.1.4 roffit](#roffit)
@@ -130,9 +130,9 @@ Sebagai ganti antarmuka yang standar, menggunakan peramban seperti [lynx](https:
 
 ### Mengonversi ke mode halaman HTML peramban
 
-#### mdocml
+#### mandoc
 
-Pasang [mdocml](https://aur.archlinux.org/packages/mdocml/) dari [AUR](/index.php/AUR "AUR"). Untuk mengonversikan sebuah halaman, misalnya `free(1)`:
+Pasang [mandoc](https://aur.archlinux.org/packages/mandoc/) dari [AUR](/index.php/AUR "AUR"). Untuk mengonversikan sebuah halaman, misalnya `free(1)`:
 
 ```
 $ gunzip -c /usr/share/man/man1/free.1.gz | mandoc -Thtml -Ostyle=style.css 1> free.html

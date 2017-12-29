@@ -1,15 +1,20 @@
-This article describes the setup and use of DVB-S (sat TV) cards on Arch Linux.
+Related articles
+
+*   [DVB-T](/index.php/DVB-T "DVB-T")
+*   [MythTV Walkthrough](/index.php/MythTV_Walkthrough "MythTV Walkthrough")
+
+[DVB-S](https://en.wikipedia.org/wiki/DVB-S "wikipedia:DVB-S") is a satellite television standard. This article describes the setup and use of DVB-S cards on Arch Linux.
 
 **Warning:** This was only tested with the Pinnacle PCTV Sat, and may not work or will not help you with different cards.
 
 ## Contents
 
-*   [1 Load required Modules](#Load_required_Modules)
+*   [1 Load required kernel modules](#Load_required_kernel_modules)
     *   [1.1 Pinnacle PCTV Sat](#Pinnacle_PCTV_Sat)
     *   [1.2 Additional modules: S2-liplianin](#Additional_modules:_S2-liplianin)
         *   [1.2.1 Setup](#Setup)
 *   [2 Additional firmware: OpenELEC DVB-firmware](#Additional_firmware:_OpenELEC_DVB-firmware)
-*   [3 Setup Permissions](#Setup_Permissions)
+*   [3 Setup permissions](#Setup_permissions)
 *   [4 Scanning channels](#Scanning_channels)
     *   [4.1 Using scan](#Using_scan)
     *   [4.2 Using w_scan](#Using_w_scan)
@@ -22,15 +27,15 @@ This article describes the setup and use of DVB-S (sat TV) cards on Arch Linux.
     *   [6.3 Xine](#Xine)
 *   [7 Additional Resources](#Additional_Resources)
 
-## Load required Modules
+## Load required kernel modules
 
 You have to lookup the chipset of your specific card; tools like [lshwd](https://aur.archlinux.org/packages/lshwd/) may help you.
 
 ### Pinnacle PCTV Sat
 
-This card uses bt878 and cx24110 as chipset.
+This card uses bt878 and cx24110 as chipset. These require the `dvb-bt8xx` and `cx24110` [kernel modules](/index.php/Kernel_modules "Kernel modules").
 
-Load them (under root) with:
+Load them with modprobe:
 
 ```
 # modprobe dvb-bt8xx
@@ -38,26 +43,30 @@ Load them (under root) with:
 
 ```
 
-If you want Arch to boot them on startup, add both modules to `MODULES` in `/etc/rc.conf`.
+And make them load at boot by creating the following file:
+
+ `/etc/modules-load.d/pinnacle.conf` 
+```
+dvb-bt8xx
+cx24110
+```
 
 ### Additional modules: S2-liplianin
 
-However, there is not a working kernel module for all (especially newer) devices.
-
-Igor M. Liplianin manages some additional modules at his [mercurial repository](https://pikacode.com/liplianin/s2-liplianin/).
+Some modules not included in the kernel are available from Igor M. Liplianin's [mercurial repository](https://bitbucket.org/liplianin/szap-s2).
 
 #### Setup
 
 First of all, you have to download and prepare the source code.
 
 ```
-$ hg clone [https://pikacode.com/liplianin/s2-liplianin](https://pikacode.com/liplianin/s2-liplianin)
+$ hg clone [https://bitbucket.org/liplianin/szap-s2](https://bitbucket.org/liplianin/szap-s2)
 
 ```
 
 If you do not have installed mercurial, you will get an error message: `hg: command not found`
 
-You can either download the package [mercurial](https://www.archlinux.org/packages/?name=mercurial) and try the obove command again or download the source code from [here](https://pikacode.com/liplianin/s2-liplianin/) and extract it manually.
+You can either download the package [mercurial](https://www.archlinux.org/packages/?name=mercurial) and try the above command again or download the source code from [here](https://bitbucket.org/liplianin/szap-s2/downloads/) and extract it manually.
 
 After obtaining the code, change the working directory to the extracted folder:
 
@@ -99,7 +108,7 @@ After that, reboot your machine.
 
 The [OpenELEC project](http://openelec.tv/) provides additional firmware files for various DVB devices, eg. TechniSat SkyStar S2. To use these firmware files you can install either [openelec-dvb-firmware](https://aur.archlinux.org/packages/openelec-dvb-firmware/) or [openelec-dvb-firmware-git](https://aur.archlinux.org/packages/openelec-dvb-firmware-git/).
 
-## Setup Permissions
+## Setup permissions
 
 To use your DVB-S card as user add him to the `video` group:
 

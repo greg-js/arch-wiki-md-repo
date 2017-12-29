@@ -202,7 +202,7 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 *   **[KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet")** — Download manager per KDE con supporto HTTP(S), FTP e BitTorrent. Parte di [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
 
-	[http://www.kde.org/applications/internet/kget/](http://www.kde.org/applications/internet/kget/) || [kdenetwork-kget](https://www.archlinux.org/packages/?name=kdenetwork-kget)
+	[http://www.kde.org/applications/internet/kget/](http://www.kde.org/applications/internet/kget/) || [kget](https://www.archlinux.org/packages/?name=kget)
 
 *   **[KTorrent](https://en.wikipedia.org/wiki/KTorrent "wikipedia:KTorrent")** — Client BitTorrent sviluppato in QT e ricco di caratteristiche.
 
@@ -304,7 +304,7 @@ Alcuni client elencati in seguito (incluso Pidgin e tutti i suoi forks) supporta
 
 *   **[Kopete](https://en.wikipedia.org/wiki/Kopete "wikipedia:Kopete")** — Messaggistica istantanea con supporto multiprotocollo AIM, ICQ, Windows Live Messenger, Yahoo, Jabber, Gadu-Gadu, Novell GroupWise Messenger,etc. Parte di [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
 
-	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
+	[http://kopete.kde.org/](http://kopete.kde.org/) || [kopete](https://www.archlinux.org/packages/?name=kopete)
 
 *   **[KDE Telepathy](/index.php/KDE_(Italiano)#KDE_Telepathy "KDE (Italiano)")** — Client di messaggistica istantanea per KDE, che utilizza il framework [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)"). Inteso come un sostituto di Kopete.
 
@@ -626,7 +626,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **[Heirloom mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx")** — Client email da riga di comando, pieno di caratteristiche, derivato da Berkeley Mail.
 
-	[http://heirloom.sourceforge.net/mailx.html](http://heirloom.sourceforge.net/mailx.html) || [heirloom-mailx](https://www.archlinux.org/packages/?name=heirloom-mailx)
+	[http://heirloom.sourceforge.net/mailx.html](http://heirloom.sourceforge.net/mailx.html) || [s-nail](https://www.archlinux.org/packages/?name=s-nail)
 
 *   **[Mutt](/index.php/Mutt "Mutt")** — Client mail piccolo ma molto potente client.
 
@@ -712,7 +712,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **Newsbeuter** — Aggregatore di notizie in ncurses con layout e tasti di scelta rapida simile al client email [Mutt](/index.php/Mutt "Mutt").
 
-	[http://newsbeuter.org](http://newsbeuter.org) || [newsbeuter](https://www.archlinux.org/packages/?name=newsbeuter)
+	[http://newsbeuter.org](http://newsbeuter.org) || [newsboat](https://www.archlinux.org/packages/?name=newsboat)
 
 *   **Rawdog** — "Aggregatore RSS Senza Delusioni di Grandeur" che passa i feeds RSS/CDF/Atom in una pagina HTML statica in ordine di data.
 
@@ -838,7 +838,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Browser basato su Qt che sfrutta il motore KHTML o Webkit. È parte di [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
 
-	[http://konqueror.org/](http://konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
+	[http://konqueror.org/](http://konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Micro-browser framework per i contenuti web, altamente configurabile e basato sul motore WebKit ed il toolkit GTK +. È molto veloce, estensibile da Lua e concesso sotto la licenza GNU GPLv3.
 
@@ -1136,11 +1136,11 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 *   **[KolourPaint](https://en.wikipedia.org/wiki/KolourPaint "wikipedia:KolourPaint")** — Editor raster liero per il desktop KDE, simile a Paint di Microsoft prima di Windows 7, ma ha alcune funzionalità aggiuntive come il supporto per la trasparenza.
 
-	[http://kolourpaint.org](http://kolourpaint.org) || [kdegraphics-kolourpaint](https://www.archlinux.org/packages/?name=kdegraphics-kolourpaint)
+	[http://kolourpaint.org](http://kolourpaint.org) || [kolourpaint](https://www.archlinux.org/packages/?name=kolourpaint)
 
 *   **[Krita](https://en.wikipedia.org/wiki/Krita "wikipedia:Krita")** — Software editor per la grafica digitale e illustrazioni, incluso nella piattaforma KDE. Utilizza le librerie di Calligra.
 
-	[http://krita.org/](http://krita.org/) || [calligra-krita](https://www.archlinux.org/packages/?name=calligra-krita)
+	[http://krita.org/](http://krita.org/) || [krita](https://www.archlinux.org/packages/?name=krita)
 
 *   **Luminance HDR** — Applicazione open source con interfaccia grafica che aiuta a fornire un flusso di lavoro per le immagini HDR.
 
@@ -1188,7 +1188,7 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 *   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Editor di grafica vettoriale, parte della suite Calligra.
 
-	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra-karbon](https://www.archlinux.org/packages/?name=calligra-karbon)
+	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[sK1](https://en.wikipedia.org/wiki/SK1_(program) "wikipedia:SK1 (program)")** — Rimpiazzo per Adobe Illustrator o CorelDraw, orientato per i formati "pronti alla stampa" PostScript e PDF.
 
@@ -1915,7 +1915,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Un file manager per il desktop KDE.
 
-	[http://www.konqueror.org/](http://www.konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
+	[http://www.konqueror.org/](http://www.konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
 *   **[Krusader](https://en.wikipedia.org/wiki/Krusader "wikipedia:Krusader")** — Un avanzato file manager a due pannelli (in stile Midnight Commander) per il desktop KDE.
 
@@ -2131,7 +2131,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Okular](https://en.wikipedia.org/wiki/Okular "wikipedia:Okular")** — Visualizzatore completo per KDE.
 
-	[http://okular.kde.org/](http://okular.kde.org/) || [kdegraphics-okular](https://www.archlinux.org/packages/?name=kdegraphics-okular)
+	[http://okular.kde.org/](http://okular.kde.org/) || [okular](https://www.archlinux.org/packages/?name=okular)
 
 *   **qpdfview** — Un visualizzatore a schede per PDF che utilizza le librerie Poppler e Qt.
 
@@ -2233,7 +2233,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 *   **[Calligra Words](https://en.wikipedia.org/wiki/Calligra_Words "wikipedia:Calligra Words")** — Un potente elaboratore testi incluso nella suite Calligra.
 
-	[http://www.calligra.org/words/](http://www.calligra.org/words/) || [calligra-words](https://www.archlinux.org/packages/?name=calligra-words)
+	[http://www.calligra.org/words/](http://www.calligra.org/words/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[LibreOffice Writer](/index.php/LibreOffice "LibreOffice")** — Un elaboratore testi ricco di funzionalità incluso nella suite LibreOffice.
 
@@ -2241,7 +2241,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 *   **[Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown")** — Un convertitore da testo ad HTML che permette di scrivere utilizzando il formato di testo semplice.
 
-	[http://daringfireball.net/projects/markdown](http://daringfireball.net/projects/markdown) || [markdown](https://www.archlinux.org/packages/?name=markdown)
+	[http://daringfireball.net/projects/markdown](http://daringfireball.net/projects/markdown) || [discount](https://www.archlinux.org/packages/?name=discount)
 
 *   **[OpenOffice.org Writer](/index.php/OpenOffice.org "OpenOffice.org")** — Un elaboratore di testi ricco di funzionalità, incluso nella suite OpenOffice.org.
 
@@ -2249,7 +2249,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 *   **Pandoc** — Un coltellino svizzero per convertire un formato di marcatori in un altro (supporta Markdown).
 
-	[http://johnmacfarlane.net/pandoc](http://johnmacfarlane.net/pandoc) || [haskell-pandoc](https://www.archlinux.org/packages/?name=haskell-pandoc)
+	[http://johnmacfarlane.net/pandoc](http://johnmacfarlane.net/pandoc) || [pandoc](https://www.archlinux.org/packages/?name=pandoc)
 
 *   **Pathetic Writer** — Un elaboratore di testo per X ricco di funzionalità e incluso in Siag Office.
 
@@ -2273,7 +2273,7 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 
 *   **[Calligra Sheets](https://en.wikipedia.org/wiki/Calligra_Sheets "wikipedia:Calligra Sheets")** — Un potente foglio di calcoli incluso nella suite Calligra.
 
-	[http://www.calligra.org/sheets/](http://www.calligra.org/sheets/) || [calligra-sheets](https://www.archlinux.org/packages/?name=calligra-sheets)
+	[http://www.calligra.org/sheets/](http://www.calligra.org/sheets/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[Gnumeric](/index.php/Gnumeric "Gnumeric")** — Un foglio di calcoli arte del desktop GNOME.
 
@@ -2707,7 +2707,7 @@ Vedi anche [List of applications (Italiano)#Fogli di calcolo](/index.php/List_of
 
 *   **[Kalzium](https://en.wikipedia.org/wiki/Kalzium "wikipedia:Kalzium")** — Tavola periodica degli elementi con editor di molecole e risolutore di equazioni del progetto [KDE](/index.php/KDE "KDE"). È incluso in [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
-	[http://edu.kde.org/kalzium/](http://edu.kde.org/kalzium/) || [kdeedu-kalzium](https://www.archlinux.org/packages/?name=kdeedu-kalzium)
+	[http://edu.kde.org/kalzium/](http://edu.kde.org/kalzium/) || [kalzium](https://www.archlinux.org/packages/?name=kalzium)
 
 #### Biochimica
 
@@ -2987,7 +2987,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **[Lokalize](https://en.wikipedia.org/wiki/Lokalize per traduzioni di software. Permette di modificare i files PO, supporta glossari, translation memory, gestione progetti eccetera.
 
-	[http://userbase.kde.org/Lokalize](http://userbase.kde.org/Lokalize) || [kdesdk-lokalize](https://www.archlinux.org/packages/?name=kdesdk-lokalize)
+	[http://userbase.kde.org/Lokalize](http://userbase.kde.org/Lokalize) || [lokalize](https://www.archlinux.org/packages/?name=lokalize)
 
 *   **[Moses](https://en.wikipedia.org/wiki/Moses_(machine_translation) "wikipedia:Moses (machine translation)")** — Strumento di traduzione statistica automatizzata (files delle lingue non inclusi).
 
@@ -3337,7 +3337,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[Eclipse](/index.php/Eclipse "Eclipse")** — Progetto della comunità open source , che mira a fornire una piattaforma di sviluppo universale.
 
-	[http://eclipse.org/](http://eclipse.org/) || [eclipse](https://www.archlinux.org/packages/?name=eclipse)
+	[http://eclipse.org/](http://eclipse.org/) || [eclipse-java](https://www.archlinux.org/packages/?name=eclipse-java)
 
 *   **[Editra](https://en.wikipedia.org/wiki/Editra "wikipedia:Editra")** — Editor di testo multi-piattaforma con una implementazione che si concentra sulla facilità di creazione, con interfaccia e funzionalità che gli aiutino lo sviluppo di codice.
 
@@ -3524,7 +3524,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **higan** — Emulatore multi-sistema, focalizzato sull'accuratezza. Supporta SNES, NES, GB, GBC, GBA.
 
-	[http://byuu.org/higan/](http://byuu.org/higan/) || [higan-gtk](https://www.archlinux.org/packages/?name=higan-gtk) [higan-qt](https://www.archlinux.org/packages/?name=higan-qt)
+	[http://byuu.org/higan/](http://byuu.org/higan/) || [higan](https://www.archlinux.org/packages/?name=higan)
 
 *   **ZSNES** — Emulatore per Super Nintendo altamente compatibile.
 

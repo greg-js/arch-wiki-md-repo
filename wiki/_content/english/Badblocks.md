@@ -2,13 +2,13 @@ badblocks is a program to test storage devices for bad blocks.
 
 In case of a HDD the whole sector should get retired. A sector is a subdivision of a track on a storage device and sectors that have become bad cannot be used because they have become permanently damaged (a bad sector can have adverse effects ranging from changing a letter in a text file to causing a binary program to have a segmentation fault).
 
-[S.M.A.R.T.](/index.php/S.M.A.R.T. "S.M.A.R.T.") (Self-Monitoring, Analysis, and Reporting Technology) is Hardware-featured in almost every HDD still in use nowadays and in some cases it can automatically retire defect HDD Sectors. Anyhow it only passively waits for errors while badblocks writes simple patterns to every block of a device and then reads and checks them searching for damaged areas. (Just like memtest86* does with RAM.)
+[S.M.A.R.T.](/index.php/S.M.A.R.T. "S.M.A.R.T.") (Self-Monitoring, Analysis, and Reporting Technology) is hardware-featured in almost every HDD still in use nowadays and in some cases it can automatically retire defective HDD sectors. Anyhow S.M.A.R.T. only passively waits for errors while badblocks writes simple patterns to every block of a device and then reads and checks them searching for damaged areas. (Just like memtest86* does with RAM.)
 
-This can be done in a destructive write-mode that effectively [wipes](/index.php/Securely_wipe_disk "Securely wipe disk") the device (do Backup!) or in non-destructive read-write (Backup advisable as well!) and read-only modes.
+This can be done in a destructive write-mode that effectively [wipes](/index.php/Securely_wipe_disk "Securely wipe disk") the device (do backup!) or in non-destructive read-write (backup advisable as well!) and read-only modes.
 
 ## Contents
 
-*   [1 Usage](#Usage)
+*   [1 Installation](#Installation)
 *   [2 Storage Device Fidelity](#Storage_Device_Fidelity)
 *   [3 Comparisons with Other Programs](#Comparisons_with_Other_Programs)
 *   [4 Testing for Bad Sectors](#Testing_for_Bad_Sectors)
@@ -22,22 +22,13 @@ This can be done in a destructive write-mode that effectively [wipes](/index.php
         *   [5.2.1 Block size](#Block_size)
 *   [6 References](#References)
 
-## Usage
+## Installation
 
-badblocks is in [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs)
-
-Usage:
-
-```
-badblocks  [  -svwnfBX  ]  [  -b  block-size  ] [ -c blocks_at_once ] [ -e max_bad_blocks ]
-[ -d read_delay_factor ] [ -i input_file ] [ -o output_file ] [ -p num_passes ] [ -t test_pattern ]
-device [ last-block ] [ first-block ]
-
-```
+[Install](/index.php/Install "Install") the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package. See [badblocks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/badblocks.8) for the usage.
 
 ## Storage Device Fidelity
 
-Although there is no firm rule has been set, it is common thinking that a new drive should have zero bad sectors. Over time, bad sectors will develop on a storage device and although they are able to be defined to the file system so that they are avoided, continual use of the drive will usually result in additional bad sectors forming and are usually the harbinger of death of a hard drive. Replacement of the device is recommended.
+Although there is no firm rule, it is common thinking that a new drive should have zero bad sectors. Over time, bad sectors will develop and although they are able to be defined to the file system so that they are avoided, continual use of the drive will usually result in additional bad sectors forming and it is usually the harbinger of its eventual death. Replacing the device is recommended.
 
 ## Comparisons with Other Programs
 
@@ -204,14 +195,14 @@ Then (re-)create the file system with the information:
 
 #### Block size
 
-first find the file systems **block size**. For example for ext# filesystems:
+First find the file systems **block size**. For example for ext# filesystems:
 
 ```
 # dumpe2fs /dev/<device-PARTITION> | grep 'Block size'
 
 ```
 
-feed this to *badblocks*:
+Feed this to *badblocks*:
 
 ```
 # badblocks -b <block size>

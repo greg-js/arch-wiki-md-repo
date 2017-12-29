@@ -1,3 +1,4 @@
+﻿
 **Состояние перевода:** На этой странице представлен перевод статьи [The Arch Way](/index.php/The_Arch_Way "The Arch Way"). Дата последней синхронизации: 8 июля 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=The_Arch_Way&diff=0&oldid=381341).
 
 Представленные на этой странице четыре основных принципа отражают то, что обычно называют Arch Way (философией Arch) и лучше всего описывается аббревиатурой KISS: Keep It Simple, Stupid (*"не усложняй, тупица"*).

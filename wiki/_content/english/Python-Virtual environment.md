@@ -184,5 +184,4 @@ After you have done your things, leave the virtual environment:
 
 *   [Python venv](https://docs.python.org/3/library/venv.html)
 *   [virtualenv Pypi page](https://pypi.python.org/pypi/virtualenv)
-*   [Tutorial for virtualenv](http://wiki.pylonshq.com/display/pylonscookbook/Using+a+Virtualenv+Sandbox)
 *   [virtualenvwrapper page at Doug Hellmann's](http://www.doughellmann.com/docs/virtualenvwrapper/)

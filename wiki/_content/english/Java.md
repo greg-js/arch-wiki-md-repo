@@ -86,7 +86,7 @@ The following packages are available:
 
 	[http://www.parrot.org/](http://www.parrot.org/) || [parrot](https://www.archlinux.org/packages/?name=parrot)
 
-**Note:** 32-bit versions of Java SE can be found by prefixing `bin32-`, e.g. [bin32-jre](https://aur.archlinux.org/packages/bin32-jre/) and [bin32-jdk](https://aur.archlinux.org/packages/bin32-jdk/). They use [java32-runtime-common](https://aur.archlinux.org/packages/java32-runtime-common/), which functions as [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) by suffixing with `32`, e.g. `java32`.
+**Note:** 32-bit versions of Java SE can be found by prefixing `bin32-`, e.g. [bin32-jre](https://aur.archlinux.org/packages/bin32-jre/) and [bin32-jdk](https://aur.archlinux.org/packages/bin32-jdk/). They use [java32-runtime-common](https://aur.archlinux.org/packages/java32-runtime-common/), which functions as [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) by suffixing with `32`, e.g. `java32`. The same analogy applies to [java32-environment-common](https://aur.archlinux.org/packages/java32-environment-common/), which is only used by 32-bit JDK packages.
 
 ## Flagging packages as out-of-date
 
@@ -165,7 +165,7 @@ There should be no need to unset a Java environment as packages providing them s
 
 ### Fixing the default Java environment
 
-If an invalid Java environment link is set, calling the `archlinux-java fix` command tries to fix these. Also note that if no default Java environment is set, this will look for valid ones and try to set it for you. Officially supported packages "OpenJDK 7" and "OpenJDK 8" will be considered first in this order, then un-official packages from [AUR](/index.php/AUR "AUR").
+If an invalid Java environment link is set, calling the `archlinux-java fix` command tries to fix it. Also note that if no default Java environment is set, this will look for valid ones and try to set it for you. Officially supported packages "OpenJDK 7" and "OpenJDK 8" will be considered first in this order, then un-official packages from [AUR](/index.php/AUR "AUR").
 
 ```
 # archlinux-java fix
@@ -185,6 +185,8 @@ exec /path/to/application "$@"
 ```
 
 ## Package pre-requisites to support `archlinux-java`
+
+**Note:** This info also applies to `archlinux32-java` for 32-bit Java packages, with the proper inclusion of `32` to the package/executable names, where applicable.
 
 This section is targeted at packager willing to provide packages in [AUR](/index.php/AUR "AUR") for an alternate JVM and be able to integrate with Arch Linux JVM scheme to use `archlinux-java`. To do so, packages should:
 
@@ -278,7 +280,7 @@ See [Java Runtime Environment fonts](/index.php/Java_Runtime_Environment_fonts "
 
 ### Silence 'Picked up _JAVA_OPTIONS' message on command line
 
-Setting the _JAVA_OPTIONS environment variables makes java (openjdk) write to stderr messages of the form: 'Picked up _JAVA_OPTIONS=...'. To supress those mesages in your terminal you can unset the environment variable in your shell startup files and alias java to pass those same options as command line arguments:
+Setting the _JAVA_OPTIONS environment variables makes java (openjdk) write to stderr messages of the form: 'Picked up _JAVA_OPTIONS=...'. To suppress those messages in your terminal you can unset the environment variable in your shell startup files and alias java to pass those same options as command line arguments:
 
 ```
 _SILENT_JAVA_OPTIONS="$_JAVA_OPTIONS"

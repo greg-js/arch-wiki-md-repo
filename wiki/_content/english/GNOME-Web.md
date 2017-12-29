@@ -15,9 +15,8 @@ Web is the default web browser for [GNOME](https://live.gnome.org/). Web provide
     *   [2.2 Web Apps](#Web_Apps)
 *   [3 Plugins](#Plugins)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Pixelated fonts](#Pixelated_fonts)
-    *   [4.2 Font hinting](#Font_hinting)
-    *   [4.3 No HTML5 video](#No_HTML5_video)
+    *   [4.1 Font hinting](#Font_hinting)
+    *   [4.2 No HTML5 video](#No_HTML5_video)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -63,15 +62,6 @@ See the main article: [Browser plugins](/index.php/Browser_plugins "Browser plug
 To find out what plugins are installed/enabled, enter `about:plugins` in the address bar.
 
 ## Troubleshooting
-
-### Pixelated fonts
-
-Some websites such as github.com tend to use a bitmap font from X11, named `Clean`. To disable bitmap fonts, run:
-
-```
-# ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
-
-```
 
 ### Font hinting
 

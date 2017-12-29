@@ -79,7 +79,7 @@ Install from AUR: [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)
 
 ### Audio
 
-Works out of the box. KDE: Install [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix)
+Works out of the box. KDE: Install [kmix](https://www.archlinux.org/packages/?name=kmix)
 
 ### Touchpad
 

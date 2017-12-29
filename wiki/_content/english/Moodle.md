@@ -1,27 +1,28 @@
-From [Wikipedia](https://en.wikipedia.org):
+Related articles
 
-	[Moodle](https://en.wikipedia.org/wiki/Moodle "wikipedia:Moodle") (abbreviation for Modular Object-Oriented Dynamic Learning Environment) is a free source e-learning software platform, also known as a Course Management System, Learning Management System, or Virtual Learning Environment (VLE).
+*   [MySQL](/index.php/MySQL "MySQL")
+*   [LAMP](/index.php/LAMP "LAMP")
 
-This article describes how to set up the Moodle server on an Arch Linux system. Usage is not covered. For more help visit [its home page](http://www.moodle.org).
+[Moodle](https://moodle.org/) is a free and open-source e-learning software platform, written in [PHP](/index.php/PHP "PHP").
+
+This article describes how to set up the Moodle server.
 
 ## Contents
 
-*   [1 Install the LAMP Stack](#Install_the_LAMP_Stack)
-*   [2 Download and install Moodle](#Download_and_install_Moodle)
-*   [3 Preconfiguration](#Preconfiguration)
-    *   [3.1 File access](#File_access)
-    *   [3.2 Create the MoodleData Directory](#Create_the_MoodleData_Directory)
-    *   [3.3 Configure PHP extension](#Configure_PHP_extension)
-    *   [3.4 Restart Apache](#Restart_Apache)
-    *   [3.5 Mariadb](#Mariadb)
-*   [4 Installation](#Installation)
-*   [5 See also](#See_also)
+*   [1 Installation](#Installation)
+*   [2 Preconfiguration](#Preconfiguration)
+    *   [2.1 File access](#File_access)
+    *   [2.2 Create the MoodleData Directory](#Create_the_MoodleData_Directory)
+    *   [2.3 Configure PHP extension](#Configure_PHP_extension)
+    *   [2.4 Restart Apache](#Restart_Apache)
+    *   [2.5 Mariadb](#Mariadb)
+*   [3 Installation](#Installation_2)
 
-## Install the LAMP Stack
+## Installation
 
-Follow the instructions to install [LAMP](/index.php/LAMP "LAMP").
+[Installation quick guide](https://docs.moodle.org/en/Installation_quick_guide):
 
-## Download and install Moodle
+> You will need a working web server (e.g. [Apache](/index.php/Apache "Apache")), a database (e.g. [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")) and have [PHP](/index.php/PHP "PHP") configured.
 
 There is also an AUR package [moodle](https://aur.archlinux.org/packages/moodle/) for the installation. Either you can use this way:
 
@@ -122,10 +123,3 @@ Go to `[http://localhost/moodle/install.php](http://localhost/moodle/install.php
 *   The final page allows you to set up the administrator user for Moodle. You need to enter a password, name and set the country as a bare minimum. *Don't* forget the password !
 
 Happy Moodling !
-
-## See also
-
-*   [http://www.moodle.org/](http://www.moodle.org/)
-*   [http://www.apache.org/](http://www.apache.org/)
-*   [http://www.php.net/](http://www.php.net/)
-*   [http://www.mysql.com/](http://www.mysql.com/)

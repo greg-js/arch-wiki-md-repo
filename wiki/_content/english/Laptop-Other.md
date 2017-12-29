@@ -7,6 +7,11 @@
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
+| Clevo N130BU | 2017.09 | Intel HD Graphics 620: OK | PuseAudio OK | Yes | Yes | Yes | Not tested | Not tested | Fn keys not working out of the box : volume, brightness
+
+Touchpad works with libinput but awkard default config ("Tapping" disabled)
+
+ | Highly compatible linux machine but many small annoyances as some functionalities are not working out of the box. |
 | Clevo M350 | Noodle | Yes | AC'97 with [ALSA](/index.php/ALSA "ALSA") | Yes | N/A | N/A | Suspend-to-RAM: Yes
 Suspend-to-disk: No | Yes, with slmodem | IEEE-1394 not tested | Front panel keys does not work |
 | Clevo W150HRM | 2011.08.19 | Intel 950GMA and Nvidia Optimus (Bumblebee works) | Intel HDA (OK) | Yes | Yes | Not tested | -- | -- | -- | -- |

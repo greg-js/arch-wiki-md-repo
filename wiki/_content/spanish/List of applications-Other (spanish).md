@@ -593,7 +593,7 @@ Vea también [Emuladores de videojuegos](https://en.wikipedia.org/wiki/es:Anexo:
 
 *   **higan** — Emulador multisistema enfocado en la exactitud, soporte para SNES, NES, GB, GBC, GBA.
 
-	[http://code.google.com/p/higan/](http://code.google.com/p/higan/) || [higan-gtk](https://www.archlinux.org/packages/?name=higan-gtk) [higan-qt](https://www.archlinux.org/packages/?name=higan-qt)
+	[http://code.google.com/p/higan/](http://code.google.com/p/higan/) || [higan](https://www.archlinux.org/packages/?name=higan)
 
 *   **mednafen** — Emulador multisistema mediante línea de comandos.
 

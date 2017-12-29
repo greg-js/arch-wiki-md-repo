@@ -155,7 +155,7 @@ depmod -a
 
 ```
 
-Then [install](/index.php/Install "Install") the [synaptics](https://www.archlinux.org/packages/?name=synaptics) package.
+Then [install](/index.php/Install "Install") the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) package.
 
 Feature still not working: pinch to zoom, 3rd mouse button.
 
@@ -189,6 +189,6 @@ depmod -a
 
 ```
 
-Then [install](/index.php/Install "Install") the [synaptics](https://www.archlinux.org/packages/?name=synaptics) packages.
+Then [install](/index.php/Install "Install") the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) packages.
 
 Feature still not working: pinch to zoom, 3rd mouse button

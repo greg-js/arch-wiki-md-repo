@@ -162,6 +162,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [71.1 Floating heads](#Floating_heads)
 *   [72 Mount & Blade: Warband](#Mount_.26_Blade:_Warband)
     *   [72.1 Segmentation fault (core dumped) with wayland](#Segmentation_fault_.28core_dumped.29_with_wayland)
+    *   [72.2 DLC Chooser](#DLC_Chooser)
 *   [73 Multiwinia](#Multiwinia)
     *   [73.1 Crash on startup](#Crash_on_startup)
 *   [74 Natural Selection 2](#Natural_Selection_2)
@@ -286,10 +287,17 @@ Adobe AIR requires you to accept its EULA by creating the file `~/.appdata/Adobe
 
 Symlink `/usr/lib/libpcre.so` to `*gamedir*/lib/x86_64/libpcre.so.3`, and add the following line to [launch options](/index.php/Launch_option "Launch option"), otherwise the game will fail to start.
 
-```
-LD_LIBRARY_PATH="$LD_LIBRARY_PATH:~/.local/share/Steam/SteamApps/common/Alien Isolation/lib/x86_64" %command%
+for example (as root):
 
-```
+cd /usr/lib ln -s libpcre.so libpcre.so.3
+
+and change the launch options to:
+
+LD_LIBRARY_PATH="$LD_LIBRARY_PATH:~/.local/share/Steam/steamapps/common/Alien\ Isolation/lib/x86_64/" %command%
+
+or if you are using optirun (nvidia + bumblebee):
+
+LD_LIBRARY_PATH="$LD_LIBRARY_PATH:~/.local/share/Steam/steamapps/common/Alien\ Isolation/lib/x86_64/" LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 optirun %command%
 
 ## Amnesia: The Dark Descent
 
@@ -1342,6 +1350,10 @@ Add `__GL_ShaderPortabilityWarnings=0` to your [launch options](/index.php/Launc
 ### Segmentation fault (core dumped) with wayland
 
 Use Xorg instead.
+
+### DLC Chooser
+
+Requires [lib32-nas](https://aur.archlinux.org/packages/lib32-nas/).
 
 ## Multiwinia
 

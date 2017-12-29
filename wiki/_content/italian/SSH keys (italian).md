@@ -182,7 +182,7 @@ L'unico aspetto negativo è che una nuova istanza di `ssh-agent` deve essere cre
 
 #### Uso di GnuPG Agent
 
-L'agente [GnuPG](/index.php/GnuPG "GnuPG"), distribuito con il pacchetto [gnupg2](https://www.archlinux.org/packages/?name=gnupg2), ha un agente di emulazione OpenSSH. Se si utilizza GPG si potrebbe considerare l'utilizzo di questo agente per la salvaguardia delle proprie chiavi. Altrimenti si potrebbe gradire la voce di dialogo PIN che fornisce una propria gestione passphrase, e che è una cosa differente dal portachiavi.
+L'agente [GnuPG](/index.php/GnuPG "GnuPG"), distribuito con il pacchetto [gnupg](https://www.archlinux.org/packages/?name=gnupg), ha un agente di emulazione OpenSSH. Se si utilizza GPG si potrebbe considerare l'utilizzo di questo agente per la salvaguardia delle proprie chiavi. Altrimenti si potrebbe gradire la voce di dialogo PIN che fornisce una propria gestione passphrase, e che è una cosa differente dal portachiavi.
 
 Per iniziare a utilizzare l'agente GPG per le proprie chiavi SSH si deve prima iniziare la gpg-agent con l'opzione `--enable-ssh-support`. Esempi(non dimenticare di rendere eseguibile il file):
 

@@ -16,14 +16,15 @@ This article describes how to set up a mail server suitable for personal or smal
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Assumptions](#Assumptions)
-    *   [2.2 Generate DH parameters](#Generate_DH_parameters)
-    *   [2.3 Dovecot configuration](#Dovecot_configuration)
-    *   [2.4 PAM Authentication](#PAM_Authentication)
-    *   [2.5 PAM Authentication with LDAP](#PAM_Authentication_with_LDAP)
-    *   [2.6 Sieve](#Sieve)
-        *   [2.6.1 Sieve Interpreter Plugin](#Sieve_Interpreter_Plugin)
-            *   [2.6.1.1 Example: SpamAssassin - move spam to "Junk" folder](#Example:_SpamAssassin_-_move_spam_to_.22Junk.22_folder)
-        *   [2.6.2 ManageSieve Server](#ManageSieve_Server)
+    *   [2.2 Create the SSL certificate](#Create_the_SSL_certificate)
+    *   [2.3 Generate DH parameters](#Generate_DH_parameters)
+    *   [2.4 Dovecot configuration](#Dovecot_configuration)
+    *   [2.5 PAM Authentication](#PAM_Authentication)
+    *   [2.6 PAM Authentication with LDAP](#PAM_Authentication_with_LDAP)
+    *   [2.7 Sieve](#Sieve)
+        *   [2.7.1 Sieve Interpreter Plugin](#Sieve_Interpreter_Plugin)
+            *   [2.7.1.1 Example: SpamAssassin - move spam to "Junk" folder](#Example:_SpamAssassin_-_move_spam_to_.22Junk.22_folder)
+        *   [2.7.2 ManageSieve Server](#ManageSieve_Server)
 *   [3 Starting the server](#Starting_the_server)
 *   [4 Tricks](#Tricks)
 
@@ -41,7 +42,7 @@ This article describes how to set up a mail server suitable for personal or smal
 *   The common [Maildir](https://en.wikipedia.org/wiki/Maildir "wikipedia:Maildir") format is used to store the mail in the user's home directory.
 *   A [MDA](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") has already been set up to deliver mail to the local users.
 
-0===Create the SSL certificate===
+### Create the SSL certificate
 
 The [dovecot](https://www.archlinux.org/packages/?name=dovecot) package contains a script to generate the server SSL certificate.
 
@@ -70,10 +71,10 @@ To generate a new DH parameters file (this will take very long):
 
 ```
 
-then add the file to `/etc/dovecot/dovecot.conf`
+then add the file to `/etc/dovecot/conf.d/10-ssl.conf`
 
 ```
-ssl_dh = </etc/ssl/dh.pem
+ssl_dh = </etc/dovecot/dh.pem
 
 ```
 

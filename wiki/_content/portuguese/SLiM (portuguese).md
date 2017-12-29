@@ -1,8 +1,8 @@
 Artigos relacionados
 
-*   [Display Manager](/index.php/Display_Manager "Display Manager")
+*   [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição")
 
-[SLiM](http://slim.berlios.de/) é um acrônimo para Gerenciador de Login Simples (Simple Login Manager). SLiM é simples, leve e fácil de ser configurado. SLiM é usado por alguns porque não requer dependências do [GNOME](/index.php/GNOME "GNOME") ou [KDE](/index.php/KDE "KDE") e pode ajudar a criar um sistema leve para usuários que gostam de usar desktops leve como [Xfce](/index.php/Xfce "Xfce"), [Openbox](/index.php/Openbox "Openbox"), e [Fluxbox (Português)](/index.php/Fluxbox_(Portugu%C3%AAs) "Fluxbox (Português)").
+[SLiM](http://slim.berlios.de/) é um acrônimo para Gerenciador de Login Simples (Simple Login Manager). SLiM é simples, leve e fácil de ser configurado. SLiM é usado por alguns porque não requer dependências do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") ou [KDE](/index.php/KDE "KDE") e pode ajudar a criar um sistema leve para usuários que gostam de usar desktops leve como [Xfce](/index.php/Xfce "Xfce"), [Openbox](/index.php/Openbox "Openbox"), e [Fluxbox](/index.php/Fluxbox_(Portugu%C3%AAs) "Fluxbox (Português)").
 
 ## Contents
 
@@ -40,7 +40,7 @@ Instale o SLIM do repositório **extra**:
 
 ### Habilitando o SLIM
 
-O SLiM pode ser carregado na inicialização adicionando sua entrada no daemons em `rc.conf` ou modificando o arquivo `inittab`. Veja a página [Display manager](/index.php/Display_manager "Display manager") para obter instruções detalhadas.
+O SLiM pode ser carregado na inicialização adicionando sua entrada no daemons em `rc.conf` ou modificando o arquivo `inittab`. Veja a página [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição") para obter instruções detalhadas.
 
 ### Único ambiente gráfico
 
@@ -158,7 +158,7 @@ $ slim -p /usr/share/slim/themes/<nome do tema>
 
 Para fechar, digite "exit" na linha Login e pressione Enter.
 
-Pacotes de temas adicionais podem ser encontrados no [AUR](/index.php/AUR "AUR").
+Pacotes de temas adicionais podem ser encontrados no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)").
 
 #### Configuração em tela dupla
 
@@ -299,7 +299,7 @@ Use a variável current_theme como uma lista separada por vírgulas para especif
 
 Esta é uma lista de todas as opções de configuração do slim e os seus valores padrões.
 
-**Note:** welcome_msg permite 2 variáveis **%host** e **%domain**
+**Nota:** welcome_msg permite 2 variáveis **%host** e **%domain**
 sessionstart_cmd allows **%user** *(execd right before login_cmd)* e também é permitido em sessionstop_cmd
 login_cmd permite **%session** e **%theme**
 

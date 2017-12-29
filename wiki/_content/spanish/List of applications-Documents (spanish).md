@@ -74,7 +74,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[Okular](https://en.wikipedia.org/wiki/Okular "wikipedia:Okular")** — Potente visualizador de KDE.
 
-	[http://okular.kde.org/](http://okular.kde.org/) || [kdegraphics-okular](https://www.archlinux.org/packages/?name=kdegraphics-okular)
+	[http://okular.kde.org/](http://okular.kde.org/) || [okular](https://www.archlinux.org/packages/?name=okular)
 
 *   **qpdfview** — Visor de PDF con pestañas, que usa las bibliotecas Poppler y Qt.
 
@@ -182,7 +182,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[Calligra Words](https://en.wikipedia.org/wiki/Calligra_Words "wikipedia:Calligra Words")** — Potente procesador de textos incluido en la suite Calligra.
 
-	[http://www.calligra.org/words/](http://www.calligra.org/words/) || [calligra-words](https://www.archlinux.org/packages/?name=calligra-words)
+	[http://www.calligra.org/words/](http://www.calligra.org/words/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **gLabels** — Programa para crear etiquetas y tarjetas de visita.
 
@@ -194,7 +194,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown")** — Herramienta de conversión de texto a HTML que permite escribir usando un sencillo formato de texto plano.
 
-	[http://daringfireball.net/projects/markdown](http://daringfireball.net/projects/markdown) || [markdown](https://www.archlinux.org/packages/?name=markdown)
+	[http://daringfireball.net/projects/markdown](http://daringfireball.net/projects/markdown) || [discount](https://www.archlinux.org/packages/?name=discount)
 
 *   **[OpenOffice Writer](/index.php/OpenOffice "OpenOffice")** — Procesador de texto con todas las funciones, incluido en la suite OpenOffice.
 
@@ -202,7 +202,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **Pandoc** — Navaja suiza para convertir de un formato de marcadores en otro (compatibles con Markdown).
 
-	[http://johnmacfarlane.net/pandoc](http://johnmacfarlane.net/pandoc) || [haskell-pandoc](https://www.archlinux.org/packages/?name=haskell-pandoc)
+	[http://johnmacfarlane.net/pandoc](http://johnmacfarlane.net/pandoc) || [pandoc](https://www.archlinux.org/packages/?name=pandoc)
 
 *   **Pathetic Writer** — Procesador de texto mejorado basado en X incluido en Siag Office.
 
@@ -226,7 +226,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[Calligra Sheets](https://en.wikipedia.org/wiki/Calligra_Sheets "wikipedia:Calligra Sheets")** — Poderosa hoja de cálculo incluida en la suite Calligra.
 
-	[http://www.calligra.org/sheets/](http://www.calligra.org/sheets/) || [calligra-sheets](https://www.archlinux.org/packages/?name=calligra-sheets)
+	[http://www.calligra.org/sheets/](http://www.calligra.org/sheets/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[Gnumeric](/index.php/Gnumeric "Gnumeric")** — Programa de hoja de cálculo que forma parte del escritorio GNOME .
 

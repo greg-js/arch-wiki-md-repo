@@ -8,7 +8,7 @@ pkgstats envia uma lista de todos os pacotes instalados, [módulos de kernel](ht
 
 *pkgstats* é configurado para executar automaticamente toda semana usando [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). Uma vez instalado, ele será ativado após a próxima reinicialização.
 
-Se você não deseja esperar por um ciclo de reinicialização, você pode [iniciar](/index.php/Start "Start") manualmente o `pkgstats.timer`.
+Se você não deseja esperar por um ciclo de reinicialização, você pode [iniciar](/index.php/Inicie "Inicie") manualmente o `pkgstats.timer`.
 
 *pkgstats* também pode ser executado manualmente: veja `pkgstats -h` para informações de uso.
 

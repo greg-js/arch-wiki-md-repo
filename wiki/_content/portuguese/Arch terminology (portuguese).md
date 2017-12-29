@@ -82,7 +82,7 @@ O repositório *core* contém os pacotes básicos para um sistema do Arch Linux.
 
 Trata-se de repositório personalizado, de usuário. Qualquer um pode criar um e disponibilizá-lo para outros usuários. Para criar um repositório, você precisa de um conjunto de pacotes e um arquivo de banco de dados compatível com o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") para seus pacotes. Hospede seus arquivos online e todo mundo poderá usar seu repositório adicionando-o como um repositório comum.
 
-Veja [Repositório local personalizado](/index.php/Custom_local_repository "Custom local repository").
+Veja [Repositório local personalizado](/index.php/Reposit%C3%B3rio_local_personalizado "Repositório local personalizado").
 
 ## Developer
 

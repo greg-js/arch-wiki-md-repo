@@ -1,6 +1,6 @@
 Artigos relacionados
 
-*   [Arch terminology (Português)](/index.php/Arch_terminology_(Portugu%C3%AAs) "Arch terminology (Português)")
+*   [Terminologia do Arch](/index.php/Terminologia_do_Arch "Terminologia do Arch")
 *   [Arch User Repository (Português)#FAQ](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#FAQ "Arch User Repository (Português)")
 *   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
 
@@ -71,7 +71,7 @@ Não, mas o projeto [Arch Linux ARM](http://archlinuxarm.org/) fornece um *port*
 
 ### O Arch segue o [FHS](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)?
 
-O Arch Linux segue a *hierarquia de sistema de arquivos* para sistemas de arquivos usando o gerenciador de serviço [systemd](/index.php/Systemd "Systemd"). Veja [file-hierarchy(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) para uma explicação de cada diretório junto com suas designações. Em especial, `/bin`, `/sbin` e `/usr/sbin` são links simbólicos para `/usr/bin`, e `/lib` e `/lib64` são links simbólicos para `/usr/lib`.
+O Arch Linux segue a *hierarquia de sistema de arquivos* para sistemas de arquivos usando o gerenciador de serviço [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"). Veja [file-hierarchy(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) para uma explicação de cada diretório junto com suas designações. Em especial, `/bin`, `/sbin` e `/usr/sbin` são links simbólicos para `/usr/bin`, e `/lib` e `/lib64` são links simbólicos para `/usr/lib`.
 
 ### Eu sou um completo iniciante no GNU/Linux. Eu deveria usar o Arch?
 
@@ -97,7 +97,7 @@ Os lançamentos do Arch Linux são apenas um ambiente *live* para instalação o
 
 *O usuário* é o responsável pela estabilidade de seu próprio sistema de lançamento contínuo. O usuário é quem decide quando atualizar e mesclar alterações necessárias, quando necessário. Se o usuário buscar na comunidade por ajuda, geralmente consegue em pouco tempo. A diferença entre o Arch e outras distribuições está realmente no fato do Arch ser uma distribuição *faça você mesmo*; reclamações sobre quebras e travamentos são equivocadas e contraproducentes, já que alterações no upstream não são responsabilidade dos desenvolvedores do Arch.
 
-Veja o artigo [Manutenção do sistema](/index.php/System_maintenance "System maintenance") para dicas sobre como fazer um sistema Arch o mais estável possível.
+Veja o artigo [Manutenção do sistema](/index.php/Manuten%C3%A7%C3%A3o_do_sistema "Manutenção do sistema") para dicas sobre como fazer um sistema Arch o mais estável possível.
 
 ### O Arch precisa de mais divulgação (i.e. propaganda)
 
@@ -139,7 +139,7 @@ A resposta para essa questão depende de seu sistema. Há alguns [ótimos utilit
 
 ## Gerenciamento de pacote
 
-Veja as páginas [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") e [Repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") para mais respostas.
+Veja as páginas [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), [pacman/Dicas e truques](/index.php/Pacman/Dicas_e_truques "Pacman/Dicas e truques") e [Repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") para mais respostas.
 
 ### Eu encontrei um erro no pacote X. O que eu devo fazer?
 
@@ -190,7 +190,7 @@ Não, não é possível. Atualizações de versões maiores do kernel (p.ex. *li
 
 ### O que fazer antes de atualizar?
 
-Siga a seção [System maintenance (Português)#Atualizando o sistema](/index.php/System_maintenance_(Portugu%C3%AAs)#Atualizando_o_sistema "System maintenance (Português)").
+Siga a seção [Manutenção do sistema#Atualizando o sistema](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Atualizando_o_sistema "Manutenção do sistema").
 
 ### Uma atualização de pacote foi lançada, mas o pacman diz que o sistema está atualizado
 

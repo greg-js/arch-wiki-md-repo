@@ -7,20 +7,21 @@ Compton is a standalone composite manager, suitable for use with [window manager
     *   [2.1 Autostarting](#Autostarting)
     *   [2.2 Command only](#Command_only)
     *   [2.3 Using a configuration file](#Using_a_configuration_file)
-        *   [2.3.1 Disable shadowing of some windows](#Disable_shadowing_of_some_windows)
+        *   [2.3.1 Disable shadows for some windows](#Disable_shadows_for_some_windows)
 *   [3 Multihead](#Multihead)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Tabbed windows](#Tabbed_windows)
-    *   [4.2 slock](#slock)
-    *   [4.3 dwm & dmenu](#dwm_.26_dmenu)
-    *   [4.4 Firefox](#Firefox)
-    *   [4.5 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
-    *   [4.6 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
-    *   [4.7 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
-    *   [4.8 Errors while trying to daemonize with nvidia drivers](#Errors_while_trying_to_daemonize_with_nvidia_drivers)
+    *   [4.1 Conky](#Conky)
+    *   [4.2 dwm | dmenu](#dwm_.7C_dmenu)
+    *   [4.3 Firefox](#Firefox)
+    *   [4.4 slock](#slock)
+    *   [4.5 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
+    *   [4.6 Errors while trying to daemonize with nvidia drivers](#Errors_while_trying_to_daemonize_with_nvidia_drivers)
+    *   [4.7 Flicker](#Flicker)
+    *   [4.8 Fullscreen tearing](#Fullscreen_tearing)
     *   [4.9 Lag when using xft fonts](#Lag_when_using_xft_fonts)
-    *   [4.10 Flicker](#Flicker)
-    *   [4.11 Fullscreen tearing](#Fullscreen_tearing)
+    *   [4.10 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
+    *   [4.11 Tabbed windows](#Tabbed_windows)
+    *   [4.12 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -102,32 +103,19 @@ $ compton --config *path/to/compton.conf* -b
 
 ```
 
-#### Disable shadowing of some windows
+#### Disable shadows for some windows
 
-Due to the way compton draws its shadows, certain applications will have visual glitches when you have shadows enabled. The `shadow-exclude` options could disable compton shadows.
+The `shadow-exclude` option can disable shadows for windows if required. For currently disabled windows, see [here](https://projects.archlinux.org/svntogit/community.git/tree/trunk/compton.conf?h=packages/compton#n80).
 
-For example, to disable Compton shadows on all GTK +3 windows, add below setting to `shadow-exclude` in `compton.conf`:
-
-```
-"_GTK_FRAME_EXTENTS@:c"
+To disable shadows for menus add the following to wintypes in `compton.conf`:
 
 ```
-
-To disable shadows around [conky](/index.php/Conky "Conky") windows - where used - first amend the conky configuration file `~/.conkyrc` as follows:
-
-```
-own_window_class conky
-
-```
-
-Then amend the compton configuration file as follows:
+# menu        = { shadow = false; };
+dropdown_menu = { shadow = false; };
+popup_menu    = { shadow = false; };
+# utility     = { shadow = false; };
 
 ```
-shadow-exclude = "class_g = 'conky'";
-
-```
-
-For currently disabled windows, please see [here](https://projects.archlinux.org/svntogit/community.git/tree/trunk/compton.conf?h=packages/compton#n80).
 
 ## Multihead
 
@@ -149,30 +137,43 @@ seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
 
 The use of compositing effects may on occasion cause issues such as visual glitches when not configured correctly for use with other applications and programs.
 
-### Tabbed windows
+### Conky
 
-When windows with transparency are tabbed, the underlying tabbed windows are still visible because of transparency. Each tabbed window also draws its own shadow resulting in multiple shadows.
-
-Removing the multiple shadows issue can be done by adding the following to the already existing [`shadow-exclude` list](https://projects.archlinux.org/svntogit/community.git/tree/trunk/compton.conf?h=packages/compton#n80):
+To disable shadows around [Conky](/index.php/Conky "Conky") windows, have the following in `~/.conkyrc`:
 
 ```
-"_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
+own_window_class conky
 
 ```
 
-Not drawing underlying tabbed windows can be enabled by adding the following to your `compton.conf`:
+### dwm | dmenu
+
+dwm's statusbar is not detected by any of compton's functions to automatically exclude window manager elements. Neither dwm statusbar nor dmenu have a static window id. If you want to exclude it from inactive window transparency (or other), you'll have to either patch a window class into the source code of each, or exclude by less precise attributes. The following example is with dwm's status on top, which allows a resolution independent of location exclusion:
 
 ```
-opacity-rule = [
-  "95:class_g = 'URxvt' && !_NET_WM_STATE@:32a",
-  "0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
-];
+$ compton <any other arguments> --focus-exclude "x = 0 && y = 0 && override_redirect = true"
 
 ```
 
-Note that `URxvt` is the Xorg class name of your terminal. Change this if you use a different terminal.
+Otherwise, where using a configuration file:
 
-See [[1]](https://www.reddit.com/r/unixporn/comments/330zxl/webmi3_no_more_overlaying_shadows_and_windows_in/) for more information.
+```
+focus-exclude = "x = 0 && y = 0 && override_redirect = true";
+
+```
+
+The override redirect property seems to be false for most windows- having this in the exclusion rule prevents other windows drawn in the upper left corner from being excluded (for example, when dwm statusbar is hidden, x0 y0 will match whatever is in dwm's master stack).
+
+### Firefox
+
+To disable shadows for Firefox elements add the following to shadow-exclude in `compton.conf`:
+
+```
+"class_g = 'Firefox' && argb",
+
+```
+
+See [[1]](https://github.com/chjj/compton/issues/201#issuecomment-45288510) for more information.
 
 ### slock
 
@@ -229,34 +230,86 @@ focus-exclude = "id = 0x1800001";
 
 ```
 
-### dwm & dmenu
+### Corrupted screen contents with Intel graphics
 
-dwm's statusbar is not detected by any of compton's functions to automatically exclude window manager elements. Neither dwm statusbar nor dmenu have a static window id. If you want to exclude it from inactive window transparency (or other), you'll have to either patch a window class into the source code of each, or exclude by less precise attributes. The following example is with dwm's status on top, which allows a resolution independent of location exclusion:
+On at least some Intel chipsets, DRI3 is known to cause [trouble](https://bugs.freedesktop.org/show_bug.cgi?id=97916) for compton when the display resolution is changed or a new monitor is connected. This can happen with either the `intel` or `modesetting` driver. A workaround is to [disable DRI3](/index.php/Intel_graphics#DRI3_issues "Intel graphics").
 
-```
-$ compton <any other arguments> --focus-exclude "x = 0 && y = 0 && override_redirect = true"
+### Errors while trying to daemonize with nvidia drivers
 
-```
+If you get error `main(): Failed to create new session.` while trying to start compton in background you should try [compton-garnetius-git](https://aur.archlinux.org/packages/compton-garnetius-git/). It also provides a few pulls from upstream that aren't merged yet.
 
-Otherwise, where using a configuration file:
+### Flicker
 
-```
-focus-exclude = "x = 0 && y = 0 && override_redirect = true";
+Applies to fully maximized windows (in sessions without any panels) with the default `compton.conf` caused and resolved by the following option:
 
 ```
-
-The override redirect property seems to be false for most windows- having this in the exclusion rule prevents other windows drawn in the upper left corner from being excluded (for example, when dwm statusbar is hidden, x0 y0 will match whatever is in dwm's master stack).
-
-### Firefox
-
-To disable shadows for Firefox elements add to shadow-exlude in `compton.conf`:
-
-```
-"class_g = 'Firefox' && argb",
+unredir-if-possible = false;
 
 ```
 
-See [[2]](https://github.com/chjj/compton/issues/201#issuecomment-45288510) for more information.
+See [[2]](https://github.com/chjj/compton/issues/402) for more information.
+
+### Fullscreen tearing
+
+If you observe screen tearing of video playback only in fullscreen mode see [#Flicker](#Flicker).
+
+### Lag when using xft fonts
+
+If you experience heavy lag when using Xft fonts in applications such as [xterm](/index.php/Xterm "Xterm") or [urxvt](/index.php/Urxvt "Urxvt") try:
+
+```
+--xrender-sync --xrender-sync-fence
+
+```
+
+Or the xrender backend.
+
+See [[3]](https://github.com/chjj/compton/issues/152) for more information.
+
+### Screen artifacts/screenshot issues when using AMD's Catalyst driver
+
+Try running Compton with:
+
+```
+--backend xrender
+
+```
+
+Or add
+
+```
+backend = "xrender";
+
+```
+
+to your `compton.conf` file.
+
+See [[4]](https://github.com/chjj/compton/issues/208) for more information.
+
+### Tabbed windows
+
+When windows with transparency are tabbed, the underlying tabbed windows are still visible because of transparency. Each tabbed window also draws its own shadow resulting in multiple shadows.
+
+Removing the multiple shadows issue can be done by adding the following to the already existing [`shadow-exclude` list](https://projects.archlinux.org/svntogit/community.git/tree/trunk/compton.conf?h=packages/compton#n80):
+
+```
+"_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
+
+```
+
+Not drawing underlying tabbed windows can be enabled by adding the following to your `compton.conf`:
+
+```
+opacity-rule = [
+  "95:class_g = 'URxvt' && !_NET_WM_STATE@:32a",
+  "0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
+];
+
+```
+
+Note that `URxvt` is the Xorg class name of your terminal. Change this if you use a different terminal.
+
+See [[5]](https://www.reddit.com/r/unixporn/comments/330zxl/webmi3_no_more_overlaying_shadows_and_windows_in/) for more information.
 
 ### Unable to change the background color with xsetroot
 
@@ -267,63 +320,7 @@ $ hsetroot -solid '#000000'
 
 ```
 
-See [[3]](https://github.com/chjj/compton/issues/162) for more information.
-
-### Corrupted screen contents with Intel graphics
-
-On at least some Intel chipsets, DRI3 is known to cause [trouble](https://bugs.freedesktop.org/show_bug.cgi?id=97916) for compton when the display resolution is changed or a new monitor is connected. This can happen with either the `intel` or `modesetting` driver. A workaround is to [disable DRI3](/index.php/Intel_graphics#DRI3_issues "Intel graphics").
-
-### Screen artifacts/screenshot issues when using AMD's Catalyst driver
-
-Try running compton with
-
-```
---backend xrender
-
-```
-
-or adding
-
-```
-backend = "xrender";
-
-```
-
-to your compton.conf file.
-
-See [[4]](https://github.com/chjj/compton/issues/208) for more information.
-
-### Errors while trying to daemonize with nvidia drivers
-
-If you get error `main(): Failed to create new session.` while trying to start compton in background you should try [compton-garnetius-git](https://aur.archlinux.org/packages/compton-garnetius-git/). It also provides a few pulls from upstream that aren't merged yet.
-
-### Lag when using xft fonts
-
-If you experience heavy lag when using Xft fonts in applications such as [xterm](/index.php/Xterm "Xterm") or [urxvt](/index.php/Urxvt "Urxvt") try running with
-
-```
---xrender-sync --xrender-sync-fence
-
-```
-
-or try using the xrender backend.
-
-See [[5]](https://github.com/chjj/compton/issues/152) for more information.
-
-### Flicker
-
-Applies to fully maximized windows (in sessions without any panels) with the default compton.conf caused and resolved by the following option:
-
-```
- unredir-if-possible = false;
-
-```
-
-See [[6]](https://github.com/chjj/compton/issues/402) for more information.
-
-### Fullscreen tearing
-
-If you observe screen tearing of video playback only in fullscreen mode see above.
+See [[6]](https://github.com/chjj/compton/issues/162) for more information.
 
 ## See also
 

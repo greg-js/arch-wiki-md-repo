@@ -24,6 +24,7 @@ Related articles
     *   [2.5 S series](#S_series)
     *   [2.6 U Series](#U_Series)
     *   [2.7 V Series](#V_Series)
+    *   [2.8 Y series](#Y_series)
 *   [3 Special Notes (*):](#Special_Notes_.28.2A.29:)
     *   [3.1 Lenovo U31-70](#Lenovo_U31-70)
     *   [3.2 Lenovo B50-70](#Lenovo_B50-70)
@@ -215,6 +216,14 @@ install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo V110-15ISK |  ??? | Yes | Yes | Yes | Yes | Not Tested | Yes | NA | SD Card (Not Tested), USB 3.0 (Not Tested), HDMI Out (Not Tested), Touchpad (Yes), Webcam (Yes) |
+
+### Y series
+
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
+| Lenovo Legion Y520 | 2017.12.01 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | SD card (Not tested), Webcam (Not tested), USB & USB 3.0 (Yes) | Tested December 2017 / Linux 4.14.8\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. |
 
 ## Special Notes (*):
 

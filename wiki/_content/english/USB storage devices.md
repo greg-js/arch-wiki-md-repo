@@ -18,7 +18,6 @@ If you have an up-to-date system with the standard Arch kernel and a modern [Des
         *   [2.3.3 As normal user with fstab](#As_normal_user_with_fstab)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 No USB storage devices are acknowledged by the system](#No_USB_storage_devices_are_acknowledged_by_the_system)
-    *   [3.2 Unable to write to devices using the NTFS file system](#Unable_to_write_to_devices_using_the_NTFS_file_system)
 
 ## Auto-mounting with udisks
 
@@ -90,7 +89,3 @@ See [Writing on a FAT32 partition as a normal user](/index.php/Writing_on_a_FAT3
 ### No USB storage devices are acknowledged by the system
 
 If you have connected your USB storage device to the computer and it is not listed in `lsblk` or `dmesg`, ensure that your BIOS has both XCHI Handoff and EHCI Handoff enabled.
-
-### Unable to write to devices using the NTFS file system
-
-By default, the kernel only supports reading the NTFS file system. In order to be able to write, you need to [install](/index.php/Install "Install") the [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) package.

@@ -1,8 +1,8 @@
 Artigos relacionados
 
-*   [FAQ (Português)](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)")
-*   [Installation guide (Português)](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)")
-*   [List of applications](/index.php/List_of_applications "List of applications")
+*   [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)")
+*   [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação")
+*   [Lista de aplicativos](/index.php/List_of_applications "List of applications")
 
 Esse documento é um índice anotado de artigos populares e informações importantes para melhorar e adicionar funcionalidades ao sistema Arch instalado. Presume-se aqui que os leitores leram e seguiram o [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação") para obter uma instalação básica do Arch Linux. Ter lido e entendido os conceitos explicados em [#Administração do sistema](#Administra.C3.A7.C3.A3o_do_sistema) e [#Gerenciamento de pacote](#Gerenciamento_de_pacote) é *obrigatório* para seguir as outras seções desta página e outros artigos no wiki.
 
@@ -98,19 +98,19 @@ Arch é um sistema *rolling release* e tem uma mudança rápida de pacote, entã
 
 Essa seção contém informações úteis relacionadas ao gerenciamento de pacote. Para mais, por favor veja [FAQ (Português)#Gerenciamento de pacote](/index.php/FAQ_(Portugu%C3%AAs)#Gerenciamento_de_pacote "FAQ (Português)") e [Category:Package management (Português)](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)").
 
-**Note:** É imprescindível se manter atualizado com as alterações no Arch Linux que exigem intervenção manual *antes* de atualizar seu sistema. Inscreva-se na [lista de discussão arch-announce](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) ou confira a página inicial pelas [últimas notícias do Arch](https://www.archlinux.org/) toda vez antes de atualizar. Alternativamente, você pode achar útil se inscrever [neste feed RSS](https://www.archlinux.org/feeds/news/) ou seguir [@archlinux](https://twitter.com/archlinux) no Twitter.
+**Nota:** É imprescindível se manter atualizado com as alterações no Arch Linux que exigem intervenção manual *antes* de atualizar seu sistema. Inscreva-se na [lista de discussão arch-announce](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) ou confira a página inicial pelas [últimas notícias do Arch](https://www.archlinux.org/) toda vez antes de atualizar. Alternativamente, você pode achar útil se inscrever [neste feed RSS](https://www.archlinux.org/feeds/news/) ou seguir [@archlinux](https://twitter.com/archlinux) no Twitter.
 
 ### pacman
 
 [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), uma abreviação de **pac**kage **man**ager, é o gerenciador de pacotes do Arch Linux: todos os usuários devem se familiarizar com ele antes de ler qualquer outro artigo.
 
-Veja [Pacman/Dicas e truques](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") para sugestões sobre como melhorar sua interação com *pacman* e o gerenciamento de pacotes em geral.
+Veja [pacman/Dicas e truques](/index.php/Pacman/Dicas_e_truques "Pacman/Dicas e truques") para sugestões sobre como melhorar sua interação com *pacman* e o gerenciamento de pacotes em geral.
 
 ### Repositórios
 
 Veja [Repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") para detalhes sobre o propósito de cada repositório oficialmente mantido.
 
-Se você instalou o Arch Linux x86_64 e planeja usar aplicativos 32 bits, você vai querer habilitar o repositório [multilib](/index.php/Multilib "Multilib").
+Se você instalou o Arch Linux x86_64 e planeja usar aplicativos 32 bits, você vai querer habilitar o repositório [multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)").
 
 [Repositórios extraoficiais de usuário](/index.php/Unofficial_user_repositories "Unofficial user repositories") lista diversos outros repositórios sem suporte.
 
@@ -130,15 +130,15 @@ Todo pacote nos repositórios junto com aqueles presentes no AUR estão sujeitos
 
 ### Arch User Repository
 
-Enquanto o Arch Build System permite a capacidade de compilar softwares disponíveis nos repositórios oficiais, o [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)") (AUR) é o equivalente a pacotes enviados por usuários. É um repositório sem suporte de scripts de compilação acessíveis por meio da [interface web](https://aur.archlinux.org/) ou pelo [AurJson](/index.php/AurJson "AurJson").
+Enquanto o Arch Build System permite a capacidade de compilar softwares disponíveis nos repositórios oficiais, o [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)") (AUR) é o equivalente a pacotes enviados por usuários. É um repositório sem suporte de scripts de compilação acessíveis por meio da [interface web](https://aur.archlinux.org/) ou pelo [AurJson](/index.php/AurJson_(Portugu%C3%AAs) "AurJson (Português)").
 
 ## Inicialização
 
-Essa seção contém informações pertinentes ao processo de inicialização (*boot*). Uma visão geral do processo de inicialização do Arch pode ser localizado em [Processo de inicialização do Arch](/index.php/Arch_boot_process "Arch boot process"). Para mais, veja [Category:Boot process](/index.php/Category:Boot_process "Category:Boot process").
+Essa seção contém informações pertinentes ao processo de inicialização (*boot*). Uma visão geral do processo de inicialização do Arch pode ser localizado em [Processo de inicialização do Arch](/index.php/Arch_boot_process "Arch boot process"). Para mais, veja [Category:Boot process (Português)](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)").
 
 ### Autorreconhecimento de hardware
 
-Hardware deve ser detectado automaticamente pelo [udev](/index.php/Udev "Udev") durante o processo de inicialização por padrão. Uma melhoria potencial no tempo de inicialização pode ser atingido pela desabilitação de carregamento automático de módulos e especificação manual dos módulos necessários, como descrito em [Módulos de kernel](/index.php/Kernel_modules "Kernel modules"). Além disso, [Xorg](/index.php/Xorg "Xorg") deve ser capaz de detectar automaticamente drivers drivers necessários usando `udev`, mas os usuários também têm a opção de configurar o servidor X manualmente.
+Hardware deve ser detectado automaticamente pelo [udev](/index.php/Udev "Udev") durante o processo de inicialização por padrão. Uma melhoria potencial no tempo de inicialização pode ser atingido pela desabilitação de carregamento automático de módulos e especificação manual dos módulos necessários, como descrito em [Módulos de kernel](/index.php/Kernel_modules "Kernel modules"). Além disso, [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") deve ser capaz de detectar automaticamente drivers drivers necessários usando `udev`, mas os usuários também têm a opção de configurar o servidor X manualmente.
 
 ### Microcódigo
 
@@ -158,13 +158,13 @@ Essa seção fornece orientação para usuários interessados em usar aplicativo
 
 ### Servidor de exibição
 
-[Xorg](/index.php/Xorg "Xorg") é a implementação código aberto e pública do [X Window System](https://en.wikipedia.org/wiki/pt:X_Window_System "wikipedia:pt:X Window System") (mais conhecido como *X11* ou *X*). Ele é necessário para se usar aplicativos com interfaces gráficas de usuário (também conhecidas como *GUI*s) e a maioria dos usuários terão interesse em instalá-los.
+[Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") é a implementação código aberto e pública do [X Window System](https://en.wikipedia.org/wiki/pt:X_Window_System "wikipedia:pt:X Window System") (mais conhecido como *X11* ou *X*). Ele é necessário para se usar aplicativos com interfaces gráficas de usuário (também conhecidas como *GUI*s) e a maioria dos usuários terão interesse em instalá-los.
 
 [Wayland](/index.php/Wayland "Wayland") é um protocolo alternativo mais novo de servidor de exibição e a implementação referência de Weston está disponível.
 
 ### Drivers de exibição
 
-O driver de vídeo *vesa* padrão vai funcionar com a maioria das placas de vídeo, porém o desempenho pode ser drasticamente melhorado e recursos adicionais aproveitados instalando o driver apropriado para produtos [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel") ou [NVIDIA](/index.php/NVIDIA "NVIDIA").
+O driver de vídeo *vesa* padrão vai funcionar com a maioria das placas de vídeo, porém o desempenho pode ser drasticamente melhorado e recursos adicionais aproveitados instalando o driver apropriado para produtos [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel_(Portugu%C3%AAs) "Intel (Português)") ou [NVIDIA](/index.php/NVIDIA "NVIDIA").
 
 ### Ambientes gráficos
 
@@ -172,11 +172,11 @@ Apesar do Xorg fornecer um framework básico para compilação de um ambiente gr
 
 ### Gerenciadores de janela
 
-Um ambiente gráfico completo fornece uma interface gráfica de usuário completa e consistente, mas tende a representar um consumo considerável dos recursos do sistema. Usuários buscando maximizar o desempenho ou simplificar seu ambiente, podem optar por instalar um [gerenciador de janela](/index.php/Window_manager "Window manager") sozinho e selecionar pessoalmente os extras desejados. A maioria dos ambientes gráficos também permitem o uso de um gerenciador de janela alternativo. Os gerenciadores de janela [Dynamic](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs"), [stacking](/index.php/Category:Stacking_WMs "Category:Stacking WMs") e [tiling](/index.php/Category:Tiling_WMs "Category:Tiling WMs") se diferem na forma de lidar com posicionamento das janelas.
+Um ambiente gráfico completo fornece uma interface gráfica de usuário completa e consistente, mas tende a representar um consumo considerável dos recursos do sistema. Usuários buscando maximizar o desempenho ou simplificar seu ambiente, podem optar por instalar um [gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela") sozinho e selecionar pessoalmente os extras desejados. A maioria dos ambientes gráficos também permitem o uso de um gerenciador de janela alternativo. Os gerenciadores de janela [dinâmicos](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs"), [empilhamento](/index.php/Category:Stacking_WMs "Category:Stacking WMs") e [tiling](/index.php/Category:Tiling_WMs "Category:Tiling WMs") se diferem na forma de lidar com posicionamento das janelas.
 
 ### Gerenciadores de exibição
 
-A maioria dos ambientes gráficos incluem um [gerenciador de exibição](/index.php/Display_manager_(Portugu%C3%AAs) "Display manager (Português)") para iniciar automaticamente o ambiente gráfico e gerenciar autenticação de usuário. Usuários sem um ambiente gráfico podem instalar um separadamente. Alternativamente, você pode [iniciar X no login](/index.php/Start_X_at_login "Start X at login") como uma alternativa simples a um gerenciador de exibição.
+A maioria dos ambientes gráficos incluem um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição") para iniciar automaticamente o ambiente gráfico e gerenciar autenticação de usuário. Usuários sem um ambiente gráfico podem instalar um separadamente. Alternativamente, você pode [iniciar X no login](/index.php/Start_X_at_login "Start X at login") como uma alternativa simples a um gerenciador de exibição.
 
 ## Gerenciamento de energia
 
@@ -186,7 +186,7 @@ Veja [Gerenciamento de energia](/index.php/Power_management "Power management") 
 
 ### Eventos de ACPI
 
-Usuários podem configurar como o sistema reage a eventos de ACPI tal como pressionamento de botão de energia ou fechamento da tampa do laptop. Para novo (recomendado) método usando [systemd](/index.php/Systemd "Systemd"), veja [Gerenciamento de energia com systemd](/index.php/Power_management#Power_management_with_systemd "Power management"). Para o método antigo, veja [acpid](/index.php/Acpid "Acpid").
+Usuários podem configurar como o sistema reage a eventos de ACPI tal como pressionamento de botão de energia ou fechamento da tampa do laptop. Para novo (recomendado) método usando [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"), veja [Gerenciamento de energia com systemd](/index.php/Power_management#Power_management_with_systemd "Power management"). Para o método antigo, veja [acpid](/index.php/Acpid "Acpid").
 
 ### Escala de frequência de CPU
 
@@ -252,7 +252,7 @@ Esse seção contém dicas de configuração de dispositivo de entrada popular. 
 
 ### Layouts de teclado
 
-Teclados não-americanos ou fora de padrão podem não funcionar como esperado por padrão. Os passos necessários para configurar o mapa de teclas sãos diferentes para console virtual e [Xorg](/index.php/Xorg "Xorg"), eles são descritos [Configuração de teclado no console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") e [Configuração de teclado no Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg"), respectivamente.
+Teclados não-americanos ou fora de padrão podem não funcionar como esperado por padrão. Os passos necessários para configurar o mapa de teclas sãos diferentes para console virtual e [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)"), eles são descritos [Configuração de teclado no console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") e [Configuração de teclado no Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg"), respectivamente.
 
 ### Botões de mouse
 
@@ -358,4 +358,4 @@ Para ser capaz de salvar e ver conteúdo antigo que foi deslocado para fora da t
 
 ### Gerenciamento de sessão
 
-Com o uso de multiplexadores de terminal como o [tmux](/index.php/Tmux "Tmux") ou [GNU Screen](/index.php/GNU_Screen "GNU Screen"), programas podem ser executados em sessões compostas de ambas e painéis que podem ser desanexados à vontade, de forma que quando o usuário matar o emulador de terminal, terminar o [X](/index.php/X "X") ou encerrar sua sessão, os programas associados permanecerão em execução em segundo plano desde que o servidor multiplexador de terminar esteja ativo. Interação com programas requer reanexar à sessão.
+Com o uso de multiplexadores de terminal como o [tmux](/index.php/Tmux "Tmux") ou [GNU Screen](/index.php/GNU_Screen "GNU Screen"), programas podem ser executados em sessões compostas de ambas e painéis que podem ser desanexados à vontade, de forma que quando o usuário matar o emulador de terminal, terminar o [X](/index.php/X_(Portugu%C3%AAs) "X (Português)") ou encerrar sua sessão, os programas associados permanecerão em execução em segundo plano desde que o servidor multiplexador de terminar esteja ativo. Interação com programas requer reanexar à sessão.

@@ -1,4 +1,4 @@
-[Ampache](http://ampache.org/) is a web based audio/video streaming application and file manager, written in PHP and using MySQL as its back-end. It allows you to view, edit, and play your audio files via the web. It has support for playlists, artist and album views, album art, random play, playback via Http/On the Fly Transcoding and Downsampling.
+[Ampache](http://ampache.org/) is a web based audio/video streaming application and file manager, written in [PHP](/index.php/PHP "PHP") and using [MySQL](/index.php/MySQL "MySQL") as its DBMS. It allows you to view, edit, and play your audio files via the web. It has support for playlists, artist and album views, album art, random play, playback via Http/On the Fly Transcoding and Downsampling.
 
 ## Contents
 

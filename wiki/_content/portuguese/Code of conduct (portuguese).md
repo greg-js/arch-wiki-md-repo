@@ -230,7 +230,7 @@ Diretrizes para o Arch User Repository podem ser encontradas aqui:
 *   [AUR (Português)#Regras de envio](/index.php/AUR_(Portugu%C3%AAs)#Regras_de_envio "AUR (Português)")
 *   [AUR (Português)#Outras requisições](/index.php/AUR_(Portugu%C3%AAs)#Outras_requisi.C3.A7.C3.B5es "AUR (Português)")
 
-### [IRC](/index.php/IRC "IRC")
+### [IRC](/index.php/IRC_(Portugu%C3%AAs) "IRC (Português)")
 
 Todos canais IRC do Arch Linux estão na rede irc do freenode. Usuários do freenode devem seguir a [política da rede](https://freenode.net/policies) e [diretrizes do canal](https://freenode.net/changuide) do freenode.
 

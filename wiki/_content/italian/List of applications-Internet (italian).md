@@ -77,7 +77,7 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 *   **[KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet")** — Download manager per KDE con supporto HTTP(S), FTP e BitTorrent. Parte di [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
 
-	[http://www.kde.org/applications/internet/kget/](http://www.kde.org/applications/internet/kget/) || [kdenetwork-kget](https://www.archlinux.org/packages/?name=kdenetwork-kget)
+	[http://www.kde.org/applications/internet/kget/](http://www.kde.org/applications/internet/kget/) || [kget](https://www.archlinux.org/packages/?name=kget)
 
 *   **[KTorrent](https://en.wikipedia.org/wiki/KTorrent "wikipedia:KTorrent")** — Client BitTorrent sviluppato in QT e ricco di caratteristiche.
 
@@ -179,7 +179,7 @@ Alcuni client elencati in seguito (incluso Pidgin e tutti i suoi forks) supporta
 
 *   **[Kopete](https://en.wikipedia.org/wiki/Kopete "wikipedia:Kopete")** — Messaggistica istantanea con supporto multiprotocollo AIM, ICQ, Windows Live Messenger, Yahoo, Jabber, Gadu-Gadu, Novell GroupWise Messenger,etc. Parte di [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
 
-	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
+	[http://kopete.kde.org/](http://kopete.kde.org/) || [kopete](https://www.archlinux.org/packages/?name=kopete)
 
 *   **[KDE Telepathy](/index.php/KDE_(Italiano)#KDE_Telepathy "KDE (Italiano)")** — Client di messaggistica istantanea per KDE, che utilizza il framework [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)"). Inteso come un sostituto di Kopete.
 
@@ -501,7 +501,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **[Heirloom mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx")** — Client email da riga di comando, pieno di caratteristiche, derivato da Berkeley Mail.
 
-	[http://heirloom.sourceforge.net/mailx.html](http://heirloom.sourceforge.net/mailx.html) || [heirloom-mailx](https://www.archlinux.org/packages/?name=heirloom-mailx)
+	[http://heirloom.sourceforge.net/mailx.html](http://heirloom.sourceforge.net/mailx.html) || [s-nail](https://www.archlinux.org/packages/?name=s-nail)
 
 *   **[Mutt](/index.php/Mutt "Mutt")** — Client mail piccolo ma molto potente client.
 
@@ -587,7 +587,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **Newsbeuter** — Aggregatore di notizie in ncurses con layout e tasti di scelta rapida simile al client email [Mutt](/index.php/Mutt "Mutt").
 
-	[http://newsbeuter.org](http://newsbeuter.org) || [newsbeuter](https://www.archlinux.org/packages/?name=newsbeuter)
+	[http://newsbeuter.org](http://newsbeuter.org) || [newsboat](https://www.archlinux.org/packages/?name=newsboat)
 
 *   **Rawdog** — "Aggregatore RSS Senza Delusioni di Grandeur" che passa i feeds RSS/CDF/Atom in una pagina HTML statica in ordine di data.
 
@@ -713,7 +713,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Browser basato su Qt che sfrutta il motore KHTML o Webkit. È parte di [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
 
-	[http://konqueror.org/](http://konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
+	[http://konqueror.org/](http://konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Micro-browser framework per i contenuti web, altamente configurabile e basato sul motore WebKit ed il toolkit GTK +. È molto veloce, estensibile da Lua e concesso sotto la licenza GNU GPLv3.
 

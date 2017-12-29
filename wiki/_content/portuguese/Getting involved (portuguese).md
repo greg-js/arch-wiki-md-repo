@@ -39,7 +39,7 @@ A [ArchWiki](/index.php/SobreWiki "SobreWiki") é uma documentação do Arch Lin
 
 ### Ingresse nas salas de chat
 
-Você pode ajudar outros usuários a resolver problemas através do [canal do IRC](/index.php/IRC_channel "IRC channel"). É de suma importância que você leia as [regras do canal](/index.php/C%C3%B3digo_de_conduta#IRC "Código de conduta") antes de participar. [Canais especiais](/index.php/IRC_channels#Other_channels "IRC channels") estão disponíveis para tópicos específicos.
+Você pode ajudar outros usuários a resolver problemas através do [canal do IRC](/index.php/Canais_IRC "Canais IRC"). É de suma importância que você leia as [regras do canal](/index.php/C%C3%B3digo_de_conduta#IRC "Código de conduta") antes de participar. [Canais especiais](/index.php/IRC_channels_(Portugu%C3%AAs)#Outros_canais "IRC channels (Português)") estão disponíveis para tópicos específicos.
 
 ### Reporte pacotes instalados
 
@@ -127,7 +127,7 @@ Softwares desenvolvidos pela comunidade com foco no Arch.
 
 	Utilitários para ajudar usuários no uso do [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)").
 
-	[Frontends GUI do pacman](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
+	[Frontends GUI do pacman](/index.php/Pacman/Tips_and_tricks_(Portugu%C3%AAs)#Front-ends_gr.C3.A1ficos "Pacman/Tips and tricks (Português)")
 
 	Ferramentas gráficas para o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
 

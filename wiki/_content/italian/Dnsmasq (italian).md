@@ -153,7 +153,7 @@ Per verificare se dnsmasq è stato avviato correttamente, controllare il log; dn
 
 ### DNS Caching
 
-Per effettuare un test di velocità per il lookup ad un sito che ancora non è stato visitato dall'avvio di dnsmasq (`dig` fa parte del pacchetto [dnsutils](https://www.archlinux.org/packages/?name=dnsutils)):
+Per effettuare un test di velocità per il lookup ad un sito che ancora non è stato visitato dall'avvio di dnsmasq (`dig` fa parte del pacchetto [bind-tools](https://www.archlinux.org/packages/?name=bind-tools)):
 
 ```
 $ dig archlinux.org | grep "Query time"

@@ -114,7 +114,7 @@ El tamaño por defecto es **1252** bytes, con valores de hasta **4096** siguen s
 
 #### Test de EDNS0
 
-Haga uso del [DNS Reply Size Test Server](https://www.dns-oarc.net/oarc/services/replysizetest), utilizando la herramienta de línea de órdenes *dig*, que forma parte del paquete [dnsutils](https://www.archlinux.org/packages/?name=dnsutils) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"), para emitir una consulta TXT para el nombre *rs.dns-oarc.net*:
+Haga uso del [DNS Reply Size Test Server](https://www.dns-oarc.net/oarc/services/replysizetest), utilizando la herramienta de línea de órdenes *dig*, que forma parte del paquete [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"), para emitir una consulta TXT para el nombre *rs.dns-oarc.net*:
 
 ```
 $ dig +short rs.dns-oarc.net txt

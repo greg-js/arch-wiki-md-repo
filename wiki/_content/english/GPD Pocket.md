@@ -59,8 +59,13 @@ Edit the following lines in /etc/default/tlp
  `/etc/default/tlp` 
 ```
 ...
+# improve disk IO
 DISK_DEVICES="mmcblk0"
-DISK_IOSCHED="deadline" 
+DISK_IOSCHED="deadline"
+
+# disable wifi power saving mode (wifi speed drops MASSIVELY!)
+WIFI_PWN_ON_AC=off
+WIFI_PWR_ON_BAT=off
 ...
 
 ```

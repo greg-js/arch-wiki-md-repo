@@ -187,11 +187,11 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[KolourPaint](https://en.wikipedia.org/wiki/KolourPaint "wikipedia:KolourPaint")** — Editor gráfico raster de KDE, similar a Paint de Microsoft anterior a Windows 7, pero con algunas características adicionales, tales como soporte para la transparencia. Parte de los grupos [kde](https://www.archlinux.org/groups/x86_64/kde/) y [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/).
 
-	[http://kolourpaint.org](http://kolourpaint.org) || [kdegraphics-kolourpaint](https://www.archlinux.org/packages/?name=kdegraphics-kolourpaint)
+	[http://kolourpaint.org](http://kolourpaint.org) || [kolourpaint](https://www.archlinux.org/packages/?name=kolourpaint)
 
 *   **[Krita](https://en.wikipedia.org/wiki/Krita "wikipedia:Krita")** — Software de dibujo e ilustración digital basado en la plataforma KDE y en las bibliotecas de Calligra. Parte del grupo [calligra](https://www.archlinux.org/packages/?name=calligra).
 
-	[http://krita.org/](http://krita.org/) || [calligra-krita](https://www.archlinux.org/packages/?name=calligra-krita)
+	[http://krita.org/](http://krita.org/) || [krita](https://www.archlinux.org/packages/?name=krita)
 
 *   **Luminance HDR** — Interfaz gráfica de código abierto que tiene como objetivo proporcionar un programa para imágenes HDR.
 
@@ -239,7 +239,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Editor de gráficos vectoriales, que forma parte de la suite Calligra. Parte del grupo [calligra](https://www.archlinux.org/packages/?name=calligra).
 
-	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra-karbon](https://www.archlinux.org/packages/?name=calligra-karbon)
+	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[sK1](https://en.wikipedia.org/wiki/SK1_(program) "wikipedia:SK1 (program)")** — Reemplazo para Adobe Illustrator o CorelDraw, orientado al PostScript «preimpresión lista» y salida de PDF.
 
@@ -774,10 +774,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 #### Interfaz gráfica
 
-*   **[Avidemux](https://en.wikipedia.org/wiki/Avidemux "wikipedia:Avidemux")** — Editor de vídeo gratuito diseñado para cortar, filtrar y codificar tareas sencillas.
-
-	[http://fixounet.free.fr/avidemux/](http://fixounet.free.fr/avidemux/) || [avidemux-gtk](https://www.archlinux.org/packages/?name=avidemux-gtk) [avidemux-qt](https://www.archlinux.org/packages/?name=avidemux-qt)
-
+*   {{App|[Avidemux](https://en.wikipedia.org/wiki/Avidemux "wikipedia:Avidemux")|Editor de vídeo gratuito diseñado para cortar, filtrar y codificar tareas sencillas.|[http://fixounet.free.fr/avidemux/%7C](http://fixounet.free.fr/avidemux/%7C)[avidemux-qt](https://www.archlinux.org/packages/?name=avidemux-qt)
 *   **[Cinelerra (Community Version)](https://en.wikipedia.org/wiki/Cinelerra "wikipedia:Cinelerra")** — Editor de vídeo profesional y entorno de composición.
 
 	[http://cinelerra.org/](http://cinelerra.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
@@ -834,4 +831,4 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[XBMC](https://en.wikipedia.org/wiki/XBMC "wikipedia:XBMC")** — Aplicación para la organización de diversas colecciones y recuperar automáticamente informaciones acerca de ellos (vídeo, música, fotos).
 
-	[http://xbmc.org/](http://xbmc.org/) || [xbmc](https://www.archlinux.org/packages/?name=xbmc)
+	[http://xbmc.org/](http://xbmc.org/) || [kodi](https://www.archlinux.org/packages/?name=kodi)

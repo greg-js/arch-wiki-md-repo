@@ -119,7 +119,7 @@ In sintesi, il *bootloader* è il primo programma ad essere eseguito quando il c
 
 #### Effetuare un backup dei dati importanti
 
-In genere, l'installazione di grub dovrebbe andare a buon fine, ma è consigliabile conservare i files di GRUB-legacy prima di installare [grub-bios](https://www.archlinux.org/packages/?name=grub-bios).
+In genere, l'installazione di grub dovrebbe andare a buon fine, ma è consigliabile conservare i files di GRUB-legacy prima di installare [grub](https://www.archlinux.org/packages/?name=grub).
 
 ```
 mv /boot/grub /boot/grub-legay

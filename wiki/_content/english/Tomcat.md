@@ -50,7 +50,7 @@ Replace the `*` with your installed version (7 or 8).
 
 In order to be able to use the manager webapp and the admin webapp you need to edit the following file: `/etc/tomcat7/tomcat-users.xml`
 
-Uncomment the "role and user" XML declaration and modify it to enable roles `tomcat`, `admin-{gui,script}` and/or `manager-{gui,script,jmx,status}` depending on your needs (see [Configuring Manager Application Access](http://tomcat.apache.org/tomcat-7.0-doc/manager-howto.html#Configuring_Manager_Application_Access)). To keep it short, `tomcat` is the mandatory role used to run, `manager-*` are roles able to administer web applications and `admin-*` are full right administrator roles on the Tomcat server.
+Uncomment the "role and user" XML declaration and modify it to enable roles `tomcat`, {{Ic|admin-{gui,script} }} and/or {{Ic|manager-{gui,script,jmx,status} }} depending on your needs (see [Configuring Manager Application Access](http://tomcat.apache.org/tomcat-7.0-doc/manager-howto.html#Configuring_Manager_Application_Access)). To keep it short, `tomcat` is the mandatory role used to run, `manager-*` are roles able to administer web applications and `admin-*` are full right administrator roles on the Tomcat server.
 
 Here is a bare configuration file that declares some of these roles along with usernames and passwords (Be sure to change the following [CHANGE_ME] passwords to something secure):
 

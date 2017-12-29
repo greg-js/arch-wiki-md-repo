@@ -1,8 +1,8 @@
 Artigos relacionados
 
-*   [GNOME (Português)](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)")
+*   [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)")
 *   [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")
-*   [Display manager (Português)](/index.php/Display_manager_(Portugu%C3%AAs) "Display manager (Português)")
+*   [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição")
 *   [LightDM](/index.php/LightDM "LightDM")
 *   [LXDM](/index.php/LXDM "LXDM")
 
@@ -10,7 +10,7 @@ Dá página do [GDM - GNOME Display Manager](http://projects.gnome.org/gdm/about
 
 	*GDM é sigla para GNOME Display Manager (Gerenciador de Display do GNOME, numa tradução para o português). É um o pequeno programa que roda em segundo plano, carrega suas sessões do X, se apresenta a você como uma tela de login e lhe impede o acesso caso tenha esquecido sua senha. Ele faz praticamente tudo que você gostaria de ver no xdm, mas sem os problemas do mesmo. O GDM não utiliza nenhum código do XDM. Suporta o XDMCP e na verdade, estende-o um pouco a lugares que faltavam no xdm(mas ainda compatível com o XDMCP do xdm).*
 
-[Display managers](/index.php/Display_manager "Display manager") fornece [X Window System](/index.php/X_Window_System "X Window System") para usuários no login no prompt.
+[Display managers](/index.php/Display_manager_(Portugu%C3%AAs) "Display manager (Português)") (ou gerenciadores de exibição) fornecem [X Window System](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") para usuários no login no prompt.
 
 ## Contents
 
@@ -31,7 +31,7 @@ Para instalar o [GDM](http://www.gnome.org/projects/gdm/) (parte do Gnome-Extra)
 
  `# pacman -S gdm` 
 
-Para criar o login gráfico o metódo tradicional de logar no sistema, edite seu arquivo `/etc/inittab` (recomendado). Pode adicionar como alternativa o gdm na sua lista de daemons em `/etc/rc.conf`. Estes procedimentos estão detalhados na página do [Display manager](/index.php/Display_manager "Display manager").
+Para criar o login gráfico o metódo tradicional de logar no sistema, edite seu arquivo `/etc/inittab` (recomendado). Pode adicionar como alternativa o gdm na sua lista de daemons em `/etc/rc.conf`. Estes procedimentos estão detalhados na página do [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição").
 
 Se está acostumado a usar o arquivo `~/.xinitrc` para passar o argumento do servidor X quando é iniciado, por exemplo **xmodmap** ou **xsetroot**, você pode observar que pode adicionar o comando para [xprofile](/index.php/Xprofile "Xprofile"). Exemplo:
 
@@ -88,7 +88,7 @@ Então saia do usuário e volte ao GDM. Depois da janela de login, aparecerá du
 
 Para mais informações e as configurações avançadas leia [aqui](http://library.gnome.org/admin/gdm/2.28/configuration.html.en).
 
-Nota-se que está com a versão 1.6.1 do xorg-server `Ctrl`+`Alt`+`Backspace` não reinicia mas o gdm. A instrução para re-habilitar este procedimento, veja [Xorg#Ctrl-Alt-Backspace doesn't work](/index.php/Xorg#Ctrl-Alt-Backspace_doesn.27t_work "Xorg").
+Nota-se que está com a versão 1.6.1 do xorg-server `Ctrl`+`Alt`+`Backspace` não reinicia mais o gdm. A instrução para re-habilitar este procedimento, veja [Keyboard configuration in Xorg#Terminating Xorg with Ctrl+Alt+Backspace](/index.php/Keyboard_configuration_in_Xorg#Terminating_Xorg_with_Ctrl.2BAlt.2BBackspace "Keyboard configuration in Xorg").
 
 ### Login automático
 

@@ -34,14 +34,15 @@ Related articles
         *   [4.3.3 KeyTool](#KeyTool)
     *   [4.4 GPT fdisk (gdisk)](#GPT_fdisk_.28gdisk.29)
     *   [4.5 iPXE](#iPXE)
-*   [5 Troubleshooting](#Troubleshooting)
+*   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Using drivers in UEFI shell](#Using_drivers_in_UEFI_shell)
-    *   [5.2 Btrfs subvolume support](#Btrfs_subvolume_support)
-        *   [5.2.1 Auto detection](#Auto_detection)
-        *   [5.2.2 Manual boot stanza](#Manual_boot_stanza)
-    *   [5.3 Apple Macs](#Apple_Macs)
-    *   [5.4 VirtualBox](#VirtualBox)
-*   [6 See also](#See_also)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Btrfs subvolume support](#Btrfs_subvolume_support)
+        *   [6.1.1 Auto detection](#Auto_detection)
+        *   [6.1.2 Manual boot stanza](#Manual_boot_stanza)
+    *   [6.2 Apple Macs](#Apple_Macs)
+    *   [6.3 VirtualBox](#VirtualBox)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -373,7 +374,7 @@ Download `gdisk-efi-*.zip` from [SourceForge](http://sourceforge.net/projects/gp
 
 ```
 
-## Troubleshooting
+## Tips and tricks
 
 ### Using drivers in UEFI shell
 
@@ -386,6 +387,8 @@ Shell> map -r
 ```
 
 Now you can access your file system from UEFI shell.
+
+## Troubleshooting
 
 ### Btrfs subvolume support
 

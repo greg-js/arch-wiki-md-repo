@@ -30,7 +30,7 @@ Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-u
 5.  Se inscrever na lista de discussão pública de desenvolvimento do Arch Linux, [arch-dev-public](https://lists.archlinux.org/listinfo/arch-dev-public).
 6.  Lembrar um [administrador do BBS](https://bbs.archlinux.org/userlist.php?username=&show_group=1&sort_by=username&sort_dir=ASC&search=Submit) de alterar sua conta nos fóruns.
 7.  Perguntar a algum TU pela chave do #archlinux-tu@freenode e aparecer no canal. Você não tem que fazer isso, mas seria interessante já que é lá que a maioria dos segredos ocultos são apresentados e onde muitas novas ideias são concebidas.
-8.  Criar uma chave PGP para [assinatura de pacotes](/index.php/Package_signing "Package signing") ou use sua chave PGP existente. Certifique-se de que a chave também contém uma subchave criptográfica de forma você possa receber tokens de verificação criptografados.
+8.  Criar uma chave PGP para [assinatura de pacotes](/index.php/Assinatura_de_pacote "Assinatura de pacote") ou use sua chave PGP existente. Certifique-se de que a chave também contém uma subchave criptográfica de forma você possa receber tokens de verificação criptografados.
 9.  Enviar ao Ionuț Bîru (ibiru@archlinux.org) oru ao Florian Pritz (bluewind@xinu.at) um e-mail com todas as informações baseadas neste [modelo](https://www.archlinux.org/trustedusers/) para ter acesso à interface de desenvolvimento (archweb).
 10.  Enviar um e-mail assinado para o Florian:
     *   Anexe uma chave pública SSH. Se você não possuir uma, use `ssh-keygen` para gerar uma. Verifique na página wiki [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") para mais informações sobre chaves SSH.
@@ -116,7 +116,7 @@ Quando você quiser publicar (**release**) um pacote, primeiro copie o pacote ju
     *   Fazer **commit** das alterações no trunk: `svn commit`.
     *   **Assinar** o pacote: `gpg --detach-sign *.pkg.tar.xz`.
     *   **Copiar** o pacote e sua assinatura para *orion.archlinux.org*: `scp *.pkg.tar.xz *.pkg.tar.xz.sig orion.archlinux.org:staging/community/`.
-    *   Aplicar um **tag** do pacote: `archrelease community-{i686,x86_64`}.
+    *   Aplicar um **tag** do pacote: {{ic|archrelease community-{i686,x86_64}}}.
 *   **Atualizar** o repositório: `ssh orion.archlinux.org /community/db-update`.
 
 Veja também a seção de *Miscelânia* no [Guia do Empacotador](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") and [SSH keys#ssh-agent](/index.php/SSH_keys#ssh-agent "SSH keys"). Para a seção *Avoid having to enter your password all the time* ("evite de precisar digitar sua senha toda vez"), use *orion.archlinux.org* em vez do *gerolde.archlinux.org*.

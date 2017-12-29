@@ -52,7 +52,7 @@ INFO: The APR based Apache Tomcat Native library which allows optimal performanc
 
 你需要通过编辑下面这个文件来使用 manager 和 admin 管理界面： `/etc/tomcat7/tomcat-users.xml`
 
-取消 XML 声明中"role and user"这一块的注释，然后根据你的需要，修改并启用 `tomcat`, `admin-{gui,script}` 和 `manager-{gui,script,jmx,status}` 等角色（详情请参阅 [Configuring Manager Application Access](http://tomcat.apache.org/tomcat-7.0-doc/manager-howto.html#Configuring_Manager_Application_Access)）。
+取消 XML 声明中"role and user"这一块的注释，然后根据你的需要，修改并启用 `tomcat`, {{Ic|admin-{gui,script} }} 和 {{Ic|manager-{gui,script,jmx,status} }} 等角色（详情请参阅 [Configuring Manager Application Access](http://tomcat.apache.org/tomcat-7.0-doc/manager-howto.html#Configuring_Manager_Application_Access)）。
 
 简单来说，`tomcat` 用于运行 Tomcat 服务器，`manager-*` 用于管理 Tomcat 服务器上的 web 程序，`admin-*` 是 Tomcat 服务器的全权管理员。
 

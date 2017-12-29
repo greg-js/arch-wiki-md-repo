@@ -116,7 +116,7 @@ mv ~/.config/autostart ~/.config/autostart-bak
 
 ```
 
-**Note:** [pyxdg](https://www.archlinux.org/packages/?name=pyxdg) yra reikalingas Openbox xdg-autostart programai
+**Note:** [python2-xdg](https://www.archlinux.org/packages/?name=python2-xdg) yra reikalingas Openbox xdg-autostart programai
 
 ## Langų tvarkyklė darbastalio aplinkoms
 

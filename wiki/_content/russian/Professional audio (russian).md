@@ -179,43 +179,43 @@ $ /usr/bin/jackd -R -P89 -dalsa -dhw:0 -r48000 -p256 -n3
 
 #### FireWire
 
-**Note:** Nothing much is needed to be done as most things have been automated, especially with the introduction of the [new FireWire stack](https://ieee1394.wiki.kernel.org/articles/j/u/j/Juju_Migration_e8a6.html), deprecation of HAL and more focus on [udev](/index.php/Udev "Udev"). You should not need to edit device permissions, but if you suspect that your device may not be working due to such issues, see `/lib/udev/rules.d/60-ffado.rules` and if needed, create and put your changes into `/etc/udev/rules.d/60-ffado.rules`.
+**Примечание:** Дополнительные действия не требуются, так как большинство вещей было автоматизировано, особенно с введением [нового стека FireWire](https://ieee1394.wiki.kernel.org/articles/j/u/j/Juju_Migration_e8a6.html), отказом от HAL и большей концентрации на [udev](/index.php/Udev "Udev"). Вам не требуется редактировать права устройств, но если вы столкнулись с проблемами и подозреваете, что причина кроется в этом, ознакомьтесь с `/lib/udev/rules.d/60-ffado.rules` и, если необходимо, создайте и разместите свои правки в `/etc/udev/rules.d/60-ffado.rules`.
 
-JACK(2) is built against FFADO, you only need to install it with the [libffado](https://www.archlinux.org/packages/?name=libffado) package.
+JACK(2) построен против FFADO, вам только нужно установить его с пакетом [libffado](https://www.archlinux.org/packages/?name=libffado).
 
-To test whether you have any chances of getting FireWire devices to work:
+Для проверки возможности запустить FireWire вам следует:
 
-*   Ensure the proper kernel modules are loaded:
+*   Убедиться, что загружены необходимые модули ядра:
 
 ```
 # modprobe firewire-core firewire-ohci
 
 ```
 
-*   Is my chipset sane enough to initiate a device?
+*   Сможет ли ваш чипсет инициировать устройство?
 
 [http://www.ffado.org/?q=node/622](http://www.ffado.org/?q=node/622)
 
-*   Is my chipset sane enough to make a device work to its capacity?
+*   Сможет ли ваш чипсет позволить устройству работать на полную мощность?
 
-We cannot say for sure, particularly for those based on Ricoh (cross-platform issue). Most of the time, your device will run fine, but on occasion you will be faced with funny quirks. For unlucky ones, you will be facing hell.
+Мы не можем сказать это наверняка, особенно для устройств, построенных на базе Ricoh (проблема кроссплатформенности). В большинстве случаев устройство работает хорошо, но иногда можно столкнуться с забавными причудами. Если это случилось с вами, то вам можно только посочувствовать.
 
-**Note:** As stated by Takashi Sakamoto [on the alsa-devel mailing list](http://mailman.alsa-project.org/pipermail/alsa-devel/2014-September/081731.html), if you use the FireWire backend with jackd, the DICE module is incompatible. If you see a line like this :
+**Примечание:** Как указано Takashi Sakamoto [в списке рассылки alsa-devel](http://mailman.alsa-project.org/pipermail/alsa-devel/2014-September/081731.html), если вы используете бэкенд FireWire с jackd, модуль DICE будет несовместим. Если вы увидели строку как эта:
 ```
 Warning (dice_eap.cpp)[1811] read: No routes found. Base 0x7, offset 0x4000
 
 ```
-you need to disable the "snd_dice" module.
+вам необходимо отключить модуль "snd_dice".
 
 #### Jack Flash
 
-If after getting jack setup you will find that Flash has no audio.
+Если после настройки jack вы обнаружили, что Flash больше не воспроизводит звук.
 
-In order to get flash to work with jack you will need to [install](/index.php/Install "Install") the [libflashsupport-jack](https://aur.archlinux.org/packages/libflashsupport-jack/) package.
+Чтобы дать возможность flash работать с jack, вам нужно [установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C "Установить") пакет [libflashsupport-jack](https://aur.archlinux.org/packages/libflashsupport-jack/).
 
-You can also use more flexible method to allow Alsa programs (including Flash) play sound while jack is running:
+Вы также можете использовать более гибкий способ для настройки возможности программам Alsa (включая Flash) проигрывать звук при запущенном jack:
 
-First you must install the jack plugin for Alsa by [installing](/index.php/Installing "Installing") the [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) package. Enable it by editing (or creating) `/etc/asound.conf` (system wide settings) to have these lines:
+Во-первых, вы должны установить плагин jack для Alsa, [установив](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C "Установить") пакет [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins). Активируйте его отредактировав (или создав) `/etc/asound.conf` (настройка для всей системы), чтобы в нём были следующие строки:
 
 ```
 # convert alsa API over jack API
@@ -248,7 +248,7 @@ pcm.jack {
 
 ```
 
-You do not need to restart your computer or anything. Just edit the alsa config files, start up jack.
+Перезагрузка или иные действия не требуются. Просто отредактируйте конфигурационные файлы alsa, запустите jack.
 
 #### Quickscan JACK script
 
@@ -379,12 +379,12 @@ $ envy24control
 
 ### M-Audio Fast Track Pro
 
-The M-Audio Fast Track Pro is an USB 4x4 audio interface, working at 24bit/96kHz. Due to limitation of USB 1, this device requires additional setup to get access to all its features. Device works in one of two configuration:
+The M-Audio Fast Track Pro - это аудио интерфейс USB 4x4, работающий с характеристиками 24 бит/96 кГц. Из-за ограничений USB 1, это устройство требует дополнительной настройки для получения доступа ко всем его функциям. Устройство может работать в одном из двух режимов:
 
-*   Configuration 1, or "Class compliant mode" - with reduced functionality, only 16bit, 48kHz, analogue input (2 channels) and digital/analogue output (4 channels).
-*   Configuration 2 - with access to all features of interface.
+*   Конфигурация 1, или "Режим совместимости классов" ("Class compliant mode") - с усечённой функциональностью, только 16 бит, 48 кГц, аналоговый вход (2 канала) и цифровой/аналоговый выход (4 канала).
+*   Конфигурация 2 - с доступом ко всем функциям интерфейса.
 
-Currently with stock kernel it runs in configuration 2, but if you want to make sure in what mode you are, you can check kernel log for entries:
+В настоящий момент, с обычным ядром оно запускается в конфигурации 2, но если вы хотите дополнительно проверить, так ли это, вы можете обратиться к логам ядра в поисках записей вида:
 
 ```
 usb-audio: Fast Track Pro switching to config #2
@@ -392,7 +392,7 @@ usb-audio: Fast Track Pro config OK
 
 ```
 
-The interface also needs extra step of cofiguration to switch modes. It is done using option `device_setup` during module loading. The recommended way to setup the interface is using file in `modprobe.d`:
+С интерфейсом потребуется проделать несколько дополнительных операций для переключения режима. Это производится с помощью опции `device_setup` в процессе загрузке модуля. Рекомендуемый способ настройки интерфейса осуществляется с использованием файла в `modprobe.d`:
 
  `/etc/modprobe.d/ftp.conf` 
 ```
@@ -400,7 +400,7 @@ options snd_usb_audio vid=0x763 pid=0x2012 device_setup=XXX index=YYY enable=1
 
 ```
 
-where `vid` and `pid` are vendor and product id for M-Audio Fast Track Pro, `index` is desired device number and `device_setup` is desired device setup. Possible values for `device_setup` are:
+где `vid` и `pid` - идентификаторы поставщика и продукта для M-Audio Fast Track Pro, `index` - это требуемый номер устройства и `device_setup` - требуемая настройка устройства. Возможные значения для `device_setup`:
 
 <caption>device modes</caption>
 | device_setup value | bit depth | frequency | analog output | digital output | analog input | digital input | IO mode |
@@ -409,14 +409,14 @@ where `vid` and `pid` are vendor and product id for M-Audio Fast Track Pro, `ind
 | 0x13 | 24 bit | 48kHz | + | + | - | + | 2x4 |
 | 0x5 | 24 bit | 96kHz | * | * | * | * | 2x0 or 0x2 |
 
-The 24 bit/96kHz mode is special: it provides all input/output, but you can open only one of 4 interfaces at a time. If you for example open output interface and then try to open second output or input interface, you will see error in kernel log:
+Режим 24 бита/96 кГц является особенным: он предоставляет все входы/выходы, но вы можете открыть только 4 интерфейса одновременно. Если вы, например, откроете выходной интерфейс и следом попытаетесь открыть второй такой же или входной интерфейс, то увидите запись об ошибке в логах ядра:
 
 ```
 cannot submit datapipe for urb 0, error -28: not enough bandwidth
 
 ```
 
-which is perfectly normal, because this is USB 1 device and cannot provide enough bandwidth to support more than single (2 channel) destination/source of that quality at a time.
+что является нормальным, потому что это устройство USB 1 и не может обеспечить достаточную пропускную способность такого качества для более чем одного (2-канального) источника/получателя одновременно.
 
 Depending on the value of `index` it will setup two devices: `hwYYY:0` and `hwYYY:1`, which will contain available inputs and outputs. First device is most likely to contain analog output and digital input, while second one will contain analog input and digital output. To find out which devices are linked where and if they are setup correctly, you can check `/proc/asound/cardYYY/stream{0,1}` . Below is list of important endpoints that will help in correctly identifying card connections (it easy to mistake analog and digital input or output connections before you get used to the device):
 
@@ -509,10 +509,10 @@ Volume levels are hardware and routing can be done through QjackCtl, even with m
 
 ### Tascam US-122
 
-***This does not apply to the US-122L***
+***Данные настройки неприменимы для US-122L***
 
-1.  Required packages: [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) [alsa-firmware](https://www.archlinux.org/packages/?name=alsa-firmware) [fxload](https://aur.archlinux.org/packages/fxload/)
-2.  udev rules: create the following rules file, then reload udev rules, [Udev#Loading new rules](/index.php/Udev#Loading_new_rules "Udev")
+1.  Требуемые пакеты: [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) [alsa-firmware](https://www.archlinux.org/packages/?name=alsa-firmware) [fxload](https://aur.archlinux.org/packages/fxload/)
+2.  Правила udev: создайте следующий файл правил, затем перезагрузите правила udev, [Udev (Русский)#Загрузка новых правил](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.BD.D0.BE.D0.B2.D1.8B.D1.85_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB "Udev (Русский)")
 
  `/etc/udev/rules.d/51-tascam-us-122.rules` 
 ```
@@ -521,24 +521,24 @@ SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idProduct}=="8007", ATTRS{idVendor}=="16
 
 ```
 
-Plug in the unit The device should now be working, there are no software mixer controls
+Подключите устройство. После этого устройство должно начать работать. Программного управления микшером нет.
 
 ### RME Babyface
 
-It works very well at low latencies (~5ms) with [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils), [jack2](https://www.archlinux.org/packages/?name=jack2) and [linux-rt](https://aur.archlinux.org/packages/linux-rt/). Running on ALSA only with the standard kernel may cause crackling at lower latencies.
+Хорошо работает при малых задержках (~5мс) с [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils), [jack2](https://www.archlinux.org/packages/?name=jack2) и [linux-rt](https://aur.archlinux.org/packages/linux-rt/). Запуск ALSA только со стандартным ядром может привести к появлению треска при меньших задержках.
 
-To be recognized and work, the firmware version of the Babyface needs to be >= 200, which introduces the Class Compliant Mode. To enter Class Compliant Mode hold the "Select" and "Recall" buttons while connecting the Babyface to the computer via USB. It should now be recognized.
+Для распознавания устройства и его работы, версия прошивки должна быть >= 200, который обладает режимом класса совместимости (Class Compliant Mode). Для перехода в режим совместимости классов (Class Compliant Mode) зажмите кнопки "Select" и "Recall" при подсоединении Babyface к компьютеру через USB. После этого оно должно быть распознано.
 
-To check if it is recognized:
+Для проверки распознавания устройства смотрите:
 
 ```
 grep -i baby /proc/asound/cards
 
 ```
 
-For more info about the Class Compliant Mode visit RME's website, they have PDF which covers all the functionality.
+Для получения большей информации о режиме совместимости классов (Class Compliant Mode), посетите сайт RME. На нём имеется PDF, который рассказывает обо всех функциях.
 
-The Babyface does not need any special Jack Settings. But if you want to use the built in MIDI In/Out then you need to set the "MIDI Driver" to "seq" and optionally disable "Enable Alsa Sequencer Support" to use it in combination with other MIDI Devices (a USB Midi Keyboard for example).
+Для Babyface не требуется особых настроек Jack. Но если вы захотите воспользоваться встроенным входом/выходом MIDI, вам нужно установить "MIDI Driver" в положение "seq" и, при необходимости, отключить "Enable Alsa Sequencer Support" для использования его в комбинации с другими устройствами MIDI (например, USB Midi клавиатура).
 
 ## Restricted Software
 

@@ -147,7 +147,7 @@
 [eog](https://www.archlinux.org/packages/?name=eog) | [Totem](https://en.wikipedia.org/wiki/Totem_(software) "wikipedia:Totem (software)")
 [totem](https://www.archlinux.org/packages/?name=totem) | [Firefox](/index.php/Firefox "Firefox")
 [firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
-[lightdm-gtk3-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk3-greeter) |
+[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 | [Deepin Desktop Environment](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Compiz](/index.php/Compiz "Compiz")
 [compiz](https://aur.archlinux.org/packages/compiz/) | Dock
@@ -173,7 +173,7 @@
 [dillo](https://www.archlinux.org/packages/?name=dillo) | [XDM](/index.php/XDM "XDM")
 [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
 | [Enlightenment](/index.php/Enlightenment "Enlightenment") | [Elementary](https://phab.enlightenment.org/w/elementary/)
-[elementary](https://www.archlinux.org/packages/?name=elementary) | Enlightenment
+[efl](https://www.archlinux.org/packages/?name=efl) | Enlightenment
 [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | Enlightenment
 [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | [Terminology](http://www.enlightenment.org/p.php?p=about/terminology)
 [terminology](https://www.archlinux.org/packages/?name=terminology) | [EFM](https://phab.enlightenment.org/w/efm/)
@@ -241,7 +241,7 @@
 [kdebase-kwrite](https://www.archlinux.org/packages/?name=kdebase-kwrite) [kdesdk-kate](https://www.archlinux.org/packages/?name=kdesdk-kate) | [Gwenview](http://gwenview.sourceforge.net/)
 [kdegraphics-gwenview](https://www.archlinux.org/packages/?name=kdegraphics-gwenview) | [Dragon Player](http://www.kde.org/applications/multimedia/dragonplayer/)
 [kdemultimedia-dragonplayer](https://www.archlinux.org/packages/?name=kdemultimedia-dragonplayer) | [Konqueror](http://www.konqueror.org/)
-[kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror) | [KDM](/index.php/KDM "KDM")
+[konqueror](https://www.archlinux.org/packages/?name=konqueror) | [KDM](/index.php/KDM "KDM")
 [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/) |
 | [KDE](/index.php/KDE "KDE") 5 | [Qt](/index.php/Qt "Qt") 4/5
 [qt4](https://www.archlinux.org/packages/?name=qt4) [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")
@@ -253,7 +253,7 @@
 [kdebase-kwrite](https://www.archlinux.org/packages/?name=kdebase-kwrite) [kdesdk-kate](https://www.archlinux.org/packages/?name=kdesdk-kate) | [Gwenview](http://gwenview.sourceforge.net/)
 [kdegraphics-gwenview](https://www.archlinux.org/packages/?name=kdegraphics-gwenview) | [Dragon Player](http://www.kde.org/applications/multimedia/dragonplayer/)
 [kdemultimedia-dragonplayer](https://www.archlinux.org/packages/?name=kdemultimedia-dragonplayer) | [Konqueror](http://www.konqueror.org/)
-[kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror) | SDDM
+[konqueror](https://www.archlinux.org/packages/?name=konqueror) | SDDM
 [sddm](https://www.archlinux.org/packages/?name=sddm) |
 | [LXDE](/index.php/LXDE "LXDE") | [GTK+](/index.php/GTK%2B "GTK+") 2
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) | [Openbox](/index.php/Openbox "Openbox")
@@ -290,7 +290,7 @@
 [eom](https://www.archlinux.org/packages/?name=eom) | Whaaw!
 [whaawmp](https://aur.archlinux.org/packages/whaawmp/) | [Midori](/index.php/Midori "Midori")
 [midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
-[lightdm-gtk2-greeter](https://aur.archlinux.org/packages/lightdm-gtk2-greeter/) |
+[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 | Maynard | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | Weston
 [weston](https://www.archlinux.org/packages/?name=weston) | Maynard
@@ -312,7 +312,7 @@
 [scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor) | [Shotwell](https://en.wikipedia.org/wiki/Shotwell_(software) "wikipedia:Shotwell (software)")
 [shotwell](https://www.archlinux.org/packages/?name=shotwell) | [Totem](https://en.wikipedia.org/wiki/Totem_(software) "wikipedia:Totem (software)")
 [totem](https://www.archlinux.org/packages/?name=totem) | [Midori](/index.php/Midori "Midori")
-[midori-gtk3](https://www.archlinux.org/packages/?name=midori-gtk3) | [LightDM](/index.php/LightDM "LightDM") Pantheon Greeter
+[midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") Pantheon Greeter
 [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/) |
 | [ROX](/index.php/ROX "ROX") | [GTK+](/index.php/GTK%2B "GTK+") 2
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) | [OroboROX](http://rox.sourceforge.net/desktop/OroboROX.html)
@@ -325,7 +325,7 @@
 <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=picky)</small> | [MusicBox](http://rox.sourceforge.net/desktop/Software/Audio_Video/MusicBox.html)
 <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=musicbox)</small> | [Midori](/index.php/Midori "Midori")
 [midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
-[lightdm-gtk2-greeter](https://aur.archlinux.org/packages/lightdm-gtk2-greeter/) |
+[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 | [Sugar](/index.php/Sugar "Sugar") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")
 [metacity](https://www.archlinux.org/packages/?name=metacity) | Sugar
@@ -337,7 +337,7 @@
 [sugar-activity-imageviewer](https://www.archlinux.org/packages/?name=sugar-activity-imageviewer) | Jukebox
 [sugar-activity-jukebox](https://www.archlinux.org/packages/?name=sugar-activity-jukebox) | Browse
 [sugar-activity-browse](https://www.archlinux.org/packages/?name=sugar-activity-browse) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
-[lightdm-gtk3-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk3-greeter) |
+[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 | [Trinity](/index.php/Trinity "Trinity") | [Qt](/index.php/Qt "Qt") 3 | TWin | Kicker | Konsole | Konqueror | KCalc | Kwrite / Kate | Kuickshow | Kaffeine | Konqueror | TDM |
 | [Unity](/index.php/Unity "Unity") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Compiz](/index.php/Compiz "Compiz")
@@ -362,7 +362,7 @@
 [ristretto](https://www.archlinux.org/packages/?name=ristretto) | [Parole](http://goodies.xfce.org/projects/applications/parole)
 [parole](https://www.archlinux.org/packages/?name=parole) | [Midori](/index.php/Midori "Midori")
 [midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
-[lightdm-gtk2-greeter](https://aur.archlinux.org/packages/lightdm-gtk2-greeter/) |
+[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 
 ### Потребление ресурсов
 

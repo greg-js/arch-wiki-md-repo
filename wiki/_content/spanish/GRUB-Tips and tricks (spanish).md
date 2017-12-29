@@ -91,7 +91,7 @@ Ahora tendrá que establecer el valor en `GRUB_GFXMODE`, como se explicó anteri
 
 ### Imagen de fondo y fuentes bitmap
 
-GRUB es compatible con imágenes de fondo y fuentes de mapa de bits en el formato `pf2`. La fuente unifont está incluida en el paquete [grub-common](https://www.archlinux.org/packages/?name=grub-common) con el nombre `unicode.pf2` o, solo para carácteres ASCII, con el nombre `ascii.pf2`.
+GRUB es compatible con imágenes de fondo y fuentes de mapa de bits en el formato `pf2`. La fuente unifont está incluida en el paquete [grub](https://www.archlinux.org/packages/?name=grub) con el nombre `unicode.pf2` o, solo para carácteres ASCII, con el nombre `ascii.pf2`.
 
 Los formatos de imagen soportados incluyen tga, png e jpeg, siempre que los respectivos módulos se carguen. La resolución máxima aplicable depende del hardware en uso.
 

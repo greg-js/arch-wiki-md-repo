@@ -81,7 +81,7 @@
 
 *   **[KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet")** — Gestor de descargas de KDE que soporta HTTP(S), FTP y BitTorrent. Parte del paquete [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
 
-	[http://www.kde.org/applications/internet/kget/](http://www.kde.org/applications/internet/kget/) || [kdenetwork-kget](https://www.archlinux.org/packages/?name=kdenetwork-kget)
+	[http://www.kde.org/applications/internet/kget/](http://www.kde.org/applications/internet/kget/) || [kget](https://www.archlinux.org/packages/?name=kget)
 
 *   **[KTorrent](https://en.wikipedia.org/wiki/KTorrent "wikipedia:KTorrent")** — Cliente BitTorrent rico en características para KDE.
 
@@ -189,7 +189,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Kopete](https://en.wikipedia.org/wiki/Kopete "wikipedia:Kopete")** — Cliente de mensajería amigable compatible con AIM, ICQ, Windows Live Messenger, Yahoo, Jabber, Gadu-Gadu, Novell GroupWise Messenger, y otras redes de mensajería. Parte del paquete [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
 
-	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
+	[http://kopete.kde.org/](http://kopete.kde.org/) || [kopete](https://www.archlinux.org/packages/?name=kopete)
 
 *   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — Cliente de mensajería de KDE que usa [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)"). Se entiende como un reemplazo de Kopete.
 
@@ -615,7 +615,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **Newsbeuter** — Agregador RSS basado en ncurses con el diseño y teclas de atajo similar al cliente de email [Mutt](/index.php/Mutt "Mutt").
 
-	[http://newsbeuter.org](http://newsbeuter.org) || [newsbeuter](https://www.archlinux.org/packages/?name=newsbeuter)
+	[http://newsbeuter.org](http://newsbeuter.org) || [newsboat](https://www.archlinux.org/packages/?name=newsboat)
 
 *   **Rawdog** — «RSS Aggregator Without Delusions Of Grandeur» (*Agregador RSS sin delirios de grandeza*) que pasa RSS/CDF/Atom a una página HTML estática de artículos ordenados cronológicamente.
 
@@ -741,7 +741,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Navegador Web basado en Qt y KHTML, parte del grupo [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
 
-	[http://konqueror.org/](http://konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
+	[http://konqueror.org/](http://konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Altamente configurable, micronavegador basado en el motor WebKit y GTK+. Es muy rápido, extensible por Lua y licenciado bajo GNU GPLv3 license.
 

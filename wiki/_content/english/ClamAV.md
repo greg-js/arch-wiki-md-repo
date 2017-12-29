@@ -1,4 +1,4 @@
-[Clam AntiVirus](http://www.clamav.net) is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV's main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures.
+[Clam AntiVirus](https://www.clamav.net) is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV's main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures.
 
 ## Contents
 
@@ -19,7 +19,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [clamav](https://www.archlinux.org/packages/?name=clamav) package.Also you can install:
+[Install](/index.php/Install "Install") the [clamav](https://www.archlinux.org/packages/?name=clamav) package. Also you can install:
 
 *   [clamtk](https://www.archlinux.org/packages/?name=clamtk) , a GUI frontend for clamav.
 *   addons
@@ -54,10 +54,10 @@ The service is called `clamd.service`. [Start](/index.php/Start "Start") it or [
 
 ## Testing the software
 
-In order to make sure ClamAV and the definitions are installed correctly, scan the [EICAR test file](http://www.eicar.org/86-0-Intended-use.html) (a harmless signature with no virus code) with clamscan.
+In order to make sure ClamAV and the definitions are installed correctly, scan the [EICAR test file](https://www.eicar.org/86-0-Intended-use.html) (a harmless signature with no virus code) with clamscan.
 
 ```
-$ curl [http://www.eicar.org/download/eicar.com.txt](http://www.eicar.org/download/eicar.com.txt) | clamscan -
+$ curl [https://www.eicar.org/download/eicar.com.txt](https://www.eicar.org/download/eicar.com.txt) | clamscan -
 
 ```
 
@@ -124,7 +124,7 @@ Source: [https://www.malwarepatrol.net/clamav-configuration-guide/](https://www.
 
 ## Scan for viruses
 
-`clamscan` can be used to scan certain files, home directory, or an entire system:
+`clamscan` can be used to scan certain files, home directories, or an entire system:
 
 ```
 $ clamscan myfile
@@ -141,7 +141,7 @@ Using the `-l /path/to/file` option will print the `clamscan` logs to a text fil
 
 ## Using the milter
 
-Milter will scan your sendmail server for email contianing virus. Copy `/etc/clamav/clamav-milter.conf.sample` to `/etc/clamav/clamav-milter.conf` and adjust it to your needs. For example:
+Milter will scan your sendmail server for email containing virus. Copy `/etc/clamav/clamav-milter.conf.sample` to `/etc/clamav/clamav-milter.conf` and adjust it to your needs. For example:
 
  `/etc/clamav/clamav-milter.conf` 
 ```

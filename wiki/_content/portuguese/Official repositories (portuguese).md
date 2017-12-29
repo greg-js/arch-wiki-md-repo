@@ -1,11 +1,11 @@
 Artigos relacionados
 
-*   [Arch Build System (Português)](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
-*   [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
-*   [makepkg (Português)](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
+*   [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
+*   [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
+*   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
 *   [Mirrors](/index.php/Mirrors "Mirrors")
-*   [pacman (Português)](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
-*   [PKGBUILD (Português)](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
+*   [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
+*   [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
 *   [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
 
 Um [repositório de software](https://en.wikipedia.org/wiki/pt:Reposit%C3%B3rio "wikipedia:pt:Repositório") é um local de armazenamento a partir do qual pacotes de software são obtidos para instalação.
@@ -47,7 +47,7 @@ assim como as dependências deles (não necessariamente [makedepends](/index.php
 
 *core* possui uma qualidade consideravelmente estrita de requisitos. Desenvolvedores/usuários precisam assinar (como uma confirmação) as atualizações de pacotes antes delas serem aceitas; Para pacotes com baixo uso, um motivo razoável é suficiente: informar pessoas sobre a atualização, requisitar assinaturas, manter no [#testing](#testing) por uma semana dependendo da severidade da alteração, falta de relatórios de erros relevantes, junto com o assinatura implícito do mantenedor do pacote.
 
-**Nota:** Para criar um repositório local com pacotes do *core* (ou outros repositórios) sem uma conexão internet, veja [Pacman tips#Installing packages from a CD/DVD or USB stick](/index.php/Pacman_tips#Installing_packages_from_a_CD.2FDVD_or_USB_stick "Pacman tips")
+**Nota:** Para criar um repositório local com pacotes do *core* (ou outros repositórios) sem uma conexão internet, veja [pacman/Dicas e truques#Instalando pacotes a partir de um CD/DVD ou pendrive](/index.php/Pacman/Dicas_e_truques#Instalando_pacotes_a_partir_de_um_CD.2FDVD_ou_pendrive "Pacman/Dicas e truques")
 
 ### extra
 

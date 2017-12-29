@@ -23,6 +23,8 @@ From the webpage:
 
 ## Installation
 
+GNS3 uses patched python extensions for working. Install them before, otherwise you will get a broken dependency cycle (Pacman fault): [python-aiohttp-cors-gns3](https://aur.archlinux.org/packages/python-aiohttp-cors-gns3/), [python-yarl-gns3](https://aur.archlinux.org/packages/python-yarl-gns3/) (in case note that can potentially create trouble with another programs using the original extensions).
+
 The [gns3-gui](https://aur.archlinux.org/packages/gns3-gui/) and [gns3-server](https://aur.archlinux.org/packages/gns3-server/) packages are needed to run the GNS3 GUI. Both of which can be obtained from [AUR](/index.php/AUR "AUR").
 
 ## Adding virtual machines

@@ -488,7 +488,7 @@ En su lugar, puedes usar `pinentry-qt`. Ver [#pinentry](#pinentry).
 
 ### Permisos de configuración de KGpg
 
-Ha habido problemas para que [kdeutils-kgpg](https://www.archlinux.org/packages/?name=kdeutils-kgpg) sea capaz de acceder a las opciones de `~/.gnupg/`. Un problema puede estar originado por un archivo de opciones obsoleto. Ver este [informe de error](https://bugs.kde.org/show_bug.cgi?id=290221).
+Ha habido problemas para que [kgpg](https://www.archlinux.org/packages/?name=kgpg) sea capaz de acceder a las opciones de `~/.gnupg/`. Un problema puede estar originado por un archivo de opciones obsoleto. Ver este [informe de error](https://bugs.kde.org/show_bug.cgi?id=290221).
 
 Otro usuario informó de que *KGpg* no conseguía arrancar hasta que se cambiaron los permisos de `~/.gnupg` a `drwxr-xr-x`. Si necesitas esta solución provisional, asegúrate de que los contenidos del directorio mantienen los permisos `-rw-------`. Mejor aún, envía un informe de error a los [desarrolladores](https://bugs.kde.org/buglist.cgi?quicksearch=kgpg).
 

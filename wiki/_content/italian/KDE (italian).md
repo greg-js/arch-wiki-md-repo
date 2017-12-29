@@ -188,13 +188,13 @@ La maggior parte dei plasmoidi difatti non è creata ufficialmente dagli svilupp
 
 ##### Applet per il suono nella barra delle applicazioni
 
-Installare Kmix ([kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix)) dai repository ufficiali e avviarlo dal launcher delle applicazioni. Da sempre KDE, per impostazione predefinita , avvia automaticamente i programmi della sessione precedente, non ha bisogno di essere avviati manualmente ad ogni login.
+Installare Kmix ([kmix](https://www.archlinux.org/packages/?name=kmix)) dai repository ufficiali e avviarlo dal launcher delle applicazioni. Da sempre KDE, per impostazione predefinita , avvia automaticamente i programmi della sessione precedente, non ha bisogno di essere avviati manualmente ad ogni login.
 
 **Note:** Per impostare [lo step per aumentare/diminuire il volume](https://bugs.kde.org/show_bug.cgi?id=313579#c28), aggiungere ad esempio `VolumePercentageStep=1` nella sezione `[Global]` di `~/.kde4/share/config/kmixrc`
 
 ##### Aggiunta di un menu globale sul desktop
 
-Installare [appmenu-qt](https://aur.archlinux.org/packages/appmenu-qt/) dai repository ufficiali e [appmenu-gtk](https://aur.archlinux.org/packages/appmenu-gtk/) e [appmenu-QT5](https://aur.archlinux.org/packages/appmenu-QT5/) da AUR al fine di completare i preliminari per avere sempre un menu globale stile Mac OS X. Per far in modo che Firefox e LibreOffice utilizzino il menu globale, installare [firefox-extension-globalmenu](https://aur.archlinux.org/packages/firefox-extension-globalmenu/) e [libreoffice-extension-menubar](https://aur.archlinux.org/packages/libreoffice-extension-menubar/) da AUR.
+Installare [appmenu-qt4](https://www.archlinux.org/packages/?name=appmenu-qt4) dai repository ufficiali e [appmenu-gtk](https://aur.archlinux.org/packages/appmenu-gtk/) e [appmenu-QT5](https://aur.archlinux.org/packages/appmenu-QT5/) da AUR al fine di completare i preliminari per avere sempre un menu globale stile Mac OS X. Per far in modo che Firefox e LibreOffice utilizzino il menu globale, installare [firefox-extension-globalmenu](https://aur.archlinux.org/packages/firefox-extension-globalmenu/) e [libreoffice-extension-menubar](https://aur.archlinux.org/packages/libreoffice-extension-menubar/) da AUR.
 
 **Attenzione:** [firefox-extension-globalmenu](https://aur.archlinux.org/packages/firefox-extension-globalmenu/) è stato deprecato a partire da Firefox 25 e non c'è altro metodo consigliato per ottenere il menu globale. Tuttavia, vi è un pacchetto di patch, [firefox-ubuntu](https://aur.archlinux.org/packages/firefox-ubuntu/). Disponibile su AUR che ha la patch di Canonical per ottenere il menu globale di lavorare con la versione attuale di Firefox (al momento della scrittura)
 
@@ -524,7 +524,7 @@ se volete rendere questo cambiamento permanente dovete create uno script in `$(k
 
 Per usufruire delle anteprima audio nei file manager Konqueror e Dolphin, installare il pacchetto [audiothumbs](https://aur.archlinux.org/packages/audiothumbs/) da AUR.
 
-Per avere le anteprime dei video in konqueror e dolphin, installare [kdemultimedia-mplayerthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-mplayerthumbs) o [kdemultimedia-ffmpegthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-ffmpegthumbs).
+Per avere le anteprime dei video in konqueror e dolphin, installare [kdemultimedia-mplayerthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-mplayerthumbs) o [ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs).
 
 ### Velocizzare l'avvio delle applicazioni
 

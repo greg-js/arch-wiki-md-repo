@@ -194,7 +194,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **[Lokalize](https://en.wikipedia.org/wiki/Lokalize per traduzioni di software. Permette di modificare i files PO, supporta glossari, translation memory, gestione progetti eccetera.
 
-	[http://userbase.kde.org/Lokalize](http://userbase.kde.org/Lokalize) || [kdesdk-lokalize](https://www.archlinux.org/packages/?name=kdesdk-lokalize)
+	[http://userbase.kde.org/Lokalize](http://userbase.kde.org/Lokalize) || [lokalize](https://www.archlinux.org/packages/?name=lokalize)
 
 *   **[Moses](https://en.wikipedia.org/wiki/Moses_(machine_translation) "wikipedia:Moses (machine translation)")** — Strumento di traduzione statistica automatizzata (files delle lingue non inclusi).
 
@@ -544,7 +544,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[Eclipse](/index.php/Eclipse "Eclipse")** — Progetto della comunità open source , che mira a fornire una piattaforma di sviluppo universale.
 
-	[http://eclipse.org/](http://eclipse.org/) || [eclipse](https://www.archlinux.org/packages/?name=eclipse)
+	[http://eclipse.org/](http://eclipse.org/) || [eclipse-java](https://www.archlinux.org/packages/?name=eclipse-java)
 
 *   **[Editra](https://en.wikipedia.org/wiki/Editra "wikipedia:Editra")** — Editor di testo multi-piattaforma con una implementazione che si concentra sulla facilità di creazione, con interfaccia e funzionalità che gli aiutino lo sviluppo di codice.
 
@@ -731,7 +731,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **higan** — Emulatore multi-sistema, focalizzato sull'accuratezza. Supporta SNES, NES, GB, GBC, GBA.
 
-	[http://byuu.org/higan/](http://byuu.org/higan/) || [higan-gtk](https://www.archlinux.org/packages/?name=higan-gtk) [higan-qt](https://www.archlinux.org/packages/?name=higan-qt)
+	[http://byuu.org/higan/](http://byuu.org/higan/) || [higan](https://www.archlinux.org/packages/?name=higan)
 
 *   **ZSNES** — Emulatore per Super Nintendo altamente compatibile.
 

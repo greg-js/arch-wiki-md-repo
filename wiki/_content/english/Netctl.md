@@ -375,7 +375,7 @@ Interface=en-any
 Connection=ethernet
 IP=static
 Address=('192.168.1.15/24')
-Gateway='192.168.1.1'
+Gateway=('192.168.1.1')
 DNS=('192.168.1.1')
 
 ```

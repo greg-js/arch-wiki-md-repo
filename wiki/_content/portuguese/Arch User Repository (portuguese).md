@@ -1,13 +1,13 @@
 Artigos relacionados
 
-*   [makepkg (Português)](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
-*   [pacman (Português)](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
-*   [PKGBUILD (Português)](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
-*   [.SRCINFO (Português)](/index.php/.SRCINFO_(Portugu%C3%AAs) ".SRCINFO (Português)")
-*   [AurJson](/index.php/AurJson "AurJson")
+*   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
+*   [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
+*   [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
+*   [.SRCINFO](/index.php/.SRCINFO_(Portugu%C3%AAs) ".SRCINFO (Português)")
+*   [AurJson](/index.php/AurJson_(Portugu%C3%AAs) "AurJson (Português)")
 *   [Diretrizes de Trusted User do AUR](/index.php/Diretrizes_de_Trusted_User_do_AUR "Diretrizes de Trusted User do AUR")
 *   [Repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais")
-*   [Arch Build System (Português)](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
+*   [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
 *   [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes")
 *   [Auxiliares do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR")
 
@@ -255,7 +255,7 @@ O novo pacote aparecerá no AUR após você executar *push* no primeiro commit. 
 
 Os procedimentos para envio de pacotes para o AUR é o mesmo de novos pacotes e atualizações de pacotes. Você precisa pelo menos de um [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e um [.SRCINFO](/index.php/.SRCINFO_(Portugu%C3%AAs) ".SRCINFO (Português)") no diretório de nível superior para poder fazer o *push* do seu pacote para o AUR.
 
-**Nota:** Você precisa regerar o `.SRCINFO` toda vez que você alterar os metadados do `PKGBUILD`, tal como atualizações de [pkgver()](/index.php/PKGBUILD#pkgver "PKGBUILD"). Do contrário, o AUR não vai mostrar os números de versão atualizados.
+**Nota:** Você precisa regerar o `.SRCINFO` toda vez que você alterar os metadados do `PKGBUILD`, tal como atualizações de [pkgver()](/index.php/PKGBUILD_(Portugu%C3%AAs)#pkgver "PKGBUILD (Português)"). Do contrário, o AUR não vai mostrar os números de versão atualizados.
 
 Para enviar, adicione o `PKGBUILD`, `.SRCINFO` e quaisquer arquivos auxiliares (como arquivos `.install` ou arquivos fontes locais como `.patch`) à *staging area* com `git add`, faça commit deles para sua árvore local com uma mensagem de commit com `git commit` e, finalmente, publique as alterações para o AUR com `git push`.
 
@@ -366,7 +366,7 @@ O melhor recurso é a página wiki sobre [criação de pacotes](/index.php/Crian
 
 ### Eu tenho um PKGBUILD que queria enviar; alguém pode verificá-lo para ver se ele tem algum erro?
 
-Se quiser ter o seu PKGBUILD criticado, publique--o para a [lista de discussão aur-general](https://mailman.archlinux.org/mailman/listinfo/aur-general) para receber feedback dos TUs e de outros membros do AUR. Você também pode conseguir ajuda do [Canal IRC](/index.php/IRC_channel "IRC channel"), #archlinux-aur em irc.freenode.net. Você também pode usar o [namcap](/index.php/Namcap "Namcap") para verificar erros no seu PKGBUILD e no pacote resultante.
+Se quiser ter o seu PKGBUILD criticado, publique--o para a [lista de discussão aur-general](https://mailman.archlinux.org/mailman/listinfo/aur-general) para receber feedback dos TUs e de outros membros do AUR. Você também pode conseguir ajuda do [Canal IRC](/index.php/Canal_IRC "Canal IRC"), #archlinux-aur em irc.freenode.net. Você também pode usar o [namcap](/index.php/Namcap "Namcap") para verificar erros no seu PKGBUILD e no pacote resultante.
 
 ### Como que faz para um PKGBUILD ir para o repositório *community*?
 
@@ -390,7 +390,7 @@ Se você frequentemente compila códigos que usam gcc - digamos, um pacote git o
 
 Muitos pacotes AUR são apresentados nas versões regulares ("estáveis") e de desenvolvimento ("instáveis"). Um pacote de desenvolvimento geralmente possui um sufixo como `-cvs`, `-svn`, `-git`, `-hg`, `-bzr` ou `-darcs`. Enquanto os pacotes de desenvolvimento não são destinados a usos regulares, eles podem oferecer novos recursos ou correções de erros. Por esses pacotes baixarem o mais novo código-fonte disponível ao executar o `makepkg`, uma versão de pacote para relacionar possíveis atualizações não está diretamente disponível para eles. Da mesma forma, esses pacotes não podem realizar uma verificação de autenticidade da soma de verificação (*checksum*), dependendo dos mantenedor(es) do repositório Git.
 
-Veja também [System maintenance (Português)#Use pacotes de software aprovados](/index.php/System_maintenance_(Portugu%C3%AAs)#Use_pacotes_de_software_aprovados "System maintenance (Português)").
+Veja também [Manutenção do sistema#Use pacotes de software aprovados](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Use_pacotes_de_software_aprovados "Manutenção do sistema").
 
 ### Por que foo desapareceu do AUR?
 

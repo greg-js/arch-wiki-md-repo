@@ -1,4 +1,4 @@
-**Warning:** None of these tools are [officially](https://bbs.archlinux.org/viewtopic.php?pid=828254#p828254) supported by Arch Linux. It is recommended to become familiar with the [manual build process](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") in order to be prepared to troubleshoot problems on one's own.
+**Warning:** AUR helpers are not [officially](https://bbs.archlinux.org/viewtopic.php?pid=828254#p828254) supported by Arch Linux. It is recommended to become familiar with the [manual build process](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") in order to be prepared to troubleshoot problems on one's own.
 
 AUR helpers are written to automate certain tasks for the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 

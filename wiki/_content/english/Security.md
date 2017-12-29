@@ -659,7 +659,6 @@ Packages can be rebuilt and stripped of undesired functions and features as a me
 
 ## See also
 
-*   [DeveloperWiki:Security](/index.php/DeveloperWiki:Security "DeveloperWiki:Security")
 *   [Arch Linux Security Tracker](https://security.archlinux.org/)
 *   [ArchWiki: Security Applications](/index.php/List_of_applications/Security "List of applications/Security")
 *   [CentOS Wiki: OS Protection](https://wiki.centos.org/HowTos/OS_Protection)
@@ -669,5 +668,5 @@ Packages can be rebuilt and stripped of undesired functions and features as a me
 *   [privacytools.io Privacy Resources](https://www.privacytools.io/)
 *   [Red Hat Enterprise Linux 7 Security Guide](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/)
 *   [Securing Debian Manual (PDF)](https://www.debian.org/doc/manuals/securing-debian-howto/securing-debian-howto.en.pdf)
-*   [The paranoid #! Security Guide](https://crunchbang.org/forums/viewtopic.php?id=24722)
-*   [UNIX and Linux Security Checklist v3.0](https://www.auscert.org.au/resources/publications/guidelines/unix-linux/unix-and-linux-security-checklist-v3.0)
+*   [The paranoid #! Security Guide](https://web.archive.org/web/20140220055801/http://crunchbang.org:80/forums/viewtopic.php?id=24722)
+*   [UNIX and Linux Security Checklist v3.0](https://archive.fo/wrjIM)

@@ -2,11 +2,11 @@ Artigos relacionados
 
 *   [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes")
 *   [Fazendo downgrade de pacotes](/index.php/Fazendo_downgrade_de_pacotes "Fazendo downgrade de pacotes")
-*   [pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing")
+*   [pacman/Assinatura de pacote](/index.php/Pacman/Assinatura_de_pacote "Pacman/Assinatura de pacote")
 *   [pacman/Pacnew e Pacsave](/index.php/Pacman/Pacnew_e_Pacsave "Pacman/Pacnew e Pacsave")
 *   [pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database")
 *   [pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta")
-*   [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks")
+*   [pacman/Dicas e truques](/index.php/Pacman/Dicas_e_truques "Pacman/Dicas e truques")
 *   [FAQ (Português)#Gerenciamento de pacote](/index.php/FAQ_(Portugu%C3%AAs)#Gerenciamento_de_pacote "FAQ (Português)")
 *   [Manutenção do sistema](/index.php/Manuten%C3%A7%C3%A3o_do_sistema "Manutenção do sistema")
 *   [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
@@ -197,8 +197,8 @@ O *pacman* salva arquivos de configuração importantes ao remover certos aplica
 
 **Atenção:**
 
-*   Os usuários devem seguir as orientações em [System maintenance (Português)#Atualizando o sistema](/index.php/System_maintenance_(Portugu%C3%AAs)#Atualizando_o_sistema "System maintenance (Português)") para atualizar os seus sistemas regularmente e nao executar o seguinte comando as cegas.
-*   Arch suporta apenas atualizações completa de sistema. Veja [System maintenance (Português)#Sem suporte a atualizações parciais](/index.php/System_maintenance_(Portugu%C3%AAs)#Sem_suporte_a_atualiza.C3.A7.C3.B5es_parciais "System maintenance (Português)") e [#Instalando pacotes](#Instalando_pacotes) para mais detalhes.
+*   Os usuários devem seguir as orientações em [Manutenção do sistema#Atualizando o sistema](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Atualizando_o_sistema "Manutenção do sistema") para atualizar os seus sistemas regularmente e nao executar o seguinte comando as cegas.
+*   Arch suporta apenas atualizações completa de sistema. Veja [Manutenção do sistema#Sem suporte a atualizações parciais](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Sem_suporte_a_atualiza.C3.A7.C3.B5es_parciais "Manutenção do sistema") e [#Instalando pacotes](#Instalando_pacotes) para mais detalhes.
 
 O *pacman* pode atualizar todos os pacotes no sistema com apenas um comando. Isso pode demorar um pouco dependendo de como anda a atualização do sistema. Este comando pode sincronizar as bases de dados do repositório *e* atualizar os pacotes do sistema (excluindo pacotes "locais" que não estão nos repositórios configurados):
 
@@ -332,7 +332,7 @@ $ pactree -r *nome_pacote*
 
 ```
 
-veja [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") para mais exemplos.
+Veja [Pacman/Dicas e truques](/index.php/Pacman/Dicas_e_truques "Pacman/Dicas e truques") para mais exemplos.
 
 #### Estrutura da base de dados
 
@@ -454,7 +454,7 @@ Para alterar o motivo da instalação de um pacote já instalado, execute:
 
 Use `--asexplicit` para a operação oposta.
 
-**Dica:** A instalação de dependências opcionais com o `--asdeps` o causará de tal forma que, se você [remover pacotes órfãos](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_.28orphans.29 "Pacman/Tips and tricks"), o *pacman* também removerá as dependências opcionais.
+**Dica:** A instalação de dependências opcionais com o `--asdeps` o causará de tal forma que, se você [remover pacotes órfãos](/index.php/Pacman/Dicas_e_truques#Removendo_pacotes_n.C3.A3o_usados_.28.C3.B3rf.C3.A3os.29 "Pacman/Dicas e truques"), o *pacman* também removerá as dependências opcionais.
 
 ### Pesquisar por um pacote que contenha um arquivo específico
 
@@ -568,7 +568,7 @@ Cada seção de repositório permite definir a lista de seus espelhos diretament
 
 #### Segurança de pacote
 
-O *pacman* oferece suporte a assinaturas de pacotes, que adiciona uma camada extra de segurança para os pacotes. A configuração padrão, `SigLevel = Required DatabaseOptional`, habilita verificação de assinatura para todos os pacotes em um nível global: isso pode ser sobrescrito por linhas `SigLevel` para cada repositório. Para mais detalhes sobre assinatura de pacote e verificação de assinatura, dê uma olhada em [pacman-key](/index.php/Pacman-key "Pacman-key").
+O *pacman* oferece suporte a assinaturas de pacotes, que adiciona uma camada extra de segurança para os pacotes. A configuração padrão, `SigLevel = Required DatabaseOptional`, habilita verificação de assinatura para todos os pacotes em um nível global: isso pode ser sobrescrito por linhas `SigLevel` para cada repositório. Para mais detalhes sobre assinatura de pacote e verificação de assinatura, dê uma olhada em [pacman-key](/index.php/Pacman-key_(Portugu%C3%AAs) "Pacman-key (Português)").
 
 ## Solução de problemas
 
@@ -588,7 +588,7 @@ Por que isso aconteceu: o *pacman* detectou um conflito de arquivo e, por design
 
 O problema geralmente é trivial de resolver. Uma maneira segura é primeiro verificar se outro pacote possui o arquivo (`pacman -Qo */caminho/para/arquivo*`). Se o arquivo for de propriedade de outro pacote, [preencha um relatório de erro](/index.php/Reporting_bug_guidelines "Reporting bug guidelines"). Se o arquivo não for de outro pacote, renomeie o arquivo que "existe no sistema de arquivos" e execute novamente o comando de atualização. Se tudo correr bem, o arquivo pode então ser removido.
 
-Se você instalou um programa manualmente sem usar o *pacman* ou um frontend dele (p.ex.: por meio de `make install`), você tem que removê-lo e todos os seus arquivos para, depois, reinstalar adequadamente usando o *pacman*. Veja também [Pacman tips#Identify files not owned by any package](/index.php/Pacman_tips#Identify_files_not_owned_by_any_package "Pacman tips").
+Se você instalou um programa manualmente sem usar o *pacman* ou um frontend dele (p.ex.: por meio de `make install`), você tem que removê-lo e todos os seus arquivos para, depois, reinstalar adequadamente usando o *pacman*. Veja também [Pacman/Dicas e truques#Identificar arquivos que pertençam a nenhum pacote](/index.php/Pacman/Dicas_e_truques#Identificar_arquivos_que_perten.C3.A7am_a_nenhum_pacote "Pacman/Dicas e truques").
 
 Todo pacote instalado fornece um arquivo `/var/lib/pacman/local/*$pacote-$versão*/files` que contém metadados sobre esse pacote. Se o arquivo ficar corrompido, vazio ou desaparecer, ele resulta em erros de `existe no sistema de arquivos` ao tentar atualizar o pacote. Tal erro geralmente está relacionado a um pacote. Em vez de renomear manualmente e posteriormente remover todos os arquivos que pertencem ao pacote em questão, você pode tentar excepcionalmente executar `pacman -S --force $pacote` para forçar o *pacman* a sobrescrever esses arquivos.
 
@@ -700,7 +700,7 @@ Você pode tentar:
 
 *   atualizar as chaves conhecidas, executando `pacman-key --refresh-keys`
 *   atualizar manualmente o pacote [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) primeiro, i.e. `pacman -Sy archlinux-keyring && pacman -Su`
-*   siga [pacman-key#Resetting all the keys](/index.php/Pacman-key#Resetting_all_the_keys "Pacman-key")
+*   siga [pacman-key (Português)#Redefinindo todas as chaves](/index.php/Pacman-key_(Portugu%C3%AAs)#Redefinindo_todas_as_chaves "Pacman-key (Português)")
 
 ### Solicitação de importação de chaves PGP
 
@@ -749,7 +749,7 @@ Agora, você precisa [reinstalar](#Instalando_pacotes_espec.C3.ADficos) o pacote
 
 ### Congelamento de downloads de pacote
 
-Houve alguns relatos a cerca de problemas de rede que impedem o *pacman* de atualizar/sincronizar repositórios. [[2]](https://bbs.archlinux.org/viewtopic.php?id=68944) [[3]](https://bbs.archlinux.org/viewtopic.php?id=65728) Ao instalar o Arch Linux nativamente, essas questões foram resolvidas substituindo o gerenciador de download de arquivos padrão do *pacman* com um alternativo (veja [Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance") para mais detalhes). Ao instalar o Arch Linux como um SO hospedeiro no [Virtualbox](/index.php/VirtualBox_(Portugu%C3%AAs) "VirtualBox (Português)"), essa questão também foi resolvido usando *Host interface* em vez de *NAT* nas propriedades da máquina.
+Houve alguns relatos a cerca de problemas de rede que impedem o *pacman* de atualizar/sincronizar repositórios. [[2]](https://bbs.archlinux.org/viewtopic.php?id=68944) [[3]](https://bbs.archlinux.org/viewtopic.php?id=65728) Ao instalar o Arch Linux nativamente, essas questões foram resolvidas substituindo o gerenciador de download de arquivos padrão do *pacman* com um alternativo (veja [Melhorar desempenho do pacman](/index.php/Melhorar_desempenho_do_pacman "Melhorar desempenho do pacman") para mais detalhes). Ao instalar o Arch Linux como um SO hospedeiro no [Virtualbox](/index.php/VirtualBox_(Portugu%C3%AAs) "VirtualBox (Português)"), essa questão também foi resolvido usando *Host interface* em vez de *NAT* nas propriedades da máquina.
 
 ### Falha ao obter arquivo 'core.db' do espelho
 

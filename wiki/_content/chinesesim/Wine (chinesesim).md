@@ -356,7 +356,7 @@ $ msiexec /i *path_to_msi*
 
 By default, Wine takes over as the default application for a lot of formats. Some (e.g. `vbs` or `chm`) are Windows-specific, and opening them with Wine can be a convenience. However, having other formats (e.g. `gif`, `jpeg`, `txt`, `js`) open in Wine's bare-bones simulations of Internet Explorer and Notepad can be annoying.
 
-Wine's file associations are set in `~/.local/share/applications/` as `wine-extension-{extension}.desktop` files. Delete the files corresponding to the extensions you want to unregister. Or, to remove all wine extensions:
+Wine's file associations are set in `~/.local/share/applications/` as {{ic|wine-extension-{extension}.desktop}} files. Delete the files corresponding to the extensions you want to unregister. Or, to remove all wine extensions:
 
 ```
 $ rm -f ~/.local/share/applications/wine-extension*.desktop

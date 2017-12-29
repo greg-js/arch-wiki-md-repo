@@ -1,6 +1,6 @@
 [nginx](https://en.wikipedia.org/wiki/nginx "wikipedia:nginx") (pronounced "engine X"), is a free, open-source, high-performance HTTP server and reverse proxy, as well as an IMAP/POP3 proxy server, written by Igor Sysoev in 2005\. nginx is well known for its stability, rich feature set, simple configuration, and low resource consumption.
 
-Nginx is often used together with a scripting language such as [PHP](/index.php/PHP "PHP") and database such as [MySQL](/index.php/MySQL "MySQL"). This combination is often referred to as a LEMP stack (Linux, EngineX, MySQL, PHP).
+This article describes how to set up nginx and how to optionally integrate it with [PHP](/index.php/PHP "PHP") via [#FastCGI](#FastCGI).
 
 ## Contents
 

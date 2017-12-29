@@ -1,8 +1,8 @@
 Artigos relacionados
 
 *   [Compiz/Configuration](/index.php/Compiz/Configuration "Compiz/Configuration")
-*   [Window manager](/index.php/Window_manager "Window manager")
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela")
+*   [Ambiente desktop](/index.php/Desktop_environment "Desktop environment")
 *   [Xfce](/index.php/Xfce "Xfce")
 *   [MATE](/index.php/MATE "MATE")
 
@@ -32,7 +32,7 @@ A instalação pode ser feita usando os repositórios community. Uma outra forma
 
 ## Através do Repositório Community
 
-Após [habilitar o repositório no arquivo /etc/pacman.conf](/index.php/Pacman#Repositories_and_mirrors "Pacman"), pode-se instalar o compiz com o comando:
+Após [habilitar o repositório no arquivo /etc/pacman.conf](/index.php/Pacman_(Portugu%C3%AAs)#Reposit.C3.B3rios_e_mirrors "Pacman (Português)"), pode-se instalar o compiz com o comando:
 
 ### Todos os Pacotes
 

@@ -225,7 +225,7 @@
 
 *   **GCompris** — Programma educativo che comprende numerose attività per bambini dai 2 ai 10 anni
 
-	[http://gcompris.net/-en-](http://gcompris.net/-en-) || [gcompris](https://www.archlinux.org/packages/?name=gcompris)
+	[http://gcompris.net/-en-](http://gcompris.net/-en-) || [gcompris-qt](https://www.archlinux.org/packages/?name=gcompris-qt)
 
 *   **Tux Paint** — Programma per disegnare, pensato per bambini.
 
@@ -373,7 +373,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 *   **Ksudoku** — Gioco del Sudoku. È incluso in kdegames.
 
-	[http://ksudoku.sourceforge.net/](http://ksudoku.sourceforge.net/) || [kdegames-ksudoku](https://www.archlinux.org/packages/?name=kdegames-ksudoku)
+	[http://ksudoku.sourceforge.net/](http://ksudoku.sourceforge.net/) || [ksudoku](https://www.archlinux.org/packages/?name=ksudoku)
 
 *   **Netris** — Incompiuta versione di sviluppo di Netris, una versione gratuita in rete di Tetris.
 

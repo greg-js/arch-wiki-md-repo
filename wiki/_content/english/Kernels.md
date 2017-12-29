@@ -81,7 +81,7 @@ If you have not actually patched or customized a kernel before it is not that ha
 
 *   [Repository](/index.php/Unofficial_user_repositories#home_post-factum_Arch_Extra "Unofficial user repositories") by pf-kernel developer, [post-factum](https://aur.archlinux.org/account/post-factum)
 
-*   [Repository](/index.php/Unofficial_user_repositories#home-thaodan "Unofficial user repositories"), [linux-pf](https://aur.archlinux.org/packages/linux-pf/), [linux-pf-preset-default](https://aur.archlinux.org/packages/linux-pf-preset-default/), [linux-pf-lts](https://aur.archlinux.org/packages/linux-pf-lts/) by [Thaodan](https://aur.archlinux.org/account/Thaodan)
+*   [Repository](/index.php/Unofficial_user_repositories#home-thaodan "Unofficial user repositories"), [linux-pf](https://aur.archlinux.org/packages/linux-pf/), [linux-pf-preset-default](https://aur.archlinux.org/packages/linux-pf-preset-default/), [linux-pf-lts](https://aur.archlinux.org/packages/linux-pf-lts/) by pf-kernel fork developer, [Thaodan](https://aur.archlinux.org/account/Thaodan)
 
 *   **[Realtime kernel](/index.php/Realtime_kernel "Realtime kernel")** — Maintained by a small group of core developers, led by Ingo Molnar. This patch allows nearly all of the kernel to be preempted, with the exception of a few very small regions of code ("raw_spinlock critical regions"). This is done by replacing most kernel spinlocks with mutexes that support priority inheritance, as well as moving all interrupt and software interrupts to kernel threads.
 
