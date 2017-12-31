@@ -1,4 +1,8 @@
-[Flyspray](http://www.flyspray.org/) is a bug tracking system written in PHP.
+Related articles
+
+*   [LAMP](/index.php/LAMP "LAMP")
+
+[Flyspray](http://www.flyspray.org/) is a bug tracking system written in [PHP](/index.php/PHP "PHP").
 
 ## Installation
 
@@ -22,7 +26,3 @@ Alias /flyspray "/usr/share/webapps/flyspray"
 ```
 
 You will then need to edit `/etc/webapps/flyspray/.htaccess` and change `deny from all` to `allow from all`. You should now be able to navigate to the flyspray interface (e.g. `[http://localhost/flyspray](http://localhost/flyspray)`) and it will show a page of pre-installation checks. Any issues here should be resolved before continuing.
-
-## See also
-
-*   [Flyspray Official Website](http://www.flyspray.org/)

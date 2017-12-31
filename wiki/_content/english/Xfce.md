@@ -100,10 +100,6 @@ See [Xdg-menu](/index.php/Xdg-menu "Xdg-menu") for more info on using the Free D
 
 A number of graphical tools are available for this task:
 
-*   **XAME** — GUI tool written in Gambas designed specifically for editing menu entries in Xfce, it will not work in other environments. (Discontinued)
-
-	[http://www.redsquirrel87.com/XAME.php](http://www.redsquirrel87.com/XAME.php) || [xame](https://aur.archlinux.org/packages/xame/)
-
 *   **MenuLibre** — An advanced menu editor that provides modern features in a clean, easy-to-use interface.
 
 	[https://launchpad.net/menulibre](https://launchpad.net/menulibre) || [menulibre](https://aur.archlinux.org/packages/menulibre/).
@@ -111,6 +107,10 @@ A number of graphical tools are available for this task:
 *   **Alacarte** — Menu editor for GNOME
 
 	[http://www.gnome.org/](http://www.gnome.org/) || [alacarte](https://www.archlinux.org/packages/?name=alacarte)
+
+*   **XAME** — GUI tool written in Gambas designed specifically for editing menu entries in Xfce, it will not work in other environments. (Discontinued)
+
+	[http://www.redsquirrel87.com/XAME.php](http://www.redsquirrel87.com/XAME.php) || [xame](https://aur.archlinux.org/packages/xame/)
 
 Alternatively, create the file `~/.config/menus/xfce-applications.menu` manually. See the example configuration below:
 

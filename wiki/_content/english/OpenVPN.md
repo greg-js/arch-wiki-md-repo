@@ -136,7 +136,7 @@ cert servername.crt
 key servername.key  # This file should be kept secret
 dh dh.pem
 .
-tls-crypt ta.key
+tls-crypt ta.key # Replaces *tls-auth ta.key 0*
 .
 user nobody
 group nobody
@@ -208,6 +208,7 @@ Edit the following:
 
  `/etc/openvpn/client/client.conf` 
 ```
+client
 remote elmer.acmecorp.org 1194
 .
 user nobody
@@ -216,7 +217,7 @@ ca ca.crt
 cert client.crt
 key client.key
 .
-tls-crypt ta.key
+tls-crypt ta.key # Replaces *tls-auth ta.key 1*
 
 ```
 

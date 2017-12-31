@@ -23,6 +23,7 @@ TeX Live is one of the most popular distributions for [LaTeX](https://en.wikiped
     *   [5.1 Manual Installation](#Manual_Installation_2)
     *   [5.2 Using PKGBUILDs](#Using_PKGBUILDs)
 *   [6 Updating babelbib language definitions](#Updating_babelbib_language_definitions)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -182,3 +183,7 @@ Afterwards, you need to run `texhash` to update the TeX database:
 # texhash
 
 ```
+
+## See also
+
+*   [A (Not So) Short In­tro­duc­tion to LaTeX2ε](https://www.ctan.org/tex-archive/info/lshort/english)

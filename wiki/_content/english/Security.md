@@ -501,7 +501,7 @@ SupplementaryGroups=proc
 
 ## Sandboxing applications
 
-**Note:** The user namespace configuration item `CONFIG_USER_NS` is not set in the stock Arch kernel and may prevent certain sandboxing features from being made available to applications. The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) packages enables it but disables unprivileged usage by default unless the `kernel.unprivileged_userns_clone` [sysctl](/index.php/Sysctl "Sysctl") is set to `1`, since it greatly increases the attack surface for local privilege escalation.
+**Note:** The user namespace configuration item `CONFIG_USER_NS` is currently set in [linux](https://www.archlinux.org/packages/?name=linux) (v4.14.5 or later) and [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened). Lack of it may prevent certain sandboxing features from being made available to applications. Unprivileged usage is disabled by default unless the `kernel.unprivileged_userns_clone` [sysctl](/index.php/Sysctl "Sysctl") is set to `1`, since it greatly increases the attack surface for local privilege escalation.
 
 ### Firejail
 

@@ -1,7 +1,5 @@
 [Foswiki](http://foswiki.org) is a free enterprise collaboration platform written in Perl; developed, supported and maintained by its users and the open-source community.
 
-You may also be interested in [XWiki](/index.php/XWiki "XWiki"), which caters to similar needs, but is Java-based.
-
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -22,12 +20,12 @@ These instructions assume you will be using the directory `/srv/http/foswiki` to
 The [Foswiki Installation Guide](http://foswiki.org/System/InstallationGuide) is very thorough (although maybe a bit overwhelming), and makes an excellent reference. Follow along using the official guide, but you will find these notes to be more concise, and more specific to ArchLinux.
 
 *   You will need to install the following packages in order for Foswiki to work:
-    *   **rcs**
-    *   **perl-crypt-passwdmd5**
-    *   **perl-cgi-session**
-    *   **perl-html-tree**
-    *   **perl-json**
-    *   **perl-libwww**
+    *   [rcs](https://www.archlinux.org/packages/?name=rcs)
+    *   [perl-crypt-passwdmd5](https://www.archlinux.org/packages/?name=perl-crypt-passwdmd5)
+    *   [perl-cgi-session](https://www.archlinux.org/packages/?name=perl-cgi-session)
+    *   [perl-html-tree](https://www.archlinux.org/packages/?name=perl-html-tree)
+    *   [perl-json](https://www.archlinux.org/packages/?name=perl-json)
+    *   [perl-libwww](https://www.archlinux.org/packages/?name=perl-libwww)
 
 *   From the [Foswiki website](http://foswiki.org), determine the URL of the latest Foswiki release.
 *   Download and unpack the archive as the `http` user at `/srv/http/foswiki`. For instance (as `root`):

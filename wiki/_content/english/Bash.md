@@ -52,7 +52,7 @@ Bash is considered an **interactive shell** when its standard input and error ar
 
 ### Configuration files
 
-See [6.2 Bash Startup Files](http://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files) and [DotFiles](http://mywiki.wooledge.org/DotFiles) for a complete description.
+See "6.2 Bash Startup Files" in `/usr/share/doc/bash/bashref.html` ([online link](https://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files)) and [DotFiles](http://mywiki.wooledge.org/DotFiles) for a complete description.
 
 | File | Description | Login shells  | Interactive, *non-login* shells |
 | `/etc/profile` | [Sources](/index.php/Source "Source") application settings in `/etc/profile.d/*.sh` and `/etc/bash.bashrc`. | Yes | No |
@@ -155,7 +155,7 @@ or set it to `erasedups` to ensure that Bash's history will only contain one cop
 
 ### Mimic Zsh run-help ability
 
-Zsh can invoke the manual for the command preceding the cursor by pressing `Alt+h`. A similar behaviour is obtained in Bash using this [Readline](/index.php/Readline "Readline") bind:
+[Zsh](/index.php/Zsh "Zsh") can invoke the manual for the command preceding the cursor by pressing `Alt+h`. A similar behaviour is obtained in Bash using this [Readline](/index.php/Readline "Readline") bind:
 
  `~/.bashrc` 
 ```

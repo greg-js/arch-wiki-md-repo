@@ -61,7 +61,7 @@ In order to use Git you need to set at least a name and email:
 
 ```
 $ git config --global user.name  "*John Doe*"
-$ git config --global user.email "*johndoe@foobar.com*"
+$ git config --global user.email "*johndoe@example.com*"
 
 ```
 
@@ -767,7 +767,7 @@ For fine-grained access management, refer to [gitolite](/index.php/Gitolite "Git
 
 ## See also
 
-*   Miscallaneous man pages available in the [git](https://www.archlinux.org/packages/?name=git) package: `gittutorial(7)`, `giteveryday(7)`, `gitworkflows(7)`
+*   Miscallaneous man pages available in the [git](https://www.archlinux.org/packages/?name=git) package: [gittutorial(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gittutorial.7), [giteveryday(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/giteveryday.7), [gitworkflows(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gitworkflows.7)
 *   [Pro Git book](http://git-scm.com/book)
 *   [Git Reference](http://gitref.org/)
 *   [https://www.kernel.org/pub/software/scm/git/docs/](https://www.kernel.org/pub/software/scm/git/docs/)

@@ -84,12 +84,12 @@ $ npm -g install packageName --prefix ~/.node_modules
 
 This is however **not** recommended since you need to remember the location and give it as the parameter each time you do an operation.
 
-To overrule the default location, use [environment variables](/index.php/Environment_variables "Environment variables") instead:
+Using [environment variables](/index.php/Environment_variables#Per_user "Environment variables") may be a more preferred solution:
 
+ `~/.profile` 
 ```
 PATH="$HOME/.node_modules/bin:$PATH"
 export npm_config_prefix=~/.node_modules
-
 ```
 
 Re-login or *source* to update changes.

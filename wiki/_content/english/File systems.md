@@ -4,7 +4,6 @@ Related articles
 *   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
 *   [fsck](/index.php/Fsck "Fsck")
 *   [fstab](/index.php/Fstab "Fstab")
-*   [List of applications/Internet#Distributed file systems](/index.php/List_of_applications/Internet#Distributed_file_systems "List of applications/Internet")
 *   [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications")
 *   [Optical disc drive](/index.php/Optical_disc_drive "Optical disc drive")
 *   [Partitioning](/index.php/Partitioning "Partitioning")
@@ -214,7 +213,7 @@ An existing file system, if present, will be shown in the `FSTYPE` column. If [m
 
 File systems are usually created on a [partition](/index.php/Partition "Partition"), inside logical containers such as [LVM](/index.php/LVM "LVM"), [RAID](/index.php/RAID "RAID") and [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), or on a regular file (see [Wikipedia:Loop device](https://en.wikipedia.org/wiki/Loop_device "wikipedia:Loop device")). This section describes the partition case.
 
-**Note:** File systems can be written directly to a disk, known as a [superfloppy](https://msdn.microsoft.com/en-us/library/windows/hardware/dn640535(v=vs.85).aspx#gpt_faq_superfloppy) or *partitionless disk*. Certain limitations are involved with this method, particularly if [booting](/index.php/Arch_boot_process "Arch boot process") from such a drive. See [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") for an example.
+**Note:** File systems can be written directly to a disk, known as a *superfloppy* or [partitionless disk](/index.php/Partitioning#Partitionless_disk "Partitioning"). Certain limitations are involved with this method, particularly if [booting](/index.php/Arch_boot_process "Arch boot process") from such a drive. See [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") for an example.
 
 **Warning:**
 

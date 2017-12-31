@@ -15,13 +15,7 @@ Toto je seznam Pacman GUI frontendů, Pacman/AUR pohlížečů balíčků a tray
 *   [2 Pacman/AUR Prohlížeč balíčků](#Pacman.2FAUR_Prohl.C3.AD.C5.BEe.C4.8D_bal.C3.AD.C4.8Dk.C5.AF)
     *   [2.1 PkgBrowser](#PkgBrowser)
 *   [3 Tray ohlašovatelé](#Tray_ohla.C5.A1ovatel.C3.A9)
-    *   [3.1 Archup](#Archup)
-    *   [3.2 Aarchup](#Aarchup)
-    *   [3.3 pacman-notifier](#pacman-notifier)
-    *   [3.4 Pacupdate](#Pacupdate)
-    *   [3.5 Yapan](#Yapan)
-    *   [3.6 ZenMan](#ZenMan)
-    *   [3.7 Yaourt-Dzen Notifier](#Yaourt-Dzen_Notifier)
+    *   [3.1 Aarchup](#Aarchup)
 *   [4 Neaktivní projekty](#Neaktivn.C3.AD_projekty)
 
 # Pacman Frontendy
@@ -48,14 +42,7 @@ Známé problémy:
 *   Nekteré chyby nejsou ohlášeny GNOME PackageKitem.
 *   PackageKit nenajde repositáře pokud je `Architecture` nastaveno na `auto` v `/etc/pacman.conf`. Změňte to na `Architecture = i686` popř. `Architecture = x86_64` k odstranění chyby.
 
-Balíčky:
-
-```
-pacman -S gnome-packagekit gnome-settings-daemon-updates
-
-```
-
-**Tip:** Pokud nechcete instalovat PulseAudio, můžete naistalovat [gnome-settings-daemon-nopulse](https://aur.archlinux.org/packages/gnome-settings-daemon-nopulse/) z AURu.
+Balíčky: [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
 
 ## KDE/Qt
 
@@ -134,14 +121,6 @@ Pkgbrowser - program k hledání a prohlížení Arch balíčků, zobrazuje deta
 
 # Tray ohlašovatelé
 
-### Archup
-
-Archup - malý C program informující na dostupné aktualizace systému. Používá GTK+ a libnotify k zobrazení upozornění na aktualizace.
-
-*   Domovská stránka: [archup](/index.php/Archup "Archup"), [http://www.nongnu.org/archup/](http://www.nongnu.org/archup/)
-*   AUR: [archup](https://aur.archlinux.org/packages/archup/)
-*   Snímky obrazovky: [http://www.nongnu.org/archup/](http://www.nongnu.org/archup/), [http://developer.berlios.de/dbimage.php?id=4687](http://developer.berlios.de/dbimage.php?id=4687) , [http://developer.berlios.de/dbimage.php?id=4688](http://developer.berlios.de/dbimage.php?id=4688)
-
 ### Aarchup
 
 Aarchup - fork archupu. Nabízí stejné možnosti a nějaké navíc (viz [https://bbs.archlinux.org/viewtopic.php?id=119129](https://bbs.archlinux.org/viewtopic.php?id=119129)).
@@ -149,46 +128,6 @@ Aarchup - fork archupu. Nabízí stejné možnosti a nějaké navíc (viz [https
 *   Domovská stránka: [https://github.com/aericson/aarchup/](https://github.com/aericson/aarchup/)
 *   AUR: [aarchup](https://aur.archlinux.org/packages/aarchup/)
 *   Snímky obrazovky: [http://i.imgur.com/yTNvg.png](http://i.imgur.com/yTNvg.png)
-
-### pacman-notifier
-
-Napsán v Ruby, používá Gtk. Zoprazuje ikonu v trayi a vyskakovací upozornění (libnotify) o aktualizacích.
-
-*   Domovská stránka: [https://github.com/v01d/pacman-notifier/wiki](https://github.com/v01d/pacman-notifier/wiki)
-*   AUR: [pacman-notifier](https://aur.archlinux.org/packages/pacman-notifier/)
-*   Snímky obrazovky: [https://github.com/v01d/pacman-notifier/wiki](https://github.com/v01d/pacman-notifier/wiki)
-
-### Pacupdate
-
-Pacupdate - malý program upozorňující na aktualizace. Po nalezení aktualizace zobrazí upozornění v trayi.
-
-*   Domovská stránka: [http://code.google.com/p/pacupdate/](http://code.google.com/p/pacupdate/)
-*   AUR: [pacupdate-svn](https://aur.archlinux.org/packages/pacupdate-svn/)
-*   Snímky obrazovky:
-
-### Yapan
-
-Yapan - Yet Another Package mAnager Notifier - napsán v C++ a Qt. Zobrazuje ikonu v trayi, vyskakovací okno s upozorněními na aktualizace a podporu pro ostatní správce balíčků např: clyde, yaourt...
-
-*   Domovská stránka: [https://bitbucket.org/otsug/yapan/wiki/Home](https://bitbucket.org/otsug/yapan/wiki/Home) , [https://bbs.archlinux.org/viewtopic.php?id=113078](https://bbs.archlinux.org/viewtopic.php?id=113078)
-*   AUR: [yapan](https://aur.archlinux.org/packages/yapan/)
-*   Snímky obrazovky: [https://bitbucket.org/otsug/yapan/wiki/Home](https://bitbucket.org/otsug/yapan/wiki/Home)
-
-### ZenMan
-
-PacMan frontend (tray hlídač aktualizací) v GTK/GNOME/zenity/libnotify.
-
-*   Domovská stránka:
-*   AUR: [zenman](https://aur.archlinux.org/packages/zenman/)
-*   Snímky obrazovky: [http://show.harvie.cz/screenshots/zenman-screenshot-2.png](http://show.harvie.cz/screenshots/zenman-screenshot-2.png)
-
-### Yaourt-Dzen Notifier
-
-Velmi jednoduchý 14 řádkový shell script zobrazující počet dostupných aktualizací v názvu dzen2 okna a seznam těchto aktualizací v podřízeném okně. Používá yaourt, dzen2 a inotify-tools.
-
-*   Domovská stránka: [http://andreasbwagner.tumblr.com/post/853471635/arch-linux-update-notifier-for-dzen2](http://andreasbwagner.tumblr.com/post/853471635/arch-linux-update-notifier-for-dzen2)
-*   AUR:
-*   Snímky obrazovky: [http://andreasbwagner.tumblr.com/post/853471635/arch-linux-update-notifier-for-dzen2](http://andreasbwagner.tumblr.com/post/853471635/arch-linux-update-notifier-for-dzen2)
 
 # Neaktivní projekty
 

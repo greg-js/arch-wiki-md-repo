@@ -32,9 +32,9 @@ From the project [home page](https://aria2.github.io/):
 
 [Install](/index.php/Install "Install") the [aria2](https://www.archlinux.org/packages/?name=aria2) package.
 
-You may also want to install [aria2-systemd](https://github.com/GutenYe/systemd-units/tree/master/aria2) to use aria2 as [daemon](/index.php/Daemon "Daemon").
+You may also want to install [aria2-systemd](https://github.com/GutenYe/systemd-units/tree/master/aria2) to use aria2 as a [daemon](/index.php/Daemon "Daemon").
 
-**Note:** The executable name for the aria2 package is `aria2c`. This legacy naming convention has been retained for backwards compatibility.
+**Note:** The executable is called `aria2c`.
 
 ## Configuration
 

@@ -363,7 +363,7 @@ Then, to share the actual packages, mount `/var/cache/pacman/pkg` from the serve
 
 Another approach in a local environment is [rsync](/index.php/Rsync "Rsync"). Choose a server for caching and enable the [Rsync#rsync daemon](/index.php/Rsync#rsync_daemon "Rsync"). On clients synchronize two-way with this share via rsync protocol. Filenames that contain colons are no problem for the rsync protocol.
 
-Draft example for a client, using `uname -m` within the share name ensures an architecture dependedant sync:
+Draft example for a client, using `uname -m` within the share name ensures an architecture dependant sync:
 
 ```
  # rsync rsync://server/share_$(uname -m)/ /var/cache/pacman/pkg/ ...
@@ -599,7 +599,7 @@ XferCommand = /usr/bin/aria2c --allow-overwrite=true --continue=true --file-allo
 
 See [OPTIONS](http://aria2.sourceforge.net/manual/en/html/aria2c.html#options) in [aria2c(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/aria2c.1) for used aria2c options.
 
-*   `-d, --dir` :The directory to store the downloaded file(s) as specified by *pacman*.
+*   `-d, --dir`: The directory to store the downloaded file(s) as specified by *pacman*.
 *   `-o, --out`: The output file name(s) of the downloaded file(s).
 *   `%o`: Variable which represents the local filename(s) as specified by *pacman*.
 *   `%u`: Variable which represents the download URL as specified by *pacman*.

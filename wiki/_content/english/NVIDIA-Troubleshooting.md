@@ -229,7 +229,7 @@ If you are experiencing intermittent CPU spikes with a 400 series card, it may b
 
 ## Full system freeze or crashes when using Flash
 
-If you experience occasional full system freezes using [[[Flash]], a possible workaround is to disable Hardware Acceleration:
+If you experience occasional full system freezes using [Flash](/index.php/Flash "Flash"), a possible workaround is to disable Hardware Acceleration:
 
  `/etc/adobe/mms.cfg`  `EnableLinuxHWVideoDecode=0` 
 

@@ -45,7 +45,7 @@ Initially, Spotify was unavailable for Linux and the workaround was to run it un
 
 ### Official Linux client
 
-[Install](/index.php/Install "Install") it with the [spotify](https://aur.archlinux.org/packages/spotify/) package. If you wish to play local files you will need to install [zenity](https://www.archlinux.org/packages/?name=zenity) and [ffmpeg0.10](https://aur.archlinux.org/packages/ffmpeg0.10/) as well.
+[Install](/index.php/Install "Install") it with the [spotify](https://aur.archlinux.org/packages/spotify/) or [spotify-stable](https://aur.archlinux.org/packages/spotify-stable/) package. If you wish to play local files you will need to install [zenity](https://www.archlinux.org/packages/?name=zenity) and [ffmpeg0.10](https://aur.archlinux.org/packages/ffmpeg0.10/) as well.
 
 ### Third-party clients
 

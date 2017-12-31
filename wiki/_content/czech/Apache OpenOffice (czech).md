@@ -19,7 +19,6 @@
     *   [5.3 Detekce TrueType fonů](#Detekce_TrueType_fon.C5.AF)
     *   [5.4 Qt vzhled v KDE >4](#Qt_vzhled_v_KDE_.3E4)
     *   [5.5 Francouzský slovník](#Francouzsk.C3.BD_slovn.C3.ADk)
-    *   [5.6 Tmavá GTK témata a gtk-qt-engine](#Tmav.C3.A1_GTK_t.C3.A9mata_a_gtk-qt-engine)
 
 ## OpenOffice v Arch Linuxu
 
@@ -303,7 +302,3 @@ $ rm -r dict-fr
 ```
 
 potom jděte do Správce rozšíření v openoffice (menu Nástroje) a instalujte slovník z nového souboru dict-fr.oxt
-
-### Tmavá GTK témata a gtk-qt-engine
-
-Pro rychlou opravu navštivte [openoffice-dark-gtk-fix](https://aur.archlinux.org/packages/openoffice-dark-gtk-fix/) nebo když máte go-openoffice navštivte [go-openoffice-dark-gtk-fix](https://aur.archlinux.org/packages.php?ID=28879) v repozitáři AUR. Nastaví to i 'OOO_FORCE_DESKTOP=gnome'. Další opravou je exportovat SAL_USE_VCLPLUGIN=gen (generické X11). Viz [další info](http://user.services.openoffice.org/en/forum/viewtopic.php?f=16&t=27216#p123942)

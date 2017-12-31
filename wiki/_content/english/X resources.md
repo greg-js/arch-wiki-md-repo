@@ -4,14 +4,14 @@ Related articles
 
 **Xresources** is a user-level configuration *dotfile*, typically located at `~/.Xresources`. It can be used to set [X resources](https://en.wikipedia.org/wiki/X_resources "wikipedia:X resources"), which are configuration parameters for X client applications.
 
-They can do many operations, including:
+Among other things they can be used to:
 
-*   defining terminal colours
-*   configuring terminal preferences
-*   setting DPI, antialiasing, hinting and other X font settings
-*   changing the Xcursor theme
-*   theming xscreensaver
-*   altering preferences on low-level X applications (xclock ([xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock)), [xpdf](https://www.archlinux.org/packages/?name=xpdf), [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode), etc.)
+*   define terminal colours
+*   configure terminal preferences
+*   set DPI, anti-aliasing, hinting and other X font settings
+*   change the Xcursor theme
+*   theme xscreensaver
+*   configure low-level X applications like: [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock), [xpdf](https://www.archlinux.org/packages/?name=xpdf), [rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode")
 
 ## Contents
 
@@ -26,12 +26,6 @@ They can do many operations, including:
         *   [2.4.3 Commenting](#Commenting)
         *   [2.4.4 Include files](#Include_files)
 *   [3 Sample usage](#Sample_usage)
-    *   [3.1 Terminal colors](#Terminal_colors)
-    *   [3.2 Xcursor](#Xcursor)
-    *   [3.3 Xft](#Xft)
-    *   [3.4 Xterm](#Xterm)
-    *   [3.5 rxvt-unicode](#rxvt-unicode)
-    *   [3.6 Xpdf](#Xpdf)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Parsing errors](#Parsing_errors)
 *   [5 See also](#See_also)
@@ -44,7 +38,7 @@ They can do many operations, including:
 
 ### Load resource file
 
-Resources are stored in the X server, so have to only be read once. They are also accessible to *remote* X11 clients (such as those forwarded over SSH).
+Resources are stored in the X server, so have to only be read once. They are also accessible to *remote* X11 clients (such as those [forwarded over SSH](/index.php/Secure_Shell#X11_forwarding "Secure Shell")).
 
 Load a resource file (such as the conventional `.Xresources`), replacing any current settings:
 
@@ -62,7 +56,7 @@ $ xrdb -merge *~/.Xresources*
 
 **Note:**
 
-*   Most [Display managers](/index.php/Display_manager "Display manager") will load the `~/.Xresources` file on login.
+*   Most [Display managers](/index.php/Display_manager "Display manager") load the `~/.Xresources` file on login.
 *   The older `~/.Xdefaults` file is read when an X11 program starts, but only if *xrdb* has not been used in the current session. [[1]](https://groups.google.com/forum/#!msg/comp.windows.x/hQBEdql8l-Q/hF3DETcIHGwJ)
 
 ### xinitrc
@@ -76,7 +70,7 @@ If you are using a custom `.xinitrc` add the following line:
 
 ```
 
-**Warning:** Never background the xrdb command within `~/.xinitrc`. Otherwise, programs launched after xrdb may look for resources before it has finished loading them.
+**Note:** Do not background the xrdb command within `~/.xinitrc`. Otherwise, programs launched after xrdb may look for resources before it has finished loading them.
 
 ### Default settings
 
@@ -84,10 +78,10 @@ To see the default settings for your installed X11 apps, look in `/usr/share/X11
 
 Detailed information on program-specific resources is usually provided in the man page for the program. xterm's man page is a good example, as it contains a list of X resources and their default values.
 
-To see the current loaded resources:
+To see the currently loaded resources:
 
 ```
-xrdb -query -all
+$ xrdb -query -all
 
 ```
 
@@ -188,29 +182,12 @@ xrdb -I*$HOME* ~/.Xresources
 
 The following samples should provide a good understanding of how application settings can be modified using an Xresources file. See [[2]](https://gist.github.com/anonymous/fa98de9fd70b51611303) for more examples. Refer to the man page of the application in question otherwise.
 
-### Terminal colors
-
-See [Color output in console#Terminal emulators](/index.php/Color_output_in_console#Terminal_emulators "Color output in console").
-
-### Xcursor
-
-See [Cursor themes#X resources](/index.php/Cursor_themes#X_resources "Cursor themes").
-
-### Xft
-
-See [Font configuration#Applications without fontconfig support](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration").
-
-### Xterm
-
-See [Xterm#Configuration](/index.php/Xterm#Configuration "Xterm").
-
-### rxvt-unicode
-
-See [Rxvt-unicode#Configuration](/index.php/Rxvt-unicode#Configuration "Rxvt-unicode").
-
-### Xpdf
-
-See `**Options**` in [xpdf(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xpdf.1#OPTIONS).
+*   [Color output in console#Terminal emulators](/index.php/Color_output_in_console#Terminal_emulators "Color output in console")
+*   [Cursor themes#X resources](/index.php/Cursor_themes#X_resources "Cursor themes")
+*   [Font configuration#Applications without fontconfig support](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration")
+*   [Xterm#Configuration](/index.php/Xterm#Configuration "Xterm")
+*   [rxvt-unicode#Configuration](/index.php/Rxvt-unicode#Configuration "Rxvt-unicode")
+*   [xpdf(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xpdf.1#OPTIONS)
 
 ## Troubleshooting
 

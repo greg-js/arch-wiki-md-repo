@@ -1,3 +1,9 @@
+Related articles
+
+*   [DAViCal](/index.php/DAViCal "DAViCal")
+*   [Kcaldav](/index.php/Kcaldav "Kcaldav")
+*   [Radicale](/index.php/Radicale "Radicale")
+
 [AgenDAV](http://agendav.org/) is an open source multilanguage CalDAV web application, written in PHP, which features a rich AJAX interface with shared calendars support.
 
 ## Installation

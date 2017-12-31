@@ -22,6 +22,7 @@ Here are some hints for getting Arch Linux working on your tablet PC. These inst
     *   [6.5 Gnome-screensaver](#Gnome-screensaver)
     *   [6.6 GDM](#GDM)
     *   [6.7 LightDM](#LightDM)
+    *   [6.8 Touchegg](#Touchegg)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Wacom Drivers](#Wacom_Drivers)
     *   [7.2 Screen Rotation](#Screen_Rotation)
@@ -33,6 +34,7 @@ Intel (x86) tablets that are known to work (well) with Arch:
 *   [Samsung Series 7 Slate XE700T1A](/index.php/Samsung_Series_7_Slate_XE700T1A "Samsung Series 7 Slate XE700T1A")
 *   [Microsoft Surface Pro 3](/index.php/Microsoft_Surface_Pro_3 "Microsoft Surface Pro 3")
 *   Asus T300 Chi
+*   Acer Switch 3 (Be carefull, it is shipped with a 32 bits UEFI only, like the [ASUS_x205ta](/index.php/ASUS_x205ta "ASUS x205ta") )
 
 ## Stylus
 
@@ -498,6 +500,10 @@ Configuring LightDM to use Onboard for touchscreen login and unlocking is likely
 Ensure [onboard](https://www.archlinux.org/packages/?name=onboard) and [lightdm-gtk-greeter-settings](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter-settings) are installed and run `lightdm-gtk-greeter-settings` to configure onboard to start.
 
 Specifiying `onboard -t Droid -l Phone` configures the Droid theme and sets the Phone layout.
+
+### Touchegg
+
+[Touchegg](/index.php/Touchegg "Touchegg") is a multitouch gesture recognizer. It can recongize up to five finger gestures (tap, drag, pinch, rotate...).
 
 ## Troubleshooting
 

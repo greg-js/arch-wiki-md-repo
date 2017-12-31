@@ -38,6 +38,7 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
     *   [9.2 Scrolling in Firefox](#Scrolling_in_Firefox)
 *   [10 Keyboard Backlight](#Keyboard_Backlight)
 *   [11 Hidden Keyboard Keys](#Hidden_Keyboard_Keys)
+    *   [11.1 Unobtrusive mode](#Unobtrusive_mode)
 *   [12 Firmware Updates](#Firmware_Updates)
 *   [13 Troubleshooting](#Troubleshooting)
     *   [13.1 EFISTUB does not boot](#EFISTUB_does_not_boot)
@@ -340,11 +341,15 @@ There are additional Fn+<Key> (sequences) that are not marked at all on the keyb
 | Fn+S | Scroll_Lock |
 | Fn+A / D / E / F / G / T / Q / W | XF86Launch3 |
 
+### Unobtrusive mode
+
+If enabled in BIOS, pressing Fn+F7 will disable sound, keyboard and screen backlight, the charging LED and the LED on the power button. Unfortunately there seems to be no way to disable just the LEDs- some users recommend black electrical tape. The output of `smbios-token-ctl -d` only list changes related to screen, keyboard and sound when unobtrusive mode is active.
+
 ## Firmware Updates
 
 Dell provides firmware updates via [fwupd](https://www.archlinux.org/packages/?name=fwupd). See [Flashing BIOS from Linux#fwupd](/index.php/Flashing_BIOS_from_Linux#fwupd "Flashing BIOS from Linux"). Please note if you have used a bind mount partition for /boot, you will not be able to use the fwupd utility; Instead format a USB as FAT32 and put the bios update .exe on. Reboot into the one-time-boot menu and update the BIOS flash through there.
 
-Alternatively, the BIOS update can be downloaded from the Dell website, and placed in a location accessible to the firmware. This could be the '/boot' folder, or a FAT32 formatted USB stick. Then restart your laptop and hit F12 while starting. In the boot menu choose firmware update and select the new file!
+Alternatively, the BIOS update can be downloaded from the [Dell website](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=GVNVJ), and placed in a location accessible to the firmware. This could be the '/boot' folder, or a FAT32 formatted USB stick. Then restart your laptop and hit F12 while starting. In the boot menu choose firmware update and select the new file!
 
 ## Troubleshooting
 

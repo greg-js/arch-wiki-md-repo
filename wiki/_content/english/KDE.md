@@ -15,7 +15,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
 
 *   [1 Installation](#Installation)
     *   [1.1 Plasma](#Plasma)
-    *   [1.2 KDE applications and language packs](#KDE_applications_and_language_packs)
+    *   [1.2 KDE applications](#KDE_applications)
     *   [1.3 Unstable releases](#Unstable_releases)
 *   [2 Starting Plasma](#Starting_Plasma)
     *   [2.1 Using a display manager](#Using_a_display_manager)
@@ -106,11 +106,9 @@ Before installing Plasma, make sure you have a working [Xorg](/index.php/Xorg "X
 
 To enable support for [Wayland](/index.php/Wayland "Wayland") in Plasma, also install the [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) package.
 
-### KDE applications and language packs
+### KDE applications
 
 To install the full set of KDE Applications, install the [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) group or the [kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta) meta-package. Note that this will only install applications, it will not install any version of Plasma.
-
-Most KDE packages ship their own translations. The exception is KDE4-based packages from kde-applications. If you need language files for these packages, install `kde-l10n-***yourlanguagehere***` (e.g. [kde-l10n-de](https://www.archlinux.org/packages/?name=kde-l10n-de) for the German language). For a full list of available languages see the [kde-l10n split package](https://www.archlinux.org/packages/extra/any/kde-l10n/).
 
 ### Unstable releases
 
@@ -138,12 +136,7 @@ To start Plasma with [xinit](/index.php/Xinit "Xinit")/*startx*, append `exec st
 
 ## Configuration
 
-Most settings for KDE applications are stored in `~/.config`, but some older applications may use `~/.kde4`. However, configuring KDE is primarily done through the **System Settings** application. It can be started from a terminal by executing `systemsettings5`.
-
-Some Frameworks 5 applications can use KDElibs 4 configuration, after moving the configuration files to the new location. Examples are:
-
-*   Konsole profiles from `~/.kde4/share/apps/konsole` to `~/.local/share/konsole/`
-*   Application appearance from `~/.kde4/share/config/kdeglobals` to `~/.config/kdeglobals`
+Most settings for KDE applications are stored in `~/.config`. However, configuring KDE is primarily done through the **System Settings** application. It can be started from a terminal by executing `systemsettings5`.
 
 ### Personalization
 

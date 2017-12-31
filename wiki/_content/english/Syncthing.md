@@ -3,60 +3,61 @@ Related articles
 *   [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync")
 *   [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs")
 
-[Syncthing](https://syncthing.net) is an open-source file synchronization client/server application, written in [Go](/index.php/Go "Go"), implementing its own, equally free [Block Exchange Protocol](https://docs.syncthing.net/specs/bep-v1.html). All transit communications between syncthing nodes are encrypted, and all nodes are uniquely identified with cryptographic certificates.
+[Syncthing](https://syncthing.net) is an open-source file synchronization client/server application, written in [Go](/index.php/Go "Go"), implementing its own, equally free [Block Exchange Protocol](https://docs.syncthing.net/specs/bep-v1.html). All transit communications between syncthing nodes are encrypted using [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security "wikipedia:Transport Layer Security"), and all nodes are uniquely identified with cryptographic certificates.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Starting Syncthing](#Starting_Syncthing)
-    *   [2.1 Run Syncthing](#Run_Syncthing)
-    *   [2.2 System service](#System_service)
-    *   [2.3 User service](#User_service)
-    *   [2.4 Syncthing-GTK](#Syncthing-GTK)
+*   [2 Running Syncthing](#Running_Syncthing)
+    *   [2.1 Starting Syncthing](#Starting_Syncthing)
+    *   [2.2 Autostarting Syncthing](#Autostarting_Syncthing)
+        *   [2.2.1 System service](#System_service)
+        *   [2.2.2 User service](#User_service)
+    *   [2.3 Syncthing-GTK](#Syncthing-GTK)
 *   [3 Accessing the web-interface](#Accessing_the_web-interface)
 *   [4 Configuration](#Configuration)
     *   [4.1 Local network setup](#Local_network_setup)
+    *   [4.2 Using inotify](#Using_inotify)
 *   [5 Participate in the infrastructure](#Participate_in_the_infrastructure)
-    *   [5.1 Run a relay](#Run_a_relay)
-    *   [5.2 Run a discovery server](#Run_a_discovery_server)
+    *   [5.1 Running a relay](#Running_a_relay)
+    *   [5.2 Running a discovery server](#Running_a_discovery_server)
 *   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Use inotify](#Use_inotify)
-    *   [6.2 Stop journal spam](#Stop_journal_spam)
-    *   [6.3 Run in VirtualBox](#Run_in_VirtualBox)
-    *   [6.4 Running through a proxy](#Running_through_a_proxy)
+    *   [6.1 Stop journal spam](#Stop_journal_spam)
+    *   [6.2 Run in VirtualBox](#Run_in_VirtualBox)
+    *   [6.3 Running through a proxy](#Running_through_a_proxy)
 *   [7 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [syncthing](https://www.archlinux.org/packages/?name=syncthing) package.
 
-Synchronization by *inotify* can be added with either the [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify) or the [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) package, see [#Use inotify](#Use_inotify) for caveats. *syncthing-gtk* also provides a GTK interface, [desktop notifications](/index.php/Desktop_notifications "Desktop notifications") and integration with [Nautilus](/index.php/Nautilus "Nautilus"), [Nemo](/index.php/Nemo "Nemo") and Caja.
+Syncthing provides a Web-GUI for control and monitoring. A GUI wrapper and notifier, [#Syncthing-GTK](#Syncthing-GTK) provided in a separate package also exists.
 
-## Starting Syncthing
+## Running Syncthing
 
-### Run Syncthing
+### Starting Syncthing
 
-Run the `syncthing` binary manually from a terminal.
+Run the `syncthing` binary manually from a terminal. The multiple optional parameters are described in the [command line operation documentation](https://docs.syncthing.net/users/syncthing.html).
 
 **Note:** You can run multiple copies of syncthing, but only one instance per user as syncthing locks the database to it. Check logs for errors related to locked database.
 
-### System service
+### Autostarting Syncthing
 
-Running Syncthing as a system service ensures that it is running at startup even if the user has no active session, it is intended to be used on a server.
+Syncthing can be installed as a [systemd](/index.php/Systemd "Systemd") system-wide service or as a [user service](/index.php/Systemd/User "Systemd/User") to run automatically at startup.
 
-[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `syncthing@*myuser*.service` where *myuser* is the actual name of your user.
+#### System service
 
-### User service
+Running Syncthing as a system service ensures that it is running at startup even if the user has no active session, it is intended to be used on a server. [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `syncthing@*myuser*.service` where *myuser* is the actual name of your user.
+
+#### User service
 
 Running Syncthing as a [user service](/index.php/Systemd/User "Systemd/User") ensures that Syncthing only starts after the user has logged into the system (e.g., via the graphical login screen, or ssh). Thus, the user service is intended to be used on a (multiuser) desktop computer. To use the user service, [start/enable](/index.php/Start/enable "Start/enable") the user unit `syncthing.service` (i.e. with the `--user` flag).
 
-The systemd services need to be started for a specific user in any case, see [Autostart-syncthing with systemd](http://docs.syncthing.net/users/autostart.html#using-systemd) for detailed information on the services.
-
 ### Syncthing-GTK
 
-Syncthing can also be launched by [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk). Use interface UI settings to start [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) at startup, and to state whether to launch the syncthing daemon.
+[syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) provides a [GTK+](/index.php/GTK%2B "GTK+") graphical user interface, desktop notifications and integration with the file managers [Nautilus](/index.php/Nautilus "Nautilus"), [Nemo](/index.php/Nemo "Nemo") and Caja. Syncthing can be launched by Syncthing-GTK: use the interface settings to run syncthing-gtk at startup, and to state whether to launch the syncthing daemon.
 
-When launching the syncthing daemon using both systemd and [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk), it might happen that two syncthing instances run concurrently leading to high CPU consumption: one launched by syncthing-gtk, and the other (slightly later) by systemd. To solve this, either avoid launching synchting using systemd, or configure syncthing-gtk to wait for the syncthing daemon.
+**Warning:** When launching the syncthing daemon using both systemd and syncthing-gtk, it might happen that two syncthing instances run concurrently leading to high CPU consumption: one launched by syncthing-gtk, and the other (slightly later) by systemd. To solve this, either avoid launching synchting using systemd, or configure syncthing-gtk to wait for the syncthing daemon.
 
 ## Accessing the web-interface
 
@@ -84,13 +85,21 @@ In the typical case several machines, like laptops and androids, share a local a
 
 *   Use a different [listen address port](https://docs.syncthing.net/users/config.html#listen-addresses) for each machine, like `tcp://:22010`, `tcp://:22011`, `tcp://:22012` and so forth. This will differentiate them on the global discovery servers and avoid the *"Connected to myself - should not happen"* message on the other local devices whenever they leave the NAT.
 
-*   Enable if possible [UPnP](https://en.wikipedia.org/wiki/universal_plug_and_play "wikipedia:universal plug and play") port forwarding or manually forward each port. When a new node is discovered, Syncthing will try to use its listening port. If this port happens to be closed, the local listening port will be used instead. If this one appears to be closed as well, Syncthing will attempt to use UPnP to open the port at the NAT router level. If this is not desirable or not possible, each port should be manually forwarded to the right machine on the LAN. Eventually, if no open port can be found on both sides, [relaying](https://docs.syncthing.net/users/relaying.html) will be used.
+*   Enable if possible [UPnP](https://en.wikipedia.org/wiki/universal_plug_and_play "wikipedia:universal plug and play") port forwarding or manually forward each port. When a new node is discovered, Syncthing tries to use its listening port. If this port happens to be closed, it will seek an open port locally: whenever *NAT traversal* is enabled in Syncthing, it will attempt to use UPnP to map a random external port to the internal listening port chosen, for example 22010\. If this is not desirable or not possible, each port should be manually forwarded to the right machine on the LAN. Eventually, if no open port can be found on both sides, [relaying](https://docs.syncthing.net/users/relaying.html) will be used.
+
+### Using inotify
+
+[inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") *(inode notify)* is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications. The inotify functionality is integrated in Syncthing and can be enabled in the advanced configuration menu for individual folders. It is expected to be exposed in the folder configuration UI in the near future.
+
+Alternatively, inotify support is provided by [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) (which does not depend on the now unmaintained [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify)) but in this case inotify will only work while the GUI is running.
+
+**Tip:** To prevent errors like *Too many open files*, increase the default `fs.inotify.max_user_watches` value, by [appending](/index.php/Append "Append") the following line: `/etc/sysctl.d/40-max-user-watches.conf`  `fs.inotify.max_user_watches=524288` 
 
 ## Participate in the infrastructure
 
 One can participate in the [Syncthing infrastructure](https://docs.syncthing.net/dev/infrastructure.html) by running a global discovery server or a relay server.
 
-### Run a relay
+### Running a relay
 
 Syncthing has the ability to connect two devices via a [relay](https://docs.syncthing.net/users/relaying.html) when it is not possible to establish a direct connection between them. Relayed connections are end-to-end encrypted in the usual manner, so the relay has no insight into the connection other than the knowledge of the IP addresses and device IDs.
 
@@ -107,7 +116,7 @@ ExecStart=/usr/bin/syncthing-relaysrv -global-rate 500000 -provided-by *relaypro
 
 **Tip:** The traffic statistics of a particular relay are accessible by default on port 22070, e.g. [http://108.28.183.249:22070/status](http://108.28.183.249:22070/status)
 
-### Run a discovery server
+### Running a discovery server
 
 [Global discovery](https://docs.syncthing.net/specs/globaldisco-v3.html) is used by Syncthing to find peers on the internet. Any device announces itself at startup to the discovery server which stores the device ID, IP address, port and current time. Then on request, for a given device ID, it returns the information stored in JSON format, for instance.
 
@@ -144,15 +153,6 @@ To point the client to your discovery server, change the `Global Discovery Serve
 If you are using self-signed certificates, the client refuses to connect unless you append the discovery server ID to its domain. The ID is printed to stdout upon launching the discovery server. Amend the *Global Discovery Servers* entry to add the ID: `https://yourserver.com:8443/?id=AAAAAAA-BBBBBBB-CCCCCCC-DDDDDDD-EEEEEEE-FFFFFFF-GGGGGGG-HHHHHHH`.
 
 ## Tips and tricks
-
-### Use inotify
-
-[Inotify](https://en.wikipedia.org/wiki/Inotify "w:Inotify") (inode notify) is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications. Syncthing does not support *inotify* yet but there is an official extension module which talks to the Syncthing REST API. The usage of *inotify* avoids expensive rescans every minute. The *inotify* extension can be installed with the [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify) package. [Restart](/index.php/Restart "Restart") `syncthing.service` for change to take effect.
-**Note:** There is no need to [enable](/index.php/Enable "Enable") the `syncthing-inotify` service when using the `syncthing` service.
-
-Alternatively, *inotify* support is provided by [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) (which does not depend on [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify)) but in this case *inotify* will only work while the GUI is running.
-
-**Tip:** To prevent errors like *Too many open files*, increase the default `fs.inotify.max_user_watches` value, by [appending](/index.php/Append "Append") the following line: `/etc/sysctl.d/40-max-user-watches.conf`  `fs.inotify.max_user_watches=524288` 
 
 ### Stop journal spam
 

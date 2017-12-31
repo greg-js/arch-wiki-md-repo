@@ -26,7 +26,7 @@
         *   [2.7.3 修复 KDE 4 菜单问题](#.E4.BF.AE.E5.A4.8D_KDE_4_.E8.8F.9C.E5.8D.95.E9.97.AE.E9.A2.98)
 *   [3 运行 Windows 程序](#.E8.BF.90.E8.A1.8C_Windows_.E7.A8.8B.E5.BA.8F)
 *   [4 技巧和技巧](#.E6.8A.80.E5.B7.A7.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [4.1 Unregister Wine file associations](#Unregister_Wine_file_associations)
+    *   [4.1 取消注册Wine文件关联](#.E5.8F.96.E6.B6.88.E6.B3.A8.E5.86.8CWine.E6.96.87.E4.BB.B6.E5.85.B3.E8.81.94)
     *   [4.2 Dual Head with different resolutions](#Dual_Head_with_different_resolutions)
     *   [4.3 exe-thumbnailer](#exe-thumbnailer)
     *   [4.4 CSMT patch](#CSMT_patch)
@@ -352,11 +352,11 @@ $ msiexec /i *path_to_msi*
 
 这里介绍一些安装Windows组件的工具。由于这些工具可能严重破坏Wine配置，没有需要时最好不要使用。
 
-### Unregister Wine file associations
+### 取消注册Wine文件关联
 
-By default, Wine takes over as the default application for a lot of formats. Some (e.g. `vbs` or `chm`) are Windows-specific, and opening them with Wine can be a convenience. However, having other formats (e.g. `gif`, `jpeg`, `txt`, `js`) open in Wine's bare-bones simulations of Internet Explorer and Notepad can be annoying.
+在默认情况下,Wine接管了许多扩展名. 一些扩展名 {例如 `.vbs` 或者 `.chm`) 是Windows专用, 用Wine打开这些程序是很方便的. 但是, 有一些其他格式 (例如 `gif`, `jpeg`, `txt`, `js`) 在Wine中用 `Internet Explorer` 和 `Windows记事本` 打开会出错 .
 
-Wine's file associations are set in `~/.local/share/applications/` as {{ic|wine-extension-{extension}.desktop}} files. Delete the files corresponding to the extensions you want to unregister. Or, to remove all wine extensions:
+Wine的文件关联设置在 `~/.local/share/applications/` 像 {{ic|wine-extension-{extension}.desktop}} 这样的文件中. 删除与要取消注册的扩展名相对应的文件. 或者像这样删除所有的扩展名:
 
 ```
 $ rm -f ~/.local/share/applications/wine-extension*.desktop

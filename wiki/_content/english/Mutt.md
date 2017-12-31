@@ -5,7 +5,7 @@ Related articles
 *   [offlineimap](/index.php/Offlineimap "Offlineimap")
 *   [isync](/index.php/Isync "Isync")
 
-**Mutt** is a text-based mail client renowned for its powerful features. Though over 2 decades old, Mutt remains the mail client of choice for a great number of power-users.
+[Mutt](http://www.mutt.org/) is a text-based mail client renowned for its powerful features. Though over 2 decades old, Mutt remains the mail client of choice for a great number of power-users.
 
 Mutt focuses primarily on being a Mail User Agent (MUA), and was originally written to view mail. Later implementations (added for retrieval, sending, and filtering mail) are simplistic compared to other mail applications and, as such, users may wish to use external applications to extend Mutt's capabilities.
 

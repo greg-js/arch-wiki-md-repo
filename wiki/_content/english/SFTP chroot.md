@@ -2,7 +2,7 @@ Related articles
 
 *   [SSHFS](/index.php/SSHFS "SSHFS")
 
-[OpenSSH](/index.php/OpenSSH "OpenSSH") 4.9+ includes a built-in chroot for sftp, but requires a few tweaks to the normal install.
+[OpenSSH](/index.php/OpenSSH "OpenSSH") 4.9+ includes a built-in chroot for SFTP, but requires a few tweaks to the normal install.
 
 ## Contents
 

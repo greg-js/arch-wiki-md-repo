@@ -366,7 +366,7 @@ O melhor recurso é a página wiki sobre [criação de pacotes](/index.php/Crian
 
 ### Eu tenho um PKGBUILD que queria enviar; alguém pode verificá-lo para ver se ele tem algum erro?
 
-Se quiser ter o seu PKGBUILD criticado, publique--o para a [lista de discussão aur-general](https://mailman.archlinux.org/mailman/listinfo/aur-general) para receber feedback dos TUs e de outros membros do AUR. Você também pode conseguir ajuda do [Canal IRC](/index.php/Canal_IRC "Canal IRC"), #archlinux-aur em irc.freenode.net. Você também pode usar o [namcap](/index.php/Namcap "Namcap") para verificar erros no seu PKGBUILD e no pacote resultante.
+Se quiser ter o seu PKGBUILD criticado, publique--o para a [lista de discussão aur-general](https://mailman.archlinux.org/mailman/listinfo/aur-general) para receber feedback dos TUs e de outros membros do AUR. Você também pode conseguir ajuda do [Canal IRC](/index.php/Canal_IRC "Canal IRC"), #archlinux-aur em irc.freenode.net. Você também pode usar o [namcap](/index.php/Namcap_(Portugu%C3%AAs) "Namcap (Português)") para verificar erros no seu PKGBUILD e no pacote resultante.
 
 ### Como que faz para um PKGBUILD ir para o repositório *community*?
 

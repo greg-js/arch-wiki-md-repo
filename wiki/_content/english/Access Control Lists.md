@@ -205,10 +205,10 @@ Since `http` is now able to access files in `/home/geoffrey`, `other` no longer 
 
 ```
 
-`getfacl` can be used to verify the changes:
+Use `getfacl` to verify the changes:
 
+ `$ getfacl /home/geoffrey` 
 ```
-$ getfacl /home/geoffrey
 getfacl: Removing leading '/' from absolute path names
 # file: home/geoffrey
 # owner: geoffrey

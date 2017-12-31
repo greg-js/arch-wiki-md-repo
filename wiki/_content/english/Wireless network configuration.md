@@ -458,7 +458,9 @@ $ iw list | grep -A 15 Frequencies:
 
 ```
 
-A more permanent configuration of the regdomain can be achieved through editing `/etc/conf.d/wireless-regdom` and uncommenting the appropriate domain. `wpa_supplicant` can also use a regdomain in the `country=` line of `/etc/wpa_supplicant/wpa_supplicant.conf`.
+A more permanent configuration of the regdomain can be achieved through editing `/etc/conf.d/wireless-regdom` and uncommenting the appropriate domain.
+
+[WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") can also use a regdomain in the `country=` line of `/etc/wpa_supplicant/wpa_supplicant.conf`.
 
 It is also possible to configure the [cfg80211](http://wireless.kernel.org/en/developers/Documentation/cfg80211) kernel module to use a specific regdomain by adding, for example, `options cfg80211 ieee80211_regdom=EU` as [module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). However, this is part of the [old regulatory implementation](http://wireless.kernel.org/en/developers/Regulatory#The_ieee80211_regdom_module_parameter).
 
@@ -546,7 +548,7 @@ See [Power saving#Network interfaces](/index.php/Power_saving#Network_interfaces
 
 ### Failed to get IP address
 
-*   If getting an IP address repeatedly fails using the default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) client, try installing and using [dhclient](https://www.archlinux.org/packages/?name=dhclient) instead. Do not forget to select *dhclient* as the primary DHCP client in your [connection manager](#Automatic_setup)!
+*   If getting an IP address repeatedly fails using the default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) client, try installing and using [dhclient](https://www.archlinux.org/packages/?name=dhclient) instead. Do not forget to select *dhclient* as the primary DHCP client in the [connection manager](#Automatic_setup).
 
 *   If you can get an IP address for a wired interface and not for a wireless interface, try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
 
@@ -791,11 +793,7 @@ If you have problems connecting to networks in general, random failures with you
 
 If you have problems connecting to networks in general or your link quality is very poor, try to disable 802.11n, and perhaps also enable software encryption:
 
- `/etc/modprobe.d/iwlwifi.conf` 
-```
-options iwlwifi 11n_disable=1
-options iwlwifi swcrypto=1
-```
+ `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi 11n_disable=1 swcrypto=1` 
 
 If you have a problem with slow uplink speed in 802.11n mode, for example 20Mbps, try to enable antenna aggregation:
 

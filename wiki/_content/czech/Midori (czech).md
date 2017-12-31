@@ -1,3 +1,10 @@
+Související články
+
+*   [Browser Plugins](/index.php/Browser_Plugins "Browser Plugins")
+*   [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")
+*   [UZBL-Browser](/index.php/UZBL-Browser "UZBL-Browser")
+*   [Dillo](/index.php/Dillo "Dillo")
+
 [Midori](http://midoribrowser.org) je odlehčený internetový prohlížeč postavený na jádře webkit, který vyvíjí Christian Dywan. Midori je součástí projektu Goodies v rámci [Xfce](/index.php/Xfce "Xfce").
 
 Mezi jeho hlavní přednosti patří:
@@ -26,12 +33,9 @@ Mezi jeho hlavní přednosti patří:
 
 ## Instalace
 
-GTK+ 2 verze prohlížeče Midori může být [nainstalována](/index.php/Pacman "Pacman") pomocí balíčku [midori](https://www.archlinux.org/packages/?name=midori), dostupného v [Official repositories (Česky)](/index.php/Official_repositories_(%C4%8Cesky) "Official repositories (Česky)").
+Prohlížeč Midori může být [nainstalován](/index.php/Pacman "Pacman") pomocí balíčku [midori](https://www.archlinux.org/packages/?name=midori).
 
-Vývojové verze jsou k dispozici v uživatelském repozitáři [AUR](/index.php/AUR "AUR"):
-
-*   [midori-gtk2-bzr](https://aur.archlinux.org/packages/midori-gtk2-bzr/) - pro GTK+ 2 verzi.
-*   [midori-bzr](https://aur.archlinux.org/packages/midori-bzr/) - pro GTK+ 3 a na Webkitu založenou verzi.
+Vývojová verze je k dispozici v uživatelském repozitáři [AUR](/index.php/AUR "AUR"): [midori-bzr](https://aur.archlinux.org/packages/midori-bzr/).
 
 ## Rozšíření
 

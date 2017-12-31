@@ -113,7 +113,7 @@ The section on [#Partitioning tools](#Partitioning_tools) contains a table indic
 
 ### Partitionless disk
 
-Partitionless disk (a.k.a. superfloppy) refers to using a storage device without using a partition table, having one file system occupying the whole storage device.
+Partitionless disk (a.k.a. [superfloppy](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq#what-is-a-superfloppy)) refers to using a storage device without using a partition table, having one file system occupying the whole storage device.
 
 #### Btrfs partitioning
 
@@ -131,7 +131,8 @@ There are no strict rules for partitioning a hard drive, although one may follow
 
 *   [UEFI](/index.php/UEFI "UEFI") systems require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 *   BIOS systems that are partitioned with [GPT](#GUID_Partition_Table) require a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") if [GRUB](/index.php/GRUB "GRUB") is used as the bootloader.
-*   If using [Btrfs](/index.php/Btrfs "Btrfs"), subvolumes can be used to imitate partitions. See the [Btrfs#Mounting subvolumes](/index.php/Btrfs#Mounting_subvolumes "Btrfs") section.
+
+**Tip:** If using [Btrfs](/index.php/Btrfs "Btrfs"), subvolumes can be used to imitate partitions. See the [Btrfs#Mounting subvolumes](/index.php/Btrfs#Mounting_subvolumes "Btrfs") section.
 
 ### Single root partition
 
@@ -149,9 +150,9 @@ The root directory is the top of the hierarchy, the point where the primary file
 
 The `/` partition or root partition is necessary and it is the most important. The other partitions can be replaced by it.
 
-**Warning:** Directories essential for booting (except for `/boot`) **must** be on the same partition as `/` or mounted in early userspace by the [initramfs](/index.php/Initramfs "Initramfs"). These essential directories are: `/etc` and `/usr` [[1]](http://freedesktop.org/wiki/Software/systemd/separate-usr-is-broken).
+**Warning:** Directories essential for booting (except for `/boot`) **must** be on the same partition as `/` or mounted in early userspace by the [initramfs](/index.php/Initramfs "Initramfs"). These essential directories are: `/etc` and `/usr` [[1]](https://freedesktop.org/wiki/Software/systemd/separate-usr-is-broken).
 
-`/` traditionally contains the `/usr` directory, which can grow significantly depending upon how much software is installed. 15–20 GB should be sufficient for most users with modern hard disks. If you plan to store a swap file here, you might need a larger partition size.
+`/` traditionally contains the `/usr` directory, which can grow significantly depending upon how much software is installed. 15–20 GiB should be sufficient for most users with modern hard disks. If you plan to store a swap file here, you might need a larger partition size.
 
 #### /boot
 
@@ -159,9 +160,9 @@ The `/boot` directory contains the kernel and ramdisk images as well as the boot
 
 A separate `/boot` partition is needed if installing a software RAID0 (stripe) system.
 
-**Note:** It is recommended to mount [ESP](/index.php/ESP "ESP") to `/boot` if booting using UEFI boot loaders that do not contain drivers for other filesystems. Such loaders are for example [EFISTUB](/index.php/EFISTUB "EFISTUB") and [systemd-boot](/index.php/Systemd-boot "Systemd-boot").
+**Note:** If booting using UEFI [boot loaders](/index.php/Boot_loaders "Boot loaders") that do not have drivers for other file systems it is recommended to mount [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") to `/boot`. See [EFI System Partition#Mount the partition](/index.php/EFI_System_Partition#Mount_the_partition "EFI System Partition") for more information.
 
-A suggested size for `/boot` is 200 MiB unless using [UEFI](/index.php/UEFI "UEFI"), in which case greater than 512 MiB is needed.
+A suggested size for `/boot` is 200 MiB unless you are using EFI System Partition as `/boot`, in which case refer to [EFI System Partition#Create the partition](/index.php/EFI_System_Partition#Create_the_partition "EFI System Partition") for the recommended size.
 
 #### /home
 
@@ -179,7 +180,7 @@ It exists to make it possible to mount `/usr` as read-only. Everything that hist
 
 **Note:** `/var` contains many small files. The choice of file system type should consider this fact if a separate partition is used.
 
-`/var` will contain, among other data, the [ABS](/index.php/ABS "ABS") tree and the [pacman](/index.php/Pacman "Pacman") cache. Retaining these packages is helpful in case a package upgrade causes instability, requiring a [downgrade](/index.php/Downgrade "Downgrade") to an older, archived package. The pacman cache in particular will grow as the system is expanded and updated, but it can be safely cleared if space becomes an issue. 8–12 GB on a desktop system should be sufficient for `/var`, depending on how much software will be installed.
+`/var` will contain, among other data, the [ABS](/index.php/ABS "ABS") tree and the [pacman](/index.php/Pacman "Pacman") cache. Retaining these packages is helpful in case a package upgrade causes instability, requiring a [downgrade](/index.php/Downgrade "Downgrade") to an older, archived package. The pacman cache in particular will grow as the system is expanded and updated, but it can be safely cleared if space becomes an issue. 8–12 GiB on a desktop system should be sufficient for `/var`, depending on how much software will be installed.
 
 #### /data
 
@@ -193,7 +194,7 @@ This is already a separate partition by default, by virtue of being mounted as *
 
 A [swap](/index.php/Swap "Swap") partition provides memory that can be used as virtual RAM. A [swap file](/index.php/Swap_file "Swap file") should be considered too, as they don't have any performance overhead compared to a partition but are much easier to resize as needed. A swap partition can *potentially* be shared between operating systems, but not if hibernation is used.
 
-Historically, the general rule for swap partition size was to allocate twice the amount of physical RAM. As computers have gained ever larger memory capacities, this rule is outdated. For example, on average desktop machines with up to 512MB RAM, the 2x rule is usually adequate; if a sufficient amount of RAM (more than 1024MB) is available, it may be possible to have a smaller swap partition. See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate") to hibernate into a swap partition or file.
+Historically, the general rule for swap partition size was to allocate twice the amount of physical RAM. As computers have gained ever larger memory capacities, this rule is outdated. For example, on average desktop machines with up to 512MiB RAM, the 2x rule is usually adequate; if a sufficient amount of RAM (more than 1024MiB) is available, it may be possible to have a smaller swap partition. See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate") to hibernate into a swap partition or file.
 
 ### Example layouts
 
@@ -283,7 +284,7 @@ These group of tools are described in the [GNU Parted](/index.php/GNU_Parted "GN
 
 *   **[GParted](/index.php/GParted "GParted")** — Graphical tool written in GTK.
 
-	[http://gparted.sourceforge.net/](http://gparted.sourceforge.net/) || [gparted](https://www.archlinux.org/packages/?name=gparted)
+	[https://gparted.sourceforge.io/](https://gparted.sourceforge.io/) || [gparted](https://www.archlinux.org/packages/?name=gparted)
 
 *   **GNOME Disks** — Graphical tool written in GTK.
 
@@ -314,8 +315,8 @@ The `CONFIG_EFI_PARTITION` option in the kernel config enables GPT support in th
 *   [Wikipedia:Disk partitioning](https://en.wikipedia.org/wiki/Disk_partitioning "wikipedia:Disk partitioning")
 *   [Wikipedia:Binary prefix](https://en.wikipedia.org/wiki/Binary_prefix "wikipedia:Binary prefix")
 *   [Understanding Disk Drive Terminology](http://thestarman.pcministry.com/asm/mbr/DiskTerms.htm)
-*   [What is a Master Boot Record (MBR)?](http://kb.iu.edu/data/aijw.html)
+*   [What is a Master Boot Record (MBR)?](https://kb.iu.edu/d/aijw)
 *   Rod Smith's page on [What's a GPT?](http://www.rodsbooks.com/gdisk/whatsgpt.html) and [Booting OSes from GPT](http://rodsbooks.com/gdisk/booting.html)
-*   [Make the most of large drives with GPT and Linux - IBM Developer Works](http://www.ibm.com/developerworks/linux/library/l-gpt/index.html?ca=dgr-lnxw07GPT-Storagedth-lx&S_TACT=105AGY83&S_CMP=grlnxw07)
-*   [Microsoft's Windows and GPT FAQ](http://www.microsoft.com/whdc/device/storage/GPT_FAQ.mspx)
-*   [Partition Alignment](http://www.thomas-krenn.com/en/wiki/Partition_Alignment) (with examples)
+*   [Make the most of large drives with GPT and Linux - IBM Developer Works](https://www.ibm.com/developerworks/linux/library/l-gpt/index.html?ca=dgr-lnxw07GPT-Storagedth-lx&S_TACT=105AGY83&S_CMP=grlnxw07)
+*   [Microsoft's Windows and GPT FAQ](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq)
+*   [Partition Alignment](https://www.thomas-krenn.com/en/wiki/Partition_Alignment) (with examples)

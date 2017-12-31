@@ -1,3 +1,8 @@
+Related articles
+
+*   [iSCSI Target](/index.php/ISCSI_Target "ISCSI Target")
+*   [iSCSI Initiator](/index.php/ISCSI_Initiator "ISCSI Initiator")
+
 You can install Arch on an [iSCSI Target](/index.php/ISCSI_Target "ISCSI Target"). This allows you to boot from an iscsi target using a diskless machine. No physical disk is required unless you need an ipxe boot USB (because your NIC isn't iBFT capable or you don't want to setup a TFTP server).
 
 ## Contents
@@ -21,15 +26,11 @@ You can set up an iSCSI target with any hosting server OS. Follow the procedure 
 
 ### Overview
 
-1\. install [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) package in installer system
-
-2\. connect to iSCSI target and create partitions on logical drive of target.
-
-3\. install Arch Linux system in usual way
-
-4\. install [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) package in installed system
-
-5\. create initial RAM disk image containing open-iscsi modules.
+1.  install [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) package in installer system
+2.  connect to iSCSI target and create partitions on logical drive of target.
+3.  install Arch Linux system in usual way
+4.  install [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) package in installed system
+5.  create initial RAM disk image containing open-iscsi modules.
 
 **Note:** In addition to the above, you have to prepare sanboot-able infrastructure which is necessary to load boot loader (GRUB, etc.) from remote disc. Some network interface cards support sanboot. If you don't have such cards, you can use [iPXE](http://ipxe.org/), [gPXE](http://etherboot.org/wiki/start), and so on.
 

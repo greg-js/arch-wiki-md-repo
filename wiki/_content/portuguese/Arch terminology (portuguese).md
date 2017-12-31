@@ -56,7 +56,7 @@ Oficialmente, o 'Arch' de "Arch Linux" é pronunciado /ˈɑrtʃ/ como em "archer
 
 ## Arch Linux Archive
 
-O [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") (abreviado ALA), anteriormente conhecido Arch Linux Rollback Machine (a.k.a ARM), armazena *snapshots* de repositórios oficiais, imagens ISO e tarballs de *bootstrap* ao longo do tempo.
+O [Arch Linux Archive](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)") (abreviado ALA), anteriormente conhecido Arch Linux Rollback Machine (a.k.a ARM), armazena *snapshots* de repositórios oficiais, imagens ISO e tarballs de *bootstrap* ao longo do tempo.
 
 ## AUR
 
@@ -110,7 +110,7 @@ Acrônimo para *Keep It Simple, Stupid*, que em português seria algo como "mant
 
 ## namcap
 
-[namcap](/index.php/Namcap "Namcap") é um utilitário de análise de pacotes que procura por problemas com pacotes do Arch Linux ou em seus arquivos [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"). Ele pode aplicar regras à lista de arquivos, no próprios arquivos ou em arquivos PKGBUILD individuais.
+[namcap](/index.php/Namcap_(Portugu%C3%AAs) "Namcap (Português)") é um utilitário de análise de pacotes que procura por problemas com pacotes do Arch Linux ou em seus arquivos [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"). Ele pode aplicar regras à lista de arquivos, no próprios arquivos ou em arquivos PKGBUILD individuais.
 
 As regras retornam listas de mensagens. Cada mensagem pode ser uma dos três tipos: erro, aviso ou informação (pense nelas como notas ou comentários). Erros (referidos por "E:" são coisas que o namcap tem muita certeza de que estão erradas e precisam ser corrigidas. Avisos (referidos por "W:") são coisas que o namcap pensa que deveriam ser alteradas, mas se você sabe o que você está fazendo, então você pode ignorá-las. Informações (referidas por "I:") são apenas mostradas quando você usar o argumento de informação. Mensagens informacionais dão informações que podem ser úteis, mas é nada que tenha que ser alterado.
 

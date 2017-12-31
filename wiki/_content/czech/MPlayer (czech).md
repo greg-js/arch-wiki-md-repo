@@ -30,7 +30,7 @@ Balíček [mplayer](https://www.archlinux.org/packages/?name=mplayer) je dostupn
 
 ```
 
-Poslední vývojová verze je v repozitáři [AUR](/index.php/AUR "AUR") ([mplayer-svn](https://aur.archlinux.org/packages/mplayer-svn/)) volitelně s podporou vícevláknového FFmpeg (experimentální) ([mplayer-mt-lite-git](https://aur.archlinux.org/packages/mplayer-mt-lite-git/)).
+Poslední vývojová verze je v repozitáři [AUR](/index.php/AUR "AUR") ([mplayer-svn](https://aur.archlinux.org/packages/mplayer-svn/)).
 
 ## Instalační tipy
 

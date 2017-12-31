@@ -148,7 +148,7 @@ screen 1
 
 ### Nested Screen Sessions
 
-It is possible to get stuck in a nested screen session. A common scenario: you start an ssh session from within a screen session. Within the ssh session, you start screen. By default, the outer screen session that was launched first responds to `Ctrl+a` commands. To send a command to the inner screen session, use `Ctrl+a` `a`, followed by your command. For example:
+It is possible to get stuck in a nested screen session. A common scenario: you start an SSH session from within a screen session. Within the SSH session, you start screen. By default, the outer screen session that was launched first responds to `Ctrl+a` commands. To send a command to the inner screen session, use `Ctrl+a` `a`, followed by your command. For example:
 
 *   `Ctrl+a` `a` `d` Detaches the inner screen session.
 *   `Ctrl+a` `a` `K` Kills the inner screen session.

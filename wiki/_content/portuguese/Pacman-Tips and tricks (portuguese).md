@@ -154,114 +154,114 @@ $ pacman -Qq | awk '/^.+(-cvs|-svn|-git|-hg|-bzr|-darcs)$/'
 
 ### Listando arquivos pertencentes a um pacote com tamanho
 
-This one might come in handy if you have found that a specific package uses a huge amount of space and you want to find out which files make up the most of that.
+Este pode ser útil se você descobriu que um pacote específico usa uma enorme quantidade de espaço e você quer descobrir quais arquivos usam mais desse espaço.
 
 ```
-$ pacman -Qlq *package* | grep -v '/$' | xargs du -h | sort -h
+$ pacman -Qlq *pacote* | grep -v '/$' | xargs du -h | sort -h
 
 ```
 
 ### Identificar arquivos que pertençam a nenhum pacote
 
-If your system has stray files not owned by any package (a common case if you do not [use the package manager to install software](/index.php/Enhance_system_stability#Use_the_package_manager_to_install_software "Enhance system stability")), you may want to find such files in order to clean them up. The general process for doing so is:
+Se seu arquivo possui arquivos não pertencentes a qualquer pacote (um caso comum se você não [usa o gerenciador de pacotes para instalar softwares](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Use_o_gerenciador_de_pacotes_para_instalar_softwares "Manutenção do sistema")), você pode querer descobrir quais são esses arquivos para limpá-los. O processo geral para fazer isso:
 
-1.  Create a sorted list of the files you want to check ownership of: `$ find /etc /opt /usr | sort > all_files.txt` 
-2.  Create a sorted list of the files tracked by *pacman* (and remove the trailing slashes from directories): `$ pacman -Qlq | sed 's|/$||' | sort > owned_files.txt` 
-3.  Find lines in the first list that are not in the second: `$ comm -23 all_files.txt owned_files.txt` 
+1.  Crie uma lista ordenada dos arquivos que você deseja verificar quem é o dono: `$ find /etc /opt /usr | sort > todos_arquivos.txt` 
+2.  Crie uma lista ordenada dos arquivos rastreados pelo *pacman* (e remova as barras ao final dos diretórios): `$ pacman -Qlq | sed 's|/$||' | sort > donos_arquivos.txt` 
+3.  Encontre linhas na primeira lista que não estão na segunda: `$ comm -23 todos_arquivos.txt donos_arquivos.txt` 
 
-This process is tricky in practice because many important files are not part of any package (e.g. files generated at runtime, custom configs) and so will be included in the final output, making it difficult to pick out the files that can be safely deleted.
+Este processo é complicado na prática porque muitos arquivos importantes não fazem parte de nenhum pacote (por exemplo, arquivos gerados em tempo de execução, configurações personalizadas) e, portanto, serão incluídos na saída final, dificultando a escolha dos arquivos que podem ser excluídos com segurança.
 
-**Tip:** The [lostfiles](https://aur.archlinux.org/packages/lostfiles/) script performs similar steps, but also includes an extensive blacklist to remove common false positives from the output. [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) also allows tracking orphaned files using a configuration script.
+**Dica:** O script [lostfiles](https://aur.archlinux.org/packages/lostfiles/) realizar etapas similares, mas também inclui uma lista negra extensa para remover falso-positivos comuns da saída. [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) também permite rastrear arquivos órfãos usando um script de configuração.
 
 ### Removendo pacotes não usados (órfãos)
 
-For recursively removing orphans and their configuration files:
+Para remover recursivamente ófãos e seus arquivos de configuração:
 
 ```
 # pacman -Rns $(pacman -Qtdq)
 
 ```
 
-If no orphans were found *pacman* outputs `error: no targets specified`. This is expected as no arguments were passed to `pacman -Rns`.
+Se nenhum órfão for encontrado, o *pacman* emite `erro: nenhum alvo especificado`. É esperado que nenhum tenha sido passado para `pacman -Rns`.
 
-**Note:** The arguments `-Qt` list only true orphans. To include packages which are *optionally* required by another package, pass the `-t` flag twice (*i.e.*, `-Qtt`).
+**Nota:** Os argumentos `-Qt` listam somente verdadeiros órfãos. Para incluir pacotes que são *opcionalmente* exigidos por outro pacote, passe a opção `-t` duas vezes, ou seja, `-Qtt`.
 
 ### Removendo tudo exceto o grupo base
 
-If it is ever necessary to remove all packages except the base group, try this one-liner:
+Se for necessário remover todos os pacotes, exceto o grupo base, experimente esta linha:
 
 ```
 # pacman -R $(comm -23 <(pacman -Qq | sort) <((for i in $(pacman -Qqg base); do pactree -ul "$i"; done) | sort -u))
 
 ```
 
-The one-liner was originally devised in [this discussion](https://bbs.archlinux.org/viewtopic.php?id=130176), and later improved in this article.
+Essa linha foi originalmente aconselhada [nesta discussão](https://bbs.archlinux.org/viewtopic.php?id=130176) e posteriormente melhorada neste artigo.
 
 ### Obtendo a lista de dependências de vários pacotes
 
-Dependencies are alphabetically sorted and doubles are removed.
+As dependências são ordenadas alfabeticamente e as duplas são removidas.
 
-**Note:** To only show the tree of local installed packages, use `pacman -Qi`.
-
-```
-$ pacman -Si *packages* | awk -F'[:<=>]' '/^Depends/ {print $2}' | xargs -n1 | sort -u
+**Nota:** Para só mostrar a árvore de pacotes instalados, use `pacman -Qi`.
 
 ```
+$ pacman -Si *pacotes* | awk -F'[:<=>]' '/^Depends/ {print $2}' | xargs -n1 | sort -u
 
-Alternatively, with [expac](https://www.archlinux.org/packages/?name=expac):
+```
+
+Alternativamente, com [expac](https://www.archlinux.org/packages/?name=expac):
 
 ```
 $ expac -l '
-' %E -S *packages* | sort -u
+' %E -S *pacotes* | sort -u
 
 ```
 
 ### Listando arquivos backup modificados
 
-If you want to backup your system configuration files you could copy all files in `/etc/`, but usually you are only interested in the files that you have changed. Modified [backup files](/index.php/Pacnew_and_Pacsave_files#Package_backup_files "Pacnew and Pacsave files") can be viewed with the following command:
+Se você quiser fazer backup dos arquivos de configuração do seu sistema, você pode copiar todos os arquivos em `/etc/`, mas normalmente você só estaria interessado nos arquivos que você alterou. Os [arquivos backup](/index.php/Arquivos_Pacnew_e_Pacsave#Arquivos_backup_do_pacote "Arquivos Pacnew e Pacsave") modificados podem ser vistos com o seguinte comando:
 
 ```
 # pacman -Qii | awk '/^MODIFIED/ {print $2}'
 
 ```
 
-Running this command with root permissions will ensure that files readable only by root (such as `/etc/sudoers`) are included in the output.
+Executar esse comando com permissões de *root' vai garantir que os arquivos legíveis apenas pelo* root *(como o `/etc/sudoers`) sejam incluídos na saída.*
 
-**Tip:** See [#Listing all changed files from packages](#Listing_all_changed_files_from_packages) to list all changed files *pacman* knows, not only backup files.
+**Dica:** Veja [#Listando todos os arquivos alterados de pacotes](#Listando_todos_os_arquivos_alterados_de_pacotes) para listar os arquivos alterados que o *pacman* conhece, e não apenas arquivos backup.
 
 ### Fazer backup da base de dados do pacman
 
-The following command can be used to back up the local *pacman* database:
+O seguinte comando pode ser usado para fazer backup da base de dados local do *pacman*:
 
 ```
 $ tar -cjf pacman_database.tar.bz2 /var/lib/pacman/local
 
 ```
 
-Store the backup *pacman* database file on one or more offline media, such as a USB stick, external hard drive, or CD-R.
+Armazene o arquivo de base de dados backup do *pacman* em uma ou mais mídias offline, tal como um pendrive, disco rígido externo ou um CD-R.
 
-The database can be restored by moving the `pacman_database.tar.bz2` file into the `/` directory and executing the following command:
+A base de dados pode ser restaurada movendo o arquivo `pacman_database.tar.bz2` para o diretório `/` e execução o comando a seguir:
 
 ```
 # tar -xjvf pacman_database.tar.bz2
 
 ```
 
-**Note:** If the *pacman* database files are corrupted, and there is no backup file available, there exists some hope of rebuilding the *pacman* database. Consult [#Restore pacman's local database](#Restore_pacman.27s_local_database).
+**Nota:** Se os arquivos de base de dados do *pacman* estiverem corrompidos e não houver um arquivo backup disponível, há alguma esperança de recompilar a base de dados do *pacman*. Consulte [#Restaurar a base de dados local do pacman](#Restaurar_a_base_de_dados_local_do_pacman).
 
-**Tip:** The [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/) package provides a script and a [systemd](/index.php/Systemd "Systemd") service to automate the task. Configuration is possible in `/etc/pakbak.conf`.
+**Dica:** O pacote [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/) fornece um script e um serviço [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") para automatizar a tarefa. A configuração é possível em `/etc/pakbak.conf`.
 
 ### Verificar changelogs facilmente
 
-When maintainers update packages, commits are often commented in a useful fashion. Users can quickly check these from the command line by installing [pacolog](https://aur.archlinux.org/packages/pacolog/). This utility lists recent commit messages for packages from the official repositories or the AUR, by using `pacolog <package>`.
+Quando os mantenedores atualizam os pacotes, os commits geralmente são comentados de forma útil. Os usuários podem verificá-los rapidamente a partir da linha de comando instalando [pacolog](https://aur.archlinux.org/packages/pacolog/). Este utilitário lista mensagens de commit recentes para pacotes dos repositórios oficiais ou do AUR, usando `pacolog <pacote>`.
 
 ## Instalação e recuperação
 
-Alternative ways of getting and restoring packages.
+Meios alternativos de obter e restaurar pacotes.
 
 ### Instalando pacotes a partir de um CD/DVD ou pendrive
 
-To download packages, or groups of packages:
+Para baixar pacotes ou grupos de pacotes:
 
 ```
 # cd ~/Packages
@@ -270,20 +270,20 @@ To download packages, or groups of packages:
 
 ```
 
-Then you can burn the "Packages" folder to a CD/DVD or transfer it to a USB stick, external HDD, etc.
+Então, você pode gravar a pasta "Packages" para um CD/DVD ou transferi-la para um pendrive, HDD externo, etc.
 
-To install:
+Para instalar:
 
-**1.** Mount the media:
+**1.** Monte a mídia:
 
 ```
 # mkdir /mnt/repo
-# mount /dev/sr0 /mnt/repo    #For a CD/DVD.
-# mount /dev/sdxY /mnt/repo   #For a USB stick.
+# mount /dev/sr0 /mnt/repo    #Para um CD/DVD.
+# mount /dev/sdxY /mnt/repo   #Para um pendrive.
 
 ```
 
-**2.** Edit `pacman.conf` and add this repository *before* the other ones (e.g. extra, core, etc.). This is important. Do not just uncomment the one on the bottom. This way it ensures that the files from the CD/DVD/USB take precedence over those in the standard repositories:
+**2.** Edite `pacman.conf` e adicione esse repositório *antes* dos outros (ex.: extra, core, etc.). Isso é importante. Não apenas descomente aquele na parte de baixo. Essa forma garante que os arquivos do CD/DVD/pendrive tenham precedência sobre aqueles nos repositórios padrões:
 
  `/etc/pacman.conf` 
 ```
@@ -292,7 +292,7 @@ SigLevel = PackageRequired
 Server = file:///mnt/repo/Packages
 ```
 
-**3.** Finally, synchronize the *pacman* database to be able to use the new repository:
+**3.** Finalmente, sincronize a base de dados do *pacman* para habilitar o uso do novo repositório:
 
 ```
 # pacman -Syu
@@ -301,87 +301,87 @@ Server = file:///mnt/repo/Packages
 
 ### Repositório local personalizado
 
-Use the *repo-add* script included with *pacman* to generate a database for a personal repository. Use `repo-add --help` for more details on its usage. To add a new package to the database, or to replace the old version of an existing package in the database, run:
+Use o script *repo-add*, incluído no *pacman*, para gerar uma base de dados para um repositório pessoal. Use `repo-add --help` para obter mais detalhes sobre seu uso. Para adicionar um novo pacote à base de dados, ou para substituir a versão antiga de um pacote existente na base de dados, execute:
 
 ```
-$ repo-add */path/to/repo.db.tar.gz /path/to/package-1.0-1-x86_64.pkg.tar.xz*
-
-```
-
-**Note:** A package database is a tar file, optionally compressed. Valid extensions are *.db* or *.files* followed by an archive extension of *.tar*, *.tar.gz*, *.tar.bz2*, *.tar.xz*, or *.tar.Z*. The file does not need to exist, but all parent directories must exist.
-
-The database and the packages do not need to be in the same directory when using *repo-add*, but keep in mind that when using *pacman* with that database, they should be together. Storing all the built packages to be included in the repository in one directory also allows to use shell glob expansion to add or update multiple packages at once:
-
-```
-$ repo-add */path/to/repo.db.tar.gz /path/to/*.pkg.tar.xz*
+$ repo-add */caminho/para/repo.db.tar.gz /caminho/para/pacote-1.0-1-x86_64.pkg.tar.xz*
 
 ```
 
-**Warning:** *repo-add* adds the entries into the database in the same order as passed on the command line. If multiple versions of the same package are involved, care must be taken to ensure that the correct version is added last. In particular, note that lexical order used by the shell depends on the locale and differs from the [vercmp](https://www.archlinux.org/pacman/vercmp.8.html) ordering used by *pacman*.
+**Nota:** Uma base de dados de pacote é um arquivo tar, opcionalmente comprimida. Extensões válidas são *.db* ou *.files* seguido por uma extensão de arquivamento de *.tar*, *.tar.gz*, *.tar.bz2*, *.tar.xz* ou*.tar.Z*. O arquivo não precisa existir, mas todos os diretórios pais devem existir.
 
-*repo-remove* is used to remove packages from the package database, except that only package names are specified on the command line.
-
-```
-$ repo-remove */path/to/repo.db.tar.gz pkgname*
+A base de dados e os pacotes não precisam estar no diretório ao usar *repo-add*, mas tenha em mente que ao usar *pacman* com aquela base de dados, eles devem estar juntos. Armazenar todos os pacotes compilados para serem incluídos no repositório em um diretório também permite usar a expansão shell glob para adicionar ou atualizar vários pacotes ao mesmo tempo.
 
 ```
+$ repo-add */caminho/para/repo.db.tar.gz /caminho/para/*.pkg.tar.xz*
 
-Once the local repository database has been created, add the repository to `pacman.conf` for each system that is to use the repository. An example of a custom repository is in `pacman.conf`. The repository's name is the database filename with the file extension omitted. In the case of the example above the repository's name would simply be *repo*. Reference the repository's location using a `file://` url, or via FTP using [ftp://localhost/path/to/directory](ftp://localhost/path/to/directory).
+```
 
-If willing, add the custom repository to the [list of unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"), so that the community can benefit from it.
+**Atenção:** *repo-add* adiciona as entradas na base de dados na mesma ordem que foi passada na linha de comando. Se várias versões do mesmo pacote estiverem envolvidas, deve-se ter cuidado para garantir que a versão correta seja adicionada por último. Em particular, observe que a ordem lexical usada pelo shell depende do locale e difere do pedido de [vercmp](https://www.archlinux.org/pacman/vercmp.8.html) usado pelo *pacman*.
+
+*repo-remove* é usado para remover pacotes da base de dados de pacotes, exceto que somente nomes de pacotes são especificados na linha de comando.
+
+```
+$ repo-remove */caminho/para/repo.db.tar.gz pkgname*
+
+```
+
+Uma vez que a base de dados local do repositório tenha sido criado, adicione o repositório a `pacman.conf` para cada sistema que seja para usar o repositório. Um exemplo de um repositório personalizado está em `pacman.conf`. O nome do repositório é o nome do arquivo da base de dados com a extensão do arquivo omitida. No caso do exemplo acima, o nome do repositório simplesmente seria *repo*. Consulte a localização do repositório usando um URL `file://`, ou via FTP usando o diretório [ftp://localhost/caminho/para/diretório](ftp://localhost/caminho/para/diretório).
+
+Se quiser, adicione um repositório personalizado à [lista de repositórios de usuário não oficiais](/index.php/Unofficial_user_repositories "Unofficial user repositories"), de forma que a comunidade possa se beneficiar dele.
 
 ### Cache do pacman compartilhado na rede
 
-If you happen to run several Arch boxes on your LAN, you can share packages so that you can greatly decrease your download times. Keep in mind you should not share between different architectures (i.e. i686 and x86_64) or you will run into problems.
+Se você tiver várias máquinas com Arch na sua rede local, você pode compartilhar pacotes para que você possa diminuir significativamente os tempos de download. Tenha em mente que você não deve compartilhar entre arquiteturas diferentes (isto é, i686 e x86_64) ou você terá problemas.
 
 #### Cache de somente leitura
 
-If you are looking for a quick and dirty solution, you can simply run a standalone webserver which other computers can use as a first mirror: `darkhttpd /var/cache/pacman/pkg`. Just add this server at the top of your mirror list. Be aware that you might get a lot of 404 errors, due to cache misses, depending on what you do, but *pacman* will try the next (real) mirrors when that happens.
+Se você está procurando uma solução rápida e ruim, você pode simplesmente executar um servidor web autônomo que outros computadores possam usar como um primeiro espelho: `darkhttpd /var/cache/pacman/pkg`. Basta adicionar este servidor no topo da sua lista de espelhos. Esteja ciente de que você pode obter um monte de erros 404, devido a falta de cache, dependendo do que você faz, mas o *pacman* tentará os seguintes espelhos (reais) quando isso acontecer.
 
 #### Cache somente leitura distribuído
 
-There are Arch-specific tools for automatically discovering other computers on your network offering a package cache. Try [pacserve](/index.php/Pacserve "Pacserve"), [pkgdistcache](https://aur.archlinux.org/packages/pkgdistcache/), or [paclan](https://aur.archlinux.org/packages/paclan/). pkgdistcache uses Avahi instead of plain UDP which may work better in certain home networks that route instead of bridge between WiFi and Ethernet.
+Existem ferramentas específicas do Arch para descobrir automaticamente outros computadores em sua rede oferecendo um cache de pacote. Tente [pacserve](/index.php/Pacserve_(Portugu%C3%AAs) "Pacserve (Português)"), [pkgdistcache](https://aur.archlinux.org/packages/pkgdistcache/) ou [paclan](https://aur.archlinux.org/packages/paclan/). O pkgdistcache usa Avahi em vez de UDP simples, que pode funcionar melhor em determinadas redes domésticas que roteiam em vez de ponte entre WiFi e Ethernet.
 
-Historically, there was [PkgD](https://bbs.archlinux.org/viewtopic.php?id=64391) and [multipkg](https://github.com/toofishes/multipkg), but they are no longer maintained.
+Historicamente, havia [PkgD](https://bbs.archlinux.org/viewtopic.php?id=64391) e [multipkg](https://github.com/toofishes/multipkg), mas eles não são mais mantidos.
 
 #### Cache de leitura-escrita
 
-In order to share packages between multiple computers, simply share `/var/cache/pacman/` using any network-based mount protocol. This section shows how to use [shfs](/index.php/Shfs "Shfs") or [SSHFS](/index.php/SSHFS "SSHFS") to share a package cache plus the related library-directories between multiple computers on the same local network. Keep in mind that a network shared cache can be slow depending on the file-system choice, among other factors.
+Para compartilhar pacotes entre vários computadores, simplesmente compartilhe `/var/cache/pacman/` usando qualquer protocolo de montagem em rede. Esta seção mostra como usar [shfs](/index.php/Shfs "Shfs") ou [SSHFS](/index.php/SSHFS "SSHFS") para compartilhar um cache de pacotes mais os diretórios de biblioteca relacionados entre vários computadores na mesma rede local. Tenha em mente que um cache compartilhado em rede pode ser lento dependendo da escolha do sistema de arquivos, entre outros fatores.
 
-First, install any network-supporting filesystem packages: [shfs-utils](https://www.archlinux.org/packages/?name=shfs-utils), [sshfs](https://www.archlinux.org/packages/?name=sshfs), [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs), [samba](https://www.archlinux.org/packages/?name=samba) or [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils).
+Primeiro, instale qualquer sistema de arquivos que tenha suporte a rede: [shfs-utils](https://www.archlinux.org/packages/?name=shfs-utils), [sshfs](https://www.archlinux.org/packages/?name=sshfs), [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs), [samba](https://www.archlinux.org/packages/?name=samba) ou [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils).
 
-**Tip:**
+**Dica:**
 
-*   To use *sshfs* or *shfs*, consider reading [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").
-*   By default, *smbfs* does not serve filenames that contain colons, which results in the client downloading the offending package afresh. To prevent this, use the `mapchars` mount option on the client.
+*   Para usar *sshfs* ou *shfs*, considere ler [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").
+*   Por padrão, *smbfs* não fornece nomes de arquivos que contenham dois pontos, o que resulta no cliente baixar o pacote problemática novamente. Para evitar isso, use a opção de montagem `mapchars` no cliente.
 
-Then, to share the actual packages, mount `/var/cache/pacman/pkg` from the server to `/var/cache/pacman/pkg` on every client machine.
+Então, para compartilhar os pacotes, monte `/var/cache/pacman/pkg` do servidor em `/var/cache/pacman/pkg` para toda máquina cliente.
 
-**Note:** Do not make `/var/cache/pacman/pkg` or any of its ancestors (e.g., `/var`) a symlink. *Pacman* expects these to be directories. When *pacman* re-installs or upgrades itself, it will remove the symlinks and create empty directories instead. However during the transaction *pacman* relies on some files residing there, hence breaking the update process. Refer to [FS#50298](https://bugs.archlinux.org/task/50298) for further details.
+**Nota:** Não torne `/var/cache/pacman/pkg` ou qualquer um de seus antecessores (ex., `/var`) um link simbólico. *Pacman* espera que esses sejam diretórios. Quando o *pacman* reinstala ou atualiza a si próprio, ele vai remover os links simbólicos e vai criar diretórios vazios no lugar. Porém, durante a transação, o *pacman* depende de alguns pacotes estarem lá, resultando em quebrar o processo de atualização. Veja [FS#50298](https://bugs.archlinux.org/task/50298) para mais detalhes.
 
 #### Duas vias com rsync
 
-Another approach in a local environment is [rsync](/index.php/Rsync "Rsync"). Choose a server for caching and enable the [Rsync#rsync daemon](/index.php/Rsync#rsync_daemon "Rsync"). On clients synchronize two-way with this share via rsync protocol. Filenames that contain colons are no problem for the rsync protocol.
+Outra abordagem em um ambiente local é [rsync](/index.php/Rsync "Rsync"). Escolha um servidor para armazenamento em cache e ative o [Rsync#rsync daemon](/index.php/Rsync#rsync_daemon "Rsync"). Nos clientes, sincronize em duas vias com este compartilhamento via protocolo rsync. Os nomes dos arquivos que contêm dois pontos não são um problema para o protocolo rsync.
 
-Draft example for a client, using `uname -m` within the share name ensures an architecture dependedant sync:
+Um exemplo de rascunho para um cliente, usando `uname -m` dentro de nome de compartilhamento garante uma sincronização dependente da arquitetura:
 
 ```
- # rsync rsync://server/share_$(uname -m)/ /var/cache/pacman/pkg/ ...
+ # rsync rsync://servidor/share_$(uname -m)/ /var/cache/pacman/pkg/ ...
  # pacman ...
  # paccache ...
- # rsync /var/cache/pacman/pkg/ rsync://server/share_$(uname -m)/  ...
+ # rsync /var/cache/pacman/pkg/ rsync://servidor/share_$(uname -m)/  ...
 
 ```
 
 #### Cache dinâmico de proxy reverso usando nginx
 
-[nginx](/index.php/Nginx "Nginx") can be used to proxy requests to official upstream mirrors and cache the results to local disk. All subsequent requests for that file will be served directly from the local cache, minimizing the amount of internet traffic needed to update a large number of servers with minimal effort.
+[nginx](/index.php/Nginx "Nginx") pode ser usado para solicitações de proxy para espelhos oficiais de *upstream* e armazenar em cache os resultados para o disco local. Todas as solicitações subsequentes para esse arquivo serão atendidas diretamente do cache local, minimizando a quantidade de tráfego de internet necessária para atualizar um grande número de servidores com um esforço mínimo.
 
-**Warning:** This method has a limitation. You must use mirrors that use the same relative path to package files and you must configure your cache to use that same path. In this example, we are using mirrors that use the relative path `/archlinux/$repo/os/$arch` and our cache's `Server` setting in `mirrorlist` is configured similarly.
+**Atenção:** Este método tem uma limitação. Você deve usar espelhos que usam o mesmo caminho relativo para o pacote de arquivos e você deve configurar seu cache para usar esse mesmo caminho. Neste exemplo, estamos usando espelhos que usam o caminho relativo `/archlinux/$repo/os/$arch` e a definição `Server` do nosso cache no `mirrorlist` está configurada similarmente.
 
-In this example, we will run the cache server on `http://cache.domain.local:8080/` and storing the packages in `/srv/http/pacman-cache/`.
+Neste exemplo, vamos executar o servidor de cache em `http://cache.domain.local:8080/` e armazenar os pacotes em `/srv/http/pacman-cache/`.
 
-Create the directory for the cache and adjust the permissions so nginx can write files to it:
+Crie o diretório para o cache e ajuste as permissões de forma que o nginx possa escrever os arquivos para ele:
 
 ```
  # mkdir /srv/http/pacman-cache
@@ -389,9 +389,9 @@ Create the directory for the cache and adjust the permissions so nginx can write
 
 ```
 
-Next, configure nginx as the [dynamic cache](https://gist.github.com/anonymous/97ec4148f643de925e433bed3dc7ee7d) (read the comments for an explanation of the commands).
+Em seguida, configure o nginx como o [cache dinâmico](https://gist.github.com/anonymous/97ec4148f643de925e433bed3dc7ee7d) (leia os comentários para uma explicação dos comandos).
 
-Finally, update your other Arch Linux servers to use this new cache by adding the following line to the `mirrorlist` file:
+Finalmente, atualize seus outros servidores Arch Linux para usar esse novo cache adicionando a seguinte linha ao arquivo `mirrorlist`:
 
  `/etc/pacman.d/mirrorlist` 
 ```
@@ -400,17 +400,17 @@ Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
 
 ```
 
-**Note:** You will need to create a method to clear old packages, as this directory will continue to grow over time. `paccache` (which is included with *pacman*) can be used to automate this using retention criteria of your choosing. For example, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` will keep the last 2 versions of packages in your cache directory.
+**Nota:** Você precisará criar um método para limpar pacotes antigos, pois esse diretório continuará a crescer ao longo do tempo. `paccache` (que está incluído no *pacman* ) pode ser usado para automatizar isso usando os critérios de retenção de sua escolha. Por exemplo, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` manterá as últimas 2 versões de pacotes no seu diretório de cache.
 
 #### Sincronizar cache de pacotes do pacman usando programas de sincronização
 
-Use [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync") or [Syncthing](/index.php/Syncthing "Syncthing") to synchronize the *pacman* cache folders (i.e. `/var/cache/pacman/pkg`).
+Use [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync") ou [Syncthing](/index.php/Syncthing "Syncthing") para sincronizar as pastas de cache do *pacman* (ou seja, `/var/cache/pacman/pkg`).
 
 #### Prevenção de purgas de cache indesejadas
 
-By default, `pacman -Sc` removes package tarballs from the cache that correspond to packages that are not installed on the machine the command was issued on. Because *pacman* cannot predict what packages are installed on all machines that share the cache, it will end up deleting files that should not be.
+Por padrão, `pacman -Sc` remove tarballs de pacotes do cache que correspondem a pacotes que não estão instalados na máquina em que o comando foi emitido. Porque o *pacman* não pode prever quais pacotes estão instalados em todas as máquinas que compartilham o cache, ele acabará excluindo arquivos que não deveriam ser excluídos.
 
-To clean up the cache so that only *outdated* tarballs are deleted, add this entry in the `[options]` section of `/etc/pacman.conf`:
+Para limpar o cache de forma que apenas tarballs *desatualizados* seja excluídos, adicione essa entrada na seção `[options]` do `/etc/pacman.conf`:
 
 ```
 CleanMethod = KeepCurrent
@@ -419,100 +419,100 @@ CleanMethod = KeepCurrent
 
 ### Recriar um pacote do sistema de arquivos
 
-To recreate a package from the file system, use *bacman* (included with *pacman*). Files from the system are taken as they are, hence any modifications will be present in the assembled package. Distributing the recreated package is therefore discouraged; see [ABS](/index.php/ABS "ABS") and [Arch Rollback Machine](/index.php/Arch_Rollback_Machine "Arch Rollback Machine") for alternatives.
+Para recriar um pacote do sistema de arquivos, use *bacman* (incluído no *pacman*). Os arquivos do sistema são aceitos como estão, portanto, quaisquer modificações estarão presentes no pacote montado. Distribuir o pacote recriado é, portanto, desencorajado; veja [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e [Arch Rollback Machine](/index.php/Arch_Rollback_Machine_(Portugu%C3%AAs) "Arch Rollback Machine (Português)") para obter alternativas.
 
-**Tip:** *bacman* honours the `PACKAGER`, `PKGDEST` and `PKGEXT` options from `makepkg.conf`. Custom options for the compression tools can be configured by exporting the relevant environment variable, for example `XZ_OPT="-T 0"` will enable parallel compression for *xz*.
+**Dica:** *bacman* honra as opções `PACKAGER`, `PKGDEST` e `PKGEXT` do `makepkg.conf`. Opções personalizadas para as ferramentas de compressão podem ser configuradas exportando a variável de ambiente relevante. Por exemplo, `XZ_OPT="-T 0"` vai habilitar compressão paralela para *xz*.
 
-An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepkg/). It supports parallelization and can handle multiple input packages in one command, which *bacman* both does not support.
+Uma ferramenta alternativa seria [fakepkg](https://aur.archlinux.org/packages/fakepkg/). Ela oferece suporte a paralelização e pode lidar com vários pacotes de entrada em um comando, duas coisas a que o *bacman* não oferece suporte.
 
 ### Lista de pacotes instalados
 
-Keeping a list of explicitly installed packages can be useful to speed up installation on a new system:
+Manter uma lista de pacotes instalados explicitamente pode ser útil para acelerar a instalação em um novo sistema:
 
 ```
 $ pacman -Qqe > pkglist.txt
 
 ```
 
-**Note:** If you used `-Qqet`, when reinstalling the list all the non-top-level packages would be set as dependencies.
+**Nota:** Se você usou `-Qqet`, ao reinstalar a lista, todos os pacotes de nível superior não seriam definidos como dependências.
 
-To install packages from the list backup, run:
+Para instalar pacotes da lista backup, execute:
 
 ```
 # pacman -S - < pkglist.txt
 
 ```
 
-**Tip:**
+**Dica:**
 
-*   To skip already installed packages, use `--needed`.
-*   Use `comm -13 <(pacman -Qqdt | sort) <(pacman -Qqdtt | sort) > optdeplist.txt` to also create a list of the installed optional dependencies which can be reinstalled with `--asdeps`.
+*   Para pular pacotes já instalados, use `--needed`.
+*   Use `comm -13 <(pacman -Qqdt | sort) <(pacman -Qqdtt | sort) > optdeplist.txt` para também criar uma lista de dependências opcionais instaladas que podem ser reinstaladas com `--asdeps`.
 
-In case the list includes foreign packages, such as [AUR](/index.php/AUR "AUR") packages, remove them first:
+No caso da lista incluir pacotes externos, tal como pacotes do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), remova-os primeiro:
 
 ```
 # pacman -S $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))
 
 ```
 
-To remove all the packages on your system that are not mentioned in the list:
+Para remover todos os pacotes em seu sistema que não são mencionados na lista:
 
 ```
 # pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort pkglist.txt))
 
 ```
 
-**Tip:** These tasks can be automated. See [bacpac](https://aur.archlinux.org/packages/bacpac/), [packup](https://aur.archlinux.org/packages/packup/), [pacmanity](https://aur.archlinux.org/packages/pacmanity/), and [pug](https://aur.archlinux.org/packages/pug/) for examples.
+**Dica:** Essas tarefas podem ser automatizadas. Veja [bacpac](https://aur.archlinux.org/packages/bacpac/), [packup](https://aur.archlinux.org/packages/packup/), [pacmanity](https://aur.archlinux.org/packages/pacmanity/) e[pug](https://aur.archlinux.org/packages/pug/) para exemplos.
 
 ### Listando todos os arquivos alterados de pacotes
 
-If you are suspecting file corruption (e.g. by software/hardware failure), but are unsure if files were got corrupted, you might want to compare with the hash sums in the packages. This can be done with [pacutils](https://www.archlinux.org/packages/?name=pacutils):
+Se você suspeitar de corrompimento de arquivos (por exemplo, por falha de software/hardware), mas não tem certeza se os arquivos foram corrompidos, você pode querer comparar com as somas de hash nos pacotes. Isso pode ser feito com [pacutils](https://www.archlinux.org/packages/?name=pacutils):
 
 ```
 # paccheck --md5sum --quiet
 
 ```
 
-For recovery of the database see [#Restore pacman's local database](#Restore_pacman.27s_local_database). The `mtree` files can also be [extracted as `.MTREE` from the respective package files](#Viewing_a_single_file_inside_a_.pkg_file).
+Para recuperação da base de dados, veja [#Restaurar a base de dados local do pacman](#Restaurar_a_base_de_dados_local_do_pacman). Os arquivos `mtree` também pode ser [extraído como `.MTREE` a partir dos respectivos arquivos de pacote](#Vendo_um_.C3.BAnico_arquivo_dentro_de_um_arquivo_.pkg).
 
-**Note:** This should **not** be used as is when suspecting malicious changes! In this case security precautions such as using a live medium and an independent source for the hash sums are advised.
+**Nota:** Isso **não** deve ser usado assim quando se suspeita de mudanças maliciosas! Neste caso, são recomendadas precauções de segurança, como o uso de uma mídia *Live* e uma fonte independente para as somas de hash.
 
 ### Reinstalando todos pacotes
 
-To reinstall all native packages, use:
+Para reinstalar todos os pacotes nativos, use:
 
 ```
 # pacman -Qnq | pacman -S -
 
 ```
 
-Foreign (AUR) packages must be reinstalled separately; you can list them with `pacman -Qmq`.
+Pacotes externos (do AUR) devem ser reinstalados separadamente; você pode listá-los com `pacman -Qmq`.
 
-*Pacman* preserves the [installation reason](/index.php/Installation_reason "Installation reason") by default.
+*Pacman* preserva o [motivo de instalação](/index.php/Motivo_de_instala%C3%A7%C3%A3o "Motivo de instalação") por padrão.
 
 ### Restaurar a base de dados local do pacman
 
-See [Pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database").
+Veja [Pacman/Restaurar base de dados local](/index.php/Pacman/Restaurar_base_de_dados_local "Pacman/Restaurar base de dados local").
 
 ### Recuperando um pendrive a partir de uma instalação existente
 
-If you have Arch installed on a USB key and manage to mess it up (e.g. removing it while it is still being written to), then it is possible to re-install all the packages and hopefully get it back up and working again (assuming USB key is mounted in `/newarch`)
+Se você possui o Arch instalado em um pendrive e conseguir arruiná-lo (por exemplo, removê-lo enquanto ainda está sendo gravado), é possível reinstalar todos os pacotes e, com esperança, recuperá-lo e trabalhar novamente (presumindo que o pendrive esteja montado em `/novoarch`)
 
 ```
-# pacman -S $(pacman -Qq --dbpath /newarch/var/lib/pacman) --root /newarch --dbpath /newarch/var/lib/pacman
+# pacman -S $(pacman -Qq --dbpath /novoarch/var/lib/pacman) --root /novoarch --dbpath /novoarch/var/lib/pacman
 
 ```
 
 ### Vendo um único arquivo dentro de um arquivo .pkg
 
-For example, if you want to see the contents of `/etc/systemd/logind.conf` supplied within the [systemd](https://www.archlinux.org/packages/?name=systemd) package:
+Por exemplo, se você deseja ver o conteúdo de `/etc/systemd/logind.conf` fornecido no pacote [systemd](https://www.archlinux.org/packages/?name=systemd):
 
 ```
 $ tar -xOf /var/cache/pacman/pkg/systemd-204-3-x86_64.pkg.tar.xz etc/systemd/logind.conf
 
 ```
 
-Or you can use [vim](https://www.archlinux.org/packages/?name=vim) to browse the archive:
+Ou você pode usar [vim](https://www.archlinux.org/packages/?name=vim) para navegar no pacote:
 
 ```
 $ vim /var/cache/pacman/pkg/systemd-204-3-x86_64.pkg.tar.xz
@@ -521,29 +521,29 @@ $ vim /var/cache/pacman/pkg/systemd-204-3-x86_64.pkg.tar.xz
 
 ### Localizar aplicativos que usam bibliotecas de pacotes mais antigos
 
-Even if you installed a package the existing long-running programs (like daemons and servers) still keep using code from old package libraries. And it is a bad idea to let these programs running if the old library contains a security bug.
+Mesmo se você instalou um pacote, os programas existentes de longa duração (como daemons e servidores) continuam usando código de bibliotecas de pacotes antigos. E é uma má ideia deixar esses programas em execução se a biblioteca antiga contiver um erro de segurança.
 
-Here is a way how to find all the programs that use old packages code:
+Aqui está uma maneira de encontrar todos os programas que usam código de pacotes antigo:
 
 ```
 # lsof +c 0 | grep -w DEL | awk '1 { print $1 ": " $NF }' | sort -u
 
 ```
 
-It will print running program name and old library that was removed or replaced with newer content.
+Ele imprimirá o nome do programa em execução e a biblioteca antiga que foi removida ou substituída por conteúdo mais novo.
 
 ## Desempenho
 
 ### Velocidades de acesso da base de dados
 
-*Pacman* stores all package information in a collection of small files, one for each package. Improving database access speeds reduces the time taken in database-related tasks, e.g. searching packages and resolving package dependencies. The safest and easiest method is to run as root:
+O *pacman* armazena todas as informações do pacote em uma coleção de pequenos arquivos, um para cada pacote. Melhorar as velocidades de acesso à base de dados reduz o tempo gasto nas tarefas relacionadas à base de dados como, por exemplo, procurando por pacotes e resolução de dependências de pacotes. O método mais seguro e mais fácil é executar como root:
 
 ```
 # pacman-optimize
 
 ```
 
-This will attempt to put all the small files together in one (physical) location on the hard disk so that the hard disk head does not have to move so much when accessing all the data. This method is safe, but is not foolproof: it depends on your filesystem, disk usage and empty space fragmentation. Another, more aggressive, option would be to first remove uninstalled packages from cache and to remove unused repositories before database optimization:
+Isso tentará colocar todos os pequenos arquivos em uma única localização (física) no disco rígido para que a cabeça do disco rígido não precise se mover tanto ao acessar todos os dados. Este método é seguro, mas não é infalível: depende do seu sistema de arquivos, do uso do disco e da fragmentação do espaço vazio. Outra opção, mais agressiva, seria primeiro remover os pacotes desinstalados do cache e remover repositórios não utilizados antes da otimização da base de dados:
 
 ```
 # pacman -Sc && pacman-optimize
@@ -552,13 +552,13 @@ This will attempt to put all the small files together in one (physical) location
 
 ### Velocidades de download
 
-**Note:** If your download speeds have been reduced to a crawl, ensure you are using one of the many [mirrors](/index.php/Mirrors "Mirrors") and not ftp.archlinux.org, which is [throttled since March 2007](https://www.archlinux.org/news/302/).
+**Nota:** Se suas velocidades de download foram reduzidas a uma lesma, certifique-se de usar um dos muitos [espelhos](/index.php/Mirrors "Mirrors") e não o ftp.archlinux.org, cuja [velocidade é limitada desde março de 2007](https://www.archlinux.org/news/302/).
 
-When downloading packages *pacman* uses the mirrors in the order they are in `/etc/pacman.d/mirrorlist`. The mirror which is at the top of the list by default however may not be the fastest for you. To select a faster mirror, see [Mirrors](/index.php/Mirrors "Mirrors").
+Ao baixar pacotes, o *pacman* usa os espelhos na ordem em que estão no `/etc/pacman.d/mirrorlist`. O espelho que está no topo da lista por padrão, no entanto, pode não ser o mais rápido para você. Para selecionar um espelho mais rápido, veja [Mirrors](/index.php/Mirrors "Mirrors").
 
-*Pacman*'s speed in downloading packages can also be improved by using a different application to download packages, instead of *pacman*'s built-in file downloader.
+A velocidade do *pacman* ao baixar pacotes também pode ser melhorada usando um aplicativo diferente para baixar pacotes, em vez baixador de arquivos embutido do *pacman*.
 
-In all cases, make sure you have the latest *pacman* before doing any modifications.
+Em todos os casos, certifique-se de ter o *pacman* mais recente antes de fazer quaisquer modificações.
 
 ```
 # pacman -Syu
@@ -567,122 +567,122 @@ In all cases, make sure you have the latest *pacman* before doing any modificati
 
 #### Powerpill
 
-[Powerpill](/index.php/Powerpill "Powerpill") is a *pacman* wrapper that uses parallel and segmented downloading to try to speed up downloads for *pacman*.
+[Powerpill](/index.php/Powerpill_(Portugu%C3%AAs) "Powerpill (Português)") é um wrapper do *pacman* que faz uso de download paralelo e segmentado para tentar acelerar os downloads para o *pacman*.
 
 #### wget
 
-This is also very handy if you need more powerful proxy settings than *pacman*'s built-in capabilities.
+Esse também é muito útil se você precisar de configurações de proxy mais poderosas que as capacidades incorporadas no *pacman*.
 
-To use `wget`, first [install](/index.php/Install "Install") the [wget](https://www.archlinux.org/packages/?name=wget) package then modify `/etc/pacman.conf` by uncommenting the following line in the `[options]` section:
+Para usar o `wget`, primeiro [instale](/index.php/Instale "Instale") o pacote [wget](https://www.archlinux.org/packages/?name=wget) e, após, modifique o `/etc/pacman.conf` descomentando a seguinte linha na seção `[options]`:
 
 ```
 XferCommand = /usr/bin/wget -c -q --show-progress --passive-ftp -O %o %u
 
 ```
 
-Instead of uncommenting the `wget` parameters in `/etc/pacman.conf`, you can also modify the `wget` configuration file directly (the system-wide file is `/etc/wgetrc`, per user files are `$HOME/.wgetrc`.
+Em vez de descomentar os parâmetros de `wget` no `/etc/pacman.conf`, você também pode modificar o arquivo de configuração do `wget` diretamente (o arquivo de todo o sistema é `/etc/wgetrc`, enquanto arquivos por usuário são `$HOME/.wgetrc`.
 
 #### aria2
 
-[aria2](/index.php/Aria2 "Aria2") is a lightweight download utility with support for resumable and segmented HTTP/HTTPS and FTP downloads. aria2 allows for multiple and simultaneous HTTP/HTTPS and FTP connections to an Arch mirror, which should result in an increase in download speeds for both file and package retrieval.
+O [aria2](/index.php/Aria2 "Aria2") é um utilitário de download leve com suporte a downloads resumíveis e segmentados via HTTP/HTTPS e FTP. O aria2 permite conexões múltiplas e simultâneas de HTTP/HTTPS e FTP para um espelho do Arch, o que deve resultar em um aumento na velocidade de download para a obtenção de arquivos e pacotes.
 
-**Note:** Using aria2c in *pacman*'s XferCommand will **not** result in parallel downloads of multiple packages. *Pacman* invokes the XferCommand with a single package at a time and waits for it to complete before invoking the next. To download multiple packages in parallel, see [Powerpill](/index.php/Powerpill "Powerpill").
+**Nota:** O uso do aria2c no XferCommand do *pacman* **não** vai resultar em downloads paralelos de múltiplos pacotes. O *pacman* chama o XferCommand com um único pacote por vez e aguarda por ele concluir antes de chamar o próximo. Para baixar múltiplos pacotes em paralelo, veja [Powerpill](/index.php/Powerpill_(Portugu%C3%AAs) "Powerpill (Português)").
 
-Install [aria2](https://www.archlinux.org/packages/?name=aria2), then edit `/etc/pacman.conf` by adding the following line to the `[options]` section:
+Instale o [aria2](https://www.archlinux.org/packages/?name=aria2) e, após, edite o `/etc/pacman.conf` adicionando a seguinte linha à seção `[options]`:
 
 ```
 XferCommand = /usr/bin/aria2c --allow-overwrite=true --continue=true --file-allocation=none --log-level=error --max-tries=2 --max-connection-per-server=2 --max-file-not-found=5 --min-split-size=5M --no-conf --remote-time=true --summary-interval=60 --timeout=5 --dir=/ --out %o %u
 
 ```
 
-**Tip:** [This alternative configuration for using *pacman* with aria2](https://bbs.archlinux.org/viewtopic.php?pid=1491879#p1491879) tries to simplify configuration and adds more configuration options.
+**Dica:** [Essa configuração alternativa para usar o *pacman* com aria2](https://bbs.archlinux.org/viewtopic.php?pid=1491879#p1491879) tenta simplificar a configuração e adiciona mais opções de configuração.
 
-See [OPTIONS](http://aria2.sourceforge.net/manual/en/html/aria2c.html#options) in [aria2c(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/aria2c.1) for used aria2c options.
+Veja [OPTIONS](http://aria2.sourceforge.net/manual/en/html/aria2c.html#options) em [aria2c(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/aria2c.1) para opções do aria2c usadas.
 
-*   `-d, --dir` :The directory to store the downloaded file(s) as specified by *pacman*.
-*   `-o, --out`: The output file name(s) of the downloaded file(s).
-*   `%o`: Variable which represents the local filename(s) as specified by *pacman*.
-*   `%u`: Variable which represents the download URL as specified by *pacman*.
+*   `-d, --dir`: O diretório para armazenar o arquivos baixados, conforme especificado pelo *pacman*.
+*   `-o, --out`: Os nomes de arquivo dos arquivos baixados.
+*   `%o`: A variável que representa os nomes de arquivos locais, conforme especificado pelo *pacman*.
+*   `%u`: A variável que representa a URL de download, conforme especificado pelo *pacman*.
 
 #### Outros aplicativos
 
-There are other downloading applications that you can use with *pacman*. Here they are, and their associated XferCommand settings:
+Existem outros aplicativos de download que você pode usar com *pacman*. Aqui estão, e as configurações associadas de XferCommand:
 
 *   `snarf`: `XferCommand = /usr/bin/snarf -N %u`
 *   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
 *   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
-*   `hget`: `XferCommand = /usr/bin/hget %u -n 2 -skip-tls false` (please read the [documentation on the Github project page](https://github.com/huydx/hget) for more info)
+*   `hget`: `XferCommand = /usr/bin/hget %u -n 2 -skip-tls false` (por favor, leia a [documentação na página de projeto no Github](https://github.com/huydx/hget) para mais informações)
 
 ## Utilitários
 
-*   **Lostfiles** — Script that identifies files not owned by any package.
+*   **Lostfiles** — Script que identifica arquivos que não pertencem a nenhum pacote.
 
 	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
 
-*   **Pacmatic** — *Pacman* wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
+*   **Pacmatic** — Wrapper do *pacman* para verificar o Arch News antes de atualizar, evitar atualizações parciais e avisar sobre alterações de arquivo de configuração.
 
 	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
 
-*   **pacutils** — Helper library for libalpm based programs.
+*   **pacutils** — Biblioteca auxiliar para programas baseados no libalpm.
 
 	[https://github.com/andrewgregory/pacutils](https://github.com/andrewgregory/pacutils) || [pacutils](https://www.archlinux.org/packages/?name=pacutils)
 
-*   **[pkgfile](/index.php/Pkgfile "Pkgfile")** — Tool that finds what package owns a file.
+*   **[pkgfile](/index.php/Pkgfile_(Portugu%C3%AAs) "Pkgfile (Português)")** — Ferramenta que descobre qual pacote é dono de um arquivo.
 
 	[http://github.com/falconindy/pkgfile](http://github.com/falconindy/pkgfile) || [pkgfile](https://www.archlinux.org/packages/?name=pkgfile)
 
-*   **pkgtools** — Collection of scripts for Arch Linux packages.
+*   **pkgtools** — Coleção de scripts para pacotes do Arch Linux.
 
 	[https://github.com/Daenyth/pkgtools](https://github.com/Daenyth/pkgtools) || [pkgtools](https://aur.archlinux.org/packages/pkgtools/)
 
-*   **repoctl** — Tool to help manage local repositories.
+*   **repoctl** — Ferramenta para ajudar a gerenciar repositórios locais.
 
 	[https://github.com/cassava/repoctl](https://github.com/cassava/repoctl) || [repoctl](https://aur.archlinux.org/packages/repoctl/)
 
-*   **repose** — An Arch Linux repository building tool.
+*   **repose** — Uma ferramenta para construção de repositório do Arch Linux.
 
 	[https://github.com/vodik/repose](https://github.com/vodik/repose) || [repose](https://www.archlinux.org/packages/?name=repose)
 
-*   **[snap-pac](/index.php/Snapper#Wrapping_pacman_transactions_in_snapshots "Snapper")** — Make *pacman* automatically use snapper to create pre/post snapshots like openSUSE's YaST.
+*   **[snap-pac](/index.php/Snapper#Wrapping_pacman_transactions_in_snapshots "Snapper")** — Faz o *pacman* usar automaticamente o snapper para criar snapshots pré/pós como o YaST do openSUSE.
 
 	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
 
 ### Front-ends gráficos
 
-**Warning:** Some front-ends such as [octopi](https://aur.archlinux.org/packages/octopi/) [[1]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) perform [partial upgrades](/index.php/Partial_upgrade "Partial upgrade") periodically.
+**Atenção:** Alguns front-ends, como o [octopi](https://aur.archlinux.org/packages/octopi/) [[1]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266), realizam [atualizações parciais](/index.php/Atualiza%C3%A7%C3%A3o_parcial "Atualização parcial") periodicamente.
 
-*   **Arch-Update** — Update indicator for Gnome-Shell.
+*   **Arch-Update** — Indicador de atualização para o GNOME-Shell.
 
 	[https://github.com/RaphaelRochet/arch-update](https://github.com/RaphaelRochet/arch-update) || [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/)
 
-*   **Arch-Update-Notifier** — Update indicator for KDE.
+*   **Arch-Update-Notifier** — Indicador de atualização para o KDE.
 
 	[https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid](https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid) || [plasma5-applets-kde-arch-update-notifier-git](https://aur.archlinux.org/packages/plasma5-applets-kde-arch-update-notifier-git/)
 
-*   **Discover** — A collection of package management tools for KDE, using PackageKit.
+*   **Discover** — Uma coleção de ferramentas de gerenciamento de pacotes para o KDE, usando PackageKit.
 
 	[https://projects.kde.org/projects/kde/workspace/discover](https://projects.kde.org/projects/kde/workspace/discover) || [discover](https://www.archlinux.org/packages/?name=discover)
 
-*   **GNOME packagekit** — GTK based package management tool
+*   **GNOME packagekit** — Ferramenta de gerenciamento de pacotes baseada em GTK
 
 	[http://www.freedesktop.org/software/PackageKit/](http://www.freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
 
-*   **GNOME Software** — Gnome Software App. (Curated selection for GNOME)
+*   **GNOME Software** — Aplicativo de softwares do GNOME. (Seleção curada para o GNOME)
 
 	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 
-*   **kalu** — A small application that will add an icon to your systray and sit there, regularly checking if there's anything new for you to upgrade.
+*   **kalu** — Um pequeno aplicativo que vai adicionar um ícone à sua área de notificação e ficar lá verificando regularmente se há alguma coisa nova para você atualizar.
 
 	[https://jjacky.com/kalu/](https://jjacky.com/kalu/) || [kalu](https://aur.archlinux.org/packages/kalu/)
 
-*   **pamac** — A DBus daemon and Gtk3 frontend for libalpm written in Vala.
+*   **pamac** — Um daemon de DBus e front-end de Gtk3 para libalpm escrito em Vala.
 
 	[https://github.com/manjaro/pamac/](https://github.com/manjaro/pamac/) || [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/)
 
-*   **pcurses** — Package management in a curses frontend
+*   **pcurses** — Gerenciamento de pacotes em um front-end curses
 
 	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
 
-*   **tkPacman** — Depends only on Tcl/Tk and X11, and interacts with the package database via the CLI of *pacman*.
+*   **tkPacman** — Depende apenas de Tcl/Tk e X11 e interage com base de dados de pacotes via a CLI do *pacman*.
 
 	[http://sourceforge.net/projects/tkpacman](http://sourceforge.net/projects/tkpacman) || [tkpacman](https://aur.archlinux.org/packages/tkpacman/)

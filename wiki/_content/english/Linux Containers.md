@@ -38,7 +38,6 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Root login fails](#Root_login_fails)
     *   [5.2 No network-connection with veth in container config](#No_network-connection_with_veth_in_container_config)
-    *   [5.3 Cannot start unprivileged LXC due to newuidmap execution failure](#Cannot_start_unprivileged_LXC_due_to_newuidmap_execution_failure)
 *   [6 See also](#See_also)
 
 ## Privileged containers or unprivileged containers
@@ -98,9 +97,8 @@ Users wishing to run *unprivileged* containers need to complete several addition
 
 Firstly, a kernel is required that has support for **User Namespaces**. However, due to more general security concerns, the default Arch kernel does ship with User Namespaces enabled only for the *root* user. You have multiple options to use a kernel with `CONFIG_USER_NS` and thereby create *unprivileged* containers:
 
-*   Use [linux](https://www.archlinux.org/packages/?name=linux) (v4.14.5 or later) and start your unprivileged containers only as *root*
-*   Use [linux](https://www.archlinux.org/packages/?name=linux) (v4.14.5 or later) and enable the *sysctl* setting `kernel.unprivileged_userns_clone` to allow normal users to run unprivileged containers. This can be done for the current session with `sysctl kernel.unprivileged_userns_clone=1` and can be made permanent with [sysctl.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5)
-*   Install the [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) kernel package along-side the default [linux](https://www.archlinux.org/packages/?name=linux) kernel. When you wish to run unprivileged LXD containers, boot with [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) by selecting it in the bootloader. [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) is compiled with `CONFIG_USER_NS`. Otherwise, run with [linux](https://www.archlinux.org/packages/?name=linux) as normal.
+*   Use [linux](https://www.archlinux.org/packages/?name=linux) (v4.14.5 or later) or [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) and start your unprivileged containers only as *root*
+*   Use [linux](https://www.archlinux.org/packages/?name=linux) (v4.14.5 or later) or [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) and enable the *sysctl* setting `kernel.unprivileged_userns_clone` to allow normal users to run unprivileged containers. This can be done for the current session with `sysctl kernel.unprivileged_userns_clone=1` and can be made permanent with [sysctl.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5)
 *   Install the [linux-userns](https://aur.archlinux.org/packages/linux-userns/) or [linux-lts-userns](https://aur.archlinux.org/packages/linux-lts-userns/) packages from the [AUR](/index.php/AUR "AUR"). Both are compiled with `CONFIG_USER_NS`, the latter being the Long-Term Support version.
 *   Compile and install your own custom kernel with `CONFIG_USER_NS` enabled. See [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System") for more information on compiling a custom kernel.
 
@@ -475,18 +473,6 @@ lxc.net.0.link = `bridge`
 ```
 
 And then assign your IP through your preferred method **inside** the container, see also [Network configuration#Configure the IP address](/index.php/Network_configuration#Configure_the_IP_address "Network configuration").
-
-### Cannot start unprivileged LXC due to newuidmap execution failure
-
-Unprivileged LXC cannot start with the current [shadow](https://www.archlinux.org/packages/?name=shadow) package, because the *newuidmap* and *newgidmap* binaries do not have the *setuid* bit.
-
-```
-$ chmod u+s /usr/bin/newuidmap
-$ chmod u+s /usr/bin/newgidmap
-
-```
-
-This is a bug in upstream but still not cherry-picked in official repository
 
 ## See also
 

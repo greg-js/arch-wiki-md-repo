@@ -4,7 +4,6 @@
 *   [2 Instalace](#Instalace)
     *   [2.1 Standardní](#Standardn.C3.AD)
     *   [2.2 Zdrojové kódy](#Zdrojov.C3.A9_k.C3.B3dy)
-    *   [2.3 Rozšíření](#Roz.C5.A1.C3.AD.C5.99en.C3.AD)
 *   [3 Spouštění](#Spou.C5.A1t.C4.9Bn.C3.AD)
 *   [4 Nastavení](#Nastaven.C3.AD)
     *   [4.1 Nastavení awesome](#Nastaven.C3.AD_awesome)
@@ -43,15 +42,6 @@ a následně se řídit instrukcemi v README, nebo můžete využít [awesome-gi
 
 ```
 $ yaourt -S awesome-git
-
-```
-
-## Rozšíření
-
-Pokud budete chtít využít knihovnu <tt>wicked</tt>, která obsahuje některé nejběžnější widgety, pak můžete využít [wicked-git](https://aur.archlinux.org/packages/wicked-git/) z AUR:
-
-```
-$ yaourt -S wicked-git
 
 ```
 

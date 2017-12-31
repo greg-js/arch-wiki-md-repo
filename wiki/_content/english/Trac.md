@@ -33,7 +33,7 @@ Initialize an environment
 
 The environment configuration can be found at `/srv/tracenv/conf/trac.ini`.
 
-### Configure the [systemd](/index.php/Systemd "Systemd") Service File
+### Configure the systemd Service File
 
 A default service file is located at `/usr/lib/systemd/system/tracd.service`. Copy this file to `/etc/systemd/system/tracd.service`, and edit it to point to your new environment. The `ExecStart` entry should look something like this:
 

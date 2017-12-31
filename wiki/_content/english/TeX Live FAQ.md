@@ -1,12 +1,17 @@
+Related articles
+
+*   [TeX Live](/index.php/TeX_Live "TeX Live")
+*   [TeX Live and CJK](/index.php/TeX_Live_and_CJK "TeX Live and CJK")
+*   [LaTeX](/index.php/LaTeX "LaTeX")
+
 Frequently asked qustions about TeX, TeXLive.
 
 ## Contents
 
 *   [1 General questions](#General_questions)
-    *   [1.1 Q: Where should I start? Resources?](#Q:_Where_should_I_start.3F_Resources.3F)
-    *   [1.2 Q: How can I access Tex Live documentation?](#Q:_How_can_I_access_Tex_Live_documentation.3F)
-    *   [1.3 Q: I want LaTeX to do something special, and I am pretty sure someone before me had to have the same problem.](#Q:_I_want_LaTeX_to_do_something_special.2C_and_I_am_pretty_sure_someone_before_me_had_to_have_the_same_problem.)
-    *   [1.4 Q: I want to read more! More! I said more!](#Q:_I_want_to_read_more.21_More.21_I_said_more.21)
+    *   [1.1 Q: How can I access Tex Live documentation?](#Q:_How_can_I_access_Tex_Live_documentation.3F)
+    *   [1.2 Q: I want LaTeX to do something special, and I am pretty sure someone before me had to have the same problem.](#Q:_I_want_LaTeX_to_do_something_special.2C_and_I_am_pretty_sure_someone_before_me_had_to_have_the_same_problem.)
+    *   [1.3 Q: I want to read more! More! I said more!](#Q:_I_want_to_read_more.21_More.21_I_said_more.21)
 *   [2 Tricks with LaTeX](#Tricks_with_LaTeX)
     *   [2.1 Q: I need/want to use some funky bibliography/references format.](#Q:_I_need.2Fwant_to_use_some_funky_bibliography.2Freferences_format.)
 *   [3 TeXlive directory structure and important files](#TeXlive_directory_structure_and_important_files)
@@ -23,10 +28,6 @@ Frequently asked qustions about TeX, TeXLive.
     *   [5.3 Q: Pictures with LaTeX labels - I want GUI! - I want pictures fast!](#Q:_Pictures_with_LaTeX_labels_-_I_want_GUI.21_-_I_want_pictures_fast.21)
 
 ## General questions
-
-### Q: Where should I start? Resources?
-
-For an introduction to LaTeX, I recommend "The not so Short Introduction to LaTeX" by Tobias Oetiker. Originally German, this document has been translated to many languages, especially to the lingua franca of the Internet, English. Downloadable from CTAN [here](http://www.ctan.org/tex-archive/info/lshort/).
 
 ### Q: How can I access Tex Live documentation?
 
@@ -138,7 +139,7 @@ Which and how type1 fonts are used instead of metafont generated bitmap ones?
 
 ### Q: I just updated texlive and it stopped working.
 
-**A:** While this can be caused by many things, the most common reason for troubles of this sort is the following mechanism of how texlive works: there can be more than one "tree of tex files" which are put "on top of each other" as far as TeX is concerned (see question 3.1 above), and so there can be more copies of "the same" config file around on the disk, and only one of them is used. In particular, if a user makes some config changes, or generates some formats, the resulting "changes" are saved in the local user's tree (`~/.texlive/texmf-{var,config`}), and while these exist, they are **always** preferred over the system files. This implies that even if the system files are updated on texlive update, when a user runs tex, it still uses the "old" files that are in `~/.texlive`.
+**A:** While this can be caused by many things, the most common reason for troubles of this sort is the following mechanism of how texlive works: there can be more than one "tree of tex files" which are put "on top of each other" as far as TeX is concerned (see question 3.1 above), and so there can be more copies of "the same" config file around on the disk, and only one of them is used. In particular, if a user makes some config changes, or generates some formats, the resulting "changes" are saved in the local user's tree ({{ic|~/.texlive/texmf-{var,config}}}), and while these exist, they are **always** preferred over the system files. This implies that even if the system files are updated on texlive update, when a user runs tex, it still uses the "old" files that are in `~/.texlive`.
 
 Hence, if you suspect that this might be the cause of the problem, you can
 

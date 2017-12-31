@@ -17,7 +17,7 @@ Designed to be cross-platform, it is known to work on Linux (x86, PowerPC and AR
 
 [Install](/index.php/Install "Install") the [gstreamer](https://www.archlinux.org/packages/?name=gstreamer) package.
 
-To make GStreamer useful, install the plugins packages you require.
+To make GStreamer useful, install the plugins packages you require. See [official documentation](https://gstreamer.freedesktop.org/documentation/plugins.html) for list of features in each plugin.
 
 *   [gst-libav](https://www.archlinux.org/packages/?name=gst-libav) - Libav-based plugin containing many decoders and encoders.
 *   [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) - Plugins that need more quality, testing or documentation.

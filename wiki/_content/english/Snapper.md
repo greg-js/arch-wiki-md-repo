@@ -251,6 +251,10 @@ There are a couple of packages used for automatically creating snapshots upon a 
 
 	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
 
+*   **snap-pac-grub** — "Additionally updates GRUB entries for [grub-btrfs](https://aur.archlinux.org/packages/grub-btrfs/) after [snap-pac](https://www.archlinux.org/packages/?name=snap-pac) made the snapshots. Also uses [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
+
+	[https://aur.archlinux.org/packages/snap-pac-grub](https://aur.archlinux.org/packages/snap-pac-grub) || [snap-pac-grub](https://aur.archlinux.org/packages/snap-pac-grub/)
+
 *   **pacupg** — "Script that wraps package and AUR upgrades in btrfs snapshots and provides an easy way to roll them back."
 
 	[https://github.com/crossroads1112/bin/tree/master/pacupg](https://github.com/crossroads1112/bin/tree/master/pacupg) || [pacupg](https://aur.archlinux.org/packages/pacupg/)

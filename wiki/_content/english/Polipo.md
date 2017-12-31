@@ -1,4 +1,4 @@
-**Warning:** Polipo is no longer maintained, It's recommended to use another solution (squid, privoxy...) instead.
+**Warning:** Polipo is no longer maintained, It's recommended to use another solution ([Squid](/index.php/Squid "Squid"), [Privoxy](/index.php/Privoxy "Privoxy")...) instead.
 
 From [Polipo's site](http://www.pps.jussieu.fr/~jch/software/polipo/):
 

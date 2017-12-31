@@ -215,7 +215,7 @@ saves the screenshot in a filename with the current year, month, date, hours, mi
 
 See [scrot(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/scrot.1) for more information. You can simply automate the file to uploaded like so [[1]](https://github.com/kaihendry/Kai-s--HOME/tree/master/bin).
 
-**Note:** According to [this thread](http://comments.gmane.org/gmane.comp.misc.suckless/6901), `scrot -s` does not work when run using a shortcut in [dwm](https://aur.archlinux.org/packages/dwm/) (defined in `config.def.c`/`config.c`).
+**Note:** In some window managers ([dwm](https://aur.archlinux.org/packages/dwm/), [xmonad](https://www.archlinux.org/packages/?name=xmonad) and possibly others) `scrot -s` does not work properly when running via window manager's keyboard shortcut, this can be worked around by prepending scrot invocation with a short pause `sleep 0.2; scrot -s`.
 
 ### escrotum
 

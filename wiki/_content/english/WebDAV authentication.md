@@ -1,16 +1,4 @@
-## Contents
-
-*   [1 Goals](#Goals)
-    *   [1.1 Required packages](#Required_packages)
-*   [2 WebDav Configuration](#WebDav_Configuration)
-    *   [2.1 Step 1: Edit /etc/httpd/conf/httpd.conf](#Step_1:_Edit_.2Fetc.2Fhttpd.2Fconf.2Fhttpd.conf)
-    *   [2.2 Step 2: Create needed directories and assign permissions](#Step_2:_Create_needed_directories_and_assign_permissions)
-    *   [2.3 Step 3: Authentication](#Step_3:_Authentication)
-    *   [2.4 Step 4: Restart apache](#Step_4:_Restart_apache)
-
-## Goals
-
-The goal of this how to use simple authentication with WebDAV. Please refer to [WebDAV](/index.php/WebDAV "WebDAV") on setting up WebDAV.
+This article outlines how to use simple authentication with [WebDAV](/index.php/WebDAV "WebDAV").
 
 ### Required packages
 
@@ -19,7 +7,7 @@ The goal of this how to use simple authentication with WebDAV. Please refer to [
 
 ## WebDav Configuration
 
-### Step 1: Edit /etc/httpd/conf/httpd.conf
+1) Edit `/etc/httpd/conf/httpd.conf`:
 
 ```
 DAVLockDB /var/log/httpd/DavLock/DavLockDB
@@ -33,7 +21,7 @@ Require user foo
 
 ```
 
-### Step 2: Create needed directories and assign permissions
+2) Create needed directories and assign permissions
 
 ```
 # mkdir -p /var/log/httpd/DavLock
@@ -44,7 +32,7 @@ Require user foo
 
 ```
 
-### Step 3: Authentication
+3) Authentication
 
 There are numerous different protocols you can use:
 
@@ -75,6 +63,4 @@ require user foo
 
 ```
 
-### Step 4: Restart apache
-
-Restart `httpd.service` to apply any changes.
+4) Restart apache (`httpd.service`) to apply the changes.

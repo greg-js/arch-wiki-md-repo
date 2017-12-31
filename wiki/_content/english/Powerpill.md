@@ -37,7 +37,7 @@ $ reflector -p rsync
 
 ```
 
-Alternatively, you can find the `*n*` fastest servers with the flag `-f *n*`, and the as the `*m*` with the flag `-l *m'*`*:*
+Alternatively, you can find the `*n*` fastest servers with the flag `-f *n*`, and the `*m*` most recently synchronized servers with the flag `-l *m*`:
 
 ```
 $ reflector -p rsync -f *n* -l *m*
@@ -88,15 +88,7 @@ In case you get an [err] for <repo>.db.sig files:
    85eb3d|ERR |       0B/s|/var/lib/pacman/sync/community.db.sig
 
 ```
-
-It is because signature files are missing for that repo and you have not set:
-
-```
-   SigLevel = PackageRequired
-
-```
-
-explicity in `/etc/pacman.conf` as explained in this post [Arch forum post](https://bbs.archlinux.org/viewtopic.php?pid=1254940#p1254940)
+It is because signature files are missing for that repo and you have not set `SigLevel = PackageRequired` explicitly in `/etc/pacman.conf` as explained in this [Arch forum post](https://bbs.archlinux.org/viewtopic.php?pid=1254940#p1254940)
 
 ## See also
 

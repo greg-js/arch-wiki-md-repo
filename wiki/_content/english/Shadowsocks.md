@@ -1,4 +1,4 @@
-[Shadowsocks](http://shadowsocks.org) is a lightweight socks5 proxy, Originally written in Python.
+[Shadowsocks](https://shadowsocks.org/en/) is a lightweight socks5 proxy, originally written in Python.
 
 ## Contents
 

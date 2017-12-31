@@ -101,7 +101,7 @@ Estas distribuciones ofrecen una amplia gama de ventajas y fortalezas y pueden s
 
 *   Arch es rolling release, mientras que Debian Stable se libera con paquetes *«frozen»*. Debian unstable es rolling.
 
-*   Debian está disponible para muchas arquitecturas, incluyendo alpha, arm, hppa, i386, x86_64, ia64, m68k, mips, mipsel, powerpc, s390 y sparc, mientras que Arch está oficialmente disponible para i686 y x86_64, con las rama de la comunidad para arm (para Raspberry Pi por ejemplo) solamente.
+*   Debian está disponible para muchas arquitecturas, incluyendo alpha, ARM, hppa, i386, x86_64, ia64, m68k, mips, mipsel, powerpc, s390 y sparc, mientras que Arch está oficialmente disponible únicamente para x86_64\. Además de esta, existen versiones no oficiales mantenidas por la comunidad para las arquitecturas ARM y i686.
 
 *   Arch ofrece un apoyo más eficaz para compilaciones personalizadas, paquetes instalables desde fuentes externas, con un sistema de paquetes compilados ports-like. Debian no ofrece un sistema de puertos, sino que confía en sus grandes repositorios binarios.
 

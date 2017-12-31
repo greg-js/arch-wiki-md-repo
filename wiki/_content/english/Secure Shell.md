@@ -475,7 +475,7 @@ Enjoy your secure tunnel!
 
 X11 forwarding is a mechanism that allows graphical interfaces of X11 programs running on a remote system to be displayed on a local client machine. For X11 forwarding the remote host does not need to have a full X11 system installed, however it needs at least to have *xauth* installed. *xauth* is a utility that maintains `Xauthority` configurations used by server and client for authentication of X11 session ([source](http://xmodulo.com/2012/11/how-to-enable-x11-forwarding-using-ssh.html)).
 
-**Warning:** X11 forwarding has important security implications which should be at least acknowledged by reading relevant sections of [ssh(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ssh.1), [sshd_config(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5), and [ssh_config(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ssh_config.5) manual pages. See also [a short writeup](https://security.stackexchange.com/questions/14815/security-concerns-with-x11-forwarding)
+**Warning:** X11 forwarding has important security implications which should be at least acknowledged by reading relevant sections of [ssh(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ssh.1), [sshd_config(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5), and [ssh_config(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ssh_config.5) manual pages. See also [this StackExchange question.](https://security.stackexchange.com/questions/14815/security-concerns-with-x11-forwarding)
 
 #### Setup
 

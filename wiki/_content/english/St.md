@@ -14,11 +14,12 @@
         *   [3.1.1 DEL-Key not working properly in some Application](#DEL-Key_not_working_properly_in_some_Application)
     *   [3.2 Vim](#Vim)
         *   [3.2.1 The background colour of text in *vim* will not fill in anything that is not a character](#The_background_colour_of_text_in_vim_will_not_fill_in_anything_that_is_not_a_character)
+        *   [3.2.2 256color and truecolor support not working in tmux or otherwise](#256color_and_truecolor_support_not_working_in_tmux_or_otherwise)
 *   [4 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [st-git](https://aur.archlinux.org/packages/st-git/) package.
+[Install](/index.php/Install "Install") the [st](https://aur.archlinux.org/packages/st/) or the [st-git](https://aur.archlinux.org/packages/st-git/) package.
 
 ## Configuration
 
@@ -172,6 +173,30 @@ if &term =~ '256color'
 endif
 
 ```
+
+#### 256color and truecolor support not working in tmux or otherwise
+
+First, make sure you are not setting and exporting the value of `TERM` in your `~/.bashrc` as mentioned in this [thread](https://bbs.archlinux.org/viewtopic.php?pid=1755862#p1755862)
+
+**Note:** Please do not explicitly set `TERM`. Do it right by setting the `default-terminal` setting in your `tmux.conf`
+
+Second, make sure the version of `vim` you are using is **`>=7.4.1799`**, which is when `termguicolors` was added.
+
+Finally, add the following to `~/.vimrc`:
+
+```
+set t_8f=^[[38;2;%lu;%lu;%lum        " set foreground color
+set t_8b=^[[48;2;%lu;%lu;%lum        " set background color
+colorscheme Tomorrow-Night-Eighties
+set t_Co=256                         " Enable 256 colors
+set termguicolors                    " Enable GUI colors for the terminal to get truecolor
+
+```
+
+**Note:** `^[` is a literal escape (<Esc>) character that prefixes each of the values for `t_8f` and `t_8b`. It is a single character, which can be reproduced in `vim`. In **INSERT** mode, press `<C-v>-<Esc>` (Control+v then press Esc). You will still be in **INSERT** mode; press <Esc> again to return to **NORMAL** mode.
+**Tip:** It is recommended to set the values for `t_8f` and `t_8b` prior to setting `colorscheme`, `t_Co` and `termguicolors`.
+
+For more information, see the `:help` in `vim` for: `xterm-true-color`, `t_8f`, `t_8b`
 
 ## See also
 

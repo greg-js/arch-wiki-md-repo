@@ -1,4 +1,4 @@
-The Linux kernel's network stack has network traffic control and shaping features. The `iproute2` package installs the `tc` command to control these via the command line.
+The Linux kernel's network stack has network traffic control and shaping features. The [iproute2](https://www.archlinux.org/packages/?name=iproute2) package installs the `tc` command to control these via the command line.
 
 The goal of this article is to show how to shape the traffic by using queueing disciplines. For instance, if you ever had to forbid downloads or torrents on a network that you admin, and not because you were against those services, but because users were "abusing" the bandwidth, then you could use queueing disciplines to allow that kind of traffic and, at the same time, be sure that one user cannot slowdown the entire network.
 

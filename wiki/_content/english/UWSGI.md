@@ -20,19 +20,7 @@ There are alternatives written in Python such as [gunicorn](https://www.archlinu
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [uwsgi](https://www.archlinux.org/packages/?name=uwsgi) package. Note that plugins have to be installed separately:
-
-*   [uwsgi-plugin-cgi](https://www.archlinux.org/packages/?name=uwsgi-plugin-cgi) for CGI support
-*   [uwsgi-plugin-jvm](https://www.archlinux.org/packages/?name=uwsgi-plugin-jvm) for [Java](/index.php/Java "Java") support
-*   [uwsgi-plugin-lua51](https://www.archlinux.org/packages/?name=uwsgi-plugin-lua51) for Lua support
-*   [uwsgi-plugin-mono](https://www.archlinux.org/packages/?name=uwsgi-plugin-mono) for [Mono](/index.php/Mono "Mono") support
-*   [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php) for [PHP](/index.php/PHP "PHP") support
-*   [uwsgi-plugin-psgi](https://www.archlinux.org/packages/?name=uwsgi-plugin-psgi) for Perl support
-*   [uwsgi-plugin-pypy](https://www.archlinux.org/packages/?name=uwsgi-plugin-pypy) for [PyPy](/index.php/PyPy "PyPy") support
-*   [uwsgi-plugin-python](https://www.archlinux.org/packages/?name=uwsgi-plugin-python) for [Python](/index.php/Python "Python") support
-*   [uwsgi-plugin-python2](https://www.archlinux.org/packages/?name=uwsgi-plugin-python2) for Python2 support
-*   [uwsgi-plugin-rack](https://www.archlinux.org/packages/?name=uwsgi-plugin-rack) for [Ruby](/index.php/Ruby "Ruby") Rack support
-*   [uwsgi-plugin-webdav](https://www.archlinux.org/packages/?name=uwsgi-plugin-webdav) for [WebDAV](/index.php/WebDAV "WebDAV") support
+[Install](/index.php/Install "Install") the [uwsgi](https://www.archlinux.org/packages/?name=uwsgi) package. Plugins need to be installed separately (their package names start with `uwsgi-plugin-`).
 
 ## Configuration
 

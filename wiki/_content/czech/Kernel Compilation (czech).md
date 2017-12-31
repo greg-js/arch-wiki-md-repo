@@ -23,7 +23,7 @@ Je zde několik cest k automatizaci ABS v procesu sestavování svého kernelu. 
 
 *   Jsou zde dvě metody popsané na wiki pro použití abs: [Kernel Compilation with ABS](/index.php/Kernel_Compilation_with_ABS "Kernel Compilation with ABS") a [Custom Kernel Compilation with ABS](/index.php/Custom_Kernel_Compilation_with_ABS "Custom Kernel Compilation with ABS"). Obě mají odlišnou filozofii, tak si vyberte, která Vám bude vyhovovat.
 
-*   Najděte uživatele, který navrhl balíček v AUR. Například tento [kernel26parallel](https://aur.archlinux.org/packages/kernel26parallel/) funguje dobře.
+*   Najděte uživatele, který navrhl balíček v AUR.
 
 ## Links
 

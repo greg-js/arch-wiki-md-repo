@@ -1,4 +1,4 @@
-fzf is a general-purpose command-line fuzzy finder.
+[fzf](https://github.com/junegunn/fzf) is a general-purpose command-line fuzzy finder.
 
 ## Contents
 
@@ -7,7 +7,6 @@ fzf is a general-purpose command-line fuzzy finder.
     *   [2.1 bash](#bash)
     *   [2.2 zsh](#zsh)
     *   [2.3 fish](#fish)
-*   [3 See also](#See_also)
 
 ## Installation
 
@@ -48,8 +47,3 @@ end
 ```
 
 fzf completion in fish can be enabled with custom functions: [https://github.com/junegunn/fzf/wiki/Examples-(fish)](https://github.com/junegunn/fzf/wiki/Examples-(fish))
-
-## See also
-
-*   [https://github.com/junegunn/fzf](https://github.com/junegunn/fzf) - Development page
-*   [https://github.com/junegunn/fzf/wiki](https://github.com/junegunn/fzf/wiki) - The wiki with customization examples.

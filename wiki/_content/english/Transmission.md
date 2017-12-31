@@ -26,7 +26,7 @@
 
 There are several options:
 
-*   [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) - daemon, with [CLI](https://en.wikipedia.org/wiki/Command-line_interface "wikipedia:Command-line interface"), and [#Web Interface](#Web_Interface).
+*   [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) - daemon, with CLI, and [#Web Interface](#Web_Interface).
 *   [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) - GTK+ 3 package.
 *   [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) - Qt5 package.
 *   [transmission-remote-cli-git](https://aur.archlinux.org/packages/transmission-remote-cli-git/) - Curses interface for the daemon.

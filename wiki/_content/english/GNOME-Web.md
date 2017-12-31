@@ -2,7 +2,7 @@ Related articles
 
 *   [GNOME](/index.php/GNOME "GNOME")
 
-Web is the default web browser for [GNOME](https://live.gnome.org/). Web provides a simple and minimalist interface for accessing the internet. Whilst it is developed primarily for GNOME, Web works acceptably in other [desktop environments](/index.php/Desktop_environments "Desktop environments") as well.
+Web is the default web browser for [GNOME](/index.php/GNOME "GNOME"). Web provides a simple and minimalist interface for accessing the internet. Whilst it is developed primarily for GNOME, Web works acceptably in other [desktop environments](/index.php/Desktop_environments "Desktop environments") as well.
 
 **Note:** Web was known as [Epiphany](http://projects.gnome.org/epiphany/) prior to version 3.4\. The application was given new descriptive names, one for each supported language. The name *Epiphany* is still used in numerous places such as the executable name, some package names, some desktop entries, and some GSettings schemas.
 
@@ -11,13 +11,12 @@ Web is the default web browser for [GNOME](https://live.gnome.org/). Web provide
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Blocking advertisements](#Blocking_advertisements)
-        *   [2.1.1 Managing Subscriptions](#Managing_Subscriptions)
-    *   [2.2 Web Apps](#Web_Apps)
-*   [3 Plugins](#Plugins)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Font hinting](#Font_hinting)
-    *   [4.2 No HTML5 video](#No_HTML5_video)
-*   [5 See also](#See_also)
+    *   [2.2 Web applications](#Web_applications)
+    *   [2.3 Plugins](#Plugins)
+    *   [2.4 Custom stylesheet](#Custom_stylesheet)
+    *   [2.5 Fonts](#Fonts)
+    *   [2.6 Video](#Video)
+*   [3 See also](#See_also)
 
 ## Installation
 
@@ -27,49 +26,64 @@ Web can be installed by [installing](/index.php/Install "Install") the [epiphany
 
 ### Blocking advertisements
 
-You can enable filtering by unchecking "Allow advertisements" in application preferences. By default, this will enable the [EasyList](https://easylist-downloads.adblockplus.org/easylist.txt) list and is periodically refreshed.
+Enabled by default, you can disable it by unchecking **Try blocking ads** in **Preferences**. EasyList, EasyPrivacy and Fanboy-annoyance are default blocking lists. All lists are periodically refreshed.
 
 **Note:** Due to some missing features, for example element hiding, Web misses to block/hide some ads. See the [related bugreport](https://bugzilla.gnome.org/show_bug.cgi?id=757824) for progress.
 
-#### Managing Subscriptions
+To get list of currently enabled filters:
 
-Create the file `~/.config/epiphany/adblock/filters.list` and populate it with URLs (see [EasyList](https://easylist.to/) and [Known Adblock Plus subscriptions](https://adblockplus.org/en/subscriptions)) in a semicolon formatted list:
-
- `/home/archie/.config/epiphany/adblock/filters.list` 
 ```
-https://easylist.to/easylist/easylist.txt;
-https://easylist-downloads.adblockplus.org/easylistdutch.txt;
-https://easylist.to/easylist/easyprivacy.txt;
-https://easylist.to/easylist/fanboy-annoyance.txt;
-https://easylist-downloads.adblockplus.org/antiadblockfilters.txt;
-https://easylist-downloads.adblockplus.org/adwarefilters.txt;
-https://easylist-downloads.adblockplus.org/malwaredomains_full.txt;
-https://raw.githubusercontent.com/liamja/Prebake/master/obtrusive.txt;
-https://www.fanboy.co.nz/enhancedstats.txt;
+$ gsettings get org.gnome.Epiphany adblock-filters
 
 ```
 
-On next startup, the application fetches the subscriptions and should create a file for each entry as `~/.config/epiphany/adblock/*32-hex*`.
+To set new list of filters, for example [uBlock Origin default lists](https://github.com/gorhill/uBlock/wiki/Blocking-mode:-easy-mode):
 
-### Web Apps
+```
+$ gsettings set org.gnome.Epiphany adblock-filters "['https://easylist.to/easylist/easylist.txt', 'https://easylist.to/easylist/easyprivacy.txt', 'https://easylist.to/easylist/fanboy-annoyance.txt', 'https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=1&mimetype=plaintext', 'https://www.malwaredomainlist.com/hostslist/hosts.txt', 'https://mirror.cedia.org.ec/malwaredomains/justdomains']"
 
-Web can add *web app* launchers to GNOME Shell. To manage and remove them, navigate to `about:applications` in Web.
+```
 
-## Plugins
+See [EasyList](https://easylist.to/) and [Known Adblock Plus subscriptions](https://adblockplus.org/en/subscriptions)) for some of the popular ad blocking lists.
+
+### Web applications
+
+Web can create web applications out of websites and add them to desktop menu. To configure and remove them enter `about:applications` in the address bar.
+
+### Plugins
 
 See the main article: [Browser plugins](/index.php/Browser_plugins "Browser plugins")
 
 To find out what plugins are installed/enabled, enter `about:plugins` in the address bar.
 
-## Troubleshooting
+### Custom stylesheet
 
-### Font hinting
+Web supports custom stylesheet you can enable under **Fonts and style** in **Preferences**.
 
-Web does not respect GNOME hinting settings, but respects Fontconfig one. Check [Font configuration](/index.php/Font_configuration "Font configuration") for further instructions.
+Use example below to set new tab page layout and colors according to Adwaita dark variant:
 
-### No HTML5 video
+ `~/.config/epiphany/user-stylesheet.css` 
+```
+#overview {
+  background-color: #2E3436 !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  position: fixed !important;
+}
 
-Install [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) for HTML5 H264 and WebM videos support.
+#overview .overview-title {
+  color: white !important;
+}
+
+```
+
+### Fonts
+
+Web does not check GNOME font settings, but checks [Font configuration](/index.php/Font_configuration "Font configuration").
+
+### Video
+
+See [GStreamer](/index.php/GStreamer "GStreamer") for required plugin installation.
 
 ## See also
 

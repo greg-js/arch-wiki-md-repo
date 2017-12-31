@@ -1,14 +1,12 @@
 [XWiki](http://www.xwiki.org) is an open-source enterprise-ready wiki written in Java, with a focus on extensibility.
 
-You may also be interested in [Foswiki](/index.php/Foswiki "Foswiki"), which caters to similar needs, but is written in Perl.
-
 ## Installation
 
 Feel free to follow along on the [XWiki Installation Guide](http://platform.xwiki.org/xwiki/bin/view/AdminGuide/Installation). These instructions assume you will be using [Tomcat](/index.php/Tomcat "Tomcat") and [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"). It should not be too difficult to apply these guidelines to other combinations.
 
 *   Install [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
 *   For easier PostgreSQL administration, install [phpPgAdmin](/index.php/PhpPgAdmin "PhpPgAdmin").
-*   Install [Tomcat 7](/index.php/Tomcat "Tomcat"). (Do not forget `tomcat-native`.)
+*   Install [Tomcat 7](/index.php/Tomcat "Tomcat"). (Do not forget [tomcat-native](https://www.archlinux.org/packages/?name=tomcat-native).)
 *   Download the XWiki WAR file.
 *   Rename the WAR file to `xwiki`.
 *   Move the WAR file into the `/var/lib/tomcat7/webapps` directory.

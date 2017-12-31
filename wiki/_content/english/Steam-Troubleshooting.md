@@ -48,6 +48,7 @@ Related articles
 *   [24 "Needs to be online" error](#.22Needs_to_be_online.22_error)
 *   [25 Steamlink cannot find host computer](#Steamlink_cannot_find_host_computer)
 *   [26 Steam won't remember password](#Steam_won.27t_remember_password)
+*   [27 Steam license problem with playing videos](#Steam_license_problem_with_playing_videos)
 
 ## Debugging Steam
 
@@ -545,3 +546,9 @@ $ chmod -w ~/.steam/registry.vdf
 ```
 
 This will make the file read-only so Steam cannot edit it, and thus not log you out.
+
+## Steam license problem with playing videos
+
+Steam uses googles widevine DRM for some videos. When this is not installed an error message saying "This video requires a license to play which cannot be retrieved. This may be a temporary network condition. Please restart the video to try again." will appear
+
+To solve this issue follow the steps explained here: [https://support.steampowered.com/kb_article.php?ref=8699-OASD-1871#15](https://support.steampowered.com/kb_article.php?ref=8699-OASD-1871#15)

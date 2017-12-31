@@ -44,7 +44,7 @@ $ namcap -i *filename*
 
 ```
 
-You can also see the namcap(1) manual by typing *man namcap* at the command line.
+For more info on usage, see the man page [namcap(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/namcap.1).
 
 ## Understanding the output
 

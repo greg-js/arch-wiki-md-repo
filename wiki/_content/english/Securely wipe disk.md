@@ -37,6 +37,7 @@ Wiping a disk is done by writing new data over every single bit.
     *   [6.4 shred](#shred)
     *   [6.5 Badblocks](#Badblocks)
     *   [6.6 hdparm](#hdparm)
+*   [7 See also](#See_also)
 
 ## Common use cases
 
@@ -395,4 +396,6 @@ Some drives support **Enhanced Secure Erase**, which uses distinct patterns defi
 
 For detailed instructions on using ATA Secure Erase, see the [Linux ATA wiki](https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase).
 
-See [the tools list](http://superuser.com/questions/19326/how-to-wipe-free-disk-space-in-linux) for more info.
+## See also
+
+*   [Wipe free space in Linux](http://superuser.com/questions/19326/how-to-wipe-free-disk-space-in-linux)

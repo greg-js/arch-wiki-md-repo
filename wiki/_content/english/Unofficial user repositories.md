@@ -295,6 +295,7 @@ Server = https://r.mikroskeem.eu
 
 *   **Maintainer:** Marc Mettke <marc@itmettke.de>
 *   **Description:** Auto Build of Most Popular AUR Packages
+*   **Archive:** [https://repo.itmettke.de/aur-archive/](https://repo.itmettke.de/aur-archive/)
 *   **Key-ID:** 7448C890582975CD
 
 ```

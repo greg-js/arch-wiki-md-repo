@@ -1059,6 +1059,7 @@ You can use the following website to get your device's coordinates along with a 
 47.547837,-121.995722 "jrmasters" # Issaquah, Washington, USA
 39.45326,-0.46449 "manolollr" # Alaquàs, València, Spain
 31.796213,-106.445323 "Germanicus" # El Paso, Texas, USA
-44.073700, -123.160792 "Tydyn Rain St. Clair (tydynrain)" # Eugene, Oregon, USA
+44.073700,-123.160792 "Tydyn Rain St. Clair (tydynrain)" # Eugene, Oregon, USA
+9.197134,-79.281094 "c4explosive" # Panama, Panama
 
 ```

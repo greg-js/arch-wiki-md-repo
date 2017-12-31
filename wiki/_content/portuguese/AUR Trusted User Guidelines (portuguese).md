@@ -105,13 +105,13 @@ Quando você quiser publicar (**release**) um pacote, primeiro copie o pacote ju
 
 ***Nota:** Em alguns casos, especialmente para pacotes do [community], um TU de x86_64 pode incrementar o pkgrel por .1 (e não por +1). Isso indica que a alteração do PKGBUILD é especificamente de x86_64 e mantenedores de i686 **não devem** recompilar o pacote para i686\. Quando o TU decide incrementar o pkgrel, isso deveria ser feito com o acréscimo normal de +1\. Porém, um pkgrel=2.1 anterior não deve se tornar pkgrel=3.1 quando incrementado pelo TU e deve ser pkgrel=3\. Em resumo, mantenha os lançamentos com ponto (.) exclusivamente para TUs de x86_64 para evitar confusão.*
 
-'**Resumo da atualização de pacote:**
+**Resumo da atualização de pacote:**
 
 *   **Atualizar** o diretório de pacote (`svn update algum-pacote`)
 *   **Mudar** para o diretório trunk do pacote (`cd algum-pacote/trunk`)
 *   **Editar** o PKGBUILD, fazer alterações necessárias, atualizar o checksums com `updpkgsums`.
 *   **Compilar** o pacote: com `makechrootpkg` ou `extra-i686-build` e `extra-x86_64-build`. É **obrigatório** compilar em um [*chroot* limpo](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot").
-*   **[Namcap](/index.php/Namcap "Namcap")** no PKGBUILD e no binário `pkg.tar.gz`.
+*   **[Namcap](/index.php/Namcap_(Portugu%C3%AAs) "Namcap (Português)")** no PKGBUILD e no binário `pkg.tar.gz`.
 *   **Commit**, **Copiar** e **Tag** o pacote usando `communitypkg "mensagem de commit"`. Isso automatiza o seguinte:
     *   Fazer **commit** das alterações no trunk: `svn commit`.
     *   **Assinar** o pacote: `gpg --detach-sign *.pkg.tar.xz`.

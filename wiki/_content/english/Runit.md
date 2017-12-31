@@ -1,3 +1,7 @@
+Related articles
+
+*   [init](/index.php/Init "Init")
+
 Runit is a process supervisor. It includes `runit-init`, which can replace sysv's init as pid1, or can be run from inittab or your init system of choice. Runit's simple collection of tools can be used to build flexible dependency structures and distributed systems, or blazing fast parallel runlevel changes (including the initial boot).
 
 See [G. Pape's Runit Page](http://smarden.org/runit/) for a complete description, but follow the installation instructions below for your Arch system.
@@ -6,12 +10,13 @@ See [G. Pape's Runit Page](http://smarden.org/runit/) for a complete description
 
 *   [1 Installation](#Installation)
     *   [1.1 Using runit alongside systemd](#Using_runit_alongside_systemd)
-    *   [1.2 Replacing init with runit-init](#Replacing_init_with_runit-init)
+        *   [1.1.1 Using BusyBox's implementation](#Using_BusyBox.27s_implementation)
+        *   [1.1.2 Using standard runit](#Using_standard_runit)
 *   [2 Using runit](#Using_runit)
-    *   [2.1 The Tools](#The_Tools)
-    *   [2.2 The Extras](#The_Extras)
-    *   [2.3 Run Levels and Service Directories](#Run_Levels_and_Service_Directories)
-    *   [2.4 General Use](#General_Use)
+    *   [2.1 The tools](#The_tools)
+    *   [2.2 The extras](#The_extras)
+    *   [2.3 Run levels and service directories](#Run_levels_and_service_directories)
+    *   [2.4 General use](#General_use)
 *   [3 User Level Services](#User_Level_Services)
     *   [3.1 Add a user level service tree](#Add_a_user_level_service_tree)
     *   [3.2 Create an X session service for a user](#Create_an_X_session_service_for_a_user)
@@ -19,32 +24,59 @@ See [G. Pape's Runit Page](http://smarden.org/runit/) for a complete description
     *   [4.1 Running a read-only Postgresql Slave database in-memory](#Running_a_read-only_Postgresql_Slave_database_in-memory)
         *   [4.1.1 Requirements](#Requirements)
         *   [4.1.2 Instructions](#Instructions)
+*   [5 See also](#See_also)
 
 ## Installation
 
 ### Using runit alongside systemd
 
+#### Using BusyBox's implementation
+
+[BusyBox](/index.php/BusyBox "BusyBox") provides a minimal implementation of runit that can be used for simple processing supervision needs. First, create symbolic links to the BusyBox binary for the necessary tools that are going to be needed:
+
+```
+# busybox --list | awk '/runsv|chpst|svlog|^sv$/' | xargs -I{} ln -sv /usr/bin/busybox /usr/local/bin/{}
+
+```
+
+Afterwards, a [systemd](/index.php/Systemd "Systemd") unit file can be created in order to run BusyBox's runit when needed:
+
+ `/etc/systemd/system/busybox-runit.service` 
+```
+[Unit]
+Description=Runit service supervision - BusyBox implementation
+Documentation=[http://smarden.org/runit/](http://smarden.org/runit/) [https://busybox.net/downloads/BusyBox.html](https://busybox.net/downloads/BusyBox.html)
+
+[Service]
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/bin"
+ExecStart=/usr/local/bin/runsvdir -P /var/service
+KillSignal=SIGHUP
+KillMode=process
+Restart=always
+SuccessExitStatus=111
+
+[Install]
+WantedBy=multi-user.target
+```
+
+**Note:**
+
+*   This example unit file presupposes that the directory which is going to contain the enabled services is `/var/service`. This path can be changed according to each specific use case.
+*   The `SIGHUP` kill signal is used instead of the default `SIGTERM`, and only on the main *runsvdir* process (thanks to `KillMode=process`) so that processes being controlled by BusyBox's runit implementation are controllably stopped by *runsvdir* before terminating the supervisor. When *runsvdir* ends the processes that are being supervised after receiving a `SIGHUP` signal, it exits with an status code of 111, which needs to be interpreted as a success.
+
+Be sure to create the directory which is going to be supervised by *runsvdir* according to the systemd unit file created. It is also recommended to create a directory in which runit services can be stored (usually `/etc/sv`), and only enabled when needed by creating a symbolic link directed to them from the directory being supervised. See [#General use](#General_use) for more details.
+
+When everything is correctly configured, `busybox-runit.service` can be [enabled and started](/index.php/Systemd#Using_units "Systemd").
+
+#### Using standard runit
+
 It is possible to use runit as a simple process supervisor alongside the default Arch Linux's init system ([systemd](/index.php/Systemd "Systemd")). For this purpose, install [runit-systemd](https://aur.archlinux.org/packages/runit-systemd/), which provides a barebones runit installation without any stage scripts (`/etc/runit/{1..3}`) or runlevels (`/etc/runit/runsvdir/*`), which are generally only useful when using runit as the init system. The package provides a directory (`/var/service`) in which the desired runit services can be put and a systemd unit which starts runit monitoring that directory. Only the services configured in `/var/service` will be supervised by runit. Just [enable and start](/index.php/Systemd#Using_units "Systemd") `runit.service`.
 
 The package [arch-runit-services](https://aur.archlinux.org/packages/arch-runit-services/) provides some example services that can be used. This package puts the services in `/etc/sv`. The services inside can be symlinked to `/var/service` for them to be used.
 
-### Replacing init with runit-init
-
-**Warning:** Arch Linux only has official support for [systemd](/index.php/Systemd "Systemd") as the init system. [[1]](https://lists.archlinux.org/pipermail/arch-general/2015-July/039460.html) When using a different init system, please mention so in support requests.
-
-*   install sysvinit-tools and sysvinit (say Yes to replacing systemd-sysvcompat)
-*   install [runit-musl](https://aur.archlinux.org/packages/runit-musl/) and [runit-run](https://aur.archlinux.org/packages/runit-run/) from the [AUR](/index.php/AUR "AUR")
-*   choose/create a default runlevel (see Run Levels)
-*   add init=/sbin/runit-init to your bootloader's kernel command line
-*   reboot
-
-The [runit-services](https://aur.archlinux.org/packages/runit-services/) package puts services in `/etc/sv` and uses `/usr/bin/rsvlog` as a logger (it's a shell script, take a look and modify to taste, improvements welcome).
-
-[runit-scripts](https://aur.archlinux.org/packages/runit-scripts/) puts many new runlevels and symlinks them to the service directories it creates in `/etc/runit/runsvdir/all`, and uses its own `/usr/bin/nsvlog` script for logging.
-
 ## Using runit
 
-### The Tools
+### The tools
 
 *   `sv` - used for controlling services, getting status of services, and dependency checking.
 *   `chpst` - control of a process environment, including memory caps, limits on cores, data segments, environments, user/group privileges, and more.
@@ -56,7 +88,7 @@ The [runit-services](https://aur.archlinux.org/packages/runit-services/) package
 
 See the manpages for usage details not covered below.
 
-### The Extras
+### The extras
 
 Added by runit-dietlibc and runit-run
 
@@ -76,7 +108,7 @@ Added by runit-scripts
 *   /etc/runit/runsvdir/* - various runlevels
 *   /usr/bin/nsvlog - wrapper meant to be symlinked as 'run' in a log service
 
-### Run Levels and Service Directories
+### Run levels and service directories
 
 Runit uses directories of symlinks to specify runlevels, other than the 3 main ones, which are defined in /etc/runit/1, 2, and 3\.
 
@@ -92,61 +124,67 @@ It only gives gettys on tty2 and tty3, so you will boot to just console scroll a
 
 To go back to the standard arch consoles, remove the link /service/ngetty and link as many /etc/sv/*getty* services you like in /service, or edit the /etc/sv/ngetty/run file to get more getties. Better yet, create your own directory in /etc/runit/runsvdir and add the symlinks you want for just the services you desire. Remember to take any services you start with runit out of DAEMONS in /etc/rc.conf or systemctl disable them, they do not need to be started there, and runit will allow parallel startup without backgrounding them.
 
-### General Use
+### General use
 
-For convenience I'll be using /service as the service directory in these examples. Since this has not been accepted by FHS, it is only made available as a symlink in the runit-run package. This allows importing of /service scripts written by others without as much fuss. If you only install runit-musl, you would use /var/service as your service directory, or make the /service symlink to /var/service yourself.
+In this explanation, `/var/service` is the chosen service directory being supervised by *runsvdir* and `/etc/sv` is the chosen directory for containing the services that can be enabled.
 
-Listing running services
+**Tip:** Specifying the whole path to the service directory can be avoided by setting the [environment variable](/index.php/Environment_variable "Environment variable") `SVDIR` to indicate the path of the service directory. For example, with `SVDIR=/var/service`, `sv status /var/service/*servicename*` becomes `sv status *servicename*`.
 
- `# sv s /service/*` 
+*   Listing running services:
+
+ `# sv status /var/service/*` 
 ```
-   run: /service/agetty-2: (pid 4120) 7998s
-   run: /service/agetty-3: (pid 4119) 7998s
-   run: /service/bougyman: (pid 4465) 7972s
-   run: /service/bougyx: (pid 4135) 7998s; run: log: (pid 4127) 7998s
-   run: /service/cron: (pid 4137) 7998s; run: log: (pid 4122) 7998s
-   run: /service/dialer: (pid 4121) 7998s
-   run: /service/qmail: (pid 4138) 7998s; run: log: (pid 4126) 7998s
-   run: /service/smtpd: (pid 4136) 7998s; run: log: (pid 4125) 7998s
-   run: /service/socklog-klog: (pid 4139) 7998s; run: log: (pid 4132) 7998s
-   run: /service/socklog-unix: (pid 4133) 7998s; run: log: (pid 4124) 7998s
-   run: /service/ssh: (pid 4134) 7998s; run: log: (pid 4123) 7998s
+   run: /var/service/agetty-2: (pid 4120) 7998s
+   run: /var/service/agetty-3: (pid 4119) 7998s
+   run: /var/service/bougyman: (pid 4465) 7972s
+   run: /var/service/bougyx: (pid 4135) 7998s; run: log: (pid 4127) 7998s
+   run: /var/service/cron: (pid 4137) 7998s; run: log: (pid 4122) 7998s
+   run: /var/service/dialer: (pid 4121) 7998s
+   run: /var/service/qmail: (pid 4138) 7998s; run: log: (pid 4126) 7998s
+   run: /var/service/smtpd: (pid 4136) 7998s; run: log: (pid 4125) 7998s
+   run: /var/service/socklog-klog: (pid 4139) 7998s; run: log: (pid 4132) 7998s
+   run: /var/service/socklog-unix: (pid 4133) 7998s; run: log: (pid 4124) 7998s
+   run: /var/service/ssh: (pid 4134) 7998s; run: log: (pid 4123) 7998s
 
 ```
 
-Services should live in /etc/sv; however, the runit-scripts package puts a bunch of common ones in /etc/runit/runsvdir/all. We're working to replace/convert these to /etc/sv in the runit-services-git package.
+*   Create and start a service:
 
-Create and Start a service:
+ `# ln -s /etc/sv/ssh /var/service/ssh` 
 
- `# ln -s /etc/sv/ssh /service/ssh` 
+*   Stops a service immediately (would still start on next boot):
 
-Stops a service immediately (would still start on next boot):
+ `# sv down /var/service/ssh` 
 
- `# sv d ssh` 
+*   Starts a service which has been previously stopped, or which is configured to not start automatically:
 
-Restarts a service:
+ `# sv up /var/service/ssh` 
 
- `# sv t ssh` 
+*   Restarts a service:
 
-Reloads a service:
+ `# sv restart /var/service/ssh` 
 
- `# sv h ssh` 
+*   Reloads a service:
 
-Shows status of a service and it's log service:
+ `# sv reload /var/service/ssh` 
 
- `# sv s ssh` 
+*   Shows status of a service and it's log service:
 
-Stops a service, and disables it (won't start next boot):
+ `# sv status /var/service/ssh` 
 
- `# rm /service/ssh` 
+*   Stops a service, and disables it (won't start next boot):
 
-Refer to man sv for more details.
+ `# rm /var/service/ssh` 
 
-Shut down the system
+Refer to [sv(8)](http://smarden.org/runit/sv.8.html) for more details.
+
+The information that follows is only applicable when using runit as the init system.
+
+*   Shut down the system:
 
  `# runit-init 0` 
 
-Reboot the system
+*   Reboot the system:
 
  `# runit-init 6` 
 
@@ -298,3 +336,7 @@ sv -v i pg_shm
  `# sv s postgresql pg_mem` 
 
 That's it, you'll have a replica of your postgresql on-disk database published on port 5434, in read-only mode from the memory space utilized from /dev/shm.
+
+## See also
+
+*   [Running runit on Amazon Linux AMI](https://evasive.ru/50a3904206c52447aa1fa5d90a8382a3.html). Contains instructions related to setting up BusyBox's implementation of runit.

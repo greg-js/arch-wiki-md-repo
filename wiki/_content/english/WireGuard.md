@@ -8,11 +8,13 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
-    *   [2.1 Server](#Server)
-    *   [2.2 Client](#Client)
+    *   [2.1 Peer A setup](#Peer_A_setup)
+    *   [2.2 Peer B setup](#Peer_B_setup)
+    *   [2.3 Basic checkups](#Basic_checkups)
+    *   [2.4 Persistent configuration](#Persistent_configuration)
 *   [3 Setup a VPN server](#Setup_a_VPN_server)
-    *   [3.1 Server](#Server_2)
-    *   [3.2 Client](#Client_2)
+    *   [3.1 Server](#Server)
+    *   [3.2 Client](#Client)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 DKMS module not available](#DKMS_module_not_available)
 *   [5 Tips and tricks](#Tips_and_tricks)
@@ -31,31 +33,64 @@ $ wg genkey | tee privatekey | wg pubkey > publickey
 
 ```
 
-The following demonstrates how to setup a simple connection between two peers.
+Below commands will demonstrate how to setup a basic tunel between two peers with the following settings:
 
-#### Server
+ Peer A | Peer B |
+| External IP address | 10.10.10.1/24 | 10.10.10.2/24 |
+| Internal IP address | 10.0.0.1/24 | 10.0.0.2/24 |
+| wireguard listening port | UDP/48574 | UDP/39814 |
 
-Setup a server connection that accepts connections from any IP with the correct private key
+#### Peer A setup
 
-```
-$ ip link add dev wg0 type wireguard
-$ ip addr add 10.0.0.1/24 dev wg0
-$ wg set wg0 listen-port 51820 private-key ./privatekey
-$ wg set wg0 peer [client public key] allowed-ips 0.0.0.0/0
-
-```
-
-#### Client
-
-Setup a client to connect with the server.
+This peer will listen on UDP port 48574 and will accept connection from peer B by linking its public key with both its inner and outer IPs addresses.
 
 ```
 $ ip link add dev wg0 type wireguard
 $ ip addr add 10.0.0.1/24 dev wg0
 $ wg set wg0 private-key ./privatekey
-$ wg set wg0 peer [server public key] allowed-ips 10.0.0.1/24 endpoint [server ip]:56104 persistent-keepalive 25
+$ wg set wg0 peer [Peer B public key] allowed-ips 10.0.0.2/32 endpoint 10.10.10.2:39814
 
 ```
+
+#### Peer B setup
+
+As with Peer A, whereas the wireguard daemon is listening on the UDP port 39814 and accept connection from peer A only.
+
+```
+$ ip link add dev wg0 type wireguard
+$ ip addr add 10.0.0.2/24 dev wg0
+$ wg set wg0 private-key ./privatekey
+$ wg set wg0 peer [Peer A public key] allowed-ips 10.0.0.1/32 endpoint 10.10.10.1:48574
+
+```
+
+#### Basic checkups
+
+Invoking the wg command without parameter will give a quick overview of the current configuration.
+
+As an example, when Peer A has been configured we are able to see its identity and its associated peers:
+
+```
+ peer-a$ wg
+ interface: wg0
+   public key: UguPyBThx/+xMXeTbRYkKlP0Wh/QZT3vTLPOVaaXTD8=
+   private key: (hidden)
+   listening port: 48574
+
+ peer: 9jalV3EEBnVXahro0pRMQ+cHlmjE33Slo9tddzCVtCw=
+   endpoint: 10.10.10.2:39814
+   allowed ips: 10.0.0.2/32
+
+```
+
+At this point one could reach the end of the tunnel:
+
+```
+ peer-a$ ping 10.0.0.2
+
+```
+
+#### Persistent configuration
 
 The config can be saved by utilizing `showconf`
 

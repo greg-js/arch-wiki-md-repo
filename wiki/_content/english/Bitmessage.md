@@ -2,14 +2,14 @@ From the [Bitmessage wiki](https://bitmessage.org/wiki/Main_Page):
 
 	*"Bitmessage is a P2P communications protocol used to send encrypted messages to another person or to many subscribers. It is decentralized and trustless, meaning that you need-not inherently trust any entities like root certificate authorities. It uses strong authentication which means that the sender of a message cannot be spoofed, and it aims to hide "non-content" data, like the sender and receiver of messages, from passive eavesdroppers like those running warrantless wiretapping programs."*
 
-Bitmessage may be used independently or with TOR. Using it with TOR has additional security benefits.
+Bitmessage may be used independently or with [Tor](/index.php/Tor "Tor"). Using it with Tor has additional security benefits.
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Set up](#Set_up)
-    *   [2.1 Without TOR](#Without_TOR)
-    *   [2.2 With TOR](#With_TOR)
+    *   [2.1 Without Tor](#Without_Tor)
+    *   [2.2 With Tor](#With_Tor)
 *   [3 Usage](#Usage)
     *   [3.1 Testing](#Testing)
     *   [3.2 Attachments](#Attachments)
@@ -19,11 +19,11 @@ Bitmessage may be used independently or with TOR. Using it with TOR has addition
 
 ## Installation
 
-Install [pybitmessage](https://aur.archlinux.org/packages/pybitmessage/) or [pybitmessage-git](https://aur.archlinux.org/packages/pybitmessage-git/)from the [AUR](/index.php/AUR "AUR"). In order to use it with TOR, install [tor](https://www.archlinux.org/packages/?name=tor) from the official repositories. If you wish to use bitmessage with Thunderbird, install bmwrapper archived in [aur-mirror](https://github.com/felixonmars/aur3-mirror/tree/master/bmwrapper-git). For using the given python script to create magnet links, install the package [python2-bencode](https://aur.archlinux.org/packages/python2-bencode/).
+Install [pybitmessage](https://aur.archlinux.org/packages/pybitmessage/) or [pybitmessage-git](https://aur.archlinux.org/packages/pybitmessage-git/)from the [AUR](/index.php/AUR "AUR"). In order to use it with Tor, install [tor](https://www.archlinux.org/packages/?name=tor) from the official repositories. If you wish to use bitmessage with Thunderbird, install bmwrapper archived in [aur-mirror](https://github.com/felixonmars/aur3-mirror/tree/master/bmwrapper-git). For using the given python script to create magnet links, install the package [python2-bencode](https://aur.archlinux.org/packages/python2-bencode/).
 
 ## Set up
 
-### Without TOR
+### Without Tor
 
 After launching bitmessage (the name of the bitmessage binary is *pybitmessage*) for the first time, disregard any popups and:
 
@@ -32,12 +32,12 @@ After launching bitmessage (the name of the bitmessage binary is *pybitmessage*)
 *   You can use either a passphrase or a random number as the basis for the generation of your address. A random number is better for security and a passphrase is better for convenience (you can recreate your identity more easily with a passphrase than with a random number)
 *   Remember the *address version number* and the *stream number*. These will be useful if you need to re-make your address for any reason (Currently the default address version is 4 and stream number 1 will be fine)
 
-### With TOR
+### With Tor
 
 The same steps apply as above, except that you would need to do the following (ideally before you set up your first identity):
 
 *   Navigate to `Settings > Network Settings` and select SOCKS5 from the *Type* drop down under the Proxy server / Tor section
-*   Next to *Server hostname* enter "localhost" and next to *Port* enter "9050" (If using the TOR browser bundle enter "9150")
+*   Next to *Server hostname* enter "localhost" and next to *Port* enter "9050" (If using the Tor browser bundle enter "9150")
 *   Restart bitmessage
 
 ## Usage

@@ -1,4 +1,4 @@
-[Plone](http://http://plone.org/) is a free and open source content management system built on top of the Zope application server written in [Python](/index.php/Python "Python"). Plone can be used for all kinds of websites, including blogs, internet sites, webshops and intranets. The strengths of Plone are its flexible and adaptable workflow, very good security, extensibility, high usability and flexibility.
+[Plone](http://plone.org/) is a free and open source content management system built on top of the Zope application server written in [Python](/index.php/Python "Python"). Plone can be used for all kinds of websites, including blogs, internet sites, webshops and intranets. The strengths of Plone are its flexible and adaptable workflow, very good security, extensibility, high usability and flexibility.
 
 ## Contents
 

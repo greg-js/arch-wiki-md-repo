@@ -16,7 +16,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Mono_(software) "wikipedia:Mono (
 
 ## Installation
 
-Mono can be [installed](/index.php/Pacman "Pacman") with the package [mono](https://www.archlinux.org/packages/?name=mono).
+[Install](/index.php/Install "Install") the [mono](https://www.archlinux.org/packages/?name=mono) package.
 
 If you need VisualBasic.Net support you have to [install](/index.php/Install "Install") the VisualBasic.Net interpreter with the package [mono-basic](https://aur.archlinux.org/packages/mono-basic/).
 

@@ -98,19 +98,9 @@ There are various methods for installing fonts.
 
 ### Pacman
 
-Fonts and font collections in the enabled repositories can be installed using [pacman](/index.php/Pacman "Pacman"). Available fonts may be found by using:
+Fonts and font collections in the enabled repositories can be installed using [pacman](/index.php/Pacman "Pacman").
 
-```
-$ pacman -Ss font
-
-```
-
-Or to search for `ttf` fonts only:
-
-```
-$ pacman -Ss ttf
-
-```
+Available fonts may be found by [querying packages](/index.php/Pacman#Querying_package_databases "Pacman") (e.g. for `font` or `ttf`).
 
 ### Creating a package
 

@@ -10,7 +10,7 @@ Netatalk is a free, open-source implementation of the Apple Filing Protocol (AFP
 
 ## Installation
 
-Netatalk can be [installed](/index.php/Install "Install") with the [netatalk](https://aur.archlinux.org/packages/netatalk/) package.
+[Install](/index.php/Install "Install") the [netatalk](https://aur.archlinux.org/packages/netatalk/) package.
 
 ## Configuration
 

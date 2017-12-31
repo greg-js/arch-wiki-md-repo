@@ -3,9 +3,9 @@ Related articles
 *   [Wine](/index.php/Wine "Wine")
 *   [Firefox](/index.php/Firefox "Firefox")
 
-Pipelight is a special browser plugin which allows one to use Windows-only plugins inside Linux browsers. The main focus of the project is on Silverlight and its features, such as watching DRM protected videos. It works by creating a bridge between a Windows application, which handles the Windows-only plugin (e.g. Silverlight), and a native Linux browser plugin. The Windows application is run using a patched version of Wine, therefore requiring Pipelight users to move to this version. Pipelight can be used in browsers that support NPAPI plugins. It does **not** work with Chrome/Chromium, Firefox or Opera.
+Pipelight is a special browser plugin which allows one to use Windows-only plugins inside Linux browsers. The main focus of the project is on Silverlight and its features, such as watching DRM protected videos. It works by creating a bridge between a Windows application, which handles the Windows-only plugin (e.g. Silverlight), and a native Linux browser plugin. The Windows application is run using a patched version of Wine, therefore requiring Pipelight users to move to this version. Pipelight can be used in browsers that support NPAPI plugins. It does not work with Chrome/Chromium, Firefox or Opera.
 
-**Tip:** If you are here because you want to watch **Netflix** or **Amazon Video**, you do not need to install Silverlight/Pipelight. It is easier to install [Firefox](/index.php/Firefox "Firefox") or [google-chrome](https://aur.archlinux.org/packages/google-chrome/), which include the Widevine content decryption plugin which satisfies Netflix's DRM requirements.
+**Tip:** If you are here because you want to watch Netflix or Amazon Video, you do not need to install Silverlight/Pipelight. It is easier to install [Firefox](/index.php/Firefox "Firefox") or [google-chrome](https://aur.archlinux.org/packages/google-chrome/), which include the Widevine content decryption plugin which satisfies Netflix's DRM requirements.
 
 ## Contents
 

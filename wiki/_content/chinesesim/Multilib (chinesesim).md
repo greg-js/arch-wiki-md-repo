@@ -31,6 +31,8 @@ Include = /etc/pacman.d/mirrorlist
 
 **Note:** 不要仅运行 `pacman -Sy`, [Arch 不支持部分升级](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance").
 
+**Tip:** 运行 `pacman -Sl multilib` 来列出在*multilib*仓库里的所有软件包，32位库的软件包以 `lib32-` 开头
+
 ## 禁用
 
 要恢复到纯 64 位系统，删除 *multilib*:

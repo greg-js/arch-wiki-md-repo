@@ -1,3 +1,11 @@
+Artigos relacionados
+
+*   [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes")
+*   [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
+*   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
+*   [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
+*   [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
+
 Ao compilar pacotes para o Arch Linux, **siga as diretrizes de empacotamento** abaixo, especialmente se a intenção é **contribuir** com um novo pacote para o Arch Linux. Você também deve ler as páginas de manual do [PKGBUILD](https://archlinux.org/pacman/PKGBUILD.5.html) e do [makepkg](https://archlinux.org/pacman/makepkg.8.html).
 
 ## Contents
@@ -60,7 +68,7 @@ Outros protótipos podem ser encontrados em `/usr/share/pacman` dos pacotes pacm
 *   Se uma nova variável ou uma nova função for absolutamente necessária, **prefixe seu nome com um caractere de sublinhado** (`_`), ex: `_variavelpersonalizada=` 
 *   O campo `packager` do meta-arquivo do pacote pode ser **personalizado** pelo compilador do pacote, modificando a opção apropriada no arquivo `/etc/makepkg.conf` ou, alternativamente, sobrescrevendo-o com a criação de um ~/.makepkg.conf
 *   Todas as mensagens importantes devem ser exibidas durante a instalação usando um **arquivo .install**. Por exemplo, se um pacote precisa de configurações extras para funcionar, as direções devem ser incluídas neste arquivo.
-*   **Dependências** são os erros mais comuns de empacotamento. Por favor, invista um tempo em verificá-las cuidadosamente, por exemplo executando `ldd` em executáveis dinâmicos, verificando ferramentas necessárias por scripts ou olhando documentação do software. O utilitário [namcap](/index.php/Namcap "Namcap") pode lhe ajudar neste assunto. Essa ferramenta pode analisar ambos PKGBUILD e o tarball de pacote resultante e vai avisar você sobre permissões erradas, dependências em falta, dependências redundantes e outros erros comuns.
+*   **Dependências** são os erros mais comuns de empacotamento. Por favor, invista um tempo em verificá-las cuidadosamente, por exemplo executando `ldd` em executáveis dinâmicos, verificando ferramentas necessárias por scripts ou olhando documentação do software. O utilitário [namcap](/index.php/Namcap_(Portugu%C3%AAs) "Namcap (Português)") pode lhe ajudar neste assunto. Essa ferramenta pode analisar ambos PKGBUILD e o tarball de pacote resultante e vai avisar você sobre permissões erradas, dependências em falta, dependências redundantes e outros erros comuns.
 *   Quaisquer **dependências opcionais** que não são necessárias para executar o pacote ou que faça-o funcionar, não devem ser incluídas no vetor **depends**; em vez disso, a informação deve ser adicionada ao vetor **optdepends**:
 
 ```

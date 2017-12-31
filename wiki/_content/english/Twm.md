@@ -66,5 +66,4 @@ You might find that titlebars and menu entries in TWM are extremely large - twic
 *   [twm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/twm.1) man page
 *   "[Sample twmrc](http://www.custompc.plus.com/twm/configs/twmrc09)", *custompc.plus.com*. Retrieved August 12, 2013.
 *   "[Window Managers for X: TWM/VTWM](http://xwinman.org/vtwm.php)", *xwinman.org*. Retrieved October 22, 2009.
-*   "[Google search for twmrc](https://www.google.com/search?q=twmrc)", *google.com*. Retrieved October 22, 2009.
 *   Kask, Eeri. "[TWM -- Revised Edition -- Again](http://lists.x.org/archives/xorg/2010-January/048401.html)", *lists.x.org*, January 3, 2010.

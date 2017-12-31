@@ -22,19 +22,7 @@
 
 ## Usage
 
-Start elinks with
-
-```
-$ elinks
-
-```
-
-or, if you want to start a specific website:
-
-```
-$ elinks foo.bar.org
-
-```
+See [elinks(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/elinks.1).
 
 ### Navigation
 

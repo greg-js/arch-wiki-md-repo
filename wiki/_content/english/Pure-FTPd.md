@@ -1,3 +1,8 @@
+Related articles
+
+*   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
+*   [SCP and SFTP](/index.php/SCP_and_SFTP "SCP and SFTP")
+
 [Pure-FTPd](http://www.pureftpd.org/project/pure-ftpd) is a FTP server designed with security in mind.
 
 ## Contents

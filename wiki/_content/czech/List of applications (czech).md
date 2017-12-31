@@ -106,7 +106,7 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 *   **[Transmission](/index.php/Transmission "Transmission")** — Jednoduchý a snadno použitelný BitTorrent klient s démon verzí a GTK+, Qt GUI, web a CLI front-endy
 
-	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli) [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk) (vzdálení klienti fungují s démonem z -cli balíčku)
+	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli)
 
 #### Grafické rozhraní
 
@@ -122,13 +122,9 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 	[http://qbittorrent.sourceforge.net/](http://qbittorrent.sourceforge.net/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent)
 
-*   **QTorrent** — BitTorrent klient napsaný v PyQt
-
-	[http://thegraveyard.org/qtorrent.php](http://thegraveyard.org/qtorrent.php) || [qtorrent](https://aur.archlinux.org/packages/qtorrent/)
-
 *   **[Transmission](/index.php/Transmission "Transmission")** — Jednoduchý a snadno použitelný BitTorrent klient s démon verzí a GTK+, Qt GUI, web a CLI front-endy
 
-	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt)
+	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk)
 
 *   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — 4\. generace BitTorrent klienta
 
@@ -188,21 +184,9 @@ Mnoho zde uvedených klientů (včetně Pidgina a všech jeho forků) podporuje 
 
 ##### Grafické rozhraní
 
-*   **Carrier** — Fork Pidginu obsahující malé změny rozhraní (dříve FunPidgin)
-
-	[http://funpidgin.sourceforge.net/](http://funpidgin.sourceforge.net/) || [carrier](https://aur.archlinux.org/packages/carrier/)
-
-*   **[Emesene](https://en.wikipedia.org/wiki/Emesene "wikipedia:Emesene")** — PyGTK IM klient pro síť Live Messenger, podporuje také Jabber, Facebook a Google Talk
-
-	[http://emesene.org/](http://emesene.org/) || [emesene](https://aur.archlinux.org/packages/emesene/)
-
 *   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) framework
 
 	[http://live.gnome.org/Empathy](http://live.gnome.org/Empathy) || [empathy](https://www.archlinux.org/packages/?name=empathy)
-
-*   **Galaxium Messenger** — IM klient navržený pro prostředí GNOME
-
-	[https://code.google.com/p/galaxium/](https://code.google.com/p/galaxium/) || [galaxium](https://aur.archlinux.org/packages/galaxium/)
 
 *   **[Instantbird](https://en.wikipedia.org/wiki/Instantbird "wikipedia:Instantbird")** — Multiprotokolový chatovací klient používající Mozilla XUL a libpurple
 
@@ -214,7 +198,7 @@ Mnoho zde uvedených klientů (včetně Pidgina a všech jeho forků) podporuje 
 
 *   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — IM klient z prostředí KDE používající [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Míněn jako náhrada za Kopete.
 
-	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta)
+	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [telepathy-kde-meta](https://www.archlinux.org/packages/?name=telepathy-kde-meta)
 
 *   **Licq** — IM klient pro UNIX podporující ICQ, MSN a Jabber
 
@@ -230,7 +214,7 @@ Mnoho zde uvedených klientů (včetně Pidgina a všech jeho forků) podporuje 
 
 *   **qutIM** — Jednoduchý a uživatelsky přívětivý IM klient podporující ICQ, Jabber, Mail.Ru, IRC a VKontakte
 
-	[http://qutim.org/](http://qutim.org/) || [qutim-stable](https://aur.archlinux.org/packages/qutim-stable/)
+	[http://qutim.org/](http://qutim.org/) || [qutim](https://aur.archlinux.org/packages/qutim/)
 
 #### Jabber/XMPP klienti
 
@@ -260,10 +244,6 @@ See also [Wikipedia:Comparison of instant messaging clients#XMPP clients](https:
 
 	[https://gajim.org/](https://gajim.org/) || [gajim](https://www.archlinux.org/packages/?name=gajim)
 
-*   **Jabbim** — Jabber klient napsaný v PyQt
-
-	[http://www.jabbim.com/](http://www.jabbim.com/) || [jabbim-svn](https://aur.archlinux.org/packages/jabbim-svn/)
-
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Jabber klient používající Qt toolkit
 
 	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/)
@@ -284,11 +264,11 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **[BitchX](https://en.wikipedia.org/wiki/BitchX "wikipedia:BitchX")** — Konzolový IRC klient vyvinutý z populárního [ircII](https://en.wikipedia.org/wiki/ircII "wikipedia:ircII")
 
-	[http://www.bitchx.org/](http://www.bitchx.org/) || [bitchx-svn](https://aur.archlinux.org/packages/bitchx-svn/)
+	[http://www.bitchx.org/](http://www.bitchx.org/) || [bitchx-git](https://aur.archlinux.org/packages/bitchx-git/)
 
 *   **ERC** — Silný, modulární a rozšiřitelný IRC klient pro [Emacs](/index.php/Emacs "Emacs")
 
-	[http://savannah.gnu.org/projects/erc/](http://savannah.gnu.org/projects/erc/) || [erc-git](https://aur.archlinux.org/packages/erc-git/)
+	[http://savannah.gnu.org/projects/erc/](http://savannah.gnu.org/projects/erc/) || [emacs](https://www.archlinux.org/packages/?name=emacs)
 
 *   **[ii](https://en.wikipedia.org/wiki/Ii_(IRC_client) "wikipedia:Ii (IRC client)")** — IRC klient bohatý na funkce, doslova `tail -f` na konverzaci a `echo` zpět na odpovědi
 
@@ -336,10 +316,6 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[http://lostirc.sourceforge.net](http://lostirc.sourceforge.net) || [lostirc](https://aur.archlinux.org/packages/lostirc/)
 
-*   **pcw** — Front-end pro [ii](http://tools.suckless.org/ii), který otevírá nový terminál pro každý kanál
-
-	[https://bitbucket.org/emg/pcw](https://bitbucket.org/emg/pcw) || [pcw-hg](https://aur.archlinux.org/packages/pcw-hg/)
-
 *   **[Quassel](https://en.wikipedia.org/wiki/Quassel_IRC "wikipedia:Quassel IRC")** — Moderní multiplatformní distribuovaný IRC klient
 
 	[http://quassel-irc.org/](http://quassel-irc.org/) || [quassel-core](https://www.archlinux.org/packages/?name=quassel-core) [quassel-client](https://www.archlinux.org/packages/?name=quassel-client)
@@ -347,10 +323,6 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 *   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Multiplatformní IRC klient pro prostředí GNOME inspirovaný [Irssi](/index.php/Irssi "Irssi")
 
 	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
-
-*   **[XChat](https://en.wikipedia.org/wiki/XChat "wikipedia:XChat")** — GTK IRC klient pro Linux a Windows
-
-	[http://xchat.org/](http://xchat.org/) || [xchat](https://www.archlinux.org/packages/?name=xchat)
 
 ### Softphone
 
@@ -362,7 +334,7 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Blink](https://en.wikipedia.org/wiki/Blink_(software) "wikipedia:Blink (software)")** — Nejmodernější, lehce použitelný SIP klient
 
-	[http://www.icanblink.com/](http://www.icanblink.com/) || [blink-darcs](https://aur.archlinux.org/packages/blink-darcs/)
+	[http://www.icanblink.com/](http://www.icanblink.com/) || [blink](https://aur.archlinux.org/packages/blink/)
 
 *   **[Ekiga](https://en.wikipedia.org/wiki/Ekiga "wikipedia:Ekiga")** — Aplikace pro VoIP a video konference s plnou podporou SIP a H.323 (dříve GNOME Meeting)
 
@@ -379,10 +351,6 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 *   **[Jitsi](https://en.wikipedia.org/wiki/Jitsi "wikipedia:Jitsi")** — Audio/video SIP VoIP softphone a IM klient napsaný v Javě (dříve SIP-Communicator)
 
 	[https://jitsi.org/](https://jitsi.org/) || [jitsi](https://aur.archlinux.org/packages/jitsi/)
-
-*   **Kiax** — Qt IAX/2 softphone klient
-
-	[http://www.forschung-direkt.eu/projects/kiax2/](http://www.forschung-direkt.eu/projects/kiax2/) || [kiax](https://aur.archlinux.org/packages/kiax/)
 
 *   **[KPhone](https://en.wikipedia.org/wiki/KPhone "wikipedia:KPhone")** — Qt SIP klient s podporou hlasových, video a textových zpráv
 
@@ -404,17 +372,9 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 
 	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/) [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
 
-*   **[QuteCom](https://en.wikipedia.org/wiki/QuteCom "wikipedia:QuteCom")** — Softphone umožňující svobodné PC-to-PC videohovory, a to integraci kontaktů v jednom místě (dříve Wengo Phone)
-
-	[http://trac.qutecom.org/](http://trac.qutecom.org/) || [qutecom](https://aur.archlinux.org/packages/qutecom/)
-
-*   **[SFLPhone](https://en.wikipedia.org/wiki/SFLphone "wikipedia:SFLphone")** — Open-source SIP/IAX2 kompatibilní softphone s podporou PulseAudio
-
-	[http://sflphone.org/](http://sflphone.org/) || [sflphone](https://aur.archlinux.org/packages/sflphone/)
-
 *   **[Skype](/index.php/Skype "Skype")** — Populární P2P aplikace pro hlasovou komunikaci s vysokou kvalitou
 
-	[http://www.skype.com/](http://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/)
+	[http://www.skype.com/](http://www.skype.com/) || [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/)
 
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Proprietární VoIP aplikace zaměřená na hráče
 
@@ -428,33 +388,13 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 
 	[http://www.counterpath.net/x-lite](http://www.counterpath.net/x-lite) || [xlite_bin](https://aur.archlinux.org/packages/xlite_bin/)
 
-*   **[Zfone](https://en.wikipedia.org/wiki/Zfone "wikipedia:Zfone")** — Zabezpečený VoIP klient používající ZRTP protokol
-
-	[http://zfoneproject.com/](http://zfoneproject.com/) || [zfone](https://aur.archlinux.org/packages/zfone/)
-
 #### Nástroje
-
-*   **Gladstone** — Výukový kodek splňující ITU-T G.729 s pluginem pro GStreamer
-
-	[http://code.google.com/p/gladstone/](http://code.google.com/p/gladstone/) || [gladstone-drizztbsd-git](https://aur.archlinux.org/packages/gladstone-drizztbsd-git/)
 
 *   **SIPp** — Open source testovací nástroj a generátor provozu pro SIP protokol
 
 	[http://sipp.sourceforge.net/](http://sipp.sourceforge.net/) || [sipp](https://aur.archlinux.org/packages/sipp/)
 
-*   **Sipsak** — Malý konzolový nástroj pro vývojáře a administrátory SIP aplikací
-
-	[http://sipsak.org/](http://sipsak.org/) || [sipsak](https://aur.archlinux.org/packages/sipsak/)
-
 ### Prohlížeče
-
-*   **[Abaco](https://en.wikipedia.org/wiki/Abaco_(web_browser) "wikipedia:Abaco (web browser)")** — Vícestránkový grafický webový prohlížeč
-
-	[http://lab-fgb.com/abaco/](http://lab-fgb.com/abaco/) || [abaco](https://aur.archlinux.org/packages/abaco/)
-
-*   **[Arora](https://en.wikipedia.org/wiki/Arora_(browser) "wikipedia:Arora (browser)")** — Multiplatformní webový prohlížeč postavený na Qt a WebKitu
-
-	[http://code.google.com/p/arora/](http://code.google.com/p/arora/) || [arora](https://aur.archlinux.org/packages/arora/)
 
 *   **[Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) "wikipedia:Chromium (web browser)")** — Open-source projekt, na kterém je postaven Google Chrome
 
@@ -471,14 +411,6 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 *   **[ELinks](https://en.wikipedia.org/wiki/ELinks "wikipedia:ELinks")** — Pokročilý a velice stabilní textový webový prohlížeč s velkým množstvím funkcí
 
 	[http://elinks.or.cz/](http://elinks.or.cz/) || [elinks](https://www.archlinux.org/packages/?name=elinks)
-
-*   **Hv3** — Minimalistický webový prohlížeč založený na tkhtml3
-
-	[http://tkhtml.tcl.tk/hv3.html](http://tkhtml.tcl.tk/hv3.html) || [hv3](https://aur.archlinux.org/packages/hv3/)
-
-*   **[Kazehakase](https://en.wikipedia.org/wiki/Kazehakase "wikipedia:Kazehakase")** — GTK+ webový prohlížeč, používající vykreslovací jádro Gecko
-
-	[http://kazehakase.sourceforge.jp/](http://kazehakase.sourceforge.jp/) || [kazehakase](https://www.archlinux.org/packages/?name=kazehakase)
 
 *   **[Links](https://en.wikipedia.org/wiki/Links_(web_browser) "wikipedia:Links (web browser)")** — Textový webový prohlížeč podobný Lynxu
 

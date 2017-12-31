@@ -1,4 +1,4 @@
-[Vino](https://wiki.gnome.org/Projects/Vino) is a VNC (Virtual Network Computing) server allowing remote connection to your actual desktop. It is a default component of the [GNOME](/index.php/GNOME "GNOME") [Desktop environment](/index.php/Desktop_environment "Desktop environment").
+[Vino](https://wiki.gnome.org/Projects/Vino) is a VNC (Virtual Network Computing) server allowing remote connection to your actual desktop. It is a default component of the [GNOME](/index.php/GNOME "GNOME") desktop environment.
 
 ## Contents
 

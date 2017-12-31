@@ -23,8 +23,11 @@ Start webmin [service](/index.php/Daemon "Daemon") using [systemd](/index.php/Sy
 
 ## Usage
 
-In a web browser, enter the https address of the server with the port number 10000 to access Webmin - for example:
+In a web browser, enter the https address of the server with the port number 10000 to access Webmin:
 
-https://192.168.1.1:10000 -or- https://myserver.example.net:10000
+```
+https://*host*:10000
+
+```
 
 You will need to enter the root password of the server running Webmin to use the Webmin interface and administer the server.

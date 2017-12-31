@@ -45,6 +45,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [18.1 Stuttering sound with PulseAudio](#Stuttering_sound_with_PulseAudio)
     *   [18.2 Game crashes seconds after loading a map](#Game_crashes_seconds_after_loading_a_map)
 *   [19 Civilization: Beyond earth](#Civilization:_Beyond_earth)
+    *   [19.1 Segfault after a few minutes](#Segfault_after_a_few_minutes)
 *   [20 Civilization VI](#Civilization_VI)
     *   [20.1 If Segfault Immediately on Start](#If_Segfault_Immediately_on_Start)
 *   [21 Deus Ex: Mankind divided](#Deus_Ex:_Mankind_divided)
@@ -525,6 +526,33 @@ If you are getting an instant crash/close upon launch, make sure you have the fo
 *   [lib32-libcurl-gnutls](https://www.archlinux.org/packages/?name=lib32-libcurl-gnutls)
 *   [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal)
 *   [lib32-intel-tbb](https://aur.archlinux.org/packages/lib32-intel-tbb/)
+
+### Segfault after a few minutes
+
+Backtrace:
+
+```
+   #0  0x08b71d06 in FireGrafix::DynamicsLock<Graphics::BuildingSkinnedDataDynamicConsts>::DynamicsLock(Graphics::SurfaceSet**, FireGrafix::SurfaceSetPoolAllocator*, unsigned short) ()
+   #1  0x08c25ffc in cvLandmarkVisSystem::cvLandmarkVisDynamicConstantUpdaterSS::HandleBuildingShaderSkinned(Graphics::FGXShaderPackageInstanceView*, FireGrafix::FGXModelNode*, FGXVector4*) ()
+   #2  0x08c25f34 in cvLandmarkVisSystem::cvLandmarkVisDynamicConstantUpdaterSS::UpdateNode(Graphics::FGXShaderPackageInstanceView*, FireGrafix::FGXModelNode*, FGXVector4*) ()
+   #3  0x08c25e2c in FireGrafix::FGXModelRenderByNodeSSExample_Shadow<cvLandmarkVisSystem::cvLandmarkVisDynamicConstantUpdaterSS, 2, FireGrafix::FGXModelRenderEndSuperclass>::RenderNode(unsigned int*, FireGrafix::FGX_SPIV_GENERIC*, FireGrafix::FGXModelNode*, FGXVector4*) ()
+   #4  0x08c24ff5 in cvLandmarkVisSystem::LandmarkRenderJob::Execute(unsigned int) ()
+   #5  0x093d26d9 in Platform::JobTask::execute() ()
+   #6  0xf749f3c0 in ?? () from /usr/lib32/libtbb.so.2
+   #7  0xf7497551 in ?? () from /usr/lib32/libtbb.so.2
+   #8  0xf7495fc3 in ?? () from /usr/lib32/libtbb.so.2
+   #9  0xf7491b7e in ?? () from /usr/lib32/libtbb.so.2
+   #10 0xf7491db7 in ?? () from /usr/lib32/libtbb.so.2
+   #11 0xf78f4346 in start_thread () from /usr/lib32/libpthread.so.0
+   #12 0xf7716026 in clone () from /usr/lib32/libc.so.6
+
+```
+
+Segfault is caused by [lib32-intel-tbb](https://aur.archlinux.org/packages/lib32-intel-tbb/). To fix the issue:
+
+*   download [libtbb2 deb-package](https://packages.ubuntu.com/trusty/i386/libtbb2/download) from one of the ubuntu mirrors
+*   unpack `libtbb.so.2` from `libtbb2_4.2_20130725-1.1ubuntu1_i386.deb/data.tar.xz/usr/lib` to `/home/<user>/.local/share/Steam/steamapps/common/Sid Meier's Civilization Beyond Earth`
+*   add `env LD_PRELOAD='./libtbb.so.2' %command%` to your [launch options](/index.php/Launch_option "Launch option")
 
 ## Civilization VI
 

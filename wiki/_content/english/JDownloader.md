@@ -8,6 +8,7 @@
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Downloading files without creating a subdirectory](#Downloading_files_without_creating_a_subdirectory)
     *   [3.2 Changing preferences for individual sites](#Changing_preferences_for_individual_sites)
+    *   [3.3 Changing font scale](#Changing_font_scale)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM.2C_menus_immediately_closing)
 *   [5 See also](#See_also)
@@ -37,6 +38,10 @@ By default jdownloader will create a subdirectory for each file you download in 
 ### Changing preferences for individual sites
 
 Preferences for individual sites can be found by going to Settings > Plugins. For example, by changing settings on the youtube.com plugin you could tell jdownloader to only download the audio from youtube links.
+
+### Changing font scale
+
+If font is too small, it can be enlarged by increasing scale factor: *settings > advanced settings > LAFSettings.fontscalefactor* [jd forum](https://board.jdownloader.org/showthread.php?t=73752).
 
 ## Troubleshooting
 

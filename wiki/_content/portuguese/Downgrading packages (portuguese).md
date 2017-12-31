@@ -1,15 +1,15 @@
 Artigos relacionados
 
-*   [Arch Build System (Português)](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
-*   [makepkg (Português)](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
-*   [pacman (Português)](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
-*   [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive")
+*   [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
+*   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
+*   [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
+*   [Arch Linux Archive](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)")
 
 Antes de fazer o downgrade de um ou mais pacotes, considere o porquê de você desejar fazê-lo. Se é por causa de um erro, pesquise no [rastreador de erros](https://bugs.archlinux.org/) por tarefas existentes. Se não houver, adicione uma nova tarefa; é melhor corrigir erros, ou pelo menos avisar outros usuários sobre possíveis problemas.
 
 **Atenção:**
 
-*   Fazer downgrade de um pacote pode exigir que se faça downgrade de suas dependências também. Quando o número dos pacotes para se fazer downgrade é grande demais, considere usar um snapshot. Veja [Arch Linux Archive#How to restore all packages to a specific date](/index.php/Arch_Linux_Archive#How_to_restore_all_packages_to_a_specific_date "Arch Linux Archive").
+*   Fazer downgrade de um pacote pode exigir que se faça downgrade de suas dependências também. Quando o número dos pacotes para se fazer downgrade é grande demais, considere usar um snapshot. Veja [Arch Linux Archive (Português)#Como restaurar todos os pacotes para uma data específica](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs)#Como_restaurar_todos_os_pacotes_para_uma_data_espec.C3.ADfica "Arch Linux Archive (Português)").
 *   Tenha cuidado com alterações a arquivos de configuração e scritps. Por agora, pacman pode tratar disso, desde que nós não ignoremos as travas de segurança.
 *   Se o downgrade involve uma alteração de soname, toda a dependência pode precisar de downgrade ou [recompilação](/index.php/Frequently_asked_questions_(Portugu%C3%AAs)#E_se_eu_executar_uma_atualiza.C3.A7.C3.A3o_completa_do_sistema_e_houver_uma_atualiza.C3.A7.C3.A3o_para_uma_biblioteca_compartilhada.2C_mas_n.C3.A3o_para_os_aplicativos_que_dependem_dela.3F "Frequently asked questions (Português)") também.
 
@@ -58,7 +58,7 @@ Saia do chroot (com `exit`), reinicie e agora deve funcionar.
 
 ### Arch Linux Archive
 
-O [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") é um *snapshot* diário dos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais").
+O [Arch Linux Archive](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)") é um *snapshot* diário dos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais").
 
 O *ALA* pode ser usado para instalar uma versão anterior de um pacote ou restaurar o sistema para uma data anterior.
 
@@ -74,11 +74,11 @@ Pacotes antigos do AUR podem ser compilados fazendo checkout de um commit antigo
 
 ### Automação
 
-[downgrader](https://aur.archlinux.org/packages/downgrader/) é uma ferramenta que funciona com libalpm, oferece suporte ao log do pacman e a fazer downgrade de pacotes usando o [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive"), cache local e [ARM](http://repo-arm.archlinuxcn.org).
+[downgrader](https://aur.archlinux.org/packages/downgrader/) é uma ferramenta que funciona com libalpm, oferece suporte ao log do pacman e a fazer downgrade de pacotes usando o [Arch Linux Archive](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)"), cache local e [ARM](http://repo-arm.archlinuxcn.org).
 
-O pacote [downgrade](https://aur.archlinux.org/packages/downgrade/) é um script Bash para faer downgrade de um (ou múltiplos) pacotes, usando o cache do pacman ou o [Arch Rollback Machine](/index.php/Arch_Rollback_Machine "Arch Rollback Machine"). Veja `man downgrade` para detalhes.
+O pacote [downgrade](https://aur.archlinux.org/packages/downgrade/) é um script Bash para faer downgrade de um (ou múltiplos) pacotes, usando o cache do pacman ou o [Arch Rollback Machine](/index.php/Arch_Rollback_Machine_(Portugu%C3%AAs) "Arch Rollback Machine (Português)"). Veja `man downgrade` para detalhes.
 
-[agetpkg-git](https://aur.archlinux.org/packages/agetpkg-git/) lista/obtém/instala rapidamente pacotes do [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive").
+[agetpkg-git](https://aur.archlinux.org/packages/agetpkg-git/) lista/obtém/instala rapidamente pacotes do [Arch Linux Archive](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)").
 
 ## Retornar do [testing]
 

@@ -1,3 +1,9 @@
+Related articles
+
+*   [DAViCal](/index.php/DAViCal "DAViCal")
+*   [Kcaldav](/index.php/Kcaldav "Kcaldav")
+*   [AgenDAV](/index.php/AgenDAV "AgenDAV")
+
 [Radicale](http://radicale.org/) is a server designed to support the CalDav and CardDav protocols. It requires at least Python 3.3.
 
 ## Contents

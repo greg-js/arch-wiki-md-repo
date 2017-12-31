@@ -1,3 +1,10 @@
+Ссылки по теме
+
+*   [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync")
+*   [Full system backup with tar](/index.php/Full_system_backup_with_tar "Full system backup with tar")
+*   [Клонирование диска](/index.php/%D0%9A%D0%BB%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B8%D1%81%D0%BA%D0%B0 "Клонирование диска")
+*   [Snapper](/index.php/Snapper "Snapper")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Backup programs](/index.php/Backup_programs "Backup programs"). Дата последней синхронизации: 2 октября 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Backup_programs&diff=0&oldid=402619).
 
 ## Contents

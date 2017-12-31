@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Category:Web](/index.php/Category:Web "Category:Web")
+*   [List of applications/Internet#XMPP servers](/index.php/List_of_applications/Internet#XMPP_servers "List of applications/Internet")

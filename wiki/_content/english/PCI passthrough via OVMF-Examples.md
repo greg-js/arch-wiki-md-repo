@@ -5,14 +5,69 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
 ## Contents
 
 *   [1 Users' setups](#Users.27_setups)
-    *   [1.1 DragoonAethis: 6700K, GA-Z170X-UD3, GTX 1070](#DragoonAethis:_6700K.2C_GA-Z170X-UD3.2C_GTX_1070)
-    *   [1.2 Manbearpig3130's Virtual Gaming Machine](#Manbearpig3130.27s_Virtual_Gaming_Machine)
-    *   [1.3 Bretos' Virtual Gaming Setup](#Bretos.27_Virtual_Gaming_Setup)
-    *   [1.4 Skeen's Virtual Gaming Rack Machine](#Skeen.27s_Virtual_Gaming_Rack_Machine)
-    *   [1.5 droserasprout poor man's setup](#droserasprout_poor_man.27s_setup)
+    *   [1.1 mstrthealias: Intel 7800X / X299, GTX 1070](#mstrthealias:_Intel_7800X_.2F_X299.2C_GTX_1070)
+    *   [1.2 DragoonAethis: 6700K, GA-Z170X-UD3, GTX 1070](#DragoonAethis:_6700K.2C_GA-Z170X-UD3.2C_GTX_1070)
+    *   [1.3 Manbearpig3130's Virtual Gaming Machine](#Manbearpig3130.27s_Virtual_Gaming_Machine)
+    *   [1.4 Bretos' Virtual Gaming Setup](#Bretos.27_Virtual_Gaming_Setup)
+    *   [1.5 Skeen's Virtual Gaming Rack Machine](#Skeen.27s_Virtual_Gaming_Rack_Machine)
+    *   [1.6 droserasprout poor man's setup](#droserasprout_poor_man.27s_setup)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
+
+### mstrthealias: Intel 7800X / X299, GTX 1070
+
+Hardware:
+
+*   **CPU**: Intel(R) Core(TM) i7-7800X CPU
+*   **Motherboard**: ASRock X299 Taichi (Revision: A, BIOS/UEFI Version: 1.60A)
+*   **GPU**: Asus STRIX GTX 1070
+*   **RAM**: 32GB DDR4
+
+Configuration:
+
+*   **Kernel**: Kernel version 4.14.8-1-skx (patched crystal_khz=24000).
+    *   Custom patches:
+        *   skylakex-crystal_khz-24000.patch (see below)
+    *   Patches used from linux-ck:
+        *   enable_additional_cpu_optimizations_for_gcc_v4.9+_kernel_v4.13+.patch
+        *   0001-add-sysctl-to-disallow-unprivileged-CLONE_NEWUSER-by.patch
+        *   0001-e1000e-Fix-e1000_check_for_copper_link_ich8lan-retur.patch
+        *   0002-dccp-CVE-2017-8824-use-after-free-in-DCCP-code.patch
+    *   Config:
+        *   PREEMPT, NO_HZ_IDLE, 300HZ, MSKYLAKE
+*   GitHub: Link TBD
+*   Benchmarks: [https://imgur.com/a/hIfQD](https://imgur.com/a/hIfQD)
+*   Using **libvirt/QEMU**: libvirt 3.10.0 / QEMU 2.11.0
+*   Issues you have encountered, special steps taken to make something work a bit better, etc.
+    *   Skylake-X default clock incorrect in 4.14.8 ([https://bugzilla.kernel.org/show_bug.cgi?id=197299](https://bugzilla.kernel.org/show_bug.cgi?id=197299))
+        *   Was unable to resolve timing issue using adjtimex
+        *   Patching kernel source to **crystal_khz = 24000** resolved timing/performance issues
+    *   Enable 'Intel SpeedShift' in BIOS, installed **cpupower'**, set governor='performance'
+        *   Verify: dmesg|grep HWP
+            *   intel_pstate: HWP enabled
+    *   Enable HT in BIOS
+    *   Enable 'deadline' IO sceduler:
+        *   echo 'ACTION=="add|change", KERNEL=="sd*[!0-9]|sr*", ATTR{queue/scheduler}="deadline"' >> /etc/udev/rules.d/60-schedulers.rules
+    *   Bypass x2apic opt-out:
+        *   GRUB_CMDLINE_LINUX="... intremap=no_x2apic_optout ..."
+    *   Isolate cores for Windows VM:
+        *   GRUB_CMDLINE_LINUX="... isolcpus=2-5,8-11 nohz_full=2-5,8-11 rcu_nocbs=2-5,8-11 ..."
+    *   Use hugepages (2MB) for all VM memory allocation
+    *   memoryBacking: <hugepages/><nosharepages/><locked/><access mode='private'/><allocation mode='immediate'/>
+    *   Extracted rom from GPU; used for <rom file=../> config
+    *   Using MSI for GPU and GPU Audio (configured in Windows registry; FPS seems same as using line-based interrupts)
+*   Hardware setup
+    *   PCIE1: NVIDIA GeForce GT 710B (for host)
+    *   Onboard: ASRock XHCI 3.1 USB (for host)
+    *   Onboard: Intel I219 NIC (bridged)
+    *   PCIE3: Asus Xonar STX (passthrough to Win10)
+    *   PCIE5: NVIDIA GeForce GTX 1070 (passthrough to Win10)
+    *   M2_1: Samsung 960 EVO 500GB (passthrough to Win10)
+    *   Onboard: Intel XHCI USB 3.0 (passthrough to Win10)
+    *   Onboard: Intel HDA (passthrough to Win10)
+    *   Onboard: Intel I211 NIC (passthrough to Win10)
+    *   Onboard: ASRock AHCI SATA A1/A2 (passthrough to Linux)
 
 ### DragoonAethis: 6700K, GA-Z170X-UD3, GTX 1070
 

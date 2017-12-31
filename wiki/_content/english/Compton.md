@@ -1,9 +1,9 @@
-Compton is a standalone composite manager, suitable for use with [window managers](/index.php/Window_managers "Window managers") that do not natively provide compositing functionality. Compton is a fork of [xcompmgr-dana](http://oliwer.net/xcompmgr-dana/), which in turn is a fork of [xcompmgr](/index.php/Xcompmgr "Xcompmgr"). See the [compton github page](https://github.com/chjj/compton) for more information.
+[Compton](https://github.com/chjj/compton) is a standalone [compositor](/index.php/Compositor "Compositor") for [Xorg](/index.php/Xorg "Xorg"), suitable for use with [window managers](/index.php/Window_managers "Window managers") that do not provide compositing. Compton is a fork of [xcompmgr-dana](http://oliwer.net/xcompmgr-dana/), which in turn is a fork of [xcompmgr](/index.php/Xcompmgr "Xcompmgr").
 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Use](#Use)
+*   [2 Usage](#Usage)
     *   [2.1 Autostarting](#Autostarting)
     *   [2.2 Command only](#Command_only)
     *   [2.3 Using a configuration file](#Using_a_configuration_file)
@@ -30,9 +30,9 @@ Compton is a standalone composite manager, suitable for use with [window manager
 
 [compton-conf](https://aur.archlinux.org/packages/compton-conf/) or [compton-conf-git](https://aur.archlinux.org/packages/compton-conf-git/) package provide [Qt](/index.php/Qt "Qt")-based GUI for Compton configuration.
 
-## Use
+## Usage
 
-Compton may be manually enabled or disabled at any time during a session, or autostarted as a background ([Daemon](/index.php/Daemon "Daemon")) process for sessions. There are also several optional arguments that may be used to tweak the compositing effects provided. These include:
+See [compton(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/compton.1). Compton may be manually enabled or disabled at any time during a session, or autostarted as a background ([Daemon](/index.php/Daemon "Daemon")) process for sessions. There are also several optional arguments that may be used to tweak the compositing effects provided. These include:
 
 *   `-b`: Run as a background ([Daemon](/index.php/Daemon "Daemon")) process for a session (e.g. when autostarting for a [window manager](/index.php/Window_manager "Window manager") such as [Openbox](/index.php/Openbox "Openbox"))
 *   `-c`: Enable shadow effects

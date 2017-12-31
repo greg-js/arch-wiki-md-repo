@@ -138,4 +138,3 @@ Privoxy can be tested by accessing the link [http://p.p](http://p.p)
 ## See also
 
 *   [Privoxy Official Website](http://www.privoxy.org/)
-*   [Tor Official Website](https://www.torproject.org/index.html.en)

@@ -348,7 +348,7 @@ Lircmap.xml format is as follows:
 
 An elegant way of getting remote functions in Kodi is using [CEC](https://en.wikipedia.org/wiki/Consumer_Electronics_Control#CEC "wikipedia:Consumer Electronics Control"), a protocol that is part of the HDMI specification. Most modern TVs support CEC, although some manufacturers advertise the feature under other names. Apart from a CEC-enabled TV some hardware that takes the CEC signals coming from the TV and present them in a way that Kodi can understand is also needed. One such device is the [USB-CEC adapter](http://www.pulse-eight.com/store/products/104-usb-hdmi-cec-adapter.aspx) from Pulse Eight. Hooking up the USB-CEC is pretty simple, but in order for it to work in Arch we have to do a few things.
 
-Install `libcec`.
+Install `libcec` (or any of the appropriate for the Arch ARM: `libcec-rpi`, `libcec-cubox`, `libcec-imx6`.
 
 When connected, the USB-CEC's `/dev` entry (usually `/dev/ttyACM*`) will default to being owned by the `uucp` group, so in order to use the device the user running Kodi needs to belong to that group. The user also needs to belong to the `lock` group, otherwise Kodi will be unable to connect to the device. To add a user to both groups, run
 
@@ -423,6 +423,7 @@ Kodi runs smoothly on the Raspberry Pi (RPi), RPi2, and RPi3\. Some helpful tips
 *   [Install](/index.php/Install "Install") either the *kodi-rbp* (stable) or *kodi-rbp-git* (dev) package instead of *kodi* from the [Arch Linux ARM repository](http://archlinuxarm.org/packages).
 *   This package ships with a systemd service to run in standalone mode.
 *   The memory reserved for GPU is 64 MB by default. This is insufficient for GPU accelerated HD video playback. Users can increase this value via a simple edit to the `gpu_mem` tag in `/boot/config.txt`. A value of at least 128 MB is recommended for RPi version 1 while a value of 256 is recommended for RPi2 and 3.
+*   For CEC support [Install](/index.php/Install "Install") the *libcec-rpi* instead of *libcec* from the [Arch Linux ARM repository](http://archlinuxarm.org/packages).
 
 ### TV is not detected unless powered on first
 

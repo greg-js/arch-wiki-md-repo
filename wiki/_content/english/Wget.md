@@ -13,7 +13,7 @@
 
 ## Installing
 
-Install the [wget](https://www.archlinux.org/packages/?name=wget) package using [pacman](/index.php/Pacman "Pacman"). The git version is present in the AUR by the name [wget-git](https://aur.archlinux.org/packages/wget-git/).
+Install the [wget](https://www.archlinux.org/packages/?name=wget) package. The git version is present in the AUR by the name [wget-git](https://aur.archlinux.org/packages/wget-git/).
 
 ## Configuring
 

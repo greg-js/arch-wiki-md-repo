@@ -34,4 +34,4 @@ In Firefox open the *Preferences* window and go to *Advanced -> Certificates -> 
 
 ## See also
 
-*   [Burp Suite Video Tutorials](http://portswigger.net/burp/tutorials/)
+*   [Burp Suite video tutorials](http://portswigger.net/burp/tutorials/)
