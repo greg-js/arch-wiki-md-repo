@@ -76,7 +76,7 @@
         *   [8.24.1 USB设备输出劈啪声](#USB.E8.AE.BE.E5.A4.87.E8.BE.93.E5.87.BA.E5.8A.88.E5.95.AA.E5.A3.B0)
         *   [8.24.2 热插拔USB设备](#.E7.83.AD.E6.8F.92.E6.8B.94USB.E8.AE.BE.E5.A4.87)
     *   [8.25 内核升级后出现'Unknown hardware'错误](#.E5.86.85.E6.A0.B8.E5.8D.87.E7.BA.A7.E5.90.8E.E5.87.BA.E7.8E.B0.27Unknown_hardware.27.E9.94.99.E8.AF.AF)
-    *   [8.26 HDA Analyzer](#HDA_Analyzer)
+    *   [8.26 HDA分析仪](#HDA.E5.88.86.E6.9E.90.E4.BB.AA)
     *   [8.27 ALSA 与 SDL 协同工作的问题](#ALSA_.E4.B8.8E_SDL_.E5.8D.8F.E5.90.8C.E5.B7.A5.E4.BD.9C.E7.9A.84.E9.97.AE.E9.A2.98)
     *   [8.28 Low Sound Workaround](#Low_Sound_Workaround)
     *   [8.29 暂停后继续播放发出噼叭声](#.E6.9A.82.E5.81.9C.E5.90.8E.E7.BB.A7.E7.BB.AD.E6.92.AD.E6.94.BE.E5.8F.91.E5.87.BA.E5.99.BC.E5.8F.AD.E5.A3.B0)
@@ -1382,13 +1382,6 @@ options snd_hda_intel power_save=0 power_save_controller=N
 
 内核模块文档：[[2]](https://www.kernel.org/doc/Documentation/sound/alsa/powersave.txt)
 
-对于笔记本，即使在 `/etc/modprobe.d` 设置了 `power_save` 参数，当切换电池时 pm-utils 仍会将该值重置为1。需要禁用相关的脚步才行（详情参见：[Pm-utils#Disabling a hook](/index.php/Pm-utils#Disabling_a_hook "Pm-utils")）：
-
-```
-# touch /etc/pm/power.d/intel-audio-powersave
-
-```
-
 ### S/PDIF 输出无效
 
 如果你已经在 alsamixer 中启用相关声道，但声卡的光学/同轴数字输出还是无效，试试以 root 身份运行：
@@ -1543,13 +1536,15 @@ Hardware is initialized using a generic method
 
 有必要使用alsamixer重新设置ALSA
 
-### HDA Analyzer
+### HDA分析仪
 
-If the mappings to your audio pins(plugs) do not correspond but ALSA works fine, you could try HDA Analyzer -- a pyGTK2 GUI for HD-audio control can be found [at the ALSA wiki](http://www.alsa-project.org/main/index.php/HDA_Analyzer). 如果映射你的音频 Try tweaking the Widget Control section of the PIN nodes, to make microphones IN and headphone jacks OUT. Referring to the Config Defaults heading is a good idea.
+如果映射到您的音频引脚（插头）不对应，但ALSA工作正常，您可以尝试HDA分析器 - pyGTK2图形用户界面的高清音频控制可以再此找到[ALSA wiki上的/index.php/HDA_Analyzer](http://www.alsa-project.org/main)。
 
-NOTE: the script is done by such way that it is incompatible with python3 (which is now shipped with ArchLinux) but tries to use it. The workaround is: open "run.py", find all occurences of "python" (2 occurences - one on the first line, and the second on the last line) and replace them all by "python2".
+尝试调整PIN节点的Widget控制部分，使麦克风IN和耳机插孔OUT。 参考配置默认标题是一个好主意。
 
-NOTE2: the script requires root acces, but running it via su/sudo is bogus. Run it via `kdesu` or `gksu`.
+注意：脚本是通过与python3（现在与ArchLinux一起提供的）不兼容的方式完成的，但请尽量使用它。 解决方法是：打开“run.py”，找到所有“python”的出现（2个出现在第一行，第二行在最后一行），全部替换为“python2”。
+
+注2：脚本需要root权限，如果通过su / sudo运行失败。 在终端运行 `kdesu`或 `gksu`。
 
 ### ALSA 与 SDL 协同工作的问题
 

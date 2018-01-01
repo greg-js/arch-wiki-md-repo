@@ -6,7 +6,6 @@
     *   [1.1 Fbsplash](#Fbsplash)
     *   [1.2 Scripts](#Scripts)
     *   [1.3 Themes](#Themes)
-    *   [1.4 Suspend to Disk](#Suspend_to_Disk)
 *   [2 Configuration](#Configuration)
     *   [2.1 Kernel Command Line](#Kernel_Command_Line)
     *   [2.2 Configuration Files](#Configuration_Files)
@@ -29,10 +28,6 @@ The fbsplash package provides the scripts for basic functionality. If you want m
 Themes can be found by searching the AUR for [fbsplash-theme](https://aur.archlinux.org/packages.php?O=0&K=fbsplash-theme&do_Search=Go), in [GNOME-Look.org](http://gnome-look.org) or in [KDE-Look.org](http://kde-look.org).
 
 **Note:** The package fbsplash does not contain a default theme.
-
-### Suspend to Disk
-
-If you want suspend to disk with [Uswsusp](/index.php/Uswsusp "Uswsusp") using Fbsplash, [install](/index.php/Install "Install") the [uswsusp-fbsplash](https://aur.archlinux.org/packages/uswsusp-fbsplash/) package. Additionally there is limited support for using Fbsplash in the [tuxonice-userui](https://aur.archlinux.org/packages/tuxonice-userui/) package for those using a kernel with the [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") patch.
 
 ## Configuration
 

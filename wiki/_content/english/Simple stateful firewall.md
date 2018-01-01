@@ -8,7 +8,7 @@ Related articles
 
 This page explains how to set up a [stateful](https://en.wikipedia.org/wiki/Stateful_firewall "wikipedia:Stateful firewall") firewall using [iptables](/index.php/Iptables "Iptables"). It also explains what the rules mean and why they are needed. For simplicity, it is split into two major sections. The first section deals with a firewall for a single machine, the second sets up a NAT gateway in addition to the firewall from the first section.
 
-**Warning:** The rules below are given in the order they are executed and should only be followed while logged in locally. If you are logged into a remote machine, you may be locked out of the machine while setting up the rules. To get around this problem in a remote setup, the [example config file](#Example_iptables.rules_file) can be used.
+**Warning:** The rules below are given in the order they are executed and should only be followed while logged in locally. If you are logged into a remote machine, you may be locked out of the machine while setting up the rules. To get around this problem in a remote setup, the [example config file](#Resulting_iptables.rules_file) can be used.
 
 ## Contents
 

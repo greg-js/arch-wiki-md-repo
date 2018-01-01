@@ -10,10 +10,6 @@ Some Logitech Gaming Keyboards can work on Linux through Unofficial drivers. The
 
 [g15daemon](https://www.archlinux.org/packages/?name=g15daemon) and its dependencies are available in the community repository. G15daemon drivers still work for the keyboards they supported, but their development was mostly dropped in 2008, the source is still available for anyone to pick up and continue their development, there are a few bugs in them that were never solved. These drivers use the [g15macro](https://aur.archlinux.org/packages/g15macro/) to interact with the G keys. There is also a [g15stats](https://aur.archlinux.org/packages/g15stats/) plugin to show system information on the LCD display.
 
-[gnome15](https://aur.archlinux.org/packages/gnome15/) is available in AUR.
-
-**Note:** The source site has been down since mid November 2014\. The AUR package cannot be built. The new Maintainer is actively working on providing all existing packages.
-
 [sidewinderd](https://aur.archlinux.org/packages/sidewinderd/)
 
 [hid-lg-g710-plus-dkms-git](https://aur.archlinux.org/packages/hid-lg-g710-plus-dkms-git/)

@@ -175,26 +175,6 @@ WantedBy=sleep.target
 
 ```
 
-If you are using [pm-utils](/index.php/Pm-utils "Pm-utils"), you could create a `00pidgin` file in `/etc/pm/sleep.d/` instead.
-
-```
-#!/bin/sh
-#
-# 00pidgin: set offline/online status
-
-case "$1" in
-    hibernate|suspend)
-        DISPLAY=:0 su -c 'purple-remote setstatus?status=offline' ''%myuser''
-    ;;
-    thaw|resume)
-        DISPLAY=:0 su -c 'purple-remote setstatus?status=available' ''%myuser''
-    ;;
-    *) exit $NA
-    ;;
-esac
-
-```
-
 ## Minimize to tray
 
 To make use of the [Xfce](/index.php/Xfce "Xfce") system tray go to preferences and enable the system tray in the section "Interface". You can now close the main window and run pidgin minimized. You will also be able to see message notifications in the tray.

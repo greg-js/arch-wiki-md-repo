@@ -26,8 +26,8 @@ You can use one of following methods in order to use Telegram in Arch:
 
 The [official app](https://desktop.telegram.org/):
 
-*   [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) pre-compiled binary from [Telegram](https://desktop.telegram.org/).
-*   [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) that needs [Qt](/index.php/Qt "Qt") libraries to be compiled.
+*   [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) official application in the community repo.
+*   [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) pre-compiled binary from [Telegram](https://desktop.telegram.org/). Out of date: now it's in the community repo
 *   [telegram-desktop-systemqt](https://aur.archlinux.org/packages/telegram-desktop-systemqt/) Experimental build of Telegram Desktop using system Qt instead of Telegram custom Qt libraries.
 *   [telegram-desktop-systemqt-notoemoji](https://aur.archlinux.org/packages/telegram-desktop-systemqt-notoemoji/) Experimental build of Telegram Desktop using system Qt and emojis replaced with those from [Noto Color Emoji](https://github.com/googlei18n/noto-emoji).
 

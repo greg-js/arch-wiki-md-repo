@@ -46,9 +46,9 @@ It is known that some motherboards are affected by a bug that can cause immediat
 
 Depending on the hardware, the network driver may have WoL switched off by default.
 
-To query this status or to change the settings, install [ethtool](https://www.archlinux.org/packages/?name=ethtool), [determine the network device's name](/index.php/Network_configuration#Get_current_device_names "Network configuration"), and query it using the command:
+To query this status or to change the settings, install [ethtool](https://www.archlinux.org/packages/?name=ethtool), determine the name of the [network interface](/index.php/Network_interface "Network interface"), and query it using the command:
 
- `# ethtool *devname* | grep Wake-on` 
+ `# ethtool *interface* | grep Wake-on` 
 ```
 Supports Wake-on: pumbag
 Wake-on: d
@@ -57,7 +57,7 @@ Wake-on: d
 The *Wake-on* values define what activity triggers wake up: `d` (disabled), `p` (PHY activity), `u` (unicast activity), `m` (multicast activity), `b` (broadcast activity), `a` (ARP activity), and `g` (magic packet activity). The value `g` is required for WoL to work, if not, the following command enables the WoL feature in the driver:
 
 ```
-# ethtool -s *devname* wol g
+# ethtool -s *interface* wol g
 
 ```
 
@@ -69,7 +69,7 @@ This command might not last beyond the next reboot and in this case must be repe
 
 If using netctl, one can make this setting persistent by adding the following the netctl profile:
 
- `/etc/netctl/*profile*`  `ExecUpPost='/usr/bin/ethtool -s *devname* wol g'` 
+ `/etc/netctl/*profile*`  `ExecUpPost='/usr/bin/ethtool -s *interface* wol g'` 
 
 #### systemd.link
 
@@ -130,7 +130,7 @@ The `$name` placeholder will be replaced by the value of the `NAME` variable for
 A command can be run each time the computer is (re)booted using "@reboot" in a crontab. First, make sure [cron](/index.php/Cron#Installation "Cron") is enabled, and then [edit a crontab](/index.php/Cron#Basic_commands "Cron") for the root user that contains the following line:
 
 ```
-@reboot /usr/bin/ethtool -s [net-device] wol g
+@reboot /usr/bin/ethtool -s *interface* wol g
 
 ```
 

@@ -16,8 +16,8 @@ This page explains how to set up a **wired** connection to a network. If you nee
     *   [2.1 Check the status](#Check_the_status)
     *   [2.2 Load the module](#Load_the_module)
 *   [3 Network management](#Network_management)
-    *   [3.1 Device names](#Device_names)
-        *   [3.1.1 Get current device names](#Get_current_device_names)
+    *   [3.1 Network interfaces](#Network_interfaces)
+        *   [3.1.1 Get current interface names](#Get_current_interface_names)
         *   [3.1.2 Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces)
     *   [3.2 Dynamic IP address](#Dynamic_IP_address)
     *   [3.3 Static IP address](#Static_IP_address)
@@ -126,33 +126,15 @@ If udev is not detecting and loading the proper module automatically during boot
 
 ## Network management
 
-### Device names
+### Network interfaces
 
-For computers with multiple NICs, it is important to have fixed device names. Many configuration problems are caused by interface name changing.
+For computers with multiple NICs, it is important to have fixed interface names. Many configuration problems are caused by interface name changing.
 
-[udev](/index.php/Udev "Udev") is responsible for which device gets which name. Systemd uses [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames), which automatically assigns static names to network devices. Interfaces are now prefixed with `en` (wired/[Ethernet](https://en.wikipedia.org/wiki/Ethernet "w:Ethernet")), `wl` (wireless/WLAN), or `ww` ([WWAN](https://en.wikipedia.org/wiki/Wireless_WAN "w:Wireless WAN")) followed by an automatically generated identifier, creating an entry such as `enp0s25`.
+[udev](/index.php/Udev "Udev") is responsible for assigning names to each device. Systemd uses [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames), which automatically assigns static names to network devices. Interfaces are now prefixed with `en` (wired/[Ethernet](https://en.wikipedia.org/wiki/Ethernet "w:Ethernet")), `wl` (wireless/WLAN), or `ww` ([WWAN](https://en.wikipedia.org/wiki/Wireless_WAN "w:Wireless WAN")) followed by an automatically generated identifier, creating an entry such as `enp0s25`.
 
-**Tip:** This behavior may be disabled by adding `net.ifnames=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+#### Get current interface names
 
-**Note:** When changing the interface naming scheme, do not forget to update all network-related configuration files and custom systemd unit files to reflect the change.
-
-#### Get current device names
-
-Both wired and wireless device names can be found via:
-
-```
-$ ls /sys/class/net
-
-```
-
-or
-
-```
-$ ip link
-
-```
-
-Note that `lo` is the [W:Loop_device](https://en.wikipedia.org/wiki/Loop_device "w:Loop device") and not used in making network connections.
+Both wired and wireless interface names can be found via `ls /sys/class/net` or `ip link`. Note that `lo` is the [loop device](https://en.wikipedia.org/wiki/loop_device "w:loop device") and not used in making network connections.
 
 Wireless device names can also be retrieved using `iw dev`. See also [Wireless network configuration#Get the name of the interface](/index.php/Wireless_network_configuration#Get_the_name_of_the_interface "Wireless network configuration").
 
@@ -377,6 +359,8 @@ For a system with a permanent IP address, that permanent IP address should be us
 
 ### Change device name
 
+**Note:** When changing the naming scheme, do not forget to update all network-related configuration files and custom systemd unit files to reflect the change.
+
 You can change the device name by defining the name manually with an udev-rule. For example:
 
  `/etc/udev/rules.d/10-network.rules` 
@@ -416,6 +400,8 @@ If you would prefer to retain traditional interface names such as eth0, [Predict
  # ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
 
 ```
+
+Alternatively, add `net.ifnames=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 ### Set device MTU and queue length
 

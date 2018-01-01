@@ -501,7 +501,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code")** — Editor for building and debugging modern web and cloud applications.
 
-	[https://code.visualstudio.com](https://code.visualstudio.com) || [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/) or [visual-studio-code-oss](https://aur.archlinux.org/packages/visual-studio-code-oss/) (open-source version)
+	[https://code.visualstudio.com](https://code.visualstudio.com) || [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)
 
 *   **XEdit** — Simple text editor for the X Window System.
 

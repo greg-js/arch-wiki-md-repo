@@ -78,7 +78,7 @@ Add directories to be shared and limit them to a range of addresses via a CIDR o
 
  `/etc/exports` 
 ```
-/srv/nfs        192.168.1.0/24(rw,sync,crossmnt,no_subtree_check) # or *ro* 'readonly' instead of *rw*
+/srv/nfs        192.168.1.0/24(rw,sync,crossmnt,fsid=0,no_subtree_check)
 /srv/nfs/music  192.168.1.0/24(rw,sync,no_subtree_check)
 /srv/nfs/public 192.168.1.0/24(ro,all_squash,insecure,no_subtree_check) desktop(rw,sync,all_squash,anonuid=99,anongid=99,no_subtree_check) # map to user/group - in this case *nobody*
 ```
@@ -112,6 +112,8 @@ For more information about all available options see [exports(5)](http://jlk.fjf
 ##### Optional configuration
 
 Advanced configuration options can be set in `/etc/nfs.conf`. Users setting up a simple configuration may not need to edit this file.
+
+When using NFS on a network with a significant of clients one may increase the default NFS threads from *8* to *16* or even a higher, depending on the server/network requirements.
 
 ##### Restricting NFS to interfaces/IPs
 
@@ -278,21 +280,29 @@ Using [fstab](/index.php/Fstab "Fstab") is useful for a server which is always o
 
  `/etc/fstab` 
 ```
-servername:/music   /mountpoint/on/client   nfs   rsize=8192,wsize=8192,timeo=14,_netdev	0 0
+servername:/music   /mountpoint/on/client   nfs   defaults,soft,rsize=32768,wsize=32768,timeo=900,retrans=5,_netdev	0 0
 
 ```
 
 **Note:** Consult [nfs(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nfs.5) and [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) for more mount options.
 
-Some additional mount options to consider are include:
+Some additional mount options to consider:
 
 	rsize and wsize
 
 	The `rsize` value is the number of bytes used when reading from the server. The `wsize` value is the number of bytes used when writing to the server. The default for both is 1024, but using higher values such as 8192 can improve throughput. This is not universal. It is recommended to test after making this change, see [#Performance tuning](#Performance_tuning).
 
+	soft or hard
+
+	Determines the recovery behaviour of the NFS client after an NFS request times out. If neither option is specified (or if the `hard` option is specified), NFS requests are retried indefinitely. If the `soft` option is specified, then the NFS client fails a NFS request after *retrans* retransmissions have been sent, causing the NFS client to return an error to the calling application.
+
 	timeo
 
-	The `timeo` value is the amount of time, in tenths of a second, to wait before resending a transmission after an RPC timeout. After the first timeout, the timeout value is doubled for each retry for a maximum of 60 seconds or until a major timeout occurs. If connecting to a slow server or over a busy network, better performance can be achieved by increasing this timeout value.
+	The `timeo` value is the amount of time, in tenths of a second, to wait before resending a transmission after an RPC timeout. The default value for NFS over TCP is 600 (60 seconds). After the first timeout, the timeout value is doubled for each retry for a maximum of 60 seconds or until a major timeout occurs. If connecting to a slow server or over a busy network, better stability can be achieved by increasing this timeout value.
+
+	retrans
+
+	The number of times the NFS client retries a request before it attempts further recovery action. If the `retrans` option is not specified, the NFS client tries each request three times. The NFS client generates a "server not responding" message after *retrans* retries, then attempts further recovery (depending on whether the hard mount option is in effect).
 
 	_netdev
 
@@ -315,6 +325,7 @@ One might have to reboot the client to make systemd aware of the changes to fsta
 *   The `users` mount option would allow user mounts, but be aware it implies further options as `noexec` for example.
 *   The `x-systemd.idle-timeout=1min` option will unmount the NFS share automatically after 1 minute of non-use. Good for laptops which might suddenly disconnect from the network.
 *   If shutdown/reboot holds too long because of NFS, [enable](/index.php/Enable "Enable") `NetworkManager-wait-online.service` to ensure that NetworkManager is not exited before the NFS volumes are unmounted. You may also try to add the `x-systemd.requires=network.target` mount option if shutdown takes too long.
+*   Using mount options as `noatime`, `nodiratime`, `noac`, `nocto` may be used to increase NFS performance.
 
 **Note:** Users trying to automount a NFS-share via systemd which is mounted the same way on the server may experience a freeze when handling larger amounts of data.
 
@@ -338,6 +349,13 @@ In recent linux kernels (>2.6.18) the size of I/O operations allowed by the NFS 
 To make the change permanent, create a [systemd-tmpfile](/index.php/Systemd#Temporary_files "Systemd"):
 
  `/etc/tmpfiles.d/nfsd-block-size.conf`  `w /proc/fs/nfsd/max_block_size - - - - 32768` 
+
+To mount with the increased `rsize` and `wsize` mount options:
+
+```
+# mount -t nfs -o rsize=32768,wsize=32768,vers=4 servername:/srv/nfs/music /mountpoint/on/client
+
+```
 
 ### Automounting shares with systemd-networkd
 
@@ -559,7 +577,8 @@ There is a dedicated article [NFS Troubleshooting](/index.php/NFS_Troubleshootin
 
 *   See also [Avahi](/index.php/Avahi "Avahi"), a Zeroconf implementation which allows automatic discovery of NFS shares.
 *   HOWTO: [Diskless network boot NFS root](/index.php/Diskless_network_boot_NFS_root "Diskless network boot NFS root")
-*   [NFS Performance Management](http://publib.boulder.ibm.com/infocenter/pseries/v5r3/index.jsp?topic=/com.ibm.aix.prftungd/doc/prftungd/nfs_perf.htm)
 *   [Microsoft Services for Unix NFS Client info](http://blogs.msdn.com/sfu/archive/2008/04/14/all-well-almost-about-client-for-nfs-configuration-and-performance.aspx)
 *   [NFS on Snow Leopard](https://blogs.oracle.com/jag/entry/nfs_on_snow_leopard) (Dead Link => [Archive.org Mirror](https://web.archive.org/web/20151212160906/https://blogs.oracle.com/jag/entry/nfs_on_snow_leopard))
 *   [http://chschneider.eu/linux/server/nfs.shtml](http://chschneider.eu/linux/server/nfs.shtml)
+*   [How to do Linux NFS Performance Tuning and Optimization](https://www.slashroot.in/how-do-linux-nfs-performance-tuning-and-optimization)
+*   [Linux: Tune NFS Performance](https://www.cyberciti.biz/faq/linux-unix-tuning-nfs-server-client-performance/)

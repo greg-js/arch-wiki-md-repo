@@ -126,7 +126,7 @@ The D620 has an awfully loud PC speaker. To disable it, ensure the module `pcspk
 blacklist pcspkr
 ```
 
-You should follow instructions for installing [cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils") and [pm-utils](/index.php/Pm-utils "Pm-utils"). There have been no problems with suspending and hibernating this laptop - just ensure you have enough swap.
+You should follow instructions for installing [cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils"). There have been no problems with suspending and hibernating this laptop - just ensure you have enough swap.
 
 ### Synaptics Touchpad
 

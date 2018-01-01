@@ -194,7 +194,7 @@ There are few tools that can access/modify the UEFI variables, namely
 
 *   **efitools** — Tools for manipulating UEFI secure boot platforms
 
-	[http://git.kernel.org/cgit/linux/kernel/git/jejb/efitools.git](http://git.kernel.org/cgit/linux/kernel/git/jejb/efitools.git) || [efitools](https://www.archlinux.org/packages/?name=efitools), [efitools-git](https://aur.archlinux.org/packages/efitools-git/)
+	[https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git](https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git) || [efitools](https://www.archlinux.org/packages/?name=efitools), [efitools-git](https://aur.archlinux.org/packages/efitools-git/)
 
 *   **Ubuntu's Firmware Test Suite** — Test suite that performs sanity checks on Intel/AMD PC firmware
 
@@ -239,15 +239,15 @@ The UEFI Shell is a shell/terminal for the firmware which allows launching uefi 
 
 ### Obtaining UEFI Shell
 
-You can download a BSD licensed UEFI Shell from Intel's Tianocore UDK/EDK2 Sourceforge.net project:
+You can download a BSD licensed UEFI Shell from Intel's Tianocore UDK/EDK2 project:
 
-*   [AUR](/index.php/AUR "AUR") package [uefi-shell-git](https://aur.archlinux.org/packages/uefi-shell-git/) (recommended) - provides x86_64 Shell in x86_64 system and IA32 Shell in i686 system - compiled directly from latest Tianocore EDK2 SVN source
+*   [AUR](/index.php/AUR "AUR") package [uefi-shell-git](https://aur.archlinux.org/packages/uefi-shell-git/) (recommended) - provides x86_64 Shell in x86_64 system and IA32 Shell in i686 system - compiled directly from latest Tianocore EDK2 source
 *   There are copies of Shell v1 and Shell v2 in the EFI directory on the Arch install media image.
 *   [Precompiled UEFI Shell v2 binaries](https://github.com/tianocore/edk2/tree/master/ShellBinPkg) (may not be up-to-date)
 *   [Precompiled UEFI Shell v1 binaries](https://github.com/tianocore/edk2/tree/master/EdkShellBinPkg) (not updated anymore upstream)
-*   [Precompiled UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware](http://dl.dropbox.com/u/17629062/Shell2.zip) - from Clover EFI bootloader
+*   [Precompiled UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware](https://ptpb.pw/~Shell2.zip) - from Clover EFI bootloader
 
-Shell v2 works best in UEFI 2.3+ systems and is recommended over Shell v1 in those systems. Shell v1 should work in all UEFI systems irrespective of the spec. version the firmware follows. More info at [ShellPkg](http://sourceforge.net/apps/mediawiki/tianocore/index.php?title=ShellPkg) and [this mail](http://sourceforge.net/mailarchive/message.php?msg_id=28690732)
+Shell v2 works best in UEFI 2.3+ systems and is recommended over Shell v1 in those systems. Shell v1 should work in all UEFI systems irrespective of the spec. version the firmware follows. More info at [ShellPkg](https://github.com/tianocore/tianocore.github.io/wiki/ShellPkg) and [this mail](http://sourceforge.net/mailarchive/message.php?msg_id=28690732)
 
 ### Launching UEFI Shell
 
@@ -261,7 +261,7 @@ Systems with Phoenix SecureCore Tiano UEFI firmware are known to have embedded U
 
 UEFI Shell commands usually support `-b` option which makes output pause after each page. Run `help -b` to list available commands.
 
-More info at [http://software.intel.com/en-us/articles/efi-shells-and-scripting/](http://software.intel.com/en-us/articles/efi-shells-and-scripting/)
+More info at [https://software.intel.com/en-us/articles/efi-shells-and-scripting/](https://software.intel.com/en-us/articles/efi-shells-and-scripting/)
 
 #### bcfg
 
@@ -400,7 +400,7 @@ $ xorriso -as mkisofs -iso-level 3 \
 
 You can install [ovmf](https://www.archlinux.org/packages/?name=ovmf) from the extra repository.
 
-It is [advised](http://www.linux-kvm.org/downloads/lersek/ovmf-whitepaper-c770f8c.txt) to make a local copy of the non-volatile variable store for your virtual machine:
+It is [advised](https://www.linux-kvm.org/downloads/lersek/ovmf-whitepaper-c770f8c.txt) to make a local copy of the non-volatile variable store for your virtual machine:
 
 ```
 $ cp /usr/share/ovmf/ovmf_vars_x64.bin my_uefi_vars.bin
@@ -426,7 +426,7 @@ $ qemu-system-x86_64 -enable-kvm -m 1G -drive if=pflash,format=raw,readonly,file
 
 DUET is a tianocore project that enables chainloading a full UEFI environment from a BIOS system, in a way similar to BIOS OS booting. This method is being discussed extensively in [http://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/](http://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/). Pre-build DUET images can be downloaded from one of the repos at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer). Specific instructions for setting up DUET is available at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt) .
 
-You can also try [http://sourceforge.net/projects/cloverefiboot/](http://sourceforge.net/projects/cloverefiboot/) which provides modified DUET images that may contain some system specific fixes and is more frequently updated compared to the gitorious repos.
+You can also try [https://sourceforge.net/projects/cloverefiboot/](https://sourceforge.net/projects/cloverefiboot/) which provides modified DUET images that may contain some system specific fixes and is more frequently updated compared to the gitorious repos.
 
 ## Troubleshooting
 
@@ -562,21 +562,21 @@ After reboot, any entries added to NVRAM should show up in the boot menu.
 *   [UEFI Forum](http://www.uefi.org/home/) - contains the official [UEFI Specifications](http://uefi.org/specifications) - GUID Partition Table is part of UEFI Specification
 *   [UEFI boot: how does that actually work, then? - A blog post by AdamW](https://www.happyassassin.net/2014/01/25/uefi-boot-how-does-that-actually-work-then/)
 *   [Linux Kernel x86_64 UEFI Documentation](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/x86/x86_64/uefi.txt)
-*   [Intel's page on EFI](http://www.intel.com/technology/efi/)
-*   [Intel Architecture Firmware Resource Center](http://firmware.intel.com/)
-*   [Matt Fleming - The Linux EFI Boot Stub](http://firmware.intel.com/blog/linux-efi-boot-stub)
-*   [Matt Fleming - Accessing UEFI Variables from Linux](http://firmware.intel.com/blog/accessing-uefi-variables-linux)
+*   [Intel's page on EFI](https://www.intel.com/content/www/us/en/architecture-and-technology/unified-extensible-firmware-interface/efi-homepage-general-technology.html)
+*   [Intel Architecture Firmware Resource Center](https://firmware.intel.com/)
+*   [Matt Fleming - The Linux EFI Boot Stub](https://firmware.intel.com/blog/linux-efi-boot-stub)
+*   [Matt Fleming - Accessing UEFI Variables from Linux](https://firmware.intel.com/blog/accessing-uefi-variables-linux)
 *   [Rod Smith - Linux on UEFI: A Quick Installation Guide](http://www.rodsbooks.com/linux-uefi/)
 *   [UEFI Boot problems on some newer machines (LKML)](https://lkml.org/lkml/2011/6/8/322)
-*   [LPC 2012 Plumbing UEFI into Linux](http://linuxplumbers.ubicast.tv/videos/plumbing-uefi-into-linux/)
-*   [LPC 2012 UEFI Tutorial : part 1](http://linuxplumbers.ubicast.tv/videos/uefi-tutorial-part-1/)
-*   [LPC 2012 UEFI Tutorial : part 2](http://linuxplumbers.ubicast.tv/videos/uefi-tutorial-part-2/)
-*   [Intel's Tianocore Project](http://sourceforge.net/apps/mediawiki/tianocore/index.php?title=Welcome_to_TianoCore) for Open-Source UEFI firmware which includes DuetPkg for direct BIOS based booting and OvmfPkg used in QEMU and Oracle VirtualBox
+*   [LPC 2012 Plumbing UEFI into Linux](https://linuxplumbers.ubicast.tv/videos/plumbing-uefi-into-linux/)
+*   [LPC 2012 UEFI Tutorial : part 1](https://linuxplumbers.ubicast.tv/videos/uefi-tutorial-part-1/)
+*   [LPC 2012 UEFI Tutorial : part 2](https://linuxplumbers.ubicast.tv/videos/uefi-tutorial-part-2/)
+*   [Intel's Tianocore Project](http://www.tianocore.org/) for Open-Source UEFI firmware which includes DuetPkg for direct BIOS based booting and OvmfPkg used in QEMU and Oracle VirtualBox
 *   [FGA: The EFI boot process](https://jdebp.eu/FGA/efi-boot-process.html)
-*   [Microsoft's Windows and GPT FAQ](http://www.microsoft.com/whdc/device/storage/GPT_FAQ.mspx)
+*   [Microsoft's Windows and GPT FAQ](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq)
 *   [Convert Windows x64 from BIOS-MBR mode to UEFI-GPT mode without Reinstall](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/wikis/Windows_x64_BIOS_to_UEFI)
 *   [Create a Linux BIOS+UEFI and Windows x64 BIOS+UEFI bootable USB drive](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/wikis/Linux_Windows_BIOS_UEFI_boot_USB)
 *   [Rod Smith - A BIOS to UEFI Transformation](http://rodsbooks.com/bios2uefi/)
-*   [EFI Shells and Scripting - Intel Documentation](http://software.intel.com/en-us/articles/efi-shells-and-scripting/)
-*   [UEFI Shell - Intel Documentation](http://software.intel.com/en-us/articles/uefi-shell/)
+*   [EFI Shells and Scripting - Intel Documentation](https://software.intel.com/en-us/articles/efi-shells-and-scripting/)
+*   [UEFI Shell - Intel Documentation](https://software.intel.com/en-us/articles/uefi-shell/)
 *   [UEFI Shell - bcfg command info](http://www.hpuxtips.es/?q=node/293)

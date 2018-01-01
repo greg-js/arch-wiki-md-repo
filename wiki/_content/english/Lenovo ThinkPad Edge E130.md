@@ -98,7 +98,7 @@ Works out of the box. Tested using Skype or this command: mplayer tv:// -tv driv
 
 ### Power
 
-Suspend and Hibernation both work using [pm-utils](/index.php/Pm-utils "Pm-utils") and [systemd](/index.php/Systemd "Systemd")
+Suspend and Hibernation works with [systemd](/index.php/Systemd "Systemd")
 
 ## Other
 

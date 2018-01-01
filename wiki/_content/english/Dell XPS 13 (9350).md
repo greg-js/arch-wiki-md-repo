@@ -73,7 +73,7 @@ In case your `efivars` are not properly set it is most likely due to you not bei
 
 ### Updates
 
-[BIOS update 1.5.1](https://downloads.dell.com/FOLDER04494006M/1/XPS_9350_1.5.1.exe) was released on 2017-09-28\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu. This might also help if your machine will not resume after suspend.
+[BIOS update 1.6.1](https://downloads.dell.com/FOLDER04721949M/1/XPS_9350_1.6.1.exe) was released on 2017-12-29\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu. This might also help if your machine will not resume after suspend.
 
 ### Firmware Updates
 

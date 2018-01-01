@@ -105,4 +105,17 @@ To recover the cursor in the TTY, run:
 
 To hide GRUB welcome and boot messages, you may install unofficial [grub-silent](https://aur.archlinux.org/packages/grub-silent/) package.
 
-It is required to reinstall [GRUB](/index.php/GRUB "GRUB") and regenerate `grub.cfg` file.
+After the installation, it is required to reinstall [GRUB](/index.php/GRUB "GRUB") to necessary partition first.
+
+Then, take an example as `/etc/default/grub.silent`, and make necessary changes to `/etc/default/grub`.
+
+Below three lines are necessary :
+
+```
+GRUB_DEFAULT=0
+GRUB_TIMEOUT=0
+GRUB_RECORDFAIL_TIMEOUT=$GRUB_TIMEOUT
+
+```
+
+Lastly, regenerate `grub.cfg` file.

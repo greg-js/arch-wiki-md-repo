@@ -57,7 +57,7 @@ Normalmente, o namcap imprime uma explicação legível por humanos (às vezes c
 ### Links simbólicos
 
 *   **symlink-found** (*informacional*) Relata quaisquer **links simbólicos** presentes no pacote.
-*   **hardlink-found** (*informacional*) Relata quaisquer **links abosolutos** presentes no pacote.
+*   **hardlink-found** (*informacional*) Relata quaisquer **links absolutos** presentes no pacote.
 *   **dangling-symlink** (*erro*) Relata ocorrências de links simbólicos que apontam para um arquivo que não está presente no pacote.
 *   **dangling-hardlink** (*erro*) Relata ocorrências de links absolutos que apontam para um arquivo que não está presente no pacote.
 
@@ -74,77 +74,77 @@ Normalmente, o namcap imprime uma explicação legível por humanos (às vezes c
 
 ### Licenças
 
-*   **missing-license** (*error*) This package is missing a license. Licenses should be put in the `license=()` array of the PKGBUILD. See the [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards") for more information. It is **very important** to fix this error as soon as possible, since not including a license is a copyright violation in many cases.
-*   **missing-custom-license-dir** (*error*) The license specified is *custom* but no license directory was found under */usr/share/licenses/* as specified in the packaging guidelines.
-*   **missing-custom-license-file** (*error*) The license specified is *custom* but no license file was found in */usr/share/licenses/$pkgname*.
-*   **not-a-common-license** (*error*) The license specified is **not** *custom* but it is not present in the common [licenses](https://www.archlinux.org/packages/?name=licenses) package shipped in the Arch Linux distribution.
+*   **missing-license** (*erro*) Esse pacote carece de uma licença. Licenças devem ser colocadas no vetor `license=()` do PKGBUILD. Veja os [Padrões de empacotamento do Arch](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch") para mais informações. É **muito importante** corrigir esse erro assim que possível, já que não incluir uma lista uma licença é, em muitos casos, uma violação de copyright.
+*   **missing-custom-license-dir** (*erro*) A licença especificada é *custom* (personalizada), mas nenhum diretório de licença foi encontrado sob */usr/share/licenses/*, conforme especificado nas diretrizes de empacotamento.
+*   **missing-custom-license-file** (*erro*) A licença especificada é *custom*, mas nenhum arquivo de licença foi localizado em */usr/share/licenses/$pkgname*.
+*   **not-a-common-license** (*erro*) A licença especificada **não** é *custom*, mas não está presente no pacote [licenses](https://www.archlinux.org/packages/?name=licenses) (contendo licenças comuns), fornecido na distribuição do Arch Linux.
 
 ### Arquivos
 
-This section describes the tags which relate to incorrect permissions of files or files not being installed in accordance with the FHS guidelines.
+Esta seção descreve as tags que se relacionam com permissões incorretas de arquivos ou arquivos que não estão sendo instalados de acordo com as diretrizes do FHS.
 
-*   **script-link-detected** (*informational*) The following file is a script.
-*   **file-in-non-standard-dir** (*warning*) The following file is in a non-standard directory as defined by the [FHS guidelines](http://proton.pathname.com/fhs/pub/fhs-2.3.html). The allowed directories are: *bin/*, *etc/*, *usr/bin/*, *usr/sbin/*, *usr/lib*, *usr/include/*, *usr/share/*, *opt/*, *lib/*, *sbin/*, *srv/*, *var/lib/*, *var/opt/*, *var/spool/*, *var/lock/*, *var/state/*, *var/run/*, *var/log/*.
-*   **elffile-not-in-allowed-dirs** (*error*) ELF files should only be in these directories: */lib*, */bin*, */sbin*, */usr/bin*, */usr/sbin*, */lib*, */usr/lib*, */opt/$pkgname/*.
-*   **empty-directory** (*warning*) The following directory in the package is empty.
-*   **non-fhs-man-page** (*error*) The package installs manual pages into a location other than */usr/share/man* which is the directory for manual pages according to the [FHS guidelines](http://www.pathname.com/fhs/pub/fhs-2.3.html#USRSHAREMANMANUALPAGES).
-*   **potential-non-fhs-man-page** (*warning*) This file seems to be a manual page which is not installed in */usr/share/man* but namcap is not too sure about it.
-*   **non-fhs-info-page** (*error*) The package installs info pages into a location other than */usr/share/info* which is where architecture independent data should be installed according to the [FHS guidelines](http://www.pathname.com/fhs/pub/fhs-2.3.html#USRSHAREARCHITECTUREINDEPENDENTDATA)
-*   **potential-non-fhs-info-page** (*warning*) This file seems to be a info page which is not installed in */usr/share/info* but namcap is not too sure about it.
-*   **incorrect-permissions** (*error*) This file has incorrect ownership. The ownership of files in binary packages should be `root/root`.
-*   **file-not-world-readable** (*warning*) The file is not readable by everyone; usually this should not be the case.
-*   **file-world-writable** (*warning*) Anyone can write to this file; again not a typical case.
-*   **directory-not-world-executable** (*warning*) The directory does not have the world executable bit set. This disallows access to the directory for programs running under user privileges.
-*   **incorrect-library-permissions** (*warning*) The static library file (.a) does not have permission 644 (readable and writable by root, readable by anyone else).
-*   **libtool-file-present** (*warning*) This file is a libtool (.la) file and should not be normally present. One can use the `!libtool` option in the *options* array of the PKGBUILD to remove these files automatically.
-*   **perllocal-pod-present** (*error*) The file perllocal.pod should not be present in a perl package; see the [Perl package guidelines](/index.php/Perl_package_guidelines "Perl package guidelines") for more information.
-*   **scrollkeeper-dir-exists** (*error*) A scrollkeeper directory was found in the package. scrollkeeper should not be run till post_{install,upgrade,remove}.
-*   **info-dir-file-present** (*error*) The info directory file */usr/share/info/dir* was found in the package. This file should not be present.
-*   **gnome-mime-file** (*error*) The file is an autogenerated GNOME mime file and should not be present in the package.
+*   **script-link-detected** (*informacional*) O arquivo a seguir é um script.
+*   **file-in-non-standard-dir** (*aviso*) O arquivo a seguir está em um diretório fora do padrão, conforme definido nas [diretrizes do FHS](http://proton.pathname.com/fhs/pub/fhs-2.3.html). Os diretórios permitidos são: *bin/*, *etc/*, *usr/bin/*, *usr/sbin/*, *usr/lib*, *usr/include/*, *usr/share/*, *opt/*, *lib/*, *sbin/*, *srv/*, *var/lib/*, *var/opt/*, *var/spool/*, *var/lock/*, *var/state/*, *var/run/*, *var/log/*.
+*   **elffile-not-in-allowed-dirs** (*erro*) Arquivos ELF devem estar somente nesses diretórios: */lib*, */bin*, */sbin*, */usr/bin*, */usr/sbin*, */lib*, */usr/lib*, */opt/$pkgname/*.
+*   **empty-directory** (*aviso*) O diretório a seguir no pacote está vazio.
+*   **non-fhs-man-page** (*erro*) O pacote instala páginas de manual em uma localização diferente de */usr/share/man*, que é o diretório para páginas de manual conforme as [diretrizes do FHS](http://www.pathname.com/fhs/pub/fhs-2.3.html#USRSHAREMANMANUALPAGES).
+*   **potential-non-fhs-man-page** (*aviso*) Esse arquivo parece ser uma página de manual que não está instalada em */usr/share/man*, mas o namcap não tem certeza disso.
+*   **non-fhs-info-page** (*erro*) O pacote instala páginas info em em uma localização diferente de */usr/share/info*, que é onde dados independentes de arquitetura devem ser instalados, conforme as [diretrizes do FHS](http://www.pathname.com/fhs/pub/fhs-2.3.html#USRSHAREARCHITECTUREINDEPENDENTDATA)
+*   **potential-non-fhs-info-page** (*aviso*) Esse arquivo parece ser uma página info que não está instalada em */usr/share/info*, mas o namcap não tem certeza sobre isso.
+*   **incorrect-permissions** (*erro*) Esse arquivo possui dono incorreto. O dono dos arquivos em pacotes binários deve ser `root/root`.
+*   **file-not-world-readable** (*aviso*) O arquivo não é legível por todos; geralmente, isso não é o desejado.
+*   **file-world-writable** (*aviso*) Qualquer pessoa pode escrever nesse arquivo; novamente, não é um caso comum.
+*   **directory-not-world-executable** (*aviso*) O diretório não tem o bit de executável por todos definido. Isso impede o acesso ao diretório para programas que estejam sob privilégios de usuário.
+*   **incorrect-library-permissions** (*aviso*) O arquivo de biblioteca estática (.a) não tem permissão 644 (legível e gravável pelo root, legível por qualquer pessoa).
+*   **libtool-file-present** (*aviso*) Esse arquivo é um arquivo libtool (.la) e normalmente não deve estar presente. Pode-se usar a opção `!libtool` no vetor *options* do PKGBUILD para remover esses arquivos automaticamente.
+*   **perllocal-pod-present** (*erro*) O arquivo perllocal.pod não deve estar presente em um pacote perl; veja as [diretrizes de pacote Perl](/index.php/Perl_package_guidelines "Perl package guidelines") para mais informações.
+*   **scrollkeeper-dir-exists** (*erro*) Um diretório scrollkeeper foi localizado no pacote. scrollkeeper não deve ser executado até pós-{instalação,atualização,remoção}.
+*   **info-dir-file-present** (*erro*) O arquivo de diretório info */usr/share/info/dir* estava presente no pacote. Esse arquivo não deve estar presente.
+*   **gnome-mime-file** (*erro*) O arquivo é um arquivo MIME autogerado do GNOME e não deveria estar presente no pacote.
 
 ### Diversos
 
-*   **insecure-rpath** (*error*) An RPATH (for an executable) is outside */usr/lib*. An RPATH to an insecure location is a potential security issue. See [FS#14049](https://bugs.archlinux.org/task/14049) for discussion.
+*   **insecure-rpath** (*erro*) Um RPATH (para um executável) está fora de */usr/lib*. Um RPATH para uma localização insegura é um risco de segurança em potencial. Veja [FS#14049](https://bugs.archlinux.org/task/14049) para uma discussão sobre isso.
 
 ### PKGBUILDs
 
-These are the tags related to the PKGBUILDs. Some of these might also apply for binary packages.
+Essas são tags relacionadas aos PKGBUILDs. Algumas dessas podem também se aplicar a pacotes binários.
 
-*   **variable-not-array** (*warning*) The variable should be a bash array instead of a string. These are the variables which should be written as arrays: *arch*, *license*, *depends*, *makedepends*, *optdepends*, *provides*, *conflicts*, *replaces*, *backup*, *source*, *noextract*, *md5sums*
-*   **backups-preceding-slashes** (*error*) The file mentioned in the backup array begins with a slash ('/').
-*   **package-name-in-uppercase** (*error*) There should not be any upper case letters in package names.
-*   **specific-host-type-used** (*warning*) Instead of using a specific host type (like i686 or x86_64) use the generic $CARCH variable.
-*   **extra-var-begins-without-underscore** (*warning*) The variable is not one of the standard variables defined in the PKGBUILD manual, yet it does not begin with an underscore.
-*   **file-referred-in-startdir** (*error*) A file was referenced in *$startdir* outside of *$startdir/pkg* and *$startdir/src*.
-*   **missing-md5sums** (*error*) MD5sums corresponding to the source files are missing. These can be added to the PKGBUILD using `updpkgsums`.
-*   **not-enough-md5sums** (*error*) There are more source files than MD5sums provided in the PKGBUILD.
-*   **too-many-md5sums** (*error*) There are more MD5sums than source files in the PKGBUILD.
-*   **improper-md5sum** (*error*) An improper MD5sum was found. MD5sums are of 32 characters in length.
-*   **specific-sourceforge-mirror** (*warning*) The PKGBUILD uses a specific sourceforge mirror. [http://downloads.sourceforge.net](http://downloads.sourceforge.net) should be used instead.
-*   **using-dl-sourceforge** (*warning*) The deprecated [http://dl.sourceforge.net](http://dl.sourceforge.net) domain is being used in the source array. [http://downloads.sourceforge.net](http://downloads.sourceforge.net) should be used instead.
-*   **missing-contributor** (*warning*) The contributor tag is missing.
-*   **missing-maintainer** (*warning*) The maintainer tag is missing.
-*   **missing-url** (*error*) The package does not have an upstream homepage set. Use the `url` variable for this.
-*   **pkgname-in-description** (*warning*) Description should not contain the package name.
-*   **recommend-use-pkgdir** (*informational*) *$startdir/pkg* is deprecated, use *$pkgdir* instead.
-*   **recommend-use-srcdir** (*informational*) *$startdir/src* is deprecated, use *$srcdir* instead.
+*   **variable-not-array** (*aviso*) A variável deve ser um vetor de bash em vez de uma string. Essas são as variáveis que devem ser escritas em vetores: *arch*, *license*, *depends*, *makedepends*, *optdepends*, *provides*, *conflicts*, *replaces*, *backup*, *source*, *noextract*, *md5sums*
+*   **backups-preceding-slashes** (*erro*) O arquivo mencionado no vetor backup inicia com uma barra ('/').
+*   **package-name-in-uppercase** (*erro*) Não deve haver letras maiúsculas em nomes de pacotes.
+*   **specific-host-type-used** (*aviso*) Em vez de usar um tipo de host específico (como i686 ou x86_64) use a variável genérica $CARCH variable.
+*   **extra-var-begins-without-underscore** (*aviso*) A variável não é uma da variáveis padrões definidas no manual do PKGBUILD e, mesmo assim, não inicia com sublinhado.
+*   **file-referred-in-startdir** (*erro*) Um arquivo foi referenciado em *$startdir* fora de *$startdir/pkg* e *$startdir/src*.
+*   **missing-md5sums** (*erro*) MD5sums correspondentes aos arquivos fonte estão faltando. Esses podem ser adicionados ao PKGBUILD usando `updpkgsums`.
+*   **not-enough-md5sums** (*erro*) Há mais arquivos fontes do que MD5sums fornecidos no PKGBUILD.
+*   **too-many-md5sums** (*erro*) Há mais MD5sums do que arquivos fontes no PKGBUILD.
+*   **improper-md5sum** (*erro*) Um MD5sum impróprio foi localizado. MD5sums são de 32 caracteres de tamanho.
+*   **specific-sourceforge-mirror** (*aviso*) O PKGBUILD usa um espelho específico de servidor do sourceforge. [http://downloads.sourceforge.net](http://downloads.sourceforge.net) deve ser usado.
+*   **using-dl-sourceforge** (*aviso*) O domínio obsoleto [http://dl.sourceforge.net](http://dl.sourceforge.net) está sendo usado no vetor fonte. [http://downloads.sourceforge.net](http://downloads.sourceforge.net) deve ser usado.
+*   **missing-contributor** (*aviso*) A tag *contributor* está faltando.
+*   **missing-maintainer** (*aviso*) A tag *maintainer* está faltando.
+*   **missing-url** (*erro*) O pacote não tem uma página web de *upstream* definida. Use a variável `url` para isso.
+*   **pkgname-in-description** (*aviso*) A descrição não deve conter o nome do pacote.
+*   **recommend-use-pkgdir** (*informacional*) *$startdir/pkg* está obsoleto, use *$pkgdir*.
+*   **recommend-use-srcdir** (*informacional*) *$startdir/src* está obsoleto, use *$srcdir*.
 
 ### Não lançadas
 
-There are currently no new tags in the development version.
+Não há novas tags na versão de desenvolvimento.
 
 ## Fazendo um módulo de namcap
 
-This section documents the innards of namcap and specifies how to create a new namcap module.
+Esta seção documenta as partes internas do namcap e especifica como criar um novo módulo namcap.
 
-The main namcap program namcap.py takes as parameters the filename of a package or a PKGBUILD and makes a pkginfo object, which it passes to a list of rules defined in `__tarball__` and `__pkgbuild__`.
+O programa principal do namcap, o namcap.py, toma como parâmetros o nome de arquivo de um pacote ou um PKGBUILD e faz um objeto pkginfo, o qual ele passa para uma lista de regras definidas em `__tarball__` e `__pkgbuild__`.
 
-*   *__tarball__* defines the rules which process binary packages.
-*   *__pkgbuild__* defines the rules which process PKGBUILDs
+*   *__tarball__* define as regras que processam os pacotes binários.
+*   *__pkgbuild__* define as regras que processam os PKGBUILDs
 
-Once your module is finalized, remember to add it to the appropriate array (*__tarball__* or *__pkgbuild__*) defined in *Namcap/__init__.py*
+Uma vez que seu módulo esteja finalizado, lembre-se de adicioná-lo para o vetor apropriado (*__tarball__* ou *__pkgbuild__*) definido em *Namcap/__init__.py*
 
-A sample namcap module is like this:
+Um exemplo de módulo de namcap é assim:
 
  `namcap/url.py` 
 ```
@@ -167,29 +167,29 @@ A sample namcap module is like this:
 
 ```
 
-Mostly, the code is self-explanatory. The following are the list of the methods that each namcap module must have:
+Em sua maioria, o código é autoexplicatório. A seguir segue a lista de métodos que cada módulo do namcap deve ter:
 
-*   **short_name**(self) Returns a string containing a short name of the module. Usually, this is the same as the basename of the module file.
-*   **long_name**(self) Returns a string containing a concise description of the module. This description is used when listing all the rules using `namcap -r list`.
-*   **prereq**(self) Return a string containing the prerequisites needed for the module to operate properly. Usually "" for modules processing PKGBUILDs and "tar" for modules processing package files. "extract" should be specified if the package contents should be extracted to a temporary directory before further processing.
-*   **analyze**(self, pkginfo, tar) Should return a list comprising in turn of three lists: of error tags, warning tags and information tags respectively. Each member of these tag lists should be a tuple consisting of two components: **the short, hyphenated form** of the tag with the appropriate format specifiers (%s, etc.) The first word of this string must be the tag name. The human readable form of the tag should be put in the tags file. The format of the tags file is described below; and **the parameters** which should replace the format specifier tokens in the final output.
-*   **type**(self) "pkgbuild" for a module processing PKGBUILDs, "tarball" for a module processing a binary package file.
+*   **short_name**(self) Retorna uma string contendo um nome curto do módulo. Geralmente, isso é o mesmo que o nome base do arquivo do módulo.
+*   **long_name**(self) Retorna uma string contendo uma descrição concisa do módulo. Essa descrição é usada ao listar todas as regras usando `namcap -r list`.
+*   **prereq**(self) Retorna uma string contendo os pré-requisitos necessários para o módulo funcionar corretamente. Geralmente "" para módulos processando PKGBUILDs e "tar" por módulos processando arquivos de pacote. "extract" deve ser especificado se o conteúdo do pacote deve ser extraído para um diretório temporário antes de processamento adicional.
+*   **analyze**(self, pkginfo, tar) Deve retornar uma lista que inclua, por sua vez, três listas: de tags de erro, tags de aviso e tags de informações, respectivamente. Cada membro dessas listas de tags deve ser uma tupla consistindo de dois componentes: **a forma curta e hifenizada** da tag com os especificadores de formato apropriado (%s, etc). A primeira palavra desta string deve ser o nome da tag. A forma legível por humanos desta tag deve ser coloca no arquivo de tags. O formato do arquivo de tags é descrito abaixo; e **os parâmetros** que devem substituir os tokens especificadores de formato na saída final.
+*   **type**(self) "pkgbuild" para um módulos processando PKGBUILDs, "tarball" para um módulo processando um arquivo de pacote binário.
 
-The tags file consists of lines specifying the human readable form of the hyphenated tags used in the namcap code. A line beginning with a '#' is treated as a comment. Otherwise the format of the file is:
+O arquivo de tags consiste de linhas especificando a forma legível por humanos das tags hifenizadas usadas no código do namcap. Uma linha começando com um '#' é tratada como um comentário. Do contrário, o formato do arquivo é:
 
 ```
  machine-parseable-tag %s :: This is machine parseable tag %s
 
 ```
 
-Note that a double colon (::) is used to separate the hyphenated tag from the human readable description.
+Note que uma dupla de caracteres de dois pontos (::) é usada para separar a tag hifenizada da descrição legível por humanos.
 
 ## Relatórios do namcap
 
-**namcap-reports** is an automatically generated report obtained after running namcap against the core, extra and community trees.
+**namcap-reports** é um relatório gerado automaticamente obtido após executar o namcap nas árvores dos repositórios core, extra e community.
 
-How it works:
+Como ele funciona:
 
-*   namcap is run against the entire [ABS](/index.php/ABS "ABS") tree to make `namcap.log`.
-*   The packages in core, extra and community are put in files named core, extra and community respectively (using `pacman -Slq`).
-*   `namcap-report.py` takes the code and prepares the report and RSS feeds, which is then copied to the webserver.
+*   O namcap é executado em toda árvore do [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") para criar `namcap.log`.
+*   Os pacotes nos repositórios core, extra e community são colocados em arquivos com nomes core, extra e community, respectivamente (usando `pacman -Slq`).
+*   `namcap-report.py` leva o código e prepara o relatório e feeds RSS, que é então copiado para o servidor web.

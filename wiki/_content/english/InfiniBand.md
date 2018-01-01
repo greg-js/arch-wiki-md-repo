@@ -1,4 +1,4 @@
-This page explains how to set up, diagnose, and benchmark an [w:InfiniBand](https://en.wikipedia.org/wiki/InfiniBand "w:InfiniBand") network.
+This page explains how to set up, diagnose, and benchmark [InfiniBand](https://en.wikipedia.org/wiki/InfiniBand "wikipedia:InfiniBand") networks.
 
 ## Contents
 

@@ -21,7 +21,7 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
     *   [1.1 An example to illustrate unprivileged containers](#An_example_to_illustrate_unprivileged_containers)
 *   [2 Setup](#Setup)
     *   [2.1 Required software](#Required_software)
-        *   [2.1.1 Enable support to run unprivileged contains (optional)](#Enable_support_to_run_unprivileged_contains_.28optional.29)
+        *   [2.1.1 Enable support to run unprivileged containers (optional)](#Enable_support_to_run_unprivileged_containers_.28optional.29)
     *   [2.2 Host network configuration](#Host_network_configuration)
     *   [2.3 Container creation](#Container_creation)
     *   [2.4 Container configuration](#Container_configuration)
@@ -91,7 +91,7 @@ UID        PID  PPID  C STIME TTY          TIME CMD
 
 Installing [lxc](https://www.archlinux.org/packages/?name=lxc) and [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) will allow the host system to run privileged lxcs.
 
-#### Enable support to run unprivileged contains (optional)
+#### Enable support to run unprivileged containers (optional)
 
 Users wishing to run *unprivileged* containers need to complete several additional setup steps.
 

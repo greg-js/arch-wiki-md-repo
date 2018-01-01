@@ -52,7 +52,7 @@ To switch between those modes you will need the `acpi_call` kernel module.
 
 ### Installing acpi_call kernel module
 
-This module is provided by [acpi_call-git](https://aur.archlinux.org/packages/acpi_call-git/), or its dkms version, [acpi_call-git-dkms](https://aur.archlinux.org/packages/acpi_call-git-dkms/). Both are available in [AUR](/index.php/AUR "AUR").
+This module is provided by [acpi_call](https://aur.archlinux.org/packages/acpi_call/), or its dkms version, [acpi_call-dkms](https://aur.archlinux.org/packages/acpi_call-dkms/).
 
 Build and install on of these packages and then load the module.
 
@@ -168,7 +168,7 @@ In case you use the open source brcm80211 driver provided by Linux kernel, make 
 
 The 1015pn can be configured to run automatically on the Intel video card, turn on and use the Nvidia part for specific processes when requested, and otherwise leave the Nvidia part turned off.
 
-First, install [acpi_call-git](https://aur.archlinux.org/packages/acpi_call-git/) from the [AUR](/index.php/AUR "AUR"). Add `acpi_call` module into `/etc/modules-load.d/`.
+First, install [acpi_call](https://aur.archlinux.org/packages/acpi_call/). Add `acpi_call` module into `/etc/modules-load.d/`.
 
 Lets make use of systemd's tmpfiles to ensure that the Intel VGA controller is used on every subsequent boot.
 

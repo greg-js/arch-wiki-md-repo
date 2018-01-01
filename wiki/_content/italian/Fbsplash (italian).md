@@ -6,7 +6,6 @@
     *   [1.1 Fbsplash](#Fbsplash)
     *   [1.2 Scripts](#Scripts)
     *   [1.3 Temi](#Temi)
-    *   [1.4 Suspend To Disk](#Suspend_To_Disk)
 *   [2 Configurazione](#Configurazione)
     *   [2.1 Parametri di avvio del Kernel](#Parametri_di_avvio_del_Kernel)
     *   [2.2 File di configurazione](#File_di_configurazione)
@@ -29,15 +28,6 @@ Per avere gli scripts per le funzionalità di base come i messaggi di controllo 
 Installa uno o più pacchetti dei temi di fbsplash cercando su AUR [fbsplash-theme](https://aur.archlinux.org/packages.php?O=0&K=fbsplash-theme&do_Search=Go) o da [GNOME-look.org](http://gnome-look.org) o da [KDE-look.org](http://kde-look.org).
 
 **Note:** Il pacchetto fbsplash non include nessun tema
-
-### Suspend To Disk
-
-Se vuoi utilizzare l'ibernazione con fbsplash:
-
-*   Se utilizzi Uswsusp, installa il pacchetto [uswsusp-fbsplash](https://aur.archlinux.org/packages/uswsusp-fbsplash/) da AUR. Per maggiori informazioni leggere le wiki di [pm-utils](/index.php/Pm-utils#Using_another_sleep_backend_.28like_uswsusp.29 "Pm-utils") ed [hibernate-script](/index.php/Suspend_to_Disk#Uswsusp_method_.28hibernate-script.29 "Suspend to Disk")
-*   Se utilizzi TuxOnIce, il pacchetto [tuxonice-userui](https://aur.archlinux.org/packages/tuxonice-userui/) permette di utilizzare i temi di fbsplash.
-
-In questa wiki sono presenti ulteriori informazioni su [uswsusp](/index.php/Suspend_to_Disk#Uswsusp_method "Suspend to Disk") e [TuxOnIce](/index.php/TuxOnIce_(Italiano) "TuxOnIce (Italiano)").
 
 ## Configurazione
 

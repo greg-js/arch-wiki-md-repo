@@ -1,3 +1,7 @@
+相关文章
+
+*   [Comprehensive Server Guide](/index.php/Comprehensive_Server_Guide "Comprehensive Server Guide")
+
 **翻译状态：** 本文是英文页面 [Virtual_Private_Server](/index.php/Virtual_Private_Server "Virtual Private Server") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-1-19，点击[这里](https://wiki.archlinux.org/index.php?title=Virtual_Private_Server&diff=0&oldid=356784)可以查看翻译后英文页面的改动。
 
 摘自 [Wikipedia:Virtual private server](https://en.wikipedia.org/wiki/Virtual_private_server "wikipedia:Virtual private server"):

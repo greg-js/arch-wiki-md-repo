@@ -15,7 +15,6 @@ Hay varios lugares donde se puede cambiar la configuración de administración d
 También hay muchas herramientas de administración de energía:
 
 *   [systemd](/index.php/Systemd "Systemd")
-*   [pm-utils](/index.php/Pm-utils "Pm-utils")
 *   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
 *   [TLP](/index.php/TLP "TLP")
 *   [acpid](/index.php/Acpid "Acpid")
@@ -178,7 +177,7 @@ WantedBy=sleep.target
 *   Argument 1: o bien `pre` o `post`, dependiendo de si la máquina se está durmiendo o despertando.
 *   Argument 2: `suspend`, `hibernate` o `hybrid-sleep`, ependiendo de lo que se ha invocado.
 
-A diferencia de [pm-utils](/index.php/Pm-utils "Pm-utils"), systemd ejecutará estos scripts en paralelo y no uno tras el otro.
+systemd ejecutará estos scripts en paralelo y no uno tras el otro.
 
 Las salidas de cualquier script personalizado se registrarán por `systemd-suspend.service`, `systemd-hibernate.service` o `systemd-hybrid-sleep.service`. Se pueden ver las salidas en el [journal](/index.php/Systemd_(Espa%C3%B1ol)#Journal "Systemd (Español)") de systemd:
 

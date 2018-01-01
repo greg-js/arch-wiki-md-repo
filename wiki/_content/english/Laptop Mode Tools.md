@@ -3,7 +3,6 @@ Related articles
 *   [acpid](/index.php/Acpid "Acpid")
 *   [systemd](/index.php/Systemd "Systemd")
 *   [cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils")
-*   [pm-utils](/index.php/Pm-utils "Pm-utils")
 *   [Laptop](/index.php/Laptop "Laptop")
 *   [Powertop](/index.php/Powertop "Powertop")
 *   [TLP](/index.php/TLP "TLP")
@@ -39,8 +38,7 @@ Combined with [acpid](/index.php/Acpid "Acpid") and [CPU frequency scaling](/ind
     *   [3.3 Disabling](#Disabling)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Laptop-mode-tools is not picking up events](#Laptop-mode-tools_is_not_picking_up_events)
-    *   [4.2 Laptop-mode-tools does not disable on AC](#Laptop-mode-tools_does_not_disable_on_AC)
-    *   [4.3 USB Mouse sleeping after 5 seconds when on battery](#USB_Mouse_sleeping_after_5_seconds_when_on_battery)
+    *   [4.2 USB Mouse sleeping after 5 seconds when on battery](#USB_Mouse_sleeping_after_5_seconds_when_on_battery)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -316,21 +314,6 @@ Install [acpid](https://www.archlinux.org/packages/?name=acpid) and enable its [
 If that does not help, go through the laptop-mode configuration files and make sure that the service you want to enable is set to 1\. Many services (including cpufreq control) are by default set to "auto", which may not enable them.
 
 I have experienced issues with bluetooth not working if I boot up with battery, and I fixed it with disabling runtime-pm.
-
-### Laptop-mode-tools does not disable on AC
-
-It is possible if you have both laptop-mode-tools and pm-utils installed, they can conflict with each other, causing laptop-mode-tools to not properly set its state.
-
-This can be fixed by disabling scripts with duplicate functionality in pm-utils. The main cause of this particular issue is the laptop-mode script located in `/usr/lib/pm-utils/power.d`. You can stop any unwanted hooks from running by creating a dummy file in `/etc/pm/power.d` with the same name as the corresponding `/usr/lib/pm-utils/power.d` hook. For example if you want to disable the laptop-mode hook:
-
-```
-# touch /etc/pm/power.d/laptop-mode
-
-```
-
-**Note:** Do not set the executable bit on that dummy-hook.
-
-Its recommended to disable any hook that has equivalent functionality in LMT.
 
 ### USB Mouse sleeping after 5 seconds when on battery
 

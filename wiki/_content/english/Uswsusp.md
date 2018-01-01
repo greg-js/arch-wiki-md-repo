@@ -163,7 +163,7 @@ Now you could try to suspend directly calling s2disk from the command line:
 
 ```
 
-It is probably necessary to resort to a userspace tool which calls internally s2disk, like [Pm-utils](/index.php/Pm-utils "Pm-utils").
+It is probably necessary to resort to a userspace tool which calls internally s2disk.
 
 ### With systemd
 

@@ -2,7 +2,6 @@ Artículos relacionados
 
 *   [Power saving](/index.php/Power_saving "Power saving")
 *   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
-*   [pm-utils](/index.php/Pm-utils "Pm-utils")
 *   [PHC](/index.php/PHC "PHC")
 
 ## Contents
@@ -176,4 +175,3 @@ DAEMONS=(syslog-ng hal ***cpufreq*** network netfs @alsa @crond @cupsd @fam @ntp
 ## Otros recursos
 
 [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling") - Más información útil para los usuarios de entornos de escritorio (Entrada de Arch Wiki)
-[pm-utils](/index.php/Pm-utils "Pm-utils") - Utilería Hibernate/Suspend proporcionada por la comunidad de OpenSUSE (Entrada de Arch Wiki)

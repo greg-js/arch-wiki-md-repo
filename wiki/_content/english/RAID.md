@@ -398,7 +398,7 @@ If your RAID 1 that's missing a disk array was wrongly auto-detected as RAID 1 (
 
 **Note:** The following section is applicable only if the root filesystem resides on the array. Users may skip this section if the array holds a data partition(s).
 
-You should create the RAID array between the [Partitioning](/index.php/Partitioning "Partitioning") and [formatting](/index.php/File_systems#Format_a_device "File systems") steps of the Installation Procedure. Instead of directly formatting a partition to be your root file system, it will be created on a RAID array. Follow the section [#Setup](#Setup) to create the RAID array. Then continue with the installation procedure until the pacstrap step is completed. When using [UEFI boot](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), also read [ESP on RAID](/index.php/EFI_System_Partition#ESP_on_RAID "EFI System Partition").
+You should create the RAID array between the [Partitioning](/index.php/Partitioning "Partitioning") and [formatting](/index.php/File_systems#Create_a_file_system "File systems") steps of the Installation Procedure. Instead of directly formatting a partition to be your root file system, it will be created on a RAID array. Follow the section [#Installation](#Installation) to create the RAID array. Then continue with the installation procedure until the pacstrap step is completed. When using [UEFI boot](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), also read [ESP on RAID](/index.php/EFI_System_Partition#ESP_on_RAID "EFI System Partition").
 
 ### Update configuration file
 

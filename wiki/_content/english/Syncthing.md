@@ -14,24 +14,24 @@ Related articles
         *   [2.2.1 System service](#System_service)
         *   [2.2.2 User service](#User_service)
     *   [2.3 Syncthing-GTK](#Syncthing-GTK)
-*   [3 Accessing the web-interface](#Accessing_the_web-interface)
-*   [4 Configuration](#Configuration)
-    *   [4.1 Local network setup](#Local_network_setup)
-    *   [4.2 Using inotify](#Using_inotify)
-*   [5 Participate in the infrastructure](#Participate_in_the_infrastructure)
-    *   [5.1 Running a relay](#Running_a_relay)
-    *   [5.2 Running a discovery server](#Running_a_discovery_server)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Stop journal spam](#Stop_journal_spam)
-    *   [6.2 Run in VirtualBox](#Run_in_VirtualBox)
-    *   [6.3 Running through a proxy](#Running_through_a_proxy)
-*   [7 Troubleshooting](#Troubleshooting)
+    *   [2.4 Web-GUI](#Web-GUI)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Local network setup](#Local_network_setup)
+    *   [3.2 Using inotify](#Using_inotify)
+*   [4 Participate in the infrastructure](#Participate_in_the_infrastructure)
+    *   [4.1 Running a relay](#Running_a_relay)
+    *   [4.2 Running a discovery server](#Running_a_discovery_server)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Stop journal spam](#Stop_journal_spam)
+    *   [5.2 Run in VirtualBox](#Run_in_VirtualBox)
+    *   [5.3 Running through a proxy](#Running_through_a_proxy)
+*   [6 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [syncthing](https://www.archlinux.org/packages/?name=syncthing) package.
 
-Syncthing provides a Web-GUI for control and monitoring. A GUI wrapper and notifier, [#Syncthing-GTK](#Syncthing-GTK) provided in a separate package also exists.
+Syncthing provides a [#Web-GUI](#Web-GUI) for control and monitoring. A GUI wrapper and notifier, [#Syncthing-GTK](#Syncthing-GTK) provided in a separate package also exists.
 
 ## Running Syncthing
 
@@ -59,11 +59,11 @@ Running Syncthing as a [user service](/index.php/Systemd/User "Systemd/User") en
 
 **Warning:** When launching the syncthing daemon using both systemd and syncthing-gtk, it might happen that two syncthing instances run concurrently leading to high CPU consumption: one launched by syncthing-gtk, and the other (slightly later) by systemd. To solve this, either avoid launching synchting using systemd, or configure syncthing-gtk to wait for the syncthing daemon.
 
-## Accessing the web-interface
+### Web-GUI
 
-When Syncthing is started, a web interface will be provided by default on [http://localhost:8384](http://localhost:8384).
+Syncthing provides a web interface accessible by default on [http://localhost:8384](http://localhost:8384).
 
-**Tip:** To access the configuration GUI remotely, see the [FAQ](https://docs.syncthing.net/users/faq.html#how-do-i-access-the-web-gui-from-another-computer).
+**Tip:** To access the GUI remotely, see the [FAQ](https://docs.syncthing.net/users/faq.html#how-do-i-access-the-web-gui-from-another-computer).
 
 ## Configuration
 

@@ -14,6 +14,7 @@
     *   [3.2 Power level information (ACPI)](#Power_level_information_.28ACPI.29)
     *   [3.3 Touchpad](#Touchpad)
     *   [3.4 SD card reader](#SD_card_reader)
+        *   [3.4.1 Kernel versions < v4.4-rc1](#Kernel_versions_.3C_v4.4-rc1)
     *   [3.5 Special keys](#Special_keys)
     *   [3.6 Freezing](#Freezing)
     *   [3.7 Bluetooth](#Bluetooth)
@@ -207,7 +208,15 @@ Proceed as usual.
 
 There has recently been some success in getting the x205ta's Realtek RT5648 sound card working. The relevant patches are in Linux release 4.11 and later.
 
-See also: [this step-by-step description of how to compile Pierre Bossart's patches](https://ubuntuforums.org/showthread.php?t=2254322&page=126&p=13592053#post13592053).
+Alsa-lib's UCM files need to be overwritten with the right version of files provided by Pierre Bossart:
+
+```
+$ wget -qO /usr/share/alsa/ucm/chtrt5645/HiFi.conf [https://raw.githubusercontent.com/plbossart/UCM/c8b344ca650a62aa809242b0c9ba908eac963125/chtrt5645/HiFi.conf](https://raw.githubusercontent.com/plbossart/UCM/c8b344ca650a62aa809242b0c9ba908eac963125/chtrt5645/HiFi.conf)
+$ wget -qO /usr/share/alsa/ucm/chtrt5645/chtrt5645.conf [https://raw.githubusercontent.com/plbossart/UCM/c8b344ca650a62aa809242b0c9ba908eac963125/chtrt5645/chtrt5645.conf](https://raw.githubusercontent.com/plbossart/UCM/c8b344ca650a62aa809242b0c9ba908eac963125/chtrt5645/chtrt5645.conf)
+
+```
+
+See also: [this step-by-step description of how to compile Pierre Bossart's patches](https://ubuntuforums.org/showthread.php?t=2254322&page=126&p=13592053#post13592053). Not needed as of v4.11 and later.
 
 ### Power level information (ACPI)
 
@@ -242,7 +251,11 @@ EndSection
 
 ### SD card reader
 
-The micro SD card reader will probably not work out of the box. [This page](https://wiki.debian.org/InstallingDebianOn/Asus/X205TA) contains a simple fix. First, create the file as follows:
+As of kernel version v4.4-rc1 the micro SD card reader should work out of the box. See [commit info in kernel source.](https://github.com/torvalds/linux/commit/0cd2f04453fcb7bf3f38a4a72d1619636b4afa57) There can however be timeouts when probing the Replay Protected Memory Block partition. Refer to [this page](https://dev-nell.com/rpmb-emmc-errors-under-linux.html) for more info and a kernel patch disabling the RPMB partition should you never need the RPMB partition.
+
+#### Kernel versions < v4.4-rc1
+
+For older kernel versions the micro SD card reader will probably not work out of the box. [This page](https://wiki.debian.org/InstallingDebianOn/Asus/X205TA) contains a simple fix. First, create the file as follows:
 
  `/etc/modprobe.d/sdhci.conf ` 
 ```

@@ -1,9 +1,7 @@
 Related articles
 
 *   [Uswsusp](/index.php/Uswsusp "Uswsusp")
-*   [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")
 *   [systemd](/index.php/Systemd "Systemd")
-*   [pm-utils](/index.php/Pm-utils "Pm-utils")
 *   [Power management](/index.php/Power_management "Power management")
 
 Currently there are three methods of suspending available: **suspend to RAM** (usually called just **suspend**), **suspend to disk** (usually known as **hibernate**), and **hybrid suspend** (sometimes aptly called **suspend to both**):
@@ -23,7 +21,6 @@ There are multiple low level interfaces (backends) providing basic functionality
     *   [1.2 uswsusp](#uswsusp)
 *   [2 High level interfaces](#High_level_interfaces)
     *   [2.1 systemd](#systemd)
-    *   [2.2 pm-utils](#pm-utils)
 *   [3 Hibernation](#Hibernation)
     *   [3.1 About swap partition/file size](#About_swap_partition.2Ffile_size)
     *   [3.2 Required kernel parameters](#Required_kernel_parameters)
@@ -35,7 +32,6 @@ There are multiple low level interfaces (backends) providing basic functionality
     *   [4.3 Suspend/hibernate doesn't work, or not consistently](#Suspend.2Fhibernate_doesn.27t_work.2C_or_not_consistently)
     *   [4.4 Wake-on-LAN](#Wake-on-LAN)
     *   [4.5 Instantaneous wakeups from suspend](#Instantaneous_wakeups_from_suspend)
-*   [5 See also](#See_also)
 
 ## Low level interfaces
 
@@ -55,19 +51,13 @@ See main article [Uswsusp](/index.php/Uswsusp "Uswsusp").
 
 ## High level interfaces
 
-**Note:** The end goal of these packages is to provide binaries/scripts that can be invoked to perform suspend/hibernate. Actually hooking them up to power buttons or menu clicks or laptop lid events is usually left to other tools. To automatically suspend/hibernate on certain power events, such as laptop lid close or battery depletion percentage, you may want to look into running [Acpid](/index.php/Acpid "Acpid").
+The end goal of these packages is to provide binaries/scripts that can be invoked to perform suspend/hibernate. Actually hooking them up to power buttons or menu clicks or laptop lid events is usually left to other tools. To automatically suspend/hibernate on certain power events, such as laptop lid close or battery depletion percentage, you may want to look into running [Acpid](/index.php/Acpid "Acpid").
 
 ### systemd
 
 [systemd](/index.php/Systemd "Systemd") provides native commands for suspend, hibernate and a hybrid suspend, see [Power management#Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management") for details. This is the default interface used in Arch Linux.
 
 See [Power management#Sleep hooks](/index.php/Power_management#Sleep_hooks "Power management") for additional information on configuring suspend/hibernate hooks. Also see [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1), [systemd-sleep(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8), and [systemd.special(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7).
-
-### pm-utils
-
-pm-utils is a set of shell scripts that encapsulate the backend's suspend/hibernate functionality. It comes with a set of pre- and post-suspend tweaks and various hooks to customize the process.
-
-See main article [pm-utils](/index.php/Pm-utils "Pm-utils").
 
 ## Hibernation
 
@@ -189,7 +179,3 @@ The relevant devices are `EHC1`, `EHC2` and `XHC` (for USB 3.0). To toggle their
 ```
 
 This should result in suspension working again. However, this settings are only temporary and would have to be set at every reboot. To automate this take a look at [systemd#Writing unit files](/index.php/Systemd#Writing_unit_files "Systemd"). See [BBS thread](https://bbs.archlinux.org/viewtopic.php?pid=1575617#p1575617) for a possible solution and more information.
-
-## See also
-
-*   [Auto hibernate after suspend](https://wiki.sabayon.org/index.php?title=Auto_hibernate_after_suspend)

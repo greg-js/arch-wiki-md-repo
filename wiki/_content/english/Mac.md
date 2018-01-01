@@ -695,14 +695,7 @@ You can easily check what card do your MacBook have by:
 
 **Note:**
 
-*   If your connection frequently drops, you may have to turn off Wi-Fi power management. If you are running [pm-utils](/index.php/Pm-utils "Pm-utils"), you may override wireless power management by creating an executable file `/etc/pm/wireless` with the lines:
-
-```
-#!/bin/sh
-iwconfig wlp2s0 power off
-
-```
-
+*   If your connection frequently drops, you may have to turn off Wi-Fi power management.
 *   Eduroam or similar may crash your network manager. Simply delaying the connection after login should do the trick
 
 ### Power management

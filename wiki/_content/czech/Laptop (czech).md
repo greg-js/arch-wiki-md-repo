@@ -4,16 +4,15 @@
 *   [2 Řízení spotřeby](#.C5.98.C3.ADzen.C3.AD_spot.C5.99eby)
     *   [2.1 Nástroje pro monitorování stavu baterie](#N.C3.A1stroje_pro_monitorov.C3.A1n.C3.AD_stavu_baterie)
     *   [2.2 Cpufrequtils](#Cpufrequtils)
-    *   [2.3 Pm-utils](#Pm-utils)
-    *   [2.4 Lapsus](#Lapsus)
-    *   [2.5 Instalace powertopu](#Instalace_powertopu)
-    *   [2.6 Laptop mode tools](#Laptop_mode_tools)
-    *   [2.7 Powernowd](#Powernowd)
-    *   [2.8 Návhry pro šetření energie](#N.C3.A1vhry_pro_.C5.A1et.C5.99en.C3.AD_energie)
-        *   [2.8.1 Nastavení disků](#Nastaven.C3.AD_disk.C5.AF)
-        *   [2.8.2 Další nastavení](#Dal.C5.A1.C3.AD_nastaven.C3.AD)
-        *   [2.8.3 Problém s točícími se hlavičkami pevného disku](#Probl.C3.A9m_s_to.C4.8D.C3.ADc.C3.ADmi_se_hlavi.C4.8Dkami_pevn.C3.A9ho_disku)
-        *   [2.8.4 Nastavení plánovače](#Nastaven.C3.AD_pl.C3.A1nova.C4.8De)
+    *   [2.3 Lapsus](#Lapsus)
+    *   [2.4 Instalace powertopu](#Instalace_powertopu)
+    *   [2.5 Laptop mode tools](#Laptop_mode_tools)
+    *   [2.6 Powernowd](#Powernowd)
+    *   [2.7 Návhry pro šetření energie](#N.C3.A1vhry_pro_.C5.A1et.C5.99en.C3.AD_energie)
+        *   [2.7.1 Nastavení disků](#Nastaven.C3.AD_disk.C5.AF)
+        *   [2.7.2 Další nastavení](#Dal.C5.A1.C3.AD_nastaven.C3.AD)
+        *   [2.7.3 Problém s točícími se hlavičkami pevného disku](#Probl.C3.A9m_s_to.C4.8D.C3.ADc.C3.ADmi_se_hlavi.C4.8Dkami_pevn.C3.A9ho_disku)
+        *   [2.7.4 Nastavení plánovače](#Nastaven.C3.AD_pl.C3.A1nova.C4.8De)
 *   [3 Touchpad](#Touchpad)
 *   [4 Speciální tlačítka](#Speci.C3.A1ln.C3.AD_tla.C4.8D.C3.ADtka)
 *   [5 Ochrana pevného disku proti šoku](#Ochrana_pevn.C3.A9ho_disku_proti_.C5.A1oku)
@@ -58,10 +57,6 @@ Jednoduchý monitor baterie sídlící v tray je [batterymon](https://aur.archli
 ## Cpufrequtils
 
 [Cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils") poskytuje škálování frekvence procesoru, technologie užívaná především v noteboocích umožňuje operačnímu systému zvyšovat a snižovat frekvenci procesoru v závislosti na současném zatížení a schématu řízení spotřeby. Pro rychlou a snadnou instalaci a nastavení se podívej na článek [Škálování frekvence procesoru](/index.php/%C5%A0k%C3%A1lov%C3%A1n%C3%AD_frekvence_procesoru "Škálování frekvence procesoru").
-
-## Pm-utils
-
-[Pm-utils](/index.php/Pm-utils "Pm-utils") poskytuje framework pro nastavení uspání a hibernace. Pm-utils by měl být používáam spolu s cpufrequtils pro poskytnutí kompletního řešení řízení spotřeby.
 
 ## Lapsus
 

@@ -95,6 +95,10 @@ ENV{ID_FS_USAGE}=="filesystem|other|crypto", ENV{UDISKS_FILESYSTEM_SHARED}="1"
 
 ```
 
+Since `/media`, unlike `/run`, is not mounted by default as a [tmpfs](/index.php/Tmpfs "Tmpfs"), you may also wish to create a [tmpfiles.d](/index.php/Systemd#Temporary_files "Systemd") snippet to clean stale mountpoints at every boot:
+
+ `/etc/tmpfiles.d/media.conf`  `D /media 0755 root root 0 -` 
+
 ### Mount loop devices
 
 To easily mount ISO images, use the following command:

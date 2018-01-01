@@ -63,7 +63,7 @@ Laptop has a Broadcom BCM20702 bluetooth chip. There are no drivers for this chi
 
 ## Power management
 
-Just consult [Laptop](/index.php/Laptop "Laptop") page to read about [tp_smapi](/index.php/Tp_smapi "Tp smapi"), [pm-utils](/index.php/Pm-utils "Pm-utils"), [uswsusp](/index.php/Uswsusp "Uswsusp") and [acpid](/index.php/Acpid "Acpid").
+Just consult [Laptop](/index.php/Laptop "Laptop") and [Power management](/index.php/Power_management "Power management") pages.
 
 Tp_smapi does not seem to work at all.
 

@@ -6,13 +6,10 @@
     *   [3.1 Controlador da Frequência do CPU](#Controlador_da_Frequ.C3.AAncia_do_CPU)
     *   [3.2 Reguladores de Escalonamento](#Reguladores_de_Escalonamento)
     *   [3.3 Modo daemon](#Modo_daemon)
-*   [4 Outros recursos](#Outros_recursos)
 
 ## Sumário
 
 [cpufrequtils](https://www.archlinux.org/packages/?name=cpufrequtils) trata-se de um conjunto de utilitários projectados para assistir ao escalonamento da frequência do processador, tecnologia usada principalmente nos portáteis para permitir ao sistema operativo reduzir ou aumentar a frequência do processador consoante a necessidade actual, tornando o consumo energético mais eficiente.
-
-Quando usado em conjunto com [pm-utils](/index.php/Pm-utils "Pm-utils"), os utilizadores de portáteis dispõem de uma suite de gestão de energia completa.
 
 ## Instalação
 
@@ -157,7 +154,3 @@ Para iniciar o daemon automaticamente no arranque, adiciona `cpufreq` ao array `
 DAEMONS=(syslog-ng hal ***cpufreq*** network netfs @alsa @crond @cupsd @fam @ntpd @sshd)
 
 ```
-
-## Outros recursos
-
-[Pm-utils](/index.php/Pm-utils "Pm-utils") - Plataforma de Hibernação/Suspensão providenciada pela comunidade OpenSUSE

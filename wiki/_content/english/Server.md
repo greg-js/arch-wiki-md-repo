@@ -14,9 +14,6 @@ This guide will give you an overview for the most common server options in exist
 *   [4 Local network services](#Local_network_services)
     *   [4.1 Zeroconf](#Zeroconf)
 *   [5 Security](#Security)
-    *   [5.1 Firewall](#Firewall)
-    *   [5.2 Protecting SSH](#Protecting_SSH)
-    *   [5.3 SELinux](#SELinux)
 *   [6 Administration and maintenance](#Administration_and_maintenance)
     *   [6.1 Remote administration](#Remote_administration)
     *   [6.2 Local Package Repositories](#Local_Package_Repositories)
@@ -66,17 +63,12 @@ For remote access to this server, you need a static IP address/ domain name, or 
 
 ## Security
 
-### Firewall
-
-Refer to [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls") for details regarding available firewall software.
-
-### Protecting SSH
-
-Allowing remote log-on through SSH is good for administrative purposes, but can pose a threat to your server's security. Often the target of brute force attacks, SSH access needs to be limited properly to prevent third parties gaining access to your server. See [Secure Shell#Protection](/index.php/Secure_Shell#Protection "Secure Shell") for how to configure it.
-
-### SELinux
-
-Please refer to the [SELinux](/index.php/SELinux "SELinux") wiki page for instructions on installation and configuration.
+*   [Security](/index.php/Security "Security")
+*   [Category:Security](/index.php/Category:Security "Category:Security")
+*   [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls")
+*   [Secure Shell#Protection](/index.php/Secure_Shell#Protection "Secure Shell")
+*   [SELinux](/index.php/SELinux "SELinux")
+*   [AppArmor](/index.php/AppArmor "AppArmor")
 
 ## Administration and maintenance
 

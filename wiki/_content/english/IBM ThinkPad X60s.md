@@ -12,8 +12,6 @@ The IBM Thinkpad X60s is a small light laptop with a Core Duo or Core 2 Duo proc
 *   [3 Ethernet](#Ethernet)
 *   [4 Wireless Networking](#Wireless_Networking)
 *   [5 Special Keys](#Special_Keys)
-*   [6 Suspend](#Suspend)
-    *   [6.1 With pm-utils](#With_pm-utils)
 
 ## Installation
 
@@ -54,9 +52,3 @@ See [Wireless network configuration#iwlegacy](/index.php/Wireless_network_config
 ## Special Keys
 
 See [http://www.thinkwiki.org/wiki/How_to_get_special_keys_to_work](http://www.thinkwiki.org/wiki/How_to_get_special_keys_to_work).
-
-## Suspend
-
-### With pm-utils
-
-See the article on [pm-utils](/index.php/Pm-utils "Pm-utils"). This works fine.

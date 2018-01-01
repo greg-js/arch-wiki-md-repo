@@ -64,12 +64,9 @@ or
 
 ```
 
-If `mount` does not recognize the format of the device you can try to use the `-t` argument, see [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) for details.
+If `mount` does not recognize the [file system](/index.php/File_system "File system") of the device you can try to use the `-t` argument, see [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) for details. If mounting does not work, you can try to [recreate the file system](/index.php/File_systems#Create_a_file_system "File systems") or even [repartition the disk](/index.php/Partitioning "Partitioning").
 
-**Note:**
-
-*   If mounting your stick does not work you can try to repartition it, see [Format a device](/index.php/Format_a_device "Format a device").
-*   See [[1]](https://gist.github.com/anonymous/a69093a51f83b53d9fc5) for example mount/unmount scripts using [sudo](/index.php/Sudo "Sudo").
+**Note:** See [[1]](https://gist.github.com/anonymous/a69093a51f83b53d9fc5) for example mount/unmount scripts using [sudo](/index.php/Sudo "Sudo").
 
 #### As normal user with mount
 
@@ -79,6 +76,8 @@ If you want non-root users to be able to write to the USB stick, you can issue t
 # mount -o gid=users,fmask=113,dmask=002 /dev/sda1 /mnt/usbstick
 
 ```
+
+If it does not work, make sure that the [file system](/index.php/File_system "File system") is mountable and writable as root, see the previous section for details.
 
 #### As normal user with fstab
 

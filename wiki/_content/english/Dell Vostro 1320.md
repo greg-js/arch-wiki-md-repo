@@ -19,9 +19,8 @@ This page is about setting up Arch Linux on the Dell Vostro 1320 laptop, which h
     *   [2.6 Bluetooth](#Bluetooth)
         *   [2.6.1 Dell™ Wireless 355 Bluetooth® Module ROW](#Dell.E2.84.A2_Wireless_355_Bluetooth.C2.AE_Module_ROW)
 *   [3 Issues](#Issues)
-    *   [3.1 Suspend](#Suspend)
-    *   [3.2 Framebuffer](#Framebuffer)
-    *   [3.3 Card Reader](#Card_Reader_2)
+    *   [3.1 Framebuffer](#Framebuffer)
+    *   [3.2 Card Reader](#Card_Reader_2)
 
 # Installation
 
@@ -115,10 +114,6 @@ See [Wireless network configuration](/index.php/Wireless_network_configuration "
 If your Vostro comes with Windows Vista installed (most of all), you need to update the bluetooth driver in Windows Vista. Among other things, the driver changes the firmware of the module. Only after that bluetooth will work under linux.
 
 # Issues
-
-## Suspend
-
-If you have a dedicated Nvidia chipset, and want to suspend your laptop (Suspend2RAM) using [pm-utils](/index.php/Pm-utils "Pm-utils") you need to have the nvidia driver installed (and therefore a running X server).
 
 ## Framebuffer
 

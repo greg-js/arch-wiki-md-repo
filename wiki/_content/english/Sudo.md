@@ -337,13 +337,13 @@ Cmnd_Alias  SHELL       =   /usr/bin/zsh, /usr/bin/bash
 root        ALL         =   (ALL)   ALL
 admin       ALL         =   (root)  SYSTEMD, KILL, FIREWALL
 devel	    ALL         =   (root)  PKGMAN
-Joe	    ALL         =   (devel) SHELL, (admin) SHELL 
+joe	    ALL         =   (devel) SHELL, (admin) SHELL 
 
 ```
 
 With this setup, you will almost never need to login as the Root user.
 
-"Joe" can connect to his home WiFi.
+"joe" can connect to his home WiFi.
 
 ```
 sudo netctl start home
@@ -351,7 +351,7 @@ sudo poweroff
 
 ```
 
-"Joe" can not use netctl as any other user.
+"joe" can not use netctl as any other user.
 
 ```
 sudo -u admin -- netctl start home

@@ -1,5 +1,9 @@
 **翻译状态：** 本文是英文页面 [Arch_Linux_Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-20，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&diff=0&oldid=438253)可以查看翻译后英文页面的改动。
 
+Related articles
+
+*   [软件包降级](/index.php/%E8%BD%AF%E4%BB%B6%E5%8C%85%E9%99%8D%E7%BA%A7 "软件包降级")
+
 Arch Linux 存档库（**A**rch **L**inux **Archive**，*简称 ala*），以前称为 *Arch Linux 回滚机（Arch Linux Rollback Machine*，*简称 ARM*），保存了 *官方仓库快照*、*iso 镜像* 和 *引导程序包* 的历史版本。
 
 **用途**

@@ -158,38 +158,38 @@ Para experimentar os benefícios do ext4, um processo de conversão irreversíve
 
 #### Procedimento
 
-These instructions were adapted from [Kernel documentation](http://ext4.wiki.kernel.org/index.php/Ext4_Howto) and an [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=61602).
+Essas instruções foram adaptadas da [documentação do Kernel](http://ext4.wiki.kernel.org/index.php/Ext4_Howto) e um [tópico do BBS](https://bbs.archlinux.org/viewtopic.php?id=61602).
 
-**Warning:**
+**Atenção:**
 
-*   If you convert the system's root filesystem, ensure that the 'fallback' initramfs is available at reboot. Alternatively, add `ext4` according to [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") and re-create the 'default' initial ramdisk with `mkinitcpio -p linux` before starting.
-*   If you decide to convert a separate `/boot` partition, ensure the [bootloader](/index.php/Bootloader "Bootloader") supports booting from ext4.
+*   Se você converter o sistema de arquivos raiz do sistema, assegure-se de que o initramfs reserva ('fallback') está disponível na reinicialização. Alternativamente, adicione `ext4` de acordo com [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") e recrie um ramdisk inicial "padrão" com `mkinitcpio -p linux` antes de iniciar.
+*   Se você decidir converter uma partição `/boot` separada, assegure-se que o [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot") oferece inicialização do ext4.
 
-In the following steps `/dev/sdxX` denotes the path to the partition to be converted, such as `/dev/sda1`.
+Nas etapas a seguir, `/dev/sdxX` denota o caminho para a partição a ser convertida, tal como `/dev/sda1`.
 
-1.  **[BACK-UP!](/index.php/Backup_programs "Backup programs")** Back-up all data on any ext3 partitions that are to be converted to ext4\. A useful package, especially for root partitions, is [Clonezilla](http://clonezilla.org).
-2.  Edit `/etc/fstab` and change the 'type' from ext3 to ext4 for any partitions that are to be converted to ext4.
-3.  Boot the live medium (if necessary). The conversion process with [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) must be done when the drive is not mounted. If converting a root partition, the simplest way to achieve this is to boot from some other live medium.
-4.  Ensure the partition is **NOT** mounted
-5.  If you want to convert a ext2 partition, the first conversion step is to add a [journal](/index.php/File_systems#Journaling "File systems") by running `tune2fs -j /dev/sdxX` as root; making it a ext3 partition.
-6.  Run `tune2fs -O extent,uninit_bg,dir_index /dev/sdxX` as root. This command converts the ext3 filesystem to ext4 (irreversibly).
-7.  Run `fsck -f /dev/sdxX` as root.
-    *   The user **must *fsck*** the filesystem, or it **will be unreadable**! This *fsck* run is needed to return the filesystem to a consistent state. It **will** find checksum errors in the group descriptors - this **is** expected. The `-f` option asks *fsck* to force checking even if the file system seems clean. The `-p` option may be used on top to 'automatically repair' (otherwise, the user will be asked for input for each error).
-8.  Recommended: mount the partition and run `e4defrag -c -v /dev/sdxX` as root.
-    *   Even though the filesystem is now converted to ext4, all files that have been written before the conversion do not yet take advantage of the extent option of ext4, which will improve large file performance and reduce fragmentation and filesystem check time. In order to fully take advantage of ext4, all files would have to be rewritten on disk. Use *e4defrag* to take care of this problem.
-9.  Reboot Arch Linux!
+1.  **[Backup!](/index.php/Backup_programs "Backup programs")** Faça backup de todos os dados em quaisquer partições ext3 que serão convertidas para ext4\. Um pacote útil, especialmente para partições raiz, é o [Clonezilla](http://clonezilla.org).
+2.  Edite `/etc/fstab` e altere o 'type' de ext3 para ext4 para quaisquer partições que serão convertidos para ext4.
+3.  Inicialize uma mídia *Live* (se necessário). O processo de conversão com [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) deve ser feito quando a unidade não está montada. Se estiver convertendo uma partição raiz, a forma mais simples de alcançar isso é inicializar de alguma outra mídia *Live*.
+4.  Certifique-se que a partição **NÃO** está montada.
+5.  Se você quiser converter uma partição ext2, a primeira etapa de conversão é adicionar um [journal](/index.php/File_systems#Journaling "File systems") executando `tune2fs -j /dev/sdxX` como root; fazendo dela uma partição ext3.
+6.  Execute `tune2fs -O extent,uninit_bg,dir_index /dev/sdxX` como root. Esse comando converte o sistema de arquivos ext3 para ext4 (irreversivelmente).
+7.  Execute `fsck -f /dev/sdxX` como root.
+    *   O usuário **deve executar *fsck*** no sistema de arquivos, ou ela **se tornará ilegível**! A execução de *fsck* é necessária para retornar o sistema de arquivos para um estado consistente. Ele **vai** encontrar erros de soma de verificação nos descritores de grupo - isso **é** esperado. A opção `-f` pede que o *fsck* verifique mesmo se o sistema de arquivos parecer limpo. A opção `-p` pode ser usada sobre a 'reparação automática' (do contrário, o usuário será solicitado inserir para cada erro).
+8.  Recomendado: monte a partição e execute `e4defrag -c -v /dev/sdxX` como root.
+    *   Mesmo que o sistema de arquivos agora esteja convertido em ext4, todos os arquivos que foram escritos antes da conversão ainda não aproveitam a opção de extensão do ext4, que melhorará o desempenho de arquivos grandes e reduzirá a fragmentação e o tempo de verificação do sistema de arquivos. Para aproveitar plenamente o ext4, todos os arquivos teriam que ser reescritos no disco. Use *e4defrag* para cuidar desse problema.
+9.  Reinicie o Arch Linux!
 
 ## Usando criptografia baseada em arquivos
 
-**Note:** Ext4 forbids encrypting the root (`/`) directory and will produce an error on [kernel](/index.php/Kernel "Kernel") 4.13 and later [[5]](https://patchwork.kernel.org/patch/9787619/) [[6]](https://www.phoronix.com/scan.php?page=news_item&px=EXT4-Linux-4.13-Work).
+**Nota:** Ext4 proíbe criptografar o diretório raiz (`/`) e vai produzir um erro no [kernel](/index.php/Kernel "Kernel") 4.13 e posterior [[5]](https://patchwork.kernel.org/patch/9787619/) [[6]](https://www.phoronix.com/scan.php?page=news_item&px=EXT4-Linux-4.13-Work).
 
-ext4 supports file-based encryption. In a directory tree marked for encryption, file contents, filenames, and symbolic link targets are all encrypted. Encryption keys are stored in the kernel keyring. See also [Quarkslab's blog](http://blog.quarkslab.com/a-glimpse-of-ext4-filesystem-level-encryption.html) entry with a write-up of the feature, an overview of the implementation state, and practical test results with kernel 4.1.
+O ext4 oferece suporte a criptografia baseada em arquivos. Em uma árvore de diretórios marcada para criptografia, o conteúdo de arquivo, nomes de arquivos e alvos de links simbólicos são criptografados. As chaves de criptografia são armazenadas no chaveiro do kernel. Veja também a entrada do [blog do Quarkslab](http://blog.quarkslab.com/a-glimpse-of-ext4-filesystem-level-encryption.html) com um registro do recurso, uma visão geral do estado de implementação e resultados de testes práticos com o kernel 4.1.
 
-The encryption relies on the kernel option `CONFIG_EXT4_ENCRYPTION`, which is enabled by default, as well as the *e4crypt* command from the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package.
+A criptografia depende da opção kernel `CONFIG_EXT4_ENCRYPTION`, que está habilitada por padrão, bem como o comando *e4crypt* do pacote [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs).
 
-A precondition is that your filesystem is using a supported block size for encryption:
+Uma condição prévia é que seu sistema de arquivos esteja usando um tamanho de bloco suportado para criptografia:
 
- `# tune2fs -l /dev/*device* | grep 'Block size'` 
+ `# tune2fs -l /dev/*dispositivo* | grep 'Block size'` 
 ```
 Block size:               4096
 
@@ -200,32 +200,33 @@ Block size:               4096
 
 ```
 
-If these values are not the same, then your filesystem will not support encryption, so **do not proceed further**.
+Se esses valores não forem os mesmos, o sistema de arquivos não suportará a criptografia, então **não prossiga mais**.
 
-**Warning:**
+**Atenção:**
 
-*   Once the encryption feature flag is enabled, kernels older than 4.1 will be unable to mount the filesystem.
-*   If the `/boot/` directory is on the ext4 file system, check that the boot loader supports the ext4 encryption.
+*   Uma vez que uma opção do recurso de criptografia está habilitado, os kernels anteriores a 4.1 não poderão montar o sistema de arquivos.
 
-Next, enable the encryption feature flag on your filesystem:
+*   Se o diretório `/boot/` estiver no sistema de arquivos ext4, verifique se o gerenciador de boot oferece suporte a criptografia ext4.
 
-```
-# tune2fs -O encrypt /dev/*device*
+Em seguida, ative a opção do recurso de criptografia em seu sistema de arquivos:
 
 ```
+# tune2fs -O encrypt /dev/*dispositivo*
 
-**Tip:** The operation can be reverted with `debugfs -w -R "feature -encrypt" /dev/*device*`. Run [fsck](/index.php/Fsck "Fsck") before and after to ensure the integrity of the file system.
+```
 
-Next, make a directory to encrypt:
+**Dica:** A operação pode ser revertida com `debugfs -w -R "feature -encrypt" /dev/*dispositivo*`. Execute [fsck](/index.php/Fsck "Fsck") antes e depois para garantir a integridade do sistema de arquivos.
+
+Em seguida, faça um diretório para criptografar:
 
 ```
 # mkdir */encrypted*
 
 ```
 
-Note that encryption can only be applied to an empty directory. New files and subdirectories within an encrypted directory inherit its encryption policy. Encrypting already existing files is not yet supported.
+Observe que a criptografia só pode ser aplicada a um diretório vazio. Novos arquivos e subdiretórios dentro de um diretório criptografado herdam sua política de criptografia. Criptografar arquivos já existentes ainda não é suportado.
 
-Now generate and add a new key to your keyring. This step must be repeated every time you flush your keyring (i.e., reboot):
+Agora, gere e adicione uma nova chave ao seu chaveiro. Este passo deve ser repetido toda vez que você descarrega o seu chaveiro (ou seja, reinicie):
 
 ```
 # e4crypt add_key
@@ -234,11 +235,11 @@ Added key with descriptor [f88747555a6115f5]
 
 ```
 
-**Warning:** If you forget your passphrase, there will be no way to decrypt your files. It also is not yet possible to change a passphrase after it has been set.
+**Atenção:** Se você esqueceu sua senha, não haverá maneira de descriptografar seus arquivos. Também não é possível alterar uma senha depois de ter sido configurada.
 
-**Note:** To help prevent [dictionary attacks](https://en.wikipedia.org/wiki/Dictionary_attack is automatically generated and stored in the ext4 filesystem superblock. Both the passphrase *and* the salt are used to derive the actual encryption key. As a consequence of this, if you have multiple ext4 filesystems with encryption enabled mounted, then `e4crypt add_key` will actually add multiple keys, one per filesystem. Although any key can be used on any filesystem, it would be wise to only use, on a given filesystem, keys using that filesystem's salt. Otherwise, you risk being unable to decrypt files on filesystem A if filesystem B is unmounted. Alternatively, you can use the `-S` option to `e4crypt add_key` to specify a salt yourself.
+**Nota:** Para ajudar a evitar [ataques de dicionário](https://en.wikipedia.org/wiki/Dictionary_attack aleatório é gerado automaticamente e armazenado no superbloco de sistema de arquivos ext4\. Tanto a senha *quanto* o sal são usados para derivar a chave de criptografia real. Como consequência disso, se você tiver vários sistemas de arquivos ext4 com criptografia habilitada montado, então `e4crypt add_key` adicionará várias chaves, uma por sistema de arquivos. Embora qualquer chave possa ser usada em qualquer sistema de arquivos, seria sábio usar apenas, em um determinado sistema de arquivos, chaves usando o sal do sistema de arquivos. Caso contrário, você corre o risco de não conseguir descriptografar arquivos no sistema de arquivos A se o sistema de arquivos B estiver desmontado. Alternativamente, você pode usar a opção `-S` para `e4crypt add_key` para especificar um sal você mesmo.
 
-Now you know the descriptor for your key. Make sure the key is in your session keyring:
+Agora, você sabe o descritor para sua chave. Certifique-se que sua chave está no seu chaveiro de sessão:
 
 ```
 # keyctl show
@@ -248,26 +249,26 @@ Session Keyring
 
 ```
 
-Almost done. Now set an encryption policy on the directory (assign the key to it):
+Quase pronto. Agora, defina uma política de criptografia no diretório (atribua a chave para ela):
 
 ```
 # e4crypt set_policy f88747555a6115f5 */encrypted*
 
 ```
 
-This completes setting up encryption for a directory named `*/encrypted*`. If you try accessing the directory without adding the key into your keyring, filenames and their contents will be seen as encrypted gibberish.
+Isso completa a configuração de criptografia para um diretório chamado `*/encrypted*`. Se você tentar acessar o diretório sem adicionar a chave no seu chaveiro, os nomes de arquivos e seus conteúdos serão vistos como jargão criptografado.
 
-**Warning:**
+**Atenção:**
 
-*   Some applications cannot open files in directories encrypted using this method. Try moving the file outside of the encrypted directory before assuming it is broken. In this case, you will often see a message about a missing key.
-*   Logging in does automatically unlock home directories encrypted by this method when using GDM or console login.
+*   Alguns aplicativos não podem abrir arquivos em diretórios criptografados usando esse método. Tente mover o arquivo para fora do diretório criptografado antes de presumir que está quebrado. Nesse caso, muitas vezes você verá uma mensagem sobre uma chave ausente.
+*   Fazer logon desbloqueia automaticamente os diretórios domésticos criptografados por este método ao usar o login GDM ou console.
 
-**Note:** For security reasons, unencrypted files are not allowed to exist in an encrypted directory. As such, attempting to move (`mv`) unencrypted files into an encrypted directory will
+**Nota:** Por motivos de segurança, arquivos não criptografados não podem existir em um diretório criptografado. Como tal, tentar mover (`mv`) arquivos não criptografados para um diretório criptografado vai
 
-*   fail, if both directories are on the same filesystem mount point. This happens because *mv* will only update the directory index to point to the new directory, but not the file's data inodes (which contain the crypto reference).
-*   succeed, if both directories are on different filesystem mount points (new data inodes are created).
+*   falhar, se ambos os diretórios estiverem no mesmo ponto de montagem do sistema de arquivos. Isso acontece porque *mv* só atualizará o índice de diretórios para apontar para o novo diretório, mas não os [nós-i](https://en.wikipedia.org/wiki/pt:N%C3%B3-i "w:pt:Nó-i") de dados do arquivo (que contém a referência criptográfica).
+*   ter sucesso, se ambos os diretórios estiverem em diferentes pontos de montagem do sistema de arquivos (novos nós-i de dados são criados).
 
-In both cases it is better to copy (`cp`) files instead, because that leaves the option to securely delete the unencrypted original with *shred* or a similar tool.
+Em ambos os casos, é melhor copiar os arquivos (`cp`), porque isso deixa a opção para excluir com segurança o original não criptografado com *shred* ou uma ferramenta similar.
 
 ## Melhorando performance
 

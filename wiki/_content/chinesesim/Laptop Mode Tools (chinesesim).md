@@ -1,8 +1,16 @@
+相关文章
+
+*   [acpid](/index.php/Acpid "Acpid")
+*   [systemd](/index.php/Systemd "Systemd")
+*   [cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils")
+*   [Laptop](/index.php/Laptop "Laptop")
+*   [Powertop](/index.php/Powertop "Powertop")
+
 **翻译状态：** 本文是英文页面 [Laptop_Mode_Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-12-25，点击[这里](https://wiki.archlinux.org/index.php?title=Laptop_Mode_Tools&diff=0&oldid=290267)可以查看翻译后英文页面的改动。
 
 *[Laptop Mode Tools](http://samwel.tk/laptop_mode/) 是一个 Linux 系统下的笔记本电源管理软件。它是让内核开启笔记本电脑模式功能的主要方法，它会让硬盘降速。另外，它允许你通过一个简单的配置文件调整一些其他的节能相关的设置。*
 
-与 [acpid](/index.php/Acpid "Acpid")、 [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling")、 和 [pm-utils](/index.php/Pm-utils "Pm-utils") 结合，LMT 提供大多数用户一个完整的笔记本电脑电源管理方案。
+与 [acpid](/index.php/Acpid "Acpid") 和 [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling") 结合，LMT 提供大多数用户一个完整的笔记本电脑电源管理方案。
 
 ## Contents
 
@@ -31,7 +39,6 @@
     *   [3.3 Disabling](#Disabling)
 *   [4 疑难问题](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98)
     *   [4.1 Laptop-mode-tools 不能收到事件](#Laptop-mode-tools_.E4.B8.8D.E8.83.BD.E6.94.B6.E5.88.B0.E4.BA.8B.E4.BB.B6)
-    *   [4.2 连接电源后Laptop-mode-tools并没有停止](#.E8.BF.9E.E6.8E.A5.E7.94.B5.E6.BA.90.E5.90.8ELaptop-mode-tools.E5.B9.B6.E6.B2.A1.E6.9C.89.E5.81.9C.E6.AD.A2)
 *   [5 相关链接](#.E7.9B.B8.E5.85.B3.E9.93.BE.E6.8E.A5)
 
 ## 安装
@@ -314,21 +321,6 @@ INTEL_HDA_DEVICE_CONTROLLER=0
 ```
 
 如果这样不管用的话，请仔细检查一边 laptop-mode 的配置文件并确定需要开启的服务被设置成 1 了。许多服务，包括cpu频率控制服务 (cpufreq control) 默认设置都是'自动'("auto")，所以可能没有开启。
-
-### 连接电源后Laptop-mode-tools并没有停止
-
-这可能是因为同时安装有laptop-mode-tools和pm-utils两个软件包，它们互相会冲突，从而导致laptop-mode-tools不能准确的设定自己的状态。
-
-这可以通过禁用pm-utils中带有重复功能的脚本来解决。问题的主要原因是位于`/usr/lib/pm-utils/power.d`中的laptop-mode脚本。可以通过在 `/etc/pm/power.d`中添加一个同名的空文件来禁用这个脚本，例如，如果想禁用laptop-mode：
-
-```
-# touch /etc/pm/power.d/laptop-mode
-
-```
-
-**注意:** 不要在这个文件上设置可执行标记。
-
-建议浏览一下`/usr/lib/pm-utils/power.d`中的所有脚本并把其中提供了与laptop-mode-tools同样功能的脚本全都禁用掉。
 
 ## 相关链接
 

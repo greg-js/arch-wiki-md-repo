@@ -503,7 +503,7 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 *   **Kolf** — A minigolf game with 2D overhead view. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
-	[https://www.kde.org/applications/games/kolf/](https://www.kde.org/applications/games/kolf/) || [kdegames-kolf](https://www.archlinux.org/packages/?name=kdegames-kolf)
+	[https://www.kde.org/applications/games/kolf/](https://www.kde.org/applications/games/kolf/) || [kolf](https://www.archlinux.org/packages/?name=kolf)
 
 *   **KShisen** — [Shisen-Sho](https://en.wikipedia.org/wiki/Shisen-Sho "wikipedia:Shisen-Sho"). Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
@@ -519,7 +519,7 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 *   **Palapeli** — Jigsaw puzzle game. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
-	[https://www.kde.org/applications/games/palapeli/](https://www.kde.org/applications/games/palapeli/) || [kdegames-palapeli](https://www.archlinux.org/packages/?name=kdegames-palapeli)
+	[https://www.kde.org/applications/games/palapeli/](https://www.kde.org/applications/games/palapeli/) || [palapeli](https://www.archlinux.org/packages/?name=palapeli)
 
 *   **Pathological** — Complete all wheels on the board by collecting marbles of the same color in each of them.
 
@@ -1042,7 +1042,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **KsirK** — A *risk*-styled game in which players try to conquer the world by deciding which area to be invaded next. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
-	[https://www.kde.org/applications/games/ksirk/](https://www.kde.org/applications/games/ksirk/) || [kdegames-ksirk](https://www.archlinux.org/packages/?name=kdegames-ksirk)
+	[https://www.kde.org/applications/games/ksirk/](https://www.kde.org/applications/games/ksirk/) || [ksirk](https://www.archlinux.org/packages/?name=ksirk)
 
 *   **[The Battle for Wesnoth](https://en.wikipedia.org/wiki/The_Battle_for_Wesnoth "wikipedia:The Battle for Wesnoth")** — Free, turn-based tactical strategy game with a high fantasy theme, featuring both single-player, and online/hotseat multiplayer combat.
 

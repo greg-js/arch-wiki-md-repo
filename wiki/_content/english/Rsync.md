@@ -246,7 +246,7 @@ Now all you have to do is [start](/index.php/Start "Start")/enable `backup.path`
 
 ### Differential backup on a week
 
-This is a useful option of rsync, creating a full backup and a differential backup for each day of a week.
+This is a useful option of rsync, resulting in a full backup (on each run) and keeping a differential backup copy of changed files only in a separate directory for each day of a week.
 
 First, create a script containing the appropriate command options:
 
@@ -300,7 +300,7 @@ ln -s ${SNAP}$date $LAST
 
 There must be a symlink to a full backup already in existence as a target for `--link-dest`. If the most recent snapshot is deleted, the symlink will need to be recreated to point to the most recent snapshot. If `--link-dest` does not find a working symlink, rsync will proceed to copy all source files instead of only the changes.
 
-A more sophisticated version checks to see if a certain number of changes have been made before making the backup and utilizes `cp -al` to hardlink unchanged files:
+A more sophisticated version keeps an up-to-date full backup `$SNAP/latest` and in case a certain number of files has changed since the last full backup, it creates a snapshot `$SNAP/$DATETAG` of the current full-backup utilizing `cp -al` to hardlink unchanged files:
 
  `/usr/local/bin/rsnapshot.sh` 
 ```

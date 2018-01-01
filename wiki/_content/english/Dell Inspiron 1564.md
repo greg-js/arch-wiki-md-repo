@@ -79,14 +79,14 @@ lsusb output:
 *   Microphone
 *   Web cam
 *   Using the [ATI Catalyst](/index.php/ATI_Catalyst "ATI Catalyst") driver the following works:
-    *   [Suspend and hibernate](/index.php/Pm-utils "Pm-utils")
+    *   Suspend and hibernate
     *   3D acceleration
     *   VAAPI GPU video acceleration (see [here](/index.php/ATI_Catalyst#Video_acceleration "ATI Catalyst"))
     *   HDMI Video (audio not tested)
 
 - Using [xf86-video-ati](/index.php/ATI "ATI") the following works:
 
-*   *   [Suspend and hibernate](/index.php/Pm-utils "Pm-utils")
+*   *   Suspend and hibernate
     *   3D acceleration
     *   [Power profiling](/index.php/ATI#Powersaving "ATI")
     *   [Temperature monitoring](/index.php/ATI#Powersaving "ATI")

@@ -9,6 +9,10 @@
 | Card Reader | **Unknown** |
 | Bluetooth | **Unknown** |
 
+Related articles
+
+*   [ASUS N56vj](/index.php/ASUS_N56vj "ASUS N56vj")
+
 ## Contents
 
 *   [1 Hardware](#Hardware)
@@ -53,6 +57,4 @@ Using `hdajackretask` to set the unconnected 0x16 pin to anything sets the exter
 
 ## Multitouch
 
-Gesture support is provided via [xf86-input-synaptics-mtpatch](https://aur.archlinux.org/packages/xf86-input-synaptics-mtpatch/) and [touchegg-svn](https://aur.archlinux.org/packages/touchegg-svn/) in the [AUR](/index.php/AUR "AUR"). I personally prefer GNOME Shell, which has some issues with how it handles touchpad input. Essentially, any event that is mapped to a gnome shell gesture and a touchegg gesture will be executed in both ways. For example, if you have natural scrolling mapped to two-finger drag via GNOME and non-inverted scrolling mapped to two-finger drag via touchegg, the page will scroll down then up when you two-finger drag up resulting in no net change in position.
-
-The command `touchegg` will have to be executed every time the GUI loads (maybe add it to gnome-session or the equivalent for your WM?).
+See [Multitouch displays](/index.php/Multitouch_displays "Multitouch displays").

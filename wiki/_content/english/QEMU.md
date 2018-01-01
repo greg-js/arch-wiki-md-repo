@@ -271,10 +271,11 @@ To enable IOMMU:
 
 1.  Ensure that AMD-Vi/Intel VT-d is supported by the CPU and is enabled in the BIOS settings.
 2.  Set the correct [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") based on the CPU-vendor:
-    *   Intel - `intel_iommu=on` or `intel_iommu=pt`
+    *   Intel - `intel_iommu=on`
     *   AMD - `amd_iommu=on`
-3.  Reboot and ensure IOMMU is enabled by checking `dmesg` for `DMAR`: `[0.000000] DMAR: IOMMU enabled`
-4.  Add `-device intel-iommu` to create the IOMMU device:
+3.  If you want IOMMU *only* for PCI passthrough, also add the `iommu=pt` parameter. This will make Linux only enable IOMMU for devices that can be passed through, and will avoid affecting the performance of other devices on the system. The CPU vendor-specific parameter (see above) is still required to be `on`.
+4.  Reboot and ensure IOMMU is enabled by checking `dmesg` for `DMAR`: `[0.000000] DMAR: IOMMU enabled`
+5.  Add `-device intel-iommu` to create the IOMMU device:
 
 ```
 $ qemu-system-x86_64 **-enable-kvm -machine q35,accel=kvm -device intel-iommu** -cpu host,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time ..

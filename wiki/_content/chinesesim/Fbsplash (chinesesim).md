@@ -6,7 +6,6 @@
     *   [1.1 Fbsplash](#Fbsplash)
     *   [1.2 附加包](#.E9.99.84.E5.8A.A0.E5.8C.85)
     *   [1.3 主题](#.E4.B8.BB.E9.A2.98)
-    *   [1.4 Suspend to Disk](#Suspend_to_Disk)
 *   [2 Configuration](#Configuration)
     *   [2.1 Kernel Command Line](#Kernel_Command_Line)
     *   [2.2 Configuration Files](#Configuration_Files)
@@ -29,10 +28,6 @@ fbsplash包只提供了最基本的功能,为了更好的支持, 应该安装 [f
 安装Fbsplash主题。 [从AUR搜索 'fbsplash-theme'](https://aur.archlinux.org/packages.php?O=0&K=fbsplash-theme&do_Search=Go) 或 [GNOME-Look.org](http://gnome-look.org) 和 [KDE-Look.org](http://kde-look.org)。
 
 **注意:** Fbsplash包默认不含主题文件。
-
-### Suspend to Disk
-
-If you want suspend to disk with Fbsplash, install the [uswsusp-fbsplash package](https://aur.archlinux.org/packages.php?ID=16233) from the AUR. For more info have a look at [Pm-utils#Using_another_sleep_backend_.28like_uswsusp.29](/index.php/Pm-utils#Using_another_sleep_backend_.28like_uswsusp.29 "Pm-utils") or [Suspend to Disk#Uswsusp_method (hibernate-script)](/index.php/Suspend_to_Disk#Uswsusp_method_.28hibernate-script.29 "Suspend to Disk"). Additionally there is limited support for using a Fbsplash theme in the [tuxonice-userui package](https://aur.archlinux.org/packages.php?ID=24613) for those using a kernel with the TuxOnIce patch.
 
 ## Configuration
 

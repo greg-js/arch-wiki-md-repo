@@ -7,9 +7,7 @@
 *   [3 Installation](#Installation)
 *   [4 Xorg](#Xorg)
 *   [5 Wireless](#Wireless)
-*   [6 Suspend/Hibernate](#Suspend.2FHibernate)
-    *   [6.1 Resume not working after suspend to RAM](#Resume_not_working_after_suspend_to_RAM)
-    *   [6.2 Backlight does not come back after Resume](#Backlight_does_not_come_back_after_Resume)
+    *   [5.1 Resume not working after suspend to RAM](#Resume_not_working_after_suspend_to_RAM)
 
 ## Hardware
 
@@ -70,51 +68,6 @@ Follow [Xorg](/index.php/Xorg "Xorg"), [Touchpad Synaptics](/index.php/Touchpad_
 
 Follow [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") and [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless").
 
-## Suspend/Hibernate
-
-*   Suspend and Hibernate works with pm-utils
-*   Also works by issuing `echo mem > /sys/power/state` 
-
 ### Resume not working after suspend to RAM
 
-To workaround this issue edit the file `/boot/grub/menu.lst` and add the following to the kernel boot line: `hpet=disable` 
-
-### Backlight does not come back after Resume
-
-You may need a workaround because the backlight does not come back after Resuming.
-
-Install [Pm-utils](/index.php/Pm-utils "Pm-utils"), and create this file:
-
-	**/etc/pm/sleep.d/radeonlight**
-
-```
-#!/bin/bash
-case $1 in
- hibernate)
-  echo "Suspending to disk!"
- ;;
- suspend)
-  echo "Suspending to RAM"
- ;;
- thaw)
-  echo "Suspend to disk is over, Resuming. .."
- ;;
- resume)
-  echo "Suspend to RAM is over, Resuming..."
-  radeontool light on
-  radeontool dac on
- ;;
- *)  echo "somebody is calling me totally wrong."
- ;;
-esac
-
-```
-
-```
-# chmod +x /etc/pm/sleep.d/radeonlight
-
-```
-
-Now to make it work you need [radeontool](https://www.archlinux.org/packages/?name=radeontool).
-
-And **DONE**, you can suspend and resume with pm-utils normally.
+To workaround this issue edit the file `/boot/grub/menu.lst` and add the following to the kernel boot line: `hpet=disable`

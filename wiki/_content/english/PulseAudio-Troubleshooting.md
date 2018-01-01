@@ -356,7 +356,7 @@ Install pavucontrol, unlink the microphone channels and turn down the left one t
 
 If we are getting static noise in Skype, gnome-sound-recorder, arecord, etc.'s recordings, then the sound card sample rate is incorrect. That is why there is static noise in Linux microphone recordings. To fix this, we need to set the sampling rate in `/etc/pulse/daemon.conf` for the sound hardware.
 
-In addition to the guide below, since [PulseAudio 11](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/11.0/) it is possible to set `avoid-resampling = yes` in `daemon.conf` to use the application sampling rate without resampling.
+In addition to the guide below, since [PulseAudio 11](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/11.0/) it is possible to set `avoid-resampling = yes` in [daemon.conf](/index.php/PulseAudio#daemon.conf "PulseAudio").
 
 #### Determine sound cards in the system (1/5)
 
@@ -557,16 +557,16 @@ Here is a list of possible 'aec_args' for 'aec_method=webrtc' with their default
 *   `agc_start_volume=85` - Initial volume when using AGC - Possible values 0-255 - A too low initial volume may prevent the AGC algorithm from ever raising the volume high enough [[4]](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/9.0/).
 *   `high_pass_filter=1` - ?
 *   `noise_suppression=1` - Noise suppression.
-*   `mobile=0` - ?
-*   `routing_mode=speakerphone` - Possible Values "quiet-earpiece-or-headset,earpiece,loud-earpiece,speakerphone,loud-speakerphone" - only valid with "mobile=1".
-*   `comfort_noise=1` - ? - only valid with "mobile=1".
-*   `drift_compensation=0` - Drift compensation to allow echo cancellation between different devices (such as speakers on your laptop and the microphone on your USB webcam). - only possible with "mobile=0".
 *   `voice_detection=1` - VAD - Voice activity detection.
 *   `extended_filter=0` - The extended filter is more complex and less sensitive to incorrect delay reporting from the hardware than the regular filter. The extended filter mode is disabled by default, because it seemed produce worse results during double-talk [[5]](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/9.0/).
 *   `intelligibility_enhancer=0` - Some bits for webrtc intelligibility enhancer.
+*   `drift_compensation=0` - Drift compensation to allow echo cancellation between different devices (such as speakers on your laptop and the microphone on your USB webcam). - only possible with "mobile=0".
 *   `beamforming=0` - See [[6]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3)[[7]](https://arunraghavan.net/2016/06/beamforming-in-pulseaudio/)
-*   `mic_geometry=x1,y1,z1,x2,y2,z2` - Only with "beamforming=1".
-*   `target_direction=a,e,r` - Only with "beamforming=1".
+    *   `mic_geometry=x1,y1,z1,x2,y2,z2` - Only with "beamforming=1".
+    *   `target_direction=a,e,r` - Only with "beamforming=1".
+*   `mobile=0` - ?
+    *   `routing_mode=speakerphone` - Possible Values "quiet-earpiece-or-headset,earpiece,loud-earpiece,speakerphone,loud-speakerphone" - only valid with "mobile=1".
+    *   `comfort_noise=1` - ? - only valid with "mobile=1".
 
 If you are using the [module-echo-cancel](#Enable_Echo.2FNoise-Cancelation), you probably don't want other applications to do additional audio post processing.
 Here is a list for disabling audio post processing in following applications:

@@ -6,7 +6,7 @@ Related articles
 *   [Nginx](/index.php/Nginx "Nginx")
 *   [OpenVPN](/index.php/OpenVPN "OpenVPN")
 
-[Pi-hole](https://pi-hole.net/) is a shell-script based project that manages blocklists of known advertisements and malware and seamlessly interacts with [dnsmasq](/index.php/Dnsmasq "Dnsmasq") to simply drop all any request to a known bad-actor. Pi-hole replaces your router as the LAN's DNS so all requests go through it without the need to install anything on the client-side. This setup effectively deploys network-wide adblocking (ie for all connected devices). The package comes with a nice webUI (as well as a CLI interface) and is very lightweight and scaleable.
+[Pi-hole](https://pi-hole.net/) is a shell-script based project that manages blocklists of known IP addresses known to host advertisements and malware through a seamless interaction with [dnsmasq](/index.php/Dnsmasq "Dnsmasq") to simply drop all any bad request. Running it effectively deploys network-wide adblocking without the need to configure individual clients. The package comes with a nice webUI (as well as a CLI interface) and is very lightweight and scaleable.
 
 ## Contents
 
@@ -43,13 +43,7 @@ Related articles
 
 ### Installation
 
-[Install](/index.php/Install "Install") [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) and [pi-hole-server](https://aur.archlinux.org/packages/pi-hole-server/). The Pi-hole server package installs two timers (and relative services), both statically enabled:
-
-*   pi-hole-gravity.timer will weekly update Pi-hole blacklisted servers list.
-*   pi-hole-logtruncate.timer will daily clean LAN DNS requests log.
-
-If you do not like default timers timings (from upstrem project) you can, of course, [edit](/index.php/Edit "Edit") them or preventing from being executed by [masking](/index.php/Systemd#Using_units "Systemd") them.
-You need to manually start them or simply reboot after your configuration is finished.
+[Install](/index.php/Install "Install") [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) and [pi-hole-server](https://aur.archlinux.org/packages/pi-hole-server/).
 
 ### Initial configuration
 
@@ -68,7 +62,7 @@ conf-dir=/etc/dnsmasq.d/,*.conf
 
 #### Web Server
 
-Users may optionally choose a web server for the Pi-hole web interface.
+Optionally choose a web server for the Pi-hole web interface.
 
 **Note:** Pi-hole does not strictly require a web interface as many commands are possible via the CLI interface.
 
@@ -140,8 +134,14 @@ Copy the package provided default config for Pi-hole:
 
 #### FTL
 
-FTL is part of Pi-hole project. It is a database-like wrapper/API providing the frontend to Pi-hole's DNS query log. FTL is the only way the Pi-hole web interface accesses data collected by dnsmasq usage and is therefore a requirement.
-It's possible to configure FTL editing `/etc/pihole/pihole-FTL.conf` with following parameters (the option shown first is the default):
+FTL is a database-like wrapper/API that provides long-term storage of requests which users can query through the "long-term data" section of the WebGUI. To be clear, data are collected and stored in two places:
+
+1.  Daily data are stored in RAM and are captured in real-time within `/run/log/pihole/pihole.log`
+2.  Historical data (i.e. over multiple days/weeks/months) are stored on the file system `/etc/pihole/pihole-FTL.db` written out at a user-specified interval.
+
+**Tip:** If Pi-hole is running on a solid state device (single-board computers SD, SSD, M.2/NVMe device, etc...) it is recommended to set the DBINTERVAL value at least to 60.0 to minimize writes to the database.
+
+Configure FTL by editing `/etc/pihole/pihole-FTL.conf` with following parameters (the option shown first is the default):
 
 *   SOCKET_LISTENING=localonly|all (Listen only for local socket connections or permit all connections)
 *   TIMEFRAME=rolling24h|yesterday|today (Rolling data window, up to 48h (today + yesterday), or up to 24h (only today, as in Pi-hole v2.x ))
@@ -152,8 +152,6 @@ It's possible to configure FTL editing `/etc/pihole/pihole-FTL.conf` with follow
 *   RESOLVE_IPV4=yes|no (Should FTL try to resolve IPv4 addresses to host names?)
 *   DBINTERVAL=1.0 (How often do we store queries in FTL's database [minutes]?)
 *   DBFILE=/etc/pihole/pihole-FTL.db (Specify path and filename of FTL's SQLite long-term database. Setting this to DBFILE= disables the database altogether)
-
-**Tip:** If Pi-hole is running on a solide state device (Single-board computers SD, SSD, M.2/NVMe device, etc...) it is recommended to set the DBINTERVAL value at least to 60.0 to extend it's life.
 
 `pi-hole-ftl.service` is statically enabled; re/start it.
 
@@ -187,7 +185,7 @@ On Pi-hole, login to the web interface ([http://pi.hole](http://pi.hole)), selec
 
 **Tip:** A simple check to see that the router is setup correctly is to first renew a DHCP lease, then inspect the contents of `/etc/resolv.conf` on the target client machine. One should see the IP address of the Pi-hole box, not the IP address of the router.
 
-**Note:** For a full network and Pi-hole functionality, you may need to disable, if present on your router firmware, the `dns-rebind` feature.
+**Note:** For full network and Pi-hole functionality, one may need to disable the `dns-rebind` feature if present on the router's firmware.
 
 **Note:** The above configuration may not be possible on some routers depending on the feature set exposed the firmware. The configuration above is confirmed to work on some popular open-source firmwares such as [LEDE/OpenWRT](https://forum.lede-project.org/t/lede-pi-hole-works-perfectly-need-to-understand-why-so-i-can-configure-tomatousb-the-same-way/8274), [DD-WRT](https://www.dd-wrt.com/site/index), and [TomatoUSB](http://www.linksysinfo.org/index.php?threads/redefining-dns-from-router-to-a-box-running-pi-hole.73576/#post-292078) to name a few.
 

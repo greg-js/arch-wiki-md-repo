@@ -75,10 +75,6 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 	[http://hledger.org/](http://hledger.org/) || [hledger-git](https://aur.archlinux.org/packages/hledger-git/)
 
-*   **Moneychanger** — An intuitive QT/C++ system tray client for *Open-Transactions*
-
-	[https://github.com/Open-Transactions/Moneychanger](https://github.com/Open-Transactions/Moneychanger) || [moneychanger-git](https://aur.archlinux.org/packages/moneychanger-git/)
-
 *   **Manager Accounting** — Manager is free accounting software for small business.
 
 	[http://www.manager.io/](http://www.manager.io/) || [manager-accounting](https://aur.archlinux.org/packages/manager-accounting/)
@@ -94,10 +90,6 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 *   **openerp** — Open source erp system purely in python.
 
 	[http://openerp.com/](http://openerp.com/) || [openerp](https://aur.archlinux.org/packages/openerp/)
-
-*   **Open-Transactions** — A financial cryptography library used for issuing currencies, stock, paying dividends, creating asset accounts, sending/receiving digital cash, trading on markets and escrow.
-
-	[https://github.com/Open-Transactions/Open-Transactions](https://github.com/Open-Transactions/Open-Transactions) || [open-transactions-git](https://aur.archlinux.org/packages/open-transactions-git/)
 
 ### Education
 
@@ -457,7 +449,7 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 
 *   **PerlPanel** — The ideal accompaniment to a light-weight Window Manager such as OpenBox, or a desktop-drawing program like iDesk.
 
-	[http://savannah.nongnu.org/projects/perlpanel](http://savannah.nongnu.org/projects/perlpanel) || [perlpanel](https://aur.archlinux.org/packages/perlpanel/)
+	[http://savannah.nongnu.org/projects/perlpanel](http://savannah.nongnu.org/projects/perlpanel) || [perlpanel-git](https://aur.archlinux.org/packages/perlpanel-git/)
 
 *   **[Plank](/index.php/Plank "Plank")** — Elegant, simple, clean dock from [pantheon](/index.php/Pantheon "Pantheon") desktop environment.
 
@@ -478,10 +470,6 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 *   **Trayer** — Lightweight GTK+-based systray.
 
 	[https://gna.org/projects/fvwm-crystal/](https://gna.org/projects/fvwm-crystal/) || [trayer](https://www.archlinux.org/packages/?name=trayer)
-
-*   **wbar** — Quick launch bar developed with speed in mind.
-
-	[http://freecode.com/projects/wbar/](http://freecode.com/projects/wbar/) || [wbar](https://www.archlinux.org/packages/?name=wbar)
 
 *   **Xfce Panel** — Panel included in the [Xfce](/index.php/Xfce "Xfce") desktop.
 
@@ -509,7 +497,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **dmenu-extended** — An extension to *dmenu* for quickly opening files and folders.
 
-	[https://github.com/markjones112358/dmenu-extended](https://github.com/markjones112358/dmenu-extended) || [dmenu-extended](https://aur.archlinux.org/packages/dmenu-extended/)
+	[https://github.com/markjones112358/dmenu-extended](https://github.com/markjones112358/dmenu-extended) || [dmenu-extended-git](https://aur.archlinux.org/packages/dmenu-extended-git/)
 
 *   **dmenu-launch** — Simple *dmenu*-based application launcher. Launches binaries and XDG shortcuts.
 
@@ -651,7 +639,7 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 
 *   **Neap** — An non-intrusive and light pager that runs in the notification area of your panel.
 
-	[https://github.com/vzxwco/neap](https://github.com/vzxwco/neap) || [neap](https://aur.archlinux.org/packages/neap/)
+	[https://github.com/vzxwco/neap](https://github.com/vzxwco/neap) || [neap-hotkey](https://aur.archlinux.org/packages/neap-hotkey/)
 
 *   **Netwmpager** — A NetWM/EWMH compatible pager.
 

@@ -110,9 +110,23 @@ other_not_secret: othervalue
 
 ### Package management
 
-Ansible has a [pacman module](http://docs.ansible.com/ansible/latest/pacman_module.html) to handle installation, removal and system upgrades.
+Ansible has a [pacman module](http://docs.ansible.com/ansible/latest/pacman_module.html) to handle installation, removal and system upgrades with [pacman](/index.php/Pacman "Pacman").
 
-For the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), unofficial modules are available on GitHub, like [ansible-aur](https://github.com/kewlfft/ansible-aur).
+For the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") *(AUR)*, unofficial modules are available on GitHub, like [ansible-aur](https://github.com/kewlfft/ansible-aur).
+
+While Ansible expects to ssh as root, AUR helpers do not allow executing operations as root, they all fail with "you cannot perform this operation as root". For Ansible automation, it is therefore recommended to create a user, for example named *aur_builder*, that has no need for password with pacman in [sudoers](/index.php/Sudoers "Sudoers"). This can be done in Ansible with the following actions:
+
+ `task.yml` 
+```
+- user: name=*aur_builder*
+
+ - copy:
+     path: /etc/sudoers.d/*aur_builder-allow-to-sudo-pacman*
+     content: *aur_builder* ALL=(ALL) NOPASSWD: /usr/bin/pacman
+     validate: /usr/sbin/visudo -cf %s
+```
+
+Then AUR helpers or [makepkg](/index.php/Makepkg "Makepkg") can be used associated with the parameters `become: yes` and `become_user: aur_builder`
 
 ## Tips and tricks
 

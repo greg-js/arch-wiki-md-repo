@@ -3,7 +3,6 @@
 *   [Uswsusp](/index.php/Uswsusp "Uswsusp")
 *   [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")
 *   [systemd (Русский)](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)")
-*   [pm-utils (Русский)](/index.php/Pm-utils_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pm-utils (Русский)")
 *   [Power management](/index.php/Power_management "Power management")
 
 **Состояние перевода:** На этой странице представлен перевод статьи [Power management/Suspend and hibernate](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate"). Дата последней синхронизации: 22 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Power_management/Suspend_and_hibernate&diff=0&oldid=482651).
@@ -26,7 +25,6 @@ There are multiple low level interfaces (backends) providing basic functionality
     *   [1.3 tuxonice](#tuxonice)
 *   [2 High level interfaces](#High_level_interfaces)
     *   [2.1 systemd](#systemd)
-    *   [2.2 pm-utils](#pm-utils)
 *   [3 Hibernation](#Hibernation)
     *   [3.1 About swap partition/file size](#About_swap_partition.2Ffile_size)
     *   [3.2 Required kernel parameters](#Required_kernel_parameters)
@@ -70,12 +68,6 @@ See main article [TuxOnIce](/index.php/TuxOnIce "TuxOnIce").
 [systemd](/index.php/Systemd "Systemd") provides native commands for suspend, hibernate and a hybrid suspend, see [Power management#Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management") for details. This is the default interface used in Arch Linux.
 
 See [Power management#Sleep hooks](/index.php/Power_management#Sleep_hooks "Power management") for additional information on configuring suspend/hibernate hooks. Also see [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1), [systemd-sleep(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8), and [systemd.special(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7).
-
-### pm-utils
-
-pm-utils is a set of shell scripts that encapsulate the backend's suspend/hibernate functionality. It comes with a set of pre- and post-suspend tweaks and various hooks to customize the process.
-
-See main article [pm-utils](/index.php/Pm-utils "Pm-utils").
 
 ## Hibernation
 

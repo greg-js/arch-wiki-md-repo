@@ -3,7 +3,6 @@
 相关文章
 
 *   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
-*   [pm-utils](/index.php/Pm-utils "Pm-utils")
 *   [PHC](/index.php/PHC "PHC")
 
 CPU 调频允许操作系统通过提高或降低 CPU 频率来达到省电目的。CPU 频率可以根据系统负载或响应 ACPI 事件来自动调整，也可通过用户空间程序手工调整。

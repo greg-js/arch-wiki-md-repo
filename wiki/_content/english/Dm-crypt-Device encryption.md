@@ -973,7 +973,7 @@ This method allows to use a specially named keyfile that will be embedded in the
 
 The `encrypt` hook lets the user specify a keyfile with the `cryptkey` kernel parameter: in the case of initramfs, the syntax is `rootfs:*path*`. See [dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration"). Besides, this kernel parameter defaults to use `/crypto_keyfile.bin`, and if the initramfs contains a valid key with this name, decryption will occur automatically without the need to configure the `cryptkey` parameter.
 
-If using `sd-encrypt` instead of `encrypt`, specify the location of the keyfile with the `luks.key` kernel parameter. See [dm-crypt/System configuration#luks.key](/index.php/Dm-crypt/System_configuration#luks.key "Dm-crypt/System configuration").
+If using `sd-encrypt` instead of `encrypt`, specify the location of the keyfile with the `rd.luks.key` kernel parameter. See [dm-crypt/System configuration#rd.luks.key](/index.php/Dm-crypt/System_configuration#rd.luks.key "Dm-crypt/System configuration").
 
 [Generate the keyfile](#Creating_a_keyfile_with_random_characters), give it suitable permissions and [add it as a LUKS key](#Adding_LUKS_keys):
 

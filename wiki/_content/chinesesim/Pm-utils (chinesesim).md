@@ -1,7 +1,6 @@
 相关文章
 
 *   [Uswsusp](/index.php/Uswsusp "Uswsusp")
-*   [Tuxonice](/index.php/Tuxonice "Tuxonice")
 
 **pm-utils** 是一个全新的电源挂起和电源状态设置框架。它被设计来替代 `powersave` 包中的相关脚本。
 

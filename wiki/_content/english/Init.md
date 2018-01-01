@@ -139,7 +139,7 @@ As `Xorg.wrap` does not check if logind is active [[5]](https://bugs.freedesktop
 
 	Power management
 
-See [pm-utils](/index.php/Pm-utils "Pm-utils") and [acpid](/index.php/Acpid "Acpid") to replace [Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management").
+See [pm-utils](https://aur.archlinux.org/packages/pm-utils/) and [acpid](/index.php/Acpid "Acpid") to replace [Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management").
 
 ### Scheduled tasks
 

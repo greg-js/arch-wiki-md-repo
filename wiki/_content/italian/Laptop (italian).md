@@ -62,7 +62,7 @@ ACTION=="add", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", RUN+="/usr/bin/hd
 
 ```
 
-Leggi `hdparm(8)` per la documentazione riguardante i parametri di [hdparm](/index.php/Hdparm "Hdparm") . Se usi [pm-utils](/index.php/Pm-utils "Pm-utils"), potrebbero interessarti [questi](/index.php/Pm-utils#Having_the_HD_power_management_level_automatically_set_again_on_resume "Pm-utils") esempi.
+Leggi `hdparm(8)` per la documentazione riguardante i parametri di [hdparm](/index.php/Hdparm "Hdparm").
 
 ## Luminosità dello schermo
 

@@ -1,12 +1,9 @@
 Related articles
 
 *   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
-*   [pm-utils](/index.php/Pm-utils "Pm-utils")
 *   [powernowd](/index.php/Powernowd "Powernowd")
 
 [cpufrequtils](https://www.archlinux.org/packages/?q=cpufrequtils) je set utilít navrhnutý pre *CPU frequency scaling*, technológiu využívanú primárne na notebook-och. Táto technológia umožňuje operačnému systému meniť frekvenciu CPU v závislosti na aktuálnom vyťažení systému.
-
-V spojení s [pm-utils](/index.php/Pm-utils "Pm-utils") poskytuje kompletný power managment.
 
 Tento článok pokrýva inštaláciu a základnú konfiguráciu balíčka `cpufrequtils`.
 

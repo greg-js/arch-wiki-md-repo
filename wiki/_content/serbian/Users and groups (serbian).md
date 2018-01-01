@@ -56,7 +56,7 @@ Preporučene grupe koje korisnik treba da postavi za svoje korisnički nalog.
 | ntp |
 | optical | /dev/sr[0-9], /dev/sg[0-9] | Access to optical devices such as CD,CD-R,DVD,DVD-R. |
 | policykit |
-| power | Right to use [suspend](/index.php/Pm-utils "Pm-utils") utils. |
+| power | Right to use suspend utils. |
 | rfkill |
 | root | /* -- ALL FILES! | Complete system administration and control (root, admin) |
 | scanner | /var/lock/sane | Access to scanner hardware. |

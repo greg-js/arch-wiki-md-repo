@@ -581,7 +581,7 @@ This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.o
 
 If you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancelation "PulseAudio/Troubleshooting"), you probably don't want Firefox to do additional audio post processing.
 
-To disable audio post processing, disable the following preferences:
+To disable audio post processing, change the value of the following preferences to `false`:
 
 *   `media.getusermedia.aec_enabled` (Acoustic Echo Cancellation)
 *   `media.getusermedia.agc_enabled` (Automatic Gain Control)

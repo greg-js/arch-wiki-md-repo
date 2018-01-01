@@ -23,7 +23,7 @@
 
 ### Alternate installations
 
-It is not uncommon to need or desire to work in different versions of [nodejs](https://www.archlinux.org/packages/?name=nodejs). A preferred method among node users is to use [NVM](https://github.com/creationix/nvm) (Node Version Manger). [nvm](https://aur.archlinux.org/packages/nvm/) allows for cheap and easy alternative installs.
+It is not uncommon to need or desire to work in different versions of [nodejs](https://www.archlinux.org/packages/?name=nodejs). A preferred method among node users is to use [NVM](https://github.com/creationix/nvm) (Node Version Manager). [nvm](https://aur.archlinux.org/packages/nvm/) allows for cheap and easy alternative installs.
 
 You can set it up by adding this to your shell's startup file:
 

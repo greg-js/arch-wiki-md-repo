@@ -3,13 +3,9 @@
 *   [1 Model A55VJ-SXH161 (also K55VJ):](#Model_A55VJ-SXH161_.28also_K55VJ.29:)
     *   [1.1 Hardware](#Hardware)
     *   [1.2 lspci](#lspci)
-    *   [1.3 Installing](#Installing)
-    *   [1.4 Graphics](#Graphics)
-    *   [1.5 Touchpad](#Touchpad)
-    *   [1.6 Sound](#Sound)
-    *   [1.7 Power management](#Power_management)
-    *   [1.8 Backlight](#Backlight)
-    *   [1.9 Cardreader](#Cardreader)
+    *   [1.3 Graphics](#Graphics)
+    *   [1.4 Touchpad](#Touchpad)
+    *   [1.5 Cardreader](#Cardreader)
 
 ## Model A55VJ-SXH161 (also K55VJ):
 
@@ -45,122 +41,14 @@
 
 ```
 
-### Installing
-
-Disable fast boot and CSM in BIOS to be able to boot from external media.
-
-Partition the harddrive in windows, no boot partition needed as /dev/sda1 is reserved for EFI.
-
-You can also partition the drive while installing using parted or gptfdisk (not included with 2013.05.01 installer).
-
-Install grub-efi-x86_64 to /dev/sda1 (/boot) and install system as usually.
-
-Setup bios to boot from disk1/part1 with \grub\core.efi (or grub.efi or whatever the naming currently is, ignore the "fsx:" the builtin help is giving you).
-
-If you want to boot windows normally, do not format or remove files from /dev/sda1 or the option from BIOS.
-
 ### Graphics
 
-Works with xf86-video-intel. NVIDIA GT635M works with [Bumblebee](/index.php/Bumblebee "Bumblebee")
-
-xorg.conf:
-
-```
-Section "ServerLayout"
-    Identifier     "Layout0"
-    Screen      0  "Screen0" 0 0
-    InputDevice    "Keyboard0" "CoreKeyboard"
-    InputDevice    "touchpad" "CorePointer"
-EndSection
-
-Section "Files"
-    FontPath        "/usr/share/fonts/misc/"
-    FontPath        "/usr/share/fonts/TTF/"
-    FontPath        "/usr/share/fonts/Type1/"
-    FontPath        "/usr/share/fonts/cyrillic/"
-    FontPath        "/usr/share/fonts/75dpi/"
-    FontPath        "/usr/share/fonts/100dpi/"
-    FontPath        "/usr/share/fonts/local/"
-EndSection
-
-Section "InputDevice"
-        Identifier "touchpad"
-        Driver "synaptics"
-        Option "TapButton1" "1"
-        Option "TapButton2" "2"
-        Option "TapButton3" "3"
-        Option "HorizTwoFingerScroll" "1"
-        Option "AreaBottomEdge" "82%"
-        Option "SoftButtonAreas" "50% 0 82% 0 0 0 0 0"
-EndSection
-
-Section "InputClass"
-        Identifier "touchpad ignore duplicates"
-        MatchIsTouchpad "on"
-        MatchOS "Linux"
-        MatchDevicePath "/dev/input/mouse*"
-        Option "Ignore" "on"
-EndSection
-
-Section "InputDevice"
-    Identifier     "Keyboard0"
-    Driver         "kbd"
-    Option         "AutoRepeat" "500 30"
-    Option         "XkbRules" "xorg"
-    Option         "XkbModel" "asus_laptop"
-    Option         "XkbLayout" "fi"
-    Option         "XkbVariant" "nodeadkeys"
-EndSection
-
-Section "Monitor"
-    Identifier     "Monitor0"
-    Option         "DPMS"
-    Option         "Enable" "true"
-EndSection
-
-Section "Device"
-    Identifier     "nvgpu0"
-    Driver         "nvidia"
-    BusID          "PCI:01:00:00"
-    VendorName     "NVIDIA Corporation"
-EndSection
-
-Section "Device"
-    Driver         "intel"
-    Option         "XvMC" "true"
-    Option         "UseEvents" "true"
-    Option         "AccelMethod" "UXA"
-    BusID          "PCI:0:2:0"
-EndSection
-
-Section "Screen"
-    Identifier     "Screen0"
-    Device         "intelgpu0"
-    Monitor        "Monitor0"
-    DefaultDepth    24
-    SubSection     "Display"
-        Depth       24
-    EndSubSection
-EndSection
-
-```
+Works with [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). NVIDIA GT635M works with [Bumblebee](/index.php/Bumblebee "Bumblebee").
 
 ### Touchpad
 
 Works fine, use [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) for better control. Add i8042.nomux=1 to kernel line, seems to help with jittery touchpad.
 
-### Sound
-
-Works out of box with no modifications.
-
-### Power management
-
-CPU throttling works out of box. Use /etc/systemd/logind.conf to change behaviour of keys.
-
-### Backlight
-
-Works fine with [backlight-control](https://aur.archlinux.org/packages/backlight-control/), use xbindkeys. FN+keys only seem to work for audio levels with Xorg.
-
 ### Cardreader
 
-Works with [dkms-rts_bpp](https://aur.archlinux.org/packages/dkms-rts_bpp/) from aur, remember to blacklist existing mmc modules.
+Works with [rts_bpp-dkms-git](https://aur.archlinux.org/packages/rts_bpp-dkms-git/), remember to blacklist existing mmc modules.

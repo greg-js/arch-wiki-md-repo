@@ -6,18 +6,17 @@
     *   [2.2 Настройка батареи на Thinkpad](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B1.D0.B0.D1.82.D0.B0.D1.80.D0.B5.D0.B8_.D0.BD.D0.B0_Thinkpad)
     *   [2.3 TLP для Thinkpad](#TLP_.D0.B4.D0.BB.D1.8F_Thinkpad)
     *   [2.4 Cpufrequtils](#Cpufrequtils)
-    *   [2.5 Pm-utils](#Pm-utils)
-    *   [2.6 Lapsus](#Lapsus)
-    *   [2.7 Установка PowerTOP](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_PowerTOP)
-    *   [2.8 Laptop mode tools](#Laptop_mode_tools)
-    *   [2.9 Powernowd](#Powernowd)
-    *   [2.10 PCIe ASPM](#PCIe_ASPM)
-    *   [2.11 Предложения для экономии энергии](#.D0.9F.D1.80.D0.B5.D0.B4.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B4.D0.BB.D1.8F_.D1.8D.D0.BA.D0.BE.D0.BD.D0.BE.D0.BC.D0.B8.D0.B8_.D1.8D.D0.BD.D0.B5.D1.80.D0.B3.D0.B8.D0.B8)
-        *   [2.11.1 Беспроводные устройства](#.D0.91.D0.B5.D1.81.D0.BF.D1.80.D0.BE.D0.B2.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0)
-        *   [2.11.2 Остальное](#.D0.9E.D1.81.D1.82.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5)
-            *   [2.11.2.1 Настройки для жёсткого диска](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_.D0.B4.D0.BB.D1.8F_.D0.B6.D1.91.D1.81.D1.82.D0.BA.D0.BE.D0.B3.D0.BE_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0)
-            *   [2.11.2.2 Проблемы с понижением скорости вращения жёсткого диска](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BF.D0.BE.D0.BD.D0.B8.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5.D0.BC_.D1.81.D0.BA.D0.BE.D1.80.D0.BE.D1.81.D1.82.D0.B8_.D0.B2.D1.80.D0.B0.D1.89.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B6.D1.91.D1.81.D1.82.D0.BA.D0.BE.D0.B3.D0.BE_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0)
-            *   [2.11.2.3 Тонкая настройка планировщика](#.D0.A2.D0.BE.D0.BD.D0.BA.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BF.D0.BB.D0.B0.D0.BD.D0.B8.D1.80.D0.BE.D0.B2.D1.89.D0.B8.D0.BA.D0.B0)
+    *   [2.5 Lapsus](#Lapsus)
+    *   [2.6 Установка PowerTOP](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_PowerTOP)
+    *   [2.7 Laptop mode tools](#Laptop_mode_tools)
+    *   [2.8 Powernowd](#Powernowd)
+    *   [2.9 PCIe ASPM](#PCIe_ASPM)
+    *   [2.10 Предложения для экономии энергии](#.D0.9F.D1.80.D0.B5.D0.B4.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B4.D0.BB.D1.8F_.D1.8D.D0.BA.D0.BE.D0.BD.D0.BE.D0.BC.D0.B8.D0.B8_.D1.8D.D0.BD.D0.B5.D1.80.D0.B3.D0.B8.D0.B8)
+        *   [2.10.1 Беспроводные устройства](#.D0.91.D0.B5.D1.81.D0.BF.D1.80.D0.BE.D0.B2.D0.BE.D0.B4.D0.BD.D1.8B.D0.B5_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0)
+        *   [2.10.2 Остальное](#.D0.9E.D1.81.D1.82.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5)
+            *   [2.10.2.1 Настройки для жёсткого диска](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_.D0.B4.D0.BB.D1.8F_.D0.B6.D1.91.D1.81.D1.82.D0.BA.D0.BE.D0.B3.D0.BE_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0)
+            *   [2.10.2.2 Проблемы с понижением скорости вращения жёсткого диска](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BF.D0.BE.D0.BD.D0.B8.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5.D0.BC_.D1.81.D0.BA.D0.BE.D1.80.D0.BE.D1.81.D1.82.D0.B8_.D0.B2.D1.80.D0.B0.D1.89.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B6.D1.91.D1.81.D1.82.D0.BA.D0.BE.D0.B3.D0.BE_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0)
+            *   [2.10.2.3 Тонкая настройка планировщика](#.D0.A2.D0.BE.D0.BD.D0.BA.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BF.D0.BB.D0.B0.D0.BD.D0.B8.D1.80.D0.BE.D0.B2.D1.89.D0.B8.D0.BA.D0.B0)
 *   [3 Яркость экрана](#.D0.AF.D1.80.D0.BA.D0.BE.D1.81.D1.82.D1.8C_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0)
 *   [4 Тачпад](#.D0.A2.D0.B0.D1.87.D0.BF.D0.B0.D0.B4)
 *   [5 Горячие кнопки](#.D0.93.D0.BE.D1.80.D1.8F.D1.87.D0.B8.D0.B5_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B8)
@@ -70,10 +69,6 @@
 ### Cpufrequtils
 
 [Cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils") обеспечивает изменение частоты процессора, технология, используемая в основном в ноутбуках, которая позволяет операционной системе занижать или повышать скорость работы процессора, в зависимости от текущей загрузки системы или схемы питания. Для быстрой и простой установки и настройки, пожалуйста, посмотрите на статью [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling").
-
-### Pm-utils
-
-[Pm-utils](/index.php/Pm-utils "Pm-utils") обеспечивает приостановку питания и настройку системы. Pm-utils должны использоваться с cpufrequtils для того чтобы обеспечить полное управление питанием.
 
 ### Lapsus
 

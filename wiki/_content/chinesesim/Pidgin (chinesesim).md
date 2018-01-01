@@ -259,26 +259,6 @@ WantedBy=sleep.target
 
 ```
 
-If you are using [pm-utils](/index.php/Pm-utils "Pm-utils"), you could create a `00pidgin` file in `/etc/pm/sleep.d/` instead.
-
-```
-#!/bin/sh
-#
-# 00pidgin: set offline/online status
-
-case "$1" in
-    hibernate|suspend)
-        DISPLAY=:0 su -c 'purple-remote setstatus?status=offline' ''%myuser''
-    ;;
-    thaw|resume)
-        DISPLAY=:0 su -c 'purple-remote setstatus?status=available' ''%myuser''
-    ;;
-    *) exit $NA
-    ;;
-esac
-
-```
-
 ## Troubleshooting
 
 *   If Facebook XMPP verification does not work for you, there a package in the aur [pidgin-facebookchat](https://aur.archlinux.org/packages.php?ID=34479) which does not require a unique user name (you may login with an email address)

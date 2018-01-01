@@ -30,7 +30,7 @@ The goal of this article is to provide a comprehensive guide for Dell Inspiron 6
     *   [2.5 Ricoh R5C822 SD/SDIO/MMC/MS/MSPro Card Reader](#Ricoh_R5C822_SD.2FSDIO.2FMMC.2FMS.2FMSPro_Card_Reader)
     *   [2.6 Synaptics Touchpad](#Synaptics_Touchpad)
 *   [3 Power Management](#Power_Management)
-    *   [3.1 ACPI Hibernation/Suspend with pm-utils](#ACPI_Hibernation.2FSuspend_with_pm-utils)
+    *   [3.1 ACPI Hibernation/Suspend](#ACPI_Hibernation.2FSuspend)
     *   [3.2 CPU Frequency Scaling with cpufrequtils](#CPU_Frequency_Scaling_with_cpufrequtils)
 *   [4 Multimedia Buttons & Fn Hotkeys](#Multimedia_Buttons_.26_Fn_Hotkeys)
     *   [4.1 Multimedia Buttons](#Multimedia_Buttons)
@@ -196,9 +196,7 @@ The Synaptics touchpad should provide basic functions out-of-the-box, however if
 
 ## Power Management
 
-### ACPI Hibernation/Suspend with pm-utils
-
-The powersave scripts have been officially replaced by pm-utils. Refer to the [Pm-utils](/index.php/Pm-utils "Pm-utils") wiki for detailed instructions.
+### ACPI Hibernation/Suspend
 
 ATI video card owners might need to add `vga=0` to the kernel options in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") in order to resume from suspend2ram. This behavior seems to change from version to version of catalyst, so your mileage may vary. Try it without vga=0 first, and if it doesn't work *then* add it.
 

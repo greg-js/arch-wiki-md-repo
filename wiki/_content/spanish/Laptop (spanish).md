@@ -55,7 +55,6 @@ El estado de la batería puede ser leído utilizando las utilidades ACPI en la t
 El sistema se puede suspender manualmente, tanto a la memoria (standby) o al disco (hibernate) a veces, proporciona la forma más eficaz para optimizar la vida de batería, dependiendo de el patrón de uso del portátil. Así mismo, el kernel de Linux soporta relativamente estas operaciones, típicamente algunos ajustes tienen que hacerse antes de iniciar estas operaciones (generalmente debido a drivers problemáticos, módulos o hardware). Las siguientes herramientas proporcionan "wrappers" alrededor de las interfaces del kernel para suspender/reanudar:
 
 *   [Acpid](/index.php/Acpid "Acpid")
-*   [Pm-utils](/index.php/Pm-utils "Pm-utils")
 *   [Uswsusp](/index.php/Uswsusp "Uswsusp")
 
 Éstos se encuentran descritos con más detalle en [Suspende](/index.php?title=Suspende&action=edit&redlink=1 "Suspende (page does not exist)").
@@ -77,7 +76,7 @@ Some of these tweaks are specific to certain makes.
 
 ### Other tweaks
 
-**Note:** Not only are the following tweaks _may_ not needed if using one of the more comprehensive suites such as [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") or [Pm-utils](/index.php/Pm-utils "Pm-utils")
+**Note:** Not only are the following tweaks _may_ not needed if using one of the more comprehensive suites such as [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools").
 
 #### PCI-e ASPM
 

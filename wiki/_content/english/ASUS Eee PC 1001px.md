@@ -6,12 +6,11 @@ The same model was sold in Europe under the name [Eee PC R101](http://www.notebo
 
 *   [1 Installation](#Installation)
 *   [2 Fn keys](#Fn_keys)
-*   [3 Laptop Mode Tools & powersaving](#Laptop_Mode_Tools_.26_powersaving)
-*   [4 Graphics](#Graphics)
-*   [5 Wireless](#Wireless)
-*   [6 Hardware information](#Hardware_information)
-    *   [6.1 lspci](#lspci)
-    *   [6.2 lsusb](#lsusb)
+*   [3 Graphics](#Graphics)
+*   [4 Wireless](#Wireless)
+*   [5 Hardware information](#Hardware_information)
+    *   [5.1 lspci](#lspci)
+    *   [5.2 lsusb](#lsusb)
 
 ## Installation
 
@@ -24,36 +23,6 @@ When partitioning you may want to keep the EFI-partition (usually the last, smal
 ## Fn keys
 
 Install [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/) from [AUR](/index.php/AUR "AUR") and add this file [https://github.com/nbigaouette/acpi-eeepc-generic/blob/afeb3a328258b0298a5edaa0e8de22d1bb48643d/acpi-eeepc-1001PX-events.conf](https://github.com/nbigaouette/acpi-eeepc-generic/blob/afeb3a328258b0298a5edaa0e8de22d1bb48643d/acpi-eeepc-1001PX-events.conf)
-
-## Laptop Mode Tools & powersaving
-
-The powersaving-mechanisms provided by [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") seem to work.
-
-Standby (Suspend-to-ram) works perfectly fine with hotkey. Hibernate (Suspend-to-disk) was not tested.
-
-Spinning down the harddrive works.
-
-Adjusting the [brightness](/index.php/Backlight "Backlight") of the display works with hotkeys after adding the following to your kernel-boot-options
-
-```
- acpi_osi=Linux acpi_backlight=vendor
-
-```
-
-To adjust the brightness from the command line, you can write values 0 to 10 (inclusive) to `/sys/devices/virtual/backlight/acpi_video0/brightness`.
-
-In some cases this causes problems and erratic brightness adjustment when using hotkeys. Using the kernel-boot-option
-
-```
- acpi_osi=Linux
-
-```
-
-alone seems to fix that.
-
-Personal Remark: The overall endurance seems good. While I never actually reached the promised 10h, 8h-9h are possible with dimmed display, 4h while really working with it. The power-saving-support is probably not worse than on Windows.
-
-Another edit: I recommend getting [kernel-netbook](https://aur.archlinux.org/packages/kernel-netbook/) and not using `acpi_osi=Linux` anymore.
 
 ## Graphics
 

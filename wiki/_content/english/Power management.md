@@ -27,6 +27,7 @@ In Arch Linux, power management consists of two main parts:
         *   [2.1.2 xss-lock](#xss-lock)
     *   [2.2 Suspend and hibernate](#Suspend_and_hibernate)
         *   [2.2.1 Hybrid sleep](#Hybrid_sleep)
+        *   [2.2.2 Always do hybrid-sleep instead of suspend or hibernation](#Always_do_hybrid-sleep_instead_of_suspend_or_hibernation)
     *   [2.3 Sleep hooks](#Sleep_hooks)
         *   [2.3.1 Suspend/resume service files](#Suspend.2Fresume_service_files)
         *   [2.3.2 Combined Suspend/resume service file](#Combined_Suspend.2Fresume_service_file)
@@ -75,10 +76,6 @@ These are the more popular scripts and tools designed to help power saving:
 *   **[Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")** — Utility to configure laptop power saving settings, considered by many to be the de facto utility for power saving though may take a bit of configuration.
 
 	[https://github.com/rickysarraf/laptop-mode-tools](https://github.com/rickysarraf/laptop-mode-tools) || [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/)
-
-*   **[pm-utils](/index.php/Pm-utils "Pm-utils")** — Suspend and powerstate setting framework (largely undeveloped now).
-
-	[http://pm-utils.freedesktop.org/](http://pm-utils.freedesktop.org/) || [pm-utils](https://aur.archlinux.org/packages/pm-utils/)
 
 *   **[powertop](/index.php/Powertop "Powertop")** — A tool to diagnose issues with power consumption and power management to help set power saving settings.
 
@@ -129,13 +126,32 @@ xss-lock -- i3lock -n -i *background_image.png* &
 
 *systemd* provides commands for suspend to RAM, hibernate and a hybrid suspend using the kernel's native suspend/resume functionality. There are also mechanisms to add hooks to customize pre- and post-suspend actions.
 
-**Note:** *systemd* can also use other suspend backends (such as [Uswsusp](/index.php/Uswsusp "Uswsusp") or [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")), in addition to the default *kernel* backend, in order to put the computer to sleep or hibernate. See [Uswsusp#With systemd](/index.php/Uswsusp#With_systemd "Uswsusp") for an example.
+**Note:** *systemd* can also use other suspend backends (such as [Uswsusp](/index.php/Uswsusp "Uswsusp")), in addition to the default *kernel* backend, in order to put the computer to sleep or hibernate. See [Uswsusp#With systemd](/index.php/Uswsusp#With_systemd "Uswsusp") for an example.
 
 `systemctl suspend` should work out of the box, for `systemctl hibernate` to work on your system you need to follow the instructions at [Suspend and hibernate#Hibernation](/index.php/Suspend_and_hibernate#Hibernation "Suspend and hibernate").
 
 #### Hybrid sleep
 
 `systemctl hybrid-sleep` both hibernates and suspends at the same time. This combines some of the benefits and drawbacks of suspension and hibernation. This is useful in case a computer were to suddenly lose power (AC disconnection or battery depletion) since upon powerup it will resume from hibernation. If there is no power loss, then it will resume from suspension, which is much faster than resuming from hibernation. However, since "hybrid-sleep" has to dump memory to swap in order for hibernation to work, it is slower to enter sleep than a plain `systemctl suspend`. An alternative is a [delayed hibernation service file](#Delayed_hibernation_service_file).
+
+#### Always do hybrid-sleep instead of suspend or hibernation
+
+It is possible to configure systemd to always do a *hybrid-sleep* even on a *suspend* or *hibernation* request.
+
+The default *suspend* and *hibernation* action can be configured in the `/etc/systemd/sleep.conf` file. To set both actions to *hybrid-sleep*:
+
+ `/etc/systemd/sleep.conf` 
+```
+[Sleep]
+# suspend=hybrid-sleep
+SuspendMode=suspend
+SuspendState=disk
+# hibernate=hybrid-sleep
+HibernateMode=suspend
+HibernateState=disk
+```
+
+See the [sleep.conf.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sleep.conf.d.5) manual page for details.
 
 ### Sleep hooks
 
@@ -288,7 +304,7 @@ The `Before` and `Conflicts` options ensure it only is run for suspension and no
 *   Argument 1: either `pre` or `post`, depending on whether the machine is going to sleep or waking up
 *   Argument 2: `suspend`, `hibernate` or `hybrid-sleep`, depending on which is being invoked
 
-In contrast to [pm-utils](/index.php/Pm-utils "Pm-utils"), *systemd* will run these scripts concurrently and not one after another.
+*systemd* will run these scripts concurrently and not one after another.
 
 The output of any custom script will be logged by *systemd-suspend.service*, *systemd-hibernate.service* or *systemd-hybrid-sleep.service*. You can see its output in *systemd*'s [journal](/index.php/Systemd#Journal "Systemd"):
 
@@ -604,7 +620,7 @@ See [Udisks#Devices do not remain unmounted (udisks)](/index.php/Udisks#Devices_
 
 ### Using a script and an udev rule
 
-Since systemd users can suspend and hibernate through `systemctl suspend` or `systemctl hibernate` and handle acpi events with `/etc/systemd/logind.conf`, it might be interesting to remove [pm-utils](/index.php/Pm-utils "Pm-utils") and [acpid](/index.php/Acpid "Acpid"). There is just one thing systemd cannot do (as of systemd-204): power management depending on whether the system is running on AC or battery. To fill this gap, you can create a single [udev](/index.php/Udev "Udev") rule that runs a script when the AC adapter is plugged and unplugged:
+Since systemd users can suspend and hibernate through `systemctl suspend` or `systemctl hibernate` and handle acpi events with `/etc/systemd/logind.conf`, it might be interesting to remove *pm-utils* and [acpid](/index.php/Acpid "Acpid"). There is just one thing systemd cannot do (as of systemd-204): power management depending on whether the system is running on AC or battery. To fill this gap, you can create a single [udev](/index.php/Udev "Udev") rule that runs a script when the AC adapter is plugged and unplugged:
 
  `/etc/udev/rules.d/powersave.rules` 
 ```
@@ -645,8 +661,6 @@ exit 0
 Do not forget to make it executable!
 
 **Note:** Be aware that AC0 may be different for your laptop, change it if that is the case.
-
-Now you do not need pm-utils anymore. Depending on your configuration, it may be a dependency of some other package. If you wish to remove it anyway, run `pacman -Rdd pm-utils`.
 
 ### Print power settings
 

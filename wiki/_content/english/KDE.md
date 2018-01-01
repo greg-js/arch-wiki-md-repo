@@ -73,23 +73,20 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [6.1.1 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
         *   [6.1.2 Clean cache to resolve upgrade problems](#Clean_cache_to_resolve_upgrade_problems)
     *   [6.2 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
-    *   [6.3 Fix empty IMAP inbox](#Fix_empty_IMAP_inbox)
+    *   [6.3 Empty IMAP inbox in KMail](#Empty_IMAP_inbox_in_KMail)
     *   [6.4 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
     *   [6.5 KF5/Qt5 applications do not display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_do_not_display_icons_in_i3.2Ffvwm.2Fawesome)
-    *   [6.6 Graphical related problems](#Graphical_related_problems)
-        *   [6.6.1 Plasma keeps crashing with legacy Nvidia](#Plasma_keeps_crashing_with_legacy_Nvidia)
-        *   [6.6.2 Applications do not refresh properly](#Applications_do_not_refresh_properly)
-        *   [6.6.3 Bad performance](#Bad_performance)
-            *   [6.6.3.1 Disable desktop effects manually or automatically for defined applications](#Disable_desktop_effects_manually_or_automatically_for_defined_applications)
-            *   [6.6.3.2 Disable compositing](#Disable_compositing)
+    *   [6.6 Graphical problems](#Graphical_problems)
+        *   [6.6.1 Disable desktop effects manually or automatically for defined applications](#Disable_desktop_effects_manually_or_automatically_for_defined_applications)
+        *   [6.6.2 Disable compositing](#Disable_compositing)
+        *   [6.6.3 Plasma keeps crashing with legacy Nvidia](#Plasma_keeps_crashing_with_legacy_Nvidia)
         *   [6.6.4 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
         *   [6.6.5 Screen tearing with Nvidia](#Screen_tearing_with_Nvidia)
         *   [6.6.6 Plasma cursor sometimes shown incorrecty](#Plasma_cursor_sometimes_shown_incorrecty)
-    *   [6.7 Sound problems under Plasma 5](#Sound_problems_under_Plasma_5)
+    *   [6.7 Sound problems](#Sound_problems)
         *   [6.7.1 No sound after suspend](#No_sound_after_suspend)
-        *   [6.7.2 ALSA related problems](#ALSA_related_problems)
-            *   [6.7.2.1 "Falling back to default" messages when trying to listen to any sound](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound)
-            *   [6.7.2.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
+        *   [6.7.2 "Falling back to default" messages when trying to listen to any sound](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound)
+        *   [6.7.3 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
     *   [6.8 Inotify folder watch limit](#Inotify_folder_watch_limit)
     *   [6.9 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
     *   [6.10 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
@@ -631,7 +628,7 @@ Start *SystemSettings > Personal* and remove all the resources. Go back to Dolph
 
 Now go back to the System Settings page and carefully add the necessary resources. You should see the resource reading in your mail folders. Then start Kontact/KMail to see if it work properly.
 
-### Fix empty IMAP inbox
+### Empty IMAP inbox in KMail
 
 For some IMAP accounts, kmail will show the inbox as a container with all other folders of this account inside. Kmail does not show messages in the inbox container but in all other subfolders, see [KDE Bug 284172](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server side subscribition in the kmail account settings.
 
@@ -648,7 +645,17 @@ $ qdbus org.kde.KWin /KWin supportInformation
 
 See [Qt#Configuration of Qt5 apps under environments other than KDE Plasma](/index.php/Qt#Configuration_of_Qt5_apps_under_environments_other_than_KDE_Plasma "Qt").
 
-### Graphical related problems
+### Graphical problems
+
+Make sure you have the proper driver for your GPU installed. See [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg") for more information. If you have an older card, it might help to [#Disable desktop effects manually or automatically for defined applications](#Disable_desktop_effects_manually_or_automatically_for_defined_applications) or [#Disable compositing](#Disable_compositing).
+
+#### Disable desktop effects manually or automatically for defined applications
+
+Plasma has desktop effects enabled by default and e.g. not every game will disable them automatically. You can disable desktop effects in *System Settings > Desktop Effects* and you can toggle desktop effects with `Alt+Shift+F12`. Additionally, you can create custom KWin rules to automatically disable/enable compositing when a certain application/window starts under *System Settings > Window Management > Window Rules*.
+
+#### Disable compositing
+
+In *Sytem Settings > Display and Monitor*, uncheck *Enable compositor on startup* and restart Plasma.
 
 #### Plasma keeps crashing with legacy Nvidia
 
@@ -661,22 +668,6 @@ export KWIN_EXPLICIT_SYNC=0
 ```
 
 Then go to *System Settings > Startup and Shutdown > Autostart* and *Check/Add* the script as a pre-KDE startup file.
-
-#### Applications do not refresh properly
-
-If you use 3D-accelerated composition with [Intel](/index.php/Intel "Intel"), you might find that the Plasma panel and other applications do not refresh properly (stay frozen). Some Intel drivers have [problems with EGL](https://bugzilla.redhat.com/show_bug.cgi?id=1259475). Go to *System Settings > Display and Monitor > Compositor*. Set *OpenGL interface* to OpenGL 3.1\. If that does not work, see [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") for alternative solutions.
-
-#### Bad performance
-
-Make sure you have the proper driver for your GPU installed. See [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg") for more information. If you have an older card, it might help to [#Disable desktop effects manually or automatically for defined applications](#Disable_desktop_effects_manually_or_automatically_for_defined_applications) or [#Disable compositing](#Disable_compositing).
-
-##### Disable desktop effects manually or automatically for defined applications
-
-Plasma has desktop effects enabled by default and e.g. not every game will disable them automatically. You can disable desktop effects in *System Settings > Desktop Effects* and you can toggle desktop effects with `Alt+Shift+F12`. Additionally, you can create custom KWin rules to automatically disable/enable compositing when a certain application/window starts under *System Settings > Window Management > Window Rules*.
-
-##### Disable compositing
-
-In *Sytem Settings > Display and Monitor*, uncheck *Enable compositor on startup* and restart Plasma.
 
 #### Flickering in fullscreen when compositing is enabled
 
@@ -720,7 +711,9 @@ $ ln -s /usr/share/icons/breeze_cursors/cursors ~/.icons/default/cursors
 
 ```
 
-### Sound problems under Plasma 5
+### Sound problems
+
+**Note:** First make sure you have [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) installed.
 
 #### No sound after suspend
 
@@ -735,11 +728,7 @@ $ plasmashell
 
 Some applications may also need to be restarted in order for sound to play from them again.
 
-#### ALSA related problems
-
-**Note:** First make sure you have [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) and [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) installed.
-
-##### "Falling back to default" messages when trying to listen to any sound
+#### "Falling back to default" messages when trying to listen to any sound
 
 When you encounter such messages:
 
@@ -751,7 +740,7 @@ Falling back to default
 
 Go to *System Settings > Multimedia > Phonon* and set the device named `default` above all the other devices in each box you see.
 
-##### MP3 files cannot be played when using the GStreamer Phonon backend
+#### MP3 files cannot be played when using the GStreamer Phonon backend
 
 This can be solved by installing the GStreamer libav plugin (package [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)). If you still encounter problems, you can try changing the Phonon backend used by installing another such as [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc) or [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc). Then, make sure the backend is preferred via *System Settings > Multimedia > Backend*.
 

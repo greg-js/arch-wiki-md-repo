@@ -285,9 +285,9 @@ The *ext4* file system records information about when a file was last accessed a
 
 The sync interval for data and metadata can be increased by providing a higher time delay to the `commit` option.
 
-The default 5 sec means that if the power is lost, one will lose as much as the latest 5 seconds of work. It forces a full sync of all data/journal to physical media every 5 seconds. The filesystem will not be damaged though, thanks to the journaling. The following fstab illustrates the use of `commit`:
+The default 5 sec means that if the power is lost, one will lose as much as the latest 5 seconds of work. It forces a full sync of all data/journal to physical media every 5 seconds. The filesystem will not be damaged though, thanks to the journaling. The following [fstab](/index.php/Fstab "Fstab") illustrates the use of `commit`:
 
- `/etc/fstab`  `/dev/sda5    /    ext4    defaults,noatime,**commit=999**    0    1` 
+ `/etc/fstab`  `/dev/sda5    /    ext4    defaults,noatime,**commit=60**    0    1` 
 
 ### Turning barriers off
 
@@ -306,7 +306,7 @@ To turn barriers off, add the option `barrier=0` to the desired filesystem. For 
 Disabling the journal with *ext4* can be done with the following command on an unmounted disk:
 
 ```
-# tune2fs -O ^has_journal /dev/sdXN
+# tune2fs -O "^has_journal" /dev/sdXN
 
 ```
 

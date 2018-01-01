@@ -30,7 +30,6 @@
         *   [2.3.1 HDMI](#HDMI)
     *   [2.4 Touchpad](#Touchpad)
         *   [2.4.1 Working 10-synaptics.conf](#Working_10-synaptics.conf)
-    *   [2.5 Suspend to RAM](#Suspend_to_RAM)
 *   [3 Webcam](#Webcam)
 *   [4 Function Keys](#Function_Keys)
 
@@ -247,42 +246,6 @@ Section "InputClass"
 		Option	"RTCornerButton"	"2"
 EndSection
 ```
-
-## Suspend to RAM
-
-**Note:** As far as I can tell, there is a general problem with USB 3.0 and suspending at the kernel level.
-
-**Note:** This is section was written in kernel 2.6.36.2-1 and with the packages available on 18th December.
-
-I achieved Suspension to RAM by using pm-utils with either the uswsusp and kernel method.
-
-1\. Follow the [pm-utils](/index.php/Pm-utils "Pm-utils") article . It is quite extense and can be confusing, but, if I recall, this is the very minimum of what is needed to do:
-
-1.1 Type `pacman -S pm-utils uswsusp`
-
-1.2 To a file inside `/etc/pm/config.d/`, add:
-
-```
-SLEEP_MODULE="uswsusp"
-#SLEEP_MODULE="kernel"
-HIBERNATE_MODE="shutdown"
-```
-
-1.3 Add the `resume` hook to `/etc/mkinitcpio.conf`, before filesystems.
-
- `HOOKS="base udev autodetect block resume filesystems"` 
-
-1.4 Rebuild the initrd image with `mkinitcpio -p linux`.
-
-Now, to the hardware specific part.
-
-2\. Add `SUSPEND_MODULES="xhci-hcd ehci-hcd"` to `/etc/pm/config.d/usb3-suspend-workaround`.
-
-After a surge of updates, somewhere on the end of November/start of December (bug report), suspend to ram only works if nouveau is explicitly disabled in rc.conf. Since nouveau isn't related to the ability to power the nvidia card off, powering it off is still possible, even after disabling that module.
-
-3\. Add `!nouveau` to the `MODULES` line in `rc.conf`. It should look like this:
-
- `MODULES=(fuse acpi-cpufreq cpufreq_ondemand cpufreq_powersave !snd-pcm-oss vboxdrv !nouveau)` 
 
 # Webcam
 

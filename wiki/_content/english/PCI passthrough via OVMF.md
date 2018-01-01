@@ -83,6 +83,8 @@ Ensure that AMD-Vi/Intel VT-d is enabled in your BIOS settings. Both normally sh
 
 You will also have to enable iommu support in the kernel itself through a [bootloader kernel option](/index.php/Kernel_parameters "Kernel parameters"). Depending on your type of CPU, use either `intel_iommu=on` for Intel CPUs (VT-d) or `amd_iommu=on` for AMD CPUs (AMD-Vi).
 
+You should also append the `iommu=pt` parameter. This will prevent Linux from touching devices which cannot be passed through.
+
 After rebooting, check dmesg to confirm that IOMMU has been correctly enabled:
 
  `dmesg | grep -e DMAR -e IOMMU` 

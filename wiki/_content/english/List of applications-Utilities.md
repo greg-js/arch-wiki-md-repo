@@ -27,8 +27,7 @@
             *   [1.7.4.2 Graphical](#Graphical_2)
         *   [1.7.5 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
         *   [1.7.6 Batch renamers](#Batch_renamers)
-        *   [1.7.7 Search and replace](#Search_and_replace)
-        *   [1.7.8 Finders](#Finders)
+        *   [1.7.7 Finders](#Finders)
     *   [1.8 Disk cleaning](#Disk_cleaning)
     *   [1.9 Disk usage display](#Disk_usage_display)
     *   [1.10 Clock synchronization](#Clock_synchronization)
@@ -294,10 +293,6 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[https://eclipse.org/](https://eclipse.org/) || [eclipse-java](https://www.archlinux.org/packages/?name=eclipse-java), [eclipse-cpp](https://www.archlinux.org/packages/?name=eclipse-cpp), [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php)
 
-*   **[Editra](https://en.wikipedia.org/wiki/Editra "wikipedia:Editra")** — Multi-platform text editor with an implementation that focuses on creating an easy to use interface and features that aid in code development.
-
-	[http://www.editra.org](http://www.editra.org) || [editra-svn](https://aur.archlinux.org/packages/editra-svn/)
-
 *   **[Eric](https://en.wikipedia.org/wiki/Eric_Python_IDE "wikipedia:Eric Python IDE")** — Full-featured Python and Ruby IDE in PyQt5.
 
 	[https://eric-ide.python-projects.org/](https://eric-ide.python-projects.org/) || [eric](https://www.archlinux.org/packages/?name=eric)
@@ -332,7 +327,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[MonoDevelop](https://en.wikipedia.org/wiki/MonoDevelop "wikipedia:MonoDevelop")** — Cross-platform IDE targeted for the Mono and .NET frameworks.
 
-	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop](https://aur.archlinux.org/packages/monodevelop/)
+	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop-git](https://aur.archlinux.org/packages/monodevelop-git/)
 
 *   **[MPLAB](https://en.wikipedia.org/wiki/MPLAB "wikipedia:MPLAB")** — IDE for Microchip PIC and dsPIC development
 
@@ -683,12 +678,6 @@ For managing *pacnew*/*pacsave* files, specialised tools exist. See [Pacnew and 
 *   **rename.pl** — Batch renamer based on perl regex.
 
 	[http://search.cpan.org/~pederst/rename/bin/rename.PL](http://search.cpan.org/~pederst/rename/bin/rename.PL) || [perl-rename](https://www.archlinux.org/packages/?name=perl-rename)
-
-#### Search and replace
-
-*   **KfileReplace** — GUI for batch processing search and replace operations.
-
-	[https://www.kde.org/applications/utilities/kfilereplace/](https://www.kde.org/applications/utilities/kfilereplace/) || [kdewebdev-kfilereplace](https://www.archlinux.org/packages/?name=kdewebdev-kfilereplace)
 
 #### Finders
 

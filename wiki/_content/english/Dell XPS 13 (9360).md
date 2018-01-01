@@ -115,7 +115,7 @@ modeset=1 enable_rc6=1 enable_fbc=1
 
 ```
 
-The first argument is to enable modesetting if it's not set by default. The second argument is needed to active power-saving C-States. Higher values than 1 are not available for kaby lake CPUs. The third argument is for frame buffer compression power savings. These values should work well!
+The first argument is to enable modesetting if it's not set by default. The second argument is needed to activate power-saving C-States. Higher values than 1 are not available for kaby lake CPUs. The third argument is for frame buffer compression power savings. These values should work well!
 
 ```
 enable_guc_loading=1 enable_guc_submission=1

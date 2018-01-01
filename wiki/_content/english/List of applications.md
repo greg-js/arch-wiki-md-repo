@@ -151,8 +151,7 @@ This article is a general list of applications sorted by category, as a referenc
             *   [3.7.4.2 Graphical](#Graphical_13)
         *   [3.7.5 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
         *   [3.7.6 Batch renamers](#Batch_renamers)
-        *   [3.7.7 Search and replace](#Search_and_replace)
-        *   [3.7.8 Finders](#Finders)
+        *   [3.7.7 Finders](#Finders)
     *   [3.8 Disk cleaning](#Disk_cleaning)
     *   [3.9 Disk usage display](#Disk_usage_display)
     *   [3.10 Clock synchronization](#Clock_synchronization)
@@ -2996,10 +2995,6 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[https://eclipse.org/](https://eclipse.org/) || [eclipse-java](https://www.archlinux.org/packages/?name=eclipse-java), [eclipse-cpp](https://www.archlinux.org/packages/?name=eclipse-cpp), [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php)
 
-*   **[Editra](https://en.wikipedia.org/wiki/Editra "wikipedia:Editra")** — Multi-platform text editor with an implementation that focuses on creating an easy to use interface and features that aid in code development.
-
-	[http://www.editra.org](http://www.editra.org) || [editra-svn](https://aur.archlinux.org/packages/editra-svn/)
-
 *   **[Eric](https://en.wikipedia.org/wiki/Eric_Python_IDE "wikipedia:Eric Python IDE")** — Full-featured Python and Ruby IDE in PyQt5.
 
 	[https://eric-ide.python-projects.org/](https://eric-ide.python-projects.org/) || [eric](https://www.archlinux.org/packages/?name=eric)
@@ -3034,7 +3029,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[MonoDevelop](https://en.wikipedia.org/wiki/MonoDevelop "wikipedia:MonoDevelop")** — Cross-platform IDE targeted for the Mono and .NET frameworks.
 
-	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop](https://aur.archlinux.org/packages/monodevelop/)
+	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop-git](https://aur.archlinux.org/packages/monodevelop-git/)
 
 *   **[MPLAB](https://en.wikipedia.org/wiki/MPLAB "wikipedia:MPLAB")** — IDE for Microchip PIC and dsPIC development
 
@@ -3385,12 +3380,6 @@ For managing *pacnew*/*pacsave* files, specialised tools exist. See [Pacnew and 
 *   **rename.pl** — Batch renamer based on perl regex.
 
 	[http://search.cpan.org/~pederst/rename/bin/rename.PL](http://search.cpan.org/~pederst/rename/bin/rename.PL) || [perl-rename](https://www.archlinux.org/packages/?name=perl-rename)
-
-#### Search and replace
-
-*   **KfileReplace** — GUI for batch processing search and replace operations.
-
-	[https://www.kde.org/applications/utilities/kfilereplace/](https://www.kde.org/applications/utilities/kfilereplace/) || [kdewebdev-kfilereplace](https://www.archlinux.org/packages/?name=kdewebdev-kfilereplace)
 
 #### Finders
 
@@ -4116,7 +4105,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code")** — Editor for building and debugging modern web and cloud applications.
 
-	[https://code.visualstudio.com](https://code.visualstudio.com) || [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/) or [visual-studio-code-oss](https://aur.archlinux.org/packages/visual-studio-code-oss/) (open-source version)
+	[https://code.visualstudio.com](https://code.visualstudio.com) || [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)
 
 *   **XEdit** — Simple text editor for the X Window System.
 
@@ -5501,10 +5490,6 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 	[http://hledger.org/](http://hledger.org/) || [hledger-git](https://aur.archlinux.org/packages/hledger-git/)
 
-*   **Moneychanger** — An intuitive QT/C++ system tray client for *Open-Transactions*
-
-	[https://github.com/Open-Transactions/Moneychanger](https://github.com/Open-Transactions/Moneychanger) || [moneychanger-git](https://aur.archlinux.org/packages/moneychanger-git/)
-
 *   **Manager Accounting** — Manager is free accounting software for small business.
 
 	[http://www.manager.io/](http://www.manager.io/) || [manager-accounting](https://aur.archlinux.org/packages/manager-accounting/)
@@ -5520,10 +5505,6 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 *   **openerp** — Open source erp system purely in python.
 
 	[http://openerp.com/](http://openerp.com/) || [openerp](https://aur.archlinux.org/packages/openerp/)
-
-*   **Open-Transactions** — A financial cryptography library used for issuing currencies, stock, paying dividends, creating asset accounts, sending/receiving digital cash, trading on markets and escrow.
-
-	[https://github.com/Open-Transactions/Open-Transactions](https://github.com/Open-Transactions/Open-Transactions) || [open-transactions-git](https://aur.archlinux.org/packages/open-transactions-git/)
 
 ### Education
 
@@ -5883,7 +5864,7 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 
 *   **PerlPanel** — The ideal accompaniment to a light-weight Window Manager such as OpenBox, or a desktop-drawing program like iDesk.
 
-	[http://savannah.nongnu.org/projects/perlpanel](http://savannah.nongnu.org/projects/perlpanel) || [perlpanel](https://aur.archlinux.org/packages/perlpanel/)
+	[http://savannah.nongnu.org/projects/perlpanel](http://savannah.nongnu.org/projects/perlpanel) || [perlpanel-git](https://aur.archlinux.org/packages/perlpanel-git/)
 
 *   **[Plank](/index.php/Plank "Plank")** — Elegant, simple, clean dock from [pantheon](/index.php/Pantheon "Pantheon") desktop environment.
 
@@ -5904,10 +5885,6 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 *   **Trayer** — Lightweight GTK+-based systray.
 
 	[https://gna.org/projects/fvwm-crystal/](https://gna.org/projects/fvwm-crystal/) || [trayer](https://www.archlinux.org/packages/?name=trayer)
-
-*   **wbar** — Quick launch bar developed with speed in mind.
-
-	[http://freecode.com/projects/wbar/](http://freecode.com/projects/wbar/) || [wbar](https://www.archlinux.org/packages/?name=wbar)
 
 *   **Xfce Panel** — Panel included in the [Xfce](/index.php/Xfce "Xfce") desktop.
 
@@ -5935,7 +5912,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **dmenu-extended** — An extension to *dmenu* for quickly opening files and folders.
 
-	[https://github.com/markjones112358/dmenu-extended](https://github.com/markjones112358/dmenu-extended) || [dmenu-extended](https://aur.archlinux.org/packages/dmenu-extended/)
+	[https://github.com/markjones112358/dmenu-extended](https://github.com/markjones112358/dmenu-extended) || [dmenu-extended-git](https://aur.archlinux.org/packages/dmenu-extended-git/)
 
 *   **dmenu-launch** — Simple *dmenu*-based application launcher. Launches binaries and XDG shortcuts.
 
@@ -6077,7 +6054,7 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 
 *   **Neap** — An non-intrusive and light pager that runs in the notification area of your panel.
 
-	[https://github.com/vzxwco/neap](https://github.com/vzxwco/neap) || [neap](https://aur.archlinux.org/packages/neap/)
+	[https://github.com/vzxwco/neap](https://github.com/vzxwco/neap) || [neap-hotkey](https://aur.archlinux.org/packages/neap-hotkey/)
 
 *   **Netwmpager** — A NetWM/EWMH compatible pager.
 

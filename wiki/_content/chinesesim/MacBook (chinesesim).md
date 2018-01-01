@@ -1,3 +1,8 @@
+相关文章
+
+*   [Installation guide](/index.php/Installation_guide "Installation guide")
+*   [General Recommendations](/index.php/General_Recommendations "General Recommendations")
+
 在MacBook上安装Arch Linux与在其他电脑上安装Arch Linux非常相似。然而，由于MacBook的特殊硬件配置，需要一些特殊的考虑，因此建立MacBook专页。更多背景信息，可以从[官方安装指南](/index.php/Official_Arch_Linux_Install_Guide "Official Arch Linux Install Guide")以及[安装后小贴士](/index.php/Post_Installation_Tips "Post Installation Tips")上获取。本文同样适用于MacBook Pro系列机型，也支持32位及64位版本。如果您正在使用MacBook 5,2并且有其他疑问，请猛击[MacBook5,2](/index.php/Macbook5,2 "Macbook5,2")获取帮助。
 
 ## Contents
@@ -374,12 +379,7 @@ Option "RegistryDwords" "EnableBrightnessControl=1"
 
 *   MacBook 8.1 使用 BCM4331，即不被Linux支持 (3.0 和 3.1) ，Broadcom 也没有提供闭源驱动，直到在 Linux 3.2 中才被初步支持。如果你需要在旧的内核上使用，你需要安装这里的驱动[compat-drivers](https://backports.wiki.kernel.org/index.php/Documentation/compat-drivers)
 
-**注意:** 如果你经常丢失连接，你需要关闭无线电源管理。 如果你在运行 [pm-utils](/index.php/Pm-utils "Pm-utils")，你需要创建一个执行文件文件 `/etc/pm/wireless` 替代无线电源管理：
-```
-#!/bin/sh
-iwconfig wlp2s0 power off
-
-```
+**注意:** 如果你经常丢失连接，你需要关闭无线电源管理。
 
 ### 电源管理
 
