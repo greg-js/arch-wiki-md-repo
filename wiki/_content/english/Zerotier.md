@@ -2,7 +2,7 @@ Zerotier is an open source, cross-platform and easy to use virtual LAN / Hamachi
 
 ## Installing
 
-ZeroTier can be [installed](/index.php/Installed "Installed") with the [zerotier-one](https://www.archlinux.org/packages/?name=zerotier-one)
+ZeroTier can be [installed](/index.php/Installed "Installed") with the [zerotier-one](https://www.archlinux.org/packages/?name=zerotier-one).
 
 ## Configuration
 
@@ -10,7 +10,7 @@ You will need to create an account over at [My Zerotier](https://my.zerotier.com
 
 To begin [start](/index.php/Start "Start") `zerotier-one.service`, if one would like it to start at boot [enable](/index.php/Enable "Enable") `zerotier-one.service`. to find out what your computer id,it will be a 10 alphanumeric similar to 89e92ceee5, is run:
 
- `$ sudo zerotier-cli info` 
+ `# zerotier-cli info` 
 ```
 200 info 89e92ceee5 1.2.4 ONLINE
 
@@ -21,7 +21,7 @@ where 89e92ceee5 is address and 1.2.4 is the version, followed by its status
 Next you will need to run to join a network:
 
 ```
- $ sudo zerotier-cli join *network_id*
+# zerotier-cli join *network_id*
 
 ```
 
@@ -41,7 +41,7 @@ PING 192.168.192.91 (192.168.192.91) 56(84) bytes of data.
 
 One can also see connected peers by running:
 
- `$ sudo zerotier-cli listpeers` 
+ `# zerotier-cli listpeers` 
 ```
 200 listpeers <ztaddr> <path> <latency> <version> <role>
 200 listpeers 12ac4a1e71 87.98.218.130/30883;12;12;1.00 589 1.2.5 LEAF
@@ -54,6 +54,6 @@ One can also see connected peers by running:
 and see a list of networks the computer is connected to by running:
 
 ```
-$ sudo zerotier-cli listnetworks
+# zerotier-cli listnetworks
 
 ```

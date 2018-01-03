@@ -168,6 +168,7 @@ Display dimming: works
  | No | Hotkeys: works
 Webcam: works
 Card reader: not tested | Can't set mute-key led light. |
+| HP ENVY 13-ad140ng | 2017.12 | Intel UHD Graphics 620 | *hdajackretask* should be used to enable the top speaker *0x14* override to *Internal Speaker*, *0x17* override to *Internal Speaker Back* | No | Intel Wireless 7265 | not tested | not tested | No modem installed | Webcam: works | Can't set mute-key led light. |
 | Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
 | Hardware support |
 

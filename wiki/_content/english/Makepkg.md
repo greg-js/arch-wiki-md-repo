@@ -20,15 +20,15 @@ Related articles
     *   [1.3 Signature checking](#Signature_checking)
 *   [2 Usage](#Usage)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Creating optimized packages](#Creating_optimized_packages)
-        *   [3.1.1 MAKEFLAGS](#MAKEFLAGS)
-    *   [3.2 Show packages with specific packager](#Show_packages_with_specific_packager)
-    *   [3.3 Improving compile times](#Improving_compile_times)
-        *   [3.3.1 tmpfs](#tmpfs)
-        *   [3.3.2 ccache](#ccache)
-    *   [3.4 Generate new checksums](#Generate_new_checksums)
-    *   [3.5 Use other compression algorithms](#Use_other_compression_algorithms)
-    *   [3.6 Utilizing multiple cores on compression](#Utilizing_multiple_cores_on_compression)
+    *   [3.1 Building optimized binaries](#Building_optimized_binaries)
+    *   [3.2 Improving compile times](#Improving_compile_times)
+        *   [3.2.1 Parallel compilation](#Parallel_compilation)
+        *   [3.2.2 Building from files in memory](#Building_from_files_in_memory)
+        *   [3.2.3 Using a compilation cache](#Using_a_compilation_cache)
+    *   [3.3 Generate new checksums](#Generate_new_checksums)
+    *   [3.4 Use other compression algorithms](#Use_other_compression_algorithms)
+    *   [3.5 Utilizing multiple cores on compression](#Utilizing_multiple_cores_on_compression)
+    *   [3.6 Show packages with specific packager](#Show_packages_with_specific_packager)
     *   [3.7 Build 32-bit packages on a 64-bit system](#Build_32-bit_packages_on_a_64-bit_system)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Makepkg sometimes fails to sign a package without asking for signature passphrase](#Makepkg_sometimes_fails_to_sign_a_package_without_asking_for_signature_passphrase)
@@ -51,9 +51,9 @@ To check this on an installed package:
 
  `$ pacman -Qi *package*` 
 ```
-[...]
+...
 Packager       : John Doe <john@doe.com>
-[...]
+...
 
 ```
 
@@ -96,7 +96,7 @@ $ makepkg
 If required dependencies are missing, *makepkg* will issue a warning before failing. To build the package and install needed dependencies, add the flag `-s`/`--syncdeps`:
 
 ```
-$ makepkg -s
+$ makepkg --syncdeps
 
 ```
 
@@ -110,14 +110,14 @@ Adding the `-r`/`--rmdeps` flag causes *makepkg* to remove the make dependencies
 Once all dependencies are satisfied and the package builds successfully, a package file (`*pkgname*-*pkgver*.pkg.tar.xz`) will be created in the working directory. To install, use `-i`/`--install` (same as `pacman -U *pkgname*-*pkgver*.pkg.tar.xz`):
 
 ```
-$ makepkg -i
+$ makepkg --install
 
 ```
 
 To clean up leftover files and folders, such as files extracted to the `$srcdir`, add the option `-c`/`--clean`. This is useful for multiple builds of the same package or updating the package version, while using the same build folder. It prevents obsolete and remnant files from carrying over to the new builds:
 
 ```
-$ makepkg -c
+$ makepkg --clean
 
 ```
 
@@ -125,22 +125,22 @@ For more, see [makepkg(8)](https://www.archlinux.org/pacman/makepkg.8.html).
 
 ## Tips and tricks
 
-### Creating optimized packages
+### Building optimized binaries
 
-A performance improvement of the packaged software can be achieved by enabling compiler optimizations for the host machine. The downside is that packages compiled for a specific processor architecture will not run correctly on other machines. On x86_64 machines, there are rarely significant enough real world performance gains that would warrant investing the time to rebuild official packages.
+A performance improvement of the packaged software can be achieved by enabling compiler optimizations for the host machine. The downside is that binaries compiled for a specific processor architecture will not run correctly on other machines. On x86_64 machines, there are rarely significant enough real world performance gains that would warrant investing the time to rebuild official packages.
 
 However, it is very easy to reduce performance by using "nonstandard" compiler flags. Many compiler optimizations are only useful in certain situations and should not be indiscriminately applied to every package. Unless you can verify/benchmark that something is faster, there is a very good chance it is not! The Gentoo [Compilation Optimization Guide](http://www.gentoo.org/doc/en/gcc-optimization.xml) and [Safe CFLAGS](http://wiki.gentoo.org/wiki/Safe_CFLAGS) wiki article provide more in-depth information about compiler optimization.
 
-The options passed to a C/C++ compiler (e.g. [gcc](https://www.archlinux.org/packages/?name=gcc) or [clang](https://www.archlinux.org/packages/?name=clang)) are controlled by the `CFLAGS`, `CXXFLAGS`, and `CPPFLAGS` environment variables. Similarly, the [make](https://www.archlinux.org/packages/?name=make) build system uses `MAKEFLAGS`. For use in the Arch build system, *makepkg* exposes these environment variables as configuration options in `makepkg.conf`. The default values are configured to produce generic packages that can be installed on a wide range of machines.
+The options passed to a C/C++ compiler (e.g. [gcc](https://www.archlinux.org/packages/?name=gcc) or [clang](https://www.archlinux.org/packages/?name=clang)) are controlled by the `CFLAGS`, `CXXFLAGS`, and `CPPFLAGS` environment variables. For use in the Arch build system, *makepkg* exposes these environment variables as configuration options in `makepkg.conf`. The default values are configured to produce generic binaries that can be installed on a wide range of machines.
 
 **Note:** Keep in mind that not all build systems use the variables configured in `makepkg.conf`. For example, *cmake* disregards the preprocessor options environment variable, `CPPFLAGS`. Consequently, many [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") contain workarounds with options specific to the build system used by the packaged software.
 
-GCC can automatically detect and enable safe architecture-specific optimizations. To use this feature, first remove any `-march` and `-mtune` flags, then add `-march=native`. For example,
+GCC can automatically detect and enable safe architecture-specific optimizations. To use this feature, first remove any `-march` and `-mtune` flags, then add `-march=native`. For example:
 
+ `/etc/makepkg` 
 ```
 CFLAGS="-march=native -O2 -pipe -fstack-protector-strong -fno-plt"
 CXXFLAGS="${CFLAGS}"
-
 ```
 
 To see what flags this enables on your machine, run:
@@ -152,31 +152,17 @@ $ gcc -march=native -v -Q --help=target
 
 **Note:** If you specify different value than `-march=native`, then `-Q --help=target` **will not** work as expected.[[5]](https://bbs.archlinux.org/viewtopic.php?pid=1616694#p1616694) You need to go through a compilation phase to find out which options are really enabled. See [Find CPU-specific options](https://wiki.gentoo.org/wiki/Safe_CFLAGS#Find_CPU-specific_options) on Gentoo wiki for instructions.
 
-#### MAKEFLAGS
+### Improving compile times
 
-The `MAKEFLAGS` option can be used to specify additional options for make. Users with multi-core/multi-processor systems can specify the number of jobs to run simultaneously. This can be accomplished with the use of *nproc* to determine the number of available processors, e.g. `MAKEFLAGS="-j$(nproc)"`. Some [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") specifically override this with `-j1`, because of race conditions in certain versions or simply because it is not supported in the first place. Packages that fail to build because of this should be [reported](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") on the bug tracker (or in the case of [AUR](/index.php/AUR "AUR") packages, to the package maintainer) after making sure that the error is indeed being caused by your `MAKEFLAGS`.
+#### Parallel compilation
+
+The [make](https://www.archlinux.org/packages/?name=make) build system uses the `MAKEFLAGS` [environment variable](/index.php/Environment_variable "Environment variable") to specify additional options for make. The variable can also be set in the `makepkg.conf` file.
+
+Users with multi-core/multi-processor systems can specify the number of jobs to run simultaneously. This can be accomplished with the use of *nproc* to determine the number of available processors, e.g. `MAKEFLAGS="-j$(nproc)"`. Some [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") specifically override this with `-j1`, because of race conditions in certain versions or simply because it is not supported in the first place. Packages that fail to build because of this should be [reported](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") on the bug tracker (or in the case of [AUR](/index.php/AUR "AUR") packages, to the package maintainer) after making sure that the error is indeed being caused by your `MAKEFLAGS`.
 
 See [make(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/make.1) for a complete list of available options.
 
-### Show packages with specific packager
-
-This shows all packages installed on the system with the packager named *packagername*:
-
-```
-$ expac "%n %p" | grep "*packagername*" | column -t
-
-```
-
-This shows all packages installed on the system with the packager set in the `/etc/makepkg` variable `PACKAGER`. This shows only packages that are in a repository defined in `/etc/pacman.conf`.
-
-```
-$ . /etc/makepkg.conf; grep -xvFf <(pacman -Qqm) <(expac "%n\t%p" | grep "$PACKAGER$" | cut -f1)
-
-```
-
-### Improving compile times
-
-#### tmpfs
+#### Building from files in memory
 
 As compiling requires many I/O operations and handling of small files, moving the working directory to a [tmpfs](/index.php/Tmpfs "Tmpfs") may bring improvements in build times.
 
@@ -196,9 +182,9 @@ Persistent configuration can be done in `makepkg.conf` by uncommenting the `BUIL
 *   The [tmpfs](/index.php/Tmpfs "Tmpfs") folder must be mounted without the `noexec` option, else it will prevent build scripts or utilities from being executed.
 *   Keep in mind that any package compiled in [tmpfs](/index.php/Tmpfs "Tmpfs") will not persist across reboot. Consider setting the [PKGDEST](#Package_output) option appropriately to move the built package automatically to another (persistent) directory.
 
-#### ccache
+#### Using a compilation cache
 
-The use of [ccache](/index.php/Ccache "Ccache") can improve build times by caching the results of compilations.
+The use of [ccache](/index.php/Ccache "Ccache") can improve build times by caching the results of compilations for successive use.
 
 ### Generate new checksums
 
@@ -240,6 +226,22 @@ COMPRESSXZ=(xz -c -z - **--threads=0**)
 
 ```
 COMPRESSGZ=(**pigz** -c -f -n)
+
+```
+
+### Show packages with specific packager
+
+This shows all packages installed on the system with the packager named *packagername*:
+
+```
+$ expac "%n %p" | grep "*packagername*" | column -t
+
+```
+
+This shows all packages installed on the system with the packager set in the `/etc/makepkg` variable `PACKAGER`. This shows only packages that are in a repository defined in `/etc/pacman.conf`.
+
+```
+$ . /etc/makepkg.conf; grep -xvFf <(pacman -Qqm) <(expac "%n\t%p" | grep "$PACKAGER$" | cut -f1)
 
 ```
 

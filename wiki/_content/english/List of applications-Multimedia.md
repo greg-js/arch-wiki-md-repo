@@ -854,7 +854,7 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 *   **Gaupol** — Full-featured subtitle editor.
 
-	[http://home.gna.org/gaupol](http://home.gna.org/gaupol) || [gaupol](https://www.archlinux.org/packages/?name=gaupol)
+	[https://otsaloma.io/gaupol/](https://otsaloma.io/gaupol/) || [gaupol](https://www.archlinux.org/packages/?name=gaupol)
 
 *   **[Gnome Subtitles](https://en.wikipedia.org/wiki/Gnome_Subtitles "wikipedia:Gnome Subtitles")** — Video subtitle editor for GNOME.
 

@@ -3,7 +3,7 @@ Related articles
 *   [PCI passthrough via OVMF](/index.php/PCI_passthrough_via_OVMF "PCI passthrough via OVMF")
 *   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
 
-**翻译状态：** 本文是英文页面 [Libvirt](/index.php/Libvirt "Libvirt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-23，点击[这里](https://wiki.archlinux.org/index.php?title=Libvirt&diff=0&oldid=482115)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Libvirt](/index.php/Libvirt "Libvirt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-01-02，点击[这里](https://wiki.archlinux.org/index.php?title=Libvirt&diff=0&oldid=493119)可以查看翻译后英文页面的改动。
 
 Libvirt 是一组软件的汇集，提供了管理虚拟机和其它虚拟化功能（如：存储和网络接口等）的便利途径。这些软件包括：一个长期稳定的 C 语言 API、一个守护进程（libvirtd）和一个命令行工具（virsh）。Libvirt 的主要目标是提供一个单一途径以管理多种不同虚拟化方案以及虚拟化主机，包括：[KVM/QEMU](/index.php/QEMU "QEMU")，[Xen](/index.php/Xen "Xen")，[LXC](/index.php/LXC "LXC")，[OpenVZ](http://openvz.org) 或 [VirtualBox](/index.php/VirtualBox "VirtualBox") [hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") （[详见这里](http://libvirt.org/drivers.html)）。
 
@@ -49,7 +49,8 @@ Libvirt 的一些主要功能如下：
 *   [6 UEFI 支持](#UEFI_.E6.94.AF.E6.8C.81)
     *   [6.1 OVMF - QEMU workaround](#OVMF_-_QEMU_workaround)
 *   [7 PulseAudio](#PulseAudio)
-*   [8 参阅](#.E5.8F.82.E9.98.85)
+*   [8 修正 KVM 组权限](#.E4.BF.AE.E6.AD.A3_KVM_.E7.BB.84.E6.9D.83.E9.99.90)
+*   [9 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
 
@@ -248,7 +249,7 @@ $ virsh pool-list --all
 
 #### 用 virsh 新建存储池
 
-If wanted to *add* a storage pool, here are examples of the command form, adding a directory, and adding a LVM volume:
+以下示例为*添加*存储池、目录和 LVM 卷的方法：
 
 ```
 $ virsh pool-define-as name type [source-host] [source-path] [source-dev] [source-name] [<target>] [--source-format format]
@@ -257,7 +258,7 @@ $ virsh pool-define-as *poolname* fs - -  */dev/vg0/images* - *mntpoint*
 
 ```
 
-The above command defines the information for the pool, to build it:
+上述示例仅仅定义了存储池的信息，下面创建它：
 
 ```
 $ virsh pool-build     *poolname*
@@ -266,7 +267,7 @@ $ virsh pool-autostart *poolname*
 
 ```
 
-To remove it:
+删除它的命令：
 
 ```
 $ virsh pool-undefine  *poolname*
@@ -276,7 +277,7 @@ $ virsh pool-undefine  *poolname*
 **提示：** 对于 LVM 存储池而言：
 
 *   最佳实践是仅把一个卷组分配给一个存储池。
-*   Choose a LVM volume group that differs from the pool name, otherwise when the storage pool is deleted the LVM group will be too.
+*   请为存储池选择一个与 LVM 卷组不同的名字。否则当存储池被删除时，该卷组也将被删除。
 
 #### 用 virt-manager 新建存储池
 
@@ -633,7 +634,14 @@ user = "dave"
 
 ```
 
-You will also need to tell QEMU to use the PulseAudio backend and identify the server to connect to. Add the following section to your domain configuration using `virsh edit`.
+You will also need to tell QEMU to use the PulseAudio backend and identify the server to connect to. First add the qemu namespace to you domain.
+
+```
+<domain type='kvm' xmlns:qemu='[http://libvirt.org/schemas/domain/qemu/1.0'](http://libvirt.org/schemas/domain/qemu/1.0')>
+
+```
+
+Then add the following section to your domain configuration using `virsh edit`.
 
 ```
  <qemu:commandline>
@@ -644,6 +652,17 @@ You will also need to tell QEMU to use the PulseAudio backend and identify the s
 ```
 
 `1000` is your user id. Change it if necessary.
+
+## 修正 KVM 组权限
+
+If you are getting the error
+
+```
+ Unable to complete install: 'unsupported configuration: CPU mode 'custom' for x86_64 kvm domain on x86_64 host is not supported by hypervisor'
+
+```
+
+Then simply edit `/etc/libvirt/qemu.conf` and change `group="78"` to `group="kvm"`. Then restart `libvirtd.service`. See [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1728381#p1728381) for more information.
 
 ## 参阅
 

@@ -83,9 +83,9 @@ Please do not install a directory named just `tests`, as it easily conflicts wit
 
 ### PyPI download URLs
 
-PyPI URLs of the form `https://pypi.python.org/packages/source/${_name:0:1}/${_name}/${_name}-${pkgver}.tar.gz`<footnote> were silently abandoned for new package versions in the course of 2016, replaced by a scheme using an unpredictable hash that needs to be fetched from the PyPI website each time a package must be updated[[1]](https://bitbucket.org/pypa/pypi/issues/438/backwards-compatible-un-hashed-package#comment-27230605).
+PyPI URLs of the form `https://pypi.python.org/packages/source/${_name:0:1}/${_name}/${_name}-${pkgver}.tar.gz` were silently abandoned for new package versions in the course of 2016, replaced by a scheme using an unpredictable hash that needs to be fetched from the PyPI website each time a package must be updated[[1]](https://github.com/pypa/pypi-legacy/issues/438#issuecomment-226940764).
 
-As downstream packagers voiced their concerns to PyPI maintainers[[2]](https://bitbucket.org/pypa/pypi/issues/438/backwards-compatible-un-hashed-package), a new stable scheme was provided[[3]](https://bitbucket.org/pypa/pypi/issues/438/backwards-compatible-un-hashed-package#comment-27606213): [PKGBUILD#source](/index.php/PKGBUILD#source "PKGBUILD") `source=()` array should now use the following URL templates.
+As downstream packagers voiced their concerns to PyPI maintainers[[2]](https://github.com/pypa/pypi-legacy/issues/438), a new stable scheme was provided[[3]](https://github.com/pypa/pypi-legacy/issues/438#issuecomment-226940730): [PKGBUILD#source](/index.php/PKGBUILD#source "PKGBUILD") `source=()` array should now use the following URL templates.
 
 Note that a custom `$_name` variable is used instead of `$pkgname` since python packages are generally named `python-$_name`
 

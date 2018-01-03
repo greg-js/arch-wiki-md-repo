@@ -115,8 +115,8 @@ During boot you might get the message `[Firmware Bug]: TSC_DEADLINE disabled due
 
 It is likely that it's one of these issues:
 
-*   You used power management application (especially [Powertop](/index.php/Powertop "Powertop")). See [bumblebee#Broken power management with kernel 4.8](/index.php/Bumblebee#Broken_power_management_with_kernel_4.8 "Bumblebee") for more information.
-*   You suspended your laptop and resumed, and are now unable to start your GPU. The only fix seems to be a full reboot in order to get working again.
+*   You used a power management application (especially [Powertop](/index.php/Powertop "Powertop")). See [bumblebee#Broken power management with kernel 4.8](/index.php/Bumblebee#Broken_power_management_with_kernel_4.8 "Bumblebee") for more information.
+*   You suspended your laptop and resumed, and are now unable to start your GPU. This can be fixed by rebooting the system, or by using `lspci` to find your NVIDIA card's bus id (usually `01:00.0`), then executing the following commands (with the driver unloaded) to remove and rescan the graphics card: `sudo tee /sys/bus/pci/devices/0000:<busid>/remove <<<1; sudo tee /sys/bus/pci/rescan <<<1`, replacing `<busid>` with the bus id from earlier.
 
 ## Headset Microphone
 

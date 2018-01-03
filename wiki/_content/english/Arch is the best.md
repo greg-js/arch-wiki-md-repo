@@ -1763,7 +1763,7 @@ Arch c'est le plus meilleure du monde!
 	Russian
 
 ```
-Арч:лучший!
+Арч — лучший!
 
 ```
 
@@ -1891,7 +1891,7 @@ Arch li pona mute!
 	Ukrainian
 
 ```
-Arch:найкращий!
+Arch — найкращий!
 
 ```
 

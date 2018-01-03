@@ -1,3 +1,14 @@
+Articoli correlati
+
+*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
+*   [Master Boot Record (Italiano)](/index.php/Master_Boot_Record_(Italiano) "Master Boot Record (Italiano)")
+*   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
+*   [Unified Extensible Firmware Interface (Italiano)](/index.php/Unified_Extensible_Firmware_Interface_(Italiano) "Unified Extensible Firmware Interface (Italiano)")
+*   [mkinitcpio (Italiano)](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)")
+*   [systemd (Italiano)](/index.php/Systemd_(Italiano) "Systemd (Italiano)")
+*   [fstab (Italiano)](/index.php/Fstab_(Italiano) "Fstab (Italiano)")
+*   [Autostarting](/index.php/Autostarting "Autostarting")
+
 Per avviare Linux è necessario aver installato nel [Master Boot Record](/index.php/Master_Boot_Record_(Italiano) "Master Boot Record (Italiano)") o nella [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") un [boot loader](/index.php/Boot_loaders "Boot loaders") compatibile con Linux, come [GRUB](/index.php/GRUB_(Italiano) "GRUB (Italiano)") o [Syslinux](/index.php/Syslinux_(Italiano) "Syslinux (Italiano)"). Il boot loader è responsabile per il caricamento del kernel e il [ramdisk iniziale](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)") prima di iniziare il processo di boot. La procedura è piuttosto differente tra sistemi [BIOS](https://en.wikipedia.org/wiki/it:BIOS "wikipedia:it:BIOS") e [UEFI](/index.php/UEFI "UEFI"), e la descrizione dettagliata è presentata in questa pagina o quelle collegate.
 
 ## Contents

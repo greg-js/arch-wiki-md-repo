@@ -90,6 +90,15 @@ Unlocking on user login is also possible with [pam_mount](/index.php/Pam_mount "
 
 ## Loop device
 
+**Tip:** It should be noted that using losetup directly can be avoided completely by doing an alternative method:
+```
+# dd if=/dev/urandom of=key.img bs=20M count=1
+# cryptsetup --align-payload=1 --hash=sha512 --cipher=serpent-xts-plain64 --key-size=512 -i 30000 luksFormat key.img
+# cryptsetup open key.img lukskey
+```
+
+Having too small of a file will get you `Requested offset is beyond real size of device /dev/loop0` error, but as a rough reference creating a 4MiB file will encrypt it successfully. [[1]](https://wiki.gentoo.org/wiki/Custom_Initramfs#Encrypted_keyfile)
+
 A loop device enables to map a blockdevice to a file with the standard util-linux tool `losetup`. The file can then contain a filesystem, which can be used quite like any other filesystem. A lot of users know [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") as a tool to create encrypted containers. Just about the same functionality can be achieved with a loopback filesystem encrypted with LUKS and is shown in the following example.
 
 First, start by creating an encrypted container, using an appropriate [random number generator](/index.php/Random_number_generator "Random number generator"):

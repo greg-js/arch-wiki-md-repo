@@ -19,7 +19,7 @@
     *   [2.1 xserverrc](#xserverrc)
     *   [2.2 xinitrc](#xinitrc)
 *   [3 使用](#.E4.BD.BF.E7.94.A8)
-*   [4 在启动的时候自动启用X](#.E5.9C.A8.E5.90.AF.E5.8A.A8.E7.9A.84.E6.97.B6.E5.80.99.E8.87.AA.E5.8A.A8.E5.90.AF.E7.94.A8X)
+*   [4 在启动时自动启用 X](#.E5.9C.A8.E5.90.AF.E5.8A.A8.E6.97.B6.E8.87.AA.E5.8A.A8.E5.90.AF.E7.94.A8_X)
     *   [4.1 自动登录到虚拟终端](#.E8.87.AA.E5.8A.A8.E7.99.BB.E5.BD.95.E5.88.B0.E8.99.9A.E6.8B.9F.E7.BB.88.E7.AB.AF)
 *   [5 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
     *   [5.1 从命令行覆盖 xinitrc](#.E4.BB.8E.E5.91.BD.E4.BB.A4.E8.A1.8C.E8.A6.86.E7.9B.96_xinitrc)
@@ -130,7 +130,7 @@ $ pkill -15 -t tty"$XDG_VTNR" Xorg
 
 `xprop` 是软件包 [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop)提供的。
 
-## 在启动的时候自动启用X
+## 在启动时自动启用 X
 
 先确保 *startx* 已经配置好了。
 

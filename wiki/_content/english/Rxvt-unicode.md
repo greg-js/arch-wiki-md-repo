@@ -2,7 +2,7 @@ Related articles
 
 *   [rxvt-unicode/Tips and tricks](/index.php/Rxvt-unicode/Tips_and_tricks "Rxvt-unicode/Tips and tricks")
 
-[rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) is a customizable terminal emulator forked from [rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt"). Features of rxvt-unicode include international language support through [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode"), the ability to display multiple font types and support for [Perl](/index.php/Perl "Perl") extensions.
+[rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) is a customizable terminal emulator forked from [rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt"). Features of rxvt-unicode include international language support through [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode"), transparency, the ability to display multiple font types and support for [Perl](/index.php/Perl "Perl") extensions.
 
 ## Contents
 

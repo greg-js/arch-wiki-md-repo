@@ -33,9 +33,7 @@ Also be warned that even over USB 3.0, a DisplayLink monitor may exhibit noticea
 
 The kernel [DRM](https://en.wikipedia.org/wiki/Direct_Rendering_Manager "wikipedia:Direct Rendering Manager") driver for DisplayLink is `udl`, a rewrite of the original [udlfb](https://www.kernel.org/doc/Documentation/fb/udlfb.txt) driver. It allows configuring DisplayLink monitors using [Xrandr](/index.php/Xrandr "Xrandr").
 
-First, the setup and installation:
-
-*   [Blacklist](/index.php/Blacklist "Blacklist") the old kernel module, `udlfb`, which may attempt to load itself first.
+This should work without any configuration changes on [linux](https://www.archlinux.org/packages/?name=linux) 4.14.9-1 and later. If you're using an earlier version of that package or have `CONFIG_FB_UDL=m` set in your kernel config, you need to [blacklist](/index.php/Blacklist "Blacklist") the old kernel module, `udlfb`, which may attempt to load itself first.
 
 ### USB 3.0 DL-6xxx, DL-5xxx, DL-41xx, DL-3xxx Devices
 

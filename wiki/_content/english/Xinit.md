@@ -45,6 +45,8 @@ exec /usr/bin/Xorg -nolisten tcp "$@" vt$XDG_VTNR
 
 ```
 
+**Tip:** `-nolisten local` can be added after `-nolisten tcp` to disable abstract sockets of X11 to help with isolation. There is a [quick background](https://tstarling.com/blog/2016/06/x11-security-isolation/) on how this potentially affects X11 security.
+
 Alternatively, if you wish to have the X display on a separate console from the one where the server is invoked, you can do so by using the X server wrapper provided by `/usr/lib/systemd/systemd-multi-seat-x`. For convenience, *xinit* and *startx* can be set up to use this wrapper by modifying your `~/.xserverrc`.
 
 **Note:** To re-enable redirection of the output from X session into the Xorg log file, add the `-keeptty` option. See [Xorg#Broken redirection](/index.php/Xorg#Broken_redirection "Xorg") for details.

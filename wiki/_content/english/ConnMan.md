@@ -246,7 +246,7 @@ $ connmanctl disable wifi
 
 ### Avoid changing the hostname
 
-By default, ConnMan changes the [transient hostname](http://www.freedesktop.org/software/systemd/man/hostnamectl.html) on a per network basis. This can create problems with X authority: If ConnMan changes your hostname to something else than the one used to generate the xauth magic cookie, then it will become impossible to create new windows. Symptoms are error messages like "No protocol specified" and "Can't open display: :0.0". Manually resetting the host name fixes this, but a permanent solution is to prevent ConnMan from changing your host name in the first place. This can be accomplished by adding the following to `/etc/connman/main.conf`:
+By default, ConnMan changes the transient hostname (see [hostnamectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1)) on a per network basis. This can create problems with X authority: If ConnMan changes your hostname to something else than the one used to generate the xauth magic cookie, then it will become impossible to create new windows. Symptoms are error messages like "No protocol specified" and "Can't open display: :0.0". Manually resetting the host name fixes this, but a permanent solution is to prevent ConnMan from changing your host name in the first place. This can be accomplished by adding the following to `/etc/connman/main.conf`:
 
 ```
 [General]
@@ -317,11 +317,11 @@ this could be the problem. To verify which application is listening on the ports
 
 To fix this connmand can be started with the options `-r` or `--nodnsproxy` by [overriding](/index.php/Systemd#Editing_provided_units "Systemd") the systemd service file. Create the folder `/etc/systemd/system/connman.service.d/` and add the file `disable_dns_proxy.conf`:
 
+ `/etc/systemd/system/connman.service.d/disable_dns_proxy.conf` 
 ```
 [Service]
 ExecStart=
 ExecStart=/usr/bin/connmand -n --nodnsproxy
-
 ```
 
 Make sure to [reload](/index.php/Reload "Reload") the systemd daemon and [restart](/index.php/Restart "Restart") the `connman.service`, and your DNS proxy, after adding this file.
@@ -330,7 +330,7 @@ Make sure to [reload](/index.php/Reload "Reload") the systemd daemon and [restar
 
 If something like [Docker](/index.php/Docker "Docker") is creating virtual interfaces Connman may attempt to connect to one of these instead of your physical adapter if the connection drops. A simple way of avoiding this is to blacklist the interfaces you do not want to use. Connman will by default blacklist interfaces starting with `vmnet`, `vboxnet`, `virbr` and `ifb`, so those need to be included in the new blacklist as well.
 
-Blacklisting interface names is also useful to avoid a race condition where connman may access `eth#` or `wlan#` before systemd/udev can change it to use a [predictable interface name](/index.php/Network_configuration#Device_names "Network configuration") like `enp4s0`. Blacklisting the conventional (and unpredictable) interface prefixes makes connman wait until they are renamed.
+Blacklisting interface names is also useful to avoid a race condition where connman may access `eth#` or `wlan#` before systemd/udev can change it to use a [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) like `enp4s0`. Blacklisting the conventional (and unpredictable) interface prefixes makes connman wait until they are renamed.
 
 If it does not already exist, create `/etc/connman/main.conf`:
 
@@ -349,6 +349,13 @@ Once `connman.service` has been [restarted](/index.php/Systemd#Using_units "Syst
 You need to install [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) and then [restart](/index.php/Restart "Restart") `connman.service`.
 
 ### Error /net/connman/technology/wifi: No carrier
+
+You have enabled your wifi with:
+
+```
+$ connmanctl enable wifi
+
+```
 
 If wireless scanning leads to above error, this may be due to an unresolved bug.[[3]](https://01.org/jira/browse/CM-670) If it does not resolve even though wireless [preconditions](https://lists.01.org/pipermail/connman/2014-December/019203.html) are met, try again after disabling competing network managers and rebooting.
 

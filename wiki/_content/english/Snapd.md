@@ -60,10 +60,8 @@ Uninstalling the [snapd](https://www.archlinux.org/packages/?name=snapd) package
 3\. We remove any unit files, that try to mount snaps from `/var/lib/snapd/snaps` to `/var/lib/snapd/snap` at boot.
 
 ```
-# find /etc/systemd/system -name "snap-*.mount" -delete
+# find /etc/systemd/system -name "*snap-*.mount" -delete
 # find /etc/systemd/system -name "snap.*.service" -delete
-# find /etc/systemd/system/multi-user.target.wants -name "snap-*.mount" -delete
-# find /etc/systemd/system/multi-user.target.wants -name "snap.*.service" -delete
 
 ```
 

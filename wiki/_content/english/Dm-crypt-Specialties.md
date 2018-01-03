@@ -7,7 +7,7 @@
         *   [1.3.1 Installation](#Installation)
         *   [1.3.2 Technical Overview](#Technical_Overview)
     *   [1.4 Other methods](#Other_methods)
-*   [2 Using GPG or OpenSSL Encrypted Keyfiles](#Using_GPG_or_OpenSSL_Encrypted_Keyfiles)
+*   [2 Using GPG, LUKS, or OpenSSL Encrypted Keyfiles](#Using_GPG.2C_LUKS.2C_or_OpenSSL_Encrypted_Keyfiles)
 *   [3 Remote unlocking of the root (or other) partition](#Remote_unlocking_of_the_root_.28or_other.29_partition)
     *   [3.1 Remote unlocking (hooks: systemd, systemd-tool)](#Remote_unlocking_.28hooks:_systemd.2C_systemd-tool.29)
     *   [3.2 Remote unlocking (hooks: netconf, dropbear, tinyssh, ppp)](#Remote_unlocking_.28hooks:_netconf.2C_dropbear.2C_tinyssh.2C_ppp.29)
@@ -23,6 +23,13 @@
 *   [6 Encrypted system using a detached LUKS header](#Encrypted_system_using_a_detached_LUKS_header)
     *   [6.1 Using systemd hook](#Using_systemd_hook)
     *   [6.2 Modifying encrypt hook](#Modifying_encrypt_hook)
+*   [7 Encrypted /boot and a detached LUKS header on USB](#Encrypted_.2Fboot_and_a_detached_LUKS_header_on_USB)
+    *   [7.1 Preparing the disk devices](#Preparing_the_disk_devices)
+        *   [7.1.1 Preparing the USB key](#Preparing_the_USB_key)
+        *   [7.1.2 The main drive](#The_main_drive)
+    *   [7.2 The actual installation procedure and custom encrypt hook](#The_actual_installation_procedure_and_custom_encrypt_hook)
+    *   [7.3 Backing up your key](#Backing_up_your_key)
+    *   [7.4 Changing the LUKS keyfile](#Changing_the_LUKS_keyfile)
 
 ## Securing the unencrypted boot partition
 
@@ -175,14 +182,14 @@ The POTTS proof-of-concept uses Arch Linux as a base distribution and implements
 
 As part of the thesis [installation](http://13.tc/p/potts/manual.html) instructions based on Arch Linux (ISO as of 2013-01) have been published. If you want to try it, be aware these tools are not in standard repositories and the solution will be time consuming to maintain.
 
-## Using GPG or OpenSSL Encrypted Keyfiles
+## Using GPG, LUKS, or OpenSSL Encrypted Keyfiles
 
 The following forum posts give instructions to use two factor authentication, gpg or openssl encrypted keyfiles, instead of a plaintext keyfile described earlier in this wiki article [System Encryption using LUKS with GPG encrypted keys](https://bbs.archlinux.org/viewtopic.php?id=120243):
 
 *   GnuPG: [Post regarding GPG encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=943338#p943338) This post has the generic instructions.
 *   OpenSSL: [Post regarding OpenSSL encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=947805#p947805) This post only has the `ssldec` hooks.
 *   OpenSSL: [Post regarding OpenSSL salted bf-cbc encrypted keys](https://bbs.archlinux.org/viewtopic.php?id=155393) This post has the `bfkf` initcpio hooks, install, and encrypted keyfile generator scripts.
-*   LUKS: [Post regarding LUKS encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=1502651#p1502651) with a `lukskey` initcpio hook.
+*   LUKS: [Post regarding LUKS encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=1502651#p1502651) with a `lukskey` initcpio hook. Or [Encrypted system using a detached LUKS header with a seperate USB encrypted boot partition and a LUKS encrypted keyfile inside the encrypted USB](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header_with_a_separate_USB_encrypted_.2Fboot_partition_and_a_LUKS_encrypted_keyfile_inside_the_encrypted_USB "Dm-crypt/Specialties") below with a custom encrypt hook for initcpio.
 
 Note that:
 
@@ -572,3 +579,286 @@ cryptdevice=/dev/disk/by-id/*your-disk_id*:enc:header
 ```
 
 To finish, following [dm-crypt/Encrypting an entire system#Post-installation](/index.php/Dm-crypt/Encrypting_an_entire_system#Post-installation "Dm-crypt/Encrypting an entire system") is particularly useful with a `/boot` partition on an USB storage medium.
+
+## Encrypted /boot and a detached LUKS header on USB
+
+Rather than embedding the header.img and keyfile into the [initramfs](/index.php/Mkinitcpio "Mkinitcpio") image, this setup will make your system depend entirely on the usb key rather than just the image to boot, and on the encrypted keyfile inside of the encrypted boot partition. Since the header and keyfile are not included in the initramfs image and the custom encrypt hook is specifically for the usb's [by-id](/index.php/Persistent_block_device_naming#by-id_and_by-path "Persistent block device naming"), you will literally need the usb key to boot.
+
+This is assuming you are doing a new Arch install and not coming from an existing unencrypted install, but in that case you could adapt this. Consider putting "customencrypthook" on a USB or SD card and mount that during the install to get the files without having to type it out yourself.
+
+For the usb drive, since you are encrypting the drive and the keyfile inside, it is preferred to cascade the ciphers as to not use the same one twice. Whether a [meet-in-the-middle](https://en.wikipedia.org/wiki/Meet-in-the-middle_attack "wikipedia:Meet-in-the-middle attack") attack would actually be feasible is debatable. You can do twofish-serpent or serpent-twofish.
+
+### Preparing the disk devices
+
+**Make sure to run 'lsblk' to find out what your block device mappings are and do not copy this blindly. You are overwriting all the data, so if there are files you need copy them or image them with Clonezilla to a different drive and leave that one unplugged.**
+
+```
+dd if=/dev/urandom of=/dev/sda bs=4096
+
+```
+
+Overwrite the hard drive with random data (just wait, a 500gb HDD took around 2.5 hours)
+
+```
+dd if=/dev/urandom of=/dev/sdb bs=4096
+
+```
+
+USB drive
+
+#### Preparing the USB key
+
+```
+gdisk /dev/sdb
+
+n
+
+1
+
+2048
+
++512M
+
+EF00
+
+#n is new partition, L shows all hex codes for filesystems (EF00, 8300), t allows you to change a filesystem after creating a partition
+
+n
+
+2
+
+#Hit enter to accept the automatic start value here
+
++250M
+
+8300
+
+Write changes with 'w', 'q' is quit. 
+
+```
+
+Now encrypt the boot partition with your passphrase. The -i is for iteration time in milliseconds for the key derivation function pbkdf, it should be at least 5000 (5 seconds), but preferably put it as high as you can stand. This example is 30 seconds.
+
+```
+cryptsetup --hash=sha512 --cipher=twofish-xts-plain64 --key-size=512 -i 30000 luksFormat /dev/sdb2
+
+cryptsetup open /dev/sdb2 cryptboot
+
+mkfs.ext2 /dev/mapper/cryptboot 
+
+```
+
+Picked ext2 for simplicity and to avoid journaling since it is just a usb drive.
+
+```
+mount /dev/mapper/cryptboot /mnt
+
+cd /mnt
+
+dd if=/dev/urandom of=key.img bs=20M count=1
+
+cryptsetup --align-payload=1 --hash=sha512 --cipher=serpent-xts-plain64 --key-size=512 -i 30000 luksFormat key.img
+
+cryptsetup open key.img lukskey 
+
+```
+
+You should make the file larger than 8192 bytes (the maximum keyfile size for cryptsetup) since the encrypted loop device will be a little smaller than the file's size.
+
+20M might be a little too big for you, but 1) With a big file, you will use --keyfile-offset=X and --keyfile-size=8192 to navigate to the correct position and 2) having too small of a file will get you a nasty 'Requested offset is beyond real size of device /dev/loop0' error.
+
+Shoutout to the [Gentoo Wiki](https://wiki.gentoo.org/wiki/Custom_Initramfs#Encrypted_keyfile) for showing how to do this easily and [this thread](https://bbs.archlinux.org/viewtopic.php?id=193451) from the Arch Linux forums for the inspiration. And the [Gentoo Wiki again](https://wiki.gentoo.org/wiki/Talk:Dm-crypt_full_disk_encryption) for explaining the size issue.
+
+Now you should have 'lukskey' opened in a loop device (underneath /dev/loop1), mapped as /dev/mapper/lukskey
+
+#### The main drive
+
+```
+truncate -s 2M header.img
+
+cryptsetup --hash=sha512 --cipher=serpent-xts-plain64 --key-size=512 --key-file=/dev/mapper/lukskey --keyfile-offset=X --keyfile-size=8192 luksFormat /dev/sda --align-payload 4096 --header header.img 
+
+```
+
+Pick an offset, and a number of milliseconds you can wait for
+
+```
+cryptsetup open --header header.img --key-file=/dev/mapper/lukskey --keyfile-offset=X --keyfile-size=8192 /dev/sda enc
+
+cd /
+
+cryptsetup close lukskey
+
+umount /mnt
+
+#if it complains about being busy make sure lukskey container is closed then "ps -efw" to find hanged processes and their PIDs to kill with "kill -9 <PID>"
+
+pvcreate /dev/mapper/enc
+
+vgcreate store /dev/mapper/enc
+
+lvcreate -L 20G store -n root
+
+lvcreate -L 4G store -n swap
+
+lvcreate -l 100%FREE store -n home 
+
+```
+
+* * *
+
+You can name "store" anything you want, the number of GB is up to you (as of January 2018, a rough bare minimum for root would be about 4.0GB), swap space does not have to be twice your RAM unless you have a machine with very low RAM. Some people do the size of their RAM, some do half of their RAM, some do less. If you plan on suspending and hibernating, which is not recommended (it is more proper to shutdown so the encryption keys are wiped from memory) then you would do at least the size of your RAM.
+
+* * *
+
+```
+mkfs.ext4 /dev/store/root
+
+mkfs.ext4 /dev/store/home
+
+mount /dev/store/root /mnt
+
+mkdir /mnt/home
+
+mount /dev/store/home /mnt/home
+
+mkswap /dev/store/swap
+
+swapon /dev/store/swap
+
+mkdir /mnt/boot
+
+mount /dev/mapper/cryptboot /mnt/boot
+
+mkfs.fat -F32 /dev/sdb1
+
+mkdir /mnt/boot/efi
+
+mount /dev/sdb1 /mnt/boot/efi
+
+```
+
+### The actual installation procedure and custom encrypt hook
+
+Follow the [installation_guide](/index.php/Installation_guide "Installation guide") up to the "mkinitcpio" step but do not do it yet. You will skip "Partition the disks", "Format the partitions", and "Mount the file systems" as they have already been done. If you use a regular US keymap layout skip "Set the keyboard layout" as well. Skip "Hostname" and "Network configuration" if you do not need a hostname and you prefer to start dhcpcd@<device>.service manually.
+
+Now you should be at the "mkinitcpio" step and chrooted into your system. In order to get the encrypted setup to work, you need to build your own hook, which is thankfully easy to do and here is the code you need. You will have to run "ls -lth /dev/disk/by-id" to figure out your own ID values for the usb and main hard drive (they are linked -> to sda or sdb).
+
+ `ls -lth /dev/disk/by-id | grep -iP 'PATTERN' | awk '{print $9}' >> /usr/lib/initcpio/hooks/customencrypthook` 
+
+You should be using those ids instead of just sda or sdb because sdX can change and this ensures it is the correct device.
+
+You can name "customencrypthook" anything you want, and also note that **custom build hooks can be placed in the "hooks" and "install" folders of /etc/initcpio but instead this example is in the main directory of /usr/lib/initcpio**. Keep a backup of both files ("cp" them over to the /home directory or your user's home directory after you make one). /usr/bin/ash is not a typo.
+
+ `/usr/lib/initcpio/hooks/customencrypthook` 
+```
+    #!/usr/bin/ash
+
+    run_hook() {
+
+    modprobe -a -q dm-crypt >/dev/null 2>&1
+
+    modprobe loop
+
+    [ "${quiet}" = "y" ] && CSQUIET=">/dev/null"
+
+    while [ ! -L '/dev/disk/by-id/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-part2' ]; do
+
+ #the Xs represent your USB drive id found by "ls -lth /dev/disk/by-id"
+
+     echo 'Waiting for USB'
+
+     sleep 1
+
+    done
+
+        cryptsetup open /dev/disk/by-id/XXXXXXXXXXXXXXXXXXXXXXXX-part2 cryptboot
+
+        mkdir -p /mnt
+
+        mount /dev/mapper/cryptboot /mnt
+
+        cd /mnt
+
+        cryptsetup open key.img lukskey
+
+        cryptsetup --header header.img --key-file=/dev/mapper/lukskey --keyfile-offset=N --keyfile-size=8192 open /dev/disk/by-id/YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY enc
+
+ #the Ys represent your main hard drive found by "ls -lth /dev/disk/by-id", N is your offset
+
+        cd /
+
+        cryptsetup close lukskey
+
+        umount /mnt
+
+    }
+```
+
+You could also close cryptboot, unless you want it to be easier to mount for updating and signing the kernel (which happens automatically during kernel updates), and regenerating the initramfs with mkinitcpio. You can close it using "cryptsetup close cryptboot", but then you would have to reenter the password before you mount it after booting into the system.
+
+ `/usr/lib/initcpio/install/customencrypthook` 
+```
+    #!/bin/bash
+
+    build() {
+
+    local mod
+
+    add_module dm-crypt
+
+    if [[ $CRYPTO_MODULES ]]; then
+
+        for mod in $CRYPTO_MODULES; do
+
+            add_module "$mod"
+
+        done
+
+    else
+
+        add_all_modules '/crypto/'
+
+    fi
+
+    add_binary "cryptsetup"
+
+    add_binary "dmsetup"
+
+    add_file "/usr/lib/udev/rules.d/10-dm.rules"
+
+    add_file "/usr/lib/udev/rules.d/13-dm-disk.rules"
+
+    add_file "/usr/lib/udev/rules.d/95-dm-notify.rules"
+
+    add_file "/usr/lib/initcpio/udev/11-dm-initramfs.rules" "/usr/lib/udev/rules.d/11-dm-initramfs.rules"
+
+    add_runscript
+
+    }
+```
+ `/etc/mkinitcpio.conf (edit this only do not replace it, these are just excerpts of the necessary parts)` 
+```
+MODULES=(loop)
+
+HOOKS=(base udev autodetect modconf block customencrypthook lvm2 filesystems keyboard fsck)
+```
+
+The files=() and binaries=() arrays are empty, and you should not have to replace HOOKS=(...) array entirely just edit in "customencrypthook lvm2" after block and before filesystems, and make sure "systemd", "sd-lvm2", and "encrypt" are removed.
+
+### Backing up your key
+
+You can use dd to backup the whole usb drive as an image, or the partitions (assuming it is sdb):
+
+```
+dd if=/dev/sdb1 of=backup.img bs=4M
+
+dd if=/dev/sdb2 of=backup2.img bs=4M 
+
+```
+
+### Changing the LUKS keyfile
+
+ `cryptsetup --header /boot/header.img --key-file=/dev/mapper/lukskey --keyfile-offset=X --keyfile-size=8192 luksChangeKey /dev/mapper/enc /dev/mapper/lukskey2 --new-keyfile-size=8192 --new-keyfile-offset=Y ` 
+
+Afterwards, `cryptsetup close lukskey` and [`shred`](/index.php/Securely_wipe_disk#shred "Securely wipe disk") or [`dd`](/index.php/Securely_wipe_disk#dd "Securely wipe disk") the old keyfile with random data before deleting it, then make sure that the new keyfile is renamed to the same name of the old one: "key.img" or other name.

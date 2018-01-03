@@ -1,3 +1,9 @@
+Související články
+
+*   [fstab](/index.php/Fstab "Fstab")
+*   [Systemd](/index.php/Systemd "Systemd")
+*   [Autostarting](/index.php/Autostarting "Autostarting")
+
 ## Contents
 
 *   [1 Zavaděč](#Zavad.C4.9B.C4.8D)

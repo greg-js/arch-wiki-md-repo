@@ -211,6 +211,7 @@ These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
 
 *   [http://delta.archlinux.fr/](http://delta.archlinux.fr/) - *With Delta package support. Needs [xdelta3](https://www.archlinux.org/packages/?name=xdelta3) to run.*
 *   [https://eu.mirrors.coltondrg.com/archlinux/](https://eu.mirrors.coltondrg.com/archlinux/)
+*   [https://mirror.oldsql.cc/archlinux/](https://mirror.oldsql.cc/archlinux/)
 
 ### Indonesia
 

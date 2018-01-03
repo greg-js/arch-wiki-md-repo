@@ -19,7 +19,7 @@ Secondly, setup a root password which is needed for an SSH connection, since the
 
 ```
 
-Now check that `PermitRootLogin yes` is present (and uncommented) in `/etc/ssh/sshd_config`. This setting allows root login with password authentification on the SSH server.
+Now check that `PermitRootLogin yes` is present (and uncommented) in `/etc/ssh/sshd_config`. This setting allows root login with password authentication on the SSH server.
 
 **Note:** If the target machine is behind a NAT router, the SSH port (22 by default) will obviously need to be forwarded to the target machine's LAN IP address. The use of port forwarding is not covered in this guide.
 

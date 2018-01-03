@@ -26,7 +26,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 The above output is from a Raspberry-Pi revision 'B' with archlinux-arm and a Keysonic BT Dongle.
 
-[Start](/index.php/Start "Start") `bluetooth` service from [bluez](https://www.archlinux.org/packages/?name=bluez) with *systemctl*, or even better, [enable](/index.php/Enable "Enable") it permanently in the start up process.
+[Start](/index.php/Start "Start") `bluetooth` service from [bluez](https://www.archlinux.org/packages/?name=bluez) package with *systemctl*, or even better, [enable](/index.php/Enable "Enable") it permanently in the start up process.
 
 Three items worth remembering:
 
@@ -36,7 +36,7 @@ Three items worth remembering:
 
 *Pairing* is a one time process, required only once. There are BT keyboards sold with a BT dongle which come already paired, but that's not certain. We will use the `bluetoothctl` command from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) to pair our dongle and the keyboard.
 
-*Power up* can be done with `bluetoothctl`, or with `hciconfig` which is more suitable for scripting. See below.
+*Power up* can be done with `bluetoothctl`, or automatically in `/etc/bluetooth/main.conf`, see below.
 
 Same for *connecting*, either `bluetoothctl` or `hcitool` can be used, the latter is more useful for scripting.
 
@@ -240,7 +240,7 @@ What if the BT controller is not visible in `bluetoothctl` ?
 *   Check: `bluetoothctl` is started:
 
 ```
-systemctl start bluetooth
+systemctl status bluetooth
 
 ```
 

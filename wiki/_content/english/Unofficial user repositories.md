@@ -572,7 +572,7 @@ Server = https://arch.miffe.org/$arch/
 
 ```
 [mikelpint]
-Server = https://mikelpint.github.io/archlinux
+Server = https://mikelpint.github.io/repository/archlinux
 
 ```
 

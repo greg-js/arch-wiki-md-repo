@@ -21,8 +21,7 @@ Un buen número de paquetes nuevos que entran en los repositorios oficiales tien
 *   [4 Instalar paquetes](#Instalar_paquetes)
     *   [4.1 Prerrequisitos](#Prerrequisitos)
     *   [4.2 Adquirir archivos compilados](#Adquirir_archivos_compilados)
-    *   [4.3 Compilar el paquete](#Compilar_el_paquete)
-    *   [4.4 Instalar el paquete](#Instalar_el_paquete)
+    *   [4.3 Compilar e instalar el paquete](#Compilar_e_instalar_el_paquete)
 *   [5 Feedback](#Feedback)
 *   [6 Compartir y mantener los paquetes](#Compartir_y_mantener_los_paquetes)
     *   [6.1 Enviar paquetes](#Enviar_paquetes)
@@ -74,17 +73,13 @@ Las consultas de búsqueda de los nombre y descripciones de los paquetes utiliza
 
 La instalación de paquetes desde AUR es un proceso relativamente simple. En esencia consiste en:
 
-1.  Adquirir el tarball que contiene los [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") y posiblemente otros archivos necesarios.
-2.  Extraer el tarball (preferentemente en una carpeta reservada solo para las compilaciones de AUR) con `tar xzf foo.tar.gz`.
-3.  Ejecutar `makepkg` en el directorio donde se guardan los archivos ( `makepkg -s` resuelve automáticamente las dependencias con pacman). Esto descargará el código, lo compilará y lo empaquetará.
-4.  Buscar el archivo README en `src/` el cual puede contener información adicional útil para el futuro.
-5.  Instalar el paquete resultante con [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)"):
-
-	 `# pacman -U /path/to/pkg.tar.xz` 
+1.  Adquirir los archivos para la construcción, incluyendo el [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") y posiblemente otros archivos necesarios.
+2.  Verificar que el [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") y los archivos acompañantes no son maliciosos.
+3.  Ejecute `makepkg -si` en el directorio donde ha puesto los archivos. Este comando descarga la fuente, resuelve depedencias con [pacman](/index.php/Pacman "Pacman"), compila, empaca e instala el paquete.
 
 Los [AUR helpers](/index.php/AUR_helpers "AUR helpers") añaden un acceso transparente para AUR. Los mismos varían en sus características, pero pueden facilitar la búsqueda, descarga, compilación e instalación de los PKGBUILD que se encuentran en AUR. Todos estos scripts se pueden encontrar en AUR.
 
-**Nota:** Nunca habrá un mecanismo *oficial* para la instalación del material precompilado de AUR. Por tanto, **todos los usuarios deben estar familiarizados con el proceso de compilación.**
+**Advertencia:** Nunca habrá un mecanismo *oficial* para la instalación del material precompilado de AUR. Por tanto, **todos los usuarios deben estar familiarizados con el proceso de compilación.**
 
 Lo que sigue es un ejemplo detallado de la instalación de un paquete llamado «foo».
 
@@ -92,46 +87,49 @@ Lo que sigue es un ejemplo detallado de la instalación de un paquete llamado «
 
 Primero, asegúrese de que las herramientas necesarias estén instaladas. El grupo de paquetes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) debe ser suficiente; incluye [make](https://www.archlinux.org/packages/?name=make) y otras herramientas necesarias para compilar desde el código fuente.
 
-**Advertencia:** Los paquetes disponibles en AUR asumen que tiene instalado el grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), por lo que los paquetes de AUR no listan los elementos de este grupo como dependencias, incluso si el paquete no se puede compilar sin ellos. Por tanto, asegúrese que este grupo está instalado para prevenir que arroje errores sobre fallo al compilar.
+**Nota:** Los paquetes disponibles en AUR asumen que tiene instalado el grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), por lo que los paquetes de AUR no listan los elementos de este grupo como dependencias, incluso si el paquete no se puede compilar sin ellos. Por tanto, asegúrese que este grupo está instalado para prevenir que arroje errores sobre fallo al compilar.
 
 ```
 # pacman -S base-devel
 
 ```
 
-A continuación, elija un directorio de compilación apropiado. Un directorio de compilación es simplemente una carpeta en la que se construirá el paquete o «se compilará», y puede ser cualquier carpeta. Un ejemplo de carpeta comúnmente utilizada es:
-
-```
-~/builds
-
-```
-
-o si se utiliza ABS ([Arch Build System](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)")):
-
-```
-/var/abs/local
-
-```
-
-Para obtener más información sobre ABS, léase el artículo sobre [Arch Build System](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)"). En el ejemplo que se sigue, la carpeta `~/builds` será el directorio de compilación.
+A continuación, elija un directorio de compilación apropiado. Un directorio de compilación es simplemente una carpeta en la que se construirá el paquete o «se compilará», y puede ser cualquier carpeta. En el ejemplo que se sigue, la carpeta `~/builds` será el directorio de compilación.
 
 ### Adquirir archivos compilados
 
 Localice el paquete en AUR. Esto se realiza utilizando la función de búsqueda (esto es, el recuadro de texto de la parte superior de la [página principal de AUR](https://aur.archlinux.org/)). Al pulsar sobre el nombre de la aplicación en la lista de búsqueda, nos llevará a una página de información sobre el paquete. Lea la descripción para confirmar que este es el paquete deseado, observe si el paquete ha sido actualizado y lea los comentarios.
 
-Descargue los archivos necesarios de compilación. Desde la página de información del paquete, descargue los archivos de compilación pulsando el «tarball» que aparece en el lado izquierdo, cerca del final de los detalles del paquete. Este archivo debe ser guardado en el directorio de compilación o una copia del archivo en dicho directorio después de la descarga. En este ejemplo, el archivo se llama «foo.tar.gz» (el formato estándar es *nombredelpaquete*.tar.gz, si ha sido debidamente enviado).
+Existen diferentes métodos para adquirir los archivos de construcción:
 
-Otra posibilidad consistiría en descargar el archivo tar desde el terminal, cambiando los directorios al primer archivo de compilación:
-
-```
-$ cd ~/builds
-$ curl -O https://aur.archlinux.org/packages/fo/foo/foo.tar.gz
+*   Clone el repositorio [git](/index.php/Git "Git") que tiene el nombre "Git Clone URL" en los detalles del paquete:
 
 ```
+$ git clone https://aur.archlinux.org/*package_name*.git
 
-### Compilar el paquete
+```
 
-Extraiga el tarball. Para ello, cambie el archivo a la carpeta de compilación, si no está ya allí y, una vez en dicho directorio, extraiga los archivos de compilación.
+	Una ventaja de este método es la facilidad de actualizar el repositorio con el comando `git pull`.
+
+*   Descargue los archivos necesarios de compilación. Desde la página de información del paquete, descargue los archivos de compilación pulsando el «tarball» que aparece en el lado izquierdo, cerca del final de los detalles del paquete. Este archivo debe ser guardado en el directorio de compilación o una copia del archivo en dicho directorio después de la descarga.
+
+```
+$ tar -xvf *package_name*.tar.gz
+
+```
+
+*   También se puede descargar el tarball desde la terminal (para luego extraerlo):
+
+```
+$ curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/*package_name*.tar.gz
+
+```
+
+### Compilar e instalar el paquete
+
+Si ha usado el método *git clone* solo es necesario cambiar a ese directorio `cd *package_name*`, y continue con la construcción de los archivos.
+
+Extraiga el tarball. Para ello, cambie el archivo a la carpeta de compilación, si no está ya allí y, una vez en dicho directorio, extraiga los archivos de compilación:
 
 ```
 $ cd ~/builds
@@ -141,7 +139,7 @@ $ tar -xvzf foo.tar.gz
 
 Esto debería crear una nueva carpeta llamada «foo» en el directorio de compilación.
 
-**Advertencia:** **Revise cuidadosamente todos los archivos.** Ejecute la orden `cd` para desplazarse a la carpeta (foo) recién creada y revise con cuidado el`PKGBUILD` y cualquier archivo `.install` para advertir órdenes maliciosas. Los `PKGBUILD` son scripts de bash que contienen funciones para ser ejecutadas por `makepkg`: estas funciones pueden contener *cualquier* orden válida o con la sintaxis que interpreta Bash, por lo que es totalmente posible que un `PKGBUILD` pueda contener órdenes peligrosas introducidas por malicia o ignorancia del autor. Use `makepkg` en un entorno fakeroot (y no lo ejecute nunca como root), lo cual le da un cierto nivel de protección, pero nunca se debe confiar del todo con ello. En caso de duda, no compile el paquete y consulte en los foros o listas de correo.
+**Advertencia:** **Revise cuidadosamente todos los archivos.** Ejecute la orden `cd` para desplazarse a la carpeta (foo) recién creada y revise con cuidado el `PKGBUILD` y cualquier archivo `.install` para advertir órdenes maliciosas. Los `PKGBUILD` son scripts de bash que contienen funciones para ser ejecutadas por `makepkg`: estas funciones pueden contener *cualquier* orden válida o con la sintaxis que interpreta Bash, por lo que es totalmente posible que un `PKGBUILD` pueda contener órdenes peligrosas introducidas por malicia o ignorancia del autor. Use `makepkg` en un entorno fakeroot (y no lo ejecute nunca como root), lo cual le da un cierto nivel de protección, pero nunca se debe confiar del todo con ello. En caso de duda, no compile el paquete y consulte en los foros o listas de correo.
 
 ```
 $ cd foo
@@ -153,15 +151,14 @@ $ nano foo.install
 Construya el paquete. Después de confirmar manualmente la integridad de los archivos, ejecute [makepkg](/index.php/Makepkg "Makepkg") como un usuario normal en el directorio de compilación.
 
 ```
-$ makepkg -s
+$ makepkg -si
 
 ```
 
-La opción `-s` utilizará [sudo](/index.php/Sudo "Sudo") para instalar eventuales dependencias. Si no se desea utilizar sudo, se deberá probar a instalar manualmente las dependencias de antemano y posteriormente ejecutar lar orden anterior, omitiendo la opción `-s`.
+*   `-s`/`--syncdeps` utilizará [sudo](/index.php/Sudo "Sudo") para instalar eventuales dependencias. Si no se desea utilizar sudo, se deberán instalar manualmente las dependencias de antemano y posteriormente ejecutar lar orden anterior, omitiendo la opción `-s`.
+*   `-i`/`--install` installa el paquete si fue creado exitosamente.
 
-### Instalar el paquete
-
-Instale el paquete con pacman. Un tarball bien creado debería mostrar un nombre siguiendo este esquema:
+Como una alternativa puede instalar el paquete con [pacman](/index.php/Pacman "Pacman"). Un tarball bien creado debería mostrar un nombre siguiendo este esquema:
 
 ```
 <*application name*>-<*application version number*>-<*package revision number*>-<*architecture*>.pkg.tar.xz

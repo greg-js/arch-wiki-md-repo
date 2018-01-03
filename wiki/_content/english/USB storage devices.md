@@ -81,7 +81,7 @@ If it does not work, make sure that the [file system](/index.php/File_system "Fi
 
 #### As normal user with fstab
 
-See [Writing on a FAT32 partition as a normal user](/index.php/Writing_on_a_FAT32_partition_as_a_normal_user "Writing on a FAT32 partition as a normal user") if you want normal user to do the mount/unmount action.
+See [FAT#Writing to FAT32 as normal user](/index.php/FAT#Writing_to_FAT32_as_normal_user "FAT") if you want normal user to do the mount/unmount action.
 
 ## Troubleshooting
 

@@ -199,67 +199,67 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [90 Spacechem](#Spacechem)
     *   [90.1 Game crash](#Game_crash)
 *   [91 Splice](#Splice)
-*   [92 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
-*   [93 The Stanley Parable](#The_Stanley_Parable)
-    *   [93.1 Game won't start](#Game_won.27t_start)
-*   [94 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
-*   [95 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
-    *   [95.1 Start with black screen](#Start_with_black_screen)
-*   [96 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
-    *   [96.1 No sound](#No_sound_7)
-*   [97 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
-*   [98 System Shock 2](#System_Shock_2)
-*   [99 Tabletop Simulator](#Tabletop_Simulator)
-    *   [99.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
-*   [100 Team Fortress 2](#Team_Fortress_2)
-    *   [100.1 HRTF setup](#HRTF_setup)
-    *   [100.2 Loading screen freeze](#Loading_screen_freeze)
-    *   [100.3 No audio](#No_audio_4)
-    *   [100.4 Slow loading textures](#Slow_loading_textures)
-*   [101 Terraria](#Terraria)
-*   [102 This War of Mine](#This_War_of_Mine)
-    *   [102.1 Game does not start](#Game_does_not_start_10)
-    *   [102.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
-*   [103 Ticket to Ride](#Ticket_to_Ride)
-*   [104 Tomb Raider](#Tomb_Raider)
-    *   [104.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
-    *   [104.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
-*   [105 Total War: Rome II](#Total_War:_Rome_II)
-*   [106 Tower Unite](#Tower_Unite)
-    *   [106.1 Graphical Glitches](#Graphical_Glitches)
-*   [107 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
-*   [108 Transistor](#Transistor)
-    *   [108.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_audio_issues)
-*   [109 Transmissions: Element 120](#Transmissions:_Element_120)
-    *   [109.1 Troubleshooting](#Troubleshooting)
-*   [110 Trine 2](#Trine_2)
-    *   [110.1 Colors](#Colors)
-    *   [110.2 Sound](#Sound)
-    *   [110.3 Resolution](#Resolution)
-*   [111 Tropico 5](#Tropico_5)
-    *   [111.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
-*   [112 Unity of Command](#Unity_of_Command)
-    *   [112.1 Squares](#Squares)
-    *   [112.2 No audio](#No_audio_5)
-*   [113 Unity3D](#Unity3D)
-    *   [113.1 Locale settings](#Locale_settings)
-    *   [113.2 Unity 5 sound problems](#Unity_5_sound_problems)
-    *   [113.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
-    *   [113.4 Chinese/Japanese/Korean display bug](#Chinese.2FJapanese.2FKorean_display_bug)
-*   [114 Unrest](#Unrest)
-*   [115 War Thunder](#War_Thunder)
-    *   [115.1 No audio](#No_audio_6)
-    *   [115.2 Blank screen](#Blank_screen)
-*   [116 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
-*   [117 Worms W.M.D](#Worms_W.M.D)
-*   [118 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [118.1 Game does not start](#Game_does_not_start_11)
-*   [119 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-*   [120 World of Goo](#World_of_Goo)
-    *   [120.1 Changing resolution](#Changing_resolution)
-*   [121 XCOM](#XCOM)
-    *   [121.1 Hangs on startup](#Hangs_on_startup)
-    *   [121.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+*   [92 The Stanley Parable](#The_Stanley_Parable)
+    *   [92.1 Game won't start](#Game_won.27t_start)
+*   [93 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
+*   [94 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
+    *   [94.1 Start with black screen](#Start_with_black_screen)
+*   [95 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
+    *   [95.1 No sound](#No_sound_7)
+*   [96 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
+*   [97 System Shock 2](#System_Shock_2)
+*   [98 Tabletop Simulator](#Tabletop_Simulator)
+    *   [98.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
+*   [99 Team Fortress 2](#Team_Fortress_2)
+    *   [99.1 HRTF setup](#HRTF_setup)
+    *   [99.2 Loading screen freeze](#Loading_screen_freeze)
+    *   [99.3 No audio](#No_audio_4)
+    *   [99.4 Slow loading textures](#Slow_loading_textures)
+*   [100 Terraria](#Terraria)
+*   [101 This War of Mine](#This_War_of_Mine)
+    *   [101.1 Game does not start](#Game_does_not_start_10)
+    *   [101.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
+*   [102 Ticket to Ride](#Ticket_to_Ride)
+*   [103 Tomb Raider](#Tomb_Raider)
+    *   [103.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
+    *   [103.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
+*   [104 Tower Unite](#Tower_Unite)
+    *   [104.1 Graphical Glitches](#Graphical_Glitches)
+*   [105 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
+*   [106 Transistor](#Transistor)
+    *   [106.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_audio_issues)
+*   [107 Transmissions: Element 120](#Transmissions:_Element_120)
+    *   [107.1 Troubleshooting](#Troubleshooting)
+*   [108 Trine 2](#Trine_2)
+    *   [108.1 Colors](#Colors)
+    *   [108.2 Sound](#Sound)
+    *   [108.3 Resolution](#Resolution)
+*   [109 Tropico 5](#Tropico_5)
+    *   [109.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
+*   [110 Unity of Command](#Unity_of_Command)
+    *   [110.1 Squares](#Squares)
+    *   [110.2 No audio](#No_audio_5)
+*   [111 Unity3D](#Unity3D)
+    *   [111.1 Locale settings](#Locale_settings)
+    *   [111.2 Unity 5 sound problems](#Unity_5_sound_problems)
+    *   [111.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
+    *   [111.4 Chinese/Japanese/Korean display bug](#Chinese.2FJapanese.2FKorean_display_bug)
+*   [112 Unrest](#Unrest)
+*   [113 War Thunder](#War_Thunder)
+    *   [113.1 No audio](#No_audio_6)
+    *   [113.2 Blank screen](#Blank_screen)
+*   [114 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
+*   [115 Worms W.M.D](#Worms_W.M.D)
+*   [116 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+    *   [116.1 Game does not start](#Game_does_not_start_11)
+*   [117 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+*   [118 World of Goo](#World_of_Goo)
+    *   [118.1 Changing resolution](#Changing_resolution)
+*   [119 X3: Terran Conflict](#X3:_Terran_Conflict)
+    *   [119.1 Game crashes on startup](#Game_crashes_on_startup)
+*   [120 XCOM](#XCOM)
+    *   [120.1 Hangs on startup](#Hangs_on_startup)
+    *   [120.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
 
 ## Common steps
 
@@ -468,7 +468,25 @@ Out of the box you will not be able to log into SHiFT since the game expects cer
 
 ### Game crashes nearly instantly
 
-As of lib32-openal version 1.18.0-1, the game crashes instantly. The possible solutions are to downgrade lib32-openal to 1.17.2-1, or to start the game with `LD_PRELOAD='$HOME/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libopenal.so.1'`.
+The game crashes in libopenal directlay after launch.
+
+Possible solution 0: Add the `-nostartupmovies` launch option for Borderlands 2 and the Pre-Sequel. It no longer crashes in libopenal with a general protection error.
+
+Possible solution 1: As of lib32-openal version 1.18.0-1, the game crashes instantly. The possible solutions are to downgrade lib32-openal to 1.17.2-1, or to start the game with `LD_PRELOAD='$HOME/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libopenal.so.1'`.
+
+In case there're messages like this in the terminal:
+
+```
+[  671.617205] Borderlands2[2772]: segfault at 0 ip           (null) sp 00000000ff9a462c error 14 in Borderlands2[8048000+235a000]
+
+```
+
+The following change may help ([source](http://steamcommunity.com/app/49520/discussions/0/348292787746982160/)):
+
+```
+LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%
+
+```
 
 ## Borderlands: The Pre-Sequel
 
@@ -1628,12 +1646,6 @@ To solve this just remove the three files `libSDL-1.2.so.0`, `libSDL_image-1.2.s
 
 Requires [glu](https://www.archlinux.org/packages/?name=glu).
 
-## Star Wars Battlefront II
-
-Star Wars Battlefront 2's Steam version running under [Wine](/index.php/Wine "Wine") has a bug which causes it to take forever to load a game. The solution is to compile a custom Wine version with the patch from this [WineHQ bug comment](https://bugs.winehq.org/show_bug.cgi?id=29582#c31).
-
-In order to use the patched wine version with PlayOnLinux, copy the completely patched and compiled wine-1.7.55 folder to `~/.PlayOnLinux/wine/linux-x86/`.
-
 ## The Stanley Parable
 
 ### Game won't start
@@ -1831,22 +1843,6 @@ If your Steam Controller is correctly recognized and paired but still not workin
 *   Go to Big Screen and start Tomb Raider
 
 Correctly recognized means you can control the desktop mouse and Steam in Big Picture mode and the controller is shown in the Big Picture settings.
-
-## Total War: Rome II
-
-Total War Rome II's Steam version running under Wine can have some problems. If the game freezes at launch, make sure you have installed [lib32-mpg123](https://www.archlinux.org/packages/?name=lib32-mpg123) as well as directx9 and vcrun2005/8/10 installed via winetricks.
-
-```
-winetricks directx9 vcrun2005 vcrun2008 vcrun2010
-
-```
-
-If the game runs poorly outside of the main menu, try disabling opengl.
-
-```
-winetricks glsl=disable
-
-```
 
 ## Tower Unite
 
@@ -2103,6 +2099,19 @@ To change the game resolution edit the *Graphics display* section in `*gamedir*/
 <param name="ui_inset" value="10" />
 
 ```
+
+## X3: Terran Conflict
+
+### Game crashes on startup
+
+The game may crash on startup becuase it's linked to libz version 1.2.9, while the latest version of this library in Arch Linux is higher. The following message in the terminals appears in this case:
+
+```
+./X3TC_config: lib/libz.so.1: version 'ZLIB_1.2.9' not found (required by /usr/lib32/libpng16.so.16
+
+```
+
+Adding `LD_PRELOAD='/usr/lib32/libz.so.1.2.11'` to your [launch options](/index.php/Launch_option "Launch option") may help.
 
 ## XCOM
 

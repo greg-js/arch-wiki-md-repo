@@ -274,41 +274,44 @@ Em ambos os casos, é melhor copiar os arquivos (`cp`), porque isso deixa a opç
 
 ### E4rat
 
-[E4rat](/index.php/E4rat "E4rat") is a preload application designed for the ext4 filesystem. It monitors files opened during boot, optimizes their placement on the partition to improve access time, and preloads them at the very beginning of the boot process. "E4rat" does not offer improvements with [SSDs](/index.php/SSD "SSD"), whose access time is negligible compared to hard disks.
+[E4rat](/index.php/E4rat "E4rat") é um aplicativo de pré-carregamento projetada para o sistema de arquivos ext4\. Ele monitora os arquivos abertos durante a inicialização, otimiza seu posicionamento na partição para melhorar o tempo de acesso e os pré-carrega no começo do processo de inicialização. "E4rat" não oferece melhorias com [SSDs](/index.php/SSD "SSD"), cujo tempo de acesso é insignificante em comparação com discos rígidos.
 
 ### Desabilitando atualização de tempo de acesso
 
-The *ext4* file system records information about when a file was last accessed and there is a cost associated with recording it. With the `noatime` option, the access timestamps on the filesystem are not updated.
+O sistema de arquivos *ext4* registra informações sobre quando um arquivo foi acessado pela última vez e há um custo associado ao registro dele. Com a opção `noatime`, os timestamps de acesso no sistema de arquivos não são atualizados.
 
  `/etc/fstab`  `/dev/sda5    /    ext4    defaults,**noatime**    0    1` 
 
 ### Aumentando o intervalo de commit
 
-The sync interval for data and metadata can be increased by providing a higher time delay to the `commit` option.
+O intervalo de sincronização para dados e metadados pode ser aumentado, proporcionando um maior atraso de tempo para a opção `commit`.
 
-The default 5 sec means that if the power is lost, one will lose as much as the latest 5 seconds of work.
+O 5 segundos padrão significa que, se a energia for perdida, será perdido tanto quanto os últimos 5 segundos de trabalho.
 
-It forces a full sync of all data/journal to physical media every 5 seconds. The filesystem will not be damaged though, thanks to the journaling. The following fstab illustrates the use of `commit`:
+Isso força uma sincronia completa de todos os dados/diários para mídia física a cada 5 segundos. O sistema de arquivos não será danificado, graças ao registro no *journaling*. O seguinte fstab ilustra o uso de `commit`:
 
  `/etc/fstab`  `/dev/sda5    /    ext4   defaults,noatime,**commit=999**    0    1` 
 
 ### Desligando barreiras
 
-**Warning:** Disabling barriers for disks without battery-backed cache is not recommended and can lead to severe file system corruption and data loss.
+**Atenção:** Desabilitar as barreiras para discos sem cache com respaldo de bateria não é recomendado e pode levar à corrupção severa do sistema de arquivos e perda de dados.
 
-*Ext4* enables write barriers by default. It ensures that file system metadata is correctly written and ordered on disk, even when write caches lose power. This goes with a performance cost especially for applications that use *fsync* heavily or create and delete many small files. For disks that have a write cache that is battery-backed in one way or another, disabling barriers may safely improve performance.
+*Ext4* permite barreiras de gravação por padrão. Isso garante que os metadados do sistema de arquivos sejam corretamente escritos e ordenados no disco, mesmo quando os caches de gravação perdem energia. Isso ocorre com um custo de desempenho especialmente para aplicativos que usam *fsync* intensamente ou criam e excluem muitos pequenos arquivos. Para discos que tenham um cache de gravação com respaldo de bateria de uma forma ou de outra, desabilitar as barreiras pode melhorar o desempenho com segurança.
 
-To turn barriers off, add the option `barrier=0` to the desired filesystem. For example:
+Para desligar as barreiras, adicione a opção `barrier=0` ao sistema de arquivos desejado. Por exemplo:
 
  `/etc/fstab`  `/dev/sda5    /    ext4    noatime,**barrier=0**   0    1` 
 
 ### Desabilitando journaling
 
-**Warning:** Using a filesystem without journaling can result in data loss in case of sudden dismount like power failure or kernel lockup.
+**Atenção:** Usar um sistema de arquivos sem o *journal* pode resultar em perda de dados em caso de desmontagem repentina, como falha de energia ou bloqueio do kernel.
 
-Disabling the journal with *ext4* can be done with the following command on an unmounted disk:
+Desabilitar o journal do *ext4* pode ser feito com o seguinte comando em um disco desmontado:
 
-1.  tune2fs -O ^has_journal /dev/sdXN
+```
+# tune2fs -O ^has_journal /dev/sdXN
+
+```
 
 ## Habilitando somas de verificação de metadados
 

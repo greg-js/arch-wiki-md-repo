@@ -2,6 +2,7 @@ Related articles
 
 *   [Bluez4](/index.php/Bluez4 "Bluez4")
 *   [Bluetooth mouse](/index.php/Bluetooth_mouse "Bluetooth mouse")
+*   [Bluetooth keyboard](/index.php/Bluetooth_keyboard "Bluetooth keyboard")
 *   [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset")
 *   [Blueman](/index.php/Blueman "Blueman")
 
@@ -22,7 +23,8 @@ Related articles
     *   [4.1 ObexFS](#ObexFS)
     *   [4.2 ObexFTP transfers](#ObexFTP_transfers)
     *   [4.3 Obex Object Push](#Obex_Object_Push)
-    *   [4.4 Using your computer's speakers as a bluetooth headset](#Using_your_computer.27s_speakers_as_a_bluetooth_headset)
+    *   [4.4 interactive with obexctl](#interactive_with_obexctl)
+    *   [4.5 Using your computer's speakers as a bluetooth headset](#Using_your_computer.27s_speakers_as_a_bluetooth_headset)
 *   [5 Audio](#Audio)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Shell command _____ is missing from bluez-utils](#Shell_command_is_missing_from_bluez-utils)
@@ -211,6 +213,22 @@ Read the output, look for Obex Object Push, remember the channel for this servic
 
 ```
 # ussp-push *XX:XX:XX:XX:XX:XX*@*CHANNEL* *file* *wanted_file_name_on_phone*
+
+```
+
+### interactive with obexctl
+
+obexctl offers an interactive shell like bluetoothctl:
+
+```
+$ obexctl
+[obex]# connect xx:xx:xx:xx:xx:xx
+Attempting to connect to xx:xx:xx:xx:xx:xx
+Connection successful
+[xx:xx:xx:xx:xx:xx]# send foto.png
+Attempting to send foto.png to /org/bluez/obex/client/session1
+[CHG] Transfer /org/bluez/obex/client/session1/transfer2 Status: complete
+[xx:xx:xx:xx:xx:xx]# quit
 
 ```
 

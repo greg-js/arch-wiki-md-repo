@@ -36,8 +36,7 @@ Once created, a partition must be formatted with an appropriate [file system](/i
         *   [2.2.3 /home](#.2Fhome)
         *   [2.2.4 /var](#.2Fvar)
         *   [2.2.5 /data](#.2Fdata)
-        *   [2.2.6 /tmp](#.2Ftmp)
-        *   [2.2.7 Swap](#Swap)
+        *   [2.2.6 Swap](#Swap)
     *   [2.3 Example layouts](#Example_layouts)
         *   [2.3.1 UEFI/GPT example layout](#UEFI.2FGPT_example_layout)
         *   [2.3.2 MBR/BIOS example layout](#MBR.2FBIOS_example_layout)
@@ -113,7 +112,7 @@ The section on [#Partitioning tools](#Partitioning_tools) contains a table indic
 
 ### Partitionless disk
 
-Partitionless disk (a.k.a. [superfloppy](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq#what-is-a-superfloppy)) refers to using a storage device without using a partition table, having one file system occupying the whole storage device.
+Partitionless disk a.k.a. [superfloppy](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq#what-is-a-superfloppy) refers to using a storage device without using a partition table, having one file system occupying the whole storage device. The boot sector present on a partitionless device is called a [Volume boot record (VBR)](https://en.wikipedia.org/wiki/volume_boot_record "wikipedia:volume boot record").
 
 #### Btrfs partitioning
 
@@ -186,10 +185,6 @@ It exists to make it possible to mount `/usr` as read-only. Everything that hist
 
 One can consider mounting a "data" partition to cover various files to be shared by all users. Using the `/home` partition for this purpose is fine as well. The size of this partition varies.
 
-#### /tmp
-
-This is already a separate partition by default, by virtue of being mounted as *tmpfs* by systemd; therefore, there is no need to create a partition for it.
-
 #### Swap
 
 A [swap](/index.php/Swap "Swap") partition provides memory that can be used as virtual RAM. A [swap file](/index.php/Swap_file "Swap file") should be considered too, as they don't have any performance overhead compared to a partition but are much easier to resize as needed. A swap partition can *potentially* be shared between operating systems, but not if hibernation is used.
@@ -217,7 +212,7 @@ Historically, the general rule for swap partition size was to allocate twice the
 
 | Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |
 | /boot | /dev/sd**x**1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | Yes | More than 512 MiB |
-| / | /dev/sd**x**2 | Linux | No | 15 - 20 GiB |
+| / | /dev/sd**x**2 | Linux | No | 23 - 32 GiB |
 | [SWAP] | /dev/sd**x**3 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
 | /home | /dev/sd**x**4 | Linux | No | Remainder of the device |
 
