@@ -34,10 +34,10 @@ A good number of modules that lie outside the kernel source tree have a DKMS var
 *   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst"): [catalyst-dkms](https://aur.archlinux.org/packages/catalyst-dkms/)
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA"):
     *   [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms)
+    *   [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)
     *   [nvidia-304xx-dkms](https://www.archlinux.org/packages/?name=nvidia-304xx-dkms)
     *   [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/)
     *   [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/)
-    *   [nvidia-grsec-dkms](https://aur.archlinux.org/packages/nvidia-grsec-dkms/)
 *   [VirtualBox](/index.php/VirtualBox "VirtualBox"):
     *   [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
     *   [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)

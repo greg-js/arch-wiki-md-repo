@@ -103,6 +103,8 @@ $ echo "\
 
 ### Comprobar el progreso de dd en ejecución
 
+**Tip:** Esta tarea ha sido facilitada en versiones recientes (desde la version 8.24 del paquete [coreutils](https://www.archlinux.org/packages/?name=coreutils)) de *dd*. Para monitorear el progreso de *dd* simplemente adjunte el parámetro `status=progress` al comando.
+
 Por defecto, no hay salida para *dd* hasta que la tarea ha terminado. Con *kill* y la señal `USR1` puede forzar a imprimir el estatus sin matar al programa. Habra una segunda terminal como root e introduzca el siguiente comando:
 
 ```

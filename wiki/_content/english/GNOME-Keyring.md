@@ -246,4 +246,4 @@ Ensure that the [seahorse](https://www.archlinux.org/packages/?name=seahorse) pa
 
 ### Cannot handle ECDSA and Ed25519 keys
 
-As of April, 2017, GNOME Keyring doesn't handle ECDSA[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) nor Ed25519[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. You can turn to other [SSH agents](/index.php/SSH_keys#SSH_agents "SSH keys") if you need support for those.
+As of January 2018, GNOME Keyring doesn't handle ECDSA[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) nor Ed25519[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. You can turn to other [SSH agents](/index.php/SSH_keys#SSH_agents "SSH keys") if you need support for those.

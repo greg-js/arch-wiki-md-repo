@@ -21,7 +21,6 @@ GPGPU stands for [General-purpose computing on graphics processing units](https:
 *   [2 CUDA](#CUDA)
     *   [2.1 Development](#Development)
     *   [2.2 Language bindings](#Language_bindings_2)
-    *   [2.3 Driver issues](#Driver_issues)
 *   [3 List of OpenCL and CUDA accelerated software](#List_of_OpenCL_and_CUDA_accelerated_software)
 *   [4 Links and references](#Links_and_references)
 
@@ -139,10 +138,6 @@ To find whether the installation was successful and if cuda is up and running, y
 *   **Perl**: [Kappa](http://psilambda.com/download/kappa-for-perl), [CUDA-Minimal](https://github.com/run4flat/perl-CUDA-Minimal)
 *   **[Python](/index.php/Python "Python")**: [python-pycuda](https://www.archlinux.org/packages/?name=python-pycuda) or [Kappa](http://psilambda.com/download/kappa-for-python)
 *   **[Ruby](/index.php/Ruby "Ruby")**, **Lua**: [Kappa](http://psilambda.com/products/kappa/)
-
-### Driver issues
-
-It might be necessary to use the legacy driver [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) or [nvidia-304xx-lts](https://www.archlinux.org/packages/?name=nvidia-304xx-lts) to resolve permissions issues when running CUDA programs on systems with multiple GPUs.
 
 ## List of OpenCL and CUDA accelerated software
 

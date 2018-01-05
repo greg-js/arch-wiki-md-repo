@@ -14,7 +14,10 @@ El paquete makepkg lo provee el paquete [pacman](https://www.archlinux.org/packa
 ## Contents
 
 *   [1 Configuración](#Configuraci.C3.B3n)
-    *   [1.1 fakeroot](#fakeroot)
+    *   [1.1 Información del empaquetador](#Informaci.C3.B3n_del_empaquetador)
+    *   [1.2 Resultado del paquete](#Resultado_del_paquete)
+    *   [1.3 Verificación de firmas](#Verificaci.C3.B3n_de_firmas)
+    *   [1.4 fakeroot](#fakeroot)
 *   [2 Uso](#Uso)
 *   [3 Recomendaciones](#Recomendaciones)
     *   [3.1 Compilación paralela](#Compilaci.C3.B3n_paralela)
@@ -43,9 +46,43 @@ $ mkdir /home/$USER/packages
 
 Luego modifique la variable `PKGDEST` en el archivo `/etc/makepkg.conf` de acuerdo a esta directorio.
 
+### Información del empaquetador
+
+Cada paquete es etiquetado con meta información que identifica entre otros el *packager*. Por defecto, paquetes compilados por el usuario son marcados con `Unknown Packager`. Si múltiples usuarios van a compilar paquetes en un sistema o si planea distribuir sus paquetes con otros usuarios, es conveniente proveer un contacto real. Esto se puede hacer modificando la variable `PACKAGER` en el archivo `makepkg.conf`.
+
+Para revisar esta variable en un paquete instalado ejecute:
+
+ `$ pacman -Qi *paquete*` 
+```
+...
+Packager       : John Doe <john@doe.com>
+...
+
+```
+
+Para firmar sus paquete automaticamente, tambien modifique la variable `GPGKEY` en el archivo `makepkg.conf`.
+
+### Resultado del paquete
+
+Por defecto, *makepkg* crea tarballs de los paquetes en el directorio de trabajo y descarga las fuentes en el directorio `src/`. Rutas personalizadas pueden ser configuradas, por ejemplo para mantener todos los paquetes construidos en `~/build/packages/` y todas las fuentes en `~/build/sources/`.
+
+Configure las siguientes variables en `makepkg.conf`, si lo considera necesario:
+
+*   `PKGDEST` — directorio para guardar los paquetes resultantes
+*   `SRCDEST` — directorio para guardar datos [fuente](/index.php/PKGBUILD_(Espa%C3%B1ol)#Variables "PKGBUILD (Español)"), (links simbólicos seran puestos en `src/` si la ruta es diferente)
+*   `SRCPKGDEST` — directorio para guardar las fuentes resultantes (construido con `makepkg -S`)
+
+### Verificación de firmas
+
+**Nota:** La implementación de verificación de firmas en *makepkg* no usa el llavero de pacman, en su lugar depende en el llavero del usuario. [[1]](http://allanmcrae.com/2015/01/two-pgp-keyrings-for-package-management-in-arch-linux/)
+
+Si una firma de la forma `.sig` o `.asc` es parte del [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)") en la sección *source*, *makepkg* automáticamente intentara [verificarla](/index.php/GnuPG#Verify_a_signature "GnuPG"). En caso de que el llavero del usuario no contenga la clave pública para la verificación *makepkg* abortara el procedimiento con un mensaje que la clave PGP no pudo ser verificada.
+
+Si una clave pública es necesaria, el [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)") probablemente tendrá una sección [validpgpkeys](/index.php/PKGBUILD#validpgpkeys "PKGBUILD") con las IDs requeridas. Se puede [importar](/index.php/GnuPG_(Espa%C3%B1ol)#Importar_una_clave "GnuPG (Español)") manualmente, o la puede ubicar en un [keyserver](/index.php/GnuPG#Use_a_keyserver "GnuPG") e importarla desde allí.
+
 ### `fakeroot`
 
-`fakeroot` permite al usuario usar los permisos necesarios de root para crear paquetes en el ambiente de construcción sin necesidad de alterar todo el sistema. Si el proceso de construcción trata de alterar archivos fuera del ambiente de construcción entonces aparecerán mensajes de error y el empaquetado habrá fallado – esto es muy útil para verificar la calidad, seguridad e integridad de los PKGBUILD para su distribución. Por default `fakeroot` esta habilitado en el archivo de configuración `/etc/makepkg.conf`; los usuarios pueden utilizar el prefijo `!` en la variable `BUILDENV` para deshabilitar esto
+`fakeroot` permite al usuario usar los permisos necesarios de root para crear paquetes en el ambiente de construcción sin necesidad de alterar todo el sistema. Si el proceso de construcción trata de alterar archivos fuera del ambiente de construcción entonces aparecerán mensajes de error y el empaquetado habrá fallado – esto es muy útil para verificar la calidad, seguridad e integridad de los PKGBUILD para su distribución. Por default `fakeroot` esta habilitado en el archivo de configuración `/etc/makepkg.conf`; los usuarios pueden utilizar el prefijo `!` en la variable `BUILDENV` para deshabilitar esto.
 
 ## Uso
 
@@ -105,6 +142,19 @@ Usuarios con sistemas que poseen múltiples núcleos o CPU pueden especificar el
 
 ```
 MAKEFLAGS="**-j$(nproc)**"
+
+```
+
+Para decirle al compilador que use un número especifico de núcleos al momento de compilar, se usa el mismo parámetro `-j<numero_de_núcleos>`. El numero recomendado es *n*+1, donde *n* es la cantidad de núcleos de tu procesador.
+
+Por ejemplo un procesador de 2 núcleos (2+1=3):
+
+ `/etc/makepkg.conf` 
+```
+...
+#-- Make Flags: change this for DistCC/SMP systems
+MAKEFLAGS="-j3"
+...
 
 ```
 

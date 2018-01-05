@@ -78,7 +78,7 @@ The customary numbering scheme is to create primary partitions *sda1* through *s
 
 #### Master Boot Record (bootstrap code)
 
-The first 446 bytes of MBR are **bootstrap code area**. On BIOS systems it usually contains the first stage of the boot loader.
+The first 446 bytes of MBR are **bootstrap code area**. On BIOS systems it usually contains the first stage of the boot loader. The bootstrap code can be backed up, restored from backup or erased with [dd](/index.php/Fdisk#Using_dd "Fdisk").
 
 ### GUID Partition Table
 

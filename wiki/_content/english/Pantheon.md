@@ -66,7 +66,7 @@ For the minimal Pantheon shell, install [pantheon-session-git](https://aur.archl
 These packages provide background services and default settings for Pantheon and elementary OS applications:
 
 *   [pantheon-default-settings-git](https://aur.archlinux.org/packages/pantheon-default-settings-git/): Default appearance, behavior, and configuration; pulls in theme packages [elementary-icon-theme](https://www.archlinux.org/packages/?name=elementary-icon-theme), [gtk-theme-elementary-git](https://aur.archlinux.org/packages/gtk-theme-elementary-git/), and [elementary-wallpapers-git](https://aur.archlinux.org/packages/elementary-wallpapers-git/)
-*   [gnome-settings-daemon-elementary](https://aur.archlinux.org/packages/gnome-settings-daemon-elementary/): A patched [gnome-settings-daemon-ubuntu](https://aur.archlinux.org/packages/gnome-settings-daemon-ubuntu/) required by [elementary-dpms-helper-git](https://aur.archlinux.org/packages/elementary-dpms-helper-git/) and [wingpanel-indicator-power-git](https://aur.archlinux.org/packages/wingpanel-indicator-power-git/)
+*   [gnome-settings-daemon-elementary](https://aur.archlinux.org/packages/gnome-settings-daemon-elementary/): A patched [gnome-settings-daemon-ubuntu](https://aur.archlinux.org/packages/gnome-settings-daemon-ubuntu/) required by [pantheon-dpms-helper-git](https://aur.archlinux.org/packages/pantheon-dpms-helper-git/) and [wingpanel-indicator-power-git](https://aur.archlinux.org/packages/wingpanel-indicator-power-git/)
 *   [pantheon-print-git](https://aur.archlinux.org/packages/pantheon-print-git/): Print settings dialog
 *   [pantheon-polkit-agent-git](https://aur.archlinux.org/packages/pantheon-polkit-agent-git/): Polkit authentication agent
 

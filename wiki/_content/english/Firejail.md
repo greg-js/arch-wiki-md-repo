@@ -209,32 +209,30 @@ There are a number of ways to enable Apparmor confinement on top of a Firejail s
 
 ## Firejail with Xephyr
 
-[Xephyr](/index.php/Xephyr "Xephyr") can be installed from [xorg-server-xephyr](https://www.archlinux.org/packages/?name=xorg-server-xephyr) via [pacman](/index.php/Pacman#Installing_packages "Pacman").
+[Xephyr](/index.php/Xephyr "Xephyr") will allow you to sandbox [Xorg](/index.php/Xorg "Xorg"). If you want to be able to resize windows, install a window manager such as [Openbox](/index.php/Openbox "Openbox").
 
-Xephyr will allow you to sandbox [X11](/index.php/Xorg "Xorg"). If you want to be able to resize windows, [Openbox](/index.php/Openbox "Openbox") can be installed [openbox](https://www.archlinux.org/packages/?name=openbox) as well.
-
-`xephyr-screen WIDTHxHEIGHT` can be set in `/etc/firejail/firejail.config` where Width and Height are in pixels and based on your screen resolution.
+`xephyr-screen *Width*x*Height*` can be set in `/etc/firejail/firejail.config` where `*Width*` and `*Height*` are in pixels and based on your screen resolution.
 
 To open the sandbox:
 
 ```
-firejail --x11 --net=<device> openbox
+$ firejail --x11 --net=*device* openbox
 
 ```
 
-<device> is your active network device from `ip link`. Then right click and select your applications to run. For example, Firefox would be Internet -> Firefox.
+`*device*` is your active [network interface](/index.php/Network_interface "Network interface"). Then right click and select your applications to run.
 
-**Note:** If you use [Unbound](/index.php/Unbound "Unbound"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [Pdnsd](/index.php/Pdnsd "Pdnsd") or any other local cache as your resolver on 127.0.0.1 for example, you would leave `--net=<device>` out of the command as your network should work automatically
+**Note:** If you use [Unbound](/index.php/Unbound "Unbound"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [Pdnsd](/index.php/Pdnsd "Pdnsd") or any other local cache as your resolver on 127.0.0.1 for example, you would leave `--net=*device*` out of the command as your network should work automatically.
 
-A great guide [can be found here](https://firejail.wordpress.com/documentation-2/x11-guide/#configurexephyr) on the Firejail Wordpress.
+A great guide can be found on the [Firejail Wordpress](https://firejail.wordpress.com/documentation-2/x11-guide/#configurexephyr).
 
 According to the guide:
 
- `The sandbox replaces the regular X11 server with Xpra or Xephyr server. This prevents X11 keyboard loggers and screenshot utilities from accessing the main X11 server.` 
+	The sandbox replaces the regular X11 server with Xpra or Xephyr server. This prevents X11 keyboard loggers and screenshot utilities from accessing the main X11 server.
 
 Note that the statement:
 
- `The only way to disable the abstract socket @/tmp/.X11-unix/X0 is by using a network namespace. If for any reasons you cannot use a network namespace, the abstract socket will still be visible inside the sandbox. Hackers can attach keylogger and screenshot programs to this socket.` 
+	The only way to disable the abstract socket `@/tmp/.X11-unix/X0` is by using a network namespace. If for any reasons you cannot use a network namespace, the abstract socket will still be visible inside the sandbox. Hackers can attach keylogger and screenshot programs to this socket.
 
 is incorrect, [xserverrc](/index.php/Xinit#xserverrc "Xinit") can be edited to `-nolisten local` which disables the abstract sockets of X11 and helps isolate it.
 

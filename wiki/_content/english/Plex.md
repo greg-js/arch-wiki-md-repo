@@ -98,6 +98,15 @@ A short example with iptables:
 
 ```
 
+In order to connect to Plex through on a standard http port, this command can be used (for port 8080):
+
+```
+#iptables -t nat -A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 32400
+
+```
+
+Then you can connect directly to [http://yourplexaddress:8080](http://yourplexaddress:8080) on this port
+
 ### Library Updates
 
 Plex Media Server has a setting "Update my library automatically" which can detect new media files as they're downloaded to your library. But as your library grows, these updates might stop working reliably. To fix, you need to increase the number of files non-root users are allowed to subscribe to via inotify. Create the file `/etc/sysctl.d/40-max-user-watches.conf`

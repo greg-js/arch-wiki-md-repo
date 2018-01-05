@@ -20,12 +20,7 @@ It is simple to configure but it can only start EFI executables such as the Linu
 *   [2 Configuration](#Configuration)
     *   [2.1 Basic configuration](#Basic_configuration)
     *   [2.2 Adding boot entries](#Adding_boot_entries)
-        *   [2.2.1 Standard root installations](#Standard_root_installations)
-        *   [2.2.2 LVM root installations](#LVM_root_installations)
-        *   [2.2.3 Encrypted Root Installations](#Encrypted_Root_Installations)
-        *   [2.2.4 btrfs subvolume root installations](#btrfs_subvolume_root_installations)
-        *   [2.2.5 ZFS root installations](#ZFS_root_installations)
-        *   [2.2.6 EFI Shells or other EFI apps](#EFI_Shells_or_other_EFI_apps)
+        *   [2.2.1 EFI Shells or other EFI apps](#EFI_Shells_or_other_EFI_apps)
     *   [2.3 Preparing kernels for EFI\Linux](#Preparing_kernels_for_EFI.5CLinux)
     *   [2.4 Support hibernation](#Support_hibernation)
     *   [2.5 Kernel parameters editor with password protection](#Kernel_parameters_editor_with_password_protection)
@@ -57,7 +52,6 @@ It is simple to configure but it can only start EFI executables such as the Linu
 You can successfully install *systemd-boot* if booted with in BIOS mode. However, this process requires you to tell firmware to launch *systemd-boot'*s EFI file at boot, usually via two ways:
 
 *   you have a working EFI Shell somewhere else.
-
 *   your firmware interface provides a way of properly setting the EFI file that needs to be loaded at boot time.
 
 If you can do it, the installation is easier: go into your EFI Shell or your firmware configuration interface and change your machine's default EFI file to `*esp*/EFI/systemd/systemd-bootx64.efi` ( or `systemd-bootia32.efi` depending if your system firmware is 32 bit).
@@ -112,9 +106,7 @@ Exec = /usr/bin/bootctl update
 The basic configuration is stored in `*esp*/loader/loader.conf` file and it is composed by three options:
 
 *   `default` – default entry to select (without the `.conf` suffix); can be a wildcard like `arch-*`.
-
 *   `timeout` – menu timeout in seconds. If this is not set, the menu will only be shown on `Space` key (or most other keys actually work too) press during boot.
-
 *   `editor` – whether to enable the kernel parameters editor or not. `1` (default) is enabled, `0` is disabled; since the user can add `init=/bin/bash` to bypass root password and gain root access, it is strongly recommended to set this option to `0`.
 
 Example:
@@ -127,7 +119,10 @@ editor   0
 
 ```
 
-**Note:** The first 2 options can be changed in the boot menu itself and changes will be stored as EFI variables.
+**Note:**
+
+*   The first 2 options can be changed in the boot menu itself and changes will be stored as EFI variables.
+*   *systemd-boot* does not recognize tabs in its configuration files, only spaces can follow the keywords.
 
 **Tip:** A basic configuration file example is located at `/usr/share/systemd/bootctl/loader.conf`.
 
@@ -136,7 +131,6 @@ editor   0
 **Note:**
 
 *   *bootctl* will automatically check for "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) and "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`) at boot time, as well as specially prepared kernel files found in `\EFI\Linux`. When detected, corresponding entries with titles `auto-windows`, `auto-efi-shell` and `auto-efi-default`, respectively, will be automatically generated. These entries do not require manual loader configuration. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the Linux kernel, manual configuration entries must be created.
-
 *   If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
 *   Remember to load the intel [microcode](/index.php/Microcode "Microcode") with `initrd` if applicable.
 *   You can find the `PARTUUID` for your root partition with the command `blkid -s PARTUUID -o value /dev/sd*xY*`, where `*x*` is the device letter and `*Y*` is the partition number. This is required only for your root partition, not `*esp*`.
@@ -144,112 +138,16 @@ editor   0
 *bootctl* searches for boot menu items in `*esp*/loader/entries/*.conf` – each file found must contain exactly one boot entry. The possible options are:
 
 *   `title` – operating system name. **Required.**
-
 *   `version` – kernel version, shown only when multiple entries with same title exist. Optional.
-
 *   `machine-id` – machine identifier from `/etc/machine-id`, shown only when multiple entries with same title and version exist. Optional.
-
 *   `efi` – EFI program to start, relative to your ESP (`*esp*`); e.g. `/vmlinuz-linux`. Either this or `linux` (see below) is **required.**
-
-*   `options` – command line options to pass to the EFI program or kernel boot parameters. Optional, but you will need at least `initrd=*efipath*` and `root=*dev*` if booting Linux.
+*   `options` – command line options to pass to the EFI program or [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Optional, but you will need at least `initrd=*efipath*` and `root=*dev*` if booting Linux.
 
 For Linux, you can specify `linux *path-to-vmlinuz*` and `initrd *path-to-initramfs*`; this will be automatically translated to `efi *path*` and `options initrd=*path*` – this syntax is only supported for convenience and has no differences in function.
 
 **Tip:** The available boot entries which have been configured can be listed with the command `bootctl list`.
 
-#### Standard root installations
-
-Here is an example entry for a root partition without LVM or LUKS:
-
- `*esp*/loader/entries/arch.conf` 
-```
-title          Arch Linux
-linux          /vmlinuz-linux
-initrd         /initramfs-linux.img
-options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw
-```
-
-Please note in the example above that `PARTUUID`/`PARTLABEL` identifies a GPT partition, and differs from `UUID`/`LABEL`, which identifies a filesystem. Using the `PARTUUID`/`PARTLABEL` is advantageous because it is invariant (i.e. unchanging) if you reformat the partition with another filesystem, or if the `/dev/sd*` mapping changed for some reason. It is also useful if you do not have a filesystem on the partition (or use LUKS, which does not support `LABEL`s).
-
-**Tip:** An example entry file is located at `/usr/share/systemd/bootctl`.
-
-#### LVM root installations
-
-**Warning:** *systemd-boot* cannot be used without a separate `/boot` filesystem outside of LVM.
-
-Here is an example for a root partition using [Logical Volume Management](/index.php/LVM "LVM"):
-
- `*esp*/loader/entries/arch-lvm.conf` 
-```
-title          Arch Linux (LVM)
-linux          /vmlinuz-linux
-initrd         /initramfs-linux.img
-options        root=/dev/mapper/<VolumeGroup-LogicalVolume> rw
-```
-
-Replace `<VolumeGroup-LogicalVolume>` with the actual VG and LV names (e.g. `root=/dev/mapper/volgroup00-lvolroot`). Alternatively, it is also possible to use a UUID instead:
-
-```
-....
-options  root=UUID=<UUID identifier> rw
-
-```
-
-Note that `root=**UUID**=` is used instead of `root=**PARTUUID**=`, which is used for Root partitions without LVM or LUKS.
-
-#### Encrypted Root Installations
-
-Here is an example configuration file for an encrypted root partition ([DM-Crypt / LUKS](/index.php/Dm-crypt "Dm-crypt")) using the `encrypt` [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook:
-
- `*esp*/loader/entries/arch-encrypted.conf` 
-```
-title Arch Linux Encrypted
-linux /vmlinuz-linux
-initrd /initramfs-linux.img
-options cryptdevice=UUID=<UUID>:<mapped-name> root=/dev/mapper/<mapped-name> quiet rw
-```
-
-UUID is used in this example; `PARTUUID` should be able to replace the UUID, if so desired. You may also replace the `/dev` path with a regular UUID. `mapped-name` is whatever you want it to be called. See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
-
-If you are using LVM, your cryptdevice line will look like this:
-
- `*esp*/loader/entries/arch-encrypted-lvm.conf` 
-```
-title Arch Linux Encrypted LVM
-linux /vmlinuz-linux
-initrd /initramfs-linux.img
-options cryptdevice=UUID=<UUID>:MyVolGroup root=/dev/mapper/MyVolGroup-MyVolRoot quiet rw
-```
-
-You can also add other EFI programs such as `\EFI\arch\grub.efi`.
-
-#### btrfs subvolume root installations
-
-If booting a [btrfs](/index.php/Btrfs "Btrfs") subvolume as root, amend the `options` line with `rootflags=subvol=<root subvolume>`. In the example below, root has been mounted as a btrfs subvolume called 'ROOT' (e.g. `mount -o subvol=ROOT /dev/sdxY /mnt`):
-
- `*esp*/loader/entries/arch-btrfs-subvol.conf` 
-```
-title          Arch Linux
-linux          /vmlinuz-linux
-initrd         /initramfs-linux.img
-options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw rootflags=subvol=ROOT
-```
-
-A failure to do so will otherwise result in the following error message: `ERROR: Root device mounted successfully, but /sbin/init does not exist.`
-
-#### ZFS root installations
-
-When booting from a [ZFS](/index.php/ZFS "ZFS") dataset, add `zfs=<root dataset>` to the `options` line. Here the root dataset has been set to 'zroot/ROOT/default':
-
- `*esp*/loader/entries/arch-zfs.conf` 
-```
-title          Arch Linux ZFS
-linux          /vmlinuz-linux
-initrd         /initramfs-linux.img
-options        zfs=zroot/ROOT/default rw
-```
-
-When booting off of a ZFS dataset ensure that it has had the `bootfs` property set with `zpool set bootfs=<root dataset> <zpool>`.
+An example entry file is located at `/usr/share/systemd/bootctl/arch.conf`. The [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for scenarios such as [LVM](/index.php/LVM "LVM"), [LUKS](/index.php/LUKS "LUKS") or [dm-crypt](/index.php/Dm-crypt "Dm-crypt") can be found on the relevant pages.
 
 #### EFI Shells or other EFI apps
 
@@ -268,15 +166,17 @@ efi    /EFI/shellx64_v2.efi
 
 ### Preparing kernels for EFI\Linux
 
-*EFI\Linux* is searched for specially prepared kernel files, which bundle the kernel, the initrd, the kernel command line and /etc/os-release into one file. This file can be easily signed for secure boot.
+*EFI\Linux* is searched for specially prepared kernel files, which bundle the kernel, the initrd, the kernel command line and `/etc/os-release` into one file. This file can be easily signed for secure boot.
 
-Create the bundle file like this:
+**Note:** `systemd-boot` requires that the `os-release` file contain either `VERSION_ID` or `BUILD_ID` to generate an ID and automatically add the entry, which the Arch `os-release` does not. Either maintain your own copy with one of them, or make your bundling script generate it automatically.
+
+Put the kernel command line you want to use in a file, and create the bundle file like this:
 
  `Kernel packaging command:` 
 ```
 objcopy \
     --add-section .osrel="/usr/lib/os-release" --change-section-vma .osrel=0x20000 \
-    --add-section .cmdline="kernel command line" --change-section-vma .cmdline=0x30000 \
+    --add-section .cmdline="kernel-command-line.txt" --change-section-vma .cmdline=0x30000 \
     --add-section .linux="vmlinuz-file" --change-section-vma .linux=0x40000 \
     --add-section .initrd="initrd-file" --change-section-vma .initrd=0x3000000 \
     "/usr/lib/systemd/boot/efi/linuxx64.efi.stub" "linux.efi"
@@ -284,7 +184,7 @@ objcopy \
 
 Optionally sign *linux.efi* now (e.g. using *sbsigntools* from AUR).
 
-Copying *linux.efi* into `esp*\EFI\Linux*`.
+Copying *linux.efi* into `*esp*\EFI\Linux`.
 
 ### Support hibernation
 

@@ -3,8 +3,8 @@ Artículos relacionados
 *   [AUR helpers](/index.php/AUR_helpers "AUR helpers")
 *   [AurJson](/index.php/AurJson "AurJson")
 *   [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines")
-*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
-*   [makepkg](/index.php/Makepkg "Makepkg")
+*   [PKGBUILD (Español)](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)")
+*   [makepkg (Español)](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)")
 *   [pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
 *   [Official repositories (Español)](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
 *   [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)")
@@ -25,6 +25,10 @@ Un buen número de paquetes nuevos que entran en los repositorios oficiales tien
 *   [5 Feedback](#Feedback)
 *   [6 Compartir y mantener los paquetes](#Compartir_y_mantener_los_paquetes)
     *   [6.1 Enviar paquetes](#Enviar_paquetes)
+        *   [6.1.1 Reglas de envio](#Reglas_de_envio)
+        *   [6.1.2 Verificación](#Verificaci.C3.B3n)
+        *   [6.1.3 Crear un paquete nuevo](#Crear_un_paquete_nuevo)
+        *   [6.1.4 Subir paquetes](#Subir_paquetes)
     *   [6.2 Mantener los paquetes](#Mantener_los_paquetes)
     *   [6.3 Otras solicitudes](#Otras_solicitudes)
 *   [7 [community]](#.5Bcommunity.5D)
@@ -49,7 +53,7 @@ Un buen número de paquetes nuevos que entran en los repositorios oficiales tien
 
 Los usuarios pueden buscar y descargar PKGBUILD desde la [Interfaz Web de AUR](https://aur.archlinux.org). Estos PKGBUILD se pueden compilar en paquetes instalables usando [makepkg](/index.php/Makepkg "Makepkg"), y luego instalarlos con pacman.
 
-*   Asegúrese de que los paquetes del grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) están instalados (`pacman -S base-devel`).
+*   Asegúrese de que los paquetes del grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) están [instalados](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)").
 *   Léase el resto de este artículo para obtener más información que funciona como un breve tutorial sobre la instalación de los paquetes de AUR.
 *   Visite la [Interfaz Web de AUR](https://aur.archlinux.org) para obtener información sobre actualizaciones y otros eventos. Allí también encontrará estadísticas y una lista actualizada de los nuevos paquetes disponibles presentes en AUR.
 *   Léase [#FAQ](#FAQ) para obtener respuestas a las preguntas más comunes.
@@ -87,7 +91,7 @@ Lo que sigue es un ejemplo detallado de la instalación de un paquete llamado «
 
 Primero, asegúrese de que las herramientas necesarias estén instaladas. El grupo de paquetes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) debe ser suficiente; incluye [make](https://www.archlinux.org/packages/?name=make) y otras herramientas necesarias para compilar desde el código fuente.
 
-**Nota:** Los paquetes disponibles en AUR asumen que tiene instalado el grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), por lo que los paquetes de AUR no listan los elementos de este grupo como dependencias, incluso si el paquete no se puede compilar sin ellos. Por tanto, asegúrese que este grupo está instalado para prevenir que arroje errores sobre fallo al compilar.
+**Nota:** Los paquetes disponibles en AUR asumen que tiene [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), por lo que los paquetes de AUR no listan los elementos de este grupo como dependencias, incluso si el paquete no se puede compilar sin ellos. Por tanto, asegúrese que este grupo está instalado para prevenir que arroje errores sobre fallo al compilar.
 
 ```
 # pacman -S base-devel
@@ -185,7 +189,7 @@ $ pacman -Qm
 
 La [Interfaz Web de AUR](https://aur.archlinux.org) facilita hacer comentarios que permite a los usuarios proporcionar sugerencias y feedback para contribuir a mejorar el PKGBUILD. Evite pegar parches o PKGBUILD en la sección de comentarios: se vuelven rápidamente obsoletos y acaban ocupando innecesariamente mucho espacio. En su lugar, envie los archivos al mantenedor, o incluso utilice un [pastebin](/index.php/Pastebin_Clients "Pastebin Clients").
 
-Una de las actividades más fáciles para *todos* los usuarios de Arch es navegar por AUR y **votar** por sus paquetes favoritos utilizando la interfaz web. Todos los paquetes son elegibles para ser adoptados por un TU para su inclusión en [community], y el recuento de votos es uno de los factores considerados en este proceso, ¡por lo que votar es un interés de todos!
+Una de las actividades más fáciles para **todos** los usuarios de Arch es navegar por AUR y **votar** por sus paquetes favoritos utilizando la interfaz web. Todos los paquetes son elegibles para ser adoptados por un TU para su inclusión en [community], y el recuento de votos es uno de los factores considerados en este proceso, ¡por lo que votar es un interés de todos!
 
 ## Compartir y mantener los paquetes
 
@@ -213,6 +217,8 @@ libfoo/PKGBUILD
 libfoo/libfoo.install
 ```
 
+#### Reglas de envio
+
 Al enviar un paquete, observe las siguientes reglas:
 
 *   Marque la casilla [package database](https://www.archlinux.org/packages/) para el paquete. Si existe, **no** envie el paquete. Si el paquete actual está roto o falta alguna función incluida, es preferible enviar un [informe de errores](https://bugs.archlinux.org/).
@@ -224,6 +230,76 @@ Al enviar un paquete, observe las siguientes reglas:
 *   Los repositorios AUR y oficiales están diseñados para paquetes que instalan generalmente software y contenido relacionado con el software, incluyendo uno o más de los siguientes: archivo(s) ejecutable, archivo(s) de configuración, documentación en línea o fuera de línea para un software, en particular, o para la distribución Arch Linux, en general; archivos multimedia destinados a ser utilizados directamente por el software.
 *   Obtenga un poco de experiencia antes de enviar los paquetes. Compile algunos paquetes para conocer el proceso y luego enviarlos.
 *   Si se presenta un `package.tar.gz` con un archivo llamado «`package`» obtendrá el siguiente error: «Could not change to directory `/home/aur/unsupported/package/package`». Para resolver este problema, cambie el nombre del archivo llamado «`package`» con otro nombre, por ejemplo, «`package.rc`». Cuando se instale en el directorio `pkg` puede cambiar su nombre de nuevo a «`package`». Léase también [Arch packaging standards#Submitting packages to the AUR](/index.php/Arch_packaging_standards#Submitting_packages_to_the_AUR "Arch packaging standards").
+
+#### Verificación
+
+Para tener acceso de modificación en AUR se necesita tener [llaves de SSH](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)"). El contenido de la llave pública debe ser copiado en la pagina del perfil en la sección *My Account*, y la llave privada correspondiente debe ser configurada para el servidor `aur.archlinux.org`. Por ejemplo:
+
+ `~/.ssh/config` 
+```
+Host aur.archlinux.org
+  IdentityFile ~/.ssh/aur
+  User aur
+```
+
+En el escenario ideal se debe crear un [nuevo par de llaves](/index.php/SSH_keys_(Espa%C3%B1ol)#Generando_las_llaves_SSH "SSH keys (Español)") y no usar uno existente, así se pueden revocar selectiva mente en caso de que algo ocurra:
+
+```
+$ ssh-keygen -f ~/.ssh/aur
+
+```
+
+**Tip:** Se pueden agregar múltiples llaves en su perfil separandolas con una nueva linea.
+
+#### Crear un paquete nuevo
+
+Para crear un repositorio Git vació para un paquete, simplemente `git clone` el repositorio remoto con el nombre correspondiente. Si el paquete no existe en AUR, la siguiente advertencia será vista:
+
+ `$ git clone ssh://aur@aur.archlinux.org/*package_name*.git` 
+```
+Cloning into '*package_name*'...
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
+```
+
+**Nota:** Cuando un paquete es borrado de AUR, el repositorio git no es borrado, asi que al clonar el repositorio puede que no este vació si alguien quiere crear un paquete con el mismo nombre.
+
+Si hay un repositorio git existente, simplemente se crea un *remote* para el repositorio git de AUR y luego *fetch* en el repositorio:
+
+```
+$ git remote add *nombre_remoto* ssh://aur@aur.archlinux.org/*nombre_paquete*.git
+$ git fetch *nombre_remoto*
+
+```
+
+Donde `*nombre_remoto*` es el nombre del *remote* a crear (*v.g.,* "origen"). Vea [Git#Using remotes](/index.php/Git#Using_remotes "Git") para mayor información.
+
+El paquete aparecerá en AUR después del primer *push*. Desde ese momento se pueden agregar archivos con codigo fuente a la copia local del repositorio git. Vea [#Subir paquetes](#Subir_paquetes).
+
+**Advertencia:** Sus AUR *commits* tendran como autor su usuario y correo electronico configurado en git, es muy dificil cambiar un *commit* despueś que ha sido subida (vea [FS#45425](https://bugs.archlinux.org/task/45425)). Si desea enviar paquetes con un autor/email diferente lo puede hacer con el comando `git config user.name [...]` y `git config user.email [...]`. Revise sus *commits* y documentos antes de subirlos!
+
+#### Subir paquetes
+
+El procedimiento para subir paquetes to AUR es el mismo para paquetes nuevos o para actualizaciones. Se necesita como mínimo un [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)") y un [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") en el directorio de trabajo para subir (*push*) su paquete a AUR.
+
+**Nota:** se necesita generar el archivo `.SRCINFO` cada vez que se cambie la metainformación del `PKGBUILD`, por ejemplo al modificar [pkgver()](/index.php/PKGBUILD_(Espa%C3%B1ol)#Variables "PKGBUILD (Español)") en actualizaciones. De otra manera AUR web no va a mostrar las versiones actualizadas .
+
+Para subir, añada el `PKGBUILD`, `.SRCINFO`, y cualquier otro archivo necesario (como arachivos `.install` o fuentes locales `.patch`) con `git add`, suba a su arbol local con un mensaje descriptivo `git commit`, y finalmente suba sus cambios a AUR con `git push`.
+
+Ejemplo concreto:
+
+```
+$ makepkg --printsrcinfo > .SRCINFO
+$ git add PKGBUILD .SRCINFO
+$ git commit -m "*useful commit message*"
+$ git push
+
+```
+
+**Tip:**
+
+*   Si inicialmente se ha olvidado el archivo `.SRCINFO` y lo ha agregado en un *commit* después, AUR va a rechazar sus subidas porque el archivo `.SRCINFO` debe existir en *cada* subida (*push*). Para solucionar este problema puede usar el comando [git rebase](https://git-scm.com/docs/git-rebase) con la opción `--root` o el comando [git filter-branch](https://git-scm.com/docs/git-filter-branch) con la opción `--tree-filter`.
+*   Para prevenir archivos sin rastrear en las subidas, y para mantener el directorio de trabajo tan limpio como sea posible, excluya todos los archivos no deseados con `.gitignore` y fuerce agregar manualmente cada archivo. Vea [dotfiles#Using gitignore](/index.php/Dotfiles#Using_gitignore "Dotfiles").
 
 ### Mantener los paquetes
 

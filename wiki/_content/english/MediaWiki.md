@@ -71,7 +71,7 @@ You will need to create the directory if it doesn't exist and then restrict its 
 
 Copy `/etc/webapps/mediawiki/apache.example.conf` to `/etc/httpd/conf/extra/mediawiki.conf` and edit it as needed.
 
-Add the following line to `/etc/httpd/conf/httpd.conf`
+Add the following line to `/etc/httpd/conf/httpd.conf`:
 
 ```
 Include conf/extra/mediawiki.conf

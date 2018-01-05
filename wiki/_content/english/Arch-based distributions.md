@@ -53,6 +53,7 @@ This is a listing of OS distributions which are [derived](/index.php/DeveloperWi
 *   [Hyperbola](http://hyperbola.info/)
 *   [KaOS](https://sourceforge.net/projects/kaosx/)
 *   [LinHES](http://linhes.org/)
+*   [MagpieOS](https://sourceforge.net/projects/magpieos/)
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
 *   [MorpheusArch](https://sourceforge.net/projects/morpheusarch-lxqt/)
 *   [MSYS2](https://sourceforge.net/projects/msys2/)

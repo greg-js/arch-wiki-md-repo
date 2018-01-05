@@ -367,66 +367,6 @@ WantedBy=timers.target
 
 [Start/enable](/index.php/Start/enable "Start/enable") the `roothints.timer` systemd timer.
 
-If you want roothints.service to restart on failure until it successfully connects to the internet:
-
- `/etc/systemd/system/roothints.service` 
-```
-[Unit]
-
-Description=Update root hints for unbound
-
-After=dhcpcd@<DEVICE>.service
-
-[Service]
-
-TimeoutStartSec=0
-
-Restart=on-failure
-
-RestartSec=120
-
-ExecStartPre=/bin/sleep 120
-
-ExecStart=/usr/bin/bash -c 'isitalive=$(/usr/bin/systemctl is-active dhcpcd@<DEVICE>.service); if [ "$isitalive" == "active" ]; then /usr/bin/curl -v -o /etc/unbound/root.hints https://www.internic.net/domain/named.cache; fi; if [ "$isitalive" == "inactive" ]; then exit 1; fi' 
-```
-
-Fill in your <DEVICE> with the active internet interface from `ip link`
-
- `/etc/systemd/system/roothints.timer` 
-```
-[Unit]
-
-Description=Run root.hints monthly
-
-[Timer]
-
-OnCalendar=monthly
-
-Persistent=true
-
-[Install]
-
-WantedBy=timers.target 
-```
-
-You can use a custom date like this: `OnCalendar=*-*-12 12:00:00`. That would run the job on the 12th of every month at 12pm local time.
-
-```
-   sudo systemctl enable roothints.timer
-
-   sudo systemctl start roothints.timer
-
-   sudo systemctl status roothints.timer
-
-```
-
-And if you want to test out the service to make sure that it is working correctly:
-
-```
-   sudo systemctl start roothints.service
-
-```
-
 ## Troubleshooting
 
 ### Issues concerning num-threads

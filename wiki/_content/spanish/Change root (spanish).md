@@ -17,6 +17,7 @@ Artículos relacionados
 *   [4 Ejecutar aplicaciones gráficas en entornos chroot](#Ejecutar_aplicaciones_gr.C3.A1ficas_en_entornos_chroot)
 *   [5 Realizar el mantenimiento del sistema](#Realizar_el_mantenimiento_del_sistema)
 *   [6 Salir del entorno chroot](#Salir_del_entorno_chroot)
+    *   [6.1 Desmonte recursivo](#Desmonte_recursivo)
 *   [7 Ejemplo](#Ejemplo)
 *   [8 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
@@ -71,7 +72,7 @@ Si bien es posible montar sistemas de archivos después de efectuar chroot, es m
 
 ### Usando arch-chroot
 
-El script `arch-chroot` es parte del paquete [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) de los [[Official repositories (Español)]|repositorios oficiales]. El script monta los sistemas de archivos de la API como `/proc` y pone disponible al chroot `/etc/resolv.conf` antes de ejecutar `/usr/bin/chroot`.
+El script `arch-chroot` es parte del paquete [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). El script monta los sistemas de archivos de la API como `/proc` y pone disponible al chroot `/etc/resolv.conf` antes de ejecutar `/usr/bin/chroot`.
 
 Ejecute arch-chroot con el nuevo directorio raíz como primer argumento:
 
@@ -95,6 +96,8 @@ Para ejecutar `mkinitcpio -p linux` desde el chroot y salir inmediatamente:
 ```
 
 ### Usando chroot
+
+**Advertencia:** Al usar el parámetro `--rbind`, algunos sub directorios `dev/` y `sys/` no se va a poder desmontar. Al intentar el desmonte con `umount -l` romperá la sesión, requiriendo reiniciar el sistema. En lo posible use `-o bind` en su lugar.
 
 Monte los sistemas de archivos temporales:
 
@@ -243,6 +246,16 @@ Por último, desmonte la partición root:
 	 `# umount -f /mnt` 
 
 Después de esto, será capaz de reiniciar el sistema de forma segura.
+
+### Desmonte recursivo
+
+Para desmontar de manera recursiva, sin necesidad de desmontar cada directorio manualmente, ejecute:
+
+```
+# cd /
+# umount --recursive */mnt*
+
+```
 
 ## Ejemplo
 

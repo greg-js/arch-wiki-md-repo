@@ -35,7 +35,7 @@ Los [gestores de pantallas](/index.php/Display_manager_(Espa%C3%B1ol) "Display m
 
 ## Instalación
 
-GDM (que también forma parte de [gnome](https://www.archlinux.org/groups/x86_64/gnome/)) puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") con el paquete [gdm](https://www.archlinux.org/packages/?name=gdm), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+GDM (que también forma parte de [gnome](https://www.archlinux.org/groups/x86_64/gnome/)) puede ser [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") con el paquete [gdm](https://www.archlinux.org/packages/?name=gdm), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ### GDM como la pantalla de bienvenida predeterminada
 
@@ -69,7 +69,7 @@ xsetroot -solid black              # Establece el fondo en negro
 
 #### Herramienta gráfica de configuración
 
-Puede instalar [gdm3setup](https://aur.archlinux.org/packages/gdm3setup/) desde AUR para configurar GDM. Se le permitirá cambiar algunas opciones de configuración, como el tema, la conexión automática o el formato de fecha, etc.
+Puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [gdm3setup](https://aur.archlinux.org/packages/gdm3setup/) desde AUR para configurar GDM. Se le permitirá cambiar algunas opciones de configuración, como el tema, la conexión automática o el formato de fecha, etc.
 
 Sin embargo, no tiene la opción de cambiar el idioma.
 

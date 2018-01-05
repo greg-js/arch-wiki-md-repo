@@ -1,6 +1,7 @@
 Artículos relacionados
 
 *   [dm-crypt (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)")
+*   [GnuPG (Español)](/index.php/GnuPG_(Espa%C3%B1ol) "GnuPG (Español)")
 *   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
 *   [eCryptfs](/index.php/ECryptfs "ECryptfs")
 *   [EncFS](/index.php/EncFS "EncFS")

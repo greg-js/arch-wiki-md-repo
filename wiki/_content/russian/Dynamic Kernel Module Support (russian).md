@@ -34,10 +34,10 @@
 *   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst"): [catalyst-dkms](https://aur.archlinux.org/packages/catalyst-dkms/)
 *   [NVIDIA](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)"):
     *   [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms)
+    *   [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)
     *   [nvidia-304xx-dkms](https://www.archlinux.org/packages/?name=nvidia-304xx-dkms)
     *   [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/)
     *   [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/)
-    *   [nvidia-grsec-dkms](https://aur.archlinux.org/packages/nvidia-grsec-dkms/)
 *   [VirtualBox](/index.php/VirtualBox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "VirtualBox (Русский)"):
     *   [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
     *   [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)

@@ -29,4 +29,4 @@ In order to test an arch package, keep the following aspects in mind:
 
 You can coordinate with other testers on the [#archlinux-testing](ircs://chat.freenode.net/archlinux-testing) IRC channel.
 
-You can follow updates by packager activity on the [arch-commits](https://list.archlinux.org/pipermail/arch-commits) mailing list (high traffic).
+You can follow updates by packager activity on the [arch-commits](https://lists.archlinux.org/pipermail/arch-commits) mailing list (high traffic).

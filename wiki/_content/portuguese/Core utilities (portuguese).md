@@ -1,34 +1,34 @@
-Related articles
+Artigos relacionados
 
 *   [Bash](/index.php/Bash "Bash")
 *   [Zsh](/index.php/Zsh "Zsh")
-*   [General recommendations](/index.php/General_recommendations "General recommendations")
-*   [GNU Project](/index.php/GNU_Project "GNU Project")
+*   [Recomendações gerais](/index.php/Recomenda%C3%A7%C3%B5es_gerais "Recomendações gerais")
+*   [Projeto GNU](/index.php/Projeto_GNU "Projeto GNU")
 *   [sudo](/index.php/Sudo "Sudo")
 *   [cron](/index.php/Cron "Cron")
-*   [man page](/index.php/Man_page "Man page")
+*   [Página man](/index.php/P%C3%A1gina_man "Página man")
 *   [Securely wipe disk#shred](/index.php/Securely_wipe_disk#shred "Securely wipe disk")
 *   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
 *   [Color output in console](/index.php/Color_output_in_console "Color output in console")
 
-This article deals with so-called *core* utilities on a GNU/Linux system, such as *less*, *ls*, and *grep*. The scope of this article includes, but is not limited to, those utilities included with the GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) package. What follows are various tips and tricks and other helpful information related to these utilities.
+Este artigo trata dos utilitários chamados *core* ("principais") em um sistema GNU/Linux, como *less*, *ls* e *grep*. O escopo deste artigo inclui, mas não está limitado a, os utilitários incluídos no pacote GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils). O que se segue são várias dicas e truques e outras informações úteis relacionadas a esses utilitários.
 
 ## Contents
 
-*   [1 Basic commands](#Basic_commands)
+*   [1 Comandos básicos](#Comandos_b.C3.A1sicos)
 *   [2 cat](#cat)
 *   [3 dd](#dd)
 *   [4 grep](#grep)
 *   [5 find](#find)
 *   [6 iconv](#iconv)
-    *   [6.1 Convert a file in place](#Convert_a_file_in_place)
+    *   [6.1 Converter um arquivo no lugar](#Converter_um_arquivo_no_lugar)
 *   [7 ip](#ip)
 *   [8 locate](#locate)
 *   [9 less](#less)
-    *   [9.1 Vim as alternative pager](#Vim_as_alternative_pager)
+    *   [9.1 Vim como alternativa de paginador](#Vim_como_alternativa_de_paginador)
 *   [10 ls](#ls)
-    *   [10.1 Long format](#Long_format)
-    *   [10.2 File names containing spaces enclosed in quotes](#File_names_containing_spaces_enclosed_in_quotes)
+    *   [10.1 Formato longo](#Formato_longo)
+    *   [10.2 Nomes de arquivos contendo espaços envoltos por aspas](#Nomes_de_arquivos_contendo_espa.C3.A7os_envoltos_por_aspas)
 *   [11 lsblk](#lsblk)
 *   [12 mkdir](#mkdir)
 *   [13 mv](#mv)
@@ -41,82 +41,82 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
 *   [20 tar](#tar)
 *   [21 which](#which)
 *   [22 wipefs](#wipefs)
-*   [23 See also](#See_also)
+*   [23 Veja também](#Veja_tamb.C3.A9m)
 
-## Basic commands
+## Comandos básicos
 
-The following table lists basic shell commands every Linux user should be familiar with. See the below sections and *Related articles* for details.
+A tabela a seguir lista os comandos básicos do shell, cada usuário Linux deve estar familiarizado. Veja as seções abaixo e "Artigos relacionados" para obter detalhes.
 
-| Command | Description | Manual page | Example |
-| man | Show manual page for a command | [man(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man.7) | man ed |
-| cd | Change directory (shell built-in command) | [cd(1p)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) | cd /etc/pacman.d |
-| mkdir | Create a directory | [mkdir(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1) | mkdir ~/newfolder |
-| rmdir | Remove empty directory | [rmdir(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rmdir.1) | rmdir ~/emptyfolder |
-| rm | Remove a file | [rm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rm.1) | rm ~/file.txt |
-| rm -r | Remove directory and contents | rm -r ~/.cache |
-| ls | List files | [ls(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1) | ls *.mkv |
-| ls -a | List hidden files | ls -a /home/archie |
-| ls -al | List hidden files and file properties |
-| mv | Move a file | [mv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mv.1) | mv ~/compressed.zip ~/archive/compressed2.zip |
-| cp | Copy a file | [cp(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cp.1) | cp ~/.bashrc ~/.bashrc.bak |
-| chmod +x | Make a file [executable](/index.php/Executable "Executable") | [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) | chmod +x ~/.local/bin/myscript.sh |
-| cat | Show file contents | [cat(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1) | cat /etc/hostname |
-| strings | Show printable characters in binary files | [strings(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/strings.1) | strings /usr/bin/free |
-| find | Search for a file | [find(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/find.1) | find ~ -name myfile |
-| mount | Mount a partition | [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) | mount /dev/sdc1 /media/usb |
-| df -h | Show remaining space on all partitions | [df(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/df.1) |
-| ps -A | Show all running processes | [ps(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ps.1) |
-| killall | Kill all running instances of a process | [killall(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/killall.1) |
-| ss -at | Display a list of open TCP sockets | [ss(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) |
+| Comando | Descrição | Página de manual | Exemplo |
+| man | Mostra página de manual para um comando | [man(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man.7) | man ed |
+| cd | Muda o diretório (comando embutido no shell) | [cd(1p)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) | cd /etc/pacman.d |
+| mkdir | Cria um diretório | [mkdir(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1) | mkdir ~/novapasta |
+| rmdir | Remove diretório vazio | [rmdir(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rmdir.1) | rmdir ~/pastavazia |
+| rm | Remove um arquivo | [rm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rm.1) | rm ~/file.txt |
+| rm -r | Remove diretório e seu conteúdo | rm -r ~/.cache |
+| ls | Lista arquivos | [ls(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1) | ls *.mkv |
+| ls -a | Lista arquivos ocultos | ls -a /home/archie |
+| ls -al | Lista arquivos ocultos e propriedades de arquivos |
+| mv | Move um arquivo | [mv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mv.1) | mv ~/comprimido.zip ~/archive/comprimido2.zip |
+| cp | Copia uma arquivo | [cp(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cp.1) | cp ~/.bashrc ~/.bashrc.bak |
+| chmod +x | Torna um arquivo [executável](/index.php/Execut%C3%A1vel "Executável") | [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) | chmod +x ~/.local/bin/meuscript.sh |
+| cat | Mostrar conteúdo de arquivo | [cat(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1) | cat /etc/hostname |
+| strings | Mostra caracteres imprimíveis em arquivos binários | [strings(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/strings.1) | strings /usr/bin/free |
+| find | Pesquisa por um arquivo | [find(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/find.1) | find ~ -name meuarquivo |
+| mount | Monta uma partição | [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) | mount /dev/sdc1 /media/usb |
+| df -h | Mostra o espaço restante em todas as partições | [df(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/df.1) |
+| ps -A | Mostra todos os processos em execução | [ps(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ps.1) |
+| killall | Mata todas as instâncias em execução de um processo | [killall(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/killall.1) |
+| ss -at | Exibe uma lista de sockets TCP abertos | [ss(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) |
 
 ## cat
 
-[cat](https://en.wikipedia.org/wiki/cat_(Unix) is a standard Unix utility that concatenates and lists files.
+[cat](https://en.wikipedia.org/wiki/pt:cat_(Unix) "w:pt:cat (Unix)") é um utilitário padrão do Unix que concatena e lista arquivos.
 
-*   Because *cat* is not built into the shell, on many occasions you may find it more convenient to use a [redirection](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), for example in scripts, or if you care a lot about performance. In fact `< *file*` does the same as `cat *file*`.
+*   Porque o *cat* não é embutido no shell, em muitas ocasiões você pode achar mais conveniente usar um [redirecionamento](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), por exemplo em scripts, ou se você se preocupa muito com desempenho. De fato, `< *arquivo*` faz o mesmo que `cat *arquivo*`.
 
-*   *cat* is able to work with multiple lines:
+*   *cat* é capaz de trabalhar com várias linhas:
 
 ```
-$ cat << EOF >> *path/file*
-*first line*
+$ cat << EOF >> *caminho/arquivo*
+*primeira linha*
 ...
-*last line*
+*última linha*
 EOF
 
 ```
 
-Alternatively, using `printf`:
+Alternativamente, usando `printf`:
 
 ```
 $ printf '%s
-' 'first line' ... 'last line'
+' 'primeira linha' ... 'última linha'
 
 ```
 
-*   If you need to list file lines in reverse order, there is a utility called [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* reversed).
+*   Se você precisa listar linhas na ordem reversa, há um utilitários chamado [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* inverso).
 
 ## dd
 
-[dd](https://en.wikipedia.org/wiki/dd_(Unix) is a utility for Unix and Unix-like operating systems whose primary purpose is to convert and copy a file.
+[dd](https://en.wikipedia.org/wiki/pt:dd_(Unix) "w:pt:dd (Unix)") é um utilitário para o Unix e sistemas operacionais similares Unix, cujo principal objetivo é converter e copiar um arquivo.
 
-Similarly to *cp*, by default *dd* makes a bit-to-bit copy of the file, but with lower-level I/O flow control features.
+Similarmente ao *cp*, por padrão o *dd* faz cópia bit a bit do arquivo, mas com recursos de controle de fluxo de E/S de baixo nível.
 
-**Tip:** By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command. It is not available on older versions (before 8.24) of [coreutils](https://www.archlinux.org/packages/?name=coreutils).
+**Dica:** Por padrão, *dd* emite nada até a tarefa está finalizada. Para monitorar o progresso da operação, adicione a opção `status=progress` ao comando. Ela não está disponível em versões antigas (antes 8.24) do [coreutils](https://www.archlinux.org/packages/?name=coreutils).
 
-For more information see [dd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) or the [full documentation](https://www.gnu.org/software/coreutils/dd).
+Para mais informações, veja [dd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) ou da [documentação completa](https://www.gnu.org/software/coreutils/dd).
 
 ## grep
 
-[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (from [ed](https://en.wikipedia.org/wiki/Ed_(text_editor) "wikipedia:Ed (text editor)")'s *g/re/p*, *global/regular expression/print*) is a command line text search utility originally written for Unix. The *grep* command searches files or standard input for lines matching a given regular expression, and prints these lines to the program's standard output.
+[grep](https://en.wikipedia.org/wiki/pt:grep "w:pt:grep") (de *g/re/p*, *global/regular expression/print*, do [ed](https://en.wikipedia.org/wiki/pt:Ed_(software) "w:pt:Ed (software)")) é um utilitário de pesquisa de texto de linha de comando originalmente escrito para Unix. O comando *grep* pesquisa arquivos ou entrada padrão para linhas correspondendo a uma expressão regular dada, e imprime essas linhas para a saída padrão do programa.
 
-*   Remember that *grep* handles files, so a construct like `cat *file* | grep *pattern*` is replaceable with `grep *pattern* *file*`
-*   There are *grep* alternatives optimized for VCS source code, such as [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) and [ack](https://www.archlinux.org/packages/?name=ack).
-*   To include file line numbers in the output, use the `-n` option.
+*   Lembre-se que *grep* trata de arquivos, então um construto como `cat *arquivo* | grep *padrão*` pode ser substituído com `grep *padrão* *arquivo*`
+*   Há alternativas ao *grep* otimizadas para código fonte em VCS, tal como [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) e [ack](https://www.archlinux.org/packages/?name=ack).
+*   Para incluir números de linha de arquivo na saída, use a opção `-n`.
 
-**Note:** Some commands send their output to [stderr(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3), and grep has no apparent effect. In this case, redirect *stderr* to *stdout* with `*command* 2>&1 | grep *args*` or (for Bash 4) `*command* |& grep *args*`. See also [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
+**Nota:** Alguns comandos enviam suas saídas para [stderr(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3) e o grep não tem aparente efeito. Neste caso, redirecione *stderr* para *stdout* com `*comando* 2>&1 | grep *args*` ou (par Bash 4) `*comando* |& grep *args*`. Veja também [Redirecionamento de E/S](http://www.tldp.org/LDP/abs/html/io-redirection.html) (inglês).
 
-For color support, see [Color output in console#grep](/index.php/Color_output_in_console#grep "Color output in console").
+Para suporte a cores, veja [Color output in console#grep](/index.php/Color_output_in_console#grep "Color output in console").
 
 ## find
 
@@ -139,7 +139,7 @@ $ iconv -f ISO-8859-15 -t UTF-8 *foo* > *foo*.utf
 
 See [iconv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) for more details.
 
-### Convert a file in place
+### Converter um arquivo no lugar
 
 **Tip:** You can use [recode](https://www.archlinux.org/packages/?name=recode) instead of iconv if you do not want to touch the mtime.
 
@@ -199,7 +199,7 @@ See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/201
 
 See [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") for alternatives.
 
-### Vim as alternative pager
+### Vim como alternativa de paginador
 
 [Vim](/index.php/Vim "Vim") includes a script to view the content of text files, compressed files, binaries and directories. Add the following line to your shell configuration file to use it as a pager:
 
@@ -221,7 +221,7 @@ Now programs that use the `PAGER` environment variable, like [git](/index.php/Gi
 
 See `info ls` or [the online manual](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation) for more information.
 
-### Long format
+### Formato longo
 
 The `-l` option displays some metadata, for example:
 
@@ -255,7 +255,7 @@ Below, each file and subdirectory is represented by a line divided into 7 metada
 *   last modification timestamp;
 *   entity name.
 
-### File names containing spaces enclosed in quotes
+### Nomes de arquivos contendo espaços envoltos por aspas
 
 By default, file and directory names that contain spaces are displayed surrounded by single quotes. To change this behavior use the `-N` or `--quoting-style=literal` options. Alternatively, set the `QUOTING_STYLE` [environment variable](/index.php/Environment_variable "Environment variable") to `literal`. [[1]](https://unix.stackexchange.com/questions/258679/why-is-ls-suddenly-surrounding-items-with-spaces-in-single-quotes)
 
@@ -427,7 +427,7 @@ For example, to erase all signatures from the device `/dev/sdb` and create a sig
 
 ```
 
-## See also
+## Veja também
 
 *   [A sampling of coreutils](http://www.reddit.com/r/commandline/comments/19garq/a_sampling_of_coreutils_120/) [, part 2](http://www.reddit.com/r/commandline/comments/19ge6v/a_sampling_of_coreutils_2040/) [, part 3](http://www.reddit.com/r/commandline/comments/19j1w3/a_sampling_of_coreutils_4060/) - Overview of commands in coreutils
 *   [GNU Coreutils online documentation](https://www.gnu.org/software/coreutils/manual/coreutils.html)

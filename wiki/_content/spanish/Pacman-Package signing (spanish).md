@@ -1,3 +1,7 @@
+Related articles
+
+*   [GnuPG (Español)](/index.php/GnuPG_(Espa%C3%B1ol) "GnuPG (Español)")
+
 La herramienta pacman-key se usa tanto para configurar como para administrar las firmas de los paquetes con los que trabaja [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)"), el gestor de paquetes de Arch Linux, mediante claves [PGP](https://es.wikipedia.org/wiki/Pretty_Good_Privacy).
 
 ## Contents

@@ -29,6 +29,7 @@
         *   [3.2.4 Files](#Files)
             *   [3.2.4.1 Inline (Helm)](#Inline_.28Helm.29)
             *   [3.2.4.2 File manager (Dired)](#File_manager_.28Dired.29)
+            *   [3.2.4.3 Exiting](#Exiting)
     *   [3.3 Advanced concepts](#Advanced_concepts)
         *   [3.3.1 Layers](#Layers)
         *   [3.3.2 File Navigation](#File_Navigation)
@@ -314,6 +315,18 @@ There are some hotkeys available (refer to dired documentation for more):
 *   `+` - create new directory
 
 **Tip:** If you need more powerful file manager, check Ranger in `Advanced` section. It provides more features and can be the best replacement for Dired when you master it.
+
+##### Exiting
+
+Exiting the editor can be achieved with `SPC q` this will show the mutliple exiting methods.
+
+Some available are:
+
+*   `SPC qf` Quit current frame - good for emacsclient frames
+*   `SPC qq` Quit emacs Kill-emacs
+*   `SPC qr` Quit emacs and restart resuming layouts
+*   `SPC qR` Quit emacs and restart
+*   `SPC qd` Quit emacs and restart with --debug-init
 
 ### Advanced concepts
 

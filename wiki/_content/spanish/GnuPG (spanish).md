@@ -1,3 +1,8 @@
+Related articles
+
+*   [pacman/Package signing (Español)](/index.php/Pacman/Package_signing_(Espa%C3%B1ol) "Pacman/Package signing (Español)")
+*   [Disk encryption (Español)](/index.php/Disk_encryption_(Espa%C3%B1ol) "Disk encryption (Español)")
+
 [GnuPG](http://www.gnupg.org) permite cifrar y firmar tus datos y comunicaciones, incluye un sistema versátil de gestión de claves, así como módulos de acceso para toda clase de directorios de claves públicas.
 
 ## Contents
@@ -14,30 +19,38 @@
     *   [4.4 Importar una clave](#Importar_una_clave)
     *   [4.5 Listar claves](#Listar_claves)
 *   [5 Cifrar y descifrar](#Cifrar_y_descifrar)
-    *   [5.1 Cifrar una contraseña](#Cifrar_una_contrase.C3.B1a)
-*   [6 gpg-agent](#gpg-agent)
-    *   [6.1 Configuración](#Configuraci.C3.B3n)
-    *   [6.2 Recargar el agente](#Recargar_el_agente)
-    *   [6.3 pinentry](#pinentry)
-    *   [6.4 Iniciar gpg-agent con el usuario systemd](#Iniciar_gpg-agent_con_el_usuario_systemd)
-    *   [6.5 Frase de acceso desatendida](#Frase_de_acceso_desatendida)
-*   [7 Fiestas de firmado de claves](#Fiestas_de_firmado_de_claves)
-    *   [7.1 caff](#caff)
-*   [8 Smartcards](#Smartcards)
-    *   [8.1 Instalaciones solo con GnuPG](#Instalaciones_solo_con_GnuPG)
-    *   [8.2 GnuPG junto con OpenSC](#GnuPG_junto_con_OpenSC)
-*   [9 Resolución de problemas](#Resoluci.C3.B3n_de_problemas)
-    *   [9.1 su](#su)
-    *   [9.2 El agente se queja del final del archivo](#El_agente_se_queja_del_final_del_archivo)
-    *   [9.3 Permisos de configuración de KGpg](#Permisos_de_configuraci.C3.B3n_de_KGpg)
-    *   [9.4 Conflictos entre gnome-keyring y gpg-agent](#Conflictos_entre_gnome-keyring_y_gpg-agent)
-    *   [9.5 mutt y gpg](#mutt_y_gpg)
-    *   [9.6 Llaves "perdidas", actualizando a gnupg versión 2.1](#Llaves_.22perdidas.22.2C_actualizando_a_gnupg_versi.C3.B3n_2.1)
-*   [10 Ver también](#Ver_tambi.C3.A9n)
+    *   [5.1 Asimétrico](#Asim.C3.A9trico)
+    *   [5.2 Simétrico](#Sim.C3.A9trico)
+    *   [5.3 Cifrar una contraseña](#Cifrar_una_contrase.C3.B1a)
+*   [6 Firmas](#Firmas)
+    *   [6.1 Crear una firma](#Crear_una_firma)
+        *   [6.1.1 Firmar un documento](#Firmar_un_documento)
+        *   [6.1.2 Firma sencilla de un archivo o mensaje](#Firma_sencilla_de_un_archivo_o_mensaje)
+        *   [6.1.3 Crear una firma independiente](#Crear_una_firma_independiente)
+    *   [6.2 Verificación de firmas](#Verificaci.C3.B3n_de_firmas)
+*   [7 gpg-agent](#gpg-agent)
+    *   [7.1 Configuración](#Configuraci.C3.B3n)
+    *   [7.2 Recargar el agente](#Recargar_el_agente)
+    *   [7.3 pinentry](#pinentry)
+    *   [7.4 Iniciar gpg-agent con el usuario systemd](#Iniciar_gpg-agent_con_el_usuario_systemd)
+    *   [7.5 Frase de acceso desatendida](#Frase_de_acceso_desatendida)
+*   [8 Fiestas de firmado de claves](#Fiestas_de_firmado_de_claves)
+    *   [8.1 caff](#caff)
+*   [9 Smartcards](#Smartcards)
+    *   [9.1 Instalaciones solo con GnuPG](#Instalaciones_solo_con_GnuPG)
+    *   [9.2 GnuPG junto con OpenSC](#GnuPG_junto_con_OpenSC)
+*   [10 Resolución de problemas](#Resoluci.C3.B3n_de_problemas)
+    *   [10.1 su](#su)
+    *   [10.2 El agente se queja del final del archivo](#El_agente_se_queja_del_final_del_archivo)
+    *   [10.3 Permisos de configuración de KGpg](#Permisos_de_configuraci.C3.B3n_de_KGpg)
+    *   [10.4 Conflictos entre gnome-keyring y gpg-agent](#Conflictos_entre_gnome-keyring_y_gpg-agent)
+    *   [10.5 mutt y gpg](#mutt_y_gpg)
+    *   [10.6 Llaves "perdidas", actualizando a gnupg versión 2.1](#Llaves_.22perdidas.22.2C_actualizando_a_gnupg_versi.C3.B3n_2.1)
+*   [11 Ver también](#Ver_tambi.C3.A9n)
 
 ## Instalación
 
-[Instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [gnupg](https://www.archlinux.org/packages/?name=gnupg), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instala](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [gnupg](https://www.archlinux.org/packages/?name=gnupg), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Esto instalará también [pinentry](https://www.archlinux.org/packages/?name=pinentry), una colección de diálogos sencillos para introducción de PINs o contraseñas que GnuPG utiliza para la introducción de frases de acceso. *pinenetry* está señalado por el enlace simbólico `/usr/bin/pinentry`, que por defecto apunta a `/usr/bin/pinentry-gtk-2`.
 
@@ -255,24 +268,62 @@ $ gpg --list-secret-keys
 
 Cuando se cifra y se descifra es posible tener en uso más de una clave privada. Si esto ocurre necesitas seleccionar la clave activa. Esto se puede hacer usando la opción `-u *<user-id>*` o la opción `--local-user *<user-id>*`. Esto hace que se use la clave especificada en lugar de la clave por defecto.
 
-Para cifrar un archivo:
+Existen dos métodos convencionales de cifrado/descifrado, [asimétrico y simétrico](https://es.wikipedia.org/wiki/Cifrado_(criptograf%C3%ADa)#Tipos_de_cifrado_según_sus_claves). Los usos principales van a ser explicados en las siguientes secciones.
+
+#### Asimétrico
+
+Necesita [importar la clave](#Importar_una_clave) del recipiente antes de cifrar (opción `--encrypt` o `-e`) un archivo o un mensaje a este (opción `--recipient` o `-r`). Adicionalmente se necesita [#Crear una clave](#Crear_una_clave) si no lo ha hecho.
+
+Para cifrar un archivo con el nombre *doc*, ejecute:
 
 ```
-$ gpg --encrypt -o secret.tar.gpg secret.tar
-
-```
-
-*   Si quieres cambiar el destinatario, lo puedes hacer con la opción `-r *<user-id>*` (o `--recipient *<user-id>*`).
-*   Puedes usar GnuPG para cifrar tus documentos privados, perso solo un archivo a la vez. Si quieres cifrar directorios o un sistema de archivos completo, deberías considerar la utilización de [TrueCrypt](/index.php?title=TrueCrypt_(Espa%C3%B1ol)&action=edit&redlink=1 "TrueCrypt (Español) (page does not exist)") o [EncFS](/index.php?title=EncFS_(Espa%C3%B1ol)&action=edit&redlink=1 "EncFS (Español) (page does not exist)"), aunque siempre puedes empaquetar varios archivos juntos y después cifrar el paquete.
-
-Para descifrar un archivo, usa:
-
-```
-$ gpg --decrypt secret.tar.gpg
+$ gpg --recipient *user-id* --encrypt *doc*
 
 ```
 
-Se te pedirá que introduzcas tu frase de acceso.
+Para descifrar un archivo con el nombre *doc*.gpg con su clave pública, use el parámetro `--decrypt` o `-d`:
+
+```
+$ gpg --output *doc* --decrypt *doc*.gpg
+
+```
+
+*gpg* le preguntará por su contraseña y después descifrara y escribirá la información de *doc*.gpg a *doc*. Si el parámetro `-o` (`--output`) se omite, *gpg* escribirá la información a stdout.
+
+**Tip:**
+
+*   Agregue `--armor` para cifrar un archivo usando ASCII armor (apropiado para copiar y pegar el mensaje en formato de texto)
+*   Use `-R *user-id*` o `--hidden-recipient *user-id*` en lugar de `-r` para no poner la clave del recipiente en el mensaje cifrado. Esto ayuda a ocultar el recipiente del mensaje y es una medida limitada de protección contra el análisis de trafico.
+*   Agregue `--no-emit-version` para prevenir la impresión de la versión, también se puede modificar este parámetro en el archivo de configuración.
+*   Es posible usar gnupg para cifrar documentos delicados con su propio *user-id* como recipiente o usando el parametro `--default-recipient-self`; de cualquier manera, esto solo se puede hacer un archivo a la vez, aunque se pueden comprimir varios archivos en un tarball y después cifrar el tarball. Vea tambien [Disk_encryption_(Español)#Métodos_disponibles](/index.php/Disk_encryption_(Espa%C3%B1ol)#M.C3.A9todos_disponibles "Disk encryption (Español)") si quiere cifrar directorios enteros o incluso todo sus sistema de archivos.
+
+#### Simétrico
+
+Cifrado simétrico no requiere la generación de claves y puede ser usada para cifrar datos con una contraseña. Simplemente use `--symmetric` o `-c` para efectuar el cifrado:
+
+```
+$ gpg -c *doc*
+
+```
+
+Por ejemplo:
+
+*   Para cifrar `*doc*` de manera simétrica con una contraseña
+*   Usando el algoritmo AES-256 para cifrar la contraseña
+*   Usando el algoritmo SHA-512 para ofuscar la contraseña
+*   Ofusca la contraseña en 65536 iteraciones
+
+```
+$ gpg -c --s2k-cipher-algo AES256 --s2k-digest-algo SHA512 --s2k-count 65536 *doc*
+
+```
+
+Para descifrar un archivo `*doc*.gpg` simetricamente cifrado usando una contrasena y para poner los archivos resultantes `*doc*` en el mismo directorio, ejecute:
+
+```
+$ gpg --output *doc* --decrypt *doc*.gpg
+
+```
 
 ### Cifrar una contraseña
 
@@ -290,6 +341,74 @@ $ gpg -e -a -r *<user-id>* *tu_archivo_de_contraseña*
 `-e` es para cifrar, `-a` para una salida blindada (salida ASCII), `-r` para el ID de usuario del destinatario.
 
 Tras hacer esto tendrás un nuevo archivo `*tu_archivo_de_contraseña*.asc`.
+
+## Firmas
+
+Firmas certifican y marcan el tiempo en documentos. Si el documento es modificado, la verificación de la firma fallará. A diferencia de criptografía regular que usa claves públicas para cifrar un documento, firmas son creadas con la clave privada del usuario. El recipiente de un documento firmado verifica dicha firma con la clave publica del remitente.
+
+### Crear una firma
+
+#### Firmar un documento
+
+Para firmar un documento use el parámetro `--sign` o `-s`:
+
+```
+ $ gpg --output *doc*.sig --sign *doc*
+
+```
+
+`*doc*.sig` contiene una versión comprimida del documento original `*doc*` y la firma en formato binario, pero el archivo no esta cifrado. Es posible combinar la firma con [cifrado](#Cifrar_y_descifrar).
+
+#### Firma sencilla de un archivo o mensaje
+
+Para firmar un archivo sin comprimirlo en formato binario ejecute:
+
+```
+ $ gpg --output *doc*.sig --clearsign *doc*
+
+```
+
+En este caso el documento original `*doc*` y la firma son guardados en de la forma `*doc*.sig`, la cual es simple de leer.
+
+#### Crear una firma independiente
+
+Para crear una firma que puede ser distribuida de manera separada al archivo, use el parámetro `--detach-sig`:
+
+```
+ $ gpg --output *doc*.sig --detach-sig *doc*
+
+```
+
+En este caso la firma es guardada en `*doc*.sig`, pero el contenido de `*doc*` no es guardado allí. Este método es usado generalmente en la distribución de proyectos de software, permitiendo a los usuarios verificar que el programa no ha sido modificado por un tercero.
+
+### Verificación de firmas
+
+Para verificar una firma use el parámetro `--verify`:
+
+```
+ $ gpg --verify *doc*.sig
+
+```
+
+Donde `*doc*.sig` es el documento firmado conteniendo la firma que se quiere verificar.
+
+Si se esta verificando una firma independiente, la firma y el documento tiene que estar presentes para la verificación. Por ejemplo, para verificar el ISO de Arch Linux ejecute:
+
+```
+ $ gpg --verify archlinux-*version*.iso.sig
+
+```
+
+donde `archlinux-*version*.iso` debe estar ubicado en el mismo directorio.
+
+También se puede especificar el archivo fuente en el segundo argumento del comando:
+
+```
+ $ gpg --verify archlinux-*version*.iso.sig */ruta/a/*archlinux-*version*.iso
+
+```
+
+Si un archivo ha sido cifrado ademas de ser firmado, simplemente [descifre](#Cifrar_y_descifrar) el archivo y su firma será verificada.
 
 ## gpg-agent
 

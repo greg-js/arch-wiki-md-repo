@@ -29,9 +29,9 @@ There are several options:
 *   [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) - daemon, with CLI, and [#Web Interface](#Web_Interface).
 *   [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) - GTK+ 3 package.
 *   [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) - Qt5 package.
-*   [transmission-remote-cli-git](https://aur.archlinux.org/packages/transmission-remote-cli-git/) - Curses interface for the daemon.
+*   [tremc-git](https://aur.archlinux.org/packages/tremc-git/) - Curses interface for the daemon.
 
-**Note:** The GTK+ client cannot connect to the daemon, so users wishing to use the daemon will need to consider using the Qt package for a GUI or the remote-cli package for a curses-based GUI.
+**Note:** The GTK+ client cannot connect to the daemon, so users wishing to use the daemon will need to consider using the Qt package for a GUI or the tremc package for a curses-based GUI.
 
 ## Configuring the GUI version
 
@@ -57,7 +57,7 @@ The commands for *transmission-cli* are:
 
 	*transmission-cli*: ([deprecated](https://github.com/transmission/transmission/commit/950387ab5a443629598f93c057f41150707866ab)) starts a non-daemonized local instance of *transmission*, for manually downloading a torrent.
 
-	*transmission-remote-cli*: (requires [transmission-remote-cli-git](https://aur.archlinux.org/packages/transmission-remote-cli-git/)) starts the [curses](https://en.wikipedia.org/wiki/curses_(programming_library) interface for the daemon, whether local or remote.
+	*tremc*: (requires [tremc-git](https://aur.archlinux.org/packages/tremc-git/)) starts the [curses](https://en.wikipedia.org/wiki/curses_(programming_library) interface for the daemon, whether local or remote.
 
 ### Starting and stopping the daemon
 

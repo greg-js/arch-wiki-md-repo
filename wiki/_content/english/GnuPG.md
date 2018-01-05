@@ -200,7 +200,7 @@ $ gpg --recv-keys *key-id*
 
 **Warning:**
 
-*   You should verify the authenticity of the retrieved public key by comparing its fingerprint with one that the owner published on an independent source(s) (i.e., contacting the person directly). See [Wikipedia:Public key fingerprint](https://en.wikipedia.org/wiki/Public_key_fingerprint "wikipedia:Public key fingerprint") for more information.
+*   You should verify the authenticity of the retrieved public key by comparing its fingerprint with one that the owner published on an independent source(s) (e.g., contacting the person directly). See [Wikipedia:Public key fingerprint](https://en.wikipedia.org/wiki/Public_key_fingerprint "wikipedia:Public key fingerprint") for more information.
 *   Using a short ID may encounter collisions. All keys will be imported that have the short ID. To avoid this, use the full fingerprint or long key ID when receiving a key.[[2]](https://lkml.org/lkml/2016/8/15/445)
 
 **Tip:**

@@ -1,13 +1,13 @@
 | **Device** | **Status** | **Modules** |
 | Intel | Working | xf86-video-intel |
-| Nvidia | Working | nvidia *or* nvidia-dkms |
+| Nvidia | Partially Working | nvidia *or* nvidia-dkms |
 | Wireless | Working | mwifiex |
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working | xf86-input-synaptics |
 | Touchscreen | Working | intel_ipts |
 | Camera | Not Working |
 | Card Reader | Working |
-| Bluetooth | Untested | btusb |
+| Bluetooth | Working | btusb |
 | Battery Stats | Not Working |
 
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on Microsoft Surface Book 2 devices.
@@ -17,6 +17,7 @@ This page contains instructions, tips, pointers, and links for installing and co
 *   [1 Compatibility](#Compatibility)
     *   [1.1 What works?](#What_works.3F)
     *   [1.2 What doesn't work?](#What_doesn.27t_work.3F)
+    *   [1.3 Nvidia](#Nvidia)
 *   [2 UEFI Setup and Secure Boot](#UEFI_Setup_and_Secure_Boot)
 *   [3 Booting](#Booting)
     *   [3.1 Boot from USB](#Boot_from_USB)
@@ -42,11 +43,17 @@ The laptop works surprisingly well with Arch Linux, but requires a customized ke
 *   Keyboard function and media keys, including volume and brightness adjustment of the keyboard and screen backlights.
 *   Wireless Networking
 *   Dedicated Nvidia graphics (If equipped)
+    *   With big caveats, detailed below.
 
 ### What doesn't work?
 
 *   Cameras
 *   Battery Stats
+*   Nvidia card is thermally throttled and the fan speed defaults to read-only zero keeping the throttle extremely low.
+
+### Nvidia
+
+The Nvidia 1050 and 1060 cards in the Surface Book 2 Performance Base are recognized by the kernel and supported by `nvidia` and `nvidia-dkms` drivers. However, when a load is put on the Nvidia graphics hardware, it immediately and severely throttles down to around 139MHz. The reason, as reported by `nvidia-smi`, is software thermal throttling. The cause is that, apparently, the fan cannot be controlled automatically, nor through `nvidia-smi` or `nvidia-settings`, even when the nvidia xorg `Coolbits` option is set to 8.
 
 ## UEFI Setup and Secure Boot
 

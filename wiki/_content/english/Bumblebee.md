@@ -72,12 +72,12 @@ Before installing Bumblebee, check your BIOS and activate Optimus (older laptops
 *   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - The main package providing the daemon and client programs.
 *   [mesa](https://www.archlinux.org/packages/?name=mesa) - An open-source implementation of the **OpenGL** specification.
 *   An appropriate version of the NVIDIA driver, see [NVIDIA#Installation](/index.php/NVIDIA#Installation "NVIDIA").
-*   Optionally install [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) - Intel driver.
+*   Optionally install [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) - Intel [Xorg](/index.php/Xorg "Xorg") driver.
 
-For 32-bit ([Multilib](/index.php/Multilib "Multilib") must be enabled) applications support on 64-bit machines, install:
+For 32-bit application support, enable the [Multilib](/index.php/Multilib "Multilib") repository and install:
 
 *   [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) - A render/display bridge for 32 bit applications.
-*   [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) or [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) or [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils) - match the version of the 64 bit package.
+*   [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) or [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) (match the version of the regular NVIDIA driver).
 
 In order to use Bumblebee, it is necessary to add your regular *user* to the `bumblebee` group:
 

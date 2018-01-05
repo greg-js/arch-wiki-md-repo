@@ -734,7 +734,6 @@ The following packages should be installed:
 *   [dvdrip](https://www.archlinux.org/packages/?name=dvdrip): GTK front-end for [transcode](https://www.archlinux.org/packages/?name=transcode), which performs the ripping and encoding
 *   [libdv](https://www.archlinux.org/packages/?name=libdv): Software codec for DV video
 *   [xvidcore](https://www.archlinux.org/packages/?name=xvidcore): If you want to encode your ripped files as XviD, an open source MPEG-4 video codec (free alternative to DivX).
-*   [divx4linux](https://aur.archlinux.org/packages/divx4linux/): If you want to encode your ripped files as DivX.
 *   [subtitleripper](https://aur.archlinux.org/packages/subtitleripper/): If you want to read and process subtitles.
 
 The dvd::rip preferences are mostly well-documented/self-explanatory. If you need help with something, see [http://www.exit1.org/dvdrip/doc/gui-gui_pref.cipp](http://www.exit1.org/dvdrip/doc/gui-gui_pref.cipp).

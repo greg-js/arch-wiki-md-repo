@@ -11,6 +11,7 @@ Dedicated article for common problems and solutions.
     *   [1.2 Group/GID permissions issues](#Group.2FGID_permissions_issues)
     *   [1.3 "Permission denied" when trying to write files as root](#.22Permission_denied.22_when_trying_to_write_files_as_root)
     *   [1.4 "RPC: Program not registered" when showmount -e command issued](#.22RPC:_Program_not_registered.22_when_showmount_-e_command_issued)
+    *   [1.5 UDP mounts not working](#UDP_mounts_not_working)
 *   [2 Client-side issues](#Client-side_issues)
     *   [2.1 mount.nfs4: No such device](#mount.nfs4:_No_such_device)
     *   [2.2 mount.nfs4: Invalid argument](#mount.nfs4:_Invalid_argument)
@@ -82,6 +83,10 @@ MOUNTD_OPTS="--manage-gids"
 Make sure that `nfs-server.service` and `rpcbind.service` are running on the server site, see [systemd](/index.php/Systemd "Systemd"). If they are not, start and enable them.
 
 Also make sure NFSv3 is enabled. *showmount* does **not** work with NFSv4-only servers.
+
+### UDP mounts not working
+
+*nfs-utils* disabled serving NFS over UDP in version 2.2.1\. Arch core updated to 2.3.1 on 21 Dec 2017 (skipping over 2.2.1.) If UDP stopped working then, add `udp=y` under `[nfsd]` in `/etc/nfs.conf`. Then restart `nfs-server.service`.
 
 ## Client-side issues
 
@@ -175,6 +180,8 @@ Use the relative path instead:
 ```
 
 ### Problems with Vagrant and synced_folders
+
+If you get an error about unuspported protocol, you need to enable NFS over UDP on your host (or make Vagrant use NFS over TCP.) See [NFS/Troubleshooting#UDP_mounts_not_working](/index.php/NFS/Troubleshooting#UDP_mounts_not_working "NFS/Troubleshooting").
 
 If Vagrant scripts are unable to mount folders over NFS, installing the *net-tools* package may solve the issue.
 

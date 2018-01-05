@@ -288,9 +288,9 @@ O intervalo de sincronização para dados e metadados pode ser aumentado, propor
 
 O 5 segundos padrão significa que, se a energia for perdida, será perdido tanto quanto os últimos 5 segundos de trabalho.
 
-Isso força uma sincronia completa de todos os dados/diários para mídia física a cada 5 segundos. O sistema de arquivos não será danificado, graças ao registro no *journaling*. O seguinte fstab ilustra o uso de `commit`:
+Isso força uma sincronia completa de todos os dados/diários para mídia física a cada 5 segundos. O sistema de arquivos não será danificado, graças ao registro no *journaling*. O seguinte [fstab](/index.php/Fstab "Fstab") ilustra o uso de `commit`:
 
- `/etc/fstab`  `/dev/sda5    /    ext4   defaults,noatime,**commit=999**    0    1` 
+ `/etc/fstab`  `/dev/sda5    /    ext4   defaults,noatime,**commit=60**    0    1` 
 
 ### Desligando barreiras
 
@@ -309,78 +309,78 @@ Para desligar as barreiras, adicione a opção `barrier=0` ao sistema de arquivo
 Desabilitar o journal do *ext4* pode ser feito com o seguinte comando em um disco desmontado:
 
 ```
-# tune2fs -O ^has_journal /dev/sdXN
+# tune2fs -O "^has_journal" /dev/sdXN
 
 ```
 
 ## Habilitando somas de verificação de metadados
 
-In both cases of enabling metadata checksums for new and existing filesystems, you will need to load some kernel modules.
+Em ambos os casos de permitir somas de verificação (*checksums*) de metadados para sistemas de arquivos novos e existentes, você precisará carregar alguns módulos de kernel.
 
-If your CPU supports SSE 4.2, make sure the `crc32c_intel` kernel module is loaded in order to enable the hardware accelerated CRC32C algorithm. If not you will need to load the `crc32c_generic` module.
+Se o seu CPU tem suporte a SSE 4.2, verifique se o módulo do kernel `crc32c_intel` está carregado para habilitar o algoritmo CRC32C acelerado por hardware. Caso contrário, você precisará carregar o módulo `crc32c_generic`.
 
-After this, you are ready to enable support for metadata checksums as described in the following two sections. In both cases the file system must not be mounted.
+Depois disso, você está pronto para ativar o suporte a somas de verificação de metadados conforme descrito nas duas seções a seguir. Em ambos os casos, o sistema de arquivos não deve ser montado.
 
-More about metadata checksums can be read on the [ext4 wiki](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums).
+Mais sobre somas de verificação de metadados pode ser lido no [wiki do ext4](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums).
 
 ### Novo sistema de arquivos
 
-To enable support for ext4 metadata checksums on a new file system make sure that you have `e2fsprogs 1.43` or newer and run:
+Para habilitar o suporte a somas de verificação de metadados ext4 em um novo sistema de arquivos, certifique-se de ter `e2fsprogs 1.43` ou mais recente e execute:
 
 ```
-# mkfs.ext4 -O metadata_csum */dev/path/to/disk*
+# mkfs.ext4 -O metadata_csum */dev/caminho/para/disco*
 
 ```
 
-The `64bit` option is enabled by default.
+A opção `64bit` está habilitada por padrão.
 
-The file-system can then be mounted as usual.
+O sistema de arquivos pode então ser montado como de costume.
 
 ### Sistema de arquivos existente
 
-To enable support on an existing ext4 file system do the following.
+Para habilitar o suporte em um sistema de arquivos ext4 existente, faça o seguinte.
 
-This needs to be done with the partition unmounted, so if you want to convert the root, you'll need to run off an USB live distro.
+Isso precisa ser feito com a partição desmontada, então se você quiser converter a raiz, você precisará executar uma distro Live em um pendrive ou outro tipo de mídia Live.
 
-First the partition needs to be checked and optimized using:
-
-```
-# e2fsck -Df */dev/path/to/disk*  
+Primeiro, a partição precisa ser verificada e otimizada usando:
 
 ```
-
-Then the file-system needs to be converted to 64bit:
-
-```
-# resize2fs -b */dev/path/to/disk* 
+# e2fsck -Df */dev/caminho/para/disco*
 
 ```
 
-Finally checksums can be added
+Então, o sistema de arquivos precisa ser convertido para 64bit:
 
 ```
-# tune2fs -O metadata_csum */dev/path/to/disk*
+# resize2fs -b */dev/caminho/para/disco*
 
 ```
 
-The file-system can then be mounted as usual.
-
-You can check whether the features were successfully enabled by running:
+Finalmente, somas de verificação podem ser adicionadas
 
 ```
-# dumpe2fs -h */dev/path/to/disk*
+# tune2fs -O metadata_csum */dev/caminho/para/disco*
+
+```
+
+O sistema de arquivos pode então ser montado como de costume.
+
+Você pode verificar se os recursos foram habilitados com sucesso executando:
+
+```
+# dumpe2fs -h */dev/caminho/para/disco*
 
 ```
 
 ### Impacto na performance
 
-Keep in mind that the intel module consistently performs 10x faster than the generic one, peaking at 20x faster as can be seen in [this benchmark](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums#Benchmarking).
+Tenha em mente que o módulo Intel executa consistentemente 10 vezes mais rápido que o genérico, atingindo 20x mais rápido, como pode ser visto [neste *benchmark*](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums#Benchmarking).
 
 ## Veja também
 
-*   [Official Ext4 wiki](https://ext4.wiki.kernel.org/)
-*   [Ext4 Disk Layout](https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout) described in its wiki
-*   [Ext4 Encryption](http://lwn.net/Articles/639427/) LWN article
-*   Kernel commits for ext4 encryption [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
-*   [e2fsprogs Changelog](http://e2fsprogs.sourceforge.net/e2fsprogs-release.html)
-*   [Ext4 Metadata Checksums](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums)
+*   [Wiki oficial do Ext4](https://ext4.wiki.kernel.org/)
+*   [Layout de disco com Ext4](https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout) descrito no seu wiki
+*   [Criptografia no Ext4](http://lwn.net/Articles/639427/) - artigo do LWN
+*   Commits do kernel para criptografia no ext4 [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
+*   [Changelog do e2fsprogs](http://e2fsprogs.sourceforge.net/e2fsprogs-release.html)
+*   [Somas de verificação de metadados do Ext4](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums)

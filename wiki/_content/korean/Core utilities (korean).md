@@ -1,3 +1,16 @@
+관련 항목
+
+*   [Bash](/index.php/Bash "Bash")
+*   [Zsh](/index.php/Zsh "Zsh")
+*   [General recommendations](/index.php/General_recommendations "General recommendations")
+*   [GNU Project](/index.php/GNU_Project "GNU Project")
+*   [sudo](/index.php/Sudo "Sudo")
+*   [cron](/index.php/Cron "Cron")
+*   [File system search](/index.php/File_system_search "File system search")
+*   [man page](/index.php/Man_page "Man page")
+*   [Securely wipe disk#shred](/index.php/Securely_wipe_disk#shred "Securely wipe disk")
+*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
+
 이 문서는 *less, ls, grep* 등 GNU/Linux 시스템 상에서 *Core utilities*라고 불리는 유틸리티들에 대해 설명합니다. 이 문서는 GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) 패키지에 포함되어 있는 유틸리티 등을 포함합니다. 아래에는 해당 유틸리티들에 대한 유용한 도움말과 기타 정보가 제공됩니다.
 
 ## Contents

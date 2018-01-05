@@ -39,7 +39,7 @@ Install [checkbashisms](https://aur.archlinux.org/packages/checkbashisms/) from 
 *   Installed scripts with a `#!/bin/sh` shebang:
 
 ```
-$ checkbashisms -f -p `egrep -l -r -I '^#![	 ]*(/usr)?/bin/(env[	 ]*)?sh' /usr/bin`
+$ gawk '/^#!.*( |[/])sh/{printf "%s\0", FILENAME} {nextfile}' /usr/bin/* | xargs -0 checkbashisms
 
 ```
 

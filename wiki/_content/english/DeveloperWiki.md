@@ -12,6 +12,7 @@
 *   [10 Web Development](#Web_Development)
 *   [11 Release Engineering](#Release_Engineering)
 *   [12 Devops Team](#Devops_Team)
+*   [13 Reproducible Builds](#Reproducible_Builds)
 
 ### Server migration
 
@@ -78,3 +79,7 @@
 ### Devops Team
 
 *   [DeveloperWiki:Arch Services](/index.php/DeveloperWiki:Arch_Services "DeveloperWiki:Arch Services")
+
+### Reproducible Builds
+
+*   [DeveloperWiki:ReproducibleBuilds](/index.php/DeveloperWiki:ReproducibleBuilds "DeveloperWiki:ReproducibleBuilds")

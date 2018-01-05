@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [Arch Linux](/index.php/Arch_Linux "Arch Linux")
+*   [Core Utilities](/index.php/Core_Utilities "Core Utilities")
+
 Tomado de [http://www.gnu.org/](http://www.gnu.org/)
 
 	*GNU es un sistema operativo similar a Unix que es software libre y respeta su libertad.*

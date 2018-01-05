@@ -386,14 +386,10 @@ Install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools).
 
 **Tip:**
 
-*   To check if a binary is signed and list its signatures use
-
-```
-$ sbverify --list */path/to/binary*
-
-```
-
+*   To check if a binary is signed and list its signatures use `sbverify --list */path/to/binary*`.
 *   You can use [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) to automatically sign your kernels on update. This will also take care of embedding the otherwise unprotected initramfs and kernel command line into the signed UEFI image.
+*   When using [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/), `CMDLINE_DEFAULT` must be set in `/etc/default/sbupdate` in order for the *.efi* image to be bootable.
+*   You may want to consider using [Direct UEFI boot](/index.php/EFISTUB#efibootmgr_with_.efi_file "EFISTUB") with [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) after generating the signed *.efi* file.
 
 #### Signing kernel with pacman hook
 

@@ -21,7 +21,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
         *   [2.1.2 Miscellaneous](#Miscellaneous)
             *   [2.1.2.1 Optional configuration](#Optional_configuration)
             *   [2.1.2.2 Restricting NFS to interfaces/IPs](#Restricting_NFS_to_interfaces.2FIPs)
-            *   [2.1.2.3 Ensure NFSv4 idmapping is fully enabled](#Ensure_NFSv4_idmapping_is_fully_enabled)
+            *   [2.1.2.3 Enable NFSv4 idmapping](#Enable_NFSv4_idmapping)
             *   [2.1.2.4 Static ports for NFSv3](#Static_ports_for_NFSv3)
             *   [2.1.2.5 NFSv2 compatibility](#NFSv2_compatibility)
             *   [2.1.2.6 Firewall configuration](#Firewall_configuration)
@@ -134,12 +134,16 @@ Restarting the service will apply the changes immediately.
 
 ```
 
-##### Ensure NFSv4 idmapping is fully enabled
+##### Enable NFSv4 idmapping
+
+**Note:** Another option is to make sure the UID's/GID's match on both the client and server.
+
+The NFSv4 protocol represents the local system's UID and GID values on the wire as strings of the form `user@domain`. The process of translating from UID to string and string to UID is referred to as *ID mapping* [[1]](http://man7.org/linux/man-pages/man5/nfsidmap.5.html).
 
 Even though idmapd may be running, it may not be fully enabled. Verify if `/sys/module/nfsd/parameters/nfs4_disable_idmapping` returns `N`, on disabled run:
 
 ```
-# echo "N" | sudo tee /sys/module/nfsd/parameters/nfs4_disable_idmapping
+# echo "N" | tee /sys/module/nfsd/parameters/nfs4_disable_idmapping
 
 ```
 
@@ -150,6 +154,8 @@ Set as [module option](/index.php/Kernel_modules#Setting_module_options "Kernel 
 options nfsd nfs4_disable_idmapping=0
 
 ```
+
+To fully use *idmapping*, make sure the domain is configured in `/etc/idmapd.conf` on **both** the server and the client.
 
 ##### Static ports for NFSv3
 
@@ -171,7 +177,25 @@ Users needing to support clients using NFSv2 (for example U-Boot), should set `R
 
 ##### Firewall configuration
 
-To enable access through a firewall, tcp and udp ports 111, 2049, and 20048 need to be opened when using the default configuration; use `rpcinfo -p` to examine the exact ports in use on the server. To configure this for [iptables](/index.php/Iptables "Iptables"), execute this commands:
+To enable access through a [firewall](/index.php/Firewall "Firewall"), TCP and UDP ports `111`, `2049`, and `20048` may need to be opened when using the default configuration; use `rpcinfo -p` to examine the exact ports in use on the server:
+
+ `$ rpcinfo -p | grep nfs` 
+```
+100003    3   tcp   2049  nfs
+100003    4   tcp   2049  nfs
+100227    3   tcp   2049  nfs_acl
+
+```
+
+When using NFSv4, make sure TCP port `2049` is open. No other port opening should be required:
+
+ `/etc/iptables/iptables.rules` 
+```
+-A INPUT -p tcp -m tcp --dport 2049 -j ACCEPT
+
+```
+
+When using an older NFS version, make sure other ports are open:
 
 ```
 # iptables -A INPUT -p tcp -m tcp --dport 111 -j ACCEPT
@@ -203,9 +227,9 @@ The previous commands can be saved by executing:
 
 ```
 
-**Note:** This command will **override** the current iptables start configuration with the current iptables configuration!
+**Warning:** This command will **override** the current iptables start configuration with the current iptables configuration!
 
-If using NFSv3 and the above listed static ports for `rpc.statd` and `lockd` these also need to be added to the configuration:
+If using NFSv3 and the above listed static ports for `rpc.statd` and `lockd` the following ports may also need to be added to the configuration:
 
  `/etc/iptables/iptables.rules` 
 ```
@@ -213,14 +237,6 @@ If using NFSv3 and the above listed static ports for `rpc.statd` and `lockd` the
 -A INPUT -p tcp -m tcp --dport 32803 -j ACCEPT
 -A INPUT -p udp -m udp --dport 32765 -j ACCEPT
 -A INPUT -p udp -m udp --dport 32803 -j ACCEPT
-
-```
-
-If using V4-only setup, only tcp port 2049 need to be opened. Therefore only one line needed.
-
- `/etc/iptables/iptables.rules` 
-```
--A INPUT -p tcp -m tcp --dport 2049 -j ACCEPT
 
 ```
 

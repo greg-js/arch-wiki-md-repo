@@ -3,8 +3,8 @@ Artículos relacionados
 *   [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
 *   [Creating packages](/index.php/Creating_packages "Creating packages")
 *   [Kernel Compilation with ABS](/index.php/Kernel_Compilation_with_ABS "Kernel Compilation with ABS")
-*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
-*   [makepkg](/index.php/Makepkg "Makepkg")
+*   [PKGBUILD (Español)](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)")
+*   [makepkg (Español)](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)")
 *   [pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
 *   [Official repositories (Español)](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
 *   [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)")
@@ -21,17 +21,14 @@ Este artículo proporciona una visión general de Arch Build System, junto con u
     *   [1.3 Descripción general de ABS](#Descripci.C3.B3n_general_de_ABS)
 *   [2 ¿Por qué utilizar ABS?](#.C2.BFPor_qu.C3.A9_utilizar_ABS.3F)
 *   [3 ¿Cómo utilizar ABS?](#.C2.BFC.C3.B3mo_utilizar_ABS.3F)
-    *   [3.1 Herramientas de instalación](#Herramientas_de_instalaci.C3.B3n)
-    *   [3.2 /etc/abs.conf](#.2Fetc.2Fabs.conf)
-    *   [3.3 El árbol ABS](#El_.C3.A1rbol_ABS)
-        *   [3.3.1 Descargar el árbol ABS](#Descargar_el_.C3.A1rbol_ABS)
-    *   [3.4 /etc/makepkg.conf](#.2Fetc.2Fmakepkg.conf)
-        *   [3.4.1 Establecer la variable PACKAGER en /etc/makepkg.conf](#Establecer_la_variable_PACKAGER_en_.2Fetc.2Fmakepkg.conf)
-            *   [3.4.1.1 Mostrar todos los paquetes (incluidos los de AUR)](#Mostrar_todos_los_paquetes_.28incluidos_los_de_AUR.29)
-            *   [3.4.1.2 Motrar solo los paquetes contenidos en los Repositorios](#Motrar_solo_los_paquetes_contenidos_en_los_Repositorios)
-    *   [3.5 Crear un directorio de compilación](#Crear_un_directorio_de_compilaci.C3.B3n)
-    *   [3.6 Compilar el paquete](#Compilar_el_paquete)
-        *   [3.6.1 fakeroot](#fakeroot)
+    *   [3.1 Obtener PKGBUILD usando Svn](#Obtener_PKGBUILD_usando_Svn)
+        *   [3.1.1 Prerequisitos](#Prerequisitos)
+        *   [3.1.2 Descarga no recursiva](#Descarga_no_recursiva)
+        *   [3.1.3 Rama de un paquete](#Rama_de_un_paquete)
+    *   [3.2 Obtener PKGBUILD usando Git](#Obtener_PKGBUILD_usando_Git)
+    *   [3.3 Construcción del paquete](#Construcci.C3.B3n_del_paquete)
+*   [4 Recomendaciones](#Recomendaciones)
+    *   [4.1 Revisión de un paquete antiguo](#Revisi.C3.B3n_de_un_paquete_antiguo)
 
 ## ¿Qué es Arch Build System?
 
@@ -85,187 +82,113 @@ ABS no es necesario para usar Arch Linux, pero es útil para la automatización 
 
 ## ¿Cómo utilizar ABS?
 
-La compilación de paquetes utilizando ABS consta de los siguientes pasos:
+Para obtener el [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)") necesario para construir un paquete desde fuente, se pueden usar dos métodos: [Svn](/index.php/Svn "Svn") o [Git](/index.php/Git "Git") usando el paquete [asp](https://www.archlinux.org/packages/?name=asp), el cual esta diseñado para trabajar con repositorios svntogit. A continuación se va a describir el método basado en svn y el método [basado en git](#Obtener_PKGBUILD_usando_Git).
 
-1.  Instale el paquete [abs](https://www.archlinux.org/packages/?name=abs) con [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").
-2.  Ejecute `abs`, como root, de modo que cree el árbol ABS sincronizado con los servidores de Arch Linux.
-3.  Copie los archivos de compilación (por lo general ubicados en `/var/abs/<repo>/<pkgname>`) a un directorio de compilación.
-4.  Vaya a ese directorio, edite PKGBUILD (si se desea o es necesario) y ejecute **makepkg**.
-5.  makepkg, basándose en las instrucciones de PKGBUILD, descargará el paquete fuente correspondiente, lo descomprimirá, lo parcheará si fuera el caso, lo construirá de acuerdo a `CFLAGS` especificado en `makepkg.conf`, y, finalmente, comprimirá los archivos compilados en un paquete con la extensión `.pkg.tar.gz` o `.pkg.tar.xz`.
-6.  La instalación del paquete creado es tan fácil como ejecutar `pacman -U <archivo.pkg.tar.xz>`. La eliminación del paquete también se gestiona con pacman.
+### Obtener PKGBUILD usando Svn
 
-### Herramientas de instalación
+#### Prerequisitos
 
-Para utilizar ABS, primero tiene que [instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [abs](https://www.archlinux.org/packages/?name=abs) de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [subversion](https://www.archlinux.org/packages/?name=subversion).
 
-Esto instalará los scripts de sincronización de ABS, varios scripts de compilación y [rsync](/index.php/Rsync "Rsync") (como una dependencia, si no lo tiene).
+#### Descarga no recursiva
 
-Sin embargo, antes de que se pueda realmente construir cualquier cosa, también es necesario tener instaladas las herramientas básicas de compilación. Estas son hábilmente recogidas en el [grupo de paquetes](/index.php/Pacman_(Espa%C3%B1ol)#Installing_package_groups "Pacman (Español)") [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/). Este grupo puede ser instalado con pacman.
+**Advertencia:** No descargue todo el repositorio, solo siga las instrucciones debajo. El repositorio completo de SVN es gigantesco. No solo va a requerir bastante espacio en su disco, también le costara mucho al servidor de archlinux.org para su descarga. Si Ud. abusa de este servicio su dirección puede ser bloqueada. Nunca ejecute scripts en el SVN público.
 
-### /etc/abs.conf
-
-Como root, edite `/etc/abs.conf` para incluir los repositorios deseados.
-
-Retire el signo `!` de delante de los repositorios correspondientes. Por ejemplo:
+Para revisar las ramas *core*, *extra*, y *testing* de los [repositorios](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"):
 
 ```
-REPOS=(core extra community !testing)
+$ svn checkout --depth=empty svn://svn.archlinux.org/packages
 
 ```
 
-### El árbol ABS
-
-El árbol ABS es una jerarquía de directorios SVN localizados en `/var/abs` con una estructura similar a la siguiente:
+Para revisar las ramas *community* y *multilib* de los repositorios:
 
 ```
-| -- core/
-|     || -- acl/
-|     ||     || -- PKGBUILD
-|     || -- attr/
-|     ||     || -- PKGBUILD
-|     || -- abs/
-|     ||     || -- PKGBUILD
-|     || -- autoconf/
-|     ||     || -- PKGBUILD
-|     || -- ...
-| -- extra/
-|     || -- acpid/
-|     ||     || -- PKGBUILD
-|     || -- apache/
-|     ||     || -- PKGBUILD
-|     || -- ...
-| -- community/
-|     || -- ...
+$ svn checkout --depth=empty svn://svn.archlinux.org/community
 
 ```
 
-El árbol ABS tiene exactamente la misma estructura que la base de datos del paquete:
+En ambos casos se crea un directorio vacio, el cual tiene conocimiento de que esta contenido en las ramas.
 
-*   Primer nivel: Nombre del repositorio.
-*   Segundo nivel: Directorios con los nombres de los paquetes.
-*   Tercer nivel: PKGBUILD (contiene la información necesaria para construir un paquete) y otros archivos relacionados (parches, así como otros archivos necesarios para construir el paquete).
+#### Rama de un paquete
 
-El código fuente para el paquete no está presente en el directorio ABS. En su lugar, el archivo **PKGBUILD** contiene una URL de donde descargar el código fuente para cuando el paquete se vaya a construir. Así, el tamaño de árbol ABS es bastante pequeño.
-
-#### Descargar el árbol ABS
-
-Como root, ejecute:
+En el directorio conteniendo el repositorio svn que esta revisando (v.g., *extra* o *community*), ejecute:
 
 ```
-# abs
+$ svn update *nombre-paquete*
 
 ```
 
-El árbol ABS se creará en `/var/abs`. Tenga en cuenta que cada rama del árbol ABS se corresponden a los repositorios habilitados en `/etc/abs.conf`.
+Esto va a descargar (*pull*) el paquete dentro de su repositorio local. Desde ahora cada vez que se ejecute *svn update* en el directorio del repositorio, el directorio del paquete también se actualizara.
 
-La orden abs se debe ejecutar periódicamente para mantenerse sincronizado con los repositorios oficiales. También se pueden descargar archivos individuales de paquetes ABS con:
+Si se especifica un paquete que no existe, svn no le mostrara una advertencia, solo mostrara algo similar a "At revision 115847", y no creara ningún archivo. Si esto sucede:
 
-```
-# abs <repository>/<package>
+*   Confirme que escribió el nombre del paquete correctamente
+*   Confirme que el paquete no se ha movido a otro repositorio (v.g. de *community* a *extra*)
+*   Revise [https://www.archlinux.org/packages](https://www.archlinux.org/packages) para verificar si el paquete es construido con fuente de otro paquete (por ejemplo, [python-tensorflow](https://www.archlinux.org/packages/?name=python-tensorflow) es construido con el PKGBUILD de [tensorflow](https://www.archlinux.org/packages/?name=tensorflow))
 
-```
+**Tip:** Para revisar versiones antiguas de un paquete, vea [#Revisión de un paquete antiguo](#Revisi.C3.B3n_de_un_paquete_antiguo).
 
-De esta manera no se tiene que revisar todo el árbol ABS para construir un solo paquete.
-
-### /etc/makepkg.conf
-
-El archivo `/etc/makepkg.conf` especifica las variables globales del entorno y los flags del compilador que desee editar si está utilizando un sistema SMP, o especificar otras optimizaciones deseadas. Los ajustes por defecto son optimizaciones para i686 y x86_64 que no tendrán ningún problema para esas arquitecturas en sistemas con una sola CPU. (Los valores predeterminados funcionarán para la máquina SMP, pero solo utilizará un core/CPU al compilar - véase [makepkg.conf](/index.php/Makepkg.conf "Makepkg.conf").)
-
-#### Establecer la variable PACKAGER en /etc/makepkg.conf
-
-Establecer la variable PACKAGER en `/etc/makepkg.conf` es una operación opcional, pero *muy recomendable*. Esta opción permite establecer un "flag" para identificar rápidamente los paquetes que se han construido y/o instalado por el usuario, en lugar del mantenedor oficial. Esto se logra fácilmente utilizando **expac** disponible desde el repositorio community:
-
-##### Mostrar todos los paquetes (incluidos los de AUR)
+Es aconsejable actualizar todas las ramas que ha descargado si desea re-construir paquetes en versiones mas recientes de los repositorios. Para actualizar ejecute:
 
 ```
-$ grep myname /etc/makepkg.conf
-PACKAGER="myname <myemail@myserver.com>"
+$ svn update
 
 ```
 
-```
-$ expac "%n %p" | grep "myname" | column -t
-archey3 myname
-binutils myname
-gcc myname
-gcc-libs myname
-glibc myname
-tar myname
+### Obtener PKGBUILD usando Git
+
+Es necesario [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [asp](https://www.archlinux.org/packages/?name=asp).
+
+Para clonar el repositorio del paquete ejecute:
 
 ```
-
-##### Motrar solo los paquetes contenidos en los Repositorios
-
-Este ejemplo solo muestra los paquetes contenidos en los repositorios definidos en `/etc/pacman.conf`:
-
-```
-$ . /etc/makepkg.conf; grep -xvFf <(pacman -Qqm) <(expac "%n\t%p" | grep "$PACKAGER$" | cut -f1)
-binutils
-gcc
-gcc-libs
-glibc
-tar
+$ asp checkout *nombre-paquete*
 
 ```
 
-### Crear un directorio de compilación
+Este comando clona el repositorio git del paquete en un directorio con el nombre del paquete mismo.
 
-Se recomienda crear una carpeta de compilación donde llevar a cabo la compilación, nunca se debe modificar el árbol ABS compilando los paquetes dentro de ella, ya que los datos se perderán (sobreescribiéndose) en cada actualización de ABS. Es una buena práctica utilizar el directorio «home», aunque algunos usuarios de Arch prefieren crear una carpeta «local» en `/var/abs/`, estableciendo la propiedad del usuario normal.
+Para actualizar el repositorio de git, ejecute `asp update` seguido de `git pull`dentro del repositorio de git.
 
-Cree un directorio de compilación, por ejemplo:
+Es más, se pueden usar el resto de comandos de git para revisar versiones antiguas o para ver el histórico del paquete. Para más información sobre el uso de git, vea la pagina de [git](/index.php/Git "Git").
 
-```
-$ mkdir -p $HOME/abs
-
-```
-
-Copie el ABS desde el árbol (`/var/abs/<repository>/<pkgname>`) al directorio de compilación.
-
-### Compilar el paquete
-
-En nuestro ejemplo, vamos a construir el paquete del gestor de pantalla *slim*.
-
-Copie el ABS slim desde el árbol ABS a un directorio de compilación:
+Si desea copiar una instantánea del [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)") para el paquete actual, ejecute:
 
 ```
-$ cp -r /var/abs/extra/slim/ ~/abs
+$ asp export *nobre-paquete*
 
 ```
 
-Acceda al directorio de compilación:
+### Construcción del paquete
+
+Vea [makepkg](/index.php/Makepkg_(Espa%C3%B1ol)#Configuraci.C3.B3n "Makepkg (Español)") para configurar *makepkg* para la construcción de los [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)") que esta revisando.
+
+Después, copie el directorio que contiene el [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)") a un lugar nuevo. Alla, modifique lo que considere necesario y use *makepkg* como esta descrito en [makepkg#Uso](/index.php/Makepkg_(Espa%C3%B1ol)#Uso "Makepkg (Español)") para crear un nuevo paquete.
+
+## Recomendaciones
+
+### Revisión de un paquete antiguo
+
+Dentro del repositorio svn que esta revisando, como se ha descrito en [#Descarga no recursiva](#Descarga_no_recursiva) (v.g. "packages" o "community"), examine el histórico:
 
 ```
-$ cd ~/abs/slim
-
-```
-
-Modifique el PKGBUILD para añadir o eliminar el apoyo a determinados componentes, para aplicar parches, para cambiar versiones de paquetes, etc. (opcional):
-
-```
-$ nano PKGBUILD
-
-```
-
-Ejecute makepkg como usuario normal (con el parámetro `-s` para instalar con la resolución automática de dependencias):
-
-```
-$ makepkg -s
+$ svn log *nombre-paquete*
 
 ```
 
-**Nota:** Antes de que muestre error por la ausencia (make) de dependencias, recuerde que se supone que el grupo [base](https://www.archlinux.org/groups/x86_64/base/) está instalado en todos los sistemas de Arch Linux. El grupo «base-devel» se supone que se instala cuando se construye con **makepkg**. Véase [#Herramientas de instalación](#Herramientas_de_instalaci.C3.B3n).
-
-Instale como root:
+Encuentre la revisión que le interesa, después especifique la revisión que desea modificar. Por ejemplo, para examinar la revisión `r1729` ejecute:
 
 ```
-# pacman -U slim-1.3.0-2-i686.pkg.tar.xz
+$ svn update -r1729 *nombre-paquete*
 
 ```
 
-Eso es todo. Acaba de construir slim desde el código fuente y lo ha instalado limpiamente en su sistema con pacman. La eliminación del paquete también es manejado por pacman con `pacman -R slim`.
+Esto actualizara la copia en el directorio local de *nombre-paquete* a la revisión deseada.
 
-El método ABS agrega un nivel de comodidad y automatización, mientras que todavía mantiene una total transparencia y control de las funciones de compilación e instalación por su inclusión en PKGBUILD.
+También es posible especificar una fecha. Si no hay una revisión en ese día, svn tomara la version mas reciente antes de ese momento. El ejemplo siguiente ubica el repositorio en una revisión ocurrida el 2009-03-03:
 
-#### fakeroot
+```
+$ svn update -r{20090303} *nombre-paquete*
 
-En esencia, se siguen los mismos pasos que se realizan en el método tradicional (que generalmente incluyen `./configure, make, make install`) pero el software se instala en un entorno *fake root*. (Un entorno *fake root* es simplemente un subdirectorio dentro del directorio de compilación que funciona y se comporta como el directorio root del sistema. Conjuntamente con el programa **fakeroot**, makepkg crea un directorio root falso, e instala los binarios compilados y los archivos asociados a él, con **root** como propietario). El *fake root*, o árbol de subdirectorios que contiene el software compilado, se comprime en un archivo con la extensión `.pkg.tar.xz`, o un *paquete*. Cuando se invoca, pacman extrae el paquete (lo instala) en el directorio root real del sistema (`/`).
+```

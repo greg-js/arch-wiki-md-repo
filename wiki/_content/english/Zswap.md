@@ -74,6 +74,8 @@ Each setting can be changed at runtime via the [sysfs](https://en.wikipedia.org/
 
 To set the parameter permanently, the corresponding option, for example `zswap.compressor=lz4`, must be added to the kernel boot parameter. Therefore to set permanently all the above settings, the following kernel parameters must be added: `zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=20 zswap.zpool=z3fold`.
 
+When changing the compression algorithm via boot parameter the corresponding kernel modules must be available, at least when using *lz4* (refer to [#Compression algorithm](#Compression_algorithm)).
+
 #### Using systemd-swap
 
 For the ones using the *systemd-swap* script, it modifies the *sysfs* parameters at a later stage of the boot process based on its [configuration](https://github.com/Nefelim4ag/systemd-swap/blob/master/swap.conf) stored in `/etc/systemd/swap.conf`.

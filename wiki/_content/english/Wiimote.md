@@ -16,7 +16,7 @@ This article will go through the basic steps required to have a working Wiimote 
 ## Prerequisites
 
 *   Bluetooth
-*   [cwiid](https://www.archlinux.org/packages/?name=cwiid)
+*   [cwiid](https://aur.archlinux.org/packages/cwiid/)
 *   Wiimote
 
 The most important piece required is [Bluetooth](/index.php/Bluetooth "Bluetooth"), this must already be configured and running without the help of this guide. This should be simple enough with any guide found on the internet. The 'cwiid' package is in [Community](/index.php/Community "Community"). This package contains all libraries and programs required for basic use of the Wiimote. Lastly you will need a Wiimote, this can include (although are not required) the Nunchuk and Classic Control attachments.

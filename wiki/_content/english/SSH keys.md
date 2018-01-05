@@ -314,10 +314,10 @@ Agent pid 2157
 
 Once `ssh-agent` is running, you will need to add your private key to its cache:
 
- `$ ssh-add ~/.ssh/id_ecdsa` 
+ `$ ssh-add ~/.ssh/id_ed25519` 
 ```
-Enter passphrase for /home/user/.ssh/id_ecdsa:
-Identity added: /home/user/.ssh/id_ecdsa (/home/user/.ssh/id_ecdsa)
+Enter passphrase for /home/user/.ssh/id_ed25519:
+Identity added: /home/user/.ssh/id_ed25519 (/home/user/.ssh/id_ed25519)
 
 ```
 

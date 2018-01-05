@@ -1,52 +1,72 @@
-Arch Linux provee varios metodos para compilar el kernel. Usar [Arch Build System](/index.php/Arch_Build_System "Arch Build System") es el recomendado.
+Related articles
+
+*   [Kernel modules (Español)](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)")
+*   [Kernel parameters (Español)](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)")
+
+Arch Linux provee varios métodos para compilar el kernel. Usar [Arch Build System](#Usando_Arch_Build_System) es el recomendado.
 
 ## Contents
 
-*   [1 Usando Arch Build System](#Usando_Arch_Build_System)
-    *   [1.1 Instalando Arch Build System](#Instalando_Arch_Build_System)
-    *   [1.2 Consiguiendo los ingredientes](#Consiguiendo_los_ingredientes)
-    *   [1.3 Modificando el PKGBUILD](#Modificando_el_PKGBUILD)
-        *   [1.3.1 Cambiando pkgname](#Cambiando_pkgname)
-        *   [1.3.2 Modificando build()](#Modificando_build.28.29)
-        *   [1.3.3 Cambiando la función package_kernel26()](#Cambiando_la_funci.C3.B3n_package_kernel26.28.29)
-    *   [1.4 Compilando con varios núcleos](#Compilando_con_varios_n.C3.BAcleos)
-    *   [1.5 Compilación](#Compilaci.C3.B3n)
-    *   [1.6 Instalación](#Instalaci.C3.B3n)
-    *   [1.7 Boot Loader](#Boot_Loader)
-    *   [1.8 Drivers propietarios de Nvidia](#Drivers_propietarios_de_Nvidia)
-*   [2 Usando AUR](#Usando_AUR)
-*   [3 Tradicional](#Tradicional)
-*   [4 Revisa también](#Revisa_tambi.C3.A9n)
+*   [1 Oficialmente compatibles](#Oficialmente_compatibles)
+*   [2 Usando Arch Build System](#Usando_Arch_Build_System)
+    *   [2.1 Consiguiendo los ingredientes](#Consiguiendo_los_ingredientes)
+    *   [2.2 Modificando el PKGBUILD](#Modificando_el_PKGBUILD)
+        *   [2.2.1 Cambiando pkgname](#Cambiando_pkgname)
+        *   [2.2.2 Modificando build()](#Modificando_build.28.29)
+        *   [2.2.3 Cambiando la función package_kernel26()](#Cambiando_la_funci.C3.B3n_package_kernel26.28.29)
+    *   [2.3 Compilación](#Compilaci.C3.B3n)
+    *   [2.4 Instalación](#Instalaci.C3.B3n)
+    *   [2.5 Boot Loader](#Boot_Loader)
+    *   [2.6 Drivers propietarios de Nvidia](#Drivers_propietarios_de_Nvidia)
+*   [3 Usando AUR](#Usando_AUR)
+*   [4 Tradicional](#Tradicional)
+*   [5 Revisa también](#Revisa_tambi.C3.A9n)
 
-## Usando [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
+## Oficialmente compatibles
+
+*   **[Estable](https://www.kernel.org/category/releases.html)** — La versión *vanilla* del kernel y los módulos, con pocas modificaciones aplicadas.
+
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux](https://www.archlinux.org/packages/?name=linux)
+
+*   **[Hardened](https://kernsec.org/wiki/index.php/Kernel_Self_Protection_Project)** — Un kernel de Linux enfocado en seguridad, aplica parches para mitigar la explotación en el kernel o en el espacio del usuario. También activa mas características de seguridad en comparación con [linux](https://www.archlinux.org/packages/?name=linux), entre otros: *namespaces*, *audit* y [SELinux](/index.php/SELinux "SELinux").
+
+	[https://github.com/copperhead/linux-hardened](https://github.com/copperhead/linux-hardened) || [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened)
+
+*   **[Larga duración](https://www.kernel.org/category/releases.html)** — Kernel de Linux y módulos con soporte de larga duración (LTS).
+
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
+
+*   **[Kernel ZEN](https://liquorix.net/)** — Es el resultado de un esfuerzo colaborativo de varios hackers para hacer el mejor kernel para el uso en sistemas de uso diario.
+
+	[https://github.com/zen-kernel/zen-kernel](https://github.com/zen-kernel/zen-kernel) || [linux-zen](https://www.archlinux.org/packages/?name=linux-zen)
+
+## Usando Arch Build System
 
 Siempre, se han propuesto varios métodos para construir fácilmente un kernel personalizado partiendo del de Arch. En la wiki se pueden encontrar varios ejemplos. Todos ellos son bastante buenos, pero sufren [algunos inconvenientes](https://bugs.archlinux.org/task/12384) que hacen que no estén oficialmente respaldados por los desarrolladores.
 
 Contrariamente, el método descrito en este articulo es mas sólido y seguro, y se construye usando el paquete oficial del [linux](https://www.archlinux.org/packages/?name=linux).
 
-### Instalando Arch Build System
-
-[Instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") los paquetes [abs](https://www.archlinux.org/packages/?name=abs) y [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/).
-
-Para obtener todo el árbol de ABS, ejecuta:
-
-```
-# abs
-
-```
-
-Revisa [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") para mas información.
-
 ### Consiguiendo los ingredientes
 
-Antes que nada, necesitamos un kernel limpio para empezar a personalizarlo. En este articulo asumiré que usaras el [linux](https://www.archlinux.org/packages/?name=linux) oficial de Arch. Entonces creamos una carpeta para trabajar, y obtenemos los archivos del kernel desde ABS (luego de la sincronización):
+Se va a usar [makepkg](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)"), siga las recomendaciones allí descritas en primer lugar. Por ejemplo, no se puede ejecutar *makepkg* como root/sudo. Cree un directorio `build` el directorio raiz de su usuario.
 
 ```
-cp /var/abs/core/linux/* <directorio_de_trabajo>/
+ $ cd ~/
+ $ mkdir build
+ $ cd build/
 
 ```
 
-Luego, pongan aquí cualquier paquete que se necesite (ej. archivos de configuración personalizada, parches, etc.)
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [asp](https://www.archlinux.org/packages/?name=asp) y el grupo de paquetes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/).
+
+Se necesita un kernel limpio para poder hacer la personalización. Descargue los archivos del kernel desde ABS en su directorio *build*, ejecute:
+
+```
+$ ASPROOT=. asp checkout linux
+
+```
+
+Después obtenga cualquier otro archivo que considere necesario (v.g. archivos personalizados, parches, configuraciones, etc.) desde sus respectivas fuentes.
 
 ### Modificando el PKGBUILD
 
@@ -121,26 +141,24 @@ package_linux-test() {
 
 ```
 
-### Compilando con varios núcleos
-
-Para decirle al compilador que use todos los núcleos al momento de compilar, usamos el flag -j<numero_de_nucleos>. El numero debe ser de n+1, donde n es la cantidad de núcleos de tu procesador.
-
-Por ejemplo un procesador de 2 núcleos (2+1=3):
-
- `/etc/makepkg.conf` 
-```
-...
-#-- Make Flags: change this for DistCC/SMP systems
-MAKEFLAGS="-j3"
-...
-
-```
-
 ### Compilación
 
-Ahora podemos compilar el kernel, con los comandos usuales: `makepkg` Si usaste un programa interactivo para configurar los parámetros del kernel (como menuconfig), deberás estar allí durante la compilación.
+Ahora se puede compilar el kernel, con el comando usual `makepkg`
 
-**Note:** El kernel necesita un tiempo para compilar, una hora no es inusual.
+Si usaste un programa interactivo para configurar los parámetros del kernel (como menuconfig), deberás estar allí durante la compilación.
+
+```
+ $ makepkg -s
+
+```
+
+El parámetro `-s` descargara cualquier dependencia adicional que no se encuentre en su sistema.
+
+**Nota:**
+
+*   La fuente del kernel contiene [firmas PGP](https://www.kernel.org/signature.html#kernel-org-web-of-trust), y makepkg intentara verificarlas. Vea [verificación de firmas](/index.php/Makepkg_(Espa%C3%B1ol)#Verificaci.C3.B3n_de_firmas "Makepkg (Español)") para mas información.
+*   El kernel necesita un tiempo para compilar, una hora no es inusual.
+*   [Compilar simultáneamente](/index.php/Makepkg_(Espa%C3%B1ol)#Recomendaciones "Makepkg (Español)") puede reducir los tiempos de compilación significativamente en sistemas con múltiples núcleos.
 
 ### Instalación
 

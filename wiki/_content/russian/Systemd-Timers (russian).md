@@ -109,7 +109,10 @@ OnCalendar=Mon,Tue *-*-01..04 12:00:00
 
 ```
 
-**Совет:** Специальные выражения событий, такие как `daily` и `weekly`, относятся к *конкретному времени начала* и, таким образом, все таймеры, использующие эти выражения, запустятся одновременно. Таймеры, использующие специальные выражения, могут негативно сказаться на производительности системы, если сервисы, запускаемые таймерами, являются ресурсозатратными. Опция `RandomizedDelaySec` в разделе `[Timer]`помогает избежать подобных проблем посредством случайного выбора времени запуска каждого из таймеров. Смотрите [systemd.timer(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5).
+**Совет:**
+
+*   Указатели времени `OnCalendar` могут быть протестированы для того, чтобы проверить их правильность и вычислить следующее время срабатывания условия. Например, `systemd-analyze calendar weekly` или `systemd-analyze calendar "Mon,Tue *-*-01..04 12:00:00"`.
+*   Специальные выражения событий, такие как `daily` и `weekly`, относятся к *конкретному времени начала* и, таким образом, все таймеры, использующие эти выражения, запустятся одновременно. Таймеры, использующие специальные выражения, могут негативно сказаться на производительности системы, если сервисы, запускаемые таймерами, являются ресурсозатратными. Опция `RandomizedDelaySec` в разделе `[Timer]`помогает избежать подобных проблем посредством случайного выбора времени запуска каждого из таймеров. Смотрите [systemd.timer(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5).
 
 ## Временные юниты .timer
 
@@ -210,5 +213,3 @@ Group=systemd-journal
 *   **systemd-cron** — предоставляет юнитам systemd запускать скрипты cron; используя *systemd-crontab-generator* для конвертации crontab'ов
 
 	[https://github.com/systemd-cron/systemd-cron](https://github.com/systemd-cron/systemd-cron) || [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/)
-
-*   [Freedesktop's Systemd Wiki Page](https://www.freedesktop.org/software/systemd/man/systemd.timer.html) в *timer unit configurations*

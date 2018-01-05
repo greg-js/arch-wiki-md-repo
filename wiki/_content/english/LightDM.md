@@ -466,7 +466,6 @@ The GTK greeter used to have a button to power off / restart the computer in the
 
 ## See also
 
-*   [light-locker](https://www.archlinux.org/packages/?name=light-locker), a screen locker using LightDM.
 *   [Ubuntu Wiki article](https://wiki.ubuntu.com/LightDM)
 *   [Gentoo Wiki article](http://wiki.gentoo.org/wiki/LightDM)
 *   [Launchpad Page](https://launchpad.net/lightdm)

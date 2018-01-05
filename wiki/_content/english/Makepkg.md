@@ -39,7 +39,7 @@ Related articles
 
 ## Configuration
 
-See [makepkg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5) for details on configuration options for makepkg.
+See [makepkg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5) for details on configuration options for *makepkg*.
 
 The system configuration is available in `/etc/makepkg.conf`, but user-specific changes can be made in `$XDG_CONFIG_HOME/pacman/makepkg.conf` or `~/.makepkg.conf`. It is recommended to review the configuration prior to building packages.
 
@@ -133,11 +133,14 @@ However, it is very easy to reduce performance by using "nonstandard" compiler f
 
 The options passed to a C/C++ compiler (e.g. [gcc](https://www.archlinux.org/packages/?name=gcc) or [clang](https://www.archlinux.org/packages/?name=clang)) are controlled by the `CFLAGS`, `CXXFLAGS`, and `CPPFLAGS` environment variables. For use in the Arch build system, *makepkg* exposes these environment variables as configuration options in `makepkg.conf`. The default values are configured to produce generic binaries that can be installed on a wide range of machines.
 
-**Note:** Keep in mind that not all build systems use the variables configured in `makepkg.conf`. For example, *cmake* disregards the preprocessor options environment variable, `CPPFLAGS`. Consequently, many [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") contain workarounds with options specific to the build system used by the packaged software.
+**Note:**
+
+*   Keep in mind that not all build systems use the variables configured in `makepkg.conf`. For example, *cmake* disregards the preprocessor options environment variable, `CPPFLAGS`. Consequently, many [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") contain workarounds with options specific to the build system used by the packaged software.
+*   The configuration provided with the source code in the `Makefile` or a specific argument in the compilation command line takes precedence and can potentially override the one in `makepkg.conf`.
 
 GCC can automatically detect and enable safe architecture-specific optimizations. To use this feature, first remove any `-march` and `-mtune` flags, then add `-march=native`. For example:
 
- `/etc/makepkg` 
+ `/etc/makepkg.conf` 
 ```
 CFLAGS="-march=native -O2 -pipe -fstack-protector-strong -fno-plt"
 CXXFLAGS="${CFLAGS}"
@@ -156,7 +159,7 @@ $ gcc -march=native -v -Q --help=target
 
 #### Parallel compilation
 
-The [make](https://www.archlinux.org/packages/?name=make) build system uses the `MAKEFLAGS` [environment variable](/index.php/Environment_variable "Environment variable") to specify additional options for make. The variable can also be set in the `makepkg.conf` file.
+The [make](https://www.archlinux.org/packages/?name=make) build system uses the `MAKEFLAGS` [environment variable](/index.php/Environment_variable "Environment variable") to specify additional options for *make*. The variable can also be set in the `makepkg.conf` file.
 
 Users with multi-core/multi-processor systems can specify the number of jobs to run simultaneously. This can be accomplished with the use of *nproc* to determine the number of available processors, e.g. `MAKEFLAGS="-j$(nproc)"`. Some [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") specifically override this with `-j1`, because of race conditions in certain versions or simply because it is not supported in the first place. Packages that fail to build because of this should be [reported](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") on the bug tracker (or in the case of [AUR](/index.php/AUR "AUR") packages, to the package maintainer) after making sure that the error is indeed being caused by your `MAKEFLAGS`.
 

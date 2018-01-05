@@ -5886,6 +5886,10 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 
 	[https://gna.org/projects/fvwm-crystal/](https://gna.org/projects/fvwm-crystal/) || [trayer](https://www.archlinux.org/packages/?name=trayer)
 
+*   **Vala Panel** — Gtk3 panel for compositing window managers
+
+	[https://github.com/rilian-la-te/vala-panel](https://github.com/rilian-la-te/vala-panel) || [vala-panel-git](https://aur.archlinux.org/packages/vala-panel-git/)
+
 *   **Xfce Panel** — Panel included in the [Xfce](/index.php/Xfce "Xfce") desktop.
 
 	[http://docs.xfce.org/xfce/xfce4-panel/start](http://docs.xfce.org/xfce/xfce4-panel/start) || [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel)

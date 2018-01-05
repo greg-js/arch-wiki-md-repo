@@ -23,27 +23,24 @@ Related articles
     *   [4.1 ObexFS](#ObexFS)
     *   [4.2 ObexFTP transfers](#ObexFTP_transfers)
     *   [4.3 Obex Object Push](#Obex_Object_Push)
-    *   [4.4 interactive with obexctl](#interactive_with_obexctl)
-    *   [4.5 Using your computer's speakers as a bluetooth headset](#Using_your_computer.27s_speakers_as_a_bluetooth_headset)
+    *   [4.4 Using your computer's speakers as a bluetooth headset](#Using_your_computer.27s_speakers_as_a_bluetooth_headset)
 *   [5 Audio](#Audio)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Shell command _____ is missing from bluez-utils](#Shell_command_is_missing_from_bluez-utils)
-    *   [6.2 bluetoothctl](#bluetoothctl_2)
-    *   [6.3 gnome-bluetooth](#gnome-bluetooth)
-    *   [6.4 Bluetooth USB Dongle](#Bluetooth_USB_Dongle)
-        *   [6.4.1 Audio devices start to skip at short distance from dongle](#Audio_devices_start_to_skip_at_short_distance_from_dongle)
-    *   [6.5 Logitech Bluetooth USB Dongle](#Logitech_Bluetooth_USB_Dongle)
-    *   [6.6 hcitool scan: Device not found](#hcitool_scan:_Device_not_found)
-    *   [6.7 rfkill unblock: Do not unblock](#rfkill_unblock:_Do_not_unblock)
-    *   [6.8 My computer is not visible](#My_computer_is_not_visible)
-    *   [6.9 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
-    *   [6.10 HSP/HFP profiles](#HSP.2FHFP_profiles)
-    *   [6.11 Thinkpad Bluetooth Laser Mouse problems](#Thinkpad_Bluetooth_Laser_Mouse_problems)
-    *   [6.12 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device)
-    *   [6.13 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
-    *   [6.14 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
-    *   [6.15 Device does not show up in scan](#Device_does_not_show_up_in_scan)
-    *   [6.16 DualBoot with Windows](#DualBoot_with_Windows)
+    *   [6.2 gnome-bluetooth](#gnome-bluetooth)
+    *   [6.3 Bluetooth USB Dongle](#Bluetooth_USB_Dongle)
+        *   [6.3.1 Audio devices start to skip at short distance from dongle](#Audio_devices_start_to_skip_at_short_distance_from_dongle)
+    *   [6.4 Logitech Bluetooth USB Dongle](#Logitech_Bluetooth_USB_Dongle)
+    *   [6.5 hcitool scan: Device not found](#hcitool_scan:_Device_not_found)
+    *   [6.6 rfkill unblock: Do not unblock](#rfkill_unblock:_Do_not_unblock)
+    *   [6.7 My computer is not visible](#My_computer_is_not_visible)
+    *   [6.8 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
+    *   [6.9 HSP/HFP profiles](#HSP.2FHFP_profiles)
+    *   [6.10 Thinkpad Bluetooth Laser Mouse problems](#Thinkpad_Bluetooth_Laser_Mouse_problems)
+    *   [6.11 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device)
+    *   [6.12 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
+    *   [6.13 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
+    *   [6.14 Device does not show up in scan](#Device_does_not_show_up_in_scan)
 
 ## Installation
 
@@ -66,6 +63,8 @@ Then [start](/index.php/Start "Start") the `bluetooth.service` systemd unit. You
 *   Some tools such as hcitool and hciconfig have been deprecated upstream, and are no longer included in [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils). Since these tools will no longer be updated, it is recommended that scripts be updated to avoid using them. If you still desire to use them, install [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/). See [FS#53110](https://bugs.archlinux.org/task/53110) and [the Bluez mailing list](https://www.spinics.net/lists/linux-bluetooth/msg69239.html) for more information.
 
 ## Configuration via the CLI
+
+**Note:** Before using the bluetooth device, make sure that it is not blocked by [rfkill](/index.php/Rfkill "Rfkill").
 
 ### Bluetoothctl
 
@@ -216,22 +215,6 @@ Read the output, look for Obex Object Push, remember the channel for this servic
 
 ```
 
-### interactive with obexctl
-
-obexctl offers an interactive shell like bluetoothctl:
-
-```
-$ obexctl
-[obex]# connect xx:xx:xx:xx:xx:xx
-Attempting to connect to xx:xx:xx:xx:xx:xx
-Connection successful
-[xx:xx:xx:xx:xx:xx]# send foto.png
-Attempting to send foto.png to /org/bluez/obex/client/session1
-[CHG] Transfer /org/bluez/obex/client/session1/transfer2 Status: complete
-[xx:xx:xx:xx:xx:xx]# quit
-
-```
-
 ### Using your computer's speakers as a bluetooth headset
 
 This can allow you to do things such as playing what is on your phone through your computer speakers.
@@ -273,15 +256,6 @@ Some tools have been marked as deprecated and removed from the package. At this 
 | ciptool |
 | sdptool | missing, functionality seems to be scattered over different D-Bus objects: [Profile](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/profile-api.txt), [Advertising](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/advertising-api.txt), and the UUIDs arrays in [device](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/device-api.txt) and [adapter](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/adapter-api.txt). |
 
-### bluetoothctl
-
-If bluetoothctl cannot find any controller, the bluetooth device may be blocked. Try to unblock it using *rfkill*:
-
-```
-# rfkill unblock bluetooth
-
-```
-
 ### gnome-bluetooth
 
 If you see this when trying to enable receiving files in bluetooth-properties:
@@ -292,19 +266,7 @@ Bluetooth FTP start failed: Invalid path
 
 ```
 
-Then install [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) and issue:
-
-```
-$ xdg-user-dirs-update
-
-```
-
-You can edit the paths using:
-
-```
-$ vi ~/.config/user-dirs.dirs
-
-```
+Then make sure that the [XDG user directories](/index.php/XDG_user_directories "XDG user directories") exist.
 
 ### Bluetooth USB Dongle
 
@@ -344,22 +306,6 @@ hci0:	Type: USB
         TX bytes:38 acl:0 sco:0 commands:11 errors:0
 
 ```
-
-If this fails with an error like:
-
-```
-Operation not possible due to RF-kill
-
-```
-
-it could be due either to the `rfkill` utility, in which case it should be resolved with
-
-```
-# rfkill unblock all
-
-```
-
-or, it could simply be the hardware switch of the computer. The hardware bluetooth switch (at least sometimes) controls access to USB bluetooth dongles also. Flip/press this switch and try bringing the device up again.
 
 To verify that the device was detected you can use `hcitool` which is part of the `bluez-utils`. You can get a list of available devices and their identifiers and their MAC address by issuing:
 
@@ -637,7 +583,3 @@ In another terminal:
 ```
 
 Wait until your device shows up, then Ctrl+C hcitool. bluetoothctl should now see your device and pair normally.
-
-### DualBoot with Windows
-
-If you reboot from Windows into Linux without a complete power interruption it is sometimes not possible to use bluetooth. A workaround is to turn off completely your computer and turn it on again. This will reset internal states of the bluetooth controller.

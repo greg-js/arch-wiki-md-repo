@@ -126,7 +126,7 @@ While Ansible expects to ssh as root, AUR helpers do not allow executing operati
      validate: /usr/sbin/visudo -cf %s
 ```
 
-Then AUR helpers or [makepkg](/index.php/Makepkg "Makepkg") can be used associated with the parameters `become: yes` and `become_user: aur_builder`
+Then, AUR helpers or [makepkg](/index.php/Makepkg "Makepkg") commands can be used associated with the Ansible parameters `become: yes` and `become_user: aur_builder`
 
 ## Tips and tricks
 
@@ -146,7 +146,7 @@ Ansible can manage user accounts and in particular it is able to create new ones
 
 With this approach it is recommended to vault-encrypt *user_password* so that it does not appear in plain text, see [#Vault](#Vault). However, an encrypted variable cannot be piped directly and will first need to be assigned to another one that will be piped.
 
-Alternatively, the hashing can be performed outside Ansible. The following commands return respectively the MD5 and the SHA512 hashed values of *user_password*:
+Alternatively, the hashing can be performed outside Ansible. The following commands return respectively the [MD5](https://en.wikipedia.org/wiki/MD5 "wikipedia:MD5") and the [SHA512](https://en.wikipedia.org/wiki/SHA-2 "wikipedia:SHA-2") hashed values of *user_password*:
 
 ```
 $ openssl passwd -1 *user_password*

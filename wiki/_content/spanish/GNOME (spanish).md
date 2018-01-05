@@ -127,13 +127,13 @@ Ambos usan GNOME Shell y el gestor de ventanas Mutter. Mutter actúa como un ges
 
 ## Instalación
 
-GNOME 3 está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") y puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") con dos grupos de paquetes:
+GNOME 3 está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") y puede ser [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") con dos grupos de paquetes:
 
 *   [gnome](https://www.archlinux.org/groups/x86_64/gnome/) contiene el entorno de escritorio básico y aplicaciones necesarias para la experiencia estándar de GNOME.
 
 *   [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/) contiene varias herramientas opcionales, como un reproductor multimedia, una calculadora, un editor y otras aplicaciones no problemáticas que van bien con el escritorio GNOME. La instalación de este grupo es opcional.
 
-**Nota:** Tenga en cuenta que la instalación únicamente del grupo [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/) no instala el grupo [gnome](https://www.archlinux.org/groups/x86_64/gnome/) como dependencia: si realmente lo quiere todo debe instalar ambos grupos de forma explícita.
+**Nota:** Tenga en cuenta que la instalación únicamente del grupo [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/) no instala el grupo [gnome](https://www.archlinux.org/groups/x86_64/gnome/) como dependencia: si realmente lo quiere todo debe [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") ambos grupos de forma explícita.
 
 ### Iniciar GNOME
 
@@ -222,7 +222,7 @@ Puede cambiar la operación `remove` de -Rc a -Rsc estableciendo la clave DConf 
 
 ### Notificaciones de actualizaciones de paquetes
 
-Si quiere que GNOME compruebe automáticamente si hay actualizaciones, debe instalar [gnome-settings-daemon-updates](https://aur.archlinux.org/packages/gnome-settings-daemon-updates/) desde AUR. La dependencia opcional [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome) **es requerida** si ejecuta GNOME como usuario normal.
+Si quiere que GNOME compruebe automáticamente si hay actualizaciones, debe [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [gnome-settings-daemon-updates](https://aur.archlinux.org/packages/gnome-settings-daemon-updates/) desde AUR. La dependencia opcional [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome) **es requerida** si ejecuta GNOME como usuario normal.
 
 ## Personalizar la apariencia de GNOME
 
@@ -284,7 +284,7 @@ gtk-icon-theme-name = mi_tema_de_iconos
 
 ### Totem
 
-Para reproducir vídeos h.264, es necesario instalar [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)
+Para reproducir vídeos h.264, es necesario [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)
 
 Para obtener más información sobre la aceleración de hardware de gstreamer, véase [Gstreamer: Hardware Acceleration](/index.php/GStreamer#Hardware_acceleration "GStreamer").
 
@@ -836,7 +836,7 @@ Asegúrese de seleccionar un archivo o carpeta, de lo contrario *Mover a la Pape
 
 ### Grabar lo que visualiza en la pantalla
 
-Gnome viene con la función *possbility* incorporada para crear [screencasts](https://en.wikipedia.org/wiki/es:Screencast "wikipedia:es:Screencast") fácilmente. La combinación de teclas Ctrl+Mayús+Alt+R arranca y detiene la grabación. Un círculo rojo aparece en la esquina inferior derecha de la pantalla cuando la grabación está en curso. Una vez finalizada la grabación, un archivo llamado 'Screencast from %d%u-%c.webm' se guarda en la carpeta Vídeos. Para utilizar la función screencast necesita tener instalados los plugins gst que son:
+Gnome viene con la función *possbility* incorporada para crear [screencasts](https://en.wikipedia.org/wiki/es:Screencast los plugins [gst](https://www.archlinux.org/packages/?name=gst) que son:
 
 ```
 $ pacman -Qs gst
@@ -857,7 +857,7 @@ Gnome no considera ninguna configuración establecida en `/etc/X11/conf.d/*.conf
 
 ## Mensajería integrada (Empathy)
 
-Empathy, el motor de mensajería integrada, y todos los ajustes del sistema basados en cuentas de mensajería, no se mostrarán a menos que el grupo de paquetes [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/) o, al menos, uno de los backends ([telepathy-gabble](https://www.archlinux.org/packages/?name=telepathy-gabble) o [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze), por ejemplo) estén instalados.
+Empathy, el motor de mensajería integrada, y todos los ajustes del sistema basados en cuentas de mensajería, no se mostrarán a menos que el grupo de paquetes [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/) o, al menos, uno de los backends ([telepathy-gabble](https://www.archlinux.org/packages/?name=telepathy-gabble) o [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze), por ejemplo) estén [instalados](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)").
 
 Estos paquetes no están incluidos, por defecto, en la instalación de GNOME que instala Arch. Puede instalar Telepathy y, opcionalmente, algún backends con:
 
@@ -1028,11 +1028,11 @@ $ xinput set-prop "SynPS/2 Synaptics TouchPad" "Device Enabled" 1
 
 ### No es posible conectarse a redes Wi-Fi protegidas
 
-Es posible que se encuentre en la situación de que puede ver la lista de conexiones de red, pero al elegir una red cifrada no se muestra el cuadro de diálogo para ingresar la clave. Puede que tenga que [instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet). Véase [configurar NetworkManager en GNOME](/index.php/NetworkManager_(Espa%C3%B1ol)#GNOME "NetworkManager (Español)").
+Es posible que se encuentre en la situación de que puede ver la lista de conexiones de red, pero al elegir una red cifrada no se muestra el cuadro de diálogo para ingresar la clave. Puede que tenga que [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet). Véase [configurar NetworkManager en GNOME](/index.php/NetworkManager_(Espa%C3%B1ol)#GNOME "NetworkManager (Español)").
 
 ### «Cualquier orden viene definida como 33»
 
-Cuando se pulsa la tecla `Imprimir Pantalla` (a veces etiquetada como `PrntScr` o `PrtSc`) para tomar una captura de pantalla, y obtiene el mensaje *«Any command has been defined 33»*, [instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [metacity](https://www.archlinux.org/packages/?name=metacity).
+Cuando se pulsa la tecla `Imprimir Pantalla` (a veces etiquetada como `PrntScr` o `PrtSc`) para tomar una captura de pantalla, y obtiene el mensaje *«Any command has been defined 33»*, [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [metacity](https://www.archlinux.org/packages/?name=metacity).
 
 ### GDM y GNOME utilizan los cursores de X11
 
@@ -1045,11 +1045,13 @@ Inherits=Adwaita
 
 ```
 
-Nota: En lugar de «Adwaita», puede elegir otro tema para el cursor (por ejemplo, Human). También puede instalar [gnome-cursors-fix](https://aur.archlinux.org/packages/gnome-cursors-fix/) desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
+**Nota:** En lugar de «Adwaita», puede elegir otro tema para el cursor (por ejemplo, Human).
+
+También puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [gnome-cursors-fix](https://aur.archlinux.org/packages/gnome-cursors-fix/) desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
 
 ### Tracker & Documentos no enumeran todos los archivos locales
 
-Para que Tracker (y, por lo tanto, los Documentos) puedan detectar los archivos locales, los mismos deben ser guardados en carpetas conocidas por ellos. Si sus documentos están contenidos en uno de los directorios estándar de XDG habituales (por ejemplo, «Documentos» o «Música»), debe instalar [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) y ejecutar:
+Para que Tracker (y, por lo tanto, los Documentos) puedan detectar los archivos locales, los mismos deben ser guardados en carpetas conocidas por ellos. Si sus documentos están contenidos en uno de los directorios estándar de XDG habituales (por ejemplo, «Documentos» o «Música»), debe [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) y ejecutar:
 
 ```
  # xdg-user-dirs-update

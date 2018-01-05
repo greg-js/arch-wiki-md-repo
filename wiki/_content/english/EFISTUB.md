@@ -16,8 +16,9 @@ An EFISTUB kernel can be booted directly by a UEFI motherboard or indirectly usi
     *   [2.2 Using UEFI Shell](#Using_UEFI_Shell)
     *   [2.3 Using UEFI directly](#Using_UEFI_directly)
         *   [2.3.1 efibootmgr](#efibootmgr)
-        *   [2.3.2 UEFI Shell](#UEFI_Shell)
-        *   [2.3.3 Using a startup.nsh script](#Using_a_startup.nsh_script)
+        *   [2.3.2 efibootmgr with .efi file](#efibootmgr_with_.efi_file)
+        *   [2.3.3 UEFI Shell](#UEFI_Shell)
+        *   [2.3.4 Using a startup.nsh script](#Using_a_startup.nsh_script)
 
 ## Setting up EFISTUB
 
@@ -95,6 +96,14 @@ where *XXXX* is the number that appears in the output of `efibootmgr` command ag
 **Tip:** Save the command for creating your boot entry in a shell script somewhere, which makes it easier to modify (when changing kernel parameters, for example).
 
 More info about efibootmgr at [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI"). Forum post [https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040](https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040) .
+
+#### efibootmgr with .efi file
+
+If using [cryptboot](https://aur.archlinux.org/packages/cryptboot/) and [sbupdate](https://aur.archlinux.org/packages/sbupdate/) to generate your own keys for [Secure Boot](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot") and sign the initramfs and kernel then create a bootable .efi image, [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) can be used directly to boot the .efi file:
+
+ `efibootmgr -c -d /dev/sdX -p 1 -L "Arch Linux Signed" -l "EFI\Arch\linux-signed.efi"` 
+
+-c create, -d disk, -p partition number (change it if it is not 1), -L label, and -l boot loader
 
 #### UEFI Shell
 

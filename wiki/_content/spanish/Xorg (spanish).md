@@ -55,7 +55,7 @@ De [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 ## Instalación
 
-En primer lugar, tendrá que [instalar](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el servidor X con el paquete [xorg-server](https://www.archlinux.org/packages/?name=xorg-server), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+En primer lugar, tendrá que [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el servidor X con el paquete [xorg-server](https://www.archlinux.org/packages/?name=xorg-server), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Por otro lado, algunos paquetes del grupo [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) pueden ser útiles para realizar ciertas tareas de configuración, las cuales se señalan en la sección/página correspondiente.
 
@@ -104,7 +104,7 @@ Xorg debería funcionar sin problemas y sin necesidad de controladores privativo
 
 **Sugerencia:** La forma más fácil de arrancar X es usando un [gestor de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") como [GDM](/index.php/GDM "GDM") o [SLiM](/index.php/SLiM "SLiM").
 
-Si desea arrancar X sin un gestor de pantalla, instale el paquete [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit). Opcionalmente, los paquetes [xorg-twm](https://www.archlinux.org/packages/?name=xorg-twm), [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock) y [xterm](https://www.archlinux.org/packages/?name=xterm) permiten un entorno por defecto, como se describe a continuación.
+Si desea arrancar X sin un gestor de pantalla, [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit). Opcionalmente, los paquetes [xorg-twm](https://www.archlinux.org/packages/?name=xorg-twm), [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock) y [xterm](https://www.archlinux.org/packages/?name=xterm) permiten un entorno por defecto, como se describe a continuación.
 
 Los comandos `startx` y `xinit` inician el servidor X y los clientes (el script `startx` es simplemente un front-end para hacer más versátil la orden `xinit`). Para determinar el cliente a ejecutar, `startx`/`xinit` se dirigirán primero a analizar el archivo `~/.xinitrc` en el directorio home del usuario. En ausencia del archivo específico del usuario `~/.xinitrc`, el valor predeterminado en el archivo global del sistema `/etc/X11/xinit/xinitrc`, será iniciar, por defecto, un entorno básico con el gestor de ventanas [Twm](/index.php/Twm "Twm") , [Xclock](https://en.wikipedia.org/wiki/Xclock "wikipedia:Xclock") y [Xterm](/index.php/Xterm "Xterm"). Para obtener más información, consulte [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)").
 
@@ -386,7 +386,7 @@ $ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -disp
 
 Esto iniciará una sesión de Window Maker en una ventana con una resolución de 1024 por 768 dentro de su sesión X actual.
 
-Esto requiere tener instalado el paquete [xorg-server-xnest](https://www.archlinux.org/packages/?name=xorg-server-xnest).
+Esto requiere tener [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [xorg-server-xnest](https://www.archlinux.org/packages/?name=xorg-server-xnest).
 
 ### Iniciar programas GUI remótamente
 
@@ -396,7 +396,7 @@ Véase la página principal: [SSH#X11 forwarding](/index.php/SSH#X11_forwarding 
 
 Con la ayuda de `xinput` podemos activar o desactivar temporalmente las fuentes de entrada. Esto puede ser útil, por ejemplo, en sistemas que tienen más de un ratón, como los ThinkPads, y preferimos usar uno solo para evitar clics no deseados del ratón. Vamos a ver cómo lograr esto.
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Busque el ID del dispositivo que deseamos desactivar: `xinput` 
 

@@ -10,7 +10,7 @@ MuPDF supports all static functions required by PDF 1.7 and is a lightweight alt
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [mupdf](https://www.archlinux.org/packages/?name=mupdf) package, or [mupdf-git](https://aur.archlinux.org/packages/mupdf-git/) for the development version.
+[Install](/index.php/Install "Install") the [mupdf](https://www.archlinux.org/packages/?name=mupdf) package, [mupdf-gl](https://www.archlinux.org/packages/?name=mupdf-gl) for the OpenGL backend, or [mupdf-git](https://aur.archlinux.org/packages/mupdf-git/) for the development version.
 
 ## Usage
 
@@ -19,6 +19,8 @@ The application is ran from the command-line with `mupdf filename.pdf`. Supporte
 Navigation within a file works through keyboard shortcuts and mouse interaction.
 
 When zoomed in, the document can be moved by using the left mouse button. Pressing the right mouse button while moving the mouse will mark an area, and all text will be copied and can be inserted by clicking the middle mouse button.
+
+Press `I` to invert colours with [mupdf-gl](https://www.archlinux.org/packages/?name=mupdf-gl) and `/` to search.
 
 ## See also
 
