@@ -154,7 +154,7 @@
 
 *   **[UWM](https://en.wikipedia.org/wiki/UDE "wikipedia:UDE")** — Оконный менеджер UDE.
 
-	[http://udeproject.sourceforge.net/](http://udeproject.sourceforge.net/) || [ude](https://www.archlinux.org/packages/?name=ude)
+	[http://udeproject.sourceforge.net/](http://udeproject.sourceforge.net/) || [ude](https://aur.archlinux.org/packages/ude/)
 
 *   **WindowLab** — Компактный и простой оконный менеджер. Имеет свои отличительные особенности.
 

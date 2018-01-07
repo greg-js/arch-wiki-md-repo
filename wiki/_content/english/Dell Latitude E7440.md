@@ -3,18 +3,19 @@ The Dell Latitude E7440 is a business Ultrabook™. Generally speaking, it has n
 ## Contents
 
 *   [1 Hardware Overview](#Hardware_Overview)
-*   [2 Installation](#Installation)
-*   [3 Drivers](#Drivers)
-*   [4 What does not work](#What_does_not_work)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 "Invalid partition table!" when booting](#.22Invalid_partition_table.21.22_when_booting)
-    *   [5.2 Keyboard inputs the same character multiple times on one keypress](#Keyboard_inputs_the_same_character_multiple_times_on_one_keypress)
-    *   [5.3 SSD in the mSATA slot is only recognized after waking from susped](#SSD_in_the_mSATA_slot_is_only_recognized_after_waking_from_susped)
-    *   [5.4 Freeze before going to suspend when lid is closed](#Freeze_before_going_to_suspend_when_lid_is_closed)
-    *   [5.5 Wifi-problems with bluetooth enabled](#Wifi-problems_with_bluetooth_enabled)
-    *   [5.6 Wifi problems when coming back from supend state](#Wifi_problems_when_coming_back_from_supend_state)
-    *   [5.7 Hang with 4.2.0 kernel when docking with E-Port Plus and external monitors](#Hang_with_4.2.0_kernel_when_docking_with_E-Port_Plus_and_external_monitors)
-*   [6 See also](#See_also)
+*   [2 Further Information about other Configurations](#Further_Information_about_other_Configurations)
+*   [3 Installation](#Installation)
+*   [4 Drivers](#Drivers)
+*   [5 What does not work](#What_does_not_work)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 "Invalid partition table!" when booting](#.22Invalid_partition_table.21.22_when_booting)
+    *   [6.2 Keyboard inputs the same character multiple times on one keypress](#Keyboard_inputs_the_same_character_multiple_times_on_one_keypress)
+    *   [6.3 SSD in the mSATA slot is only recognized after waking from susped](#SSD_in_the_mSATA_slot_is_only_recognized_after_waking_from_susped)
+    *   [6.4 Freeze before going to suspend when lid is closed](#Freeze_before_going_to_suspend_when_lid_is_closed)
+    *   [6.5 Wifi-problems with bluetooth enabled](#Wifi-problems_with_bluetooth_enabled)
+    *   [6.6 Wifi problems when coming back from supend state](#Wifi_problems_when_coming_back_from_supend_state)
+    *   [6.7 Hang with 4.2.0 kernel when docking with E-Port Plus and external monitors](#Hang_with_4.2.0_kernel_when_docking_with_E-Port_Plus_and_external_monitors)
+*   [7 See also](#See_also)
 
 ## Hardware Overview
 
@@ -53,9 +54,41 @@ Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
 
+## Further Information about other Configurations
+
+On the configuration Intel i7-4600U with 256 GB SSD harddrive, 8 GB RAM, Arch Linux could be installed in UEFI partitioning without any problem (wireless also working). A22 version is stable and tested with Arch Linux 2018.01 base release (Januar 2018).
+
 ## Installation
 
+The instructions below focus on GPT partitioning scheme, and relies on UEFI features of the laptop.
+
+**Before any installation please make sure that latest system BIOS firmware is installed first**.
+
+*   A USB flash drive can be prepared on another computer. Firmware update process does not need an operating system and it can be done with BIOS utilities of the laptop.
+*   The latest BIOS firmware, which is an EXE file, can be downloaded from the Dell website.
+*   On Windows, the firmware can be burned with [Rufus](https://rufus.akeo.ie/) into a bootable USB flash drive. USB Flash drive can be made UEFI/GPT bootable.
+*   After the USB flash is prepared, plug the USB flash stick, boot the laptop by pressing F12 and follow the instructions to boot the USB flash.
+*   After the firmware update, during reboot press F2 and check whether the shown BIOS version is the one which is burned.
+
 You can follow the [Installation guide](/index.php/Installation_guide "Installation guide") to get yourself up and running.
+
+Further remarks for this laptop:
+
+*   After setting up ESP and having installed a boot manager (rEFind), make sure that BIOS was able to detect ESP and boot manager and could show its entries in UEFI setings.
+*   Wireless connection can be set up during the installation without any problem.
+*   UEFI with GPT harddisk partitioning works properly.
+*   It is advisable to partition the disks in 1 GB aligment for maximum performance (see below)
+
+Following partitioning scheme was tested on a 256GB SSD drive:
+
+*   /dev/sda1/ ESP with label ESP, to be mounted to /boot/efi, file system FAT32, between the sectors 2048 – 2097151\. 2097151 is last sector in the 1st GB of SSD. As mentioned in ["Managing EFI Boot Loaders for Linux: Basic Principles"](http://www.rodsbooks.com/efi-bootloaders/principles.html), the ESP should have 550 MB at least. For max. performance on SSD, 1 GB was allocated.
+*   /dev/sda2/ file system ext4, between the sectors 2097152 – 4194303 (exactly 1 GB boundary, 2nd 1 GB area of the SSD). It can be reserved for multi-boot installations in the future.
+*   /dev/sda3/ swap with label SWAP, between the sectors 4194304 – 20971519, giving 8 GB of swap for 8 GB laptop. The end sector is last sector of the 1st 10 GB of SSD.
+*   /dev/sda4/ to be mounted as/data, file system ext4, between the sectors 50331648 – 134217727, intended for general storage, and can be shared between many Linux installations. This is a 40 GB area which end is aligned to 1st 64 GB of SSD. As it can be figured out, 10 GB end and 24 GB beginning was not allocated. This was reserved if 8 GB RAM is upgraded to 16 GB RAM for which at least 16 GB swap could be needed. Since 1st 2x 1GB was reserved for ESP and sda2, this area starts at 24GB boundary, thus giving 40 GB to the end of 1st 64 GB.
+*   /dev/sda5 label root partition with label ROOT_ARCHLINUX, file system ext4, to be mounted to /, between the sectors 134217728 – 268.435.455, giving exactly 64 GB boundary, aligned to the 1st 64 GB.
+*   With the scheme above, an 256GB SSD has been partitioned for the 1st 2x 64 GB. The last two 64GB regions can be partitioned for other Linux operating systems. In [Partitioning](/index.php/Partitioning "Partitioning") it is advised to reserve 15-20 GB for a distro. For maximum flexibility 64 GB is taken in the scheme above.
+
+For max. performance on SSD, partitioons are aligned to 1 GB and 64 GB, respectively.
 
 ## Drivers
 

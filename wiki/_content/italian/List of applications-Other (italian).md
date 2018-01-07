@@ -504,7 +504,7 @@ See also [Wikipedia:Comparison of text editors](https://en.wikipedia.org/wiki/Co
 
 *   **[Scite](https://en.wikipedia.org/wiki/Scite "wikipedia:Scite")** — Editor generalmente utile con servizi per la creazione e l'esecuzione di programmi
 
-	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://www.archlinux.org/packages/?name=scite)
+	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://aur.archlinux.org/packages/scite/)
 
 *   **[Sublime Text 2](https://en.wikipedia.org/wiki/Sublime_Text "wikipedia:Sublime Text")** — Editor di C closed-source e basato su Python, che nonostante abbia molte caratteristiche avanzate e plugin rimane leggero e grazioso.
 
@@ -512,7 +512,7 @@ See also [Wikipedia:Comparison of text editors](https://en.wikipedia.org/wiki/Co
 
 *   **Tea** — Editor di testo basato sulle QT e ricco di funzionalità
 
-	[http://tea-editor.sourceforge.net/](http://tea-editor.sourceforge.net/) || [tea](https://www.archlinux.org/packages/?name=tea)
+	[http://tea-editor.sourceforge.net/](http://tea-editor.sourceforge.net/) || [tea](https://aur.archlinux.org/packages/tea/)
 
 ### Ambienti integrati di sviluppo
 

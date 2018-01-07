@@ -587,7 +587,7 @@ Many clients listed here (including Pidgin and all it's forks) support multiple 
 
 *   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — Fork of CenterICQ, a text mode menu- and window-driven IM interface.
 
-	[http://centerim.org/](http://centerim.org/) || [centerim](https://www.archlinux.org/packages/?name=centerim)
+	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
 
 *   **[Finch](/index.php/Pidgin "Pidgin")** — Ncurses-based chat client that uses libpurple and supports all its protocols.
 
@@ -687,7 +687,7 @@ See also [Wikipedia:Comparison of instant messaging clients#XMPP-related feature
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Easy to hack feature-rich XMPP client by the author of the ejabberd XMPP server.
 
-	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://www.archlinux.org/packages/?name=tkabber)
+	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://aur.archlinux.org/packages/tkabber/)
 
 ###### 伺服器
 
@@ -901,7 +901,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **Snownews** — Text mode RSS news reader.
 
-	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://www.archlinux.org/packages/?name=snownews)
+	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://aur.archlinux.org/packages/snownews/)
 
 ##### 圖形
 
@@ -2108,7 +2108,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[Xfe](https://en.wikipedia.org/wiki/Xfe "wikipedia:Xfe")** — Microsoft Explorer-like file manager for X (X File Explorer).
 
-	[http://roland65.free.fr/xfe/](http://roland65.free.fr/xfe/) || [xfe](https://www.archlinux.org/packages/?name=xfe)
+	[http://roland65.free.fr/xfe/](http://roland65.free.fr/xfe/) || [xfe](https://aur.archlinux.org/packages/xfe/)
 
 #### 索引器
 
@@ -2692,7 +2692,7 @@ See also [Wikipedia:Comparison of text editors](https://en.wikipedia.org/wiki/Co
 
 *   **[SciTE](https://en.wikipedia.org/wiki/SciTE "wikipedia:SciTE")** — Generally useful editor with facilities for building and running programs.
 
-	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://www.archlinux.org/packages/?name=scite)
+	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://aur.archlinux.org/packages/scite/)
 
 *   **Scribes** — An ultra minimalist text editor that combines simplicity with power.
 
@@ -2704,7 +2704,7 @@ See also [Wikipedia:Comparison of text editors](https://en.wikipedia.org/wiki/Co
 
 *   **Tea** — Qt-based feature rich text editor.
 
-	[http://tea-editor.sourceforge.net/](http://tea-editor.sourceforge.net/) || [tea](https://www.archlinux.org/packages/?name=tea)
+	[http://tea-editor.sourceforge.net/](http://tea-editor.sourceforge.net/) || [tea](https://aur.archlinux.org/packages/tea/)
 
 ##### 共筆文字編輯器
 
@@ -2780,7 +2780,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **apvlv** — Lightweight PDF/DjVu/UMD/TXT viewer with [Vim](/index.php/Vim "Vim") keybindings.
 
-	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://www.archlinux.org/packages/?name=apvlv)
+	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://aur.archlinux.org/packages/apvlv/)
 
 *   **[Chrome](https://en.wikipedia.org/wiki/Google_Chrome "wikipedia:Google Chrome")** — Web browser with a built-in PDF viewer.
 
@@ -3392,7 +3392,7 @@ See also [Wikipedia:Comparison of EDA software](https://en.wikipedia.org/wiki/Co
 
 *   **[Qucs](https://en.wikipedia.org/wiki/Quite_Universal_Circuit_Simulator "wikipedia:Quite Universal Circuit Simulator")** — Electronics circuit simulator application that gives you the ability to set up a circuit with a graphical user interface and simulate its large-signal, small-signal and noise behaviour.
 
-	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://www.archlinux.org/packages/?name=qucs)
+	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://aur.archlinux.org/packages/qucs/)
 
 #### 物理模擬
 
@@ -3471,7 +3471,7 @@ See the main article: [Desktop environment#List of desktop environments](/index.
 
 *   **twin** — Text-mode window manager.
 
-	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
+	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://aur.archlinux.org/packages/twin/)
 
 *   see also [#Terminal_multiplexers](#.E7.B5.82.E7.AB.AF.E6.A9.9F.E5.A4.9A.E5.B7.A5.E5.99.A8) which offer some of the functions of window managers for the console
 

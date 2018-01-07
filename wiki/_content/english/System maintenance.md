@@ -226,7 +226,7 @@ The following tips are generally not required, but certain users may find them u
 
 Arch's rolling releases can be a boon for users who want to try the latest features and get upstream updates as soon as possible, but they can also make system maintenance more difficult. To simplify maintenance and improve stability, try to avoid cutting edge software and install only mature and proven software. Such packages are less likely to receive difficult upgrades such as major configuration changes or feature removals. Prefer software that has a strong and active development community, as well as a high number of competent users, in order to simplify support in the event of a problem.
 
-Avoid any use of the testing repository, even individual packages from testing. These packages are experimental and not suitable for a stable system. Similarly, avoid development packages which are built directly from upstream sources. These are usually found in the [AUR](/index.php/AUR "AUR"), with names including things like: "dev", "devel", "svn", "cvs", "git", etc.
+Avoid any use of the testing repository, even individual packages from testing. These packages are experimental and not suitable for a stable system. Similarly, avoid packages which are built directly from upstream development sources. These are usually found in the [AUR](/index.php/AUR "AUR"), with names including things like: "dev", "devel", "svn", "cvs", "git", etc.
 
 ### Install the linux-lts package
 

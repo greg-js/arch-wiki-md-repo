@@ -120,37 +120,37 @@ Para suporte a cores, veja [Color output in console#grep](/index.php/Color_outpu
 
 ## find
 
-*find* is part of the [findutils](https://www.archlinux.org/packages/?name=findutils) package, which belongs to the [base](https://www.archlinux.org/groups/x86_64/base/) package group.
+*find* é parte do pacote [findutils](https://www.archlinux.org/packages/?name=findutils), que pertence ao grupo de pacotes [base](https://www.archlinux.org/groups/x86_64/base/).
 
-One would probably expect a *find* command to take as argument a file name and search the filesystem for files matching that name. For a program that does exactly that see [#locate](#locate) below.
+Provavelmente se esperaria que um comando *find* levasse como argumento um nome de arquivo e pesquisasse no sistema de arquivos para arquivos que correspondessem a esse nome. Para um programa que faz exatamente isso, veja [#locate](#locate) abaixo.
 
-Instead, find takes a set of directories and matches each file under them against a set of expressions. This design allows for some very powerful "one-liners" that would not be possible using the "intuitive" design described above. See [UsingFind](http://mywiki.wooledge.org/UsingFind) for usage details.
+Em vez disso, find leva um conjunto de diretórios e combina cada arquivo abaixo deles contra um conjunto de expressões. Este design permite alguns "one-liners" muito poderosos que não seriam possíveis usando o design "intuitivo" descrito acima. Veja [UsingFind](http://mywiki.wooledge.org/UsingFind) para detalhes de uso.
 
 ## iconv
 
-*iconv* converts the encoding of characters from one codeset to another.
+*iconv* converte uma codificação de caracteres de um *codeset* para outro.
 
-The following command will convert the file `*foo*` from ISO-8859-15 to UTF-8, saving it to `*foo*.utf`:
+O seguinte comando vai converter o arquivo `*foo*` de ISO-8859-15 para UTF-8, salvando-o em `*foo*.utf`:
 
 ```
 $ iconv -f ISO-8859-15 -t UTF-8 *foo* > *foo*.utf
 
 ```
 
-See [iconv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) for more details.
+Veja [iconv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) para mais detalhes.
 
 ### Converter um arquivo no lugar
 
-**Tip:** You can use [recode](https://www.archlinux.org/packages/?name=recode) instead of iconv if you do not want to touch the mtime.
+**Dica:** Você pode usar [recode](https://www.archlinux.org/packages/?name=recode) em vez do iconv se você não deseja tocar no mtime.
 
-Unlike [sed](#sed), *iconv* does not provide an option to convert a file in place. However, `sponge` from the [moreutils](https://www.archlinux.org/packages/?name=moreutils) package can help:
+Ao contrário do [sed](#sed), *iconv* não fornece uma opção para converter um arquivo no lugar onde se encontra. Porém, `sponge` do pacote [moreutils](https://www.archlinux.org/packages/?name=moreutils) pode ajudar:
 
 ```
 $ iconv -f WINDOWS-1251 -t UTF-8 *foobar*.txt | sponge *foobar*.txt
 
 ```
 
-See [sponge(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) for details.
+Veja [sponge(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) para detalhes.
 
 ## ip
 

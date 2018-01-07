@@ -106,7 +106,7 @@ See also [#Terminal multiplexers](#Terminal_multiplexers), which offer some of t
 
 *   **twin** — Text-mode window manager.
 
-	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
+	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://aur.archlinux.org/packages/twin/)
 
 ##### Graphical
 

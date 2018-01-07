@@ -337,7 +337,7 @@ $ gpg --recv-keys 702353E0F7E48EDB
 
 ```
 
-Additionally, LineageOS requires the following packages: [xml2](https://www.archlinux.org/packages/?name=xml2), [lzop](https://www.archlinux.org/packages/?name=lzop), [pngcrush](https://www.archlinux.org/packages/?name=pngcrush), [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
+Additionally, LineageOS requires the following packages: [xml2](https://aur.archlinux.org/packages/xml2/), [lzop](https://www.archlinux.org/packages/?name=lzop), [pngcrush](https://www.archlinux.org/packages/?name=pngcrush), [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
 
 They can be installed with the [lineageos-devel](https://aur.archlinux.org/packages/lineageos-devel/) metapackage.
 

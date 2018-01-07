@@ -38,7 +38,7 @@ Related articles
 
 连接到加密无线网络的第一步是让 *wpa_supplicant* 获取 WPA 认证者的认证。为此， *wpa_supplicant* 必须进行配置以使其能够向认证者提交认证信息。
 
-一旦完成认证，就可以正常连接网络，并通过 [iproute2](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)") 手工获取 IP 地址；或者使用 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") 或 [dhcpcd](/index.php/Dhcpcd "Dhcpcd")之类的网络管理程序，通过配置一个*接口*然后通过 DHCP 自动获取 IP 地址。参阅[无线网络配置#无线网络管理](/index.php/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#.E6.97.A0.E7.BA.BF.E7.BD.91.E7.BB.9C.E7.AE.A1.E7.90.86 "无线网络配置")和[Network configuration (简体中文)#配置 IP 地址](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE_IP_.E5.9C.B0.E5.9D.80 "Network configuration (简体中文)")等文章中的方法和范例。
+一旦完成认证，就可以正常连接网络，并通过 [iproute2](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)") 手工获取 IP 地址；或者使用 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") 或 [dhcpcd](/index.php/Dhcpcd "Dhcpcd")之类的网络管理程序，通过配置一个*接口*然后通过 DHCP 自动获取 IP 地址。参阅[无线网络管理](/index.php/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#.E6.97.A0.E7.BA.BF.E7.BD.91.E7.BB.9C.E7.AE.A1.E7.90.86 "无线网络配置")和[配置 IP 地址](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE_IP_.E5.9C.B0.E5.9D.80 "Network configuration (简体中文)")等文章中的方法和范例。
 
 ## 用 wpa_cli 连接
 

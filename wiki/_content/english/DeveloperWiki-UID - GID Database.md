@@ -127,6 +127,7 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [kibana](https://www.archlinux.org/packages/?name=kibana) | kibana | 206 |
 | [grafana](https://www.archlinux.org/packages/?name=grafana) | grafana | 207 |
 | [consul](https://www.archlinux.org/packages/?name=consul) | consul | 208 |
+| [cups](https://www.archlinux.org/packages/?name=cups) | cups | 209 |
 | [amavisd-new](https://www.archlinux.org/packages/?name=amavisd-new) | amavis | 333 |
 | [ceph](https://www.archlinux.org/packages/?name=ceph) | ceph | 340 |
  ldap | 439 |
@@ -287,6 +288,7 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [kibana](https://www.archlinux.org/packages/?name=kibana) | kibana | 206 |
 | [grafana](https://www.archlinux.org/packages/?name=grafana) | grafana | 207 |
 | [consul](https://www.archlinux.org/packages/?name=consul) | consul | 208 |
+| [cups](https://www.archlinux.org/packages/?name=cups) | cups | 209 |
 | [amavisd-new](https://www.archlinux.org/packages/?name=amavisd-new) | amavis | 333 |
 | [ceph](https://www.archlinux.org/packages/?name=ceph) | ceph | 340 |
  ldap | 439 |

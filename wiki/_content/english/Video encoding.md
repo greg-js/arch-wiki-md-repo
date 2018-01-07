@@ -13,7 +13,7 @@ Videos can be encoded through the command line, as single commands, or using scr
 
 Several graphical user interfaces exist to assist with the conversion of video to new formats.
 
-*   [winff](https://www.archlinux.org/packages/?name=winff)
+*   [winff](https://aur.archlinux.org/packages/winff/)
 *   [ogmrip](https://www.archlinux.org/packages/?name=ogmrip)
 *   [dvdrip](https://www.archlinux.org/packages/?name=dvdrip)
 *   [handbrake](https://www.archlinux.org/packages/?name=handbrake)

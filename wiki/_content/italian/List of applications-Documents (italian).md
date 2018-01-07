@@ -44,7 +44,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **apvlv** — Un leggero visualizzatore PDF/DjVu/UMD/TXT con tasti di scelta rapida [Vim](/index.php/Vim "Vim").
 
-	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://www.archlinux.org/packages/?name=apvlv)
+	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://aur.archlinux.org/packages/apvlv/)
 
 *   **[Chrome](https://en.wikipedia.org/wiki/Google_Chrome "wikipedia:Google Chrome")** — Un browser web compilato con un visualizzatore PDF integrato.
 
@@ -312,4 +312,4 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **[YAGF](/index.php/YAGF "YAGF")** — Interfaccia grafica per CuneiForm.
 
-	[http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) || [yagf](https://www.archlinux.org/packages/?name=yagf)
+	[http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) || [yagf](https://aur.archlinux.org/packages/yagf/)

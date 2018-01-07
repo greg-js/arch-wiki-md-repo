@@ -149,11 +149,11 @@ VirtualHost {
 
 ### Self-signed certificate
 
-If you only need a local self-signed certificate for webdevelopment eg. you can easily do this with:
+If you only need a local self-signed certificate for web development eg. you can easily do this with:
 
 ```
 # cd /etc/hiawatha/tls
-# openssl req -new -x509 -nodes -newkey rsa:4096 -keyout *serverkey.pem* -out *serverkey.pem* -days 1095
+# openssl req -x509 -nodes -newkey rsa:2048 -keyout *serverkey.pem* -out *serverkey.pem* -days 1095
 # chmod 400 *serverkey.pem*
 
 ```

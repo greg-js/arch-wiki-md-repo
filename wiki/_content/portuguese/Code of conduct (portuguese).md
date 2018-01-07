@@ -264,7 +264,7 @@ Diretrizes para o [wiki](/index.php/ArchWiki:About_(Portugu%C3%AAs) "ArchWiki:Ab
 
 ### [Rastreador de erros](https://bugs.archlinux.org/)
 
-Veja a página principal: [Diretrizes para relatar erros](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
+Veja a página principal: [Diretrizes de relatórios de erro](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro").
 
 ## Cumprimento
 

@@ -282,7 +282,7 @@
 
 *   **[vile](https://en.wikipedia.org/wiki/Vile_(editor) "wikipedia:Vile (editor)")** — Легковесный клон Emacs c горячими клавишами в стиле *vi*
 
-	[http://invisible-island.net/vile/vile.html](http://invisible-island.net/vile/vile.html) || [vile](https://www.archlinux.org/packages/?name=vile)
+	[http://invisible-island.net/vile/vile.html](http://invisible-island.net/vile/vile.html) || [vile](https://aur.archlinux.org/packages/vile/)
 
 *   **[Zile](https://en.wikipedia.org/wiki/Zile_(editor) "wikipedia:Zile (editor)")** — Легковесный клон Emacs
 
@@ -394,7 +394,7 @@
 
 *   **[SciTE](https://en.wikipedia.org/wiki/ru:SciTE "wikipedia:ru:SciTE")** — Очень полезный редактор с удобствами для создания и выполнения программ
 
-	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://www.archlinux.org/packages/?name=scite)
+	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://aur.archlinux.org/packages/scite/)
 
 *   **Scribes** — Ультраминималистичный текстовый редактор, который сочетает простоту с мощью
 
@@ -406,7 +406,7 @@
 
 *   **Tea** — Основанный на Qt текстовый редактор с богатым функционалом
 
-	[http://tea-editor.sourceforge.net/](http://tea-editor.sourceforge.net/) || [tea](https://www.archlinux.org/packages/?name=tea)
+	[http://tea-editor.sourceforge.net/](http://tea-editor.sourceforge.net/) || [tea](https://aur.archlinux.org/packages/tea/)
 
 *   **XEdit** — Простой текстовый редактор для оконной системы X
 
@@ -486,7 +486,7 @@
 
 *   **apvlv** — Легковесная программа просмотра PDF/DjVu/UMD/TXT с горячими клавишами [Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)")
 
-	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://www.archlinux.org/packages/?name=apvlv)
+	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://aur.archlinux.org/packages/apvlv/)
 
 *   **Atril** — Простая мультистраничная программа просмотра документов для MATE
 
@@ -638,7 +638,7 @@
 
 *   **[YAGF](/index.php/YAGF "YAGF")** — Графический интерфейс для программы оптического распознавания текста CuneiForm на платформе Linux
 
-	[http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) || [yagf](https://www.archlinux.org/packages/?name=yagf)
+	[http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) || [yagf](https://aur.archlinux.org/packages/yagf/)
 
 ### Программы ведения заметок
 

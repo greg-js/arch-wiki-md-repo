@@ -9,7 +9,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [scite](https://www.archlinux.org/packages/?name=scite) package.
+[Install](/index.php/Install "Install") the [scite](https://aur.archlinux.org/packages/scite/) package.
 
 ## Configuration
 

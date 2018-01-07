@@ -1,3 +1,7 @@
+Related articles
+
+*   [Listado de aplicaciones#Software OCR](/index.php/List_of_applications_(Espa%C3%B1ol)#Software_de_reconocimiento_.C3.B3ptico_de_caracteres_.28siglas_en_ingl.C3.A9s_OCR.29 "List of applications (Español)")
+
 [YAGF](http://sourceforge.net/projects/yagf-ocr/) es una interfaz gráfica para el programa ROC (Reconocimiento Óptico de Caracteres) [cuneiform](https://en.wikipedia.org/wiki/CuneiForm_(software) en la plataforma Linux. Con YAGF puede escanear imágenes vía XSane, realizar el preprocesado de las imágenes y reconocer textos usando cuneiform desde un centro de comandos único. YAGF también facilita el escaneado y reconocimiento de múltiples imágenes de forma secuencial.
 
 ## Contents
@@ -15,7 +19,7 @@
 
 YAGF tiene como dependencias Qt4 y el paquete de corrección ortográfica [aspell](https://www.archlinux.org/packages/?name=aspell). Si desea poder cargar imágenes en YAGF desde un escáner directamente, debe instalar el software [XSane](/index.php/SANE_(Espa%C3%B1ol) "SANE (Español)"). Además tendrá que instalar [cuneiform](https://www.archlinux.org/packages/?name=cuneiform) para el reconocimiento de texto.
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [yagf](https://www.archlinux.org/packages/?name=yagf) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [yagf](https://aur.archlinux.org/packages/yagf/) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ## Idiomas soportados
 

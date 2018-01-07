@@ -9,16 +9,22 @@
 *   [2 Install Arch](#Install_Arch)
     *   [2.1 Enable wifi](#Enable_wifi)
     *   [2.2 Install Arch](#Install_Arch_2)
-*   [3 Getting hardware working](#Getting_hardware_working)
-    *   [3.1 Sound](#Sound)
-    *   [3.2 Power level information (ACPI)](#Power_level_information_.28ACPI.29)
-    *   [3.3 Touchpad](#Touchpad)
-    *   [3.4 SD card reader](#SD_card_reader)
-        *   [3.4.1 Kernel versions < v4.4-rc1](#Kernel_versions_.3C_v4.4-rc1)
-    *   [3.5 Special keys](#Special_keys)
-    *   [3.6 Freezing](#Freezing)
-    *   [3.7 Bluetooth](#Bluetooth)
-*   [4 See also](#See_also)
+*   [3 Getting hardware working on up-to-date kernels](#Getting_hardware_working_on_up-to-date_kernels)
+    *   [3.1 Kernel patches](#Kernel_patches)
+        *   [3.1.1 Patch history](#Patch_history)
+        *   [3.1.2 AUR package with patched kernel](#AUR_package_with_patched_kernel)
+        *   [3.1.3 SD card Replay Protected Memory Block partition](#SD_card_Replay_Protected_Memory_Block_partition)
+    *   [3.2 Additional config](#Additional_config)
+        *   [3.2.1 Freezing](#Freezing)
+        *   [3.2.2 Sound](#Sound)
+        *   [3.2.3 Bluetooth](#Bluetooth)
+*   [4 On older kernels](#On_older_kernels)
+    *   [4.1 Sound](#Sound_2)
+    *   [4.2 Power level information (ACPI)](#Power_level_information_.28ACPI.29)
+    *   [4.3 Touchpad](#Touchpad)
+    *   [4.4 SD card reader](#SD_card_reader)
+    *   [4.5 Special keys](#Special_keys)
+*   [5 See also](#See_also)
 
 ## Booting Arch install media
 
@@ -202,9 +208,41 @@ If you want to run 4.4 kernel, you must revert [this commit](http://git.kernel.o
 
 Proceed as usual.
 
-## Getting hardware working
+## Getting hardware working on up-to-date kernels
 
-### Sound
+With some kernel patches on newer kernels the x205ta works. The built-in microphone does not work. (Refer to "Sound".) The Intel Baytrail CPU should be able to consume less power than it does. There are still occasional freezes possible due to the CPU power states not being properly supported. (Refer to "Freezes".)
+
+### Kernel patches
+
+#### Patch history
+
+Three very elaborate threads contain the history of patches for the kernel for the x205ta: [kernel bug for baytrail power states](https://bugzilla.kernel.org/show_bug.cgi?id=109051), [kernel bug for chtrt5645](https://bugzilla.kernel.org/show_bug.cgi?id=95681) and most important [a Ubuntu forum thread](https://ubuntuforums.org/showthread.php?t=2254322) with [a patched kernel provided by harryharryharry](https://ubuntuforums.org/showthread.php?t=2254322&page=158&p=13625163#post13625163).
+
+#### AUR package with patched kernel
+
+AUR package [linux-x205ta](https://aur.archlinux.org/packages/linux-x205ta/) applies the patches proposed in the threads above to the standard arch kernel. Sources and references for each patch are in the PKGBUILD file.
+
+Compiling the kernel with the provided config takes about one hour. Ask makepkg to use the four CPU cores when compiling on the x205ta in `~/.config/pacman/makepkg.conf` or `/etc/makepkg.conf`:
+
+ `~/.config/pacman/makepkg.conf`  `MAKEFLAGS="-j$(nproc)"` 
+
+Manual interventions and patches are needed on older kernels as a lot of patches came in over time. Refer to "On older kernels" below for instaructions for older kernels.
+
+#### SD card Replay Protected Memory Block partition
+
+As of kernel version v4.4-rc1 the micro SD card reader should work out of the box. See [commit info in kernel source.](https://github.com/torvalds/linux/commit/0cd2f04453fcb7bf3f38a4a72d1619636b4afa57) There can however be timeouts when probing the Replay Protected Memory Block partition. Refer to [this page](https://dev-nell.com/rpmb-emmc-errors-under-linux.html) for more info and a kernel patch disabling the RPMB partition should you never need the RPMB partition.
+
+AUR package [linux-x205ta](https://aur.archlinux.org/packages/linux-x205ta/) applies the patch disabling the RPMB partition.
+
+### Additional config
+
+#### Freezing
+
+Depending on kernel versions, on an unpatched kernel, the x205ta regularly freezes, where the x205ta can only be restarted by holding down the power button for several seconds. Freezes are due to poor support for the baytrail power functions. Refer to the [kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=109051) for more info. AUR package [linux-x205ta](https://aur.archlinux.org/packages/linux-x205ta/) applies what seems to be the most effective patch.
+
+Setting kernel argument "intel_idle.max_cstate=1" solves the problem on a patched kernel without affecting performance. Power saving functionalities should in theory be impeded using this patch and kernel parameter, but the laptop's battery life remains impressive and freezes are not frequent. The [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") page may help with adding to the kernel parameters.
+
+#### Sound
 
 There has recently been some success in getting the x205ta's Realtek RT5648 sound card working. The relevant patches are in Linux release 4.11 and later.
 
@@ -216,7 +254,19 @@ $ wget -qO /usr/share/alsa/ucm/chtrt5645/chtrt5645.conf [https://raw.githubuserc
 
 ```
 
-See also: [this step-by-step description of how to compile Pierre Bossart's patches](https://ubuntuforums.org/showthread.php?t=2254322&page=126&p=13592053#post13592053). Not needed as of v4.11 and later.
+#### Bluetooth
+
+Install a correct firmware file (e.g., BCM43341B0_002.001.014.0122.0176.hcd from Windows 10 driver) as /lib/firmware/brcm/BCM43341B0.hcd. See [this page](https://ubuntuforums.org/showthread.php?t=2254322&page=97) for more information on the hcd file.
+
+Next, follow the [normal steps to activate bluetooth](https://wiki.archlinux.org/index.php/Bluetooth).
+
+## On older kernels
+
+Patches came in over time. Try to use a new kernel!
+
+### Sound
+
+See [for a step-by-step description of how to compile Pierre Bossart's patches](https://ubuntuforums.org/showthread.php?t=2254322&page=126&p=13592053#post13592053) for sound card support. Not needed as of v4.11.
 
 ### Power level information (ACPI)
 
@@ -251,11 +301,7 @@ EndSection
 
 ### SD card reader
 
-As of kernel version v4.4-rc1 the micro SD card reader should work out of the box. See [commit info in kernel source.](https://github.com/torvalds/linux/commit/0cd2f04453fcb7bf3f38a4a72d1619636b4afa57) There can however be timeouts when probing the Replay Protected Memory Block partition. Refer to [this page](https://dev-nell.com/rpmb-emmc-errors-under-linux.html) for more info and a kernel patch disabling the RPMB partition should you never need the RPMB partition.
-
-#### Kernel versions < v4.4-rc1
-
-For older kernel versions the micro SD card reader will probably not work out of the box. [This page](https://wiki.debian.org/InstallingDebianOn/Asus/X205TA) contains a simple fix. First, create the file as follows:
+For older kernel versions < v4.4-rc1 the micro SD card reader will probably not work out of the box. [This page](https://wiki.debian.org/InstallingDebianOn/Asus/X205TA) contains a simple fix. First, create the file as follows:
 
  `/etc/modprobe.d/sdhci.conf ` 
 ```
@@ -277,46 +323,7 @@ With [this patch](https://lkml.org/lkml/2015/9/15/394) the card reader should wo
 
 ### Special keys
 
-Out of the box, the only keysyms correctly sent are the audio volume keys (F10-F12). Ironic, since the sound card doesn't work. Can be conveniently remapped to control screen brightness (e.g., by calling xbacklight).
-
-### Freezing
-
-Some users experience regular freezes, where their x205ta can only be restarted by holding down the power button for several seconds. Some users have reported that so far kernel version 4.1.6 seems to experience fewest freezes. Freezes seem to occur less regular with the current(2015-11-02) 4.3-mainline vanilla kernel.
-
-Setting kernel argument "intel_idle.max_cstate=1" solve the problem without affecting performance. The [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") page may help with adding to the kernel parameters.
-
-There is a kernel available with patches from Intel in the AUR: [linux-baytrail411](https://aur.archlinux.org/packages/linux-baytrail411/).
-
-### Bluetooth
-
-Install a correct firmware file (e.g., BCM43341B0_002.001.014.0122.0176.hcd from Windows 10 driver) as /lib/firmware/brcm/BCM43341B0.hcd.
-
-[Install](/index.php/Install "Install") the [bluez](https://www.archlinux.org/packages/?name=bluez) package, [enable](/index.php/Enable "Enable") the `bluetooth.service` systemd service, and then run this command
-
-```
-# btattach --bredr /dev/ttyS1 -P bcm
-
-```
-
-To automate running this command at startup you can create a service file for it
-
- `/etc/systemd/system/btattach.service` 
-```
-[Unit]
-Description=Btattach
-
-[Service]
-Type=simple
-ExecStart=/usr/bin/btattach --bredr /dev/ttyS1 -P bcm
-ExecStop=/usr/bin/killall btattach
-
-[Install]
-WantedBy=multi-user.target
-```
-
-Then [enable](/index.php/Enable "Enable") the `btattach.service` systemd service.
-
-**Tip:** * If btattach doesn't works, remove "-P bcm" parameter and try again
+On older kernel versions, out of the box, the only keysyms correctly sent are the audio volume keys (F10-F12). Ironic, since the sound card doesn't work. Can be conveniently remapped to control screen brightness (e.g., by calling xbacklight). On current kernel versions the sleep button, brightness buttons, display button and volume buttons all work in XFCE.
 
 ## See also
 

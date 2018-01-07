@@ -1,6 +1,6 @@
 | [Português](/index.php/Category:Portugu%C3%AAs "Category:Português") <small>(11)</small> |
 | <small>1.</small> [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)") <small>(16)</small> |
-| <small>1.1.</small> [Desenvolvimento do Arch](/index.php/Category:Arch_development_(Portugu%C3%AAs) "Category:Arch development (Português)") <small>(1) (também em [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)"))</small> |
+| <small>1.1.</small> [Desenvolvimento do Arch](/index.php/Category:Arch_development_(Portugu%C3%AAs) "Category:Arch development (Português)") <small>(2) (também em [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)"))</small> |
 | <small>1.1.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(17)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Portugu%C3%AAs) "Category:ArchWiki (Português)") <small>(5)</small> |
 | <small>1.2.1.</small> [Help](/index.php/Category:Help_(Portugu%C3%AAs) "Category:Help (Português)") <small>(15)</small> |
@@ -10,7 +10,7 @@
 | <small>2.2.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving_(Portugu%C3%AAs) "Category:Data compression and archiving (Português)") <small>(1)</small> |
 | <small>2.3.</small> [Emulators](/index.php/Category:Emulators_(Portugu%C3%AAs) "Category:Emulators (Português)") <small>(1)</small> |
 | <small>3.</small> [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)") <small>(1)</small> |
-| <small>3.1.</small> [Desenvolvimento do Arch](/index.php/Category:Arch_development_(Portugu%C3%AAs) "Category:Arch development (Português)") <small>(1) (também em [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)"))</small> |
+| <small>3.1.</small> [Desenvolvimento do Arch](/index.php/Category:Arch_development_(Portugu%C3%AAs) "Category:Arch development (Português)") <small>(2) (também em [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)"))</small> |
 | <small>3.1.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(17)</small> |
 | <small>3.2.</small> [Programming languages](/index.php/Category:Programming_languages_(Portugu%C3%AAs) "Category:Programming languages (Português)") <small>(1)</small> |
 | <small>4.</small> [Hardware](/index.php/Category:Hardware_(Portugu%C3%AAs) "Category:Hardware (Português)") <small>(0)</small> |

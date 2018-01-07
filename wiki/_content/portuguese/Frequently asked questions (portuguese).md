@@ -146,7 +146,7 @@ Veja as páginas [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português
 Primeiro, você precisa descobrir se esse erro é algo que a equipe do Arch possa consertar. Algumas vezes não é (aquele travamento no firefox pode ser falha da equipe do Mozilla); isto é chamado de *upstream error* ("erro do upstream"). Se for um problema do Arch, existe uma série de coisas que você pode fazer:
 
 1.  Procurar informações no fórum. Veja se alguém teve o mesmo problema.
-2.  Fazer um [relatório de erro](/index.php/Bug_report "Bug report"), com informações detalhadas, em [https://bugs.archlinux.org](https://bugs.archlinux.org)
+2.  Fazer um [relatório de erro](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro"), com informações detalhadas, em [https://bugs.archlinux.org](https://bugs.archlinux.org)
 3.  Se desejar, você pode criar um tópico no fórum descrevendo o problema e informando que você já relatou o mesmo. Isto ajuda a prevenir que várias pessoas relatem o mesmo erro.
 
 ### Os pacotes do Arch precisam usar uma nomenclatura única. ".pkg.tar.gz" e "pkg.tar.xz" é muito longo e/ou confuso

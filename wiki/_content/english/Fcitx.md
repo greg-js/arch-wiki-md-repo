@@ -56,7 +56,7 @@ Depending on the language you wish to type, other input method engines are avail
 *   [fcitx-libpinyin](https://www.archlinux.org/packages/?name=fcitx-libpinyin), based on [libpinyin](https://www.archlinux.org/packages/?name=libpinyin). It has a better algorithm than [fcitx-sunpinyin](https://www.archlinux.org/packages/?name=fcitx-sunpinyin).
 *   [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime), based on schemas from the [Rime IME](/index.php/Rime_IME "Rime IME") project.
 *   [fcitx-googlepinyin](https://www.archlinux.org/packages/?name=fcitx-googlepinyin), the Google pinyin IME for Android.
-*   [fcitx-sogoupinyin](https://aur.archlinux.org/packages/fcitx-sogoupinyin/), Sogou input method for linux—Supports, Jianpin, fuzzy sound, cloud input, English input, mixed skin.[Official website](http://pinyin.sogou.com/linux/)
+*   [fcitx-sogoupinyin](https://aur.archlinux.org/packages/fcitx-sogoupinyin/), [Sogou input method](http://pinyin.sogou.com/linux/) supporting Jianpin, fuzzy sound, cloud input, English input, and mixed skin.
 *   [fcitx-cloudpinyin](https://www.archlinux.org/packages/?name=fcitx-cloudpinyin) uses internet sources to provide input candidates. The selected cloud result will be added to local dictionary. It support all fcitx pinyin input method except [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime).
 *   [fcitx-chewing](https://www.archlinux.org/packages/?name=fcitx-chewing) is a popular Zhuyin input engine for Traditional Chinese based on [libchewing](https://www.archlinux.org/packages/?name=libchewing).
 *   [fcitx-table-extra](https://www.archlinux.org/packages/?name=fcitx-table-extra) adds [Cangjie](https://en.wikipedia.org/wiki/Cangjie_input_method "wikipedia:Cangjie input method"), [Zhengma](https://en.wikipedia.org/wiki/Zhengma_method "wikipedia:Zhengma method"), [Boshiamy](https://en.wikipedia.org/wiki/Boshiamy_method "wikipedia:Boshiamy method") support.
@@ -99,42 +99,37 @@ Others packages (including git version) are also available in the [AUR](/index.p
 
 ### Desktop Environment
 
-If you are using any XDG compatible desktop environment such as [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE"), after you relogin, the autostart should work out of box. If not, open your favorite terminal, type `fcitx`. To see if fcitx is working correctly, open an application such as leafpad and press CTRL+Space (the default shortcut for switching input method) to invoke FCITX and input some words.
+If you are using any XDG compatible desktop environment such as [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE"), after you relogin, the autostart should work out of box. If not run the *fcitx* executable. To see if fcitx is working correctly, open an application and press `Ctrl+Space` (the default shortcut for switching the input method) to invoke fcitx and input some words.
 
-If Fcitx failed to start with your desktop automatically or if you want to change the parameters to start fcitx, please use tools provided by your desktop environment to configure xdg auto start or edit the `fcitx-autostart.desktop` file in your `~/.config/autostart/` directory (copy it from `/etc/xdg/autostart/` if it doesn't exist yet).
+If fcitx failed to start with your desktop automatically or if you want to change the parameters to start fcitx, configure [autostart](/index.php/Autostarting#Graphical "Autostarting") or edit the `fcitx-autostart.desktop` file in your `~/.config/autostart/` directory (copy it from `/etc/xdg/autostart/` if it doesn't exist yet).
 
-If your desktop environment does not support xdg auto start, please add `fcitx` to your startup script (after the environment variables are set up properly).
-
-When other input methods with xim support is also running, Fcitx may fail to start due to xim error. Please make sure no other input method is running before you start Fcitx.
+When other input methods with xim support are also running, fcitx may fail to start due to an xim error. Ensure that no other input methods are running before you start fcitx.
 
 ### Non desktop environment
 
-Add the following lines to your desktop start up script files to register the input method modules and support xim programs.
-
-*   Use `.xprofile` if you are using GDM, LightDM or SDDM with Xorg.
-*   Use `/etc/environment` for Wayland, it will not read environment variables stored in `~/.xprofile`
-*   Use `.xinitrc` if you are using startx or Slim.
+[Define](/index.php/Environment_variables#Defining_variables "Environment variables") the environment variables to register the input method modules and support xim programs.
 
 ```
- export GTK_IM_MODULE=fcitx
- export QT_IM_MODULE=fcitx
- export XMODIFIERS=@im=fcitx
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
 
 ```
 
-*   Re-login to make these environment changes effective.
+Re-login or reboot to make these environment changes effective.
 
-**Note:** Avoid `.bashrc` for this, see [DotFiles](http://mywiki.wooledge.org/DotFiles)
+**Note:**
 
-**Note:** If all Qt apps have problem with fcitx, run qtconfig (qtconfig-qt4), and go to the third tab, make sure fcitx is in the "Default Input Method" combo-box.
+*   Avoid `.bashrc` for this, see [DotFiles](http://mywiki.wooledge.org/DotFiles)
+*   If all Qt apps have problem with fcitx, run *qtconfig* (*qtconfig-qt4*), and go to the third tab, make sure *fcitx* is in the *Default Input Method* combo-box.
 
 ### Xim
 
 Optionally, you can use xim in your GTK+ and/or Qt programs without installing the above modules in which case you need to change the corresponding lines above as following:
 
 ```
- export GTK_IM_MODULE=xim
- export QT_IM_MODULE=xim
+GTK_IM_MODULE=xim
+QT_IM_MODULE=xim
 
 ```
 
@@ -146,15 +141,15 @@ Optionally, you can use xim in your GTK+ and/or Qt programs without installing t
 
 ### Configuration tools
 
-Fcitx provides GUI configure tools. You can install either [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx)(KDE), [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) (based on gtk3). Run fcitx-config-gtk3 after [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) is installed. Unset *Only Show Current Language* if you want to enable a input method of a different language.
+fcitx provides GUI configure tools. You can install either [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx) (KDE) or [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) (GTK3). Run *fcitx-config-gtk3* after [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) is installed. Unset *Only Show Current Language* if you want to enable a input method of a different language.
 
 Stop fcitx manually before changing configuration, or the change may be lost.
 
-In order to enable spell checking, press ctrl + alt + h when fcitx is on a input method provides by fcitx-keyboard. Then that's it, you can type long word, to see whether it works.
+In order to enable spell checking, press `Ctrl+Alt+h` when fcitx is on an input method provided by fcitx-keyboard.
 
 ### Input methods configuration
 
-You can add/remove input methods in GUI tools. Set first item to Keyborad layout (e.g. Keyboard - English) if you want to enable/disable other input methods quickly.
+You can add/remove input methods in the GUI tools. Set the first item to Keyboard layout (e.g. *Keyboard - English*) if you want to enable/disable other input methods quickly.
 
 ### Change default UI
 
@@ -179,21 +174,21 @@ You can download skins and extract them to one of the following directories, you
 
 ### Cloud Pinyin configuration
 
-After install [fcitx-cloudpinyin](https://www.archlinux.org/packages/?name=fcitx-cloudpinyin) input method, restart fcitx. If you could not find it in configuration GUI, enable advanced setting. The cloud query result will be added to current input method dictionary automatically.
+After installing the [fcitx-cloudpinyin](https://www.archlinux.org/packages/?name=fcitx-cloudpinyin) input method, restart fcitx. If you could not find it in configuration GUI, enable advanced settings. The cloud query result will be added to current input method dictionary automatically.
 
-If your network could not access Google, change Cloud Pinyin source to Baidu.
+If your network prevents you from accessing Google, change Cloud Pinyin source to Baidu.
 
-The query result from cloud will list as secondary candicate by default and it is configuable. If the result already exit, only one item is shown.
+The query result from cloud will list as secondary candidate by default and it is configurable. If the result already exists, only one item is shown.
 
-**Note:** Set query result as first candicate is not recommend because the dictionary order will be changed if query return empty result。
+**Note:** Set query result as first candidate is not recommend because the dictionary order will be changed if query returns an empty result
 
 ## Tips and tricks
 
 ### Clipboard Access
 
-You can use fcitx to input text in you clipboard (as well as a short clipboard history and primary selection). The default trigger key is Control-;. You can change the trigger key as well as other options in the Clipboard addon configure page.
+You can use fcitx to input text in you clipboard (as well as a short clipboard history and primary selection). The default trigger key is `Ctrl-;`. You can change the trigger key as well as other options in the Clipboard addon configure page.
 
-NOTE: This is NOT a clipboard manager, it doesn't hold the selection or change its content as what a clipboard manager is supposed to do. It can only be used to input from the clipboard.
+**Note:** This is NOT a clipboard manager, it doesn't hold the selection or change its content as what a clipboard manager is supposed to do. It can only be used to input from the clipboard.
 
 **Warning:** Some clients do not support multi-line input, so you may see the multi-line clipboard content pasted as a single line using fcitx-clipboard. This is either a bug or feature of the program being used and it is not something fcitx is able to help with.
 
@@ -205,40 +200,35 @@ If you have problems using fcitx, eg. Ctrl+Space fail to work in all application
 
 ### Emacs
 
-If your `LC_CTYPE` is English, you may not be able to use input method in emacs due to an old emacs' bug. You can set your `LC_CTYPE` to something else such as `zh_CN.UTF-8` before emacs starts to get rid of this problem.
+If your `LC_CTYPE` is English, you may not be able to use input method in emacs due to an old emacs bug. You can set your `LC_CTYPE` to something else such as `zh_CN.UTF-8` before emacs starts to get rid of this problem.
 
-Note that the corresponding locale should be enabled on your your system. Uncomment the corresponding line, for example, `zh_CN.UTF-8`, in `/etc/locale.gen` and run `locale-gen`.
+Note that the corresponding [locale](/index.php/Locale "Locale") should be [generated](/index.php/Locale#Generating_locales "Locale") on your your system.
 
-The default fontset will use `-*-*-*-r-normal--14-*-*-*-*-*-*-*' as basefont(in src/xfns.c), if you do not have one matched(like terminus、or 75dpi things, you can look the output of `xlsfonts'), XIM can not be activated.
+The default fontset will use `-*-*-*-r-normal--14-*-*-*-*-*-*-*' as basefont (in `src/xfns.c`), if you do not have one matched (like terminus or 75dpi things, you can look the output of `xlsfonts'), XIM can not be activated.
 
 #### Emacs Daemon
 
 If you are using [emacs daemon/client mode](/index.php/Emacs#As_a_daemon "Emacs"), `LC_CTYPE` should be set when starting the daemon. For example, by running emacs daemon with `LC_CTYPE=zh_CN.UTF-8 emacs --daemon`.
 
-If starting emacs daemon from systemd, set Environment in the unit file like this:
+If starting emacs daemon from [systemd](/index.php/Systemd "Systemd"), [set](/index.php/Systemd#Editing_provided_units "Systemd") `Environment="LC_CTYPE=zh_CN.UTF-8" "XMODIFIERS=@im=fcitx"` in the unit file.
 
-```
-Environment="LC_CTYPE=zh_CN.UTF-8" "XMODIFIERS=@im=fcitx"
-
-```
-
-(XMODIFIERS may need to be set explicitly here as systemd doesn't load .xprofile. Check the `initial-environment` variable in emacs to verify both variables are set correctly.)
+(`XMODIFIERS` may need to be set explicitly here as systemd doesn't load `.xprofile`. Check the `initial-environment` variable in emacs to verify both variables are set correctly.)
 
 ### Firefox popup menu not work
 
-For firefox above version 13, the popup menu may fail to work due to xim, please make sure that fcitx-gtk2 along with a latest version fcitx are installed.
+For [Firefox](/index.php/Firefox "Firefox") above version 13, the popup menu may fail to work due to xim, make sure that [fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2) along with a latest version fcitx are installed.
 
 ### Ctrl+Space fail to work in GTK programs
 
-This problem sometimes happens especially when locale is set as English. Please make sure your GTK_IM_MODULE is set correctly.
+This problem sometimes happens especially when the locale is set as English. Please make sure your `GTK_IM_MODULE` is set correctly.
 
 See also [FAQ](http://fcitx-im.org/wiki/FAQ#When_use_Ctrl_.2B_Space.2C_Fcitx_cannot_be_triggered_on)
 
-If you have set the *_IM_MODULE environment variables to fcitx but cannot activate fcitx, please check if you have installed the corresponding input method modules.
+If you have set the `*_IM_MODULE` environment variables to fcitx but cannot activate fcitx, please check if you have installed the corresponding input method modules.
 
-Some programs can only use xim, if you are using these programs, please make sure your XMODIFIERS is set properly and be aware of the problems you may have. These programs includes: all programs that are not using gtk or qt (e.g. programs that use tk, motif, or xlib directly), emacs, opera, openoffice, libreoffice, skype
+Some programs can only use xim, if you are using these programs, please make sure your `XMODIFIERS` is set properly and be aware of the problems you may have. These programs include all programs that are not using GTK or Qt (e.g. programs that use tk, motif, or xlib directly), emacs, opera, openoffice, libreoffice, skype.
 
-If you cannot enable fcitx in gnome-terminal under gnome and the above way doesn't work, try:
+If you cannot enable fcitx in *gnome-terminal* under Gnome and the above way doesn't work, try:
 
 ```
 $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'fcitx'>}"
@@ -264,25 +254,25 @@ Then you should add `Pinyin` or `Shuangpin` input method to actived input method
 
 For some reasons, [KDE](/index.php/KDE "KDE") doesn't handle keyboard layouts properly. For example, if you switch from US (English) to LT (Lithuanian), all numbers on the keyboard should produce Lithuanian letters, but they still produce numbers as the output. This can be fixed by these steps:
 
-1.  Turn off `fcitx` if it's running in the background.
+1.  Turn off *fcitx* if it is running in the background.
 2.  Disable stuff related to KDE:
-    1.  At *System settings --> Input devices --> Layouts (tab)* make sure that "Configure layouts" is unchecked.
-    2.  At *System settings --> Input devices --> Advanced (tab)* make sure that "Configure keyboard options" is unchecked.
-3.  Open terminal and type `fcitx` to start it. You can close terminal - `fcitx` will still be running in the background.
-4.  Set up your needed layouts (Right click on the system tray icon, then "Configure").
-5.  Right click on the system tray icon, then "Exit"
+    1.  At *System settings > Input devices > Layouts (tab)* make sure that *Configure layouts* is unchecked.
+    2.  At *System settings > Input devices > Advanced (tab)* make sure that *Configure keyboard options* is unchecked.
+3.  Start *fcitx* to start it. You can close the terminal - *fcitx* will still be running in the background.
+4.  Set up your needed layouts (right click on the system tray icon, then *Configure*).
+5.  Right click on the system tray icon, then *Exit*
 
 At this point you should have working layouts, native KDE layouts switch icon should appear and you can switch them by mouse scroll or click on it.
 
 ### Input method switched to English unintentionally
 
-For instance, in XMind, when the user presses Enter to create a node, input method is always switched to English, and have to be switched back to Chinese manually.
+For instance, in XMind, when the user presses Enter to create a node, input method is always switched to English, and has to be switched back to Chinese manually.
 
-To fix this issue, open the fcitx GUI configuration tool (provided by [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool)), switch to tab "Global Config", in dropdown menu "Share State Among Window", select "PerProgram" or "All".
+To fix this issue, open the fcitx GUI configuration tool (provided by [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool)), switch to tab *Global Config*, in dropdown menu *Share State Among Window*, select *PerProgram* or *All*.
 
 ### xmodmap settings being overwritten
 
-Fcitx controls keyboard layout, so your xmodmap settings will be overwritten. Since 4.2.7, Fcitx will try to load ~/.Xmodmap if it exists.
+fcitx controls keyboard layout, so your [xmodmap](/index.php/Xmodmap "Xmodmap") settings will be overwritten. Since 4.2.7, Fcitx will try to load `~/.Xmodmap` if it exists.
 
 For more details on how you can save your xmodmap changes see [FAQ](http://fcitx-im.org/wiki/FAQ#xmodmap_settings_being_overwritten)
 

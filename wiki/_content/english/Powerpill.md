@@ -20,7 +20,7 @@ A test of pacman vs. powerpill on one system revealed a 4x speed up in the above
 
 ## Configuration
 
-Powerpill has a single configure file `/etc/powerpill/powerpill.json` you can edit to your liking. Refer to the [powerpill.json(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/powerpill.json.1) man page for details.
+Powerpill has a single configure file `/etc/powerpill/powerpill.json` you can edit to your liking. Refer to the [powerpill.json(1)](https://xyne.archlinux.ca/projects/powerpill/#powerpill.json1) man page for details.
 
 ## Using Reflector
 

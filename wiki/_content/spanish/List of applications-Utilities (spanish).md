@@ -256,7 +256,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[Xfe](https://en.wikipedia.org/wiki/Xfe "wikipedia:Xfe")** — Microsoft Explorer como administrador de archivos para X (X File Explorer).
 
-	[http://roland65.free.fr/xfe/index.php/](http://roland65.free.fr/xfe/index.php/) || [xfe](https://www.archlinux.org/packages/?name=xfe)
+	[http://roland65.free.fr/xfe/index.php/](http://roland65.free.fr/xfe/index.php/) || [xfe](https://aur.archlinux.org/packages/xfe/)
 
 ### Herramientas de integración y comparación de archivos
 

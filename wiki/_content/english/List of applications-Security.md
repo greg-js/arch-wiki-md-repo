@@ -295,6 +295,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 	[http://www.nic.funet.fi/pub/crypt/steganography/](http://www.nic.funet.fi/pub/crypt/steganography/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=gzsteg)</small>
 
+*   **[Keybase](/index.php/Keybase "Keybase")** — Key directory mapping social media identities, with cross platform encrypted chat, cloud storage, and git repositories.
+
+	[https://keybase.io/](https://keybase.io/) || [keybase](https://www.archlinux.org/packages/?name=keybase) or [keybase-bin](https://aur.archlinux.org/packages/keybase-bin/)
+
 *   **[KGpg](https://en.wikipedia.org/wiki/KGPG "wikipedia:KGPG")** — *a simple interface for GnuPG* for KDE.
 
 	[https://www.kde.org/applications/utilities/kgpg/](https://www.kde.org/applications/utilities/kgpg/) || [kgpg](https://www.archlinux.org/packages/?name=kgpg)

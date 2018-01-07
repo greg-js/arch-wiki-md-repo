@@ -274,7 +274,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — Fork de CenterICQ, con un menú en modo texto y una interfaz gráfica.
 
-	[http://centerim.org/](http://centerim.org/) || [centerim](https://www.archlinux.org/packages/?name=centerim)
+	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
 
 *   **[Finch](/index.php/Pidgin "Pidgin")** — Cliente de chat basado en ncurses que utiliza libpurple y soporta todos los protocolos.
 
@@ -380,7 +380,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Cliente XMPP, rico en características y fácil de hackear, del autor del servidor XMPP ejabberd.
 
-	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://www.archlinux.org/packages/?name=tkabber)
+	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://aur.archlinux.org/packages/tkabber/)
 
 ##### Servidores
 
@@ -746,7 +746,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **Snownews** — Lector de noticias RSS en modo texto.
 
-	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://www.archlinux.org/packages/?name=snownews)
+	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://aur.archlinux.org/packages/snownews/)
 
 #### Interfaz gráfica
 
@@ -2054,7 +2054,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[Xfe](https://en.wikipedia.org/wiki/Xfe "wikipedia:Xfe")** — Microsoft Explorer como administrador de archivos para X (X File Explorer).
 
-	[http://roland65.free.fr/xfe/index.php/](http://roland65.free.fr/xfe/index.php/) || [xfe](https://www.archlinux.org/packages/?name=xfe)
+	[http://roland65.free.fr/xfe/index.php/](http://roland65.free.fr/xfe/index.php/) || [xfe](https://aur.archlinux.org/packages/xfe/)
 
 ### Herramientas de integración y comparación de archivos
 
@@ -2190,7 +2190,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **apvlv** — Visor ligero de PDF/DjVu/UMD/TXT con teclas de atajo para [Vim](/index.php/Vim "Vim").
 
-	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://www.archlinux.org/packages/?name=apvlv)
+	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://aur.archlinux.org/packages/apvlv/)
 
 *   **[Chrome](https://en.wikipedia.org/wiki/Google_Chrome "wikipedia:Google Chrome")** — Navegador web con un visor PDF integrado.
 
@@ -2915,7 +2915,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[Qucs](https://en.wikipedia.org/wiki/Quite_Universal_Circuit_Simulator "wikipedia:Quite Universal Circuit Simulator")** — Aplicación de simulación de circuitos electrónicos que tiene la capacidad de crear un circuito con una interfaz gráfica de usuario y simular su señal larga, la señal pequeña y el comportamiento del ruido.
 
-	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://www.archlinux.org/packages/?name=qucs)
+	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://aur.archlinux.org/packages/qucs/)
 
 #### Simulación física
 
@@ -3009,7 +3009,7 @@ Vea también [#Multiplexadores de terminal](#Multiplexadores_de_terminal), que o
 
 *   **twin** — Gestor de ventanas en modo texto.
 
-	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
+	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://aur.archlinux.org/packages/twin/)
 
 ##### Gráficos
 

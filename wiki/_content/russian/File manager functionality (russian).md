@@ -124,7 +124,7 @@ afp://<server name>/<share name>
 
 #### Другие файловые менеджеры, кроме Dolphin и Konqueror
 
-Эти пакеты применяются для большинства файловых менеджеров, таких как [PCManFM](/index.php/PCManFM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PCManFM (Русский)"), [SpaceFM](/index.php/SpaceFM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SpaceFM (Русский)"), [Thunar](/index.php/Thunar_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Thunar (Русский)") и [xfe](https://www.archlinux.org/packages/?name=xfe). Исключение составляют Dolphin и Konqueror, использующиеся в среде рабочего стола [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)").
+Эти пакеты применяются для большинства файловых менеджеров, таких как [PCManFM](/index.php/PCManFM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PCManFM (Русский)"), [SpaceFM](/index.php/SpaceFM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SpaceFM (Русский)"), [Thunar](/index.php/Thunar_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Thunar (Русский)") и [xfe](https://aur.archlinux.org/packages/xfe/). Исключение составляют Dolphin и Konqueror, использующиеся в среде рабочего стола [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)").
 
 *   [tumbler](https://www.archlinux.org/packages/?name=tumbler): Графические файлы. **<u>Необходимо</u>** поставить чтобы расширить возможности для отображения миниатюр файлов других типов
 *   [poppler-glib](https://www.archlinux.org/packages/?name=poppler-glib): Adobe файлы `.pdf`

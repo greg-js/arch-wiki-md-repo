@@ -208,7 +208,7 @@ For devices that do not support Obex FTP service, check if Obex Object Push is s
 
 ```
 
-Read the output, look for Obex Object Push, remember the channel for this service. If supported, one can use [ussp-push](https://www.archlinux.org/packages/?name=ussp-push) to send files to this device:
+Read the output, look for Obex Object Push, remember the channel for this service. If supported, one can use [ussp-push](https://aur.archlinux.org/packages/ussp-push/) to send files to this device:
 
 ```
 # ussp-push *XX:XX:XX:XX:XX:XX*@*CHANNEL* *file* *wanted_file_name_on_phone*

@@ -534,7 +534,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — Форк CenterICQ
 
-	[http://centerim.org/](http://centerim.org/) || [centerim](https://www.archlinux.org/packages/?name=centerim)
+	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
 
 *   **[Finch](/index.php/Pidgin_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pidgin (Русский)")** — Основанный на Ncurses клиент, который использует библиотеку libpurple и поддерживает все ее протоколы
 
@@ -636,7 +636,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/ru:Tkabber "wikipedia:ru:Tkabber")** — "Легкий для взлома" (easy to hack) клиент XMPP с богатым функционалом от автора ejabberd XMPP-сервера
 
-	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://www.archlinux.org/packages/?name=tkabber)
+	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://aur.archlinux.org/packages/tkabber/)
 
 ###### Серверы
 
@@ -856,7 +856,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Snownews** — Консольная программа чтения RSS-новостей
 
-	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://www.archlinux.org/packages/?name=snownews)
+	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://aur.archlinux.org/packages/snownews/)
 
 ##### Графические
 
@@ -946,7 +946,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[slrn](https://en.wikipedia.org/wiki/ru:slrn "wikipedia:ru:slrn")** — Текстовый клиент новостей с открытым исходным кодом
 
-	[http://www.slrn.org/](http://www.slrn.org/) || [slrn](https://www.archlinux.org/packages/?name=slrn)
+	[http://www.slrn.org/](http://www.slrn.org/) || [slrn](https://aur.archlinux.org/packages/slrn/)
 
 *   **[tin](https://en.wikipedia.org/wiki/Tin_(newsreader) "wikipedia:Tin (newsreader)")** — Кроссплатформенная программа чтения новостей NNTP UseNet
 

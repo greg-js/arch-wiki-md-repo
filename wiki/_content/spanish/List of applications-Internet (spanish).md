@@ -151,7 +151,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — Fork de CenterICQ, con un menú en modo texto y una interfaz gráfica.
 
-	[http://centerim.org/](http://centerim.org/) || [centerim](https://www.archlinux.org/packages/?name=centerim)
+	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
 
 *   **[Finch](/index.php/Pidgin "Pidgin")** — Cliente de chat basado en ncurses que utiliza libpurple y soporta todos los protocolos.
 
@@ -257,7 +257,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Cliente XMPP, rico en características y fácil de hackear, del autor del servidor XMPP ejabberd.
 
-	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://www.archlinux.org/packages/?name=tkabber)
+	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://aur.archlinux.org/packages/tkabber/)
 
 ##### Servidores
 
@@ -623,7 +623,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **Snownews** — Lector de noticias RSS en modo texto.
 
-	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://www.archlinux.org/packages/?name=snownews)
+	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://aur.archlinux.org/packages/snownews/)
 
 #### Interfaz gráfica
 

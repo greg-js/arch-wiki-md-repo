@@ -96,7 +96,7 @@ All SELinux related packages belong to the *selinux* group in the AUR.
 
 	[ustr-selinux](https://aur.archlinux.org/packages/ustr-selinux/)
 
-	Patched ustr package needed only to build [libsemanage](https://aur.archlinux.org/packages/libsemanage/). It replaces the [ustr](https://www.archlinux.org/packages/?name=ustr) package, which does not work with recent gcc ([FS#46445](https://bugs.archlinux.org/task/46445)).
+	Patched ustr package needed only to build [libsemanage](https://aur.archlinux.org/packages/libsemanage/). It replaces the [ustr](https://aur.archlinux.org/packages/ustr/) package, which does not work with recent gcc ([FS#46445](https://bugs.archlinux.org/task/46445)).
 
 	[pam-selinux](https://aur.archlinux.org/packages/pam-selinux/) and [pambase-selinux](https://aur.archlinux.org/packages/pambase-selinux/)
 

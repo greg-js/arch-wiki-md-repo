@@ -11,7 +11,7 @@ This page is a howto for connecting your Windows Mobile device with Archlinux. A
 ## Installation
 
 1.  [Install](/index.php/Install "Install") [synce-odccm](https://aur.archlinux.org/packages/synce-odccm/) package from the [AUR](/index.php/AUR "AUR")
-2.  [Install](/index.php/Install "Install") [synce-kde](https://aur.archlinux.org/packages/synce-kde/) and [synce-sync-engine](https://www.archlinux.org/packages/?name=synce-sync-engine) packages, available in the [Official repositories](/index.php/Official_repositories "Official repositories")
+2.  [Install](/index.php/Install "Install") [synce-kde](https://aur.archlinux.org/packages/synce-kde/) and [synce-sync-engine](https://aur.archlinux.org/packages/synce-sync-engine/) packages, available in the [Official repositories](/index.php/Official_repositories "Official repositories")
 
 ## Connecting to your phone
 

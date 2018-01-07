@@ -52,6 +52,7 @@ Related articles
     *   [4.11 Set the two fingers click to middle click for a touchpad](#Set_the_two_fingers_click_to_middle_click_for_a_touchpad)
     *   [4.12 Limit the minimum brightness of the brightness-slider](#Limit_the_minimum_brightness_of_the_brightness-slider)
     *   [4.13 Adjust flag icons size in xkb-plugin](#Adjust_flag_icons_size_in_xkb-plugin)
+    *   [4.14 Adding Profile Pictures](#Adding_Profile_Pictures)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Action buttons are missing icons](#Action_buttons_are_missing_icons)
     *   [5.2 Desktop icons rearrange themselves](#Desktop_icons_rearrange_themselves)
@@ -542,6 +543,12 @@ Limiting the minimum brightness can be useful for displays which turn off backli
 ### Adjust flag icons size in xkb-plugin
 
 The ability of resizing flags icons and text in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) was added in 2015[[5]](https://git.xfce.org/panel-plugins/xfce4-xkb-plugin/commit/?id=df86d1490a4491fe29056a5a1ee10093d5a9e146), but a new version of this plug-in hasn't been released since 2013\. Install [xfce4-xkb-plugin-git](https://aur.archlinux.org/packages/xfce4-xkb-plugin-git/) until they release a new version.
+
+### Adding Profile Pictures
+
+To add profile pictures for each user to be displayed in the whisker-menu, simply place a 96x96 png file in the respective user's home directory with the name `.face`. If user bob wanted a profile picture a 96x96 png image would be placed at `/home/bob/.face`
+
+Image editing programs like [GIMP](/index.php/GIMP "GIMP") can be used to convert and scale your favorite images down to 96x96.
 
 ## Troubleshooting
 

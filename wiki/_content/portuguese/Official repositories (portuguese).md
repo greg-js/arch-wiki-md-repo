@@ -85,7 +85,7 @@ Novos pacotes vão para o *testing* se:
 
 *testing* é o único repositório que pode ter colisões nos nomes com outros repositórios oficiais. Se ativo, ele tem de ser o primeiro repositório listado em seu arquivo `/etc/pacman.conf`.
 
-**Nota:** *testing* não é para as versões de pacotes "mais novo do novo". Parte de seu propósito é segurar atualizações de pacotes que têm o potencial de quebrar o sistema, seja como parte da coleção de pacotes do *core*, seja como crítico de outras formas. Como tal, usuários do *testing* são incentivados a se inscreverem na [lista de discussão arch-dev-public](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public), acompanhar o [fórum do repositório testing](https://bbs.archlinux.org/viewforum.php?id=49) e a [relatar todos os erros](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
+**Nota:** *testing* não é para as versões de pacotes "mais novo do novo". Parte de seu propósito é segurar atualizações de pacotes que têm o potencial de quebrar o sistema, seja como parte da coleção de pacotes do *core*, seja como crítico de outras formas. Como tal, usuários do *testing* são incentivados a se inscreverem na [lista de discussão arch-dev-public](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public), acompanhar o [fórum do repositório testing](https://bbs.archlinux.org/viewforum.php?id=49) e a [relatar todos os erros](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro").
 
 **Atenção:** Se você habilitar *testing*, também deve habilitar *community-testing*. Se você habilitar qualquer outro repositório de teste listado nas subseções a seguir, você também deve habilitar ambos *testing* e *community-testing*.
 
@@ -127,7 +127,7 @@ Include = /etc/pacman.d/mirrorlist
 
 A entrada *kde-unstable* deve estar primeiro na lista de repositórios (*i.e.*, em cima da entrada *testing*).
 
-Certifique-se de [fazer relatórios de erros](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") se você descobrir algum problema.
+Certifique-se de [fazer relatórios de erros](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro") se você descobrir algum problema.
 
 #### Desabilitando repositórios de teste
 

@@ -84,7 +84,7 @@ See the main article: [Desktop environment#List of desktop environments](/index.
 
 *   **twin** — Text-mode window manager.
 
-	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
+	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://aur.archlinux.org/packages/twin/)
 
 *   see also [#Terminal_multiplexers](#.E7.B5.82.E7.AB.AF.E6.A9.9F.E5.A4.9A.E5.B7.A5.E5.99.A8) which offer some of the functions of window managers for the console
 

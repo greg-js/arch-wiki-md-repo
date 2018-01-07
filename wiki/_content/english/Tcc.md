@@ -2,7 +2,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [tcc](https://www.archlinux.org/packages/?name=tcc) package.
+[Install](/index.php/Install "Install") the [tcc](https://aur.archlinux.org/packages/tcc/) package.
 
 ## Usage
 

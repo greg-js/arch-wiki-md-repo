@@ -871,7 +871,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[Flight Gear](https://en.wikipedia.org/wiki/Flight_Gear "wikipedia:Flight Gear")** — Simulador de vuelo multiplataforma, de código abierto.
 
-	[http://www.flightgear.org/](http://www.flightgear.org/) || [flightgear](https://www.archlinux.org/packages/?name=flightgear)
+	[http://www.flightgear.org/](http://www.flightgear.org/) || [flightgear](https://aur.archlinux.org/packages/flightgear/)
 
 *   **[Foobillard++](https://en.wikipedia.org/wiki/FooBillard "wikipedia:FooBillard")** — Sucesor de FooBillard, juego de billar para Linux basado en OpenGL.
 

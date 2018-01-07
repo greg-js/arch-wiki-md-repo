@@ -114,7 +114,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **Gambatte** — Accurate Game Boy Color emulator
 
-	[https://github.com/sinamas/gambatte](https://github.com/sinamas/gambatte) || Qt GUI frontend ([gambatte-qt](https://www.archlinux.org/packages/?name=gambatte-qt)), SDL CLI frontend ([gambatte-sdl](https://www.archlinux.org/packages/?name=gambatte-sdl)).
+	[https://github.com/sinamas/gambatte](https://github.com/sinamas/gambatte) || Qt GUI frontend ([gambatte-qt](https://aur.archlinux.org/packages/gambatte-qt/)), SDL CLI frontend ([gambatte-sdl](https://aur.archlinux.org/packages/gambatte-sdl/)).
 
 *   **Gens2** — Emulator for Sega Genesis, Sega CD and 32X that is written in assembly language and no longer actively developed.
 

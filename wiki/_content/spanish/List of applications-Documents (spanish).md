@@ -42,7 +42,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **apvlv** — Visor ligero de PDF/DjVu/UMD/TXT con teclas de atajo para [Vim](/index.php/Vim "Vim").
 
-	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://www.archlinux.org/packages/?name=apvlv)
+	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://aur.archlinux.org/packages/apvlv/)
 
 *   **[Chrome](https://en.wikipedia.org/wiki/Google_Chrome "wikipedia:Google Chrome")** — Navegador web con un visor PDF integrado.
 

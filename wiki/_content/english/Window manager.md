@@ -171,7 +171,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[UWM](https://en.wikipedia.org/wiki/UDE "wikipedia:UDE")** — The ultimate window manager for UDE.
 
-	[http://udeproject.sourceforge.net/](http://udeproject.sourceforge.net/) || [ude](https://www.archlinux.org/packages/?name=ude)
+	[http://udeproject.sourceforge.net/](http://udeproject.sourceforge.net/) || [ude](https://aur.archlinux.org/packages/ude/)
 
 *   **WindowLab** — Small and simple window manager of novel design. It has a click-to-focus but not raise-on-focus policy, a window resizing mechanism that allows one or many edges of a window to be changed in one action, and an innovative menubar that shares the same part of the screen as the taskbar. Window titlebars are prevented from going off the edge of the screen by constraining the mouse pointer, and when appropriate the pointer is also constrained to the taskbar/menubar in order to make target menu items easier to hit.
 

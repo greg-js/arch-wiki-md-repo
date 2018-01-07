@@ -97,6 +97,13 @@ drm_kms_helper.edid_firmware=edid/your_edid.bin
 
 ```
 
+Since Linux 4.15, one can also enforce the edid information on a lower level:
+
+```
+drm.edid_firmware=edid/your_edid.bin
+
+```
+
 You can also specify it only for a specified connection:
 
 ```

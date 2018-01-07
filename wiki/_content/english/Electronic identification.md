@@ -28,6 +28,8 @@ You may find hints for troubleshooting in the [official documentation (Dutch)](h
 
 ### Estonia
 
+[https://www.id.ee/?lang=en](https://www.id.ee/?lang=en)
+
 Install the [chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/), [qdigidoc](https://aur.archlinux.org/packages/qdigidoc/) and [qesteidutil](https://aur.archlinux.org/packages/qesteidutil/) packages, with dependencies [libdigidoc](https://aur.archlinux.org/packages/libdigidoc/) and [libdigidocpp](https://aur.archlinux.org/packages/libdigidocpp/). These applications will automatically appear in your application menus. You can also start from command line with <tt>qdigidocclient</tt> and <tt>qesteidutil</tt>.
 
 [chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/) contains [Native Messaging](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Native_messaging) host for Google Chrome/Chromium and Firefox and it is the modern way of doing authentication and digital signatures on the web.

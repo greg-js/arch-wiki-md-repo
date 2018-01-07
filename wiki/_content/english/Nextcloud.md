@@ -897,7 +897,7 @@ See the [ownCloud](https://hub.docker.com/_/owncloud/) or [Nextcloud](https://gi
 
 ### Defining Background Jobs
 
-Nextcloud requires scheduled execution of some tasks, and by default it archives this by using AJAX, however AJAX is the least reliable method, and it is recommended to use [Cron](/index.php/Cron "Cron") instead. However, ArchLinux ships with [systemd](https://www.archlinux.org/packages/?name=systemd), so the preferred way of executing scheduled tasks is a [systemd timer](/index.php/Systemd#Timers "Systemd").
+Nextcloud requires scheduled execution of some tasks, and by default it achieves this by using AJAX, however AJAX is the least reliable method, and it is recommended to use [Cron](/index.php/Cron "Cron") instead. However, ArchLinux ships with [systemd](https://www.archlinux.org/packages/?name=systemd), so the preferred way of executing scheduled tasks is a [systemd timer](/index.php/Systemd#Timers "Systemd").
 
 First create a service:
 
@@ -943,51 +943,186 @@ Confirm that it is running by running
 
 ### Collabora Online Office integration
 
-Install [nextcloud-app-collabora-online](https://aur.archlinux.org/packages/nextcloud-app-collabora-online/) from the [AUR](/index.php/AUR "AUR"). This app needs a “CODE” backend, with 2 possible choices:
-
 **Solution with Docker: *CODE backend using the official Docker image***
 
-Add following reverse proxy settings to your nextcloud domain config, in this case for [Nginx](/index.php/Nginx "Nginx"):
+The first, install a [docker](https://www.archlinux.org/packages/?name=docker) package to provide collabora files and setup a Collabora server.
+
+[Start/enable](/index.php/Start/enable "Start/enable") docker.service
 
 ```
-# static files
-location ^~ /loleaflet {
- proxy_pass [https://localhost:9980](https://localhost:9980);
- proxy_set_header Host $http_host;
+# systemctl enable docker.service
+# systemctl start docker.service
+
+```
+
+Then, download the required binares :
+
+```
+# docker pull collabora/code
+
+```
+
+And, installing a Collabora server. Make sure `cloud//.example//.com` is your nextcloud's domain, not a collabora :
+
+```
+# docker run -t -d -p 127.0.0.1:9980:9980 -e 'domain=cloud//.example//.com' --restart always --cap-add MKNOD collabora/code
+
+```
+
+Also make sure to escape all dots with double backslashes (\), since this string will be evaluated as a regular expression (and your bash 'eats' the first backslash.) If you want to use the docker container with more than one Nextcloud, you'll need to use 'domain=cloud\\.example\\.com\|second\\.example\\.com' instead. (All hosts are separated by \|.) When using `localhost` as domain for testing you need to add {ic|--net host}} to ensure the docker container can access your Nextcloud server.
+
+If you need to delete or reinstall Collabora server use:
+
+For recognition CONTAINER_ID of server
+
+```
+# docker ps
+
+```
+
+Stop and delete
+
+```
+# docker stop CONTAINER_ID
+# docker rm CONTAINER_ID
+
+```
+
+Futher, follow the instruction of webserver you are using:
+
+**Nginx setup example:**
+
+Add following to your nextcloud domain config or add new config file in /etc/nginx/conf.d/ directory, (Don't forget to change `office.example.com` and `ssl_certificate` to the right values:
+
+ `/etc/nginx/conf.d/example.conf` 
+```
+ upstream office.example.com {
+    server 127.0.0.1:9980;
 }
+
+server {
+    listen 443 ssl;
+    server_name office.example.com;
+
+    ssl_certificate /etc/letsencrypt/live/office.example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/office.example.com/privkey.pem;
+
+    # static files
+    location ^~ /loleaflet {
+        proxy_pass https://127.0.0.1:9980;
+        proxy_set_header Host $host;
+    }
+
+    # WOPI discovery URL
+    location ^~ /hosting/discovery {
+        proxy_pass https://127.0.0.1:9980;
+        proxy_set_header Host $host;
+    }
+
+    # Main websocket
+    location ~ /lool/(.*)/ws$ {
+        proxy_pass https://127.0.0.1:9980;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_read_timeout 36000s;
+    }
+
+    # Admin Console websocket
+    location ^~ /lool/adminws {
+	proxy_buffering off;
+        proxy_pass https://127.0.0.1:9980;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_read_timeout 36000s;
+    }
+
+    # download, presentation and image upload
+    location ~ /lool {
+        proxy_pass https://127.0.0.1:9980;
+        proxy_set_header Host $host;
+    }
+}
+
+```
+
+Restart a nginx:
+
+```
+# nginx -s reload
+
+```
+
+or
+
+```
+# systemctl restart nginx.service
+
+```
+
+**Apache setup example:**
+
+Add following to nextcloud config file. Don't forget to change to the right values
+
+ `/etc/httpd/conf/extra/nextcloud.conf` 
+```
+<VirtualHost *:443>
+ServerName office.nextcloud.com:443
+
+# SSL configuration, you may want to take the easy route instead and use Lets Encrypt!
+SSLEngine on
+SSLCertificateFile /path/to/signed_certificate
+SSLCertificateChainFile /path/to/intermediate_certificate
+SSLCertificateKeyFile /path/to/private/key
+SSLProtocol             all -SSLv2 -SSLv3
+SSLCipherSuite ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA:ECDHE-ECDSA-DES-CBC3-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:DES-CBC3-SHA:!DSS
+SSLHonorCipherOrder     on
+
+# Encoded slashes need to be allowed
+AllowEncodedSlashes NoDecode
+
+# Container uses a unique non-signed certificate
+SSLProxyEngine On
+SSLProxyVerify None
+SSLProxyCheckPeerCN Off
+SSLProxyCheckPeerName Off
+
+# keep the host
+ProxyPreserveHost On
+
+# static html, js, images, etc. served from loolwsd
+# loleaflet is the client part of LibreOffice Online
+ProxyPass           /loleaflet https://127.0.0.1:9980/loleaflet retry=0
+ProxyPassReverse    /loleaflet https://127.0.0.1:9980/loleaflet
+
 # WOPI discovery URL
-location ^~ /hosting/discovery {
- proxy_pass [https://localhost:9980](https://localhost:9980);
- proxy_set_header Host $http_host;
-}
-# websockets, download, presentation and image upload
-location ^~ /lool {
- proxy_pass [https://localhost:9980](https://localhost:9980);
- proxy_set_header Upgrade $http_upgrade;
- proxy_set_header Connection "upgrade";
- proxy_set_header Host $http_host;
-}
+ProxyPass           /hosting/discovery https://127.0.0.1:9980/hosting/discovery retry=0
+ProxyPassReverse    /hosting/discovery https://127.0.0.1:9980/hosting/discovery
+
+# Main websocket
+ProxyPassMatch "/lool/(.*)/ws$" wss://127.0.0.1:9980/lool/$1/ws nocanon
+
+# Admin Console websocket
+ProxyPass   /lool/adminws wss://127.0.0.1:9980/lool/adminws
+
+# Download as, Fullscreen presentation and Image upload operations
+ProxyPass           /lool https://127.0.0.1:9980/lool
+ProxyPassReverse    /lool https://127.0.0.1:9980/lool
+</VirtualHost>
 
 ```
 
-There's also a [setup instruction](https://nextcloud.com/collaboraonline/) for [Apache](/index.php/Apache "Apache"). Assuming you already have the docker daemon up and running, you can now pull the latest docker image for Collabora Online. Adjust the second command with the domain name of your Nextcloud server.
+After configuring these do restart your apache:
 
 ```
-docker pull collabora/code
-docker run -t -d -p 127.0.0.1:9980:9980 -e 'domain=localhost' --net host --restart always --cap-add MKNOD collabora/code
-
-```
-
-When updating the docker image you can run the same commands, but before that kill all running processes of the old image:
-
-```
-docker ps
-docker stop CONTAINER_ID
-docker rm CONTAINER_ID
+# systemctl restart httpd
 
 ```
 
-Now you can enable the Collabora Online app in your Nextcloud instance. In the last step, you have to configure your domain in the administrator settings regarding the Collabora Online app.
+**Install the Nextcloud app**
+
+Go to the Apps section and choose “Office & Text”, install the “Collabora Online” app. In admin panel select Collabora Online tab and specific the server's domain you have setup before.
 
 **Solution without Docker: *CODE backend using an Archlinux package***
 

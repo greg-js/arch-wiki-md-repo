@@ -231,7 +231,7 @@ The following terminal emulators are based on the [kernel mode setting](/index.p
 
 *   **[KMSCON](/index.php/KMSCON "KMSCON")** — A KMS/DRM-based system console(getty) with an integrated terminal emulator for Linux operating systems.
 
-	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://www.archlinux.org/packages/?name=kmscon)
+	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://aur.archlinux.org/packages/kmscon/)
 
 #### framebuffer-based
 
@@ -521,7 +521,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[Xfe](https://en.wikipedia.org/wiki/Xfe "wikipedia:Xfe")** — Microsoft Explorer-like file manager for X (X File Explorer).
 
-	[http://roland65.free.fr/xfe/](http://roland65.free.fr/xfe/) || [xfe](https://www.archlinux.org/packages/?name=xfe)
+	[http://roland65.free.fr/xfe/](http://roland65.free.fr/xfe/) || [xfe](https://aur.archlinux.org/packages/xfe/)
 
 #### Trash management
 

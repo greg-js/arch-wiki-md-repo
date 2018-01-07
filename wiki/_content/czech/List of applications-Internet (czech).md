@@ -121,7 +121,7 @@ Mnoho zde uvedených klientů (včetně Pidgina a všech jeho forků) podporuje 
 
 *   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — Fork CenterICQ, textové rozhraní založené na menu nebo oknech
 
-	[http://centerim.org/](http://centerim.org/) || [centerim](https://www.archlinux.org/packages/?name=centerim)
+	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
 
 *   **Finch** — Ncurses chatovací klient používající libpurple a podporující všechny jeho protokoly
 
@@ -203,7 +203,7 @@ See also [Wikipedia:Comparison of instant messaging clients#XMPP clients](https:
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — XMPP klient bohatý na funkce, od autora ejabberd XMPP serveru
 
-	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://www.archlinux.org/packages/?name=tkabber)
+	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://aur.archlinux.org/packages/tkabber/)
 
 #### IRC klienti
 

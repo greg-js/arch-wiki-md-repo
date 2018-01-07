@@ -96,8 +96,8 @@ These are some of the original, patched, and selected packages that comprise the
 *   [pantheon-calculator](https://aur.archlinux.org/packages/pantheon-calculator/) or [pantheon-calculator-git](https://aur.archlinux.org/packages/pantheon-calculator-git/): Calculator
 *   [pantheon-music](https://www.archlinux.org/packages/?name=pantheon-music) or [pantheon-music-git](https://aur.archlinux.org/packages/pantheon-music-git/): Audio player formerly known as "Noise"
 *   [pantheon-videos](https://www.archlinux.org/packages/?name=pantheon-videos) or [pantheon-videos-git](https://aur.archlinux.org/packages/pantheon-videos-git/): Video player formerly known as "Audience"
-*   [pantheon-calendar-git](https://aur.archlinux.org/packages/pantheon-calendar-git/): Calendar developed from [maya-calendar](https://aur.archlinux.org/packages/maya-calendar/), integrates default calendar with [wingpanel-indicator-datetime-git](https://aur.archlinux.org/packages/wingpanel-indicator-datetime-git/)
-*   [epiphany-pantheon-bzr](https://aur.archlinux.org/packages/epiphany-pantheon-bzr/): Web browser, replacing [midori-granite](https://aur.archlinux.org/packages/midori-granite/)
+*   [pantheon-calendar-git](https://aur.archlinux.org/packages/pantheon-calendar-git/): Calendar application formerly known as "Maya", integrates with [wingpanel-indicator-datetime-git](https://aur.archlinux.org/packages/wingpanel-indicator-datetime-git/)
+*   [epiphany-pantheon-bzr](https://aur.archlinux.org/packages/epiphany-pantheon-bzr/): Web browser replacing [midori-granite](https://aur.archlinux.org/packages/midori-granite/)
 *   [pantheon-mail-git](https://aur.archlinux.org/packages/pantheon-mail-git/): Email client developed from [geary](https://www.archlinux.org/packages/?name=geary)
 *   [pantheon-screenshot](https://aur.archlinux.org/packages/pantheon-screenshot/) or [pantheon-screenshot-git](https://aur.archlinux.org/packages/pantheon-screenshot-git/): Screenshot tool
 *   [eidete-bzr](https://aur.archlinux.org/packages/eidete-bzr/): Simple screencaster

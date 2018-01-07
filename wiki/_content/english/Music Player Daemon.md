@@ -40,7 +40,7 @@ Related articles
 
 MPD is able to run locally (per user settings), globally (settings apply to all users), and in multiple instances. The way of setting up mpd depends on the way it is intended to be used: a local configuration may prove more useful on a desktop system, for example.
 
-In order for MPD to be able to play back audio, [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS") (optionally with [PulseAudio](/index.php/PulseAudio "PulseAudio")) needs to be setup and working.
+In order for MPD to be able to playback audio, [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS") (optionally with [PulseAudio](/index.php/PulseAudio "PulseAudio")) needs to be setup and working.
 
 MPD is configured in `mpd.conf`. The location of this file depends on how you want to run MPD (see the sections below). These are commonly used configuration options:
 
@@ -226,14 +226,11 @@ If you do not use a DE, place the line from [#Autostart on tty login](#Autostart
 
 #### Autostart with systemd
 
-The [mpd](https://www.archlinux.org/packages/?name=mpd) package provides a user service file in `/usr/lib/systemd/user/mpd.service`. The configuration file is expected to exist either in `~/.mpdconf` or `~/.config/mpd/mpd.conf`; see [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") if you would like to use a different path. The process is not started as root, so you should not use the `user` and `group` variables in the MPD configuration file; the process already has user permissions and therefore it is not necessary to change them further.
+The [mpd](https://www.archlinux.org/packages/?name=mpd) package provides a [user service](/index.php/Systemd/User "Systemd/User") file. The configuration file is expected to exist either in `~/.mpdconf` or `~/.config/mpd/mpd.conf`; see [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") if you would like to use a different path. The service starts the process as user, there is no need to change permission nor use the `user` and `group` variables in the MPD configuration file.
 
-All you have to do is enable and start the `mpd` [user service](/index.php/Systemd/User "Systemd/User").
+All you have to do is [start/enable](/index.php/Start/enable "Start/enable") the user unit `mpd.service` (i.e. with the `--user` flag).
 
-**Note:**
-
-*   [mpd](https://www.archlinux.org/packages/?name=mpd) also provides a system service file in `/usr/lib/systemd/system/mpd.service`, but as the process is started as root; it does not read the user configuration file and falls back to `/etc/mpd.conf`. [Global configuration](#Global_configuration) is described above.
-*   Make sure to disable every other method of starting mpd you used before.
+**Note:** [mpd](https://www.archlinux.org/packages/?name=mpd) also provides a system service file. The process is started as root and reads the [#Global configuration](#Global_configuration) from `/etc/mpd.conf` rather than the [#Local configuration (per user)](#Local_configuration_.28per_user.29).
 
 #### Scripted configuration
 

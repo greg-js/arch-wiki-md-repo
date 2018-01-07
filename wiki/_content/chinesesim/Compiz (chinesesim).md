@@ -556,7 +556,7 @@ There are a number of panels and docks available in Arch however only a few are 
 Alternatively you could install one of the following:
 
 *   [xfce4-appfinder](https://www.archlinux.org/packages/?name=xfce4-appfinder) - use the following command to launch a run dialog: `xfce4-appfinder --collapsed`
-*   [bbrun](https://www.archlinux.org/packages/?name=bbrun) - use the following command to launch a run dialog: `bbrun -w`
+*   [bbrun](https://aur.archlinux.org/packages/bbrun/) - use the following command to launch a run dialog: `bbrun -w`
 *   [gmrun](https://www.archlinux.org/packages/?name=gmrun) - use the following command to launch a run dialog: `gmrun`
 *   [fbrun](https://aur.archlinux.org/packages/fbrun/) - use the following command to launch a run dialog: `fbrun`
 

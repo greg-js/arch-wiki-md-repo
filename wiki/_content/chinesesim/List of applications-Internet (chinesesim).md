@@ -559,7 +559,7 @@ See also [Wikipedia:Comparison of instant messaging clients#Multiprotocol_client
 
 *   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — CenterICQ的复刻软件, 文字模式菜单和窗口驱动的IM界面.
 
-	[http://centerim.org/](http://centerim.org/) || [centerim](https://www.archlinux.org/packages/?name=centerim)
+	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
 
 *   **Finch** — 一个使用ncurses library的聊天客户端，使用libpurple并支持其所有的协议.
 
@@ -735,7 +735,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Easy to hack feature-rich XMPP client by the author of the ejabberd XMPP server.
 
-	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://www.archlinux.org/packages/?name=tkabber)
+	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://aur.archlinux.org/packages/tkabber/)
 
 ###### 服务器
 
@@ -777,7 +777,7 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 *   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — Fork of CenterICQ, a text mode menu- and window-driven IM interface.
 
-	[http://centerim.org/](http://centerim.org/) || [centerim](https://www.archlinux.org/packages/?name=centerim)
+	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
 
 *   **[Finch](/index.php/Pidgin "Pidgin")** — Ncurses-based chat client that uses libpurple and supports all its protocols.
 
@@ -981,7 +981,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **Snownews** — Text mode RSS news reader.
 
-	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://www.archlinux.org/packages/?name=snownews)
+	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://aur.archlinux.org/packages/snownews/)
 
 ##### 图形界面
 
@@ -1051,7 +1051,7 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 
 *   **[slrn](https://en.wikipedia.org/wiki/slrn "wikipedia:slrn")** — An open source text-based news client.
 
-	[http://www.slrn.org/](http://www.slrn.org/) || [slrn](https://www.archlinux.org/packages/?name=slrn)
+	[http://www.slrn.org/](http://www.slrn.org/) || [slrn](https://aur.archlinux.org/packages/slrn/)
 
 *   **[tin](https://en.wikipedia.org/wiki/Tin_(newsreader) "wikipedia:Tin (newsreader)")** — A cross-platform threaded NNTP and spool based UseNet newsreader.
 

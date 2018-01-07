@@ -1,3 +1,9 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Window manager](/index.php/Window_manager "Window manager")
+
 [Blackbox](http://blackboxwm.sourceforge.net/) is a lightweight [stacking window manager](/index.php/Window_managers#Stacking_window_managers "Window managers"). It was last updated November 3, 2005 with no plans for future releases, however its design has inspired many forks and spiritual successors.
 
 ## Installation
@@ -15,7 +21,7 @@ exec blackbox
 
 There are several additional packages to enhance the functionality of Blackbox (though they may also work well with other minimalist window managers):
 
-*   [bbrun](https://www.archlinux.org/packages/?name=bbrun) a run dialog for starting programs
+*   [bbrun](https://aur.archlinux.org/packages/bbrun/) a run dialog for starting programs
 *   [bbpager](https://www.archlinux.org/packages/?name=bbpager) a pager
 *   [bbkeys](https://aur.archlinux.org/packages/bbkeys/) configures keyboard shortcuts
 

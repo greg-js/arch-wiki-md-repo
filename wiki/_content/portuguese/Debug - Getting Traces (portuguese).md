@@ -1,7 +1,7 @@
 Artigos relacionados
 
 *   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
-*   [Reporting bug guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines")
+*   [Diretrizes de relatórios de erro](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro")
 *   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
 
 Esse artigo visa ajudar na criação de um pacote de depuração do Arch e usá-lo para fornecer informações de rastro e depuração para relatar bugs de software para desenvolvedores.

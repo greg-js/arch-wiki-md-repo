@@ -201,7 +201,7 @@ The first is to mount your device through the FUSE file system SSHFS. This requi
 
 The second is to use a FUSE file system called [ifuse](https://www.archlinux.org/packages/?name=ifuse), which allows you to mount your device through USB, as you normally would. After installing ifuse, for instance, you should see your iPhone appear in the left navigation of Gnome Files and other supporting file managers. This method requires no hacking and is in general the better solution, though be aware that the software is still under heavy development. As of late, however, it has proven to be rather reliable and stable.
 
-**Note:** The current releases of [libgpod](https://www.archlinux.org/packages/?name=libgpod) and [gtkpod](https://www.archlinux.org/packages/?name=gtkpod) support the iPod Touch and the iPhone OS 3.1.x up to iOS 4.3.x. It is possible to transfer pictures and music without limitations.
+**Note:** The current releases of [libgpod](https://www.archlinux.org/packages/?name=libgpod) and [gtkpod](https://aur.archlinux.org/packages/gtkpod/) support the iPod Touch and the iPhone OS 3.1.x up to iOS 4.3.x. It is possible to transfer pictures and music without limitations.
 
 Refer to this page:[[1]](https://help.ubuntu.com/community/PortableDevices/iPhone)
 

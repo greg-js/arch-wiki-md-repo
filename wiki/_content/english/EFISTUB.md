@@ -24,11 +24,11 @@ An EFISTUB kernel can be booted directly by a UEFI motherboard or indirectly usi
 
 After creating the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"), you must choose how it will be mounted. The simplest option is to mount it at `/boot` since this allows pacman to directly update the kernel that the EFI firmware will read. If you elect for this option, continue to [#Booting EFISTUB](#Booting_EFISTUB). See [EFI System Partition#Mount the partition](/index.php/EFI_System_Partition#Mount_the_partition "EFI System Partition") for all available ESP mounting options options.
 
-**Note:** You can keep kernel and initramfs out of ESP if you use a boot manager which has a file system driver for the partition where they reside, e.g. [rEFInd](/index.php/REFInd "REFInd").
+**Tip:** You can keep kernel and initramfs out of ESP if you use a boot manager which has a file system driver for the partition where they reside, e.g. [rEFInd](/index.php/REFInd "REFInd").
 
 ## Booting EFISTUB
 
-**Warning:** Linux Kernel EFISTUB initramfs path should be relative to the EFI System Partition's root. For example, if the initramfs is located in `*esp*/EFI/arch/initramfs-linux.img`, the corresponding UEFI formatted line should be `initrd=/EFI/arch/initramfs-linux.img` or `initrd=\EFI\arch\initramfs-linux.img`. In the following examples we will assume that everything is in `*esp*/`.
+**Note:** Linux Kernel EFISTUB initramfs path should be relative to the EFI System Partition's root. For example, if the initramfs is located in `*esp*/EFI/arch/initramfs-linux.img`, the corresponding UEFI formatted line should be `initrd=/EFI/arch/initramfs-linux.img` or `initrd=\EFI\arch\initramfs-linux.img`. In the following examples we will assume that everything is in `*esp*/`.
 
 ### Using a boot manager
 
@@ -76,7 +76,7 @@ It is a good idea to then run
 
 to verify that the resulting entry is correct.
 
-**Warning:** Some kernel and `efibootmgr` version combinations might refuse to create new boot entries. This could be due to lack of free space in the NVRAM. You can try deleting any EFI dump files
+**Note:** Some kernel and `efibootmgr` version combinations might refuse to create new boot entries. This could be due to lack of free space in the NVRAM. You can try deleting any EFI dump files
 ```
 # rm /sys/firmware/efi/efivars/dump-*
 
@@ -99,7 +99,7 @@ More info about efibootmgr at [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI
 
 #### efibootmgr with .efi file
 
-If using [cryptboot](https://aur.archlinux.org/packages/cryptboot/) and [sbupdate](https://aur.archlinux.org/packages/sbupdate/) to generate your own keys for [Secure Boot](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot") and sign the initramfs and kernel then create a bootable .efi image, [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) can be used directly to boot the .efi file:
+If using [cryptboot](https://aur.archlinux.org/packages/cryptboot/) and [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) to generate your own keys for [Secure Boot](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot") and sign the initramfs and kernel then create a bootable .efi image, [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) can be used directly to boot the .efi file:
 
  `efibootmgr -c -d /dev/sdX -p 1 -L "Arch Linux Signed" -l "EFI\Arch\linux-signed.efi"` 
 

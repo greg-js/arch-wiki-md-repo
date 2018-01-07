@@ -121,7 +121,7 @@ If you want to flash other flash chips on your mainboard, you will find all opti
 
 ### Unetbootin
 
-By far the easiest way to make a bootable FreeDOS USB Stick is using [unetbootin](https://www.archlinux.org/packages/?name=unetbootin), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
+By far the easiest way to make a bootable FreeDOS USB Stick is using [unetbootin](https://aur.archlinux.org/packages/unetbootin/), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
 
 You should format a pendrive with FAT16 and flag it as "boot" (you may do this through a GUI with [gparted](https://www.archlinux.org/packages/?name=gparted), [qtparted](https://aur.archlinux.org/packages/qtparted/) or [partitionmanager](https://www.archlinux.org/packages/?name=partitionmanager)). Then, after mounting the flash drive, select under distribution **FreeDOS** and your mounted stick. The app will automatically download the image for you and copy it to the drive. Finally, you may copy everything you want to flash there (BIOS, firmwares, etc).
 
@@ -137,7 +137,7 @@ Yet another simple solution: [FreeDOS prebuilt bootable USB flash drive image by
 
 ### Using a FreeDOS-provided Disk Image + USB stick
 
-As of writing (2017-07-11), [unetbootin](https://www.archlinux.org/packages/?name=unetbootin) doesn't support versions of FreeDOS more recent than 1.0 (current version is 1.2). The following procedure worked to upgrade an Inspiron 17-3737 to the A09 BIOS. (Dell offers this as a possibility [on their site](http://www.dell.com/support/article/ca/en/cabsdt1/SLN171755/updating-the-dell-bios-in-linux-and-ubuntu-environments?lang=EN#Creating%20a%20USB%20Bootable%20Storage%20Device))
+As of writing (2017-07-11), [unetbootin](https://aur.archlinux.org/packages/unetbootin/) doesn't support versions of FreeDOS more recent than 1.0 (current version is 1.2). The following procedure worked to upgrade an Inspiron 17-3737 to the A09 BIOS. (Dell offers this as a possibility [on their site](http://www.dell.com/support/article/ca/en/cabsdt1/SLN171755/updating-the-dell-bios-in-linux-and-ubuntu-environments?lang=EN#Creating%20a%20USB%20Bootable%20Storage%20Device))
 
 Some notes before starting:
 
@@ -314,7 +314,7 @@ Finally reboot your machine, making sure the CD drive is first in the boot seque
 
 ## Bootable optical disk emulation
 
-The script Geteltorito.pl will extract the [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard) boot image. It has worked on Lenovo laptops like X220, X230, W540, T450 and T450s. It may work for other vendors as well.
+The script Geteltorito.pl will extract the [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard) boot image. It has worked on Lenovo laptops like X220, X230, X260, W540, T450 and T450s. It may work for other vendors as well.
 
 ### Installation
 

@@ -268,7 +268,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[Xfe](https://en.wikipedia.org/wiki/Xfe "wikipedia:Xfe")** — Microsoft Explorer-like file manager for X (X File Explorer).
 
-	[http://roland65.free.fr/xfe/](http://roland65.free.fr/xfe/) || [xfe](https://www.archlinux.org/packages/?name=xfe)
+	[http://roland65.free.fr/xfe/](http://roland65.free.fr/xfe/) || [xfe](https://aur.archlinux.org/packages/xfe/)
 
 #### 索引器
 

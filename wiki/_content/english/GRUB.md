@@ -38,6 +38,7 @@ Related articles
     *   [5.6 Encryption](#Encryption)
         *   [5.6.1 Root partition](#Root_partition)
         *   [5.6.2 Boot partition](#Boot_partition)
+    *   [5.7 Chainloading an Arch Linux .efi file](#Chainloading_an_Arch_Linux_.efi_file)
 *   [6 Using the command shell](#Using_the_command_shell)
     *   [6.1 Pager support](#Pager_support)
     *   [6.2 Using the command shell environment to boot operating systems](#Using_the_command_shell_environment_to_boot_operating_systems)
@@ -446,6 +447,20 @@ Without further changes you will be prompted twice for a passhrase: the first fo
 *   If you experience issues getting the prompt for a password to display (errors regarding cryptouuid, cryptodisk, or "device not found"), try reinstalling grub as below appending the following to the end of your installation command:
 
  `# grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub **--modules="part_gpt part_msdos"**` 
+
+### Chainloading an Arch Linux .efi file
+
+If you have an .efi file generated from following [Secure Boot](/index.php/Secure_Boot "Secure Boot") or other means, `/etc/grub.d/40_custom` can be edited to add a new menu entry before regenerating `grub.cfg` with `grub-mkconfig`.
+
+ `/etc/grub.d/40_custom` 
+```
+menuentry 'Arch Linux .efi' {
+insmod part_gpt
+insmod chain
+set root='(hdX,gptY)'
+chainloader /EFI/*path*/*file*.efi
+}
+```
 
 ## Using the command shell
 

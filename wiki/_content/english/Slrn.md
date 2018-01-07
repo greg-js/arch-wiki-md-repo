@@ -13,7 +13,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [slrn](https://www.archlinux.org/packages/?name=slrn) package.
+[Install](/index.php/Install "Install") the [slrn](https://aur.archlinux.org/packages/slrn/) package.
 
 ## Configuration
 

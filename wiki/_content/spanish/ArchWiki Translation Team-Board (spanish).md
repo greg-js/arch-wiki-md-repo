@@ -239,7 +239,7 @@ Versión inglesa propuesta para su eliminación. |
 | [GNU Project (Español)](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)") | Información | `2012-03` | Versión inglesa propuesta para su eliminación |
 | [GStreamer (Español)](/index.php/GStreamer_(Espa%C3%B1ol) "GStreamer (Español)") | Códecs audio/vídeo | `2013-11` |
 | [GTK+ (Español)](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") | Conjunto de herramientas de GIMP | `2008-05` |
-| [Help:Searching (Español)](/index.php?title=Help:Searching_(Espa%C3%B1ol)&action=edit&redlink=1 "Help:Searching (Español) (page does not exist)")
+| [Help:Searching (Español)](/index.php/Help:Searching_(Espa%C3%B1ol) "Help:Searching (Español)")
 <small>**Remitido desde Main Page (Español)**</small> | Ayuda/Edición wiki | `--` | Sin traducir |
 | [High Performance Firewall (Español)](/index.php/High_Performance_Firewall_(Espa%C3%B1ol) "High Performance Firewall (Español)") | Seguridad/Cortaguegos | `2013-09` | Versión inglesa propuesta para su eliminación o fusión con [router](/index.php/Router "Router") |
 | [Howto update with a home network (Español)](/index.php/Howto_update_with_a_home_network_(Espa%C3%B1ol) "Howto update with a home network (Español)") | Gestión de paquetes | `2011-03` | Página solo en español (sin versión inglesa) |

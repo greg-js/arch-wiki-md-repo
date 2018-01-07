@@ -1,3 +1,9 @@
+Related articles
+
+*   [Browser plugins](/index.php/Browser_plugins "Browser plugins")
+*   [Firefox](/index.php/Firefox "Firefox")
+*   [Chromium](/index.php/Chromium "Chromium")
+
 **翻译状态：** 本文是英文页面 [Opera](/index.php/Opera "Opera") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-3-1，点击[这里](https://wiki.archlinux.org/index.php?title=Opera&diff=0&oldid=469197)可以查看翻译后英文页面的改动。
 
 [Opera](http://www.opera.com)浏览器，是一款自1994年以来由挪威[Opera Software](https://en.wikipedia.org/wiki/Opera_Software "wikipedia:Opera Software")公司开发的免费浏览器软件。该浏览器因曾经最先引入诸如标签式浏览、内置搜索等功能而闻名。
@@ -5,6 +11,7 @@
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
+    *   [1.1 旧的 Presto 版本](#.E6.97.A7.E7.9A.84_Presto_.E7.89.88.E6.9C.AC)
 *   [2 插件](#.E6.8F.92.E4.BB.B6)
     *   [2.1 Adblock](#Adblock)
 *   [3 性能调整](#.E6.80.A7.E8.83.BD.E8.B0.83.E6.95.B4)
@@ -31,11 +38,11 @@
 
 ## 安装
 
-Opera 26 于 2014 年 12 月上旬发布；它仅仅提供了 64 位版本。作为一个里程碑，从此以后，旧的专有 Presto 排版引擎被更先进的开源引擎 Blink 所替代。之前的 12.16 版本仍然支持 32 位系统。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [opera](https://www.archlinux.org/packages/?name=opera) 软件包
 
-Opera 可以在 [官方软件仓库安装](/index.php/Official_repositories "Official repositories")。官方仓库为 x86_64 架构的系统提供新的 Blink 版本 Opera，而为 i686 架构的系统提供旧的 Presto 版本的 Opera。
+### 旧的 Presto 版本
 
-12.16 版 Opera 同样可以在 [AUR](/index.php/AUR "AUR")：[opera-legacy](https://aur.archlinux.org/packages/opera-legacy/) 中找到，包含 x86_64 以及 i686 架构的支持。
+现在的 Opera 浏览器使用现代的、开源的 Blick 引擎。你仍然可以通安装 Opera 12.16 即 [opera-legacy](https://aur.archlinux.org/packages/opera-legacy/) 软件包，来使用旧版的 Presto 布局引擎
 
 ## 插件
 

@@ -290,12 +290,12 @@ Files can also be supplied directly in the location of the `PKGBUILD` and added 
 
 *.install* files are recognized automatically by *makepkg* and should not be included in the source array. Files in the source array with extensions *.sig*, *.sign*, or *.asc* are recognized by *makepkg* as PGP signatures and will be automatically used to verify the integrity of the corresponding source file.
 
-**Note:**
+**Warning:** The downloaded source filename should be unique, because the [SRCDEST](/index.php/Makepkg#Package_output "Makepkg") variable can be the same directory for all packages. Using the version number of the project only as a filename for example will conflict with other projects with the same version number. The alternative filename to be used is provided with the syntax `source=('*unique_package_name***::***file_uri*')`. For example: `source=("$pkgname-$pkgver.tar.gz::https://github.com/coder/program/archive/v$pkgver.tar.gz")`
+
+**Tip:**
 
 *   Additional architecture-specific arrays can be added by appending an underscore and the architecture name, e.g. `source_x86_64=()`. There must be a corresponding integrity array with checksums, e.g. `sha256sums_x86_64=()`.
-*   File names of downloaded sources should be globally unique, because the [SRCDEST](/index.php/Makepkg#Package_output "Makepkg") variable could be the same directory for all packages. This can be ensured by specifying an alternative source name with the syntax `source=('*filename*::*fileuri*')`, where the chosen `*filename*` should be related to the package name: `source=("project_name::hg+https://googlefontdirectory.googlecode.com/hg/")` 
-
-**Tip:** If some servers prevent you from downloading a file because of restricted user-agents, read [Nonfree applications package guidelines#Custom DLAGENTS](/index.php/Nonfree_applications_package_guidelines#Custom_DLAGENTS "Nonfree applications package guidelines").
+*   If some servers prevent you from downloading a file because of restricted user-agents, read [Nonfree applications package guidelines#Custom DLAGENTS](/index.php/Nonfree_applications_package_guidelines#Custom_DLAGENTS "Nonfree applications package guidelines").
 
 ### noextract
 

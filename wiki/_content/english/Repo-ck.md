@@ -25,7 +25,7 @@ Add the [repo-ck](/index.php/Unofficial_user_repositories#repo-ck "Unofficial us
 
 ## Kernels and related packages
 
-The official "ARCH" kernel is available in two flavors (either i686 or x86_64) which are *generic* packages, in that i686 will work with *any* compatible x86 CPU and x86_64 will work with *any* compatible x86_64 CPU. Repo-ck also hosts generic versions of linux-ck but also allows users the choice of packages optimized for specific CPUs too. CPU-specific optimizations are invoked by selecting *Processor type and features > Processor family* in `make nconfig`, or by adjusting `.config` accordingly. These changes setup make specific GCC options, including `CFLAGS`.
+The official "ARCH" kernel provides a *generic* package which is built for the x86_64 architecture in the sense that it will work with *any* compatible x86_64 CPU. Repo-ck also hosts a generic version of [linux-ck](/index.php/Linux-ck "Linux-ck") but also proposes packages optimized for specific CPUs. CPU-specific optimizations are invoked by selecting *Processor type and features > Processor family* in `make nconfig`, or by adjusting `.config` accordingly. These changes setup make specific GCC options, including `CFLAGS`.
 
 Packages marked with `*` are available only for the 64-bit systems, see [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1423574#p1423574).
 

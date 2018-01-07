@@ -24,6 +24,8 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [4.4 Elementary (EFL)](#Elementary_.28EFL.29)
 *   [5 Boot managers](#Boot_managers)
     *   [5.1 GRUB](#GRUB)
+        *   [5.1.1 Lower the framebuffer resolution](#Lower_the_framebuffer_resolution)
+        *   [5.1.2 Change GRUB font size](#Change_GRUB_font_size)
 *   [6 Applications](#Applications)
     *   [6.1 Browsers](#Browsers)
         *   [6.1.1 Firefox](#Firefox)
@@ -263,7 +265,31 @@ For more details see [https://phab.enlightenment.org/w/elementary/](https://phab
 
 ### GRUB
 
+#### Lower the framebuffer resolution
+
 Set a lower resolution for the framebuffer as explained in [GRUB/Tips and tricks#Setting the framebuffer resolution](/index.php/GRUB/Tips_and_tricks#Setting_the_framebuffer_resolution "GRUB/Tips and tricks").
+
+#### Change GRUB font size
+
+Find a ttf font that you like in `/usr/share/fonts/`.
+
+Convert the font to a format that GRUB can utilize:
+
+```
+# grub-mkfont -s 30 -o /boot/grubfont.pf2 /usr/share/fonts/FontFamily/FontName.ttf
+
+```
+
+**Note:** Change the `-s 30` parameter to modify the font size
+
+Edit `/etc/default/grub` to set the new font as shown in [GRUB/Tips and tricks#Background image and bitmap fonts](/index.php/GRUB/Tips_and_tricks#Background_image_and_bitmap_fonts "GRUB/Tips and tricks"):
+
+```
+GRUB_FONT="/grubfont.pf2"
+
+```
+
+Update GRUB configuration by running `grub-mkconfig -o /boot/grub/grub.cfg`
 
 ## Applications
 

@@ -14,7 +14,7 @@ This page describes how to get [Silicon Integrated Systems (SiS)](http://dri.fre
 
 **Note:** Driver is only working on [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) with iomem=relaxed [kernel parameter](/index.php/Kernel_parameter "Kernel parameter")
 
-You will need main [xf86-video-sis](https://aur.archlinux.org/packages/xf86-video-sis/) with driver and it's good idea to install [sisctrl](https://www.archlinux.org/packages/?name=sisctrl) (gui tool for setting video modes). Some cards not supported by **sis** driver package can work with [xf86-video-sisusb](https://www.archlinux.org/packages/?name=xf86-video-sisusb) and [xf86-video-sisimedia](https://aur.archlinux.org/packages/xf86-video-sisimedia/).
+You will need main [xf86-video-sis](https://aur.archlinux.org/packages/xf86-video-sis/) with driver and it's good idea to install [sisctrl](https://aur.archlinux.org/packages/sisctrl/) (gui tool for setting video modes). Some cards not supported by **sis** driver package can work with [xf86-video-sisusb](https://www.archlinux.org/packages/?name=xf86-video-sisusb) and [xf86-video-sisimedia](https://aur.archlinux.org/packages/xf86-video-sisimedia/).
 
 ## lspci
 

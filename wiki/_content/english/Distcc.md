@@ -149,15 +149,12 @@ This example would compile gzip using distcc's pump mode with two compile thread
 
 ## Monitoring progress
 
-Progress can be monitored via several methods.
+[Distcc](https://www.archlinux.org/packages/?name=Distcc) ships with a cli monitor `distccmon-text` and a gtk monitor `distccmon-gnome` one can use to check on compilation status.
 
-1.  distccmon-text
-2.  tailing log file
-
-Invoke distccmon-text to check on compilation status:
+The cli monitor can run continuously by appending a space followed by integer to the command which corresponds to the number of sec to wait for a repeat query:
 
 ```
-$ distccmon-text
+$ distccmon-text 3
 29291 Preprocess  probe_64.c                                 192.168.0.2[0]
 30954 Compile     apic_noop.c                                192.168.0.2[0]
 30932 Preprocess  kfifo.c                                    192.168.0.2[0]
@@ -169,27 +166,6 @@ $ distccmon-text
 30458 Compile     catalog.c                                  192.168.0.4[0]
 30496 Compile     ulpqueue.c                                 192.168.0.4[2]
 30506 Compile     alloc.c                                    192.168.0.4[0]
-
-```
-
-One can have this program run continuously by using watch or by appending a space followed by integer to the command which corresponds to the number of sec to wait for a repeat query:
-
-```
-$ watch distccmon-text
-
-```
-
-or
-
-```
-$ distccmon-text 2
-
-```
-
-One can also simply tail `systemd journal log` on daemon:
-
-```
-# journalctl -f -u distccd
 
 ```
 

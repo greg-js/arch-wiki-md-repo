@@ -14,7 +14,7 @@
 
 1.  [synce-odccm](https://aur.archlinux.org/packages/synce-odccm/)
 2.  [synce-kde](https://aur.archlinux.org/packages/synce-kde/)
-3.  [synce-sync-engine](https://www.archlinux.org/packages/?name=synce-sync-engine)
+3.  [synce-sync-engine](https://aur.archlinux.org/packages/synce-sync-engine/)
 
 ## Подключение к телефону
 

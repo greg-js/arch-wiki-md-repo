@@ -21,7 +21,23 @@ $ plank
 
 ## Configuration
 
-Preferences can be opened by pressing `Ctrl+Right Click` on the dock and selecting *Preferences* in the submenu that opens.
+Preferences can be opened by pressing `Ctrl + Right Click` on the dock and selecting *Preferences* in the submenu that opens.
+
+Although the preferences of each dock is stored in the [dconf](https://www.archlinux.org/packages/?name=dconf) database and not in plain text, sometimes it makes sense to get and store that information anyway and then feed it back at some point. *Eg. backing up the settings or migrating the settings, etc.*
+
+Therefore one may want to save all the docks:
+
+```
+$ dconf dump /net/launchpad/plank/docks/ > /path/where/to/save/plank/docks.ini
+
+```
+
+And then one may want to reload the saved settings:
+
+```
+$ cat /path/where/saved/plank/docks.ini | dconf load /net/launchpad/plank/docks/
+
+```
 
 ### Setting themes
 

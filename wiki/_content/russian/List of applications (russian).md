@@ -701,7 +701,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — Форк CenterICQ
 
-	[http://centerim.org/](http://centerim.org/) || [centerim](https://www.archlinux.org/packages/?name=centerim)
+	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
 
 *   **[Finch](/index.php/Pidgin_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pidgin (Русский)")** — Основанный на Ncurses клиент, который использует библиотеку libpurple и поддерживает все ее протоколы
 
@@ -803,7 +803,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/ru:Tkabber "wikipedia:ru:Tkabber")** — "Легкий для взлома" (easy to hack) клиент XMPP с богатым функционалом от автора ejabberd XMPP-сервера
 
-	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://www.archlinux.org/packages/?name=tkabber)
+	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://aur.archlinux.org/packages/tkabber/)
 
 ###### Серверы
 
@@ -1023,7 +1023,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Snownews** — Консольная программа чтения RSS-новостей
 
-	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://www.archlinux.org/packages/?name=snownews)
+	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://aur.archlinux.org/packages/snownews/)
 
 ##### Графические
 
@@ -1113,7 +1113,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[slrn](https://en.wikipedia.org/wiki/ru:slrn "wikipedia:ru:slrn")** — Текстовый клиент новостей с открытым исходным кодом
 
-	[http://www.slrn.org/](http://www.slrn.org/) || [slrn](https://www.archlinux.org/packages/?name=slrn)
+	[http://www.slrn.org/](http://www.slrn.org/) || [slrn](https://aur.archlinux.org/packages/slrn/)
 
 *   **[tin](https://en.wikipedia.org/wiki/Tin_(newsreader) "wikipedia:Tin (newsreader)")** — Кроссплатформенная программа чтения новостей NNTP UseNet
 
@@ -2305,7 +2305,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[KMSCON](/index.php/KMSCON "KMSCON")** — Простой эмулятор терминала, основанный на kernel mode setting (KMS) linux
 
-	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://www.archlinux.org/packages/?name=kmscon)
+	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://aur.archlinux.org/packages/kmscon/)
 
 *   **[Konsole](https://en.wikipedia.org/wiki/ru:Konsole "wikipedia:ru:Konsole")** — Эмулятор терминала, включенный в окружение [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")
 
@@ -2555,7 +2555,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Xfe](https://en.wikipedia.org/wiki/Xfe "wikipedia:Xfe")** — Файловый менеджер для Х (X File Explorer) в стиле проводника Microsoft
 
-	[http://roland65.free.fr/xfe/](http://roland65.free.fr/xfe/) || [xfe](https://www.archlinux.org/packages/?name=xfe)
+	[http://roland65.free.fr/xfe/](http://roland65.free.fr/xfe/) || [xfe](https://aur.archlinux.org/packages/xfe/)
 
 #### Поисковые движки
 
@@ -3197,7 +3197,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[vile](https://en.wikipedia.org/wiki/Vile_(editor) "wikipedia:Vile (editor)")** — Легковесный клон Emacs c горячими клавишами в стиле *vi*
 
-	[http://invisible-island.net/vile/vile.html](http://invisible-island.net/vile/vile.html) || [vile](https://www.archlinux.org/packages/?name=vile)
+	[http://invisible-island.net/vile/vile.html](http://invisible-island.net/vile/vile.html) || [vile](https://aur.archlinux.org/packages/vile/)
 
 *   **[Zile](https://en.wikipedia.org/wiki/Zile_(editor) "wikipedia:Zile (editor)")** — Легковесный клон Emacs
 
@@ -3309,7 +3309,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[SciTE](https://en.wikipedia.org/wiki/ru:SciTE "wikipedia:ru:SciTE")** — Очень полезный редактор с удобствами для создания и выполнения программ
 
-	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://www.archlinux.org/packages/?name=scite)
+	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://aur.archlinux.org/packages/scite/)
 
 *   **Scribes** — Ультраминималистичный текстовый редактор, который сочетает простоту с мощью
 
@@ -3321,7 +3321,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Tea** — Основанный на Qt текстовый редактор с богатым функционалом
 
-	[http://tea-editor.sourceforge.net/](http://tea-editor.sourceforge.net/) || [tea](https://www.archlinux.org/packages/?name=tea)
+	[http://tea-editor.sourceforge.net/](http://tea-editor.sourceforge.net/) || [tea](https://aur.archlinux.org/packages/tea/)
 
 *   **XEdit** — Простой текстовый редактор для оконной системы X
 
@@ -3401,7 +3401,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **apvlv** — Легковесная программа просмотра PDF/DjVu/UMD/TXT с горячими клавишами [Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)")
 
-	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://www.archlinux.org/packages/?name=apvlv)
+	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://aur.archlinux.org/packages/apvlv/)
 
 *   **Atril** — Простая мультистраничная программа просмотра документов для MATE
 
@@ -3553,7 +3553,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[YAGF](/index.php/YAGF "YAGF")** — Графический интерфейс для программы оптического распознавания текста CuneiForm на платформе Linux
 
-	[http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) || [yagf](https://www.archlinux.org/packages/?name=yagf)
+	[http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) || [yagf](https://aur.archlinux.org/packages/yagf/)
 
 ### Программы ведения заметок
 
@@ -4285,7 +4285,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Qucs](https://en.wikipedia.org/wiki/ru:Qucs "wikipedia:ru:Qucs")** — Приложение имитации электрических цепей, дающее возможность их настройки при помощи графического интерфейса и имитации поведения при длинных сигналах (large-signal), коротких сигналах (small-signal) и шуме
 
-	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://www.archlinux.org/packages/?name=qucs)
+	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://aur.archlinux.org/packages/qucs/)
 
 #### Моделирование физики
 
@@ -4383,7 +4383,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **twin** — Текстовый оконный менеджер
 
-	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
+	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://aur.archlinux.org/packages/twin/)
 
 ##### Графические
 

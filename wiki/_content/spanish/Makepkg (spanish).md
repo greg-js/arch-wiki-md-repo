@@ -86,7 +86,7 @@ Si una clave pública es necesaria, el [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B
 
 ## Uso
 
-Antes de continuar, asegúrese de que el grupo de paquetes [base-devel](https://www.archlinux.org/packages/?name=base-devel) estén instalados. Los paquetes pertenecientes a este grupo no necesariamente tienen que ser listados como dependencias en los [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Asegúrese de tener instalado este paquete ejecutando (como root):
+Antes de continuar, asegúrese de que el grupo de paquetes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) estén instalados. Los paquetes pertenecientes a este grupo no necesariamente tienen que ser listados como dependencias en los [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Asegúrese de tener instalado este paquete ejecutando (como root):
 
 ```
 # pacman -S base-devel

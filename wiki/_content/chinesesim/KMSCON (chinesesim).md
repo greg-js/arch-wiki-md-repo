@@ -1,3 +1,9 @@
+相关文章
+
+*   [KMS](/index.php/KMS "KMS")
+*   [fbterm](/index.php/Fbterm "Fbterm")
+*   [systemd](/index.php/Systemd "Systemd")
+
 **翻译状态：** 本文是英文页面 [KMSCON](/index.php/KMSCON "KMSCON") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-04-26，点击[这里](https://wiki.archlinux.org/index.php?title=KMSCON&diff=0&oldid=464375)可以查看翻译后英文页面的改动。
 
 来自 [project GitHub page](https://github.com/dvdhrm/kmscon) 的介绍：
@@ -28,7 +34,7 @@ KMSCON 能作为 Linux 内核内置终端的一个完整替代，它具有以下
 
 虽然名字里带有 KMS，kmscon 并非硬性依赖 KMS。Kmscon 支持的视频后端如下：fbdev（Linux fbdev 视频后端），drm2d（Linux DRM 软解后端），drm3d（Linux DRM 硬解后端）。请确保你的系统中有其中之一。
 
-你可以从[官方仓库](/index.php/Official_repositories "Official repositories")安装 [kmscon](https://www.archlinux.org/packages/?name=kmscon) 也可以从 [AUR](/index.php/AUR "AUR") 安装 [kmscon-git](https://aur.archlinux.org/packages/kmscon-git/)。
+你可以从[官方仓库](/index.php/Official_repositories "Official repositories")安装 [kmscon](https://aur.archlinux.org/packages/kmscon/) 也可以从 [AUR](/index.php/AUR "AUR") 安装 [kmscon-git](https://aur.archlinux.org/packages/kmscon-git/)。
 
 出于保守的策略，你可以继续在 tty1 上使用传统的 getty 而只在其他虚拟终端上运行 kmscon ，或者你可以用 kmscon 替换 getty。
 

@@ -1,3 +1,9 @@
+Related articles
+
+*   [KMS](/index.php/KMS "KMS")
+*   [systemd](/index.php/Systemd "Systemd")
+*   [fbterm](/index.php/Fbterm "Fbterm")
+
 From the project's [git repository](http://cgit.freedesktop.org/~dvdhrm/kmscon/tree/README):
 
 	*Kmscon is a simple terminal emulator based on linux [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). It is an attempt to replace the in-kernel VT implementation with a userspace console.*
@@ -26,7 +32,7 @@ Kmscon can function as a drop-in replacement for the in-kernel linux-console. Fe
 
 Despite its name, KMS is not a hard requirement for kmscon. Kmscon supports the following video backends: fbdev (Linux fbdev video backend), drm2d (Linux DRM software-rendering backend), drm3d (Linux DRM hardware-rendering backend). Make sure one of them is available on your system.
 
-Install the [kmscon](https://www.archlinux.org/packages/?name=kmscon) package from the [official repositories](/index.php/Official_repositories "Official repositories"). Alternatively, you can install the [kmscon-git](https://aur.archlinux.org/packages/kmscon-git/) package from the [AUR](/index.php/AUR "AUR").
+Install the [kmscon](https://aur.archlinux.org/packages/kmscon/) package from the [official repositories](/index.php/Official_repositories "Official repositories"). Alternatively, you can install the [kmscon-git](https://aur.archlinux.org/packages/kmscon-git/) package from the [AUR](/index.php/AUR "AUR").
 
 Normally, there is a special systemd configuration for tty1\. To be conservative, you can continue to run the traditional agetty on tty1 and only run kmscon on all the other virtual terminals. Or you can run kmscon on both tty1 and the other VTs.
 

@@ -742,7 +742,7 @@ See also [Wikipedia:Comparison of instant messaging clients#Multiprotocol_client
 
 *   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — CenterICQ的复刻软件, 文字模式菜单和窗口驱动的IM界面.
 
-	[http://centerim.org/](http://centerim.org/) || [centerim](https://www.archlinux.org/packages/?name=centerim)
+	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
 
 *   **Finch** — 一个使用ncurses library的聊天客户端，使用libpurple并支持其所有的协议.
 
@@ -918,7 +918,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Easy to hack feature-rich XMPP client by the author of the ejabberd XMPP server.
 
-	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://www.archlinux.org/packages/?name=tkabber)
+	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://aur.archlinux.org/packages/tkabber/)
 
 ###### 服务器
 
@@ -960,7 +960,7 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 *   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — Fork of CenterICQ, a text mode menu- and window-driven IM interface.
 
-	[http://centerim.org/](http://centerim.org/) || [centerim](https://www.archlinux.org/packages/?name=centerim)
+	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
 
 *   **[Finch](/index.php/Pidgin "Pidgin")** — Ncurses-based chat client that uses libpurple and supports all its protocols.
 
@@ -1164,7 +1164,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **Snownews** — Text mode RSS news reader.
 
-	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://www.archlinux.org/packages/?name=snownews)
+	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://aur.archlinux.org/packages/snownews/)
 
 ##### 图形界面
 
@@ -1234,7 +1234,7 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 
 *   **[slrn](https://en.wikipedia.org/wiki/slrn "wikipedia:slrn")** — An open source text-based news client.
 
-	[http://www.slrn.org/](http://www.slrn.org/) || [slrn](https://www.archlinux.org/packages/?name=slrn)
+	[http://www.slrn.org/](http://www.slrn.org/) || [slrn](https://aur.archlinux.org/packages/slrn/)
 
 *   **[tin](https://en.wikipedia.org/wiki/Tin_(newsreader) "wikipedia:Tin (newsreader)")** — A cross-platform threaded NNTP and spool based UseNet newsreader.
 
@@ -2487,7 +2487,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[KMSCON](/index.php/KMSCON "KMSCON")** — 基于 linux kernel mode setting (KMS).
 
-	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://www.archlinux.org/packages/?name=kmscon)
+	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://aur.archlinux.org/packages/kmscon/)
 
 *   **[Konsole](https://en.wikipedia.org/wiki/Konsole "wikipedia:Konsole")** — [KDE](/index.php/KDE "KDE") 专用。
 
@@ -2599,7 +2599,7 @@ The following terminal emulators are based on the [kernel mode setting](/index.p
 
 *   **[KMSCON](/index.php/KMSCON "KMSCON")** — A KMS/DRM-based system console(getty) with an integrated terminal emulator for Linux operating systems.
 
-	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://www.archlinux.org/packages/?name=kmscon)
+	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://aur.archlinux.org/packages/kmscon/)
 
 #### framebuffer-based
 
@@ -2685,7 +2685,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **Xfe** — X环境下的类似视窗操作系统的Explorer或Commander的管理器
 
-	[http://roland65.free.fr/xfe/index.php/](http://roland65.free.fr/xfe/index.php/) || [xfe](https://www.archlinux.org/packages/?name=xfe)
+	[http://roland65.free.fr/xfe/index.php/](http://roland65.free.fr/xfe/index.php/) || [xfe](https://aur.archlinux.org/packages/xfe/)
 
 #### 桌面搜索引擎
 
@@ -3358,7 +3358,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **[SciTE](https://en.wikipedia.org/wiki/SciTE "wikipedia:SciTE")** — 常用来编译及运行程序。
 
-	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://www.archlinux.org/packages/?name=scite)
+	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://aur.archlinux.org/packages/scite/)
 
 *   **Scribes** — 终极，最小，即简单与强悍的合体。
 
@@ -3370,7 +3370,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **Tea** — 基于 Qt, 编辑富文本用。
 
-	[http://tea-editor.sourceforge.net/](http://tea-editor.sourceforge.net/) || [tea](https://www.archlinux.org/packages/?name=tea)
+	[http://tea-editor.sourceforge.net/](http://tea-editor.sourceforge.net/) || [tea](https://aur.archlinux.org/packages/tea/)
 
 *   **XEdit** — Simple text editor for the X Window System.
 
@@ -3453,7 +3453,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **apvlv** — Lightweight PDF/DjVu/UMD/TXT viewer with [Vim](/index.php/Vim "Vim") keybindings.
 
-	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://www.archlinux.org/packages/?name=apvlv)
+	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://aur.archlinux.org/packages/apvlv/)
 
 *   **Atril** — Simple multi-page document viewer for MATE.
 
@@ -3613,7 +3613,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **[YAGF](/index.php/YAGF "YAGF")** — Graphical interface for the CuneiForm text recognition program on the Linux platform.
 
-	[http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) || [yagf](https://www.archlinux.org/packages/?name=yagf)
+	[http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) || [yagf](https://aur.archlinux.org/packages/yagf/)
 
 ### 笔记
 
@@ -4563,7 +4563,7 @@ See also [#Terminal multiplexers](#Terminal_multiplexers), which offer some of t
 
 *   **twin** — Text-mode window manager.
 
-	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
+	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://aur.archlinux.org/packages/twin/)
 
 ##### Graphical
 

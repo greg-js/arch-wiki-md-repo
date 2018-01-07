@@ -86,7 +86,7 @@ Before continuing, [install](/index.php/Install "Install") the [base-devel](http
 *   Make sure [sudo](/index.php/Sudo "Sudo") is configured properly for commands passed to [pacman](/index.php/Pacman "Pacman").
 *   Running *makepkg* itself as root is [disallowed](https://lists.archlinux.org/pipermail/pacman-dev/2014-March/018911.html).[[2]](https://projects.archlinux.org/pacman.git/tree/NEWS) Besides how a `PKGBUILD` may contain arbitrary commands, building as root is generally considered unsafe.[[3]](https://bbs.archlinux.org/viewtopic.php?id=67561) Users who have no access to a regular user account should run makepkg as the [nobody user](http://allanmcrae.com/2015/01/replacing-makepkg-asroot/).
 
-To build a package, one must first create a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), or build script, as described in [Creating packages](/index.php/Creating_packages "Creating packages"). Existing scripts are available from the [ABS tree](/index.php/Arch_Build_System "Arch Build System") or the [AUR](/index.php/AUR "AUR"). Once in possession of a `PKGBUILD`, change to the directory where it is saved and issue the following command to build the package described by said `PKGBUILD`:
+To build a package, one must first create a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), or build script, as described in [Creating packages](/index.php/Creating_packages "Creating packages"). Existing scripts are available from the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") *(ABS)* tree or the [AUR](/index.php/AUR "AUR"). Once in possession of a `PKGBUILD`, change to the directory where it is saved and run the following command to build the package:
 
 ```
 $ makepkg
@@ -142,7 +142,7 @@ GCC can automatically detect and enable safe architecture-specific optimizations
 
  `/etc/makepkg.conf` 
 ```
-CFLAGS="-march=native -O2 -pipe -fstack-protector-strong -fno-plt"
+CFLAGS="**-march=native** -O2 -pipe -fstack-protector-strong -fno-plt"
 CXXFLAGS="${CFLAGS}"
 ```
 
@@ -178,12 +178,12 @@ $ BUILDDIR=/tmp/makepkg makepkg
 
 **Warning:** Avoid compiling larger packages in tmpfs to prevent running out of memory.
 
-Persistent configuration can be done in `makepkg.conf` by uncommenting the `BUILDDIR` option, which is found at the end of the `BUILD ENVIRONMENT` section in the default `/etc/makepkg.conf` file. Setting its value to e.g. `BUILDDIR=/tmp/makepkg` will make use of the Arch's default `/tmp` [tmpfs](/index.php/Tmpfs "Tmpfs").
+Persistent configuration can be done in `makepkg.conf` by uncommenting the `BUILDDIR` option, which is found at the end of the `BUILD ENVIRONMENT` section in the default `/etc/makepkg.conf` file. Setting its value to e.g. `BUILDDIR=/tmp/makepkg` will make use of the Arch's default `/tmp` temporary file system.
 
 **Note:**
 
-*   The [tmpfs](/index.php/Tmpfs "Tmpfs") folder must be mounted without the `noexec` option, else it will prevent build scripts or utilities from being executed.
-*   Keep in mind that any package compiled in [tmpfs](/index.php/Tmpfs "Tmpfs") will not persist across reboot. Consider setting the [PKGDEST](#Package_output) option appropriately to move the built package automatically to another (persistent) directory.
+*   The [tmpfs](/index.php/Tmpfs "Tmpfs") folder must be mounted without the `noexec` option, otherwise it will prevent built binaries from being executed.
+*   Keep in mind that packages compiled in [tmpfs](/index.php/Tmpfs "Tmpfs") will not persist across reboot. Consider setting the [PKGDEST](#Package_output) option appropriately to move the built package automatically to a persistent directory.
 
 #### Using a compilation cache
 

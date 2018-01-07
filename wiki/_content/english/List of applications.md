@@ -1251,7 +1251,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Easy to hack feature-rich XMPP client by the author of the ejabberd XMPP server.
 
-	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://www.archlinux.org/packages/?name=tkabber)
+	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://aur.archlinux.org/packages/tkabber/)
 
 ##### XMPP servers
 
@@ -1303,7 +1303,7 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 *   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — Fork of CenterICQ, a text mode menu- and window-driven IM interface.
 
-	[http://centerim.org/](http://centerim.org/) || [centerim](https://www.archlinux.org/packages/?name=centerim)
+	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
 
 *   **[Finch](/index.php/Pidgin "Pidgin")** — Ncurses-based chat client that uses libpurple and supports all its protocols.
 
@@ -1435,7 +1435,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Ring](https://en.wikipedia.org/wiki/Ring_(software) "wikipedia:Ring (software)")** — Open-source SIP/IAX2 compatible softphone with PulseAudio support (formerly known as SFLphone).
 
-	[https://ring.cx/](https://ring.cx/) || [ring-daemon](https://aur.archlinux.org/packages/ring-daemon/)
+	[https://ring.cx/](https://ring.cx/) || [ring-daemon](https://www.archlinux.org/packages/?name=ring-daemon)
 
 ##### Voice servers
 
@@ -1475,7 +1475,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **Snownews** — Text mode RSS news reader.
 
-	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://www.archlinux.org/packages/?name=snownews)
+	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://aur.archlinux.org/packages/snownews/)
 
 ##### Graphical
 
@@ -2933,7 +2933,7 @@ The following terminal emulators are based on the [kernel mode setting](/index.p
 
 *   **[KMSCON](/index.php/KMSCON "KMSCON")** — A KMS/DRM-based system console(getty) with an integrated terminal emulator for Linux operating systems.
 
-	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://www.archlinux.org/packages/?name=kmscon)
+	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://aur.archlinux.org/packages/kmscon/)
 
 #### framebuffer-based
 
@@ -3223,7 +3223,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[Xfe](https://en.wikipedia.org/wiki/Xfe "wikipedia:Xfe")** — Microsoft Explorer-like file manager for X (X File Explorer).
 
-	[http://roland65.free.fr/xfe/](http://roland65.free.fr/xfe/) || [xfe](https://www.archlinux.org/packages/?name=xfe)
+	[http://roland65.free.fr/xfe/](http://roland65.free.fr/xfe/) || [xfe](https://aur.archlinux.org/packages/xfe/)
 
 #### Trash management
 
@@ -3953,7 +3953,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[vile](https://en.wikipedia.org/wiki/Vile_(editor) "wikipedia:Vile (editor)")** — A lightweight Emacs clone with *vi*-like key bindings.
 
-	[http://invisible-island.net/vile/vile.html](http://invisible-island.net/vile/vile.html) || [vile](https://www.archlinux.org/packages/?name=vile)
+	[http://invisible-island.net/vile/vile.html](http://invisible-island.net/vile/vile.html) || [vile](https://aur.archlinux.org/packages/vile/)
 
 *   **[Zile](https://en.wikipedia.org/wiki/Zile_(editor) "wikipedia:Zile (editor)")** — A lightweight Emacs clone.
 
@@ -4081,7 +4081,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[SciTE](https://en.wikipedia.org/wiki/SciTE "wikipedia:SciTE")** — Generally useful editor with facilities for building and running programs.
 
-	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://www.archlinux.org/packages/?name=scite)
+	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://aur.archlinux.org/packages/scite/)
 
 *   **Scribes** — An ultra minimalist text editor that combines simplicity with power.
 
@@ -4097,7 +4097,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **Tea** — Qt-based feature rich text editor.
 
-	[http://semiletov.org/tea](http://semiletov.org/tea) || [tea](https://www.archlinux.org/packages/?name=tea)
+	[http://semiletov.org/tea](http://semiletov.org/tea) || [tea](https://aur.archlinux.org/packages/tea/)
 
 *   **[Textadept](/index.php/Textadept "Textadept")** — Lua-extensible feature rich text editor based on Scintilla and written in C.
 
@@ -4185,7 +4185,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **apvlv** — Lightweight PDF/DjVu/UMD/TXT viewer with [Vim](/index.php/Vim "Vim") keybindings.
 
-	[http://naihe2010.github.io/apvlv/](http://naihe2010.github.io/apvlv/) || [apvlv](https://www.archlinux.org/packages/?name=apvlv)
+	[http://naihe2010.github.io/apvlv/](http://naihe2010.github.io/apvlv/) || [apvlv](https://aur.archlinux.org/packages/apvlv/)
 
 *   **Atril** — Simple multi-page document viewer for MATE.
 
@@ -4231,9 +4231,9 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 	[https://wiki.gnome.org/Apps/PdfMod](https://wiki.gnome.org/Apps/PdfMod) || [pdfmod](https://www.archlinux.org/packages/?name=pdfmod)
 
-*   **PDF Shuffler** — Combine, split, rotate and reorder PDF documents. Uses Python and GTK3.
+*   **PDF Shuffler** — Combine, split, rotate and reorder PDF documents. Uses Python and GTK2.
 
-	[https://sourceforge.net/projects/pdfshuffler/](https://sourceforge.net/projects/pdfshuffler/) || [pdfshuffler-git](https://aur.archlinux.org/packages/pdfshuffler-git/)
+	[https://sourceforge.net/projects/pdfshuffler/](https://sourceforge.net/projects/pdfshuffler/) || [pdfshuffler](https://www.archlinux.org/packages/?name=pdfshuffler)
 
 *   **PDF Studio** — All-in-one PDF editor similar to Adobe Acrobat (proprietary).
 
@@ -4352,7 +4352,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **[YAGF](/index.php/YAGF "YAGF")** — Graphical interface for the CuneiForm text recognition program on the Linux platform.
 
-	[http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) || [yagf](https://www.archlinux.org/packages/?name=yagf)
+	[http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) || [yagf](https://aur.archlinux.org/packages/yagf/)
 
 ### Note taking organizers
 
@@ -4835,6 +4835,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 *   **gzsteg** — A utiltiy that can hide data in gzip compressed files
 
 	[http://www.nic.funet.fi/pub/crypt/steganography/](http://www.nic.funet.fi/pub/crypt/steganography/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=gzsteg)</small>
+
+*   **[Keybase](/index.php/Keybase "Keybase")** — Key directory mapping social media identities, with cross platform encrypted chat, cloud storage, and git repositories.
+
+	[https://keybase.io/](https://keybase.io/) || [keybase](https://www.archlinux.org/packages/?name=keybase) or [keybase-bin](https://aur.archlinux.org/packages/keybase-bin/)
 
 *   **[KGpg](https://en.wikipedia.org/wiki/KGPG "wikipedia:KGPG")** — *a simple interface for GnuPG* for KDE.
 
@@ -5344,7 +5348,7 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **[Qucs](https://en.wikipedia.org/wiki/Quite_Universal_Circuit_Simulator "wikipedia:Quite Universal Circuit Simulator")** — Electronics circuit simulator application that gives you the ability to set up a circuit with a graphical user interface and simulate its large-signal, small-signal and noise behaviour.
 
-	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://www.archlinux.org/packages/?name=qucs)
+	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://aur.archlinux.org/packages/qucs/)
 
 #### Physics simulation
 
@@ -5538,7 +5542,7 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 
 *   **[GNU Typist](/index.php?title=GNU_Typist&action=edit&redlink=1 "GNU Typist (page does not exist)")** — GNU Typist (also called gtypist) is a universal typing tutor.
 
-	[https://www.gnu.org/software/gtypist/](https://www.gnu.org/software/gtypist/) || [gtypist](https://www.archlinux.org/packages/?name=gtypist), [gtypist-single-space](https://aur.archlinux.org/packages/gtypist-single-space/)
+	[https://www.gnu.org/software/gtypist/](https://www.gnu.org/software/gtypist/) || [gtypist](https://aur.archlinux.org/packages/gtypist/), [gtypist-single-space](https://aur.archlinux.org/packages/gtypist-single-space/)
 
 *   **[Klavaro](/index.php?title=Klavaro&action=edit&redlink=1 "Klavaro (page does not exist)")** — Klavaro is libre software for teaching touch typing that intends to be keyboard and language independent.
 
@@ -5794,7 +5798,7 @@ See also [#Terminal multiplexers](#Terminal_multiplexers), which offer some of t
 
 *   **twin** — Text-mode window manager.
 
-	[https://sourceforge.net/projects/twin/](https://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
+	[https://sourceforge.net/projects/twin/](https://sourceforge.net/projects/twin/) || [twin](https://aur.archlinux.org/packages/twin/)
 
 *   **Wmutils** — A set of tools for X windows manipulation.
 

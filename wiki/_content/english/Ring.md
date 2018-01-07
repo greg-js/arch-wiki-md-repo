@@ -10,7 +10,7 @@ Additionally, Ring has a clean separation between daemon and user interface. The
 
 Ring is currently packaged in the AUR. You can choose between several versions:
 
-*   Gnome client, weekly/monthly snapshot: [ring-gnome](https://aur.archlinux.org/packages/ring-gnome/)
+*   Gnome client, weekly/monthly snapshot: [ring-gnome](https://www.archlinux.org/packages/?name=ring-gnome)
 *   KDE client, stable version: [ring-kde](https://aur.archlinux.org/packages/ring-kde/)
 *   Gnome client, latest git version: [ring-gnome-git](https://aur.archlinux.org/packages/ring-gnome-git/)
 *   KDE client, latest git version: [ring-kde-git](https://aur.archlinux.org/packages/ring-kde-git/)

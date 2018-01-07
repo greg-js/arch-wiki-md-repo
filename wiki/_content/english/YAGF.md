@@ -1,3 +1,7 @@
+Related articles
+
+*   [List of applications#OCR software](/index.php/List_of_applications#OCR_software "List of applications")
+
 [YAGF](http://sourceforge.net/projects/yagf-ocr/) is a graphical interface for the [cuneiform](https://en.wikipedia.org/wiki/CuneiForm_(software) and [tesseract](https://en.wikipedia.org/wiki/Tesseract_(software) OCR programs on the Linux platform. With YAGF you can scan images via XSane, perform images preprocessing and recognize texts using cuneiform or tesseract from a single command centre. YAGF also makes it easy to scan and recognize several images sequentially.
 
 ## Contents
@@ -14,7 +18,7 @@
 
 YAGF requires Qt 4 and the [aspell](https://www.archlinux.org/packages/?name=aspell) spellchecking package. If you want to acquire images from a scanner into YAGF directly, you should install [XSane](/index.php/SANE "SANE") software. And of course you will need [cuneiform](https://www.archlinux.org/packages/?name=cuneiform) or [tesseract](https://www.archlinux.org/packages/?name=tesseract) for the text recognition.
 
-[Install](/index.php/Install "Install") the [yagf](https://www.archlinux.org/packages/?name=yagf) package.
+[Install](/index.php/Install "Install") the [yagf](https://aur.archlinux.org/packages/yagf/) package.
 
 ## Supported languages
 

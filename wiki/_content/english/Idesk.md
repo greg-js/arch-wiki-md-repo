@@ -10,7 +10,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [idesk](https://www.archlinux.org/packages/?name=idesk) from the official repositories. Then copy the necessary configuration files to your home directory as shown below:
+[Install](/index.php/Install "Install") [idesk](https://aur.archlinux.org/packages/idesk/). Then copy the necessary configuration files to your home directory as shown below:
 
 ```
 $ mkdir ~/.idesktop
@@ -29,7 +29,7 @@ $ cp /usr/share/idesk/default.lnk ~/.idesktop/
 
 ## Configuration
 
-The [idesk](https://www.archlinux.org/packages/?name=idesk) package does not come with a man page, but it does come with a readme file: `/usr/share/idesk/README`. There is also documentation on [**SourceForge.net**](http://idesk.sourceforge.net/html/usage.html) however most of the configuration options should be self-explanatory.
+The [idesk](https://aur.archlinux.org/packages/idesk/) package does not come with a man page, but it does come with a readme file: `/usr/share/idesk/README`. There is also documentation on [**SourceForge.net**](http://idesk.sourceforge.net/html/usage.html) however most of the configuration options should be self-explanatory.
 
 ### Background options
 
@@ -68,4 +68,4 @@ end
 
 ### Idesktool
 
-The [idesk-extras](https://aur.archlinux.org/packages/idesk-extras/) package in the [AUR](/index.php/AUR "AUR") provides a graphical configuration tool for Idesk. It can be started by running the `idesktool` command. Users can use Idesktool to create and remove icons, modify settings and restart Idesk.
+The [idesk-extras](https://aur.archlinux.org/packages/idesk-extras/) package provides a graphical configuration tool for Idesk. It can be started by running the `idesktool` command. Users can use Idesktool to create and remove icons, modify settings and restart Idesk.

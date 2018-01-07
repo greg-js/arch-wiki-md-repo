@@ -7,9 +7,11 @@ EXWM is a [window manager](/index.php/Window_manager "Window manager") based on 
     *   [2.1 Multi-monitor](#Multi-monitor)
     *   [2.2 System tray](#System_tray)
     *   [2.3 Compositing manager](#Compositing_manager)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Screen tearing in Firefox](#Screen_tearing_in_Firefox)
-*   [4 See also](#See_also)
+*   [3 Embedding within LXDE](#Embedding_within_LXDE)
+    *   [3.1 lxsession-logout](#lxsession-logout)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Screen tearing in Firefox](#Screen_tearing_in_Firefox)
+*   [5 See also](#See_also)
 
 ## Installing
 
@@ -89,6 +91,47 @@ EXWM includes a compositing manager, but it is not enabled by default. To enable
 ```
 
 Alternatively, you may start/stop the compositing manager manually by omitting `(exwm-cm-enable)` and instead calling `exwm-cm-start` or `exwm-cm-stop` manually.
+
+## Embedding within LXDE
+
+EXWM can be used in place of openbox, allowing you to still use LXDE session management tools.
+
+Before doing this, make sure you have your init file for emacs already set up to run EXWM (see above)
+
+First, run
+
+```
+lxsession-edit
+
+```
+
+and go to the Advanced Options tab. Replace openbox with emacs. Then, run
+
+```
+lxsession-default-apps
+
+```
+
+Go to the Core Applications tab, and ensure the Windows Manager option is also set to emacs.
+
+Now, go to the Autostart tab and uncheck the pcmanfm --desktop option. You can choose to keep the lxpanel option checked if you would still like to use it.
+
+Log out, select LXDE from your login manager, and it will load emacs and init your EXWM environment automatically.
+
+### lxsession-logout
+
+You can create the following function within emacs to log out, shutdown, or reboot cleanly from within a LXDE session:
+
+```
+(defun exwm-logout ()
+  (interactive)
+  (recentf-save-list)
+  (save-some-buffers)
+  (start-process-shell-command "logout" nil "lxsession-logout"))
+
+```
+
+This stores your recentf history to disk, prompts you to save, discard, or diff changes within unsaved buffers, then launches the logout manager. You can bind this function to any key within emacs.
 
 ## Troubleshooting
 

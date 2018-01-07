@@ -8,8 +8,8 @@ Este artigo descreve como usuários novos e experientes do Arch podem contribuir
     *   [1.1 Postagens nos fóruns](#Postagens_nos_f.C3.B3runs)
     *   [1.2 Melhore esta wiki](#Melhore_esta_wiki)
     *   [1.3 Ingresse nas salas de chat](#Ingresse_nas_salas_de_chat)
-    *   [1.4 Reporte pacotes instalados](#Reporte_pacotes_instalados)
-    *   [1.5 Corrija e reporte bugs](#Corrija_e_reporte_bugs)
+    *   [1.4 Relate pacotes instalados](#Relate_pacotes_instalados)
+    *   [1.5 Corrija e relate](#Corrija_e_relate)
     *   [1.6 Informe sobre problemas de segurança](#Informe_sobre_problemas_de_seguran.C3.A7a)
     *   [1.7 Ajude a testar pacotes](#Ajude_a_testar_pacotes)
     *   [1.8 Crie e adote pacotes do AUR](#Crie_e_adote_pacotes_do_AUR)
@@ -41,15 +41,15 @@ A [ArchWiki](/index.php/SobreWiki "SobreWiki") é uma documentação do Arch Lin
 
 Você pode ajudar outros usuários a resolver problemas através do [canal do IRC](/index.php/Canais_IRC "Canais IRC"). É de suma importância que você leia as [regras do canal](/index.php/C%C3%B3digo_de_conduta#IRC "Código de conduta") antes de participar. [Canais especiais](/index.php/IRC_channels_(Portugu%C3%AAs)#Outros_canais "IRC channels (Português)") estão disponíveis para tópicos específicos.
 
-### Reporte pacotes instalados
+### Relate pacotes instalados
 
 [pkgstats](/index.php/Pkgstats_(Portugu%C3%AAs) "Pkgstats (Português)") fornece um [temporizador do systemd](/index.php/Systemd/Timers "Systemd/Timers") que envia uma lista de pacotes instalados em seu sistema, junto com a arquitetura e *mirrors* que você usa, para os desenvolvedores do Arch Linux para ajudá-los a priorizar seus esforços e melhorar a ainda mais a distribuição. As informações são enviadas anonimamente e não pode ser usadas para identificar você. Você pode ver os dados colecionados [Statistics page](https://www.archlinux.de/?page=Statistics). More information is available in [neste tópico do fórum](https://bbs.archlinux.org/viewtopic.php?id=105431).
 
-### Corrija e reporte bugs
+### Corrija e relate
 
-Reportar e corrigir bugs no [rastreador de bugs](https://bugs.archlinux.org/) é uma das formas possíveis de se ajudar a comunidade.
+Relatar e corrigir erros no [rastreador de erros](https://bugs.archlinux.org/) é uma das formas possíveis de se ajudar a comunidade.
 
-Contudo, o uso inefetivo pode ser contra-produtivo. Por favor, leia [Diretrizes para relatar bugs](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
+Contudo, o uso inefetivo pode ser contra-produtivo. Por favor, leia [Diretrizes de relatórios de erro](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro").
 
 ### Informe sobre problemas de segurança
 
@@ -177,8 +177,8 @@ Aqui está uma lista de coisas que você pode fazer para ganhar alguma "populari
 *   Envie pacotes para o AUR.
 *   Junte-se a projetos que estão "na boca do brete" para serem incorporados ao Arch algum dia, ou crie seu próprio projeto.
 *   Trabalhe no *pacman*, *makepkg* ou outros [projetos do Arch](https://git.archlinux.org/) e envie *patches* para o bug tracker.
-*   Navegue pelo [rastreador de bugs](https://bugs.archlinux.org/) e tente consertar bugs existentes.
-*   Encontre e envie novos bugs.
+*   Navegue pelo [rastreador de erros](https://bugs.archlinux.org/) e tente consertar erros relatados.
+*   Encontre e envie novos relatórios de erro.
 *   Conserte erros na wiki, adicione novas páginas, limpe as existentes e certifique-se que seus procedimentos para tal estão atualizados.
 *   Envie traduções.
 

@@ -313,7 +313,7 @@ To avoid conflicts with pacman, unit files provided by packages should not be di
 
 #### Replacement unit files
 
-To replace the unit file `/usr/lib/systemd/system/*unit*`, create the file `/etc/systemd/system/*unit*` and reenable the unit to update the symlinks:
+To replace the unit file `/usr/lib/systemd/system/*unit*`, create the file `/etc/systemd/system/*unit*` and *reenable* the unit to update the symlinks:
 
 ```
 # systemctl reenable *unit*
@@ -329,11 +329,11 @@ Alternatively, run:
 
 This opens `/etc/systemd/system/*unit*` in your editor (copying the installed version if it does not exist yet) and automatically reloads it when you finish editing.
 
-**Note:** Pacman does not update the replacement unit files when the originals are updated, so this method can make system maintenance more difficult. For this reason the next approach is recommended.
+**Note:** The replacement units will keep on being used even if Pacman updates the original units in the future. This method makes system maintenance more difficult and therefore the next approach is preferred.
 
 #### Drop-in files
 
-To create drop-in files for the unit file `/usr/lib/systemd/system/*unit*`, create the directory `/etc/systemd/system/*unit*.d/` and place *.conf* files there to override or add new options. *systemd* will parse these *.conf* files and apply them on top of the original unit.
+To create drop-in files for the unit file `/usr/lib/systemd/system/*unit*`, create the directory `/etc/systemd/system/*unit*.d/` and place *.conf* files there to override or add new options. *systemd* will parse and apply these files on top of the original unit.
 
 The easiest way to do this is to run:
 

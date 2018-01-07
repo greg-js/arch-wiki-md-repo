@@ -827,7 +827,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[Flight Gear](https://en.wikipedia.org/wiki/Flight_Gear "wikipedia:Flight Gear")** — Simulatore di volo Open-source, multi-piattaforma.
 
-	[http://www.flightgear.org/](http://www.flightgear.org/) || [flightgear](https://www.archlinux.org/packages/?name=flightgear)
+	[http://www.flightgear.org/](http://www.flightgear.org/) || [flightgear](https://aur.archlinux.org/packages/flightgear/)
 
 *   **[Foobillard++](https://en.wikipedia.org/wiki/FooBillard "wikipedia:FooBillard")** — Successore di Foobillard, gioco di biliardo in OpenGL per Linux.
 

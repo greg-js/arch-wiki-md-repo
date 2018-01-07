@@ -1,3 +1,9 @@
+Related articles
+
+*   [Network Configuration](/index.php/Network_Configuration "Network Configuration")
+*   [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")
+*   [Netctl](/index.php/Netctl "Netctl")
+
 Virtual LANs give you the ability to sub-divide a LAN. Linux can accept **VLAN** tagged traffic and presents each **VLAN ID** as a different network interface (eg: `eth0.100` for **VLAN ID** `100`)
 
 This article explains how to configure a VLAN using [iproute2](https://www.archlinux.org/packages/?name=iproute2) and [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") or [netctl](/index.php/Netctl "Netctl").
@@ -124,6 +130,8 @@ Name=eno1.100
 
 [Network]
 DHCP=no
+
+[Address]
 Address=192.168.0.25/24
 
 ```
@@ -288,7 +296,7 @@ Note that the Destination on `vlan10` is set to `0.0.0.0/0`, which will match al
 
 #### netctl
 
-You can use [netctl](/index.php/Netctl "Netctl") for this purpose, see the self-explanatory example profiles in `/etc/netctl/examples/vlan-{dhcp,static}` .
+You can use [netctl](/index.php/Netctl "Netctl") for this purpose, see the self-explanatory example profiles in {{ic|/etc/netctl/examples/vlan-{dhcp,static} }}.
 
 ## Troubleshooting
 

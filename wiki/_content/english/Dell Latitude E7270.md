@@ -3,7 +3,8 @@
 *   [1 Hardware Overview](#Hardware_Overview)
 *   [2 Sound](#Sound)
 *   [3 Display](#Display)
-*   [4 What does not work](#What_does_not_work)
+*   [4 Frozen CPU Frequency Scaling](#Frozen_CPU_Frequency_Scaling)
+*   [5 What does not work](#What_does_not_work)
 
 ## Hardware Overview
 
@@ -64,6 +65,20 @@ HW Enabled & Active bit: no
 ```
 
 The FullHD panel supports psr, but the i915 psr implementation for skylake has [Known Bugs](https://bugs.freedesktop.org/show_bug.cgi?id=94126)
+
+## Frozen CPU Frequency Scaling
+
+If you experience frequency scaling freezing, i.e. your cpu stays at the lowest idle frequency follow these steps:
+
+1.  shutdown your laptop
+2.  remove back cover
+3.  unplug battery
+4.  hold power button for 20s (Count to 40 to be sure)
+5.  replug battery
+6.  attach back cover
+7.  start laptop and retest
+
+See also [FS#56866](https://bugs.archlinux.org/task/56866).
 
 ## What does not work
 

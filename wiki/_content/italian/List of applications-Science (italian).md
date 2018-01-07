@@ -378,7 +378,7 @@ Vedi anche [List of applications (Italiano)#Fogli di calcolo](/index.php/List_of
 
 *   **[Qucs](https://en.wikipedia.org/wiki/Quite_Universal_Circuit_Simulator "wikipedia:Quite Universal Circuit Simulator")** — Simulatore di circuiti elettronici che permette di assembleare il circuito tramite interfaccia grafica e di simularne il segnale largo, il segnale stretto e il rumore.
 
-	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://www.archlinux.org/packages/?name=qucs)
+	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://aur.archlinux.org/packages/qucs/)
 
 #### Simulazioni fisiche
 

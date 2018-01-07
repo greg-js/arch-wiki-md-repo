@@ -415,7 +415,7 @@
 
 *   **[Qucs](https://en.wikipedia.org/wiki/ru:Qucs "wikipedia:ru:Qucs")** — Приложение имитации электрических цепей, дающее возможность их настройки при помощи графического интерфейса и имитации поведения при длинных сигналах (large-signal), коротких сигналах (small-signal) и шуме
 
-	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://www.archlinux.org/packages/?name=qucs)
+	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://aur.archlinux.org/packages/qucs/)
 
 #### Моделирование физики
 

@@ -235,7 +235,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **Atanks** — A multi-platform Scorched Earth clone similar to the Worms series of games
 
-	[http://atanks.sourceforge.net/](http://atanks.sourceforge.net/) || [atanks](https://www.archlinux.org/packages/?name=atanks)
+	[http://atanks.sourceforge.net/](http://atanks.sourceforge.net/) || [atanks](https://aur.archlinux.org/packages/atanks/)
 
 *   **bs** — Battleships based shooter for the console
 
@@ -900,7 +900,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[Flight Gear](https://en.wikipedia.org/wiki/Flight_Gear "wikipedia:Flight Gear")** — Open-source, multi-platform flight simulator.
 
-	[http://www.flightgear.org/](http://www.flightgear.org/) || [flightgear](https://www.archlinux.org/packages/?name=flightgear)
+	[http://www.flightgear.org/](http://www.flightgear.org/) || [flightgear](https://aur.archlinux.org/packages/flightgear/)
 
 *   **[Foobillard++](https://en.wikipedia.org/wiki/FooBillard "wikipedia:FooBillard")** — Successor to Foobillard, OpenGL billiard game for Linux.
 
@@ -1116,7 +1116,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 - [emhsoft.com/singularity](http://www.emhsoft.com/singularity/) | Python | <abbr title="Turn-based strategy game">TBS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [singularity](https://www.archlinux.org/packages/?name=singularity)
 [singularity-git](https://aur.archlinux.org/packages/singularity-git/) | Turn based single player strategy/simulation about a AI hiding, growing and evolving. |
 | **[FlightGear](https://en.wikipedia.org/wiki/FlightGear "w:FlightGear")**
-- [flightgear.org](http://www.flightgear.org/) | C/C++ | Simulation | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [flightgear](https://www.archlinux.org/packages/?name=flightgear)
+- [flightgear.org](http://www.flightgear.org/) | C/C++ | Simulation | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [flightgear](https://aur.archlinux.org/packages/flightgear/)
 [flightgear-git](https://aur.archlinux.org/packages/flightgear-git/) | Open-source, multi-platform flight simulator. |
 | **[Foobillard++](https://en.wikipedia.org/wiki/Foobillard%2B%2B "w:Foobillard++")**
 - [foobillardplus.sourceforge.net](http://foobillardplus.sourceforge.net/) | C | Simulation | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [foobillard++](https://www.archlinux.org/packages/?name=foobillard%2B%2B) | Successor to Foobillard, OpenGL billiard game for Linux. |

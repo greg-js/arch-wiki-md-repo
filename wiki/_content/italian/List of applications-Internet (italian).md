@@ -141,7 +141,7 @@ Alcuni client elencati in seguito (incluso Pidgin e tutti i suoi forks) supporta
 
 *   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — Fork di CenterICQ - con menu testuale e interfaccia grafica IM.
 
-	[http://centerim.org/](http://centerim.org/) || [centerim](https://www.archlinux.org/packages/?name=centerim)
+	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
 
 *   **[Finch](/index.php/Pidgin "Pidgin")** — Client IM basato su ncurses per chat Jabber/aim/etc/etc chat client basato su libpurple. Disponibile assieme a [pidgin](https://www.archlinux.org/packages/?name=pidgin).
 
@@ -243,7 +243,7 @@ See also [Wikipedia:Comparison of instant messaging clients#XMPP-related feature
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Client XMPP facile da hackerare ricco di funzionalità, dall'autore del server ejabberd XMPP.
 
-	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://www.archlinux.org/packages/?name=tkabber)
+	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://aur.archlinux.org/packages/tkabber/)
 
 ##### Servers
 
@@ -595,7 +595,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **Snownews** — Lettore RSS in modalità testuale.
 
-	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://www.archlinux.org/packages/?name=snownews)
+	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://aur.archlinux.org/packages/snownews/)
 
 #### Interfaccia grafica
 

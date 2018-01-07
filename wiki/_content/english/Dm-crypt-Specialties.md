@@ -600,7 +600,7 @@ Choose an option from [Overwrite the target](/index.php/Securely_wipe_disk#Overw
 
 #### Preparing the USB key
 
-Use [gdisk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) to partition the disk according to the layout [shown here](/index.php/Dm-crypt/Encrypting_an_entire_system#Preparing_the_disk_5 "Dm-crypt/Encrypting an entire system"), with the exception that it should only include the first two partitions. So as follows:
+Use [gdisk](/index.php/Fdisk#gdisk "Fdisk") to partition the disk according to the layout [shown here](/index.php/Dm-crypt/Encrypting_an_entire_system#Preparing_the_disk_5 "Dm-crypt/Encrypting an entire system"), with the exception that it should only include the first two partitions. So as follows:
 
  `# gdisk /dev/sdb` 
 ```
@@ -609,8 +609,6 @@ Number  Start (sector)    End (sector)  Size       Code  Name
    2         1050624         1460223   200.0 MiB   8300  Linux filesystem
 
 ```
-
-[Fdisk#gdisk](/index.php/Fdisk#gdisk "Fdisk") explains the basic commands.
 
 Before running `cryptsetup`, look at the [Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") and [Ciphers and modes of operation](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") first to select your desired settings.
 
@@ -714,7 +712,7 @@ The `files=()` and `binaries=()` arrays are empty, and you should not have to re
 
 #### Boot Loader
 
-Run `mkinitcpio` for your kernel or kernels, and finish the [Installation Guide](/index.php/Installation_guide#Initramfs "Installation guide") from there. To boot you would need either [Grub](https://www.archlinux.org/packages/?name=Grub) or [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr). Note you can use [GRUB](/index.php/GRUB "GRUB") to support the encrypted disks by [Configuring the boot loader](/index.php/Dm-crypt/Encrypting_an_entire_system#Configuring_the_boot_loader_6 "Dm-crypt/Encrypting an entire system") but editing the `GRUB_CMDLINE_LINUX` is not necessary for this set up.
+Run `mkinitcpio` for your kernel or kernels, and finish the [Installation Guide](/index.php/Installation_guide#Initramfs "Installation guide") from there. To boot you would need either [GRUB](/index.php/GRUB "GRUB") or [efibootmgr](/index.php/Efibootmgr "Efibootmgr"). Note you can use [GRUB](/index.php/GRUB "GRUB") to support the encrypted disks by [Configuring the boot loader](/index.php/Dm-crypt/Encrypting_an_entire_system#Configuring_the_boot_loader_6 "Dm-crypt/Encrypting an entire system") but editing the `GRUB_CMDLINE_LINUX` is not necessary for this set up.
 
 Or use Direct UEFI Secure boot by generating keys with [cryptboot](https://aur.archlinux.org/packages/cryptboot/) then signing the initramfs and kernel and creating a bootable .efi file for your `/boot/efi` directory with [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/). Before using cryptboot or sbupdate note this excerpt from [Secure_Boot#Using_your_own_keys](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot"):
 

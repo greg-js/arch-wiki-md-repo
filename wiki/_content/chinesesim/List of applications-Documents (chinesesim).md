@@ -384,7 +384,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **[SciTE](https://en.wikipedia.org/wiki/SciTE "wikipedia:SciTE")** — 常用来编译及运行程序。
 
-	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://www.archlinux.org/packages/?name=scite)
+	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://aur.archlinux.org/packages/scite/)
 
 *   **Scribes** — 终极，最小，即简单与强悍的合体。
 
@@ -396,7 +396,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **Tea** — 基于 Qt, 编辑富文本用。
 
-	[http://tea-editor.sourceforge.net/](http://tea-editor.sourceforge.net/) || [tea](https://www.archlinux.org/packages/?name=tea)
+	[http://tea-editor.sourceforge.net/](http://tea-editor.sourceforge.net/) || [tea](https://aur.archlinux.org/packages/tea/)
 
 *   **XEdit** — Simple text editor for the X Window System.
 
@@ -479,7 +479,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **apvlv** — Lightweight PDF/DjVu/UMD/TXT viewer with [Vim](/index.php/Vim "Vim") keybindings.
 
-	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://www.archlinux.org/packages/?name=apvlv)
+	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://aur.archlinux.org/packages/apvlv/)
 
 *   **Atril** — Simple multi-page document viewer for MATE.
 
@@ -639,7 +639,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **[YAGF](/index.php/YAGF "YAGF")** — Graphical interface for the CuneiForm text recognition program on the Linux platform.
 
-	[http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) || [yagf](https://www.archlinux.org/packages/?name=yagf)
+	[http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) || [yagf](https://aur.archlinux.org/packages/yagf/)
 
 ### 笔记
 

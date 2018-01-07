@@ -266,7 +266,7 @@ Alcuni client elencati in seguito (incluso Pidgin e tutti i suoi forks) supporta
 
 *   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — Fork di CenterICQ - con menu testuale e interfaccia grafica IM.
 
-	[http://centerim.org/](http://centerim.org/) || [centerim](https://www.archlinux.org/packages/?name=centerim)
+	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
 
 *   **[Finch](/index.php/Pidgin "Pidgin")** — Client IM basato su ncurses per chat Jabber/aim/etc/etc chat client basato su libpurple. Disponibile assieme a [pidgin](https://www.archlinux.org/packages/?name=pidgin).
 
@@ -368,7 +368,7 @@ See also [Wikipedia:Comparison of instant messaging clients#XMPP-related feature
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Client XMPP facile da hackerare ricco di funzionalità, dall'autore del server ejabberd XMPP.
 
-	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://www.archlinux.org/packages/?name=tkabber)
+	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://aur.archlinux.org/packages/tkabber/)
 
 ##### Servers
 
@@ -720,7 +720,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **Snownews** — Lettore RSS in modalità testuale.
 
-	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://www.archlinux.org/packages/?name=snownews)
+	[http://kiza.kcore.de/software/snownews/](http://kiza.kcore.de/software/snownews/) || [snownews](https://aur.archlinux.org/packages/snownews/)
 
 #### Interfaccia grafica
 
@@ -1963,7 +1963,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[Xfe](https://en.wikipedia.org/wiki/Xfe "wikipedia:Xfe")** — Un file manager simile all'explorer di Microsoft per X (X File Explorer).
 
-	[http://roland65.free.fr/xfe/index.php/](http://roland65.free.fr/xfe/index.php/) || [xfe](https://www.archlinux.org/packages/?name=xfe)
+	[http://roland65.free.fr/xfe/index.php/](http://roland65.free.fr/xfe/index.php/) || [xfe](https://aur.archlinux.org/packages/xfe/)
 
 ### Tool di unione e comparazione file
 
@@ -2099,7 +2099,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **apvlv** — Un leggero visualizzatore PDF/DjVu/UMD/TXT con tasti di scelta rapida [Vim](/index.php/Vim "Vim").
 
-	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://www.archlinux.org/packages/?name=apvlv)
+	[http://naihe2010.github.com/apvlv/](http://naihe2010.github.com/apvlv/) || [apvlv](https://aur.archlinux.org/packages/apvlv/)
 
 *   **[Chrome](https://en.wikipedia.org/wiki/Google_Chrome "wikipedia:Google Chrome")** — Un browser web compilato con un visualizzatore PDF integrato.
 
@@ -2367,7 +2367,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **[YAGF](/index.php/YAGF "YAGF")** — Interfaccia grafica per CuneiForm.
 
-	[http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) || [yagf](https://www.archlinux.org/packages/?name=yagf)
+	[http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) || [yagf](https://aur.archlinux.org/packages/yagf/)
 
 ## Sicurezza
 
@@ -2805,7 +2805,7 @@ Vedi anche [List of applications (Italiano)#Fogli di calcolo](/index.php/List_of
 
 *   **[Qucs](https://en.wikipedia.org/wiki/Quite_Universal_Circuit_Simulator "wikipedia:Quite Universal Circuit Simulator")** — Simulatore di circuiti elettronici che permette di assembleare il circuito tramite interfaccia grafica e di simularne il segnale largo, il segnale stretto e il rumore.
 
-	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://www.archlinux.org/packages/?name=qucs)
+	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://aur.archlinux.org/packages/qucs/)
 
 #### Simulazioni fisiche
 
@@ -3297,7 +3297,7 @@ See also [Wikipedia:Comparison of text editors](https://en.wikipedia.org/wiki/Co
 
 *   **[Scite](https://en.wikipedia.org/wiki/Scite "wikipedia:Scite")** — Editor generalmente utile con servizi per la creazione e l'esecuzione di programmi
 
-	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://www.archlinux.org/packages/?name=scite)
+	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://aur.archlinux.org/packages/scite/)
 
 *   **[Sublime Text 2](https://en.wikipedia.org/wiki/Sublime_Text "wikipedia:Sublime Text")** — Editor di C closed-source e basato su Python, che nonostante abbia molte caratteristiche avanzate e plugin rimane leggero e grazioso.
 
@@ -3305,7 +3305,7 @@ See also [Wikipedia:Comparison of text editors](https://en.wikipedia.org/wiki/Co
 
 *   **Tea** — Editor di testo basato sulle QT e ricco di funzionalità
 
-	[http://tea-editor.sourceforge.net/](http://tea-editor.sourceforge.net/) || [tea](https://www.archlinux.org/packages/?name=tea)
+	[http://tea-editor.sourceforge.net/](http://tea-editor.sourceforge.net/) || [tea](https://aur.archlinux.org/packages/tea/)
 
 ### Ambienti integrati di sviluppo
 

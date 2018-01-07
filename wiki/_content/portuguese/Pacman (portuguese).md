@@ -586,7 +586,7 @@ Ocorreram erros e, portanto, nenhum pacote foi atualizado.
 
 Por que isso aconteceu: o *pacman* detectou um conflito de arquivo e, por design, não vai sobrescrever arquivos para você. Este é um recurso de design, não uma falha.
 
-O problema geralmente é trivial de resolver. Uma maneira segura é primeiro verificar se outro pacote possui o arquivo (`pacman -Qo */caminho/para/arquivo*`). Se o arquivo for de propriedade de outro pacote, [preencha um relatório de erro](/index.php/Reporting_bug_guidelines "Reporting bug guidelines"). Se o arquivo não for de outro pacote, renomeie o arquivo que "existe no sistema de arquivos" e execute novamente o comando de atualização. Se tudo correr bem, o arquivo pode então ser removido.
+O problema geralmente é trivial de resolver. Uma maneira segura é primeiro verificar se outro pacote possui o arquivo (`pacman -Qo */caminho/para/arquivo*`). Se o arquivo for de propriedade de outro pacote, [preencha um relatório de erro](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro"). Se o arquivo não for de outro pacote, renomeie o arquivo que "existe no sistema de arquivos" e execute novamente o comando de atualização. Se tudo correr bem, o arquivo pode então ser removido.
 
 Se você instalou um programa manualmente sem usar o *pacman* ou um frontend dele (p.ex.: por meio de `make install`), você tem que removê-lo e todos os seus arquivos para, depois, reinstalar adequadamente usando o *pacman*. Veja também [Pacman/Dicas e truques#Identificar arquivos que pertençam a nenhum pacote](/index.php/Pacman/Dicas_e_truques#Identificar_arquivos_que_perten.C3.A7am_a_nenhum_pacote "Pacman/Dicas e truques").
 

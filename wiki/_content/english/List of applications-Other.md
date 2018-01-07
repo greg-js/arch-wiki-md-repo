@@ -123,7 +123,7 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 
 *   **[GNU Typist](/index.php?title=GNU_Typist&action=edit&redlink=1 "GNU Typist (page does not exist)")** — GNU Typist (also called gtypist) is a universal typing tutor.
 
-	[https://www.gnu.org/software/gtypist/](https://www.gnu.org/software/gtypist/) || [gtypist](https://www.archlinux.org/packages/?name=gtypist), [gtypist-single-space](https://aur.archlinux.org/packages/gtypist-single-space/)
+	[https://www.gnu.org/software/gtypist/](https://www.gnu.org/software/gtypist/) || [gtypist](https://aur.archlinux.org/packages/gtypist/), [gtypist-single-space](https://aur.archlinux.org/packages/gtypist-single-space/)
 
 *   **[Klavaro](/index.php?title=Klavaro&action=edit&redlink=1 "Klavaro (page does not exist)")** — Klavaro is libre software for teaching touch typing that intends to be keyboard and language independent.
 
@@ -379,7 +379,7 @@ See also [#Terminal multiplexers](#Terminal_multiplexers), which offer some of t
 
 *   **twin** — Text-mode window manager.
 
-	[https://sourceforge.net/projects/twin/](https://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
+	[https://sourceforge.net/projects/twin/](https://sourceforge.net/projects/twin/) || [twin](https://aur.archlinux.org/packages/twin/)
 
 *   **Wmutils** — A set of tools for X windows manipulation.
 

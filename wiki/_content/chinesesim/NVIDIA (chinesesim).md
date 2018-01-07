@@ -41,7 +41,7 @@
         *   [4.5.1 途径一 - nvidia-settings](#.E9.80.94.E5.BE.84.E4.B8.80_-_nvidia-settings)
         *   [4.5.2 途径二 - nvidia-smi](#.E9.80.94.E5.BE.84.E4.BA.8C_-_nvidia-smi)
         *   [4.5.3 途径三 - nvclock](#.E9.80.94.E5.BE.84.E4.B8.89_-_nvclock)
-    *   [4.6 登陆时设置风扇速度](#.E7.99.BB.E9.99.86.E6.97.B6.E8.AE.BE.E7.BD.AE.E9.A3.8E.E6.89.87.E9.80.9F.E5.BA.A6)
+    *   [4.6 登录时设置风扇速度](#.E7.99.BB.E5.BD.95.E6.97.B6.E8.AE.BE.E7.BD.AE.E9.A3.8E.E6.89.87.E9.80.9F.E5.BA.A6)
     *   [4.7 改变驱动程序的安装/反安装顺序](#.E6.94.B9.E5.8F.98.E9.A9.B1.E5.8A.A8.E7.A8.8B.E5.BA.8F.E7.9A.84.E5.AE.89.E8.A3.85.2F.E5.8F.8D.E5.AE.89.E8.A3.85.E9.A1.BA.E5.BA.8F)
     *   [4.8 在nvidia和nouveau之间切换](#.E5.9C.A8nvidia.E5.92.8Cnouveau.E4.B9.8B.E9.97.B4.E5.88.87.E6.8D.A2)
 *   [5 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
@@ -274,7 +274,7 @@ EndSection
 
 #### TwinView
 
-若你想用一个大屏幕,而卜是两个屏幕.将`TwinView`设为`1`.
+若你想用一个大屏幕,而不是两个屏幕.将`TwinView`设为`1`.
 
 如果想要拼接应该使用此方法而不是上面的Xinerama
 
@@ -775,7 +775,7 @@ nvclock可以从[extra]的软件源中得到。注意nvclock无法访问G210/220
 
 nvclock获取的温度跟nvidia-settings/nv-control获取的温度会有明显的差异。根据[这里](http://sourceforge.net/projects/nvclock/forums/forum/67426/topic/1906899)，一篇来自nvclock的名叫thunderbird的作者提到，nvclock的数值或许更加准确。
 
-### 登陆时设置风扇速度
+### 登录时设置风扇速度
 
 您可以使用`nvidia-settings`的命令行接口来调整。首先确定您的Xorg的配置文件的`Device`节是否已经把Coolbits设置为4或者5.
 

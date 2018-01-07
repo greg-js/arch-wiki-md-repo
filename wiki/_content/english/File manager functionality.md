@@ -1,3 +1,10 @@
+Related articles
+
+*   [List of applications/Utilities#File managers](/index.php/List_of_applications/Utilities#File_managers "List of applications/Utilities")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Udisks](/index.php/Udisks "Udisks")
+
 This article outlines the additional software packages necessary to expand the features and functionality of file managers, particularly where using a [window manager](/index.php/Window_manager "Window manager") such as [Openbox](/index.php/Openbox "Openbox"). The ability to access partitions and removable media without a password - if affected - has also been provided.
 
 ## Contents
@@ -114,7 +121,7 @@ You may not see thumbnails for remote storage, including [MTP](/index.php/MTP "M
 
 #### File managers other than Dolphin and Konqueror
 
-These packages apply to most file managers, such as [PCManFM](/index.php/PCManFM "PCManFM"), [SpaceFM](/index.php/SpaceFM "SpaceFM"), [Thunar](/index.php/Thunar "Thunar") and [xfe](https://www.archlinux.org/packages/?name=xfe). The exceptions are Dolphin and Konqueror, used in the [KDE](/index.php/KDE "KDE") desktop environment.
+These packages apply to most file managers, such as [PCManFM](/index.php/PCManFM "PCManFM"), [SpaceFM](/index.php/SpaceFM "SpaceFM"), [Thunar](/index.php/Thunar "Thunar") and [xfe](https://aur.archlinux.org/packages/xfe/). The exceptions are Dolphin and Konqueror, used in the [KDE](/index.php/KDE "KDE") desktop environment.
 
 *   [tumbler](https://www.archlinux.org/packages/?name=tumbler): Image files. This **<u>must</u>** also be installed to expand thumbnailing capabilities to other file types
 *   [poppler-glib](https://www.archlinux.org/packages/?name=poppler-glib): Adobe `.pdf` files

@@ -1,3 +1,10 @@
+Ссылки по теме
+
+*   [Bluez4](/index.php/Bluez4 "Bluez4")
+*   [Bluetooth мышь](/index.php/Bluetooth_%D0%BC%D1%8B%D1%88%D1%8C "Bluetooth мышь")
+*   [Bluetooth наушники](/index.php/Bluetooth_%D0%BD%D0%B0%D1%83%D1%88%D0%BD%D0%B8%D0%BA%D0%B8 "Bluetooth наушники")
+*   [Blueman](/index.php/Blueman "Blueman")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Bluetooth](/index.php/Bluetooth "Bluetooth"). Дата последней синхронизации: 2015-09-30\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Bluetooth&diff=0&oldid=391967).
 
 [Bluetooth](http://www.bluetooth.org/) является стандартом для беспроводных соединений малой дальности сотовых телефонов, компьютеров и других электронных устройств. В Linux канонической реализацией стека протоколов Bluetooth является [BlueZ](http://www.bluez.org/).
@@ -200,7 +207,7 @@ $ obexftp -b *MAC-адрес_устройства* -g имя_файла
 
 ```
 
-Просмотрите вывод: ищите Obex Object Push, запомните канал этого сервиса. Если он поддерживается, можно использовать пакет [ussp-push](https://www.archlinux.org/packages/?name=ussp-push) для отсылки файлов на устройство:
+Просмотрите вывод: ищите Obex Object Push, запомните канал этого сервиса. Если он поддерживается, можно использовать пакет [ussp-push](https://aur.archlinux.org/packages/ussp-push/) для отсылки файлов на устройство:
 
 ```
 # ussp-push *XX:XX:XX:XX:XX:XX*@*КАНАЛ* *файл* *желаемое_имя_файла_на_телефоне*

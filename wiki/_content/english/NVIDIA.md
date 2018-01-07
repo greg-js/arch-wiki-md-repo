@@ -173,7 +173,7 @@ Double check your `/etc/X11/xorg.conf` to make sure your default depth, horizont
 
 The [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) tool lets you configure many options using either CLI or GUI. Running `nvidia-settings` without any options launches the GUI, for CLI options see [nvidia-settings(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nvidia-settings.1).
 
-You can run the GUI as a normal user and save the settings to `~/.nvidia-settings-rc`. Then you can load the settings using `$ nvidia-settings --load-config-only` (for example in your [xinitrc](/index.php/Xinitrc "Xinitrc")). Alternatively, you can move the settings file to `/etc/X11/xorg.conf.d/20-nvidia.conf` where they will be loaded automatically.
+You can run the GUI as a normal user and save the settings to `~/.nvidia-settings-rc`. Then you can load the settings using `$ nvidia-settings --load-config-only`. See [autostarting](/index.php/Autostarting "Autostarting") to start the command on every boot. Alternatively, you can move the settings file to `/etc/X11/xorg.conf.d/20-nvidia.conf` where they will be loaded automatically.
 
 **Tip:** If your X server is crashing on startup, it may be because the GUI-generated settings are corrupt. Try deleting the generated file and starting from scratch.
 

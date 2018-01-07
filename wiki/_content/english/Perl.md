@@ -58,7 +58,7 @@ $ perl
 
 ```
 
-Perl bug reporting;
+Perl bug reporting:
 
 ```
 $ perlbug
@@ -134,7 +134,7 @@ CPAN is also the name of a Perl module, CPAN.pm, which is used to download and i
 
 ### pacman and AUR
 
-A number of popular CPAN modules are available as [packages](https://www.archlinux.org/packages/?q=cpan) the Arch repositories. There are further modules available in the [AUR](https://aur.archlinux.org/packages/?K=cpan).
+A number of popular CPAN modules are available as [packages](https://www.archlinux.org/packages/?q=cpan) in the Arch repositories. There are further modules available in the [AUR](https://aur.archlinux.org/packages/?K=cpan).
 
 ### CPAN.pm
 

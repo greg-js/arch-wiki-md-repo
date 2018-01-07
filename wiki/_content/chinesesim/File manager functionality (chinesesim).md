@@ -1,3 +1,11 @@
+Related articles
+
+*   [PCManFM](/index.php/PCManFM "PCManFM")
+*   [Thunar](/index.php/Thunar "Thunar")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Udisks](/index.php/Udisks "Udisks")
+
 **翻译状态：** 本文是英文页面 [File_manager_functionality](/index.php/File_manager_functionality "File manager functionality") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-04-06，点击[这里](https://wiki.archlinux.org/index.php?title=File_manager_functionality&diff=0&oldid=363455)可以查看翻译后英文页面的改动。
 
 本文介绍扩展文件管理器功能的相关软件，尤其是使用单独的窗口管理器而不是桌面环境的时候。
@@ -108,7 +116,7 @@ Some file managers may not support thumbnailing, even when the packages listed h
 
 #### File managers other than Dolphin and Konqueror
 
-These packages apply to most file managers, such as [PCManFM](/index.php/PCManFM "PCManFM"), [SpaceFM](/index.php/SpaceFM "SpaceFM"), [Thunar](/index.php/Thunar "Thunar") and [xfe](https://www.archlinux.org/packages/?name=xfe). The exceptions are Dolphin and Konqueror, used in the [KDE](/index.php/KDE "KDE") desktop environment.
+These packages apply to most file managers, such as [PCManFM](/index.php/PCManFM "PCManFM"), [SpaceFM](/index.php/SpaceFM "SpaceFM"), [Thunar](/index.php/Thunar "Thunar") and [xfe](https://aur.archlinux.org/packages/xfe/). The exceptions are Dolphin and Konqueror, used in the [KDE](/index.php/KDE "KDE") desktop environment.
 
 *   [tumbler](https://www.archlinux.org/packages/?name=tumbler): Image files. This **<u>must</u>** also be installed to expand thumbnailing capabilities to other file types
 *   [poppler-glib](https://www.archlinux.org/packages/?name=poppler-glib): Adobe `.pdf` files

@@ -33,6 +33,7 @@ This article provides information on basic system diagnostics relating to perfor
         *   [2.7.3 Compiling in tmpfs](#Compiling_in_tmpfs)
         *   [2.7.4 Optimize the filesystem](#Optimize_the_filesystem)
         *   [2.7.5 Swap space](#Swap_space)
+        *   [2.7.6 Relocate systemd journal to ram](#Relocate_systemd_journal_to_ram)
     *   [2.8 Storage I/O scheduling with ionice](#Storage_I.2FO_scheduling_with_ionice)
 *   [3 CPU](#CPU)
     *   [3.1 Overclocking](#Overclocking)
@@ -270,6 +271,17 @@ See [Makepkg#Improving compile times](/index.php/Makepkg#Improving_compile_times
 #### Swap space
 
 See [Swap#Performance](/index.php/Swap#Performance "Swap").
+
+#### Relocate systemd journal to ram
+
+ `/etc/systemd/journald.conf.d/toram.conf` 
+```
+[Journal]
+Storage=volatile
+RuntimeMaxUse=30M
+```
+
+**Warning:** Storing the journal on ram might make troubleshooting problems impossible
 
 ### Storage I/O scheduling with ionice
 

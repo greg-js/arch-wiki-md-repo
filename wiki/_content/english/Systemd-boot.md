@@ -227,14 +227,16 @@ These hotkeys will, when pressed inside the menu or during bootup, directly boot
 
 ### Manual entry using efibootmgr
 
-If `bootctl install` command failed, you can create a EFI boot entry manually using [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr):
+If the `bootctl install` command failed, you can create a EFI boot entry manually using [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr):
 
 ```
-# efibootmgr -c -d /dev/sdX -p Y -l /EFI/systemd/systemd-bootx64.efi -L "Linux Boot Manager"
+# efibootmgr -c -d /dev/sdX -p Y -l "\EFI\systemd\systemd-bootx64.efi" -L "Linux Boot Manager"
 
 ```
 
 where `/dev/sdXY` is the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+
+**Note:** The path to the EFI image must use the backslash (`\`) as the separator
 
 ### Menu does not appear after Windows upgrade
 

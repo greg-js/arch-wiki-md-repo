@@ -16,7 +16,7 @@ From the [project web page](http://trac.edgewall.org):
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [trac](https://www.archlinux.org/packages/?name=trac) package. Configuration is done on a per-environment basis. See below on how to create an environment. Detailed instructions can be found at [http://trac.edgewall.org/wiki/TracGuide](http://trac.edgewall.org/wiki/TracGuide).
+[Install](/index.php/Install "Install") the [trac](https://aur.archlinux.org/packages/trac/) package. Configuration is done on a per-environment basis. See below on how to create an environment. Detailed instructions can be found at [http://trac.edgewall.org/wiki/TracGuide](http://trac.edgewall.org/wiki/TracGuide).
 
 ## Getting Started Quickly
 

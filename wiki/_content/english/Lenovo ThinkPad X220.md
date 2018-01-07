@@ -20,7 +20,7 @@ The Lenovo ThinkPad X220 is a small-form-factor laptop with Intel Mobile i5/i7 C
 
 ### Battery
 
-Battery functions like charging thresholds can be controlled using the script [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat) together with the kernel module [acpi_call](https://aur.archlinux.org/packages/acpi_call/). The [TLP](/index.php/TLP "TLP") power saving tool supports using acpi_call as backend for setting the thresholds as well.
+Battery functions like charging thresholds can be controlled using the script [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat) together with the kernel module [acpi_call](https://www.archlinux.org/packages/?name=acpi_call). The [TLP](/index.php/TLP "TLP") power saving tool supports using acpi_call as backend for setting the thresholds as well.
 
 ### Fingerprint reader
 

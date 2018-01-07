@@ -236,7 +236,7 @@
 
 *   **[KMSCON](/index.php/KMSCON "KMSCON")** — Простой эмулятор терминала, основанный на kernel mode setting (KMS) linux
 
-	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://www.archlinux.org/packages/?name=kmscon)
+	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://aur.archlinux.org/packages/kmscon/)
 
 *   **[Konsole](https://en.wikipedia.org/wiki/ru:Konsole "wikipedia:ru:Konsole")** — Эмулятор терминала, включенный в окружение [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")
 
@@ -486,7 +486,7 @@
 
 *   **[Xfe](https://en.wikipedia.org/wiki/Xfe "wikipedia:Xfe")** — Файловый менеджер для Х (X File Explorer) в стиле проводника Microsoft
 
-	[http://roland65.free.fr/xfe/](http://roland65.free.fr/xfe/) || [xfe](https://www.archlinux.org/packages/?name=xfe)
+	[http://roland65.free.fr/xfe/](http://roland65.free.fr/xfe/) || [xfe](https://aur.archlinux.org/packages/xfe/)
 
 #### Поисковые движки
 

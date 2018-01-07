@@ -15,26 +15,21 @@ In order to use this tutorial, one must have a protonvpn account.
 
 Log into ProtonVPN and download one or more OpenVPN configuration files.
 
-Copy the *.ovpn files into
-
-```
-$ /etc/openvpn/client/
-
-```
+Copy the *.ovpn files into `/etc/openvpn/client/`
 
 Pick the corresponding **.ovpn** that will be used (ca.protonvpn.com.tcp443.ovpn is used as an example)
 
 Copy the file with a new extension (this is just so you keep the original ovpn file intact)
 
 ```
-$ cp /etc/openvpn/client/ca.protonvpn.com.tcp443.ovpn /etc/openvpn/client/protonvpn.conf
+$ sudo cp /etc/openvpn/client/ca.protonvpn.com.tcp443.ovpn /etc/openvpn/client/protonvpn.conf
 
 ```
 
 Install the [openvpn-update-resolv-conf](https://github.com/masterkorp/openvpn-update-resolv-conf) script. It needs to be saved for example at `/etc/openvpn/update-resolv-conf` and made executable with [chmod](/index.php/Chmod "Chmod"). There is also an AUR package: [openvpn-update-resolv-conf](https://aur.archlinux.org/packages/openvpn-update-resolv-conf/) which will take care of the script installation for you. This script ensures that all traffic to/from the internet goes through the VPN and protects you against DNS leaks.
 
 ```
-$ chmod 755 /etc/openvpn/update-resolv-conf.sh
+# chmod 755 /etc/openvpn/update-resolv-conf.sh
 
 ```
 
