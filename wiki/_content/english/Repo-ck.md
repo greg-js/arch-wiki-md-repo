@@ -25,29 +25,27 @@ Add the [repo-ck](/index.php/Unofficial_user_repositories#repo-ck "Unofficial us
 
 ## Kernels and related packages
 
-The official "ARCH" kernel provides a *generic* package which is built for the x86_64 architecture in the sense that it will work with *any* compatible x86_64 CPU. Repo-ck also hosts a generic version of [linux-ck](/index.php/Linux-ck "Linux-ck") but also proposes packages optimized for specific CPUs. CPU-specific optimizations are invoked by selecting *Processor type and features > Processor family* in `make nconfig`, or by adjusting `.config` accordingly. These changes setup make specific GCC options, including `CFLAGS`.
-
-Packages marked with `*` are available only for the 64-bit systems, see [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1423574#p1423574).
+The official Arch Linux kernel provides a *generic* package which is built for the x86_64 architecture that will run on *any* compatible x86_64 CPU. Repo-ck also hosts a generic version of [linux-ck](/index.php/Linux-ck "Linux-ck") but also provides optimized packages for specific CPUs.
 
 | CPU Type | Group Alias | Details |
 | **Generic** | *ck-generic* | Generic kernel similar to the official Arch Linux kernel. |
 | **Intel** | *ck-atom* | Intel Atom specific optimizations. |
-| *ck-silvermont ** | Intel Silvermont specific optimizations. |
+| *ck-silvermont* | Intel Silvermont specific optimizations. |
 | *ck-core2* | Intel Core 2-family including Dual and Quads. |
-| *ck-nehalem ** | Intel 1st Generation Core i3/i5/i7-family |
-| *ck-sandybridge ** | Intel 2nd Generation Core i3/i5/i7-family |
-| *ck-ivybridge ** | Intel 3rd Generation Core i3/i5/i7-family |
-| *ck-haswell ** | Intel 4th Generation Core i3/i5/i7-family |
-| *ck-broadwell ** | Intel 5th Generation Core i3/i5/i7-family |
-| *ck-skylake ** | Intel 6th Generation Core i3/i5/i7-family |
+| *ck-nehalem* | Intel 1st Generation Core i3/i5/i7-family |
+| *ck-sandybridge* | Intel 2nd Generation Core i3/i5/i7-family |
+| *ck-ivybridge* | Intel 3rd Generation Core i3/i5/i7-family |
+| *ck-haswell* | Intel 4th Generation Core i3/i5/i7-family |
+| *ck-broadwell* | Intel 5th Generation Core i3/i5/i7-family |
+| *ck-skylake* | Intel 6th Generation Core i3/i5/i7-family |
 | *ck-p4* | Intel Pentium-4 (P4/P4-based Celeron/Pentium-4 M/Older Xeon). |
 | *ck-pentm* | Intel Pentium-M (Pentium-M notebook chips/not Pentium-4 M). |
 | **AMD** | *ck-kx* | AMD K7/K8-family |
-| *ck-k10 ** | AMD K10-family including 61xx Eight-Core Magny-Cours, Athlon X2 7x50, Phenom X3/X4/II, Athlon II X2/X3/X4, or Turion II-family processor. |
-| *ck-bobcat ** | CPUs based on AMD Family 14h cores with x86-64 instruction set support. |
-| *ck-bulldozer ** | CPUs based on AMD Family 15h cores with x86-64 instruction set support. |
-| *ck-piledriver ** | CPUs based on AMD Family 15h cores with x86-64 instruction set support. |
-| *ck-zen ** | CPUs based on AMD Family 17h cores with x86-64 instruction set support. |
+| *ck-k10* | AMD K10-family including 61xx Eight-Core Magny-Cours, Athlon X2 7x50, Phenom X3/X4/II, Athlon II X2/X3/X4, or Turion II-family processor. |
+| *ck-bobcat* | CPUs based on AMD Family 14h cores with x86-64 instruction set support. |
+| *ck-bulldozer* | CPUs based on AMD Family 15h cores with x86-64 instruction set support. |
+| *ck-piledriver* | CPUs based on AMD Family 15h cores with x86-64 instruction set support. |
+| *ck-zen* | CPUs based on AMD Family 17h cores with x86-64 instruction set support. |
 
 ## Selecting the correct CPU optimized package
 

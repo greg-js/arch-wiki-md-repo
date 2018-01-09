@@ -210,7 +210,7 @@ If you want/can fix/reinstall whole user-wide Haskell package system - remove `~
 
 ### stack
 
-[Stack](https://haskellstack.org) is a build tool that focuses on automatically curated, consistent package sets rather than dependency resolution. This means it's easy to install a set of packages without concern of version conflicts as long as they co-exist within a given Stackage snapshot. It can be installed through either [stack](https://www.archlinux.org/packages/?name=stack), [stack-static](https://aur.archlinux.org/packages/stack-static/) or [stack-bin](https://aur.archlinux.org/packages/stack-bin/). The latter provides statically linked binaries, thereby avoiding dozens of `haskell-*` dependencies. More information can be found at [§ Install/upgrade # Arch Linux](https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux).
+[Stack](https://haskellstack.org) is a build tool that focuses on automatically curated, consistent package sets rather than dependency resolution. This means it's easy to install a set of packages without concern of version conflicts as long as they coexist within a given Stackage snapshot. It can be installed through either [stack](https://www.archlinux.org/packages/?name=stack), [stack-static](https://aur.archlinux.org/packages/stack-static/) or [stack-bin](https://aur.archlinux.org/packages/stack-bin/). The latter provides statically linked binaries, thereby avoiding dozens of `haskell-*` dependencies. More information can be found at [§ Install/upgrade # Arch Linux](https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux).
 
 ## See also
 

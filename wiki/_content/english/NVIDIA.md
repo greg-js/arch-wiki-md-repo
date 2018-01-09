@@ -75,7 +75,7 @@ If you have a GeForce 7 series card or older (released in 2006 or earlier), Nvid
 
 However, Nvidia's legacy drivers are still available and might provide better 3D performance/stability if you are willing to downgrade [Xorg](/index.php/Xorg "Xorg"):
 
-*   For GeForce 6/7 series cards [NV4x and NV6x], [install](/index.php/Install "Install") the [nvidia-304xx-dkms](https://www.archlinux.org/packages/?name=nvidia-304xx-dkms) package. Last supported Xorg version is 1.19.
+*   For GeForce 6/7 series cards [NV4x and NV6x], [install](/index.php/Install "Install") the [nvidia-304xx-dkms](https://aur.archlinux.org/packages/nvidia-304xx-dkms/) package. Last supported Xorg version is 1.19.
 *   For GeForce 5 FX series cards [NV30-NV36], install the [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/) package. Last supported Xorg version is 1.15.
 *   For GeForce 2/3/4 MX/Ti series cards [NV11, NV17-NV28], install the [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/) package. Last supported Xorg version is 1.12.
 
@@ -173,9 +173,18 @@ Double check your `/etc/X11/xorg.conf` to make sure your default depth, horizont
 
 The [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) tool lets you configure many options using either CLI or GUI. Running `nvidia-settings` without any options launches the GUI, for CLI options see [nvidia-settings(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nvidia-settings.1).
 
-You can run the GUI as a normal user and save the settings to `~/.nvidia-settings-rc`. Then you can load the settings using `$ nvidia-settings --load-config-only`. See [autostarting](/index.php/Autostarting "Autostarting") to start the command on every boot. Alternatively, you can move the settings file to `/etc/X11/xorg.conf.d/20-nvidia.conf` where they will be loaded automatically.
+You can run the CLI/GUI as a non-root user and save the settings to `~/.nvidia-settings-rc` or save it as [xorg.conf](/index.php/Xorg#Using_xorg.conf "Xorg") by using the option *Save to X configuration File* for a multi-user environment.
 
-**Tip:** If your X server is crashing on startup, it may be because the GUI-generated settings are corrupt. Try deleting the generated file and starting from scratch.
+To load the `~/.nvidia-settings-rc` for the current user:
+
+```
+$ nvidia-settings --load-config-only
+
+```
+
+See [autostarting](/index.php/Autostarting "Autostarting") to start this command on every boot.
+
+**Note:** [Xorg](/index.php/Xorg "Xorg") may not start or crash on startup after saving `nvidia-settings` changes. Adjusting or deleting the generated `~/.nvidia-settings-rc` and/or [Xorg](/index.php/Xorg "Xorg") file(s) should recover normal startup.
 
 ### Multiple monitors
 

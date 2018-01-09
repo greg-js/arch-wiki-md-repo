@@ -117,9 +117,9 @@ Probably the easiest way is to use the manager webapp [http://localhost:8080/man
 
 ### The CLI way
 
-One can also just copy the WAR file of the application to directory `/usr/share/tomcat7/webapps`. For that later, be sure that the `autoDeploy` option is still set for the right host as shown here:
+One can also just copy the WAR file of the application to directory `/usr/share/tomcat8/webapps`. For that later, be sure that the `autoDeploy` option is still set for the right host as shown here:
 
- `/etc/tomcat7/server.xml` 
+ `/etc/tomcat8/server.xml` 
 ```
 ...
 <Host name="localhost"  appBase="webapps"

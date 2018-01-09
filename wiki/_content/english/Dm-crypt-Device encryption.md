@@ -237,7 +237,7 @@ This section shows how to employ the options for creating new encrypted blockdev
 In order to setup a partition as an encrypted LUKS partition execute:
 
 ```
-# cryptsetup luksFormat *device*
+# cryptsetup luksFormat --type luks2 *device*
 
 ```
 
@@ -257,7 +257,7 @@ You will note that the dump not only shows the cipher header information, but al
 The following example will create an encrypted root partition on `/dev/sda1` using the default AES cipher in XTS mode with an effective 256-bit encryption
 
 ```
-# cryptsetup -s 512 luksFormat /dev/sda1
+# cryptsetup -s 512 luksFormat --type luks2 /dev/sda1
 
 ```
 
@@ -266,7 +266,7 @@ The following example will create an encrypted root partition on `/dev/sda1` usi
 When creating a new LUKS encrypted partition, a keyfile may be associated with the partition on its creation using:
 
 ```
-# cryptsetup luksFormat *device* */path/to/mykeyfile*
+# cryptsetup luksFormat --type luks2 *device* */path/to/mykeyfile*
 
 ```
 
@@ -281,14 +281,14 @@ The unlocking process will map the partitions to a new device name using the dev
 In order to open an encrypted LUKS partition execute:
 
 ```
-# cryptsetup open --type luks *device* *dm_name*
+# cryptsetup open *device* *dm_name*
 
 ```
 
 You will then be prompted for the password to unlock the partition. Usually the device mapped name is descriptive of the function of the partition that is mapped. For example the following unlocks a luks partition `/dev/sda1` and maps it to device mapper named `cryptroot`:
 
 ```
-# cryptsetup open --type luks /dev/sda1 cryptroot 
+# cryptsetup open /dev/sda1 cryptroot 
 
 ```
 
@@ -753,7 +753,7 @@ Now map the container to the loop device:
 
 ```
 # losetup /dev/loop0 /bigsecret
-# cryptsetup --type luks open /dev/loop0 secret
+# cryptsetup open /dev/loop0 secret
 
 ```
 

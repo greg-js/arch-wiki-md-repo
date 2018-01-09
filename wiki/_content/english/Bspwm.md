@@ -23,6 +23,7 @@ Related articles
     *   [3.3 Problems with Java applications](#Problems_with_Java_applications)
     *   [3.4 Problems with keybindings using fish](#Problems_with_keybindings_using_fish)
     *   [3.5 Error messages "Could not grab key 43 with modfield 68" on start](#Error_messages_.22Could_not_grab_key_43_with_modfield_68.22_on_start)
+    *   [3.6 Firefox context menu automatically selects first option on right click](#Firefox_context_menu_automatically_selects_first_option_on_right_click)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -267,6 +268,15 @@ Alternatively, the ^ character may be escaped with a backslash in your sxhkdrc f
 ### Error messages "Could not grab key 43 with modfield 68" on start
 
 Either you try to use the same key twice, or you start sxhkd twice. Check bspwmrc and `~/.profile` or `~/.bash_profile` for excessive commands starting sxhkd.
+
+### Firefox context menu automatically selects first option on right click
+
+Add the following line to the ```userChrome.css``` file of your firefox profile
+
+```
+#contentAreaContextMenu{ margin: 5px 0 0 5px }
+
+```
 
 ## See also
 

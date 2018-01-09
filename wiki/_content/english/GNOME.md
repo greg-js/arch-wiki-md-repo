@@ -55,6 +55,7 @@ Related articles
         *   [5.2.2 Desktop](#Desktop)
             *   [5.2.2.1 Icons on the Desktop](#Icons_on_the_Desktop)
             *   [5.2.2.2 Lock screen and background](#Lock_screen_and_background)
+            *   [5.2.2.3 Disable top left hot corner](#Disable_top_left_hot_corner)
         *   [5.2.3 Extensions](#Extensions)
         *   [5.2.4 Input methods](#Input_methods)
         *   [5.2.5 Fonts](#Fonts)
@@ -427,6 +428,10 @@ For the lock screen background
 $ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///path/to/my/picture.jpg'
 
 ```
+
+##### Disable top left hot corner
+
+You can disable the top left hot corner with the [gnome-shell-extension-no-topleft-hot-corner](https://aur.archlinux.org/packages/gnome-shell-extension-no-topleft-hot-corner/) package.
 
 #### Extensions
 

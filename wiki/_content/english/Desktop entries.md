@@ -215,7 +215,7 @@ Icons can be automatically downloaded from [openiconlibrary](http://openiconlibr
 
 *   Use `--name='Program Name'` for choosing a name for the menu entry.
 
-*   Use `--exec='/opt/some_app/elf --with-ponies'` for setting the exec field.
+*   Use `--exec='/opt/some_app/elf --some-arg --other-arg'` for setting the exec field.
 
 *   See the [gendesk project](https://github.com/xyproto/gendesk) for more information.
 

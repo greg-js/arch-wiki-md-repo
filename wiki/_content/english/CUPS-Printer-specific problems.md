@@ -493,6 +493,10 @@ Install [openprinting-ppds-pxlmono-ricoh](https://aur.archlinux.org/packages/ope
 *   [List of supported black and white models](https://www.openprinting.org/driver/pxlmono-Ricoh)
 *   [List of supported color models](https://www.openprinting.org/driver/pxlcolor-Ricoh)
 
+| Printer | Driver/filter | Notes |
+| 213W | *Generic PCL Laser* | Obtain a WPS code by holding down the wifi button for 2 seconds, then hitting the stop/start button. |
+| Printer | Driver/filter | Notes |
+
 ## Samsung
 
 For printers requiring the *cnijfilter* drivers, search for the correct driver [in the AUR](https://aur.archlinux.org/packages.php?K=cnijfilter)

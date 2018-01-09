@@ -1009,19 +1009,19 @@ server {
 
     # static files
     location ^~ /loleaflet {
-        proxy_pass https://127.0.0.1:9980;
+        proxy_pass http://127.0.0.1:9980;
         proxy_set_header Host $host;
     }
 
     # WOPI discovery URL
     location ^~ /hosting/discovery {
-        proxy_pass https://127.0.0.1:9980;
+        proxy_pass http://127.0.0.1:9980;
         proxy_set_header Host $host;
     }
 
     # Main websocket
     location ~ /lool/(.*)/ws$ {
-        proxy_pass https://127.0.0.1:9980;
+        proxy_pass http://127.0.0.1:9980;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "Upgrade";
         proxy_set_header Host $host;
@@ -1031,7 +1031,7 @@ server {
     # Admin Console websocket
     location ^~ /lool/adminws {
 	proxy_buffering off;
-        proxy_pass https://127.0.0.1:9980;
+        proxy_pass http://127.0.0.1:9980;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "Upgrade";
         proxy_set_header Host $host;
@@ -1040,7 +1040,7 @@ server {
 
     # download, presentation and image upload
     location ~ /lool {
-        proxy_pass https://127.0.0.1:9980;
+        proxy_pass http://127.0.0.1:9980;
         proxy_set_header Host $host;
     }
 }

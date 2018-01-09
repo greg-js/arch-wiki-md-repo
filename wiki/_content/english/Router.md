@@ -2,34 +2,35 @@ This article is a tutorial for turning a computer into an internet gateway/route
 
 This article does not attempt to show how to set up a shared connection between 2 PCs using cross-over cables. For a simple internet sharing solution, see [Internet sharing](/index.php/Internet_sharing "Internet sharing").
 
+**Note:** Throughout the article **intern0** and **extern0** are used as names for the network interfaces. The reasoning is further explained in [#Persistent interface naming](#Persistent_interface_naming).
+
 ## Contents
 
 *   [1 Hardware Requirements](#Hardware_Requirements)
-*   [2 Conventions](#Conventions)
-*   [3 Network interface configuration](#Network_interface_configuration)
-    *   [3.1 Persistent naming and Interface renaming](#Persistent_naming_and_Interface_renaming)
-    *   [3.2 IP configuration](#IP_configuration)
-*   [4 ADSL connection/PPPoE](#ADSL_connection.2FPPPoE)
-    *   [4.1 PPPoE configuration](#PPPoE_configuration)
-*   [5 DNS and DHCP](#DNS_and_DHCP)
-*   [6 Connection sharing](#Connection_sharing)
-    *   [6.1 Connection sharing with shorewall](#Connection_sharing_with_shorewall)
-    *   [6.2 Manual](#Manual)
-*   [7 IPv6 tips](#IPv6_tips)
-    *   [7.1 Unique Local Addresses](#Unique_Local_Addresses)
-    *   [7.2 Global Unicast Addresses](#Global_Unicast_Addresses)
-        *   [7.2.1 Static IPv6 prefix](#Static_IPv6_prefix)
-        *   [7.2.2 Acquiring IPv6 prefix via DHCPv6-PD](#Acquiring_IPv6_prefix_via_DHCPv6-PD)
-    *   [7.3 Router Advertisement and Stateless Autoconfiguration (SLAAC)](#Router_Advertisement_and_Stateless_Autoconfiguration_.28SLAAC.29)
-*   [8 Optional additions](#Optional_additions)
-    *   [8.1 UPnP](#UPnP)
-    *   [8.2 Remote administration](#Remote_administration)
-    *   [8.3 Caching web proxy](#Caching_web_proxy)
-    *   [8.4 Time server](#Time_server)
-    *   [8.5 Content filtering](#Content_filtering)
-    *   [8.6 Traffic shaping](#Traffic_shaping)
-        *   [8.6.1 Traffic shaping with shorewall](#Traffic_shaping_with_shorewall)
-*   [9 See also](#See_also)
+*   [2 Network interface configuration](#Network_interface_configuration)
+    *   [2.1 Persistent interface naming](#Persistent_interface_naming)
+    *   [2.2 IP configuration](#IP_configuration)
+*   [3 ADSL connection/PPPoE](#ADSL_connection.2FPPPoE)
+    *   [3.1 PPPoE configuration](#PPPoE_configuration)
+*   [4 DNS and DHCP](#DNS_and_DHCP)
+*   [5 Connection sharing](#Connection_sharing)
+    *   [5.1 Connection sharing with shorewall](#Connection_sharing_with_shorewall)
+    *   [5.2 Manual](#Manual)
+*   [6 IPv6 tips](#IPv6_tips)
+    *   [6.1 Unique Local Addresses](#Unique_Local_Addresses)
+    *   [6.2 Global Unicast Addresses](#Global_Unicast_Addresses)
+        *   [6.2.1 Static IPv6 prefix](#Static_IPv6_prefix)
+        *   [6.2.2 Acquiring IPv6 prefix via DHCPv6-PD](#Acquiring_IPv6_prefix_via_DHCPv6-PD)
+    *   [6.3 Router Advertisement and Stateless Autoconfiguration (SLAAC)](#Router_Advertisement_and_Stateless_Autoconfiguration_.28SLAAC.29)
+*   [7 Optional additions](#Optional_additions)
+    *   [7.1 UPnP](#UPnP)
+    *   [7.2 Remote administration](#Remote_administration)
+    *   [7.3 Caching web proxy](#Caching_web_proxy)
+    *   [7.4 Time server](#Time_server)
+    *   [7.5 Content filtering](#Content_filtering)
+    *   [7.6 Traffic shaping](#Traffic_shaping)
+        *   [7.6.1 Traffic shaping with shorewall](#Traffic_shaping_with_shorewall)
+*   [8 See also](#See_also)
 
 ## Hardware Requirements
 
@@ -37,18 +38,16 @@ This article does not attempt to show how to set up a shared connection between 
 *   At least two physical network interfaces: a gateway connects two networks with each other (actually router can be made using single physical interface that underlay two VLAN interfaces and connected to VLAN-aware switch, so-called router-on-a-stick configuration, but it is not covered in this article). You will need to be able to connect those networks to the same physical computer. One interface must connect to the external network, while the other connects to the internal network.
 *   A hub, switch or UTP cable: You need a way to connect the other computers to the gateway
 
-## Conventions
+## Network interface configuration
 
-Conventions in this guide will be to use non-realistic interface names, to avoid confusion about which interface is which.
+### Persistent interface naming
+
+Systemd automatically chooses unique interface names for all your interfaces. These are persistent and will not change when you reboot. However you might want to rename you interfaces e.g. in order to highlight their different networks to which they connect. In the following sections of this guide the below stated convention is used throughout:
 
 *   **intern0**: the network card connected to the LAN. On an actual computer it will probably have the name enp2s0, enp1s1, etc.
 *   **extern0**: the network card connected to the external network (or WAN). It will probably have the name enp2s0, enp1s1, etc.
 
-## Network interface configuration
-
-### Persistent naming and Interface renaming
-
-Systemd automatically chooses unique interface names for all your interfaces. These are persistent and will not change when you reboot. If you would like to rename interface to user friendlier names read [Network configuration#Device names](/index.php/Network_configuration#Device_names "Network configuration").
+You may change the assigned names of your devices via a configuration file using [Systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") described in [Systemd-networkd#Renaming an interface](/index.php/Systemd-networkd#Renaming_an_interface "Systemd-networkd") or by a [udev](/index.php/Udev "Udev")-rule following [Network configuration#Change device name](/index.php/Network_configuration#Change_device_name "Network configuration"). Due the example-rich nature of this article you might want to for example choose the above described names.
 
 ### IP configuration
 
@@ -77,7 +76,7 @@ Address=('10.0.0.1/24')
 
 ```
 
-**Note:** The example configuration above assumes a full subnet. If you are building the gateway for a small amount of people, you will want to change the CIDR suffix to accommodate a smaller range. For example /27 will give you 10.0.0.1 to 10.0.0.30\. You can find many CIDR calculators online.
+**Note:** The example configuration above assumes a full subnet. If you are building the gateway for a small amount of people, you will want to change the [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") suffix to accommodate a smaller range. For example `/27` will give you `10.0.0.1` to `10.0.0.30`. You can find many CIDR calculators online.
 
 Next up is to set up the interfaces with netctl.
 

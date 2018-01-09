@@ -35,7 +35,7 @@ A good number of modules that lie outside the kernel source tree have a DKMS var
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA"):
     *   [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms)
     *   [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)
-    *   [nvidia-304xx-dkms](https://www.archlinux.org/packages/?name=nvidia-304xx-dkms)
+    *   [nvidia-304xx-dkms](https://aur.archlinux.org/packages/nvidia-304xx-dkms/)
     *   [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/)
     *   [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/)
 *   [VirtualBox](/index.php/VirtualBox "VirtualBox"):

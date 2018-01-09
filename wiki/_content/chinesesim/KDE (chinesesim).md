@@ -9,7 +9,7 @@
 *   [Trinity](/index.php/Trinity "Trinity")
 *   [Uniform Look for Qt and GTK Applications (简体中文)](/index.php/Uniform_Look_for_Qt_and_GTK_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Uniform Look for Qt and GTK Applications (简体中文)")
 
-**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-01-02，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=505606)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-01-08，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=506541)可以查看翻译后英文页面的改动。
 
 KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")、库、框架 (KDE Frameworks)、和应用组成的软件项目。KDE 上游有一份维护良好的 [UserBase Wiki](https://userbase.kde.org/)。大多数 KDE 应用程序的详细信息都可以在那里找到。
 
@@ -81,10 +81,9 @@ KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD
     *   [6.6 图形问题](#.E5.9B.BE.E5.BD.A2.E9.97.AE.E9.A2.98)
         *   [6.6.1 禁用桌面特效](#.E7.A6.81.E7.94.A8.E6.A1.8C.E9.9D.A2.E7.89.B9.E6.95.88)
         *   [6.6.2 禁用混合项（compositing）](#.E7.A6.81.E7.94.A8.E6.B7.B7.E5.90.88.E9.A1.B9.EF.BC.88compositing.EF.BC.89)
-        *   [6.6.3 Plasma 在闭源 Nvidia 下不断崩溃](#Plasma_.E5.9C.A8.E9.97.AD.E6.BA.90_Nvidia_.E4.B8.8B.E4.B8.8D.E6.96.AD.E5.B4.A9.E6.BA.83)
-        *   [6.6.4 启用混合项（compositing）后全屏时闪烁](#.E5.90.AF.E7.94.A8.E6.B7.B7.E5.90.88.E9.A1.B9.EF.BC.88compositing.EF.BC.89.E5.90.8E.E5.85.A8.E5.B1.8F.E6.97.B6.E9.97.AA.E7.83.81)
-        *   [6.6.5 Nvidia 显卡屏幕撕裂](#Nvidia_.E6.98.BE.E5.8D.A1.E5.B1.8F.E5.B9.95.E6.92.95.E8.A3.82)
-        *   [6.6.6 Plasma 光标有时显示不正确](#Plasma_.E5.85.89.E6.A0.87.E6.9C.89.E6.97.B6.E6.98.BE.E7.A4.BA.E4.B8.8D.E6.AD.A3.E7.A1.AE)
+        *   [6.6.3 启用混合项（compositing）后全屏时闪烁](#.E5.90.AF.E7.94.A8.E6.B7.B7.E5.90.88.E9.A1.B9.EF.BC.88compositing.EF.BC.89.E5.90.8E.E5.85.A8.E5.B1.8F.E6.97.B6.E9.97.AA.E7.83.81)
+        *   [6.6.4 Nvidia 显卡屏幕撕裂](#Nvidia_.E6.98.BE.E5.8D.A1.E5.B1.8F.E5.B9.95.E6.92.95.E8.A3.82)
+        *   [6.6.5 Plasma 光标有时显示不正确](#Plasma_.E5.85.89.E6.A0.87.E6.9C.89.E6.97.B6.E6.98.BE.E7.A4.BA.E4.B8.8D.E6.AD.A3.E7.A1.AE)
     *   [6.7 声音问题](#.E5.A3.B0.E9.9F.B3.E9.97.AE.E9.A2.98)
         *   [6.7.1 睡眠后没声音](#.E7.9D.A1.E7.9C.A0.E5.90.8E.E6.B2.A1.E5.A3.B0.E9.9F.B3)
         *   [6.7.2 在播放任何声音时出现 "返回默认" 消息](#.E5.9C.A8.E6.92.AD.E6.94.BE.E4.BB.BB.E4.BD.95.E5.A3.B0.E9.9F.B3.E6.97.B6.E5.87.BA.E7.8E.B0_.22.E8.BF.94.E5.9B.9E.E9.BB.98.E8.AE.A4.22_.E6.B6.88.E6.81.AF)
@@ -671,18 +670,6 @@ Plasma 默认启用了桌面特效，并且不是所有的游戏都会自动禁�
 #### 禁用混合项（compositing）
 
 在 *系统设置 > 显示*中取消选中*启动时激活混合器（compositing）*并重启 Plasma
-
-#### Plasma 在闭源 Nvidia 下不断崩溃
-
-这是由一个在使用 Nvidia-304xx 驱动时的 [Plasma 缺陷](https://bugs.kde.org/show_bug.cgi?id=348753) 造成。你可以在 `~/.config/plasma-workspace/env/` 下创建 `kwin.sh` 文件并添加以下内容：
-
-```
-#!/bin/sh
-export KWIN_EXPLICIT_SYNC=0
-
-```
-
-然后去 *系统设置 > 开关机 > 自启动* 并将其作为KDE启动前运行的脚本。
 
 #### 启用混合项（compositing）后全屏时闪烁
 

@@ -33,10 +33,10 @@ Ck patchset is designed for desktop/laptop use but not for servers. It provides 
 
 ### Release cycle
 
-Linux-ck roughly follows the release cycle of the official ARCH kernel but not only. The following are requirements for a new package release:
+Linux-ck roughly follows the release cycle of the official Arch kernel but not only. The following are requirements for a new package release:
 
 *   CK patchset compatible with the current kernel version
-*   corresponding ARCH kernel must be in existence otherwise it will break other packages i.e. nvidia. See [git.archlinux.org](https://git.archlinux.org/svntogit/packages.git/log/trunk?h=packages/linux) for the official [linux](https://www.archlinux.org/packages/?name=linux) package
+*   corresponding Arch kernel must be in existence otherwise it will break other packages i.e. nvidia. See [git.archlinux.org](https://git.archlinux.org/svntogit/packages.git/log/trunk?h=packages/linux) for the official [linux](https://www.archlinux.org/packages/?name=linux) package
 
 ### Package defaults
 
@@ -46,7 +46,7 @@ There are **three** modifications to the config files:
 2.  The tickrate is set to 100 Hz (CK's recommendation).
 3.  The extra CPU types optionally available to compilation thanks to the [GCC patch](https://github.com/graysky2/kernel_gcc_patch).
 
-**All other options are set to the ARCH defaults outlined in the main kernel's config files.** Of course users are free to edit them.
+**All other options are set to the Arch defaults outlined in the main kernel's config files.** Of course users are free to edit them.
 
 The [linux-ck](https://aur.archlinux.org/packages/linux-ck/) package contains an option to switch on the **nconfig** config editor (see the section [below](#Compile_the_package_from_source)).
 
@@ -72,7 +72,7 @@ Users can further customize the linux-ck package via tweaks contained in the PKG
 
 *   Optional **nconfig** for user specific tweaking.
 *   Option to compile a minimal set of modules via a make **localmodconfig**.
-*   Option to bypass the standard ARCH config options and simply use the **current kernel configuration** file.
+*   Option to bypass the standard Arch config options and simply use the **current kernel configuration** file.
 *   Optionally set the [BFQ I/O scheduler](http://algo.ing.unimo.it/people/paolo/disk_sched/) as default.
 
 More details about these options are provided in the PKGBUILD itself. Be sure to read them carefully if compiling from AUR!
@@ -87,29 +87,7 @@ If user prefers to spend no time to compile on their own, the unofficial repo ma
 
 **Note:** Do not confuse MuQSS (Multiple Queue Skiplist Scheduler) with BFQ (Budget Fair Queueing). MuQSS is a CPU scheduler and is enabled by default whereas BFQ is an I/O scheduler and must explicitly be enabled in order to use it.
 
-Budget Fair Queueing is a disk scheduler which allows each process/thread to be assigned a portion of the disk throughput. Its creator shares the results of many benchmarks ([results](http://algo.ing.unimo.it/people/paolo/disk_sched/results.php) and [video](http://www.youtube.com/watch?v=KhZl9LjCKuU)) which show the latency performance improvement.
-
-As of Linux kernel version 4.12, BFQ has been accepted into the mainline kernel. However, it is only available for blk-mq (Multi-Queue Block) so you will have to pass the kernel boot option ***scsi_mod.use_blk_mq=1*** and manually select BFQ by issuing the following for each of your devices:
-
-```
- echo bfq > /sys/block/sda/queue/scheduler
-
-```
-
-where *sda* is the disk in this example.
-
-An alternative method is to create the file *20-block.rules* in /etc/udev/rules.d with the below in it:
-
-```
- ACTION=="add|change", SUBSYSTEM=="block", ATTR{queue/scheduler}="bfq"
-
-```
-
-This will set BFQ as default during boot for all the disks.
-
-You can also instruct the kernel to use BFQ on a device-by-device basis. For configuration examples see the [Improving performance#IO schedulers](/index.php/Improving_performance#IO_schedulers "Improving performance") section.
-
-**Note:** Setting `elevator=bfq` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") doesn't work anymore.
+See the [Improving performance#Input/output schedulers](/index.php/Improving_performance#Input.2Foutput_schedulers "Improving performance") section for some background about the different IO schedulers and how to activate *BFQ*.
 
 ## More about MuQSS
 
@@ -134,7 +112,7 @@ It is a common mistake to think that MuQSS does not support *cgroups*. It does b
 
 ### Running VirtualBox with Linux-ck
 
-VirtualBox works just fine with custom kernels such as Linux-ck *without* the need to keep any of the official ARCH kernel headers package on the system.
+VirtualBox works just fine with custom kernels such as Linux-ck *without* the need to keep any of the official Arch kernel headers package on the system.
 
 Do not forget to add users to the *vboxusers* group:
 

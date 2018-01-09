@@ -1,3 +1,11 @@
+相关文章
+
+*   [Super Quick Git Guide](/index.php/Super_Quick_Git_Guide "Super Quick Git Guide")
+*   [Gitweb](/index.php/Gitweb "Gitweb")
+*   [Cgit](/index.php/Cgit "Cgit")
+*   [Subversion](/index.php/Subversion "Subversion")
+*   [Concurrent Versions System](/index.php/Concurrent_Versions_System "Concurrent Versions System")
+
 [Git](http://git-scm.com/) 是一个由 Linux 内核作者 Linus Torvalds 编写的版本控制系统（VCS），现在被用来维护 Linux 内核以及数以千计的其他项目，包括 Arch 的软件包管理器 [Pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")。
 
 在官方网站可以获得一份完整的、包含参考与教程的 [文档](http://git-scm.com/documentation)。

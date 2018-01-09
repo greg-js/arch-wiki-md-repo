@@ -34,11 +34,10 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GN
     *   [3.7 Configure X server access permission](#Configure_X_server_access_permission)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Failure to use proprietary NVIDIA driver](#Failure_to_use_proprietary_NVIDIA_driver)
-    *   [4.2 Failure to start with AMD Catalyst driver](#Failure_to_start_with_AMD_Catalyst_driver)
-    *   [4.3 Failure on logout](#Failure_on_logout)
-    *   [4.4 Rootless Xorg](#Rootless_Xorg)
-    *   [4.5 Use Xorg backend](#Use_Xorg_backend)
-    *   [4.6 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
+    *   [4.2 Failure on logout](#Failure_on_logout)
+    *   [4.3 Rootless Xorg](#Rootless_Xorg)
+    *   [4.4 Use Xorg backend](#Use_Xorg_backend)
+    *   [4.5 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -80,7 +79,7 @@ Firstly, you need to extract the existing GNOME Shell theme to a folder in your 
 
 workdir=${HOME}/shell-theme
 if [ ! -d ${workdir}/theme ]; then
-  mkdir -p ${workdir}/theme
+  mkdir -p ${workdir}/theme/icons
 fi
 gst=/usr/share/gnome-shell/gnome-shell-theme.gresource
 
@@ -105,36 +104,39 @@ Next, you need to create a file in the directory with the following content:
     <file>checkbox-off-focused.svg</file>
     <file>checkbox-off.svg</file>
     <file>checkbox.svg</file>
+    <file>close-window-active.svg</file>
+    <file>close-window-hover.svg</file>
     <file>close-window.svg</file>
-    <file>close.svg</file>
+    <file>close.svg</file>		
     <file>corner-ripple-ltr.png</file>
     <file>corner-ripple-rtl.png</file>
     <file>dash-placeholder.svg</file>
     <file>filter-selected-ltr.svg</file>
-    <file>filter-selected-rtl.svg</file>
-    <file>gnome-shell.css</file>
+    <file>filter-selected-rtl.svg</file>		
     <file>gnome-shell-high-contrast.css</file>
+    <file>gnome-shell.css</file>
+    <file>icons/message-indicator-symbolic.svg</file>
     <file>logged-in-indicator.svg</file>
-    <file>**filename**</file>
-    <file>more-results.svg</file>
     <file>no-events.svg</file>
     <file>no-notifications.svg</file>
     <file>noise-texture.png</file>
-    <file>page-indicator-active.svg</file>
-    <file>page-indicator-inactive.svg</file>
+    <file>pad-osd.css</file>
+    <file>page-indicator-active.svg</file>		
     <file>page-indicator-checked.svg</file>
     <file>page-indicator-hover.svg</file>
+    <file>page-indicator-inactive.svg</file>
     <file>process-working.svg</file>
     <file>running-indicator.svg</file>
     <file>source-button-border.svg</file>
     <file>summary-counter.svg</file>
-    <file>toggle-off-us.svg</file>
+    <file>toggle-off-hc.svg</file>
     <file>toggle-off-intl.svg</file>
-    <file>toggle-on-hc.svg</file>
-    <file>toggle-on-us.svg</file>
+    <file>toggle-off-us.svg</file>		
+    <file>toggle-on-hc.svg</file>		
     <file>toggle-on-intl.svg</file>
-    <file>ws-switch-arrow-up.png</file>
-    <file>ws-switch-arrow-down.png</file>
+    <file>toggle-on-us.svg</file>		
+    <file>ws-switch-arrow-down.svg</file>
+    <file>ws-switch-arrow-up.svg</file>
   </gresource>
 </gresources>
 ```
@@ -467,7 +469,7 @@ If you have your monitors setup as you like (orientation, primary and so on) in 
 
 Changes will take effect on logout. This is necessary because GDM does not respect `xorg.conf`.
 
-**Note:** Wayland backend may be [ignoring](https://bbs.archlinux.org/viewtopic.php?id=196219) `/var/lib/gdm/.config/monitors.xml` file. See [#Use Xorg backend](#Use_Xorg_backend) to learn how to disable Wayland backend.
+**Note:** If you use GDM under Wayland, you must also use a `monitors.xml` that was created under Wayland. See [GNOME bug 748098](https://bugzilla.gnome.org/show_bug.cgi?id=748098) for more info. Alternatively, you can force GDM to [#Use Xorg backend](#Use_Xorg_backend), and use a `monitors.xml` that was created under Xorg.
 
 ### Configure X server access permission
 
@@ -482,10 +484,6 @@ For instance, to grant GDM the right to access the X server, use the following c
 ### Failure to use proprietary NVIDIA driver
 
 GDM uses the [Wayland](/index.php/Wayland "Wayland") backend by default which conflicts with NVIDIA driver. Turning off the Wayland backend could enable proprietary NVIDIA driver.
-
-### Failure to start with AMD Catalyst driver
-
-Downgrade the [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) package or try to use another [display manager](/index.php/Display_manager "Display manager") like [LightDM](/index.php/LightDM "LightDM").
 
 ### Failure on logout
 

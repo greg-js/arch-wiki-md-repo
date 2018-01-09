@@ -1,3 +1,10 @@
+Related articles
+
+*   [RAID](/index.php/RAID "RAID")
+*   [LVM](/index.php/LVM "LVM")
+*   [Installing with Fake RAID](/index.php/Installing_with_Fake_RAID "Installing with Fake RAID")
+*   [Convert a single drive system to RAID](/index.php/Convert_a_single_drive_system_to_RAID "Convert a single drive system to RAID")
+
 This article will provide an example of how to install and configure Arch Linux with a software RAID or Logical Volume Manager (LVM). The combination of [RAID](/index.php/RAID "RAID") and [LVM](/index.php/LVM "LVM") provides numerous features with few caveats compared to just using RAID.
 
 ## Contents
@@ -273,7 +280,7 @@ Due to the fact that RAID1 and RAID10 writes in the kernel are unbuffered, an ar
 
 ### LVM installation
 
-This section will convert the two RAIDs into physical volumes (PVs). Then combine those PVs into a volume group (VG). The VG will then be divided into logical volumes (LVs) that will act like physical partitions (e.g. `/`, `/var`, `/home`). If you did not understand that make sure you read the [LVM Introduction](/index.php/LVM#Introduction "LVM") section.
+This section will convert the two RAIDs into physical volumes (PVs). Then combine those PVs into a volume group (VG). The VG will then be divided into logical volumes (LVs) that will act like physical partitions (e.g. `/`, `/var`, `/home`). If you did not understand that make sure you read the [LVM Introduction](/index.php/LVM#LVM_Building_Blocks "LVM") section.
 
 #### Create physical volumes
 

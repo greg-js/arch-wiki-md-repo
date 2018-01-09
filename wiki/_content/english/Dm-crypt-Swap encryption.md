@@ -132,14 +132,14 @@ The following setup has the disadvantage of having to insert an additional passp
 To format the encrypted container for the swap partition, create a keyslot for a user-memorizable passphrase.
 
 ```
-# cryptsetup luksFormat /dev/<device>
+# cryptsetup luksFormat --type luks2 /dev/<device>
 
 ```
 
 Open the partition in `/dev/mapper`:
 
 ```
-# cryptsetup open --type luks /dev/<device> swapDevice
+# cryptsetup open /dev/<device> swapDevice
 
 ```
 
@@ -156,7 +156,7 @@ Now you have to create a hook to open the swap at boot time. You can either [ins
 ```
 run_hook ()
 {
-    cryptsetup open --type luks /dev/<device> swapDevice
+    cryptsetup open /dev/<device> swapDevice
 }
 
 ```
@@ -177,7 +177,7 @@ run_hook ()
 
     mkdir crypto_key_device
     mount /dev/mapper/<root-device> crypto_key_device
-    cryptsetup open --type luks --key-file crypto_key_device/<path-to-the-key> /dev/<device> swapDevice
+    cryptsetup open --key-file crypto_key_device/<path-to-the-key> /dev/<device> swapDevice
     umount crypto_key_device
 }
 

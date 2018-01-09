@@ -1,3 +1,10 @@
+相关文章
+
+*   [网络配置](/index.php/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE "网络配置")
+*   [无线网络配置](/index.php/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE "无线网络配置")
+*   [Wicd (简体中文)](/index.php/Wicd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wicd (简体中文)")
+*   [网桥](/index.php/%E7%BD%91%E6%A1%A5 "网桥")
+
 **翻译状态：** 本文是英文页面 [Netctl](/index.php/Netctl "Netctl") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-10，点击[这里](https://wiki.archlinux.org/index.php?title=Netctl&diff=0&oldid=424868)可以查看翻译后英文页面的改动。
 
 Netctl 是基于命令行的网络管理器，支持场景配置。它是 Arch Linux 网络管理方面的原生项目。
@@ -63,7 +70,7 @@ Netctl 是基于命令行的网络管理器，支持场景配置。它是 Arch L
 
 若要使用上述示例配置文件，只需将其从 `/etc/netctl/examples/` 复制到 `/etc/netctl/`。参见下述 配置示例。编辑配置文件所需的首要参数是网络*端口(interface)*，详阅 网络配置 设备名称。
 
-**Tip:**
+**提示：**
 ```
 如要配置无线网络，可以root身份运行 `wifi-menu -o` 来自动在 `/etc/netctl/` 中生成配置文件。
 
@@ -105,9 +112,9 @@ Netctl 是基于命令行的网络管理器，支持场景配置。它是 Arch L
 
 ```
 
-**Note:** 只有在计算机启动时（或服务启动时），配置文件可以被成功地启用，连接才可以建立。特别地，对于有线连接，需插好电缆;对于无线连接，需处于信号覆盖范围内。
+**注意:** 只有在计算机启动时（或服务启动时），配置文件可以被成功地启用，连接才可以建立。特别地，对于有线连接，需插好电缆;对于无线连接，需处于信号覆盖范围内。
 
-**Tip:** 若要无视线缆是否插好，强制对有线网络接口启用一个固定IP的配置，可以在配置文件中加入 `SkipNoCarrier=yes` 。
+**提示：** 若要无视线缆是否插好，强制对有线网络接口启用一个固定IP的配置，可以在配置文件中加入 `SkipNoCarrier=yes` 。
 
 #### 自动切换配置
 
@@ -183,7 +190,7 @@ For the `Address` take care to include the correct netmask (the `/24` in the sam
 
 密码加密(256-bit PSK)
 
-**Note:** 尽管进行了“加密”，你写进配置文件的密码依然可以让你连接到一个WPA-PSK网络。也即，这个加密过程只用来将密码变得“让人看不懂”，但无法阻止对这个文件有阅读权限的人使用它来连接网络。而且将这个密码再用到其他的地方变得极其不安全，你应当考虑是否有这样做的必要。
+**警告:** 尽管进行了“加密”，你写进配置文件的密码依然可以让你连接到一个WPA-PSK网络。也即，这个加密过程只用来将密码变得“让人看不懂”，但无法阻止对这个文件有阅读权限的人使用它来连接网络。而且将这个密码再用到其他的地方变得极其不安全，你应当考虑是否有这样做的必要。
 
 那些**不想**让自己的无线网络密钥以“明文”的形式保存的用户可以选择使用256位预先共享密钥(PSK)来代替，它由密钥和SSID经由标准算法计算而成。
 
@@ -203,7 +210,7 @@ network={
 }
 ```
 
-**Tip:** 运行后不要关闭终端，这里的结果将在之后的配置中用到。
+**提示：** 运行后不要关闭终端，这里的结果将在之后的配置中用到。
 
 在另一个终端窗口中，将示例文件 `wireless-wpa` 从 `/etc/netctl/examples` 复制到 `/etc/netctl`:
 
@@ -227,7 +234,7 @@ ESSID=*your_essid*
 Key=\"64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
 ```
 
-**Note:**
+**注意:**
 
 *   注意对变量 `Key` 使用 **special quoting rules**，详细的描述参见[netctl.profile(5)](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.profile.5.txt)末尾。
 *   如果密码没有起作用，从变量 `Key` 中删除 `\"` 。

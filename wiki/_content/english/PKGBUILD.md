@@ -284,18 +284,18 @@ $ pacman -Qc *pkgname*
 
 ### source
 
-An array of files needed to build the package. It must contain the location of the software source, which in most cases is a full HTTP or FTP URL. The previously set variables `pkgname` and `pkgver` can be used effectively here (e.g. `source=("https://example.com/$pkgname-$pkgver.tar.gz")`).
+An array of files needed to build the package. It must contain the location of the software source, which in most cases is a full HTTP or FTP URL. The previously set variables `pkgname` and `pkgver` can be used effectively here; e.g. `source=("https://example.com/$pkgname-$pkgver.tar.gz")`.
 
-Files can also be supplied directly in the location of the `PKGBUILD` and added to this array. These paths are resolved relative to the directory of the `PKGBUILD`. Before the actual build process is started, all of the files referenced in this array will be downloaded or checked for existence, and *makepkg* will not proceed, if any are missing.
+Files can also be supplied where `PKGBUILD` is located and added to this array. The paths are resolved relative to the directory of `PKGBUILD`. Before the actual build process starts, all the files referenced in this array will be downloaded or checked for existence, and *makepkg* will not proceed if any is missing.
 
 *.install* files are recognized automatically by *makepkg* and should not be included in the source array. Files in the source array with extensions *.sig*, *.sign*, or *.asc* are recognized by *makepkg* as PGP signatures and will be automatically used to verify the integrity of the corresponding source file.
 
-**Warning:** The downloaded source filename should be unique, because the [SRCDEST](/index.php/Makepkg#Package_output "Makepkg") variable can be the same directory for all packages. Using the version number of the project only as a filename for example will conflict with other projects with the same version number. The alternative filename to be used is provided with the syntax `source=('*unique_package_name***::***file_uri*')`. For example: `source=("$pkgname-$pkgver.tar.gz::https://github.com/coder/program/archive/v$pkgver.tar.gz")`
+**Warning:** The downloaded source filename should be unique, because the [SRCDEST](/index.php/Makepkg#Package_output "Makepkg") variable can be the same directory for all packages. For instance, using only the version number of the project as a filename will conflict with other projects with the same version number. In this case, the alternative unique filename to be used is provided with the syntax `source=('*unique_package_name***::***file_uri*')`; e.g. `source=("$pkgname-$pkgver.tar.gz::https://github.com/coder/program/archive/v$pkgver.tar.gz")`
 
 **Tip:**
 
 *   Additional architecture-specific arrays can be added by appending an underscore and the architecture name, e.g. `source_x86_64=()`. There must be a corresponding integrity array with checksums, e.g. `sha256sums_x86_64=()`.
-*   If some servers prevent you from downloading a file because of restricted user-agents, read [Nonfree applications package guidelines#Custom DLAGENTS](/index.php/Nonfree_applications_package_guidelines#Custom_DLAGENTS "Nonfree applications package guidelines").
+*   Some servers restrict download by filtering the *User-Agent* string of the client, this can be circumvented with [DLAGENTS](/index.php/Nonfree_applications_package_guidelines#Custom_DLAGENTS "Nonfree applications package guidelines").
 
 ### noextract
 

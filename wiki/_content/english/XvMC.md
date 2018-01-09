@@ -19,7 +19,7 @@ Related articles
 
 Only MPEG-1 and MPEG-2 videos are supported by all driver.
 
-*   [NVIDIA](/index.php/NVIDIA "NVIDIA") GeForce 6 and GeForce 7 series cards are supported by the proprietary [nvidia-304xx-utils](https://www.archlinux.org/packages/?name=nvidia-304xx-utils) package.
+*   [NVIDIA](/index.php/NVIDIA "NVIDIA") GeForce 6 and GeForce 7 series cards are supported by the proprietary [nvidia-304xx-utils](https://aur.archlinux.org/packages/nvidia-304xx-utils/) package.
 *   NVIDIA GeForce 5 FX series cards are supported by the proprietary [nvidia-173xx-utils](https://aur.archlinux.org/packages/nvidia-173xx-utils/) package.
 *   NVIDIA GeForce4 series cards are supported by the proprietary [nvidia-96xx-utils](https://aur.archlinux.org/packages/nvidia-96xx-utils/) package.
 *   [Intel](/index.php/Intel "Intel") 810, GMA 950, GMA 3100, GMA 3000, GMA 4500 series and Ironlake GPUs are supported by the open source [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package.

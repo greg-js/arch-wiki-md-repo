@@ -1,10 +1,11 @@
 ## Contents
 
 *   [1 Booting Arch install media](#Booting_Arch_install_media)
-    *   [1.1 Creating bootia32.efi](#Creating_bootia32.efi)
-    *   [1.2 Creating a bootable USB](#Creating_a_bootable_USB)
-        *   [1.2.1 Adding wireless drivers to the install image](#Adding_wireless_drivers_to_the_install_image)
-        *   [1.2.2 Unmount](#Unmount)
+    *   [1.1 Proper way of generating a bootia32.efi with grub.cfg included](#Proper_way_of_generating_a_bootia32.efi_with_grub.cfg_included)
+        *   [1.1.1 Creating bootia32.efi](#Creating_bootia32.efi)
+        *   [1.1.2 Creating a bootable USB](#Creating_a_bootable_USB)
+            *   [1.1.2.1 Unmount](#Unmount)
+    *   [1.2 OS indipendent method](#OS_indipendent_method)
     *   [1.3 Booting the x205ta from USB](#Booting_the_x205ta_from_USB)
 *   [2 Install Arch](#Install_Arch)
     *   [2.1 Enable wifi](#Enable_wifi)
@@ -18,21 +19,24 @@
         *   [3.2.1 Freezing](#Freezing)
         *   [3.2.2 Sound](#Sound)
         *   [3.2.3 Bluetooth](#Bluetooth)
+        *   [3.2.4 WIFI Breaks after resume from hibernating](#WIFI_Breaks_after_resume_from_hibernating)
 *   [4 On older kernels](#On_older_kernels)
     *   [4.1 Sound](#Sound_2)
     *   [4.2 Power level information (ACPI)](#Power_level_information_.28ACPI.29)
     *   [4.3 Touchpad](#Touchpad)
     *   [4.4 SD card reader](#SD_card_reader)
     *   [4.5 Special keys](#Special_keys)
-*   [5 See also](#See_also)
+    *   [4.6 See also](#See_also)
 
 ## Booting Arch install media
 
 The Asus x205TA and x206HA have an exclusively 32-bit EFI bootloader. Since Arch does not include a 32-bit EFI loader in the standard install image, we need to add one. This procedure may work for other exclusively 32-bit EFI machines.
 
-The current image (ARCH_201508) does not include the drivers for the x205ta's broadcom wireless modem, so we add those to the install image too.
+The current image (ARCH_201801) does include the drivers for the x205TA's broadcom wireless modem, so we need to copy efivars during boot as explained below. Adding drivers to the image is not required anymore. Booting archlinux on the x205TA can be achieved in 2 (possibly more) ways: by creating a bootia32.efi loader and modifying an existing iso, or by adding a precompiled bootia32.efi and manually starting archlinux iso from there.
 
-### Creating bootia32.efi
+### Proper way of generating a bootia32.efi with grub.cfg included
+
+#### Creating bootia32.efi
 
 Acquire the latest arch install ISO ([https://www.archlinux.org/download/](https://www.archlinux.org/download/)). Let's call this file <ISO-SOURCE>. Make note of its volume label. You can see this by running "file" on the iso file you downloaded and looking for the label in single quotes.
 
@@ -89,7 +93,7 @@ $ grub-mkstandalone -d /usr/lib/grub/i386-efi/ -O i386-efi --modules="part_gpt p
 
 ```
 
-### Creating a bootable USB
+#### Creating a bootable USB
 
 Follow the instructions listed [here](https://projects.archlinux.org/archiso.git/tree/docs/README.transfer#n105) under "PC-EFI (GPT) [x86_64 only]", but between steps 4 and 5, copy your custom bootia32.efi file to EFI/boot/bootia32.efi on your install medium, and add the x205ta's broadcom wifi driver to the appropriate squashfs.
 
@@ -139,32 +143,7 @@ $ cp /LOCATION/OF/bootia32.efi <MNT-TARGET-N>/EFI/boot/bootia32.efi
 
 ```
 
-#### Adding wireless drivers to the install image
-
-**Note:**
-
-*   if you intend to use a wired connection during install you can skip these steps.
-*   As of May, 2016\. Arch Linux should be able to support brcm43220/43221 natively. Skip this step and see the "Enable wifi" section in this article.
-
-Get a copy of the wireless drivers and untar:
-
-```
-$ wget -qO-  [https://android.googlesource.com/platform/hardware/broadcom/wlan/+archive/master/bcmdhd/firmware/bcm43341.tar.gz](https://android.googlesource.com/platform/hardware/broadcom/wlan/+archive/master/bcmdhd/firmware/bcm43341.tar.gz) | tar xvz
-
-```
-
-Unsquash and mount your preferred squashfs (i386 or x64) from the arch ISO you downloaded by following the instructions these instructions: [Remastering the Install ISO](/index.php/Remastering_the_Install_ISO "Remastering the Install ISO").
-
-Copy 'fw_bcm43341.bin' to '/lib/firmware/brcm/brcmfmac43340-sdio.bin' on your new bootable usb. Note the filename change.
-
-```
-$ cp /PATH/TO/fw_bcm43341.bin /PATH/TO/lib/firmware/brcm/brcmfmac43340-sdio.bin
-
-```
-
-Resquash the image and copy the resulting 'airootfs.sfs' to its original location on your usb install medium. Generate a new MD5 sum to sit alongside it.
-
-#### Unmount
+##### Unmount
 
 Unmount the usb install medium partition
 
@@ -172,6 +151,17 @@ Unmount the usb install medium partition
 $ umount <DEV-TARGET-N>
 
 ```
+
+### OS indipendent method
+
+This method is not canonical and should not be used unless you are having trouble with the proper method. On the other had this procedure can be followed without compiling bootia32.efi and it might be useful to be used under Windows or any other operating system when no linux systems are around. Create a bootable usb using standard methods (es.Rufus on windows). Download a prebuilt bootia32.efi from any source you trust (es [https://github.com/hirotakaster/baytail-bootia32.efi](https://github.com/hirotakaster/baytail-bootia32.efi)) and copy it to /EFI/boot folder on the usb. Create a custom grub.cfg file, replacing <FS-LABEL> with the correct label for your iso as mentioned above. Copy the custom grub.cfg file to the root folder of the usb. Once booted the x205TA from the (as mentioned above) type the following command in the grub console
+
+```
+$ configfile /grub.cfg
+
+```
+
+Proceed to arch installation as usual.
 
 ### Booting the x205ta from USB
 
@@ -211,6 +201,8 @@ Proceed as usual.
 ## Getting hardware working on up-to-date kernels
 
 With some kernel patches on newer kernels the x205ta works. The built-in microphone does not work. (Refer to "Sound".) The Intel Baytrail CPU should be able to consume less power than it does. There are still occasional freezes possible due to the CPU power states not being properly supported. (Refer to "Freezes".)
+
+**Tip:** Use AUR package [linux-x205ta](https://aur.archlinux.org/packages/linux-x205ta/) for updates and patches.
 
 ### Kernel patches
 
@@ -254,13 +246,78 @@ $ wget -qO /usr/share/alsa/ucm/chtrt5645/chtrt5645.conf [https://raw.githubuserc
 
 ```
 
+In order to have working headphone jack (as of kernel 4.14) is it required to add an "options" line in any modprobe file
+
+ `/etc/modprobe/50-x205ta.conf` 
+```
+options snd_soc_rt5645 quirk=0x31
+
+```
+
+To select headphones over speakers (which can't be done automatically as of kernel 4.14) consider using [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol).
+
 #### Bluetooth
 
 Install a correct firmware file (e.g., BCM43341B0_002.001.014.0122.0176.hcd from Windows 10 driver) as /lib/firmware/brcm/BCM43341B0.hcd. See [this page](https://ubuntuforums.org/showthread.php?t=2254322&page=97) for more information on the hcd file.
 
+```
+$ sudo wget [https://raw.githubusercontent.com/harryharryharry/x205ta-iso2usb-files/master/BCM43341B0.hcd](https://raw.githubusercontent.com/harryharryharry/x205ta-iso2usb-files/master/BCM43341B0.hcd) -O /lib/firmware/brcm/BCM43341B0.hcd
+
+```
+
+In order to get bluetooth working create a systemd unit
+
+ `/etc/systemd/system/btattach.service` 
+```
+[Unit]
+Description=Btattach
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/btattach --bredr /dev/ttyS1 -P bcm
+ExecStop=/usr/bin/killall btattach
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+and run the service on boot
+
+```
+$ sudo systemctl enable btattach
+
+```
+
 Next, follow the [normal steps to activate bluetooth](https://wiki.archlinux.org/index.php/Bluetooth).
 
-## On older kernels
+#### WIFI Breaks after resume from hibernating
+
+ `/usr/lib/systemd/system-sleep/hibernate.sh` 
+```
+#!/usr/bin/env bash
+
+case $1 in
+    pre)
+        rmmod brcmfmac
+        ;;
+    post)
+        modprobe brcmfmac
+        ;;
+esac
+
+exit 0
+
+```
+
+and of course:
+
+```
+$ sudo chmod +x /usr/lib/systemd/system-sleep/hibernate.sh
+
+```
+
+# On older kernels
 
 Patches came in over time. Try to use a new kernel!
 

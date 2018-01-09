@@ -54,7 +54,7 @@ Arch 鼓励每一个用户 [参与](/index.php/Getting_involved "Getting involve
 
 ## 通用
 
-Arch Linux 是通用发行版，初始安装仅提供命令行环境：用户不需要删除大量不需要的软件包，而是可以从[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库")成千上万的高质量软件包中进行选择，搭建自己的系统。支持[x86-64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") 架构。( [对 i686 架构的支持即将结束](https://www.archlinux.org/news/phasing-out-i686-support/) ）
+Arch Linux 是通用发行版，初始安装仅提供命令行环境：用户不需要删除大量不需要的软件包，而是可以从[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库")成千上万的高质量软件包中进行选择，搭建自己的系统。支持[x86-64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") 架构。( [对 i686 架构的支持已经结束](https://www.archlinux.org/news/the-end-of-i686-support/) ）
 
 Arch有一个易用的[包管理系统](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager")[Pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")，仅凭一条命令就升级整个系统。Arch还提供一个类似ports的包构建系统（[Arch Build System](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")），通过它可以轻松从源码构建和安装软件包，并用一个命令完成同步。你甚至可以用一个命令重新构建整个系统。Arch还提供[Arch User Repository](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")，它包含了数千个由用户维护的[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")脚本，配合[makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")工具，从编译到打包一气呵成。用户还能轻松构建和维护属于自己的自定义软件源。
 
@@ -95,4 +95,4 @@ Arch 开发者都是不收工资的志愿者，目前也没有通过 Arch Linux 
 
 ### 逐步抛弃 i686 支持
 
-鉴于在开发者和社区中 i686 架构的使用程度逐渐式微，我们决定[逐步抛弃对这一架构的支持](https://www.archlinux.org/news/phasing-out-i686-support/) 。
+鉴于在开发者和社区中 i686 架构的使用程度逐渐式微，我们决定从2017年11月底[抛弃对这一架构的支持](https://www.archlinux.org/news/the-end-of-i686-support/) 。

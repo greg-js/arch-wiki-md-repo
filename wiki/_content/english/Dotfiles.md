@@ -107,16 +107,17 @@ Another approach is to put machine-specific configuration into specially comment
 
 ### Confidential information
 
-Occasionally, software may keep plain-text passwords in configuration files, as opposed to hooking into a keyring. In these cases, git clean-filters may be handy to avoid accidentally commiting confidential information. E. g., the following .gitattributes file assigns a filter to the file “some-dotfile”:
+Occasionally, software may keep plain-text passwords in configuration files, as opposed to hooking into a keyring. In these cases, git clean-filters may be handy to avoid accidentally commiting confidential information. E. g., the following file assigns a filter to the file “some-dotfile”:
 
+ `.gitattributes` 
 ```
-# .gitattributes
 some-dotfile filter=remove-pass
 
 ```
 
-Whenever the file “some-dotfile” is checked into git, git will invoke the filter “remove-pass” on the file before checking it in. The filter must be defined in `.git/config`, e. g.:
+Whenever the file “some-dotfile” is checked into git, git will invoke the filter “remove-pass” on the file before checking it in. The filter must be defined in the git-configuration file, e. g.:
 
+ `.git/config` 
 ```
 [filter "remove-pass"]
 clean = "sed -e 's/^password=.*/#password=TODO/'"

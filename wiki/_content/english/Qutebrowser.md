@@ -94,6 +94,21 @@ The domain of the site has to appear as a segment in the pass path, for example:
 
 ```
 
+To further clarify, the pass-structure that is used by default should look something like this:
+
+ ` user@computer$ pass ` 
+```
+ Password Store 
+ ├── example.site1.com 
+ │   └── username 
+ ├── example.site2.com 
+ │   └── username1 
+ │   └── username2 
+
+```
+
+This means is that each website is a directory in your ~/.password-store folder. Within each website-named directory is where the files are titled username.gpg, username2.pgp, etc. and each file contains the password associated with each username for the website. For those of you migrating from Firefox, a [modified version of firefox_decrypt](https://github.com/johnabs/firefox_decrypt) should migrate things in this format.
+
 The userscript provides many options to accomodate most workflows and special circumstances (such as only wanting to insert the password or the regular method of inserting the username and password not working).
 
 ### Turn on spell checking

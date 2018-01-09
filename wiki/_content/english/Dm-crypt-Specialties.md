@@ -404,7 +404,7 @@ In this example, it is assumed that the logical volume for `/home` (lv-name `hom
 Now the logical volume is extended and the LUKS container comes next:
 
 ```
-# cryptsetup open --type luks /dev/mapper/MyStorage-homevol home
+# cryptsetup open /dev/mapper/MyStorage-homevol home
 # umount /home      # as a safety, in case it was automatically remounted
 # cryptsetup --verbose resize home
 
@@ -484,7 +484,7 @@ See [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-
 Open the container:
 
 ```
-# cryptsetup open --type luks --header header.img /dev/sdX enc
+# cryptsetup open --header header.img /dev/sdX enc
 
 ```
 

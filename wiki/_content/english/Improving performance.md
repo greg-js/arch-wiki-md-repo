@@ -25,7 +25,10 @@ This article provides information on basic system diagnostics relating to perfor
         *   [2.3.1 Mount options](#Mount_options)
             *   [2.3.1.1 Reiserfs](#Reiserfs)
     *   [2.4 Tuning kernel parameters](#Tuning_kernel_parameters)
-    *   [2.5 IO schedulers](#IO_schedulers)
+    *   [2.5 Input/output schedulers](#Input.2Foutput_schedulers)
+        *   [2.5.1 Background information](#Background_information)
+        *   [2.5.2 Kernel's I/O schedulers](#Kernel.27s_I.2FO_schedulers)
+        *   [2.5.3 Changing I/O scheduler](#Changing_I.2FO_scheduler)
     *   [2.6 Power management configuration](#Power_management_configuration)
     *   [2.7 Reduce disk reads/writes](#Reduce_disk_reads.2Fwrites)
         *   [2.7.1 Show disk writes](#Show_disk_writes)
@@ -166,77 +169,75 @@ Replace `/dev/sd**a1**` with the partition reserved for the journal, and `/dev/s
 
 There are several key tunables affecting the performance of block devices, see [sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl") for more information.
 
-### IO schedulers
+### Input/output schedulers
 
-Input/output (I/O) scheduler is a part of linux kernel responsible for deciding the order in which the block I/O operations will be submitted to storage devices.
+#### Background information
 
-A HDD has spinning disks and head that move physically to the required location. Such structure leads to following characteristics:
+The input/output *(I/O)* scheduler is the kernel component that decides in which order the block I/O operations are submitted to storage devices. Whether this is an HDD or an SSD matters because they have specificities:
 
-*   random latency is quite high, for modern HDDs it is ~10ms (ignoring a disk controller write buffer).
-*   sequential access provides much higher throughput. In this case the head needs to move less distance.
+*   An HDD has spinning disks and a head that moves physically to the required location. Therefore, random latency is quite high ranging between 3 and 12ms (whether it is a high end server drive or a laptop drive and bypassing the disk controller write buffer) while sequential access provides much higher throughput. The typical HDD throughput is about 200 I/O operations per second *(IOPS)*.
 
-The characteristics of a SSD are different. It does not have moving parts. Random access is as fast as sequential one. An SSD can handle multiple requests at the same time. Modern devices' throughput ~10K IO requests, which is higher than workload on most systems.
+*   An SSD does not have moving parts, random access is as fast as sequential one, typically under 0.1ms, and it can handle multiple concurrent requests. The typical SSD throughput is greater than 10,000 IOPS, which is more than needed in common workload situations.
 
-If we have a lot of running processes that make IO requests to different parts of storage (i.e. random access) then we can expect that a disk handles ~100 IO requests per second. Because modern systems can easily generate load much higher than 100 requests per second we have a queue of requests that have to wait for access to the storage. One way to improve throughput is to linearize access, i.e. order waiting requests by its logical address and always choose the closest request. Historically this was the first Linux IO scheduler called **elevator** scheduler.
+If there are many processes making I/O requests to different storage parts, thousands of IOPS can be generated while a typical HDD can handle only about 200 IOPS. There is a queue of requests that have to wait for access to the storage. One way to improve throughput is to linearize access: order waiting requests by their logical address and group the closest ones. Historically this was the first Linux I/O scheduler called **elevator**.
 
-One of the problems with the elevator algorithm is that it makes suffer processes with sequential access. Such processes read a block of data then process it for several microseconds then read next block and so on. The elevator scheduler does not know that the process is going to read another block nearby and, thus, moves to another request at some other location. To overcome the problem **anticipatory IO** scheduler was added. For synchronous requests this algorithm waits for a short amount of time before moving to another request.
+One issue with the elevator algorithm is that it is not optimal for a process doing sequential access: reading a block of data, processing it for several microseconds then reading next block and so on. The elevator scheduler does not know that the process is about to read another block nearby and, thus, moves to another request at some other location. The **anticipatory** I/O scheduler overcomes the problem: it pauses for a few milliseconds before dealing with another request.
 
-While these schedulers try to improve total throughput they also might leave some unlucky requests waiting for a very long time. As an example, imagine the majority of processes make requests at the beginning of storage space while an unlucky process makes a request at the other end of storage. So developers tried to make the algorithm more fair and the **deadline** scheduler was added. It has a queue ordered by address (the same as elevator). If some request sits in this queue for a long time then it moves to an "expired" queue ordered by expire time. The scheduler checks the expire queue first and processes requests from there and only then moves to elevator queue. It is important to understand that this algorithm sacrifices total throughput for fairness.
+While these schedulers try to improve total throughput, they might leave some unlucky requests waiting for a very long time. As an example, imagine the majority of processes make requests at the beginning of the storage space while an unlucky process makes a request at the other end of storage. To improve fairness, the **deadline** algorithm was developed. It has a queue ordered by address, similar to the elevator, but if some request sits in this queue for too long then it moves to an "expired" queue ordered by expire time. The scheduler checks the expire queue first and processes requests from there and only then moves to the elevator queue. Note that this fairness has a negative impact on overall throughput.
 
-CFQ aggregates all ideas from above and adds `cgroup` support that allows to reserve some amount of IO to a specific `cgroup`. It is useful on shared (and cloud) hosting - users who paid for 20 IO/s want to get their share if needed.
+#### Kernel's I/O schedulers
 
-The official Linux kernel supports the following schedulers for storage disk IO:
+The official Linux kernel supports several I/O schedulers for storage disk, they can be grouped into two categories: the single-queue and the multi-queue frameworks.
 
-*   [CFQ](https://en.wikipedia.org/wiki/CFQ "w:CFQ")
-*   [NOOP](https://en.wikipedia.org/wiki/NOOP_scheduler "w:NOOP scheduler")
-*   [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "w:Deadline scheduler")
+*   The **single-queue schedulers** are available by default with the kernel:
+    *   [NOOP](https://en.wikipedia.org/wiki/NOOP_scheduler "w:NOOP scheduler") is the simplest scheduler, it inserts all incoming I/O requests into a simple FIFO queue and implements request merging.
+    *   [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "w:Deadline scheduler") imposes a deadline on all I/O operations to prevent starvation of requests.
+    *   [Completely Fair Queuing *(CFQ)*](https://en.wikipedia.org/wiki/CFQ "w:CFQ") aggregates all ideas from above and adds [cgroup](/index.php/Cgroup "Cgroup") support that allows to reserve some amount of I/O to a specific collection of processes. It is useful for shared and cloud hosting: users who paid for 20 IOPS want to get their share if needed.
+*   The **multi-queue scheduler** mode can be activated at boot time as described in [#Changing I/O scheduler](#Changing_I.2FO_scheduler). This [Multi-Queue Block I/O Queuing Mechanism *(blk-mq)*](https://www.thomas-krenn.com/en/wiki/Linux_Multi-Queue_Block_IO_Queueing_Mechanism_(blk-mq)) maps I/O queries to multiple queues, the tasks are distributed across threads and therefore CPU cores. Within this framework the following schedulers are available:
+    *   mq-deadline is the adaptation of the deadline scheduler to multi-threading.
+    *   [Kyber](https://lwn.net/Articles/720675/) is a scheduler for fast devices which controls latency by throttling queue depths using scalable techniques.
+    *   [Budget Fair Queuing *(BFQ)*](https://algo.ing.unimo.it/people/paolo/disk_sched/) is a relatively complex scheduler, it assigns a budget to each process and uses heuristics. It is adapted to rotational drives and slow SSDs while its high per-operation overhead can slow down fast SSDs.
+    *   None, no queuing algorithm is applied.
 
-[Multi-Queue Block IO Queuing Mechanism](https://www.thomas-krenn.com/en/wiki/Linux_Multi-Queue_Block_IO_Queueing_Mechanism_(blk-mq)) (blk-mq) leverages a CPU with multiple cores to map I/O queries to multiple queues. The tasks are distributed across multiple threads and therefore to multiple CPU cores (per-core software queues) and can speed up read/write operations vs. traditional I/O schedulers.
+**Warning:** The multi-queue scheduler framework and its related algorithms are under active development, the state of some issues can be seen in the [bfq forum](https://groups.google.com/forum/#!forum/bfq-iosched).
 
-Enabling blk_mq disables non blk_mq schedulers above, but enables blk_mq shedulers:
+**Note:** The best choice of scheduler depends on both the device and the exact nature of the workload. Also, the throughput in MB/s is not the only measure of performance: deadline or fairness deteriorate the overall throughput but are required to improve system reactivity in some situations.
 
-*   MQ Deadline - blk_mq adaptation of the legacy deadline scheduler
-*   [Kyber](https://lwn.net/Articles/720675/) - controls latency by throttling queue depths using scalable techniques
-*   [BFQ](https://algo.ing.unimo.it/people/paolo/disk_sched/) - proportional-share I/O scheduler, with some extra low-latency capabilities
-*   none
+#### Changing I/O scheduler
 
-To enable blk-mq add following to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
+**Note:** The block multi-queue *(blk-mq)* mode must be enabled at boot time to be able to access the latest *BFQ* and *Kyber* schedulers. As of official Arch Kernel 4.12 and above, this is done by adding `scsi_mod.use_blk_mq=1` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). The single-queue schedulers are no longer available once in this mode.
 
+To see the available schedulers for a device and the active one, in brackets:
+
+ `$ cat /sys/block/***sda***/queue/scheduler`  `mq-deadline kyber [bfq] none` 
+
+or for all devices:
+
+ `$ cat /sys/block/**sd***/queue/scheduler` 
 ```
-scsi_mod.use_blk_mq=1
-
-```
-
-To see available schedulers for device:
-
- `$ cat /sys/block/**sda**/queue/scheduler` 
-```
-noop deadline [cfq]
-
-```
-
-Active scheduler is enclosed in brackets. To change active scheduler for device:
-
-```
-# echo **deadline** > /sys/block/**sda**/queue/scheduler
-
+mq-deadline kyber [bfq] none
+[mq-deadline] kyber bfq none
+mq-deadline kyber [bfq] none
 ```
 
-For change to persist across reboots, create [udev](/index.php/Udev "Udev") rule instead:
+To change the active I/O scheduler to *bfq* for device *sda*, use:
 
- `/etc/udev/rules.d/60-schedulers.rules` 
 ```
-ACTION=="add|change", KERNEL=="sd*[!0-9]|sr*", ATTR{queue/scheduler}="**deadline**"
+# echo ***bfq*** > /sys/block/***sda***/queue/scheduler
 
 ```
 
-Save it, and reload and trigger udev rules:
+Higher I/O performance for SSD is achieved with *mq-deadline* while HDD benefit from *BFQ*. The process to change I/O scheduler, depending on whether the disk is rotating or not can be automated and persist across reboots with the following [udev](/index.php/Udev "Udev") rule:
 
+ `/etc/udev/rules.d/60-ioschedulers.rules` 
 ```
-# udevadm control --reload
-# udevadm trigger
+# set scheduler for non-rotating disks
+ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="mq-deadline"
+# set scheduler for rotating disks
+ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", ATTR{queue/scheduler}="bfq"
+```
 
-```
+Save it, then reboot or force [reload/trigger](/index.php/Udev#Loading_new_rules "Udev") of the rules.
 
 ### Power management configuration
 

@@ -15,7 +15,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [snapd](https://www.archlinux.org/packages/?name=snapd) from the official repositories.
+[Install](/index.php/Install "Install") [snapd](https://aur.archlinux.org/packages/snapd/) from the official repositories.
 
 Installing it will install the `snapd` daemon as well as *snap-confine*, which mounts and launches snap packages.
 

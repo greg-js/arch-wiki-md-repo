@@ -24,13 +24,14 @@ The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Deskto
     *   [2.6 Configuration GUI](#Configuration_GUI)
     *   [2.7 DPI settings](#DPI_settings)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Hangs after login](#Hangs_after_login)
-    *   [3.2 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
-    *   [3.3 One or more users do not show up on the greeter](#One_or_more_users_do_not_show_up_on_the_greeter)
-    *   [3.4 SDDM loads only US keyboard layout](#SDDM_loads_only_US_keyboard_layout)
-    *   [3.5 No user Icon](#No_user_Icon)
-    *   [3.6 Screen resolution is too low](#Screen_resolution_is_too_low)
-    *   [3.7 SDDM takes long time to load when your home directory is encrypted](#SDDM_takes_long_time_to_load_when_your_home_directory_is_encrypted)
+    *   [3.1 SDDM still runs on Xorg](#SDDM_still_runs_on_Xorg)
+    *   [3.2 Hangs after login](#Hangs_after_login)
+    *   [3.3 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
+    *   [3.4 One or more users do not show up on the greeter](#One_or_more_users_do_not_show_up_on_the_greeter)
+    *   [3.5 SDDM loads only US keyboard layout](#SDDM_loads_only_US_keyboard_layout)
+    *   [3.6 No user Icon](#No_user_Icon)
+    *   [3.7 Screen resolution is too low](#Screen_resolution_is_too_low)
+    *   [3.8 SDDM takes long time to load when your home directory is encrypted](#SDDM_takes_long_time_to_load_when_your_home_directory_is_encrypted)
 
 ## Installation
 
@@ -152,6 +153,10 @@ ServerArguments=-nolisten tcp -dpi 94
 ```
 
 ## Troubleshooting
+
+### SDDM still runs on Xorg
+
+SDDM currently cannot run on the Wayland windowing system [because it still does not support this feature](https://github.com/sddm/sddm/issues/440). Having a full Wayland system is still not possible with SSDM. For now, SDDM can still be considered as a QML based display manager for X11 and Wayland **sessions** rather than a display manager for X11 and Wayland windowing systems.
 
 ### Hangs after login
 

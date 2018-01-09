@@ -30,16 +30,17 @@ Related articles
     *   [4.3 CSMT patch](#CSMT_patch)
     *   [4.4 Unregister existing Wine file associations](#Unregister_existing_Wine_file_associations)
     *   [4.5 Prevent new Wine file associations](#Prevent_new_Wine_file_associations)
-    *   [4.6 Dual Head with different resolutions](#Dual_Head_with_different_resolutions)
-    *   [4.7 Changing the language](#Changing_the_language)
-    *   [4.8 Using Wine as an interpreter for Win16/Win32 binaries](#Using_Wine_as_an_interpreter_for_Win16.2FWin32_binaries)
-    *   [4.9 16-bit programs](#16-bit_programs)
-    *   [4.10 Burning optical media](#Burning_optical_media)
-    *   [4.11 Proper mounting of optical media images](#Proper_mounting_of_optical_media_images)
-    *   [4.12 Force OpenGL mode in games](#Force_OpenGL_mode_in_games)
-    *   [4.13 Show FPS overlay in games](#Show_FPS_overlay_in_games)
-    *   [4.14 Microsoft Office](#Microsoft_Office)
-    *   [4.15 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
+    *   [4.6 Execute Windows binaries with wine implicitly](#Execute_Windows_binaries_with_wine_implicitly)
+    *   [4.7 Dual Head with different resolutions](#Dual_Head_with_different_resolutions)
+    *   [4.8 Changing the language](#Changing_the_language)
+    *   [4.9 Using Wine as an interpreter for Win16/Win32 binaries](#Using_Wine_as_an_interpreter_for_Win16.2FWin32_binaries)
+    *   [4.10 16-bit programs](#16-bit_programs)
+    *   [4.11 Burning optical media](#Burning_optical_media)
+    *   [4.12 Proper mounting of optical media images](#Proper_mounting_of_optical_media_images)
+    *   [4.13 Force OpenGL mode in games](#Force_OpenGL_mode_in_games)
+    *   [4.14 Show FPS overlay in games](#Show_FPS_overlay_in_games)
+    *   [4.15 Microsoft Office](#Microsoft_Office)
+    *   [4.16 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
 *   [5 Third-party applications](#Third-party_applications)
 *   [6 See also](#See_also)
 
@@ -372,6 +373,15 @@ $ export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 
 ```
 
+### Execute Windows binaries with wine implicitly
+
+The wine package installs a binfmt file which will allow you to run Windows programs directly (e.g. `./myprogram.exe` will launch as if you had typed `wine ./myprogram.exe`). All you have to do in order to use this is to start the `systemd-binfmt` service after installing the wine package:
+
+```
+# systemctl start systemd-binfmt
+
+```
+
 ### Dual Head with different resolutions
 
 If you have issues with dual-head setups and different display resolutions you are probably missing [lib32-libxrandr](https://www.archlinux.org/packages/?name=lib32-libxrandr).
@@ -380,7 +390,7 @@ Also installing [lib32-libxinerama](https://www.archlinux.org/packages/?name=lib
 
 ### Changing the language
 
-Some programs may not offer a language selection, they will guess the desired language upon the sytem locales. Wine will transfer the current environment (including the locales) to the application, so it should work out of the box. If you want to force a program to run in a specific locale (which is fully [generated](/index.php/Locale "Locale") on your system), you can call Wine with the following setting:
+Some programs may not offer a language selection, they will guess the desired language upon the system locales. Wine will transfer the current environment (including the locales) to the application, so it should work out of the box. If you want to force a program to run in a specific locale (which is fully [generated](/index.php/Locale "Locale") on your system), you can call Wine with the following setting:
 
 ```
 $ LC_ALL=*xx_XX.encoding* wine */path/to/program*

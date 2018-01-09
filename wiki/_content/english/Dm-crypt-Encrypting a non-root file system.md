@@ -28,7 +28,7 @@ First make sure the partition is empty (has no file system attached to it). Dele
 Then setup the LUKS header with:
 
 ```
-# cryptsetup *options* luksFormat *device*
+# cryptsetup *options* luksFormat --type luks2 *device*
 
 ```
 
@@ -57,7 +57,7 @@ Mount the file system to `/home`, or if it should be accessible to only one user
 To mount the partition:
 
 ```
-# cryptsetup --type luks open *device* *name*
+# cryptsetup open *device* *name*
 # mount -t *fstype* /dev/mapper/*name* /mnt/home
 
 ```
@@ -140,7 +140,7 @@ To mount the container again:
 
 ```
 # losetup /dev/loop0 /bigsecret
-# cryptsetup --type luks open /dev/loop0 secret
+# cryptsetup open /dev/loop0 secret
 # mount -t ext4 /dev/mapper/secret /mnt/secret
 
 ```

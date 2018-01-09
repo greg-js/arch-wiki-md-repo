@@ -16,15 +16,15 @@ Related articles
         *   [2.1.3 PATH](#PATH)
         *   [2.1.4 pam_environment](#pam_environment)
     *   [2.2 Automatic start-up of systemd user instances](#Automatic_start-up_of_systemd_user_instances)
-*   [3 Xorg and systemd](#Xorg_and_systemd)
-    *   [3.1 Automatic login into Xorg without display manager](#Automatic_login_into_Xorg_without_display_manager)
-    *   [3.2 Xorg as a systemd user service](#Xorg_as_a_systemd_user_service)
-*   [4 Writing user units](#Writing_user_units)
-    *   [4.1 Example](#Example)
-    *   [4.2 Example with variables](#Example_with_variables)
-    *   [4.3 Note about X applications](#Note_about_X_applications)
-    *   [4.4 Reading the journal](#Reading_the_journal)
-*   [5 Temporary files](#Temporary_files)
+*   [3 Writing user units](#Writing_user_units)
+    *   [3.1 Example](#Example)
+    *   [3.2 Example with variables](#Example_with_variables)
+    *   [3.3 Note about X applications](#Note_about_X_applications)
+    *   [3.4 Reading the journal](#Reading_the_journal)
+*   [4 Temporary files](#Temporary_files)
+*   [5 Xorg and systemd](#Xorg_and_systemd)
+    *   [5.1 Automatic login into Xorg without display manager](#Automatic_login_into_Xorg_without_display_manager)
+    *   [5.2 Xorg as a systemd user service](#Xorg_as_a_systemd_user_service)
 *   [6 Some use cases](#Some_use_cases)
     *   [6.1 Persistent terminal multiplexer](#Persistent_terminal_multiplexer)
     *   [6.2 Window manager](#Window_manager)
@@ -113,6 +113,84 @@ The systemd user instance is started after the first login of a user and killed 
 
 **Warning:** systemd services are **not** sessions, they run outside of *logind*. Do not use lingering to enable automatic login as it will [break the session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
 
+## Writing user units
+
+See [systemd#Writing unit files](/index.php/Systemd#Writing_unit_files "Systemd") for general information about writing systemd unit files.
+
+### Example
+
+The following is an example of a user version of the mpd service.
+
+ `~/.config/systemd/user/mpd.service` 
+```
+[Unit]
+Description=Music Player Daemon
+
+[Service]
+ExecStart=/usr/bin/mpd --no-daemon
+
+[Install]
+WantedBy=default.target
+
+```
+
+### Example with variables
+
+The following is an example of a user version of `sickbeard.service`, which takes into account variable home directories where [SickBeard](/index.php/SickBeard "SickBeard") can find certain files:
+
+ `~/.config/systemd/user/sickbeard.service` 
+```
+[Unit]
+Description=SickBeard Daemon
+
+[Service]
+ExecStart=/usr/bin/env python2 /opt/sickbeard/SickBeard.py --config %h/.sickbeard/config.ini --datadir %h/.sickbeard
+
+[Install]
+WantedBy=default.target
+
+```
+
+As detailed in [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5), the `%h` variable is replaced by the home directory of the user running the service. There are other variables that can be taken into account in the [systemd](/index.php/Systemd "Systemd") manpages.
+
+### Note about X applications
+
+Most X apps need a `DISPLAY` variable to run. See [#DISPLAY and XAUTHORITY](#DISPLAY_and_XAUTHORITY) for how to this variable is set for the entire systemd user instance.
+
+### Reading the journal
+
+The journal for the user can be read using the analogous command:
+
+```
+$ journalctl --user
+
+```
+
+To specify a unit, one can use
+
+```
+$ journalctl --user-unit myunit.service
+
+```
+
+Or, equivalently:
+
+```
+$ journalctl --user -u myunit.service
+
+```
+
+## Temporary files
+
+*systemd-tmpfiles* allows users to manage custom volatile and temporary files and directories just like in the system-wide way (see [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd")). User-specific configuration files are read from `~/.config/user-tmpfiles.d/` and `~/.local/share/user-tmpfiles.d/`, in that order. For this functionality to be used, it is needed to enable the necessary systemd user units for your user:
+
+```
+$ systemctl --user enable systemd-tmpfiles-setup.service systemd-tmpfiles-clean.timer
+
+```
+
+The syntax of the configuration files is the same than those used system-wide. See the [systemd-tmpfiles(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8) and [tmpfiles.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) man pages for details.
+
 ## Xorg and systemd
 
 There are several ways to run xorg within systemd units. Below there are two options, either by starting a new user session with an xorg process, or by launching xorg from a systemd user service.
@@ -200,82 +278,6 @@ Now running any X application will launch xorg on virtual terminal 2 automatical
 The environment variable `XDG_VTNR` can be set in the systemd environment from `.bash_profile`, and then one could start any X application, including a window manager, as a systemd unit that depends on `xorg@0.socket`.
 
 **Warning:** Currently running a window manager as a user service means it runs outside of a session with the problems this may bring: [break the session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting"). However, it seems that systemd developers intend to make something like this possible. See [[5]](https://mail.gnome.org/archives/desktop-devel-list/2014-January/msg00079.html) and [[6]](http://lists.freedesktop.org/archives/systemd-devel/2014-March/017552.html)
-
-## Writing user units
-
-### Example
-
-The following is an example of a user version of the mpd service.
-
- `~/.config/systemd/user/mpd.service` 
-```
-[Unit]
-Description=Music Player Daemon
-
-[Service]
-ExecStart=/usr/bin/mpd --no-daemon
-
-[Install]
-WantedBy=default.target
-
-```
-
-### Example with variables
-
-The following is an example of a user version of `sickbeard.service`, which takes into account variable home directories where [SickBeard](/index.php/SickBeard "SickBeard") can find certain files:
-
- `~/.config/systemd/user/sickbeard.service` 
-```
-[Unit]
-Description=SickBeard Daemon
-
-[Service]
-ExecStart=/usr/bin/env python2 /opt/sickbeard/SickBeard.py --config %h/.sickbeard/config.ini --datadir %h/.sickbeard
-
-[Install]
-WantedBy=default.target
-
-```
-
-As detailed in [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5), the `%h` variable is replaced by the home directory of the user running the service. There are other variables that can be taken into account in the [systemd](/index.php/Systemd "Systemd") manpages.
-
-### Note about X applications
-
-Most X apps need a `DISPLAY` variable to run. See [#DISPLAY and XAUTHORITY](#DISPLAY_and_XAUTHORITY) for how to this variable is set for the entire systemd user instance.
-
-### Reading the journal
-
-The journal for the user can be read using the analogous command:
-
-```
-$ journalctl --user
-
-```
-
-To specify a unit, one can use
-
-```
-$ journalctl --user-unit myunit.service
-
-```
-
-Or, equivalently:
-
-```
-$ journalctl --user -u myunit.service
-
-```
-
-## Temporary files
-
-*systemd-tmpfiles* allows users to manage custom volatile and temporary files and directories just like in the system-wide way (see [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd")). User-specific configuration files are read from `~/.config/user-tmpfiles.d/` and `~/.local/share/user-tmpfiles.d/`, in that order. For this functionality to be used, it is needed to enable the necessary systemd user units for your user:
-
-```
-$ systemctl --user enable systemd-tmpfiles-setup.service systemd-tmpfiles-clean.timer
-
-```
-
-The syntax of the configuration files is the same than those used system-wide. See the [systemd-tmpfiles(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8) and [tmpfiles.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) man pages for details.
 
 ## Some use cases
 

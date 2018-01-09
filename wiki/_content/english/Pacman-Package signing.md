@@ -107,7 +107,7 @@ This method can be used, for example, to add your own key to the *pacman* keyrin
 
 First, get the **key ID** (`*keyid*`) from its owner. Then add it to the keyring using one of the two methods:
 
-1.  If the key is found on a keyserver, import it with: `# pacman-key -r *keyid*` 
+1.  If the key is found on a keyserver, import it with: `# pacman-key --recv-keys *keyid*` 
 2.  If otherwise a link to a keyfile is provided, download it and then run: `# pacman-key --add */path/to/downloaded/keyfile*` 
 
 It is recommended to verify the fingerprint, as with any master key or any other key you are going to sign:
@@ -117,7 +117,7 @@ $ pacman-key --finger *keyid*
 
 ```
 
-Finally, you need to locally sign the imported key:
+Finally, you must locally sign the imported key:
 
 ```
 # pacman-key --lsign-key *keyid*

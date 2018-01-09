@@ -1,4 +1,4 @@
-[Pacserve](http://xyne.archlinux.ca/projects/pacserve/) allows to easily share pacman packages between computers. This is very useful, if you have a slow internet connection, but multiple machines running Arch Linux.
+[Pacserve](http://xyne.archlinux.ca/projects/pacserve/) allows to easily share pacman packages between computers. This is very useful if you have a slow internet connection but multiple machines running Arch Linux.
 
 ## Contents
 

@@ -12,6 +12,7 @@
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Unreachable Server](#Unreachable_Server)
     *   [3.2 "Bad Key"](#.22Bad_Key.22)
+    *   [3.3 taskd.service fails to start on boot](#taskd.service_fails_to_start_on_boot)
 
 ## Server
 
@@ -106,3 +107,23 @@ Should the server be unreachable but running, it bound itself to an IPv6 address
 ### "Bad Key"
 
 If the server responds with a "Bad Key" error even though you just generated them, check the permissions of the created folders (everything in `/var/lib/taskd/` and subfolders). taskd doesn't set it's own uid / gid, so those folders must be manually chowned to taskd.
+
+### taskd.service fails to start on boot
+
+In case your systemd unit for taskd fails to start on boot you can add a delay for this particular unit by adding a systemd timer.
+
+Create `/etc/systemd/system/taskd.timer` file. It may look like this:
+
+```
+[Unit]
+Description=Start taskd.service after fixed amount of time
+
+[Timer]
+OnStartupSec=10
+Unit=taskd.service
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Then disable `taskd.service` and enable `taskd.timer`

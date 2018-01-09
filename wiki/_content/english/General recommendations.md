@@ -260,7 +260,7 @@ Owners of advanced or unusual mice may find that not all mouse buttons are recog
 
 ### Laptop touchpads
 
-Many laptops use [Synaptics](https://www.synaptics.com/) or [ALPS](http://www.alps.com/) "touchpad" pointing devices. These, and several other touchpad models, use the Synaptics input driver; see [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") for installation and configuration details.
+Many laptops use [Synaptics](https://www.synaptics.com/) or [ALPS](http://www.alps.com/) "touchpad" pointing devices. For these, and several other touchpad models, you can use either the Synaptics input driver or libinput; see [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") and [libinput](/index.php/Libinput "Libinput") for installation and configuration details.
 
 ### TrackPoints
 

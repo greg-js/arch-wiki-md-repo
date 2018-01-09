@@ -1,10 +1,23 @@
 ## Reproducible Builds
 
-A list of reproducible build meetings.
+A list of reproducible build meetings and work in progress documentation.
 
 [Reproducible build results](https://tests.reproducible-builds.org/archlinux/archlinux.html)
 
-### Agenda Meeting XX-01-2018
+### To-Do List
+
+*   Arch Linux Archive cleanup script
+
+    	A script to remove only packages from the Archive which are not required to create a reproducible build of the current repository
+
+*   Arch Linux Reproducible script
+
+*   A script to locally reproduce an installed package
+
+*   Resolve reproducible build issues
+*   Documentation about reproducing a build
+
+### Agenda Meeting 10-01-2018
 
 *   UTF-8 failures with Python.
 
@@ -32,9 +45,11 @@ A list of reproducible build meetings.
 
     	Sangy was working on this if I recall correctly, what is the status?
 
+    	Write documentation what this script should do. (Specification)
+
 *   Killed builds
 
-    	Someone should investigate this, how do we reproduce this locally?
+    	Someone should investigate this, how do we reproduce this locally? Hints?
 
 *   SSL verification issues
 

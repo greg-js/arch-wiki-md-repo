@@ -31,7 +31,7 @@ You can manually invoke kexec using:
 
 **Warning:** Running `kexec -e` directly will not unmount active filesystems or terminate any running services gracefully.
 
-It is also possible to load kernel manually and then let systemd handle service shutdown and kexec for you:
+It is also possible to load kernel manually and then let systemd handle service shutdown and kexec for you. This, however, requires the bootloader to be [Systemd-boot](/index.php/Systemd-boot "Systemd-boot").
 
 ```
 # kexec -l /boot/vmlinuz-linux --initrd=/boot/initramfs-linux.img --reuse-cmdline

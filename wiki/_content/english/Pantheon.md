@@ -1,4 +1,4 @@
-[Pantheon](https://bbs.archlinux.org/viewtopic.php?id=152930) is the default desktop environment originally created for the [elementary OS](http://elementary.io/) distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with [GNOME](/index.php/GNOME "GNOME") Shell and OSX.
+[Pantheon](https://bbs.archlinux.org/viewtopic.php?id=152930) is the default desktop environment originally created for the [elementary OS](http://elementary.io/) distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with [GNOME](/index.php/GNOME "GNOME") Shell and macOS.
 
 ## Contents
 
@@ -59,7 +59,7 @@ For the minimal Pantheon shell, install [pantheon-session-git](https://aur.archl
 *   [gala-git](https://aur.archlinux.org/packages/gala-git/): Window and composting manager
 *   [wingpanel-git](https://aur.archlinux.org/packages/wingpanel-git/): Top panel (launcher, clock, indicators)
 *   [pantheon-applications-menu-git](https://aur.archlinux.org/packages/pantheon-applications-menu-git/): Application launcher formerly known as "Slingshot"
-*   [plank](https://www.archlinux.org/packages/?name=plank): OSX-style Dock
+*   [plank](https://www.archlinux.org/packages/?name=plank): macOS-style Dock
 
 ### Services and Configuration
 

@@ -1,3 +1,9 @@
+Related articles
+
+*   [Security](/index.php/Security "Security")
+*   [SELinux](/index.php/SELinux "SELinux")
+*   [TOMOYO Linux](/index.php/TOMOYO_Linux "TOMOYO Linux")
+
 [AppArmor](https://en.wikipedia.org/wiki/AppArmor "wikipedia:AppArmor") is a [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") (MAC) system, implemented upon the [Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") (LSM).
 
 AppArmor, like most other LSMs, supplements rather than replaces the default Discretionary Access Control (DAC). As such it's impossible to grant a process more privileges than it had in the first place.
@@ -30,7 +36,7 @@ Every breach of policy triggers a message in the system log, and AppArmor can be
 
 ### Kernel
 
-**Note:** The highly disputed user namespace (`CONFIG_USER_NS=Y`) isn't set in the [kernel](/index.php/Kernel "Kernel") configuration, but may bring additional functionality to AppArmor. See [FS#36969](https://bugs.archlinux.org/task/36969) for details on user namespaces.
+[Install](/index.php/Install "Install") [linux-hardened-apparmor](https://aur.archlinux.org/packages/linux-hardened-apparmor/) or compile the kernel yourself.
 
 When [compiling the kernel](/index.php/Kernels#Compilation "Kernels"), it is required to at least set the following options:
 
@@ -54,13 +60,13 @@ The userspace tools and libraries to control AppArmor are supplied by the [appar
 
 The package is a split package which consists of following sub-packages:
 
-*   apparmor (meta package)
-*   apparmor-libapparmor
-*   apparmor-utils
-*   apparmor-parser
-*   apparmor-profiles
-*   apparmor-pam
-*   apparmor-vim
+*   [apparmor](https://aur.archlinux.org/packages/apparmor/) (meta package)
+*   [apparmor-libapparmor](https://aur.archlinux.org/packages/apparmor-libapparmor/)
+*   [apparmor-utils](https://aur.archlinux.org/packages/apparmor-utils/)
+*   [apparmor-parser](https://aur.archlinux.org/packages/apparmor-parser/)
+*   [apparmor-profiles](https://aur.archlinux.org/packages/apparmor-profiles/)
+*   [apparmor-pam](https://aur.archlinux.org/packages/apparmor-pam/)
+*   [apparmor-vim](https://aur.archlinux.org/packages/apparmor-vim/)
 
 To load all AppArmor profiles on startup, [enable](/index.php/Enable "Enable") `apparmor.service`.
 
@@ -86,7 +92,7 @@ Alternatively you may choose to disable the kernel modules required by AppArmor 
 
 ### Auditing and generating profiles
 
-To create new profiles using `aa-genprof`, `auditd.service` from the package [audit](https://www.archlinux.org/packages/?name=audit) must be running. This is because Arch Linux adopted systemd and doesn't do kernel logging to file by default. Apparmor can grab kernel audit logs from the userspace auditd daemon, allowing you to build a profile. To get kernel audit logs, you'll need to have rules in place to monitor the desired application. Most often a basic rule configured with [auditctl(8)](http://man7.org/linux/man-pages/man8/auditctl.8.html) will suffice:
+To create new profiles using `aa-genprof`, `auditd.service` from the package [audit](https://www.archlinux.org/packages/?name=audit) must be running. This is because Arch Linux adopted systemd and doesn't do kernel logging to file by default. Apparmor can grab kernel audit logs from the userspace auditd daemon, allowing you to build a profile. To get kernel audit logs, you'll need to have rules in place to monitor the desired application. Most often a basic rule configured with [auditctl(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/auditctl.8) will suffice:
 
 ```
 # auditctl -a exit,always -F arch=b64 -S all -F path=/usr/bin/chromium -F key=MonitorChromium
@@ -177,8 +183,8 @@ To circumvent some of those problems AppArmor can cache profiles in `/etc/apparm
 *   [Ubuntu Tutorial](http://ubuntuforums.org/showthread.php?t=1008906) — General overview of available utilities and profile creation
 *   [Ubuntu Wiki](https://help.ubuntu.com/community/AppArmor) — Basic command overview
 *   [AppArmor Versions](http://wiki.apparmor.net/index.php/AppArmor_versions) — Version overview and links to the respective release notes
-*   [apparmor.d(5)](http://manpages.ubuntu.com/manpages/oneiric/man5/apparmor.d.5.html) — Structure of the AppArmor configuration directory
-*   [apparmor_parse(8)](http://manpages.ubuntu.com/manpages/oneiric/man8/apparmor_parser.8.html) — The most fundamental AppArmor utility to load, unload, cache and stat profiles
+*   [apparmor.d(5)](http://manpages.ubuntu.com/manpages/artful/man5/apparmor.d.5.html) — Structure of the AppArmor configuration directory
+*   [apparmor_parse(8)](http://manpages.ubuntu.com/manpages/artful/man8/apparmor_parser.8.html) — The most fundamental AppArmor utility to load, unload, cache and stat profiles
 *   [Kernel Interfaces](http://wiki.apparmor.net/index.php/Kernel_interfaces) — Low level interfaces to the AppArmor kernel module
 *   [Apparmor Profile Migration](https://wiki.ubuntu.com/ApparmorProfileMigration) — Emergence of profiles
 *   [wikipedia:Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") — Linux kernel module on which basis AppArmor is build upon

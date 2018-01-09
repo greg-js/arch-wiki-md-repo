@@ -31,8 +31,8 @@ When encrypting a system it is necessary to regenerate the initial ramdisk after
 | busybox | systemd | Use case |
 | `encrypt` | `sd-encrypt` | Always needed when encrypting the root partition, or a partition that needs to be mounted *before* root. It is not needed in all the other cases, as system initialization scripts like `/etc/crypttab` take care of unlocking other encrypted partitions. This hook must be placed *after* the `udev` or `systemd` hook. |
 | `keyboard` | Needed to make keyboards work in early userspace. |
-| `keymap` | `sd-vconsole` | Provides support for non-US keymaps for typing encryption passwords; it must come *before* the `encrypt` hook. Set your keymap in [`/etc/vconsole.conf`](/index.php/Keymap#Persistent_configuration "Keymap"). |
-| `consolefont` | Loads an alternative console font in early userspace. Set your font in [`/etc/vconsole.conf`](/index.php/Fonts#Persistent_configuration "Fonts"). |
+| `keymap` | `sd-vconsole` | Provides support for non-US keymaps for typing encryption passwords; it must come *before* the `encrypt` hook. Set your keymap in `/etc/vconsole.conf`, see [Fonts#Persistent configuration](/index.php/Fonts#Persistent_configuration "Fonts"). |
+| `consolefont` | Loads an alternative console font in early userspace. Set your font in `/etc/vconsole.conf`, see [Fonts#Persistent configuration](/index.php/Fonts#Persistent_configuration "Fonts"). |
 
 [Other hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") needed should be clear from other manual steps followed during the installation of the system.
 

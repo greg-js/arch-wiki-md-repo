@@ -62,12 +62,6 @@ Some programs can add extra functionality to Files. Here are a few packages in t
 
 	[http://projects.flogisoft.com/nautilus-terminal/](http://projects.flogisoft.com/nautilus-terminal/) || [nautilus-terminal](https://www.archlinux.org/packages/?name=nautilus-terminal)
 
-*   **Open in Terminal** — A Files plugin for opening terminals in arbitrary local paths
-
-	[http://ftp.gnome.org/pub/GNOME/sources/nautilus-open-terminal](http://ftp.gnome.org/pub/GNOME/sources/nautilus-open-terminal) || [nautilus-open-terminal](https://www.archlinux.org/packages/?name=nautilus-open-terminal)
-
-**Tip:** This plugin is not needed if you have [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) installed: since version 3.10.0-2 it provides the extension `/usr/lib/nautilus/extensions-3.0/libterminal-nautilus.so` which creates an entry in Files' context menu for opening the selected directory in a new terminal - see [this commit](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/gnome-terminal&id=b143484f73a75663abacb69435fd663c348861d2).
-
 *   **Send to Menu** — Files context menu for sending files.
 
 	[http://download.gnome.org/sources/nautilus-sendto/](http://download.gnome.org/sources/nautilus-sendto/) || [nautilus-sendto](https://www.archlinux.org/packages/?name=nautilus-sendto)

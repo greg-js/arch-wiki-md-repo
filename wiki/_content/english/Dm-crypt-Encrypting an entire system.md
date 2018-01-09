@@ -215,7 +215,7 @@ Then create the needed partitions, at least one for `/` (e.g. `/dev/sdaX`) and `
 The following commands create and mount the encrypted root partition. They correspond to the procedure described in detail in [Dm-crypt/Encrypting a non-root file system#Partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system") (which, despite the title, *can* be applied to root partitions, as long as [mkinitcpio](#Configuring_mkinitcpio) and the [boot loader](#Configuring_the_boot_loader) are correctly configured). If you want to use particular non-default encryption options (e.g. cipher, key length), see the [encryption options](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") before executing the first command:
 
 ```
-# cryptsetup -y -v luksFormat /dev/sdaX
+# cryptsetup -y -v luksFormat --type luks2 /dev/sdaX
 # cryptsetup open /dev/sdaX cryptroot
 # mkfs.ext4 /dev/mapper/cryptroot
 # mount /dev/mapper/cryptroot /mnt
@@ -294,10 +294,11 @@ The disk layout in this example is:
 
 **Warning:** This method does not allow you to span the logical volumes over multiple disks easily; see [Dm-crypt/Specialties#Modifying the encrypt hook for multiple partitions](/index.php/Dm-crypt/Specialties#Modifying_the_encrypt_hook_for_multiple_partitions "Dm-crypt/Specialties").
 
-**Tip:** Two variants of this setup:
+**Tip:** Three variants of this setup:
 
 *   Instructions at [dm-crypt/Specialties#Encrypted system using a detached LUKS header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") use this setup with a detached LUKS header on a USB device to achieve a two factor authentication with it.
 *   Instructions at [Pavel Kogan's blog](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/) show how to encrypt the `/boot` partition while keeping it on the main LUKS partition when using GRUB.
+*   Instructions at [Dm-crypt/Specialties#Encrypted_.2Fboot_and_a_detached_LUKS_header_on_USB](/index.php/Dm-crypt/Specialties#Encrypted_.2Fboot_and_a_detached_LUKS_header_on_USB "Dm-crypt/Specialties") use this setup with a detached LUKS header, encrypted `/boot` partition, and encrypted keyfile all on a USB device.
 
 ### Preparing the disk
 
@@ -312,7 +313,7 @@ Create a partition of type `8E00`, which will later contain the encrypted contai
 Create the LUKS encrypted container at the "system" partition. Enter the chosen password twice.
 
 ```
-# cryptsetup luksFormat /dev/*sdaX*
+# cryptsetup luksFormat --type luks2 /dev/*sdaX*
 
 ```
 
@@ -460,7 +461,7 @@ Randomise `/dev/sda2` according to [Dm-crypt/Drive preparation#dm-crypt wipe on 
 ```
 
 ```
-# cryptsetup luksFormat -c aes-xts-plain64 -s 512 /dev/mapper/MyVol-lvroot
+# cryptsetup luksFormat --type luks2 -c aes-xts-plain64 -s 512 /dev/mapper/MyVol-lvroot
 # cryptsetup open /dev/mapper/MyVol-lvroot root
 # mkfs.ext4 /dev/mapper/root
 # mount /dev/mapper/root /mnt
@@ -533,7 +534,7 @@ Since this scenario uses LVM as the primary and dm-crypt as secondary mapper, ea
 The logical volume is encrypted with it:
 
 ```
-# cryptsetup luksFormat -v -s 512 /dev/mapper/MyVol-home /etc/luks-keys/home
+# cryptsetup luksFormat --type luks2 -v -s 512 /dev/mapper/MyVol-home /etc/luks-keys/home
 # cryptsetup -d /etc/luks-keys/home open /dev/mapper/MyVol-home home
 # mkfs.ext4 /dev/mapper/home
 # mount /dev/mapper/home /home
@@ -619,7 +620,7 @@ And repeat above for the HDD (`/dev/sdc1` in this example).
 Set up encryption for `/dev/md0`:
 
 ```
-# cryptsetup -y -v luksFormat -c aes-xts-plain64 -s 512 /dev/md0
+# cryptsetup -y -v luksFormat --type luks2 -c aes-xts-plain64 -s 512 /dev/md0
 # cryptsetup open /dev/md0 cryptroot
 # mkfs.ext4 /dev/mapper/cryptroot
 # mount /dev/mapper/cryptroot /mnt
@@ -629,7 +630,7 @@ Set up encryption for `/dev/md0`:
 And repeat for the HDD:
 
 ```
-# cryptsetup -y -v luksFormat -c aes-xts-plain64 -s 512 /dev/sdc1
+# cryptsetup -y -v luksFormat --type luks2 -c aes-xts-plain64 -s 512 /dev/sdc1
 # cryptsetup open /dev/sdc1 cryptdata
 # mkfs.ext4 /dev/mapper/cryptdata
 # mkdir -p /mnt/mnt/data
@@ -876,7 +877,7 @@ Create a partition of type `8E00`, which will later contain the encrypted contai
 Create the LUKS encrypted container at the "system" partition.
 
 ```
-# cryptsetup luksFormat /dev/*sdaZ*
+# cryptsetup luksFormat --type luks2 /dev/*sdaZ*
 
 ```
 

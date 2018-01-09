@@ -65,6 +65,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 *   [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) - for module compilation
 *   [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) - needed by the `--console` installer
 *   [libcanberra](https://www.archlinux.org/packages/?name=libcanberra) - for event sounds
+*   [pcsclite](https://www.archlinux.org/packages/?name=pcsclite)
 
 Once the correct dependencies have been installed, you can either install using VMware bundle or [vmware-workstation](https://aur.archlinux.org/packages/vmware-workstation/). The latter is preferred if using *VMware Workstation* on x86_64.
 

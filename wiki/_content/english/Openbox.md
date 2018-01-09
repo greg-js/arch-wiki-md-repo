@@ -94,6 +94,8 @@ exec openbox-session
 
 ```
 
+**Note:** After executing openbox-session, there is only a blank grey screen. Try to move your mouse and **right click** to get an openbox menu to make sure that it is actually working.
+
 **Note:** Specifying `openbox` instead of `openbox-session` will prevent [autostart](#autostart) in `/etc/xdg/autostart`.
 
 ### Other desktop environments

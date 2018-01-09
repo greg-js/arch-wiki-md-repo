@@ -1,8 +1,12 @@
+Related articles
+
+*   [Webcam_setup](/index.php/Webcam_setup "Webcam setup")
+
 [Motion](https://motion-project.github.io/) is a program that monitors the video signal from cameras. It is able to detect if a significant part of the picture has changed; in other words, it can detect motion.
 
 ## Installation
 
-Install the [motion](https://www.archlinux.org/packages/?name=motion) package.
+Install the [motion](https://aur.archlinux.org/packages/motion/) package.
 
 ## Configuration
 

@@ -167,7 +167,7 @@ bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 ```
 
-See [Zsh#Key bindings](/index.php/Zsh#Key_bindings "Zsh") and [zshwiki: bindkeys](http://zshwiki.org/home/zle/bindkeys#reading_terminfo) for more complete information.
+See [Zsh#Key bindings](/index.php/Zsh#Key_bindings "Zsh") and [ZshWiki:zle:bindkeys](http://zshwiki.org/home/zle/bindkeys#reading_terminfo) for more complete information.
 
 ### Less
 

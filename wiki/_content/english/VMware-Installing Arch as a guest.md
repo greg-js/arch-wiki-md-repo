@@ -87,8 +87,6 @@ In 2007, VMware released large partitions of the [VMware Tools](http://kb.vmware
 
 Originally, VMware Tools provided the best drivers for network and storage, combined with the functionality for other features such as time synchronization. However, for quite a while now the drivers for the network/SCSI adapter are part of the Linux kernel, and VMware Tools is only needed for extra features like Unity mode.
 
-Both VMware Tools and Open-VM-Tools require the installation of [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware).
-
 ## Open-VM-Tools
 
 ### Utilities

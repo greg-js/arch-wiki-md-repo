@@ -48,7 +48,7 @@ ResolverName dnscrypt.eu-nl
 
 **Tip:**
 
-*   A potentially more up-to-date list is available directly on the [upstream page](https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv).
+*   A potentially more up-to-date list is available directly on the [upstream page](https://github.com/dyne/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv).
 *   At this stage you may also wish to add an unprivileged user to run dnscrypt. See [#dnscrypt runs with root privileges](#dnscrypt_runs_with_root_privileges).
 
 ### Modify resolv.conf

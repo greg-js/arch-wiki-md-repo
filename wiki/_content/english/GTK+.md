@@ -148,10 +148,6 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 	[https://cgit.kde.org/oxygen-gtk.git](https://cgit.kde.org/oxygen-gtk.git) || [oxygen-gtk2](https://www.archlinux.org/packages/?name=oxygen-gtk2)
 
-*   **Aurora Gtk Engine** — Latest member of the Clearlooks family.
-
-	[http://gnome-look.org/content/show.php/Aurora+Gtk+Engine?content=56438](http://gnome-look.org/content/show.php/Aurora+Gtk+Engine?content=56438) || [gtk-engine-aurora](https://www.archlinux.org/packages/?name=gtk-engine-aurora)
-
 *   **QtCurve** — A configurable set of widget styles for KDE and Gtk.
 
 	[https://cgit.kde.org/qtcurve.git](https://cgit.kde.org/qtcurve.git) || [qtcurve-gtk2](https://www.archlinux.org/packages/?name=qtcurve-gtk2)

@@ -1,4 +1,4 @@
-[Ruby on Rails](http://rubyonrails.org/), often shortened to Rails or RoR, is an open source web application framework for the Ruby programming language. It is intended to be used with an Agile development methodology that is used by web developers for rapid development.
+[Ruby on Rails](http://rubyonrails.org/), often shortened to Rails or RoR, is an open source web application framework for the [Ruby](/index.php/Ruby "Ruby") programming language. It is intended to be used with an Agile development methodology that is used by web developers for rapid development.
 
 This document describes how to set up the Ruby on Rails Framework on an Arch Linux system.
 

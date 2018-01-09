@@ -709,7 +709,7 @@ Modify its configuration file so that it contains:
  `/etc/dnsmasq.conf` 
 ```
 no-resolv
-port=9053
+port=53
 server=127.0.0.1#9053
 listen-address=127.0.0.1
 

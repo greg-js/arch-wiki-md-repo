@@ -79,10 +79,9 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [6.6 Graphical problems](#Graphical_problems)
         *   [6.6.1 Disable desktop effects manually or automatically for defined applications](#Disable_desktop_effects_manually_or_automatically_for_defined_applications)
         *   [6.6.2 Disable compositing](#Disable_compositing)
-        *   [6.6.3 Plasma keeps crashing with legacy Nvidia](#Plasma_keeps_crashing_with_legacy_Nvidia)
-        *   [6.6.4 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
-        *   [6.6.5 Screen tearing with Nvidia](#Screen_tearing_with_Nvidia)
-        *   [6.6.6 Plasma cursor sometimes shown incorrecty](#Plasma_cursor_sometimes_shown_incorrecty)
+        *   [6.6.3 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
+        *   [6.6.4 Screen tearing with Nvidia](#Screen_tearing_with_Nvidia)
+        *   [6.6.5 Plasma cursor sometimes shown incorrecty](#Plasma_cursor_sometimes_shown_incorrecty)
     *   [6.7 Sound problems](#Sound_problems)
         *   [6.7.1 No sound after suspend](#No_sound_after_suspend)
         *   [6.7.2 "Falling back to default" messages when trying to listen to any sound](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound)
@@ -656,18 +655,6 @@ Plasma has desktop effects enabled by default and e.g. not every game will disab
 #### Disable compositing
 
 In *Sytem Settings > Display and Monitor*, uncheck *Enable compositor on startup* and restart Plasma.
-
-#### Plasma keeps crashing with legacy Nvidia
-
-This is caused by a [bug in Plasma](https://bugs.kde.org/show_bug.cgi?id=348753) when using the Nvidia-304xx driver. Rather than disabling compositing, create a file `kwin.sh` in `~/.config/plasma-workspace/env/` with the following contents:
-
-```
-#!/bin/sh
-export KWIN_EXPLICIT_SYNC=0
-
-```
-
-Then go to *System Settings > Startup and Shutdown > Autostart* and *Check/Add* the script as a pre-KDE startup file.
 
 #### Flickering in fullscreen when compositing is enabled
 
