@@ -95,7 +95,7 @@ $ xdotool key ctrl+alt+space
 
 ```
 
-If the menu you chose pops up under your mouse cursor, you have done it right! Now create a `open-openbox-menu.desktop` file inside the `~/.local/share/applications` directory. Add the line `Exec=xdotool key ctrl+alt+space` where `Ctrl+Alt+Space` are your chosen key combinations. Open your new `open-openbox-menu.desktop` file from your file manager and, once again, you should see the menu appear under your cursor. Now just add this to tint2 as a launcher, and you have your Openbox Applications Menu as a launcher for tint2.
+If the menu you chose pops up under your mouse cursor, you have done it right! Now create a `open-openbox-menu.desktop` file inside the `~/.local/share/applications` directory. Add the line `Exec=xdotool key ctrl+alt+space` where `Ctrl+Alt+Space` are your chosen key combinations. Open your new `open-openbox-menu.desktop` file from your file manager and, once again, you should see the menu appear under your cursor. Now just add this to tint2 as a launcher, and you have your Openbox Applications Menu as a launcher for tint2\. If you need to position the menu at a fixed position, you can use `xdotool mousemove x y`. Since this involves two commands, you can create a script and reference it in `open-openbox-menu.desktop`.
 
 See [Openbox Menus](http://openbox.org/wiki/Help:Menus) for further help on creating your own menu to use here, and [menumaker](https://www.archlinux.org/packages/?name=menumaker) to generate a nice full `menu.xml` for most (possibly all) of your installed programs.
 

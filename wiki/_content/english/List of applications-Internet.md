@@ -1219,7 +1219,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Skype](/index.php/Skype "Skype")** — Popular but proprietary application for voice and video communication.
 
-	[https://www.skype.com/](https://www.skype.com/) || [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/)
+	[https://www.skype.com/](https://www.skype.com/) || [skypeforlinux-stable-bin](https://aur.archlinux.org/packages/skypeforlinux-stable-bin/) or [skypeforlinux-preview-bin](https://aur.archlinux.org/packages/skypeforlinux-preview-bin/)
 
 *   **Hangups** — A third-party instant messaging client for Google Hangouts
 

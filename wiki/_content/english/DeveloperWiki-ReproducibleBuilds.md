@@ -8,7 +8,7 @@ A list of reproducible build meetings and work in progress documentation.
 
 *   Arch Linux Archive cleanup script
 
-    	A script to remove only packages from the Archive which are not required to create a reproducible build of the current repository
+    	A script to remove only packages from the Archive which are not required to create a reproducible build of the current repository. There is currently no Archive cleanup script in place at all. It's not determined yet how long Arch Linux wants to keep Archive packages around, so this should be configurable. Sangy already made a [script](https://git.archlinux.org/users/seblu/archivetools.git/) to determine packages which can be removed or not according to BUILDINFO files
 
 *   Arch Linux Reproducible script
 
@@ -39,13 +39,13 @@ A list of reproducible build meetings and work in progress documentation.
 
     	FIXME: add issues I encountered.
 
-*   Arch Linux Archive: don't remove packages mentioned in BUILDINFO file
+*   Arch Linux Archive: Don't remove packages mentioned in BUILDINFO file
 
-    	There should be a script which checks if packages can be removed from the Archive, since currently it removes packages older then 6 Months?
+    	There is currently no script to remove old packages from the archive, it is not sure how long we want to keep old packges
 
-    	Sangy was working on this if I recall correctly, what is the status?
+    	Sangy was working on this if I recall correctly, what is the status? [poc script](https://github.com/SantiagoTorres/reproarch-dependency-crawler)
 
-    	Write documentation what this script should do. (Specification)
+*   Write documentation what this script should do. (Specification)
 
 *   Killed builds
 
@@ -53,8 +53,10 @@ A list of reproducible build meetings and work in progress documentation.
 
 *   SSL verification issues
 
-    	How do we circumvent SSL issues from reproducing a package locally which was build earlier, when the SSL certificate was valid
+    	How do we circumvent SSL issues from reproducing a package locally which was build earlier, when the SSL certificate was valid. HG and SVN are still left to be fixed.
 
 *   Create a public to-do list
 
     	We should get more people in to work on reproducible builds, how can we guide them and where do we keep track of the progress made and issues which require attention.
+
+The meeting minute can be seen [here](https://arch.nyu.wtf/logs/archlinux-reproducible/2018/archlinux-reproducible.2018-01-10-19.04.html).

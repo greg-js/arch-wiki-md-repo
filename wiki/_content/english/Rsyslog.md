@@ -21,11 +21,11 @@ Related articles
 
 **Note:** It is recommended to disable and uninstall the [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng) package to prevent possible conflicts.
 
-[Install](/index.php/Install "Install") the [rsyslog](https://www.archlinux.org/packages/?name=rsyslog) package.
+[Install](/index.php/Install "Install") the [rsyslog](https://aur.archlinux.org/packages/rsyslog/) package.
 
 ### Starting service
 
-You can [start/enable](/index.php/Start/enable "Start/enable") the [rsyslog](https://www.archlinux.org/packages/?name=rsyslog) service after installation.
+You can [start/enable](/index.php/Start/enable "Start/enable") the [rsyslog](https://aur.archlinux.org/packages/rsyslog/) service after installation.
 
 ### Configure Hostname
 

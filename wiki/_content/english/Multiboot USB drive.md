@@ -101,15 +101,15 @@ Recovery/transformation command (? for help): h
 Type from one to three GPT partition numbers, separated by spaces, to be added to the hybrid MBR, in sequence: 1 2 3
 Place EFI GPT (0xEE) partition first in MBR (good for GRUB)? (Y/N): N
 
-Creating entry for GPT partition #1 (MBR partition #2)
+Creating entry for GPT partition #1 (MBR partition #1)
 Enter an MBR hex code (default EF): 
 Set the bootable flag? (Y/N): N
 
-Creating entry for GPT partition #2 (MBR partition #3)
+Creating entry for GPT partition #2 (MBR partition #2)
 Enter an MBR hex code (default EF): 
 Set the bootable flag? (Y/N): N
 
-Creating entry for GPT partition #3 (MBR partition #4)
+Creating entry for GPT partition #3 (MBR partition #3)
 Enter an MBR hex code (default 83): 
 Set the bootable flag? (Y/N): Y
 

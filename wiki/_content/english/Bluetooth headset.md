@@ -97,6 +97,14 @@ After pairing, you also need to explicitly connect the device (every time?):
 
 ```
 
+If you're getting a connection error "org.bluez.Error.Failed" retry by killing existing PulseAudio daemon first:
+
+```
+# pulseaudio -k
+# connect 00:1D:43:6D:03:26
+
+```
+
 If everything works correctly, you now have a separate output device in [PulseAudio](/index.php/PulseAudio "PulseAudio").
 
 **Note:** The device may be off by default. Select its audio profile (*OFF*, A2DP, HFP) in the "Configuration" tab of [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol).

@@ -58,6 +58,15 @@ Arch Linux официально поддерживает открытую реа
 | [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | Документация OpenJDK (javadoc) – версия 8 |
 | [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) | Исходные коды OpenJDK – версия 8 |
 
+*   OpenJDK 9:
+
+| Пакет | Примечание |
+| [jre9-openjdk-headless](https://www.archlinux.org/packages/?name=jre9-openjdk-headless) | Исполняющая среда (*JRE*) без графических инструментов – версия 9 |
+| [jre9-openjdk](https://www.archlinux.org/packages/?name=jre9-openjdk) | Полная версия исполняющей среды (*JRE*) – версия 9 |
+| [jdk9-openjdk](https://www.archlinux.org/packages/?name=jdk9-openjdk) | Пакет разработки (*JDK*) – версия 9 |
+| [openjdk9-doc](https://www.archlinux.org/packages/?name=openjdk9-doc) | Документация OpenJDK (javadoc) – версия 9 |
+| [openjdk9-src](https://www.archlinux.org/packages/?name=openjdk9-src) | Исходные коды OpenJDK – версия 9 |
+
 **Примечание:** JDK имеет зависимость от JRE, поэтому при установке JDK будет также установлена JRE.
 
 **Примечание:** После установки вам может понадобиться обновить переменную окружения `$PATH`. Для этого отредактируйте файл `/etc/profile` или перезайдите в среду рабочего стола.

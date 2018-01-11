@@ -10,6 +10,9 @@ For more information on OpenFOAM and the OpenFOAM Foundation, please see [http:/
     *   [2.2 Obtain source files](#Obtain_source_files)
         *   [2.2.1 Latest stable release](#Latest_stable_release)
     *   [2.3 Environment variables](#Environment_variables)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 zsh](#zsh)
+    *   [3.2 Paraview not installed](#Paraview_not_installed)
 
 ## Basic installation
 
@@ -49,3 +52,23 @@ Paste the following code into your ~/.bashrc file. Whenever you want to run Open
 export FOAM_INST_DIR='$HOME/.OpenFOAM'
 alias of20x='source $FOAM_INST_DIR/OpenFOAM-2.0.x/etc/bashrc'
 ```
+
+## Troubleshooting
+
+### zsh
+
+Some things don't work straightforward if you are not using bash. In the case of zsh, you will need the [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) package, and add the following to your `.zshrc` for the OpenFOAM scripts to work.
+
+```
+autoload bashcompinit
+bashcompinit
+```
+
+Add `export FOAM_INST_DIR=/opt/OpenFOAM` to your `.zshenv` and `alias ofoam="source ${FOAM_INST_DIR}/OpenFOAM-5.0/etc/bashrc"` to your `.zshrc`.
+
+### Paraview not installed
+
+This happens because the dependencies are installed as separate packages, and not in the third-party apps directory of OpenFOAM. Either;
+
+*   Add `alias paraFoam='paraFoam -builtin'` to your `/opt/OpenFOAM/Open-FOAM-X.X/etc/bashrc`.
+*   For each project, `touch `echo "${PWD##*/}"`.foam` and then open the touched file from paraview.

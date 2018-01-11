@@ -390,51 +390,30 @@ Enable the target with [systemd](/index.php/Systemd "Systemd"):
 
 When running ZFS on root, the machine's hostid will not be available at the time of mounting the root filesystem. There are two solutions to this. You can either place your spl hostid in the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") in your boot loader. For example, adding `spl.spl_hostid=0x00bab10c`, to get your number use the `hostid` command.
 
-The other, and suggested, solution is to make sure that there is a hostid in `/etc/hostid`, and then regenerate the initramfs image which will copy the hostid into the initramfs image. To write the hostid file safely you need to use a small C program:
+The other, and suggested, solution is to make sure that there is a hostid in `/etc/hostid`, and then regenerate the initramfs image which will copy the hostid into the initramfs image. To write the hostid file safely you need to use the `zgenhostid` command.
+
+To use the libc-generated hostid (recommended):
 
 ```
-#include <stdio.h>
-#include <errno.h>
-#include <unistd.h>
-
-int main() {
-    int res;
-    res = sethostid(gethostid());
-    if (res != 0) {
-        switch (errno) {
-            case EACCES:
-            fprintf(stderr, "Error! No permission to write the"
-                         " file used to store the host ID.
-"
-                         "Are you root?
-");
-            break;
-            case EPERM:
-            fprintf(stderr, "Error! The calling process's effective"
-                            " user or group ID is not the same as"
-                            " its corresponding real ID.
-");
-            break;
-            default:
-            fprintf(stderr, "Unknown error.
-");
-        }
-        return 1;
-    }
-    return 0;
-}
+# zgenhostid $(hostid)
 
 ```
 
-Copy it, save it as `writehostid.c` and compile it with `gcc -o writehostid writehostid.c`, finally execute it and regenerate the initramfs image:
+To use a custom hostid (must be hexadecimal and 8 characters long):
 
 ```
-# ./writehostid
-# mkinitcpio -p linux
+# zgenhostid deadbeef
 
 ```
 
-You can now delete the two files `writehostid.c` and `writehostid`. Your system should work and reboot properly now.
+To let the tool generate a hostid:
+
+```
+# zgenhostid
+
+```
+
+Don't forget to regenerate your image using [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). Your system should work and reboot properly now.
 
 ## Native encryption
 

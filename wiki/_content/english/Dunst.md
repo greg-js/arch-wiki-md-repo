@@ -11,6 +11,7 @@ Related articles
     *   [2.1 Icon Sets](#Icon_Sets)
 *   [3 Shortcuts](#Shortcuts)
 *   [4 Scripting](#Scripting)
+*   [5 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
@@ -41,13 +42,10 @@ These can be used in conjunction with HTML markup. For example the `format` can 
 
 ### Icon Sets
 
-**Note:** As of version 1.2.0, Dunst looks for nonstandard icon names, and will likely complain that it can't load the `info` or `emblem-important` icons. This will be fixed in the next release.[[2]](https://github.com/dunst-project/dunst/pull/406)
-
-Icons are set in the option `icon_folders`. Status and devices icons are needed. By default, Dunst looks for the [gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme) icons.
+Icons are set in the option `icon_path`. Status and devices icons are needed. By default, Dunst looks for the [gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme) icons. For example, to use [adwaita-icon-theme](https://www.archlinux.org/packages/?name=adwaita-icon-theme) (gnome-icon-theme's successor), instead:
 
 ```
-# Paths to default icons.
-icon_folders = /usr/share/icons/Arc/status/16/:/usr/share/icons/Arc/devices/16/
+icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
 
 ```
 
@@ -76,5 +74,16 @@ Dunst can be configured to run scripts based on certain notification content. He
    summary = "*signed on*"
    urgency = low
    script = do_something.sh
+
+```
+
+## Troubleshooting
+
+When using dunst without a Display Manager, the `DISPLAY` environment variable might not be correctly set.[[2]](https://github.com/dunst-project/dunst/issues/347)
+
+To fix this, add the following to your `.xinirc`:
+
+```
+systemctl --user import-environment DISPLAY
 
 ```

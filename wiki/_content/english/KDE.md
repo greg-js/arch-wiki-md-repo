@@ -80,7 +80,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [6.6.1 Disable desktop effects manually or automatically for defined applications](#Disable_desktop_effects_manually_or_automatically_for_defined_applications)
         *   [6.6.2 Disable compositing](#Disable_compositing)
         *   [6.6.3 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
-        *   [6.6.4 Screen tearing with Nvidia](#Screen_tearing_with_Nvidia)
+        *   [6.6.4 Screen tearing with NVIDIA](#Screen_tearing_with_NVIDIA)
         *   [6.6.5 Plasma cursor sometimes shown incorrecty](#Plasma_cursor_sometimes_shown_incorrecty)
     *   [6.7 Sound problems](#Sound_problems)
         *   [6.7.1 No sound after suspend](#No_sound_after_suspend)
@@ -660,26 +660,9 @@ In *Sytem Settings > Display and Monitor*, uncheck *Enable compositor on startup
 
 In *Sytem Settings > Display and Monitor*, uncheck *Allow applications to block compositing*. This may harm performance.
 
-#### Screen tearing with Nvidia
+#### Screen tearing with NVIDIA
 
-By default, KWin compositing suffers from tearing when used with the proprietary Nvidia driver. To work around this, run `kwin_x11 --replace` with the environment variable `export __GL_YIELD="USLEEP"` stated before:
-
-```
-export __GL_YIELD="USLEEP" && kwin_x11 --replace
-
-```
-
-Unlike using the environment variable globally, this does only affect KWin and doesn't reduce CPU performance in other 3D applications. This can also be executed automatically when logging in by creating a simple script and put it into Plasma's `~/.config/autostart-scripts` folder.
-
- `~/.config/autostart-scripts/restartkwinusleep.sh` 
-```
-(sleep 2s &&
-export __GL_YIELD="USLEEP" && kwin_x11 --replace
-)
-
-```
-
-The `sleep` argument helps to prevent issues when KWin is restarted too soon after logging in, you might want to adjust the time to your needs. Don't forget to mark the script as executable.
+See [NVIDIA/Troubleshooting#Avoid screen tearing in KDE](/index.php/NVIDIA/Troubleshooting#Avoid_screen_tearing_in_KDE "NVIDIA/Troubleshooting").
 
 #### Plasma cursor sometimes shown incorrecty
 

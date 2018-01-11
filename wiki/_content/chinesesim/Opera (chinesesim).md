@@ -28,13 +28,15 @@ Related articles
     *   [6.2 抓取和滚动模式](#.E6.8A.93.E5.8F.96.E5.92.8C.E6.BB.9A.E5.8A.A8.E6.A8.A1.E5.BC.8F)
     *   [6.3 长按链接会在后台标签（扩展程序）中打开它](#.E9.95.BF.E6.8C.89.E9.93.BE.E6.8E.A5.E4.BC.9A.E5.9C.A8.E5.90.8E.E5.8F.B0.E6.A0.87.E7.AD.BE.EF.BC.88.E6.89.A9.E5.B1.95.E7.A8.8B.E5.BA.8F.EF.BC.89.E4.B8.AD.E6.89.93.E5.BC.80.E5.AE.83)
     *   [6.4 虚拟屏幕键盘 (扩展程序)](#.E8.99.9A.E6.8B.9F.E5.B1.8F.E5.B9.95.E9.94.AE.E7.9B.98_.28.E6.89.A9.E5.B1.95.E7.A8.8B.E5.BA.8F.29)
-*   [7 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [7.1 NVIDIA 显卡上出现条纹](#NVIDIA_.E6.98.BE.E5.8D.A1.E4.B8.8A.E5.87.BA.E7.8E.B0.E6.9D.A1.E7.BA.B9)
-    *   [7.2 卧式鼠标滚轮滚动](#.E5.8D.A7.E5.BC.8F.E9.BC.A0.E6.A0.87.E6.BB.9A.E8.BD.AE.E6.BB.9A.E5.8A.A8)
-    *   [7.3 启动外部浏览器](#.E5.90.AF.E5.8A.A8.E5.A4.96.E9.83.A8.E6.B5.8F.E8.A7.88.E5.99.A8)
-    *   [7.4 使用GTK + 2.24.7+开始或关闭时，Opera崩溃](#.E4.BD.BF.E7.94.A8GTK_.2B_2.24.7.2B.E5.BC.80.E5.A7.8B.E6.88.96.E5.85.B3.E9.97.AD.E6.97.B6.EF.BC.8COpera.E5.B4.A9.E6.BA.83)
-    *   [7.5 带有深色GTK +主题的不可读输入字段和地址栏](#.E5.B8.A6.E6.9C.89.E6.B7.B1.E8.89.B2GTK_.2B.E4.B8.BB.E9.A2.98.E7.9A.84.E4.B8.8D.E5.8F.AF.E8.AF.BB.E8.BE.93.E5.85.A5.E5.AD.97.E6.AE.B5.E5.92.8C.E5.9C.B0.E5.9D.80.E6.A0.8F)
-*   [8 参见](#.E5.8F.82.E8.A7.81)
+*   [7 Security](#Security)
+    *   [7.1 Force a password store](#Force_a_password_store)
+*   [8 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
+    *   [8.1 NVIDIA 显卡上出现条纹](#NVIDIA_.E6.98.BE.E5.8D.A1.E4.B8.8A.E5.87.BA.E7.8E.B0.E6.9D.A1.E7.BA.B9)
+    *   [8.2 卧式鼠标滚轮滚动](#.E5.8D.A7.E5.BC.8F.E9.BC.A0.E6.A0.87.E6.BB.9A.E8.BD.AE.E6.BB.9A.E5.8A.A8)
+    *   [8.3 启动外部浏览器](#.E5.90.AF.E5.8A.A8.E5.A4.96.E9.83.A8.E6.B5.8F.E8.A7.88.E5.99.A8)
+    *   [8.4 使用 GTK + 2.24.7+ 开始或关闭时，Opera 崩溃的问题](#.E4.BD.BF.E7.94.A8_GTK_.2B_2.24.7.2B_.E5.BC.80.E5.A7.8B.E6.88.96.E5.85.B3.E9.97.AD.E6.97.B6.EF.BC.8COpera_.E5.B4.A9.E6.BA.83.E7.9A.84.E9.97.AE.E9.A2.98)
+    *   [8.5 带有深色GTK +主题的不可读输入字段和地址栏](#.E5.B8.A6.E6.9C.89.E6.B7.B1.E8.89.B2GTK_.2B.E4.B8.BB.E9.A2.98.E7.9A.84.E4.B8.8D.E5.8F.AF.E8.AF.BB.E8.BE.93.E5.85.A5.E5.AD.97.E6.AE.B5.E5.92.8C.E5.9C.B0.E5.9D.80.E6.A0.8F)
+*   [9 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
@@ -181,7 +183,13 @@ opera:config#UserPrefs|ScrollIsPan
 
 ### 虚拟屏幕键盘 (扩展程序)
 
-有一个允许使用虚拟屏幕键盘的扩展。可以在 [这里](https://addons.opera.com/en/addons/extensions/details/virtual-keyboard/)找到更多详细信息和安装链接。
+有一个允许使用虚拟屏幕键盘的扩展。可以在[这里](https://addons.opera.com/en/addons/extensions/details/virtual-keyboard/)找到更多详细信息和安装链接。
+
+## Security
+
+### Force a password store
+
+Since current Opera uses the same engine as Chromium does, you can force Opera to use a specific password store by launching it with the `--password-store` flag. For more details see [Chromium/Tips and tricks#Force a password store](/index.php/Chromium/Tips_and_tricks#Force_a_password_store "Chromium/Tips and tricks").
 
 ## 故障排除
 
@@ -200,7 +208,7 @@ $ nvidia-settings -a InitialPixmapPlacement=2
 
 Check *Settings > Preferences... > Advanced > Shortcuts > Mouse > Middle-Click Options... > Enable horizontal panning*.
 
-or
+或者
 
 *   Highlight *Settings > Preferences... > Advanced > Shortcuts > Mouse > Opera Standard*.
 *   Duplicate *Settings > Preferences... > Advanced > Shortcuts > Mouse > Opera Standard*.
@@ -235,7 +243,7 @@ Button0, "Chromium"="Execute program, "chromium --block-nonsandboxed-plugins --d
 
 ```
 
-### 使用GTK + 2.24.7+开始或关闭时，Opera崩溃
+### 使用 GTK + 2.24.7+ 开始或关闭时，Opera 崩溃的问题
 
 如果发生此崩溃，您可以通过将 *DialogToolkit* 选项更改为4来解决此问题:
 

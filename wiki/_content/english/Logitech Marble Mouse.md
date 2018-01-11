@@ -203,17 +203,10 @@ Option "ButtonMapping" "1 8 3 2 9"
 
 ```
 
-For a per-user-configuration you need to put this in your ~/.Xmodmap
+For a per-user-configuration you need to put this in your ~/.xinitrc.
 
 ```
-pointer = 1 8 3 4 5 6 7 2 9 10 11 12 13
-
-```
-
-or this in your ~/.xinitrc.
-
-```
-xmodmap -e "pointer = 1 8 3 4 5 6 7 2 9 10 11 12 13"
+xinput set-button-map "Logitech USB Trackball" 1 8 3 4 5 6 7 2 9 10 11 12 13
 
 ```
 

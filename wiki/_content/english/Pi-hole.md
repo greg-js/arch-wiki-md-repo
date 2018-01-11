@@ -278,7 +278,7 @@ For semplicity of configuration and exposure, only the method via web interface 
 *   Set DHCP range for your LAN valorizing **From** and **To** boxes. For example: From 192.168.1.2 To 192.168.1.100
 *   Set your router IP address into **Router** box. For example: 192.168.1.1
 *   Optional: From **Advanced DHCP settings** check **Enable IPv6 support (SLAAC + RA)** if you want IPv6 support and functionality.
-*   Optional: If you need some static DHCP lease you can configure them going to **DHCP leases/Static DHCP leases configuration** section.
+*   Optional: If you need some static DHCP leases you can configure them going to **DHCP leases/Static DHCP leases configuration** section.
 *   Save to apply changes.
 
 **Warning:** If you have existing network devices on your network when you make this change, you will not see ads getting blocked until the DHCP lease is renewed. For simplicity, restart those devices.

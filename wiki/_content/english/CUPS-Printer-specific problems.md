@@ -365,6 +365,8 @@ Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip
 
 ###### HPLIP Driver
 
+**Note:** As of hplip v3.17.11 hpijs is not longer available. If you have printers using hpijs they will fail to print. You must modify them and select the new hpcups driver instead.
+
 [hplip](https://www.archlinux.org/packages/?name=hplip) provides drivers for HP DeskJet, OfficeJet, Photosmart, Business Inkjet, and some LaserJet printers, and also provides an easy to use setup tool.
 
 To run the setup tool with the GUI qt frontend:

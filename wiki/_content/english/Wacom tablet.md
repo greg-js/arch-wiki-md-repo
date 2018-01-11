@@ -518,6 +518,8 @@ $ xsetwacom --set **12** MapToOutput **"VGA-0"**
 
 This should immediately work, no root necessary.
 
+Should this fail when using the nvidia binary driver, using **HEAD-0**, **HEAD-1** and so on to refer to the monitors may work.
+
 If xsetwacom replies with "Unable to find an output ..." an X11 geometry string of the form **WIDTHxHEIGHT+X+Y** can be specified instead of the screen identifier. In this example
 
 ```

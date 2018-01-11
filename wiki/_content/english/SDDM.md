@@ -7,6 +7,8 @@ The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Deskto
 
 	*Simple Desktop Display Manager (SDDM) is a display manager (a graphical login program) for X11 and Wayland windowing systems. SDDM was written from scratch in C++11 and supports theming via QML. KDE chose SDDM to be the successor of the KDE Display Manager for KDE Plasma 5.*
 
+**Note:** The Wayland windowing system is not yet fully supported [[1]](https://github.com/sddm/sddm/issues/440). Wayland sessions are listed, but SDDM runs on X11.
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -24,14 +26,13 @@ The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Deskto
     *   [2.6 Configuration GUI](#Configuration_GUI)
     *   [2.7 DPI settings](#DPI_settings)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 SDDM still runs on Xorg](#SDDM_still_runs_on_Xorg)
-    *   [3.2 Hangs after login](#Hangs_after_login)
-    *   [3.3 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
-    *   [3.4 One or more users do not show up on the greeter](#One_or_more_users_do_not_show_up_on_the_greeter)
-    *   [3.5 SDDM loads only US keyboard layout](#SDDM_loads_only_US_keyboard_layout)
-    *   [3.6 No user Icon](#No_user_Icon)
-    *   [3.7 Screen resolution is too low](#Screen_resolution_is_too_low)
-    *   [3.8 SDDM takes long time to load when your home directory is encrypted](#SDDM_takes_long_time_to_load_when_your_home_directory_is_encrypted)
+    *   [3.1 Hangs after login](#Hangs_after_login)
+    *   [3.2 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
+    *   [3.3 One or more users do not show up on the greeter](#One_or_more_users_do_not_show_up_on_the_greeter)
+    *   [3.4 SDDM loads only US keyboard layout](#SDDM_loads_only_US_keyboard_layout)
+    *   [3.5 No user Icon](#No_user_Icon)
+    *   [3.6 Screen resolution is too low](#Screen_resolution_is_too_low)
+    *   [3.7 SDDM takes long time to load when your home directory is encrypted](#SDDM_takes_long_time_to_load_when_your_home_directory_is_encrypted)
 
 ## Installation
 
@@ -63,7 +64,7 @@ Session=plasma.desktop
 
 This configuration causes a KDE Plasma session to be started for user `john` when the system is booted. Available session types can be found in `/usr/share/xsessions/` directory.
 
-An option to autologin into KDE Plasma while simultaneously locking the session is not available [[1]](https://github.com/sddm/sddm/issues/306)
+An option to autologin into KDE Plasma while simultaneously locking the session is not available [[2]](https://github.com/sddm/sddm/issues/306)
 
 You can add a script that activates the screensaver of KDE to the autostart as a workaround:
 
@@ -154,10 +155,6 @@ ServerArguments=-nolisten tcp -dpi 94
 
 ## Troubleshooting
 
-### SDDM still runs on Xorg
-
-SDDM currently cannot run on the Wayland windowing system [because it still does not support this feature](https://github.com/sddm/sddm/issues/440). Having a full Wayland system is still not possible with SSDM. For now, SDDM can still be considered as a QML based display manager for X11 and Wayland **sessions** rather than a display manager for X11 and Wayland windowing systems.
-
 ### Hangs after login
 
 Try removing `~/.Xauthority`.
@@ -214,7 +211,7 @@ See [SDDM README: No User Icon](https://github.com/sgerbino/sddm#no-user-icon).
 
 ### Screen resolution is too low
 
-Issue may be caused by HiDPI usage for monitors with corrupted EDID: [[2]](https://github.com/sddm/sddm/issues/692)
+Issue may be caused by HiDPI usage for monitors with corrupted EDID: [[3]](https://github.com/sddm/sddm/issues/692)
 
 Try disabling HiDPI in `sddm.conf`:
 

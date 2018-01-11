@@ -246,7 +246,7 @@ own_window_argb_value = 255,
 
 ### Display package update information
 
-[Pacman](/index.php/Pacman "Pacman") provides its own script called `checkupdates` which displays package updates from the official repos. Use `${execpi 3600 checkupdates | wc -l}` to display the total number of packages.
+[Pacman](/index.php/Pacman "Pacman") provides its own script called `checkupdates` which displays package updates from the official repos. Use `${execi 3600 checkupdates | wc -l}` to display the total number of packages.
 
 ### Display weather forecast
 
@@ -297,7 +297,7 @@ Create one of the following files in a convenient location (for example in `~/.s
 Then add the following string to your `conky.conf` in order the check your Gmail account for new email every five minutes (300 seconds) and display:
 
 ```
-${execpi 300 python ~/.scripts/gmail.py}
+${execi 300 python ~/.scripts/gmail.py}
 
 ```
 
@@ -469,7 +469,7 @@ $client->logout();
 Add to `conky.conf`:
 
 ```
-${execpi 300 ~/.scripts/imap.pl} 
+${execi 300 ~/.scripts/imap.pl} 
 
 ```
 
@@ -523,7 +523,7 @@ imap_close($mbox);
 Add to `conky.conf`:
 
 ```
-${execpi 300 ~/.scripts/imap.php} 
+${execi 300 ~/.scripts/imap.php} 
 
 ```
 

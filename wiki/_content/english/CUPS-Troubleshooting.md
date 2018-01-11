@@ -31,6 +31,7 @@ This article covers all non-specific (ie, not related to any one printer) troubl
         *   [5.4.3 Bad permissions](#Bad_permissions)
         *   [5.4.4 Avahi not enabled](#Avahi_not_enabled)
         *   [5.4.5 Out-of-date plugin](#Out-of-date_plugin)
+        *   [5.4.6 Outdated printer configuration](#Outdated_printer_configuration)
     *   [5.5 CUPS: prints only an empty and an error-message page on HP LaserJet](#CUPS:_prints_only_an_empty_and_an_error-message_page_on_HP_LaserJet)
     *   [5.6 HPLIP 3.13: Plugin is installed, but HP Device Manager complains it is not](#HPLIP_3.13:_Plugin_is_installed.2C_but_HP_Device_Manager_complains_it_is_not)
     *   [5.7 hp-toolbox: "Unable to communicate with device"](#hp-toolbox:_.22Unable_to_communicate_with_device.22)
@@ -289,6 +290,19 @@ Each system may vary, so consult [udev#List attributes of a device](/index.php/U
 #### Out-of-date plugin
 
 This error can also indicate that the plugin is out of date (version is mismatched). If you have installed [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/), you will need to update the package.
+
+#### Outdated printer configuration
+
+As of [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) v3.17.11 hpijs is not longer available. If you have printers using hpijs they will fail to print. You must modify them and select the new hpcups driver instead.
+
+You can check if this is your case looking at cups error_log:
+
+ ` $ cat /var/log/cups/error_log | grep hpijs ` 
+```
+ ...
+ D [09/Jan/2018:14:32:58 +0000] [Job 97] **sh: hpijs: command not found**
+ ...
+```
 
 ### CUPS: prints only an empty and an error-message page on HP LaserJet
 

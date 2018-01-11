@@ -270,7 +270,7 @@ Operation = Upgrade
 Operation = Install
 Operation = Remove
 Type = Package
-Target = linux
+Target = linux*
 
 [Action]
 Depends = rsync

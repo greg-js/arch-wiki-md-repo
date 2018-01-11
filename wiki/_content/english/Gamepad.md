@@ -24,6 +24,7 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
     *   [7.3 Nintendo Gamecube Controller](#Nintendo_Gamecube_Controller)
     *   [7.4 PlayStation 3/4 controller](#PlayStation_3.2F4_controller)
         *   [7.4.1 Connecting via Bluetooth](#Connecting_via_Bluetooth)
+        *   [7.4.2 Using generic/clone controllers](#Using_generic.2Fclone_controllers)
     *   [7.5 iPEGA-9017s and other Bluetooth gamepads](#iPEGA-9017s_and_other_Bluetooth_gamepads)
     *   [7.6 Steam Controller](#Steam_Controller)
         *   [7.6.1 Wine](#Wine)
@@ -322,6 +323,10 @@ Alternatively, you can press the share button and the PlayStation button simulta
 Remember to disconnect the controller when you are done as the controller will stay on when connected and drain the battery.
 
 **Note:** If the controller does not connect, make sure the bluetooth interface is turned on and the controllers have been trusted. (See [Bluetooth](/index.php/Bluetooth "Bluetooth"))
+
+##### Using generic/clone controllers
+
+Using generic/clone Dualshock controllers is possible, however there are some issues that need to be addressed. The default bluetooth program doesn't detect some of the clone controllers, so is necessary to install the [bluez-ps3](https://aur.archlinux.org/packages/bluez-ps3/) package that is patched to be able to detect them. Another issue is a bug some controllers have, where the controller starts to non-stop rumble as soon as it gets connected via usb. That can be fixed by using a hid-sony patched driver, which is available on the [dkms-hid-sony-shanwan](https://aur.archlinux.org/packages/dkms-hid-sony-shanwan/) package.
 
 ### iPEGA-9017s and other Bluetooth gamepads
 

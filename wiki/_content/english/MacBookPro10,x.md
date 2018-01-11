@@ -33,9 +33,10 @@ This page should help you setting up ArchLinux on a [MacBook Pro 10,1 with Retin
             *   [3.2.4.1 Switch to Intel integrated GPU and turn off discrete Nvidia GPU](#Switch_to_Intel_integrated_GPU_and_turn_off_discrete_Nvidia_GPU)
             *   [3.2.4.2 Keeping the discrete GPU off at boot](#Keeping_the_discrete_GPU_off_at_boot)
         *   [3.2.5 Graphic artifacting under b43-firmware](#Graphic_artifacting_under_b43-firmware)
-    *   [3.3 Sound and microphone](#Sound_and_microphone)
-    *   [3.4 Touchpad](#Touchpad)
-    *   [3.5 Memory Card (SDHCI/SDX) Reader](#Memory_Card_.28SDHCI.2FSDX.29_Reader)
+    *   [3.3 Enable Vsync](#Enable_Vsync)
+    *   [3.4 Sound and microphone](#Sound_and_microphone)
+    *   [3.5 Touchpad](#Touchpad)
+    *   [3.6 Memory Card (SDHCI/SDX) Reader](#Memory_Card_.28SDHCI.2FSDX.29_Reader)
 *   [4 What does not work (early August 2013, 3.10.3-1)](#What_does_not_work_.28early_August_2013.2C_3.10.3-1.29)
     *   [4.1 Graphics](#Graphics_2)
 *   [5 Discussions](#Discussions)
@@ -237,6 +238,21 @@ If you want to keep the discrete GPU off at boot, see [systemd-vgaswitcheroo-uni
 #### Graphic artifacting under b43-firmware
 
 While on integrated graphics with the b43-firmware package, you might encounter moderate to severe graphic artifacting that appears to be correlated to wireless network traffic. (disconnected->no artifacting, connected->periodic artifacting, large transfer->severe artifacting/unusuable) This can be resolved by removing/blacklisting [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) and using either [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms).
+
+### Enable Vsync
+
+to prevent screen tearing, add this to /etc/X11/xorg.conf.d/20-intel.conf (create the file if it is not there already)
+
+```
+ Section "Device"
+   Identifier "Intel Graphics"
+   Driver     "intel"
+   Option     "TearFree" "true"
+ EndSection
+
+```
+
+and reboot
 
 ### Sound and microphone
 

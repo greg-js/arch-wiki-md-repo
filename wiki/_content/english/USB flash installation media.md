@@ -56,13 +56,11 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
 Run the following command, replacing `/dev/**sdx**` with your drive, e.g. `/dev/sdb`. (Do **not** append a partition number, so do **not** use something like `/dev/sdb**1**`)
 
 ```
-# dd bs=4M if=/path/to/archlinux.iso of=/dev/**sdx** status=progress && sync
+# dd bs=4M if=/path/to/archlinux.iso of=/dev/**sdx** status=progress oflag=sync
 
 ```
 
-Wait for the command *sync* to complete before unplugging the USB drive to ensure the data was written completely.
-
-See [Core utilities#dd](/index.php/Core_utilities#dd "Core utilities") for more information about `dd`.
+See [Core utilities#dd](/index.php/Core_utilities#dd "Core utilities") for more information about `dd`. See [dd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) for more information about `oflag=sync`.
 
 #### In Windows
 

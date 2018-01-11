@@ -5,7 +5,7 @@
 *   [Wicd (简体中文)](/index.php/Wicd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wicd (简体中文)")
 *   [网桥](/index.php/%E7%BD%91%E6%A1%A5 "网桥")
 
-**翻译状态：** 本文是英文页面 [Netctl](/index.php/Netctl "Netctl") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-10，点击[这里](https://wiki.archlinux.org/index.php?title=Netctl&diff=0&oldid=424868)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Netctl](/index.php/Netctl "Netctl") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-01-10，点击[这里](https://wiki.archlinux.org/index.php?title=Netctl&diff=0&oldid=504831)可以查看翻译后英文页面的改动。
 
 Netctl 是基于命令行的网络管理器，支持场景配置。它是 Arch Linux 网络管理方面的原生项目。
 
@@ -13,41 +13,44 @@ Netctl 是基于命令行的网络管理器，支持场景配置。它是 Arch L
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 编辑配置](#.E7.BC.96.E8.BE.91.E9.85.8D.E7.BD.AE)
-    *   [2.2 自动化操作](#.E8.87.AA.E5.8A.A8.E5.8C.96.E6.93.8D.E4.BD.9C)
-        *   [2.2.1 基本方法](#.E5.9F.BA.E6.9C.AC.E6.96.B9.E6.B3.95)
-        *   [2.2.2 自动切换配置](#.E8.87.AA.E5.8A.A8.E5.88.87.E6.8D.A2.E9.85.8D.E7.BD.AE)
-    *   [2.3 配置文件示例](#.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6.E7.A4.BA.E4.BE.8B)
-        *   [2.3.1 有线连接](#.E6.9C.89.E7.BA.BF.E8.BF.9E.E6.8E.A5)
-        *   [2.3.2 无线连接（WPA-PSK）](#.E6.97.A0.E7.BA.BF.E8.BF.9E.E6.8E.A5.EF.BC.88WPA-PSK.EF.BC.89)
-*   [3 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [3.1 使用体验版图形用户界面](#.E4.BD.BF.E7.94.A8.E4.BD.93.E9.AA.8C.E7.89.88.E5.9B.BE.E5.BD.A2.E7.94.A8.E6.88.B7.E7.95.8C.E9.9D.A2)
-    *   [3.2 Eduroam](#Eduroam)
-    *   [3.3 绑定](#.E7.BB.91.E5.AE.9A)
-        *   [3.3.1 负载均衡](#.E8.B4.9F.E8.BD.BD.E5.9D.87.E8.A1.A1)
-        *   [3.3.2 有线 -> 无线故障切换](#.E6.9C.89.E7.BA.BF_-.3E_.E6.97.A0.E7.BA.BF.E6.95.85.E9.9A.9C.E5.88.87.E6.8D.A2)
-    *   [3.4 使用任意接口](#.E4.BD.BF.E7.94.A8.E4.BB.BB.E6.84.8F.E6.8E.A5.E5.8F.A3)
-    *   [3.5 使用钩子](#.E4.BD.BF.E7.94.A8.E9.92.A9.E5.AD.90)
-        *   [3.5.1 范例](#.E8.8C.83.E4.BE.8B)
-            *   [3.5.1.1 在已有连接上执行命令](#.E5.9C.A8.E5.B7.B2.E6.9C.89.E8.BF.9E.E6.8E.A5.E4.B8.8A.E6.89.A7.E8.A1.8C.E5.91.BD.E4.BB.A4)
-            *   [3.5.1.2 激活 network-online.target](#.E6.BF.80.E6.B4.BB_network-online.target)
-            *   [3.5.1.3 设置默认 DHCP 客户端](#.E8.AE.BE.E7.BD.AE.E9.BB.98.E8.AE.A4_DHCP_.E5.AE.A2.E6.88.B7.E7.AB.AF)
-*   [4 排错](#.E6.8E.92.E9.94.99)
-    *   [4.1 Job for netctl@wlan(...).service failed](#Job_for_netctl.40wlan.28....29.service_failed)
-    *   [4.2 dhcpcd: ipv4_addroute: File exists](#dhcpcd:_ipv4_addroute:_File_exists)
-    *   [4.3 DHCP timeout issues](#DHCP_timeout_issues)
-    *   [4.4 Connection timeout issues](#Connection_timeout_issues)
-    *   [4.5 Problems with netctl-auto on resume](#Problems_with_netctl-auto_on_resume)
-    *   [4.6 netctl-auto suddenly stopped working for WiFi adapters](#netctl-auto_suddenly_stopped_working_for_WiFi_adapters)
-    *   [4.7 netctl-auto does not automatically unblock a wireless card to use an interface](#netctl-auto_does_not_automatically_unblock_a_wireless_card_to_use_an_interface)
-    *   [4.8 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_.28with_multiple_NICs.29)
-*   [5 参见](#.E5.8F.82.E8.A7.81)
+*   [3 使用](#.E4.BD.BF.E7.94.A8)
+    *   [3.1 启动配置文件](#.E5.90.AF.E5.8A.A8.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
+    *   [3.2 启用配置文件](#.E5.90.AF.E7.94.A8.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
+    *   [3.3 特殊 systemd 单元](#.E7.89.B9.E6.AE.8A_systemd_.E5.8D.95.E5.85.83)
+        *   [3.3.1 有线连接](#.E6.9C.89.E7.BA.BF.E8.BF.9E.E6.8E.A5)
+        *   [3.3.2 无线连接](#.E6.97.A0.E7.BA.BF.E8.BF.9E.E6.8E.A5)
+*   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
+    *   [4.1 配置示例](#.E9.85.8D.E7.BD.AE.E7.A4.BA.E4.BE.8B)
+        *   [4.1.1 有线连接](#.E6.9C.89.E7.BA.BF.E8.BF.9E.E6.8E.A5_2)
+        *   [4.1.2 无线连接(WPA-PSK)](#.E6.97.A0.E7.BA.BF.E8.BF.9E.E6.8E.A5.28WPA-PSK.29)
+    *   [4.2 隐藏无线密码](#.E9.9A.90.E8.97.8F.E6.97.A0.E7.BA.BF.E5.AF.86.E7.A0.81)
+    *   [4.3 使用体验版图形用户界面](#.E4.BD.BF.E7.94.A8.E4.BD.93.E9.AA.8C.E7.89.88.E5.9B.BE.E5.BD.A2.E7.94.A8.E6.88.B7.E7.95.8C.E9.9D.A2)
+    *   [4.4 Eduroam](#Eduroam)
+    *   [4.5 绑定](#.E7.BB.91.E5.AE.9A)
+        *   [4.5.1 负载均衡](#.E8.B4.9F.E8.BD.BD.E5.9D.87.E8.A1.A1)
+        *   [4.5.2 有线 -> 无线故障切换](#.E6.9C.89.E7.BA.BF_-.3E_.E6.97.A0.E7.BA.BF.E6.95.85.E9.9A.9C.E5.88.87.E6.8D.A2)
+    *   [4.6 使用任意接口](#.E4.BD.BF.E7.94.A8.E4.BB.BB.E6.84.8F.E6.8E.A5.E5.8F.A3)
+    *   [4.7 使用钩子](#.E4.BD.BF.E7.94.A8.E9.92.A9.E5.AD.90)
+        *   [4.7.1 范例](#.E8.8C.83.E4.BE.8B)
+            *   [4.7.1.1 在已有连接上执行命令](#.E5.9C.A8.E5.B7.B2.E6.9C.89.E8.BF.9E.E6.8E.A5.E4.B8.8A.E6.89.A7.E8.A1.8C.E5.91.BD.E4.BB.A4)
+            *   [4.7.1.2 激活 network-online.target](#.E6.BF.80.E6.B4.BB_network-online.target)
+            *   [4.7.1.3 设置默认 DHCP 客户端](#.E8.AE.BE.E7.BD.AE.E9.BB.98.E8.AE.A4_DHCP_.E5.AE.A2.E6.88.B7.E7.AB.AF)
+*   [5 排错](#.E6.8E.92.E9.94.99)
+    *   [5.1 Job for netctl@wlan(...).service failed](#Job_for_netctl.40wlan.28....29.service_failed)
+    *   [5.2 dhcpcd: ipv4_addroute: File exists](#dhcpcd:_ipv4_addroute:_File_exists)
+    *   [5.3 DHCP timeout issues](#DHCP_timeout_issues)
+    *   [5.4 Connection timeout issues](#Connection_timeout_issues)
+    *   [5.5 Problems with netctl-auto on resume](#Problems_with_netctl-auto_on_resume)
+    *   [5.6 netctl-auto suddenly stopped working for WiFi adapters](#netctl-auto_suddenly_stopped_working_for_WiFi_adapters)
+    *   [5.7 netctl-auto does not automatically unblock a wireless card to use an interface](#netctl-auto_does_not_automatically_unblock_a_wireless_card_to_use_an_interface)
+    *   [5.8 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_.28with_multiple_NICs.29)
+*   [6 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
 [netctl](https://www.archlinux.org/packages/?name=netctl) 是 [base](https://www.archlinux.org/groups/x86_64/base/) 包组的成员，所以系统中应当已经安装了。否则可以手工[安装](/index.php/Install "Install")。 netctl 有一些用于自动连接的[#特殊 systemd 单元](#.E7.89.B9.E6.AE.8A_systemd_.E5.8D.95.E5.85.83)需要一些附加依赖包，详情参阅该章节。 下表列出 netctl 的其他可选依赖包：
 
-| Feature | Dependency |
+| 功能 | 依赖 |
 | WPA | [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) |
 | DHCP | [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) or [dhclient](https://www.archlinux.org/packages/?name=dhclient) |
 | Wifi menus | [dialog](https://www.archlinux.org/packages/?name=dialog) |
@@ -59,102 +62,91 @@ Netctl 是基于命令行的网络管理器，支持场景配置。它是 Arch L
 
 `netctl` 使用配置文件来管理网络连接，并按需自动或手动启动不同的操作模式
 
-### 编辑配置
+*netctl*的配置文件保存在 `/etc/netctl/` 。一些配置文件的示例位于 `/etc/netctl/examples/`。
 
-*netctl*的配置文件保存在 `/etc/netctl/` 。一些配置文件的示例位于 `/etc/netctl/examples/`。通用的配置项包括：
-
-*   ethernet-dhcp
-*   ethernet-static
-*   wireless-wpa
-*   wireless-wpa-static
-
-若要使用上述示例配置文件，只需将其从 `/etc/netctl/examples/` 复制到 `/etc/netctl/`。参见下述 配置示例。编辑配置文件所需的首要参数是网络*端口(interface)*，详阅 网络配置 设备名称。
+若要使用上述示例配置文件，只需将其从 `/etc/netctl/examples/` [复制](/index.php/Copy "Copy")到 `/etc/netctl/` 并按需配置。参见下述[#配置示例](#.E9.85.8D.E7.BD.AE.E7.A4.BA.E4.BE.8B)。编辑配置文件所需的首要参数是网络*端口(interface)*，详阅[网络配置#设备名称](/index.php/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#.E8.AE.BE.E5.A4.87.E5.90.8D.E7.A7.B0 "网络配置")。
 
 **提示：**
-```
-如要配置无线网络，可以root身份运行 `wifi-menu -o` 来自动在 `/etc/netctl/` 中生成配置文件。
 
-```
+如要配置无线网络，可以用 root 身份运行 `wifi-menu -o` 以自动在 `/etc/netctl/` 中生成配置文件。*wifi-menu* 需要 [dialog](https://www.archlinux.org/packages/?name=dialog) 包。
 
-```
 如要在有线网络接口上启用静态IP，并忽略线缆连接状况，可以在配置文件中添加 `SkipNoCarrier=yes` 配置项
 
+配置文件的完整配置项清单请参阅：[netctl.profile.5](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5)
+
+## 使用
+
+netctl 的完整命令清单请参阅：[netctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.1)
+
+### 启动配置文件
+
+创建了一个配置文件之后请尝试用它建立一个连接。下例中的 *profile* 仅使用配置文件的文件名，不要带全路径名。
+
+```
+# netctl start profile
+
 ```
 
-在创建好你自己的配置文件之后，可以尝试运行（仅需写出文件名，不包含完整路径）：
+如果上面的命令返回失败，可以使用 `journalctl -xn` 和 `netctl status *profile*` 命令获取进一步的失败原因信息。
 
-```
-# netctl start *profile*
+### 启用配置文件
 
-```
-
-如果上述命令出错，可使用 `journalctl -xn` 和 `netctl status *profile*` 来获得对错误的详细描述。
-
-### 自动化操作
-
-如果使用单一配置文件（对每个网络接口）或想人工切换配置文件，请看 [基本方法](#.E5.9F.BA.E6.9C.AC.E6.96.B9.E6.B3.95) 。使用这种配置方法的多为服务器、工作站和路由器等。
-
-如果需要经常在多个配置文件间切换，请看 [自动切换配置](#.E8.87.AA.E5.8A.A8.E5.88.87.E6.8D.A2.E9.85.8D.E7.BD.AE)。常用于笔记本电脑。
-
-#### 基本方法
-
-使用此种方式，可以为每个网络接口固定地启用一个配置文件。首先需手动检查该配置文件可以正常使用，那么可以用下面的命令启用它：
+下列命令实现开机时自动启动配置文件：
 
 ```
 # netctl enable *profile*
 
 ```
 
-这将创建并启用一个随计算机启动而自动运行的 [systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") 服务。对配置文件本身的修改无法自动关联到前述创建的服务文件，修改之后，需用下述命令重新启用该配置。
+这条命令将创建并启用一个随计算机启动而自动运行的 [systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") 服务。对配置文件本身的修改无法自动关联到前述创建的服务文件，修改之后，需用下述命令重新启用该配置：
 
 ```
 # netctl reenable *profile*
 
 ```
 
-**注意:** 只有在计算机启动时（或服务启动时），配置文件可以被成功地启用，连接才可以建立。特别地，对于有线连接，需插好电缆;对于无线连接，需处于信号覆盖范围内。
+启用的配置文件将在下次引导时自动启动。显然，只有线缆已连接或已处于无线信号覆盖区域时，配置文件才能成功启动。
 
-**提示：** 若要无视线缆是否插好，强制对有线网络接口启用一个固定IP的配置，可以在配置文件中加入 `SkipNoCarrier=yes` 。
+如果需要在多个配置文件之间频繁切换（比如携带笔记本电脑旅行），应改用 [#特殊 systemd 单元](#.E7.89.B9.E6.AE.8A_systemd_.E5.8D.95.E5.85.83) 一节的方法代替本节所述方法。
 
-#### 自动切换配置
+### 特殊 systemd 单元
 
-`netctl` 提供了两个特殊的 [systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") 服务来自动切换配置：
+*netctl* 提供了特殊的 [systemd](/index.php/Systemd "Systemd") 服务以实现有线与无线连接的自动切换。这些特殊的 systemd 单元的完整清单请参阅 [netctl.special(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.special.7)。
 
-*   有线网络： `netctl-ifplugd@*interface*.service`。使用它，将在你插入和拔出电缆时自动切换配置文件。
-*   无线网络： `netctl-auto@*interface*.service`。使用它，将在你从一个无线网络的覆盖范围进入另一个无线网络的范围时自动切换配置文件。
+#### 有线连接
 
-首先 [安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 下列软件包：
-
-*   [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) 用来支持使用 `netctl-auto@*interface*.service` 命令。
-*   [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) 用来支持使用 `netctl-ifplugd@*interface*.service` 命令。
-
-然后将 `netctl-auto@*interface*.service` 或 `netctl-ifplugd@*interface*.service` 需要启动的所有配置文件编辑好。
-
-如果希望某些无线网络配置**不要**被 `netctl-auto@*interface*.service`自动启用，需要专门在该配置文件中加入 `ExcludeAuto=yes` 。存在多个可用配置时，可以通过设置 `Priority=` 来为某些文件设置优先级。 `netctl-ifplugd@*interface*.service` 优先启用使用了 [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP") 的配置文件，如要优先启用一个使用固定IP的配置，可以设置 `AutoWired=yes` 。详细内容参见 `netctl.profile(5)` 。
-
-**Warning:** 不能通过选项`Security=wpa-config`来让netctl-auto自动选择一个启用了WPA的配置文件。请使用 `Security=wpa-configsection` 来代替。
-
-在设置好你的配置文件并且确认它们可以正常工作后，使用systemctl启动这些服务：
+[安装](/index.php/Install "Install") [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) 包，并且[启动/启用](/index.php/Start/enable "Start/enable") `netctl-ifplugd@*interface*.service`
 
 ```
-# systemctl enable netctl-auto@*interface*.service 
-# systemctl enable netctl-ifplugd@*interface*.service  
+systemd 单元。网线插入/拔出时，DHCP 配置文件将被启动/停止。
 
 ```
 
-**Warning:**
+*   `netctl-ifplugd@*interface*.service` 优先启用使用了 [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP") 的配置文件。
+*   若要自动启动一个静态 IP 配置文件，需要在其中增加 `ExcludeAuto=no` 配置项。
+*   若要使某个静态 IP 配置文件的优先级高于使用 DHCP 的配置文件，可以增加 `Priority=2` 配置项，这将使其优先级高于使用 DHCP 的配置文件默认的 `Priority=1`。
 
-*   如果任何一个配置文件包含错误，例如包含空变量 `Key=`，这个文件将无法在开机时自动启用。
+#### 无线连接
+
+[安装](/index.php/Install "Install") [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) 包并[启动/启用](/index.php/Start/enable "Start/enable") `netctl-auto@*interface*.service` systemd 单元。当在不同网络覆盖区域间移动（漫游）时，*netctl* 配置文件将会自动启动/停止。
+
+*   *netctl-auto* 要求配置文件必须使用 `Security=wpa-configsection` 或 `Security=wpa` 配置项才能工作，不能使用 `Security=wpa-config` 配置项。
+
+*   如果希望某些无线网络配置**不要**被 `netctl-auto@*interface*.service`自动启用，需要特别在该配置文件中加入 `ExcludeAuto=yes` 。
+*   如果存在多个无线访问点可用，可以在 *WPAConfigSection* 配置节中加入 `priority=` 配置项（参阅 `/etc/netctl/examples/wireless-wpa-configsection`）。
+
+注意，服务单元名称中的 *interface* 一词不要原文照抄，应当替换成实际的接口设备名，如 `netctl-auto@wlp4s0.service`。详情参阅 `netctl.profile(5)`。
+
+**注意:**
+
+*   如果任何一个配置文件包含错误，例如包含空变量 `Key=`，即使这个文件未被使用，也将加载失败并报错 `"Failed to read or parse configuration '/run/network/wpa_supplicant_wlan0.conf'`。
 *   本方法与 [基本方法](#.E5.9F.BA.E6.9C.AC.E6.96.B9.E6.B3.95) 矛盾。如果你之前已经通过netctl启用了一个配置文件，运行 `netctl disable *profile*` 来防止这个配置在计算机启动时被启用两次。
 
-从netctl 1.3开始，允许在不停止netctl-auto服务的情况下手工控制一个不受netctl-auto管理的网络接口。这可以通过netctl-auto命令完成。若要获得可用行为的列表，运行：
+通过 netctl-auto 的命令动作可以在不停止 `netctl-auto.service` 服务的情况下手工控制一个不受 netctl-auto 管理的网络接口。完整的 netctl-auto 命令动作列表参阅 [netctl-auto(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl-auto.1)。
 
-```
- # netctl-auto --help
+## 提示与技巧
 
-```
-
-### 配置文件示例
+### 配置示例
 
 #### 有线连接
 
@@ -162,9 +154,10 @@ For a DHCP connection, only the `Interface` has to be configured after copying t
 
 For example:
 
- `/etc/netctl/*my_dhcp_rofile*` 
+ `/etc/netctl/*my_dhcp_profile*` 
 ```
 Interface=enp1s0
+Connection=ethernet
 IP=dhcp
 
 ```
@@ -179,49 +172,16 @@ Interface=enp1s0
 Connection=ethernet
 IP=static
 Address=('10.1.10.2/24')
-Gateway='10.1.10.1'
+Gateway=('10.1.10.1')
 DNS=('10.1.10.1')
 
 ```
 
-For the `Address` take care to include the correct netmask (the `/24` in the sample profile equates to a netmask of `255.255.255.0`) or the profile will fail to start. See also [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing").
+Take care to include the subnet notation of `/24`. It equates to a netmask of `255.255.255.0`) and without it the profile will fail to start. See also [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing"). To alias more than one IP address per a NIC set `Address=('10.1.10.2/24' '192.168.1.2/24')`.
 
-#### 无线连接（WPA-PSK）
+#### 无线连接(WPA-PSK)
 
-密码加密(256-bit PSK)
-
-**警告:** 尽管进行了“加密”，你写进配置文件的密码依然可以让你连接到一个WPA-PSK网络。也即，这个加密过程只用来将密码变得“让人看不懂”，但无法阻止对这个文件有阅读权限的人使用它来连接网络。而且将这个密码再用到其他的地方变得极其不安全，你应当考虑是否有这样做的必要。
-
-那些**不想**让自己的无线网络密钥以“明文”的形式保存的用户可以选择使用256位预先共享密钥(PSK)来代替，它由密钥和SSID经由标准算法计算而成。
-
-*   方法 1: 使用 `wifi-menu -o` 在目录 `/etc/netctl/` 中生成一个配置文件。
-*   方法 2: 按照如下方法手工配置。
-
-无论采用何种方法，建议运行 `chmod 600 /etc/netctl/<config_file>` 来禁止其他用户访问密码。
-
-用[wpa_passphrase](/index.php/WPA_supplicant#Configuration "WPA supplicant")中的方法生成你的256位PSK:
-
- `$ wpa_passphrase *your_essid* *passphrase*` 
-```
-network={
-  ssid="*your_essid*"
-  #psk="*passphrase*"
-  psk=64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
-}
-```
-
-**提示：** 运行后不要关闭终端，这里的结果将在之后的配置中用到。
-
-在另一个终端窗口中，将示例文件 `wireless-wpa` 从 `/etc/netctl/examples` 复制到 `/etc/netctl`:
-
-```
-# cp /etc/netctl/examples/wireless-wpa /etc/netctl/wireless-wpa
-
-```
-
-你需要用常用的文本编辑器编辑 `/etc/netctl/wireless-wpa`，将你刚才生成的PSK码添加到 `Key` 变量。
-
-完成后，你的配置文件 `wireless-wpa` 应当像下面这样:
+The following applies for the standard wireless connections using a pre-shared key (WPA-PSK).
 
  `/etc/netctl/wireless-wpa` 
 ```
@@ -236,10 +196,28 @@ Key=\"64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
 
 **注意:**
 
-*   注意对变量 `Key` 使用 **special quoting rules**，详细的描述参见[netctl.profile(5)](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.profile.5.txt)末尾。
-*   如果密码没有起作用，从变量 `Key` 中删除 `\"` 。
+*   Make sure to use the **special quoting rules** for the `Key` variable as explained at the end of [netctl.profile(5)](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.profile.5.txt).
+*   If the passphrase fails, try removing the `\"` in the `Key` variable.
+*   Although "encrypted", the key that you put in the profile configuration is enough to connect to a WPA-PSK network. Therefore this process is only useful for hiding the human-readable version of the passphrase. This will not prevent anyone with read access to this file from connecting to the network.
 
-## 提示与技巧
+### 隐藏无线密码
+
+You can also follow the following step to obfuscate the wireless passphrase (*wifi-menu* does it automatically when using the `-o` flag):
+
+Users **not** wishing to have the passphrase to their wireless network stored in *plain text* have the option of storing the corresponding 256-bit pre-shared key instead, which is calculated from the passphrase and the SSID using standard algorithms.
+
+Calculate your 256-bit PSK using [wpa_passphrase](/index.php/WPA_supplicant#Connecting_with_wpa_passphrase "WPA supplicant"):
+
+ `$ wpa_passphrase *your_essid*` 
+```
+network={
+  ssid="*your_essid*"
+  #psk="*passphrase*"
+  psk=64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
+}
+```
+
+The *pre-shared key* (psk) now needs to replace the plain text passphrase of the `Key` variable in the profile.
 
 ### 使用体验版图形用户界面
 
