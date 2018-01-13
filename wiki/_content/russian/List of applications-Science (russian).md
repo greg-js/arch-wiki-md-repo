@@ -203,7 +203,7 @@
 
 *   **[Grace](https://en.wikipedia.org/wiki/Grace_(plotting_tool) "wikipedia:Grace (plotting tool)")** — WYSIWYG-инструмент построения 2D-графиков
 
-	[http://plasma-gate.weizmann.ac.il/Grace/](http://plasma-gate.weizmann.ac.il/Grace/) || [grace](https://www.archlinux.org/packages/?name=grace) [qtgrace](https://aur.archlinux.org/packages/qtgrace/) [gracegtk](https://aur.archlinux.org/packages/gracegtk/)
+	[http://plasma-gate.weizmann.ac.il/Grace/](http://plasma-gate.weizmann.ac.il/Grace/) || [grace](https://aur.archlinux.org/packages/grace/) [qtgrace](https://aur.archlinux.org/packages/qtgrace/) [gracegtk](https://aur.archlinux.org/packages/gracegtk/)
 
 *   **[LabPlot](https://en.wikipedia.org/wiki/ru:LabPlot "wikipedia:ru:LabPlot")** — Свободная программа анализа данных и визуализации, похожая на SciDAVis
 

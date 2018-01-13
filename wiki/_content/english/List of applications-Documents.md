@@ -521,7 +521,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **Bookworm** — eBook reader with epub, pdf, mobi, cbr support for Elementary OS.
 
-	[https://babluboy.github.io/bookworm/](https://babluboy.github.io/bookworm/) || [bookworm](https://aur.archlinux.org/packages/bookworm/)
+	[https://babluboy.github.io/bookworm/](https://babluboy.github.io/bookworm/) || [bookworm](https://www.archlinux.org/packages/?name=bookworm)
 
 *   **[Calibre](https://en.wikipedia.org/wiki/Calibre_(software) "wikipedia:Calibre (software)")** — E-book library management application that can also convert between different formats and sync with a variety of e-book readers. Supported formats include CBZ, CBR, CBC, CHM, DJVU, EPUB, FictionBook, HTML, HTMLZ, LIT, LRF, Mobipocket, ODT, PDF, PRC, PDB, PML, RB, RTF, SNB, TCR, TXT and TXTZ.
 

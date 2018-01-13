@@ -274,7 +274,7 @@ Alcuni client elencati in seguito (incluso Pidgin e tutti i suoi forks) supporta
 
 *   **[naim](https://en.wikipedia.org/wiki/naim_(software) "wikipedia:naim (software)")** — Client ncurses per chat con supporto per AOL, ICQ, IRC and the Lily CMC.
 
-	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://www.archlinux.org/packages/?name=naim)
+	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://aur.archlinux.org/packages/naim/)
 
 *   **pork** — Client progammabile basato su ncurses per AIM e IRC che assomiglia nel look a ircII.
 
@@ -332,7 +332,7 @@ See also [Wikipedia:Comparison of instant messaging clients#XMPP-related feature
 
 *   **Freetalk** — Client jabber console-based.
 
-	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://www.archlinux.org/packages/?name=freetalk)
+	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://aur.archlinux.org/packages/freetalk/)
 
 *   **jabber.el** — Client jabber minimale per [Emacs](/index.php/Emacs "Emacs").
 
@@ -498,7 +498,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Linphone](https://en.wikipedia.org/wiki/Linphone "wikipedia:Linphone")** — Applicazione per telefonate VoIP che permette di comunicare liberamente con le persone tramite internet, con supporto, voce, video e di messaggistica.
 
-	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://www.archlinux.org/packages/?name=linphone)
+	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://aur.archlinux.org/packages/linphone/)
 
 *   **Minisip** — SIP User Agent incentrato sulla sicurezza (supporta TLS, end-to-end security, SRTP, MIKEY (DH, PSK, PKE)).
 
@@ -900,7 +900,7 @@ See also [Wikipedia:List of content management systems](https://en.wikipedia.org
 
 *   **Nanoblogger** — Piccolo motore weblog scritto in Bash per la riga di comando. Utilizza strumenti comuni di UNIX come cat, grep, sed per creare contenuti HTML statici.
 
-	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://www.archlinux.org/packages/?name=nanoblogger)
+	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://aur.archlinux.org/packages/nanoblogger/)
 
 ### Client per microblogging
 
@@ -1012,7 +1012,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **fbv** — Visualizzatore di immagini che sfrutta il framebuffer.
 
-	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://www.archlinux.org/packages/?name=fbv)
+	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://aur.archlinux.org/packages/fbv/)
 
 *   **fim** — Visualizzatore di immagini che sfrutta il framebuffer, altamente configurabile e basato su fbi.
 
@@ -1042,7 +1042,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Gimmage** — Visualizzatore di immagini che usa gtkmm.
 
-	[http://directory.fsf.org/wiki/Gimmage](http://directory.fsf.org/wiki/Gimmage) || [gimmage](https://www.archlinux.org/packages/?name=gimmage)
+	[http://directory.fsf.org/wiki/Gimmage](http://directory.fsf.org/wiki/Gimmage) || [gimmage](https://aur.archlinux.org/packages/gimmage/)
 
 *   **GpicView** — Semplice e veloce visore di immagini per X. Creato dagli sviluppatori di [LXDE](/index.php/LXDE_(Italiano) "LXDE (Italiano)").
 
@@ -1062,7 +1062,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Mirage** — Visualizzatore di immagini, scritto in pyGTK, con supporto per ritagliare e ridimensionare, azioni personalizzate e un pannello delle miniature.
 
-	[http://mirageiv.berlios.de](http://mirageiv.berlios.de) || [mirage](https://www.archlinux.org/packages/?name=mirage)
+	[http://mirageiv.berlios.de](http://mirageiv.berlios.de) || [mirage](https://aur.archlinux.org/packages/mirage/)
 
 *   **nomacs** — nomacs è un visualizzatore di immagini gratuito ( Qt ) per Windows, Linux e Mac , che viene concesso sotto la licenza GPL v3.
 
@@ -1475,7 +1475,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **ripperX** — Programma GTK+ per il ripping e la codifica di file MP3.
 
-	[http://sourceforge.net/projects/ripperx/](http://sourceforge.net/projects/ripperx/) || [ripperx](https://www.archlinux.org/packages/?name=ripperx)
+	[http://sourceforge.net/projects/ripperx/](http://sourceforge.net/projects/ripperx/) || [ripperx](https://aur.archlinux.org/packages/ripperx/)
 
 *   **rubyripper** — Applicazione che cerca di fornire una registrazione sicura attraverso un ripping multiplo della stessa traccia. Effettua la correzione di eventuali differenze.
 
@@ -1519,7 +1519,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **ID3 Mass Tagger** — Utility da riga di comando per modificare i tag ID3 1.x e 2.x.
 
-	[http://freecode.com/projects/id3](http://freecode.com/projects/id3) || [id3](https://www.archlinux.org/packages/?name=id3)
+	[http://freecode.com/projects/id3](http://freecode.com/projects/id3) || [id3](https://aur.archlinux.org/packages/id3/)
 
 *   **Kid3** — Editor di tag per file MP3, Ogg/Vorbis, FLAC, MPC, MP4/AAC, MP2, Speex, TrueAudio, WavPack, WMA, WAV e AIFF.
 
@@ -1725,7 +1725,7 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 *   **[GCstar](https://en.wikipedia.org/wiki/GCstar "wikipedia:GCstar")** — Applicazione GNOME per organizzare svariate collezioni (giochi da tavolo, fumetti, film, riviste, etc.).
 
-	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://www.archlinux.org/packages/?name=gcstar)
+	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://aur.archlinux.org/packages/gcstar/)
 
 *   **[Koha](https://en.wikipedia.org/wiki/Koha_(software) "wikipedia:Koha (software)")** — Integrated Library System (ILS) open source, utilizzata in tutto il mondo da servizi pubblici, scuole e librerie speciali.
 
@@ -2011,7 +2011,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Un leggero pannello per il desktop, NETWM compliant.
 
-	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://www.archlinux.org/packages/?name=fbpanel)
+	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://aur.archlinux.org/packages/fbpanel/)
 
 *   **[GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")** — Pannello incluso nell'ambiente desktop [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback").
 
@@ -2599,7 +2599,7 @@ Si veda l'articolo principale: [List of applications/Documents (Italiano)#Docume
 
 *   **[Grace](https://en.wikipedia.org/wiki/Grace_(plotting_tool) "wikipedia:Grace (plotting tool)")** — Strumento di disegno di grafici [Wikipedia:WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG "wikipedia:WYSIWYG").
 
-	[http://plasma-gate.weizmann.ac.il/Grace/](http://plasma-gate.weizmann.ac.il/Grace/) || [grace](https://www.archlinux.org/packages/?name=grace) [qtgrace](https://aur.archlinux.org/packages/qtgrace/) [gracegtk](https://aur.archlinux.org/packages/gracegtk/)
+	[http://plasma-gate.weizmann.ac.il/Grace/](http://plasma-gate.weizmann.ac.il/Grace/) || [grace](https://aur.archlinux.org/packages/grace/) [qtgrace](https://aur.archlinux.org/packages/qtgrace/) [gracegtk](https://aur.archlinux.org/packages/gracegtk/)
 
 *   **[LabPlot](https://en.wikipedia.org/wiki/LabPlot "wikipedia:LabPlot")** — Software per analisi e visualizzazione dei dati simile a SciDAVis.
 
@@ -3169,7 +3169,7 @@ Gli utenti utilizzano emulatori di terminale molto spesso, quindi non sorprende 
 
 *   **ROXTerm** — Emulatore di terminale basato su VTE, con tabulazione e ingombro minimo
 
-	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://www.archlinux.org/packages/?name=roxterm)
+	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://aur.archlinux.org/packages/roxterm/)
 
 *   **Sakura** — Emulatore di terminale basato su GTK+ e VTE
 

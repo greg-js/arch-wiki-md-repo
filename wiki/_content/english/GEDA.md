@@ -19,8 +19,6 @@ Installing [geda-gaf](https://www.archlinux.org/packages/?name=geda-gaf) will gi
 
 Installing [pcb](https://www.archlinux.org/packages/?name=pcb) will give you the PCB editor, available from the [AUR](/index.php/AUR "AUR").
 
-Also you can install [xgsch2pcb](https://aur.archlinux.org/packages/xgsch2pcb/) ([AUR](/index.php/AUR "AUR")), graphical interface to the gsch2pcb command-line tool for converting *.sch to *.pcb.
-
 ## First PCB
 
 ### Create schematic symbol

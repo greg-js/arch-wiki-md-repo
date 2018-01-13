@@ -6,7 +6,7 @@
 
 This page expains how to write [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for software running on Windows using GCC. There are two options to build software for Windows on Linux:
 
-*   [mingw-w64](https://mingw-w64.org): provides 32 and 64-bit toolchains with secure crt, Vista+ API, DDK (ReactOS), and DirectX (WINE) support. For a full list of supported features and differences with the old MinGW.org, see [here](http://sourceforge.net/apps/trac/mingw-w64/wiki/Feature%20list). Available from the AUR by installing [mingw-w64-gcc](https://aur.archlinux.org/packages/mingw-w64-gcc/).
+*   [mingw-w64](https://mingw-w64.org): provides 32 and 64-bit toolchains with secure crt, Vista+ API, DDK (ReactOS), and DirectX (WINE) support. For a full list of supported features and differences with the old MinGW.org, see [here](https://sourceforge.net/p/mingw-w64/wiki2/Feature%20list/). Available from the AUR by installing [mingw-w64-gcc](https://aur.archlinux.org/packages/mingw-w64-gcc/).
 *   [MinGW](http://www.mingw.org/): provides 32-bit toolchains with limited DirectX support. It also suffers from long-standing breakage in the implementation of thread-local storage and the floating point library support. It has been removed from the official repositories and the AUR.
 
 ## Contents
@@ -25,8 +25,8 @@ A package for mingw-w64 should be named `mingw-w64-*pkgname*`. If a static varia
 
 Packaging for cross platform packages can be fairly tricky as there are many different build systems and low-level quirks. Take a note of the following things though:
 
-*   always add [mingw-w64-crt](https://www.archlinux.org/packages/?name=mingw-w64-crt) to `depends`, unless it depends on another package which implicitly depends on it
-*   always add [mingw-w64-gcc](https://www.archlinux.org/packages/?name=mingw-w64-gcc) to `makedepends`, unless using [mingw-w64-configure](https://aur.archlinux.org/packages/mingw-w64-configure/) or [mingw-w64-cmake](https://aur.archlinux.org/packages/mingw-w64-cmake/)
+*   always add [mingw-w64-crt](https://aur.archlinux.org/packages/mingw-w64-crt/) to `depends`, unless it depends on another package which implicitly depends on it
+*   always add [mingw-w64-gcc](https://aur.archlinux.org/packages/mingw-w64-gcc/) to `makedepends`, unless using [mingw-w64-configure](https://aur.archlinux.org/packages/mingw-w64-configure/) or [mingw-w64-cmake](https://aur.archlinux.org/packages/mingw-w64-cmake/)
 *   always add `!strip`, `staticlibs` and `!buildflags` to `options`
 *   always use the original `pkgdesc` and append `(mingw-w64)` to the end of `pkgdesc`
 *   always use and follow the original `pkgver` of the official package

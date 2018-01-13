@@ -211,7 +211,7 @@ See [Pipelight](/index.php/Pipelight "Pipelight").
 
 *   **VLC Plugin** — NPAPI 接口，VLC 插件.
 
-	[https://code.videolan.org/videolan/npapi-vlc](https://code.videolan.org/videolan/npapi-vlc) || [npapi-vlc](https://www.archlinux.org/packages/?name=npapi-vlc)
+	[https://code.videolan.org/videolan/npapi-vlc](https://code.videolan.org/videolan/npapi-vlc) || [npapi-vlc](https://aur.archlinux.org/packages/npapi-vlc/)
 
 ## 其他
 

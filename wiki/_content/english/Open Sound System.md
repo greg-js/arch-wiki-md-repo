@@ -20,10 +20,9 @@ The [Open Sound System](https://en.wikipedia.org/wiki/Open_Sound_System "wikiped
     *   [5.5 MOC](#MOC)
     *   [5.6 MPD](#MPD)
     *   [5.7 MPlayer](#MPlayer)
-    *   [5.8 Skype](#Skype)
-    *   [5.9 VLC media player](#VLC_media_player)
-    *   [5.10 Wine](#Wine)
-    *   [5.11 Other applications](#Other_applications)
+    *   [5.8 VLC media player](#VLC_media_player)
+    *   [5.9 Wine](#Wine)
+    *   [5.10 Other applications](#Other_applications)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Using multimedia keys with OSS](#Using_multimedia_keys_with_OSS)
     *   [6.2 Changing the Sample Rate](#Changing_the_Sample_Rate)
@@ -362,16 +361,6 @@ If you do not want to bother typing it over and over again add `ao=oss` to your 
 
 See also: [MPlayer#Configuration](/index.php/MPlayer#Configuration "MPlayer").
 
-### Skype
-
-The [skype](https://aur.archlinux.org/packages/skype/) package includes support for PulseAudio only, since OSS and ALSA support has been dropped with version 4.3\. Due to community efforts, being able to use Skype with OSS (and without PulseAudio) is still possible though:
-
-You can install [skype_oss_wrapper-git](https://aur.archlinux.org/packages/skype_oss_wrapper-git/) from AUR, which utilizes a fake libpulse.so library that mimics PulseAudio behaviour for Skype. After installing you will need to start Skype with the command: `skype_oss` - or simply start it through the created application shortcut: "Skype (OSSv4)". It does pretty well for a wrapper, although it can only work with 48KHz input and output . Should you find any misbehaviours or missing features, bug reports and patches are greatly appreciated.
-
-However it is also possible to use [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) with module-oss:
-
-Edit `/etc/pulse/default.pa`, comment out the line that starts with `load-module module-udev-detect` and add `load-module module-oss device="/dev/dsp" sink_name=output source_name=input mmap==0`.
-
 ### VLC media player
 
 You can select OSS as the default output in the audio settings.
@@ -400,7 +389,9 @@ See also: [ossapps](http://www.opensound.com/ossapps.html).
 
 ### Using multimedia keys with OSS
 
-An easy way to mute/unmute and increase/decrease the volume is to use the [ossvol](https://aur.archlinux.org/packages/ossvol/) script, available in the [AUR](/index.php/AUR "AUR"). For more information about the script see [this article](http://www.opensound.com/wiki/index.php/Tips_And_Tricks#ossvol) on the OSS wiki.
+An easy way to mute/unmute and increase/decrease the volume is to use the [ossvol](http://www.opensound.com/wiki/index.php/Tips_And_Tricks#ossvol) script.
+
+Download the script and place it at `/usr/bin/ossvol`.
 
 Once you installed it, type:
 
@@ -418,7 +409,7 @@ $ ossvol -h
 
 to see the available commands.
 
-**Note:** If `ossvol` gives an error like **Bad mixer control name(987) 'vol'**, you need to edit the `/usr/bin/ossvol` script and change the `CHANNEL` variable to your default channel (usually `vmix0-outvol`).
+**Note:** If `ossvol` gives an error like **Bad mixer control name(987) 'vol'**, you need to edit the script and change the `CHANNEL` variable to your default channel (usually `vmix0-outvol`).
 
 If you want to use multimedia keys with `ossvol`, see [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") and make sure they are properly configured. After that you can use, for example, [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") to bind them to the `ossvol` script. Add the following to your `~/.xbindkeysrc` file:
 

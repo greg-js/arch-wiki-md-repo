@@ -64,7 +64,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **fbv** — framebuffer 图像查看器
 
-	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://www.archlinux.org/packages/?name=fbv)
+	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://aur.archlinux.org/packages/fbv/)
 
 *   **fim** — 基于fbi的，可定制的，支持脚本Frambuffer图像查看器
 
@@ -113,7 +113,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Gimmage** — Gtkmm image viewer.
 
-	[http://gimmage.berlios.de/](http://gimmage.berlios.de/) || [gimmage](https://www.archlinux.org/packages/?name=gimmage)
+	[http://gimmage.berlios.de/](http://gimmage.berlios.de/) || [gimmage](https://aur.archlinux.org/packages/gimmage/)
 
 *   **GPicView** — Simple and fast image viewer for X, which is part of the [LXDE](/index.php/LXDE "LXDE") desktop.
 
@@ -133,7 +133,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Mirage** — PyGTK image viewer featuring support for crop and resize, custom actions and a thumbnail panel.
 
-	[http://mirageiv.berlios.de](http://mirageiv.berlios.de) || [mirage](https://www.archlinux.org/packages/?name=mirage)
+	[http://mirageiv.berlios.de](http://mirageiv.berlios.de) || [mirage](https://aur.archlinux.org/packages/mirage/)
 
 *   **nomacs** — Free (GPLv3) Qt image viewer for many operating systems. It is feature-rich but starts fast and can be configured to show additional widgets or only the image.
 
@@ -623,7 +623,7 @@ See [Optical disc drive#CD](/index.php/Optical_disc_drive#CD "Optical disc drive
 
 *   **ID3 Mass Tagger** — Command-line utility to edit ID3 1.x and 2.x tags.
 
-	[http://squell.github.io/id3/](http://squell.github.io/id3/) || [id3](https://www.archlinux.org/packages/?name=id3)
+	[http://squell.github.io/id3/](http://squell.github.io/id3/) || [id3](https://aur.archlinux.org/packages/id3/)
 
 *   **Kid3** — MP3, Ogg/Vorbis, FLAC, MPC, MP4/AAC, MP2, Speex, TrueAudio, WavPack, WMA, WAV and AIFF files tag editor.
 
@@ -895,7 +895,7 @@ see [Podcast clients](/index.php/List_of_applications/Internet#Podcast_clients "
 
 *   **[GCstar](https://en.wikipedia.org/wiki/GCstar "wikipedia:GCstar")** — GNOME application for organizing various collections (board games, comic books, movies, stamps, etc.).
 
-	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://www.archlinux.org/packages/?name=gcstar)
+	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://aur.archlinux.org/packages/gcstar/)
 
 *   **[Tellico](https://en.wikipedia.org/wiki/Tellico "wikipedia:Tellico")** — KDE application for organizing various collections (books, video, music, coins, etc.).
 

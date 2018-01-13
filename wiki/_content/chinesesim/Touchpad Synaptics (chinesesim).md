@@ -188,9 +188,9 @@ Recent versions include a "Coasting" feature, enabled by default, which may have
 
 *   **GPointing Device Settings** — 提供对当前系统上的指针设备进行实时配置的图形界面(包括Synaptics触摸板),这个应用替代GSynaptics成为了对Synaptics驱动进行图形化配置的优先程序.
 
-	[http://live.gnome.org/GPointingDeviceSettings](http://live.gnome.org/GPointingDeviceSettings) || [gpointing-device-settings](https://www.archlinux.org/packages/?name=gpointing-device-settings)
+	[http://live.gnome.org/GPointingDeviceSettings](http://live.gnome.org/GPointingDeviceSettings) || [gpointing-device-settings](https://aur.archlinux.org/packages/gpointing-device-settings/)
 
-**Note:** 需要安装 [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) 和 [libsynaptics](https://www.archlinux.org/packages/?name=libsynaptics) , GPointingDeviceSettings工具才能在Synaptics触摸板上运行!
+**Note:** 需要安装 [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) 和 [libsynaptics](https://aur.archlinux.org/packages/libsynaptics/) , GPointingDeviceSettings工具才能在Synaptics触摸板上运行!
 
 *   **kcm-touchpad** — 在[KDE](/index.php/KDE "KDE")的一个新的触摸板配置工具，提供了一个在“系统设置”中的模块。在2014年2月发布，工作于KDE SC 4.12+。这将被作为一个 [synaptiks](https://aur.archlinux.org/packages/synaptiks/) 和 [kcm_touchpad](https://aur.archlinux.org/packages/kcm_touchpad/) 的替代品。
 

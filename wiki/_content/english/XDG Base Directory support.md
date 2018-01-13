@@ -194,6 +194,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 | [rclone](https://www.archlinux.org/packages/?name=rclone) | `~/.rclone.conf` | [9d362589](https://github.com/ncw/rclone/commit/9d362589) | [[46]](https://github.com/ncw/rclone/issues/868) |
 | [retroarch](http://www.libretro.com/) |
 | [rr](http://rr-project.org/) | `~/.rr` | [02e7d41e](https://github.com/mozilla/rr/commit/02e7d41e) | [[47]](https://github.com/mozilla/rr/issues/1455) |
+| [Skype](https://www.skype.com/) | `~/.Skype` | 8.0 |
 | [Snes9x](http://www.snes9x.com/) | `~/.snes9x` | [19864677](https://github.com/snes9xgit/snes9x/commit/93b5f11641fa22d4518f251d6e3db99219864677) | [[48]](https://github.com/snes9xgit/snes9x/issues/194) | By default configuration is blank, is intended that the user fill it at they will (throw the gui or manually) before launch a rom |
 | [sublime-text-dev](https://aur.archlinux.org/packages/sublime-text-dev/) | Cache is placed in `$XDG_CONFIG_HOME/sublime-text-3/Cache` instead of expected `$XDG_CACHE_HOME/sublime-text-3`. |
 | [surfraw](/index.php/Surfraw "Surfraw") | `~/.surfraw.conf`
@@ -311,6 +312,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 
  |
 | [isync](/index.php/Isync "Isync") | `~/.mbsyncrc` | `$ mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc` |
+| [Java](/index.php/Java "Java") (OpenJDK) | `~/.java/.userPrefs` | `$ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java` |
 | [less](/index.php/Core_utilities#less "Core utilities") | `~/.lesshst` | `$ mkdir -p "$XDG_CACHE_HOME"/less`
 
 `$ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history`
@@ -543,12 +545,13 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 | [GNU parallel](http://www.gnu.org/software/parallel/) | `~/.parallel` |
 | [gtk-recordMyDesktop](http://recordmydesktop.sourceforge.net/about.php) | `~/.gtk-recordmydesktop` |
 | [idris](http://www.idris-lang.org/) | `~/.idris` | [[110]](https://github.com/idris-lang/Idris-dev/pull/3456) |
+| [Java](/index.php/Java "Java") (OpenJDK) | `~/.java/fonts` | [[111]](https://bugzilla.redhat.com/show_bug.cgi?id=1154277) |
 | [julia](http://julialang.org/) | `~/.juliarc.jl`
 
 `~/.julia_history`
 
- | [[111]](https://github.com/JuliaLang/julia/issues/4630) [[112]](https://github.com/JuliaLang/julia/issues/10016) |
-| [Linux PAM](http://www.linux-pam.org/) | `~/.pam_environment` | [[113]](https://github.com/linux-pam/linux-pam/issues/7) | Hardcoded in [modules/pam_env/pam_env.c](https://github.com/linux-pam/linux-pam/blob/master/modules/pam_env/pam_env.c) |
+ | [[112]](https://github.com/JuliaLang/julia/issues/4630) [[113]](https://github.com/JuliaLang/julia/issues/10016) |
+| [Linux PAM](http://www.linux-pam.org/) | `~/.pam_environment` | [[114]](https://github.com/linux-pam/linux-pam/issues/7) | Hardcoded in [modules/pam_env/pam_env.c](https://github.com/linux-pam/linux-pam/blob/master/modules/pam_env/pam_env.c) |
 | [lldb](http://lldb.llvm.org/) | `~/.lldb`
 
 `~/.lldbinit`
@@ -559,28 +562,27 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 `~/.matho_history`
 
  | History can be moved by using `rlwrap mathomatic -r` with the `RLWRAP_HOME` environment set appropriately. |
-| [milkytracker](http://www.milkytracker.org/) | `~/.milkytracker_config` | [[114]](https://github.com/Deltafire/MilkyTracker/issues/12) |
-| [Minecraft](https://minecraft.net/) | `~/.minecraft` | [[115]](https://bugs.mojang.com/browse/MCL-2563) |
+| [milkytracker](http://www.milkytracker.org/) | `~/.milkytracker_config` | [[115]](https://github.com/Deltafire/MilkyTracker/issues/12) |
+| [Minecraft](https://minecraft.net/) | `~/.minecraft` | [[116]](https://bugs.mojang.com/browse/MCL-2563) |
 | [mongodb](https://www.mongodb.org/) | `~/.mongorc.js`
 
 `~/.dbshell`
 
- | [[116]](https://jira.mongodb.org/browse/DOCS-5652?jql=text%20~%20%22.mongorc.js%22) | [This Stack Overflow thread](http://stackoverflow.com/a/22349050/4200039) suggests a partial workaround using command-line switch `--norc`. |
+ | [[117]](https://jira.mongodb.org/browse/DOCS-5652?jql=text%20~%20%22.mongorc.js%22) | [This Stack Overflow thread](http://stackoverflow.com/a/22349050/4200039) suggests a partial workaround using command-line switch `--norc`. |
  `~/.netrc` | Like `~/.ssh`, many programs expect this file to be here. These include projects like curl (`CURLOPT_NETRC_FILE`), ftp (`NETRC`), s-nail (`NETRC`), etc. While some of them offer alternative configurable locations, many do not such as w3m, wget and lftp. |
-| [NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS) | `~/.pki` | [[117]](https://bugzilla.mozilla.org/show_bug.cgi?id=818686) |
-| [OpenSSH](https://www.openssh.com/) | `~/.ssh` | [[118]](https://bugzilla.mindrot.org/show_bug.cgi?id=2050) | Assumed to be present by many ssh daemons and clients such as DropBear and OpenSSH. |
-| [palemoon](https://www.palemoon.org/) | `~/.moonchild productions` | [[119]](https://forum.palemoon.org/viewtopic.php?f=5&t=9639) |
+| [NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS) | `~/.pki` | [[118]](https://bugzilla.mozilla.org/show_bug.cgi?id=818686) |
+| [OpenSSH](https://www.openssh.com/) | `~/.ssh` | [[119]](https://bugzilla.mindrot.org/show_bug.cgi?id=2050) | Assumed to be present by many ssh daemons and clients such as DropBear and OpenSSH. |
+| [palemoon](https://www.palemoon.org/) | `~/.moonchild productions` | [[120]](https://forum.palemoon.org/viewtopic.php?f=5&t=9639) |
 | [perf](https://perf.wiki.kernel.org/index.php/Main_Page) | `~/.debug` | Hardcoded in [tools/perf/util/config.c:29](https://github.com/torvalds/linux/blob/master/tools/perf/util/config.c#L29). |
 | various [shells](/index.php/Shell "Shell") and [display managers](/index.php/Display_manager "Display manager") | `~/.profile` |
 | [python](/index.php/Python "Python") | `~/.python_history` | All history from interactive sessions is saved to `~/.python_history` by default since [version 3.4](https://bugs.python.org/issue5845), custom path can still be set the same way as in older versions (see [this example](https://docs.python.org/3/library/readline.html?highlight=readline#example)). |
 | [Qt Designer](https://doc.qt.io/qt-5/qtdesigner-manual.html) | `~/.designer` |
-| [Quod Libet](https://quodlibet.readthedocs.io/en/latest/) | `~/.quodlibet` | [[120]](https://github.com/quodlibet/quodlibet/issues/138) |
+| [Quod Libet](https://quodlibet.readthedocs.io/en/latest/) | `~/.quodlibet` | [[121]](https://github.com/quodlibet/quodlibet/issues/138) |
 | [racket](https://racket-lang.org/) | `~/.racketrc` |
 | [RedNotebook](http://rednotebook.sourceforge.net/) | `~/.rednotebook` |
 | [Remarkable](https://remarkableapp.github.io/linux.html) | `~/.remarkable` |
 | [Scribus](https://www.scribus.net/) | `~/.scribus` |
-| [SeaMonkey](http://www.seamonkey-project.org/) | `~/.mozilla` | [[121]](https://bugzil.la/726939) |
-| [Skype](/index.php/Skype "Skype") < 5.0 | `~/.Skype` | [[122]](https://community.skype.com/t5/Linux-archive/Skype-violates-XDG-basedir-spec-on-linux/td-p/4175884) |
+| [SeaMonkey](http://www.seamonkey-project.org/) | `~/.mozilla` | [[122]](https://bugzil.la/726939) |
 | [Solfege](https://www.gnu.org/software/solfege/solfege.html) | `~/.solfege`
 
 `~/.solfegerc`

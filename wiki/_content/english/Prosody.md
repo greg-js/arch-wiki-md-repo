@@ -56,12 +56,17 @@ Prosody has optional depedencies that although not strictly required for its ope
 	Stream Compression
 
 	Allow Prosody to compress client-to-server streams for compatible clients to save bandwidth.
-*Requires:* [lua51-zlib](https://www.archlinux.org/packages/?name=lua51-zlib)
+*Requires:* [lua51-zlib](https://aur.archlinux.org/packages/lua51-zlib/)
 
 	Cyrus SASL Support
 
 	Allow Prosody to use the [Cyrus SASL](http://asg.web.cmu.edu/sasl/sasl-library.html) library to provide authentication.
 *Requires:* [lua-cyrussasl](https://aur.archlinux.org/packages/lua-cyrussasl/)
+
+	WebSocket Support
+
+	Allow Prosody to offer [WebSocket](https://prosody.im/doc/modules/mod_websocket) transport.
+*Requires:* [lua51-bitop](https://www.archlinux.org/packages/?name=lua51-bitop)
 
 ## Configuration
 

@@ -266,7 +266,7 @@ See also [Wikipedia:Interactive fiction#Development systems](https://en.wikipedi
 
 *   **INSTEAD** — Quest interpreter using Lua macros as game writing language
 
-	[http://instead.syscall.ru/index.html](http://instead.syscall.ru/index.html) || [instead-launcher](https://www.archlinux.org/packages/?name=instead-launcher) [instead](https://www.archlinux.org/packages/?name=instead)
+	[http://instead.syscall.ru/index.html](http://instead.syscall.ru/index.html) || [instead-launcher](https://aur.archlinux.org/packages/instead-launcher/) [instead](https://aur.archlinux.org/packages/instead/)
 
 *   **[TADS](https://en.wikipedia.org/wiki/TADS "wikipedia:TADS")** — Prototype-based domain-specific programming language and set of standard libraries for creating interactive fiction (IF) games
 
@@ -538,7 +538,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 *   **Torcs** — 3D racing cars simulator using OpenGL.
 
-	[http://torcs.sourceforge.net/](http://torcs.sourceforge.net/) || [torcs](https://www.archlinux.org/packages/?name=torcs)
+	[http://torcs.sourceforge.net/](http://torcs.sourceforge.net/) || [torcs](https://aur.archlinux.org/packages/torcs/)
 
 *   **Trigger Rally** — Free OpenGL rally car racing game.
 

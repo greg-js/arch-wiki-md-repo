@@ -800,7 +800,7 @@ Follow the [official documentation](https://pyrocore.readthedocs.io/) for instal
 *   [mktorrent](https://github.com/Rudde/mktorrent) - Command line application used to generate torrent files, which is available as [mktorrent](https://www.archlinux.org/packages/?name=mktorrent) in the [official repositories](/index.php/Official_repositories "Official repositories").
 *   [docktorrent](https://github.com/kfei/docktorrent) - Using Docker, rTorrent and ruTorrent to run a full-featured BitTorrent box.
 *   [reptyr](https://github.com/nelhage/reptyr) - another tool to take over a program's TTY (it is in the standard repos). The process may have started being attached to a terminal or to a socket in tmux, screen or dtach.
-*   [neercs](http://caca.zoy.org/wiki/neercs) - a more screen/tmux like tool than reptyr, but, like reptyr, neercs can also "steal" a process that may have started slaved to a terminal or to a socket in tmux, screen or dtach. [neercs-git](https://aur.archlinux.org/packages/neercs-git/)
+*   [neercs](http://caca.zoy.org/wiki/neercs) - a more screen/tmux like tool than reptyr, but, like reptyr, neercs can also "steal" a process that may have started slaved to a terminal or to a socket in tmux, screen or dtach.
 
 **Forum threads**
 

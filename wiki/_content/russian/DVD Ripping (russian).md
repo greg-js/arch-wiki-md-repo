@@ -22,11 +22,11 @@
 
 ## dvd::rip
 
-[dvdrip](https://www.archlinux.org/packages/?name=dvdrip) -- графическая оболочка для [transcode](https://www.archlinux.org/packages/?name=transcode). Вы можете использовать его для извлечения данных и кодирования "на лету".
+[dvdrip](https://aur.archlinux.org/packages/dvdrip/) -- графическая оболочка для [transcode](https://www.archlinux.org/packages/?name=transcode). Вы можете использовать его для извлечения данных и кодирования "на лету".
 
 Вам понадобятся следующие пакеты:
 
-*   [dvdrip](https://www.archlinux.org/packages/?name=dvdrip): графическая оболочка (GTK) для [transcode](https://www.archlinux.org/packages/?name=transcode), которая выполняет извлечение и кодирование данных
+*   [dvdrip](https://aur.archlinux.org/packages/dvdrip/): графическая оболочка (GTK) для [transcode](https://www.archlinux.org/packages/?name=transcode), которая выполняет извлечение и кодирование данных
 *   [libdv](https://www.archlinux.org/packages/?name=libdv): программный кодек для DV video
 *   [xvidcore](https://www.archlinux.org/packages/?name=xvidcore): если вы планируете кодировать видео в XviD, открытый кодек MPEG-4 (свободная альтернатива DivX)
 *   [divx4linux](https://aur.archlinux.org/packages/divx4linux/): если вы планируете кодировать видео в DivX

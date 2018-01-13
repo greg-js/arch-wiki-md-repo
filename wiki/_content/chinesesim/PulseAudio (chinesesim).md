@@ -296,7 +296,7 @@ $ qemu-system-x86_64 -soundhw help
 
 ### AlsaMixer.app
 
-Make [AlsaMixer.app](https://aur.archlinux.org/packages/AlsaMixer.app/) dockapp for the [windowmaker](https://www.archlinux.org/packages/?name=windowmaker) use pulseaudio, e.g.
+Make [AlsaMixer.app](https://aur.archlinux.org/packages/AlsaMixer.app/) dockapp for the [windowmaker](https://aur.archlinux.org/packages/windowmaker/) use pulseaudio, e.g.
 
 ```
 $ AlsaMixer.app --device pulse

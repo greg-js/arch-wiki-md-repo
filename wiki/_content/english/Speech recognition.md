@@ -208,4 +208,6 @@ Features:
 
 ## See also
 
+*   [Is there any decent speech recognition software for linux - Unix Stack Exchange](https://unix.stackexchange.com/questions/256138/is-there-any-decent-speech-recognition-software-for-linux)
+
 *   [Synthèse vocale en français sous Linux - KubuntuBlog (french)](http://kubuntu.free.fr/blog/index.php/2006/09/24/121-synthese-vocale-en-francais-sous-linux)

@@ -327,6 +327,10 @@ template1 | postgres | UTF8      | C         | C     |
 
 ## Administration tools
 
+*   **[Adminer](/index.php/Adminer "Adminer")** — Web-based database management tool for multiple database systems.
+
+	[https://www.adminer.org](https://www.adminer.org) || [adminer](https://aur.archlinux.org/packages/adminer/)
+
 *   **[phpPgAdmin](/index.php/PhpPgAdmin "PhpPgAdmin")** — Web-based administration tool for PostgreSQL.
 
 	[http://phppgadmin.sourceforge.net](http://phppgadmin.sourceforge.net) || [phppgadmin](https://www.archlinux.org/packages/?name=phppgadmin)

@@ -263,7 +263,7 @@ database {
 
 ## Clients
 
-A separate client is needed to control mpd. See a long list of clients at the [mpd wiki](http://mpd.wikia.com/wiki/Clients). Popular options are:
+A separate client is needed to control mpd. See a long list of clients at the [mpd website](https://www.musicpd.org/clients/). Popular options are:
 
 ### Console
 

@@ -157,7 +157,7 @@ $ vncviewer -passwd /ruta/al/archivo-passwd-del-servidor
 *   [rdesktop](https://www.archlinux.org/packages/?name=rdesktop)
 *   [vinagre](https://www.archlinux.org/packages/?name=vinagre)
 *   [remmina](https://www.archlinux.org/packages/?name=remmina)
-*   [vncviewer-jar](https://www.archlinux.org/packages/?name=vncviewer-jar)
+*   [vncviewer-jar](https://aur.archlinux.org/packages/vncviewer-jar/)
 
 ## Asegurar vncserver por túneles SSH
 

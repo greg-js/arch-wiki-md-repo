@@ -226,7 +226,7 @@ Control + L
 
 С начало, установите зависимости: [mutagen](https://www.archlinux.org/packages/?name=mutagen)
 
-Затем, из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"), [python-nautilus](https://aur.archlinux.org/packages/python-nautilus/)
+Затем, из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"), [python-nautilus](https://www.archlinux.org/packages/?name=python-nautilus)
 
 Теперь, создайте директорию под названием *python-extensions* в `~/.nautilus`. Положите следующий скрипт, с названием `bsc.py`, в только что созданную папку. Вы можете скачать скрипт тут: [bsc.py](http://stefanwilkens.eu/bsc.py) (пожалуйста, бросьте пару строк --[stefanwilkens](/index.php/User:Stefanwilkens "User:Stefanwilkens") если файл будет не доступен)
 

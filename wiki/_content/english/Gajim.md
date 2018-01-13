@@ -96,7 +96,7 @@ There are two differently developed/deployed versions of gajim-otr. One was deve
 
 [OMEMO Multi-End Message and Object Encryption](https://conversations.im/omemo/) is an XMPP Extension Protocol (XEP) for secure multi-client end-to-end encryption. It is an open standard based on Axolotl and PEP which can be freely used and implemented by anyone and recently got an experimental [plugin](https://github.com/kalkin/gajim-omemo) for Gajim.
 
-In order to use OMEMO in Gajim, just install the [gajim-plugin-omemo](https://aur.archlinux.org/packages/gajim-plugin-omemo/) package which will also install all the required dependencies.
+In order to use OMEMO in Gajim, just install the [gajim-plugin-omemo](https://aur.archlinux.org/packages/gajim-plugin-omemo/) package which will also install all the required dependencies. Alternatively, you can install it from Gajim Plugin Manager after installing the dependencies of [gajim-plugin-omemo](https://aur.archlinux.org/packages/gajim-plugin-omemo/).
 
 ### Configuration
 

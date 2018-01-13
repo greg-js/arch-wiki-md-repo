@@ -153,10 +153,6 @@ Following package may be installed:
 
 	[https://launchpad.net/grub-customizer](https://launchpad.net/grub-customizer) || [grub-customizer](https://aur.archlinux.org/packages/grub-customizer/)
 
-*   **grub2-editor** — KDE4 control module for configuring the GRUB bootloader
-
-	[http://kde-apps.org/content/show.php?content=139643](http://kde-apps.org/content/show.php?content=139643) || [grub2-editor](https://aur.archlinux.org/packages/grub2-editor/)
-
 *   **grub2-editor-frameworks** — Unofficial KF5 port of grub2-editor
 
 	[https://github.com/maz-1/grub2-editor](https://github.com/maz-1/grub2-editor) || [grub2-editor-frameworks](https://aur.archlinux.org/packages/grub2-editor-frameworks/)

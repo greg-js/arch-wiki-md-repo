@@ -226,8 +226,6 @@ On Windows machines, connect to the serial port using programs like PuTTY[[3]](h
 
 #### Graphical front-ends
 
-[gtkterm](https://aur.archlinux.org/packages/gtkterm/) provides a graphical interface to the task, with most abilities provided by [vte](https://www.archlinux.org/packages/?name=vte).
-
 [cutecom](https://aur.archlinux.org/packages/cutecom/) is another gui enabled serial monitor.
 
 [putty](https://www.archlinux.org/packages/?name=putty) is also available for Linux.

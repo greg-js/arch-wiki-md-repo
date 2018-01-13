@@ -519,7 +519,7 @@ $ SYSTEMD_LESS=FRXMK journalctl
 
 Смотрите [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") и [Syslog-ng#syslog-ng and systemd journal](/index.php/Syslog-ng#syslog-ng_and_systemd_journal "Syslog-ng"), или соответственно [rsyslog](/index.php/Rsyslog "Rsyslog") для подробной информации о конфигурировании.
 
-Если взамен вы используете [rsyslog](https://www.archlinux.org/packages/?name=rsyslog), нет необходимости менять эту настройку, поскольку [rsyslog](/index.php/Rsyslog "Rsyslog") забирает сообщения из журнала [самостоятельно](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald).
+Если взамен вы используете [rsyslog](https://aur.archlinux.org/packages/rsyslog/), нет необходимости менять эту настройку, поскольку [rsyslog](/index.php/Rsyslog "Rsyslog") забирает сообщения из журнала [самостоятельно](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald).
 
 ### Перенаправить журнал на /dev/tty12
 

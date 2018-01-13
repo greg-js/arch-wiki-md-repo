@@ -249,7 +249,7 @@ DEVPATH=="/devices/pci0000:00/0000:00:1f.2/host4/*", ENV{UDISKS_SYSTEM}="0"
 
 For setting up the webcam in the first place, refer to [Webcam configuration](/index.php/Webcam_setup#Webcam_configuration "Webcam setup").
 
-Using multiple webcams, useful for example with [motion](https://www.archlinux.org/packages/?name=motion) (software motion detector which grabs images from video4linux devices and/or from webcams), will assign video devices as /dev/video0..n randomly on boot. The recommended solution is to create symlinks using an *udev* rule (as in the example in [#编写 udev 规则](#.E7.BC.96.E5.86.99_udev_.E8.A7.84.E5.88.99)：
+Using multiple webcams, useful for example with [motion](https://aur.archlinux.org/packages/motion/) (software motion detector which grabs images from video4linux devices and/or from webcams), will assign video devices as /dev/video0..n randomly on boot. The recommended solution is to create symlinks using an *udev* rule (as in the example in [#编写 udev 规则](#.E7.BC.96.E5.86.99_udev_.E8.A7.84.E5.88.99)：
 
  `/etc/udev/rules.d/83-webcam.rules` 
 ```

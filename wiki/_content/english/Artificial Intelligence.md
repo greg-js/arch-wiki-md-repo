@@ -5,10 +5,8 @@ There are a few 'Artificial Intelligence' demos and libraries in the AUR.
 *   [nanopond](https://aur.archlinux.org/packages/nanopond/)
 *   [xneur](https://aur.archlinux.org/packages/xneur/)
 *   [gxneur](https://aur.archlinux.org/packages/gxneur/)
-*   [neuralview](https://aur.archlinux.org/packages/neuralview/)
 
 ## Libraries
 
-*   [opencog](https://aur.archlinux.org/packages.php?ID=35449)
-*   [fann](https://aur.archlinux.org/packages.php?ID=8440)
+*   [fann](https://aur.archlinux.org/packages/fann/)
 *   [python-orange](https://aur.archlinux.org/packages/python-orange/)

@@ -180,7 +180,7 @@ Next to the traditional method of configuration, the Synaptics driver also suppo
 
 *   **GPointing Device Settings** — Provides graphical on the fly configuration for several pointing devices connected to the system, including your synaptics touch pad. This application replaces GSynaptics as the preferred tool for graphical touchpad configuration through the synaptics driver.
 
-	[https://wiki.gnome.org/Attic/GPointingDeviceSettings](https://wiki.gnome.org/Attic/GPointingDeviceSettings) || [gpointing-device-settings](https://www.archlinux.org/packages/?name=gpointing-device-settings)
+	[https://wiki.gnome.org/Attic/GPointingDeviceSettings](https://wiki.gnome.org/Attic/GPointingDeviceSettings) || [gpointing-device-settings](https://aur.archlinux.org/packages/gpointing-device-settings/)
 
 *   **kcm_touchpad** — New configuration tool for [KDE](/index.php/KDE "KDE") Plasma 5\. It provides a module under input devices in System Settings. It is to be considered a replacement for *synaptiks* and the old *kcm-touchpad* module.
 
@@ -813,8 +813,6 @@ Option "UpDownScrolling" "0"
 **Note:** This will make Synaptics interpret one button push as three. There is a patch written by Oskar Sandberg [[3]](http://www.math.chalmers.se/~ossa/linux/lg_tx_express.html) that removes these clicks.
 
 Apparently, when trying to compile this against the latest version of Synaptics it fails. The solution to this is using the GIT repository for Synaptics [[4]](http://web.telia.com/~u89404340/touchpad/synaptics/.git).
-
-There is also a package build file in the AUR to automate this: [xf86-input-synaptics-lg](https://aur.archlinux.org/packages/xf86-input-synaptics-lg/).
 
 To build the package after downloading the tarball and unpacking it, execute:
 

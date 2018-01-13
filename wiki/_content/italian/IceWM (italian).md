@@ -78,7 +78,7 @@ $ cp -R /usr/share/icewm/* ~/.icewm/
 
 ### Temi
 
-Anche se alcuni temi sono inclusi di default, una scelta più ampia si trova nel pacchetto [icewm-themes](https://www.archlinux.org/packages/?name=icewm-themes), presente nel repository. Sebbene alcuni hanno un look spartano, 'vecchio Windows'. Alcuni esempi migliori (come [[1]](http://box-look.org/content/show.php/Carbonit+Ice?content=146421%7Cquesto), [[2]](http://box-look.org/content/show.php/IceBuntu?content=62935%7Cquesto) o [[3]](http://box-look.org/content/show.php/IceClearlooks?content=96346%7Cquesto)) possono essere trovati su [box-look.org](http://www.box-look.org/index.php?xcontentmode=7311).
+Anche se alcuni temi sono inclusi di default, una scelta più ampia si trova nel pacchetto [icewm-themes](https://aur.archlinux.org/packages/icewm-themes/), presente nel repository. Sebbene alcuni hanno un look spartano, 'vecchio Windows'. Alcuni esempi migliori (come [[1]](http://box-look.org/content/show.php/Carbonit+Ice?content=146421%7Cquesto), [[2]](http://box-look.org/content/show.php/IceBuntu?content=62935%7Cquesto) o [[3]](http://box-look.org/content/show.php/IceClearlooks?content=96346%7Cquesto)) possono essere trovati su [box-look.org](http://www.box-look.org/index.php?xcontentmode=7311).
 
 ## File Managers
 

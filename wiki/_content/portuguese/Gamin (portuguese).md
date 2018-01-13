@@ -6,8 +6,6 @@ Gamin re-implementa a especificação do [FAM](/index.php/FAM "FAM") com o [w:in
 
 Instale o pacote [gamin](https://www.archlinux.org/packages/?name=gamin).
 
-Se FAM estiver instalado, primeiro [desabilite](/index.php/Disable "Disable") `fam.service` e então instale o [gamin](https://www.archlinux.org/packages/?name=gamin); você será solicitado a remover o pacote [fam](https://aur.archlinux.org/packages/fam/) durante a instalação.
-
 ## Veja também
 
 *   [FAM, Gamin and inotify (em inglês)](http://www.noah.org/wiki/FAM,_Gamin,_inotify)

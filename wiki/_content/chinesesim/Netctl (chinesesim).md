@@ -128,7 +128,7 @@ systemd 单元。网线插入/拔出时，DHCP 配置文件将被启动/停止�
 
 #### 无线连接
 
-[安装](/index.php/Install "Install") [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) 包并[启动/启用](/index.php/Start/enable "Start/enable") `netctl-auto@*interface*.service` systemd 单元。当在不同网络覆盖区域间移动（漫游）时，*netctl* 配置文件将会自动启动/停止。
+[安装](/index.php/Install "Install") [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) 包并[启动/启用](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") `netctl-auto@*interface*.service` systemd 单元。当在不同网络覆盖区域间移动（漫游）时，*netctl* 配置文件将会自动启动/停止。
 
 *   *netctl-auto* 要求配置文件必须使用 `Security=wpa-configsection` 或 `Security=wpa` 配置项才能工作，不能使用 `Security=wpa-config` 配置项。
 
@@ -299,7 +299,7 @@ SkipNoCarrier='no'
 
 ```
 
-将 wpa_supplicant 配置为关联一个已知网络，可以通过 netctl profile (记得设置 IP='no'), 和一个长期运行的 wpa_supplicant 服务或者 wpa_cli 命令实现。具体方法请访问 [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") 页面。想要长期运行 wpa_supplicant 服务，创建一个wpa_supplicant配置文件`/etc/wpa_supplicant/wpa_supplicant-wlan0.conf` 然后运行：
+将 wpa_supplicant 配置为关联一个已知网络，可以通过 netctl profile (记得设置 IP='no'), 和一个长期运行的 wpa_supplicant 服务或者 wpa_cli 命令实现。具体方法请访问 [wpa_supplicant](/index.php/WPA_supplicant_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPA supplicant (简体中文)") 页面。想要长期运行 wpa_supplicant 服务，创建一个wpa_supplicant配置文件`/etc/wpa_supplicant/wpa_supplicant-wlan0.conf` 然后运行：
 
 ```
 # systemctl enable wpa_supplicant@wlan0

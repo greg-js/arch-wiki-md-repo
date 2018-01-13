@@ -197,7 +197,7 @@ When your default language choice does not stick, see [#Firefox does not remembe
 
 ## Plugins
 
-**Note:** Firefox [has removed support](https://support.mozilla.org/en-US/kb/npapi-plugins) for [NPAPI](https://en.wikipedia.org/wiki/NPAPI "w:NPAPI") plugins, except for Flash. Firefox ESR will support plugins until 2018.
+**Note:** Firefox [has removed support](https://support.mozilla.org/en-US/kb/npapi-plugins) for [NPAPI](https://en.wikipedia.org/wiki/NPAPI "w:NPAPI") plugins, except for Flash. Firefox ESR 52 will support plugins until August 2018.
 
 See the main article: [Browser plugins](/index.php/Browser_plugins "Browser plugins")
 

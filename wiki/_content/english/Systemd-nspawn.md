@@ -105,7 +105,7 @@ To start the resulting i686 Arch Linux systemd-nspawn instance, just issue the f
 
 ### Create a Debian or Ubuntu environment
 
-Install [debootstrap](https://www.archlinux.org/packages/?name=debootstrap), [gnupg1](https://aur.archlinux.org/packages/gnupg1/), and one or both of [debian-archive-keyring](https://www.archlinux.org/packages/?name=debian-archive-keyring) and [ubuntu-keyring](https://aur.archlinux.org/packages/ubuntu-keyring/) (obviously install the keyrings for the distros you want).
+Install [debootstrap](https://www.archlinux.org/packages/?name=debootstrap), [gnupg1](https://aur.archlinux.org/packages/gnupg1/), and one or both of [debian-archive-keyring](https://www.archlinux.org/packages/?name=debian-archive-keyring) and [ubuntu-keyring](https://www.archlinux.org/packages/?name=ubuntu-keyring) (obviously install the keyrings for the distros you want).
 
 **Note:** *systemd-nspawn* requires that the operating system in the container has systemd running as PID 1 and *systemd-nspawn* is installed in the container. This means Ubuntu before 15.04 will not work out of the box and requires additional configuration to switch from upstart to systemd. Also make sure that the `systemd-container` package is installed on the container system.
 

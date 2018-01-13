@@ -126,7 +126,7 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 *   **ROXTerm** — Tabbed terminal emulator with a small footprint.
 
-	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://www.archlinux.org/packages/?name=roxterm)
+	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://aur.archlinux.org/packages/roxterm/)
 
 *   **sakura** — Terminal emulator based on GTK+ and VTE.
 

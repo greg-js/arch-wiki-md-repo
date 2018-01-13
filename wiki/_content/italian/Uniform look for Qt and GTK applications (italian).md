@@ -93,7 +93,7 @@ E' possibile usare i seguenti metodi per cambiare il tema in ogni ambiente.
 *   [gtk-kde4](https://aur.archlinux.org/packages/gtk-kde4/) (permette di cambiare stile e font delle applicazioni GTK in KDE4)
 *   [lxappearance](https://www.archlinux.org/packages/?name=lxappearance) (un tool di configurazione indipendente dal DE e messo a disposizione dal LXDE project. Esso non richiede nessun altro componente di LXDE)
 *   [gtk-chtheme](https://www.archlinux.org/packages/?name=gtk-chtheme) (considerarlo come una migliore alternativa a switch2)
-*   [gtk2_prefs](https://www.archlinux.org/packages/?name=gtk2_prefs)
+*   [gtk2_prefs](https://aur.archlinux.org/packages/gtk2_prefs/)
 *   [gtk-theme-switch2](https://www.archlinux.org/packages/?name=gtk-theme-switch2)
 *   [Configurazione manuale](/index.php/GTK%2B#GTK.2B_2.x "GTK+")
 

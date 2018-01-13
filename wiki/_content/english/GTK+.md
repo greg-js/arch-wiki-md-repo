@@ -196,7 +196,7 @@ Other GUI tools generally overwrite the [configuration files](#Configuration).
 
 *   **GTK+ Preference Tool** — GTK+ theme selector and font switcher.
 
-	[http://gtk-win.sourceforge.net/home/index.php/Main/GTKPreferenceTool](http://gtk-win.sourceforge.net/home/index.php/Main/GTKPreferenceTool) || [gtk2_prefs](https://www.archlinux.org/packages/?name=gtk2_prefs)
+	[http://gtk-win.sourceforge.net/home/index.php/Main/GTKPreferenceTool](http://gtk-win.sourceforge.net/home/index.php/Main/GTKPreferenceTool) || [gtk2_prefs](https://aur.archlinux.org/packages/gtk2_prefs/)
 
 *   **GTK+ Theme Switch** — Simple GTK+ theme switcher.
 

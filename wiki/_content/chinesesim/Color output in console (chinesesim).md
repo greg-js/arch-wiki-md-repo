@@ -396,7 +396,7 @@ This combination puts colors to **bold** and <u>underlined</u> words in `xterm/u
 *   **grc** — Yet another colouriser for beautifying your logfiles or output of commands.
     Presets: configure, cvs, df, diff, esperanto, gcc, irclog, ldap, log, mount, netstat, ping, proftpd, traceroute, wdiff.
 
-	[https://github.com/pengwynn/grc](https://github.com/pengwynn/grc) || [grc](https://www.archlinux.org/packages/?name=grc)
+	[https://github.com/pengwynn/grc](https://github.com/pengwynn/grc) || [grc](https://aur.archlinux.org/packages/grc/)
 
 *   **colorlogs** — Colorize commands output or STDIN using patterns.
     Presets: logs, git status, ant, maven.

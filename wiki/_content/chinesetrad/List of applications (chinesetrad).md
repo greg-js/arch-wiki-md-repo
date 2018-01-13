@@ -595,7 +595,7 @@ Many clients listed here (including Pidgin and all it's forks) support multiple 
 
 *   **[naim](https://en.wikipedia.org/wiki/naim_(software) "wikipedia:naim (software)")** — Ncurses chat client with support for AOL, ICQ, IRC and the Lily CMC.
 
-	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://www.archlinux.org/packages/?name=naim)
+	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://aur.archlinux.org/packages/naim/)
 
 *   **pork** — Programmable, ncurses-based AIM and IRC client that mostly looks and feels like ircII.
 
@@ -653,7 +653,7 @@ See also [Wikipedia:Comparison of instant messaging clients#XMPP-related feature
 
 *   **Freetalk** — Console-based Jabber client.
 
-	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://www.archlinux.org/packages/?name=freetalk)
+	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://aur.archlinux.org/packages/freetalk/)
 
 *   **jabber.el** — Minimal Jabber client for [Emacs](/index.php/Emacs "Emacs").
 
@@ -819,7 +819,7 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Linphone](https://en.wikipedia.org/wiki/Linphone "wikipedia:Linphone")** — VoIP phone application that allows you to to communicate freely with people over the internet, with voice, video, and text instant messaging.
 
-	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://www.archlinux.org/packages/?name=linphone)
+	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://aur.archlinux.org/packages/linphone/)
 
 *   **Minisip** — SIP User Agent with focus on security (supports TLS, end-to-end security, SRTP, MIKEY (DH, PSK, PKE)).
 
@@ -961,7 +961,7 @@ See also [Wikipedia:List of content management systems](https://en.wikipedia.org
 
 *   **Nanoblogger** — A small weblog engine written in Bash for the command line. It uses common UNIX tools such as cat, grep, and sed to create static HTML content.
 
-	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://www.archlinux.org/packages/?name=nanoblogger)
+	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://aur.archlinux.org/packages/nanoblogger/)
 
 #### 微網誌客戶端
 
@@ -1115,7 +1115,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **fbv** — Very simple graphic file viewer for the framebuffer console.
 
-	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://www.archlinux.org/packages/?name=fbv)
+	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://aur.archlinux.org/packages/fbv/)
 
 *   **fim** — Highly customizable and scriptable framebuffer image viewer based on fbi.
 
@@ -1145,7 +1145,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Gimmage** — Gtkmm image viewer.
 
-	[http://gimmage.berlios.de/](http://gimmage.berlios.de/) || [gimmage](https://www.archlinux.org/packages/?name=gimmage)
+	[http://gimmage.berlios.de/](http://gimmage.berlios.de/) || [gimmage](https://aur.archlinux.org/packages/gimmage/)
 
 *   **GPicView** — Simple and fast image viewer for X, which is part of the [LXDE](/index.php/LXDE "LXDE") desktop.
 
@@ -1165,7 +1165,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Mirage** — PyGTK image viewer featuring support for crop and resize, custom actions and a thumbnail panel.
 
-	[http://mirageiv.berlios.de](http://mirageiv.berlios.de) || [mirage](https://www.archlinux.org/packages/?name=mirage)
+	[http://mirageiv.berlios.de](http://mirageiv.berlios.de) || [mirage](https://aur.archlinux.org/packages/mirage/)
 
 *   **nomacs** — Free image viewer (Qt) for windows, linux, and mac systems, which is licensed under the GNU General Public License v3.
 
@@ -1632,7 +1632,7 @@ See also: [Burning CD/DVD with GUI](/index.php/Optical_disc_drive#Burning_CD.2FD
 
 *   **ID3 Mass Tagger** — Command-line utility to edit ID3 1.x and 2.x tags.
 
-	[http://freecode.com/projects/id3](http://freecode.com/projects/id3) || [id3](https://www.archlinux.org/packages/?name=id3)
+	[http://freecode.com/projects/id3](http://freecode.com/projects/id3) || [id3](https://aur.archlinux.org/packages/id3/)
 
 *   **Kid3** — MP3, Ogg/Vorbis, FLAC, MPC, MP4/AAC, MP2, Speex, TrueAudio, WavPack, WMA, WAV and AIFF files tag editor.
 
@@ -1860,7 +1860,7 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 *   **[GCstar](https://en.wikipedia.org/wiki/GCstar "wikipedia:GCstar")** — GNOME application for organizing various collections (board games, comic books, movies, stamps, etc.).
 
-	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://www.archlinux.org/packages/?name=gcstar)
+	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://aur.archlinux.org/packages/gcstar/)
 
 *   **[Tellico](https://en.wikipedia.org/wiki/Tellico "wikipedia:Tellico")** — KDE application for organizing various collections (books, video, music, coins, etc.).
 
@@ -1966,7 +1966,7 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 *   **ROXTerm** — Tabbed terminal emulator with a small footprint.
 
-	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://www.archlinux.org/packages/?name=roxterm)
+	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://aur.archlinux.org/packages/roxterm/)
 
 *   **sakura** — Terminal emulator based on GTK+ and VTE.
 
@@ -3182,7 +3182,7 @@ See also [Wikipedia:List of information graphics software](https://en.wikipedia.
 
 *   **[Grace](https://en.wikipedia.org/wiki/Grace_(plotting_tool) "wikipedia:Grace (plotting tool)")** — WYSIWYG 2D graph plotting tool.
 
-	[http://plasma-gate.weizmann.ac.il/Grace/](http://plasma-gate.weizmann.ac.il/Grace/) || [grace](https://www.archlinux.org/packages/?name=grace) [qtgrace](https://aur.archlinux.org/packages/qtgrace/) [gracegtk](https://aur.archlinux.org/packages/gracegtk/)
+	[http://plasma-gate.weizmann.ac.il/Grace/](http://plasma-gate.weizmann.ac.il/Grace/) || [grace](https://aur.archlinux.org/packages/grace/) [qtgrace](https://aur.archlinux.org/packages/qtgrace/) [gracegtk](https://aur.archlinux.org/packages/gracegtk/)
 
 *   **[LabPlot](https://en.wikipedia.org/wiki/LabPlot "wikipedia:LabPlot")** — Free software data analysis and visualization application, similar to SciDAVis.
 
@@ -3531,7 +3531,7 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Lightweight, NETWM compliant desktop panel.
 
-	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://www.archlinux.org/packages/?name=fbpanel)
+	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://aur.archlinux.org/packages/fbpanel/)
 
 *   **[GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")** — Panel included in the [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") desktop.
 

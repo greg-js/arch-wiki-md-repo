@@ -654,7 +654,7 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 *   **ripperX** — GTK+ program to rip CD audio tracks and encode them to the Ogg, MP3, or FLAC formats.
 
-	[https://sourceforge.net/projects/ripperx/](https://sourceforge.net/projects/ripperx/) || [ripperx](https://www.archlinux.org/packages/?name=ripperx)
+	[https://sourceforge.net/projects/ripperx/](https://sourceforge.net/projects/ripperx/) || [ripperx](https://aur.archlinux.org/packages/ripperx/)
 
 *   **ripright** — Minimal CD ripper modeled on autorip.
 
@@ -697,10 +697,6 @@ Some utilities perform both tasks, whilst others focus on one aspect or the othe
 
 	[http://fixounet.free.fr/avidemux/](http://fixounet.free.fr/avidemux/) || [avidemux-qt-git](https://aur.archlinux.org/packages/avidemux-qt-git/)
 
-*   **dvd-vr** — Tool which easily converts VRO files extracted from a [DVD-VR](https://en.wikipedia.org/wiki/DVD-VR "wikipedia:DVD-VR") and splits them in regular VOB files.
-
-	[http://www.pixelbeat.org/programs/dvd-vr/](http://www.pixelbeat.org/programs/dvd-vr/) || [dvd-vr](https://aur.archlinux.org/packages/dvd-vr/)
-
 *   **[dvdbackup](/index.php/Dvdbackup "Dvdbackup")** — Tool for pure data extraction which does not transcode. It is useful for creating *exact* copies of encrypted DVDs in conjunction with **libdvdcss** or for decrypting video for other utilities unable to read encrypted DVDs.
 
 	[http://dvdbackup.sourceforge.net/](http://dvdbackup.sourceforge.net/) || [dvdbackup](https://www.archlinux.org/packages/?name=dvdbackup)
@@ -717,7 +713,7 @@ Some utilities perform both tasks, whilst others focus on one aspect or the othe
 
 	[http://www.selur.de/](http://www.selur.de/) || [hybrid-encoder](https://aur.archlinux.org/packages/hybrid-encoder/)
 
-*   **[MEncoder](/index.php/MEncoder "MEncoder")** — Free command line video decoding, encoding and filtering tool released under the GNU GPL. It is a close sibling to MPlayer and can convert all the formats that MPlayer understands into a variety of compressed and uncompressed formats using different codecs. Wrapper programs like [h264enc](https://aur.archlinux.org/packages/h264enc/) and [undvd](https://aur.archlinux.org/packages/undvd/) can provide an assistive interface. Many [GUI frontends](/index.php/MEncoder#GUI_frontends "MEncoder") are available.
+*   **[MEncoder](/index.php/MEncoder "MEncoder")** — Free command line video decoding, encoding and filtering tool released under the GNU GPL. It is a close sibling to MPlayer and can convert all the formats that MPlayer understands into a variety of compressed and uncompressed formats using different codecs. Wrapper programs like [h264enc](https://aur.archlinux.org/packages/h264enc/) can provide an assistive interface. Many [GUI frontends](/index.php/MEncoder#GUI_frontends "MEncoder") are available.
 
 	[http://www.mplayerhq.hu/](http://www.mplayerhq.hu/) || [mencoder](https://www.archlinux.org/packages/?name=mencoder)
 
@@ -731,7 +727,7 @@ dvd::rip is a front-end to [transcode](https://www.archlinux.org/packages/?name=
 
 The following packages should be installed:
 
-*   [dvdrip](https://www.archlinux.org/packages/?name=dvdrip): GTK front-end for [transcode](https://www.archlinux.org/packages/?name=transcode), which performs the ripping and encoding
+*   [dvdrip](https://aur.archlinux.org/packages/dvdrip/): GTK front-end for [transcode](https://www.archlinux.org/packages/?name=transcode), which performs the ripping and encoding
 *   [libdv](https://www.archlinux.org/packages/?name=libdv): Software codec for DV video
 *   [xvidcore](https://www.archlinux.org/packages/?name=xvidcore): If you want to encode your ripped files as XviD, an open source MPEG-4 video codec (free alternative to DivX).
 *   [subtitleripper](https://aur.archlinux.org/packages/subtitleripper/): If you want to read and process subtitles.

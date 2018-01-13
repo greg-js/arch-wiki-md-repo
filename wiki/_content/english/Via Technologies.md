@@ -1,27 +1,16 @@
+The proprietary VIA drivers are no longer available as they are considered unstable and insecure.
+
 ## Contents
 
-*   [1 Different Unichrome family display drivers](#Different_Unichrome_family_display_drivers)
-    *   [1.1 The VIA proprietary drivers](#The_VIA_proprietary_drivers)
-    *   [1.2 The OpenChrome driver](#The_OpenChrome_driver)
-        *   [1.2.1 Troubleshooting](#Troubleshooting)
-            *   [1.2.1.1 Black screen when booting from LiveCD](#Black_screen_when_booting_from_LiveCD)
-        *   [1.2.2 VIA kernel](#VIA_kernel)
+*   [1 The OpenChrome driver](#The_OpenChrome_driver)
+    *   [1.1 Troubleshooting](#Troubleshooting)
+        *   [1.1.1 Black screen when booting from LiveCD](#Black_screen_when_booting_from_LiveCD)
 *   [2 Unichrome and OpenGL](#Unichrome_and_OpenGL)
 *   [3 DPMS problems](#DPMS_problems)
 *   [4 Hangup on exit](#Hangup_on_exit)
 *   [5 See also](#See_also)
 
-## Different Unichrome family display drivers
-
-### The VIA proprietary drivers
-
-These are considered unstable and insecure. They are however the only way to get any form of 3D acceleration or even reliable modesetting on certain chipsets, and can be installed using one of the following packages from the [AUR](/index.php/AUR "AUR"):
-
-*   [via-chrome9-dkms](https://aur.archlinux.org/packages/via-chrome9-dkms/)
-*   [xf86-video-via-chrome9](https://aur.archlinux.org/packages/xf86-video-via-chrome9/)
-*   [via-chrome9-dri](https://aur.archlinux.org/packages/via-chrome9-dri/)
-
-### The OpenChrome driver
+## The OpenChrome driver
 
 The most advanced and developed driver for Unichromes. Supports CLE266, KM400/KN400/KM400A/P4M800, CN400/PM800/PN800/PM880, K8M800, CN700/VM800/P4M800Pro, CX700, P4M890, K8M890 and P4M900/VN896 chipsets. Accelerates 2D, 3D, Xvideo and mpeg2 decoding using [XvMC](/index.php/XvMC "XvMC"). This driver is the only way to go if you want to be on the bleeding edge.
 
@@ -29,7 +18,7 @@ To get the OpenChrome driver, [install](/index.php/Install "Install") the [xf86-
 
 The `xorg.conf` driver name is `openchrome`.
 
-#### Troubleshooting
+### Troubleshooting
 
 To enable any of the following options to fix issues, first create a new file `10-openchrome.conf` in `/etc/X11/xorg.conf.d/`:
 
@@ -62,17 +51,13 @@ Option "AccelMethod" "XAA"
 
 ```
 
-##### Black screen when booting from LiveCD
+#### Black screen when booting from LiveCD
 
 If you experience a black screen when booting from Live-CD, add `modprobe.blacklist=viafb` on the [kernel command line](/index.php/Kernel_command_line "Kernel command line").
 
 **Note:** The `nomodeset` option will probably not work here.
 
 After installing the system you will need to [blacklist](/index.php/Blacklist "Blacklist") the `viafb` module.
-
-#### VIA kernel
-
-Some video cards, such as VX900 require booting [linux-openchrome](https://aur.archlinux.org/packages/linux-openchrome/) kernel in order to properly initialize.
 
 ## Unichrome and OpenGL
 

@@ -26,7 +26,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [windowmaker](https://www.archlinux.org/packages/?name=windowmaker) package. You may also wish to install the [windowmaker-extra](https://www.archlinux.org/packages/?name=windowmaker-extra) package which contains a number of extra icons and themes.
+[Install](/index.php/Install "Install") the [windowmaker](https://aur.archlinux.org/packages/windowmaker/) package. You may also wish to install the [windowmaker-extra](https://aur.archlinux.org/packages/windowmaker-extra/) package which contains a number of extra icons and themes.
 
 ## Starting Window Maker
 

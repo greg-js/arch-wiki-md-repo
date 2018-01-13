@@ -47,7 +47,7 @@ GTK+，或称 GIMP Toolkit，最初由[GNU项目](/index.php/GNU_Project "GNU Pr
 *   [lxappearance](https://www.archlinux.org/packages/?name=lxappearance)：来自[LXDE](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)")的配置工具，不过不依赖任何LXDE或其他桌面环境组件。比起其他配置工具，可定制性更强。
 *   [gtk-chtheme](https://www.archlinux.org/packages/?name=gtk-chtheme)
 *   [gtk-theme-switch2](https://www.archlinux.org/packages/?name=gtk-theme-switch2)
-*   [gtk2_prefs](https://www.archlinux.org/packages/?name=gtk2_prefs)
+*   [gtk2_prefs](https://aur.archlinux.org/packages/gtk2_prefs/)
 
 安装，以[gtk-theme-switch2](https://www.archlinux.org/packages/?name=gtk-theme-switch2)为例：
 

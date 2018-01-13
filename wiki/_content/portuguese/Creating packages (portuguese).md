@@ -111,21 +111,19 @@ Exemplos de PKGBUILDs estão localizados em `/usr/share/pacman/`. Uma explicaç�
 
 Todos eles contêm caminhos *absolutos*, o que significa que você não tem que se preocupar com seu diretório de trabalho, se você usar essas variáveis adequadamente.
 
-**Note:** *makepkg*, e portanto as funções `build()` e `package()`, são feitas para serem não interativas. Utilitários interativos ou scripts chamados naquelas funções podem quebrar o *makepkg*, principalmente se for invocada com registro de log de compilação habilitado (`-L`). (Veja [FS#13214](https://bugs.archlinux.org/task/13214).)
+**Nota:** *makepkg*, e portanto as funções `build()` e `package()`, são feitas para serem não interativas. Utilitários interativos ou scripts chamados naquelas funções podem quebrar o *makepkg*, principalmente se for invocada com registro de log de compilação habilitado (`-L`). (Veja [FS#13214](https://bugs.archlinux.org/task/13214).)
 
-**Note:** Com exceção do *Maintainer* atual do pacote, pode haver mantenedores anteriores listados acima como *Contributors*.
+**Nota:** Com exceção do *Maintainer* atual do pacote, pode haver mantenedores anteriores listados acima como *Contributors*.
 
 ### Funções do PKGBUILD
 
-Há cinco funções, listadas aqui na ordem em que elas são executadas, se todas elas existirem. Se uma não existir, ela é simplesmente ignorada.
-
-**Note:** Note que isso não se aplica à função `package()`, já que ela é exigida em todo PKGBUILD
+Há cinco funções, listadas aqui na ordem em que elas são executadas. Com exceção da quinta função, `package()`, a qual é exigida em todo PKGBUILD, se uma função não existir ela é simplesmente ignorada.
 
 #### prepare()
 
 Nessa função, comandos que são usados para preparar fontes para compilação são executados, tal como [patching](/index.php/Patching_in_ABS "Patching in ABS"). Essa função é executada após a extração do pacote, antes do [pkgver()](#pkgver.28.29) e a função de compilação. Se a extração for ignorada (`makepkg -e`), então `prepare()` não é executada.
 
-**Note:** (De [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) A função é executada no modo `bash -e`, o que significa que qualquer comando que sair com um status não-zero fará com que a função saia.
+**Nota:** (De [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) A função é executada no modo `bash -e`, o que significa que qualquer comando que sair com um status não-zero fará com que a função saia.
 
 #### pkgver()
 
@@ -133,7 +131,7 @@ Nessa função, comandos que são usados para preparar fontes para compilação 
 
 Isso é particularmente útil se você estiver [fazendo pacote git/svn/hg/etc.](/index.php/VCS_PKGBUILD_Guidelines "VCS PKGBUILD Guidelines"), nos quais o processo de compilação pode se manter o mesmo, mas o fonte não puder ser atualizado todo dia, ou toda hora. A forma antiga de fazer isso é colocar a data no campo *pkgver* que, se o software não fosse atualizado, makepkg ainda iria recompilá-lo pensando que a versão foi alterada. Alguns comandos úteis para isso são `git describe`, `hg identify -ni`, etc. Por favor, teste antes de enviar um PKGBUILD, já que uma falha na função `pkgver()` pode parar um processo de compilação.
 
-**Note:** pkgver não pode conter espaços ou hífens (`-`). Usar sed para corrigir isso é comum.
+**Nota:** pkgver não pode conter espaços ou hífens (`-`). Usar sed para corrigir isso é comum.
 
 #### build()
 
@@ -154,7 +152,7 @@ make
 
 ```
 
-**Note:** Se seu software não precisa compilar nada, NÃO use a função `build()`. A função `build()` não é obrigatória, mas a função `package()` é.
+**Nota:** Se seu software não precisa compilar nada, NÃO use a função `build()`. A função `build()` não é obrigatória, mas a função `package()` é.
 
 #### check()
 
@@ -171,7 +169,7 @@ make DESTDIR="$pkgdir/" install
 
 ```
 
-**Note:** Algumas vezes é caso do `DESTDIR` não ser usado no `Makefile`; em vez disso, você pode precisar usar `prefix`. Se o pacote é compilado com *autoconf* / *automake*, use `DESTDIR`; isso é o que está [documentado](https://www.gnu.org/software/automake/manual/automake.html#Install) nos manuais. Se `DESTDIR` não funcionar, tente compilar com `make prefix="$pkgdir/usr/" install`. Se isso não funcionar, você terá que olhar mais profundamente nos comandos de instalação que são executados por "`make <...> install`".
+**Nota:** Algumas vezes é caso do `DESTDIR` não ser usado no `Makefile`; em vez disso, você pode precisar usar `prefix`. Se o pacote é compilado com *autoconf* / *automake*, use `DESTDIR`; isso é o que está [documentado](https://www.gnu.org/software/automake/manual/automake.html#Install) nos manuais. Se `DESTDIR` não funcionar, tente compilar com `make prefix="$pkgdir/usr/" install`. Se isso não funcionar, você terá que olhar mais profundamente nos comandos de instalação que são executados por "`make <...> install`".
 
 `makepkg --repackage` executa apenas a função `package()`, então ele cria um pacote sem compilar. Isso pode economizar tempo, por exemplo, se você tiver alterado apenas a variável `depends` do pacote.
 

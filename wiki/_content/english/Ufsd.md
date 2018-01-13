@@ -3,8 +3,6 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Without dkms](#Without_dkms)
-    *   [1.2 With dkms](#With_dkms)
 *   [2 Usage](#Usage)
     *   [2.1 Manual](#Manual)
     *   [2.2 Automatic](#Automatic)
@@ -12,33 +10,10 @@
 
 ## Installation
 
-You can setup ufsd with or without dkms. The advantage of using dkms is that you wont need to bother about rebuilding and reinstalling every time the kernel changes. See [Dynamic Kernel Module Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") for more details on dkms.
+The ufsd packages uses [Dynamic Kernel Module Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") so you won't need to bother about rebuilding and reinstalling every time the kernel changes
 
-### Without dkms
-
-*   Download the [ufsd-module](https://aur.archlinux.org/packages/ufsd-module/) tarball from the [AUR](/index.php/AUR "AUR").
-*   Untar the tarball
-*   Visit [http://www.paragon-software.com/home/ntfs-linux-per/download.html](http://www.paragon-software.com/home/ntfs-linux-per/download.html) and fill in the request form. You should receive an email with a download link shortly. Download the .tbz file and move it to the package folder.
-*   Build and install the package
-
-```
-$ makepkg -si
-
-```
-
-**Note:** You will need to rebuild and reinstall after a kernel upgrade.
-
-### With dkms
-
-*   [Install](/index.php/Install "Install") the [dkms](https://www.archlinux.org/packages/?name=dkms) package, found in the [official repositories](/index.php/Official_repositories "Official repositories")
-*   Start and enable the dkms service
-
-```
-# systemctl start dkms.service
-# systemctl enable dkms.service
-
-```
-
+*   [Install](/index.php/Install "Install") the [dkms](https://www.archlinux.org/packages/?name=dkms) package.
+*   [Start](/index.php/Start "Start") and enable `dkms.service`.
 *   Download the [ufsd-module-dkms](https://aur.archlinux.org/packages/ufsd-module-dkms/) tarball from the [AUR](/index.php/AUR "AUR").
 *   Untar the tarball
 *   Visit [http://www.paragon-software.com/home/ntfs-linux-per/download.html](http://www.paragon-software.com/home/ntfs-linux-per/download.html) and fill in the request form. You should receive an email with a download link shortly. Download the .tbz file and move it to the package folder.

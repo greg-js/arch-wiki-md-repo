@@ -25,7 +25,7 @@ Articoli correlati
 
 Si [installi](/index.php/Install "Install") il pacchetto [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant).
 
-È inoltre possibile installare [wpa_supplicant_gui](https://www.archlinux.org/packages/?name=wpa_supplicant_gui) che fornisce *wpa_gui*, un frontend grafico per *wpa_supplicant*.
+È inoltre possibile installare [wpa_supplicant_gui](https://aur.archlinux.org/packages/wpa_supplicant_gui/) che fornisce *wpa_gui*, un frontend grafico per *wpa_supplicant*.
 
 ## Panoramica
 

@@ -85,7 +85,7 @@ $ xdg_menu --format icewm --fullmenu --root-menu /etc/xdg/menus/arch-application
 
 ### Темы
 
-По умолчанию включено несколько тем оформления, в репозитории можно дополнительно найти пакет с ножеством тем - [icewm-themes](https://www.archlinux.org/packages/?name=icewm-themes). Хотя большинство тем имеют спартанский вид, в стиле'old Windows', существуют и более современные. Примеры хороших тем оформления: [Carbonit+Ice](http://box-look.org/content/show.php/Carbonit+Ice?content=146421), [IceBuntu](http://box-look.org/content/show.php/IceBuntu?content=62935) или [IceClearlooks](http://box-look.org/content/show.php/IceClearlooks?content=96346). Еще больше тем оформления можно найти на [box-look.org](http://www.box-look.org/index.php?xcontentmode=7311).
+По умолчанию включено несколько тем оформления, в репозитории можно дополнительно найти пакет с ножеством тем - [icewm-themes](https://aur.archlinux.org/packages/icewm-themes/). Хотя большинство тем имеют спартанский вид, в стиле'old Windows', существуют и более современные. Примеры хороших тем оформления: [Carbonit+Ice](http://box-look.org/content/show.php/Carbonit+Ice?content=146421), [IceBuntu](http://box-look.org/content/show.php/IceBuntu?content=62935) или [IceClearlooks](http://box-look.org/content/show.php/IceClearlooks?content=96346). Еще больше тем оформления можно найти на [box-look.org](http://www.box-look.org/index.php?xcontentmode=7311).
 
 ## Файловые менеджеры
 

@@ -6,7 +6,7 @@ Related articles
 *   [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox/Tweaks")
 *   [Firefox/Profile on RAM](/index.php/Firefox/Profile_on_RAM "Firefox/Profile on RAM")
 
-This article overviews configuration settings and some useful extensions which enhance security and privacy while using the [Firefox](/index.php/Firefox "Firefox") web browser.
+This article overviews how to configure [Firefox](/index.php/Firefox "Firefox") to enhance security and privacy.
 
 ## Contents
 
@@ -214,7 +214,7 @@ From the preferences for Cookie Monster select "Block All Cookies". Once this is
 
 ### Cookie AutoDelete
 
-[Cookie AutoDelete](https://addons.mozilla.org/firefox/addon/cookie-autodelete/) is an extension that deletes cookies as soon as the tab closes. Supports automatic and manual cookie cleaning modes. Clearing LocalStorage is [not yet supported](https://github.com/Cookie-AutoDelete/Cookie-AutoDelete/issues/44).
+[Cookie AutoDelete](https://addons.mozilla.org/firefox/addon/cookie-autodelete/) is an extension that deletes cookies as soon as the tab closes. Supports automatic and manual cookie cleaning modes. (Support for clearing LocalStorage was added in version 2.1, but only for Firefox versions 58+. The same release added support for first part isolation, but only for Firefox versions 59+).
 
 ### RefControl
 
@@ -222,13 +222,13 @@ From the preferences for Cookie Monster select "Block All Cookies". Once this is
 
 To do this open RefControl's preferences and change the setting for "Default for sites not listed:" to <Block>.
 
-**Note:** Firefox has options to control emitted HTTP referers, possibly replacing plugins such as RefControl and Smart Referer. See [Firefox tweaks#Referrer header control](/index.php/Firefox_tweaks#Referrer_header_control "Firefox tweaks").
+**Note:** This extension has not been updated since 2014 and will not work with modern versions of Firefox. However Firefox now has native options to control emitted HTTP referers, possibly replacing plugins such as RefControl and Smart Referer. See [Firefox tweaks#Referrer header control](/index.php/Firefox_tweaks#Referrer_header_control "Firefox tweaks").
 
 ### RequestPolicy
 
-[RequestPolicy](https://www.requestpolicy.com/) is an extension for Mozilla browsers which lets you have control over cross-site requests. The latest development version lets you blacklist or whitelist requests by default. Disabling unnecessary cross-site requests leads to better privacy, safety and faster browsing.
+[RequestPolicy Continued](https://addons.mozilla.org/en-US/firefox/addon/requestpolicy-continued/) (a successor to the original [RequestPolicy](https://addons.mozilla.org/en-US/firefox/addon/requestpolicy/)) is an extension for Mozilla browsers which lets you have control over cross-site requests. It also lets you blacklist or whitelist requests by default. Disabling unnecessary cross-site requests leads to better privacy, safety and faster browsing.
 
-For more information on cross-site requests and RequestPolicy visit [here](https://www.requestpolicy.com/faq.html).
+**Note:** This addon is currently in the process of being updated for use on modern versions of Firefox (57+).
 
 ### Decentraleyes
 
@@ -237,6 +237,8 @@ For more information on cross-site requests and RequestPolicy visit [here](https
 ### CanvasBlocker
 
 [CanvasBlocker](https://addons.mozilla.org/firefox/addon/canvasblocker/) Blocks or fakes the JS-API for modifying <canvas> to prevent Canvas-Fingerprinting.</canvas>
+
+**Note:** Mozilla is adding a built-in permission system to allow blocking of HTML5 canvas image track requests, [targeted for release with verion 59](https://wiki.mozilla.org/Security/Fingerprinting).
 
 ### Random User Agent
 
@@ -248,7 +250,7 @@ For more information on cross-site requests and RequestPolicy visit [here](https
 
 ### Stop Fingerprinting
 
-[Stop Fingerprinting](https://addons.mozilla.org/firefox/addon/stop-fingerprinting/) disables / modifies some browser APIs that would otherwise allow browser fingerprinting.
+[Stop Fingerprinting](https://addons.mozilla.org/firefox/addon/stop-fingerprinting/) disables / modifies some browser APIs that would otherwise allow browser fingerprinting. However, this addon is not compatible with newer versions of Firefox (57+).
 
 ## Remove system-wide hidden extensions
 

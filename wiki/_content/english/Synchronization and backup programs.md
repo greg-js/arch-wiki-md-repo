@@ -139,7 +139,7 @@ If a file is modified, these applications store its new version entirely at the 
 
 | Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | Hard links | CLI | Other interfaces | Licence | Other platforms | Maintained | Specificity |
 | [Back In Time](https://github.com/bit-team/backintime) | [Back In Time](/index.php/Back_In_Time "Back In Time") | Python, rsync, diff | No | No | rsync | rsync | rsync | Yes | No | No | Yes [[30]](http://backintime.le-web.org/documentation/) | Yes | Qt | GPLv2 | Yes |
-| [DAR](http://dar.linux.free.fr/) (Disk ARchive) | [dar](https://aur.archlinux.org/packages/dar/) | C++ | special archive format | Yes | Yes | Yes |  ? |  ? |  ? |  ? | No [[31]](http://dar.linux.free.fr/doc/Features.html) | Yes | DarGUI | GPL | FreeBSD, NetBSD, Windows, macOS | Yes | Automatic backup using [cron](/index.php/Cron "Cron") is possible with [sarab](https://aur.archlinux.org/packages/sarab/). |
+| [DAR](http://dar.linux.free.fr/) (Disk ARchive) | [dar](https://aur.archlinux.org/packages/dar/) | C++ | special archive format | Yes | Yes | Yes |  ? |  ? |  ? |  ? | No [[31]](http://dar.linux.free.fr/doc/Features.html) | Yes | DarGUI | GPL | FreeBSD, NetBSD, Windows, macOS | Yes |
 | [DarGUI](http://dargui.sourceforge.net/) | [dargui](https://aur.archlinux.org/packages/dargui/) | DAR front-end | Yes | Yes | Yes | Yes |  ? |  ? |  ? |  ? | No [[32]](http://dar.linux.free.fr/doc/Features.html) | No | GTK | GPL | Windows |  ? |
 | [hdup](http://miek.nl/projects/hdup2/) | [hdup](https://aur.archlinux.org/packages/hdup/) | C | bzip, gzip, lzop | gpg |  ? | SSH |  ? | No | No | No | No | Yes | No | GPLv2 | No | Multiple backup targets. |
 | [Link-Backup](http://www.scottlu.com/Content/Link-Backup.html) | [link-backup](https://aur.archlinux.org/packages/link-backup/) | Python | No | No |  ? | SSH |  ? |  ? | Yes | Yes | No [[33]](http://www.scottlu.com/Content/Link-Backup.html) | Yes | No | MIT | No | It copies itself to the server. |
@@ -215,13 +215,13 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
     *   Remote Manage.
     *   No GUI Front end for Linux, command line based. A wrapper script is available to make it easier to use.
 
-	[https://www.idrive.com/](https://www.idrive.com/) || [idevsutil](https://aur.archlinux.org/packages/idevsutil/), [idrive-wrapper](https://aur.archlinux.org/packages/idrive-wrapper/)
+	[https://www.idrive.com/](https://www.idrive.com/) ||
 
 *   **[Jungle Disk](https://en.wikipedia.org/wiki/Jungle_Disk "wikipedia:Jungle Disk")** — An online backup tool that stores its data in Amazon S3 or Rackspace Cloud Files.
     *   A GNOME Files extension.
     *   Only paid plans available.
 
-	[http://www.jungledisk.com/](http://www.jungledisk.com/) || [nautilus-jungledisk](https://aur.archlinux.org/packages/nautilus-jungledisk/)
+	[http://www.jungledisk.com/](http://www.jungledisk.com/) ||
 
 *   **[MEGA](https://en.wikipedia.org/wiki/Mega_(website) "wikipedia:Mega (website)")** — Successor to the MegaUpload file-sharing service.
     *   Free accounts are 50GB with paid plans available for more space.
@@ -260,7 +260,7 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
     *   Supports local directory via fuse, as well as web access.
     *   Supports many cloud storage services, such as Box, Dropbox, Google Drive, Onedrive, and others.
 
-	[http://storagemadeeasy.com/](http://storagemadeeasy.com/) || [smestorage](https://aur.archlinux.org/packages/smestorage/)
+	[http://storagemadeeasy.com/](http://storagemadeeasy.com/) ||
 
 *   **[Tarsnap](https://en.wikipedia.org/wiki/Tarsnap "wikipedia:Tarsnap")** — A secure online backup service for Linux, BSD, macOS and Windows (through Cygwin).
     *   Compressed encrypted backups to Amazon S3 Servers.

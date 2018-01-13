@@ -1,3 +1,8 @@
+Related articles
+
+*   [بيئة سطح المكتب لجنوم تشمل ناتوليس](/index.php/Desktop_environment "Desktop environment")
+*   [Xfce4's مدير ملفات افتراضي.](/index.php/Xfce4 "Xfce4")
+
 [نوتيلس](http://live.gnome.org/Nautilus) هو مدير الملفات الافتراضي لواجهة [غنوم](https://live.gnome.org/)، [من موقع غنوم على الإنترنت](http://library.gnome.org/users/user-guide/stable/gosnautilus-22.html.en): *مدير الملفات "نوتيلس" يقدم طريقة بسيطة ومتكاملة لإدارة ملفاتك وتطبيقاتك، يمكنك استخدام "نوتيلس" للقيام بالأمور التالية:*
 
 *   إنشاء مجلدات ومستندات

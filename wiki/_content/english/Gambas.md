@@ -1,30 +1,10 @@
 **Gambas** is an object-oriented dialect of the BASIC programming language as well as the integrated development environment that accompanies it.
 
-## Contents
-
-*   [1 Installation](#Installation)
-    *   [1.1 Gambas 3](#Gambas_3)
-    *   [1.2 Gambas 2](#Gambas_2)
-*   [2 Tips and tricks](#Tips_and_tricks)
-*   [3 External Links](#External_Links)
-
 ## Installation
-
-There are currently two versions of Gambas: Gambas 3 and the older Gambas 2.
 
 **Note:** Gambas consists of a runtime and IDE further broken up into several distinct components. Not all of them may be needed for what you wish to do with the IDE or for running a specific Gambas application.
 
-### Gambas 3
-
-Gambas 3 is the latest version of the language, and is distinct from earlier versions of Gambas although most projects can be converted and ran on the latest version.
-
-To install the latest stable version of Gambas 3, [install](/index.php/Install "Install") the [gambas3](https://www.archlinux.org/groups/x86_64/gambas3/) package from the [official repositories](/index.php/Official_repositories "Official repositories"). Development versions can be grabbed by installing the [gambas3-svn](https://aur.archlinux.org/packages/gambas3-svn/) package from the [AUR](/index.php/AUR "AUR").
-
-### Gambas 2
-
-To install the latest version of Gambas 2, [install](/index.php/Install "Install") the [gambas2](https://www.archlinux.org/packages/?name=gambas2) package from the [official repositories](/index.php/Official_repositories "Official repositories").
-
-Gambas 2 will happily run alongside Gambas 3.
+To install the latest stable version of Gambas 3, [install](/index.php/Install "Install") the [gambas3](https://www.archlinux.org/groups/x86_64/gambas3/) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Tips and tricks
 

@@ -243,7 +243,7 @@ It can be done by using:
 Other utilities to manage MIME-types are:
 
 | Name/Package | Method | Based on | xdg-utils replacement | Configuration file |
-| [mime-editor](https://www.archlinux.org/packages/?name=mime-editor) | MIME-type | Utility for [ROX](http://rox.sourceforge.net/desktop/home.html) applications |
+| [mime-editor](https://aur.archlinux.org/packages/mime-editor/) | MIME-type | Utility for [ROX](http://rox.sourceforge.net/desktop/home.html) applications |
 | [busking-git](https://aur.archlinux.org/packages/busking-git/) | regex | [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) | yes | custom |
 | [linopen](https://aur.archlinux.org/packages/linopen/) | [file](https://www.archlinux.org/packages/?name=file) | custom |
 | [mimeo](https://aur.archlinux.org/packages/mimeo/) | MIME-type

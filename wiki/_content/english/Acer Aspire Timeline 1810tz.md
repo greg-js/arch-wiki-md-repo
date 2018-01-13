@@ -6,7 +6,6 @@
 *   [2 Fan control](#Fan_control)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Touchpad](#Touchpad)
-    *   [3.2 Video playback](#Video_playback)
 *   [4 See also](#See_also)
 
 ## lspci
@@ -48,16 +47,6 @@ If the touchpad becomes unresponsive, add the following: [[2]](https://bbs.archl
 xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Two-Finger Pressure" 280
 
 ```
-
-### Video playback
-
-Trying to get it to work:
-
-*   Multithreaded mplayer [mplayer-mt-lite-git](https://aur.archlinux.org/packages/mplayer-mt-lite-git/) does improve the situation but not solve the problem.
-    *   mplayer -lavdopts threads=4 -vo gl2
-*   [mplayer-coreavc-svn](https://aur.archlinux.org/packages/mplayer-coreavc-svn/) tries to install wine so I didn't test it
-*   VA-API GPU Acceleration coming for GM45 around Q3 2010 [[3]](http://www.phoronix.com/forums/showthread.php?p=135745).
-    *   using aur/mplayer-vaapi mplayer -vo vaapi file should play the content with out a problem as soon as support arrives.
 
 ## See also
 

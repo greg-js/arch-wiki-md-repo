@@ -30,6 +30,7 @@ This article provides information on basic system diagnostics relating to perfor
         *   [2.5.2 The scheduling algorithms](#The_scheduling_algorithms)
         *   [2.5.3 Kernel's I/O schedulers](#Kernel.27s_I.2FO_schedulers)
         *   [2.5.4 Changing I/O scheduler](#Changing_I.2FO_scheduler)
+        *   [2.5.5 Tuning I/O scheduler](#Tuning_I.2FO_scheduler)
     *   [2.6 Power management configuration](#Power_management_configuration)
     *   [2.7 Reduce disk reads/writes](#Reduce_disk_reads.2Fwrites)
         *   [2.7.1 Show disk writes](#Show_disk_writes)
@@ -191,7 +192,7 @@ While these schedulers try to improve total throughput, they might leave some un
 
 The [Completely Fair Queuing *(CFQ)*](https://en.wikipedia.org/wiki/CFQ "w:CFQ") approaches the problem differently by allocating a timeslice and a number of allowed requests by queue depending on the priority of the process submitting them. It supports [cgroup](/index.php/Cgroup "Cgroup") that allows to reserve some amount of I/O to a specific collection of processes. It is in particular useful for shared and cloud hosting: users who paid for some IOPS want to get their share whenever needed. Also, it idles at the end of synchronous I/O waiting for other nearby operations, taking over this feature from the *anticipatory* scheduler and bringing some enhancements. Both the *anticipatory* and the *elevator* schedulers were decommissioned from the Linux kernel replaced by the more advanced alternatives presented above.
 
-The [Budget Fair Queuing *(BFQ)*](https://algo.ing.unimo.it/people/paolo/disk_sched/) is based on CFQ code and brings some enhancements. It does not grant the disk to each process for a fixed time-slice but assigns a "budget" measured in number of sectors to the process and uses heuristics. It is a relatively complex scheduler, more adapted to rotational drives and slow SSDs because its high per-operation overhead can slow down fast devices.
+The [Budget Fair Queuing *(BFQ)*](https://algo.ing.unimo.it/people/paolo/disk_sched/) is based on CFQ code and brings some enhancements. It does not grant the disk to each process for a fixed time-slice but assigns a "budget" measured in number of sectors to the process and uses heuristics. It is a relatively complex scheduler, it may be more adapted to rotational drives and slow SSDs because its high per-operation overhead, especially if associated with a slow CPU, can slow down fast devices. The objective of BFQ on personal systems is that for interactive tasks, the storage device is virtually as responsive as if it was idle. In its default configuration it focuses on delivering the lowest latency rather than achieving the maximum throughput.
 
 [Kyber](https://lwn.net/Articles/720675/) is a recent scheduler inspired by active queue management techniques used for network routing. The implementation is based on "tokens" that serve as a mechanism for limiting requests. A queuing token is required to allocate a request, this is used to prevent starvation of requests. A dispatch token is also needed and limits the operations of a certain priority on a given device. Finally, a target read latency is defined and the scheduler tunes itself to reach this latency goal. The implementation of the algorithm is relatively simple and it is deemed efficient for fast devices.
 
@@ -248,6 +249,18 @@ ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", ATTR{queue
 ```
 
 Save it, then reboot or force [reload/trigger](/index.php/Udev#Loading_new_rules "Udev") of the rules.
+
+#### Tuning I/O scheduler
+
+Each of the kernel's I/O scheduler has its own tunables, such as the latency time, the expiry time or the FIFO parameters. They are helpful in adjusting the algorithm to a particular combination of device and workload. This is typically to achieve a higher throughput or a lower latency for a given utilization. The tunables and their description can be found within the [kernel documentation files](https://www.kernel.org/doc/Documentation/block/).
+
+To list the available tunables for a device, in the example below *sdb* which is using *deadline*, use:
+
+ `$ ls /sys/block/***sdb***/queue/iosched`  `fifo_batch  front_merges  read_expire  write_expire  writes_starved` 
+
+To improve *deadline'*s throughput at the cost of latency, one can increase `fifo_batch` with the command:
+
+ `# echo *32* > /sys/block/***sdb***/queue/iosched/**fifo_batch**` 
 
 ### Power management configuration
 

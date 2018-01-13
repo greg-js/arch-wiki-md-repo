@@ -1201,7 +1201,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **Freetalk** — Console-based Jabber client.
 
-	[https://www.gnu.org/software/freetalk/](https://www.gnu.org/software/freetalk/) || [freetalk](https://www.archlinux.org/packages/?name=freetalk)
+	[https://www.gnu.org/software/freetalk/](https://www.gnu.org/software/freetalk/) || [freetalk](https://aur.archlinux.org/packages/freetalk/)
 
 *   **jabber.el** — Minimal Jabber client for [Emacs](/index.php/Emacs "Emacs").
 
@@ -1311,7 +1311,7 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 *   **[naim](https://en.wikipedia.org/wiki/naim_(software) "wikipedia:naim (software)")** — Ncurses chat client with support for ICQ, IRC and the Lily CMC.
 
-	[https://github.com/nmlorg/naim](https://github.com/nmlorg/naim) || [naim](https://www.archlinux.org/packages/?name=naim)
+	[https://github.com/nmlorg/naim](https://github.com/nmlorg/naim) || [naim](https://aur.archlinux.org/packages/naim/)
 
 *   **pork** — Programmable, ncurses-based IRC client that mostly looks and feels like ircII.
 
@@ -1395,7 +1395,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Linphone](https://en.wikipedia.org/wiki/Linphone "wikipedia:Linphone")** — VoIP phone application for communicating freely with people over the internet, with voice, video, and text instant messaging.
 
-	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://www.archlinux.org/packages/?name=linphone)
+	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://aur.archlinux.org/packages/linphone/)
 
 *   **[Twinkle](https://en.wikipedia.org/wiki/Twinkle_(software) "wikipedia:Twinkle (software)")** — Qt softphone for VoIP and IM communication using SIP.
 
@@ -1607,7 +1607,7 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 *   **Nanoblogger** — A small weblog engine written in Bash for the command line. It uses common UNIX tools such as cat, grep, and sed to create static HTML content. It is not mantained anymore.
 
-	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://www.archlinux.org/packages/?name=nanoblogger)
+	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://aur.archlinux.org/packages/nanoblogger/)
 
 *   **Nikola** — A static site generator written in Python, with incremental rebuilds and multiple markup formats.
 
@@ -1745,7 +1745,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **fbv** — Very simple graphic file viewer for the framebuffer console.
 
-	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://www.archlinux.org/packages/?name=fbv)
+	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://aur.archlinux.org/packages/fbv/)
 
 *   **fim** — Highly customizable and scriptable framebuffer image viewer based on fbi.
 
@@ -1791,7 +1791,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Gimmage** — Gtkmm image viewer.
 
-	[https://sourceforge.net/projects/gimmage.berlios/](https://sourceforge.net/projects/gimmage.berlios/) || [gimmage](https://www.archlinux.org/packages/?name=gimmage)
+	[https://sourceforge.net/projects/gimmage.berlios/](https://sourceforge.net/projects/gimmage.berlios/) || [gimmage](https://aur.archlinux.org/packages/gimmage/)
 
 *   **GNOME Photos** — Access, organize, and share your photos on GNOME.
 
@@ -1827,7 +1827,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Mirage** — PyGTK image viewer featuring support for crop and resize, custom actions and a thumbnail panel.
 
-	[https://sourceforge.net/projects/mirageiv.berlios/](https://sourceforge.net/projects/mirageiv.berlios/) || [mirage](https://www.archlinux.org/packages/?name=mirage)
+	[https://sourceforge.net/projects/mirageiv.berlios/](https://sourceforge.net/projects/mirageiv.berlios/) || [mirage](https://aur.archlinux.org/packages/mirage/)
 
 *   **nomacs** — Free (GPLv3) Qt image viewer for many operating systems. It is feature-rich but starts fast and can be configured to show additional widgets or only the image.
 
@@ -2359,7 +2359,7 @@ See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc d
 
 *   **ID3 Mass Tagger** — Command-line utility to edit ID3 1.x and 2.x tags.
 
-	[http://squell.github.io/id3/](http://squell.github.io/id3/) || [id3](https://www.archlinux.org/packages/?name=id3)
+	[http://squell.github.io/id3/](http://squell.github.io/id3/) || [id3](https://aur.archlinux.org/packages/id3/)
 
 *   **Kid3** — MP3, Ogg/Vorbis, FLAC, MPC, MP4/AAC, MP2, Speex, TrueAudio, WavPack, WMA, WAV and AIFF files tag editor.
 
@@ -2685,7 +2685,7 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 	[http://www.ffmpeg.org/](http://www.ffmpeg.org/) || [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg)
 
-*   **peek** — Simple screencast tool that produces GIF animations.
+*   **peek** — Simple screencast tool that produces GIF, APNG, WebM or MP4 animations.
 
 	[https://github.com/phw/peek](https://github.com/phw/peek) || [peek](https://aur.archlinux.org/packages/peek/)
 
@@ -2727,7 +2727,7 @@ see [Podcast clients](/index.php/List_of_applications/Internet#Podcast_clients "
 
 *   **[GCstar](https://en.wikipedia.org/wiki/GCstar "wikipedia:GCstar")** — GNOME application for organizing various collections (board games, comic books, movies, stamps, etc.).
 
-	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://www.archlinux.org/packages/?name=gcstar)
+	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://aur.archlinux.org/packages/gcstar/)
 
 *   **[Kodi](/index.php/Kodi "Kodi")** — Application for organizing various collections and automatically retrieving info about them (video, music, photos).
 
@@ -2901,7 +2901,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 *   **ROXTerm** — Tabbed terminal emulator with a small footprint.
 
-	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://www.archlinux.org/packages/?name=roxterm)
+	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://aur.archlinux.org/packages/roxterm/)
 
 *   **sakura** — Terminal emulator based on GTK+ and VTE.
 
@@ -4125,7 +4125,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **Bookworm** — eBook reader with epub, pdf, mobi, cbr support for Elementary OS.
 
-	[https://babluboy.github.io/bookworm/](https://babluboy.github.io/bookworm/) || [bookworm](https://aur.archlinux.org/packages/bookworm/)
+	[https://babluboy.github.io/bookworm/](https://babluboy.github.io/bookworm/) || [bookworm](https://www.archlinux.org/packages/?name=bookworm)
 
 *   **[Calibre](https://en.wikipedia.org/wiki/Calibre_(software) "wikipedia:Calibre (software)")** — E-book library management application that can also convert between different formats and sync with a variety of e-book readers. Supported formats include CBZ, CBR, CBC, CHM, DJVU, EPUB, FictionBook, HTML, HTMLZ, LIT, LRF, Mobipocket, ODT, PDF, PRC, PDB, PML, RB, RTF, SNB, TCR, TXT and TXTZ.
 
@@ -4590,7 +4590,7 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 *   **Nemesis** — Command-line network packet crafting and injection utility.
 
-	[http://nemesis.sourceforge.net/](http://nemesis.sourceforge.net/) || [nemesis](https://www.archlinux.org/packages/?name=nemesis)
+	[http://nemesis.sourceforge.net/](http://nemesis.sourceforge.net/) || [nemesis](https://aur.archlinux.org/packages/nemesis/)
 
 *   **[Nmap](/index.php/Nmap "Nmap")** — Security scanner used to discover hosts and services on a computer network, thus creating a "map" of the network.
 
@@ -4912,7 +4912,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **pwsafe** — Unix commandline program that manages encrypted password databases.
 
-	[http://nsd.dyndns.org/pwsafe/](http://nsd.dyndns.org/pwsafe/) || [pwsafe](https://www.archlinux.org/packages/?name=pwsafe)
+	[http://nsd.dyndns.org/pwsafe/](http://nsd.dyndns.org/pwsafe/) || [pwsafe](https://aur.archlinux.org/packages/pwsafe/)
 
 *   **QPass** — Easy to use password manager with built-in password generator.
 
@@ -5110,7 +5110,7 @@ See also [Wikipedia:List of information graphics software](https://en.wikipedia.
 
 *   **[Grace](https://en.wikipedia.org/wiki/Grace_(plotting_tool) "wikipedia:Grace (plotting tool)")** — WYSIWYG 2D graph plotting tool.
 
-	[http://plasma-gate.weizmann.ac.il/Grace/](http://plasma-gate.weizmann.ac.il/Grace/) || [grace](https://www.archlinux.org/packages/?name=grace) [qtgrace](https://aur.archlinux.org/packages/qtgrace/) [gracegtk](https://aur.archlinux.org/packages/gracegtk/)
+	[http://plasma-gate.weizmann.ac.il/Grace/](http://plasma-gate.weizmann.ac.il/Grace/) || [grace](https://aur.archlinux.org/packages/grace/) [qtgrace](https://aur.archlinux.org/packages/qtgrace/) [gracegtk](https://aur.archlinux.org/packages/gracegtk/)
 
 *   **[LabPlot](https://en.wikipedia.org/wiki/LabPlot "wikipedia:LabPlot")** — Free software data analysis and visualization application, similar to SciDAVis.
 
@@ -5542,7 +5542,7 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 
 *   **[GNU Typist](/index.php?title=GNU_Typist&action=edit&redlink=1 "GNU Typist (page does not exist)")** — GNU Typist (also called gtypist) is a universal typing tutor.
 
-	[https://www.gnu.org/software/gtypist/](https://www.gnu.org/software/gtypist/) || [gtypist](https://aur.archlinux.org/packages/gtypist/), [gtypist-single-space](https://aur.archlinux.org/packages/gtypist-single-space/)
+	[https://www.gnu.org/software/gtypist/](https://www.gnu.org/software/gtypist/) || [gtypist](https://www.archlinux.org/packages/?name=gtypist), [gtypist-single-space](https://aur.archlinux.org/packages/gtypist-single-space/)
 
 *   **[Klavaro](/index.php?title=Klavaro&action=edit&redlink=1 "Klavaro (page does not exist)")** — Klavaro is libre software for teaching touch typing that intends to be keyboard and language independent.
 
@@ -5852,7 +5852,7 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Lightweight, NETWM compliant desktop panel.
 
-	[https://aanatoly.github.io/fbpanel/](https://aanatoly.github.io/fbpanel/) || [fbpanel](https://www.archlinux.org/packages/?name=fbpanel)
+	[https://aanatoly.github.io/fbpanel/](https://aanatoly.github.io/fbpanel/) || [fbpanel](https://aur.archlinux.org/packages/fbpanel/)
 
 *   **[GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")** — Panel included in the [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") desktop.
 

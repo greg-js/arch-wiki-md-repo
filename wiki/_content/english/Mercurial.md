@@ -42,7 +42,7 @@ To remove Mercurial warnings of unverified certificate fingerprints, add the fol
 cacerts = /etc/ssl/certs/ca-certificates.crt
 ```
 
-If you are going to be working with large repositories (e.g. [ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/)), you may want to enable the *progress* extension by adding it to your `~/.hgrc` file:
+If you are going to be working with large repositories, you may want to enable the *progress* extension by adding it to your `~/.hgrc` file:
 
  `~/.hgrc` 
 ```

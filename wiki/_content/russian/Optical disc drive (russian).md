@@ -684,7 +684,7 @@ Nero Linux предоставляет следующие возможности:
 
 *   **ripperX** — Программа на GTK+ для риппинга аудио и записи в MP3.
 
-	[http://sourceforge.net/projects/ripperx/](http://sourceforge.net/projects/ripperx/) || [ripperx](https://www.archlinux.org/packages/?name=ripperx)
+	[http://sourceforge.net/projects/ripperx/](http://sourceforge.net/projects/ripperx/) || [ripperx](https://aur.archlinux.org/packages/ripperx/)
 
 *   **rubyripper** — Риппер аудиодисков, который выдаёт качественную запись путём многократного чтения, обнаружения и исправления различий.
 
@@ -741,7 +741,7 @@ dvd::rip — это фронтенд для [transcode](https://www.archlinux.or
 
 Следующие пакеты должны быть установлены:
 
-*   [dvdrip](https://www.archlinux.org/packages/?name=dvdrip): GTK фронтенд над [transcode](https://www.archlinux.org/packages/?name=transcode), который делает риппинг и кодирование
+*   [dvdrip](https://aur.archlinux.org/packages/dvdrip/): GTK фронтенд над [transcode](https://www.archlinux.org/packages/?name=transcode), который делает риппинг и кодирование
 *   [libdv](https://www.archlinux.org/packages/?name=libdv): Программный кодек для DV видео
 *   [xvidcore](https://www.archlinux.org/packages/?name=xvidcore): Видеокодек с открытым исходным кодом. Пригодится, если вы хотите кодировать рипнутые вами файлы в XviD, MPEG-4 (свободная альтернатива кодеку DivX)
 *   [divx4linux](https://aur.archlinux.org/packages/divx4linux/): Если вы хотите кодировать рипнутые вами файлы в DivX

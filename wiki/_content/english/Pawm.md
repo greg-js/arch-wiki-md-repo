@@ -20,7 +20,7 @@ PAWM stands for *Puto Amo Window Manager*.
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [pawm](https://www.archlinux.org/packages/?name=pawm) package.
+[Install](/index.php/Install "Install") the [pawm](https://aur.archlinux.org/packages/pawm/) package.
 
 In order to run PAWM as your default window manager, edit the file `~/.xinitrc` (See [xinit](/index.php/Xinit "Xinit")) so the final line is:
 

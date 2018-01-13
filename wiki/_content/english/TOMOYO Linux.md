@@ -234,7 +234,7 @@ Now, the computer should be restarted.
 
 ### Log daemon
 
-For tomoyo exists the log-daemon `/usr/sbin/tomoyo-auditd`. It is usefull for monitoring the behaviour for example of applications like Skype (see [Skype](/index.php/Skype#Securing_Skype "Skype")). The initial configuration file is well explained and can be found in `/etc/tomoyo/tools/auditd.conf` whereas the log files can be found in `/var/log/tomoyo`.
+For tomoyo exists the log-daemon `/usr/sbin/tomoyo-auditd`. It is useful for monitoring the behavior of closed-source applications. The initial configuration file is well explained and can be found in `/etc/tomoyo/tools/auditd.conf` whereas the log files can be found in `/var/log/tomoyo`.
 
 To use it with systemd create the file `/lib/systemd/system/tomoyo-auditd.service` with the content described in chapter 4.6 in the official [documentation](http://tomoyo.sourceforge.jp/2.5/chapter-4.html.en).
 

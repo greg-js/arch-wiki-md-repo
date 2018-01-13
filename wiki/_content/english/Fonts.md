@@ -11,8 +11,9 @@ Note that certain font licenses may impose some legal limitations.
 ## Contents
 
 *   [1 Font formats](#Font_formats)
-    *   [1.1 Common extensions](#Common_extensions)
-    *   [1.2 Other formats](#Other_formats)
+    *   [1.1 Bitmap formats](#Bitmap_formats)
+    *   [1.2 Outline formats](#Outline_formats)
+    *   [1.3 Other formats](#Other_formats)
 *   [2 Installation](#Installation)
     *   [2.1 Pacman](#Pacman)
     *   [2.2 Creating a package](#Creating_a_package)
@@ -23,35 +24,35 @@ Note that certain font licenses may impose some legal limitations.
     *   [3.1 Preview and temporary changes](#Preview_and_temporary_changes)
     *   [3.2 Persistent configuration](#Persistent_configuration)
 *   [4 Font packages](#Font_packages)
-    *   [4.1 Latin script](#Latin_script)
-        *   [4.1.1 Monospaced](#Monospaced)
-            *   [4.1.1.1 TrueType](#TrueType)
-            *   [4.1.1.2 Bitmap](#Bitmap)
-        *   [4.1.2 Sans-serif](#Sans-serif)
-        *   [4.1.3 Serif](#Serif)
-        *   [4.1.4 Unsorted](#Unsorted)
-    *   [4.2 Non-latin scripts](#Non-latin_scripts)
-        *   [4.2.1 Ancient Scripts](#Ancient_Scripts)
-        *   [4.2.2 Arabic](#Arabic)
-        *   [4.2.3 Braille](#Braille)
-        *   [4.2.4 Chinese, Japanese, Korean, Vietnamese](#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese)
-            *   [4.2.4.1 Pan-CJK](#Pan-CJK)
-            *   [4.2.4.2 Chinese](#Chinese)
-            *   [4.2.4.3 Japanese](#Japanese)
-            *   [4.2.4.4 Korean](#Korean)
-            *   [4.2.4.5 Vietnamese](#Vietnamese)
-        *   [4.2.5 Cyrillic](#Cyrillic)
-        *   [4.2.6 Greek](#Greek)
-        *   [4.2.7 Hebrew](#Hebrew)
-        *   [4.2.8 Indic](#Indic)
-        *   [4.2.9 Khmer](#Khmer)
-        *   [4.2.10 Mongolic and Tungusic](#Mongolic_and_Tungusic)
-        *   [4.2.11 Persian](#Persian)
-        *   [4.2.12 Tai–Kadai](#Tai.E2.80.93Kadai)
-        *   [4.2.13 Tibeto-Burman](#Tibeto-Burman)
-    *   [4.3 Emoji and symbols](#Emoji_and_symbols)
-    *   [4.4 Math](#Math)
-    *   [4.5 Other operating system fonts](#Other_operating_system_fonts)
+    *   [4.1 Bitmap](#Bitmap)
+    *   [4.2 Latin script](#Latin_script)
+        *   [4.2.1 Families](#Families)
+        *   [4.2.2 Monospaced](#Monospaced)
+        *   [4.2.3 Sans-serif](#Sans-serif)
+        *   [4.2.4 Serif](#Serif)
+        *   [4.2.5 Unsorted](#Unsorted)
+    *   [4.3 Non-latin scripts](#Non-latin_scripts)
+        *   [4.3.1 Ancient Scripts](#Ancient_Scripts)
+        *   [4.3.2 Arabic](#Arabic)
+        *   [4.3.3 Braille](#Braille)
+        *   [4.3.4 Chinese, Japanese, Korean, Vietnamese](#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese)
+            *   [4.3.4.1 Pan-CJK](#Pan-CJK)
+            *   [4.3.4.2 Chinese](#Chinese)
+            *   [4.3.4.3 Japanese](#Japanese)
+            *   [4.3.4.4 Korean](#Korean)
+            *   [4.3.4.5 Vietnamese](#Vietnamese)
+        *   [4.3.5 Cyrillic](#Cyrillic)
+        *   [4.3.6 Greek](#Greek)
+        *   [4.3.7 Hebrew](#Hebrew)
+        *   [4.3.8 Indic](#Indic)
+        *   [4.3.9 Khmer](#Khmer)
+        *   [4.3.10 Mongolic and Tungusic](#Mongolic_and_Tungusic)
+        *   [4.3.11 Persian](#Persian)
+        *   [4.3.12 Tai–Kadai](#Tai.E2.80.93Kadai)
+        *   [4.3.13 Tibeto-Burman](#Tibeto-Burman)
+    *   [4.4 Emoji and symbols](#Emoji_and_symbols)
+    *   [4.5 Math](#Math)
+    *   [4.6 Other operating system fonts](#Other_operating_system_fonts)
 *   [5 Fallback font order with X11](#Fallback_font_order_with_X11)
 *   [6 Font alias](#Font_alias)
 *   [7 Tips and tricks](#Tips_and_tricks)
@@ -73,16 +74,21 @@ Most computer fonts used today are in either *bitmap* or *outline* data formats.
 
 	Use Bézier curves, drawing instructions and mathematical formulae to describe each glyph, which make the character outlines scalable to any size.
 
-### Common extensions
+### Bitmap formats
 
-*   `bdf` and `bdf.gz` – bitmap fonts, *b*itmap *d*istribution *f*ormat and gzip compressed `bdf`
-*   `pcf` and `pcf.gz` – bitmaps, *p*ortable *c*ompiled *f*ont and gzip compressed `pcf`
-*   `psf`, `psfu`, `psf.gz` and `psfu.gz` – bitmaps, *P*C *s*creen *f*ont, *P*C *s*creen *f*ont *U*nicode and the gzipped versions (not compatible with X.Org)
-*   `pfa` and `pfb` – outline fonts, *P*ostScript *f*ont *A*SCII and *P*ostScript *f*ont *b*inary. PostScript fonts carry built-in printer instructions.
-*   `ttf` – outline, *T*rue*T*ype *f*ont. Originally designed as a replacement for the PostScript fonts.
-*   `otf` – outline, *O*pen*T*ype *f*ont. TrueType with PostScript typographic instructions.
+*   [Bitmap Distribution Format](https://en.wikipedia.org/wiki/Glyph_Bitmap_Distribution_Format "w:Glyph Bitmap Distribution Format") (BDF) by Adobe
+*   [w:Portable Compiled Format](https://en.wikipedia.org/wiki/Portable_Compiled_Format "w:Portable Compiled Format") (PCF) by Xorg
+*   [w:PC Screen Font](https://en.wikipedia.org/wiki/PC_Screen_Font "w:PC Screen Font") (PSF) used by the Kernel for console fonts, not supported by Xorg (for Unicode PSF files the extension is `psfu`)
 
-For most purposes, the technical differences between TrueType and OpenType can be ignored, some fonts with a `ttf` extension are actually OpenType fonts.
+These formats can also be gzipped. See [#Bitmap](#Bitmap) for the available bitmap fonts.
+
+### Outline formats
+
+*   [w:PostScript fonts](https://en.wikipedia.org/wiki/PostScript_fonts "w:PostScript fonts") by Adobe – has various formats, e.g: Printer Font ASCII (PFA) and Printer Font Binary (PPB)
+*   [w:TrueType](https://en.wikipedia.org/wiki/TrueType "w:TrueType") by Apple and Microsoft (file extension: `ttf`)
+*   [w:OpenType](https://en.wikipedia.org/wiki/OpenType "w:OpenType") by Microsoft, built on TrueType (file extensions: `otf`, `ttf`)
+
+For most purposes, the technical differences between TrueType and OpenType can be ignored.
 
 ### Other formats
 
@@ -280,9 +286,34 @@ If the fonts seems to not change on boot, or change only temporarily, it is most
 
 This is a selective list that includes many font packages from the [AUR](/index.php/AUR "AUR") along with those in the official repositories. Fonts are tagged "Unicode" if they have wide Unicode support, see the project or Wikipedia pages for detail.
 
-Github user Ternstor has created a python script that generates HTML documents with PNG images of all the fonts in the AUR and the official repositories: [[4]](https://github.com/ternstor/distrofonts/blob/master/archfonts.py).
+The [Archfonts Python script](https://github.com/ternstor/distrofonts) can be used to generate PNG images from all the TTF fonts found in the official repositories / the AUR.
+
+### Bitmap
+
+*   Default 8x16
+*   [Dina](https://www.donationcoder.com/Software/Jibz/Dina/index.html) ([dina-font](https://www.archlinux.org/packages/?name=dina-font)) – 8px, 10px, 12px, based on Proggy
+*   [Gohu](http://font.gohu.org/) ([gohufont](https://aur.archlinux.org/packages/gohufont/)) – 11px, 14px, normal and bold
+*   [Lime](http://artwizaleczapka.sourceforge.net/) ([artwiz-fonts](https://www.archlinux.org/packages/?name=artwiz-fonts))
+*   [ProFont](http://tobiasjung.name/profont/) ([profont](https://www.archlinux.org/packages/?name=profont)) – 10px, 11px, 12px, 15px, 17px, 22px, 29px, normal
+*   [Proggy](https://en.wikipedia.org/wiki/Proggy_programming_fonts "w:Proggy programming fonts") ([proggyfonts](https://aur.archlinux.org/packages/proggyfonts/)) – has different variants
+*   [Tamsyn](http://www.fial.com/~scott/tamsyn-font/) ([tamsyn-font](https://www.archlinux.org/packages/?name=tamsyn-font))
+*   [Terminus](http://terminus-font.sourceforge.net/) ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font))
+*   [Tewi](https://github.com/lucy/tewi-font) ([bdf-tewi-git](https://aur.archlinux.org/packages/bdf-tewi-git/))
+*   [Unifont](http://unifoundry.com/unifont.html) ([most extensive](https://en.wikipedia.org/wiki/Unicode_font#Comparison_of_fonts "wikipedia:Unicode font") Unicode coverage of any font) ([bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont))
 
 ### Latin script
+
+#### Families
+
+*   [w:Bitstream Vera](https://en.wikipedia.org/wiki/Bitstream_Vera "w:Bitstream Vera") ([ttf-bitstream-vera](https://www.archlinux.org/packages/?name=ttf-bitstream-vera)) – serif, sans-serif, and monospace
+*   [w:Croscore fonts](https://en.wikipedia.org/wiki/Croscore_fonts "w:Croscore fonts") ([ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) – Google's substitute for Windows' Arial, Times New Roman, and Courier New
+*   [w:DejaVu fonts](https://en.wikipedia.org/wiki/DejaVu_fonts "w:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) – Bitstream Vera modified for greater Unicode coverage
+*   [Droid](https://en.wikipedia.org/wiki/Droid_(font) "w:Droid (font)") ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) – created for Android
+*   [Google Noto](https://en.wikipedia.org/wiki/Noto_fonts "w:Noto fonts") ([noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts)) – Unicode
+*   [w:Liberation fonts](https://en.wikipedia.org/wiki/Liberation_fonts "w:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) – free substitute for Windows' Arial, Arial Narrow, Times New Roman and Courier New
+*   [w:Ubuntu Font Family](https://en.wikipedia.org/wiki/Ubuntu_Font_Family "w:Ubuntu Font Family") ([ttf-ubuntu-font-family](https://www.archlinux.org/packages/?name=ttf-ubuntu-font-family))
+*   [Microsoft fonts](http://corefonts.sourceforge.net/) ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)) – Andalé Mono, Courier New, Arial, Arial Black, Comic Sans, Impact, Lucida Sans, Microsoft Sans Serif, Trebuchet, Verdana, Georgia, Times New Roman
+*   Vista fonts ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/)) – Consolas, Calibri, Candara, Corbel, Cambria, Constantia
 
 #### Monospaced
 
@@ -294,24 +325,14 @@ A comparison with images on Slant: [What are the best programming fonts?](http:/
 
 And a Stack Overflow question with some images: [Recommended fonts for programming](http://stackoverflow.com/questions/4689/recommended-fonts-for-programming)
 
-##### TrueType
-
-*   [Andalé Mono](https://en.wikipedia.org/wiki/Andal%C3%A9_Mono "wikipedia:Andalé Mono") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) ([ttf-anonymous-pro](https://www.archlinux.org/packages/?name=ttf-anonymous-pro), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
-*   [Bitstream Vera Mono](https://en.wikipedia.org/wiki/Bitstream_Vera "wikipedia:Bitstream Vera") ([ttf-bitstream-vera](https://www.archlinux.org/packages/?name=ttf-bitstream-vera))
-*   [Consolas](https://en.wikipedia.org/wiki/Consolas "wikipedia:Consolas") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/)) - Windows programming font
-*   [Courier New](https://en.wikipedia.org/wiki/Courier_New "wikipedia:Courier New") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   [Cousine](https://en.wikipedia.org/wiki/Croscore_fonts "wikipedia:Croscore fonts") ([ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) - Chrome/Chromium OS replacement for Courier New (metric-compatible)
-*   [DejaVu Sans Mono](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) - Unicode
-*   [Droid Sans Mono](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 *   [Envy Code R](https://damieng.com/blog/2008/05/26/envy-code-r-preview-7-coding-font-released) ([ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/))
 *   Fantasque Sans Mono ([ttf-fantasque-sans-git](https://aur.archlinux.org/packages/ttf-fantasque-sans-git/))
 *   [Fira Mono](https://en.wikipedia.org/wiki/Fira_Sans "wikipedia:Fira Sans") ([ttf-fira-mono](https://www.archlinux.org/packages/?name=ttf-fira-mono))
 *   [FreeMono](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
-*   [Hack](https://sourcefoundry.org/hack/)] ([ttf-hack](https://www.archlinux.org/packages/?name=ttf-hack))
+*   [Hack](https://sourcefoundry.org/hack/) ([ttf-hack](https://www.archlinux.org/packages/?name=ttf-hack))
 *   [Inconsolata](https://en.wikipedia.org/wiki/Inconsolata "wikipedia:Inconsolata") ([ttf-inconsolata](https://www.archlinux.org/packages/?name=ttf-inconsolata), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - Excellent programming font
 *   [Inconsolata-g](https://en.wikipedia.org/wiki/Inconsolata "wikipedia:Inconsolata") ([ttf-inconsolata-g](https://aur.archlinux.org/packages/ttf-inconsolata-g/)) - adds some programmer-friendly modifications
-*   [Liberation Mono](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) - Replacement for Courier New, based on Cousine (metric-compatible)
 *   [Lucida Typewriter](https://en.wikipedia.org/wiki/Lucida_Typewriter "wikipedia:Lucida Typewriter") (included in package [jre](https://aur.archlinux.org/packages/jre/))
 *   [Monaco](https://en.wikipedia.org/wiki/Monaco_(typeface) ([ttf-monaco](https://aur.archlinux.org/packages/ttf-monaco/)) - Popular programming font on OSX/Textmate
 *   Monofur ([ttf-monofur](https://aur.archlinux.org/packages/ttf-monofur/))
@@ -319,59 +340,22 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [Roboto](https://en.wikipedia.org/wiki/Roboto "wikipedia:Roboto") ([ttf-roboto](https://www.archlinux.org/packages/?name=ttf-roboto))
 *   [Source Code Pro](https://en.wikipedia.org/wiki/Source_Code_Pro "wikipedia:Source Code Pro") ([adobe-source-code-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-code-pro-fonts))
 
-##### Bitmap
-
-*   Default 8x16
-*   Dina ([dina-font](https://www.archlinux.org/packages/?name=dina-font))
-*   [Gohu](http://font.gohu.org/) ([gohufont](https://aur.archlinux.org/packages/gohufont/))
-*   Lime ([artwiz-fonts](https://www.archlinux.org/packages/?name=artwiz-fonts))
-*   [ProFont](https://en.wikipedia.org/wiki/ProFont "wikipedia:ProFont") ([profont](https://www.archlinux.org/packages/?name=profont))
-*   [Proggy Programming Fonts](https://en.wikipedia.org/wiki/Proggy_Programming_Fonts "wikipedia:Proggy Programming Fonts") ([proggyfonts](https://aur.archlinux.org/packages/proggyfonts/))
-*   [Tamsyn](http://www.fial.com/~scott/tamsyn-font/) ([tamsyn-font](https://www.archlinux.org/packages/?name=tamsyn-font))
-*   [Terminus](http://terminus-font.sourceforge.net/) ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font))
-*   [Tewi](https://github.com/lucy/tewi-font) ([bdf-tewi-git](https://aur.archlinux.org/packages/bdf-tewi-git/))
-*   [Unifont](http://unifoundry.com/unifont.html) ([most extensive](https://en.wikipedia.org/wiki/Unicode_font#Comparison_of_fonts "wikipedia:Unicode font") Unicode coverage of any font) ([bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont))
-
 #### Sans-serif
 
 *   [Andika](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=andika) ([ttf-andika](https://aur.archlinux.org/packages/ttf-andika/))
-*   [Arial](https://en.wikipedia.org/wiki/Arial "wikipedia:Arial") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   [Arial Black](https://en.wikipedia.org/wiki/Arial_Black "wikipedia:Arial Black") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   [Arimo](https://en.wikipedia.org/wiki/Croscore_fonts "wikipedia:Croscore fonts") ([ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) - Chrome/Chromium OS replacement for Arial (metric-compatible)
-*   [Calibri](https://en.wikipedia.org/wiki/Calibri "wikipedia:Calibri") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
-*   [Candara](https://en.wikipedia.org/wiki/Candara "wikipedia:Candara") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
-*   [Comic Sans](https://en.wikipedia.org/wiki/Comic_Sans "wikipedia:Comic Sans") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   [Corbel](https://en.wikipedia.org/wiki/Corbel_(typeface) ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
-*   [DejaVu Sans](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) - Unicode
-*   [Droid Sans](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 *   [FreeSans](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
-*   [Impact](https://en.wikipedia.org/wiki/Impact_(typeface) ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   [Inter UI](https://github.com/rsms/inter) ([ttf-inter-ui](https://aur.archlinux.org/packages/ttf-inter-ui/))
-*   [Liberation Sans](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) Replacement for Arial, based on Arimo (metric-compatible)
-*   [Linux Biolinum](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine))
-*   [Lucida Sans](https://en.wikipedia.org/wiki/Lucida_Sans "wikipedia:Lucida Sans") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   [Microsoft Sans Serif](https://en.wikipedia.org/wiki/Microsoft_Sans_Serif "wikipedia:Microsoft Sans Serif") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
+*   [Inter UI](https://github.com/rsms/inter) ([ttf-inter-ui](https://aur.archlinux.org/packages/ttf-inter-ui/)) – designed for user interfaces
+*   [Linux Biolinum](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) – free substitute for Times New Roman
 *   [PT Sans](https://en.wikipedia.org/wiki/PT_Sans "wikipedia:PT Sans") ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - 3 major variations: normal, narrow, and caption - Unicode: Latin, Cyrillic
 *   [Source Sans Pro](https://en.wikipedia.org/wiki/Source_Sans_Pro "wikipedia:Source Sans Pro") ([adobe-source-sans-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-sans-pro-fonts))
 *   [Tahoma](https://en.wikipedia.org/wiki/Tahoma_(typeface) ([ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/))
-*   [Trebuchet](https://en.wikipedia.org/wiki/Trebuchet_MS "wikipedia:Trebuchet MS") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   [Ubuntu Font Family](https://en.wikipedia.org/wiki/Ubuntu_Font_Family "wikipedia:Ubuntu Font Family") ([ttf-ubuntu-font-family](https://www.archlinux.org/packages/?name=ttf-ubuntu-font-family))
-*   [Verdana](https://en.wikipedia.org/wiki/Verdana "wikipedia:Verdana") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 
 #### Serif
 
-*   [Cambria](https://en.wikipedia.org/wiki/Cambria_(typeface) ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
-*   [Constantia](https://en.wikipedia.org/wiki/Constantia_(typeface) ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
-*   [DejaVu Serif](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) - Unicode
-*   [Droid Serif](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 *   [EB Garamond](http://www.georgduffner.at/ebgaramond/) ([otf-eb-garamond](https://aur.archlinux.org/packages/otf-eb-garamond/))
 *   [FreeSerif](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
 *   [Gentium](https://en.wikipedia.org/wiki/Gentium "wikipedia:Gentium") ([ttf-gentium](https://www.archlinux.org/packages/?name=ttf-gentium)) - Unicode: Latin, Greek, Cyrillic, Phonetic Alphabet
-*   [Georgia](https://en.wikipedia.org/wiki/Georgia_(typeface) ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   [Liberation Serif](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) - Replacement for Times New Roman, based on Tinos (metric-compatible)
 *   [Linux Libertine](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: Latin, Greek, Cyrillic, Hebrew
-*   [Times New Roman](https://en.wikipedia.org/wiki/Times_New_Roman "wikipedia:Times New Roman") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   [Tinos](https://en.wikipedia.org/wiki/Croscore_fonts "wikipedia:Croscore fonts") ([ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) - Chrome/Chromium OS replacement for Times New Roman (metric-compatible)
 
 #### Unsorted
 
@@ -380,9 +364,8 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [ttf-junicode](https://www.archlinux.org/packages/?name=ttf-junicode) - Junius font containing almost complete medieval latin script glyphs
 *   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) - Covers full plane 1 and several scripts
 *   [xorg-fonts-type1](https://www.archlinux.org/packages/?name=xorg-fonts-type1) - IBM Courier and Adobe Utopia sets of [PostScript fonts](https://en.wikipedia.org/wiki/PostScript_fonts "wikipedia:PostScript fonts")
-*   [noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts) - Google Noto TTF fonts
 *   [all-repository-fonts](https://aur.archlinux.org/packages/all-repository-fonts/) - Meta package for all fonts in the official repositories.
-*   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) - a huge collection of free fonts (including ubuntu, inconsolata, droid, etc.) - Note: Your font dialog might get very long as >100 fonts will be added.
+*   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) - a huge collection of free fonts (including Ubuntu, Inconsolata, Droid, etc.) - Note: Your font dialog might get very long as >100 fonts will be added.
 
 ### Non-latin scripts
 
@@ -678,7 +661,7 @@ For terminal emulators that use `Xresources`, fonts can be set by using escape s
 
 ### Application-specific font cache
 
-Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib) or [python2-matplotlib](https://www.archlinux.org/packages/?name=python2-matplotlib)) uses its own font cache, so after updating fonts, be sure to remove `$HOME/.matplotlib/fontList.cache`, `$HOME/.cache/matplotlib/fontList.cache`, `$HOME/.sage/matplotlib-1.2.1/fontList.cache`, etc. so it will regenerate its cache and find the new fonts [[5]](http://matplotlib.1069221.n5.nabble.com/getting-matplotlib-to-recognize-a-new-font-td40500.html).
+Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib) or [python2-matplotlib](https://www.archlinux.org/packages/?name=python2-matplotlib)) uses its own font cache, so after updating fonts, be sure to remove `$HOME/.matplotlib/fontList.cache`, `$HOME/.cache/matplotlib/fontList.cache`, `$HOME/.sage/matplotlib-1.2.1/fontList.cache`, etc. so it will regenerate its cache and find the new fonts [[4]](http://matplotlib.1069221.n5.nabble.com/getting-matplotlib-to-recognize-a-new-font-td40500.html).
 
 ## See also
 

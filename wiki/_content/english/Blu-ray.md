@@ -1,3 +1,7 @@
+Related articles
+
+*   [Optical disc drive](/index.php/Optical_disc_drive "Optical disc drive")
+
 This article is designed to help Linux users to play the Blu-ray discs they have legally purchased on their computers. Since no official Blu-ray player software is available on their system, Linux users have to use open-source libraries capable of handling the DRM schemes that protect these disc contents. This is legal in most countries where interoperability allows this.
 
 ## Contents
@@ -247,7 +251,6 @@ Note: the DumpVID does not seem to be available anymore, so an alternative is to
 For DVD, the [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss) package supplies the needed decryption libs. Below are some options for Blu-ray/HD-DVD decryption. Users can employ to backup a commercial Blu-ray movie under Fair Use guidelines:
 
 *   [aacskeys](https://aur.archlinux.org/packages/aacskeys/) - Opensource
-*   [dumphd](https://aur.archlinux.org/packages/dumphd/) - Opensource
 *   [makemkv](https://aur.archlinux.org/packages/makemkv/) - Closed source/limited free beta
 
 *   [anydvdhd](http://www.slysoft.com/en/anydvdhd.html) - Commercial software requiring users to run it on an Microsoft OS in a VM.

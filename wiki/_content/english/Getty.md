@@ -27,7 +27,7 @@ Alternatives include:
 
 *   **fbgetty** — A console getty like mingetty, which supports framebuffers.
 
-	[http://projects.meuh.org/fbgetty/](http://projects.meuh.org/fbgetty/) || [fbgetty](https://www.archlinux.org/packages/?name=fbgetty)
+	[http://projects.meuh.org/fbgetty/](http://projects.meuh.org/fbgetty/) || [fbgetty](https://aur.archlinux.org/packages/fbgetty/)
 
 *   **mgetty** — A versatile program to handle all aspects of a modem under Unix.
 

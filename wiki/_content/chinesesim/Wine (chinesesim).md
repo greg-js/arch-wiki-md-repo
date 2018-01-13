@@ -642,7 +642,7 @@ Source: [Fedora Mailing List](http://www.spinics.net/linux/fedora/fedora-users/m
 
 ### Q4wine
 
-[Q4Wine](http://q4wine.brezblock.org.ua/) 是一个图形界面的系统目录（wine-prefix）管理器。它的特色是可以把 QT 主题导入 Wine 配置，使两者完美整合。[q4wine](https://www.archlinux.org/packages/?name=q4wine) 软件包在 [[multilib](/index.php/Multilib "Multilib")] 仓库中提供。
+[Q4Wine](http://q4wine.brezblock.org.ua/) 是一个图形界面的系统目录（wine-prefix）管理器。它的特色是可以把 QT 主题导入 Wine 配置，使两者完美整合。[q4wine](https://aur.archlinux.org/packages/q4wine/) 软件包在 [[multilib](/index.php/Multilib "Multilib")] 仓库中提供。
 
 ### Wine-staging
 

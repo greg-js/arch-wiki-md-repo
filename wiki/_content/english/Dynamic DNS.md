@@ -78,7 +78,7 @@ The following DDNS providers are not compatible with [ddclient](#ddclient) so up
 
 ### duiadns
 
-[Duiadns.org](https://www.duiadns.net) is a free service which can be automated with [duiadns](https://aur.archlinux.org/packages/duiadns/).
+[Duiadns.org](https://www.duiadns.net) is a free service.
 
 ### FreeDns.io
 

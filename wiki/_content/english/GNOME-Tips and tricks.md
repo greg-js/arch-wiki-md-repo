@@ -272,14 +272,6 @@ Alternatively, a number of tools are available to automate the process:
 
 	[http://pastebin.com/019G2rCy](http://pastebin.com/019G2rCy) || see [mkwlppr](http://pastebin.com/019G2rCy)
 
-*   **Wallpapoz** — Wallpapoz is a tool that provides dynamic wallpapers for GNOME and Xfce desktops.
-
-	[https://vajrasky.wordpress.com/](https://vajrasky.wordpress.com/) || [wallpapoz](https://aur.archlinux.org/packages/wallpapoz/)
-
-*   **CreBS** — A Python/GTK application used to create and set desktop wallpaper slideshows for GNOME.
-
-	[http://www.obfuscatepenguin.net/](http://www.obfuscatepenguin.net/) || [crebs](https://aur.archlinux.org/packages/crebs/)
-
 For setting the XML file as the default background, see [GNOME#Lock screen and background](/index.php/GNOME#Lock_screen_and_background "GNOME").
 
 ## Custom GNOME sessions

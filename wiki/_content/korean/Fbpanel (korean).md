@@ -12,7 +12,7 @@ fbpanel은 가벼운 NETWM 호환 데스크톱 패널이다. 이 문서에서는
 
 ## 설치하기
 
-[공식 저장소](/index.php/Official_repositories "Official repositories")에서 [fbpanel](https://www.archlinux.org/packages/?name=fbpanel) 꾸러미를 [설치](/index.php/Pacman "Pacman")하라.
+[공식 저장소](/index.php/Official_repositories "Official repositories")에서 [fbpanel](https://aur.archlinux.org/packages/fbpanel/) 꾸러미를 [설치](/index.php/Pacman "Pacman")하라.
 
 ## 시작하기
 

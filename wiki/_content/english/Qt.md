@@ -35,9 +35,8 @@ The Qt framework is emerging as a major development platform and is the basis of
         *   [4.3.4 Python (PySide)](#Python_.28PySide.29)
         *   [4.3.5 C#](#C.23)
         *   [4.3.6 Ruby](#Ruby)
-        *   [4.3.7 Java](#Java)
-        *   [4.3.8 Perl](#Perl)
-        *   [4.3.9 Lua](#Lua)
+        *   [4.3.7 Perl](#Perl)
+        *   [4.3.8 Lua](#Lua)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Qt programs crash when opening file dialogs under GNOME Wayland](#Qt_programs_crash_when_opening_file_dialogs_under_GNOME_Wayland)
     *   [5.2 Icon theme is not applied](#Icon_theme_is_not_applied)
@@ -380,26 +379,7 @@ sys.exit(app.exec_())
 
 #### C#
 
-*   Package: [kdebindings-qyoto](https://aur.archlinux.org/packages/kdebindings-qyoto/)
-*   Website: [http://techbase.kde.org/Development/Languages/Qyoto](http://techbase.kde.org/Development/Languages/Qyoto)
-*   Build with: `mcs -pkg:qyoto hello.cs`
-*   Run with: `mono hello.exe`
-
- `hello.cs` 
-```
-using System;
-using Qyoto;
-
-public class Hello {
-    public static int Main(String[] args) {
-        new QApplication(args);
-        new QLabel("Hello world!").Show();
-
-        return QApplication.Exec();
-    }
-}
-
-```
+See [QtSharp](https://gitlab.com/ddobrev/QtSharp).
 
 #### Ruby
 
@@ -418,33 +398,6 @@ hello.show
 app.exec
 
 ```
-
-#### Java
-
-*   Package: [qtjambi](https://aur.archlinux.org/packages/qtjambi/) or [qtjambi-beta](https://aur.archlinux.org/packages/qtjambi-beta/).
-*   Website: [http://qt-jambi.org/](http://qt-jambi.org/)
-*   Build with: `javac Hello.java -cp /opt/qtjambi-beta/qtjambi-linux64-community-4.7.0/qtjambi-4.7.0.jar`.
-*   Run with: `java -cp /opt/qtjambi-beta/qtjambi-linux64-community-4.7.0/qtjambi-4.7.0.jar:. Hello`.
-
- `Hello.java` 
-```
-import com.trolltech.qt.gui.*;
-
-public class Hello
-{
-    public static void main(String args[])
-    {
-        QApplication.initialize(args);
-        QLabel hello = new QLabel("Hello World!");
-
-        hello.show();
-        QApplication.exec();
-    }
-}
-
-```
-
-**Note:** The build instructions and example have been tested on the beta version of Qt Jambi 4.7.0.
 
 #### Perl
 

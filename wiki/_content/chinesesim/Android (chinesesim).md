@@ -502,13 +502,13 @@ Samsung 设备不支持通过 **Fastboot' *工具烧录。可选择的工具只�
 
 #### Heimdall
 
-[Heimdall](http://glassechidna.com.au/heimdall/) 是一个跨平台用于在三星移动设备上烧录固件（也称作ROMS）的开源工具，它也是以[Odina](http://odindownload.com/) 的备选方案为人而知。 它可以通过 [heimdall](https://www.archlinux.org/packages/?name=heimdall) 或 [heimdall-git](https://aur.archlinux.org/packages/heimdall-git/) 软件包被安装。
+[Heimdall](http://glassechidna.com.au/heimdall/) 是一个跨平台用于在三星移动设备上烧录固件（也称作ROMS）的开源工具，它也是以[Odina](http://odindownload.com/) 的备选方案为人而知。 它可以通过 [heimdall](https://aur.archlinux.org/packages/heimdall/) 或 [heimdall-git](https://aur.archlinux.org/packages/heimdall-git/) 软件包被安装。
 
 烧路说明位于 Heimdall 的 [GitHub page](https://github.com/Benjamin-Dobell/Heimdall/tree/master/Linux) 或 [XDA forums](http://forum.xda-developers.com/showthread.php?t=1922461)。
 
 #### Odin (Virtualbox)
 
-[Heimdall](http://glassechidna.com.au/heimdall/) 是一个跨平台用于在三星移动设备上烧录固件（也称作ROMS）的开源工具，它也是以[Odina](http://odindownload.com/) 的备选方案为人而知。 它可以通过 [heimdall](https://www.archlinux.org/packages/?name=heimdall) 或 [heimdall-git](https://aur.archlinux.org/packages/heimdall-git/) 软件包被安装。
+[Heimdall](http://glassechidna.com.au/heimdall/) 是一个跨平台用于在三星移动设备上烧录固件（也称作ROMS）的开源工具，它也是以[Odina](http://odindownload.com/) 的备选方案为人而知。 它可以通过 [heimdall](https://aur.archlinux.org/packages/heimdall/) 或 [heimdall-git](https://aur.archlinux.org/packages/heimdall-git/) 软件包被安装。
 
 烧路说明位于 Heimdall 的 [GitHub page](https://github.com/Benjamin-Dobell/Heimdall/tree/master/Linux) 或 [XDA forums](http://forum.xda-developers.com/showthread.php?t=1922461)。
 

@@ -1,3 +1,7 @@
+Articoli correlati
+
+*   [Window Manager (Italiano)](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)")
+
 Windows Maker è un gestore delle finestre (WM = [Windows Manager](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") per il il server X. È stato progettato per emulare NeXT GUI come un ambiente OpenStep-compatibile ed è caratterizzato da esigenze di bassa memoria e alta flessibilità. Essendo uno dei più leggeri WM è ben adattato per le macchine con modeste specifiche di prestazione.
 
 ## Contents
@@ -19,7 +23,7 @@ Windows Maker è un gestore delle finestre (WM = [Windows Manager](/index.php/Wi
 
 ## Installazione
 
-L'ultima release ufficiale è disponibile nel pacchetto [windowmaker](https://www.archlinux.org/packages/?name=windowmaker) presso i [repositori ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
+L'ultima release ufficiale è disponibile nel pacchetto [windowmaker](https://aur.archlinux.org/packages/windowmaker/) presso i [repositori ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Per installare Window Maker:
 
@@ -168,7 +172,7 @@ Peksystray fornisce una finestra dove le icone si aggiungono automaticamente a s
 
 ### Le applicazioni non partono sempre
 
-Talvolta può capitare che una applicazione, come Firefox o Thunderbird, si avviino correttamente e a volte capita che l'avvio fallisce restituendo un errore, oppure senza nessun output. Se state utilizzando il pacchetto [windowmaker](https://www.archlinux.org/packages/?name=windowmaker), provare ad utilizzare il pacchetto [windowmaker-crm-git](https://aur.archlinux.org/packages/windowmaker-crm-git/) al suo posto.
+Talvolta può capitare che una applicazione, come Firefox o Thunderbird, si avviino correttamente e a volte capita che l'avvio fallisce restituendo un errore, oppure senza nessun output. Se state utilizzando il pacchetto [windowmaker](https://aur.archlinux.org/packages/windowmaker/), provare ad utilizzare il pacchetto [windowmaker-crm-git](https://aur.archlinux.org/packages/windowmaker-crm-git/) al suo posto.
 
 ### Non è possibile disabilitare lo *smooth* dei font
 

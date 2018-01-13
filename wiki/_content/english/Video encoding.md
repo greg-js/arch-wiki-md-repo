@@ -15,7 +15,7 @@ Several graphical user interfaces exist to assist with the conversion of video t
 
 *   [winff](https://aur.archlinux.org/packages/winff/)
 *   [ogmrip](https://www.archlinux.org/packages/?name=ogmrip)
-*   [dvdrip](https://www.archlinux.org/packages/?name=dvdrip)
+*   [dvdrip](https://aur.archlinux.org/packages/dvdrip/)
 *   [handbrake](https://www.archlinux.org/packages/?name=handbrake)
 *   [avidemux](https://aur.archlinux.org/packages/?K=avidemux)
 

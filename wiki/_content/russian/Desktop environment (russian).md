@@ -82,7 +82,7 @@
 
 *   **GNUstep** — свободная объектно-ориентированная кросс-платформенная среда разработки, которая стремится к простоте и элегантности.
 
-	[http://gnustep.org/](http://gnustep.org/) || [windowmaker](https://www.archlinux.org/packages/?name=windowmaker) [gworkspace](https://aur.archlinux.org/packages/gworkspace/)
+	[http://gnustep.org/](http://gnustep.org/) || [windowmaker](https://aur.archlinux.org/packages/windowmaker/) [gworkspace](https://aur.archlinux.org/packages/gworkspace/)
 
 *   **[Hawaii](/index.php/Hawaii "Hawaii")** — легкое, последовательное и быстрое окружение на основе Qt 5, QtQuick и [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)"), и созданное с целью предложить удобный интерфейс независимо от устройства, на котором запущено.
 
@@ -210,8 +210,8 @@
 [gdm](https://www.archlinux.org/packages/?name=gdm) |
 | GNUstep | [GNUstep](http://gnustep.org/)
 [gnustep-core](https://www.archlinux.org/groups/x86_64/gnustep-core/) | [Window Maker](/index.php/Window_Maker "Window Maker")
-[windowmaker](https://www.archlinux.org/packages/?name=windowmaker) | [Window Maker](/index.php/Window_Maker "Window Maker")
-[windowmaker](https://www.archlinux.org/packages/?name=windowmaker) | [Terminal](http://gap.nongnu.org/terminal/index.html)
+[windowmaker](https://aur.archlinux.org/packages/windowmaker/) | [Window Maker](/index.php/Window_Maker "Window Maker")
+[windowmaker](https://aur.archlinux.org/packages/windowmaker/) | [Terminal](http://gap.nongnu.org/terminal/index.html)
 [gnustep-terminal](https://aur.archlinux.org/packages/gnustep-terminal/) | [GWorkspace](http://www.gnustep.org/experience/GWorkspace.html)
 [gworkspace](https://aur.archlinux.org/packages/gworkspace/) | [Calculator](http://www.gnustep.org/experience/examples.html)
 [gnustep-examples](https://aur.archlinux.org/packages/gnustep-examples/) | [Ink](http://www.gnustep.org/experience/examples.html)

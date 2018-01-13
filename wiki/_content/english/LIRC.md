@@ -79,7 +79,7 @@ The program will instruct users to begin hitting keys on the remote in an attemp
 
 ### Optional files
 
-Depending on the application using LIRC, the following are optional. For example, [mplayer](https://www.archlinux.org/packages/?name=mplayer) and [mythtv](https://www.archlinux.org/packages/?name=mythtv) use the these files to define key maps and actions. Some other programs such as [kodi](https://www.archlinux.org/packages/?name=kodi) for example do not make use of this at all but do have an internal system to achieve these mappings. Users should consult the documentation for the specific application to know if modifications to `~/.lircrc` are needed.
+Depending on the application using LIRC, the following are optional. For example, [mplayer](https://www.archlinux.org/packages/?name=mplayer) and [mythtv](https://aur.archlinux.org/packages/mythtv/) use the these files to define key maps and actions. Some other programs such as [kodi](https://www.archlinux.org/packages/?name=kodi) for example do not make use of this at all but do have an internal system to achieve these mappings. Users should consult the documentation for the specific application to know if modifications to `~/.lircrc` are needed.
 
 *   `~/.lircrc` - File containing an **include** statement pointing to each program's lirc map, i.e., `~/.lirc/foo`, `~/.lirc/bar`, etc.
 *   `~/.lirc/foo` - User-level config translating of keys --> actions. Is specific to each remote and to application foo.
@@ -110,7 +110,7 @@ LIRC has the ability to allow for different programs to use the same keypress an
 
 *   Decide which programs are to use LIRC commands.
 
-**Note:** Common programs include: [mplayer](https://www.archlinux.org/packages/?name=mplayer), [mythtv](https://www.archlinux.org/packages/?name=mythtv), [totem](https://www.archlinux.org/packages/?name=totem), [vlc](https://www.archlinux.org/packages/?name=vlc), and [kodi](https://www.archlinux.org/packages/?name=kodi) but not all programs will use this particular method to map keys. [kodi](https://www.archlinux.org/packages/?name=kodi) for example, implements LIRC in a non-standard way. Users must edit `~/.xbmc/userdata/Lircmap.xml` which is a unique xml file, rather than the LIRC standard files the rest of the programs use. Interested users should consult [Kodi#Using a remote control](/index.php/Kodi#Using_a_remote_control "Kodi").
+**Note:** Common programs include: [mplayer](https://www.archlinux.org/packages/?name=mplayer), [mythtv](https://aur.archlinux.org/packages/mythtv/), [totem](https://www.archlinux.org/packages/?name=totem), [vlc](https://www.archlinux.org/packages/?name=vlc), and [kodi](https://www.archlinux.org/packages/?name=kodi) but not all programs will use this particular method to map keys. [kodi](https://www.archlinux.org/packages/?name=kodi) for example, implements LIRC in a non-standard way. Users must edit `~/.xbmc/userdata/Lircmap.xml` which is a unique xml file, rather than the LIRC standard files the rest of the programs use. Interested users should consult [Kodi#Using a remote control](/index.php/Kodi#Using_a_remote_control "Kodi").
 
 *   Create the expected files showing LIRC where the various program-specific maps reside:
 

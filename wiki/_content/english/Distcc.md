@@ -149,7 +149,7 @@ This example would compile gzip using distcc's pump mode with two compile thread
 
 ## Monitoring progress
 
-[Distcc](https://www.archlinux.org/packages/?name=Distcc) ships with a cli monitor `distccmon-text` and a gtk monitor `distccmon-gnome` one can use to check on compilation status.
+[distcc](https://www.archlinux.org/packages/?name=distcc) ships with a cli monitor `distccmon-text` and a gtk monitor `distccmon-gnome` one can use to check on compilation status.
 
 The cli monitor can run continuously by appending a space followed by integer to the command which corresponds to the number of sec to wait for a repeat query:
 

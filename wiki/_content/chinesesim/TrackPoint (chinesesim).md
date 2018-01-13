@@ -17,7 +17,7 @@
 
 ## GUI 配置
 
-安装 [gpointing-device-settings](https://www.archlinux.org/packages/?name=gpointing-device-settings) 软件包。
+安装 [gpointing-device-settings](https://aur.archlinux.org/packages/gpointing-device-settings/) 软件包。
 
 ## 用中键作滚轮
 

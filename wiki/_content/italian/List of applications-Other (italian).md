@@ -376,7 +376,7 @@ Gli utenti utilizzano emulatori di terminale molto spesso, quindi non sorprende 
 
 *   **ROXTerm** — Emulatore di terminale basato su VTE, con tabulazione e ingombro minimo
 
-	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://www.archlinux.org/packages/?name=roxterm)
+	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://aur.archlinux.org/packages/roxterm/)
 
 *   **Sakura** — Emulatore di terminale basato su GTK+ e VTE
 

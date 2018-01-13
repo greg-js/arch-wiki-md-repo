@@ -261,7 +261,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **INSTEAD** — Intérprete de misión que usa las macros de Lua como lenguaje de escritura en el juego.
 
-	[https://code.google.com/p/instead/](https://code.google.com/p/instead/) || [instead-launcher](https://www.archlinux.org/packages/?name=instead-launcher) [instead](https://www.archlinux.org/packages/?name=instead)
+	[https://code.google.com/p/instead/](https://code.google.com/p/instead/) || [instead-launcher](https://aur.archlinux.org/packages/instead-launcher/) [instead](https://aur.archlinux.org/packages/instead/)
 
 *   **[TADS](https://en.wikipedia.org/wiki/TADS "wikipedia:TADS")** — Lenguaje de programación de dominio específico basada en prototipos y en un conjunto de bibliotecas estándares para la creación de juegos de aventura conversacional o ficción interactiva (siglas en inglés IF).
 
@@ -467,7 +467,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **Torcs** — Simulador de carreras de coches usando OpenGL.
 
-	[http://torcs.sourceforge.net/](http://torcs.sourceforge.net/) || [torcs](https://www.archlinux.org/packages/?name=torcs)
+	[http://torcs.sourceforge.net/](http://torcs.sourceforge.net/) || [torcs](https://aur.archlinux.org/packages/torcs/)
 
 *   **Trigger Rally** — Juego gratuito de carreras de coches de rally basado en OpenGL.
 

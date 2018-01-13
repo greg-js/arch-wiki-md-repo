@@ -136,7 +136,7 @@ $ optirun -b none nvidia-settings -c :8
 
 ```
 
-**注意:** 一个打了补丁的 [nvdock](https://www.archlinux.org/packages/?name=nvdock) 版本可用： [nvdock-bumblebee](https://aur.archlinux.org/packages/nvdock-bumblebee/)
+**注意:** 一个打了补丁的 [nvdock](https://aur.archlinux.org/packages/nvdock/) 版本可用： [nvdock-bumblebee](https://aur.archlinux.org/packages/nvdock-bumblebee/)
 
 更多 `optirun` 的选项参见手册页:
 

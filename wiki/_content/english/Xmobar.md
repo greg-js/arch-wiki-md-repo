@@ -173,7 +173,7 @@ font = "xft:Bitstream Vera Sans Mono:size=8:antialias=true"
 
 *   **fgColor** - The colour of the font, takes both colour names like `black` and hex colours like `#000000`.
 *   **bgColor** - The colour of the bar, takes both colour names like `red` and hex colours like `#ff0000`.
-*   **position** - The position of the bar. Keywords are: `Top`/`Bottom`, `TopW`/`BottomW` and `Static`.
+*   **position** - The position of the bar. Keywords are: `Top`/`Bottom`, `TopW`/`BottomW`, `Static` and `OnScreen`.
     *   `Top`/`Bottom` - The top/bottom of the screen.
     *   `TopW`/`BottomW` - The top/bottom of the screen with a fixed width. TopW/BottomW takes 2 arguments:
         *   Alignment: `L`eft, `C`enter or `R`ight aligned.
@@ -183,6 +183,9 @@ font = "xft:Bitstream Vera Sans Mono:size=8:antialias=true"
         *   ypos: Vertical position in pixels, starting at the upper left corner.
         *   width: The width of the bar in pixels.
         *   height: The height of the bar in pixels.
+    *   `OnScreen` - Specify on which screen the bar is positioned. Takes 2 arguments:
+        *   screenNr: Index of the screen to position the bar on.
+        *   position: The positioning of the bar, this is one of the above keywords followed by their arguments.
 
 Example - centered at the bottom of the screen, with a width of 75% of the screen:
 

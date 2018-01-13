@@ -125,7 +125,7 @@
 
 *   **[pawm](/index.php/Pawm "Pawm")** — pawm مدير نوافذ للخادم إكس. هو ليس سطح مكتب و لا يقدم لك كومة ضخمة من الخيارات غير مجدية, فقط يقدم التسهيلات اللازمة لتشغيل التطبيقات ، كما انه سهل الاستخدام .
 
-	[http://www.pleyades.net/pawm/](http://www.pleyades.net/pawm/) || [pawm](https://www.archlinux.org/packages/?name=pawm)
+	[http://www.pleyades.net/pawm/](http://www.pleyades.net/pawm/) || [pawm](https://aur.archlinux.org/packages/pawm/)
 
 *   **[PekWM](/index.php/PekWM "PekWM")** — pekwmمدير نوافذ يفتح مرة واحدة مبني على aewm++ , ولكن تطورت بما فيه الكفاية ليختلف عن aewm + + في جميع الاشياء . يحتوي على الكثير من الميزات الموسعة ,كتجميع النوافذ (شبيه لـ Ion, PWM, او Fluxbox), تخصيص اتوماتيكي, Xinerama, خطف المفاتيح مثل keychains, و اشياء اخرى.
 
@@ -149,7 +149,7 @@
 
 *   **[Window Maker](/index.php/Window_Maker "Window Maker")** — Window Maker مدير نوافذ صمم خصيصا ليتوافق و يندمج مع سطح مكتب GNUstep . يستنسخ خواصه و النظرة الأنيقة من NEXTSTEP . سريع, غني بالمميزات, سهل الاعداد, وسهل الاستخدام. كما انه تطبيق حر, مع المساهمة في صنعه مبرمجين من جميع أنحاء العالم.
 
-	[http://windowmaker.org/](http://windowmaker.org/) || [windowmaker](https://www.archlinux.org/packages/?name=windowmaker)
+	[http://windowmaker.org/](http://windowmaker.org/) || [windowmaker](https://aur.archlinux.org/packages/windowmaker/)
 
 *   **WM2** — wm2 مدير نوافذ للخادم إكس. ويوفر نمط غير عادي من الزخارف للنافذة مع وظائف أقل قدر يشعر مستعمله بالراحة . wm2 غير قابل للتخصيص , إلا إذا عدلت في كوده المصدري و أعدت بنائه,.
 

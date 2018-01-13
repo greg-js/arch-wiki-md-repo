@@ -162,7 +162,7 @@ Defaults:用户名 timestamp_timeout=20
 
 ### bash 自动补全支持
 
-详情参见：[bash#Auto-completion](/index.php/Bash#Auto-completion "Bash")。
+详情参见：[bash (简体中文)#自动命令补全](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.8A.A8.E5.91.BD.E4.BB.A4.E8.A1.A5.E5.85.A8 "Bash (简体中文)")。
 
 ### 跨终端sudo
 

@@ -276,18 +276,18 @@ $ pacman -Qc *pkgname*
 
 ### source
 
-Um vetor de arquivos necessários para compilar o pacote. Deve conter a localização do fonte do software, que na maioria dos casos é uma URL HTTP ou FTP completa. As variáveis anteriormente definidas `pkgname` e `pkgver` podem ser usadas efetivamente aqui (ex.: `source=("https://exemplo.com/$pkgname-$pkgver.tar.gz")`).
+Um vetor de arquivos necessários para compilar o pacote. Deve conter a localização do fonte do software, que na maioria dos casos é uma URL HTTP ou FTP completa. As variáveis anteriormente definidas `pkgname` e `pkgver` podem ser usadas efetivamente aqui como, por exemplo, `source=("https://exemplo.com/$pkgname-$pkgver.tar.gz")`.
 
-Arquivos também podem ser fornecidos diretamente na localização do `PKGBUILD` e adicionados a este vetor. Esses caminhos são resolvidos relativamente ao diretório do `PKGBUILD`. Antes do processo de compilação ser iniciado, todos os arquivos referenciados neste vetor serão baixados ou verificados pela existência, e o *makepkg* não dará continuidade, se algum deles estiver faltando.
+Os arquivos também podem ser fornecidos onde o `PKGBUILD` está localizados e adicionados a este vetor. Os caminhos são resolvidos relativamente ao diretório do `PKGBUILD`. Antes do processo de compilação iniciar, todos os arquivos referenciados neste vetor serão baixados ou verificados pela existência, e o *makepkg* não dará continuidade, se algum deles estiver faltando.
 
 Arquivos *.install* são reconhecidos automaticamente pelo *makepkg* e não devem ser incluídos no vetor de fontes. Arquivos no vetor de fontes com extensões *.sig*, *.sign* ou *.asc* são reconhecidos pelo *makepkg* como assinaturas PGP e serão usados automaticamente para verificar a integridade do arquivo fonte correspondente.
 
-**Nota:**
+{{Atenção|Os nomes de arquivos de fontes baixados devem ser globalmente únicos porque a variável [SRCDEST](/index.php/Makepkg_(Portugu%C3%AAs)#Sa.C3.ADda_de_pacote "Makepkg (Português)") pode ser o mesmo diretório para todos pacotes. Por exemplo, usar apenas o número de versão do projeto como um nome de arquivo conflitará com outros projetos com o mesmo número de versão. Neste caso, o nome de arquivo único alternativo a ser usado é fornecido com a sintaxe `source=('*nome_pacote_único*::*uri-arquivo*')` - por exemplo, `source=("$pkgname-$pkgver.tar.gz::https://github.com/codificador/programa/archive/v$pkgver.tar.gz")`
 
-*   Vetores extras específicos por arquitetura podem ser adicionados anexando um sublinhado e o nome da arquitetura, ex.: `source_i686=()`. Deve haver um vetor de integridade correspondente com somas de verificação (*checksums*), ex.: `sha256sums_x86_64=()`.
-*   Nome de arquivos de fontes baixados devem ser globalmente únicos, porque a variável [SRCDEST](/index.php/Makepkg_(Portugu%C3%AAs)#Sa.C3.ADda_de_pacote "Makepkg (Português)") poderia ser o mesmo diretório para todos pacotes. Isso pode ser garantida especificando um nome de fonte alternativo com a sintaxe `source=('*nome-arquivo*::*uri-arquivo*')`, sendo que o `*nome-arquivo*` escolhido deve ser relativo ao nome do pacote: `source=("nome_projeto::hg+https://googlefontdirectory.googlecode.com/hg/")` 
+**Dica:**
 
-**Dica:** Se algum dos servidores impedirem você de baixar um arquivo por causa de *user-agents*, leia [Nonfree applications package guidelines#Custom DLAGENTS](/index.php/Nonfree_applications_package_guidelines#Custom_DLAGENTS "Nonfree applications package guidelines").
+*   Vetores extras específicos por arquitetura podem ser adicionados anexando um sublinhado e o nome da arquitetura, ex.: `x86_64=()`. Deve haver um vetor de integridade correspondente com somas de verificação (*checksums*), ex.: `sha256sums_x86_64=()`.
+*   Alguns servidores restringem download filtrando a string "User-Agent" do cliente, a qual pode ser alterada com[DLAGENTS](/index.php/Nonfree_applications_package_guidelines#Custom_DLAGENTS "Nonfree applications package guidelines").
 
 ### noextract
 

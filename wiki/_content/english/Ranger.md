@@ -411,6 +411,7 @@ set draw_borders true
 *   [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=93025)
 *   [DotShare.it configurations](http://dotshare.it/category/fms/ranger/)
 *   [GitHub](https://github.com/hut/ranger)
+*   [Official User Guide](https://github.com/ranger/ranger/wiki/Official-user-guide)
 *   [Installing and using ranger](https://www.digitalocean.com/community/tutorials/installing-and-using-ranger-a-terminal-file-manager-on-a-ubuntu-vps)
 *   [Mailing list](https://lists.nongnu.org/mailman/listinfo/ranger-users)
 *   [Ranger tutorial](https://bloerg.net/2012/10/17/ranger-file-manager.html)

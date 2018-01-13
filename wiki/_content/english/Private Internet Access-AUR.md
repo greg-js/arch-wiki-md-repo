@@ -23,6 +23,11 @@ The package provides a tool that downloads the [OpenVPN configuration files](htt
 
 Configuration for the package is stored in `/etc/private-internet-access`
 
+Desktop clients may also be useful to some users:
+
+1.  [ConnMan#Desktop_clients](/index.php/ConnMan#Desktop_clients "ConnMan")
+2.  [NetworkManager#Front-ends](/index.php/NetworkManager#Front-ends "NetworkManager")
+
 ## After installation
 
 If there are any issues with connectivity and you are running [connman](https://www.archlinux.org/packages/?name=connman), please [restart](/index.php/Restart "Restart") `connman-vpn.service`.
@@ -107,6 +112,10 @@ hosts = US East, US West, Japan, UK London, UK Southampton
 ```
 
 ### Troubleshooting
+
+If you are using [pacaur](https://aur.archlinux.org/packages/pacaur/) and continue to have issues with upgrading the package, then you may need to remove the pacaur cache (thanks [@Gelmo](https://aur.archlinux.org/account/Gelmo)):
+
+ ` rm -rf ~/.cache/pacaur/*` 
 
 In order to use the NetworkManager applet to connect:
 

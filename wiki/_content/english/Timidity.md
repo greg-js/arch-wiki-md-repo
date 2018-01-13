@@ -150,7 +150,7 @@ $ vkeybd --addr 128:0
 
 ```
 
-Option `--addr 128:0` connects the input (readable) software MIDI port provided by vkeybd to the first output (writable) ALSA port provided by Timidity. Alternatively you can use aconnect, [aconnectgui](https://aur.archlinux.org/packages/aconnectgui/), [patchage](https://www.archlinux.org/packages/?name=patchage) or kaconnect. As a result when you play around with the keys on the vkeybd TiMidity++ plays the appropriate notes.
+Option `--addr 128:0` connects the input (readable) software MIDI port provided by vkeybd to the first output (writable) ALSA port provided by Timidity. Alternatively you can use aconnect, [patchage](https://www.archlinux.org/packages/?name=patchage) or kaconnect. As a result when you play around with the keys on the vkeybd TiMidity++ plays the appropriate notes.
 
 #### Connect to virtual MIDI device
 

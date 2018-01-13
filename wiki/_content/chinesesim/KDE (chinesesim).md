@@ -677,6 +677,8 @@ Plasma 默认启用了桌面特效，并且不是所有的游戏都会自动禁�
 
 #### Nvidia 显卡屏幕撕裂
 
+**提示：** 翻译人员使用，请无视本提示。英文页面本章搬到 NVIDIA/Troubleshooting 页面去了，但这页面中文没有，故中文保留此章
+
 默认情况下，KWin 混合项在与 Nvidia 闭源驱动一起使用时会遭受屏幕撕裂。要解决此问题，运行 `kwin_x11 --replace` 并在其之前陈述环境变量 `export __GL_YIELD="USLEEP"`：
 
 ```

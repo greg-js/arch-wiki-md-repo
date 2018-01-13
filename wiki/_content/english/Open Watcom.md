@@ -1,4 +1,4 @@
-**Open Watcom** is a **Fortran/C/C++'** compiler [with many cross-compilation targets](http://www.openwatcom.org/index.php/About_Open_Watcom). Those old enough most likely fondly remember old DOS games ending with the [DOS4GW](https://en.wikipedia.org/wiki/DOS/4G "wikipedia:DOS/4G") extender, where the "W" stands for "watcom". In general it was a [very popular compiler for high-end games](https://en.wikipedia.org/wiki/Watcom_C_compiler "wikipedia:Watcom C compiler") at the time for producing very efficient binaries in memory-constrained environments (like DOS). Watcom [lives on](http://www.openwatcom.com/index.php/History) as Open Watcom, with an [official release](http://www.openwatcom.org/) at version 1.9 and an [unofficial fork](https://github.com/open-watcom) at version 2.0.
+[Open Watcom](http://www.openwatcom.org/) is a **Fortran/C/C++'** compiler with many cross-compilation targets. Those old enough most likely fondly remember old DOS games ending with the [DOS4GW](https://en.wikipedia.org/wiki/DOS/4G "wikipedia:DOS/4G") extender, where the "W" stands for "watcom". In general it was a [very popular compiler for high-end games](https://en.wikipedia.org/wiki/Watcom_C_compiler "wikipedia:Watcom C compiler") at the time for producing very efficient binaries in memory-constrained environments (like DOS). Watcom [lives on](http://www.openwatcom.com/index.php/History) as Open Watcom, with an [official release](http://www.openwatcom.org/) at version 1.9 and an [unofficial fork](https://github.com/open-watcom) at version 2.0.
 
 ## Contents
 
@@ -27,7 +27,7 @@
 
 ## Installation
 
-Binary packages for the official 1.9 release did not migrate to AUR4\. A binary package for the unofficial 2.0 release ([openwatcom-v2](https://aur.archlinux.org/packages/openwatcom-v2/)) can be found in the [AUR](/index.php/AUR "AUR"). A source-based package for the v2 fork is also available ([openwatcom-v2-git](https://aur.archlinux.org/packages/openwatcom-v2-git/)) - warning: compilation takes a very long time. For now, bootstrapping with GCC is disabled (works in a stand-alone build but somehow fails under makepkg) and the source release needs to be built with a previous open watcom install.
+The unofficial 2.0 release can be [installed](/index.php/Install "Install") with the [openwatcom-v2](https://aur.archlinux.org/packages/openwatcom-v2/) package.
 
 ## Wmake
 
@@ -157,8 +157,6 @@ There are many [3rd party libraries and resources](http://openwatcom.org/index.p
 ### Extra languages
 
 One area where GCC is stronger than Open Watcom is language support. To mitigate this, some [source-to-source compilers](https://en.wikipedia.org/wiki/Source-to-source_compiler "wikipedia:Source-to-source compiler") can be built on/for Watcom.
-
-*   Pascal: [watcom-p2c](https://aur.archlinux.org/packages/watcom-p2c/) || supports all targets
 
 ## See also
 

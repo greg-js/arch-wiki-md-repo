@@ -548,7 +548,7 @@ echo 1 > /proc/sys/abi/ldt16
 
 ### Q4wine
 
-[Q4Wine](http://sourceforge.net/projects/q4wine/) — графический менеджер префиксов Wine, который также позволяет настраивать префиксы. Из достоинств следует отметить возможность экспорта тем Qt в конфигурацию Wine. Пакет [q4wine](https://www.archlinux.org/packages/?name=q4wine) доступен в официальных репозиториях.
+[Q4Wine](http://sourceforge.net/projects/q4wine/) — графический менеджер префиксов Wine, который также позволяет настраивать префиксы. Из достоинств следует отметить возможность экспорта тем Qt в конфигурацию Wine. Пакет [q4wine](https://aur.archlinux.org/packages/q4wine/) доступен в официальных репозиториях.
 
 ## Смотрите также
 

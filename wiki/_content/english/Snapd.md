@@ -15,7 +15,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [snapd](https://aur.archlinux.org/packages/snapd/) from the official repositories.
+[Install](/index.php/Install "Install") the [snapd](https://aur.archlinux.org/packages/snapd/) package.
 
 Installing it will install the `snapd` daemon as well as *snap-confine*, which mounts and launches snap packages.
 
@@ -40,7 +40,7 @@ To start the timer which periodically refreshes snaps when a new version is push
 
 ## Removal
 
-Uninstalling the [snapd](https://www.archlinux.org/packages/?name=snapd) package will not remove directories and files created while using *snap*. It's best to remove your snaps with *snap remove* before uninstalling the [snapd](https://www.archlinux.org/packages/?name=snapd) package. At this time it is not possible to remove the core snap through the *snap* command. To remove the state, snap package cache and mount unit files completely, you can follow the instructions below.
+Uninstalling the [snapd](https://aur.archlinux.org/packages/snapd/) package will not remove directories and files created while using *snap*. It's best to remove your snaps with *snap remove* before uninstalling the [snapd](https://aur.archlinux.org/packages/snapd/) package. At this time it is not possible to remove the core snap through the *snap* command. To remove the state, snap package cache and mount unit files completely, you can follow the instructions below.
 
 1\. We unmount any currently active snap that is mounted to `/var/lib/snapd/snap/`.
 

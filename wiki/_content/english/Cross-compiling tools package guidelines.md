@@ -27,7 +27,7 @@
 
 This page describes the new way of doing things, inspired by the following packages in `[community]`:
 
-*   [mingw-w64-gcc](https://www.archlinux.org/packages/?name=mingw-w64-gcc) and other packages from `mingw-w64-*` series
+*   [mingw-w64-gcc](https://aur.archlinux.org/packages/mingw-w64-gcc/) and other packages from `mingw-w64-*` series
 *   [arm-none-eabi-gcc](https://www.archlinux.org/packages/?name=arm-none-eabi-gcc) and other packages from `arm-none-eabi-*` series
 *   [arm-wince-cegcc-gcc](https://aur.archlinux.org/packages/arm-wince-cegcc-gcc/) and other packages from `arm-wince-cegcc-*` series
 

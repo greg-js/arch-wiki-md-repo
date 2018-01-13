@@ -336,7 +336,7 @@ fastcgi.server = (
 
 Install and configure FastCGI (see [#FastCGI](#FastCGI) above).
 
-Install [python2-flup](https://www.archlinux.org/packages/?name=python2-flup).
+Install [python2-flup](https://aur.archlinux.org/packages/python2-flup/).
 
 Configure:
 

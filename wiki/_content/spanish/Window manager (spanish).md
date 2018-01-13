@@ -133,7 +133,7 @@ Consulte [Comparison of tiling window managers](/index.php/Comparison_of_tiling_
 
 *   **[pawm](/index.php/Pawm "Pawm")** — pawm es un gestor de ventanas para el sistema X Window. No es un "escritorio" y, por tanto, no ofrece un enorme número de opciones inútiles, solo las aplicaciones necesarias para ejecutar los programas X y, al mismo tiempo, tiene una interfaz amigable y fácil de usar.
 
-	[http://www.pleyades.net/pawm/](http://www.pleyades.net/pawm/) || [pawm](https://www.archlinux.org/packages/?name=pawm)
+	[http://www.pleyades.net/pawm/](http://www.pleyades.net/pawm/) || [pawm](https://aur.archlinux.org/packages/pawm/)
 
 *   **[PekWM](/index.php/PekWM "PekWM")** — pekwm es un gestor de ventanas que alguna vez se basó en el gestor de ventanas aewm + +, pero ha evolucionado lo suficiente como para que no se parezca a aewm + + en absoluto. Tiene un gran conjunto de características ampliadas, incluyendo agrupamiento de ventanas (similar a Ion, PWM, o Fluxbox), auto-propiedades, Xinerama, keygrabber que soporta la gestión keychains, y mucho más.
 
@@ -157,7 +157,7 @@ Consulte [Comparison of tiling window managers](/index.php/Comparison_of_tiling_
 
 *   **[Window Maker](/index.php/Window_Maker "Window Maker")** — Window Maker es un gestor de ventanas X11 originalmente diseñado para proporcionar apoyo para la integración del entorno de escritorio GNUstep. Reproduce lo más posible el aspecto elegante y la interfaz de usuario de NEXTSTEP. Es rápido, rico en características, fácil de configurar y de usar. También es software libre, con aportes realizados por programadores de todo el mundo.
 
-	[http://windowmaker.org/](http://windowmaker.org/) || [windowmaker](https://www.archlinux.org/packages/?name=windowmaker)
+	[http://windowmaker.org/](http://windowmaker.org/) || [windowmaker](https://aur.archlinux.org/packages/windowmaker/)
 
 *   **WM2** — wm2 es un gestor de ventanas para X. Proporciona un estilo inusual de decoración de las ventanas, y tiene poca funcionalidad como para que el usuario se sienta cómodo con el gestor de ventanas. wm2 no es configurable, excepto mediante la edición del código fuente y volverlo a compilar, y realmente está pensado para personas que no quieren que su particular gestor de ventanas sea demasiado amigable.
 

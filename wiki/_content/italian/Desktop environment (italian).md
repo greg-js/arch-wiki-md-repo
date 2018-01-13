@@ -60,7 +60,7 @@ Inoltre, le applicazioni condizionate al DE, tendono a integrarsi meglio con i l
 
 *   **GNUstep** — GNUstep è un ambiente libero, orientato agli oggetti, sviluppato multi-piattaforma che si sforza di essere semplice ed elegante.
 
-	[http://gnustep.org/](http://gnustep.org/) || [windowmaker](https://www.archlinux.org/packages/?name=windowmaker)
+	[http://gnustep.org/](http://gnustep.org/) || [windowmaker](https://aur.archlinux.org/packages/windowmaker/)
 
 *   **[KDE SC](/index.php/KDE_(Italiano) "KDE (Italiano)")** — Kde Software Compilation è costituito da un gran numero di applicazioni individuali ed uno spazio di lavoro desktop, inteso come un guscio all'interno del quale è possibile eseguire queste applicazioni in modo integrato. È possibile eseguire bene le applicazioni KDE su qualsiasi ambiente desktop. Le applicazioni di KDE sono costruite per integrarsi al meglio con i componenti del sistema. Con l'utilizzo anche dello spazio di lavoro KDE, si ottiene una migliore integrazione delle applicazioni con l'ambiente di lavoro, consentendo di diminuire le esigenze di risorse di sistema.
 

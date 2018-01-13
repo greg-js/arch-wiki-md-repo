@@ -107,8 +107,8 @@ There may be several reasons for this:
 
 ```
 # cd /opt/Citrix/ICAClient/keystore/cacerts/
-# cp /etc/ssl/certs/ca-certificates.crt .
-# awk 'BEGIN {c=0;} /BEGIN CERT/{c++} { print > "cert." c ".pem"}' < ca-certificates.crt
+# cp /etc/ca-certificates/extracted/tls-ca-bundle.pem .
+# awk 'BEGIN {c=0;} /BEGIN CERT/{c++} { print > "cert." c ".pem"}' < tls-ca-bundle.pem
 
 ```
 

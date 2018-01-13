@@ -40,7 +40,7 @@ Questi programmi GUI (Graphic User Interface) permettono la selezione del tema o
 *   [lxappearance](https://www.archlinux.org/packages/?name=lxappearance): Un tool di configurazione dal progetto [LXDE](/index.php/LXDE_(Italiano) "LXDE (Italiano)"), che non richiede altre parti di LXDE o di altri ambienti desktop (DE). Offre una personalizzazione più flessibile rispetto ad altri programmi.
 *   [gtk-chtheme](https://www.archlinux.org/packages/?name=gtk-chtheme)
 *   [gtk-theme-switch2](https://www.archlinux.org/packages/?name=gtk-theme-switch2)
-*   [gtk2_prefs](https://www.archlinux.org/packages/?name=gtk2_prefs)
+*   [gtk2_prefs](https://aur.archlinux.org/packages/gtk2_prefs/)
 
 Un comando d'installazione d'esempio:
 

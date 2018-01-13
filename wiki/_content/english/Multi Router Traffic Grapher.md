@@ -21,7 +21,7 @@
 
 This document assumes that you already have a [Apache](/index.php/Apache_and_FastCGI "Apache and FastCGI") and [net-snmp](/index.php/Snmpd "Snmpd") working and configured properly.
 
-[Install](/index.php/Install "Install") [mrtg](https://www.archlinux.org/packages/?name=mrtg) and [perl-net-snmp](https://www.archlinux.org/packages/?name=perl-net-snmp).
+[Install](/index.php/Install "Install") [mrtg](https://aur.archlinux.org/packages/mrtg/) and [perl-net-snmp](https://www.archlinux.org/packages/?name=perl-net-snmp).
 
 *   create an mrtg user
 

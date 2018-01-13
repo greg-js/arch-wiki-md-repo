@@ -9,8 +9,7 @@
     *   [2.2 Installing from Source](#Installing_from_Source)
     *   [2.3 Uninstallation](#Uninstallation)
 *   [3 Other Installation Methods](#Other_Installation_Methods)
-    *   [3.1 By Package](#By_Package)
-    *   [3.2 By RubyGem](#By_RubyGem)
+    *   [3.1 By RubyGem](#By_RubyGem)
 
 ## Chef Development Kit
 
@@ -103,10 +102,6 @@ You can also ensure the omnibus cache is removed:
 ## Other Installation Methods
 
 **Note:** Do not use these methods. It is recommended to install ChefDk or use the Omnibus installer method (see above). This section is included only for completeness-sake.
-
-### By Package
-
-Install the [ruby-chef](https://aur.archlinux.org/packages/ruby-chef/) package from AUR.
 
 ### By RubyGem
 

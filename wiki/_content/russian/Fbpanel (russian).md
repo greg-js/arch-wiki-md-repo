@@ -12,7 +12,7 @@ Fbpanel - лёгковесная, гибко настраиваемая пане
 
 ## Установка
 
-Установите [fbpanel](https://www.archlinux.org/packages/?name=fbpanel).
+Установите [fbpanel](https://aur.archlinux.org/packages/fbpanel/).
 
 ## Настройка
 
@@ -23,7 +23,7 @@ $fbpanel
 
 ```
 
-Возможно, что [fbpanel](https://www.archlinux.org/packages/?name=fbpanel) выдаст ошибку, ссылаясь на невозможность открытия `/home/user/.config/fbpanel/default`
+Возможно, что [fbpanel](https://aur.archlinux.org/packages/fbpanel/) выдаст ошибку, ссылаясь на невозможность открытия `/home/user/.config/fbpanel/default`
 Ничего страшного здесь нет, достаточно создать дефолтный файл конфигурации:
 
 ```

@@ -844,7 +844,7 @@ However, it should be noted that once a window has been 'snapped' to an edge, it
 
 ```
 
-This [Ubuntu forum thread](http://ubuntuforums.org/showthread.php?t=1796793) provides more information. Applications such as [opensnap-git](https://aur.archlinux.org/packages/opensnap-git/) are also available to automatically simulate window snapping behaviour without the use of keybinds. Another option is to use [bunsen-utilities-git](https://aur.archlinux.org/packages/bunsen-utilities-git/) which provides `bl-aerosnap --left` and `bl-aerosnap --right` commands which will snap active window on left or right edge respectively if it's not snapped and restore it to original size and position otherwise. Just bind these commands to the key combination of your choosing.
+This [Ubuntu forum thread](http://ubuntuforums.org/showthread.php?t=1796793) provides more information. Applications such as [opensnap](https://aur.archlinux.org/packages/opensnap/) are also available to automatically simulate window snapping behaviour without the use of keybinds. Another option is to use [bunsen-utilities-git](https://aur.archlinux.org/packages/bunsen-utilities-git/) which provides `bl-aerosnap --left` and `bl-aerosnap --right` commands which will snap active window on left or right edge respectively if it's not snapped and restore it to original size and position otherwise. Just bind these commands to the key combination of your choosing.
 
 ### Smooth display manager transition
 

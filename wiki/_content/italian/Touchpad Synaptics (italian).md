@@ -203,9 +203,9 @@ Accanto al metodo tradizionale di configurazione, i driver Synaptic supportano a
 
 *   **GPointing Device Settings** — fornisce una configurazione al volo grafica per numerosi device di puntamento connessi al sistema, incluso il proprio touchpad synaptic. Questa applicazione rimpiazza GSynaptics come lo strumento principale di configurazione grafica del touchpad attraverso i driver synaptic.
 
-	[http://live.gnome.org/GPointingDeviceSettings](http://live.gnome.org/GPointingDeviceSettings) || [gpointing-device-settings](https://www.archlinux.org/packages/?name=gpointing-device-settings)
+	[http://live.gnome.org/GPointingDeviceSettings](http://live.gnome.org/GPointingDeviceSettings) || [gpointing-device-settings](https://aur.archlinux.org/packages/gpointing-device-settings/)
 
-**Note:** Affinché GPointingDeviceSettings funzioni con i touchpad Synaptics devono essere installati i pacchetti [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) e [libsynaptics](https://www.archlinux.org/packages/?name=libsynaptics) !
+**Note:** Affinché GPointingDeviceSettings funzioni con i touchpad Synaptics devono essere installati i pacchetti [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) e [libsynaptics](https://aur.archlinux.org/packages/libsynaptics/) !
 
 *   **kcm-touchpad** — E' un recente strumento di configurazione per [KDE](/index.php/KDE "KDE") dalla versione 4.12+
 

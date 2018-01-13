@@ -83,9 +83,9 @@ Não instale um diretório chamado apenas `tests`, pois ele facilmente entra em 
 
 ### URLs de download do PyPI
 
-URL PyPI na forma `https://pypi.python.org/packages/source/${_name:0:1}/${_name}/${_name}-${pkgver}.tar.gz` foram abandonados silenciosamente para novas versões de pacotes no curso de 2016, substituídos por um esquema usando um hash impredizível que precisa ser obtido do site do PYPI toda vez que um pacote precisa ser atualizado[[1]](https://bitbucket.org/pypa/pypi/issues/438/backwards-compatible-un-hashed-package#comment-27230605).
+URL PyPI na forma `https://pypi.python.org/packages/source/${_name:0:1}/${_name}/${_name}-${pkgver}.tar.gz` foram abandonados silenciosamente para novas versões de pacotes no curso de 2016, substituídos por um esquema usando um hash impredizível que precisa ser obtido do site do PYPI toda vez que um pacote precisa ser atualizado[[1]](https://github.com/pypa/pypi-legacy/issues/438#issuecomment-226940764).
 
-Como os empacotadores *downstream* relataram seus problemas aos mantenedores do PyPI[[2]](https://bitbucket.org/pypa/pypi/issues/438/backwards-compatible-un-hashed-package), um novo esquema estável foi fornecido[[3]](https://bitbucket.org/pypa/pypi/issues/438/backwards-compatible-un-hashed-package#comment-27606213): [PKGBUILD (Português)#source](/index.php/PKGBUILD_(Portugu%C3%AAs)#source "PKGBUILD (Português)") o vetor `source=()` deve agora usar os modelos de URL a seguir.
+Como os empacotadores *downstream* relataram seus problemas aos mantenedores do PyPI[[2]](https://github.com/pypa/pypi-legacy/issues/438), um novo esquema estável foi fornecido[[3]](https://github.com/pypa/pypi-legacy/issues/438#issuecomment-226940730): [PKGBUILD (Português)#source](/index.php/PKGBUILD_(Portugu%C3%AAs)#source "PKGBUILD (Português)") o vetor `source=()` deve agora usar os modelos de URL a seguir.
 
 Note que uma variável `$_name` personalizada é usada em vez de `$pkgname` já que pacotes python são geralmente chamados `python-$_name`.
 

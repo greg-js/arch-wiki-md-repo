@@ -11,7 +11,7 @@
 
 ## Installation
 
-1.  Install [moinmoin](https://www.archlinux.org/packages/?name=moinmoin).
+1.  Install [moinmoin](https://aur.archlinux.org/packages/moinmoin/).
 2.  Make a new directory for MoinMoin under `/var/lib/moin/` for non static files.
 3.  Copy the folders `/usr/share/moin/data/`, `/usr/share/moin/underlay/` and the configuration file `/usr/share/moin/config/wikiconfig.py` into `/var/lib/moin/`.
 4.  Change the owner of `/var/lib/moin/` to the user under which your web server is running (in most cases "http").

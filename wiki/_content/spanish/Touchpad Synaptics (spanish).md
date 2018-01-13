@@ -210,9 +210,9 @@ Junto al método tradicional de configuración, el controlador Synaptics tambié
 
 *   **GPointing Device Settings** — proporciona una configuración gráfica sobre la marcha para varios dispositivos punteadores conectados al sistema, incluyendo el panel táctil synaptics. Esta aplicación sustituye a GSynaptics, como la herramienta principal para la configuración gráfica del panel táctil a través del controlador synaptics
 
-	[http://live.gnome.org/GPointingDeviceSettings](http://live.gnome.org/GPointingDeviceSettings) || [gpointing-device-settings](https://www.archlinux.org/packages/?name=gpointing-device-settings)
+	[http://live.gnome.org/GPointingDeviceSettings](http://live.gnome.org/GPointingDeviceSettings) || [gpointing-device-settings](https://aur.archlinux.org/packages/gpointing-device-settings/)
 
-**Nota:** Para que GPointingDeviceSettings trabaje junto con los paneles táctiles Synaptics, debe tener instalados los paquetes [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) y [libsynaptics](https://www.archlinux.org/packages/?name=libsynaptics)
+**Nota:** Para que GPointingDeviceSettings trabaje junto con los paneles táctiles Synaptics, debe tener instalados los paquetes [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) y [libsynaptics](https://aur.archlinux.org/packages/libsynaptics/)
 
 *   **Synaptiks** — herramienta de configuración y gestión de panel táctil para [KDE](/index.php/KDE "KDE"). Se proporciona un módulo de configuración del sistema para establecer las funciones básicas y avanzadas del panel táctil. Además viene con una pequeña aplicación en la bandeja del sistema que puede apagar el panel táctil automáticamente, en el momento en que un ratón externo se active o al teclear.
 

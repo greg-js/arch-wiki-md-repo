@@ -209,7 +209,7 @@ $ pacman -Ss icon-theme
 
 A method to fix this is with [Xbindkeys](/index.php/Xbindkeys "Xbindkeys").
 
-Install [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys), [xvkbd](https://www.archlinux.org/packages/?name=xvkbd) and edit `~/.xbindkeysrc` to contain the following:
+Install [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys), [xvkbd](https://aur.archlinux.org/packages/xvkbd/) and edit `~/.xbindkeysrc` to contain the following:
 
 ```
 # Sample .xbindkeysrc for a G9x mouse.

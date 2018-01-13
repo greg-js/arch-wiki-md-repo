@@ -94,7 +94,7 @@ Además, las aplicaciones proporcionadas por los DE tienden a integrarse mejor c
 
 *   **GNUstep** — GNUstep es una entorno de desarrollo multiplataforma, orientado a objetos, que busca la sencillez y la elegancia .
 
-	[http://gnustep.org/](http://gnustep.org/) || [windowmaker](https://www.archlinux.org/packages/?name=windowmaker)
+	[http://gnustep.org/](http://gnustep.org/) || [windowmaker](https://aur.archlinux.org/packages/windowmaker/)
 
 *   **Hawaii** — Hawaii es un entorno de escritorio ligero, completo y rápido que se basa en Qt 5, QtQuick y Wayland, y que está diseñado para ofrecer la mejor experiencia de usuario para el dispositivo en el que se está ejecutando.
 
@@ -222,8 +222,8 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [gdm](https://www.archlinux.org/packages/?name=gdm) |
 | GNUstep | [GNUstep](http://gnustep.org/)
 [gnustep-core](https://www.archlinux.org/groups/x86_64/gnustep-core/) | [Window Maker](/index.php/Window_Maker "Window Maker")
-[windowmaker](https://www.archlinux.org/packages/?name=windowmaker) | [Window Maker](/index.php/Window_Maker "Window Maker")
-[windowmaker](https://www.archlinux.org/packages/?name=windowmaker) | [Terminal](http://gap.nongnu.org/terminal/index.html)
+[windowmaker](https://aur.archlinux.org/packages/windowmaker/) | [Window Maker](/index.php/Window_Maker "Window Maker")
+[windowmaker](https://aur.archlinux.org/packages/windowmaker/) | [Terminal](http://gap.nongnu.org/terminal/index.html)
 [gnustep-terminal](https://aur.archlinux.org/packages/gnustep-terminal/) | [GWorkspace](http://www.gnustep.org/experience/GWorkspace.html)
 [gworkspace](https://aur.archlinux.org/packages/gworkspace/) | [Calculator](http://www.gnustep.org/experience/examples.html)
 [gnustep-examples](https://aur.archlinux.org/packages/gnustep-examples/) | [Ink](http://www.gnustep.org/experience/examples.html)

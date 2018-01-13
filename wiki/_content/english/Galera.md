@@ -14,7 +14,7 @@
 
 The two components Galera cluster comprised of are Galera plugin itself and a patched version of MySQL server which connect using wsrep API.
 
-Install the [mysql-wsrep](https://aur.archlinux.org/packages/mysql-wsrep/) and [galera](https://www.archlinux.org/packages/?name=galera) packages from the [AUR](/index.php/AUR "AUR").
+Install the [galera](https://www.archlinux.org/packages/?name=galera) package.
 
 [Start/Enable](/index.php/Systemd#Using_units "Systemd") the `mysqld.service` daemon.
 
@@ -29,7 +29,7 @@ MariaDB V>10.1 is ready to use galera / wsrep out of the box. [[1]](https://mari
 
 ## Configuration
 
-Once you have installed the [galera](https://www.archlinux.org/packages/?name=galera) and [mysql-wsrep](https://aur.archlinux.org/packages/mysql-wsrep/) packages, you need to configure the cluster.
+You need to configure the cluster.
 
 On each node edit `/etc/mysql/my.cnf` and update the wsrep_cluster_address variable so it contains the list of all nodes in the cluster:
 

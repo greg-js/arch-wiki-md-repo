@@ -179,7 +179,7 @@
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Легковесная панель рабочего стола, совместимая с NETWM
 
-	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://www.archlinux.org/packages/?name=fbpanel)
+	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://aur.archlinux.org/packages/fbpanel/)
 
 *   **[GNOME Panel](https://en.wikipedia.org/wiki/ru:%D0%9F%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_GNOME "wikipedia:ru:Панель GNOME")** — Панель, включенная в состав окружения [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")
 

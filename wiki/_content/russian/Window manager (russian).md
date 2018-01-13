@@ -130,7 +130,7 @@
 
 *   **[pawm](/index.php/Pawm "Pawm")** — Оконный менеджер для X Window system. Он не предоставит вам рабочий стол и не утомит тысячами бесполезных опций. Вместо этого, он включает в себя только те компоненты, которые нужны для запуска ваших приложений X и в то же время имеет простой и дружелюбный интерфейс.
 
-	[http://www.pleyades.net/pawm/](http://www.pleyades.net/pawm/) || [pawm](https://www.archlinux.org/packages/?name=pawm)
+	[http://www.pleyades.net/pawm/](http://www.pleyades.net/pawm/) || [pawm](https://aur.archlinux.org/packages/pawm/)
 
 *   **[PekWM](/index.php/PekWM "PekWM")** — Оконный менеджер, некогда основывавшийся на aewm++, но теперь уже далеко от него ушедший. У него сильно больший набор возможностей, например группировка окон (аналогично Ion, PWM, или Fluxbox), auto-properties, Xinerama, keygrabber с поддержкой наборов ключей и многое другое.
 
@@ -162,7 +162,7 @@
 
 *   **[Window Maker](/index.php/Window_Maker "Window Maker")** — Оконный менеджер для X11, изначально разработанный для поддержки интеграции для GNUstep Desktop Environment. Везде, где возможно, он повторяет элегантный стиль графического интерфейса NEXTSTEP. Он быстрый, обладает широкими возможностями, прост в настройке и использовании. Это свободное ПО, созданное благодаря вкладу разработчиков со всего мира.
 
-	[http://windowmaker.org/](http://windowmaker.org/) || [windowmaker](https://www.archlinux.org/packages/?name=windowmaker)
+	[http://windowmaker.org/](http://windowmaker.org/) || [windowmaker](https://aur.archlinux.org/packages/windowmaker/)
 
 *   **WM2** — Оконный менеджер для X. Он предоставляет необычный стиль оформления окон и настолько скромную функциональность, насколько его автору кажется приемлемым для оконного менеджера. wm2 ненастраиваемый: вы можете только редактировать исходный код и пересобирать его. Он точно не для тех, кому нужен дружелюбный оконный менеджер.
 

@@ -282,7 +282,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[naim](https://en.wikipedia.org/wiki/naim_(software) "wikipedia:naim (software)")** — Cliente de chat basado en ncurses con soporte para AOL, ICQ, IRC y Lily CMC.
 
-	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://www.archlinux.org/packages/?name=naim)
+	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://aur.archlinux.org/packages/naim/)
 
 *   **pork** — Cliente de IRC y mensajería instantánea programable, basado en ncurses que se comporta como ircII.
 
@@ -344,7 +344,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **Freetalk** — Cliente Jabber basado en consola.
 
-	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://www.archlinux.org/packages/?name=freetalk)
+	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://aur.archlinux.org/packages/freetalk/)
 
 *   **jabber.el** — Cliente Jabber minimalista para [Emacs](/index.php/Emacs "Emacs").
 
@@ -514,7 +514,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Linphone](https://en.wikipedia.org/wiki/Linphone "wikipedia:Linphone")** — Aplicación de telefonía VoIP que permite comunicarse libremenete con otras personas a través de internet, con soporte de voz, vídeo y mensajería instantánea de texto.
 
-	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://www.archlinux.org/packages/?name=linphone)
+	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://aur.archlinux.org/packages/linphone/)
 
 *   **Minisip** — Agente de usuario para SIP enfocado a la seguridad (compatible con TLS, seguridad end-to-end, SRTP, MIKEY (DH, PSK, PKE)).
 
@@ -924,7 +924,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **Nanoblogger** — Un pequeño motor de weblog escrito en Bash para la línea de órdenes. Utiliza las herramientas comunes de Unix, como cat, grep y sed, para crear contenido HTML estático.
 
-	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://www.archlinux.org/packages/?name=nanoblogger)
+	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://aur.archlinux.org/packages/nanoblogger/)
 
 ### Clientes de microblogging
 
@@ -1042,7 +1042,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **fbv** — Visor de archivos gráficos muy simple que explota el framebuffer de consola.
 
-	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://www.archlinux.org/packages/?name=fbv)
+	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://aur.archlinux.org/packages/fbv/)
 
 *   **fim** — Visor de imágenes que explota el framebuffer de consola, altamente configurable y basado en fbi.
 
@@ -1072,7 +1072,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **Gimmage** — Visor de imágenes Gtkmm.
 
-	[http://gimmage.berlios.de/](http://gimmage.berlios.de/) || [gimmage](https://www.archlinux.org/packages/?name=gimmage)
+	[http://gimmage.berlios.de/](http://gimmage.berlios.de/) || [gimmage](https://aur.archlinux.org/packages/gimmage/)
 
 *   **GPicView** — Visor de imágenes simple y rápido de X, que forma parte del escritorio [LXDE](/index.php/LXDE "LXDE").
 
@@ -1092,7 +1092,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **Mirage** — Visor de imágenes PyGTK con soporte para recortar y redimensionar, acciones personalizadas y un panel de miniaturas.
 
-	[http://mirageiv.berlios.de](http://mirageiv.berlios.de) || [mirage](https://www.archlinux.org/packages/?name=mirage)
+	[http://mirageiv.berlios.de](http://mirageiv.berlios.de) || [mirage](https://aur.archlinux.org/packages/mirage/)
 
 *   **nomacs** — Visor de imágenes libre (Qt) para windows, linux, y sistemas mac, que está licenciado bajo la GNU General Public License v3.
 
@@ -1583,7 +1583,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **ID3 Mass Tagger** — Utilidad de línea de comandos para editar etiquetas ID3 1.x y 2.x.
 
-	[http://freecode.com/projects/id3](http://freecode.com/projects/id3) || [id3](https://www.archlinux.org/packages/?name=id3)
+	[http://freecode.com/projects/id3](http://freecode.com/projects/id3) || [id3](https://aur.archlinux.org/packages/id3/)
 
 *   **Kid3** — Editor de etiquetas de archivos MP3, Ogg/Vorbis, FLAC, MPC, MP4/AAC, MP2, Speex, TrueAudio, WavPack, WMA, WAV y AIFF.
 
@@ -1806,7 +1806,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[GCstar](https://en.wikipedia.org/wiki/GCstar "wikipedia:GCstar")** — Aplicación de GNOME para la organización de diversas colecciones (juegos de mesa, cómics, películas, sellos, etc.).
 
-	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://www.archlinux.org/packages/?name=gcstar)
+	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://aur.archlinux.org/packages/gcstar/)
 
 *   **[Koha](https://en.wikipedia.org/wiki/Koha_(software) "wikipedia:Koha (software)")** — Sistema de biblioteca integrado -*integrated Library System (ILS)*- de código abierto, que se utiliza en todo el mundo por el público en general, escuelas y bibliotecas especializadas.
 
@@ -2098,7 +2098,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Ligero, panel de escritorio compatible NETWM.
 
-	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://www.archlinux.org/packages/?name=fbpanel)
+	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://aur.archlinux.org/packages/fbpanel/)
 
 *   **[GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")** — Panel incluido en el escritorio [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback").
 
@@ -2693,7 +2693,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[Grace](https://en.wikipedia.org/wiki/Grace_(plotting_tool) "wikipedia:Grace (plotting tool)")** — Herramienta WYSIWYG para el trazado gráfico en 2D.
 
-	[http://plasma-gate.weizmann.ac.il/Grace/](http://plasma-gate.weizmann.ac.il/Grace/) || [grace](https://www.archlinux.org/packages/?name=grace) [qtgrace](https://aur.archlinux.org/packages/qtgrace/) [gracegtk](https://aur.archlinux.org/packages/gracegtk/)
+	[http://plasma-gate.weizmann.ac.il/Grace/](http://plasma-gate.weizmann.ac.il/Grace/) || [grace](https://aur.archlinux.org/packages/grace/) [qtgrace](https://aur.archlinux.org/packages/qtgrace/) [gracegtk](https://aur.archlinux.org/packages/gracegtk/)
 
 *   **[LabPlot](https://en.wikipedia.org/wiki/LabPlot "wikipedia:LabPlot")** — Software libre de análisis de datos y aplicación de visualización, similar a SciDAVis.
 
@@ -3121,7 +3121,7 @@ Vea el artículo principal: [Xorg#Composite](/index.php/Xorg_(Espa%C3%B1ol)#Comp
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Panel de escritorio ligero compatible con NETWM.
 
-	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://www.archlinux.org/packages/?name=fbpanel)
+	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://aur.archlinux.org/packages/fbpanel/)
 
 *   **[GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")** — Panel incluido en el escritorio [GNOME Flashback](/index.php?title=GNOME_Flashback_(Espa%C3%B1ol)&action=edit&redlink=1 "GNOME Flashback (Español) (page does not exist)").
 

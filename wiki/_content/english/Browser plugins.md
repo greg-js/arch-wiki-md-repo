@@ -170,7 +170,7 @@ See [Citrix](/index.php/Citrix "Citrix").
 
 ## Java (IcedTea)
 
-**Note:** Both Java plugins are NPAPI-only and thus do not work in Chromium, Opera and Firefox [52 and newer](https://support.mozilla.org/t5/Problems-with-add-ons-plugins-or/Why-do-Java-Silverlight-Adobe-Acrobat-and-other-plugins-no/ta-p/31069). [Firefox ESR](/index.php/Firefox#Installing "Firefox") will continue supporting NPAPI plugins until early 2018.
+**Note:** Both Java plugins are NPAPI-only and thus do not work in Chromium, Opera and Firefox [52 and newer](https://support.mozilla.org/t5/Problems-with-add-ons-plugins-or/Why-do-Java-Silverlight-Adobe-Acrobat-and-other-plugins-no/ta-p/31069). [Firefox ESR](/index.php/Firefox#Installing "Firefox") will continue supporting NPAPI plugins until August 2018.
 
 To enable [Java](/index.php/Java "Java") support in your browser, you have two options: the open-source [OpenJDK](https://en.wikipedia.org/wiki/OpenJDK "wikipedia:OpenJDK") (recommended) or Oracle's proprietary version. For details about why OpenJDK is recommended see [[1]](https://mailman.archlinux.org/pipermail/arch-general/2011-August/021671.html).
 
@@ -196,7 +196,7 @@ For media formats that are not natively supported by your browser (e.g. most bro
 
 *   **VLC Plugin** — NPAPI-based plugin that uses VLC technologies.
 
-	[https://code.videolan.org/videolan/npapi-vlc](https://code.videolan.org/videolan/npapi-vlc) || [npapi-vlc](https://www.archlinux.org/packages/?name=npapi-vlc)
+	[https://code.videolan.org/videolan/npapi-vlc](https://code.videolan.org/videolan/npapi-vlc) || [npapi-vlc](https://aur.archlinux.org/packages/npapi-vlc/)
 
 ## Google Hangouts
 

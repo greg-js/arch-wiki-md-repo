@@ -123,7 +123,7 @@ To start developing in Haskell easily, one option is the [haskell-platform](http
 
 	*The easiest way to get started with programming Haskell. It comes with all you need to get up and running. Think of it as "Haskell: batteries included".*
 
-Although an [AUR](/index.php/AUR "AUR") package exists ([haskell-platform](https://aur.archlinux.org/packages/haskell-platform/)), the Haskell Platform can be advantageously replaced by [installing](/index.php/Installing "Installing") the [following packages](https://bbs.archlinux.org/viewtopic.php?pid=1151382#p1151382) from the [official repositories](/index.php/Official_repositories "Official repositories"):
+The Haskell Platform can be advantageously replaced by [installing](/index.php/Installing "Installing") the [following packages](https://bbs.archlinux.org/viewtopic.php?pid=1151382#p1151382) from the [official repositories](/index.php/Official_repositories "Official repositories"):
 
 *   ghc ([ghc](https://www.archlinux.org/packages/?name=ghc)) — Compiler, which only comes with dynamic [boot libraries](https://ghc.haskell.org/trac/ghc/wiki/Commentary/Libraries) ([ghc-libs](https://www.archlinux.org/packages/?name=ghc-libs)). Static boot libraries ([ghc-static](https://www.archlinux.org/packages/?name=ghc-static)) must be separately installed.
 *   cabal-install ([cabal-install](https://www.archlinux.org/packages/?name=cabal-install)) — A build tool focused on dependency resolution and sources packages from Hackage

@@ -19,6 +19,7 @@ A good number of new packages that enter the official repositories start in the 
 
 *   [1 Getting started](#Getting_started)
 *   [2 History](#History)
+    *   [2.1 Git repositories for AUR3 packages](#Git_repositories_for_AUR3_packages)
 *   [3 Searching](#Searching)
 *   [4 Installing packages](#Installing_packages)
     *   [4.1 Prerequisites](#Prerequisites)
@@ -33,26 +34,25 @@ A good number of new packages that enter the official repositories start in the 
         *   [6.1.4 Uploading packages](#Uploading_packages)
     *   [6.2 Maintaining packages](#Maintaining_packages)
     *   [6.3 Other requests](#Other_requests)
-*   [7 Git repositories for AUR3 packages](#Git_repositories_for_AUR3_packages)
-*   [8 Web interface translation](#Web_interface_translation)
-*   [9 Comment syntax](#Comment_syntax)
-*   [10 FAQ](#FAQ)
-    *   [10.1 What is the AUR?](#What_is_the_AUR.3F)
-    *   [10.2 What kind of packages are permitted on the AUR?](#What_kind_of_packages_are_permitted_on_the_AUR.3F)
-    *   [10.3 How can I vote for packages in the AUR?](#How_can_I_vote_for_packages_in_the_AUR.3F)
-    *   [10.4 What is a Trusted User / TU?](#What_is_a_Trusted_User_.2F_TU.3F)
-    *   [10.5 What is the difference between the Arch User Repository and the community repository?](#What_is_the_difference_between_the_Arch_User_Repository_and_the_community_repository.3F)
-    *   [10.6 Foo in the AUR is outdated; what do I do?](#Foo_in_the_AUR_is_outdated.3B_what_do_I_do.3F)
-    *   [10.7 Foo in the AUR does not compile when I run makepkg; what should I do?](#Foo_in_the_AUR_does_not_compile_when_I_run_makepkg.3B_what_should_I_do.3F)
-    *   [10.8 How do I create a PKGBUILD?](#How_do_I_create_a_PKGBUILD.3F)
-    *   [10.9 I have a PKGBUILD I would like to submit; can someone check it to see if there are any errors?](#I_have_a_PKGBUILD_I_would_like_to_submit.3B_can_someone_check_it_to_see_if_there_are_any_errors.3F)
-    *   [10.10 How to get a PKGBUILD into the community repository?](#How_to_get_a_PKGBUILD_into_the_community_repository.3F)
-    *   [10.11 How can I speed up repeated build processes?](#How_can_I_speed_up_repeated_build_processes.3F)
-    *   [10.12 What is the difference between foo and foo-git packages?](#What_is_the_difference_between_foo_and_foo-git_packages.3F)
-    *   [10.13 Why has foo disappeared from the AUR?](#Why_has_foo_disappeared_from_the_AUR.3F)
-    *   [10.14 How do I find out if any of my installed packages disappeared from AUR?](#How_do_I_find_out_if_any_of_my_installed_packages_disappeared_from_AUR.3F)
-    *   [10.15 How can I obtain a list of all AUR packages?](#How_can_I_obtain_a_list_of_all_AUR_packages.3F)
-*   [11 See also](#See_also)
+*   [7 Web interface translation](#Web_interface_translation)
+*   [8 Comment syntax](#Comment_syntax)
+*   [9 FAQ](#FAQ)
+    *   [9.1 What is the AUR?](#What_is_the_AUR.3F)
+    *   [9.2 What kind of packages are permitted on the AUR?](#What_kind_of_packages_are_permitted_on_the_AUR.3F)
+    *   [9.3 How can I vote for packages in the AUR?](#How_can_I_vote_for_packages_in_the_AUR.3F)
+    *   [9.4 What is a Trusted User / TU?](#What_is_a_Trusted_User_.2F_TU.3F)
+    *   [9.5 What is the difference between the Arch User Repository and the community repository?](#What_is_the_difference_between_the_Arch_User_Repository_and_the_community_repository.3F)
+    *   [9.6 Foo in the AUR is outdated; what do I do?](#Foo_in_the_AUR_is_outdated.3B_what_do_I_do.3F)
+    *   [9.7 Foo in the AUR does not compile when I run makepkg; what should I do?](#Foo_in_the_AUR_does_not_compile_when_I_run_makepkg.3B_what_should_I_do.3F)
+    *   [9.8 How do I create a PKGBUILD?](#How_do_I_create_a_PKGBUILD.3F)
+    *   [9.9 I have a PKGBUILD I would like to submit; can someone check it to see if there are any errors?](#I_have_a_PKGBUILD_I_would_like_to_submit.3B_can_someone_check_it_to_see_if_there_are_any_errors.3F)
+    *   [9.10 How to get a PKGBUILD into the community repository?](#How_to_get_a_PKGBUILD_into_the_community_repository.3F)
+    *   [9.11 How can I speed up repeated build processes?](#How_can_I_speed_up_repeated_build_processes.3F)
+    *   [9.12 What is the difference between foo and foo-git packages?](#What_is_the_difference_between_foo_and_foo-git_packages.3F)
+    *   [9.13 Why has foo disappeared from the AUR?](#Why_has_foo_disappeared_from_the_AUR.3F)
+    *   [9.14 How do I find out if any of my installed packages disappeared from AUR?](#How_do_I_find_out_if_any_of_my_installed_packages_disappeared_from_AUR.3F)
+    *   [9.15 How can I obtain a list of all AUR packages?](#How_can_I_obtain_a_list_of_all_AUR_packages.3F)
+*   [10 See also](#See_also)
 
 ## Getting started
 
@@ -70,7 +70,11 @@ In the beginning, there was `ftp://ftp.archlinux.org/incoming`, and people contr
 
 Then the Trusted User Repositories were born. Certain individuals in the community were allowed to host their own repositories for anyone to use. The AUR expanded on this basis, with the aim of making it both more flexible and more usable. In fact, the AUR maintainers are still referred to as TUs (Trusted Users).
 
-Between 2015-06-08 and 2015-08-08 the AUR transitioned from version 3.5.1 to 4.0.0, introducing the use of Git repositories for publishing the PKGBUILDs.
+Between 2015-06-08 and 2015-08-08 the AUR transitioned from version 3.5.1 to 4.0.0, introducing the use of Git repositories for publishing the PKGBUILDs. Existing packages were dropped unless manually migrated to the new infrastructure by their maintainers.
+
+### Git repositories for AUR3 packages
+
+The [AUR Archive](https://github.com/aur-archive) on GitHub has a repository for every package that was in AUR 3 at the time of the migration. Alternatively, there is the [aur3-mirror](https://github.com/felixonmars/aur3-mirror/) repository which provides the same.
 
 ## Searching
 
@@ -297,10 +301,6 @@ $ git push
     *   For merge requests: Name of the package base to merge into.
 
 Removal requests can be disapproved, in which case you will likely be advised to disown the package for a future packager's reference.
-
-## Git repositories for AUR3 packages
-
-The [AUR Archive](https://github.com/aur-archive) on GitHub has a repository for every package that was in AUR 3 during the migration to AUR 4 in August 2015.
 
 ## Web interface translation
 

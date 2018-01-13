@@ -33,11 +33,10 @@ Related articles
     *   [5.4 PXE server](#PXE_server)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Prevent OpenDNS redirecting Google queries](#Prevent_OpenDNS_redirecting_Google_queries)
-    *   [6.2 View leases](#View_leases)
-    *   [6.3 Override addresses](#Override_addresses)
-    *   [6.4 More than one instance](#More_than_one_instance)
-        *   [6.4.1 Static](#Static)
-        *   [6.4.2 Dynamic](#Dynamic)
+    *   [6.2 Override addresses](#Override_addresses)
+    *   [6.3 More than one instance](#More_than_one_instance)
+        *   [6.3.1 Static](#Static)
+        *   [6.3.2 Dynamic](#Dynamic)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -262,12 +261,23 @@ interface=<LAN-NIC>
 # kernel handle them:
 bind-interfaces
 
-# Dynamic range of IPs to make available to LAN pc
+# Optionally set a domain name
+domain=example.com
+
+# Set default gateway
+dhcp-option=3,192.168.1.1
+
+# Set DNS servers to announce
+dhcp-option=6,8.8.8.8,8.8.4.4
+
+# Dynamic range of IPs to make available to LAN PC and the lease time. 
+# Ideally set the lease time to 5m only at first to test everything works okay before you set long-lasting records.
 dhcp-range=192.168.111.50,192.168.111.100,12h
 
-# If you’d like to have dnsmasq assign static IPs, bind the LAN computer's
-# NIC MAC address:
+# If you’d like to have dnsmasq assign static IPs to some clients, bind the LAN computers
+# NIC MAC addresses:
 dhcp-host=aa:bb:cc:dd:ee:ff,192.168.111.50
+dhcp-host=aa:bb:cc:ff:dd:ee,192.168.111.51
 
 ```
 
@@ -276,6 +286,8 @@ See [dnsmasq(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for more o
 #### Test
 
 From a computer that is connected to the one with dnsmasq on it, configure it to use DHCP for automatic IP address assignment, then attempt to log into the network normally.
+
+If you inspect the `/var/lib/misc/dnsmasq.leases` file on the server, you should be able to see the lease.
 
 ### TFTP server
 
@@ -355,10 +367,6 @@ The rest is up to the [bootloader](/index.php/Bootloader "Bootloader").
 To prevent OpenDNS from redirecting all Google queries to their own search server, add to `/etc/dnsmasq.conf`:
 
  `server=/www.google.com/<ISP DNS IP>` 
-
-### View leases
-
-dnsmasq's issued DHCP leased can be viewed in `/var/lib/misc/dnsmasq.leases`.
 
 ### Override addresses
 

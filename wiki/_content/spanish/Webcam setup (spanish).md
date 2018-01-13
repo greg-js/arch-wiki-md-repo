@@ -383,7 +383,7 @@ Puede tanto establecer un alias para skype, o renombrar el binario de skype orig
 
 	*Motion es un programa que monitoriza la señal de video de cámaras. Es capaz de detectar si una parte significativa de la imagen a cambiado; es decir, puede detectar el movimiento.*
 
-[motion](https://www.archlinux.org/packages/?name=motion) solo maneja dispositivos v4l2, por lo que si su cámara solo está soportada por controladores para v4l1 necesita precargar v4l1compat.so como se mencionó anteriormente. De otra manera le aparecerán muchos errores de motion acerca de no poder encontrar una paleta adecuada.
+[motion](https://aur.archlinux.org/packages/motion/) solo maneja dispositivos v4l2, por lo que si su cámara solo está soportada por controladores para v4l1 necesita precargar v4l1compat.so como se mencionó anteriormente. De otra manera le aparecerán muchos errores de motion acerca de no poder encontrar una paleta adecuada.
 
 **Sugerencia:** Si necesita cargar webcams en un orden determinado (p. ej. cargar los dispositivos /dev/video0..n en orden) o establecer el propietario o los permisos, eche un vistazo a como [escribir reglas para udev](/index.php/Udev#Writing_udev_rules "Udev").
 

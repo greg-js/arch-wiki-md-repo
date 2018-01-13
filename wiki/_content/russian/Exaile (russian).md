@@ -45,7 +45,7 @@ pacman -S gnome-python-extras libgtkhtml
 
 # Проигрывание аудио-CD
 
-Для проигрывания аудио-CD необходим пакет [pycddb](https://www.archlinux.org/packages/?name=pycddb):
+Для проигрывания аудио-CD необходим пакет [pycddb](https://aur.archlinux.org/packages/pycddb/):
 
 ```
 pacman -S pycddb

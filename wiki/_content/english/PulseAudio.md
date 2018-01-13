@@ -371,7 +371,7 @@ Refer to [QEMU#Host](/index.php/QEMU#Host "QEMU") for a detailed guide on how to
 
 ### AlsaMixer.app
 
-Make [alsamixer.app](https://aur.archlinux.org/packages/alsamixer.app/) dockapp for the [windowmaker](https://www.archlinux.org/packages/?name=windowmaker) use pulseaudio, e.g.
+Make [alsamixer.app](https://aur.archlinux.org/packages/alsamixer.app/) dockapp for the [windowmaker](https://aur.archlinux.org/packages/windowmaker/) use pulseaudio, e.g.
 
 ```
 $ AlsaMixer.app --device pulse

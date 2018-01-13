@@ -196,7 +196,7 @@ First you need to install [pidgin-otr](https://www.archlinux.org/packages/?name=
 
 ### Pidgin-Encryption
 
-[pidgin-encryption](https://www.archlinux.org/packages/?name=pidgin-encryption) transparently encrypts your instant messages with RSA encryption. Easy-to-use, but very secure.
+[pidgin-encryption](https://aur.archlinux.org/packages/pidgin-encryption/) transparently encrypts your instant messages with RSA encryption. Easy-to-use, but very secure.
 
 You can enable it the same way as Pidgin-OTR.
 

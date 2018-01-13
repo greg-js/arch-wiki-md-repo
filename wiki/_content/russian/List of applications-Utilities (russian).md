@@ -324,7 +324,7 @@
 
 *   **ROXTerm** — Эмулятор терминала с поддержкой вкладок и небольшими размерами
 
-	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://www.archlinux.org/packages/?name=roxterm)
+	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://aur.archlinux.org/packages/roxterm/)
 
 *   **sakura** — Эмулятор терминала, основанный на [GTK+](/index.php/GTK%2B "GTK+") и VTE
 

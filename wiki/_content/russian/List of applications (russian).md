@@ -709,7 +709,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[naim](https://en.wikipedia.org/wiki/ru:Naim "wikipedia:ru:Naim")** — Ncurses-клиент с поддержкой AOL, ICQ, IRC и Lily CMC
 
-	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://www.archlinux.org/packages/?name=naim)
+	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://aur.archlinux.org/packages/naim/)
 
 *   **pork** — Программируемый, основанный на ncurses клиент AIM и IRC, похожий на ircII
 
@@ -769,7 +769,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Freetalk** — Консольный клиент Jabber
 
-	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://www.archlinux.org/packages/?name=freetalk)
+	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://aur.archlinux.org/packages/freetalk/)
 
 *   **jabber.el** — Минималистичный клиент Jabber для [Emacs](/index.php/Emacs "Emacs")
 
@@ -941,7 +941,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Linphone](https://en.wikipedia.org/wiki/ru:Linphone "wikipedia:ru:Linphone")** — Приложение VoIP, позволяющее вам свободно общаться с людьми через интернет при помощи аудио-, видеозвонков и мгновенных сообщений
 
-	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://www.archlinux.org/packages/?name=linphone)
+	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://aur.archlinux.org/packages/linphone/)
 
 *   **Minisip** — Агент пользователя (User Agent) SIP с акцентом на безопасность (поддерживает TLS, безопасность end-to-end, SRTP, MIKEY (DH, PSK, PKE))
 
@@ -1149,7 +1149,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Nanoblogger** — Небольшой движок для блогов, написанный на Bash для командной строки. Использует для создания статичного HTML-контента общие для UNIX инструменты, такие как cat, grep и sed. Более не разрабатывается
 
-	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://www.archlinux.org/packages/?name=nanoblogger)
+	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://aur.archlinux.org/packages/nanoblogger/)
 
 *   **[Wordpress](/index.php/Wordpress "Wordpress")** — Простая в настройке и администрировании система управления контентом FLOSS, главную роль в которой играет сильное и яркое сообщество, с тысячами плагинов и тем оформления
 
@@ -1319,7 +1319,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **fbv** — Очень простая программа просмотра графических файлов для framebuffer-консоли
 
-	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://www.archlinux.org/packages/?name=fbv)
+	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://aur.archlinux.org/packages/fbv/)
 
 *   **fim** — Сильно настраиваемая framebuffer-программа просмотра изображений с поддержкой сценариев, основанная на *fbi*
 
@@ -1353,7 +1353,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Gimmage** — Программа просмотра изображений Gtkmm
 
-	[http://gimmage.berlios.de/](http://gimmage.berlios.de/) || [gimmage](https://www.archlinux.org/packages/?name=gimmage)
+	[http://gimmage.berlios.de/](http://gimmage.berlios.de/) || [gimmage](https://aur.archlinux.org/packages/gimmage/)
 
 *   **GPicView** — Простая и быстрая программа просмотра изображений для X, являющаяся частью окружения [LXDE](/index.php/LXDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LXDE (Русский)")
 
@@ -1373,7 +1373,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Mirage** — Программа просмотра изображений на PyGTK, позволяющая обрезать изображения и изменять их размер. Имеет панель предварительного просмотра и возможность создания пользовательских действий
 
-	[http://mirageiv.berlios.de](http://mirageiv.berlios.de) || [mirage](https://www.archlinux.org/packages/?name=mirage)
+	[http://mirageiv.berlios.de](http://mirageiv.berlios.de) || [mirage](https://aur.archlinux.org/packages/mirage/)
 
 *   **nomacs** — Свободная программа просмотра изображений (Qt) для систем windows, linux и mac, распространяемая под лицензией GNU General Public License v3
 
@@ -1839,7 +1839,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **ID3 Mass Tagger** — Консольная утилита для редактирования тэгов ID3 1.x и 2.x
 
-	[http://freecode.com/projects/id3](http://freecode.com/projects/id3) || [id3](https://www.archlinux.org/packages/?name=id3)
+	[http://freecode.com/projects/id3](http://freecode.com/projects/id3) || [id3](https://aur.archlinux.org/packages/id3/)
 
 *   **Kid3** — Редактор тэгов для файлов MP3, Ogg/Vorbis, FLAC, MPC, MP4/AAC, MP2, Speex, TrueAudio, WavPack, WMA, WAV и AIFF
 
@@ -2099,7 +2099,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[GCstar](https://en.wikipedia.org/wiki/GCstar "wikipedia:GCstar")** — Приложение GNOME для организации различных коллекций (настольные игры, комиксы, фильмы, марки и т.д.)
 
-	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://www.archlinux.org/packages/?name=gcstar)
+	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://aur.archlinux.org/packages/gcstar/)
 
 *   **[Tellico](https://en.wikipedia.org/wiki/ru:Tellico "wikipedia:ru:Tellico")** — Приложение KDE для организации различных коллекций (книги, видео, музыка, монеты и т.д.)
 
@@ -2393,7 +2393,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **ROXTerm** — Эмулятор терминала с поддержкой вкладок и небольшими размерами
 
-	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://www.archlinux.org/packages/?name=roxterm)
+	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://aur.archlinux.org/packages/roxterm/)
 
 *   **sakura** — Эмулятор терминала, основанный на [GTK+](/index.php/GTK%2B "GTK+") и VTE
 
@@ -3883,7 +3883,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **pwsafe** — Консольная программа Unix, управляющая зашифрованной базой данных паролей
 
-	[http://nsd.dyndns.org/pwsafe/](http://nsd.dyndns.org/pwsafe/) || [pwsafe](https://www.archlinux.org/packages/?name=pwsafe)
+	[http://nsd.dyndns.org/pwsafe/](http://nsd.dyndns.org/pwsafe/) || [pwsafe](https://aur.archlinux.org/packages/pwsafe/)
 
 *   **QPass** — Легкий в использовании менеджер паролей со встроенным генератором паролей
 
@@ -4073,7 +4073,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Grace](https://en.wikipedia.org/wiki/Grace_(plotting_tool) "wikipedia:Grace (plotting tool)")** — WYSIWYG-инструмент построения 2D-графиков
 
-	[http://plasma-gate.weizmann.ac.il/Grace/](http://plasma-gate.weizmann.ac.il/Grace/) || [grace](https://www.archlinux.org/packages/?name=grace) [qtgrace](https://aur.archlinux.org/packages/qtgrace/) [gracegtk](https://aur.archlinux.org/packages/gracegtk/)
+	[http://plasma-gate.weizmann.ac.il/Grace/](http://plasma-gate.weizmann.ac.il/Grace/) || [grace](https://aur.archlinux.org/packages/grace/) [qtgrace](https://aur.archlinux.org/packages/qtgrace/) [gracegtk](https://aur.archlinux.org/packages/gracegtk/)
 
 *   **[LabPlot](https://en.wikipedia.org/wiki/ru:LabPlot "wikipedia:ru:LabPlot")** — Свободная программа анализа данных и визуализации, похожая на SciDAVis
 
@@ -4465,7 +4465,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Легковесная панель рабочего стола, совместимая с NETWM
 
-	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://www.archlinux.org/packages/?name=fbpanel)
+	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://aur.archlinux.org/packages/fbpanel/)
 
 *   **[GNOME Panel](https://en.wikipedia.org/wiki/ru:%D0%9F%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_GNOME "wikipedia:ru:Панель GNOME")** — Панель, включенная в состав окружения [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")
 

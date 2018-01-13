@@ -1,3 +1,7 @@
+Related articles
+
+*   [KMSCON](/index.php/KMSCON "KMSCON")
+
 **Note:** The last release was in 2010.[[1]](https://code.google.com/archive/p/fbterm/downloads)
 
 [Fbterm](https://code.google.com/archive/p/fbterm/) (*F*rame *b*uffer *term*inal emulator) is standalone replacement of Linux kernel terminal that can function outside of [Xorg](/index.php/Xorg "Xorg"). Keep in mind that its development has stopped.
@@ -64,7 +68,7 @@ Fbterm supports diverse [input methods](https://en.wikipedia.org/wiki/Input_meth
 
 To use a background image, Fbterm can be set to take a screen shot of the frame buffer device when it starts.
 
-The following script (using the [fbv](https://www.archlinux.org/packages/?name=fbv) image viewer) is recommended in the man page:
+The following script (using the [fbv](https://aur.archlinux.org/packages/fbv/) image viewer) is recommended in the man page:
 
 ```
 #!/bin/bash

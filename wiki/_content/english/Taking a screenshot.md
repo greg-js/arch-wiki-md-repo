@@ -342,7 +342,7 @@ That does not work on every single case, so in those cases, using `script` is ma
 
 ### Virtual console
 
-Install a [framebuffer](/index.php/Framebuffer "Framebuffer") and use [fbgrab](https://www.archlinux.org/packages/?name=fbgrab) or [fbdump](https://www.archlinux.org/packages/?name=fbdump) to take a screenshot.
+Install a [framebuffer](/index.php/Framebuffer "Framebuffer") and use [fbgrab](https://aur.archlinux.org/packages/fbgrab/) or [fbdump](https://aur.archlinux.org/packages/fbdump/) to take a screenshot.
 
 If you merely want to capture the text in the console and not an actual image, you can use `setterm`, which is part of the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package. The following command will dump the textual contents of virtual console 1 to a file screen.dump in the current directory:
 

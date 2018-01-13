@@ -1,3 +1,9 @@
+Related articles
+
+*   [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices")
+*   [Improving performance](/index.php/Improving_performance "Improving performance")
+*   [Sysstat](/index.php/Sysstat "Sysstat")
+
 **翻译状态：** 本文是英文页面 [Benchmarking](/index.php/Benchmarking "Benchmarking") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-08，点击[这里](https://wiki.archlinux.org/index.php?title=Benchmarking&diff=0&oldid=453268)可以查看翻译后英文页面的改动。
 
 基准测试是性能测试，与其他的系统进行比较，通过统一的流程，是一个被广泛接受的标准。评估系统性能可以解答如下问题：
@@ -148,7 +154,7 @@ IOzone用来测试文件系统性能。
 
 *Phoronix测试集使用OpenBenchmarking.org接口用于存储测试结果，分享测试总述和结果，高级的分析特性，以及其他功能。Phoromatic是在多系统编排测试执行的企业组件，具有远程管理的功能。*
 
-可以[安装](/index.php/Pacman "Pacman")[phoronix-test-suite](https://www.archlinux.org/packages/?name=phoronix-test-suite)包。还有开发版[phoronix-test-suite-git](https://aur.archlinux.org/packages/phoronix-test-suite-git/)。
+可以[安装](/index.php/Pacman "Pacman")[phoronix-test-suite](https://aur.archlinux.org/packages/phoronix-test-suite/)包。还有开发版[phoronix-test-suite-git](https://aur.archlinux.org/packages/phoronix-test-suite-git/)。
 
 ## 闪存介质
 

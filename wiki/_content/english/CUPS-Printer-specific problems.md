@@ -72,7 +72,6 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | HL-L2380DW | [brother-hll2380dw](https://aur.archlinux.org/packages/brother-hll2380dw/) |
 | MFC-420CN | [brother-mfc-420cn](https://aur.archlinux.org/packages/brother-mfc-420cn/) |
 | MFC-440CN | [brother-mfc-440cn](https://aur.archlinux.org/packages/brother-mfc-440cn/) |
-| MFC-465CN | [brother-mfc-465cn](https://aur.archlinux.org/packages/brother-mfc-465cn/) |
 | MFC-7360N | [brother-mfc7360n](https://aur.archlinux.org/packages/brother-mfc7360n/) |
 | MFC-9320CW | Install Brother's driver. |
 | MFC-9332CDW | [brother-mfc-9332cdw](https://aur.archlinux.org/packages/brother-mfc-9332cdw/) |
@@ -197,7 +196,7 @@ With that, the printer will restart, and the latest firmware will be installed a
 There are many possible drivers for Canon printers. [Many Canon printers](http://gimp-print.sourceforge.net/p_Supported_Printers.php) are supported by [gutenprint](https://www.archlinux.org/packages/?name=gutenprint). Some of Canon's LBP, iR, and MF printers use a driver supporting the UFR II/UFR II LT/LIPSLX protocols, which is available as [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) or [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/). Others use the [#CARPS](#CARPS) or [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") drivers.
 
 | Printer | Driver/filter | Notes |
-| iP4300 | [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) | Or use Canon's [cnijfilter-ip4300](https://aur.archlinux.org/packages/cnijfilter-ip4300/) driver, or the [TurboPrint](http://www.turboprint.info/) driver. |
+| iP4300 | [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) | Or use the [TurboPrint](http://www.turboprint.info/) driver. |
 | LBP810 | [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") |
 | LBP1120 |
 | LBP1210 |
@@ -516,7 +515,6 @@ For printers requiring the *cnijfilter* drivers, search for the correct driver [
 | Phaser 3100MFP | Install Xerox's driver | See [#Phaser 3100MFP](#Phaser_3100MFP) for more instructions. |
 | Phaser 6115MFP | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
 | Phaser 6121MFP | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
-|  ? | [fxlinuxprint](https://aur.archlinux.org/packages/fxlinuxprint/) |
 | Printer | Driver/filter | Notes |
 
 ### Custom drivers

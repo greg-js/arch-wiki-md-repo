@@ -74,4 +74,4 @@ scrot -t 20 -d 5
 
 ## Виртуальная консоль
 
-Установите [framebuffer](/index.php/Framebuffer "Framebuffer") и используйте [fbgrab](https://www.archlinux.org/packages/?name=fbgrab) для получения скриншота. Другой способ, использовать [fbshot](https://www.archlinux.org/packages/?name=fbshot), но оно искажает цвета.
+Установите [framebuffer](/index.php/Framebuffer "Framebuffer") и используйте [fbgrab](https://aur.archlinux.org/packages/fbgrab/) для получения скриншота. Другой способ, использовать [fbshot](https://www.archlinux.org/packages/?name=fbshot), но оно искажает цвета.

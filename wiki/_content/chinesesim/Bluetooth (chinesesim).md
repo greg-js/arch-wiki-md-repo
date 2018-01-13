@@ -144,7 +144,7 @@ bluedevil 是 [KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (
 
 **注意:** 如果要使用Obex，你需要一个能够提供Obex FTP服务的设备。
 
-安装 [obexfs](https://www.archlinux.org/packages/?name=obexfs)，运行如下命令来挂载你的手机:
+安装 [obexfs](https://aur.archlinux.org/packages/obexfs/)，运行如下命令来挂载你的手机:
 
 ```
 $ obexfs -b *MAC_address_of_device* /mountpoint

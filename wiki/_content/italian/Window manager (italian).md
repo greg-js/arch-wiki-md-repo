@@ -116,7 +116,7 @@ Consultare [Comparison of tiling window managers](/index.php/Comparison_of_tilin
 
 **[Pawm](/index.php/Pawm_(Italiano) "Pawm (Italiano)")** — Pawm Pawm è un window manager per il sistema X Window. Quindi non è un "desktop" e non offre un mucchio enorme di opzioni inutili, solo i servizi necessari per eseguire le applicazioni X e allo stesso tempo, avere un'interfaccia amichevole e facile da usare.
 
-	[http://www.pleyades.net/pawm/](http://www.pleyades.net/pawm/) || [pawm](https://www.archlinux.org/packages/?name=pawm)
+	[http://www.pleyades.net/pawm/](http://www.pleyades.net/pawm/) || [pawm](https://aur.archlinux.org/packages/pawm/)
 
 **[pekwm](/index.php/PekWM_(Italiano) "PekWM (Italiano)")** — pekwm è un window manager che un tempo era basato sul WM aewm++. Causa le modifiche applicate con il passare del tempo, non assomiglia più molto a aewm++. Ha un esteso insieme di caratteristiche, tra cui il raggruppamento delle finestre (simili a Ion, PWM, o Fluxbox), auto-proprietà, Xinerama, keygrabber, che supporta le gestioni portachiavi, e molto altro.
 
@@ -140,7 +140,7 @@ Consultare [Comparison of tiling window managers](/index.php/Comparison_of_tilin
 
 **[Window Maker](/index.php/Window_Maker_(Italiano) "Window Maker (Italiano)")** — Window Maker è un window manager per X11 originariamente progettato per fornire supporto di integrazione per il Desktop Environment GNUstep. Riproduce il più possibile l'aspetto elegante e dell'interfaccia utente NeXTSTEP. È veloce, ricco di funzionalità, facile da configurare e da usare. È totalmente "free software", con contributi da programmatori di tutto il mondo.
 
-	[http://windowmaker.org/](http://windowmaker.org/) || [windowmaker](https://www.archlinux.org/packages/?name=windowmaker)
+	[http://windowmaker.org/](http://windowmaker.org/) || [windowmaker](https://aur.archlinux.org/packages/windowmaker/)
 
 **Xfwm** — Il window manager di Xfce gestisce il posizionamento delle finestre delle applicazioni sullo schermo, offre belle decorazioni alle finestre, gestisce le aree di lavoro o dei desktop virtuali e supporta nativamente la modalità multischermo. Fornisce il proprio compositing manager (dall'estensione X. Org Composite) per la trasparenza vera e le ombre. Il window manager di Xfce comprende anche un editor di scorciatoie da tastiera per i comandi specifici dell'utente e manipolazioni di base delle finestre, includendo inoltre una finestra di dialogo per le preferenze delle modifiche avanzate.
 

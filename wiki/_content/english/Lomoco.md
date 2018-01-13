@@ -12,7 +12,7 @@ Lomoco is a small program for some Logitech mice, for configuring resolution and
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [lomoco](https://www.archlinux.org/packages/?name=lomoco) package.
+[Install](/index.php/Install "Install") the [lomoco](https://aur.archlinux.org/packages/lomoco/) package.
 
 ## Configuration
 

@@ -650,7 +650,7 @@ Tell the command lines you tried, the medium type (e.g. CD-R, DVD+RW, ...), and 
 
 *   **ripperX** — GTK+ program to rip CD audio tracks and encode them to the Ogg, MP3, or FLAC formats.
 
-	[https://sourceforge.net/projects/ripperx/](https://sourceforge.net/projects/ripperx/) || [ripperx](https://www.archlinux.org/packages/?name=ripperx)
+	[https://sourceforge.net/projects/ripperx/](https://sourceforge.net/projects/ripperx/) || [ripperx](https://aur.archlinux.org/packages/ripperx/)
 
 *   **ripright** — Minimal CD ripper modeled on autorip.
 
@@ -723,7 +723,7 @@ dvd::rip是[transcode](https://www.archlinux.org/packages/?name=transcode)的前
 
 以下的包应被安装：
 
-*   [dvdrip](https://www.archlinux.org/packages/?name=dvdrip): [transcode](https://www.archlinux.org/packages/?name=transcode) 的GTK前端，可以抓取并解码。
+*   [dvdrip](https://aur.archlinux.org/packages/dvdrip/): [transcode](https://www.archlinux.org/packages/?name=transcode) 的GTK前端，可以抓取并解码。
 *   [libdv](https://www.archlinux.org/packages/?name=libdv): DV视频软件解码器。
 *   [xvidcore](https://www.archlinux.org/packages/?name=xvidcore): 可以转码为 XviD 的开源 MPEG-4 视频编码解码器(DivX 的自由替代)
 *   [divx4linux](https://aur.archlinux.org/packages/divx4linux/): If you want to encode your ripped files as DivX.

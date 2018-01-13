@@ -160,7 +160,7 @@ WantedBy=suspend.target
 
 **Примечание:** Для использования ObexFS необходимо устройство, которое поддерживает сервис Obex FTP
 
-Установите пакет [obexfs](https://www.archlinux.org/packages/?name=obexfs) и примонтируйте поддерживаемые телефоны, выполнив:
+Установите пакет [obexfs](https://aur.archlinux.org/packages/obexfs/) и примонтируйте поддерживаемые телефоны, выполнив:
 
 ```
 $ obexfs -b *MAC-адрес_устройства* /точка_монтирования

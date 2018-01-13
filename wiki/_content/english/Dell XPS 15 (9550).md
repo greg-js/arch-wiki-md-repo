@@ -166,7 +166,7 @@ Battery life can be improved by installing [powertop](https://www.archlinux.org/
 
 ## Bluetooth
 
-Bluetooth is disabled by default. If you wish to use Bluetooth you'll need to install some firmware. See [Bluetooth](/index.php/Bluetooth "Bluetooth") for details.
+Bluetooth is disabled by default. If you wish to use Bluetooth you'll need to install some firmware. See [Bluetooth](/index.php/Bluetooth "Bluetooth") and [bug report](https://github.com/NixOS/nixpkgs/issues/21797) for details.
 
 ## Thunderbolt 3 Docks
 

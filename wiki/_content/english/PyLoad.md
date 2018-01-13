@@ -12,8 +12,7 @@ Available clients ([screenshots](https://github.com/pyload/pyload/wiki/Screensho
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Headless servers](#Headless_servers)
-    *   [1.2 Requirements](#Requirements)
+    *   [1.1 Requirements](#Requirements)
 *   [2 Configuration](#Configuration)
     *   [2.1 Manual](#Manual)
     *   [2.2 Scripts](#Scripts)
@@ -26,10 +25,6 @@ Available clients ([screenshots](https://github.com/pyload/pyload/wiki/Screensho
 ## Installation
 
 [Install](/index.php/Install "Install") [pyload](https://aur.archlinux.org/packages/pyload/) from the [AUR](/index.php/AUR "AUR") for the stable version or [pyload-nightly](https://aur.archlinux.org/packages/pyload-nightly/) for a development build of the new pyload 0.5 version.
-
-### Headless servers
-
-On headless servers, you will want to use [giflib-nox11](https://aur.archlinux.org/packages/giflib-nox11/) instead of giflib, before you install pyload. Otherwise this package will pull X11 dependencies.
 
 ### Requirements
 

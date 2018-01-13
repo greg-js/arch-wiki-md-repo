@@ -1,3 +1,7 @@
+Articoli correlati
+
+*   [Gestore delle finestre](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)")
+
 Questo wiki descrive nei dettagli l'installazione e la configurazione del gestore delle finestre PAWM su Arch Linux.
 
 **Nota:** Il pacchetto non è più mantenuto. L'ultima versione rilasciata è la 2.3.0.
@@ -30,7 +34,7 @@ Il nomePAWM significa *Puto Amo Window Manager*.
 
 ## Installazione
 
-[pawm](https://www.archlinux.org/packages/?name=pawm) è reperibile nel repository Community di Arch. Per installare PAWM, digitare da root:
+[pawm](https://aur.archlinux.org/packages/pawm/) è reperibile nel repository Community di Arch. Per installare PAWM, digitare da root:
 
  `# pacman -S pawm` 
 

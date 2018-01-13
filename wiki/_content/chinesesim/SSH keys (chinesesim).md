@@ -467,7 +467,7 @@ alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_ecd
 
 ### envoy
 
-[Envoy](https://github.com/vodik/envoy) 算是 keychain 的一个替代品，您可以从 [官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)") 下载安装 [envoy](https://www.archlinux.org/packages/?name=envoy)，或者从 [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 安装 [envoy-git](https://aur.archlinux.org/packages/envoy-git/)。
+[Envoy](https://github.com/vodik/envoy) 算是 keychain 的一个替代品，您可以从 [官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)") 下载安装 [envoy](https://aur.archlinux.org/packages/envoy/)，或者从 [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 安装 [envoy-git](https://aur.archlinux.org/packages/envoy-git/)。
 
 安装完成之后，使用以下命令启用 envoy 套接字 (socket)：
 

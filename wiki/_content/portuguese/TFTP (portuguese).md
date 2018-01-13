@@ -7,6 +7,8 @@ O [Trivial File Transfer Protocol](https://en.wikipedia.org/wiki/pt:Trivial_File
     *   [1.2 atftp](#atftp)
     *   [1.3 dnsmasq](#dnsmasq)
 *   [2 Cliente](#Cliente)
+    *   [2.1 tftp-hpa](#tftp-hpa_2)
+    *   [2.2 curl](#curl)
 
 ## Servidor
 
@@ -32,9 +34,20 @@ Veja [dnsmasq#TFTP server](/index.php/Dnsmasq#TFTP_server "Dnsmasq").
 
 ## Cliente
 
+### tftp-hpa
+
 [Instale](/index.php/Instale "Instale") [tftp-hpa](https://www.archlinux.org/packages/?name=tftp-hpa) e então use *tftp* pelo seu dia!
 
 ```
 $ tftp
+
+```
+
+### curl
+
+O [curl](https://www.archlinux.org/packages/?name=curl) padrão possui a habilidade de conectar a um servidor TFTP e colocar um arquivo por meio de:
+
+```
+$ curl -T ARQUIVO tftp://HOST
 
 ```

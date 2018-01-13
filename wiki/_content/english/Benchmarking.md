@@ -257,7 +257,7 @@ See also [Author's site](http://wiki.hardinfo.org/HomePage).
 
 *The Phoronix Test Suite interfaces with OpenBenchmarking.org as a collaborative web platform for the centralized storage of test results, sharing of test profiles and results, advanced analytical features, and other functionality. Phoromatic is an enterprise component to orchestrate test execution across multiple systems with remote management capabilities.*
 
-This suite can be [installed](/index.php/Pacman "Pacman") with the package [phoronix-test-suite](https://www.archlinux.org/packages/?name=phoronix-test-suite). There is also a developmental version available with [phoronix-test-suite-git](https://aur.archlinux.org/packages/phoronix-test-suite-git/).
+This suite can be [installed](/index.php/Pacman "Pacman") with the package [phoronix-test-suite](https://aur.archlinux.org/packages/phoronix-test-suite/). There is also a developmental version available with [phoronix-test-suite-git](https://aur.archlinux.org/packages/phoronix-test-suite-git/).
 
 ### S
 

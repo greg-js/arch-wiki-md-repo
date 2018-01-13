@@ -683,7 +683,7 @@ dvd::rip es un frontend para [transcode](https://www.archlinux.org/packages/?nam
 
 Se deben instalar los siguientes paquetes:
 
-*   [dvdrip](https://www.archlinux.org/packages/?name=dvdrip): frontend GTK para [transcode](https://www.archlinux.org/packages/?name=transcode), que realiza la extracción y codificación
+*   [dvdrip](https://aur.archlinux.org/packages/dvdrip/): frontend GTK para [transcode](https://www.archlinux.org/packages/?name=transcode), que realiza la extracción y codificación
 *   [libdv](https://www.archlinux.org/packages/?name=libdv): códec para vídeo DV
 *   [xvidcore](https://www.archlinux.org/packages/?name=xvidcore): si desea codificar sus archivos ripeados como XviD, he aquí un códec de vídeo MPEG-4 de código abierto (alternativa gratis de DivX)
 *   [divx4linux](https://aur.archlinux.org/packages/divx4linux/): si desea codificar sus archivos ripeados como DivX (disponible en [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)"))

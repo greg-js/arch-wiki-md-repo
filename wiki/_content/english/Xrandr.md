@@ -215,7 +215,7 @@ This can be used in systemd unit or in a keyboard binding to avoid blank screen 
 
 ### Adding undetected resolutions
 
-Due to buggy hardware or drivers, your monitor's correct resolutions may not always be detected by xrandr. For example, the EDID data block queried from the monitor may be incorrect. However, we can add the desired resolutions to xrandr.
+Due to buggy hardware or drivers, your monitor's correct resolutions may not always be detected by xrandr. For example, the EDID data block queried from the monitor may be incorrect. However, we can add the desired resolutions to xrandr. Also, this same procedure can be used to add refresh rates you know are supported, but not enabled by your driver.
 
 First we run `gtf` or `cvt` to get the **Modeline** for the resolution we want:
 

@@ -32,7 +32,7 @@ GpsDrive 2.11 features OpenStreetMap/Mapnik vector/offline rendering support, wh
 
 ## Installing Packages
 
-[Install](/index.php/Install "Install") the following packages and dependencies: [gpsdrive](https://aur.archlinux.org/packages/gpsdrive/), [mapnik](https://www.archlinux.org/packages/?name=mapnik), [openstreetmap-map-icons-svn](https://www.archlinux.org/packages/?name=openstreetmap-map-icons-svn), [osm2pgsql-git](https://aur.archlinux.org/packages/osm2pgsql-git/), and [osm2poidb-svn](https://aur.archlinux.org/packages/osm2poidb-svn/).
+[Install](/index.php/Install "Install") the following packages and dependencies: [gpsdrive](https://aur.archlinux.org/packages/gpsdrive/), [mapnik](https://www.archlinux.org/packages/?name=mapnik), [openstreetmap-map-icons-svn](https://aur.archlinux.org/packages/openstreetmap-map-icons-svn/), [osm2pgsql-git](https://aur.archlinux.org/packages/osm2pgsql-git/), and [osm2poidb-svn](https://aur.archlinux.org/packages/osm2poidb-svn/).
 
 The PostgreSQL installation/setup is described below.
 

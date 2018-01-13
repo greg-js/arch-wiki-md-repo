@@ -408,7 +408,7 @@ for_window [class="Uzbl-core"] focus child, layout tabbed, focus
 *   [aterm](https://aur.archlinux.org/packages/aterm/)
 *   [xterm](/index.php/Xterm "Xterm")
 *   [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal)
-*   [roxterm](https://www.archlinux.org/packages/?name=roxterm)
+*   [roxterm](https://aur.archlinux.org/packages/roxterm/)
 *   [xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal)
 
 您可以直接通过以下句的修改，以指定特定虚拟终端

@@ -527,14 +527,14 @@ One way to set the hotkeys would be by using the [Sxhkd](/index.php/Sxhkd "Sxhkd
 
 #### Xbindkeys configuration
 
-Another way to configure hotkeys would be by using [Xbindkeys](/index.php/Xbindkeys "Xbindkeys"). Besides [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys) this requires [amixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") and [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) and [xvkbd](https://www.archlinux.org/packages/?name=xvkbd).
+Another way to configure hotkeys would be by using [Xbindkeys](/index.php/Xbindkeys "Xbindkeys"). Besides [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys) this requires [amixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") and [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) and [xvkbd](https://aur.archlinux.org/packages/xvkbd/).
 
 *   See [[16]](https://gist.github.com/dhead666/08562a9a760b18b6e758) for an example configuration in `~/.xbindkeysrc`.
 *   See [vilefridge's xbindkeys configuration](https://bbs.archlinux.org/viewtopic.php?id=173418&p=3) for another example.
 
 ##### Alternate xbindkeys configuration
 
-[Volchange](http://pastie.org/9550960) (originated in the [Debian User Forums](http://www.debianuserforums.org/viewtopic.php?f=55&t=1453#p14351))) can manipulate the volume with PulseAudio instead of using [amixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture"). Besides [Volchange](http://pastie.org/9550960) this requires [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) and [xvkbd](https://www.archlinux.org/packages/?name=xvkbd).
+[Volchange](http://pastie.org/9550960) (originated in the [Debian User Forums](http://www.debianuserforums.org/viewtopic.php?f=55&t=1453#p14351))) can manipulate the volume with PulseAudio instead of using [amixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture"). Besides [Volchange](http://pastie.org/9550960) this requires [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) and [xvkbd](https://aur.archlinux.org/packages/xvkbd/).
 
 *   Download the script from [[17]](http://pastie.org/9550960).
 *   Make it executable

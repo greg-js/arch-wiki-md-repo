@@ -9,7 +9,7 @@
 
 ## Installing
 
-[Install](/index.php/Install "Install") the [fbpanel](https://www.archlinux.org/packages/?name=fbpanel) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [fbpanel](https://aur.archlinux.org/packages/fbpanel/) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Starting
 

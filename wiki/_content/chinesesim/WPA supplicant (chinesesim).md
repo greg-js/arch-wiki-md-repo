@@ -32,7 +32,7 @@ Related articles
 
 [安装](/index.php/Install "Install") [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) 软件包。
 
-此外软件包 [wpa_supplicant_gui](https://www.archlinux.org/packages/?name=wpa_supplicant_gui) 提供了图形界面 *wpa_gui*。
+此外软件包 [wpa_supplicant_gui](https://aur.archlinux.org/packages/wpa_supplicant_gui/) 提供了图形界面 *wpa_gui*。
 
 ## 概览
 

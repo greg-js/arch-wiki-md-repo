@@ -20,6 +20,7 @@
     *   [1.2 安装中文locale](#.E5.AE.89.E8.A3.85.E4.B8.AD.E6.96.87locale)
     *   [1.3 启用中文locale](#.E5.90.AF.E7.94.A8.E4.B8.AD.E6.96.87locale)
         *   [1.3.1 单独在图形界面启用中文locale](#.E5.8D.95.E7.8B.AC.E5.9C.A8.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2.E5.90.AF.E7.94.A8.E4.B8.AD.E6.96.87locale)
+        *   [1.3.2 登陆器用户设置较为全面的中文](#.E7.99.BB.E9.99.86.E5.99.A8.E7.94.A8.E6.88.B7.E8.AE.BE.E7.BD.AE.E8.BE.83.E4.B8.BA.E5.85.A8.E9.9D.A2.E7.9A.84.E4.B8.AD.E6.96.87)
     *   [1.4 中文字体](#.E4.B8.AD.E6.96.87.E5.AD.97.E4.BD.93)
         *   [1.4.1 安装字体](#.E5.AE.89.E8.A3.85.E5.AD.97.E4.BD.93)
         *   [1.4.2 中文字体配置](#.E4.B8.AD.E6.96.87.E5.AD.97.E4.BD.93.E9.85.8D.E7.BD.AE)
@@ -92,7 +93,7 @@ LANG=en_US.UTF-8
 
 ```
 
-**警告:** 不推荐在此设置中文locale，会导致tty乱码；在tty下亦可显示和输入中文，但需要安装cce、zhcon或[fbterm](https://www.archlinux.org/packages/?name=fbterm)；
+**警告:** 不推荐在此设置中文locale，会导致tty乱码；在tty下亦可显示和输入中文，但需要安装cce、zhcon或[fbterm](https://github.com/felixonmars/aur3-mirror/tree/master/fbterm)；
 
 **提示：** 如欲为内核打中文补丁，可参见[[1]](http://blog.chinaunix.net/space.php?uid=436750&do=blog&id=2123586)；
 
@@ -118,6 +119,18 @@ export LC_CTYPE=en_US.UTF-8
 **注意:** 若欲将此三行放至`~/.xinitrc`中，请注意将其放在`exec *_example_WM_or_DE_*`行之前；此为常见错误；
 
 **注意:** 该方法适用于slim或者无登陆管理器的用户，GDM和KDM用户可以在Gnome或KDE设置中选择语言。
+
+#### 登陆器用户设置较为全面的中文
+
+添加如下内容到文件`~/.xprofile`最前端之后
+
+```
+export LANG=zh_CN.UTF-8
+export LC_ALL="zh_CN.UTF-8"
+
+```
+
+**注意:** 该方法适用登陆管理器用户，KDE用户按此方法可以设置较为全面的中文。
 
 ### 中文字体
 

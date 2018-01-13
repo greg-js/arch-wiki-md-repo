@@ -194,14 +194,6 @@ Many Modules provide Gadgets that can be added to your desktop or on a shelf. So
 
 Beyond the modules described here, more "extra" modules are available from [e-modules-extra-git](https://aur.archlinux.org/packages/e-modules-extra-git/).
 
-**Places**
-
-Places is a gadget that will help you browse files on various devices you might plug into your computer, like phones, cameras, or other various storage devices you might plug into the usb port.
-
-Available from [places-git](https://aur.archlinux.org/packages/places-git/).
-
-**Note:** This module is no longer required for auto-mounting external devices in Enlightenment
-
 **Scale Windows**
 
 The *Scale Windows* module, which requires compositing to be enabled, adds several features. The scale windows effect shrinks all open windows and brings them all into view. This is known in "Mission Control" in macOS. The scale pager effect zooms out and shows all desktops as a wall, like the compiz expo plugin. Both can be added to the desktop as a gadget or bound to a key binding, mouse binding or screen edge binding.
@@ -210,7 +202,7 @@ Some people like to change the standard window selection key binding `ALT + Tab`
 
 To replace the window selection key binding functionality with Scale Windows, scroll through the left panel until you find the *ALT* section and then find and select `ALT + Tab`. Then, scroll through the right panel looking for the "Scale Windows" section and choose either *Select Next* or *Select Next (All)* depending on whether you would like to see windows from only the current desktop or from all desktops and click *Apply* to save the binding.
 
-Available from [comp-scale-git](https://aur.archlinux.org/packages/comp-scale-git/).
+Available from [upstream git](https://git.enlightenment.org/enlightenment/modules/comp-scale.git/).
 
 ### Default Keybindings
 
@@ -289,7 +281,7 @@ See `/usr/share/doc/e16/e16.html` for in depth documentation. The man page is at
 
 Most configuration files for E16 reside in `~/.e16` and are text-based, editable at will. That includes the Menus too.
 
-Shortcut keys can be either modified by hand, or with the e16keyedit software provided as source on the [sourceforge](http://sourceforge.net/projects/enlightenment/) page of the e16 project, or from the [e16keyedit](https://aur.archlinux.org/packages/e16keyedit/) package. Note that the keyboard shortcuts file is not created in `~/.e16` by default. You can copy the packaged version to your home directory if you wish to make changes:
+Shortcut keys can be either modified by hand, or with the e16keyedit software provided as source on the [sourceforge](http://sourceforge.net/projects/enlightenment/) page of the e16 project. Note that the keyboard shortcuts file is not created in `~/.e16` by default. You can copy the packaged version to your home directory if you wish to make changes:
 
 ```
 $ cp /usr/share/e16/config/bindings.cfg ~/.e16

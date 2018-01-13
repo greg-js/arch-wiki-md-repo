@@ -39,7 +39,7 @@ Spustťe ho s příkazem "switch".
 
 ### GTK+ 2.x
 
-Hlavní [desktopová prostředí](/index.php/Category:Desktop_environments_(%C4%8Cesky) "Category:Desktop environments (Česky)") poskytují nástroje pro konfiguraci GTK téma, ikon, fontů a velikosti fontů. Alternativně mohou být použity nástroje jako [lxappearance](https://www.archlinux.org/packages/?name=lxappearance), [gtk-chtheme](https://www.archlinux.org/packages/?name=gtk-chtheme), [gtk-theme-switch2](https://www.archlinux.org/packages/?name=gtk-theme-switch2) a [gtk2_prefs](https://www.archlinux.org/packages/?name=gtk2_prefs). [lxappearance](https://www.archlinux.org/packages/?name=lxappearance) je konfigurační nástroj z projektu LXDE nezávislý na desktopovém prostředí, který nepotřebuje pro svůj běh žádnou jinou část z LXDE. Nainstalujte některý z těchto balíčků, viz:
+Hlavní [desktopová prostředí](/index.php/Category:Desktop_environments_(%C4%8Cesky) "Category:Desktop environments (Česky)") poskytují nástroje pro konfiguraci GTK téma, ikon, fontů a velikosti fontů. Alternativně mohou být použity nástroje jako [lxappearance](https://www.archlinux.org/packages/?name=lxappearance), [gtk-chtheme](https://www.archlinux.org/packages/?name=gtk-chtheme), [gtk-theme-switch2](https://www.archlinux.org/packages/?name=gtk-theme-switch2) a [gtk2_prefs](https://aur.archlinux.org/packages/gtk2_prefs/). [lxappearance](https://www.archlinux.org/packages/?name=lxappearance) je konfigurační nástroj z projektu LXDE nezávislý na desktopovém prostředí, který nepotřebuje pro svůj běh žádnou jinou část z LXDE. Nainstalujte některý z těchto balíčků, viz:
 
 ```
 # pacman -S lxappearance

@@ -43,7 +43,7 @@ Related packages are:
 *   [sqlite-doc](https://www.archlinux.org/packages/?name=sqlite-doc) - most of the static HTML files that comprise this website, including all of the SQL Syntax and the C/C++ interface specs and other miscellaneous documentation
 *   [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) - sqlite3 module for PHP (do not forget to enable it in `/etc/php/php.ini`)
 *   [gambas3-gb-db-sqlite3](https://www.archlinux.org/packages/?name=gambas3-gb-db-sqlite3) - Gambas2 Sqlite3 database access component
-*   [sqliteman](https://www.archlinux.org/packages/?name=sqliteman) - Developer and/or admin GUI tool for Sqlite3
+*   [sqliteman](https://aur.archlinux.org/packages/sqliteman/) - Developer and/or admin GUI tool for Sqlite3
 *   [sqlitebrowser](https://www.archlinux.org/packages/?name=sqlitebrowser) - DB Browser for SQLite is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.
 
 ## Using sqlite3 command line shell

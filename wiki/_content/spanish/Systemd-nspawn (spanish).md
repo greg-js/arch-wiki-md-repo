@@ -86,7 +86,7 @@ Para arrancar el sistema i686 resultante como una instancia de systemd-nspawn, e
 
 ### Crear un ambiente Debian o Ubuntu
 
-[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [debootstrap](https://www.archlinux.org/packages/?name=debootstrap), [gnupg1](https://aur.archlinux.org/packages/gnupg1/), y uno de estos paquetes: [debian-archive-keyring](https://www.archlinux.org/packages/?name=debian-archive-keyring) o [ubuntu-keyring](https://aur.archlinux.org/packages/ubuntu-keyring/) (obviamente instale el llavero del distro que quiere).
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [debootstrap](https://www.archlinux.org/packages/?name=debootstrap), [gnupg1](https://aur.archlinux.org/packages/gnupg1/), y uno de estos paquetes: [debian-archive-keyring](https://www.archlinux.org/packages/?name=debian-archive-keyring) o [ubuntu-keyring](https://www.archlinux.org/packages/?name=ubuntu-keyring) (obviamente instale el llavero del distro que quiere).
 
 **Nota:** *systemd-nspawn* requiere que el sistema operativo dentro del contenedor ejecute systemd como PID 1 y que *systemd-nspawn* este instalado en el contenedor. Esto quiere decir que Ubuntu antes de la version 15.04 no funcionaran, y configuraciones extras para cambiar de upstart a systemd son necesarias. También asegurese que el paquete `systemd-container` esta instalado en el contenedor.
 

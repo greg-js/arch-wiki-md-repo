@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [Network Configuration (Español)](/index.php/Network_Configuration_(Espa%C3%B1ol) "Network Configuration (Español)")
+*   [Wireless Setup (Español)](/index.php/Wireless_Setup_(Espa%C3%B1ol) "Wireless Setup (Español)")
+
 [wpa_supplicant](http://hostap.epitest.fi/wpa_supplicant/) es una multiplataforma de [WPA Supplicant](https://en.wikipedia.org/wiki/Supplicant_(computer) con soporte para WPA y WPA2 ([IEEE 802.11i](https://en.wikipedia.org/wiki/IEEE_802.11i "wikipedia:IEEE 802.11i") / RSN —Robust Secure Network—). Está adaptado tanto para los ordenadores de sobremesa/portátiles como para sistemas integrados.
 
 *wpa_supplicant* es el componente IEEE 802.1X/WPA utilizado por las estaciones cliente. Implementa las negociaciones entre la clave y un WPA Authenticator, y contola el roaming y la asociación/autenticación IEEE 802.11 del controlador wland.
@@ -16,7 +21,7 @@
 
 Instale el paquete [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
-También tiene la posibilidad de instalar el paquete [wpa_supplicant_gui](https://www.archlinux.org/packages/?name=wpa_supplicant_gui) que proporciona *wpa_gui*; es un fronted gráfico para *wpa_supplicant* que usa las herramientas [qt4](https://www.archlinux.org/packages/?name=qt4).
+También tiene la posibilidad de instalar el paquete [wpa_supplicant_gui](https://aur.archlinux.org/packages/wpa_supplicant_gui/) que proporciona *wpa_gui*; es un fronted gráfico para *wpa_supplicant* que usa las herramientas [qt4](https://www.archlinux.org/packages/?name=qt4).
 
 ## Configuración
 

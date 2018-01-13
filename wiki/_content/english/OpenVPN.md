@@ -20,8 +20,9 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
     *   [5.1 Example configuration](#Example_configuration)
     *   [5.2 The server configuration file](#The_server_configuration_file)
         *   [5.2.1 Hardening the server](#Hardening_the_server)
-        *   [5.2.2 Deviating from the standard port and/or protocol](#Deviating_from_the_standard_port_and.2For_protocol)
-            *   [5.2.2.1 TCP vs UDP](#TCP_vs_UDP)
+        *   [5.2.2 Enabling compression](#Enabling_compression)
+        *   [5.2.3 Deviating from the standard port and/or protocol](#Deviating_from_the_standard_port_and.2For_protocol)
+            *   [5.2.3.1 TCP vs UDP](#TCP_vs_UDP)
     *   [5.3 The client config profile](#The_client_config_profile)
         *   [5.3.1 Run as unprivileged user](#Run_as_unprivileged_user)
     *   [5.4 Converting certificates to encrypted .p12 format](#Converting_certificates_to_encrypted_.p12_format)
@@ -160,6 +161,23 @@ tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-128-GCM-SHA2
 
 **Note:** The .ovpn client profile **must** contain a matching cipher and auth line to work properly (at least with the iOS and Android client)!
 
+#### Enabling compression
+
+Since OpenVPN v2.4 it is possible to use LZ4 compression over lzo. LZ4 generally offering the best performance with least CPU usage. For backwards compatibility with OpenVPN versions before v2.4, use lzo `comp-lzo`. Do **not** enable both compression options at the same time.
+
+To do so, configure `/etc/openvpn/server/server.conf` as such:
+
+ `/etc/openvpn/server/server.conf` 
+```
+.
+compress lz4-v2
+push "compress lz4-v2"
+.
+
+```
+
+On the client set `--compress lz4` [[2]](https://community.openvpn.net/openvpn/wiki/DeprecatedOptions), although this may be deprecated in the near future.
+
 #### Deviating from the standard port and/or protocol
 
 Some public/private network admins may not allow OpenVPN connections on its default port and/or protocol. One strategy to circumvent this is to mimic https/SSL traffic which is very likely unobstructed.
@@ -193,7 +211,7 @@ UDP
 *   Less reliable than TCP as no error correction is in use.
 *   Potentially faster than TCP.
 
-**Note:** It is generally a bad idea to use TCP for VPN unless your connection to the server is very stable. High reliability sounds great in theory but any disruption (packet drop, lag spikes, etc...) to the connection will potentially snowball into a [TCP Meltdown](http://sites.inka.de/bigred/devel/tcp-tcp.html)[[2]](http://adsabs.harvard.edu/abs/2005SPIE.6011..138H).
+**Note:** It is generally a bad idea to use TCP for VPN unless your connection to the server is very stable. High reliability sounds great in theory but any disruption (packet drop, lag spikes, etc...) to the connection will potentially snowball into a [TCP Meltdown](http://sites.inka.de/bigred/devel/tcp-tcp.html)[[3]](http://adsabs.harvard.edu/abs/2005SPIE.6011..138H).
 
 ### The client config profile
 
@@ -472,7 +490,7 @@ If you would like to connect a client to an OpenVPN server through Gnome's built
 
 **Note:** There are potential pitfalls when routing all traffic through a VPN server. Refer to [the OpenVPN documentation on this topic](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) for more information.
 
-By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server/server.conf`) [[3]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
+By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server/server.conf`) [[4]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
 
 ```
 push "redirect-gateway def1 bypass-dhcp"
@@ -533,14 +551,14 @@ Lastly, reload UFW:
 
 #### iptables
 
-In order to allow VPN traffic through your iptables firewall of your server, first create an iptables rule for NAT forwarding [[4]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
+In order to allow VPN traffic through your iptables firewall of your server, first create an iptables rule for NAT forwarding [[5]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
 
 ```
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
 ```
 
-If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[5]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
+If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[6]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
 
 **Warning:** There are security implications for the following rules if you do not trust all clients which connect to the server. Refer to the [OpenVPN documentation on this topic](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn) for more details.
 

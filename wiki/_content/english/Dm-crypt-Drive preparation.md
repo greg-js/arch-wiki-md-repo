@@ -1,3 +1,8 @@
+Related articles
+
+*   [Disk encryption#Preparing the disk](/index.php/Disk_encryption#Preparing_the_disk "Disk encryption")
+*   [Securely wipe disk](/index.php/Securely_wipe_disk "Securely wipe disk")
+
 Before encrypting a drive, it is recommended to perform a secure erase of the disk by overwriting the entire drive with random data. To prevent cryptographic attacks or unwanted [file recovery](/index.php/File_recovery "File recovery"), this data is ideally indistinguishable from data later written by dm-crypt. For a more comprehensive discussion see [Disk encryption#Preparing the disk](/index.php/Disk_encryption#Preparing_the_disk "Disk encryption").
 
 ## Contents

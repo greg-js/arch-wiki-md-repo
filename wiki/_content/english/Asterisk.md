@@ -28,7 +28,7 @@ Install the [asterisk](https://aur.archlinux.org/packages/asterisk/) package. If
 
 [Start](/index.php/Start "Start") the server with `asterisk.service`.
 
-You will also need a SIP [softphone](/index.php/Softphone "Softphone") and at least two machines. Recommendations for SIP phones are [Linphone](http://www.linphone.org/) ([linphone](https://www.archlinux.org/packages/?name=linphone) package) or [X-Lite](http://www.counterpath.com/x-lite/) ([xlite_bin](https://aur.archlinux.org/packages/xlite_bin/) package).
+You will also need a SIP [softphone](/index.php/Softphone "Softphone") and at least two machines. Recommendations for SIP phones are [Linphone](http://www.linphone.org/) ([linphone](https://aur.archlinux.org/packages/linphone/) package) or [X-Lite](http://www.counterpath.com/x-lite/) ([xlite_bin](https://aur.archlinux.org/packages/xlite_bin/) package).
 
 To enable ilbc codec support add the following to the very beginning of the `build` section of the PKGBUILD:
 

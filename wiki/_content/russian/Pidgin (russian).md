@@ -175,7 +175,7 @@ Facebook XMPP был отключён 30 апреля 2015\. Смотрите [[
 
 ### Pidgin-Encryption
 
-[pidgin-encryption](https://www.archlinux.org/packages/?name=pidgin-encryption) прозрачно для вас шифрует ваши мгновенные сообщения с помощью RSA шифрования. Легко в использовании и очень безопасно.
+[pidgin-encryption](https://aur.archlinux.org/packages/pidgin-encryption/) прозрачно для вас шифрует ваши мгновенные сообщения с помощью RSA шифрования. Легко в использовании и очень безопасно.
 
 Вы можете включить его таким же образом, как и Pidgin-OTR.
 

@@ -129,7 +129,7 @@ Mnoho zde uvedených klientů (včetně Pidgina a všech jeho forků) podporuje 
 
 *   **[naim](https://en.wikipedia.org/wiki/naim_(software) "wikipedia:naim (software)")** — Ncurses chatovací klient podporující AOL, ICQ, IRC a Lily CMC
 
-	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://www.archlinux.org/packages/?name=naim)
+	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://aur.archlinux.org/packages/naim/)
 
 ##### Grafické rozhraní
 
@@ -173,7 +173,7 @@ See also [Wikipedia:Comparison of instant messaging clients#XMPP clients](https:
 
 *   **Freetalk** — Konzolový Jabber klient
 
-	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://www.archlinux.org/packages/?name=freetalk)
+	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://aur.archlinux.org/packages/freetalk/)
 
 *   **jabber.el** — Minimalistický Jabber klient pro [Emacs](/index.php/Emacs "Emacs")
 
@@ -307,7 +307,7 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Linphone](https://en.wikipedia.org/wiki/Linphone "wikipedia:Linphone")** — VoIP aplikace umožňující svobodnou komunikaci přes internet, s podporou hlasových, video a textových zpráv
 
-	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://www.archlinux.org/packages/?name=linphone)
+	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://aur.archlinux.org/packages/linphone/)
 
 *   **Minisip** — SIP klient s důrazem na bezpečnost (podporuje TLS, zabezpečení konec-konec, SRTP, MIKEY (DH, PSK, PKE))
 

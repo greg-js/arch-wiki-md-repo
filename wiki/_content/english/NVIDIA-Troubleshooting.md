@@ -407,6 +407,24 @@ If you are trying to configure a WQHD monitor such as DELL U2515H using [xrandr]
 
 Alternatively, it may be that your monitor's EDID is incorrect. See [#Override EDID](#Override_EDID).
 
+Another reason could be that per default current NVidia drivers will only allow modes explicitly reported by EDID; but sometimes refresh rates and/or resolutions are desired which are not reported by the monitor (although the EDID information is correct; it's just that current NVidia drivers are too restrictive).
+
+If this happens, you may want to add an option to `/etc/X11/xorg.conf.d/` to allow non-EDID modes:
+
+```
+Section "Device"
+    Identifier     "Device0"
+    Driver         "nvidia"
+    VendorName     "NVIDIA Corporation"
+...
+    Option         "ModeValidation" "AllowNonEdidModes"
+...
+EndSection
+
+```
+
+This can be set per-output. See NVidia driver readme (Appendix B. X Config Options) for more information.
+
 ## Override EDID
 
 See [Kernel mode setting#Forcing modes and EDID](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting") and [Xrandr#Troubleshooting](/index.php/Xrandr#Troubleshooting "Xrandr").

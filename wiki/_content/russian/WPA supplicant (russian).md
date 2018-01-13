@@ -25,7 +25,7 @@
 
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), доступный в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
-Также вы можете установить [wpa_supplicant_gui](https://www.archlinux.org/packages/?name=wpa_supplicant_gui), который предоставляет *wpa_gui* – графическую оболочку для *wpa_supplicant*.
+Также вы можете установить [wpa_supplicant_gui](https://aur.archlinux.org/packages/wpa_supplicant_gui/), который предоставляет *wpa_gui* – графическую оболочку для *wpa_supplicant*.
 
 ## Обзор
 

@@ -6,6 +6,7 @@ This is a quick blurb for setting or converting your keymaps to dvorak instead o
 *   [2 For international users](#For_international_users)
     *   [2.1 Swedish](#Swedish)
     *   [2.2 Spanish](#Spanish)
+    *   [2.3 United Kingdom](#United_Kingdom)
 *   [3 Typing tutors](#Typing_tutors)
 
 ## Setting dvorak layout
@@ -36,11 +37,17 @@ In console, specify `dvorak-es` instead of `dvorak` to use the Spanish dvorak va
 
 In Xorg, specify `es` as `XkbLayout` and `dvorak` as `XkbVariant`.
 
+### United Kingdom
+
+In console, specify `dvorak-ukp` (available from [dvorak-ukp](https://aur.archlinux.org/packages/dvorak-ukp/)) instead of `dvorak` to use the United Kingdom dvorak variant with ISO/IEC 9995-1 punctuation.
+
+In Xorg, specify `gb` as `XkbLayout` and `dvorakukp` as `XkbVariant`.
+
 ## Typing tutors
 
 	Console
 
-*   [DvorakNG](https://aur.archlinux.org/packages/DvorakNG/)
+*   [dvorakng](https://aur.archlinux.org/packages/dvorakng/)
 
 	GUI
 

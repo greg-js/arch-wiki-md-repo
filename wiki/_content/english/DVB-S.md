@@ -121,7 +121,7 @@ To use your DVB-S card as user add him to the `video` group:
 
 **Note:** You can skip this part if you use Kaffeine.
 
-Most applications like szap or xine are needing a channel list created by **scan**, which is part of **dvb-utils**. You will find the dvb-utils package under the name [linuxtv-dvb-apps](https://www.archlinux.org/packages/?name=linuxtv-dvb-apps).
+Most applications like szap or xine are needing a channel list created by **scan**, which is part of **dvb-utils**. You will find the dvb-utils package under the name [linuxtv-dvb-apps](https://aur.archlinux.org/packages/linuxtv-dvb-apps/).
 
 ### Using scan
 

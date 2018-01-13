@@ -121,6 +121,9 @@ cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/
 将下面内容加入桌面的启动脚本，以注册输入法模块并支持 xim 程序。
 
 *   KDM, GDM, LightDM 等显示管理器，请使用 `~/.xprofile`
+
+**警告:** 上述用户不要在`~/.xinitrc`中加入下述脚本，否则会造成无法登陆。
+
 *   如果您用 `startx` 或者 Slim 启动，请使用`~/.xinitrc` 中加入
 *   如果你使用的是较新版本的GNOME，使用 Wayland 显示管理器，则请在`/etc/environment`中加入：
 

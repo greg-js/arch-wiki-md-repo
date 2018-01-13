@@ -59,7 +59,7 @@ To use **somehost** as the hostname. Move **somehost.localdomain** to the first 
 
 ## Configuration
 
-The [rsyslog](https://www.archlinux.org/packages/?name=rsyslog) doesn't create its working directory `/var/spool/rsyslog` defined by the `$WorkDirectory` variable in the configuration file. You might need to create it manually or change its destination.
+The [rsyslog](https://aur.archlinux.org/packages/rsyslog/) doesn't create its working directory `/var/spool/rsyslog` defined by the `$WorkDirectory` variable in the configuration file. You might need to create it manually or change its destination.
 
 By default, all syslog messages are handled by [systemd](/index.php/Systemd "Systemd"). If you want rsyslog to pull messages from systemd, load the *imjournal* module:
 
@@ -153,7 +153,7 @@ Summary of requirements:
 
 Installation and configuration steps:
 
-1.  Install [rsyslog](https://www.archlinux.org/packages/?name=rsyslog).
+1.  Install [rsyslog](https://aur.archlinux.org/packages/rsyslog/).
 2.  Edit `/etc/logrotate.d/rsyslog` and add `/var/log/kernel.log` to the list of logs. Without this modification, the kernel log would grow indefinitely.
 3.  Edit `/etc/rsyslog.conf` and comment everything except for `$ModLoad imklog`. I also kept `$ModLoad immark` to have a heart-beat logged.
 4.  Add the next line to the same configuration file:

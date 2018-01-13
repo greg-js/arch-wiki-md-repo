@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [Window Manager (Español)](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)")
+
 Deacuerdo a [Wikipedia](https://en.wikipedia.org/wiki/Icewm "wikipedia:Icewm"), "IceWM es un gestor de ventanas para el sistema gráfico X Window, utilizado en sistemas Unix y derivados. Fue escrito por Marko Maček desde cero en C++ y está disponible bajo los términos de la licencia GPL en unos 20 idiomas. Es relativamente ligero en cuanto a uso de memoria RAM y CPU, y viene con temas que imitan las interfaces de usuario de sistemas como Windows 95, OS/2, Motif, etc.".
 
 ## Contents
@@ -80,7 +84,7 @@ $ cp -R /usr/share/icewm/* ~/.icewm/
 
 ### Temas
 
-Algunos temas son incluidos por defecto, muchos otros estan disponibles con el paquete [icewm-themes](https://www.archlinux.org/packages/?name=icewm-themes) pero incluso los mejores de ellos tienen una aparencia arcaica al mejor estilo de un "viejo windows", hay mejores y más atractivos ejemplos (como estos por ejemplo: [[1]](http://box-look.org/content/show.php/Carbonit+Ice?content=146421%7Ceste), [[2]](http://box-look.org/content/show.php/IceBuntu?content=62935%7Cthis) or [[3]](http://box-look.org/content/show.php/IceClearlooks?content=96346%7Cthis)) muchos mas pueden ser encontrados en [box-look.org](http://www.box-look.org/index.php?xcontentmode=7311).
+Algunos temas son incluidos por defecto, muchos otros estan disponibles con el paquete [icewm-themes](https://aur.archlinux.org/packages/icewm-themes/) pero incluso los mejores de ellos tienen una aparencia arcaica al mejor estilo de un "viejo windows", hay mejores y más atractivos ejemplos (como estos por ejemplo: [[1]](http://box-look.org/content/show.php/Carbonit+Ice?content=146421%7Ceste), [[2]](http://box-look.org/content/show.php/IceBuntu?content=62935%7Cthis) or [[3]](http://box-look.org/content/show.php/IceClearlooks?content=96346%7Cthis)) muchos mas pueden ser encontrados en [box-look.org](http://www.box-look.org/index.php?xcontentmode=7311).
 
 ## Gestores de Archivos
 

@@ -65,7 +65,7 @@
 
 *   **fbv** — Очень простая программа просмотра графических файлов для framebuffer-консоли
 
-	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://www.archlinux.org/packages/?name=fbv)
+	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://aur.archlinux.org/packages/fbv/)
 
 *   **fim** — Сильно настраиваемая framebuffer-программа просмотра изображений с поддержкой сценариев, основанная на *fbi*
 
@@ -99,7 +99,7 @@
 
 *   **Gimmage** — Программа просмотра изображений Gtkmm
 
-	[http://gimmage.berlios.de/](http://gimmage.berlios.de/) || [gimmage](https://www.archlinux.org/packages/?name=gimmage)
+	[http://gimmage.berlios.de/](http://gimmage.berlios.de/) || [gimmage](https://aur.archlinux.org/packages/gimmage/)
 
 *   **GPicView** — Простая и быстрая программа просмотра изображений для X, являющаяся частью окружения [LXDE](/index.php/LXDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LXDE (Русский)")
 
@@ -119,7 +119,7 @@
 
 *   **Mirage** — Программа просмотра изображений на PyGTK, позволяющая обрезать изображения и изменять их размер. Имеет панель предварительного просмотра и возможность создания пользовательских действий
 
-	[http://mirageiv.berlios.de](http://mirageiv.berlios.de) || [mirage](https://www.archlinux.org/packages/?name=mirage)
+	[http://mirageiv.berlios.de](http://mirageiv.berlios.de) || [mirage](https://aur.archlinux.org/packages/mirage/)
 
 *   **nomacs** — Свободная программа просмотра изображений (Qt) для систем windows, linux и mac, распространяемая под лицензией GNU General Public License v3
 
@@ -585,7 +585,7 @@
 
 *   **ID3 Mass Tagger** — Консольная утилита для редактирования тэгов ID3 1.x и 2.x
 
-	[http://freecode.com/projects/id3](http://freecode.com/projects/id3) || [id3](https://www.archlinux.org/packages/?name=id3)
+	[http://freecode.com/projects/id3](http://freecode.com/projects/id3) || [id3](https://aur.archlinux.org/packages/id3/)
 
 *   **Kid3** — Редактор тэгов для файлов MP3, Ogg/Vorbis, FLAC, MPC, MP4/AAC, MP2, Speex, TrueAudio, WavPack, WMA, WAV и AIFF
 
@@ -845,7 +845,7 @@
 
 *   **[GCstar](https://en.wikipedia.org/wiki/GCstar "wikipedia:GCstar")** — Приложение GNOME для организации различных коллекций (настольные игры, комиксы, фильмы, марки и т.д.)
 
-	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://www.archlinux.org/packages/?name=gcstar)
+	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://aur.archlinux.org/packages/gcstar/)
 
 *   **[Tellico](https://en.wikipedia.org/wiki/ru:Tellico "wikipedia:ru:Tellico")** — Приложение KDE для организации различных коллекций (книги, видео, музыка, монеты и т.д.)
 

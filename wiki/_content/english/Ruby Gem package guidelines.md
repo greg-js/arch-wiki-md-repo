@@ -20,7 +20,7 @@ Writing [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for software written in [Rub
 
 For libraries, use `ruby-$gemname`. For applications, use the program name. In either case, the name should be entirely lowercase.
 
-Always use `ruby-` prefix even if `$gemname` already starts with word `ruby`. It is needed to avoid future name clashes in case if a gem with shorter name appear. It also makes names more easily parseble by tools (think about PKGBUILD generators/version or dependency checkers, etc...). Examples: [ruby-ruby-protocol-buffers](https://aur.archlinux.org/packages/ruby-ruby-protocol-buffers/).
+Always use `ruby-` prefix even if `$gemname` already starts with word `ruby`. It is needed to avoid future name clashes in case if a gem with shorter name appear. It also makes names more easily parseble by tools (think about PKGBUILD generators/version or dependency checkers, etc...).
 
 ### Versioned packages
 
@@ -32,7 +32,7 @@ Another problem with versioned packages is that it can conflict with other versi
 
 ## Examples
 
-For examples, please see [ruby-rethinkdb](https://aur.archlinux.org/packages/ruby-rethinkdb/) [ruby-json_pure](https://aur.archlinux.org/packages/ruby-json_pure/) [ruby-hpricot](https://www.archlinux.org/packages/?name=ruby-hpricot).
+For examples, please see [ruby-json_pure](https://aur.archlinux.org/packages/ruby-json_pure/) or [ruby-hpricot](https://www.archlinux.org/packages/?name=ruby-hpricot).
 
 ## Notes
 

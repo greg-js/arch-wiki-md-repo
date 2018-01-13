@@ -1,3 +1,17 @@
+Related articles
+
+*   [Systemd](/index.php/Systemd "Systemd")
+*   [Network configuration](/index.php/Network_configuration "Network configuration")
+*   [Dnsmasq](/index.php/Dnsmasq "Dnsmasq")
+*   [Software access point](/index.php/Software_access_point "Software access point")
+*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
+*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
+*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
+*   [WPA_supplicant](/index.php/WPA_supplicant "WPA supplicant")
+*   [Network bridge](/index.php/Network_bridge "Network bridge")
+*   [Netctl#Bonding](/index.php/Netctl#Bonding "Netctl")
+*   [List of applications/Internet#Network managers](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet")
+
 ## Contents
 
 *   [1 Network Interface Bonding with Removable Device Support](#Network_Interface_Bonding_with_Removable_Device_Support)
@@ -18,7 +32,7 @@ The Linux kernel bonding driver can be used to provide parallel network connecti
 
 This example will run wpa_supplicant continuously on any interface, as needed, and DHCP client on a virtual "bond0" interface. This is useful, for instance, with a portable computer when you want to use the wired interface for speed and/or security when available, and the wireless interface when the wired interface is not available. The basic idea is to have two "always active" wired and wireless interfaces, then "bond" or "enslave" them to a virtual interface "master", and then let the kernel bonding module handle switching between the interfaces. Of course, this scheme can be applied to any other type of network interface, and extended to more than two physical or virtual network interfaces.
 
-Note that host networking is managed directly with [systemd](/index.php/Systemd "Systemd"), and that no other "connection manager" is used here, providing a more basic approach. But then also, wpa_supplicant itself can still be managed directly using `wpa_gui` from [wpa_supplicant_gui](https://www.archlinux.org/packages/?name=wpa_supplicant_gui), to scan for, select, and connect to new wireless access points/base stations.
+Note that host networking is managed directly with [systemd](/index.php/Systemd "Systemd"), and that no other "connection manager" is used here, providing a more basic approach. But then also, wpa_supplicant itself can still be managed directly using `wpa_gui` from [wpa_supplicant_gui](https://aur.archlinux.org/packages/wpa_supplicant_gui/), to scan for, select, and connect to new wireless access points/base stations.
 
 In this example, there are six [systemd](/index.php/Systemd "Systemd") service unit files used, along with five associated configuration files, for the [kernel bonding module](https://www.kernel.org/doc/Documentation/networking/bonding.txt), [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), [dhclient](https://www.archlinux.org/packages/?name=dhclient), and for static network configuration and specifying the primary slave network interface name. The six unit files are essentially generic service unit files which do not contain configuration data, and no modification is needed. The various service units may be stopped, started, and restarted individually without ordering errors or failed states. Any network interface device, such as typically a wired or wireless PC Card, may be removed and replaced, and reconfiguration will be automatic.
 

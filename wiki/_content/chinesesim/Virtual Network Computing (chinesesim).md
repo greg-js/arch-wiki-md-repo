@@ -251,7 +251,7 @@ $ vncviewer -passwd /path/to/server-passwd-file
 *   [rdesktop](https://www.archlinux.org/packages/?name=rdesktop)
 *   [vinagre](https://www.archlinux.org/packages/?name=vinagre)
 *   [remmina](https://www.archlinux.org/packages/?name=remmina)
-*   [vncviewer-jar](https://www.archlinux.org/packages/?name=vncviewer-jar)
+*   [vncviewer-jar](https://aur.archlinux.org/packages/vncviewer-jar/)
 
 ## 使用 SSH 隧道加密 VNC 服务
 

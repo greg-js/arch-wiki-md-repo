@@ -33,7 +33,7 @@ Hostfs means use the host's file system in read-only mode.
 #### Required packages
 
 *   [linux-usermode](https://aur.archlinux.org/packages/linux-usermode/)
-*   Utility packages: [vde2](https://www.archlinux.org/packages/?name=vde2) [screen](https://www.archlinux.org/packages/?name=screen) [start-stop-daemon](https://aur.archlinux.org/packages/start-stop-daemon/) [rsyslog](https://www.archlinux.org/packages/?name=rsyslog)
+*   Utility packages: [vde2](https://www.archlinux.org/packages/?name=vde2) [screen](https://www.archlinux.org/packages/?name=screen) [start-stop-daemon](https://aur.archlinux.org/packages/start-stop-daemon/) [rsyslog](https://aur.archlinux.org/packages/rsyslog/)
 
 #### Launch script
 

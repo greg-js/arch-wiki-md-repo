@@ -20,8 +20,7 @@ Related articles
 *   [5 Multiple Dropbox instances](#Multiple_Dropbox_instances)
 *   [6 Dropbox on laptops](#Dropbox_on_laptops)
     *   [6.1 Using netctl](#Using_netctl)
-    *   [6.2 Using NetworkManager](#Using_NetworkManager)
-    *   [6.3 Using wicd](#Using_wicd)
+    *   [6.2 Using wicd](#Using_wicd)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Dropbox keeps saying Downloading files](#Dropbox_keeps_saying_Downloading_files)
     *   [7.2 Change the Dropbox location from the installation wizard](#Change_the_Dropbox_location_from_the_installation_wizard)
@@ -183,10 +182,6 @@ ExecDownPre="*any other code*; killall dropbox"
 ```
 
 Obviously, `*your_user*` has to be edited and `*any other code*;` can be omitted if you do not have any. The above will make sure that Dropbox is running only if there is a network profile active.
-
-### Using NetworkManager
-
-If you have connectivity problem with [NetworkManager](/index.php/NetworkManager "NetworkManager"), try using a [dispatcher script](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager"): [networkmanager-dispatcher-dropbox](https://aur.archlinux.org/packages/networkmanager-dispatcher-dropbox/) or [networkmanager-dispatcher-dropbox-systemd](https://aur.archlinux.org/packages/networkmanager-dispatcher-dropbox-systemd/).
 
 ### Using wicd
 

@@ -69,7 +69,7 @@ If the purpose of the box is a stand-alone system, consider making a dedicated u
 
 ## Installing MythTV
 
-[Install](/index.php/Install "Install") the [mythtv](https://www.archlinux.org/packages/?name=mythtv) package and [any desired plugins](https://www.archlinux.org/packages/?q=mythplugins-).
+[Install](/index.php/Install "Install") the [mythtv](https://aur.archlinux.org/packages/mythtv/) package and [any desired plugins](https://www.archlinux.org/packages/?q=mythplugins-).
 
 At this point a generic MythTV installation is present that must be refined into a backend, a frontend, or both.
 
@@ -209,7 +209,7 @@ This should populate your mysql database with TV listings for the next two weeks
 
 #### PVR150
 
-If you cannot open /dev/video0 of your PVR150, install the firmware, located in the [ivtv-utils](https://www.archlinux.org/packages/?name=ivtv-utils) package.
+If you cannot open /dev/video0 of your PVR150, install the firmware, located in the [ivtv-utils](https://aur.archlinux.org/packages/ivtv-utils/) package.
 
 #### Opening DVB frontend device failed
 

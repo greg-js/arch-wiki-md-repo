@@ -45,7 +45,7 @@ Todos os usuários são incentivados a [participar](/index.php/Getting_involved_
 
 ### Versatilidade
 
-Arch Linux é uma distribuição de propósito geral. Na instalação, apenas um ambiente de linha de comando é fornecido: em vez de separar pacotes desnecessários e indesejados, ao usuário é oferecido a habilidade de compilar um sistema personalizado escolhendo entre milhares de pacotes de alta qualidade fornecidos nos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") para a arquitetura [x86-64](https://en.wikipedia.org/wiki/pt:AMD64 "wikipedia:pt:AMD64"). Suporte para [i686](https://en.wikipedia.org/wiki/pt:I686 "wikipedia:pt:I686") será [cessado](http://www.archlinux-br.org/noticias/254/) em Novembro de 2017.
+Arch Linux é uma distribuição de propósito geral. Na instalação, apenas um ambiente de linha de comando é fornecido: em vez de separar pacotes desnecessários e indesejados, ao usuário é oferecido a habilidade de compilar um sistema personalizado escolhendo entre milhares de pacotes de alta qualidade fornecidos nos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") para a arquitetura [x86-64](https://en.wikipedia.org/wiki/pt:AMD64 "wikipedia:pt:AMD64").
 
 Arch funciona com o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), um gerenciador de pacotes leve, simples e rápido que permite atualizar todo o sistema com apenas um comando. Arch também fornece o [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)"), um sistema tipo *ports* para facilitar a compilação e instalação de pacotes a partir do fonte, que também pode ser sincronizado com um comando. Além disso, o *Arch User Repository* contém muitos milhares mais de scripts [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") contribuídos pela comunidade para compilar pacotes instaláveis a partir dos fontes usando o aplicativo [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"). Também é possível para usuários compilar e manter seus próprios repositórios personalizados com facilidade.
 
@@ -81,4 +81,4 @@ Entre 2012 e 2013, o tradicional sistema de inicialização System V foi substit
 
 ### Fim do suporte a i686
 
-Em 2017-01-25, foi [anunciado](http://www.archlinux-br.org/noticias/254/) que o suporte à arquitetura i686 seria encerrado em razão da decrescente popularidade dentre os desenvolvedores e da comunidade.
+Em 2017-01-25, foi [anunciado](http://www.archlinux-br.org/noticias/254/) que o suporte à arquitetura i686 seria encerrado em razão da decrescente popularidade dentre os desenvolvedores e da comunidade. No [fim de novemobro de 2017](http://www.archlinux-br.org/noticias/254/), todos os pacotes i686 foram removidos dos espelhos.

@@ -1,4 +1,4 @@
-**Atenção:** Nenhuma dessas ferramentas possuem suporte [oficial](https://bbs.archlinux.org/viewtopic.php?pid=828254#p828254) pelo Arch Linux. É recomendado se tornar familiar com o [processo manual de compilação](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Instalando_pacotes "Arch User Repository (Português)") para estar preparado para diagnosticar e resolver problemas por conta própria.
+**Atenção:** Auxiliadores do AUR não possuem suporte [oficial](https://bbs.archlinux.org/viewtopic.php?pid=828254#p828254) pelo Arch Linux. É recomendado se tornar familiar com o [processo manual de compilação](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Instalando_pacotes "Arch User Repository (Português)") para estar preparado para diagnosticar e resolver problemas por conta própria.
 
 Auxiliares do AUR são escritos para automatizar certas tarefas para o [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)").
 
@@ -163,7 +163,7 @@ As colunas têm o seguinte significado:
 *   *Compilação limpa*: não exporta novas variáveis que podem evitar um processo de compilação bem-sucedido.
 *   *Analisador confiável*: habilidade de lidar com pacotes complexos usando os metadados fornecidos (RPC/.SRCINFO) em vez de [análise](https://en.wikipedia.org/wiki/pt:An%C3%A1lise_sint%C3%A1tica_(computa%C3%A7%C3%A3o)#Analisador_sint.C3.A1tico "w:pt:Análise sintática (computação)") do PKGBUILD, tal como [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/).
 *   *Resolvedor confiável*: habilidade para resolver corretamente e compilar cadeias de dependência complexas, tal como [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/).
-*   *Pacotes divididos*: habilidade de compilar e instalar corretamente pacotes divididos (*split packages*) de forma independente.
+*   *Pacotes divididos*: habilidade de compilar e instalar corretamente pacotes divididos (*split packages*) de forma independente, tal como [python-virtualfish](https://aur.archlinux.org/packages/python-virtualfish/) e [python2-virtualfish](https://aur.archlinux.org/packages/python2-virtualfish/).
 *   *Git clone*: usa git-clones em vez de baixar tarballs (obsoleto desde o AUR 4).
 *   *Sintaxe*: P significa tipo [Pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), E para específico.
 
@@ -182,7 +182,7 @@ As colunas têm o seguinte significado:
 | prm | Bash | Sim [[4]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/D | Sim | N/D | N/D | Sim | Nenhum | E | Sem compilações automáticas, Suporte a ABS |
 | repoctl | Go | Sim | N/D | Sim [[5]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/D | N/D | Não | zsh | E | Sem compilações automáticas, suporte a repositório local |
 | spinach | Bash | Sim [[6]](https://github.com/floft/spinach/commit/545574700812eb369b9537370f085ec9e5c3f01a) | Sim | Não | Não | Não | Não | Nenhum | E | - |
-| trizen | Perl | Sim | Sim | Sim [[7]](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | Sim | Sim [[8]](https://github.com/trizen/trizen/commit/3c94434c66ede793758f2bf7de84d68e3174e2ac) | Sim [[9]](https://github.com/trizen/trizen/commit/6fb0cc9e0ab66b8cca9493b0618ba4bab5fd2252) | Nenhum | P | Comentários do AUR |
+| trizen | Perl | Sim | Sim | Sim [[7]](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | Sim | Sim [[8]](https://github.com/trizen/trizen/commit/3c94434c66ede793758f2bf7de84d68e3174e2ac) | Sim [[9]](https://github.com/trizen/trizen/commit/6fb0cc9e0ab66b8cca9493b0618ba4bab5fd2252) | bash/zsh | P | Comentários do AUR |
 | wrapaur | Bash | Sim | Sim | Não | Não | Não | Sim | Nenhum | E | Atualiza espelhos (mirror), imprime notícias e comentários do AUR |
 | yaah | Bash | Sim | N/D | Sim | N/D | N/D | Opcional | bash | E | Sem compilações automáticas |
 | yaourt | Bash/C | Não (*yaourt -Si*) [[10]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[11]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | Não [[12]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | Não | Não [[13]](https://github.com/archlinuxfr/yaourt/issues/186) | Não [[14]](https://github.com/archlinuxfr/yaourt/issues/85) | Opcional | bash/zsh/fish | P | Backup, Suporte a ABS, Comentários do AUR, multilíngue |

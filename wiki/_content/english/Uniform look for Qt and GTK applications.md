@@ -248,5 +248,3 @@ $ export | grep gtk
 ```
 
 Usually the expected files should be `~/.gtkrc` for GTK1 and `~/.gtkrc2.0` or `~/.gtkrc2.0-kde` for GTK+ 2.x.
-
-Newer versions of [gtk-qt-engine](https://aur.archlinux.org/packages/gtk-qt-engine/) use `~/.gtkrc2.0-kde` and set the export variable in `~/.kde/env/gtk-qt-engine.rc.sh`. If you recently removed **gtk-qt-engine** and are trying to set a GTK+ theme then you must also remove `~/.kde/env/gtk-qt-engine.rc.sh` and reboot. Doing this will ensure that GTK+ looks for its settings in the standard `~/.gtkrc2.0` instead of the `~/.gtkrc2.0-kde` file.

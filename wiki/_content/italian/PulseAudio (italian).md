@@ -287,7 +287,7 @@ Ad esempio, per utilizzare il driver `ac97` per il sistema guest, si passi il pa
 
 ### AlsaMixer.app
 
-Per fare in modo che la dockapp [AlsaMixer.app](https://aur.archlinux.org/packages/AlsaMixer.app/) per [windowmaker](https://www.archlinux.org/packages/?name=windowmaker) utilizzi PulseAudio, utilizzare:
+Per fare in modo che la dockapp [AlsaMixer.app](https://aur.archlinux.org/packages/AlsaMixer.app/) per [windowmaker](https://aur.archlinux.org/packages/windowmaker/) utilizzi PulseAudio, utilizzare:
 
 ```
 $ AlsaMixer.app --device pulse

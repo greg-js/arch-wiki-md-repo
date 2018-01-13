@@ -277,7 +277,7 @@
 
 *   **pwsafe** — Консольная программа Unix, управляющая зашифрованной базой данных паролей
 
-	[http://nsd.dyndns.org/pwsafe/](http://nsd.dyndns.org/pwsafe/) || [pwsafe](https://www.archlinux.org/packages/?name=pwsafe)
+	[http://nsd.dyndns.org/pwsafe/](http://nsd.dyndns.org/pwsafe/) || [pwsafe](https://aur.archlinux.org/packages/pwsafe/)
 
 *   **QPass** — Легкий в использовании менеджер паролей со встроенным генератором паролей
 

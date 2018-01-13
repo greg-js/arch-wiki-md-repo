@@ -276,7 +276,7 @@ Target = linux*
 Depends = rsync
 Description = Backing up /boot...
 When = PreTransaction
-Exec = /usr/bin/rsync -avzq --delete /boot /.bootbackup
+Exec = /usr/bin/rsync -a --delete /boot /.bootbackup
 ```
 
 ### Incremental backup to external drive

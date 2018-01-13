@@ -557,7 +557,7 @@ These have their own communities and websites, and are **not supported** by grea
 
 *   **Q4Wine** — Graphical prefix manager for Wine. Can export [Qt](/index.php/Qt "Qt") themes into the Wine configuration for better integration.
 
-	[q4wine](https://www.archlinux.org/packages/?name=q4wine) || [https://sourceforge.net/projects/q4wine/](https://sourceforge.net/projects/q4wine/)
+	[q4wine](https://aur.archlinux.org/packages/q4wine/) || [https://sourceforge.net/projects/q4wine/](https://sourceforge.net/projects/q4wine/)
 
 ## See also
 

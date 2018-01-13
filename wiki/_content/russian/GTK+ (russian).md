@@ -150,7 +150,7 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 *   **Aurora Gtk Engine** — Последний участник семейства Clearlooks.
 
-	[http://gnome-look.org/content/show.php/Aurora+Gtk+Engine?content=56438](http://gnome-look.org/content/show.php/Aurora+Gtk+Engine?content=56438) || [gtk-engine-aurora](https://www.archlinux.org/packages/?name=gtk-engine-aurora)
+	[http://gnome-look.org/content/show.php/Aurora+Gtk+Engine?content=56438](http://gnome-look.org/content/show.php/Aurora+Gtk+Engine?content=56438) || [gtk-engine-aurora](https://aur.archlinux.org/packages/gtk-engine-aurora/)
 
 *   **Openbox Themes** — Различные темы для Оконного менеджера Openbox.
 
@@ -213,7 +213,7 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 *   **GTK+ Preference Tool** — Переключает GTK+ темы и меняет шрифт.
 
-	[http://gtk-win.sourceforge.net/home/index.php/Main/GTKPreferenceTool](http://gtk-win.sourceforge.net/home/index.php/Main/GTKPreferenceTool) || [gtk2_prefs](https://www.archlinux.org/packages/?name=gtk2_prefs)
+	[http://gtk-win.sourceforge.net/home/index.php/Main/GTKPreferenceTool](http://gtk-win.sourceforge.net/home/index.php/Main/GTKPreferenceTool) || [gtk2_prefs](https://aur.archlinux.org/packages/gtk2_prefs/)
 
 *   **GTK+ Theme Switch** — Простой переключатель GTK+ тем.
 

@@ -161,7 +161,7 @@ Another option, rather than using KDE or Gnome Bluetooth packages, is ObexFS whi
 
 **Note:** To use ObexFS, one needs a device that provides an ObexFTP service.
 
-Install [obexfs](https://www.archlinux.org/packages/?name=obexfs) and mount supported phones by running:
+Install [obexfs](https://aur.archlinux.org/packages/obexfs/) and mount supported phones by running:
 
 ```
 $ obexfs -b *MAC_address_of_device* /mountpoint

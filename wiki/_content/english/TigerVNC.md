@@ -290,7 +290,7 @@ $ vncviewer -passwd /path/to/server-passwd-file
 *   [rdesktop](https://www.archlinux.org/packages/?name=rdesktop)
 *   [vinagre](https://www.archlinux.org/packages/?name=vinagre)
 *   [remmina](https://www.archlinux.org/packages/?name=remmina)
-*   [vncviewer-jar](https://www.archlinux.org/packages/?name=vncviewer-jar)
+*   [vncviewer-jar](https://aur.archlinux.org/packages/vncviewer-jar/)
 
 TigerVNC's vncviewer also has a simple GUI when run without any parameters:
 

@@ -420,7 +420,7 @@ It's recommended using winetricks by default to open **.exe** files, so you can 
 
 ### Q4wine
 
-[Q4Wine](http://q4wine.brezblock.org.ua/) is a graphical wine-prefix manager which allows you to manage configuration of prefixes. Notably it allows exporting QT themes into the wine configuration so that they can integrate nicely. You can find the [q4wine](https://www.archlinux.org/packages/?name=q4wine) package in [multilib](/index.php/Multilib "Multilib").
+[Q4Wine](http://q4wine.brezblock.org.ua/) is a graphical wine-prefix manager which allows you to manage configuration of prefixes. Notably it allows exporting QT themes into the wine configuration so that they can integrate nicely. You can find the [q4wine](https://aur.archlinux.org/packages/q4wine/) package in [multilib](/index.php/Multilib "Multilib").
 
 ## See also
 

@@ -1,3 +1,8 @@
+相关文章
+
+*   [VA-API](/index.php/VA-API_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VA-API (简体中文)")
+*   [VDPAU](/index.php/VDPAU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VDPAU (简体中文)")
+
 **翻译状态：** 本文是英文页面 [XvMC](/index.php/XvMC "XvMC") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-01-27，点击[这里](https://wiki.archlinux.org/index.php?title=XvMC&diff=0&oldid=294620)可以查看翻译后英文页面的改动。
 
 **X-视频运动补偿 (XvMC)** 是一个X.Org Server的扩展。XvMC API可以让视频程序转移部分解码工作到GPU。Particularly, features that have the tendency of heavily depending on the processor. Since XvMC acceleration takes the load off the CPU, thereby reducing processor requirements for video playback, it is an ideal solution for HDTV video playback scenarios.

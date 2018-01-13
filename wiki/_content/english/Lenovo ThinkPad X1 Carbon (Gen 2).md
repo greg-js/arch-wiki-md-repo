@@ -29,6 +29,7 @@ Related articles
         *   [2.5.1 Automatically turn on backlight when typing](#Automatically_turn_on_backlight_when_typing)
     *   [2.6 Audio](#Audio)
     *   [2.7 Processor](#Processor)
+    *   [2.8 BIOS UPDATE](#BIOS_UPDATE)
 *   [3 Add ALSA-Preamplifier](#Add_ALSA-Preamplifier)
     *   [3.1 Network](#Network)
         *   [3.1.1 Wired](#Wired)
@@ -460,9 +461,7 @@ Specifiy the amount timeout for turning the backlight off again by adjusting the
 
 ### Audio
 
-Sound works out of the box. Uses the snd_hda_intel kernel module.
-
-You may need to add default sound card options to the module.
+Sound works out of the box. Uses the snd_hda_intel kernel module. You may need to add default sound card options to the module.
 
 In /etc/modprobe.d/alsa-base.conf include the following line:
 
@@ -471,6 +470,22 @@ options snd_hda_intel index=1
 ### Processor
 
 See [Microcode#Enabling Intel microcode updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode") how to update to processor's microcode.
+
+### BIOS UPDATE
+
+To install a BIOS update from linux, download the bootable iso from here:
+
+```
+[https://pcsupport.lenovo.com/fi/en/products/LAPTOPS-AND-NETBOOKS/THINKPAD-X-SERIES-LAPTOPS/THINKPAD-X1-CARBON-TYPE-20A7-20A8/downloads/DS039783](https://pcsupport.lenovo.com/fi/en/products/LAPTOPS-AND-NETBOOKS/THINKPAD-X-SERIES-LAPTOPS/THINKPAD-X1-CARBON-TYPE-20A7-20A8/downloads/DS039783)
+
+```
+
+Since there is no CD drive, this method can be used (German):
+
+```
+[http://thinkwiki.de/BIOS-Update_ohne_optisches_Laufwerk_unter_Linux#El_Torito_Image_auf_USB-Stick_.28nur_UEFI.29](http://thinkwiki.de/BIOS-Update_ohne_optisches_Laufwerk_unter_Linux#El_Torito_Image_auf_USB-Stick_.28nur_UEFI.29)
+
+```
 
 ## Add ALSA-Preamplifier
 

@@ -84,7 +84,7 @@ Os pacotes a seguir estão disponíveis:
 
 **Parrot VM** — Uma VM com suporte experimental para Java [[1]](http://trac.parrot.org/parrot/wiki/Languages) por meio de dois métodos diferentes: como um [tradutor de um *bytecode* de Java VM](http://code.google.com/p/parrot-jvm/) ou como um [compilador Java visando o Parrot VM](https://github.com/chrisdolan/perk).
 
-	[http://www.parrot.org/](http://www.parrot.org/) || [parrot](https://www.archlinux.org/packages/?name=parrot)
+	[http://www.parrot.org/](http://www.parrot.org/) || [parrot](https://aur.archlinux.org/packages/parrot/)
 
 **Nota:** Versões de 32 bits do Java SE podem ser localizados prefixando `bin32-`, (por exemplo, [bin32-jre](https://aur.archlinux.org/packages/bin32-jre/) e [bin32-jdk](https://aur.archlinux.org/packages/bin32-jdk/)). Elas usam [java32-runtime-common](https://aur.archlinux.org/packages/java32-runtime-common/), que funciona como [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) acrescentando `32` ao final (por exemplo, `java32`). A mesma analogia se aplica a [java32-environment-common](https://aur.archlinux.org/packages/java32-environment-common/), que é usado somente por pacotes de JDK de 32 bits.
 

@@ -94,7 +94,7 @@ pcmanfm -d &
 
 **Примечание:** Также будет необходимо включить [Bluetooth](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bluetooth (Русский)") и/или связь по сети с [Windows](/index.php/Samba_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Samba (Русский)") для того, чтобы задействовать соответствующую функциональность файлового менеджера.
 
-*   [obexfs](https://www.archlinux.org/packages/?name=obexfs): Монтирование устройств Bluetooth и передача файлов (смотрите [Bluetooth](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bluetooth (Русский)"))
+*   [obexfs](https://aur.archlinux.org/packages/obexfs/): Монтирование устройств Bluetooth и передача файлов (смотрите [Bluetooth](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bluetooth (Русский)"))
 *   [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb): Совместное использование принтеров и файлов Windows для **Не-KDE** рабочих сред (смотрите [Samba](/index.php/Samba_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Samba (Русский)"))
 *   [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing): Совместное использование принтеров и файлов Windows для [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)") (смотрите [Samba#KDE](/index.php/Samba_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#KDE "Samba (Русский)"))
 *   [gvfs-afp](https://www.archlinux.org/packages/?name=gvfs-afp): Совместное использование файлов и принтеров Apple

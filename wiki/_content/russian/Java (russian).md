@@ -210,7 +210,7 @@ exec */path/to/application*
 
 ### Parrot VM
 
-[Parrot](http://www.parrot.org/) является виртуальной машиной, предоставляющей экспериментальную [поддержку Java](http://trac.parrot.org/parrot/wiki/Languages), которая реализуется двумя способами: либо посредством [транслятора байт-кода](http://code.google.com/p/parrot-jvm/), либо с помощью [компилятора Java с поддержкой формата Parrot](https://github.com/chrisdolan/perk). Пакет [parrot](https://www.archlinux.org/packages/?name=parrot) доступен в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"), а [parrot-git](https://aur.archlinux.org/packages/parrot-git/) — в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)").
+[Parrot](http://www.parrot.org/) является виртуальной машиной, предоставляющей экспериментальную [поддержку Java](http://trac.parrot.org/parrot/wiki/Languages), которая реализуется двумя способами: либо посредством [транслятора байт-кода](http://code.google.com/p/parrot-jvm/), либо с помощью [компилятора Java с поддержкой формата Parrot](https://github.com/chrisdolan/perk). Пакет [parrot](https://aur.archlinux.org/packages/parrot/) доступен в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"), а [parrot-git](https://aur.archlinux.org/packages/parrot-git/) — в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)").
 
 ## Решение проблем
 

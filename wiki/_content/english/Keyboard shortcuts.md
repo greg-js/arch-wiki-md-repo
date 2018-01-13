@@ -135,7 +135,7 @@ The method suggested here uses three packages available in the [official reposit
 
 *   [xsel](https://www.archlinux.org/packages/?name=xsel) to give access to the x-selection-buffer content.
 *   [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") to bind a key-stroke to an action.
-*   [xvkbd](https://www.archlinux.org/packages/?name=xvkbd) to pass the buffer string to the application by emulating keyboard input.
+*   [xvkbd](https://aur.archlinux.org/packages/xvkbd/) to pass the buffer string to the application by emulating keyboard input.
 
 This example binds the x-selection-paste operation to the `F12` key:
 

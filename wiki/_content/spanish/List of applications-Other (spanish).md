@@ -212,7 +212,7 @@ Vea el artículo principal: [Xorg#Composite](/index.php/Xorg_(Espa%C3%B1ol)#Comp
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Panel de escritorio ligero compatible con NETWM.
 
-	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://www.archlinux.org/packages/?name=fbpanel)
+	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://aur.archlinux.org/packages/fbpanel/)
 
 *   **[GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")** — Panel incluido en el escritorio [GNOME Flashback](/index.php?title=GNOME_Flashback_(Espa%C3%B1ol)&action=edit&redlink=1 "GNOME Flashback (Español) (page does not exist)").
 

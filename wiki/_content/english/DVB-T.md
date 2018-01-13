@@ -64,7 +64,7 @@ Additionally, you should now see the adapter device under `/dev/dvb/adapter0`. S
 
 ## Utilities
 
-Various DVB utilities can be found in the [linuxtv-dvb-apps](https://www.archlinux.org/packages/?name=linuxtv-dvb-apps) package.
+Various DVB utilities can be found in the [linuxtv-dvb-apps](https://aur.archlinux.org/packages/linuxtv-dvb-apps/) package.
 
 ### Scanning
 

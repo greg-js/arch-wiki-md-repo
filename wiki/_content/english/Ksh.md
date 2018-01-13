@@ -33,14 +33,6 @@ More implementations are provided in the [Arch User Repository](/index.php/Arch_
 
 	[http://www.connochaetos.org/oksh/](http://www.connochaetos.org/oksh/) || [oksh](https://aur.archlinux.org/packages/oksh/)
 
-*   **obase** — OpenBSD userland ported to Linux, statically linked.
-
-	[https://github.com/chneukirchen/obase](https://github.com/chneukirchen/obase) || [obase-git](https://aur.archlinux.org/packages/obase-git/)
-
-*   **obase musl** — OpenBSD userland ported to Linux, statically linked to musl libc.
-
-	[https://github.com/chneukirchen/obase](https://github.com/chneukirchen/obase) || [obase-musl-git](https://aur.archlinux.org/packages/obase-musl-git/)
-
 ## Making m/ksh your default login shell
 
 Change the default shell for the current user:

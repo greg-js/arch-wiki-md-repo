@@ -246,7 +246,7 @@ mousewheel.default.delta_multiplier_x       -100
 
 **Note:** The following maybe redundant depending on whether xev detects all your mouse buttons correctly (functions can be mapped on a per-app basis) or you want to change the default behaviour.
 
-To do this we need to map keystrokes to the desired mouse buttons and install [xvkbd](https://www.archlinux.org/packages/?name=xvkbd) and [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys).
+To do this we need to map keystrokes to the desired mouse buttons and install [xvkbd](https://aur.archlinux.org/packages/xvkbd/) and [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys).
 
 In most modern applications which use back/forward features, XF86Back is mapped to back and XF86Forward is mapped to forward by default. On most MX mice the thumb buttons resolve to 8 & 9\. If your mouse is different, check button numbers using xev and replace the numbers used in the example (b:8 & b:9).
 
@@ -386,7 +386,7 @@ Go to *Action tab > Add action*, give the new action a name, as Type choose "Key
 
 ### xvkbd and xbindkeys
 
-Let us say we want to bind some mouse buttons to keyboard ones. The problem we will encounter is that we do not know how to emulate a key press. Here comes in handy [xvkbd](https://www.archlinux.org/packages/?name=xvkbd). We can use it along with [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys).
+Let us say we want to bind some mouse buttons to keyboard ones. The problem we will encounter is that we do not know how to emulate a key press. Here comes in handy [xvkbd](https://aur.archlinux.org/packages/xvkbd/). We can use it along with [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys).
 
 ```
 $ xbindkeys --defaults >> ~/.xbindkeysrc
@@ -554,7 +554,7 @@ None, Thumb2, Alt_L|Right
 
 ```
 
-[lomoco](https://www.archlinux.org/packages/?name=lomoco) for Logitech MX mice will help you set the proper resolution, enable or disable smart scroll (with boot time support too!), etc. lomoco is available from the `[community]` repository and can be installed with the following command:
+[lomoco](https://aur.archlinux.org/packages/lomoco/) for Logitech MX mice will help you set the proper resolution, enable or disable smart scroll (with boot time support too!), etc. lomoco is available from the `[community]` repository and can be installed with the following command:
 
 Be sure to look at `/etc/udev/lomoco_mouse.conf` and set up the the options you want to be automatically applied when the mouse gets loaded by [udev](/index.php/Udev "Udev").
 

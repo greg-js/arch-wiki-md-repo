@@ -293,7 +293,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Un leggero pannello per il desktop, NETWM compliant.
 
-	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://www.archlinux.org/packages/?name=fbpanel)
+	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://aur.archlinux.org/packages/fbpanel/)
 
 *   **[GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")** — Pannello incluso nell'ambiente desktop [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback").
 

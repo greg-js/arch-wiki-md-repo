@@ -128,7 +128,7 @@ First you need to install [pidgin-otr](https://www.archlinux.org/packages/?name=
 
 ### Pidgin-Encryption
 
-[pidgin-encryption](https://www.archlinux.org/packages/?name=pidgin-encryption) transparently encrypts your instant messages with RSA encryption. Easy-to-use, but very secure.
+[pidgin-encryption](https://aur.archlinux.org/packages/pidgin-encryption/) transparently encrypts your instant messages with RSA encryption. Easy-to-use, but very secure.
 
 You can enable it the same way as Pidgin-OTR.
 
@@ -147,7 +147,6 @@ Arch has other Pidgin-related packages. Here are the most popular (for a thoroug
 *   [pidgin-libnotify](https://www.archlinux.org/packages/?name=pidgin-libnotify) - Libnotify support, for theme-consistent notifications
 *   [purple-libnotify-plus](https://aur.archlinux.org/packages/purple-libnotify-plus/) - Notifications with Libnotify which does work with notify-osd. It might matter for WMs without DE, like i3, the original pidgin-libnotify instead uses plain messagebox there.
 *   [guifications](https://www.archlinux.org/packages/?name=guifications) - Toaster-style popup notifications
-*   [microblog-purple](https://aur.archlinux.org/packages/microblog-purple/) - Libpurple plug-in supporting microblog services like Twitter
 *   [pidgin-latex](https://aur.archlinux.org/packages/pidgin-latex/) - A small latex plugin for pidgin. Put math between $$ and have it rendered (recepient also needs to have this installed)
 
 ## Auto logout on suspend

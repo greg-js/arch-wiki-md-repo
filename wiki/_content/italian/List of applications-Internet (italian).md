@@ -149,7 +149,7 @@ Alcuni client elencati in seguito (incluso Pidgin e tutti i suoi forks) supporta
 
 *   **[naim](https://en.wikipedia.org/wiki/naim_(software) "wikipedia:naim (software)")** — Client ncurses per chat con supporto per AOL, ICQ, IRC and the Lily CMC.
 
-	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://www.archlinux.org/packages/?name=naim)
+	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://aur.archlinux.org/packages/naim/)
 
 *   **pork** — Client progammabile basato su ncurses per AIM e IRC che assomiglia nel look a ircII.
 
@@ -207,7 +207,7 @@ See also [Wikipedia:Comparison of instant messaging clients#XMPP-related feature
 
 *   **Freetalk** — Client jabber console-based.
 
-	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://www.archlinux.org/packages/?name=freetalk)
+	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://aur.archlinux.org/packages/freetalk/)
 
 *   **jabber.el** — Client jabber minimale per [Emacs](/index.php/Emacs "Emacs").
 
@@ -373,7 +373,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Linphone](https://en.wikipedia.org/wiki/Linphone "wikipedia:Linphone")** — Applicazione per telefonate VoIP che permette di comunicare liberamente con le persone tramite internet, con supporto, voce, video e di messaggistica.
 
-	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://www.archlinux.org/packages/?name=linphone)
+	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://aur.archlinux.org/packages/linphone/)
 
 *   **Minisip** — SIP User Agent incentrato sulla sicurezza (supporta TLS, end-to-end security, SRTP, MIKEY (DH, PSK, PKE)).
 
@@ -775,7 +775,7 @@ See also [Wikipedia:List of content management systems](https://en.wikipedia.org
 
 *   **Nanoblogger** — Piccolo motore weblog scritto in Bash per la riga di comando. Utilizza strumenti comuni di UNIX come cat, grep, sed per creare contenuti HTML statici.
 
-	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://www.archlinux.org/packages/?name=nanoblogger)
+	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://aur.archlinux.org/packages/nanoblogger/)
 
 ### Client per microblogging
 

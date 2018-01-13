@@ -86,7 +86,6 @@ Applications below do not use Gtk+/Qt input module:
 ### Others
 
 *   [fcitx-ui-light](https://www.archlinux.org/packages/?name=fcitx-ui-light), light UI for fcitx.
-*   [fcitx-fbterm](https://www.archlinux.org/packages/?name=fcitx-fbterm), for Fbterm support.
 *   [fcitx-table-extra](https://www.archlinux.org/packages/?name=fcitx-table-extra), extra table.
 *   [fcitx-table-other](https://www.archlinux.org/packages/?name=fcitx-table-other), tables for Latex, Emoji and others.
 *   [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx), KDE configuration module for fcitx.

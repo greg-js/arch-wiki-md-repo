@@ -371,7 +371,7 @@ load-module module-dbus-protocol
 
 ### AlsaMixer.app
 
-Сделайте [alsamixer.app](https://aur.archlinux.org/packages/alsamixer.app/) dockapp для использования pulseaudio [windowmaker](https://www.archlinux.org/packages/?name=windowmaker), например:
+Сделайте [alsamixer.app](https://aur.archlinux.org/packages/alsamixer.app/) dockapp для использования pulseaudio [windowmaker](https://aur.archlinux.org/packages/windowmaker/), например:
 
 ```
 $ AlsaMixer.app --device pulse

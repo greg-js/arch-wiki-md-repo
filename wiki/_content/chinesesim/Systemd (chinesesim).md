@@ -609,7 +609,7 @@ systemd 提供了 socket `/run/systemd/journal/syslog`，以兼容传统日志�
 
 `journald.conf` 使用 `no` 转发socket . 为了使 *syslog-ng* 配合 *journald* , 你需要在 `/etc/systemd/journald.conf` 中设置 `ForwardToSyslog=yes` . 参阅 [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") 了解更多细节.
 
-如果你选择使用 [rsyslog](https://www.archlinux.org/packages/?name=rsyslog) , 因为 [rsyslog](/index.php/Rsyslog "Rsyslog") 从日志中 [直接](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald) 传出消息,所以不再必要改变那个选项..
+如果你选择使用 [rsyslog](https://aur.archlinux.org/packages/rsyslog/) , 因为 [rsyslog](/index.php/Rsyslog "Rsyslog") 从日志中 [直接](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald) 传出消息,所以不再必要改变那个选项..
 
 设置开机启动 syslog-ng：
 

@@ -323,7 +323,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **ROXTerm** — 有 Tab 机制。
 
-	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://www.archlinux.org/packages/?name=roxterm)
+	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://aur.archlinux.org/packages/roxterm/)
 
 *   **sakura** — 基于 GTK+ 和 VTE.
 

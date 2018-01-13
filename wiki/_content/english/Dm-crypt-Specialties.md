@@ -584,19 +584,13 @@ To finish, following [dm-crypt/Encrypting an entire system#Post-installation](/i
 
 Rather than embedding the `header.img` and keyfile into the [initramfs](/index.php/Mkinitcpio "Mkinitcpio") image, this setup will make your system depend entirely on the usb key rather than just the image to boot, and on the encrypted keyfile inside of the encrypted boot partition. Since the header and keyfile are not included in the [initramfs](/index.php/Mkinitcpio "Mkinitcpio") image and the custom encrypt hook is specifically for the usb's [by-id](/index.php/Persistent_block_device_naming#by-id_and_by-path "Persistent block device naming"), you will literally need the usb key to boot.
 
-This is assuming you are doing a new Arch install and not coming from an existing unencrypted install, but in that case you could adapt this. Consider putting `customencrypthook` on a USB or SD card and mount that during the install to get the files without having to type it out yourself.
-
 For the usb drive, since you are encrypting the drive and the keyfile inside, it is preferred to cascade the ciphers as to not use the same one twice. Whether a [meet-in-the-middle](https://en.wikipedia.org/wiki/Meet-in-the-middle_attack "wikipedia:Meet-in-the-middle attack") attack would actually be feasible is debatable. You can do twofish-serpent or serpent-twofish.
-
-You can name the device and file names such as `enc`, `store`, `cryptboot`, `lukskey`, `key.img`, or `header.img` anything you want.
 
 ### Preparing the disk devices
 
-First, make sure to run `lsblk` to find out what your block device mappings are. You are overwriting all the data, so if there are files you need copy them or image them with Clonezilla to a different drive and leave that one unplugged.
-
 `sdb` will be assumed to be the USB drive, `sda` will be assumed to be the main hard drive.
 
-Choose an option from [Overwrite the target](/index.php/Securely_wipe_disk#Overwrite_the_target "Securely wipe disk"), or use [Drive preparation](/index.php/Dm-crypt/Drive_preparation#dm-crypt_specific_methods "Dm-crypt/Drive preparation") to overwrite the devices with random data.
+Prepare the devices according to [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
 
 #### Preparing the USB key
 
@@ -624,9 +618,7 @@ Before running `cryptsetup`, look at the [Encryption options for LUKS mode](/ind
 
 *filesize* is in bytes but can be followed by a suffix such as `M`. Having too small of a file will get you a nasty `Requested offset is beyond real size of device /dev/loop0` error. As a rough reference, creating a 4M file will encrypt it successfully. You should make the file larger than the space needed since the encrypted loop device will be a little smaller than the file's size.
 
-With a big file, you can use `--keyfile-offset=*offset*` and `--keyfile-size=*size*` to navigate to the correct position.
-
-Shoutout to the [Gentoo Wiki](https://wiki.gentoo.org/wiki/Custom_Initramfs#Encrypted_keyfile) for showing how to do this easily and [this thread](https://bbs.archlinux.org/viewtopic.php?id=193451) from the Arch Linux forums for the inspiration. And the [Gentoo Wiki again](https://wiki.gentoo.org/wiki/Talk:Dm-crypt_full_disk_encryption) for explaining the size issue.
+With a big file, you can use `--keyfile-offset=*offset*` and `--keyfile-size=*size*` to navigate to the correct position. [[5]](https://wiki.gentoo.org/wiki/Custom_Initramfs#Encrypted_keyfile) [[6]](https://bbs.archlinux.org/viewtopic.php?id=193451)
 
 Now you should have `lukskey` opened in a loop device (underneath `/dev/loop1`), mapped as `/dev/mapper/lukskey`.
 
@@ -646,8 +638,6 @@ Pick an *offset* and *size* in bytes (8192 bytes is the maximum keyfile size for
 # umount /mnt
 
 ```
-
-If it complains about being busy make sure `lukskey` container is closed then `ps -efw` to find hanged processes and their PIDs to kill with `kill -9 <PID>`.
 
 Follow [Preparing the logical volumes](/index.php/Dm-crypt/Encrypting_an_entire_system#Preparing_the_logical_volumes "Dm-crypt/Encrypting an entire system") to set up LVM on LUKS.
 

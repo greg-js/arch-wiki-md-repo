@@ -4,7 +4,7 @@ Source: [project home](http://quvi.sourceforge.net/)
 
 ## Installation
 
-Install [quvi](https://www.archlinux.org/packages/?name=quvi) from [community](/index.php/Official_repositories "Official repositories").
+Install [quvi](https://aur.archlinux.org/packages/quvi/) from [community](/index.php/Official_repositories "Official repositories").
 
 ## Usage
 

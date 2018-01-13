@@ -128,9 +128,9 @@ Enter the chroot
 # cd /tmp/root.x86_64
 # cp /etc/resolv.conf etc
 # mount -t proc /proc proc
-# mount --rbind /sys sys
-# mount --rbind /dev dev
-# mount --rbind /run run    # (assuming /run exists on the system)
+# mount --make-rslave --rbind /sys sys
+# mount --make-rslave --rbind /dev dev
+# mount --make-rslave --rbind /run run    # (assuming /run exists on the system)
 # chroot /tmp/root.x86_64 /bin/bash
 
 ```

@@ -84,7 +84,7 @@ See [Map scancodes to keycodes](/index.php/Map_scancodes_to_keycodes#Using_udev 
 
 Once you've applied the above fix you can set the function and arrow keys to act similar to how they are in ChromeOS using a modifer key. The example below uses Mod4 (Search on the chromebook's keyboard). This can be changed to Control or Alt if you prefer.
 
-First make sure you have all the needed packages: [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys), [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight), [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils), [xvkbd](https://www.archlinux.org/packages/?name=xvkbd), [xdotool](https://www.archlinux.org/packages/?name=xdotool).
+First make sure you have all the needed packages: [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys), [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight), [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils), [xvkbd](https://aur.archlinux.org/packages/xvkbd/), [xdotool](https://www.archlinux.org/packages/?name=xdotool).
 
 Create `.xbindkeysrc` in your home folder:
 

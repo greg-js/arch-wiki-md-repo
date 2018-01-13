@@ -22,7 +22,7 @@ Most programs require libraries to function. Libraries can be integrated into a 
 
 All settings are in `/etc/prelink.conf`.
 
-**Note:** Some proprietary binaries will crash with prelink (such as Flash, Skype, Nvidia proprietary driver). You can add these to the exclude list in `/etc/prelink.conf`.
+**Note:** Some proprietary binaries will crash with prelink (such as Flash, Nvidia proprietary driver). You can add these to the exclude list in `/etc/prelink.conf`.
 
 ## Usage
 
@@ -43,10 +43,6 @@ Taken from the [discussion page](/index.php/Talk:Prelink#Exclude_list "Talk:Prel
 
  `/etc/prelink.conf` 
 ```
-# Skype
--b /usr/lib32/skype/skype
--b /usr/lib/skype/skype
-
 # Flash Player Plugin
 -b /usr/lib/mozilla/plugins/libflashplayer.so
 

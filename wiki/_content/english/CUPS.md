@@ -309,15 +309,15 @@ If your user does not have sufficient privileges to administer CUPS, the applica
 
 *   **print-manager** — A tool for managing print jobs and printers ([KDE](/index.php/KDE "KDE")).
 
-	[https://projects.kde.org/projects/kde/kdeutils/print-manager](https://projects.kde.org/projects/kde/kdeutils/print-manager) || [print-manager](https://www.archlinux.org/packages/?name=print-manager)
+	[https://cgit.kde.org/print-manager.git](https://cgit.kde.org/print-manager.git) || [print-manager](https://www.archlinux.org/packages/?name=print-manager)
 
-*   **system-config-printer** — A CUPS printer configuration tool and status applet ([GNOME](/index.php/GNOME "GNOME") and others)
+*   **system-config-printer** — A GTK+ printer configuration tool and status applet
 
 	[http://cyberelk.net/tim/software/system-config-printer/](http://cyberelk.net/tim/software/system-config-printer/) || [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer)
 
-*   **gtklp** — GTK+ interface to CUPS.
+*   **gtklp** — GTK+ interface
 
-	[http://gtklp.sirtobi.com/index.shtml](http://gtklp.sirtobi.com/index.shtml) || [gtklp](https://aur.archlinux.org/packages/gtklp/)
+	[https://gtklp.sirtobi.com/index.shtml](https://gtklp.sirtobi.com/index.shtml) || [gtklp](https://aur.archlinux.org/packages/gtklp/)
 
 ## Configuration
 

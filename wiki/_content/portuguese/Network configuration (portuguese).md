@@ -16,8 +16,8 @@ Esta página explica como configurar uma conexão **cabeada**. Se você deseja c
     *   [2.1 Verificando o estado](#Verificando_o_estado)
     *   [2.2 Carregando o módulo](#Carregando_o_m.C3.B3dulo)
 *   [3 Gerenciamento de rede](#Gerenciamento_de_rede)
-    *   [3.1 Nomes de dispositivo](#Nomes_de_dispositivo)
-        *   [3.1.1 Obtendo nomes atuais de dispositivos](#Obtendo_nomes_atuais_de_dispositivos)
+    *   [3.1 Interfaces de rede](#Interfaces_de_rede)
+        *   [3.1.1 Obtendo nomes atuais de interfaces](#Obtendo_nomes_atuais_de_interfaces)
         *   [3.1.2 Habilitando e desabilitando interfaces de rede](#Habilitando_e_desabilitando_interfaces_de_rede)
     *   [3.2 Endereço IP dinâmico](#Endere.C3.A7o_IP_din.C3.A2mico)
     *   [3.3 Endereço IP estático](#Endere.C3.A7o_IP_est.C3.A1tico)
@@ -128,33 +128,15 @@ Caso o udev não detecte ou não carregue o módulo de forma apropriada e automa
 
 ## Gerenciamento de rede
 
-### Nomes de dispositivo
+### Interfaces de rede
 
-Para computadores que possuem múltiplas interfaces de rede, é importante ter nomes de dispositivo fixos. Muitos problemas de configuração são causados pela alteração de nomes de interface.
+Para computadores que possuem várias placas de rede, é importante ter nomes de interface fixos. Muitos problemas de configuração são causados pela alteração de nomes de interface.
 
-O [udev](/index.php/Udev "Udev") é o responsável por qual nome um dispositivo deve receber. O systemd usa [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames), o que automaticamente atribui nomes estáticos a dispositivos de rede. Interfaces são agora prefixadas com `en` (cabeada/[Ethernet](https://en.wikipedia.org/wiki/pt:Ethernet "w:pt:Ethernet")), `wl` (sem fio/wireless/WLAN) ou `ww` ([WWAN](https://en.wikipedia.org/wiki/pt:Rede_de_longa_dist%C3%A2ncia_sem_fio "w:pt:Rede de longa distância sem fio")) seguido por um identificador gerado automaticamente, criando uma entrada similar a `enp0s25`.
+O [udev](/index.php/Udev "Udev") é o responsável por atribuir nomes para cada dispositivo. O systemd usa [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames), o que automaticamente atribui nomes estáticos a dispositivos de rede. Interfaces são agora prefixadas com `en` (cabeada/[Ethernet](https://en.wikipedia.org/wiki/pt:Ethernet "w:pt:Ethernet")), `wl` (sem fio/wireless/WLAN) ou `ww` ([WWAN](https://en.wikipedia.org/wiki/pt:Rede_de_longa_dist%C3%A2ncia_sem_fio "w:pt:Rede de longa distância sem fio")) seguido por um identificador gerado automaticamente, criando uma entrada similar a `enp0s25`.
 
-**Dica:** Este comportamento pode ser desabilitado adicionando `net.ifnames=0` aos [parâmetros do kernel](/index.php/Kernel_parameters "Kernel parameters").
+#### Obtendo nomes atuais de interfaces
 
-**Nota:** Ao alterar o esquema de nomes de interface, não se esqueça de atualizar todos os arquivos de configuração relacionados a rede e arquivos personalizados de unit de systemd para refletir a alteração.
-
-#### Obtendo nomes atuais de dispositivos
-
-Ambos nomes de dispositivos com e sem fio podem ser descobertos via:
-
-```
-$ ls /sys/class/net
-
-```
-
-ou
-
-```
-$ ip link
-
-```
-
-Note que `lo` é o [dispositivo *loop* ou de laço](https://en.wikipedia.org/wiki/pt:Loop_device "w:pt:Loop device") e não é usado para fazer conexões de rede.
+Ambos nomes de interfaces com e sem fio podem ser descobertos por meio de `ls /sys/class/net` ou `ip link`. Note que `lo` é o [dispositivo *loop* ou de laço](https://en.wikipedia.org/wiki/pt:Loop_device "w:pt:Loop device") e não é usado para fazer conexões de rede.
 
 Nomes de dispositivos sem fio também podem ser obtidos usando `iw dev`. Veja também [Wireless network configuration#Get the name of the interface](/index.php/Wireless_network_configuration#Get_the_name_of_the_interface "Wireless network configuration").
 
@@ -381,6 +363,8 @@ Para um sistema com um endereço IP permanente, esse endereço IP permanente dev
 
 ### Alterando o nome do dispositivo
 
+**Nota:** Ao alterar o esquema de nomes de interface, não se esqueça de atualizar todos os arquivos de configuração relacionados a rede e arquivos personalizados de unit de systemd para refletir a alteração.
+
 Você pode alterar o nome de um dispositivo definindo o nome em uma regra de udev. Exemplo:
 
  `/etc/udev/rules.d/10-network.rules` 
@@ -420,6 +404,8 @@ Se você preferir manter os nomes de interface tradicionais, como eth0, [Predict
  # ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
 
 ```
+
+Alternativamente, adicione `net.ifnames=0` aos [parâmetros do kernel](/index.php/Kernel_parameters "Kernel parameters").
 
 ### Definindo o MTU do dispositivo e o tamanho da fila
 

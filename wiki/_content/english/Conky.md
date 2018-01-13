@@ -560,7 +560,7 @@ See [[2]](https://gist.github.com/anonymous/85d052c0c23e58bc3666).
 
 ## A note about symbolic fonts
 
-Many of the more decorated `conky.conf`'s use the fonts PizzaDude Bullets and Pie Charts for Maps. They are available from the AUR as [ttf-pizzadude-bullets](https://aur.archlinux.org/packages/ttf-pizzadude-bullets/) and [ttf-piechartsformaps](https://aur.archlinux.org/packages/ttf-piechartsformaps/) respectively, or they can be found and downloaded with a quick search and manually installed using the instructions in [Fonts](/index.php/Fonts "Fonts").
+Many of the more decorated `conky.conf`'s use the PizzaDude Bullets font. Install it with the [ttf-pizzadude-bullets](https://aur.archlinux.org/packages/ttf-pizzadude-bullets/) package.
 
 ## Universal method to enable true transparency
 

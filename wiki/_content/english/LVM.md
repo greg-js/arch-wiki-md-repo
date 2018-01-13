@@ -149,7 +149,7 @@ Quick overview:
 *   Continue with [Installation guide#Format the partitions](/index.php/Installation_guide#Format_the_partitions "Installation guide").
 *   When you reach the “Create initial ramdisk environment” step in the Installation guide, add the `lvm` hook to `/etc/mkinitcpio.conf` (see below for details).
 
-**Warning:** `/boot` cannot reside in LVM when using a boot loader which does not support LVM, you must create a separate `/boot` partition and format it directly. Only [GRUB](/index.php/GRUB "GRUB") is known to support LVM.
+**Warning:** `/boot` cannot reside in LVM when using a boot loader which does not support LVM; you must create a separate `/boot` partition and format it directly. Only [GRUB](/index.php/GRUB "GRUB") is known to support LVM.
 
 ### Create partitions
 

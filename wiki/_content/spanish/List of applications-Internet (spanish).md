@@ -159,7 +159,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[naim](https://en.wikipedia.org/wiki/naim_(software) "wikipedia:naim (software)")** — Cliente de chat basado en ncurses con soporte para AOL, ICQ, IRC y Lily CMC.
 
-	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://www.archlinux.org/packages/?name=naim)
+	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://aur.archlinux.org/packages/naim/)
 
 *   **pork** — Cliente de IRC y mensajería instantánea programable, basado en ncurses que se comporta como ircII.
 
@@ -221,7 +221,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **Freetalk** — Cliente Jabber basado en consola.
 
-	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://www.archlinux.org/packages/?name=freetalk)
+	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://aur.archlinux.org/packages/freetalk/)
 
 *   **jabber.el** — Cliente Jabber minimalista para [Emacs](/index.php/Emacs "Emacs").
 
@@ -391,7 +391,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Linphone](https://en.wikipedia.org/wiki/Linphone "wikipedia:Linphone")** — Aplicación de telefonía VoIP que permite comunicarse libremenete con otras personas a través de internet, con soporte de voz, vídeo y mensajería instantánea de texto.
 
-	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://www.archlinux.org/packages/?name=linphone)
+	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://aur.archlinux.org/packages/linphone/)
 
 *   **Minisip** — Agente de usuario para SIP enfocado a la seguridad (compatible con TLS, seguridad end-to-end, SRTP, MIKEY (DH, PSK, PKE)).
 
@@ -801,7 +801,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **Nanoblogger** — Un pequeño motor de weblog escrito en Bash para la línea de órdenes. Utiliza las herramientas comunes de Unix, como cat, grep y sed, para crear contenido HTML estático.
 
-	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://www.archlinux.org/packages/?name=nanoblogger)
+	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://aur.archlinux.org/packages/nanoblogger/)
 
 ### Clientes de microblogging
 

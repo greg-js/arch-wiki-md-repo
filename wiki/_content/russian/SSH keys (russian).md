@@ -495,7 +495,7 @@ alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_ecd
 
 ### envoy
 
-Альтернативой keychain является [envoy](https://github.com/vodik/envoy). Envoy доступен в пакете [envoy](https://www.archlinux.org/packages/?name=envoy) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Также можно воспользоваться Git-версией из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"), установив пакет [envoy-git](https://aur.archlinux.org/packages/envoy-git/).
+Альтернативой keychain является [envoy](https://github.com/vodik/envoy). Envoy доступен в пакете [envoy](https://aur.archlinux.org/packages/envoy/) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Также можно воспользоваться Git-версией из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"), установив пакет [envoy-git](https://aur.archlinux.org/packages/envoy-git/).
 
 После установки включите сокет командой
 
@@ -516,7 +516,7 @@ alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_ecd
 
 #### envoy с паролями ключей, хранящимися в kwallet
 
-Если вы установили длинные пароли для ваших ключей SSH, возможно, вам будет трудно их помнить. Давайте сделаем так, чтобы этим занимался kwallet! Помимо пакета [envoy](https://www.archlinux.org/packages/?name=envoy) установите [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) и [kdeutils-kwalletmanager](https://www.archlinux.org/packages/?name=kdeutils-kwalletmanager) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). После этого включите сокет envoy в systemd (см. выше).
+Если вы установили длинные пароли для ваших ключей SSH, возможно, вам будет трудно их помнить. Давайте сделаем так, чтобы этим занимался kwallet! Помимо пакета [envoy](https://aur.archlinux.org/packages/envoy/) установите [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) и [kdeutils-kwalletmanager](https://www.archlinux.org/packages/?name=kdeutils-kwalletmanager) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). После этого включите сокет envoy в systemd (см. выше).
 
 Создайте скрипт `~/.kde4/Autostart/ssh-agent.sh`:
 

@@ -542,7 +542,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[naim](https://en.wikipedia.org/wiki/ru:Naim "wikipedia:ru:Naim")** — Ncurses-клиент с поддержкой AOL, ICQ, IRC и Lily CMC
 
-	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://www.archlinux.org/packages/?name=naim)
+	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://aur.archlinux.org/packages/naim/)
 
 *   **pork** — Программируемый, основанный на ncurses клиент AIM и IRC, похожий на ircII
 
@@ -602,7 +602,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Freetalk** — Консольный клиент Jabber
 
-	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://www.archlinux.org/packages/?name=freetalk)
+	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://aur.archlinux.org/packages/freetalk/)
 
 *   **jabber.el** — Минималистичный клиент Jabber для [Emacs](/index.php/Emacs "Emacs")
 
@@ -774,7 +774,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Linphone](https://en.wikipedia.org/wiki/ru:Linphone "wikipedia:ru:Linphone")** — Приложение VoIP, позволяющее вам свободно общаться с людьми через интернет при помощи аудио-, видеозвонков и мгновенных сообщений
 
-	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://www.archlinux.org/packages/?name=linphone)
+	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://aur.archlinux.org/packages/linphone/)
 
 *   **Minisip** — Агент пользователя (User Agent) SIP с акцентом на безопасность (поддерживает TLS, безопасность end-to-end, SRTP, MIKEY (DH, PSK, PKE))
 
@@ -982,7 +982,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Nanoblogger** — Небольшой движок для блогов, написанный на Bash для командной строки. Использует для создания статичного HTML-контента общие для UNIX инструменты, такие как cat, grep и sed. Более не разрабатывается
 
-	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://www.archlinux.org/packages/?name=nanoblogger)
+	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://aur.archlinux.org/packages/nanoblogger/)
 
 *   **[Wordpress](/index.php/Wordpress "Wordpress")** — Простая в настройке и администрировании система управления контентом FLOSS, главную роль в которой играет сильное и яркое сообщество, с тысячами плагинов и тем оформления
 

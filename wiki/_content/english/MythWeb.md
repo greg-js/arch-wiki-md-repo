@@ -17,7 +17,7 @@ MythWeb is a web interface for [MythTV](/index.php/MythTV "MythTV")
 
 Before installing MythWeb, first set up Apache with PHP as described in [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") and [Apache HTTP Server#PHP](/index.php/Apache_HTTP_Server#PHP "Apache HTTP Server").
 
-Install the [mythplugins-mythweb](https://www.archlinux.org/packages/?name=mythplugins-mythweb) package.
+Install the [mythplugins-mythweb](https://aur.archlinux.org/packages/mythplugins-mythweb/) package.
 
 ### Link to the Video Directory
 

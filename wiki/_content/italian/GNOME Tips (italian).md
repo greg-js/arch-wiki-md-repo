@@ -250,7 +250,7 @@ sudo pacman -S mutagen
 
 ```
 
-E da AUR, [python-nautilus](https://aur.archlinux.org/packages/python-nautilus/)
+E da AUR, [python-nautilus](https://www.archlinux.org/packages/?name=python-nautilus)
 
 ```
 wget [https://aur.archlinux.org/packages/python-nautilus/python-nautilus.tar.gz](https://aur.archlinux.org/packages/python-nautilus/python-nautilus.tar.gz)

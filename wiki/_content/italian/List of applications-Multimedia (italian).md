@@ -51,7 +51,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **fbv** — Visualizzatore di immagini che sfrutta il framebuffer.
 
-	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://www.archlinux.org/packages/?name=fbv)
+	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://aur.archlinux.org/packages/fbv/)
 
 *   **fim** — Visualizzatore di immagini che sfrutta il framebuffer, altamente configurabile e basato su fbi.
 
@@ -81,7 +81,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Gimmage** — Visualizzatore di immagini che usa gtkmm.
 
-	[http://directory.fsf.org/wiki/Gimmage](http://directory.fsf.org/wiki/Gimmage) || [gimmage](https://www.archlinux.org/packages/?name=gimmage)
+	[http://directory.fsf.org/wiki/Gimmage](http://directory.fsf.org/wiki/Gimmage) || [gimmage](https://aur.archlinux.org/packages/gimmage/)
 
 *   **GpicView** — Semplice e veloce visore di immagini per X. Creato dagli sviluppatori di [LXDE](/index.php/LXDE_(Italiano) "LXDE (Italiano)").
 
@@ -101,7 +101,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Mirage** — Visualizzatore di immagini, scritto in pyGTK, con supporto per ritagliare e ridimensionare, azioni personalizzate e un pannello delle miniature.
 
-	[http://mirageiv.berlios.de](http://mirageiv.berlios.de) || [mirage](https://www.archlinux.org/packages/?name=mirage)
+	[http://mirageiv.berlios.de](http://mirageiv.berlios.de) || [mirage](https://aur.archlinux.org/packages/mirage/)
 
 *   **nomacs** — nomacs è un visualizzatore di immagini gratuito ( Qt ) per Windows, Linux e Mac , che viene concesso sotto la licenza GPL v3.
 
@@ -514,7 +514,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **ripperX** — Programma GTK+ per il ripping e la codifica di file MP3.
 
-	[http://sourceforge.net/projects/ripperx/](http://sourceforge.net/projects/ripperx/) || [ripperx](https://www.archlinux.org/packages/?name=ripperx)
+	[http://sourceforge.net/projects/ripperx/](http://sourceforge.net/projects/ripperx/) || [ripperx](https://aur.archlinux.org/packages/ripperx/)
 
 *   **rubyripper** — Applicazione che cerca di fornire una registrazione sicura attraverso un ripping multiplo della stessa traccia. Effettua la correzione di eventuali differenze.
 
@@ -558,7 +558,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **ID3 Mass Tagger** — Utility da riga di comando per modificare i tag ID3 1.x e 2.x.
 
-	[http://freecode.com/projects/id3](http://freecode.com/projects/id3) || [id3](https://www.archlinux.org/packages/?name=id3)
+	[http://freecode.com/projects/id3](http://freecode.com/projects/id3) || [id3](https://aur.archlinux.org/packages/id3/)
 
 *   **Kid3** — Editor di tag per file MP3, Ogg/Vorbis, FLAC, MPC, MP4/AAC, MP2, Speex, TrueAudio, WavPack, WMA, WAV e AIFF.
 
@@ -764,7 +764,7 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 *   **[GCstar](https://en.wikipedia.org/wiki/GCstar "wikipedia:GCstar")** — Applicazione GNOME per organizzare svariate collezioni (giochi da tavolo, fumetti, film, riviste, etc.).
 
-	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://www.archlinux.org/packages/?name=gcstar)
+	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://aur.archlinux.org/packages/gcstar/)
 
 *   **[Koha](https://en.wikipedia.org/wiki/Koha_(software) "wikipedia:Koha (software)")** — Integrated Library System (ILS) open source, utilizzata in tutto il mondo da servizi pubblici, scuole e librerie speciali.
 

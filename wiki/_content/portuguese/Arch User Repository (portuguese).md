@@ -19,21 +19,21 @@ Um bom número de novos pacotes que entram para os repositórios oficiais inicia
 
 *   [1 Começando](#Come.C3.A7ando)
 *   [2 História](#Hist.C3.B3ria)
-*   [3 Pesquisando](#Pesquisando)
-*   [4 Instalando pacotes](#Instalando_pacotes)
-    *   [4.1 Pré-requisitos](#Pr.C3.A9-requisitos)
-    *   [4.2 Obtendo arquivos de compilação](#Obtendo_arquivos_de_compila.C3.A7.C3.A3o)
-    *   [4.3 Compilando e instalando o pacote](#Compilando_e_instalando_o_pacote)
-*   [5 Feedback](#Feedback)
-*   [6 Compartilhando e mantendo pacotes](#Compartilhando_e_mantendo_pacotes)
-    *   [6.1 Enviando pacotes](#Enviando_pacotes)
-        *   [6.1.1 Regras de envio](#Regras_de_envio)
-        *   [6.1.2 Autenticação](#Autentica.C3.A7.C3.A3o)
-        *   [6.1.3 Criando um novo pacote](#Criando_um_novo_pacote)
-        *   [6.1.4 Enviando pacotes](#Enviando_pacotes_2)
-    *   [6.2 Mantendo pacotes](#Mantendo_pacotes)
-    *   [6.3 Outras requisições](#Outras_requisi.C3.A7.C3.B5es)
-*   [7 Repositórios Git para pacotes AUR3](#Reposit.C3.B3rios_Git_para_pacotes_AUR3)
+*   [3 Repositórios Git para pacotes AUR3](#Reposit.C3.B3rios_Git_para_pacotes_AUR3)
+*   [4 Pesquisando](#Pesquisando)
+*   [5 Instalando pacotes](#Instalando_pacotes)
+    *   [5.1 Pré-requisitos](#Pr.C3.A9-requisitos)
+    *   [5.2 Obtendo arquivos de compilação](#Obtendo_arquivos_de_compila.C3.A7.C3.A3o)
+    *   [5.3 Compilando e instalando o pacote](#Compilando_e_instalando_o_pacote)
+*   [6 Feedback](#Feedback)
+*   [7 Compartilhando e mantendo pacotes](#Compartilhando_e_mantendo_pacotes)
+    *   [7.1 Enviando pacotes](#Enviando_pacotes)
+        *   [7.1.1 Regras de envio](#Regras_de_envio)
+        *   [7.1.2 Autenticação](#Autentica.C3.A7.C3.A3o)
+        *   [7.1.3 Criando um novo pacote](#Criando_um_novo_pacote)
+        *   [7.1.4 Enviando pacotes](#Enviando_pacotes_2)
+    *   [7.2 Mantendo pacotes](#Mantendo_pacotes)
+    *   [7.3 Outras requisições](#Outras_requisi.C3.A7.C3.B5es)
 *   [8 Tradução da interface web](#Tradu.C3.A7.C3.A3o_da_interface_web)
 *   [9 Sintaxe de comentário](#Sintaxe_de_coment.C3.A1rio)
 *   [10 FAQ](#FAQ)
@@ -70,7 +70,11 @@ No começo, havia `ftp://ftp.archlinux.org/incoming` e as pessoas contribuíam s
 
 Em seguida, os Trusted User Repositories nasceram. Certos indivíduos na comunidade foram habilitados a hospedar seus próprios repositórios para qualquer um usar. O AUR expandiu nesta base, com o objetivo de ser mais flexível e usável. Na verdade, os mantenedores do AUR ainda são referidos como TUs (Trusted Users).
 
-Entre 2015-06-08 e 2015-08-08, o AUR mudou da versão 3.5.1 para 4.0.0, introduzindo o uso de repositórios Git para publicação dos PKGBUILDs.
+Entre 2015-06-08 e 2015-08-08, o AUR mudou da versão 3.5.1 para 4.0.0, introduzindo o uso de repositórios Git para publicação dos PKGBUILDs. Os pacotes existentes foram descartados, a menos que migrados manualmente para a nova infraestrutura por seus mantenedores.
+
+## Repositórios Git para pacotes AUR3
+
+O [Arquivo do AUR](https://github.com/aur-archive) no GitHub possui um repositório para cada repositório que estava no AUR 3 durante a migração para o AUR 4 em Agosto de 2015\. Alternativamente, há o repositório [aur3-mirror](https://github.com/felixonmars/aur3-mirror/) que fornece o mesmo conteúdo.
 
 ## Pesquisando
 
@@ -293,10 +297,6 @@ $ git push
     *   Para requisições de mesclagem: Nome do pacote base para o qual deve ser mescla
 
 Requisições de remoção podem ser negadas, caso em que você provavelmente será aconselhado a abandonar o pacote para a referência de um possível futuro mantenedor.
-
-## Repositórios Git para pacotes AUR3
-
-O [Arquivo do AUR](https://github.com/aur-archive) no GitHub possui um repositório para cada repositório que estava no AUR 3 durante a migração para o AUR 4 em Agosto de 2015.
 
 ## Tradução da interface web
 

@@ -21,7 +21,7 @@ Agetty 在等待登录时更改 TTY 设置，这样换行就不会被翻译成 C
 
 *   **[Mingetty](/index.php?title=Mingetty&action=edit&redlink=1 "Mingetty (page does not exist)")** package: [mingetty](https://aur.archlinux.org/packages/mingetty/)
 *   **[Qingy](/index.php/Qingy "Qingy")** package: [qingy](https://aur.archlinux.org/packages/qingy/)
-*   **[Fbgetty](/index.php?title=Fbgetty&action=edit&redlink=1 "Fbgetty (page does not exist)")** package: [fbgetty](https://www.archlinux.org/packages/?name=fbgetty)
+*   **[Fbgetty](/index.php?title=Fbgetty&action=edit&redlink=1 "Fbgetty (page does not exist)")** package: [fbgetty](https://aur.archlinux.org/packages/fbgetty/)
 *   **[Ngetty](/index.php?title=Ngetty&action=edit&redlink=1 "Ngetty (page does not exist)")** AUR: [ngetty](https://aur.archlinux.org/packages/ngetty/)
 *   **[Rungetty](/index.php?title=Rungetty&action=edit&redlink=1 "Rungetty (page does not exist)")** AUR: [rungetty](https://aur.archlinux.org/packages/rungetty/)
 *   **[Mgetty](/index.php?title=Mgetty&action=edit&redlink=1 "Mgetty (page does not exist)")** AUR: [mgetty](https://aur.archlinux.org/packages/mgetty/)

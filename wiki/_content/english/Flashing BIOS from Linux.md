@@ -123,7 +123,7 @@ If you want to flash other flash chips on your mainboard, you will find all opti
 
 By far the easiest way to make a bootable FreeDOS USB Stick is using [unetbootin](https://aur.archlinux.org/packages/unetbootin/), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
 
-You should format a pendrive with FAT16 and flag it as "boot" (you may do this through a GUI with [gparted](https://www.archlinux.org/packages/?name=gparted), [qtparted](https://aur.archlinux.org/packages/qtparted/) or [partitionmanager](https://www.archlinux.org/packages/?name=partitionmanager)). Then, after mounting the flash drive, select under distribution **FreeDOS** and your mounted stick. The app will automatically download the image for you and copy it to the drive. Finally, you may copy everything you want to flash there (BIOS, firmwares, etc).
+You should format a pendrive with FAT16 and flag it as "boot" (you may do this through a GUI with [gparted](https://www.archlinux.org/packages/?name=gparted) or [partitionmanager](https://www.archlinux.org/packages/?name=partitionmanager)). Then, after mounting the flash drive, select under distribution **FreeDOS** and your mounted stick. The app will automatically download the image for you and copy it to the drive. Finally, you may copy everything you want to flash there (BIOS, firmwares, etc).
 
 **Warning:** Unetbootin may not function properly on some Lenovo systems. It may be necessary to create the bootable stick on a different device. See [here](http://reboot.pro/topic/9849-blinking-cursor-at-boot/).
 

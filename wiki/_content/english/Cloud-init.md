@@ -1,4 +1,4 @@
-Cloud-init is a package that contains utilities for early initialization of cloud instances. It is needed in arch linux images that are built with the intention of being launched in cloud like [OpenStack](/index.php/OpenStack "OpenStack"), [AWS](/index.php/AWS "AWS") etc.
+Cloud-init is a package that contains utilities for early initialization of cloud instances. It is needed in Arch Linux images that are built with the intention of being launched in cloud like [OpenStack](/index.php/OpenStack "OpenStack"), [AWS](/index.php/AWS "AWS") etc.
 
 ## Contents
 
@@ -12,7 +12,7 @@ Cloud-init is a package that contains utilities for early initialization of clou
 
 ## Installation
 
-[Install](/index.php/Install "Install") [cloud-init](https://www.archlinux.org/packages/?name=cloud-init) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [cloud-init](https://aur.archlinux.org/packages/cloud-init/) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Configuration
 

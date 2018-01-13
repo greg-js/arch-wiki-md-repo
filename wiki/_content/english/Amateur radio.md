@@ -1,3 +1,8 @@
+Related articles
+
+*   [GNU Radio](/index.php/GNU_Radio "GNU Radio")
+*   [RTL-SDR](/index.php/RTL-SDR "RTL-SDR")
+
 Amateur radio enthusiasts (sometimes called ham radio operators or "hams") have been at the forefront of experimentation and development since the earliest days of radio. A wide variety of communication modes are used on a vast range of frequencies that span the electromagnetic spectrum. This page lists software related to amateur radio that can be found in the [AUR](/index.php/AUR "AUR"). Some of it is stand-alone while the various digital communication applications require interfacing to radio hardware and possibly the computer soundcard. Interface hardware can be purchased from vendors or home-built.
 
 **Warning:** International treaties require that users of amateur radio frequencies have a government-issued license. This only affects you if you have a transmitter and an antenna, receiving amateur radio or just downloading amateur radio software isn't illegal.
@@ -56,7 +61,7 @@ then logoff and logon.
 
 *   **lysdr** — highly customizable radio interface
 
-	[https://github.com/gordonjcp/lysdr](https://github.com/gordonjcp/lysdr) || [lysdr-git](https://aur.archlinux.org/packages/lysdr-git/)
+	[https://github.com/gordonjcp/lysdr](https://github.com/gordonjcp/lysdr) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=lysdr)</small>
 
 *   **linrad** — Software defined radio by SM5BSZ
 
@@ -93,14 +98,6 @@ then logoff and logon.
 *   **linpsk** — PSK31
 
 	|| [linpsk](https://aur.archlinux.org/packages/linpsk/)
-
-*   **psk31lx** — PSK31 using Pulseaudio
-
-	[http://wa0eir.bcts.info/](http://wa0eir.bcts.info/) || [psk31lx](https://aur.archlinux.org/packages/psk31lx/)
-
-*   **twpsk** — Soundcard based program for PSK31
-
-	[http://wa0eir.bcts.info/](http://wa0eir.bcts.info/) || [twpsk](https://aur.archlinux.org/packages/twpsk/)
 
 *   **xpsk31** — PSK31 using a GUI rendered by GTK+
 
@@ -163,8 +160,6 @@ These are audio alarm recordings of a North American English speaker that do not
 
 ### Analysis tools
 
-*   [fl_moxgen](https://aur.archlinux.org/packages/fl_moxgen/) – Moxon antenna designer
-*   [geoid](https://aur.archlinux.org/packages/geoid/) – Geodetic calculator
 *   [gpredict](https://aur.archlinux.org/packages/gpredict/) – Real-time satellite tracking and orbit prediction application
 *   [hamsolar](https://aur.archlinux.org/packages/hamsolar/) – Small desktop display of the current solar indices
 *   [splat](https://aur.archlinux.org/packages/splat/) – rf signal propagation, loss, and terrain analysis
@@ -179,18 +174,14 @@ These are audio alarm recordings of a North American English speaker that do not
 *   [qle](https://aur.archlinux.org/packages/qle/) – QSO Logger and log Editor for amateur radio operators written in Perl
 *   [tlf](https://aur.archlinux.org/packages/tlf/) – a console mode networked logging and contest program
 *   [trustedqsl](https://aur.archlinux.org/packages/trustedqsl/) – QSL application for ARRL's Logbook of the World
-*   [tucnak2](https://aur.archlinux.org/packages/tucnak2/) – a multiplatform VHF/HF contest logbook
 *   [xlog](https://aur.archlinux.org/packages/xlog/) – a logging program for amateur radio operators.
 *   [yfklog](https://aur.archlinux.org/packages/yfklog/) – a general purpose ham radio logbook for *nix operating systems.
 *   [yfktest](https://aur.archlinux.org/packages/yfktest/) – a logbook program for ham radio contests.
 
 ### Tools
 
-*   [callsign](https://aur.archlinux.org/packages/callsign/) – a small program for finding information about a ham radio based on his callsign
 *   [cty](https://aur.archlinux.org/packages/cty/) – package contains databases of entities (countries), prefixes and callsigns that are used by amateur radio logging software.
 *   [dxcc](https://aur.archlinux.org/packages/dxcc/) – a small program for determining ARRL DXCC entity of a ham radio callsign
-*   [nato](https://aur.archlinux.org/packages/nato/) – Python script to convert string into NATO alphabet representation
-*   [tqsllib](https://aur.archlinux.org/packages/tqsllib/) – Trusted QSL library (supports ARRL Logbook of the World)
 
 ### Morse code training
 
