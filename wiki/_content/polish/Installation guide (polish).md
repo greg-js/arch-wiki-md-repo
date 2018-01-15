@@ -189,7 +189,7 @@ Ustaw [strefę czasową](/index.php/Time_zone "Time zone"):
 Dla Polski polecenie będzie wyglądało w następujący sposób:
 
 ```
-# ln -sf /usr/share/zoneinfo/Europe/Poland /etc/localtime
+# ln -sf /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
 
 ```
 

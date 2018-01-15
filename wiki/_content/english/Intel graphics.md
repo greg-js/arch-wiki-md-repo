@@ -80,9 +80,9 @@ Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Ea
 
 Some video features (e.g. CBR rate control on SKL low-power encoding mode) may require the use of an updated GPU firmware, which is currently (as of 4.14) not enabled by default.
 
-It is necessary to add `i915.enable_guc_loading=1` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to enable it.
+It is necessary to add `i915.enable_guc_loading=1 i915.enable_guc_submission=1` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to enable it.
 
-You can verify that it's enabled by checking dmesg for
+You can verify that it's enabled by checking *dmesg*:
 
 ```
 [    2.142029] [drm] GuC loaded (firmware i915/skl_guc_ver6_1.bin [version 6.1])
@@ -92,8 +92,8 @@ You can verify that it's enabled by checking dmesg for
 Alternatively, check:
 
 ```
-$ cat /sys/kernel/debug/dri/0/i915_huc_load_status
-$ cat /sys/kernel/debug/dri/0/i915_guc_load_status
+# cat /sys/kernel/debug/dri/0/i915_huc_load_status
+# cat /sys/kernel/debug/dri/0/i915_guc_load_status
 
 ```
 

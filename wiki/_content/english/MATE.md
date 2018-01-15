@@ -287,6 +287,13 @@ $ gsettings set org.mate.media-handling automount-open false
 
 ```
 
+And to disable automounting:
+
+```
+$ gsettings set org.mate.media-handling automount false
+
+```
+
 ### Screensaver
 
 MATE uses [mate-screensaver](https://www.archlinux.org/packages/?name=mate-screensaver) to lock your session. By default there are a limited number of screensavers available. To make more screensavers available, install the [mate-screensaver-hacks](https://aur.archlinux.org/packages/mate-screensaver-hacks/) package. This will allow you to use [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") screensavers with [mate-screensaver](https://www.archlinux.org/packages/?name=mate-screensaver).

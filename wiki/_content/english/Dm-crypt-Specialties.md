@@ -189,7 +189,7 @@ The following forum posts give instructions to use two factor authentication, gp
 *   GnuPG: [Post regarding GPG encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=943338#p943338) This post has the generic instructions.
 *   OpenSSL: [Post regarding OpenSSL encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=947805#p947805) This post only has the `ssldec` hooks.
 *   OpenSSL: [Post regarding OpenSSL salted bf-cbc encrypted keys](https://bbs.archlinux.org/viewtopic.php?id=155393) This post has the `bfkf` initcpio hooks, install, and encrypted keyfile generator scripts.
-*   LUKS: [Post regarding LUKS encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=1502651#p1502651) with a `lukskey` initcpio hook. Or [#‎Encrypted /boot and a detached LUKS header on USB](#Encrypted_.2Fboot_and_a_detached_LUKS_header_on_USB) below with a custom encrypt hook for initcpio.
+*   LUKS: [Post regarding LUKS encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=1502651#p1502651) with a `lukskey` initcpio hook. Or [#Encrypted /boot and a detached LUKS header on USB](#Encrypted_.2Fboot_and_a_detached_LUKS_header_on_USB) below with a custom encrypt hook for initcpio.
 
 Note that:
 
@@ -469,7 +469,7 @@ kernel /boot/vmlinuz-linux root=/dev/md0 ro md=0,/dev/sda1,/dev/sdb1 md=1,/dev/s
 
 This example follows the same setup as in [dm-crypt/Encrypting an entire system#Plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system"), which should be read first before following this guide.
 
-By using a detached header the encrypted blockdevice itself only carries encrypted data, which gives [deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption") as long as the existence of a header is unknown to the attackers. It is similar to using [plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system"), but with the LUKS advantages such as multiple passphrases for the masterkey and key derivation. Further, using a detached header offers a form of two factor authentication with an easier setup than [using GPG or OpenSSL encrypted keyfiles](#Using_GPG_or_OpenSSL_Encrypted_Keyfiles), while still having a built-in password prompt for multiple retries. See [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption") for more information.
+By using a detached header the encrypted blockdevice itself only carries encrypted data, which gives [deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption") as long as the existence of a header is unknown to the attackers. It is similar to using [plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system"), but with the LUKS advantages such as multiple passphrases for the masterkey and key derivation. Further, using a detached header offers a form of two factor authentication with an easier setup than [using GPG or OpenSSL encrypted keyfiles](#Using_GPG.2C_LUKS.2C_or_OpenSSL_Encrypted_Keyfiles), while still having a built-in password prompt for multiple retries. See [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption") for more information.
 
 See [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") for encryption options before performing the first step to setup the encrypted system partition and creating a header file to use with `cryptsetup`:
 
@@ -582,7 +582,7 @@ To finish, following [dm-crypt/Encrypting an entire system#Post-installation](/i
 
 ## Encrypted /boot and a detached LUKS header on USB
 
-Rather than embedding the `header.img` and keyfile into the [initramfs](/index.php/Mkinitcpio "Mkinitcpio") image, this setup will make your system depend entirely on the usb key rather than just the image to boot, and on the encrypted keyfile inside of the encrypted boot partition. Since the header and keyfile are not included in the [initramfs](/index.php/Mkinitcpio "Mkinitcpio") image and the custom encrypt hook is specifically for the usb's [by-id](/index.php/Persistent_block_device_naming#by-id_and_by-path "Persistent block device naming"), you will literally need the usb key to boot.
+Rather than embedding the `header.img` and keyfile into the [initramfs](/index.php/Initramfs "Initramfs") image, this setup will make your system depend entirely on the usb key rather than just the image to boot, and on the encrypted keyfile inside of the encrypted boot partition. Since the header and keyfile are not included in the [initramfs](/index.php/Initramfs "Initramfs") image and the custom encrypt hook is specifically for the usb's [by-id](/index.php/Persistent_block_device_naming#by-id_and_by-path "Persistent block device naming"), you will literally need the usb key to boot.
 
 For the usb drive, since you are encrypting the drive and the keyfile inside, it is preferred to cascade the ciphers as to not use the same one twice. Whether a [meet-in-the-middle](https://en.wikipedia.org/wiki/Meet-in-the-middle_attack "wikipedia:Meet-in-the-middle attack") attack would actually be feasible is debatable. You can do twofish-serpent or serpent-twofish.
 
@@ -641,15 +641,15 @@ Pick an *offset* and *size* in bytes (8192 bytes is the maximum keyfile size for
 
 Follow [Preparing the logical volumes](/index.php/Dm-crypt/Encrypting_an_entire_system#Preparing_the_logical_volumes "Dm-crypt/Encrypting an entire system") to set up LVM on LUKS.
 
-The number of GB is up to you (as of January 2018, a rough bare minimum for root would be about 4.0GB), swap space does not have to be twice your RAM unless you have a machine with very low RAM. Some people do the size of their RAM, some do half of their RAM, some do less. If you plan on suspending and hibernating, which is not recommended (it is more proper to shutdown so the encryption keys are wiped from memory) then you would do at least the size of your RAM.
+See [Partitioning#Discrete partitions](/index.php/Partitioning#Discrete_partitions "Partitioning") for recommendations on the size of your partitions.
 
 Once your root partition is mounted, `mount` your encrypted boot partition as `/mnt/boot` and your ESP or EFI partition as `/mnt/boot/efi`.
 
 ### Installation procedure and custom encrypt hook
 
-Follow the [installation_guide](/index.php/Installation_guide "Installation guide") up to the `mkinitcpio` step but do not do it yet. You will skip [Partition the disks](/index.php/Installation_guide#Partition_the_disks "Installation guide"), [Format the partitions](/index.php/Installation_guide#Format_the_partitions "Installation guide"), and [Mount the file systems](/index.php/Installation_guide#Mount_the_file_systems "Installation guide") as they have already been done. If you use a regular `us` keymap layout skip [Set the keyboard layout](/index.php/Installation_guide#Set_the_keyboard_layout "Installation guide") as well. Skip [Hostname](/index.php/Installation_guide#Hostname "Installation guide") and [Network Configuration](/index.php/Installation_guide#Network_configuration "Installation guide") if you do not need a hostname and you prefer to start `dhcpcd@*interface_name*.service` manually.
+Follow the [installation guide](/index.php/Installation_guide "Installation guide") up to the `mkinitcpio` step but do not do it yet, and skip the partitioning, formatting, and mounting steps as they have already been done.
 
-Now you should be at the `mkinitcpio` step and chrooted into your system. In order to get the encrypted setup to work, you need to build your own hook, which is thankfully easy to do and here is the code you need. You will have to follow [Persistent_block_device_naming#by-id_and_by-path](/index.php/Persistent_block_device_naming#by-id_and_by-path "Persistent block device naming") to figure out your own `by-id` values for the usb and main hard drive (they are linked -> to `sda` or `sdb`).
+In order to get the encrypted setup to work, you need to build your own hook, which is thankfully easy to do and here is the code you need. You will have to follow [Persistent block device naming#by-id and by-path](/index.php/Persistent_block_device_naming#by-id_and_by-path "Persistent block device naming") to figure out your own `by-id` values for the usb and main hard drive (they are linked -> to `sda` or `sdb`).
 
 You should be using the `by-id` instead of just `sda` or `sdb` because `sdX` can change and this ensures it is the correct device.
 
@@ -682,7 +682,7 @@ run_hook() {
 
 `*usbdrive*` is your USB drive `by-id`, and `*harddrive*` is your main hard drive `by-id`.
 
-You could also close `cryptboot`, unless you want it to be easier to mount for updating and signing the kernel (which happens automatically during kernel updates), and regenerating the initramfs with [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). You can close it using `cryptsetup close cryptboot`, but then you would have to reenter the password before you `mount` it after booting into the system.
+**Tip:** You could also close `cryptboot`, unless you want it to be easier to mount for updating and signing the kernel (which happens automatically during kernel updates), and regenerating the initramfs with [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). You can close it using `cryptsetup close cryptboot`, but then you would have to reenter the password before you `mount` it after booting into the system.
 
 ```
 # cp /usr/lib/initcpio/install/encrypt /etc/initpcio/install/customencrypthook
@@ -702,9 +702,9 @@ The `files=()` and `binaries=()` arrays are empty, and you should not have to re
 
 #### Boot Loader
 
-Run `mkinitcpio` for your kernel or kernels, and finish the [Installation Guide](/index.php/Installation_guide#Initramfs "Installation guide") from there. To boot you would need either [GRUB](/index.php/GRUB "GRUB") or [efibootmgr](/index.php/Efibootmgr "Efibootmgr"). Note you can use [GRUB](/index.php/GRUB "GRUB") to support the encrypted disks by [Configuring the boot loader](/index.php/Dm-crypt/Encrypting_an_entire_system#Configuring_the_boot_loader_6 "Dm-crypt/Encrypting an entire system") but editing the `GRUB_CMDLINE_LINUX` is not necessary for this set up.
+Finish the [Installation Guide](/index.php/Installation_guide#Initramfs "Installation guide") from the `mkinitcpio` step. To boot you would need either [GRUB](/index.php/GRUB "GRUB") or [efibootmgr](/index.php/Efibootmgr "Efibootmgr"). Note you can use [GRUB](/index.php/GRUB "GRUB") to support the encrypted disks by [Configuring the boot loader](/index.php/Dm-crypt/Encrypting_an_entire_system#Configuring_the_boot_loader_6 "Dm-crypt/Encrypting an entire system") but editing the `GRUB_CMDLINE_LINUX` is not necessary for this set up.
 
-Or use Direct UEFI Secure boot by generating keys with [cryptboot](https://aur.archlinux.org/packages/cryptboot/) then signing the initramfs and kernel and creating a bootable .efi file for your `/boot/efi` directory with [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/). Before using cryptboot or sbupdate note this excerpt from [Secure_Boot#Using_your_own_keys](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot"):
+Or use Direct UEFI Secure boot by generating keys with [cryptboot](https://aur.archlinux.org/packages/cryptboot/) then signing the initramfs and kernel and creating a bootable .efi file for your `/boot/efi` directory with [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/). Before using cryptboot or sbupdate note this excerpt from [Secure Boot#Using your own keys](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot"):
 
 **Tip:** Note that [cryptboot](https://aur.archlinux.org/packages/cryptboot/) requires the encrypted boot partition to be specified in `/etc/crypttab` before it runs, and if you are using it in combination with [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/), sbupdate expects the `/boot/efikeys/db.*` files created by cryptboot to be capitalized like `DB.*`. Users who do not use systemd to handle encryption may not have anything in their `/etc/crypttab` file and would need to create an entry.
 

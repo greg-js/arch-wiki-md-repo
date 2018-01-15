@@ -623,9 +623,7 @@ You can try to install glxinfo (Its [mesa-demos](https://www.archlinux.org/packa
 
 ### Android Emulator: no keyboard input in xfwm4
 
-In xfwm4, the vertical toolbar buttons window that's on the right of the emulator takes focus from the emulator and consumes keyboard events.
-
-The bug is opened here [https://issuetracker.google.com/issues/37094173](https://issuetracker.google.com/issues/37094173)
+In xfwm4, the vertical toolbar buttons window that's on the right of the emulator takes focus from the emulator and consumes keyboard events. ([bug report](https://issuetracker.google.com/issues/37094173))
 
 You can use the workaround described in [this StackOverflow answer](https://stackoverflow.com/a/42720450/1366471):
 

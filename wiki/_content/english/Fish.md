@@ -1,4 +1,4 @@
-**fish**, the "friendly interactive shell", is a "user friendly [commandline shell](/index.php/Command-line_shell "Command-line shell") intended mostly for interactive use". [[1]](http://fishshell.com/docs/current/index.html)
+[fish](https://fishshell.com), the "friendly interactive shell", is a "user friendly [commandline shell](/index.php/Command-line_shell "Command-line shell") intended mostly for interactive use".
 
 ## Contents
 
@@ -158,7 +158,7 @@ end
 
 ### Use liquidprompt
 
-[Liquidprompt](https://github.com/nojhan/liquidprompt) is a popular "full-featured & carefully designed adaptive prompt for Bash & Zsh" and has no plans to make it compatible with fish [[2]](https://github.com/nojhan/liquidprompt/pull/230). [This project](https://github.com/wesbarnett/fish-lp) implements it for fish.
+[Liquidprompt](https://github.com/nojhan/liquidprompt) is a popular "full-featured & carefully designed adaptive prompt for Bash & Zsh" and has no plans to make it compatible with fish [[1]](https://github.com/nojhan/liquidprompt/pull/230). [This project](https://github.com/wesbarnett/fish-lp) implements it for fish.
 
 ### Put git status in prompt
 
@@ -200,7 +200,7 @@ In fish, `eval (ssh-agent)` generate errors due to how variables are set. To wor
 
 ### The "command not found" hook
 
-[pkgfile](/index.php/Pkgfile "Pkgfile") includes a "command not found" hook that will automatically search the official repositories, when entering an unrecognized command. This hook will be run by default if [pkgfile](/index.php/Pkgfile "Pkgfile") is installed.
+[pkgfile](/index.php/Pkgfile "Pkgfile") includes a "command not found" hook that will automatically search the official repositories, when entering an unrecognized command. This hook will be run by default if [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) is installed.
 
 ### Remove a process from the list of jobs
 

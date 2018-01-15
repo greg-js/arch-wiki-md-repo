@@ -582,7 +582,7 @@ $ amixer scontrols
 
 #### Using ALSAEqual (provides UI)
 
-Install the [alsaequal](https://aur.archlinux.org/packages/alsaequal/) package.
+Install the [alsaequal](https://aur.archlinux.org/packages/alsaequal/) package. Also install [lib32-alsaequal](https://aur.archlinux.org/packages/lib32-alsaequal/) for 32-bit application support.
 
 After installing the package, add the following to your ALSA configuration file:
 

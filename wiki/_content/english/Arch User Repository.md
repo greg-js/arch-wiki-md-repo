@@ -42,7 +42,7 @@ A good number of new packages that enter the official repositories start in the 
     *   [9.3 How can I vote for packages in the AUR?](#How_can_I_vote_for_packages_in_the_AUR.3F)
     *   [9.4 What is a Trusted User / TU?](#What_is_a_Trusted_User_.2F_TU.3F)
     *   [9.5 What is the difference between the Arch User Repository and the community repository?](#What_is_the_difference_between_the_Arch_User_Repository_and_the_community_repository.3F)
-    *   [9.6 Foo in the AUR is outdated; what do I do?](#Foo_in_the_AUR_is_outdated.3B_what_do_I_do.3F)
+    *   [9.6 Foo in the AUR is outdated; what should I do?](#Foo_in_the_AUR_is_outdated.3B_what_should_I_do.3F)
     *   [9.7 Foo in the AUR does not compile when I run makepkg; what should I do?](#Foo_in_the_AUR_does_not_compile_when_I_run_makepkg.3B_what_should_I_do.3F)
     *   [9.8 How do I create a PKGBUILD?](#How_do_I_create_a_PKGBUILD.3F)
     *   [9.9 I have a PKGBUILD I would like to submit; can someone check it to see if there are any errors?](#I_have_a_PKGBUILD_I_would_like_to_submit.3B_can_someone_check_it_to_see_if_there_are_any_errors.3F)
@@ -308,7 +308,7 @@ See [i18n.txt](https://projects.archlinux.org/aurweb.git/tree/doc/i18n.txt) in t
 
 ## Comment syntax
 
-Since AUR [v4.6.0](https://lists.archlinux.org/pipermail/aur-general/2017-December/033697.html), the [Python-Markdown](https://python-markdown.github.io/) library is supported. See [[1]](https://python-markdown.github.io/#differences) for differences with [Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown").
+The [Python-Markdown](https://python-markdown.github.io/) syntax is supported in comments. It provides basic [Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown") syntax to format comments. Note this implementation has some occasional [differences](https://python-markdown.github.io/#differences) with the official [syntax rules](https://daringfireball.net/projects/markdown/syntax). Commit hashes to the Git repository of the package and references to Flyspray tickets are converted to links automatically. Long comments are collapsed and can be expanded on demand.
 
 ## FAQ
 
@@ -346,13 +346,13 @@ A [Trusted User](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidel
 
 The Arch User Repository is where all PKGBUILDs that users submit are stored, and must be built manually with [makepkg](/index.php/Makepkg "Makepkg"). When PKGBUILDs receive enough community interest and the support of a TU, they are moved into the [community](/index.php/Community "Community") repository (maintained by the TUs), where the binary packages can be installed with [pacman](/index.php/Pacman "Pacman").
 
-### Foo in the AUR is outdated; what do I do?
+### Foo in the AUR is outdated; what should I do?
 
-For starters, you can flag packages out-of-date. If it stays out-of-date for an extended period of time, the best thing to do is email the maintainer. If there is no response from the maintainer after two weeks, you can file an orphan request. When we are talking about a package which is flagged out of date for more than 3 months and is in general not updated for a long time, please add this in your orphan request.
+First, you should flag the package *out-of-date* indicating details on why the package is outdated, preferably including links to the release announcement or the new release tarball. You should also try to reach out to the maintainer directly by email. If there is no response from the maintainer after *two weeks*, you can file an *orphan* request. This means you ask a [Trusted User](/index.php/Trusted_User "Trusted User") to disown the package base. This is to be done only if the package requires maintainer action, that he/she is not responding and you already tried to contact him/her previously.
 
 In the meantime, you can try updating the package yourself by editing the PKGBUILD - sometimes updates do not require any changes to the build or package process, in which case simply updating the `pkgver` or `source` array is sufficient.
 
-**Note:** [VCS packages](/index.php/VCS_package_guidelines "VCS package guidelines") are not considered out of date when the pkgver changes, so **please** do not flag them as the maintainer will merely unflag the package and ignore you. AUR maintainers should not commit mere pkgver bumps.
+**Note:** [VCS packages](/index.php/VCS_package_guidelines "VCS package guidelines") are not considered out of date when the pkgver changes, do not flag them as the maintainer will merely unflag the package and ignore you. AUR maintainers should not commit mere pkgver bumps.
 
 ### Foo in the AUR does not compile when I run makepkg; what should I do?
 

@@ -214,11 +214,15 @@ Three very elaborate threads contain the history of patches for the kernel for t
 
 AUR package [linux-x205ta](https://aur.archlinux.org/packages/linux-x205ta/) applies the patches proposed in the threads above to the standard arch kernel. Sources and references for each patch are in the PKGBUILD file.
 
-Compiling the kernel with the provided config takes about one hour. Ask makepkg to use the four CPU cores when compiling on the x205ta in `~/.config/pacman/makepkg.conf` or `/etc/makepkg.conf`:
+Compiling the kernel with the provided config takes about one hour.
+
+The x205ta has a limited amount of RAM, so don't extract and build the kernel in tmpfs. Depending on your AUR helper that may require specific config.
+
+Ask makepkg to use the four CPU cores when compiling on the x205ta in `~/.config/pacman/makepkg.conf` or `/etc/makepkg.conf`:
 
  `~/.config/pacman/makepkg.conf`  `MAKEFLAGS="-j$(nproc)"` 
 
-Manual interventions and patches are needed on older kernels as a lot of patches came in over time. Refer to "On older kernels" below for instaructions for older kernels.
+Manual interventions and patches are needed on older kernels as a lot of patches came in over time. Refer to "On older kernels" below for instructions for older kernels.
 
 #### SD card Replay Protected Memory Block partition
 
@@ -289,7 +293,7 @@ $ sudo systemctl enable btattach
 
 ```
 
-Next, follow the [normal steps to activate bluetooth](https://wiki.archlinux.org/index.php/Bluetooth).
+Next, follow the [normal steps to activate bluetooth](/index.php/Bluetooth "Bluetooth").
 
 #### WIFI Breaks after resume from hibernating
 

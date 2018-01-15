@@ -25,7 +25,7 @@ Configuration for the package is stored in `/etc/private-internet-access`
 
 Desktop clients may also be useful to some users:
 
-1.  [ConnMan#Desktop_clients](/index.php/ConnMan#Desktop_clients "ConnMan")
+1.  [ConnMan#Desktop clients](/index.php/ConnMan#Desktop_clients "ConnMan")
 2.  [NetworkManager#Front-ends](/index.php/NetworkManager#Front-ends "NetworkManager")
 
 ## After installation

@@ -107,7 +107,7 @@ Esse método pode ser usado, por exemplo, para adicionar sua própria chave para
 
 Primeiro, obtenha o **ID de chave** (`*id-chave*`) de seu dono. Então, adicione-o ao chaveiro usando um dos métodos abaixo:
 
-1.  Se a chave estiver localizado em um servidor de chave, importe-a com: `# pacman-key -r *id-chave*` 
+1.  Se a chave estiver localizado em um servidor de chave, importe-a com: `# pacman-key --recv-keys*id-chave*` 
 2.  Caso contrário, se um link para um arquivo de chave for fornecido, baixe-a e então execute: `# pacman-key --add */caminho/para/arquivo/de/chave*` 
 
 É recomendado verificar a impressão digital, assim como qualquer chave mestra ou outra chave que você vai assinar:
@@ -117,7 +117,7 @@ $ pacman-key --finger *id-chave*
 
 ```
 
-Finalmente, você precisa assinar localmente a chave importada:
+Finalmente, você deve assinar localmente a chave importada:
 
 ```
 # pacman-key --lsign-key *id-chave*

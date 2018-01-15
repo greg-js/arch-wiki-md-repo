@@ -26,7 +26,7 @@ El paquete makepkg lo provee el paquete [pacman](https://www.archlinux.org/packa
 
 ## Configuración
 
-El archivo principal de configuración de makepkg es `/etc/makepkg.conf` . la mayoría de los usuarios querrán configurar estas opciones de makepkg antes de construir cualquier paquete (por ejemplo modificar las variables `MAKEFLAGS` en sistemas con soporte SMP para [reducir tiempos de compilación](/index.php/Makepkg_(Espa%C3%B1ol)#Recomendaciones "Makepkg (Español)") , o personalizar la variable `PACKAGER` para personalizar paquetes. Lea la documentación de `PACKAGER` para más detalles
+El archivo principal de configuración de makepkg es `/etc/makepkg.conf` . la mayoría de los usuarios querrán configurar estas opciones de makepkg antes de construir cualquier paquete (por ejemplo modificar las variables `MAKEFLAGS` en sistemas con soporte SMP para [reducir tiempos de compilación](#Recomendaciones) , o personalizar la variable `PACKAGER` para personalizar paquetes. Lea la documentación de `PACKAGER` para más detalles
 
 Para poder instalar paquetes con makepkg sin ser usuario administrador (con `makepkg -s`, información más delante), instale [sudo](/index.php/Sudo "Sudo") y agregue los usuarios con estos privilegios en el archivo to `/etc/sudoers`:
 
@@ -116,7 +116,7 @@ $ makepkg -s
 
 ```
 
-**Nota:** Estas dependencias deben estar disponibles dentro de los repositorios disponibles para pacman, vea [pacman_(Español)#Repositorios y servidores de réplicas](/index.php/Pacman_(Espa%C3%B1ol)#Repositorios_y_servidores_de_r.C3.A9plicas "Pacman (Español)") para mayor información al respecto. También se pueden instalar las dependencias antes de construir el paquete (`pacman -S --asdeps dep1 dep2`).
+**Nota:** Estas dependencias deben estar disponibles dentro de los repositorios disponibles para pacman, vea [pacman (Español)#Repositorios y servidores de réplicas](/index.php/Pacman_(Espa%C3%B1ol)#Repositorios_y_servidores_de_r.C3.A9plicas "Pacman (Español)") para mayor información al respecto. También se pueden instalar las dependencias antes de construir el paquete (`pacman -S --asdeps dep1 dep2`).
 
 Una vez que se hayan satisfecho todas las dependencias y el paquete se construyo satisfactoriamente, un archivo con el nombre (`pkgname-pkgver.pkg.tar.gz`) será creado en el directorio de trabajo. Para instalarlo (al igual que `pacman -U pkgname-pkgver.pkg.tar.gz`) simplemente se ejecuta:
 

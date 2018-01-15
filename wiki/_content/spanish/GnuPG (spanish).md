@@ -295,7 +295,7 @@ $ gpg --output *doc* --decrypt *doc*.gpg
 *   Agregue `--armor` para cifrar un archivo usando ASCII armor (apropiado para copiar y pegar el mensaje en formato de texto)
 *   Use `-R *user-id*` o `--hidden-recipient *user-id*` en lugar de `-r` para no poner la clave del recipiente en el mensaje cifrado. Esto ayuda a ocultar el recipiente del mensaje y es una medida limitada de protección contra el análisis de trafico.
 *   Agregue `--no-emit-version` para prevenir la impresión de la versión, también se puede modificar este parámetro en el archivo de configuración.
-*   Es posible usar gnupg para cifrar documentos delicados con su propio *user-id* como recipiente o usando el parametro `--default-recipient-self`; de cualquier manera, esto solo se puede hacer un archivo a la vez, aunque se pueden comprimir varios archivos en un tarball y después cifrar el tarball. Vea tambien [Disk_encryption_(Español)#Métodos_disponibles](/index.php/Disk_encryption_(Espa%C3%B1ol)#M.C3.A9todos_disponibles "Disk encryption (Español)") si quiere cifrar directorios enteros o incluso todo sus sistema de archivos.
+*   Es posible usar gnupg para cifrar documentos delicados con su propio *user-id* como recipiente o usando el parametro `--default-recipient-self`; de cualquier manera, esto solo se puede hacer un archivo a la vez, aunque se pueden comprimir varios archivos en un tarball y después cifrar el tarball. Vea tambien [Disk encryption (Español)#Métodos disponibles](/index.php/Disk_encryption_(Espa%C3%B1ol)#M.C3.A9todos_disponibles "Disk encryption (Español)") si quiere cifrar directorios enteros o incluso todo sus sistema de archivos.
 
 #### Simétrico
 

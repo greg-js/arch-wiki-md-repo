@@ -6,4 +6,4 @@ SoundConverter can be installed from the Community repository: [soundconverter](
 
 # See also
 
-*   [Convert_FLAC_to_MP3](/index.php/Convert_FLAC_to_MP3 "Convert FLAC to MP3")
+*   [Convert FLAC to MP3](/index.php/Convert_FLAC_to_MP3 "Convert FLAC to MP3")

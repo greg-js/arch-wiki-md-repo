@@ -282,11 +282,11 @@ Relocate files, such as your browser profile, to a [tmpfs](/index.php/Tmpfs "Tmp
 
 *   Refer to [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") for syncing browser profiles. Certain browsers might need special attention, see e.g. [Firefox on RAM](/index.php/Firefox_on_RAM "Firefox on RAM").
 *   Refer to [Anything-sync-daemon](/index.php/Anything-sync-daemon "Anything-sync-daemon") for syncing any specified folder.
-*   Refer to [Makepkg#tmpfs](/index.php/Makepkg#tmpfs "Makepkg") for improving compile times when building packages.
+*   Refer to [Makepkg#Improving compile times](/index.php/Makepkg#Improving_compile_times "Makepkg") for improving compile times when building packages.
 
 #### Compiling in tmpfs
 
-See [Makepkg#Improving compile times](/index.php/Makepkg#Improving_compile_times "Makepkg").
+See [Makepkg#Building from files in memory](/index.php/Makepkg#Building_from_files_in_memory "Makepkg").
 
 #### Optimize the filesystem
 

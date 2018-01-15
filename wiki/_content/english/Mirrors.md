@@ -125,14 +125,14 @@ Edit `/etc/pacman.d/mirrorlist.backup` and uncomment mirrors for testing with `r
 Optionally run the following `sed` line to uncomment every mirror:
 
 ```
-# sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
+# sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist
 
 ```
 
 Finally, rank the mirrors. Operand `-n 6` means only output the 6 fastest mirrors:
 
 ```
-# rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+# rankmirrors -f 6
 
 ```
 

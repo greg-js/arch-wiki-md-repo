@@ -38,6 +38,7 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Root login fails](#Root_login_fails)
     *   [5.2 No network-connection with veth in container config](#No_network-connection_with_veth_in_container_config)
+    *   [5.3 Error: unknown command](#Error:_unknown_command)
 *   [6 See also](#See_also)
 
 ## Privileged containers or unprivileged containers
@@ -233,7 +234,7 @@ Alternatively, create a *privileged* container, and see: [#Converting a privileg
 
 ### Container configuration
 
-The examples below can be used with *privileged* and *unprivileged* containers alike. Note that for unprivileged containers, additional lines will be present by default which are not shown in the examples, including the `lxc.idmap = u 0 100000 65536` and the `lxc.idmap = g 0 100000 65536` values optionally defined in the [#Enable support to run unprivileged contains (optional)](#Enable_support_to_run_unprivileged_contains_.28optional.29) section.
+The examples below can be used with *privileged* and *unprivileged* containers alike. Note that for unprivileged containers, additional lines will be present by default which are not shown in the examples, including the `lxc.idmap = u 0 100000 65536` and the `lxc.idmap = g 0 100000 65536` values optionally defined in the [#Enable support to run unprivileged containers (optional)](#Enable_support_to_run_unprivileged_containers_.28optional.29) section.
 
 #### Basic config with networking
 
@@ -380,7 +381,7 @@ Systemd units and wrapper scripts to manage snapshots for [pi-hole](/index.php/P
 
 ### Converting a privileged container to an unprivileged container
 
-Once the system has been configured to use unprivileged containers (see, [#Enable support to run unprivileged contains (optional)](#Enable_support_to_run_unprivileged_contains_.28optional.29)), [nsexec-bzr](https://aur.archlinux.org/packages/nsexec-bzr/) contains a utility called `uidmapshift` which is able to convert an existing *privileged* container to an *unprivileged* container to avoid a total rebuild of the image.
+Once the system has been configured to use unprivileged containers (see, [#Enable support to run unprivileged containers (optional)](#Enable_support_to_run_unprivileged_containers_.28optional.29)), [nsexec-bzr](https://aur.archlinux.org/packages/nsexec-bzr/) contains a utility called `uidmapshift` which is able to convert an existing *privileged* container to an *unprivileged* container to avoid a total rebuild of the image.
 
 **Warning:**
 
@@ -473,6 +474,15 @@ lxc.net.0.link = `bridge`
 ```
 
 And then assign your IP through your preferred method **inside** the container, see also [Network configuration#Configure the IP address](/index.php/Network_configuration#Configure_the_IP_address "Network configuration").
+
+### Error: unknown command
+
+The error may happen when you type a basic command (*ls*, *cat*, etc.) on an attached container that have different Linux distribution from the host system (e.g. Debian container in Arch Linux host system). When you attach, use the argument `--clear-env`:
+
+```
+# lxc-attach -n *container_name* --clear-env
+
+```
 
 ## See also
 

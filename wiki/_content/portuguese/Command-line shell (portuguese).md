@@ -38,7 +38,7 @@ Do [Wikipédia](https://en.wikipedia.org/wiki/pt:Shell_do_Unix "wikipedia:pt:She
 
 *   **[powerShell](https://en.wikipedia.org/wiki/pt:PowerShell "wikipedia:pt:PowerShell")** — O PowerShell é uma linguagem de programação orientada a objetos e um shell de linha de comando interativo, originalmente escrito para e exclusivo para o Windows. Mais tarde, foi aberto e portado para Mac OS X e Linux.
 
-	[https://github.com/PowerShell/PowerShell](https://github.com/PowerShell/PowerShell) || [powershell-git](https://aur.archlinux.org/packages/powershell-git/)
+	[https://github.com/PowerShell/PowerShell](https://github.com/PowerShell/PowerShell) || [powershell](https://aur.archlinux.org/packages/powershell/)
 
 *   **[rc](https://en.wikipedia.org/wiki/rc "wikipedia:rc")** — Interpretador de comando para o Plan9 que fornece recursos semelhantes ao Bourne shell do UNIX, com algumas pequenas adições e menos sintaxe idiossincrática.
 

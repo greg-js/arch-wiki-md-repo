@@ -30,7 +30,7 @@ De manera predeterminada, monitorea la temperatura la UCP usando los sensores de
 El fichero de configuración de *cpupower* se encuentra alojada en `/etc/default/cpupower`. Este fichero de configuración es leído por un script bash alojado en `/usr/lib/systemd/scripts/cpupower` y es activado con *systemd* a través del servicio `cpupower.service`. Si desea habilitarlo para que inicie al arrancar el sistema operativo, puede ejecutar la orden:
 
 ```
-# systemctl enable cpupower.service 
+# systemctl start cpupower && systemctl enable cpupower
 
 ```
 
@@ -65,33 +65,28 @@ MODULES=( ***acpi-cpufreq*** vboxdrv fuse fglrx iwl3945 ... )
 Una vez cargado el controlador cpufreq apropiado, se puede visualizar la información detallada acerca de la UCP ejecutando:
 
 ```
-$ cpufreq-info
+$ cpupower frequency-info
 
 ```
 
-Ejemplo de salida de `cpufreq-info` (en un Intel Duo Core T2500):
+Ejemplo de salida de `frequency-info` (en un Intel Duo Core T4300):
 
 ```
-analyzing CPU 0:
+ analyzing CPU 0:
  driver: acpi-cpufreq
- CPUs which need to switch frequency at the same time: 0 1
- hardware limits: 1000 MHz - 2.00 GHz
- available frequency steps: 2.00 GHz, 1.67 GHz, 1.33 GHz, 1000 MHz
- available cpufreq governors: ondemand, performance
- current policy: frequency should be within 1000 MHz and 2.00 GHz.
-                 The governor "performance" may decide which speed to use
+ CPUs which run at the same hardware frequency: 0
+ CPUs which need to have their frequency coordinated by software: 0
+ maximum transition latency: 10.0 us
+ hardware limits: 1.20 GHz - 2.10 GHz
+ available frequency steps:  2.10 GHz, 1.60 GHz, 1.20 GHz
+ available cpufreq governors: performance schedutil
+ current policy: frequency should be within 1.20 GHz and 2.10 GHz.
+                 The governor "schedutil" may decide which speed to use
                  within this range.
- current CPU frequency is 2.00 GHz.
-analyzing CPU 1:
- driver: acpi-cpufreq
- CPUs which need to switch frequency at the same time: 0 1
- hardware limits: 1000 MHz - 2.00 GHz
- available frequency steps: 2.00 GHz, 1.67 GHz, 1.33 GHz, 1000 MHz
- available cpufreq governors: ondemand, performance
- current policy: frequency should be within 1000 MHz and 2.00 GHz.
-                 The governor "performance" may decide which speed to use
-                 within this range.
- current CPU frequency is 2.00 GHz.
+ current CPU frequency: 2.10 GHz (asserted by call to hardware)
+ boost state support:
+   Supported: no
+   Active: no
 
 ```
 
@@ -101,25 +96,29 @@ Se puede considerar a los reguladores como esquemas de potencia de la UCP precon
 
 Reguladores disponibles:
 
-	performance **(por defecto)**
+	Schedutil *(Por defecto, incorporado desde el kernel 4.7)*
 
-	El regulador de rendimiento esta empotrado en el núcleo y hace que las UCP funcionen a la máxima velocidad de reloj
+	Aprovecha los datos de utilización del planificador del núcleo en un intento de tomar mejores decisiones sobre el ajuste del estado de frecuencia / rendimiento del CPU.
 
-	cpufreq_ondemand *(recomendado)*
+	Performance
 
-	Incrementa/Decrementa dinámicamente la velocidad de reloj de la UCP en base a la carga del sistema
+	El regulador de rendimiento esta empotrado en el núcleo y hace que las UCP funcionen a la máxima velocidad de reloj.
 
-	cpufreq_conservative
+	Ondemand *(recomendado)*
+
+	Incrementa/Decrementa dinámicamente la velocidad de reloj de la UCP en base a la carga del sistema.
+
+	Conservative
 
 	Similar a ondemand, pero más conservador (los cambios de velocidad son más suaves)
 
-	cpufreq_powersave
+	Powersave
 
-	Hacer funcionar la UPC a la velocidad mínima
+	Hacer funcionar la UPC a la velocidad mínima.
 
-	cpufreq_userspace
+	Userspace
 
-	Velocidades de reloj configuradas manualmente por el usuario
+	Velocidades de reloj configuradas manualmente por el usuario.
 
 Añada el regulador (o reguladores) al array `MODULES` en `/etc/rc.conf`:
 
@@ -136,6 +135,50 @@ Alternativamente, puede establecer el regulador manualmente ejecutando (como roo
 ```
 
 Ejecute **`cpufreq-set --help`** o **`man cpufreq-set`** para más información.
+
+	También puede usar el siguiente script para modificar los esquemas de **`cpufreq-set`** ejemplo
+
+```
+##!/bin/bash
+clear
+echo " *** SCRIPT CPU-FREQ SCALING  *** "
+echo " SELECCIONA UNA OPCIÓN. "
+echo " 0.-Frecuencia actual del procesador"
+echo " 1.-Powersave"
+echo " 2.-Schedutil"
+echo " 3.-Ondemand----(Recomendado para AMD)"
+echo " 4.-Performance"
+echo " 5.-Conservative"
+echo " 6.-Userspace----(Asigna una frecuencia de forma manual)"
+echo " 7.-¿Qué frecuencia tengo?"
+echo " 8.-CPU frequency-info---(Ver frecuencias a las que se puede alcanzar"
+echo "****************************************"
+echo " 9.-Cambiar de forma permanente governor"
+echo "*****************************************" 
+echo " 10.-Salir"
+echo ""
+read -p "OPCIÓN: " OPCION
+case $OPCION in
+0) watch grep \"cpu MHz\" /proc/cpuinfo;;
+1) sudo cpupower frequency-set  -r -g powersave;;
+2) sudo cpupower frequency-set  -r -g schedutil;;
+3) sudo cpupower frequency-set  -r -g ondemand;;
+4) sudo cpupower frequency-set  -r -g performance;;
+5) sudo cpupower frequency-ser  -r -g conservative;;
+6) echo -n " *** Ingresa de forma manual la frecuencia *** "
+read freq
+sudo cpupower frequency-set -f $freq;;
+7) echo "**** Frecuencia actual ****: "
+echo "****************************** "
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor ;;
+8) cpupower frequency-info ;;
+9) sudo nano /etc/default/cpupower ;;
+10) exit;;
+*) echo " OPCIÓN NO VÁLIDA "
+exit 1;;
+esac
+
+```
 
 ### Modo demonio
 

@@ -142,7 +142,7 @@ If the above didn't work. One can start the container and use these commands ins
 
 *systemd-nspawn* supports unprivileged containers, though the containers need to be booted as root.
 
-**Note:** This feature requires [user_namespaces(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/user_namespaces.7), for further info see [Linux_Containers#Enable_support_to_run_unprivileged_contains_.28optional.29](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_contains_.28optional.29 "Linux Containers")
+**Note:** This feature requires [user_namespaces(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/user_namespaces.7), for further info see [Linux Containers#Enable support to run unprivileged containers (optional)](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_containers_.28optional.29 "Linux Containers")
 
 The easiest way to do this is to let *systemd-nspawn* decide everything:
 

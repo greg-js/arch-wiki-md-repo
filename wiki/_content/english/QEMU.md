@@ -1078,7 +1078,7 @@ $ remote-viewer spice://127.0.0.1:5930
 
 ```
 
-The reference and test implementation [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3) can also be used:
+The reference and test implementation [spice-gtk](https://www.archlinux.org/packages/?name=spice-gtk) can also be used:
 
 ```
 $ spicy -h 127.0.0.1 -p 5930
@@ -1150,7 +1150,7 @@ Keep in mind that the `--spice-host-subject` parameter needs to be set according
 
 **Tip:** You can get the subject line of the server certificate in the correct format for `--spice-host-subject` (with entries separated by commas) using the following command: `$ openssl x509 -noout -subject -in server-cert.pem | cut -d' ' -f2- | sed 's/\///' | sed 's/\//,/g'` 
 
-The equivalent [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3) command is:
+The equivalent [spice-gtk](https://www.archlinux.org/packages/?name=spice-gtk) command is:
 
 ```
 $ spicy -h *hostname* -s 5901 --spice-ca-file=ca-cert.pem --spice-host-subject="C=*XX*,L=*city*,O=*organization*,CN=*hostname*" --spice-secure-channels=all
@@ -1608,7 +1608,7 @@ We need to add one EHCI/UHCI controller per available USB redirection slot desir
 -device usb-redir,chardev=usbredirchardev3,id=usbredirdev3
 ```
 
-Both `spicy` from [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3) (*Input > Select USB Devices for redirection*) and `remote-viewer` from [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) (*File > USB device selection*) support this feature. Please make sure that you have installed the necessary SPICE Guest Tools on the virtual machine for this functionality to work as expected (see the [#SPICE](#SPICE) section for more information).
+Both `spicy` from [spice-gtk](https://www.archlinux.org/packages/?name=spice-gtk) (*Input > Select USB Devices for redirection*) and `remote-viewer` from [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) (*File > USB device selection*) support this feature. Please make sure that you have installed the necessary SPICE Guest Tools on the virtual machine for this functionality to work as expected (see the [#SPICE](#SPICE) section for more information).
 
 **Warning:** Keep in mind that when a USB device is redirected from the client, it will not be usable from the client operating system itself until the redirection is stopped. It is specially important to never redirect the input devices (namely mouse and keyboard), since it will be then difficult to access the SPICE client menus to revert the situation, because the client will not respond to the input devices after being redirected to the virtual machine.
 

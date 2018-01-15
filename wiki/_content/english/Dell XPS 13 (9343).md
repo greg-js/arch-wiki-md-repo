@@ -23,6 +23,7 @@ As of kernel 4.1.3 (released July 2015), a patched kernel is no longer necessary
 *   [2 Configuration](#Configuration)
     *   [2.1 BIOS updates](#BIOS_updates)
     *   [2.2 Backlight](#Backlight)
+        *   [2.2.1 Dynamic Backlight/Brightness Control (DBC)](#Dynamic_Backlight.2FBrightness_Control_.28DBC.29)
     *   [2.3 SSD](#SSD)
     *   [2.4 Wi-Fi](#Wi-Fi)
     *   [2.5 Bluetooth](#Bluetooth)
@@ -64,7 +65,7 @@ There are no exclusive hardware differences between the *Developer Edition* and 
 
 ### BIOS updates
 
-The latest BIOS update is [A13](http://www.dell.com/support/Home/us/en/19/Drivers/DriversDetails?driverId=5K69V) and was released on 28th August 2017\. With version A02 or newer, almost everything should work out-of-the-box and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary.
+The latest BIOS update is [A14](http://www.dell.com/support/Home/us/en/19/Drivers/DriversDetails?driverId=43Y56) and was released on 11th January 2018\. With version A02 or newer, almost everything should work out-of-the-box and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary.
 
 BIOS upgrade is easy, thanks to the EFI implementation: place the update binary in the EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, press `F12` key in order to enter in the Boot Menu and then choose *BIOS Update*.
 
@@ -76,6 +77,12 @@ Backlight and its control work out-of-the-box:
 *   Hardware Function keys (`Fn-F10` to `Fn-F12`) works without any operation, as well.
 
 **Note:** By default, the keyboard backlight automatically turns off after 60 seconds of inactivity. You can change the default behaviour by editing the related *sysfs* entry `/sys/devices/platform/dell-laptop/leds/dell\:\:kbd_backlight/stop_timeout`.
+
+#### Dynamic Backlight/Brightness Control (DBC)
+
+You may notice that the screen looks dimmer than you expect or the screen overall brightness changes constantly. This behaviour is not a symptom of any monitor issue but a technology called **Dynamic Backlight/Brightness Control**, designed to save energy according to the content displayed on the screen.
+
+**Warning:** This feature is *automatic* and *not-controllable*. According to official Dell [source](http://www.dell.com/support/article/us/en/19/sln304876/xps-9343-9350-9360-and-9365-2-in-1-lcd-brightness-issues), only the **QHD+ model** have a chance to disable it via a firmware update.
 
 ### SSD
 

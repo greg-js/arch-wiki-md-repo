@@ -38,8 +38,9 @@
     *   [1.13 Keyboard layout switchers](#Keyboard_layout_switchers)
     *   [1.14 Power management](#Power_management)
     *   [1.15 Clipboard managers](#Clipboard_managers)
-    *   [1.16 Package management](#Package_management)
-    *   [1.17 Input methods](#Input_methods)
+    *   [1.16 Colour pickers](#Colour_pickers)
+    *   [1.17 Package management](#Package_management)
+    *   [1.18 Input methods](#Input_methods)
 
 ## Utilities
 
@@ -934,6 +935,24 @@ See [Power management](/index.php/Power_management "Power management").
 ### Clipboard managers
 
 See: [List of clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard").
+
+### Colour pickers
+
+*   **Cinnamon Color Picker** — An applet for the Cinnamon desktop.
+
+	[https://cinnamon-spices.linuxmint.com/applets/view/179](https://cinnamon-spices.linuxmint.com/applets/view/179) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **Pick** — A simple color picker tool for the Linux desktop.
+
+	[https://www.kryogenix.org/code/pick](https://www.kryogenix.org/code/pick) || [pick-colour-picker](https://aur.archlinux.org/packages/pick-colour-picker/)
+
+*   **GPick** — An advanced color picker tool.
+
+	[https://www.kryogenix.org/code/pick](https://www.kryogenix.org/code/pick) || [gpick](https://www.archlinux.org/packages/?name=gpick)
+
+*   **eOS Color Picker** — A simplistic color picker for the Pantheon desktop.
+
+	[https://github.com/RonnyDo/ColorPicker](https://github.com/RonnyDo/ColorPicker) || [color-picker-git](https://aur.archlinux.org/packages/color-picker-git/)
 
 ### Package management
 

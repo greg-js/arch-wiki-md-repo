@@ -181,7 +181,7 @@ Use the relative path instead:
 
 ### Problems with Vagrant and synced_folders
 
-If you get an error about unuspported protocol, you need to enable NFS over UDP on your host (or make Vagrant use NFS over TCP.) See [NFS/Troubleshooting#UDP_mounts_not_working](/index.php/NFS/Troubleshooting#UDP_mounts_not_working "NFS/Troubleshooting").
+If you get an error about unuspported protocol, you need to enable NFS over UDP on your host (or make Vagrant use NFS over TCP.) See [#UDP mounts not working](#UDP_mounts_not_working).
 
 If Vagrant scripts are unable to mount folders over NFS, installing the *net-tools* package may solve the issue.
 

@@ -41,6 +41,7 @@ Related articles
     *   [4.14 Show FPS overlay in games](#Show_FPS_overlay_in_games)
     *   [4.15 Microsoft Office](#Microsoft_Office)
     *   [4.16 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
+    *   [4.17 Temp directory on tmpfs](#Temp_directory_on_tmpfs)
 *   [5 Third-party applications](#Third-party_applications)
 *   [6 See also](#See_also)
 
@@ -534,6 +535,16 @@ In order to not be asked for a password each time Wine is run as another user th
 It is recommended to run `winecfg` as the Wine user and remove all bindings for directories outside the home directory of the Wine user in the "Desktop Integration" section of the configuration window so no program run with Wine has read access to any file outside the special user's home directory.
 
 Keep in mind that audio will probably be non-functional in Wine programs which are run this way if [PulseAudio](/index.php/PulseAudio "PulseAudio") is used. See [PulseAudio/Examples#Allowing multiple users to use PulseAudio at the same time](/index.php/PulseAudio/Examples#Allowing_multiple_users_to_use_PulseAudio_at_the_same_time "PulseAudio/Examples") for information about allowing the Wine user to access the PulseAudio daemon of the principal user.
+
+### Temp directory on tmpfs
+
+To limit wine from writing its Temporary files to a physical disk, one can define an alternative location, like tmpfs, removing Temp directory and creating a symlink:
+
+```
+$ rm -r ~/.wine/drive_c/users/$USER/Temp
+$ ln -s /tmp/ ~/.wine/drive_c/users/$USER/Temp
+
+```
 
 ## Third-party applications
 

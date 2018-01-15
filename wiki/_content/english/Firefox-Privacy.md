@@ -226,9 +226,9 @@ To do this open RefControl's preferences and change the setting for "Default for
 
 ### RequestPolicy
 
-[RequestPolicy Continued](https://addons.mozilla.org/en-US/firefox/addon/requestpolicy-continued/) (a successor to the original [RequestPolicy](https://addons.mozilla.org/en-US/firefox/addon/requestpolicy/)) is an extension for Mozilla browsers which lets you have control over cross-site requests. It also lets you blacklist or whitelist requests by default. Disabling unnecessary cross-site requests leads to better privacy, safety and faster browsing.
+[RequestPolicy Continued](https://addons.mozilla.org/firefox/addon/requestpolicy-continued/) (a successor to the original [RequestPolicy](https://addons.mozilla.org/firefox/addon/requestpolicy/)) is an extension for Mozilla browsers which lets you have control over cross-site requests. It also lets you blacklist or whitelist requests by default. Disabling unnecessary cross-site requests leads to better privacy, safety and faster browsing.
 
-**Note:** This addon is currently in the process of being updated for use on modern versions of Firefox (57+).
+**Note:** This addon is currently [in the process of being updated](https://github.com/RequestPolicyContinued/requestpolicy/issues/704) for use on modern versions of Firefox (57+).
 
 ### Decentraleyes
 

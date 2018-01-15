@@ -27,7 +27,7 @@ Ao criar pacotes que instalam arquivos schemas de GConf, use
 
 para a etapa de instalação do pacote no PKGBUILD.
 
-Não chame `gconfpkg` no arquivo .install, pois schemas do GConf são automaticamente instalados/removidos (na instalação/remoção de um pacote GNOME) via [hooks do *pacman*](/index.php/Pacman_(Portugu%C3%AAs)#hooks "Pacman (Português)") desde o [gconf](https://www.archlinux.org/packages/?name=gconf)=3.2.6-4
+Não chame `gconfpkg` no arquivo .install, pois schemas do GConf são automaticamente instalados/removidos (na instalação/remoção de um pacote GNOME) via [hooks do *pacman*](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)") desde o [gconf](https://www.archlinux.org/packages/?name=gconf)=3.2.6-4
 
 ## GSettings schemas
 
@@ -35,7 +35,7 @@ Os schemas de Gconf foram migrados para schemas do GSettings, então muitos apli
 
 Para evitar recompilação da base de dados do GSettings no empacotamento, use a opção `--disable-schemas-compile` para o **./configure**.
 
-Não chame `glib-compile-schemas` no arquivo .install, pois as bases de dados de schemas do GSettings são recompilados automaticamente via [hooks do pacman](/index.php/Pacman_(Portugu%C3%AAs)#hooks "Pacman (Português)") desde [glib2](https://www.archlinux.org/packages/?name=glib2)=2.48.0-2.
+Não chame `glib-compile-schemas` no arquivo .install, pois as bases de dados de schemas do GSettings são recompilados automaticamente via [hooks do pacman](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)") desde [glib2](https://www.archlinux.org/packages/?name=glib2)=2.48.0-2.
 
 ## Documentação do Scrollkeeper
 
@@ -47,13 +47,13 @@ Ele pode ser desabilitado usando a opção `--disable-scrollkeeper` no **./confi
 
 Alguns ícones de instalação de pacotes no tema do ícone do hicolor. Esses pacotes devem depender de [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache).
 
-Não chame `gtk-update-icon-cache` no arquivo .install, pois o cache de ícone é atualizado via [hooks do pacman](/index.php/Pacman_(Portugu%C3%AAs)#hooks "Pacman (Português)") desde [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache)=3.20.3-2.
+Não chame `gtk-update-icon-cache` no arquivo .install, pois o cache de ícone é atualizado via [hooks do pacman](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)") desde [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache)=3.20.3-2.
 
 ## Arquivos .desktop
 
 Muitos pacotes instalam arquivos `.desktop` compatíveis com Freedesktop.org e registram entradas tipo MIME neles. Eles devem depender de [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils).
 
-Não chame `update-desktop-database` no arquivo .install, pois a base de dados é atualizada automaticamente via [hooks do pacman](/index.php/Pacman_(Portugu%C3%AAs)#hooks "Pacman (Português)") desde [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils)=0.22-2.
+Não chame `update-desktop-database` no arquivo .install, pois a base de dados é atualizada automaticamente via [hooks do pacman](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)") desde [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils)=0.22-2.
 
 ## Arquivos .install
 

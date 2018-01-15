@@ -298,7 +298,7 @@ The disk layout in this example is:
 
 *   Instructions at [dm-crypt/Specialties#Encrypted system using a detached LUKS header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") use this setup with a detached LUKS header on a USB device to achieve a two factor authentication with it.
 *   Instructions at [Pavel Kogan's blog](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/) show how to encrypt the `/boot` partition while keeping it on the main LUKS partition when using GRUB.
-*   Instructions at [Dm-crypt/Specialties#Encrypted_.2Fboot_and_a_detached_LUKS_header_on_USB](/index.php/Dm-crypt/Specialties#Encrypted_.2Fboot_and_a_detached_LUKS_header_on_USB "Dm-crypt/Specialties") use this setup with a detached LUKS header, encrypted `/boot` partition, and encrypted keyfile all on a USB device.
+*   Instructions at [Dm-crypt/Specialties#Encrypted /boot and a detached LUKS header on USB](/index.php/Dm-crypt/Specialties#Encrypted_.2Fboot_and_a_detached_LUKS_header_on_USB "Dm-crypt/Specialties") use this setup with a detached LUKS header, encrypted `/boot` partition, and encrypted keyfile all on a USB device.
 
 ### Preparing the disk
 

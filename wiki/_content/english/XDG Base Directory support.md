@@ -351,6 +351,7 @@ Be wary setting this too restrictively, e.g. [gdm](https://www.archlinux.org/pac
  |
 | [MPlayer](/index.php/MPlayer "MPlayer") | `~/.mplayer` | `$ export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer` |
 | [msmtp](/index.php/Msmtp "Msmtp") | `~/.msmtprc` | `$ msmtp -C "$XDG_CONFIG_HOME"/msmtp/msmtprc` |
+| [MySQL](/index.php/MySQL "MySQL") | `~/.mysql_history` | `$ export MYSQL_HISTFILE="$XDG_DATA_HOME"/mysql_history` |
 | [ncurses](https://www.archlinux.org/packages/?name=ncurses) | `~/.terminfo` | Precludes system path searching:
 
 `$ export TERMINFO="$XDG_DATA_HOME"/terminfo`

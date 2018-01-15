@@ -1,3 +1,7 @@
+Related articles
+
+*   [VLAN](/index.php/VLAN "VLAN")
+
 This article handles the steps needed for basic network troubleshooting.
 
 ## Contents
@@ -12,7 +16,7 @@ This article handles the steps needed for basic network troubleshooting.
 
 ## Network Interfaces
 
-The first step in troubleshooting network issues will be to identify which network interfaces are present on the system. See [Network configuration#Get current device names](/index.php/Network_configuration#Get_current_device_names "Network configuration") for details.
+The first step in troubleshooting network issues will be to identify which network interfaces are present on the system. See [Network configuration#Get current interface names](/index.php/Network_configuration#Get_current_interface_names "Network configuration") for details.
 
 ## Link status
 

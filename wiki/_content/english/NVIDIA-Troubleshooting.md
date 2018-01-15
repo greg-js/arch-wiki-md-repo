@@ -7,6 +7,8 @@
 *   [5 Avoid screen tearing](#Avoid_screen_tearing)
     *   [5.1 Multi-monitor](#Multi-monitor)
     *   [5.2 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_.28KWin.29)
+        *   [5.2.1 1\. GL threads](#1._GL_threads)
+        *   [5.2.2 2\. Use TripleBuffering](#2._Use_TripleBuffering)
 *   [6 Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8](#Modprobe_Error:_.22Could_not_insert_.27nvidia.27:_No_such_device.22_on_linux_.3E.3D4.8)
 *   [7 Poor performance after resuming from suspend](#Poor_performance_after_resuming_from_suspend)
 *   [8 CPU spikes with 400 series cards](#CPU_spikes_with_400_series_cards)
@@ -152,15 +154,13 @@ The above line is for two 3840x2160 monitors connected to DP-2 and DP-4\. You wi
 
 ### Avoid screen tearing in KDE (KWin)
 
-First make sure `TripleBuffering` has been enabled for the driver, see [#Avoid screen tearing](#Avoid_screen_tearing).
+At the moment there are two workarounds to try. Do **not** apply both workarounds because this may lead to high CPU load [[2]](https://bugs.kde.org/show_bug.cgi?id=322060).
 
-Create the `/etc/profile.d/kwin.sh` file:
+#### 1\. GL threads
 
- `/etc/profile.d/kwin.sh`  `export KWIN_TRIPLE_BUFFER=1` 
+Set GL threads to sleep by exporting `__GL_YIELD="USLEEP"` to `kwin_x11`.
 
-Also make sure to use **OpenGL 2.0 or later** as rendering backend under *Systemsettings*, *Display and Monitor*, *Compositor*.
-
-If enabling `TripleBuffering` does not help, you could try to put GL threads to sleep. However note this may a huge performance loss in games:
+To apply the workaround on boot:
 
  `/etc/profile.d/kwin.sh` 
 ```
@@ -168,24 +168,27 @@ export __GL_YIELD="USLEEP"
 
 ```
 
-To workaround this, run `kwin_x11 --replace` with the [environment variable](/index.php/Environment_variable "Environment variable") `export __GL_YIELD="USLEEP"` stated before:
+An another approach is not to export this as global variable, but only export to *KWin* on [startup](/index.php/Autostart "Autostart"):
 
-```
-export __GL_YIELD="USLEEP" && kwin_x11 --replace
-
-```
-
-Unlike using the environment variable globally, this does only affect KWin and doesn't reduce CPU performance in other 3D applications. This can also be executed automatically when logging in by creating a simple script and put it into Plasma's `~/.config/autostart-scripts` folder:
-
- `~/.config/autostart-scripts/restartkwinusleep.sh` 
+ `~/.config/autostart/kwin.sh` 
 ```
 (sleep 2s && export __GL_YIELD="USLEEP" && kwin_x11 --replace)
 
 ```
 
-The `sleep` argument helps to prevent issues when KWin is restarted too soon after logging in, you might want to adjust the time to your needs. Don't forget to mark the script as [executable](/index.php/Executable "Executable").
+Mark the script as [executable](/index.php/Executable "Executable").
 
-**Warning:** Do not have both workarounds enabled at the same time [[2]](https://bugs.kde.org/show_bug.cgi?id=322060).
+The `sleep` argument helps to prevent issues when KWin is restarted/hanging after logging in, you might need to adjust this time.
+
+#### 2\. Use TripleBuffering
+
+Make sure `TripleBuffering` has been enabled for the driver, see [#Avoid screen tearing](#Avoid_screen_tearing).
+
+Create the `/etc/profile.d/kwin.sh` file:
+
+ `/etc/profile.d/kwin.sh`  `export KWIN_TRIPLE_BUFFER=1` 
+
+Use **OpenGL 2.0 or later** as rendering backend under *Systemsettings*, *Display and Monitor*, *Compositor*.
 
 ## Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8
 

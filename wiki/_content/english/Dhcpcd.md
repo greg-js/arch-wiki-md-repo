@@ -41,7 +41,7 @@ The [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) package is part of
 
 To start the daemon for *all* network interfaces, [start/enable](/index.php/Start/enable "Start/enable") `dhcpcd.service`.
 
-To start the daemon for a specific interface alone, [start/enable](/index.php/Start/enable "Start/enable") the template unit `dhcpcd@*interface*.service`, where *interface* can be found with [Network configuration#Get current device names](/index.php/Network_configuration#Get_current_device_names "Network configuration").
+To start the daemon for a specific interface alone, [start/enable](/index.php/Start/enable "Start/enable") the template unit `dhcpcd@*interface*.service`, where *interface* can be found with [Network configuration#Get current interface names](/index.php/Network_configuration#Get_current_interface_names "Network configuration").
 
 Using the template unit is recommended; see [#dhcpcd and systemd network interfaces](#dhcpcd_and_systemd_network_interfaces) for details.
 

@@ -127,10 +127,8 @@ One such usage of this feature is to control playback in Cmus with the XF86 keyb
 
 ```
 #!/bin/sh
-# This command will break if you rename it to
-# something containing "cmus".
 
-if ! pgrep cmus ; then
+if ! pgrep -x cmus ; then
   xterm -e cmus
 else
   cmus-remote -u

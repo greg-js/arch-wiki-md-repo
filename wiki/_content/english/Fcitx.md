@@ -106,7 +106,7 @@ When other input methods with xim support are also running, fcitx may fail to st
 
 ### Non desktop environment
 
-[Define](/index.php/Environment_variables#Defining_variables "Environment variables") the environment variables to register the input method modules and support xim programs.
+[Define](/index.php/Define "Define") the environment variables to register the input method modules and support xim programs.
 
 ```
 GTK_IM_MODULE=fcitx

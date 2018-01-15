@@ -29,18 +29,7 @@ This means that a user does not have to wait for a company, project, or package 
 
 [Install](/index.php/Install "Install") the [dkms](https://www.archlinux.org/packages/?name=dkms) package and the headers for your kernel (for the standard kernel this would be [linux-headers](https://www.archlinux.org/packages/?name=linux-headers)).
 
-A good number of modules that lie outside the kernel source tree have a DKMS variant; a few are hosted in the [official repositories](https://www.archlinux.org/packages/?&q=dkms), most are found in the [AUR](https://aur.archlinux.org/packages/?SeB=n&K=dkms). Listed below are a few of the software packages that have a DKMS variant with additional links to dedicated sections where available:
-
-*   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst"): [catalyst-dkms](https://aur.archlinux.org/packages/catalyst-dkms/)
-*   [NVIDIA](/index.php/NVIDIA "NVIDIA"):
-    *   [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms)
-    *   [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)
-    *   [nvidia-304xx-dkms](https://aur.archlinux.org/packages/nvidia-304xx-dkms/)
-    *   [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/)
-    *   [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/)
-*   [VirtualBox](/index.php/VirtualBox "VirtualBox"):
-    *   [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
-    *   [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)
+A good number of modules that lie outside the kernel source tree have a DKMS variant; a few are hosted in the [official repositories](https://www.archlinux.org/packages/?&q=dkms), most are found in the [AUR](https://aur.archlinux.org/packages/?SeB=n&K=dkms).
 
 ## Upgrades
 

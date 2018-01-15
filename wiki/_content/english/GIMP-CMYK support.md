@@ -1,3 +1,8 @@
+Related articles
+
+*   [GIMP](/index.php/GIMP "GIMP")
+*   [Using lprof to profile monitors](/index.php/Using_lprof_to_profile_monitors "Using lprof to profile monitors")
+
 This article will show how to enable rudimentary CMYK support in Gimp using the Separate and Separate+ plug-ins, and explain how to use color proof filter to soft-proof your images. It will also cover more general topics on CMYK colors and DTP.
 
 ## Contents
@@ -10,12 +15,9 @@ This article will show how to enable rudimentary CMYK support in Gimp using the 
 *   [5 About CMYK color and Gimp](#About_CMYK_color_and_Gimp)
 *   [6 Getting the software](#Getting_the_software)
     *   [6.1 Separate plug-in for Gimp](#Separate_plug-in_for_Gimp)
-        *   [6.1.1 Installing using AUR](#Installing_using_AUR)
-        *   [6.1.2 Installing Separate manually](#Installing_Separate_manually)
     *   [6.2 Separate+ plug-in](#Separate.2B_plug-in)
-        *   [6.2.1 Installing binary version from Painters Studio repository](#Installing_binary_version_from_Painters_Studio_repository)
-        *   [6.2.2 Installing using AUR](#Installing_using_AUR_2)
-        *   [6.2.3 Installing manually](#Installing_manually)
+        *   [6.2.1 Installing using AUR](#Installing_using_AUR)
+        *   [6.2.2 Installing manually](#Installing_manually)
     *   [6.3 Install ICC profiles](#Install_ICC_profiles)
         *   [6.3.1 Installing from AUR](#Installing_from_AUR)
         *   [6.3.2 Install manually](#Install_manually)
@@ -96,12 +98,6 @@ Gimp itself offers a smaller set of CMYK-related functions:
 
 ### Separate plug-in for Gimp
 
-#### Installing using AUR
-
-Install [gimp-plugin-separate](https://aur.archlinux.org/packages/gimp-plugin-separate/).
-
-#### Installing Separate manually
-
 Once you have obtained the [source tarball](http://www.blackfiveservices.co.uk/linux_resources/separate-gimp2-0.3_linux.tar.gz), you can unpack it using the usual tar command:
 
 ```
@@ -123,18 +119,6 @@ where GIMPVERSION would be the major version number of Gimp (2.0 at the time of 
 When you start Gimp the Separate will be recognized and reachable through *Image > Separate* menu.
 
 ### Separate+ plug-in
-
-#### Installing binary version from Painters Studio repository
-
-Painters Studio repository hosts binary packages for Separate+ plugin. To obtain the plugin, add one of the following two repositories to your pacman.conf:
-
-```
-[pst]
-Server = http://pst.brankovukelic.com/$arch
-
-```
-
-Then install the [gimp-plugin-separate+](https://aur.archlinux.org/packages/gimp-plugin-separate%2B/) package.
 
 #### Installing using AUR
 
@@ -168,7 +152,7 @@ If you are using the Separate plug-in package from AUR, you already have the pro
 
 #### Installing from AUR
 
-To install ICC profiles from AUR, you need to get [eci-icc](https://aur.archlinux.org/packages/eci-icc/) and/or [adobe-icc](https://aur.archlinux.org/packages/adobe-icc/) packages (and optionally [srgb-icc](https://aur.archlinux.org/packages/srgb-icc/) package) and install them with [makepkg](/index.php/Makepkg "Makepkg").
+To install ICC profiles from AUR, you need to get [eci-icc](https://aur.archlinux.org/packages/eci-icc/) and/or [adobe-icc](https://aur.archlinux.org/packages/adobe-icc/) packages and install them with [makepkg](/index.php/Makepkg "Makepkg").
 
 #### Install manually
 

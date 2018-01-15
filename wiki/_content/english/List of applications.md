@@ -162,8 +162,9 @@ This article is a general list of applications sorted by category, as a referenc
     *   [3.13 Keyboard layout switchers](#Keyboard_layout_switchers)
     *   [3.14 Power management](#Power_management)
     *   [3.15 Clipboard managers](#Clipboard_managers)
-    *   [3.16 Package management](#Package_management)
-    *   [3.17 Input methods](#Input_methods)
+    *   [3.16 Colour pickers](#Colour_pickers)
+    *   [3.17 Package management](#Package_management)
+    *   [3.18 Input methods](#Input_methods)
 *   [4 Documents and texts](#Documents_and_texts)
     *   [4.1 Office suites](#Office_suites)
     *   [4.2 Word processors](#Word_processors)
@@ -1235,7 +1236,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **Dino** — A modern, easy to use XMPP client, with PGP and OMEMO support.
 
-	[https://github.com/dino/dino](https://github.com/dino/dino) || [dino-git](https://aur.archlinux.org/packages/dino-git/)
+	[https://dino.im](https://dino.im) || [dino-git](https://aur.archlinux.org/packages/dino-git/)
 
 *   **[Gajim](/index.php/Gajim "Gajim")** — Jabber client written in PyGTK.
 
@@ -3637,6 +3638,24 @@ See [Power management](/index.php/Power_management "Power management").
 
 See: [List of clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard").
 
+### Colour pickers
+
+*   **Cinnamon Color Picker** — An applet for the Cinnamon desktop.
+
+	[https://cinnamon-spices.linuxmint.com/applets/view/179](https://cinnamon-spices.linuxmint.com/applets/view/179) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **Pick** — A simple color picker tool for the Linux desktop.
+
+	[https://www.kryogenix.org/code/pick](https://www.kryogenix.org/code/pick) || [pick-colour-picker](https://aur.archlinux.org/packages/pick-colour-picker/)
+
+*   **GPick** — An advanced color picker tool.
+
+	[https://www.kryogenix.org/code/pick](https://www.kryogenix.org/code/pick) || [gpick](https://www.archlinux.org/packages/?name=gpick)
+
+*   **eOS Color Picker** — A simplistic color picker for the Pantheon desktop.
+
+	[https://github.com/RonnyDo/ColorPicker](https://github.com/RonnyDo/ColorPicker) || [color-picker-git](https://aur.archlinux.org/packages/color-picker-git/)
+
 ### Package management
 
 See [pacman tips#Utilities](/index.php/Pacman_tips#Utilities "Pacman tips").
@@ -5766,6 +5785,10 @@ See also [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/
 
 	[http://www.brain-dump.org/projects/abduco/](http://www.brain-dump.org/projects/abduco/) || [abduco](https://www.archlinux.org/packages/?name=abduco)
 
+*   **[byobu](https://en.wikipedia.org/wiki/Byobu_(software) "wikipedia:Byobu (software)")** — An GPLv3 licensed addon for tmux or screen. It requires a terminal multiplexer installed.
+
+	[http://byobu.co/](http://byobu.co/) || [byobu](https://aur.archlinux.org/packages/byobu/)
+
 *   **[dtach](/index.php/Dtach "Dtach")** — Program that emulates the detach feature of [screen](/index.php/Screen "Screen").
 
 	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
@@ -5774,13 +5797,13 @@ See also [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/
 
 	[https://www.gnu.org/software/screen/](https://www.gnu.org/software/screen/) || [screen](https://www.archlinux.org/packages/?name=screen)
 
+*   **mtm** — Simple terminal multiplexer with just four commands: change focus, split, close, and screen redraw.
+
+	[https://github.com/deadpixi/mtm](https://github.com/deadpixi/mtm) || [mtm-git](https://aur.archlinux.org/packages/mtm-git/)
+
 *   **[tmux](/index.php/Tmux "Tmux")** — BSD licensed terminal multiplexer.
 
 	[http://tmux.github.io/](http://tmux.github.io/) || [tmux](https://www.archlinux.org/packages/?name=tmux)
-
-*   **[byobu](https://en.wikipedia.org/wiki/Byobu_(software) "wikipedia:Byobu (software)")** — An GPLv3 licensed addon for tmux or screen. It requires a terminal multiplexer installed.
-
-	[http://byobu.co/](http://byobu.co/) || [byobu](https://aur.archlinux.org/packages/byobu/)
 
 ### Desktop environments
 
@@ -6087,6 +6110,10 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 *   **artha** — A free cross-platform English thesaurus that works completely off-line and is based on WordNet.
 
 	[http://artha.sourceforge.net/wiki/index.php/Home](http://artha.sourceforge.net/wiki/index.php/Home) || [artha](https://aur.archlinux.org/packages/artha/)
+
+*   **sdcv** — A command line dictionary. It provides access to dictionaries in StarDict's format.
+
+	[https://wiki.archlinux.org/index.php/Sdcv](https://wiki.archlinux.org/index.php/Sdcv) || [sdcv](https://www.archlinux.org/packages/?name=sdcv)
 
 ## See also
 

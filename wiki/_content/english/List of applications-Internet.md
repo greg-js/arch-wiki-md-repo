@@ -1045,7 +1045,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **Dino** — A modern, easy to use XMPP client, with PGP and OMEMO support.
 
-	[https://github.com/dino/dino](https://github.com/dino/dino) || [dino-git](https://aur.archlinux.org/packages/dino-git/)
+	[https://dino.im](https://dino.im) || [dino-git](https://aur.archlinux.org/packages/dino-git/)
 
 *   **[Gajim](/index.php/Gajim "Gajim")** — Jabber client written in PyGTK.
 

@@ -175,7 +175,7 @@ Port 39901
 
 #### Gestión del Demonio
 
-[openssh](https://www.archlinux.org/packages/?name=openssh) viene con dos archivos de unidades de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"):
+[openssh](https://www.archlinux.org/packages/?name=openssh) viene con dos archivos de unidades de[systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"):
 
 1.  `sshd.service`, el cual mantendra el demonio de SSH permanentemente activo y bifurcara para cada conexión entrante. [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh#n16) Es especialmente interesante para sistemas con bastante trafico de SSH. [[2]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh&id=4cadf5dff444e4b7265f8918652f4e6dff733812#n15)
 2.  `sshd.socket` + `sshd@.service`, el cual inicia una instancia de SSH en demanda. Usando esta configuracion implica que *systemd* escucha el en socket de SSH y solo inicia el demonio cuando hay una conexión entrante. Es el método recomendado para ejecutar `sshd` en casi todos los casos. [[3]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh&id=4cadf5dff444e4b7265f8918652f4e6dff733812#n18)[[4]](http://lists.freedesktop.org/archives/systemd-devel/2011-January/001107.html)[[5]](http://0pointer.de/blog/projects/inetd.html)
@@ -480,7 +480,7 @@ En el sistema remoto:
 *   en `/etc/ssh/ssh**d**_config`:
     *   verifique que las opciones `AllowTcpForwarding` y `X11UseLocalhost` están ajustadas a *yes*, y que `X11DisplayOffset` está ajustado a *10* (esos son los valores por defecto si no se han cambiado, ver [sshd_config(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5))
     *   ajuste `X11Forwarding` a *yes*
-*   a continuación, [reinicie](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el [demonio *sshd*](#Gesti.C3.B3n_del_Demonio_SSHD).
+*   a continuación, [reinicie](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el [demonio *sshd*](#Gesti.C3.B3n_del_Demonio).
 
 En el sistema cliente, active la opción `ForwardX11`, bien especificando el parámetro `-X` en la línea de órdenes para las conexiones ocasionales, bien ajustando `ForwardX11` a *yes* en el [archivo de configuración del cliente de openSSH](#Cliente).
 

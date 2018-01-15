@@ -1,3 +1,11 @@
+Related articles
+
+*   [Creating packages](/index.php/Creating_packages "Creating packages")
+*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
+*   [makepkg](/index.php/Makepkg "Makepkg")
+*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
+*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+
 When building packages for Arch Linux, **adhere to the package guidelines** below, especially if the intention is to **contribute** a new package to Arch Linux. You should also see the [PKGBUILD](https://archlinux.org/pacman/PKGBUILD.5.html) and [makepkg](https://archlinux.org/pacman/makepkg.8.html) manpages.
 
 ## Contents
@@ -145,7 +153,7 @@ When [makepkg](/index.php/Makepkg "Makepkg") is used to build a package, it does
 
 ## Architectures
 
-The `arch` array should contain `'i686'` and/or `'x86_64'` depending on which architectures it can be built on. You can also use `'any'` for architecture independent packages.
+The `arch` array should contain `'x86_64'` if the compiled package is architecture-specific. Otherwise, use `'any'` for architecture independent packages.
 
 ## Licenses
 

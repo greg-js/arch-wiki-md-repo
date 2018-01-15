@@ -27,6 +27,7 @@
     *   [4.6 Using Wine as an interpreter for Win16/Win32 binaries](#Using_Wine_as_an_interpreter_for_Win16.2FWin32_binaries)
     *   [4.7 Wineconsole](#Wineconsole)
     *   [4.8 Winetricks](#Winetricks)
+    *   [4.9 Temp directory on tmpfs](#Temp_directory_on_tmpfs)
 *   [5 Third-party interfaces](#Third-party_interfaces)
     *   [5.1 CrossOver](#CrossOver)
     *   [5.2 PlayOnLinux/PlayOnMac](#PlayOnLinux.2FPlayOnMac)
@@ -397,6 +398,16 @@ You can install [winetricks](https://www.archlinux.org/packages/?name=winetricks
 
 ```
 $ winetricks
+
+```
+
+### Temp directory on tmpfs
+
+To limit wine from writing its Temporary files to a physical disk, one can define an alternative location, like tmpfs, removing Temp directory and creating a symlink:
+
+```
+$ rm -r ~/.wine/drive_c/users/$USER/Temp
+$ ln -s /tmp/ ~/.wine/drive_c/users/$USER/Temp
 
 ```
 

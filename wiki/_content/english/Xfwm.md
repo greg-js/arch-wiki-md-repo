@@ -103,7 +103,7 @@ The themes installed will be shown in the `xfwm4-settings` window.
 
 Go to `Accessibility` and check `Hide title of windows when maximized`.
 
-**Note:** It is recommend to install [xfce4-windowck-plugin](https://aur.archlinux.org/packages/xfce4-windowck-plugin/) if you want to put the titlebar of current maximized window on you panel.
+**Note:** It is recommend to install [xfce4-windowck-plugin](https://aur.archlinux.org/packages/xfce4-windowck-plugin/) if you want to put the titlebar of the currently maximized window on your panel.
 
 ## Troubleshooting
 

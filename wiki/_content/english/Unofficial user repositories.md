@@ -71,32 +71,33 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [3.2.1 andrwe](#andrwe)
         *   [3.2.2 alucryd](#alucryd)
         *   [3.2.3 alucryd-multilib](#alucryd-multilib)
-        *   [3.2.4 archlinuxfr](#archlinuxfr)
-        *   [3.2.5 archlinuxgr](#archlinuxgr)
-        *   [3.2.6 archlinuxgr-kde4](#archlinuxgr-kde4)
-        *   [3.2.7 arsch](#arsch)
-        *   [3.2.8 heftig](#heftig)
-        *   [3.2.9 home_fusion809_Arch_Extra](#home_fusion809_Arch_Extra)
-        *   [3.2.10 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
-        *   [3.2.11 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
-        *   [3.2.12 home_post-factum_Arch_Extra](#home_post-factum_Arch_Extra)
-        *   [3.2.13 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.14 home-thaodan](#home-thaodan)
-        *   [3.2.15 jkanetwork](#jkanetwork)
-        *   [3.2.16 matrixim](#matrixim)
-        *   [3.2.17 mesa-git](#mesa-git)
-        *   [3.2.18 mingw-w64](#mingw-w64)
-        *   [3.2.19 neo_chen](#neo_chen)
-        *   [3.2.20 noware](#noware)
-        *   [3.2.21 ownstuff](#ownstuff)
-        *   [3.2.22 pantheon](#pantheon)
-        *   [3.2.23 pietma](#pietma)
-        *   [3.2.24 pnsft-pur](#pnsft-pur)
-        *   [3.2.25 QOwnNotes](#QOwnNotes)
-        *   [3.2.26 rakudo](#rakudo)
-        *   [3.2.27 rust-git](#rust-git)
-        *   [3.2.28 trinity](#trinity)
-        *   [3.2.29 zrootfs](#zrootfs)
+        *   [3.2.4 archgeotux](#archgeotux)
+        *   [3.2.5 archlinuxfr](#archlinuxfr)
+        *   [3.2.6 archlinuxgr](#archlinuxgr)
+        *   [3.2.7 archlinuxgr-kde4](#archlinuxgr-kde4)
+        *   [3.2.8 arsch](#arsch)
+        *   [3.2.9 heftig](#heftig)
+        *   [3.2.10 home_fusion809_Arch_Extra](#home_fusion809_Arch_Extra)
+        *   [3.2.11 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
+        *   [3.2.12 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
+        *   [3.2.13 home_post-factum_Arch_Extra](#home_post-factum_Arch_Extra)
+        *   [3.2.14 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
+        *   [3.2.15 home-thaodan](#home-thaodan)
+        *   [3.2.16 jkanetwork](#jkanetwork)
+        *   [3.2.17 matrixim](#matrixim)
+        *   [3.2.18 mesa-git](#mesa-git)
+        *   [3.2.19 mingw-w64](#mingw-w64)
+        *   [3.2.20 neo_chen](#neo_chen)
+        *   [3.2.21 noware](#noware)
+        *   [3.2.22 ownstuff](#ownstuff)
+        *   [3.2.23 pantheon](#pantheon)
+        *   [3.2.24 pietma](#pietma)
+        *   [3.2.25 pnsft-pur](#pnsft-pur)
+        *   [3.2.26 QOwnNotes](#QOwnNotes)
+        *   [3.2.27 rakudo](#rakudo)
+        *   [3.2.28 rust-git](#rust-git)
+        *   [3.2.29 trinity](#trinity)
+        *   [3.2.30 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -768,6 +769,18 @@ Server = https://pkgbuild.com/~alucryd/$repo/x86_64
 ```
 [alucryd-multilib]
 Server = https://pkgbuild.com/~alucryd/$repo/x86_64
+
+```
+
+#### archgeotux
+
+*   **Maintainer:** Samuel Mesa
+*   **Description:** Geospatial and geographic information system applications
+*   **Upstream page:** [https://archgeotux.sourceforge.io/](https://archgeotux.sourceforge.io/)
+
+```
+[archgeotux]
+Server = https://downloads.sourceforge.net/project/archgeotux/$arch
 
 ```
 

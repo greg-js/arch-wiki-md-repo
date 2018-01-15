@@ -15,8 +15,8 @@ As a daily based user, one is able to interact directly with the device by using
     *   [6.1 Chromium](#Chromium)
     *   [6.2 Firefox](#Firefox)
     *   [6.3 Moolticute](#Moolticute)
-        *   [6.3.1 Moolticute-CLI](#Moolticute-CLI)
-        *   [6.3.2 Moolticute_ssh-agent](#Moolticute_ssh-agent)
+        *   [6.3.1 mc-cli](#mc-cli)
+        *   [6.3.2 mc-agent](#mc-agent)
     *   [6.4 Mooltipy](#Mooltipy)
 *   [7 See also](#See_also)
 
@@ -80,13 +80,13 @@ Like Chromium, [Firefox](/index.php/Firefox "Firefox") users can use [firefox-ex
 
 **Note:** The daemon expose a web socket interface so anyone could build tools for its own needs.
 
-#### Moolticute-CLI
+#### mc-cli
 
-For scripting purpose there is [moolticute-cli](https://aur.archlinux.org/packages/moolticute-cli/) which allow one to interact with the Mooltipass through moolticuted from the command line.
+For scripting purpose there is [mc-cli](https://aur.archlinux.org/packages/mc-cli/) which allow one to interact with the Mooltipass through moolticuted from the command line.
 
-#### Moolticute_ssh-agent
+#### mc-agent
 
-[moolticute_ssh-agent](https://aur.archlinux.org/packages/moolticute_ssh-agent/) benefit from the filesystem support of Mooltipass so users are able to store their (unencrypted) [SSH keys](/index.php/SSH_keys "SSH keys"). Moolticute_ssh-agent implement an SSH agent that allows to load the key from the device.
+[mc-agent](https://aur.archlinux.org/packages/mc-agent/) benefit from the filesystem support of Mooltipass so users are able to store their (unencrypted) [SSH keys](/index.php/SSH_keys "SSH keys"). mc-agent implement an SSH agent that allows to load the key from the device.
 
 ### Mooltipy
 

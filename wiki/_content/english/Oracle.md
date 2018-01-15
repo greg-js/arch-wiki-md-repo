@@ -2,21 +2,18 @@ Related articles
 
 *   [Oracle client](/index.php/Oracle_client "Oracle client")
 
-This document will help you install [Oracle Database](https://en.wikipedia.org/wiki/Oracle_Database "wikipedia:Oracle Database") 11gR1 on Arch Linux. If you only want to connect to Oracle databases running elsewhere, see the instructions for installing the [Oracle client](/index.php/Oracle_client "Oracle client"). For installation of Oracle Express Edition, see [oracle-xe](https://aur.archlinux.org/packages/oracle-xe/) and get back to method 2 for after-install configurations.
-
-By using the install method 2 you will be able to finalize the long installation process with only a few steps.
+This document will help you install [Oracle Database](https://en.wikipedia.org/wiki/Oracle_Database "wikipedia:Oracle Database") 11gR1 on Arch Linux. If you only want to connect to Oracle databases running elsewhere, see the instructions for installing the [Oracle client](/index.php/Oracle_client "Oracle client"). For installation of Oracle Express Edition, see [#Install Oracle Express Edition](#Install_Oracle_Express_Edition).
 
 ## Contents
 
-*   [1 Install method 1 - manual](#Install_method_1_-_manual)
+*   [1 Install Oracle](#Install_Oracle)
     *   [1.1 Pre installation](#Pre_installation)
-    *   [1.2 AUR helper](#AUR_helper)
-        *   [1.2.1 Required packages for Oracle database installation](#Required_packages_for_Oracle_database_installation)
-        *   [1.2.2 Configuration](#Configuration)
-    *   [1.3 Graphical installation](#Graphical_installation)
-        *   [1.3.1 Installing Oracle database software](#Installing_Oracle_database_software)
-    *   [1.4 Oracle Enterprise Manager installation (optional)](#Oracle_Enterprise_Manager_installation_.28optional.29)
-*   [2 Install method 2 - AUR](#Install_method_2_-_AUR)
+        *   [1.1.1 Required packages for Oracle database installation](#Required_packages_for_Oracle_database_installation)
+        *   [1.1.2 Configuration](#Configuration)
+    *   [1.2 Graphical installation](#Graphical_installation)
+        *   [1.2.1 Installing Oracle database software](#Installing_Oracle_database_software)
+    *   [1.3 Oracle Enterprise Manager installation (optional)](#Oracle_Enterprise_Manager_installation_.28optional.29)
+*   [2 Install Oracle Express Edition](#Install_Oracle_Express_Edition)
     *   [2.1 Installation](#Installation)
 *   [3 Post installation](#Post_installation)
     *   [3.1 Creating initial database](#Creating_initial_database)
@@ -29,34 +26,21 @@ By using the install method 2 you will be able to finalize the long installation
 *   [5 Known issues](#Known_issues)
 *   [6 See also](#See_also)
 
-## Install method 1 - manual
+## Install Oracle
 
 This section will guide you through installing Oracle onto a fresh installation of archlinux. This is a general approach that has been tested with kernel 2.6.28.ARCH x86_64 and Oracle 11g R1 64-bit. ***This should in principle work with other versions of Oracle***.
 
 ### Pre installation
 
-### AUR helper
-
-To ease the installation process you may find useful to install an AUR helper:
-
-```
-# pacman -U [ftp://ftp.berlios.de/pub/aurbuild/aurbuild-1.8.4-1-any.pkg.tar.gz](ftp://ftp.berlios.de/pub/aurbuild/aurbuild-1.8.4-1-any.pkg.tar.gz)
-
-```
-
 #### Required packages for Oracle database installation
 
-[Install](/index.php/Install "Install") packages [unzip](https://www.archlinux.org/packages/?name=unzip) [sudo](https://www.archlinux.org/packages/?name=sudo) [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) [icu](https://www.archlinux.org/packages/?name=icu) [gawk](https://www.archlinux.org/packages/?name=gawk) [gdb](https://www.archlinux.org/packages/?name=gdb) [elfutils](https://www.archlinux.org/packages/?name=elfutils) [sysstat](https://www.archlinux.org/packages/?name=sysstat) [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5).
+[Install](/index.php/Install "Install") packages [unzip](https://www.archlinux.org/packages/?name=unzip) [sudo](https://www.archlinux.org/packages/?name=sudo) [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) [icu](https://www.archlinux.org/packages/?name=icu) [gawk](https://www.archlinux.org/packages/?name=gawk) [gdb](https://www.archlinux.org/packages/?name=gdb) [elfutils](https://www.archlinux.org/packages/?name=elfutils) [sysstat](https://www.archlinux.org/packages/?name=sysstat) [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5) [unixodbc](https://www.archlinux.org/packages/?name=unixodbc).
 
 Install a [Java](/index.php/Java "Java") runtime environment, like [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) and [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk).
 
 From the [AUR](/index.php/AUR "AUR"), install [ksh](https://aur.archlinux.org/packages/ksh/) (other implementations like [these](/index.php/Ksh "Ksh") may work), [beecrypt](https://aur.archlinux.org/packages/beecrypt/), [rpm-org](https://aur.archlinux.org/packages/rpm-org/) and [libaio](https://www.archlinux.org/packages/?name=libaio).
 
-Oracle database 32-bit requires [unixodbc](https://www.archlinux.org/packages/?name=unixodbc).
-
-Optional lib32 packages on x86_64 are: [lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5) [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs).
-
-Oracle database require 32-bit libaio and unixodbc on x86_64 but is not necessary under Arch linux.
+Oracle database 32-bit requires [lib32-unixodbc](https://www.archlinux.org/packages/?name=lib32-unixodbc) [lib32-libaio](https://www.archlinux.org/packages/?name=lib32-libaio) [lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5) [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs).
 
 **Note:** The following step is not required in newer Arch Linux installation after the binary directories merge
 
@@ -96,14 +80,7 @@ Set password for the user oracle:
 
 ```
 
-Optional: Add oracle to the `sshd_config` file.
-
-```
-# pacman -S openssh
-
-```
-
-Add this line to `/etc/ssh/sshd_config`:
+Optional: Install [OpenSSH](/index.php/OpenSSH "OpenSSH") and add this line to `/etc/ssh/sshd_config`:
 
 ```
 AllowUsers oracle
@@ -281,13 +258,13 @@ emctl start dbconsole
 
 ```
 
-## Install method 2 - AUR
+## Install Oracle Express Edition
 
 ### Installation
 
 **Note:** This installation method creates a database automatically. The Oracle database will therefore be ready to be used after the installation.
 
-**Step 1.** Download the Arch Linux package [oracle](https://aur.archlinux.org/packages/oracle/) from AUR. Download the Oracle database 11gR1: [http://www.oracle.com/technology/software/products/database/index.html](http://www.oracle.com/technology/software/products/database/index.html)
+**Step 1.** Download the Arch Linux package [oracle-xe](https://aur.archlinux.org/packages/oracle-xe/) from AUR. Download the Oracle Database Express Edition from [http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html](http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html)
 
 **Step 2.** Extract the Arch Linux package into a directory. Copy the Oracle database 11gR1 into that directory as well.
 
@@ -318,7 +295,7 @@ makepkg -s
 
 ```
 
-**Step 3.** Install the package that makepkg has created by using pacman. You may get an error stating "/bin/ksh already exists", just remove that file and pacman will continue.
+**Step 3.** Install the package.
 
 Pacman will now install the Oracle database by executing Oracle's own installation script(./runInstaller -silent -ignoreSysPrereqs).
 
@@ -767,21 +744,7 @@ chown -R oracle:dba /oracle
 
 ```
 
-Update the system:
-
-```
-pacman -Syu python unzip sudo
-pacman -U [ftp://ftp.berlios.de/pub/aurbuild/aurbuild-1.8.4-1-any.pkg.tar.gz](ftp://ftp.berlios.de/pub/aurbuild/aurbuild-1.8.4-1-any.pkg.tar.gz)
-
-```
-
-Install required package run Oracle database and *required* daemons
-
-```
-aurbuild -s libaio
-pacman -S sysstat
-
-```
+Install [unzip](https://www.archlinux.org/packages/?name=unzip), [sysstat](https://www.archlinux.org/packages/?name=sysstat), [libaio](https://www.archlinux.org/packages/?name=libaio).
 
 Configure server for oracle [#Configuration](#Configuration)
 

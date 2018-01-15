@@ -4,7 +4,7 @@ Related articles
 *   [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
 *   [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts")
 
-From [Wikipedia](https://en.wikipedia.org/wiki/Computer_font "wikipedia:Computer font"): "A computer font (or font) is an electronic data file containing a set of glyphs, characters, or symbols such as dingbats."
+From [Wikipedia:Computer font](https://en.wikipedia.org/wiki/Computer_font "wikipedia:Computer font"): "A computer font (or font) is an electronic data file containing a set of glyphs, characters, or symbols such as dingbats."
 
 Note that certain font licenses may impose some legal limitations.
 
@@ -76,17 +76,17 @@ Most computer fonts used today are in either *bitmap* or *outline* data formats.
 
 ### Bitmap formats
 
-*   [Bitmap Distribution Format](https://en.wikipedia.org/wiki/Glyph_Bitmap_Distribution_Format "w:Glyph Bitmap Distribution Format") (BDF) by Adobe
-*   [w:Portable Compiled Format](https://en.wikipedia.org/wiki/Portable_Compiled_Format "w:Portable Compiled Format") (PCF) by Xorg
-*   [w:PC Screen Font](https://en.wikipedia.org/wiki/PC_Screen_Font "w:PC Screen Font") (PSF) used by the Kernel for console fonts, not supported by Xorg (for Unicode PSF files the extension is `psfu`)
+*   [Bitmap Distribution Format](https://en.wikipedia.org/wiki/Glyph_Bitmap_Distribution_Format "wikipedia:Glyph Bitmap Distribution Format") (BDF) by Adobe
+*   [Portable Compiled Format](https://en.wikipedia.org/wiki/Portable_Compiled_Format "wikipedia:Portable Compiled Format") (PCF) by Xorg
+*   [PC Screen Font](https://en.wikipedia.org/wiki/PC_Screen_Font "wikipedia:PC Screen Font") (PSF) used by the Kernel for console fonts, not supported by Xorg (for Unicode PSF files the extension is `psfu`)
 
 These formats can also be gzipped. See [#Bitmap](#Bitmap) for the available bitmap fonts.
 
 ### Outline formats
 
-*   [w:PostScript fonts](https://en.wikipedia.org/wiki/PostScript_fonts "w:PostScript fonts") by Adobe – has various formats, e.g: Printer Font ASCII (PFA) and Printer Font Binary (PPB)
-*   [w:TrueType](https://en.wikipedia.org/wiki/TrueType "w:TrueType") by Apple and Microsoft (file extension: `ttf`)
-*   [w:OpenType](https://en.wikipedia.org/wiki/OpenType "w:OpenType") by Microsoft, built on TrueType (file extensions: `otf`, `ttf`)
+*   [PostScript fonts](https://en.wikipedia.org/wiki/PostScript_fonts "wikipedia:PostScript fonts") by Adobe – has various formats, e.g: Printer Font ASCII (PFA) and Printer Font Binary (PPB)
+*   [TrueType](https://en.wikipedia.org/wiki/TrueType "wikipedia:TrueType") by Apple and Microsoft (file extension: `ttf`)
+*   [OpenType](https://en.wikipedia.org/wiki/OpenType "wikipedia:OpenType") by Microsoft, built on TrueType (file extensions: `otf`, `ttf`)
 
 For most purposes, the technical differences between TrueType and OpenType can be ignored.
 
@@ -276,7 +276,7 @@ FONT=lat2-16
 FONT_MAP=8859-2
 ```
 
-It means that second part of ISO/IEC 8859 characters are used with size 16\. You can change font size using other values (e.g. `lat2-08`). For the regions determined by 8859 specification, look at the [Wikipedia table](https://en.wikipedia.org/wiki/ISO/IEC_8859#The_Parts_of_ISO.2FIEC_8859 "wikipedia:ISO/IEC 8859").
+It means that second part of ISO/IEC 8859 characters are used with size 16\. You can change font size using other values (e.g. `lat2-08`). For the regions determined by 8859 specification, look at the [Wikipedia:ISO/IEC 8859#The parts of ISO/IEC 8859](https://en.wikipedia.org/wiki/ISO/IEC_8859#The_parts_of_ISO.2FIEC_8859 "wikipedia:ISO/IEC 8859").
 
 To use the specified font in early userspace, use the `consolefont` hook in `/etc/mkinitcpio.conf`. See [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") for more information.
 
@@ -295,7 +295,7 @@ The [Archfonts Python script](https://github.com/ternstor/distrofonts) can be us
 *   [Gohu](http://font.gohu.org/) ([gohufont](https://aur.archlinux.org/packages/gohufont/)) – 11px, 14px, normal and bold
 *   [Lime](http://artwizaleczapka.sourceforge.net/) ([artwiz-fonts](https://www.archlinux.org/packages/?name=artwiz-fonts))
 *   [ProFont](http://tobiasjung.name/profont/) ([profont](https://www.archlinux.org/packages/?name=profont)) – 10px, 11px, 12px, 15px, 17px, 22px, 29px, normal
-*   [Proggy](https://en.wikipedia.org/wiki/Proggy_programming_fonts "w:Proggy programming fonts") ([proggyfonts](https://aur.archlinux.org/packages/proggyfonts/)) – has different variants
+*   [Proggy](https://en.wikipedia.org/wiki/Proggy_programming_fonts "wikipedia:Proggy programming fonts") ([proggyfonts](https://aur.archlinux.org/packages/proggyfonts/)) – has different variants
 *   [Tamsyn](http://www.fial.com/~scott/tamsyn-font/) ([tamsyn-font](https://www.archlinux.org/packages/?name=tamsyn-font))
 *   [Terminus](http://terminus-font.sourceforge.net/) ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font))
 *   [Tewi](https://github.com/lucy/tewi-font) ([bdf-tewi-git](https://aur.archlinux.org/packages/bdf-tewi-git/))
@@ -305,13 +305,13 @@ The [Archfonts Python script](https://github.com/ternstor/distrofonts) can be us
 
 #### Families
 
-*   [w:Bitstream Vera](https://en.wikipedia.org/wiki/Bitstream_Vera "w:Bitstream Vera") ([ttf-bitstream-vera](https://www.archlinux.org/packages/?name=ttf-bitstream-vera)) – serif, sans-serif, and monospace
-*   [w:Croscore fonts](https://en.wikipedia.org/wiki/Croscore_fonts "w:Croscore fonts") ([ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) – Google's substitute for Windows' Arial, Times New Roman, and Courier New
-*   [w:DejaVu fonts](https://en.wikipedia.org/wiki/DejaVu_fonts "w:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) – Bitstream Vera modified for greater Unicode coverage
-*   [Droid](https://en.wikipedia.org/wiki/Droid_(font) "w:Droid (font)") ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) – created for Android
-*   [Google Noto](https://en.wikipedia.org/wiki/Noto_fonts "w:Noto fonts") ([noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts)) – Unicode
-*   [w:Liberation fonts](https://en.wikipedia.org/wiki/Liberation_fonts "w:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) – free substitute for Windows' Arial, Arial Narrow, Times New Roman and Courier New
-*   [w:Ubuntu Font Family](https://en.wikipedia.org/wiki/Ubuntu_Font_Family "w:Ubuntu Font Family") ([ttf-ubuntu-font-family](https://www.archlinux.org/packages/?name=ttf-ubuntu-font-family))
+*   [Bitstream Vera](https://en.wikipedia.org/wiki/Bitstream_Vera "wikipedia:Bitstream Vera") ([ttf-bitstream-vera](https://www.archlinux.org/packages/?name=ttf-bitstream-vera)) – serif, sans-serif, and monospace
+*   [Croscore fonts](https://en.wikipedia.org/wiki/Croscore_fonts "wikipedia:Croscore fonts") ([ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) – Google's substitute for Windows' Arial, Times New Roman, and Courier New
+*   [DejaVu fonts](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) – Bitstream Vera modified for greater Unicode coverage
+*   [Droid](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) – created for Android
+*   [Google Noto](https://en.wikipedia.org/wiki/Noto_fonts "wikipedia:Noto fonts") ([noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts)) – Unicode
+*   [Liberation fonts](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) – free substitute for Windows' Arial, Arial Narrow, Times New Roman and Courier New
+*   [Ubuntu Font Family](https://en.wikipedia.org/wiki/Ubuntu_Font_Family "wikipedia:Ubuntu Font Family") ([ttf-ubuntu-font-family](https://www.archlinux.org/packages/?name=ttf-ubuntu-font-family))
 *   [Microsoft fonts](http://corefonts.sourceforge.net/) ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)) – Andalé Mono, Courier New, Arial, Arial Black, Comic Sans, Impact, Lucida Sans, Microsoft Sans Serif, Trebuchet, Verdana, Georgia, Times New Roman
 *   Vista fonts ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/)) – Consolas, Calibri, Candara, Corbel, Cambria, Constantia
 

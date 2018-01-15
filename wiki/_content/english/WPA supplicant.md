@@ -59,7 +59,7 @@ Now start *wpa_supplicant* with:
 
 ```
 
-**Tip:** To discover your wireless network interface name, see [Network configuration#Device names](/index.php/Network_configuration#Device_names "Network configuration").
+**Tip:** To discover your wireless network interface name, see [Network configuration#Network interfaces](/index.php/Network_configuration#Network_interfaces "Network configuration").
 
 At this point run:
 
@@ -149,7 +149,7 @@ See also [Help:Reading#Regular user or root](/index.php/Help:Reading#Regular_use
 **Tip:**
 
 *   Use quotes, if the input contains spaces. For example: `"secret passphrase"`.
-*   To discover your wireless network interface name, see [Network configuration#Get current device names](/index.php/Network_configuration#Get_current_device_names "Network configuration").
+*   To discover your wireless network interface name, see [Network configuration#Get current interface names](/index.php/Network_configuration#Get_current_interface_names "Network configuration").
 *   Some unusually complex passphrases may require input from a file, e.g. `wpa_passphrase *MYSSID* < passphrase.txt`, or here strings, e.g. `wpa_passphrase *MYSSID* <<< "*passphrase*"`.
 
 Finally, you should obtain an IP address (e.g., using [Dhcpcd#Running](/index.php/Dhcpcd#Running "Dhcpcd")).

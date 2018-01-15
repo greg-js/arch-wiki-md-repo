@@ -807,7 +807,7 @@ options snd-hda-intel model=mbp3 position_fix=2
 
 ```
 
-For Aluminium iMacs, see [iMac_Aluminium#Getting_sound_to_work_right](/index.php/IMac_Aluminium#Getting_sound_to_work_right "IMac Aluminium")
+For Aluminium iMacs, see [iMac Aluminium#Getting sound to work right](/index.php/IMac_Aluminium#Getting_sound_to_work_right "IMac Aluminium")
 
 You can try to specify other options, that depend on your hardware. All other possible settings are listed in Kernel Documentation, avaible online:
 

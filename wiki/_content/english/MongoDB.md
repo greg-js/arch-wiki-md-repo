@@ -29,6 +29,20 @@ $ mongo
 
 ### MongoDB won't start
 
+Check that the systemctl service is configured to use the correct database location:
+
+```
+$ vi /usr/lib/systemd/system/mongodb.service
+
+```
+
+Add "--dbpath /var/lib/mongodb" to the "ExecStart" line:
+
+```
+ExecStart=/usr/bin/numactl --interleave=all mongod --quiet --config /etc/mongodb.conf --dbpath /var/lib/mongodb
+
+```
+
 Check that there is at least 3GB space available for its journal files, otherwise mongodb can fail to start (without issuing a message to the user):
 
 ```

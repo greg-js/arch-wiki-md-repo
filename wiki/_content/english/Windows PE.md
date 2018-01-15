@@ -17,7 +17,9 @@ In addition, by downloading the Windows Automated Installation Kit, you may be b
     *   [3.2 From CD](#From_CD)
     *   [3.3 From Network](#From_Network)
 *   [4 Installing Windows from Windows PE](#Installing_Windows_from_Windows_PE)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 System error 58 has occurred. The specified server cannot perform the requested operation](#System_error_58_has_occurred._The_specified_server_cannot_perform_the_requested_operation)
+*   [6 See also](#See_also)
 
 ## Use cases
 
@@ -172,8 +174,45 @@ Once booted into Windows PE command prompt, run the following command to initial
 
 ```
 
+## Troubleshooting
+
+### System error 58 has occurred. The specified server cannot perform the requested operation
+
+If you are getting the following error when using the `net use` command:
+
+```
+System error 58 has occurred.
+
+The specified server cannot perform the requested operation.
+
+```
+
+1\. Make sure you haven't accidentally unmounted the `/media/winimg` directory.
+
+2\. Add a `map to guest` to `/etc/samba/smb.conf`. Add the following at the top of the file:
+
+ `/etc/samba/smb.conf` 
+```
+[global]
+map to guest = Bad User
+...
+
+```
+
+3\. Restart the `smbd.service`.
+
+4\. Specify any username/password in the net use command:
+
+```
+net use I: \\IP.ADDRESS.OF.SAMBA.SERVER\REMINST /user:user pass
+
+```
+
+This is happening because Windows 10 connects to anonymous shares by checking some username and password to see if it is able to log in, and if so it allows an anonymous connection. Apparently whatever part hides this from the user didn't make it into the PE build.
+
 ## See also
 
 *   [Microsoft's documentation for Windows PE](http://technet.microsoft.com/en-us/library/cc766093(v=ws.10).aspx)
 *   [Another article about making Windows PE images on Linux](http://www.thinkwiki.org/wiki/Windows_PE)
 *   [A guide with scripts for unattended installation of Windows 7 from Linux using Windows PE](http://www.ultimatedeployment.org/win7pxelinux1.html)
+*   [Windows 10 PE Unable to map network drive anonymously](https://serverfault.com/a/858269/206710)

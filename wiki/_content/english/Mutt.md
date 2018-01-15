@@ -821,7 +821,7 @@ To view all unread messages that are either of size ≥1MB or from johndoe, use
 
 ```
 
-All possible patterns are listed in the [official manual](http://www.mutt.org/doc/manual/manual-4.html#ss4.2).
+All possible patterns are listed in the [official manual](http://www.mutt.org/doc/manual/#patterns).
 
 #### Conversation grouping
 

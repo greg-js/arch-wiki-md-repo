@@ -72,7 +72,7 @@ Yep, so simple - since all of the ["boost knobs" are already "on" by default](ht
 
 **Warning:** Disabling barriers, disabling atime, and other performance enhancements make data corruption and failure much more likely.
 
-As per [XFS wiki](http://xfs.org/index.php/XFS_FAQ#Q:_I_want_to_tune_my_XFS_filesystems_for_.3Csomething.3E), consider changing the default CFQ [I/O scheduler](/index.php/Improving_performance#Tuning_IO_schedulers "Improving performance") (for example to [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "wikipedia:Deadline scheduler"), [Noop](https://en.wikipedia.org/wiki/NOOP_scheduler "wikipedia:NOOP scheduler") or [BFQ](/index.php/Linux-ck#How_to_enable_the_BFQ_I.2FO_Scheduler "Linux-ck")) to enjoy all of the benefits of XFS, especially on [SSDs](/index.php/SSD "SSD").
+As per [XFS wiki](http://xfs.org/index.php/XFS_FAQ#Q:_I_want_to_tune_my_XFS_filesystems_for_.3Csomething.3E), consider changing the default CFQ [I/O scheduler](/index.php/Improving_performance#Tuning_I.2FO_scheduler "Improving performance") (for example to [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "wikipedia:Deadline scheduler"), [Noop](https://en.wikipedia.org/wiki/NOOP_scheduler "wikipedia:NOOP scheduler") or [BFQ](/index.php/Linux-ck#How_to_enable_the_BFQ_I.2FO_Scheduler "Linux-ck")) to enjoy all of the benefits of XFS, especially on [SSDs](/index.php/SSD "SSD").
 
 ### Stripe size and width
 

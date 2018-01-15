@@ -702,10 +702,7 @@ Xorg may run with standard user privileges with the help of `logind`. The requir
 
 If you do not fit these requirements, re-enable root rights in `/etc/X11/Xwrapper.config`:
 
-```
-needs_root_rights = *yes*
-
-```
+ `/etc/X11/Xwrapper.config`  `needs_root_rights = *yes*` 
 
 See also [Xorg.wrap(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.wrap.1) and [Systemd/User#Xorg as a systemd user service](/index.php/Systemd/User#Xorg_as_a_systemd_user_service "Systemd/User").
 

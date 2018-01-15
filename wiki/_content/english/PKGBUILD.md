@@ -286,11 +286,11 @@ $ pacman -Qc *pkgname*
 
 An array of files needed to build the package. It must contain the location of the software source, which in most cases is a full HTTP or FTP URL. The previously set variables `pkgname` and `pkgver` can be used effectively here; e.g. `source=("https://example.com/$pkgname-$pkgver.tar.gz")`.
 
-Files can also be supplied where `PKGBUILD` is located and added to this array. The paths are resolved relative to the directory of `PKGBUILD`. Before the actual build process starts, all the files referenced in this array will be downloaded or checked for existence, and *makepkg* will not proceed if any is missing.
+Files can also be supplied in the same directory where the `PKGBUILD` is located, and their names added to this array. Before the actual build process starts, all the files referenced in this array will be downloaded or checked for existence, and *makepkg* will not proceed if any is missing.
 
 *.install* files are recognized automatically by *makepkg* and should not be included in the source array. Files in the source array with extensions *.sig*, *.sign*, or *.asc* are recognized by *makepkg* as PGP signatures and will be automatically used to verify the integrity of the corresponding source file.
 
-**Warning:** The downloaded source filename should be unique, because the [SRCDEST](/index.php/Makepkg#Package_output "Makepkg") variable can be the same directory for all packages. For instance, using only the version number of the project as a filename will conflict with other projects with the same version number. In this case, the alternative unique filename to be used is provided with the syntax `source=('*unique_package_name***::***file_uri*')`; e.g. `source=("$pkgname-$pkgver.tar.gz::https://github.com/coder/program/archive/v$pkgver.tar.gz")`
+**Warning:** The downloaded source filename should be globally unique, because the [SRCDEST](/index.php/Makepkg#Package_output "Makepkg") variable can be the same directory for all packages. For instance, using only the version number of the project as a filename will conflict with other projects with the same version number. In this case, the alternative unique filename to be used is provided with the syntax `source=('*unique_package_name***::***file_uri*')`; e.g. `source=("$pkgname-$pkgver.tar.gz::https://github.com/coder/program/archive/v$pkgver.tar.gz")`
 
 **Tip:**
 

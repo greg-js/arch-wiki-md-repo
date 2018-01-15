@@ -662,7 +662,7 @@ In *Sytem Settings > Display and Monitor*, uncheck *Allow applications to block 
 
 #### Screen tearing with NVIDIA
 
-See [NVIDIA/Troubleshooting#Avoid screen tearing in KDE](/index.php/NVIDIA/Troubleshooting#Avoid_screen_tearing_in_KDE "NVIDIA/Troubleshooting").
+See [NVIDIA/Troubleshooting#Avoid screen tearing in KDE (KWin)](/index.php/NVIDIA/Troubleshooting#Avoid_screen_tearing_in_KDE_.28KWin.29 "NVIDIA/Troubleshooting").
 
 #### Plasma cursor sometimes shown incorrecty
 

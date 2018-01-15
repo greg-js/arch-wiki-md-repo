@@ -58,4 +58,4 @@ Visit the [Table of contents](/index.php/Table_of_contents "Table of contents") 
 
 ArchWiki pages follow specific conventions, so if you have trouble reading ArchWiki or understanding some instructions, see [Help:Reading](/index.php/Help:Reading "Help:Reading") for a clarification.
 
-If looking for specific information, try using the search box to the left. Alternatively, use your favorite web search engine which likely provides a special syntax or interface for restricting results to a particular website (usually appending `site:wiki.archlinux.org` to the search terms is enough). See [Help:Searching](/index.php/Help:Searching "Help:Searching") for other tricks.
+If looking for specific information, try using the search box at the top of the page. Alternatively, use your favorite web search engine which likely provides a special syntax or interface for restricting results to a particular website (usually appending `site:wiki.archlinux.org` to the search terms is enough). See [Help:Searching](/index.php/Help:Searching "Help:Searching") for other tricks.

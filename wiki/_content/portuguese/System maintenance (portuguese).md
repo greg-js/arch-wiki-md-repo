@@ -226,7 +226,7 @@ As seguintes dicas geralmente não são necessários, mas certos usuários podem
 
 O estilo *rolling release* do Arch pode ser benéfico para usuários que desejam tentar os últimos recursos ou obter atualizações do upstream o mais cedo possível, mas eles também podem dificultar a manutenção do sistema. Para simplificar a manutenção e melhorar a estabilidade, tente evitar softwares demasiadamente novos e instale apenas softwares aprovados e maduros. Tais pacotes têm menos chance de receber atualizações difíceis, como grandes alterações nas configurações ou remoções de recursos. Prefira um software que possua uma comunidade de desenvolvimento forte e ativa, bem como um alto número de usuários competentes, para simplificar suporte na eventualidade de ocorrer um problema.
 
-Evite qualquer uso do repositório de teste, até mesmo pacotes individuais de teste. Esses pacotes são experimentais e não são adequados para um sistema estável. Da mesma forma, evite pacotes de desenvolvimento que são compilados diretamente dos fontes do upstream. Esses geralmente são encontrados no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), com nomes incluindo coisas como: "dev", "devel", "svn", "cvs", "git", etc.
+Evite qualquer uso do repositório de teste, até mesmo pacotes individuais de teste. Esses pacotes são experimentais e não são adequados para um sistema estável. Da mesma forma, evite pacotes que são compilados diretamente dos fontes de desenvolvimento do upstream. Esses geralmente são encontrados no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), com nomes incluindo coisas como: "dev", "devel", "svn", "cvs", "git", etc.
 
 ### Instale o pacote linux-lts
 

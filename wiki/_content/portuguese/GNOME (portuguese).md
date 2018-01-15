@@ -55,6 +55,7 @@ Artigos relacionados
         *   [5.2.2 Área de trabalho](#.C3.81rea_de_trabalho)
             *   [5.2.2.1 Ícones na área de trabalho](#.C3.8Dcones_na_.C3.A1rea_de_trabalho)
             *   [5.2.2.2 Tela de bloqueio e plano de fundo](#Tela_de_bloqueio_e_plano_de_fundo)
+            *   [5.2.2.3 Desabilitar o canto superior esquerdo ativo](#Desabilitar_o_canto_superior_esquerdo_ativo)
         *   [5.2.3 Extensões](#Extens.C3.B5es)
         *   [5.2.4 Métodos de entrada](#M.C3.A9todos_de_entrada)
         *   [5.2.5 Fontes](#Fontes)
@@ -427,6 +428,10 @@ Para o plano de fundo da tela de bloqueio:
 $ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///caminho/para/minha/imagem.jpg'
 
 ```
+
+##### Desabilitar o canto superior esquerdo ativo
+
+Você pode desabilitar o cano superior esquerdo ativo com o pacote [gnome-shell-extension-no-topleft-hot-corner](https://aur.archlinux.org/packages/gnome-shell-extension-no-topleft-hot-corner/).
 
 #### Extensões
 

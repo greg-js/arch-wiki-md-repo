@@ -207,7 +207,7 @@ Note também que:
 
 ### MySQL
 
-Devido ao fato de que os drivers JDBC costumam usar a porta no URL para estabelecer uma conexão com o banco de dados, ele é considerado "remoto" (ou seja, o MySQL não escuta a porta de acordo com suas configurações padrão), apesar do fato de que eles estão possivelmente executando no mesmo host. Assim, para usar JDBC e MySQL, você deve habilitar o acesso remoto ao MySQL, seguindo as instruções em [MySQL#Grant Remote Access](/index.php/MySQL#Grant_Remote_Access "MySQL").
+Devido ao fato de que os drivers JDBC costumam usar a porta no URL para estabelecer uma conexão com o banco de dados, ele é considerado "remoto" (ou seja, o MySQL não escuta a porta de acordo com suas configurações padrão), apesar do fato de que eles estão possivelmente executando no mesmo host. Assim, para usar JDBC e MySQL, você deve habilitar o acesso remoto ao MySQL, seguindo as instruções em [MySQL#Grant remote access](/index.php/MySQL#Grant_remote_access "MySQL").
 
 ### Personificar outro gerenciador de janela
 

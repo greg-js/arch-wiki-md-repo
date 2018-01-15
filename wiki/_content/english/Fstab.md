@@ -69,8 +69,8 @@ Run `lsblk -f` to list the partitions and prefix the values in the *NAME* column
 ```
 # <device>      <dir> <type> <options>                                                                                            <dump> <fsck>
 /dev/sda1       /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
-/dev/sda2       /     ext4   rw,relatime,discard,data=ordered                                                                     0      1
-/dev/sda3       /home ext4   rw,relatime,discard,data=ordered                                                                     0      2
+/dev/sda2       /     ext4   rw,relatime,data=ordered                                                                     0      1
+/dev/sda3       /home ext4   rw,relatime,data=ordered                                                                     0      2
 /dev/sda4       none  swap   defaults                                                                                             0      0
 
 ```
@@ -83,8 +83,8 @@ Run `lsblk -f` to list the partitions, and prefix the values in the *LABEL* colu
 ```
 # <device>      <dir> <type> <options>                                                                                            <dump> <fsck>
 LABEL=EFI       /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
-LABEL=SYSTEM    /     ext4   rw,relatime,discard,data=ordered                                                                     0      1
-LABEL=DATA      /home ext4   rw,relatime,discard,data=ordered                                                                     0      2
+LABEL=SYSTEM    /     ext4   rw,relatime,data=ordered                                                                     0      1
+LABEL=DATA      /home ext4   rw,relatime,data=ordered                                                                     0      2
 LABEL=SWAP      none  swap   defaults                                                                                             0      0
 
 ```
@@ -99,8 +99,8 @@ Run `lsblk -f` to list the partitions, and prefix the values in the *UUID* colum
 ```
 # <device>                                <dir> <type> <options>                                                                                            <dump> <fsck>
 UUID=CBB6-24F2                            /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
-UUID=0a3407de-014b-458b-b5c1-848e92a327a3 /     ext4   rw,relatime,discard,data=ordered                                                                     0      1
-UUID=b411dc99-f0a0-4c87-9e05-184977be8539 /home ext4   rw,relatime,discard,data=ordered                                                                     0      2
+UUID=0a3407de-014b-458b-b5c1-848e92a327a3 /     ext4   rw,relatime,data=ordered                                                                     0      1
+UUID=b411dc99-f0a0-4c87-9e05-184977be8539 /home ext4   rw,relatime,data=ordered                                                                     0      2
 UUID=f9fe0b69-a280-415d-a03a-a32752370dee none  swap   defaults                                                                                             0      0
 
 ```
@@ -115,8 +115,8 @@ Run `blkid` to list the partitions, and use the *PARTLABEL* values without the q
 ```
 # <device>                           <dir> <type> <options>                                                                                            <dump> <fsck>
 PARTLABEL=EFI\040SYSTEM\040PARTITION /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
-PARTLABEL=GNU/LINUX                  /     ext4   rw,relatime,discard,data=ordered                                                                     0      1
-PARTLABEL=HOME                       /home ext4   rw,relatime,discard,data=ordered                                                                     0      2
+PARTLABEL=GNU/LINUX                  /     ext4   rw,relatime,data=ordered                                                                     0      1
+PARTLABEL=HOME                       /home ext4   rw,relatime,data=ordered                                                                     0      2
 PARTLABEL=SWAP                       none  swap   defaults                                                                                             0      0
 
 ```
@@ -131,8 +131,8 @@ Run `blkid` to list the partitions, and use the *PARTUUID* values without the qu
 ```
 # <device>                                    <dir> <type> <options>                                                                                            <dump> <fsck>
 PARTUUID=d0d0d110-0a71-4ed6-936a-304969ea36af /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
-PARTUUID=98a81274-10f7-40db-872a-03df048df366 /     ext4   rw,relatime,discard,data=ordered                                                                     0      1
-PARTUUID=7280201c-fc5d-40f2-a9b2-466611d3d49e /home ext4   rw,relatime,discard,data=ordered                                                                     0      2
+PARTUUID=98a81274-10f7-40db-872a-03df048df366 /     ext4   rw,relatime,data=ordered                                                                     0      1
+PARTUUID=7280201c-fc5d-40f2-a9b2-466611d3d49e /home ext4   rw,relatime,data=ordered                                                                     0      2
 PARTUUID=039b6c1c-7553-4455-9537-1befbc9fbc5b none  swap   defaults                                                                                             0      0
 
 ```

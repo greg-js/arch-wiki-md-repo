@@ -7,11 +7,8 @@ OpenStack is a global collaboration of developers and cloud computing technologi
     *   [1.2 Networking (Neutron)](#Networking_.28Neutron.29)
     *   [1.3 Image Service (Glance)](#Image_Service_.28Glance.29)
     *   [1.4 Block Storage (Cinder)](#Block_Storage_.28Cinder.29)
-    *   [1.5 Object Storage (Swift)](#Object_Storage_.28Swift.29)
-    *   [1.6 Identity (Keystone)](#Identity_.28Keystone.29)
-    *   [1.7 Dashboard (Horizon)](#Dashboard_.28Horizon.29)
-    *   [1.8 Telemetry (Ceilometer)](#Telemetry_.28Ceilometer.29)
-    *   [1.9 Orchestration (Heat)](#Orchestration_.28Heat.29)
+    *   [1.5 Identity (Keystone)](#Identity_.28Keystone.29)
+    *   [1.6 Dashboard (Horizon)](#Dashboard_.28Horizon.29)
 *   [2 Deploy OpenStack](#Deploy_OpenStack)
 *   [3 Images](#Images)
     *   [3.1 Available images](#Available_images)
@@ -22,37 +19,27 @@ OpenStack is a global collaboration of developers and cloud computing technologi
 
 ### Compute (Nova)
 
-[nova](https://aur.archlinux.org/packages/nova/) is available in the [AUR](/index.php/AUR "AUR").
+[nova-liberty](https://aur.archlinux.org/packages/nova-liberty/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### Networking (Neutron)
 
-[neutron-server](https://aur.archlinux.org/packages/neutron-server/) is available in the [AUR](/index.php/AUR "AUR").
+[neutron-liberty](https://aur.archlinux.org/packages/neutron-liberty/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### Image Service (Glance)
 
-[glance](https://aur.archlinux.org/packages/glance/) is available in the [AUR](/index.php/AUR "AUR").
+[glance-liberty](https://aur.archlinux.org/packages/glance-liberty/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### Block Storage (Cinder)
 
-[cinder-icehouse](https://aur.archlinux.org/packages/cinder-icehouse/) is available in the [AUR](/index.php/AUR "AUR").
-
-### Object Storage (Swift)
-
-Install [swift](https://aur.archlinux.org/packages/swift/) or [swift-development-bin](https://aur.archlinux.org/packages/swift-development-bin/) from [AUR](/index.php/AUR "AUR").
+[cinder-kilo](https://aur.archlinux.org/packages/cinder-kilo/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### Identity (Keystone)
 
-[keystone](https://www.archlinux.org/packages/?name=keystone) is available in the [AUR](/index.php/AUR "AUR").
+[keystone-liberty](https://aur.archlinux.org/packages/keystone-liberty/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### Dashboard (Horizon)
 
-[horizon-deb](https://aur.archlinux.org/packages/horizon-deb/) is available in the [AUR](/index.php/AUR "AUR").
-
-### Telemetry (Ceilometer)
-
-### Orchestration (Heat)
-
-[heat-engine](https://aur.archlinux.org/packages/heat-engine/) is available in the [AUR](/index.php/AUR "AUR").
+[horizon-liberty](https://aur.archlinux.org/packages/horizon-liberty/) is available in the [AUR](/index.php/AUR "AUR").
 
 ## Deploy OpenStack
 

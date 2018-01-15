@@ -101,7 +101,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Pantheon](/index.php/Pantheon "Pantheon")** — Pantheon is the default desktop environment originally created for the elementary OS distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with GNOME Shell and macOS.
 
-	[https://elementary.io/](https://elementary.io/) || [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/)
+	[https://elementary.io/](https://elementary.io/) || [pantheon-session-git](https://aur.archlinux.org/packages/pantheon-session-git/)
 
 *   **theShell** — theShell is a desktop environment that tries to be as transparent as possible. It uses Qt 5 as its widget toolkit and KWin as its window manager. It also incorporates a personal assistant.
 

@@ -59,7 +59,7 @@ grub-mkconfig -o /path/to/grub.cfg
 
 ```
 
-Step 2: it is not yet possible to finish install by [creating GRUB2 entry in the Firmware Boot Manager](/index.php/UEFI#Create_GRUB2_entry_in_the_Firmware_Boot_Manager "UEFI") since it is required to boot in UEFI mode to be able to use [efibootmgr](/index.php/Unified_Extensible_Firmware_Interface#efibootmgr "Unified Extensible Firmware Interface"). The tricks is to do:
+Step 2: it is not yet possible to finish install by [creating GRUB2 entry in the Firmware Boot Manager](/index.php/UEFI#Create_GRUB2_entry_in_the_Firmware_Boot_Manager "UEFI") since it is required to boot in UEFI mode to be able to use [efibootmgr](/index.php/Efibootmgr "Efibootmgr"). The tricks is to do:
 
 ```
 # cp /boot/efi/EFI/arch_grub/grubx64.efi /boot/efi/shellx64.efi

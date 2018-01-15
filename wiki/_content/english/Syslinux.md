@@ -240,7 +240,7 @@ If this does not work, you can also try:
 
 ```
 
-*   Setup boot entry for Syslinux using [efibootmgr](/index.php/Unified_Extensible_Firmware_Interface#efibootmgr "Unified Extensible Firmware Interface"):
+*   Setup boot entry for Syslinux using [efibootmgr](/index.php/Efibootmgr "Efibootmgr"):
 
 ```
 # efibootmgr -c -d /dev/sdX -p Y -l /EFI/syslinux/syslinux.efi -L "Syslinux"

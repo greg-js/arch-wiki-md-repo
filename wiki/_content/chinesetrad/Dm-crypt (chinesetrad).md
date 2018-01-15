@@ -39,7 +39,7 @@
 
 ## 特色
 
-[Dm-crypt/特色](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties") 說明一些特殊操作，像是 [確保開機引導分區未被加密](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties")、[使用 GPG 或 OpenSSL 加密金鑰檔](/index.php/Dm-crypt/Specialties#Using_GPG_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties")、一個 [透過網路開機及解密](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_.28or_other.29_partition "Dm-crypt/Specialties") 的方法、[設定SSD的 discard/TRIM 參數](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") 以及處理 [加密勾子（hook）及多硬碟](/index.php/Dm-crypt/Specialties#The_encrypt_hook_and_multiple_disks "Dm-crypt/Specialties")。
+[Dm-crypt/特色](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties") 說明一些特殊操作，像是 [確保開機引導分區未被加密](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties")、[使用 GPG 或 OpenSSL 加密金鑰檔](/index.php/Dm-crypt/Specialties#Using_GPG.2C_LUKS.2C_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties")、一個 [透過網路開機及解密](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_.28or_other.29_partition "Dm-crypt/Specialties") 的方法、[設定SSD的 discard/TRIM 參數](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") 以及處理 [加密勾子（hook）及多硬碟](/index.php/Dm-crypt/Specialties#The_encrypt_hook_and_multiple_disks "Dm-crypt/Specialties")。
 
 ## 另外參見
 

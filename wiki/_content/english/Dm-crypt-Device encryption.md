@@ -245,6 +245,8 @@ You will then be prompted to enter a password and verify it.
 
 See [#Encryption options for LUKS mode](#Encryption_options_for_LUKS_mode) for command line options.
 
+**Warning:** GRUB does not support LUKS2 headers. Therefore, if you plan to [unlock an encrypted boot partition with GRUB](/index.php/GRUB#Boot_partition "GRUB"), do not specify `luks2` for the type parameter on encrypted boot partitions.
+
 You can check the results with:
 
 ```
@@ -269,6 +271,8 @@ When creating a new LUKS encrypted partition, a keyfile may be associated with t
 # cryptsetup luksFormat --type luks2 *device* */path/to/mykeyfile*
 
 ```
+
+**Warning:** GRUB does not support LUKS2 headers. Therefore, if you plan to [unlock an encrypted boot partition with GRUB](/index.php/GRUB#Boot_partition "GRUB"), do not specify `luks2` for the type parameter on encrypted boot partitions.
 
 See [#Keyfiles](#Keyfiles) for instructions on how to generate and manage keyfiles.
 
@@ -781,7 +785,7 @@ You can now mount the container again:
 
 ## Keyfiles
 
-**Note:** This section describes using a plaintext keyfile. If you want to encrypt your keyfile giving you two factor authentication see [Using GPG or OpenSSL Encrypted Keyfiles](/index.php/Dm-crypt/Specialties#Using_GPG_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties") for details, but please still read this section.
+**Note:** This section describes using a plaintext keyfile. If you want to encrypt your keyfile giving you two factor authentication see [Using GPG or OpenSSL Encrypted Keyfiles](/index.php/Dm-crypt/Specialties#Using_GPG.2C_LUKS.2C_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties") for details, but please still read this section.
 
 **What is a keyfile?**
 

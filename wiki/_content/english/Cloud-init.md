@@ -12,7 +12,7 @@ Cloud-init is a package that contains utilities for early initialization of clou
 
 ## Installation
 
-[Install](/index.php/Install "Install") [cloud-init](https://aur.archlinux.org/packages/cloud-init/) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [cloud-init](https://aur.archlinux.org/packages/cloud-init/) package.
 
 ## Configuration
 

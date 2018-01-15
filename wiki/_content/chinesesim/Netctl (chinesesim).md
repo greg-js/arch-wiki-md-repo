@@ -64,7 +64,7 @@ Netctl 是基于命令行的网络管理器，支持场景配置。它是 Arch L
 
 *netctl*的配置文件保存在 `/etc/netctl/` 。一些配置文件的示例位于 `/etc/netctl/examples/`。
 
-若要使用上述示例配置文件，只需将其从 `/etc/netctl/examples/` [复制](/index.php/Copy "Copy")到 `/etc/netctl/` 并按需配置。参见下述[#配置示例](#.E9.85.8D.E7.BD.AE.E7.A4.BA.E4.BE.8B)。编辑配置文件所需的首要参数是网络*端口(interface)*，详阅[网络配置#设备名称](/index.php/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#.E8.AE.BE.E5.A4.87.E5.90.8D.E7.A7.B0 "网络配置")。
+若要使用上述示例配置文件，只需将其从 `/etc/netctl/examples/` [复制](/index.php/Copy "Copy")到 `/etc/netctl/` 并按需配置。参见下述[#配置示例](#.E9.85.8D.E7.BD.AE.E7.A4.BA.E4.BE.8B)。编辑配置文件所需的首要参数是网络*端口(interface)*，详阅[网络配置#更改设备名称](/index.php/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#.E6.9B.B4.E6.94.B9.E8.AE.BE.E5.A4.87.E5.90.8D.E7.A7.B0 "网络配置")。
 
 **提示：**
 

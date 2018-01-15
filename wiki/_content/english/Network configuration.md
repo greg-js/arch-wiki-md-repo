@@ -192,7 +192,7 @@ If you are running a private network, it is safe to use IP addresses in `192.168
 
 #### Manual assignment
 
-It is possible to manually set up a static IP using only the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package. This is a good way to test connection settings since the connection made using this method will not persist across reboots. First enable the [network interface](#Device_names):
+It is possible to manually set up a static IP using only the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package. This is a good way to test connection settings since the connection made using this method will not persist across reboots. First enable the [network interface](#Network_interfaces):
 
 ```
 # ip link set *interface* up

@@ -42,7 +42,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"
 
 *   **[rc](https://en.wikipedia.org/wiki/rc "wikipedia:rc")** — Command interpreter for Plan 9 that provides similar facilities to UNIX’s Bourne shell, with some small additions and less idiosyncratic syntax.
 
-	[http://plan9.bell-labs.com/sys/doc/rc.html](http://plan9.bell-labs.com/sys/doc/rc.html) || [9base-git](https://aur.archlinux.org/packages/9base-git/)
+	[http://plan9.bell-labs.com/sys/doc/rc.html](http://plan9.bell-labs.com/sys/doc/rc.html) || [9base](https://www.archlinux.org/packages/?name=9base)
 
 *   **xonsh** — A retrocompatible shell based on the python interpreter.
 
