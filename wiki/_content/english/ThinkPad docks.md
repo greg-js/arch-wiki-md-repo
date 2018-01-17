@@ -11,6 +11,8 @@ These docking stations can function in two ways:
 
 Both of them are supported out-the-box by [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE") and should not require additional software. Otherwise use can use dockd.
 
+**Note:** Some modern models with [Nvidia](/index.php/Nvidia "Nvidia") graphics like the ThinkPad P51 won't work with dockd because the [nvidia](/index.php/Nvidia "Nvidia") driver is buggy and causes a kernel crash. See [Issue #3](https://github.com/libthinkpad/dockd/issues/3) on Github
+
 ## Using dockd
 
 To handle docks outside [KDE](/index.php/KDE "KDE") and [GNOME](/index.php/GNOME "GNOME") you will need to install a dock daemon that will auto-switch the monitors. [dockd](https://aur.archlinux.org/packages/dockd/) is a dock daemon that was developed for light desktops and will auto switch the monitor configuration.

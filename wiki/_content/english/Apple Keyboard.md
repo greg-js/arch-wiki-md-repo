@@ -1,3 +1,7 @@
+Related articles
+
+*   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
+
 Some Apple keyboard models may have swapped keys or missing functionality. This article describes how to change the settings for the keyboard so that it behaves as expected.
 
 ## Contents
@@ -41,6 +45,8 @@ Unpair the keyboard and then re-pair it. The trick is to hold down the power but
 ## Function keys do not work
 
 If your `F<num>` keys do not work, this is probably because the kernel driver for the keyboard has defaulted to using the media keys and requiring you to use the `Fn` key to get to the `F<num>` keys. To change the behavior temporarily, [append](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") `2` to `/sys/module/hid_apple/parameters/fnmode`. To make the change permanent, [set](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `hid_apple` `fnmode` option to 2.
+
+If your keyboard is model A1644, please use this [[1]](https://bugzilla.kernel.org/attachment.cgi?id=258205) patch (from this [[2]](https://bugzilla.kernel.org/show_bug.cgi?id=99881#c41)thread) to fix the function/media keys.
 
 ## < and > have changed place with § and ½
 

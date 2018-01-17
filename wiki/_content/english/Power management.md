@@ -113,7 +113,7 @@ Note that if the power manager does not inhibit *systemd* for the appropriate ev
 
 #### xss-lock
 
-[xss-lock-git](https://aur.archlinux.org/packages/xss-lock-git/) subscribes to the systemd-events `suspend`, `hibernate`, `lock-session`, and `unlock-session` with appropriate actions (run locker and wait for user to unlock or kill locker). *xss-lock* also reacts to [DPMS](/index.php/DPMS "DPMS") events and runs or kills the locker in response.
+[xss-lock](https://www.archlinux.org/packages/?name=xss-lock) subscribes to the systemd-events `suspend`, `hibernate`, `lock-session`, and `unlock-session` with appropriate actions (run locker and wait for user to unlock or kill locker). *xss-lock* also reacts to [DPMS](/index.php/DPMS "DPMS") events and runs or kills the locker in response.
 
 Start xss-lock in your [autostart](/index.php/Autostart "Autostart"), for example
 
@@ -121,6 +121,8 @@ Start xss-lock in your [autostart](/index.php/Autostart "Autostart"), for exampl
 xss-lock -- i3lock -n -i *background_image.png* &
 
 ```
+
+Should xss-lock eat 100% of a CPU on suspend, consider using [xss-lock-git](https://aur.archlinux.org/packages/xss-lock-git/) as [commit 1e158f](https://bitbucket.org/raymonad/xss-lock/commits/1e158fb20108058dbd62bd51d8e8c003c0a48717) should fix this issue.
 
 ### Suspend and hibernate
 

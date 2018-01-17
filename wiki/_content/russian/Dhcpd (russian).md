@@ -1,3 +1,7 @@
+Ссылки по теме
+
+*   [dhcpcd (Русский)](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpcd (Русский)")
+
 *dhcpd* – свободная реализация [DHCP](https://en.wikipedia.org/wiki/ru:DHCP "wikipedia:ru:DHCP")-сервера от [Internet Systems Consortium](http://www.isc.org/downloads/dhcp/). Он может использоваться, к примеру, на машине, выполняющей роль маршрутизатора для автоматической настройки подключаемых устройств локальной сети.
 
 ## Contents

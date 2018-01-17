@@ -242,13 +242,15 @@ Setting kernel argument "intel_idle.max_cstate=1" solves the problem on a patche
 
 There has recently been some success in getting the x205ta's Realtek RT5648 sound card working. The relevant patches are in Linux release 4.11 and later.
 
-Alsa-lib's UCM files need to be overwritten with the right version of files provided by Pierre Bossart:
+Alsa-lib's UCM files need to be overwritten with the right version of files provided by Pierre Bossart. Follow the wget commands below. Note that each alsa-lib update will overwrite these.
 
 ```
 $ wget -qO /usr/share/alsa/ucm/chtrt5645/HiFi.conf [https://raw.githubusercontent.com/plbossart/UCM/c8b344ca650a62aa809242b0c9ba908eac963125/chtrt5645/HiFi.conf](https://raw.githubusercontent.com/plbossart/UCM/c8b344ca650a62aa809242b0c9ba908eac963125/chtrt5645/HiFi.conf)
 $ wget -qO /usr/share/alsa/ucm/chtrt5645/chtrt5645.conf [https://raw.githubusercontent.com/plbossart/UCM/c8b344ca650a62aa809242b0c9ba908eac963125/chtrt5645/chtrt5645.conf](https://raw.githubusercontent.com/plbossart/UCM/c8b344ca650a62aa809242b0c9ba908eac963125/chtrt5645/chtrt5645.conf)
 
 ```
+
+**Tip:** use AUR package [alsa-lib-x205ta](https://aur.archlinux.org/packages/alsa-lib-x205ta/) to prevent overwriting the UCM files at each alsa-lib update.
 
 In order to have working headphone jack (as of kernel 4.14) is it required to add an "options" line in any modprobe file
 

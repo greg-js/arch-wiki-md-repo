@@ -14,7 +14,7 @@ This article describes the Linux kernel realtime patch set, and some utilities u
 
 ## What is realtime
 
-[Realtime](https://en.wikipedia.org/wiki/Real-time_computing of a task only depends on the tasks running at equal or higher priorities, all other tasks can be ignored. On a normal OS (such as normal Linux) the latencies depend on everything running on the system, which of course makes it much harder to be convinced that the deadlines will be met every time on a reasonably complicated system. This is because [preemption](https://en.wikipedia.org/wiki/Preemption_(computing) can be switched off for an unknown amount of time. The high priority task wanting to run can thus be delayed for an unknown amount of time by low priority tasks running with preemption switched off.
+[Realtime](https://en.wikipedia.org/wiki/Real-time_computing of a task only depends on the tasks running at equal or higher priorities; tasks running at lower priorities may be ignored. On a non-realtime OS (most GNU/Linux distributions running their default kernels), since latencies depend on each process running on the system, it is obviously much harder to ensure deadlines will be met every time, and this difficulty scales nonlinearly with system complexity. Determinism in scheduling becomes yet more difficult to achieve because [preemption](https://en.wikipedia.org/wiki/Preemption_(computing) can be switched off for an arbitrary amount of time. An high priority task wanting to run can thus be delayed indefinitely by lower priority tasks with preemption disabled.
 
 ## How does the realtime patch work
 
@@ -28,7 +28,7 @@ The RT-Preempt patch converts Linux into a fully preemptible kernel. This is don
 
 ## Installation
 
-There are many -rt patched kernels available from the [AUR](/index.php/AUR "AUR"). The main two are [linux-rt](https://aur.archlinux.org/packages/linux-rt/) and [linux-rt-lts](https://aur.archlinux.org/packages/linux-rt-lts/). Both have a configuration based on the main [linux](https://www.archlinux.org/packages/?name=linux) kernel package, linux-rt follows the development branch of the -rt patch, while linux-rt-lts tracks a stable branch of the rt patchset.
+There are many -rt patched kernels available from the [AUR](/index.php/AUR "AUR"). The main two are [linux-rt](https://aur.archlinux.org/packages/linux-rt/) and [linux-rt-lts](https://aur.archlinux.org/packages/linux-rt-lts/), which both have a configuration based on the main [linux](https://www.archlinux.org/packages/?name=linux) kernel package. linux-rt follows the development branch of the -rt patch, while linux-rt-lts tracks a stable branch of the rt patchset.
 
 **Note:** Don't forget to add the newly installed kernel to your boot manager.
 
@@ -36,11 +36,9 @@ There are many -rt patched kernels available from the [AUR](/index.php/AUR "AUR"
 
 In the context of the scheduler, latency is the time that passes from the occurrence of an event until the handling of said event. Often the delay from the firing of an interrupt until the interrupt handler starts running, but could also be from the expiration of a timer, etc.
 
-Latency of itself is natural, there is always some latency, it becomes problematic when it exceeds the deadline given by your application's restraints. If it's less than the deadline, it's a success, if it's bigger, it's a failure.
+There can be many varied causes for high scheduling latencies. Some worth mentioning (in no particular order) are: a misconfigured system, bad hardware, badly programmed kernel modules, CPU power management, faulty hardware timers, [SMIs](https://en.wikipedia.org/wiki/System_Management_Mode#Entering_SMM "wikipedia:System Management Mode") and [SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading "wikipedia:Simultaneous multithreading").
 
-There can be many varied causes for high scheduling latencies, Some worth mentioning (in no particular order) are: a misconfigured system, bad hardware, badly programmed kernel modules, CPU power management, faulty hardware timers, [SMIs](https://en.wikipedia.org/wiki/System_Management_Mode#Entering_SMM "wikipedia:System Management Mode"), [SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading "wikipedia:Simultaneous multithreading"), etc.
-
-When trying to determine the system's maximum scheduling latency, the system needs to be put under load. A busy system will in general experience bigger latencies than an idle one. It would be recommendable to run tests for a long time and under different natural and artificial load conditions. It would also be recommendable to stress all sub systems that would be in use on the production system, like disk and net io, usb, the graphics sub system, etc.
+When trying to determine a system's maximum scheduling latency, the system needs to be put under load. A busy system will tend to experience greater latencies than an idle one. To sufficiently characterize latencies of interest, tt would be prudent to run tests for a long time and under a variety of nominal and worst-case load conditions. Further, since many subsystems such as disks, network devices, USB and graphics may be used sparsely after a system is brought online, care should be taken to characterize latency with these subsystems active as well.
 
 ## Latency testing utilities
 

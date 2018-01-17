@@ -350,7 +350,7 @@ The Arch User Repository is where all PKGBUILDs that users submit are stored, an
 
 First, you should flag the package *out-of-date* indicating details on why the package is outdated, preferably including links to the release announcement or the new release tarball. You should also try to reach out to the maintainer directly by email. If there is no response from the maintainer after *two weeks*, you can file an *orphan* request. This means you ask a [Trusted User](/index.php/Trusted_User "Trusted User") to disown the package base. This is to be done only if the package requires maintainer action, that he/she is not responding and you already tried to contact him/her previously.
 
-In the meantime, you can try updating the package yourself by editing the PKGBUILD - sometimes updates do not require any changes to the build or package process, in which case simply updating the `pkgver` or `source` array is sufficient.
+In the meantime, you can try updating the package yourself by editing the PKGBUILD locally. Sometimes, updates do not require changes to the build or package process, in which case simply updating the `pkgver` or `source` array is sufficient.
 
 **Note:** [VCS packages](/index.php/VCS_package_guidelines "VCS package guidelines") are not considered out of date when the pkgver changes, do not flag them as the maintainer will merely unflag the package and ignore you. AUR maintainers should not commit mere pkgver bumps.
 
@@ -370,7 +370,7 @@ The best resource is the wiki page about [creating packages](/index.php/Creating
 
 ### I have a PKGBUILD I would like to submit; can someone check it to see if there are any errors?
 
-If you would like to have your PKGBUILD critiqued, post it on the [aur-general mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-general) to get feedback from the TUs and fellow AUR members. You could also get help from the [IRC channel](/index.php/IRC_channel "IRC channel"), #archlinux-aur on irc.freenode.net. You can also use [namcap](/index.php/Namcap "Namcap") to check your PKGBUILD and the resulting package for errors.
+If you would like to have your PKGBUILD reviewed, post it on the [aur-general mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-general) to get feedback from the TUs and fellow AUR members. You could also get help from the [IRC channel](/index.php/IRC_channel "IRC channel"), #archlinux-aur on irc.freenode.net. You can also use [namcap](/index.php/Namcap "Namcap") to check your PKGBUILD and the resulting package for errors.
 
 ### How to get a PKGBUILD into the community repository?
 

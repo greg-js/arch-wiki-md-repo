@@ -294,17 +294,16 @@ LABEL="persistent_printer_end"
 
 First, find vendor and product ID of your device, for example
 
- `# lsusb | grep Logitech`  `Bus 007 Device 002: ID 046d:c52b Logitech, Inc. Unifying Receiver` 
+ `# lsusb | grep Logitech`  `Bus 007 Device 002: ID **046d**:**c52b** Logitech, Inc. Unifying Receiver` 
 
-Now change the `power/wakeup` attribute of the device and the USB controller it is connected to, which is in this case `driver/usb7/power/wakeup`. Use the following rule:
+Find where the device is connected to using:
 
- `/etc/udev/rules.d/50-wake-on-device.rules` 
-```
-ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c52b", ATTR{power/wakeup}="enabled", ATTR{driver/usb7/power/wakeup}="enabled"
+ `# grep *c52b* /sys/bus/usb/devices/*/idProduct`  `/sys/bus/usb/devices/**1-1.1.1.4/**idProduct:c52b` 
 
-```
+Now change the `power/wakeup` attribute of the device and the USB controller it is connected to, using the following rule:
 
-**Note:** Also make sure the USB controller is enabled in `/proc/acpi/wakeup`.
+ `/etc/udev/rules.d/50-wake-on-device.rules`  `ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="**046d**", ATTRS{idProduct}=="**c52b**", ATTR{power/wakeup}="enabled", ATTR{driver/**1-1.1.1.4**/power/wakeup}="enabled"` 
+**Note:** By default, the USB host controllers are all enabled by default for wakeup. The status can be checked using `# cat /proc/acpi/wakeup`.
 
 ### Triggering events
 

@@ -29,32 +29,29 @@ The goal of this article is to setup Postfix and explain what the basic configur
     *   [2.6 DNS records](#DNS_records)
     *   [2.7 Check configuration](#Check_configuration)
 *   [3 Start Postfix](#Start_Postfix)
-*   [4 Testing](#Testing)
-    *   [4.1 Error response](#Error_response)
-    *   [4.2 See that you have received a email](#See_that_you_have_received_a_email)
+*   [4 Securing incoming and outgoing mail](#Securing_incoming_and_outgoing_mail)
+    *   [4.1 Secure SMTP (sending)](#Secure_SMTP_.28sending.29)
+    *   [4.2 Secure SMTP (receiving)](#Secure_SMTP_.28receiving.29)
+        *   [4.2.1 SMTPS (port 465)](#SMTPS_.28port_465.29)
 *   [5 Extra](#Extra)
     *   [5.1 PostfixAdmin](#PostfixAdmin)
     *   [5.2 Postgrey](#Postgrey)
         *   [5.2.1 Installation](#Installation_2)
         *   [5.2.2 Configuration](#Configuration_2)
         *   [5.2.3 Troubleshooting](#Troubleshooting)
-    *   [5.3 Secure SMTP (sending)](#Secure_SMTP_.28sending.29)
-    *   [5.4 Secure SMTP (receiving)](#Secure_SMTP_.28receiving.29)
-        *   [5.4.1 STARTTLS over SMTP (port 587)](#STARTTLS_over_SMTP_.28port_587.29)
-        *   [5.4.2 SMTPS (port 465)](#SMTPS_.28port_465.29)
-    *   [5.5 SpamAssassin](#SpamAssassin)
-        *   [5.5.1 Spam Assassin rule update](#Spam_Assassin_rule_update)
-        *   [5.5.2 SpamAssassin stand-alone generic setup](#SpamAssassin_stand-alone_generic_setup)
-        *   [5.5.3 SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)](#SpamAssassin_combined_with_Dovecot_LDA_.2F_Sieve_.28Mailfiltering.29)
-        *   [5.5.4 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_.2F_Sieve)
-        *   [5.5.5 Call ClamAV from SpamAssassin](#Call_ClamAV_from_SpamAssassin)
-    *   [5.6 Using Razor](#Using_Razor)
-    *   [5.7 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
-    *   [5.8 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
-    *   [5.9 Rule-based mail processing](#Rule-based_mail_processing)
-    *   [5.10 DANE (DNSSEC)](#DANE_.28DNSSEC.29)
-        *   [5.10.1 Resource Record](#Resource_Record)
-        *   [5.10.2 Configuration](#Configuration_3)
+    *   [5.3 SpamAssassin](#SpamAssassin)
+        *   [5.3.1 Spam Assassin rule update](#Spam_Assassin_rule_update)
+        *   [5.3.2 SpamAssassin stand-alone generic setup](#SpamAssassin_stand-alone_generic_setup)
+        *   [5.3.3 SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)](#SpamAssassin_combined_with_Dovecot_LDA_.2F_Sieve_.28Mailfiltering.29)
+        *   [5.3.4 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_.2F_Sieve)
+        *   [5.3.5 Call ClamAV from SpamAssassin](#Call_ClamAV_from_SpamAssassin)
+    *   [5.4 Using Razor](#Using_Razor)
+    *   [5.5 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
+    *   [5.6 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
+    *   [5.7 Rule-based mail processing](#Rule-based_mail_processing)
+    *   [5.8 DANE (DNSSEC)](#DANE_.28DNSSEC.29)
+        *   [5.8.1 Resource Record](#Resource_Record)
+        *   [5.8.2 Configuration](#Configuration_3)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -112,14 +109,6 @@ See [this page](http://www.postfix.org/TLS_README.html) for more information abo
 	Courier-IMAP requires "Maildir" format, so you **must** set it like the following example with trailing slash:
 
 	 `home_mailbox = Maildir/` 
-
-**Warning:** If you plan on implementing SSL/TLS, please respond safely to [FREAK/Logjam](https://weakdh.org/sysadmin.html) by adding the following to your configuration: `smtpd_tls_exclude_ciphers = aNULL, eNULL, EXPORT, DES, RC4, MD5, PSK, aECDH, EDH-DSS-DES-CBC3-SHA, EDH-RSA-DES-CBC3-SHA, KRB5-DES, CBC3-SHA` 
-
-Then, generate a [dhparam file](https://www.openssl.org/docs/man1.0.2/apps/dhparam.html) by following [these instructions](https://weakdh.org/sysadmin.html) and then adding the following to your configuration:
-
- `smtpd_tls_dh1024_param_file = ${config_directory}/dhparams.pem` 
-
-Since mid-2015, the default settings have been safe against [POODLE](http://disablessl3.com/).
 
 #### Default message and mailbox size limits
 
@@ -210,56 +199,73 @@ To see all of your configs, type `postconf`. To see how you differ from the defa
 
 [Start/enable](/index.php/Start/enable "Start/enable") the `postfix.service`.
 
-## Testing
+## Securing incoming and outgoing mail
 
-Now lets see if Postfix is going to deliver mail for our test user.
+For more information, see [Postfix TLS Support](http://www.postfix.org/TLS_README.html).
 
+### Secure SMTP (sending)
+
+By default, Postfix/sendmail will not send email encrypted to other SMTP servers. To use TLS when available, add the following line to `main.cf`:
+
+ `/etc/postfix/main.cf`  `smtp_tls_security_level = may` 
+
+To *enforce* TLS (and fail when the remote server does not support it), change `may` to `encrypt`.
+
+### Secure SMTP (receiving)
+
+By default, Postfix will not accept secure mail.
+
+**Warning:** If you plan on implementing SSL/TLS, please respond safely to [FREAK/Logjam](https://weakdh.org/sysadmin.html) by adding the following to your configuration: `smtpd_tls_exclude_ciphers = aNULL, eNULL, EXPORT, DES, RC4, MD5, PSK, aECDH, EDH-DSS-DES-CBC3-SHA, EDH-RSA-DES-CBC3-SHA, KRB5-DES, CBC3-SHA` 
+
+Then, generate a [dhparam file](https://www.openssl.org/docs/man1.0.2/apps/dhparam.html) by following [these instructions](https://weakdh.org/sysadmin.html) and then adding the following to your configuration:
+
+ `smtpd_tls_dh1024_param_file = ${config_directory}/dhparams.pem` 
+
+Since mid-2015, the default settings have been safe against [POODLE](http://disablessl3.com/).
+
+To enable STARTTLS over SMTP (port 587, the proper way of securing SMTP), add the following lines to `main.cf`
+
+ `/etc/postfix/main.cf` 
 ```
-nc servername 25
-helo testmail.org
-mail from:<test@testmail.org>
-rcpt to:<cactus@virtualdomain.tld>
-data
-This is a test email.
-.
-quit
-
-```
-
-### Error response
-
-```
-451 4.3.0 <lisi@test.com>:Temporary lookup failure
-
-```
-
-Maybe you have entered the wrong user/password for MySQL or the MySQL socket is not in the right place.
-
-This error will also occur if you neglect to run newaliases at least once before starting postfix. MySQL is not required for local only usage of postfix.
-
-```
-550 5.1.1 <email@spam.me>: Recipient address rejected: User unknown in virtual mailbox table.
-
-```
-
-Double check content of mysql_virtual_mailboxes.cf and check the main.cf for mydestination
-
-### See that you have received a email
-
-Now type `$ find /home/vmailer`.
-
-You should see something like the following:
-
-```
-/home/vmailer/virtualdomain.tld/cactus@virtualdomain.tld
-/home/vmailer/virtualdomain.tld/cactus@virtualdomain.tld/tmp
-/home/vmailer/virtualdomain.tld/cactus@virtualdomain.tld/cur
-/home/vmailer/virtualdomain.tld/cactus@virtualdomain.tld/new
-/home/vmailer/virtualdomain.tld/cactus@virtualdomain.tld/new/1102974226.2704_0.bonk.testmail.org
-
+smtpd_tls_security_level = may
+smtpd_tls_cert_file = **/path/to/cert.pem**
+smtpd_tls_key_file = **/path/to/key.pem**
 ```
 
-The key is the last entry. This is an actual email, if you see that, it is working.
+In `master.cf`, find and remove the comment from the following line to enable the service on that port:
+
+ `/etc/postfix/master.cf`  `submission inet n       -       n       -       -       smtpd` 
+
+If you need support for the deprecated SMTPS port 465, also follow the next section.
+
+#### SMTPS (port 465)
+
+The deprecated method of securing SMTP is using the **wrapper mode** which uses the system service **smtps** as a non-standard service and runs on port 465.
+
+To enable it uncomment the following lines in
+
+ `/etc/postfix/master.cf` 
+```
+smtps     inet  n       -       n       -       -       smtpd
+  -o smtpd_tls_wrappermode=yes
+  -o smtpd_sasl_auth_enable=yes
+
+```
+
+And verify that these lines are in `/etc/services`:
+
+```
+smtps 465/tcp # Secure SMTP
+smtps 465/udp # Secure SMTP
+
+```
+
+If they are not there, go ahead and add them (replace the other listing for port 465). Otherwise Postfix will not start and you will get the following error:
+
+```
+*postfix/master[5309]: fatal: 0.0.0.0:smtps: Servname not supported for ai_socktype*
+
+```
 
 ## Extra
 
@@ -393,64 +399,6 @@ ExecStart=/usr/bin/postgrey --inet=127.0.0.1:10030 \
 If you specify --unix=/path/to/socket and the socket file is not created ensure you have removed the default --inet=127.0.0.1:10030 from the service file.
 
 For a full documentation of possible options see `perldoc postgrey`.
-
-### Secure SMTP (sending)
-
-By default, Postfix/sendmail will not send email encrypted to other SMTP servers. To use TLS when available, add the following line to `main.cf`:
-
- `/etc/postfix/main.cf`  `smtp_tls_security_level = may` 
-
-To *enforce* TLS (and fail when the remote server does not support it), change `may` to `encrypt`.
-
-### Secure SMTP (receiving)
-
-For more information, see [Postfix TLS Support](http://www.postfix.org/TLS_README.html).
-
-#### STARTTLS over SMTP (port 587)
-
-To enable STARTTLS over SMTP (port 587, the proper way of securing SMTP), add the following lines to `main.cf`
-
- `/etc/postfix/main.cf` 
-```
-smtpd_tls_security_level = may
-smtpd_tls_cert_file = **/path/to/cert.pem**
-smtpd_tls_key_file = **/path/to/key.pem**
-```
-
-Also in `master.cf` find and remove the comment from the following line to enable the service on that port:
-
- `/etc/postfix/master.cf`  `submission inet n       -       n       -       -       smtpd` 
-
-If you need support for the deprecated SMTPS port 465, read the next section.
-
-#### SMTPS (port 465)
-
-The deprecated method of securing SMTP is using the **wrapper mode** which uses the system service **smtps** as a non-standard service and runs on port 465.
-
-To enable it uncomment the following lines in
-
- `/etc/postfix/master.cf` 
-```
-smtps     inet  n       -       n       -       -       smtpd
-  -o smtpd_tls_wrappermode=yes
-  -o smtpd_sasl_auth_enable=yes
-
-```
-
-And verify that these lines are in `/etc/services`:
-
-```
-smtps 465/tcp # Secure SMTP
-smtps 465/udp # Secure SMTP
-
-```
-
-If they are not there, go ahead and add them (replace the other listing for port 465). Otherwise Postfix will not start and you will get the following error:
-
-```
-*postfix/master[5309]: fatal: 0.0.0.0:smtps: Servname not supported for ai_socktype*
-
-```
 
 ### SpamAssassin
 

@@ -48,6 +48,7 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
         *   [7.4.1 Potential solution 1](#Potential_solution_1)
         *   [7.4.2 Potential solution 2](#Potential_solution_2)
         *   [7.4.3 Potential solution 3](#Potential_solution_3)
+        *   [7.4.4 Potential solution 4](#Potential_solution_4)
     *   [7.5 Drag and drop, copy/paste](#Drag_and_drop.2C_copy.2Fpaste)
     *   [7.6 Problems when running as a shared VM on Workstation 11](#Problems_when_running_as_a_shared_VM_on_Workstation_11)
     *   [7.7 Shared folder not mounted after system upgrade](#Shared_folder_not_mounted_after_system_upgrade)
@@ -641,6 +642,10 @@ You may need to add the modules to mkinitcpio.conf.
 Do not forget to run:
 
  `# mkinitcpio -p linux` 
+
+#### Potential solution 4
+
+[Enable](/index.php/Enable "Enable") `vmtoolsd.service`.
 
 ### Drag and drop, copy/paste
 

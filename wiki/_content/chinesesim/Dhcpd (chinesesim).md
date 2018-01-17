@@ -1,3 +1,7 @@
+Related articles
+
+*   [dhcpcd (简体中文)](/index.php/Dhcpcd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dhcpcd (简体中文)")
+
 **翻译状态：** 本文是英文页面 [Dhcpd](/index.php/Dhcpd "Dhcpd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-04-14，点击[这里](https://wiki.archlinux.org/index.php?title=Dhcpd&diff=0&oldid=472034)可以查看翻译后英文页面的改动。
 
 dhcpd is the [Internet Systems Consortium](http://www.isc.org/downloads/dhcp/) DHCP Server. It is useful for instance on a machine acting as a router on a LAN.

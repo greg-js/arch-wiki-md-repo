@@ -47,8 +47,9 @@ This peer will listen on UDP port 48574 and will accept connection from peer B b
 ```
 $ ip link add dev wg0 type wireguard
 $ ip addr add 10.0.0.1/24 dev wg0
-$ wg set wg0 private-key ./privatekey
-$ wg set wg0 peer [Peer B public key] allowed-ips 10.0.0.2/32 endpoint 10.10.10.2:39814
+$ wg set wg0 listen-port 48574 private-key ./privatekey
+$ wg set wg0 peer [Peer B public key] persistent-keepalive 25 allowed-ips 10.0.0.2/32 endpoint 10.10.10.2:39814
+$ ip link set wg0 up
 
 ```
 
@@ -59,8 +60,9 @@ As with Peer A, whereas the wireguard daemon is listening on the UDP port 39814 
 ```
 $ ip link add dev wg0 type wireguard
 $ ip addr add 10.0.0.2/24 dev wg0
-$ wg set wg0 private-key ./privatekey
-$ wg set wg0 peer [Peer A public key] allowed-ips 10.0.0.1/32 endpoint 10.10.10.1:48574
+$ wg set wg0 listen-port 39814 private-key ./privatekey
+$ wg set wg0 peer [Peer A public key] persistent-keepalive 25 allowed-ips 10.0.0.1/32 endpoint 10.10.10.1:48574
+$ ip link set wg0 up
 
 ```
 

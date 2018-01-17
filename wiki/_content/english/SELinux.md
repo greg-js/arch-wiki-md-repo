@@ -94,10 +94,6 @@ All SELinux related packages belong to the *selinux* group in the AUR.
 
 	Modified coreutils package compiled with SELinux support enabled. It replaces the [coreutils](https://www.archlinux.org/packages/?name=coreutils) package
 
-	[ustr-selinux](https://aur.archlinux.org/packages/ustr-selinux/)
-
-	Patched ustr package needed only to build [libsemanage](https://aur.archlinux.org/packages/libsemanage/). It replaces the [ustr](https://aur.archlinux.org/packages/ustr/) package, which does not work with recent gcc ([FS#46445](https://bugs.archlinux.org/task/46445)).
-
 	[pam-selinux](https://aur.archlinux.org/packages/pam-selinux/) and [pambase-selinux](https://aur.archlinux.org/packages/pambase-selinux/)
 
 	PAM package with pam_selinux.so. and the underlying base package. They replace the [pam](https://www.archlinux.org/packages/?name=pam) and [pambase](https://www.archlinux.org/packages/?name=pambase) packages respectively.

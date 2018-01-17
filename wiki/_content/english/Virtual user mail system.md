@@ -20,23 +20,24 @@ In the end, the provided solution will allow you to use the best currently avail
         *   [2.2.1 PostfixAdmin](#PostfixAdmin)
     *   [2.3 SSL certificate](#SSL_certificate)
     *   [2.4 Postfix](#Postfix)
-        *   [2.4.1 SMTPS](#SMTPS)
-        *   [2.4.2 Prerequisites](#Prerequisites)
-        *   [2.4.3 Setting up Postfix](#Setting_up_Postfix)
-        *   [2.4.4 Create the file structure](#Create_the_file_structure)
+        *   [2.4.1 Setting up Postfix](#Setting_up_Postfix)
+        *   [2.4.2 Create the file structure](#Create_the_file_structure)
     *   [2.5 Dovecot](#Dovecot)
     *   [2.6 PostfixAdmin](#PostfixAdmin_2)
     *   [2.7 Roundcube](#Roundcube)
         *   [2.7.1 Apache configuration](#Apache_configuration)
         *   [2.7.2 Roundcube: Change Password Plugin](#Roundcube:_Change_Password_Plugin)
 *   [3 Fire it up](#Fire_it_up)
-*   [4 Optional Items](#Optional_Items)
-    *   [4.1 Quota](#Quota)
-*   [5 Sidenotes](#Sidenotes)
-    *   [5.1 Alternative vmail folder structure](#Alternative_vmail_folder_structure)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 IMAP/POP3 client failing to receive mails](#IMAP.2FPOP3_client_failing_to_receive_mails)
-    *   [6.2 Roundcube not able to delete emails or view any 'standard' folders](#Roundcube_not_able_to_delete_emails_or_view_any_.27standard.27_folders)
+*   [4 Testing](#Testing)
+    *   [4.1 Error response](#Error_response)
+    *   [4.2 See that you have received a email](#See_that_you_have_received_a_email)
+*   [5 Optional Items](#Optional_Items)
+    *   [5.1 Quota](#Quota)
+*   [6 Sidenotes](#Sidenotes)
+    *   [6.1 Alternative vmail folder structure](#Alternative_vmail_folder_structure)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 IMAP/POP3 client failing to receive mails](#IMAP.2FPOP3_client_failing_to_receive_mails)
+    *   [7.2 Roundcube not able to delete emails or view any 'standard' folders](#Roundcube_not_able_to_delete_emails_or_view_any_.27standard.27_folders)
 
 ## Installation
 
@@ -90,17 +91,11 @@ You will need a SSL certificate for all encrypted mail communications (SMTPS/IMA
 
 ### Postfix
 
-#### SMTPS
-
-Enable secure SMTP as described in [Postfix#SMTPS (port 465)](/index.php/Postfix#SMTPS_.28port_465.29 "Postfix").
-
-#### Prerequisites
-
 Before you copy & paste the configuration below, check if `relay_domains` has already been already set. If you leave more than one active, you will receive warnings during runtime.
 
 **Warning:** `relay_domains` can be dangerous. You usually do not want Postfix to forward mail of strangers. `$mydestination` is a sane default value. Double check its value before running postfix! See [http://www.postfix.org/BASIC_CONFIGURATION_README.html#relay_to](http://www.postfix.org/BASIC_CONFIGURATION_README.html#relay_to)
 
-Also check if your SSL certificate paths are set right in all upcoming config examples.
+Also follow [Postfix#Secure SMTP (receiving)](/index.php/Postfix#Secure_SMTP_.28receiving.29 "Postfix") pointing to the files you created in [#SSL certificate](#SSL_certificate).
 
 #### Setting up Postfix
 
@@ -357,11 +352,13 @@ Roundcube needs a separate database to work. You should not use the same databas
 
 While running the installer ...
 
-*   Make sure to address of the IMAP host is `ssl://localhost/` or `tls://localhost/` and not just `localhost`.
+*   For the address of the IMAP host, use `ssl://localhost/` or `tls://localhost/` and not just `localhost`.
 *   Use port `993`. Likewise with SMTP.
-*   Make sure to provide `ssl://localhost/` with port `465` if you used the wrapper mode
-*   and use `tls://localhost/` port `587` if you used the proper TLS mode.
-*   See [here](#Postfix) for an explanation on that.
+*   For the address of the SMTP host, use `tls://localhost/` and port `587` if you used the proper TLS mode.
+
+	(use `ssl://localhost/` with port `465` if you used the wrapper mode)
+
+*   See [#Postfix](#Postfix) for an explanation on that.
 
 The post install process is similar to any other webapp like [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") or PostFixAdmin. The configuration file is in `/etc/webapps/roundcubemail/config/config.inc.php` which works as an override over `default.inc.php`.
 
@@ -413,6 +410,57 @@ $config['password_query'] = 'UPDATE mailbox SET password=%c WHERE username=%u';
 All necessary daemons should be started in order to test the configuration. [Start](/index.php/Start "Start") both `postfix` and `dovecot`.
 
 Now for testing purposes, create a domain and mail account in PostfixAdmin. Try to login to this account using Roundcube. Now send yourself a mail.
+
+## Testing
+
+Now lets see if Postfix is going to deliver mail for our test user.
+
+```
+nc servername 25
+helo testmail.org
+mail from:<test@testmail.org>
+rcpt to:<cactus@virtualdomain.tld>
+data
+This is a test email.
+.
+quit
+
+```
+
+### Error response
+
+```
+451 4.3.0 <lisi@test.com>:Temporary lookup failure
+
+```
+
+Maybe you have entered the wrong user/password for MySQL or the MySQL socket is not in the right place.
+
+This error will also occur if you neglect to run newaliases at least once before starting postfix. MySQL is not required for local only usage of postfix.
+
+```
+550 5.1.1 <email@spam.me>: Recipient address rejected: User unknown in virtual mailbox table.
+
+```
+
+Double check content of mysql_virtual_mailboxes.cf and check the main.cf for mydestination
+
+### See that you have received a email
+
+Now type `$ find /home/vmailer`.
+
+You should see something like the following:
+
+```
+/home/vmailer/virtualdomain.tld/cactus@virtualdomain.tld
+/home/vmailer/virtualdomain.tld/cactus@virtualdomain.tld/tmp
+/home/vmailer/virtualdomain.tld/cactus@virtualdomain.tld/cur
+/home/vmailer/virtualdomain.tld/cactus@virtualdomain.tld/new
+/home/vmailer/virtualdomain.tld/cactus@virtualdomain.tld/new/1102974226.2704_0.bonk.testmail.org
+
+```
+
+The key is the last entry. This is an actual email, if you see that, it is working.
 
 ## Optional Items
 

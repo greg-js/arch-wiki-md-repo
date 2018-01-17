@@ -96,15 +96,15 @@ Se puede considerar a los reguladores como esquemas de potencia de la UCP precon
 
 Reguladores disponibles:
 
-	Schedutil *(Por defecto, incorporado desde el kernel 4.7)*
+	Schedutil *(Por defecto, ha estado incorporado desde el kernel 4.7 al día de hoy)*
 
-	Aprovecha los datos de utilización del planificador del núcleo en un intento de tomar mejores decisiones sobre el ajuste del estado de frecuencia / rendimiento del CPU.
+	Ya que aprovecha los datos de utilización del planificador del núcleo en un intento de tomar mejores decisiones sobre el ajuste del estado de frecuencia / rendimiento del CPU.
 
 	Performance
 
 	El regulador de rendimiento esta empotrado en el núcleo y hace que las UCP funcionen a la máxima velocidad de reloj.
 
-	Ondemand *(recomendado)*
+	Ondemand *(recomendado para AMD)*
 
 	Incrementa/Decrementa dinámicamente la velocidad de reloj de la UCP en base a la carga del sistema.
 
@@ -120,23 +120,16 @@ Reguladores disponibles:
 
 	Velocidades de reloj configuradas manualmente por el usuario.
 
-Añada el regulador (o reguladores) al array `MODULES` en `/etc/rc.conf`:
+Alternativamente, puede establecer el regulador manualmente ejecutando (como root) la orden `cpupower frequency-set`, pero esto no se conservará después de un rearranque/apagado. Por ejemplo:
 
 ```
-MODULES=(acpi-cpufreq ***cpufreq_ondemand cpufreq_powersave*** vboxdrv fuse fglrx iwl3945 ... )
-
-```
-
-Alternativamente, puede establecer el regulador manualmente ejecutando (como root) la orden `cpufreq-set`, pero esto no se conservará después de un rearranque/apagado. Por ejemplo:
-
-```
-# cpufreq-set -g ondemand
+# cpupower frequency-set -r -g powersave
 
 ```
 
-Ejecute **`cpufreq-set --help`** o **`man cpufreq-set`** para más información.
+Ejecute **`cpupower frequency-set--help`** o **`man cpupower frequency-set`** para más información.
 
-	También puede usar el siguiente script para modificar los esquemas de **`cpufreq-set`** ejemplo
+	También puede usar el siguiente script para modificar los esquemas de **`cpupower frequency-set`** ejemplo
 
 ```
 ##!/bin/bash
@@ -157,7 +150,7 @@ echo " 9.-Cambiar de forma permanente governor"
 echo "*****************************************" 
 echo " 10.-Salir"
 echo ""
-read -p "OPCIÓN: " OPCION
+read -p "OPCIÓN: " OPCIÓN
 case $OPCION in
 0) watch grep \"cpu MHz\" /proc/cpuinfo;;
 1) sudo cpupower frequency-set  -r -g powersave;;
@@ -182,9 +175,9 @@ esac
 
 ### Modo demonio
 
-`cpufrequtils` instala también un demonio que le permitirá establecer el regulador de juste deseado y velocidades de reloj maximas/mínimas en tiempo de arranque, sin necesidad de herramienta adicional alguna tal como kpowersave. Esta es una solución perfecta para aquellos que utilizan un escritorio ligero tal como Openbox.
+`cpupower` instala también un demonio que le permitirá establecer el regulador de juste deseado y velocidades de reloj maximas/mínimas en tiempo de arranque, sin necesidad de herramienta adicional alguna tal como kpowersave. Esta es una solución perfecta para aquellos que utilizan un escritorio ligero tal como Openbox.
 
-Antes de arrancar el demonio, edite `/etc/conf.d/cpufreq` como root, seleccionando el regulador deseado y estableciendo las velocidades de reloj mínima y máxima para sus UPC, por ejemplo:
+Antes de arrancar el demonio, edite `/etc/default/cpupower` como root, seleccionando el regulador deseado y estableciendo las velocidades de reloj mínima y máxima para sus UPC, por ejemplo:
 
 ```
 #configuración para el control de cpufreq
@@ -199,7 +192,7 @@ max_freq="2GHz"
 
 ```
 
-**Nota:** Los valores de la velocidad de reloj mínimo y máximo para sus UPC pueden ser leídos ejecutando `cpufreq-info` después de cargar el controlador de la CPU como se vió anteriormente (p.ej. `modprobe acpi-cpufreq`). Estos valores son opcionales, no obstante. Usted podría omitirlos completamente borrando o comentando las líneas min/max_freq. Todo funcionará automáticamente.
+**Nota:** Los valores de la velocidad de reloj mínimo y máximo para sus UPC pueden ser leídos ejecutando `cpupower frequency-info` después de cargar el controlador de la CPU como se vió anteriormente (p.ej. `modprobe acpi-cpufreq`). Estos valores son opcionales, no obstante. Usted podría omitirlos completamente borrando o comentando las líneas min/max_freq. Todo funcionará automáticamente.
 
 Habiéndose ocupado del archivo de configuración, puede usted ahora arrancar el demonio mediante la siguiente orden:
 
