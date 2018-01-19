@@ -368,7 +368,7 @@ Also you would better keep plugged in both the target hard drive and your bootab
 
 ### LVM
 
-If you use [LVM](/index.php/LVM "LVM") for your `/boot`, make sure that the `lvm` module is preloaded:
+If you use [LVM](/index.php/LVM "LVM") for your `/boot` or `/` root partition, make sure that the `lvm` module is preloaded:
 
  `/etc/default/grub`  `GRUB_PRELOAD_MODULES="lvm"` 
 

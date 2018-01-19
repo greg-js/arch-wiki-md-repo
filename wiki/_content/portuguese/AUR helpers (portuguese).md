@@ -168,7 +168,7 @@ As colunas têm o seguinte significado:
 *   *Sintaxe*: P significa tipo [Pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), E para específico.
 
 | Nome | Escrito em | Seguro | Compilação limpa | Analisador confiável | Resolvedor confiável | Pacotes divididos | Git clone | Completação de shell | Sintaxe | Especificidade |
-| aura | Haskell | Sim | Sim | Sim | Não | Não [[1]](https://github.com/aurapm/aura/issues/353) | Não | bash/zsh | P | Suporte a downgrade, [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e [powerpill](/index.php/Powerpill_(Portugu%C3%AAs) "Powerpill (Português)"), multilíngue, exibe [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") |
+| aura | Haskell | Sim | Sim | Sim | Não | Não [[1]](https://github.com/aurapm/aura/issues/353) | Não | bash/zsh | P | Suporte a downgrade, [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e [powerpill](/index.php/Powerpill_(Portugu%C3%AAs) "Powerpill (Português)"), multilíngue, exibe [Unofficial user repositories/ArchHaskell](/index.php/Unofficial_user_repositories/ArchHaskell "Unofficial user repositories/ArchHaskell") |
 | auracle | C++ | Sim | N/D | Sim | Sim | N/D | Não | N/D | E | Sem compilações automáticas |
 | aurel | Emacs Lisp | Sim | N/D | Sim | N/D | N/D | Não | N/D | E | Integração com o Emacs, sem compilações automáticas |
 | aurget | Bash | Opcional | Sim | Não | Não | Não [[2]](https://github.com/pbrisbin/aurget/issues/40) | Não | bash/zsh | P | ordena por votos |

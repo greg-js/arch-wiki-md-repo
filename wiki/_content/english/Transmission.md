@@ -12,8 +12,10 @@
         *   [3.3.2 Wicd](#Wicd)
     *   [3.4 Choosing a user](#Choosing_a_user)
     *   [3.5 Configuring the daemon](#Configuring_the_daemon)
-        *   [3.5.1 Watch dir](#Watch_dir)
-        *   [3.5.2 CLI Examples](#CLI_Examples)
+        *   [3.5.1 Host whitelist](#Host_whitelist)
+        *   [3.5.2 Watch dir](#Watch_dir)
+        *   [3.5.3 Enable IPv6](#Enable_IPv6)
+        *   [3.5.4 CLI Examples](#CLI_Examples)
 *   [4 Web Interface](#Web_Interface)
     *   [4.1 The GUI way](#The_GUI_way)
     *   [4.2 The CLI way](#The_CLI_way)
@@ -198,11 +200,21 @@ Now `/mnt/data/torrents` will be accessible for the system user `facade` and for
 
 An alternative is to add your user to the `transmission` group (`#usermod -a -G transmission yourusername`) and then modify the permissions on the `/var/lib/transmission` and `/var/lib/transmission/Downloads` directories to allow `rwx` access by members of the `transmission` group.
 
+#### Host whitelist
+
+If you plan to access the Transmission daemon over the network using the server's hostname, you need to add this hostname to `rpc-host-whitelist` in `settings.json`. Otherwise, you will get a "421 Misdirected Request" error when accessing the server.
+
+If you connect to the daemon using the server's IP-address, this is not required.
+
 #### Watch dir
 
 If you want to *Automatically add .torrent files from a folder*, but you find that the `watch-dir` and `watch-dir-enabled` options set in the config file do not work, you can start the transmission daemon with the flag `-c /path/to/watch/dir`.
 
 If you're using systemd, edit the `transmission.service` unit as described in [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd").
+
+#### Enable IPv6
+
+By default, the daemon only listens for IPv4 connections. To also listen for IPv6 connections, install [transmission-cli-ipv6](https://aur.archlinux.org/packages/transmission-cli-ipv6/) (or [transmission-cli-git](https://aur.archlinux.org/packages/transmission-cli-git/), or wait for Transmission 3.0), and change the `rpc-bind-address` option to `"::"` in `settings.json`.
 
 #### CLI Examples
 

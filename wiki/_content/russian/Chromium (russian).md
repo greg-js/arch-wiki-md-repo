@@ -1,9 +1,15 @@
+Ссылки по теме
+
+*   [Хитрости Chromium](/index.php/Chromium_tweaks "Chromium tweaks")
+*   [Плагины для браузеров](/index.php/Browser_plugins "Browser plugins")
+*   [Firefox (Русский)](/index.php/Firefox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox (Русский)")
+*   [Opera](/index.php/Opera "Opera")
+
 [Chromium](https://ru.wikipedia.org/wiki/Chromium) — графический веб-браузер с открытым исходным кодом, основанный на движке [Blink](https://en.wikipedia.org/wiki/ru:Blink_(%D0%B4%D0%B2%D0%B8%D0%B6%D0%BE%D0%BA) и разрабатываемый корпорацией Google совместно с сообществом и некоторыми другими корпорациями.
 
 ## Contents
 
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [1.1 32-битные системы без поддержки SSE2](#32-.D0.B1.D0.B8.D1.82.D0.BD.D1.8B.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D0.B1.D0.B5.D0.B7_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_SSE2)
 *   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
     *   [2.1 Chromium как браузер по умолчанию](#Chromium_.D0.BA.D0.B0.D0.BA_.D0.B1.D1.80.D0.B0.D1.83.D0.B7.D0.B5.D1.80_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
     *   [2.2 Ассоциации файлов](#.D0.90.D1.81.D1.81.D0.BE.D1.86.D0.B8.D0.B0.D1.86.D0.B8.D0.B8_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2)
@@ -34,10 +40,6 @@
 *   [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/) — версия Google Chrome для разработчиков
 
 **Совет:** Чтобы получить дополнительную информацию о различиях между стабильными/бета/девелоперскими версиями, между Chromium и Chrome, а также разъяснения о порядке присвоения номеров для новых версий, смотрите эти [две](https://code.google.com/p/chromium/wiki/ChromiumBrowserVsGoogleChrome) [статьи](http://news.softpedia.com/news/Google-Chrome-vs-Chromium-Understanding-Stable-Beta-Dev-Releases-and-Version-No-140060.shtml)
-
-### 32-битные системы без поддержки SSE2
-
-Начиная с версии 35 из *chromium* [была удалена поддержка старого оборудования, не имеющего набор инструкций SSE2](https://code.google.com/p/chromium/issues/detail?id=348761#c15). Люди, которые используют такое оборудование, но по-прежнему желают пользоваться *chromium*, могут собрать пакет [chromium-no-sse2](https://aur.archlinux.org/packages/chromium-no-sse2/) или скачать уже скомпилированный пакет из [Repo-ck](/index.php/Repo-ck#Other_packages "Repo-ck"). При этом помните, что внедрение поддержки SSE2 устранило несколько ошибок, и, если вы используете патченную версию, не следует отправлять отчеты об ошибках в upstream.
 
 ## Настройка
 

@@ -73,7 +73,7 @@ Samba is configured in `/etc/samba/smb.conf`, if this file doesn't exist smbd wi
 
 To get started you can copy the default config file from [samba git repository](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD) to `/etc/samba/smb.conf`.
 
-**Tip:** The default configuration sets log file to a non-writable location, which will cause errors - it's better to change it to something arch-friendly: `log file = /var/log/samba/%m.log`.
+**Note:** The default configuration sets `log file` to a non-writable location, which will cause errors - change this to the correct location: `log file = /var/log/samba/%m.log`.
 
 The available options are documented in the [smb.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) man page. Whenever you modify the file run the [testparm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/testparm.1) command to check for syntactic errrors.
 

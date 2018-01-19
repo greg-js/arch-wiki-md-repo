@@ -247,7 +247,7 @@ Install [touchegg](https://aur.archlinux.org/packages/touchegg/) then copy confi
 
 ```
 # cp touchegg.conf /usr/share/touchegg/
-# chmod 0644 /usr/share/touchegg/touchegg/touchegg.conf
+# chmod 0644 /usr/share/touchegg/touchegg.conf
 # cp 01_touchegg /etc/X11/xinit/xinitrc.d/
 # chmod 0755 /etc/X11/xinit/xinitrc.d/01_touchegg
 

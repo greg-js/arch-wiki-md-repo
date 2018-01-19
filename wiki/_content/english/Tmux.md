@@ -501,7 +501,7 @@ fi
 
 ```
 
-Another possibility is to try to attach to existing deattached session or start a new session:
+Another possibility is to try to attach to existing detached session or start a new session:
 
 ```
 if [[ -z "$TMUX" ]] ;then

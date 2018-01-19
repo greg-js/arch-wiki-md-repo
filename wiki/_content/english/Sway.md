@@ -38,7 +38,7 @@ A detailed accounting of what features have been implemented and what features a
 
 ## Installation
 
-*sway* can be [installed](/index.php/Installed "Installed") with the [sway](https://www.archlinux.org/packages/?name=sway) package. Alternatively install the [sway-git](https://aur.archlinux.org/packages/sway-git/) package for the latest development version.
+*sway* can be [installed](/index.php/Installed "Installed") with the [sway](https://www.archlinux.org/packages/?name=sway) package.
 
 ## Starting sway
 

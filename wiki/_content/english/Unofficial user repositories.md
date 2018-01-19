@@ -24,49 +24,47 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
 *   [3 x86_64](#x86_64)
     *   [3.1 Signed](#Signed_2)
         *   [3.1.1 arcanisrepo](#arcanisrepo)
-        *   [3.1.2 archlinuxcn](#archlinuxcn)
-        *   [3.1.3 archsec](#archsec)
-        *   [3.1.4 archstrike](#archstrike)
-        *   [3.1.5 archzfs](#archzfs)
-        *   [3.1.6 ashleyis](#ashleyis)
-        *   [3.1.7 atom](#atom)
-        *   [3.1.8 aurpackages](#aurpackages)
-        *   [3.1.9 aur-archlinux](#aur-archlinux)
-        *   [3.1.10 blackeagle-pre-community](#blackeagle-pre-community)
-        *   [3.1.11 boyska64](#boyska64)
-        *   [3.1.12 catalyst](#catalyst)
-        *   [3.1.13 catalyst-hd234k](#catalyst-hd234k)
-        *   [3.1.14 city](#city)
-        *   [3.1.15 coderkun-aur](#coderkun-aur)
-        *   [3.1.16 coderkun-aur-audio](#coderkun-aur-audio)
-        *   [3.1.17 decryptedepsilon](#decryptedepsilon)
-        *   [3.1.18 eatabrick](#eatabrick)
-        *   [3.1.19 gustawho](#gustawho)
-        *   [3.1.20 haskell-core](#haskell-core)
-        *   [3.1.21 haskell-happstack](#haskell-happstack)
-        *   [3.1.22 haskell-web](#haskell-web)
-        *   [3.1.23 herecura](#herecura)
-        *   [3.1.24 holo](#holo)
-        *   [3.1.25 ivasilev](#ivasilev_2)
-        *   [3.1.26 jlk](#jlk)
-        *   [3.1.27 jrpi](#jrpi)
-        *   [3.1.28 jrpi-haskell](#jrpi-haskell)
-        *   [3.1.29 llvm-svn](#llvm-svn)
-        *   [3.1.30 markzz](#markzz)
-        *   [3.1.31 miffe](#miffe)
-        *   [3.1.32 mikelpint](#mikelpint)
-        *   [3.1.33 mobile](#mobile)
-        *   [3.1.34 qt-debug](#qt-debug)
-        *   [3.1.35 quarry](#quarry)
-        *   [3.1.36 repo-ck](#repo-ck)
-        *   [3.1.37 seblu](#seblu)
-        *   [3.1.38 seiichiro](#seiichiro)
-        *   [3.1.39 sergej-repo](#sergej-repo)
-        *   [3.1.40 siosm-aur](#siosm-aur)
-        *   [3.1.41 subtitlecomposer](#subtitlecomposer)
-        *   [3.1.42 tredaelli-systemd](#tredaelli-systemd)
-        *   [3.1.43 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-        *   [3.1.44 xyne-x86_64](#xyne-x86_64)
+        *   [3.1.2 ArchHaskell](#ArchHaskell)
+        *   [3.1.3 archlinuxcn](#archlinuxcn)
+        *   [3.1.4 archsec](#archsec)
+        *   [3.1.5 archstrike](#archstrike)
+        *   [3.1.6 archzfs](#archzfs)
+        *   [3.1.7 ashleyis](#ashleyis)
+        *   [3.1.8 atom](#atom)
+        *   [3.1.9 aurpackages](#aurpackages)
+        *   [3.1.10 aur-archlinux](#aur-archlinux)
+        *   [3.1.11 blackeagle-pre-community](#blackeagle-pre-community)
+        *   [3.1.12 boyska64](#boyska64)
+        *   [3.1.13 catalyst](#catalyst)
+        *   [3.1.14 catalyst-hd234k](#catalyst-hd234k)
+        *   [3.1.15 city](#city)
+        *   [3.1.16 coderkun-aur](#coderkun-aur)
+        *   [3.1.17 coderkun-aur-audio](#coderkun-aur-audio)
+        *   [3.1.18 decryptedepsilon](#decryptedepsilon)
+        *   [3.1.19 eatabrick](#eatabrick)
+        *   [3.1.20 gustawho](#gustawho)
+        *   [3.1.21 herecura](#herecura)
+        *   [3.1.22 holo](#holo)
+        *   [3.1.23 ivasilev](#ivasilev_2)
+        *   [3.1.24 jlk](#jlk)
+        *   [3.1.25 jrpi](#jrpi)
+        *   [3.1.26 jrpi-haskell](#jrpi-haskell)
+        *   [3.1.27 llvm-svn](#llvm-svn)
+        *   [3.1.28 markzz](#markzz)
+        *   [3.1.29 miffe](#miffe)
+        *   [3.1.30 mikelpint](#mikelpint)
+        *   [3.1.31 mobile](#mobile)
+        *   [3.1.32 qt-debug](#qt-debug)
+        *   [3.1.33 quarry](#quarry)
+        *   [3.1.34 repo-ck](#repo-ck)
+        *   [3.1.35 seblu](#seblu)
+        *   [3.1.36 seiichiro](#seiichiro)
+        *   [3.1.37 sergej-repo](#sergej-repo)
+        *   [3.1.38 siosm-aur](#siosm-aur)
+        *   [3.1.39 subtitlecomposer](#subtitlecomposer)
+        *   [3.1.40 tredaelli-systemd](#tredaelli-systemd)
+        *   [3.1.41 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+        *   [3.1.42 xyne-x86_64](#xyne-x86_64)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 andrwe](#andrwe)
         *   [3.2.2 alucryd](#alucryd)
@@ -192,6 +190,10 @@ Server = https://repo.arcanis.me/repo/$arch
 ```
 
 (It is also available via FTP with the same url.)
+
+#### ArchHaskell
+
+See [/ArchHaskell](/index.php/Unofficial_user_repositories/ArchHaskell "Unofficial user repositories/ArchHaskell").
 
 #### archlinuxcn
 
@@ -433,18 +435,6 @@ Server = https://gustawho.com/repo/$arch
 
 ```
 
-#### haskell-core
-
-See [ArchHaskell#haskell-core](/index.php/ArchHaskell#haskell-core "ArchHaskell").
-
-#### haskell-happstack
-
-See [ArchHaskell#haskell-happstack](/index.php/ArchHaskell#haskell-happstack "ArchHaskell").
-
-#### haskell-web
-
-See [ArchHaskell#haskell-web](/index.php/ArchHaskell#haskell-web "ArchHaskell").
-
 #### herecura
 
 *   **Maintainer:** [Ike Devolder](https://www.archlinux.org/people/trusted-users/#idevolder)
@@ -621,7 +611,7 @@ Server = https://pkgbuild.com/~anatolik/quarry/x86_64/
 *   **Maintainer:** [graysky](/index.php/User:Graysky "User:Graysky")
 *   **Description:** Kernel and modules with Brain Fuck Scheduler and all the goodies in the ck1 patch set.
 *   **Upstream page:** [repo-ck.com](http://repo-ck.com)
-*   **Wiki:** [repo-ck](/index.php/Repo-ck "Repo-ck")
+*   **Wiki:** [/Repo-ck](/index.php/Unofficial_user_repositories/Repo-ck "Unofficial user repositories/Repo-ck")
 *   **Key-ID:** 5EE46C4C
 
 ```

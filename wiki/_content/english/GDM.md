@@ -135,8 +135,8 @@ Next, you need to create a file in the directory with the following content:
     <file>toggle-on-hc.svg</file>		
     <file>toggle-on-intl.svg</file>
     <file>toggle-on-us.svg</file>		
-    <file>ws-switch-arrow-down.svg</file>
-    <file>ws-switch-arrow-up.svg</file>
+    <file>ws-switch-arrow-down.png</file>
+    <file>ws-switch-arrow-up.png</file>
   </gresource>
 </gresources>
 ```

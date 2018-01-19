@@ -54,8 +54,6 @@ Layouts are applied dynamically, and different layouts may be used on each works
 
 Alternatively, install [xmonad-git](https://aur.archlinux.org/packages/xmonad-git/), the development version, with some additional dependencies; and likewise [xmonad-contrib-git](https://aur.archlinux.org/packages/xmonad-contrib-git/).
 
-**Note:** If you choose to use the [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") repositories, you need to install the *haskell-xmonad* package instead of [xmonad](https://www.archlinux.org/packages/?name=xmonad), as they have different dependencies.
-
 **Note:** Remember to run `xmonad --recompile` after you upgrade xmonad, otherwise it might have problems finding shared libraries the next time you start it.
 
 ## Starting xmonad

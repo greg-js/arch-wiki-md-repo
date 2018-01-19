@@ -67,7 +67,7 @@ There are several approaches for flashing a custom firmware:
 *   Use Matt DeVillier's [ezScript](http://forum.kodi.tv/showthread.php?tid=194362) (currently supports only Chromeboxes).
 *   Manually with `flashrom`, in this case you will need to obtain the firmware by yourself or to compile it from the Coreboot sources ([official](http://www.coreboot.org/Download_coreboot) or [Chromium OS fork](https://chromium.googlesource.com/chromiumos/third_party/coreboot/)).
 
-**Note:** With Linux kernel versions greater than 4.4, CONFIG_IO_STRICT_DEVMEM a new kernel security measure can make flashrom stop working, in that case you can try adding "iomem=relaxed" to your kernel parameters. [[2]](https://www.flashrom.org/FAQ﻿).
+**Note:** With Linux kernel versions greater than 4.4, CONFIG_IO_STRICT_DEVMEM a new kernel security measure can make flashrom stop working, in that case you can try adding "iomem=relaxed" to your kernel parameters. [[2]](https://www.flashrom.org/FAQ#What_can_I_do_about_.2Fdev.2Fmem_errors.3F﻿).
 
 ### Disable the hardware write protection
 
@@ -150,7 +150,7 @@ If a UEFI ROM for your device is available, you can flash the Full ROM firmware 
 
 #### Using the script from Arch Linux
 
-You will need to install [dmidecode](https://www.archlinux.org/packages/?name=dmidecode). Furthermore, to ensure that `flashrom` can correctly flash the firmware it is necessary to boot with both the `nopat` and the `iomem=relaxed` [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). This is due to an [issue](https://www.flashrom.org/FAQ#I_get_.27Can.27t_mmap_memory_using_.2Fdev.2Fmem:_Invalid_argument.27) with the relatively old statically linked `flashrom` binary used by the script, which is required since upstream `flashrom` can't directly be used to flash firmware images in Chromebooks/Chromeboxes.
+You will need to install [dmidecode](https://www.archlinux.org/packages/?name=dmidecode). Furthermore, to ensure that `flashrom` can correctly flash the firmware it is necessary to boot with both the `nopat` and the `iomem=relaxed` [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). This is due to an [issue](https://www.flashrom.org/FAQ#What_can_I_do_about_.2Fdev.2Fmem_errors.3F) with the relatively old statically linked `flashrom` binary used by the script, which is required since upstream `flashrom` can't directly be used to flash firmware images in Chromebooks/Chromeboxes.
 
 ### Flashing with ezScript
 

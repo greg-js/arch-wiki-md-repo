@@ -6,8 +6,6 @@ Additionally, Ring has a clean separation between daemon and user interface. The
 
 ## Installation
 
-**Note:** As of July 2017, [Ring v1.0 was released](https://ring.cx/en/news). So things should be stable now :)
-
 Ring is currently packaged in the AUR. You can choose between several versions:
 
 *   Gnome client, weekly/monthly snapshot: [ring-gnome](https://www.archlinux.org/packages/?name=ring-gnome)

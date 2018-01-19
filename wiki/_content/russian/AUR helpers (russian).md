@@ -211,7 +211,7 @@ srcman is a pacman/makepkg wrapper written in Bash, which transparently handles 
 
 | Название | Язык | Безопасный | Чистая сборка | Надёжный парсер | Надёжный разрешатель | Разделённые пакеты | Git clone | Автодополнение в оболочках | Синтаксис | Специфика |
 | apacman | Bash | Нет [[2]](https://github.com/oshazard/apacman/issues/8) | Нет [[3]](https://github.com/oshazard/apacman/search?utf8=%E2%9C%93&q=export) | Нет | Нет | Нет | Нет | - | P | Форк *packer* |
-| aura | Haskell | Да | Да | Нет [[4]](https://github.com/aurapm/aura/issues/14) | Нет | Нет [[5]](https://github.com/aurapm/aura/issues/353) | Нет | bash/zsh | P | Откаты, [ABS](/index.php/ABS "ABS"), поддержка [powerpill](/index.php/Powerpill "Powerpill"), многоязычный, требует [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") |
+| aura | Haskell | Да | Да | Нет [[4]](https://github.com/aurapm/aura/issues/14) | Нет | Нет [[5]](https://github.com/aurapm/aura/issues/353) | Нет | bash/zsh | P | Откаты, [ABS](/index.php/ABS "ABS"), поддержка [powerpill](/index.php/Powerpill "Powerpill"), многоязычный, требует [Haskell](/index.php/Haskell "Haskell") |
 | aurel | Emacs Lisp | Да | N/A | Да | N/A | N/A | Нет | N/A | S | интеграция с Emacs, нет автосборок |
 | aurget | Bash | Опционально | Да | Нет | Нет | Нет [[6]](https://github.com/pbrisbin/aurget/issues/40) | Нет | bash/zsh | P | сортировка по голосам |
 | aurutils | Bash/C | Да | Да | Да | Да | Да | Да | zsh | S | [vifm](/index.php/Vifm "Vifm"), [PCRE](https://en.wikipedia.org/wiki/PCRE "w:PCRE"), [Локальный репозиторий](/index.php/Local_repository "Local repository"), [подписи пакетов](/index.php/Package_signing "Package signing"), поддержка [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") |

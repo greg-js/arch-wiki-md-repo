@@ -405,7 +405,7 @@ To generate a URI for a given ip address:
 
 PPD files are in `/usr/share/ppd/HP/`.
 
-For printers that require the proprietary HP plugin (like the Laserjet Pro P1102w or 1020), install the [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) package from [AUR](/index.php/AUR "AUR").
+If your printer is [listed as requiring a binary plugin](https://developers.hp.com/hp-linux-imaging-and-printing/binary_plugin.html), install the [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) package from [AUR](/index.php/AUR "AUR").
 
 **Note:**
 

@@ -212,7 +212,7 @@ While some of the early algorithms have now been decommissioned, the official Li
 
 **Warning:** The multi-queue scheduler framework and its related algorithms are under active development, the state of some issues can be seen in the [bfq forum](https://groups.google.com/forum/#!forum/bfq-iosched).
 
-**Note:** The best choice of scheduler depends on both the device and the exact nature of the workload. Also, the throughput in MB/s is not the only measure of performance: deadline or fairness deteriorate the overall throughput but are required to improve system reactivity in some situations.
+**Note:** The best choice of scheduler depends on both the device and the exact nature of the workload. Also, the throughput in MB/s is not the only measure of performance: deadline or fairness deteriorate the overall throughput but improve system responsiveness.
 
 #### Changing I/O scheduler
 

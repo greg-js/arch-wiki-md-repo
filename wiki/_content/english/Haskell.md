@@ -21,7 +21,7 @@
 
 ## Installation
 
-Haskell generates machine code that can be run natively on Linux. There is nothing special required to run a binary (already compiled) software, like the ones provided in the [official repositories](/index.php/Official_repositories "Official repositories") or by the [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") group. On the other side, [AUR](/index.php/AUR "AUR") packages or source codes requires a compiler to build the software.
+Haskell generates machine code that can be run natively on Linux. There is nothing special required to run a binary (already compiled) software, like the ones provided in the [official repositories](/index.php/Official_repositories "Official repositories") or by the [#ArchHaskell repository](#ArchHaskell_repository). On the other side, [AUR](/index.php/AUR "AUR") packages or source codes requires a compiler to build the software.
 
 Installing the compiler alone permits to build Haskell source code. A few additional tools are needed for development work.
 
@@ -140,7 +140,7 @@ Many Haskell libraries and executables are grouped in packages. They are all ava
 
 *   Either (but not both):
     *   [Official repositories](/index.php/Official_repositories "Official repositories"), or
-    *   [ArchHaskell repository](/index.php/ArchHaskell "ArchHaskell")
+    *   [ArchHaskell repository](#ArchHaskell_repository)
 *   [cabal-install](#cabal-install)
 *   [stack](#stack)
 *   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
@@ -160,7 +160,7 @@ The following table documents the advantages and disadvantages of different pack
 
 ### ArchHaskell repository
 
-See [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") for details.
+See [Unofficial user repositories/ArchHaskell](/index.php/Unofficial_user_repositories/ArchHaskell "Unofficial user repositories/ArchHaskell") for details.
 
 ### cabal-install
 

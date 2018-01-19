@@ -29,6 +29,14 @@ You can set it up by adding this to your shell's startup file:
 
 ```
 # Set up Node Version Manager
+source /usr/share/nvm/init-nvm.sh
+
+```
+
+Or this if you want to use a custom nvm directory:
+
+```
+# Set up Node Version Manager
 export NVM_DIR="$HOME/.nvm"                            # You can change this if you want.
 export NVM_SOURCE="/usr/share/nvm"                     # The AUR package installs it to here.
 [ -s "$NVM_SOURCE/nvm.sh" ] && . "$NVM_SOURCE/nvm.sh"  # Load NVM
@@ -46,6 +54,8 @@ $ nvm use 8.0
 Now using node v8.0.0 (npm v5.0.0)
 
 ```
+
+If you decide to use [nvm](https://aur.archlinux.org/packages/nvm/), it would also be a good idea to use a nodejs pseudo package [nodejs-fake](https://aur.archlinux.org/packages/nodejs-fake/) so packages like [npm](https://www.archlinux.org/packages/?name=npm) don't install [nodejs](https://www.archlinux.org/packages/?name=nodejs) as their dependency.
 
 ## Node Packaged Modules
 

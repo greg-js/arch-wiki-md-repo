@@ -62,7 +62,7 @@ xmonad написан, настроен и расширяем на [Haskell](htt
 
 Как вариант, установите [xmonad-git](https://aur.archlinux.org/packages/xmonad-git/), разрабатываемая версия, с некоторыми дополнительными зависимостями; а также [xmonad-contrib-git](https://aur.archlinux.org/packages/xmonad-contrib-git/) если хотите.
 
-**Примечание:** Если вы решите использовать [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") репозиторий, вы должны установить *haskell-xmonad* пакет вместо [xmonad](https://www.archlinux.org/packages/?name=xmonad), так как они имеют различные зависимости. Т.е. pacman -S haskell-xmonad haskell-xmonad-contrib xmobar dmenu2
+**Примечание:** Если вы решите использовать [Unofficial user repositories/ArchHaskell](/index.php/Unofficial_user_repositories/ArchHaskell "Unofficial user repositories/ArchHaskell") репозиторий, вы должны установить *haskell-xmonad* пакет вместо [xmonad](https://www.archlinux.org/packages/?name=xmonad), так как они имеют различные зависимости. Т.е. pacman -S haskell-xmonad haskell-xmonad-contrib xmobar dmenu2
 
 **Совет:** pacman -S xmonad xmonad-contrib xmobar dmenu2
 

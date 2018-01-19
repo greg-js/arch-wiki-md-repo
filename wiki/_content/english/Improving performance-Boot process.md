@@ -62,18 +62,11 @@ See [systemd-analyze(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-analy
 
 ### Using systemd-bootchart
 
-Bootchart has been merged into **systemd** since Oct. 2012, and you can use it to boot just as you would with the original bootchart. Add this to your kernel line:
-
-```
-initcall_debug printk.time=y init=/usr/lib/systemd/systemd-bootchart
-
-```
+Bootchart is part of *systemd* and can be used at boot time passing the following option to the kernel command line: `initcall_debug printk.time=y init=/usr/lib/systemd/systemd-bootchart`.
 
 After collecting a certain amount of data (configurable) the logging stops and a graph is generated from the logged information. This graph contains vital clues as to which resources are being used (by default I/O, CPU utilization and kernel init threads), in which order, and where possible problems exist in the startup sequence of the system. It is essentially a more detailed version of the systemd-analyze plot function.
 
-Bootchart graphs are by default written time-stamped in /run/log and saved to the journal with MESSAGE_ID=9f26aa562cf440c2b16c773d0479b518\. Journal field BOOTCHART= contains the bootchart in SVG format.
-
-See the [manpage](http://www.freedesktop.org/software/systemd/man/systemd-bootchart.html) for more information.
+Bootchart graphs are by default written time-stamped in `/run/log` and saved to the journal with *MESSAGE_ID=9f26aa562cf440c2b16c773d0479b518*. Journal field *BOOTCHART=* contains the bootchart in SVG format. See the [manpage](http://www.freedesktop.org/software/systemd/man/systemd-bootchart.html) for more information.
 
 ### Using bootchart2
 
@@ -127,9 +120,9 @@ To disable it, add `libahci.ignore_sss=1` to the [kernel line](/index.php/Kernel
 
 ## Filesystem mounts
 
-Thanks to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")'s `fsck` hook, you can avoid a possibly costly remount of the root partition by changing `ro` to `rw` on the kernel line and removing it from `/etc/fstab`. Options can be set with `rootflags=mount options...` on the kernel line. Remember to remove the entry from your `/etc/fstab` file, else the `systemd-remount-fs.service` will continue to try to apply those settings. Alternatively, one could try to mask that unit.
+Thanks to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")'s `fsck` hook, you can avoid a possibly costly remount of the root partition by changing `ro` to `rw` on the kernel line: options can be set with `rootflags=**rw**,*other_mount_options*`. The entry must be removed from the `/etc/fstab` file, otherwise the `systemd-remount-fs.service` will continue to try applying these settings. Alternatively, one could try to mask that unit.
 
-If btrfs is in use for the root filesystem, there is no need for a fsck on every boot like other filesystems. If this is the case, [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")'s `fsck` hook can be removed. You may also want to mask the `systemd-fsck-root.service`, or tell it not to fsck the root filesystem from the kernel command line using `fsck.mode=skip`. Without [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")'s `fsck` hook, systemd will still fsck any relevant filesystems with the `systemd-fsck@.service`
+If [btrfs](/index.php/Btrfs "Btrfs") is in use for the root filesystem, there is no need for a fsck on every boot like other filesystems. If this is the case, [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")'s `fsck` hook can be removed. You may also want to mask the `systemd-fsck-root.service`, or tell it not to fsck the root filesystem from the kernel command line using `fsck.mode=skip`. Without [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")'s `fsck` hook, systemd will still fsck any relevant filesystems with the `systemd-fsck@.service`
 
 You can also remove API filesystems from `/etc/fstab`, as systemd will mount them itself (see `pacman -Ql systemd | grep '\.mount$'` for a list). It is not uncommon for users to have a /tmp entry carried over from sysvinit, but you may have noticed from the command above that systemd already takes care of this. Ergo, it may be safely removed.
 
@@ -138,7 +131,7 @@ Other filesystems like `/home` can be mounted with custom mount units. Adding `n
 **Note:**
 
 *   This will make your `/home` filesystem type `autofs`, which is ignored by [mlocate](/index.php/Mlocate "Mlocate") by default. The speedup of automounting `/home` may not be more than a second or two, depending on your system, so this trick may not be worth it.
-*   If the system is installed into a [Btrfs](/index.php/Btrfs "Btrfs") subvolume (specifically: the root directory `/` itself is a subvolume) and `/home` is a separate file system, you may also want to prevent the creation of a `/home` subvolume. Mask the `home.conf` tmpfile: `ln -s /dev/null /etc/tmpfiles.d/home.conf`.
+*   If the system is installed into a *btrfs* subvolume (specifically: the root directory `/` itself is a subvolume) and `/home` is a separate file system, you may also want to prevent the creation of a `/home` subvolume. Mask the `home.conf` tmpfile: `ln -s /dev/null /etc/tmpfiles.d/home.conf`.
 
 ## Less output during boot
 

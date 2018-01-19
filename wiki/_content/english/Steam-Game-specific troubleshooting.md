@@ -247,21 +247,22 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [113.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
     *   [113.4 Chinese/Japanese/Korean display bug](#Chinese.2FJapanese.2FKorean_display_bug)
 *   [114 Unrest](#Unrest)
-*   [115 War Thunder](#War_Thunder)
-    *   [115.1 No audio](#No_audio_6)
-    *   [115.2 Blank screen](#Blank_screen)
-*   [116 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
-*   [117 Worms W.M.D](#Worms_W.M.D)
-*   [118 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [118.1 Game does not start](#Game_does_not_start_11)
-*   [119 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-*   [120 World of Goo](#World_of_Goo)
-    *   [120.1 Changing resolution](#Changing_resolution)
-*   [121 X3: Terran Conflict](#X3:_Terran_Conflict)
-    *   [121.1 Game crashes on startup](#Game_crashes_on_startup)
-*   [122 XCOM](#XCOM)
-    *   [122.1 Hangs on startup](#Hangs_on_startup)
-    *   [122.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+*   [115 Volgarr the Viking](#Volgarr_the_Viking)
+*   [116 War Thunder](#War_Thunder)
+    *   [116.1 No audio](#No_audio_6)
+    *   [116.2 Blank screen](#Blank_screen)
+*   [117 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
+*   [118 Worms W.M.D](#Worms_W.M.D)
+*   [119 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+    *   [119.1 Game does not start](#Game_does_not_start_11)
+*   [120 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+*   [121 World of Goo](#World_of_Goo)
+    *   [121.1 Changing resolution](#Changing_resolution)
+*   [122 X3: Terran Conflict](#X3:_Terran_Conflict)
+    *   [122.1 Game crashes on startup](#Game_crashes_on_startup)
+*   [123 XCOM](#XCOM)
+    *   [123.1 Hangs on startup](#Hangs_on_startup)
+    *   [123.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
 
 ## Common steps
 
@@ -2017,6 +2018,10 @@ Install [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) an
 ## Unrest
 
 Requires [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth).
+
+## Volgarr the Viking
+
+Delete the 'lib' directory in the install directory to get rid of the libGL errors.
 
 ## War Thunder
 

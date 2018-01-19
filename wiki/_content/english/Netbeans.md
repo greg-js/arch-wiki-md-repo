@@ -43,10 +43,10 @@ Please note the `-nightly` versions are actually binaries versions compiled ever
 
 ### Font antialiasing in Netbeans
 
-As Netbeans is written in [Java](/index.php/Java "Java"), the font rendering is managed by Java itself and also by Netbeans. Modifying the font antialiasing parameters must thus happen at two levels:
+As Netbeans is written in [Java](/index.php/Java "Java"), the font rendering is managed by Java itself and also by Netbeans. Modifying the font antialiasing parameters can thus happen at two levels:
 
 *   [Java](/index.php/Java#Better_font_rendering "Java").
-*   In the Netbeans configuration
+*   In the Netbeans configuration. If the file is missing, you may need to create it.
 
  `~/.netbeans/*version*/etc/netbeans.conf` 
 ```

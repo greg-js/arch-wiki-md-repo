@@ -41,7 +41,9 @@ Related articles
 
 ## Requirements
 
-Wayland only works on systems using [KMS](/index.php/KMS "KMS"). As Wayland is only a library, it is useless on its own: to replace the X Server you need a compositor such as [#Weston](#Weston).
+Wayland only works on systems using [KMS](/index.php/KMS "KMS").
+
+Wayland by itself does not provide a graphical environment; for this you also need a compositor such as [#Weston](#Weston) or [Sway](/index.php/Sway "Sway") (standalone), or a desktop environment that includes a compositor such as [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE").
 
 ### Buffer API support
 

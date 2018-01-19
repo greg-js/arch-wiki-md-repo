@@ -27,7 +27,7 @@ No special steps are needed during setup, everyhing (WiFi, Network, Modem) seeme
 
 ## Hardware
 
-Tested model 33588CG (BIOS H4ET92WW v2.52 04/18/2013) on **Kernel 3.11.1** (stable) and **Kernel 3.11.1 with CK1 patchset** (linux-ck-ivybridge package from [Repo-ck](/index.php/Repo-ck "Repo-ck"))
+Tested model 33588CG (BIOS H4ET92WW v2.52 04/18/2013) on **Kernel 3.11.1** (stable) and **Kernel 3.11.1 with CK1 patchset** (linux-ck-ivybridge package from [Unofficial user repositories/Repo-ck](/index.php/Unofficial_user_repositories/Repo-ck "Unofficial user repositories/Repo-ck"))
 
 | Device | Working? (Yes/No) |
 | Video | Yes (xf86-video-intel and intel-dri for 3D; KMS works too) |

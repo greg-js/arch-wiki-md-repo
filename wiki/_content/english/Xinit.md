@@ -68,6 +68,7 @@ Then [edit](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Readin
 
  `~/.xinitrc` 
 ```
+...
 xscreensaver &
 exec openbox-session
 ```

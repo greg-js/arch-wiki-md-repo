@@ -60,7 +60,7 @@ The Gogs configuration file is located at `/etc/gogs/app.ini`. When you want to 
 
 In order to interact with the git repositories using ssh, and to be able to use the uploaded public keys:
 
-*   set `SSH_ROOTH_PATH` in `/etc/gogs/app.ini` to `/home/git/.ssh` (see also [documentation](https://gogs.io/docs/advanced/configuration_cheat_sheet))
+*   set `SSH_ROOT_PATH` in `/etc/gogs/app.ini` to `/home/git/.ssh` (see also [documentation](https://gogs.io/docs/advanced/configuration_cheat_sheet))
 
 *   create `/home/git/.ssh` and hand over ownership to the `gogs` user:
 

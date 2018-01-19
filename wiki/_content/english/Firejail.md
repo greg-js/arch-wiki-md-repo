@@ -19,15 +19,16 @@ Related articles
 *   [5 Firejail with Apparmor](#Firejail_with_Apparmor)
     *   [5.1 Apparmor usage](#Apparmor_usage)
 *   [6 Firejail with Xephyr](#Firejail_with_Xephyr)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Remove Firejail symbolic links](#Remove_Firejail_symbolic_links)
-    *   [7.2 Desktop files](#Desktop_files)
-    *   [7.3 Symbolic links](#Symbolic_links)
-    *   [7.4 PulseAudio](#PulseAudio)
-    *   [7.5 Hidepid](#Hidepid)
-*   [8 Tips and tricks](#Tips_and_tricks)
-    *   [8.1 Paths containing spaces](#Paths_containing_spaces)
-    *   [8.2 Private mode](#Private_mode)
+    *   [6.1 Sandboxing a browser](#Sandboxing_a_browser)
+*   [7 Tips and tricks](#Tips_and_tricks)
+    *   [7.1 Paths containing spaces](#Paths_containing_spaces)
+    *   [7.2 Private mode](#Private_mode)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 Remove Firejail symbolic links](#Remove_Firejail_symbolic_links)
+    *   [8.2 Desktop files](#Desktop_files)
+    *   [8.3 Symbolic links](#Symbolic_links)
+    *   [8.4 PulseAudio](#PulseAudio)
+    *   [8.5 Hidepid](#Hidepid)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -236,6 +237,35 @@ Note that the statement:
 
 is incorrect, [xserverrc](/index.php/Xinit#xserverrc "Xinit") can be edited to `-nolisten local` which disables the abstract sockets of X11 and helps isolate it.
 
+### Sandboxing a browser
+
+[Openbox](/index.php/Openbox "Openbox") can be configured to start a certain browser at startup. `*program*.profile` is the respective profile contained in `/etc/firejail`, and `--startup "*command*"` is the command line used to start the program. For example, to start Chromium in the sandbox:
+
+```
+$ firejail --x11 --profile=/etc/firejail/chromium.profile openbox --startup "chromium"
+
+```
+
+## Tips and tricks
+
+### Paths containing spaces
+
+If you need to reference, whitelist, or blacklist a directory within a custom profile, such as with [palemoon](https://aur.archlinux.org/packages/palemoon/), you must do so using the absolute path, without encapsulation or escapes:
+
+```
+/home/user/.moonchild productions
+
+```
+
+### Private mode
+
+Firejail also includes a one time private mode, in which no mounts are made in the chroots to your home directory. In doing this, you can execute applications without performing any changes to disk. For example, to execute okular in private mode, do the following:
+
+```
+$ firejail --seccomp --private okular
+
+```
+
 ## Troubleshooting
 
 Some applications do not work properly with Firejail, and others simply require special configuration. In the instance any directories are disallowed or blacklisted for any given application, you may have to further edit the profile to enable nonstandard directories that said application needs to access. One example is wine; wine will not work with seccomp in most cases.
@@ -285,26 +315,6 @@ This commands creates a custom `~/.config/pulse/client.conf` file for the *curre
 ### Hidepid
 
 If you have [hidepid](/index.php/Hidepid "Hidepid") installed, Firemon can only be run as root. This, among other things, will cause problems with the Firetools GUI incorrectly reporting "Capabilities", "Protocols" and the status of "Seccomp". See [[4]](https://github.com/netblue30/firejail/issues/1564)
-
-## Tips and tricks
-
-### Paths containing spaces
-
-If you need to reference, whitelist, or blacklist a directory within a custom profile, such as with [palemoon](https://aur.archlinux.org/packages/palemoon/), you must do so using the absolute path, without encapsulation or escapes:
-
-```
-/home/user/.moonchild productions
-
-```
-
-### Private mode
-
-Firejail also includes a one time private mode, in which no mounts are made in the chroots to your home directory. In doing this, you can execute applications without performing any changes to disk. For example, to execute okular in private mode, do the following:
-
-```
-$ firejail --seccomp --private okular
-
-```
 
 ## See also
 

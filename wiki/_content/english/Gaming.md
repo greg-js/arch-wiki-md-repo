@@ -418,7 +418,7 @@ steam.exe -I -n -5
 
 **Note:** Many users report inconsistant framerate and other performance hits when using [Linux-ck](/index.php/Linux-ck "Linux-ck"), even if the overall framerate is sometimes higher. You may wish to try using [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) if you just want BFQ.
 
-The stock Arch kernel provides a very good baseline for general usage. However, if your system has less than 16 cores and is intended for use primarily as a workstation, you can sacrifice a small amount of throughput on batch workloads and gain a significant boost to interactivity by using [Linux-ck](/index.php/Linux-ck "Linux-ck"). If you prefer not to compile your own kernel, you can instead add [Repo-ck](/index.php/Repo-ck "Repo-ck") and use one of their kernels. Using a pre-optimized kernel will most definitely offset any loss of throughput that may have occurred as a result, so be sure to select the appropriate kernel for your architecture.
+The stock Arch kernel provides a very good baseline for general usage. However, if your system has less than 16 cores and is intended for use primarily as a workstation, you can sacrifice a small amount of throughput on batch workloads and gain a significant boost to interactivity by using [Linux-ck](/index.php/Linux-ck "Linux-ck"). Using a pre-optimized kernel will most definitely offset any loss of throughput that may have occurred as a result, so be sure to select the appropriate kernel for your architecture.
 
 ### Using BFQ
 

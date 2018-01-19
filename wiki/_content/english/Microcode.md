@@ -163,7 +163,7 @@ $ dmesg | grep microcode
 
 ```
 
-On Intel systems one should see something similar to the following, indicating that microcode is updated early:
+On Intel systems one should see something similar to the following on every boot, indicating that microcode is updated very early on:
 
 ```
 [    0.000000] CPU0 microcode updated early to revision 0x1b, date = 2014-05-29

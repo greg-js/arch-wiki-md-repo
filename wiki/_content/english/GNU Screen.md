@@ -1,9 +1,11 @@
 Related articles
 
-*   [dtach](/index.php/Dtach "Dtach")
 *   [tmux](/index.php/Tmux "Tmux")
+*   [dtach](/index.php/Dtach "Dtach")
 
-[GNU Screen](https://www.gnu.org/software/screen/) is a wrapper that allows separation between the text program and the shell from which it was launched. This allows the user to, for example, start a text program in a terminal in X, kill X, and continue to interact with the program.
+[GNU Screen](https://www.gnu.org/software/screen/) is a full-screen window manager that multiplexes a physical terminal between several processes, typically interactive shells. Programs running in Screen continue to run when their window is currently not visible and even when the whole screen session is detached from the user's terminal.
+
+See the official overview [GNU Screen manual](https://www.gnu.org/software/screen/manual/screen.html#Overview) for the description of the features.
 
 ## Contents
 
@@ -12,19 +14,22 @@ Related articles
     *   [2.1 Common Commands](#Common_Commands)
     *   [2.2 Command Prompt Commands](#Command_Prompt_Commands)
     *   [2.3 Named sessions](#Named_sessions)
-    *   [2.4 Autostart with systemd](#Autostart_with_systemd)
+    *   [2.4 Customizing Screen](#Customizing_Screen)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Change the escape key](#Change_the_escape_key)
-    *   [3.2 Start at window 1](#Start_at_window_1)
-    *   [3.3 Nested Screen Sessions](#Nested_Screen_Sessions)
-    *   [3.4 Use 256 colors](#Use_256_colors)
-    *   [3.5 Informative statusbar](#Informative_statusbar)
-    *   [3.6 Turn welcome message off](#Turn_welcome_message_off)
-    *   [3.7 Turn your hardstatus line into a dynamic urxvt|xterm|aterm window title](#Turn_your_hardstatus_line_into_a_dynamic_urxvt.7Cxterm.7Caterm_window_title)
-    *   [3.8 Use X scrolling mechanism](#Use_X_scrolling_mechanism)
-    *   [3.9 Attach an existing running program to screen](#Attach_an_existing_running_program_to_screen)
-    *   [3.10 Setting a different bash prompt while in screen](#Setting_a_different_bash_prompt_while_in_screen)
-    *   [3.11 Turn off visual bell](#Turn_off_visual_bell)
+    *   [3.1 Autostart with systemd](#Autostart_with_systemd)
+    *   [3.2 Change the escape key](#Change_the_escape_key)
+    *   [3.3 Start at window 1](#Start_at_window_1)
+    *   [3.4 Nested Screen Sessions](#Nested_Screen_Sessions)
+    *   [3.5 Start Screen on every shell](#Start_Screen_on_every_shell)
+    *   [3.6 Use 256 colors](#Use_256_colors)
+    *   [3.7 Informative statusbar](#Informative_statusbar)
+    *   [3.8 Turn welcome message off](#Turn_welcome_message_off)
+    *   [3.9 Turn your hardstatus line into a dynamic urxvt|xterm|aterm window title](#Turn_your_hardstatus_line_into_a_dynamic_urxvt.7Cxterm.7Caterm_window_title)
+    *   [3.10 Use X scrolling mechanism](#Use_X_scrolling_mechanism)
+    *   [3.11 Attach an existing running program to screen](#Attach_an_existing_running_program_to_screen)
+    *   [3.12 Setting a different bash prompt while in screen](#Setting_a_different_bash_prompt_while_in_screen)
+    *   [3.13 Turn off visual bell](#Turn_off_visual_bell)
+    *   [3.14 Getting rid of the vertical and horizontal bars](#Getting_rid_of_the_vertical_and_horizontal_bars)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Fix for residual editor text](#Fix_for_residual_editor_text)
     *   [4.2 Fix for Name column in windowlist only show "bash"](#Fix_for_Name_column_in_windowlist_only_show_.22bash.22)
@@ -38,7 +43,7 @@ Related articles
 
 Commands are entered pressing the "escape key" `Ctrl+a` and then the key binding.
 
-Some users find the default escape key `Ctrl+a` inconvenient. The escape key can be changed to another key as [described below](#Change_the_escape_key).
+Some users find the default escape key `Ctrl+a` inconvenient. The escape key can be changed to another key as described in [#Change the escape key](#Change_the_escape_key).
 
 ### Common Commands
 
@@ -98,9 +103,15 @@ $ screen -r *session_name*
 
 ```
 
+### Customizing Screen
+
+You can modify the default settings for Screen according to your preference either through a personal `.screenrc` file which contains commands to be executed at startup (e.g. `~/.screenrc`) or on the fly using the colon (`-`) command.
+
+## Tips and tricks
+
 ### Autostart with systemd
 
-This service autostarts screen for the specified user (e.g. `systemctl enable screen@florian`). Running this as a system unit is important, because [systemd --user](/index.php/Systemd/User "Systemd/User") instance is not guaranteed to be running and will be killed when the last session for given user is closed.
+This service autostarts screen for the specified user (e.g. `systemctl enable screen@florian`). Running this as a system unit is important, because [systemd --user](/index.php/Systemd/User "Systemd/User") instance is not guaranteed to be running and will be killed when the last session for given the user is closed.
 
  `/etc/systemd/system/screen@.service` 
 ```
@@ -119,8 +130,6 @@ WantedBy=multi-user.target
 
 ```
 
-## Tips and tricks
-
 ### Change the escape key
 
 It can be a good idea to change the default escape key, not only because "a" is usually typed with the left pinky, but also because `Ctrl+a` is mapped to the common command `beginning-of-line` in [GNU Readline](/index.php/Readline "Readline") and [Bash](/index.php/Bash "Bash")-like shells.
@@ -135,7 +144,7 @@ The escape key is also called the "command character" in Screen documentation.
 
 ### Start at window 1
 
-By default, the first screen window is 0\. If you'd rather never have a window 0 and start instead with 1, add the following lines on your configuration:
+By default, the first screen window is 0\. If you would rather never have a window 0 and start instead with 1, add the following lines on your configuration:
 
  `~/.screenrc` 
 ```
@@ -153,9 +162,21 @@ It is possible to get stuck in a nested screen session. A common scenario: you s
 *   `Ctrl+a` `a` `d` Detaches the inner screen session.
 *   `Ctrl+a` `a` `K` Kills the inner screen session.
 
+### Start Screen on every shell
+
+For Bash and Zsh, add the following snippet to your `.bashrc` or `.zshrc` before your aliases:
+
+ `~/.bashrc or ~/.zshrc` 
+```
+if [[ -z "$STY" ]]; then
+   screen -xRR session_name
+fi
+
+```
+
 ### Use 256 colors
 
-By default, screen uses an 8-color terminal emulator. To enable more colors, you need to be using a terminal that supports them and set the correct [term](http://aperiodic.net/screen/commands:term) value. This will use [terminfo](https://en.wikipedia.org/wiki/Terminfo "wikipedia:Terminfo") to describe how the [ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code "wikipedia:ANSI escape code") will be interpreted. An entry in the terminfo database structure must exist, [ncurses](https://www.archlinux.org/packages/?name=ncurses) provides many common descriptions stored under `/usr/share/terminfo/`.
+By default, Screen uses an 8-color terminal emulator. To enable more colors, you need to be using a terminal that supports them and set the correct [term](http://aperiodic.net/screen/commands:term) value. This will use [terminfo](https://en.wikipedia.org/wiki/Terminfo "wikipedia:Terminfo") to describe how the [ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code "wikipedia:ANSI escape code") will be interpreted. An entry in the terminfo database structure must exist, [ncurses](https://www.archlinux.org/packages/?name=ncurses) provides many common descriptions stored under `/usr/share/terminfo/`.
 
 First try the generic value:
 
@@ -165,7 +186,7 @@ term screen-256color
 
 ```
 
-If that does not work, try setting it based on the used terminal. When using [xterm](/index.php/Xterm "Xterm")-based terminal:
+If that does not work, try setting it based on your terminal. When using [xterm](/index.php/Xterm "Xterm")-based terminal:
 
  `~/.screenrc` 
 ```
@@ -213,6 +234,14 @@ hardstatus alwayslastline '%{= G}[ %{G}%H %{g}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%
 
 ```
 
+statusbar at top:
+
+ `~/.screenrc` 
+```
+hardstatus firstline 
+
+```
+
 ### Turn welcome message off
 
  `~/.screenrc` 
@@ -249,7 +278,7 @@ termcapinfo xterm* ti@:te@
 
 ### Attach an existing running program to screen
 
-If you started a program outside screen, but now you would like it to be inside, you can use **reptyr** to reparent the process from it's current tty to one inside screen.
+If you started a program outside Screen, but now you would like it to be inside, you can use **reptyr** to reparent the process from it's current tty to one inside screen.
 
 [Install](/index.php/Install "Install") the [reptyr](https://www.archlinux.org/packages/?name=reptyr) package.
 
@@ -275,11 +304,25 @@ fi
 
 ### Turn off visual bell
 
-With this setting, screen will not make an ugly screen flash instead of a bell sound.
+With this setting, Screen will not make an ugly screen flash instead of a bell sound.
 
  `~/.screenrc` 
 ```
 vbell off
+
+```
+
+### Getting rid of the vertical and horizontal bars
+
+To get rid of the vertical bars:
+
+ `$ ~/.screenrc`  `rendition so =00` 
+
+Setting the back and foreground color to default (d) and displays nothing (" "), to hide horizontal bar.
+
+ `~/.screenrc` 
+```
+caption string "%{03} "
 
 ```
 
@@ -303,9 +346,10 @@ add following to ~/.screenrc
 
 ## See also
 
-*   [MacOSX Hints - Automatically using screen in your shell](http://www.macosxhints.com/article.php?story=20021114055617124)
+*   [GNU Screen User's Manual](https://www.gnu.org/software/screen/manual/screen.html)
 *   [Gentoo Wiki - Tutorial for screen](http://wiki.gentoo.org/wiki/Screen)
-*   [Arch Forums - Regarding 256 color issue with urxvt](https://bbs.archlinux.org/viewtopic.php?id=50647)
 *   [Arch Forums - .screenrc configs with screenshots](https://bbs.archlinux.org/viewtopic.php?id=55618)
+*   [Arch Forums - Regarding 256 color issue with urxvt](https://bbs.archlinux.org/viewtopic.php?id=50647)
+*   [MacOSX Hints - Automatically using screen in your shell](http://www.macosxhints.com/article.php?story=20021114055617124)
 *   [Ratpoison - A window manager based on gnu screen](/index.php/Ratpoison "Ratpoison")
 *   [Xpra - A utility to detach/reattach X programs, in a way similar as screen does for command line based programs](/index.php/Xpra "Xpra")

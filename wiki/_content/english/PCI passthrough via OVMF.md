@@ -278,7 +278,7 @@ After installing [qemu](https://www.archlinux.org/packages/?name=qemu), [libvirt
  `/etc/libvirt/qemu.conf` 
 ```
 nvram = [
-	"/usr/share/ovmf/ovmf_code_x64.bin:/usr/share/ovmf/ovmf_vars_x64.bin"
+	"/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd"
 ]
 ```
 
@@ -601,10 +601,10 @@ Instead of setting up a virtual machine with the help of libvirt, plain QEMU com
 
 To achieve this after [#Setting up IOMMU](#Setting_up_IOMMU) and [#Isolating the GPU](#Isolating_the_GPU), follow the [QEMU](/index.php/QEMU "QEMU") article to setup the virtualized environment, [enable KVM](/index.php/QEMU#Enabling_KVM "QEMU") on it and use the flag `-device vfio-pci,host=07:00.0` replacing the identifier (07:00.0) with your actual device's ID that you used for the GPU isolation earlier.
 
-For utilizing the OVMF firmware, make sure the [ovmf](https://www.archlinux.org/packages/?name=ovmf) package is installed, copy the UEFI variables from `/usr/share/ovmf/ovmf_vars_x64.bin` to temporary location like `/tmp/my_vars.bin` and finally specify the OVMF paths by appending the following parameters to the QEMU command (order matters):
+For utilizing the OVMF firmware, make sure the [ovmf](https://www.archlinux.org/packages/?name=ovmf) package is installed, copy the UEFI variables from `/usr/share/ovmf/x64/OVMF_VARS.fd` to temporary location like `/tmp/MY_VARS.fd` and finally specify the OVMF paths by appending the following parameters to the QEMU command (order matters):
 
-*   `-drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/ovmf_code_x64.bin` for the actual OVMF firmware binary, note the readonly option
-*   `-drive if=pflash,format=raw,file=/tmp/my_vars.bin` for the variables
+*   `-drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/x64/OVMF_CODE.fd` for the actual OVMF firmware binary, note the readonly option
+*   `-drive if=pflash,format=raw,file=/tmp/MY_VARS.fd` for the variables
 
 **Note:** QEMU's default SeaBIOS can be used instead of OVMF, but it's not recommended as it can cause issues with passthrough setups.
 

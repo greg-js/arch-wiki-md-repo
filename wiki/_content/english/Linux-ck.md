@@ -1,6 +1,6 @@
 Related articles
 
-*   [Repo-ck](/index.php/Repo-ck "Repo-ck")
+*   [Unofficial user repositories/Repo-ck](/index.php/Unofficial_user_repositories/Repo-ck "Unofficial user repositories/Repo-ck")
 *   [Modprobed-db](/index.php/Modprobed-db "Modprobed-db")
 
 ## Contents
@@ -81,7 +81,7 @@ More details about these options are provided in the PKGBUILD itself. Be sure to
 
 ### Use pre-compiled packages
 
-If user prefers to spend no time to compile on their own, the unofficial repo maintained by [graysky](/index.php/User:Graysky "User:Graysky") is available to the community. For details, see: [Repo-ck](/index.php/Repo-ck "Repo-ck").
+If user prefers to spend no time to compile on their own, the unofficial repo maintained by [graysky](/index.php/User:Graysky "User:Graysky") is available to the community. For details, see: [Unofficial user repositories/Repo-ck](/index.php/Unofficial_user_repositories/Repo-ck "Unofficial user repositories/Repo-ck").
 
 ## How to enable the BFQ I/O Scheduler
 
@@ -125,7 +125,7 @@ Do not forget to add users to the *vboxusers* group:
 
 **Note:** As of 17-Oct-2012, Repo-ck users can enjoy these modules as pre-compiled packages in the repo itself. If you build Linux-ck from AUR you **can not use the repo** as all packages in the repo are matched groups.
 
-See the [Repo-ck](/index.php/Repo-ck "Repo-ck") section to set up it correctly.
+See the [Unofficial user repositories/Repo-ck](/index.php/Unofficial_user_repositories/Repo-ck "Unofficial user repositories/Repo-ck") to set up it correctly.
 
 #### The virtualbox-ck-host-modules package (recommended if Linux-ck is built from AUR)
 

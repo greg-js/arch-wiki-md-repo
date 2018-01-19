@@ -65,10 +65,6 @@ Using these tools can replace setting a lot of settings by hand. Only run **one*
 
 These are the more popular scripts and tools designed to help power saving:
 
-*   **aclidswitch** — Simple Power Management tool to define custom lid, brightness and low battery actions depending on the laptop's AC state.
-
-	[https://github.com/orschiro/aclidswitch](https://github.com/orschiro/aclidswitch) || [aclidswitch-git](https://aur.archlinux.org/packages/aclidswitch-git/)
-
 *   **[acpid](/index.php/Acpid "Acpid")** — A daemon for delivering ACPI power management events with netlink support.
 
 	[http://sourceforge.net/projects/acpid2/](http://sourceforge.net/projects/acpid2/) || [acpid](https://www.archlinux.org/packages/?name=acpid)

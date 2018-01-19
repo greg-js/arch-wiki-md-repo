@@ -1,3 +1,10 @@
+相关文章
+
+*   [浏览器插件](/index.php/Browser_Plugins_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Browser Plugins (简体中文)")
+*   [Firefox tweaks](/index.php/Firefox_tweaks "Firefox tweaks")
+*   [Chromium](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)")
+*   [Opera](/index.php/Opera "Opera")
+
 **翻译状态：** 本文是英文页面 [Firefox](/index.php/Firefox "Firefox") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-03，点击[这里](https://wiki.archlinux.org/index.php?title=Firefox&diff=0&oldid=444370)可以查看翻译后英文页面的改动。
 
 [Firefox](https://www.mozilla.org/firefox)（火狐）是[Mozilla](https://www.mozilla.org)（谋智网络）出品的一款图形界面网络浏览器。
@@ -8,7 +15,7 @@
 *   [2 附加组件](#.E9.99.84.E5.8A.A0.E7.BB.84.E4.BB.B6)
     *   [2.1 添加搜索引擎](#.E6.B7.BB.E5.8A.A0.E6.90.9C.E7.B4.A2.E5.BC.95.E6.93.8E)
         *   [2.1.1 arch-firefox-search](#arch-firefox-search)
-*   [3 Configuration](#Configuration)
+*   [3 配置](#.E9.85.8D.E7.BD.AE)
 *   [4 插件](#.E6.8F.92.E4.BB.B6)
     *   [4.1 Gnome Keyring 整合](#Gnome_Keyring_.E6.95.B4.E5.90.88)
     *   [4.2 KDE 整合](#KDE_.E6.95.B4.E5.90.88)
@@ -88,51 +95,39 @@ Firefox 广为人知的一点是它的大量的附加组件，可以用来添加
 
 安装 [arch-firefox-search](https://www.archlinux.org/packages/?name=arch-firefox-search) 添加 Arch 相关的搜索项目 (AUR, wiki, 论坛等等) 到 Firefox 搜索栏.
 
-## Configuration
+## 配置
 
-Firefox exposes a number of configuration options. To examine them, enter:
-
-```
-about:config
+Firefox有许多可用的配置选项。要检查它们，请在Firefox地址栏中输入：
 
 ```
-
-in the Firefox address bar.
-
-Once set, these affect the user's current profile, and may be synchronized across all devices via [Firefox Sync](https://www.mozilla.org/firefox/sync/). Please note that only a subset of the `about:config` entries are synchronized by this method, and the exact subset may be found by searching for `services.sync.prefs` in `about:config`. Additional preferences and 3rd party preferences may be synchronized by creating new boolean entries prepending the config value with `services.sync.prefs.sync` ([documentation](https://developer.mozilla.org/en-US/docs/Archive/Mozilla/Firefox_Sync/Syncing_custom_preferences) is still applicable.) To synchronize the whitelist for the extension [NoScript](https://addons.mozilla.org/en-US/firefox/addon/noscript/):
-
-```
-services.sync.prefs.sync.capability.policy.maonoscript.sites
+ about：config
 
 ```
 
-The boolean `noscript.sync.enabled` must be set to true to synchronize the remainder of NoScript's preferences via Firefox Sync.
-
-Firefox also allows configuration for a profile via a `user.js` file: [user.js](http://kb.mozillazine.org/User.js_file) kept in the profile folder, usually `~/.mozilla/firefox/*some name*.default/`. For a useful starting point, see e.g [custom user.js](https://github.com/pyllyukko/user.js) which is targeted at privacy/security conscious users.
-
-One drawback of the above approach is that it is not applied system-wide. Furthermore, this is not useful as a "pre-configuration", since the profile directory is created after first launch of the browser. You can, however, let *firefox* create a new profile and, after closing it again, [copy the contents](https://support.mozilla.org/en-US/kb/back-and-restore-information-firefox-profiles#w_restoring-a-profile-backup) of an already created profile folder into it.
-
-Sometimes it may be desired to lock certain settings, a feature useful in widespread deployments of customized Firefox. In order to create a system-wide configuration, follow the steps outlined in [Locking preferences](http://kb.mozillazine.org/Locking_preferences):
-
-1\. Create `/usr/lib/firefox/defaults/pref/local-settings.js`:
+一旦设置，这些就会影响用户的当前配置文件，并可能通过Firefox Sync跨设备同步。请注意，只有about:config条目的一部分被这个方法同步，并且可以通过在about:config中搜索services.sync.prefs找到确切的子集。可以通过创建新的布尔条目来同步其他偏好设置和第三方偏好设置，并在services.sync.prefs.sync前添加config值。同步NoScript扩展名的白名单：
 
 ```
-pref("general.config.obscure_value", 0);
-pref("general.config.filename", "mozilla.cfg");
+ services.sync.prefs.sync.capability.policy.maonoscript.sites
 
 ```
 
-2\. Create `/usr/lib/firefox/mozilla.cfg` (this stores the actual configuration):
+必须将boolean noscript.sync.enabled设置为true才能通过Firefox Sync同步NoScript的其他偏好设置。
+
+Firefox还允许通过user.js文件配置一个配置文件：user.js保存在配置文件文件夹中，通常是〜/.mozilla/firefox/xxxxxxx.default/。 上述方法的一个缺点是不能在系统范围内应用。此外，由于配置文件目录是在首次启动浏览器之后创建的，因此这不适用于预配置。不过，你可以让 Firefox创建一个新的配置文件，并在关闭它之后，将已经创建的配置文件文件夹的内容复制进去。
+
+有时可能需要锁定某些设置，这是一项在定制的Firefox的广泛部署中非常有用的功能。要创建系统范围配置，请按照“锁定”首选项中列出的步骤操作：
+
+1.创建/usr/lib/firefox/defaults/pref/local-settings.js：
 
 ```
-//
-//...your settings...
-// e.g to disable Pocket, uncomment the following line
-// lockPref("browser.pocket.enabled", false);
+ pref（“general.config.obscure_value”，0）;
+ pref（“general.config.filename”，“mozilla.cfg”）;
 
 ```
 
-Please note that the first line must contain exactly `//`. The syntax of the file is similar to that of `user.js`.
+2.创建/usr/lib/firefox/mozilla.cfg（这存储实际配置）：
+
+请注意，第一行必须包含//。该文件的语法与user.js的语法很相似。
 
 ## 插件
 

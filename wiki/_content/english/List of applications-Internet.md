@@ -887,6 +887,10 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[https://openwmail.github.io/](https://openwmail.github.io/) || [openwmail](https://aur.archlinux.org/packages/openwmail/)
 
+*   **Protonmail-desktop** — Unofficial app that emulates a native client for the ProtonMail e-mail service.
+
+	[https://github.com/protonmail-desktop/application/](https://github.com/protonmail-desktop/application/) || [protonmail-desktop](https://aur.archlinux.org/packages/protonmail-desktop/)
+
 *   **Roundcubemail** — Browser-based multilingual IMAP client with a native application-like user interface.
 
 	[http://roundcube.net/](http://roundcube.net/) || [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail)

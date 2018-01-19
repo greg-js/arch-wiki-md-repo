@@ -17,7 +17,6 @@
 [Install](/index.php/Install "Install") [xmobar](https://www.archlinux.org/packages/?name=xmobar) from the [official repositories](/index.php/Official_repositories "Official repositories"). Available variants are:
 
 *   [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/) — development version.
-*   *xmobar* from the unofficial [haskell-core](/index.php/ArchHaskell#haskell-core "ArchHaskell") repository — supports wireless and volume plugin with no additional configuration required; the repository also contains all the required dependencies.
 
 ## Running
 

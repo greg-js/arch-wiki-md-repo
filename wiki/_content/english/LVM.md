@@ -517,7 +517,7 @@ See [lvresize(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) for more
 Extend the logical volume *home* in *volume-group* with 10GB
 
 ```
-# lvresize -L +10G /dev/*volume-group*/*home* --resize-fs
+# lvresize -L +10G /dev/*volume-group*/*home* --resizefs
 
 ```
 

@@ -81,7 +81,10 @@ In Arch, some shell scripts are written for [Bash](/index.php/Bash "Bash") and a
 
 Keep your default shell as Bash and simply add the line `exec fish` to the appropriate [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash"), such as `.bashrc`. This will allow Bash to properly source `/etc/profile` and all files in `/etc/profile.d`. Because fish replaces the Bash process, exiting fish will also exit the terminal. Compared to the following options, this is the most universal solution, since it works both on a local machine and on a SSH server.
 
-**Tip:** In this setup, use `bash --norc` to manually enter Bash without executing the commands from `~/.bashrc` which would run `exec fish` and drop back into fish.
+**Tip:**
+
+*   In this setup, use `bash --norc` to manually enter Bash without executing the commands from `~/.bashrc` which would run `exec fish` and drop back into fish.
+*   To color the hostname in the prompt differently in SSH mode, here in bright red, one can use the line `if [ -n "$SSH_TTY" ]; then exec fish -C 'set -g fish_color_host brred'; else exec fish; fi` in the Bash configuration file instead of simply `exec fish`.
 
 #### Use terminal emulator options
 
@@ -179,15 +182,12 @@ set __fish_git_prompt_char_upstream_ahead '↑ '
 set __fish_git_prompt_char_upstream_behind '↓ '
 
 function fish_prompt
-        set last_status $status
-        set_color $fish_color_cwd
-        printf '%s' (prompt_pwd)
-        set_color normal
-        printf '%s ' (__fish_git_prompt)
-       set_color normal
+    printf '%s@%s %s%s%s%s> ' (whoami) (hostname) (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) (__fish_git_prompt)
 end
 
 ```
+
+More explanations about the parameters can be found in the [fish-shell git](https://github.com/fish-shell/fish-shell/blob/master/share/functions/__fish_git_prompt.fish).
 
 ### Evaluate ssh-agent
 

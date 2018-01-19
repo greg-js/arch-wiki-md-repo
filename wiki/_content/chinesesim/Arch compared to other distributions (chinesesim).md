@@ -1,14 +1,14 @@
 相关文章
 
 *   [Arch Linux (简体中文)](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")
-*   [Arch based distributions](/index.php/Arch_based_distributions "Arch based distributions")
-*   [Pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta")
+*   [基于Arch的发行版（活跃）](/index.php/%E5%9F%BA%E4%BA%8EArch%E7%9A%84%E5%8F%91%E8%A1%8C%E7%89%88%EF%BC%88%E6%B4%BB%E8%B7%83%EF%BC%89 "基于Arch的发行版（活跃）")
+*   [Pacman/Rosetta (简体中文)](/index.php/Pacman/Rosetta_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman/Rosetta (简体中文)")
 
 **翻译状态：** 本文是英文页面 [Arch_compared_to_other_distributions](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-03-06，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&diff=0&oldid=466779)可以查看翻译后英文页面的改动。
 
 本文在 Arch Linux 和其他流行的 GNU/Linux 发行版、类 UNIX 操作系统之间做了一些比较，以帮助用户判断 Arch Linux 是否能符合他们的需要。虽然对此进行一些描述有助于用户理解这些操作系统之间的不同点，但是比较 Arch Linux 和其他发行版的最好办法还是安装它们并进行亲身体验。
 
-[w:Comparison of operating systems](https://en.wikipedia.org/wiki/Comparison_of_operating_systems "w:Comparison of operating systems") 和 [w:Comparison of Linux distributions](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions") 包含了更详细的比较信息。
+英文维基百科的[《操作系统比较》](https://en.wikipedia.org/wiki/Comparison_of_operating_systems "w:Comparison of operating systems")和[《Linux发行版比较》](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions")这两个页面包含了更详细的比较信息。
 
 ## Contents
 
