@@ -71,7 +71,7 @@ Não, mas o projeto [Arch Linux ARM](http://archlinuxarm.org/) fornece um *port*
 
 ### O Arch segue o [FHS](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)?
 
-O Arch Linux segue a *hierarquia de sistema de arquivos* para sistemas de arquivos usando o gerenciador de serviço [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"). Veja [file-hierarchy(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) para uma explicação de cada diretório junto com suas designações. Em especial, `/bin`, `/sbin` e `/usr/sbin` são links simbólicos para `/usr/bin`, e `/lib` e `/lib64` são links simbólicos para `/usr/lib`.
+O Arch Linux segue a *hierarquia de sistema de arquivos* para sistemas de arquivos usando o gerenciador de serviço [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"). Veja [file-hierarchy(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) para uma explicação de cada diretório junto com suas designações. Em especial, `/bin`, `/sbin` e `/usr/sbin` são links simbólicos para `/usr/bin`, e `/lib` e `/lib64` são links simbólicos para `/usr/lib`.
 
 ### Eu sou um completo iniciante no GNU/Linux. Eu deveria usar o Arch?
 

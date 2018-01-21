@@ -27,7 +27,7 @@ That is, the resulting permissions `R` are the result of [bitwise conjunction](h
 **Note:**
 
 *   Linux does not allow a file to be created with execution permissions, in fact the default creation permissions are `777` for directories, but only `666` for files.
-*   On Linux, only the file permission bits of the mask are used - see [umask(2)](http://jlk.fjfi.cvut.cz/arch/manpages/man/umask.2). The *suid*, *sgid* and *sticky* bits of the mask are ignored.
+*   On Linux, only the file permission bits of the mask are used - see [umask(2)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umask.2). The *suid*, *sgid* and *sticky* bits of the mask are ignored.
 
 For example, let us assume that the file-creation mode mask is 027\. Here the bitwise representation of each digit represents:
 
@@ -75,7 +75,7 @@ If you need to set a different value, you can either directly edit such file, th
 ## See also
 
 *   POSIX Programmer's Manual:
-    *   [umask](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html) (also available as [umask(1p)](http://jlk.fjfi.cvut.cz/arch/manpages/man/umask.1p))
-    *   [chmod (extended description)](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/chmod.html#tag_20_17_13) (also available as [chmod(1p)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1p))
+    *   [umask](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html) (also available as [umask(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umask.1p))
+    *   [chmod (extended description)](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/chmod.html#tag_20_17_13) (also available as [chmod(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1p))
 *   [wikipedia:umask](https://en.wikipedia.org/wiki/umask "wikipedia:umask")
 *   [027 umask: a compromise](https://blogs.gentoo.org/mgorny/2011/10/18/027-umask-a-compromise-between-security-and-simplicity/)

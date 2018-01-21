@@ -97,7 +97,7 @@ drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 
 檔案的擁有者和所屬群組可以透過 `chown` (change owner；更改擁有者) 指令更改。檔案的存取權限可以透過 `chmod` (change mode；更改模式) 指令更改。
 
-一些額外的詳細資訊請參閱 [chown(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1)，[chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1)，以及 [Linux 檔案權限](http://www.tuxfiles.org/linuxhelp/filepermissions.html)。
+一些額外的詳細資訊請參閱 [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1)，[chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1)，以及 [Linux 檔案權限](http://www.tuxfiles.org/linuxhelp/filepermissions.html)。
 
 ## 檔案清單
 
@@ -214,7 +214,7 @@ account:password:UID:GID:GECOS:directory:shell
 
 ## 群組管理
 
-`/etc/group` 這個檔案定義了系統內的群組 (詳情列於 [group(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/group.5))。
+`/etc/group` 這個檔案定義了系統內的群組 (詳情列於 [group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5))。
 
 以 `groups` 指令顯示使用者所屬群組：
 

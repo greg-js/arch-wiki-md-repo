@@ -60,7 +60,7 @@ $ fc-list : file
 
 ```
 
-Для больших выводных форматов, смотрите [fc-list(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fc-list.1).
+Для больших выводных форматов, смотрите [fc-list(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fc-list.1).
 
 Проверьте известные пути шрифтов Xorg, посмотрев свой журнал:
 

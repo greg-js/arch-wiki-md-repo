@@ -4,10 +4,9 @@
 
 *   [1 Setup](#Setup)
     *   [1.1 Required software](#Required_software)
-    *   [1.2 Sub{u,g}id configuration](#Sub.7Bu.2Cg.7Did_configuration)
-    *   [1.3 Accessing LXD as a unprivileged user](#Accessing_LXD_as_a_unprivileged_user)
-    *   [1.4 LXD Networking](#LXD_Networking)
-        *   [1.4.1 Example network configuration](#Example_network_configuration)
+    *   [1.2 Accessing LXD as a unprivileged user](#Accessing_LXD_as_a_unprivileged_user)
+    *   [1.3 LXD Networking](#LXD_Networking)
+        *   [1.3.1 Example network configuration](#Example_network_configuration)
 *   [2 Basic usage](#Basic_usage)
     *   [2.1 First steps](#First_steps)
 *   [3 Advance usage](#Advance_usage)
@@ -30,22 +29,7 @@ $ lxc-checkconfig
 
 ```
 
-The safest type of container that LXD can create is *unprivileged*. This is done by leveraging the Linux kernel's **User Namespaces** feature. However, due to more general security concerns, the default Arch kernel does *not* ship with User Namespaces enabled (`CONFIG_USER_NS` is a kernel compile-time decision). You have three (3) options to use a kernel with `CONFIG_USER_NS` and thereby create *unprivileged* containers:
-
-*   Install the [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) kernel package along-side the default [linux](https://www.archlinux.org/packages/?name=linux) kernel. When you wish to run unprivileged LXD containers, boot with [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) by selecting it in the bootloader. [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) is compiled with `CONFIG_USER_NS`. Otherwise, run with [linux](https://www.archlinux.org/packages/?name=linux) as normal.
-*   Install the [linux-userns](https://aur.archlinux.org/packages/linux-userns/) or [linux-lts-userns](https://aur.archlinux.org/packages/linux-lts-userns/) packages from the [AUR](/index.php/AUR "AUR"). Both are compiled with `CONFIG_USER_NS`, the latter being the Long-Term Support version.
-*   Compile and install your own custom kernel with `CONFIG_USER_NS` enabled.
-
-**Note:** If you decide to run a kernel **without User Namespaces**, LXD containers will be *privileged* and that involves some risk (in the event a process escapes the container). See [#Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS) below.
-
-### Sub{u,g}id configuration
-
-You will need sub{u,g}ids for root, so that LXD can create the unprivileged containers:
-
-```
-$ echo "root:1000000:65536" | sudo tee -a /etc/subuid /etc/subgid
-
-```
+See [Linux Containers#Enable support to run unprivileged containers (optional)](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_containers_.28optional.29 "Linux Containers") if you want to run *unprivileged* containers. Otherwise see [#Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS).
 
 ### Accessing LXD as a unprivileged user
 
@@ -135,28 +119,16 @@ $ lxc launch images:centos/7/amd64 centos
 
 ### Modify processes and files limit
 
-You may want to increase file descriptor limit or max user processes limit, since default file descriptor limit is 1024 on Archlinux
+You may want to increase file descriptor limit or max user processes limit, since default file descriptor limit is 1024 on Arch Linux.
 
-```
-$ sudo systemctl edit lxd
+[Edit](/index.php/Edit "Edit") the `lxd.service`:
 
-```
-
-And config as follow:
-
+ `# systemctl edit lxd.service` 
 ```
 [Service]
 LimitNOFILE=infinity
 LimitNPROC=infinity
 TasksMax=infinity
-
-```
-
-Then restart lxd
-
-```
-$ sudo systemctl restart lxd
-
 ```
 
 ## Troubleshooting
@@ -172,11 +144,7 @@ $ lxc launch ubuntu:16.04 ubuntu -c security.privileged=true
 
 Or for already existed image you may edit config:
 
-```
-$ lxc config edit ubuntu
-
-```
-
+ `$ lxc config edit ubuntu` 
 ```
 name: ubuntu
 profiles:

@@ -50,7 +50,7 @@ exec /usr/bin/Xorg -nolisten tcp "$@" vt$XDG_VTNR
 
 ### xinitrc
 
-如果用户主目录中存在 `.xinitrc`，*startx* 和 *xinit* 会执行此文件。如果不存在，*startx* 会执行默认的 `/etc/X11/xinit/xinitrc`。这个文件默认启动 [Twm](/index.php/Twm "Twm") 和 [Xterm](/index.php/Xterm "Xterm"). *xinit* 的默认行为不一样，请参阅 [xinit(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1)。要设置窗口管理器或桌面环境，先通过复制创建默认文件：
+如果用户主目录中存在 `.xinitrc`，*startx* 和 *xinit* 会执行此文件。如果不存在，*startx* 会执行默认的 `/etc/X11/xinit/xinitrc`。这个文件默认启动 [Twm](/index.php/Twm "Twm") 和 [Xterm](/index.php/Xterm "Xterm"). *xinit* 的默认行为不一样，请参阅 [xinit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1)。要设置窗口管理器或桌面环境，先通过复制创建默认文件：
 
 ```
 $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
@@ -180,7 +180,7 @@ Note that the full path is **required**. Optionally, you can also specify custom
 
 ```
 
-参阅 [startx(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
+参阅 [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
 
 ### Making a DE/WM choice
 

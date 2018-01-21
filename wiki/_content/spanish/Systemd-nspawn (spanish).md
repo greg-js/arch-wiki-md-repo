@@ -127,7 +127,7 @@ Al usar un contenedor frecuentemente, seria deseable iniciarlo al arrancar el si
 
 [Active](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el target `machines.target`, después ejecute `systemd-nspawn@*myContainer*.service`, donde `myContainer` es un contenedor de nspawn ubicado en `/var/lib/machines`.
 
-**Tip:** Para personalizar el arranque de los contenedores, edite `/etc/systemd/nspawn/*myContainer*.nspawn`. Vea [systemd.nspawn(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.nspawn.5) para todas las opciones.
+**Tip:** Para personalizar el arranque de los contenedores, edite `/etc/systemd/nspawn/*myContainer*.nspawn`. Vea [systemd.nspawn(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.nspawn.5) para todas las opciones.
 
 ## Manejo de contenedores
 
@@ -135,7 +135,7 @@ Al usar un contenedor frecuentemente, seria deseable iniciarlo al arrancar el si
 
 **Nota:** La herramienta *machinectl* requiere [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") y que el paquete [dbus](https://www.archlinux.org/packages/?name=dbus) este instalado en el contenedor. Vea [[1]](https://github.com/systemd/systemd/issues/685) para más detalles en la discusión.
 
-El manejo de contenedores es efectuado principalmente con el comando `machinectl`. Vea [machinectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/machinectl.1) para más detalles.
+El manejo de contenedores es efectuado principalmente con el comando `machinectl`. Vea [machinectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/machinectl.1) para más detalles.
 
 Ejemplos:
 

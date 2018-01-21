@@ -24,7 +24,7 @@ Create the partition:
 
 ```
 
-where `*/dev/sdxY*` is the target volume to format in F2FS. See [mkfs.f2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.f2fs.8) for all available options.
+where `*/dev/sdxY*` is the target volume to format in F2FS. See [mkfs.f2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.f2fs.8) for all available options.
 
 ## Mounting a F2FS partition
 
@@ -48,13 +48,13 @@ Then expand the filesystem to fill the new partition using:
 
 ```
 
-where `*/dev/sdxY*` is the target F2FS volume to grow. See [resize.f2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resize.f2fs.8) for supported options.
+where `*/dev/sdxY*` is the target F2FS volume to grow. See [resize.f2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resize.f2fs.8) for supported options.
 
 **Note:** If you're using GPT, the partition's GUID (seen in `/dev/disk/by-partuuid/`) might change, but the filesystem UUID (seen in `/dev/disk/by-uuid/`) should stay the same.
 
 ## Checking and repair
 
-Checking and repairs to f2fs partitions are accomplished with `fsck.f2fs` provided by [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools). See [fsck.f2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fsck.f2fs.8) for available switches.
+Checking and repairs to f2fs partitions are accomplished with `fsck.f2fs` provided by [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools). See [fsck.f2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsck.f2fs.8) for available switches.
 
 ## Troubleshooting
 

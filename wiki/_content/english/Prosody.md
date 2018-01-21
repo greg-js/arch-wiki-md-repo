@@ -100,7 +100,7 @@ You can manipulate Prosody users by using the `prosodyctl` program. To add a use
 
 **Tip:** You will likely want to make at least one user an administrator by adding their Jabber ID to the `admins` list in the configuration file.
 
-Issue [prosodyctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/prosodyctl.1) to see the man page for `prosodyctl`.
+Issue [prosodyctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/prosodyctl.1) to see the man page for `prosodyctl`.
 
 ### Security
 

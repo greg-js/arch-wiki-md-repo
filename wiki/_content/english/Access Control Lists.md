@@ -225,7 +225,7 @@ As the above output shows, `other`'s no longer have any permissions, but `http` 
 
 ## See also
 
-*   [getfacl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/getfacl.1)
-*   [setfacl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setfacl.1)
+*   [getfacl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getfacl.1)
+*   [setfacl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfacl.1)
 *   An old but still relevant (and thorough) [guide](http://vanemery.net/Linux/ACL/linux-acl.html) to ACL
 *   [How to set default file permissions for all folders/files in a directory?](http://unix.stackexchange.com/questions/1314/how-to-set-default-file-permissions-for-all-folders-files-in-a-directory)

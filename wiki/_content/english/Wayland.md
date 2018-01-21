@@ -118,7 +118,7 @@ $ weston-image image1.jpg image2.jpg...
 
 ### Configuration
 
-Example configuration file for keyboard layout, module selection and UI modifications. See [weston.ini(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/weston.ini.5) for full details. The Weston outputs differ slightly from `xorg.conf`'s Monitors:
+Example configuration file for keyboard layout, module selection and UI modifications. See [weston.ini(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/weston.ini.5) for full details. The Weston outputs differ slightly from `xorg.conf`'s Monitors:
 
 ```
 $ ls /sys/class/drm

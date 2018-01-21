@@ -64,7 +64,7 @@ or
 
 ```
 
-If `mount` does not recognize the [file system](/index.php/File_system "File system") of the device you can try to use the `-t` argument, see [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) for details. If mounting does not work, you can try to [recreate the file system](/index.php/File_systems#Create_a_file_system "File systems") or even [repartition the disk](/index.php/Partitioning "Partitioning").
+If `mount` does not recognize the [file system](/index.php/File_system "File system") of the device you can try to use the `-t` argument, see [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) for details. If mounting does not work, you can try to [recreate the file system](/index.php/File_systems#Create_a_file_system "File systems") or even [repartition the disk](/index.php/Partitioning "Partitioning").
 
 **Note:** See [[1]](https://gist.github.com/anonymous/a69093a51f83b53d9fc5) for example mount/unmount scripts using [sudo](/index.php/Sudo "Sudo").
 

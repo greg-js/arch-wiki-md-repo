@@ -173,7 +173,7 @@ net.ipv6.conf.xxx.temp_valid_lft
 
 are honored, however.
 
-See [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [systemd.network(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5) for details.
+See [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5) for details.
 
 ### connman
 
@@ -272,7 +272,7 @@ ia_pd 1 LAN
 
 This configuration will ask for a prefix from WAN interface (`WAN`) and delegate it to the internal interface (`LAN`). In the event that a `/64` range is issued, you will need to use the 2nd `ia_pd instruction` that is commented out instead. It will also disable router solicitations on all interfaces except for the WAN interface (`WAN`).
 
-**Tip:** Also read [dhcpcd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.8)and [dhcpcd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5).
+**Tip:** Also read [dhcpcd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.8)and [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5).
 
 ### With WIDE-DHCPv6
 
@@ -381,7 +381,7 @@ Disabling IPv6 functionality in the kernel does not prevent other programs from 
 
 #### dhcpcd
 
-*dhcpcd* will continue to harmlessly attempt to perform IPv6 router solicitation. To disable this, as stated in the [dhcpcd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)[man page](/index.php/Man_page "Man page"), add the following to `/etc/dhcpcd.conf`:
+*dhcpcd* will continue to harmlessly attempt to perform IPv6 router solicitation. To disable this, as stated in the [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)[man page](/index.php/Man_page "Man page"), add the following to `/etc/dhcpcd.conf`:
 
 ```
 noipv6rs

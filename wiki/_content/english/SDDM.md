@@ -42,7 +42,7 @@ Then follow [Display manager#Loading the display manager](/index.php/Display_man
 
 ## Configuration
 
-The configuration file for SDDM can be found at `/etc/sddm.conf`. See [sddm.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sddm.conf.5) for all options.
+The configuration file for SDDM can be found at `/etc/sddm.conf`. See [sddm.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sddm.conf.5) for all options.
 
 On systems controlled by [systemd](/index.php/Systemd "Systemd"), everything should work out of the box, since SDDM defaults to using `systemd-logind` for session management. The configuration file will therefore not be created at package installation time. SDDM offers a command for generating a sample configuration file with the default settings if you really want one:
 

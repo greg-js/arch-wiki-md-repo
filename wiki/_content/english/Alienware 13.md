@@ -76,42 +76,6 @@ For Alienware 13 R3, the wifi works out of box. The following kernel error seems
 
 To have switchable graphics see [bumblebee](/index.php/Bumblebee "Bumblebee") instructions. The utility is able to turn on and off the dedicated graphics card ondemand and without having to restart the computer or reopening session.
 
-At the time of writing the Nvidia graphic chip was not yet recognised by the Nouveau driver, so you need to follow [Installing Bumblebee with Intel and NVIDIA](/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNVIDIA "Bumblebee") for the functionality for now.
-
-The following (with dependencies) was installed for the example machine:
-
-```
-# pacman -S bumblebee xf86-video-intel dkms bbswitch nvidia primus mesa-demos
-
-```
-
-After finishing setup and a reboot, the dedicated graphics card should be off. To check:
-
-```
-$ optirun --status
-Bumblebee status: Ready (3.2.1). X inactive. Discrete video card is on.
-
-```
-
-And we can make use of it by calling *primusrun* or *optirun* before the program we want to run; for example:
-
-```
-$ glxspheres64
-...
-OpenGL Renderer: Mesa DRI Intel(R) HD Graphics 5500 (Broadwell GT2) 
-60.004917 frames/sec - 28.911809 Mpixels/sec
-...
-
-$ primusrun glxspheres64
-...
-OpenGL Renderer: GeForce GTX 860M/PCIe/SSE2
-61.130011 frames/sec - 68.221092 Mpixels/sec
-...
-
-```
-
-With this we have the graphics card working ondemand
-
 It is to be noted that some alienware laptop (AlienWare 13 R3) shows this [issue](/index.php/Bumblebee#Lockup_issue_.28lspci_hangs.29 "Bumblebee") where lspci / startx / any command hangs and freeze the system when probing inactive discrete nvidia gpu.
 
 ## Keyboard lights

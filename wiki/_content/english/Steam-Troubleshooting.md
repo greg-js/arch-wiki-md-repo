@@ -107,7 +107,7 @@ $ steam-runtime
 
 ```
 
-This is the command which is run when you run Steam via `/usr/bin/steam` or the "Steam" [desktop entry](/index.php/Desktop_entry "Desktop entry"). Runtime libraries which are known to cause problems are overriden via the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable") (see [ld.so(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ld.so.8)). If your system still has library conflicts with this command, you can make a copy of `/usr/bin/steam-runtime` and edit it to add additional workarounds.
+This is the command which is run when you run Steam via `/usr/bin/steam` or the "Steam" [desktop entry](/index.php/Desktop_entry "Desktop entry"). Runtime libraries which are known to cause problems are overriden via the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable") (see [ld.so(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ld.so.8)). If your system still has library conflicts with this command, you can make a copy of `/usr/bin/steam-runtime` and edit it to add additional workarounds.
 
 ```
 $ steam-native

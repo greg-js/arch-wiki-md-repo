@@ -67,7 +67,7 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
 
 ## Usage
 
-What follows is just a small sample of the operations that *pacman* can perform. To read more examples, refer to [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8).
+What follows is just a small sample of the operations that *pacman* can perform. To read more examples, refer to [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8).
 
 **Tip:** For those who have used other Linux distributions before, there is a helpful [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta") article.
 
@@ -483,11 +483,11 @@ For advanced functionality install [pkgfile](/index.php/Pkgfile "Pkgfile"), whic
 
 ## Configuration
 
-*Pacman'*s settings are located in `/etc/pacman.conf`: this is the place where the user configures the program to work in the desired manner. In-depth information about the configuration file can be found in [pacman.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5).
+*Pacman'*s settings are located in `/etc/pacman.conf`: this is the place where the user configures the program to work in the desired manner. In-depth information about the configuration file can be found in [pacman.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5).
 
 ### General options
 
-General options are in the `[options]` section. Read [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) or look in the default `pacman.conf` for information on what can be done here.
+General options are in the `[options]` section. Read [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) or look in the default `pacman.conf` for information on what can be done here.
 
 #### Comparing versions before updating
 
@@ -556,7 +556,7 @@ where `*/path/to/common/settings*` file contains the same options for both confi
 
 *Pacman* can run pre- and post-transaction hooks from the `/usr/share/libalpm/hooks/` directory; more directories can be specified with the `HookDir` option in `pacman.conf`, which defaults to `/etc/pacman.d/hooks`. Hook file names must be suffixed with *.hook*.
 
-For more information on alpm hooks, see [alpm-hooks(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/alpm-hooks.5).
+For more information on alpm hooks, see [alpm-hooks(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alpm-hooks.5).
 
 ### Repositories and mirrors
 
@@ -758,7 +758,7 @@ If you receive this error message with correct [mirrors](/index.php/Mirrors "Mir
 ## See also
 
 *   [Pacman Home Page](https://www.archlinux.org/pacman/)
-*   [libalpm(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3)
-*   [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)
-*   [pacman.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5)
-*   [repo-add(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/repo-add.8)
+*   [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3)
+*   [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)
+*   [pacman.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5)
+*   [repo-add(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/repo-add.8)

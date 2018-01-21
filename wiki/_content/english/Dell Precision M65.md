@@ -218,21 +218,7 @@ EndSection
 
 ### Bluetooth
 
-Bluetooth works hci_usb kernel driver and if wireless switch is in "on" position. I installed bluez-libs and bluez-utils packages from extra repositorty. If I run
-
-```
-$ sudo sh /etc/rc.d/bluetooth start 
-
-```
-
-then
-
-```
-$hcitool dev 
-Devices:
-       hci0    00:16:41:92:77:1A
-
-```
+[Bluetooth](/index.php/Bluetooth "Bluetooth") works if wireless switch is in "on" position.
 
 ### Hard Drive
 

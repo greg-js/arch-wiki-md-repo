@@ -285,7 +285,7 @@ Enlightenment, Development Release 16 was first released in 2000, and reached ve
 
 Install [enlightenment16](https://www.archlinux.org/packages/?name=enlightenment16).
 
-See `/usr/share/doc/e16/e16.html` for in depth documentation. The man page is at [e16(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/e16.1) and only gives startup options.
+See `/usr/share/doc/e16/e16.html` for in depth documentation. The man page is at [e16(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/e16.1) and only gives startup options.
 
 ### 基本设置
 

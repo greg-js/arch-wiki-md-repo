@@ -100,11 +100,11 @@
 
 `~/.mplayer/` 下默认包含一个 *config* 文件.
 
-参考 [MPlayer 配置示例](http://mplayerhq.hu/DOCS/man/en/mplayer.1.html#CONFIGURATION%20FILES) 和 [mplayer(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mplayer.1).
+参考 [MPlayer 配置示例](http://mplayerhq.hu/DOCS/man/en/mplayer.1.html#CONFIGURATION%20FILES) 和 [mplayer(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mplayer.1).
 
 ### 按键绑定
 
-系统按键绑定通过 `/etc/mplayer/input.conf` 配置，个人按键绑定通过 `~/.mplayer/input.conf` 配。完整的键盘快捷键列表请阅读 [mplayer(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mplayer.1).
+系统按键绑定通过 `/etc/mplayer/input.conf` 配置，个人按键绑定通过 `~/.mplayer/input.conf` 配。完整的键盘快捷键列表请阅读 [mplayer(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mplayer.1).
 
 参阅：[XF86 键盘符号](http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols)
 

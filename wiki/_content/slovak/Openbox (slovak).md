@@ -99,7 +99,7 @@ mv ~/.config/autostart ~/.config/autostart-bak
 
 ```
 
-**Note:** [pyxdg](https://www.archlinux.org/packages/?name=pyxdg) je vyžadovaný pre spustenie Openboxu
+**Note:** [python2-xdg](https://www.archlinux.org/packages/?name=python2-xdg) je vyžadovaný pre spustenie Openboxu
 
 ## Správca okien pre desktopové prostredia
 

@@ -11,7 +11,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [oolite](https://www.archlinux.org/packages/?name=oolite) package.
+[Install](/index.php/Install "Install") the [oolite](https://aur.archlinux.org/packages/oolite/) package.
 
 ## Troubleshooting
 

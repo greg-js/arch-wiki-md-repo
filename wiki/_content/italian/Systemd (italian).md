@@ -64,7 +64,7 @@ Dalla pagina web del [progetto](http://freedesktop.org/wiki/Software/systemd):
 
 ## Uso base di systemctl
 
-Il principale comando usato per controllare systemd è `systemctl`. Alcuni degli utilizzi possibili sono l'esame dello stato del sistema e la gestione del sistema e dei servizi. Vedere [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) per maggiori dettagli
+Il principale comando usato per controllare systemd è `systemctl`. Alcuni degli utilizzi possibili sono l'esame dello stato del sistema e la gestione del sistema e dei servizi. Vedere [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) per maggiori dettagli
 
 **Suggerimento:** Si può usare il seguente comando `systemctl` con lo switch `-H <user>@<host>` per controllare un'istanza di systemd su una macchina remota. Si userà [SSH](/index.php/SSH "SSH") per connettersi all'istanza remota di systemd.
 
@@ -117,7 +117,7 @@ Quando si usa `systemctl`, occorre generalmente specificare sempre il nome compl
 *   I punti di mount saranno automaticamente tradotti nella appropriata unità `.mount`. Per esempio, specificare `/home` è equivalente a `home.mount`.
 *   Come i punti di mount, anche i dispositivi sono automaticamente tradotti nell'appropriata unità `.device`, quindi specificare `/dev/sda2` è equivalente a `dev-sda2.device`.
 
-Vedi [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) per dettagli.
+Vedi [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) per dettagli.
 
 **Nota:** Alcune unit contengono una `@` (e.g. `*name@string.service*`: questo significa che sono [istanze](http://0pointer.de/blog/projects/instances.html) di un `template`, il cui filename non contiene la parte `*string*` (e.g. `*name@.service*`). `*string*` e` chiamato identificatore dell'istanza ed e` simile all'argomento passato al template quando viene richiamato con il comando *systemctl*: nelle unit verra` sostituico con `*%i*`. Per essere piu` accurati, prima di tentare di istanziare `*name@.estensione*`, `systemd` cerchera` una unit con il nome esatto.
 
@@ -286,7 +286,7 @@ L'hostname è configurato in `/etc/hostname`. Il file può contenere il nome del
 
 ```
 
-See [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) e [hostnamectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1) per dettagli.
+See [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) e [hostnamectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1) per dettagli.
 
 Esempio di file:
 
@@ -307,7 +307,7 @@ Le impostazioni locali di default sono configurate in `/etc/locale.conf` Per con
 
 ```
 
-Vedere [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) e [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) per dettagli.
+Vedere [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) e [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) per dettagli.
 
 Per ulteriori informazioni vedere [Locale](/index.php/Locale_(Italiano) "Locale (Italiano)").
 
@@ -346,7 +346,7 @@ Un altro modo di configurare la mappatura della tastiera è:
 
 ```
 
-Vedere [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) e [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) per maggiori dettagli.
+Vedere [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) e [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) per maggiori dettagli.
 
 Per maggiori informazioni vedere [i font per console](/index.php/Fonts_(Italiano)#Font_per_console "Fonts (Italiano)") e [configurazione tastiera](/index.php/KEYMAP "KEYMAP").
 
@@ -392,7 +392,7 @@ I moduli extra al kernel da caricare durante il boot sono configurati in una lis
 virtio-net
 ```
 
-vedere [modules-load.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modules-load.d.5) per maggiori dettagli.
+vedere [modules-load.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modules-load.d.5) per maggiori dettagli.
 
 #### Configurare le opzioni dei moduli
 
@@ -414,7 +414,7 @@ Per evitare il caricamento di alcuni moduli del kernel si utilizza la stessa mod
 
 La configurazione di default controlla e monta i filesystems prima di avviare i servizi ai quali occorre che siano montati. Per esempio, systemd automaticamente si assicura che il montaggio di filesystems come [NFS](/index.php/NFS "NFS") o [Samba](/index.php/Samba "Samba") avvenga solo dopo che la rete è attiva. Pertanto, il montaggio dei filesystems, sia locali che remoti, specificati in `/etc/fstab` dovrebbe funzionare senza problemi.
 
-Vedere [systemd.mount(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5) per dettagli.
+Vedere [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5) per dettagli.
 
 #### Automount
 
@@ -540,7 +540,7 @@ ExecStart=-/usr/bin/pkill sshfs
 WantedBy=sleep.target
 ```
 
-Un paio di consigli a proposito di questi servizi (maggiori informazioni in [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)):
+Un paio di consigli a proposito di questi servizi (maggiori informazioni in [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)):
 
 *   Se si usa `Type=OneShot` si possono usare linee `ExecStart=` multiple. Altrimenti solo una linea ExecStart è permessa. Si possono aggiungere più comandi con `ExecStartPre` oppure separandoli con un punto e virgola (vedere il primo esempio più su -- notare gli spazi prima e dopo il punto e virgola... sono indispensabili!).
 *   Un comando preceduto da '-' causerà una uscita con stato non-zero per essere ignorato e trattato come un comando successivo.
@@ -615,7 +615,7 @@ Non dimenticare di rendere lo script eseguibile:
 
 ```
 
-Vedere [systemd.special(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7) e [systemd-sleep(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8) per maggiori dettagli.
+Vedere [systemd.special(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7) e [systemd-sleep(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8) per maggiori dettagli.
 
 ### File temporanei
 
@@ -629,7 +629,7 @@ I tmpfiles possono anche essere usati per scrivere valori in certi files al boot
 
  `/etc/tmpfiles.d/disable-usb-wake.conf`  `w /proc/acpi/wakeup - - - - USBE` 
 
-Vedi [tmpfiles.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) per i dettagli.
+Vedi [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) per i dettagli.
 
 **Nota:** Questo metodo potrebbe non funzionare per impostare le opzioni in `/sys` poiché il servizio `systemd-tmpfiles-setup` può eseguirsi prima che i moduli delle periferiche appropriate siano caricati. In questo caso si potrebbe verificare che il modulo abbia un parametro per l'opzione che si desidera impostare con `modinfo <module>` e impostare questa opzione con un [file di configurazione in `/etc/modprobe.d`](/index.php/Modprobe.d#Configuration "Modprobe.d"). In caso contrario si dovrà scrivere una [regola udev](/index.php/Udev#About_udev_rules "Udev") per impostare l' attributo appropriato non appena viene visualizzato il dispositivo.
 
@@ -637,7 +637,7 @@ Vedi [tmpfiles.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) per
 
 Un file di configurazione di unità racchiude informazioni riguardanti un servizio, un socket, un dispositivo, un punto di montaggio, un punto di automontaggio, un file o una partizione di swap, un obbiettivo di avvio, un percorso del filesystem oppure un controllo schedulato da systemd. La sintassi è ispirata da "XDG Desktop Entry Specification" files di tipo .desktop, che a loro volta richiamano i files .ini di windows.
 
-Vedi [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) per maggiori informazioni.
+Vedi [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) per maggiori informazioni.
 
 ### Gestire le dipendenze
 
@@ -647,7 +647,7 @@ Le dipendenze sono di solito posizionate sui .service e non sui .target. Per ese
 
 ### Type
 
-Ci sono parecchi tipi differenti di avvio da considerare quando si scrive un servizio personalizzato. Ciò è configurato tramite il parametro `Type=` nella sezione `[Service]`. Vedere [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) per una spiegazione più dettagliata.
+Ci sono parecchi tipi differenti di avvio da considerare quando si scrive un servizio personalizzato. Ciò è configurato tramite il parametro `Type=` nella sezione `[Service]`. Vedere [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) per una spiegazione più dettagliata.
 
 *   `Type=simple`(default): systemd presuppone che il servizio deve essere avviato immediatamente. Il processo non può essere suddiviso. Non usare questo tipo se altri servizi hanno bisogno di essere disposti con questo servizio, a meno che non sia attivato dal socket.
 *   `Type=forking`: systemd presuppone che il servizio deve essere avviato prima il processo sia suddiviso e il genitore sia concluso. Per i classici demoni usare questo tipo a meno che non si sappia che non è necessario, come la maggior parte dei demoni usa il double-forking per segnalare che sono pronti. Occorre pure specificare `PIDFile=` perché systemd tenga traccia del processo principale.
@@ -815,7 +815,7 @@ Mostrare tutti i messaggi di una specifica unità:
 
 ```
 
-Vedere [journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) e `systemd.journal-fields` oppure il [blog](http://0pointer.de/blog/projects/journalctl.html) di Lennert per dettagli.
+Vedere [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) e `systemd.journal-fields` oppure il [blog](http://0pointer.de/blog/projects/journalctl.html) di Lennert per dettagli.
 
 ### Limiti alla dimensione del journal
 
@@ -823,7 +823,7 @@ Se il journal è persistente (non volatile) la sua dimensione è fissata al 10% 
 
 SystemMaxUse=50M
 
-Fare riferimento a [journald.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5) per maggiori dettagli.
+Fare riferimento a [journald.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5) per maggiori dettagli.
 
 ### Journald coesistente con syslog
 

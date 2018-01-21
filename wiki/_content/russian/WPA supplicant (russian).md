@@ -37,7 +37,7 @@
 
 ## Подключение при помощи wpa_cli
 
-Этот метод позволяет выполнить сканирование для поиска окружающих сетей, используя *wpa_cli* – утилиту командной строки, которая может быть использована для интерактивной настройки запущенного *wpa_supplicant*. Смотрите [wpa_cli(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8) для получения дополнительной информации.
+Этот метод позволяет выполнить сканирование для поиска окружающих сетей, используя *wpa_cli* – утилиту командной строки, которая может быть использована для интерактивной настройки запущенного *wpa_supplicant*. Смотрите [wpa_cli(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8) для получения дополнительной информации.
 
 Чтобы использовать *wpa_cli*, для *wpa_supplicant* должен быть указан контрольный интерфейс (файл сокета), и ему должны быть даны права на обновление файла настроек. Сделать это можно создав минимальный файл настроек:
 
@@ -151,7 +151,7 @@ network={
 
 ## Расширенное использование
 
-Для более сложных сетей, например, широко практикующих использование [EAP](https://en.wikipedia.org/wiki/Extensible_Authentication_Protocol "wikipedia:Extensible Authentication Protocol"), будет необходимо вручную настроить *wpa_supplicant*. На странице [wpa_supplicant.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.conf.5) вы можете найти описание структуры и содержимого файла настроек и примеры файлов; более детальное описание всех опций вы можете найти в файле `/etc/wpa_supplicant/wpa_supplicant.conf`.
+Для более сложных сетей, например, широко практикующих использование [EAP](https://en.wikipedia.org/wiki/Extensible_Authentication_Protocol "wikipedia:Extensible Authentication Protocol"), будет необходимо вручную настроить *wpa_supplicant*. На странице [wpa_supplicant.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.conf.5) вы можете найти описание структуры и содержимого файла настроек и примеры файлов; более детальное описание всех опций вы можете найти в файле `/etc/wpa_supplicant/wpa_supplicant.conf`.
 
 ### Настройка
 
@@ -202,7 +202,7 @@ network={
     *   `nl80211` в данный момент является стандартным, но не все модули беспроводных контроллеров поддерживают его.
     *   `wext` устарел, однако, все еще широко поддерживается.
 
-Полный список поддерживаемых опций ищите в руководстве [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8).
+Полный список поддерживаемых опций ищите в руководстве [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8).
 
 Пример вызова *wpa_supplicant*:
 
@@ -247,7 +247,7 @@ network={
 
 ### Скрипт обработки событий на основе wpa_cli
 
-*wpa_cli* может выполняться как демон и запускать указанный скрипт для событий, генерируемых *wpa_supplicant*. Поддерживаются два события: `CONNECTED` и `DISCONNECTED`. Некоторые [переменные окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") доступны для использовании в скрипте, смотрите [wpa_cli(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8) для получения подробной информации.
+*wpa_cli* может выполняться как демон и запускать указанный скрипт для событий, генерируемых *wpa_supplicant*. Поддерживаются два события: `CONNECTED` и `DISCONNECTED`. Некоторые [переменные окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") доступны для использовании в скрипте, смотрите [wpa_cli(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8) для получения подробной информации.
 
 Следующий пример использует [уведомления рабочего стола](/index.php/Desktop_notifications "Desktop notifications") для уведомления пользователя о событиях:
 
@@ -276,7 +276,7 @@ $ wpa_cli -a */путь/до/скрипта*
 
 *   [домашняя страница WPA Supplicant](http://hostap.epitest.fi/wpa_supplicant/)
 *   [примеры использования wpa_cli](https://gist.github.com/buhman/7162560)
-*   [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8)
-*   [wpa_supplicant.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.conf.5)
-*   [wpa_cli(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8)
+*   [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8)
+*   [wpa_supplicant.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.conf.5)
+*   [wpa_cli(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8)
 *   [документация wpa_supplicant на Kernel.org](http://wireless.kernel.org/en/users/Documentation/wpa_supplicant)

@@ -52,7 +52,7 @@ La aceleración de vídeo por hardware para codificar/decodificar en las GPU má
 
 No necesita ningún tipo de configuración para hacer funcionar Xorg (el archivo `xorg.conf` no es necessario, pero tiene que estar configurado correctamente si está presente).
 
-Para ver la lista de opciones, escriba [intel(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4)
+Para ver la lista de opciones, escriba [intel(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4)
 
 ## KMS (Kernel Mode Setting)
 

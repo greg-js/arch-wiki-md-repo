@@ -197,7 +197,6 @@ History of old releases can be found [here](ftp://ftp.archlinux.org/iso/archboot
 *   Install archboot:
 
 ```
-# pacman -S archboot
 # mkdir -p *x86_64_chroot*/var/lib/pacman
 # pacman --root "*x86_64_chroot*" -Sy base --noconfirm --noprogressbar
 
@@ -227,19 +226,7 @@ History of old releases can be found [here](ftp://ftp.archlinux.org/iso/archboot
 
 ### Install archboot and update to latest packages
 
-Install in both chroots archboot:
-
-```
-# pacman -S archboot
-
-```
-
-Update in both chroots to latest available packages:
-
-```
-# pacman -Syu
-
-```
+Install [archboot](https://www.archlinux.org/packages/?name=archboot) in both chroots and [update](/index.php/Pacman#Upgrading_packages "Pacman") to latest available packages.
 
 ### Generate images
 
@@ -252,5 +239,3 @@ archboot-allinone.sh -g
 ```
 
 *   Finished you get a bunch of images.
-
-Have fun! tpowa (Archboot Developer)

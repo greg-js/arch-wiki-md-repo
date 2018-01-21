@@ -54,7 +54,7 @@ It will output the devices on the system and their respective features supported
 
 After a [restart](/index.php/Restart "Restart") of the graphical environment, the devices should be managed by libinput with default configuration, if no other drivers are configured to take precedence.
 
-See [libinput(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4) for general options to set. The *xinput* tool is used to view or change options available for a particular device at runtime. For example:
+See [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4) for general options to set. The *xinput* tool is used to view or change options available for a particular device at runtime. For example:
 
 ```
 $ xinput list
@@ -115,7 +115,7 @@ Of course you can elect to use an alternative driver for one device and libinput
 
 Custom configuration files should be placed in `/etc/X11/xorg.conf.d/` and following a widely used naming schema `30-touchpad.conf` is often chosen as filename.
 
-**Tip:** Have a look at `/usr/share/X11/xorg.conf.d/40-libinput.conf` for guidance and refer to the [libinput(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4) manual page for a detailed description of available configuration options.
+**Tip:** Have a look at `/usr/share/X11/xorg.conf.d/40-libinput.conf` for guidance and refer to the [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4) manual page for a detailed description of available configuration options.
 
 A basic configuration should have the following structure:
 
@@ -129,7 +129,7 @@ EndSection
 
 ```
 
-You may define as many sections as you like in a single configuration file. To configure the device of your choice specify a filter by using `MatchIsPointer "on"`, `MatchIsKeyboard "on"`, `MatchIsTouchpad "on"` or `MatchIsTouchscreen "on"` and add your desired option. See [libinput(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4) for more details. Common options include:
+You may define as many sections as you like in a single configuration file. To configure the device of your choice specify a filter by using `MatchIsPointer "on"`, `MatchIsKeyboard "on"`, `MatchIsTouchpad "on"` or `MatchIsTouchscreen "on"` and add your desired option. See [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4) for more details. Common options include:
 
 *   `"Tapping" "on"`: tapping a.k.a. tap-to-click
 *   `"ClickMethod" "clickfinger"`: trackpad no longer has middle and right button areas and instead two-finger click is a context click and three-finger click is a middle click, see the [docs](https://wayland.freedesktop.org/libinput/doc/latest/clickpad_softbuttons.html#clickfinger).
@@ -223,7 +223,7 @@ For deeper integration with GNOME, there is [GnomeExtendedGestures](https://gith
 
 ## Troubleshooting
 
-First, see whether executing `libinput debug-events` can support you in debugging the problem, see [libinput-debug-events(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/libinput-debug-events.1) for options.
+First, see whether executing `libinput debug-events` can support you in debugging the problem, see [libinput-debug-events(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput-debug-events.1) for options.
 
 Some inputs require kernel support. The tool *evemu-describe* from the [evemu](https://www.archlinux.org/packages/?name=evemu) package can be used to check:
 

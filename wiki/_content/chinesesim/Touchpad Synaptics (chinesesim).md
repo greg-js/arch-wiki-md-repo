@@ -585,7 +585,7 @@ Option "SoftButtonAreas"  "50% 0 82% 0 0 0 0 0"
 
 这三个选项是开启其他按键的关键,第一个启用多点触控,第二个关闭中键模拟(ClickPad不支持),第三个定义软按键区域
 
-SoftButtonAreas选项的格式是(请参考[synaptics(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/synaptics.4)):
+SoftButtonAreas选项的格式是(请参考[synaptics(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/synaptics.4)):
 
  `RightButtonAreaLeft RightButtonAreaRight RightButtonAreaTop RightButtonAreaBottom  MiddleButtonAreaLeft MiddleButtonAreaRight MiddleButtonAreaTop MiddleButtonAreaBottom` 
 

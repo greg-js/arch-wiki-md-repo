@@ -42,7 +42,7 @@ Once the authentication is successful, it will be possible to connect to the net
 
 ## Connecting with wpa_cli
 
-This connection method allows scanning for available networks, making use of *wpa_cli*, a command line tool which can be used to configure *wpa_supplicant*. See [wpa_cli(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8) for details.
+This connection method allows scanning for available networks, making use of *wpa_cli*, a command line tool which can be used to configure *wpa_supplicant*. See [wpa_cli(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8) for details.
 
 In order to use *wpa_cli*, a control interface must be specified for *wpa_supplicant*, and it must be given the rights to update the configuration. Do this by creating a minimal configuration file:
 
@@ -156,7 +156,7 @@ Finally, you should obtain an IP address (e.g., using [Dhcpcd#Running](/index.ph
 
 ## Advanced usage
 
-For networks of varying complexity, possibly employing extensive use of [EAP](https://en.wikipedia.org/wiki/Extensible_Authentication_Protocol "wikipedia:Extensible Authentication Protocol"), it will be useful to maintain a customised configuration file. For an overview of the configuration with examples, refer to [wpa_supplicant.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.conf.5); for details on all the supported configuration parameters, refer to the example file `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf`.[[1]](https://w1.fi/cgit/hostap/plain/wpa_supplicant/wpa_supplicant.conf)
+For networks of varying complexity, possibly employing extensive use of [EAP](https://en.wikipedia.org/wiki/Extensible_Authentication_Protocol "wikipedia:Extensible Authentication Protocol"), it will be useful to maintain a customised configuration file. For an overview of the configuration with examples, refer to [wpa_supplicant.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.conf.5); for details on all the supported configuration parameters, refer to the example file `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf`.[[1]](https://w1.fi/cgit/hostap/plain/wpa_supplicant/wpa_supplicant.conf)
 
 ### Configuration
 
@@ -223,7 +223,7 @@ First start *wpa_supplicant* command, whose most commonly used arguments are:
     *   `nl80211` is the current standard, but not all wireless chip's modules support it.
     *   `wext` is currently deprecated, but still widely supported.
 
-See [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) for the full argument list. For example:
+See [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) for the full argument list. For example:
 
 ```
 # wpa_supplicant -B -i *interface* -c /etc/wpa_supplicant/example.conf
@@ -291,7 +291,7 @@ Before running the `wpa_supplicant-wired@*adapter*.service` service, make sure t
 
 ### wpa_cli action script
 
-*wpa_cli* can run in daemon mode and execute a specified script based on events from *wpa_supplicant*. Two events are supported: `CONNECTED` and `DISCONNECTED`. Some [environment variables](/index.php/Environment_variables "Environment variables") are available to the script, see [wpa_cli(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8) for details.
+*wpa_cli* can run in daemon mode and execute a specified script based on events from *wpa_supplicant*. Two events are supported: `CONNECTED` and `DISCONNECTED`. Some [environment variables](/index.php/Environment_variables "Environment variables") are available to the script, see [wpa_cli(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8) for details.
 
 The following example will use [desktop notifications](/index.php/Desktop_notifications "Desktop notifications") to notify the user about the events:
 
@@ -347,7 +347,7 @@ ExecStart=
 ExecStart=/usr/bin/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant-%I.conf -i%I **-Dnl80211,wext**
 ```
 
-**Note:** Multiple comma separated driver wrappers in option `-Dnl80211,wext` makes *wpa_supplicant* use the first driver wrapper that is able to initialize the interface (see [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8)). This is useful when using mutiple or removable (e.g. USB) wireless devices which use different drivers.
+**Note:** Multiple comma separated driver wrappers in option `-Dnl80211,wext` makes *wpa_supplicant* use the first driver wrapper that is able to initialize the interface (see [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8)). This is useful when using mutiple or removable (e.g. USB) wireless devices which use different drivers.
 
 ### Problem with mounted network shares (cifs) and shutdown
 
@@ -388,7 +388,7 @@ with a capital "v" (see [FS#51358](https://bugs.archlinux.org/task/51358)). You 
 *   [wpa_supplicant home](https://w1.fi/wpa_supplicant/)
 *   [wpa_supplicant README](http://w1.fi/cgit/hostap/plain/wpa_supplicant/README) - contains full documentation of project, including *wpa_cli* commands not listed in manpage.
 *   [wpa_cli usage examples](https://gist.github.com/buhman/7162560)
-*   [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8)
-*   [wpa_supplicant.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.conf.5)
-*   [wpa_cli(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8)
+*   [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8)
+*   [wpa_supplicant.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.conf.5)
+*   [wpa_cli(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8)
 *   [Kernel.org wpa_supplicant documentation](http://wireless.kernel.org/en/users/Documentation/wpa_supplicant)

@@ -274,7 +274,7 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
 
 В GNOME встроен поиск, доступ к которому можно получить, используя клавишу `Super`. [tracker](https://www.archlinux.org/packages/?name=tracker) устанавливается по умолчанию, как часть группы [gnome](https://www.archlinux.org/groups/x86_64/gnome/), индексирует приложения и базы метаданных. Настраивается при помощи *Поиск и индексация*; мониторинг состояния посредством *tracker-control*. Автоматически запускается *gnome-session* при входе в систему. Можно запустить вручную: `tracker-control -s`. Параметры поиска также могут быть настроены из панели *Все параметры*.
 
-Отправлять запросы базе данных Tracker можно при помощи *tracker-sparql*. Смотрите страницу справочного руководства [tracker-sparql(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tracker-sparql.1).
+Отправлять запросы базе данных Tracker можно при помощи *tracker-sparql*. Смотрите страницу справочного руководства [tracker-sparql(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracker-sparql.1).
 
 ### Расширенная конфигурация
 

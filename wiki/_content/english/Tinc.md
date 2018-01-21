@@ -1,4 +1,4 @@
-This article describes a basic installation and configuration of tinc. For further details see the [tincd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tincd.8) page and the [tinc documentation](https://tinc-vpn.org/docs/).
+This article describes a basic installation and configuration of tinc. For further details see the [tincd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tincd.8) page and the [tinc documentation](https://tinc-vpn.org/docs/).
 
 ***tinc** is a Virtual Private Network (VPN) daemon that uses tunnelling and encryption to create a secure private network between hosts on the Internet.*[[1]](http://tinc-vpn.org/)
 

@@ -97,7 +97,7 @@ Xorg 会自动搜索安装的驱动：
 
 *   如果无法找到设备在下表中列出的驱动，会首先查看是否安装了 *fbdev* ([xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev)).
 *   如果依然没有找到，会搜索 *vesa* ([xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa)), 这是一个支持大部分显卡的通用驱动，不提供任何 2D 和 3D 加速功能。
-*   如果没有找到 *vesa*，Xorg 会使用 [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"), 这个驱动提供了 GLAMOR 加速 (参考 [modesetting(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4)).
+*   如果没有找到 *vesa*，Xorg 会使用 [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"), 这个驱动提供了 GLAMOR 加速 (参考 [modesetting(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4)).
 
 要充分发挥显卡性能，请按下表安装驱动程序。推荐先使用开源驱动，这些驱动出问题的可能性较小。
 
@@ -145,7 +145,7 @@ and newer | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_process
 
 **Note:** Arch 提供了位于 `/usr/share/X11/xorg.conf.d` 的默认配置文件。通常情况下，用户无需进行额外的配置与修改即可正常使用。
 
-Xorg 可以通过 `/etc/X11/xorg.conf` 或 `/etc/xorg.conf` 和位于 `/etc/X11/xorg.conf.d/` 的配置文件配置。。完整的说明可用通过[这里](http://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml) 或执行 [xorg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5) 获得.
+Xorg 可以通过 `/etc/X11/xorg.conf` 或 `/etc/xorg.conf` 和位于 `/etc/X11/xorg.conf.d/` 的配置文件配置。。完整的说明可用通过[这里](http://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml) 或执行 [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5) 获得.
 
 此外，显卡驱动可能提供了自动配置工具，例如 NVIDIA 提供了 `nvidia-xconfig`，ATI 提供了 `aticonfig`。
 
@@ -704,4 +704,4 @@ needs_root_rights = *yes*
 
 ```
 
-同时请参见 [Xorg.wrap(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.wrap.1) 和 [Systemd/User#Xorg as a systemd user service](/index.php/Systemd/User#Xorg_as_a_systemd_user_service "Systemd/User")。
+同时请参见 [Xorg.wrap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.wrap.1) 和 [Systemd/User#Xorg as a systemd user service](/index.php/Systemd/User#Xorg_as_a_systemd_user_service "Systemd/User")。

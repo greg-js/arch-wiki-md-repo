@@ -357,7 +357,7 @@ $ wipe -r -q /path/to/wipe
 
 ```
 
-See also [wipe(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wipe.1).
+See also [wipe(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wipe.1).
 
 ### shred
 

@@ -137,7 +137,7 @@ ExecStart=-/usr/bin/pkill -9 sshfs
 WantedBy=sleep.target
 ```
 
-Unos consejos útiles acerca de estos archivos de servicio (más información en [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)):
+Unos consejos útiles acerca de estos archivos de servicio (más información en [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)):
 
 *   Si está presente `Type=OneShot`, entonces puede utilizar múltiples líneas `ExecStart=`. De lo contrario, solo está permitida una línea ExecStart. No obstante, puede agregar más órdenes con `ExecStartPre` o mediante la separación de las órdenes con un punto y coma (véase el primer ejemplo de arriba —fíjese en los espacios en blanco antes y después del punto y coma... ¡estos son necesarios!—).
 *   Una orden con un prefijo `-` causará un código de salida distinto de cero que será ignorado y la orden será tratada como cumplida.
@@ -210,7 +210,7 @@ No debemos olvidarnos de hacer el script ejecutable:
 
 ```
 
-Véanse [systemd.special(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7) y [systemd-sleep(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8) para obtener más información.
+Véanse [systemd.special(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7) y [systemd-sleep(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8) para obtener más información.
 
 ## Solución de problemas
 

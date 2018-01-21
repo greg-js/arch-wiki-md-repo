@@ -40,7 +40,7 @@ Related articles
 
 ## Overview
 
-mkinitcpio is a Bash script used to create an initial ramdisk environment. From the [mkinitcpio(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8):
+mkinitcpio is a Bash script used to create an initial ramdisk environment. From the [mkinitcpio(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8):
 
 	The initial ramdisk is in essence a very small environment (early userspace) which loads various kernel modules and sets up necessary things before handing over control to `init`. This makes it possible to have, for example, encrypted root file systems and root file systems on a software RAID array. mkinitcpio allows for easy extension with custom hooks, has autodetection at runtime, and many other features.
 
@@ -166,7 +166,7 @@ The default `HOOKS` setting should be sufficient for most simple, single disk se
 
 #### Build hooks
 
-Build hooks are found in `/usr/lib/initcpio/install/`, custom build hooks can be placed in `/etc/initcpio/install/`. These files are sourced by the bash shell during runtime of mkinitcpio and should contain two functions: `build` and `help`. The `build` function describes the modules, files, and binaries which will be added to the image. An API, documented by [mkinitcpio(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8), serves to facilitate the addition of these items. The `help` function outputs a description of what the hook accomplishes.
+Build hooks are found in `/usr/lib/initcpio/install/`, custom build hooks can be placed in `/etc/initcpio/install/`. These files are sourced by the bash shell during runtime of mkinitcpio and should contain two functions: `build` and `help`. The `build` function describes the modules, files, and binaries which will be added to the image. An API, documented by [mkinitcpio(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8), serves to facilitate the addition of these items. The `help` function outputs a description of what the hook accomplishes.
 
 For a list of all available hooks:
 
@@ -282,7 +282,7 @@ root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660            # GPT partition UU
 
 	Alter the order in which modules are loaded by specifying modules to load early via `earlymodules=mod1[,mod2,...]`. (This may be used, for example, to ensure the correct ordering of multiple network interfaces.)
 
-See [Boot debugging](/index.php/Boot_debugging "Boot debugging") and [mkinitcpio(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8) for other parameters.
+See [Boot debugging](/index.php/Boot_debugging "Boot debugging") and [mkinitcpio(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8) for other parameters.
 
 ### Using RAID
 

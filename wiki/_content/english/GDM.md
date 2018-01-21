@@ -119,7 +119,7 @@ Next, you need to create a file in the directory with the following content:
     <file>logged-in-indicator.svg</file>
     <file>no-events.svg</file>
     <file>no-notifications.svg</file>
-    <file>noise-texture.png</file>
+    <file>**filename**</file>
     <file>pad-osd.css</file>
     <file>page-indicator-active.svg</file>		
     <file>page-indicator-checked.svg</file>

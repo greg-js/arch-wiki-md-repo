@@ -1,3 +1,7 @@
+Related articles
+
+*   [Apache Spark](/index.php/Apache_Spark "Apache Spark")
+
 [Apache Cassandra](https://cassandra.apache.org/) is a NoSQL database with linear scalability.
 
 ## Contents
@@ -9,8 +13,6 @@
     *   [2.2 cassandra.yaml](#cassandra.yaml)
         *   [2.2.1 Basic config items to change](#Basic_config_items_to_change)
         *   [2.2.2 Recommended settings for linux specifically](#Recommended_settings_for_linux_specifically)
-*   [3 Cqlsh](#Cqlsh)
-*   [4 Python API](#Python_API)
 
 ## Installation
 
@@ -126,23 +128,3 @@ Because we're using hsha, `rpc_max_threads` must be set, or cassandra will refus
 rpc_max_threads: 100
 
 ```
-
-## Cqlsh
-
-`cqlsh` CQL Shell is a command line client for connecting to a cassandra cluster
-
-```
-$ sudo pip install cqlsh
-
-```
-
-## Python API
-
-To use the Python API, install the proper Cassandra driver.
-
-```
-$ pip install cassandra-driver
-
-```
-
-For more information on how to use the Python API for Cassandra, see the [API documentation](https://datastax.github.io/python-driver/api/index.html).

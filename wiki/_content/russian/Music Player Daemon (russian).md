@@ -121,7 +121,7 @@ MPD можно контролировать через `mpd.service` [испол
 
 Если `mpd.socket` включен в то время как `mpd.service` (предоставляемый [mpd](https://www.archlinux.org/packages/?name=mpd)) выключен, systemd не станет запускать mpd, но он будет слушать обращения к сокету. Когда mpd клиент попытается обратиться к сокету, systemd запустит `mpd.service` и передаст управление соответствующим портом процессу mpd.
 
-If you prefer to listen on different UNIX sockets or network ports (even multiple sockets of each type), or if you prefer not to listen on network ports at all, you should add/edit/remove the appropriate `"ListenStream="` lines in the `[Socket]` section of `mpd.socket` **and** modify the appropriate lines `/etc/mpd.conf` (see [mpd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mpd.conf.5) for details).
+If you prefer to listen on different UNIX sockets or network ports (even multiple sockets of each type), or if you prefer not to listen on network ports at all, you should add/edit/remove the appropriate `"ListenStream="` lines in the `[Socket]` section of `mpd.socket` **and** modify the appropriate lines `/etc/mpd.conf` (see [mpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpd.conf.5) for details).
 
 If you use different (even multiple) network or local sockets, or prefer not to use network sockets at all, simply add, change, or remove lines beginning with `"ListenStream="` in the `[Socket]` section.
 

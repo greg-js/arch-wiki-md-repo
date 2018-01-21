@@ -37,7 +37,7 @@ El [arm](https://www.archlinux.org/packages/?name=arm) (de sus siglas en ingles 
 
 ## Configuración
 
-Por defecto Tor lee la configuración del archivo `/etc/tor/torrc`. Las opciones de configuración se encuentran explicadas en [tor(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tor.1) en el [la página de Tor](https://torproject.org/docs/tor-manual.html.en). La configuración por defecto debería funcionar bien para la mayoría de los usuarios de Tor.
+Por defecto Tor lee la configuración del archivo `/etc/tor/torrc`. Las opciones de configuración se encuentran explicadas en [tor(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tor.1) en el [la página de Tor](https://torproject.org/docs/tor-manual.html.en). La configuración por defecto debería funcionar bien para la mayoría de los usuarios de Tor.
 
 Hay potenciales conflictos entre configuraciones dentro de `torrc` y aquellas en `tor.service`.
 
@@ -177,7 +177,7 @@ LimitNOFILE=32768
 
 ```
 
-`--network-macvlan=$INTERFACE --private-network` crea automáticamente un macvlan llamado `mv-$INTERFACE` dentro del contenedor, el cual no es visible desde el servidor. `--private-network` está implícito por `--network-macvlan=` de acuerdo con [systemd-nspawn(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1). Esto es aconsejable por seguridad ya que le permitirá dar una IP privada al contenedor, y no conocerá la IP de su máquina. Esto ayudará a esconder pedidos de DNS.
+`--network-macvlan=$INTERFACE --private-network` crea automáticamente un macvlan llamado `mv-$INTERFACE` dentro del contenedor, el cual no es visible desde el servidor. `--private-network` está implícito por `--network-macvlan=` de acuerdo con [systemd-nspawn(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1). Esto es aconsejable por seguridad ya que le permitirá dar una IP privada al contenedor, y no conocerá la IP de su máquina. Esto ayudará a esconder pedidos de DNS.
 
 `LimitNOFILE=32768` por [#Raise maximum number of open file descriptors](#Raise_maximum_number_of_open_file_descriptors).
 

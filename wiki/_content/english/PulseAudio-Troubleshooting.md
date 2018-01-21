@@ -752,6 +752,14 @@ enable-lfe-remixing = yes
 
 ```
 
+You should also consider to set a proper crossover frequency for the LFE- channel. The crossover frequency is the frequency up to which the audio signal is rerouted to the LFE sink. The optimal crossover frequency in Hz depends on the size of all your speakers.
+
+ `/etc/pulse/daemon.conf` 
+```
+lfe-crossover-freq = <40-200>
+
+```
+
 ### Laggy sound
 
 This issue is due to incorrect buffer sizes. First verify that the variables `default-fragments` and `default-fragment-size-msec` are not being set to non default values in the file `/etc/pulse/daemon.conf`. If the issue is still present, try setting them to the following values:
@@ -1145,7 +1153,7 @@ $ pulseaudio --start
 
 *   To get details about currently appeared unfixed errors or just get status of daemon use commands like `pax11publish -d` and `pulseaudio -v` where `v` option can be used multiple time to set verbosity of log output equal to the `--log-level[=LEVEL]` option where LEVEL is from 0 to 4\. See the [#Outputs by PulseAudio error status check utilities](#Outputs_by_PulseAudio_error_status_check_utilities) section.
 
-See also man pages for [pax11publish(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pax11publish.1) and [pulseaudio(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pulseaudio.1) for more details.
+See also man pages for [pax11publish(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pax11publish.1) and [pulseaudio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pulseaudio.1) for more details.
 
 #### Outputs by PulseAudio error status check utilities
 
@@ -1186,7 +1194,7 @@ fs.inotify.max_user_watches = 100000
 
 *   [proc_sys_fs_inotify](http://www.linuxinsight.com/proc_sys_fs_inotify.html) and [dnotify, inotify](http://lwn.net/Articles/604686/)- more details about *inotify/max_user_watches*
 *   [reasonable amount of inotify watches with Linux](http://stackoverflow.com/questions/535768/what-is-a-reasonable-amount-of-inotify-watches-with-linux?answertab=votes#tab-top)
-*   [inotify(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/inotify.7) - man page
+*   [inotify(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/inotify.7) - man page
 
 ### Daemon already running
 

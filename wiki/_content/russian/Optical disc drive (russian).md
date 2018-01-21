@@ -450,7 +450,7 @@ $ growisofs -M */dev/sr0* -V "*ARCHIVE_2013_07_28*" -r -J *./more_for_iso*
 
 ```
 
-Для получения дополнительной информации смотрите инструкцию по [growisofs(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/growisofs.1), а также инструкции по *genisoimage*, *mkisofs* и *xorrisofs*.
+Для получения дополнительной информации смотрите инструкцию по [growisofs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/growisofs.1), а также инструкции по *genisoimage*, *mkisofs* и *xorrisofs*.
 
 #### Мультисессия с помощью xorriso
 

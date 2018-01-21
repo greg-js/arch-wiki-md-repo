@@ -45,9 +45,9 @@ $ 7z x -o<folder name> <archive name>
 
 The package includes three binaries, `/usr/bin/7z`, `/usr/bin/7za`, and `/usr/bin/7zr`. Their manual pages explain the differences:
 
-*   [7z(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/7z.1) uses plugins to handle archives.
-*   [7za(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/7za.1) is a stand-alone executable. 7za handles fewer archive formats than 7z, but does not need any others.
-*   [7zr(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/7zr.1) is a stand-alone executable. 7zr handles fewer archive formats than 7z, but does not need any others. 7zr is a "light-version" of 7za that only handles 7z archives.
+*   [7z(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7z.1) uses plugins to handle archives.
+*   [7za(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7za.1) is a stand-alone executable. 7za handles fewer archive formats than 7z, but does not need any others.
+*   [7zr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7zr.1) is a stand-alone executable. 7zr handles fewer archive formats than 7z, but does not need any others. 7zr is a "light-version" of 7za that only handles 7z archives.
 
 ## See also
 

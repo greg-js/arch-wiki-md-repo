@@ -275,7 +275,7 @@ To accept incoming TCP/UDP requests for a DNS server (port 53):
 
 ```
 
-See [iptables(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8) for more advanced rules, like matching multiple ports.
+See [iptables(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8) for more advanced rules, like matching multiple ports.
 
 #### Port knocking
 

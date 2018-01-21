@@ -41,7 +41,7 @@ makepkg 是由 [pacman](https://www.archlinux.org/packages/?name=pacman) 包提�
 
 ## 配置
 
-makepkg 的详细配置选项可以通过 [makepkg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5) 查询。
+makepkg 的详细配置选项可以通过 [makepkg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5) 查询。
 
 `/etc/makepkg.conf` 是 makepkg 的主配置文件。用户的自定义配置位于 `$XDG_CONFIG_HOME/pacman/makepkg.conf` 或 `~/.makepkg.conf`. 建议用户在编译软件包之前检查 makepkg 配置。
 
@@ -196,7 +196,7 @@ CXXFLAGS="${CFLAGS}"
 
 `MAKEFLAGS` 选项可以用来指定 make 的额外选项。使用多核系统的用户可以设定同时运行的任务数。可以用`nproc`获得可用处理器的个数，如果结果是 4， 则使用`-j4`. 有些 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 强制使用 `-j1`，因为某些版本会产生冲突或者软件包并不支持。如果出现软件包因为此原因无法编译，请在 bug 系统中[报告](/index.php/Reporting_bug_guidelines_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Reporting bug guidelines (简体中文)")。
 
-完整的选项请阅读 [make(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/make.1)。
+完整的选项请阅读 [make(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/make.1)。
 
 ### 生成新 md5sums
 

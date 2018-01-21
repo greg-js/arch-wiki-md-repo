@@ -32,15 +32,15 @@ Per istruzioni piu` dettagliate sui vari programmi vedere le rispettive [man pag
 
 Arch Linux dovrebbe essere installabile su ogni macchina compatibile con l'architettura [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") e con un minimo di 512 MB di RAM. L'installazione base con solo i pacchetti presenti nel gruppo [base](https://www.archlinux.org/groups/x86_64/base/) richiede circa 800 MB di spazio su disco rigido. Siccome durante la fase di installazione vengono scaricati i pacchetti aggiornati direttamente dai repository remoti, una connessione ad internet e` fondamentale durante il processo.
 
-Scaricare e avviare un disco di installazione come spiegato in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). Ora ci si dovrebbe trovare di fronte ad una [console virtuale](https://en.wikipedia.org/wiki/Virtual_Console "w:Virtual Console"). L'utente *root* dovrebbe gia` essere loggato. La shell di default e` [Zsh](/index.php/Zsh "Zsh"). I comandi piu` comuni come [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) possono essere [autocompletati](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") dal tasto *tab*.
+Scaricare e avviare un disco di installazione come spiegato in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). Ora ci si dovrebbe trovare di fronte ad una [console virtuale](https://en.wikipedia.org/wiki/Virtual_Console "w:Virtual Console"). L'utente *root* dovrebbe gia` essere loggato. La shell di default e` [Zsh](/index.php/Zsh "Zsh"). I comandi piu` comuni come [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) possono essere [autocompletati](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") dal tasto *tab*.
 
 Per switchare su un'altra console - per esempio per visualizzare questa guida tramite [ELinks](/index.php/ELinks "ELinks") durante il processo di installazione - usare la [combinazione di tasti](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*freccia*`. Per [editare](/index.php/Textedit "Textedit") testo e files sono disponibili gli editor: [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") e [vim](/index.php/Vim#Usage "Vim").
 
 ### Impostare il corretto layout della tastiera
 
-Di default la tastiera e` [mappata](/index.php/Console_keymap "Console keymap") su un layout [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). La lista dei possibili layout e` disponibile tramite `ls /usr/share/kbd/keymaps/**/*.map.gz`. Per modificare il layout aggiungere il rispettivo filename a [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omettendo estensione e percorso completo. Ad esempio, il comando `loadkeys it` impostera` sul sistema il layout italiano.
+Di default la tastiera e` [mappata](/index.php/Console_keymap "Console keymap") su un layout [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). La lista dei possibili layout e` disponibile tramite `ls /usr/share/kbd/keymaps/**/*.map.gz`. Per modificare il layout aggiungere il rispettivo filename a [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omettendo estensione e percorso completo. Ad esempio, il comando `loadkeys it` impostera` sul sistema il layout italiano.
 
-I [font](/index.php/Console_fonts "Console fonts") utilizzabili sulla console si trovano in `/usr/share/kbd/consolefonts/` e possono essere selezionati tramite [setfont(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
+I [font](/index.php/Console_fonts "Console fonts") utilizzabili sulla console si trovano in `/usr/share/kbd/consolefonts/` e possono essere selezionati tramite [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
 ### Verificare il boot mode
 
@@ -64,11 +64,11 @@ L'immagine di installazione di Arch Linux di default [abilita](/index.php/Enable
 
 Se la connessione risulta non disponibile, [fermare](/index.php/Stop "Stop") il servizio *dhcpcd* con `systemctl stop dhcpcd@`, `Tab` e vedere [Network configuration](/index.php/Network_configuration "Network configuration").
 
-Per connessioni **wireless**, [iw(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) e [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") sono disponibili. Vedere [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") per ulteriori informazioni.
+Per connessioni **wireless**, [iw(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) e [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") sono disponibili. Vedere [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") per ulteriori informazioni.
 
 ### Aggiornare l'orologio di sistema
 
-Usare il comando [timedatectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1) per assicurarsi che l'orologio sia corretto:
+Usare il comando [timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1) per assicurarsi che l'orologio sia corretto:
 
 ```
 # timedatectl set-ntp true
@@ -188,7 +188,7 @@ Settare la propria [Time zone](/index.php/Time_zone "Time zone"):
 
 ```
 
-Lanciare [hwclock(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) per generare `/etc/adjtime`:
+Lanciare [hwclock(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) per generare `/etc/adjtime`:
 
 ```
 # hwclock --systohc
@@ -206,17 +206,17 @@ Decommentare `en_US.UTF-8 UTF-8` e altre [localizzazioni](/index.php/Localizatio
 
 ```
 
-Settare la [variabile](/index.php/Variable "Variable") `LANG` in [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5), ad esempio:
+Settare la [variabile](/index.php/Variable "Variable") `LANG` in [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5), ad esempio:
 
  `/etc/locale.conf`  `LANG=*it_IT.UTF-8*` 
 
-Se si e` [settato un layout della tastiera](#Impostare_il_corretto_layout_della_tastiera), rendere persistente questa modifica in [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5):
+Se si e` [settato un layout della tastiera](#Impostare_il_corretto_layout_della_tastiera), rendere persistente questa modifica in [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5):
 
  `/etc/vconsole.conf`  `KEYMAP=*us'*` 
 
 ### Hostname
 
-Creare il file [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5):
+Creare il file [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5):
 
  `/etc/hostname` 
 ```
@@ -224,7 +224,7 @@ Creare il file [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.
 
 ```
 
-Aggiungere il proprio hostname anche al file [hosts(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
+Aggiungere il proprio hostname anche al file [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
 
  `/etc/hosts` 
 ```
@@ -246,7 +246,7 @@ Per [configurare reti wireless](/index.php/Wireless_configuration "Wireless conf
 
 Creare una nuova *initramfs* normalmente non e` richiesto, in quanto [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") viene richiamato ad ogni installazione del pacchetto [linux](https://www.archlinux.org/packages/?name=linux) tramite *pacstrap*.
 
-Per configuazioni speciali, modificare il file [mkinitcpio.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) e ricreare la initramfs a mano con il comando:
+Per configuazioni speciali, modificare il file [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) e ricreare la initramfs a mano con il comando:
 
 ```
 # mkinitcpio -p linux
@@ -272,7 +272,7 @@ Se si usa una CPU Intel, installare il pacchetto [intel-ucode](https://www.archl
 
 Uscire dall'ambiente chroot con `exit` o premendo `Ctrl+D`.
 
-Opzionalmente smontare a mano le partizioni con `umount -R /mnt`: questo potrebbe portare a qualche warning di partizione "busy" (occupata, quindi impossibile da smontare), trovarne la causa con [fuser(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1).
+Opzionalmente smontare a mano le partizioni con `umount -R /mnt`: questo potrebbe portare a qualche warning di partizione "busy" (occupata, quindi impossibile da smontare), trovarne la causa con [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1).
 
 Riavviare la macchina con un `reboot`. Tutte le partizioni vengono smontate automaticamente da systemd. Ricordare di rimuovere il *media* di installazione e di loggarsi sulla nuova Arch Linux tramite l'utente root appena creato.
 

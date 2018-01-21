@@ -50,7 +50,7 @@ Create `~/.config/bspwm/` and `~/.config/sxhkd/`, then copy `/usr/share/doc/bspw
 
 These two files are where you will be setting wm settings and keybindings, respectively. See [bspwm/Example configurations](/index.php/Bspwm/Example_configurations "Bspwm/Example configurations") for annotated examples.
 
-See also the [bspwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/bspwm.1) and [sxhkd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sxhkd.1) manuals for detailed documentation.
+See also the [bspwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bspwm.1) and [sxhkd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sxhkd.1) manuals for detailed documentation.
 
 #### Note for multi-monitor setups
 

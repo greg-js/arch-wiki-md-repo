@@ -86,7 +86,7 @@ anonymous_enable=YES
 ...
 ```
 
-您也可以添加以下选项（详见 [vsftpd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vsftpd.conf.5)）：
+您也可以添加以下选项（详见 [vsftpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vsftpd.conf.5)）：
 
  `/etc/vsftpd.conf` 
 ```

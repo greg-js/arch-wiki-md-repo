@@ -54,6 +54,8 @@ Additional steps for printer detection are listed below for various connection i
 
 If this is a concern, consider using a [Udev](/index.php/Udev "Udev") rule to assign a different group for any non-printer parallel port device ([FS#50009](https://bugs.archlinux.org/task/50009)). The group and user that CUPS uses can be changed, but the permissions of some files may need to be manually fixed.
 
+**Note:** Starting with [cups](https://www.archlinux.org/packages/?name=cups) 2.2.6-2 (currently in [testing]), the *cups* user and *cups* group [are used instead](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/cups&id=a209bf21797a239c7ddb4614f0266ba1e5238622).
+
 ### USB
 
 To see if your USB printer is detected:
@@ -321,11 +323,11 @@ If your user does not have sufficient privileges to administer CUPS, the applica
 
 ## Configuration
 
-The CUPS server configuration is located in `/etc/cups/cupsd.conf` and `/etc/cups/cups-files.conf` (see [cupsd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cupsd.conf.5) and [cups-files.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cups-files.conf.5)). After editing either file, [restart](/index.php/Restart "Restart") `org.cups.cupsd.service` to apply any changes. The default configuration is sufficient for most users.
+The CUPS server configuration is located in `/etc/cups/cupsd.conf` and `/etc/cups/cups-files.conf` (see [cupsd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cupsd.conf.5) and [cups-files.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cups-files.conf.5)). After editing either file, [restart](/index.php/Restart "Restart") `org.cups.cupsd.service` to apply any changes. The default configuration is sufficient for most users.
 
 [Groups](/index.php/Groups "Groups") with printer administration privileges are defined in `SystemGroup` in the `/etc/cups/cups-files.conf`. The `sys` group is used by default.
 
-[cups](https://www.archlinux.org/packages/?name=cups) is built with [libpaper](https://www.archlinux.org/packages/?name=libpaper) support and libpaper defaults to the **Letter** paper size. To avoid having to change the paper size for each print queue you add, edit `/etc/papersize` and set your system default paper size. See [papersize(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/papersize.5).
+[cups](https://www.archlinux.org/packages/?name=cups) is built with [libpaper](https://www.archlinux.org/packages/?name=libpaper) support and libpaper defaults to the **Letter** paper size. To avoid having to change the paper size for each print queue you add, edit `/etc/papersize` and set your system default paper size. See [papersize(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/papersize.5).
 
 By default, all logs are sent to files in `/var/log/cups/`. By changing the values of the `AccessLog`, `ErrorLog`, and `PageLog` directives in `/etc/cups/cups-files.conf` to `syslog`, CUPS can be made to log to the [systemd journal](/index.php/Systemd_journal "Systemd journal") instead. See [the fedora wiki page](https://fedoraproject.org/wiki/Changes/CupsJournalLogging) for information on the original proposed change.
 

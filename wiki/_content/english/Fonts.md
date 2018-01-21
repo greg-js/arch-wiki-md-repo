@@ -265,7 +265,7 @@ Font names are case-sensitive. With no parameter, `setfont` returns the console 
 
 ### Persistent configuration
 
-The `FONT` variable in `/etc/vconsole.conf` is used to set the font at boot, persistently for all consoles. See [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) for details.
+The `FONT` variable in `/etc/vconsole.conf` is used to set the font at boot, persistently for all consoles. See [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) for details.
 
 For displaying characters such as *Č, ž, đ, š* or *Ł, ę, ą, ś* using the font `lat2-16.psfu.gz`:
 
@@ -306,7 +306,7 @@ The [Archfonts Python script](https://github.com/ternstor/distrofonts) can be us
 #### Families
 
 *   [Bitstream Vera](https://en.wikipedia.org/wiki/Bitstream_Vera "wikipedia:Bitstream Vera") ([ttf-bitstream-vera](https://www.archlinux.org/packages/?name=ttf-bitstream-vera)) – serif, sans-serif, and monospace
-*   [Courier Prime](https://quoteunquoteapps.com/courierprime/) ([ttf-courier](https://aur.archlinux.org/packages/ttf-courier/)) – Courier font alternative optimized for screenplays
+*   [Courier Prime](https://quoteunquoteapps.com/courierprime/) ([ttf-courier-prime](https://aur.archlinux.org/packages/ttf-courier-prime/)) – Courier font alternative optimized for screenplays
 *   [Croscore fonts](https://en.wikipedia.org/wiki/Croscore_fonts "wikipedia:Croscore fonts") ([ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) – Google's substitute for Windows' Arial, Times New Roman, and Courier New
 *   [DejaVu fonts](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) – Bitstream Vera modified for greater Unicode coverage
 *   [Droid](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) – default font for older Android versions
@@ -662,7 +662,7 @@ For terminal emulators that use `Xresources`, fonts can be set by using escape s
 
 ### Application-specific font cache
 
-Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib) or [python2-matplotlib](https://www.archlinux.org/packages/?name=python2-matplotlib)) uses its own font cache, so after updating fonts, be sure to remove `$HOME/.matplotlib/fontList.cache`, `$HOME/.cache/matplotlib/fontList.cache`, `$HOME/.sage/matplotlib-1.2.1/fontList.cache`, etc. so it will regenerate its cache and find the new fonts [[4]](http://matplotlib.1069221.n5.nabble.com/getting-matplotlib-to-recognize-a-new-font-td40500.html).
+Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib) or [python2-matplotlib](https://www.archlinux.org/packages/?name=python2-matplotlib)) uses its own font cache, so after updating fonts, be sure to remove `~/.matplotlib/fontList.cache`, `~/.cache/matplotlib/fontList.cache`, `~/.sage/matplotlib-1.2.1/fontList.cache`, etc. so it will regenerate its cache and find the new fonts [[4]](http://matplotlib.1069221.n5.nabble.com/getting-matplotlib-to-recognize-a-new-font-td40500.html).
 
 ## See also
 

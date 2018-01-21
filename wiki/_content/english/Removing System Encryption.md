@@ -20,7 +20,7 @@ Removing system encryption with [dm-crypt and LUKS](/index.php/Dm-crypt "Dm-cryp
 *   An Arch Linux (or other) live CD.
 *   A few hours.
 
-**Note:** As of late 2012 new tools have been added to `cryptsetup` to add or remove encryption to/from an existing file system. While they are still considered experimental, they may help considerably with such an effort. More information is available with [cryptsetup-reencrypt(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cryptsetup-reencrypt.8).
+**Note:** As of late 2012 new tools have been added to `cryptsetup` to add or remove encryption to/from an existing file system. While they are still considered experimental, they may help considerably with such an effort. More information is available with [cryptsetup-reencrypt(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cryptsetup-reencrypt.8).
 
 ## Boot into a Live Environment
 

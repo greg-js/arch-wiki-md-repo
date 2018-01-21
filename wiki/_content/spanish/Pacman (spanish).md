@@ -69,7 +69,7 @@ El [gestor de paquetes](https://en.wikipedia.org/wiki/Package_management_system 
 
 ## Utilización
 
-Lo que sigue es una pequeña muestra de las operaciones que se pueden realizar con *pacman*. Para leer más ejemplos, remítase a [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8).
+Lo que sigue es una pequeña muestra de las operaciones que se pueden realizar con *pacman*. Para leer más ejemplos, remítase a [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8).
 
 **Sugerencia:** para aquellos usuarios que han utilizado antes otras distribuciones de Linux, el artículo [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta") les puede resultar útil.
 
@@ -485,11 +485,11 @@ Para obtener funcionalidades avanzadas instale [pkgfile](/index.php/Pkgfile "Pkg
 
 ## Configuración
 
-La configuración de *pacman* se encuentra en el archivo `/etc/pacman.conf`. Este es el archivo donde el usuario configura el programa para que funcione de la manera deseada. Se puede encontrar información en profundidad sobre el archivo de configuración en [pacman.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5).
+La configuración de *pacman* se encuentra en el archivo `/etc/pacman.conf`. Este es el archivo donde el usuario configura el programa para que funcione de la manera deseada. Se puede encontrar información en profundidad sobre el archivo de configuración en [pacman.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5).
 
 ### Opciones Generales
 
-Las opciones generales están en la sección `[options]`. Lea la página del manual de [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) o eche un vistazo al archivo predefinido `pacman.conf` para obtener información adicional.
+Las opciones generales están en la sección `[options]`. Lea la página del manual de [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) o eche un vistazo al archivo predefinido `pacman.conf` para obtener información adicional.
 
 #### Comparar versiones antes de actualizar
 
@@ -558,7 +558,7 @@ Donde el archivo `*/ruta/a/configuraciones/comunes*` contiene las mismas opcione
 
 *pacman* puede ejecutar hooks antes y después de la transacción, desde el directorio `/usr/share/libalpm/hooks/`; se pueden especificar más directorios con la opción `HookDir` en `pacman.conf`, cuya ruta por defecto es `/etc/pacman.d/hooks`. Los nombres de los archivos hooks deben tener el sufijo *.hook*.
 
-Para obtener más información sobre los hooks de alpm, consulte [alpm-hooks(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/alpm-hooks.5).
+Para obtener más información sobre los hooks de alpm, consulte [alpm-hooks(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alpm-hooks.5).
 
 ### Repositorios y servidores de réplicas
 
@@ -760,7 +760,7 @@ Si recibe este mensaje de error con los [mirrors](/index.php/Mirrors "Mirrors") 
 ## Véase también
 
 *   [Pacman Home Page](https://www.archlinux.org/pacman/)
-*   [libalpm(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3)
-*   [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)
-*   [pacman.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5)
-*   [repo-add(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/repo-add.8)
+*   [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3)
+*   [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)
+*   [pacman.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5)
+*   [repo-add(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/repo-add.8)

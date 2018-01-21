@@ -188,7 +188,7 @@ The following samples should provide a good understanding of how application set
 *   [Font configuration#Applications without fontconfig support](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration")
 *   [Xterm#Configuration](/index.php/Xterm#Configuration "Xterm")
 *   [rxvt-unicode#Configuration](/index.php/Rxvt-unicode#Configuration "Rxvt-unicode")
-*   [xpdf(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xpdf.1#OPTIONS)
+*   [xpdf(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xpdf.1#OPTIONS)
 
 ## Troubleshooting
 

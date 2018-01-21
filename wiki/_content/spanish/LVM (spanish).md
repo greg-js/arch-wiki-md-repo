@@ -477,7 +477,7 @@ Si desea ocupar todo el espacio libre de un grupo de volúmenes, utilice la sigu
 
 ```
 
-Vea [lvresize(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) para conocer opciones más detalladas.
+Vea [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) para conocer opciones más detalladas.
 
 ##### Redimensionar por separado el sistema de archivos
 

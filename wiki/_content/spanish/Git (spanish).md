@@ -64,7 +64,7 @@ Este tutorial muestra como usar Git para controlar y revisar de manera básica d
 
 Git es un sistema de control de versiones, lo cual quiere decir que la historia completa de los cambios hechos a un repositorio es guardada localmente, en una carpeta llamada `./.git` en el directorio del proyecto. Los archivos del proyecto que son visibles al usuario constituyen el *árbol de trabajo*. Estos archivos pueden ser actualizados para coincidir con las revisiones guardadas en `./.git` usando los comandos de `git` (v.g. `git checkout`), nuevas revisiones pueden ser creadas al modificar estos archivos y ejecutar el comando de `git` apropiado (e.g. `git commit`).
 
-Vea [gitglossary(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gitglossary.7) para una definicion mas completa de los terminos usados en este tutorial.
+Vea [gitglossary(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitglossary.7) para una definicion mas completa de los terminos usados en este tutorial.
 
 El proceso de trabajo típico con Git es:
 

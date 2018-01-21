@@ -41,11 +41,11 @@ To format a partition do:
 
 ```
 
-**Tip:** See [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) for more options; edit `/etc/mke2fs.conf` to view/configure default options.
+**Tip:** See [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) for more options; edit `/etc/mke2fs.conf` to view/configure default options.
 
 ### Bytes-per-inode ratio
 
-From [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8):
+From [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8):
 
 	***mke2fs** creates an inode for every* bytes-per-inode *bytes of space on the disk. The larger the* bytes-per-inode *ratio, the fewer inodes will be created.*
 
@@ -85,7 +85,7 @@ The bytes-per-inode ratio can also be set directly via the `-i` option: *e.g.* u
 
 ### Reserved blocks
 
-By default, 5% of the filesystem blocks will be reserved for the super-user, to avoid fragmentation and "*allow root-owned daemons to continue to function correctly after non-privileged processes are prevented from writing to the filesystem*" (from [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8)).
+By default, 5% of the filesystem blocks will be reserved for the super-user, to avoid fragmentation and "*allow root-owned daemons to continue to function correctly after non-privileged processes are prevented from writing to the filesystem*" (from [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8)).
 
 For modern high-capacity disks, this is higher than necessary if the partition is used as a long-term archive or not crucial to system operations (like `/home`). See [this email](http://www.redhat.com/archives/ext3-users/2009-January/msg00026.html) for the opinion of ext4 developer Ted Ts'o on reserved blocks.
 
@@ -110,7 +110,7 @@ To reduce it to 1% afterwards, use:
 
 ```
 
-You can use [findmnt(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/findmnt.8) to find the device name:
+You can use [findmnt(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/findmnt.8) to find the device name:
 
 ```
 $ findmnt */the/mount/point*

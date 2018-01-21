@@ -133,7 +133,7 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 ### 挂载点
 
-下面这些路径可以作为独立分区的挂载点，你也可以根据实际需要做出其他决定。[file-hierarchy(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) 介绍了各个目录的作用。
+下面这些路径可以作为独立分区的挂载点，你也可以根据实际需要做出其他决定。[file-hierarchy(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) 介绍了各个目录的作用。
 
 #### 根分区
 

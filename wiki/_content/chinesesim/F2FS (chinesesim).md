@@ -26,7 +26,7 @@ Related articles
 
 ```
 
-`*/dev/sdxY*` 是想要设置成 F2FS 的分区。详细信息请参阅 [mkfs.f2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.f2fs.8)。
+`*/dev/sdxY*` 是想要设置成 F2FS 的分区。详细信息请参阅 [mkfs.f2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.f2fs.8)。
 
 ## 挂载 F2FS 分区
 
@@ -48,13 +48,13 @@ Related articles
 
 ```
 
-`*/dev/sdxY*`是要增长的 F2FS 分区。可用的选项参阅 [resize.f2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resize.f2fs.8)。
+`*/dev/sdxY*`是要增长的 F2FS 分区。可用的选项参阅 [resize.f2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resize.f2fs.8)。
 
 **注意:** 如果使用 GPT，分区的 GUID (`/dev/disk/by-partuuid/` 内) 可能会改变，但是文件系统的 UUID (`/dev/disk/by-uuid/` 内) 应该保持不变。
 
 ## 检查和修复
 
-软件包 [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) 中的 `fsck.f2fs` 命令可以检查和修复 f2fs 分区。可用的选项请参阅 [fsck.f2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fsck.f2fs.8)。
+软件包 [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) 中的 `fsck.f2fs` 命令可以检查和修复 f2fs 分区。可用的选项请参阅 [fsck.f2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsck.f2fs.8)。
 
 ## 疑难解答
 

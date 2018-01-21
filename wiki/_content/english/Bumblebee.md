@@ -50,6 +50,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [6.14 Broken power management with kernel 4.8](#Broken_power_management_with_kernel_4.8)
     *   [6.15 Lockup issue (lspci hangs)](#Lockup_issue_.28lspci_hangs.29)
     *   [6.16 Discrete card always on and acpi warnings](#Discrete_card_always_on_and_acpi_warnings)
+    *   [6.17 Erratic, unpredictable behaviour](#Erratic.2C_unpredictable_behaviour)
 *   [7 See also](#See_also)
 
 ## Bumblebee: Optimus for Linux
@@ -725,6 +726,10 @@ See [NVIDIA Optimus#Lockup issue (lspci hangs)](/index.php/NVIDIA_Optimus#Lockup
 ### Discrete card always on and acpi warnings
 
 Add `acpi_osi=Linux` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). See [[3]](https://github.com/Bumblebee-Project/Bumblebee/issues/592) and [[4]](https://github.com/Bumblebee-Project/bbswitch/issues/112) for more information.
+
+### Erratic, unpredictable behaviour
+
+If Bumblebee starts/works in a random manner, check that you have set your [Network_configuration#Local_network_hostname_resolution](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration") (details [here](https://github.com/Bumblebee-Project/Bumblebee/pull/939)).
 
 ## See also
 

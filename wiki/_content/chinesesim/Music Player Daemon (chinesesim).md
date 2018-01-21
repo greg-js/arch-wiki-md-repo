@@ -95,7 +95,7 @@ MPD 配置必须仅包含一个目录，如果音乐集包含在多个目录下�
 
 如果启用了 `mpd.socket`，但没有启用 `mpd.service`，systemd 不会立刻启动 mpd，而是会监听相应的套接字。当一个 mpd 客户端试图连接其中的套接字，systemd 将启动 `mpd.service`， 然后透明地将端口的控制权交给 mpd 进程。
 
-如果你希望监听不同的 UNIX 套接字或者网络端口（甚至是每个类型的多个套接字），或者你完全不希望监听网络端口。你需要 **添加/编辑/删除** `mpd.socket` 文件中 `[Socket]` 章节下的 `"ListenStream="` 行，**并且**更改 `/etc/mpd.conf` 文件中的相应行（具体查看 [mpd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mpd.conf.5)）。
+如果你希望监听不同的 UNIX 套接字或者网络端口（甚至是每个类型的多个套接字），或者你完全不希望监听网络端口。你需要 **添加/编辑/删除** `mpd.socket` 文件中 `[Socket]` 章节下的 `"ListenStream="` 行，**并且**更改 `/etc/mpd.conf` 文件中的相应行（具体查看 [mpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpd.conf.5)）。
 
 #### 配置音频
 

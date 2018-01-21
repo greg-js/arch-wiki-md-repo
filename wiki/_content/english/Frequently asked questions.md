@@ -71,7 +71,7 @@ No, but the [Arch Linux ARM](http://archlinuxarm.org/) project provides a port o
 
 ### Does Arch follow the [FHS](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)?
 
-Arch Linux follows the *file system hierarchy* for operating systems using the [systemd](/index.php/Systemd "Systemd") service manager. See [file-hierarchy(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) for an explanation of each directory along with their designations. In particular, `/bin`, `/sbin`, and `/usr/sbin` are symbolic links to `/usr/bin`, and `/lib` and `/lib64` are symbolic links to `/usr/lib`.
+Arch Linux follows the *file system hierarchy* for operating systems using the [systemd](/index.php/Systemd "Systemd") service manager. See [file-hierarchy(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) for an explanation of each directory along with their designations. In particular, `/bin`, `/sbin`, and `/usr/sbin` are symbolic links to `/usr/bin`, and `/lib` and `/lib64` are symbolic links to `/usr/lib`.
 
 ### I am a complete GNU/Linux beginner. Should I use Arch?
 

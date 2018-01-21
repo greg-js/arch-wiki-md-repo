@@ -61,7 +61,7 @@ dhcpcd: *eth0*: leased 192.168.1.70 for 86400 seconds
 
 ## 配置
 
-The main configuration is done in `/etc/dhcpcd.conf`, see [dhcpcd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)for details. Some of the frequently used options are highlighted below.
+The main configuration is done in `/etc/dhcpcd.conf`, see [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)for details. Some of the frequently used options are highlighted below.
 
 ### DHCP 静态路由
 
@@ -126,7 +126,7 @@ static routers=192.168.0.1
 static domain_name_servers=192.168.0.1 8.8.8.8
 ```
 
-More complicated configurations are possible, for example combining with the `arping` option. See [dhcpcd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)for details.
+More complicated configurations are possible, for example combining with the `arping` option. See [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)for details.
 
 #### Fallback 配置文件
 
@@ -149,7 +149,7 @@ fallback static_eth0
 
 ## 钩子
 
-*dhcpcd* executes all scripts found in `/usr/lib/dhcpcd/dhcpcd-hooks/` in a lexical order. See [dhcpcd(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) and [dhcpcd-run-hooks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd-run-hooks.8)for details.
+*dhcpcd* executes all scripts found in `/usr/lib/dhcpcd/dhcpcd-hooks/` in a lexical order. See [dhcpcd(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) and [dhcpcd-run-hooks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd-run-hooks.8)for details.
 
 **提示：**
 
@@ -304,4 +304,4 @@ After making changes, [reload the configuration](/index.php/Systemd#Editing_prov
 
 ## 参阅
 
-*   [dhcpcd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.8)* [dhcpcd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)
+*   [dhcpcd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.8)* [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)

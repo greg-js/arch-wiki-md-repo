@@ -47,7 +47,7 @@ L'accelerazione hardware video di decodifica/codifica sulle vecchie GPU è forni
 
 Non è necessario alcun tipo di configurazione per far funzionare Xorg (il file `xorg.conf` non è necessario ma ha bisogno di essere configurato correttamente se presente).
 
-Per una lista delle opzioni eseguire [intel(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4).
+Per una lista delle opzioni eseguire [intel(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4).
 
 ## KMS (Kernel Mode Setting)
 

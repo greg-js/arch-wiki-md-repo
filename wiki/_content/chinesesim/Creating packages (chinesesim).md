@@ -130,7 +130,7 @@ PKGBUILD文件的编写例子可以在`/usr/share/pacman/`处找到。PKGBUILD�
 
 此函数会执行用于预处理源文件以进行构建的命令, 例如 patching. 此函数执行在 build() 之前, 软件包解压之后. 如果解压过程被跳过 (`makepkg -e`), 那么 `prepare()` 函数就不会被执行.
 
-**注意:** (从 [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) 中可以知道, 该函数运行在 `bash -e` 模式下, 意味着任何以非零状态退出的命令都会造成该函数中止.
+**注意:** (从 [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) 中可以知道, 该函数运行在 `bash -e` 模式下, 意味着任何以非零状态退出的命令都会造成该函数中止.
 
 #### pkgver()
 

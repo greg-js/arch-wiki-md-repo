@@ -47,7 +47,7 @@ The **hardware clock** (a.k.a. the Real Time Clock (RTC) or CMOS clock) stores t
 
 ### Set hardware clock from system clock
 
-The following sets the hardware clock from the system clock. Additionally it updates `/etc/adjtime` or creates it if not present. See [hwclock(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) section "The Adjtime File" for more information on this file as well as the [#Time skew](#Time_skew) section.
+The following sets the hardware clock from the system clock. Additionally it updates `/etc/adjtime` or creates it if not present. See [hwclock(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) section "The Adjtime File" for more information on this file as well as the [#Time skew](#Time_skew) section.
 
 ```
 # hwclock --systohc
@@ -203,7 +203,7 @@ Example:
 
 ```
 
-This will create an `/etc/localtime` symlink that points to a zoneinfo file under `/usr/share/zoneinfo/`. In case you choose to create the link manually (for example during [chroot](/index.php/Chroot "Chroot") where `timedatectl` won't work), keep in mind that it must be a symbolic link, as specified in [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7):
+This will create an `/etc/localtime` symlink that points to a zoneinfo file under `/usr/share/zoneinfo/`. In case you choose to create the link manually (for example during [chroot](/index.php/Chroot "Chroot") where `timedatectl` won't work), keep in mind that it must be a symbolic link, as specified in [archlinux(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7):
 
 ```
 # ln -sf /usr/share/zoneinfo/*Zone*/*SubZone* /etc/localtime
@@ -215,7 +215,7 @@ This will create an `/etc/localtime` symlink that points to a zoneinfo file unde
 *   The time zone can also be selected interactively with *tzselect*.
 *   The tool [tzupdate](https://aur.archlinux.org/packages/tzupdate/) automatically sets the timezone based on the geolocation of the IP address.
 
-See [timedatectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1), [localtime(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localtime.5) and [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) for details.
+See [timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1), [localtime(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localtime.5) and [archlinux(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) for details.
 
 ## Time skew
 

@@ -111,7 +111,7 @@ netctl 的完整命令清单请参阅：[netctl(1)](http://jlk.fjfi.cvut.cz/arch
 
 ### 特殊 systemd 单元
 
-*netctl* 提供了特殊的 [systemd](/index.php/Systemd "Systemd") 服务以实现有线与无线连接的自动切换。这些特殊的 systemd 单元的完整清单请参阅 [netctl.special(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.special.7)。
+*netctl* 提供了特殊的 [systemd](/index.php/Systemd "Systemd") 服务以实现有线与无线连接的自动切换。这些特殊的 systemd 单元的完整清单请参阅 [netctl.special(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.special.7)。
 
 #### 有线连接
 
@@ -142,7 +142,7 @@ systemd 单元。网线插入/拔出时，DHCP 配置文件将被启动/停止�
 *   如果任何一个配置文件包含错误，例如包含空变量 `Key=`，即使这个文件未被使用，也将加载失败并报错 `"Failed to read or parse configuration '/run/network/wpa_supplicant_wlan0.conf'`。
 *   本方法与 [基本方法](#.E5.9F.BA.E6.9C.AC.E6.96.B9.E6.B3.95) 矛盾。如果你之前已经通过netctl启用了一个配置文件，运行 `netctl disable *profile*` 来防止这个配置在计算机启动时被启用两次。
 
-通过 netctl-auto 的命令动作可以在不停止 `netctl-auto.service` 服务的情况下手工控制一个不受 netctl-auto 管理的网络接口。完整的 netctl-auto 命令动作列表参阅 [netctl-auto(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl-auto.1)。
+通过 netctl-auto 的命令动作可以在不停止 `netctl-auto.service` 服务的情况下手工控制一个不受 netctl-auto 管理的网络接口。完整的 netctl-auto 命令动作列表参阅 [netctl-auto(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl-auto.1)。
 
 ## 提示与技巧
 

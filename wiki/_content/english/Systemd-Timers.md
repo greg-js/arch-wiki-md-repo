@@ -30,7 +30,7 @@ Timers are *systemd* unit files with a suffix of `.timer`. Timers are like other
 *   **Realtime timers** (a.k.a. wallclock timers) activate on a calendar event, the same way that cronjobs do. The option `OnCalendar=` is used to define them.
 *   **Monotonic timers** activate after a time span relative to a varying starting point. They stop if the computer is temporarily suspended or shut down. There are number of different monotonic timers but all have the form: `On*Type*Sec=`. Common monotonic timers include `OnBootSec` and `OnActiveSec`.
 
-For a full explanation of timer options, see the [systemd.timer(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5). The argument syntax for calendar events and time spans is defined in [systemd.time(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.time.7).
+For a full explanation of timer options, see the [systemd.timer(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5). The argument syntax for calendar events and time spans is defined in [systemd.time(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.time.7).
 
 ## Service unit
 
@@ -102,7 +102,7 @@ When more specific dates and times are required, `OnCalendar` events uses the fo
 
 An asterisk may be used to specify any value and commas may be used to list possible values. Two values separated by `..` indicate a contiguous range.
 
-In the below example the service is run the first four days of each month at 12:00 PM, but *only* if that day is a Monday or a Tuesday. More information is available in [systemd.time(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.time.7).
+In the below example the service is run the first four days of each month at 12:00 PM, but *only* if that day is a Monday or a Tuesday. More information is available in [systemd.time(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.time.7).
 
 ```
 OnCalendar=Mon,Tue *-*-01..04 12:00:00
@@ -112,7 +112,7 @@ OnCalendar=Mon,Tue *-*-01..04 12:00:00
 **Tip:**
 
 *   `OnCalendar` time specifications can be tested in order to verify their validity and to calculate the next time the condition would elapse when used on a timer unit file with the `calendar` option of the *systemd-analyze* utility. For example, one can use `systemd-analyze calendar weekly` or `systemd-analyze calendar "Mon,Tue *-*-01..04 12:00:00"`.
-*   Special event expressions like `daily` and `weekly` refer to *specific start times* and thus any timers sharing such calendar events will start simultaneously. Timers sharing start events can cause poor system performance if the timers' services compete for system resources. The `RandomizedDelaySec` option in the `[Timer]` section avoids this problem by randomly staggering the start time of each timer. See [systemd.timer(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5).
+*   Special event expressions like `daily` and `weekly` refer to *specific start times* and thus any timers sharing such calendar events will start simultaneously. Timers sharing start events can cause poor system performance if the timers' services compete for system resources. The `RandomizedDelaySec` option in the `[Timer]` section avoids this problem by randomly staggering the start time of each timer. See [systemd.timer(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5).
 
 ## Transient .timer units
 
@@ -130,7 +130,7 @@ One can also specify a pre-existing service file that does not have a timer file
 
 ```
 
-See [systemd-run(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-run.1) for more information and examples.
+See [systemd-run(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-run.1) for more information and examples.
 
 ## As a cron replacement
 
@@ -141,7 +141,7 @@ Although [cron](/index.php/Cron "Cron") is arguably the most well-known job sche
 The main benefits of using timers come from each job having its own *systemd* service. Some of these benefits are:
 
 *   Jobs can be easily started independently of their timers. This simplifies debugging.
-*   Each job can be configured to run in a specific environment (see [systemd.exec(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.exec.5)).
+*   Each job can be configured to run in a specific environment (see [systemd.exec(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.exec.5)).
 *   Jobs can be attached to [cgroups](/index.php/Cgroups "Cgroups").
 *   Jobs can be set up to depend on other *systemd* units.
 *   Jobs are logged in the *systemd* journal for easy debugging.
@@ -203,7 +203,7 @@ Also, like with crontabs, a unified view of all scheduled jobs can be obtained w
 
 ## See also
 
-*   [systemd.timer(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5)
+*   [systemd.timer(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5)
 *   [Fedora Project wiki page](https://fedoraproject.org/wiki/Features/SystemdCalendarTimers) on *systemd* calendar timers
 *   [Gentoo wiki section](https://wiki.gentoo.org/wiki/Systemd#Timer_services) on *systemd* timer services
 *   **systemd-cron-next** — tool to generate timers/services from crontab and anacrontab files

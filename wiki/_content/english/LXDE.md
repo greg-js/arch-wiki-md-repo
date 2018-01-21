@@ -138,7 +138,7 @@ LXAppearance, provided by the [lxappearance](https://www.archlinux.org/packages/
 
 ### Digital clock applet time
 
-You can right click on the digital clock applet on the panel and set how it displays the current time using the strftime format - see [strftime(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/strftime.3) for details.
+You can right click on the digital clock applet on the panel and set how it displays the current time using the strftime format - see [strftime(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/strftime.3) for details.
 
 ### Font settings
 

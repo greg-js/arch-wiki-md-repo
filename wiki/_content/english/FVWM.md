@@ -158,13 +158,13 @@ The style argument can be one of the following:
 *   Solid - fill button a solid color.
 *   ColorSet - fill button with the ColorSet specified - takes an alpha argument between 0 and 100.
 *   Vector - draws a line pattern - using the keyword Vector is optional as this is a standard style.
-*   ?Gradient - fills the button with a gradient - see the Color Gradients section of [fvwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) for the syntax.
+*   ?Gradient - fills the button with a gradient - see the Color Gradients section of [fvwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) for the syntax.
 *   Pixmap - fills the button with a given pixmap - see also the following variants: AdjustedPixmap, ShrunkPixmap, StretchedPixmap, TiledPixmap.
 *   MiniIcon - fills the button with the window's mini icon.
 
 A number of vector styles are documented [here](http://fvwmforums.org/wiki/Config/VectorButtons/). You can also create your own vector buttons using this [vector buttons viewer](http://gromnitsky.users.sourceforge.net/js/fvwm-vector/). Finally, see [this page](http://fvwmforums.org/wiki/Decor/) for some example decoration configurations that use pixmaps, including imitations of Crux (a Sawfish theme), Mac OS and Windows 98.
 
-The flag affects the state for a button. Some examples of flags include *Raised*, *Sunk* and *Flat*. For more information, see [fvwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) and look for the ButtonStyle section.
+The flag affects the state for a button. Some examples of flags include *Raised*, *Sunk* and *Flat*. For more information, see [fvwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) and look for the ButtonStyle section.
 
 **Note:** To give the buttons the same background as the title, use the `UseTitleStyle` flag. Alternatively, specify your button backgrounds using the `ButtonStyle` command and then follow this with an `AddButtonStyle` command to specify the vector or pixmap image. `AddButtonStyle` takes the same syntax as `ButtonStyle`.
 
@@ -285,7 +285,7 @@ AddToFunc CreateMyMenu
 
 **Note:** Most styles can be negated with a `!`. For instance the style `Title` forces the window manager to give the window a title whilst `!Title` has the opposite effect.
 
-The `Style` command allows one to configure various aspects of the window manager itself and also to set behaviors for certain windows. The syntax is `Style *window-name* *stylename*`. The *window-name* argument can be a window name, class, title name or resource string. Use `*` to match all windows. See [fvwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) for all available styles - some examples are provided below:
+The `Style` command allows one to configure various aspects of the window manager itself and also to set behaviors for certain windows. The syntax is `Style *window-name* *stylename*`. The *window-name* argument can be a window name, class, title name or resource string. Use `*` to match all windows. See [fvwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) for all available styles - some examples are provided below:
 
 *   `Style "*" CascadePlacement` - make the window manager use the cascade placement algorithm for all new windows.
 *   `Style "Chromium" PositionPlacement center` - ensure that all new Chromium windows are placed in the center of the screen.
@@ -304,7 +304,7 @@ AddToFunc VolumeFunc
 
 ```
 
-One can also use conditional commands (see [fvwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) and look for the Conditional Commands section). For instance, suppose one wanted a function that would close all windows in the current page other than the one which has focus. That function can be defined as below:
+One can also use conditional commands (see [fvwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) and look for the Conditional Commands section). For instance, suppose one wanted a function that would close all windows in the current page other than the one which has focus. That function can be defined as below:
 
 ```
 AddToFunc CloseAllButThis
@@ -377,7 +377,7 @@ With the argument * the FvwmPager will show only one desk but it will always be 
 
 ```
 
-See [FvwmPager(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmPager.1) for a list of module commands.
+See [FvwmPager(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmPager.1) for a list of module commands.
 
 #### FvwmButtons
 
@@ -428,7 +428,7 @@ Note that a container is created by defining a certain number of columns and row
 
 **Tip:** To define containers in terms of pixel dimensions, ensure that the number of rows and columns in the buttons panel is equal to the pixel height and width respectively of the panel. So for a 300x200 panel set 300 columns and 200 rows.
 
-For a full list of options, see [FvwmButtons(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmButtons.1).
+For a full list of options, see [FvwmButtons(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmButtons.1).
 
 #### FvwmEvent
 
@@ -453,7 +453,7 @@ where `windowshade` is the event and `Lower` is the command to be executed when 
 
 ```
 
-For a full list of events, see [FvwmEvent(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmEvent.1).
+For a full list of events, see [FvwmEvent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmEvent.1).
 
 ### Colors
 
@@ -471,7 +471,7 @@ Colorsets in FVWM are a set of four colors (a foreground color, a background col
 
 All colorsets are identified by a number. Any numbering convention can be used; the fvwm-themes project documents one such convention that uses the first 40 colorsets (0-39). See [[5]](http://fvwm-themes.sourceforge.net/doc/colorsets).
 
-Colorsets can be created with the `ColorSet` command - syntax: `ColorSet *number* *options*`. See [fvwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) - the Colorsets section - for more information.
+Colorsets can be created with the `ColorSet` command - syntax: `ColorSet *number* *options*`. See [fvwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) - the Colorsets section - for more information.
 
 **Tip:** Using `Style "*" Colorset *num*` overrides the `Color` style and using `Style "*" HilightColorset *num*` overrides the `HilightFore` and `HilightBack` styles.
 
@@ -545,7 +545,7 @@ NumLock, CapsLock and ScrollLock can intefere with ClickToFocus as well as mouse
 
 ### Use ClickToFocus
 
-Ensure that [perl-tk](https://www.archlinux.org/packages/?name=perl-tk) and [perl-x11-protocol](https://www.archlinux.org/packages/?name=perl-x11-protocol) are installed. The use the following style command: `Style "*" ClickToFocus`. See [fvwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) for other focus behaviors.
+Ensure that [perl-tk](https://www.archlinux.org/packages/?name=perl-tk) and [perl-x11-protocol](https://www.archlinux.org/packages/?name=perl-x11-protocol) are installed. The use the following style command: `Style "*" ClickToFocus`. See [fvwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) for other focus behaviors.
 
 ### Window tiling
 

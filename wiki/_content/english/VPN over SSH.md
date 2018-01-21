@@ -43,9 +43,8 @@ $ cat /etc/systemd/network/vpn.netdev
 [NetDev]
 Name=tun5
 Kind=tun
-MTUBytes=1480
 
-[TUN]
+[Tun]
 User=vpn
 Group=network
 

@@ -86,7 +86,7 @@ To read input from a file use the `-f` flag:
 
 Note that any rules already loaded are not automatically flushed.
 
-See [nft(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for a complete list of all commands.
+See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for a complete list of all commands.
 
 ### Tables
 
@@ -105,7 +105,7 @@ To create one rule that applies to both IPv4 and IPv6, use `inet`. `inet` allows
 
 **Note:** `inet` does not work for `nat`-type chains, only for `filter`-type chains. ([source](http://www.spinics.net/lists/netfilter/msg56411.html))
 
-See the section `ADDRESS FAMILIES` in [nft(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for a complete description of address families.
+See the section `ADDRESS FAMILIES` in [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for a complete description of address families.
 
 In all of the following, `*family*` is optional, and if not specified is set to `ip`.
 
@@ -200,7 +200,7 @@ To add a base chain specify hook and priority values:
 
 `*type*` can be `filter`, `route`, or `nat`.
 
-For IPv4/IPv6/Inet address families `*hook*` can be `prerouting`, `input`, `forward`, `output`, or `postrouting`. See [nft(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for a list of hooks for other families.
+For IPv4/IPv6/Inet address families `*hook*` can be `prerouting`, `input`, `forward`, `output`, or `postrouting`. See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for a list of hooks for other families.
 
 `*priority*` takes an integer value. Chains with lower numbers are processed first and can be negative. [[1]](https://wiki.nftables.org/wiki-nftables/index.php/Configuring_chains#Base_chain_types)
 
@@ -293,7 +293,7 @@ If `*position*` is not specified, the rule is prepended to the chain.
 
 ##### Expressions
 
-Typically a `*statement*` includes some expression to be matched and then a verdict statement. Verdict statements include `accept`, `drop`, `queue`, `continue`, `return`, `jump *chain*`, and `goto *chain*`. Other statements than verdict statements are possible. See [nft(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for more information.
+Typically a `*statement*` includes some expression to be matched and then a verdict statement. Verdict statements include `accept`, `drop`, `queue`, `continue`, `return`, `jump *chain*`, and `goto *chain*`. Other statements than verdict statements are possible. See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for more information.
 
 There are various expressions available in nftables and, for the most part, coincide with their iptables counterparts. The most noticeable difference is that there are no generic or implicit matches. A generic match was one that was always available, such as `--protocol` or `--source`. Implicit matches were protocol-specific, such as `--sport` when a packet was determined to be TCP.
 
@@ -309,7 +309,7 @@ The following is an incomplete list of the matches available:
 *   sctp (SCTP protocol)
 *   ct (connection tracking)
 
-The following is an incomplete list of match arguments (for a more complete list, see [nft(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8)):
+The following is an incomplete list of match arguments (for a more complete list, see [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8)):
 
 ```
 meta:

@@ -42,7 +42,7 @@ $ su
 
 ```
 
-See [sudo(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8) or [su(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/su.1) for their usage.
+See [sudo(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8) or [su(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/su.1) for their usage.
 
 **Note:** Commands that should be run as the postgres user are prefixed by `[postgres]$` in this article.
 

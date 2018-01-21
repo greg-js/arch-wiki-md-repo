@@ -84,7 +84,7 @@ EndSection
 *   在创建配置文件时，你可能需要指定`Option "AccelMethod"`（加速方式），哪怕只是将他设定为默认的方式 （现在的默认加速方式为 `"sna"`）；否则 X 可能会崩溃。
 *   你可能会需要在配置文件中添加更多的`Section "Device"`（驱动部分）。在相应的文章中会提示你在何处添加。
 
-查看完整选项列表，在终端中输入[intel(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4)。
+查看完整选项列表，在终端中输入[intel(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4)。
 
 ## 加载
 

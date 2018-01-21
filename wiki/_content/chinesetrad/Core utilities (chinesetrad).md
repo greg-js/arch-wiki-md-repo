@@ -104,7 +104,7 @@ $ iconv -f ISO-8859-15 -t UTF-8 foo >foo.utf
 
 ```
 
-更多資訊請參閱 [iconv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) 。
+更多資訊請參閱 [iconv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) 。
 
 ## ip
 

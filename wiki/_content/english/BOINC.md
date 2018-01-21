@@ -135,9 +135,9 @@ Some projects provide only 32bit applications which may require 32bit libraries 
 
 	[lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc), [lib32-glib2](https://www.archlinux.org/packages/?name=lib32-glib2)
 
-	To show graphics (e.g. Several projects of WCG, Climateprediction)
+	To show graphics (e.g. Several projects of WCG, Climateprediction, Quake-Catcher Network)
 
-	[lib32-pango](https://www.archlinux.org/packages/?name=lib32-pango), [lib32-libxi](https://www.archlinux.org/packages/?name=lib32-libxi), [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa), [lib32-libjpeg6-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg6-turbo), and [lib32-libxmu](https://www.archlinux.org/packages/?name=lib32-libxmu)
+	[lib32-pango](https://www.archlinux.org/packages/?name=lib32-pango), [lib32-libxi](https://www.archlinux.org/packages/?name=lib32-libxi), [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa), [lib32-libjpeg6-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg6-turbo), [lib32-libxmu](https://www.archlinux.org/packages/?name=lib32-libxmu), [lib32-glu](https://www.archlinux.org/packages/?name=lib32-glu) and [lib32-freeglut](https://www.archlinux.org/packages/?name=lib32-freeglut)
 
 ## Troubleshooting
 

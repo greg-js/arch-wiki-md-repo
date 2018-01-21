@@ -62,64 +62,64 @@ Before running rTorrent, copy the example configuration file `/usr/share/doc/rto
 The values for the following options are dependent on the system's hardware and Internet connection speed. To find the optimal values read: [Optimize Your BitTorrent Download Speed](http://torrentfreak.com/optimize-your-BitTorrent-download-speed)
 
 ```
-min_peers = 40
-max_peers = 52
+throttle.min_peers.normal.set = 40
+throttle.max_peers.normal.set = 52
 
-min_peers_seed = 10
-max_peers_seed = 52
+throttle.min_peers.seed.set = 10
+throttle.max_peers.seed.set = 52
 
-max_uploads = 8
+throttle.max_uploads.set = 8
 
-download_rate = 200
-upload_rate = 28
-
-```
-
-The `check_hash` option executes a hash check when rTorrent is started. It checks for errors in your completed files.
+throttle.global_down.max_rate.set = 200
+throttle.global_up.max_rate.set = 28
 
 ```
-check_hash = yes
+
+The `pieces.hash.on_completion.set` option executes a hash check when rTorrent is started. It checks for errors in your completed files.
+
+```
+pieces.hash.on_completion.set = yes
 
 ```
 
 ### Create and manage files
 
-The `directory` option will determine where your torrent data will be saved (could be a relative path):
+The `directory.default.set` option will determine where your torrent data will be saved (could be a relative path):
 
 ```
-directory = ~/downloaded
-
-```
-
-The `session` option allows rTorrent to save the progess of your torrents. It is recommended to create a directory in home directory (e.g. `mkdir ~/.rtorrent.session`).
-
-```
-session = ~/.rtorrent.session
+directory.default.set = ~/downloaded
 
 ```
 
-The `schedule` option has rTorrent watch a particular directory for new torrent files. Saving a torrent file to this directory will automatically start the download. Remember to create the directory that will be watched (e.g. `mkdir ~/watch`). Also, be careful when using this option as rTorrent will move the torrent file to your session folder and rename it to its hash value.
+The `session.path.set` option allows rTorrent to save the progess of your torrents. It is recommended to create a directory in home directory (e.g. `mkdir ~/.rtorrent.session`).
 
 ```
-schedule = watch_directory,5,5,load_start=/home/*user*/watch/*.torrent
-schedule = untied_directory,5,5,stop_untied=
-schedule = tied_directory,5,5,start_tied=
+session.path.set = ~/.rtorrent.session
 
 ```
 
-The following `schedule` option is intended to stop rTorrent from downloading data when disk space is low.
+The `schedule2` option has rTorrent watch a particular directory for new torrent files. Saving a torrent file to this directory will automatically start the download. Remember to create the directory that will be watched (e.g. `mkdir ~/watch`). Also, be careful when using this option as rTorrent will move the torrent file to your session folder and rename it to its hash value.
 
 ```
-schedule = low_diskspace,5,60,close_low_diskspace=100M
+schedule2 = watch_directory,5,5,load_start=/home/*user*/watch/*.torrent
+schedule2 = untied_directory,5,5,stop_untied=
+schedule2 = tied_directory,5,5,start_tied=
+
+```
+
+The following `schedule2` option is intended to stop rTorrent from downloading data when disk space is low.
+
+```
+schedule2 = low_diskspace,5,60,((close_low_diskspace,100M))
 
 ```
 
 ### Port configuration
 
-The `port_range` option sets which port(s) to use for listening. It is recommended to use a port that is higher than 49152 (see: [List of port numbers](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers "wikipedia:List of TCP and UDP port numbers")). Although, rTorrent allows a range of ports, a single port is recommended.
+The `network.port_range.set` option sets which port(s) to use for listening. It is recommended to use a port that is higher than 49152 (see: [List of port numbers](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers "wikipedia:List of TCP and UDP port numbers")). Although, rTorrent allows a range of ports, a single port is recommended.
 
 ```
-port_range = 49164-49164
+network.port_range.set = 49164-49164
 
 ```
 
@@ -127,28 +127,28 @@ Additionally, make sure port forwarding is enabled for the proper port(s) (see: 
 
 ### Additional settings
 
-The `encryption` option enables or disables encryption. It is very important to enable this option, not only for yourself, but also for your peers in the torrent swarm. Some users need to obscure their bandwidth usage from their ISP. And it does not hurt to enable it even if you do not need the added security.
+The `protocol.encryption.set` option enables or disables encryption. It is very important to enable this option, not only for yourself, but also for your peers in the torrent swarm. Some users need to obscure their bandwidth usage from their ISP. And it does not hurt to enable it even if you do not need the added security.
 
 ```
-encryption = allow_incoming,try_outgoing,enable_retry
+protocol.encryption.set = allow_incoming,try_outgoing,enable_retry
 
 ```
 
 It is also possible to force all connections to use encryption. However, be aware that this stricter rule will reduce your client's availability:
 
 ```
-encryption = require,require_RC4,allow_incoming,try_outgoing
+protocol.encryption.set = require,require_RC4,allow_incoming,try_outgoing
 
 ```
 
 See also [Wikipedia:BitTorrent Protocol Encryption](https://en.wikipedia.org/wiki/BitTorrent_Protocol_Encryption "wikipedia:BitTorrent Protocol Encryption").
 
-This final `dht` option enables [DHT](https://en.wikipedia.org/wiki/Distributed_hash_table "wikipedia:Distributed hash table") support. DHT is common among public trackers and will allow the client to acquire more peers.
+This final `dht.mode.set` option enables [DHT](https://en.wikipedia.org/wiki/Distributed_hash_table "wikipedia:Distributed hash table") support. DHT is common among public trackers and will allow the client to acquire more peers.
 
 ```
-dht = auto
-dht_port = 6881
-peer_exchange = yes
+dht.mode.set = auto
+dht.port.set = 6881
+protocol.pex.set= yes
 
 ```
 
@@ -608,7 +608,7 @@ All Live Nudibranches: Done
 rTorrent does not list the active tab properly by default, add this line to your `.rtorrent.rc` to show only active torrents
 
 ```
-schedule = filter_active,30,30,"view_filter = active,\"or={d.get_up_rate=,d.get_down_rate=}\""
+schedule2 = filter_active,30,30,"view_filter = active,\"or={d.get_up_rate=,d.get_down_rate=}\""
 
 ```
 
@@ -777,7 +777,7 @@ Use the various packages available in the AUR, or alternatively create a package
 
 Set "pyro.extended" to 1 in your rTorrent configuration file to activate rTorrent-PS features.
 
- `system.method.insert = pyro.extended, value|const, 1` 
+ `method.insert = pyro.extended, value|const, 1` 
 
 See rtorrent-ps templates of the [pimp-my-box](https://github.com/pyroscope/pimp-my-box/tree/master/roles/rtorrent-ps/templates/rtorrent/rtorrent.d) repository for additional configuration examples. Be aware they may require PyroScope command line utilities to work.
 

@@ -1,3 +1,9 @@
+Artigos relacionados
+
+*   [Browser Plugins](/index.php/Browser_Plugins "Browser Plugins")
+*   [Firefox](/index.php/Firefox "Firefox")
+*   [Chromium](/index.php/Chromium "Chromium")
+
 [Opera](http://www.opera.com) é um navegador da web livre e gratuito desenvolvido desde de 1994 pela empresa norueguesa [Opera Software](https://pt.wikipedia.org/wiki/Opera_Software). Ele é conhecido por ser o primeiro a trazer novos recursos de navegação para o mundo que se tornaram comuns em todos os navegadores da Web, como navegação por abas e construído em pesquisa.
 
 Opera continua a inovar com o seu cliente de email integrado, de um clique bookmarking, pilhas guia (uma forma de organizar suas abas) e suporte muito bom para recursos [HTML5](https://pt.wikipedia.org/wiki/HTML5).
@@ -42,7 +48,6 @@ O navegador Opera pode ser [instalado](/index.php/Pacman "Pacman") através do p
 Versões em desenvolvimento podem ser encontradas no [AUR](/index.php/AUR "AUR"):
 
 *   [opera-beta](https://aur.archlinux.org/packages/opera-beta/) - Uma versão beta.
-*   [opera-next](https://aur.archlinux.org/packages/opera-next/) - Uma versão alfa/em desenvolvimento.
 
 ## Plugins
 
@@ -139,7 +144,7 @@ $ OPERAPLUGINWRAPPER_PRIORITY=0 OPERA_KEEP_BLOCKED_PLUGIN=1 opera &
 
 ### Perfil na tmpfs
 
-Realocar o perfil do navegador para um sistema de arquivos [tmpfs](/index.php/Fstab#_tmpfs "Fstab") , incluindo `/tmp` causa melhorias na resposta da aplicação com o perfil inteiro armazenado na memória RAM. Outra vantagem é a redução da leitura do disco e das operações de gravação, de que beneficia o mais SSDs.
+Realocar o perfil do navegador para um sistema de arquivos [tmpfs](/index.php/Tmpfs "Tmpfs"), incluindo `/tmp` causa melhorias na resposta da aplicação com o perfil inteiro armazenado na memória RAM. Outra vantagem é a redução da leitura do disco e das operações de gravação, de que beneficia o mais SSDs.
 
 Atualmente existem duas maneiras de fazer isso:
 

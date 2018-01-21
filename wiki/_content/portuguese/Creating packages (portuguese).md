@@ -123,7 +123,7 @@ Há cinco funções, listadas aqui na ordem em que elas são executadas. Com exc
 
 Nessa função, comandos que são usados para preparar fontes para compilação são executados, tal como [patching](/index.php/Patching_in_ABS "Patching in ABS"). Essa função é executada após a extração do pacote, antes do [pkgver()](#pkgver.28.29) e a função de compilação. Se a extração for ignorada (`makepkg -e`), então `prepare()` não é executada.
 
-**Nota:** (De [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) A função é executada no modo `bash -e`, o que significa que qualquer comando que sair com um status não-zero fará com que a função saia.
+**Nota:** (De [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) A função é executada no modo `bash -e`, o que significa que qualquer comando que sair com um status não-zero fará com que a função saia.
 
 #### pkgver()
 

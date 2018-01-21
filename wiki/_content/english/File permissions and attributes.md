@@ -60,13 +60,13 @@ Each of the three permission triads (`rwx` in the example above) can be made up 
 | Write permission (second character) | `-` | The file cannot be modified. | The directory's contents cannot be modified. |
 | `w` | The file can be modified. | The directory's contents can be modified (create new files or folders; rename or delete existing files or folders); requires the execute permission to be also set, otherwise this permission has no effect. |
 | Execute permission (third character) | `-` | The file cannot be executed. | The directory cannot be accessed with [cd](/index.php/Cd "Cd"). |
-| `x` | The file can be executed. | The directory can be accessed with [cd](/index.php/Cd "Cd"); this is the only permission bit that in practice can be considered to be "inherited" from the ancestor directories, in fact if *any* folder in the path does not have the `x` bit set, the final file or folder cannot be accessed either, regardless of its permissions; see [path_resolution(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/path_resolution.7) for more information. |
+| `x` | The file can be executed. | The directory can be accessed with [cd](/index.php/Cd "Cd"); this is the only permission bit that in practice can be considered to be "inherited" from the ancestor directories, in fact if *any* folder in the path does not have the `x` bit set, the final file or folder cannot be accessed either, regardless of its permissions; see [path_resolution(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/path_resolution.7) for more information. |
 | `s` | The [setuid](https://en.wikipedia.org/wiki/setuid "w:setuid") bit when found in the **u**ser triad; the **setgid** bit when found in the **g**roup triad; it is not found in the **o**thers triad; it also implies that `x` is set. |
 | `S` | Same as `s`, but `x` is not set; rare on regular files, and useless on folders. |
 | `t` | The [sticky](https://en.wikipedia.org/wiki/sticky_bit "w:sticky bit") bit; it can only be found in the **o**thers triad; it also implies that `x` is set. |
 | `T` | Same as `t`, but `x` is not set; rare on regular files, and useless on folders. |
 
-See `info Coreutils -n "Mode Structure"` and [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) for more details.
+See `info Coreutils -n "Mode Structure"` and [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) for more details.
 
 ### Examples
 
@@ -434,7 +434,7 @@ To remove an attribute on a file just change `+` to `-`.
 
 ## Extended attributes
 
-From [attr(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/attr.5): "Extended attributes are name:value pairs associated permanently with files and directories". There are four extended attribute classes: security, system, trusted and user.
+From [attr(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/attr.5): "Extended attributes are name:value pairs associated permanently with files and directories". There are four extended attribute classes: security, system, trusted and user.
 
 **Warning:** By default, extended attributes are not preserved by [cp](/index.php/Cp "Cp"), [rsync](/index.php/Rsync "Rsync"), and other similar programs.
 

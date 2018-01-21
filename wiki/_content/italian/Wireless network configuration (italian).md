@@ -741,7 +741,7 @@ Alcuni utenti potrebbero dover specificare l'opzione `countrycode` al caricament
 
 ```
 
-Si possono verificare le impostazioni con il comando {{ic|iwlist}. Si veda [iwlist(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iwlist.8) e la [pagina](http://madwifi-project.org/wiki/UserDocs/CountryCode) relativa ai CountryCode sul wiki di MadWifi. Per applicare queste impostazioni automaticamente al boot, si aggiunga la seguente riga ad `/etc/modprobe.d/modprobe.conf`:
+Si possono verificare le impostazioni con il comando {{ic|iwlist}. Si veda [iwlist(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iwlist.8) e la [pagina](http://madwifi-project.org/wiki/UserDocs/CountryCode) relativa ai CountryCode sul wiki di MadWifi. Per applicare queste impostazioni automaticamente al boot, si aggiunga la seguente riga ad `/etc/modprobe.d/modprobe.conf`:
 
 ```
 options ath_pci countrycode=528

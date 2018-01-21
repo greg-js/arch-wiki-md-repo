@@ -51,11 +51,11 @@ Additional third-party skins can be installed separately:
 
 	[candy256.ini](https://raw.githubusercontent.com/izmntuk/archiso/testing/configs/alter/airootfs/usr/share/mc/skins/candy256.ini) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
-See also `**Skins**` in [mc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1).
+See also `**Skins**` in [mc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1).
 
 ## Usage
 
-The below section provides a short overview on usage of Midnight commander. References to [mc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1) and the Help function (`F1`, available in every dialog) are made in this article as `**Section**`.
+The below section provides a short overview on usage of Midnight commander. References to [mc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1) and the Help function (`F1`, available in every dialog) are made in this article as `**Section**`.
 
 **Tip:** All hints are available in `/usr/share/mc/hints/`.
 
@@ -71,7 +71,7 @@ Keybindings are generally similar to [GNU Emacs](/index.php/GNU_Emacs "GNU Emacs
 
 These can be called via the *mc* interface (with *Use internal* enabled in *Options > Configuration), or separately as symbolic links to the* mc *binary.*
 
-*   *mcedit* - Text and binary file editor, with regex replace, syntax highlighting, macros and shell piping, see [mcedit(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mcedit.1)
+*   *mcedit* - Text and binary file editor, with regex replace, syntax highlighting, macros and shell piping, see [mcedit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mcedit.1)
 *   *mcview* - Text and hex viewer with goto marks and regex search
 *   *mcdiff* - Compares and edits two files in-place (`C-x d`)
 
@@ -186,7 +186,7 @@ export MC_XDG_OPEN=~/bin/nohup-open
 
 ### Find file shows no results
 
-If the *Find file* dialog (accessible with `Alt+?`) shows no results, check the current directory for symbolic links. *Find file* does not follow symbolic links, so use bind mounts (see [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8)) instead, or the *External panelize* command.
+If the *Find file* dialog (accessible with `Alt+?`) shows no results, check the current directory for symbolic links. *Find file* does not follow symbolic links, so use bind mounts (see [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8)) instead, or the *External panelize* command.
 
 ### Broken shortcuts
 
@@ -244,5 +244,5 @@ Another common workaround is to set `TERM=xterm`, however this causes other issu
 
 ## See also
 
-*   [mc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1)
+*   [mc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1)
 *   [Draft of documentation](https://midnight-commander.org/wiki/doc)

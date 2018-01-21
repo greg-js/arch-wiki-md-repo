@@ -629,7 +629,7 @@ Now go back to the System Settings page and carefully add the necessary resource
 
 ### Empty IMAP inbox in KMail
 
-For some IMAP accounts, kmail will show the inbox as a container with all other folders of this account inside. Kmail does not show messages in the inbox container but in all other subfolders, see [KDE Bug 284172](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server side subscribition in the kmail account settings.
+For some IMAP accounts, kmail will show the inbox as a container with all other folders of this account inside. Kmail does not show messages in the inbox container but in all other subfolders, see [KDE Bug 284172](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server side subscription in the kmail account settings.
 
 ### Getting current state of KWin for support and debug purposes
 

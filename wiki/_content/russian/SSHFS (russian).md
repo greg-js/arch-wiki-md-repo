@@ -86,7 +86,7 @@ $ sshfs myuser@mycomputer:/remote/path /local/path -o idmap=user
 
 Если вам требуется более точный контроль над переводом идентификаторов между локальным и удаленным пользователем, то обратите внимание на `idmap=file`, `uidfile` и `gidfile`.
 
-Полный список опций вы можете найти в [sshfs(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sshfs.1).
+Полный список опций вы можете найти в [sshfs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshfs.1).
 
 ## Изменение корневого каталога
 
@@ -105,7 +105,7 @@ Match User "someuser"
 
 **Примечание:** Владельцем chroot директории **должен** быть суперпользователь, иначе вы не сможете подключиться.
 
-Смотрите [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot"). Также обратите внимание в [sshd_config(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5) на `Match`, `ChrootDirectory` и `ForceCommand`.
+Смотрите [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot"). Также обратите внимание в [sshd_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5) на `Match`, `ChrootDirectory` и `ForceCommand`.
 
 ## Автомонтирование
 

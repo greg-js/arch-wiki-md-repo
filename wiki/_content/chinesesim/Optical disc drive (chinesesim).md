@@ -451,7 +451,7 @@ $ growisofs -M */dev/sr0* -V "*ARCHIVE_2013_07_28*" -r -J *./more_for_iso*
 
 ```
 
-For details see the [growisofs(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/growisofs.1) manual and the manuals of *mkisofs* and *xorrisofs*.
+For details see the [growisofs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/growisofs.1) manual and the manuals of *mkisofs* and *xorrisofs*.
 
 #### Multi-session by xorriso
 

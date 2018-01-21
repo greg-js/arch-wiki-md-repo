@@ -72,7 +72,7 @@ CRLs are also signed with the CA key, but they only dictate information regardin
 
 The OpenSSL configuration file, conventionally placed in `/etc/ssl/openssl.cnf`, may appear complicated at first. This is not remedied by the fact that there is no *include* directive to split configuration into a modal setup. Nevertheless, this section covers the essential settings.
 
-Remember that variables may be expanded in assignments, much like how shell scripts work. For a more thorough explanation of the configuration file format, see [config(5ssl)](http://jlk.fjfi.cvut.cz/arch/manpages/man/config.5ssl). In some operating systems, this [man page](/index.php/Man_page "Man page") is named config(5) or openssl-config(5). Sometimes, it may not even be available through the man hierarchy at all, for example, it may be placed in the following location `/usr/share/openssl`.
+Remember that variables may be expanded in assignments, much like how shell scripts work. For a more thorough explanation of the configuration file format, see [config(5ssl)](https://jlk.fjfi.cvut.cz/arch/manpages/man/config.5ssl). In some operating systems, this [man page](/index.php/Man_page "Man page") is named config(5) or openssl-config(5). Sometimes, it may not even be available through the man hierarchy at all, for example, it may be placed in the following location `/usr/share/openssl`.
 
 ### Global variables
 

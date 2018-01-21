@@ -66,7 +66,7 @@
 
 В большом количестве случаев базовая процедура установки создает работающую конфигурацию сети. Чтобы это проверить, используйте следующую команду:
 
-**Примечание:** Опция `-c 3` задает количество отправляемых запросов (три). Для получения дополнительной информации смотрите страницу справочного руководства [ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8)
+**Примечание:** Опция `-c 3` задает количество отправляемых запросов (три). Для получения дополнительной информации смотрите страницу справочного руководства [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8)
  `$ ping -c 3 yandex.ru` 
 ```
 PING yandex.ru (93.158.134.11) 56(84) bytes of data.
@@ -112,7 +112,7 @@ rtt min/avg/max/mdev = 14.840/15.917/17.788/1.335 ms
 
 Эта команда создаст запись `*моеимяузла*` в файле `/etc/hostname`.
 
-Для получения дополнительной информации смотрите страницы справочного руководства [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) и [hostnamectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1).
+Для получения дополнительной информации смотрите страницы справочного руководства [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) и [hostnamectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1).
 
 Добавьте то же самое имя узла в `/etc/hosts`:
 
@@ -298,7 +298,7 @@ ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_
 
 **Примечание:** Маска подсети была указана при помощи [бесклассовой адресации](https://en.wikipedia.org/wiki/ru:%D0%91%D0%B5%D1%81%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0%D1%86%D0%B8%D1%8F "wikipedia:ru:Бесклассовая адресация")
 
-Чтобы увидеть список всех опций, смотрите страницу справочного руководства [ip(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip.7).
+Чтобы увидеть список всех опций, смотрите страницу справочного руководства [ip(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.7).
 
 Добавьте ваш IP-адрес шлюза, как здесь:
 

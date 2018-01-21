@@ -61,7 +61,7 @@ See [cron#Cronie](/index.php/Cron#Cronie "Cron"), [cron](/index.php/Cron "Cron")
 
 ### Incron
 
-To automatically create commits on **every** file modification inside `/etc/`, use [incron](https://www.archlinux.org/packages/?name=incron). It utilizes native filesystem signalling through [inotify(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/inotify.7).
+To automatically create commits on **every** file modification inside `/etc/`, use [incron](https://www.archlinux.org/packages/?name=incron). It utilizes native filesystem signalling through [inotify(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/inotify.7).
 
 See: [[1]](http://inotify.aiken.cz/?section=incron&page=doc&lang=en), [[2]](https://linux.die.net/man/8/incrond)
 

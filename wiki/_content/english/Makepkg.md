@@ -39,7 +39,7 @@ Related articles
 
 ## Configuration
 
-See [makepkg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5) for details on configuration options for *makepkg*.
+See [makepkg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5) for details on configuration options for *makepkg*.
 
 The system configuration is available in `/etc/makepkg.conf`, but user-specific changes can be made in `$XDG_CONFIG_HOME/pacman/makepkg.conf` or `~/.makepkg.conf`. It is recommended to review the configuration prior to building packages.
 
@@ -163,7 +163,7 @@ The [make](https://www.archlinux.org/packages/?name=make) build system uses the 
 
 Users with multi-core/multi-processor systems can specify the number of jobs to run simultaneously. This can be accomplished with the use of *nproc* to determine the number of available processors, e.g. `MAKEFLAGS="-j$(nproc)"`. Some [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") specifically override this with `-j1`, because of race conditions in certain versions or simply because it is not supported in the first place. Packages that fail to build because of this should be [reported](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") on the bug tracker (or in the case of [AUR](/index.php/AUR "AUR") packages, to the package maintainer) after making sure that the error is indeed being caused by your `MAKEFLAGS`.
 
-See [make(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/make.1) for a complete list of available options.
+See [make(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/make.1) for a complete list of available options.
 
 #### Building from files in memory
 

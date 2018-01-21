@@ -50,7 +50,7 @@ Related articles
 
 ## systemd 基本工具
 
-查看和控制systemd的主要命令是`systemctl`。該命令可用查看系統狀態和管理系統及服務。詳見[systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)。
+查看和控制systemd的主要命令是`systemctl`。該命令可用查看系統狀態和管理系統及服務。詳見[systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)。
 
 [Template:小貼士](/index.php?title=Template:%E5%B0%8F%E8%B2%BC%E5%A3%AB&action=edit&redlink=1 "Template:小貼士 (page does not exist)")
 
@@ -93,7 +93,7 @@ $ systemctl list-unit-files
 
 ### 使用單元
 
-一个單元（Unit）的設定檔可以描述如下內容之一：系統服務（`.service`）、掛載點（`.mount`）、sockets（`.sockets`） 、系統設備（`.device`）、交換分割區（`.swap`）、檔案路徑（`.path`）、啟動目標（`.target`）、由 systemd 管理的計時器（`.timer`）。請參考 [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5)。
+一个單元（Unit）的設定檔可以描述如下內容之一：系統服務（`.service`）、掛載點（`.mount`）、sockets（`.sockets`） 、系統設備（`.device`）、交換分割區（`.swap`）、檔案路徑（`.path`）、啟動目標（`.target`）、由 systemd 管理的計時器（`.timer`）。請參考 [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5)。
 
 使用 `systemctl` 控制單元時，通常需要使用單元檔案的全名，包括附檔名（例如 `sshd.service`）。但是有些單元可以在`systemctl`中使用簡寫方式。
 
@@ -107,7 +107,7 @@ $ systemctl list-unit-files
 
 **Tip:**
 
-*   下面的大部分命令都可以跟多个單元名, 詳細資訊常見 [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)。
+*   下面的大部分命令都可以跟多个單元名, 詳細資訊常見 [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)。
 *   從[systemd 220版本](https://github.com/systemd/systemd/blob/master/NEWS#L323-L326)開始, `systemctl`命令在`enable`、`disable`和`mask`子命令中增加了`--now`選項，可以實現激活的同時啟動服務，取消激活的同时停止服務。
 *   一个軟體包可能會提供多个不同的單元。如果你已经安裝了軟體包，可以通过`pacman -Qql *package* | grep systemd`命令檢查這個軟體包提供了哪些單元。
 
@@ -244,9 +244,9 @@ $ systemctl hybrid-sleep
 *   `/etc/systemd/system/`: 系統管理員安裝的單元
 
 *   當`systemd`執行在[使用者模式](/index.php/Systemd/User#How_it_works "Systemd/User")下时，使用的載入路徑是完全不同的。
-*   systemd 單元名稱仅能包含 ASCII 字符, 下劃線和點號. 其它字符需要用 C-style "\x2d" 替換. 參閱 [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) 和 [systemd-escape(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-escape.1).}}
+*   systemd 單元名稱仅能包含 ASCII 字符, 下劃線和點號. 其它字符需要用 C-style "\x2d" 替換. 參閱 [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) 和 [systemd-escape(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-escape.1).}}
 
-單元檔的語法，可以參考系統中已經安裝的單元，也可以參考[systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)中的[EXAMPLES章節](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples)。
+單元檔的語法，可以參考系統中已經安裝的單元，也可以參考[systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)中的[EXAMPLES章節](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples)。
 
 [Template:小貼士](/index.php?title=Template:%E5%B0%8F%E8%B2%BC%E5%A3%AB&action=edit&redlink=1 "Template:小貼士 (page does not exist)")
 
@@ -396,7 +396,7 @@ w /proc/acpi/wakeup - - - - USBE
 
 ```
 
-詳情參見`systemd-tmpfiles(8)` 和 [tmpfiles.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5)。
+詳情參見`systemd-tmpfiles(8)` 和 [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5)。
 
 **注意:** 該方法不能向 `/sys` 中的設定檔加入參數，因為 `systemd-tmpfiles-setup` 有可能在相關模組載入前運行。這種情況下，需要首先通過 `modinfo <模組名>` 確認需要的參數，並在 [`/etc/modprobe.d` 下的一个檔案](/index.php/Kernel_modules#Options "Kernel modules")中設置改參數。另外，還可以使用 [udev 規則](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#udev.E8.A6.8F.E5.89.87 "Udev (简体中文)")，在設備就緒時設定相應屬性。
 
@@ -445,7 +445,7 @@ systemd 提供了自己的日誌系統（logging system），稱為 [journald](/
 *   顯示內核環快取訊息r: `# journalctl -k` 
 *   Show auth.log equivalent by filtering on syslog facility: `# journalctl -f -l SYSLOG_FACILITY=10` 
 
-詳情請參閱[journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1)、[systemd.journal-fields(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7)。
+詳情請參閱[journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1)、[systemd.journal-fields(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7)。
 
 ### 日誌大小的限制
 
@@ -453,7 +453,7 @@ systemd 提供了自己的日誌系統（logging system），稱為 [journald](/
 
  `/etc/systemd/journald.conf`  `SystemMaxUse=50M` 
 
-詳情請參考 [journald.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5).
+詳情請參考 [journald.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5).
 
 ### 配合 syslog 使用
 

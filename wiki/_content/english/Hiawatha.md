@@ -202,6 +202,8 @@ A [systemd timer](/index.php/Systemd/Timers "Systemd/Timers") can be used for th
 ```
 [Unit]
 Description=Renew Let's Encrypt certificates
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 Type=oneshot

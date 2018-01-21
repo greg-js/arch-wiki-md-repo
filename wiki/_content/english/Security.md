@@ -149,7 +149,7 @@ password required pam_unix.so use_authtok sha512 shadow
 
 The `password required pam_unix.so use_authtok` instructs the *pam_unix* module to not prompt for a password but rather to use the one provided by *pam_cracklib*.
 
-You can refer to the [pam_cracklib(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pam_cracklib.8) and [pam_unix(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pam_unix.8) man pages for more information.
+You can refer to the [pam_cracklib(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_cracklib.8) and [pam_unix(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_unix.8) man pages for more information.
 
 ## Storage
 

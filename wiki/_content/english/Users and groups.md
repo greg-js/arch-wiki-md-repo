@@ -98,7 +98,7 @@ List files owned by a user or group with the *find* utility:
 
 A file's owning user and group can be changed with the *chown* (change owner) command. A file's access permissions can be changed with the *chmod* (change mode) command.
 
-See [chown(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), and [Linux file permissions](http://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions) for additional detail.
+See [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), and [Linux file permissions](http://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions) for additional detail.
 
 ## File list
 
@@ -114,7 +114,7 @@ See [chown(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](ht
 
 ## User management
 
-To list users currently logged on the system, the *who* command can be used. To list all existing user accounts including their properties stored in the [user database](#User_database), run `passwd -Sa` as root. See [passwd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) for the description of the output format.
+To list users currently logged on the system, the *who* command can be used. To list all existing user accounts including their properties stored in the [user database](#User_database), run `passwd -Sa` as root. See [passwd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) for the description of the output format.
 
 To add a new user, use the *useradd* command:
 
@@ -132,7 +132,7 @@ To add a new user, use the *useradd* command:
 
 **Note:** The password for the newly created user must then be defined, using *passwd* as shown in [#Example adding a user](#Example_adding_a_user).
 
-When the login shell is intended to be non-functional, for example when the user account is created for a specific service, `/usr/bin/nologin` may be specified in place of a regular shell to politely refuse a login (see [nologin(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
+When the login shell is intended to be non-functional, for example when the user account is created for a specific service, `/usr/bin/nologin` may be specified in place of a regular shell to politely refuse a login (see [nologin(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
 
 ### Example adding a user
 
@@ -324,11 +324,11 @@ The *pwck* command can be used to verify the integrity of the user database. It 
 
 ```
 
-**Note:** Arch Linux defaults of the files are created as *.pacnew* files by new releases of the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package. Unless Pacman outputs related messages for action, these *.pacnew* files can, and should, be disregarded/removed. New required default users and groups are added or re-added as needed by [systemd-sysusers(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
+**Note:** Arch Linux defaults of the files are created as *.pacnew* files by new releases of the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package. Unless Pacman outputs related messages for action, these *.pacnew* files can, and should, be disregarded/removed. New required default users and groups are added or re-added as needed by [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
 
 ## Group management
 
-`/etc/group` is the file that defines the groups on the system (see [group(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) for details).
+`/etc/group` is the file that defines the groups on the system (see [group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) for details).
 
 Display group membership with the `groups` command:
 

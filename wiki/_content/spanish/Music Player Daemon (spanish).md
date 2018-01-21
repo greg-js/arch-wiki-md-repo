@@ -564,7 +564,7 @@ begin
 end
 ```
 
-Para mas información de mpc ejecute [mpc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mpc.1).
+Para mas información de mpc ejecute [mpc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpc.1).
 
 ### Control de MPD por medio del teléfono con Bluetooth
 

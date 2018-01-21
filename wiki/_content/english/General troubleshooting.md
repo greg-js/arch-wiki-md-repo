@@ -290,7 +290,7 @@ See [Pacman#Troubleshooting](/index.php/Pacman#Troubleshooting "Pacman") for gen
 
 *fuser* is a command-line utility for identifying processes using resources such as files, filesystems and TCP/UDP ports.
 
-*fuser* is provided by the [psmisc](https://www.archlinux.org/packages/?name=psmisc) package, which should be already installed as part of the [base](https://www.archlinux.org/groups/x86_64/base/) group. See [fuser(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1) for detail.
+*fuser* is provided by the [psmisc](https://www.archlinux.org/packages/?name=psmisc) package, which should be already installed as part of the [base](https://www.archlinux.org/groups/x86_64/base/) group. See [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1) for detail.
 
 ## Session permissions
 

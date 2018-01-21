@@ -29,11 +29,6 @@ This article was created to provide information on how to get Arch installed on 
     *   [3.5 Installing Arch Linux](#Installing_Arch_Linux)
         *   [3.5.1 Preparing the installation media](#Preparing_the_installation_media)
         *   [3.5.2 Booting the installation media](#Booting_the_installation_media)
-        *   [3.5.3 Alternative installation, Install Arch Linux in addition to Chrome OS](#Alternative_installation.2C_Install_Arch_Linux_in_addition_to_Chrome_OS)
-            *   [3.5.3.1 Re-partition the drive](#Re-partition_the_drive)
-            *   [3.5.3.2 Fixing the filesystem](#Fixing_the_filesystem)
-            *   [3.5.3.3 Continue the installation process](#Continue_the_installation_process)
-            *   [3.5.3.4 Choosing between Arch Linux and Chrome OS](#Choosing_between_Arch_Linux_and_Chrome_OS)
 *   [4 Post installation configuration](#Post_installation_configuration)
     *   [4.1 Patched kernels](#Patched_kernels)
     *   [4.2 Video driver](#Video_driver)
@@ -145,7 +140,7 @@ After you have enabled the Developer Mode you will need to access the superuser 
 If you have not configured Chrome OS, just press `Ctrl + Alt + F2` (F2 is the "forward" arrow on the top row, →), you will see a login prompt.
 
 *   Use `chronos` as the username, it should not prompt you for a password.
-*   Become superuser with `sudo bash`.
+*   Become superuser with [sudo](/index.php/Sudo "Sudo").
 
 #### Accessing the superuser shell with Chrome OS configuration
 
@@ -153,7 +148,7 @@ If you have configured Chrome OS already:
 
 *   Open a crosh window with `Ctrl + Alt + T`.
 *   Open a bash shell with the `shell` command.
-*   Become superuser with `sudo bash`
+*   Become superuser with [sudo](/index.php/Sudo "Sudo").
 
 ### Enabling SeaBIOS
 
@@ -190,12 +185,7 @@ To find the location of the hardware write-protect screw/switch/jumper and how t
 
 More information about the firmware protection available at the [Custom firmware for Chrome OS devices](/index.php/Custom_firmware_for_Chrome_OS_devices#Firmware_write_protection "Custom firmware for Chrome OS devices") page.
 
-*   Inside your [superuser shell](#Accessing_the_superuser_shell) enter:
-
-```
-# sudo su
-
-```
+*   Switch to the [superuser shell](#Accessing_the_superuser_shell).
 
 *   Disable the software write protection.
 
@@ -284,43 +274,6 @@ The Arch Linux installer boot menu should appear and the [installation](/index.p
 **Note:** For now choose [GRUB](/index.php/GRUB "GRUB") as your bootloader: you can choose MBR or GPT: [Partitioning](/index.php/Partitioning "Partitioning"). If you choose GPT then do not forget to add a [BIOS Boot Partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). Also see [Known Issues](#Syslinux).
 
 After finishing installing Arch Linux continue by following the [Post Installation Configuration](#Post_installation_configuration).
-
-#### Alternative installation, Install Arch Linux in addition to Chrome OS
-
-It is possible to have both Arch Linux and Chrome OS installed on the internal drive.
-
-##### Re-partition the drive
-
-In order to partition the drive, we will run the first stage of the ChruBuntu script in Chrome OS. After logging in, open a shell with `Ctrl + Alt + T`, run `shell`, then `cd ~/` to enter the home directory. Once there, run the following:
-
-```
-curl -L -O [http://goo.gl/9sgchs](http://goo.gl/9sgchs); sudo bash 9sgchs
-
-```
-
-It will ask how much space to partition for the alternate partition. 8GB is a safe number for the 16GB SSD. More than 9 may not work.
-
-##### Fixing the filesystem
-
-Reboot the system so Chrome OS will repair the filesystem after the previous re-partitioning process. Once this is done, verify that the disk space has been reduced by opening a file manager and clicking the gear in the top right of the window.
-
-##### Continue the installation process
-
-[Continue the installation process](#Installing_Arch_Linux) but instead of wiping the internal drive and creating a new filesystem you should install Arch to the existing empty partition that we designated for Arch in the previous step.
-
-So after booting the installation media:
-
-*   Run the command `fdisk -l` to list drives and partitions. Find the internal drive and note the name of the partition matching the size you specified in the ChrUbuntu script.
-*   Use `mkfs.ext4 /dev/sdxY` (where xY is drive letter and partition number, eg. /dev/sda7) This will create the filesystem for arch.
-*   Following the [instructions for installing GRUB on GPT](/index.php/GRUB2#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB2"), use gdisk to create a 1007kb partition and set the type to EF02.
-
-**Note:** Contrary to what some people say, the grub partition does **not** need to be the first partition on the disk. The existing ChromeOS partitions make this difficult to do anyways.
-
-##### Choosing between Arch Linux and Chrome OS
-
-Reboot your system and press `Ctrl + l` to load SeaBIOS in order to boot into Arch, or press `Ctrl + d` in order to boot into ChromeOS.
-
-Now you can also [set SeaBIOS as default](#Boot_to_SeaBIOS_by_default) (or even later as you are keeping Chrome OS).
 
 ## Post installation configuration
 

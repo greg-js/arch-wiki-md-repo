@@ -64,7 +64,7 @@
 
 一般來說，基本的安裝過程都已經建立了可運作的網路設定。請執行下列指令以進行檢查：
 
-**註記:** `-c 3` 選項表示將會呼叫三次。詳細請參閱 [ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) 。
+**註記:** `-c 3` 選項表示將會呼叫三次。詳細請參閱 [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) 。
 
 **提示：** 您也可以嘗試使用其他的 Domain ，如 www.hinet.net 。
  `$ ping -c 3 www.google.com` 
@@ -113,7 +113,7 @@ rtt min/avg/max/mdev = 52.975/65.375/72.543/8.803 ms
 
 這樣會將 `*myhostname*` 寫入 `/etc/hostname` 檔案中。
 
-詳細請參閱 [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) 與 [hostnamectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1) 。
+詳細請參閱 [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) 與 [hostnamectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1) 。
 
 在 `/etc/hosts` 中加入相同的主機名稱：
 
@@ -289,7 +289,7 @@ lo eth0 eth1 firewire0
 
 **註記:** 子網路遮罩使用了 [CIDR 表示法](https://en.wikipedia.org/wiki/CIDR_notation "wikipedia:CIDR notation")（CIDR，Classless Inter-Domain Routing，無類別網路間路由）。
 
-詳情請參閱 [ip(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip.7) 。
+詳情請參閱 [ip(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.7) 。
 
 以類似下列的方法加上您的 IP 位址：
 

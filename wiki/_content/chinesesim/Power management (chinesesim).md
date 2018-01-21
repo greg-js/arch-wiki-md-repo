@@ -66,7 +66,7 @@ Arch 中的电源管理包含两个主要部分：
 
 ### ACPI 事件
 
-**systemd** 能够处理某些电源相关的 [ACPI](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface "wikipedia:Advanced Configuration and Power Interface") 事件，通过 `/etc/systemd/logind.conf` 或 `/etc/systemd/logind.conf.d/*.conf` 进行配置，请参考 [logind.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/logind.conf.5). 如果系统没有专门的电源管理程序，systemd 可以替换掉原本用来响应这些 ACPI 事件的 [acpid](/index.php/Acpid "Acpid")。
+**systemd** 能够处理某些电源相关的 [ACPI](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface "wikipedia:Advanced Configuration and Power Interface") 事件，通过 `/etc/systemd/logind.conf` 或 `/etc/systemd/logind.conf.d/*.conf` 进行配置，请参考 [logind.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/logind.conf.5). 如果系统没有专门的电源管理程序，systemd 可以替换掉原本用来响应这些 ACPI 事件的 [acpid](/index.php/Acpid "Acpid")。
 
 事件的动作可以是 `ignore`, `poweroff`, `reboot`, `halt`, `suspend`, `hibernate`, `hybrid-sleep`, `lock` 或 `kexec`. 休眠或挂起动作需要被正确 [设置](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate"). 如果没有配置事件动作，*systemd* 会使用默认动作。
 
@@ -85,7 +85,7 @@ Arch 中的电源管理包含两个主要部分：
 
 有些 [桌面环境](/index.php/Desktop_environment "Desktop environment") 包含的电源管理器会 [禁用](http://www.freedesktop.org/wiki/Software/systemd/inhibit/)(临时关闭) 某些或全部 *systemd* ACPI 设置。这些电源管理器运行时，请在它们的设置中配置 ACPI 事件的动作，只有不被禁用的事件才能在 `/etc/systemd/logind.conf` 或 `/etc/systemd/logind.conf.d/*.conf` 中配置。
 
-如果电源管理器没有禁用 *systemd* 的事件动作，可能出现 *systemd* 挂起了系统，然后当系统被唤醒之后，电源管理器又再次将系统挂起的情况。截止到 2016 年 12 月，[KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce") 和 [MATE](/index.php/MATE "MATE") 的电源管理器会执行需要的禁用命令。在使用 [acpid](/index.php/Acpid "Acpid") 或其它程序处理 ACPI 事件时，响应的 systemd 动作没有被禁用，可以将 `Handle` 设置为 `ignore`. 请参考 [systemd-inhibit(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-inhibit.1).
+如果电源管理器没有禁用 *systemd* 的事件动作，可能出现 *systemd* 挂起了系统，然后当系统被唤醒之后，电源管理器又再次将系统挂起的情况。截止到 2016 年 12 月，[KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce") 和 [MATE](/index.php/MATE "MATE") 的电源管理器会执行需要的禁用命令。在使用 [acpid](/index.php/Acpid "Acpid") 或其它程序处理 ACPI 事件时，响应的 systemd 动作没有被禁用，可以将 `Handle` 设置为 `ignore`. 请参考 [systemd-inhibit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-inhibit.1).
 
 #### xss-lock
 
@@ -180,7 +180,7 @@ ExecStart=-/usr/bin/pkill sshfs
 WantedBy=sleep.target
 ```
 
-上述服务文件的一些解释（详见 [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)）：
+上述服务文件的一些解释（详见 [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)）：
 
 *   如果设置 `Type=OneShot`，那么可以使用多个 `ExecStart=` 参数。否则只能写一个，替代方案是在 `ExecStartPre` 中添加命令，或使用分号分隔不同命令（见第一个例子，分号前后的空格都是**必须**的）。
 *   若命令前加上一个“-”（半角减号），则命令返回非零值时会被忽略、当作正常执行处理。
@@ -291,4 +291,4 @@ esac
 
 1.  chmod a+x /usr/lib/systemd/system-sleep/example.sh
 
-详情参见 [systemd.special(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7) 和 [systemd-sleep(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8)。
+详情参见 [systemd.special(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7) 和 [systemd-sleep(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8)。

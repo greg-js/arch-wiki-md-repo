@@ -45,7 +45,7 @@ The second option is to call `ntfs-3g` directly:
 
 ```
 
-See [ntfs-3g(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntfs-3g.8) for the available options.
+See [ntfs-3g(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntfs-3g.8) for the available options.
 
 ## Formatting
 

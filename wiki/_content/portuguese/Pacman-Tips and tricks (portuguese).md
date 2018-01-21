@@ -597,7 +597,7 @@ XferCommand = /usr/bin/aria2c --allow-overwrite=true --continue=true --file-allo
 
 **Dica:** [Essa configuração alternativa para usar o *pacman* com aria2](https://bbs.archlinux.org/viewtopic.php?pid=1491879#p1491879) tenta simplificar a configuração e adiciona mais opções de configuração.
 
-Veja [OPTIONS](http://aria2.sourceforge.net/manual/en/html/aria2c.html#options) em [aria2c(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/aria2c.1) para opções do aria2c usadas.
+Veja [OPTIONS](http://aria2.sourceforge.net/manual/en/html/aria2c.html#options) em [aria2c(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/aria2c.1) para opções do aria2c usadas.
 
 *   `-d, --dir`: O diretório para armazenar o arquivos baixados, conforme especificado pelo *pacman*.
 *   `-o, --out`: Os nomes de arquivo dos arquivos baixados.

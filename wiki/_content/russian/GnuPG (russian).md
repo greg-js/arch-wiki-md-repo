@@ -377,7 +377,7 @@ WantedBy=default.target
 
 ### Настройка
 
-gpg-agent можно настроить в файле `~/.gnupg/gpg-agent.conf`. Все опции для настройки перечислены на странице [gpg-agent(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1). Например, так вы можете задать время жизни для ключей в кэше с момента последнего использования:
+gpg-agent можно настроить в файле `~/.gnupg/gpg-agent.conf`. Все опции для настройки перечислены на странице [gpg-agent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1). Например, так вы можете задать время жизни для ключей в кэше с момента последнего использования:
 
  `~/.gnupg/gpg-agent.conf` 
 ```

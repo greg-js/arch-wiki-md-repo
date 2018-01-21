@@ -44,7 +44,7 @@ $ namcap -i *nome_de_arquivo*
 
 ```
 
-Para mais informações sobre uso, veja a página man [namcap(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/namcap.1).
+Para mais informações sobre uso, veja a página man [namcap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/namcap.1).
 
 ## Entendendo a saída
 

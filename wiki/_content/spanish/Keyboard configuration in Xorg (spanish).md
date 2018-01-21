@@ -113,7 +113,7 @@ $ setxkbmap -layout *distribución_xkb*
 
 ```
 
-Véase [setxkbmap(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setxkbmap.1) para conocer un listado completo de los argumentos que se pueden pasar a la línea de órdenes.
+Véase [setxkbmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setxkbmap.1) para conocer un listado completo de los argumentos que se pueden pasar a la línea de órdenes.
 
 Por ejemplo:
 

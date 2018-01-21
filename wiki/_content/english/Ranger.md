@@ -72,7 +72,7 @@ map DD shell mv /home/${USER}/.local/share/Trash/files/ %s
 
 ```
 
-See [ranger(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ranger.1) for general configuration.
+See [ranger(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ranger.1) for general configuration.
 
 ### Defining commands
 

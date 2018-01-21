@@ -32,7 +32,7 @@
 
 ## 配置
 
-SDDM的配置文件为 `/etc/sddm.conf` 。运行 [sddm.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sddm.conf.5) 可以了解所有的选项。
+SDDM的配置文件为 `/etc/sddm.conf` 。运行 [sddm.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sddm.conf.5) 可以了解所有的选项。
 
 在使用了 [systemd](/index.php/Systemd "Systemd") 的系统中, 由于 SDDM 默认使用 `systemd-logind` 管理会话，无需作额外的设置，因此安装SDDM时将不会产生配置文件。如果你确实需要修改配置文件，SDDM提供了一个命令用于产生一个包含了默认设置的配置文件样本:
 

@@ -537,13 +537,13 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 
 #### connman
 
-[ConnMan](/index.php/ConnMan "ConnMan") needs a separate configuration file before [connecting](/index.php/ConnMan#Wi-Fi "ConnMan") to the network. See [connman-service.config(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/connman-service.config.5) and [ConnMan#Connecting to eduroam](/index.php/ConnMan#Connecting_to_eduroam "ConnMan") for details.
+[ConnMan](/index.php/ConnMan "ConnMan") needs a separate configuration file before [connecting](/index.php/ConnMan#Wi-Fi "ConnMan") to the network. See [connman-service.config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connman-service.config.5) and [ConnMan#Connecting to eduroam](/index.php/ConnMan#Connecting_to_eduroam "ConnMan") for details.
 
 #### netctl
 
-[netctl](/index.php/Netctl "Netctl") supports [#wpa_supplicant](#wpa_supplicant) configuration through blocks included with `WPAConfigSection=`. See [netctl.profile(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5) for details.
+[netctl](/index.php/Netctl "Netctl") supports [#wpa_supplicant](#wpa_supplicant) configuration through blocks included with `WPAConfigSection=`. See [netctl.profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5) for details.
 
-**警告:** Special quoting rules apply: see the `*SPECIAL QUOTING RULES*` section in [netctl.profile(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5).
+**警告:** Special quoting rules apply: see the `*SPECIAL QUOTING RULES*` section in [netctl.profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5).
 
 **提示：** Custom certificates can be specified by adding the line `'ca_cert="/path/to/special/certificate.cer"'` in `WPAConfigSection`.
 

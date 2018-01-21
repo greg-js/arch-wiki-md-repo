@@ -450,7 +450,7 @@ If a file as been encrypted in addition to being signed, simply [decrypt](#Encry
 *gpg-agent* is mostly used as daemon to request and cache the password for the keychain. This is useful if GnuPG is used from an external program like a mail client. [gnupg](https://www.archlinux.org/packages/?name=gnupg) comes with [systemd user](/index.php/Systemd/User "Systemd/User") sockets which are enabled by default. These sockets are `gpg-agent.socket`, `gpg-agent-extra.socket`, `gpg-agent-browser.socket`, `gpg-agent-ssh.socket`, and `dirmngr.socket`.
 
 *   The main `gpg-agent.socket` is used by *gpg* to connect to the *gpg-agent* daemon.
-*   The intended use for the `gpg-agent-extra.socket` on a local system is to set up a Unix domain socket forwarding from a remote system. This enables to use *gpg* on the remote system without exposing the private keys to the remote system. See [gpg-agent(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1) for details.
+*   The intended use for the `gpg-agent-extra.socket` on a local system is to set up a Unix domain socket forwarding from a remote system. This enables to use *gpg* on the remote system without exposing the private keys to the remote system. See [gpg-agent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1) for details.
 *   The `gpg-agent-ssh.socket` can be used by [SSH](/index.php/SSH "SSH") to cache [SSH keys](/index.php/SSH_keys "SSH keys") added by the *ssh-add* program. See [#SSH agent](#SSH_agent) for the necessary configuration.
 *   The `dirmngr.socket` starts a GnuPG daemon handling connections to keyservers.
 
@@ -458,7 +458,7 @@ If a file as been encrypted in addition to being signed, simply [decrypt](#Encry
 
 ### Configuration
 
-gpg-agent can be configured via `~/.gnupg/gpg-agent.conf` file. The configuration options are listed in [gpg-agent(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1). For example you can change cache ttl for unused keys:
+gpg-agent can be configured via `~/.gnupg/gpg-agent.conf` file. The configuration options are listed in [gpg-agent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1). For example you can change cache ttl for unused keys:
 
  `~/.gnupg/gpg-agent.conf` 
 ```
@@ -568,7 +568,7 @@ fi
 *   If you use non-default GnuPG [#Directory location](#Directory_location), run `gpgconf --create-socketdir` to create a socket directory under `/run/user/$UID/gnupg/`. Otherwise the socket will be placed in the GnuPG home directory.
 *   The test involving the `gnupg_SSH_AUTH_SOCK_by` variable is for the case where the agent is started as `gpg-agent --daemon /bin/sh`, in which case the shell inherits the `SSH_AUTH_SOCK` variable from the parent, *gpg-agent* [[4]](http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=agent/gpg-agent.c;hb=7bca3be65e510eda40572327b87922834ebe07eb#l1307).
 
-Also set the GPG_TTY and refresh the TTY in case user has switched into an X session as stated in [gpg-agent(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1). For example:
+Also set the GPG_TTY and refresh the TTY in case user has switched into an X session as stated in [gpg-agent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1). For example:
 
  `~/.bashrc` 
 ```
@@ -624,7 +624,7 @@ disable-ccid
 
 ```
 
-Please check [scdaemon(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/scdaemon.1) if you do not use OpenSC.
+Please check [scdaemon(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/scdaemon.1) if you do not use OpenSC.
 
 ## Tips and tricks
 

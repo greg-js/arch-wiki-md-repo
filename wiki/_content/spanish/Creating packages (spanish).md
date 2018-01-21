@@ -125,7 +125,7 @@ Hay cinco funciones, enumeradas aquí en el orden en que se ejecutan si todas ex
 
 Esta función, utiliza comandos para preparar las fuentes para la construcción que se ejecuta, como [parches](/index.php/Patching_in_ABS "Patching in ABS"). Esta función se ejecuta justo después de la extracción del paquete, antes de [pkgver()](#pkgver.28.29) y la función de build. Si la extracción se omite (`makepkg -e`), entonces `prepare()` no se ejecuta.
 
-**Nota:** : (Desde [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) La función se ejecuta en modo `bash -e`, significa que cualquier comando que aparezca con un estado distinto de cero hará que la función termine.
+**Nota:** : (Desde [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) La función se ejecuta en modo `bash -e`, significa que cualquier comando que aparezca con un estado distinto de cero hará que la función termine.
 
 #### pkgver()
 

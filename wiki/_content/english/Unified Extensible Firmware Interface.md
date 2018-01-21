@@ -229,7 +229,7 @@ In this example, this indicates that the ESP is on disk `/dev/sda` and has parti
 
 ```
 
-See [efibootmgr(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/efibootmgr.8) or [efibootmgr README](https://raw.githubusercontent.com/rhinstaller/efibootmgr/master/README) for more info.
+See [efibootmgr(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/efibootmgr.8) or [efibootmgr README](https://raw.githubusercontent.com/rhinstaller/efibootmgr/master/README) for more info.
 
 **Note:** UEFI uses backward slash `\` as path separator but *efibootmgr* automatically converts UNIX-style `/` path separators.
 

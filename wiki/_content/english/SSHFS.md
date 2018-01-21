@@ -86,7 +86,7 @@ $ sshfs myuser@mycomputer:/remote/path /local/path -o idmap=user
 
 If you need more control over UID and GID translation, look at the options `idmap=file`, `uidfile` and `gidfile`.
 
-A complete list of options can be found in [sshfs(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sshfs.1).
+A complete list of options can be found in [sshfs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshfs.1).
 
 ## Chrooting
 
@@ -106,7 +106,7 @@ Match User *someuser*
 
 **Note:** The chroot directory **must** be owned by root, otherwise you will not be able to connect.
 
-See also [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot"). For more information check the [sshd_config(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5) man page for `Match`, `ChrootDirectory` and `ForceCommand`.
+See also [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot"). For more information check the [sshd_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5) man page for `Match`, `ChrootDirectory` and `ForceCommand`.
 
 ## Automounting
 

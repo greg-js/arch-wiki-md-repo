@@ -98,7 +98,7 @@ Liste arquivos que pertencem a um usuário ou grupo com o utilitário *find*:
 
 O usuário e o grupo donos de um arquivo podem ser alterados com o comando *chown* (*change owner* ou mudar o dono). As permissões de acesso a um arquivo podem ser alteradas com o comando *chmod* (*change mode* ou mudar o modo).
 
-Veja [chown(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) e [Permissões de acesso a arquivos e diretórios](http://www.guiafoca.org/cgs/guia/inic_interm/ch-perm.html) para detalhes adicionais.
+Veja [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) e [Permissões de acesso a arquivos e diretórios](http://www.guiafoca.org/cgs/guia/inic_interm/ch-perm.html) para detalhes adicionais.
 
 ## Lista de arquivos
 
@@ -114,7 +114,7 @@ Veja [chown(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](h
 
 ## Gerenciamento de usuário
 
-Para listar os usuários conectados no sistema, o comando *who* pode ser usado. Para listar todas as contas de usuários existentes, incluindo suas propriedades armazenadas na base de dados de [usuário](#Base_de_dados_de_usu.C3.A1rios), execute `passwd -Sa` como root. Veja [passwd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) para a descrição do formato de saída.
+Para listar os usuários conectados no sistema, o comando *who* pode ser usado. Para listar todas as contas de usuários existentes, incluindo suas propriedades armazenadas na base de dados de [usuário](#Base_de_dados_de_usu.C3.A1rios), execute `passwd -Sa` como root. Veja [passwd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) para a descrição do formato de saída.
 
 Para adicionar um novo usuário, use o comando *useradd*:
 
@@ -132,7 +132,7 @@ Para adicionar um novo usuário, use o comando *useradd*:
 
 **Nota:** A senha para o usuário recém criado deve então ser definido, usando *passwd* conforme mostrado em [#Exemplo de adicionar um usuário](#Exemplo_de_adicionar_um_usu.C3.A1rio).
 
-Quando o shell de login destina-se a ser não funcional, por exemplo quando a conta de usuário é criada para um serviço específico, `/usr/bin/nologin` pode ser especificado no lugar de uma shell comum para educadamente recusar um login (veja [nologin(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
+Quando o shell de login destina-se a ser não funcional, por exemplo quando a conta de usuário é criada para um serviço específico, `/usr/bin/nologin` pode ser especificado no lugar de uma shell comum para educadamente recusar um login (veja [nologin(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
 
 ### Exemplo de adicionar um usuário
 
@@ -324,11 +324,11 @@ O comando *pwck* pode ser usado para verificar a integridade da base de dados de
 
 ```
 
-**Nota:** Os padrões do Arch Linux dos arquivos são criados como arquivos *.pacnew* pelas novas versões do pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem). A menos que o *pacman* emita mensagens relacionadas para ação, esses arquivos *.pacnew* podem, e devem, ser desconsiderados/removidos. Novos usuários e grupos padrão obrigatórios são adicionados ou re-adicionados conforme necessário por [systemd-sysusers(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
+**Nota:** Os padrões do Arch Linux dos arquivos são criados como arquivos *.pacnew* pelas novas versões do pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem). A menos que o *pacman* emita mensagens relacionadas para ação, esses arquivos *.pacnew* podem, e devem, ser desconsiderados/removidos. Novos usuários e grupos padrão obrigatórios são adicionados ou re-adicionados conforme necessário por [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
 
 ## Gerenciamento de grupo
 
-`/etc/group` é o arquivo que define os grupos no sistema (veja [group(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) para detalhes).
+`/etc/group` é o arquivo que define os grupos no sistema (veja [group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) para detalhes).
 
 Mostre associação a grupos com o comando `groups`:
 

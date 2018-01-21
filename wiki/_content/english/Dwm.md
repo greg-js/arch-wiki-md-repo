@@ -70,7 +70,7 @@ After making any desired changes and installing the updated package, restart dwm
 
 ## Basic usage
 
-Consult the [dwm tutorial](https://dwm.suckless.org/tutorial) for information on basic dwm usage. Additionally see [dwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dwm.1).
+Consult the [dwm tutorial](https://dwm.suckless.org/tutorial) for information on basic dwm usage. Additionally see [dwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dwm.1).
 
 ## Tips and tricks
 

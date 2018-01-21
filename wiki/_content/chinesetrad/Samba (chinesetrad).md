@@ -48,7 +48,7 @@ The Samba server is configured in `/etc/samba/smb.conf`. Copy the default Samba 
 
 ### Creating a share
 
-Edit `/etc/samba/smb.conf`, scroll down to the **Share Definitions** section. The default configuration automatically creates a share for each user's home directory. It also creates a share for printers by default. There are a number of commented sample configurations included. More information about available options for shared resources can be found in [smb.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5). [Here](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) is the on-line version.
+Edit `/etc/samba/smb.conf`, scroll down to the **Share Definitions** section. The default configuration automatically creates a share for each user's home directory. It also creates a share for printers by default. There are a number of commented sample configurations included. More information about available options for shared resources can be found in [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5). [Here](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) is the on-line version.
 
 On Windows side, be sure to change `smb.conf` to the Windows Workgroup. (Windows default: WORKGROUP)
 
@@ -189,7 +189,7 @@ Mount the share using the `mount.cifs` type. Not all the options listed below ar
 
 `-o [options]`
 
-	See [mount.cifs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8) for more information.
+	See [mount.cifs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8) for more information.
 
 **Note:**
 

@@ -33,7 +33,7 @@ For installation of OpenFOAM in a development environment, the process is fairly
 ### Prerequisites
 
 *   [openmpi](https://www.archlinux.org/packages/?name=openmpi)
-*   [paraview](https://aur.archlinux.org/packages/paraview/)
+*   [paraview](https://www.archlinux.org/packages/?name=paraview)
 *   [parmetis](https://aur.archlinux.org/packages/parmetis/)
 *   [scotch](https://aur.archlinux.org/packages/scotch/)
 *   [boost-libs](https://www.archlinux.org/packages/?name=boost-libs)

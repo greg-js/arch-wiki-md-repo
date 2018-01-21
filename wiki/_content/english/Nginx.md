@@ -478,7 +478,7 @@ nginx needs `/dev/null`, `/dev/random`, and `/dev/urandom`. To install these in 
 
 **Tip:** Be sure that `/srv/http` is mounted without no-dev option
 
-**Tip:** See [mknod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mknod.1) and `ls -l /dev/{null,random,urandom}` to better understand the *mknod* options.
+**Tip:** See [mknod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mknod.1) and `ls -l /dev/{null,random,urandom}` to better understand the *mknod* options.
 
 ```
 # export JAIL=/srv/http

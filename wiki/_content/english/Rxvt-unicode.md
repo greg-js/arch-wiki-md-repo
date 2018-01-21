@@ -38,7 +38,7 @@ Related articles
 
 ## Configuration
 
-See [urxvt(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/urxvt.1) and [urxvt(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/urxvt.7) for available settings and values.
+See [urxvt(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/urxvt.1) and [urxvt(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/urxvt.7) for available settings and values.
 
 ### Xresources
 

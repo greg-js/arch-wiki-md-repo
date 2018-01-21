@@ -48,26 +48,26 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
 The following table lists basic shell commands every Linux user should be familiar with. See the below sections and *Related articles* for details.
 
 | Command | Description | Manual page | Example |
-| man | Show manual page for a command | [man(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man.7) | man ed |
-| cd | Change directory (shell built-in command) | [cd(1p)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) | cd /etc/pacman.d |
-| mkdir | Create a directory | [mkdir(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1) | mkdir ~/newfolder |
-| rmdir | Remove empty directory | [rmdir(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rmdir.1) | rmdir ~/emptyfolder |
-| rm | Remove a file | [rm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rm.1) | rm ~/file.txt |
+| man | Show manual page for a command | [man(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/man.7) | man ed |
+| cd | Change directory (shell built-in command) | [cd(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) | cd /etc/pacman.d |
+| mkdir | Create a directory | [mkdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1) | mkdir ~/newfolder |
+| rmdir | Remove empty directory | [rmdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rmdir.1) | rmdir ~/emptyfolder |
+| rm | Remove a file | [rm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rm.1) | rm ~/file.txt |
 | rm -r | Remove directory and contents | rm -r ~/.cache |
-| ls | List files | [ls(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1) | ls *.mkv |
+| ls | List files | [ls(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1) | ls *.mkv |
 | ls -a | List hidden files | ls -a /home/archie |
 | ls -al | List hidden files and file properties |
-| mv | Move a file | [mv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mv.1) | mv ~/compressed.zip ~/archive/compressed2.zip |
-| cp | Copy a file | [cp(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cp.1) | cp ~/.bashrc ~/.bashrc.bak |
-| chmod +x | Make a file [executable](/index.php/Executable "Executable") | [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) | chmod +x ~/.local/bin/myscript.sh |
-| cat | Show file contents | [cat(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1) | cat /etc/hostname |
-| strings | Show printable characters in binary files | [strings(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/strings.1) | strings /usr/bin/free |
-| find | Search for a file | [find(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/find.1) | find ~ -name myfile |
-| mount | Mount a partition | [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) | mount /dev/sdc1 /media/usb |
-| df -h | Show remaining space on all partitions | [df(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/df.1) |
-| ps -A | Show all running processes | [ps(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ps.1) |
-| killall | Kill all running instances of a process | [killall(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/killall.1) |
-| ss -at | Display a list of open TCP sockets | [ss(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) |
+| mv | Move a file | [mv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mv.1) | mv ~/compressed.zip ~/archive/compressed2.zip |
+| cp | Copy a file | [cp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cp.1) | cp ~/.bashrc ~/.bashrc.bak |
+| chmod +x | Make a file [executable](/index.php/Executable "Executable") | [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) | chmod +x ~/.local/bin/myscript.sh |
+| cat | Show file contents | [cat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1) | cat /etc/hostname |
+| strings | Show printable characters in binary files | [strings(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/strings.1) | strings /usr/bin/free |
+| find | Search for a file | [find(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/find.1) | find ~ -name myfile |
+| mount | Mount a partition | [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) | mount /dev/sdc1 /media/usb |
+| df -h | Show remaining space on all partitions | [df(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/df.1) |
+| ps -A | Show all running processes | [ps(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ps.1) |
+| killall | Kill all running instances of a process | [killall(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/killall.1) |
+| ss -at | Display a list of open TCP sockets | [ss(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) |
 
 ## cat
 
@@ -104,7 +104,7 @@ Similarly to *cp*, by default *dd* makes a bit-to-bit copy of the file, but with
 
 **Tip:** By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command. It is not available on older versions (before 8.24) of [coreutils](https://www.archlinux.org/packages/?name=coreutils).
 
-For more information see [dd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) or the [full documentation](https://www.gnu.org/software/coreutils/dd).
+For more information see [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) or the [full documentation](https://www.gnu.org/software/coreutils/dd).
 
 ## grep
 
@@ -114,7 +114,7 @@ For more information see [dd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1)
 *   There are *grep* alternatives optimized for VCS source code, such as [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) and [ack](https://www.archlinux.org/packages/?name=ack).
 *   To include file line numbers in the output, use the `-n` option.
 
-**Note:** Some commands send their output to [stderr(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3), and grep has no apparent effect. In this case, redirect *stderr* to *stdout* with `*command* 2>&1 | grep *args*` or (for Bash 4) `*command* |& grep *args*`. See also [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
+**Note:** Some commands send their output to [stderr(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3), and grep has no apparent effect. In this case, redirect *stderr* to *stdout* with `*command* 2>&1 | grep *args*` or (for Bash 4) `*command* |& grep *args*`. See also [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
 
 For color support, see [Color output in console#grep](/index.php/Color_output_in_console#grep "Color output in console").
 
@@ -137,7 +137,7 @@ $ iconv -f ISO-8859-15 -t UTF-8 *foo* > *foo*.utf
 
 ```
 
-See [iconv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) for more details.
+See [iconv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) for more details.
 
 ### Convert a file in place
 
@@ -150,7 +150,7 @@ $ iconv -f WINDOWS-1251 -t UTF-8 *foobar*.txt | sponge *foobar*.txt
 
 ```
 
-See [sponge(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) for details.
+See [sponge(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) for details.
 
 ## ip
 
@@ -159,23 +159,23 @@ See [sponge(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) for details.
 **Note:** The *ip* utility is provided by the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package, which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group.
 
 | Object | Purpose | Manual page |
-| ip addr | protocol address management | [ip-address(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip-address.8) |
-| ip addrlabel | protocol address label management | [ip-addrlabel(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip-addrlabel.8) |
-| ip l2tp | tunnel Ethernet over IP (L2TPv3) | [ip-l2tp(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip-l2tp.8) |
-| ip link | network device configuration | [ip-link(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8) |
-| ip maddr | multicast addresses management | [ip-maddress(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip-maddress.8) |
-| ip monitor | watch for netlink messages | [ip-monitor(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip-monitor.8) |
-| ip mroute | multicast routing cache management | [ip-mroute(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip-mroute.8) |
+| ip addr | protocol address management | [ip-address(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-address.8) |
+| ip addrlabel | protocol address label management | [ip-addrlabel(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-addrlabel.8) |
+| ip l2tp | tunnel Ethernet over IP (L2TPv3) | [ip-l2tp(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-l2tp.8) |
+| ip link | network device configuration | [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8) |
+| ip maddr | multicast addresses management | [ip-maddress(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-maddress.8) |
+| ip monitor | watch for netlink messages | [ip-monitor(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-monitor.8) |
+| ip mroute | multicast routing cache management | [ip-mroute(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-mroute.8) |
 | ip mrule | rule in multicast routing policy db |
-| ip neigh | neighbour/ARP tables management | [ip-neighbour(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip-neighbour.8) |
-| ip netns | process network namespace management | [ip-netns(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip-netns.8) |
-| ip ntable | neighbour table configuration | [ip-ntable(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip-ntable.8) |
-| ip route | routing table management | [ip-route(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip-route.8) |
-| ip rule | routing policy database management | [ip-rule(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip-rule.8) |
-| ip tcp_metrics | management for TCP Metrics | [ip-tcp_metrics(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip-tcp_metrics.8) |
-| ip tunnel | tunnel configuration | [ip-tunnel(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip-tunnel.8) |
+| ip neigh | neighbour/ARP tables management | [ip-neighbour(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-neighbour.8) |
+| ip netns | process network namespace management | [ip-netns(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-netns.8) |
+| ip ntable | neighbour table configuration | [ip-ntable(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-ntable.8) |
+| ip route | routing table management | [ip-route(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-route.8) |
+| ip rule | routing policy database management | [ip-rule(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-rule.8) |
+| ip tcp_metrics | management for TCP Metrics | [ip-tcp_metrics(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-tcp_metrics.8) |
+| ip tunnel | tunnel configuration | [ip-tunnel(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-tunnel.8) |
 | ip tuntap | manage TUN/TAP devices |
-| ip xfrm | manage IPsec policies | [ip-xfrm(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip-xfrm.8) |
+| ip xfrm | manage IPsec policies | [ip-xfrm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-xfrm.8) |
 
 The `help` command is available for all objects. For example, typing `ip addr help` will show you the command syntax available for the address object. For advanced usage see the [iproute2 documentation](http://www.policyrouting.org/iproute2.doc.html).
 
@@ -185,7 +185,7 @@ The [Network configuration](/index.php/Network_configuration "Network configurat
 
 ## locate
 
-[Install](/index.php/Install "Install") the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. The package contains an `updatedb.timer` unit, which invokes a database update each day. The timer is enabled right after installation, [start](/index.php/Start "Start") it manually if you want to use it before reboot. You can also manually run *updatedb* as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so *locate* may not discover files on external devices. See [updatedb(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8) for details.
+[Install](/index.php/Install "Install") the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. The package contains an `updatedb.timer` unit, which invokes a database update each day. The timer is enabled right after installation, [start](/index.php/Start "Start") it manually if you want to use it before reboot. You can also manually run *updatedb* as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so *locate* may not discover files on external devices. See [updatedb(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8) for details.
 
 The *locate* command is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by *locate*.
 
@@ -261,7 +261,7 @@ By default, file and directory names that contain spaces are displayed surrounde
 
 ## lsblk
 
-[lsblk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) will show all available [block devices](https://en.wikipedia.org/wiki/Device_file#Block_devices "w:Device file") along with their partitioning schemes, for example:
+[lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) will show all available [block devices](https://en.wikipedia.org/wiki/Device_file#Block_devices "w:Device file") along with their partitioning schemes, for example:
 
  `$ lsblk -f` 
 ```
@@ -378,7 +378,7 @@ $ ss -au
 
 ```
 
-For more information see [ss(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) or `ss.html` from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
+For more information see [ss(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) or `ss.html` from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
 
 ## tar
 
@@ -403,7 +403,7 @@ Forcing a given format:
 | `*file*.tar.xz` | `tar xvJf *file*.tar.xz`
 `xz -cd *file*.xz | tar xvf -` |
 
-The construction of some of these *tar* arguments may be considered legacy, but they are still useful when performing specific operations. See [tar(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) for details.
+The construction of some of these *tar* arguments may be considered legacy, but they are still useful when performing specific operations. See [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) for details.
 
 ## which
 
@@ -418,7 +418,7 @@ The construction of some of these *tar* arguments may be considered legacy, but 
 
 *wipefs* can list or erase [file system](/index.php/File_system "File system"), [RAID](/index.php/RAID "RAID") or [partition-table](/index.php/Partition "Partition") signatures (magic strings) from the specified device. It does not erase the file systems themselves nor any other data from the device.
 
-See [wipefs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wipefs.8) for more information.
+See [wipefs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wipefs.8) for more information.
 
 For example, to erase all signatures from the device `/dev/sdb` and create a signature backup `~/wipefs-sdb-*offset*.bak` file for each signature:
 

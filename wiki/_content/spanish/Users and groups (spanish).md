@@ -95,7 +95,7 @@ Puede listar los archivos que pertenecen a un usuario o a un grupo con la orden 
 
 El usuario y el grupo propietarios de un archivo pueden ser cambiados con la orden `chown` (*«change owner»*). Los permisos de acceso a un archivo se pueden cambiar con la orden `chmod` (*«change mode»*).
 
-Véase [chown(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), y [Linux file permissions](http://www.tuxfiles.org/linuxhelp/filepermissions.html) para obtener información adicional.
+Véase [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), y [Linux file permissions](http://www.tuxfiles.org/linuxhelp/filepermissions.html) para obtener información adicional.
 
 ## Lista de archivos
 
@@ -212,7 +212,7 @@ donde:
 
 ## Gestión de grupos
 
-En el archivo `/etc/group` se definen los grupos presentes en el sistema (ejecute la orden [group(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) para conocer más detalle).
+En el archivo `/etc/group` se definen los grupos presentes en el sistema (ejecute la orden [group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) para conocer más detalle).
 
 La orden `groups` muestra la pertenencia al grupo:
 

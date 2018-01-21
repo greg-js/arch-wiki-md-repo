@@ -14,7 +14,7 @@ MuPDF supports all static functions required by PDF 1.7 and is a lightweight alt
 
 ## Usage
 
-The application is ran from the command-line with `mupdf filename.pdf`. Supported arguments are `-d *password*` for required passwords, `-z N%` for the Zoomlevel and `-p N` for the first selected page. See [mupdf(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mupdf.1) for details.
+The application is ran from the command-line with `mupdf filename.pdf`. Supported arguments are `-d *password*` for required passwords, `-z N%` for the Zoomlevel and `-p N` for the first selected page. See [mupdf(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mupdf.1) for details.
 
 Navigation within a file works through keyboard shortcuts and mouse interaction.
 

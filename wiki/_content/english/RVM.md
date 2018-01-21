@@ -608,10 +608,11 @@ Ruby versions older than 2.4 require OpenSSL 1.0 but RVM will try to build them 
 
 ```
 
+First [install](/index.php/Install "Install") [openssl-1.0](https://www.archlinux.org/packages/?name=openssl-1.0) if not already installed.
+
 You can point it to the correct version like this:
 
 ```
-$ sudo pacman -S openssl-1.0 # Probably already installed
 $ rvm remove <ruby-version>
 $ PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig:/usr/lib/pkgconfig rvm install <ruby-version>
 

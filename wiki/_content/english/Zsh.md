@@ -209,7 +209,7 @@ Zsh supports:
 *   left side prompts: `PS1` (or `PROMPT`), `PS2`, `PS3`, `PS4`.
 *   right side prompts: `RPS1` (or `RPROMPT`), `RPS2` (or `RPROMPT2`).
 
-See [Parameters Used By The Shell](http://zsh.sourceforge.net/Doc/Release/Parameters.html#Parameters-Used-By-The-Shell) or [zshparam(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshparam.1) for their explanation.
+See [Parameters Used By The Shell](http://zsh.sourceforge.net/Doc/Release/Parameters.html#Parameters-Used-By-The-Shell) or [zshparam(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshparam.1) for their explanation.
 
 #### Prompt themes
 
@@ -247,13 +247,13 @@ $ prompt -p
 
 For users who are dissatisfied with the prompt themes mentioned above (or want to expand their usefulness), Zsh offers the possibility to build a custom prompt. Zsh supports a left- and right-sided prompt additional to the single, left-sided prompt that is common to all shells. Customize it by using `PROMPT=` with prompt escapes.
 
-See [Prompt Expansion](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html) for a list of prompt variables and conditional substrings, or take a look at the [zshmisc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1) manpage.
+See [Prompt Expansion](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html) for a list of prompt variables and conditional substrings, or take a look at the [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1) manpage.
 
 ##### Colors
 
-Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt"). See [Visual effects](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects) or [zshmisc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1) for prompt escapes to set foreground color, background color and other visual effects.
+Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt"). See [Visual effects](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects) or [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1) for prompt escapes to set foreground color, background color and other visual effects.
 
-[Colors](http://zsh.sourceforge.net/FAQ/zshfaq03.html#l42) can be specified by numeric color code or by name (see [Character Highlighting](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Character-Highlighting) or [zshzle(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshzle.1)). Most terminals support the following colors by name:
+[Colors](http://zsh.sourceforge.net/FAQ/zshfaq03.html#l42) can be specified by numeric color code or by name (see [Character Highlighting](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Character-Highlighting) or [zshzle(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshzle.1)). Most terminals support the following colors by name:
 
 | Possible color values |
 | `black` or `0` | `red` or `1` |
@@ -292,7 +292,7 @@ username@host ~ %                                                         [0]
 
 *   A package in offical repository named [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config) comes from [https://grml.org/zsh](https://grml.org/zsh) and provides a zshrc file that includes many tweaks for Zshell. This is the default configuration for the [monthly ISO releases](https://www.archlinux.org/download/).
 *   [https://github.com/MrElendig/dotfiles-alice/blob/master/.zshrc](https://github.com/MrElendig/dotfiles-alice/blob/master/.zshrc) - basic setup, with dynamic prompt and window title/hardinfo.
-*   [https://github.com/slashbeast/things/blob/master/configs/DOTzshrc](https://github.com/slashbeast/things/blob/master/configs/DOTzshrc) - zshrc with multiple features, be sure to check out comments into it. Notable features: confirm function to ensure that user want to run poweroff, reboot or hibernate, support for GIT in prompt (done without vcsinfo), tab completion with menu, printing current executed command into window's title bar and more.
+*   [https://github.com/slashbeast/conf-mgmt-like-a-sir/blob/master/roles/zsh/files/DOTzshrc](https://github.com/slashbeast/conf-mgmt-like-a-sir/blob/master/roles/zsh/files/DOTzshrc) - zshrc with multiple features, be sure to check out comments into it. Notable features: confirm function to ensure that user want to run poweroff, reboot or hibernate, support for GIT in prompt (done without vcsinfo), tab completion with menu, printing current executed command into window's title bar and more.
 
 See [dotfiles#Repositories](/index.php/Dotfiles#Repositories "Dotfiles") for more.
 
@@ -384,7 +384,7 @@ to print the dirstack. Use `cd -<NUM>` to go back to a visited folder. Use autoc
 
 cdr allows you to change the working directory to a previous working directory from a list maintained automatically. It stores all entries in files that are maintained across sessions and (by default) between terminal emulators in the current session.
 
-See [Remembering Recent Directories](http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Recent-Directories) or [zshcontrib(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshcontrib.1).
+See [Remembering Recent Directories](http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Recent-Directories) or [zshcontrib(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshcontrib.1).
 
 ### Help command
 
@@ -410,7 +410,7 @@ autoload -Uz run-help-svk
 autoload -Uz run-help-svn
 ```
 
-For example `run-help git commit` command will now open the [man page](/index.php/Man_page "Man page") [git-commit(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/git-commit.1) instead of [git(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/git.1).
+For example `run-help git commit` command will now open the [man page](/index.php/Man_page "Man page") [git-commit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-commit.1) instead of [git(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git.1).
 
 ### Fish-like syntax highlighting
 
@@ -507,7 +507,7 @@ My xterm title
 
 ```
 
-An simple way to have a dynamic title is to set the title in a hook functions `precmd` and `preexec`. See [Hook Functions](http://zsh.sourceforge.net/Doc/Release/Functions.html#Hook-Functions) or [zshmisc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1).
+An simple way to have a dynamic title is to set the title in a hook functions `precmd` and `preexec`. See [Hook Functions](http://zsh.sourceforge.net/Doc/Release/Functions.html#Hook-Functions) or [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1).
 
 By using `print -P` you can take advantage of prompt escapes.
 
@@ -577,6 +577,6 @@ To this:
 *   [The Z Shell Manual](http://zsh.sourceforge.net/Doc/Release/index-frame.html) (different format available [here](http://zsh.sourceforge.net/Doc/))
 *   [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html)
 *   [Zsh Wiki](http://zshwiki.org/home/)
-*   [zsh-lovers(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zsh-lovers.1) (available as [zsh-lovers](https://www.archlinux.org/packages/?name=zsh-lovers) package)
+*   [zsh-lovers(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zsh-lovers.1) (available as [zsh-lovers](https://www.archlinux.org/packages/?name=zsh-lovers) package)
 *   [Gentoo: Zsh/Guide](https://wiki.gentoo.org/wiki/Zsh/Guide "gentoo:Zsh/Guide")
 *   [Bash2Zsh Reference Card](http://www.bash2zsh.com/zsh_refcard/refcard.pdf)

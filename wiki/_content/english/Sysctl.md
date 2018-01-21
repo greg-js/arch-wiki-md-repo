@@ -41,7 +41,7 @@ which will also output the applied hierarchy. A single parameter file can also b
 
 ```
 
-See [the new configuration files](http://0pointer.de/blog/projects/the-new-configuration-files) and more specifically [sysctl.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5) for more information.
+See [the new configuration files](http://0pointer.de/blog/projects/the-new-configuration-files) and more specifically [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5) for more information.
 
 The parameters available are those listed under `/proc/sys/`. For example, the `kernel.sysrq` parameter refers to the file `/proc/sys/kernel/sysrq` on the file system. The `sysctl -a` command can be used to display all currently available values.
 
@@ -335,7 +335,7 @@ Try to change `kernel.io_delay_type` (x86 only):
 
 ## See also
 
-*   [sysctl(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.8) and [sysctl.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.conf.5)
+*   [sysctl(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.8) and [sysctl.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.conf.5)
 *   [Linux kernel documentation for /proc/sys/](https://www.kernel.org/doc/Documentation/sysctl/)
 *   Kernel Documentation: [IP Sysctl](https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt)
 *   [Kernel network parameters for sysctl](http://tldp.org/HOWTO/Adv-Routing-HOWTO/lartc.kernel.html)

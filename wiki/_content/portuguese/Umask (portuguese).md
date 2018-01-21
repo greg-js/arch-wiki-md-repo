@@ -27,7 +27,7 @@ Isso é, as permissões resultantes `R` são o resultado da [conjunção binári
 **Nota:**
 
 *   O Linux não permite que um arquivo seja criado com permissões de execução – de fato, as permissões de criação padrão são `777` para diretórios, mas apenas `666` para arquivos.
-*   No Linux, apenas os bits de permissão do arquivo da máscara são usados – veja [umask(2)](http://jlk.fjfi.cvut.cz/arch/manpages/man/umask.2). Os bits *suid*, *sgid* e *sticky* da máscara são ignorados.
+*   No Linux, apenas os bits de permissão do arquivo da máscara são usados – veja [umask(2)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umask.2). Os bits *suid*, *sgid* e *sticky* da máscara são ignorados.
 
 Por exemplo, suponha que a máscara do modo de criação de arquivos seja 027\. Aqui, a representação bit a bit de cada dígito representa:
 
@@ -75,7 +75,7 @@ Se você precisa definir um valor diferente, você pode editar diretamente esse 
 ## Veja também
 
 *   Manual do Programador POSIX:
-    *   [umask](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html) (também disponível como [umask(1p)](http://jlk.fjfi.cvut.cz/arch/manpages/man/umask.1p))
-    *   [chmod (descrição estendida)](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/chmod.html#tag_20_17_13) (também disponível como [chmod(1p)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1p))
+    *   [umask](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html) (também disponível como [umask(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umask.1p))
+    *   [chmod (descrição estendida)](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/chmod.html#tag_20_17_13) (também disponível como [chmod(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1p))
 *   [wikipedia:pt:umask](https://en.wikipedia.org/wiki/pt:umask "wikipedia:pt:umask")
 *   [027 umask: um meio-termo entre segurança e simplicidade](https://blogs.gentoo.org/mgorny/2011/10/18/027-umask-a-compromise-between-security-and-simplicity/)

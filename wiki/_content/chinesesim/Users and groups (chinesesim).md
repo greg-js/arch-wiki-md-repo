@@ -96,7 +96,7 @@ drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 
 文件的属主、属组可以通过`chown`命令更改。文件的权限可以通过`chmod`命令修改。
 
-详情参见：[chown(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1)、[chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1)、[Linux 文件权限](http://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions)。
+详情参见：[chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1)、[chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1)、[Linux 文件权限](http://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions)。
 
 ## 用户管理
 
@@ -280,7 +280,7 @@ Note that the Arch Linux defaults of the files are created as .pacnew files by n
 
 ## 用户组管理
 
-`/etc/group`文件储存了系统中用户组的信息，详情参见：[group(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/group.5)。
+`/etc/group`文件储存了系统中用户组的信息，详情参见：[group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5)。
 
 使用`groups`命令查看用户所在组的名称：
 

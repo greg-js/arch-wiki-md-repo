@@ -15,7 +15,7 @@ Contrario a su ámbito, las páginas del manual están diseñadas para ser docum
         *   [4.3.2 rxvt-unicode](#rxvt-unicode)
 *   [5 Leyendo páginas del manual locales](#Leyendo_p.C3.A1ginas_del_manual_locales)
     *   [5.1 Convertir a HTML legible por el navegador](#Convertir_a_HTML_legible_por_el_navegador)
-        *   [5.1.1 mdocml](#mdocml)
+        *   [5.1.1 mandoc](#mandoc)
         *   [5.1.2 man2html](#man2html)
         *   [5.1.3 man -H](#man_-H)
         *   [5.1.4 roffit](#roffit)
@@ -277,7 +277,7 @@ que *reemplaza* las decoraciones con colores. Añada también:
 
 ```
 
-Si quiere colores y decoraciones (negrita o subrayado) *al mismo tiempo*. Vea [xterm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1) para una descripción del recurso `veryBoldColors`.
+Si quiere colores y decoraciones (negrita o subrayado) *al mismo tiempo*. Vea [xterm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1) para una descripción del recurso `veryBoldColors`.
 
 #### rxvt-unicode
 
@@ -316,9 +316,9 @@ Existen dos alternativas en los [repositorios oficiales](/index.php/Official_rep
 
 ### Convertir a HTML legible por el navegador
 
-#### mdocml
+#### mandoc
 
-Instale [mdocml](https://aur.archlinux.org/packages/mdocml/) desde [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)"). Para convertir una página, por ejemplo `free(1)`:
+Instale [mandoc](https://aur.archlinux.org/packages/mandoc/) desde [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)"). Para convertir una página, por ejemplo `free(1)`:
 
 ```
 $ gunzip -c /usr/share/man/man1/free.1.gz | mandoc -Thtml -Ostyle=style.css 1> free.html
@@ -354,7 +354,7 @@ $ man -H free
 
 ```
 
-Esto buscará la [variable de entorno](/index.php?title=Environment_variables_(Espa%C3%B1ol)&action=edit&redlink=1 "Environment variables (Español) (page does not exist)") `BROWSER` para determinar que navegador usa por defecto. Puede invalidar este comportamiento pasándole el binario a la opción `-H`.
+Esto buscará la [variable de entorno](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)") `BROWSER` para determinar que navegador usa por defecto. Puede invalidar este comportamiento pasándole el binario a la opción `-H`.
 
 #### roffit
 

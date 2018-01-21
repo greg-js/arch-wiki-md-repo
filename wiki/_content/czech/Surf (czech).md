@@ -11,7 +11,7 @@
 
 ## Instalace
 
-Balíček [surf](https://www.archlinux.org/packages/?name=surf) může být [nainstalován](/index.php/Pacman "Pacman") z [Official Repositories](/index.php/Official_repositories_(%C4%8Cesky) "Official repositories (Česky)"). K dispozici je ještě balíček [surf-git](https://aur.archlinux.org/packages/surf-git/) a [surf-xdg-config-hg](https://aur.archlinux.org/packages/surf-xdg-config-hg/) v uživatelském repozitáři [AUR](/index.php/AUR "AUR").
+Balíček [surf](https://www.archlinux.org/packages/?name=surf) může být [nainstalován](/index.php/Pacman "Pacman") z [Official Repositories](/index.php/Official_repositories_(%C4%8Cesky) "Official repositories (Česky)"). K dispozici je ještě balíček [surf-git](https://aur.archlinux.org/packages/surf-git/) v uživatelském repozitáři [AUR](/index.php/AUR "AUR").
 
 Volitelné:
 

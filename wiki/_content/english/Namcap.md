@@ -44,7 +44,7 @@ $ namcap -i *filename*
 
 ```
 
-For more info on usage, see the man page [namcap(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/namcap.1).
+For more info on usage, see the man page [namcap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/namcap.1).
 
 ## Understanding the output
 

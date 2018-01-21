@@ -86,7 +86,7 @@ lsblk -no UUID /dev/sd*xy*
 **注意:**
 
 *   如果交换分区位于使用 GPT 的设备上，那么 [fstab](/index.php/Fstab "Fstab") 中的 swap 条目是可选的，参阅下一小节。
-*   如果使用支持 [TRIM](/index.php/TRIM "TRIM") 的 SSD，请考虑在 [fstab](/index.php/Fstab "Fstab") 的 swap 条目中使用 `defaults,discard`。 如果使用 *swapon* 命令手动激活交换分区，则使用 `-d`/`--discard` 参数实现相同功能。详细信息，请参阅 [swapon(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/swapon.8)。
+*   如果使用支持 [TRIM](/index.php/TRIM "TRIM") 的 SSD，请考虑在 [fstab](/index.php/Fstab "Fstab") 的 swap 条目中使用 `defaults,discard`。 如果使用 *swapon* 命令手动激活交换分区，则使用 `-d`/`--discard` 参数实现相同功能。详细信息，请参阅 [swapon(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/swapon.8)。
 
 **Warning:** Enabling discard on RAID setups using mdadm will cause system lockup on boot and during runtime, if using swapon.
 

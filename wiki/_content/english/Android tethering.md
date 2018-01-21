@@ -106,7 +106,7 @@ For Arch, you need to [install](/index.php/Install "Install") the [openvpn](http
 
 #### Configuring the phone connection in Arch Linux
 
-So that you do not have to run adb with sudo, we are going to grant your user permissions to your usb device. Make sure you have turned on USB debugging on the phone (usually in Settings -> Applications -> Development -> USB debugging) so that it will be shown as a device, and that it is plugged in to your computer via the USB cable. You should see it with you run the `lsusb` command. Original azi link instructions are [here](https://raw.githubusercontent.com/aziwoqpd/azilink/master/HOWTO)
+So that you do not have to run adb as root, we are going to grant your user permissions to your usb device. Make sure you have turned on USB debugging on the phone (usually in Settings -> Applications -> Development -> USB debugging) so that it will be shown as a device, and that it is plugged in to your computer via the USB cable. You should see it with you run the `lsusb` command. Original azi link instructions are [here](https://raw.githubusercontent.com/aziwoqpd/azilink/master/HOWTO)
 
 The device should be listed. Example output for the Acer Liquid phone:
 
@@ -123,7 +123,7 @@ SUBSYSTEM=="usb", ATTR(idVendor)=="0502", MODE="0666" OWNER="ciri"
 
 ```
 
-As root run the `sudo udevadm control --reload` command to make the change effective. To make sure the change took effect, run 'adb devices' and it should say 'device' instead of 'unauthorized'. Another way to make it take effect is to reboot. Another test is to run `adb shell` to get to your phones unix prompt. The command should work without needing sudo.
+As root run the `udevadm control --reload` command to make the change effective. To make sure the change took effect, run 'adb devices' and it should say 'device' instead of 'unauthorized'. Another way to make it take effect is to reboot. Another test is to run `adb shell` to get to your phones unix prompt.
 
 ### Procedure
 
@@ -136,7 +136,7 @@ Run the AziLink application in the phone and select "About" at the bottom to rec
 
 	 `$ adb forward tcp:41927 tcp:41927` 
 
-	 `# sudo openvpn azilink.ovpn` 
+	 `# openvpn azilink.ovpn` 
 
 azilink.ovpn source from [here](https://raw.githubusercontent.com/aziwoqpd/azilink/master/azilink.ovpn)
 

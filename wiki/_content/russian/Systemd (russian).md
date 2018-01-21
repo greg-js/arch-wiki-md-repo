@@ -63,7 +63,7 @@
 
 ## Основы использования systemctl
 
-Главная команда для отслеживания и контроля состояния *systemd* - команда *systemctl*. Некоторые из вариантов ее использования связаны с изучением состояния системы и управлением системой и службами. Обратитесь к странце руководства [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) для получения более детальной информации.
+Главная команда для отслеживания и контроля состояния *systemd* - команда *systemctl*. Некоторые из вариантов ее использования связаны с изучением состояния системы и управлением системой и службами. Обратитесь к странце руководства [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) для получения более детальной информации.
 
 **Совет:**
 
@@ -113,7 +113,7 @@ $ systemctl list-unit-files
 *   Точки монтирования будут автоматически преобразованы в соответствующий юнит *.mount*. Например, указание `/home` равнозначно `home.mount`
 *   Так же, как и точки монтирования, имена устройств автоматически преобразуются в соответствующий юнит *.device*, поэтому указание `/dev/sda2` полностью соответствует юниту `dev-sda2.device`
 
-Для получения дополнительной информации смотрите страницу справочного руководства [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5).
+Для получения дополнительной информации смотрите страницу справочного руководства [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5).
 
 **Примечание:** В некоторых именах юнитов содержится знак `@` (например, `имя@*строка*.service`). Это означает, что они являются [экземплярами](http://0pointer.de/blog/projects/instances.html) юнита-*шаблона*, в имени которого нет части `*строка*` (например, `имя@.service`). Часть `*строка*` называется *идентификатором экземпляра* и является аргументом, передаваемым юниту-шаблону при вызове команды *systemctl*: в файле юнита он заменит указание (specifier) `%i`.
 
@@ -121,7 +121,7 @@ $ systemctl list-unit-files
 
 **Совет:**
 
-*   Большинство указанных ниже команд также работают, если указать несколько юнитов. Для получения дополнительной информации смотрите страницу справочного руководства [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)
+*   Большинство указанных ниже команд также работают, если указать несколько юнитов. Для получения дополнительной информации смотрите страницу справочного руководства [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)
 *   Начиная с версии [systemd 220](https://github.com/systemd/systemd/blob/master/NEWS#L323-L326), переключатель `--now` может быть использован в сочетании с `enable`, `disable` и `mask` чтобы соответственно запустить или остановить все юниты сразу.
 *   Пакет может предложить юнитов для различных целей. Если вы только что установили пакет, воспользуйтесь командой `pacman -Qql *package* | grep -Fe .service -e .socket` для проверки и нахождения юнитов.
 
@@ -257,7 +257,7 @@ $ systemctl hybrid-sleep
 
 **Примечание:** При запуске *systemd* в [пользовательском режиме](/index.php/Systemd/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C#.D0.9A.D0.B0.D0.BA_.D1.8D.D1.82.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82 "Systemd/Пользователь") используются совершенно другие пути загрузки
 
-В качестве примера, посмотрите установленные юниты вашими пакетами, а также [секцию примеров](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples) из [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5).
+В качестве примера, посмотрите установленные юниты вашими пакетами, а также [секцию примеров](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples) из [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5).
 
 **Совет:** Как и обычно, вы можете добавлять комментарии, предваряемые символом `#`, но только на новых строках. Не используйте комментарии в конце строки, после параметров *systemd*, иначе юнит не будет запущен
 
@@ -280,7 +280,7 @@ $ systemctl hybrid-sleep
 
 Смотрите справочную страницу руководства [systemd.service(5)](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Type=) для более детального пояснения значений `Type`.
 
-Обратитесь к руководству [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) для получения более детального объяснения.
+Обратитесь к руководству [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) для получения более детального объяснения.
 
 ### Редактирование предоставленных пакетами файлов юнитов
 
@@ -470,7 +470,7 @@ $ systemctl list-units --type=target
 
 Примеры:
 
-*   Показать все сообщения с момента текущей загрузки системы: `# journalctl -b` Однако, пользователи часто интересуются сообщениями не для текущей, а для предыдущей загрузки (например, если произошел невосстановимый сбой системы). Это возможно, если задать параметр флагу `-b`: `journalctl -b -0` покажет сообщения с момента текущей загрузки, `journalctl -b -1` - предыдущей загрузки, `journalctl -b -2` - следующей за предыдущей, и т.д. Для просмотра полного описания смотрите страницу справочного руководства [journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1): имеется гораздо более мощная семантика
+*   Показать все сообщения с момента текущей загрузки системы: `# journalctl -b` Однако, пользователи часто интересуются сообщениями не для текущей, а для предыдущей загрузки (например, если произошел невосстановимый сбой системы). Это возможно, если задать параметр флагу `-b`: `journalctl -b -0` покажет сообщения с момента текущей загрузки, `journalctl -b -1` - предыдущей загрузки, `journalctl -b -2` - следующей за предыдущей, и т.д. Для просмотра полного описания смотрите страницу справочного руководства [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1): имеется гораздо более мощная семантика
 *   Показать все сообщения, начиная с какой-либо даты (и, если хотите, времени): `# journalctl --since="2012-10-30 18:17:16"` 
 *   Показать все сообщения за последние 20 минут: `# journalctl --since "20 min ago"` 
 *   Показывать новые сообщения: `# journalctl -f` 
@@ -480,9 +480,9 @@ $ systemctl list-units --type=target
 *   Показать кольцевой буфер ядра: `# journalctl -k` 
 *   Показать auth.log эквивалентно фильтрации syslog facility: `# journalctl -f -l SYSLOG_FACILITY=10` 
 
-Для получения дополнительной информации смотрите страницы справочного руководства [journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) и [systemd.journal-fields(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7) или [пост в блоге](http://0pointer.de/blog/projects/journalctl.html) Lennart'а.
+Для получения дополнительной информации смотрите страницы справочного руководства [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) и [systemd.journal-fields(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7) или [пост в блоге](http://0pointer.de/blog/projects/journalctl.html) Lennart'а.
 
-**Совет:** По умолчанию *journalctl* отсекает части строк, которые не вписываются в экран по ширине, и, в некоторых случаях, возможно, будет лучше использовать специальную программу-обертку. Управление этой возможностью производится посредством [переменной окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `SYSTEMD_LESS`, в которой содержатся опции, передаваемые в [less](/index.php/%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5_%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B#less "Базовые утилиты") (программа постраничного просмотра, используемая по умолчанию). По умолчанию ей присвоены опции `FRSXMK` (для получения дополнительной информации смотрите [less(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/less.1) и [journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1)).
+**Совет:** По умолчанию *journalctl* отсекает части строк, которые не вписываются в экран по ширине, и, в некоторых случаях, возможно, будет лучше использовать специальную программу-обертку. Управление этой возможностью производится посредством [переменной окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `SYSTEMD_LESS`, в которой содержатся опции, передаваемые в [less](/index.php/%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5_%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B#less "Базовые утилиты") (программа постраничного просмотра, используемая по умолчанию). По умолчанию ей присвоены опции `FRSXMK` (для получения дополнительной информации смотрите [less(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/less.1) и [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1)).
 
 Если убрать опцию `S`, будет достигнут требуемый результат. Например, запустите *journalctl*, как показано здесь:
 
@@ -498,7 +498,7 @@ $ SYSTEMD_LESS=FRXMK journalctl
 
  `/etc/systemd/journald.conf`  `SystemMaxUse=50M` 
 
-Для получения дополнительной информации обратитесь к странице справочного руководства [journald.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5).
+Для получения дополнительной информации обратитесь к странице справочного руководства [journald.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5).
 
 ### Очистка файлов журнала вручную
 
@@ -509,7 +509,7 @@ $ SYSTEMD_LESS=FRXMK journalctl
 *   Remove archived journal files until the disk space they use falls below 100M: `# journalctl --vacuum-size=100M` 
 *   Make all journal files contain no data older than 2 weeks. `# journalctl --vacuum-time=2weeks` 
 
-Для получения дополнительной информации, обратитесь к [journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1).
+Для получения дополнительной информации, обратитесь к [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1).
 
 ### Journald в связке с классическим демоном syslog
 

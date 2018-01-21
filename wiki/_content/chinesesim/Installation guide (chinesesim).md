@@ -2,7 +2,7 @@
 
 本文将指导如何用官方安装镜像启动的 Live 系统安装 [Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。建议在安装前阅读 [FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。对于本文中使用的惯用术语，请参阅 [Help:Reading](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Reading (简体中文)").
 
-有关更详细的说明，请阅读本指南内相应的 [ArchWiki](/index.php/ArchWiki:About_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki:About (简体中文)") 文章或各类程序的[手册](/index.php/Man_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Man page (简体中文)")。有关配置的概述，请参阅 [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7)。若需要交互帮助，可以使用 [IRC 频道](/index.php/IRC_channel "IRC channel")和[论坛](https://bbs.archlinux.org/)。
+有关更详细的说明，请阅读本指南内相应的 [ArchWiki](/index.php/ArchWiki:About_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki:About (简体中文)") 文章或各类程序的[手册](/index.php/Man_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Man page (简体中文)")。有关配置的概述，请参阅 [archlinux(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7)。若需要交互帮助，可以使用 [IRC 频道](/index.php/IRC_channel "IRC channel")和[论坛](https://bbs.archlinux.org/)。
 
 ## Contents
 
@@ -34,7 +34,7 @@
 
 Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikipedia.org/wiki/zh:X86-64 "w:zh:X86-64") 兼容机上运行。用 [base](https://www.archlinux.org/groups/x86_64/base/) 组内的软件包进行的基本安装将占用小于 800MB 的存储空间。由于安装过程中需要从远程存储库获取软件包，机器将需要一个有效的互联网连接。
 
-根据 [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (简体中文)") 中所述，下载并引导安装介质。启动完成后将会自动以 root 身份登录虚拟控制台并进入[zsh](/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Zsh (简体中文)")命令提示符。类似 [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) 的常规命令都可以用 `Tab` [自动补全](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion")。
+根据 [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (简体中文)") 中所述，下载并引导安装介质。启动完成后将会自动以 root 身份登录虚拟控制台并进入[zsh](/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Zsh (简体中文)")命令提示符。类似 [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) 的常规命令都可以用 `Tab` [自动补全](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion")。
 
 如果你想切换至其它的虚拟终端来干点别的事, 例如使用 [ELinks](/index.php/ELinks "ELinks") 来查看本篇指南，使用 `Alt+*arrow*` [快捷键](/index.php/Keyboard_shortcuts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Keyboard shortcuts (简体中文)")。可以使用 [nano](/index.php/Nano#Usage "Nano")，[vi](https://en.wikipedia.org/wiki/vi "w:vi") 或 [vim](/index.php/Vim#Usage "Vim") [编辑](/index.php/Textedit "Textedit")配置文件。
 
@@ -46,7 +46,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 将 *layout* 转换为您的键盘布局，如`fr`，`uk`，`dvorak`或`be-latin1`。[这里](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements "wikipedia:ISO 3166-1 alpha-2")有国家的二位字母编码表。使用命令 `ls /usr/share/kbd/keymaps/**/*.map.gz` 列出所有可用的键盘布局。
 
-[Console fonts](/index.php/Console_fonts "Console fonts") 位于 `/usr/share/kbd/consolefonts/`, 设置方式请参考 [setfont(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
+[Console fonts](/index.php/Console_fonts "Console fonts") 位于 `/usr/share/kbd/consolefonts/`, 设置方式请参考 [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
 ### 验证启动模式
 
@@ -70,7 +70,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 若发现网络不通,利用 `systemctl stop dhcpcd@`,`TAB` [停用](/index.php/Systemd#Using_units "Systemd") *dhcpcd* 进程，详情请查看 [网络配置文档](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)").
 
-对于**无线**连接,[iw(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) 和 [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") 等工具已被提供. 详情查看[无线网络配置](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)").
+对于**无线**连接,[iw(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) 和 [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") 等工具已被提供. 详情查看[无线网络配置](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)").
 
 ### 更新系统时间
 
@@ -239,7 +239,7 @@ zh_TW.UTF-8 UTF-8
 
 **警告:** 不推荐在此设置任何中文locale，或导致tty乱码。
 
-另外，如果你需要修改[键盘布局](#Set_the_keyboard_layout), 并想让这个设置持续生效，编辑 [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5)，例如:
+另外，如果你需要修改[键盘布局](#Set_the_keyboard_layout), 并想让这个设置持续生效，编辑 [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5)，例如:
 
  `/etc/vconsole.conf`  `KEYMAP=*de-latin1*` 
 
@@ -252,7 +252,7 @@ zh_TW.UTF-8 UTF-8
 
 ```
 
-建议添加[对应的信息](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration")到[hosts(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
+建议添加[对应的信息](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration")到[hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
 
  `/etc/hosts` 
 ```
@@ -296,7 +296,7 @@ zh_TW.UTF-8 UTF-8
 
 输入 `exit` 或按 `Ctrl+D` 退出 chroot 环境。
 
-可选用 `umount -R /mnt` 手动卸载被挂载的分区：这有助于发现任何“繁忙”的分区，并通过 [fuser(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1) 查找原因。
+可选用 `umount -R /mnt` 手动卸载被挂载的分区：这有助于发现任何“繁忙”的分区，并通过 [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1) 查找原因。
 
 最后，通过执行 `reboot` 重启系统：*systemd* 将自动卸载仍然挂载的任何分区。不要忘记移除安装介质，然后使用root帐户登录到新系统。
 

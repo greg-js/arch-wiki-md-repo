@@ -120,7 +120,7 @@ ExecStart=/usr/bin/syncthing-relaysrv -global-rate 500000 -provided-by *relaypro
 
 [Global discovery](https://docs.syncthing.net/specs/globaldisco-v3.html) is used by Syncthing to find peers on the internet. Any device announces itself at startup to the discovery server which stores the device ID, IP address, port and current time. Then on request, for a given device ID, it returns the information stored in JSON format, for instance.
 
-As an example, the request `[https://discovery-v4-2.syncthing.net/v2/?device=ITZRNXE-YNROGBZ-HXTH5P7-VK5NYE5-QHRQGE2-7JQ6VNJ-KZUEDIU-5PPR5AM](https://discovery-v4-2.syncthing.net/v2/?device=ITZRNXE-YNROGBZ-HXTH5P7-VK5NYE5-QHRQGE2-7JQ6VNJ-KZUEDIU-5PPR5AM)` returns `{"seen":"2017-12-06T14:04:39.005929Z","addresses":["tcp://212.129.18.55:22000"]`}.
+As an example, the request `[https://discovery-v4-2.syncthing.net/v2/?device=ITZRNXE-YNROGBZ-HXTH5P7-VK5NYE5-QHRQGE2-7JQ6VNJ-KZUEDIU-5PPR5AM](https://discovery-v4-2.syncthing.net/v2/?device=ITZRNXE-YNROGBZ-HXTH5P7-VK5NYE5-QHRQGE2-7JQ6VNJ-KZUEDIU-5PPR5AM)` returns `{"seen":"2017-12-06T14:04:39.005929Z","addresses":["tcp://212.129.18.55:22000"]}` .
 
 Anyone can run a [discovery server](https://docs.syncthing.net/users/stdiscosrv.html), to run your own, [install](/index.php/Install "Install") the [syncthing-discosrv](https://aur.archlinux.org/packages/syncthing-discosrv/) package.
 
@@ -135,7 +135,7 @@ After=network.target
 [Service]
 User=syncthing
 Group=syncthing
-ExecStart=/bin/sh -c "/usr/bin/syncthing-discosrv -db-dsn='file:///var/discosrv/discosrv.db' -cert /var/discosrv/chain.pem -key /var/discosrv/key.pem"
+ExecStart=/usr/bin/syncthing-discosrv -db-dsn /var/discosrv/discosrv.db -cert /var/discosrv/cert.pem -key /var/discosrv/key.pem -listen :8443"
 Restart=on-failure
 SuccessExitStatus=2
 

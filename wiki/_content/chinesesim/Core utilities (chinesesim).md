@@ -143,7 +143,7 @@ One would probably expect a *find* command to take as argument a file name and s
 
 ## locate
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [mlocate](https://www.archlinux.org/packages/?name=mlocate)，安装后，一个脚本会每天更新数据库。以 root 手动运行 *updatedb* 也可以更新数据库。 也预生成的或者由守护进程和增量编码压缩过的文件数据库搜索. 它要快于 *find*, 但需要经常更新数据库.默认会忽略 `/media` 和 `/mnt` 等路径，所以 *locate* 不会查找外置设备。详情请参考 [updatedb(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.1)。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [mlocate](https://www.archlinux.org/packages/?name=mlocate)，安装后，一个脚本会每天更新数据库。以 root 手动运行 *updatedb* 也可以更新数据库。 也预生成的或者由守护进程和增量编码压缩过的文件数据库搜索. 它要快于 *find*, 但需要经常更新数据库.默认会忽略 `/media` 和 `/mnt` 等路径，所以 *locate* 不会查找外置设备。详情请参考 [updatedb(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.1)。
 
 *locate* 命令是一个快速查找文件系统的常用 Unix 工具。因为是从数据库查找而不是直接访问文件系统，所以速度比 [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") 快很多。而缺点是数据库更新后的新文件不会被搜索到。使用 *locate* 前，请先以 root 权限执行 `updatedb`.
 
@@ -151,7 +151,7 @@ One would probably expect a *find* command to take as argument a file name and s
 
 ## lsblk
 
-[lsblk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) 命令会显示所有连接到系统的设备和分区状况：
+[lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) 命令会显示所有连接到系统的设备和分区状况：
 
  `$ lsblk` 
 ```
@@ -178,7 +178,7 @@ $ iconv -f ISO-8859-15 -t UTF-8 foo >foo.utf
 
 ```
 
-查阅 [iconv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) 获取更多细节.
+查阅 [iconv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) 获取更多细节.
 
 +
 
@@ -193,7 +193,7 @@ $ iconv -f WINDOWS-1251 -t UTF-8 foobar.txt | sponge foobar.txt
 
 ```
 
-See [sponge(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) for details.
+See [sponge(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) for details.
 
 ## ip
 
@@ -359,7 +359,7 @@ $ ss -au
 
 ```
 
-For more information see [ss(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) or [introductory examples](http://www.cyberciti.biz/files/ss.html).
+For more information see [ss(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) or [introductory examples](http://www.cyberciti.biz/files/ss.html).
 
 ## tar
 
@@ -384,7 +384,7 @@ Forcing a given format:
 | `*file*.tar.xz` | `tar xvJf *file*.tar.xz`
 `xz -cd *file*.xz | tar xvf -` |
 
-The construction of some of these *tar* arguments may be considered legacy, but they are still useful when performing specific operations. See its [man page](/index.php/Man_page "Man page") with [tar(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) for details.
+The construction of some of these *tar* arguments may be considered legacy, but they are still useful when performing specific operations. See its [man page](/index.php/Man_page "Man page") with [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) for details.
 
 ## which
 
@@ -399,7 +399,7 @@ The construction of some of these *tar* arguments may be considered legacy, but 
 
 *wipefs* can list or erase [file system](/index.php/File_system "File system"), [RAID](/index.php/RAID "RAID") or [partition-table](/index.php/Partition "Partition") signatures (magic strings) from the specified device. It does not erase the file systems themselves nor any other data from the device.
 
-See [wipefs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wipefs.8) for more information.
+See [wipefs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wipefs.8) for more information.
 
 For example, to erase all signatures from the device `/dev/sdb` and create a signature backup `~/wipefs-sdb-*offset*.bak` file for each signature:
 

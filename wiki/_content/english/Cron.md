@@ -522,7 +522,7 @@ A *cron* job can be defined in a crontab-like file in the `/etc/cron.d` director
 
 *Anacron* works similarly, by executing the files in the `/etc/cron.daily`, `/etc/cron.weekly` and `/etc/cron.monthly` directories, placed there depending on the desired job frequency. The cron job `/etc/cron.hourly/0anacron` makes sure that *anacron* is run once daily to perform its pending tasks.
 
-**Note:** cronie uses `run-parts` to carry out scripts in the different directories. The filenames should not include any dot (.) since `run-parts` in its default mode will silently ignore them (see [run-parts(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/run-parts.8)). The names must consist only of upper and lower-case letters, digits, underscores and minus-hyphens.
+**Note:** cronie uses `run-parts` to carry out scripts in the different directories. The filenames should not include any dot (.) since `run-parts` in its default mode will silently ignore them (see [run-parts(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/run-parts.8)). The names must consist only of upper and lower-case letters, digits, underscores and minus-hyphens.
 
 **Note:** the output of `systemctl status cronie` might show a message such as `CAN'T OPEN (/etc/crontab): No such file or directory`. However, this can be ignored since cronie does not require one.
 

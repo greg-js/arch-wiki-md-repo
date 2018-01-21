@@ -112,7 +112,7 @@ $ systemctl list-units --state=running "*.service" > daemons.list
 
 and configure the [#Init scripts](#Init_scripts) accordingly. See also [[2]](http://unix.stackexchange.com/questions/175380/how-to-list-all-running-daemons).
 
-**Note:** [systemd-tmpfiles(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8), [kernel modules](/index.php/Kernel_modules "Kernel modules") and [sysctl](/index.php/Sysctl "Sysctl") may also need configuration.
+**Note:** [systemd-tmpfiles(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8), [kernel modules](/index.php/Kernel_modules "Kernel modules") and [sysctl](/index.php/Sysctl "Sysctl") may also need configuration.
 
 ### logind
 

@@ -140,7 +140,7 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 The following options apply to `/etc/X11/xorg.conf.d/**20-amdgpu.conf**`.
 
-Please read [amdgpu(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/amdgpu.4) first before setting driver options.
+Please read [amdgpu(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/amdgpu.4) first before setting driver options.
 
 **DRI** sets the maximum level of DRI to enable. Valid values are *2* for DRI2 or *3* for DRI3\. The default is *3* for DRI3 if the Xorg version is >= 1.18.3, otherwise DRI2 is used:
 

@@ -60,10 +60,6 @@ Der findes flere spil miljøer for at spille spil i Linux:
 
 **Tip:** if there happens to be a notable lag when there are lots of enemies on screen or in larger levels, try running the windows version through Wine. It will probably fix this problem. The Windows version and English patch can be found at the [cave story tribute site](http://www.cavestory.org).
 
-*   **[Freedink](https://en.wikipedia.org/wiki/Dink_Smallwood "wikipedia:Dink Smallwood")** — Free and enhanced version of the action-adventure "Dink Smallwood"
-
-	[http://www.freedink.org/](http://www.freedink.org/) || [freedink](https://aur.archlinux.org/packages/freedink/)
-
 *   **[Neverball](https://en.wikipedia.org/wiki/Neverball "wikipedia:Neverball")** — 3D game to guide a ball through a maze
 
 	[http://neverball.org/](http://neverball.org/) || [neverball](https://www.archlinux.org/packages/?name=neverball)
@@ -151,7 +147,6 @@ Der findes flere spil miljøer for at spille spil i Linux:
 *   [Tremulous](http://tremulous.net/) - FPS with elements of real time strategy, featuring humans and aliens
 *   [True Combat: Elite(TCE)](http://www.truecombatelite.com/) - A completely free, realistic, team-based modification for Enemy Territory.
 *   [TUER](http://tuer.sourceforge.net)
-*   UT'99 (Unreal Tournament)] - You may be able to use the [Loki Package](http://www.linux-gamers.net/modules/wfdownloads/singlefile.php?cid=25&lid=79). [ut1999](https://aur.archlinux.org/packages/ut1999/)
 *   [Urban Terror](/index.php/Urban_Terror "Urban Terror") - Modern multiplayer FPS based on the ioquake3 engine
 *   [Warsow](http://www.warsow.net/) - Fast paced multiplayer FPS focusing on movement and trick jumps
 *   [Wolfenstein: Enemy Territory](/index.php/Wolfenstein:_Enemy_Territory "Wolfenstein: Enemy Territory") - Freeware edition of Return to Castle Wolfenstein's multiplayer client
@@ -180,7 +175,6 @@ Der findes flere spil miljøer for at spille spil i Linux:
 *   [Savage - The Battle For Newerth](http://www.s2games.com/savage/index.php) - Savage: The Battle for Newerth is an online multiplayer team-based FPS/RTS hybrid. Completely free as of September 2006\. (Includes SFE Patches).
 *   [Savage2 - A tortured soul](http://savage2.com) - A fantasy themed online multiplayer team-based FPS/RTS/RPG hybrid. Completely free as of December 2008.
 *   [Second Life](http://secondlife.com/) - Online, 3D virtual world imagined and created by its residents
-*   Spiral Knights - Free to play Java game developed by Three Rings Design and published by Sega. [spiral-knights](https://aur.archlinux.org/packages/spiral-knights/)
 *   [The Mana World](http://themanaworld.org) - The Mana World (TMW) is a serious effort to create an innovative free and open source MMORPG.
 *   [Vendetta Online](http://www.vendetta-online.com)
 *   [Wurm Online](http://www.wurmonline.com)

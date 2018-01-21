@@ -133,7 +133,7 @@ Each section is optional and can be omitted if unneeded.
 
 ### mailcap
 
-The [mailcap(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mailcap.4) file format is used by mail programs such as [mutt](https://www.archlinux.org/packages/?name=mutt) and [sylpheed](https://www.archlinux.org/packages/?name=sylpheed) to open non-text files. To have those programs use [xdg-open](#xdg-utils), edit `~/.mailcap`:
+The [mailcap(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mailcap.4) file format is used by mail programs such as [mutt](https://www.archlinux.org/packages/?name=mutt) and [sylpheed](https://www.archlinux.org/packages/?name=sylpheed) to open non-text files. To have those programs use [xdg-open](#xdg-utils), edit `~/.mailcap`:
 
  `~/.mailcap` 
 ```

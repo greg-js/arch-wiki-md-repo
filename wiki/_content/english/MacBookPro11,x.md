@@ -150,7 +150,7 @@ At the next reboot, the Apple Boot Manager, shown when holding down the option k
 ```
  $ wget -O /tmp/archlinux.svg [https://www.archlinux.org/logos/archlinux-icon-crystal-64.svg](https://www.archlinux.org/logos/archlinux-icon-crystal-64.svg)
  $ rsvg-convert -w 128 -h 128 -o /tmp/archlogo.png /tmp/archlinux.svg
- $ sudo png2icns /boot/.VolumeIcon.icns /tmp/archlogo.png
+ # png2icns /boot/.VolumeIcon.icns /tmp/archlogo.png
  $ rm /tmp/archlogo.png
  $ rm /tmp/archlinux.svg
 

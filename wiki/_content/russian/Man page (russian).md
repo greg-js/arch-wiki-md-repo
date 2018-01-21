@@ -15,7 +15,7 @@ man-страницы изначально подразумевались как 
         *   [4.3.2 rxvt-unicode](#rxvt-unicode)
 *   [5 Просмотр локальных страниц](#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D1.85_.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86)
     *   [5.1 Конвертирование страниц в HTML](#.D0.9A.D0.BE.D0.BD.D0.B2.D0.B5.D1.80.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86_.D0.B2_HTML)
-        *   [5.1.1 mdocml](#mdocml)
+        *   [5.1.1 mandoc](#mandoc)
         *   [5.1.2 man2html](#man2html)
         *   [5.1.3 man -H](#man_-H)
         *   [5.1.4 roffit](#roffit)
@@ -265,7 +265,7 @@ setkey edit "v"
 
 ```
 
-если вы хотите видеть цвета и начертания одновременно. Смотрите также [xterm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1) для описания ресурса терминала `veryBoldColors`.
+если вы хотите видеть цвета и начертания одновременно. Смотрите также [xterm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1) для описания ресурса терминала `veryBoldColors`.
 
 #### rxvt-unicode
 
@@ -304,9 +304,9 @@ man:<name>
 
 ### Конвертирование страниц в HTML
 
-#### mdocml
+#### mandoc
 
-Установите пакет [mdocml](https://aur.archlinux.org/packages/mdocml/). Чтобы конвертировать страницу, для примера, `free(1)`, наберите:
+Установите пакет [mandoc](https://aur.archlinux.org/packages/mandoc/). Чтобы конвертировать страницу, для примера, `free(1)`, наберите:
 
 ```
 $ gunzip -c /usr/share/man/man1/free.1.gz | mandoc -Thtml -Ostyle=style.css 1> free.html

@@ -7,7 +7,7 @@ In order to use this tutorial, one must have a protonvpn account.
 *   [1 Walkthrough](#Walkthrough)
     *   [1.1 Saving OpenVPN Authentication](#Saving_OpenVPN_Authentication)
     *   [1.2 Enable VPN on Boot](#Enable_VPN_on_Boot)
-*   [2 References](#References)
+*   [2 See also](#See_also)
 
 ## Walkthrough
 
@@ -22,7 +22,7 @@ Pick the corresponding **.ovpn** that will be used (ca.protonvpn.com.tcp443.ovpn
 Copy the file with a new extension (this is just so you keep the original ovpn file intact)
 
 ```
-$ sudo cp /etc/openvpn/client/ca.protonvpn.com.tcp443.ovpn /etc/openvpn/client/protonvpn.conf
+# cp /etc/openvpn/client/ca.protonvpn.com.tcp443.ovpn /etc/openvpn/client/protonvpn.conf
 
 ```
 
@@ -47,7 +47,7 @@ down-pre
 Start your VPN:
 
 ```
-$ sudo openvpn /etc/openvpn/client/protonvpn.conf
+# openvpn /etc/openvpn/client/protonvpn.conf
 
 ```
 
@@ -73,6 +73,6 @@ openvpn_password
 
 For systemd service configuration, see [OpenVPN#systemd service configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN").
 
-## References
+## See also
 
-*   [Arch Wiki OpenVPN](/index.php/OpenVPN "OpenVPN")
+*   [OpenVPN](/index.php/OpenVPN "OpenVPN")

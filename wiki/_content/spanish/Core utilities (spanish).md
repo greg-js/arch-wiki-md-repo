@@ -231,7 +231,7 @@ $ iconv -f ISO-8859-15 -t UTF-8 foo >foo.utf
 
 ```
 
-Vea [iconv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) para más detalles.
+Vea [iconv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) para más detalles.
 
 ### Convertir el fichero reemplazándolo
 
@@ -244,7 +244,7 @@ $ iconv -f WINDOWS-1251 -t UTF-8 foobar.txt | sponge foobar.txt
 
 ```
 
-Vea [sponge(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) para más detalles.
+Vea [sponge(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) para más detalles.
 
 ## ip
 

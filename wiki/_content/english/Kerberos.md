@@ -32,7 +32,7 @@ Related articles
 
 It is **highly** recommended to use a [time sync daemon](/index.php/Time#Time_synchronization "Time") to keep client/server clocks in sync.
 
-If hostname resolution has not been configured, you can manually add your clients and server to the [hosts(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5) file of each machine. Note that the FQDN (myclient.example.com) must be the first hostname after the IP address in the hosts file.
+If hostname resolution has not been configured, you can manually add your clients and server to the [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5) file of each machine. Note that the FQDN (myclient.example.com) must be the first hostname after the IP address in the hosts file.
 
 ## Server configuration
 

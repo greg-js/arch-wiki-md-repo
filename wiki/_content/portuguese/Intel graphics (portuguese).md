@@ -58,7 +58,7 @@ Instale o pacote [mesa](https://www.archlinux.org/packages/?name=mesa), que forn
 
 Não se esqueça de checar [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-**Nota:** Existe uma discussão ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch), [KDE](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)) em que alguns recomendam não se instalar o driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), deixando apenas o modesetting driver, que é o driver embutido no kernel. Veja [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg (Português)#Instalação do Xorg](/index.php/Xorg_(Portugu%C3%AAs)#Instala.C3.A7.C3.A3o_do_Xorg "Xorg (Português)"), and [modesetting(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4). Entretanto, o driver modesetting pode também causar alguns problemas [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
+**Nota:** Existe uma discussão ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch), [KDE](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)) em que alguns recomendam não se instalar o driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), deixando apenas o modesetting driver, que é o driver embutido no kernel. Veja [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg (Português)#Instalação do Xorg](/index.php/Xorg_(Portugu%C3%AAs)#Instala.C3.A7.C3.A3o_do_Xorg "Xorg (Português)"), and [modesetting(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4). Entretanto, o driver modesetting pode também causar alguns problemas [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
 
 ## Carregando
 
@@ -244,7 +244,7 @@ Option      "AccelMethod"  "uxa"
 
 ```
 
-Veja [intel(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4) sobre `Option "AccelMethod"`.
+Veja [intel(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4) sobre `Option "AccelMethod"`.
 
 ### Problemas com DRI3
 

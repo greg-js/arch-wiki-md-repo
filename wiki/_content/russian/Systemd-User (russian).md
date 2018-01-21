@@ -268,7 +268,7 @@ WantedBy=default.target
 
 ```
 
-Как указано в [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5), переменная `%h` заменяется домашней директорией пользователя, запускающего службу. Есть и другие переменные, которые учитываются на странице руководства [systemd](/index.php/Systemd "Systemd").
+Как указано в [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5), переменная `%h` заменяется домашней директорией пользователя, запускающего службу. Есть и другие переменные, которые учитываются на странице руководства [systemd](/index.php/Systemd "Systemd").
 
 ### Примечание о приложениях X
 

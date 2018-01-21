@@ -506,7 +506,7 @@ Zsh всегда выполняет `/etc/zsh/zshenv` и `$ZDOTDIR/.zshenv` та
 
 При входе в оболочку, читаются команды из `/etc/profile` а потом `$ZDOTDIR/.zprofile`. Затем, если оболочка является интерактивной, команды читаются из `/etc/zsh/zshrc` а потом `$ZDOTDIR/.zshrc`. Наконец, если в оболочку выполнен вход, читаются `/etc/zsh/zlogin` и `$ZDOTDIR/.zlogin`.
 
-Смотрите также секцию *STARTUP/SHUTDOWN FILES* в [zsh(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zsh.1).
+Смотрите также секцию *STARTUP/SHUTDOWN FILES* в [zsh(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zsh.1).
 
 ### Постоянный rehash
 

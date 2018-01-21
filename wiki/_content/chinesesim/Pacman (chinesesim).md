@@ -74,7 +74,7 @@
 
 ## 用法
 
-下面只是一个可执行操作的小部分示范，*pacman* 的其他示例请阅读[pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)。
+下面只是一个可执行操作的小部分示范，*pacman* 的其他示例请阅读[pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)。
 
 **提示：** 使用过其它发行版的用户，可以参考 [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta") 中的对比.
 

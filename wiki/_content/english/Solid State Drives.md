@@ -81,7 +81,7 @@ Alternatively, [install](/index.php/Install "Install") [hdparm](https://www.arch
 
 #### Periodic TRIM
 
-The [util-linux](https://www.archlinux.org/packages/?name=util-linux) package provides `fstrim.service` and `fstrim.timer` [systemd](/index.php/Systemd "Systemd") unit files. [Enabling](/index.php/Enabling "Enabling") the timer will activate the service weekly. The service executes [fstrim(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fstrim.8) on all mounted filesystems on devices that support the *discard* operation.
+The [util-linux](https://www.archlinux.org/packages/?name=util-linux) package provides `fstrim.service` and `fstrim.timer` [systemd](/index.php/Systemd "Systemd") unit files. [Enabling](/index.php/Enabling "Enabling") the timer will activate the service weekly. The service executes [fstrim(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fstrim.8) on all mounted filesystems on devices that support the *discard* operation.
 
 The timer relies on the timestamp of `/var/lib/systemd/timers/stamp-fstrim.timer` (which it will create upon first invocation) to know whether a week has elapsed since it last ran. Therefore there is no need to worry about too frequent invocations, in an *anacron*-like fashion.
 
@@ -130,7 +130,7 @@ If you want to trim your entire SSD at once, e.g. for a new install, or you want
 
 Change the value of `issue_discards` option from 0 to 1 in `/etc/lvm/lvm.conf`.
 
-**Note:** Enabling this option will "issue discards to a logical volumes's underlying physical volume(s) when the logical volume is no longer using the physical volumes' space (e.g. *lvremove*, *lvreduce*, etc)" (see [lvm.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.conf.5) and/or inline comments in `/etc/lvm/lvm.conf`). As such it does not seem to be required for "regular" TRIM requests (file deletions inside a filesystem) to be functional.
+**Note:** Enabling this option will "issue discards to a logical volumes's underlying physical volume(s) when the logical volume is no longer using the physical volumes' space (e.g. *lvremove*, *lvreduce*, etc)" (see [lvm.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.conf.5) and/or inline comments in `/etc/lvm/lvm.conf`). As such it does not seem to be required for "regular" TRIM requests (file deletions inside a filesystem) to be functional.
 
 #### dm-crypt
 

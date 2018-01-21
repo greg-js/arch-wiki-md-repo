@@ -38,7 +38,7 @@ Faça login novamente para aplicar a alteração e usar `newgrp wireshark` para 
 
 Existem várias maneiras de capturar exatamente o que você está procurando no Wireshark, aplicando [filtros de captura](https://wiki.wireshark.org/CaptureFilters) ou [filtros de exibição](https://wiki.wireshark.org/DisplayFilters).
 
-**Nota:** Para aprender a sintaxe do filtro de captura, veja o man [pcap-filter(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pcap-filter.7). Para os filtros de exibição, veja o man [wireshark-filter(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wireshark-filter.4).
+**Nota:** Para aprender a sintaxe do filtro de captura, veja o man [pcap-filter(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pcap-filter.7). Para os filtros de exibição, veja o man [wireshark-filter(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wireshark-filter.4).
 
 ### Filtrando pacotes TCP
 

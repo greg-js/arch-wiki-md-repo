@@ -43,7 +43,7 @@ From [Wikipedia article](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
 
 ## Installation
 
-*udev* is now part of [systemd](/index.php/Systemd "Systemd") and is installed by default. See [systemd-udevd.service(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-udevd.service.8) for information.
+*udev* is now part of [systemd](/index.php/Systemd "Systemd") and is installed by default. See [systemd-udevd.service(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-udevd.service.8) for information.
 
 A standalone fork is available as [eudev](/index.php/Eudev "Eudev").
 
@@ -438,7 +438,7 @@ For udisks, set `UDISKS_SYSTEM_INTERNAL="0"`, which will mark the device as "rem
 
  `/etc/udev/rules.d/50-external-myhomedisk.rules`  `ENV{ID_SERIAL_SHORT}=="*serial_number*", ENV{UDISKS_SYSTEM_INTERNAL}="0"` 
 
-For udisks2, set `UDISKS_AUTO="1"` to mark the device for automounting and `UDISKS_SYSTEM="0"` to mark the device as "removable". See [udisks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8) for details.
+For udisks2, set `UDISKS_AUTO="1"` to mark the device for automounting and `UDISKS_SYSTEM="0"` to mark the device as "removable". See [udisks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8) for details.
 
  `/etc/udev/rules.d/99-removable.rules`  `ENV{ID_SERIAL_SHORT}=="*serial_number*", ENV{UDISKS_AUTO}="1", ENV{UDISKS_SYSTEM}="0"` 
 

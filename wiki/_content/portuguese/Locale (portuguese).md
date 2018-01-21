@@ -26,7 +26,7 @@ Locales, por vezes chamados em português de *localidades*, são usados pelo [gl
 
 ## Gerando locales
 
-Nomes de locales geralmente possuem a forma `idioma[território][.código][@modificador]`, sendo *idioma* um [código de idiomas da ISO 639](https://en.wikipedia.org/wiki/pt:ISO_639 "w:pt:ISO 639"), *território* um [código de países da ISO 3166](https://en.wikipedia.org/wiki/pt:ISO_3166-1#Current_codes "w:pt:ISO 3166-1") e *.código* uma [codificação de caracteres](https://en.wikipedia.org/wiki/pt:Codifica%C3%A7%C3%A3o_de_caracteres "w:pt:Codificação de caracteres") ou identificador de codificação como [ISO-8859-1](https://en.wikipedia.org/wiki/pt:ISO/IEC_8859-1 "w:pt:ISO/IEC 8859-1") ou [UTF-8](https://en.wikipedia.org/wiki/pt:UTF-8 "w:pt:UTF-8"). Veja [setlocale(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setlocale.3).
+Nomes de locales geralmente possuem a forma `idioma[território][.código][@modificador]`, sendo *idioma* um [código de idiomas da ISO 639](https://en.wikipedia.org/wiki/pt:ISO_639 "w:pt:ISO 639"), *território* um [código de países da ISO 3166](https://en.wikipedia.org/wiki/pt:ISO_3166-1#Current_codes "w:pt:ISO 3166-1") e *.código* uma [codificação de caracteres](https://en.wikipedia.org/wiki/pt:Codifica%C3%A7%C3%A3o_de_caracteres "w:pt:Codificação de caracteres") ou identificador de codificação como [ISO-8859-1](https://en.wikipedia.org/wiki/pt:ISO/IEC_8859-1 "w:pt:ISO/IEC 8859-1") ou [UTF-8](https://en.wikipedia.org/wiki/pt:UTF-8 "w:pt:UTF-8"). Veja [setlocale(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setlocale.3).
 
 Para uma lista de locales habilitados, execute:
 
@@ -79,7 +79,7 @@ $ localedef --list-archive
 
 ```
 
-Alternativamente, use [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1):
+Alternativamente, use [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1):
 
 ```
 $ localectl list-locales
@@ -99,7 +99,7 @@ Alternativamente, execute:
 
 ```
 
-Veja [#Variáveis](#Vari.C3.A1veis) e [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) para detalhes.
+Veja [#Variáveis](#Vari.C3.A1veis) e [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) para detalhes.
 
 ### Sobrepondo locale do sistema por sessão de usuário
 
@@ -160,7 +160,7 @@ Os arquivos `locale.conf` oferecem suporte às seguintes variáveis de ambiente:
 *   `LC_TELEPHONE`
 *   [LC_TIME](#LC_TIME:_formato_de_data_e_hora)
 
-O significado completo das variáveis `LC_*` acima pode ser localizado na página man [locale(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.7), enquanto os detalhes de suas definições estão descritas em [locale(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.5).
+O significado completo das variáveis `LC_*` acima pode ser localizado na página man [locale(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.7), enquanto os detalhes de suas definições estão descritas em [locale(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.5).
 
 ### LANG: locale padrão
 
@@ -181,7 +181,7 @@ LANGUAGE=en_AU:en_GB:en
 Se `LC_TIME` estiver configurado para `en_US.UTF-8`, por exemplo, o formato de data será "MM/DD/AAAA". Caso prefira usar o formato de data da ISO 8601 de "AAAA-MM-DD", use:
 
  `locale.conf`  `LC_TIME=en_DK.UTF-8` 
-**Nota:** Os programas não necessariamente respeitam essa variável para formatar a data. Por exemplo, [date(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/date.1) usa seus próprios parâmetros para fazê-lo.
+**Nota:** Os programas não necessariamente respeitam essa variável para formatar a data. Por exemplo, [date(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/date.1) usa seus próprios parâmetros para fazê-lo.
 
 ### LC_COLLATE: colação
 

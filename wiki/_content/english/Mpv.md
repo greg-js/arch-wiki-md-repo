@@ -134,7 +134,7 @@ tscale=oversample
 
 Beyond this there is still a lot you can do but things become more complicated, require more powerful video cards, and are in constant development. As a brief overview, it is possible to load special shaders that perform exotic scaling and sharpening techniques including some that actually use deep neural networks trained on images (for both real world and animated content). To learn more about this take a look around the [mpv wiki](https://github.com/mpv-player/mpv/wiki), particularly the [user shader's section](https://github.com/mpv-player/mpv/wiki/User-Scripts#user-shaders).
 
-There are also plenty of other options you may find desirable as well. It is worthwhile taking a look at [mpv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1). It's also helpful to run *mpv* from the command line to check for error messages about the config.
+There are also plenty of other options you may find desirable as well. It is worthwhile taking a look at [mpv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1). It's also helpful to run *mpv* from the command line to check for error messages about the config.
 
 #### Profiles
 
@@ -291,7 +291,7 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 **Note:** The main difference between hardware decoding and software decoding is that in software decoding the file will be decompressed and then moved onto the video card whereas with hardware decoding it will be moved to the video card first and then decompressed. In either case, video *playback* will still be hardware accelerated via the video card.
 
-Unlike *mplayer* and *mplayer2*, *mpv* has both VA-API and VDPAU support built-in. To enable it, run *mpv* with the `--hwdec='method'` option. You can find list of all available methods looking in the [mpv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1) manual. To make this persistent, add the line `hwdec=*method*` to your configuration file. If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding.
+Unlike *mplayer* and *mplayer2*, *mpv* has both VA-API and VDPAU support built-in. To enable it, run *mpv* with the `--hwdec='method'` option. You can find list of all available methods looking in the [mpv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1) manual. To make this persistent, add the line `hwdec=*method*` to your configuration file. If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding.
 
 The default video output driver, `opengl`, is the preferred video output driver and all others are offered only for compatibility purposes. If one encounters problems they may choose to use either `vo=vdpau` (if using `hwdec=vdpau`) or `vo=vaapi` (if using `hwdec=vaapi`) instead. This can affect the framedrop code used and cause other small differences.
 

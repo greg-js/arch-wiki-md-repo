@@ -116,7 +116,7 @@ If you use [LVM](/index.php/LVM "LVM") for your `/boot`, you can install GRUB on
 
 **Tip:** See [GRUB/Tips and tricks#Alternative installation methods](/index.php/GRUB/Tips_and_tricks#Alternative_installation_methods "GRUB/Tips and tricks") for other ways to install GRUB, such as to a USB stick.
 
-See [grub-install(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8) and [[2]](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation) for more details on the *grub-install* command.
+See [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8) and [[2]](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation) for more details on the *grub-install* command.
 
 ## UEFI systems
 

@@ -14,7 +14,6 @@
     *   [3.1 Kernel patches](#Kernel_patches)
         *   [3.1.1 Patch history](#Patch_history)
         *   [3.1.2 AUR package with patched kernel](#AUR_package_with_patched_kernel)
-        *   [3.1.3 SD card Replay Protected Memory Block partition](#SD_card_Replay_Protected_Memory_Block_partition)
     *   [3.2 Additional config](#Additional_config)
         *   [3.2.1 Freezing](#Freezing)
         *   [3.2.2 Sound](#Sound)
@@ -26,7 +25,7 @@
     *   [4.3 Touchpad](#Touchpad)
     *   [4.4 SD card reader](#SD_card_reader)
     *   [4.5 Special keys](#Special_keys)
-    *   [4.6 See also](#See_also)
+*   [5 See also](#See_also)
 
 ## Booting Arch install media
 
@@ -38,14 +37,14 @@ The current image (ARCH_201801) does include the drivers for the x205TA's broadc
 
 #### Creating bootia32.efi
 
-Acquire the latest arch install ISO ([https://www.archlinux.org/download/](https://www.archlinux.org/download/)). Let's call this file <ISO-SOURCE>. Make note of its volume label. You can see this by running "file" on the iso file you downloaded and looking for the label in single quotes.
+Acquire the latest arch install ISO ([https://www.archlinux.org/download/](https://www.archlinux.org/download/)). Let us call this file <ISO-SOURCE>. Make note of its volume label. You can see this by running "file" on the iso file you downloaded and looking for the label in single quotes.
 
 ```
 $ file <ISO-SOURCE> | sed -e "s/.*'\(.*\)'.*/\1/"
 
 ```
 
-You'll recognise it because the convention for arch labels is: 'ARCH_<YEAR><MONTH>'.
+You will recognise it because the convention for arch labels is: 'ARCH_<YEAR><MONTH>'.
 
 Create a custom grub.cfg file, replacing <FS-LABEL> with the correct label for your iso.
 
@@ -99,14 +98,14 @@ Follow the instructions listed [here](https://projects.archlinux.org/archiso.git
 
 In detail, that is:
 
-Insert a usb storage device that you're happy to overwrite, noting its device node (e.g., /dev/sdb ; i.e., <DEV-TARGET>). Use gdisk to create a UFI bootable partition on the disk:
+Insert a usb storage device that you are happy to overwrite, noting its device node (e.g., /dev/sdb ; i.e., <DEV-TARGET>). Use gdisk to create a UFI bootable partition on the disk:
 
 ```
 $ gdisk <DEV-TARGET>
 
 ```
 
-Delete any existing partitions (repeatedly use the *d* command until they're all gone). Add a new partition (*n*) and set its type to "ef00" when prompted. Write the changes to disk (*w*).
+Delete any existing partitions (repeatedly use the *d* command until they are all gone). Add a new partition (*n*) and set its type to "ef00" when prompted. Write the changes to disk (*w*).
 
 Update the kernel's awareness of the new partition
 
@@ -177,7 +176,7 @@ Select your USB medium from the 'Boot Override' section of the 'Save & Exit' men
 
 ### Enable wifi
 
-The firmware for your wifi modem will not load by default. In addition to the driver we copied over, we'll need to copy over our local EFI variables:
+The firmware for your wifi modem will not load by default. In addition to the driver we copied over, we will need to copy over our local EFI variables:
 
 ```
 $ cp /sys/firmware/efi/efivars/nvram-74b00bd9-805a-4d61-b51f-43268123d113 /lib/firmware/brcm/brcmfmac43340-sdio.txt
@@ -202,13 +201,13 @@ Proceed as usual.
 
 With some kernel patches on newer kernels the x205ta works. The built-in microphone does not work. (Refer to "Sound".) The Intel Baytrail CPU should be able to consume less power than it does. There are still occasional freezes possible due to the CPU power states not being properly supported. (Refer to "Freezes".)
 
-**Tip:** Use AUR package [linux-x205ta](https://aur.archlinux.org/packages/linux-x205ta/) for updates and patches.
-
 ### Kernel patches
 
 #### Patch history
 
 Three very elaborate threads contain the history of patches for the kernel for the x205ta: [kernel bug for baytrail power states](https://bugzilla.kernel.org/show_bug.cgi?id=109051), [kernel bug for chtrt5645](https://bugzilla.kernel.org/show_bug.cgi?id=95681) and most important [a Ubuntu forum thread](https://ubuntuforums.org/showthread.php?t=2254322) with [a patched kernel provided by harryharryharry](https://ubuntuforums.org/showthread.php?t=2254322&page=158&p=13625163#post13625163).
+
+As of kernel version v4.4-rc1 the micro SD card reader should work out of the box. See [commit info in kernel source.](https://github.com/torvalds/linux/commit/0cd2f04453fcb7bf3f38a4a72d1619636b4afa57) There can however be timeouts when probing the Replay Protected Memory Block partition. Refer to [this page](https://dev-nell.com/rpmb-emmc-errors-under-linux.html) for more info and a kernel patch disabling the RPMB partition should you never need the RPMB partition.
 
 #### AUR package with patched kernel
 
@@ -216,19 +215,9 @@ AUR package [linux-x205ta](https://aur.archlinux.org/packages/linux-x205ta/) app
 
 Compiling the kernel with the provided config takes about one hour.
 
-The x205ta has a limited amount of RAM, so don't extract and build the kernel in tmpfs. Depending on your AUR helper that may require specific config.
-
-Ask makepkg to use the four CPU cores when compiling on the x205ta in `~/.config/pacman/makepkg.conf` or `/etc/makepkg.conf`:
-
- `~/.config/pacman/makepkg.conf`  `MAKEFLAGS="-j$(nproc)"` 
+The x205ta has a limited amount of RAM, so do not extract and build the kernel in tmpfs.
 
 Manual interventions and patches are needed on older kernels as a lot of patches came in over time. Refer to "On older kernels" below for instructions for older kernels.
-
-#### SD card Replay Protected Memory Block partition
-
-As of kernel version v4.4-rc1 the micro SD card reader should work out of the box. See [commit info in kernel source.](https://github.com/torvalds/linux/commit/0cd2f04453fcb7bf3f38a4a72d1619636b4afa57) There can however be timeouts when probing the Replay Protected Memory Block partition. Refer to [this page](https://dev-nell.com/rpmb-emmc-errors-under-linux.html) for more info and a kernel patch disabling the RPMB partition should you never need the RPMB partition.
-
-AUR package [linux-x205ta](https://aur.archlinux.org/packages/linux-x205ta/) applies the patch disabling the RPMB partition.
 
 ### Additional config
 
@@ -236,21 +225,11 @@ AUR package [linux-x205ta](https://aur.archlinux.org/packages/linux-x205ta/) app
 
 Depending on kernel versions, on an unpatched kernel, the x205ta regularly freezes, where the x205ta can only be restarted by holding down the power button for several seconds. Freezes are due to poor support for the baytrail power functions. Refer to the [kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=109051) for more info. AUR package [linux-x205ta](https://aur.archlinux.org/packages/linux-x205ta/) applies what seems to be the most effective patch.
 
-Setting kernel argument "intel_idle.max_cstate=1" solves the problem on a patched kernel without affecting performance. Power saving functionalities should in theory be impeded using this patch and kernel parameter, but the laptop's battery life remains impressive and freezes are not frequent. The [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") page may help with adding to the kernel parameters.
+Setting kernel argument `intel_idle.max_cstate=1` solves the problem on a patched kernel without affecting performance. Power saving functionalities should in theory be impeded using this patch and kernel parameter, but the laptop's battery life remains impressive and freezes are not frequent. The [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") page may help with adding to the kernel parameters.
 
 #### Sound
 
-There has recently been some success in getting the x205ta's Realtek RT5648 sound card working. The relevant patches are in Linux release 4.11 and later.
-
-Alsa-lib's UCM files need to be overwritten with the right version of files provided by Pierre Bossart. Follow the wget commands below. Note that each alsa-lib update will overwrite these.
-
-```
-$ wget -qO /usr/share/alsa/ucm/chtrt5645/HiFi.conf [https://raw.githubusercontent.com/plbossart/UCM/c8b344ca650a62aa809242b0c9ba908eac963125/chtrt5645/HiFi.conf](https://raw.githubusercontent.com/plbossart/UCM/c8b344ca650a62aa809242b0c9ba908eac963125/chtrt5645/HiFi.conf)
-$ wget -qO /usr/share/alsa/ucm/chtrt5645/chtrt5645.conf [https://raw.githubusercontent.com/plbossart/UCM/c8b344ca650a62aa809242b0c9ba908eac963125/chtrt5645/chtrt5645.conf](https://raw.githubusercontent.com/plbossart/UCM/c8b344ca650a62aa809242b0c9ba908eac963125/chtrt5645/chtrt5645.conf)
-
-```
-
-**Tip:** use AUR package [alsa-lib-x205ta](https://aur.archlinux.org/packages/alsa-lib-x205ta/) to prevent overwriting the UCM files at each alsa-lib update.
+There has recently been some success in getting the x205ta's Realtek RT5648 sound card working. The relevant patches are in Linux release 4.11 and later. Updated Alsa-lib's UCM files are available in [alsa-lib-x205ta](https://aur.archlinux.org/packages/alsa-lib-x205ta/).
 
 In order to have working headphone jack (as of kernel 4.14) is it required to add an "options" line in any modprobe file
 
@@ -260,16 +239,11 @@ options snd_soc_rt5645 quirk=0x31
 
 ```
 
-To select headphones over speakers (which can't be done automatically as of kernel 4.14) consider using [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol).
+To select headphones over speakers (which cannot be done automatically as of kernel 4.14) consider using [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol).
 
 #### Bluetooth
 
-Install a correct firmware file (e.g., BCM43341B0_002.001.014.0122.0176.hcd from Windows 10 driver) as /lib/firmware/brcm/BCM43341B0.hcd. See [this page](https://ubuntuforums.org/showthread.php?t=2254322&page=97) for more information on the hcd file.
-
-```
-$ sudo wget [https://raw.githubusercontent.com/harryharryharry/x205ta-iso2usb-files/master/BCM43341B0.hcd](https://raw.githubusercontent.com/harryharryharry/x205ta-iso2usb-files/master/BCM43341B0.hcd) -O /lib/firmware/brcm/BCM43341B0.hcd
-
-```
+Install a correct firmware file (e.g. `BCM43341B0_002.001.014.0122.0176.hcd` from Windows 10 driver) as `/lib/firmware/brcm/BCM43341B0.hcd`. See [this page](https://ubuntuforums.org/showthread.php?t=2254322&page=97) for more information on the hcd file.
 
 In order to get bluetooth working create a systemd unit
 
@@ -288,14 +262,9 @@ WantedBy=multi-user.target
 
 ```
 
-and run the service on boot
+and [enable](/index.php/Enable "Enable") the service.
 
-```
-$ sudo systemctl enable btattach
-
-```
-
-Next, follow the [normal steps to activate bluetooth](/index.php/Bluetooth "Bluetooth").
+Next, follow the normal steps to activate [bluetooth](/index.php/Bluetooth "Bluetooth").
 
 #### WIFI Breaks after resume from hibernating
 
@@ -306,24 +275,19 @@ Next, follow the [normal steps to activate bluetooth](/index.php/Bluetooth "Blue
 case $1 in
     pre)
         rmmod brcmfmac
-        ;;
+        ;;
     post)
         modprobe brcmfmac
-        ;;
+        ;;
 esac
 
 exit 0
 
 ```
 
-and of course:
+and make the script executable.
 
-```
-$ sudo chmod +x /usr/lib/systemd/system-sleep/hibernate.sh
-
-```
-
-# On older kernels
+## On older kernels
 
 Patches came in over time. Try to use a new kernel!
 
@@ -333,7 +297,7 @@ See [for a step-by-step description of how to compile Pierre Bossart's patches](
 
 ### Power level information (ACPI)
 
-Before 4.2.0-1 kernel version, you must compile your own kernel with the appropriate flag ACPI_I2C_OPREGION=y (cf. [https://bugs.archlinux.org/task/44582](https://bugs.archlinux.org/task/44582))
+Before 4.2.0-1 kernel version, you must compile your own kernel with the appropriate flag ACPI_I2C_OPREGION=y (cf. [FS#44582)](https://bugs.archlinux.org/task/44582))
 
 You should have no problem with the power level information now if you obtain the latest kernel version >= 4.2.*. See [this page.](http://ifranali.blogspot.com/2015/04/installing-arch-linux-on-asus-x205ta.html)
 
@@ -386,7 +350,7 @@ With [this patch](https://lkml.org/lkml/2015/9/15/394) the card reader should wo
 
 ### Special keys
 
-On older kernel versions, out of the box, the only keysyms correctly sent are the audio volume keys (F10-F12). Ironic, since the sound card doesn't work. Can be conveniently remapped to control screen brightness (e.g., by calling xbacklight). On current kernel versions the sleep button, brightness buttons, display button and volume buttons all work in XFCE.
+On older kernel versions, out of the box, the only keysyms correctly sent are the audio volume keys (F10-F12). Ironic, since the sound card does not work. Can be conveniently remapped to control screen brightness (e.g., by calling xbacklight). On current kernel versions the sleep button, brightness buttons, display button and volume buttons all work in XFCE.
 
 ## See also
 

@@ -385,8 +385,8 @@ Please see [#How do I set the enabled (activated) modes ?](#How_do_I_set_the_en
 
 These steps will allow you to use the OpenPGP functionality of your YubiKey (once the CCID mode is enabled).
 
-1.  Install [pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools),[ccid](https://www.archlinux.org/packages/?name=ccid) and [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat)
-2.  Enable and start `pcscd` with `sudo systemctl enable pcscd.service`and `sudo systemctl start pcscd.service`
+1.  Install [pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools), [ccid](https://www.archlinux.org/packages/?name=ccid) and [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat)
+2.  [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `pcscd.service`
 3.  To verify that your YubiKey is ready to be used run `pcsc_scan` which will provide some informations about the connected device. Further you can use `gpg --card-status` to verify that GPG can interact with the card.
 
 ## Usecases - putting your YubiKey to good use
@@ -561,7 +561,7 @@ These steps will allow you to install the OATH applet onto your Yubikey NEO. Thi
 #### Install the Applet
 
 1.  Install [gpshell](https://aur.archlinux.org/packages/gpshell/), [gppcscconnectionplugin](https://aur.archlinux.org/packages/gppcscconnectionplugin/), [globalplatform](https://aur.archlinux.org/packages/globalplatform/), and [pcsclite](https://www.archlinux.org/packages/?name=pcsclite).
-2.  Start `pcscd` with `sudo systemctl start pcscd.service`.
+2.  [Start](/index.php/Start "Start") `pcscd.service`.
 3.  Download the most recent CAP file from the [ykneo-oath](http://opensource.yubico.com/ykneo-oath/releases.html) site.
 4.  Download `gpinstall.txt` from [GitHub](https://github.com/Yubico/ykneo-oath/blob/master/gpinstall.txt).
 5.  Edit the line in gpinstall.txt beginning with `install -file` to reflect the path where the CAP file is located.
@@ -602,11 +602,9 @@ Restart, especially if you have completed updates since your Yubikey last worked
 
 Add udev rule as described in [this article](https://michaelheap.com/yubikey-on-arch/):
 
-```
-$ sudo echo 'KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0664", GROUP="users", ATTRS{idVendor}=="2581", ATTRS{idProduct}=="f1d0"' | sudo tee /etc/udev/rules.d/10-security-key.rules
-$ udevadm trigger
+ `/etc/udev/rules.d/10-security-key.rules`  `KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0664", GROUP="users", ATTRS{idVendor}=="2581", ATTRS{idProduct}=="f1d0"` 
 
-```
+Run `udevadm trigger` afterwards.
 
 You may also need to [install](/index.php/Install "Install") the package [libu2f-host](https://www.archlinux.org/packages/?name=libu2f-host) if you want support in chrome.
 

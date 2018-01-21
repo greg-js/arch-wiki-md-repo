@@ -50,7 +50,7 @@ Configure it to use RepRap in the startup configuration wizard. Select the RepRa
 
 **[Lulzbot by Aleph Objects](https://www.lulzbot.com)**
 
-*   Install [cura-aleph-bin](https://aur.archlinux.org/packages/cura-aleph-bin/) from [AUR](/index.php/AUR "AUR").
+*   Install [cura-aleph-bin](https://aur.archlinux.org/packages/cura-aleph-bin/) or the new [cura2-lulzbot](https://aur.archlinux.org/packages/cura2-lulzbot/) from [AUR](/index.php/AUR "AUR").
 *   Add user to the uucp group
 
 ```

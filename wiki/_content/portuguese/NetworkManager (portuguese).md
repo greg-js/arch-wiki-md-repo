@@ -119,7 +119,7 @@ Os seguintes aplicativos são úteis para o gerenciamento de redes sem um servid
 
 Um frontend de linha de comando, incluído no pacote [networkmanager](https://www.archlinux.org/packages/?name=networkmanager).
 
-Para maiores detalhes veja [nmcli(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1). Exemplos:
+Para maiores detalhes veja [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1). Exemplos:
 
 *   Para conectar a uma rede sem fio: `nmcli dev wifi connect <name> password <password>` 
 *   Para conectar a uma rede sem fio através da interface `wlan1`: `nmcli dev wifi connect <name> password <password> iface wlan1 [profile name]` 
@@ -133,7 +133,7 @@ Para maiores detalhes veja [nmcli(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/
 
 A interface em curses *nmtui* é parte integrante do pacote [networkmanager](https://www.archlinux.org/packages/?name=networkmanager).
 
-Para maiores detalhes veja [nmtui(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1).
+Para maiores detalhes veja [nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1).
 
 #### nmcli-dmenu
 

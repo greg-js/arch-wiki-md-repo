@@ -113,7 +113,7 @@ For example, to disable waking from suspend (S3) on opening the lid, run:
 
 ```
 
-This change can be made permanent with [tmpfiles.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5):
+This change can be made permanent with [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5):
 
  `/etc/tmpfiles.d/disable-lid-wakeup.conf`  `w /proc/acpi/wakeup - - - - LID` 
 

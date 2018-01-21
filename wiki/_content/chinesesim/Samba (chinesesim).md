@@ -81,11 +81,9 @@ Samba 服务的配置文件是 `/etc/samba/smb.conf`，如果没有则 smbd 无�
    valid users = %S
 ```
 
-同时，默认配置文件也共享打印机，包含一些不错的示例配置。更多的可用选项可以通过 [smb.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) 查询，在此处 [Here](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) 是在线版本。
+同时，默认配置文件也共享打印机，包含一些不错的示例配置。更多的可用选项可以通过 [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) 查询，在此处 [Here](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) 是在线版本。
 
-On Windows side, be sure to change `smb.conf` to the in-use Windows Workgroup (default: `WORKGROUP`).
-
-如果需要共享给 Windows，需要在 `smb.conf` 中设置当前使用的 Windows 工作组（默认是 `WORKGROUP`）。
+**提示：** 如果需要共享给 Windows，需要在 `smb.conf` 中设置当前使用的 Windows 工作组workgroup（默认工作组是 `WORKGROUP`）。
 
 ### 启动服务
 
@@ -197,7 +195,7 @@ Samba 需要 Linux 账户才能使用 - 可以使用已有账户或 [创建新�
 
 如果不需要查询公开的共享，可以安装轻量级的 [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) 软件包，使用 `/usr/bin/mount.cifs` 命令挂载共享.
 
-要使用类似 ftp 的命令行界面，请安装软件包 [smbclient](https://www.archlinux.org/packages/?name=smbclient)。常用命令请参考 [smbclient(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smbclient.1)。
+要使用类似 ftp 的命令行界面，请安装软件包 [smbclient](https://www.archlinux.org/packages/?name=smbclient)。常用命令请参考 [smbclient(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smbclient.1)。
 
 [桌面环境](/index.php/Desktop_environment "Desktop environment") 可能提供了图形界面，参考[#文件管理器配置](#.E6.96.87.E4.BB.B6.E7.AE.A1.E7.90.86.E5.99.A8.E9.85.8D.E7.BD.AE).
 
@@ -258,7 +256,7 @@ $ smbtree -b -N
 
 `-o [options]`
 
-	详情请参考 [mount.cifs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8).
+	详情请参考 [mount.cifs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8).
 
 **Note:**
 
@@ -452,7 +450,7 @@ There are a number of useful programs, but they may need to have packages create
 
 **Note:** Setting this parameter will affect the performance of Samba, as it will be forced to check all files and directories for a match as they are scanned.
 
-Samba offers an option to block files with certain patterns, like file extensions. This option can be used to prevent dissemination of viruses or to dissuade users from wasting space with certain files. More information about this option can be found in [smb.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5).
+Samba offers an option to block files with certain patterns, like file extensions. This option can be used to prevent dissemination of viruses or to dissuade users from wasting space with certain files. More information about this option can be found in [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5).
 
  `/etc/samba/smb.conf` 
 ```

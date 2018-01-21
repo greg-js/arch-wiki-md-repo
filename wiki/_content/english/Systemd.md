@@ -64,7 +64,7 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
 
 ## Basic systemctl usage
 
-The main command used to introspect and control *systemd* is *systemctl*. Some of its uses are examining the system state and managing the system and services. See [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) for more details.
+The main command used to introspect and control *systemd* is *systemctl*. Some of its uses are examining the system state and managing the system and services. See [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) for more details.
 
 **Tip:**
 
@@ -119,7 +119,7 @@ When using *systemctl*, you generally have to specify the complete name of the u
 *   Mount points will automatically be translated into the appropriate *.mount* unit. For example, specifying `/home` is equivalent to `home.mount`.
 *   Similar to mount points, devices are automatically translated into the appropriate *.device* unit, therefore specifying `/dev/sda2` is equivalent to `dev-sda2.device`.
 
-See [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) for details.
+See [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) for details.
 
 **Note:** Some unit names contain an `@` sign (e.g. `name@*string*.service`): this means that they are [instances](http://0pointer.de/blog/projects/instances.html) of a *template* unit, whose actual file name does not contain the `*string*` part (e.g. `name@.service`). `*string*` is called the *instance identifier*, and is similar to an argument that is passed to the template unit when called with the *systemctl* command: in the unit file it will substitute the `%i` specifier.
 
@@ -127,7 +127,7 @@ To be more accurate, *before* trying to instantiate the `name@.suffix` template 
 
 **Tip:**
 
-*   Most of the following commands also work if multiple units are specified, see [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) for more information.
+*   Most of the following commands also work if multiple units are specified, see [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) for more information.
 *   The `--now` switch can be used in conjunction with `enable`, `disable`, and `mask` to respectively start, stop, or mask immediately the unit rather than after the next boot.
 *   A package may offer units for different purposes. If you just installed a package, `pacman -Qql *package* | grep -Fe .service -e .socket` can be used to check and find them.
 
@@ -271,9 +271,9 @@ The syntax of *systemd'*s [unit files](http://www.freedesktop.org/software/syste
 **Note:**
 
 *   The load paths are completely different when running *systemd* in [user mode](/index.php/Systemd/User#How_it_works "Systemd/User").
-*   systemd unit names may only contain ASCII alphanumeric characters, underscores and periods. All other characters must be replaced by C-style "\x2d" escapes, or employ their pre defined semantics ('@', '-'). See [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) and [systemd-escape(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-escape.1) for more information.
+*   systemd unit names may only contain ASCII alphanumeric characters, underscores and periods. All other characters must be replaced by C-style "\x2d" escapes, or employ their pre defined semantics ('@', '-'). See [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) and [systemd-escape(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-escape.1) for more information.
 
-Look at the units installed by your packages for examples, as well as the [annotated example section](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples) of [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5).
+Look at the units installed by your packages for examples, as well as the [annotated example section](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples) of [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5).
 
 **Tip:** Comments prepended with `#` may be used in unit-files as well, but only in new lines. Do not use end-line comments after *systemd* parameters or the unit will fail to activate.
 
@@ -458,7 +458,7 @@ Configuration files may also be used to write values into certain files on boot.
 
  `/etc/tmpfiles.d/disable-usb-wake.conf`  `w /proc/acpi/wakeup - - - - USBE` 
 
-See the [systemd-tmpfiles(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8) and [tmpfiles.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) man pages for details.
+See the [systemd-tmpfiles(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8) and [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) man pages for details.
 
 **Note:** This method may not work to set options in `/sys` since the *systemd-tmpfiles-setup* service may run before the appropriate device modules is loaded. In this case you could check whether the module has a parameter for the option you want to set with `modinfo *module*` and set this option with a [config file in /etc/modprobe.d](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). Otherwise you will have to write a [udev rule](/index.php/Udev#About_udev_rules "Udev") to set the appropriate attribute as soon as the device appears.
 
@@ -516,7 +516,7 @@ A syslog facility code is used to specify the type of program that is logging th
 | Facility code | Keyword | Description | Info |
 | 0 | kern | kernel messages |
 | 1 | user | user-level messages |
-| 2 | mail | mail system | Archaic POSIX still supported and sometimes used system, for more [mail(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mail.1)) |
+| 2 | mail | mail system | Archaic POSIX still supported and sometimes used system, for more [mail(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mail.1)) |
 | 3 | daemon | system daemons | All daemons, including systemd and its subsystems |
 | 4 | auth | security/authorization messages | Also watch for different facility 10 |
 | 5 | syslog | messages generated internally by syslogd | As it standartized for syslogd, not used by systemd (see facility 3) |
@@ -549,7 +549,7 @@ So, useful facilities to watch: 0,1,3,4,9,10,15.
 
 Examples:
 
-*   Show all messages from this boot: `# journalctl -b` However, often one is interested in messages not from the current, but from the previous boot (e.g. if an unrecoverable system crash happened). This is possible through optional offset parameter of the `-b` flag: `journalctl -b -0` shows messages from the current boot, `journalctl -b -1` from the previous boot, `journalctl -b -2` from the second previous and so on. See [journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) for full description, the semantics is much more powerful.
+*   Show all messages from this boot: `# journalctl -b` However, often one is interested in messages not from the current, but from the previous boot (e.g. if an unrecoverable system crash happened). This is possible through optional offset parameter of the `-b` flag: `journalctl -b -0` shows messages from the current boot, `journalctl -b -1` from the previous boot, `journalctl -b -2` from the second previous and so on. See [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) for full description, the semantics is much more powerful.
 *   Show all messages from date (and optional time): `# journalctl --since="2012-10-30 18:17:16"` 
 *   Show all messages since 20 minutes ago: `# journalctl --since "20 min ago"` 
 *   Follow new messages: `# journalctl -f` 
@@ -560,9 +560,9 @@ Examples:
 *   Show only error, critical, and alert priority messages `# journalctl -p err..alert` Numbers also can be used, `journalctl -p 3..1`. If single number/keyword used, `journalctl -p 3` - all higher priority levels also included.
 *   Show auth.log equivalent by filtering on syslog facility: `# journalctl SYSLOG_FACILITY=10` 
 
-See [journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1), [systemd.journal-fields(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7), or Lennart's [blog post](http://0pointer.de/blog/projects/journalctl.html) for details.
+See [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1), [systemd.journal-fields(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7), or Lennart's [blog post](http://0pointer.de/blog/projects/journalctl.html) for details.
 
-**Tip:** By default, *journalctl* truncates lines longer than screen width, but in some cases, it may be better to enable wrapping instead of truncating. This can be controlled by the `SYSTEMD_LESS` [environment variable](/index.php/Environment_variable "Environment variable"), which contains options passed to [less](/index.php/Core_utilities#less "Core utilities") (the default pager) and defaults to `FRSXMK` (see [less(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/less.1) and [journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) for details).
+**Tip:** By default, *journalctl* truncates lines longer than screen width, but in some cases, it may be better to enable wrapping instead of truncating. This can be controlled by the `SYSTEMD_LESS` [environment variable](/index.php/Environment_variable "Environment variable"), which contains options passed to [less](/index.php/Core_utilities#less "Core utilities") (the default pager) and defaults to `FRSXMK` (see [less(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/less.1) and [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) for details).
 
 By omitting the `S` option, the output will be wrapped instead of truncated. For example, start *journalctl* as follows:
 
@@ -590,7 +590,7 @@ SystemMaxUse=50M
 
 [Restart](/index.php/Restart "Restart") the `systemd-journald.service` after changing this setting to immediately apply the new limit.
 
-See [journald.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5) for more info.
+See [journald.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5) for more info.
 
 ### Clean journal files manually
 
@@ -599,7 +599,7 @@ Journal files can be globally removed from `/var/log/journal/` using *e.g.* `rm`
 *   Remove archived journal files until the disk space they use falls below 100M: `# journalctl --vacuum-size=100M` 
 *   Make all journal files contain no data older than 2 weeks. `# journalctl --vacuum-time=2weeks` 
 
-See [journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) for more info.
+See [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) for more info.
 
 ### Journald in conjunction with syslog
 
@@ -638,7 +638,7 @@ $ journalctl -D */mnt*/var/log/journal -xe
 
 Arch Linux ships with `/usr/lib/systemd/system-preset/99-default.preset` containing `disable *`. This causes *systemctl preset* to disable all units by default, such that when a new package is installed, the user must manually enable the unit.
 
-If this behavior is not desired, simply create a symlink from `/etc/systemd/system-preset/99-default.preset` to `/dev/null` in order to override the configuration file. This will cause *systemctl preset* to enable all units that get installed—regardless of unit type—unless specified in another file in one *systemctl preset'*s configuration directories. User units are not affected. See [systemd.preset(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.preset.5) for more information.
+If this behavior is not desired, simply create a symlink from `/etc/systemd/system-preset/99-default.preset` to `/dev/null` in order to override the configuration file. This will cause *systemctl preset* to enable all units that get installed—regardless of unit type—unless specified in another file in one *systemctl preset'*s configuration directories. User units are not affected. See [systemd.preset(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.preset.5) for more information.
 
 **Note:** Enabling all units by default may cause problems with packages that contain two or more mutually exclusive units. *systemctl preset* is designed to be used by distributions and spins or system administrators. In the case where two conflicting units would be enabled, you should explicitly specify which one is to be disabled in a preset configuration file as specified in the manpage for `systemd.preset`.
 

@@ -61,7 +61,7 @@ This page explains how to set up a **wired** connection to a network. If you nee
 
 ## Check the connection
 
-The basic installation procedure typically has a functional network configuration. Use [ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) to check the connection:
+The basic installation procedure typically has a functional network configuration. Use [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) to check the connection:
 
  `$ ping www.google.com` 
 ```
@@ -89,7 +89,7 @@ If not, check for cable issues before diagnosing further.
 **Note:**
 
 *   If you receive an error like `ping: icmp open socket: Operation not permitted` when executing *ping*, try to re-install the [iputils](https://www.archlinux.org/packages/?name=iputils) package.
-*   The `-c *num*` option can be used to make exactly `*num*` pings, otherwise it pings infinitely and has to be terminated manually. See [ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) for more information.
+*   The `-c *num*` option can be used to make exactly `*num*` pings, otherwise it pings infinitely and has to be terminated manually. See [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) for more information.
 *   `8.8.8.8` is a static address that is easy to remember. It is the address of Google's primary DNS server, therefore it can be considered reliable, and is generally not blocked by content filtering systems and proxies.
 
 ## Device driver
@@ -250,7 +250,7 @@ And finally disable the interface:
 
 ```
 
-For more options, see the [ip(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8). These commands can be automated using scripts and [systemd units](/index.php/Systemd#Writing_unit_files "Systemd").
+For more options, see the [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8). These commands can be automated using scripts and [systemd units](/index.php/Systemd#Writing_unit_files "Systemd").
 
 #### Calculating addresses
 
@@ -289,7 +289,7 @@ See also [List of applications#Network managers](/index.php/List_of_applications
 
 ## Set the hostname
 
-A [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") is a unique name created to identify a machine on a network, configured in `/etc/hostname`—see [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) and [hostname(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.7) for details. The file can contain the system's domain name, if any. To set the hostname, [edit](/index.php/Textedit "Textedit") `/etc/hostname` to include a single line with `*myhostname*`:
+A [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") is a unique name created to identify a machine on a network, configured in `/etc/hostname`—see [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) and [hostname(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.7) for details. The file can contain the system's domain name, if any. To set the hostname, [edit](/index.php/Textedit "Textedit") `/etc/hostname` to include a single line with `*myhostname*`:
 
  `/etc/hostname` 
 ```
@@ -299,21 +299,21 @@ A [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") is a u
 
 **Tip:** For advice on choosing a hostname, see [RFC 1178](https://tools.ietf.org/html/rfc1178).
 
-Alternatively, using [hostnamectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1):
+Alternatively, using [hostnamectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1):
 
 ```
 # hostnamectl set-hostname *myhostname*
 
 ```
 
-To temporarily set the hostname (until reboot), use [hostname(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.1) from [inetutils](https://www.archlinux.org/packages/?name=inetutils):
+To temporarily set the hostname (until reboot), use [hostname(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.1) from [inetutils](https://www.archlinux.org/packages/?name=inetutils):
 
 ```
 # hostname *myhostname*
 
 ```
 
-To set the "pretty" hostname and other machine metadata, see [machine-info(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/machine-info.5#https%3A%2F%2Fwww.freedesktop.org%2Fsoftware%2Fsystemd%2Fman%2Fmachine-info.html).
+To set the "pretty" hostname and other machine metadata, see [machine-info(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/machine-info.5#https%3A%2F%2Fwww.freedesktop.org%2Fsoftware%2Fsystemd%2Fman%2Fmachine-info.html).
 
 ### Local network hostname resolution
 
@@ -327,7 +327,7 @@ PING myhostname (192.168.1.2) 56(84) bytes of data.
 
 To allow other machines to address the host by name, it is necessary to either:
 
-*   Configure the [hosts(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5) file, or
+*   Configure the [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5) file, or
 *   Enable a service which resolves the hostname.
 
 **Note:** [systemd](https://www.archlinux.org/packages/?name=systemd) provides hostname resolution via the `myhostname` nss module, enabled by default in `/etc/nsswitch.conf`. However, clients may still rely on `/etc/hosts`, see [[2]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) for examples.
@@ -415,7 +415,7 @@ ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1500", ATTR{tx_queue_
 
 **Note:**
 
-*   `mtu`: For PPPoE, the MTU should be no larger than 1492\. You can also set MTU via [systemd.netdev(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.netdev.5).
+*   `mtu`: For PPPoE, the MTU should be no larger than 1492\. You can also set MTU via [systemd.netdev(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.netdev.5).
 *   `tx_queue_len`: Small value for slower devices with a high latency like modem links and ISDN. High value is recommend for server connected over the high-speed Internet connections that perform large data transfers.
 
 ### ifplugd for laptops

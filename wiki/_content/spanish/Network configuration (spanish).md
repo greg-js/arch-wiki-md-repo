@@ -67,7 +67,7 @@ Esta página explica cómo configurar una conexión cableada (**wired**) a una r
 
 Muchas veces, la instalación de base habrá creado una configuración de red correctamente. Para comprobar si esto es así, utilice la siguiente orden:
 
-**Nota:** La opción `-c 3` establece que se ejecute ping tres veces. Vea [ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) para obtener más información
+**Nota:** La opción `-c 3` establece que se ejecute ping tres veces. Vea [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) para obtener más información
 . `$ ping -c 3 www.google.com` 
 ```
 PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
@@ -113,7 +113,7 @@ Para establecer el nombre del equipo, escriba:
 
 Esto pondrá **elnombredemiequipo** en `/etc/hostname`.
 
-Consulte [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) y [hostnamectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1) para más detalles.
+Consulte [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) y [hostnamectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1) para más detalles.
 
 **Nota:**
 
@@ -356,7 +356,7 @@ Por ejemplo:
 
 **Nota:** La máscara de subred se especifica tambien con [notación CIDR](https://en.wikipedia.org/wiki/CIDR_notation "wikipedia:CIDR notation").
 
-Para conocer más opciones, vea [ip(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip.7).
+Para conocer más opciones, vea [ip(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.7).
 
 Añada su puerta de entrada (*gateway*) de esta manera:
 

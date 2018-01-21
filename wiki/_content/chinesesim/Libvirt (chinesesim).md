@@ -331,7 +331,7 @@ Print active and inactive domains:
 
 #### 用 virt-install 新建虚拟机
 
-For an extremely detailed domain (virtual machine) setup, it is easier to [#用 virt-manager 新建虚拟机](#.E7.94.A8_virt-manager_.E6.96.B0.E5.BB.BA.E8.99.9A.E6.8B.9F.E6.9C.BA). However, basics can easily be done with `virt-install` and still run quite well. Minimum specifications are `--name`, `--memory`, guest storage (`--disk`, `--filesystem`, or `--nodisks`), and an install method (generally an `.iso` or CD).See [virt-install(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/virt-install.1) for more details and information about unlisted options.
+For an extremely detailed domain (virtual machine) setup, it is easier to [#用 virt-manager 新建虚拟机](#.E7.94.A8_virt-manager_.E6.96.B0.E5.BB.BA.E8.99.9A.E6.8B.9F.E6.9C.BA). However, basics can easily be done with `virt-install` and still run quite well. Minimum specifications are `--name`, `--memory`, guest storage (`--disk`, `--filesystem`, or `--nodisks`), and an install method (generally an `.iso` or CD).See [virt-install(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/virt-install.1) for more details and information about unlisted options.
 
 Arch Linux install (two GiB, qcow2 format volume create; user-networking):
 

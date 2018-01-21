@@ -54,7 +54,7 @@ fc-list : file
 
 ```
 
-Vedere [fc-list(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fc-list.1) per maggiori informazioni.
+Vedere [fc-list(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fc-list.1) per maggiori informazioni.
 
 Verificare la presenza di percorsi di font Xorg noti esaminando il log:
 

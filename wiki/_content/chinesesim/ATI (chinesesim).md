@@ -125,7 +125,7 @@ MODULES="... radeon ..."
 
 下面这些选项属于`/etc/X11/xorg.conf.d/**20-radeon.conf**`.
 
-请在应用驱动选项之前先阅读 [radeon(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/radeon.4) 和 [RadeonFeature](https://www.x.org/wiki/RadeonFeature/#index4h2)。
+请在应用驱动选项之前先阅读 [radeon(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/radeon.4) 和 [RadeonFeature](https://www.x.org/wiki/RadeonFeature/#index4h2)。
 
 **Acceleration architecture**; Glamor是一种使用OpenGL的 2D加速方式，适用于R300及以上显卡驱动。 自xf86-video-ati版本1:7.2.0-1后, 在radeonsi(南方群岛系列 和 superior GFX 显卡)上glamor默认启用; 在其他显卡默认使用 EXA.
 

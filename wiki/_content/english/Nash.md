@@ -1,4 +1,4 @@
-[Nash](https://github.com/NeowayLabs/nash) (or Nash shell) is a minimalist yet powerful [shell](/index.php/Shell "Shell") with focus on readability and security of scripts. It is inspired by Plan9 [rc](https://en.wikipedia.org/wiki/rc "wikipedia:rc") shell and brings to Linux a similar approach to [namespaces(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/namespaces.7) creation. There is a *nashfmt* program to correctly format nash scripts in a readable manner, much like the Golang [gofmt](https://golang.org/cmd/gofmt/) program.
+[Nash](https://github.com/NeowayLabs/nash) (or Nash shell) is a minimalist yet powerful [shell](/index.php/Shell "Shell") with focus on readability and security of scripts. It is inspired by Plan9 [rc](https://en.wikipedia.org/wiki/rc "wikipedia:rc") shell and brings to Linux a similar approach to [namespaces(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/namespaces.7) creation. There is a *nashfmt* program to correctly format nash scripts in a readable manner, much like the Golang [gofmt](https://golang.org/cmd/gofmt/) program.
 
 ## Contents
 

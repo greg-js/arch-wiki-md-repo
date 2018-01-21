@@ -97,7 +97,7 @@ To view the current loaded exports state in more detail, use:
 
 ```
 
-For more information about all available options see [exports(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/exports.5).
+For more information about all available options see [exports(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/exports.5).
 
 **Tip:** [ip2cidr](http://ip2cidr.com/) is a tool to convert an IP ranges to correctly structured CDIR specification.
 
@@ -300,7 +300,7 @@ servername:/music   /mountpoint/on/client   nfs   defaults,soft,rsize=32768,wsiz
 
 ```
 
-**Note:** Consult [nfs(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nfs.5) and [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) for more mount options.
+**Note:** Consult [nfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nfs.5) and [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) for more mount options.
 
 Some additional mount options to consider:
 

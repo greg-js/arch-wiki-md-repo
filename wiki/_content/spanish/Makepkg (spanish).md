@@ -158,7 +158,7 @@ MAKEFLAGS="-j3"
 
 ```
 
-Vea [make(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/make.1) para una lista completa de opciones.
+Vea [make(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/make.1) para una lista completa de opciones.
 
 ### Generar nueva suma de verificación
 

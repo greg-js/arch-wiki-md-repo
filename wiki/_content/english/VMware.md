@@ -8,7 +8,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 
 **Note:**
 
-*   This article is about the latest major VMware versions, meaning VMware Workstation Pro and Player 12.5 and 14.0.0\.
+*   This article is about the latest major VMware versions, meaning VMware Workstation Pro and Player 12.5 and 14\.
 *   For older versions, use the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package.
 
 ## Contents
@@ -57,6 +57,10 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 
 ## Installation
 
+You can either install using VMware bundle or package [vmware-workstation](https://aur.archlinux.org/packages/vmware-workstation/). The latter is preferred if using *VMware Workstation* on x86_64.
+
+### VMware bundle
+
 [Install](/index.php/Install "Install") the correct dependencies:
 
 *   [fuse2](https://www.archlinux.org/packages/?name=fuse2) - for *vmware-vmblock-fuse*
@@ -66,10 +70,6 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 *   [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) - needed by the `--console` installer
 *   [libcanberra](https://www.archlinux.org/packages/?name=libcanberra) - for event sounds
 *   [pcsclite](https://www.archlinux.org/packages/?name=pcsclite)
-
-Once the correct dependencies have been installed, you can either install using VMware bundle or [vmware-workstation](https://aur.archlinux.org/packages/vmware-workstation/). The latter is preferred if using *VMware Workstation* on x86_64.
-
-### VMware bundle
 
 Download the latest [VMware Workstation Pro](https://www.vmware.com/go/tryworkstation) or [Player](https://www.vmware.com/go/downloadplayer) (or a [beta](https://communities.vmware.com/community/vmtn/beta) version, if available).
 
@@ -101,7 +101,20 @@ For the `System service scripts directory`, use `/etc/init.d` (the default).
 
 ### Package build for x86_64
 
-These installation instructions are for the most recent version of *VMware Workstation*. Install [vmware-workstation](https://aur.archlinux.org/packages/vmware-workstation/). As desired, enable `vmware-networks.service` for guest network access, `vmware-usbarbitrator.service` for connecting USB devices to guest, and `vmware-hostd.service` for sharing virtual machines. Lastly, restart the host machine.
+Install [vmware-workstation](https://aur.archlinux.org/packages/vmware-workstation/), [vmware-workstation12](https://aur.archlinux.org/packages/vmware-workstation12/) or [vmware-workstation11](https://aur.archlinux.org/packages/vmware-workstation11/) for respectively versions 14, 12 and 11 of *VMware Workstation*. It is also necessary to install the appropriate headers package(s) for your installed kernel(s): for example [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) or [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers).
+
+Then, as desired, enable some of the following services:
+
+*   `vmware-networks.service` for guest network access
+*   `vmware-usbarbitrator.service` for connecting USB devices to guest
+*   `vmware-hostd.service` for sharing virtual machines
+
+Lastly, load the VMware modules:
+
+```
+# modprobe -a vmw_vmci vmmon
+
+```
 
 ## Configuration
 
@@ -111,7 +124,7 @@ VMware Workstation 12.5 supports kernels up to 4.8 out of the box.
 
 ### systemd services
 
-*(Optional)* Instead of using `/etc/init.d/vmware` (`start|stop|status|restart`) and `/usr/bin/vmware-usbarbitrator` directly to manage the services, you may also use `.service` files (also available in the [vmware-systemd-services](https://aur.archlinux.org/packages/vmware-systemd-services/) package, and also included in [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/)):
+*(Optional)* Instead of using `/etc/init.d/vmware` (`start|stop|status|restart`) and `/usr/bin/vmware-usbarbitrator` directly to manage the services, you may also use `.service` files (also available in the [vmware-systemd-services](https://aur.archlinux.org/packages/vmware-systemd-services/) package, and also included in [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) and [vmware-workstation](https://aur.archlinux.org/packages/vmware-workstation/) with a few differences):
 
  `/etc/systemd/system/vmware.service` 
 ```

@@ -29,7 +29,7 @@ Ci sono molti post nei forum riguardo alle differenti applicazioni firewall e sc
 
 *   [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")
 *   [Router](/index.php/Router "Router")
-*   [iptables(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8) – [http://unixhelp.ed.ac.uk/CGI/man-cgi?iptables+8](http://unixhelp.ed.ac.uk/CGI/man-cgi?iptables+8)
+*   [iptables(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8) – [http://unixhelp.ed.ac.uk/CGI/man-cgi?iptables+8](http://unixhelp.ed.ac.uk/CGI/man-cgi?iptables+8)
 *   [http://tldp.org/HOWTO/Masquerading-Simple-HOWTO/](http://tldp.org/HOWTO/Masquerading-Simple-HOWTO/)
 *   [http://netfilter.org/documentation/HOWTO/NAT-HOWTO.html](http://netfilter.org/documentation/HOWTO/NAT-HOWTO.html)
 *   [http://www.frozentux.net/documents/iptables-tutorial/](http://www.frozentux.net/documents/iptables-tutorial/)

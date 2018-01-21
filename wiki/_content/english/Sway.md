@@ -54,7 +54,7 @@ The sway session is located at `/usr/share/wayland-sessions/sway.desktop`. It is
 
 ## Configuration
 
-If you already use i3, then copy your i3 configuration to `~/.config/sway/config` and it should work out of the box. Otherwise, copy the sample configuration file to `~/.config/sway/config`. It is located at `/etc/sway/config`, unless the `DFALLBACK_CONFIG_DIR` flag has been set. See [sway(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sway.5) for information on the configuration.
+If you already use i3, then copy your i3 configuration to `~/.config/sway/config` and it should work out of the box. Otherwise, copy the sample configuration file to `~/.config/sway/config`. It is located at `/etc/sway/config`, unless the `DFALLBACK_CONFIG_DIR` flag has been set. See [sway(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sway.5) for information on the configuration.
 
 ### Keymap
 
@@ -154,7 +154,7 @@ swaymsg -t get_inputs
 
 The output from the command, sometimes has a "\" to escape symbols like "/" (ie `"2:14:ETPS\/2_Elantech_Touchpad"`) and it needs to be removed.
 
-More documentation and options like acceleration profiles can be found in [sway-input(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sway-input.5).
+More documentation and options like acceleration profiles can be found in [sway-input(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sway-input.5).
 
 ### HiDPI
 

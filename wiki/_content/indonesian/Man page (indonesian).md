@@ -31,7 +31,7 @@ $ man *nama_halaman*
 
 ```
 
-Panduan-panduan diurutkan menjadi beberapa bagian. Untuk daftar lengkapnya, lihat bagian berjudul "Sections of the manual pages" in [man-pages(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
+Panduan-panduan diurutkan menjadi beberapa bagian. Untuk daftar lengkapnya, lihat bagian berjudul "Sections of the manual pages" in [man-pages(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
 
 Halaman panduan biasanya dirujuk berdasarkan namanya, diikuti dengan jumlah bagiannya dalam tanda kurung. Sering kali ada beberapa halaman panduan dengan nama yang sama, seperti man(1) dan man(7). Dalam hal ini, memberikan nomor bagian pada man yang diikuti dengan nama halaman panduan, misalnya:
 
@@ -52,7 +52,7 @@ ls (1)               - list directory contents
 
 ## Format
 
-Semua halaman panduan mengikuti format yang cukup standar, yang membantu dalam melakukan navigasi pada halaman panduan. Lihat bagian yang berjudul "Sections within a manual page" dalam [man-pages(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
+Semua halaman panduan mengikuti format yang cukup standar, yang membantu dalam melakukan navigasi pada halaman panduan. Lihat bagian yang berjudul "Sections within a manual page" dalam [man-pages(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
 
 ## Mencari panduan
 
@@ -249,23 +249,23 @@ Ada beberapa basis datas halaman panduan yang berbasis *online*, termasuk:
 
 Berikut daftar non-komplit dari halaman penting yang dapat membantu Anda memahami banyak hal secara lebih mendalam. Beberapa dari daftar di bawah ini dapat menjadi referensi yang bagus (seperti tabel ASCII).
 
-*   [ascii(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ascii.7)
-*   [boot(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/boot.7)
-*   [charsets(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/charsets.7)
-*   [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1)
-*   [credentials(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/credentials.7)
-*   [fstab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fstab.5)
-*   [hier(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hier.7)
-*   [systemd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.1)
-*   [locale(1p)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.1p), [locale(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.5), [locale(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.7)
-*   [printf(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/printf.3)
-*   [proc(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/proc.5)
-*   [regex(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/regex.7)
-*   [signal(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/signal.7)
-*   [term(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/term.5), [term(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/term.7)
-*   [termcap(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/termcap.5)
-*   [terminfo(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5)
-*   [utf-8(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/utf-8.7)
+*   [ascii(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ascii.7)
+*   [boot(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/boot.7)
+*   [charsets(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/charsets.7)
+*   [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1)
+*   [credentials(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/credentials.7)
+*   [fstab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fstab.5)
+*   [hier(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hier.7)
+*   [systemd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.1)
+*   [locale(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.1p), [locale(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.5), [locale(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.7)
+*   [printf(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/printf.3)
+*   [proc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/proc.5)
+*   [regex(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/regex.7)
+*   [signal(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/signal.7)
+*   [term(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/term.5), [term(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/term.7)
+*   [termcap(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/termcap.5)
+*   [terminfo(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5)
+*   [utf-8(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/utf-8.7)
 
 Secara lebih umum, lihatlah kategori 7 pada halaman panduan:
 
@@ -276,11 +276,11 @@ $ man -s 7 -k ".*"
 
 Halaman khusus Arch Linux:
 
-*   [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7)
-*   [mkinitcpio(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8)
-*   [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)
-*   [pacman-key(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman-key.8)
-*   [pacman.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5)
+*   [archlinux(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7)
+*   [mkinitcpio(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8)
+*   [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)
+*   [pacman-key(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman-key.8)
+*   [pacman.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5)
 
 ## Lihat juga
 

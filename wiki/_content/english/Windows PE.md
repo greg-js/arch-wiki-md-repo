@@ -73,7 +73,7 @@ $ mkwinpeimg --iso --waik-dir=/media/winimg --start-script=start.cmd winpe.iso
 
 ```
 
-See the [mkwinpeimg(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkwinpeimg.1) for more information.
+See the [mkwinpeimg(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkwinpeimg.1) for more information.
 
 Unmount the source ISO:
 

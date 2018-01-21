@@ -57,7 +57,7 @@ $ fc-list : file
 
 ```
 
-参见[fc-list(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fc-list.1)以获得更多输出格式方面的信息。
+参见[fc-list(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fc-list.1)以获得更多输出格式方面的信息。
 
 通过考察Xorg的log文件来检查Xorg包含的字体路径:
 

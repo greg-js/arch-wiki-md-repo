@@ -39,7 +39,7 @@ PulseAudio can be configured in multiple ways depending on your needs and uses m
 
 #### daemon.conf
 
-This is the main configuration file to configure the daemon itself. It defines base settings like the default sample rates used by modules, resampling methods, realtime scheduling and various other settings related to the server process. These can not be changed at runtime without restarting the PulseAudio daemon. Most defaults make sense here and are self-explaining, see the [pulse-daemon.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pulse-daemon.conf.5) manpage for additional information. Boolean options accepts any of these: `true`, `yes`, `on` and `1` as well as `false`, `no`, `off` and `0`.
+This is the main configuration file to configure the daemon itself. It defines base settings like the default sample rates used by modules, resampling methods, realtime scheduling and various other settings related to the server process. These can not be changed at runtime without restarting the PulseAudio daemon. Most defaults make sense here and are self-explaining, see the [pulse-daemon.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pulse-daemon.conf.5) manpage for additional information. Boolean options accepts any of these: `true`, `yes`, `on` and `1` as well as `false`, `no`, `off` and `0`.
 
 <caption>Notable configuration options</caption>
 | Option | Description |<caption></caption>
@@ -57,7 +57,7 @@ This is the main configuration file to configure the daemon itself. It defines b
 
 #### default.pa
 
-This file is a startup script and is used to configure modules. It is actually parsed and read after the daemon has finished initializing and additional commands can be sent at runtime using `$ pactl` or `$ pacmd`. The startup script can also be provided on the command line by starting PulseAudio in a terminal using `$ pulseaudio -nC`. This will make the daemon load the CLI module and will accept the configuration directly from the command line, and output resulting information or error messages on the same terminal. This can be useful when debugging the daemon or just to test various modules before setting them permanently on disk. The manual page is quite self explaining, please consult [pulse-cli-syntax(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pulse-cli-syntax.5) for the details of the syntax.
+This file is a startup script and is used to configure modules. It is actually parsed and read after the daemon has finished initializing and additional commands can be sent at runtime using `$ pactl` or `$ pacmd`. The startup script can also be provided on the command line by starting PulseAudio in a terminal using `$ pulseaudio -nC`. This will make the daemon load the CLI module and will accept the configuration directly from the command line, and output resulting information or error messages on the same terminal. This can be useful when debugging the daemon or just to test various modules before setting them permanently on disk. The manual page is quite self explaining, please consult [pulse-cli-syntax(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pulse-cli-syntax.5) for the details of the syntax.
 
 In order to configure the daemon, you will mostly only need the very basic commands:
 
@@ -84,7 +84,7 @@ Since PulseAudio runs as a daemon as the current user, clients needs to know whe
 
 #### Environment variables
 
-These two variables are the important ones in order for libpulse clients to locate PulseAudio if you moved its socket to somewhere else. See [pulseaudio(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pulseaudio.1) for more details and other useful environment variables clients will read.
+These two variables are the important ones in order for libpulse clients to locate PulseAudio if you moved its socket to somewhere else. See [pulseaudio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pulseaudio.1) for more details and other useful environment variables clients will read.
 
 | Variable | Definition |<caption></caption>
 | `PULSE_SERVER` | Defines where the server is. It takes a protocol prefix like `unix:` or `tcp` followed by the path or IP of the server. Example: `unix:/home/pulse/native-sock`. |<caption></caption>

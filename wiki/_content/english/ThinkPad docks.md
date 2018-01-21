@@ -63,6 +63,14 @@ The daemon should now be configured and ready to use. Insert the ThinkPad into t
 
 **Warning:** If you change your monitor setup or resolution, you **MUST** configure the daemon again.
 
+## Dock and undock hooks
+
+As of dockd 1.21, you can define some hooks that run when the ThinkPad is docked and undocked.
+
+For example, to disable WiFi when docking and enable it when undocking:
+
+ `/etc/dockd/dock.hook`  `nmcli radio wifi off`  `/etc/dockd/undock.hook`  `nmcli radio wifi on` 
+
 ## See also
 
 *   [dockd Documentation - ThinkPads.org](http://thinkpads.org/projects/dockd/)

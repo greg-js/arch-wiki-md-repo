@@ -56,7 +56,7 @@ Tor предоставляет SOCKS интерфейс, через которы
 
 ## Настройка
 
-По умолчанию, Tor читает конфигурацию из файла `/etc/tor/torrc`. Опции подробно расписаны в [tor(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tor.1) и на [сайте проекта](https://www.torproject.org/docs/tor-manual.html.en). Конфигурационный файл по умолчанию подойдет для большинства пользователей.
+По умолчанию, Tor читает конфигурацию из файла `/etc/tor/torrc`. Опции подробно расписаны в [tor(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tor.1) и на [сайте проекта](https://www.torproject.org/docs/tor-manual.html.en). Конфигурационный файл по умолчанию подойдет для большинства пользователей.
 
 Имеется неколько потенциальных конфликтов конфигурации в `/etc/tor/torrc` и `tor.service`.
 
@@ -196,7 +196,7 @@ LimitNOFILE=32768
 
 ```
 
-`--network-macvlan=$INTERFACE --private-network` автоматически создаст macvlan называющийся `mv-$INTERFACE` внутри контейнера, который невидим с хоста. `--private-network` подразумевает `--network-macvlan=` в соответсвии с [systemd-nspawn(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1).
+`--network-macvlan=$INTERFACE --private-network` автоматически создаст macvlan называющийся `mv-$INTERFACE` внутри контейнера, который невидим с хоста. `--private-network` подразумевает `--network-macvlan=` в соответсвии с [systemd-nspawn(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1).
 
 `LimitNOFILE=32768` для[#Raise maximum number of open file descriptors](#Raise_maximum_number_of_open_file_descriptors).
 

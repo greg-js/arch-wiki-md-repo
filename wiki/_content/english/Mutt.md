@@ -328,7 +328,7 @@ There are other variables that you may need to set. For example for use of START
 
  `set ssl_starttls = yes` 
 
-See [muttrc(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/muttrc.5) for more information.
+See [muttrc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/muttrc.5) for more information.
 
 #### External SMTP support
 
@@ -548,7 +548,7 @@ source ~/.mutt/gpg.rc
 
 Most encryption options are then available by pressing `p` in the compose view
 
-See the `pgp_*` and `crypt_*` options in [muttrc(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/muttrc.5).
+See the `pgp_*` and `crypt_*` options in [muttrc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/muttrc.5).
 
 #### E-mail character encoding
 
@@ -928,7 +928,7 @@ set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %s"
 
 ```
 
-See the [Mutt Reference](http://www.mutt.org/doc/manual/#index-format), [strftime(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/strftime.3) and [printf(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/printf.3) for more details.
+See the [Mutt Reference](http://www.mutt.org/doc/manual/#index-format), [strftime(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/strftime.3) and [printf(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/printf.3) for more details.
 
 #### Display recipient instead of sender in "Sent" folder view
 

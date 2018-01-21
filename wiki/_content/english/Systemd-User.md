@@ -57,13 +57,13 @@ All the user services will be placed in `~/.config/systemd/user/`. If you want t
 
 The user instance of systemd does not inherit any of the [environment variables](/index.php/Environment_variables "Environment variables") set in places like `.bashrc` etc. There are several ways to set environment variables for the systemd user instance:
 
-1.  For users with a `$HOME` directory, create a *.conf* file in the `~/.config/environment.d/` directory with lines of the form `NAME=VAL`. Affects only that user's user unit. See [environment.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/environment.d.5) for more information.
+1.  For users with a `$HOME` directory, create a *.conf* file in the `~/.config/environment.d/` directory with lines of the form `NAME=VAL`. Affects only that user's user unit. See [environment.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/environment.d.5) for more information.
 2.  Use the `DefaultEnvironment` option in `/etc/systemd/user.conf` file. Affects all user units.
 3.  Add a drop-in config file in `/etc/systemd/system/user@.service.d/`. Affects all user units; see [#Service example](#Service_example)
 4.  At any time, use `systemctl --user set-environment` or `systemctl --user import-environment`. Affects all user units started after setting the environment variables, but not the units that were already running.
 5.  Using the `dbus-update-activation-environment --systemd --all` command provided by [dbus](/index.php/Dbus "Dbus"). Has the same effect as `systemctl --user import-environment`, but also affects the D-Bus session. You can add this to the end of your shell initialization file.
-6.  For "global" environment variables for the user environment you can use the environment.d directories which are parsed by systemd generators. See [environment.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/environment.d.5) for more information.
-7.  You can also write an environment generator script which can produce environment variables that vary from user to user, this is probably the best way if you need per-user environments (this is the case for XDG_RUNTIME_DIR, DBUS_SESSION_BUS_ADDRESS, etc). See [systemd.environment-generator(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.environment-generator.7).
+6.  For "global" environment variables for the user environment you can use the environment.d directories which are parsed by systemd generators. See [environment.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/environment.d.5) for more information.
+7.  You can also write an environment generator script which can produce environment variables that vary from user to user, this is probably the best way if you need per-user environments (this is the case for XDG_RUNTIME_DIR, DBUS_SESSION_BUS_ADDRESS, etc). See [systemd.environment-generator(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.environment-generator.7).
 
 One variable you may want to set is `PATH`.
 
@@ -151,7 +151,7 @@ WantedBy=default.target
 
 ```
 
-As detailed in [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5), the `%h` variable is replaced by the home directory of the user running the service. There are other variables that can be taken into account in the [systemd](/index.php/Systemd "Systemd") manpages.
+As detailed in [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5), the `%h` variable is replaced by the home directory of the user running the service. There are other variables that can be taken into account in the [systemd](/index.php/Systemd "Systemd") manpages.
 
 ### Note about X applications
 
@@ -189,7 +189,7 @@ $ systemctl --user enable systemd-tmpfiles-setup.service systemd-tmpfiles-clean.
 
 ```
 
-The syntax of the configuration files is the same than those used system-wide. See the [systemd-tmpfiles(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8) and [tmpfiles.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) man pages for details.
+The syntax of the configuration files is the same than those used system-wide. See the [systemd-tmpfiles(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8) and [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) man pages for details.
 
 ## Xorg and systemd
 

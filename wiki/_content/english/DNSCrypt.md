@@ -187,7 +187,7 @@ SystemCallFilter=~@clock @cpu-emulation @debug @keyring @ipc @module @mount @obs
 
 ```
 
-See [systemd.exec(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.exec.5) and [Systemd#Sandboxing application environments](/index.php/Systemd#Sandboxing_application_environments "Systemd") for more information. Additionally see [upstream comments](https://github.com/jedisct1/dnscrypt-proxy/pull/601#issuecomment-284171727).
+See [systemd.exec(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.exec.5) and [Systemd#Sandboxing application environments](/index.php/Systemd#Sandboxing_application_environments "Systemd") for more information. Additionally see [upstream comments](https://github.com/jedisct1/dnscrypt-proxy/pull/601#issuecomment-284171727).
 
 This can be combined with the additions in [#dnscrypt runs with root privileges](#dnscrypt_runs_with_root_privileges).
 

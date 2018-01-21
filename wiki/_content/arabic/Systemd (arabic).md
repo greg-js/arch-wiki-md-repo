@@ -123,7 +123,7 @@ Another way to set the keyboard mapping (keymap) is doing:
 
 ```
 
-See [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) and [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) for details.
+See [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) and [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) for details.
 
 *   For more information, see [console fonts](/index.php/Fonts#Console_fonts "Fonts") and [keymaps](/index.php/KEYMAP "KEYMAP").
 
@@ -169,7 +169,7 @@ Extra kernel modules to be loaded during boot are configured as a static list in
 virtio-net
 ```
 
-See [modules-load.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modules-load.d.5) for more details.
+See [modules-load.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modules-load.d.5) for more details.
 
 #### إعداد خيارات الوحدات
 
@@ -191,7 +191,7 @@ Module blacklisting works the same way as with [initscripts](https://www.archlin
 
 The default setup will automatically fsck and mount filesystems before starting services that need them to be mounted. For example, systemd automatically makes sure that remote filesystem mounts like [NFS](/index.php/NFS "NFS") or [Samba](/index.php/Samba "Samba") are only started after the network has been set up. Therefore, local and remote filesystem mounts specified in `/etc/fstab` should work out of the box.
 
-See [systemd.mount(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5) for details.
+See [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5) for details.
 
 #### الوصل التلقائي
 
@@ -317,7 +317,7 @@ ExecStart=-/usr/bin/pkill sshfs
 WantedBy=sleep.target
 ```
 
-A couple of handy hints about these service files (more in [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)):
+A couple of handy hints about these service files (more in [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)):
 
 *   If `Type=OneShot` then you can use multiple `ExecStart=` lines. Otherwise only one ExecStart line is allowed. You can add more commands with either `ExecStartPre` or by separating commands with a semicolon (see the first example above -- note the spaces before and after the semicolon...these are required!).
 *   A command prefixed with '-' will cause a non-zero exit status to be ignored and treated as a successful command.
@@ -390,7 +390,7 @@ Don't forget to make your script executable:
 
 ```
 
-See [systemd.special(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7) and [systemd-sleep(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8) for more details.
+See [systemd.special(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7) and [systemd-sleep(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8) for more details.
 
 ### الملفات المؤقّتة
 
@@ -404,7 +404,7 @@ tmpfiles may also be used to write values into certain files on boot. For exampl
 
  `/etc/tmpfiles.d/disable-usb-wake.conf`  `w /proc/acpi/wakeup - - - - USBE` 
 
-See [tmpfiles.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) for details.
+See [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) for details.
 
 **Note:** This method may not work to set options in `/sys` since the `systemd-tmpfiles-setup` service may run before the appropriate device modules is loaded. In this case you could check whether the module has a parameter for the option you want to set with `modinfo <module>` and set this option with a [config file in `/etc/modprobe.d`](/index.php/Modprobe.d#Configuration "Modprobe.d"). Otherwise you will have to write a [udev rule](/index.php/Udev#About_udev_rules "Udev") to set the appropriate attribute as soon as the device appears.
 
@@ -412,11 +412,11 @@ See [tmpfiles.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) for 
 
 A unit configuration file encodes information about a service, a socket, a device, a mount point, an automount point, a swap file or partition, a start-up target, a file system path or a timer controlled and supervised by systemd. The syntax is inspired by XDG Desktop Entry Specification .desktop files, which are in turn inspired by Microsoft Windows .ini files.
 
-See [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) for details.
+See [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) for details.
 
 ## الاستخدام الأوّلي لأداة systemctl
 
-تمثّل الأداة `systemctl` الأمر الرّئيسي للتّبحّر و التّحكم بـ systemd . بعض من استخداماته فحص حالة النظام وإدارته بالإضافة لإدارة الخدمات. انظر [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) لمزيد من التّفاصيل.
+تمثّل الأداة `systemctl` الأمر الرّئيسي للتّبحّر و التّحكم بـ systemd . بعض من استخداماته فحص حالة النظام وإدارته بالإضافة لإدارة الخدمات. انظر [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) لمزيد من التّفاصيل.
 
 **Tip:** يمكنك استخدام جميع أوامر `systemctl` التّالية بصورة متغيّرة لكل `-H <user>@<host>` وذلك للتّحكم بنموذج systemd في الجهاز البعيد. لاتّباع هذه الطريقة نستخدم الأداة [SSH](/index.php/SSH "SSH") وذلك للاتصال بنموذج systemd البعيد.
 
@@ -462,7 +462,7 @@ When using `systemctl`, you generally have to specify the complete name of the u
 *   Mount points will automatically be translated into the appropriate `.mount` unit. For example, specifying `/home` is equivalent to `home.mount`.
 *   Similiar to mount points, devices are automatically translated into the appropriate `.device` unit, therefore specifying `/dev/sda2` is equivalent to `dev-sda2.device`.
 
-See [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) for details.
+See [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) for details.
 
 Activate a unit immediately:
 
@@ -620,7 +620,7 @@ Dependencies are typically placed on services and not on targets. For example, `
 
 ### النوع
 
-There are several different start-up types to consider when writing a custom service file. This is set with the `Type=` parameter in the `[Service]` section. See [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) for a more detailed explanation.
+There are several different start-up types to consider when writing a custom service file. This is set with the `Type=` parameter in the `[Service]` section. See [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) for a more detailed explanation.
 
 *   `Type=simple` (default): systemd considers the service to be started up immediately. The process must not fork. Do not use this type if other services need to be ordered on this service, unless it is socket activated.
 *   `Type=forking`: systemd considers the service started up once the process forks and the parent has exited. For classic daemons use this type unless you know that it is not necessary. You should specify `PIDFile=` as well so systemd can keep track of the main process.
@@ -784,7 +784,7 @@ Show all messages by a specific unit:
 
 ```
 
-See [journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1), `systemd.journal-fields` or Lennert's [blog post](http://0pointer.de/blog/projects/journalctl.html) for details.
+See [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1), `systemd.journal-fields` or Lennert's [blog post](http://0pointer.de/blog/projects/journalctl.html) for details.
 
 ### الحجم الأقصى للدّورية
 
@@ -795,7 +795,7 @@ SystemMaxUse=50M
 
 ```
 
-Refer to [journald.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5) for more info.
+Refer to [journald.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5) for more info.
 
 ### الترابط بين مدير الدّوريات journald و سجل النظام syslog
 

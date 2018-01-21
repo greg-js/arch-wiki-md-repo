@@ -60,7 +60,7 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 *   **[XDM](/index.php/XDM "XDM")** — X display manager with support for XDMCP, host chooser.
 
-	[xdm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xdm.1) || [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm)
+	[xdm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdm.1) || [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm)
 
 ## Loading the display manager
 

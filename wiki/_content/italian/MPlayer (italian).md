@@ -143,7 +143,7 @@ stop-xscreensaver="yes" # stop gnome-screensaver
 
 ### Scorciatoie da tastiera
 
-Le scorciatoie da tastiera di MPlayer sono configurate in `/etc/mplayer/input.conf`. Per personalizzare la scorciatoie da tastiera editare il file `~/.mplayer/input.conf` Ecco una lista dei più basilari tasti di default per controllare MPlayer. Per la lista completa si cerchi nelle pagine *man*: [mplayer(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mplayer.1).
+Le scorciatoie da tastiera di MPlayer sono configurate in `/etc/mplayer/input.conf`. Per personalizzare la scorciatoie da tastiera editare il file `~/.mplayer/input.conf` Ecco una lista dei più basilari tasti di default per controllare MPlayer. Per la lista completa si cerchi nelle pagine *man*: [mplayer(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mplayer.1).
 
 | Tasto | Descrizione |
 | `p` | Mette in pausa/esegue. |

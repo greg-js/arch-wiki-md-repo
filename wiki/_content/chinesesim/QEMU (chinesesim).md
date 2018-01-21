@@ -1080,7 +1080,7 @@ You might also want to install [qemu-guest-agent](https://www.archlinux.org/pack
 
 Windows does not come with the virtio drivers. Therefore, you will need to load them during installation. There are basically two ways to do this: via Floppy Disk or via ISO files. Both images can be downloaded from the [Fedora repository](https://fedoraproject.org/wiki/Windows_Virtio_Drivers).
 
-The floppy disk option is difficult because you will need to press F6 (Shift-F6 on newer Windows) at the very beginning of powering on the QEMU. This is difficult since you need time to connect your VNC console window. You can attempt to add a delay to the boot sequence. See [qemu-system()](http://jlk.fjfi.cvut.cz/arch/manpages/man/qemu-system.) for more details about applying a delay at boot.
+The floppy disk option is difficult because you will need to press F6 (Shift-F6 on newer Windows) at the very beginning of powering on the QEMU. This is difficult since you need time to connect your VNC console window. You can attempt to add a delay to the boot sequence. See [qemu-system()](https://jlk.fjfi.cvut.cz/arch/manpages/man/qemu-system.) for more details about applying a delay at boot.
 
 The ISO option to load drivers is the preferred way, but it is available only on Windows Vista and Windows Server 2008 and later. The procedure is to load the image with virtio drivers in an additional cdrom device along with the primary disk device and Windows installer:
 

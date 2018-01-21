@@ -15,7 +15,7 @@
 
 ## Usage
 
-See [openconnect(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/openconnect.8). Simply run openconnect as root and enter your username and password when prompted:
+See [openconnect(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/openconnect.8). Simply run openconnect as root and enter your username and password when prompted:
 
 ```
 # openconnect *vpnserver*

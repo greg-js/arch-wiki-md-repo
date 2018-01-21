@@ -120,7 +120,7 @@ By default, Btrfs uses [Wikipedia:copy-on-write](https://en.wikipedia.org/wiki/c
 
 #### Disabling CoW
 
-To disable copy-on-write for newly created files in a mounted subvolume, use the `nodatacow` mount option. This will only affect newly created files. Copy-on-write will still happen for existing files. The `nodatacow` option also disables compression. See [btrfs(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/btrfs.5) for details.
+To disable copy-on-write for newly created files in a mounted subvolume, use the `nodatacow` mount option. This will only affect newly created files. Copy-on-write will still happen for existing files. The `nodatacow` option also disables compression. See [btrfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/btrfs.5) for details.
 
 **Note:** From Btrfs Wiki [Mount options](https://btrfs.wiki.kernel.org/index.php/Mount_options): within a single file system, it is not possible to mount some subvolumes with `nodatacow` and others with `datacow`. The mount option of the first mounted subvolume applies to any other subvolumes.
 
@@ -156,7 +156,7 @@ $ cp --reflink *source* *dest*
 
 ```
 
-See the man page on [cp(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cp.1) for more details on the `--reflink` flag.
+See the man page on [cp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cp.1) for more details on the `--reflink` flag.
 
 ### Compression
 
@@ -350,7 +350,7 @@ To check the status of a running scrub:
 
 ##### Start with a service or timer
 
-The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package brings the `btrfs-scrub@.timer` unit for monthly scrubbing the specified mountpoint. [Enable](/index.php/Enable "Enable") the timer with an escaped path, e.g. `btrfs-scrub@-.timer` for `/` and `btrfs-scrub@home.timer` for `/home`. You can use `systemd-escape -p */path/to/mountpoint*` to escape the path, see [systemd-escape(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-escape.1) for details.
+The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package brings the `btrfs-scrub@.timer` unit for monthly scrubbing the specified mountpoint. [Enable](/index.php/Enable "Enable") the timer with an escaped path, e.g. `btrfs-scrub@-.timer` for `/` and `btrfs-scrub@home.timer` for `/home`. You can use `systemd-escape -p */path/to/mountpoint*` to escape the path, see [systemd-escape(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-escape.1) for details.
 
 You can also run the scrub by [starting](/index.php/Starting "Starting") `btrfs-scrub@.service` (with the same encoded path). The advantage of this over `# btrfs scrub` is that the results of the scrub will be logged in the [systemd journal](/index.php/Systemd_journal "Systemd journal").
 

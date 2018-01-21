@@ -38,7 +38,7 @@ Re-login to apply the change or use `newgrp wireshark` to open a shell with the 
 
 There are a number of different ways to capture exactly what you are looking for in Wireshark, by applying [capture filters](https://wiki.wireshark.org/CaptureFilters) or [display filters](https://wiki.wireshark.org/DisplayFilters).
 
-**Note:** To learn the capture filter syntax, see [pcap-filter(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pcap-filter.7). For display filters, see [wireshark-filter(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wireshark-filter.4).
+**Note:** To learn the capture filter syntax, see [pcap-filter(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pcap-filter.7). For display filters, see [wireshark-filter(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wireshark-filter.4).
 
 ### Filtering TCP packets
 

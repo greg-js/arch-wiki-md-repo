@@ -11,7 +11,7 @@ Artigos relacionados
 *   [Pacman/Dicas e truques](/index.php/Pacman/Dicas_e_truques "Pacman/Dicas e truques")
 *   [Getting PKGBUILDs from SVN (Português)](/index.php/Getting_PKGBUILDs_from_SVN_(Portugu%C3%AAs) "Getting PKGBUILDs from SVN (Português)")
 
-Esse artigo discute variáveis definíveis pelo mantenedor em um PKGBUILD. Para informações sobre funções do PKGBUILD e criação de pacotes em geral, veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes"). Leia também [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
+Esse artigo discute variáveis definíveis pelo mantenedor em um PKGBUILD. Para informações sobre funções do PKGBUILD e criação de pacotes em geral, veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes"). Leia também [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
 
 Um PKGBUILD é um script shell contendo as informações de compilação necessárias por pacotes do [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)").
 

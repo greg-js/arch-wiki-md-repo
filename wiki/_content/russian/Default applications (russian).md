@@ -137,7 +137,7 @@ image/jpeg=foo.desktop
 
 ### mailcap
 
-Формат [mailcap(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mailcap.4) используется почтовыми программами, такими как [mutt](https://www.archlinux.org/packages/?name=mutt) и [sylpheed](https://www.archlinux.org/packages/?name=sylpheed) для открытия нетекстовых файлов. Чтобы эти программы использовали [xdg-open](#xdg-utils), отредактируйте `~/.mailcap`:
+Формат [mailcap(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mailcap.4) используется почтовыми программами, такими как [mutt](https://www.archlinux.org/packages/?name=mutt) и [sylpheed](https://www.archlinux.org/packages/?name=sylpheed) для открытия нетекстовых файлов. Чтобы эти программы использовали [xdg-open](#xdg-utils), отредактируйте `~/.mailcap`:
 
  `~/.mailcap` 
 ```

@@ -61,7 +61,7 @@ Esta página explica como configurar uma conexão **cabeada**. Se você deseja c
 
 ## Verificando a conexão
 
-O procedimento básico de instalação cria uma configuração de rede cabeada funciona. Use [ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) para verificar a conexão:
+O procedimento básico de instalação cria uma configuração de rede cabeada funciona. Use [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) para verificar a conexão:
 
  `$ ping www.google.com` 
 ```
@@ -91,7 +91,7 @@ Se não, verifique por problemas no cabo antes de prosseguir com o diagnóstico.
 **Nota:**
 
 *   Se você receber um erro como `ping: icmp open socket: Operation not permitted` ao executar *ping*, tente reinstalar o pacote [iputils](https://www.archlinux.org/packages/?name=iputils).
-*   A opção `-c *núm*` pode ser usada para fazer exatamente `*núm*` pings, do contrário ele vai pingar infinitamente e terá que ser terminado manualmente. Veja [ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) para mais informações.
+*   A opção `-c *núm*` pode ser usada para fazer exatamente `*núm*` pings, do contrário ele vai pingar infinitamente e terá que ser terminado manualmente. Veja [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) para mais informações.
 *   `8.8.8.8` é um endereço estático que é fácil de lembrar. É o endereço do servidor DNS primário do Google, então é considerado estável e geralmente não é bloqueado por proxy e sistemas de filtro de conteúdo.
 
 ## Driver de dispositivo
@@ -252,7 +252,7 @@ E, finalmente, ative a interface:
 
 ```
 
-Para mais opções, veja [ip(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8). Esses comandos podem ser atualizados usando scripts e [units de systemd](/index.php/Systemd_(Portugu%C3%AAs)#Escrevendo_arquivos_.service_personalizados "Systemd (Português)").
+Para mais opções, veja [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8). Esses comandos podem ser atualizados usando scripts e [units de systemd](/index.php/Systemd_(Portugu%C3%AAs)#Escrevendo_arquivos_.service_personalizados "Systemd (Português)").
 
 #### Calculando endereços
 
@@ -293,7 +293,7 @@ Veja também [List of applications#Network managers](/index.php/List_of_applicat
 
 ## Configurando um hostname
 
-Um [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname"), ou "nome de máquina", é um nome único criado para identificar uma máquina em uma rede, configurada em `/etc/hostname`—veja [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) e [hostname(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.7) para detalhes. O arquivo pode conter o nome de domínio do sistema, se houver. Para configurar o hostname, [edite](/index.php/Edi%C3%A7%C3%A3o_de_texto "Edição de texto") `/etc/hostname` para incluir uma única linha com `*meuhostname*`:
+Um [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname"), ou "nome de máquina", é um nome único criado para identificar uma máquina em uma rede, configurada em `/etc/hostname`—veja [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) e [hostname(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.7) para detalhes. O arquivo pode conter o nome de domínio do sistema, se houver. Para configurar o hostname, [edite](/index.php/Edi%C3%A7%C3%A3o_de_texto "Edição de texto") `/etc/hostname` para incluir uma única linha com `*meuhostname*`:
 
  `/etc/hostname` 
 ```
@@ -303,21 +303,21 @@ Um [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname"), ou "
 
 **Dica:** Para um conselho quanto ao hostname, veja [RFC 1178](https://tools.ietf.org/html/rfc1178).
 
-Alternativamente, usando [hostnamectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1):
+Alternativamente, usando [hostnamectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1):
 
 ```
 # hostnamectl set-hostname *meuhostname*
 
 ```
 
-Para definir temporariamente o hostname (até reiniciar), use [hostname(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.1) do [inetutils](https://www.archlinux.org/packages/?name=inetutils):
+Para definir temporariamente o hostname (até reiniciar), use [hostname(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.1) do [inetutils](https://www.archlinux.org/packages/?name=inetutils):
 
 ```
 # hostname *meuhostname*
 
 ```
 
-Para configurar um hostname "bonito" e outros metadados de máquina, veja [machine-info(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/machine-info.5#https%3A%2F%2Fwww.freedesktop.org%2Fsoftware%2Fsystemd%2Fman%2Fmachine-info.html).
+Para configurar um hostname "bonito" e outros metadados de máquina, veja [machine-info(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/machine-info.5#https%3A%2F%2Fwww.freedesktop.org%2Fsoftware%2Fsystemd%2Fman%2Fmachine-info.html).
 
 ### Resolução de hostname de rede local
 
@@ -331,7 +331,7 @@ PING meuhostname (192.168.1.2) 56(84) bytes of data.
 
 Para permitir que outras máquinas enderecem o host pelo nome, é necessário:
 
-*   Configurar o arquivo [hosts(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5) ou
+*   Configurar o arquivo [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5) ou
 *   Habilitar um serviço que resolva o hostname.
 
 **Nota:** [systemd](https://www.archlinux.org/packages/?name=systemd) fornece resolução de hostname via o módulo nss de `meuhostname`, habilitado por padrão em `/etc/nsswitch.conf`. Porém, clientes ainda podem dependere de `/etc/hosts`, veja [[2]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) por exemplos.
@@ -419,7 +419,7 @@ ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1500", ATTR{tx_queue_
 
 **Nota:**
 
-*   `mtu`: Para PPPoE, o MTU não deve ser maior que 1492\. Você também pode definir o MTU via [systemd.netdev(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.netdev.5).
+*   `mtu`: Para PPPoE, o MTU não deve ser maior que 1492\. Você também pode definir o MTU via [systemd.netdev(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.netdev.5).
 *   `tx_queue_len`: Valores pequenos para dispositivos menores com uma latência maior, como modens e ISDN. Valor alto é recomendado para servidor conectado por meio conexões de Internet de alta velocidade que realiza grandes transferências de dados.
 
 ### ifplugd for laptops

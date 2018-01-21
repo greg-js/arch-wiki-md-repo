@@ -19,6 +19,7 @@ The content of this article was originally written on [this page](https://wiki.u
     *   [3.3 C++ code project problems](#C.2B.2B_code_project_problems)
     *   [3.4 Disable Tooltips](#Disable_Tooltips)
     *   [3.5 Random freeze under KDE](#Random_freeze_under_KDE)
+    *   [3.6 Slow rendered tooltips in KDE](#Slow_rendered_tooltips_in_KDE)
 *   [4 Additional Content](#Additional_Content)
     *   [4.1 Starter Content](#Starter_Content)
     *   [4.2 Marketplace Apps](#Marketplace_Apps)
@@ -84,6 +85,10 @@ UE4's mouse-over tooltips might be rendered very slow. They can be disabled by a
 ### Random freeze under KDE
 
 Disable index file content in the KDE file search options.
+
+### Slow rendered tooltips in KDE
+
+Epic suggest to allow compositing for the Unreal Editor, which is stopped by default. Source: [https://wiki.unrealengine.com/Linux_Known_Issues#KDE](https://wiki.unrealengine.com/Linux_Known_Issues#KDE)
 
 ## Additional Content
 

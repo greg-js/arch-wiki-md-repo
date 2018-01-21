@@ -328,7 +328,7 @@ Print active and inactive domains:
 
 #### Create a new domain using virt-install
 
-For an extremely detailed domain (virtual machine) setup, it is easier to [#Create a new domain using virt-manager](#Create_a_new_domain_using_virt-manager). However, basics can easily be done with `virt-install` and still run quite well. Minimum specifications are `--name`, `--memory`, guest storage (`--disk`, `--filesystem`, or `--nodisks`), and an install method (generally an `.iso` or CD). See [virt-install(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/virt-install.1) for more details and information about unlisted options.
+For an extremely detailed domain (virtual machine) setup, it is easier to [#Create a new domain using virt-manager](#Create_a_new_domain_using_virt-manager). However, basics can easily be done with `virt-install` and still run quite well. Minimum specifications are `--name`, `--memory`, guest storage (`--disk`, `--filesystem`, or `--nodisks`), and an install method (generally an `.iso` or CD). See [virt-install(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/virt-install.1) for more details and information about unlisted options.
 
 Arch Linux install (two GiB, qcow2 format volume create; user-networking):
 
@@ -605,10 +605,12 @@ Add the following to `/etc/libvirt/qemu.conf`.
  `/etc/libvirt/qemu.conf` 
 ```
 nvram = [
-    "/usr/share/ovmf/ovmf_code_x64.bin:/usr/share/ovmf/ovmf_vars_x64.bin"
+    "/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd"
 ]
 
 ```
+
+**Note:** If you created a UEFI virtual machine before January 12th 2018, you must first update `/etc/libvirt/qemu.conf` like shown above and then run edit the machines' config (`virsh edit <domain>` and update the value of the `<loader>` element)
 
 [Restart](/index.php/Restart "Restart") `libvirtd`.
 

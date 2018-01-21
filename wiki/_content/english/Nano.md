@@ -33,7 +33,7 @@ $ cp /etc/nanorc ~/.config/nano/nanorc
 
 Proceed to establish the nano console environment by setting and/or unsetting commands within `~/.config/nano/nanorc` file.
 
-**Tip:** [nanorc(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nanorc.5) details the complete list configuration commands available for nano.
+**Tip:** [nanorc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nanorc.5) details the complete list configuration commands available for nano.
 
 **Note:** Command-line arguments override and take precedence over the configuration commands established in `~/.config/nano/nanorc`
 

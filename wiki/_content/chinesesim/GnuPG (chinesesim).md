@@ -386,7 +386,7 @@ Starting with GnuPG 2.1.0 the use of *gpg-agent* is required. *gpg-agent* is sta
 
 ### Configuration
 
-gpg-agent can be configured via `~/.gnupg/gpg-agent.conf` file. The configuration options are listed in [gpg-agent(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1). For example you can change cache ttl for unused keys:
+gpg-agent can be configured via `~/.gnupg/gpg-agent.conf` file. The configuration options are listed in [gpg-agent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1). For example you can change cache ttl for unused keys:
 
  `~/.gnupg/gpg-agent.conf` 
 ```
@@ -528,7 +528,7 @@ fi
 *   If you use non-default GnuPG [#Directory location](#Directory_location), run `gpgconf --create-socketdir` to create a socket directory under `/run/user/$UID/gnupg/`. Otherwise the socket will be placed in the GnuPG home directory.
 *   The test involving the `gnupg_SSH_AUTH_SOCK_by` variable is for the case where the agent is started as `gpg-agent --daemon /bin/sh`, in which case the shell inherits the `SSH_AUTH_SOCK` variable from the parent, *gpg-agent* [[3]](http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=agent/gpg-agent.c;hb=7bca3be65e510eda40572327b87922834ebe07eb#l1307).
 
-Also set the GPG_TTY and refresh the TTY in case user has switched into an X session as stated in [gpg-agent(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1). For example:
+Also set the GPG_TTY and refresh the TTY in case user has switched into an X session as stated in [gpg-agent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1). For example:
 
  `~/.bashrc` 
 ```
@@ -583,7 +583,7 @@ disable-ccid
 
 ```
 
-Please check [scdaemon(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/scdaemon.1) if you do not use OpenSC.
+Please check [scdaemon(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/scdaemon.1) if you do not use OpenSC.
 
 ## 使用技巧
 

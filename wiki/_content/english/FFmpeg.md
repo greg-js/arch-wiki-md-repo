@@ -529,7 +529,7 @@ $ ffmpeg -i *video*.mpg -acodec libvorbis -aq 8 -ar 48000 -vcodec mpeg4 \
 
 ## FFserver
 
-The FFmpeg package includes FFserver, which can be used to stream media over a network. To use it, you first need to create the config file `/etc/ffserver.conf` to define your *feeds* and *streams*. Each feed specifies how the media will be sent to ffserver and each stream specifies how a particular feed will be transcoded for streaming over the network. You can start with the [sample configuration file](https://www.ffmpeg.org/sample.html) or check [ffserver(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ffserver.1) for feed and stream examples. Here is a simple configuration file for streaming flash video:
+The FFmpeg package includes FFserver, which can be used to stream media over a network. To use it, you first need to create the config file `/etc/ffserver.conf` to define your *feeds* and *streams*. Each feed specifies how the media will be sent to ffserver and each stream specifies how a particular feed will be transcoded for streaming over the network. You can start with the [sample configuration file](https://www.ffmpeg.org/sample.html) or check [ffserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ffserver.1) for feed and stream examples. Here is a simple configuration file for streaming flash video:
 
  `/etc/ffserver.conf` 
 ```

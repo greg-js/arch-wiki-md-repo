@@ -59,7 +59,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 
 Also see [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-**Note:** Some ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch), [KDE](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)) recommend not installing the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver, and instead falling back on the modesetting driver for fourth generation and newer GPUs. See [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4). However, the modesetting driver can cause problems such as [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
+**Note:** Some ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch), [KDE](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)) recommend not installing the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver, and instead falling back on the modesetting driver for fourth generation and newer GPUs. See [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4). However, the modesetting driver can cause problems such as [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
 
 ## Loading
 
@@ -120,7 +120,7 @@ Additional options are added by the user on new lines below `Driver`.
 *   You may need to indicate `Option "AccelMethod"` when creating a configuration file, even just to set it to the default method (currently `"sna"`); otherwise, X may crash.
 *   You might need to add more device sections than the one listed above. This will be indicated where necessary.
 
-For the full list of options, see the [intel(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4) man page.
+For the full list of options, see the [intel(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4) man page.
 
 ## Module-based Powersaving Options
 
@@ -272,7 +272,7 @@ Option      "AccelMethod"  "uxa"
 
 ```
 
-See [intel(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4) under `Option "AccelMethod"`.
+See [intel(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4) under `Option "AccelMethod"`.
 
 ### DRI3 issues
 

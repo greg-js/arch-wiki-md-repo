@@ -207,7 +207,7 @@ The following applications can be useful for configuring and managing networks w
 
 A command line frontend, *nmcli*, is included with [networkmanager](https://www.archlinux.org/packages/?name=networkmanager).
 
-For usage information, see [nmcli(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1). Examples:
+For usage information, see [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1). Examples:
 
 *   To connect to a wifi network: `nmcli dev wifi connect <SSID> password <password>` 
 *   To connect to a hidden network: `nmcli dev wifi connect <SSID> password <password> hidden yes` 
@@ -222,7 +222,7 @@ For usage information, see [nmcli(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/
 
 A curses based graphical frontend, *nmtui*, is included with [networkmanager](https://www.archlinux.org/packages/?name=networkmanager).
 
-For usage information, see [nmtui(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1).
+For usage information, see [nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1).
 
 #### nmcli-dmenu
 
@@ -501,7 +501,7 @@ It might not be obvious, but the service automatically starts through *dbus*. To
 
 ### Checking connectivity
 
-NetworkManager can try to reach a page on Internet when connecting to a network. [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) is configured by default in `/usr/lib/NetworkManager/conf.d/20-connectivity.conf` to check connectivity to archlinux.org. To use a different webserver or disable connectivity checking edit `/etc/NetworkManager/NetworkManager.conf`, see "connectivity section" in [NetworkManager.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
+NetworkManager can try to reach a page on Internet when connecting to a network. [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) is configured by default in `/usr/lib/NetworkManager/conf.d/20-connectivity.conf` to check connectivity to archlinux.org. To use a different webserver or disable connectivity checking edit `/etc/NetworkManager/NetworkManager.conf`, see "connectivity section" in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
 
 For those behind a captive portal, the desktop manager can automatically open a window asking for credentials.
 

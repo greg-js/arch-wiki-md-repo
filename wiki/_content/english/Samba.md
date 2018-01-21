@@ -75,7 +75,7 @@ To get started you can copy the default config file from [samba git repository](
 
 **Note:** The default configuration sets `log file` to a non-writable location, which will cause errors - change this to the correct location: `log file = /var/log/samba/%m.log`.
 
-The available options are documented in the [smb.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) man page. Whenever you modify the file run the [testparm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/testparm.1) command to check for syntactic errrors.
+The available options are documented in the [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) man page. Whenever you modify the file run the [testparm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/testparm.1) command to check for syntactic errrors.
 
 ### Creating a share
 
@@ -85,7 +85,7 @@ The `workgroup` specified in `smb.conf` has to match the in use Windows workgrou
 
 ### Starting services
 
-To provide basic file sharing through SMB [start/enable](/index.php/Start/enable "Start/enable") `smbd.service` and/or `nmbd.service` services. See the [smbd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smbd.8) and [nmbd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmbd.8) man pages for details, as the `nmbd.service` service may not always be required.
+To provide basic file sharing through SMB [start/enable](/index.php/Start/enable "Start/enable") `smbd.service` and/or `nmbd.service` services. See the [smbd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smbd.8) and [nmbd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmbd.8) man pages for details, as the `nmbd.service` service may not always be required.
 
 **Tip:** Instead of having the service running since boot, you can enable `smbd.socket` so the daemon is started on the first incoming connection. Do not forget to disable `smbd.service`.
 
@@ -169,7 +169,7 @@ Also see [Security](/index.php/Security "Security") for hardening your system.
 
 ### Listing users
 
-Samba users can be listed using the [pdbedit(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pdbedit.8) command:
+Samba users can be listed using the [pdbedit(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pdbedit.8) command:
 
 ```
 # pdbedit -L -v
@@ -193,7 +193,7 @@ If you are using a [firewall](/index.php/Firewall "Firewall"), do not forget to 
 
 For a lightweight method (without support for listing public shares, etc.), only install [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) to provide `/usr/bin/mount.cifs`.
 
-Install [smbclient](https://www.archlinux.org/packages/?name=smbclient) for an ftp-like command line interface. See [smbclient(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smbclient.1) for commonly used commands.
+Install [smbclient](https://www.archlinux.org/packages/?name=smbclient) for an ftp-like command line interface. See [smbclient(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smbclient.1) for commonly used commands.
 
 **Note:** [smbclient](https://www.archlinux.org/packages/?name=smbclient) requires an /etc/samba/smb.conf file which the utility, touch, can generate (as an empty file), or if [samba](https://www.archlinux.org/packages/?name=samba) is installed, it can be copied from the default [#smb.conf](#smb.conf).
 
@@ -258,7 +258,7 @@ To allow users to mount it as long as the mount point resides in a directory con
 
 `-o [options]`
 
-	See [mount.cifs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8) for more information.
+	See [mount.cifs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8) for more information.
 
 **Note:**
 
@@ -497,7 +497,7 @@ If you do not have printers to be shared, use the following setting to save some
 
 **Note:** Setting this parameter will affect the performance of Samba, as it will be forced to check all files and directories for a match as they are scanned.
 
-Samba offers an option to block files with certain patterns, like file extensions. This option can be used to prevent dissemination of viruses or to dissuade users from wasting space with certain files. More information about this option can be found in [smb.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5).
+Samba offers an option to block files with certain patterns, like file extensions. This option can be used to prevent dissemination of viruses or to dissuade users from wasting space with certain files. More information about this option can be found in [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5).
 
  `/etc/samba/smb.conf` 
 ```
@@ -548,7 +548,7 @@ Nmap run completed -- 256 IP addresses (2 hosts up) scanned in 7.255 seconds
 
 The first result is another system; the second happens to be the client from where this scan was performed.
 
-3\. Now that systems with port 139 open are revealed, use [nmblookup(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmblookup.1) to check for NetBIOS names:
+3\. Now that systems with port 139 open are revealed, use [nmblookup(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmblookup.1) to check for NetBIOS names:
 
 ```
 $ nmblookup -A 192.168.1.1
@@ -872,7 +872,7 @@ mount.cifs //server/share /mnt/point -o sec=ntlmssp,...
 
 ```
 
-See the [mount.cifs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8) man page: **ntlmssp** - Use NTLMv2 password hashing encapsulated in Raw NTLMSSP message. The default in mainline kernel versions prior to v3.8 was **sec=ntlm**. In v3.8, the default was changed to **sec=ntlmssp**.
+See the [mount.cifs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8) man page: **ntlmssp** - Use NTLMv2 password hashing encapsulated in Raw NTLMSSP message. The default in mainline kernel versions prior to v3.8 was **sec=ntlm**. In v3.8, the default was changed to **sec=ntlmssp**.
 
 ### Mapping reserved Windows characters
 

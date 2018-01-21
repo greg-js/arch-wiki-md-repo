@@ -70,7 +70,7 @@ hosts: files **resolve** myhostname
 
 ```
 
-Mira [systemd-resolved(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) y [resolved.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) y [Systemd README](https://github.com/systemd/systemd/blob/master/README#L205).
+Mira [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) y [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) y [Systemd README](https://github.com/systemd/systemd/blob/master/README#L205).
 
 **Note:** Systemd's `resolve` no puede buscar el dominio local cuando sólo se da el hotname, aún cuando `UseDomains=yes` o `Domains=[domain-list]` está presente en el archivo `.network` apropiado, y ese archivo produce el esperado `search [domain-list]` en `resolv.conf`. Si se da ese problema:
 
@@ -335,7 +335,7 @@ El servicio está disponible con [systemd](https://www.archlinux.org/packages/?n
 
 Para propositos de debugging, se recomienda [instalar](/index.php/Install "Install") los paquetes [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [net-tools](https://www.archlinux.org/packages/?name=net-tools) y [iproute2](https://www.archlinux.org/packages/?name=iproute2).
 
-Si se está usando *systemd-nspawn*, se debe modificar el servicio `systemd-nspawn@.service` y añadir la opción boot a la linea `ExecStart`. Para una lista exhaustiva lista de claves, por favor refiérase a [systemd-nspawn(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1)
+Si se está usando *systemd-nspawn*, se debe modificar el servicio `systemd-nspawn@.service` y añadir la opción boot a la linea `ExecStart`. Para una lista exhaustiva lista de claves, por favor refiérase a [systemd-nspawn(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1)
 
 Note que si se desea tomar ventaja de la configuración automatica DNS desde DHCP, se necesita habilitar `systemd-resolved` y hacer un enlace simbólico `/run/systemd/resolve/resolv.conf` a `/etc/resolv.conf`. Ver `systemd-resolved.service(8)` para más detalles.
 

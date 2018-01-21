@@ -146,7 +146,7 @@ Configure Pantheon via [switchboard](https://aur.archlinux.org/packages/switchbo
 
 Either drag and drop a desktop file on to the dock, or right click on a running application and select "Keep in dock". You can then reorder icons by drag and drop.
 
-**Note:** Plank stores its configuration files in `~/.config/plank/`
+**Note:** Plank stores some configuration in `~/.config/plank/` (.dockitem launchers) and some in dconf at `net.launchpad.plank`
 
 ### Pantheon Files
 
@@ -190,7 +190,7 @@ Wingpanel does not come with any indicators; they must be installed separately.
 
 *   If launched by [~/.xinitrc](#Via_xinit), add third-party indicators to one of the start-up methods described [above](#Launching_Pantheon).
 
-*   For [wingpanel-git](https://aur.archlinux.org/packages/wingpanel-git/), indicators designed for [Unity](/index.php/Unity "Unity") require [wingpanel-indicator-ayatana-bzr](https://aur.archlinux.org/packages/wingpanel-indicator-ayatana-bzr/).
+*   Indicators designed for [Unity](/index.php/Unity "Unity") require [wingpanel-indicator-ayatana](https://aur.archlinux.org/packages/wingpanel-indicator-ayatana/) or [wingpanel-indicator-ayatana-git](https://aur.archlinux.org/packages/wingpanel-indicator-ayatana-git/).
 
 #### Indicator-session menus not responsive
 

@@ -41,7 +41,7 @@
 
 ### Resource file settings
 
-There are several options you can set in your [X resources](/index.php/X_resources "X resources") files that may make this terminal emulator much nicer to use. See [xterm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1)for a complete list.
+There are several options you can set in your [X resources](/index.php/X_resources "X resources") files that may make this terminal emulator much nicer to use. See [xterm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1)for a complete list.
 
 #### TERM Environmental Variable
 
@@ -103,7 +103,7 @@ XTerm.vt100.translations: #override
 
 `#override` indicates that these bindings should override any existing ones (you almost always want this for custom key bindings). Each binding must be separated by the escape sequence `
 `. If you want to insert a literal newline, it also needs to be escaped (hence `
-\`). See the **KEY BINDINGS** section of [xterm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1)for the full list of actions and many examples.
+\`). See the **KEY BINDINGS** section of [xterm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1)for the full list of actions and many examples.
 
 **Tip:** You can also have separate sets of keybindings that you switch between. See the `keymap()` action in the man page.
 
@@ -118,7 +118,7 @@ XTerm.vt100.saveLines: 4096
 
 ```
 
-Other X resources that affect scrolling are `jumpScroll`, `multiScroll`, and `fastScroll` (all under `XTerm.vt100`, see [xterm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1)). To scroll inside an [#alternate screen](#VT_Options_menu), set `alternateScroll` to `true`.
+Other X resources that affect scrolling are `jumpScroll`, `multiScroll`, and `fastScroll` (all under `XTerm.vt100`, see [xterm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1)). To scroll inside an [#alternate screen](#VT_Options_menu), set `alternateScroll` to `true`.
 
 #### Scrollbar
 
@@ -130,7 +130,7 @@ XTerm.vt100.scrollbar.width: 8
 
 ```
 
-See [xterm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1)for other scrollbar resources.
+See [xterm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1)for other scrollbar resources.
 
 The scrollbar operates differently from what you may be accustomed to using.
 
@@ -272,7 +272,7 @@ Some colors can be specified by assigned names. If [emacs](https://www.archlinux
 
 The color `PapayaWhip` is the same as `rgb:ff/ef/d5`, which is the same as `#ffefd5`.
 
-See [X(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/X.7) from [xorg-docs](https://www.archlinux.org/packages/?name=xorg-docs), for a more complete description of color syntax.
+See [X(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/X.7) from [xorg-docs](https://www.archlinux.org/packages/?name=xorg-docs), for a more complete description of color syntax.
 
 Many suggestions for color schemes can be viewed in the forum thread, [Terminal Colour Scheme Screenshots](https://bbs.archlinux.org/viewtopic.php?id=51818&p=1).
 

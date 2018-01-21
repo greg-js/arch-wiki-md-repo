@@ -924,7 +924,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[Oolite](https://en.wikipedia.org/wiki/Oolite_(video_game) "wikipedia:Oolite (video game)")** — 3D space trading and combat simulator in the spirit of Elite.
 
-	[http://oolite.org/](http://oolite.org/) || [oolite](https://www.archlinux.org/packages/?name=oolite)
+	[http://oolite.org/](http://oolite.org/) || [oolite](https://aur.archlinux.org/packages/oolite/)
 
 *   **[Pioneer](https://en.wikipedia.org/wiki/Pioneer_(video_game) "wikipedia:Pioneer (video game)")** — Open source, 3D, freeform single player space adventure set in the Milkyway galaxy at the turn of the 31st century in the spirit of Frontier: Elite II.
 
@@ -1087,6 +1087,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **[Narcissu](https://en.wikipedia.org/wiki/Narcissu "wikipedia:Narcissu")** — Visual novel, telling the story of a terminally ill young man and woman.
 
 	[http://narcissu.insani.org/](http://narcissu.insani.org/) || [narcissu2-en](https://aur.archlinux.org/packages/narcissu2-en/)
+
+*   **Ren'Py** — Visual novel engine with a [rich repository](https://games.renpy.org/).
+
+	[https://www.renpy.org/](https://www.renpy.org/) || [renpy](https://www.archlinux.org/packages/?name=renpy)
 
 ## Comparison table
 

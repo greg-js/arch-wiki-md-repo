@@ -10,7 +10,7 @@
 | Function/Multimedia Keys | Working |  ? |
 | Fingerprint sensor | Not working |  ? |
 
-The Dell XPS 13 Late 2016 (9360) is the fourth-generation model of the XPS 13 line. The laptop is available since October (pre-2017 model) in both a standard edition with Windows installed as well as both a pre-2017 model and a 2017 model (with insignificant hardware differences) Developer Edition with Ubuntu 16.04 "SP1" installed, featuring kernel 4.8 as of now. There is only minor hardware differences between them, mostly in regards to the mainboard microchip manufacturers. Just like the older versions ([9333](/index.php/Dell_XPS_13_(9333) "Dell XPS 13 (9333)"), [9343](/index.php/Dell_XPS_13_(9343) "Dell XPS 13 (9343)") and [9350](/index.php/Dell_XPS_13_(9350) "Dell XPS 13 (9350)")) it is available in different hardware configurations as well. These fourth gen models includes Intel's Kaby Lake CPUs and advertised with up to 16GB LPDDR 1866 MHz RAM and a 1TB PCI SSD. It will now also be available in Rose Gold. Prior to previous information and current specifications available provided by Dell (at least to regular customers), it is not available with the 2133 MHz RAM speed. However, some models, including those available to employees and possibly Dell partners (and/or business customers), memory speed is indeed available up to 2133 Mhz LPDDR3 (non-upgradable). [ref](https://codepaste.net/yr5n9i). The same mentioned models are also available with the Intel Core i7-7660U (aswell as i7-7560U) with the Intel 640 Iris Plus onboard graphics. Respective clock frequencies are 2.5 Ghz (up to 4GHz in Turbo-mode) and 2,4 Ghz (up to 3.8 Ghz), respectively.
+The Dell XPS 13 Late 2016 (9360) is the fourth-generation model of the XPS 13 line. The laptop is available since October (pre-2017 model) in both a standard edition with Windows installed as well as both a pre-2017 model and a 2017 model (with insignificant hardware differences) Developer Edition with Ubuntu 16.04 "SP1" installed, featuring kernel 4.8 as of now. There is only minor hardware differences between them, mostly in regards to the mainboard microchip manufacturers. Just like the older versions ([9333](/index.php/Dell_XPS_13_(9333) "Dell XPS 13 (9333)"), [9343](/index.php/Dell_XPS_13_(9343) "Dell XPS 13 (9343)") and [9350](/index.php/Dell_XPS_13_(9350) "Dell XPS 13 (9350)")) it is available in different hardware configurations as well. These fourth gen models includes Intel's Kaby Lake CPUs and advertised with up to 16GB LPDDR 1866 MHz RAM and a 1TB PCI SSD. It will now also be available in Rose Gold. Prior to previous information and current specifications available provided by Dell (at least to regular customers), it is not available with the 2133 MHz RAM speed. However, some models, including those available to employees and possibly Dell partners (and/or business customers), memory speed is indeed available up to 2133 Mhz LPDDR3 (non-upgradable). The same mentioned models are also available with the Intel Core i7-7660U (aswell as i7-7560U) with the Intel 640 Iris Plus onboard graphics. Respective clock frequencies are 2.5 Ghz (up to 4GHz in Turbo-mode) and 2,4 Ghz (up to 3.8 Ghz), respectively.
 
 The installation process for Arch on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
 
@@ -272,7 +272,7 @@ Here is a short list of steps to update the Thunderbolt-Firmware on linux 4.13+ 
 
 ## SATA controller
 
-When the SATA-controller is set to `RAID On` in Bios, the hard disk (at least the SSD) is not recognized. Set to `Off` or `AHCI` (`AHCI` is recommended) before attempting to install Arch.
+When the SATA-controller is set to `RAID On` in Bios, the SSD is not recognized. Set to `AHCI` before attempting to install Arch.
 
 ## Touchpad
 
@@ -377,7 +377,7 @@ If you are using [tlp](https://www.archlinux.org/packages/?name=tlp), it will ac
 
 Not enabling the GuC can cause weird crackling, white noise sound when the display is changing its contents. The sound also appears to be coming from the card itself or the screen, without any speakers connected.
 
-This can be fixed by adding the kernel parameter `i915.enable_guc_loading=1` as described in [Intel graphics](/index.php/Intel_graphics "Intel graphics").
+This can be somewhat mitigated by adding the kernel parameter `i915.enable_guc_loading=1` as described in [Intel graphics](/index.php/Intel_graphics "Intel graphics"), however multiple people have reported that this does not fix the problem completely and it returns after waking from sleep.
 
 ### Coil Whine
 

@@ -26,7 +26,7 @@ Locales are used by [glibc](https://www.archlinux.org/packages/?name=glibc) and 
 
 ## Generating locales
 
-Locale names are typically of the form `language[_territory][.codeset][@modifier]`, where *language* is an [ISO 639 language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes "w:List of ISO 639-1 codes"), *territory* is an [ISO 3166 country code](https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes "w:ISO 3166-1"), and *codeset* is a [character set](https://en.wikipedia.org/wiki/Character_encoding "w:Character encoding") or encoding identifier like [ISO-8859-1](https://en.wikipedia.org/wiki/ISO/IEC_8859-1 "w:ISO/IEC 8859-1") or [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "w:UTF-8"). See [setlocale(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setlocale.3).
+Locale names are typically of the form `language[_territory][.codeset][@modifier]`, where *language* is an [ISO 639 language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes "w:List of ISO 639-1 codes"), *territory* is an [ISO 3166 country code](https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes "w:ISO 3166-1"), and *codeset* is a [character set](https://en.wikipedia.org/wiki/Character_encoding "w:Character encoding") or encoding identifier like [ISO-8859-1](https://en.wikipedia.org/wiki/ISO/IEC_8859-1 "w:ISO/IEC 8859-1") or [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "w:UTF-8"). See [setlocale(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setlocale.3).
 
 For a list of enabled locales, run:
 
@@ -79,7 +79,7 @@ $ localedef --list-archive
 
 ```
 
-Alternatively, using [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1):
+Alternatively, using [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1):
 
 ```
 $ localectl list-locales
@@ -99,7 +99,7 @@ Alternatively, run:
 
 ```
 
-See [#Variables](#Variables) and [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) for details.
+See [#Variables](#Variables) and [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) for details.
 
 ### Overriding system locale per user session
 
@@ -160,7 +160,7 @@ $ export LANG=C
 *   `LC_TELEPHONE`
 *   [LC_TIME](#LC_TIME:_date_and_time_format)
 
-Full meaning of the above `LC_*` variables can be found on manpage [locale(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.7), whereas details of their definition are described on [locale(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.5).
+Full meaning of the above `LC_*` variables can be found on manpage [locale(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.7), whereas details of their definition are described on [locale(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.5).
 
 ### LANG: default locale
 
@@ -181,7 +181,7 @@ LANGUAGE=en_AU:en_GB:en
 If `LC_TIME` is set to `en_US.UTF-8`, for example, the date format will be "MM/DD/YYYY". If wanting to use the the ISO 8601 date format of "YYYY-MM-DD" use:
 
  `locale.conf`  `LC_TIME=en_DK.UTF-8` 
-**Note:** Programs do not necessarily respect this variable to format the date. For example, [date(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/date.1) uses its own parameters to do so.
+**Note:** Programs do not necessarily respect this variable to format the date. For example, [date(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/date.1) uses its own parameters to do so.
 
 ### LC_COLLATE: collation
 

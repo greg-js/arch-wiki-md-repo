@@ -416,7 +416,7 @@ Arch поставляется с пользователем `http` и групп
 
 **Совет:** Убедитесь, что `/src/http` примонтирован без опции no-dev
 
-**Совет:** Смотрите [mknod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mknod.1) и `ls -l /dev/{null,random,urandom}`, чтобы лучше понять опции *mknod*.
+**Совет:** Смотрите [mknod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mknod.1) и `ls -l /dev/{null,random,urandom}`, чтобы лучше понять опции *mknod*.
 
 ```
 # export JAIL=/srv/http

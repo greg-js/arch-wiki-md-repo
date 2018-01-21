@@ -273,7 +273,7 @@ This will allow for proper socket activation with kill-after-idle functionality.
 
 ### Hardening uWSGI
 
-Web applications are exposed to the wild and depending on their quality and the security of their underlying languages, some are more dangerous to run, than others. A good way to start dealing with possible unsafe web applications is to jail them. [systemd](/index.php/Systemd "Systemd") has some functionality, that can be put to use. Have a look at the following example (and for further information see [systemd.exec(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.exec.5) and [[4]](https://sleepmap.de/2016/securely-serving-webapps-using-uwsgi/)):
+Web applications are exposed to the wild and depending on their quality and the security of their underlying languages, some are more dangerous to run, than others. A good way to start dealing with possible unsafe web applications is to jail them. [systemd](/index.php/Systemd "Systemd") has some functionality, that can be put to use. Have a look at the following example (and for further information see [systemd.exec(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.exec.5) and [[4]](https://sleepmap.de/2016/securely-serving-webapps-using-uwsgi/)):
 
  `/etc/systemd/system/uwsgi-secure@.service` 
 ```

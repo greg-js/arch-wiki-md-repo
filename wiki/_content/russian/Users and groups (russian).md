@@ -88,7 +88,7 @@ drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 
 Пользователь и группа могут быть изменены с помощью команды `chown` (change owner). Права доступа к файлу могут быть изменены с помощью команды `chmod` (change mode).
 
-See [chown(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), and [Linux file permissions](http://www.tuxfiles.org/linuxhelp/filepermissions.html) for additional detail.
+See [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), and [Linux file permissions](http://www.tuxfiles.org/linuxhelp/filepermissions.html) for additional detail.
 
 ## Управление пользователями
 

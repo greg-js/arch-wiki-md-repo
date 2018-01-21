@@ -29,7 +29,7 @@ Related articles
 
 There are two versions of *udisks* called [udisks](https://aur.archlinux.org/packages/udisks/) and [udisks2](https://www.archlinux.org/packages/?name=udisks2). Development of **udisks** has ceased in favor of **udisks2**. [[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
 
-[udisksd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisksd.8) (for **udisks2**) and [udisks-daemon(8)](https://udisks.freedesktop.org/docs/1.0.5/udisks-daemon.8.html) (for **udisks**) are started on-demand by [D-Bus](/index.php/D-Bus "D-Bus"), and should not be enabled explicitly. They can be controlled through the command-line with [udisksctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisksctl.1) and [udisks(1)](https://udisks.freedesktop.org/docs/1.0.5/udisks.1.html), respectively.
+[udisksd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisksd.8) (for **udisks2**) and [udisks-daemon(8)](https://udisks.freedesktop.org/docs/1.0.5/udisks-daemon.8.html) (for **udisks**) are started on-demand by [D-Bus](/index.php/D-Bus "D-Bus"), and should not be enabled explicitly. They can be controlled through the command-line with [udisksctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisksctl.1) and [udisks(1)](https://udisks.freedesktop.org/docs/1.0.5/udisks.1.html), respectively.
 
 ## Configuration
 
@@ -151,7 +151,7 @@ The above line is also useful to hide multi device btrfs filesystems, as all the
 
 ### Apply ATA settings (udisks2)
 
-At start-up and when a drive is connected, udisksd will apply configuration stored in the file `/etc/udisks2/*IDENTIFIER*.conf` where *IDENTIFIER* is the value of the Drive:Id property for the drive. Currently ATA settings are supported. See [udisks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8) for available options. These settings have essentially the same effect as those of [hdparm](/index.php/Hdparm "Hdparm"), but they are persistent as long as the udisks daemon is autostarted.
+At start-up and when a drive is connected, udisksd will apply configuration stored in the file `/etc/udisks2/*IDENTIFIER*.conf` where *IDENTIFIER* is the value of the Drive:Id property for the drive. Currently ATA settings are supported. See [udisks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8) for available options. These settings have essentially the same effect as those of [hdparm](/index.php/Hdparm "Hdparm"), but they are persistent as long as the udisks daemon is autostarted.
 
 For example, to set standby timeout to 240 (20 minutes) for a drive, add the following:
 
@@ -198,7 +198,7 @@ or for all devices:
 
 ```
 
-See [udisks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8) for more information.
+See [udisks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8) for more information.
 
 ### Broken standby timer (udisks2)
 

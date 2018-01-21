@@ -58,7 +58,7 @@ DISTCC_ARGS="--allow 192.168.0.0/24"
 
 ```
 
-A nice tool for converting address ranges to CIDR format can be found here: [CIDR Utility Tool](http://www.ipaddressguide.com/cidr). Other commandline options can be defined as well. Refer to [distcc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/distcc.1).
+A nice tool for converting address ranges to CIDR format can be found here: [CIDR Utility Tool](http://www.ipaddressguide.com/cidr). Other commandline options can be defined as well. Refer to [distcc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/distcc.1).
 
 [Start](/index.php/Start "Start") `distccd.service` on every participating slave. To have `distccd.service` start at boot-up, [enable](/index.php/Enable "Enable") it.
 

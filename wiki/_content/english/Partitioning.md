@@ -28,6 +28,7 @@ Once created, a partition must be formatted with an appropriate [file system](/i
     *   [1.4 Partitionless disk](#Partitionless_disk)
         *   [1.4.1 Btrfs partitioning](#Btrfs_partitioning)
     *   [1.5 Backup](#Backup)
+    *   [1.6 Recover](#Recover)
 *   [2 Partition scheme](#Partition_scheme)
     *   [2.1 Single root partition](#Single_root_partition)
     *   [2.2 Discrete partitions](#Discrete_partitions)
@@ -112,7 +113,7 @@ The section on [#Partitioning tools](#Partitioning_tools) contains a table indic
 
 ### Partitionless disk
 
-Partitionless disk a.k.a. [superfloppy](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq#what-is-a-superfloppy) refers to using a storage device without using a partition table, having one file system occupying the whole storage device. The boot sector present on a partitionless device is called a [Volume boot record (VBR)](https://en.wikipedia.org/wiki/volume_boot_record "wikipedia:volume boot record").
+Partitionless disk a.k.a. [superfloppy](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq#what-is-a-superfloppy) refers to using a storage device without using a partition table, having one file system occupying the whole storage device. The boot sector present on a partitionless device is called a [volume boot record (VBR)](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record").
 
 #### Btrfs partitioning
 
@@ -121,6 +122,12 @@ Partitionless disk a.k.a. [superfloppy](https://docs.microsoft.com/en-us/windows
 ### Backup
 
 See [fdisk#Backup and restore partition table](/index.php/Fdisk#Backup_and_restore_partition_table "Fdisk").
+
+### Recover
+
+It may be possible to recover a destroyed MBR partition table with [gpart](https://www.archlinux.org/packages/?name=gpart). See [gpart(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpart.8) for instructions.
+
+For GPT it is possible to restore the primary GPT header (located at the start of the partition table) from the secondary GPT header (located at the end of the partition table) or vice versa. See [fdisk#Recover GPT header](/index.php/Fdisk#Recover_GPT_header "Fdisk").
 
 ## Partition scheme
 
@@ -141,7 +148,7 @@ This scheme is the simplest and should be enough for most use cases. A [swapfile
 
 Separating out a path as a partition allows for the choice of a different filesystem and mount options. In some cases like a media partition, they can also be shared between operating systems.
 
-Below are some example layouts that can be used when partitioning, and the following subsections detail a few of the directories which can be placed on their own separate partition and then [mounted](/index.php/Mount "Mount") at mount points under `/`. See [file-hierarchy(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) for a full description of the contents of these directories.
+Below are some example layouts that can be used when partitioning, and the following subsections detail a few of the directories which can be placed on their own separate partition and then [mounted](/index.php/Mount "Mount") at mount points under `/`. See [file-hierarchy(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) for a full description of the contents of these directories.
 
 #### /
 
@@ -193,28 +200,28 @@ Historically, the general rule for swap partition size was to allocate twice the
 
 ### Example layouts
 
-**Note:** UEFI/GPT does not really have a "bootable" flag. A bootable partition simply has partition type `EF00`. Some GPT partitioning tools include a bootable flag, but really it just sets the partition type.
+**Note:** UEFI/GPT does not have a "bootable" flag, booting relies on files in [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). [Parted](/index.php/Parted "Parted") and its front-ends use the `boot` flag on GPT to indicate an EFI System Partition.
 
 #### UEFI/GPT example layout
 
-| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |
-| /boot | /dev/sd**x**1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | Yes | 260–512 MiB |
-| [SWAP] | /dev/sd**x**2 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
-| / | /dev/sd**x**3 | Linux | No | Remainder of the device |
+| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | [Partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries "wikipedia:GUID Partition Table") | Suggested size |
+| `/boot` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | [550 MiB](/index.php/EFI_System_Partition#Create_the_partition "EFI System Partition") |
+| `[SWAP]` | `/dev/sda2` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F`: Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
+| `/` | `/dev/sda3` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709`: Linux x86-64 root (/) | Remainder of the device |
 
 #### MBR/BIOS example layout
 
-| Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Bootable flag | Suggested size |
-| [SWAP] | /dev/sd**x**1 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
-| / | /dev/sd**x**2 | Linux | Yes | Remainder of the device |
+| Mount point | Partition | [Partition type (ID)](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") | [Active (boot) flag](https://en.wikipedia.org/wiki/Boot_flag "wikipedia:Boot flag") | Suggested size |
+| `[SWAP]` | `/dev/sda1` | `82`: Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
+| `/` | `/dev/sda2` | `83`: Linux | Yes | Remainder of the device |
 
 #### UEFI separate /home example layout
 
-| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |
-| /boot | /dev/sd**x**1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | Yes | More than 512 MiB |
-| / | /dev/sd**x**2 | Linux | No | 23 - 32 GiB |
-| [SWAP] | /dev/sd**x**3 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
-| /home | /dev/sd**x**4 | Linux | No | Remainder of the device |
+| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | [Partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries "wikipedia:GUID Partition Table") | Suggested size |
+| `/boot` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | [550 MiB](/index.php/EFI_System_Partition#Create_the_partition "EFI System Partition") |
+| `/` | `/dev/sda2` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709`: Linux x86-64 root (/) | 23 - 32 GiB |
+| `[SWAP]` | `/dev/sda3` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F`: Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
+| `/home` | `/dev/sda4` | `933AC7E1-2EB4-4F13-B844-0E14E2AEF915`: Linux /home | Remainder of the device |
 
 ## Partitioning tools
 

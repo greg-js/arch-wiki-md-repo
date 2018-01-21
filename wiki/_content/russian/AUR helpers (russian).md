@@ -205,7 +205,7 @@ srcman is a pacman/makepkg wrapper written in Bash, which transparently handles 
 *   *Чистая сборка*: не экспортирует новые переменные, которые могут помешать успешному процессу сборки.
 *   *Надёжный парсер*: способность обрабатывать сложные пакеты (например [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/)), используя предоставленные метаданные (RPC/.SRCINFO) вместо [парсинга](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing") PKGBUILD.
 *   *Надёжный разрешатель*: способность корректно разрешать и собирать сложные цепочки зависимостей, такие, как [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/).
-*   *Разделённые пакеты*: способность правильно собирать и устанавливать разделённые пакеты (такие, как [python-nikola](https://aur.archlinux.org/packages/python-nikola/)) независимо.
+*   *Разделённые пакеты*: способность правильно собирать и устанавливать разделённые пакеты независимо.
 *   *Git clone*: использует команду git clone вместо загрузки тарболлов (устарело с AUR 4)
 *   *Синтаксис*: P — значит [Pacman](/index.php/Pacman "Pacman")-подобный, S — собственный.
 

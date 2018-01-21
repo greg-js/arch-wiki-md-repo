@@ -170,7 +170,7 @@ $ nm-applet --indicator
 
 命令行前端*nmcli*包括在[networkmanager](https://www.archlinux.org/packages/?name=networkmanager)中。
 
-对于使用信息，参考[nmcli(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1)。 例子:
+对于使用信息，参考[nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1)。 例子:
 
 *   连接 WiFi 网络: `nmcli dev wifi connect <name> password <password>` 
 *   通过`wlan1`接口连接 WiFi 网络: `nmcli dev wifi connect <name> password <password> iface wlan1 [profile name]` 
@@ -184,7 +184,7 @@ $ nm-applet --indicator
 
 *nmtui* 是一个基于curses的图形化前端，包括在[networkmanager](https://www.archlinux.org/packages/?name=networkmanager)中。
 
-使用信息参见[nmtui(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1)。
+使用信息参见[nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1)。
 
 #### nmcli-dmenu
 

@@ -224,7 +224,7 @@ $ qemu-system-i386 -cdrom *iso_image* -boot order=d -drive file=*disk_image*,for
 
 ```
 
-See [qemu(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/qemu.1) for more information about loading other media types (such as floppy, disk images or physical drives) and [#Running virtualized system](#Running_virtualized_system) for other useful options.
+See [qemu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/qemu.1) for more information about loading other media types (such as floppy, disk images or physical drives) and [#Running virtualized system](#Running_virtualized_system) for other useful options.
 
 After the operating system has finished installing, the QEMU image can be booted directly (see [#Running virtualized system](#Running_virtualized_system)).
 
@@ -244,7 +244,7 @@ $ qemu-system-i386 *options* *disk_image*
 
 ```
 
-Options are the same for all `qemu-system-*` binaries, see [qemu(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/qemu.1) for documentation of all options.
+Options are the same for all `qemu-system-*` binaries, see [qemu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/qemu.1) for documentation of all options.
 
 By default, QEMU will show the virtual machine's video output in a window. One thing to keep in mind: when you click inside the QEMU window, the mouse pointer is grabbed. To release it, press `Ctrl+Alt+g`.
 
@@ -1282,7 +1282,7 @@ You might also want to install [qemu-guest-agent](https://www.archlinux.org/pack
 
 Windows does not come with the virtio drivers. Therefore, you will need to load them during installation. There are basically two ways to do this: via Floppy Disk or via ISO files. Both images can be downloaded from the [Fedora repository](https://fedoraproject.org/wiki/Windows_Virtio_Drivers).
 
-The floppy disk option is difficult because you will need to press F6 (Shift-F6 on newer Windows) at the very beginning of powering on the QEMU. This is difficult since you need time to connect your VNC console window. You can attempt to add a delay to the boot sequence. See [qemu(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/qemu.1) for more details about applying a delay at boot.
+The floppy disk option is difficult because you will need to press F6 (Shift-F6 on newer Windows) at the very beginning of powering on the QEMU. This is difficult since you need time to connect your VNC console window. You can attempt to add a delay to the boot sequence. See [qemu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/qemu.1) for more details about applying a delay at boot.
 
 The ISO option to load drivers is the preferred way, but it is available only on Windows Vista and Windows Server 2008 and later. The procedure is to load the image with virtio drivers in an additional cdrom device along with the primary disk device and Windows installer:
 

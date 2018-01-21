@@ -17,6 +17,7 @@ It is an OS independent partition that acts as the storage place for the EFI boo
         *   [3.1.3 Using incron](#Using_incron)
         *   [3.1.4 Using mkinitcpio hook](#Using_mkinitcpio_hook)
         *   [3.1.5 Using mkinitcpio hook (2)](#Using_mkinitcpio_hook_.282.29)
+        *   [3.1.6 Using Pacman hooks](#Using_Pacman_hooks)
 *   [4 Known issues](#Known_issues)
     *   [4.1 ESP on RAID](#ESP_on_RAID)
 *   [5 See also](#See_also)
@@ -53,7 +54,7 @@ After creating the ESP, you **must** [format](/index.php/File_systems#Create_a_f
 
 If you used GNU Parted above, it should already be formatted.
 
-If you get the message `WARNING: Not enough clusters for a 32 bit FAT!`, reduce cluster size with `mkfs.fat -s2 -F32 ...` or `-s1`; otherwise the partition may be unreadable by UEFI. See [mkfs.fat(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.fat.8) for supported cluster sizes.
+If you get the message `WARNING: Not enough clusters for a 32 bit FAT!`, reduce cluster size with `mkfs.fat -s2 -F32 ...` or `-s1`; otherwise the partition may be unreadable by UEFI. See [mkfs.fat(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.fat.8) for supported cluster sizes.
 
 ## Mount the partition
 
@@ -82,7 +83,7 @@ Furthermore, you will need to keep the files on the ESP up-to-date with later ke
 
 #### Using bind mount
 
-Instead of mounting the ESP itself to `/boot`, you can mount a directory of the ESP to `/boot` using a bind [mount](/index.php/Mount "Mount") (see [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8)). This allows [pacman](/index.php/Pacman "Pacman") to update the kernel directly while keeping the ESP organized to your liking.
+Instead of mounting the ESP itself to `/boot`, you can mount a directory of the ESP to `/boot` using a bind [mount](/index.php/Mount "Mount") (see [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8)). This allows [pacman](/index.php/Pacman "Pacman") to update the kernel directly while keeping the ESP organized to your liking.
 
 **Note:**
 
@@ -248,6 +249,58 @@ To test that, just run:
 # rm /boot/initramfs-linux-fallback.img
 # rm /boot/initramfs-linux.img
 # mkinitcpio -p linux
+
+```
+
+#### Using Pacman hooks
+
+A last option relies on the Pacman's hooks that are run at the end of the transaction, usually immediately after the mkinitcpio hooks.
+
+The first file is a hook that monitors the relevant files, and it is run if they were modified in the former transaction.
+
+ `/usr/share/libalpm/hooks/999-kernel-efi-copy.hook` 
+```
+[Trigger]
+Type = File
+Operation = Install
+Operation = Upgrade
+Target = boot/vmlinuz*
+Target = boot/initramfs*
+Target = usr/lib/initcpio/*
+Target = boot/intel-ucode.img
+
+[Action]
+Description = Copying linux and initramfs to EFI directory...
+When = PostTransaction
+Exec = /usr/share/libalpm/scripts/kernel-efi-copy.sh
+
+```
+
+The second file is the script itself:
+
+ `/usr/share/libalpm/scripts/kernel-efi-copy.sh` 
+```
+#!/bin/sh
+#
+# Copy kernel and initramfs images to EFI directory
+#
+
+BOOT="/boot"
+EFI="$BOOT/efi/EFI/arch"
+
+for file in `ls "$BOOT"/vmlinuz*`
+do
+        cp -v "$file" "$EFI"/$(basename "$file").efi
+        if [ $? != 0 ]; then exit 1; fi
+done
+
+for file in `ls "$BOOT"/{initramfs*,intel-ucode.img}`
+do
+        cp -v "$file" "$EFI"/$(basename "$file")
+        if [ $? != 0 ]; then exit 1; fi
+done
+
+exit 0
 
 ```
 

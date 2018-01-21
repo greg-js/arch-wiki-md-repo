@@ -538,7 +538,7 @@ xcompmgr &
 gnome-session --session=xmonad
 ```
 
-Теперь выберите "Xmonad GNOME (Composite)" в списке сеансов, во время входа в систему. Посмотрите [xcompmgr(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xcompmgr.1) для дополнительных настроек "радующих глаз".
+Теперь выберите "Xmonad GNOME (Composite)" в списке сеансов, во время входа в систему. Посмотрите [xcompmgr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xcompmgr.1) для дополнительных настроек "радующих глаз".
 
 ### Xfce 4 и xmonad
 

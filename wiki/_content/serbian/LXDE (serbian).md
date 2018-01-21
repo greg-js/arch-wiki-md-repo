@@ -160,7 +160,7 @@ Treći metod je upotreba globalnog fajla `/etc/xdg/lxsession/LXDE/autostart`. Ov
 
 ### Digitalni aplet za sat
 
-Da dobijete standardno vreme (ne vojno vreme) upotrebite hh:mm i hh:mm:ss format ([strftime(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/strftime.3) za više opcija):
+Da dobijete standardno vreme (ne vojno vreme) upotrebite hh:mm i hh:mm:ss format ([strftime(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/strftime.3) za više opcija):
 
 ```
 %I:%M

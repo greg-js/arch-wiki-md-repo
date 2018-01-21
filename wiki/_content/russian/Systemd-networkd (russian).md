@@ -71,7 +71,7 @@ hosts: files **resolve** myhostname
 
 ```
 
-Смотрите [systemd-resolved(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8), [resolved.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) и [Systemd README](https://github.com/systemd/systemd/blob/master/README#L205).
+Смотрите [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8), [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) и [Systemd README](https://github.com/systemd/systemd/blob/master/README#L205).
 
 **Примечание:** Systemd's `resolve` не может найти локальный домен, когда дается только имя хоста, даже когда `UseDomains=yes` или `Domains=[domain-list]` присутствует в соответствующем файле `.network`, и что файл производит ожидаемый `search [domain-list]` в `resolv.conf`. Если вы столкнулись с этой проблемой:
 
@@ -324,7 +324,7 @@ RouteMetric=20
 
 Для отладки, настоятельно рекомендуется [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") пакеты [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [net-tools](https://www.archlinux.org/packages/?name=net-tools) и [iproute2](https://www.archlinux.org/packages/?name=iproute2).
 
-Если вы используете *systemd-nspawn*, вам, возможно, потребуется изменить `systemd-nspawn@.service` и добавить параметры загрузки в строку `ExecStart`. Для исчерпывающего списка варианттов, обратитесь к [systemd-nspawn(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1). Обратите внимание, если вы хотите, использовать автоматическую настройку DNS от DHCP, то Вам необходимо включить `systemd-resolved` и символьную ссылку `/run/systemd/resolve/resolv.conf` на `/etc/resolv.conf`. Для большей информации, смотрите `systemd-resolved.service(8)`.
+Если вы используете *systemd-nspawn*, вам, возможно, потребуется изменить `systemd-nspawn@.service` и добавить параметры загрузки в строку `ExecStart`. Для исчерпывающего списка варианттов, обратитесь к [systemd-nspawn(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1). Обратите внимание, если вы хотите, использовать автоматическую настройку DNS от DHCP, то Вам необходимо включить `systemd-resolved` и символьную ссылку `/run/systemd/resolve/resolv.conf` на `/etc/resolv.conf`. Для большей информации, смотрите `systemd-resolved.service(8)`.
 
 Before you start to configure your container network, it is useful to:
 

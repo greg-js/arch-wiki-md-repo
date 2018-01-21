@@ -35,7 +35,7 @@ Related articles
 
 [Install](/index.php/Install "Install") either [firejail](https://www.archlinux.org/packages/?name=firejail), [firejail-git](https://aur.archlinux.org/packages/firejail-git/) or the [firejail-apparmor](https://aur.archlinux.org/packages/firejail-apparmor/) package. A GUI application for use with Firejail is also available, [firetools](https://aur.archlinux.org/packages/firetools/).
 
-**Note:** The [user_namespaces(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/user_namespaces.7) are available only in [linux](https://www.archlinux.org/packages/?name=linux) (v4.14.5 or later) and [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened). Impact on Firejail users is [deemed negligible](https://github.com/netblue30/firejail/issues/1347)
+**Note:** The [user_namespaces(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/user_namespaces.7) are available only in [linux](https://www.archlinux.org/packages/?name=linux) (v4.14.5 or later) and [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened). Impact on Firejail users is [deemed negligible](https://github.com/netblue30/firejail/issues/1347)
 
 **Warning:** While upstream is gradually adopting whitelists, (cf `/etc/firejail/firefox.profile`,) most of the supplied profiles still rely heavily on blacklists. This means that anything not explicitly forbidden by the profile will be accessible to the application. For example, if you have btrfs snapshots available in `/mnt/btrfs`, a jailed program may be forbidden from accessing `$HOME/.ssh`, but would still be able to access `/mnt/btrfs/@some-snapshot/$HOME/.ssh`. Make sure to audit your profiles, see [#Testing profiles](#Testing_profiles)
 
@@ -47,7 +47,7 @@ Firejail uses profiles to set the security protections for each of the applicati
 
 If firejail does not have a profile for a particular application, it uses its restrictive system-wide default profile. This can result in the application not functioning as desired, without first creating a custom, and less restrictive profile.
 
-Refer to [firejail-profile(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/firejail-profile.5).
+Refer to [firejail-profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/firejail-profile.5).
 
 ## Usage
 

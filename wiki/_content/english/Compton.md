@@ -32,7 +32,7 @@
 
 ## Usage
 
-See [compton(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/compton.1). Compton may be manually enabled or disabled at any time during a session, or autostarted as a background ([Daemon](/index.php/Daemon "Daemon")) process for sessions. There are also several optional arguments that may be used to tweak the compositing effects provided. These include:
+See [compton(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/compton.1). Compton may be manually enabled or disabled at any time during a session, or autostarted as a background ([Daemon](/index.php/Daemon "Daemon")) process for sessions. There are also several optional arguments that may be used to tweak the compositing effects provided. These include:
 
 *   `-b`: Run as a background ([Daemon](/index.php/Daemon "Daemon")) process for a session (e.g. when autostarting for a [window manager](/index.php/Window_manager "Window manager") such as [Openbox](/index.php/Openbox "Openbox"))
 *   `-c`: Enable shadow effects

@@ -192,7 +192,7 @@ $ cp /etc/i3status.conf ~/.config/i3status/config
 
 ```
 
-不是所有的插件都被在默认配置文件中被定义，一些配置值对于系统也可能是无效的，所以需要相应的更新。具体见 [i3status(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/i3status.1) 。
+不是所有的插件都被在默认配置文件中被定义，一些配置值对于系统也可能是无效的，所以需要相应的更新。具体见 [i3status(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/i3status.1) 。
 
 #### i3status可选方案
 
@@ -520,7 +520,7 @@ exec --no-startup-id xset dpms 600
 
 ```
 
-用 [xss-lock](https://aur.archlinux.org/packages/xss-lock/) 可以对您的 i3 session 加以定义锁屏器。xss-lock 会追踪系统事件并作出应有的反应： `suspend`, `hibernate`, `lock-session`, and `unlock-session` 比如锁屏并等待，直到用户解除锁屏或是杀死锁屏器的进程。它也能对 [X screensaver](/index.php/Display_Power_Management_Signaling#xset_screen-saver_control "Display Power Management Signaling") 作出响应，即根据来自Ｘ服务器的信号，运行或是杀死锁屏器。以下能把 xss-lock 加进开机自启动程序：
+用 [xss-lock](https://www.archlinux.org/packages/?name=xss-lock) 可以对您的 i3 session 加以定义锁屏器。xss-lock 会追踪系统事件并作出应有的反应： `suspend`, `hibernate`, `lock-session`, and `unlock-session` 比如锁屏并等待，直到用户解除锁屏或是杀死锁屏器的进程。它也能对 [X screensaver](/index.php/Display_Power_Management_Signaling#xset_screen-saver_control "Display Power Management Signaling") 作出响应，即根据来自Ｘ服务器的信号，运行或是杀死锁屏器。以下能把 xss-lock 加进开机自启动程序：
 
 ```
 xss-lock -- i3lock -i *background_image* &

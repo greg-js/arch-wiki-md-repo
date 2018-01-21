@@ -80,7 +80,7 @@ See the GCC man page for a complete list of available options. The Gentoo [Compi
 
 يمكن إستعمال خيار `MAKEFLAGS` لتعين خيارات إضافية لـ make. المستخدمون ذوي الأنضمة متعددة-الأنوية/متعددة-المعالجات بإستطاعتهم تحديد عدد المهام الممكن تشغيلها بالتوازي. ويمكن تحقيق ذلك مع استخدام `nproc` لتحديد عدد المعالجات المتاحة, مثلاً. `-j4` حيث *4 هي خارج `nproc`*. بعض ملفات [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") تتجاوز هذا بإستعمال `-j1`, وذلك بسبب التعارض في بعض الإصدارات أو ببساطة لأنها غير مدعومة أصلاً. الحزم التي تفشل في البناء لمثل هذا السبب ينبغي [التبليغ](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") عنها على متتبع العلل وذلك طبعا بعد التأكد فعلا أن العلة تسببب بها MAKEFLAGS الخاص بك.
 
-راجع [make(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/make.1) للحصول على اللائحة الكاملة للخيارات المتاحة.
+راجع [make(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/make.1) للحصول على اللائحة الكاملة للخيارات المتاحة.
 
 ### الحزمة الناتجة
 

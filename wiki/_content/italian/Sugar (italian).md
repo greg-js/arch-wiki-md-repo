@@ -1,3 +1,7 @@
+Articoli correlati
+
+*   [Desktop Environment](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)")
+
 Prodotto dall'iniziativa [OLPC](https://en.wikipedia.org/wiki/One_Laptop_per_Child è un ambiente desktop simile a [KDE](/index.php/KDE "KDE") e [GNOME](/index.php/GNOME "GNOME"), ma orientata verso i bambini e l'istruzione. Se avete un figlio giovane, figlia, fratello, sorella, cucciolo o alieno, il modo migliore per introdurli al mondo di Arch Linux è fargli utilizzare una piattaforma Arch/Sugar. La bellezza di un sistema Arch Linux (TM), e che una volta installato e ben configurato, lo si può utilizzare tranquillamente senza difficoltà, anche da un bambino in questo caso. (Ma bisogna sapere come configurarla).
 
 Per facilitarne l'installazione e buona norma reperire alcuni pacchetti relativi a Sugar da [AUR](/index.php/AUR "AUR").
@@ -131,7 +135,7 @@ Tutte le attività di `fructose` sono disponibili su AUR come `sugar-activity-**
 *   [sugar-activity-jukebox](https://www.archlinux.org/packages/?name=sugar-activity-jukebox)
 *   [sugar-activity-log](https://www.archlinux.org/packages/?name=sugar-activity-log)
 *   [sugar-activity-pippy](https://www.archlinux.org/packages/?name=sugar-activity-pippy)
-*   [sugar-activity-read](https://aur.archlinux.org/packages/sugar-activity-read/)
+*   [sugar-activity-read](https://www.archlinux.org/packages/?name=sugar-activity-read)
 *   [sugar-activity-terminal](https://www.archlinux.org/packages/?name=sugar-activity-terminal)
 *   [sugar-activity-turtleart](https://aur.archlinux.org/packages/sugar-activity-turtleart/)
 *   [sugar-activity-write](https://www.archlinux.org/packages/?name=sugar-activity-write)

@@ -1,3 +1,10 @@
+Related articles
+
+*   [Mac](/index.php/Mac "Mac")
+*   [MacBookPro7,1](/index.php/MacBookPro7,1 "MacBookPro7,1")
+*   [MacBookPro8,1/8,2/8,3 (2011)](/index.php/MacBookPro8,1/8,2/8,3_(2011) "MacBookPro8,1/8,2/8,3 (2011)")
+*   <a class="mw-selflink selflink">MacBookPro9,2 (Mid-2012)</a>
+
 This guide outlines special information on installing and configuring Arch on the more recent Macbook 9,x (Mid-2012) hardware alongside a pre-existing OSX operating system. This requires adequate free disk space, install media (such as a USB or CD), and a wired connection for the initial steps of the install procedure.
 
 This article is written with a dual-boot setup in mind, and does *not* cover how to replace OSX with Arch.
@@ -23,9 +30,7 @@ For general help on the install preocedure see the [Installation guide](/index.p
     *   [3.1 SD Card Reader](#SD_Card_Reader)
     *   [3.2 Users](#Users)
     *   [3.3 Wireless](#Wireless)
-        *   [3.3.1 b43](#b43)
-        *   [3.3.2 wl](#wl)
-        *   [3.3.3 Wireless Flakiness](#Wireless_Flakiness)
+        *   [3.3.1 Wireless Flakiness](#Wireless_Flakiness)
     *   [3.4 Xorg](#Xorg)
 *   [4 Bells & Whistles](#Bells_.26_Whistles)
     *   [4.1 Emulating OSX Touchpad Gestures](#Emulating_OSX_Touchpad_Gestures)
@@ -178,42 +183,16 @@ In order to be able to access a OSX user's directory, only the uid and gid need 
 
 ### Wireless
 
-Macbooks 8,1 to 9,2 (and possibly newer) use BCM4331 for Wifi. As of June 2013 two options are available, the open source b43 driver and Broadcom's proprietary wl driver.
-
-#### b43
-
-**Warning:** compat-drivers is outdated and was renamed to [backports](http://wireless.kernel.org/en/users/Download/stable/).
-
-```
-$ curl -O [https://www.kernel.org/pub/linux/kernel/projects/backports/2013/03/28/compat-drivers-2013-03-28-5.tar.bz2](https://www.kernel.org/pub/linux/kernel/projects/backports/2013/03/28/compat-drivers-2013-03-28-5.tar.bz2)
-$ tar xjf compat-drivers-2013-03-28-5.tar.bz2
-$ cd compat-drivers-2013-03-28-5
-
-$ scripts/driver-select b43
-$ make
-$ sudo make install
-
-```
-
-Create `/etc/modules-load.d/b43.conf` and write `b43` to load wireless at startup.
-
-Install [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) from [AUR](/index.php/AUR "AUR") and reboot. From here on in, wifi configuration should proceed normally - once it's working the wired connection may be disconnected.
-
-#### wl
-
-*more to come.*
-
-Download, extract, and install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) from [AUR](/index.php/AUR "AUR") and reboot.
+Macbooks 8,1 to 9,2 (and possibly newer) use BCM4331 for Wifi. See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for details.
 
 #### Wireless Flakiness
 
 The only connection manager combination with BCM4331 that doesn't result in flakiness seems to be connman + disabled background scanning.
 
+ `/etc/connman/main.conf` 
 ```
-/etc/connman/main.conf
 [General]
 BackgroundScanning = false
-
 ```
 
 ### Xorg

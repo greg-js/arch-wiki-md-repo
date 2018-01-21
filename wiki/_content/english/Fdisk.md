@@ -8,9 +8,9 @@ Related articles
 
 [GPT fdisk](http://www.rodsbooks.com/gdisk/), as implemented in the *gdisk* program and its associated utilities, works "on Globally Unique Identifier (GUID) Partition Table ([GPT](/index.php/GPT "GPT")) disks, rather than on the more common (through at least early 2013) Master Boot Record ([MBR](/index.php/MBR "MBR")) partition tables."
 
-This article covers [fdisk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk.8) and its related [sfdisk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sfdisk.8) utility, as well as the analogous [gdisk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) and [sgdisk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sgdisk.8) utilities.
+This article covers [fdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk.8) and its related [sfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sfdisk.8) utility, as well as the analogous [gdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) and [sgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sgdisk.8) utilities.
 
-**Tip:** For basic partitioning functionality with a text user interface, [cfdisk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8) and [cgdisk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) can be used.
+**Tip:** For basic partitioning functionality with a text user interface, [cfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8) and [cgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) can be used.
 
 ## Contents
 
@@ -203,7 +203,7 @@ This opens the *fdisk* dialogue where you can type in commands.
 
 #### gdisk
 
-Using [GPT](/index.php/GPT "GPT"), the utility for editing the partition table is called *gdisk*. Alternatively, you may use the curses-based version called *cgdisk*; however, the following instructions do not apply to it. See [cgdisk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) for its usage.
+Using [GPT](/index.php/GPT "GPT"), the utility for editing the partition table is called *gdisk*. Alternatively, you may use the curses-based version called *cgdisk*; however, the following instructions do not apply to it. See [cgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) for its usage.
 
 *gdisk* performs partition alignment automatically on a 2048 sector (or 1024KiB) block size base which should be compatible with the vast majority of SSDs if not all. [GNU Parted](/index.php/GNU_Parted "GNU Parted") also supports GPT, but is [less user-friendly](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) for aligning partitions.
 

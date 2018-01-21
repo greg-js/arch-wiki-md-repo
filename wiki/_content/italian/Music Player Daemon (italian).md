@@ -551,7 +551,7 @@ end
 
 ```
 
-mpc dispone di molte altre funzioni. [mpc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mpc.1) per maggiori informazioni.
+mpc dispone di molte altre funzioni. [mpc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpc.1) per maggiori informazioni.
 
 ### Controllare MPD tramite cellulare bluetooth
 

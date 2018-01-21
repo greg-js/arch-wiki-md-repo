@@ -25,7 +25,7 @@ Download [[1]](http://www.privateinternetaccess.com/openvpn/openvpn-strong.zip).
 
 See [OpenVPN#Starting OpenVPN](/index.php/OpenVPN#Starting_OpenVPN "OpenVPN").
 
-**Tip:** To automatically login, append the name of the file containing your username and password immediately after `auth-user-pass` in the configuration file(s). See this option in [openvpn(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/openvpn.8)for more information.
+**Tip:** To automatically login, append the name of the file containing your username and password immediately after `auth-user-pass` in the configuration file(s). See this option in [openvpn(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/openvpn.8)for more information.
 
 To test to see if you have successfully connected to the VPN, see [this article](https://helpdesk.privateinternetaccess.com/hc/en-us/articles/231734668-Security-Best-Practices-Part-5-Testing-Your-Security).
 

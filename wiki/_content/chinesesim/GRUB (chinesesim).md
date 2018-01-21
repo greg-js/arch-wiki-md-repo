@@ -123,7 +123,7 @@ GPT 后面的空间也可以用作 BIOS 启动分区，但是这会违反 GPT �
 
 **Tip:** [GRUB/Tips and tricks#Alternative installation methods](/index.php/GRUB/Tips_and_tricks#Alternative_installation_methods "GRUB/Tips and tricks") 包含了其它 GRUB 安装方式，比如安装到优盘。
 
-详情请参考 [grub-install(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8) 和 [[3]](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation)。
+详情请参考 [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8) 和 [[3]](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation)。
 
 如果 `/boot` 使用 [LVM](/index.php/LVM "LVM"),可以将 GRUB 安装在多个物理磁盘上.
 

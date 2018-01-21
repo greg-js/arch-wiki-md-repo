@@ -58,7 +58,7 @@ $ fc-list : file
 
 ```
 
-See [fc-list(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fc-list.1) for more output formats.
+See [fc-list(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fc-list.1) for more output formats.
 
 Check for Xorg's known font paths by reviewing its log:
 

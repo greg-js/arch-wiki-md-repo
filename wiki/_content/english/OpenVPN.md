@@ -120,7 +120,7 @@ The OpenVPN package comes with a collection of example configuration files for d
 *   Listens for client connections on UDP port 1194 (OpenVPN's official IANA port number[[1]](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=openvpn)).
 *   Distributes virtual addresses to connecting clients from the 10.8.0.0/24 subnet.
 
-For more advanced configurations, please see the [openvpn(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/openvpn.8) man page and the [OpenVPN documentation](http://openvpn.net/index.php/open-source/documentation).
+For more advanced configurations, please see the [openvpn(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/openvpn.8) man page and the [OpenVPN documentation](http://openvpn.net/index.php/open-source/documentation).
 
 ### The server configuration file
 
@@ -484,7 +484,7 @@ See [NetworkManager#Network services with NetworkManager dispatcher](/index.php/
 
 ### Gnome configuration
 
-If you would like to connect a client to an OpenVPN server through Gnome's built-in network configuration do the following. First, install [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn). Then go to the Settings menu and choose Network. Click the plus sign to add a new connection and choose VPN. From there you can choose OpenVPN and manually enter the settings. You can also choose to import [#The client configuration file](#The_client_configuration_file), if you have already created one. Yet, be aware NetworkManager does not show error messages for options it does not import. To connect to the VPN simply turn the connection on and check the options are applied as you configured (e.g. via `journalctl -b -u NetworkManager`).
+If you would like to connect a client to an OpenVPN server through Gnome's built-in network configuration do the following. First, install [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn). Then go to the Settings menu and choose Network. Click the plus sign to add a new connection and choose VPN. From there you can choose OpenVPN and manually enter the settings. You can also choose to import [#The_client_config_profile](#The_client_config_profile), if you have already created one. Yet, be aware NetworkManager does not show error messages for options it does not import. To connect to the VPN simply turn the connection on and check the options are applied as you configured (e.g. via `journalctl -b -u NetworkManager`).
 
 ## Routing all client traffic through the server
 

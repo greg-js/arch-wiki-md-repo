@@ -105,7 +105,7 @@ To start the resulting i686 Arch Linux systemd-nspawn instance, just issue the f
 
 ### Create a Debian or Ubuntu environment
 
-Install [debootstrap](https://www.archlinux.org/packages/?name=debootstrap), [gnupg1](https://aur.archlinux.org/packages/gnupg1/), and one or both of [debian-archive-keyring](https://www.archlinux.org/packages/?name=debian-archive-keyring) and [ubuntu-keyring](https://www.archlinux.org/packages/?name=ubuntu-keyring) (obviously install the keyrings for the distros you want).
+Install [debootstrap](https://www.archlinux.org/packages/?name=debootstrap), and one or both of [debian-archive-keyring](https://www.archlinux.org/packages/?name=debian-archive-keyring) and [ubuntu-keyring](https://www.archlinux.org/packages/?name=ubuntu-keyring) (obviously install the keyrings for the distros you want).
 
 **Note:** *systemd-nspawn* requires that the operating system in the container has systemd running as PID 1 and *systemd-nspawn* is installed in the container. This means Ubuntu before 15.04 will not work out of the box and requires additional configuration to switch from upstart to systemd. Also make sure that the `systemd-container` package is installed on the container system.
 
@@ -142,7 +142,7 @@ If the above didn't work. One can start the container and use these commands ins
 
 *systemd-nspawn* supports unprivileged containers, though the containers need to be booted as root.
 
-**Note:** This feature requires [user_namespaces(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/user_namespaces.7), for further info see [Linux Containers#Enable support to run unprivileged containers (optional)](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_containers_.28optional.29 "Linux Containers")
+**Note:** This feature requires [user_namespaces(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/user_namespaces.7), for further info see [Linux Containers#Enable support to run unprivileged containers (optional)](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_containers_.28optional.29 "Linux Containers")
 
 The easiest way to do this is to let *systemd-nspawn* decide everything:
 
@@ -159,7 +159,7 @@ Here *systemd-nspawn* will see if the owner of the directory is being used, if n
 **Note:**
 
 *   The base of the range chosen is always a multiple of 65536.
-*   `-U` and `--private-users=pick` is the same, if kernel supports user namespaces. `--private-users=pick` also implies `--private-users-chown`, see [systemd-nspawn(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1) for details.
+*   `-U` and `--private-users=pick` is the same, if kernel supports user namespaces. `--private-users=pick` also implies `--private-users-chown`, see [systemd-nspawn(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1) for details.
 
 You can also specify the UID/GID of the container manually:
 
@@ -179,7 +179,7 @@ When using a container frequently, you may want to start it on boot.
 
 First [enable](/index.php/Enable "Enable") the `machines.target` target, then `systemd-nspawn@*myContainer*.service`, where `myContainer` is an nspawn container in `/var/lib/machines`.
 
-**Tip:** To customize the startup of a container, edit `/etc/systemd/nspawn/*myContainer*.nspawn`. See [systemd.nspawn(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.nspawn.5) for all options.
+**Tip:** To customize the startup of a container, edit `/etc/systemd/nspawn/*myContainer*.nspawn`. See [systemd.nspawn(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.nspawn.5) for all options.
 
 ### Build and test packages
 
@@ -191,7 +191,7 @@ See [Creating packages for other distributions](/index.php/Creating_packages_for
 
 **Note:** The *machinectl* tool requires [systemd](/index.php/Systemd "Systemd") and [dbus](https://www.archlinux.org/packages/?name=dbus) to be installed in the container. See [[1]](https://github.com/systemd/systemd/issues/685) for detailed discussion.
 
-Managing your containers is essentially done with the `machinectl` command. See [machinectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/machinectl.1) for details.
+Managing your containers is essentially done with the `machinectl` command. See [machinectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/machinectl.1) for details.
 
 Examples:
 
@@ -284,7 +284,7 @@ See [Firefox tweaks](/index.php/Firefox_tweaks#Run_Firefox_inside_an_nspawn_cont
 
 ### Access host filesystem
 
-See `--bind` and `--bind-ro` in [systemd-nspawn(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1).
+See `--bind` and `--bind-ro` in [systemd-nspawn(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1).
 
 If both the host and the container are Arch Linux, then one could, for example, share the pacman cache:
 
@@ -374,7 +374,7 @@ See [Init#systemd-nspawn](/index.php/Init#systemd-nspawn "Init").
 
 ### Specify per-container settings
 
-To specify per-container settings and not overrides for all (e.g. bind a directory to only one container), the *.nspawn* files can be used. See [systemd.nspawn(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.nspawn.5) for details.
+To specify per-container settings and not overrides for all (e.g. bind a directory to only one container), the *.nspawn* files can be used. See [systemd.nspawn(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.nspawn.5) for details.
 
 ### Use Btrfs subvolume as container root
 

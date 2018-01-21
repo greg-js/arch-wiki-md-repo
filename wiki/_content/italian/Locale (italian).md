@@ -96,7 +96,7 @@ LC_TIME="it_IT.UTF-8"
 
 ```
 
-Si veda [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) e [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) per maggiori dettagli.
+Si veda [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) e [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) per maggiori dettagli.
 
 Queste modifiche avranno effetto dopo il riavvio del sistema e sarà impostato per le singole sessioni di login .
 

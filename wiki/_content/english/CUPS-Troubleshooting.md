@@ -147,6 +147,8 @@ Signs and symptoms: printer targets do not show up in the GTK3 print dialogs, ma
 
 Even if CUPS can detect networked printers, you may still end up with an "Unable to locate printer" error when trying to print something. The solution to this problem is to enable Avahi's [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi"). See [CUPS#Network](/index.php/CUPS#Network "CUPS") for details.
 
+This problem may also arise when you have a firewall. You may need to disable your firewall or set the right rules. Using system-config-printer to detect network printers will do that automatically.
+
 ### Old CUPS server
 
 As of CUPS version 1.6, the client defaults to IPP 2.0\. If the server uses CUPS <= 1.5 / IPP <= 1.1, the client does not downgrade the protocol automatically and thus cannot communicate with the server. A workaround is to append the `version=1.1` option documented at [[1]](https://www.cups.org/doc/network.html#TABLE2) to the URI.

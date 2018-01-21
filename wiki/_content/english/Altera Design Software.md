@@ -353,7 +353,7 @@ The second step is to add the server:
 If you still have problems, try restarting `jtagd`:
 
 ```
- $ sudo killall -9 jtagd
+ # killall -9 jtagd
  $ /opt/altera/quartus/bin/jtagd
 
 ```

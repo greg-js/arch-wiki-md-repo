@@ -127,7 +127,7 @@ Per maggiori informazioni, si veda [xinitrc](/index.php/Xinitrc_(Italiano) "Xini
 
 **Note:** Arch Linux fornisce dei file di configurazione predefiniti in `/etc/X11/xorg.conf.d`, e nessuna configurazione aggiuntiva è necessaria per la maggior parte delle configurazioni.
 
-Xorg usa un file di configurazione chiamato `xorg.conf` e file che terminano con il suffisso `.conf` per la sua configurazione iniziale : l' elenco completo delle cartelle in cui i file vengono cercati può essere trovato [qui](http://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml) o eseguendo [xorg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5), insieme ad una spiegazione dettagliata di tutte le le opzioni disponibili.
+Xorg usa un file di configurazione chiamato `xorg.conf` e file che terminano con il suffisso `.conf` per la sua configurazione iniziale : l' elenco completo delle cartelle in cui i file vengono cercati può essere trovato [qui](http://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml) o eseguendo [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5), insieme ad una spiegazione dettagliata di tutte le le opzioni disponibili.
 
 ### Utilizzando i file .conf
 
@@ -142,7 +142,7 @@ Xorg può anche essere configurato tramite `/etc/X11/xorg.conf` o `/etc/xorg.con
 
 ```
 
-Questo dovrebbe creare un file `xorg.conf.new` in `/root/` che dovrete copiare come `/etc/X11/xorg.conf`, per maggiori informazioni si veda [xorg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5).
+Questo dovrebbe creare un file `xorg.conf.new` in `/root/` che dovrete copiare come `/etc/X11/xorg.conf`, per maggiori informazioni si veda [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5).
 
 In alternativa, i driver proprietari della scheda video potrebbero includere uno strumento per configurare automaticamente Xorg. Si veda l'articolo relativo al proprio driver video, [NVIDIA](/index.php/NVIDIA_(Italiano) "NVIDIA (Italiano)") o [AMD Catalyst](/index.php/AMD_Catalyst_(Italiano) "AMD Catalyst (Italiano)") per i dettagli.
 

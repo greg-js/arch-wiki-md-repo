@@ -84,7 +84,7 @@ Vedere la pagina man di GCC per una lista completa delle opzioni disponibili. La
 
 L'opzione `MAKEFLAGS` può essere utilizzata per specificare delle opzioni aggiuntive a "make". Gli utenti con sistemi multi-core/multi-processore possono specificare il numero di operazioni da eseguire simultaneamente. Generalmente `-j2`, più 1 per ogni core/processore aggiuntivo, è una scelta ragionevole. Alcuni [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)") sono specificatamente contraddistinti con `-j1`, richiesto da alcune versioni, o semplicemente perchè non supportati. I pacchetti che, a causa di questo, non si riescono a compilare, vanno [segnalati](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") tramite il bug tracker, dopo essersi assicurati che l'errore non è causato dal proprio MAKEFLAGS.
 
-Consultare [make(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/make.1) per un elenco completo delle opzioni disponibili.
+Consultare [make(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/make.1) per un elenco completo delle opzioni disponibili.
 
 ### Output del pacchetto
 

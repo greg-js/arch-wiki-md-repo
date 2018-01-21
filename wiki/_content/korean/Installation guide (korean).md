@@ -32,15 +32,15 @@
 
 아치 리눅스는 최소 메모리가 512MB인 [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") 호환 기계에서 실행되어야 합니다. [base](https://www.archlinux.org/groups/x86_64/base/) 그룹의 모든 패키지를 설치하는 기본 설치를 하면 800MB 미만의 디스크 공간을 차지합니다. 인터넷 연결이 되어 있어야 공식 패키지 저장소에서 패키지를 다운로드할 수 있습니다.
 
-[아치 리눅스 다운로드 및 설치](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")에 설명된 대로 설치 매체를 다운로드하고 부팅하십시오. 첫번째 [가상 콘솔](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console")로 루트 사용자로 로그인한 [Zsh](/index.php/Zsh "Zsh") 쉘 프롬프트가 제공될 것입니다. [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)과 같은 일반적인 명령어는 명령어 일부를 입력한 후 탭 키를 누르면 명령어 전체가 자동으로 완성되는 [탭 완성](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion")으로 입력될 수 있습니다.
+[아치 리눅스 다운로드 및 설치](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")에 설명된 대로 설치 매체를 다운로드하고 부팅하십시오. 첫번째 [가상 콘솔](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console")로 루트 사용자로 로그인한 [Zsh](/index.php/Zsh "Zsh") 쉘 프롬프트가 제공될 것입니다. [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)과 같은 일반적인 명령어는 명령어 일부를 입력한 후 탭 키를 누르면 명령어 전체가 자동으로 완성되는 [탭 완성](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion")으로 입력될 수 있습니다.
 
 다른 콘솔로 이동하려면, 예를 들어 설치를 하고 있는 콘솔이 아닌 다른 콘솔로 이동해 [ELinks](/index.php/ELinks "ELinks")를 실행해 이 안내서를 보는 경우라면 `Alt+*화살표*` [바로가기](/index.php/Keyboard_shortcuts "Keyboard shortcuts")를 사용하십시오. 설정 파일을 [편집](/index.php/Textedit "Textedit")하려면 [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi"), [vim](/index.php/Vim#Usage "Vim") 등을 사용하십시오.
 
 ### 키보드 레이아웃 설정
 
-기본 [콘솔 키맵](/index.php/Console_keymap "Console keymap")은 [US(미국)](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg")입니다. `ls /usr/share/kbd/keymaps/**/*.map.gz`를 실행하면 사용할 수 있는 레이아웃을 보여줍니다. 레이아웃을 변경하려면 해당 파일 이름을 경로와 파일 확장자를 제외하고 [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1)에 덧붙입니다. 가령, `loadkeys de-latin1`를 실행하면 [독일어](https://en.wikipedia.org/wiki/File:KB_Germany.svg "w:File:KB Germany.svg") 키보드 레이아웃을 설정합니다.
+기본 [콘솔 키맵](/index.php/Console_keymap "Console keymap")은 [US(미국)](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg")입니다. `ls /usr/share/kbd/keymaps/**/*.map.gz`를 실행하면 사용할 수 있는 레이아웃을 보여줍니다. 레이아웃을 변경하려면 해당 파일 이름을 경로와 파일 확장자를 제외하고 [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1)에 덧붙입니다. 가령, `loadkeys de-latin1`를 실행하면 [독일어](https://en.wikipedia.org/wiki/File:KB_Germany.svg "w:File:KB Germany.svg") 키보드 레이아웃을 설정합니다.
 
-[콘솔 폰트](/index.php/Console_fonts "Console fonts")는 `/usr/share/kbd/consolefonts/`에 있으며 키맵처럼 [setfont(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8)로 설정할 수 있습니다.
+[콘솔 폰트](/index.php/Console_fonts "Console fonts")는 `/usr/share/kbd/consolefonts/`에 있으며 키맵처럼 [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8)로 설정할 수 있습니다.
 
 ### 부트 방식 확인
 
@@ -64,11 +64,11 @@ UEFI모드가 [UEFI](/index.php/UEFI "UEFI") 마더보드에서 활성화되면 
 
 연결이 안 된다면 `systemctl stop dhcpcd@` `Tab`키로 *dhcpcd* 서비스를 중지하고 [네트워크 설정](/index.php/Network_configuration#Device_driver "Network configuration")을 보십시오.
 
-**무선**연결은 [iw(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8), [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl")을 사용할 수 있습니다. [무선 네트워크 설정](/index.php/Wireless_network_configuration "Wireless network configuration")을 참고하십시오.
+**무선**연결은 [iw(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8), [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl")을 사용할 수 있습니다. [무선 네트워크 설정](/index.php/Wireless_network_configuration "Wireless network configuration")을 참고하십시오.
 
 ### 시스템 시간 설정
 
-[timedatectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1)을 사용해 시스템의 시간을 정확하게 설정하십시오.
+[timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1)을 사용해 시스템의 시간을 정확하게 설정하십시오.
 
 ```
 # timedatectl set-ntp true
@@ -185,7 +185,7 @@ UEFI모드가 [UEFI](/index.php/UEFI "UEFI") 마더보드에서 활성화되면 
 
 ```
 
-[hwclock(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8)를 실행해 `/etc/adjtime`를 생성합니다.
+[hwclock(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8)를 실행해 `/etc/adjtime`를 생성합니다.
 
 ```
 # hwclock --systohc
@@ -203,13 +203,13 @@ UEFI모드가 [UEFI](/index.php/UEFI "UEFI") 마더보드에서 활성화되면 
 
 ```
 
-`LANG` [변수](/index.php/Variable "Variable")를 [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5)에 설정합니다.
+`LANG` [변수](/index.php/Variable "Variable")를 [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5)에 설정합니다.
 
 예)
 
  `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
 
-[키보도 레이아웃을 설정](#.ED.82.A4.EB.B3.B4.EB.93.9C_.EB.A0.88.EC.9D.B4.EC.95.84.EC.9B.83_.EC.84.A4.EC.A0.95)한다면 [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5)에 변경사항을 반영하십시오.
+[키보도 레이아웃을 설정](#.ED.82.A4.EB.B3.B4.EB.93.9C_.EB.A0.88.EC.9D.B4.EC.95.84.EC.9B.83_.EC.84.A4.EC.A0.95)한다면 [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5)에 변경사항을 반영하십시오.
 
 예)
 
@@ -217,7 +217,7 @@ UEFI모드가 [UEFI](/index.php/UEFI "UEFI") 마더보드에서 활성화되면 
 
 ### 호스트이름
 
-[hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) 파일을 만드십시오.
+[hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) 파일을 만드십시오.
 
  `/etc/hostname` 
 ```
@@ -225,7 +225,7 @@ UEFI모드가 [UEFI](/index.php/UEFI "UEFI") 마더보드에서 활성화되면 
 
 ```
 
-[hosts(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)에 항목을 추가할 수 있습니다.
+[hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)에 항목을 추가할 수 있습니다.
 
  `/etc/hosts` 
 ```
@@ -247,7 +247,7 @@ UEFI모드가 [UEFI](/index.php/UEFI "UEFI") 마더보드에서 활성화되면 
 
 새로운 *initramfs*를 따로 생성할 필요는 없습니다. *pacstrap*으로 [linux](https://www.archlinux.org/packages/?name=linux) 패키지를 설치할 때 [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")가 실행되었기 때문입니다.
 
-특정한 설정 때문에 [mkinitcpio.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) 파일을 수정하면 다음을 실행해 initramfs 이미지를 다시 만드십시오.
+특정한 설정 때문에 [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) 파일을 수정하면 다음을 실행해 initramfs 이미지를 다시 만드십시오.
 
 ```
 # mkinitcpio -p linux
@@ -273,7 +273,7 @@ UEFI모드가 [UEFI](/index.php/UEFI "UEFI") 마더보드에서 활성화되면 
 
 chroot 환경에서 `exit`를 입력하거나 `Ctrl+D`를 눌러서 그 환경을 종료하십시오.
 
-원한다면 앞서 마운트했던 파티션들을 `umount -R /mnt`명령으로 직접 언마운트할 수도 있습니다. 이렇게 하면 "사용중"인 파티션을 알 수 있고 [fuser(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1)로 그 원인을 찾아볼 수 있습니다.
+원한다면 앞서 마운트했던 파티션들을 `umount -R /mnt`명령으로 직접 언마운트할 수도 있습니다. 이렇게 하면 "사용중"인 파티션을 알 수 있고 [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1)로 그 원인을 찾아볼 수 있습니다.
 
 마지막으로 `reboot` 명령으로 컴퓨터를 재부팅합니다. 마운트된 파티션이 남아있다면 *systemd*가 자동으로 언마운트할 것입니다. 설치 매체를 꼭 제거한 후에 새로운 시스템에 루트 계정으로 로그인하십시오.
 

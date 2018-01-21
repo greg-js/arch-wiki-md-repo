@@ -472,7 +472,7 @@ Last, you need to shrink the partition with your favorite [partitioning tool](/i
 
 #### Logical volumes
 
-**Note:** *lvresize* provides more or less the same options as the specialized `lvextend` and `lvreduce` commands, while allowing to do both types of operation. Notwithstanding this, all those utilities offer a `-r, --resizefs` option which allows to resize the file system together with the LV using [fsadm(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) (*ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") supported). Therefore it may be easier to simply use `lvresize` for both operations and use `--resizefs` to simplify things a bit, except if you have specific needs or want full control over the process.
+**Note:** *lvresize* provides more or less the same options as the specialized `lvextend` and `lvreduce` commands, while allowing to do both types of operation. Notwithstanding this, all those utilities offer a `-r, --resizefs` option which allows to resize the file system together with the LV using [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) (*ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") supported). Therefore it may be easier to simply use `lvresize` for both operations and use `--resizefs` to simplify things a bit, except if you have specific needs or want full control over the process.
 
 ##### Growing or shrinking with lvresize
 
@@ -508,7 +508,7 @@ If you want to fill all the free space on a volume group, use the following comm
 
 ```
 
-See [lvresize(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) for more detailed options.
+See [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) for more detailed options.
 
 ##### Extending the logical volume and file system in one go
 
@@ -529,11 +529,11 @@ Alternatively with a XFS filesystem
 
 ```
 
-Note: *xfs_growfs* takes a mount point as argument. See [xfs_growfs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xfs_growfs.8) for more detailed options.
+Note: *xfs_growfs* takes a mount point as argument. See [xfs_growfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xfs_growfs.8) for more detailed options.
 
 ##### Resizing the file system separately
 
-If not using the `-r, --resizefs` option to `lv{resize,extend,reduce}` or using a file system unsupported by [fsadm(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) ([Btrfs](/index.php/Btrfs "Btrfs"), [ZFS](/index.php/ZFS "ZFS")...), you need to manually resize the FS before shrinking the LV or after expanding it.
+If not using the `-r, --resizefs` option to `lv{resize,extend,reduce}` or using a file system unsupported by [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) ([Btrfs](/index.php/Btrfs "Btrfs"), [ZFS](/index.php/ZFS "ZFS")...), you need to manually resize the FS before shrinking the LV or after expanding it.
 
 **Warning:** Not all file systems support resizing without loss of data and/or resizing online.
 
@@ -711,7 +711,7 @@ If you have LVM volumes not activated via the [initramfs](/index.php/Initramfs "
 
 ### LVM cache
 
-From [lvmcache(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvmcache.7):
+From [lvmcache(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvmcache.7):
 
 	*The cache logical volume type uses a small and fast LV to improve the performance of a large and slow LV. It does this by storing the frequently used blocks on the faster LV. LVM refers to the small fast LV as a cache pool LV. The large slow LV is called the origin LV. Due to requirements from dm-cache (the kernel driver), LVM further splits the cache pool LV into two devices - the cache data LV and cache metadata LV. The cache data LV is where copies of data blocks are kept from the origin LV to increase speed. The cache metadata LV holds the accounting information that specifies where data blocks are stored (e.g. on the origin LV or on the cache data LV). Users should be familiar with these LVs if they wish to create the best and most robust cached logical volumes. All of these associated LVs must be in the same VG.*
 
@@ -749,13 +749,13 @@ If you ever need to undo the one step creation operation above:
 
 ```
 
-This commits any pending writes still in the cache back to the origin LV, then deletes the cache. Other options are available and described in [lvmcache(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvmcache.7).
+This commits any pending writes still in the cache back to the origin LV, then deletes the cache. Other options are available and described in [lvmcache(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvmcache.7).
 
 ### RAID
 
-From [lvmraid(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvmraid.7):
+From [lvmraid(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvmraid.7):
 
-	*[lvm(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.8) RAID is a way to create a Logical Volume (LV) that uses multiple physical devices to improve performance or tolerate device failures. In LVM, the physical devices are Physical Volumes (PVs) in a single Volume Group (VG).*
+	*[lvm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.8) RAID is a way to create a Logical Volume (LV) that uses multiple physical devices to improve performance or tolerate device failures. In LVM, the physical devices are Physical Volumes (PVs) in a single Volume Group (VG).*
 
 LVM RAID supports RAID 0, RAID 1, RAID 4, RAID 5, RAID 6 and RAID 10\. See [Wikipedia:Standard RAID levels](https://en.wikipedia.org/wiki/Standard_RAID_levels "wikipedia:Standard RAID levels") for details on each level.
 
@@ -775,7 +775,7 @@ Create volume group on the physical volumes:
 
 ```
 
-Create logical volumes useing `lvcreate --type *raidlevel*`, see [lvmraid(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvmraid.7) and [lvcreate(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvcreate.8) for more options.
+Create logical volumes useing `lvcreate --type *raidlevel*`, see [lvmraid(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvmraid.7) and [lvcreate(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvcreate.8) for more options.
 
 ```
 # lvcreate --type RaidLevel [OPTIONS] -n Name -L Size VG [PVs]

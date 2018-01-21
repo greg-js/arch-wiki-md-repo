@@ -219,7 +219,7 @@ Il primo rilascio di sviluppo di Enlightenment DR16 è avvenuto nel 2000, e la v
 
 Per installare [enlightenment16](https://www.archlinux.org/packages/?name=enlightenment16).
 
-Enlightenment può risultare molto differente dagli altri gestori delle finestre, leggere `/usr/share/doc/e16/e16.html` dopo l'installazione per maggiori dettagli. La pagina manuale è [e16(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/e16.1) ed analizza solo le opzioni di avvio.
+Enlightenment può risultare molto differente dagli altri gestori delle finestre, leggere `/usr/share/doc/e16/e16.html` dopo l'installazione per maggiori dettagli. La pagina manuale è [e16(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/e16.1) ed analizza solo le opzioni di avvio.
 
 ### Configurazione di base
 

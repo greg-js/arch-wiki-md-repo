@@ -46,7 +46,7 @@ If you plan to use SSH to interact with your repositories, make sure to add the 
 After [starting](/index.php/Start "Start") `gogs.service`, you can access the running service over the url `http://[server]:3000`. At first load, you will be redirected to the installation page where you can configure some options. In order to be able to save changes made using the initial configuration page the permissions of the configuration file (owned by root) will have to be modified (either temporary or permanently), for example:
 
 ```
-# sudo chown gogs:gogs /etc/gogs/app.ini
+# chown gogs:gogs /etc/gogs/app.ini
 
 ```
 
@@ -135,7 +135,7 @@ If you are using a non-default port for your SSH server, you will get not-so-pre
 Allow gogs binary to bind privileged ports:
 
 ```
-sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/share/gogs/gogs
+# setcap CAP_NET_BIND_SERVICE=+eip /usr/share/gogs/gogs
 
 ```
 

@@ -45,7 +45,7 @@ Related articles
 
 ## Configuration
 
-To configure dnsmasq, you need to edit `/etc/dnsmasq.conf`. The file contains extensive comments explaining its options. For all available options see [dnsmasq(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8).
+To configure dnsmasq, you need to edit `/etc/dnsmasq.conf`. The file contains extensive comments explaining its options. For all available options see [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8).
 
 **Warning:** dnsmasq by default enables its DNS server. If you do not require it, you need to explicitly disable it by setting DNS port to `0`: `/etc/dnsmasq.conf`  `port=0` 
 
@@ -281,7 +281,7 @@ dhcp-host=aa:bb:cc:ff:dd:ee,192.168.111.51
 
 ```
 
-See [dnsmasq(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for more options.
+See [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for more options.
 
 #### Test
 
@@ -306,7 +306,7 @@ tftp-root=/srv/tftp
 tftp-secure
 ```
 
-See [dnsmasq(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for more options.
+See [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for more options.
 
 ### PXE server
 
@@ -356,7 +356,7 @@ dhcp-boot=tag:bios,"bios/lpxelinux.0"
 
 ```
 
-See [dnsmasq(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for more options.
+See [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for more options.
 
 The rest is up to the [bootloader](/index.php/Bootloader "Bootloader").
 

@@ -198,7 +198,7 @@ $ git clone ssh://aur@aur.archlinux.org/*foobar*.git
 
 Клонирование (clone) или отправка (push) в несуществующий репозиторий автоматически создаст его.
 
-Теперь вы можете добавить необходимые файлы в локальную копию репозитория. При внесении изменений в репозитории обязательно включайте в корневой каталог файлы `PKGBUILD` и `.SRCINFO`. Для создания файла `.SRCINFO` можно использовать команду *mksrcinfo* из пакета [pkgbuild-introspection](https://www.archlinux.org/packages/?name=pkgbuild-introspection).
+Теперь вы можете добавить необходимые файлы в локальную копию репозитория. При внесении изменений в репозитории обязательно включайте в корневой каталог файлы `PKGBUILD` и `.SRCINFO`. Для создания файла `.SRCINFO` можно использовать команду *mksrcinfo* из пакета [pkgbuild-introspection](https://aur.archlinux.org/packages/pkgbuild-introspection/).
 
 **Примечание:** Файл `.SRCINFO` содержит исходные метаданные пакета. Для получения дополнительной информации смотрите раздел [Arch User Repository#AUR metadata](/index.php/Arch_User_Repository#AUR_metadata "Arch User Repository")
 

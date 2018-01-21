@@ -20,7 +20,7 @@ Related articles
 
 ## Usage
 
-feh is highly configurable. For a full list of options, run `feh --help` or see the [feh(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/feh.1) [man page](/index.php/Man_page "Man page").
+feh is highly configurable. For a full list of options, run `feh --help` or see the [feh(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/feh.1) [man page](/index.php/Man_page "Man page").
 
 ### Browse images
 

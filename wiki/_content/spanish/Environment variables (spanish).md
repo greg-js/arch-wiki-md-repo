@@ -48,7 +48,7 @@ La mayoría de las distribuciones de Linux permiten agregar o cambiar las defini
 
 Los siguientes archivos deben ser usados para definir variables de entorno globales: `/etc/environment`, `/etc/profile` y archivos shell de configuración específicos. Cada uno de estos archivos tiene diferentes limitaciones, por lo que se debe seleccionar el adecuado de acuerdo a los propósitos de la variable.
 
-*   `/etc/environment` es usado por el módulo pam_env y es independiente del lenguaje de shell, por lo que no se deben insertar scritps. Este archivo solamente acepta pares de la forma `*variable=valor*`. Para más detalles se pueden consultar los manuales [pam_env(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) o [pam_env.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5).
+*   `/etc/environment` es usado por el módulo pam_env y es independiente del lenguaje de shell, por lo que no se deben insertar scritps. Este archivo solamente acepta pares de la forma `*variable=valor*`. Para más detalles se pueden consultar los manuales [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) o [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5).
 
 *   Los archivos de configuración global de [shell](/index.php/Shell "Shell") inicializan variables y ejecutan scripts. Por ejemplo [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
 
@@ -73,7 +73,7 @@ fi
 
 No siempre se requiere definir una variable de entorno de manera global. Por ejemplo, se puede querer agregar `/home/my_user/bin` a la variable `PATH` pero sin querer que todos los demás usuarios lo tengan en su `PATH` también. Las variables de entorno locales se pueden definir en muchos archivos distintos:
 
-*   `~/.pam_environment` es el archivo de usuario equivalente a `/etc/security/pam_env.conf` [[2]](https://github.com/linux-pam/linux-pam/issues/6), usado por el módulo pam_env. Detalles en [pam_env(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) y [pam_env.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5).
+*   `~/.pam_environment` es el archivo de usuario equivalente a `/etc/security/pam_env.conf` [[2]](https://github.com/linux-pam/linux-pam/issues/6), usado por el módulo pam_env. Detalles en [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) y [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5).
 
 *   Archivos de configuración de usuario de [shell](/index.php/Shell "Shell"), por ejemplo [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
 

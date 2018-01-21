@@ -58,7 +58,7 @@ $ systemd-analyze plot > plot.svg
 
 ```
 
-See [systemd-analyze(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-analyze.1) for details.
+See [systemd-analyze(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-analyze.1) for details.
 
 ### Using systemd-bootchart
 

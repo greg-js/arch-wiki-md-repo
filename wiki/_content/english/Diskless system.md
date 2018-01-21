@@ -119,7 +119,7 @@ Install [nbd](https://www.archlinux.org/packages/?name=nbd) and configure it.
     copyonwrite = false
 ```
 
-**Note:** Set `copyonwrite` to true if you want to have multiple clients using the same NBD share simultaneously; refer to [nbd-server(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nbd-server.5) for more details.
+**Note:** Set `copyonwrite` to true if you want to have multiple clients using the same NBD share simultaneously; refer to [nbd-server(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nbd-server.5) for more details.
 
 Start `nbd` systemd service.
 

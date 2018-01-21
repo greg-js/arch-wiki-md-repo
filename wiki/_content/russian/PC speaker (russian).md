@@ -170,4 +170,4 @@ username ALL=(ALL) NOPASSWD: /usr/bin/beep
 
 ## Смотрите также
 
-*   [xset(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xset.1), [setterm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setterm.1), [readline(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/readline.3)
+*   [xset(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xset.1), [setterm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setterm.1), [readline(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/readline.3)

@@ -172,7 +172,7 @@ For better multi-touch support, you can use [xf86-input-libinput](https://www.ar
 
 Refer to the specific [libinput](/index.php/Libinput "Libinput") page for more details.
 
-For further configurable options (e.g. NaturalScrolling, MiddleEmulation), see [libinput(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.1).
+For further configurable options (e.g. NaturalScrolling, MiddleEmulation), see [libinput(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.1).
 
 ### Powersaving
 

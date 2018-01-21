@@ -238,7 +238,7 @@ Note that each blockdevice requires its own passphrase. This may be inconvenient
 
 ### Preparing the boot partition
 
-What you do have to setup is a non-encrypted `/boot` partition, which is needed for a crypted root. For a standard [MBR/non-EFI](/index.php/EFI "EFI") `/boot` partition, for example, execute:
+What you do have to setup is a non-encrypted `/boot` partition, which is needed for a encrypted root. For a standard [MBR/non-EFI](/index.php/EFI "EFI") `/boot` partition, for example, execute:
 
 ```
 # mkfs.ext4 /dev/sdaY

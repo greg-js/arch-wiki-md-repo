@@ -289,7 +289,7 @@ Backends para o aplicativo de mensagem do GNOME [empathy](https://www.archlinux.
 
 O shell do GNOME possui uma pesquisa que possa ser rapidamente acessada pressionando a tecla `Super` e comece a digitar. O pacote [tracker](https://www.archlinux.org/packages/?name=tracker) é instalado por padrão como parte do grupo [gnome](https://www.archlinux.org/groups/x86_64/gnome/) e fornece um aplicativo de indexação e banco de dados de metadados. Ele pode ser configurado com o item de menu *Pesquisa e indexação*; monitore o status com *tracker-control*. É iniciado automaticamente pelo *gnome-session* quando o usuário inicia a sessão. Indexação pode ser iniciada manualmente com `tracker-control -s`. As configurações de pesquisa também podem ser configuradas no painel *Configurações de sistema*.
 
-O bando de dados do Tracker pode ser consultado usando o comando *tracker-sparql*. Veja sua página de manual com [tracker-sparql(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tracker-sparql.1) para mais informações.
+O bando de dados do Tracker pode ser consultado usando o comando *tracker-sparql*. Veja sua página de manual com [tracker-sparql(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracker-sparql.1) para mais informações.
 
 ### Configurações avançadas
 

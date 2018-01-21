@@ -67,37 +67,6 @@ GDM 软件包提供了`gdm.service`。开机自动启动：
 
 ```
 
-纯systemd启动的话，无法进入图形界面时，可以开启[graphical.target](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.9B.AE.E6.A0.87.E8.A1.A8 "Systemd (简体中文)")来实现。
-
-```
-# systemctl -f enable graphical.target
-
-```
-
-同时一般还需要启动`NetworkManager.service`：
-
-```
-# systemctl enable NetworkManager.service
-
-```
-
-要使用`~/.xinitrc`文件将参数传递给 X 服务（当它启动时），例如 **xmodmap** 或 **xsetroot**，可以向[xprofile](/index.php/Xprofile "Xprofile")添加同样命令，例如：
-
- `~/.xprofile` 
-```
-#!/bin/sh
-
-#
-# ~/.xprofile
-#
-# Executed by gdm at login
-#
-
-xmodmap -e "pointer=1 2 3 6 7 4 5" # set mouse buttons up correctly
-xsetroot -solid black              # sets the background to black
-
-```
-
 ## 配置
 
 你再也不能使用gdmsetup命令来配置2.28版本以上的GDM。这个命令已经被移除，而且GDM已经被标准化，成为GNOME的一部分。

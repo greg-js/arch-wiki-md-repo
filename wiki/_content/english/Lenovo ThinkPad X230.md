@@ -173,7 +173,7 @@ You can use [geteltorito](https://aur.archlinux.org/packages/geteltorito/) to cr
 
 ```
 $ geteltorito.pl g2uj24us.iso > update.img 
-$ sudo dd bs=512K if=update.img of=/dev/sdX
+# dd bs=512K if=update.img of=/dev/sdX
 
 ```
 

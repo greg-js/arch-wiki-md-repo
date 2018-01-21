@@ -86,7 +86,7 @@ These are the more popular scripts and tools designed to help power saving:
 
 ### ACPI events
 
-*systemd* handles some power-related [ACPI](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface "wikipedia:Advanced Configuration and Power Interface") events, whose actions can be configured in `/etc/systemd/logind.conf` or `/etc/systemd/logind.conf.d/*.conf` — see [logind.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/logind.conf.5). On systems with no dedicated power manager, this may replace the [acpid](/index.php/Acpid "Acpid") daemon which is usually used to react to these ACPI events.
+*systemd* handles some power-related [ACPI](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface "wikipedia:Advanced Configuration and Power Interface") events, whose actions can be configured in `/etc/systemd/logind.conf` or `/etc/systemd/logind.conf.d/*.conf` — see [logind.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/logind.conf.5). On systems with no dedicated power manager, this may replace the [acpid](/index.php/Acpid "Acpid") daemon which is usually used to react to these ACPI events.
 
 The specified action for each event can be one of `ignore`, `poweroff`, `reboot`, `halt`, `suspend`, `hibernate`, `hybrid-sleep`, `lock` or `kexec`. In case of hibernation and suspension, they must be properly [set up](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate"). If an event is not configured, *systemd* will use a default action.
 
@@ -105,7 +105,7 @@ To apply any changes, [restart](/index.php/Restart "Restart") the `systemd-login
 
 Some [desktop environments](/index.php/Desktop_environment "Desktop environment") include power managers which [inhibit](http://www.freedesktop.org/wiki/Software/systemd/inhibit/) (temporarily turn off) some or all of the *systemd* ACPI settings. If such a power manager is running, then the actions for ACPI events can be configured in the power manager alone. Changes to `/etc/systemd/logind.conf` or `/etc/systemd/logind.conf.d/*.conf` need be made only if you wish to configure behaviour for a particular event that is not inhibited by the power manager.
 
-Note that if the power manager does not inhibit *systemd* for the appropriate events you can end up with a situation where *systemd* suspends your system and then when the system is woken up the other power manager suspends it again. As of December 2016, the power managers of [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce") and [MATE](/index.php/MATE "MATE") issue the necessary *inhibited* commands. If the *inhibited* commands are not being issued, such as when using [acpid](/index.php/Acpid "Acpid") or others to handle ACPI events, set the `Handle` options to `ignore`. See also [systemd-inhibit(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-inhibit.1).
+Note that if the power manager does not inhibit *systemd* for the appropriate events you can end up with a situation where *systemd* suspends your system and then when the system is woken up the other power manager suspends it again. As of December 2016, the power managers of [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce") and [MATE](/index.php/MATE "MATE") issue the necessary *inhibited* commands. If the *inhibited* commands are not being issued, such as when using [acpid](/index.php/Acpid "Acpid") or others to handle ACPI events, set the `Handle` options to `ignore`. See also [systemd-inhibit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-inhibit.1).
 
 #### xss-lock
 
@@ -149,7 +149,7 @@ HibernateMode=suspend
 HibernateState=disk
 ```
 
-See the [sleep.conf.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sleep.conf.d.5) manual page for details.
+See the [sleep.conf.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sleep.conf.d.5) manual page for details.
 
 ### Sleep hooks
 
@@ -221,7 +221,7 @@ ExecStart=-/usr/bin/pkill sshfs
 WantedBy=sleep.target
 ```
 
-A couple of handy hints about these service files (more in [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)):
+A couple of handy hints about these service files (more in [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)):
 
 *   If `Type=oneshot` then you can use multiple `ExecStart=` lines. Otherwise only one `ExecStart` line is allowed. You can add more commands with either `ExecStartPre` or by separating commands with a semicolon (see the first example above; note the spaces before and after the semicolon, as they are *required*).
 *   A command prefixed with `-` will cause a non-zero exit status to be ignored and treated as a successful command.
@@ -335,7 +335,7 @@ Do not forget to make your script executable:
 
 ```
 
-See [systemd.special(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7) and [systemd-sleep(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8) for more details.
+See [systemd.special(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7) and [systemd-sleep(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8) for more details.
 
 ### Troubleshooting
 
@@ -459,7 +459,7 @@ If you will not use integrated web camera then [blacklist](/index.php/Blacklist 
 
 ### Kernel parameters
 
-This section uses configs in `/etc/sysctl.d/`, which is *"a drop-in directory for kernel sysctl parameters."* See [The New Configuration Files](http://0pointer.de/blog/projects/the-new-configuration-files) and more specifically [sysctl.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5) for more information.
+This section uses configs in `/etc/sysctl.d/`, which is *"a drop-in directory for kernel sysctl parameters."* See [The New Configuration Files](http://0pointer.de/blog/projects/the-new-configuration-files) and more specifically [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5) for more information.
 
 #### Disabling NMI watchdog
 

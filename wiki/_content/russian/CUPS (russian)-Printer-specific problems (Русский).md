@@ -1,7 +1,7 @@
 Ссылки по теме
 
 *   [CUPS (Русский)](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CUPS (Русский)")
-*   [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting")
+*   [CUPS/Решение проблем](/index.php/CUPS/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC "CUPS/Решение проблем")
 
 **Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems"). Дата последней синхронизации: 12 декабря 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&diff=0&oldid=501760).
 
@@ -346,7 +346,7 @@ $ make
 
 ## HP
 
-Смотрите также [CUPS/Troubleshooting#HP issues](/index.php/CUPS/Troubleshooting#HP_issues "CUPS/Troubleshooting").
+Смотрите также [CUPS/Решение проблем#Проблемы с HP](/index.php/CUPS/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_HP "CUPS/Решение проблем").
 
 Большинство принтеров HP будут работать с [hplip](https://www.archlinux.org/packages/?name=hplip), но некоторые - при использование [hpoj](https://aur.archlinux.org/packages/hpoj/).
 

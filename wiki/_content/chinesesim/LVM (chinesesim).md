@@ -466,7 +466,7 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
 ```
 
-查阅[lvresize(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8)可见详细说明。
+查阅[lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8)可见详细说明。
 
 ##### 单独设置文件系统大小
 

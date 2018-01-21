@@ -29,19 +29,11 @@ $ systemctl reboot
 
 ```
 
-Other commands can be used as well, including `systemctl suspend` and `systemctl hibernate`. See the *System Commands* section in [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)
+Other commands can be used as well, including `systemctl suspend` and `systemctl hibernate`. See the *System Commands* section in [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)
 
 ## Using sudo
 
-[Install](/index.php/Install "Install") [sudo](https://www.archlinux.org/packages/?name=sudo), and give the user [sudo privileges](/index.php/Sudo "Sudo"). The user will then be able to use *sudo systemctl* commands in the command line or in menus:
-
-```
-$ sudo systemctl poweroff
-$ sudo systemctl reboot
-
-```
-
-Other commands can be used as well, including `sudo systemctl suspend` and `sudo systemctl hibernate`. See the *System Commands* section in [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)
+[Install](/index.php/Install "Install") [sudo](https://www.archlinux.org/packages/?name=sudo), and give the user [sudo privileges](/index.php/Sudo "Sudo"). The user will then be able to use the `sudo systemctl` commands (e.g. `sudo systemctl poweroff`, `sudo systemctl reboot`, `sudo systemctl suspend` and `sudo systemctl hibernate`). See the *System Commands* section in [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)
 
 ### Users without sudo privileges
 

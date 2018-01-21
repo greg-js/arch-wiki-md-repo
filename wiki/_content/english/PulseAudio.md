@@ -78,7 +78,7 @@ There are a number of front-ends available for controlling the PulseAudio daemon
 *   Console (CLI) mixers: [ponymix](https://www.archlinux.org/packages/?name=ponymix) and [pamixer](https://www.archlinux.org/packages/?name=pamixer)
 *   Console (curses) mixer: [pulsemixer](https://aur.archlinux.org/packages/pulsemixer/)
 *   Web volume control: [PaWebControl](https://github.com/Siot/PaWebControl)
-*   System tray icon: [pasystray](https://aur.archlinux.org/packages/pasystray/), [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/), [pasystray-gtk2-standalone](https://aur.archlinux.org/packages/pasystray-gtk2-standalone/), and [pasystray-gtk3-standalone](https://aur.archlinux.org/packages/pasystray-gtk3-standalone/)
+*   System tray icon: [pasystray](https://aur.archlinux.org/packages/pasystray/), [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/), [pasystray-gtk2-standalone](https://aur.archlinux.org/packages/pasystray-gtk2-standalone/)
 
 **Tip:** The non-standalone versions of `pasystray` can install both GTK2 and GTK3 versions and requires choosing which during build. The standalone versions install a single version.
 
@@ -124,7 +124,7 @@ Defines base settings like the default sample rates used by modules, resampling 
 
 #### default.pa
 
-This file is a startup script and is used to configure modules. It is actually parsed and read after the daemon has finished initializing and additional commands can be sent at runtime using `$ pactl` or `$ pacmd`. The startup script can also be provided on the command line by starting PulseAudio in a terminal using `$ pulseaudio -nC`. This will make the daemon load the CLI module and will accept the configuration directly from the command line, and output resulting information or error messages on the same terminal. This can be useful when debugging the daemon or just to test various modules before setting them permanently on disk. The manual page is quite self-explanatory, consult [pulse-cli-syntax(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pulse-cli-syntax.5) for the details of the syntax.
+This file is a startup script and is used to configure modules. It is actually parsed and read after the daemon has finished initializing and additional commands can be sent at runtime using `$ pactl` or `$ pacmd`. The startup script can also be provided on the command line by starting PulseAudio in a terminal using `$ pulseaudio -nC`. This will make the daemon load the CLI module and will accept the configuration directly from the command line, and output resulting information or error messages on the same terminal. This can be useful when debugging the daemon or just to test various modules before setting them permanently on disk. The manual page is quite self-explanatory, consult [pulse-cli-syntax(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pulse-cli-syntax.5) for the details of the syntax.
 
 **Tip:**
 

@@ -32,15 +32,15 @@ Daha ayrıntılı talimatlar için, Bu kılavuzdan sırasıyla [ArchWiki](/index
 
 Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64")-compatible machine with a minimum of 512 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space. As the installation process needs to retrieve packages from a remote repository, a working internet connection is required.
 
-Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
+Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
 To switch to a different console—for example, to view this guide with [ELinks](/index.php/ELinks "ELinks") alongside the installation—use the `Alt+*arrow*` [shortcut](/index.php/Keyboard_shortcuts "Keyboard shortcuts"). To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
 
 ### Set the keyboard layout
 
-The default [console keymap](/index.php/Console_keymap "Console keymap") is [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). To list available layouts, run `ls /usr/share/kbd/keymaps/**/*.map.gz`. To modify the layout, append a corresponding file name to [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omitting path and file extension. For example, run `loadkeys de-latin1` to set a [German](https://en.wikipedia.org/wiki/File:KB_Germany.svg "w:File:KB Germany.svg") keyboard layout.
+The default [console keymap](/index.php/Console_keymap "Console keymap") is [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). To list available layouts, run `ls /usr/share/kbd/keymaps/**/*.map.gz`. To modify the layout, append a corresponding file name to [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omitting path and file extension. For example, run `loadkeys de-latin1` to set a [German](https://en.wikipedia.org/wiki/File:KB_Germany.svg "w:File:KB Germany.svg") keyboard layout.
 
-[Console fonts](/index.php/Console_fonts "Console fonts") are located in `/usr/share/kbd/consolefonts/` and can likewise be set with [setfont(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
+[Console fonts](/index.php/Console_fonts "Console fonts") are located in `/usr/share/kbd/consolefonts/` and can likewise be set with [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
 ### Verify the boot mode
 
@@ -64,11 +64,11 @@ The installation image enables the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon o
 
 If no connection is available, [stop](/index.php/Stop "Stop") the *dhcpcd* service with `systemctl stop dhcpcd@`, `Tab` and see [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration").
 
-For **wireless** connections, [iw(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) and [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") are available. See [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
+For **wireless** connections, [iw(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) and [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") are available. See [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
 
 ### Update the system clock
 
-Use [timedatectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1) to ensure the system clock is accurate:
+Use [timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1) to ensure the system clock is accurate:
 
 ```
 # timedatectl set-ntp true
@@ -181,7 +181,7 @@ Set the [time zone](/index.php/Time_zone "Time zone"):
 
 ```
 
-Run [hwclock(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) to generate `/etc/adjtime`:
+Run [hwclock(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) to generate `/etc/adjtime`:
 
 ```
 # hwclock --systohc
@@ -199,17 +199,17 @@ Uncomment `en_US.UTF-8 UTF-8` and other needed [localizations](/index.php/Locali
 
 ```
 
-Set the `LANG` [variable](/index.php/Variable "Variable") in [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) accordingly, for example:
+Set the `LANG` [variable](/index.php/Variable "Variable") in [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) accordingly, for example:
 
  `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
 
-If you [set the keyboard layout](#Set_the_keyboard_layout), make the changes persistent in [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5):
+If you [set the keyboard layout](#Set_the_keyboard_layout), make the changes persistent in [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5):
 
  `/etc/vconsole.conf`  `KEYMAP=*de-latin1*` 
 
 ### Hostname
 
-Create the [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) file:
+Create the [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) file:
 
  `/etc/hostname` 
 ```
@@ -217,7 +217,7 @@ Create the [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) f
 
 ```
 
-Consider adding a matching entry to [hosts(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
+Consider adding a matching entry to [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
 
  `/etc/hosts` 
 ```
@@ -239,7 +239,7 @@ For [Wireless configuration](/index.php/Wireless_configuration "Wireless configu
 
 Creating a new *initramfs* is usually not required, because [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") was run on installation of the [linux](https://www.archlinux.org/packages/?name=linux) package with *pacstrap*.
 
-For special configurations, modify the [mkinitcpio.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) file and recreate the initramfs image:
+For special configurations, modify the [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) file and recreate the initramfs image:
 
 ```
 # mkinitcpio -p linux
@@ -265,7 +265,7 @@ If you have an Intel CPU, install the [intel-ucode](https://www.archlinux.org/pa
 
 Exit the chroot environment by typing `exit` or pressing `Ctrl+D`.
 
-Optionally manually unmount all the partitions with `umount -R /mnt`: this allows noticing any "busy" partitions, and finding the cause with [fuser(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1).
+Optionally manually unmount all the partitions with `umount -R /mnt`: this allows noticing any "busy" partitions, and finding the cause with [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1).
 
 Finally, restart the machine by typing `reboot`: any partitions still mounted will be automatically unmounted by *systemd*. Remember to remove the installation media and then login into the new system with the root account.
 

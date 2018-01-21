@@ -22,7 +22,7 @@
 
 ## Usage
 
-See [elinks(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/elinks.1).
+See [elinks(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/elinks.1).
 
 ### Navigation
 

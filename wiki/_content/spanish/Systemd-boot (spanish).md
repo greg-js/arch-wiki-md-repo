@@ -64,7 +64,7 @@ Si puede hacerlo, la instalación es fácil: entre en la shell EFI o en la inter
 
 ### Actualizar
 
-*systemd-boot* ([bootctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/bootctl.1)) asume que EFI System Partition se monta en `/boot`. A diferencia del anterior paquete separado *gummiboot*, que se actualizaba automáticamente en cada nueva versión del paquete con un script `post_install`, las actualizaciones de las nuevas versiones de *systemd-boot* ahora son manejadas manualmente por el usuario:
+*systemd-boot* ([bootctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bootctl.1)) asume que EFI System Partition se monta en `/boot`. A diferencia del anterior paquete separado *gummiboot*, que se actualizaba automáticamente en cada nueva versión del paquete con un script `post_install`, las actualizaciones de las nuevas versiones de *systemd-boot* ahora son manejadas manualmente por el usuario:
 
 ```
 # bootctl update

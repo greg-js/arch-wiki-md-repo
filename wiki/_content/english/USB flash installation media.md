@@ -60,7 +60,7 @@ Run the following command, replacing `/dev/**sdx**` with your drive, e.g. `/dev/
 
 ```
 
-See [Core utilities#dd](/index.php/Core_utilities#dd "Core utilities") for more information about `dd`. See [dd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) for more information about `oflag=sync`.
+See [Core utilities#dd](/index.php/Core_utilities#dd "Core utilities") for more information about `dd`. See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) for more information about `oflag=sync`.
 
 #### In Windows
 
@@ -171,7 +171,7 @@ $ diskutil unmountDisk /dev/diskX
 Now copy the ISO image file to the device. The `dd` command is similar to its Linux counterpart, but notice the 'r' before 'disk' for raw mode which makes the transfer much faster:
 
 ```
-$ sudo dd if=path/to/arch.iso of=/dev/**r**diskX bs=1m
+# dd if=path/to/arch.iso of=/dev/**r**diskX bs=1m
 
 ```
 

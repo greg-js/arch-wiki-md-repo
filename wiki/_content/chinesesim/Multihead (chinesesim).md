@@ -87,7 +87,7 @@ RandR can be configured for the current session via the [xrandr](/index.php/Xran
 
 **注意:** This section assumes that you have read the [xrandr](/index.php/Xrandr "Xrandr") page for basic info about *xrandr*.
 
-You may arrange your screens either relatively to each other (using the `--right-of`, `--left-of`, `--above`, `--below` options), or by absolute coordinates (using the `--pos` option; note that in this case you usually need to know resolutions of your monitors). See [xrandr(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xrandr.1) for details. Some frequently used settings are described below.
+You may arrange your screens either relatively to each other (using the `--right-of`, `--left-of`, `--above`, `--below` options), or by absolute coordinates (using the `--pos` option; note that in this case you usually need to know resolutions of your monitors). See [xrandr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xrandr.1) for details. Some frequently used settings are described below.
 
 #### HDMI1 设定于最佳分辨率且 VGA1 位于它左面
 

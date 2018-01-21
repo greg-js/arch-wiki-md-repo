@@ -246,7 +246,7 @@ $ connmanctl disable wifi
 
 ### Avoid changing the hostname
 
-By default, ConnMan changes the transient hostname (see [hostnamectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1)) on a per network basis. This can create problems with X authority: If ConnMan changes your hostname to something else than the one used to generate the xauth magic cookie, then it will become impossible to create new windows. Symptoms are error messages like "No protocol specified" and "Can't open display: :0.0". Manually resetting the host name fixes this, but a permanent solution is to prevent ConnMan from changing your host name in the first place. This can be accomplished by adding the following to `/etc/connman/main.conf`:
+By default, ConnMan changes the transient hostname (see [hostnamectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1)) on a per network basis. This can create problems with X authority: If ConnMan changes your hostname to something else than the one used to generate the xauth magic cookie, then it will become impossible to create new windows. Symptoms are error messages like "No protocol specified" and "Can't open display: :0.0". Manually resetting the host name fixes this, but a permanent solution is to prevent ConnMan from changing your host name in the first place. This can be accomplished by adding the following to `/etc/connman/main.conf`:
 
 ```
 [General]
@@ -302,7 +302,7 @@ Passphrase=*password*
 *   Options are case-sensitive. [[2]](https://together.jolla.com/question/55969/connman-fails-due-to-case-sensitive-settings/)
 *   Consult the institution hosting the eduroam network for various settings such as username, password, `EAP`, `Phase2output`, and needed certificates.
 
-For more information, see [connman-service.config(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/connman-service.config.5) and [Wireless network configuration#eduroam](/index.php/Wireless_network_configuration#eduroam "Wireless network configuration").
+For more information, see [connman-service.config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connman-service.config.5) and [Wireless network configuration#eduroam](/index.php/Wireless_network_configuration#eduroam "Wireless network configuration").
 
 ### Avoiding conflicts with local DNS server
 

@@ -16,7 +16,7 @@ Apesar de seu escopo, páginas man são projetadas para serem documentos autocon
 *   [4 Largura de página](#Largura_de_p.C3.A1gina)
 *   [5 Lendo páginas man locais](#Lendo_p.C3.A1ginas_man_locais)
     *   [5.1 Convertendo para HTML legível com navegador](#Convertendo_para_HTML_leg.C3.ADvel_com_navegador)
-        *   [5.1.1 mdocml](#mdocml)
+        *   [5.1.1 mandoc](#mandoc)
         *   [5.1.2 man2html](#man2html)
         *   [5.1.3 man -H](#man_-H)
         *   [5.1.4 roffit](#roffit)
@@ -34,9 +34,9 @@ $ man *page_name*
 
 ```
 
-Manuais são ordenados em diversas seções. Para uma listagem completa, veja a seção intitulada "Sections of the manual pages" no [man-pages(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
+Manuais são ordenados em diversas seções. Para uma listagem completa, veja a seção intitulada "Sections of the manual pages" no [man-pages(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
 
-Páginas man geralmente são referenciadas por seu nome, seguido do número de sua seção em parênteses. Geralmente há múltiplas páginas man com o mesmo nome, tal como [man(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man.1) e [man(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man.7). Neste caso, forneça ao man o número da seção seguido pelo nome da página man. Por exemplo:
+Páginas man geralmente são referenciadas por seu nome, seguido do número de sua seção em parênteses. Geralmente há múltiplas páginas man com o mesmo nome, tal como [man(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/man.1) e [man(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/man.7). Neste caso, forneça ao man o número da seção seguido pelo nome da página man. Por exemplo:
 
 ```
 $ man 5 passwd
@@ -56,7 +56,7 @@ ls (1)               - list directory contents
 
 ## Formato
 
-Todas as páginas man seguem um formato razoavelmente padronizado, o que ajuda a navegá-las. Veja a seção intitulada "Sections within a manual page" em [man-pages(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
+Todas as páginas man seguem um formato razoavelmente padronizado, o que ajuda a navegá-las. Veja a seção intitulada "Sections within a manual page" em [man-pages(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
 
 ## Pesquisando por manuais
 
@@ -130,9 +130,9 @@ Em vez da interface padrão, o uso de navegadores como [lynx](https://www.archli
 
 ### Convertendo para HTML legível com navegador
 
-#### mdocml
+#### mandoc
 
-Instale [mdocml](https://aur.archlinux.org/packages/mdocml/) do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). Para converter uma página, por exemplo `free(1)`:
+Instale [mandoc](https://aur.archlinux.org/packages/mandoc/) do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). Para converter uma página, por exemplo `free(1)`:
 
 ```
 $ gunzip -c /usr/share/man/man1/free.1.gz | mandoc -Thtml -Ostyle=style.css 1> free.html
@@ -214,23 +214,23 @@ Há vários bancos de dado online de páginas man, incluindo:
 
 Aqui está uma lista não exaustiva de páginas dignas de nota que podem lhe ajudar a entender muitas coisas em profundidade. Alguns deles podem servir como uma boa referência (como a tabela ASCII).
 
-*   [ascii(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ascii.7)
-*   [boot(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/boot.7)
-*   [charsets(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/charsets.7)
-*   [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1)
-*   [credentials(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/credentials.7)
-*   [fstab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fstab.5)
-*   [hier(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hier.7)
-*   [systemd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.1)
-*   [locale(1p)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.1p), [locale(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.5), [locale(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.7)
-*   [printf(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/printf.3)
-*   [proc(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/proc.5)
-*   [regex(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/regex.7)
-*   [signal(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/signal.7)
-*   [term(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/term.5), [term(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/term.7)
-*   [termcap(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/termcap.5)
-*   [terminfo(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5)
-*   [utf-8(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/utf-8.7)
+*   [ascii(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ascii.7)
+*   [boot(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/boot.7)
+*   [charsets(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/charsets.7)
+*   [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1)
+*   [credentials(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/credentials.7)
+*   [fstab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fstab.5)
+*   [hier(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hier.7)
+*   [systemd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.1)
+*   [locale(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.1p), [locale(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.5), [locale(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.7)
+*   [printf(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/printf.3)
+*   [proc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/proc.5)
+*   [regex(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/regex.7)
+*   [signal(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/signal.7)
+*   [term(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/term.5), [term(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/term.7)
+*   [termcap(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/termcap.5)
+*   [terminfo(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5)
+*   [utf-8(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/utf-8.7)
 
 De forma mais geral, dê uma olhada nas páginas de categoria 7:
 
@@ -241,11 +241,11 @@ $ man -s 7 -k ".*"
 
 Páginas específicas do Arch Linux:
 
-*   [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7)
-*   [mkinitcpio(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8)
-*   [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)
-*   [pacman-key(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman-key.8)
-*   [pacman.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5)
+*   [archlinux(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7)
+*   [mkinitcpio(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8)
+*   [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)
+*   [pacman-key(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman-key.8)
+*   [pacman.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5)
 
 ## Veja também
 

@@ -34,7 +34,7 @@
 
 ## 配置
 
-主要的后台进程是 *ntpd*, 可以通过 `/etc/ntp.conf` 配置。详细信息可以参考手册 [ntp.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5) 和相关的 `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`.
+主要的后台进程是 *ntpd*, 可以通过 `/etc/ntp.conf` 配置。详细信息可以参考手册 [ntp.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5) 和相关的 `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`.
 
 ### 连接到 NTP 服务器
 
@@ -83,7 +83,7 @@ restrict default kod nomodify notrap nopeer noquery
 
 **注意:** 这会允许其他人查询你的时间服务器。你需要添加 `noserve` 来停止提供时间。
 
-"restrict"选项的完整文档可以从 [ntp_acc()](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntp_acc.) 中查找到。详见 [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions) 。
+"restrict"选项的完整文档可以从 [ntp_acc()](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntp_acc.) 中查找到。详见 [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions) 。
 
 你需要在这一行之后告诉 *ntpd* 什么可以访问你的服务器；如果你不是在配置一台 NTP 服务器的话，下面一行就足够了。
 

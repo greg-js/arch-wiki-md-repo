@@ -85,7 +85,7 @@ anonymous_enable=YES
 ...
 ```
 
-You may also add e.g. the following options (see [vsftpd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vsftpd.conf.5) for more):
+You may also add e.g. the following options (see [vsftpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vsftpd.conf.5) for more):
 
  `/etc/vsftpd.conf` 
 ```

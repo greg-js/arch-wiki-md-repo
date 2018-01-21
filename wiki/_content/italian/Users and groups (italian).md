@@ -98,7 +98,7 @@ Per elencare i file posseduti da un utente o un gruppo con il comando `find`:
 
 L'utente ed il gruppo proprietario dei file possono essere cambiati con il comando `chown` (change owner). I permessi di accesso ai file possono essere cambiati con il comando `chmod` (change mode).
 
-Consultare [chown(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), e [Linux file permissions](http://www.tuxfiles.org/linuxhelp/filepermissions.html) per maggiori informazioni.
+Consultare [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), e [Linux file permissions](http://www.tuxfiles.org/linuxhelp/filepermissions.html) per maggiori informazioni.
 
 ## Lista dei file
 
@@ -230,7 +230,7 @@ dove
 
 ## Gestione dei gruppi
 
-Nel file `/etc/group` sono definiti i gruppi presenti sul sistema ([group(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) per maggiori informazioni).
+Nel file `/etc/group` sono definiti i gruppi presenti sul sistema ([group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) per maggiori informazioni).
 
 Per visualizzare l'appartenenza ai gruppi con il comando `groups`:
 

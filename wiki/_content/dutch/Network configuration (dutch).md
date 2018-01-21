@@ -61,7 +61,7 @@ Op deze pagina woordt de installatie van een **bedrade** netwerkaansluiting uitg
 
 ## Controleer de kabelaansluiting
 
-Deze basis installatie / configuratie gaat uit van een werkende netwerkaansluiting. Gebruik [ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) om de werking te controleren:
+Deze basis installatie / configuratie gaat uit van een werkende netwerkaansluiting. Gebruik [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) om de werking te controleren:
 
  `$ ping www.google.com` 
 ```
@@ -89,7 +89,7 @@ Indien geen baat, controleer de netwerkkabel op defecten.
 **Note:**
 
 *   Een foutmelding als `ping: icmp open socket: Operation not permitted` bij een *ping*, herinstalleer het [iputils](https://www.archlinux.org/packages/?name=iputils) pakket.
-*   De `-c *num*` optie kan gebruikt worden voor exacte `*num*` pings, anders kan de ping oneindig doorlopen en zal dan handmatig beeindigd moeten worden. Zie [ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) voor meer informatie.
+*   De `-c *num*` optie kan gebruikt worden voor exacte `*num*` pings, anders kan de ping oneindig doorlopen en zal dan handmatig beeindigd moeten worden. Zie [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) voor meer informatie.
 *   `8.8.8.8` is een statisch adres dat makkelijk te onthouden is. Het betreft hier Google's primary DNS server adres, en kan als betrouwbaar beschouwd worden omdat het gewoonlijk niet geblokkeerd wordt door contentfilters en proxy servers.
 
 ## Device driver
@@ -269,7 +269,7 @@ En tenslotte, deactiveer de netwerkkaart:
 
 ```
 
-Voor meerdere opties, zie de [ip(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8). Deze commandline opdrachten kunnen geautomatiseerd uitgevoerd worden via scripts en [systemd units](/index.php/Systemd#Writing_unit_files "Systemd").
+Voor meerdere opties, zie de [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8). Deze commandline opdrachten kunnen geautomatiseerd uitgevoerd worden via scripts en [systemd units](/index.php/Systemd#Writing_unit_files "Systemd").
 
 #### Bereken adressen
 
@@ -308,7 +308,7 @@ Zie ook de [List of applications#Network_managers](/index.php/List_of_applicatio
 
 ## Bepaal de hostnaam
 
-Een [hostnaam](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") is een unieke naam gegeven aan een apparaat op een netwerk, als aangeduid in `/etc/hostname`—zie [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) en [hostname(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.7) voor details. Het bestand kan eventueel ook de domeinnaam van het systeem/netwerk bevatten. Om de hostnaam in te stellen, [wijzig](/index.php/Textedit "Textedit") `/etc/hostname` en voeg een enkele regel toe met b.v. `*myhostname*`:
+Een [hostnaam](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") is een unieke naam gegeven aan een apparaat op een netwerk, als aangeduid in `/etc/hostname`—zie [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) en [hostname(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.7) voor details. Het bestand kan eventueel ook de domeinnaam van het systeem/netwerk bevatten. Om de hostnaam in te stellen, [wijzig](/index.php/Textedit "Textedit") `/etc/hostname` en voeg een enkele regel toe met b.v. `*myhostname*`:
 
  `/etc/hostname` 
 ```
@@ -318,21 +318,21 @@ Een [hostnaam](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") is e
 
 **Tip:** Advies om een hostnname te kiezen: zie [RFC 1178](https://tools.ietf.org/html/rfc1178).
 
-Als alternatief kan [hostnamectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1) gebruikt worden:
+Als alternatief kan [hostnamectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1) gebruikt worden:
 
 ```
 # hostnamectl set-hostname *myhostname*
 
 ```
 
-Om een tijdelijke hostnaam toe te kennen, totaan een herstart, gebruik [hostname(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.1) van [inetutils](https://www.archlinux.org/packages/?name=inetutils):
+Om een tijdelijke hostnaam toe te kennen, totaan een herstart, gebruik [hostname(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.1) van [inetutils](https://www.archlinux.org/packages/?name=inetutils):
 
 ```
 # hostname *myhostname*
 
 ```
 
-Om de hostnaam, en andere metadata,te verfraaien, zie [machine-info(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/machine-info.5#https%3A%2F%2Fwww.freedesktop.org%2Fsoftware%2Fsystemd%2Fman%2Fmachine-info.html).
+Om de hostnaam, en andere metadata,te verfraaien, zie [machine-info(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/machine-info.5#https%3A%2F%2Fwww.freedesktop.org%2Fsoftware%2Fsystemd%2Fman%2Fmachine-info.html).
 
 ### Lokaal netwerk hostnaam resolutie
 
@@ -346,7 +346,7 @@ PING myhostname (192.168.1.2) 56(84) bytes of data.
 
 Om het mogelijk te maken dat andere systemen in het netwerkwerk de computer via de **hostnaam** kunnen bereiken, is het noodzakelijk dat of:
 
-*   het bestand [hosts(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5) geconfigureerd is, of
+*   het bestand [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5) geconfigureerd is, of
 *   een dienst geactiveerd word welke de hostname kan zoeken en vinden.
 
 **Note:** [systemd](https://www.archlinux.org/packages/?name=systemd) heeft daartoe de mogelijkheid via de `myhostname` nss module, standaard geactiveerd in `/etc/nsswitch.conf`. Echter, sommige systemen gebruiken wellicht toch nog het bestand `/etc/hosts`, zie [[2]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) voor voorbeelden.
@@ -437,7 +437,7 @@ ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1500", ATTR{tx_queue_
 
 **Note:**
 
-*   `mtu`: Bij PPPoE, dient de MTU niet groter te zijn dan 1492\. MTU kan ook ingesteld worden [systemd.netdev(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.netdev.5).
+*   `mtu`: Bij PPPoE, dient de MTU niet groter te zijn dan 1492\. MTU kan ook ingesteld worden [systemd.netdev(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.netdev.5).
 *   `tx_queue_len`: Gebruik kleine waarden voor langzamere devices met een hoge latency, zoals modem links en ISDN. Hoge waarden worden aanbevolen bij hoge snelheid aansluitingen met veel dataverkeer.
 
 ### ifplugd voor laptops

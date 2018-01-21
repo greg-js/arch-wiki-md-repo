@@ -41,11 +41,11 @@ Para formatar uma partição, faça:
 
 ```
 
-**Dica:** Veja [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) para mais opções; edite `/etc/mke2fs.conf` para ver/configurar as opções padrões.
+**Dica:** Veja [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) para mais opções; edite `/etc/mke2fs.conf` para ver/configurar as opções padrões.
 
 ### Proporção de bytes por inode
 
-Traduzido de [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8):
+Traduzido de [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8):
 
 	***mke2fs** cria um inode para todos os* bytes por inode *de espaço no disco. Quanto maior proporção de* bytes por inode*, menos inodes serão criados.*
 
@@ -85,7 +85,7 @@ A proporção de bytes por inode também pode ser definida diretamente via a op�
 
 ### Blocos reservados
 
-Por padrão, 5% dos blocos de sistema de arquivos serão reservados para o superusuário, para evitar fragmentação e "*permitir daemons do root continuarem a funcionar corretamente após processos sem privilégios serem impedidos de escrever no sistema de arquivos*" (traduzido de [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8)).
+Por padrão, 5% dos blocos de sistema de arquivos serão reservados para o superusuário, para evitar fragmentação e "*permitir daemons do root continuarem a funcionar corretamente após processos sem privilégios serem impedidos de escrever no sistema de arquivos*" (traduzido de [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8)).
 
 Para discos modernos de alta capacidade, isso é mais alto do que necessário se a partição for usada como um arquivo de longo prazo ou não crucial para operações do sistema (como `/home`). Veja [esse e-mail](http://www.redhat.com/archives/ext3-users/2009-January/msg00026.html) para a opinião do desenvolvedor do ext4 Ted Ts'o sobre blocos reservados.
 
@@ -110,7 +110,7 @@ Para reduzi-lo para 1% posteriormente, use:
 
 ```
 
-Você pode usar [findmnt(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/findmnt.8) para localizar o nome do dispositivo:
+Você pode usar [findmnt(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/findmnt.8) para localizar o nome do dispositivo:
 
 ```
 $ findmnt */o/ponto/de/montagem*

@@ -1,4 +1,4 @@
-User groups are used on GNU/Linux for [access control](https://en.wikipedia.org/wiki/Access_control#Computer_security "wikipedia:Access control") – members of a group are granted access to devices and files belonging to that group. `/etc/group` is the file that defines the groups on the system ([group(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) for details).
+User groups are used on GNU/Linux for [access control](https://en.wikipedia.org/wiki/Access_control#Computer_security "wikipedia:Access control") – members of a group are granted access to devices and files belonging to that group. `/etc/group` is the file that defines the groups on the system ([group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) for details).
 
 This article provides a list of common groups and their purpose along with an overview of group manipulation commands.
 

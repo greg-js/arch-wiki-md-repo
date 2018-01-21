@@ -22,7 +22,7 @@ Dodatkowo, chociaż Tor zapewnia ochronę przed analizą ruchu, nie może zapobi
 
 ## Konfiguracja
 
-Domyślnie Tor czyta konfiguracje z pliku `/etc/tor/torrc` Opcje konfiguracji są wyjaśnione [tor(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tor.1) [Strona Tor](https://torproject.org/docs/tor-manual.html.en). Domyślna konfiguracja powinna działać prawidłowo dla większości użytkowników Tora.
+Domyślnie Tor czyta konfiguracje z pliku `/etc/tor/torrc` Opcje konfiguracji są wyjaśnione [tor(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tor.1) [Strona Tor](https://torproject.org/docs/tor-manual.html.en). Domyślna konfiguracja powinna działać prawidłowo dla większości użytkowników Tora.
 
 Istnieją potencjalne konflikty między konfiguracjami w `torrc` a `tor.service`.
 

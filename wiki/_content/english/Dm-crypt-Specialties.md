@@ -479,7 +479,7 @@ See [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-
 
 ```
 
-**Tip:** When using option `--header`, `--align-payload` allows specifying the start of encrypted data on a device. By reserving a space at the beginning of device you have the option of later [reattaching the LUKS header](/index.php/Dm-crypt/Device_encryption#Restore_using_cryptsetup "Dm-crypt/Device encryption"). See [cryptsetup(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cryptsetup.8) for values supported by `--align-payload`.
+**Tip:** When using option `--header`, `--align-payload` allows specifying the start of encrypted data on a device. By reserving a space at the beginning of device you have the option of later [reattaching the LUKS header](/index.php/Dm-crypt/Device_encryption#Restore_using_cryptsetup "Dm-crypt/Device encryption"). See [cryptsetup(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cryptsetup.8) for values supported by `--align-payload`.
 
 Open the container:
 
@@ -503,7 +503,7 @@ There are two options for initramfs to support a detached LUKS header.
 
 ### Using systemd hook
 
-First create `/etc/crypttab.initramfs` and add the encrypted device to it. The syntax is defined in [crypttab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5)
+First create `/etc/crypttab.initramfs` and add the encrypted device to it. The syntax is defined in [crypttab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5)
 
  `/etc/crypttab.initramfs`  `enc	/dev/disk/by-id/*your-disk_id*	none	header=/boot/header.img` 
 
@@ -713,7 +713,7 @@ Or use Direct UEFI Secure boot by generating keys with [cryptboot](https://aur.a
 
 ```
 
-See [efibootmgr(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/efibootmgr.8) for an explanation of the options.
+See [efibootmgr(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/efibootmgr.8) for an explanation of the options.
 
 Make sure the boot order puts `Arch Linux Signed` first. If not change it with `efibootmgr -o XXXX,YYYY,ZZZZ`.
 

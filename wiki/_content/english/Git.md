@@ -73,7 +73,7 @@ This tutorial teaches how to use Git for basic distributed revision control of a
 
 Git is a distributed version control system, which means that the entire history of changes to a repository is stored locally, in a directory called `./.git` in the project directory. The project files which are visible to the user constitute the *working tree*. These files can be updated to match revisions stored in `./.git` using `git` commands (e.g. `git checkout`), and new revisions can be created in turn by editing these files and running the appropriate `git` commands (e.g. `git commit`).
 
-See [gitglossary(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gitglossary.7) for more complete definitions of the terms used in this tutorial.
+See [gitglossary(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitglossary.7) for more complete definitions of the terms used in this tutorial.
 
 A typical Git work-flow is:
 
@@ -767,7 +767,7 @@ For fine-grained access management, refer to [gitolite](/index.php/Gitolite "Git
 
 ## See also
 
-*   Miscallaneous man pages available in the [git](https://www.archlinux.org/packages/?name=git) package: [gittutorial(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gittutorial.7), [giteveryday(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/giteveryday.7), [gitworkflows(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gitworkflows.7)
+*   Miscallaneous man pages available in the [git](https://www.archlinux.org/packages/?name=git) package: [gittutorial(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gittutorial.7), [giteveryday(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/giteveryday.7), [gitworkflows(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitworkflows.7)
 *   [Pro Git book](http://git-scm.com/book)
 *   [Git Reference](http://gitref.org/)
 *   [https://www.kernel.org/pub/software/scm/git/docs/](https://www.kernel.org/pub/software/scm/git/docs/)

@@ -37,7 +37,7 @@ Simply install the [AUR](/index.php/AUR "AUR") package [unity-editor](https://au
 
 [Install](/index.php/Install "Install") the [android-udev](https://www.archlinux.org/packages/?name=android-udev) package, which will ensure you have correct [udev](/index.php/Udev "Udev") rules for your device.
 
-Install the [android-sdk](https://aur.archlinux.org/packages/android-sdk/) package and one of the packages from the [java-environment](https://www.archlinux.org/packages/?name=java-environment) group, preferably JDK7, though it's reported to (and should) work with OpenJDK too.
+Install the [android-sdk](https://aur.archlinux.org/packages/android-sdk/) package.
 
 #### Configure the Editor
 

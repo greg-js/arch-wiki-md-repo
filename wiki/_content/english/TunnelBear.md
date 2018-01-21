@@ -20,7 +20,7 @@ $ /etc/openvpn/client/
 Do not forget to change the permission
 
 ```
-$ sudo chmod 600 /etc/openvpn/client/*
+# chmod 600 /etc/openvpn/client/*
 
 ```
 
@@ -29,7 +29,7 @@ Pick the corresponding **.ovpn** that will be used (TunnelBear Japan is used as 
 Rename the extension & remove the space
 
 ```
-$ mv "/etc/openvpn/client/TunnelBear Japan.ovpn" /etc/openvpn/client/TunnelBearJapan.conf
+# mv "/etc/openvpn/client/TunnelBear Japan.ovpn" /etc/openvpn/client/TunnelBearJapan.conf
 
 ```
 
@@ -37,12 +37,10 @@ Edit the **.conf** file
 
  `/etc/openvpn/client/TunnelBearJapan.conf` 
 ```
-.
-.
+...
 keepalive 10 30
 auth-user-pass login.key
-.
-.
+...
 
 ```
 
@@ -50,7 +48,6 @@ Create **login.key**
 
  `/etc/openvpn/client/login.key` 
 ```
-
 yourtunnelbearusername
 yourtunnelbearpassword
 

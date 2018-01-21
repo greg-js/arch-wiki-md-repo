@@ -434,7 +434,7 @@ See [Kernel mode setting#Forcing modes and EDID](/index.php/Kernel_mode_setting#
 
 ## Overclocking with nvidia-settings GUI not working
 
-Workaround is to use nvidia-settings CLI to query and set certain variables after enabling overclocking (as explained in [NVIDIA/Tips and tricks#Enabling overclocking](/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking "NVIDIA/Tips and tricks"), see [nvidia-settings(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nvidia-settings.1) for more information).
+Workaround is to use nvidia-settings CLI to query and set certain variables after enabling overclocking (as explained in [NVIDIA/Tips and tricks#Enabling overclocking](/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking "NVIDIA/Tips and tricks"), see [nvidia-settings(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nvidia-settings.1) for more information).
 
 Example to query all variables:
 

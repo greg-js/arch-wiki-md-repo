@@ -23,7 +23,7 @@
 
 ## Configuration
 
-To configure OpenNTPD, you need to edit `/etc/ntpd.conf`. See [ntpd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntpd.conf.5) for all available options.
+To configure OpenNTPD, you need to edit `/etc/ntpd.conf`. See [ntpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntpd.conf.5) for all available options.
 
 **Tip:** After configuring, check the configuration file for validity by executing:
 ```
@@ -118,7 +118,7 @@ Another possibility is to use dhclient hooks to start and stop openntpd. When dh
 *   `/etc/dhclient-enter-hooks`
 *   `/etc/dhclient-exit-hooks`
 
-See [dhclient-script(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhclient-script.8)
+See [dhclient-script(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhclient-script.8)
 
 #### Using dhcpcd hooks
 
@@ -132,7 +132,7 @@ fi
 
 ```
 
-See [dhcpcd-run-hooks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd-run-hooks.8)
+See [dhcpcd-run-hooks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd-run-hooks.8)
 
 ## Troubleshooting
 

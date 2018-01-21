@@ -440,7 +440,7 @@ $ pgrep gpg-agent
 
 ### Configuración
 
-Se puede configurar **gpg-agent** mediante el archivo `~/.gnupg/gpg-agent.conf`. Las opciones de configuración están listadas en [gpg-agent(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1). Por ejemplo puedes cambiar el tiempo de vida de la caché para las claves no usadas:
+Se puede configurar **gpg-agent** mediante el archivo `~/.gnupg/gpg-agent.conf`. Las opciones de configuración están listadas en [gpg-agent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1). Por ejemplo puedes cambiar el tiempo de vida de la caché para las claves no usadas:
 
  `~/.gnupg/gpg-agent.conf` 
 ```
@@ -582,7 +582,7 @@ disable-ccid
 
 ```
 
-Por favor, comprueba [scdaemon(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/scdaemon.1) si no usas OpenSC.
+Por favor, comprueba [scdaemon(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/scdaemon.1) si no usas OpenSC.
 
 ## Resolución de problemas
 

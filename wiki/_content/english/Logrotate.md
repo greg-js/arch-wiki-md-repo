@@ -28,7 +28,7 @@ By default, logrotate runs daily using a [systemd timer](/index.php/Systemd/Time
 
 ## Configuration
 
-The primary configuration file for logrotate which sets default parameters is `/etc/logrotate.conf`; additional application-specific configuration files are included from the `/etc/logrotate.d` directory. Values set in application-specific configuration files override those same parameters in the primary configuration file. See [logrotate.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/logrotate.conf.5) for configuration examples and a reference of available directives.
+The primary configuration file for logrotate which sets default parameters is `/etc/logrotate.conf`; additional application-specific configuration files are included from the `/etc/logrotate.d` directory. Values set in application-specific configuration files override those same parameters in the primary configuration file. See [logrotate.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/logrotate.conf.5) for configuration examples and a reference of available directives.
 
 To verify if logrotate works correctly run the following command which will produce debug output:
 
@@ -69,7 +69,7 @@ logrotate -vf /etc/logrotate.d/mylog
 
 ```
 
-See [logrotate(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/logrotate.8) for more details.
+See [logrotate(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/logrotate.8) for more details.
 
 ## Troubleshooting
 
@@ -109,4 +109,4 @@ file-to-be-rotated {
 ## See also
 
 *   [Logrotate on Gentoo Linux Wiki](http://wiki.gentoo.org/wiki/Logrotate)
-*   [logrotate(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/logrotate.8) manual page
+*   [logrotate(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/logrotate.8) manual page

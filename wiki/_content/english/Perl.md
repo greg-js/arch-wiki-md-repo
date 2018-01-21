@@ -307,8 +307,8 @@ cpan[1]> o conf init
 *   [The Perl Programming Language (Perl homepage)](https://www.perl.org/)
 *   [Wikipedia:Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl")
 *   [Perl Tutorials](https://learn.perl.org/tutorials/)
-*   [perl(1perl)](http://jlk.fjfi.cvut.cz/arch/manpages/man/perl.1perl)
-*   [perldoc(1perl)](http://jlk.fjfi.cvut.cz/arch/manpages/man/perldoc.1perl)
+*   [perl(1perl)](https://jlk.fjfi.cvut.cz/arch/manpages/man/perl.1perl)
+*   [perldoc(1perl)](https://jlk.fjfi.cvut.cz/arch/manpages/man/perldoc.1perl)
 
 ### Perl 6
 

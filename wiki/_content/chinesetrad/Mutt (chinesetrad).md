@@ -113,7 +113,7 @@ macro index G "!/usr/bin/offlineimap
 #設置一個快捷鍵：G ，來調用 offlineimap 查閱新電郵
 ```
 
-這是一個最精簡的配置文件了，能讓你訪問你的 Maildir，並在收件箱（INBOX）中檢查新電郵。這個配置也對電郵的郵件頭作了暫存，從而加速郵件的列示過程。也許你的安裝包沒有開啟暫存功能，不過Arch 的安裝包一定是開啟了的。注意這項功能真的對 OfflineIMAP 有相當影響。它總是在從郵件服務器同步電郵。 `spoolfile` 告訴Mutt從本地哪個目錄來得到新電郵。你可能還想添加更多的 Spoolfiles，例如郵件列表（Mailing List）所在的目錄。或者你想添加其它什么東西，但這就超出了這份文檔的范圍了，還請自行參閱手冊 [mutt(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mutt.1) 。
+這是一個最精簡的配置文件了，能讓你訪問你的 Maildir，並在收件箱（INBOX）中檢查新電郵。這個配置也對電郵的郵件頭作了暫存，從而加速郵件的列示過程。也許你的安裝包沒有開啟暫存功能，不過Arch 的安裝包一定是開啟了的。注意這項功能真的對 OfflineIMAP 有相當影響。它總是在從郵件服務器同步電郵。 `spoolfile` 告訴Mutt從本地哪個目錄來得到新電郵。你可能還想添加更多的 Spoolfiles，例如郵件列表（Mailing List）所在的目錄。或者你想添加其它什么東西，但這就超出了這份文檔的范圍了，還請自行參閱手冊 [mutt(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mutt.1) 。
 
 當然，我們也最好事先創建好配置文件中的那些郵件儲存目錄。然後就可以鍵入指令： `mutt` 來收信和閱讀信件了。
 

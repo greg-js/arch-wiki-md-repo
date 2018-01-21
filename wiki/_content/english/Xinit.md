@@ -55,7 +55,7 @@ Alternatively, if you wish to have the X display on a separate console from the 
 
 If `.xinitrc` is present in a user's home directory, *startx* and *xinit* execute it. Otherwise *startx* will run the default `/etc/X11/xinit/xinitrc`.
 
-**Note:** *Xinit* has its own default behaviour instead of executing the file. See [xinit(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1) for details.
+**Note:** *Xinit* has its own default behaviour instead of executing the file. See [xinit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1) for details.
 
 This default xinitrc will start a basic environment with [Twm](/index.php/Twm "Twm"), [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock) and [Xterm](/index.php/Xterm "Xterm") (assuming that the necessary packages are installed). Therefore, to start a different window manager or desktop environment, first create a copy of the default `xinitrc` in your home directory:
 
@@ -158,7 +158,7 @@ $ startx /usr/bin/enlightenment -- -br +bs -dpi 96
 
 ```
 
-See also [startx(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
+See also [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
 
 **Tip:** This can be used even to start a regular GUI programs but without any of the window manager features. See also [#Starting applications without a window manager](#Starting_applications_without_a_window_manager) and [Running program in separate X display](/index.php/Running_program_in_separate_X_display "Running program in separate X display").
 

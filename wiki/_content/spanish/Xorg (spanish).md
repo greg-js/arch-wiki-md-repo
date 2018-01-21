@@ -120,7 +120,7 @@ Los comandos `startx` y `xinit` inician el servidor X y los clientes (el script 
 
 **Nota:** Arch proporciona, de forma predeterminada, archivos de configuración en `/etc/X11/xorg.conf.d`, y, en la mayoría de los casos, no es necesaria una configuración anterior.
 
-Xorg utiliza un archivo de configuración llamado `xorg.conf` y archivos que terminan en el sufijo `.conf` para su configuración inicial: la lista completa de las carpetas en las que buscar estos archivos se puede encontrar en [[1]](http://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml) o mediante la ejecución de [xorg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5), que viene acompañado de una explicación detallada de todas las opciones disponibles.
+Xorg utiliza un archivo de configuración llamado `xorg.conf` y archivos que terminan en el sufijo `.conf` para su configuración inicial: la lista completa de las carpetas en las que buscar estos archivos se puede encontrar en [[1]](http://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml) o mediante la ejecución de [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5), que viene acompañado de una explicación detallada de todas las opciones disponibles.
 
 ### Usar archivos .conf
 
@@ -135,7 +135,7 @@ Xorg también se puede configurar mediante los archivo `/etc/X11/xorg.conf` o `/
 
 ```
 
-Esto debería crear un archivo `xorg.conf.new` en `/root/` que se puede copiar a `/etc/X11/xorg.conf`. Para obtener más información, consulte [xorg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5) .
+Esto debería crear un archivo `xorg.conf.new` en `/root/` que se puede copiar a `/etc/X11/xorg.conf`. Para obtener más información, consulte [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5) .
 
 Como alternativa, los controladores de las tarjetas de vídeo pueden proporcionar una herramienta para configurar automáticamente Xorg: consulte el artículo del controlador de vídeo en cuestión para obtener más información, por ejemplo [NVIDIA](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)") o [AMD Catalyst](/index.php/AMD_Catalyst_(Espa%C3%B1ol) "AMD Catalyst (Español)").
 

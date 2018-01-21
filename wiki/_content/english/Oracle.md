@@ -40,7 +40,7 @@ Install a [Java](/index.php/Java "Java") runtime environment, like [jre7-openjdk
 
 From the [AUR](/index.php/AUR "AUR"), install [ksh](https://aur.archlinux.org/packages/ksh/) (other implementations like [these](/index.php/Ksh "Ksh") may work), [beecrypt](https://aur.archlinux.org/packages/beecrypt/), [rpm-org](https://aur.archlinux.org/packages/rpm-org/) and [libaio](https://www.archlinux.org/packages/?name=libaio).
 
-Oracle database 32-bit requires [lib32-unixodbc](https://www.archlinux.org/packages/?name=lib32-unixodbc) [lib32-libaio](https://www.archlinux.org/packages/?name=lib32-libaio) [lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5) [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs).
+Oracle database 32-bit requires [lib32-unixodbc](https://aur.archlinux.org/packages/lib32-unixodbc/) [lib32-libaio](https://www.archlinux.org/packages/?name=lib32-libaio) [lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5) [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs).
 
 **Note:** The following step is not required in newer Arch Linux installation after the binary directories merge
 

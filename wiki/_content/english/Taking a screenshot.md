@@ -213,7 +213,7 @@ $ scrot ~/screenshots/%Y-%m-%d-%T-screenshot.png
 
 saves the screenshot in a filename with the current year, month, date, hours, minutes, and seconds to a folder in your home directory called "screenshots"
 
-See [scrot(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/scrot.1) for more information. You can simply automate the file to uploaded like so [[1]](https://github.com/kaihendry/Kai-s--HOME/tree/master/bin).
+See [scrot(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/scrot.1) for more information. You can simply automate the file to uploaded like so [[1]](https://github.com/kaihendry/Kai-s--HOME/tree/master/bin).
 
 **Note:** In some window managers ([dwm](https://aur.archlinux.org/packages/dwm/), [xmonad](https://www.archlinux.org/packages/?name=xmonad) and possibly others) `scrot -s` does not work properly when running via window manager's keyboard shortcut, this can be worked around by prepending scrot invocation with a short pause `sleep 0.2; scrot -s`.
 

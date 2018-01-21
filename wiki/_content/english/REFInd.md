@@ -56,7 +56,7 @@ To find additional drivers see [The rEFInd Boot Manager: Using EFI Drivers: Find
 
 ### Scripted installation
 
-The rEFInd package includes the *refind-install* script to simplify the process of setting rEFInd as your default EFI boot entry. The script has several options for handling differing setups and UEFI implementations, see [refind-install(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/refind-install.8). For many systems it should be sufficient to simply run:
+The rEFInd package includes the *refind-install* script to simplify the process of setting rEFInd as your default EFI boot entry. The script has several options for handling differing setups and UEFI implementations, see [refind-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/refind-install.8). For many systems it should be sufficient to simply run:
 
 ```
 # refind-install
@@ -107,7 +107,7 @@ Execute `refind-install` with the option `--preloader */path/to/preloader*`
 
 Next time you boot with Secure Boot enabled, HashTool will launch and you will need to enrol the hash of rEFInd (`loader.efi`), rEFInd's drivers (e.g. `ext4_x64.efi`) and kernel.
 
-See [refind-install(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/refind-install.8) for more information.
+See [refind-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/refind-install.8) for more information.
 
 **Tip:** The signed *HashTool* is only capable of accessing the partition it was launched from. This means if your kernel is not on the ESP, you will not be able to enrol its hash from *HashTool*. You can workaround this by using [#KeyTool](#KeyTool), since it is capable of enrolling a hash in MokList and is not limited to one partition. Remember to enrol *KeyTool'*s hash before before using it.
 
@@ -144,7 +144,7 @@ Execute `refind-install` with the options `--shim */path/to/shim*` and `--localk
 
 Once in MokManager add `refind_local.cer` to MoKList. `refind_local.cer` can be found inside a directory called `keys` in the rEFInd's installation directory, e.g. `*esp*/EFI/refind/keys/refind_local.cer`.
 
-See [refind-install(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/refind-install.8) for more information.
+See [refind-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/refind-install.8) for more information.
 
 ##### Using your own keys
 

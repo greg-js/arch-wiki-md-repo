@@ -98,7 +98,7 @@ Puede establecer la configuración regional («locale») por defecto en `locale.
 
 ```
 
-Consulte [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) y [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) para más detalles.
+Consulte [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) y [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) para más detalles.
 
 La configuración regional de todo el sistema estará completamente actualizada después de reiniciar y quedará establecida para las sesiones individuales iniciadas.
 

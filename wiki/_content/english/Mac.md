@@ -832,7 +832,7 @@ This will instruct the driver to have a fast scroll-speed, do exponential accele
 To play with the settings without rebooting you can also set them through the command line, like so:
 
 ```
-# echo 55 | sudo tee /sys/module/hid_magicmouse/parameters/scroll_speed
+# echo 55 > /sys/module/hid_magicmouse/parameters/scroll_speed
 
 ```
 
@@ -857,8 +857,8 @@ First you need to get the firmware out of a particular file located on your OS X
 To mount the OS X drive if multi-booting:
 
 ```
-# sudo mkdir /media/OSX
-# sudo mount -t hfsplus /dev/sda2 /media/OSX
+# mkdir /media/OSX
+# mount -t hfsplus /dev/sda2 /media/OSX
 
 ```
 
@@ -1072,8 +1072,8 @@ HFS+ partitions, now the default in OS X, are not fully supported by Linux and a
 
 Find your partition:
 
+ `# diskutil list` 
 ```
-$ diskutil list
 /dev/disk0
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:      GUID_partition_scheme                        *750.2 GB   disk0
@@ -1086,29 +1086,22 @@ $ diskutil list
 
 In this example we will use *disk0s3* partition named as *Macintosh HD*. To know if journaling is activate or not you could execute:
 
+ `# diskutil info /dev/disk0s3 | grep -i journal` 
 ```
-$ diskutil info /dev/disk0s3 | grep -i journal
-   File System Personality:  Journaled HFS+
-   Name (User Visible):      Mac OS Extended (Journaled)
-   Journal:                  Journal size 49152 KB at offset 0x1176000
+    File System Personality:  Journaled HFS+
+    Name (User Visible):      Mac OS Extended (Journaled)
+    Journal:                  Journal size 49152 KB at offset 0x1176000
 
 ```
 
 As you can read the journaling is active. To turn off the journaling you could execute:
 
 ```
-$ sudo diskutil disableJournal disk0s3
-Password:
-Journaling has been disabled for volume Macintosh HD on disk0s3
+# diskutil disableJournal disk0s3
 
 ```
 
-To verify it is done execute the info command again:
-
-```
-$ diskutil info /dev/disk0s3 | grep -i journal
-
-```
+To verify it is done execute the info command again.
 
 If you get noting as output, then journaling is disabled.
 
@@ -1494,7 +1487,7 @@ Haptic feedback works out of the box due to the trackpad's built-in firmware.
 
 There are several drivers available that provide multitouch support. The following have been confirmed working with the MacBookPro12,1.
 
-For [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) the following configuration emulates some features from the OS X functionality. For more options see [libinput(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4).
+For [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) the following configuration emulates some features from the OS X functionality. For more options see [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4).
 
  `/etc/X11/xorg.conf.d/90-libinput.conf` 
 ```

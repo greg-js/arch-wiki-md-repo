@@ -369,7 +369,7 @@ The `--exclude` option causes files that match the given patterns to be excluded
 *   If you use a [swap file](/index.php/Swap_file "Swap file"), make sure to exclude it as well.
 *   Consider if you want to backup the `/home/` folder. If it contains your data it might be considerably larger than the system. Otherwise consider excluding unimportant subdirectories such as `/home/*/.thumbnails/*`, `/home/*/.cache/mozilla/*`, `/home/*/.cache/chromium/*`, and `/home/*/.local/share/Trash/*`, depending on software installed on the system. If [GVFS](/index.php/GVFS "GVFS") is installed, `/home/*/.gvfs` must be excluded to prevent rsync errors.
 
-You may want to include additional <a class="mw-selflink selflink">rsync</a> options, such as the following. See [rsync(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rsync.1) for the full list.
+You may want to include additional <a class="mw-selflink selflink">rsync</a> options, such as the following. See [rsync(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rsync.1) for the full list.
 
 *   If you use many hard links, consider adding the `-H` option, which is turned off by default due to its memory expense; however, it should be no problem on most modern machines. Many hard links reside under the `/usr/` directory.
 *   You may want to add rsync's `--delete` option if you are running this multiple times to the same backup folder. In this case make sure that the source path does not end with `/*`, or this option will only have effect on the files inside the subdirectories of the source directory, but it will have no effect on the files residing directly inside the source directory.

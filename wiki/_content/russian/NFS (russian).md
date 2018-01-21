@@ -119,7 +119,7 @@ Related articles
 
 ```
 
-Для получения дополнительной информации обо всех доступных опциях см. [exports(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/exports.5).
+Для получения дополнительной информации обо всех доступных опциях см. [exports(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/exports.5).
 
 **Совет:** [ip2cidr](http://ip2cidr.com/) - это инструмент для преобразования диапазонов IP-адресов в корректно структурированную спецификацию CDIR.
 
@@ -292,7 +292,7 @@ servername:/music   /mountpoint/on/client   nfs   rsize=8192,wsize=8192,timeo=14
 
 ```
 
-**Примечание:** Консультируйтесь [nfs(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nfs.5) и [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) для получения дополнительных параметров монтирования.
+**Примечание:** Консультируйтесь [nfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nfs.5) и [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) для получения дополнительных параметров монтирования.
 
 Некоторые дополнительные варианты монтирования, которые необходимо учитывать, включают:
 

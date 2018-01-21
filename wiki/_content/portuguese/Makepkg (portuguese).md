@@ -38,7 +38,7 @@ O *makepkg* é fornecido pelo pacote [pacman](https://www.archlinux.org/packages
 
 ## Configuração
 
-Veja [makepkg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5) para detalhes sobre as opções de configuração do *makepkg*.
+Veja [makepkg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5) para detalhes sobre as opções de configuração do *makepkg*.
 
 A configuração do sistema está disponível em `/etc/makepkg.conf`, mas alterações específicas para cada usu[ario podem ser feitas em `$XDG_CONFIG_HOME/pacman/makepkg.conf` ou `~/.makepkg.conf`. É recomendado revisar a configuração antes de compilar pacotes.
 
@@ -160,7 +160,7 @@ O sistema de compilação do [make](https://www.archlinux.org/packages/?name=mak
 
 Os usuários com sistemas multi-core/multiprocessados podem especificar o número de trabalhos a serem executados simultaneamente. Isso pode ser realizado com o uso de *nproc* para determinar o número de processadores disponíveis, ex. `MAKEFLAGS="-j$(nproc)"`. Alguns [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") substituem especificamente isso com `-j1`, devido a condições de corrida em certas versões ou simplesmente porque não é suportado em primeiro lugar. Os pacotes que não conseguem ser compilados devido a isso devem ser [relatados](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro") no rastreador de erros (ou no caso dos pacotes do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), ao mantenedor do pacote) depois de ter certeza de que o erro está sendo realmente causado pelo seu `MAKEFLAGS`.
 
-Veja [make(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/make.1) para uma lista completa de opções disponíveis.
+Veja [make(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/make.1) para uma lista completa de opções disponíveis.
 
 #### Compilando de arquivos na memória
 

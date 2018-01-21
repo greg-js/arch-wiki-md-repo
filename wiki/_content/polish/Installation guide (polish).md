@@ -1,6 +1,6 @@
 Ten dokument jest przewodnikiem do instalacji [Arch Linuxa](/index.php/Arch_Linux_(Polski) "Arch Linux (Polski)") z sytemu live uruchomionego oficjalnym obrazem instalacyjnym. Przed instalacją, zalecane jest przejrzenie [najczęściej zadawanych pytań (FAQ)](/index.php/FAQ "FAQ"). Dla konwencji użytych w tym dokumencie, zobacz stronę [Help:Reading](/index.php/Help:Reading "Help:Reading"). Należy również wziąć pod uwagę, że wszystkie linki na tej stronie prowadzą do ich angielskich wersji.
 
-Dla dokładniejszych instrukcji, zobacz odpowiednie artykuły [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") lub [strony podręcznika](/index.php/Man_page "Man page") poszczególnych programów, oba podlinkowane w tym przewodniku. Zobacz stronę podręcznika [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) dla ogólny opis konfiguracji. Dla interaktywnej pomocy, dostępne jest [forum](https://bbs.archlinux.org/) oraz [kanał IRC](/index.php/IRC_channel "IRC channel").
+Dla dokładniejszych instrukcji, zobacz odpowiednie artykuły [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") lub [strony podręcznika](/index.php/Man_page "Man page") poszczególnych programów, oba podlinkowane w tym przewodniku. Zobacz stronę podręcznika [archlinux(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) dla ogólny opis konfiguracji. Dla interaktywnej pomocy, dostępne jest [forum](https://bbs.archlinux.org/) oraz [kanał IRC](/index.php/IRC_channel "IRC channel").
 
 ## Contents
 
@@ -33,15 +33,15 @@ Dla dokładniejszych instrukcji, zobacz odpowiednie artykuły [ArchWiki](/index.
 
 Arch Linux powinien być uruchamiany na dowolnej maszynie [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") z minimalną ilością 512 MB pamięci RAM. Podstawowa instalacja pakietów z grupy [base](https://www.archlinux.org/groups/x86_64/base/) powinna zająć mniej, niż 800 MB miejsca na dysku. Jako iż proces instalacji musi pobrać pakiety z zewnętrznego repozytorium, wymagane jest działające połączenie internetowe.
 
-Pobierz i uruchom dysk instalacyjny jak opisane w kategorii [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). Zostaniesz zalogowany na pierwszej [wirtualnej konsoli](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") jako użytkownik root z shell'em [Zsh](/index.php/Zsh "Zsh"); podstawowe komendy takie jak [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) mogą zostać [automatycznie dokończone po naciśnięciu przycisku TAB](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
+Pobierz i uruchom dysk instalacyjny jak opisane w kategorii [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). Zostaniesz zalogowany na pierwszej [wirtualnej konsoli](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") jako użytkownik root z shell'em [Zsh](/index.php/Zsh "Zsh"); podstawowe komendy takie jak [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) mogą zostać [automatycznie dokończone po naciśnięciu przycisku TAB](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
 By przejść do innej konsoli, by np. zobaczyć ten przewodnik programem [ELinks](/index.php/ELinks "ELinks") podczas instalacji użyj [skrótu](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*strzałka*`. By [edytować](/index.php/Textedit "Textedit") pliki konfiguracyjne, możesz użyć programów [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") i [vim](/index.php/Vim#Usage "Vim").
 
 ### Układ klawiatury
 
-Domyślny [zestaw znaków w konsoli](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") to [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). By wyświetlić dostępne układy, wpisz w konsoli `ls /usr/share/kbd/keymaps/**/*.map.gz`. Aby zmodyfikować układ użyj odpowiedniej nazwy pliki w poleceniu [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), odrzucając ścieżkę i rozszerzenie. Dla przykładu, wpisz `loadkeys de-latin1`, by wybrać [niemiecki](https://en.wikipedia.org/wiki/File:KB_Germany.svg "w:File:KB Germany.svg") układ klawiatury
+Domyślny [zestaw znaków w konsoli](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") to [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). By wyświetlić dostępne układy, wpisz w konsoli `ls /usr/share/kbd/keymaps/**/*.map.gz`. Aby zmodyfikować układ użyj odpowiedniej nazwy pliki w poleceniu [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), odrzucając ścieżkę i rozszerzenie. Dla przykładu, wpisz `loadkeys de-latin1`, by wybrać [niemiecki](https://en.wikipedia.org/wiki/File:KB_Germany.svg "w:File:KB Germany.svg") układ klawiatury
 
-[Czcionki konsolowe](/index.php/Console_fonts "Console fonts") są zlokalizowane w `/usr/share/kbd/consolefonts/` i mogą być w podobny sposób ustawione poleceniem [setfont(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
+[Czcionki konsolowe](/index.php/Console_fonts "Console fonts") są zlokalizowane w `/usr/share/kbd/consolefonts/` i mogą być w podobny sposób ustawione poleceniem [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
 #### Polski układ klawiatury
 
@@ -69,11 +69,11 @@ Obraz instalacyjny [uruchamia](/index.php/Enable "Enable") [dhcpcd](/index.php/D
 
 Jeśli nie masz połączenia, [zatrzymaj](/index.php/Stop "Stop") usługę *dhcpcd* poleceniem `systemctl stop dhcpcd@`, `Tab` i sprawdź stronę [Network configuration](/index.php/Network_configuration "Network configuration").
 
-Dla bezprzewodowych połączeń, [iw(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) i [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") są dostępne. Zobacz stronę [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
+Dla bezprzewodowych połączeń, [iw(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) i [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") są dostępne. Zobacz stronę [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
 
 ### Zaktualizuj systemowy zegar
 
-Użyh [timedatectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1) by sprawdzić, czy systemowy zegar jest dokładny:
+Użyh [timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1) by sprawdzić, czy systemowy zegar jest dokładny:
 
 ```
 # timedatectl set-ntp true
@@ -193,7 +193,7 @@ Dla Polski polecenie będzie wyglądało w następujący sposób:
 
 ```
 
-Uruchom [hwclock(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) by wygenerować `/etc/adjtime`:
+Uruchom [hwclock(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) by wygenerować `/etc/adjtime`:
 
 ```
 # hwclock --systohc
@@ -211,15 +211,15 @@ Odkomentuj `en_US.UTF-8 UTF-8`, `pl_PL.UTF-8 UTF-8` i inne wymagane [lokalizacje
 
 ```
 
-Ustaw [zmienną](/index.php/Variable "Variable") `LANG` w pliku [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) odpowiednio, na przykład:
+Ustaw [zmienną](/index.php/Variable "Variable") `LANG` w pliku [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) odpowiednio, na przykład:
 
  `/etc/locale.conf`  `LANG=*pl_PL.UTF-8*` 
 
-Jeśli zmieniłeś układ klawiatury, zapisz te zmiany w pliku [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5):
+Jeśli zmieniłeś układ klawiatury, zapisz te zmiany w pliku [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5):
 
  `/etc/vconsole.conf`  `KEYMAP=*de-latin1*` 
 
-Jeżeli chcesz, by w konsoli była możliwość wprowadzania polskich znaków, plik [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) ma wygladać w następujący sposób:
+Jeżeli chcesz, by w konsoli była możliwość wprowadzania polskich znaków, plik [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) ma wygladać w następujący sposób:
 
  `/etc/vconsole.conf` 
 ```
@@ -230,7 +230,7 @@ FONT_MAP=8859-2
 
 ### Nazwa hosta
 
-Stwórz plik [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5):
+Stwórz plik [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5):
 
  `/etc/hostname` 
 ```
@@ -238,7 +238,7 @@ Stwórz plik [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5)
 
 ```
 
-Przemyśl dodanie wpisu do pliku [hosts(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
+Przemyśl dodanie wpisu do pliku [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
 
  `/etc/hosts` 
 ```
@@ -260,7 +260,7 @@ Dla [sieci bezprzewodowych](/index.php/Wireless_configuration "Wireless configur
 
 Stworzenie nowego *initramfs* jest zazwyczaj nie wymagane, gdyż polecenie [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") było uruchomione podczas instalacji pakietu [linux](https://www.archlinux.org/packages/?name=linux) poleceniem *pacstrap*.
 
-Dla specjalnych konfiguracji, zmodyfikuj plik [mkinitcpio.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) i stwórz obraz initramfs:
+Dla specjalnych konfiguracji, zmodyfikuj plik [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) i stwórz obraz initramfs:
 
 ```
 # mkinitcpio -p linux
@@ -286,7 +286,7 @@ Jeśli posiadasz procesor Intela, zainstaluj pakiet [intel-ucode](https://www.ar
 
 Opuść środowisko chroot poleceniem `exit` lub naciskając `Ctrl+D`.
 
-Opcjonalnie manualnie odmontuj wszystkie partycje poleceniem `unmount -R /mnt`: to pozwoli na sprawdzenie "zajętych" partycji i znalezienia przyczyny poleceniem [fuser(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1).
+Opcjonalnie manualnie odmontuj wszystkie partycje poleceniem `unmount -R /mnt`: to pozwoli na sprawdzenie "zajętych" partycji i znalezienia przyczyny poleceniem [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1).
 
 Na koniec, uruchom ponownie maszynę wpisując `reboot`: pozostałe partycje pozostaną odmontowane automatycznie przez *systemd*. Pamiętaj, by usunąć medium instalacyjne i wtedy zaloguj się do nowego systemu jako użytkownik root.
 

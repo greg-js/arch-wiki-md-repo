@@ -47,7 +47,7 @@ In ChromeOS, estasblish internet connection and enter the superuser shell with `
 Execute the firmware utility:
 
 ```
-# sudo bash firmware-util.sh
+# bash firmware-util.sh
 
 ```
 

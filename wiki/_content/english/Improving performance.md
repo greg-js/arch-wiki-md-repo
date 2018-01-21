@@ -274,7 +274,7 @@ Avoiding unnecessary access to slow storage drives is good for performance and a
 
 #### Show disk writes
 
-The [iotop](https://www.archlinux.org/packages/?name=iotop) package can sort by disk writes, and show how much and how frequently programs are writing to the disk. See [iotop(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iotop.8) for details.
+The [iotop](https://www.archlinux.org/packages/?name=iotop) package can sort by disk writes, and show how much and how frequently programs are writing to the disk. See [iotop(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iotop.8) for details.
 
 #### Relocate files to tmpfs
 
@@ -307,7 +307,7 @@ The I/O priority of a background process can be reduced to the "Idle" level by s
 
 ```
 
-See [ionice(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ionice.1) and [[2]](https://www.cyberciti.biz/tips/linux-set-io-scheduling-class-priority.html) for more information.
+See [ionice(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ionice.1) and [[2]](https://www.cyberciti.biz/tips/linux-set-io-scheduling-class-priority.html) for more information.
 
 ## CPU
 
@@ -461,7 +461,7 @@ See [Samba#Improve performance](/index.php/Samba#Improve_performance "Samba")
 
 ### DNS
 
-Every time a connection is made, the system must first resolve a fully qualified domain name to an IP address before the actual connection can be established. Response times of network requests can be improved by caching DNS queries locally. Common tools for this purpose include [pdnsd](/index.php/Pdnsd "Pdnsd"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [unbound](/index.php/Unbound "Unbound") and [rescached](/index.php/Rescached "Rescached"). The systemd service `systemd-resolved` provides network name resolution to local applications and does DNS caching by default, see [systemd-resolved(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) for details.
+Every time a connection is made, the system must first resolve a fully qualified domain name to an IP address before the actual connection can be established. Response times of network requests can be improved by caching DNS queries locally. Common tools for this purpose include [pdnsd](/index.php/Pdnsd "Pdnsd"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [unbound](/index.php/Unbound "Unbound") and [rescached](/index.php/Rescached "Rescached"). The systemd service `systemd-resolved` provides network name resolution to local applications and does DNS caching by default, see [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) for details.
 
 ## Watchdogs
 

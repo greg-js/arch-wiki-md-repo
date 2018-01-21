@@ -33,7 +33,7 @@
 | <small>2.10.11.</small> [Usenet clients](/index.php/Category:Usenet_clients "Category:Usenet clients") <small>(4)</small> |
 | <small>2.10.12.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(24) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>2.10.13.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5)</small> |
-| <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(27)</small> |
+| <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(26)</small> |
 | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(47)</small> |
 | <small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(14)</small> |
 | <small>2.12.2.</small> [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players") <small>(21)</small> |
@@ -47,7 +47,7 @@
 | <small>2.18.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(30) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>2.18.1.</small> [Content management systems](/index.php/Category:Content_management_systems "Category:Content management systems") <small>(4)</small> |
 | <small>2.18.2.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces "Category:Web admin interfaces") <small>(5)</small> |
-| <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(46)</small> |
+| <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(45)</small> |
 | <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(18) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(46)</small> |
 | <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
@@ -80,7 +80,7 @@
 | <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(61)</small> |
 | <small>4.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(3)</small> |
 | <small>4.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
-| <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(49)</small> |
+| <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(50)</small> |
 | <small>4.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
 | <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(80)</small> |
 | <small>4.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(3)</small> |

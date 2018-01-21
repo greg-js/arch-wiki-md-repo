@@ -100,7 +100,7 @@ Xorg searches for installed drivers automatically:
 
 *   If it cannot find the specific driver installed for the hardware (listed below), it first searches for *fbdev* ([xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev)).
 *   If that is not found, it searches for *vesa* ([xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa)), the generic driver, which handles a large number of chipsets but does not include any 2D or 3D acceleration.
-*   If *vesa* is not found, Xorg will fall back to [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"), which includes GLAMOR acceleration (see [modesetting(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4)).
+*   If *vesa* is not found, Xorg will fall back to [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"), which includes GLAMOR acceleration (see [modesetting(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4)).
 
 In order for video acceleration to work, and often to expose all the modes that the GPU can set, a proper video driver is required:
 
@@ -149,7 +149,7 @@ To start the X server without a display manager, see [xinit](/index.php/Xinit "X
 
 **Note:** Arch supplies default configuration files in `/usr/share/X11/xorg.conf.d`, and no extra configuration is necessary for most setups.
 
-Xorg uses a configuration file called `xorg.conf` and files ending in the suffix `.conf` for its initial setup: the complete list of the folders where these files are searched can be found at [[1]](http://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml) or by running [xorg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5), together with a detailed explanation of all the available options.
+Xorg uses a configuration file called `xorg.conf` and files ending in the suffix `.conf` for its initial setup: the complete list of the folders where these files are searched can be found at [[1]](http://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml) or by running [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5), together with a detailed explanation of all the available options.
 
 ### Using .conf files
 
@@ -704,7 +704,7 @@ If you do not fit these requirements, re-enable root rights in `/etc/X11/Xwrappe
 
  `/etc/X11/Xwrapper.config`  `needs_root_rights = *yes*` 
 
-See also [Xorg.wrap(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.wrap.1) and [Systemd/User#Xorg as a systemd user service](/index.php/Systemd/User#Xorg_as_a_systemd_user_service "Systemd/User").
+See also [Xorg.wrap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.wrap.1) and [Systemd/User#Xorg as a systemd user service](/index.php/Systemd/User#Xorg_as_a_systemd_user_service "Systemd/User").
 
 [GDM](/index.php/GDM "GDM") also runs Xorg without root privileges by default when [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") is used.
 
