@@ -140,13 +140,7 @@ Install [cheese](https://www.archlinux.org/packages/?name=cheese) to view.
 
 ```
 
-*   supported by acpid /etc/acpi/handler.sh
-
-```
-systemctl start acpid
-systemctl enable acpid  # keep it workable for next boot
-
-```
+*   supported by [acpid](/index.php/Acpid "Acpid") /etc/acpi/handler.sh
 
 ```
 * Fn+F4: Suspend to ram

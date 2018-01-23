@@ -180,7 +180,7 @@ http_proxy="http://192.168.0.1:80"
 The [PAM](/index.php/PAM "PAM") module [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) loads the variables to be set in the environment from the following files: `/etc/security/pam_env.conf`, `/etc/environment`, `~/.pam_environment`.
 
 *   `/etc/environment` must consist of simple `VARIABLE=VALUE` pairs on separate lines.
-*   `/etc/security/pam_env.conf` and `~/.pam_environment` have the same format: `VARIABLE [DEFAULT=[value]] [OVERRIDE=[value]]` The format allows to expand already defined variables in the values of other variables using `${VARIABLE}`. `@{HOME}` and `@{SHELL}` are special variables that expand to what is defined in `/etc/passwd`. See [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5) for more information.
+*   `/etc/security/pam_env.conf` and `~/.pam_environment` share the same following format: `VARIABLE [DEFAULT=[value]] [OVERRIDE=[value]]` The format allows to expand already defined variables in the values of other variables using `${VARIABLE}`. `@{HOME}` and `@{SHELL}` are special variables that expand to what is defined in `/etc/passwd`. See [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5) for more information.
 
 Here is an example of basic [user directories](/index.php/XDG_Base_Directory_support#User_directories "XDG Base Directory support") configuration:
 

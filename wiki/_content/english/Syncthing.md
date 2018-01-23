@@ -57,7 +57,7 @@ Running Syncthing as a [user service](/index.php/Systemd/User "Systemd/User") en
 
 [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) provides a [GTK+](/index.php/GTK%2B "GTK+") graphical user interface, desktop notifications and integration with the file managers [Nautilus](/index.php/Nautilus "Nautilus"), [Nemo](/index.php/Nemo "Nemo") and Caja. Syncthing can be launched by Syncthing-GTK: use the interface settings to run syncthing-gtk at startup, and to state whether to launch the syncthing daemon.
 
-**Warning:** When launching the syncthing daemon using both systemd and syncthing-gtk, it might happen that two syncthing instances run concurrently leading to high CPU consumption: one launched by syncthing-gtk, and the other (slightly later) by systemd. To solve this, either avoid launching synchting using systemd, or configure syncthing-gtk to wait for the syncthing daemon.
+**Note:** When launching the syncthing daemon using both systemd and syncthing-gtk, it might happen that two syncthing instances run concurrently leading to high CPU consumption: one launched by syncthing-gtk, and the other (slightly later) by systemd. To solve this, either avoid launching synchting using systemd, or configure syncthing-gtk to wait for the syncthing daemon.
 
 ### Web-GUI
 

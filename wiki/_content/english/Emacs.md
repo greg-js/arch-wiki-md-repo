@@ -31,8 +31,9 @@
     *   [6.7 C-M-% and some other bindings do not work in emacs nox](#C-M-.25_and_some_other_bindings_do_not_work_in_emacs_nox)
     *   [6.8 Emacs client gets stuck when switching back to it](#Emacs_client_gets_stuck_when_switching_back_to_it)
     *   [6.9 Emacs-nox output gets messy](#Emacs-nox_output_gets_messy)
-    *   [6.10 Shift + Arrow keys not working in emacs within tmux](#Shift_.2B_Arrow_keys_not_working_in_emacs_within_tmux)
-    *   [6.11 Improper window resizing in KDE](#Improper_window_resizing_in_KDE)
+    *   [6.10 Weirds escaped numbers(utf-8) displaying in emacs terminal](#Weirds_escaped_numbers.28utf-8.29_displaying_in_emacs_terminal)
+    *   [6.11 Shift + Arrow keys not working in emacs within tmux](#Shift_.2B_Arrow_keys_not_working_in_emacs_within_tmux)
+    *   [6.12 Improper window resizing in KDE](#Improper_window_resizing_in_KDE)
 *   [7 Alternatives](#Alternatives)
     *   [7.1 mg](#mg)
     *   [7.2 zile](#zile)
@@ -656,6 +657,21 @@ If you are using Emacs daemon, then you should know that input is blocking. If o
 When working in a terminal, the color, indentation, or anything related to the output might become crazy. This is (probably?) because Emacs was sent a special character at some point which may conflict with the current terminal. There is not much to be done but restarting emacs. If someone has a workaround or a more detailed explanation on the issue, feel free to contribute.
 
 Graphical Emacs does not suffer from this issue.
+
+### Weirds escaped numbers(utf-8) displaying in emacs terminal
+
+Export these values in your .bashrc or .zshrc:
+
+ `$ ~/.bashrc or ~/.zshrc` 
+```
+export LANG\='en_US.UTF-8'
+export LC_ALL\="en_US.UTF-8"
+export TERM\=xterm-256color
+```
+
+It can be a source of errors since in Linux distributions the correct values use lowercase utf (e.g. en_US.utf-8)
+
+To view all available locales use locale -a
 
 ### Shift + Arrow keys not working in emacs within tmux
 

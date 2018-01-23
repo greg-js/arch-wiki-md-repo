@@ -20,12 +20,7 @@ Install [crashplan](https://aur.archlinux.org/packages/crashplan/) from the [AUR
 
 ## Basic Usage
 
-Before accessing CrashPlan's graphical user interface, you should start the service:
-
-```
-# systemctl start crashplan.service
-
-```
+Before accessing CrashPlan's graphical user interface, you should [start](/index.php/Start "Start") the `crashplan.service` unit.
 
 CrashPlan can be configured entirely through its graphical user interface. To start the graphical interface:
 
@@ -34,12 +29,7 @@ $ CrashPlanDesktop
 
 ```
 
-To make CrashPlan automatically start upon system startup:
-
-```
-# systemctl enable crashplan.service
-
-```
+To make CrashPlan automatically start upon system startup, [enable](/index.php/Enable "Enable") the systemd unit.
 
 ## Running Crashplan on a headless server
 
@@ -47,7 +37,7 @@ Running CrashPlan on a headless server is not officially supported. However, it 
 
 The CrashPlan daemon's configuration files (in `/opt/crashplan/conf`) are in an obscure XML format, and they are meant to be edited programmatically by the CrashPlan client. The CrashPlan client and daemon communicate on port 4243 by default. Thus, an easy way of configuring the CrashPlan daemon on a headless server is to create an SSH tunnel:
 
-1.  Start the CrashPlan daemon. On the server: `systemctl start crashplan.service`.
+1.  [Start](/index.php/Start "Start") the CrashPlan daemon on the server.
 2.  Create an SSH tunnel. On the client: `ssh -N -L 4243:localhost:4243 headless.example.com`.
 3.  Start the CrashPlan client. (Again, the executable is named `CrashPlanDesktop`.)
 
@@ -82,12 +72,7 @@ Make sure to create the new tmpdir and verify CrashPlan's user has access to it.
 
 ```
 
-Restart CrashPlan
-
-```
-# systemctl restart crashplan
-
-```
+[Restart](/index.php/Restart "Restart") CrashPlan.
 
 ### Desktop GUI Crashes on startup
 

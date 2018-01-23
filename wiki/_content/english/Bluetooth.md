@@ -559,10 +559,9 @@ try installing [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=p
 
 ### Device does not show up in scan
 
-Some devices using bluetooth low energy do not appear when scanning with bluetoothctl, for example the Logitech MX Master. The simplest way I've found to connect them is by installing [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/), then:
+Some devices using bluetooth low energy do not appear when scanning with bluetoothctl, for example the Logitech MX Master. The simplest way I've found to connect them is by installing [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/), then [start](/index.php/Start "Start") `bluetooth.service` and do:
 
 ```
-# systemctl start bluetooth.service
 # bluetoothctl
 [NEW] Controller (MAC) myhostname [default]
 [bluetooth]# power on

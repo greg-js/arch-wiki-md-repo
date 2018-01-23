@@ -78,7 +78,7 @@ WantedBy=multi-user.target
 
 [Enable](/index.php/Enable "Enable") the new service.
 
-To test the workaround, either reboot or start the service immediately with `systemctl start M2010-sound`. However, note that running the commands a second time during the same session might cause the speakers to stop working; they should work again after a reboot.
+To test the workaround, either reboot or [start](/index.php/Start "Start") the service. However, note that running the commands a second time during the same session might cause the speakers to stop working; they should work again after a reboot.
 
 ### Temperature monitoring and fan control (i8k)
 

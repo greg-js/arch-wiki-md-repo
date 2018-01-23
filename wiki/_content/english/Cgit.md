@@ -209,13 +209,7 @@ threads = 2
 cgi = /usr/lib/cgit/cgit.cgi
 ```
 
-Enable and start the corresponding socket (you could also enable and start the service manually).
-
-```
-# systemctl enable uwsgi@cgit.socket
-# systemctl start uwsgi@cgit.socket
-
-```
+[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the corresponding socket `uwsgi@cgit.socket`.
 
 ## Configuration of cgit
 
@@ -292,7 +286,7 @@ enable-git-config=1
 
 ```
 
-For detailed documentation about the available settings in this configuration file, please see the manpage ([cgitrc(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cgitrc.5)).
+For detailed documentation about the available settings in this configuration file, please see the manpage ([cgitrc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cgitrc.5)).
 
 ### Syntax highlighting
 

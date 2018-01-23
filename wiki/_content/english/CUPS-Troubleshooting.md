@@ -21,6 +21,7 @@ This article covers all non-specific (ie, not related to any one printer) troubl
 *   [4 USB printers](#USB_printers)
     *   [4.1 Conflict with SANE](#Conflict_with_SANE)
     *   [4.2 Conflict with usblp](#Conflict_with_usblp)
+    *   [4.3 Problems with USB autosuspend](#Problems_with_USB_autosuspend)
 *   [5 HP issues](#HP_issues)
     *   [5.1 CUPS: "/usr/lib/cups/backend/hp failed"](#CUPS:_.22.2Fusr.2Flib.2Fcups.2Fbackend.2Fhp_failed.22)
     *   [5.2 CUPS: Job is shown as complete but the printer does nothing](#CUPS:_Job_is_shown_as_complete_but_the_printer_does_nothing)
@@ -212,6 +213,12 @@ usb 3-2: new full speed USB device using uhci_hcd and address 3
 usb 3-2: configuration #1 chosen from 1 choice
 
 ```
+
+### Problems with USB autosuspend
+
+The Linux kernel automatically suspends USB devices when there is driver support and the devices are not in use. This can save power, but some USB devices are not compatible with USB autosuspend and will misbehave at some point. Usually USB mice and keyboards are affected by this problem, however some printers (f.e. Samsung ML-1640) seem to suffer also.. A device is idle whenever the kernel thinks it's not busy doing anything important and thus is a candidate for being suspended. When an USB device considered idle, depends on the driver, however as long as a program keeps its usbfs file open, whether or not any I/O is going on, the device considered to be idle. CUPS seem to open the device only on demand, what leads to autosuspending after some seconds when the file was closed again. Probably due to hardware/firmware bugs, some printers (and other USB devices) think, that they are just disconnected and try to reconnect with new USB device ID, what leads to I/O Error, when CUPS is trying to access previously known device by the old ID. This can lead to all kind of problems, like unrecognized USB printer or print failures after some pages, due to disappeared device. This can be fixed by deactivating autosuspend option for usbcore module.
+
+ `/etc/modprobe.d/usbcore-deactivate-autosuspend.conf`  `options usbcore autosuspend=-1` 
 
 ## HP issues
 

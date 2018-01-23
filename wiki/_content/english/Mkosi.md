@@ -57,7 +57,7 @@ you can boot it with systemd-nspawn:
 or boot it virtualized with qemu and
 
 ```
-$ qemu-system-x86_64 -m 512 -smp 2 -bios /usr/share/ovmf/ovmf_code_x64.bin -drive format=raw,file=image.raw
+$ qemu-system-x86_64 -m 512 -smp 2 -bios /usr/share/ovmf/x64/OVMF_CODE.fd -drive format=raw,file=image.raw
 
 ```
 

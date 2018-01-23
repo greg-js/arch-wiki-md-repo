@@ -440,13 +440,7 @@ Server = http://mirror.hactar.xyz/Vi0L0/xorg112/$arch
 
 Before using this package make sure that both the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group and the [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) package (the one specific to the kernel you use) are installed.
 
-To enable the automatic update, enable the `catalyst-hook.service`:
-
-```
-# systemctl enable catalyst-hook
-# systemctl start catalyst-hook
-
-```
+To enable the automatic update, [enable](/index.php/Enable "Enable") the `catalyst-hook.service`.
 
 You can also use this package to build the `fglrx` module manually. Simply run the `catalyst_build_module` script after the kernel has been updated:
 

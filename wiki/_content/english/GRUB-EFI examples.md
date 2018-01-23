@@ -1,3 +1,7 @@
+Related articles
+
+*   [Grub](/index.php/Grub "Grub")
+
 It is well known that different motherboard manufactures implement UEFI differently. The purpose of this page is to show hardware-specific methods known to work when installing/restoring GRUB in efi mode.
 
 ## Contents
@@ -10,16 +14,18 @@ It is well known that different motherboard manufactures implement UEFI differen
     *   [2.4 M5A97](#M5A97)
 *   [3 Asrock](#Asrock)
     *   [3.1 Z97M Pro4](#Z97M_Pro4)
-*   [4 MSI](#MSI)
-    *   [4.1 B250M PRO-VH](#B250M_PRO-VH)
-*   [5 HP](#HP)
-    *   [5.1 EliteBook 840 G1](#EliteBook_840_G1)
-*   [6 Intel](#Intel)
-    *   [6.1 S5400 Family](#S5400_Family)
-*   [7 Lenovo](#Lenovo)
-    *   [7.1 K450 IdeaCentre](#K450_IdeaCentre)
-    *   [7.2 M92p ThinkCentre](#M92p_ThinkCentre)
-*   [8 VirtualBox](#VirtualBox)
+*   [4 Dell](#Dell)
+    *   [4.1 PowerEdge T30](#PowerEdge_T30)
+*   [5 MSI](#MSI)
+    *   [5.1 B250M PRO-VH](#B250M_PRO-VH)
+*   [6 HP](#HP)
+    *   [6.1 EliteBook 840 G1](#EliteBook_840_G1)
+*   [7 Intel](#Intel)
+    *   [7.1 S5400 Family](#S5400_Family)
+*   [8 Lenovo](#Lenovo)
+    *   [8.1 K450 IdeaCentre](#K450_IdeaCentre)
+    *   [8.2 M92p ThinkCentre](#M92p_ThinkCentre)
+*   [9 VirtualBox](#VirtualBox)
 
 ## Apple Macs
 
@@ -212,6 +218,12 @@ After this launch the UEFI Shell from the UEFI setup/menu (in ASROCK UEFI BIOS, 
 # efibootmgr -c -g -d /dev/sda -p 1 -w -L "Arch Linux (GRUB)" -l /EFI/grub/grubx64.efi
 
 ```
+
+## Dell
+
+### PowerEdge T30
+
+The Dell UEFI implementation needs the [UEFI firmware workaround](https://wiki.archlinux.org/index.php/GRUB/Tips_and_tricks#UEFI_firmware_workaround) to load grub. Otherwise it will drop into a "no OS found" screen.
 
 ## MSI
 

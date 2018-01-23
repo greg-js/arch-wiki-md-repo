@@ -923,7 +923,7 @@ UEFI Signer(s)        : Microsoft Corporation UEFI CA 2011
 
 ```
 
-If the external ROM did not work as it should in the guest, you will have to flash the newer VBIOS image to the GPU.
+If the external ROM did not work as it should in the guest, you will have to flash the newer VBIOS image to the GPU. In some cases it is possible to create your own VBIOS image with UEFI support using [GOPUpd](https://www.win-raid.com/t892f16-AMD-and-Nvidia-GOP-update-No-requests-DIY.html) tool, however this is risky and may result in GPU brick.
 
 **Warning:** Failure during flashing may "brick" your GPU - recovery may be possible, but rarely easy and often requires additional hardware. **DO NOT** flash VBIOS images for other GPU models (different boards may use different VBIOSes, clocks, fan configuration). If it breaks, you get to keep all the pieces.
 

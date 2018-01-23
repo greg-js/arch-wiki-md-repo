@@ -5,7 +5,7 @@ DASH is not [Bash](/index.php/Bash "Bash") compatible, but Bash tries to be most
 DASH shines in:
 
 *   Speed of execution. Roughly [4x times faster](https://unix.stackexchange.com/questions/148035/is-dash-or-some-other-shell-faster-than-bash) than Bash and others.
-*   Very limited resources (disc space, RAM or CPU). As minimalistic - much smaller (134.1 kB vs 6.5 MB installed, 13 kSLOC vs 176 kSLOC) then Bash and others.
+*   Very limited resources (disk space, RAM or CPU). As minimalistic as possible - much smaller (134.1 kB vs 6.5 MB installed, 13 kSLOC vs 176 kSLOC) than Bash and others.
 *   Security. Dash is a long-established, tiny project with simple and long-established functionality; one that is still very much [alive](https://git.kernel.org/cgit/utils/dash/dash.git/log/), and with [many](https://git.kernel.org/cgit/utils/dash/dash.git/stats/?period=q&ofs=10) active developers. Thus, Dash has a much smaller attack surface, while still having many eyes on its code.
 *   If classic `/bin/sh` needed only.
 

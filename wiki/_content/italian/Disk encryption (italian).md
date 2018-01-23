@@ -5,7 +5,7 @@ Articoli correlati
 *   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
 *   [EncFS](/index.php/EncFS "EncFS")
 
-Questo articolo discute le comuni tecniche disponibili in Arch Linux per proteggere in modo crittografico una parte di un disco dati (cartella, partizione, un intero disco, quindi tutti i dati che sono scritti in esso sono automaticamente criptati, e decriptati "al volo" quando sono letti.
+Questo articolo discute le comuni tecniche disponibili in Arch Linux per proteggere in modo crittografico una parte di un disco dati (cartella, partizione, un intero disco), quindi tutti i dati che sono scritti in esso sono automaticamente criptati, e decriptati "al volo" quando sono letti.
 
 "Dischi dati" in questo contesto possono essere hard disk di computer, dispositivi esterni come pen drive USB oppure DVD, così come dischi dati *virtuali* come dispositivi loop-back o cloud *(finché Arch Linux può riconoscerli come dispositivi a blocchi o filesystem)*
 

@@ -24,12 +24,7 @@
 
 As an example, the [dict-freedict-eng-spa](https://aur.archlinux.org/packages/dict-freedict-eng-spa/) package installs an English-Spanish dictionary.
 
-After installation, in order to access the newly installed dictionary, start the `dictd.service`:
-
-```
-# systemctl start dictd.service
-
-```
+After installation, in order to access the newly installed dictionary, [start](/index.php/Start "Start") the `dictd.service`.
 
 And now the English-Spanish dictionary can be queried by executing:
 

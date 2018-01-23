@@ -65,7 +65,7 @@ When using console-based login, the keyring daemon can be started by either [PAM
 
 Start the gnome-keyring-daemon from `/etc/pam.d/login`:
 
-Add `auth optional pam_gnome_keyring.so` at the end of the `auth` section and `session optional pam_gnome_keyring.so auto_start` at the end of the `session` section.
+Add `-auth optional pam_gnome_keyring.so` at the end of the `auth` section and `-session optional pam_gnome_keyring.so auto_start` at the end of the `session` section.
 
  `/etc/pam.d/login` 
 ```
@@ -80,7 +80,9 @@ session    include      system-local-login
 **-session   optional     pam_gnome_keyring.so auto_start**
 ```
 
-Next, add `password optional pam_gnome_keyring.so` to the end of `/etc/pam.d/passwd`.
+For [SDDM](/index.php/SDDM "SDDM"), edit instead the configuration file `/etc/pam.d/sddm`.
+
+Next, for [GDM](/index.php/GDM "GDM"), add `-password optional pam_gnome_keyring.so` to the end of `/etc/pam.d/passwd`.
 
  `/etc/pam.d/passwd` 
 ```

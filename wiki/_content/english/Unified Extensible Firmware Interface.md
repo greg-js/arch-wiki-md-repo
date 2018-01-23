@@ -403,14 +403,14 @@ You can install [ovmf](https://www.archlinux.org/packages/?name=ovmf) from the e
 It is [advised](https://www.linux-kvm.org/downloads/lersek/ovmf-whitepaper-c770f8c.txt) to make a local copy of the non-volatile variable store for your virtual machine:
 
 ```
-$ cp /usr/share/ovmf/ovmf_vars_x64.bin my_uefi_vars.bin
+$ cp /usr/share/ovmf/x64/OVMF_VARS.fd my_uefi_vars.bin
 
 ```
 
 To use the OVMF firmware and this variable store, add following to your QEMU command:
 
 ```
--drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/ovmf_code_x64.bin \
+-drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/x64/OVMF_CODE.fd \
 -drive if=pflash,format=raw,file=my_uefi_vars.bin
 
 ```
@@ -418,7 +418,7 @@ To use the OVMF firmware and this variable store, add following to your QEMU com
 For example:
 
 ```
-$ qemu-system-x86_64 -enable-kvm -m 1G -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/ovmf_code_x64.bin -drive if=pflash,format=raw,file=efi_vars.bin …
+$ qemu-system-x86_64 -enable-kvm -m 1G -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/x64/OVMF_CODE.fd -drive if=pflash,format=raw,file=my_uefi_vars.bin …
 
 ```
 

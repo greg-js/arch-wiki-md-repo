@@ -182,7 +182,7 @@ trying to open X11 display ":0"
    XAUTHORITY=/home/user/.Xauthority
 ```
 
-If it works you can simply shut down the daemon by hitting CTRL-C and run it using `sudo /etc/rc.d/spacenavd start`. On a systemd-only system the following service script can be used to start the daemon with `sudo systemctl start spacenavd.service`
+If it works you can simply shut down the daemon by hitting CTRL-C and run it using `sudo /etc/rc.d/spacenavd start`. On a systemd-only system the following service script can be used to [start](/index.php/Start "Start") the daemon.
 
  `/etc/systemd/system/spacenavd.service` 
 ```

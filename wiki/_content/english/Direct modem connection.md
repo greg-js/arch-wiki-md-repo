@@ -17,7 +17,7 @@ Due to a lack of developers for dialup issues, connecting Arch to the Internet w
 
 ## Analog modem
 
-To be able to use a Hayes-compatible, external, analog modem, you need to at least have the [ppp](https://www.archlinux.org/packages/?name=ppp) package installed. Modify the file `/etc/ppp/options` to suit your needs, following instructions located in [pppd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pppd.8). You will need to define a chat script to supply your username and password to the ISP after the initial connection has been established. The manpages for pppd and chat have examples in them that should suffice to get a connection up and running if you are up for it. With udev, your serial ports usually are `/dev/tts/0` and `/dev/tts/1`.
+To be able to use a Hayes-compatible, external, analog modem, you need to at least have the [ppp](https://www.archlinux.org/packages/?name=ppp) package installed. Modify the file `/etc/ppp/options` to suit your needs, following instructions located in [pppd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pppd.8). You will need to define a chat script to supply your username and password to the ISP after the initial connection has been established. The manpages for pppd and chat have examples in them that should suffice to get a connection up and running if you are up for it. With udev, your serial ports usually are `/dev/tts/0` and `/dev/tts/1`.
 
 **Tip:** Read [#Dial-up without a dialer](#Dial-up_without_a_dialer).
 
@@ -78,37 +78,9 @@ If you have any problems, remember to check the logfiles!
 
 These instructions are relevant to you only if your PC itself is supposed to manage the connection to your ISP. You do not need to do anything but define a correct default gateway if you are using a separate router of some sort to do the grunt work.
 
-Before you can use your DSL online connection, you will have to physically install the network card that is supposed to be connected to the DSL-Modem into your computer. After loading the appropiate [kernel module](/index.php/Kernel_module "Kernel module") for your newly installed network card, you should install the [rp-pppoe](https://www.archlinux.org/packages/?name=rp-pppoe) package and run the `pppoe-setup` script to configure your connection. After you have entered all the data, you can connect and disconnect your line with
+Before you can use your DSL online connection, you will have to physically install the network card that is supposed to be connected to the DSL-Modem into your computer. After loading the appropiate [kernel module](/index.php/Kernel_module "Kernel module") for your newly installed network card, you should install the [rp-pppoe](https://www.archlinux.org/packages/?name=rp-pppoe) package and run the `pppoe-setup` script to configure your connection. After you have entered all the data, you can connect and disconnect your line by [starting](/index.php/Start "Start") or [stoping](/index.php/Stop "Stop") the `adsl.service`, respectively. The setup is usually easy and straightforward, but feel free to read the manpages for hints.
 
-```
-# systemctl start adsl
-
-```
-
-and
-
-```
-# systemctl stop adsl
-
-```
-
-respectively. The setup is usually easy and straightforward, but feel free to read the manpages for hints.
-
-If you want to automatically 'dial in' at boot, issue command
-
-```
-# systemctl enable adsl
-
-```
-
-or
-
-```
-# systemctl disable adsl
-
-```
-
-to remove auto 'dial in' at boot.
+If you want to automatically 'dial in' at boot, issue command [enable](/index.php/Enable "Enable") the `adsl.service`.
 
 ## Dial-up without a dialer
 

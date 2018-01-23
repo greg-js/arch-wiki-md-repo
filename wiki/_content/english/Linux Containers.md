@@ -348,11 +348,11 @@ Once logged, treat the container like any other linux system, set the root passw
 To attach to a container:
 
 ```
-# lxc-attach -n CONTAINER_NAME
+# lxc-attach -n CONTAINER_NAME --clear-env
 
 ```
 
-It works nearly the same as lxc-console, but you are automatically accessing root prompt inside the container, bypassing login.
+It works nearly the same as lxc-console, but you are automatically accessing root prompt inside the container, bypassing login. Without the `--clear-env` flag, the host will pass its own environment variables into the container (including `$PATH`, so some commands will not work when the containers are based on another distribution).
 
 ### Advanced usage
 

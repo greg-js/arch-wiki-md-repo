@@ -23,23 +23,13 @@ The `rpcbind` service must be set to insecure mode:
 
  `/etc/conf.d/rpcbind`  `RPCBIND_ARGS="-i"` 
 
-This change requires a restart:
-
-```
-# systemctl restart rpcbind
-
-```
+This change requires a [restart](/index.php/Restart "Restart") of `rpcbind.service`.
 
 ## Usage
 
 ### dtlogin
 
-The [cdesktopenv](https://aur.archlinux.org/packages/cdesktopenv/) package supplies the `dtlogin` service which upon starting will launch the CDE login manager:
-
-```
-# systemctl start dtlogin
-
-```
+The [cdesktopenv](https://aur.archlinux.org/packages/cdesktopenv/) package supplies the `dtlogin` systemd service which upon starting will launch the CDE login manager.
 
 ### xinit
 

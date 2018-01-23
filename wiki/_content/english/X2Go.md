@@ -12,13 +12,17 @@
     *   [2.4 Start X2Go server daemon](#Start_X2Go_server_daemon)
 *   [3 Desktop Shadowing](#Desktop_Shadowing)
 *   [4 Client configuration](#Client_configuration)
-*   [5 Various](#Various)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Authentication error](#Authentication_error)
-    *   [6.2 No selection screen in x2goclient](#No_selection_screen_in_x2goclient)
-    *   [6.3 Sessions do not logoff correctly](#Sessions_do_not_logoff_correctly)
-    *   [6.4 Shared folders do not mount (Windows Clients)](#Shared_folders_do_not_mount_.28Windows_Clients.29)
-*   [7 Links](#Links)
+    *   [4.1 Common mistakes](#Common_mistakes)
+    *   [4.2 Exchange data between client and server (desktop)](#Exchange_data_between_client_and_server_.28desktop.29)
+    *   [4.3 To leave a session temporarily](#To_leave_a_session_temporarily)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Authentication error](#Authentication_error)
+    *   [5.2 No selection screen in x2goclient](#No_selection_screen_in_x2goclient)
+    *   [5.3 Sessions do not logoff correctly](#Sessions_do_not_logoff_correctly)
+    *   [5.4 Shared folders do not mount (Windows Clients)](#Shared_folders_do_not_mount_.28Windows_Clients.29)
+    *   [5.5 Workaround for failing compositing window manager for remote session](#Workaround_for_failing_compositing_window_manager_for_remote_session)
+    *   [5.6 /bin/bash: No such file or directory when connect (or what ever shell you use)](#.2Fbin.2Fbash:_No_such_file_or_directory_when_connect_.28or_what_ever_shell_you_use.29)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -66,73 +70,35 @@ Note, you do not need x2godesktopsharing to access "local desktop" of user "foo"
 
 ## Client configuration
 
-Make sure you can open a ssh-session from the client to the server
+Make sure you can open an SSH session from the client to the server:
 
 ```
-ssh username@host
-
-```
-
-Then run X2Go client itself
-
-```
-x2goclient
+$ ssh *username@host*
 
 ```
 
-You can now create several sessions, which then appear on the right side and can be selected by a mouse click. Each entry consists of your username, hostname, IP, and port for SSH-connection. Furthermore you can define several speed profiles (coming from modem up to LAN) and the desktop environment you want to start remotely.
-
-**Common mistakes:** Do not simply choose the defaults of KDE or Gnome, since the executables startkde or startgnome are usually not in the PATH when logging in using ssh. Use full paths to startkde or startgnome. You can also start openbox or another window manager.
-
-You should be asked for your password for your user at the server now and after login you will see the X2Go logo for a short time, and -- voila -- the desktop.
-
-**Exchange data between client and server(desktop)** On the x2goclient (e.g. laptop) local directories could be shared. The server will use fuse and sshfs to access this directory and mount it to a subdirectory media of your home directory on the server. This enables you to have access to laptop data on your server or to exchange files. It is also possible to mount these shares automatically at each session start.
-
-**To leave a session temporarily** Another special feature of X2Go is the possibility of suspending a session. This means you can leave a session on one client and reopen it even from another client at the same point. This can be used to to start a session in the LAN and to reopen it later on a laptop. The session data are stored and administered in a postgres database on the server in the meanwhile. The state of the sessions is protocolled by a process named x2gocleansessions.
-
-## Various
-
-**Workaround for failing compositing window manager for remote session**
-
-This is useful for situations, when the computer running x2goserver is used also for local sessions with e.g. compiz as the window manager. For remote connections with x2goclient, compiz fails to load and metacity should be used instead. The following is for GNOME, but could be modified for other desktop environments. (Getting compiz ready is not part of this how-to.)
-
-Create /usr/local/share/applications/gnome-wm-test.desktop:
+Then run X2Go client itself:
 
 ```
-[Desktop Entry]
-Type=Application
-Encoding=UTF-8
-Name=gnome-wm-test
-Exec=/usr/local/bin/gnome-wm-test.sh
-NoDisplay=true
+$ x2goclient
 
 ```
 
-Create script /usr/local/bin/gnome-wm-test.sh:
+You can now create several sessions, which then appear on the right side and can be selected by a mouse click. Each entry consists of your username, hostname, IP, and port for SSH connection. Furthermore you can define several speed profiles (coming from modem up to LAN) and the desktop environment you want to start remotely.
 
-```
-#!/bin/sh
-# Script for choosing compiz when possible, otherwise metacity
-# Proper way to use this script is to set the key to mk-gnome-wm
-# /desktop/gnome/session/required_components/windowmanager
-xdpyinfo 2> /dev/null | grep -q "^ *Composite$" 2> /dev/null
-IS_X_COMPOSITED=$?
-if [ $IS_X_COMPOSITED -eq 0 ] ; then
-    gtk-window-decorator &
-    WM="compiz ccp --indirect-rendering --sm-client-id $DESKTOP_AUTOSTART_ID"
-else
-    WM="metacity --sm-client-id=$DESKTOP_AUTOSTART_ID"
-fi
-exec bash -c "$WM"
+### Common mistakes
 
-```
+Do not simply choose the defaults of KDE or Gnome, since the executables *startkde* and *startgnome* are usually not in the `$PATH` when logging in using SSH. Use full paths to *startkde* or *startgnome*. You can also start [openbox](/index.php/Openbox "Openbox") or another window manager.
 
-Modify the following gconf key to start the session with gnome-wm-test window manager:
+You should be asked for your password for your user at the server now and after login you will see the X2Go logo for a short time, and the desktop.
 
-```
-$ gconftool-2 --type string --set /desktop/gnome/session/required_components/windowmanager "gnome-wm-test"
+### Exchange data between client and server (desktop)
 
-```
+On the X2Go client (e.g. laptop) local directories could be shared. The server will use [fuse](/index.php/Fuse "Fuse") and [sshfs](/index.php/Sshfs "Sshfs") to access this directory and mount it to a subdirectory media of your home directory on the server. This enables you to have access to laptop data on your server or to exchange files. It is also possible to mount these shares automatically at each session start.
+
+### To leave a session temporarily
+
+Another special feature of X2Go is the possibility of suspending a session. This means you can leave a session on one client and reopen it even from another client at the same point. This can be used to to start a session in the LAN and to reopen it later on a laptop. The session data are stored and administered in a [SQLite](/index.php/SQLite "SQLite") database on the server in the meanwhile. The state of the sessions is protocolled by a process named *x2gocleansessions*.
 
 ## Troubleshooting
 
@@ -188,8 +154,53 @@ And simply replace `c:\Users\User\.x2go\etc\ssh_host_dsa_key` and `c:\Users\User
 
 Other workarrounds from [[4]](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=1009) might help, too.
 
-## Links
+### Workaround for failing compositing window manager for remote session
+
+This is useful for situations, when the computer running x2goserver is used also for local sessions with e.g. compiz as the window manager. For remote connections with x2goclient, compiz fails to load and metacity should be used instead. The following is for GNOME, but could be modified for other desktop environments. (Getting compiz ready is not part of this how-to.)
+
+Create /usr/local/share/applications/gnome-wm-test.desktop:
+
+```
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=gnome-wm-test
+Exec=/usr/local/bin/gnome-wm-test.sh
+NoDisplay=true
+
+```
+
+Create script /usr/local/bin/gnome-wm-test.sh:
+
+```
+#!/bin/sh
+# Script for choosing compiz when possible, otherwise metacity
+# Proper way to use this script is to set the key to mk-gnome-wm
+# /desktop/gnome/session/required_components/windowmanager
+xdpyinfo 2> /dev/null | grep -q "^ *Composite$" 2> /dev/null
+IS_X_COMPOSITED=$?
+if [ $IS_X_COMPOSITED -eq 0 ] ; then
+    gtk-window-decorator &
+    WM="compiz ccp --indirect-rendering --sm-client-id $DESKTOP_AUTOSTART_ID"
+else
+    WM="metacity --sm-client-id=$DESKTOP_AUTOSTART_ID"
+fi
+exec bash -c "$WM"
+
+```
+
+Modify the following gconf key to start the session with gnome-wm-test window manager:
+
+```
+$ gconftool-2 --type string --set /desktop/gnome/session/required_components/windowmanager "gnome-wm-test"
+
+```
+
+### /bin/bash: No such file or directory when connect (or what ever shell you use)
+
+In you ssh configuration, if you chroot a user, this user need to have his own /bin directory inside his chrooted directory. If not, you will not be able to connect.
+
+## See also
 
 *   [Screenshot KDE-Session](http://wiki.archlinux.de/?title=Bild:X2go-1.png)
 *   [Screenshot configuration dialog](http://wiki.archlinux.de/?title=Bild:X2go-2.png)
-*   [Project page](http://x2go.org)

@@ -119,10 +119,7 @@ editor   0
 
 ```
 
-**Note:**
-
-*   The first 2 options can be changed in the boot menu itself and changes will be stored as EFI variables.
-*   *systemd-boot* does not recognize tabs in its configuration files, only spaces can follow the keywords.
+**Note:** The first 2 options can be changed in the boot menu itself and changes will be stored as EFI variables.
 
 **Tip:** A basic configuration file example is located at `/usr/share/systemd/bootctl/loader.conf`.
 

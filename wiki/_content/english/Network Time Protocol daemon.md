@@ -141,7 +141,7 @@ Both services are tied to the system's resolver, and will start synchronizing wh
 
 [Enable](/index.php/Enable "Enable") the daemon with `ntpd.service`. See also [#Running in a chroot](#Running_in_a_chroot).
 
-**Note:** The systemd command *timedatectl* can only be used to control [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd"), executing `timedatectl set-ntp 1` as root will inadvertedly stop a running `ntpd.service`.[[1]](http://lists.freedesktop.org/archives/systemd-devel/2015-April/030277.html)
+**Note:** The systemd command *timedatectl* can only be used to control [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd"). Executing `timedatectl set-ntp 1` as root will inadvertedly stop a running `ntpd.service`.[[1]](http://lists.freedesktop.org/archives/systemd-devel/2015-April/030277.html)
 
 Use *ntpq* to see the list of configured peers and status of synchronization:
 

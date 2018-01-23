@@ -94,7 +94,7 @@ List scan simply prints the specified addresses without sending a single packet 
 
 ### Default options
 
-If you specify only an IP address or damain name and no other options:
+If you specify only an IP address or domain name and no other options:
 
 ```
 $ nmap 74.207.244.221
@@ -269,7 +269,7 @@ $ nmap --scan-delay 3.1 192.168.56.1
 
 ```
 
-For other timing and parallelization options, see [nmap(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmap.1).
+For other timing and parallelization options, see [nmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmap.1).
 
 ### Specify targets input from a list file
 

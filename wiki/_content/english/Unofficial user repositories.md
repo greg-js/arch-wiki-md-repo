@@ -30,18 +30,18 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [3.1.5 archstrike](#archstrike)
         *   [3.1.6 archzfs](#archzfs)
         *   [3.1.7 ashleyis](#ashleyis)
-        *   [3.1.8 atom](#atom)
-        *   [3.1.9 aurpackages](#aurpackages)
-        *   [3.1.10 aur-archlinux](#aur-archlinux)
-        *   [3.1.11 blackeagle-pre-community](#blackeagle-pre-community)
-        *   [3.1.12 boyska64](#boyska64)
-        *   [3.1.13 catalyst](#catalyst)
-        *   [3.1.14 catalyst-hd234k](#catalyst-hd234k)
-        *   [3.1.15 city](#city)
-        *   [3.1.16 coderkun-aur](#coderkun-aur)
-        *   [3.1.17 coderkun-aur-audio](#coderkun-aur-audio)
-        *   [3.1.18 decryptedepsilon](#decryptedepsilon)
-        *   [3.1.19 eatabrick](#eatabrick)
+        *   [3.1.8 aurpackages](#aurpackages)
+        *   [3.1.9 aur-archlinux](#aur-archlinux)
+        *   [3.1.10 blackeagle-pre-community](#blackeagle-pre-community)
+        *   [3.1.11 boyska64](#boyska64)
+        *   [3.1.12 catalyst](#catalyst)
+        *   [3.1.13 catalyst-hd234k](#catalyst-hd234k)
+        *   [3.1.14 city](#city)
+        *   [3.1.15 coderkun-aur](#coderkun-aur)
+        *   [3.1.16 coderkun-aur-audio](#coderkun-aur-audio)
+        *   [3.1.17 decryptedepsilon](#decryptedepsilon)
+        *   [3.1.18 eatabrick](#eatabrick)
+        *   [3.1.19 eschwartz](#eschwartz)
         *   [3.1.20 gustawho](#gustawho)
         *   [3.1.21 herecura](#herecura)
         *   [3.1.22 holo](#holo)
@@ -269,19 +269,6 @@ Server = http://arch.ashleytowns.id.au/repo/$arch
 
 ```
 
-#### atom
-
-*   **Maintainer:** Nicola Squartini ([tensor5](https://github.com/tensor5))
-*   **Upstream page:** [https://github.com/tensor5/arch-atom](https://github.com/tensor5/arch-atom)
-*   **Description:** Atom text editor and Electron
-*   **Key-ID:** B0544167
-
-```
-[atom]
-Server = http://noaxiom.org/$repo/$arch
-
-```
-
 #### aurpackages
 
 *   **Maintainer:** Mark Vainomaa <mikroskeem@mikroskeem.eu>
@@ -418,6 +405,18 @@ Server = http://decryptedepsilon.bl.ee/repo/$arch/
 ```
 [eatabrick]
 Server = http://repo.eatabrick.org/$arch
+
+```
+
+#### eschwartz
+
+*   **Maintainer:** [Eli Schwartz](https://www.archlinux.org/people/trusted-users/#eschwartz)
+*   **Description:** Personal repo with AUR packages and some core packages from git (including glibc and pacman). Contains debug packages.
+*   **Key-ID:** Not needed, as maintainer is a TU
+
+```
+[eschwartz]
+Server = https://pkgbuild.com/~eschwartz/repo/$arch
 
 ```
 

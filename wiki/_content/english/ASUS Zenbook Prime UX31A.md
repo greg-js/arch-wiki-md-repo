@@ -109,13 +109,6 @@ echo 2 > /sys/class/leds/asus::kbd_backlight/brightness
 
 Users of [systemd](/index.php/Systemd "Systemd") can use the unit file included in the package.
 
-```
-# systemctl daemon-reload
-# systemctl start asus-kbd-backlight.service
-# systemctl enable asus-kbd-backlight.service
-
-```
-
 Now you can easily change keyboard backlight in terminal:
 
 ```

@@ -63,11 +63,12 @@ Before making changes to a hard disk, you may want to backup the partition table
 
 ### Using dd
 
-The MBR is stored in the the first 512 bytes of the disk. It consist of 3 parts:
+The MBR is stored in the the first 512 bytes of the disk. It consists of 4 parts:
 
-1.  The first 446 bytes contain the boot loader.
-2.  The next 64 bytes contain the partition table (4 entries of 16 bytes each, one entry for each primary partition).
-3.  The last 2 bytes contain an identifier
+1.  The first 440 bytes contain the bootstrap code (boot loader).
+2.  The next 6 bytes contain the disk signature.
+3.  The next 64 bytes contain the partition table (4 entries of 16 bytes each, one entry for each primary partition).
+4.  The last 2 bytes contain a boot signature.
 
 To save the MBR as `mbr_file.img`:
 
@@ -92,10 +93,10 @@ To restore (be careful, this destroys the existing partition table and with it a
 
 **Warning:** Restoring the MBR with a mismatching partition table will make your data unreadable and nearly impossible to recover. If you simply need to reinstall the bootloader see their respective pages as they also employ the [DOS compatibility region](http://www.pixelbeat.org/docs/disk/): [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux").
 
-If you only want to restore the boot loader, but not the primary partition table entries, just restore the first 446 bytes of the MBR:
+If you only want to restore the boot loader, but not the primary partition table entries, just restore the first 440 bytes of the MBR:
 
 ```
-# dd if=*/path/to/mbr_file.img* of=/dev/sd*X* bs=446 count=1
+# dd if=*/path/to/mbr_file.img* of=/dev/sd*X* bs=440 count=1
 
 ```
 
@@ -106,10 +107,10 @@ To restore only the partition table, one must use:
 
 ```
 
-To erase the MBR (may be useful if you have to do a full reinstall of another operating system) only the first 446 bytes are zeroed because the rest of the data contains the partition table:
+To erase the MBR bootstrap code (may be useful if you have to do a full reinstall of another operating system) only the first 440 bytes need to be zeroed:
 
 ```
-# dd if=/dev/zero of=/dev/sd*X* bs=446 count=1
+# dd if=/dev/zero of=/dev/sd*X* bs=440 count=1
 
 ```
 

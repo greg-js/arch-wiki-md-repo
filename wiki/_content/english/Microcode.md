@@ -45,24 +45,25 @@ These updates must be enabled by adding `/boot/intel-ucode.img` as the **first i
 
 #### Manual method
 
-Alternatively, users that manage their GRUB config file manually can add `/intel-ucode.img` or `/boot/intel-ucode.img` to `grub.cfg` as follows:
+Alternatively, users that manage their GRUB config file manually can add `/intel-ucode.img` or `/boot/intel-ucode.img` as follows:
 
+ `/boot/grub/grub.cfg` 
 ```
-[...]
-    echo	'Loading initial ramdisk ...'
-    initrd	/intel-ucode.img /initramfs-linux.img
-[...]
-
+...
+echo 'Loading initial ramdisk'
+initrd	/intel-ucode.img /initramfs-linux.img
+...
 ```
 
 Repeat it for each menu entry.
 
-**Warning:** This file will automatically be overwritten by `/usr/bin/grub-mkconfig` during certain updates negating the changes. It is strongly recommended to use the configuration directory in `/etc/grub.d/` to manage your GRUB configuration needs.
+**Note:** This file will be overwritten by *grub-mkconfig* during certain updates negating the changes. It is strongly recommended to use the configuration directory in `/etc/grub.d/` to manage your GRUB configuration needs.
 
 ### systemd-boot
 
-Use the `initrd` option twice in `/boot/loader/entries/*entry*.conf`:
+Use the `initrd` option twice as follows:
 
+ `/boot/loader/entries/*entry*.conf` 
 ```
 title   Arch Linux
 linux   /vmlinuz-linux
@@ -141,9 +142,9 @@ To merge both images into one image named `initramfs-merged.img`, the following 
 Now, edit `/etc/lilo.conf` to load the new image.
 
 ```
-[...]
-   initrd=/boot/initramfs-merged.img
-[...]
+...
+initrd=/boot/initramfs-merged.img
+...
 
 ```
 
@@ -156,7 +157,7 @@ And run `lilo` as root:
 
 ## Verifying that microcode got updated on boot
 
-Use `/usr/bin/dmesg` to see if the microcode has been updated:
+Use *dmesg* to see if the microcode has been updated:
 
 ```
 $ dmesg | grep microcode
@@ -218,7 +219,7 @@ Users may consult either Intel or AMD at the following links to see if a particu
 It is possible to find out if the `intel-ucode.img` contains a microcode image for the running CPU with [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/).
 
 *   Install [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) (changing initrd is not required for detection)
-*   Install [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/) from the [AUR](/index.php/AUR "AUR")
+*   Install [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/)
 *   `# modprobe cpuid`
 *   `# bsdtar -Oxf /boot/intel-ucode.img | iucode_tool -tb -lS -`
 
@@ -229,7 +230,7 @@ It is possible to find out if the `intel-ucode.img` contains a microcode image f
 
 ## Enabling Intel early microcode loading in custom kernels
 
-In order for early loading to work in custom kernels, "CPU microcode loading support" needs to be compiled into the kernel, NOT compiled as a module. This will enable the "Early load microcode" prompt which should be set to "Y".
+In order for early loading to work in custom kernels, "CPU microcode loading support" needs to be compiled into the kernel, **not** compiled as a module. This will enable the "Early load microcode" prompt which should be set to "Y".
 
 ```
 CONFIG_BLK_DEV_INITRD=Y

@@ -34,6 +34,7 @@ Related articles
     *   [6.5 Recommended security settings](#Recommended_security_settings)
     *   [6.6 Toggling Fullscreen](#Toggling_Fullscreen)
     *   [6.7 Unable to type '<' character](#Unable_to_type_.27.3C.27_character)
+    *   [6.8 Black rectangle instead of window](#Black_rectangle_instead_of_window)
 
 ## Installation
 
@@ -457,3 +458,16 @@ If pressing `<` on a remote client emits the `>` character, try remapping the in
 $ x0vncserver -RemapKeys="0x3c->0x2c"
 
 ```
+
+### Black rectangle instead of window
+
+Most probably it means that you use application that strictly requires Composite Xorg extension. For example webkit based app: midori, psi-plus, etc.
+
+You should restart vncserver in this case using something like following:
+
+```
+ vncserver -geometry ... -depth 24 :1 +extension Composite
+
+```
+
+It looks like Composite extension in VNC will work only with 24bit depth.

@@ -1,3 +1,9 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [GNOME](/index.php/GNOME "GNOME")
+*   [LightDM](/index.php/LightDM "LightDM")
+
 [DDE](https://www.deepin.org/en/?language=en) (Deepin Desktop Environment) is the default desktop environment originally created for the linux Deepin distribution.
 
 ## Contents
@@ -32,20 +38,6 @@ greeter-session=lightdm-deepin-greeter
 ```
 
 Note that a valid home directory must exist for a user other than root for the greeter to work.
-
-To have the greeter run at startup:
-
-```
-systemctl enable lightdm.service
-
-```
-
-To immediately start the desktop environment:
-
-```
-systemctl start lightdm.service
-
-```
 
 ### Using xinitrc
 

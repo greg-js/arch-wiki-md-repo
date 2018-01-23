@@ -376,12 +376,7 @@ $ export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 
 ### Execute Windows binaries with wine implicitly
 
-The wine package installs a binfmt file which will allow you to run Windows programs directly (e.g. `./myprogram.exe` will launch as if you had typed `wine ./myprogram.exe`). All you have to do in order to use this is to start the `systemd-binfmt` service after installing the wine package:
-
-```
-# systemctl start systemd-binfmt
-
-```
+The wine package installs a binfmt file which will allow you to run Windows programs directly (e.g. `./myprogram.exe` will launch as if you had typed `wine ./myprogram.exe`). All you have to do in order to use this is to [start](/index.php/Start "Start") the `systemd-binfmt` service after installing the wine package.
 
 ### Dual Head with different resolutions
 

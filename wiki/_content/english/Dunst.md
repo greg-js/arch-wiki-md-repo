@@ -2,7 +2,7 @@ Related articles
 
 *   [Desktop Notifications](/index.php/Desktop_Notifications "Desktop Notifications")
 
-[Dunst](http://knopwob.org/dunst/index.html) is a lightweight replacement for the notification-daemons provided by most desktop environments.
+[Dunst](https://dunst-project.org/) is a lightweight replacement for the notification-daemons provided by most desktop environments.
 
 ## Contents
 

@@ -4,9 +4,10 @@
 
 *   [1 Setup](#Setup)
     *   [1.1 Required software](#Required_software)
-    *   [1.2 Accessing LXD as a unprivileged user](#Accessing_LXD_as_a_unprivileged_user)
-    *   [1.3 LXD Networking](#LXD_Networking)
-        *   [1.3.1 Example network configuration](#Example_network_configuration)
+    *   [1.2 Alternative installation method](#Alternative_installation_method)
+    *   [1.3 Accessing LXD as a unprivileged user](#Accessing_LXD_as_a_unprivileged_user)
+    *   [1.4 LXD Networking](#LXD_Networking)
+        *   [1.4.1 Example network configuration](#Example_network_configuration)
 *   [2 Basic usage](#Basic_usage)
     *   [2.1 First steps](#First_steps)
 *   [3 Advance usage](#Advance_usage)
@@ -30,6 +31,25 @@ $ lxc-checkconfig
 ```
 
 See [Linux Containers#Enable support to run unprivileged containers (optional)](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_containers_.28optional.29 "Linux Containers") if you want to run *unprivileged* containers. Otherwise see [#Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS).
+
+### Alternative installation method
+
+An alternative method of installation is via [snapd](/index.php/Snapd "Snapd"), by installing the [snapd](https://aur.archlinux.org/packages/snapd/) package and running:
+
+```
+$ sudo snap install lxd
+$ sudo lxd init
+$ sudo usermod -a -G lxd $USER
+
+```
+
+To test the installation, run:
+
+```
+$ lxc launch ubuntu:16.04
+$ lxc list
+
+```
 
 ### Accessing LXD as a unprivileged user
 

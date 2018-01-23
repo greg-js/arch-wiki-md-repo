@@ -115,12 +115,7 @@ netctl 的完整命令清单请参阅：[netctl(1)](http://jlk.fjfi.cvut.cz/arch
 
 #### 有线连接
 
-[安装](/index.php/Install "Install") [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) 包，并且[启动/启用](/index.php/Start/enable "Start/enable") `netctl-ifplugd@*interface*.service`
-
-```
-systemd 单元。网线插入/拔出时，DHCP 配置文件将被启动/停止。
-
-```
+[安装](/index.php/Install "Install") [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) 包，并且[启动/启用](/index.php/Start/enable "Start/enable") `netctl-ifplugd@*interface*.service` systemd 单元。网线插入/拔出时，DHCP 配置文件将被启动/停止。
 
 *   `netctl-ifplugd@*interface*.service` 优先启用使用了 [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP") 的配置文件。
 *   若要自动启动一个静态 IP 配置文件，需要在其中增加 `ExcludeAuto=no` 配置项。

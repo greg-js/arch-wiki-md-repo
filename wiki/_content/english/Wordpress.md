@@ -164,11 +164,16 @@ The WordPress installation procedure will use the URL in the address field of yo
 4.  Fill in you database information created in the previous section
 5.  Click "Submit".
 
-If you installed WordPress from the Official repository, then this setup procedure will not have the correct permissions to create the wp-config.php file used by WordPress. You will have to do this step yourself as root using information WordPress will provide.
+If you installed WordPress from the Official repository, then this setup procedure will not have the correct permissions to create the `wp-config.php` file used by WordPress. You will have to do this step yourself as root using information WordPress will provide.
 
-A page will appear saying WordPress can not write the wp-config.php file. Copy the text in the edit box and open `/usr/share/webapps/wordpress/wp-config.php` as root in your text editor. Paste the copied text into the editor and save the file.
+A page will appear saying WordPress can not write the `wp-config.php` file. Copy the text in the edit box and open `/usr/share/webapps/wordpress/wp-config.php` as `root` in your text editor. Paste the copied text into the editor and save the file.
 
-After that, you will have to change permissions of the /usr/share/webapps/wordpress/ and all the files inside it to user `http` and group `http` by using chown so that the webserver can access it.
+After that, you will have to change permissions of the `/usr/share/webapps/wordpress/` and all the files inside it to user `http` and group `http` by using chown so that the webserver can access it:
+
+```
+# chown http:http -R /usr/share/webapps/wordpress/
+
+```
 
 Finally, Click "Run the install" and WordPress will populate the database with your information. Once complete, you will be shown "Success!" page. Click the login button to finish your installation.
 

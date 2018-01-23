@@ -14,7 +14,7 @@
 
 If your KWallet password is the same as your username password, you can unlock your wallet automatically on login.
 
-[Install](/index.php/Install "Install") [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) package. Then, if you are not using [SDDM](/index.php/SDDM "SDDM"), edit your login manager pam file and add the lines under their corresponding sections:
+[Install](/index.php/Install "Install") [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) package. Then edit your login manager pam file and add the lines under their corresponding sections:
 
 ```
 auth            optional        pam_kwallet5.so

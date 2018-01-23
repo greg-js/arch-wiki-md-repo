@@ -638,7 +638,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **Plowshare** — A set of command-line tools designed for managing file-sharing websites (aka Hosters).
 
-	[https://github.com/mcrapet/plowshare](https://github.com/mcrapet/plowshare) || [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/)
+	[https://github.com/mcrapet/plowshare](https://github.com/mcrapet/plowshare) || [plowshare](https://www.archlinux.org/packages/?name=plowshare)
 
 *   **[pyLoad](/index.php/PyLoad "PyLoad")** — Downloader written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.
 

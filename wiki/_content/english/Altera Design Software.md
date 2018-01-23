@@ -291,13 +291,7 @@ MACAddress=xx:xx:xx:xx:xx:xx
 
 ```
 
-where `xx:xx:xx:xx:xx:xx` is the licensed networking device's MAC address and `hostname` is your machine's hostname. Finally ensure `systemd-networkd` service is enabled and started:
-
-```
-# systemctl enable systemd-networkd.service
-# systemctl start systemd-networkd.service
-
-```
+where `xx:xx:xx:xx:xx:xx` is the licensed networking device's MAC address and `hostname` is your machine's hostname. Finally ensure `systemd-networkd` service is [enabled](/index.php/Enable "Enable") and [started](/index.php/Start "Start").
 
 The Quartus Prime Standard Edition license validation routine also uses the deprecated networking tool `ifconfig` to validate your networking devices MAC address as per your Quartus Prime license. The deprecated networking package `net-tools` contains the `ifconfig` tool. Thus one must also install the `net-tools` package for Quartus Prime Standard Edition licensing validation success.
 

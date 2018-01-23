@@ -199,56 +199,7 @@ we need to edit how the service calls bind.
 
 ```
 
-Stop the old named service
-
-```
- systemctl stop named.service
-
-```
-
-Disable the old named service
-
-```
- systemctl disable named.service
-
-```
-
-Enable the new chroot named service
-
-```
- systemctl enable named-chroot.service
-
-```
-
-Now reload systemd
-
-```
- systemctl daemon-reload
-
-```
-
-Then [start](/index.php/Start "Start") `named-chroot.service` using
-
-```
- systemctl start named-chroot.service
-
-```
-
-Check the service status
-
-```
- systemctl status named-chroot.service
-
-```
-
-If you see any errors, reboot your system. Then check again and it should then be loading the **named-chroot.service** automatically and not **named.service**.
-
-You can check all enabled services using
-
-```
- sudo systemctl list-unit-files | grep enabled
-
-```
+How, restart the systemd service.
 
 ## See also
 

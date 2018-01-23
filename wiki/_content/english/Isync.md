@@ -12,9 +12,10 @@ Synchronization is based on unique message identifiers (UIDs), so no identificat
 *   [4 Automatic synchronization](#Automatic_synchronization)
     *   [4.1 Integration with notmuch](#Integration_with_notmuch)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Step #1: Get the certificates](#Step_.231:_Get_the_certificates)
-    *   [5.2 Step #2: Setup mbsync](#Step_.232:_Setup_mbsync)
-    *   [5.3 Exchange 2003](#Exchange_2003)
+    *   [5.1 SSL error](#SSL_error)
+        *   [5.1.1 Step #1: Get the certificates](#Step_.231:_Get_the_certificates)
+        *   [5.1.2 Step #2: Setup mbsync](#Step_.232:_Setup_mbsync)
+    *   [5.2 BAD Command with Exchange 2003](#BAD_Command_with_Exchange_2003)
 *   [6 External links](#External_links)
 
 ## Installing
@@ -181,6 +182,8 @@ This modification assumes that you have already setup notmuch for your user. If 
 
 ## Troubleshooting
 
+### SSL error
+
 If you get certificate related errors like
 
 ```
@@ -191,7 +194,7 @@ SSL error connecting pop.mail.com (193.222.111.111:143): error:00000012:lib(0):f
 
 you may need to retrieve the server's certificates manually in order for mbsync to correctly verify it.
 
-### Step #1: Get the certificates
+#### Step #1: Get the certificates
 
 ```
 
@@ -325,7 +328,7 @@ cp /usr/share/ca-certificates/mozilla/Equifax_Secure_CA.crt ~/.cert/Equifax_Secu
 
 ```
 
-### Step #2: Setup mbsync
+#### Step #2: Setup mbsync
 
 Configure mbsync to use that certificate:
 
@@ -338,7 +341,7 @@ CertificateFile ~/.cert/imap.gmail.com.pem
 
 ```
 
-### Exchange 2003
+### BAD Command with Exchange 2003
 
 When connecting to an MS Exchange 2003 server, there could be problems when using pipelining (i.e. executing multiple imap commands concurrently). Such an issue could look as follows:
 

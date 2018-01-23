@@ -16,7 +16,7 @@ The benefit is that, for a regular port scan, it may appear as the service of th
 
 [iptables](https://www.archlinux.org/packages/?name=iptables) is a pre-requisite to install and configure before the content of this article. Read [iptables](/index.php/Iptables "Iptables") for more details about iptables.
 
-The module **recent** in iptables is used to dynamically create list of IP addresses based on their (successful or unsuccessful) port connections. Using **recent** the firewall can find out if a certain IP address has knocked the correct ports, and if that is the case, open certain port(s).
+The module **recent** in iptables is used to dynamically create list of IP addresses based on their (successful or unsuccessful) port connections. Using **recent**, the firewall can find out if a certain IP address has knocked the correct ports, and if that is the case, open certain port(s).
 
 A session with port knocking may look like this:
 
@@ -192,7 +192,6 @@ Second, it is checked if SSHD accepts connections and then the script is execute
 $ ssh user@host # No response (Ctrl+c to exit)
 ^C
 $ sh knock.sh host 8881 7777 9991
-$ history -r
 $ ssh user@host           # Now logins are allowed
 user@host's password:
 Last login: Tue Aug 20 23:00:27 2013 from host
@@ -210,7 +209,7 @@ logout
 Connection to 192.168.1.1 closed.
 ```
 
-**Warning:** Security gained from using the above information cannot be guaranteed. This is only a way to mask the existence of a service at a certain port. Other security measures should be used. If you use the above information for any purpose, you do so at your own risk.
+**Note:** Security gained from using the above information cannot be guaranteed. This is only a way to mask the existence of a service at a certain port. Other security measures should be used. If you use the above information for any purpose, you do so at your own risk.
 
 ## See also
 

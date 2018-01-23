@@ -523,12 +523,7 @@ Bluez5 is the latest [Bluetooth](/index.php/Bluetooth "Bluetooth") stack. It is 
 
 Once the required packages are installed, use this procedure to play audio with a bluetooth headset. The high level overview of the procedure is to pair the headset, connect the headset, configure the player and pulse audio controller and then play audio.
 
-Start the bluetooth service as root:
-
-```
-# systemctl start bluetooth
-
-```
+[Start](/index.php/Start "Start") the bluetooth service as root.
 
 Verify Bluetooth is started
 

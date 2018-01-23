@@ -732,6 +732,12 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   [Doom](https://en.wikipedia.org/wiki/Doom_(1993_video_game) "wikipedia:Doom (1993 video game)"): the famous shooter from ID Software has several ports for Linux. None of the id-engine games have copyleft game resources, only the game engine code was open sourced. See [[1]](http://doom.wikia.com/wiki/Source_port) for details.
 
 *   Doom 1 Demo data – [doom1-wad](https://aur.archlinux.org/packages/doom1-wad/)
+*   **[Brutal Doom](/index.php/Brutal_Doom "Brutal Doom")** — A gore-themed gameplay mod for Doom that was created in 2010 by Marcos Abenante (Sergeant_Mark_IV).
+
+	[http://www.moddb.com/mods/brutal-doom](http://www.moddb.com/mods/brutal-doom) || [brutal-doom](https://aur.archlinux.org/packages/brutal-doom/)
+
+**Note:** Instructions at [Brutal_Doom#Installation](/index.php/Brutal_Doom#Installation "Brutal Doom") show how to modify [gzdoom-git](https://aur.archlinux.org/packages/gzdoom-git/) directly without [brutal-doom](https://aur.archlinux.org/packages/brutal-doom/). [openal](https://www.archlinux.org/packages/?name=openal) is required for in-game audio.
+
 *   **Freedoom** — Project aimed at creation of free Doom data files.
 
 	[http://www.nongnu.org/freedoom/](http://www.nongnu.org/freedoom/) || [freedoom1](https://aur.archlinux.org/packages/freedoom1/), [freedoom2](https://aur.archlinux.org/packages/freedoom2/)
@@ -988,7 +994,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[MegaGlest](https://en.wikipedia.org/wiki/MegaGlest "wikipedia:MegaGlest")** — Fork of Glest, a 3D real-time strategy game in a fantastic world.
 
-	[https://github.com/megaglest](https://github.com/megaglest) || [megaglest](https://www.archlinux.org/packages/?name=megaglest)
+	[https://megaglest.org](https://megaglest.org) || [megaglest](https://www.archlinux.org/packages/?name=megaglest)
 
 *   **[Netpanzer](https://en.wikipedia.org/wiki/Netpanzer "wikipedia:Netpanzer")** — Real-time strategy game like Command and Conquer but without building bases.
 

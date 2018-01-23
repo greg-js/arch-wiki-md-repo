@@ -575,7 +575,14 @@ $ find /path/to/android-root -name .repopickle_config -exec rm {} +
 
 Sometimes, beginning to load an AVD will cause an error message similar to this to be displayed, or the loading process will appear to finish but no AVD will load and no error message will be displayed.
 
-The AVD loads an incorrect version of libstdc++, you can remove the folder libstdc++ from `~/Android/Sdk/emulator/lib64/` (for 64-bit) or `~/Android/Sdk/emulator/lib/` (for 32-bit) , e.g.:
+The AVD loads an incorrect version of libstdc++, you can remove the folder libstdc++ from `~/.android-sdk/emulator/lib64` (for 64-bit) or `~/.android-sdk/emulator/lib` (for 32-bit) , e.g.:
+
+```
+$ rm -r ~/.android-sdk/emulator/lib64/libstdc++
+
+```
+
+Note that in versions before Android Studio 3.0, this directory was in a different location:
 
 ```
 $ rm -r ~/Android/Sdk/emulator/lib64/libstdc++

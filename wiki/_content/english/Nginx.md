@@ -39,6 +39,7 @@ This article describes how to set up nginx and how to optionally integrate it wi
     *   [6.2 Accessing local IP redirects to localhost](#Accessing_local_IP_redirects_to_localhost)
     *   [6.3 Error: The page you are looking for is temporarily unavailable. Please try again later. (502 Bad Gateway)](#Error:_The_page_you_are_looking_for_is_temporarily_unavailable._Please_try_again_later._.28502_Bad_Gateway.29)
     *   [6.4 Error: No input file specified](#Error:_No_input_file_specified)
+    *   [6.5 Warning: Could not build optimal types_hash](#Warning:_Could_not_build_optimal_types_hash)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -315,11 +316,11 @@ Restart `nginx.service` to enable the new configuration.
 
 FastCGI, also FCGI, is a protocol for interfacing interactive programs with a web server. FastCGI is a variation on the earlier CGI (Common Gateway Interface); FastCGI's main aim is to reduce the overhead associated with interfacing the web server and CGI programs, allowing a server to handle more web page requests at once.
 
-FastCGI technology is introduced into nginx to work with many external tools, i.e.: Perl, [PHP](/index.php/PHP "PHP") and [Python](/index.php/Python "Python").
+FastCGI technology is introduced into nginx to work with many external tools, e.g. [Perl](/index.php/Perl "Perl"), [PHP](/index.php/PHP "PHP") and [Python](/index.php/Python "Python").
 
 #### PHP implementation
 
-[PHP-FPM](http://php-fpm.org/) is the recommended solution to run as FastCGI server for PHP. [Install](/index.php/Install "Install") the [php](https://www.archlinux.org/packages/?name=php) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) packages and configure PHP as described on the [PHP](/index.php/PHP "PHP") page.
+[PHP-FPM](http://php-fpm.org/) is the recommended solution to run as FastCGI server for [PHP](/index.php/PHP "PHP"). [Install](/index.php/Install "Install") the [php](https://www.archlinux.org/packages/?name=php) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) packages and configure PHP as described on the [PHP](/index.php/PHP "PHP") page.
 
 The main configuration file of PHP-FPM is `/etc/php/php-fpm.conf`, then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the systemd unit `php-fpm.service`.
 
@@ -337,6 +338,7 @@ Inside each `server` block serving a PHP web application should appear a `locati
 ```
 location ~ \.php$ {
      try_files $uri $document_root$fastcgi_script_name =404;
+     fastcgi_param HTTP_PROXY "";
      fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
      fastcgi_index index.php;
      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
@@ -354,7 +356,7 @@ location ~ \.(php**|html|htm**)$ {
 
 ```
 
-Non *.php* extension processing in PHP-FPM should be explicitly added in `/etc/php/php-fpm.d/www.conf`:
+Non *.php* extension processing in PHP-FPM should also be explicitly added in `/etc/php/php-fpm.d/www.conf`:
 
 ```
 security.limit_extensions = .php .html .htm
@@ -406,7 +408,7 @@ You need to [restart](/index.php/Restart "Restart") the `php-fpm.service` and `n
 To test the FastCGI implementation, create a new PHP file inside the `root` folder containing:
 
 ```
-<?php phpinfo();
+<?php var_export($_SERVER)?>
 
 ```
 
@@ -887,6 +889,27 @@ or you should create a group and user to start the php-cgi:
 ```
 
 5\. If you are running php-fpm with chrooted nginx ensure `chroot` is set correctly within `/etc/php-fpm/php-fpm.d/www.conf` (or `/etc/php-fpm/php-fpm.conf` if working on older version)
+
+### Warning: Could not build optimal types_hash
+
+When starting the `nginx.service`, the process might log the message:
+
+```
+[warn] 18872#18872: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+
+```
+
+To fix this warning, inside the `http` block include the following:
+
+ `/etc/nginx/nginx.conf` 
+```
+http {
+    types_hash_max_size 4096;
+    server_names_hash_bucket_size 128;
+    ...
+}
+
+```
 
 ## See also
 

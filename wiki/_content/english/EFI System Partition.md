@@ -17,7 +17,7 @@ It is an OS independent partition that acts as the storage place for the EFI boo
         *   [3.1.3 Using incron](#Using_incron)
         *   [3.1.4 Using mkinitcpio hook](#Using_mkinitcpio_hook)
         *   [3.1.5 Using mkinitcpio hook (2)](#Using_mkinitcpio_hook_.282.29)
-        *   [3.1.6 Using Pacman hooks](#Using_Pacman_hooks)
+        *   [3.1.6 Using pacman hook](#Using_pacman_hook)
 *   [4 Known issues](#Known_issues)
     *   [4.1 ESP on RAID](#ESP_on_RAID)
 *   [5 See also](#See_also)
@@ -143,7 +143,7 @@ Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") 
 
  `/usr/local/bin/efistub-update` 
 ```
-#!/usr/bin/env bash
+#!/bin/sh
 cp -af /boot/vmlinuz-linux *esp*/EFI/arch/
 cp -af /boot/initramfs-linux.img *esp*/EFI/arch/
 cp -af /boot/initramfs-linux-fallback.img *esp*/EFI/arch/
@@ -206,7 +206,7 @@ Edit the file `/etc/mkinitcpio.d/linux.preset` :
 # mkinitcpio preset file for the 'linux' package
 
 # Directory to copy the kernel, the initramfs...
-ESP_DIR="/boot/efi/EFI/arch"
+ESP_DIR="*esp*/EFI/arch"
 
 ALL_config="/etc/mkinitcpio.conf"
 ALL_kver="/boot/vmlinuz-linux"
@@ -227,7 +227,7 @@ Then create the file `/etc/initcpio/install/esp-update-linux` which need to be e
  `/etc/initcpio/install/esp-update-linux` 
 ```
 # Directory to copy the kernel, the initramfs...
-ESP_DIR="/boot/efi/EFI/arch"
+ESP_DIR="*esp*/EFI/arch"
 
 build() {
 	cp -af /boot/vmlinuz-linux "${ESP_DIR}/"
@@ -240,7 +240,6 @@ help() {
 This hook copies the kernel to the ESP partition
 HELPEOF
 }
-
 ```
 
 To test that, just run:
@@ -252,53 +251,53 @@ To test that, just run:
 
 ```
 
-#### Using Pacman hooks
+#### Using pacman hook
 
-A last option relies on the Pacman's hooks that are run at the end of the transaction, usually immediately after the mkinitcpio hooks.
+A last option relies on the [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") that are run at the end of the transaction.
 
 The first file is a hook that monitors the relevant files, and it is run if they were modified in the former transaction.
 
- `/usr/share/libalpm/hooks/999-kernel-efi-copy.hook` 
+ `/etc/pacman.d/hooks/999-kernel-efi-copy.hook` 
 ```
 [Trigger]
 Type = File
 Operation = Install
 Operation = Upgrade
 Target = boot/vmlinuz*
-Target = boot/initramfs*
 Target = usr/lib/initcpio/*
 Target = boot/intel-ucode.img
 
 [Action]
 Description = Copying linux and initramfs to EFI directory...
 When = PostTransaction
-Exec = /usr/share/libalpm/scripts/kernel-efi-copy.sh
+Exec = /usr/local/bin/kernel-efi-copy.sh
 
 ```
 
-The second file is the script itself:
+The second file is the script itself. Create the file and make it [executable](/index.php/Executable "Executable"):
 
- `/usr/share/libalpm/scripts/kernel-efi-copy.sh` 
+ `/usr/local/bin/kernel-efi-copy.sh` 
 ```
-#!/bin/sh
+#!/usr/bin/env bash
 #
 # Copy kernel and initramfs images to EFI directory
 #
 
-BOOT="/boot"
-EFI="$BOOT/efi/EFI/arch"
+ESP_DIR="*esp*/EFI/arch"
 
-for file in `ls "$BOOT"/vmlinuz*`
+for file in /boot/vmlinuz*
 do
-        cp -v "$file" "$EFI"/$(basename "$file").efi
-        if [ $? != 0 ]; then exit 1; fi
+        cp -af "$file" "$ESP_DIR/$(basename "$file").efi"
+        [[ $? -ne 0 ]] && exit 1
 done
 
-for file in `ls "$BOOT"/{initramfs*,intel-ucode.img}`
+for file in /boot/initramfs*
 do
-        cp -v "$file" "$EFI"/$(basename "$file")
-        if [ $? != 0 ]; then exit 1; fi
+        cp -af "$file" "$ESP_DIR/"
+        [[ $? -ne 0 ]] && exit 1
 done
+
+[[ -e /boot/intel-ucode.img ]] && cp -af /boot/intel-ucode.img "$ESP_DIR/"
 
 exit 0
 

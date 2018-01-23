@@ -29,7 +29,7 @@ Copy the file with a new extension (this is just so you keep the original ovpn f
 Install the [openvpn-update-resolv-conf](https://github.com/masterkorp/openvpn-update-resolv-conf) script. It needs to be saved for example at `/etc/openvpn/update-resolv-conf` and made executable with [chmod](/index.php/Chmod "Chmod"). There is also an AUR package: [openvpn-update-resolv-conf](https://aur.archlinux.org/packages/openvpn-update-resolv-conf/) which will take care of the script installation for you. This script ensures that all traffic to/from the internet goes through the VPN and protects you against DNS leaks.
 
 ```
-# chmod 755 /etc/openvpn/update-resolv-conf.sh
+# chmod 755 /etc/openvpn/update-resolv-conf
 
 ```
 

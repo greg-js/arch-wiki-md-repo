@@ -394,7 +394,7 @@ Indeed `pvresize` will refuse to shrink a PV if it has allocated extents after w
 
 ###### Move physical extents
 
-Before moving free extents to the end of the volume, one must run `# pvdisplay -v -m` to see physical segments. In the below example, there is one physical volume on `/dev/sdd1`, one volume group `vg1` and one logical volume `backup`.
+Before moving free extents to the end of the volume, one must run `pvdisplay -v -m` to see physical segments. In the below example, there is one physical volume on `/dev/sdd1`, one volume group `vg1` and one logical volume `backup`.
 
  `# pvdisplay -v -m` 
 ```
@@ -442,13 +442,13 @@ Here, the first free segment is from 0 to 153600 and leaves us with 153601 free 
 **Note:**
 
 *   this command moves 92468 PEs (399668-307200) **from** the last segment **to** the first segment. This is possible as the first segment encloses 153600 free PEs, which can contain the 92467 moved PEs.
-*   the `--alloc anywhere` option is used as we move PEs inside the same partition. In case of different partitions, the command would look something like this: `# pvmove /dev/sdb1:1000-1999 /dev/sdc1:0-999`
+*   the `--alloc anywhere` option is used as we move PEs inside the same partition. In case of different partitions, the command would look something like this: `# pvmove /dev/sdb1:1000-1999 /dev/sdc1:0-999` 
 *   this command may take a long time (one to two hours) in case of large volumes. It might be a good idea to run this command in a [Tmux](/index.php/Tmux "Tmux") or [GNU Screen](/index.php/GNU_Screen "GNU Screen") session. Any unwanted stop of the process could be fatal.
 *   once the operation is complete, run [fsck](/index.php/Fsck "Fsck") to make sure your file system is valid.
 
 ###### Resize physical volume
 
-Once all your free physical segments are on the last physical extent, run `# vgdisplay` and see your free PE.
+Once all your free physical segments are on the last physical extent, run `vgdisplay` and see your free PE.
 
 Then you can now run again the command:
 
@@ -713,7 +713,7 @@ If you have LVM volumes not activated via the [initramfs](/index.php/Initramfs "
 
 From [lvmcache(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvmcache.7):
 
-	*The cache logical volume type uses a small and fast LV to improve the performance of a large and slow LV. It does this by storing the frequently used blocks on the faster LV. LVM refers to the small fast LV as a cache pool LV. The large slow LV is called the origin LV. Due to requirements from dm-cache (the kernel driver), LVM further splits the cache pool LV into two devices - the cache data LV and cache metadata LV. The cache data LV is where copies of data blocks are kept from the origin LV to increase speed. The cache metadata LV holds the accounting information that specifies where data blocks are stored (e.g. on the origin LV or on the cache data LV). Users should be familiar with these LVs if they wish to create the best and most robust cached logical volumes. All of these associated LVs must be in the same VG.*
+	The cache logical volume type uses a small and fast LV to improve the performance of a large and slow LV. It does this by storing the frequently used blocks on the faster LV. LVM refers to the small fast LV as a cache pool LV. The large slow LV is called the origin LV. Due to requirements from dm-cache (the kernel driver), LVM further splits the cache pool LV into two devices - the cache data LV and cache metadata LV. The cache data LV is where copies of data blocks are kept from the origin LV to increase speed. The cache metadata LV holds the accounting information that specifies where data blocks are stored (e.g. on the origin LV or on the cache data LV). Users should be familiar with these LVs if they wish to create the best and most robust cached logical volumes. All of these associated LVs must be in the same VG.
 
 #### Create cache
 
@@ -755,7 +755,7 @@ This commits any pending writes still in the cache back to the origin LV, then d
 
 From [lvmraid(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvmraid.7):
 
-	*[lvm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.8) RAID is a way to create a Logical Volume (LV) that uses multiple physical devices to improve performance or tolerate device failures. In LVM, the physical devices are Physical Volumes (PVs) in a single Volume Group (VG).*
+	[lvm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.8) RAID is a way to create a Logical Volume (LV) that uses multiple physical devices to improve performance or tolerate device failures. In LVM, the physical devices are Physical Volumes (PVs) in a single Volume Group (VG).
 
 LVM RAID supports RAID 0, RAID 1, RAID 4, RAID 5, RAID 6 and RAID 10\. See [Wikipedia:Standard RAID levels](https://en.wikipedia.org/wiki/Standard_RAID_levels "wikipedia:Standard RAID levels") for details on each level.
 
@@ -878,7 +878,7 @@ Cause:
 
 ```
 
-Fix: assuming you already tried to activate the volume group with `# vgchange -ay *vg*`, and are receiving the Input/output errors:
+Fix: assuming you already tried to activate the volume group with `vgchange -ay *vg*`, and are receiving the Input/output errors:
 
 ```
 # vgchange -an *volume group name*

@@ -345,19 +345,7 @@ You can test your configuration first by running thinkfan manually (as root):
 
 and see how it reacts to the load level of whatever other programs you have running.
 
-When you have it configured correctly, the thinkfan daemon can be started by running (as root):
-
-```
-# systemctl start thinkfan
-
-```
-
-or by automatically loading it on system startup:
-
-```
-# systemctl enable thinkfan
-
-```
+When you have it configured correctly, [start/enable](/index.php/Start/enable "Start/enable") `thinkfan.service`.
 
 ### Old packages which have gone missing
 
