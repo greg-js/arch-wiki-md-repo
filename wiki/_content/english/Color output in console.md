@@ -380,7 +380,7 @@ They go with multiple preconfigured presets that can be changed, and new can be 
 
 	[http://cwrapper.sourceforge.net/](http://cwrapper.sourceforge.net/) || [cw](https://aur.archlinux.org/packages/cw/)
 
-*   **ccze** — A fast log colorizer written in C, intended to be adrop-in replacement for colorize
+*   **ccze** — A fast log colorizer written in C, intended to be a drop-in replacement for colorize
 
 	[https://github.com/cornet/ccze/](https://github.com/cornet/ccze/) || [ccze](https://www.archlinux.org/packages/?name=ccze)
 

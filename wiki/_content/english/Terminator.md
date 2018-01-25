@@ -9,8 +9,7 @@
 *   [4 Managing profiles](#Managing_profiles)
     *   [4.1 Drag and Drop](#Drag_and_Drop)
     *   [4.2 More key commands](#More_key_commands)
-*   [5 Plugins](#Plugins)
-*   [6 See also](#See_also)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -112,12 +111,7 @@ man terminator
 
 ```
 
-## Plugins
-
-Terminator also supports plugins. See [writing Terminator plugins](http://www.tenshu.net/2010/04/writing-terminator-plugins.html) for more details.
-
 ## See also
 
 *   [Terminator](http://gnometerminator.blogspot.com/p/introduction.html) - Official site
-*   [Writing Terminator plugins](http://www.tenshu.net/2010/04/writing-terminator-plugins.html) - Terminator Plugin HOWTO
 *   [Terminator BZR](http://code.launchpad.net/terminator/) - Source code

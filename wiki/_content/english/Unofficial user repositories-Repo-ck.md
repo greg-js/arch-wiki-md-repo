@@ -104,9 +104,10 @@ Repo [statistics](http://repo-ck.com/stats.pdf) are available (package and CPU p
 
 ## Mirrors
 
-There is at least one mirror available:
+There are two mirrors available now:
 
-*   [https://mirror.archlinux.no/repo-ck/](https://mirror.archlinux.no/repo-ck/)
+*   [https://mirror.archlinux.no/repo-ck](https://mirror.archlinux.no/repo-ck)
+*   [https://archd.hkno.it](https://archd.hkno.it)
 
 ## Troubleshooting
 

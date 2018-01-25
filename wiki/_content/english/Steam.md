@@ -6,11 +6,7 @@ Related articles
 *   [Games](/index.php/Games "Games")
 *   [List of games](/index.php/List_of_games "List of games")
 
-From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam (software)"):
-
-	Steam is a digital distribution, digital rights management, multiplayer and communications platform developed by Valve Corporation. It is used to distribute games and related media online, from small independent developers to larger software houses.
-
-[Steam](http://store.steampowered.com/about/) is best known as the platform needed to play Source Engine games (e.g. Half-Life 2, Counter-Strike). Today it offers many games from many other developers.
+[Steam](http://store.steampowered.com/about/) is a popular game distribution platform by Valve.
 
 ## Contents
 
@@ -21,6 +17,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Directory structure](#Directory_structure)
     *   [3.2 Launch options](#Launch_options)
+        *   [3.2.1 Examples](#Examples)
     *   [3.3 Big Picture Mode without a window manager](#Big_Picture_Mode_without_a_window_manager)
     *   [3.4 Steam skins](#Steam_skins)
         *   [3.4.1 Creating skins](#Creating_skins)
@@ -34,7 +31,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam
 
 ## Installation
 
-**Note:** Arch Linux is **not** officially supported, the only officially supported distribution is Ubuntu. [[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366)
+**Note:** Steam does not support Arch Linux, the only supported distribution is Ubuntu 12.04 LTS and newer with Unity, Gnome, or KDE. [[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366)
 
 Enable the [Multilib](/index.php/Multilib "Multilib") repository and [install](/index.php/Install "Install") the [steam](https://www.archlinux.org/packages/?name=steam) package.
 
@@ -89,15 +86,20 @@ steam -> ~/.local/share/Steam
 
 ```
 
-As you can see Steam stores its files in `~/.local/share/Steam/` by default. You can change where Steam stores its content by moving `~/.local/share/Steam/` and starting Steam, which will prompt you if you have moved your Steam content. You can then browse to the new location and Steam will update the symlinks in `~/.steam/`.
+As you can see Steam stores its files in `~/.local/share/Steam/` by default. You can change where Steam stores its content by moving `~/.local/share/Steam/` and starting Steam, which will prompt you if you have moved your Steam content. You can then select the new location and Steam will update the symlinks in `~/.steam/`.
 
 Games are installed in `~/.steam/root/steamapps/common/`.
 
 ### Launch options
 
-To set custom launch options for a game, right-click on it in your library, select Properties and click on the Set Launch Options button.
+When you launch a Steam game, Steam executes its **launch command** in a [Bash](/index.php/Bash "Bash") shell. To let you alter the launch command Steam provides **launch options**, which can be set for a game by right-clicking on it in your library, selecting Properties and clicking on *Set Launch Options*.
 
-When your launch options contain `%command%` Steam will replace it with the game's launch command, otherwise Steam will prefix the launch command to your launch options. The resulting command is then executed in a [Bash](/index.php/Bash "Bash") shell, allowing you to set environment variables before `%command%`.
+By default Steam simply appends your option string to the launch command. To set environment variables or pass the launch command as an argument to another command you can use the `%command%` substitute.
+
+#### Examples
+
+*   only arguments: `-foo`
+*   environment variables: `FOO=bar BAZ=bar %command% -baz`
 
 ### Big Picture Mode without a window manager
 

@@ -94,7 +94,7 @@ For most purposes, the technical differences between TrueType and OpenType can b
 
 The typesetting application, *TeX,* and its companion font software, *Metafont,* render characters using their own methods. Some of the file extensions used for fonts by these two programs are `*pk`, `*gf`, `mf` and `vf`.
 
-*FontForge,* a font editing application, can store fonts in its native text-based format, `sfd`, *s*pline *f*ont *d*atabase.
+[FontForge](https://fontforge.github.io/en-US/) ([fontforge](https://www.archlinux.org/packages/?name=fontforge)), a font editing application, can store fonts in its native text-based format, `sfd`, *s*pline *f*ont *d*atabase.
 
 The [SVG](http://www.w3.org/TR/SVG/fonts.html) format also has its own font description method.
 
@@ -319,27 +319,29 @@ The [Archfonts Python script](https://github.com/ternstor/distrofonts) can be us
 
 #### Monospaced
 
-Here are some suggestions. Every user has their own favorite, so experiment to find yours. If you are in a hurry, you read Dan Benjamin's blog post: [*Top 10 Programming Fonts*](http://hivelogic.com/articles/top-10-programming-fonts).
-
-Here is a long list of fonts by Trevor Lowing: [http://www.lowing.org/fonts/](http://www.lowing.org/fonts/).
-
-A comparison with images on Slant: [What are the best programming fonts?](http://www.slant.co/topics/67/~what-are-the-best-programming-fonts)
-
-And a Stack Overflow question with some images: [Recommended fonts for programming](http://stackoverflow.com/questions/4689/recommended-fonts-for-programming)
+For more monospaced fonts see [#Bitmap](#Bitmap) and [#Families](#Families).
 
 *   [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) ([ttf-anonymous-pro](https://www.archlinux.org/packages/?name=ttf-anonymous-pro), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 *   [Envy Code R](https://damieng.com/blog/2008/05/26/envy-code-r-preview-7-coding-font-released) ([ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/))
 *   Fantasque Sans Mono ([ttf-fantasque-sans-git](https://aur.archlinux.org/packages/ttf-fantasque-sans-git/))
-*   [Fira Mono](https://en.wikipedia.org/wiki/Fira_Sans "wikipedia:Fira Sans") ([ttf-fira-mono](https://www.archlinux.org/packages/?name=ttf-fira-mono)) – designed for Firefox OS
+*   [Fira Mono](https://en.wikipedia.org/wiki/Fira_Sans "wikipedia:Fira Sans") ([ttf-fira-mono](https://www.archlinux.org/packages/?name=ttf-fira-mono), [otf-fira-mono](https://www.archlinux.org/packages/?name=otf-fira-mono)) – designed for Firefox OS
 *   [FreeMono](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
 *   [Hack](https://sourcefoundry.org/hack/) ([ttf-hack](https://www.archlinux.org/packages/?name=ttf-hack))
 *   [Inconsolata](https://en.wikipedia.org/wiki/Inconsolata "wikipedia:Inconsolata") ([ttf-inconsolata](https://www.archlinux.org/packages/?name=ttf-inconsolata), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - inspired by Consolas
-*   [Inconsolata-g](https://en.wikipedia.org/wiki/Inconsolata "wikipedia:Inconsolata") ([ttf-inconsolata-g](https://aur.archlinux.org/packages/ttf-inconsolata-g/)) - adds some programmer-friendly modifications
+*   [Inconsolata-g](https://leonardo-m.livejournal.com/77079.html) ([ttf-inconsolata-g](https://aur.archlinux.org/packages/ttf-inconsolata-g/)) - adds some programmer-friendly modifications
 *   [Lucida Typewriter](https://en.wikipedia.org/wiki/Lucida_Typewriter "wikipedia:Lucida Typewriter") (included in package [jre](https://aur.archlinux.org/packages/jre/))
-*   [Monaco](https://en.wikipedia.org/wiki/Monaco_(typeface) ([ttf-monaco](https://aur.archlinux.org/packages/ttf-monaco/)) - Popular programming font on OSX/Textmate
+*   [Menlo](https://en.wikipedia.org/wiki/Menlo_(typeface) (derivative: [ttf-meslo](https://aur.archlinux.org/packages/ttf-meslo/)) - default monospaced font of OS X
+*   [Monaco](https://en.wikipedia.org/wiki/Monaco_(typeface) ([ttf-monaco](https://aur.archlinux.org/packages/ttf-monaco/)) - proprietary font designed by Apple for OS X
 *   Monofur ([ttf-monofur](https://aur.archlinux.org/packages/ttf-monofur/))
 *   [Mononoki](https://madmalik.github.io/mononoki) ([ttf-mononoki](https://aur.archlinux.org/packages/ttf-mononoki/))
 *   [Source Code Pro](https://en.wikipedia.org/wiki/Source_Code_Pro "wikipedia:Source Code Pro") ([adobe-source-code-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-code-pro-fonts))
+
+Relevant websites:
+
+*   [Dan Benjamin's Top 10 Programming Fonts](http://hivelogic.com/articles/top-10-programming-fonts).
+*   [Trevor Lowing's font list](http://www.lowing.org/fonts/)
+*   [Slant: What are the best programming fonts?](https://www.slant.co/topics/67/~what-are-the-best-programming-fonts)
+*   [Stack Overflow: Recommended fonts for programming](https://stackoverflow.com/questions/4689/recommended-fonts-for-programming)
 
 #### Sans-serif
 

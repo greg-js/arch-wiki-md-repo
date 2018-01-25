@@ -89,40 +89,38 @@ sets the time to May 26th, year 2014, 11:13 and 54 seconds.
 
 There are two time standards: **localtime** and [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time "wikipedia:Coordinated Universal Time") (**UTC**). The localtime standard is dependent on the current *time zone*, while UTC is the *global* time standard and is independent of time zone values. Though conceptually different, UTC is also known as GMT (Greenwich Mean Time).
 
-The standard used by hardware clock (CMOS clock, the time that appears in BIOS) is defined by the operating system. By default, Windows uses localtime, macOS uses UTC, and UNIX-like operating systems vary. An OS that uses the UTC standard, generally, will consider CMOS (hardware clock) time a UTC time (GMT, Greenwich time) and make an adjustment to it while setting the System time on boot according to your time zone.
+The standard used by the hardware clock (CMOS clock, the BIOS time) is set by the operating system. By default, *Windows* uses localtime, *macOS* uses UTC, and *UNIX-like* systems vary. An OS that uses the UTC standard will generally consider the hardware clock as UTC and make an adjustment to it to set the OS time at boot according to the time zone.
 
-**Note:** If `/etc/adjtime` is not present, [systemd](/index.php/Systemd "Systemd") assumes the hardware clock is set to UTC.
+If multiple operating systems are installed on a machine, they will all derive the current time from the same hardware clock: it is recommended to adopt a unique standard for the hardware clock to avoid conflicts accross systems and set it to UTC. Otherwise, if the hardware clock is set to *localtime*, more than one operating system may adjust it after a [DST](https://en.wikipedia.org/wiki/Daylight_saving_time "wikipedia:Daylight saving time") change for example, thus resulting in an over-correction; problems may also arise when traveling between different time zones and using one of the operating systems to reset the system/hardware clock.
 
-If you have multiple operating systems installed in the same machine, they will all derive the current time from the same hardware clock: for this reason you must make sure that all of them see the hardware clock as providing time in the same chosen standard, or some of them will perform the time zone adjustement for the system clock, while others will not. In particular, it is recommended to set the hardware clock to UTC, in order to avoid conflicts between the installed operating systems. For example, if the hardware clock was set to *localtime*, more than one operating system may adjust it after a [DST](https://en.wikipedia.org/wiki/Daylight_saving_time "wikipedia:Daylight saving time") change, thus resulting in an overcorrection; more problems may arise when travelling between different time zones and using one of the operating systems to reset the system/hardware clock.
+The hardware clock can be queried and set with the `timedatectl` command. You can see the current hardware clock time standard of the Arch system using:
 
-You can set the hardware clock time standard through the command line. You can check what you have set your Arch Linux install to use by:
+ `$ timedatectl | grep local`  `RTC in local TZ: no` 
 
-```
-$ timedatectl | grep local
-
-```
-
-The hardware clock can be queried and set with the `timedatectl` command. To change the hardware clock time standard to localtime, use:
+To change the hardware clock time standard to localtime, use:
 
 ```
-# timedatectl set-local-rtc 1
+# timedatectl set-local-rtc **1**
 
 ```
 
-If you want to revert to the hardware clock being in UTC, do:
+To revert to the hardware clock being in UTC, type:
 
 ```
-# timedatectl set-local-rtc 0
+# timedatectl set-local-rtc **0**
 
 ```
 
-These will generate `/etc/adjtime` automatically and update the RTC accordingly; no further configuration is required.
+These generates `/etc/adjtime` automatically and updates the RTC accordingly; no further configuration is required.
 
 During kernel startup, at the point when the RTC driver is loaded, the system clock may be set from the hardware clock. Whether this occurs depends on the hardware platform, the version of the kernel and kernel build options. If this does occur, at this point in the boot sequence, the hardware clock time is assumed to be UTC and the value of `/sys/class/rtc/rtcN/hctosys` (N=0,1,2,..) will be set to 1\.
 
 Later, the system clock is set again from the hardware clock by systemd, dependent on values in `/etc/adjtime`. Hence, having the hardware clock using localtime may cause some unexpected behavior during the boot sequence; e.g system time going backwards, which is always a bad idea ([there is a lot more to it](http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html)). To avoid it systemd [will only synchronize back](https://mailman.archlinux.org/pipermail/arch-dev-public/2014-August/026577.html), if the hardware clock is set to UTC and keep the kernel uninformed about the local timezone. As a consequence timestamps on a FAT filesystem touched by the Linux system will be in UTC.
 
-**Note:** The use of `timedatectl` requires an active dbus. Therefore, it may not be possible to use this command under a chroot (such as during installation). In these cases, you can revert back to the hwclock command.
+**Note:**
+
+*   The use of `timedatectl` requires an active dbus. Therefore, it may not be possible to use this command under a chroot (such as during installation). In these cases, you can revert back to the hwclock command.
+*   If `/etc/adjtime` is not present, [systemd](/index.php/Systemd "Systemd") assumes the hardware clock is set to UTC.
 
 ### UTC in Windows
 
@@ -279,6 +277,7 @@ To force your clock to the correct time, and to also write the correct UTC to yo
 ## See also
 
 *   [Linux Tips - Linux, Clocks, and Time](http://sunnyan.tistory.com/entry/Linux-Clocks-and-Time)
+*   [An introduction to timekeeping in Linux VMs](https://opensource.com/article/17/6/timekeeping-linux-vms)
 *   [Sources for Time Zone and Daylight Saving Time Data](http://www.twinsun.com/tz/tz-link.htm) for [tzdata](https://www.archlinux.org/packages/?name=tzdata)
 *   [Time Scales](https://www.ucolick.org/~sla/leapsecs/timescales.html)
 *   [Gentoo: System time](https://wiki.gentoo.org/wiki/System_time "gentoo:System time")

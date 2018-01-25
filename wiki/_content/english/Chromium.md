@@ -36,7 +36,7 @@ Other alternatives include:
 
 *   **Chromium Beta Channel** — the beta version
 
-	[https://googlechromereleases.blogspot.com/](https://googlechromereleases.blogspot.com/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=chromium-beta)</small>
+	[https://googlechromereleases.blogspot.com/](https://googlechromereleases.blogspot.com/) || [chromium-beta](https://aur.archlinux.org/packages/chromium-beta/)
 
 *   **Chromium Dev Channel** — the development version
 

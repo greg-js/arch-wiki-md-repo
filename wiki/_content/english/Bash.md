@@ -302,6 +302,7 @@ export IGNOREEOF=100
 *   [The Bourne-Again Shell](http://www.aosabook.org/en/bash.html) - The third chapter of *The Architecture of Open Source Applications*
 *   [Shellcheck](http://shellcheck.net) - Check bash scripts for common errors (based on [shellcheck](https://github.com/koalaman/shellcheck))
 *   [PS1 generator](http://bashrcgenerator.com/.bashrc) - generate your .bashrc/PS1 bash prompt with a drag and drop interface
+*   [Even more useful .bashrc commands](https://serverfault.com/questions/3743/what-useful-things-can-one-add-to-ones-bashrc)
 
 ### Tutorials
 

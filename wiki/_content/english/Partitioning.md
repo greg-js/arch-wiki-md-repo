@@ -39,9 +39,8 @@ Once created, a partition must be formatted with an appropriate [file system](/i
         *   [2.2.5 /data](#.2Fdata)
         *   [2.2.6 Swap](#Swap)
     *   [2.3 Example layouts](#Example_layouts)
-        *   [2.3.1 GPT + UEFI example layout](#GPT_.2B_UEFI_example_layout)
-        *   [2.3.2 MBR + BIOS example layout](#MBR_.2B_BIOS_example_layout)
-        *   [2.3.3 GPT + UEFI with separate /home example layout](#GPT_.2B_UEFI_with_separate_.2Fhome_example_layout)
+        *   [2.3.1 UEFI/GPT example layout](#UEFI.2FGPT_example_layout)
+        *   [2.3.2 BIOS/MBR example layout](#BIOS.2FMBR_example_layout)
 *   [3 Partitioning tools](#Partitioning_tools)
     *   [3.1 fdisk/gdisk](#fdisk.2Fgdisk)
     *   [3.2 GNU Parted](#GNU_Parted)
@@ -85,6 +84,8 @@ The first 440 bytes of MBR are **bootstrap code area**. On BIOS systems it usual
 
 [GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") (GPT) is a partitioning scheme that is part of the [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") specification; it uses [globally unique identifiers](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") (GUIDs), or UUIDs in the Linux world, to define partitions and [partition types](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table"). It is designed to succeed the [#Master Boot Record](#Master_Boot_Record) partitioning scheme method.
 
+At the start of a GUID Partition Table disk there is a [protective Master Boot Record](https://en.wikipedia.org/wiki/GUID_Partition_Table#Protective_MBR_.28LBA_0.29 "wikipedia:GUID Partition Table") to protect against GPT-unaware software. This protective MBR just like a real MBR has a [bootstrap code area](#Master_Boot_Record_.28bootstrap_code.29) which can be used for BIOS/GPT booting with boot loaders that support it.
+
 ### Choosing between GPT and MBR
 
 GUID Partition Table (GPT) is an alternative, contemporary, partitioning style; it is intended to replace the old Master Boot Record (MBR) system. GPT has several advantages over MBR which has quirks dating back to MS-DOS times. With the recent developments to the formatting tools *fdisk* (MBR) and *gdisk* (GPT), it is equally easy to get good dependability and performance for GPT or MBR.
@@ -127,7 +128,7 @@ See [fdisk#Backup and restore partition table](/index.php/Fdisk#Backup_and_resto
 
 It may be possible to recover a destroyed MBR partition table with [gpart](https://www.archlinux.org/packages/?name=gpart). See [gpart(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpart.8) for instructions.
 
-For GPT it is possible to restore the primary GPT header (located at the start of the partition table) from the secondary GPT header (located at the end of the partition table) or vice versa. See [fdisk#Recover GPT header](/index.php/Fdisk#Recover_GPT_header "Fdisk").
+For GPT it is possible to restore the primary GPT header (located at the start of the partition table) from the secondary GPT header (located at the end of the partition table) or vice versa. See [gdisk#Recover GPT header](/index.php/Gdisk#Recover_GPT_header "Gdisk").
 
 ## Partition scheme
 
@@ -202,26 +203,20 @@ Historically, the general rule for swap partition size was to allocate twice the
 
 **Note:** UEFI/GPT does not have a "bootable" flag, booting relies on files in [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). [Parted](/index.php/Parted "Parted") and its front-ends use the `boot` flag on GPT to indicate an EFI System Partition.
 
-#### GPT + UEFI example layout
-
-| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | [Partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries "wikipedia:GUID Partition Table") | Suggested size |
-| `/boot` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | [550 MiB](/index.php/EFI_System_Partition#Create_the_partition "EFI System Partition") |
-| `[SWAP]` | `/dev/sda2` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F`: Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
-| `/` | `/dev/sda3` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709`: Linux x86-64 root (/) | Remainder of the device |
-
-#### MBR + BIOS example layout
-
-| Mount point | Partition | [Partition type (ID)](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") | [Boot flag](https://en.wikipedia.org/wiki/Boot_flag "wikipedia:Boot flag") | Suggested size |
-| `[SWAP]` | `/dev/sda1` | `82`: Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
-| `/` | `/dev/sda2` | `83`: Linux | Yes | Remainder of the device |
-
-#### GPT + UEFI with separate /home example layout
+#### UEFI/GPT example layout
 
 | Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | [Partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries "wikipedia:GUID Partition Table") | Suggested size |
 | `/boot` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | [550 MiB](/index.php/EFI_System_Partition#Create_the_partition "EFI System Partition") |
 | `/` | `/dev/sda2` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709`: Linux x86-64 root (/) | 23 - 32 GiB |
 | `[SWAP]` | `/dev/sda3` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F`: Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
 | `/home` | `/dev/sda4` | `933AC7E1-2EB4-4F13-B844-0E14E2AEF915`: Linux /home | Remainder of the device |
+
+#### BIOS/MBR example layout
+
+| Mount point | Partition | [Partition type (ID)](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") | [Boot flag](https://en.wikipedia.org/wiki/Boot_flag "wikipedia:Boot flag") | Suggested size |
+| `/` | `/dev/sda1` | `83`: Linux | Yes | 23 - 32 GiB |
+| `[SWAP]` | `/dev/sda2` | `82`: Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
+| `/home` | `/dev/sda3` | `83`: Linux | No | Remainder of the device |
 
 ## Partitioning tools
 

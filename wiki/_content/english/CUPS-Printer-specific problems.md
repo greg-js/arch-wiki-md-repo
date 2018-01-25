@@ -302,7 +302,8 @@ E515dw
 | WF-7710 |
 | WF-7720 |
 | WF-C869R |
-| XP-15000 |
+| XP-446 | [epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) |
+| XP-15000 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | XP-6000 |
 | XP-8500 |
 | Printer | Driver/filter | Notes |

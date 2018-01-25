@@ -1,4 +1,6 @@
-**翻译状态：** 本文是英文页面 [Shadowsocks](/index.php/Shadowsocks "Shadowsocks") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-9-26，点击[这里](https://wiki.archlinux.org/index.php?title=Shadowsocks&diff=0&oldid=472909)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Shadowsocks](/index.php/Shadowsocks "Shadowsocks") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-1-25，点击[这里](https://wiki.archlinux.org/index.php?title=Shadowsocks&diff=0&oldid=472909)可以查看翻译后英文页面的改动。
+
+**提示：** 由于shadowsocks多为中文用户使用，该中文页面大量内容领先于英文页面。
 
 [Shadowsocks](https://github.com/clowwindy/shadowsocks/)是一个轻量级[socks5](https://en.wikipedia.org/wiki/SOCKS_(protocol)#SOCKS5 "wikipedia:SOCKS (protocol)")代理，最初用 Python 编写。
 
@@ -109,7 +111,7 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 
 使用[Iptables (简体中文)](/index.php/Iptables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Iptables (简体中文)")等工具，桌面环境用户可使用桌面设置中网络设置里的代理功能。
 
-**注意:** 使用全局代理会使所有的连接通过shadowsocks服务器中转，一般不建议使用全局代理。
+**注意:** 使用全局代理会使所有的连接通过shadowsocks服务器中转，一般不建议使用全局代理。另外，gnome桌面的代理设置无法正常使用。
 
 *   程序设置自身代理
 
@@ -117,11 +119,16 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 
 *   使用工具进行临时代理
 
-例如[proxychains-ng](https://www.archlinux.org/packages/?name=proxychains-ng)（参看[Proxy settings#Using a SOCKS proxy](/index.php/Proxy_settings#Using_a_SOCKS_proxy "Proxy settings")）和[redsocks-git](https://aur.archlinux.org/packages/redsocks-git/)。
+例如[proxychains-ng](https://www.archlinux.org/packages/?name=proxychains-ng)（参看[Proxy settings#Using a SOCKS proxy](/index.php/Proxy_settings#Using_a_SOCKS_proxy "Proxy settings")）和[redsocks-git](https://aur.archlinux.org/packages/redsocks-git/)。 例如使用[proxychanis](/index.php?title=Proxychanis&action=edit&redlink=1 "Proxychanis (page does not exist)")代理的例子(假设你已经在`/etc/proxychains.conf`中配置好socks5）：
+
+```
+ proxychains firefox
+
+```
 
 *   转换为http代理
 
-直接走socks代理有时未必是用户的期望，可使用privoxy等软件转化socks代理为http代理。可使用[privoxy](https://www.archlinux.org/packages/?name=privoxy)和[squid](https://www.archlinux.org/packages/?name=squid)。 以[Privoxy](/index.php/Privoxy "Privoxy")为例，编辑privoxy配置文件，添加socks5转发（不要漏下1080后面的点)：
+直接走socks代理有时未必是用户的期望，可使用privoxy等软件转化socks代理为http代理。可使用[privoxy](https://www.archlinux.org/packages/?name=privoxy)和[squid](https://www.archlinux.org/packages/?name=squid)等工具。 以[Privoxy](/index.php/Privoxy "Privoxy")为例，编辑privoxy配置文件，添加socks5转发（不要漏下1080后面的点)：
 
 ```
  forward-socks5 / 127.0.0.1:1080 .
@@ -149,8 +156,10 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 **提示：** 浏览器直接使用[SOCKS](https://en.wikipedia.org/wiki/SOCKS "wikipedia:SOCKS")代理时，你可能需要使用[privoxy](/index.php/Privoxy "Privoxy")等辅助程序，因为一般浏览器会泄漏你的DNS请求，从而减少你的匿名，参看前文[#配置代理](#.E9.85.8D.E7.BD.AE.E4.BB.A3.E7.90.86)中转化为http代理一节。
 
 *   firefox
-    *   直接在首选项-常规-网络代理中设置“手动代理”或者“自动代理配置的URL（PAC）”（生成pac可使用[genpac](https://github.com/JinnLynn/genpac)，或者使用现成的pac如[gfwlist to pac](https://github.com/search?utf8=%E2%9C%93&q=gfwlist+pac&type=)）。
     *   使用扩展如[foxyproxy](https://getfoxyproxy.org/)或[switchyomega](https://github.com/FelisCatus/SwitchyOmega)等。
+    *   直接在首选项-常规-网络代理中设置“手动代理配置”或者“自动代理配置的URL（PAC）”。
+
+使用“手动代理配置”，在”socks主机“栏填上shadowsocks设置的本地ip（默认127.0.0.1）和端口（默认1080），点选”SOCKS v5“，然后保存即可。 使用“自动代理配置的URL（PAC）”，可使用[genpac](https://github.com/JinnLynn/genpac)工具生成，或者使用现成的pac如[gfwlist to pac](https://github.com/search?utf8=%E2%9C%93&q=gfwlist+pac&type=)，将该页面url填入并保存即可。
 
 *   Chrome/Chromium
 
@@ -158,7 +167,7 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 
 ### 服务端
 
-**提示：** 普通用户无需配置服务端；
+**提示：** 普通用户无需配置服务端。
 
 #### 以命令行启动进程
 
@@ -192,8 +201,8 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 
 ```
  # ssserver -c /etc/shadowsocks/foo.json -d start  #启动
- # ssserver -c /etc/shadowsocks/foo.json -d start  #停止
- # ssserver -c /etc/shadowsocks/foo.json -d start  #重启
+ # ssserver -c /etc/shadowsocks/foo.json -d stop  #停止
+ # ssserver -c /etc/shadowsocks/foo.json -d restart  #重启
 
 ```
 
@@ -240,7 +249,7 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 
 ```
 
-**提示：** 有反映多端口配置后使用systemd进行守护进程运行会失败，可使用`-d`参数方法[#以守护进程形式运行](#.E4.BB.A5.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E5.BD.A2.E5.BC.8F.E8.BF.90.E8.A1.8C)。
+**提示：** 有反映多端口配置后使用systemd进行守护进程运行会失败，该情况下可使用上文`-d`参数的方法。
 
 #### 加密方法
 
@@ -286,10 +295,10 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 
 #### 性能优化
 
-*   多用户使用的情况下，简易使用[#多端口运行]，尽量避免一个端口有过多用户连接。
-*   使用[常用端口](https://www.google.com/search?newwindow=1&q=%E5%B8%B8%E7%94%A8%E7%AB%AF%E5%8F%A3%E5%8F%B7&oq=%E5%B8%B8%E7%94%A8%E7%AB%AF%E5%8F%A3%E5%8F%B7&gs_l=psy-ab.3...30218.34357.0.34596.9.8.1.0.0.0.552.2392.4-4j1.5.0....0...1.1.64.psy-ab..4.3.1400...35i39k1j0i5i30k1.0.tTk_3WbYY-g)（如25、443、21等等），[GFW](https://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E)为减轻压力，对常用端口检查相对较少。
+*   多用户使用的情况下，建议使用[#多端口运行](#.E5.A4.9A.E7.AB.AF.E5.8F.A3.E8.BF.90.E8.A1.8C)，尽量避免一个端口有过多用户连接。
+*   使用[常用端口](https://www.google.com/search?newwindow=1&q=%E5%B8%B8%E7%94%A8%E7%AB%AF%E5%8F%A3%E5%8F%B7&oq=%E5%B8%B8%E7%94%A8%E7%AB%AF%E5%8F%A3%E5%8F%B7&gs_l=psy-ab.3...30218.34357.0.34596.9.8.1.0.0.0.552.2392.4-4j1.5.0....0...1.1.64.psy-ab..4.3.1400...35i39k1j0i5i30k1.0.tTk_3WbYY-g)如25、443、21等等，[GFW](https://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E)为减轻压力，对常用端口检查相对较少。
 *   使用[python-gevent](https://www.archlinux.org/packages/?name=python-gevent)提升python的[shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)运行的速度。
-*   使用[python-pip](https://www.archlinux.org/packages/?name=python-pip)安装`M2Crypto`可略微提升加密速度；使用较弱的加密方式CR4-MD5提升加密速度（请根据实际使用情况考虑加密强度的选择）。
+*   使用[python-pip](https://www.archlinux.org/packages/?name=python-pip)安装`M2Crypto`可略微提升加密速度；使用较弱的加密方式CR4-MD5提升加密速度（但是会降低安全程度，请根据实际使用情况考虑加密强度的选择）。
 *   优化内核参数，参看[Optimizing-Shadowsocks](https://github.com/shadowsocks/shadowsocks/wiki/Optimizing-Shadowsocks)进行设置。
 *   开启fast open降低延迟
 

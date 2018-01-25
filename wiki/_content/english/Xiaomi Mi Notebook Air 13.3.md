@@ -8,7 +8,7 @@
 | USB-C / Thunderbolt 3 | Working |  ? |
 | Function/Multimedia Keys | Working |  ? |
 
-The Mi Notebook Air 13.3 is an aluminium Ultrabook. It is a product by the Chinese Company Xiaomi and is currently only available in China or through import online-shops. Using the Intel Core i5 6200U @ 2.3 Ghz and the NVIDIA GeForce 940MX, it provides good power for a decent price.
+The Mi Notebook Air 13.3 is an aluminium Ultrabook. It is a product by the Chinese Company Xiaomi and is currently only available in China or through import online-shops. Using the Intel Core i5 7200U @ 2.5 Ghz and the NVIDIA GeForce MX150, it provides good power for a decent price.
 
 The installation should be going without any problems, if you follow the following steps.
 

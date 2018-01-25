@@ -88,6 +88,9 @@ Section "InputClass"
 	Option "TapButton2" "0"
         Option "HorizHysteresis" "100"
         Option "VertHysteresis" "100"
+        # fix touchpad scroll speed
+        Option "VertScrollDelta" "500"
+        Option "HorizScrollDelta" "500"
 EndSection
 
 ```

@@ -3,7 +3,7 @@ Related articles
 *   [KMS](/index.php/KMS "KMS")
 *   [Xorg](/index.php/Xorg "Xorg")
 
-[Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositor](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing this protocol. All major Linux desktop systems like Gnome, KDE do support Wayland, and there is also a reference implementation for a compositor called "Weston". [XWayland](https://wayland.freedesktop.org/xserver.html) implements a compatibility layer to seamlessly run legacy X11 applications on Wayland.
+[Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositor](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing this protocol. Many major Linux desktop environments, like Gnome and KDE, support Wayland. There is also a compositor reference implementation called "Weston". [XWayland](https://wayland.freedesktop.org/xserver.html) implements a compatibility layer to seamlessly run legacy X11 applications on Wayland.
 
 ## Contents
 
@@ -41,9 +41,9 @@ Related articles
 
 ## Requirements
 
-Wayland only works on systems using [KMS](/index.php/KMS "KMS").
+Most Wayland compositors only work on systems using [KMS](/index.php/KMS "KMS").
 
-Wayland by itself does not provide a graphical environment; for this you also need a compositor such as [#Weston](#Weston) or [Sway](/index.php/Sway "Sway") (standalone), or a desktop environment that includes a compositor such as [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE").
+Wayland by itself does not provide a graphical environment; for this you also need a compositor such as [#Weston](#Weston) or [Sway](/index.php/Sway "Sway"), or a desktop environment that includes a compositor such as [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE").
 
 ### Buffer API support
 

@@ -7,6 +7,8 @@ From [sabnzbd.org](http://sabnzbd.org/):
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 SSL Support](#SSL_Support)
+    *   [1.2 Archive unpacking](#Archive_unpacking)
 *   [2 Usage](#Usage)
     *   [2.1 Using systemd](#Using_systemd)
     *   [2.2 Starting SABnzbd as user](#Starting_SABnzbd_as_user)
@@ -16,14 +18,18 @@ From [sabnzbd.org](http://sabnzbd.org/):
 
 ## Installation
 
-Install the [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) or [sabnzbd-git](https://aur.archlinux.org/packages/sabnzbd-git/) package.
+[Install](/index.php/Install "Install") [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) or [sabnzbd-git](https://aur.archlinux.org/packages/sabnzbd-git/).
 
-Install [python2-pyopenssl](https://www.archlinux.org/packages/?name=python2-pyopenssl) to enable SSL support for news servers.
+### SSL Support
 
-The usage of SSL connections is recommend (if supported by the news server):
+[Install](/index.php/Install "Install") [python2-pyopenssl](https://www.archlinux.org/packages/?name=python2-pyopenssl) to enable SSL support for news servers:
 
-*   Transmission of data from the server to the NNTP client is encrypted, protecting your privacy.
-*   Decreasing the chance of throttling NNTP traffic by the ISP.
+*   Transmission of data from the server to the NNTP client is encrypted, protecting your privacy
+*   Decreasing the chances of throttling NNTP traffic done by the ISP.
+
+### Archive unpacking
+
+*   [Install](/index.php/Install "Install") [p7zip](https://www.archlinux.org/packages/?name=p7zip) and [unzip](https://www.archlinux.org/packages/?name=unzip) to allow unpacking of archives.
 
 ## Usage
 

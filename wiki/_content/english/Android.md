@@ -345,7 +345,7 @@ They can be installed with the [lineageos-devel](https://aur.archlinux.org/packa
 
 ### Java Development Kit
 
-The [required JDK version](https://source.android.com/source/requirements) depends on the Android version you're building:
+The [required JDK version](https://source.android.com/source/requirements) depends on the Android version you are building:
 
 *   For Android 7 and 8 (Nougat and Oreo), OpenJDK 8 is required, which is available with the [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) package.
 *   For Android 5 and 6 (Lollipop and Marshmallow), OpenJDK 7 is required, which is available with the [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) package.
@@ -355,12 +355,12 @@ Older versions require a working **Oracle JDK** installed on your build system. 
 *   For Gingerbread through KitKat (2.3 - 4.4), Java 6 is required, which is available as [jdk6](https://aur.archlinux.org/packages/jdk6/) from the AUR.
 *   For Cupcake through Froyo (1.5 - 2.2), Java 5 is required, which is available as [jdk5](https://aur.archlinux.org/packages/jdk5/) from the AUR.
 
-**Note:** Android expect java in /usr/lib/jvm/java-x-openjdk-amd64, where x is the java version.
+**Note:** Android expects Java in `/usr/lib/jvm/java-*version*-openjdk-amd64`.
 
-Set JAVA_HOME to avoid this requirement and match archlinux installation path. Example:
+Set JAVA_HOME to avoid this requirement and match the Arch Linux installation path. Example:
 
 ```
-$ export JAVA_HOME=/usr/lib/jvm/java-x-openjdk
+$ export JAVA_HOME=/usr/lib/jvm/java-*version*-openjdk
 
 ```
 This change will be valid only for the current terminal session.
@@ -596,7 +596,7 @@ export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
 
 ```
 
-Reference: Android Studio user guide, [https://developer.android.com/studio/command-line/variables.html#studio_jdk](https://developer.android.com/studio/command-line/variables.html#studio_jdk)
+Reference: [Android Studio user guide](https://developer.android.com/studio/command-line/variables.html#studio_jdk)
 
 Fix for the .desktop file might be achieved by using env command, prefixing the Exec line [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries")
 
@@ -630,11 +630,11 @@ You can try to install glxinfo (Its [mesa-demos](https://www.archlinux.org/packa
 
 ### Android Emulator: no keyboard input in xfwm4
 
-In xfwm4, the vertical toolbar buttons window that's on the right of the emulator takes focus from the emulator and consumes keyboard events. ([bug report](https://issuetracker.google.com/issues/37094173))
+In xfwm4, the vertical toolbar buttons window that is on the right of the emulator takes focus from the emulator and consumes keyboard events. ([bug report](https://issuetracker.google.com/issues/37094173))
 
-You can use the workaround described in [this StackOverflow answer](https://stackoverflow.com/a/42720450/1366471):
+You can use the workaround described in [this Stack Overflow answer](https://stackoverflow.com/a/42720450/1366471):
 
-1.  Go to xfwm4 settings
-2.  Find Focus tab
-3.  Change Focus Model to "Focus follow mouse"
-4.  Disable "Automatically raise windows when they receive focus" option bellow.
+1.  Open the xfwm4 settings.
+2.  Switch to the Focus tab.
+3.  Change the Focus Model to "Focus follow mouse".
+4.  Disable *Automatically raise windows when they receive focus* option below.

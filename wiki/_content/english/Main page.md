@@ -38,14 +38,6 @@ Visit the [Table of contents](/index.php/Table_of_contents "Table of contents") 
 
 	Describes various ways Archers can contribute to the Arch community.
 
-	[ArchWiki:Contributing](/index.php/ArchWiki:Contributing "ArchWiki:Contributing")
-
-	If willing and able to contribute to the wiki, please see this article for ideas.
-
-	[Help:Editing](/index.php/Help:Editing "Help:Editing")
-
-	Short tutorial on editing and contributing to the Arch Linux wiki.
-
 	[International communities](/index.php/International_communities "International communities")
 
 	Collection of links to the Arch Linux communities around the world.
@@ -54,8 +46,20 @@ Visit the [Table of contents](/index.php/Table_of_contents "Table of contents") 
 
 	Get together with your fellow Archers for a good chat.
 
-## Help
+## Wiki interaction
 
-ArchWiki pages follow specific conventions, so if you have trouble reading ArchWiki or understanding some instructions, see [Help:Reading](/index.php/Help:Reading "Help:Reading") for a clarification.
+	[Help:Reading](/index.php/Help:Reading "Help:Reading")
 
-If looking for specific information, try using the search box at the top of the page. Alternatively, use your favorite web search engine which likely provides a special syntax or interface for restricting results to a particular website (usually appending `site:wiki.archlinux.org` to the search terms is enough). See [Help:Searching](/index.php/Help:Searching "Help:Searching") for other tricks.
+	Find clarifications if you struggle to understand instructions in some articles.
+
+	[Help:Searching](/index.php/Help:Searching "Help:Searching")
+
+	Try using the search box at the top of the page; follow the link for more tricks.
+
+	[ArchWiki:Contributing](/index.php/ArchWiki:Contributing "ArchWiki:Contributing")
+
+	The starting point for those willing to contribute to the wiki.
+
+	[Help:Editing](/index.php/Help:Editing "Help:Editing")
+
+	Tutorial on editing articles and introduction to wiki text syntax.

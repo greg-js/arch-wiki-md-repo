@@ -1,268 +1,278 @@
 See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshooting") for generic troubleshooting.
 
-**Note:** [Steam](/index.php/Steam "Steam") installs library dependencies of a game to a library directory, but some are missing at the moment. Report bugs involving missing libraries on Valve's bug tracker on their [GitHub page](https://github.com/ValveSoftware/steam-for-linux) before adding workarounds here, and then provide a link to the bug so it can be removed as the problems are fixed.
+As Steam for Linux only supports Ubuntu, Steam games for Linux are packaged expecting Ubuntu and do not bundle default Ubuntu libraries. Therefore many Linux Steam games will not run on Arch Linux out of the box due to missing libraries. Do not report such issues to Valve! Instead document them on this page.
 
 **Tip:** If a game fails to start, a possible reason is that it is missing required libraries. You can find out what libraries it requests by running `ldd *game_executable*`. `*game_executable*` is likely located somewhere in `~/.steam/root/steamapps/common/`. Please note that most of these "missing" libraries are actually already included with Steam, and do not need to be installed globally.
 
 ## Contents
 
-*   [1 Common steps](#Common_steps)
-    *   [1.1 Prepend /usr/lib to LD_LIBRARY_PATH](#Prepend_.2Fusr.2Flib_to_LD_LIBRARY_PATH)
-    *   [1.2 OpenSSL 1.0 setup](#OpenSSL_1.0_setup)
-    *   [1.3 Adobe Air setup](#Adobe_Air_setup)
-*   [2 Alien Isolation](#Alien_Isolation)
-*   [3 Amnesia: The Dark Descent](#Amnesia:_The_Dark_Descent)
-*   [4 And Yet It Moves](#And_Yet_It_Moves)
-    *   [4.1 Game does not start](#Game_does_not_start)
-*   [5 Anodyne](#Anodyne)
-    *   [5.1 Play with a controller: joy2key configuration](#Play_with_a_controller:_joy2key_configuration)
-*   [6 Aquaria](#Aquaria)
-    *   [6.1 Mouse pointer gets stuck in one direction](#Mouse_pointer_gets_stuck_in_one_direction)
-*   [7 ARK: Survival Evolved](#ARK:_Survival_Evolved)
-    *   [7.1 Game does not start, displays text window with unreadable text](#Game_does_not_start.2C_displays_text_window_with_unreadable_text)
-    *   [7.2 Gray Water](#Gray_Water)
-*   [8 Audiosurf 2](#Audiosurf_2)
-*   [9 BADLAND: Game of the Year Edition](#BADLAND:_Game_of_the_Year_Edition)
-*   [10 Beat Cop](#Beat_Cop)
-    *   [10.1 "BeatCop.x86_64" is not responding](#.22BeatCop.x86_64.22_is_not_responding)
-*   [11 Binding of Isaac: Rebirth](#Binding_of_Isaac:_Rebirth)
-    *   [11.1 No sound](#No_sound)
-*   [12 BLACKHOLE](#BLACKHOLE)
-*   [13 The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales)
-*   [14 The Book of Unwritten Tales: The Critter Chronicles](#The_Book_of_Unwritten_Tales:_The_Critter_Chronicles)
-*   [15 Borderlands 2](#Borderlands_2)
-    *   [15.1 Migrating saves from other platforms](#Migrating_saves_from_other_platforms)
-    *   [15.2 Using Ctrl Key](#Using_Ctrl_Key)
-    *   [15.3 Logging into SHiFT](#Logging_into_SHiFT)
-    *   [15.4 Game crashes nearly instantly](#Game_crashes_nearly_instantly)
-*   [16 Borderlands: The Pre-Sequel](#Borderlands:_The_Pre-Sequel)
-    *   [16.1 Keyboard not working](#Keyboard_not_working)
-    *   [16.2 Not starting via Steam](#Not_starting_via_Steam)
-*   [17 Cities in Motion 2](#Cities_in_Motion_2)
-    *   [17.1 Dialog boxes fail to display properly](#Dialog_boxes_fail_to_display_properly)
-*   [18 Cities Skylines](#Cities_Skylines)
-    *   [18.1 Textures not rendering properly](#Textures_not_rendering_properly)
-*   [19 Civilization V](#Civilization_V)
-    *   [19.1 Stuttering sound with PulseAudio](#Stuttering_sound_with_PulseAudio)
-    *   [19.2 Game crashes seconds after loading a map](#Game_crashes_seconds_after_loading_a_map)
-*   [20 Civilization: Beyond earth](#Civilization:_Beyond_earth)
-    *   [20.1 Segfault after a few minutes](#Segfault_after_a_few_minutes)
-*   [21 Civilization VI](#Civilization_VI)
-    *   [21.1 If Segfault Immediately on Start](#If_Segfault_Immediately_on_Start)
-*   [22 Deus Ex: Mankind divided](#Deus_Ex:_Mankind_divided)
-*   [23 The Clockwork Man](#The_Clockwork_Man)
-*   [24 Company of Heroes 2](#Company_of_Heroes_2)
-*   [25 Cossacks 3](#Cossacks_3)
-    *   [25.1 No sound](#No_sound_2)
-*   [26 Counter-Strike: Global Offensive (CS:GO)](#Counter-Strike:_Global_Offensive_.28CS:GO.29)
-    *   [26.1 Game starts on the wrong screen](#Game_starts_on_the_wrong_screen)
-    *   [26.2 Cannot reach bottom of the screen on menus](#Cannot_reach_bottom_of_the_screen_on_menus)
-    *   [26.3 Sound is played slightly delayed](#Sound_is_played_slightly_delayed)
-    *   [26.4 Mouse not working in-game](#Mouse_not_working_in-game)
-    *   [26.5 Brightness slider not working](#Brightness_slider_not_working)
-    *   [26.6 Microphone not working](#Microphone_not_working)
-*   [27 Crusader Kings II](#Crusader_Kings_II)
-    *   [27.1 No audio](#No_audio)
-    *   [27.2 Oddly sized starting window](#Oddly_sized_starting_window)
-*   [28 Crypt of the NecroDancer](#Crypt_of_the_NecroDancer)
-    *   [28.1 Crashes after splash screen](#Crashes_after_splash_screen)
-*   [29 The Curious Expedition](#The_Curious_Expedition)
-    *   [29.1 Game stuck on loading screen](#Game_stuck_on_loading_screen)
-        *   [29.1.1 Method 1](#Method_1)
-        *   [29.1.2 Method 2](#Method_2)
-*   [30 Death Road To Canada](#Death_Road_To_Canada)
-    *   [30.1 No music](#No_music)
-*   [31 Defender's Quest: Valley of the Forgotten](#Defender.27s_Quest:_Valley_of_the_Forgotten)
-*   [32 Dirt](#Dirt)
-*   [33 Dirt Rally](#Dirt_Rally)
-*   [34 Divinity: Original Sin - Enhanced Edition](#Divinity:_Original_Sin_-_Enhanced_Edition)
-    *   [34.1 Game does not start when using Bumblebee optirun or primusrun](#Game_does_not_start_when_using_Bumblebee_optirun_or_primusrun)
-    *   [34.2 Game does not work with amdgpu](#Game_does_not_work_with_amdgpu)
-*   [35 Don't Starve](#Don.27t_Starve)
-    *   [35.1 No sound](#No_sound_3)
-*   [36 Dota 2](#Dota_2)
-    *   [36.1 In-game font is unreadable](#In-game_font_is_unreadable)
-    *   [36.2 Error with libpangoft2](#Error_with_libpangoft2)
-    *   [36.3 The game does not start](#The_game_does_not_start)
-    *   [36.4 Game runs on the wrong screen](#Game_runs_on_the_wrong_screen)
-    *   [36.5 Game does not start with libxcb-dri3 error message](#Game_does_not_start_with_libxcb-dri3_error_message)
-    *   [36.6 Steam overlay](#Steam_overlay)
-    *   [36.7 Chinese tips and player names not shown](#Chinese_tips_and_player_names_not_shown)
-    *   [36.8 Chinese input method problem](#Chinese_input_method_problem)
-*   [37 Devil Daggers](#Devil_Daggers)
-*   [38 Drox Operative](#Drox_Operative)
-*   [39 Dwarfs F2P](#Dwarfs_F2P)
-    *   [39.1 Game does not start](#Game_does_not_start_2)
-    *   [39.2 Game crashes](#Game_crashes)
-*   [40 Dynamite Jack](#Dynamite_Jack)
-    *   [40.1 Sound Issues](#Sound_Issues)
-    *   [40.2 Game does not start](#Game_does_not_start_3)
-*   [41 Euro Truck Simulator 2](#Euro_Truck_Simulator_2)
-    *   [41.1 Shows only a black screen](#Shows_only_a_black_screen)
-*   [42 Football Manager 2014](#Football_Manager_2014)
-*   [43 FORCED](#FORCED)
-*   [44 FTL: Faster than Light](#FTL:_Faster_than_Light)
-    *   [44.1 Compatibility](#Compatibility)
-    *   [44.2 Problems with open-source video driver](#Problems_with_open-source_video_driver)
-*   [45 Game Dev Tycoon](#Game_Dev_Tycoon)
-    *   [45.1 Game does not start](#Game_does_not_start_4)
-*   [46 Garry's Mod](#Garry.27s_Mod)
-    *   [46.1 Game does not start](#Game_does_not_start_5)
-    *   [46.2 Opening some menus causes the game to crash](#Opening_some_menus_causes_the_game_to_crash)
-    *   [46.3 Game crashes after attempting to join server](#Game_crashes_after_attempting_to_join_server)
-*   [47 Gods will be watching](#Gods_will_be_watching)
-*   [48 GRID Autosport](#GRID_Autosport)
-    *   [48.1 Black screen when trying to play](#Black_screen_when_trying_to_play)
-*   [49 Hack 'n' Slash](#Hack_.27n.27_Slash)
-    *   [49.1 Crashes when trying to load a game](#Crashes_when_trying_to_load_a_game)
-*   [50 Hacker Evolution](#Hacker_Evolution)
-*   [51 Half-Life 2 and episodes](#Half-Life_2_and_episodes)
-    *   [51.1 Cyrillic fonts problem](#Cyrillic_fonts_problem)
-*   [52 Hammerwatch](#Hammerwatch)
-    *   [52.1 The game does not start via Steam](#The_game_does_not_start_via_Steam)
-    *   [52.2 No sound](#No_sound_4)
-*   [53 Harvest: Massive Encounter](#Harvest:_Massive_Encounter)
-    *   [53.1 Compatibility](#Compatibility_2)
-*   [54 Hatoful Boyfriend](#Hatoful_Boyfriend)
-    *   [54.1 Japanese text invisible](#Japanese_text_invisible)
-*   [55 Hyper Light Drifter](#Hyper_Light_Drifter)
-    *   [55.1 The controller does not work](#The_controller_does_not_work)
-    *   [55.2 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found)
-*   [56 The Impossible Game](#The_Impossible_Game)
-*   [57 The Inner World](#The_Inner_World)
-    *   [57.1 Bringing up the inventory or main menu](#Bringing_up_the_inventory_or_main_menu)
-        *   [57.1.1 Cutscenes](#Cutscenes)
-*   [58 Interloper](#Interloper)
-    *   [58.1 Game does not start](#Game_does_not_start_6)
-*   [59 Invisible Apartment](#Invisible_Apartment)
-    *   [59.1 Game does not start](#Game_does_not_start_7)
-*   [60 Joe Danger 2: The Movie](#Joe_Danger_2:_The_Movie)
-    *   [60.1 Compatibility](#Compatibility_3)
-*   [61 Kerbal Space Program](#Kerbal_Space_Program)
-*   [62 Killing Floor](#Killing_Floor)
-    *   [62.1 Cannot change screen resolution](#Cannot_change_screen_resolution)
-    *   [62.2 Windowed mode](#Windowed_mode)
-    *   [62.3 Stuttering sound](#Stuttering_sound)
-*   [63 Left for Dead 2](#Left_for_Dead_2)
-    *   [63.1 Missing Chinese font](#Missing_Chinese_font)
-*   [64 Lethal League](#Lethal_League)
-*   [65 Life is Strange](#Life_is_Strange)
-*   [66 Little Racers STREET](#Little_Racers_STREET)
-*   [67 The Long Dark](#The_Long_Dark)
-    *   [67.1 Game does not start](#Game_does_not_start_8)
-    *   [67.2 Game starts, but some overlay text is missing and cutscenes shows black screen](#Game_starts.2C_but_some_overlay_text_is_missing_and_cutscenes_shows_black_screen)
-    *   [67.3 Cutscenes are still black](#Cutscenes_are_still_black)
-    *   [67.4 Cursor disappears](#Cursor_disappears)
-*   [68 Magicka 2](#Magicka_2)
-    *   [68.1 Indefinitely stuck at start](#Indefinitely_stuck_at_start)
-*   [69 Mark of the Ninja](#Mark_of_the_Ninja)
-    *   [69.1 Bad sound](#Bad_sound)
-*   [70 Metro: Last Light](#Metro:_Last_Light)
-*   [71 Metro: 2033 Redux](#Metro:_2033_Redux)
-    *   [71.1 No sound](#No_sound_5)
-*   [72 Middle-earth: Shadow of Mordor](#Middle-earth:_Shadow_of_Mordor)
-    *   [72.1 Floating heads](#Floating_heads)
-*   [73 Mount & Blade: Warband](#Mount_.26_Blade:_Warband)
-    *   [73.1 Segmentation fault (core dumped) with wayland](#Segmentation_fault_.28core_dumped.29_with_wayland)
-    *   [73.2 DLC Chooser](#DLC_Chooser)
-*   [74 Multiwinia](#Multiwinia)
-    *   [74.1 Crash on startup](#Crash_on_startup)
-*   [75 Natural Selection 2](#Natural_Selection_2)
-*   [76 Nuclear Throne](#Nuclear_Throne)
-    *   [76.1 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found_2)
-*   [77 Penumbra: Overture](#Penumbra:_Overture)
-    *   [77.1 Windowed mode](#Windowed_mode_2)
-*   [78 The Polynomial](#The_Polynomial)
-    *   [78.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
-*   [79 Portal 2](#Portal_2)
-    *   [79.1 Game does not start](#Game_does_not_start_9)
-    *   [79.2 Resolution too low](#Resolution_too_low)
-    *   [79.3 Missing non Latin font](#Missing_non_Latin_font)
-*   [80 Prison Architect](#Prison_Architect)
-    *   [80.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
-*   [81 Project Zomboid](#Project_Zomboid)
-    *   [81.1 No sound](#No_sound_6)
-*   [82 Pyre](#Pyre)
-    *   [82.1 Game Does not Starts](#Game_Does_not_Starts)
-*   [83 Redshirt](#Redshirt)
-*   [84 Revenge of the Titans](#Revenge_of_the_Titans)
-*   [85 Risk of Rain](#Risk_of_Rain)
-*   [86 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
-*   [87 Saints Row IV](#Saints_Row_IV)
-    *   [87.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
-    *   [87.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
-*   [88 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
-    *   [88.1 No audio](#No_audio_2)
-*   [89 Slay the Spire](#Slay_the_Spire)
-*   [90 Songbringer](#Songbringer)
-    *   [90.1 Launch error with wanyland](#Launch_error_with_wanyland)
-*   [91 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
-    *   [91.1 No audio](#No_audio_3)
-*   [92 Spacechem](#Spacechem)
-    *   [92.1 Game crash](#Game_crash)
-*   [93 Splice](#Splice)
-*   [94 The Stanley Parable](#The_Stanley_Parable)
-    *   [94.1 Game won't start](#Game_won.27t_start)
-*   [95 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
-*   [96 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
-    *   [96.1 Start with black screen](#Start_with_black_screen)
-*   [97 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
-    *   [97.1 No sound](#No_sound_7)
-*   [98 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
-*   [99 System Shock 2](#System_Shock_2)
-*   [100 Tabletop Simulator](#Tabletop_Simulator)
-    *   [100.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
-*   [101 Team Fortress 2](#Team_Fortress_2)
-    *   [101.1 HRTF setup](#HRTF_setup)
-    *   [101.2 Loading screen freeze](#Loading_screen_freeze)
-    *   [101.3 No audio](#No_audio_4)
-    *   [101.4 Slow loading textures](#Slow_loading_textures)
-*   [102 Terraria](#Terraria)
-*   [103 This War of Mine](#This_War_of_Mine)
-    *   [103.1 Game does not start](#Game_does_not_start_10)
-    *   [103.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
-*   [104 Ticket to Ride](#Ticket_to_Ride)
-*   [105 Tomb Raider](#Tomb_Raider)
-    *   [105.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
-    *   [105.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
-*   [106 Tower Unite](#Tower_Unite)
-    *   [106.1 Graphical Glitches](#Graphical_Glitches)
-*   [107 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
-*   [108 Transistor](#Transistor)
-    *   [108.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_audio_issues)
-*   [109 Transmissions: Element 120](#Transmissions:_Element_120)
-    *   [109.1 Troubleshooting](#Troubleshooting)
-*   [110 Trine 2](#Trine_2)
-    *   [110.1 Colors](#Colors)
-    *   [110.2 Sound](#Sound)
-    *   [110.3 Resolution](#Resolution)
-*   [111 Tropico 5](#Tropico_5)
-    *   [111.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
-*   [112 Unity of Command](#Unity_of_Command)
-    *   [112.1 Squares](#Squares)
-    *   [112.2 No audio](#No_audio_5)
-*   [113 Unity3D](#Unity3D)
-    *   [113.1 Locale settings](#Locale_settings)
-    *   [113.2 Unity 5 sound problems](#Unity_5_sound_problems)
-    *   [113.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
-    *   [113.4 Chinese/Japanese/Korean display bug](#Chinese.2FJapanese.2FKorean_display_bug)
-*   [114 Unrest](#Unrest)
-*   [115 Volgarr the Viking](#Volgarr_the_Viking)
-*   [116 War Thunder](#War_Thunder)
-    *   [116.1 No audio](#No_audio_6)
-    *   [116.2 Blank screen](#Blank_screen)
-*   [117 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
-*   [118 Worms W.M.D](#Worms_W.M.D)
-*   [119 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [119.1 Game does not start](#Game_does_not_start_11)
-*   [120 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-*   [121 World of Goo](#World_of_Goo)
-    *   [121.1 Changing resolution](#Changing_resolution)
-*   [122 X3: Terran Conflict](#X3:_Terran_Conflict)
-    *   [122.1 Game crashes on startup](#Game_crashes_on_startup)
-*   [123 XCOM](#XCOM)
-    *   [123.1 Hangs on startup](#Hangs_on_startup)
-    *   [123.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+*   [1 Contributing](#Contributing)
+*   [2 Common steps](#Common_steps)
+    *   [2.1 Prepend /usr/lib to LD_LIBRARY_PATH](#Prepend_.2Fusr.2Flib_to_LD_LIBRARY_PATH)
+    *   [2.2 OpenSSL 1.0 setup](#OpenSSL_1.0_setup)
+    *   [2.3 Adobe Air setup](#Adobe_Air_setup)
+*   [3 Alien Isolation](#Alien_Isolation)
+    *   [3.1 Missing libpcre.so.3](#Missing_libpcre.so.3)
+*   [4 Amnesia: The Dark Descent](#Amnesia:_The_Dark_Descent)
+*   [5 And Yet It Moves](#And_Yet_It_Moves)
+    *   [5.1 Game does not start](#Game_does_not_start)
+*   [6 Anodyne](#Anodyne)
+    *   [6.1 Play with a controller: joy2key configuration](#Play_with_a_controller:_joy2key_configuration)
+*   [7 Aquaria](#Aquaria)
+    *   [7.1 Mouse pointer gets stuck in one direction](#Mouse_pointer_gets_stuck_in_one_direction)
+*   [8 ARK: Survival Evolved](#ARK:_Survival_Evolved)
+    *   [8.1 Game does not start, displays text window with unreadable text](#Game_does_not_start.2C_displays_text_window_with_unreadable_text)
+    *   [8.2 Gray Water](#Gray_Water)
+*   [9 Audiosurf 2](#Audiosurf_2)
+*   [10 BADLAND: Game of the Year Edition](#BADLAND:_Game_of_the_Year_Edition)
+*   [11 Beat Cop](#Beat_Cop)
+    *   [11.1 "BeatCop.x86_64" is not responding](#.22BeatCop.x86_64.22_is_not_responding)
+*   [12 Binding of Isaac: Rebirth](#Binding_of_Isaac:_Rebirth)
+    *   [12.1 No sound](#No_sound)
+*   [13 BLACKHOLE](#BLACKHOLE)
+*   [14 The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales)
+*   [15 The Book of Unwritten Tales: The Critter Chronicles](#The_Book_of_Unwritten_Tales:_The_Critter_Chronicles)
+*   [16 Borderlands 2](#Borderlands_2)
+    *   [16.1 Migrating saves from other platforms](#Migrating_saves_from_other_platforms)
+    *   [16.2 Using Ctrl Key](#Using_Ctrl_Key)
+    *   [16.3 Logging into SHiFT](#Logging_into_SHiFT)
+    *   [16.4 Game crashes nearly instantly](#Game_crashes_nearly_instantly)
+*   [17 Borderlands: The Pre-Sequel](#Borderlands:_The_Pre-Sequel)
+    *   [17.1 Keyboard not working](#Keyboard_not_working)
+    *   [17.2 Not starting via Steam](#Not_starting_via_Steam)
+*   [18 Cities in Motion 2](#Cities_in_Motion_2)
+    *   [18.1 Dialog boxes fail to display properly](#Dialog_boxes_fail_to_display_properly)
+*   [19 Cities Skylines](#Cities_Skylines)
+    *   [19.1 Textures not rendering properly](#Textures_not_rendering_properly)
+*   [20 Civilization V](#Civilization_V)
+    *   [20.1 Stuttering sound with PulseAudio](#Stuttering_sound_with_PulseAudio)
+    *   [20.2 Game crashes seconds after loading a map](#Game_crashes_seconds_after_loading_a_map)
+*   [21 Civilization: Beyond earth](#Civilization:_Beyond_earth)
+    *   [21.1 Segfault after a few minutes](#Segfault_after_a_few_minutes)
+*   [22 Civilization VI](#Civilization_VI)
+    *   [22.1 If Segfault Immediately on Start](#If_Segfault_Immediately_on_Start)
+*   [23 Deus Ex: Mankind divided](#Deus_Ex:_Mankind_divided)
+*   [24 The Clockwork Man](#The_Clockwork_Man)
+*   [25 Company of Heroes 2](#Company_of_Heroes_2)
+    *   [25.1 Missing libpcre.so.3](#Missing_libpcre.so.3_2)
+*   [26 Cossacks 3](#Cossacks_3)
+    *   [26.1 No sound](#No_sound_2)
+*   [27 Counter-Strike: Global Offensive (CS:GO)](#Counter-Strike:_Global_Offensive_.28CS:GO.29)
+    *   [27.1 Game starts on the wrong screen](#Game_starts_on_the_wrong_screen)
+    *   [27.2 Cannot reach bottom of the screen on menus](#Cannot_reach_bottom_of_the_screen_on_menus)
+    *   [27.3 Sound is played slightly delayed](#Sound_is_played_slightly_delayed)
+    *   [27.4 Mouse not working in-game](#Mouse_not_working_in-game)
+    *   [27.5 Brightness slider not working](#Brightness_slider_not_working)
+    *   [27.6 Microphone not working](#Microphone_not_working)
+*   [28 Crusader Kings II](#Crusader_Kings_II)
+    *   [28.1 No audio](#No_audio)
+    *   [28.2 Oddly sized starting window](#Oddly_sized_starting_window)
+*   [29 Crypt of the NecroDancer](#Crypt_of_the_NecroDancer)
+    *   [29.1 Crashes after splash screen](#Crashes_after_splash_screen)
+*   [30 The Curious Expedition](#The_Curious_Expedition)
+    *   [30.1 Game stuck on loading screen](#Game_stuck_on_loading_screen)
+        *   [30.1.1 Method 1](#Method_1)
+        *   [30.1.2 Method 2](#Method_2)
+*   [31 Death Road To Canada](#Death_Road_To_Canada)
+    *   [31.1 No music](#No_music)
+*   [32 Defender's Quest: Valley of the Forgotten](#Defender.27s_Quest:_Valley_of_the_Forgotten)
+*   [33 Dirt](#Dirt)
+*   [34 Dirt Rally](#Dirt_Rally)
+*   [35 Divinity: Original Sin - Enhanced Edition](#Divinity:_Original_Sin_-_Enhanced_Edition)
+    *   [35.1 Game does not start when using Bumblebee optirun or primusrun](#Game_does_not_start_when_using_Bumblebee_optirun_or_primusrun)
+    *   [35.2 Game does not work with amdgpu](#Game_does_not_work_with_amdgpu)
+*   [36 Don't Starve](#Don.27t_Starve)
+    *   [36.1 No sound](#No_sound_3)
+*   [37 Dota 2](#Dota_2)
+    *   [37.1 In-game font is unreadable](#In-game_font_is_unreadable)
+    *   [37.2 Error with libpangoft2](#Error_with_libpangoft2)
+    *   [37.3 The game does not start](#The_game_does_not_start)
+    *   [37.4 Game runs on the wrong screen](#Game_runs_on_the_wrong_screen)
+    *   [37.5 Game does not start with libxcb-dri3 error message](#Game_does_not_start_with_libxcb-dri3_error_message)
+    *   [37.6 Steam overlay](#Steam_overlay)
+    *   [37.7 Chinese tips and player names not shown](#Chinese_tips_and_player_names_not_shown)
+    *   [37.8 Chinese input method problem](#Chinese_input_method_problem)
+*   [38 Devil Daggers](#Devil_Daggers)
+*   [39 Drox Operative](#Drox_Operative)
+*   [40 Dwarfs F2P](#Dwarfs_F2P)
+    *   [40.1 Game does not start](#Game_does_not_start_2)
+    *   [40.2 Game crashes](#Game_crashes)
+*   [41 Dynamite Jack](#Dynamite_Jack)
+    *   [41.1 Sound Issues](#Sound_Issues)
+    *   [41.2 Game does not start](#Game_does_not_start_3)
+*   [42 Euro Truck Simulator 2](#Euro_Truck_Simulator_2)
+    *   [42.1 Shows only a black screen](#Shows_only_a_black_screen)
+*   [43 Football Manager 2014](#Football_Manager_2014)
+*   [44 FORCED](#FORCED)
+*   [45 FTL: Faster than Light](#FTL:_Faster_than_Light)
+    *   [45.1 Compatibility](#Compatibility)
+    *   [45.2 Problems with open-source video driver](#Problems_with_open-source_video_driver)
+*   [46 Game Dev Tycoon](#Game_Dev_Tycoon)
+    *   [46.1 Game does not start](#Game_does_not_start_4)
+*   [47 Garry's Mod](#Garry.27s_Mod)
+    *   [47.1 Game does not start](#Game_does_not_start_5)
+    *   [47.2 Opening some menus causes the game to crash](#Opening_some_menus_causes_the_game_to_crash)
+    *   [47.3 Game crashes after attempting to join server](#Game_crashes_after_attempting_to_join_server)
+*   [48 Gods will be watching](#Gods_will_be_watching)
+*   [49 GRID Autosport](#GRID_Autosport)
+    *   [49.1 Black screen when trying to play](#Black_screen_when_trying_to_play)
+*   [50 Hack 'n' Slash](#Hack_.27n.27_Slash)
+    *   [50.1 Crashes when trying to load a game](#Crashes_when_trying_to_load_a_game)
+*   [51 Hacker Evolution](#Hacker_Evolution)
+*   [52 Half-Life 2 and episodes](#Half-Life_2_and_episodes)
+    *   [52.1 Cyrillic fonts problem](#Cyrillic_fonts_problem)
+*   [53 Hammerwatch](#Hammerwatch)
+    *   [53.1 The game does not start via Steam](#The_game_does_not_start_via_Steam)
+    *   [53.2 No sound](#No_sound_4)
+*   [54 Harvest: Massive Encounter](#Harvest:_Massive_Encounter)
+    *   [54.1 Compatibility](#Compatibility_2)
+*   [55 Hatoful Boyfriend](#Hatoful_Boyfriend)
+    *   [55.1 Japanese text invisible](#Japanese_text_invisible)
+*   [56 Hyper Light Drifter](#Hyper_Light_Drifter)
+    *   [56.1 The controller does not work](#The_controller_does_not_work)
+    *   [56.2 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found)
+*   [57 The Impossible Game](#The_Impossible_Game)
+*   [58 The Inner World](#The_Inner_World)
+    *   [58.1 Bringing up the inventory or main menu](#Bringing_up_the_inventory_or_main_menu)
+        *   [58.1.1 Cutscenes](#Cutscenes)
+*   [59 Interloper](#Interloper)
+    *   [59.1 Game does not start](#Game_does_not_start_6)
+*   [60 Invisible Apartment](#Invisible_Apartment)
+    *   [60.1 Game does not start](#Game_does_not_start_7)
+*   [61 Joe Danger 2: The Movie](#Joe_Danger_2:_The_Movie)
+    *   [61.1 Compatibility](#Compatibility_3)
+*   [62 Kerbal Space Program](#Kerbal_Space_Program)
+*   [63 Killing Floor](#Killing_Floor)
+    *   [63.1 Cannot change screen resolution](#Cannot_change_screen_resolution)
+    *   [63.2 Windowed mode](#Windowed_mode)
+    *   [63.3 Stuttering sound](#Stuttering_sound)
+*   [64 Left for Dead 2](#Left_for_Dead_2)
+    *   [64.1 Missing Chinese font](#Missing_Chinese_font)
+*   [65 Lethal League](#Lethal_League)
+*   [66 Life is Strange](#Life_is_Strange)
+*   [67 Little Racers STREET](#Little_Racers_STREET)
+*   [68 The Long Dark](#The_Long_Dark)
+    *   [68.1 Game does not start](#Game_does_not_start_8)
+    *   [68.2 Game starts, but some overlay text is missing and cutscenes shows black screen](#Game_starts.2C_but_some_overlay_text_is_missing_and_cutscenes_shows_black_screen)
+    *   [68.3 Cutscenes are still black](#Cutscenes_are_still_black)
+    *   [68.4 Cursor disappears](#Cursor_disappears)
+*   [69 Magicka 2](#Magicka_2)
+    *   [69.1 Indefinitely stuck at start](#Indefinitely_stuck_at_start)
+*   [70 Mark of the Ninja](#Mark_of_the_Ninja)
+    *   [70.1 Bad sound](#Bad_sound)
+*   [71 Metro: Last Light](#Metro:_Last_Light)
+*   [72 Metro: 2033 Redux](#Metro:_2033_Redux)
+    *   [72.1 No sound](#No_sound_5)
+*   [73 Middle-earth: Shadow of Mordor](#Middle-earth:_Shadow_of_Mordor)
+    *   [73.1 Floating heads](#Floating_heads)
+*   [74 Mount & Blade: Warband](#Mount_.26_Blade:_Warband)
+    *   [74.1 Segmentation fault (core dumped) with wayland](#Segmentation_fault_.28core_dumped.29_with_wayland)
+    *   [74.2 DLC Chooser](#DLC_Chooser)
+*   [75 Multiwinia](#Multiwinia)
+    *   [75.1 Crash on startup](#Crash_on_startup)
+*   [76 Natural Selection 2](#Natural_Selection_2)
+*   [77 Nuclear Throne](#Nuclear_Throne)
+    *   [77.1 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found_2)
+*   [78 Penumbra: Overture](#Penumbra:_Overture)
+    *   [78.1 Windowed mode](#Windowed_mode_2)
+*   [79 The Polynomial](#The_Polynomial)
+    *   [79.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
+*   [80 Portal 2](#Portal_2)
+    *   [80.1 Game does not start](#Game_does_not_start_9)
+    *   [80.2 Resolution too low](#Resolution_too_low)
+    *   [80.3 Missing non Latin font](#Missing_non_Latin_font)
+*   [81 Prison Architect](#Prison_Architect)
+    *   [81.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
+*   [82 Project Zomboid](#Project_Zomboid)
+    *   [82.1 No sound](#No_sound_6)
+*   [83 Pyre](#Pyre)
+    *   [83.1 Game does not start](#Game_does_not_start_10)
+*   [84 Redshirt](#Redshirt)
+*   [85 Revenge of the Titans](#Revenge_of_the_Titans)
+*   [86 Risk of Rain](#Risk_of_Rain)
+*   [87 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
+*   [88 Saints Row IV](#Saints_Row_IV)
+    *   [88.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
+    *   [88.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
+*   [89 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
+    *   [89.1 No audio](#No_audio_2)
+*   [90 Slay the Spire](#Slay_the_Spire)
+*   [91 Songbringer](#Songbringer)
+    *   [91.1 Launch error with wanyland](#Launch_error_with_wanyland)
+*   [92 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
+    *   [92.1 No audio](#No_audio_3)
+*   [93 Spacechem](#Spacechem)
+    *   [93.1 Game crash](#Game_crash)
+*   [94 Splice](#Splice)
+*   [95 The Stanley Parable](#The_Stanley_Parable)
+    *   [95.1 Game won't start](#Game_won.27t_start)
+*   [96 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
+*   [97 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
+    *   [97.1 Start with black screen](#Start_with_black_screen)
+*   [98 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
+    *   [98.1 No sound](#No_sound_7)
+*   [99 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
+*   [100 System Shock 2](#System_Shock_2)
+*   [101 Tabletop Simulator](#Tabletop_Simulator)
+    *   [101.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
+*   [102 Team Fortress 2](#Team_Fortress_2)
+    *   [102.1 HRTF setup](#HRTF_setup)
+    *   [102.2 Loading screen freeze](#Loading_screen_freeze)
+    *   [102.3 No audio](#No_audio_4)
+    *   [102.4 Slow loading textures](#Slow_loading_textures)
+*   [103 Terraria](#Terraria)
+*   [104 This War of Mine](#This_War_of_Mine)
+    *   [104.1 Game does not start](#Game_does_not_start_11)
+    *   [104.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
+*   [105 Ticket to Ride](#Ticket_to_Ride)
+*   [106 Tomb Raider](#Tomb_Raider)
+    *   [106.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
+    *   [106.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
+*   [107 Tower Unite](#Tower_Unite)
+    *   [107.1 Graphical Glitches](#Graphical_Glitches)
+*   [108 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
+*   [109 Transistor](#Transistor)
+    *   [109.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_audio_issues)
+*   [110 Transmissions: Element 120](#Transmissions:_Element_120)
+    *   [110.1 Troubleshooting](#Troubleshooting)
+*   [111 Trine 2](#Trine_2)
+    *   [111.1 Colors](#Colors)
+    *   [111.2 Sound](#Sound)
+    *   [111.3 Resolution](#Resolution)
+*   [112 Tropico 5](#Tropico_5)
+    *   [112.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
+*   [113 Unity of Command](#Unity_of_Command)
+    *   [113.1 Squares](#Squares)
+    *   [113.2 No audio](#No_audio_5)
+*   [114 Unity3D](#Unity3D)
+    *   [114.1 Locale settings](#Locale_settings)
+    *   [114.2 Unity 5 sound problems](#Unity_5_sound_problems)
+    *   [114.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
+    *   [114.4 Chinese/Japanese/Korean display bug](#Chinese.2FJapanese.2FKorean_display_bug)
+*   [115 Unrest](#Unrest)
+*   [116 Volgarr the Viking](#Volgarr_the_Viking)
+*   [117 War Thunder](#War_Thunder)
+    *   [117.1 No audio](#No_audio_6)
+    *   [117.2 Blank screen](#Blank_screen)
+*   [118 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
+*   [119 Worms W.M.D](#Worms_W.M.D)
+*   [120 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+    *   [120.1 Game does not start](#Game_does_not_start_12)
+*   [121 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+*   [122 World of Goo](#World_of_Goo)
+    *   [122.1 Changing resolution](#Changing_resolution)
+*   [123 X3: Terran Conflict](#X3:_Terran_Conflict)
+    *   [123.1 Game crashes on startup](#Game_crashes_on_startup)
+*   [124 XCOM](#XCOM)
+    *   [124.1 Hangs on startup](#Hangs_on_startup)
+    *   [124.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+
+## Contributing
+
+*   Avoid referencing `~/.local/share/Steam`, reference `~/.steam/root` instead. See [Steam#Directory structure](/index.php/Steam#Directory_structure "Steam").
+*   Use the `*gamedir*` pseudo-variable when referring to a game's directory (`~/.steam/root/steamapps/common/Game`).
+*   Link [launch options](/index.php/Launch_option "Launch option") like this: `[[launch option]]s`.
+*   Link bug reports and sources of workarounds.
 
 ## Common steps
 
@@ -289,21 +299,20 @@ Adobe AIR requires you to accept its EULA by creating the file `~/.appdata/Adobe
 
 ## Alien Isolation
 
-Symlink `/usr/lib/libpcre.so` to `*gamedir*/lib/x86_64/libpcre.so.3`, and add the following line to [launch options](/index.php/Launch_option "Launch option"), otherwise the game will fail to start.
+### Missing libpcre.so.3
 
-for example (as root):
+<small>added 16 April 2017, [Steam Community thread](https://steamcommunity.com/app/214490/discussions/0/154644705028020291/)</small>
 
-cd /usr/lib ln -s libpcre.so libpcre.so.3
+Symlink `/usr/lib/libpcre.so` to `*gamedir*/lib/x86_64/libpcre.so.3`, and add the following environment variable to the [launch options](/index.php/Launch_option "Launch option"), otherwise the game will fail to start:
 
-and change the launch options to:
+```
+LD_LIBRARY_PATH="$LD_LIBRARY_PATH:~/.steam/root/steamapps/common/Alien Isolation/lib/x86_64"
 
-LD_LIBRARY_PATH="$LD_LIBRARY_PATH:~/.local/share/Steam/steamapps/common/Alien\ Isolation/lib/x86_64/" %command%
-
-or if you are using optirun (nvidia + bumblebee):
-
-LD_LIBRARY_PATH="$LD_LIBRARY_PATH:~/.local/share/Steam/steamapps/common/Alien\ Isolation/lib/x86_64/" LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 optirun %command%
+```
 
 ## Amnesia: The Dark Descent
+
+<small>added 3 December 2012, [Steam Community thread](https://steamcommunity.com/app/221410/discussions/0/864957183198111387/)</small>
 
 Dependencies:
 
@@ -408,14 +417,14 @@ Use `BeatCop.x86` instead.
 Add the following line to [launch options](/index.php/Launch_option "Launch option"):
 
 ```
-"$HOME/.local/share/Steam/SteamApps/common/Beat Cop/BeatCop.x86" # %command%
+"$HOME/.steam/root/SteamApps/common/Beat Cop/BeatCop.x86" # %command%
 
 ```
 
 Or
 
 ```
-$ cd ~/.local/share/Steam/SteamApps/common/Beat\ Cop/
+$ cd ~/.steam/root/SteamApps/common/Beat\ Cop/
 $ mv BeatCop.x86_64 BeatCop.x64
 $ ln -s BeatCop.x86 BeatCop.x86_64
 
@@ -479,7 +488,7 @@ The game crashes in libopenal directlay after launch.
 
 Possible solution 0: Add the `-nostartupmovies` launch option for Borderlands 2 and the Pre-Sequel. It no longer crashes in libopenal with a general protection error.
 
-Possible solution 1: As of lib32-openal version 1.18.0-1, the game crashes instantly. The possible solutions are to downgrade lib32-openal to 1.17.2-1, or to start the game with `LD_PRELOAD='$HOME/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libopenal.so.1'`.
+Possible solution 1: As of lib32-openal version 1.18.0-1, the game crashes instantly. The possible solutions are to downgrade lib32-openal to 1.17.2-1, or to start the game with `LD_PRELOAD='$HOME/.steam/root/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libopenal.so.1'`.
 
 In case there're messages like this in the terminal:
 
@@ -576,7 +585,7 @@ Backtrace:
 Segfault is caused by [lib32-intel-tbb](https://aur.archlinux.org/packages/lib32-intel-tbb/). To fix the issue:
 
 *   download [libtbb2 deb-package](https://packages.ubuntu.com/trusty/i386/libtbb2/download) from one of the ubuntu mirrors
-*   unpack `libtbb.so.2` from `libtbb2_4.2_20130725-1.1ubuntu1_i386.deb/data.tar.xz/usr/lib` to `/home/<user>/.local/share/Steam/steamapps/common/Sid Meier's Civilization Beyond Earth`
+*   unpack `libtbb.so.2` from `libtbb2_4.2_20130725-1.1ubuntu1_i386.deb/data.tar.xz/usr/lib` to `/home/<user>/.steam/root/steamapps/common/Sid Meier's Civilization Beyond Earth`
 *   add `env LD_PRELOAD='./libtbb.so.2' %command%` to your [launch options](/index.php/Launch_option "Launch option")
 
 ## Civilization VI
@@ -640,6 +649,8 @@ Requires [lib32-libidn](https://www.archlinux.org/packages/?name=lib32-libidn).
 
 ## Company of Heroes 2
 
+### Missing libpcre.so.3
+
 Like with [#Alien Isolation](#Alien_Isolation) you need to symlink `/usr/lib/libpcre.so` to `*gamedir*/lib/*arch*/libpcre.so.3`, otherwise the game will fail to start.
 
 ## Cossacks 3
@@ -649,7 +660,7 @@ Like with [#Alien Isolation](#Alien_Isolation) you need to symlink `/usr/lib/lib
 Use the steam-runtime, e.g. set the [launch options](https://support.steampowered.com/kb_article.php?ref=1040-JWMT-2947) to:
 
 ```
-   ~/.local/share/Steam/ubuntu12_32/steam-runtime/run.sh %command%
+   ~/.steam/root/ubuntu12_32/steam-runtime/run.sh %command%
 
 ```
 
@@ -779,7 +790,7 @@ The default electron for this game is too old for Archlinux.
 Install [electron](https://www.archlinux.org/packages/?name=electron) and add the following line to [launch options](/index.php/Launch_option "Launch option"):
 
 ```
-cd ~/.local/share/Steam/SteamApps/common/The\ Curious\ Expedition && electron resources/app.asar # %command%
+cd ~/.steam/root/SteamApps/common/The\ Curious\ Expedition && electron resources/app.asar # %command%
 
 ```
 
@@ -787,7 +798,7 @@ cd ~/.local/share/Steam/SteamApps/common/The\ Curious\ Expedition && electron re
 
 ```
 # pacman -S electron
-$ cp -r /usr/lib/electron/* ~/.local/share/Steam/SteamApps/common/The\ Curious\ Expedition/
+$ cp -r /usr/lib/electron/* ~/.steam/root/SteamApps/common/The\ Curious\ Expedition/
 
 ```
 
@@ -814,13 +825,13 @@ Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 Add the following line to [launch options](/index.php/Launch_option "Launch option"), otherwise the game will fail to start.
 
 ```
-LD_LIBRARY_PATH="~/.local/share/Steam/SteamApps/common/Dirt Rally/lib/x86_64:$LD_LIBRARY_PATH" %command%
+LD_LIBRARY_PATH="~/.steam/root/SteamApps/common/Dirt Rally/lib/x86_64:$LD_LIBRARY_PATH" %command%
 
 ```
 
 **Note:** The order of the paths is important. "$LD_LIBRARY_PATH" must be the *last* entry or it won't work.
 
-**Note:** If you don't have your Steam library installed to "~/.local/share/Steam", modify the corresponding prefix accordingly.
+**Note:** If you don't have your Steam library installed to "~/.steam/root", modify the corresponding prefix accordingly.
 
 ## Divinity: Original Sin - Enhanced Edition
 
@@ -1304,7 +1315,7 @@ Symlink `/usr/lib/libSDL2_mixer-2.0.so.0` to `*gamedir*/lib64/libSDL2_mixer-2.0.
 The 64-bit version fails to start. Either use the 32-bit version `tld.x86` in the game directory or start the 64-bit version like so:
 
 ```
-LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 ./tld.x86_64
+LD_PRELOAD=~/.steam/root/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 ./tld.x86_64
 
 ```
 
@@ -1320,14 +1331,14 @@ In addition to the command above, add the following to the Steam launch command:
 For example, if you have a screen of resultion 1280x720 and are launching the x64 version from the terminal (within the directory which contains the binaries), the full command would be:
 
 ```
-LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 ./tld.x86_64 -screen-fullscreen 0 -screen-width 1280 -screen-height 720
+LD_PRELOAD=~/.steam/root/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 ./tld.x86_64 -screen-fullscreen 0 -screen-width 1280 -screen-height 720
 
 ```
 
 and from Steam, the complete game [launch options](/index.php/Launch_option "Launch option") would be:
 
 ```
-LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 %command% -screen-fullscreen 0 -screen-width 1280 -screen-height 720
+LD_PRELOAD=~/.steam/root/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 %command% -screen-fullscreen 0 -screen-width 1280 -screen-height 720
 
 ```
 
@@ -1521,10 +1532,10 @@ In the game, go to the options and set all audio to the proper volume.
 
 ## Pyre
 
-### Game Does not Starts
+### Game does not start
 
 ```
-$ rm ~/.local/share/Steam/SteamApps/common/Pyre/lib64/libSDL2-2.0.so.0
+$ rm ~/.steam/root/SteamApps/common/Pyre/lib64/libSDL2-2.0.so.0
 
 ```
 

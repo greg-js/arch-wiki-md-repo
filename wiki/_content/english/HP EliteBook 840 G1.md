@@ -38,7 +38,7 @@ Even if [UEFI](/index.php/UEFI "UEFI"), [Arch Linux](/index.php/Arch_Linux "Arch
 
 The latest HP firmware allows defining a “Customized Boot” path in the UEFI pre-boot graphical environment. Select the “Customized Boot” option in the UEFI pre-boot graphical environment under “Boot Options” and set the path to your OS boot loader on the ESP (see [UEFI#EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI")), e.g.:
 
-`\EFI\grub_archlinux\grubx64.efi`
+`\EFI\grub\grubx64.efi`
 
 Always verify the correct path to the .efi file. Also, adjust the device boot order (also in the UEFI pre-boot graphical environment) to boot this entry first.
 
@@ -52,7 +52,7 @@ Change the UEFI application path of the OS boot loader to that hard coded path. 
 
 ```
  # mkdir -p $MOUNTPOINT/EFI/Microsoft/Boot
- # cp $MOUNTPOINT/EFI/grub_archlinux/grubx64.efi $MOUNTPOINT/EFI/Microsoft/Boot/bootmgfw.efi
+ # cp $MOUNTPOINT/EFI/grub/grubx64.efi $MOUNTPOINT/EFI/Microsoft/Boot/bootmgfw.efi
 
 ```
 
@@ -60,7 +60,7 @@ or
 
 ```
  # mkdir -p $MOUNTPOINT/EFI/Boot
- # cp $MOUNTPOINT/EFI/grub_archlinux/grubx64.efi $MOUNTPOINT/EFI/Boot/Bootx64.efi
+ # cp $MOUNTPOINT/EFI/grub/grubx64.efi $MOUNTPOINT/EFI/Boot/Bootx64.efi
 
 ```
 

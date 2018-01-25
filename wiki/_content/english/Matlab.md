@@ -430,7 +430,38 @@ If you get the error when attempting to load or create a LiveScript:
 
 ```
 
-The steps in [#Addon manager not working](#Addon_manager_not_working) may resolve the issue.
+*   It could be because of broken symlinks of [libgcrypt](https://www.archlinux.org/packages/?name=libgcrypt) and other dependencies, after system updates. On the first start of the Live Editor the components are extracted and these libary symlinks are created (if not existing). A solution is to simply delete the whole folder containing the broken symlinks and the extracted components, which are in the installation directory (represented by `$MATLABROOT`) under:
+
+```
+$MATLABROOT/sys/jxbrowser-chromium
+
+```
+
+Or if the installation directory is not user writable in:
+
+```
+~/.matlab/R2017b/HtmlPanel
+
+```
+
+Matlab will then regenerate the contents on the next Live Editor start.
+
+*   Also the steps in [#Addon manager not working](#Addon_manager_not_working) may resolve the issue.
+*   If the above does not help, execute in the command window
+
+```
+>> com.mathworks.mde.liveeditor.widget.rtc.CachedLightweightBrowserFactory.createLightweightBrowser()
+
+```
+
+to get a more detailed error message.
+
+*   A debugging console can be opened with
+
+```
+>> com.mathworks.mde.webbrowser.HtmlPanelDebugConsole.invoke;
+
+```
 
 ### Using webcam/video device
 

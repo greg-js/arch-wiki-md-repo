@@ -23,6 +23,13 @@ Installing it will install the `snapd` daemon.
 
 An alternative package [snapd-git](https://aur.archlinux.org/packages/snapd-git/) that builds directly from master branch is available through [AUR](/index.php/AUR "AUR"). During installation the package will replace both `snapd` and `snap-confine` packages.
 
+Once the package is installed enable socket activation:
+
+```
+# systemctl enable --now snapd.socket
+
+```
+
 ## Configuration
 
 The package ships several systemd unit files, which manage several tasks like automatically refreshing all installed snaps once a new version is released.
@@ -38,7 +45,9 @@ To start the timer which periodically refreshes snaps when a new version is push
 
 ## Removal
 
-Uninstalling the [snapd](https://aur.archlinux.org/packages/snapd/) package will not remove directories and files created while using *snap*. It's best to remove your snaps with *snap remove* before uninstalling the [snapd](https://aur.archlinux.org/packages/snapd/) package. At this time it is not possible to remove the core snap through the *snap* command. To remove the state, snap package cache and mount unit files completely, you can follow the instructions below.
+**Tip:** Both [snapd](https://aur.archlinux.org/packages/snapd/) and [snapd-git](https://aur.archlinux.org/packages/snapd-git/) versions 2.30+ will automatically purge all installed snaps when the package is removed, the manual steps are no longer necessary
+
+Uninstalling the [snapd](https://aur.archlinux.org/packages/snapd/) package will not remove directories and files created while using *snap*. It's best to remove your snaps with *snap remove* before uninstalling the package. At this time it is not possible to remove the core snap through the *snap* command. To remove the state, snap package cache and mount unit files completely, you can follow the instructions below.
 
 1\. We unmount any currently active snap that is mounted to `/var/lib/snapd/snap/`.
 

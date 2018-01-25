@@ -53,7 +53,7 @@ $ tar zcvfp ~/firefox_profile_backup.tar.gz ~/.mozilla/firefox/*xyz.default*
 
 The script will first move Firefox's profile to a new static location, make a sub-directory in `/dev/shm`, softlink to it and later populate it with the contents of the profile. As before, replace the bold sections to suit. The only value that absolutely needs to be altered is, again, `xyz.default`.
 
-Be sure that [rsync](/index.php/Rsync "Rsync") is installed and save the script to `~/bin/firefox-sync`, for example:
+Be sure that [rsync](/index.php/Rsync "Rsync") is installed and save the script to `~/.local/bin/firefox-sync`, for example:
 
  `firefox-sync` 
 ```
@@ -90,9 +90,9 @@ Close Firefox, make the script executable and test it:
 
 ```
 $ killall firefox firefox-bin
-$ chmod +x ~/bin/firefox-sync
+$ chmod +x ~/.local/bin/firefox-sync
 $ ls ~/.mozilla/firefox/
-$ ~/bin/firefox-sync <firefox-profile>
+$ ~/.local/bin/firefox-sync <firefox-profile>
 
 ```
 
@@ -125,8 +125,8 @@ systemctl --user start firefox-profile@<profile>.service
  [Service]
  Type=oneshot
  RemainAfterExit=yes
- ExecStart=/home/matthew/bin/firefox-sync %i
- ExecStop=/home/matthew/bin/firefox-sync %i
+ ExecStart=/home/matthew/.local/bin/firefox-sync %i
+ ExecStop=/home/matthew/.local/bin/firefox-sync %i
 
 ```
 
@@ -142,14 +142,14 @@ $ crontab -e
 Add a line to start the script every 30 minutes,
 
 ```
-*/30 * * * * *~/bin/firefox-sync*
+*/30 * * * * *~/.local/bin/firefox-sync*
 
 ```
 
 or add the following to do so every 2 hours:
 
 ```
-0 */2 * * * *~/bin/firefox-sync*
+0 */2 * * * *~/.local/bin/firefox-sync*
 
 ```
 
@@ -158,7 +158,7 @@ or add the following to do so every 2 hours:
 Assuming [bash](/index.php/Bash "Bash") is being used, add the script to the login/logout files:
 
 ```
-$ echo '*~/bin/firefox-sync*' | tee -a ~/.bash_logout ~/.bash_login >/dev/null
+$ echo '*~/.local/bin/firefox-sync*' | tee -a ~/.bash_logout ~/.bash_login >/dev/null
 
 ```
 

@@ -116,7 +116,7 @@ To erase the MBR bootstrap code (may be useful if you have to do a full reinstal
 
 ### Using sfdisk
 
-For both GPT and MBR you can use *sfdisk* to save the partition layout of your device to a file with the `--dump` option. Run the following command for device `/dev/sda`:
+For both GPT and MBR you can use *sfdisk* to save the partition layout of your device to a file with the `-d`/`--dump` option. Run the following command for device `/dev/sda`:
 
 ```
 # sfdisk -d /dev/sda > sda.dump
@@ -149,17 +149,17 @@ To later restore this layout you can run:
 
 ### Using sgdisk
 
-Using *sgdisk* you can create a binary backup consisting of the protective MBR, the main GPT header, the backup GPT header, and one copy of the partition table. The example below will save the partition table of `/dev/sda` to a file `sgdisk-sda.bak`:
+Using *sgdisk* you can create a binary backup consisting of the protective MBR, the main GPT header, the backup GPT header, and one copy of the partition table. The example below will save the partition table of `/dev/sda` to a file `sgdisk-sda.bin`:
 
 ```
-# sgdisk -b=sgdisk-sda.bak /dev/sda
+# sgdisk -b=sgdisk-sda.bin /dev/sda
 
 ```
 
 You can later restore the backup by running:
 
 ```
-# sgdisk -l=sgdisk-sda.bak /dev/sda
+# sgdisk -l=sgdisk-sda.bin /dev/sda
 
 ```
 

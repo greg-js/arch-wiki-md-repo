@@ -79,7 +79,7 @@ There are a number of language packs available for Firefox, other than the stand
 
 ## Add-ons
 
-Firefox is well known for its large library of add-ons which can be used to add new features or modify the behavior of existing features of Firefox. You can find new add-ons or manage installed add-ons with Firefox's "Add-ons Manager."
+Firefox is well known for its large library of add-ons which can be used to add new features or modify the behavior of existing features. Firefox's "Add-ons Manager" is used to manage installed add-ons or find new ones.
 
 For a list of popular add-ons, see [Mozilla's add-on list sorted by popularity](https://addons.mozilla.org/firefox/extensions/?sort=popular). See also [List of Firefox extensions](https://en.wikipedia.org/wiki/List_of_Firefox_extensions "wikipedia:List of Firefox extensions") on Wikipedia.
 

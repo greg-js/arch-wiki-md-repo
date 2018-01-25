@@ -4,9 +4,9 @@ Related articles
 
 **翻译状态：** 本文是英文页面 [Dhcpd](/index.php/Dhcpd "Dhcpd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-04-14，点击[这里](https://wiki.archlinux.org/index.php?title=Dhcpd&diff=0&oldid=472034)可以查看翻译后英文页面的改动。
 
-dhcpd is the [Internet Systems Consortium](http://www.isc.org/downloads/dhcp/) DHCP Server. It is useful for instance on a machine acting as a router on a LAN.
+dhcpd 是 [Internet Systems Consortium](http://www.isc.org/downloads/dhcp/) DHCP 的服务，它被用作局域网环境中的路由管理。
 
-**注意:** *dhcpd* (DHCP **(server)** daemon) is not the same as [dhcpcd](/index.php/Dhcpcd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dhcpcd (简体中文)") (DHCP **client** daemon).
+**注意:** *dhcpd* (DHCP **(server)** daemon) 不是 [dhcpcd](/index.php/Dhcpcd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dhcpcd (简体中文)") (DHCP **client** daemon).
 
 ## Contents
 
@@ -20,11 +20,11 @@ dhcpd is the [Internet Systems Consortium](http://www.isc.org/downloads/dhcp/) D
 
 ## 安装
 
-[Install](/index.php/Install "Install") the [dhcp](https://www.archlinux.org/packages/?name=dhcp) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [dhcp](https://www.archlinux.org/packages/?name=dhcp) 包，其位于[official repositories](/index.php/Official_repositories "Official repositories")。
 
 ## 使用
 
-*dhcpd* includes a unit file `dhcpd4.service`, which can be used to [control](/index.php/Enable "Enable") the daemon. It starts the daemon for *all* [network interfaces](/index.php/Network_interfaces "Network interfaces"). See [#Listening on only one interface](#Listening_on_only_one_interface) for alternative.
+*dhcpd* 包括一个`dhcpd4.service`的单元文件, 可用于创建守护进程. It starts the daemon for *all* [network interfaces](/index.php/Network_interfaces "Network interfaces"). 可查看 [#只侦听单一网口](#.E5.8F.AA.E4.BE.A6.E5.90.AC.E5.8D.95.E4.B8.80.E7.BD.91.E5.8F.A3) 了解单一网口配置。
 
 ## 配置
 
@@ -36,24 +36,24 @@ Assign a static IPv4 address to the interface you want to use (in our examples w
 
 ```
 
-**提示：** Usually, the one of next three subnets is used for private networks, which are specially reserved and won't conflict with any host in the Internet:
+**提示：** 通常有三个预留的网段用于私有网络，它们不会与任何互联网中的主机发生冲突:
 
 *   `192.168/16` (subnet `192.168.0.0`, netmask `255.255.0.0`)
 *   `172.16/12` (subnet `172.16.0.0`, netmask `255.240.0.0`)
 *   `10/8` (for large networks; subnet `10.0.0.0`, netmask `255.0.0.0`)
 
-See also [RFC 1918](http://www.ietf.org/rfc/rfc1918.txt).
+查阅 [RFC 1918](http://www.ietf.org/rfc/rfc1918.txt).
 
-To have your static ip assigned at boot, see [Network configuration#Static IP address](/index.php/Network_configuration#Static_IP_address "Network configuration").
+要在引导时分配静态IP地址，查看 [Network configuration#Static IP address](/index.php/Network_configuration#Static_IP_address "Network configuration")。
 
-The default `dhcpd.conf` contains many uncommented examples, so relocate it:
+默认的`dhcpd.conf` 文件包含许多注释的例子，复制一份该文件:
 
 ```
 # mv /etc/dhcpd.conf /etc/dhcpd.conf.example
 
 ```
 
-The minimal configuration file may look like:
+最精简的配置文件如下：
 
  `/etc/dhcpd.conf` 
 ```
@@ -66,7 +66,7 @@ subnet 139.96.30.0 netmask 255.255.255.0 {
 
 ```
 
-If you need to provide a fixed IP address for a single specific device, you can use the following syntax
+如果你要为设备提供一个固定的IP地址，可使用以下语法：
 
  `/etc/dhcpd.conf` 
 ```
@@ -84,7 +84,7 @@ subnet 139.96.30.0 netmask 255.255.255.0 {
 
 ```
 
-`domain-name-servers` option contains addresses of DNS servers which are supplied to clients. In our example we are using Google's public DNS servers. If you know a local DNS servers (for example, provided by your ISP), you should use it. If you've configured your own DNS on a local machine, then use its address in your subnet (e. g. `139.96.30.100` in our example).
+`domain-name-servers` 选项包含提供给客户的DNS服务器地址，这个例子中使用了谷歌公共DNS服务器。如果你知道一个本地的DNS服务器 (例如服务商提供的)，那么你应该使用这个更DNS。如果DNS服务器部署在本地设备上，应该使用子网络中的地址(如 `139.96.30.100` )。
 
 `subnet-mask` and `routers` defines a subnet mask and a list of available routers on the subnet. In most cases for small networks you can use `255.255.255.0` as a mask and specify an IP address of the machine on which you're configuring DHCP server as a router.
 
@@ -92,7 +92,7 @@ subnet 139.96.30.0 netmask 255.255.255.0 {
 
 ### 只侦听单一网口
 
-If your computer is already part of one or several networks, it could be a problem if your computer starts giving ip addresses to machines from the other networks. It can be done by either configuring dhcpd or starting it as a daemon with [systemctl](/index.php/Systemd#Using_units "Systemd").
+如果你的计算机已经时一个或多个网络中的一部分，你的计算机从其他网络获取ip地址可能会有问题。它可以从配置好了的dhcpd服务或者使用或者使用[systemctl](/index.php/Systemd#Using_units "Systemd")的dhcp守护进程上获取。
 
 #### 配置 dhcpd
 

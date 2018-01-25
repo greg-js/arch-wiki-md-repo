@@ -193,7 +193,7 @@ ListenStream=12345
 
 **Warning:** Using `sshd.socket` negates the `ListenAddress` setting, so it will allow connections over any address. To achieve the effect of setting `ListenAddress`, you must specify the port *and* IP for `ListenStream` (e.g. `ListenStream=192.168.1.100:22`). You must also add `FreeBind=true` under `[Socket]` or else setting the IP address will have the same drawback as setting `ListenAddress`: the socket will fail to start if the network is not up in time.
 
-**Tip:** When using socket activation neither `sshd.socket` nor the daemon's regular `sshd.service` allow to monitor connection attempts in the log, but executing `# journalctl /usr/bin/sshd` does.
+**Tip:** When using socket activation neither `sshd.socket` nor the daemon's regular `sshd.service` allow to monitor connection attempts in the log, but executing `journalctl /usr/bin/sshd` does.
 
 #### Protection
 
@@ -807,7 +807,7 @@ Check these simple issues before you look any further.
 3.  Check that you did not limit SSH access with `AllowUsers` or `AllowGroups` in the [server config](#Configuration_2).
 4.  Check if the user has set a password. Sometimes new users who have not yet logged in to the server do not have a password.
 5.  [Append](/index.php/Append "Append") `LogLevel DEBUG` to `/etc/ssh/sshd_config`.
-6.  Use `# journalctl -xe` for possible (error) messages.
+6.  Use `journalctl -xe` for possible (error) messages.
 7.  [Restart](/index.php/Restart "Restart") `sshd` and logout/login on both client and server.
 
 ### Connection refused or timeout problem

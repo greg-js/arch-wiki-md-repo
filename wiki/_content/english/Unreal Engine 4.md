@@ -8,11 +8,14 @@ The content of this article was originally written on [this page](https://wiki.u
 
 ## Contents
 
-*   [1 Minimum requirements](#Minimum_requirements)
-*   [2 Installation](#Installation)
-    *   [2.1 Gain access to the source code](#Gain_access_to_the_source_code)
+*   [1 Prerequisites](#Prerequisites)
+    *   [1.1 Minimum hardware requirements](#Minimum_hardware_requirements)
+    *   [1.2 Gain access to the source code](#Gain_access_to_the_source_code)
+    *   [1.3 Clang compatibility](#Clang_compatibility)
+*   [2 Compilation](#Compilation)
+    *   [2.1 Compile manually from source code](#Compile_manually_from_source_code)
     *   [2.2 Installing from the AUR](#Installing_from_the_AUR)
-    *   [2.3 Compile from source code](#Compile_from_source_code)
+    *   [2.3 Compilation time](#Compilation_time)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Compilation problems](#Compilation_problems)
     *   [3.2 Runtime problems](#Runtime_problems)
@@ -24,33 +27,72 @@ The content of this article was originally written on [this page](https://wiki.u
     *   [4.1 Starter Content](#Starter_Content)
     *   [4.2 Marketplace Apps](#Marketplace_Apps)
 
-## Minimum requirements
+## Prerequisites
+
+### Minimum hardware requirements
 
 *   Intel or Amd CPU@2.5GHz Quad Core **64 Bits**
 *   GPU: NVIDIA GeForce GTX 470 or AMD Radeon 6870 HD series
 *   RAM: 8 GB
 
-## Installation
-
-#### Gain access to the source code
+### Gain access to the source code
 
 The Unreal Engine source code is in a [private Github repository](https://github.com/EpicGames/UnrealEngine) requiring free registration with the developer (Epic Games) for access[[1]](https://www.unrealengine.com/en-US/ue4-on-github).
 
 To gain access, login or register at [Epic Games Accounts](https://accounts.epicgames.com/login) and provide an accessible GitHub username at the bottom of the Epic Games ['Connected Accounts Dashboard'](https://www.unrealengine.com/dashboard/connected) page. You will then receive an invite to access the private Github repository.
 
+### Clang compatibility
+
+Unreal Engine doesn't support the latest versions of Clang. Clang 4.0.1 is the last supported version. Clang 3.8.1 is confirmed to compile Unreal 4.18.3 successfully. **Do not** use Clang 3.4, as it has issues.
+
+You can use [downgrade](https://aur.archlinux.org/packages/downgrade/) to revert to a previous version of Clang and LLVM.
+
+## Compilation
+
+You can compile manually from a downloaded GitHub release or install from AUR.
+
+### Compile manually from source code
+
+You can get [the most recent releases](https://github.com/EpicGames/UnrealEngine/releases) on GitHub as zips (~230MiB for the 4.18.3)
+
+This will download about ~4.5 GiB of dependencies:
+
+```
+$ ./Setup.sh
+
+```
+
+Prepare for compilation:
+
+```
+$ ./GenerateProjectFiles.sh 
+
+```
+
+Then run to compile:
+
+```
+$ make
+
+```
+
+This will directly compile a non-Debug version of the Unreal Engine.
+
+For detailed info refer to [the official instructions to build on Linux](https://wiki.unrealengine.com/Building_On_Linux#Building).
+
 ### Installing from the AUR
 
 Unreal Engine 4 is available in the [AUR](/index.php/AUR "AUR") as the [unreal-engine](https://aur.archlinux.org/packages/unreal-engine/) package.
 
-The package is ~28 GiB installed and needs ~100 GiB to build with an output ABS package of ~4.5 GiB when compressed. This AUR package downloads ~9.5 GiB of source files plus ~4.5 GiB of dependencies. The compilation can take from 30 minutes up to a few hours depending on your machine.
+The package is ~28 GiB installed and needs ~100 GiB to build with an output ABS package of ~4.5 GiB when compressed. This AUR package downloads ~9.5 GiB of source files plus ~4.5 GiB of dependencies.
 
 Since the repository is private, you can [set up an SSH key](https://help.github.com/articles/generating-an-ssh-key/) so your GitHub account is used to download the source.
 
-For a smaller download, you can [download the release as a tar.gz](https://github.com/EpicGames/UnrealEngine/releases) after logging into github.com, then use that file as the source in the PKGBUILD.
+For a smaller download [you can use .zip releases](https://github.com/EpicGames/UnrealEngine/releases) as a source for PKGBUILD.
 
-### Compile from source code
+### Compilation time
 
-To compile manually, refer to [the official instructions to build on Linux](https://wiki.unrealengine.com/Building_On_Linux#Building).
+The compilation can take from 20 minutes up to a few hours depending on your machine. As an example on a AMD FX-8350 (8 threads) with 16GB DDR3 on a SSD and Clang 3.8.1 takes roughly 40 minutes. (This doesn't include shaders compilation)
 
 ## Troubleshooting
 

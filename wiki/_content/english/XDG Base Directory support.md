@@ -66,9 +66,9 @@ Only `XDG_RUNTIME_DIR` is set by default through [pam_systemd](http://www.freede
 
 When contributing make sure to use the correct section.
 
-Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and `VIMINIT`), patches or compile-time options to gain support and anything which does must be deemed hardcoded. Additionally if the process is too error prone or difficult, such as [Haskell's cabal](https://www.haskell.org/cabal/) or eclipse, they should also be considered as hardcoded.
+Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and `VIMINIT`), patches or compile-time options to gain support and anything which does must be deemed hardcoded. Additionally if the process is too error prone or difficult, such as [Haskell's cabal](https://www.haskell.org/cabal/) or Eclipse, they should also be considered as hardcoded.
 
-*   The first column should be the project name, ideally the command name if it is not ambigious, linked to their website or an appropriate internal wiki article.
+*   The first column should be the project name, ideally the command name if it is not ambiguous, linked to their website or an appropriate internal wiki article.
 
 *   The second column is for any legacy files and directories the project had (one per line), this is done so people can find them even if they are no longer read.
 
@@ -240,7 +240,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 `~/Documents/Anki`
 
  | [[60]](https://github.com/dae/anki/pull/49) [[61]](https://github.com/dae/anki/pull/58) | `$ anki -b "$XDG_DATA_HOME"/Anki` |
-| [aspell](/index.php/Aspell "Aspell") | `~/.aspell.conf` |
+| [aspell](/index.php/Aspell "Aspell") | `~/.aspell.conf` | `$ export ASPELL_CONF="per-conf $XDG_CONFIG_HOME/aspell/aspell.conf; personal $XDG_CONFIG_HOME/aspell/en.pws; repl $XDG_CONFIG_HOME/aspell/en.prepl"` |
 | [Atom](/index.php/Atom "Atom") | `~/.atom` | [[62]](https://github.com/atom/atom/issues/8281) | `$ export ATOM_HOME="$XDG_DATA_HOME"/atom` |
 | [bazaar](/index.php/Bazaar "Bazaar") | `~/.bazaar`
 
@@ -390,6 +390,27 @@ init-module=${XDG_CONFIG_HOME}/npm/config/npm-init.js
  |
 | [nvidia-settings](https://github.com/NVIDIA/nvidia-settings) | `~/.nvidia-settings-rc` | `$ nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings` |
 | [nvm](https://aur.archlinux.org/packages/nvm/) | `~/.nvm` | `$ export NVM_DIR="$XDG_DATA_HOME"/nvm` |
+| [Octave](/index.php/Octave "Octave") | `~/octave`
+
+`~/.octave_packages`
+
+`~/.octave_hist`
+
+ | `$ export OCTAVE_HISTFILE="$XDG_CACHE_HOME/octave-hsts"`
+
+`$ export OCTAVE_SITE_INITFILE="$XDG_CONFIG_HOME/octave/octaverc"`
+
+ `$XDG_CONFIG_HOME/octave/octaverc` 
+```
+source /usr/share/octave/site/m/startup/octaverc;
+pkg prefix ~/.local/share/octave/packages ~/.local/share/octave/packages;
+pkg local_list /home/<your username>/.local/share/octave/octave_packages;
+
+```
+
+The `local_list` option must be given an absolute path.
+
+ |
 | [openscad](http://www.openscad.org/) | `~/.OpenSCAD` | [7c3077b0f](https://github.com/openscad/openscad/commit/7c3077b0f) | [[81]](https://github.com/openscad/openscad/issues/125) | Does not fully honour XDG Base Directory Specification, see [[82]](https://github.com/openscad/openscad/issues/373)
 
 Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/PlatformUtils-posix.cc#L20) `~/.local/share`.
@@ -467,7 +488,11 @@ It is required to create both directories `$ mkdir "$XDG_CONFIG_HOME/pg" && mkdi
 `$ weechat -d "$XDG_CONFIG_HOME"/weechat`
 
  |
-| [wget](/index.php/Wget "Wget") | `~/.wgetrc` | `$ export WGETRC="$XDG_CONFIG_HOME/wgetrc"` |
+| [wget](/index.php/Wget "Wget") | `~/.wgetrc` | 
+
+`$ export WGETRC="$XDG_CONFIG_HOME/wgetrc"` `$ wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"`
+
+ |
 | [wine](/index.php/Wine "Wine") | `~/.wine` | [[96]](https://bugs.winehq.org/show_bug.cgi?id=20888) | [Winetricks](/index.php/Wine#Winetricks "Wine") uses XDG-alike location below for [WINEPREFIX](/index.php/Wine#WINEPREFIX "Wine") management:
 
 `$ mkdir -p "$XDG_DATA_HOME"/wineprefixes`
@@ -484,7 +509,9 @@ It is required to create both directories `$ mkdir "$XDG_CONFIG_HOME/pg" && mkdi
 
 `$ export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc`
 
-Note that these variables are respected by *xinit*, but not by *startx*.
+Note that these variables are respected by *xinit*, but not by *startx*. Instead, specify the filename as an argument:
+
+`$ startx "$XDG_CONFIG_HOME/X11/xinitrc" -- vt1`
 
  |
 | [xorg-xrdb](https://www.archlinux.org/packages/?name=xorg-xrdb) | `~/.Xresources`

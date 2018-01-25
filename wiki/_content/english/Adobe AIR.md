@@ -55,7 +55,7 @@ Some applications using Adobe AIR can come with their own binaries included. In 
 
 First of all, binaries will look for Adobe AIR, rather than the Adobe AIR SDK. There seems to be no way to change where to look, so you're going to have to symlink the Adobe AIR runtime provided with the SDK to the default location that binaries follow:
 
- ` # ln -s /opt/adobe-air-sdk/runtimes/air/linux/Adobe\ AIR/ /opt/Adobe\ AIR` 
+ ` # ln -s "/opt/adobe-air-sdk/runtimes/air/linux/Adobe AIR/" "/opt/Adobe AIR"` 
 
 With this, the binaries should be able to detect your Adobe AIR installation. It will leave you with two Adobe AIR folders in `/opt`, which is dirty but there seems to be no way around this for now.
 

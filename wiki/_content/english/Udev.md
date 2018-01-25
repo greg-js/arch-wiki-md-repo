@@ -302,7 +302,7 @@ Find where the device is connected to using:
 
 Now change the `power/wakeup` attribute of the device and the USB controller it is connected to, using the following rule:
 
- `/etc/udev/rules.d/50-wake-on-device.rules`  `ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="**046d**", ATTRS{idProduct}=="**c52b**", ATTR{power/wakeup}="enabled", ATTR{driver/**1-1.1.1.4**/power/wakeup}="enabled"` 
+ `/etc/udev/rules.d/50-wake-on-device.rules`  `ACTION=="add", SUBSYSTEM=="usb", DRIVER=="usb", ATTRS{idVendor}=="**046d**", ATTRS{idProduct}=="**c52b**", ATTR{power/wakeup}="enabled", ATTR{driver/**1-1.1.1.4**/power/wakeup}="enabled"` 
 **Note:** By default, the USB host controllers are all enabled by default for wakeup. The status can be checked using `# cat /proc/acpi/wakeup`.
 
 ### Triggering events

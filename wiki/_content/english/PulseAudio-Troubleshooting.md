@@ -16,6 +16,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [1.11 Clients alter master output volume (a.k.a. volume jumps to 100% after running application)](#Clients_alter_master_output_volume_.28a.k.a._volume_jumps_to_100.25_after_running_application.29)
     *   [1.12 No sound after resume from suspend](#No_sound_after_resume_from_suspend)
     *   [1.13 ALSA channels mute when headphones are plugged/unplugged improperly](#ALSA_channels_mute_when_headphones_are_plugged.2Funplugged_improperly)
+    *   [1.14 Volume resets to 50% every few seconds](#Volume_resets_to_50.25_every_few_seconds)
 *   [2 Microphone](#Microphone)
     *   [2.1 Microphone not detected by PulseAudio](#Microphone_not_detected_by_PulseAudio)
     *   [2.2 PulseAudio uses wrong microphone](#PulseAudio_uses_wrong_microphone)
@@ -279,6 +280,19 @@ If when you unplug your headphones or plug them in the audio remains muted in al
 load-module module-switch-on-port-available
 
 ```
+
+### Volume resets to 50% every few seconds
+
+Install [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) and use:
+
+```
+$ hdajackretask
+
+```
+
+Set "Not Connected" to everything but the ports you are using. It seems the other unused audio ports on the motherboard interfere with the used ones. Then if you want use the Boot Override to save this change between reboots. There is a possibility it's the Front Green Headphone that's causing the bug, if you need it override the Front Microphone to Headphone and the Front Green Headphone to "Not Connected" and use the Front Microphone port as your headphone port.
+
+More info about this problem: [[2]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/1585084).
 
 ## Microphone
 
@@ -549,19 +563,19 @@ pulseaudio --start
 
 and check if the module is activated by starting `pavucontrol`. Under `Recoding` the input device should show `Echo-Cancel Source Stream from"`
 
-Here is a list of possible 'aec_args' for 'aec_method=webrtc' with their default values [[2]](https://github.com/pulseaudio/pulseaudio/blob/master/src/modules/echo-cancel/webrtc.cc)[[3]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3):
+Here is a list of possible 'aec_args' for 'aec_method=webrtc' with their default values [[3]](https://github.com/pulseaudio/pulseaudio/blob/master/src/modules/echo-cancel/webrtc.cc)[[4]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3):
 
 *   `analog_gain_control=1` - Analog AGC - 'Automatic Gain Control' done over changing the volume directly - Will most likely lead to [distortions](#Microphone_distorted_due_to_automatic_adjustment).
 *   `digital_gain_control=0` - Digital AGC - 'Automatic Gain Control' done in post processing (higher CPU load).
 *   `experimental_agc=0` - Allow enabling of the webrtc experimental AGC mechanism.
-*   `agc_start_volume=85` - Initial volume when using AGC - Possible values 0-255 - A too low initial volume may prevent the AGC algorithm from ever raising the volume high enough [[4]](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/9.0/).
+*   `agc_start_volume=85` - Initial volume when using AGC - Possible values 0-255 - A too low initial volume may prevent the AGC algorithm from ever raising the volume high enough [[5]](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/9.0/).
 *   `high_pass_filter=1` - ?
 *   `noise_suppression=1` - Noise suppression.
 *   `voice_detection=1` - VAD - Voice activity detection.
-*   `extended_filter=0` - The extended filter is more complex and less sensitive to incorrect delay reporting from the hardware than the regular filter. The extended filter mode is disabled by default, because it seemed produce worse results during double-talk [[5]](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/9.0/).
+*   `extended_filter=0` - The extended filter is more complex and less sensitive to incorrect delay reporting from the hardware than the regular filter. The extended filter mode is disabled by default, because it seemed produce worse results during double-talk [[6]](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/9.0/).
 *   `intelligibility_enhancer=0` - Some bits for webrtc intelligibility enhancer.
 *   `drift_compensation=0` - Drift compensation to allow echo cancellation between different devices (such as speakers on your laptop and the microphone on your USB webcam). - only possible with "mobile=0".
-*   `beamforming=0` - See [[6]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3)[[7]](https://arunraghavan.net/2016/06/beamforming-in-pulseaudio/)
+*   `beamforming=0` - See [[7]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3)[[8]](https://arunraghavan.net/2016/06/beamforming-in-pulseaudio/)
     *   `mic_geometry=x1,y1,z1,x2,y2,z2` - Only with "beamforming=1".
     *   `target_direction=a,e,r` - Only with "beamforming=1".
 *   `mobile=0` - ?
@@ -808,7 +822,7 @@ hdmi-output-0: HDMI / DisplayPort (priority: 5900, not available)
 
 This leads to no sound coming from HDMI output. A workaround for this is to switch to another VT and back again. If that does not work, try: turn off your monitor, switch to another VT, turn on your monitor, and switch back. This problem has been reported by ATI/Nvidia/Intel users.
 
-Another workaround could be to disable the switch-on-port-available module by commenting it in /etc/pulse/default.pa [[8]](https://bugs.freedesktop.org/show_bug.cgi?id=93946#c36):
+Another workaround could be to disable the switch-on-port-available module by commenting it in /etc/pulse/default.pa [[9]](https://bugs.freedesktop.org/show_bug.cgi?id=93946#c36):
 
  `/etc/pulse/default.pa` 
 ```
@@ -1062,7 +1076,7 @@ As a workaround, include [gksu](https://www.archlinux.org/packages/?name=gksu) o
 
 The other workaround is to uncomment and set `daemonize = yes` in the `/etc/pulse/daemon.conf`.
 
-See also [[9]](https://bbs.archlinux.org/viewtopic.php?id=135955).
+See also [[10]](https://bbs.archlinux.org/viewtopic.php?id=135955).
 
 ### Audacity
 
@@ -1270,4 +1284,4 @@ load-module module-stream-restore restore_device=false
 
 ### RTP/UDP packet flood
 
-In some cases the default configuration might flood the network with UDP packets.[[10]](https://bugs.freedesktop.org/show_bug.cgi?id=44777) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[11]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)
+In some cases the default configuration might flood the network with UDP packets.[[11]](https://bugs.freedesktop.org/show_bug.cgi?id=44777) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[12]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)

@@ -372,7 +372,7 @@ You can use whatever you want, like **-UMozilla/5.0** and so on.
 
 ### Using Aria2 with makepkg
 
-You can use <a class="mw-selflink selflink">Aria2</a> instead of curl to download source files, just change the `DLAGENTS` variable as follows:
+You can use Aria2 instead of [curl](https://www.archlinux.org/packages/?name=curl) to download source files, just change the `DLAGENTS` variable as follows:
 
  `/etc/makepkg.conf` 
 ```

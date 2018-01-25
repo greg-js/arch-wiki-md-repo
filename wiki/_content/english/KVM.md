@@ -137,12 +137,11 @@ Verify that feature is activated:
 
 ```
 
-Run guest VM with following command:
+Enable the "host passthrough" mode to forward all CPU features to the guest system:
 
-```
-$ qemu-system-x86_64 -enable-kvm -cpu host
-
-```
+1.  If using [QEMU](/index.php/QEMU "QEMU"), run the guest virtual machine with the following command: `qemu-system-x86_64 -enable-kvm -cpu host`.
+2.  If using *virt-manager*, change the CPU model to `host-passthrough` (it will not be in the list, just write it in the box).
+3.  If using *virsh*, use `virsh edit *vm-name*` and change the CPU line to `<cpu mode='host-passthrough' check='partial'/>`
 
 Boot VM and check if vmx flag is present:
 

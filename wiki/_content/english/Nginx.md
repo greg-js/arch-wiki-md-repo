@@ -337,12 +337,14 @@ Inside each `server` block serving a PHP web application should appear a `locati
 
 ```
 location ~ \.php$ {
-     try_files $uri $document_root$fastcgi_script_name =404;
-     fastcgi_param HTTP_PROXY "";
-     fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
-     fastcgi_index index.php;
-     fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-     include fastcgi.conf;
+    try_files $uri $document_root$fastcgi_script_name =404;
+    fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
+    fastcgi_index index.php;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    include fastcgi.conf;
+
+    # prevention for httpoxy vulnerability: https://httpoxy.org/
+    fastcgi_param HTTP_PROXY "";
 }
 
 ```
@@ -351,7 +353,7 @@ If it is needed to process other extensions with PHP (e.g. *.html* and *.htm*):
 
 ```
 location ~ \.(php**|html|htm**)$ {
-     ...
+    ...
 }
 
 ```
@@ -384,7 +386,7 @@ If using multiple `server` blocks with enabled PHP support, it might be easier t
  `/etc/nginx/php.conf` 
 ```
 location ~ \.php$ {
-     ...
+    ...
 }
 
 ```
@@ -393,11 +395,11 @@ To enable PHP support for a particular server, simple include `php.conf`:
 
  `/etc/nginx/nginx.conf` 
 ```
- server {
-     server_name example.com;
-     ...
-     include php.conf;
- }
+server {
+    server_name example.com;
+    ...
+    include php.conf;
+}
 
 ```
 

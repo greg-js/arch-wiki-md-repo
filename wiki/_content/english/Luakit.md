@@ -1,6 +1,6 @@
 [Luakit](https://luakit.github.io/luakit/) is an extremely fast, lightweight and flexible web browser using the webkit engine. It is customizable through lua scripts and fully usable with keyboard shortcuts. It uses GTK+ 3 and WebKit2GTK+.
 
-**Warning:** As far as configuration is concerned, this page is mostly out of date with respect to the current Luakit development. For the moment, [Quick start](https://github.com/luakit/luakit/blob/develop/doc/luadoc/pages/03-quick-start-guide.md) is a better place for information about customization.
+**Warning:** This page has been updated, but Luakit is in rapid development nowadays, and discrepancies may occur. Also, there is much more to document than found here.
 
 ## Contents
 
@@ -10,42 +10,33 @@
     *   [2.2 Input fields](#Input_fields)
     *   [2.3 Bookmarks](#Bookmarks)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Homepage](#Homepage)
-    *   [3.2 Custom search engines](#Custom_search_engines)
-    *   [3.3 Download location](#Download_location)
-    *   [3.4 Adblock](#Adblock)
-    *   [3.5 Bookmarks management](#Bookmarks_management)
-        *   [3.5.1 Sync](#Sync)
-        *   [3.5.2 Converting plain text bookmarks to SQLite format](#Converting_plain_text_bookmarks_to_SQLite_format)
-        *   [3.5.3 Import from Firefox](#Import_from_Firefox)
-        *   [3.5.4 Export bookmarks](#Export_bookmarks)
-    *   [3.6 Tor](#Tor)
-    *   [3.7 Custom CSS](#Custom_CSS)
+    *   [3.1 Key bindings](#Key_bindings)
+    *   [3.2 Homepage](#Homepage)
+    *   [3.3 Custom search engines](#Custom_search_engines)
+    *   [3.4 Download location](#Download_location)
+    *   [3.5 Adblock](#Adblock)
+    *   [3.6 Bookmarks management](#Bookmarks_management)
+        *   [3.6.1 Sync](#Sync)
+        *   [3.6.2 Converting plain text bookmarks to SQLite format](#Converting_plain_text_bookmarks_to_SQLite_format)
+        *   [3.6.3 Import from Firefox](#Import_from_Firefox)
+        *   [3.6.4 Export bookmarks](#Export_bookmarks)
+    *   [3.7 Tor](#Tor)
+    *   [3.8 Custom CSS](#Custom_CSS)
 *   [4 See also](#See_also)
 
 ## Installation
 
-To use the up-to-date branch, [install](/index.php/Install "Install") [luakit-git](https://aur.archlinux.org/packages/luakit-git/) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [luakit-git](https://aur.archlinux.org/packages/luakit-git/) from the [AUR](/index.php/AUR "AUR"). Only this development version is available for the moment.
 
 With the Unix philosophy in mind, Luakit is entirely customizable through its configuration files. Those files are written in the Lua scripting language, thus allowing virtually unlimited features.
 
-First, remove any personal configuration from an outdated version of luakit, or back it up first.
+However, those configuration files are quite vital to Luakit and shouldn't be modified, unless you really know what you are doing. Actually, any module found in `~/.config/luakit` is ignored if it has the same name as a configuration file (e.g. `binds.lua`).
 
-This is sufficient for use. If you would like to configure luakit, however, then the next step is to copy the main configuration file to your personal config directory:
-
-```
-$ mkdir -p ~/.config/luakit
-$ cp /etc/xdg/luakit/rc.lua ~/.config/luakit/rc.lua
-
-```
-
-**Note:** It is inadvisable to copy the full set of configuration files, as was previously encouraged. This makes it harder for you to upgrade luakit, as you have more files to merge upstream changes into, and you are more likely to experience errors caused by such upstream changes (until those changes are merged with your personal configuration).
-
-The majority of this configuration file is a set of `require` statements that import other desired modules. This makes it easy to remove any unwanted features. You can also add code snippets to this file or set module options to customize browser behavior. Even if you do not know much about Lua, the configuration is simple and well commented enough to make it straightforward.
+You can copy `/etc/xfg/luakit/rc.lua` to `~/.config/luakit` if you really want to control which files are loaded. Do it as your own risk. Copying `rc.lua` isn't the preferred way to configure Luakit anymore. See [#Configuration](#Configuration) instead.
 
 ## Basic usage
 
-**Note:** Most of the shortcuts are viewable and customizable from `~/.config/luakit/binds.lua`.
+**Note:** Shortcuts are listed in a special page accessible with the `:binds` command.
 
 Press `:` to access the command prompt. You can do nearly everything from there. Use `Tab` to autocomplete commands.
 
@@ -56,7 +47,7 @@ To quit, use the `:quit` command, or press `Shift+z` followed by `Shift+q`. You 
 ### Browsing
 
 *   Press `o` to open a prompt with the `:open` command and enter the URI you want. Press `Shift+o` to edit the current URI.
-*   If it is not a recognized URI, Luakit will use the default search engine specified in `~/.config/luakit/globals.lua`.
+*   If it is not a recognized URI, Luakit will use the default search engine. See [#Custom search engines](#Custom_search_engines).
 *   Specify which search engine to use by prefixing the entry with the appropriate keywork (e.g. `:open google foobar` will search *foobar* on Google).
 *   Use common shortcuts to navigate. For [emacs](/index.php/Emacs "Emacs") and [vim](/index.php/Vim "Vim") *aficionados*, some of their regular shortcuts are provided. You can use the mouse as well.
 *   Use `f` to display the index of all visible links. Enter the appropriate number or a part of the string to open the link.
@@ -89,17 +80,54 @@ If enabled (default configuration), bookmarks can be used from within Luakit.
 
 ## Configuration
 
+Configuration is done in `~/.config/luakit/userconf.lua`. It is not necessary anymore to copy and modify `rc.lua`. Some settings can also be modified with the `:settings` command, unless you set them in `userconf.lua` with:
+
+ `~/.config/luakit/userconf.lua` 
+```
+local settings = require "settings"
+settings.example = "some value"
+```
+
+### Key bindings
+
+Most bindings will require some knowledge of Luakit, but you can at least do simple things rebinding:
+
+ `~/.config/luakit/userconf.lua` 
+```
+local modes = require "modes"
+
+-- Creates new bindings from old ones.
+modes.remap_binds("normal", -- This is the mode in which the bindings are active.
+  {
+  --  new     old     removes the old binding (defaults to false)
+     {"O",    "t",    true},
+  -- define as many as you wish
+    {"Control-=", "zi"},
+    ...
+  })
+```
+
+To bind keys to commands, you can use the following template:
+
+ `~/.config/luakit/userconf.lua` 
+```
+modes.add_binds("normal", {
+-- {"<key>",
+--  "<description>",
+--  function (w) w:enter_cmd("<command>") end}
+  {"O", "Open URL in a new tab.",
+   function (w) w:enter_cmd(":tabopen ") end},
+   ...
+})
+```
+
+For inspiration, see `/usr/share/luakit/lib/binds.lua`, where the default bindings are defined.
+
 ### Homepage
 
 Set your homepage as follows:
 
- `~/.config/luakit/globals.lua` 
-```
-globals = {
-    homepage = "www.example.com",
-    ...
-}
-```
+ `~/.config/luakit/userconf.lua`  `settings.window.home_page = "www.example.com"` 
 
 ### Custom search engines
 
@@ -107,65 +135,51 @@ To search with the default search engine, press `o` and type the phrases. To sea
 
 You can virtually add any search engine you want. Make a search on the website you want and copy paste the URI to the Luakit configuration by replacing the searched terms with an `%s`. Example:
 
- `~/.config/luakit/globals.lua` 
+ `~/.config/luakit/userconf.lua` 
 ```
-search_engines = {
-    aur          = "https://aur.archlinux.org/packages.php?O=0&K=%s&do_Search=Go",
-    aw           = "https://wiki.archlinux.org/index.php/Special:Search?fulltext=Search&search=%s",
-    googleseceng = "https://www.google.com/search?name=f&hl=en&q=%s",
-    ...
-}
+local engines = settings.window.search_engines
+engines.aur          = "https://aur.archlinux.org/packages.php?O=0&K=%s&do_Search=Go",
+engines.aw           = "https://wiki.archlinux.org/index.php/Special:Search?fulltext=Search&search=%s",
+engines.googleseceng = "https://www.google.com/search?name=f&hl=en&q=%s",
 ```
 
 The variable is used as a keyword for the `:open` command in Luakit.
 
 Set the defaut search engine by using this same keyword:
 
- `~/.config/luakit/globals.lua`  `search_engines.default = search_engines.aur` 
+ `~/.config/luakit/userconf.lua`  `engines.default = search_engines.aur` 
+
+Instead of strings, you can defined search engines as functions that return a string. For instance, here's a Wikipedia search engine that lets you specify a language (defaulting to English):
+
+ `~/.config/luakit/userconf.lua` 
+```
+engines.wikipedia = function (arg)
+  local l, s = arg:match("^(%a%a):%s*(.+)")
+  if l then
+    return "https://" .. l .. ".wikipedia.org/wiki/Special:Search?search=" .. s
+  else
+    return "[https://en.wikipedia.org/wiki/Special:Search?search=](https://en.wikipedia.org/wiki/Special:Search?search=)" .. arg
+  end
+end,
+```
+
+If called as `:open wikipedia arch linux`, this will open the Arch Linux page on the English Wikipedia; with `:open wikipedia fr: arch linux`, this will use the French Wikipedia instead.
 
 ### Download location
 
 To specify download location:
 
- `~/.config/luakit/rc.lua` 
+ `~/.config/luakit/userconf.lua` 
 ```
--- Add download support
 require "downloads"
-require "downloads_chrome"
-
--- Set download location
-downloads.default_dir = os.getenv("HOME") .. "/downloads"
-downloads.add_signal("download-location", function (uri, file)
-    if not file or file == "" then
-        file = (string.match(uri, "/([^/]+)$")
-            or string.match(uri, "^%w+://(.+)")
-            or string.gsub(uri, "/", "_")
-            or "untitled")
-    end
-    return downloads.default_dir .. "/" .. file
-end)
+downloads.default_dir = os.getenv("HOME") .. "/mydir"
 ```
+
+Default location is `$XDG_DOWNLOAD_DIR` if it exists, `$HOME/downloads` otherwise.
 
 ### Adblock
 
-There are several plugins available out there.
-
-To configure the Adblock plugin [featured on the official website](https://github.com/mason-larobina/luakit/wiki/AdBlock-Lua-module):
-
-*   Put the `adblock.lua` and `adblock_chrome.lua` files in `~/.config/luakit`.
-*   Edit `~/.config/rc.lua` and add the following in the section labelled *Optional user script loading*:
-
- `~/.config/rc.lua` 
-```
-----------------------------------
--- Optional user script loading --
-----------------------------------
-
-require "adblock"
-require "adblock_chrome"
-...
-
-```
+Adblock is loaded by default, but you need to:
 
 *   Fetch an adblock-compatible list, like [Easylist](https://easylist-downloads.adblockplus.org/easylist.txt), and save it to `~/.local/share/luakit`.
 *   Restart Luakit to load the extension.
@@ -174,8 +188,6 @@ require "adblock_chrome"
 Full info on enabled lists and AdBlock state can be found using `:adblock` or `g` `Shift+a` at `luakit://adblock/` internal page, if the `adblock_chrome` module is enabled, which is not a mandatory part.
 
 **Note:** For Adblock to run in **normal** mode, `easylist.txt` and any others must be placed in `~/.local/share/luakit/adblock`
-
-AdBlock for Luakit plugin is also available as a part of [Luakit Plugins](https://github.com/mason-larobina/luakit-plugins/) project.
 
 ### Bookmarks management
 
@@ -455,29 +467,11 @@ $ torify luakit
 
 ### Custom CSS
 
-Place the CSS file in the `styles` subdirectory of Luakit data directory (create if does not exist). For example this will set monospace font for text input areas:
+Locate the `styles` sub-directory within luakit's data storage directory. Normally, this is located at `~/.local/share/luakit/styles/`. Create the directory if it does not already exist. Move any CSS rules to a new file within that directory. The filename must end in `.css`. Make sure you specify which sites your stylesheet should apply to. The way to do this is to use `@-moz-document` rules. The Stylish wiki page [Applying styles to specific sites](https://github.com/stylish-userstyles/stylish/wiki/Applying-styles-to-specific-sites) may be helpful. Run `:styles-reload` to detect new stylesheet files and reload any changes to existing stylesheet files; it isn't necessary to restart luakit.
 
- `~/.local/share/luakit/styles/custom.css` 
-```
-input,textarea,select {
-  font-family: DejaVu Sans Mono,Consolas,Monaco,Lucida Console,Liberation Mono,Bitstream Vera Sans Mono,Courier New, monospace;
-}
+To open the styles menu, run the command `:styles-list`. Here you can enable/disable stylesheets, open stylesheets in your text editor, and view which stylesheets are active.
 
-```
-
-And in `globals.lua` assign the variable `user_stylesheet_uri` to that file's location:
-
- `~/.config/luakit/globals.lua` 
-```
-domain_props = {
-    ["all"] = {
-        ...
-        user_stylesheet_uri = "file://" .. luakit.data_dir .. "/styles/custom.css",
-        ...
-    },
-    ...
-}
-```
+If a stylesheet is disabled for all pages, its state will be listed as "Disabled". If a stylesheet is enabled for all pages, but does not apply to the current page, its state will be listed as "Enabled". If a stylesheet is enbaled for all pages _and_ it applies to the current page, its state will be listed as "Active".
 
 ## See also
 

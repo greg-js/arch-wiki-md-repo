@@ -285,8 +285,9 @@ Server = https://r.mikroskeem.eu
 
 *   **Maintainer:** Marc Mettke <marc@itmettke.de>
 *   **Description:** Auto Build of Most Popular AUR Packages
+*   **Upstream page:** [https://repo.itmettke.de/status/](https://repo.itmettke.de/status/)
 *   **Archive:** [https://repo.itmettke.de/aur-archive/](https://repo.itmettke.de/aur-archive/)
-*   **Key-ID:** 7448C890582975CD
+*   **Key-ID:** [7448C890582975CD](https://pgp.mit.edu/pks/lookup?op=vindex&search=0x7448C890582975CD)
 
 ```
 [aur-archlinux]

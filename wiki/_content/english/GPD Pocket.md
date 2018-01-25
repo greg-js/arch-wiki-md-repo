@@ -171,6 +171,8 @@ EndSection
 
 ```
 
+If after using the above touchscreen configuration you still find that the input has the wrong orientation try removing the TransformationMatrix option. This is because more than one fix for the same issue will result in double transformation.
+
 ##### Gnome and GDM
 
 Edit `~/.config/monitors.xml` (this file might not be present by default):

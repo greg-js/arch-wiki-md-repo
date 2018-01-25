@@ -30,7 +30,7 @@ The following two sections show how to create an EFI System Partition (ESP).
 
 It is recommended to keep ESP size at 550 MiB although larger sizes are fine. [[1]](http://www.rodsbooks.com/efi-bootloaders/principles.html)
 
-According to a Microsoft note[[2]](http://technet.microsoft.com/en-us/library/hh824839.aspx#DiskPartitionRules), the minimum size for the EFI System Partition (ESP) would be 100 MB, though this is not stated in the UEFI Specification. Note that for Advanced Format 4K Native drives (4-KB-per-sector) drives, the size is at least 256 MiB, because it is the minimum partition size of FAT32 drives (calculated as sector size (4KB) x 65527 = 256 MiB), due to a limitation of the FAT32 file format.
+According to a Microsoft note[[2]](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions#diskpartitionrules), the minimum size for the EFI System Partition (ESP) would be 100 MiB, though this is not stated in the UEFI Specification. Note that for [Advanced Format](/index.php/Advanced_Format "Advanced Format") 4K Native drives (4-KiB-per-sector) drives, the size is at least 256 MiB, because it is the minimum partition size of FAT32 drives (calculated as sector size (4KiB) x 65527 = 256 MiB), due to a limitation of the FAT32 file format.
 
 ### GPT partitioned disks
 

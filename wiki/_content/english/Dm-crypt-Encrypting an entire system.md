@@ -909,6 +909,8 @@ The LVM logical volumes of this example follow the exact layout as the previous 
 
 ### Preparing the boot partition
 
+**Warning:** GRUB does not support LUKS2\. Do not use LUKS2 on partitions that GRUB needs to access.
+
 The bootloader loads the kernel, [initramfs](/index.php/Initramfs "Initramfs"), and its own configuration files from the `/boot` directory.
 
 First, create the LUKS container where the files will be located and installed into:
