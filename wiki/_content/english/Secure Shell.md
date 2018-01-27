@@ -683,7 +683,7 @@ There are several [client configuration](#Configuration) options which can speed
 
 ### Mounting a remote filesystem with SSHFS
 
-Please refer to the [SSHFS](/index.php/SSHFS "SSHFS") article to use sshfs to mount a remote system - accessible via SSH - to a local folder, so you will be able to do any operation on the mounted files with any tool (copy, rename, edit with vim, etc.). Using sshfs instead of shfs is generally preferred as a new version of shfs has not been released since 2004.
+Please refer to the [SSHFS](/index.php/SSHFS "SSHFS") article to mount a SSH-accessible remote system to a local folder, so you will be able to do any operation on the mounted files with any tool (copy, rename, edit with vim, etc.). *sshfs* is generally preferred over *shfs*, the latter has not been updated since 2004.
 
 **Tip:** There is a package [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) that can be used to run autosshfs automatically at login.
 
@@ -691,8 +691,10 @@ Please refer to the [SSHFS](/index.php/SSHFS "SSHFS") article to use sshfs to mo
 
 By default, the SSH session automatically logs out if it has been idle for a certain time. To keep the session up, the client can send a keep-alive signal to the server if no data has been received for some time, or symmetrically the server can send messages at regular intervals if it has not heard from the client.
 
-*   On the **server** side, `ClientAliveInterval` sets the timeout in seconds after which if no data has been received from the client, *sshd* will send a request for response. The default is 0, no message is sent. See also the `ServerAliveCountMax` and `TCPKeepAlive` options. For example to request a response every 60 seconds from the client, set the `ClientAliveInterval 60` option in your [server configuration](#Configuration_2).
-*   On the **client** side, `ServerAliveInterval` controls the interval between the requests for response sent from the client to the server. For example to request a response every 120 seconds from the server, add the `ServerAliveInterval 120` option to your [client configuration](#Configuration).
+*   On the **server** side, `ClientAliveInterval` sets the timeout in seconds after which if no data has been received from the client, *sshd* will send a request for response. The default is 0, no message is sent. For example to request a response every 60 seconds from the client, set the `ClientAliveInterval 60` option in your [server configuration](#Configuration_2). See also the `ClientAliveCountMax` and `TCPKeepAlive` options.
+*   On the **client** side, `ServerAliveInterval` controls the interval between the requests for response sent from the client to the server. For example to request a response every 120 seconds from the server, add the `ServerAliveInterval 120` option to your [client configuration](#Configuration). See also the `ServerAliveCountMax` and `TCPKeepAlive` options.
+
+**Note:** To ensure a session is kept alive, only one of either the client or the server needs to send keep alive requests. If ones control both the servers and the clients, a reasonable choice is to only configure the clients that require a persistent session with a positive `ServerAliveInterval` and leave other clients and servers in their default configuration.
 
 ### Automatically restart SSH tunnels with systemd
 

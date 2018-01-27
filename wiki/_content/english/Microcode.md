@@ -218,15 +218,13 @@ Users may consult either Intel or AMD at the following links to see if a particu
 
 It is possible to find out if the `intel-ucode.img` contains a microcode image for the running CPU with [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/).
 
-*   Install [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) (changing initrd is not required for detection)
-*   Install [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/)
-*   `# modprobe cpuid`
-*   `# bsdtar -Oxf /boot/intel-ucode.img | iucode_tool -tb -lS -`
-
-	(extract microcode image and search it for your cpuid)
-
-*   If an update is available, it should show up below *selected microcodes*
-*   The microcode might already be in your vendor bios and not show up loading in dmesg. Compare to the current microcode running `grep microcode /proc/cpuinfo`
+1.  Install [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) (changing initrd is not required for detection)
+2.  Install [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/)
+3.  `# modprobe cpuid` 
+4.  Extract microcode image and search it for your cpuid:
+     `# bsdtar -Oxf /boot/intel-ucode.img | iucode_tool -tb -lS -` 
+5.  If an update is available, it should show up below *selected microcodes*
+6.  The microcode might already be in your vendor bios and not show up loading in dmesg. Compare to the current microcode running `grep microcode /proc/cpuinfo`
 
 ## Enabling Intel early microcode loading in custom kernels
 

@@ -5,6 +5,7 @@ From the project [home page](http://www.ffmpeg.org/):
 ## Contents
 
 *   [1 Package installation](#Package_installation)
+    *   [1.1 Manual installation](#Manual_installation)
 *   [2 Encoding examples](#Encoding_examples)
     *   [2.1 Screen cast](#Screen_cast)
     *   [2.2 Recording webcam](#Recording_webcam)
@@ -48,7 +49,10 @@ From the project [home page](http://www.ffmpeg.org/):
 
 For the development version, install the [ffmpeg-git](https://aur.archlinux.org/packages/ffmpeg-git/) package. There is also [ffmpeg-full](https://aur.archlinux.org/packages/ffmpeg-full/), which is built with as many optional features enabled as possible.
 
-**Tip:** Many users may wish to skip the package or AUR and compile FFmpeg themselves from its git master directly, and add `/usr/local/lib` to `/etc/ld.so.conf`. This can cause the `/usr/bin/ffmpeg` tool provided by [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) to crash or work improperly due to the library version mismatch. (Frequently [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) is still installed as a dependency.) One fix for this is to add `/usr/lib` to the rpath of `/usr/bin/ffmpeg` with a tool such as [patchelf](https://www.archlinux.org/packages/?name=patchelf):
+### Manual installation
+
+Some users may wish to skip the package or AUR and compile FFmpeg themselves from its git master directly, and add `/usr/local/lib` to `/etc/ld.so.conf`. This can cause the `/usr/bin/ffmpeg` tool provided by [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) to crash or work improperly due to the library version mismatch. (Frequently [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) is still installed as a dependency.) One fix for this is to add `/usr/lib` to the rpath of `/usr/bin/ffmpeg` with a tool such as [patchelf](https://www.archlinux.org/packages/?name=patchelf):
+
 ```
 # patchelf --set-rpath /usr/lib /usr/bin/ffmpeg
 

@@ -118,8 +118,6 @@ xss-lock -- i3lock -n -i *background_image.png* &
 
 ```
 
-Should xss-lock eat 100% of a CPU on suspend, consider using [xss-lock-git](https://aur.archlinux.org/packages/xss-lock-git/) as [commit 1e158f](https://bitbucket.org/raymonad/xss-lock/commits/1e158fb20108058dbd62bd51d8e8c003c0a48717) should fix this issue.
-
 ### Suspend and hibernate
 
 *systemd* provides commands for suspend to RAM, hibernate and a hybrid suspend using the kernel's native suspend/resume functionality. There are also mechanisms to add hooks to customize pre- and post-suspend actions.

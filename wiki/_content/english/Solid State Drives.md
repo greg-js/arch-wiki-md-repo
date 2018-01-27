@@ -204,7 +204,7 @@ Some SSDs and SATA chipsets do not work properly with Linux Native Command Queue
 
 ```
 
-To disable NCQ on boot, add `libata.force=noncq` to the kernel command line in the [bootloader](/index.php/Bootloader "Bootloader") configuration. To disable NCQ only for disk 0 on port 1 use: `libata.force=1.00:noncq`
+To disable NCQ on boot, add `libata.force=noncq` to the kernel command line in the [bootloader](/index.php/Bootloader "Bootloader") configuration. To disable NCQ only for disk 0 on port 9 use: `libata.force=9.00:noncq`
 
 Alternatively, you may disable NCQ for a specific drive without rebooting via sysfs:
 

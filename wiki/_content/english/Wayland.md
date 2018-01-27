@@ -23,7 +23,8 @@ Related articles
     *   [3.3 Clutter](#Clutter)
     *   [3.4 SDL2](#SDL2)
     *   [3.5 GLFW](#GLFW)
-    *   [3.6 EFL](#EFL)
+    *   [3.6 GLEW](#GLEW)
+    *   [3.7 EFL](#EFL)
 *   [4 Window managers and desktop shells](#Window_managers_and_desktop_shells)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Running graphical applications as root](#Running_graphical_applications_as_root)
@@ -312,6 +313,10 @@ To run a SDL2 application on Wayland, set `SDL_VIDEODRIVER=wayland`.
 ### GLFW
 
 To use GLFW with the Wayland backend, install the [glfw-wayland](https://www.archlinux.org/packages/?name=glfw-wayland) package (instead of [glfw-x11](https://www.archlinux.org/packages/?name=glfw-x11)).
+
+### GLEW
+
+To use GLEW with the Wayland backend, install the [glew-wayland](https://www.archlinux.org/packages/?name=glew-wayland) package (instead of [glew](https://www.archlinux.org/packages/?name=glew)).
 
 ### EFL
 

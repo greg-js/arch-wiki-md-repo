@@ -124,7 +124,7 @@ For more advanced configurations, please see the [openvpn(8)](https://jlk.fjfi.c
 
 ### The server configuration file
 
-**Note:** Note that if the server is behind a firewall or a NAT translating router, the OpenVPN port must be forward on to the server.
+**Note:** Note that if the server is behind a firewall or a NAT translating router, the OpenVPN port must be forwarded on to the server.
 
 Copy the example server configuration file `/usr/share/openvpn/examples/server.conf` to `/etc/openvpn/server/server.conf`.
 
@@ -146,7 +146,9 @@ group nobody
 
 #### Hardening the server
 
-If security is a priority, additional configuration is recommended including: limiting the server to use a strong cipher/auth method and limiting the newer tls ciphers. Do so by adding the following to `/etc/openvpn/server/server.conf`:
+If security is a priority, additional configuration is recommended including: limiting the server to use a strong cipher/auth method and (optionally) limiting the set of enabled TLS ciphers to the newer ciphers.
+
+Add the following to `/etc/openvpn/server/server.conf`:
 
  `/etc/openvpn/server/server.conf` 
 ```
@@ -159,7 +161,10 @@ tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-128-GCM-SHA2
 
 ```
 
-**Note:** The .ovpn client profile **must** contain a matching cipher and auth line to work properly (at least with the iOS and Android client)!
+**Note:**
+
+*   The .ovpn client profile **must** contain a matching cipher and auth line to work properly (at least with the iOS and Android client).
+*   Using `tls-cipher` incorrectly may cause difficulty with debugging connections and may not be necessary. See [OpenVPN’s community wiki](https://community.openvpn.net/openvpn/wiki/Hardening#Useof--tls-cipher) for more information.
 
 #### Enabling compression
 

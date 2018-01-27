@@ -10,7 +10,7 @@
 
 ## Paprastumas
 
-*"Paprastumas yra didžiausias išprūsimas"*, Leonardo Da Vinci
+*"Paprastumas yra didžiausias išprusimas"*, Leonardo Da Vinci
 
 Paprastumas yra pagrindinis principas, kuriuo remiantis vystomas Arch. Daugelis GNU/Linux distribucijų apibrėžia save kaip "paprastas", tačiau paprastumą galima suprasti įvairiai.
 

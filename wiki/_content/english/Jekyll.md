@@ -210,6 +210,15 @@ $ jekyll serve --watch
 
 It is recommended to define server options in your `_config.yml`. The default will start a server on port 4000, which can be accessed in your web browser at `localhost:4000`.
 
+if you want to further test your work on other local machines use
+
+```
+$ jekyll serve --host=0.0.0.0
+
+```
+
+otherwise only the default localhost will work.
+
 ## See also
 
 *   [YAML](https://en.wikipedia.org/wiki/YAML "wikipedia:YAML")

@@ -1,3 +1,9 @@
+Related articles
+
+*   [ConnMan](/index.php/ConnMan "ConnMan")
+*   [NetworkManager](/index.php/NetworkManager "NetworkManager")
+*   [OpenVPN](/index.php/OpenVPN "OpenVPN")
+
 **Note:** This is not meant to be installed through [pip](https://aur.archlinux.org/packages/pip/) directly. See [[1]](https://github.com/flamusdiu/python-pia/issues/30) for more information.
 
 This article details the installation and usage of [private-internet-access-vpn](https://aur.archlinux.org/packages/private-internet-access-vpn/). For the general information on the service and additional packages, see [Private Internet Access](/index.php/Private_Internet_Access "Private Internet Access").
@@ -21,12 +27,7 @@ This article details the installation and usage of [private-internet-access-vpn]
 
 The package provides a tool that downloads the [OpenVPN configuration files](https://www.privateinternetaccess.com/openvpn/openvpn.zip) and stores them in `/etc/openvpn`. However, it updates the file names to better support using them on the command line.
 
-Configuration for the package is stored in `/etc/private-internet-access`
-
-Desktop clients may also be useful to some users:
-
-1.  [ConnMan#Desktop clients](/index.php/ConnMan#Desktop_clients "ConnMan")
-2.  [NetworkManager#Front-ends](/index.php/NetworkManager#Front-ends "NetworkManager")
+Configuration for the package is stored in `/etc/private-internet-access`.
 
 ## After installation
 
@@ -35,6 +36,8 @@ If there are any issues with connectivity and you are running [connman](https://
 ## Usage
 
 ### Enabling auto-login
+
+**Note:** This is a limitation of [OpenVPN](/index.php/OpenVPN "OpenVPN"). See PIA'S Support Center: [How can I make OpenVPN remember my username and password?](https://helpdesk.privateinternetaccess.com/hc/en-us/articles/219458787-How-can-I-make-OpenVPN-remember-my-username-and-password-)
 
 Enabling auto-login allows a user to connect to the VPN service without having type any passwords on the command line (needed when using [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)). To set this up, you must do the following:
 
@@ -167,8 +170,5 @@ esac
 
 ## See also
 
-*   [OpenVPN](/index.php/OpenVPN "OpenVPN")
-*   [NetworkManager](/index.php/NetworkManager "NetworkManager")
-*   [ConnMan](/index.php/ConnMan "ConnMan")
 *   [python-pia GitHub](https://github.com/flamusdiu/python-pia/)
 *   [PIA Client Support](https://www.privateinternetaccess.com/pages/client-support/)

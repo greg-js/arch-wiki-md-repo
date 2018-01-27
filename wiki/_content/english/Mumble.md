@@ -16,6 +16,7 @@ This page goes over installation and configuration of both the client portion of
         *   [2.2.2 Config File](#Config_File)
         *   [2.2.3 Startup](#Startup)
         *   [2.2.4 SSL/TLS](#SSL.2FTLS)
+        *   [2.2.5 SuperUser](#SuperUser)
 
 ## Client
 
@@ -53,7 +54,7 @@ If you use a [firewall](/index.php/Firewall "Firewall"), you will need to open T
 
 #### Config File
 
-The default Murmur config file is at `/etc/murmur.ini` and is heavily commented. Reading through all the comments is highly recommended.
+The default Murmur config file is at `/etc/murmur.ini` and is heavily commented. Reading through all the comments is highly recommended. More information can be found on the Mumble wiki [here](https://wiki.mumble.info/wiki/Murmur.ini).
 
 #### Startup
 
@@ -91,4 +92,13 @@ Edit `murmur.ini` and tell it where your key and cert are:
 sslCert=/etc/letsencrypt/live/$domain/cert.pem
 sslKey=/etc/letsencrypt/live/$domain/privkey.pem
 sslCA=/etc/letsencrypt/live/$domain/fullchain.pem
+```
+
+#### SuperUser
+
+To set the SuperUser password, use the following command.
+
+```
+# murmur -ini /etc/murmur.ini -supw PASSWORD
+
 ```

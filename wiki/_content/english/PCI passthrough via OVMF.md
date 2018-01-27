@@ -35,7 +35,11 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
             *   [6.1.1.2 Passthrough selected GPU](#Passthrough_selected_GPU)
         *   [6.1.2 Script installation](#Script_installation)
     *   [6.2 Passing the boot GPU to the guest](#Passing_the_boot_GPU_to_the_guest)
-    *   [6.3 Bypassing the IOMMU groups (ACS override patch)](#Bypassing_the_IOMMU_groups_.28ACS_override_patch.29)
+    *   [6.3 Using Looking Glass to stream guest screen to the host](#Using_Looking_Glass_to_stream_guest_screen_to_the_host)
+        *   [6.3.1 Adding IVSHMEM Device to VM](#Adding_IVSHMEM_Device_to_VM)
+        *   [6.3.2 Installing the IVSHMEM Host to Windows guest](#Installing_the_IVSHMEM_Host_to_Windows_guest)
+        *   [6.3.3 Getting a client](#Getting_a_client)
+    *   [6.4 Bypassing the IOMMU groups (ACS override patch)](#Bypassing_the_IOMMU_groups_.28ACS_override_patch.29)
 *   [7 Plain QEMU without libvirt](#Plain_QEMU_without_libvirt)
 *   [8 Passing though other devices](#Passing_though_other_devices)
     *   [8.1 USB controller](#USB_controller)
@@ -569,6 +573,109 @@ FILES=(/etc/modprobe.d/vfio.conf /usr/bin/vfio-pci-override.sh)
 ### Passing the boot GPU to the guest
 
 The GPU marked as `boot_vga` is a special case when it comes to doing PCI passthroughs, since the BIOS needs to use it in order to display things like boot messages or the BIOS configuration menu. To do that, it makes [a copy of the VGA boot ROM which can then be freely modified](https://www.redhat.com/archives/vfio-users/2016-May/msg00224.html). This modified copy is the version the system gets to see, which the passthrough driver may reject as invalid. As such, it is generally recommended to change the boot GPU in the BIOS configuration so the host GPU is used instead or, if that's not possible, to swap the host and guest cards in the machine itself.
+
+### Using Looking Glass to stream guest screen to the host
+
+It is possible to make VM share the monitor, and optionally a keyboard and a mouse with a help of [Looking Glass](https://looking-glass.hostfission.com/).
+
+#### Adding IVSHMEM Device to VM
+
+Looking glass works by creating a shared memory buffer between a host and a guest. This is a lot faster than streaming frames via localhost, but requires additional setup.
+
+With your VM turned off open the machine configuration
+
+ `$ virsh edit [vmname]` 
+```
+...
+<devices>
+    ...
+  <shmem name='looking-glass'>
+    <model type='ivshmem-plain'/>
+    <size unit='M'>32</size>
+  </shmem>
+</devices>
+...
+
+```
+
+You should replace 32 with your own calculated value based on what resolution you are going to pass through. It can be calculated like this:
+
+```
+width x height x 4 x 2 = total bytes
+total bytes / 1024 / 1024 = total megabytes + 2
+
+```
+
+For example, in case of 1920x1080
+
+```
+1920 x 1080 x 4 x 2 = 16,588,800 bytes
+16,588,800 / 1024 / 1024 = 15.82 MB + 2 = 17.82
+
+```
+
+The result must be **rounded up** to the nearest power of two, and since 17.82 is bigger than 16 we should choose 32
+
+Next create a script to create a shared memory file.
+
+ `/usr/local/bin/looking-glass-init.sh` 
+```
+#!/bin/sh
+
+touch /dev/shm/looking-glass
+chown **user**:kvm /dev/shm/looking-glass
+chmod 660 /dev/shm/looking-glass
+```
+
+Replace user with your username.
+
+Create a [systemd](/index.php/Systemd "Systemd") unit to execute this script during boot
+
+ `/etc/systemd/system/looking-glass-init.service` 
+```
+[Unit]
+Description=Create shared memory for looking glass
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/looking-glass-init.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `looking-glass-init.service`
+
+#### Installing the IVSHMEM Host to Windows guest
+
+Currently Windows would not notify users about a new IVSHMEM device, it would silently install a dummy driver. To actually enable the device you have to go into device manager and update the driver for the device under the "System Devices" node for **"PCI standard RAM Controller"**. Download a signed driver [from issue 217](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/217), as it is not yet available elsewhere.
+
+Once the driver is installed you must download the latest [looking-glass-host](https://looking-glass.hostfission.com/downloads) from the looking glass website and start it on your guest. In order to run it you would also need to install Microsoft Visual C++ Redistributable from [Microsoft](https://www.visualstudio.com/downloads/) It is also possible to make it start automatically on VM boot by editing the `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run` registry and adding a path to the downloaded executable.
+
+#### Getting a client
+
+Looking glass client can be installed from AUR using [looking-glass](https://aur.archlinux.org/packages/looking-glass/) or [looking-glass-git](https://aur.archlinux.org/packages/looking-glass-git/) packages. You can start it once the VM is set up and running
+
+```
+$ looking-glass-client
+
+```
+
+If you don't want to use Spice to control the guest mouse and keyboard you can disable the Spice server
+
+```
+$ looking-glass-client -s
+
+```
+
+Refer to
+
+```
+$ looking-glass-client --help
+
+```
+
+for more info
 
 ### Bypassing the IOMMU groups (ACS override patch)
 

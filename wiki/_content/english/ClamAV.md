@@ -44,13 +44,13 @@ The database files are saved in:
 
 ```
 
-The virus definition updater service is called `freshclamd.service`. Consider starting it and enabling it to start at boot so that the virus definitions are kept recent.
+The virus definition updater service is called `clamav-freshclam.service`. Consider starting it and enabling it to start at boot so that the virus definitions are kept recent.
 
 ## Starting the daemon
 
 Consider updating the database before starting the service for the first time or you will run into troubles/errors which will prevent ClamAV to start correctly.
 
-The service is called `clamd.service`. [Start](/index.php/Start "Start") it or [enable](/index.php/Enable "Enable") it to start at boot. You will need to run `freshclam` prior to starting the service.
+The service is called `clamav-daemon.service`. [Start](/index.php/Start "Start") it or [enable](/index.php/Enable "Enable") it to start at boot. You will need to run `freshclam` prior to starting the service.
 
 ## Testing the software
 

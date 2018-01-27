@@ -95,7 +95,7 @@ The `-s` parameter will download any additional dependencies used by recent kern
 **Note:**
 
 *   Kernel sources are [PGP signed](https://www.kernel.org/signature.html#kernel-org-web-of-trust), and makepkg will attempt to verify them. See [Makepkg#Signature checking](/index.php/Makepkg#Signature_checking "Makepkg") for details.
-*   [Running compilation jobs simultaneously](/index.php/Makepkg#MAKEFLAGS "Makepkg") can reduce compilation time significantly on multi-core systems.
+*   [Running compilation jobs simultaneously](/index.php/Makepkg#Parallel_compilation "Makepkg") can reduce compilation time significantly on multi-core systems.
 
 ## Installing
 

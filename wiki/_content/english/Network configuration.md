@@ -321,8 +321,8 @@ The pre-requisite is to [#Set the hostname](#Set_the_hostname), after which host
 
  `$ ping *myhostname*` 
 ```
-PING myhostname (192.168.1.2) 56(84) bytes of data.
-64 bytes from myhostname (192.168.1.2): icmp_seq=1 ttl=64 time=0.043 ms
+PING *myhostname* (192.168.1.2) 56(84) bytes of data.
+64 bytes from *myhostname* (192.168.1.2): icmp_seq=1 ttl=64 time=0.043 ms
 ```
 
 To allow other machines to address the host by name, it is necessary to either:
@@ -344,7 +344,7 @@ As a result the system resolves to both entries:
  `$ getent hosts` 
 ```
 127.0.0.1       localhost
-127.0.1.1       myhostname.localdomain myhostname
+127.0.1.1       *myhostname*.localdomain	*myhostname*
 
 ```
 

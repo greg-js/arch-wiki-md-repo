@@ -10,7 +10,7 @@ Vim yra suprojektuotas, norint sumažinti darbo krūvį pirštams ir riešams. T
     *   [3.1 Redagavimo pagrindai](#Redagavimo_pagrindai)
     *   [3.2 Vaikštom aplinkui](#Vaik.C5.A1tom_aplinkui)
     *   [3.3 Komandų pakartojimas](#Komand.C5.B3_pakartojimas)
-    *   [3.4 Trinimas](#Trinimas)
+    *   [3.4 Trynimas](#Trynimas)
 
 ## Ypatybės
 
@@ -81,7 +81,7 @@ Norint perstumti ekraną į antraštę yra naudojamas **H**. **M *perstums ekran
 
 Jeigu komandos pradžioje yra parašomas kažkoks skaičius - toji komanda bus vykdoma tiek kartų, koks skaičius buvo parašytas prieš tą komandą. Pavyzdžiui **3i**, tuomet "Help! " ir **Esc** spauzdins "Help! Help! Help!". O tarkim **2}** perkels Jus dviems paragrafais. Tokie komandų pakartojimai yra ypač naudingi tokioms komandoms, kurias tuojaus aptarsime.
 
-### Trinimas
+### Trynimas
 
 Raidė **x** tiesiog ištrins simbolį esantį po žymekliu. **X** ištrins visą žodį, esantį po žymekliu. Štai čia ir ateina smagumas kartojant komandas. **6x** ištrins šešis simbolius. **.** ( taškas ) pakartos prieš tai įvestą komandą. Tarkim, turite žodį "foobar" šešiuose vietose, tačiau gerai pagalvoję, nusprendžiate palikti tik "foo". Perkelkite savo žymekli iki "b" raidės ir įveskite **3x**, tuomet prie kito žodžio ir įveskite **.** ( taškas ).
 

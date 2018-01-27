@@ -41,6 +41,8 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [6.9 NetBeans](#NetBeans)
     *   [6.10 Gimp 2.8](#Gimp_2.8)
     *   [6.11 Steam](#Steam)
+        *   [6.11.1 Official HiDPI support](#Official_HiDPI_support)
+        *   [6.11.2 Unofficial](#Unofficial)
     *   [6.12 Java applications](#Java_applications)
     *   [6.13 Mono applications](#Mono_applications)
     *   [6.14 MATLAB](#MATLAB)
@@ -387,6 +389,13 @@ Use a high DPI theme, or adjust `gtkrc` of an existing theme. (Change all occurr
 There is also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi).
 
 ### Steam
+
+#### Official HiDPI support
+
+*   Starting on 25 of January 2018 in the beta program there is actual support for HiDPI and it should be automatically detected.
+*   If it not automatically detected use `GDK_SCALE=2` to set the desired scale factor.
+
+#### Unofficial
 
 The [HiDPI-Steam-Skin](https://github.com/MoriTanosuke/HiDPI-Steam-Skin) can be installed to increase the font size of the interface. While not perfect, it does improve usability.
 

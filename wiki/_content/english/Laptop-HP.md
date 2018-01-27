@@ -12,6 +12,11 @@ Disk: Yes
 Battery: Yes
 Dimming of display: Yes
 Frequency scaling of CPU: Yes | not tested | smart card reader | has xHCI IRQ issues |
+| [HP EliteBook 840 G1](/index.php/HP_EliteBook_840_G1 "HP EliteBook 840 G1") | 2017.12 | Intel HD 4400 driver: *i915* | Intel HDA driver: *snd_hda_intel* | Intel I218-LM driver: *e1000e* | Intel 7260 driver: *iwlwifi* | Yes | Suspend to RAM: Yes
+Disk: not tested
+Battery: Yes
+Dimming of display: Yes
+Frequency scaling of CPU: Yes | not tested | Smart card reader: Yes | -- |
 | HP Compaq 6715S | 2010.05 | ATI Radeon X1250 driver: *catalyst* | AD1981 driver: *snd_hda_intel* | Broadcom driver: *tg3* | Broadcom 4312 driver: *ndiswrapper*
 (Problematic with 64-bit CPU) | Yes | Suspend to RAM: Yes
 Disk: Yes

@@ -39,19 +39,20 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
         *   [6.5.2 Paravirtual Network Adapater](#Paravirtual_Network_Adapater)
         *   [6.5.3 Virtual Machine Settings](#Virtual_Machine_Settings)
 *   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Sound problems](#Sound_problems)
-    *   [7.2 Mouse problems](#Mouse_problems)
-    *   [7.3 Boot problems](#Boot_problems)
-        *   [7.3.1 Slow boot time](#Slow_boot_time)
-        *   [7.3.2 Shutdown/Reboot hangs](#Shutdown.2FReboot_hangs)
-    *   [7.4 Window resolution autofit problems](#Window_resolution_autofit_problems)
-        *   [7.4.1 Potential solution 1](#Potential_solution_1)
-        *   [7.4.2 Potential solution 2](#Potential_solution_2)
-        *   [7.4.3 Potential solution 3](#Potential_solution_3)
-        *   [7.4.4 Potential solution 4](#Potential_solution_4)
-    *   [7.5 Drag and drop, copy/paste](#Drag_and_drop.2C_copy.2Fpaste)
-    *   [7.6 Problems when running as a shared VM on Workstation 11](#Problems_when_running_as_a_shared_VM_on_Workstation_11)
-    *   [7.7 Shared folder not mounted after system upgrade](#Shared_folder_not_mounted_after_system_upgrade)
+    *   [7.1 File share problems with newer kernels](#File_share_problems_with_newer_kernels)
+    *   [7.2 Sound problems](#Sound_problems)
+    *   [7.3 Mouse problems](#Mouse_problems)
+    *   [7.4 Boot problems](#Boot_problems)
+        *   [7.4.1 Slow boot time](#Slow_boot_time)
+        *   [7.4.2 Shutdown/Reboot hangs](#Shutdown.2FReboot_hangs)
+    *   [7.5 Window resolution autofit problems](#Window_resolution_autofit_problems)
+        *   [7.5.1 Potential solution 1](#Potential_solution_1)
+        *   [7.5.2 Potential solution 2](#Potential_solution_2)
+        *   [7.5.3 Potential solution 3](#Potential_solution_3)
+        *   [7.5.4 Potential solution 4](#Potential_solution_4)
+    *   [7.6 Drag and drop, copy/paste](#Drag_and_drop.2C_copy.2Fpaste)
+    *   [7.7 Problems when running as a shared VM on Workstation 11](#Problems_when_running_as_a_shared_VM_on_Workstation_11)
+    *   [7.8 Shared folder not mounted after system upgrade](#Shared_folder_not_mounted_after_system_upgrade)
 
 ## In-kernel drivers
 
@@ -86,7 +87,9 @@ Some modules, such as the legacy `vmhgfs` shared folder module, will require add
 
 In 2007, VMware released large partitions of the [VMware Tools](http://kb.vmware.com/kb/340) under the LGPL as [Open-VM-Tools](http://sourceforge.net/projects/open-vm-tools/). The official Tools are not available [separately](http://packages.vmware.com/tools/esx/latest/repos/index.html) for Arch Linux.
 
-Originally, VMware Tools provided the best drivers for network and storage, combined with the functionality for other features such as time synchronization. However, for quite a while now the drivers for the network/SCSI adapter are part of the Linux kernel, and VMware Tools is only needed for extra features like Unity mode.
+Originally, VMware Tools provided the best drivers for network and storage, combined with the functionality for other features such as time synchronization. However, for quite a while now the drivers for the network/SCSI adapter are part of the Linux kernel.
+
+The official VMware Tools used to have the advantage of being able to use the Unity mode feature, but as of VMWare Workstation 12, Unity mode for Linux guests has been removed due to lack of use and developer difficulties in maintaining the feature. See the answer in this [thread](https://communities.vmware.com/thread/518735%7Cthis).
 
 ## Open-VM-Tools
 
@@ -97,14 +100,12 @@ The [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) pack
 *   `vmtoolsd` - Service responsible for the Virtual Machine status report.
 *   `vmware-checkvm` - Tool to check whether a program is running in the guest.
 *   `vmware-toolbox-cmd` - Tool to obtain Virtual Machine information of the host.
-*   `vmware-user-suid-wrapper` - Tool to enable clipboard sharing (copy/paste) between host and guest.
+*   `vmware-user` - Tool to enable clipboard sharing (copy/paste) between host and guest.
 *   `vmware-vmblock-fuse` - Filesystem utility. Enables drag & drop functionality between host and guest through [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") (Filesystem in Userspace).
 *   `vmware-xferlogs` - Dumps logging/debugging information to the Virtual Machine logfile.
 *   `vmhgfs-fuse` - Utility for mounting vmhgfs shared folders.
 
 ### Modules
-
-The [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) package comes with the following modules:
 
 *   `vmhgfs` - Legacy filesystem driver. Enables legacy sharing implementation between host and guest.
 *   `vmxnet` - for the old VMXNET network adapter.
@@ -138,7 +139,7 @@ Try to install [gtkmm3](https://www.archlinux.org/packages/?name=gtkmm3) manuall
 
 ### Host/Guest interaction
 
-For automatic resolution update on window resize and in order to enable copy&paste between host and guest [start](https://bbs.archlinux.org/viewtopic.php?pid=1081629#p1081629) `/usr/bin/vmware-user-suid-wrapper` from within X. This may throw warnings like "vmware-user: could not open /proc/fs/vmblock/dev" and warnings about GTK which can be ignored.
+For automatic resolution update on window resize and in order to enable copy&paste between host and guest [start](https://bbs.archlinux.org/viewtopic.php?pid=1081629#p1081629) `/usr/bin/vmware-user` from within X. This may throw warnings like "vmware-user: could not open /proc/fs/vmblock/dev" and warnings about GTK which can be ignored.
 
 ## Official VMware Tools
 
@@ -190,11 +191,13 @@ You can safely ignore the following build failures:
 *   "Warning: This script could not find mkinitrd or update-initramfs and cannot remake the initrd file!"
 *   Fuse components not found on the system.
 
-Enable `vmware-vmblock-fuse` systemd services:
+Enable `vmware-vmblock-fuse` systemd services) (make sure you install the dependencies manually:
 
 ```
- # abs community/open-vm-tools
- # cp /var/abs/community/open-vm-tools/vmware-* /usr/lib/systemd/system
+ # asp checkout open-vm-tools
+ # cd open-vmtools/repos/community-x86_64/
+ # makepkg --asdeps
+ # cp vm* /usr/lib/systemd/system
  # systemctl enable vmware-vmblock-fuse.service
 
 ```
@@ -551,6 +554,12 @@ mainMem.partialLazyRestore = "FALSE"
 
 ## Troubleshooting
 
+### File share problems with newer kernels
+
+As the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) package is no longer being updated, newer kernels are not patched correctly using it to be compatible with a host-guest file share. The [https://github.com/davispuh/open-vm-tools-dkms](https://github.com/davispuh/open-vm-tools-dkms) | Github repository] has some patch files that can be manually applied to restore functionality.
+
+It is also recommended you check the AUR comment section for this package.
+
 ### Sound problems
 
 If unacceptably loud and annoying sounds occur, then it may be related to the [PC speaker](/index.php/PC_speaker "PC speaker"). The issue may be resolved by globally disabling the PC speaker within the guest image:
@@ -649,9 +658,22 @@ Do not forget to run:
 
 ### Drag and drop, copy/paste
 
+**Tip:** There is an unspecified relationship between it and *gtkmm* that causes it to silently fail. This is documented in [FS#43159](https://bugs.archlinux.org/task/43159).
+
 The drag-and-drop (copy/paste) feature requires both [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) and [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) packages to be installed in order to work.
 
-`/etc/xdg/autostart/vmware-user.desktop` may try to start *vmware-user-suid-wrapper* properly when you log in, but there is an unspecified relationship between it and *gtkmm* that causes it to silently fail. This is documented in [FS#43159](https://bugs.archlinux.org/task/43159).
+Make the command `vmware-user` run after [X11](/index.php/X11 "X11") by either:
+
+*   Ensuring `etc/xdg/autostart/vmware-user.desktop` exists, and if not, run:
+
+```
+# /etc/vmware-tools/vmware-user.desktop /etc/xdg/autostart/vmware-user.desktop
+
+```
+
+OR
+
+*   Add `vmware-user` to [Xinitrc](/index.php/Xinitrc "Xinitrc")
 
 ### Problems when running as a shared VM on Workstation 11
 

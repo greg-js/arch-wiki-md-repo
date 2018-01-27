@@ -4,11 +4,12 @@ Related articles
 *   [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
 
 [slimDNS](https://github.com/Torxed/slimDNS) is a simple DNS server. It's purpose is to be a self-contained, slim and uncomplicated executable.
+
 It relies on [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") for its zone and record information.
 
 ## Contents
 
-*   [1 Installing slimDNS](#Installing_slimDNS)
+*   [1 Installation](#Installation)
 *   [2 Manual setup *(optional)*](#Manual_setup_.28optional.29)
 *   [3 Running](#Running)
 *   [4 Configuration](#Configuration)
@@ -17,7 +18,7 @@ It relies on [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") for its zone and r
     *   [4.3 Adding a MX record / complex records](#Adding_a_MX_record_.2F_complex_records)
 *   [5 Handy information](#Handy_information)
 
-## Installing slimDNS
+## Installation
 
 Install [slimDNS-git](https://aur.archlinux.org/packages/slimDNS-git/) or clone [github.com/Torxed/slimDNS](https://github.com/Torxed/slimDNS.git) and follow the manual setup instructions.
 
@@ -26,20 +27,21 @@ Install [slimDNS-git](https://aur.archlinux.org/packages/slimDNS-git/) or clone 
 Create a user/role called "slimdns"
 
 ```
-   [postgres@machine~] createuser --interactive
-   [postgres@machine~] psql
-   > CREATE DATABASE slimdns OWNER slimdns;
-   > ALTER USER slimdns WITH PASSWORD '<some secure random string>';
+[postgres@machine~] createuser --interactive
+[postgres@machine~] psql
+> CREATE DATABASE slimdns OWNER slimdns;
+> ALTER USER slimdns WITH PASSWORD '<some secure random string>';
 
 ```
 
 ## Running
 
-As root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `slimDNS.service`.
-Or if preferred, running it manually is done by simply invoking the main script:
+[start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `slimDNS.service`.
+
+Or if preferred, running it manually:
 
 ```
-   [user@machine~] sudo python slimdns.py
+# python slimdns.py
 
 ```
 
@@ -54,14 +56,14 @@ SlimDNS comes with a tool to modify the database, it's called `dnstools` (subjec
 ### Adding a domain *(optional)*
 
 ```
-   [user@machine~] python dnstool.py example.com
+# python dnstool.py example.com
 
 ```
 
 ### Adding a `A` record
 
 ```
-   [user@machine~] python dnstool.py example.com 46.21.102.81
+# python dnstool.py example.com 46.21.102.81
 
 ```
 
@@ -70,7 +72,7 @@ SlimDNS comes with a tool to modify the database, it's called `dnstools` (subjec
 You can also add the same record, but define the record type:
 
 ```
-   [user@machine~] python dnstool.py example.com 46.21.102.81 A
+# python dnstool.py example.com 46.21.102.81 A
 
 ```
 
@@ -79,7 +81,7 @@ You can also add the same record, but define the record type:
 Some records have more complex structure, for instance the SRV, MX or TXT records. In order to be generic in handling these records, enclose the content of the record and add all the necessary data needed for the desired record type.
 
 ```
-   [user@machine~] python dnstool.py example.com "46.21.102.81 10" MX
+# python dnstool.py example.com "46.21.102.81 10" MX
 
 ```
 

@@ -296,8 +296,8 @@ The default keybindings are
 You can also change key bindings, for example like this:
 
 ```
- URxvt.resize-font.smaller: C-Down
- URxvt.resize-font.bigger: C-Up
+ URxvt.keysym.C-Down:  resize-font:smaller
+ URxvt.keysym.C-Up:    resize-font:bigger
 
 ```
 

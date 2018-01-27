@@ -88,7 +88,7 @@ $ passmenu
 
 ```
 
-Then selecting an entry will copy its password to the clipboard. See [dmenu(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dmenu.1) for customization options such as case-insensitivity. You may want to set this to a systemwide keybinding in order to easily access passwords from any application.
+Then selecting an entry will copy its password to the clipboard. See [dmenu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dmenu.1) for customization options such as case-insensitivity. You may want to set this to a systemwide keybinding in order to easily access passwords from any application.
 
 ## Migrating to pass
 
@@ -163,7 +163,7 @@ You can use `pass` as a credentials helper for `git`. [Install](/index.php/Insta
 
 #### `git` Configuration
 
-Install `pass-git-helper` as a git credentials helper by calling
+Install `pass-git-helper` as a git credentials helper by calling:
 
 ```
 git config --global credential.helper /usr/bin/pass-git-helper

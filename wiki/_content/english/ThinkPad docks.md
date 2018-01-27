@@ -9,7 +9,7 @@ These docking stations can function in two ways:
 *   Passive port replicators (no active components)
 *   Active docks (active components such as USB hubs or USB 3.0 controllers)
 
-Both of them are supported out-the-box by [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE") and should not require additional software. Otherwise use can use dockd.
+Both of them are supported out-the-box by [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE") and should not require additional software. Otherwise you can use dockd.
 
 **Note:** Some modern ThinkPads with exotic [Nvidia](/index.php/Nvidia "Nvidia") graphics like the Quadro M2200 might not work with dockd because the [nvidia](/index.php/Nvidia "Nvidia") driver is buggy and causes a kernel crash. See [Issue #3](https://github.com/libthinkpad/dockd/issues/3) on Github
 

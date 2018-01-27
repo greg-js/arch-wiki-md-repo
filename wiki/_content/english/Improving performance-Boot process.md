@@ -116,7 +116,7 @@ $ dmesg | grep SSS
 
 If it wasn't used during boot, there will be no output.
 
-To disable it, add `libahci.ignore_sss=1` to the [kernel line](/index.php/Kernel_line "Kernel line").
+To disable it, add `libahci.ignore_sss=1` [kernel parameter](/index.php/Kernel_parameters "Kernel parameters").
 
 ## Filesystem mounts
 

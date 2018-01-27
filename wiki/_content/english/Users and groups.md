@@ -136,14 +136,12 @@ When the login shell is intended to be non-functional, for example when the user
 
 ### Example adding a user
 
-On a typical desktop system, use the following command to add a new user named `archie`, specify Bash as their login shell and add them to the [wheel](#User_groups) group:
+On a typical desktop system, use the following command to add a new user named `archie` and specify Bash as their login shell:
 
 ```
-# useradd -m -G wheel -s /bin/bash archie
+# useradd -m -s /bin/bash archie
 
 ```
-
-**Tip:** Do not worry about adding the user to other groups now. If later on you will install a particular application, or perform a specific configuration, that requires explicitly adding the user to a group, the wiki will remind you to do it in the specific article that you will be following.
 
 Although it is not required to protect the newly created user `archie` with a password, it is highly recommend to do so:
 
@@ -159,7 +157,7 @@ The above *useradd* command will also automatically create a group called `archi
 You could also make the default group something else, e.g. `study`:
 
 ```
-# useradd -m -g study -G wheel -s /bin/bash archie
+# useradd -m -g study -s /bin/bash archie
 
 ```
 

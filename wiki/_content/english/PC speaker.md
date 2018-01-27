@@ -13,8 +13,8 @@ Sounds from the computer can be heard from the built-in case speaker, the speake
 
 *   [1 Disable PC Speaker](#Disable_PC_Speaker)
     *   [1.1 Globally](#Globally)
-    *   [1.2 Xorg](#Xorg)
-    *   [1.3 Console](#Console)
+    *   [1.2 Console](#Console)
+    *   [1.3 Xorg](#Xorg)
     *   [1.4 ALSA](#ALSA)
     *   [1.5 GNOME](#GNOME)
     *   [1.6 Cinnamon](#Cinnamon)
@@ -47,15 +47,6 @@ The PC speaker can be disabled by [unloading](/index.php/Kernel_modules#Manual_m
 
 [Blacklisting it on the kernel command line](/index.php/Kernel_modules#Using_kernel_command_line_2 "Kernel modules") is yet another way. Simply add `modprobe.blacklist=pcspkr` to your bootloader's kernel line.
 
-### Xorg
-
-```
-$ xset -b
-
-```
-
-You can add this command to a startup file such as `/etc/xprofile` to make it permanent. See [xprofile](/index.php/Xprofile "Xprofile") for more information.
-
 ### Console
 
 You can add this command in `/etc/profile` or a dedicated file like `/etc/profile.d/disable-beep.sh`:
@@ -65,12 +56,23 @@ setterm -blength 0
 
 ```
 
-Another way is to add or uncomment this line in `/etc/inputrc` or `~/.inputrc`:
+Another way is to uncomment or add this line in `/etc/inputrc` or `~/.inputrc`:
 
 ```
 set bell-style none
 
 ```
+
+To disable PC speaker in `less` pager, it can be launched with `less -q` to mute PC speaker for end of line events or `less -Q` to mute it altogether.
+
+### Xorg
+
+```
+$ xset -b
+
+```
+
+You can add this command to a startup file such as `/etc/xprofile` to make it permanent. See [xprofile](/index.php/Xprofile "Xprofile") for more information.
 
 ### ALSA
 

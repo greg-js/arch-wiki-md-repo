@@ -68,13 +68,7 @@ The CA public certificate `/etc/easy-rsa/pki/ca.crt` generated in the previous s
 On the **CA machine**:
 
 ```
-# cp /etc/easy-rsa/pki/ca.crt /tmp
-# chown foo /tmp/ca.crt
-
-```
-
-```
-$ scp /tmp/ca.crt foo@hostname-of-openvpn-server:/tmp
+# scp /etc/easy-rsa/pki/ca.crt foo@hostname-of-openvpn-server:/tmp/ca.crt
 
 ```
 

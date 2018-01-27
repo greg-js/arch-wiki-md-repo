@@ -1,6 +1,8 @@
-This document is a guide for installing [Arch Linux](/index.php/Arch_Linux "Arch Linux") from the live system booted with the official installation image. Before installing, it would be advised to view the [FAQ](/index.php/FAQ "FAQ"). For conventions used in this document, see [Help:Reading](/index.php/Help:Reading "Help:Reading").
+This document is a guide for installing [Arch Linux](/index.php/Arch_Linux "Arch Linux") from the live system booted with the official installation image. Before installing, it would be advised to view the [FAQ](/index.php/FAQ "FAQ"). For conventions used in this document, see [Help:Reading](/index.php/Help:Reading "Help:Reading"). In particular, code examples may contain placeholders (formatted in `*italics*`) that must be replaced manually.
 
 For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") articles or the various programs' [man pages](/index.php/Man_page "Man page"), both linked from this guide. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
+
+Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64")-compatible machine with a minimum of 512 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space. As the installation process needs to retrieve packages from a remote repository, this guide assumes a working internet connection is available.
 
 ## Contents
 
@@ -29,8 +31,6 @@ For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWik
 *   [5 Post-installation](#Post-installation)
 
 ## Pre-installation
-
-Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64")-compatible machine with a minimum of 512 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space. As the installation process needs to retrieve packages from a remote repository, a working internet connection is required.
 
 Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
@@ -62,9 +62,7 @@ The installation image enables the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon o
 
 ```
 
-If no connection is available, [stop](/index.php/Stop "Stop") the *dhcpcd* service with `systemctl stop dhcpcd@`, `Tab` and see [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration").
-
-For **wireless** connections, [iw(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) and [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") are available. See [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
+If no connection is available, [stop](/index.php/Stop "Stop") the *dhcpcd* service with `systemctl stop dhcpcd@` and pressing `Tab`. Proceed with [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration") for **wired** devices or [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") for **wireless** devices.
 
 ### Update the system clock
 
@@ -79,23 +77,32 @@ To check the service status, use `timedatectl status`.
 
 ### Partition the disks
 
-When recognized by the live system, disks are assigned to a *block device* such as `/dev/sda`. To identify these devices, use [lsblk](/index.php/Lsblk "Lsblk") or *fdisk* — results ending in `rom`, `loop` or `airoot` may be ignored:
+When recognized by the live system, disks are assigned to a *block device* such as `/dev/*sda*`. To identify these devices, use [lsblk](/index.php/Lsblk "Lsblk") or *fdisk*.
 
 ```
 # fdisk -l
 
 ```
 
-The following *partitions* (shown with a numerical suffix) are required for a chosen device:
+Results ending in `rom`, `loop` or `airoot` may be ignored.
+
+The following *partitions* (shown with a numerical suffix) are **required** for a chosen device:
 
 *   One partition for the root directory `/`.
 *   If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
-[Swap space](/index.php/Swap_space "Swap space") can be set on a separate partition or a [swap file](/index.php/Swap_file "Swap file").
+**Note:** [Swap](/index.php/Swap "Swap") space can be set on a separate partition or a [swap file](/index.php/Swap_file "Swap file").
 
-To modify *partition tables*, use [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted"). See [Partitioning](/index.php/Partitioning "Partitioning") for more information.
+To modify *partition tables*, use [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted").
 
-If you want to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
+```
+# fdisk /dev/*sda*
+
+```
+
+See [Partitioning](/index.php/Partitioning "Partitioning") for more information.
+
+**Note:** If you want to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
 
 ### Format the partitions
 
@@ -103,6 +110,14 @@ Once the partitions have been created, each must be formatted with an appropriat
 
 ```
 # mkfs.*ext4* /dev/*sda1*
+
+```
+
+If you created a partition for swap (for example `/dev/*sda3*`), initialize it with *mkswap*:
+
+```
+# mkswap /dev/*sda3*
+# swapon /dev/*sda3*
 
 ```
 
@@ -117,7 +132,7 @@ See [File systems#Create a file system](/index.php/File_systems#Create_a_file_sy
 
 ```
 
-Create mount points for any remaining partitions and mount them accordingly, for example:
+Create mount points for any remaining partitions and mount them accordingly:
 
 ```
 # mkdir /mnt/*boot*
@@ -209,7 +224,7 @@ If you [set the keyboard layout](#Set_the_keyboard_layout), make the changes per
 
 ### Hostname
 
-Create the [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) file:
+Create the [hostname](/index.php/Hostname "Hostname") file:
 
  `/etc/hostname` 
 ```
@@ -217,17 +232,17 @@ Create the [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) 
 
 ```
 
-Consider adding a matching entry to [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
+Add matching entries to [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
 
  `/etc/hosts` 
 ```
-127.0.0.1	localhost.localdomain	localhost
-::1		localhost.localdomain	localhost
-**127.0.1.1	*myhostname*.localdomain	*myhostname***
+127.0.0.1	localhost
+::1		localhost
+127.0.1.1	*myhostname*.localdomain	*myhostname*
 
 ```
 
-See also [Network configuration#Set the hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration").
+If the system has a permanent IP address, it should be used instead of `127.0.1.1`.
 
 ### Network configuration
 
