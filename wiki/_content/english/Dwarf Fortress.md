@@ -19,13 +19,9 @@ The game is played with keyboard only, though there exist [mods](http://dwarffor
 Alternatively there are some [AUR](/index.php/AUR "AUR") packages coming with bitmap tilesets:
 
 *   [dwarffortress-ironhand](https://aur.archlinux.org/packages/dwarffortress-ironhand/)
-*   [dwarffortress-mayday](https://aur.archlinux.org/packages/dwarffortress-mayday/)
-*   [dwarffortress-myne](https://aur.archlinux.org/packages/dwarffortress-myne/)
 *   [dwarffortress-obsidian](https://aur.archlinux.org/packages/dwarffortress-obsidian/)
-*   [dwarffortress-phoebus](https://aur.archlinux.org/packages/dwarffortress-phoebus/)
-*   [dwarffortress-spacefox](https://aur.archlinux.org/packages/dwarffortress-spacefox/)
-
-**Note:** Enabling [multilib](/index.php/Multilib "Multilib") repositories on x86_64 systems is no longer required for the basic game since 0.43.05 release.
+*   [dwarffortress-phoebus](https://aur.archlinux.org/packages/dwarffortress-phoebus/) (requires enabling the [multilib](/index.php/Multilib "Multilib") repository)
+*   [dwarffortress-spacefox](https://aur.archlinux.org/packages/dwarffortress-spacefox/) (requires enabling the [multilib](/index.php/Multilib "Multilib") repository)
 
 You will need to be in the games group to run Dwarf Fortress. If you are not in the games group, add yourself, then log out and back in again:
 
@@ -82,10 +78,4 @@ Alternatively, you can just give that permission to dwarftherapist:
 
 ### StoneSense
 
-[StoneSense](http://dwarffortresswiki.org/index.php/Utility:Stonesense) is an isometric world visualizer for Dwarf Fortress, and can be installed with the [dfhack](https://aur.archlinux.org/packages/dfhack/) [AUR](/index.php/AUR "AUR") package.
-
-If you choose to install StoneSense manually instead of using the AUR package, you'll need the following dependencies:
-
-*   [lib32-libjpeg6-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg6-turbo)
-*   [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12)
-*   [lib32-allegro](https://aur.archlinux.org/packages/lib32-allegro/)
+[StoneSense](http://dwarffortresswiki.org/index.php/Utility:Stonesense) is an isometric world visualizer for Dwarf Fortress, and can be [installed](/index.php/Install "Install") with the [dfhack](https://aur.archlinux.org/packages/dfhack/) package.

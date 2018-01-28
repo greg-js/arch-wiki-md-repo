@@ -1,6 +1,6 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support "wikipedia:Dynamic Kernel Module Support"):
 
-	**Dynamic Kernel Module Support** (**DKMS**) is a program/framework that enables generating Linux kernel modules whose sources generally reside outside the kernel source tree. The concept is to have DKMS modules automatically rebuilt when a new kernel is installed.
+	Dynamic Kernel Module Support (DKMS) is a program/framework that enables generating Linux kernel modules whose sources generally reside outside the kernel source tree. The concept is to have DKMS modules automatically rebuilt when a new kernel is installed.
 
 This means that a user does not have to wait for a company, project, or package maintainer to release a new version of the module. Since the introduction of [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman"), the rebuild of the modules is handled automatically when a kernel is upgraded.
 

@@ -26,7 +26,7 @@ It is an OS independent partition that acts as the storage place for the EFI boo
 
 The following two sections show how to create an EFI System Partition (ESP).
 
-**Note:** It is recommended to use [GPT](/index.php/GPT "GPT") for UEFI boot, because some UEFI firmwares do not allow UEFI-MBR boot.
+**Note:** It is recommended to use [GPT](/index.php/GPT "GPT") for UEFI boot, because some UEFI firmwares do not allow UEFI/MBR boot.
 
 To avoid potential problems with some EFIs, ESP size should be at least 512 MiB. 550 MiB is recommended to avoid confusion with FAT16 [[1]](http://www.rodsbooks.com/efi-bootloaders/principles.html), although larger sizes are fine.
 

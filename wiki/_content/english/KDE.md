@@ -332,11 +332,11 @@ Place or symlink shell scripts in one of the following directories:
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Phonon_(software) "wikipedia:Phonon (software)"):
 
-	*“Phonon is the multimedia API provided by KDE and is the standard abstraction for handling multimedia streams within KDE software and also used by several Qt applications.*
+	Phonon is the multimedia API provided by KDE and is the standard abstraction for handling multimedia streams within KDE software and also used by several Qt applications.
 
-Phonon was originally created to allow KDE and Qt software to be independent of any single multimedia framework such as GStreamer or xine and to provide a stable API for a major version's lifetime.”
+	Phonon was originally created to allow KDE and Qt software to be independent of any single multimedia framework such as GStreamer or xine and to provide a stable API for a major version's lifetime.
 
-**Phonon** is being widely used within KDE, for both audio (e.g., the System notifications or KDE audio apps) and video (e.g., the Dolphin video thumbnails).
+Phonon is being widely used within KDE, for both audio (e.g., the System notifications or KDE audio apps) and video (e.g., the [Dolphin](/index.php/Dolphin "Dolphin") video thumbnails).
 
 #### Which backend should I choose?
 

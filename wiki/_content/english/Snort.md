@@ -1,6 +1,6 @@
 From the project [home page](http://www.snort.org/):
 
-	*Snort® is an open source network intrusion prevention and detection system ([IDS](https://en.wikipedia.org/wiki/Intrusion_detection_system "wikipedia:Intrusion detection system")/IPS) developed by Sourcefire. Combining the benefits of signature, protocol, and anomaly-based inspection, Snort is the most widely deployed IDS/IPS technology worldwide. With millions of downloads and nearly 400,000 registered users, Snort has become the de facto standard for IPS.*
+	Snort® is an open source network intrusion prevention and detection system ([IDS](https://en.wikipedia.org/wiki/Intrusion_detection_system "wikipedia:Intrusion detection system")/IPS) developed by Sourcefire. Combining the benefits of signature, protocol, and anomaly-based inspection, Snort is the most widely deployed IDS/IPS technology worldwide. With millions of downloads and nearly 400,000 registered users, Snort has become the de facto standard for IPS.
 
 ## Contents
 

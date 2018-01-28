@@ -355,7 +355,7 @@
 
 *   **Ledger** — Мощная система бухгалтерского учета с двойной записью с интерфейсом командной строки UNIX
 
-	[http://ledger-cli.org/](http://ledger-cli.org/) || [ledger](https://aur.archlinux.org/packages/ledger/)
+	[http://ledger-cli.org/](http://ledger-cli.org/) || [ledger](https://www.archlinux.org/packages/?name=ledger)
 
 *   **Moneychanger** — Интуитивно понятный клиент в системном трее для *Open-Transactions*, написанный на QT/C++
 

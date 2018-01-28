@@ -625,15 +625,15 @@ Now you should have `lukskey` opened in a loop device (underneath `/dev/loop1`),
 #### The main drive
 
 ```
-# truncate -s 2M header.img
-# cryptsetup --key-file=/dev/mapper/lukskey --keyfile-offset=*offset* --keyfile-size=*size* luksFormat /dev/sda --align-payload 4096 --header header.img
+# truncate -s 2M /mnt/header.img
+# cryptsetup --key-file=/dev/mapper/lukskey --keyfile-offset=*offset* --keyfile-size=*size* luksFormat /dev/sda --align-payload 4096 --header /mnt/header.img
 
 ```
 
 Pick an *offset* and *size* in bytes (8192 bytes is the maximum keyfile size for `cryptsetup`).
 
 ```
-# cryptsetup open --header header.img --key-file=/dev/mapper/lukskey --keyfile-offset=*offset* --keyfile-size=*size* /dev/sda enc 
+# cryptsetup open --header /mnt/header.img --key-file=/dev/mapper/lukskey --keyfile-offset=*offset* --keyfile-size=*size* /dev/sda enc 
 # cryptsetup close lukskey
 # umount /mnt
 

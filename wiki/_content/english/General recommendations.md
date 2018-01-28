@@ -110,7 +110,7 @@ See [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and 
 
 See [Official repositories](/index.php/Official_repositories "Official repositories") for details about the purpose of each officially maintained repository.
 
-If you installed Arch Linux x86_64 and plan on using 32-bit applications, you will want to enable the [multilib](/index.php/Multilib "Multilib") repository.
+If you plan on using 32-bit applications, you will want to enable the [multilib](/index.php/Multilib "Multilib") repository.
 
 [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") lists several other unsupported repositories.
 

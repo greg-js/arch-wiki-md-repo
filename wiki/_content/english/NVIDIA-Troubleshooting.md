@@ -15,16 +15,17 @@
 *   [9 Full system freeze or crashes when using Flash](#Full_system_freeze_or_crashes_when_using_Flash)
 *   [10 Laptops: X hangs on login/out, worked around with Ctrl+Alt+Backspace](#Laptops:_X_hangs_on_login.2Fout.2C_worked_around_with_Ctrl.2BAlt.2BBackspace)
 *   [11 Screen(s) found, but none have a usable configuration](#Screen.28s.29_found.2C_but_none_have_a_usable_configuration)
-*   [12 Blackscreen at X startup / Machine poweroff at X shutdown](#Blackscreen_at_X_startup_.2F_Machine_poweroff_at_X_shutdown)
-*   [13 Backlight is not turning off in some occasions](#Backlight_is_not_turning_off_in_some_occasions)
-*   [14 Xorg fails to load or Red Screen of Death](#Xorg_fails_to_load_or_Red_Screen_of_Death)
-*   [15 Black screen on systems with Intel integrated GPU](#Black_screen_on_systems_with_Intel_integrated_GPU)
-*   [16 Black screen on systems with VIA integrated GPU](#Black_screen_on_systems_with_VIA_integrated_GPU)
-*   [17 X fails with "no screens found" with Intel iGPU](#X_fails_with_.22no_screens_found.22_with_Intel_iGPU)
-*   [18 Xorg fails during boot, but otherwise starts fine](#Xorg_fails_during_boot.2C_but_otherwise_starts_fine)
-*   [19 xrandr BadMatch](#xrandr_BadMatch)
-*   [20 Override EDID](#Override_EDID)
-*   [21 Overclocking with nvidia-settings GUI not working](#Overclocking_with_nvidia-settings_GUI_not_working)
+*   [12 Freeze at X startup on laptops](#Freeze_at_X_startup_on_laptops)
+*   [13 Blackscreen at X startup / Machine poweroff at X shutdown](#Blackscreen_at_X_startup_.2F_Machine_poweroff_at_X_shutdown)
+*   [14 Backlight is not turning off in some occasions](#Backlight_is_not_turning_off_in_some_occasions)
+*   [15 Xorg fails to load or Red Screen of Death](#Xorg_fails_to_load_or_Red_Screen_of_Death)
+*   [16 Black screen on systems with Intel integrated GPU](#Black_screen_on_systems_with_Intel_integrated_GPU)
+*   [17 Black screen on systems with VIA integrated GPU](#Black_screen_on_systems_with_VIA_integrated_GPU)
+*   [18 X fails with "no screens found" with Intel iGPU](#X_fails_with_.22no_screens_found.22_with_Intel_iGPU)
+*   [19 Xorg fails during boot, but otherwise starts fine](#Xorg_fails_during_boot.2C_but_otherwise_starts_fine)
+*   [20 xrandr BadMatch](#xrandr_BadMatch)
+*   [21 Override EDID](#Override_EDID)
+*   [22 Overclocking with nvidia-settings GUI not working](#Overclocking_with_nvidia-settings_GUI_not_working)
 
 ## Corrupted screen: "Six screens" Problem
 
@@ -281,6 +282,14 @@ Another thing to try is adding invalid `"ConnectedMonitor" Option` to `Section "
 After re-run X see Xorg.0.log to get valid CRT-x,DFP-x,TV-x values.
 
 `nvidia-xconfig --query-gpu-info` could be helpful.
+
+## Freeze at X startup on laptops
+
+If external screens are managed by the nvidia card and the integrated screen managed by the CPU integrated card (e.g. intel), the layout of the default x configuration might disable the integrated screen while setting an external output to default (even if not connected to a monitor). On x startup, the integrated screen then freezes (since it is not used by x), provided the server started successfully. To avoid this, either set the integrated screen to primary in xorg.conf(.d/) or (better) use xrandr with --auto on the output device that is your integrated screen (can be added in .xinitrc or set in a display setting frontend).
+
+**Note:** The problem occured after installing nvidia and also occurs when using nouveau. Uninstalling them solves the problem but also prevents you from using your external display ports.
+
+**Note:** Solving the problem via xorg.conf might force you to also configure the external screen and set a server layout manually using all manually defined screens. No problem occurs, if using the default xorg config and solving the issue via xrandr.
 
 ## Blackscreen at X startup / Machine poweroff at X shutdown
 

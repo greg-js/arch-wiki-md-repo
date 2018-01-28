@@ -167,7 +167,7 @@ zstyle ':completion:*' menu select
 
 ```
 
-	*To activate the menu, press tab twice.*
+To activate the menu, press `Tab` twice.
 
 For autocompletion of command line switches for aliases, add the following to:
 

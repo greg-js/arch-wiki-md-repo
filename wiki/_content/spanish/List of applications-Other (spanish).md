@@ -400,7 +400,7 @@ Vea también [Wikipedia:Comparison of accounting software](https://en.wikipedia.
 
 *   **Ledger** — Ledger es un potente sistema de contabilidad por partida doble al que se puede acceder desde línea de comandos de UNIX.
 
-	[http://ledger-cli.org/](http://ledger-cli.org/) || [ledger](https://aur.archlinux.org/packages/ledger/)
+	[http://ledger-cli.org/](http://ledger-cli.org/) || [ledger](https://www.archlinux.org/packages/?name=ledger)
 
 *   **Moneychanger** — Un intuitivo cliente de la bandeja del sistema escrito en Qt/C++ para *Open-Transactions*
 

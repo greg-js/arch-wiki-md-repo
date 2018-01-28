@@ -10,12 +10,14 @@ Related articles
     *   [1.1 Starting service](#Starting_service)
     *   [1.2 Configure Hostname](#Configure_Hostname)
 *   [2 Configuration](#Configuration)
-    *   [2.1 See also](#See_also)
-    *   [2.2 Facility Levels](#Facility_Levels)
-    *   [2.3 Security Levels](#Security_Levels)
-*   [3 Examples](#Examples)
-    *   [3.1 journald with rsyslog for kernel messages](#journald_with_rsyslog_for_kernel_messages)
-*   [4 See also](#See_also_2)
+    *   [2.1 imjournal](#imjournal)
+    *   [2.2 journald's syslog-forward feature](#journald.27s_syslog-forward_feature)
+    *   [2.3 References](#References)
+*   [3 Facility Levels](#Facility_Levels)
+*   [4 Security Levels](#Security_Levels)
+*   [5 Examples](#Examples)
+    *   [5.1 journald with rsyslog for kernel messages](#journald_with_rsyslog_for_kernel_messages)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -59,7 +61,9 @@ To use **somehost** as the hostname. Move **somehost.localdomain** to the first 
 
 ## Configuration
 
-The [rsyslog](https://aur.archlinux.org/packages/rsyslog/) doesn't create its working directory `/var/spool/rsyslog` defined by the `$WorkDirectory` variable in the configuration file. You might need to create it manually or change its destination.
+Since systemd 216 (August 2014) there is no longer a default forward from systemd-journal to a running syslog daemon - so in order to gather system logs you either have to **turn journald Forward Feature on** or **use the imjournal** module of rsyslog go gather the logs by importing it from the systemd journald.
+
+#### imjournal
 
 By default, all syslog messages are handled by [systemd](/index.php/Systemd "Systemd"). If you want rsyslog to pull messages from systemd, load the *imjournal* module:
 
@@ -68,6 +72,16 @@ By default, all syslog messages are handled by [systemd](/index.php/Systemd "Sys
 $ModLoad imjournal
 
 ```
+
+#### journald's syslog-forward feature
+
+ `/etc/systemd/journald.conf` 
+```
+ForwardToSyslog=yes
+
+```
+
+The [rsyslog](https://aur.archlinux.org/packages/rsyslog/) doesn't create its working directory `/var/spool/rsyslog` defined by the `$WorkDirectory` variable in the configuration file. You might need to create it manually or change its destination.
 
 Log output can be fine tuned in `/etc/rsyslog.conf`. The daemon uses Facility levels (see below) to determine what gets put where. For example:
 
@@ -88,11 +102,13 @@ auth.*                                                  -/var/log/auth
 
 ```
 
-### See also
+### References
 
-[Structure of the rsyslog.conf file](http://www.rsyslog.com/doc/rsyslog_conf.html).
+*   [Archwiki reference for systemd-syslog integration](/index.php/Systemd#Journald_in_conjunction_with_syslog "Systemd")
+*   [Structure of the rsyslog.conf file](http://www.rsyslog.com/doc/rsyslog_conf.html).
+*   [Reference documentation on imjournal input module](http://www.rsyslog.com/doc/v8-stable/configuration/modules/imjournal.html?highlight=imjournal)
 
-### Facility Levels
+## Facility Levels
 
 **Note:** The mapping between Facility Number and Keyword is not uniform over different operating systems and different syslog implementations. Use the keyword where possible, until it is determined which numbers are used by Arch.
 
@@ -122,7 +138,7 @@ auth.*                                                  -/var/log/auth
 | 22 | local6 | local use 6 (local6) |
 | 23 | local7 | local use 7 (local7) |
 
-### Security Levels
+## Security Levels
 
 As defined in [RFC 5424](http://tools.ietf.org/html/rfc5424), there are eight security levels:
 

@@ -94,7 +94,7 @@ Most configurations sport the Dell DW1560 802.11ac adapter (based on the Broadco
 
 Some higher-end models do not use the Dell-branded Broadcom adapter, instead they use an Intel Wireless 7265 card which is supported by the mainline kernel.
 
-**Note:** This card is widely available as an after-market purchase for those wishing to replace the Broadcom adapter in their laptop. This wireless adapter, other than an enviable driver support for both Wi-Fi and Bluetooth that makes installation easier, compared to the Broadcom card, it has a 2-3 times wider reception range and a much higher throughput, making it an worthwhile upgrade you should decide to do.
+**Note:** This card is widely available as an after-market purchase for those wishing to replace the Broadcom adapter in their laptop. This wireless adapter, other than an enviable driver support for both Wi-Fi and Bluetooth that makes installation easier, compared to the Broadcom card, it has a 2-3 times wider reception range and a much higher throughput, making it an worthwhile upgrade. Other cards are also available. The Intel Wireless 8265 is known to work
 
 ### Bluetooth
 

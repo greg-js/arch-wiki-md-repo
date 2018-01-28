@@ -7,6 +7,7 @@ Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point. For th
 *   [1 GUI configuration](#GUI_configuration)
 *   [2 Middle button scroll](#Middle_button_scroll)
     *   [2.1 Xorg configuration](#Xorg_configuration)
+    *   [2.2 Two-button trackpoints](#Two-button_trackpoints)
 *   [3 Sysfs attributes](#Sysfs_attributes)
     *   [3.1 Configuration at boot](#Configuration_at_boot)
         *   [3.1.1 udev rule](#udev_rule)
@@ -26,8 +27,6 @@ Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point. For th
 ## Middle button scroll
 
 When using [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput), middle-button scrolling is enabled by default.
-
-**Tip:** On two button trackpoints, the scroll button can be set to right click button without removing functionality.
 
 When using [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev), middle-button scrolling is supported via *xinput* from the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package. For example:
 
@@ -61,6 +60,17 @@ Section "InputClass"
     Option		"XAxisMapping"		"6 7"
     Option		"YAxisMapping"		"4 5"
 EndSection
+
+```
+
+### Two-button trackpoints
+
+On two-button trackpoints, using [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput), the scroll button can be set to right-click button without removing functionality.
+
+Replacing *device* with the device name from `xinput`:
+
+```
+$ xinput set-prop "*device*" "libinput Button Scrolling Button" 3
 
 ```
 

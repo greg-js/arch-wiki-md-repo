@@ -1,6 +1,11 @@
+Related articles
+
+*   [WMFS](/index.php/WMFS "WMFS")
+*   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
+
 From the [home page](https://github.com/xorg62/wmfs):
 
-	*WMFS is a lightweight and highly configurable tiling window manager for X written in C. WMFS is a free software distributed under the BSD license. it can be drive from keyboard or mouse and it's configuration stands in one text file easily understandable.*
+	WMFS is a lightweight and highly configurable tiling window manager for X written in C. WMFS is a free software distributed under the BSD license. it can be drive from keyboard or mouse and it's configuration stands in one text file easily understandable.
 
 ## Contents
 

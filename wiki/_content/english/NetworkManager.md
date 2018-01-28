@@ -501,7 +501,7 @@ It might not be obvious, but the service automatically starts through *dbus*. To
 
 ### Checking connectivity
 
-NetworkManager can try to reach a page on Internet when connecting to a network. [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) is configured by default in `/usr/lib/NetworkManager/conf.d/20-connectivity.conf` to check connectivity to archlinux.org. To use a different webserver or disable connectivity checking edit `/etc/NetworkManager/NetworkManager.conf`, see "connectivity section" in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
+NetworkManager can try to reach a page on Internet when connecting to a network. [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) is configured by default in `/usr/lib/NetworkManager/conf.d/20-connectivity.conf` to check connectivity to archlinux.org. To use a different webserver or disable connectivity checking create `/etc/NetworkManager/conf.d/20-connectivity.conf`, see "connectivity section" in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
 
 For those behind a captive portal, the desktop manager can automatically open a window asking for credentials.
 
@@ -549,12 +549,10 @@ If you have problems with getting an IP address using the internal DHCP client, 
 
 After installation, update the NetworkManager config file:
 
- `/etc/NetworkManager/NetworkManager.conf` 
+ `/etc/NetworkManager/conf.d/dhcp-client.conf` 
 ```
 [main]
-# ...
 dhcp=dhclient
-# ...
 ```
 
 This workaround might solve problems in big wireless networks like eduroam.
@@ -620,7 +618,7 @@ IPv6 push host name:
 
 If you want to explicitly set the DHCP client used by NetworkManager, it can be set in the global configuration:
 
- `/etc/NetworkManager/NetworkManager.conf`  `dhcp=internal` 
+ `/etc/NetworkManager/conf.d/dhcp-client.conf`  `dhcp=internal` 
 
 The alternative `dhcp=dhclient` is used per default, if this option is not set.
 
@@ -924,7 +922,7 @@ See [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6").
 
 ### Working with wired connections
 
-By default, NetworkManager generates a connection profile for each wired ethernet connection it finds. At the point when generating the connection, it does not know whether there will be more ethernet adapters available. Hence, it calls the first wired connection "Wired connection 1". You can avoid generating this connection, by configuring "no-auto-default" (see `man NetworkManager.conf`), or by simply deleting it. Then NetworkManager will remember not to generate a connection for this interface again.
+By default, NetworkManager generates a connection profile for each wired ethernet connection it finds. At the point when generating the connection, it does not know whether there will be more ethernet adapters available. Hence, it calls the first wired connection "Wired connection 1". You can avoid generating this connection, by configuring `no-auto-default` (see [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5)), or by simply deleting it. Then NetworkManager will remember not to generate a connection for this interface again.
 
 You can also edit the connection (and persist it to disk) or delete it. NetworkManager will not re-generate a new connection. Then you can change the name to whatever you want. You can use something like nm-connection-editor for this task.
 

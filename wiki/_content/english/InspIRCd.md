@@ -53,14 +53,9 @@ To install a third-party module, save the `[module].cpp` within `[build-dir]/ins
 
 ## Starting/Stopping the daemon
 
-You can start and stop the InspIRCd daemon as usual by running:
+[Start](/index.php/Start "Start") or [stop](/index.php/Stop "Stop") the `inspircd` systemd unit.
 
-```
-sudo /etc/rc.d/inspircd {start|stop|restart}
-
-```
-
-The first start fails sometimes so try restarting until you get no errors. After this you shall have no further problems. The reason behind this is because of security reasons the daemon doesn't run as root as you normally would see, so the script must ensure that the user **irc** has permission to write/read the pid and log files. To start on boot just add (as always) [inspircd] to the [daemons] section in the **/etc/rc.conf file**.
+The first start fails sometimes so try restarting until you get no errors. After this you shall have no further problems. The reason behind this is because of security reasons the daemon doesn't run as root as you normally would see, so the script must ensure that the user **irc** has permission to write/read the pid and log files.
 
 ## External links
 

@@ -15,13 +15,11 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [snapd](https://aur.archlinux.org/packages/snapd/) package.
+[Install](/index.php/Install "Install") the [snapd](https://aur.archlinux.org/packages/snapd/) or the [snapd-git](https://aur.archlinux.org/packages/snapd-git/) package, both will remove `snap-confine` if you had `snapd` installed from the [official repositories](/index.php/Official_repositories "Official repositories") previously.
 
 Installing it will install the `snapd` daemon.
 
 **Tip:** `snapd` installs a script in `/etc/profile.d/` to export the paths of binaries installed with the snapd package and desktop entries. Reboot once to make this change take effect.
-
-An alternative package [snapd-git](https://aur.archlinux.org/packages/snapd-git/) that builds directly from master branch is available through [AUR](/index.php/AUR "AUR"). During installation the package will replace both `snapd` and `snap-confine` packages.
 
 Once the package is installed enable socket activation:
 

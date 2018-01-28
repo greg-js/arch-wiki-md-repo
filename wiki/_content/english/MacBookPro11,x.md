@@ -172,6 +172,8 @@ Additionally, you might want to have a look at the [Power management](/index.php
 
 Due to [this bug](https://bugzilla.kernel.org/show_bug.cgi?id=177151), it might be required to add `acpi_osi=` as a kernel boot parameter in order to improve battery life.
 
+Due to [this bug](https://bugzilla.kernel.org/show_bug.cgi?id=117481), it may be necessary to disable GPE06 by adding `acpi_mask_gpe=0x06` as a kernel boot parameter. To verify that this is required, check `cat /sys/firmware/acpi/interrupts/gpe06`. There should be a rapidly increasing number of interrupts registered, and one of your cores should be pegged at 100%.
+
 ### Fan control
 
 Install [mbpfan-git](https://aur.archlinux.org/packages/mbpfan-git/) or [macfanctld](https://aur.archlinux.org/packages/macfanctld/) and [enable](/index.php/Enable "Enable") the mbpfan.service in order to prevent laptop overheating.

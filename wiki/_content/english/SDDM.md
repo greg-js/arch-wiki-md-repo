@@ -3,9 +3,11 @@ Related articles
 *   [Display manager](/index.php/Display_manager "Display manager")
 *   [KDE](/index.php/KDE "KDE")
 
-The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Desktop_Display_Manager "wikipedia:Simple Desktop Display Manager") (SDDM) is the preferred [display manager](/index.php/Display_manager "Display manager") for [KDE](/index.php/KDE "KDE") Plasma desktop. From Wikipedia:
+The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Desktop_Display_Manager "wikipedia:Simple Desktop Display Manager") (SDDM) is the preferred [display manager](/index.php/Display_manager "Display manager") for [KDE](/index.php/KDE "KDE") Plasma desktop.
 
-	*Simple Desktop Display Manager (SDDM) is a display manager (a graphical login program) for X11 and Wayland windowing systems. SDDM was written from scratch in C++11 and supports theming via QML. KDE chose SDDM to be the successor of the KDE Display Manager for KDE Plasma 5.*
+From Wikipedia:
+
+	Simple Desktop Display Manager (SDDM) is a display manager (a graphical login program) for X11 and Wayland windowing systems. SDDM was written from scratch in C++11 and supports theming via QML. KDE chose SDDM to be the successor of the KDE Display Manager for KDE Plasma 5.
 
 **Note:** The Wayland windowing system is not yet fully supported [[1]](https://github.com/sddm/sddm/issues/440). Wayland sessions are listed, but SDDM runs on X11.
 
@@ -143,7 +145,7 @@ See [Xrandr#Configuration](/index.php/Xrandr#Configuration "Xrandr").
 
 ### DPI settings
 
-Sometimes it is useful to set up correct monitor's PPI settings on a "Display Manager" level. To do so you need to find "ServerArguments" parameter in sddm.conf and add -dpi %YOUR RESOLUTION at the end of the string.
+Sometimes it is useful to set up correct monitor's PPI settings on a "Display Manager" level. To do so you need to find `ServerArguments` parameter in `sddm.conf` and add `-dpi *your_dpi*` at the end of the string.
 
 For example:
 

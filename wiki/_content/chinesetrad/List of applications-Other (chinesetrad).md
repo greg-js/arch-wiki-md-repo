@@ -364,7 +364,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **Ledger** — Ledger is a powerful, double-entry accounting system that is accessed from the UNIX command-line.
 
-	[http://ledger-cli.org/](http://ledger-cli.org/) || [ledger](https://aur.archlinux.org/packages/ledger/)
+	[http://ledger-cli.org/](http://ledger-cli.org/) || [ledger](https://www.archlinux.org/packages/?name=ledger)
 
 *   **Skrooge** — Personal finances manager for the KDE desktop.
 

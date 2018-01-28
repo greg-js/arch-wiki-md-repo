@@ -1,6 +1,6 @@
 From the project [home page](https://github.com/google/mozc):
 
-	*Mozc is a Japanese Input Method Editor (IME) designed for multi-platform such as Android OS, Apple OS X, Chromium OS, GNU/Linux and Microsoft Windows. This OpenSource project originates from [Google Japanese Input](http://www.google.com/intl/ja/ime/). […] Detailed differences between Google Japanese Input and Mozc are described in [About Branding](https://github.com/google/mozc/blob/master/docs/about_branding.md).*
+	Mozc is a Japanese Input Method Editor (IME) designed for multi-platform such as Android OS, Apple OS X, Chromium OS, GNU/Linux and Microsoft Windows. This OpenSource project originates from [Google Japanese Input](http://www.google.com/intl/ja/ime/). […] Detailed differences between Google Japanese Input and Mozc are described in [About Branding](https://github.com/google/mozc/blob/master/docs/about_branding.md).
 
 (In short, Mozc does not have equivalent conversion quality to Google Japanese Input).
 

@@ -144,7 +144,7 @@ If *winecfg* **still** fails to detect the audio driver (Selected driver: (none)
 
 *   Some applications that require encryption support may require [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls).
 
-*   Some applications require 32-bit video codecs or the program crashes. Install extra/gst-plugins-{base,good,bad,ugly}, multilib/lib32-gst-plugins-{base,good}, [lib32-gst-plugins-bad](https://aur.archlinux.org/packages/lib32-gst-plugins-bad/) and [lib32-gst-plugins-ugly](https://aur.archlinux.org/packages/lib32-gst-plugins-ugly/).
+*   Some applications require 32-bit video codecs or the program crashes. Install [lib32-gst-plugins-base](https://www.archlinux.org/packages/?name=lib32-gst-plugins-base), [lib32-gst-plugins-good](https://www.archlinux.org/packages/?name=lib32-gst-plugins-good), [lib32-gst-plugins-bad](https://aur.archlinux.org/packages/lib32-gst-plugins-bad/) and [lib32-gst-plugins-ugly](https://aur.archlinux.org/packages/lib32-gst-plugins-ugly/).
 
 ### Fonts
 

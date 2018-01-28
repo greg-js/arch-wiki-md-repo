@@ -23,6 +23,7 @@ Related articles
     *   [4.1 No icons shown in browser for downloaded items](#No_icons_shown_in_browser_for_downloaded_items)
     *   [4.2 Number of workspaces changes unexpectedly](#Number_of_workspaces_changes_unexpectedly)
     *   [4.3 Video tearing](#Video_tearing)
+    *   [4.4 Horizontal line above dock windows](#Horizontal_line_above_dock_windows)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -139,6 +140,10 @@ See also: [Logout alters workspaces](http://forum.xfce.org/viewtopic.php?id=6056
 If you experience video tearing whilst using Xfwm, open *xfwm4-tweaks-settings*, navigate to the compositor tab and tick the *Synchronize drawing to the vertical blank* option. If you use Intel graphics and you have already enabled "TearFree" option in Xorg config as described in [Intel graphics#Tear-free video](/index.php/Intel_graphics#Tear-free_video "Intel graphics"), then disable *Synchronize drawing to the vertical blank* option.
 
 If this does not fix the tearing, consider disabling Xfwm's compositor and using an alternative [composite manager](/index.php/Composite_manager "Composite manager").
+
+### Horizontal line above dock windows
+
+Xfwm may incorrectly render shadows above some dock windows (e.g. [plank](https://www.archlinux.org/packages/?name=plank) or [docky](https://www.archlinux.org/packages/?name=docky)). This would result in a horizontal line across the screen. A workaround is to disable *Show shadows under dock windows* under *Settings -> Window Manager Tweaks -> Compositor*.
 
 ## See also
 

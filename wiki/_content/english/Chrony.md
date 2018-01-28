@@ -1,4 +1,4 @@
-This article describes how to set up and run [Chrony](http://chrony.tuxfamily.org/), an alternative NTP client and server that is roaming friendly and designed specifically for systems that are not online all the time.
+This article describes how to set up and run [chrony](http://chrony.tuxfamily.org/), an alternative NTP client and server that is roaming friendly and designed specifically for systems that are not online all the time.
 
 ## Contents
 

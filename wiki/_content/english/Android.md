@@ -92,9 +92,7 @@ If you are using [#Android Studio](#Android_Studio) and want the IDE to manage y
 
 #### Android SDK core components
 
-**Note:**
-
-*   If you are running a 64-bit system, make sure the [multilib](/index.php/Multilib "Multilib") repository is enabled to avoid `error: target not found: lib32-*` error messages.
+**Note:** Since the Android SDK contains 32-bit binaries, you must enable the [multilib](/index.php/Multilib "Multilib") repository. Otherwise you will get `error: target not found: lib32-*` error messages.
 
 Before developing Android applications, you need to install the Android SDK, which is made of 4 distinct packages, all installable from [AUR](/index.php/AUR "AUR"):
 

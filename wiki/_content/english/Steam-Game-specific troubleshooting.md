@@ -47,6 +47,7 @@ As Steam for Linux only supports Ubuntu, Steam games for Linux are packaged expe
 *   [20 Civilization V](#Civilization_V)
     *   [20.1 Stuttering sound with PulseAudio](#Stuttering_sound_with_PulseAudio)
     *   [20.2 Game crashes seconds after loading a map](#Game_crashes_seconds_after_loading_a_map)
+    *   [20.3 Game crashes after intro video with "Unable to load texture (LoadingBaseGame.dds)"](#Game_crashes_after_intro_video_with_.22Unable_to_load_texture_.28LoadingBaseGame.dds.29.22)
 *   [21 Civilization: Beyond earth](#Civilization:_Beyond_earth)
     *   [21.1 Segfault after a few minutes](#Segfault_after_a_few_minutes)
 *   [22 Civilization VI](#Civilization_VI)
@@ -551,6 +552,12 @@ See [PulseAudio/Troubleshooting#Laggy sound](/index.php/PulseAudio/Troubleshooti
 If you have a CPU with more than 8 threads (such as AMD Ryzen), set `MaxSimultaneousThreads` to `16` in `config.ini` in game directory.
 
 The solution was found [here](https://www.reddit.com/r/civ5/comments/5z77jr/game_crashes_randomly_on_linux_amd_ryzen/).
+
+### Game crashes after intro video with "Unable to load texture (LoadingBaseGame.dds)"
+
+The issue is a result of the game calling some file in a case-insensitive manner.
+
+The solution is either to install the game on a case-insensitive file system like vfat, or on a mount point for [ciopfs](https://aur.archlinux.org/packages/ciopfs/).
 
 ## Civilization: Beyond earth
 

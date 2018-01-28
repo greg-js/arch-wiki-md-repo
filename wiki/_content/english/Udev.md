@@ -45,7 +45,7 @@ From [Wikipedia article](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
 
 *udev* is now part of [systemd](/index.php/Systemd "Systemd") and is installed by default. See [systemd-udevd.service(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-udevd.service.8) for information.
 
-A standalone fork is available as [eudev](/index.php/Eudev "Eudev").
+A standalone fork is available as [eudev](https://aur.archlinux.org/packages/eudev/) and [eudev-git](https://aur.archlinux.org/packages/eudev-git/).
 
 ## About udev rules
 

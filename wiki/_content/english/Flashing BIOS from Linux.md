@@ -66,7 +66,7 @@ To refresh metadata:
 To check which devices have updates:
 
 ```
-# fwupdgmr get-updates
+# fwupdmgr get-updates
 
 ```
 

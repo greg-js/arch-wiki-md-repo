@@ -779,9 +779,9 @@ ExecStart=/usr/bin/autossh -M 0 -o ControlMaster=no -NL 2222:localhost:2222 -o T
 
 ### Alternative service should SSH daemon fail
 
-For remote or headless servers which relay exclusively on SSH, a failure to start the SSH daemon (e.g., after a system upgrade) may prevent administration access. [systemd](/index.php/Systemd "Systemd") offers a simple solution via `OnFailure` option.
+For remote or headless servers which rely exclusively on SSH, a failure to start the SSH daemon (e.g., after a system upgrade) may prevent administration access. [systemd](/index.php/Systemd "Systemd") offers a simple solution via `OnFailure` option.
 
-Let's suppose the server runs `sshd` and [telnet](/index.php/Telnet "Telnet") is the fail-safe alternative of choice. Create a file as follow. Do **not** [enable](/index.php/Enable "Enable") telnet.socket!
+Let's suppose the server runs `sshd` and [telnet](/index.php/Telnet "Telnet") is the fail-safe alternative of choice. Create a file as follows. Do **not** [enable](/index.php/Enable "Enable") telnet.socket!
 
  `/etc/systemd/system/sshd.service.d/override.conf` 
 ```

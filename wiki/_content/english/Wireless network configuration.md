@@ -50,6 +50,7 @@ Configuring wireless is a two-part process; the first part is to identify and en
         *   [5.8.2 Cause #2](#Cause_.232)
         *   [5.8.3 Cause #3](#Cause_.233)
         *   [5.8.4 Cause #4](#Cause_.234)
+    *   [5.9 Wi-Fi networks invisible because of incorrect regulatory domain](#Wi-Fi_networks_invisible_because_of_incorrect_regulatory_domain)
 *   [6 Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware)
     *   [6.1 Ralink/Mediatek](#Ralink.2FMediatek)
         *   [6.1.1 rt2x00](#rt2x00)
@@ -620,6 +621,10 @@ If that works, enable WPA/WPA2 again but choose fixed and/or limited router sett
 *   Disable WPS
 *   Disable `40Mhz` channel bandwidth (lower throughput but less likely collisions)
 *   If the router has quality of service settings, check completeness of settings (e.g. Wi-Fi Multimedia (WMM) is part of optional QoS flow control. An erroneous router firmware may advertise its existence although the setting is not enabled)
+
+### Wi-Fi networks invisible because of incorrect regulatory domain
+
+If the computer's Wi-Fi channels do not match those of the user's country, that may result in some in-range Wi-Fi networks becoming invisible, because they use wireless channels that aren't allowed by default. The solution is to configure the regulatory domain correctly, see [#Respecting the regulatory domain](#Respecting_the_regulatory_domain).
 
 ## Troubleshooting drivers and firmware
 

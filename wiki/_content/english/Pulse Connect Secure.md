@@ -70,7 +70,7 @@ $ nmcli con add type vpn con-name "Connection Name" ifname "*" vpn-type openconn
 
 1\. Go to your company's VPN site, log in and download/install the Juniper client.
 
-2\. Install [jnc](https://aur.archlinux.org/packages/jnc/). For 64-bit Arch, you will need to install 32-bit packages ([Multilib](/index.php/Multilib "Multilib")), see the [upstream website](http://www.scc.kit.edu/scc/net/juniper-vpn/linux/).
+2\. Install [jnc](https://aur.archlinux.org/packages/jnc/). You need to enable the [Multilib](/index.php/Multilib "Multilib") repository: see the [upstream website](http://www.scc.kit.edu/scc/net/juniper-vpn/linux/).
 
 3\. Make a directory for the *.config* file:
 

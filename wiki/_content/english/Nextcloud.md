@@ -112,13 +112,13 @@ See also [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman")
 
 ### PHP setup
 
-**Note:** Nextcloud does not support PHP 7.2 as of version 12.0.4\. [[1]](https://github.com/nextcloud/server/issues/6786) Until version 13 is released, [install](/index.php/Install "Install") the [php71](https://www.archlinux.org/packages/?name=php71) package or update to [nextcloud-testing](https://aur.archlinux.org/packages/nextcloud-testing/).
+**Note:** Nextcloud does not support PHP 7.2+ as of version 12.0.5\. [[1]](https://github.com/nextcloud/server/issues/6786) Until version 13 is released, [install](/index.php/Install "Install") the [php71](https://www.archlinux.org/packages/?name=php71) package or update to [nextcloud-testing](https://aur.archlinux.org/packages/nextcloud-testing/).
 
 **Tip:** For all prerequisite PHP modules, see upstream documentation: [Nextcloud 12.0](https://docs.nextcloud.com/server/12/admin_manual/installation/source_installation.html#prerequisites-label).
 
 Install [PHP#gd](/index.php/PHP#gd "PHP") and [php-intl](https://www.archlinux.org/packages/?name=php-intl) as additional modules.
 
-Some apps(News for example) require the iconv extension, if you wish to use these apps, uncomment the extension in `/etc/php/php.ini`.
+Some apps (*News* for example) require the iconv extension, if you wish to use these apps, uncomment the extension in `/etc/php/php.ini`.
 
 Depending on which database backend will be used:
 

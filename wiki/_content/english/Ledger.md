@@ -9,7 +9,7 @@
 
 ## Installation
 
-There are several ports of ledger to various languages. [ledger](https://aur.archlinux.org/packages/ledger/) is the original. [hledger](https://www.archlinux.org/packages/?name=hledger) is a port to haskell, which is also popular.
+There are several ports of ledger to various languages. [ledger](https://www.archlinux.org/packages/?name=ledger) is the original. [hledger](https://www.archlinux.org/packages/?name=hledger) is a port to haskell, which is also popular.
 
 ## Usage
 

@@ -137,7 +137,7 @@ See [Shorewall](/index.php/Shorewall "Shorewall") for a detailed configuration g
 
 First of all we need to allow packets to hop from one network interface to the other. See [Internet sharing#Enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") for details.
 
-In order for packets to be properly send and received it is necessary to translate the IP addresses between the outward facing network and the subnet used locally. The technique is called *masquerading* and is necessary for both interfaces. For this task we are going to use [iptables](/index.php/Iptables "Iptables"):
+In order for packets to be properly send and received it is necessary to translate the IP addresses between the outward facing network and the subnet used locally. The technique is called *masquerading* . We also need two forward rules to keep connections going and enable lan->wan forwarding. For this task we are going to use [iptables](/index.php/Iptables "Iptables"):
 
  `/etc/iptables/iptables.rules` 
 ```
@@ -148,6 +148,31 @@ In order for packets to be properly send and received it is necessary to transla
 :POSTROUTING ACCEPT [0:0]
 -A POSTROUTING -o extern0 -j MASQUERADE
 COMMIT
+
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i intern0 -o extern0 -j ACCEPT
+COMMIT
+
+```
+
+If you're connecting via PPPoE you'll also need to clamp mss to pmtu in order the prevent fregmentation from happening:
+
+ `/etc/iptables/iptables.rules` 
+```
+
+*mangle
+:PREROUTING ACCEPT [0:0]
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+:POSTROUTING ACCEPT [0:0]
+-A FORWARD -o ppp0 -p tcp -m tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
+COMMIT
+
 ```
 
 [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `iptables.service`. The router should now be fully functioning and route your traffic. However since it is facing the public internet it makes sense to additionally guard it using a [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall").
