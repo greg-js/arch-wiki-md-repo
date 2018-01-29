@@ -109,7 +109,7 @@ set mouse=a
 
 ```
 
-The `mouse=a` option is set in `defaults.vim`, which is sourced if there is no `~/.vimrc`.
+The `mouse=a` option is set in `defaults.vim`.
 
 **Note:** Copy/paste will use the `"*` register if there is access to an X server, see the [#Clipboard](#Clipboard) section. The xterm handling of the mouse buttons can still be used by keeping the `shift key` pressed.
 

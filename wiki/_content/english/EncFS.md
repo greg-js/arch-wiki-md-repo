@@ -50,7 +50,7 @@ The performance of both depends on the type of disk activity. While eCryptFS can
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [encfs](https://www.archlinux.org/packages/?name=encfs) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [encfs](https://www.archlinux.org/packages/?name=encfs) package.
 
 **Warning:** A security [review](https://defuse.ca/audits/encfs.htm) (February 2014) of *encfs* discovered a number of security issues in the stable release 1.7.4 (June 2014). Please consider the report and the references in it for updated information before using the release.
 

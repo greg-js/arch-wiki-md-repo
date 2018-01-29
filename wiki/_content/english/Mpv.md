@@ -188,6 +188,7 @@ Alt+j add video-pan-x -0.05
 Alt+l add video-pan-x 0.05
 Alt+i add video-pan-y 0.05
 Alt+k add video-pan-y -0.05
+Alt+BS set video-zoom 0; set video-pan-x 0; set video-pan-y 0
 
 ```
 

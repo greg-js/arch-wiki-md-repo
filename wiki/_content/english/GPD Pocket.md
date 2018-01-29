@@ -1,4 +1,4 @@
-Notes to get Arch Linux on the [GPD Pocket](https://www.indiegogo.com/projects/gpd-pocket-7-0-umpc-laptop-ubuntu-or-win-10-os-laptop--2#/).
+Notes for the [GPD Pocket](https://www.indiegogo.com/projects/gpd-pocket-7-0-umpc-laptop-ubuntu-or-win-10-os-laptop--2#/).
 
 ## Contents
 
@@ -9,31 +9,30 @@ Notes to get Arch Linux on the [GPD Pocket](https://www.indiegogo.com/projects/g
 *   [3 Configuration](#Configuration)
     *   [3.1 Automatic](#Automatic_2)
     *   [3.2 Manual](#Manual_2)
-        *   [3.2.1 Bluetooth](#Bluetooth)
-        *   [3.2.2 WiFi](#WiFi)
-        *   [3.2.3 Backlight and KMS](#Backlight_and_KMS)
-        *   [3.2.4 Wayland](#Wayland)
-            *   [3.2.4.1 Basic Configuration](#Basic_Configuration)
-            *   [3.2.4.2 Right Click Emulation](#Right_Click_Emulation)
-        *   [3.2.5 Xorg](#Xorg)
-            *   [3.2.5.1 Basic Configuration](#Basic_Configuration_2)
-            *   [3.2.5.2 Gnome and GDM](#Gnome_and_GDM)
-            *   [3.2.5.3 KDE](#KDE)
-            *   [3.2.5.4 Right Click Emulation](#Right_Click_Emulation_2)
-            *   [3.2.5.5 SDDM](#SDDM)
-            *   [3.2.5.6 Touchscreen Gestures](#Touchscreen_Gestures)
-        *   [3.2.6 Fan](#Fan)
-        *   [3.2.7 Power Saving](#Power_Saving)
-        *   [3.2.8 PulseAudio](#PulseAudio)
+        *   [3.2.1 WiFi](#WiFi)
+        *   [3.2.2 Backlight and KMS](#Backlight_and_KMS)
+        *   [3.2.3 Wayland](#Wayland)
+            *   [3.2.3.1 Basic Configuration](#Basic_Configuration)
+            *   [3.2.3.2 Right Click Emulation](#Right_Click_Emulation)
+        *   [3.2.4 Xorg](#Xorg)
+            *   [3.2.4.1 Basic Configuration](#Basic_Configuration_2)
+            *   [3.2.4.2 Gnome and GDM](#Gnome_and_GDM)
+            *   [3.2.4.3 KDE](#KDE)
+            *   [3.2.4.4 Right Click Emulation](#Right_Click_Emulation_2)
+            *   [3.2.4.5 SDDM](#SDDM)
+            *   [3.2.4.6 Touchscreen Gestures](#Touchscreen_Gestures)
+        *   [3.2.5 Fan](#Fan)
+        *   [3.2.6 Power Saving](#Power_Saving)
+        *   [3.2.7 PulseAudio](#PulseAudio)
 *   [4 Known Issues](#Known_Issues)
-*   [5 Acknowledgements](#Acknowledgements)
+*   [5 See also](#See_also)
 
 ## Specs
 
 *   Display: 7inch IPS 1920x1200
 *   CPU: Intel Atom X7-Z8750
 *   RAM: 8GB LPDDR3-1600
-*   Storage: 128GB eMMC SSD (non-replacable)
+*   Storage: 128GB eMMC SSD (non-replaceable)
 *   Battery: 7000mAh
 *   WiFi: Broadcom 4356 802.11ac
 *   Bluetooth: Broadcom 2045
@@ -48,9 +47,7 @@ You can download a pre-patched ISO from [here](https://github.com/sigboe/GPD-Arc
 
 ### Manual
 
-During boot add `fbcon=rotate:1` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to rotate the console.
-
-Install using a USB Ethernet dongle by following the [installation guide](/index.php/Installation_guide "Installation guide").
+Because WiFi is not working with the default configuration, you have to fix WiFi first, or use a supported USB Ethernet/WiFi dongle.
 
 ## Configuration
 
@@ -70,23 +67,13 @@ Server = https://github.com/njkli/$repo/releases/download/$arch
 
 Install the changes necessary for the GPD Pocket to run Arch properly by running:
 
-`# pacman -Syu --noconfirm gpd-pocket-support`
+`# pacman -Syu gpd-pocket-support`
 
 ### Manual
 
-#### Bluetooth
-
-To load bluetooth create the following file:
-
- `/etc/modules-load.d/btusb.conf` 
-```
-btusb
-
-```
-
 #### WiFi
 
-Copy `brcmfmac4356-pcie.txt` and `brcmfmac4356-pcie.bin` from [here](https://raw.githubusercontent.com/njkli/gpd-pocket/master/gpd-pocket-support/brcmfmac4356-pcie.txt) to `/usr/lib/firmware/brcm/` then run:
+Copy `brcmfmac4356-pcie.txt` from [here](https://raw.githubusercontent.com/njkli/gpd-pocket/master/gpd-pocket-support/brcmfmac4356-pcie.txt) to `/usr/lib/firmware/brcm/` then reload the WiFi kernel module:
 
 ```
 # modprobe -r brcmfmac
@@ -136,42 +123,17 @@ A sample implementation of this approach is available [here](https://github.com/
 
 ##### Basic Configuration
 
-Create `/etc/X11/xorg.conf.d/20-intel.conf` to configure graphics:
-
- `/etc/X11/xorg.conf.d/20-intel.conf` 
-```
-Section "Device"
-  Identifier    "Intel Graphics"
-  Driver        "intel"
-  Option        "TearFree" "true"
-EndSection
-
-```
-
 Create `/etc/X11/xorg.conf.d/30-monitor.conf` to rotate the monitor:
 
+**Note:** The Identifier may be different depending on your display driver of choice (either `DSI-1`  or `DSI1` )
  `/etc/X11/xorg.conf.d/30-monitor.conf` 
 ```
 Section "Monitor"
-  Identifier "DSI1"
+  Identifier "DSI-1"
   Option     "Rotate" "right"
 EndSection
 
 ```
-
-Create `/etc/X11/xorg.conf.d/40-touchscreen.conf` to rotate the touchscreen:
-
- `/etc/X11/xorg.conf.d/40-touchscreen.conf` 
-```
-Section "InputClass"
-  Identifier    "GoodixTS"
-  MatchProduct  "Goodix Capacitive TouchScreen"
-  Option        "TransformationMatrix" "0 1 0 -1 0 1 0 0 1"
-EndSection
-
-```
-
-If after using the above touchscreen configuration you still find that the input has the wrong orientation try removing the TransformationMatrix option. This is because more than one fix for the same issue will result in double transformation.
 
 ##### Gnome and GDM
 
@@ -268,7 +230,7 @@ With the latest kernel your fan should work out of the box.
 
 Once this has been completed - you should hear your fan start up at 40c - if you hear a clicking sound - power off the device, remove the back panel and very gently push the fan around a few times. Then re-attach the panel and power on the device - running the above commands again once logged in. It seems to be an issue with some devices that the fan cannot start properly when it has not been powered on in a while. This resolved the issue for me.
 
-Once you have completed these steps and the fan is working properly - you should then either reboot or run the following in order to return the temperature limits to default:
+Once you have completed these steps and the fan is working properly - you should then either reboot or reload the fan kernel module in order to return the temperature limits to default:
 
 ```
 # modprobe -r gpd-pocket-fan
@@ -301,25 +263,24 @@ Append the following lines into `/etc/pulse/default.pa`:
  `/etc/pulse/default.pa` 
 ```
 set-card-profile alsa_card.platform-cht-bsw-rt5645 HiFi
-set-default-sink alsa_output.platform-cht-bsw-rt5645.HiFi__hw_chtrt5645_0__sink  
-set-sink-port alsa_output.platform-cht-bsw-rt5645.HiFi__hw_chtrt5645_0__sink [Out] Speaker  
+set-default-sink alsa_output.platform-cht-bsw-rt5645.HiFi__hw_chtrt5645_0__sink
+set-sink-port alsa_output.platform-cht-bsw-rt5645.HiFi__hw_chtrt5645_0__sink [Out] Speaker
 
 ```
 
 Turn off realtime scheduling by editing `/etc/pulse/daemon.conf`:
 
-`realtime-scheduling = no`
+ `/etc/pulse/daemon.conf` 
+```
+realtime-scheduling = no
 
-**Note:** You might need to manually select the correct output (Speaker) sometimes through pactl or your desktop's settings page.
+```
 
 ## Known Issues
 
-*   USB-C power source status, screen brightness control do not work on Arch Kernel 4.14-2\. Use Hans kernel.
+*   USB-C power source status does not work on Kernel 4.14-15\. Hans' kernel has a patch fixing this.
 
-## Acknowledgements
+## See also
 
 *   [https://github.com/njkli/gpd-pocket/](https://github.com/njkli/gpd-pocket/)
-*   [https://github.com/cawilliamson/ansible-gpdpocket/](https://github.com/cawilliamson/ansible-gpdpocket/)
-*   [https://github.com/nexus511/gpd-ubuntu-packages](https://github.com/nexus511/gpd-ubuntu-packages)
-*   [https://www.reddit.com/r/GPDPocket/comments/6rszbo/project_linux_installer_for_gpd_pocket](https://www.reddit.com/r/GPDPocket/comments/6rszbo/project_linux_installer_for_gpd_pocket)
 *   [http://hansdegoede.livejournal.com/](http://hansdegoede.livejournal.com/)

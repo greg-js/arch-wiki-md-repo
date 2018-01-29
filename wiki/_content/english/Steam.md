@@ -2,46 +2,45 @@ Related articles
 
 *   [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshooting")
 *   [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting")
+*   [Gaming](/index.php/Gaming "Gaming")
 *   [Gamepad](/index.php/Gamepad "Gamepad")
-*   [Games](/index.php/Games "Games")
 *   [List of games](/index.php/List_of_games "List of games")
 
 [Steam](http://store.steampowered.com/about/) is a popular game distribution platform by Valve.
+
+Steam for Linux only supports Ubuntu 12.04 LTS and newer.[[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366) Thus do not turn to Valve for support when running into issues with Steam on Arch Linux.
 
 ## Contents
 
 *   [1 Installation](#Installation)
     *   [1.1 SteamCMD](#SteamCMD)
     *   [1.2 Alternative Flatpak installation](#Alternative_Flatpak_installation)
-*   [2 Usage](#Usage)
-*   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Directory structure](#Directory_structure)
-    *   [3.2 Launch options](#Launch_options)
-        *   [3.2.1 Examples](#Examples)
-    *   [3.3 Big Picture Mode without a window manager](#Big_Picture_Mode_without_a_window_manager)
-    *   [3.4 Steam skins](#Steam_skins)
-        *   [3.4.1 Creating skins](#Creating_skins)
-    *   [3.5 Changing the Steam notification position](#Changing_the_Steam_notification_position)
-        *   [3.5.1 Use a skin](#Use_a_skin)
-        *   [3.5.2 Live patching](#Live_patching)
-    *   [3.6 In-Home Streaming](#In-Home_Streaming)
-    *   [3.7 Finding a games AppID](#Finding_a_games_AppID)
-*   [4 Troubleshooting](#Troubleshooting)
-*   [5 See also](#See_also)
+*   [2 Directory structure](#Directory_structure)
+*   [3 Steam Runtime](#Steam_Runtime)
+*   [4 Usage](#Usage)
+*   [5 Launch options](#Launch_options)
+    *   [5.1 Examples](#Examples)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 Big Picture Mode without a window manager](#Big_Picture_Mode_without_a_window_manager)
+    *   [6.2 Steam skins](#Steam_skins)
+        *   [6.2.1 Creating skins](#Creating_skins)
+    *   [6.3 Changing the Steam notification position](#Changing_the_Steam_notification_position)
+        *   [6.3.1 Use a skin](#Use_a_skin)
+        *   [6.3.2 Live patching](#Live_patching)
+    *   [6.4 In-Home Streaming](#In-Home_Streaming)
+    *   [6.5 Finding a games AppID](#Finding_a_games_AppID)
+*   [7 Troubleshooting](#Troubleshooting)
+*   [8 See also](#See_also)
 
 ## Installation
-
-**Note:** Steam does not support Arch Linux, the only supported distribution is Ubuntu 12.04 LTS and newer with Unity, Gnome, or KDE. [[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366)
 
 Enable the [Multilib](/index.php/Multilib "Multilib") repository and [install](/index.php/Install "Install") the [steam](https://www.archlinux.org/packages/?name=steam) package.
 
 The following fixes are needed to get Steam functioning properly on Arch Linux:
 
 *   You need to install the 32-bit version of your [graphics driver](/index.php/Xorg#Driver_installation "Xorg") (the package in the *OpenGL (Multilib)* column).
-*   Steam may fail to start due to broken/missing libraries. See [Steam/Troubleshooting#Steam runtime issues](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting").
 *   Steam makes heavy usage of the Arial font. A decent Arial font to use is [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) or [the fonts provided by Steam](/index.php/Steam/Troubleshooting#Text_is_corrupt_or_missing "Steam/Troubleshooting"). Asian languages require [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) to display properly.
-*   Several games have dependencies which may be missing from your system. If a game fails to launch (often without error messages) then make sure all of the libraries listed in [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") are installed.
-*   In case that you are using Arch Linux in your local language, make sure that you also have properly generated en_US locales (see [Locale#Generating locales](/index.php/Locale#Generating_locales "Locale")), otherwise, the Steam client won't start with an **invalid pointer** error.
+*   In case that you are using Arch Linux in your local language, make sure that you also have properly generated en_US locales (see [Locale#Generating locales](/index.php/Locale#Generating_locales "Locale")), otherwise, the Steam client won't start with an invalid pointer error.
 
 ### SteamCMD
 
@@ -58,48 +57,55 @@ The Flatpak application currently does not support themes. Also you currently ca
 By default Steam won't be able to access your home directory, you can run the following command to allow it, so that it behaves like on Ubuntu or SteamOS:
 
 ```
-flatpak override com.valvesoftware.Steam --filesystem=/home/$USER
+flatpak override com.valvesoftware.Steam --filesystem=$HOME
 
 ```
+
+## Directory structure
+
+The default Steam install location is `~/.local/share/Steam`. If Steam cannot find it, it will prompt you to reinstall it or select the new location. This article uses the `~/.steam/root` symlink to refer to the install location.
+
+Steam installs games into library folders. Every Steam game in a library has:
+
+*   a manifest file `*LIBRARY*/steamapps/appmanifest_*AppID*.acf`
+*   a directory under `*LIBRARY*/steamapps/common/` containing the game files
+
+Steam lets you manage your library folders under *Steam > Settings > Downloads > Steam Library Folders*. By default the Steam install location is also used as a library folder.
+
+## Steam Runtime
+
+Both the Steam client and Steam games depend on the [Steam Runtime](https://github.com/ValveSoftware/steam-runtime), a set of libraries shipped with Steam for Linux (located under `~/.steam/root/ubuntu12_32/steam-runtime`). As the libraries of the Steam Runtime are outdated and often conflict with the new libraries in the Arch Linux repositories, the [steam](https://www.archlinux.org/packages/?name=steam) package provides two scripts for your convenience:
+
+*   `steam-runtime`, which overrides runtime libraries known to cause problems via the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable") (see [ld.so(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ld.so.8)).
+*   `steam-native`, which forces Steam to ignore its runtime and only use system libraries. You will probably want to install the [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime) meta package, a native replacement for the Steam runtime.
+
+The `steam` command is actually just a symlink to `steam-runtime`.
+
+The default Steam launch script is located at `/usr/lib/steam/steam`.
 
 ## Usage
 
-To start Steam simply run `steam`.
-
-*   `-bigpicture` to start in Big Picture Mode
-*   `-silent` don't open the main window
-
-## Tips and tricks
-
-### Directory structure
-
-`~/.steam` by default contains the following symlinks:
-
 ```
-bin   -> ~/.steam/bin32
-bin32 -> ~/.local/share/Steam/ubuntu12_32
-bin64 -> ~/.local/share/Steam/ubuntu12_64
-root  -> ~/.local/share/Steam
-sdk32 -> ~/.local/share/Steam/linux32
-sdk64 -> ~/.local/share/Steam/linux64
-steam -> ~/.local/share/Steam
+steam [ -options ] [ steam:// URL ]
 
 ```
 
-As you can see Steam stores its files in `~/.local/share/Steam/` by default. You can change where Steam stores its content by moving `~/.local/share/Steam/` and starting Steam, which will prompt you if you have moved your Steam content. You can then select the new location and Steam will update the symlinks in `~/.steam/`.
+For the available command-line options see the [Command Line Options article on the Valve Developer Wiki](https://developer.valvesoftware.com/wiki/Command_Line_Options#Steam_.28Windows.29).
 
-Games are installed in `~/.steam/root/steamapps/common/`.
+Steam also accepts an optional Steam URL, see the [Steam browser procotol](https://developer.valvesoftware.com/wiki/Steam_browser_protocol).
 
-### Launch options
+## Launch options
 
 When you launch a Steam game, Steam executes its **launch command** in a [Bash](/index.php/Bash "Bash") shell. To let you alter the launch command Steam provides **launch options**, which can be set for a game by right-clicking on it in your library, selecting Properties and clicking on *Set Launch Options*.
 
 By default Steam simply appends your option string to the launch command. To set environment variables or pass the launch command as an argument to another command you can use the `%command%` substitute.
 
-#### Examples
+### Examples
 
 *   only arguments: `-foo`
 *   environment variables: `FOO=bar BAZ=bar %command% -baz`
+
+## Tips and tricks
 
 ### Big Picture Mode without a window manager
 
@@ -118,11 +124,11 @@ Type=Application
 
 ### Steam skins
 
-The Steam interface can be customized using skins. Skins can overwrite interface-specific files in `~/.steam/steam`.
+The Steam interface can be customized using skins. Skins can overwrite interface-specific files in `~/.steam/root`.
 
 To install a skin:
 
-1.  Place its directory in `~/.local/share/Steam/skins`.
+1.  Place its directory in `~/.steam/root/skins`.
 2.  Open *Steam > Settings > Interface* and select it.
 3.  Restart Steam.
 
@@ -132,9 +138,9 @@ An extensive list of skins can be found in [this Steam forums post](http://forum
 
 #### Creating skins
 
-Nearly all Steam styles are defined in `~/.steam/steam/resource/styles/steam.styles` (the file is over 3,500 lines long). For a skin to be recognized it needs its own `resource/styles/steam.styles`. When a Steam update changes the official `steam.styles` your skin may become outdated, potentially resulting in visual errors.
+Nearly all Steam styles are defined in `~/.steam/root/resource/styles/steam.styles` (the file is over 3,500 lines long). For a skin to be recognized it needs its own `resource/styles/steam.styles`. When a Steam update changes the official `steam.styles` your skin may become outdated, potentially resulting in visual errors.
 
-See `~/.local/share/Steam/skins/skins_readme.txt` for a primer on how to create skins.
+See `~/.steam/root/skins/skins_readme.txt` for a primer on how to create skins.
 
 ### Changing the Steam notification position
 
@@ -154,9 +160,9 @@ Both files are overwritten by Steam on startup and `steam.styles` is only read o
 You can create a skin to change the notification position to your liking. For example to change the position to top right:
 
 ```
-$ cd ~/.local/share/Steam/skins
+$ cd ~/.steam/root/skins
 $ mkdir -p Top-Right/resource
-$ cp -r ~/.steam/steam/resource/styles Top-Right/resource
+$ cp -r ~/.steam/root/resource/styles Top-Right/resource
 $ sed -i '/Notifications.PanelPosition/ s/"[A-Za-z]*"/"TopRight"/' Top-Right/resource/styles/*
 
 ```
@@ -167,7 +173,7 @@ $ sed -i '/Notifications.PanelPosition/ s/"[A-Za-z]*"/"TopRight"/' Top-Right/res
 
  `~/.steam/notifpos.sh` 
 ```
-sed -i "/Notifications.PanelPosition/ s/\"[A-Za-z]*\"/\"$1\"/" ~/.steam/steam/resource/styles/gameoverlay.styles
+sed -i "/Notifications.PanelPosition/ s/\"[A-Za-z]*\"/\"$1\"/" ~/.steam/root/resource/styles/gameoverlay.styles
 
 ```
 

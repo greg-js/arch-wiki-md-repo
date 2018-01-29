@@ -181,7 +181,7 @@ Default location is `$XDG_DOWNLOAD_DIR` if it exists, `$HOME/downloads` otherwis
 
 Adblock is loaded by default, but you need to:
 
-*   Fetch an adblock-compatible list, like [Easylist](https://easylist-downloads.adblockplus.org/easylist.txt), and save it to `~/.local/share/luakit`.
+*   Fetch an adblock-compatible list, like [Easylist](https://easylist-downloads.adblockplus.org/easylist.txt), and save it to `~/.local/share/luakit/adblock`.
 *   Restart Luakit to load the extension.
 *   Use `:adblock-list-enable *number*` command within Luakit to turn Adblock's list(s) you downloaded on Adblock itself becomes enabled on startup.
 

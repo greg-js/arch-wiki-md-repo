@@ -271,7 +271,7 @@ As Steam for Linux only supports Ubuntu, Steam games for Linux are packaged expe
 ## Contributing
 
 *   Avoid referencing `~/.local/share/Steam`, reference `~/.steam/root` instead. See [Steam#Directory structure](/index.php/Steam#Directory_structure "Steam").
-*   Use the `*gamedir*` pseudo-variable when referring to a game's directory (`~/.steam/root/steamapps/common/Game`).
+*   You can use the `*gamedir*` pseudo-variable to refer to a game's directory (`~/.steam/root/steamapps/common/Game`).
 *   Link [launch options](/index.php/Launch_option "Launch option") like this: `[[launch option]]s`.
 *   Link bug reports and sources of workarounds.
 
@@ -302,18 +302,18 @@ Adobe AIR requires you to accept its EULA by creating the file `~/.appdata/Adobe
 
 ### Missing libpcre.so.3
 
-<small>added 16 April 2017, [Steam Community thread](https://steamcommunity.com/app/214490/discussions/0/154644705028020291/)</small>
-
-Symlink `/usr/lib/libpcre.so` to `*gamedir*/lib/x86_64/libpcre.so.3`, and add the following environment variable to the [launch options](/index.php/Launch_option "Launch option"), otherwise the game will fail to start:
+	added 16 April 2017, [source](https://steamcommunity.com/app/214490/discussions/0/154644705028020291/)
 
 ```
-LD_LIBRARY_PATH="$LD_LIBRARY_PATH:~/.steam/root/steamapps/common/Alien Isolation/lib/x86_64"
+$ ln -s /usr/lib/libpcre.so "*LIBRARY*/steamapps/common/Alien Isolation/lib/x86_64"
 
 ```
+
+Add `LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$PWD/lib/x86_64"` to your [launch options](/index.php/Launch_option "Launch option").
 
 ## Amnesia: The Dark Descent
 
-<small>added 3 December 2012, [Steam Community thread](https://steamcommunity.com/app/221410/discussions/0/864957183198111387/)</small>
+	added 3 December 2012, [source](https://steamcommunity.com/app/221410/discussions/0/864957183198111387/)
 
 Dependencies:
 
@@ -393,7 +393,7 @@ If that does not fix the issue, try unplugging any joysticks or joystick adapter
 
 ### Game does not start, displays text window with unreadable text
 
-Add `MESA_GL_VERSION_OVERRIDE=4.0` and `MESA_GLSL_VERSION_OVERRIDE=400` to your [launch options](/index.php/Launch_option "Launch option").
+Add `MESA_GL_VERSION_OVERRIDE=4.0 MESA_GLSL_VERSION_OVERRIDE=400` to your [launch options](/index.php/Launch_option "Launch option").
 
 ### Gray Water
 
@@ -415,21 +415,7 @@ Refer to [#Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_li
 
 Use `BeatCop.x86` instead.
 
-Add the following line to [launch options](/index.php/Launch_option "Launch option"):
-
-```
-"$HOME/.steam/root/SteamApps/common/Beat Cop/BeatCop.x86" # %command%
-
-```
-
-Or
-
-```
-$ cd ~/.steam/root/SteamApps/common/Beat\ Cop/
-$ mv BeatCop.x86_64 BeatCop.x64
-$ ln -s BeatCop.x86 BeatCop.x86_64
-
-```
+Set your [launch options](/index.php/Launch_option "Launch option") to `BeatCop.x86 # %command%`.
 
 ## Binding of Isaac: Rebirth
 

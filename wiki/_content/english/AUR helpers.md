@@ -107,7 +107,7 @@ This is a list of helper utilities that search, download and/or build packages.
 
 *   **yay** — AUR helper written in Go.
 
-	[https://github.com/Jguer/yay](https://github.com/Jguer/yay) || [yay](https://aur.archlinux.org/packages/yay/) or [yay-bin](https://aur.archlinux.org/packages/yay-bin/) (binary)
+	[https://github.com/Jguer/yay](https://github.com/Jguer/yay) || [yay](https://aur.archlinux.org/packages/yay/) or [yay-bin](https://aur.archlinux.org/packages/yay-bin/) (binary) or [yay-git](https://aur.archlinux.org/packages/yay-git/) (git)
 
 ## Maintenance
 

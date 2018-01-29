@@ -21,6 +21,8 @@ Go back to [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Da
         *   [8.1.1 Format](#Format)
     *   [8.2 Use](#Use)
 *   [9 MPRIS2 Support](#MPRIS2_Support)
+    *   [9.1 mpDris2](#mpDris2)
+    *   [9.2 mpd-mpris](#mpd-mpris)
 
 ## Organizing library
 
@@ -270,7 +272,7 @@ end
 
 ```
 
-There are more functions for mpc, run [mpc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mpc.1) for more info.
+There are more functions for mpc, run [mpc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpc.1) for more info.
 
 ## PulseAudio
 
@@ -375,6 +377,10 @@ mpc add [http://192.168.1.2:8000](http://192.168.1.2:8000)
 
 ## MPRIS2 Support
 
+### mpDris2
+
+**Note:** As of 2017-07-25, there are reports that mpDris2 would break [gdm](/index.php/Gdm "Gdm") if started as a service.
+
 Install the [mpDris2](https://aur.archlinux.org/packages/mpDris2/) package. It runs in the user session and monitors the mpd server.
 
 Copy the default configuration file from `/usr/share/doc/mpdris2/mpDris2.conf` to `~/.config/mpDris2/mpDris2.conf`. Edit it as needed.
@@ -387,3 +393,11 @@ $ ln -s /usr/share/applications/mpdris2.desktop ~/.config/autostart/
 ```
 
 It should now be autorun at login.
+
+### mpd-mpris
+
+Install the [mpd-mpris](https://aur.archlinux.org/packages/mpd-mpris/) package.
+
+After installation, you can start or enable the `mpd-mpris.service` user service through [systemd](/index.php/Systemd "Systemd").
+
+By default mpd-mpris listens on `localhost:6600` (which is the default host/port of [mpd](/index.php/Mpd "Mpd")). To change this settings copy `/usr/lib/systemd/user/mpd-mpris.service` to `~/.config/systemd/user/` then edit run parameters as needed.

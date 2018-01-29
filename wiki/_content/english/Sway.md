@@ -16,6 +16,7 @@
     *   [4.4 Input devices](#Input_devices)
     *   [4.5 HiDPI](#HiDPI)
     *   [4.6 Custom keybindings](#Custom_keybindings)
+    *   [4.7 .Xresources](#.Xresources)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Automatically start on login](#Automatically_start_on_login)
 *   [6 Known issues](#Known_issues)
@@ -186,7 +187,11 @@ swaymsg -t get_outputs
 
 ```
 
-To control brightness you can use [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/). For a list of utilities to control brightness and color correction see [Backlight](/index.php/Backlight "Backlight").
+To control brightness you can use [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/). For a list of utilities to control brightness and color correction see [[B
+
+### .Xresources
+
+Copy `.Xresources` to `.Xdefaults` to use them in sway.
 
 ## Tips and tricks
 

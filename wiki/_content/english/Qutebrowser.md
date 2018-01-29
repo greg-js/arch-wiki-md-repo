@@ -138,7 +138,7 @@ Additionally see [Firefox/Privacy#Configuration tweaks](/index.php/Firefox/Priva
 Several user agents are available as options when using `set content.headers.user_agent`. Another, possibly more generic user-agent is:
 
 ```
-Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0
+Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0
 
 ```
 
@@ -149,11 +149,11 @@ Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0
 
 #### Set a common HTTP_ACCEPT header
 
-The following is a common HTTP_ACCEPT header. Simply type the following commands at the prompt
+The following is a common HTTP_ACCEPT header (Firefox default). Simply type the following commands at the prompt
 
 ```
 set content.headers.accept_language en-US,en;q=0.5
-set content.headers.custom '{"accept": "text/html, */*; q=0.01"}'
+set content.headers.custom '{"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}'
 
 ```
 

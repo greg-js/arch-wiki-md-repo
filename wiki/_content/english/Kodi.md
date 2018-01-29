@@ -59,9 +59,9 @@ Setting up the system and running the standalone binary is advantageous for seve
 
 1.  An unprivileged user cannot access a shell by definition.
 2.  Running without a full blown DE is lighter and more simplistic.
-3.  When paired with a systemd unit (or equivalent, see below), this make the box on which kodi is running more like an appliance and very robust.
+3.  When paired with a systemd unit (or equivalent, see below), this setup makes the box on which kodi is running more like an appliance and very robust.
 
-There are several methods to it this described below.
+There are several methods achieve this described below.
 
 **Warning:** Select **only one** of the methods listed below.
 
@@ -78,7 +78,7 @@ The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone
 
 #### Xsession with LightDM
 
-**Note:** This assumes that the user has created an kodi user named kodiuser on the system and that the following file is present as described.
+**Note:** This assumes that a kodi user named "kodiuser" is on the system and that the following file is present as described.
 
 **Note:** lightdm does not pull in an X server as a required dependency, it is optional. The X server listed as an optional dependency (xephyr) does not work when run as root by lightdm.service ([Bug to have optional dependency modified](https://bugs.archlinux.org/?string=52067)) ([Upstream Bug](https://bugs.launchpad.net/lightdm/+bug/852577)). Install [xorg-server](/index.php/Xorg#Installation "Xorg").
 
@@ -319,9 +319,9 @@ Both Android and iOS users can use the official app (currently free of charge) t
 
 #### Using a physical remote control
 
-Any PC with a supported IR receiver/remote, can use remote using [LIRC](/index.php/LIRC "LIRC") or using the native kernel supported modules. Configuring specific remotes with lirc is covered on the [LIRC](/index.php/LIRC "LIRC") article.
+Any PC with a supported IR receiver/remote, can use [LIRC](/index.php/LIRC "LIRC") or even kernel supported modules to drive it. Configuring specific remotes with lirc is covered on the [LIRC](/index.php/LIRC "LIRC") article.
 
-To work properly with Kodi, a file will be required that maps the lirc events to Kodi keypresses. Create an [XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML") file at `~/.kodi/userdata/Lircmap.xml` (note the capital 'L').
+To work properly with Kodi, a file that maps the lirc events to Kodi keypresses is needed. Create an [XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML") file at `~/.kodi/userdata/Lircmap.xml` (note the capital 'L').
 
 **Note:** Users running Kodi started with [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) will find the kodi home (~) under `/var/lib/kodi` and should substitute this in for the shortcut above. Also make sure that if creating this file as the root user, it gets proper ownership as kodi:kodi when finished.
 
@@ -346,7 +346,7 @@ Lircmap.xml format is as follows:
 
 ### HDMI-CEC with Pulse Eight USB-CEC
 
-An elegant way of getting remote functions in Kodi is using [CEC](https://en.wikipedia.org/wiki/Consumer_Electronics_Control#CEC "wikipedia:Consumer Electronics Control"), a protocol that is part of the HDMI specification. Most modern TVs support CEC, although some manufacturers advertise the feature under other names. Apart from a CEC-enabled TV some hardware that takes the CEC signals coming from the TV and present them in a way that Kodi can understand is also needed. One such device is the [USB-CEC adapter](http://www.pulse-eight.com/store/products/104-usb-hdmi-cec-adapter.aspx) from Pulse Eight. Hooking up the USB-CEC is pretty simple, but in order for it to work in Arch we have to do a few things.
+With a supported [USB-CEC adapter](http://www.pulse-eight.com/store/products/104-usb-hdmi-cec-adapter.aspx), Kodi can be used to automatically turn on and off your TV and other home theater equipment. Volume control from Kodi can be sent to a supported amplifier, one can manage DVD or Blu-Ray players from inside Kodi, and redirect the active source on the TV to whichever equipment needs it, all from one remote control.
 
 Install `libcec` (or any of the appropriate for the Arch ARM: `libcec-rpi`, `libcec-cubox`, `libcec-imx6`.
 
@@ -376,7 +376,7 @@ Keep track of every video watched on kodi with [kodi-logger](https://aur.archlin
 
 ### CLI tool for kodi
 
-A powerful CLI tool for use with kodi is [texturecache](https://aur.archlinux.org/packages/texturecache/). Users can accomplish many task from library management to querying what is currently playing.
+A powerful CLI tool for use with kodi is [texturecache](https://aur.archlinux.org/packages/texturecache/). Users can accomplish many tasks from library management to querying what is currently playing.
 
 ### Enable Hardware video acceleration
 

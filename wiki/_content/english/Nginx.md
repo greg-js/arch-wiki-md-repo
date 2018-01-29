@@ -748,7 +748,7 @@ Run the configuration:
 
 ```
 
-[Edit nginx.service](/index.php/Systemd#Editing_provided_units "Systemd"):
+[Edit](/index.php/Systemd#Editing_provided_units "Systemd") the PID values based on the original `nginx.service`:
 
  `/etc/systemd/system/nginx.service.d/user.conf` 
 ```
@@ -756,7 +756,7 @@ Run the configuration:
 ...
 PIDFile=/run/nginx/nginx.pid
 ExecStart=
-ExecStart=/usr/bin/nginx -g 'pid /run/nginx/nginx.pid; error_log stderr;' # copied from nginx.service
+ExecStart=/usr/bin/nginx -g 'pid /run/nginx/nginx.pid; error_log stderr;' 
 ExecReload=
 ExecReload=/usr/bin/nginx -s reload -g 'pid /run/nginx/nginx.pid;'
 ```

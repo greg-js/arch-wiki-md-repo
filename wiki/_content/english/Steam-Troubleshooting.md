@@ -2,9 +2,7 @@ Related articles
 
 *   [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting")
 
-**Tip:** The Steam launcher redirects its stdout and stderr to `/tmp/dumps/*USER*_stdout.txt`. This means you do not have to run Steam from a terminal emulator to see that output.
-
-**Note:** Bugs should be reported at Valve's [GitHub issue tracker](https://github.com/ValveSoftware/steam-for-linux).
+**Tip:** The Steam launcher redirects its stdout and stderr to `/tmp/dumps/*USER*_stdout.txt`. This means you do not have to run Steam from the command-line to see that output.
 
 ## Contents
 
@@ -44,10 +42,10 @@ Related articles
 *   [20 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
 *   [21 Very slow app download speed](#Very_slow_app_download_speed)
 *   [22 Symbol lookup error using dri3](#Symbol_lookup_error_using_dri3)
-*   [23 Launching games on nvidia optimus laptops](#Launching_games_on_nvidia_optimus_laptops)
+*   [23 Launching games on Nvidia optimus laptops](#Launching_games_on_Nvidia_optimus_laptops)
 *   [24 "Needs to be online" error](#.22Needs_to_be_online.22_error)
 *   [25 Steamlink cannot find host computer](#Steamlink_cannot_find_host_computer)
-*   [26 Steam won't remember password](#Steam_won.27t_remember_password)
+*   [26 Steam forgets password](#Steam_forgets_password)
 *   [27 Steam license problem with playing videos](#Steam_license_problem_with_playing_videos)
 
 ## Debugging Steam
@@ -74,6 +72,7 @@ libGL error: driver pointer missing
 libGL error: failed to load driver: *some_driver*
 libGL error: unable to load driver: swrast_dri.so
 libGL error: failed to load driver: swrast
+
 ```
 
 ```
@@ -128,19 +127,19 @@ This is the normal Steam launcher without any Arch-specific workarounds.
 If individual games or Steam itself is failing to launch when using `steam-native` you are probably missing libraries. To find the required libraries run:
 
 ```
-$ cd ~/.local/share/Steam/ubuntu12_32
-$ file * | grep ELF | cut -d: -f1 | LD_LIBRARY_PATH=. xargs ldd | grep 'not found' | sort | uniq
+$ cd ~/.steam/root/ubuntu12_32
+$ LD_LIBRARY_PATH=. ldd * 2> /dev/null | grep 'not found' | sort | uniq
 
 ```
 
-Alternatively, run Steam with its runtime (`/usr/bin/steam`) and use the following command to see which non-system libraries Steam is using (not all of these are part of the Steam runtime):
+Alternatively, run Steam with `steam-runtime` and use the following command to see which non-system libraries Steam is using (not all of these are part of the Steam runtime):
 
 ```
 $ for i in $(pgrep steam); do sed '/\.local/!d;s/.*  //g' /proc/$i/maps; done | sort | uniq
 
 ```
 
-If the above commands have no output and you have an NVIDIA video card, then you may need to explitly install [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils).
+If the above commands have no output and you have an Nvidia video card, then you may need to explicitly install [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils).
 
 ## Other runtime issues
 
@@ -155,8 +154,9 @@ This happens because steamclient.so is linked to libudev.so.0 ([lib32-libudev0](
 The only proposed workaround is copying Steam's packaged 32-bit versions of libusb and libgudev to /usr/lib32:
 
 ```
-# cp $HOME/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libgudev* /usr/lib32
-# cp $HOME/.local/share/Steam/ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libusb* /usr/lib32
+# cp ~/.steam/root/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libgudev* /usr/lib32
+# cp ~/.steam/root/ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libusb* /usr/lib32
+
 ```
 
 Notice that the workaround is necessary because the bug affects systems with lib32-libgudev and lib32-libusb installed.
@@ -209,16 +209,18 @@ One of the following messages may show up:
 
 # Devil Daggers
 ./devildaggers: /usr/lib/libcurl.so.4: version `CURL_OPENSSL_3' not found (required by ./devildaggers)
+
 ```
 
 You need to install either [libcurl-compat](https://www.archlinux.org/packages/?name=libcurl-compat) or [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat) and link the compatibility library manually:
 
 ```
 # Nuclear Throne
-$ ln -s /usr/lib32/libcurl-compat.so.4.4.0 $HOME/.steam/steam/steamapps/common/Nuclear Throne/lib/libcurl.so.4
+$ ln -s /usr/lib32/libcurl-compat.so.4.4.0 "$HOME/.steam/steam/steamapps/common/Nuclear Throne/lib/libcurl.so.4"
 
 # Devil Daggers
-$ ln -s /usr/lib/libcurl-compat.so.4.4.0 $HOME/.steam/steam/steamapps/common/devildaggers/lib64/libcurl.so.4
+$ ln -s /usr/lib/libcurl-compat.so.4.4.0 ~/.steam/steam/steamapps/common/devildaggers/lib64/libcurl.so.4}}
+
 ```
 
 ## Audio issues
@@ -231,7 +233,7 @@ Games that explicitly depend on ALSA can break PulseAudio. Follow the directions
 
 ### No audio or 756 Segmentation fault
 
-First [#Configure PulseAudio](#Configure_PulseAudio) and see if that resolves the issue. If you do not have audio in the videos which play within the Steam client, it is possible that the ALSA libs packaged with Steam are not working.
+First [#Configure PulseAudio](#Configure_PulseAudio) and see if that resolves the issue. If you do not have audio in the videos which play within the Steam client, it is possible that the ALSA libraries packaged with Steam are not working.
 
 Attempting to playback a video within the steam client results in an error similar to:
 
@@ -261,14 +263,14 @@ LD_PRELOAD='/usr/$LIB/libpulse.so.0 /usr/$LIB/libpulse-simple.so.0 '${LD_PRELOAD
 
 ```
 
-Be adviced that their names may change over time. If so, it is necessary to take a look in
+Be advised that their names may change over time. If so, it is necessary to take a look in
 
 ```
 ~/.steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu
 
 ```
 
-and find the new libs and their versions.
+and find the new libraries and their versions.
 
 Bugs reports have been filed: [#3376](https://github.com/ValveSoftware/steam-for-linux/issues/3376) and [#3504](https://github.com/ValveSoftware/steam-for-linux/issues/3504)
 
@@ -302,7 +304,7 @@ allow-moves=true
 
 Chances are you are missing [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra). Once you [install](/index.php/Install "Install") that, it should work as expected.
 
-With that, steam should no longer crash when trying to launch a game through in home streaming.
+With that, Steam should no longer crash when trying to launch a game through in home streaming.
 
 ### Hardware decoding not available
 
@@ -317,7 +319,7 @@ export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0
 
 ```
 
-See also the [github issue](https://github.com/ValveSoftware/steam-for-linux/issues/4769).
+See also the [GitHub issue](https://github.com/ValveSoftware/steam-for-linux/issues/4769).
 
 ## Wrong ELF class
 
@@ -433,7 +435,7 @@ If you add another steam library folder on another drive, you might receive the 
 
 Make sure you are mounting the filesystem with the correct flags in your `/etc/fstab`, usually by adding `exec` to the list of mount parameter. The parameter must occur after any `user` or `users` parameter since these can imply `noexec`.
 
-This error might also occur if you are readding a library folder and Steam is unable to find a contained `steamapps` folder. Previous versions used `SteamApps` instead, so ensure the name is fully lowercase.
+This error might also occur if you are reading a library folder and Steam is unable to find a contained `steamapps` folder. Previous versions used `SteamApps` instead, so ensure the name is fully lowercase.
 
 This error can also occur because of steam runtime issues and may be fixed following the [#Dynamic linker](#Dynamic_linker) section.
 
@@ -445,7 +447,7 @@ See [Gamepad#Steam Controller](/index.php/Gamepad#Steam_Controller "Gamepad").
 
 [BBS#177245](https://bbs.archlinux.org/viewtopic.php?id=177245)
 
-You have an NVIDIA GPU and Steam has the following output:
+You have an Nvidia GPU and Steam has the following output:
 
 ```
 Running Steam on arch rolling 64-bit
@@ -510,9 +512,9 @@ For steam to work, disable dri3 in xorg config file or as a workaround run steam
 
 ```
 
-## Launching games on nvidia optimus laptops
+## Launching games on Nvidia optimus laptops
 
-To be able to play games which require using nvidia GPU (for example, Hitman 2016) on optimus enabled laptop, you should start steam with *primusrun* prefix. Otherwise, game will not work. Keep in mind, that issuing some command such as `primusrun steam` while steam is already running will not restart it. You should explicitly exit and then start steam via `primusrun steam` command or start game immediately after start, for example with `primusrun steam steam://rungameid/236870`. After steam was launched with primusrun prefix, you do not need to prefix your game with primusrun or optirun, because it does not matter.
+To be able to play games which require using Nvidia GPU (for example, Hitman 2016) on optimus enabled laptop, you should start steam with *primusrun* prefix. Otherwise, game will not work. Keep in mind, that issuing some command such as `primusrun steam` while steam is already running will not restart it. You should explicitly exit and then start steam via `primusrun steam` command or start game immediately after start, for example with `primusrun steam steam://rungameid/236870`. After steam was launched with primusrun prefix, you do not need to prefix your game with primusrun or optirun, because it does not matter.
 
 ## "Needs to be online" error
 
@@ -532,7 +534,7 @@ Steam connects through UDP 27036, 27031 and TCP 27036, 27037\. You need to add t
 
 ```
 
-## Steam won't remember password
+## Steam forgets password
 
 	Related: [steam-for-linux#5030](https://github.com/ValveSoftware/steam-for-linux/issues/5030)
 

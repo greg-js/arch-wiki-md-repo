@@ -198,9 +198,8 @@ Runtime hooks are found in `/usr/lib/initcpio/hooks/`, custom runtime hooks can 
 
 A table of common hooks and how they affect image creation and runtime follows. Note that this table is not complete, as packages can provide custom hooks.
 
-<caption>**Current hooks**</caption>
-| busybox | systemd | Installation | Runtime |
-| **base** | Sets up all initial directories and installs base utilities and libraries. Always keep this hook as the first hook unless you know what you are doing.
+| busybox init | systemd init | [Build hook](#Build_hooks) | [Runtime hook](#Runtime_hooks) (busybox init only) |
+| **base** | Sets up all initial directories and installs base utilities and libraries. Always keep this hook as the first hook unless you know what you are doing, as it provides critical busybox init when not using **systemd** hook.
 
 Provides a busybox recovery shell when using **systemd** hook.
 

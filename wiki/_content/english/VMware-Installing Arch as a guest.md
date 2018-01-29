@@ -191,14 +191,15 @@ You can safely ignore the following build failures:
 *   "Warning: This script could not find mkinitrd or update-initramfs and cannot remake the initrd file!"
 *   Fuse components not found on the system.
 
-Enable `vmware-vmblock-fuse` systemd services) (make sure you install the dependencies manually:
+Enable `vmware-vmblock-fuse` systemd services) (make sure you install the dependencies manually or use the *-s* flag:
 
 ```
  # asp checkout open-vm-tools
  # cd open-vmtools/repos/community-x86_64/
- # makepkg --asdeps
+ # makepkg -s --asdeps
  # cp vm* /usr/lib/systemd/system
- # systemctl enable vmware-vmblock-fuse.service
+ # systemctl enable vmware-vmblock-fuse
+ # systemctl enable vmtoolsd
 
 ```
 
@@ -667,7 +668,7 @@ Make the command `vmware-user` run after [X11](/index.php/X11 "X11") by either:
 *   Ensuring `etc/xdg/autostart/vmware-user.desktop` exists, and if not, run:
 
 ```
-# /etc/vmware-tools/vmware-user.desktop /etc/xdg/autostart/vmware-user.desktop
+# cp /etc/vmware-tools/vmware-user.desktop /etc/xdg/autostart/vmware-user.desktop
 
 ```
 

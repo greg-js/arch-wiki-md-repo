@@ -207,4 +207,4 @@ To fix this, ensure that you have a thumbnailer for video files installed - see 
 
 ### Desktop icons not shown
 
-Since Nero v3.4.2, the desktop is managed by `nemo-desktop`. This can be configured to auto start by copying the file `/usr/share/applications/nemo-autostart.desktop` to `~/.config/autostart/nemo-autostart.desktop` and removing the line "OnlyShowIn=X-Cinnamon;".
+Since Nemo v3.4.2, the desktop is managed by `nemo-desktop`. This can be configured to auto start by copying the file `/usr/share/applications/nemo-autostart.desktop` to `~/.config/autostart/nemo-autostart.desktop` and removing the line "OnlyShowIn=X-Cinnamon;".
