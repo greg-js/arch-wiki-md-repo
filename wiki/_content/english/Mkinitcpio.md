@@ -55,7 +55,7 @@ mkinitcpio is a modular tool for building an initramfs CPIO image, offering many
 *   The use of [BusyBox](http://www.busybox.net/) to provide a small and lightweight base for early userspace.
 *   Support for **[udev](/index.php/Udev "Udev")** for hardware auto-detection at runtime, thus preventing the loading of unnecessary modules.
 *   Using an extendable hook-based init script, which supports custom hooks that can easily be included in packages.
-*   Support for [LVM2](/index.php/LVM "LVM"), [dm-crypt](/index.php/Dm-crypt "Dm-crypt") for both plain and LUKS volumes, [RAID](/index.php/RAID "RAID"), and [swsusp](https://en.wikipedia.org/wiki/swsusp "wikipedia:swsusp") for resuming, and booting from USB mass storage devices.
+*   Support for [LVM2](/index.php/LVM2 "LVM2"), [dm-crypt](/index.php/Dm-crypt "Dm-crypt") for both plain and LUKS volumes, [RAID](/index.php/RAID "RAID"), and [swsusp](https://en.wikipedia.org/wiki/swsusp "wikipedia:swsusp") for resuming, and booting from USB mass storage devices.
 *   The ability to allow many features to be configured from the kernel command line without needing to rebuild the image.
 
 mkinitcpio has been developed by the Arch Linux developers and from community contributions. See the [public Git repository](https://projects.archlinux.org/mkinitcpio.git/).

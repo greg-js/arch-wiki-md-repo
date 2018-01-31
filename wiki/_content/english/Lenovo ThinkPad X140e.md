@@ -1,3 +1,8 @@
+Related articles
+
+*   [IBM ThinkPad X100e](/index.php/IBM_ThinkPad_X100e "IBM ThinkPad X100e")
+*   [IBM ThinkPad X120e](/index.php/IBM_ThinkPad_X120e "IBM ThinkPad X120e")
+
 Installation instructions for the Lenovo ThinkPad X140e. Should work for E145 as well.
 
 ## Contents
@@ -17,6 +22,8 @@ Installation instructions for the Lenovo ThinkPad X140e. Should work for E145 as
 Users have the choice between the open source [ATI](/index.php/ATI "ATI") video driver or the closed source [Catalyst](/index.php/Catalyst "Catalyst") video driver.
 
 As of 3.15 kernel, the open source drivers are very suitable for this chips' GPU. 3.16 is a mild improvement over that.
+
+The HD8330 video device on this laptop is part of the Sea Islands family (Kabini chipset) of AMD GPUs. As the new [AMDGPU](/index.php/AMDGPU "AMDGPU") kernel driver is now needed as of Linux kernel 4.13 for GL support, adding `amdgpu.cik_support=1 radeon.cik_support=0` kernel parameters is required to boot with full OpenGL support.
 
 ## Wireless
 

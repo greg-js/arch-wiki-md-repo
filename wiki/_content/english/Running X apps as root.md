@@ -1,18 +1,18 @@
 By default, and for security reasons, root will be unable to connect to a non-root user's [X server](/index.php/X_server "X server"). There are multiple ways of allowing root to do so however, if necessary.
 
-**Warning:** All of the following methods have security implications that users should be aware of. As put by Emmanuele Bassi, a GNOME developper: "*there are no *real*, substantiated, technological reasons why anybody should run a GUI application as root. By running GUI applications as an admin user you're literally running millions of lines of code that have not been audited properly to run under elevated privileges; you're also running code that will touch files inside your $HOME and may change their ownership on the file system; connect, via IPC, to even more running code, etc. You're opening up a massive, gaping security hole [...].*"[[1]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5)
+**Warning:** All of the following methods have security implications that users should be aware of. Running GUI applications as root allows to execute a lot of code which is not audited properly for running under elevated priviledges. This may be a huge security hole.
 
-The proper, recommended way to run GUI apps under X with elevated privileges is to create a [Polkit](/index.php/Polkit "Polkit") policy, as shown in [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=999328#p999328). This should however "*only be used for legacy programs*", as [pkexec(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pkexec.1) reminds. Applications should rather "*defer the privileged operations to an auditable, self-contained,* minimal *piece of code that gets executed after doing a privilege escalation, and gets dropped when not needed*"[[2]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5). This may be the object of a bug report to the upstream project.
+The proper, recommended way to run GUI apps under X with elevated privileges is to create a [Polkit](/index.php/Polkit "Polkit") policy, as shown in [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=999328#p999328). This should however "*only be used for legacy programs*", as [pkexec(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pkexec.1) reminds. Applications should rather "*defer the privileged operations to an auditable, self-contained,* minimal *piece of code that gets executed after doing a privilege escalation, and gets dropped when not needed*"[[1]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5). This may be the object of a bug report to the upstream project.
 
 ## Contents
 
-*   [1 Ponctual methods](#Ponctual_methods)
+*   [1 Punctual methods](#Punctual_methods)
 *   [2 Alternate methods](#Alternate_methods)
     *   [2.1 Temporarily allow root access](#Temporarily_allow_root_access)
     *   [2.2 Permanently allow root access](#Permanently_allow_root_access)
 *   [3 Wayland](#Wayland)
 
-## Ponctual methods
+## Punctual methods
 
 Those methods wrap the application in an elevation framework and drop the acquired privileges once it exits:
 
@@ -27,7 +27,7 @@ See also [Sudo#kdesu](/index.php/Sudo#kdesu "Sudo").
 
 *   [gksu](/index.php/Sudo#gksu "Sudo")
 
-**Warning:** *gksu* has been deprecated since 2011[[3]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5), and has not seen any update since 2014[[4]](https://www.archlinux.org/packages/?name=gksu).
+**Warning:** *gksu* has been deprecated since 2011[[2]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5), and has not seen any update since 2014[[3]](https://www.archlinux.org/packages/?name=gksu).
 
 ```
 $ gksu *name-of-app*

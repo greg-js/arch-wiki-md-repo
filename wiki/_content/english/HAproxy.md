@@ -10,6 +10,10 @@
         *   [3.1.2 Backends](#Backends)
         *   [3.1.3 Frontends](#Frontends)
         *   [3.1.4 Health checks](#Health_checks)
+        *   [3.1.5 Logging with systemd](#Logging_with_systemd)
+        *   [3.1.6 Performing TLS/SSL termination](#Performing_TLS.2FSSL_termination)
+            *   [3.1.6.1 Redirecting HTTP to HTTPS](#Redirecting_HTTP_to_HTTPS)
+        *   [3.1.7 Virtual host like configuration](#Virtual_host_like_configuration)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -72,6 +76,48 @@ When a backend is declared with the `check` option, HAProxy will check on startu
 By default, HAProxy will attempt to establish a TCP connection to the backend to determine healthiness.
 
 If a large number of backends are declared with the `check` option, HAProxy will query all of them on startup, which may delay startup time.
+
+#### Logging with systemd
+
+To configure HAproxy to use systemd `/dev/log` compatibility socket add the following to your configuration file under the `global` section
+
+```
+log /dev/log local0 info
+
+```
+
+#### Performing TLS/SSL termination
+
+In order to use haproxy as a TLS terminator you have to set inside your `frontend` section
+
+```
+bind :80
+bind :443 ssl crt <path-to-combined-cert>
+
+```
+
+**Note:** To generate the cert you can run `cat <certificate-full-chain> <certificate-private-key> > <combined-cert>`
+
+**Tip:** To add support for HTTP/2 add `alpn h2,http/1.1` at the end of the `bind :443` line
+
+##### Redirecting HTTP to HTTPS
+
+Set in your `frontend` section
+
+```
+redirect scheme https code 301 if !{ ssl_fc }
+
+```
+
+#### Virtual host like configuration
+
+Suppose you have two backends: `foo` and `bar` and each should handle requests only for a specific domain. In order to perform this in your `frontend` section you can configure
+
+```
+use_backend foo-backend if { hdr(host) -i foo.example.com || hdr(host) -i www.foo.example.com }
+use_backend bar-backend if { hdr(host) -i bar.example.com || hdr(host) -i www.bar.example.com }
+
+```
 
 ## See also
 

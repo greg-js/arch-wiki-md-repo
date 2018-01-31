@@ -11,6 +11,7 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
     *   [1.4 Bretos' Virtual Gaming Setup](#Bretos.27_Virtual_Gaming_Setup)
     *   [1.5 Skeen's Virtual Gaming Rack Machine](#Skeen.27s_Virtual_Gaming_Rack_Machine)
     *   [1.6 droserasprout poor man's setup](#droserasprout_poor_man.27s_setup)
+    *   [1.7 prauat: 2xIntel(R) Xeon(R) CPU E5-2609 v4, 2xGigabyte GeForce GTX 1060 6GB G1 Gaming, Intel S2600CWTR](#prauat:_2xIntel.28R.29_Xeon.28R.29_CPU_E5-2609_v4.2C_2xGigabyte_GeForce_GTX_1060_6GB_G1_Gaming.2C_Intel_S2600CWTR)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
@@ -198,6 +199,23 @@ Configuration:
 *   i2c-dev module added to bypass 'EDID signature' error when switching HDMI. Without it I had to switch video output before starting VM for some reason.
 *   intremap=no_x2apic_optout kernel option added to bypass motherboard firmware falsely reporting x2APIC method is not supported. Seems to have a strong influence on the guest's latency.
 *   Overall performance is pretty close to the native OS setup.
+
+### prauat: 2xIntel(R) Xeon(R) CPU E5-2609 v4, 2xGigabyte GeForce GTX 1060 6GB G1 Gaming, Intel S2600CWTR
+
+Hardware:
+
+*   **CPU**:2xIntel(R) Xeon(R) CPU E5-2609 v4
+*   **Motherboard**: Intel S2600CWTR(Revision ???, BIOS/UEFI Version: SE5C610.86B.01.01.0022.062820171903)
+*   **GPU**: 2xGigabyte GeForce GTX 1060 6GB G1 Gaming [GeForce GTX 1060 6GB] (rev a1)
+*   **RAM**: Samsung M393A2G40EB1-CPB 2133 MHz 64GB (4x16GB)
+
+Configuration:
+
+*   **Kernel**: Linux 4.14.15-1-ARCH #1 SMP PREEMPT
+*   Using **libvirt/QEMU**: [https://github.com/prauat/passvm/blob/master/generic.xml](https://github.com/prauat/passvm/blob/master/generic.xml)
+*   Most important:
+*   When using nvidia driver hide virtualization to guest <kvm><hidden state='on'/></kvm>
+*   Configuration works with Arch Linux guest os, still work in progress
 
 ## Adding your own setup
 

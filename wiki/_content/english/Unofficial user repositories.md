@@ -45,26 +45,27 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [3.1.20 gustawho](#gustawho)
         *   [3.1.21 herecura](#herecura)
         *   [3.1.22 holo](#holo)
-        *   [3.1.23 ivasilev](#ivasilev_2)
-        *   [3.1.24 jlk](#jlk)
-        *   [3.1.25 jrpi](#jrpi)
-        *   [3.1.26 jrpi-haskell](#jrpi-haskell)
-        *   [3.1.27 llvm-svn](#llvm-svn)
-        *   [3.1.28 markzz](#markzz)
-        *   [3.1.29 miffe](#miffe)
-        *   [3.1.30 mikelpint](#mikelpint)
-        *   [3.1.31 mobile](#mobile)
-        *   [3.1.32 qt-debug](#qt-debug)
-        *   [3.1.33 quarry](#quarry)
-        *   [3.1.34 repo-ck](#repo-ck)
-        *   [3.1.35 seblu](#seblu)
-        *   [3.1.36 seiichiro](#seiichiro)
-        *   [3.1.37 sergej-repo](#sergej-repo)
-        *   [3.1.38 siosm-aur](#siosm-aur)
-        *   [3.1.39 subtitlecomposer](#subtitlecomposer)
-        *   [3.1.40 tredaelli-systemd](#tredaelli-systemd)
-        *   [3.1.41 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-        *   [3.1.42 xyne-x86_64](#xyne-x86_64)
+        *   [3.1.23 icinga2](#icinga2)
+        *   [3.1.24 ivasilev](#ivasilev_2)
+        *   [3.1.25 jlk](#jlk)
+        *   [3.1.26 jrpi](#jrpi)
+        *   [3.1.27 jrpi-haskell](#jrpi-haskell)
+        *   [3.1.28 llvm-svn](#llvm-svn)
+        *   [3.1.29 markzz](#markzz)
+        *   [3.1.30 miffe](#miffe)
+        *   [3.1.31 mikelpint](#mikelpint)
+        *   [3.1.32 mobile](#mobile)
+        *   [3.1.33 qt-debug](#qt-debug)
+        *   [3.1.34 quarry](#quarry)
+        *   [3.1.35 repo-ck](#repo-ck)
+        *   [3.1.36 seblu](#seblu)
+        *   [3.1.37 seiichiro](#seiichiro)
+        *   [3.1.38 sergej-repo](#sergej-repo)
+        *   [3.1.39 siosm-aur](#siosm-aur)
+        *   [3.1.40 subtitlecomposer](#subtitlecomposer)
+        *   [3.1.41 tredaelli-systemd](#tredaelli-systemd)
+        *   [3.1.42 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+        *   [3.1.43 xyne-x86_64](#xyne-x86_64)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 andrwe](#andrwe)
         *   [3.2.2 alucryd](#alucryd)
@@ -458,6 +459,21 @@ Server = https://repo.herecura.be/$repo/$arch
 ```
 [holo]
 Server = https://repo.holocm.org/archlinux/x86_64
+
+```
+
+#### icinga2
+
+*   **Maintainer:** Josef Stautner <archwiki@veloc1ty.de>
+*   **Description:** Unofficial packages for [Icinga 2](https://www.icinga.com/products/icinga-2/)
+*   **Upstream page:** [https://github.com/Icinga/icinga2](https://github.com/Icinga/icinga2)
+*   **Package list:** [https://icinga2.mirror.veloc1ty.de/](https://icinga2.mirror.veloc1ty.de/)
+*   **Key-ID:** [0x1BE14C72D90E6C00](http://icinga2.mirror.veloc1ty.de/icinga2.pub)
+*   **More details:** ["Unofficial Icinga 2 Archlinux Mirror Server"](https://blog.veloc1ty.de/2018/01/24/inofficial-icinga-2-archlinux-mirror-server)
+
+```
+[icinga2]
+Server = https://icinga2.mirror.veloc1ty.de/
 
 ```
 

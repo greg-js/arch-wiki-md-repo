@@ -43,12 +43,7 @@ The `-c` parameter resets the chroot matrix, which can be useful in case of brea
 
 ### Setting Up A Chroot
 
-The devtools package provides tools for creating and building within clean chroots. Install it if not done already:
-
-```
-# pacman -S devtools
-
-```
+The [devtools](https://www.archlinux.org/packages/?name=devtools) package provides tools for creating and building within clean chroots. Install it if not done already.
 
 To make a clean chroot, create a directory in which the chroot will reside. For example, `$HOME/chroot`.
 

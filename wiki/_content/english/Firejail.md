@@ -29,6 +29,7 @@ Related articles
     *   [8.3 Symbolic links](#Symbolic_links)
     *   [8.4 PulseAudio](#PulseAudio)
     *   [8.5 Hidepid](#Hidepid)
+    *   [8.6 Proprietary Nvidia drivers](#Proprietary_Nvidia_drivers)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -315,6 +316,10 @@ This commands creates a custom `~/.config/pulse/client.conf` file for the *curre
 ### Hidepid
 
 If you have [hidepid](/index.php/Hidepid "Hidepid") installed, Firemon can only be run as root. This, among other things, will cause problems with the Firetools GUI incorrectly reporting "Capabilities", "Protocols" and the status of "Seccomp". See [[4]](https://github.com/netblue30/firejail/issues/1564)
+
+### Proprietary Nvidia drivers
+
+Some users report problems when using Firejail and proprietary graphic drivers from [NVIDIA](/index.php/NVIDIA "NVIDIA") (e.g. [[5]](https://github.com/netblue30/firejail/issues/1753), [[6]](https://github.com/netblue30/firejail/issues/879) or [[7]](https://github.com/netblue30/firejail/issues/841)). This can often be solved by disabling the `noroot` Firejail option in the application's profile file.
 
 ## See also
 

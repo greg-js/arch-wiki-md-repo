@@ -110,4 +110,4 @@ $ rm /var/log/teamspeak3-server/*.log
 
 ## See also
 
-*   [Official documentation](http://www.teamspeak.com/?page=literature)
+*   [Official website](https://www.teamspeak.com/en/)

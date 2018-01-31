@@ -253,7 +253,7 @@ options nouveau modeset=0
 
 ### Suspend problem
 
-Displaylink is not working after suspend. Reboot your system and then you are able to use displaylink again.
+Displaylink is not working after suspend. Unplug and then plug again displaylink's usb cable to your system and then you are able to use displaylink again.
 
 ### DisplayLink is not working when usb hot plugged
 

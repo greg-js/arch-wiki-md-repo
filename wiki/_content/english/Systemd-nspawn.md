@@ -60,13 +60,13 @@ Next, create a directory to hold the container. In this example we will use `~/M
 Next, we use pacstrap to install a basic arch-system into the container. At minimum we need to install the [base](https://www.archlinux.org/groups/x86_64/base/) group.
 
 ```
-# pacstrap -i -c -d ~/MyContainer base [additional pkgs/groups]
+# pacstrap -i -c ~/MyContainer base [additional pkgs/groups]
 
 ```
 
 **Tip:** The `-i` option will **avoid** auto-confirmation of package selection. As you do not need to install the Linux kernel in the container, you can remove it from the package list selection to save space. See [Pacman#Usage](/index.php/Pacman#Usage "Pacman").
 
-**Note:** The package [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) required by [linux](https://www.archlinux.org/packages/?name=linux), which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group and isn't necessary to run the container, causes some issues to `systemd-tmpfiles-setup.service` during the booting process with `systemd-nspawn`. It's possible to install the [base](https://www.archlinux.org/groups/x86_64/base/) group but excluding the [linux](https://www.archlinux.org/packages/?name=linux) package and its dependencies when building the container with `# pacstrap -i -c -d ~/MyContainer base --ignore linux [additional pkgs/groups]`. The `--ignore` flag will be simply passed to [pacman](https://www.archlinux.org/packages/?name=pacman). See [FS#46591](https://bugs.archlinux.org/task/46591) for more information.
+**Note:** The package [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) required by [linux](https://www.archlinux.org/packages/?name=linux), which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group and isn't necessary to run the container, causes some issues to `systemd-tmpfiles-setup.service` during the booting process with `systemd-nspawn`. It's possible to install the [base](https://www.archlinux.org/groups/x86_64/base/) group but excluding the [linux](https://www.archlinux.org/packages/?name=linux) package and its dependencies when building the container with `# pacstrap -i -c ~/MyContainer base --ignore linux [additional pkgs/groups]`. The `--ignore` flag will be simply passed to [pacman](https://www.archlinux.org/packages/?name=pacman). See [FS#46591](https://bugs.archlinux.org/task/46591) for more information.
 
 Once your installation is finished, boot into the container:
 
@@ -90,7 +90,7 @@ It is possible to install a minimal i686 Arch Linux inside a subdirectory and us
 ```
  # pacman_conf=/tmp/pacman.conf # this is pacman.conf without multilib
  # mkdir /mnt/i686-archlinux
- # linux32 pacstrap -C "$pacman_conf" -di /mnt/i686-archlinux base base-devel
+ # linux32 pacstrap -C "$pacman_conf" -i /mnt/i686-archlinux base base-devel
 
 ```
 

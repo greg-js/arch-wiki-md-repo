@@ -17,7 +17,7 @@
 
 ### Lunar
 
-ROS Lunar is available in AUR packages and seems to be working quite nicely. The [ros-lunar-desktop-full](https://aur.archlinux.org/packages/ros-lunar-desktop-full/) is complete and seems to have everything functional.
+ROS Lunar is available in AUR packages and seems to be working quite nicely. The [ros-lunar-desktop-full](https://aur.archlinux.org/packages/ros-lunar-desktop-full/) is complete and seems to have everything functional. The [ros-lunar-ros-core](https://aur.archlinux.org/packages/ros-lunar-ros-core/) is smaller and already provides rospy, roscpp, publisher, subscriber, services, launch files, and other core ROS functionality.
 
 ### Kinetic
 

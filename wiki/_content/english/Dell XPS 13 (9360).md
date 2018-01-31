@@ -375,9 +375,11 @@ If you are using [tlp](https://www.archlinux.org/packages/?name=tlp), it will ac
 
 ### Crackling sound with screen changes
 
-Not enabling the GuC can cause weird crackling, white noise sound when the display is changing its contents. The sound also appears to be coming from the card itself or the screen, without any speakers connected.
+Some users experienced a weird crackling, white noise sound when the display is changing its contents after waking the computer from S3 sleep..
 
-This can be somewhat mitigated by adding the kernel parameter `i915.enable_guc_loading=1` as described in [Intel graphics](/index.php/Intel_graphics "Intel graphics"), however multiple people have reported that this does not fix the problem completely and it returns after waking from sleep.
+This issue should be patched as of the 4.14.15 kernel.
+
+If you're still encountering this issue, try manually applying this patch[[2]](https://lkml.org/lkml/2018/1/22/169). Adding the kernel parameter `i915.enable_guc_loading=1` as described in [Intel graphics](/index.php/Intel_graphics "Intel graphics") might also help, however multiple people have reported that this does not fix the problem completely.
 
 ### Coil Whine
 
@@ -425,7 +427,7 @@ PulseAudio will rewrite these ALSA settings. So if you use PulseAudio you should
 
 ## Fingerprint sensor
 
-Dell officially does not support fingerprint reader functionality [[2]](http://en.community.dell.com/techcenter/os-applications/f/4613/t/20006668), however an effort on reverse engineering the protocol of Validity 138a:0090, 138a:0094, 138a:0097 fingerprint readers can be found at github [[3]](https://github.com/nmikhailov/Validity90).
+Dell officially does not support fingerprint reader functionality [[3]](http://en.community.dell.com/techcenter/os-applications/f/4613/t/20006668), however an effort on reverse engineering the protocol of Validity 138a:0090, 138a:0094, 138a:0097 fingerprint readers can be found at github [[4]](https://github.com/nmikhailov/Validity90).
 
 ## See Also
 

@@ -17,6 +17,8 @@
 
 [Install](/index.php/Install "Install") the [audacious](https://www.archlinux.org/packages/?name=audacious) package. If you want audio CD support, install [libcdio](https://www.archlinux.org/packages/?name=libcdio).
 
+**Note:** Some plugins may fail to load unless all optional dependencies of the [audacious-plugins](https://www.archlinux.org/packages/?name=audacious-plugins) package are satisfied.
+
 ## Configuration
 
 ### Interfaces

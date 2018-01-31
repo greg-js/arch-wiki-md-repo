@@ -131,7 +131,7 @@ This is the default behaviour. To change the setting open the `cinnamon-settings
 
 ### Creating custom applets
 
-The official tutorial on creating a Cinnamon *applet* can be found [here](http://developer.linuxmint.com/reference/2.6/cinnamon-tutorials/write-applet.html).
+The official tutorial on creating a Cinnamon *applet* can be found [here](http://developer.linuxmint.com/reference/git/cinnamon-tutorials/write-applet.html).
 
 ### Default desktop background wallpaper path
 

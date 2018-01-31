@@ -131,9 +131,7 @@ Here is a list of places to get all sorts of vagrant base boxes for different pu
 
 *   The [official Arch Linux vagrant boxes](https://app.vagrantup.com/archlinux/boxes/archlinux). The corresponding [GitHub project](https://github.com/archlinux/arch-boxes) contains the packerfile used for building along with provisioning scripts.
 
-*   A well maintained up-to-date [Arch Linux x86_64](https://github.com/terrywang/vagrantboxes/blob/master/archlinux-x86_64.md) base box for Vagrant
-
-*   The same Arch Linux x86_64 base box can also be obtained via Vagrant Cloud by running: `vagrant init terrywang/archlinux`
+*   A well maintained up-to-date [Arch Linux x86_64](https://github.com/terrywang/vagrantboxes/blob/master/archlinux-x86_64.md) base box for Vagrant.
 
 *   [Vagrant Cloud](https://vagrantcloud.com/) is HashiCorp's official site for Vagrant boxes. You can browse user-submitted boxes or upload your own. A single Vagrant Cloud box can support multiple providers with versioning.
 
@@ -149,7 +147,7 @@ Here is a list of places to get all sorts of vagrant base boxes for different pu
 *   [Vagrant Ubuntu Cloud Images](http://cloud-images.ubuntu.com/vagrant/)
     It has been there since Jan, 2013\. For some reason Canonical has NOT officially promoted it yet, may be still in beta. Remember these are vanilla images, NOT very useful without Chef or Puppet.
 
-*   [packer-arch project on Github](https://github.com/elasticdog/packer-arch) provides configuration files to build light Arch Linux Vagrant images from the official iso image, using [packer-io](https://www.archlinux.org/packages/?name=packer-io)
+*   [packer-arch project on Github](https://github.com/elasticdog/packer-arch) provides configuration files to build light Arch Linux Vagrant images from the official iso image, using [packer-io](https://www.archlinux.org/packages/?name=packer-io).
 
 ## Troubleshooting
 

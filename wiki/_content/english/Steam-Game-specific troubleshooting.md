@@ -1,6 +1,4 @@
-See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshooting") for generic troubleshooting.
-
-As Steam for Linux only supports Ubuntu, Steam games for Linux are packaged expecting Ubuntu and do not bundle default Ubuntu libraries. Therefore many Linux Steam games will not run on Arch Linux out of the box due to missing libraries. Do not report such issues to Valve! Instead document them on this page.
+See [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshooting") first.
 
 **Tip:** If a game fails to start, a possible reason is that it is missing required libraries. You can find out what libraries it requests by running `ldd *game_executable*`. `*game_executable*` is likely located somewhere in `~/.steam/root/steamapps/common/`. Please note that most of these "missing" libraries are actually already included with Steam, and do not need to be installed globally.
 
@@ -72,8 +70,6 @@ As Steam for Linux only supports Ubuntu, Steam games for Linux are packaged expe
     *   [29.1 Crashes after splash screen](#Crashes_after_splash_screen)
 *   [30 The Curious Expedition](#The_Curious_Expedition)
     *   [30.1 Game stuck on loading screen](#Game_stuck_on_loading_screen)
-        *   [30.1.1 Method 1](#Method_1)
-        *   [30.1.2 Method 2](#Method_2)
 *   [31 Death Road To Canada](#Death_Road_To_Canada)
     *   [31.1 No music](#No_music)
 *   [32 Defender's Quest: Valley of the Forgotten](#Defender.27s_Quest:_Valley_of_the_Forgotten)
@@ -270,8 +266,9 @@ As Steam for Linux only supports Ubuntu, Steam games for Linux are packaged expe
 
 ## Contributing
 
-*   Avoid referencing `~/.local/share/Steam`, reference `~/.steam/root` instead. See [Steam#Directory structure](/index.php/Steam#Directory_structure "Steam").
-*   You can use the `*gamedir*` pseudo-variable to refer to a game's directory (`~/.steam/root/steamapps/common/Game`).
+*   Do not assume an install location like `~/.local/share/Steam`, use `~/.steam/root` instead.
+*   Do not assume a library location like `~/.steam/root`, use the `*LIBRARY*` pseudo-variable instead.
+*   You can also use the `*GAME*` pseudo-variable to refer to a game's directory (`*LIBRARY*/steamapps/common/Game`).
 *   Link [launch options](/index.php/Launch_option "Launch option") like this: `[[launch option]]s`.
 *   Link bug reports and sources of workarounds.
 
@@ -300,6 +297,8 @@ Adobe AIR requires you to accept its EULA by creating the file `~/.appdata/Adobe
 
 ## Alien Isolation
 
+[AppID 214490](http://store.steampowered.com/app/214490)
+
 ### Missing libpcre.so.3
 
 	added 16 April 2017, [source](https://steamcommunity.com/app/214490/discussions/0/154644705028020291/)
@@ -313,23 +312,27 @@ Add `LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$PWD/lib/x86_64"` to your [launch options
 
 ## Amnesia: The Dark Descent
 
+[AppID 57300](http://store.steampowered.com/app/57300)
+
 	added 3 December 2012, [source](https://steamcommunity.com/app/221410/discussions/0/864957183198111387/)
 
 Dependencies:
 
 *   [lib32-freealut](https://aur.archlinux.org/packages/lib32-freealut/)
-*   [lib32-glu](https://www.archlinux.org/packages/?name=lib32-glu)
-*   [lib32-libxmu](https://www.archlinux.org/packages/?name=lib32-libxmu)
-*   [lib32-sdl_ttf](https://www.archlinux.org/packages/?name=lib32-sdl_ttf)
+*   [lib32-glu](https://www.archlinux.org/packages/?name=lib32-glu) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
+*   [lib32-libxmu](https://www.archlinux.org/packages/?name=lib32-libxmu) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
+*   [lib32-sdl_ttf](https://www.archlinux.org/packages/?name=lib32-sdl_ttf) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
 
 ## And Yet It Moves
 
+[AppID 18700](http://store.steampowered.com/app/18700)
+
 Dependencies:
 
-*   [lib32-libjpeg6-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg6-turbo)
-*   [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12)
-*   [lib32-libtheora](https://www.archlinux.org/packages/?name=lib32-libtheora)
-*   [lib32-libtiff4](https://www.archlinux.org/packages/?name=lib32-libtiff4)
+*   [lib32-libjpeg6-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg6-turbo) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
+*   [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
+*   [lib32-libtheora](https://www.archlinux.org/packages/?name=lib32-libtheora) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
+*   [lib32-libtiff4](https://www.archlinux.org/packages/?name=lib32-libtiff4) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
 
 ### Game does not start
 
@@ -346,7 +349,7 @@ This script must be run as a user with write priviledges to game directory
 
 ```
 
-Open `*gamedir*/AndYetItMovesSteam.sh` and surround `${BASH_SOURCE[0]}` in the following line with double quotes.
+Open `*GAME*/AndYetItMovesSteam.sh` and surround `${BASH_SOURCE[0]}` in the following line with double quotes.
 
 ```
 ayim_dir="$(dirname "$(readlink -f ${BASH_SOURCE[0]})")"
@@ -354,6 +357,8 @@ ayim_dir="$(dirname "$(readlink -f ${BASH_SOURCE[0]})")"
 ```
 
 ## Anodyne
+
+[AppID 234900](http://store.steampowered.com/app/234900)
 
 Dependencies:
 
@@ -383,13 +388,17 @@ joy2key -rcfile ~/.joy2keyrc
 
 ## Aquaria
 
+[AppID 24420](http://store.steampowered.com/app/24420)
+
 ### Mouse pointer gets stuck in one direction
 
-If the mouse pointer gets stuck in one direction, make sure `*gamedir*/usersettings.xml` contains `<JoystickEnabled on="0" />`.
+If the mouse pointer gets stuck in one direction, make sure `*GAME*/usersettings.xml` contains `<JoystickEnabled on="0" />`.
 
 If that does not fix the issue, try unplugging any joysticks or joystick adapter devices you have plugged in.
 
 ## ARK: Survival Evolved
+
+[AppID 346110](http://store.steampowered.com/app/346110)
 
 ### Game does not start, displays text window with unreadable text
 
@@ -403,13 +412,19 @@ Ragnarok uses TheIsland's texture, so the same procedure fixes the issue on Ragn
 
 ## Audiosurf 2
 
+[AppID 235800](http://store.steampowered.com/app/235800)
+
 Requires [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa).
 
 ## BADLAND: Game of the Year Edition
 
+[AppID 269670](http://store.steampowered.com/app/269670)
+
 Refer to [#Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found).
 
 ## Beat Cop
+
+[AppID 461950](http://store.steampowered.com/app/461950)
 
 ### "BeatCop.x86_64" is not responding
 
@@ -418,6 +433,8 @@ Use `BeatCop.x86` instead.
 Set your [launch options](/index.php/Launch_option "Launch option") to `BeatCop.x86 # %command%`.
 
 ## Binding of Isaac: Rebirth
+
+[AppID 250900](http://store.steampowered.com/app/250900)
 
 ### No sound
 
@@ -429,9 +446,13 @@ Adjust the audio levels in the game options.
 
 ## BLACKHOLE
 
+[AppID 322680](http://store.steampowered.com/app/322680)
+
 Refer to [#Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found).
 
 ## The Book of Unwritten Tales
+
+[AppID 215160](http://store.steampowered.com/app/215160)
 
 Dependencies:
 
@@ -447,15 +468,19 @@ $ dpkg -x libogre-*.deb outdir
 
 ```
 
-Now replace `*gamedir*/lib/32/RenderSystem_GL.so` with the one extracted from the `.deb` package.
+Now replace `*GAME*/lib/32/RenderSystem_GL.so` with the one extracted from the `.deb` package.
 
 ## The Book of Unwritten Tales: The Critter Chronicles
+
+[AppID 221830](http://store.steampowered.com/app/221830)
 
 See [#The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales).
 
 To prevent the game from crashing at the end credits, change the size of the credits image as described [here](http://steamcommunity.com/app/221830/discussions/0/828925849276110960/#c810921273836530791).
 
 ## Borderlands 2
+
+[AppID 49520](http://store.steampowered.com/app/49520)
 
 ### Migrating saves from other platforms
 
@@ -493,6 +518,8 @@ LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%
 
 ## Borderlands: The Pre-Sequel
 
+[AppID 261640](http://store.steampowered.com/app/261640)
+
 See [#Borderlands 2](#Borderlands_2).
 
 ### Keyboard not working
@@ -504,6 +531,8 @@ Using [dwm](/index.php/Dwm "Dwm"), no keyboard input seems to register.
 If the game appears as *Running*, then syncs and closes when you launch it from Steam, try creating a `steam_appid.txt` in the game directory containing `261640`. This should resolve the issue and let you start the game directly from the game directory. If that does not work, try using the [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime).
 
 ## Cities in Motion 2
+
+[AppID 225420](http://store.steampowered.com/app/225420)
 
 ### Dialog boxes fail to display properly
 
@@ -519,11 +548,15 @@ Workaround for the bug [FS#35039](https://bugs.archlinux.org/task/35039) is avai
 
 ## Cities Skylines
 
+[AppID 255710](http://store.steampowered.com/app/255710)
+
 ### Textures not rendering properly
 
 Add `UNITY_DISABLE_GRAPHICS_DRIVER_WORKAROUNDS=yes` to your [launch options](/index.php/Launch_option "Launch option").
 
 ## Civilization V
+
+[AppID 8930](http://store.steampowered.com/app/8930)
 
 You need to add `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%` to your [launch options](/index.php/Launch_option "Launch option").
 
@@ -543,16 +576,18 @@ The solution was found [here](https://www.reddit.com/r/civ5/comments/5z77jr/game
 
 The issue is a result of the game calling some file in a case-insensitive manner.
 
-The solution is either to install the game on a case-insensitive file system like vfat, or on a mount point for [ciopfs](https://aur.archlinux.org/packages/ciopfs/).
+The solution is either to install the game on a case-insensitive file system like VFAT, or on a mount point for [ciopfs](https://aur.archlinux.org/packages/ciopfs/).
 
 ## Civilization: Beyond earth
 
+[AppID 65980](http://store.steampowered.com/app/65980)
+
 If you are getting an instant crash/close upon launch, make sure you have the following 32-bit packages installed:
 
-*   [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat)
-*   [lib32-libcurl-gnutls](https://www.archlinux.org/packages/?name=lib32-libcurl-gnutls)
-*   [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal)
 *   [lib32-intel-tbb](https://aur.archlinux.org/packages/lib32-intel-tbb/)
+*   [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
+*   [lib32-libcurl-gnutls](https://www.archlinux.org/packages/?name=lib32-libcurl-gnutls) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
+*   [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
 
 ### Segfault after a few minutes
 
@@ -577,11 +612,13 @@ Backtrace:
 
 Segfault is caused by [lib32-intel-tbb](https://aur.archlinux.org/packages/lib32-intel-tbb/). To fix the issue:
 
-*   download [libtbb2 deb-package](https://packages.ubuntu.com/trusty/i386/libtbb2/download) from one of the ubuntu mirrors
-*   unpack `libtbb.so.2` from `libtbb2_4.2_20130725-1.1ubuntu1_i386.deb/data.tar.xz/usr/lib` to `/home/<user>/.steam/root/steamapps/common/Sid Meier's Civilization Beyond Earth`
-*   add `env LD_PRELOAD='./libtbb.so.2' %command%` to your [launch options](/index.php/Launch_option "Launch option")
+*   download [libtbb2 deb-package](https://packages.ubuntu.com/trusty/i386/libtbb2/download) from one of the Ubuntu mirrors
+*   unpack `libtbb.so.2` from `libtbb2_4.2_20130725-1.1ubuntu1_i386.deb/data.tar.xz/usr/lib` to `*LIBRARY*/steamapps/common/Sid Meier's Civilization Beyond Earth`
+*   add `LD_PRELOAD='./libtbb.so.2'` to your [launch options](/index.php/Launch_option "Launch option")
 
 ## Civilization VI
+
+[AppID 289070](http://store.steampowered.com/app/289070)
 
 Either run with steam-native (see [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues")) or add `env LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%` to your [launch options](/index.php/Launch_option "Launch option"). The latter will disable the Steam overlay.
 
@@ -592,9 +629,9 @@ Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 This is a strange corner case which happens infrequently at best (and the prerequisites for reproducing it are unknown), but the crash would look like this:
 
 1.  Immediate SEGV on start, before any windows get created
-2.  The game **does** create `~/.local/share/aspyr-media/Sid Meier's Civilization VI/AppOptions.txt`
+2.  The game creates `~/.local/share/aspyr-media/Sid Meier's Civilization VI/AppOptions.txt`
 3.  The string `AppHost::BugSubmissionPackager::BugSubmissionPackager` appears in the backtrace output when running the game under [gdb](https://www.archlinux.org/packages/?name=gdb)
-    1.  To run under [gdb](https://www.archlinux.org/packages/?name=gdb), first launch a shell and change into the directory `*<steamroot>*/SteamApps/common/Sid Meier's Civilization VI/`
+    1.  To run under [gdb](https://www.archlinux.org/packages/?name=gdb), first launch a shell and change into the directory `*LIBRARY*/steamapps/common/Sid Meier's Civilization VI/`
     2.  Then `echo 289070 > steam_appid.txt` *(otherwise the game won't launch outside of Steam itself)*
     3.  Then run something like `gdb -ex run -ex bt -ex quit --args ./Civ6 ./Civ6`
     4.  The relevant info towards the end of the output should look like this:
@@ -622,42 +659,49 @@ Presumably this fix will prevent any automated bug reports from reaching Aspyr, 
 
 ## Deus Ex: Mankind divided
 
+[AppID 337000](http://store.steampowered.com/app/337000)
+
 Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
-This is also necessary: if you dont have this library the game wont start:
+Requires [librtmp0](https://www.archlinux.org/packages/?name=librtmp0) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime)).
 
-pacman -S librtmp0
+Also if you use Bumblebee set your [launch options](/index.php/Launch_option "Launch option") to:
 
-Also if you have bumblebee you have to go on on Steam Application -> Library -> DeusEx -> Properties -> Set Launch Options and set:
-
+```
 LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 optirun %command%
 
-Click OK
-
-Launch the game as usual
+```
 
 ## The Clockwork Man
 
-Requires [lib32-libidn](https://www.archlinux.org/packages/?name=lib32-libidn).
+[AppID 111000](http://store.steampowered.com/app/111000)
+
+Requires [lib32-libidn](https://www.archlinux.org/packages/?name=lib32-libidn) (pulled in by [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime)).
 
 ## Company of Heroes 2
 
+[AppID 231430](http://store.steampowered.com/app/231430)
+
 ### Missing libpcre.so.3
 
-Like with [#Alien Isolation](#Alien_Isolation) you need to symlink `/usr/lib/libpcre.so` to `*gamedir*/lib/*arch*/libpcre.so.3`, otherwise the game will fail to start.
+Like with [#Alien Isolation](#Alien_Isolation) you need to symlink `/usr/lib/libpcre.so` to `*GAME*/lib/*arch*/libpcre.so.3`, otherwise the game will fail to start.
 
 ## Cossacks 3
+
+[AppID 333420](http://store.steampowered.com/app/333420)
 
 ### No sound
 
 Use the steam-runtime, e.g. set the [launch options](https://support.steampowered.com/kb_article.php?ref=1040-JWMT-2947) to:
 
 ```
-   ~/.steam/root/ubuntu12_32/steam-runtime/run.sh %command%
+~/.steam/root/ubuntu12_32/steam-runtime/run.sh %command%
 
 ```
 
 ## Counter-Strike: Global Offensive (CS:GO)
+
+[AppID 730](http://store.steampowered.com/app/730)
 
 ### Game starts on the wrong screen
 
@@ -701,7 +745,7 @@ If your mouse works in the main menu but not in-game, add `SDL_VIDEO_X11_DGAMOUS
 
 [Install](/index.php/Install "Install") [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) and run `xrandr` to find out the name of your connected display output.
 
-Edit `*gamedir*/csgo.sh` and add the following lines (adapt *output_name*):
+Edit `*GAME*/csgo.sh` and add the following lines (adapt *output_name*):
 
 ```
 **# gamma correction**
@@ -745,6 +789,8 @@ $ pacmd set-source-volume *device_name* 0x6000
 
 ## Crusader Kings II
 
+[AppID 203770](http://store.steampowered.com/app/203770)
+
 x86_64 dependencies:
 
 *   [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl)
@@ -761,6 +807,8 @@ You can make full screen mode the default by setting `fullscreen=yes` in `~/.par
 
 ## Crypt of the NecroDancer
 
+[AppID 247080](http://store.steampowered.com/app/247080)
+
 ### Crashes after splash screen
 
 The following error occurs if launching Steam from the terminal.
@@ -774,28 +822,22 @@ This error is solved by installing [pulseaudio-alsa](https://www.archlinux.org/p
 
 ## The Curious Expedition
 
+[AppID 358130](http://store.steampowered.com/app/358130)
+
 ### Game stuck on loading screen
 
-The default electron for this game is too old for Archlinux.
+The Electron shipped with this game is too old for Arch Linux.
 
-#### Method 1
-
-Install [electron](https://www.archlinux.org/packages/?name=electron) and add the following line to [launch options](/index.php/Launch_option "Launch option"):
+Install [electron](https://www.archlinux.org/packages/?name=electron) and set your [launch options](/index.php/Launch_option "Launch option") to:
 
 ```
-cd ~/.steam/root/SteamApps/common/The\ Curious\ Expedition && electron resources/app.asar # %command%
-
-```
-
-#### Method 2
-
-```
-# pacman -S electron
-$ cp -r /usr/lib/electron/* ~/.steam/root/SteamApps/common/The\ Curious\ Expedition/
+electron resources/app.asar # %command%
 
 ```
 
 ## Death Road To Canada
+
+[AppID 252610](http://store.steampowered.com/app/252610)
 
 ### No music
 
@@ -803,11 +845,13 @@ $ cp -r /usr/lib/electron/* ~/.steam/root/SteamApps/common/The\ Curious\ Expedit
 
 ## Defender's Quest: Valley of the Forgotten
 
+[AppID 218410](http://store.steampowered.com/app/218410)
+
 Dependencies:
 
 *   [adobe-air-sdk](https://aur.archlinux.org/packages/adobe-air-sdk/), follow [#Adobe Air setup](#Adobe_Air_setup)
-*   [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra)
 *   [xterm](https://www.archlinux.org/packages/?name=xterm)
+*   [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
 
 ## Dirt
 
@@ -815,22 +859,24 @@ Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
 ## Dirt Rally
 
+[AppID 310560](http://store.steampowered.com/app/310560)
+
 Add the following line to [launch options](/index.php/Launch_option "Launch option"), otherwise the game will fail to start.
 
 ```
-LD_LIBRARY_PATH="~/.steam/root/SteamApps/common/Dirt Rally/lib/x86_64:$LD_LIBRARY_PATH" %command%
+LD_LIBRARY_PATH="lib/x86_64:$LD_LIBRARY_PATH" %command%
 
 ```
 
-**Note:** The order of the paths is important. "$LD_LIBRARY_PATH" must be the *last* entry or it won't work.
-
-**Note:** If you don't have your Steam library installed to "~/.steam/root", modify the corresponding prefix accordingly.
+**Note:** The order of the paths is important. `$LD_LIBRARY_PATH` must be the last entry or it won't work.
 
 ## Divinity: Original Sin - Enhanced Edition
 
+[AppID 373420](http://store.steampowered.com/app/373420)
+
 ### Game does not start when using Bumblebee optirun or primusrun
 
-Edit `*gamedir*/runner.sh` to use primusrun:
+Edit `*GAME*/runner.sh` to use primusrun:
 
 ```
 LD_LIBRARY_PATH="." primusrun ./EoCApp
@@ -875,10 +921,12 @@ Then just start the game. In case it still crashes on loading you may also need 
 
 ## Don't Starve
 
+[AppID 219740](http://store.steampowered.com/app/219740)
+
 Dependencies:
 
 *   [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin)
-*   [lib32-libcurl-gnutls](https://www.archlinux.org/packages/?name=lib32-libcurl-gnutls)
+*   [lib32-libcurl-gnutls](https://www.archlinux.org/packages/?name=lib32-libcurl-gnutls) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
 
 ### No sound
 
@@ -887,6 +935,8 @@ Dependencies:
 In the game, go to the options and adjust the audio levels.
 
 ## Dota 2
+
+[AppID 570](http://store.steampowered.com/app/570)
 
 Dependencies:
 
@@ -900,7 +950,7 @@ Add `MESA_GL_VERSION_OVERRIDE=2.1` to your [launch options](/index.php/Launch_op
 ### Error with libpangoft2
 
 1.  [Install](/index.php/Install "Install") the [pango](https://www.archlinux.org/packages/?name=pango) package.
-2.  Remove `libpango-1.0.so` and `libpangoft2-1.0.so` in `*gamedir*/game/bin/linuxsteamrt64`.
+2.  Remove `libpango-1.0.so` and `libpangoft2-1.0.so` in `*GAME*/game/bin/linuxsteamrt64`.
 3.  If you are using Bumblebee add `LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 optiru` to your [launch options](/index.php/Launch_option "Launch option").
 
 ### The game does not start
@@ -942,9 +992,13 @@ Dota2 is compatible with [IBus](/index.php/IBus "IBus") .
 
 ## Devil Daggers
 
+[AppID 422970](http://store.steampowered.com/app/422970)
+
 Refer to [#Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found).
 
 ## Drox Operative
+
+[AppID 274480](http://store.steampowered.com/app/274480)
 
 If the game fails to start with "Couldn't find Database/database.dbl!", manually extract the assets. assets003.zip will overwrite some files from the previous files.
 
@@ -956,6 +1010,8 @@ $ unzip assets00[123].zip
 
 ## Dwarfs F2P
 
+[AppID 213650](http://store.steampowered.com/app/213650)
+
 Dependencies:
 
 *   [lib32-libgdiplus](https://aur.archlinux.org/packages/lib32-libgdiplus/)
@@ -964,7 +1020,7 @@ Dependencies:
 
 There was a bug that stopped Steam from fetching all the needed files. It should be resolved, if you still bump into this problem, try verifying integrity of game cache from game properties, local files tab.
 
-If the game still crashes at startup, edit `*gamedir*/Run.sh` and change
+If the game still crashes at startup, edit `*GAME*/Run.sh` and change
 
 ```
 export LD_LIBRARY_PATH=.:${LD_LIBRARY_PATH}
@@ -993,7 +1049,9 @@ In some cases, the game crashes about 2 minutes before the end of every arcade. 
 
 ## Dynamite Jack
 
-Requires [lib32-sdl](https://www.archlinux.org/packages/?name=lib32-sdl).
+[AppID 202730](http://store.steampowered.com/app/202730)
+
+Requires [lib32-sdl](https://www.archlinux.org/packages/?name=lib32-sdl) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime)).
 
 ### Sound Issues
 
@@ -1012,6 +1070,8 @@ Install [lib32-sdl](https://www.archlinux.org/packages/?name=lib32-sdl) from [mu
 
 ## Euro Truck Simulator 2
 
+[AppID 227300](http://store.steampowered.com/app/227300)
+
 ### Shows only a black screen
 
 Select safe mode when the game starts up.
@@ -1028,17 +1088,21 @@ This game has 32-bit and 64-bit binaries. For some reason, Steam will launch the
 
 ## FTL: Faster than Light
 
+[AppID 212680](http://store.steampowered.com/app/212680)
+
 ### Compatibility
 
 After installation, FTL may fail to run due to a 'Text file busy' error (characterised in Steam by your portrait border going green then blue again). The easiest way to mend this is to just reboot your system. Upon logging back in FTL should run.
 
-The Steam overlay in FTL does not function as it is not a 3D accelerated game. Because of this the desktop notifications will be visible. If playing in fullscreen, therefore, these notifications in some systems may steal focus and revert you back to windowed mode with no way of going back to fullscreen without relaunching. The binaries for FTL on Steam have no DRM and it is possible to run the game *without* Steam running, so in some cases that may be optimum - just ensure that you launch FTL via the launcher script in `~/.steam/root/steamapps/common/FTL Faster than Light/data/` rather than the FTL binary in the $arch directory.
+The Steam overlay in FTL does not function as it is not a 3D accelerated game. Because of this the desktop notifications will be visible. If playing in fullscreen, therefore, these notifications in some systems may steal focus and revert you back to windowed mode with no way of going back to fullscreen without relaunching. The binaries for FTL on Steam have no DRM and it is possible to run the game *without* Steam running, so in some cases that may be optimum - just ensure that you launch FTL via the launcher script in `*GAME*/data/` rather than the FTL binary in the $arch directory.
 
 ### Problems with open-source video driver
 
-FTL may fail to run if you are using an opensource driver for your video card. There are two solutions: install a proprietary video driver or delete (rename if you are unsure) the library "libstdc++.so.6" inside `~/.steam/root/steamapps/common/FTL Faster Than Light/data/amd64/lib`. This is if you are using a 64bit system. In case you are using a 32bit system you have to remove (rename) the same library located into `~/.steam/root/steamapps/common/FTL Faster Than Light/data/x86/lib`.
+FTL may fail to run if you are using an opensource driver for your video card. There are two solutions: install a proprietary video driver or delete (rename if you are unsure) the library "libstdc++.so.6" inside `*GAME*/data/amd64/lib`. This is if you are using a 64bit system. In case you are using a 32bit system you have to remove (rename) the same library located into `*GAME*/data/x86/lib`.
 
 ## Game Dev Tycoon
+
+[AppID 239820](http://store.steampowered.com/app/239820)
 
 ### Game does not start
 
@@ -1052,6 +1116,8 @@ LD_PRELOAD=/usr/lib/libudev.so.1 %command%
 ```
 
 ## Garry's Mod
+
+[AppID 4000](http://store.steampowered.com/app/4000)
 
 ### Game does not start
 
@@ -1086,9 +1152,13 @@ The problem seems to be related to RAM usage, once you hit around 2GB of RAM use
 
 ## Gods will be watching
 
+[AppID 274290](http://store.steampowered.com/app/274290)
+
 Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
 ## GRID Autosport
+
+[AppID 255220](http://store.steampowered.com/app/255220)
 
 Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
@@ -1098,21 +1168,29 @@ Add `LC_ALL=C` to your [launch options](/index.php/Launch_option "Launch option"
 
 ## Hack 'n' Slash
 
+[AppID 246070](http://store.steampowered.com/app/246070)
+
 ### Crashes when trying to load a game
 
 [#Prepend /usr/lib to LD_LIBRARY_PATH](#Prepend_.2Fusr.2Flib_to_LD_LIBRARY_PATH).
 
 ## Hacker Evolution
 
+[AppID 70100](http://store.steampowered.com/app/70100)
+
 Requires [lib32-sdl2_mixer](https://www.archlinux.org/packages/?name=lib32-sdl2_mixer).
 
 ## Half-Life 2 and episodes
+
+[AppID 220](http://store.steampowered.com/app/220)
 
 ### Cyrillic fonts problem
 
 This problem can be solved by deleting "Helvetica" font.
 
 ## Hammerwatch
+
+[AppID 239070](http://store.steampowered.com/app/239070)
 
 ### The game does not start via Steam
 
@@ -1133,6 +1211,8 @@ This way, Hammerwatch will use ALSA. This solution was found [here](https://stac
 
 ## Harvest: Massive Encounter
 
+[AppID 15400](http://store.steampowered.com/app/15400)
+
 Dependencies:
 
 *   [lib32-sfml](https://aur.archlinux.org/packages/lib32-sfml/)
@@ -1144,7 +1224,7 @@ Dependencies:
 
 ### Compatibility
 
-Game refuses to launch and throws you to library installer loop. Just edit `*gamedir*/run_harvest` and remove everything but:
+Game refuses to launch and throws you to library installer loop. Just edit `*GAME*/run_harvest` and remove everything but:
 
 ```
 #!/bin/bash
@@ -1154,11 +1234,15 @@ exec ./Harvest
 
 ## Hatoful Boyfriend
 
+[AppID 310080](http://store.steampowered.com/app/310080)
+
 ### Japanese text invisible
 
 Install [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) and [wqy-microhei-lite](https://www.archlinux.org/packages/?name=wqy-microhei-lite).
 
 ## Hyper Light Drifter
+
+[AppID 257850](http://store.steampowered.com/app/257850)
 
 ### The controller does not work
 
@@ -1177,12 +1261,16 @@ It is suggested to run the *next_update* branch to get new fixes, there however 
 
 ## The Impossible Game
 
+[AppID 251630](http://store.steampowered.com/app/251630)
+
 Dependencies:
 
 *   [lib32-sdl2](https://www.archlinux.org/packages/?name=lib32-sdl2)
 *   [lib32-sdl2_image](https://www.archlinux.org/packages/?name=lib32-sdl2_image)
 
 ## The Inner World
+
+[AppID 251430](http://store.steampowered.com/app/251430)
 
 Requires [java-commons-codec](https://aur.archlinux.org/packages/java-commons-codec/) for sound support.
 
@@ -1196,13 +1284,15 @@ The game has cutscenes. It starts directly with a cutscene before you start the 
 
 Furthermore you need the package [ffmpeg-compat-55](https://aur.archlinux.org/packages/ffmpeg-compat-55/).
 
-There seem to be problems with the Steam overlay. Try to run the game directly with `*gamedir*/TIW_start.sh`.
+There seem to be problems with the Steam overlay. Try to run the game directly with `*GAME*/TIW_start.sh`.
 
 Note that cutscenes open in a new window. So pay attention to that and switch to the new window to enjoy the movies.
 
 See the [Steam Forums](http://steamcommunity.com/app/251430/discussions/0/611701360817206606/#c611701360827509770) for details.
 
 ## Interloper
+
+[AppID 356420](http://store.steampowered.com/app/356420)
 
 Requires [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib).
 
@@ -1212,6 +1302,8 @@ The game can sometimes segfault due to an incompatibility with the Steam Runtime
 
 ## Invisible Apartment
 
+[AppID 351790](http://store.steampowered.com/app/351790)
+
 Requires [qt5-multimedia](https://www.archlinux.org/packages/?name=qt5-multimedia).
 
 ### Game does not start
@@ -1220,17 +1312,23 @@ If the game does not run when you launch it via Steam, try to directly run `./ia
 
 ## Joe Danger 2: The Movie
 
+[AppID 242110](http://store.steampowered.com/app/242110)
+
 Requires [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse).
 
 ### Compatibility
 
-Game only worked after obtaining from the [Humble Bundle](https://www.humblebundle.com/‎) directly and [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) was installed.
+Game only worked after obtaining from the [Humble Bundle](https://www.humblebundle.com/) directly and [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) was installed.
 
 ## Kerbal Space Program
+
+[AppID 220200](http://store.steampowered.com/app/220200)
 
 See [Kerbal Space Program](/index.php/Kerbal_Space_Program "Kerbal Space Program").
 
 ## Killing Floor
+
+[AppID 1250](http://store.steampowered.com/app/1250)
 
 ### Cannot change screen resolution
 
@@ -1261,13 +1359,15 @@ Uncheck fullscreen in the options menu, and press `Ctrl+g` to stop mouse capturi
 
 ### Stuttering sound
 
-KillingFloor comes with its own OpenAL library `*gamedir*/System/openal.so`.
+KillingFloor comes with its own OpenAL library `*GAME*/System/openal.so`.
 
 Back it up, [install](/index.php/Install "Install") [openal](https://www.archlinux.org/packages/?name=openal) or [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal) (if using a 64bit system).
 
 Then symlink the installed system library (`/usr/lib32/libopenal.so.1` or `/usr/lib/libopenal.so.1`) to `openal.so`.
 
 ## Left for Dead 2
+
+[AppID 550](http://store.steampowered.com/app/550)
 
 ### Missing Chinese font
 
@@ -1287,21 +1387,29 @@ L4D2 Requires [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei).
 
 ## Lethal League
 
+[AppID 261180](http://store.steampowered.com/app/261180)
+
 Requires [lib32-glew1.10](https://www.archlinux.org/packages/?name=lib32-glew1.10).
 
 ## Life is Strange
+
+[AppID 554620](http://store.steampowered.com/app/554620)
 
 Requires [librtmp0](https://www.archlinux.org/packages/?name=librtmp0), [sdl2_image](https://www.archlinux.org/packages/?name=sdl2_image).
 
 ## Little Racers STREET
 
+[AppID 262690](http://store.steampowered.com/app/262690)
+
 Install [sdl2_mixer](https://www.archlinux.org/packages/?name=sdl2_mixer).
 
-Move/backup `*gamedir*/lib64/libSDL2_mixer-2.0.so.0`.
+Move/backup `*GAME*/lib64/libSDL2_mixer-2.0.so.0`.
 
-Symlink `/usr/lib/libSDL2_mixer-2.0.so.0` to `*gamedir*/lib64/libSDL2_mixer-2.0.so.0`.
+Symlink `/usr/lib/libSDL2_mixer-2.0.so.0` to `*GAME*/lib64/libSDL2_mixer-2.0.so.0`.
 
 ## The Long Dark
+
+[AppID 305620](http://store.steampowered.com/app/305620)
 
 ### Game does not start
 
@@ -1347,6 +1455,8 @@ The options is visible only if you're navigating using your (invisible) mouse. I
 
 ## Magicka 2
 
+[AppID 238370](http://store.steampowered.com/app/238370)
+
 ### Indefinitely stuck at start
 
 The game does not start if the output of the command "ip -s link" is longer than 4096 characters. That is because, in the function bitsquid::network_info(char*), where they query the networking information, they do not handle that case correctly. See [this picture](https://i.imgur.com/AOTLoTY.png) for reference. It was reported to upstream (Pieces Interactive) but Magicka 2 does not seem to be maintained anymore.
@@ -1365,6 +1475,8 @@ fi
 
 ## Mark of the Ninja
 
+[AppID 214560](http://store.steampowered.com/app/214560)
+
 ### Bad sound
 
 [#Prepend /usr/lib to LD_LIBRARY_PATH](#Prepend_.2Fusr.2Flib_to_LD_LIBRARY_PATH).
@@ -1375,16 +1487,18 @@ The game does not allow you to change its resolution on a multi-monitor setup on
 
 ## Metro: 2033 Redux
 
+[AppID 287390](http://store.steampowered.com/app/287390)
+
 ### No sound
 
-The game does not properly support pulseaudio, so you will have to use ALSA. Add this to the games launch options in Steam: "SDL_AUDIODRIVER=alsa %command%" In your $HOME directory create the file ".asoundrc" get your card/device number with "aplay -l" Add the following to your .asoundrc (replace card and device no with the one you got from "aplay -l")
+The game does not properly support [PulseAudio](/index.php/PulseAudio "PulseAudio"), so you will have to use ALSA. Add this to your [launch options](/index.php/Launch_option "Launch option") in Steam: `SDL_AUDIODRIVER=alsa`. Create the file `~/.asoundrc`. Get your card/device number with `aplay -l`. Add the following to your `~/.asoundrc` (replace card and device no with the one you got from `aplay -l`)
 
 ```
 pcm.!default { 
     type hw
     card 0
     device 0
-} 
+}
 
 ctl.!default {
     type hw
@@ -1394,15 +1508,19 @@ ctl.!default {
 
 ```
 
-Before starting the game make sure to kill pulseaudio with "pulseaudio -k"
+Before starting the game make sure to kill PulseAudio with `pulseaudio -k`.
 
 ## Middle-earth: Shadow of Mordor
+
+[AppID 241930](http://store.steampowered.com/app/241930)
 
 ### Floating heads
 
 Add `__GL_ShaderPortabilityWarnings=0` to your [launch options](/index.php/Launch_option "Launch option").
 
 ## Mount & Blade: Warband
+
+[AppID 48700](http://store.steampowered.com/app/48700)
 
 ### Segmentation fault (core dumped) with wayland
 
@@ -1414,11 +1532,13 @@ Requires [lib32-nas](https://aur.archlinux.org/packages/lib32-nas/).
 
 ## Multiwinia
 
+[AppID 1530](http://store.steampowered.com/app/1530)
+
 Requires [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal).
 
 ### Crash on startup
 
-If Multiwinia crashes on startup on X64 systems, force launching the 32-bit executable by replacing `*gamedir*/run_steam.sh` with the following script:
+If Multiwinia crashes on startup on X64 systems, force launching the 32-bit executable by replacing `*GAME*/run_steam.sh` with the following script:
 
 ```
 #!/bin/sh
@@ -1430,17 +1550,23 @@ See [[4]](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#
 
 ## Natural Selection 2
 
+[AppID 4920](http://store.steampowered.com/app/4920)
+
 [sndio](https://aur.archlinux.org/packages/sndio/) is required.
 
 The environment variable `SDL_VIDEODRIVER` must not be set to `wayland`. Try setting `SDL_VIDEODRIVER` to `x11` if it still does not work.
 
 ## Nuclear Throne
 
+[AppID 242680](http://store.steampowered.com/app/242680)
+
 ### Missing libcurl.so.4 or version CURL_OPENSSL_3 not found
 
 [Install](/index.php/Install "Install") [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat) and add `LD_PRELOAD=libcurl.so.3` to your [launch options](/index.php/Launch_option "Launch option").
 
 ## Penumbra: Overture
+
+[AppID 22180](http://store.steampowered.com/app/22180)
 
 Dependencies:
 
@@ -1459,6 +1585,8 @@ Find `FullScreen="true"` and change it to `FullScreen="false"`, after this the g
 
 ## The Polynomial
 
+[AppID 67000](http://store.steampowered.com/app/67000)
+
 Dependencies:
 
 *   [ilmbase102-libs](https://aur.archlinux.org/packages/ilmbase102-libs/)
@@ -1468,9 +1596,11 @@ Dependencies:
 
 ### Segfaults during program start on 64-bit systems
 
-The game segfaults during program start because of the `LD_LIBRARY_PATH` setting in the launcher script. Edit `*gamedir*/Polynomial64`, and comment out the `LD_LIBRARY_PATH` variable. Make sure to put the `./bin/Polynomial64 "$@"` command on a new line.
+The game segfaults during program start because of the `LD_LIBRARY_PATH` setting in the launcher script. Edit `*GAME*/Polynomial64`, and comment out the `LD_LIBRARY_PATH` variable. Make sure to put the `./bin/Polynomial64 "$@"` command on a new line.
 
 ## Portal 2
+
+[AppID 620](http://store.steampowered.com/app/620)
 
 ### Game does not start
 
@@ -1500,6 +1630,8 @@ Portal and Portal2 use Helvetica, add the following lines to `~/.config/fontconf
 
 ## Prison Architect
 
+[AppID 233450](http://store.steampowered.com/app/233450)
+
 ### ALSA error when using PulseAudio
 
 The error:
@@ -1515,6 +1647,8 @@ per [PulseAudio#ALSA](/index.php/PulseAudio#ALSA "PulseAudio").
 
 ## Project Zomboid
 
+[AppID 108600](http://store.steampowered.com/app/108600)
+
 Requires [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk).
 
 ### No sound
@@ -1525,12 +1659,11 @@ In the game, go to the options and set all audio to the proper volume.
 
 ## Pyre
 
+[AppID 462770](http://store.steampowered.com/app/462770)
+
 ### Game does not start
 
-```
-$ rm ~/.steam/root/SteamApps/common/Pyre/lib64/libSDL2-2.0.so.0
-
-```
+Remove `*LIBRARY*/steamapps/common/Pyre/lib64/libSDL2-2.0.so.0`.
 
 If this doesn't work, downgrade sdl2.
 
@@ -1545,13 +1678,19 @@ Then add sdl2 to IgnorePkg in /etc/pacman.conf.
 
 ## Redshirt
 
+[AppID 247870](http://store.steampowered.com/app/247870)
+
 Requires [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) if you use PulseAudio.
 
 ## Revenge of the Titans
 
+[AppID 93200](http://store.steampowered.com/app/93200)
+
 Requires [libxtst](https://www.archlinux.org/packages/?name=libxtst) and [lib32-libxtst](https://www.archlinux.org/packages/?name=lib32-libxtst).
 
 ## Risk of Rain
+
+[AppID 248820](http://store.steampowered.com/app/248820)
 
 Requires [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat). Then symlink it with this command :
 
@@ -1562,9 +1701,13 @@ $ ln -s /usr/lib32/libcurl.so.3 ~/.steam/steam/steamapps/common/Risk\ of\ Rain/l
 
 ## Rock Boshers DX: Directors Cut
 
+[AppID 298790](http://store.steampowered.com/app/298790)
+
 Requires [lib32-libcaca](https://www.archlinux.org/packages/?name=lib32-libcaca).
 
 ## Saints Row IV
+
+[AppID 206420](http://store.steampowered.com/app/206420)
 
 ### Game fails to launch after update to new Nvidia drivers
 
@@ -1577,6 +1720,8 @@ Saints Rows IV can cause a GPU lockup when trying to play on certain AMD hardwar
 A workaround is to add `R600_DEBUG=nosb` to your [launch options](/index.php/Launch_option "Launch option").
 
 ## Serious Sam 3: BFE
+
+[AppID 41070](http://store.steampowered.com/app/41070)
 
 ### No audio
 
@@ -1603,9 +1748,13 @@ mmap = true
 
 ## Slay the Spire
 
+[AppID 646570](http://store.steampowered.com/app/646570)
+
 If the game does not start or crashes at startup, install [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr).
 
 ## Songbringer
+
+[AppID 367080](http://store.steampowered.com/app/367080)
 
 ### Launch error with wanyland
 
@@ -1617,6 +1766,8 @@ LD_PRELOAD=/usr/lib/libglfw.so.3 %command%
 ```
 
 ## Space Pirates and Zombies
+
+[AppID 107200](http://store.steampowered.com/app/107200)
 
 Requires [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal).
 
@@ -1645,6 +1796,8 @@ mmap = true
 
 ## Spacechem
 
+[AppID 92800](http://store.steampowered.com/app/92800)
+
 Dependencies:
 
 *   [lib32-sdl_mixer](https://www.archlinux.org/packages/?name=lib32-sdl_mixer)
@@ -1659,15 +1812,21 @@ To solve this just remove the three files `libSDL-1.2.so.0`, `libSDL_image-1.2.s
 
 ## Splice
 
-Requires [glu](https://www.archlinux.org/packages/?name=glu).
+[AppID 209790](http://store.steampowered.com/app/209790)
+
+Requires [glu](https://www.archlinux.org/packages/?name=glu) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime)).
 
 ## The Stanley Parable
+
+[AppID 221910](http://store.steampowered.com/app/221910)
 
 ### Game won't start
 
 As discussed in the Steam store page, remove `bin/libstdc++.so.6` from the game folder.
 
 ## Shadow Tactics: Blades of the Shogun
+
+[AppID 418240](http://store.steampowered.com/app/418240)
 
 Dependencies:
 
@@ -1677,6 +1836,8 @@ Dependencies:
 
 ## Steel Storm: Burning Retribution
 
+[AppID 96200](http://store.steampowered.com/app/96200)
+
 ### Start with black screen
 
 The game by default tries to launch in fullscreen mode with a resolution of 1024x768, which doesn't work on some devices (for example the Samsung Series9 laptop with Intel hd4000 video).
@@ -1684,6 +1845,8 @@ The game by default tries to launch in fullscreen mode with a resolution of 1024
 Launch the game in windowed mode by adding `-window` to your [launch options](/index.php/Launch_option "Launch option"). Then change the resolution in-game.
 
 ## Stephen's Sausage Roll
+
+[AppID 353540](http://store.steampowered.com/app/353540)
 
 ### No sound
 
@@ -1737,6 +1900,8 @@ Again, this should work because Steam checks for a `noload/` directory relative 
 
 ## Superbrothers: Sword & Sworcery EP
 
+[AppID 204060](http://store.steampowered.com/app/204060)
+
 Dependencies:
 
 *   [lib32-glu](https://www.archlinux.org/packages/?name=lib32-glu)
@@ -1756,9 +1921,11 @@ libGL error: failed to load driver: swrast
 
 ```
 
-To solve this problem remove `*gamedir*/lib/libstdc++.so.6*`. After that the game will use the libstdc++ from Steam.
+To solve this problem remove `*GAME*/lib/libstdc++.so.6*`. After that the game will use the libstdc++ from Steam.
 
 ## System Shock 2
+
+[AppID 238210](http://store.steampowered.com/app/238210)
 
 You get these errors when running it with the native client:
 
@@ -1778,11 +1945,15 @@ mv /mnt/olhdd/steam/steamapps/common/SS2/lib/libxcb.so.1.1.0{,.old}
 
 ## Tabletop Simulator
 
+[AppID 286160](http://store.steampowered.com/app/286160)
+
 ### CJK characters not showing in game
 
 Install [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) and [wqy-microhei-lite](https://www.archlinux.org/packages/?name=wqy-microhei-lite).
 
 ## Team Fortress 2
+
+[AppID 440](http://store.steampowered.com/app/440)
 
 Requires [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12).
 
@@ -1820,9 +1991,13 @@ If you are using Chris' FPS Configs or any other FPS config, you may have set `m
 
 ## Terraria
 
+[AppID 105600](http://store.steampowered.com/app/105600)
+
 See the KNOWN ISSUES & WORKAROUNDS​ section of the [release announcement](http://forums.terraria.org/index.php?threads/terraria-1-3-0-8-can-mac-linux-come-out-play.30287/).
 
 ## This War of Mine
+
+[AppID 282070](http://store.steampowered.com/app/282070)
 
 ### Game does not start
 
@@ -1830,9 +2005,11 @@ This happens because of an incompatibility with the newer version of `lib32-curl
 
 ### Sound glitches with Steam native
 
-The bundled `libOpenAL` might not work correctly, try symlinking `/usr/lib32/libopenal.so` to `*gamedir*/libOpenAL.so`.
+The bundled `libOpenAL` might not work correctly, try symlinking `/usr/lib32/libopenal.so` to `*GAME*/libOpenAL.so`.
 
 ## Ticket to Ride
+
+[AppID 108200](http://store.steampowered.com/app/108200)
 
 Dependencies:
 
@@ -1842,6 +2019,8 @@ Dependencies:
 As lib32-gstreamer0.10-base is quite hard to build you can use [alucryd-multilib](/index.php/Unofficial_user_repositories#alucryd-multilib "Unofficial user repositories") repo for this package
 
 ## Tomb Raider
+
+[AppID 203160](http://store.steampowered.com/app/203160)
 
 ### Game immediately closes when running with steam-native
 
@@ -1861,15 +2040,21 @@ Correctly recognized means you can control the desktop mouse and Steam in Big Pi
 
 ## Tower Unite
 
+[AppID 394690](http://store.steampowered.com/app/394690)
+
 ### Graphical Glitches
 
 This is a known issue, and it occurs because the shaders had not been ported to Linux yet by the developers. To minimize glitches and make the game playable add `-opengl4` to your [launch options](/index.php/Launch_option "Launch option"), set Ocean Quality to "Potato" and Effects Quality to "Low" in the game settings.
 
 ## Towns / Towns Demo
 
+[AppID 221020](http://store.steampowered.com/app/221020)
+
 Requires [Java](/index.php/Java "Java").
 
 ## Transistor
+
+[AppID 237930](http://store.steampowered.com/app/237930)
 
 ### Crash on launch / FMOD binding crash / audio issues
 
@@ -1885,6 +2070,8 @@ Otherwise, run the game via shell and set up proper audio device for FMOD, as di
 Also, check out this thread [[7]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/).
 
 ## Transmissions: Element 120
+
+[AppID 365300](http://store.steampowered.com/app/365300)
 
 Dependencies:
 
@@ -1910,6 +2097,8 @@ LD_LIBRARY_PATH=bin ldd bin/vguimatsurface.so
 Look for entries that say *not found*.
 
 ## Trine 2
+
+[AppID 35720](http://store.steampowered.com/app/35720)
 
 Dependencies:
 
@@ -1943,6 +2132,8 @@ If the game resolution is wrong when using a dual monitor setup and you can't se
 
 ## Tropico 5
 
+[AppID 245620](http://store.steampowered.com/app/245620)
+
 ### Blank screen with sound only on startup
 
 Add `MESA_GL_VERSION_OVERRIDE=4.0` and `MESA_GLSL_VERSION_OVERRIDE=400` to your [launch options](/index.php/Launch_option "Launch option").
@@ -1953,7 +2144,7 @@ Requires [lib32-pango](https://www.archlinux.org/packages/?name=lib32-pango).
 
 ### Squares
 
-If squares are shown instead of text, try removing `*gamedir*/bin/libpangoft2-1.0.so.0`.
+If squares are shown instead of text, try removing `*GAME*/bin/libpangoft2-1.0.so.0`.
 
 ### No audio
 
@@ -2021,13 +2212,19 @@ Install [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) an
 
 ## Unrest
 
+[AppID 292400](http://store.steampowered.com/app/292400)
+
 Requires [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth).
 
 ## Volgarr the Viking
 
+[AppID 247240](http://store.steampowered.com/app/247240)
+
 Delete the 'lib' directory in the install directory to get rid of the libGL errors.
 
 ## War Thunder
+
+[AppID 236390](http://store.steampowered.com/app/236390)
 
 ### No audio
 
@@ -2039,6 +2236,8 @@ If having a green or blank screen on startup, add `MESA_GL_VERSION_OVERRIDE=4.1C
 
 ## Warhammer 40,000: Dawn of War II
 
+[AppID 15620](http://store.steampowered.com/app/15620)
+
 Dependencies:
 
 *   [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib)
@@ -2046,7 +2245,7 @@ Dependencies:
 
 The start script does not point to the right direction of `libasound.so.2`.
 
-To fix it open `*gamedir*/DawnOfWar2.sh` and replace the following lines:
+To fix it open `*GAME*/DawnOfWar2.sh` and replace the following lines:
 
 ```
 HAS_LSB_RELEASE=$(command -v lsb_release)
@@ -2061,9 +2260,11 @@ with:
 
 ## Worms W.M.D
 
+[AppID 327030](http://store.steampowered.com/app/327030)
+
 The game includes several workarounds in the `Run.sh` script, however these may not work and it is easy to get the game running without this script.
 
-First, try running the game directly from its SteamApps directory (usually `~/.steam/steam/steamapps/common/WormsWMD/Worms W.M.Dx64`). If you get a "No such file or directory" error about libcurl-gnutls, install [libcurl-gnutls](https://www.archlinux.org/packages/?name=libcurl-gnutls). If the game crashes after playing the intro movies, add the Steam Runtime dbus libraries to the game's library directory:
+First, try running the game directly from its game directory using `Worms W.M.Dx64`. If you get a "No such file or directory" error about libcurl-gnutls, install [libcurl-gnutls](https://www.archlinux.org/packages/?name=libcurl-gnutls). If the game crashes after playing the intro movies, add the Steam Runtime dbus libraries to the game's library directory:
 
 ```
 $ ln -s ~/.steam/steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/*dbus* ~/.steam/steam/steamapps/common/WormsWMD/lib
@@ -2075,6 +2276,8 @@ Now the game should run using the default "Play Worms W.M.D" option. See also St
 On some systems there are terrain bugs where holes in terrain are not rendered properly and worms can fall through terrain unexpectedly. These bugs can make the game unplayable in many situations and there is no known fix for them.
 
 ## Witcher 2: Assassin of Kings
+
+[AppID 20920](http://store.steampowered.com/app/20920)
 
 Dependencies:
 
@@ -2096,18 +2299,22 @@ $ LIBGL_DEBUG=verbose ./witcher2
 
 ## Wizardry 6: Bane of the Cosmic Forge
 
+[AppID 245410](http://store.steampowered.com/app/245410)
+
 Requires [DOSBox](/index.php/DOSBox "DOSBox").
 
-To fix the crash at start, open `*gamedir*/dosbox_linux/launch_wizardry6.sh` and:
+To fix the crash at start, open `*GAME*/dosbox_linux/launch_wizardry6.sh` and:
 
 1.  comment the line `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./libs`
 2.  change the beginning of the line starting with `exec ./dosbox` to `exec dosbox`
 
 ## World of Goo
 
+[AppID 22000](http://store.steampowered.com/app/22000)
+
 ### Changing resolution
 
-To change the game resolution edit the *Graphics display* section in `*gamedir*/properties/config.txt`. For example:
+To change the game resolution edit the *Graphics display* section in `*GAME*/properties/config.txt`. For example:
 
 ```
 <!-- Graphics display -->
@@ -2120,6 +2327,8 @@ To change the game resolution edit the *Graphics display* section in `*gamedir*/
 ```
 
 ## X3: Terran Conflict
+
+[AppID 2820](http://store.steampowered.com/app/2820)
 
 ### Game crashes on startup
 
@@ -2154,4 +2363,4 @@ __GL_THREADED_OPTIMIZATIONS=0 primusrun %command%
 
 XCOM may not recognize the SDL2 shared libraries shipped with the Steam runtime. Check if the binary finds all required files and install missing packages if necessary ([sdl2](https://www.archlinux.org/packages/?name=sdl2) and [sdl2_image](https://www.archlinux.org/packages/?name=sdl2_image)).
 
- `ldd ~/.steam/root/steamapps/common/XCom-Enemy-Unknown/binaries/linux/game.x86_64 `
+ `ldd *LIBRARY*/steamapps/common/XCom-Enemy-Unknown/binaries/linux/game.x86_64 `

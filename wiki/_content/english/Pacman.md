@@ -373,7 +373,7 @@ The *paccache* script, provided by the [pacman](https://www.archlinux.org/packag
 
 ```
 
-**Tip:** You can create [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") to run this automatically after every pacman transaction. See [this thread](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743) for examples.
+**Tip:** You can create [#Hooks](#Hooks) to run this automatically after every pacman transaction. See [this thread](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743) for examples.
 
 You can also define how many recent versions you want to keep:
 

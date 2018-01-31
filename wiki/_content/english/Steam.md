@@ -16,21 +16,20 @@ Steam for Linux only supports Ubuntu 12.04 LTS and newer.[[1]](https://support.s
     *   [1.1 SteamCMD](#SteamCMD)
     *   [1.2 Alternative Flatpak installation](#Alternative_Flatpak_installation)
 *   [2 Directory structure](#Directory_structure)
-*   [3 Steam Runtime](#Steam_Runtime)
-*   [4 Usage](#Usage)
-*   [5 Launch options](#Launch_options)
-    *   [5.1 Examples](#Examples)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Big Picture Mode without a window manager](#Big_Picture_Mode_without_a_window_manager)
-    *   [6.2 Steam skins](#Steam_skins)
-        *   [6.2.1 Creating skins](#Creating_skins)
-    *   [6.3 Changing the Steam notification position](#Changing_the_Steam_notification_position)
-        *   [6.3.1 Use a skin](#Use_a_skin)
-        *   [6.3.2 Live patching](#Live_patching)
-    *   [6.4 In-Home Streaming](#In-Home_Streaming)
-    *   [6.5 Finding a games AppID](#Finding_a_games_AppID)
-*   [7 Troubleshooting](#Troubleshooting)
-*   [8 See also](#See_also)
+    *   [2.1 Library folders](#Library_folders)
+*   [3 Usage](#Usage)
+*   [4 Launch options](#Launch_options)
+    *   [4.1 Examples](#Examples)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Big Picture Mode without a window manager](#Big_Picture_Mode_without_a_window_manager)
+    *   [5.2 Steam skins](#Steam_skins)
+        *   [5.2.1 Creating skins](#Creating_skins)
+    *   [5.3 Changing the Steam notification position](#Changing_the_Steam_notification_position)
+        *   [5.3.1 Use a skin](#Use_a_skin)
+        *   [5.3.2 Live patching](#Live_patching)
+    *   [5.4 In-home streaming](#In-home_streaming)
+*   [6 Troubleshooting](#Troubleshooting)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -38,9 +37,9 @@ Enable the [Multilib](/index.php/Multilib "Multilib") repository and [install](/
 
 The following fixes are needed to get Steam functioning properly on Arch Linux:
 
-*   You need to install the 32-bit version of your [graphics driver](/index.php/Xorg#Driver_installation "Xorg") (the package in the *OpenGL (Multilib)* column).
+*   Install the 32-bit version of your [graphics driver](/index.php/Xorg#Driver_installation "Xorg") (the package in the *OpenGL (Multilib)* column).
+*   Make sure that you also have properly generated en_US locales (see [Locale#Generating locales](/index.php/Locale#Generating_locales "Locale")), otherwise, the Steam client won't start with an invalid pointer error.
 *   Steam makes heavy usage of the Arial font. A decent Arial font to use is [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) or [the fonts provided by Steam](/index.php/Steam/Troubleshooting#Text_is_corrupt_or_missing "Steam/Troubleshooting"). Asian languages require [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) to display properly.
-*   In case that you are using Arch Linux in your local language, make sure that you also have properly generated en_US locales (see [Locale#Generating locales](/index.php/Locale#Generating_locales "Locale")), otherwise, the Steam client won't start with an invalid pointer error.
 
 ### SteamCMD
 
@@ -65,23 +64,13 @@ flatpak override com.valvesoftware.Steam --filesystem=$HOME
 
 The default Steam install location is `~/.local/share/Steam`. If Steam cannot find it, it will prompt you to reinstall it or select the new location. This article uses the `~/.steam/root` symlink to refer to the install location.
 
-Steam installs games into library folders. Every Steam game in a library has:
+### Library folders
 
-*   a manifest file `*LIBRARY*/steamapps/appmanifest_*AppID*.acf`
-*   a directory under `*LIBRARY*/steamapps/common/` containing the game files
+Every Steam application has a unique AppID, which you can find out by looking at its [Steam Store](http://store.steampowered.com/) page path.
 
-Steam lets you manage your library folders under *Steam > Settings > Downloads > Steam Library Folders*. By default the Steam install location is also used as a library folder.
+Steam installs games into a directory under `*LIBRARY*/steamapps/common/`. `*LIBRARY*` normally is `~/.steam/root` but you can also have multiple library folders (*Steam > Settings > Downloads > Steam Library Folders*).
 
-## Steam Runtime
-
-Both the Steam client and Steam games depend on the [Steam Runtime](https://github.com/ValveSoftware/steam-runtime), a set of libraries shipped with Steam for Linux (located under `~/.steam/root/ubuntu12_32/steam-runtime`). As the libraries of the Steam Runtime are outdated and often conflict with the new libraries in the Arch Linux repositories, the [steam](https://www.archlinux.org/packages/?name=steam) package provides two scripts for your convenience:
-
-*   `steam-runtime`, which overrides runtime libraries known to cause problems via the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable") (see [ld.so(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ld.so.8)).
-*   `steam-native`, which forces Steam to ignore its runtime and only use system libraries. You will probably want to install the [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime) meta package, a native replacement for the Steam runtime.
-
-The `steam` command is actually just a symlink to `steam-runtime`.
-
-The default Steam launch script is located at `/usr/lib/steam/steam`.
+In order for Steam to recognize a game it needs to have an `appmanifest_*AppId*.acf` file in `*LIBRARY*/steamapps/`. The appmanifest file uses the [KeyValues](https://developer.valvesoftware.com/wiki/KeyValues) format and its `installdir` property determines the game directory name.
 
 ## Usage
 
@@ -184,28 +173,11 @@ And the [#Launch options](#Launch_options) should be something like:
 
 ```
 
-### In-Home Streaming
+### In-home streaming
 
-Steam has built-in support for [In-Home Streaming](http://store.steampowered.com/streaming/).
+Steam has built-in support for [in-home streaming](http://store.steampowered.com/streaming/).
 
-See [this Steam Community guide](https://steamcommunity.com/sharedfiles/filedetails/?id=680514371) on how to setup a headless In-Home Streaming server on Linux.
-
-### Finding a games AppID
-
-Every Steam application has a unique AppID.
-
-To find the AppID of an installed game:
-
-1.  Right click on the game in your library, select create desktop shortcut.
-2.  Open the created file `~/Desktop/<game>.desktop` with a text editor.
-3.  Find the AppID in the Exec command `Exec=steam steam://rungameid/<appid>`.
-
-Alternatively find the game's [Steam Store](http://store.steampowered.com/) page and check out the URL:
-
-```
-http://store.steampowered.com/app/<appid>/<name>/
-
-```
+See [this Steam Community guide](https://steamcommunity.com/sharedfiles/filedetails/?id=680514371) on how to setup a headless in-home streaming server on Linux.
 
 ## Troubleshooting
 

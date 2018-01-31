@@ -4,7 +4,7 @@ Related articles
 *   [KDE](/index.php/KDE "KDE")
 *   [udisks](/index.php/Udisks "Udisks")
 
-[Dolphin](https://www.kde.org/applications/system/dolphin/) is the default file manager of [KDE](/index.php/KDE "KDE"). For the game emulator, see [Dolphin emulator](/index.php/Dolphin_emulator "Dolphin emulator").
+[Dolphin](https://www.kde.org/applications/system/dolphin/) is the default file manager of [KDE](/index.php/KDE "KDE"). For the video game console emulator, see [Dolphin emulator](/index.php/Dolphin_emulator "Dolphin emulator").
 
 ## Contents
 
@@ -34,16 +34,16 @@ The *Compare files* dialog depends on [kompare](https://www.archlinux.org/packag
 ### File previews
 
 *   [kdegraphics-thumbnailers](https://www.archlinux.org/packages/?name=kdegraphics-thumbnailers): Image files
-*   [kimageformats](https://www.archlinux.org/packages/?name=kimageformats): Gimp xcf files
+*   [kimageformats](https://www.archlinux.org/packages/?name=kimageformats): Gimp *.xcf* files
 *   [kdesdk-thumbnailers](https://www.archlinux.org/packages/?name=kdesdk-thumbnailers): Plugins for the thumbnailing system
 *   [ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs): Video files (based on ffmpeg)
-*   [raw-thumbnailer](https://www.archlinux.org/packages/?name=raw-thumbnailer): `.raw` files
+*   [raw-thumbnailer](https://www.archlinux.org/packages/?name=raw-thumbnailer): *.raw* files
 *   [taglib](https://www.archlinux.org/packages/?name=taglib) : Audio files
 *   [kde-thumbnailer-apk](https://aur.archlinux.org/packages/kde-thumbnailer-apk/): **A**ndroid **a**pplication **p**ackage files
 *   [kde-thumbnailer-blender](https://aur.archlinux.org/packages/kde-thumbnailer-blender/): Blender application files
 *   [kde-thumbnailer-epub](https://aur.archlinux.org/packages/kde-thumbnailer-epub/): Electronic book files
 
-Enable preview showing of required file type in `Control` → `Configure Dolphin...` → `General` → `Previews`
+Enable preview showing of required file type in *Control > Configure Dolphin... > General > Previews*.
 
 ## Usage
 

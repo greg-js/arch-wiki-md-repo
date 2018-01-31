@@ -1,6 +1,6 @@
 Configure your Arch Linux machine so you can connect to it via the serial console port. This will enable you to administer the machine even if it has no keyboard, mouse, monitor, or network attached to it (a headless server).
 
-As of Arch Linux 2007.x, installation of Arch Linux is possible via the serial console as well.
+Installation of Arch Linux is possible via the serial console as well.
 
 A basic environment for this scenario is two machines connected using a serial cable (9-pin connector cable). The administering machine can be any Unix/Linux or Windows machine with a terminal emulator program (PuTTY or Minicom, for example).
 
@@ -203,6 +203,8 @@ screen /dev/ttyS0 115200
 
 ```
 
+To end the session, press `Ctrl+a` followed by `k`.
+
 ##### Serialclient
 
 Serialclient[[2]](https://github.com/flagos/serialclient) is a CLI client for serial connection written in ruby. Install it with the following:
@@ -254,25 +256,25 @@ If you are having trouble sending a Control-C command through minicom you need t
 
 ### Resizing a terminal
 
-Unlike ssh, serial connection does not have a mechanism to transfer something like `SIGWINCH` when a terminal is resized. This will cause weird problem with some full-screen programs (e.g. `less`) when you resized your terminal emulator's window.
+Unlike ssh, serial connections do not have a mechanism to transfer something like `SIGWINCH` when a terminal is resized. This can cause weird problems with some full-screen programs (e.g. `less`) when you resize your terminal emulator's window.
 
-Resize the terminal via `stty` is a workaround:
+Resizing the terminal via `stty` is a workaround:
 
 ```
 $ stty rows *lines* cols *columns*
 
 ```
 
-However the above one requires you to manually input the proper geometry. The following examples should simplify the work.
+However, this requires you to manually input the proper geometry. The following methods should be simpler.
 
-1\. There is a less-known utility called `resize`, which is shipped with [xterm](https://www.archlinux.org/packages/?name=xterm), can solve this problem. Invoke it without parameter after you resize the terminal emulator's window:
+1\. There is a lesser-known utility called `resize`, shipped with [xterm](https://www.archlinux.org/packages/?name=xterm), that can solve this problem. Invoke it without parameters after you resize the terminal emulator's window:
 
 ```
 $ resize
 
 ```
 
-2\. In the case that you do not want to install xterm, it is possible to do the same work via a simple shell function. Put the following function into your zshrc, invoke it without parameter after you resize the terminal emulator's window:
+2\. If you don't want to install xterm, it is possible to do the same work via a shell function. Put the following function into your zshrc and invoke it without parameters after resizing the terminal emulator's window:
 
 ```
 rsz() {

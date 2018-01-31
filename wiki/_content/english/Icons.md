@@ -83,4 +83,4 @@ Not all icon themes provide a complete set of icons for the [Xfce](/index.php/Xf
 *   [gnome-colors-icon-theme](https://aur.archlinux.org/packages/gnome-colors-icon-theme/) - a set of icons, similar to the [GNOME](/index.php/GNOME "GNOME") icon theme, with good Xfce support.
 *   [echo-icon-theme-git](https://aur.archlinux.org/packages/echo-icon-theme-git/) - previously the default icon theme for Fedora. The non git version does not contain all of the Xfce icons.
 *   [gnome-icon-theme-xfce](https://aur.archlinux.org/packages/gnome-icon-theme-xfce/) - a package which adds the missing icons to the [GNOME](/index.php/GNOME "GNOME") icon theme.
-*   [elementary-xfce-icons](https://aur.archlinux.org/packages/elementary-xfce-icons/) - Elementary icons forked from upstream, extended and maintained for Xfce.
+*   [elementary-xfce-icons-git](https://aur.archlinux.org/packages/elementary-xfce-icons-git/) - Elementary icons forked from upstream, extended and maintained for Xfce.

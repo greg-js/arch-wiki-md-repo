@@ -251,6 +251,8 @@ $ sudo passwd root
 
 #### gksu
 
+**Warning:** *gksu* has been deprecated since 2011[[1]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5), and has not seen any update since 2014[[2]](https://www.archlinux.org/packages/?name=gksu).
+
 To set *gksu* to use sudo by default, run:
 
 ```
@@ -428,4 +430,4 @@ This sets sudo's umask to root's default umask (0022) and overrides the default 
 
 The authors site has a [list of all the options](http://www.sudo.ws/sudo/sudoers.man.html#x5355444f455253204f5054494f4e53) that can be used with the `Defaults` command in the `/etc/sudoers` file.
 
-See [[1]](https://gist.github.com/AladW/7eca9799b9ea624eca31) for a list of options (parsed from the version 1.8.7 source code) in a format optimized for `sudoers`.
+See [[3]](https://gist.github.com/AladW/7eca9799b9ea624eca31) for a list of options (parsed from the version 1.8.7 source code) in a format optimized for `sudoers`.

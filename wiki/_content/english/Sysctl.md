@@ -77,7 +77,7 @@ See [Security#Kernel hardening](/index.php/Security#Kernel_hardening "Security")
 
 The received frames will be stored in this queue after taking them from the ring buffer on the network card.
 
-Increasing this value for high speed cards may help prevent loosing packets.
+Increasing this value for high speed cards may help prevent losing packets.
 
 ```
 net.core.netdev_max_backlog = 65536

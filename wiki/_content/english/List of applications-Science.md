@@ -56,7 +56,7 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 	[http://www.isthe.com/chongo/tech/comp/calc/](http://www.isthe.com/chongo/tech/comp/calc/) || [calc](https://www.archlinux.org/packages/?name=calc)
 
-*   **Extcalc** — Qt-based scientfic graphical calculator.
+*   **Extcalc** — Qt-based scientific graphical calculator.
 
 	[http://extcalc-linux.sourceforge.net/](http://extcalc-linux.sourceforge.net/) || [extcalc](https://aur.archlinux.org/packages/extcalc/)
 

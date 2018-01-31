@@ -203,11 +203,15 @@ EDITOR=nano
 # Same as above
 EDITOR           DEFAULT=nano
 
-#Incorrect: you can't reuse other variables in VARIABLE=VALUE pair
+# Incorrect: you can't reuse other variables in VARIABLE=VALUE pair
 #GNUPGHOME=${XDG_CONFIG_HOME}/gnupg
 
-#Incorrect: missing {}
+# Incorrect: missing {}
 #GNUPGHOME        DEFAULT=$XDG_CONFIG_HOME/gnupg
+
+# Incorrect: the ${VARIABLE} syntax is only allowed for explicitly 
+# defined variables, not for the default @{HOME} and @{SHELL} variables.
+#GNUPGHOME        DEFAULT=${HOME}/gnupg
 ```
 
 **Note:** This file is read before everything, even `~/.profile`, `~/.bash_profile` and `~/.zshenv`.

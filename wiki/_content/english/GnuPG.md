@@ -41,6 +41,9 @@ According to the [official website](https://www.gnupg.org/):
     *   [6.3 pinentry](#pinentry)
     *   [6.4 Unattended passphrase](#Unattended_passphrase)
     *   [6.5 SSH agent](#SSH_agent)
+        *   [6.5.1 Set SSH_AUTH_SOCK](#Set_SSH_AUTH_SOCK)
+        *   [6.5.2 Configure pinentry to use the correct TTY](#Configure_pinentry_to_use_the_correct_TTY)
+        *   [6.5.3 Add SSH keys](#Add_SSH_keys)
 *   [7 Smartcards](#Smartcards)
     *   [7.1 GnuPG only setups](#GnuPG_only_setups)
     *   [7.2 GnuPG with pcscd (PCSC Lite)](#GnuPG_with_pcscd_.28PCSC_Lite.29)
@@ -545,6 +548,8 @@ enable-ssh-support
 
 ```
 
+#### Set SSH_AUTH_SOCK
+
 Then set `SSH_AUTH_SOCK` so that SSH will use *gpg-agent* instead of *ssh-agent*. To make sure each process can find your *gpg-agent* instance regardless of e.g. the type of shell it is child of use [pam_env](/index.php/Environment_variables#Using_pam_env "Environment variables").
 
  `~/.pam_environment` 
@@ -553,14 +558,14 @@ SSH_AGENT_PID	DEFAULT=
 SSH_AUTH_SOCK	DEFAULT="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
 ```
 
-Alternatively, depend on Bash:
+Alternatively, depend on Bash. This works for non-standard socket locations as well:
 
  `~/.bashrc` 
 ```
 # Set SSH to use gpg-agent
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
 
 ```
@@ -569,6 +574,8 @@ fi
 
 *   If you use non-default GnuPG [#Directory location](#Directory_location), run `gpgconf --create-socketdir` to create a socket directory under `/run/user/$UID/gnupg/`. Otherwise the socket will be placed in the GnuPG home directory.
 *   The test involving the `gnupg_SSH_AUTH_SOCK_by` variable is for the case where the agent is started as `gpg-agent --daemon /bin/sh`, in which case the shell inherits the `SSH_AUTH_SOCK` variable from the parent, *gpg-agent* [[4]](http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=agent/gpg-agent.c;hb=7bca3be65e510eda40572327b87922834ebe07eb#l1307).
+
+#### Configure pinentry to use the correct TTY
 
 Also set the GPG_TTY and refresh the TTY in case user has switched into an X session as stated in [gpg-agent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1). For example:
 
@@ -582,7 +589,11 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 
 ```
 
-Once *gpg-agent* is running you can use *ssh-add* to approve keys, following the same steps as for [ssh-agent](/index.php/SSH_keys#ssh-agent "SSH keys"). The list of approved keys is stored in the `~/.gnupg/sshcontrol` file. Once your key is approved, you will get a *pinentry* dialog every time your passphrase is needed. You can control passphrase caching in the `~/.gnupg/gpg-agent.conf` file. The following example would have *gpg-agent* cache your keys for 3 hours:
+#### Add SSH keys
+
+Once *gpg-agent* is running you can use *ssh-add* to approve keys, following the same steps as for [ssh-agent](/index.php/SSH_keys#ssh-agent "SSH keys"). The list of approved keys is stored in the `~/.gnupg/sshcontrol` file.
+
+Once your key is approved, you will get a *pinentry* dialog every time your passphrase is needed. You can control passphrase caching in the `~/.gnupg/gpg-agent.conf` file. The following example would have *gpg-agent* cache your keys for 3 hours:
 
  `~/.gnupg/gpg-agent.conf` 
 ```

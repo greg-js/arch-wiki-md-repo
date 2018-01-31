@@ -32,6 +32,7 @@ Related articles
     *   [4.4 Clear the screen after logging out](#Clear_the_screen_after_logging_out)
     *   [4.5 Auto "cd" when entering just a path](#Auto_.22cd.22_when_entering_just_a_path)
     *   [4.6 Autojump](#Autojump)
+    *   [4.7 Prevent overwrite of files](#Prevent_overwrite_of_files)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Line wrap on window resize](#Line_wrap_on_window_resize)
     *   [5.2 Shell exits even if ignoreeof set](#Shell_exits_even_if_ignoreeof_set)
@@ -268,6 +269,32 @@ cd /etc
 [autojump](https://www.archlinux.org/packages/?name=autojump) allows navigating the file system by searching for strings in a database with the user's most-visited paths.
 
 After installation, `/etc/profile.d/autojump.bash` must be [sourced](/index.php/Source "Source") in order to start using the application.
+
+### Prevent overwrite of files
+
+For the current session, to disallow existing regular files to be overwritten by redirection of shell output:
+
+```
+$ set -o noclobber
+
+```
+
+This is identical to `set -C`.
+
+To make the changes persistent for your user:
+
+ `~/.bashrc` 
+```
+...
+set -o noclobber
+```
+
+To manually overwrite a file while `noclobber` is set:
+
+```
+$ echo "output" >| file.txt
+
+```
 
 ## Troubleshooting
 

@@ -4,8 +4,6 @@
 *   [显示管理器](/index.php/%E6%98%BE%E7%A4%BA%E7%AE%A1%E7%90%86%E5%99%A8 "显示管理器")
 *   [窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")
 
-**翻译状态：** 本文是英文页面 [Enlightenment](/index.php/Enlightenment "Enlightenment") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-02-25，点击[这里](https://wiki.archlinux.org/index.php?title=Enlightenment&diff=0&oldid=464174)可以查看翻译后英文页面的改动。
-
 ## Contents
 
 *   [1 Enlightenment](#Enlightenment)
@@ -57,11 +55,13 @@
 开发版的软件包源码及其依赖的包构建文件可以从 [enlightenment-git](https://aur.archlinux.org/packages/enlightenment-git/) 下载。 以下是基于 EFL 的应用，大部份是开发版本，尚未正式发布：
 
 *   [ecrire-git](https://aur.archlinux.org/packages/ecrire-git/) – Ecrire 文本编辑器
+*   [edi](https://aur.archlinux.org/packages/edi/) – 基于EFL的集成开发环境(IDE)
 *   [elbow-git](https://aur.archlinux.org/packages/elbow-git/) – Elbow 浏览器
 *   [eluminance-git](https://aur.archlinux.org/packages/eluminance-git/) – Eluminance 图片浏览器
 *   [enjoy-git](https://aur.archlinux.org/packages/enjoy-git/) – [Enjoy](https://trac.enlightenment.org/e/wiki/Enjoy) 音乐播放器
 *   [eperiodique](https://aur.archlinux.org/packages/eperiodique/) – [Eperiodique](http://eperiodique.sourceforge.net/) periodic 表格查看器
-*   [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/) – [Ephoto](https://trac.enlightenment.org/e/wiki/Ephoto) 图片查看器
+*   [ephoto](https://aur.archlinux.org/packages/ephoto/) and [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/) – [Ephoto](http://smhouston.us/ephoto/)图片查看器
+*   [epour](https://aur.archlinux.org/packages/epour/) – 基于EFL的种子(torrent)客户端
 *   [epymc-git](https://aur.archlinux.org/packages/epymc-git/) – E Python 多媒体中心
 *   [equate-git](https://aur.archlinux.org/packages/equate-git/) – Equate 计算器
 *   [eruler-git](https://aur.archlinux.org/packages/eruler-git/) – Eruler 屏幕尺和测量工具
@@ -120,9 +120,7 @@ Enlightenment 首选的网络管理器是 [ConnMan](/index.php/ConnMan "ConnMan"
 
 你也可以使用 [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) 来管理网络连接。参见 [NetworkManager (简体中文)](/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NetworkManager (简体中文)")。
 
-你可能还需要 [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) 的帮助。把它加入自动启动，这样每次进桌面就能看到它在系统托盘中。方法：*设置 > 全部 > 应用程序 > 启动应用程序 > 系统*，激活*网络*。
-
-如果没有[#系统托盘](#.E7.B3.BB.E7.BB.9F.E6.89.98.E7.9B.98)，网络可以正常连接但指示器将不显示。
+注意：这个小程序需要Appindicator支持才能在Enlightenment的[系统托盘](#.E7.B3.BB.E7.BB.9F.E6.89.98.E7.9B.98)中显示。可参考[NetworkManager#Appindicator](/index.php/NetworkManager#Appindicator "NetworkManager").作为使用该程序的一种选择，NetworkManager包含了CLI and TUI两种网络配置界面--参见[NetworkManager#命令行](/index.php/NetworkManager#.E5.91.BD.E4.BB.A4.E8.A1.8C "NetworkManager")。
 
 #### Polkit 代理
 
@@ -130,7 +128,7 @@ Enlightenment 没有提供[图形化的 polkit 认证代理](/index.php/Polkit_(
 
 #### 集成 GNOME 密钥环
 
-It is possible to use gnome-keyring in Enlightenment. However, at the time of writing, you need a small hack to make it work in full. First, you must tell Enlightenment to autostart gnome-keyring. For that you should go to *Settings Panel > Apps > Startup Applications > System* and activate *Certificate and Key Storage*, *GPG Password Agent*, *SSH Key Agent* and "Secret Storage Service". After this, you should edit your `~/.pam_environment` and add the following:
+在Enlightenment中可以使用gnome-keyring. 然而你需要做一点小的更改才能让它完全地工作。首先你需要设置Enlightenment去自动启动gnome-keyring，定位到*Settings Panel > Apps > Startup Applications > System* 并激活 *Certificate and Key Storage*、 *GPG Password Agent*、*SSH Key Agent* 以及 "Secret Storage Service"。 然后, 你应该编辑 `~/.pam_environment` 并添加下面的代码:
 
 ```
        #Set gnome-keyring as the ssh authentication agent
@@ -138,9 +136,9 @@ It is possible to use gnome-keyring in Enlightenment. However, at the time of wr
 
 ```
 
-This "hack" is used to override the automatic setting of the variable by "enlightenment-start" from "ssh-agent" to gnome-keyring.
+上述代码会覆盖"enlightenment-start"变量的自动启动配置，从"ssh-agent" 切换到gnome-keyring。
 
-More information on this topic in the [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") article.
+更多信息参考[GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring")一文。
 
 #### 系统托盘
 
@@ -165,14 +163,15 @@ Enlightenment 的“通知”扩展模块提供了一个通知服务器。
 *   [enlightenment-themes.org](https://www.enlightenment-themes.org/)
 *   [relighted.c0n.de](http://relighted.c0n.de/#100) 默认主题的 200 种不同颜色组合
 *   [git.enlightenment.org](http://git.enlightenment.org/themes)（用 git 抓取喜欢的主题，运行 'make' 生成 .edj 后缀的主题文件）
-*   [packages.bodhilinux.com](http://packages.bodhilinux.com/bodhi/pool/stable/b/) 这里有一堆不错的主题（需从 .deb 包中释放出 .edj 文件，可以用 ArchLinux 的基础组件 bsdtar 释放）。在他们的维基上还提供了一个很不错的分类 [[2]](https://web.archive.org/web/20140120083020/http://art.bodhilinux.com/doku.php?id=bodhi_e17_themes_v3)。
+*   [packages.bodhilinux.com](http://packages.bodhilinux.com/bodhi/pool/stable/b/) 这里有一堆不错的主题（需从 .deb 包中释放出 .edj 文件，可以用 ArchLinux 的基础组件 bsdtar 释放）。在他们的维基上还提供了一个很不错的分类
+*   [[2]](https://web.archive.org/web/20140120083020/http://art.bodhilinux.com/doku.php?id=bodhi_e17_themes_v3)。
 *   [exchange.enlightenment.org](https://web.archive.org/web/20161025233126/https://exchange.enlightenment.org/theme) (archived)
 
 你可以在主题设置对话框中安装这些 .edj 文件格式的主题，或者把它们放在 `~/.e/e/themes` 目录中。
 
 **注意:** Enlightenment 未提供完整的主题 API，多年来，甚至在 E17 发布后，很多主题 API 也已改变。未及时更新的主题很可能无法正常工作。
 
-**提示：** 若要使 GTK 和 Qt 应用程序与 Enlightenment 默认主题相匹配，你可以下载一个类似 [E17 GTK 主题](http://gnome-look.org/content/show.php/?content=163472)这样的主题包，放在 `~/.themes/` 中并在Enlightenment 的设置中选中它，然后对其做配置。这样可以使所有 GTK2 和 GTK3 应用匹配默认 Enlightenment 主题，然后，你可以配置 Qt 应用程序（或者配置 Qt 的默认设置），让其使用 Gtk+ 主题。这样 Qt 应用程序将模拟当前使用的 GTK 应用程序。这样就可以让绝大部分应用程序都使用 enlightenment 的主题。参阅[Qt 与 GTK 应用程序外观一致化](/index.php/Qt_%E4%B8%8E_GTK_%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%A4%96%E8%A7%82%E4%B8%80%E8%87%B4%E5%8C%96 "Qt 与 GTK 应用程序外观一致化")。
+**提示：** 若要使 GTK 和 Qt 应用程序与 Enlightenment 默认主题相匹配，你可以下载一个类似 [E17 GTK 主题](http://gnome-look.org/content/show.php/?content=163472)这样的主题包，放在 `~/.themes/` 中或者安装[gtk-theme-e17gtk-git](https://aur.archlinux.org/packages/gtk-theme-e17gtk-git/)包，并在Enlightenment 的设置中选中它，然后对其做配置。这样可以使所有 GTK2 和 GTK3 应用匹配默认 Enlightenment 主题，然后，你可以配置 Qt 应用程序（或者配置 Qt 的默认设置），让其使用 Gtk+ 主题。这样 Qt 应用程序将模拟当前使用的 GTK 应用程序。这样就可以让绝大部分应用程序都使用 enlightenment 的主题。参阅[Qt 与 GTK 应用程序外观一致化](/index.php/Qt_%E4%B8%8E_GTK_%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%A4%96%E8%A7%82%E4%B8%80%E8%87%B4%E5%8C%96 "Qt 与 GTK 应用程序外观一致化")。
 
 #### GTK+
 
@@ -180,39 +179,29 @@ Enlightenment 的“通知”扩展模块提供了一个通知服务器。
 
 ### 模块和小部件
 
-	Module
+	模块
 
-	Name used in enlightenment to refer to the "backing" code for a gadget.
+	小工具的后端支持代码在Enlightenment中使用的名称。
 
-	Gadget
+	小工具
 
-	Front-end or user interface that should help the end users of Enlightenment do something.
+	前端或用户界面，应该有助于Enlightenment的用户完成某项任务。
 
-Many Modules provide Gadgets that can be added to your desktop or on a shelf. Some Modules (such as CPUFreq) only provide a single Gadget while others (such as Composite) provide additional features without any gadgets. Note that certain gadgets such as Systray can only be added to a shelf while others such as Moon can only be loaded on the desktop.
+很多模块提供了可以添加到桌面或面板上的小工具。某些模块(如CPUFreq) 只提供了单个的小工具；而一些模块 (如Composite) 虽然不提供小工具，但提供了额外的功能。 注意某些小工具（如Systray）只能被添加到面板上，而另一些小工具（如Moon）只能在桌面上加载。
 
 #### "外部" 模块
 
 **警告:** 这些第三方模块不被官方开发者支持。它们直接来自 git ，因而随时可能工作异常。请风险自担。
 
-Beyond the modules described here, more "extra" modules are available from [e-modules-extra-git](https://aur.archlinux.org/packages/e-modules-extra-git/).
-
-**Places**
-
-Places is a gadget that will help you browse files on various devices you might plug into your computer, like phones, cameras, or other various storage devices you might plug into the usb port.
-
-Available from [places-git](https://aur.archlinux.org/packages/places-git/).
-
-**注意:** This module is no longer required for auto-mounting external devices in Enlightenment
+除了这里列举的模块, 更多的模块可以从[e-modules-extra-git](https://aur.archlinux.org/packages/e-modules-extra-git/)找到。
 
 **Scale Windows**
 
-The *Scale Windows* module, which requires compositing to be enabled, adds several features. The scale windows effect shrinks all open windows and brings them all into view. This is known in "Mission Control" in macOS. The scale pager effect zooms out and shows all desktops as a wall, like the compiz expo plugin. Both can be added to the desktop as a gadget or bound to a key binding, mouse binding or screen edge binding.
+*Scale Windows*模块添加了额外的功能，但需要开启 compositing. 缩放窗口特效（Scale Windows）可以缩小所有打开的窗口并使它们全部进入预览视图。 这项功能与macOS中的"Mission Control"功能相类似. scale pager特效缩放所有桌面并将它们如壁纸一样显示，类似于插件 expo. 这两项功能都可以添加到桌面，或者与快捷键、鼠标以及屏幕边缘绑定起来。
 
-Some people like to change the standard window selection key binding `ALT + Tab` to use Scale Windows to select windows. To change this setting, you navigate to *Menu > Settings > Settings Panel > Input > Keys*. From here, you can set any key binding you would like.
+某些用户喜欢将标准的窗口选择快捷键`ALT + Tab`改变为使用缩放窗口特效（Scale Windows）去选择窗口。为了达到上述目的, 你需要依次定位到*Menu> Settings > Settings Panel > Input> Keys*. 在这里你可以设置任何你喜欢的快捷键。
 
-To replace the window selection key binding functionality with Scale Windows, scroll through the left panel until you find the *ALT* section and then find and select `ALT + Tab`. Then, scroll through the right panel looking for the "Scale Windows" section and choose either *Select Next* or *Select Next (All)* depending on whether you would like to see windows from only the current desktop or from all desktops and click *Apply* to save the binding.
-
-Available from [comp-scale-git](https://aur.archlinux.org/packages/comp-scale-git/).
+若需要将窗口选择键绑定功能替换为缩放窗口特效（Scale Windows）,滚动做面板直到*ALT*节然后找到并选择`ALT + Tab`. 然后滚动右面版寻找"Scale Windows"并选择*Select Next* 或者*Select Next (All)* 并点击*Apply*保存设置，*Select Next*选项仅能看到当前桌面的窗口，*Select Next (All)*选项可看到所有桌面上的窗口。 可以使用[upstream git](https://git.enlightenment.org/enlightenment/modules/comp-scale.git/)包。
 
 ### 默认键绑定
 
@@ -243,55 +232,55 @@ Available from [comp-scale-git](https://aur.archlinux.org/packages/comp-scale-gi
 
 ### 排错
 
-If you find some unexpected behavior, there are a few things you can do:
+如果你的Enlightenment出现了一些奇怪的行为, 你可以尝试下面的步骤:
 
-1.  try to see if the same behavior exists with the default theme
-2.  disable any 3rd party modules you may have installed
-3.  backup `~/.e` and remove it (e.g. `mv ~/.e ~/.e.back`)
+1.  尝试使用默认主题，看这些行为是否会出现；
+2.  禁用你安装的所有第三方模块；
+3.  备份`~/.e`文档并移除`~/.e`(使用命令`mv ~/.e ~/.e.back`)；
 
-If you are sure you found a bug please report it [directly upstream](https://phab.enlightenment.org/maniphest/task/create/).
+若你确定自己发现了一个BUG，请将它提交到[directly upstream](https://phab.enlightenment.org/maniphest/task/create/)页面。
 
 #### 合成
 
-When the configuration needs to be reset and the settings windows can no longer be approached, configuration for the compositor can be reset using the hardcoded keybinding `Ctrl + Alt + Shift + Home`.
+当需要在无法打开设置窗口的情况下重置设置的时候, 可以通过硬编码（hardcoded）快捷键`Ctrl + Alt + Shift + Home`重置合成器的设置。
 
 #### 字体看不清楚
 
-If fonts are too small and your screen is unreadable, be sure the right font packages are installed. [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) and [ttf-bitstream-vera](https://www.archlinux.org/packages/?name=ttf-bitstream-vera) are valid candidates.
+如果字体太小而无法阅读,首先确定你已经安装了正确的字体包。 安装[ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) 和[ttf-bitstream-vera](https://www.archlinux.org/packages/?name=ttf-bitstream-vera) 字体包是一个不错的选择。
 
-You can set scaling under *Settings > Settings Panel > Look > Scaling*.
+你可以在 *Settings > Settings Panel > Look > Scaling*选项中设置缩放。
 
 #### 背光总是较暗
 
-You may find that Enlightenment routinely dims the backlight to 30% on logout and will only restore it to 100% when you log into another Enlightenment session. This is especially problematic when using another desktop environment alongside Enlightenment as the backlight will not automatically be restored to its normal level when using that desktop environment. To fix this issue, open the Enlightenment *Settings Panel* and, under the *Look* tab, click on the *Composite* option. Tick the *Don't fade backlight* box and click *OK*.
+你或许会发现在登出的情况下 Enlightenment 会常规性的将背光调低为30%，却只能在你登录到另一个新的Enlightenment session时才能恢复到100%。当使用Enlightenment和另一个桌面环境时，该问题特别明显；因为当使用该桌面环境时，背光不会自动恢复到正常水平。要修复该问题， 打开 *Settings Panel*，在*Look* 标签下, 勾选 *Composite* 选项。勾选*Don't fade backlight* 前的方框并点击*OK*.
 
 #### 光标主题不一致
 
-You may find that the cursor theme for the desktop is different to the one used in applications such as [Firefox (简体中文)](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)"). This is because desktop applications are using X cursor themes whilst Enlightenment has its own set of cursor themes. For consistency, you can set Enlightenment to always use the X cursor theme. To do this, open the Enlightenment *Settings Panel* and click on the *Input* tab. Click on the *Mouse* option. Change the theme from *Enlightenment* to *X* and click *OK*. You should now find that the same cursor theme is used everywhere. If the X cursor theme itself is not always consistent, see [光标主题](/index.php/Cursor_themes_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#XDG_.E8.A7.84.E5.88.99 "Cursor themes (简体中文)")
+可能会发现桌面的光标主题与应用（如[Firefox (简体中文)](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")）中的光标主题不一样。 这是因为应用使用的是X光标主题，而Enlightenment有自己的光标主题设置。 为了前后一致, 你可以设置 Enlightenment总是使用X光标主题。 为了实现该目标, 打开 Enlightenment的 *Settings Panel* 然后点击 *Input*标签。之后点击 *Mouse* 选项。将其主题从*Enlightenment* 切换到 *X* 然后点击*OK*保存即可。 你应该可以发现光标主题在每一个地方都是一样的。 如果X光标主题并不总是一致的，可参考[光标主题](/index.php/Cursor_themes_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#XDG_.E8.A7.84.E5.88.99 "Cursor themes (简体中文)")
 
 #### 背景图片
 
-You have to copy the desired wallpapers into `~/.e/e/backgrounds/`
+你需要将想要设置为背景的图片拷贝到 `~/.e/e/backgrounds/`目录下。
 
-MMB or RMB anywhere on the desktop will give access to the settings, select `/Desktop/Backgrounds/`
+在桌面的任意地方点击鼠标中键（MMB）或右键（RMB）访问“设置”选项，选择`/Desktop/Backgrounds/`
 
-Any new image copied in the `~/.e/e/backgrounds/` folder will get the list of available backgrounds auto-updated. Select desired wallpaper from drop-down menu. Inside the appropriate tabs in the global settings, you can adjust things like tiling of the background image, filling screen and such.
+任何新拷贝到`~/.e/e/backgrounds/`文件夹下的图片都会自动更新可供选择的背景列表。 从下拉菜单中选择你想要设置的图片。在全局设置中的 *appropriate*选项卡内，可以调整背景图像的平铺、填充屏幕等。
 
 ## Enlightenment DR16
 
-Enlightenment, Development Release 16 was first released in 2000, and reached version 1.0 in 2009\. Originally, the DR16 stood for the 0.16 version of the Enlightenment project. You'll find it as "Enlightenment16" now in the Arch repositories, it is still under development today, regularly updated by its maintainer Kim 'kwo' Woelders. With compositing, shadows and transparencies, E16 kept all of the speed that presided over its foundation by original author Carsten "Rasterman" Haitzler but with up to date refinement.
+Enlightenment, 开发版 16 第一次发布于2000年,在2009年到达了 1.0版. 初始情况下，DR16表示Enlightenment项目的0.16版。它就是现在Arch源的"Enlightenment16", 直到今天还在开发维护中, 通常由它的维护者 Kim 'kwo' Woelders提供更新。With compositing, shadows and transparencies, E16 kept all of the speed that presided over its foundation by original author Carsten "Rasterman" Haitzler but with up to date refinement.
 
 ### 安装 E16
 
-Install [enlightenment16](https://www.archlinux.org/packages/?name=enlightenment16).
+安装[enlightenment16](https://www.archlinux.org/packages/?name=enlightenment16)包.
 
-See `/usr/share/doc/e16/e16.html` for in depth documentation. The man page is at [e16(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/e16.1) and only gives startup options.
+如需要深入的文档，可以参考`/usr/share/doc/e16/e16.html`. 在[e16(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/e16.1)中的手册，只给了一些启动选项。
 
 ### 基本设置
 
-Most configuration files for E16 reside in `~/.e16` and are text-based, editable at will. That includes the Menus too.
+E16的大多数设置文件保存在`~/.e16`目录中，并且是基于文本、可以编辑的。其中也包含了菜单（menus）。
 
-Shortcut keys can be either modified by hand, or with the e16keyedit software provided as source on the [sourceforge](http://sourceforge.net/projects/enlightenment/) page of the e16 project, or from the [e16keyedit](https://aur.archlinux.org/packages/e16keyedit/) package. Note that the keyboard shortcuts file is not created in `~/.e16` by default. You can copy the packaged version to your home directory if you wish to make changes:
+快捷键可以通过手动修改,也可以使用e16keyedit 软件修改；该软件可以在[sourceforge](http://sourceforge.net/projects/enlightenment/)页面找到。注意：默认情况下不会在`~/.e16`目录下创建键盘快捷键绑定文件。如果你想做修改的话，可以通过下面的命令将安装包自带的键盘快捷键绑定文件复制到你的home目录下：
 
 ```
 $ cp /usr/share/e16/config/bindings.cfg ~/.e16
@@ -300,7 +289,7 @@ $ cp /usr/share/e16/config/bindings.cfg ~/.e16
 
 #### 启动、重启、停止脚本
 
-Create an Init, a Start and a Stop folder in your `~/.e16` folder: any .sh script found there will either be executed at Startup (from Init folder), at each Restart (from Start folder), or at Shutdown (from Stop folder); provided you allowed it trough the MMB / settings / session / <enable scripts> button and made them executable with `chmod +x **yourscript.sh**`. Typical examples involves starting pulseaudio or your favorite network manager applet.
+在你的`~/.e16`文件夹中创建 Init, a Start and a Stop 文件夹: 任何在这些文件夹中的 .sh 脚本 将会在启动时(位于Init文件夹)、每次重启时(位于Start文件夹)或者关机时(位于Stop文件夹)被执行; 假如你允许它们通过 MMB / settings / session / <enable scripts> button并 通过`chmod +x **yourscript.sh**`命令赋予它们可执行权限。经典的例子是启动pulseaudio或者你喜欢的网络管理程序。
 
 #### 合成器（Compositor）
 

@@ -1,3 +1,8 @@
+Related articles
+
+*   [Openbox](/index.php/Openbox "Openbox")
+*   [Window manager](/index.php/Window_manager "Window manager")
+
 [oblogout](https://www.archlinux.org/packages/?name=oblogout) is an optional, configurable logout script that presents a graphical interface (i.e. buttons) to `cancel`, `logout`, `restart`, `shutdown`, `suspend`, `hibernate`, and `lock` the screen.
 
 ## Contents
@@ -96,7 +101,7 @@ For example, if you have two monitors, and you only want oblogout to appear on t
  `~/.config/openbox/rc.xml` 
 ```
 <applications>
-  <application name="oblogout">
+  <application class="oblogout">
     <position force="yes">
       <monitor>1</monitor>
     </position>

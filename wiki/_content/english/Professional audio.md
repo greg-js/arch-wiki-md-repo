@@ -33,6 +33,7 @@ Modern Linux systems are more than capable of supporting your (semi-)professiona
 *   [8 Arch Linux Pro Audio Project](#Arch_Linux_Pro_Audio_Project)
 *   [9 Linux and Arch Linux Pro Audio in the News](#Linux_and_Arch_Linux_Pro_Audio_in_the_News)
 *   [10 Mailing list](#Mailing_list)
+*   [11 IRC](#IRC)
 
 ## Getting Started
 
@@ -578,4 +579,12 @@ For all your Arch- and ArchAudio-related audio issues hop on to **IRC**: #archau
 
 ## Mailing list
 
-*   [Linux-audio-user -- A list for linux audio users](http://lists.linuxaudio.org/listinfo/linux-audio-user) The Linux pro-audio related mailing list with much traffic and a huge subscriber community of users and developers.
+*   [Arch Linux Pro-audio](https://lists.archlinux.org/listinfo/arch-proaudio) Discussion about real-time multimedia, including (semi-)pro audio and video
+*   [Linux Audio Developer](https://lists.linuxaudio.org/listinfo/linux-audio-dev) The Linux pro-audio related mailing list with much traffic and a huge subscriber community of mainly developers.
+*   [Linux Audio User](https://lists.linuxaudio.org/listinfo/linux-audio-user) The Linux pro-audio related mailing list with much traffic and a huge subscriber community of users and developers.
+
+## IRC
+
+*   #archlinux-proaudio on freenode.net: Arch Linux pro-audio channel
+*   #lau on freenode.net: General Linux Audio channel for users
+*   #lad on freenode.net: General Linux AUdio channel for developers

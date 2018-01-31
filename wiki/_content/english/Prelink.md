@@ -12,7 +12,9 @@ Most programs require libraries to function. Libraries can be integrated into a 
     *   [3.3 Removing prelink](#Removing_prelink)
 *   [4 Daily cron job](#Daily_cron_job)
 *   [5 KDE](#KDE)
-*   [6 See also](#See_also)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 segfault, kernel panic](#segfault.2C_kernel_panic)
+*   [7 See also](#See_also)
 
 ## Installing
 
@@ -119,6 +121,14 @@ and give it the necessary ownership and permissions:
 # chmod 755 /etc/profile.d/kde-is-prelinked.sh
 
 ```
+
+## Troubleshooting
+
+### segfault, kernel panic
+
+In case you suddenly get a boot failure with errors like [segfault, kernel panic](https://forum.manjaro.org/t/kernel-panic-after-todays-update/32130), it's a very good chance the prelink has caused this.
+
+[Follow this forum in order to restore the functionality of the system.](https://bbs.archlinux.org/viewtopic.php?id=112484,)
 
 ## See also
 

@@ -1238,14 +1238,12 @@ To use e.g. `hda` driver for the guest use the `-soundhw hda` command with QEMU.
 
 QEMU offers guests the ability to use paravirtualized block and network devices using the [virtio](http://wiki.libvirt.org/page/Virtio) drivers, which provide better performance and lower overhead.
 
-*   A virtio block device requires the option `-drive` instead of the simple `-hd*` plus `if=virtio`:
+*   A virtio block device requires the option `-drive` for passing a disk image, with parameter `if=virtio`:
 
 ```
 $ qemu-system-x86_64 -boot order=c -drive file=*disk_image*,if=virtio
 
 ```
-
-**Note:** `-boot order=c` is absolutely necessary when you want to boot from it. There is no auto-detection as with `-hd*`.
 
 *   Almost the same goes for the network:
 

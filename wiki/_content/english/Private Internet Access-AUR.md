@@ -4,8 +4,6 @@ Related articles
 *   [NetworkManager](/index.php/NetworkManager "NetworkManager")
 *   [OpenVPN](/index.php/OpenVPN "OpenVPN")
 
-**Note:** This is not meant to be installed through [pip](https://aur.archlinux.org/packages/pip/) directly. See [[1]](https://github.com/flamusdiu/python-pia/issues/30) for more information.
-
 This article details the installation and usage of [private-internet-access-vpn](https://aur.archlinux.org/packages/private-internet-access-vpn/). For the general information on the service and additional packages, see [Private Internet Access](/index.php/Private_Internet_Access "Private Internet Access").
 
 ## Contents
@@ -18,12 +16,17 @@ This article details the installation and usage of [private-internet-access-vpn]
         *   [3.1.2 Automatically connect to VPN](#Automatically_connect_to_VPN)
         *   [3.1.3 Advanced options](#Advanced_options)
     *   [3.2 Example configuration](#Example_configuration)
-    *   [3.3 Troubleshooting](#Troubleshooting)
-*   [4 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Installing from pacaur](#Installing_from_pacaur)
+    *   [4.2 Using NetworkManager's applet](#Using_NetworkManager.27s_applet)
+    *   [4.3 DNS Leaks](#DNS_Leaks)
+*   [5 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [private-internet-access-vpn](https://aur.archlinux.org/packages/private-internet-access-vpn/) or [private-internet-access-vpn-dev](https://aur.archlinux.org/packages/private-internet-access-vpn-dev/)package.
+
+**Note:** This is not meant to be installed through [pip](https://aur.archlinux.org/packages/pip/) directly. See [[1]](https://github.com/flamusdiu/python-pia/issues/30) for more information.
 
 The package provides a tool that downloads the [OpenVPN configuration files](https://www.privateinternetaccess.com/openvpn/openvpn.zip) and stores them in `/etc/openvpn`. However, it updates the file names to better support using them on the command line.
 
@@ -114,13 +117,17 @@ hosts = US East, US West, Japan, UK London, UK Southampton
 
 ```
 
-### Troubleshooting
+## Troubleshooting
+
+### Installing from pacaur
 
 If you are using [pacaur](https://aur.archlinux.org/packages/pacaur/) and continue to have issues with upgrading the package, then you may need to remove the pacaur cache (thanks [@Gelmo](https://aur.archlinux.org/account/Gelmo)):
 
  ` rm -rf ~/.cache/pacaur/*` 
 
-In order to use the NetworkManager applet to connect:
+### Using NetworkManager's applet
+
+In order to use the [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) to connect:
 
 1.  Right click the NetworkManager icon in the system tray
 2.  and click *Configure Network Connections...*
@@ -138,6 +145,8 @@ In order to use the NetworkManager applet to connect:
 14.  set the `HMAC Authentication:` to `SHA-1`
 15.  click *OK*
 16.  click *OK* again
+
+### DNS Leaks
 
 Concerning DNS Leaks (see [python-pia/#13](https://github.com/flamusdiu/python-pia/issues/13)), NetworkManager leaks information due to how `/etc/resolv.conf` is setup. The script below was posted by [@maximbaz](https://github.com/maximbaz) to work around the problem. You may need to [disable IPv6](/index.php/IPv6#Disable_IPv6 "IPv6") if you continue to get leaks.
 

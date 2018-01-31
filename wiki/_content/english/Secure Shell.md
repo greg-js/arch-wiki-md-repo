@@ -193,7 +193,7 @@ ListenStream=12345
 
 **Warning:** Using `sshd.socket` negates the `ListenAddress` setting, so it will allow connections over any address. To achieve the effect of setting `ListenAddress`, you must specify the port *and* IP for `ListenStream` (e.g. `ListenStream=192.168.1.100:22`). You must also add `FreeBind=true` under `[Socket]` or else setting the IP address will have the same drawback as setting `ListenAddress`: the socket will fail to start if the network is not up in time.
 
-**Tip:** When using socket activation neither `sshd.socket` nor the daemon's regular `sshd.service` allow to monitor connection attempts in the log, but executing `journalctl /usr/bin/sshd` does.
+**Tip:** When using socket activation a transient instance of `sshd@.service` will be started for each connection (with different instance names). Therefore, neither `sshd.socket` nor the daemon's regular `sshd.service` allow to monitor connection attempts in the log. The logs of socket-activated instances of SSH can be seen with `journalctl -u "sshd@*"` or with `journalctl /usr/bin/sshd`.
 
 #### Protection
 

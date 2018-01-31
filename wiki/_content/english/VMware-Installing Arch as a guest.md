@@ -39,20 +39,21 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
         *   [6.5.2 Paravirtual Network Adapater](#Paravirtual_Network_Adapater)
         *   [6.5.3 Virtual Machine Settings](#Virtual_Machine_Settings)
 *   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 File share problems with newer kernels](#File_share_problems_with_newer_kernels)
-    *   [7.2 Sound problems](#Sound_problems)
-    *   [7.3 Mouse problems](#Mouse_problems)
-    *   [7.4 Boot problems](#Boot_problems)
-        *   [7.4.1 Slow boot time](#Slow_boot_time)
-        *   [7.4.2 Shutdown/Reboot hangs](#Shutdown.2FReboot_hangs)
-    *   [7.5 Window resolution autofit problems](#Window_resolution_autofit_problems)
-        *   [7.5.1 Potential solution 1](#Potential_solution_1)
-        *   [7.5.2 Potential solution 2](#Potential_solution_2)
-        *   [7.5.3 Potential solution 3](#Potential_solution_3)
-        *   [7.5.4 Potential solution 4](#Potential_solution_4)
-    *   [7.6 Drag and drop, copy/paste](#Drag_and_drop.2C_copy.2Fpaste)
-    *   [7.7 Problems when running as a shared VM on Workstation 11](#Problems_when_running_as_a_shared_VM_on_Workstation_11)
-    *   [7.8 Shared folder not mounted after system upgrade](#Shared_folder_not_mounted_after_system_upgrade)
+    *   [7.1 Network slow on guest](#Network_slow_on_guest)
+    *   [7.2 File share problems with newer kernels](#File_share_problems_with_newer_kernels)
+    *   [7.3 Sound problems](#Sound_problems)
+    *   [7.4 Mouse problems](#Mouse_problems)
+    *   [7.5 Boot problems](#Boot_problems)
+        *   [7.5.1 Slow boot time](#Slow_boot_time)
+        *   [7.5.2 Shutdown/Reboot hangs](#Shutdown.2FReboot_hangs)
+    *   [7.6 Window resolution autofit problems](#Window_resolution_autofit_problems)
+        *   [7.6.1 Potential solution 1](#Potential_solution_1)
+        *   [7.6.2 Potential solution 2](#Potential_solution_2)
+        *   [7.6.3 Potential solution 3](#Potential_solution_3)
+        *   [7.6.4 Potential solution 4](#Potential_solution_4)
+    *   [7.7 Drag and drop, copy/paste](#Drag_and_drop.2C_copy.2Fpaste)
+    *   [7.8 Problems when running as a shared VM on Workstation 11](#Problems_when_running_as_a_shared_VM_on_Workstation_11)
+    *   [7.9 Shared folder not mounted after system upgrade](#Shared_folder_not_mounted_after_system_upgrade)
 
 ## In-kernel drivers
 
@@ -555,9 +556,13 @@ mainMem.partialLazyRestore = "FALSE"
 
 ## Troubleshooting
 
+### Network slow on guest
+
+Arch Linux, as well as other Linux guests, may have slow network speeds while using NAT. To resolve this, switch the network type to **Bridged mode** in the guest settings on the host, changing the configuration file for the network on the guest where necessary. For more information on configuration, see [Network configuration](/index.php/Network_configuration "Network configuration"). If on a Windows host and it is not connecting properly despite correct guest configuration, open the **Virtual Network Editor** on the host as **Administrator** and press the **Restore defaults** button at the bottom left.
+
 ### File share problems with newer kernels
 
-As the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) package is no longer being updated, newer kernels are not patched correctly using it to be compatible with a host-guest file share. The [https://github.com/davispuh/open-vm-tools-dkms](https://github.com/davispuh/open-vm-tools-dkms) | Github repository] has some patch files that can be manually applied to restore functionality.
+As the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) package is no longer being updated, newer kernels are not patched correctly using it to be compatible with a host-guest file share. The [Github repository](https://github.com/davispuh/open-vm-tools-dkms) has some patch files that can be manually applied to restore functionality.
 
 It is also recommended you check the AUR comment section for this package.
 

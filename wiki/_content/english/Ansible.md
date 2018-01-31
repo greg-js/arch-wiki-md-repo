@@ -20,9 +20,9 @@ From [www.ansible.com](https://www.ansible.com/how-ansible-works):
 
 ## Installation
 
-On the control machine (master), [install](/index.php/Install "Install") the [ansible](https://www.archlinux.org/packages/?name=ansible) package. [python](https://www.archlinux.org/packages/?name=python) is also required (Python versions 2.6, 2.7 or 3.5 and higher are supported).
+On the control machine (master), [install](/index.php/Install "Install") the [ansible](https://www.archlinux.org/packages/?name=ansible) package. [python2](https://www.archlinux.org/packages/?name=python2) is a dependency of the package and is required on the master.
 
-On the managed machines (nodes), where you want to automate deployment or configuration tasks, you need a way to communicate, which is normally [SSH](/index.php/SSH "SSH"). Note that a functioning [SSH key](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys") setup eases the use of Ansible but is not required.
+On the managed machines (nodes), where you want to automate deployment or configuration tasks, [python](https://www.archlinux.org/packages/?name=python) is required and it may be necessary to indicate the [#Python binary location](#Python_binary_location) if some of the modules used are not compatible with *Python 3* and specifically require [python2](https://www.archlinux.org/packages/?name=python2). A way to communicate with the node is also necessary, this is usually [SSH](/index.php/SSH "SSH"). Note that a functioning [SSH key](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys") setup eases the use of Ansible but is not required.
 
 ## Basic usage
 
@@ -90,14 +90,19 @@ $ ansible-playbook *site.yml* --vault-id *vault_pass.txt*
 In order to encrypt the content `*the var content*` of a variable named `*varname*` using the password stored in `*vault_pass.txt*`, the following command should be used:
 
 ```
-$ ansible-vault encrypt_string --vault-id *vault_pass.txt* '*the var content*' -n *varname*
+$ ansible-vault encrypt_string --vault-id *vault_pass.txt* '*the var content*' --name *varname*
 
 ```
 
-It returns directly the protected variable that can be inserted into a playbook. Encrypted and non-encrypted variables can be mixed together in a YAML file as illustrated below:
+More securely, to avoid inputting the variable content in the command line and be prompted for it instead, one can use:
+
+ `$ ansible-vault encrypt_string --vault-id *vault_pass.txt* --stdin-name *varname*`  `Reading plaintext input from stdin. (ctrl-d to end input)` 
+
+The command returns directly the protected variable that can be inserted into a playbook. Encrypted and non-encrypted variables can coexist in a YAML file as illustrated below:
 
 ```
 notsecret: myvalue
+
 mysecret: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           66386439653236336462626566653063336164663966303231363934653561363964363833313662
@@ -105,6 +110,7 @@ mysecret: !vault |
           62656361653630373231613662633962316233633936396165386439616533353965373339616234
           3430613539666330390a313736323265656432366236633330313963326365653937323833366536
           3462
+
 other_not_secret: othervalue
 ```
 
@@ -177,7 +183,7 @@ server3
 ansible_python_interpreter=/usr/bin/python2
 ```
 
-More information about Python versions is available in [[1]](https://docs.ansible.com/ansible/python_3_support.html), [[2]](http://docs.ansible.com/faq.html#how-do-i-handle-python-pathing-not-having-a-python-2-x-in-usr-bin-python-on-a-remote-machine) and [[3]](http://docs.ansible.com/intro_inventory.html#list-of-behavioral-inventory-parameters).
+More information about Python version support in Ansible is available in [[1]](https://docs.ansible.com/ansible/python_3_support.html), [[2]](http://docs.ansible.com/faq.html#how-do-i-handle-python-pathing-not-having-a-python-2-x-in-usr-bin-python-on-a-remote-machine) and [[3]](http://docs.ansible.com/intro_inventory.html#list-of-behavioral-inventory-parameters).
 
 ## Troubleshooting
 

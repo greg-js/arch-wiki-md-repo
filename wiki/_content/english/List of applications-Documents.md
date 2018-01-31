@@ -455,6 +455,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://www.nedit.org](http://www.nedit.org) || [nedit](https://www.archlinux.org/packages/?name=nedit)
 
+*   **Notepadqq** — A Qt-based, Notepad++-like text editor with support for syntax highlighting for more than 100 languages.
+
+	[http://notepadqq.altervista.org/s/](http://notepadqq.altervista.org/s/) || [notepadqq](https://www.archlinux.org/packages/?name=notepadqq)
+
 *   **[Pluma](/index.php/MATE "MATE")** — A powerful text editor for MATE.
 
 	[http://mate-desktop.org](http://mate-desktop.org) || [pluma](https://www.archlinux.org/packages/?name=pluma)

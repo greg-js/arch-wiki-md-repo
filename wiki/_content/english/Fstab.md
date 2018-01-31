@@ -68,10 +68,10 @@ Run `lsblk -f` to list the partitions and prefix the values in the *NAME* column
  `/etc/fstab` 
 ```
 # <device>      <dir> <type> <options>                                                                                            <dump> <fsck>
-/dev/sda1       /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
-/dev/sda2       /     ext4   rw,relatime,data=ordered                                                                     0      1
-/dev/sda3       /home ext4   rw,relatime,data=ordered                                                                     0      2
-/dev/sda4       none  swap   defaults                                                                                             0      0
+/dev/sda1       /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro   0      2
+/dev/sda2       /     ext4   rw,relatime,data=ordered                                                                               0      1
+/dev/sda3       /home ext4   rw,relatime,data=ordered                                                                               0      2
+/dev/sda4       none  swap   defaults                                                                                               0      0
 
 ```
 

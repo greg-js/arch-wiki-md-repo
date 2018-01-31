@@ -444,7 +444,12 @@ $ vncserver -x509key /path/to/key.pem -x509cert /path/to/cerm.pem -SecurityTypes
 
 ```
 
-Issuing x509 certificates is beyond the scope of this guide. However, this is expected to be straightforward after the public launch of [Let's Encrypt](https://en.wikipedia.org/wiki/Let%27s_Encrypt "wikipedia:Let's Encrypt"). Alternatively, one can issue certificates using [OpenSSL](/index.php/OpenSSL "OpenSSL") and manually share the keys between server and client using email for instance.
+Issuing x509 certificates is beyond the scope of this guide. However, this is expected to be straightforward after the public launch of [Let's Encrypt](https://en.wikipedia.org/wiki/Let%27s_Encrypt "wikipedia:Let's Encrypt"). Alternatively, one can issue certificates using [OpenSSL](/index.php/OpenSSL "OpenSSL") and manually share the keys between server and client using email for instance. After generating the certificates you need to copy the public certificate to the client and specify it with the `-X509CA` parameter. An example is given below where vncserver is running on 10.1.10.2:
+
+```
+$ vncviewer 10.1.10.2 -X509CA /path/to/cert.pem
+
+```
 
 ### Toggling Fullscreen
 

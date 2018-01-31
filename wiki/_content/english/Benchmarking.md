@@ -130,7 +130,7 @@ See also:
 
 ### gnome-disks
 
-There is a graphical benchmark called gnome-disks contained in the gnome-disk-utility package that will give min/max/ave reads along with ave access time and a nice graphical display. This method is independent of partition alignment!
+There is a graphical benchmark called gnome-disks contained in the gnome-disk-utility package that will give min/max/ave reads along with average access time and a nice graphical display. This method is independent of partition alignment!
 
 ```
 # gnome-disks

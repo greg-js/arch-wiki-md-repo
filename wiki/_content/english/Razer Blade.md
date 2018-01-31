@@ -2,24 +2,70 @@ Razer Blade is Razer's line of gaming laptops. There is currently a 12" model (R
 
 ## Contents
 
-*   [1 2016 version (Razer Blade & Razer Blade Stealth)](#2016_version_.28Razer_Blade_.26_Razer_Blade_Stealth.29)
-    *   [1.1 Touchpad](#Touchpad)
-    *   [1.2 Touchscreen](#Touchscreen)
-    *   [1.3 Graphics Drivers](#Graphics_Drivers)
-    *   [1.4 Hybrid graphics](#Hybrid_graphics)
-    *   [1.5 Suspend Loop](#Suspend_Loop)
-        *   [1.5.1 GRUB](#GRUB)
-    *   [1.6 Tweaking](#Tweaking)
-    *   [1.7 Audio](#Audio)
-    *   [1.8 Webcam](#Webcam)
-    *   [1.9 Keyboard](#Keyboard)
-*   [2 2014 version](#2014_version)
-    *   [2.1 Problems](#Problems)
-    *   [2.2 Possible trackpad solution](#Possible_trackpad_solution)
-*   [3 2013 version](#2013_version)
-    *   [3.1 What works](#What_works)
-    *   [3.2 Problems](#Problems_2)
-    *   [3.3 Possible trackpad solution](#Possible_trackpad_solution_2)
+*   [1 Late-2017 version Razer Blade Stealth](#Late-2017_version_Razer_Blade_Stealth)
+    *   [1.1 Infinite suspend loop](#Infinite_suspend_loop)
+    *   [1.2 Screen flickering / distorted / noise](#Screen_flickering_.2F_distorted_.2F_noise)
+    *   [1.3 pcieport PCIe Bus Error](#pcieport_PCIe_Bus_Error)
+*   [2 2016 version (Razer Blade & Razer Blade Stealth)](#2016_version_.28Razer_Blade_.26_Razer_Blade_Stealth.29)
+    *   [2.1 Touchpad](#Touchpad)
+    *   [2.2 Touchscreen](#Touchscreen)
+    *   [2.3 Graphics Drivers](#Graphics_Drivers)
+    *   [2.4 Hybrid graphics](#Hybrid_graphics)
+    *   [2.5 Suspend Loop](#Suspend_Loop)
+        *   [2.5.1 GRUB](#GRUB)
+    *   [2.6 Tweaking](#Tweaking)
+    *   [2.7 Audio](#Audio)
+    *   [2.8 Webcam](#Webcam)
+    *   [2.9 Keyboard](#Keyboard)
+*   [3 2014 version](#2014_version)
+    *   [3.1 Problems](#Problems)
+    *   [3.2 Possible trackpad solution](#Possible_trackpad_solution)
+*   [4 2013 version](#2013_version)
+    *   [4.1 What works](#What_works)
+    *   [4.2 Problems](#Problems_2)
+    *   [4.3 Possible trackpad solution](#Possible_trackpad_solution_2)
+
+# Late-2017 version Razer Blade Stealth
+
+## Infinite suspend loop
+
+Add the following kernel param:
+
+```
+button.lid_init_state=open
+
+```
+
+to fix the suspend-resume-loop after closing the lid the first time after boot.
+
+## Screen flickering / distorted / noise
+
+Add kernel param:
+
+```
+i915.edp_vswing=2
+
+```
+
+Other fixes (changing xf86-video-intel settings like DRI and AccelMode don't seem to help)
+
+## pcieport PCIe Bus Error
+
+You may see the following errors in dmesg:
+
+```
+kernel: pcieport 0000:00:1c.0: PCIe Bus Error: severity=Corrected, type=Data Link Layer, id=00e0(Transmitter ID)
+kernel: pcieport 0000:00:1c.0:   device [8086:9d12] error status/mask=00001000/00002000
+kernel: pcieport 0000:00:1c.0:    [12] Replay Timer Timeout
+
+```
+
+To fix this, add kernel param:
+
+```
+pci=nomsi
+
+```
 
 # 2016 version (Razer Blade & Razer Blade Stealth)
 

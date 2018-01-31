@@ -60,17 +60,17 @@ $ fprintd-enroll
 
 ```
 
-or create a new signature for all fingers ([username] must be replaced with your username)
+or create a new signature for all fingers
 
 ```
-$ fprintd-delete [username]
-$ for finger in {left,right}-{thumb,{index,middle,ring,little}-finger}; do fprintd-enroll -f $finger [username]; done
+$ fprintd-delete "$USER"
+$ for finger in {left,right}-{thumb,{index,middle,ring,little}-finger}; do fprintd-enroll -f "$finger-$USER"; done
 
 ```
 
 You will be asked to scan the given finger. Swipe your right index finger **five times**. After that, the signature is created in `/var/lib/fprint/`.
 
-For more information, see [fprintd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fprintd.1).
+For more information, see [fprintd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fprintd.1).
 
 ### Restrict enrolling
 

@@ -292,7 +292,7 @@ As with the first example, this example also assumes you have a mono audio sourc
 
 *envy24control* is loosely based on the UI and functionality provided by the Windows/Mac Delta Control Panel software that ships with M-Audio Delta series hardware. The documentation in the cards' user manual loosely applies; be prepared to spend some time experimenting and getting familiar with your card's capabilities and the software. Some manuals for popular Delta series cards:
 
-*   [Delta 1010LT](http://www.m-audio.com/images/global/manuals/Delta1010LT-Manual.pdf)
+*   [Delta 1010LT](https://web.archive.org/web/20140611073921/http://www.m-audio.com/images/global/manuals/Delta1010LT-Manual.pdf)
 *   [Delta 44](http://www.m-audio.com/images/global/manuals/Delta44_Manual.pdf)
 *   [Delta 66](http://www.m-audio.com/images/global/manuals/070212_Delta66_UG_EN01.pdf)
 *   [Delta Audiophile 2496](http://www.m-audio.com/images/global/manuals/Audiophile2496_Manual.pdf)

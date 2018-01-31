@@ -682,7 +682,7 @@ run_hook() {
 
 `*usbdrive*` is your USB drive `by-id`, and `*harddrive*` is your main hard drive `by-id`.
 
-**Tip:** You could also close `cryptboot`, unless you want it to be easier to mount for updating and signing the kernel (which happens automatically during kernel updates), and regenerating the initramfs with [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). You can close it using `cryptsetup close cryptboot`, but then you would have to reenter the password before you `mount` it after booting into the system.
+**Tip:** You could also close `cryptboot` using `cryptsetup close`, but having it open makes it easier to mount for system updates using [Pacman](/index.php/Pacman "Pacman") and regenerating the initramfs with [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). The `/boot` partition must be mounted for updates that affect the [kernel](/index.php/Kernel "Kernel") or [Initramfs](/index.php/Initramfs "Initramfs"), and the initramfs will be automatically regenerated after these updates.
 
 ```
 # cp /usr/lib/initcpio/install/encrypt /etc/initpcio/install/customencrypthook
