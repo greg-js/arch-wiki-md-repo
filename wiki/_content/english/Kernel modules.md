@@ -1,3 +1,10 @@
+Related articles
+
+*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
+*   [Kernels](/index.php/Kernels "Kernels")
+*   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
+*   [Compile kernel module](/index.php/Compile_kernel_module "Compile kernel module")
+
 [Kernel modules](https://en.wikipedia.org/wiki/Loadable_kernel_module "wikipedia:Loadable kernel module") are pieces of code that can be loaded and unloaded into the kernel upon demand. They extend the functionality of the kernel without the need to reboot the system.
 
 To create a kernel module, you can read [The Linux Kernel Module Programming Guide](http://tldp.org/LDP/lkmpg/2.6/html/index.html). A module can be configured as built-in or loadable. To dynamically load or remove a module, it has to be configured as a loadable module in the kernel configuration (the line related to the module will therefore display the letter `M`).
@@ -79,13 +86,13 @@ Kernel modules can be explicitly loaded during boot and are configured as a stat
 virtio-net
 ```
 
-See [modules-load.d(5)](http://man7.org/linux/man-pages/man5/modules-load.d.5.html) for more details.
+See [modules-load.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modules-load.d.5) for more details.
 
 ## Manual module handling
 
 Kernel modules are handled by tools provided by [kmod](https://www.archlinux.org/packages/?name=kmod) package. You can use these tools manually.
 
-**Note:** If you have upgraded your kernel but have not yet rebooted, *modprobe* will fail with no error message and exit with code 1, because the path `/lib/modules/$(uname -r)/` no longer exists. Check manually if this path exists when *modprobe* failed to determine if this is the case.
+**Note:** If you have upgraded your kernel but have not yet rebooted, *modprobe* will fail with no error message and exit with code 1, because the path `/usr/lib/modules/$(uname -r)/` no longer exists. Check manually if this path exists when *modprobe* failed to determine if this is the case.
 
 To load a module:
 
@@ -94,7 +101,7 @@ To load a module:
 
 ```
 
-To load a module by filename (i.e. one that is not installed in `/lib/modules/$(uname -r)/`):
+To load a module by filename (i.e. one that is not installed in `/usr/lib/modules/$(uname -r)/`):
 
 ```
 # insmod filename [args]

@@ -25,6 +25,8 @@ Notes for the [GPD Pocket](https://www.indiegogo.com/projects/gpd-pocket-7-0-ump
         *   [3.2.6 Power Saving](#Power_Saving)
         *   [3.2.7 PulseAudio](#PulseAudio)
 *   [4 Known Issues](#Known_Issues)
+    *   [4.1 USB-C Power source status](#USB-C_Power_source_status)
+    *   [4.2 systemd-gpt-auto-generator failed to dissect](#systemd-gpt-auto-generator_failed_to_dissect)
 *   [5 See also](#See_also)
 
 ## Specs
@@ -98,7 +100,6 @@ In order to enable backlight control with early KMS change `/etc/mkinitcpio.conf
 ...
 MODULES=(pwm_lpss pwm_lpss_platform i915)
 ...
-
 ```
 
 #### Wayland
@@ -107,11 +108,7 @@ MODULES=(pwm_lpss pwm_lpss_platform i915)
 
 Create `/etc/udev/rules.d/99-goodix-touch.rules` to rotate the touchscreen:
 
- `/etc/udev/rules.d/99-goodix-touch.rules` 
-```
-ACTION=="add|change", KERNEL=="event[0-9]*", ATTRS{name}=="Goodix Capacitive TouchScreen", ENV{LIBINPUT_CALIBRATION_MATRIX}="0 1 0 -1 0 1"
-
-```
+ `/etc/udev/rules.d/99-goodix-touch.rules`  `ACTION=="add` 
 
 ##### Right Click Emulation
 
@@ -168,7 +165,6 @@ Edit `~/.config/monitors.xml` (this file might not be present by default):
     </logicalmonitor>
   </configuration>
 </monitors>
-
 ```
 
 This sets the correct rotation (`<rotation>right</rotation>`) and a scale factor of 2 (`<scale>2</scale>`). For fractional scaling, see [HiDPI#GNOME](/index.php/HiDPI#GNOME "HiDPI").
@@ -207,12 +203,22 @@ xrandr --dpi 168"
 
 ##### Touchscreen Gestures
 
-Install [touchegg](https://aur.archlinux.org/packages/touchegg/) then copy config files from [here](https://github.com/nexus511/gpd-ubuntu-packages/tree/master/packages/gpdpocket-touchegg-config/files) and set permissions:
+Install [touchegg](https://aur.archlinux.org/packages/touchegg/), then edit the following line in `/usr/share/touchegg/touchegg.conf`:
+
+ `/usr/share/touchegg/touchegg.conf` 
+```
+...
+<action type="SCROLL">SPEED=7:INVERTED=true</action>
+...
+```
+
+Create `/etc/X11/xinit/xinitrc.d/01_touchegg`
+
+ `/etc/X11/xinit/xinitrc.d/01_touchegg` 
+
+Set the permissions on `/etc/X11/xinit/xinitrc.d/01_touchegg`
 
 ```
-# cp touchegg.conf /usr/share/touchegg/
-# chmod 0644 /usr/share/touchegg/touchegg.conf
-# cp 01_touchegg /etc/X11/xinit/xinitrc.d/
 # chmod 0755 /etc/X11/xinit/xinitrc.d/01_touchegg
 
 ```
@@ -221,7 +227,8 @@ Install [touchegg](https://aur.archlinux.org/packages/touchegg/) then copy confi
 
 With the latest kernel your fan should work out of the box.
 
-**Note:** If you are having issues with your fan not functioning as intended - try the following:
+{{Note|If you are having issues with your fan not functioning as intended - try the following:
+
 ```
 # modprobe -r gpd-pocket-fan
 # modprobe gpd-pocket-fan temp_limits=40000,40001,40002
@@ -250,10 +257,9 @@ DISK_DEVICES="mmcblk0"
 DISK_IOSCHED="deadline"
 ...
 # disable wifi power saving mode (wifi speed drops MASSIVELY!)
-WIFI_PWN_ON_AC=off
+WIFI_PWR_ON_AC=off
 WIFI_PWR_ON_BAT=off
 ...
-
 ```
 
 #### PulseAudio
@@ -270,15 +276,26 @@ set-sink-port alsa_output.platform-cht-bsw-rt5645.HiFi__hw_chtrt5645_0__sink [Ou
 
 Turn off realtime scheduling by editing `/etc/pulse/daemon.conf`:
 
- `/etc/pulse/daemon.conf` 
-```
-realtime-scheduling = no
-
-```
+ `/etc/pulse/daemon.conf`  `realtime-scheduling = no` 
 
 ## Known Issues
 
-*   USB-C power source status does not work on Kernel 4.14-15\. Hans' kernel has a patch fixing this.
+#### USB-C Power source status
+
+USB-C power source status does not work on Kernel 4.14-15\. Hans' kernel has a patch fixing this.
+
+#### systemd-gpt-auto-generator failed to dissect
+
+Due to [this issue](https://github.com/systemd/systemd/issues/5806), an error message appears at boot:
+
+`systemd-gpt-auto-generator[199]: Failed to dissect: Input/output error`.
+
+To avoid the error message, add this boot parameter to your boot loader.
+
+```
+systemd.gpt_auto=0
+
+```
 
 ## See also
 

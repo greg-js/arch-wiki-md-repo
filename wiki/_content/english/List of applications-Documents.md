@@ -357,7 +357,11 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 ##### Vi text editors
 
-*   **Kakoune** — Vim inspired. Fewer keystrokes. Multiple selections. Orthogonal design.
+*   **Amp** — A text editor written in Rust, that aims to take the core interaction model of Vim, simplify it, and bundle in the essential features required for a modern text editor.
+
+	[https://amp.rs](https://amp.rs) || [amp](https://aur.archlinux.org/packages/amp/)
+
+*   **Kakoune** — Modal editor. Fewer keystrokes. Selection based, multi-cursor editing. Orthogonal design.
 
 	[https://github.com/mawww/kakoune](https://github.com/mawww/kakoune) || [kakoune-git](https://aur.archlinux.org/packages/kakoune-git/)
 

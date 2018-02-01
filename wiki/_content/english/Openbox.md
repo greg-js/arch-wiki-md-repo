@@ -137,7 +137,7 @@ This file is also pre-configured, meaning that it will only be necessary to amen
 
 `~/.config/openbox/menu.xml` defines the type and behaviour of the desktop menu, accessable by right-clicking the background. Although the default provided is a **static menu** (meaning that it will not automatically update when new applications are installed), it is possible to employ the use of **dynamic menus** that will automatically update as well.
 
-The available options are discussed extensively below in the [Menus](#Menus) section.
+The available options are discussed extensively below in the [#Menus](#Menus) section.
 
 ### autostart
 

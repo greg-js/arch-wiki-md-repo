@@ -20,6 +20,10 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"
 
 	[http://gondor.apana.org.au/~herbert/dash/](http://gondor.apana.org.au/~herbert/dash/) || [dash](https://www.archlinux.org/packages/?name=dash)
 
+*   **Elvish** — Elvish is a modern and expressive shell, that can carry internal structured values through pipelines. This feature makes possible avoiding a lot of complex text processing code. It features an expressive programming language, with features like exceptions, namespacing and anonymous functions. It also has a powerful readline which checks the syntax while typing, and syntax highlighting by default.
+
+	[https://elvish.io](https://elvish.io) || [elvish](https://aur.archlinux.org/packages/elvish/)
+
 *   **[fish](/index.php/Fish "Fish")** — Smart and user-friendly command line shell. Fish performs full-color command line syntax highlighting, as well as highlighting and completion for commands and their arguments, file existence, and history. It supports complete-as-you-type for history and commands. Fish is able to parse the system's man pages in order to determine valid arguments for commands, allowing it to highlight and complete commands. Easy last-command revision can be done using Alt-Up. The fish daemon (fishd) facilitates synchronized history across all instances of fish, as well as universal and persistent environment variables.
 
 	[http://fishshell.com/](http://fishshell.com/) || [fish](https://www.archlinux.org/packages/?name=fish)

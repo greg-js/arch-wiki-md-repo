@@ -425,7 +425,7 @@ The following groups are used for system purposes, an assignment to users is onl
 | dbus | used internally by [dbus](https://www.archlinux.org/packages/?name=dbus) |
 | kmem | `/dev/port`, `/dev/mem`, `/dev/kmem` |
 | locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | See [Core utilities#locate](/index.php/Core_utilities#locate "Core utilities"). |
-| lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*`, `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups` | Access to parallel port devices (printers and others) and read-only access to [CUPS](/index.php/CUPS "CUPS") files. If you run a non-printer parallel port device, see [FS#50009](https://bugs.archlinux.org/task/50009) for implied problems. |
+| lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*` | Access to parallel port devices (printers and others). |
 | mail | `/usr/bin/mail` |
 | nobody | Unprivileged group. |
 | proc | `/proc/*pid*/` | A group authorized to learn processes information otherwise prohibited by `hidepid=` mount option of the [proc filesystem](https://www.kernel.org/doc/Documentation/filesystems/proc.txt). The group must be explicitly set with the `gid=` mount option. |

@@ -210,7 +210,7 @@ Scripts are typically installed by putting them in the `~/.config/mpv/scripts/` 
 
 Since JavaScript support is still fairly new, there is currently very little in the way of scripts, but [documentation exists](https://mpv.io/manual/master/#javascript) for anyone interested in making their own.
 
-JavaScript support isn't currently available in the [mpv](https://www.archlinux.org/packages/?name=mpv) build, but is supported by several AUR packages, including [mpv-full](https://aur.archlinux.org/packages/mpv-full/) and [mpv-build-git](https://aur.archlinux.org/packages/mpv-build-git/).
+JavaScript support isn't available in the [mpv](https://www.archlinux.org/packages/?name=mpv) build, but it's supported by some AUR packages e.g. [mpv-full](https://aur.archlinux.org/packages/mpv-full/) and [mpv-full-git](https://aur.archlinux.org/packages/mpv-full-git/).
 
 ### Lua
 
@@ -218,7 +218,7 @@ There are a lot of interesting Lua scripts for mpv. If you would like to make yo
 
 #### mpv-stats
 
-[mpv-stats](https://github.com/Argon-/mpv-stats/) (or simply *stats*) is a Lua script that outputs a lot of live statistics showing how well mpv is currently doing. It is very useful for making sure that your hardware can keep up with your configuration and for comparing different configurations. Since it is very actively maintained you may have to install [mpv-git](https://aur.archlinux.org/packages/mpv-git/) in order to use it.
+[mpv-stats](https://github.com/Argon-/mpv-stats/) (or simply *stats*) is a Lua script that outputs a lot of live statistics showing how well mpv is currently doing. It is very useful for making sure that your hardware can keep up with your configuration and for comparing different configurations. Since version [v0.28.0](https://github.com/mpv-player/mpv/releases/tag/v0.28.0), the script is built into [mpv](https://www.archlinux.org/packages/?name=mpv) and can be toggled on or off with the `i` or `I` keys (by default).
 
 #### mpv-webm
 

@@ -47,14 +47,10 @@ If you intend to "print" into a PDF document, also install the [cups-pdf](https:
 
 Additional steps for printer detection are listed below for various connection interfaces.
 
-**Note:** CUPS helper programs are run using the `lp` group and `daemon` user. This allows the helper programs to access printer devices **and** read config files in `/etc/cups/`, which all belong to the `lp` group. This default may conflict with non-printer parallel port device access:
+**Note:**
 
-*   Adding extra users to the `lp` group will allow those users to read CUPS files, and
-*   CUPS helpers may gain access to any non-printer parallel port devices.
-
-If this is a concern, consider using a [Udev](/index.php/Udev "Udev") rule to assign a different group for any non-printer parallel port device ([FS#50009](https://bugs.archlinux.org/task/50009)). The group and user that CUPS uses can be changed, but the permissions of some files may need to be manually fixed.
-
-**Note:** Starting with [cups](https://www.archlinux.org/packages/?name=cups) 2.2.6-2 (currently in [testing]), the *cups* user and *cups* group [are used instead](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/cups&id=a209bf21797a239c7ddb4614f0266ba1e5238622).
+*   CUPS helper programs are run using the `cups` user and group. This allows the helper programs to access printer devices and read config files in `/etc/cups/`, which are owned by the `cups` group.
+*   Prior to [cups](https://www.archlinux.org/packages/?name=cups) 2.2.6-2, the `lp` group [was used instead](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/cups&id=a209bf21797a239c7ddb4614f0266ba1e5238622). After the upgrade, the files in `/etc/cups` should be owned by the `cups` group and `/etc/cups/cups-files.conf` should have `User 209` and `Group 209`.
 
 ### USB
 

@@ -7,13 +7,43 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Rofi as dmenu replacement](#Rofi_as_dmenu_replacement)
-*   [3 Custom Themes](#Custom_Themes)
-    *   [3.1 Contributed Themes](#Contributed_Themes)
+*   [2 Configuration](#Configuration)
+*   [3 Rofi as dmenu replacement](#Rofi_as_dmenu_replacement)
+*   [4 Custom Themes](#Custom_Themes)
+    *   [4.1 Contributed Themes](#Contributed_Themes)
 
 ## Installation
 
 [Install](/index.php/Install "Install") [rofi](https://www.archlinux.org/packages/?name=rofi) from the [official repositories](/index.php/Official_repositories "Official repositories").
+
+## Configuration
+
+There are currently three methods of setting configuration options:
+
+*   Local configuration. Normally, depending on XDG, in `~/.local/rofi/config`. This uses the Xresources format.
+*   Xresources: A method of storing key values in the Xserver.
+*   Command line options
+
+So
+
+```
+rofi -combi-modi window,drun,ssh -theme solarized -font "hack 10" -show combi
+
+```
+
+can be expressed in a config file like this:
+
+```
+rofi.combi-modi:    window,drun,ssh
+rofi.theme:         solarized
+rofi.font:          hack 10
+rofi.modi:          combi
+
+```
+
+To get a full list of options you can put in Xresources or in your config file run `rofi -dump-Xresources`
+
+**Note:** i3 users be aware that putting commas in i3 config can cause issues. To bind a key to launch rofi, either use a config file or replace the commas with `#` eg `rofi -combi-modi window#drun#ssh`
 
 ## Rofi as dmenu replacement
 
@@ -44,3 +74,17 @@ rofi -show run -modi run -location 1 -width 100 \
 ### Contributed Themes
 
 See the official [rofi-themes](https://github.com/DaveDavenport/rofi-themes) repository for a list of custom themes.
+
+Download one of the .rasi themes and place it in `~/.config/rofi/example.rasi`. Then load up the theme on the command line or in a config file:
+
+```
+ rofi <options> -theme example
+
+```
+
+or in your configuration file
+
+```
+ rofi.theme:    example
+
+```

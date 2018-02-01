@@ -1,10 +1,14 @@
+Related articles
+
+*   [ssh](/index.php/Ssh "Ssh")
+*   [telnet](/index.php/Telnet "Telnet")
+*   [Proxy settings](/index.php/Proxy_settings "Proxy settings")
+
 [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/) is a port of the popular GUI SSH, Telnet, Rlogin and serial port connection client for Windows. It has support for advanced logging and termcap options, as well as a very configurable appearance and the ability to forward ports or create a SOCKS tunnel through an SSH destination. To start, simply run PuTTY, type the hostname of the host you would like to connect to and hit Open.
 
 ## Installation
 
 [Install](/index.php/Install "Install") [putty](https://www.archlinux.org/packages/?name=putty).
-
-For a menu item and icon, install [putty-freedesktop](https://aur.archlinux.org/packages/putty-freedesktop/).
 
 ## Configuration
 

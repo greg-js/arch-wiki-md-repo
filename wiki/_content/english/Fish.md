@@ -86,6 +86,10 @@ Keep your default shell as Bash and simply add the line `exec fish` to the appro
 *   In this setup, use `bash --norc` to manually enter Bash without executing the commands from `~/.bashrc` which would run `exec fish` and drop back into fish.
 *   To color the hostname in the prompt differently in SSH mode, here in bright red, one can use the line `if [ -n "$SSH_TTY" ]; then exec fish -C 'set -g fish_color_host brred'; else exec fish; fi` in the Bash configuration file instead of simply `exec fish`.
 
+**Warning:**
+
+Some entities stop working, e.g. scp to server with this setup [will not work](https://www.complang.tuwien.ac.at/doc/openssh-server/faq.html#2.9).
+
 #### Use terminal emulator options
 
 Another option is to open your terminal emulator with a command line option that executes fish. For most terminals this is the `-e` switch, so for example, to open gnome-terminal using fish, change your shortcut to use:

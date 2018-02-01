@@ -122,6 +122,8 @@ For color support, see [Color output in console#grep](/index.php/Color_output_in
 
 *find* is part of the [findutils](https://www.archlinux.org/packages/?name=findutils) package, which belongs to the [base](https://www.archlinux.org/groups/x86_64/base/) package group.
 
+Tip: [fd](https://github.com/sharkdp/fd) is a modern and user friendly alternative to `find`, that tries to improve performance, and offer more friendly defaults. For example `fd PATTERN` instead of `find -iname '*PATTERN*'`. It features colorized output (similar to `ls`), smart-case search by default, hidden files ignoring, and more. [fd-rs](https://www.archlinux.org/packages/?name=fd-rs)
+
 One would probably expect a *find* command to take as argument a file name and search the filesystem for files matching that name. For a program that does exactly that see [#locate](#locate) below.
 
 Instead, find takes a set of directories and matches each file under them against a set of expressions. This design allows for some very powerful "one-liners" that would not be possible using the "intuitive" design described above. See [UsingFind](http://mywiki.wooledge.org/UsingFind) for usage details.
@@ -220,6 +222,8 @@ Now programs that use the `PAGER` environment variable, like [git](/index.php/Gi
 [ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") lists directory contents.
 
 See `info ls` or [the online manual](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation) for more information.
+
+[exa](https://the.exa.website) is a modern, and more user friendly alternative to `ls` and `tree`, that has more features, such as displaying [Git](/index.php/Git "Git") modifications along with filenames, colouring differently each columnn in `--long` mode, or displaying `--long` mode metadata along with a `tree` view. [exa](https://www.archlinux.org/packages/?name=exa)
 
 ### Long format
 

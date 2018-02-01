@@ -879,9 +879,17 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[https://www.kde.org/applications/internet/kmail/](https://www.kde.org/applications/internet/kmail/) || [kmail](https://www.archlinux.org/packages/?name=kmail)
 
+*   **[Mailpile](https://en.wikipedia.org/wiki/Mailpile "wikipedia:Mailpile")** — A modern, fast web-mail client with user-friendly encryption and privacy features.
+
+	[https://www.mailpile.is/](https://www.mailpile.is/) || [mailpile](https://aur.archlinux.org/packages/mailpile/)
+
 *   **Mailspring** — Fork of Nylas Mail
 
 	[https://getmailspring.com/](https://getmailspring.com/) || [mailspring](https://aur.archlinux.org/packages/mailspring/)
+
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Mail** — An email app for NextCloud
+
+	[https://github.com/nextcloud/mail](https://github.com/nextcloud/mail) || [nextcloud-app-mail](https://www.archlinux.org/packages/?name=nextcloud-app-mail)
 
 *   **Nylas Mail** — A new mail client, built on the modern web and designed to be extended.
 
@@ -902,6 +910,10 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 *   **[SeaMonkey Mail & Newsgroups](https://en.wikipedia.org/wiki/SeaMonkey#Mail "wikipedia:SeaMonkey")** — Email client included in the SeaMonkey suite.
 
 	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
+
+*   **[SquirrelMail](/index.php/Squirrelmail "Squirrelmail")** — Webmail for Nuts!
+
+	[https://squirrelmail.org/](https://squirrelmail.org/) || [squirrelmail](https://aur.archlinux.org/packages/squirrelmail/)
 
 *   **[Sylpheed](https://en.wikipedia.org/wiki/Sylpheed "wikipedia:Sylpheed")** — Lightweight and user-friendly GTK+ email client.
 
