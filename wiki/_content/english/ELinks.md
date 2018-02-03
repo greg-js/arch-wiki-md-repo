@@ -26,17 +26,17 @@ See [elinks(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/elinks.1).
 
 ### Navigation
 
-Navigating the web with a text browser is more or less the same as a graphical browser, just without the 'distractions'. Once you've started *elinks*, you can press **g** and type in the web page you would like to request. Then you can navigate the page using arrow keys to navigate by line, the space bar to navigate by page, or the **j**, **k** keys to navigate by link.
+Navigating the web with a text browser is more or less the same as a graphical browser, just without the 'distractions'. Once you've started *elinks*, you can press `g` and type in the web page you would like to request. Then you can navigate the page using arrow keys to navigate by line, the space bar to navigate by page, or the `j` and `k` keys to navigate by link.
 
 **Tip:** To keep the original terminal session, *elinks* can be run in a separate [w:Virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") (switch with `Alt+arrow`) or with a [w:Terminal multiplexer](https://en.wikipedia.org/wiki/Terminal_multiplexer "w:Terminal multiplexer") such as [tmux](/index.php/Tmux "Tmux").
 
 ## Configuration
 
-ELinks provides to two menus, accessable through ELinks, to customize options and keybinds respectivly.
+ELinks provides to two menus, accessible through ELinks, to customize options and keybinds respectively.
 
-It is recommened to use these tools as opposed to hand-editing the config files (which are placed in ~/.elinks) It is both much easier and safer this way.
+It is recommened to use these tools as opposed to hand-editing the config files (which are placed in `~/.elinks`) It is both much easier and safer this way.
 
-By default, access to the option manager is through the **o** key and access to the keybind-manager is through the **k** key.
+By default, the `o` key opens the option manager and the `k` key the keybind-manager.
 
 ## Tips and tricks
 
@@ -46,11 +46,11 @@ ELinks is capable of using external programs for various tasks,
 
 Defining URL-handlers through the option menu can be a little confusing at first, but once you get it, its fine.
 
-To do this, go into the option manager and navigate to **MIME**. All the submenus have **I**nfo pages to help you.
+To do this, go into the option manager and navigate to *MIME*. All the submenus have **I**nfo pages to help you.
 
 This is one of the few cases where it might be easier just to edit the conf file.
 
-For example, to get ELinks to automatically launch your image-viewer when you click on a jpeg file, you can add the following to your ~/.elinks/elinks.conf file,
+For example, to get ELinks to automatically launch your image-viewer when you click on a jpeg file, you can add the following to your `~/.elinks/elinks.conf` file,
 
  `~/.elinks/elinks.conf` 
 ```
@@ -66,8 +66,8 @@ set mime.handler.image_viewer.unix-xwin.ask = 0
 set mime.handler.image_viewer.unix.block = 1
 set mime.handler.image_viewer.unix-xwin.block = 0 
 
-set mime.handler.image_viewer.unix.program = "ADDYOURTERMINALPICTUREVIEWERHERE %"
-set mime.handler.image_viewer.unix-xwin.program = "ADDYOURXPICTUREVIEWERHERE %"
+set mime.handler.image_viewer.unix.program = "*pictureviewer* %"
+set mime.handler.image_viewer.unix-xwin.program = "*pictureviewer* %"
 
 set mime.type.image.jpg = "image_viewer"
 set mime.type.image.jpeg = "image_viewer"
@@ -99,7 +99,7 @@ set protocol.https.proxy.host = "127.0.0.1:8118"
 
 You can define commands which ELinks will pass the the current URL to.
 
-To do this, go into the options menu, navigate under **Document**, then to **URI-passing**. Then press **A** to add a new command name. Then navigate to the new command name and press **E** to edit. Type in the name of command, enter and save.
+To do this, go into the options menu, navigate under **Document**, then to **URI-passing**. Then press `a` to add a new command name. Then navigate to the new command name and press `e` to edit. Type in the name of command, enter and save.
 
 Assuming the command "tab-external-command" is mapped to **KEY**, whenever you press **KEY**, a menu containing your commands will appear. Select the one you want, and ELinks passes the current URL to that command
 

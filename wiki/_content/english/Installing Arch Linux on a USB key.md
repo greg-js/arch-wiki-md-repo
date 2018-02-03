@@ -130,7 +130,7 @@ For instructions on fine tuning or troubleshooting touchpad issues, see the [Tou
 
 **Note:** The use of proprietary video drivers is **not** recommended for this type of installation.
 
-To support most common GPUs, install [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa), [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), and [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau).
+To support most common GPUs, install [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa), [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu), and [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau).
 
 #### Persistent block device naming
 

@@ -42,8 +42,4 @@ If you updated your certificates due to [https://www.id.ee/?lang=en&id=38241](ht
 
 ### Sweden
 
-[BankID](https://www.bankid.com/en/om-bankid/detta-ar-bankid) is the leading electronic identification in Sweden. The desktop client is proprietary and only available for Windows and OS X. [[2]](https://install.bankid.com/) The underlying application is [Nexus Personal](https://www.nexusgroup.com/software/nexus-personal-desktop/).
-
-There once was an AUR package but it no longer works, since the `source` isn't available anymore. [[3]](https://github.com/felixonmars/aur3-mirror/blob/master/nexuspersonal/PKGBUILD)
-
-The free implementation of BankID [FriBID](https://fribid.se/index.en.html) also no longer works with the current version of BankID.
+[BankID](https://www.bankid.com/en/om-bankid/detta-ar-bankid) is the leading electronic identification in Sweden, see [BankId on Linux](/index.php/BankId_on_Linux "BankId on Linux")

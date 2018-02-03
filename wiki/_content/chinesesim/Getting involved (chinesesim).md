@@ -142,7 +142,7 @@ Arch 拥有一个充满活力的用户社区。如果您的项目想参与到社
 
 	[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
 
-	一个简单的基于 curses 的阅读器，可以阅读 ArchWiki 或 Wikipedia 等 MediaWiki 网站，软件包：[wikicurses](https://aur.archlinux.org/packages/wikicurses/), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
+	一个简单的基于 curses 的阅读器，可以阅读 ArchWiki 或 Wikipedia 等 MediaWiki 网站，软件包：[wikicurses](https://www.archlinux.org/packages/?name=wikicurses), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
 
 ### 其他
 

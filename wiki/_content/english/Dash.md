@@ -32,7 +32,7 @@ You can re-symlink `/bin/sh` to `/bin/dash`, which can improve system performanc
 
 Features of bash that aren't included in Dash ('bashisms') will not work without being explicitly pointed to `/bin/bash`. The following instructions will allow you to find any scripts that may need modification.
 
-Install [checkbashisms](https://aur.archlinux.org/packages/checkbashisms/) from the [AUR](/index.php/AUR "AUR").
+Install [checkbashisms](https://www.archlinux.org/packages/?name=checkbashisms) from the [AUR](/index.php/AUR "AUR").
 
 #### Common places to check
 

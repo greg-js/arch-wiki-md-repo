@@ -49,11 +49,11 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[http://lgames.sourceforge.net/Barrage/](http://lgames.sourceforge.net/Barrage/) || [barrage](https://www.archlinux.org/packages/?name=barrage)
 
-*   **[Blob Wars: Metal Blob Solid](https://en.wikipedia.org/wiki/Blob_Wars "wikipedia:Blob Wars")** — 2D Action-adventure game with various weapons and missions.
+*   **[Blob Wars: Metal Blob Solid](https://en.wikipedia.org/wiki/Blob_Wars "wikipedia:Blob Wars")** — 2D action-adventure game with various weapons and missions.
 
 	[https://sourceforge.net/projects/blobwars/](https://sourceforge.net/projects/blobwars/) || [blobwars](https://www.archlinux.org/packages/?name=blobwars)
 
-*   **[BZFlag](https://en.wikipedia.org/wiki/BZFlag "wikipedia:BZFlag")** — Multiperson, first-person tank shooter.
+*   **[BZFlag](https://en.wikipedia.org/wiki/BZFlag "wikipedia:BZFlag")** — Multiplayer, first-person tank shooter.
 
 	[http://bzflag.org/](http://bzflag.org/) || [bzflag](https://www.archlinux.org/packages/?name=bzflag)
 
@@ -105,7 +105,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[http://www.t3-i.com/pages/project.php?id=paintball_party_2](http://www.t3-i.com/pages/project.php?id=paintball_party_2) || [paintball-party-2](https://aur.archlinux.org/packages/paintball-party-2/)
 
-*   **XBill** — Kill all instances of a virus before it infects all computers with a malware resembling Microsoft® Windows®.
+*   **XBill** — Kill all instances of a virus before it infects all computers with a malware resembling Microsoft Windows.
 
 	[http://www.xbill.org/](http://www.xbill.org/) || [xbill](https://www.archlinux.org/packages/?name=xbill)
 
@@ -135,7 +135,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[http://www.nongnu.org/crack-attack/](http://www.nongnu.org/crack-attack/) || [crack-attack](https://aur.archlinux.org/packages/crack-attack/)
 
-*   **DDNet** — DDraceNetwork, a mod of Teeworlds
+*   **[DDNet](/index.php/DDNet "DDNet")** — DDraceNetwork, a mod of Teeworlds
 
 	[https://ddnet.tw/](https://ddnet.tw/) || [ddnet](https://aur.archlinux.org/packages/ddnet/)
 

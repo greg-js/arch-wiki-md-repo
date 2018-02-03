@@ -57,7 +57,7 @@ Because of its daemon/client architecture, libvirt needs only be installed on th
 
 [Install](/index.php/Install "Install") the [libvirt](https://www.archlinux.org/packages/?name=libvirt) package, as well as at least one hypervisor:
 
-*   The [libvirt KVM/QEMU driver](http://libvirt.org/drvqemu.html) is the primary *libvirt* driver and if [KVM is enabled](/index.php/QEMU#Enabling_KVM "QEMU"), fully virtualized, hardware accelerated guests will be available. See the [QEMU](/index.php/QEMU "QEMU") article for more informations.
+*   The [libvirt KVM/QEMU driver](http://libvirt.org/drvqemu.html) is the primary *libvirt* driver and if [KVM is enabled](/index.php/QEMU#Enabling_KVM "QEMU"), fully virtualized, hardware accelerated guests will be available. See the [QEMU](/index.php/QEMU "QEMU") article for more information.
 
 *   Other [supported hypervisors](http://libvirt.org/drivers.html) include [LXC](/index.php/LXC "LXC"), [VirtualBox](/index.php/VirtualBox "VirtualBox") and [Xen](/index.php/Xen "Xen"). See the respective articles for installation instructions. With respect to `libvirtd` installation note:
     *   The [libvirt LXC driver](http://libvirt.org/drvlxc.html) has no dependency on the [LXC](/index.php/LXC "LXC") userspace tools provided by [lxc](https://www.archlinux.org/packages/?name=lxc), therefore there is no need to install the package if planning on using the driver.

@@ -21,18 +21,11 @@ Installing it will install the `snapd` daemon.
 
 **Tip:** `snapd` installs a script in `/etc/profile.d/` to export the paths of binaries installed with the snapd package and desktop entries. Reboot once to make this change take effect.
 
-Once the package is installed enable socket activation:
-
-```
-# systemctl enable --now snapd.socket
-
-```
-
 ## Configuration
 
-The package ships several systemd unit files, which manage several tasks like automatically refreshing all installed snaps once a new version is released.
-
 To launch the `snapd` daemon when *snap* tries to use it, [start](/index.php/Start "Start") the `snapd.socket` and/or [enable](/index.php/Enable "Enable") it to have it started at boot.
+
+The package ships several systemd unit files, which manage several tasks like automatically refreshing all installed snaps once a new version is released.
 
 To start the timer which periodically refreshes snaps when a new version is pushed to the store use:
 

@@ -272,8 +272,10 @@ $ systemctl hybrid-sleep
 *   `/usr/lib/systemd/system/` ：软件包安装的单元
 *   `/etc/systemd/system/` ：系统管理员安装的单元
 
+**注意:**
+
 *   当 `systemd` 运行在[用户模式](/index.php/Systemd/User#How_it_works "Systemd/User")下时，使用的加载路径是完全不同的。
-*   systemd 单元名仅能包含 ASCII 字符，下划线和点号和有特殊意义的字符('@', '-')。其它字符需要用 C-style "\x2d" 替换。参阅 [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) 和 [systemd-escape(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-escape.1) 。}}
+*   systemd 单元名仅能包含 ASCII 字符，下划线和点号和有特殊意义的字符('@', '-')。其它字符需要用 C-style "\x2d" 替换。参阅 [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) 和 [systemd-escape(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-escape.1) 。
 
 单元文件的语法，可以参考系统已经安装的单元，也可以参考 [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) 中的[EXAMPLES章节](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples)。
 
@@ -307,7 +309,7 @@ $ systemctl hybrid-sleep
 
 ```
 
-**Tip:**
+**提示：**
 
 *   `systemd-delta` 命令用来查看哪些单元文件被覆盖、哪些被修改。系统维护的时候需要及时了解哪些单元已经有了更新。
 *   使用 `systemctl cat *unit*` 可以查看单元的内容和所有相关的片段.
@@ -331,7 +333,7 @@ $ systemctl hybrid-sleep
 
 这将会在记事本中打开 `/etc/systemd/system/*unit*`，如果文件不存在，可以将安装的版本复制到这里，在编辑完成之后，会自动加载新版本。
 
-**Note:** Pacman 不会更新新的单元文件，所以这个方式会增加系统维护的难度，所以推荐使用下面一种方法。
+**注意:** Pacman 不会更新新的单元文件，所以这个方式会增加系统维护的难度，所以推荐使用下面一种方法。
 
 #### 附加代码片段
 
@@ -478,7 +480,7 @@ w /proc/acpi/wakeup - - - - USBE
 
 ## 挂载
 
-因为 systemd 替代了 System V init, 所以也负责按 `/etc/fstab` 定义挂载目录。除此之外，还实现了以 `x-systemd.` 开头的挂载选项. [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab") 包含了使用此扩展的 *automounting* (按需挂载)。完整扩展请参考 [[2]](https://www.freedesktop.org/software/systemd/man/systemd.mount.html#fstab)。
+因为 systemd 替代了 System V init, 所以也负责按 `/etc/fstab` 定义挂载目录。除此之外，还实现了以 `x-systemd.` 开头的挂载选项. [Fstab (简体中文)#自动挂载](/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BD "Fstab (简体中文)") 包含了使用此扩展的 *automounting* (按需挂载)。完整扩展请参考 [[2]](https://www.freedesktop.org/software/systemd/man/systemd.mount.html#fstab)。
 
 ## 日志
 

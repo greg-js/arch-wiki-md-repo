@@ -49,6 +49,7 @@ This is a listing of OS distributions which are [derived](/index.php/DeveloperWi
 *   [Bluestar Linux](https://sourceforge.net/projects/bluestarlinux/)
 *   [Chakra](https://sourceforge.net/projects/chakra/)
 *   [Condres OS](https://sourceforge.net/projects/condres-os-gnu-linux/)
+*   [Ctlos Linux](https://ctlos.github.io/)
 *   [DidJiX](http://easy.open.and.free.fr/didjix/)
 *   [Hyperbola](http://hyperbola.info/)
 *   [KaOS](https://sourceforge.net/projects/kaosx/)
@@ -78,8 +79,8 @@ These distributions are no longer developed, but show some of the history surrou
 
 ### 2017
 
+*   [Arch Linux WSL Edition](https://github.com/alwsl/alwsl)
 *   [Archphile](https://sourceforge.net/projects/archphile/)
-*   [Ctlos Linux](https://sourceforge.net/projects/ctlos/)
 *   [Feliz](https://sourceforge.net/projects/feliz/)
 *   [Nurunner Linux](https://nurunner.mkxt.net/)
 

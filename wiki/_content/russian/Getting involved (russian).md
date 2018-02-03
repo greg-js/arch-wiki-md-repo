@@ -144,7 +144,7 @@
 
 	[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
 
-	Простой интерфейс curses для сайтов MediaWiki, таких как ArchWiki или Wikipedia. Пакеты: [wikicurses](https://aur.archlinux.org/packages/wikicurses/), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
+	Простой интерфейс curses для сайтов MediaWiki, таких как ArchWiki или Wikipedia. Пакеты: [wikicurses](https://www.archlinux.org/packages/?name=wikicurses), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
 
 ### Сервисы
 

@@ -1,9 +1,9 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems"). Дата последней синхронизации: 23 января 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&diff=0&oldid=508349).
+
 Ссылки по теме
 
 *   [CUPS (Русский)](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CUPS (Русский)")
 *   [CUPS/Решение проблем](/index.php/CUPS/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC "CUPS/Решение проблем")
-
-**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems"). Дата последней синхронизации: 12 декабря 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&diff=0&oldid=501760).
 
 Эта статья содержит инструкции по настройки [CUPS](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CUPS (Русский)") для конкретных моделей принтеров. Если ваш принтер не упомянается здесь, или если ни один из перечисленных драйверов не работает, посмотрите на сайте [OpenPrinting](http://www.openprinting.org/printers).
 
@@ -13,7 +13,7 @@
 
 *   [1 Brother](#Brother)
     *   [1.1 Сетевые принтеры](#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.8B)
-    *   [1.2 Пользовательские драйверы](#.D0.9F.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B8.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B)
+    *   [1.2 Специализированные драйверы](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D0.B0.D0.BB.D0.B8.D0.B7.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B)
         *   [1.2.1 Установка вручную из пакетов RPM](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B2.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E_.D0.B8.D0.B7_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2_RPM)
     *   [1.3 Обновление прошивки](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D1.88.D0.B8.D0.B2.D0.BA.D0.B8)
 *   [2 Canon](#Canon)
@@ -25,19 +25,19 @@
         *   [4.1.1 escputil](#escputil)
         *   [4.1.2 mtink](#mtink)
         *   [4.1.3 Stylus-toolbox](#Stylus-toolbox)
-    *   [4.2 Пользовательские драйверы](#.D0.9F.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B8.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B_2)
+    *   [4.2 Специализированные драйверы](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D0.B0.D0.BB.D0.B8.D0.B7.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B_2)
         *   [4.2.1 Avasys](#Avasys)
 *   [5 HP](#HP)
     *   [5.1 Драйвер HPLIP](#.D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_HPLIP)
 *   [6 Konica](#Konica)
 *   [7 Lexmark](#Lexmark)
     *   [7.1 Утилиты](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B_2)
-    *   [7.2 Пользовательские драйверы](#.D0.9F.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B8.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B_3)
+    *   [7.2 Специализированный драйверы](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D0.B0.D0.BB.D0.B8.D0.B7.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B)
 *   [8 Oki](#Oki)
 *   [9 Ricoh](#Ricoh)
 *   [10 Samsung](#Samsung)
 *   [11 Xerox или FujiXerox](#Xerox_.D0.B8.D0.BB.D0.B8_FujiXerox)
-    *   [11.1 Пользовательские драйверы](#.D0.9F.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B8.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B_4)
+    *   [11.1 Специализированные драйверы](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D0.B0.D0.BB.D0.B8.D0.B7.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B_3)
         *   [11.1.1 Phaser 3100MFP](#Phaser_3100MFP)
         *   [11.1.2 Phaser 6000B](#Phaser_6000B)
         *   [11.1.3 Phaser 6125N](#Phaser_6125N)
@@ -74,7 +74,6 @@
 | HL-L2380DW | [brother-hll2380dw](https://aur.archlinux.org/packages/brother-hll2380dw/) |
 | MFC-420CN | [brother-mfc-420cn](https://aur.archlinux.org/packages/brother-mfc-420cn/) |
 | MFC-440CN | [brother-mfc-440cn](https://aur.archlinux.org/packages/brother-mfc-440cn/) |
-| MFC-465CN | [brother-mfc-465cn](https://aur.archlinux.org/packages/brother-mfc-465cn/) |
 | MFC-7360N | [brother-mfc7360n](https://aur.archlinux.org/packages/brother-mfc7360n/) |
 | MFC-9320CW | Установите драйвер Brother. |
 | MFC-9332CDW | [brother-mfc-9332cdw](https://aur.archlinux.org/packages/brother-mfc-9332cdw/) |
@@ -109,9 +108,9 @@
 
 Некоторые принтеры используют протокол сокета. Для этих принтеров используйте `socket://**printer_ip**:9100`. Для http используйте `http://**printer_ip**/POSTSCRIPT_P1`.
 
-### Пользовательские драйверы
+### Специализированные драйверы
 
-Brother предоставляет пользовательские драйверы на своем веб-сайте либо в исходном архиве, так и в формате rpm или deb. [Сборка драйверов принтера Brother](/index.php/Packaging_Brother_printer_drivers "Packaging Brother printer drivers") охватывает создание [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)") из существующих пакетов RPM.
+Brother предоставляет специализированные драйверы на своем веб-сайте либо в исходном архиве, так и в формате rpm или deb. [Сборка драйверов принтера Brother](/index.php/Packaging_Brother_printer_drivers "Packaging Brother printer drivers") охватывает создание [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)") из существующих пакетов RPM.
 
 **Примечание:** Исходные пакеты могут быть лучшей альтернативой пакетам rpm, если они содержат все необходимые файлы.
 
@@ -199,7 +198,7 @@ ftp $PRINTER_IP
 Существует много возможных драйверов для принтеров Canon. [Многие принтеры Canon](http://gimp-print.sourceforge.net/p_Supported_Printers.php) поддерживаются [gutenprint](https://www.archlinux.org/packages/?name=gutenprint). Некоторые из принтеров Canon LBP, iR и MF используют драйвер, поддерживающий протоколы UFR II/UFR II LT/LIPSLX, который доступен как [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) или [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/). Другие используют драйверы [#CARPS](#CARPS) или [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT").
 
 | Принтер | Драйвер/фильтр | Примечание |
-| iP4300 | [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) | Или используйте драйвер Canon [cnijfilter-ip4300](https://aur.archlinux.org/packages/cnijfilter-ip4300/) или драйвер [TurboPrint](http://www.turboprint.info/). |
+| iP4300 | [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) | Или используйте драйвер [TurboPrint](http://www.turboprint.info/). |
 | LBP810 | [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") |
 | LBP1120 |
 | LBP1210 |
@@ -279,12 +278,15 @@ E515dw
 | ET-4750 |
 | EW-M571T |
 | EW-M670FT |
-| L4150 |
+| L380 | [epson-inkjet-printer-201601w](https://aur.archlinux.org/packages/epson-inkjet-printer-201601w/) |
+| L382 |
+| L4150 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | L4160 |
 | L6160 |
 | L6170 |
 | L6190 |
-| PM-520 |
+| LP-S5000 | Этот принтер требует [специализированный драйвер от Avasys](#Avasys). |
+| PM-520 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | PX-M5080F |
 | PX-M5081F |
 | PX-M680F |
@@ -293,7 +295,8 @@ E515dw
 | PX-M781F |
 | PX-S5080 |
 | PX-S7070X |
-| WF-3720 |
+| TX125 | [epson-inkjet-printer-n10-nx127](https://aur.archlinux.org/packages/epson-inkjet-printer-n10-nx127/) |
+| WF-3720 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | WF-4720 |
 | WF-4730 |
 | WF-4740 |
@@ -301,11 +304,10 @@ E515dw
 | WF-7710 |
 | WF-7720 |
 | WF-C869R |
-| XP-15000 |
+| XP-446 | [epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) |
+| XP-15000 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | XP-6000 |
 | XP-8500 |
-| TX125 | [epson-inkjet-printer-n10-nx127](https://aur.archlinux.org/packages/epson-inkjet-printer-n10-nx127/) |
-| LP-S5000 | Этот принтер требует [пользовательский драйвер от Avasys](#Avasys). |
 | Принтер | Драйвер/фильтр | Примечание |
 
 ### Утилиты
@@ -322,7 +324,7 @@ escputil является частью пакета [gutenprint](https://www.arc
 
 Это графический интерфейс с использованием драйверов escputil и cups. Он поддерживает почти все USB-принтеры Epson и отображает количество чернил, может очищать и выравнивать печатающие головки и печатать тестовые образцы.
 
-### Пользовательские драйверы
+### Специализированные драйверы
 
 #### Avasys
 
@@ -365,6 +367,8 @@ $ make
 
 ###### Драйвер HPLIP
 
+**Примечание:** Начиная с hplip v3.17.11 hpijs больше не доступен. Если у вас есть принтеры, использующие hpijs, они не смогут работать. Вы должны перенастроить их и выбрать новый драйвер hpcups вместо hpijs.
+
 [hplip](https://www.archlinux.org/packages/?name=hplip) предоставляет драйверы для принтеров HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых принтеров LaserJet, а также предоставляет простой в использовании инструмент настройки.
 
 Чтобы запустить средство настройки с графическим интерфейсом пользователя:
@@ -404,7 +408,7 @@ $ hp-systray
 
 Файлы PPD находятся в `/usr/share/ppd/HP/`.
 
-Для принтеров, которым требуется проприетарный плагин HP (таким как, Laserjet Pro P1102w или 1020), установите пакет [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)").
+Если ваш принтер [перечислен как требующий бинарный плагин](https://developers.hp.com/hp-linux-imaging-and-printing/binary_plugin.html), установите пакет [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)").
 
 **Примечание:**
 
@@ -431,7 +435,7 @@ $ hp-systray
 
 Lexmark предоставляет утилиту с именем lexijtools с драйверами.
 
-### Пользовательские драйверы
+### Специализированный драйверы
 
 Lexmark предоставляет драйверы Linux для всего своего оборудования. Требуются следующие пакеты:
 
@@ -493,6 +497,10 @@ package() {
 *   [Список поддерживаемых черно-белых моделей](https://www.openprinting.org/driver/pxlmono-Ricoh)
 *   [Список поддерживаемых цветных моделей](https://www.openprinting.org/driver/pxlcolor-Ricoh)
 
+| Принтер | Драйвер/фильтр | Примечание |
+| 213W | *Generic PCL Laser* | Получите код WPS, удерживая кнопку Wi-Fi в течение 2 секунд, а затем нажмите кнопку выключения/включения. |
+| Принтер | Драйвер/фильтр | Примечание |
+
 ## Samsung
 
 Для принтеров, требующим драйверы *cnijfilter*, найдите правильный драйвер [в AUR](https://aur.archlinux.org/packages.php?K=cnijfilter)
@@ -506,14 +514,13 @@ package() {
 ## Xerox или FujiXerox
 
 | Принтер | Драйвер/фильтр | Примечание |
-| DocuPrint 203A | [hplip](https://www.archlinux.org/packages/?name=hplip) | Используйте драйвер **DocuPrint P8e(hpijs)** или драйвер Brother на веб-сайте FujiXerox (смотрите [#Brother](#Brother) для получения дополнительной информации о том, как установить пользовательские драйверы Brother). |
+| DocuPrint 203A | [hplip](https://www.archlinux.org/packages/?name=hplip) | Используйте драйвер **DocuPrint P8e(hpijs)** или драйвер Brother на веб-сайте FujiXerox (смотрите [#Brother](#Brother) для получения дополнительной информации о том, как установить специализированные драйверы Brother). |
 | Phaser 3100MFP | Установите драйвер Xerox | Подробнее смотрите [#Phaser 3100MFP](#Phaser_3100MFP). |
 | Phaser 6115MFP | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") |
 | Phaser 6121MFP | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") |
-|  ? | [fxlinuxprint](https://aur.archlinux.org/packages/fxlinuxprint/) |
 | Принтер | Драйвер/фильтр | Примечание |
 
-### Пользовательские драйверы
+### Специализированные драйверы
 
 #### Phaser 3100MFP
 
@@ -556,7 +563,7 @@ package() {
 
 FujiXerox не поддерживает Linux на этой модели. Есть старый [rpm-пакет](http://onlinesupport.fujixerox.com/tiles/common/hc_drivers_download.jsp?system=%27Linux%27&shortdesc=null&xcrealpath=http://www.fujixeroxprinters.com/downloads/uploaded/dpc525a_linux_.0.0.tar_81c2.zip), но, похоже, он не работает.
 
-Известно, что слегка адаптированный [пользовательский драйвер](https://rickvanderzwet.nl/trac/personal/wiki/XeroxPhaser6125N) работает из коробки.
+Известно, что слегка адаптированный [специализированный драйвер](https://rickvanderzwet.nl/trac/personal/wiki/XeroxPhaser6125N) работает из коробки.
 
 Чтобы установить tarball, запустите
 

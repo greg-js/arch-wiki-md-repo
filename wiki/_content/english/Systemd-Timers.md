@@ -102,12 +102,21 @@ When more specific dates and times are required, `OnCalendar` events uses the fo
 
 An asterisk may be used to specify any value and commas may be used to list possible values. Two values separated by `..` indicate a contiguous range.
 
-In the below example the service is run the first four days of each month at 12:00 PM, but *only* if that day is a Monday or a Tuesday. More information is available in [systemd.time(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.time.7).
+In the below example the service is run the first four days of each month at 12:00 PM, but *only* if that day is a Monday or a Tuesday.
 
 ```
 OnCalendar=Mon,Tue *-*-01..04 12:00:00
 
 ```
+
+To run a service on the first Saturday of every month, use:
+
+```
+ OnCalendar=Sat *-*-1..7 18:00:00
+
+```
+
+More information is available in [systemd.time(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.time.7).
 
 **Tip:**
 

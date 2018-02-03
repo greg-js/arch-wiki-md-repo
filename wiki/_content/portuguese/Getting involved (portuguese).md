@@ -153,7 +153,7 @@ Nós oferecemos diferentes métodos para visitar o ArchWiki.
 
 	[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
 
-	Uma interface simples em *curses* para os sites do MediaWiki tal como ArchWiki ou Wikipédia. Pacotes: [wikicurses](https://aur.archlinux.org/packages/wikicurses/), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
+	Uma interface simples em *curses* para os sites do MediaWiki tal como ArchWiki ou Wikipédia. Pacotes: [wikicurses](https://www.archlinux.org/packages/?name=wikicurses), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
 
 ### Outros
 

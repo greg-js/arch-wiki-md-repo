@@ -125,12 +125,7 @@ AUR：[libqq-svn](https://aur.archlinux.org/packages/libqq-svn/)、[libqq-pidgin
 
 **警告:** QQ for Linux 已经无法使用。请勿尝试此方案。
 
-腾讯在 2008 年底发布了 QQ for Linux 1.0 Preview 3，功能如下：
-
-1.  支持和好友传送文件
-2.  支持和好友/群发送图片
-3.  支持群里截屏并传送截图
-4.  聊天设置中，已经可以设定按回车键发送
+腾讯在 2008 年底发布了 QQ for Linux 1.0 Preview 3
 
 ## Wine 模拟
 
@@ -152,7 +147,7 @@ AUR：[libqq-svn](https://aur.archlinux.org/packages/libqq-svn/)、[libqq-pidgin
 
 ### Wine QQ 轻聊版
 
-**注意:** 此方案使用QQ轻聊版6.7，更高版本在当前wine版本需要[额外的调整](http://blog.lilydjwg.me/2015/10/26/run-tencent-qq-lite-with-wine.186640.html)才能安装
+**注意:** 此方案使用QQ轻聊版6.7，更高版本在当前wine版本需要[额外的调整](https://blog.lilydjwg.me/2015/10/26/run-tencent-qq-lite-with-wine.186640.html)才能安装
 
 安装[winetricks](https://www.archlinux.org/packages/?name=winetricks)、[wine](https://www.archlinux.org/packages/?name=wine)。创建 qqlight.verb 如下，
 
@@ -221,6 +216,8 @@ $ wineconsole .wine/drive_c/run-qqlight.bat
 
 #### 安装前的准备
 
+**提示：** 如果使用crossover内建的TIM可忽略该准备步骤。
+
 可参考[Wine (简体中文)](/index.php/Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wine (简体中文)")
 
 *   安装[wine](https://www.archlinux.org/packages/?name=wine)、[wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) 和 [wine-mono](https://www.archlinux.org/packages/?name=wine-mono)
@@ -239,32 +236,30 @@ $ winetricks riched20
 
 ```
 
-*   字体替换
+*   中文字体显示
 
-解决中文乱码问题。新建一个reg文件，例如名为wine-fonts.reg
+可以提供windows字体[Font configuration#Applications without fontconfig support](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration")或使用linux的字体，方法如下：
+
+**警告:** 经测试，使用文泉驿和思源黑体，均出现部分位置文字内容无法显示的情况（但影响很小）
+
+**提示：** 默认显示dpi为96,可能使文字显示毛躁不清，可在winecfg的“显示”选项卡中将dpi适当调高（例如缩放125%则为120，缩放150%则为144）。
+
+新建一个reg文件，例如名为wine-fonts.reg，写入如下内容：
 
 ```
-$ gedit wine-fonts.reg
-
-```
-
-写入如下内容：
-
-```
- REGEDIT4
-
- [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink]
- "Lucida Sans Unicode"="wqy-microhei.ttc"
- "Microsoft Sans Serif"="wqy-microhei.ttc"
- "Microsoft YaHei"="SourceHanSansCN-Medium.otf"
- "MS Sans Serif"="wqy-microhei.ttc"
- "Tahoma"="wqy-microhei.ttc" 
- "Tahoma Bold"="wqy-microhei.ttc"
- "SimSun"="wqy-microhei.ttc"
- "Arial"="wqy-microhei.ttc"
- "Arial Black"="wqy-microhei.ttc"
- "宋体"="SourceHanSansCN-Medium.otf"
- "新細明體"="SourceHanSansCN-Medium.otf"
+REGEDIT4
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink]
+"Lucida Sans Unicode"="wqy-microhei.ttc"
+"Microsoft Sans Serif"="wqy-microhei.ttc"
+"Microsoft YaHei"="wqy-microhei.ttc"
+"MS Sans Serif"="wqy-microhei.ttc"
+"Tahoma"="wqy-microhei.ttc" 
+"Tahoma Bold"="wqy-microhei.ttc"
+"SimSun"="wqy-microhei.ttc"
+"Arial"="wqy-microhei.ttc"
+"Arial Black"="wqy-microhei.ttc"
+"宋体"="wqy-microhei.ttc"
+"新細明體"="wqy-microhei.ttc"
 
 ```
 
@@ -347,7 +342,7 @@ Wine QQ/TM 在平铺式窗口管理器下可能不太听话。以下是一些 [A
 
 *   将所有 TM 的窗口设置为浮动
 *   清除不需要的窗口边框、避免菜单弹出时焦点移动到菜单上
-*   在使用标签式会话窗口时，增加[使用 Alt+数字来切换标签页](http://blog.lilydjwg.me/2013/11/15/switch-tabs-with-alt-num-in-wined-tm-exe-in-awesome.41729.html)的快捷键（需要安装 [xdotool](/index.php?title=Xdotool&action=edit&redlink=1 "Xdotool (page does not exist)")）
+*   在使用标签式会话窗口时，增加[使用 Alt+数字来切换标签页](https://blog.lilydjwg.me/2013/11/15/switch-tabs-with-alt-num-in-wined-tm-exe-in-awesome.41729.html)的快捷键（需要安装 [xdotool](/index.php?title=Xdotool&action=edit&redlink=1 "Xdotool (page does not exist)")）
 *   自动关闭弹出的新闻窗口
 
 ```

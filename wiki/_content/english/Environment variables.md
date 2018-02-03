@@ -84,7 +84,7 @@ To update the variable, re-login or *source* the file: `$ source ~/.bash_profile
 
 #### Graphical applications
 
-To set environment variables for GUI applications, you can put your variables in [xinitrc](/index.php/Xinitrc "Xinitrc") (or [xprofile](/index.php/Xprofile "Xprofile") when using a [display manager](/index.php/Display_manager "Display manager")), for example:
+Environment variables for GUI applications can be set in [xinitrc](/index.php/Xinitrc "Xinitrc"), or in [xprofile](/index.php/Xprofile "Xprofile") when using a [display manager](/index.php/Display_manager "Display manager"), for example:
 
  `~/.xinitrc` 
 ```
@@ -177,44 +177,15 @@ http_proxy="http://192.168.0.1:80"
 
 ### Using pam_env
 
-The [PAM](/index.php/PAM "PAM") module [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) loads the variables to be set in the environment from the following files: `/etc/security/pam_env.conf`, `/etc/environment`, `~/.pam_environment`.
+The [PAM](/index.php/PAM "PAM") module [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) loads the variables to be set in the environment from the following files: `/etc/security/pam_env.conf`, `/etc/environment` and `~/.pam_environment`.
 
-*   `/etc/environment` must consist of simple `VARIABLE=VALUE` pairs on separate lines.
-*   `/etc/security/pam_env.conf` and `~/.pam_environment` share the same following format: `VARIABLE [DEFAULT=[value]] [OVERRIDE=[value]]` The format allows to expand already defined variables in the values of other variables using `${VARIABLE}`. `@{HOME}` and `@{SHELL}` are special variables that expand to what is defined in `/etc/passwd`. See [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5) for more information.
+*   `/etc/environment` must consist of simple `*VARIABLE*=*value*` pairs on separate lines, for example: `EDITOR=NANO` 
 
-Here is an example of basic [user directories](/index.php/XDG_Base_Directory_support#User_directories "XDG Base Directory support") configuration:
+*   `/etc/security/pam_env.conf` and `~/.pam_environment` share the same following format: `VARIABLE [DEFAULT=*value*] [OVERRIDE=*value*]` `@{HOME}` and `@{SHELL}` are special variables that expand to what is defined in `/etc/passwd`. The following example illustrates how to expand the `HOME` environment variable into another variable: `XDG_CONFIG_HOME   DEFAULT=@{HOME}/.config` 
+    **Note:** The variables `${HOME}` and `${SHELL}` are not linked to the `HOME` and `SHELL` environment variables, they are not set by default.
+    The format also allows to expand already defined variables in the values of other variables using `${*VARIABLE*}` , like this: `GNUPGHOME        DEFAULT=${XDG_CONFIG_HOME}/gnupg` `*VARIABLE*=*value*` pairs are also allowed, but variable expansion is not supported in those pairs. See [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5) for more information.
 
- `~/.pam_environment` 
-```
-# Setting variables that reuse your $HOME
-XDG_CACHE_HOME   DEFAULT=@{HOME}/.cache
-XDG_CONFIG_HOME  DEFAULT=@{HOME}/.config
-XDG_DATA_HOME    DEFAULT=@{HOME}/.local/share
-
-# You can reuse XDG_RUNTIME_DIR for runtime files
-ICEAUTHORITY     DEFAULT=${XDG_RUNTIME_DIR}/ICEauthority
-
-# You can reuse variables you already defined
-GNUPGHOME        DEFAULT=${XDG_CONFIG_HOME}/gnupg
-
-# You can define variables as VARIABLE=VALUE pair
-EDITOR=nano
-
-# Same as above
-EDITOR           DEFAULT=nano
-
-# Incorrect: you can't reuse other variables in VARIABLE=VALUE pair
-#GNUPGHOME=${XDG_CONFIG_HOME}/gnupg
-
-# Incorrect: missing {}
-#GNUPGHOME        DEFAULT=$XDG_CONFIG_HOME/gnupg
-
-# Incorrect: the ${VARIABLE} syntax is only allowed for explicitly 
-# defined variables, not for the default @{HOME} and @{SHELL} variables.
-#GNUPGHOME        DEFAULT=${HOME}/gnupg
-```
-
-**Note:** This file is read before everything, even `~/.profile`, `~/.bash_profile` and `~/.zshenv`.
+**Note:** These files are read before other files, in particular before `~/.profile`, `~/.bash_profile` and `~/.zshenv`.
 
 ## See also
 

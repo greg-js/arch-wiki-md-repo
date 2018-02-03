@@ -1,6 +1,6 @@
 **Note:** RetroArch is not affiliated with [Arch Linux](/index.php/Arch_Linux "Arch Linux").
 
-[RetroArch](http://www.retroarch.com/) is a modular, command-line driven, multi-system emulator that is designed to be fast, lightweight, and portable. Some of its features can be found on few other emulators, such as real-time rewinding and game-aware shading based on the libretro API.
+[RetroArch](http://www.retroarch.com/) is the reference implementation of the libretro API. It is a modular front-end for video game system emulators, game engines, video games, media players and other applications that offers several uncommon technical features such as multi-pass shader support, real-time rewinding and video recording (using [FFmpeg](/index.php/FFmpeg "FFmpeg")), it also features a gamepad-driven UI on top of a full-featured command-line interface.
 
 ## Contents
 
@@ -10,31 +10,30 @@
 *   [4 Online updater](#Online_updater)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 No cores found](#No_cores_found)
-    *   [5.2 No option to update or download cores in the menu](#No_option_to_update_or_download_cores_in_the_menu)
-    *   [5.3 Input devices do not operate](#Input_devices_do_not_operate)
-    *   [5.4 Poor video performance](#Poor_video_performance)
+    *   [5.2 Input devices do not operate](#Input_devices_do_not_operate)
+    *   [5.3 Poor video performance](#Poor_video_performance)
 *   [6 See also](#See_also)
 
 ## Installation
 
-1\. Install the [retroarch](https://www.archlinux.org/packages/?name=retroarch) package or alternatively [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) for the development version.
+Install the [retroarch](https://www.archlinux.org/packages/?name=retroarch) package or alternatively [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) for the development version.
 
-2\. Install [retroarch-assets-xmb](https://www.archlinux.org/packages/?name=retroarch-assets-xmb) package to Show **XMB menu assets** , Properly.
+**Tip:** Install [retroarch-assets-xmb](https://www.archlinux.org/packages/?name=retroarch-assets-xmb) to allow the default menu driver (XMB) to work properly. Additionally, install [retroarch-autoconfig-udev](https://www.archlinux.org/packages/?name=retroarch-autoconfig-udev) to enable RetroArch to automatically map buttons to joypads when they are plugged.
 
 ## Usage
 
-RetroArch uses separate libraries, called "emulator cores" or "emulator implementations", available from both [Community](https://www.archlinux.org/packages/?q=libretro) and the [libretro GitHub repository](https://github.com/libretro).
+RetroArch relies on separate libraries, called "cores", available from the [Community](https://www.archlinux.org/packages/?q=libretro) repository, the [AUR](https://aur.archlinux.org/packages/?O=0&K=libretro) and the [libretro Buildbot](https://buildbot.libretro.com/), for most of its functionalities.
 
 Each libretro core package will install a library to `/usr/lib/libretro/`. The syntax to choose one when executing *retroarch* is:
 
 ```
-$ retroarch --libretro /usr/lib/libretro/libretro-*core*.so *path/to/rom*
+$ retroarch --libretro /usr/lib/libretro/*core*-libretro.so */path/to/rom*
 
 ```
 
-A default emulation core can be defined in the configuration, obviating the need to specify it on every run.
+A default core can be defined in the configuration, obviating the need to specify it on every run.
 
- `~/.config/retroarch/retroarch.cfg`  `libretro_path = "/usr/lib/libretro/libretro-*core*.so"` 
+ `~/.config/retroarch/retroarch.cfg`  `libretro_path = "/usr/lib/libretro/*core*-libretro.so"` 
 
 ## Configuration
 
@@ -47,37 +46,41 @@ $ cp /etc/retroarch.cfg ~/.config/retroarch/retroarch.cfg
 
 ```
 
-It supports split configuration files using the `#include "foo.cfg"` directive within the main configuration file, `retroarch.cfg`. This can be overridden using the `--appendconfig */path/to/config*` parameter and is beneficial if different keybinds, video configurations or audio settings are required for the various implementations.
+It supports split configuration files using the `#include "foo.cfg"` directive within the main configuration file, `retroarch.cfg`. This can be overridden using the `--appendconfig */path/to/config*` parameter and is beneficial if different keybinds, video configurations or audio settings are required for the various cores.
 
 **Tip:** RetroArch is capable of loading [bsnes xml filters](https://gitorious.org/bsnes/xml-shaders) and [cg shaders](https://github.com/libretro/common-shaders) that can be defined in `retroarch.cfg` as `video_bsnes_shader` and `video_cg_shader` respectively.
 
-**Note:** [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) requires [nvidia-cg-toolkit](https://www.archlinux.org/packages/?name=nvidia-cg-toolkit) in order to use the *cg shaders*.
+**Note:**
 
-**Warning:** When using [ALSA](/index.php/ALSA "ALSA") it is necessary for the `audio_out_rate` to be equal to the system's default output rate, usually `48000`.
+*   [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) requires [nvidia-cg-toolkit](https://www.archlinux.org/packages/?name=nvidia-cg-toolkit) in order to use the *cg shaders*.
+*   When using [ALSA](/index.php/ALSA "ALSA") it is necessary for the `audio_out_rate` to be equal to the system's default output rate, usually `48000`.
 
 ## Online updater
 
-Recent versions of RetroArch have introduced a built-in menu for updating core files and various assets from the [RetroArch Buildbot](https://buildbot.libretro.com/). It can be accessed from the main menu at *Online Updater*.
+Recent versions of RetroArch have introduced a built-in menu for updating and downloading core files and various assets from the [libretro Buildbot](https://buildbot.libretro.com/). To enable it, open `~/.config/retroarch/retroarch.cfg` and set `menu_show_core_updater` to `"true"`.
 
- `Online Updater` 
+ `~/.config/retroarch/retroarch.cfg`  `menu_show_core_updater = "true"`  `Online Updater` 
 ```
 Core Updater
+Thumbnails Updater
+Content Downloader
 Update Core Info Files
 Update Assets
-Update Autoconfig Profiles
+Update Joypad Profiles
 Update Cheats
 Update Databases
 Update Overlays
 Update GLSL Shaders
+Update Slang Shaders
 ```
 
-These cores and assets are kept up to date and can be pulled from the updater at any time.
+These cores and assets are kept up to date and can be pulled from the updater any time there's an upstream change.
 
 ## Troubleshooting
 
 ### No cores found
 
-By default RetroArch will attempt to find cores in `/usr/lib/libretro/`. Cores downloaded using the built-in Online Updater will fail to save unless retroarch is run as root (not recommended, as it may overwrite cores installed by [pacman](/index.php/Pacman "Pacman")), since the user does not have permission to modify this directory. To use cores from the Online Updater, edit these lines:
+By default RetroArch will attempt to find cores in `/usr/lib/libretro/`. Cores downloaded using the built-in *Online Updater* will fail to save unless RetroArch is run as root (not recommended, as it may overwrite cores installed by [pacman](/index.php/Pacman "Pacman") and also because it poses a security risk.[[1]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5)) because users do not normally have permission to modify this directory. To use a user-owned directory instead, edit these lines:
 
  `~/.config/retroarch/retroarch.cfg` 
 ```
@@ -85,9 +88,7 @@ libretro_directory = "~/.config/retroarch/cores"
 libretro_info_path = "~/.config/retroarch/cores/info"
 ```
 
-### No option to update or download cores in the menu
-
-Open `~/.config/retroarch/retroarch.cfg` or `/etc/retroarch.cfg` and make sure that `menu_show_core_updater` is set to `true`. This should then allow you to update cores in the *Online Updater* menu and download cores in the *Load Core* menu.
+**Note:** Cores obtained from the [Community](https://www.archlinux.org/packages/?q=libretro) repository or the [AUR](https://aur.archlinux.org/packages/?O=0&K=libretro) will be installed to `/usr/lib/libretro/` regardless of this setting, because of this, it's recommended to stick to one method of obtaining cores, use the default directory when obtaining cores from the Community repository or the AUR or a user-owned directory (such as `~/.config/retroarch/cores`) when using the *Online Updater*.
 
 ### Input devices do not operate
 

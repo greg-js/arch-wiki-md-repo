@@ -154,7 +154,15 @@ See [#Autostart](#Autostart) for a way to automatically start *setxkbmap* in LXD
 
 LXDE does not come with a screen locker of its own; see [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") for alternatives.
 
-Shipped script `/usr/bin/lxlock`, called by default from the ScreenLock icon, searches for these applications in this order: [light-locker](https://www.archlinux.org/packages/?name=light-locker), [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock), [xlockmore](https://www.archlinux.org/packages/?name=xlockmore), [i3lock](https://www.archlinux.org/packages/?name=i3lock) and [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils).
+Shipped script `/usr/bin/lxlock`, called by default from the ScreenLock icon, searches for these applications in this order:
+
+1.  [light-locker](https://www.archlinux.org/packages/?name=light-locker)
+2.  [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver)
+3.  [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver)
+4.  [slock](https://www.archlinux.org/packages/?name=slock)
+5.  [xlockmore](https://www.archlinux.org/packages/?name=xlockmore)
+6.  [i3lock](https://www.archlinux.org/packages/?name=i3lock)
+7.  [slimlock](https://aur.archlinux.org/packages/slimlock/).
 
 `/etc/xdg/lxsession/LXDE/autostart` from [lxde-common](https://www.archlinux.org/packages/?name=lxde-common) lists [XScreenSaver](/index.php/XScreenSaver "XScreenSaver"), which will be launched automatically. See [#Autostart](#Autostart) when using a different locker. See [DPMS](/index.php/DPMS "DPMS") on how to control the screen saver without external programs.
 

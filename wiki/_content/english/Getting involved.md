@@ -155,7 +155,7 @@ They offer you some different methods to visit ArchWiki.
 
 	[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
 
-	A simple curses interface for MediaWiki sites such as ArchWiki or Wikipedia. Packages: [wikicurses](https://aur.archlinux.org/packages/wikicurses/), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
+	A simple curses interface for MediaWiki sites such as ArchWiki or Wikipedia. Packages: [wikicurses](https://www.archlinux.org/packages/?name=wikicurses), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
 
 ### Other
 

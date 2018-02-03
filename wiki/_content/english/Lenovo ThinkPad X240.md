@@ -11,6 +11,7 @@ The Lenovo X240 is the latest version of the Lenovo Ultrabook Series and also is
     *   [2.5 Fingerprint Reader](#Fingerprint_Reader)
 *   [3 Caveats](#Caveats)
     *   [3.1 Common hardware problems](#Common_hardware_problems)
+        *   [3.1.1 NFC Reader](#NFC_Reader)
     *   [3.2 Grey noise with analog audio when audio is not muted](#Grey_noise_with_analog_audio_when_audio_is_not_muted)
 *   [4 More later (ToDo)](#More_later_.28ToDo.29)
 *   [5 See also](#See_also)
@@ -33,6 +34,7 @@ The Lenovo X240 is the latest version of the Lenovo Ultrabook Series and also is
 | Fingerprint Scanner | Yes | Yes | Yes |
 | Bluetooth | Yes | Yes | Yes |
 | Camera | Yes | Yes | Yes |
+| NFC | No | - | - |
 
 ### System Configuration
 
@@ -113,6 +115,10 @@ The fingerprint reader is a Validity Sensors model (138a:0017) also used on the 
 #### Common hardware problems
 
 [This page](https://github.com/leoluk/thinkpad-stuff/wiki/Haswell-ThinkPad-problems) provides a list and links regarding common issues with X240 hardware.
+
+##### NFC Reader
+
+Some of the x240 devices have a NFC reader integrated in the touchpad. However it seems that this type of NFC reader is not support for Linux. This [post](http://linux-thinkpad.10952.n7.nabble.com/X240-NFC-tp21082p21086.html) seems to confirm this.
 
 #### Grey noise with analog audio when audio is not muted
 

@@ -28,7 +28,7 @@ On the managed machines (nodes), where you want to automate deployment or config
 
 ### Inventory
 
-According to the default settings in `/etc/ansible/ansible.cfg`, one can define its infrastructure in `/etc/ansible/hosts`. For instance, the following inventory defines a tiny cluster with three nodes:
+According to the default settings in `/etc/ansible/ansible.cfg`, one can define its infrastructure in `/etc/ansible/hosts`. For instance, the following inventory defines a cluster with three nodes organized into two groups:
 
  `/etc/ansible/hosts` 
 ```

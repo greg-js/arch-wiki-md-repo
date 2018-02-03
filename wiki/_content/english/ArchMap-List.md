@@ -185,6 +185,7 @@ You can use the following website to get your device's coordinates along with a 
 55.9533,-3.1889 "samsara" # Edinburgh, United Kingdom
 59.9174,10.7624 "postlogic" # Oslo, Norway
 51.462,-2.6094 "al" # Bristol, England, UK
+-32.084024, 115.851957 "cooleb09" # Perth, Australia
 47.17,27.5699 "epo" # Iasi, Romania
 49.1848,-0.3578 "kozaki" # Caen, France
 48.5691,10.4299 "matsche" # Lauingen, Germany

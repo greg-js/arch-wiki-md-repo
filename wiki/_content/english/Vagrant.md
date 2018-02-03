@@ -45,7 +45,7 @@ $ vagrant plugin install vagrant-vbguest vagrant-share
 
 ### vagrant-libvirt
 
-This plugin adds a libvirt provider to Vagrant. The gcc and make packages must be installed before this plugin can be installed, and [libvirt](/index.php/Libvirt "Libvirt") and related packages must be installed and configured before using the libvirt provider.
+This plugin adds a libvirt provider to Vagrant. The gcc and make packages must be installed before this plugin can be installed, and [libvirt](/index.php/Libvirt "Libvirt") and related packages (e.g. [QEMU](/index.php/QEMU "QEMU")) must be installed and configured before using the libvirt provider.
 
 As of November 2017 (Vagrant version 2.0.1-1) the workarounds described below are not needed. Install the plugin normally with
 

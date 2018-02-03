@@ -2,9 +2,9 @@
 
 ## Installation
 
-The [lout package](https://www.archlinux.org/packages/community/x86_64/lout) could be [Installed](/index.php/Install "Install") from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [lout](https://www.archlinux.org/packages/?name=lout) package.
 
-In order to enable cyrillic printout, fonts need to be installed separately (e.g [lout-dejavu](https://aur.archlinux.org/packages/lout-dejavu-git) from [AUR](/index.php/AUR "AUR"))
+In order to enable cyrillic printout, fonts need to be installed separately (e.g [lout-dejavu](https://aur.archlinux.org/packages/lout-dejavu/)).
 
 ## Using
 

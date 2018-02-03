@@ -217,6 +217,10 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[https://wiki.gnome.org/Apps/LaTeXila](https://wiki.gnome.org/Apps/LaTeXila) || [latexila](https://www.archlinux.org/packages/?name=latexila)
 
+*   **[Lout](/index.php/Lout "Lout")** — A lightware document formatting system. Reads a high-level description of a document similar in style to LaTeX and produces a PostScript.
+
+	[http://savannah.nongnu.org/projects/lout](http://savannah.nongnu.org/projects/lout) || [lout](https://www.archlinux.org/packages/?name=lout)
+
 *   **[LyX](https://en.wikipedia.org/wiki/LyX "wikipedia:LyX")** — Document processor that encourages an approach to writing based on the structure of your documents (WYSIWYM) and not simply their appearance (WYSIWYG).
 
 	[http://www.lyx.org/](http://www.lyx.org/) || [lyx](https://www.archlinux.org/packages/?name=lyx)

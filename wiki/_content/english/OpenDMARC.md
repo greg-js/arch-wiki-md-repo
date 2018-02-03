@@ -1,4 +1,4 @@
-Domain-based Message Authentication, Reporting and Conformance (DMARC) is a policy for mail transfer, which is already supported by some common mail providers. It depends on [SPF](/index.php/SPF "SPF") and [DKIM](/index.php/OpenDKIM "OpenDKIM"). DMARC provides and a policy for outgoing mail and checks incoming mails for compliance with that policy. The policy is published via a DNS TXT record. It is explained in [#DMARC Record](#DMARC_Record). Validation is done in a daemon. For more info see [RFC 7489](https://datatracker.ietf.org/doc/rfc7489/).
+Domain-based Message Authentication, Reporting and Conformance (DMARC) is a policy for mail transfer, which is already supported by some common mail providers. It depends on [SPF](/index.php/SPF "SPF") and [DKIM](/index.php/OpenDKIM "OpenDKIM"). DMARC provides a policy for outgoing mail and checks incoming mails for compliance with that policy. The policy is published via a DNS TXT record. It is explained in [#DMARC Record](#DMARC_Record). Validation is done in a daemon. For more info see [RFC 7489](https://datatracker.ietf.org/doc/rfc7489/).
 
 ## Contents
 
@@ -49,7 +49,7 @@ Group=postfix
 
 ```
 
-**Note:** If you want to run your DMARC-Validator on a different machine, you should change the Socket field to `inet:9999@10.0.0.4` with a sample host listening at at port 9999 for an optional client 10.0.0.4 (can be omitted, listens on 0.0.0.0 then).
+**Note:** If you want to run your DMARC-Validator on a different machine, you should change the Socket field to `inet:9999@10.0.0.4` with a sample host listening at port 9999 for an optional client 10.0.0.4 (can be omitted, listens on 0.0.0.0 then).
 
 *   [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `opendmarc.service`. Read [Daemons](/index.php/Daemons "Daemons") for more information.
 

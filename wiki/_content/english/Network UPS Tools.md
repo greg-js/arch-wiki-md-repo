@@ -3,16 +3,17 @@ This document describes how to install the [Network UPS Tools (NUT)](http://netw
 ## Contents
 
 *   [1 Installation of Network UPS Tools](#Installation_of_Network_UPS_Tools)
-    *   [1.1 Configuration](#Configuration)
-        *   [1.1.1 Driver configuration](#Driver_configuration)
-        *   [1.1.2 upsd configuration](#upsd_configuration)
-        *   [1.1.3 upsmon configuration](#upsmon_configuration)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Driver configuration](#Driver_configuration)
+        *   [2.1.1 Can't claim USB device error](#Can.27t_claim_USB_device_error)
+    *   [2.2 upsd configuration](#upsd_configuration)
+    *   [2.3 upsmon configuration](#upsmon_configuration)
 
 ## Installation of Network UPS Tools
 
-You can install network-ups-tools ([network-ups-tools](https://aur.archlinux.org/packages/network-ups-tools/)) from [AUR](/index.php/AUR "AUR").
+You can [install](/index.php/Install "Install") network-ups-tools with the [network-ups-tools](https://aur.archlinux.org/packages/network-ups-tools/) package.
 
-### Configuration
+## Configuration
 
 NUT has 3 daemons associated with it:
 
@@ -22,11 +23,11 @@ NUT has 3 daemons associated with it:
 
 The idea is that if you have multiple systems connected to the UPS, one can communicate the status of the UPS over the network and the others can monitor that status by running their own upsmon services. NUT has [extensive documentation on the configuration](http://networkupstools.org/docs/user-manual.chunked/ar01s06.html#_configuring_and_using) however this is going to walk through a simple setup of a USB UPS and the associated server and monitor all in one system (common desktop configuration).
 
-#### Driver configuration
+### Driver configuration
 
 The configuration here will depend on the type of UPS you have. Consult the previously mentioned Hardware Compatibility List to find what driver will likely work for your UPS. You can run the tool [nut-scanner(8)](http://networkupstools.org/docs/man/nut-scanner.html) which will detect NUT-compatible devices attached to your system.
 
-For many UPS connected by USB, use the [usbhid-ups(8)](http://networkupstools.org/docs/man/usbhid-ups.html) driver.
+For many UPS connected by USB, use the [usbhid-ups(8)](http://networkupstools.org/docs/man/usbhid-ups.html) driver. For UPS with serial port, use `port=/dev/ttySX`, where X is the number of serial port (Example:/dev/ttyS1). For UPS with USB port, use `port=auto`.
 
  `/etc/ups/ups.conf` 
 ```
@@ -39,7 +40,41 @@ For many UPS connected by USB, use the [usbhid-ups(8)](http://networkupstools.or
 
 You can name the UPS device whatever you like. [ups.conf(5)](http://networkupstools.org/docs/man/ups.conf.html)
 
-#### upsd configuration
+Start the driver as root with `upsdrvctl start`. If there's no errors, you should see a message like this one for the driver `usbhid-ups`:
+
+```
+Network UPS Tools - Generic HID driver 0.34 (2.4.1)
+USB communication driver 0.31
+Using subdriver: MGE HID 1.12
+Detected EATON - Ellipse MAX 1100 [ADKK22008]
+
+```
+
+If the driver doesn’t start cleanly, make sure you have picked the right one for your hardware. You might need to try other drivers by changing the "driver=" value in ups.conf.
+
+#### Can't claim USB device error
+
+If you receive a message error like this above:
+
+```
+Can't claim USB device [XXXX:YYYY]: could not detach kernel driver from
+interface 0: Operation not permitted
+Driver failed to start (exit status=1)
+```
+
+It's a problem with device access permissions. You can set the permissions using a udev-rule.
+
+ `/etc/udev/rules.d/10-must-pa-2012.rules` 
+```
+SYSFS{idVendor}=='XXXX', SYSFS{idProduct}=='YYYY', MODE='0666'
+
+```
+
+Where `idVendor` and `idProduct` is the numbers of the error output: `[XXXX:YYYY]`
+
+Reboot the system and try to start the driver again.
+
+### upsd configuration
 
 By default upsd listens only on localhost and this is fine for our purpose. Though it is not necessary for following this guide, you can configure upsd beyond the defaults by editing `/etc/ups/upsd.conf`. See [upsd.conf(5)](http://networkupstools.org/docs/man/upsd.conf.html).
 
@@ -101,7 +136,7 @@ ups.vendorid: 0764
 
 ```
 
-#### upsmon configuration
+### upsmon configuration
 
 The last step is to configure upsmon to listen to upsd and take action on events.
 

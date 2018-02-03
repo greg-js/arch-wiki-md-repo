@@ -44,6 +44,7 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 xorg freezes at startup](#xorg_freezes_at_startup)
     *   [8.2 PCIe Bus Error in system logs](#PCIe_Bus_Error_in_system_logs)
+    *   [8.3 lspci causes CPU lockups](#lspci_causes_CPU_lockups)
 *   [9 Notes](#Notes)
 *   [10 External links](#External_links)
 
@@ -111,7 +112,7 @@ $ [    4.256651] bbswitch: disabling discrete graphics
 
 ### Standard power saving configuration
 
-It is a good idea to install a tool to tune common settings to save power. See [Power management#Userspace tools](/index.php/Power_management#Userspace_tools "Power management"). One caveat on versions of TLP prior to 1.0 is that enabling PCIE runtime power management results in [bbswitch not working](https://github.com/Bumblebee-Project/bbswitch/issues/140). A workaround is to disable PCIE runtime power management for the Nvidia GPU. For example for [TLP](/index.php/TLP "TLP"), edit `/etc/default/tlp` to have `RUNTIME_PM_BLACKLIST="01:00.0"`. This is done by default in later versions of tlp, such as [tlp-git](https://aur.archlinux.org/packages/tlp-git/). Alternatively, PCIE runtime power management can be disabled for all devices using the kernel parameter `pcie_port_pm=off`.
+It is a good idea to install a tool to tune common settings to save power. See [Power management#Userspace tools](/index.php/Power_management#Userspace_tools "Power management").
 
 ### Disable/autosuspend of touchscreen
 
@@ -213,6 +214,10 @@ Nov 25 22:36:08 xxxxx kernel: pcieport 0000:00:1c.0:    [12] Replay Timer Timeou
 ```
 
 This can be corrected with the kernel boot option `pci=nommconf` (see [here](https://unix.stackexchange.com/questions/327730/what-causes-this-pcieport-00000003-0-pcie-bus-error-aer-bad-tlp) for explanation).
+
+### `lspci` causes CPU lockups
+
+The NVidia/nouveau driver may cause any runs of `lspci` to cause at least one CPU core to lock up, as well as seeming to completely lock up PCIe access, for instance to the NVMe SSD. The kernel parameter `nouveau.modeset=0` fixes this. [[2]](https://cnly.github.io/2017/08/25/fix-system-hangs-xps-15-9560.html)
 
 ## Notes
 

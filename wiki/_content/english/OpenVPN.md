@@ -603,8 +603,8 @@ Be sure to set up a script to restart OpenVPN if it goes down if you do not want
  ufw allow out on enp3s0 to 192.168.1.0/24
 
  # Openvpn (adjust port accordingly to your configuration)
- ufw allow out on enp3s0 to any port 1194
  ufw allow in on enp3s0 from any port 1194
+ ufw allow out on enp3s0 to any port 1194
 
 ```
 

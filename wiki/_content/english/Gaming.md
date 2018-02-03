@@ -64,7 +64,7 @@ Just because games are available for Linux doesn't mean that they are native, th
 
 *   **[Desura](https://en.wikipedia.org/wiki/Desura "wikipedia:Desura")** — Digital distribution platform focusing on indie games.
 
-	[http://www.desura.com/](http://www.desura.com/) || [desura](https://aur.archlinux.org/packages/desura/)
+	[http://www.desura.com/](http://www.desura.com/)  || [desura](https://aur.archlinux.org/packages/desura/)
 
 *   **[Steam](/index.php/Steam "Steam")** — Digital distribution and communications platform developed by Valve.
 

@@ -167,6 +167,8 @@ If the fonts look somehow smeared, import the following text file into the Wine 
 
 ```
 
+**Note:** For high resolution display, you can adjust dpi values in winecfg , such as zoom 150% , will dpi is set to 144.
+
 See also [Font configuration#Applications without fontconfig support](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration").
 
 ### Desktop launcher menus

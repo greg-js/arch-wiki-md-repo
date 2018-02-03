@@ -193,6 +193,8 @@ x86_64平台下使用[Alsa](/index.php/Alsa_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%8
 
 ```
 
+**提示：** 高分辨率显示器，可在winecfg的显示选项卡中适当dpi的值，例如缩放150%，将dpi设置为144。
+
 参阅 [Font configuration#Applications without fontconfig support](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration").
 
 ### 启动器和菜单
@@ -596,24 +598,33 @@ Source: [Fedora Mailing List](http://www.spinics.net/linux/fedora/fedora-users/m
 中文乱码解决，新建一个reg文件（例如 zh.reg）添加如下内容：
 
 ```
- REGEDIT4
-
- [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink]
- "Lucida Sans Unicode"="wqy-microhei.ttc"
- "Microsoft Sans Serif"="wqy-microhei.ttc"
- "Microsoft YaHei"="SourceHanSansCN-Medium.otf"
- "MS Sans Serif"="wqy-microhei.ttc"
- "Tahoma"="wqy-microhei.ttc" 
- "Tahoma Bold"="wqy-microhei.ttc"
- "SimSun"="wqy-microhei.ttc"
- "Arial"="wqy-microhei.ttc"
- "Arial Black"="wqy-microhei.ttc"
- "宋体"="SourceHanSansCN-Medium.otf"
- "新細明體"="SourceHanSansCN-Medium.otf"
+REGEDIT4
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink]
+"Lucida Sans Unicode"="wqy-microhei.ttc"
+"Microsoft Sans Serif"="wqy-microhei.ttc"
+"Microsoft YaHei"="wqy-microhei.ttc"
+"微软雅黑"="wqy-microhei.ttc"
+"MS Sans Serif"="wqy-microhei.ttc"
+"Tahoma"="wqy-microhei.ttc" 
+"Tahoma Bold"="wqy-microhei.ttc"
+"SimSun"="wqy-microhei.ttc"
+"Arial"="wqy-microhei.ttc"
+"Arial Black"="wqy-microhei.ttc"
+"宋体"="wqy-microhei.ttc"
+"新細明體"="wqy-microhei.ttc"
 
 ```
 
-保存文件后后运行：
+**提示：** 这里以文泉驿微米黑为例，如果使用其他字体，请到/usr/share/fonts目录下找到该字体的完整名称，例如使用adobe source hans 中号字体，将上面的wqy-microhei.ttc改为SourceHanSansCN-Medium.otf。
+
+然后打开注册表编辑器:
+
+```
+ wine regedit
+
+```
+
+在注册表编辑器界面选择“注册表”--“导入”，导入该wine-fonts.reg文件即可。 或者直接运行:
 
 ```
  $regedit zh.reg

@@ -89,6 +89,14 @@ You will need a SSL certificate for all encrypted mail communications (SMTPS/IMA
 
 ```
 
+Alternatively, create a free trusted certificate using [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt"). The private key will be in `/etc/letsencrypt/live/*yourdomain*/privkey.pem`, the certificate in `/etc/letsencrypt/live/*yourdomain*/fullchain.pem`. Either change the configuration accordingly, or symlink the keys to `/etc/ssl/private`:
+
+```
+# ln -s /etc/letsencrypt/live/*yourdomain*/privkey.pem /etc/ssl/private/vmail.key
+# ln -s /etc/letsencrypt/live/*yourdomain*/fullchain.pem /etc/ssl/private/vmail.crt
+
+```
+
 ### Postfix
 
 Before you copy & paste the configuration below, check if `relay_domains` has already been already set. If you leave more than one active, you will receive warnings during runtime.
@@ -387,7 +395,7 @@ Enable the password plugin by adding this line to
 
  `/etc/webapps/roundcubemail/config/config.inc.php` 
 ```
-$rcmail_config['plugins'] = array('password');
+$config['plugins'] = array('password');
 
 ```
 
@@ -397,10 +405,10 @@ Configure the password plugin and make sure you alter the settings accordingly:
 ```
 $config['password_driver'] = 'sql';
 $config['password_db_dsn'] = 'mysql://<postfix_database_user>:<password>@localhost/<postfix_database_name>';
-## for dovecot salted passwords only
-# $config['password_dovecotpw'] = 'doveadm pw';
-# $config['password_dovecotpw_method'] = 'SHA512-CRYPT';
-# $config['password_dovecotpw_with_method'] = true;
+// for dovecot salted passwords only
+// $config['password_dovecotpw'] = 'doveadm pw';
+// $config['password_dovecotpw_method'] = 'SHA512-CRYPT';
+// $config['password_dovecotpw_with_method'] = true;
 $config['password_query'] = 'UPDATE mailbox SET password=%c WHERE username=%u';
 
 ```

@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Unity3D](/index.php/Unity3D "Unity3D"). Дата последней синхронизации: 13 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Unity3D&diff=0&oldid=481838).
+**Состояние перевода:** На этой странице представлен перевод статьи [Unity3D](/index.php/Unity3D "Unity3D"). Дата последней синхронизации: 20 января 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Unity3D&diff=0&oldid=507947).
 
 Из [Unity - игровой движок, инструменты и многоплатформенность](https://unity3d.com/unity):
 
@@ -21,12 +21,13 @@
     *   [3.1 Unity падает при первом запуске до/при входа(е) в систему](#Unity_.D0.BF.D0.B0.D0.B4.D0.B0.D0.B5.D1.82_.D0.BF.D1.80.D0.B8_.D0.BF.D0.B5.D1.80.D0.B2.D0.BE.D0.BC_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5_.D0.B4.D0.BE.2F.D0.BF.D1.80.D0.B8_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0.28.D0.B5.29_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
     *   [3.2 Unity падает при попытке загрузить проект](#Unity_.D0.BF.D0.B0.D0.B4.D0.B0.D0.B5.D1.82_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BF.D1.8B.D1.82.D0.BA.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.B8.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82)
     *   [3.3 Unity падает, если отсутствует ~/.config/user-dirs.dirs](#Unity_.D0.BF.D0.B0.D0.B4.D0.B0.D0.B5.D1.82.2C_.D0.B5.D1.81.D0.BB.D0.B8_.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D0.B5.D1.82_.7E.2F.config.2Fuser-dirs.dirs)
+    *   [3.4 Незначительные зависания во время тестирования игры (NVIDIA)](#.D0.9D.D0.B5.D0.B7.D0.BD.D0.B0.D1.87.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B2.D0.BE_.D0.B2.D1.80.D0.B5.D0.BC.D1.8F_.D1.82.D0.B5.D1.81.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B8.D0.B3.D1.80.D1.8B_.28NVIDIA.29)
 
 ## Установка
 
-**Важно:** Пакет Unity - **огромный**. Для успешной установки вам понадобится около 8 ГБ свободного места для сборки пакета и еще 3.5 ГБ для его установки.
+**Важно:** Пакет Unity - **огромный**. Для успешной установки вам понадобится около 17 ГБ свободного места для сборки пакета и еще 8 ГБ для его установки.
 
-Просто установите [AUR](/index.php/AUR "AUR") пакет [unity-editor](https://aur.archlinux.org/packages/unity-editor/) или [unity-editor-beta](https://aur.archlinux.org/packages/unity-editor-beta/) для бета-версии.
+Просто установите [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") пакет [unity-editor](https://aur.archlinux.org/packages/unity-editor/) или [unity-editor-beta](https://aur.archlinux.org/packages/unity-editor-beta/) для бета-версии.
 
 ## Android Remote
 
@@ -38,7 +39,7 @@
 
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [android-udev](https://www.archlinux.org/packages/?name=android-udev), который обеспечит правильные правила [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)") для вашего устройства.
 
-Установите пакет [android-sdk](https://aur.archlinux.org/packages/android-sdk/) и один из пакетов из группы [java-environment](https://www.archlinux.org/packages/?name=java-environment), предпочтительно JDK7, хотя сообщается, что он должен работать с OpenJDK тоже.
+Установите пакет [android-sdk](https://aur.archlinux.org/packages/android-sdk/).
 
 #### Настройка редактора
 
@@ -88,3 +89,9 @@
 ### Unity падает, если отсутствует ~/.config/user-dirs.dirs
 
 Посмотрите, как сгенерировать файлы xdg здесь: [Каталоги пользователей XDG](/index.php/XDG_user_directories "XDG user directories")
+
+### Незначительные зависания во время тестирования игры (NVIDIA)
+
+Вертикальная синхронизация кажется не работает корректно с видеокартами / драйверами NVIDIA. Решение: В приложении [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) перейдите в "OpenGL Settings" и отключите "Sync to VBlank".
+
+Такое поведение происходит/обнаруживается, когда используется "transform.Rotate" в комбинации с "Input.GetKey".

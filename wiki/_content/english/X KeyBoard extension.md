@@ -184,7 +184,7 @@ There is only one possible action for each (keysym, state) pair.
 
 Start with whatever default configuration your server has. Whenever possible, make the changes gradually and test them.
 
-The .xkb file produced by xkbcomp is a simple text file. C++ style comments, // till the end of line, are allowed. Section names, as in xkb_keycodes "name-here", are irrelevant at this point and can be omited.
+The .xkb file produced by xkbcomp is a simple text file. C++ style comments, // till the end of line, are allowed. Section names, as in xkb_keycodes "name-here", are irrelevant at this point and can be omitted.
 
 ### xkb_keycodes
 
@@ -220,7 +220,7 @@ level_name lines are irrelevant and can be ignored.
 
 ### xkb_compatibility
 
-Action definitions (`interpret`) and keyboard leds (`indicator`) among other things. It is ok to remove stuff you do not have or do not use, like keypad actions, mouse control or extra modifiers.
+Action definitions (`interpret`) and keyboard LEDs (`indicator`) among other things. You can remove stuff you do not have or do not use, like keypad actions, mouse control or extra modifiers.
 
 Note that `key+AnyOfOrNone(all)` is equivalent to just `key`, but `key` is much easier to read.
 
@@ -287,7 +287,7 @@ A completely irrelevant section describing physical keyboard layout. Can be dele
 
 Check your existing layout first, as it likely contains standard definition for many common keys.
 
-Thoughout the text, "xkb_keycodes { text }" means "text" should be added to xkb_keycodes section. Whenever it's clear from context, section names are omited.
+Thoughout the text, "xkb_keycodes { text }" means "text" should be added to xkb_keycodes section. Whenever it's clear from context, section names are omitted.
 
 ### Simple key assignment
 
@@ -307,7 +307,7 @@ Enabling additional (aka multimedia) keys:
 
 ```
 
-Escape on CapsLock, for vimers mostly:
+Escape on CapsLock, for Vim users mostly:
 
 ```
    key.type = "ONE_LEVEL";
@@ -448,7 +448,7 @@ Typing more with the same keys.
 
 #### Compose key
 
-Easy to set up and extremely useful for entering common unicode characters.
+Easy to set up and extremely useful for entering common Unicode characters.
 
 ```
    key <RALT> { [ Multi_key ] };
@@ -513,13 +513,13 @@ Now, the keys themselves, vi-style cursors in this case:
 
 ```
 
-As you may find out using xev, this produces Mod5+Left instead of just Left. But that is ok as most appications ignore state bits they do not use. For an alternative solution, check Overlays below.
+As you may find out using xev, this produces Mod5+Left instead of just Left. But that is ok as most applications ignore state bits they do not use. For an alternative solution, check Overlays below.
 
 ### Meta, Super and Hyper
 
 #### Real modifiers
 
-Some applications (notably emacs) allow meaningful use of higher state bits. It is usually assumed there are modifier keys called Meta, Super and Hyper on the keyboard beside standard Shift, Ctrl and Alt, which control these bits.
+Some applications (notably Emacs) allow meaningful use of higher state bits. It is usually assumed there are modifier keys called Meta, Super and Hyper on the keyboard beside standard Shift, Ctrl and Alt, which control these bits.
 
 From XKB point of view this means setting Mod2, Mod3, Mod4 and Mod5 modifier bits. Because all you need is the bits themselves, there is no need to edit types like in the Level3 example above.
 
@@ -555,7 +555,7 @@ At least one application (openbox) is known to track KeyPress/KeyRelease events 
 
 is enough and you can omit `interpret` and `modifier_map` lines.
 
-Speaking of openbox, note it actually allows both methods: "S-h" tracks Super_[LR] events while "Mod3-h" checks relevant state bit.
+Speaking of Openbox, note it actually allows both methods: "S-h" tracks Super_[LR] events while "Mod3-h" checks relevant state bit.
 
 ## Preset configuration
 
@@ -624,7 +624,7 @@ Generally it is not recommended to use xmodmap, except maybe for the simplest ta
 
 ## Indicators
 
-As in "keyboard leds". Indicator names are used to match the to the physical LEDs in xkb_keycodes section. Otherwise, they are irrelevant. Indicators not matched to any LED are called "virtual"; xkbvleds (package [xorg-xkbutils](https://www.archlinux.org/packages/?name=xorg-xkbutils)) can be used to check their state. Example:
+As in "keyboard LEDs". Indicator names are used to match the to the physical LEDs in xkb_keycodes section. Otherwise, they are irrelevant. Indicators not matched to any LED are called "virtual"; xkbvleds (package [xorg-xkbutils](https://www.archlinux.org/packages/?name=xorg-xkbutils)) can be used to check their state. Example:
 
 ```
    xkb_keycodes {
@@ -781,7 +781,7 @@ Note `xkbcomp -i11` will not work and will not give a clear error message either
 
 ## Debugging XKB
 
-When keys do not work as expected, the first thing to check is XKB internal state: modifiers, effective group and control bits. All three can be used to drive leds; use xkbvleds to check them
+When keys do not work as expected, the first thing to check is XKB internal state: modifiers, effective group and control bits. All three can be used to drive LEDs; use xkbvleds to check them
 
 ```
    indicator "LED1" { modifiers = Lock; };
@@ -874,7 +874,7 @@ Handling XKB virtual modifiers on the client side requires some non-trivial serv
 
 However, it is possible for an application to obtain virtual modifiers associated with a key press. Gtk, for instance, has [gdk-keymap-translate-keyboard-state()](http://www.gtk.org/api/2.6/gdk/gdk-Keyboard-Handling.html#gdk-keymap-translate-keyboard-state) which may or may not be used in particular application.
 
-Some others may implement something that looks like virtual modifier support, but actually is not. Check openbox example in section 5.3.3.2\. Regarding Alt handling, check section 8.3.
+Some others may implement something that looks like virtual modifier support, but actually is not. Check Openbox example in section 5.3.3.2\. Regarding Alt handling, check section 8.3.
 
 ## XKB control bits
 

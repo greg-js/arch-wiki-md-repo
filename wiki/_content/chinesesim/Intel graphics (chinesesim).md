@@ -1,5 +1,3 @@
-[[[Category:Graphics (简体中文)]]
-
 相关文章
 
 *   [Intel GMA3600](/index.php/Intel_GMA3600 "Intel GMA3600")

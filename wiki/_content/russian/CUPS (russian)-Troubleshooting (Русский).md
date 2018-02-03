@@ -1,9 +1,9 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting"). Дата последней синхронизации: 25 января 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Troubleshooting&diff=0&oldid=508445).
+
 Ссылки по теме
 
 *   [CUPS (Русский)](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CUPS (Русский)")
 *   [CUPS/Принтероспецифичные проблемы](/index.php/CUPS/%D0%9F%D1%80%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D1%84%D0%B8%D1%87%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D1%8B "CUPS/Принтероспецифичные проблемы")
-
-**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting"). Дата последней синхронизации: 9 января 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Troubleshooting&diff=0&oldid=506747).
 
 В этой статье рассматриваются все неспецифические (то есть не связанные с каким-либо одним принтером) проблемы CUPS и драйверов принтеров (но не проблемы, связанные с совместным использованием принтеров), включая методы определения точной природы проблемы и решения выявленной проблемы.
 
@@ -16,10 +16,11 @@
     *   [2.3 Для всех заданий - "Принтер не отвечает"](#.D0.94.D0.BB.D1.8F_.D0.B2.D1.81.D0.B5.D1.85_.D0.B7.D0.B0.D0.B4.D0.B0.D0.BD.D0.B8.D0.B9_-_.22.D0.9F.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80_.D0.BD.D0.B5_.D0.BE.D1.82.D0.B2.D0.B5.D1.87.D0.B0.D0.B5.D1.82.22)
     *   [2.4 Версия PPD не совместима с gutenprint](#.D0.92.D0.B5.D1.80.D1.81.D0.B8.D1.8F_PPD_.D0.BD.D0.B5_.D1.81.D0.BE.D0.B2.D0.BC.D0.B5.D1.81.D1.82.D0.B8.D0.BC.D0.B0_.D1.81_gutenprint)
     *   [2.5 Принтеры отсутствуют в диалоговом окне печати для приложений GTK3](#.D0.9F.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.8B_.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.82_.D0.B2_.D0.B4.D0.B8.D0.B0.D0.BB.D0.BE.D0.B3.D0.BE.D0.B2.D0.BE.D0.BC_.D0.BE.D0.BA.D0.BD.D0.B5_.D0.BF.D0.B5.D1.87.D0.B0.D1.82.D0.B8_.D0.B4.D0.BB.D1.8F_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_GTK3)
-*   [3 Проблемы, связанные с сетью](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B.2C_.D1.81.D0.B2.D1.8F.D0.B7.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D1.81_.D1.81.D0.B5.D1.82.D1.8C.D1.8E)
+*   [3 Проблемы с сетью](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D1.81.D0.B5.D1.82.D1.8C.D1.8E)
     *   [3.1 Не удается найти принтер](#.D0.9D.D0.B5_.D1.83.D0.B4.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BD.D0.B0.D0.B9.D1.82.D0.B8_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80)
     *   [3.2 Старый сервер CUPS](#.D0.A1.D1.82.D0.B0.D1.80.D1.8B.D0.B9_.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80_CUPS)
-    *   [3.3 Общий принтер работает локально, но удаленный компьютер не печатает](#.D0.9E.D0.B1.D1.89.D0.B8.D0.B9_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.2C_.D0.BD.D0.BE_.D1.83.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.BA.D0.BE.D0.BC.D0.BF.D1.8C.D1.8E.D1.82.D0.B5.D1.80_.D0.BD.D0.B5_.D0.BF.D0.B5.D1.87.D0.B0.D1.82.D0.B0.D0.B5.D1.82)
+    *   [3.3 USB autosuspend](#USB_autosuspend)
+    *   [3.4 Общий принтер работает локально, но удаленный компьютер не печатает](#.D0.9E.D0.B1.D1.89.D0.B8.D0.B9_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.2C_.D0.BD.D0.BE_.D1.83.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.BA.D0.BE.D0.BC.D0.BF.D1.8C.D1.8E.D1.82.D0.B5.D1.80_.D0.BD.D0.B5_.D0.BF.D0.B5.D1.87.D0.B0.D1.82.D0.B0.D0.B5.D1.82)
 *   [4 USB-принтеры](#USB-.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.8B)
     *   [4.1 Конфликт с SANE](#.D0.9A.D0.BE.D0.BD.D1.84.D0.BB.D0.B8.D0.BA.D1.82_.D1.81_SANE)
     *   [4.2 Конфликт с usblp](#.D0.9A.D0.BE.D0.BD.D1.84.D0.BB.D0.B8.D0.BA.D1.82_.D1.81_usblp)
@@ -43,10 +44,10 @@
     *   [5.8 hp-setup просит указать PPD-файл для обнаруженного принтера](#hp-setup_.D0.BF.D1.80.D0.BE.D1.81.D0.B8.D1.82_.D1.83.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D1.8C_PPD-.D1.84.D0.B0.D0.B9.D0.BB_.D0.B4.D0.BB.D1.8F_.D0.BE.D0.B1.D0.BD.D0.B0.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D0.B0)
     *   [5.9 hp-setup: "Qt/PyQt 4 initialization failed"](#hp-setup:_.22Qt.2FPyQt_4_initialization_failed.22)
     *   [5.10 hp-setup: находит принтер автоматически, но сразу после этого сообщает "Unable to communicate with device" при печати тестовой страницы](#hp-setup:_.D0.BD.D0.B0.D1.85.D0.BE.D0.B4.D0.B8.D1.82_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80_.D0.B0.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.2C_.D0.BD.D0.BE_.D1.81.D1.80.D0.B0.D0.B7.D1.83_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D1.8D.D1.82.D0.BE.D0.B3.D0.BE_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B0.D0.B5.D1.82_.22Unable_to_communicate_with_device.22_.D0.BF.D1.80.D0.B8_.D0.BF.D0.B5.D1.87.D0.B0.D1.82.D0.B8_.D1.82.D0.B5.D1.81.D1.82.D0.BE.D0.B2.D0.BE.D0.B9_.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86.D1.8B)
-*   [6 Other](#Other)
-    *   [6.1 Printer "Paused" or "Stopped" with Status "Rendering completed"](#Printer_.22Paused.22_or_.22Stopped.22_with_Status_.22Rendering_completed.22)
-        *   [6.1.1 Low ink](#Low_ink)
-        *   [6.1.2 Permission issue](#Permission_issue)
+*   [6 Другие](#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5)
+    *   [6.1 Принтер "приостановлен - "Paused"" или "Остановлен" cо статусом "Рендеринг завершен"](#.D0.9F.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80_.22.D0.BF.D1.80.D0.B8.D0.BE.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD_-_.22Paused.22.22_.D0.B8.D0.BB.D0.B8_.22.D0.9E.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.22_c.D0.BE_.D1.81.D1.82.D0.B0.D1.82.D1.83.D1.81.D0.BE.D0.BC_.22.D0.A0.D0.B5.D0.BD.D0.B4.D0.B5.D1.80.D0.B8.D0.BD.D0.B3_.D0.B7.D0.B0.D0.B2.D0.B5.D1.80.D1.88.D0.B5.D0.BD.22)
+        *   [6.1.1 Низкий уровень чернил](#.D0.9D.D0.B8.D0.B7.D0.BA.D0.B8.D0.B9_.D1.83.D1.80.D0.BE.D0.B2.D0.B5.D0.BD.D1.8C_.D1.87.D0.B5.D1.80.D0.BD.D0.B8.D0.BB)
+        *   [6.1.2 Разрешение проблемы](#.D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_2)
     *   [6.2 Завершение печати из-за ошибок авторизации](#.D0.97.D0.B0.D0.B2.D0.B5.D1.80.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B5.D1.87.D0.B0.D1.82.D0.B8_.D0.B8.D0.B7-.D0.B7.D0.B0_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA_.D0.B0.D0.B2.D1.82.D0.BE.D1.80.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8)
     *   [6.3 Unknown supported format: application/postscript](#Unknown_supported_format:_application.2Fpostscript)
     *   [6.4 Ошибка задания для печати (Print-Job) client-error-document-format-not-supported](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_.D0.B7.D0.B0.D0.B4.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B4.D0.BB.D1.8F_.D0.BF.D0.B5.D1.87.D0.B0.D1.82.D0.B8_.28Print-Job.29_client-error-document-format-not-supported)
@@ -143,15 +144,21 @@ lpd://BRN_020554/BINARY_P1
 
 (**Устаревшее**) Признаки и симптомы: принтеры не отображаются в диалоговом окне печати GTK3, что делает невозможным отправить на печать непосредственно из таких приложений, как [gedit](/index.php/Gedit "Gedit"), [Chromium](/index.php/Chromium_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Chromium (Русский)") и [Firefox](/index.php/Firefox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox (Русский)"); но принтеры все еще отображаются в веб-интерфейсе CUPS и lpstat, и отправка на печать из интерфейса командной строки или приложений GTK2 (например, GIMP) работает.
 
-## Проблемы, связанные с сетью
+## Проблемы с сетью
 
 ### Не удается найти принтер
 
 Даже если CUPS обнаруживает сетевые принтеры, вы все равно можете получить ошибку "Не удается найти принтер" ("Unable to locate printer") при попытке распечатать что-либо. Чтобы решить эту проблему, включите [.разрешение локального имени хоста](/index.php/Avahi#Hostname_resolution "Avahi") Avahi. Для получения дополнительной информации смотрите [CUPS (Русский)#Сеть](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#C.D0.B5.D1.82.D1.8C "CUPS (Русский)").
 
+Эта проблема может возникать и при использовании файрвола (межсетевой экран, брандмауэр). Возможно, вам придется отключить его или установить корректные правила. Если вы используете system-config-printer для обнаружения сетевых принтеров, тогда он сделает все это автоматически.
+
 ### Старый сервер CUPS
 
 Начиная с версии CUPS 1.6, клиент по умолчанию использует IPP 2.0\. Если сервер использует CUPS <= 1.5 / IPP <= 1.1, клиент не будет автоматически понижать версию протокола и, следовательно, не может связаться с сервером. Обходным путем является добавление опции `version=1.1`, описанной в [Таблице 2\. Опции URI IPP](https://www.cups.org/doc/network.html#TABLE2).
+
+### USB autosuspend
+
+Ядро Linux автоматически приостанавливает USB-устройства, когда есть поддержка драйверов и устройства не используются. Это может сэкономить электроэнергию, но некоторые USB-принтеры считают, что они не подключены, когда ядро приостанавливает USB-порт, предотвращая печать. Это можно устранить, отключив autosuspend для конкретного устройства, для получения дополнительной информации смотрите [Power management#USB autosuspend](/index.php/Power_management#USB_autosuspend "Power management").
 
 ### Общий принтер работает локально, но удаленный компьютер не печатает
 
@@ -291,7 +298,7 @@ PID *pid* (/usr/lib/cups/filter/foomatic-rip) stopped with status 3!
 
 #### Устаревший плагин
 
-Эта ошибка может указывать на то, что плагин устарел (версия несовместима). Если вы установили [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/), вам нужно обновить пакет.
+Эта ошибка может указывать на то, что плагин устарел (версия несовместима) и может произойти после обновления системы, возможно, появится сообщение `Plugin error` в журнале (логе). Если вы установили [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/), вам нужно обновить пакет, иначе перезапустите `hp-setup -i`, чтобы установить последнюю версию плагина.
 
 #### Устаревшая конфигурация принтера
 
@@ -365,27 +372,27 @@ PID *pid* (/usr/lib/cups/filter/foomatic-rip) stopped with status 3!
 
 Это, по крайней мере, происходит с hplip 3.13.5-2 у принтера HP Officejet 6500A через локальное сетевое соединение. Чтобы решить проблему, укажите IP-адрес принтера HP для hp-setup, чтобы обнаружить принтер.
 
-## Other
+## Другие
 
-### Printer "Paused" or "Stopped" with Status "Rendering completed"
+### Принтер "приостановлен - "Paused"" или "Остановлен" cо статусом "Рендеринг завершен"
 
-#### Low ink
+#### Низкий уровень чернил
 
-When low on ink, some printers will get stuck in "Rendering completed" status and, if it is a network printer, the printer may even become unreachable from CUPS' perspective despite being properly connected to the network. Replacing the low/depleted ink cartridge(s) in this setting will return the printer to "Ready" status and, if it is a network printer, will make the printer available to CUPS again.
+При низком уровне чернил некоторые принтеры зависают со статусом "Рендеринг завершен" ("Rendering completed"), и, если это сетевой принтер, принтер может даже стать недоступным для CUPS, несмотря на то, что он правильно подключен к сети. Замена картриджа (картриджей) с низким уровнем чернил в этом случае вернет принтер в статус "Готов" ("Ready") и, если он - сетевой принтер, то он станет снова доступным для CUPS.
 
-**Note:** If you use third-party ink cartridges, the ink levels reported by the printer may be inaccurate. If you use third-party ink and your printer used to work fine but is now getting stuck on "Rendering completed" status, replace the ink cartridges regardless of the reported ink levels before trying other fixes.
+**Примечание:** Если вы используете сторонние чернильные картриджи, то принтер может сообщать неточную информацию о уровне чернил. Если вы используете сторонние картриджи, и ваш принтер работал нормально, но теперь завис со статусом "Рендеринг завершен" ("Rendering completed"), замените чернильные картриджи, независимо от уровня отображаемых чернил, перед тем, как пробовать другие решения проблемы.
 
-#### Permission issue
+#### Разрешение проблемы
 
-Prior to [cups](https://www.archlinux.org/packages/?name=cups) 2.0.0-2, if the group set in the `Group` directive is also listed in the `SystemGroup` directive in `/etc/cups/cups-files.conf`, `cupsd` will instead run any helper programs with a group of `nobody`. However, the helpers may need to write to printer devices, which are created with user `root` and group `lp`, and will be unable to if they are run with a group of `nobody`, causing the print queue to become "Paused" or "Stopped".
+До [cups](https://www.archlinux.org/packages/?name=cups) версии 2.0.0-2, если группа, установленная в директиве `Group`, также указана в директиве `SystemGroup` в `/etc/cups/cups-files.conf`, тогда `cupsd` будет вместо нужной группы запускать любые вспомогательные программы с группой `nobody`. Однако, вспомогательные программы могут нуждаться в записи информации в принтер, которые созданы пользователем `root` и группой `lp`, но они не смогут ничего записать из-за того, что они были запущены с группой `nobody`. В результате этого задания получат статус "приостановлен - "Paused"" или "Остановлено".
 
-To fix this, ensure that the the `Group` directive is set to `lp`, and the `SystemGroup` directive does not include `lp`.
+Чтобы исправить это, убедитесь, что директива `Group` установлена в `lp`, а директива `SystemGroup` не включает `lp`.
 
-Fixed in Arch with [[1]](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/cups&id=c20b22f4f996cb08b1aa856d4c8991e869459eb2).
+Исправлено в Arch с [обновлением](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/cups&id=c20b22f4f996cb08b1aa856d4c8991e869459eb2).
 
 ### Завершение печати из-за ошибок авторизации
 
-Если удаленный принтер запрашивает аутентификацию, CUPS автоматически добавит директиву `AuthInfoRequired` для принтера в `/etc/cups/printers.conf`. Однако некоторые графические приложения (например, некоторые версии [LibreOffice](/index.php/LibreOffice_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LibreOffice (Русский)") [[2]](https://bugs.documentfoundation.org/show_bug.cgi?id=53029)) не имеют возможности запрашивать учетные данные, поэтому печать завершилась с ошибкой. Чтобы исправить это, укажите требуемое имя пользователя и пароль в URI. Для получения дополнительной информации смотрите [[3]](https://bugs.launchpad.net/ubuntu/+source/cups/+bug/283811), [[4]](https://bbs.archlinux.org/viewtopic.php?id=61826).
+Если удаленный принтер запрашивает аутентификацию, CUPS автоматически добавит директиву `AuthInfoRequired` для принтера в `/etc/cups/printers.conf`. Однако некоторые графические приложения (например, некоторые версии [LibreOffice](/index.php/LibreOffice_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LibreOffice (Русский)") [[1]](https://bugs.documentfoundation.org/show_bug.cgi?id=53029)) не имеют возможности запрашивать учетные данные, поэтому печать завершилась с ошибкой. Чтобы исправить это, укажите требуемое имя пользователя и пароль в URI. Для получения дополнительной информации смотрите [[2]](https://bugs.launchpad.net/ubuntu/+source/cups/+bug/283811), [[3]](https://bbs.archlinux.org/viewtopic.php?id=61826).
 
 ### Unknown supported format: application/postscript
 

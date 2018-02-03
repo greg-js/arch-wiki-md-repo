@@ -34,7 +34,7 @@ If you also want to stop systemd from printing its version number when booting, 
 If you are using the `systemd` hook in the [initramfs](/index.php/Initramfs "Initramfs"), you may get systemd messages during initramfs initialization. You can pass `rd.systemd.show_status=false` to disable them, or `rd.systemd.show_status=auto` to only suppress successful messages (so in case of errors you can still see them). Actually, `auto` is already passed to `systemd.show_status=auto` when `quiet` is used, however for some motive sometimes systemd inside initramfs does not get it. Below are the parameters that you need to pass to your kernel to get a completely clean boot with systemd in your [initramfs](/index.php/Initramfs "Initramfs"):
 
 ```
- quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log-priority=3
+ quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3
 
 ```
 

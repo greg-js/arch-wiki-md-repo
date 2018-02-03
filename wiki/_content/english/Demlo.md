@@ -23,7 +23,13 @@ The package provides a configuration sample. It is a good idea to start from the
 
 ## Scripts
 
-Demlo is bundled with some official scripts you are free to use.
+By default Demlo only previews changes. Use the `-p` commandline flag to confirm.
+
+Demlo runs a chain of Lua scripts of the files passed as arguments. You can select which scripts from the config file or at run-time.
+
+Each script can access an <t>input</t> table and modify an <t>output</t> table with information such as the path, tags, covers and encoding properties.
+
+Demlo comes with its set of official scripts to choose from.
 
 If you want to write a temporary script (for instance a script that makes sense for one album only), you can create a script in the local folder, call it from command line, then remove it.
 
@@ -36,11 +42,11 @@ You can derive your scripts from the official ones as for the configuration:
 
 ```
 
-If two scripts have the same name and are not specified by their full path, then the user script takes precedence.
+The user script folder has precedence over the system script folder: if two scripts share the same basename, the user script will be used.
 
 ## Usage
 
-Run Demlo over a set of file to preview then changes:
+Run Demlo over a set of file to preview the changes:
 
 ```
  $ demlo *.ogg album/ other-album/*.flac
@@ -50,7 +56,7 @@ Run Demlo over a set of file to preview then changes:
 Set the script chain to change the result:
 
 ```
- $ demlo -s tag'-s ./my-script.lua -s encoding <input-files>
+ $ demlo -s tag -s ./my-script.lua -s encoding <input-files>
 
 ```
 
@@ -61,7 +67,7 @@ If you need fine-grained tuning, you can run Lua commands before and after the s
 
 ```
 
-To process the files, use the `-p` parameter. Demlo will use all available cores by default. You can restrict it:
+To process the files, use the `-p` parameter. Demlo uses all available cores by default. You can restrict it:
 
 ```
  $ demlo -cores 2 -p <input-files>
@@ -71,7 +77,7 @@ To process the files, use the `-p` parameter. Demlo will use all available cores
 If you just want to fetch covers online:
 
 ```
- $ demlo -c -s cover -rmsrc -p <input-files>
+ $ demlo -c -s cover -s 90-rmsrc -p <input-files>
 
 ```
 
@@ -85,7 +91,7 @@ If you want to edit tags or properties manually (in case scripts would not be ab
 You can stack different output to the same index file, Demlo does not mind. You can edit this file with your favorite editor. To apply the changes, call Demlo over the desired set of files with the `-i` option. Scripts can still be called or they can be left out if you do not want to perform any additional change.
 
 ```
- $ demlo -i ./index.json -s * -post 'o.artist,o.album_artist=o.album_artist,artist' <input-files>*
+ $ demlo -i ./index.json -r * -post 'o.artist,o.album_artist=o.album_artist,artist' <input-files>*
 
 ```
 

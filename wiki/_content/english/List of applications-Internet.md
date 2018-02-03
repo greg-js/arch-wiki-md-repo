@@ -301,6 +301,10 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 ###### Browsers based on electron/muon
 
+*   **Beaker** — Peer-to-peer web browser with tools to create and host websites. Based on the [Electron](http://electron.atom.io/) platform.
+
+	[https://github.com/beakerbrowser/beaker](https://github.com/beakerbrowser/beaker) || [beaker-browser](https://aur.archlinux.org/packages/beaker-browser/)
+
 *   **[Brave](https://en.wikipedia.org/wiki/Brave_(web_browser) "wikipedia:Brave (web browser)")** — Web browser that blocks ads and trackers by default. Based on the [Muon](https://github.com/brave/muon) platform (fork of Electron).
 
 	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/) or [brave-bin](https://aur.archlinux.org/packages/brave-bin/)

@@ -75,7 +75,7 @@ Other alternatives include:
 
 Here you can find an overview of Mozilla's [releases](https://wiki.mozilla.org/Releases).
 
-There are a number of language packs available for Firefox, other than the standard English. Language packs are usually named as `firefox-i18n-*languagecode*` (where `*languagecode*` can be any language code, such as **de**, **ja**, **fr**, etc.). For a list of available language packs see [this](https://www.archlinux.org/packages/?sort=&q=firefox-i18n&maintainer=&last_update=&flagged=&limit=100).
+There are a number of language packs available for Firefox, other than the standard English. Language packs are usually named as `firefox-i18n-*languagecode*` (where `*languagecode*` can be any language code, such as **de**, **ja**, **fr**, etc.). For a list of available language packs see [firefox-i18n](https://www.archlinux.org/packages/extra/any/firefox-i18n/) for [firefox](https://www.archlinux.org/packages/?name=firefox) and [firefox-developer-edition-i18n](https://www.archlinux.org/packages/community/any/firefox-developer-edition-i18n/) for [firefox-developer-edition](https://www.archlinux.org/packages/?name=firefox-developer-edition).
 
 ## Add-ons
 
@@ -159,6 +159,8 @@ security.sandbox.content.write_path_whitelist
 ```
 
 **Note:** The trailing slash on `/dev/snd/` is important, otherwise apulse will report "Permission denied" errors.
+
+If you are using Firefox 58 or above and have no audio even when using apulse, try adding `16` to `security.sandbox.content.syscall_whitelist` in `about:config`
 
 #### Open-with extension
 

@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [ArchWiki:Requests](/index.php/ArchWiki:Requests "ArchWiki:Requests")
+*   [Help:Procedures#Common problems and solutions](/index.php/Help:Procedures#Common_problems_and_solutions "Help:Procedures")

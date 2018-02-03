@@ -658,7 +658,7 @@ In the case that *pacman* crashes with a "database write" error while removing p
 
 1.  Boot using the Arch installation media. Preferably use a recent media so that the *pacman* version matches/is newer than the system.
 2.  Mount the system's root filesystem, e.g. `mount /dev/sdaX /mnt` as root, and check the mount has sufficient space with `df -h`
-3.  Mount the proc and sysfs filesystems as well: `mount -t {proc,sysfs} /dev/sdaX {/mnt/proc, /mnt/sys}`
+3.  Mount the proc, sys and dev filesystems as well: `mount -t proc proc /mnt/proc; mount --rbind /sys /mnt/sys; mount --rbind /dev /mnt/dev`
 4.  If the system uses default database and directory locations, you can now update the system's *pacman* database and upgrade it via `pacman --root=/mnt --cachedir=/mnt/var/cache/pacman/pkg -Syyu` as root.
 5.  After the upgrade, one way to double-check for not upgraded but still broken packages: `find /mnt/usr/lib -size 0`
 6.  Followed by a re-install of any still broken package via `pacman --root /mnt --cachedir=/mnt/var/cache/pacman/pkg -S *package*`.

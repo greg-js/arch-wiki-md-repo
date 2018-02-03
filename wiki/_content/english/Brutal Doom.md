@@ -13,7 +13,7 @@ While primarily a gore mod, it goes further and alters the gameplay by changing 
 
 ## Installation
 
-[brutal-doom](https://aur.archlinux.org/packages/brutal-doom/) can be installed from the [AUR](/index.php/AUR "AUR") but as of January 21, 2018 it is outdated and also would require having two `gzdoom.ini` files when instead [gzdoom-git](https://aur.archlinux.org/packages/gzdoom-git/) can be modified directly as shown below. However, if you want to be able to run both *gzdoom* and *brutal-doom* separately in order to play both versions, then you would need the *brutal-doom* package.
+[Install](/index.php/Install "Install") the [brutal-doom](https://aur.archlinux.org/packages/brutal-doom/) package, which requires having two `gzdoom.ini` files. Alternatively [gzdoom-git](https://aur.archlinux.org/packages/gzdoom-git/) can be modified directly as shown below. However, if you want to be able to run both *gzdoom* and *brutal-doom* separately in order to play both versions, then you would need the *brutal-doom* package.
 
 ### Brutal Doom Mod
 

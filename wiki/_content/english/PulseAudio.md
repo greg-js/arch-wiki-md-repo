@@ -659,3 +659,4 @@ See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAud
 *   [.asoundrc on ALSA wiki](http://www.alsa-project.org/main/index.php/Asoundrc)
 *   [PulseAudio official site](http://www.pulseaudio.org/)
 *   [PulseAudio FAQ](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/)
+*   [Pulseaudio under the hood](https://gavv.github.io/blog/pulseaudio-under-the-hood/)

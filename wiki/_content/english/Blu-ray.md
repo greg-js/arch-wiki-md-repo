@@ -75,9 +75,9 @@ BD+ is an additional but optional component of the Blu-ray DRM. In December 2013
 
 ### Preparation
 
-1.  [Install](/index.php/Install "Install") [libbluray](https://www.archlinux.org/packages/?name=libbluray) and [libaacs](https://www.archlinux.org/packages/?name=libaacs) from the [official repositories](/index.php/Official_repositories "Official repositories").
+1.  [Install](/index.php/Install "Install") [libbluray](https://www.archlinux.org/packages/?name=libbluray) and [libaacs](https://www.archlinux.org/packages/?name=libaacs).
 2.  Download the [`KEYDB.cfg`](https://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg) file from [[11]](https://vlc-bluray.whoknowsmy.name) and copy it in the directory `~/.config/aacs`. This file contains PK, HC and VUK data required for attempting the decryption process described below for more than 24,000 discs.
-3.  If necessary (*i.e.* if volumes are not mounted automatically on your system), mount the disc to a directory, *e.g.*: `# mount /dev/sr0 /media/blurays` 
+3.  If necessary (i.e. if volumes are not mounted automatically on your system), mount the disc to a directory, *e.g.*: `# mount /dev/sr0 /media/blurays` 
 
 ### Decryption process
 
@@ -143,43 +143,43 @@ $ mplayer br://<title number> -bluray-device </bluray/mount/dir>
 
 It is likely that you will need to enable hardware acceleration and multi core CPU support for the Blu-ray to play smoothly.
 
-For nvidia cards, enable hardware acceleration by installing libvdpau and using the option '-vo vdpau' with mplayer. e.g:
+For nvidia cards, enable hardware acceleration by installing libvdpau and using the option `--hwdec=auto` with mplayer. e.g:
 
 ```
-$ mplayer -vo vdpau br:///</bluray/mount/dir>
+$ mplayer --hwdec=auto br:///</bluray/mount/dir>
 
 ```
 
-For multi core CPU support use the options '-lavdopts threads=N', where 'N' is the number of cores, e.g:
+For multi core CPU support use the options `--vd-lavc-threads=*N*`, where `*N*` is the number of cores, e.g:
 
 ```
-$ mplayer -lavdopts threads=2 br:///</bluray/mount/dir>
+$ mplayer --vd-lavc-threads=4 br:///</bluray/mount/dir>
 
 ```
 
 ##### Incorrect audio language
 
-You can scroll through the playback languages using the '#' key.
+You can scroll through the playback languages using the `#` key.
 
 ##### Out-of-sync audio
 
 From your first mplayer output, you must find the codec used for the Blu-ray. It will be at the end of the line "Selected video codec".
 
-For H.264 discs use the option '-vc ffh264vdpau'. e.g:
+For H.264 discs use the option `-vc ffh264vdpau`. e.g:
 
 ```
 $ mplayer -vc ffh264vdpau br:///</bluray/mount/dir>
 
 ```
 
-For VC-1 discs use '-vc ffvc1vdpau'. e.g:
+For VC-1 discs use `-vc ffvc1vdpau`. e.g:
 
 ```
 $ mplayer -vc ffvc1vdpau br:///</bluray/mount/dir>
 
 ```
 
-For MPEG discs use '-vc ffmpeg12vdpau'. e.g:
+For MPEG discs use `-vc ffmpeg12vdpau`. e.g:
 
 ```
 $ mplayer -vc ffmpeg12vdpau br:///</bluray/mount/dir>
@@ -217,7 +217,7 @@ If a valid VUK is found in `~/.cache/aacs/vuk`, then libaacs does not need to us
 Unfortunately, what may happen when trying to play a newer Blu-ray disc is the revocation of host key/certificates (which are keys of licensed software players) by your drive. When this happens, [aacskeys](https://aur.archlinux.org/packages/aacskeys/) will return this message:
 
 ```
- The given Host Certficate / Private Key has been revoked by your drive.
+The given Host Certficate / Private Key has been revoked by your drive.
 
 ```
 

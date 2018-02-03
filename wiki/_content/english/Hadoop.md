@@ -1,3 +1,7 @@
+Related articles
+
+*   [Apache spark](/index.php/Apache_spark "Apache spark")
+
 [Apache Hadoop](https://hadoop.apache.org) is a framework for running applications on large cluster built of commodity hardware. The Hadoop framework transparently provides applications both reliability and data motion. Hadoop implements a computational paradigm named Map/Reduce, where the application is divided into many small fragments of work, each of which may be executed or re-executed on any node in the cluster. In addition, it provides a distributed file system (HDFS) that stores data on the compute nodes, providing very high aggregate bandwidth across the cluster. Both MapReduce and the Hadoop Distributed File System are designed so that node failures are automatically handled by the framework.
 
 ## Contents
@@ -69,7 +73,7 @@ HADOOP_USERNAME="<your user name>"
 
 #### Set up passphraseless ssh
 
-Make sure you have [sshd](/index.php/Sshd "Sshd") enabled, or start it with `systemctl enable sshd`. Now check that you can connect to localhost without a passphrase:
+Make sure you have [sshd](/index.php/Sshd "Sshd") [enabled](/index.php/Enabled "Enabled"). Now check that you can connect to localhost without a passphrase:
 
 ```
 $ ssh localhost
@@ -81,6 +85,7 @@ If you cannot ssh to localhost without a passphrase, execute the following comma
 ```
 $ ssh-keygen -t rsa -P "" -f ~/.ssh/id_rsa
 $ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys2
+$ chmod 0600 ~/.ssh/authorized_keys
 
 ```
 
@@ -139,13 +144,4 @@ $ hadoop fs -cat output/*
 
 ```
 
-When you're done, stop the daemons with:
-
-```
-# systemctl stop hadoop-datanode
-# systemctl stop hadoop-jobtracker
-# systemctl stop hadoop-namenode
-# systemctl stop hadoop-secondarynamenode
-# systemctl stop hadoop-tasktracker
-
-```
+When you're done, [stop](/index.php/Stop "Stop") the daemons `hadoop-datanode`, `hadoop-jobtracker`, `hadoop-namenode`, `hadoop-secondarynamenode`, `hadoop-tasktracker`.

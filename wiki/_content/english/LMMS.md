@@ -2,11 +2,13 @@
 
 ## Installation
 
-[lmms](https://www.archlinux.org/packages/?name=lmms) is in the offical Archlinux repository, but you may also need the git "master branch" version for the newest improvements.
+[lmms](https://www.archlinux.org/packages/?name=lmms) is in the offical Archlinux repository. Alternatively, because LMMS has seen many changes since the stable release at time of writing, you may want [lmms-git](https://aur.archlinux.org/packages/lmms-git/) for the latest in upstream development, or [lmms-beta-bin](https://aur.archlinux.org/packages/lmms-beta-bin/) for a pre-compiled pre-release version. See [[1]](https://github.com/LMMS/lmms/releases) for release notes.
 
-You will need a [soundfont](/index.php/Timidity#SoundFonts "Timidity") and [Timidity](/index.php/Timidity "Timidity").
+As always, if you want to use multiple audio applications simultaneously but your hardware does not natively support this, you will need either a [usermode sound server](/index.php/Sound#Sound_servers "Sound"), or to configure ALSA [dmix](/index.php/Alsa#Dmix "Alsa").
 
-If you will use other audio apps like VLC during a single login, you will need a [usermode sound server](/index.php/Sound#Sound_servers "Sound")
+## MIDI and soundfonts
+
+Depending on your setup and the installation method, you might need to manually setup a [soundfont](/index.php/Timidity#SoundFonts "Timidity") and [Timidity](/index.php/Timidity "Timidity").
 
 Then, you will need to edit the FluidSynth configuration file as mentioned in the package’s [post-installation script](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/fluidsynth.install?h=packages/fluidsynth). For the audio driver, choose the sound server that you installed.
 

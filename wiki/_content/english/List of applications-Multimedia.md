@@ -758,6 +758,10 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 	[http://www.rosegardenmusic.com/](http://www.rosegardenmusic.com/) || [rosegarden](https://www.archlinux.org/packages/?name=rosegarden)
 
+*   **SoundConverter** — A graphical application to convert audio files into different formats.
+
+	[http://soundconverter.org/](http://soundconverter.org/) || [soundconverter](https://www.archlinux.org/packages/?name=soundconverter)
+
 *   **XCFA** — Tool to extract the contens of audio CDs and convert them to various formats.
 
 	[http://www.xcfa.tuxfamily.org/](http://www.xcfa.tuxfamily.org/) || [xcfa](https://aur.archlinux.org/packages/xcfa/)
