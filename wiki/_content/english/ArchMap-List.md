@@ -932,7 +932,7 @@ You can use the following website to get your device's coordinates along with a 
 50.083763,8.232758 "jokke" # Wiesbaden, Germany
 44.411145,43.864008 "Probeerka" # Zelenokumsk, Russia
 -11.97845,-77.082283 "Carlos Joel" # Lima, Peru
-49.0091,8.397367 "Frank" # Karlsruhe, Germany
+49.053171,8.269554 "Frank" # Wörth am Rhein, Germany
 33.592031,-7.616361 "Othmane AIT EL CADI" # Casablanca, Morocco
 48.184051,11.610349 "greenway" # Munich, Germany
 36.835187,-76.807787 "celticmusicguy" # Zuni, VA, USA

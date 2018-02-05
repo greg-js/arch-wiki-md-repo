@@ -306,7 +306,7 @@ Prior to creating any partitions, you should inform yourself about the importanc
 
 When using the [GRUB](/index.php/GRUB "GRUB") bootloader together with [GPT](/index.php/GPT "GPT"), create a BIOS Boot Partition as explained in [GRUB#BIOS systems](/index.php/GRUB#BIOS_systems "GRUB").
 
-Create a partition to be mounted at `/boot` of type `8300` with a size of 100 MB or more.
+Create a partition to be mounted at `/boot` of type `8300` with a size of 200 MiB or more.
 
 Create a partition of type `8E00`, which will later contain the encrypted container.
 
@@ -780,7 +780,7 @@ We format and mount them and activate swap. See [File systems#Create a file syst
 
 ### Preparing the boot partition
 
-The `/boot` partition can be installed on the standard vfat partition of a USB stick, if required. But if manual partitioning is needed, then a small 200MB partition is all that is required. Create the partition using a [partitioning tool](/index.php/Partitioning#Partitioning_tools "Partitioning") of your choice.
+The `/boot` partition can be installed on the standard vfat partition of a USB stick, if required. But if manual partitioning is needed, then a small 200 MiB partition is all that is required. Create the partition using a [partitioning tool](/index.php/Partitioning#Partitioning_tools "Partitioning") of your choice.
 
 We choose a non-journalling file system to preserve the flash memory of the `/boot` partition, if not already formatted as vfat:
 
@@ -840,21 +840,21 @@ However, when an update to the kernel or bootloader is required, the `/boot` par
 
 This setup utilizes the same partition layout and configuration for the system's root partition as the previous [#LVM on LUKS](#LVM_on_LUKS) section, with two distinct differences:
 
-1.  The setup is performed for an [UEFI](/index.php/UEFI "UEFI") system and
+1.  The setup is performed for an [UEFI](/index.php/UEFI "UEFI") and/or BIOS system
 2.  A special feature of the [GRUB](/index.php/GRUB "GRUB") bootloader is used to additionally encrypt the boot partition `/boot`. See also [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB").
 
 The disk layout in this example is:
 
 ```
-+---------------+----------------+----------------+----------------+----------------+
-|ESP partition: |Boot partition: |Volume 1:       |Volume 2:       |Volume 3:       |
-|               |                |                |                |                |
-|/boot/efi      |/boot           |root            |swap            |home            |
-|               |                |                |                |                |
-|               |                |/dev/store/root |/dev/store/swap |/dev/store/home |
-|/dev/sdaX      |/dev/sdaY       +----------------+----------------+----------------+
-|**un**encrypted    |LUKS encrypted  |/dev/sdaZ encrypted using LVM on LUKS             |
-+---------------+----------------+--------------------------------------------------+
++---------------------+---------------+----------------+----------------+----------------+----------------+
+|BIOS boot partition: |ESP partition: |Boot partition: |Volume 1:       |Volume 2:       |Volume 3:       |
+|                     |               |                |                |                |                |
+|                     |/boot/efi      |/boot           |root            |swap            |home            |
+|                     |               |                |                |                |                |
+|                     |               |                |/dev/store/root |/dev/store/swap |/dev/store/home |
+|/dev/sdaW            |/dev/sdaX      |/dev/sdaY       +----------------+----------------+----------------+
+|**un**encrypted          |**un**encrypted    |LUKS encrypted  |/dev/sdaZ encrypted using LVM on LUKS             |
++---------------------+---------------+----------------+--------------------------------------------------+
 
 ```
 
@@ -866,11 +866,11 @@ The disk layout in this example is:
 
 Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
 
-Create an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") with an appropriate size, it will later be mounted at `/boot/efi`.
+For [BIOS systems](/index.php/GRUB#BIOS_systems "GRUB") create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") with size of 1 MiB for GRUB to store the second stage of BIOS bootloader. Do not mount the partition.
 
-Create a partition to be mounted at `/boot` of type `8300` with a size of 100 MB or more.
+For [UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") create an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") with an appropriate size, it will later be mounted at `/boot/efi`.
 
-**Tip:** When using the [GRUB](/index.php/GRUB "GRUB") bootloader together with a BIOS/[GPT](/index.php/GPT "GPT"), create a BIOS Boot Partition as explained in [GRUB#BIOS systems](/index.php/GRUB#BIOS_systems "GRUB") instead of the ESP.
+Create a partition to be mounted at `/boot` of type `8300` with a size of 200 MiB or more.
 
 Create a partition of type `8E00`, which will later contain the encrypted container.
 
@@ -888,9 +888,10 @@ Your partition layout should look similar to this:
  `# gdisk /dev/sda` 
 ```
 Number  Start (sector)    End (sector)  Size       Code  Name
-   1            2048         1050623   512.0 MiB   EF00  EFI System
-   2         1050624         1460223   200.0 MiB   8300  Linux filesystem
-   3         1460224        41943006   19.3 GiB    8E00  Linux LVM
+   1            2048            4095   1024.0 KiB  EF02  BIOS boot partition
+   2            4096         1130495   550.0 MiB   EF00  EFI System
+   3         1130496         1540095   200.0 MiB   8300  Linux filesystem
+   4         1540096        69205982   32.3 GiB    8E00  Linux LVM
 
 ```
 
@@ -995,11 +996,24 @@ GRUB_ENABLE_CRYPTODISK=y
 
 See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB") for details. The `*<device-UUID>*` refers to the UUID of `/dev/sdaZ` (the partition which holds the lvm containing the root filesystem). See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
-Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") file and [install](/index.php/GRUB#Installation_2 "GRUB") to the mounted ESP:
+Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") file:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
+
+```
+
+[install GRUB](/index.php/GRUB#Installation_2 "GRUB") to the mounted ESP for UEFI booting:
+
+```
 # grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub --recheck
+
+```
+
+[install GRUB](/index.php/GRUB#Installation "GRUB") and to the disk's MBR and BIOS boot partition for BIOS booting:
+
+```
+# grub-install --target=i386-pc --recheck /dev/sda
 
 ```
 

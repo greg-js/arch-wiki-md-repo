@@ -20,6 +20,10 @@ Do [Wikipédia](https://en.wikipedia.org/wiki/pt:Shell_do_Unix "wikipedia:pt:She
 
 	[http://gondor.apana.org.au/~herbert/dash/](http://gondor.apana.org.au/~herbert/dash/) || [dash](https://www.archlinux.org/packages/?name=dash)
 
+*   **Elvish** — Elvish é um shell moderno e expressivo, que pode carregar valores internos estruturados por meio de *pipelines*. Esse recurso torna possível evitar um monte de código complexo de processamento de texto. Isso permite uma linguagem de programação mais efetiva, com recursos como exceções, espaço de nome e funções anônimas. Ele também possui um readline poderoso que verifica a sintaxe enquanto digita, e realce de sintaxe por padrão.
+
+	[https://elvish.io](https://elvish.io) || [elvish](https://aur.archlinux.org/packages/elvish/)
+
 *   **[fish](/index.php/Fish "Fish")** — Shell de linha de comando inteligente e amigável. O *fish* executa o realce da sintaxe da linha de comando em cores, bem como o realce e a completação dos comandos e dos argumentos, da existência do arquivo e do histórico. Ele oferece suporte à completação na medida em que você escreve para o histórico e os comandos. O fish é capaz de analisar as páginas man do sistema para determinar argumentos válidos para comandos, permitindo que ele realce e complete os comandos. Uma revisão fácil do último comando pode ser feita usando Alt-Up. O daemon de fish (fishd) facilita ter um histórico sincronizado em todas as instâncias do fish, bem como variáveis de ambiente universais e persistentes.
 
 	[http://fishshell.com/](http://fishshell.com/) || [fish](https://www.archlinux.org/packages/?name=fish)

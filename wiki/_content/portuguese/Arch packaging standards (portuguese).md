@@ -153,7 +153,7 @@ Quando [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") é 
 
 ## Arquiteturas
 
-O vetor `arch` deve conter `'i686'` e/ou `'x86_64'`, dependendo de em quais arquiteturas o pacote pode ser compilado. Você também pode usar `'any'` para pacotes que independem de arquitetura.
+O vetor `arch` deve conter `'x86_64'` se o pacote compilado é específico para a arquitetura. Do contrário, use `'any'` para pacotes que independem de arquitetura.
 
 ## Licenças
 

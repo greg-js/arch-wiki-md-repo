@@ -592,8 +592,6 @@ $ gconftool-2 --set /apps/gnome_settings_daemon/plugins/background/active --type
 
 (Verta pažymėti, jog xcompmgr vystymas yra sustojęs ir jokios problemos nėra taisomos) (Turint problemą su tint2 0.9, sistemos ikonos turi polinkį sulūžti)
 
-[Cairo Composite Manager](/index.php/Cairo_Compmgr "Cairo Compmgr") -- Universtali ir plečiama kompozito tvarkyklė, kuri atvaizdavimui naudoja cairo, yra alternatyva xompmgr.
-
 ### Panelės, dėklai ir puslapiatoriai
 
 Yra labai daug programų, kurie suteikia panelės, dėklo ir puslapiatoriaus galimybę. Pagrindinės yra:

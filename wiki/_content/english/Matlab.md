@@ -224,6 +224,8 @@ In order to access the full functionality of MATLAB (e.g., to use Simulink, Buil
 
 To use previous versions of the the `gcc`, `g++`, and `gfortran` compilers with MEX files, edit `${MATLAB}/bin/mexopts.sh` and replace all occurrences of `CC='gcc'` with `CC='gcc-4.X'`, `CXX='g++'` with `CXX='g++-4.X'`, and `FC='gfortran'` with `FC='gfortran-4.X'`, where `X` is the compiler version appropriate for the particular MATLAB release.
 
+**Note:** Newer versions of Matlab (at least 2017a) doesn't seem to respect the `${MATLAB}/bin/mexopts.sh` customization. Instead it uses `${MATLAB}/bin/glnxa64/mexopts/LANG_glnxa64.xml` file.
+
 **Note:** Though, it's no officially supported, one could still use higher version of compiler, and ignore the warnings.
 
 ### Help browser

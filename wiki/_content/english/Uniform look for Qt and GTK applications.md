@@ -98,7 +98,7 @@ For full uniformity, make sure that the configured [GTK+ theme](/index.php/GTK%2
 
 ### QGnomePlatform
 
-This Qt 5 platform theme applies the appearance settings of GNOME for Qt applications. It can be installed with the [qgnomeplatform-git](https://aur.archlinux.org/packages/qgnomeplatform-git/) package. It does not provide a Qt style itself, instead it requires a [style that support both Qt and GTK+](#Styles_for_both_Qt_and_GTK.2B).
+This Qt 5 platform theme applies the appearance settings of GNOME for Qt applications. It can be installed with the [qgnomeplatform](https://aur.archlinux.org/packages/qgnomeplatform/) package or the [qgnomeplatform-git](https://aur.archlinux.org/packages/qgnomeplatform-git/) package for the development version. It does not provide a Qt style itself, instead it requires a [style that support both Qt and GTK+](#Styles_for_both_Qt_and_GTK.2B).
 
 This platform theme is enabled automatically in GNOME since version 3.20\. For other systems, it can be enabled by setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_QPA_PLATFORMTHEME=qgnomeplatform`.
 

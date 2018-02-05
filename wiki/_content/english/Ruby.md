@@ -34,7 +34,7 @@ RubyGems is a package manager for Ruby modules (called *gems*), somewhat compara
 
 [Append](/index.php/Append "Append") `$(ruby -e 'print Gem.user_dir')/bin` to the `PATH` [environment variable](/index.php/Environment_variable "Environment variable") to allow RubyGems to be executed:
 
- `~/.profile`  `PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"` 
+ `~/.profile`  `PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"` 
 
 This is required for executable gems to work without typing out the full location, although libraries will work without having to modify your path.
 
@@ -49,7 +49,7 @@ You may want to append this variable to `.profile` instead:
 
  `~/.profile` 
 ```
-PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 export GEM_HOME=$HOME/.gem
 ```
 

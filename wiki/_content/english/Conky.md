@@ -10,7 +10,7 @@
     *   [2.3 Autostart](#Autostart)
     *   [2.4 Prevent flickering](#Prevent_flickering)
     *   [2.5 Custom colors](#Custom_colors)
-    *   [2.6 Dual Screen](#Dual_Screen)
+    *   [2.6 Dual screen](#Dual_screen)
     *   [2.7 Do not minimize on Show Desktop](#Do_not_minimize_on_Show_Desktop)
     *   [2.8 Integrate with GNOME Shell](#Integrate_with_GNOME_Shell)
     *   [2.9 Display package update information](#Display_package_update_information)
@@ -150,32 +150,30 @@ own_window_type = 'override',
 
 The `override` takes *conky* out of the control of your window manager.
 
-Add a `~/.config/autostart/conky.desktop`:
+To autostart *conky*, create the following file:
 
- `conky.desktop` 
+ `~/.config/autostart/conky.desktop` 
 ```
 [Desktop Entry]
 Type=Application
 Name=conky
-Exec=conky -d
+Exec=conky --daemonize --pause=5
 StartupNotify=false
 Terminal=false
 ```
 
-You may want to add *-p 10* to the *Exec* parameter so that it starts drawing *conky* after the desktop is up (*-p 10* means pause for 10 seconds at startup before doing anything).
+The `pause=5` parameter delays *conky'*s drawing for 5 seconds at startup to make sure that the desktop had time to load and is up.
 
 ### Prevent flickering
 
-*Conky* needs Double Buffer Extension (DBE) support from the X server to prevent flickering because it cannot update the window fast enough without it. It can be enabled in `/etc/X11/xorg.conf` with `Load "dbe"` line in `"Module"` section. The `xorg.conf` file has been replaced (1.8.x patch upwards) by `/etc/X11/xorg.conf.d` which contains the particular configuration files. *DBE* is loaded automatically.
+*Conky* needs Double Buffer Extension *(DBE)* support from the X server to prevent flickering because it cannot update the window fast enough without it. It can be enabled with [Xorg](/index.php/Xorg "Xorg") in `/etc/X11/xorg.conf` with `Load "dbe"` line in `"Module"` section. The `xorg.conf` file has been replaced (1.8.x patch upwards) by `/etc/X11/xorg.conf.d` which contains the particular configuration files. *DBE* is loaded automatically as long as it is present within `/usr/lib/xorg/modules`. The list of loaded modules can be checked with `grep LoadModule /var/log/Xorg.0.log`.
 
-To enable double buffering, add the option
+To enable double buffering, add the following option to `conky.conf`:
 
 ```
  double_buffer = true,
 
 ```
-
-to your `conky.conf`.
 
 ### Custom colors
 
@@ -189,9 +187,11 @@ Aside the classic preset colors (white, black, yellow...), you can set your own 
 
 Then, when editing the `TEXT` section, use custom color number previously defined, for example `${color3}` .
 
-### Dual Screen
+### Dual screen
 
-When using a dual screen configuration, you will need to play with two options to place your *conky* window. Let's say you are running a 1680X1050 pixels resolution, and you want the window on middle top of your left monitor, you will use this:
+When using a dual screen configuration, you will need to play with a few options to place your *conky* window.
+
+By adjusting `gap_x`, let's say you are running a 1680x1050 pixels resolution and you want the window on middle top of your left monitor, you will use:
 
 ```
 alignment = 'top_left',
@@ -199,9 +199,15 @@ gap_X = 840,
 
 ```
 
-The `alignment` option is trivial, and `gap_X` option is the distance, in pixels, from the left border of your screen.
+The `alignment` option is self-explanatory, the `gap_X` is the distance, in pixels, from the left border of your screen.
 
-The `xinerama_head` option might also need to be set.
+`xinerama_head` is an alternative useful option, the following will place the *conky* window at the top right of the second screen:
+
+```
+alignment = 'top_right',
+xinerama_head = 2,
+
+```
 
 ### Do not minimize on Show Desktop
 

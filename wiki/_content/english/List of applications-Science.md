@@ -33,6 +33,8 @@
         *   [1.5.2 Physics simulation](#Physics_simulation)
         *   [1.5.3 Unit conversion](#Unit_conversion)
     *   [1.6 Geography](#Geography)
+    *   [1.7 Communication Systems](#Communication_Systems)
+    *   [1.8 Simulation Modeling](#Simulation_Modeling)
 
 ## Science
 
@@ -524,6 +526,10 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 	[https://grass.osgeo.org/](https://grass.osgeo.org/) || [grass](https://aur.archlinux.org/packages/grass/)
 
+*   **[gvSIG](https://en.wikipedia.org/wiki/gvSIG "wikipedia:gvSIG")** — vSIG is a geographic information system (GIS), that is, a desktop application designed for capturing, storing, handling, analyzing and deploying any kind of referenced geographic information in order to solve complex management and planning problems.
+
+	[http://www.gvsig.com/en](http://www.gvsig.com/en) || [gvsig-desktop-bin](https://aur.archlinux.org/packages/gvsig-desktop-bin/)
+
 *   **JOSM** — An editor for OpenStreetMap written in Java.
 
 	[http://josm.openstreetmap.de/](http://josm.openstreetmap.de/) || [josm](https://www.archlinux.org/packages/?name=josm)
@@ -555,3 +561,31 @@ Digital logic software are mainly simple educational tools that intended for onl
 *   **Viking** — GTK+2 application to manage GPS data.
 
 	[https://sourceforge.net/projects/viking/](https://sourceforge.net/projects/viking/) || [viking](https://www.archlinux.org/packages/?name=viking)
+
+### Communication Systems
+
+*   **CupCarbon** — A Smart City & IoT Wireless Sensor Network Simulator
+
+	[http://cupcarbon.com/](http://cupcarbon.com/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **[GNURadio](https://en.wikipedia.org/wiki/GNURadio "wikipedia:GNURadio")** — GNU Radio is a free & open-source software development toolkit that provides signal processing blocks to implement software radios.
+
+	[https://www.gnuradio.org/](https://www.gnuradio.org/) || [gnuradio-git](https://aur.archlinux.org/packages/gnuradio-git/),[gnuradio-gsm-git](https://aur.archlinux.org/packages/gnuradio-gsm-git/),[gnuradio-iio-git](https://aur.archlinux.org/packages/gnuradio-iio-git/),[gnuradio-multi-rtl-git](https://aur.archlinux.org/packages/gnuradio-multi-rtl-git/),[gnuradio-osmodr-gqrx-git](https://aur.archlinux.org/packages/gnuradio-osmodr-gqrx-git/),[gnuradio-ra-blocks-git](https://aur.archlinux.org/packages/gnuradio-ra-blocks-git/),[gnuradio-simple-ra-git](https://aur.archlinux.org/packages/gnuradio-simple-ra-git/),
+
+*   **Pothos** — The Pothos project is a complete data-flow framework for creating topologies of interconnected processing blocks.
+
+	[https://github.com/pothosware/PothosCore/wiki](https://github.com/pothosware/PothosCore/wiki) || [pothos](https://aur.archlinux.org/packages/pothos/),[pothos-git](https://aur.archlinux.org/packages/pothos-git/)
+
+### Simulation Modeling
+
+*   **[gephi](https://en.wikipedia.org/wiki/Gephi "wikipedia:Gephi")** — Gephi is an open-source network analysis and visualization software package written in Java
+
+	[http://gephi.org/](http://gephi.org/) || [gephi](https://www.archlinux.org/packages/?name=gephi)
+
+*   **golly** — Golly is an open source, cross-platform application for exploring Conway's Game of Life and many other types of cellular automata.
+
+	[http://golly.sourceforge.net/](http://golly.sourceforge.net/) || [golly](https://aur.archlinux.org/packages/golly/)
+
+*   **Netlogo** — NetLogo is a multi-agent programmable modeling environment.
+
+	[http://ccl.northwestern.edu/netlogo/](http://ccl.northwestern.edu/netlogo/) || [netlogo](https://aur.archlinux.org/packages/netlogo/)

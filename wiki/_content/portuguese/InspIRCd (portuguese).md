@@ -58,14 +58,9 @@ Para instalar um módulo de terceiros, salve o `[módulo].cpp` dentro de `[dir-c
 
 ## Iniciando/parando o daemon
 
-Pode iniciar e parar o InspIRCd como habitual, executando:
+[Inicie](/index.php/Inicie "Inicie") ou [pare](/index.php/Pare "Pare") o unit de systemd `inspircd`.
 
-```
-sudo /etc/rc.d/inspircd {start|stop|restart}
-
-```
-
-A primeira inicialização algumas vezes falha, então tente reiniciar até você não ter mais erros. Depois disto você deve não ter quaisquer problemas. A razão por de trás disto é que por uma questão de segurança o daemon não executa como *root* como normalmente acontece, portanto o script tem de assegurar-se que o usuário **irc** tem permissões para ler e escrever os arquivos pid e log. Para iniciar no boot adicione (como sempre) [inspircd] à lista de [daemons] no arquivo **/etc/rc.conf**.
+A primeira inicialização algumas vezes falha, então tente reiniciar até você não ter mais erros. Depois disto você deve não ter quaisquer problemas. A razão por de trás disto é que por uma questão de segurança o daemon não executa como *root* como normalmente acontece, portanto o script tem de assegurar-se que o usuário **irc** tem permissões para ler e escrever os arquivos pid e log.
 
 ## Links externos
 

@@ -102,7 +102,7 @@ Adicionar as opções `-r`/`--rmdeps` faz com que o *makepkg* remova as dependê
 
 **Nota:**
 
-*   Essas dependências devem estar disponíveis nos repositórios configurados; veja [pacman#Repositórios e espelhos](/index.php/Pacman#Reposit.C3.B3rios_e_espelhos "Pacman") para detalhes. Alternativamente, pode-se instalar manualmente as dependências antes de compilar (`pacman -S --asdeps *dep1* *dep2*`).
+*   Essas dependências devem estar disponíveis nos repositórios configurados; veja [pacman (Português)#Repositórios e espelhos](/index.php/Pacman_(Portugu%C3%AAs)#Reposit.C3.B3rios_e_espelhos "Pacman (Português)") para detalhes. Alternativamente, pode-se instalar manualmente as dependências antes de compilar (`pacman -S --asdeps *dep1* *dep2*`).
 *   Apenas valores globais são usados ao instalar dependências, ou seja, qualquer sobrescrição feita em uma função de empacotamento de pacotes divididos não serão sadas.[[4]](https://patchwork.archlinux.org/patch/2271/)
 
 Uma vez que todas as dependências estejam satisfeitas e os pacotes compilados com sucesso, um arquivo de pacote (`*pkgname*-*pkgver*.pkg.tar.xz`) será criado no diretório. Para instalar, use `-i`/`--install` (o mesmo que `pacman -U *pkgname*-*pkgver*.pkg.tar.xz`):

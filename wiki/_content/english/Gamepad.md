@@ -46,13 +46,13 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
 
 ## Joystick input systems
 
-Linux has 2 different input systems for Joysticks. The original 'Joystick' interface and the newer 'evdev' based one.
+Linux has two different input systems for Joysticks – the original Joystick interface and the newer evdev-based interface.
 
-`/dev/input/jsX` maps to the 'Joystick' API interface and `/dev/input/event*` maps to the 'evdev' ones (this also includes other input devices such as mice and keyboards). Symbolic links to those devices are also available in `/dev/input/by-id/` and `/dev/input/by-path/` where the legacy 'Joystick' API has names ending with `-joystick` while the 'evdev' have names ending with `-event-joystick`.
+`/dev/input/jsX` maps to the Joystick API interface and `/dev/input/event*` maps to the evdev ones (this also includes other input devices such as mice and keyboards). Symbolic links to those devices are also available in `/dev/input/by-id/` and `/dev/input/by-path/` where the legacy Joystick API has names ending with `-joystick` while the evdev have names ending with `-event-joystick`.
 
-Most new games will default to the 'evdev' interface as it gives more detailed information about the buttons and axes available and also adds support for force feedback.
+Most new games will default to the evdev interface as it gives more detailed information about the buttons and axes available and also adds support for force feedback.
 
-While SDL1 defaults to 'evdev' interface you can force it to use the old 'Joystick' API by setting the environment variable `SDL_JOYSTICK_DEVICE=/dev/input/js0`. This can help many games such as X3\. SDL2 supports only the new 'evdev' interface.
+While SDL1 defaults to evdev interface you can force it to use the old Joystick API by setting the environment variable `SDL_JOYSTICK_DEVICE=/dev/input/js0`. This can help many games such as X3\. SDL2 supports only the new evdev interface.
 
 ## Determining which modules you need
 
@@ -389,19 +389,19 @@ Your games will now work with bluetooth gamepad as long as xboxdrv is running.
 
 ### Steam Controller
 
-The [steam](https://www.archlinux.org/packages/?name=steam) package will recognize the controller and provide keyboard/mouse/gamepad emulation while Steam is running. The in-game Steam overlay needs to be enabled and working in order for gamepad emulation to work. You may need to run `udevadm trigger` with root privileges or plug the dongle out and in again, if the controller doesn't work immediately after installing and running steam. If all else fails, try restarting the computer while the dongle is plugged in.
+The [Steam](/index.php/Steam "Steam") client will recognize the controller and provide keyboard/mouse/gamepad emulation while Steam is running. The in-game Steam overlay needs to be enabled and working in order for gamepad emulation to work. You may need to run `udevadm trigger` with root privileges or plug the dongle out and in again, if the controller doesn't work immediately after installing and running Steam. If all else fails, try restarting the computer while the dongle is plugged in.
 
 If you can't get the Steam Controller to work, see [#Steam Controller not pairing](#Steam_Controller_not_pairing).
 
-Alternatively you can install [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) to have controller and mouse emulation without Steam or [sc-controller](https://aur.archlinux.org/packages/sc-controller/) for a versatile graphical configuration tool simillar to what is provided by the steam client.
+Alternatively you can install [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) to have controller and mouse emulation without Steam or [sc-controller](https://aur.archlinux.org/packages/sc-controller/) for a versatile graphical configuration tool simillar to what is provided by the Steam client.
 
-On some desktop environments the on screen keyboard might freeze when trying to input text after one or two characters. This is a problem with window focus. Check the settings for your [window manager](/index.php/Window_manager "Window manager") to see if it is possible to have focus follow the mouse or automatically focus new windows. Preventing the keyboard from receiving focus will fix the issue in [Awesome](/index.php/Awesome "Awesome"), see [Awesome#Steam Keyboard](/index.php/Awesome#Steam_Keyboard "Awesome").
+On some desktop environments the on-screen keyboard might freeze when trying to input text after one or two characters. This is a problem with window focus. Check the settings for your [window manager](/index.php/Window_manager "Window manager") to see if it is possible to have focus follow the mouse or automatically focus new windows. Preventing the keyboard from receiving focus will fix the issue in [Awesome](/index.php/Awesome "Awesome"), see [Awesome#Steam Keyboard](/index.php/Awesome#Steam_Keyboard "Awesome").
 
 **Note:** If you use Steam without its [runtime](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting"), you might actually need to disable the overlay for the controller to work in certain games (Rocket Wars, Rocket League, Binding of Isaac, etc.). Right click on a game in your library, select "Properties", and uncheck "Enable Steam Overlay".
 
 #### Wine
 
-[python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) can also be used to make the Steam Controller work for games running under Wine. You need to find and download the application `xbox360cemu.v.3.0` (e.g. from here: [https://github.com/jacobmischka/ds4-in-wine/tree/master/xbox360cemu.v.3.0](https://github.com/jacobmischka/ds4-in-wine/tree/master/xbox360cemu.v.3.0)). Then copy the files `dinput8.dll`, `xbox360cemu.ini`, `xinput1_3.dll` and `xinput_9_1_0.dll` to the directory that contains your game executable. Edit `xbox360cemu.ini` and only change the following values under `[PAD1]` to remap the Steam Controller correctly to a XBox Controller.
+[python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) can also be used to make the Steam Controller work for games running under Wine. You need to find and download the application `xbox360cemu.v.3.0` (e.g. from [here](https://github.com/jacobmischka/ds4-in-wine/tree/master/xbox360cemu.v.3.0)). Then copy the files `dinput8.dll`, `xbox360cemu.ini`, `xinput1_3.dll` and `xinput_9_1_0.dll` to the directory that contains your game executable. Edit `xbox360cemu.ini` and only change the following values under `[PAD1]` to remap the Steam Controller correctly to a XBox controller.
 
  `xbox360cemu.ini` 
 ```
@@ -421,7 +421,7 @@ Right Trigger=a6
 
 Now start python-steamcontroller in Xbox360 mode (`sc-xbox.py start`). You might also want to copy `XInputTest.exe` from `xbox360cemu.v.3.0` to the same directory and run it with Wine in order to test if the mappings work correctly. However neither mouse nor keyboard emulation work with this method.
 
-Alternatively you can use [sc-controller](https://aur.archlinux.org/packages/sc-controller/) ([github](https://github.com/kozec/sc-controller)) for a similar graphical setup as steams own configurator. As of writing, it's a bit buggy here and there but offers an easy click and go way of configuring the controller.
+Alternatively you can use [sc-controller](https://aur.archlinux.org/packages/sc-controller/) for a similar graphical setup as Steam's own configurator. As of writing, it's a bit buggy here and there but offers an easy click and go way of configuring the controller.
 
 ### Xbox 360 controller
 

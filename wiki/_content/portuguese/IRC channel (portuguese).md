@@ -76,15 +76,16 @@ O tamanho de nossa comunidade levou à criação de múltiplos canais IRC. Para 
 | [#archlinux-bugs](ircs://chat.freenode.net/archlinux-bugs) | Discussão centrada em bugs |
 | [#archlinux-classroom](ircs://chat.freenode.net/archlinux-classroom) | Um projeto que desenvolve e hospeda classes para a comunidade do Arch Linux. |
 | [#archlinux-devops](ircs://chat.freenode.net/archlinux-devops) | Discussões sobre infraestrutura e devops. |
-| [#archlinux-pacman](ircs://chat.freenode.net/archlinux-pacman) | Desenvolvimento e discussão sobre o [Pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") |
-| [#archlinux-projects](ircs://chat.freenode.net/archlinux-projects) | Desenvolvimento e discussão sobre projetos (mkinitcpio, abs, dbscripts, devtools, ...) |
 | [#archlinux-multilib](ircs://chat.freenode.net/archlinux-multilib) | Discussão e empacotamento do Projeto Multilib do Arch Linux |
 | [#archlinux-newbie](ircs://chat.freenode.net/archlinux-newbie) | Um espaço para aprender, tentar novas coisas e pedir ajuda sem medo do ridículo. |
+| [#archlinux-pacman](ircs://chat.freenode.net/archlinux-pacman) | Desenvolvimento e discussão sobre o [Pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") |
+| [#archlinux-projects](ircs://chat.freenode.net/archlinux-projects) | Desenvolvimento e discussão sobre projetos (mkinitcpio, abs, dbscripts, devtools, ...) |
 | [#archlinux-reproducible](ircs://chat.freenode.net/archlinux-reproducible) | Canal de discussão para atingir compilações reproduzíveis. |
 | [#archlinux-security](ircs://chat.freenode.net/archlinux-security) | Discussão sobre questões de segurança em pacotes do Arch. |
 | [#archlinux-testing](ircs://chat.freenode.net/archlinux-testing) | Canal de discussão a cerca dos repositórios de teste. |
 | [#archlinux-wiki](ircs://chat.freenode.net/archlinux-wiki) | Discussão sobre [ArchWiki](/index.php/ArchWiki:About_(Portugu%C3%AAs) "ArchWiki:About (Português)"), seus artigos e os [Fóruns do Arch Linux](https://bbs.archlinux.org/). |
 | [#archlinux-women](ircs://chat.freenode.net/archlinux-women) | Discutindo gênero e igualdade, principalmente em inglês. |
+| [#archlinux-proaudio](ircs://chat.freenode.net/archlinux-proaudio) | Discussão de [Arch Linux Pro Audio](/index.php/Professional_audio "Professional audio"). Usuários também no #archaudio não oficial |
 
 ### Canais IRC internacionais
 

@@ -27,6 +27,8 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
     *   [2.2 Fan and temperature monitoring and control](#Fan_and_temperature_monitoring_and_control)
 *   [3 Power Saving](#Power_Saving)
     *   [3.1 Disable discrete GPU](#Disable_discrete_GPU)
+        *   [3.1.1 bbswitch method](#bbswitch_method)
+        *   [3.1.2 acpi_call method](#acpi_call_method)
     *   [3.2 Standard power saving configuration](#Standard_power_saving_configuration)
     *   [3.3 Disable/autosuspend of touchscreen](#Disable.2Fautosuspend_of_touchscreen)
     *   [3.4 Enable NVME APST](#Enable_NVME_APST)
@@ -76,6 +78,8 @@ The thermometer on the discrete Nvidia GPU can be monitored with the `nvidia-smi
 
 ### Disable discrete GPU
 
+#### `bbswitch` method
+
 The discrete Nvidia GTX 1050 GPU is on by default and cannot be disabled in the UEFI settings. Even when idle, it uses a significant amount of power (about 7W). To disable it when not in use it is necessary to install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) and [bumblebee](https://www.archlinux.org/packages/?name=bumblebee), add `acpi_rev_override=1` to the [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), [enable](/index.php/Enable "Enable") `bumblebeed.service`, and reboot (you may need to reboot twice for the firmware to notice `acpi_rev_override`).
 
 ```
@@ -109,6 +113,14 @@ $ [    4.254282] bbswitch: Succesfully loaded. Discrete card 0000:01:00.0 is on
 $ [    4.256651] bbswitch: disabling discrete graphics
 
 ```
+
+#### `acpi_call` method
+
+An alternative set of steps, not requiring [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) or [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) is as follows:
+
+*   Install the Intel video driver using the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package.
+*   Blacklist the `nvidia` & `nouveau` modules [Kernel modules#Blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules")
+*   Power down the GPU [with an ACPI command](/index.php/Hybrid_graphics#Fully_Power_Down_Discrete_GPU "Hybrid graphics")
 
 ### Standard power saving configuration
 

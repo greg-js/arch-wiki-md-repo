@@ -168,7 +168,7 @@ The locale set for this variable will be used for all the `LC_*` variables that 
 
 ### LANGUAGE: fallback locales
 
-Programs which use gettext for translations respect the `LANGUAGE` option in addition to the usual variables. This allows users to specify a [list](http://www.gnu.org/software/gettext/manual/gettext.html#The-LANGUAGE-variable) of locales that will be used in that order. If a translation for the preferred locale is unavailable, another from a similar locale will be used instead of the default. For example, an Australian user might want to fall back to British rather than US spelling:
+Programs which use [gettext](https://www.archlinux.org/packages/?name=gettext) for translations respect the `LANGUAGE` option in addition to the usual variables. This allows users to specify a [list](http://www.gnu.org/software/gettext/manual/gettext.html#The-LANGUAGE-variable) of locales that will be used in that order. If a translation for the preferred locale is unavailable, another from a similar locale will be used instead of the default. For example, an Australian user might want to fall back to British rather than US spelling:
 
  `locale.conf` 
 ```

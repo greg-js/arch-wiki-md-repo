@@ -146,7 +146,7 @@ tint2 -c <path_to_second_config_file>
 
 To make tint2 look its best, some form of compositing is required. If your tint2 has a large black rectangular box behind it you are either using a window manager without native compositing (like Openbox) or it is not enabled.
 
-To enable compositing under Openbox you can install [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") or [Cairo Compmgr](/index.php/Cairo_Compmgr "Cairo Compmgr"), the packages are [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr), respectively [cairo-compmgr](https://aur.archlinux.org/packages/cairo-compmgr/).
+To enable compositing under Openbox you can install [Xcompmgr](/index.php/Xcompmgr "Xcompmgr"). The packages is` [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr).
 
 Xcompmgr can be started like this:
 

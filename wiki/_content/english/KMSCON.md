@@ -14,6 +14,9 @@ From the project's [git repository](http://cgit.freedesktop.org/~dvdhrm/kmscon/t
 *   [2 Install](#Install)
 *   [3 CJK support](#CJK_support)
 *   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Problems with switching between Xorg and kmscon](#Problems_with_switching_between_Xorg_and_kmscon)
+    *   [4.2 No audio control](#No_audio_control)
+    *   [4.3 Vim doesn't clear terminal output](#Vim_doesn.27t_clear_terminal_output)
 
 ## Features
 
@@ -32,7 +35,7 @@ Kmscon can function as a drop-in replacement for the in-kernel linux-console. Fe
 
 Despite its name, KMS is not a hard requirement for kmscon. Kmscon supports the following video backends: fbdev (Linux fbdev video backend), drm2d (Linux DRM software-rendering backend), drm3d (Linux DRM hardware-rendering backend). Make sure one of them is available on your system.
 
-Install the [kmscon](https://aur.archlinux.org/packages/kmscon/) package from the [official repositories](/index.php/Official_repositories "Official repositories"). Alternatively, you can install the [kmscon-git](https://aur.archlinux.org/packages/kmscon-git/) package from the [AUR](/index.php/AUR "AUR").
+Install the [kmscon](https://aur.archlinux.org/packages/kmscon/) package or the [kmscon-git](https://aur.archlinux.org/packages/kmscon-git/) package for a development version from the [AUR](/index.php/AUR "AUR").
 
 Normally, there is a special systemd configuration for tty1\. To be conservative, you can continue to run the traditional agetty on tty1 and only run kmscon on all the other virtual terminals. Or you can run kmscon on both tty1 and the other VTs.
 
@@ -81,8 +84,16 @@ You need to have [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejav
 
 ## Troubleshooting
 
-*   You may want to add `hwaccel` to `/etc/kmscon/kmscon.conf` if you have problems with switching between [Xorg](/index.php/Xorg "Xorg") and kmscon.
+### Problems with switching between Xorg and kmscon
 
-The file and folder are not part of the package and therefore have to be created manually. Another possibility would be [editing the systemd service file](/index.php/Systemd#Editing_provided_units "Systemd").
+You may want to add `hwaccel` to `/etc/kmscon/kmscon.conf` if you have problems with switching between [Xorg](/index.php/Xorg "Xorg") and kmscon. The file and folder are not part of the package and therefore have to be created manually. Another possibility would be [editing the systemd service file](/index.php/Systemd#Editing_provided_units "Systemd").
 
-*   As version 7, if you cannot control the audio, add your user to **audio** [group](/index.php/Group "Group"). Be aware of the [shortcomings](/index.php/Alsa#Installation "Alsa") of this choice.
+### No audio control
+
+As version 7, if you cannot control the audio, add your user to **audio** [group](/index.php/Group "Group"). Be aware of the [shortcomings](/index.php/Alsa#Installation "Alsa") of this choice.
+
+### Vim doesn't clear terminal output
+
+Vim might open without clearing the terminal output, it's still possible to edit the file but the text won't be visible until it's changed. As a workaround, try setting the [environment variable](/index.php/Environment_variables "Environment variables") `TERM=vt220`. Alternatively, another vim-like editor like [vi](https://www.archlinux.org/packages/?name=vi) or [Neovim](/index.php/Neovim "Neovim") might work.
+
+**Note:** Color support is not available if `TERM` is set to `vt220`.

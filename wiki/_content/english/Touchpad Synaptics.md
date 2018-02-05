@@ -68,7 +68,7 @@ The Synaptics driver can be [installed](/index.php/Installed "Installed") with t
 
 ## Configuration
 
-The primary method of configuration for the touchpad is through an [Xorg](/index.php/Xorg "Xorg") server configuration file. After installation of `xf86-input-synaptics`, a default configuration file is located at `/usr/share/X11/xorg.conf.d/70-synaptics.conf`. Users can copy this file to `/etc/X11/xorg.conf.d/` and edit it to configure the various driver options available. Refer to the [synaptics(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/synaptics.4) manual page for a complete list of available options. Machine-specific options can be discovered using [synclient](#Synclient).
+The primary method of configuration for the touchpad is through an [Xorg](/index.php/Xorg "Xorg") server configuration file. After installation of `xf86-input-synaptics`, a default configuration file is located at `/usr/share/X11/xorg.conf.d/70-synaptics.conf`. Users can copy this file to `/etc/X11/xorg.conf.d/` and edit it to configure the various driver options available. Refer to the [synaptics(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/synaptics.4) manual page for a complete list of available options. Machine-specific options can be discovered using [#Synclient](#Synclient).
 
 ### Frequently used options
 
@@ -279,7 +279,7 @@ $ evtest /dev/input/event*X*
 
 *X* denotes the touchpad's ID. It can be found by looking at the output of `cat /proc/bus/input/devices`.
 
-evtest needs exclusive access to the device which means it cannot be run together with an X server instance. You can either kill the X server or run evtest from a different virtual terminal (e.g., by pressing `Ctrl+Alt+2`).
+evtest needs exclusive access to the device which means it cannot be run together with an X server instance. You can either kill the X server or run evtest from a different virtual terminal (e.g., by pressing `Ctrl+Alt+F2`).
 
 ### xev
 

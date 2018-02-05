@@ -535,8 +535,6 @@ Pro samostatné sezení Openboxu se hodí odlehčený grafický přihlašovací 
 
 [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") je odlehčený kompozitní manažer schopný zobrazit stíny, blednutí a jednoduché průhlednosti oken v Openboxu a dalších správcích oken. (Xcompmgr není dále vyvíjen a některé problémy pravděpodobně nebudou vyřešené) (S tint2 0.9 se ikony v systray mají tendenci rozpadat)
 
-Alternativou je [Cairo kompozitní manažer](/index.php/Cairo_Compmgr "Cairo Compmgr") -- všestranný a rozšiřitelný kompozitní manažer, který využívá pro vykreslování cairo.
-
 ### Panely, traye a pagery
 
 Existuje mnoho nástrojů, které nabídnou panel (taskbar), system tray a pager pro Openbox. Nejběžnější jsou:

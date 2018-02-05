@@ -216,7 +216,7 @@ Já que há muitos disponíveis para você, use o que você preferir para atende
 
 ### O que faz do Arch único entre outras distribuições "minimalistas"?
 
-Veja [Arch comparado com outras distribuições](/index.php/Arch_comparado_com_outras_distribui%C3%A7%C3%B5es "Arch comparado com outras distribuições").
+Veja [Arch em comparação com outras distribuições](/index.php/Arch_em_compara%C3%A7%C3%A3o_com_outras_distribui%C3%A7%C3%B5es "Arch em comparação com outras distribuições").
 
 ## 64 bit
 

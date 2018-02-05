@@ -201,7 +201,7 @@ Historically, the general rule for swap partition size was to allocate twice the
 
 ### Example layouts
 
-**Note:** UEFI/GPT does not have a "bootable" flag, booting relies on files in [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). [Parted](/index.php/Parted "Parted") and its front-ends use the `boot` flag on GPT to indicate an EFI System Partition.
+**Note:** UEFI/GPT does not have a "boot" flag, booting relies on files in [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). [Parted](/index.php/Parted "Parted") and its front-ends use a `boot` flag on GPT to indicate an EFI System Partition.
 
 #### UEFI/GPT example layout
 

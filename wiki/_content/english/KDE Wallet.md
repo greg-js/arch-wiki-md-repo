@@ -39,6 +39,8 @@ session         include         system-login
 
 For [GDM](/index.php/GDM "GDM"), edit `/etc/pam.d/gdm-password` accordingly.
 
+For [SDDM](/index.php/SDDM "SDDM"), the right lines should already be present in `/etc/pam.d/sddm`.
+
 After restarting your wallet should unlock automatically if your user password is the same as your KWallet password.
 
 **Note:** Currently, kwallet-pam has at least two limitations: first, it's not compatible with [GnuPG](/index.php/GnuPG "GnuPG") keys, so KDE Wallet must use the standard blowfish encryption. Also, the wallet name must be "kdewallet" (that's the default name). If, for some reason, you create a new wallet, you need to use this name (so you will probably need to rename the old wallet too).

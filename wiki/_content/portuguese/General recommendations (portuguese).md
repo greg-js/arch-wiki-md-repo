@@ -110,7 +110,7 @@ Veja [pacman/Dicas e truques](/index.php/Pacman/Dicas_e_truques "Pacman/Dicas e 
 
 Veja [Repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") para detalhes sobre o propósito de cada repositório oficialmente mantido.
 
-Se você instalou o Arch Linux x86_64 e planeja usar aplicativos 32 bits, você vai querer habilitar o repositório [multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)").
+Se você planeja usar aplicativos 32 bits, você vai querer habilitar o repositório [multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)").
 
 [Repositórios extraoficiais de usuário](/index.php/Unofficial_user_repositories "Unofficial user repositories") lista diversos outros repositórios sem suporte.
 

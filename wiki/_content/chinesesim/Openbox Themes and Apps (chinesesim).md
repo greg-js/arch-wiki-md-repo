@@ -117,8 +117,6 @@ Arch's wiki 上有一个 [轻量级软件清单](/index.php/Lightweight_Applicat
 
 [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") 是一个混合窗口管理器,能够为 Openbox 和其它窗口管理器渲染阴影,褪色,和窗口透明.注意 xcompmgr 不值得使用因为不再开发了.出现问题也不会被修复.(例如, 出现一个与 tint2 0.9有关的问题:系统托盘图标有崩溃的趋向)
 
-[Cairo Composite Manager](/index.php/Cairo_Compmgr "Cairo Compmgr") -- 万能的可扩展的混合管理器,使用 cairo 来渲染.可选.
-
 ### 面板,托盘,页调度程序
 
 大量的程序为 Openbox 提供了面板/任务栏, 系统托盘, 页调度程序:

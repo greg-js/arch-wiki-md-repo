@@ -22,6 +22,7 @@ See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipe
 ## 2017
 
 *   [Linux Action Show Episode 461](http://www.jupiterbroadcasting.com/107601/savelas-las-461/) (from 00:11:00) Chris Fisher - www.jupiterbroadcasting.com 2017-03-18
+*   [Arch Linux: The Simple Linux](https://www.linux.com/learn/intro-to-linux/2017/2/arch-linux-simple-linux/) Carla Schroder - linux.com 2017-02-02
 
 ## 2016
 

@@ -102,7 +102,7 @@ You can then add your repository by putting the following into `~/archlive/pacma
 ...
 # custom repository
 [customrepo]
-SigLevel = Optional TrustAlly
+SigLevel = Optional TrustAll
 Server = file:///home/**user**/customrepo/$arch
 ...
 ```

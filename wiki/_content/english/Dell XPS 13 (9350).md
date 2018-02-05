@@ -148,11 +148,11 @@ Using the `discard` mount option for your filesystem is not recommended, as ment
 
 ### NVME Power Saving Patch
 
-Andy Lutomirski has created a patchset which fixes powersaving for NVME devices in linux. Currently, this patch is not merged into mainline yet. Until it lands in mainline kernel use the AUR or repository linked below. **Linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME powersaving APST.
+**Note:** As of kernel version 4.11, this patch is no longer needed.
+
+Andy Lutomirski has created a patchset which fixes powersaving for NVME devices in linux. You may use the AUR package or the repository linked below. **Linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME powersaving APST.
 
 	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/)
-
-As of kernel version 4.11, this patch is no longer needed.
 
 ## Wireless
 

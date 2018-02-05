@@ -117,24 +117,35 @@ This can happen, for example, when upgrading from [LILO](/index.php/LILO "LILO")
 
 #### Manual install
 
-**Note:**
+**Tip:** If you are unsure of which partition table you are using (MBR or GPT), you can check using `blkid -s PTTYPE -o value /dev/sda`
 
-*   If you are unsure of which partition table you are using (MBR or GPT), you can check using the following command
+**Note:** If you are trying to rescue an installed system with a live CD, be sure to [chroot](/index.php/Chroot "Chroot") into it before executing these commands. If you do not chroot first, you must prepend all file paths (not `/dev/` paths) with the mount point.
 
-```
-# blkid -s PTTYPE -o value /dev/sda
-gpt
-
-```
-
-*   If you are trying to rescue an installed system with a live CD, be sure to [chroot](/index.php/Chroot "Chroot") into it before executing these commands. If you do not chroot first, you must prepend all file paths (not `/dev/` paths) with the mount point.
-
-Your boot partition, on which you plan to install Syslinux, must contain a FAT, ext2, ext3, ext4, or Btrfs file system. You should install it on a mounted directory—not a `/dev/sdXY` device. You do not have to install it on the root directory of a file system, e.g., with device `/dev/sda1` mounted on `/boot`. You can install Syslinux in the `syslinux` directory:
+Your boot partition, on which you plan to install Syslinux, must contain a FAT, ext2, ext3, ext4, or Btrfs file system. You do not have to install it on the root directory of a file system, e.g., with device `/dev/sda1` mounted on `/boot`. For example, you can install Syslinux in the `syslinux` subdirectory:
 
 ```
 # mkdir /boot/syslinux
-# cp /usr/lib/syslinux/bios/*.c32 /boot/syslinux/                           ## copy ALL the *.c32 files from /usr/lib/syslinux/bios/, DO NOT SYMLINK
-# extlinux --install /boot/syslinux/
+
+```
+
+Copy all `.c32` files from `/usr/lib/syslinux/bios` to `/boot/syslinux` if you desire to use any menus or configurations other than a basic boot prompt. Do not symlink them.
+
+```
+# cp /usr/lib/syslinux/bios/*.c32 /boot/syslinux/     
+
+```
+
+Now install the bootloader. For FAT, ext2/3/4, or btrfs boot partition use *extlinux*, where the device has been mounted:
+
+```
+# extlinux --install /boot/syslinux
+
+```
+
+Alternatively, for a FAT boot partition use *syslinux*, where the device is **unmounted**:
+
+```
+# syslinux --directory syslinux --install /dev/sda1
 
 ```
 
@@ -144,9 +155,7 @@ After this, proceed to install the Syslinux boot code (`mbr.bin` or `gptmbr.bin`
 
 ##### MBR partition table
 
-See the main article: [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record").
-
-Next, you need to mark your boot partition as "active" in your partition table. Applications capable of doing this include `fdisk`, `cfdisk`, `sfdisk`, `parted/gparted` ("boot" flag). It should look like this:
+For an [MBR](/index.php/MBR "MBR") partition table, ensure your boot partition is marked as "active" in your partition table (the "boot" flag is set). Applications capable of doing this include [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted"). It should look like this:
 
  `# fdisk -l /dev/sda` 
 ```
@@ -160,7 +169,7 @@ Next, you need to mark your boot partition as "active" in your partition table. 
 Install the MBR:
 
 ```
-# dd bs=440 count=1 if=/usr/lib/syslinux/bios/mbr.bin of=/dev/sda
+# dd bs=440 count=1 conv=notrunc if=/usr/lib/syslinux/bios/mbr.bin of=/dev/sda
 
 ```
 
@@ -175,16 +184,14 @@ In this case, a single byte of value 5 (hexadecimal) is appended to the contents
 
 ##### GUID partition table
 
-See the main article: [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table").
-
-Bit 2 of the attributes ("legacy_boot" attribute) needs to be set for the `/boot` partition:.
+For a [GPT](/index.php/GPT "GPT"), ensure bit 2 of the attributes is set for the `/boot` partition using [gdisk](/index.php/Gdisk "Gdisk"). In other words, the "legacy_boot" flag must be set. Using *sgdisk* the command is:
 
 ```
 # sgdisk /dev/sda --attributes=1:set:2
 
 ```
 
-This would toggle the attribute *legacy BIOS bootable* on partition 1\. To check:
+This would toggle the attribute *legacy BIOS bootable* on partition 1 of `/dev/sda`. To check:
 
  `# sgdisk /dev/sda --attributes=1:show` 
 ```
@@ -195,14 +202,7 @@ This would toggle the attribute *legacy BIOS bootable* on partition 1\. To check
 Install the MBR:
 
 ```
-# dd bs=440 conv=notrunc count=1 if=/usr/lib/syslinux/bios/gptmbr.bin of=/dev/sda
-
-```
-
-If this does not work, you can also try:
-
-```
-# syslinux-install_update -i -m
+# dd bs=440 count=1 conv=notrunc if=/usr/lib/syslinux/bios/gptmbr.bin of=/dev/sda
 
 ```
 

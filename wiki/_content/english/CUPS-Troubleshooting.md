@@ -360,7 +360,20 @@ This can also occur with network attached printers using dynamic hostnames if th
 
 ### hp-setup asks to specify the PPD file for the discovered printer
 
-Install and start CUPS before running hp-setup.
+Furthermore, when selecting a PPD file in hp-setup's graphical mode, the field does not update and no error message is shown.
+
+Or, if in interactive (console) mode, you may encounter something similar to this even when providing a correct path to a valid ppd file:
+
+```
+ Please enter the full filesystem path to the PPD file to use (q=quit) :/usr/share/ppd/HP/hp-deskjet_2050_j510_series.ppd.gz
+ Traceback (most recent call last):
+   File "/usr/bin/hp-setup", line 536, in <module>
+     desc = nickname_pat.search(nickname).group(1)
+ TypeError: cannot use a string pattern on a bytes-like object
+
+```
+
+The solution is to install and start [cups](https://www.archlinux.org/packages/?name=cups) before running `hp-setup`.
 
 ### hp-setup: "Qt/PyQt 4 initialization failed"
 

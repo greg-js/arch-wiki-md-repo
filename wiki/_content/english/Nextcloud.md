@@ -967,7 +967,7 @@ Then, download the required binares :
 And, installing a Collabora server. Make sure `cloud//.example//.com` is your nextcloud's domain, not a collabora :
 
 ```
-# docker run -t -d -p 127.0.0.1:9980:9980 -e 'domain=cloud//.example//.com' --restart always --cap-add MKNOD collabora/code
+# docker run -t -d -p 127.0.0.1:9980:9980 -e 'domain=cloud\\.example\\.com' --restart always --cap-add MKNOD collabora/code
 
 ```
 

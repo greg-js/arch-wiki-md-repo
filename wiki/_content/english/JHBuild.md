@@ -1,3 +1,7 @@
+Related articles
+
+*   [GNOME](/index.php/GNOME "GNOME")
+
 From [JHBuild's wiki](https://wiki.gnome.org/Projects/Jhbuild/Introduction):
 
 	*JHBuild allows you to build and run GNOME platform and applications building the required modules in a sandbox environment, isolating the installation; so there is no need to build and run GNOME inside a virtual machine.*
@@ -23,6 +27,7 @@ JHBuild was originally written for building [GNOME](/index.php/GNOME "GNOME"), b
         *   [4.1.1 Modules known to require python2 exclusively](#Modules_known_to_require_python2_exclusively)
     *   [4.2 pkg-config issues](#pkg-config_issues)
     *   [4.3 Build failed due to incompatible meson versions](#Build_failed_due_to_incompatible_meson_versions)
+    *   [4.4 Build failed due to GCC library or object not found](#Build_failed_due_to_GCC_library_or_object_not_found)
 *   [5 Building JHBuild from scratch](#Building_JHBuild_from_scratch)
 *   [6 See also](#See_also)
 
@@ -236,7 +241,7 @@ If you have a malformatted .pc file on your PKG_CONFIG_PATH, JHBuild will not be
 
 ### Build failed due to incompatible meson versions
 
-You may come across with a message similar to the one below.
+You may come across with a message similar to one of these below.
 
 ```
 Meson encountered an error:
@@ -250,6 +255,22 @@ ninja: error: rebuilding 'build.ninja': subcommand failed
 In the above example, the module was configured with meson 0.40.0 at on time, but a newer version (0.40.1, in the example) is now installed and is not compatible with the old one.
 
 **Solution:** Run Configure phase again, in order to have this module configured with newer Meson version
+
+### Build failed due to GCC library or object not found
+
+You may come across with a message similar to the one below.
+
+ `cc: error: /usr/lib/gcc/x86_64-pc-linux-gnu/*gcc_version*/../../../../lib/*name*.so: No such file or directory` 
+
+or
+
+ `g++: error: /usr/lib/gcc/x86_64-pc-linux-gnu/*gcc_version*/../../../../lib/*name*.o: No such file or directory` 
+
+where *gcc_version* is a previous version which is not the current one, and *name* is the name of the library (.so) or object (.o) that failed to be found.
+
+This may happen if [gcc](https://www.archlinux.org/packages/?name=gcc) was updated and the software was previously configured and built with the previous version of gcc.
+
+**Solution:** Run Configure phase again, in order to have this module configured with newer GCC version
 
 ## Building JHBuild from scratch
 

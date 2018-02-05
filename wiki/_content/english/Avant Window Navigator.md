@@ -1,3 +1,7 @@
+Related articles
+
+*   [GNOME](/index.php/GNOME "GNOME")
+
 [Avant Window Navigator](https://launchpad.net/awn) (AWN) is a lightweight dock written in C. It has support for launchers, task lists and third party applets.
 
 ## Contents
@@ -41,7 +45,7 @@ The most of the applets require some additional packages, which are listed in op
 
 ### Compositing
 
-To fully utilize AWN and it's themes, you will need a composite manager like [Compiz](/index.php/Compiz "Compiz"), [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") or [Cairo Compmgr](/index.php/Cairo_Compmgr "Cairo Compmgr") installed and configured correctly. If you are running AWN in a desktop environment like [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce") or [KDE](/index.php/KDE "KDE"), simply enable the composite manager or the desktop effects in the system settings. The [composite](/index.php/Composite "Composite") option in X is enabled by default.
+To fully utilize AWN and it's themes, you will need a composite manager like [Compiz](/index.php/Compiz "Compiz") or [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") installed and configured correctly. If you are running AWN in a desktop environment like [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce") or [KDE](/index.php/KDE "KDE"), simply enable the composite manager or the desktop effects in the system settings. The [composite](/index.php/Composite "Composite") option in X is enabled by default.
 
 ## Usage
 

@@ -352,7 +352,6 @@ La extensión Composite de X hace que todo un sub-árbol de la jerarquía de ven
 *   [Compiz](/index.php/Compiz "Compiz") -- El auténtico gestor de ventanas/composite de Novell
 *   [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") -- Un sencillo gestor composite capaz de sombras y transparencias básicas.
 *   [Compton](/index.php/Compton "Compton") -- Un fork de [xcompmgr](/index.php/Xcompmgr "Xcompmgr") con funciones mejoradas y errores corregidos.
-*   [Cairo Composite Manager](/index.php/Cairo_Compmgr "Cairo Compmgr") -- Un gestor composite versátil y extensible que utiliza cairo para la renderización.
 *   [Wikipedia:es:Gestor de composición de ventanas](https://en.wikipedia.org/wiki/es:Gestor_de_composici%C3%B3n_de_ventanas "wikipedia:es:Gestor de composición de ventanas")
 
 ## Consejos y trucos

@@ -611,8 +611,6 @@ Takođe iz AUR-a možete da instalirate i [pybgsetter](https://aur.archlinux.org
 
 [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") is a lightweight composite manager capable of rendering drop shadows, fading and simple window transparency within Openbox and other window managers. (It's worth noting that xcompmgr is no longer developed, and so any issues are unlikely to be fixed) (Developed an issue with tint2 0.9, the systray icons have a tendency to corrupt)
 
-[Cairo Composite Manager](/index.php/Cairo_Compmgr "Cairo Compmgr") -- A versatile and extensible composite manager which uses cairo for rendering, is an alternative.
-
 ### Panels, trays, and pagers
 
 There are quite a lot of utilities available that provide a panel (taskbar), system tray, and pager to Openbox. The most common are:

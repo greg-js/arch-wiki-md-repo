@@ -36,9 +36,10 @@ Related to this content, and also defined in `.desktop` files, are MIME-type ass
     *   [3.2 List or search in .desktop files](#List_or_search_in_.desktop_files)
     *   [3.3 fbrokendesktop](#fbrokendesktop)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Hide desktop entries](#Hide_desktop_entries)
-    *   [4.2 Autostart](#Autostart)
-    *   [4.3 Modify environment variables](#Modify_environment_variables)
+    *   [4.1 Run a desktop file from a terminal](#Run_a_desktop_file_from_a_terminal)
+    *   [4.2 Hide desktop entries](#Hide_desktop_entries)
+    *   [4.3 Autostart](#Autostart)
+    *   [4.4 Modify environment variables](#Modify_environment_variables)
 *   [5 See also](#See_also)
 
 ## Application entry
@@ -246,6 +247,10 @@ $ fbrokendesktop /usr/share/apps/kdm/sessions/icewm.desktop
 ```
 
 ## Tips and tricks
+
+### Run a desktop file from a terminal
+
+Install the [dex](https://www.archlinux.org/packages/?name=dex) package and run `dex */path/to/application.desktop*`.
 
 ### Hide desktop entries
 

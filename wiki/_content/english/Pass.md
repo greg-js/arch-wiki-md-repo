@@ -18,9 +18,9 @@ pass is a simple password manager for the command line. Pass is a shell script t
         *   [7.1.2 Mapping File](#Mapping_File)
         *   [7.1.3 Password Store Layout](#Password_Store_Layout)
     *   [7.2 Central git server for Pass in combination with GnuPG(SSH example)](#Central_git_server_for_Pass_in_combination_with_GnuPG.28SSH_example.29)
-        *   [7.2.1 install a bare Git repository for Pass on the server](#install_a_bare_Git_repository_for_Pass_on_the_server)
-        *   [7.2.2 import authorized public SSH keys](#import_authorized_public_SSH_keys)
-        *   [7.2.3 on the client](#on_the_client)
+        *   [7.2.1 Install a bare Git repository for Pass on the server](#Install_a_bare_Git_repository_for_Pass_on_the_server)
+        *   [7.2.2 Import authorized public SSH keys](#Import_authorized_public_SSH_keys)
+        *   [7.2.3 On the client](#On_the_client)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -194,23 +194,30 @@ For this to work, you have to use `pass insert --multiline` to create a multi li
 
 You are able to setup a password management system by setting up a central git server for Pass. This allows you to synchronize your central password repository through multiple client environments.
 
-#### install a bare Git repository for Pass on the server
+#### Install a bare Git repository for Pass on the server
 
-server $ git init --bare ~/.password-store
+On the server run `git init --bare ~/.password-store` to create a bare repository you can push to.
 
-#### import authorized public SSH keys
+#### Import authorized public SSH keys
 
-TODO
+See [SSH keys#Copying the public key to the remote server](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys")
 
-#### on the client
+#### On the client
 
-This section assumes you have configured GnuPG and have a key pair to encrypt passwords. On your local client ensure you have a local password store on the client: $ pass init <gpg key id>
+This section assumes you have configured GnuPG and have a key pair to encrypt passwords. On your local client ensure you have a local password store on the client, then enable management of local changes through Git, add your remote Git repository, and push your local Pass history.
 
-Enable management of local changes through git: $ pass git init
+```
+# Create local password store
+pass init <gpg key id>
+# Enable management of local changes through Git
+pass git init
+# Add the the remote git repository as 'origin'
+pass git remote add origin user@server:~/.password-store
+# Push your local Pass history
+pass git push -u --all
+```
 
-Add your remote Git repository: $ pass git remote add origin user@server:~/.password-store
-
-TODO:
+Now you can use the standard Git commands, prefixed by `pass`. For example: `pass git push`, or `pass git pull`. Pass will automatically create commits when you use it to modify your password store.
 
 ## See also
 

@@ -8,6 +8,7 @@ This document describes how to install the [Network UPS Tools (NUT)](http://netw
         *   [2.1.1 Can't claim USB device error](#Can.27t_claim_USB_device_error)
     *   [2.2 upsd configuration](#upsd_configuration)
     *   [2.3 upsmon configuration](#upsmon_configuration)
+*   [3 NUT-Monitor](#NUT-Monitor)
 
 ## Installation of Network UPS Tools
 
@@ -70,7 +71,7 @@ SYSFS{idVendor}=='XXXX', SYSFS{idProduct}=='YYYY', MODE='0666'
 
 ```
 
-Where `idVendor` and `idProduct` is the numbers of the error output: `[XXXX:YYYY]`
+Where `idVendor` and `idProduct` is the numbers of the error output: `[XXXX:YYYY]`. You can obtain this information using `lsusb` also.
 
 Reboot the system and try to start the driver again.
 
@@ -154,3 +155,11 @@ You can also configure what alerts are sent, where they are sent, what action is
 Then [start/enable](/index.php/Start/enable "Start/enable") `nut-monitor.service`.
 
 Your logs should show upsmon starting and monitoring the UPS.
+
+## NUT-Monitor
+
+[NUT-Monitor](http://networkupstools.org/projects.html#_a_href_http_www_lestat_st_en_informatique_projets_nut_monitor_nut_monitor_a) is a graphical user interface to monitor and manage devices connected to the Network UPS Tools server.
+
+You can [install](/index.php/Install "Install") nut-monitor with the [nut-monitor](https://aur.archlinux.org/packages/nut-monitor/) package.
+
+NUT-Monitor requires [pygtk](https://www.archlinux.org/packages/?name=pygtk) from [Python](/index.php/Python "Python").

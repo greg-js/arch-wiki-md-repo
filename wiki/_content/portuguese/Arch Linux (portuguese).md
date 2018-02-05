@@ -51,9 +51,13 @@ Arch funciona com o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Portugu
 
 ## História
 
+A comunidade do Arch cresceu e amadureceu para se tornar uma das mais populares e influenciadoras distribuições Linux, também atestado pela [atenção e análise](/index.php/An%C3%A1lises_sobre_o_Arch_Linux "Análises sobre o Arch Linux") recebida ao longo dos anos.
+
+Os desenvolvedores do Arch continuam a ser voluntários não-pagos e de meio expediente, e não existem expectativas de monetizar o Arch Linux, de modo que ele continuará a ser livre e gratuito. Aqueles curiosos para ler mais detalhes sobre a história do desenvolvimento do Arch podem navegar na [entrada sobre o Arch na Internet Archive Wayback Machine](http://web.archive.org/web/*/archlinux.org).
+
 ### Os primeiros anos
 
-Judd Vinet, um programador canadense e guitarrista ocasional, começou a desenvolver o Arch Linux no começo de 2001\. Seu primeiro lançamento formal, Arch Linux 0.1, foi em 11 de março de 2002\. Inspirado pela elegante simplicidade do [Slackware](http://www.slackware.com/), [BSD](https://en.wikipedia.org/wiki/pt:Berkeley_Software_Distribution "wikipedia:pt:Berkeley Software Distribution"), [PLD Linux](http://www.pld-linux.org/) e [CRUX](http://crux.nu/), mas desapontado com a falta de gerenciamento de pacotes na época; Vinet construiu sua própria distribuição com princípios similares àquelas distros; no entanto, ele também escreveu um gerenciador de programas chamado [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), para manipular automaticamente a instalação, remoção e atualizações de pacotes.
+Judd Vinet, um programador canadense e guitarrista ocasional, começou a desenvolver o Arch Linux no começo de 2001\. Seu primeiro lançamento formal, Arch Linux 0.1, foi em 11 de março de 2002\. [Inspirado](https://distrowatch.com/dwres.php?resource=interview-arch) pela elegante simplicidade do Slackware, BSD, PLD Linux e CRUX, mas desapontado com a falta de gerenciamento de pacotes na época; Vinet construiu sua própria distribuição com princípios similares àquelas distros; no entanto, ele também escreveu um gerenciador de programas chamado [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), para manipular automaticamente a instalação, remoção e atualizações de pacotes.
 
 ### Os anos médios
 
@@ -65,11 +69,7 @@ Em 2005-07-08 o ArchWiki foi [configurado](/index.php/ArchWiki:About_(Portugu%C3
 
 ### O alvorecer da era A. Griffin
 
-No fim de 2007, Judd Vinet se afastou da participação ativa como desenvolvedor do Arch, e [transferiu sem problemas o reinado para o programador americano Aaron Griffin](https://bbs.archlinux.org/viewtopic.php?id=38024), também conhecido como Phrakture, que continua como líder do desenvolvimento do Arch até hoje.
-
-Com o passar dos anos, a comunidade do Arch continuou a crescer e amadurecer, e recentemente tem recebido uma quantidade incomum de [atenção e análises](/index.php/An%C3%A1lises_sobre_o_Arch_Linux "Análises sobre o Arch Linux") para uma distro Linux de seu tamanho.
-
-Os desenvolvedores do Arch continuam a ser voluntários não-pagos e de meio expediente, e não existem expectativas de monetizar o Arch Linux, de modo que ele continuará a ser livre em todos os sentidos da palavra. Aqueles curiosos para ler mais detalhes sobre a história do desenvolvimento do Arch podem navegar na [entrada sobre o Arch na Internet Archive Wayback Machine](http://web.archive.org/web/*/archlinux.org).
+No fim de 2007, Judd Vinet se afastou da participação ativa como desenvolvedor do Arch, e [transferiu sem problemas](https://bbs.archlinux.org/viewtopic.php?id=38024) o reinado para o programador americano Aaron Griffin, também conhecido como Phrakture.
 
 ### Scripts de instalação do Arch
 

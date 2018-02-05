@@ -24,7 +24,7 @@ After being plugged, the mouse will seems to work, but you may experience differ
 *   You cannot click on buttons.
 *   You cannot get the focus on windows.
 *   You cannot open menus, even with keyboard shortcuts.
-*   Display does not refresh (using [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") or [Cairo Compmgr](/index.php/Cairo_Compmgr "Cairo Compmgr"))
+*   Display does not refresh (using [Xcompmgr](/index.php/Xcompmgr "Xcompmgr"))
 *   Closing certain windows restores functionality until the mouse locks into a new window.
 
 ## The Disable Button Solution

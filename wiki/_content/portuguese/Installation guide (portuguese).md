@@ -1,6 +1,8 @@
-Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Reading (Português)](/index.php/Help:Reading_(Portugu%C3%AAs) "Help:Reading (Português)").
+Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Reading (Português)](/index.php/Help:Reading_(Portugu%C3%AAs) "Help:Reading (Português)"). Em especial, exemplos de código podem conter objetos reservados (formatados em `*italics*`) que devem ser substituídos manualmente.
 
 Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index.php/ArchWiki:About_(Portugu%C3%AAs) "ArchWiki:About (Português)") ou as [páginas de manual](/index.php/Man_page_(Portugu%C3%AAs) "Man page (Português)") dos vários programas, ambos relacionados neste guia. Para uma ajuda interativa, o [canal IRC](/index.php/Canal_IRC "Canal IRC") e os [fóruns](https://bbs.archlinux.org/) também estão disponíveis.
+
+Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://en.wikipedia.org/wiki/pt:AMD64 "w:pt:AMD64") com um mínimo de 512 MB de RAM. Uma instalação básica com todos os pacotes do grupo [base](https://www.archlinux.org/groups/x86_64/base/) deve levar menos de 800 MB de espaço em disco. Como o processo de instalação precisa obter pacotes de repositório remoto, esse guia presume que uma conexão com a Internet esteja disponível.
 
 ## Contents
 
@@ -29,8 +31,6 @@ Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index
 *   [5 Pós-instalação](#P.C3.B3s-instala.C3.A7.C3.A3o)
 
 ## Pré-instalação
-
-Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://en.wikipedia.org/wiki/pt:AMD64 "w:pt:AMD64") com um mínimo de 512 MB de RAM. Uma instalação básica com todos os pacotes do grupo [base](https://www.archlinux.org/groups/x86_64/base/) deve levar menos de 800 MB de espaço em disco. Como o processo de instalação precisa obter pacotes de repositório remoto, uma conexão internet deve é necessária.
 
 Baixe e inicialize a mídia de instalação como explicado em [Category:Getting and installing Arch (Português)](/index.php/Category:Getting_and_installing_Arch_(Portugu%C3%AAs) "Category:Getting and installing Arch (Português)"). Você será autenticado no primeiro [console virtual](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") como o usuário root e apresentado como um prompt shell [Zsh](/index.php/Zsh "Zsh"); comandos comuns como [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) podem ser [completados com tab](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
@@ -62,9 +62,7 @@ A imagem de instalação habilita o *daemon* [dhcpcd](/index.php/Dhcpcd "Dhcpcd"
 
 ```
 
-Se nenhuma conexão estiver disponível, [pare](/index.php/Pare "Pare") o serviço *dhcpcd* com `systemctl stop dhcpcd@`, `Tab` e veja [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Driver_de_dispositivo "Configuração de rede").
-
-Para conexões **sem fio** (*wireless*), [iw(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) e [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") estão disponíveis. Veja [Configuração de rede sem fio](/index.php/Wireless_network_configuration "Wireless network configuration").
+Se nenhuma conexão estiver disponível, [pare](/index.php/Pare "Pare") o serviço *dhcpcd* com `systemctl stop dhcpcd@` e pressione `Tab`. Proceda com [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Driver_de_dispositivo "Configuração de rede") para dispositivos cabeados ou [Configuração de rede sem fio](/index.php/Wireless_network_configuration "Wireless network configuration") para dispositivos sem fio *(wireless)*.
 
 ### Atualizar o relógio do sistema
 
@@ -79,23 +77,32 @@ Para verificar o status do serviço, use `timedatectl status`.
 
 ### Partição dos discos
 
-Quando reconhecido pelo sistema *live*, discos são atribuídos a um *dispositivo de bloco* tal como `/dev/sda`. Para identificar esses dispositivos, use [lsblk](/index.php/Lsblk "Lsblk") ou *fdisk* — resultados no final de `rom`, `loop` ou `airoot` podem ser ignorados:
+Quando reconhecido pelo sistema *live*, discos são atribuídos a um *dispositivo de bloco* tal como `/dev/*sda*`. Para identificar esses dispositivos, use [lsblk](/index.php/Lsblk "Lsblk") ou *fdisk*.
 
 ```
 # fdisk -l
 
 ```
 
-As seguintes *partições* (mostradas com um sufixo numérico) são exigidos para um dispositivo escolhido:
+Resultados terminando em `rom`, `loop` ou `airoot` podem ser ignorados.
+
+As seguintes *partições* (mostradas com um sufixo numérico) são **exigidos** para um dispositivo escolhido:
 
 *   Uma partição para o diretório raiz `/`.
 *   Se [UEFI](/index.php/UEFI "UEFI") estiver habilitado, um [Partição de Sistema EFI](/index.php/EFI_System_Partition "EFI System Partition").
 
-[Espaço swap](/index.php/Espa%C3%A7o_swap "Espaço swap") pode ser definido em uma partição separada ou um [arquivo swap](/index.php/Arquivo_swap "Arquivo swap").
+**Nota:** Espaço [swap](/index.php/Swap "Swap") pode ser definido em uma partição separada ou um [arquivo swap](/index.php/Arquivo_swap "Arquivo swap").
 
-Para modificar as *tabelas de partição*, use [fdisk](/index.php/Fdisk "Fdisk") ou [parted](/index.php/Parted "Parted"). Veja [Particionamento](/index.php/Partitioning "Partitioning") para mais informações.
+Para modificar *tabelas de partição*, use [fdisk](/index.php/Fdisk "Fdisk") ou [parted](/index.php/Parted "Parted").
 
-Se você quiser criar qualquer dispositivo de bloco *stacked* para [LVM](/index.php/LVM "LVM"), [criptografia de disco](/index.php/Disk_encryption "Disk encryption") ou [RAID](/index.php/RAID "RAID"), faça-o agora.
+```
+# fdisk /dev/*sda*
+
+```
+
+Veja [Particionamento](/index.php/Partitioning "Partitioning") para mais informações.
+
+**Nota:** Se você quiser criar qualquer dispositivo de bloco *stacked* para [LVM](/index.php/LVM "LVM"), [criptografia de disco](/index.php/Disk_encryption "Disk encryption") ou [RAID](/index.php/RAID "RAID"), faça-o agora.
 
 ### Formatar as partições
 
@@ -103,6 +110,14 @@ Assim que as partições tenham sido criadas, cada uma deve ser formatada com um
 
 ```
 # mkfs.*ext4* /dev/*sda1*
+
+```
+
+Se você criou uma partição para swap (por exemplo, `/dev/*sda3*`), inicialize-a com *mkswap*:
+
+```
+# mkswap /dev/*sda3*
+# swapon /dev/*sda3*
 
 ```
 
@@ -117,7 +132,7 @@ Veja [File systems#Create a file system](/index.php/File_systems#Create_a_file_s
 
 ```
 
-Crie pontos de montagem para quaisquer partições restantes e monte-as conforme adequado, por exemplo:
+Crie pontos de montagem para quaisquer partições restantes e monte-as conforme adequado:
 
 ```
 # mkdir /mnt/*boot*
@@ -216,7 +231,7 @@ Se você [definir o layout do teclado](#Definir_o_layout_do_teclado), torne as a
 
 ### Hostname
 
-Crie o arquivo [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5):
+Crie o arquivo [hostname](/index.php/Hostname "Hostname"):
 
  `/etc/hostname` 
 ```
@@ -224,7 +239,7 @@ Crie o arquivo [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname
 
 ```
 
-Considere adicionar uma entrada correspondente ao [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
+Adicione entradas correspondentes ao [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
 
  `/etc/hosts` 
 ```
@@ -234,7 +249,7 @@ Considere adicionar uma entrada correspondente ao [hosts(5)](https://jlk.fjfi.cv
 
 ```
 
-Veja também [Configuração de rede#Configurando um hostname](/index.php/Configura%C3%A7%C3%A3o_de_rede#Configurando_um_hostname "Configuração de rede").
+Se o sistema tem um endereço IP permanente, ele deve ser usado em vez de `127.0.1.1`.
 
 ### Configuração de rede
 

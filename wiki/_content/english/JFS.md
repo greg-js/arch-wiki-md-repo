@@ -1,3 +1,7 @@
+Related articles
+
+*   [File systems](/index.php/File_systems "File systems")
+
 This article introduces the reader to the JFS file system. In particular, procedures for implementation, maintenance and optimization will be presented along with background information on the file system itself and some cautionary notes on precarious implementations.
 
 ## Contents
@@ -135,7 +139,7 @@ jfs_fsck /dev/hdj1
 mount -o ro /dev/hdj1 /fs/hdj1
 jfs_mkfs /dev/hdc1
 mount -o rw /dev/hdc1 /fs/hdc1
-(cd /fs/hdj1 && tar -cS -b8 --one -f - .) | (cd /fs/hdc1 && tar -xS -b8 -p -f -)
+(cd /fs/hdj1 && tar -cS -b8 --one-file-system -f - .) | (cd /fs/hdc1 && tar -xS -b8 -p -f -)
 umount /dev/hdj1
 
 ```

@@ -187,7 +187,7 @@ swaymsg -t get_outputs
 
 ```
 
-To control brightness you can use [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/). For a list of utilities to control brightness and color correction see [[B
+To control brightness you can use [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/). For a list of utilities to control brightness and color correction see [Backlight](/index.php/Backlight "Backlight")
 
 ### .Xresources
 

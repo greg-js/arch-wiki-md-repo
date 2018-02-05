@@ -373,7 +373,7 @@ O script *paccache*, fornecido pelo próprio pacote [pacman](https://www.archlin
 
 ```
 
-**Dica:** Você pode criar [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") para executar isso automaticamente após cada transação do pacman. Veja [este tópico](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743) para obter exemplos.
+**Dica:** Você pode criar [#Hooks](#Hooks) para executar isso automaticamente após cada transação do pacman. Veja [este tópico](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743) para obter exemplos.
 
 Você pode definir quantas versões recentes deseja manter:
 
@@ -658,7 +658,7 @@ No caso do *pacman* travar com um erro de "escrita da base de dados" enquanto re
 
 1.  Inicialize usando a mídia de instalação do Arch. Preferivelmente use uma mídia recente, para que a versão do *pacman* seja igual ou mais nova do que a do sistema.
 2.  Monte o sistema de arquivos raiz do sistema (ex.: `mount /dev/sdaX /mnt`) como root e verifique se a montagem tem espaço suficiente com `df -h`
-3.  Monte os sistemas de arquivos proc e sysfs também: `mount -t {proc,sysfs} /dev/sdaX {/mnt/proc, /mnt/sys}`
+3.  Monte os sistemas de arquivos proc e sysfs também: `mount -t proc proc /mnt/proc; mount --rbind /sys /mnt/sys; mount --rbind /dev /mnt/dev`
 4.  Se o sistema usa locais padrão de base de dados e diretório, você pode agora atualizar a base de dados do *pacman* do sistema e atualizá-lo via `pacman --root=/mnt --cachedir=/mnt/var/cache/pacman/pkg -Syyu` como root.
 5.  Após a atualização, uma forma de verificar se pacotes não atualizados, mas ainda quebrados: `find /mnt/usr/lib -size 0`
 6.  Seguido pela reinstalação de qualquer pacote ainda quebrado via `pacman --root /mnt --cachedir=/mnt/var/cache/pacman/pkg -S *pacote*`.

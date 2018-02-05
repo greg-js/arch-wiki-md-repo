@@ -470,7 +470,11 @@ A timer is a unit configuration file whose name ends with *.timer* and encodes i
 
 ## Mounting
 
-Since systemd is a replacement for System V init, it is in charge of the mounts specified in `/etc/fstab`. In fact, it goes beyond the usual `fstab` capabilities, implementing special mount options prefixed with `x-systemd.`. See [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab") for an example of *automounting* (mounting on-demand) using these extensions. See [[2]](https://www.freedesktop.org/software/systemd/man/systemd.mount.html#fstab) for the complete documentation of these extensions.
+*systemd* is in charge of mounting the partitions and filesystems specified in `/etc/fstab`. The [systemd-fstab-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-fstab-generator.8) translates all the entries in `/etc/fstab` into systemd units, this is performed at boot time and whenever the configuration of the system manager is reloaded.
+
+*systemd* extends the usual [fstab](/index.php/Fstab "Fstab") capabilities and offers additional mount options. These affect the dependencies of the mount unit, they can for example ensure that a mount is performed only once the network is up or only once another partition is mounted. The full list of specific *systemd* mount options, typically prefixed with `x-systemd.`, is detailed in [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5#FSTAB).
+
+An example of these mount options in the context of *automounting*, which means mounting only when the resource is required rather than automatically at boot time, is provided in [fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab").
 
 ## Journal
 

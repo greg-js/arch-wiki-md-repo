@@ -1,3 +1,10 @@
+Related articles
+
+*   [Network configuration](/index.php/Network_configuration "Network configuration")
+*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
+*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
+*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
+
 A software access point is used when you want your computer to act as a Wi-Fi access point for the local network. It saves you the trouble of getting a separate wireless router.
 
 ## Contents
@@ -82,21 +89,25 @@ Adjust the options in *hostapd* configuration file if necessary. Especially, cha
 
  `/etc/hostapd/hostapd.conf` 
 ```
-ssid=YourWiFiName
-wpa_passphrase=Somepassphrase
 interface=wlan0_ap
 bridge=br0
-auth_algs=3
-channel=7
-driver=nl80211
-hw_mode=g
-logger_stdout=-1
+
+ssid=YourWiFiName     # SSID to be used in IEEE 802.11 management frames
+driver=nl80211        # Driver interface type (hostap/wired/none/nl80211/bsd)
+country_code=US       # Country code (ISO/IEC 3166-1)
+
+hw_mode=g             # Operation mode (a = IEEE 802.11a (5 GHz), b = IEEE 802.11b (2.4 GHz)
+channel=7             # Channel number
+max_num_sta=5         # Maximum number of stations allowed
+
+wpa=2                 # Bit field: bit0 = WPA, bit1 = WPA2
+auth_algs=1           # Bit field: 1=wpa, 2=wep, 3=both
+rsn_pairwise=CCMP     # Set of accepted cipher suites
+wpa_key_mgmt=WPA-PSK  # Set of accepted key management algorithms
+wpa_passphrase=Somepassphrase
+
+logger_stdout=-1      # hostapd event logger configuration
 logger_stdout_level=2
-max_num_sta=5
-rsn_pairwise=CCMP
-wpa=2
-wpa_key_mgmt=WPA-PSK
-wpa_pairwise=TKIP CCMP
 
 ```
 

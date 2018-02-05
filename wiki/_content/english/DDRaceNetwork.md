@@ -1,16 +1,29 @@
-[DDNet](https://ddnet.tw) (abbreviation of *DDraceNetwork*) is an actively maintained modification of [Teeworlds](https://www.teeworlds.com) with a unique cooperative gameplay. Help each other play through custom maps with up to 64 players, compete against the best in international tournaments, design your own maps, or run your own server. Players' public ranks are made on serveral official servers are available worldwide.
+**DDNet**, as it is popularly known, is a sidescrolling platform game, featuring weaponry and a cooperative gameplay, and is a mod of [Teeworlds](https://www.teeworlds.com). The game name comes from Dummy Drag Race Network, as it was based DDRace.
 
-It works in the client–server model, where the user plays using DDNet Client which connects to a local or remote DDNet Server. Since DDNet has official servers, you most likely will only start the Client and play online.
+From the official website [ddnet.tw](https://ddnet.tw):
+
+	*DDraceNetwork (DDNet) is an actively maintained version of DDRace, a Teeworlds modification with a unique cooperative gameplay. Help each other play through custom maps with up to 64 players, compete against the best in international tournaments, design your own maps, or run your own server. The official servers are located in Germany, Russia, USA, Canada, China, Chile, Brazil and South Africa. All ranks made on official servers are available worldwide and you can collect points!*
+
+You control a *tee*, a ball-shaped 2D character, using your keyboard and mouse to shoot, grapple hook and jump around to interact with other players and the environment in the map with the finish line as target.
+
+The game works in a client–server model, where the user plays using a Client which connects to a local or remote Server. Since DDNet has official servers, you most likely will only start the Client and play online.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Optional packages](#Optional_packages)
-*   [2 Usage](#Usage)
+    *   [1.1 Optional skins](#Optional_skins)
+    *   [1.2 Optional offline maps](#Optional_offline_maps)
+*   [2 Play](#Play)
+    *   [2.1 Gametypes](#Gametypes)
+        *   [2.1.1 DDNet gametypes](#DDNet_gametypes)
+        *   [2.1.2 Vanilla gametypes](#Vanilla_gametypes)
+        *   [2.1.3 Blocker gametype](#Blocker_gametype)
+        *   [2.1.4 FNG-like gametypes](#FNG-like_gametypes)
 *   [3 Configuration](#Configuration)
     *   [3.1 User settings](#User_settings)
 *   [4 Server](#Server)
-    *   [4.1 Setting up a server](#Setting_up_a_server)
+    *   [4.1 MySQL support](#MySQL_support)
+    *   [4.2 Setting up a server](#Setting_up_a_server)
 *   [5 Extra tools](#Extra_tools)
     *   [5.1 config_retrieve](#config_retrieve)
     *   [5.2 config_store](#config_store)
@@ -36,13 +49,34 @@ It works in the client–server model, where the user plays using DDNet Client w
 
 [Install](/index.php/Install "Install") the package [ddnet](https://aur.archlinux.org/packages/ddnet/) from [AUR](/index.php/AUR "AUR"). Alternatively, you install the development version [ddnet-git](https://aur.archlinux.org/packages/ddnet-git/) in same place.
 
-### Optional packages
+### Optional skins
 
-[ddnet-skins](https://aur.archlinux.org/packages/ddnet-skins/) – provides the whole [DDNet's skin database](https://ddnet.tw/skins/) (also available in a Git repository), allowing you to choose between 600 different skins for your character
+[Install](/index.php/Install "Install") [ddnet-skins](https://aur.archlinux.org/packages/ddnet-skins/) from [AUR](/index.php/AUR "AUR").
 
-[ddnet-maps-git](https://aur.archlinux.org/packages/ddnet-maps-git/) – provides all playable maps available in the [DDNet's maps repository](https://github.com/ddnet/ddnet-maps) with default configurations for running an offline DDNet server. Users interested in setting up a DDNet Server will probably want this package, but it's really not necessary for the DDNet Client.
+This package provides all skins from [DDNet Skin Database](https://ddnet.tw/skins/) for your client, so you can choose between many skins to play with a fancy *tee* char. However, this will not affect anything in the gameplay.
 
-## Usage
+These skins are installed in `/usr/share/ddnet/data/skins/`.
+
+Please notice that other players will only see your chosen skin if they also have it installed and, in this case, they will see a default yellowish one. So, this may happen with the skins from this package or any other skin you modify or create yourself.
+
+**Tip:** It is possible to create or modify skins and use for your char. If you do so, consider publishing it , so other users can use via DDNet Skin Database. For publishing skins, go to [this forum thread](https://forum.ddnet.tw/viewtopic.php?f=17&t=982)
+
+**Warning:** This package brings around an additional RAM memory consumption of 120MB for the DDNet Client, so users playing in a computer with low RAM available might want to avoid it.
+
+### Optional offline maps
+
+[Install](/index.php/Install "Install") [ddnet-maps-git](https://aur.archlinux.org/packages/ddnet-maps-git/) from [AUR](/index.php/AUR "AUR").
+
+This package provides all playable maps from the [ddnet-maps repository](https://github.com/ddnet/ddnet-maps) with default configuration files for running an offline DDNet server. So, once installed, eases running a offline server.
+
+**Note:** Client downloads maps automatically upon connection to, or map change of, a server instance. Therefore, it is optional.
+
+Having these maps offline is beneficial for both client and server:
+
+*   Clients will not need to download maps that are already installed by this package. Only new versions of installed maps (rarely happens) or new maps will be downloaded to the user directory (See [#User settings](#User_settings)).
+*   Servers can use the provided maps and configuration files to run without the server-administrator having to expend time creating configurations for them; see [#Servers](#Servers) for more info.
+
+## Play
 
 To play DDNet, run the command `$ DDNet` or run the `.desktop` file provided in the package (e.g. in GNOME, search for "ddnet" in its Activities Overview)
 
@@ -50,7 +84,53 @@ It is very straightforward – all user configuration (skin selection, video, co
 
 No server setup is required; if you want to set up a local server, see [#Server](#Server).
 
-Also, some extra tools – which you probably won't need – are available in `/usr/share/ddnet/tools/`. See [#Extra tools](#Extra_tools).
+Also, some extra tools – which you probably will not need – are available in `/usr/share/ddnet/tools/`. See [#Extra tools](#Extra_tools).
+
+### Gametypes
+
+This section lists some gametype names and will provide a brief explanation about them.
+
+#### DDNet gametypes
+
+These are the gametypes to which DDNet provides support, which means that their maps are stored and made available in DDNet's maps repository. It also means that the Test Staff runs some test before the maps being added the repository.
+
+Some of these might require DDNet Client due to features (e.g. dummy *tee*, teaming, specific key bindings) that this client provides.
+
+The target of these maps, unless mentioned otherwise below, is to overcome obstacules and other difficulties of the map, while helping each other, in order to reach the finish line of map.
+
+This set of gametypes consists of:
+
+*   **novice** – The easiest collaborative maps can be found here. Newcomers should start here.
+*   **moderate** – Moderate-level collaborative maps for more experienced users.
+*   **brutal** – Hard collaborative maps for very experienced users.
+*   **insane** – Insanely hard collaborative maps for insanely experienced users.
+*   **solo** – Play alone the whole map, without any a dummy or any physical interaction with users (you can chat with other players, thought)
+*   **ddmax** – Maps from DDracemaX, one of the first race mod and very popular one. This project discontinued, so DDNet adopted[[1]](https://forum.ddnet.tw/viewtopic.php?f=3&t=1253) its maps and made available in official servers. See [[2]](https://forum.ddnet.tw/viewtopic.php?f=3&t=1253&start=50#p13111) for info of this gametype.
+*   **dummy** – Move your dummy to the finish line, collaboratively or solo depending on the map.
+*   **oldschool** – Some old maps to make long-time players nostalgic.
+*   **race** – Reach the finish line as fast as you can in a solo run.
+
+#### Vanilla gametypes
+
+The so-called *vanilla* gametypes are the first ones, and were created in Teeworlds, and which DDNet supports – as well as (almost?) all other mods of Teeworlds. This set of gametypes include:
+
+*   **dm** (**d**eath**m**atch) – The target is to kill as many enemy players as possible, until a certain score is reached or the time runs out.
+*   **tdm** (**t**eam **d**eath**m**atch) – Same as Deathmatch, except that the players now fight in 2 teams and target for a higher, combined kill score.
+*   **ctf** (**c**apture **t**he **f**lag) – Two teams try to capture and score the enemy flag to reach a certain score (combined with team kills), or to have the higher score when the time runs out.
+
+#### Blocker gametype
+
+**Note:** You'll find it with type *ddrace*, but the server title and map name can be easily identified as Blocker
+
+**Blocker** has as only target to block other players, which means to fool around throwing into freeze areas. There is no score or time limit in this type of game, or at least it doesn't matter.
+
+Please notice that while being a blocker is expected in the blocker gametype, the same does **not** apply to [#DDNet gametypes](#DDNet_gametypes) – in this last case it is rude and you most likely will be banned by vote of others.
+
+#### FNG-like gametypes
+
+Types noteworthy: **fng** (discontinued, incompatible), **openfng** ([thread](https://www.teeworlds.com/forum/viewtopic.php?id=7868)), **fng2** ([source](https://github.com/teeworldsmods/teeworlds-fng2)).
+
+In this gametype, the players are divided in 2 teams and the target is to win by making more points. You will points by hitting the player with hammer or laser gun (the only weapons available), which will cause freeze, and to throwing into the spikes.
 
 ## Configuration
 
@@ -71,6 +151,15 @@ The subdirectory `downloadedmaps/` will store maps downloaded in runtime by DDNe
 **Note:** These instructions are **not** required for playing DDNet; see [#Usage](#Usage).
 
 Use these instructions if you want a local server in a [LAN](https://en.wikipedia.org/wiki/Local_area_network "w:Local area network") to play with friends, or due to high latency of Internet servers, or for testing.
+
+### MySQL support
+
+The DDNet packages in AUR provide a server binary, but MySQL support is disabled. In order to enable MySQL support you have to edit the PKGBUILD:
+
+1.  Add [mariadb](https://www.archlinux.org/packages/?name=mariadb) and [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/) to [depends()](/index.php/PKGBUILD#depends "PKGBUILD") array.
+2.  Append `-DMYSQL=ON` to the *cmake* command-line.
+
+**Tip:** [MySQL](/index.php/MySQL "MySQL") wiki page provides some instructions post-initially. Make sure to check in there, to avoid problems.
 
 ### Setting up a server
 
@@ -142,7 +231,7 @@ $ /usr/share/ddnet/tools/dilate *imagefile1* [*imagefile2* ... ]
 
 It is a graphical tool, mainly useful for mappers. It takes care of transparent areas to prevent black/white outlines around your images ingame, therefore avoiding blending and mipmap issues. See [Edge padding](http://wiki.polycount.com/wiki/Edge_padding) for more info.
 
-**Note:** This works only in RGBA image files. So, it won't work for, for instance, in JPEG files.
+**Note:** This works only in RGBA image files. So, it will not work for, for instance, in JPEG files.
 
 ### dummy_map
 
@@ -151,7 +240,7 @@ $ /usr/share/ddnet/tools/dummy_map
 
 ```
 
-Creates a dummy, small empty map to be used to start a server. See [[1]](https://github.com/ddnet/ddnet/blob/master/src/engine/shared/network_server.cpp#L371) for more info.
+Creates a dummy, small empty map to be used to start a server. See [[3]](https://github.com/ddnet/ddnet/blob/master/src/engine/shared/network_server.cpp#L371) for more info.
 
 ### fake_server
 
@@ -241,7 +330,7 @@ $ /usr/share/ddnet/tools/tileset_borderfix tileset1 [tileset2 ...]
 
 ```
 
-Similarly to [#tileset_borderadd](#tileset_borderadd), it is a graphical tool, mainly useful for mappers, that fix blending issues by tilesets. However, this tool expects an input file with 1024x1024 pixels and does not produce output images as great as tileset_borderadd. e.g. it doesn't add 2px border.
+Similarly to [#tileset_borderadd](#tileset_borderadd), it is a graphical tool, mainly useful for mappers, that fix blending issues by tilesets. However, this tool expects an input file with 1024x1024 pixels and does not produce output images as great as tileset_borderadd. e.g. it does not add 2px border.
 
 Returns 255 with a usage message if less than 1 argument is provided, returns 1 if the image is not a RGBA image (i.e. invalid tileset file), and return 0 for success operation.
 
@@ -287,3 +376,5 @@ Available since DDNet 10.6.1
 *   [DDNet website](https://ddnet.tw/)
 *   [DDNet Forum](https://forum.ddnet.tw/)
 *   [DDNet source code repository at GitHub](https://github.com/ddnet/ddnet)
+*   [Tutorials and other useful links](https://forum.ddnet.tw/viewtopic.php?f=35&t=2420)
+*   [History of DDNet](https://forum.ddnet.tw/viewtopic.php?f=3&t=1824)

@@ -194,7 +194,7 @@ Se você está usando em uma rede privada, é seguro usar endereços IP em `192.
 
 #### Atribuição manual
 
-É possível configurar manualmente um IP estático usando apenas o pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2). Essa é uma boa forma de testar as configurações da conexão, já que a conexão feita usando esse método não persistirá entre as reinicializações. Primeiro, ative a [interface de rede](#Nomes_de_dispositivo):
+É possível configurar manualmente um IP estático usando apenas o pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2). Essa é uma boa forma de testar as configurações da conexão, já que a conexão feita usando esse método não persistirá entre as reinicializações. Primeiro, ative a [interface de rede](#Interfaces_de_rede):
 
 ```
 # ip link set *interface* up
@@ -325,8 +325,8 @@ O pré-requisito é ter realizado [#Configurando um hostname](#Configurando_um_h
 
  `$ ping *meuhostname*` 
 ```
-PING meuhostname (192.168.1.2) 56(84) bytes of data.
-64 bytes from meuhostname (192.168.1.2): icmp_seq=1 ttl=64 time=0.043 ms
+PING *meuhostname* (192.168.1.2) 56(84) bytes of data.
+64 bytes from *meuhostname* (192.168.1.2): icmp_seq=1 ttl=64 time=0.043 ms
 ```
 
 Para permitir que outras máquinas enderecem o host pelo nome, é necessário:
@@ -348,7 +348,7 @@ Como um resultado, o sistema resolve ambas entradas:
  `$ getent hosts` 
 ```
 127.0.0.1       localhost
-127.0.1.1       meuhostname.dominiolocal meuhostname
+127.0.1.1       *meuhostname*.dominiolocal *meuhostname*
 
 ```
 

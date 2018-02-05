@@ -166,6 +166,7 @@ install CD version
 | Lenovo IdeaPad Y700 | 2015.12.01 | Yes | Yes* | Yes | Yes | Yes | Not tested | NA | Trackpad - [buggy](https://unix.stackexchange.com/questions/362165/lenovo-y700-elantech-touchpad-query-0x01-failed) | [Trackpad requires pata_legacy to be blacklisted](https://bugzilla.kernel.org/show_bug.cgi?id=151681) |
 | [Lenovo IdeaPad Z580](/index.php/Lenovo_IdeaPad_Z580 "Lenovo IdeaPad Z580") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | Lenovo IdeaPad 720s | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA | Fingerprint reader not tested but most likely not working |
+| [Lenovo IdeaPad 720s (Ryzen)](/index.php/Lenovo_IdeaPad_720s_(Ryzen) "Lenovo IdeaPad 720s (Ryzen)") | 2018.02.01 | Not tested | Not tested | Yes* | No | Not tested | Not tested | NA | Fingerprint reader not tested but most likely not working | *requires USB or USB C dongle |
 
 ### B series
 

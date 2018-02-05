@@ -245,8 +245,6 @@ Esiste una [lista di software leggero](/index.php/Lightweight_Applications "Ligh
 
 [xcompmgr](/index.php/Xcompmgr "Xcompmgr") è un composite manager leggero in grado di creare ombre, finestre in dissolvenza e trasparenza sia in Openbox che in altri window manager.(È bene segnalare che xcompmgr non è più mantenuto, sicchè eventuali problemi o bug non saranno risolti) (È noto un conflitto con tint2 0.9, l'icona del vassoio di sistema ha la tendenza a dare qualche problema)
 
-[Cairo Composite Manager](/index.php/Cairo_Compmgr "Cairo Compmgr") È Un versatile ed ampliabile composite manager che utilizza cairo per il rendering, è una buona alternativa.
-
 ### Pannelli, vassoi di sistema e paginatori
 
 Ci sono un bel numero di pannelli da installare per provvedere una taskbar e un pager per Openbox. I più comuni sono:

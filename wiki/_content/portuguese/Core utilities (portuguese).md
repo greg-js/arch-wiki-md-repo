@@ -102,7 +102,7 @@ $ printf '%s
 
 Similarmente ao *cp*, por padrão o *dd* faz cópia bit a bit do arquivo, mas com recursos de controle de fluxo de E/S de baixo nível.
 
-**Dica:** Por padrão, *dd* emite nada até a tarefa está finalizada. Para monitorar o progresso da operação, adicione a opção `status=progress` ao comando. Ela não está disponível em versões antigas (antes 8.24) do [coreutils](https://www.archlinux.org/packages/?name=coreutils).
+**Dica:** Por padrão, *dd* emite nada até a tarefa está finalizada. Para monitorar o progresso da operação, adicione a opção `status=progress` ao comando.
 
 Para mais informações, veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) ou da [documentação completa](https://www.gnu.org/software/coreutils/dd).
 
@@ -121,6 +121,8 @@ Para suporte a cores, veja [Color output in console#grep](/index.php/Color_outpu
 ## find
 
 *find* é parte do pacote [findutils](https://www.archlinux.org/packages/?name=findutils), que pertence ao grupo de pacotes [base](https://www.archlinux.org/groups/x86_64/base/).
+
+Dica: [fd](https://github.com/sharkdp/fd) é uma alternativa moderna e amigável para usuário para `find`, que tenta melhorar desempenho e oferece padrões mais amigáveis. Por exemplo, `fd PADRÃO` em vez de `find -iname '*PADRÃO*'`. Possui saída colorida (semelhante ao `ls`), pesquisa de casos inteligentes por padrão, ignorar arquivos ocultos e muito mais. [fd-rs](https://www.archlinux.org/packages/?name=fd-rs)
 
 Provavelmente se esperaria que um comando *find* levasse como argumento um nome de arquivo e pesquisasse no sistema de arquivos para arquivos que correspondessem a esse nome. Para um programa que faz exatamente isso, veja [#locate](#locate) abaixo.
 
@@ -154,34 +156,34 @@ Veja [sponge(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) para detal
 
 ## ip
 
-[ip](https://en.wikipedia.org/wiki/Iproute2 "wikipedia:Iproute2") allows you to show information about network devices, IP addresses, routing tables, and other objects in the Linux [IP](https://en.wikipedia.org/wiki/Internet_Protocol "wikipedia:Internet Protocol") software stack. By appending various commands, you can also manipulate or configure most of these objects.
+[ip](https://en.wikipedia.org/wiki/Iproute2 "wikipedia:Iproute2") permite que você mostre informações sobre dispositivos de rede, endereços IP, tabelas de roteamento e outros objetos no Linux. Software de [IP](https://en.wikipedia.org/wiki/pt:Protocolo_de_Internet "w:pt:Protocolo de Internet"). Ao anexar vários comandos, você também pode manipular ou configurar a maioria desses objetos.
 
-**Note:** The *ip* utility is provided by the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package, which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group.
+**Nota:** O utilitário *ip* é fornecido pelo pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2), que está incluído no grupo [base](https://www.archlinux.org/groups/x86_64/base/).
 
-| Object | Purpose | Manual page |
-| ip addr | protocol address management | [ip-address(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-address.8) |
-| ip addrlabel | protocol address label management | [ip-addrlabel(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-addrlabel.8) |
-| ip l2tp | tunnel Ethernet over IP (L2TPv3) | [ip-l2tp(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-l2tp.8) |
-| ip link | network device configuration | [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8) |
-| ip maddr | multicast addresses management | [ip-maddress(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-maddress.8) |
-| ip monitor | watch for netlink messages | [ip-monitor(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-monitor.8) |
-| ip mroute | multicast routing cache management | [ip-mroute(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-mroute.8) |
-| ip mrule | rule in multicast routing policy db |
-| ip neigh | neighbour/ARP tables management | [ip-neighbour(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-neighbour.8) |
-| ip netns | process network namespace management | [ip-netns(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-netns.8) |
-| ip ntable | neighbour table configuration | [ip-ntable(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-ntable.8) |
-| ip route | routing table management | [ip-route(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-route.8) |
-| ip rule | routing policy database management | [ip-rule(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-rule.8) |
-| ip tcp_metrics | management for TCP Metrics | [ip-tcp_metrics(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-tcp_metrics.8) |
-| ip tunnel | tunnel configuration | [ip-tunnel(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-tunnel.8) |
-| ip tuntap | manage TUN/TAP devices |
-| ip xfrm | manage IPsec policies | [ip-xfrm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-xfrm.8) |
+| Objeto | Propósito | Página de manual |
+| ip addr | gerenciamento de endereço de protocolo | [ip-address(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-address.8) |
+| ip addrlabel | gerenciamento de rótulo de endereço de protocolo | [ip-addrlabel(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-addrlabel.8) |
+| ip l2tp | tunelamento de Ethernet over IP (L2TPv3) | [ip-l2tp(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-l2tp.8) |
+| ip link | configuração de dispositivo de rede | [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8) |
+| ip maddr | gerenciamento de endereços de multicast | [ip-maddress(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-maddress.8) |
+| ip monitor | monitore por mensagens de netlink | [ip-monitor(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-monitor.8) |
+| ip mroute | gerenciamento de cache de roteamento de multicast | [ip-mroute(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-mroute.8) |
+| ip mrule | regra no banco de dados de política de roteamento multicast |
+| ip neigh | gerenciamento de tabelas de vizinhança/ARP | [ip-neighbour(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-neighbour.8) |
+| ip netns | gerenciamento de espaço de nome de rede de processo | [ip-netns(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-netns.8) |
+| ip ntable | configuração de tabela de vizinhança | [ip-ntable(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-ntable.8) |
+| ip route | gerenciamento de tabela de roteamento | [ip-route(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-route.8) |
+| ip rule | gerenciamento de banco de dados de políticas de roteamento | [ip-rule(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-rule.8) |
+| ip tcp_metrics | gerenciamento para Métricas de TCP | [ip-tcp_metrics(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-tcp_metrics.8) |
+| ip tunnel | configuração de tunel | [ip-tunnel(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-tunnel.8) |
+| ip tuntap | gerencia dispositivos TUN/TAP |
+| ip xfrm | gerencia políticas IPsec | [ip-xfrm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-xfrm.8) |
 
-The `help` command is available for all objects. For example, typing `ip addr help` will show you the command syntax available for the address object. For advanced usage see the [iproute2 documentation](http://www.policyrouting.org/iproute2.doc.html).
+O comando `help` está disponível para todos os objetos. Por exemplo, digitar `ip addr help` mostrará a você a sintaxe de comando disponível para o objeto do endereço. Para uso avançado, veja o [documentação do iproute2](http://www.policyrouting.org/iproute2.doc.html).
 
-The [Network configuration](/index.php/Network_configuration "Network configuration") article shows how the *ip* command is used in practice for various common tasks.
+O artigo [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede") mostra como o comando *ip* é usado na prática para várias tarefas comuns.
 
-**Note:** You might be familiar with the [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") command, which was used in older versions of Linux for interface configuration. It is now deprecated in Arch Linux; you should use *ip* instead.
+**Nota:** Você pode estar familiarizado com o comando [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig"), que era usado em versões antigas do Linux para configuração de interface. Ele está obsoleto no Arch Linux; em vez dele, você deve usar o *ip*.
 
 ## locate
 
@@ -220,6 +222,8 @@ Now programs that use the `PAGER` environment variable, like [git](/index.php/Gi
 [ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") lists directory contents.
 
 See `info ls` or [the online manual](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation) for more information.
+
+[exa](https://the.exa.website) is a modern, and more user friendly alternative to `ls` and `tree`, that has more features, such as displaying [Git](/index.php/Git "Git") modifications along with filenames, colouring differently each columnn in `--long` mode, or displaying `--long` mode metadata along with a `tree` view. [exa](https://www.archlinux.org/packages/?name=exa)
 
 ### Formato longo
 

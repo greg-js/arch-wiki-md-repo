@@ -26,6 +26,7 @@ Among other things they can be used to:
         *   [2.4.2 Wildcard matching](#Wildcard_matching)
         *   [2.4.3 Commenting](#Commenting)
         *   [2.4.4 Include files](#Include_files)
+    *   [2.5 Getting resource values](#Getting_resource_values)
 *   [3 Sample usage](#Sample_usage)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Parsing errors](#Parsing_errors)
@@ -176,6 +177,16 @@ If files fail to load, specify the directory to *xrdb* with the `-I` parameter. 
  `~/.xinitrc` 
 ```
 xrdb -I*$HOME* ~/.Xresources
+
+```
+
+### Getting resource values
+
+If you want to get the value of a resource (for example if you want to use it in a bash script) you can use [xgetres](https://aur.archlinux.org/packages/xgetres/):
+
+```
+$ xgetres xscreensaver.Dialog.headingFont
+-*-fixed-bold-r-*-*-*-100-*-*-*-*-iso8859-1
 
 ```
 

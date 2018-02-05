@@ -5,7 +5,7 @@ Auxiliares do AUR são escritos para automatizar certas tarefas para o [Arch Use
 ## Contents
 
 *   [1 Envio](#Envio)
-*   [2 Compilar e pesquisa](#Compilar_e_pesquisa)
+*   [2 Compilação e pesquisa](#Compila.C3.A7.C3.A3o_e_pesquisa)
 *   [3 Manutenção](#Manuten.C3.A7.C3.A3o)
 *   [4 Bibliotecas](#Bibliotecas)
 *   [5 Gráfico](#Gr.C3.A1fico)
@@ -17,7 +17,7 @@ Auxiliares do AUR são escritos para automatizar certas tarefas para o [Arch Use
 *   [aur4_make_submodule.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_make_submodule.sh) — Substitui um pacote em um repositório git maior com um submódulo do AUR 4, incluindo `.SRCINFO`.
 *   [aurpublish](https://github.com/Edenhofer/abs/blob/master/aurpublish) — Gerencia pacotes do AUR como [subárvores git](https://raw.githubusercontent.com/git/git/master/contrib/subtree/git-subtree.txt). A [geração de arquivos `.SRCINFO`, verificação de `PKGBUILD`](https://github.com/Edenhofer/abs/blob/master/pre-commit.hook) e a [criação de um modelo de mensagem de commit por pacote](https://github.com/Edenhofer/abs/blob/master/prepare-commit-msg.hook) é deixada para os *hooks* git no mesmo [repositório](https://github.com/Edenhofer/abs/blob/master/README.md).
 
-## Compilar e pesquisa
+## Compilação e pesquisa
 
 Esta é uma lista de utilitários auxiliares que pesquisam, baixam e/ou criam pacotes.
 
@@ -73,6 +73,10 @@ Esta é uma lista de utilitários auxiliares que pesquisam, baixam e/ou criam pa
 
 	[http://xyne.archlinux.ca/projects/pbget](http://xyne.archlinux.ca/projects/pbget) || [pbget](https://aur.archlinux.org/packages/pbget/)
 
+*   **pikaur** — Wrapper para o pacman que permite revisar todos os PKGBUILDs de uma só vez para não ficar demandando interação após a compilação de cada pacote.
+
+	[https://github.com/actionless/pikaur](https://github.com/actionless/pikaur) || [pikaur-git](https://aur.archlinux.org/packages/pikaur-git/)
+
 *   **PKGBUILDer** — Um auxiliar do AUR com suporte a dependência escrito em Python 3.
 
 	[https://github.com/Kwpolska/pkgbuilder](https://github.com/Kwpolska/pkgbuilder) || [pkgbuilder](https://aur.archlinux.org/packages/pkgbuilder/)
@@ -107,7 +111,7 @@ Esta é uma lista de utilitários auxiliares que pesquisam, baixam e/ou criam pa
 
 *   **yay** — Auxiliar do AUR escrito em Go.
 
-	[https://github.com/Jguer/yay](https://github.com/Jguer/yay) || [yay](https://aur.archlinux.org/packages/yay/) ou [yay-bin](https://aur.archlinux.org/packages/yay-bin/) (binário)
+	[https://github.com/Jguer/yay](https://github.com/Jguer/yay) || [yay](https://aur.archlinux.org/packages/yay/) ou [yay-bin](https://aur.archlinux.org/packages/yay-bin/) (binário) or [yay-git](https://aur.archlinux.org/packages/yay-git/) (git)
 
 ## Manutenção
 

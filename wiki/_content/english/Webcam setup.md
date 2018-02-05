@@ -303,7 +303,7 @@ $ xawtv -nodga
 
 ### VLC
 
-[VLC](/index.php/VLC "VLC") can also be used to view and record your webcam. In VLC's file menu, open the 'Capture Device...' dialog and enter the video and audio device files. Or from the command line, do:
+[VLC](/index.php/VLC "VLC") can also be used to view and record your webcam. In VLC's "Media" menu, open the 'Capture Device...' dialog and enter the video and audio device files. Or from the command line, do:
 
 ```
 $ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2"

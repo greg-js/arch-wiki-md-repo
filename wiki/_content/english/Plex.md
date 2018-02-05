@@ -43,7 +43,7 @@ and then browse to `[http://localhost:8888/web/](http://localhost:8888/web/)`.
 
 PMS can be expanded with additional plugins. For example, PMS can be used as an IPTV client with the [IPTV plugin](https://github.com/Cigaras/IPTV.bundle).
 
-Plugins can be installed inside `$PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR/Plex Media Server/Plug-ins`.
+Plugins can be installed inside `/var/lib/plex/Plex Media Server/Plug-ins`.
 
 ### Plex Live TV and DVR
 
@@ -120,7 +120,7 @@ and run `sudo sysctl --system` to apply without rebooting. Now plex should see a
 Logs are located in:
 
 ```
-$PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR/Plex Media Server/Logs
+/var/lib/plex/Plex Media Server/Logs
 
 ```
 

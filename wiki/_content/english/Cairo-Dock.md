@@ -118,7 +118,7 @@ $ rm ~/.config/autostart/cairo-dock*
 
 ### The background is black
 
-This is most likely caused by not running a composite manager, like [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") or [Cairo Compmgr](/index.php/Cairo_Compmgr "Cairo Compmgr"). Cairo-Dock uses the transparency feature of the composite manager to display the dock, and without it the dock will be displayed with a black background. If you are using a desktop environment, simply enable the composite manager or desktop effects in the settings.
+This is most likely caused by not running a composite manager, like [Xcompmgr](/index.php/Xcompmgr "Xcompmgr"). Cairo-Dock uses the transparency feature of the composite manager to display the dock, and without it the dock will be displayed with a black background. If you are using a desktop environment, simply enable the composite manager or desktop effects in the settings.
 
 An alternative solution that does not require a composite manager is to enable fake transparency in Cairo-Dock. To do this, right-click the dock and go to **Cairo-Dock > Configure > Advanced Mode > System > Composition**. Then enable both **Emulate composition with fake transparency** and **Make the config panel transparent**.
 

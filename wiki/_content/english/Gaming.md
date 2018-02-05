@@ -143,6 +143,10 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 	[http://www.mupen64plus.org/](http://www.mupen64plus.org/) || [mupen64plus](https://www.archlinux.org/packages/?name=mupen64plus) or a graphical front-end, such as [m64py](https://aur.archlinux.org/packages/m64py/) or [cutemupen](https://aur.archlinux.org/packages/cutemupen/).
 
+*   **[Nestopia](/index.php/Nestopia "Nestopia")** — Very accurate NES emulator.
+
+	[http://0ldsk00l.ca/nestopia/](http://0ldsk00l.ca/nestopia/) || [nestopia](https://aur.archlinux.org/packages/nestopia/)
+
 *   **pSX** — A not plugin-based PlayStation emulator with fairly high compatibility.
 
 	[http://psxemulator.gazaxian.com/](http://psxemulator.gazaxian.com/) || [psx](https://aur.archlinux.org/packages/psx/)
@@ -331,7 +335,7 @@ Matching the buffers can reduce stuttering and increase performance marginally. 
 
 ### Double check your CPU frequency scaling settings
 
-If your system is currently configured to properly insert its own cpu frequency scaling driver, the system sets the default governor to Ondemand. By default, this governor only adjusts the clock if the system is utilizing 95% of its CPU, and then only for a very short period of time. This saves power and reduces heat, but has a noticeable impact on performance. You can instead only have the system downclock when it is idle, by tuning the system governor. To do so, see [Cpufrequtils#Improving on-demand performance](/index.php/Cpufrequtils#Improving_on-demand_performance "Cpufrequtils").
+If your system is currently configured to properly insert its own cpu frequency scaling driver, the system sets the default governor to Ondemand. By default, this governor only adjusts the clock if the system is utilizing 95% of its CPU, and then only for a very short period of time. This saves power and reduces heat, but has a noticeable impact on performance. You can instead only have the system downclock when it is idle, by tuning the system governor. To do so, see [Cpufrequtils#Tuning the ondemand governor](/index.php/Cpufrequtils#Tuning_the_ondemand_governor "Cpufrequtils").
 
 ## Improving framerates and responsiveness with scheduling policies
 

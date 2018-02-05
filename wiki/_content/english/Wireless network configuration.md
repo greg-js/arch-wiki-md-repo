@@ -93,7 +93,7 @@ The default Arch Linux kernel is *modular*, meaning many of the drivers for mach
 
 Some wireless chipsets also require firmware, in addition to a corresponding driver. Many firmware images are provided by the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package which is installed by default, however, proprietary firmware images are not included and have to be installed separately. This is described in [#Installing driver/firmware](#Installing_driver.2Ffirmware).
 
-**Note:** Udev is not perfect. If the proper module is not loaded by udev on boot, simply [load it manually](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). Note also that udev may occasionally load more than one driver for a device, and the resulting conflict will prevent successful configuration. Make sure to [blacklist](/index.php/Blacklist "Blacklist") the unwanted module.
+**Note:** If the proper module is not loaded by udev on boot, simply [load it manually](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). If udev loads more than one driver for a device, the resulting conflict may prevent successful configuration. Make sure to [blacklist](/index.php/Blacklist "Blacklist") the unwanted module.
 
 **Tip:** Though not strictly required, it's a good idea to first install user-space tools mentioned in [#Manual setup](#Manual_setup), especially when some problem should appear.
 

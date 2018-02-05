@@ -94,6 +94,7 @@ Os pacotes Java podem especificar `java-runtime` ou `java-environment` como depe
 
 Para a maioria dos pacotes, `java-runtime` é o que é necessário para simplesmente executar software escrito em Java. `java-runtime` é uma dependência virtual fornecida por:
 
+*   [jre9-openjdk](https://www.archlinux.org/packages/?name=jre9-openjdk) (livre)
 *   [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) (livre)
 *   [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) (livre)
 *   [java-gcj-compat](https://aur.archlinux.org/packages/java-gcj-compat/) (livre)
@@ -101,6 +102,7 @@ Para a maioria dos pacotes, `java-runtime` é o que é necessário para simplesm
 
 `java-environment` (ex.: JDK) é necessário por pacotes que vão precisar o código fonte Java em código de bytes. `java-environment` é uma dependência virtual fornecida por:
 
+*   [jdk9-openjdk](https://www.archlinux.org/packages/?name=jdk9-openjdk) (livre)
 *   [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) (livre)
 *   [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) (livre)
 *   [jdk](https://aur.archlinux.org/packages/jdk/) (não livre)

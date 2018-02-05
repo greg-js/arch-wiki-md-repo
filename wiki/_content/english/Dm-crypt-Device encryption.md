@@ -842,6 +842,13 @@ If you are planning to store the keyfile on an external device, you can also sim
 
 ```
 
+To deny any access for other users then `root`:
+
+```
+# chmod 600 /etc/mykeyfile
+
+```
+
 ##### Securely overwriting stored keyfiles
 
 If you stored your temporary keyfile on a physical storage device, and want to delete it, remember to not just remove the keyfile later on, but use something like

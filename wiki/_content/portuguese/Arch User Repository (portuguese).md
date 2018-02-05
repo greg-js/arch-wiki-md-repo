@@ -42,7 +42,7 @@ Um bom número de novos pacotes que entram para os repositórios oficiais inicia
     *   [10.3 Como posso votar em pacotes no AUR?](#Como_posso_votar_em_pacotes_no_AUR.3F)
     *   [10.4 O que é um Trusted User / TU?](#O_que_.C3.A9_um_Trusted_User_.2F_TU.3F)
     *   [10.5 Qual é a diferença entre o Arch User Repository e repositório [community]?](#Qual_.C3.A9_a_diferen.C3.A7a_entre_o_Arch_User_Repository_e_reposit.C3.B3rio_.5Bcommunity.5D.3F)
-    *   [10.6 Foo no AUR está desatualizado; o que faço?](#Foo_no_AUR_est.C3.A1_desatualizado.3B_o_que_fa.C3.A7o.3F)
+    *   [10.6 Foo no AUR está desatualizado; o que devo fazer?](#Foo_no_AUR_est.C3.A1_desatualizado.3B_o_que_devo_fazer.3F)
     *   [10.7 Foo no AUR não compila quando eu executo makepkg; o que devo fazer?](#Foo_no_AUR_n.C3.A3o_compila_quando_eu_executo_makepkg.3B_o_que_devo_fazer.3F)
     *   [10.8 Como eu crio um PKGBUILD?](#Como_eu_crio_um_PKGBUILD.3F)
     *   [10.9 Eu tenho um PKGBUILD que queria enviar; alguém pode verificá-lo para ver se ele tem algum erro?](#Eu_tenho_um_PKGBUILD_que_queria_enviar.3B_algu.C3.A9m_pode_verific.C3.A1-lo_para_ver_se_ele_tem_algum_erro.3F)
@@ -304,7 +304,9 @@ Veja [i18n.txt](https://projects.archlinux.org/aurweb.git/tree/doc/i18n.txt) na 
 
 ## Sintaxe de comentário
 
-Desde o AUR [v4.6.0](https://lists.archlinux.org/pipermail/aur-general/2017-December/033697.html), há suporte à biblioteca [Python-Markdown](https://python-markdown.github.io/). Veja [[1]](https://python-markdown.github.io/#differences) para as diferenças com [Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown").
+Há suporte à sintaxe do [Python-Markdown](https://python-markdown.github.io/) nos comentários.
+
+Ela fornece uma sintaxe [Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown") básica para formatar comentários. Note que essa implementação possui algumas [diferenças](https://python-markdown.github.io/#differences) em relação às [regras de sitaxe](https://daringfireball.net/projects/markdown/syntax) oficiais. Hashes de commit para o repositório Git do pacote e referências a chamados do Flyspray são convertidos automaticamente em links. Comentários longos são encolhidos e podem ser expandidos sob demanda.
 
 ## FAQ
 
@@ -342,13 +344,15 @@ Um [(Trusted User)](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs) "AUR
 
 O Arch User Repository é onde todos os PKGBUILDs que os usuários submetem são armazenados e têm que ser compilados manualmente com [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"). Quando os PKGBUILDs recebem interesse e suporte suficiente da comunidade, eles são movidos para o repositório [community](/index.php/Community_(Portugu%C3%AAs) "Community (Português)") (mantido pelos TUs), onde os pacotes binários podem ser instalados com o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
 
-### Foo no AUR está desatualizado; o que faço?
+### Foo no AUR está desatualizado; o que devo fazer?
 
-Para começar, você pode marcar pacotes como desatualizados. Se ele ficar desatualizado por um longo período de tempo, a melhor coisa a ser feita é você mesmo escrever um e-mail para o mantenedor. Se não houver resposta do mantenedor, você pode requisitar que seja tornado órfão. Quando estivermos falando de um pacote que está marcado como desatualizado por mais de 3 meses e em geral não teve atualização por muito tempo, por favor adicione esta informação na sua requisição.
+Primeiro, você deve sinalizar o pacote como desatualizado (*out-of-date*), indicando detalhes sobre por que o pacote está desatualizado, de preferência incluindo links para o anúncio de lançamento ou o novo lançamento de tarball.
 
-Neste meio tempo, você pode tentar atualizar o pacote você mesmo editando o PKGBUILD - algumas atualizações não exigem qualquer alteração para o processo de compilação ou empacotamento, caso em que apenas atualizar o vetor `pkgver` ou `source` é suficiente.
+Você também deve tentar contactar o mantenedor diretamente por e-mail. Se não houver resposta do mantenedor após *duas semanas*, você pode apresentar uma solicitação para tornar o pacote *órfão*. Isso significa que você pede a um [Trusted User](/index.php/Trusted_User "Trusted User") para destituir o mantenedor de um pacote base. Isso deve ser feito somente se o pacote exigir a ação do mantenedor, que ele/ela não está respondendo e você já tentou contatá-lo anteriormente.
 
-**Nota:** [Pacotes VCS](/index.php/VCS_package_guidelines "VCS package guidelines") não são considerados desatualizados quando o pkgver altera, então **por favor** não sinalize-os pois o mantenedor irá simplesmente retirar a sinalização e ignorar você. Mantenedores do AUR não devem fazer commits para meramente incrementar o pkgver.
+Neste meio tempo, você pode tentar atualizar o pacote você mesmo editando o PKGBUILD localmente. Ás vezes, atualizações não exigem qualquer alteração para o processo de compilação ou empacotamento, caso em que apenas atualizar o vetor `pkgver` ou `source` é suficiente.
+
+**Nota:** [Pacotes VCS](/index.php/VCS_package_guidelines "VCS package guidelines") não são considerados desatualizados quando o pkgver altera, então não sinalize-os pois o mantenedor irá simplesmente retirar a sinalização e ignorar você. Mantenedores do AUR não devem fazer commits para meramente incrementar o pkgver.
 
 ### Foo no AUR não compila quando eu executo makepkg; o que devo fazer?
 
@@ -366,7 +370,7 @@ O melhor recurso é a página wiki sobre [criação de pacotes](/index.php/Crian
 
 ### Eu tenho um PKGBUILD que queria enviar; alguém pode verificá-lo para ver se ele tem algum erro?
 
-Se quiser ter o seu PKGBUILD criticado, publique--o para a [lista de discussão aur-general](https://mailman.archlinux.org/mailman/listinfo/aur-general) para receber feedback dos TUs e de outros membros do AUR. Você também pode conseguir ajuda do [Canal IRC](/index.php/Canal_IRC "Canal IRC"), #archlinux-aur em irc.freenode.net. Você também pode usar o [namcap](/index.php/Namcap_(Portugu%C3%AAs) "Namcap (Português)") para verificar erros no seu PKGBUILD e no pacote resultante.
+Se quiser ter o seu PKGBUILD analisado, publique-o na [lista de discussão aur-general](https://mailman.archlinux.org/mailman/listinfo/aur-general) para receber feedback dos TUs e de outros membros do AUR. Você também pode conseguir ajuda do [Canal IRC](/index.php/Canal_IRC "Canal IRC"), #archlinux-aur em irc.freenode.net. Você também pode usar o [namcap](/index.php/Namcap_(Portugu%C3%AAs) "Namcap (Português)") para verificar erros no seu PKGBUILD e no pacote resultante.
 
 ### Como que faz para um PKGBUILD ir para o repositório *community*?
 

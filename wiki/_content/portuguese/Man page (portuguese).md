@@ -2,7 +2,7 @@ Artigos relacionados
 
 *   [Color output in console#man](/index.php/Color_output_in_console#man "Color output in console")
 
-**Páginas man** — abreviação para "páginas de manual" — são a forma de documentação que está disponível na maioria dos sistemas operacionais tipo UNIX, incluindo o Arch Linux. O comando usado para exibi-los é `man`.
+[man pages](https://en.wikipedia.org/wiki/Man_page "wikipedia:Man page") — abreviação para "páginas de manual" — são a forma de documentação que está disponível na maioria dos sistemas operacionais tipo UNIX, incluindo o Arch Linux. O comando usado para exibi-los é `man`.
 
 Apesar de seu escopo, páginas man são projetadas para serem documentos autocontidos, consequentemente limitando-as a fazer referência a outras páginas man ao discutir assuntos relatados. Esse é um contraste nítido com os arquivos info compatíveis com hiperlinks, a tentativa do GNU de substituir o formato tradicional de página man.
 
@@ -15,12 +15,12 @@ Apesar de seu escopo, páginas man são projetadas para serem documentos autocon
 *   [3 Pesquisando por manuais](#Pesquisando_por_manuais)
 *   [4 Largura de página](#Largura_de_p.C3.A1gina)
 *   [5 Lendo páginas man locais](#Lendo_p.C3.A1ginas_man_locais)
-    *   [5.1 Convertendo para HTML legível com navegador](#Convertendo_para_HTML_leg.C3.ADvel_com_navegador)
+    *   [5.1 Conversão para HTML](#Convers.C3.A3o_para_HTML)
         *   [5.1.1 mandoc](#mandoc)
         *   [5.1.2 man2html](#man2html)
         *   [5.1.3 man -H](#man_-H)
         *   [5.1.4 roffit](#roffit)
-    *   [5.2 Convertendo para PDF](#Convertendo_para_PDF)
+    *   [5.2 Conversão para PDF](#Convers.C3.A3o_para_PDF)
 *   [6 Páginas man online](#P.C3.A1ginas_man_online)
 *   [7 Páginas man notáveis](#P.C3.A1ginas_man_not.C3.A1veis)
 *   [8 Veja também](#Veja_tamb.C3.A9m)
@@ -34,7 +34,7 @@ $ man *page_name*
 
 ```
 
-Manuais são ordenados em diversas seções. Para uma listagem completa, veja a seção intitulada "Sections of the manual pages" no [man-pages(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
+Manuais são ordenados em diversas [seções](https://en.wikipedia.org/wiki/Man_page#Manual_sections "wikipedia:Man page"). Para uma listagem completa, veja a seção intitulada "Sections of the manual pages" no [man-pages(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
 
 Páginas man geralmente são referenciadas por seu nome, seguido do número de sua seção em parênteses. Geralmente há múltiplas páginas man com o mesmo nome, tal como [man(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/man.1) e [man(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/man.7). Neste caso, forneça ao man o número da seção seguido pelo nome da página man. Por exemplo:
 
@@ -128,11 +128,11 @@ Em vez da interface padrão, o uso de navegadores como [lynx](https://www.archli
 *   [xorg-xman](https://www.archlinux.org/packages/?name=xorg-xman) fornece uma visão categorizada em páginas man no [X](/index.php/X "X").
 *   [yelp](https://www.archlinux.org/packages/?name=yelp), o navegador de ajuda do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), pode ser usado via `yelp man:<nome>`.
 
-### Convertendo para HTML legível com navegador
+### Conversão para HTML
 
 #### mandoc
 
-Instale [mandoc](https://aur.archlinux.org/packages/mandoc/) do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). Para converter uma página, por exemplo `free(1)`:
+Instale o pacote [mandoc](https://aur.archlinux.org/packages/mandoc/). Para converter uma página, por exemplo `free(1)`:
 
 ```
 $ gunzip -c /usr/share/man/man1/free.1.gz | mandoc -Thtml -Ostyle=style.css 1> free.html
@@ -181,7 +181,7 @@ $ gunzip -c /usr/share/man/man1/free.1.gz | roffit > free.html
 
 ```
 
-### Convertendo para PDF
+### Conversão para PDF
 
 Páginas man sempre foram imprimíveis: elas são escritas em troff, que é fundamentalmente uma linguagem de formatação de texto. Se você tiver o ghostscript instalado, a conversão de uma página man para PDF é realmente bem fácil: `man -t <manpage> | ps2pdf - <pdf>`. [Essa pesquisa de imagens no Google](https://www.google.com.br/search?q=manpage+pdf+troff&source=lnms&tbm=isch) deve lhe dar uma ideia do que o resultado se parece com; pode não ser do gosto de todas as pessoas.
 
@@ -191,22 +191,23 @@ Ressalvas: Fontes são geralmente limitadas a Times em tamanhos fixos. Não há 
 
 Há vários bancos de dado online de páginas man, incluindo:
 
-*   [Man7.org.](http://man7.org/linux/man-pages/index.html) Upstream do [man-pages](https://www.archlinux.org/packages/?name=man-pages) do Arch Linux.
-*   [*Páginas man do Arch Linux*](https://manned.org/pkg/arch)
-*   [*Páginas man do Debian GNU/Linux*](http://manpages.debian.net/)
-*   [*Páginas man do DragonFlyBSD*](http://leaf.dragonflybsd.org/cgi/web-man)
-*   [*Páginas man hypertext do FreeBSD*](http://www.freebsd.org/cgi/man.cgi)
-*   [*Páginas man do Linux e Solaris 10*](http://www.manpages.spotlynx.com/)
-*   [*Páginas man do Linux no die.net*](http://linux.die.net/man/)
-*   [*Páginas man do NetBSD*](http://netbsd.gw.com/cgi-bin/man-cgi)
-*   [*Páginas man do Mac OS X*](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
-*   [*Páginas man online do UNIX*](http://unixhelp.ed.ac.uk/alphabetical/index.html)
-*   [*Páginas de manual do OpenBSD*](http://www.openbsd.org/cgi-bin/man.cgi)
-*   [*Manual do Plan 9 — Volume 1*](http://man.cat-v.org/plan_9/)
-*   [*Manual do Inferno — Volume 1*](http://man.cat-v.org/inferno/)
-*   [*Páginas man do Storage Foundation*](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
-*   [*O repositório de páginas man do UNIX and Linux Forums*](http://www.unix.com/man-page/OpenSolaris/1/man/)
-*   [*Repositório de páginas man do Ubuntu*](http://manpages.ubuntu.com/)
+*   [man7.org](http://man7.org/linux/man-pages/index.html). Upstream do [man-pages](https://www.archlinux.org/packages/?name=man-pages) do Arch Linux.
+*   [Páginas man do Arch Linux](https://manned.org/pkg/arch)
+*   [Páginas man do Debian GNU/Linux](http://manpages.debian.net/)
+*   [Páginas man do DragonFlyBSD](http://leaf.dragonflybsd.org/cgi/web-man)
+*   [Páginas man do FreeBSD](http://www.freebsd.org/cgi/man.cgi)
+*   [Páginas man do Linux e Solaris 10](http://www.manpages.spotlynx.com/)
+*   [Páginas man do Linux no die.net](http://linux.die.net/man/)
+*   [Páginas man do Linux no man.cx](http://man.cx/)
+*   [Páginas man do NetBSD](http://netbsd.gw.com/cgi-bin/man-cgi)
+*   [Páginas man do Mac OS X](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
+*   [Páginas man online do UNIX](http://unixhelp.ed.ac.uk/alphabetical/index.html)
+*   [Páginas de manual do OpenBSD](http://www.openbsd.org/cgi-bin/man.cgi)
+*   [Manual do Plan 9 — Volume 1](http://man.cat-v.org/plan_9/)
+*   [Manual do Inferno — Volume 1](http://man.cat-v.org/inferno/)
+*   [Páginas man do Storage Foundation](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
+*   [Repositório de páginas man do UNIX and Linux Forums](http://www.unix.com/man-page/OpenSolaris/1/man/)
+*   [Repositório de páginas man do Ubuntu](http://manpages.ubuntu.com/)
 
 **Atenção:** Algumas distribuições fornecem páginas man alteradas ou desatualizadas que se diferem daquelas fornecidas pelo Arch. Exercite o cuidado ao usar páginas man online.
 
@@ -232,7 +233,7 @@ Aqui está uma lista não exaustiva de páginas dignas de nota que podem lhe aju
 *   [terminfo(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5)
 *   [utf-8(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/utf-8.7)
 
-De forma mais geral, dê uma olhada nas páginas de categoria 7:
+De forma mais geral, dê uma olhada nas [páginas de categoria 7 (miscelânea)](http://man7.org/linux/man-pages/dir_section_7.html):
 
 ```
 $ man -s 7 -k ".*" 

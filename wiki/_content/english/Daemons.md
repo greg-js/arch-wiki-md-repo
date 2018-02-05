@@ -73,7 +73,7 @@ freshclamd.service | Anti-virus toolkit for Unix. |
 | [NetworkManager](/index.php/NetworkManager "NetworkManager") | networkmanager | NetworkManager.service
 NetworkManager-wait-online.service | NetworkManager daemon, provides configuration and detection for automatic network connections. |
 | [Nginx](/index.php/Nginx "Nginx") | nginx | nginx.service | Nginx HTTP Server and IMAP/POP3 proxy server (Web Server). |
- nscd | nscd.service | Name service caching daemon. |
+| [glibc](https://www.archlinux.org/packages/?name=glibc) | nscd | nscd.service | Name service caching daemon. |
 | [ntpd](/index.php/Ntpd "Ntpd") | ntpd | ntpd.service | Network Time Protocol daemon (client and server). |
 | [Ntop](/index.php/Ntop "Ntop") | ntop | ntop.service | Ntop is a network traffic probe based on libcap. |
 | [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") | openntpd | openntpd.service | Alternative Network Time Protocol daemon (client and server). |

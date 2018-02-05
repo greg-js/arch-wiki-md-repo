@@ -1,3 +1,9 @@
+相关文章
+
+*   [Composite](/index.php/Composite "Composite")
+*   [Compiz](/index.php/Compiz_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Compiz (简体中文)")
+*   [Window manager](/index.php/Window_manager "Window manager")
+
 **翻译状态：** 本文是英文页面 [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-06-22，点击[这里](https://wiki.archlinux.org/index.php?title=Xcompmgr&diff=0&oldid=376307)可以查看翻译后英文页面的改动。
 
 **Xcompmgr**是一个简单的混合窗口管理器，可以实现阴影、原生窗口透明（配合`transset`工具）等特效。Xcompmgr设计初衷只是实现混合窗口管理器的概念，所以比起同类混合窗口管理器如 [Compiz Fusion](/index.php/Compiz_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Compiz (简体中文)")，Xcompmgr轻量许多。

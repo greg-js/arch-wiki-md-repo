@@ -132,7 +132,7 @@ Ao atualizar o sistema, certifique-se de prestar atenção aos avisos de alerta 
 
 ### Lide prontamente com os novos arquivos de configuração
 
-Quando o pacman é chamado, arquivos `.pacnew` e `.pacsave` podem ser criados. Pacman fornece aviso quando isso acontece e usuários devem lidar com esses arquivos imediatamente. Veja a página de [arquivos Pacnew e Pacsave](/index.php/Arquivos_Pacnew_e_Pacsave "Arquivos Pacnew e Pacsave") para instruções de detalhada.
+Quando o pacman é chamado, arquivos `.pacnew` e `.pacsave` podem ser criados. Pacman fornece aviso quando isso acontece e usuários devem lidar com esses arquivos imediatamente. Veja a página wiki [pacman/Pacnew e Pacsave](/index.php/Pacman/Pacnew_e_Pacsave "Pacman/Pacnew e Pacsave") para instruções detalhadas.
 
 Também, pense em outros arquivos de configuração que você pode ter copiado ou criado. Se um pacote possuir um exemplo de configuração que você copiou para seu diretório home, verifique se um novo foi criado.
 

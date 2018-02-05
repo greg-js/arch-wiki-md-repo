@@ -63,17 +63,17 @@ PulseAudio 5.x supports A2DP per default. Make sure the following packages are [
 Now we can use the *bluetoothctl* command line utility to pair and connect. For troubleshooting and more detailed explanations of *bluetoothctl* see the [Bluetooth](/index.php/Bluetooth "Bluetooth") article. Run
 
 ```
-# bluetoothctl
+$ bluetoothctl
 
 ```
 
 to be greeted by its internal command prompt. Then enter:
 
 ```
-# power on
-# agent on
-# default-agent
-# scan on
+(bluetoothctl) power on
+(bluetoothctl) agent on
+(bluetoothctl) default-agent
+(bluetoothctl) scan on
 
 ```
 
@@ -84,39 +84,39 @@ Now make sure that your headset is in pairing mode. It should be discovered shor
 
 ```
 
-shows a device that calls itself "Lasmex LBT10" and has MAC address *00:1D:43:6D:03:26*. We will now use that MAC address to initiate the pairing:
+shows a device that calls itself *"Lasmex LBT10"* and has MAC address *"00:1D:43:6D:03:26"*. We will now use that MAC address to initiate the pairing:
 
 ```
-# pair 00:1D:43:6D:03:26
+(bluetoothctl) pair 00:1D:43:6D:03:26
 
 ```
 
 After pairing, you also need to explicitly connect the device (every time?):
 
 ```
-# connect 00:1D:43:6D:03:26
+(bluetoothctl) connect 00:1D:43:6D:03:26
 
 ```
 
-If you're getting a connection error "org.bluez.Error.Failed" retry by killing existing PulseAudio daemon first:
+If you're getting a connection error `org.bluez.Error.Failed` retry by killing existing PulseAudio daemon first:
 
 ```
-# pulseaudio -k
-# connect 00:1D:43:6D:03:26
+$ pulseaudio -k
+(bluetoothctl) connect 00:1D:43:6D:03:26
 
 ```
 
 If everything works correctly, you now have a separate output device in [PulseAudio](/index.php/PulseAudio "PulseAudio").
 
-**Note:** The device may be off by default. Select its audio profile (*OFF*, A2DP, HFP) in the "Configuration" tab of [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol).
+**Note:** The device may be off by default. Select its audio profile (`OFF`, `A2DP`, `HFP`) in the "Configuration" tab of [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol).
 
 You can now redirect any audio through that device using the "Playback" and "Recording" tabs of [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol).
 
 You can now disable scanning again and exit the program:
 
 ```
-# scan off
-# exit
+(bluetoothctl) scan off
+(bluetoothctl) exit
 
 ```
 
@@ -140,7 +140,7 @@ bluetoothd[487]: Access denied: org.bluez.Error.Rejected
 ```
 
 ```
-[bluetooth]# trust 00:1D:43:6D:03:26
+(bluetoothctl) trust 00:1D:43:6D:03:26
 
 ```
 
@@ -190,7 +190,7 @@ If pairing fails, you can try [disabling SSPMode](https://stackoverflow.com/ques
 You might see the following error in *bluetoothctl*:
 
 ```
-[bluetooth]# connect 00:1D:43:6D:03:26
+(bluetoothctl) connect 00:1D:43:6D:03:26
 Attempting to connect to 00:1D:43:6D:03:26
 Failed to connect: org.bluez.Error.Failed
 
@@ -226,7 +226,7 @@ If restarting PulseAudio does not work, you need to load module-bluetooth-discov
 
 The same load-module command can be added to `/etc/pulse/default.pa`.
 
-If that still does not work, or you are using PulseAudio's system-wide mode, also load the following PulseAudio modules (again these can be loaded via your default.pa or system.pa):
+If that still does not work, or you are using PulseAudio's system-wide mode, also load the following PulseAudio modules (again these can be loaded via your `default.pa` or `system.pa`):
 
 ```
 module-bluetooth-policy
@@ -742,11 +742,10 @@ If PulseAudio fails when changing the profile to A2DP with bluez 4.1+ and PulseA
 
 #### A2DP profile is unavailable
 
-As of Pulseaudio 10.0, when connecting to headset via Bluedevil or similar, A2DP profile is unavailable. As mentioned in [bug 92102](https://bugs.freedesktop.org/show_bug.cgi?id=92102) discussion, a workaround is connecting to a headset via bluetoothctl
+As of Pulseaudio 10.0, when connecting to headset via Bluedevil or similar, A2DP profile is unavailable. As mentioned in [bug 92102](https://bugs.freedesktop.org/show_bug.cgi?id=92102) discussion, a workaround is connecting to a headset via `bluetoothctl`:
 
 ```
-bluetoothctl
-connect [headset MAC here]
+(bluetoothctl) connect *[headset MAC here]*
 
 ```
 
@@ -768,8 +767,8 @@ daemon-binary = /bin/true
 *   Prevent systemd from starting Pulseaudio anyway with socket activation :
 
 ```
-sudo -ugdm mkdir -p /var/lib/gdm/.config/systemd/user
-sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
+$ sudo -ugdm mkdir -p /var/lib/gdm/.config/systemd/user
+$ sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
 
 ```
 
@@ -799,12 +798,13 @@ Finally to let the `bluealsa` work your user must be part of the `audio` group.
 You can now test if everything works fine, replace your MAC as necessary:
 
 ```
- aplay -D bluealsa:HCI=hci0,DEV=00:1D:43:6D:03:26,PROFILE=a2dp ./testme.wav
+$ aplay -D bluealsa:HCI=hci0,DEV=00:1D:43:6D:03:26,PROFILE=a2dp ./testme.wav
 
 ```
 
-If it does you can set up HCI, DEV, and PROFILE as default. Add this lines to your `.asoundrc`:
+If it does you can set up HCI, DEV, and PROFILE as default. Add the following lines:
 
+ `.asoundrc` 
 ```
 defaults.bluealsa {
     interface "hci0"

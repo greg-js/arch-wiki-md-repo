@@ -95,7 +95,7 @@ To enable the unofficial signature service (which includes manpages, log rotatio
 
 ```
 
-Note that you still must have the `clamd` service running in order to have signature updates from ClamAV themselves.
+Note that you still must have the `clamav-daemon` service running in order to have signature updates from ClamAV themselves.
 
 This will refresh the signatures from the databases used in the clamav-unofficial-sigs script and extra ones as configured in each configuration file in the `/etc/clamav-unofficial-sigs` folder. To refresh signatures from these databases manually, run the following:
 

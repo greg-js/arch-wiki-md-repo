@@ -365,7 +365,6 @@ L'estensione Composite per X provoca un intero sotto-albero della gerarchia dell
 *   [Compiz](/index.php/Compiz_(Italiano) "Compiz (Italiano)") -- L'originale composite/window manager creato da Novell
 *   [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") -- Semplice composite manager capace di ombreggiature e primitive trasparenze
 *   [Compton](/index.php/Compton "Compton") -- Un fork di [xcompmgr](/index.php/Xcompmgr "Xcompmgr") con funzioni migliorate e bug fix
-*   [Cairo Composite Manager](/index.php/Cairo_Compmgr "Cairo Compmgr") -- Un versatile ed estensibile composite manager che utilizza cairo per il rendering.
 *   [Wikipedia:it:Compositing window manager](https://en.wikipedia.org/wiki/it:Compositing_window_manager "wikipedia:it:Compositing window manager")
 
 ## Consigli utili

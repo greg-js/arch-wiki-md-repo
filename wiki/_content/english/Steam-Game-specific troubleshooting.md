@@ -269,6 +269,7 @@ See [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshoot
 *   Do not assume an install location like `~/.local/share/Steam`, use `~/.steam/root` instead.
 *   Do not assume a library location like `~/.steam/root`, use the `*LIBRARY*` pseudo-variable instead.
 *   You can also use the `*GAME*` pseudo-variable to refer to a game's directory (`*LIBRARY*/steamapps/common/Game`).
+*   Use the [Template:SteamApp](/index.php/Template:SteamApp "Template:SteamApp") template when mentioning Steam games.
 *   Link [launch options](/index.php/Launch_option "Launch option") like this: `[[launch option]]s`.
 *   Link bug reports and sources of workarounds.
 
@@ -319,9 +320,9 @@ Add `LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$PWD/lib/x86_64"` to your [launch options
 Dependencies:
 
 *   [lib32-freealut](https://aur.archlinux.org/packages/lib32-freealut/)
-*   [lib32-glu](https://www.archlinux.org/packages/?name=lib32-glu) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
-*   [lib32-libxmu](https://www.archlinux.org/packages/?name=lib32-libxmu) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
-*   [lib32-sdl_ttf](https://www.archlinux.org/packages/?name=lib32-sdl_ttf) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
+*   [lib32-glu](https://www.archlinux.org/packages/?name=lib32-glu)
+*   [lib32-libxmu](https://www.archlinux.org/packages/?name=lib32-libxmu)
+*   [lib32-sdl_ttf](https://www.archlinux.org/packages/?name=lib32-sdl_ttf)
 
 ## And Yet It Moves
 
@@ -329,10 +330,10 @@ Dependencies:
 
 Dependencies:
 
-*   [lib32-libjpeg6-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg6-turbo) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
-*   [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
-*   [lib32-libtheora](https://www.archlinux.org/packages/?name=lib32-libtheora) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
-*   [lib32-libtiff4](https://www.archlinux.org/packages/?name=lib32-libtiff4) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
+*   [lib32-libjpeg6-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg6-turbo)
+*   [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12)
+*   [lib32-libtheora](https://www.archlinux.org/packages/?name=lib32-libtheora)
+*   [lib32-libtiff4](https://www.archlinux.org/packages/?name=lib32-libtiff4)
 
 ### Game does not start
 
@@ -585,9 +586,9 @@ The solution is either to install the game on a case-insensitive file system lik
 If you are getting an instant crash/close upon launch, make sure you have the following 32-bit packages installed:
 
 *   [lib32-intel-tbb](https://aur.archlinux.org/packages/lib32-intel-tbb/)
-*   [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
-*   [lib32-libcurl-gnutls](https://www.archlinux.org/packages/?name=lib32-libcurl-gnutls) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
-*   [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
+*   [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat)
+*   [lib32-libcurl-gnutls](https://www.archlinux.org/packages/?name=lib32-libcurl-gnutls)
+*   [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal)
 
 ### Segfault after a few minutes
 
@@ -620,7 +621,7 @@ Segfault is caused by [lib32-intel-tbb](https://aur.archlinux.org/packages/lib32
 
 [AppID 289070](http://store.steampowered.com/app/289070)
 
-Either run with steam-native (see [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues")) or add `env LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%` to your [launch options](/index.php/Launch_option "Launch option"). The latter will disable the Steam overlay.
+Either run with steam-native or add `env LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%` to your [launch options](/index.php/Launch_option "Launch option"). The latter will disable the Steam overlay.
 
 Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
@@ -663,7 +664,7 @@ Presumably this fix will prevent any automated bug reports from reaching Aspyr, 
 
 Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
-Requires [librtmp0](https://www.archlinux.org/packages/?name=librtmp0) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime)).
+Requires [librtmp0](https://www.archlinux.org/packages/?name=librtmp0).
 
 Also if you use Bumblebee set your [launch options](/index.php/Launch_option "Launch option") to:
 
@@ -851,7 +852,7 @@ Dependencies:
 
 *   [adobe-air-sdk](https://aur.archlinux.org/packages/adobe-air-sdk/), follow [#Adobe Air setup](#Adobe_Air_setup)
 *   [xterm](https://www.archlinux.org/packages/?name=xterm)
-*   [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
+*   [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra)
 
 ## Dirt
 
@@ -926,7 +927,7 @@ Then just start the game. In case it still crashes on loading you may also need 
 Dependencies:
 
 *   [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin)
-*   [lib32-libcurl-gnutls](https://www.archlinux.org/packages/?name=lib32-libcurl-gnutls) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime))
+*   [lib32-libcurl-gnutls](https://www.archlinux.org/packages/?name=lib32-libcurl-gnutls)
 
 ### No sound
 
@@ -972,11 +973,9 @@ SDL_GL_LoadLibrary(NULL) failed: Failed loading libGL.so.1: /usr/lib32/libxcb-dr
 
 ```
 
-See [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues").
-
 ### Steam overlay
 
-Steam distributes a copy of libxcb which is incompatible with the latest xorg libxcb. See [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues"), [[2]](https://github.com/ValveSoftware/steam-for-linux/issues/3199), [[3]](https://github.com/ValveSoftware/steam-for-linux/issues/3093).
+Steam distributes a copy of libxcb which is incompatible with the latest xorg libxcb. See [[2]](https://github.com/ValveSoftware/steam-for-linux/issues/3199), [[3]](https://github.com/ValveSoftware/steam-for-linux/issues/3093).
 
 ### Chinese tips and player names not shown
 
@@ -1051,7 +1050,7 @@ In some cases, the game crashes about 2 minutes before the end of every arcade. 
 
 [AppID 202730](http://store.steampowered.com/app/202730)
 
-Requires [lib32-sdl](https://www.archlinux.org/packages/?name=lib32-sdl) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime)).
+Requires [lib32-sdl](https://www.archlinux.org/packages/?name=lib32-sdl).
 
 ### Sound Issues
 
@@ -1106,7 +1105,7 @@ FTL may fail to run if you are using an opensource driver for your video card. T
 
 ### Game does not start
 
-You might get an error about missing `libudev.so.0`. See [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues").
+You might get an error about missing `libudev.so.0`.
 
 Add this line to [launch options](/index.php/Steam#Launch_options "Steam"):
 
@@ -1298,7 +1297,7 @@ Requires [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib).
 
 ### Game does not start
 
-The game can sometimes segfault due to an incompatibility with the Steam Runtime's `libasound.so.2`. See [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues").
+The game can sometimes segfault due to an incompatibility with the Steam Runtime's `libasound.so.2`.
 
 ## Invisible Apartment
 
@@ -1604,7 +1603,7 @@ The game segfaults during program start because of the `LD_LIBRARY_PATH` setting
 
 ### Game does not start
 
-Several OpenGL-related errors (such as `PROBLEM: You appear to have OpenGL 1.4.0, but we need at least 2.0.0!` or `libGL error: driver pointer missing`) are caused by Portal 2 bundling an old libstdc++ file. This error is especially common with open source Radeon drivers (`radeonsi`). See [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues").
+Several OpenGL-related errors (such as `PROBLEM: You appear to have OpenGL 1.4.0, but we need at least 2.0.0!` or `libGL error: driver pointer missing`) are caused by Portal 2 bundling an old libstdc++ file. This error is especially common with open source Radeon drivers (`radeonsi`).
 
 A problem with libstdc can be fixed by adding `LD_PRELOAD='/usr/$LIB/libstdc++.so.6'` to your [launch options](/index.php/Launch_option "Launch option").
 
@@ -1814,7 +1813,7 @@ To solve this just remove the three files `libSDL-1.2.so.0`, `libSDL_image-1.2.s
 
 [AppID 209790](http://store.steampowered.com/app/209790)
 
-Requires [glu](https://www.archlinux.org/packages/?name=glu) (part of [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime)).
+Requires [glu](https://www.archlinux.org/packages/?name=glu).
 
 ## The Stanley Parable
 
@@ -2173,7 +2172,7 @@ Games made in C# often have a problem with some locales (e.g. Russian, German) b
 
 To work around this, use the [launch option](/index.php/Launch_option "Launch option") `LC_ALL=C`.
 
-Affected games: *FORCED, Gone Home, Ichi, Nimble Quest, Syder Arcade*.
+Affected games: *FORCED, [Gone Home](http://store.steampowered.com/app/232430), [Ichi](http://store.steampowered.com/app/300300), [Nimble Quest](http://store.steampowered.com/app/259780), [Syder Arcade](http://store.steampowered.com/app/252310)*.
 
 ### Unity 5 sound problems
 
@@ -2183,7 +2182,7 @@ Another solution is to disable the Steam runtime: in the launch options for the 
 
 Another solution is to prevent Unity from trying to use pulseaudio using [pulsenomore](https://aur.archlinux.org/packages/pulsenomore/) package from the [AUR](/index.php/AUR "AUR"). Once it is installed, use the following as launch options :`/usr/bin/pulsenomore %command%`
 
-Affected games: *Kerbal Space Programm, SUPERHOT, ClusterTruck*
+Affected games: *[Kerbal Space Program](http://store.steampowered.com/app/220200), [SUPERHOT](http://store.steampowered.com/app/322500), [ClusterTruck](http://store.steampowered.com/app/397950)*
 
 ### Game launching on wrong monitor in fullscreen mode
 
@@ -2197,7 +2196,7 @@ When changing to value into `<pref name="UnitySelectMonitor" type="int">**0**</p
 
 A Unity game config file usually resides in `~/.config/unity3d/*CompanyName*/*ProductName*/prefs`.
 
-Affected games: *Cities: Skylines, Tablestop Simulator, Assault Android Cactus, Wasteland 2, Tyranny, Beat Cop*.
+Affected games: *[Cities: Skylines](http://store.steampowered.com/app/255710), [Tabletop Simulator](http://store.steampowered.com/app/286160), [Assault Android Cactus](http://store.steampowered.com/app/250110), [Wasteland 2](http://store.steampowered.com/app/240760), [Tyranny](http://store.steampowered.com/app/362960), [Beat Cop](http://store.steampowered.com/app/461950)*.
 
 Be aware that some games do not support setting that parameter, it will simply be ignored. This is the case for *Pillars of Eternity*, *Kentucky Route Zero*, *Sunless Sea*.
 
@@ -2349,8 +2348,6 @@ Dependencies:
 *   [sdl2_image](https://www.archlinux.org/packages/?name=sdl2_image) (required to enable keyboard functionality in-game)
 
 ### Hangs on startup
-
-See [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues").
 
 If you are running a [hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics") system, try:
 

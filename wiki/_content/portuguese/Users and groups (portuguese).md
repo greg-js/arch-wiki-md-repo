@@ -136,14 +136,12 @@ Quando o shell de login destina-se a ser não funcional, por exemplo quando a co
 
 ### Exemplo de adicionar um usuário
 
-Em um sistema de desktop típico, use o seguinte comando para adicionar um novo usuário chamado `archie`, especifique o Bash como seu shell de login e adicione-o ao grupo [wheel](#Grupos_de_usu.C3.A1rio):
+Em um sistema de desktop típico, use o seguinte comando para adicionar um novo usuário chamado `archie` e especifique o Bash como seu shell de login:
 
 ```
-# useradd -m -G wheel -s /bin/bash archie
+# useradd -m -s /bin/bash archie
 
 ```
-
-**Dica:** Não se preocupe em adicionar o usuário a outros grupos agora. Se, mais tarde, você for instalar um aplicativo específico ou executar uma configuração específica, que exige adicionar explicitamente o usuário a um grupo, o wiki irá lembrá-lo de fazê-lo no artigo específico que você seguirá.
 
 Apesar de ser obrigatório proteger o recém criado usuário `archie` com uma senha, é altamente recomendado fazê-lo:
 
@@ -159,7 +157,7 @@ O comando *useradd* acima pode também criar automaticamente um grupo chamado `a
 Você poderia fazer o grupo padrão alguma outra coisa como, por exemplo, `estudo`:
 
 ```
-# useradd -m -g estudo -G wheel -s /bin/bash archie
+# useradd -m -g estudo -s /bin/bash archie
 
 ```
 
@@ -427,7 +425,7 @@ Os seguintes grupos são usados para propósitos de sistema, uma atriubuição p
 | dbus | Usado internamente pelo [dbus](https://www.archlinux.org/packages/?name=dbus) |
 | kmem | `/dev/port`, `/dev/mem`, `/dev/kmem` |
 | locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Veja [Core utilities#locate](/index.php/Core_utilities#locate "Core utilities"). |
-| lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*`, `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups` | Acesso a dispositivos de porta paralela (impressoras e outros) e acesso somente leitura a arquivos do [CUPS](/index.php/CUPS "CUPS"). Se você encontrar um dispositivo de porta paralelo que não é uma impressora, veja [FS#50009](https://bugs.archlinux.org/task/50009) para os problemas implícitos. |
+| lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*` | Acesso a dispositivos de porta paralela (impressoras e outros). |
 | mail | `/usr/bin/mail` |
 | nobody | Grupo sem privilégios. |
 | proc | `/proc/*pid*/` | Um grupo autorizado a aprender informação de processo que, do contrário, seria proibido pela opção de montagem `hidepid=` do [sistema de arquivos proc](https://www.kernel.org/doc/Documentation/filesystems/proc.txt). O grupo deve ser definido explicitamente com a opção de montagem `gid=`. |

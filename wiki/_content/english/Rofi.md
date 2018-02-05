@@ -14,13 +14,13 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") [rofi](https://www.archlinux.org/packages/?name=rofi) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [rofi](https://www.archlinux.org/packages/?name=rofi) package.
 
 ## Configuration
 
 There are currently three methods of setting configuration options:
 
-*   Local configuration. Normally, depending on XDG, in `~/.local/rofi/config`. This uses the Xresources format.
+*   Local configuration. Normally, depending on XDG, in `~/.config/rofi/config`. This uses the Xresources format.
 *   Xresources: A method of storing key values in the Xserver.
 *   Command line options
 

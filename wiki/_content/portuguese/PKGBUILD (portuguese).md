@@ -69,7 +69,7 @@ Uma diretiva global e opcional quando se está compilando um pacote dividido (*s
 
 ### pkgname
 
-O nome do pacote, ou dos pacotes. Ela deve consistir de caracteres alfanuméricos minúsculos e quaisquer outros dos seguintes caracteres: `@`, `.`, `_`, `+` e `-` (sinais de arroba, ponto, sublinhado, mais e hífen). Nomes não podem iniciar com hífenes. Por uma questão de consistência, `pkgname` deve corresponder ao nome do tarball fonte do software: por exemplo, se o software está em `foobar-2.5.tar.gz`, use `pkgname=foobar`. O nome do diretório contendo o PKGBUILD também deve corresponder ao `pkgname`.
+O nome do pacote, ou dos pacotes. Nome de pacotes devem consistir apenas de caracteres alfanuméricos minúsculos e quaisquer outros dos seguintes caracteres: `@._+-` (sinais de arroba, ponto, sublinhado, mais e hífen). Nomes não podem iniciar com hífenes. Por uma questão de consistência, `pkgname` deve corresponder ao nome do tarball fonte do software: por exemplo, se o software está em `foobar-2.5.tar.gz`, use `pkgname=foobar`. O nome do diretório contendo o PKGBUILD também deve corresponder ao `pkgname`.
 
 Pacotes divididos devem ser definidos como um vetor, ex.: `pkgname=('foo' 'bar')`.
 
@@ -132,7 +132,7 @@ A URL do site oficial do software sendo empacotado.
 A licença sob a qual o software é distribuído. O pacote [licenses](https://www.archlinux.org/packages/?name=licenses) contém muitas licenças comumente usadas, que são instaladas em `/usr/share/licenses/common`. Se um pacote é licenciado sob uma dessas licenças, o valor deve ser definido para o nome do diretório (ex.: `license=('GPL')`). Se a licença adequada não estiver incluída, diversas coisas devem ser feitas:
 
 1.  Adicione `custom` ao vetor `license`. Opcionalmente, você pode substituir `custom` com `custom:*nome da licença*`. Uma vez que uma licença é usada em dois ou mais pacotes em um repositório oficial (incluindo `[community]`), ela se torna parte do pacote [licenses](https://www.archlinux.org/packages/?name=licenses).
-2.  Instale a licença em: `/usr/share/licenses/*pkgname*/` (ex.: `/usr/share/licenses/foobar/LICENSE`).
+2.  Instale a licença em: `/usr/share/licenses/*pkgname*/` (ex.: `/usr/share/licenses/foobar/LICENSE`). Uma boa forma de fazer isso é usando: {{bc|install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"}
 3.  Se a licença é encontrada apenas em um site, então você precisa incluí-la separadamente no pacote.
 
 *   As licenças [BSD](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_BSD "wikipedia:pt:Licença BSD"), [MIT](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_MIT "wikipedia:pt:Licença MIT"), [zlib/png](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_zlib "wikipedia:pt:Licença zlib") e [Python](https://en.wikipedia.org/wiki/pt:Python "wikipedia:pt:Python") são casos especiais e não podem ser incluídos no pacote [licenses](https://www.archlinux.org/packages/?name=licenses). Para manter a consistência no vetor `license`, é tratado como licença comum (`license=('BSD')`, `license=('MIT')`, `license=('ZLIB')` e `license=('Python')`), mas tecnicamente cada uma é uma licença personalizada, porque cada uma possui sua própria linha de copyright. Quaisquer pacotes licenciados sob essas quatro devem ter uma licença única armazenada em `/usr/share/licenses/*pkgname*`. Alguns pacotes podem não estar cobertos por uma única licença. Nestes casos, múltiplas entradas podem ser feitas no vetor `license` como, por exemplo, `license=('GPL' 'custom:*nome da licença'*)`.
@@ -278,11 +278,11 @@ $ pacman -Qc *pkgname*
 
 Um vetor de arquivos necessários para compilar o pacote. Deve conter a localização do fonte do software, que na maioria dos casos é uma URL HTTP ou FTP completa. As variáveis anteriormente definidas `pkgname` e `pkgver` podem ser usadas efetivamente aqui como, por exemplo, `source=("https://exemplo.com/$pkgname-$pkgver.tar.gz")`.
 
-Os arquivos também podem ser fornecidos onde o `PKGBUILD` está localizados e adicionados a este vetor. Os caminhos são resolvidos relativamente ao diretório do `PKGBUILD`. Antes do processo de compilação iniciar, todos os arquivos referenciados neste vetor serão baixados ou verificados pela existência, e o *makepkg* não dará continuidade, se algum deles estiver faltando.
+Os arquivos também podem ser fornecidos no mesmo diretório onde o `PKGBUILD` está localizado, e seus nomes adicionados a este vetor. Antes do processo de compilação iniciar, todos os arquivos referenciados neste vetor serão baixados ou verificados pela existência, e o *makepkg* não dará continuidade, se algum deles estiver faltando.
 
 Arquivos *.install* são reconhecidos automaticamente pelo *makepkg* e não devem ser incluídos no vetor de fontes. Arquivos no vetor de fontes com extensões *.sig*, *.sign* ou *.asc* são reconhecidos pelo *makepkg* como assinaturas PGP e serão usados automaticamente para verificar a integridade do arquivo fonte correspondente.
 
-{{Atenção|Os nomes de arquivos de fontes baixados devem ser globalmente únicos porque a variável [SRCDEST](/index.php/Makepkg_(Portugu%C3%AAs)#Sa.C3.ADda_de_pacote "Makepkg (Português)") pode ser o mesmo diretório para todos pacotes. Por exemplo, usar apenas o número de versão do projeto como um nome de arquivo conflitará com outros projetos com o mesmo número de versão. Neste caso, o nome de arquivo único alternativo a ser usado é fornecido com a sintaxe `source=('*nome_pacote_único*::*uri-arquivo*')` - por exemplo, `source=("$pkgname-$pkgver.tar.gz::https://github.com/codificador/programa/archive/v$pkgver.tar.gz")`
+{{Atenção|Os nomes de arquivos de fontes baixados devem ser globalmente únicos porque o diretório [SRCDEST](/index.php/Makepkg_(Portugu%C3%AAs)#Sa.C3.ADda_de_pacote "Makepkg (Português)") pode ser o mesmo para todos pacotes. Por exemplo, usar o número de versão do projeto como um nome de arquivo potencialmente conflita com outros projetos com o mesmo número de versão. Neste caso, o nome de arquivo único alternativo a ser usado é fornecido com a sintaxe `source=('*nome_pacote_único*::*uri-arquivo*')` - por exemplo, `source=("$pkgname-$pkgver.tar.gz::https://github.com/codificador/programa/archive/v$pkgver.tar.gz")`.
 
 **Dica:**
 

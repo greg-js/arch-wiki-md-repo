@@ -2,7 +2,7 @@ Artigos relacionados
 
 *   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
 *   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
-*   [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces")
+*   [Depuração - Obtendo Rastros](/index.php/Depura%C3%A7%C3%A3o_-_Obtendo_Rastros "Depuração - Obtendo Rastros")
 
 Abrir (e fechar) relatórios de erros no [Rastreador de erros do Arch Linux](https://bugs.archlinux.org/) (também conhecido como *Arch Linux Bugtracker*) é uma das muitas maneiras possíveis de [ajudar a comunidade](/index.php/Getting_involved_(Portugu%C3%AAs) "Getting involved (Português)"). No entanto, relatórios de erros mal formulados podem ser contraproducentes. Quando os erros são incorretamente relatados, os desenvolvedores perdem tempo investigando e fechando relatórios inválidos. Este documento irá guiar qualquer pessoa que deseje ajudar a comunidade informando eficientemente e buscando erros.
 
@@ -32,70 +32,70 @@ Veja também: [Como relatar erros de forma efetiva](https://www.chiark.greenend.
 
 ## Antes de relatar
 
-Preparing a detailed and well-formed bug report is not difficult, but requires an effort on behalf of the reporter. **The work done before reporting a bug is arguably the most useful part of the job.** Unfortunately, few people take the time to do this work properly.
+Preparar um relatório de erros detalhado e bem formado não é difícil, mas requer um esforço do relatante. **O trabalho feito antes de relatar um erro é indiscutivelmente a parte mais útil do trabalho**. Infelizmente, poucas pessoas tomam o tempo para fazer isso funcionar corretamente.
 
-The following steps will guide you in preparing your bug report or feature request.
+Os passos a seguir vão lhe guiar na preparação de seu relatório de erro ou requisição de recurso.
 
 ### Pesquise por duplicados
 
-If you encounter a problem or desire a new feature, there is a high probability that someone else already had this problem or idea. If so, an appropriate bug report may already exist. In this case, please do not create a duplicate report; see [#Following up on bugs](#Following_up_on_bugs) instead.
+Se você encontrar um problema ou desejar um novo recurso, existe uma grande probabilidade de que alguém já tenha esse problema ou ideia. Se assim for, um relatório de erro apropriado já pode existir. Nesse caso, não crie um relatório duplicado; veja [#Acompanhando relatórios](#Acompanhando_relat.C3.B3rios).
 
-Search thoroughly for existing information, including:
+Pesquise detalhadamente as informações existentes, incluindo:
 
-*   [Arch Linux Forums](https://bbs.archlinux.org/): The forums are often the first stop for users looking for help or sharing ideas. While a solution may not yet exist, additional background information and discussion can steer you in the right direction.
+*   [Fóruns do Arch Linux](https://bbs.archlinux.org/): Os fóruns são muitas vezes a primeira parada para usuários que procuram ajuda ou compartilhar ideias. Ainda que não exista uma solução, informações detalhadas e discussão adicional podem orientá-lo na direção certa.
 
-*   [Arch Linux Bugtracker](https://bugs.archlinux.org/): Your problem may have already been reported to Arch Linux developers. Duplicate bug reports are unhelpful and promptly closed. Search both **[recently closed bugs](https://bugs.archlinux.org/index.php?string=&project=1&status%5B%5D=closed&closedfrom=-1+week)** as well as open reports. Remember to mark 'search details' and/or 'search comments' under Advanced, the bug title may not contain the text you're searching for.
+*   [Rastreador de Erros do Arch Linux](https://bugs.archlinux.org/): Seu problema talvez já tenha sido relatado aos desenvolvedores do Arch Linux. Relatórios de erros duplicados são inúteis e prontamente fechados. Pesquisa por tanto **[relatório de erros fechados recentemente](https://bugs.archlinux.org/index.php?string=&project=1&status%5B%5D=closed&closedfrom=-1+week)** como os relatórios abertos. Lembre-se de marcar "search details" (detalhes da pesquisa) e/ou "search comments" (pesquisar comentários) em Advanced, pois o título do relatório pode não conter o texto que você está procurando.
 
-*   [Google](https://www.google.com) or your favorite search engine: Search using the program's name, version, and a relevant part of the error message, if any.
+*   [Google](https://www.google.com) ou seu mecanismo de pesquisa favorito: Pesquise usando o nome do programa, versão e uma parte relevante da mensagem de erro, se houver.
 
-*   **Upstream** forum, mailing list and bug tracker: If Arch Linux is not responsible for a bug, it should be reported upstream rather than the Arch Linux Bugtracker. Search both recently closed bugs as well as open reports. Bugs may have already been fixed in the program's development version.
+*   Fórum, lista de discussão e rastreador de erro do **Upstream**: Se o Arch Linux não é responsável por um erro, ele deve ser relatado no upstream em vez do Rastreador de Erros do Arch Linux. Procure os erros recentemente fechados, bem como relatórios abertos. Erros podem já ter sido corrigidos na versão de desenvolvimento do programa.
 
-*   **Other distribution forums**: The free software community is vast; Archers are not the only users with ideas! Consider searching the [Gentoo Forums](https://forums.gentoo.org/), [FedoraForum.org](http://forums.fedoraforum.org/), and [Ubuntu Forums](https://ubuntuforums.org/), for example.
+*   **Fóruns de outras distribuições**: A comunidade de software livre é vasta; usuários do Arch não são os únicos usuários com ideias! Considere pesquisar nos [Fóruns do Gentoo](https://forums.gentoo.org/), [FedoraForum.org](http://forums.fedoraforum.org/) e [Fóruns do Ubuntu](https://ubuntuforums.org/), por exemplo.
 
 ### Upstream ou Arch?
 
-Arch Linux is a GNU/Linux *distribution*. Arch developers and Trusted Users are responsible for compiling, packaging, and distributing software from a wide range of sources. **Upstream** refers to these *sources* – the original authors or maintainers of software that is distributed in Arch Linux. For example, the popular Firefox web browser is developed by the Mozilla Project.
+Arch Linux é uma *distribuição* GNU/Linux. Desenvolvedores do Arch e Trusted Users são responsáveis por compilar, empacotar e distribuir software de uma ampla gama de fontes. **Upstream** refere-se àqueles *fontes* – os autores originais ou mantenedores do software que é distribuído no Arch Linux. Por exemplo, o popular navegador web Firefox é desenvolvido pelo Projeto Mozilla.
 
-**If Arch is not responsible for a bug, the problem will not be solved by reporting the bug to Arch developers.** Responsibility for a bug is said to lie upstream when it is not caused through the distribution's porting and integration efforts.
+**Se o Arch não for responsável por um erro, o problema não será resolvido relatando o erro aos desenvolvedores do Arch.** A responsabilidade por um erro é dito ser do upstream quando não é causado pelos esforços de distribuição e integração da distribuição.
 
-By reporting bugs upstream, you will not only help Archers and Arch developers, but you will also help other people in the free software community as the solution will trickle down to all distributions.
+Ao relatar erros ao upstream, você não só ajudará os usuários e desenvolvedores do Arch, mas também ajudará outras pessoas na comunidade de software livre, pois a solução afetará todas as distribuições.
 
-Once you have reported a bug upstream or have found other relevant information from upstream, it might be helpful to post this in the Arch bug tracker, so both Arch developers and users are made aware of it.
+Assim que você relatar um erro no upstream ou encontrar outras informações relevantes do upstream, pode ser útil publicar isso no rastreador de erros do Arch, de modo que os desenvolvedores e os usuários do Arch sejam informados disso.
 
-So what is Arch Linux responsible for?
+Então, pelo que o Arch Linux é responsável?
 
-*   [Arch Linux Projects](https://projects.archlinux.org/): [pacman](/index.php/Pacman "Pacman"), [AUR](/index.php/AUR "AUR"), [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"), Arch Websites. If you have a doubt about if the project belongs to Arch or not, display the package information (`pacman -Qi *package_name*` or using the website) and look at the upstream URL.
+*   [Projetos do Arch Linux](https://projects.archlinux.org/): [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") e sites do Arch. Se você tiver dúvidas sobre se o projeto pertence ao Arch ou obtenha estas informações do pacote (`pacman -Qi *nome_pacote*` ou usando o site) e veja o URL do upstream.
 
-*   **Packaging**: Packaging basically consists of fetching the source code from upstream, compiling it with relevant options, making sure that it will be correctly installed on an Arch system, and checking that the main functionality works. Packaging at Arch does not consist of adding new functionality or patches for existing bugs; this is the job of the upstream developer.
+*   **Empacotamento**: O empacotamento basicamente consiste em buscar o código fonte do upstream, compilando-o com as opções relevantes, certificando-se de que ele será instalado corretamente em um sistema Arch e verificando se a funcionalidade principal funciona. O empacotamento no Arch não consiste em adicionar novas funcionalidades ou patches para erros existentes; este é o trabalho do desenvolvedor upstream.
 
-If a bug/feature is not under Arch's responsibility, report it upstream. See also [#Reasons for not being a bug](#Reasons_for_not_being_a_bug).
+Se um erro/recurso não está sob a responsabilidade do Arch, relate-o ao upstream. Veja também [#Motivos para não ser um erro](#Motivos_para_n.C3.A3o_ser_um_erro).
 
 ### Erro ou recurso?
 
-	bug
+	erro *(bug)*
 
-	something that should work but does not work, contrary to the developer's intentions.
+	alguma coisa que deve funcionar, mas não funciona, contrário às intenções dos desenvolvedores.
 
-	feature
+	recruso *(feature)*
 
-	something which software does or would do if somebody coded it.
+	alguma coisa que o software faz ou faria se alguém o codificasse.
 
 #### Motivos para não ser um erro
 
-*   Something you would like a piece of software to do, which is not implemented by the upstream developers. In short: **a new feature**.
-*   A bug already reported upstream.
-*   A bug already fixed upstream but not in Arch because the package is not up-to-date.
-*   **A package which is not-up-to-date**. Use the **Flag Package Out-of-Date** feature on [Arch's packages website](https://archlinux.org/packages/).
-*   A package which does not use Fedora, Ubuntu or some other community patch. **Patches should be submitted *upstream***.
-*   A package where **non essential function** X or function Y is not activated. This is a feature request.
-*   A package which does not include a **.desktop file** or **icons** or other [freedesktop](https://www.freedesktop.org) stuff. This is not a bug if such files are not included in the source tarball, and this must be requested as a feature request *upstream*. If such files are provided by *upstream* but not used in the package then this is a bug.
+*   Algo que você gostaria que uma parte do software fizesse, o que não foi implementado pelos desenvolvedores upstream. Em resumo: **um novo recurso**.
+*   Um erro já realtado no upstream.
+*   Um erro já corrigido no upstream, mas não no Arch porque o pacote não está desatualizado.
+*   **Um pacote que está atualizado**. Use o recurso **Flag Package Out-of-Date** no [site de pacotes do Arch](https://archlinux.org/packages/).
+*   Um pacote que não usa patches do Fedora, Ubuntu ou outra comunidade. **Patches devem ser enviados para o *upstream***.
+*   Um pacote que a **função não essencial** X ou a função Y não estejam ativados. Isso é uma requisição de recurso.
+*   Um pacote que não inclui um **arquivo .desktop** ou **ícones** ou outra coisa do [freedesktop](https://www.freedesktop.org). Este não é um erro se tais arquivos não estiverem incluídos no tarball fonte, e isso deve ser solicitado como uma requisição de recurso no *upstream*. Se esses arquivos forem fornecidos pelo *upstream*, mas não utilizados na empacotamento, então isso é um erro.
 
 #### Motivos para não ser um recurso
 
-*   When it is a bug...
-*   When it is not under Arch responsibility to implement the feature, i.e. an **upstream feature**.
-*   A package is not up-to-date. Use the **Flag Package Out-of-Date** feature on [Arch's packages website](https://archlinux.org/packages/).
-*   A package which does not use Fedora, Ubuntu or some other community patch. **Patches should be submitted *upstream***.
+*   Quando é um erro...
+*   Quando não estiver sob a responsabilidade do Arch implementar o recurso, ou seja, um **recurso do upstream**.
+*   Um pacote não está atualizado. Use o recurso **Flag Package Out-of-Date** em [site de pacotes do Arch](https://archlinux.org/packages/).
+*   Um pacote que não usa patch do Fedora, Ubuntu ou de alguma outra comunidade. **Os patches devem ser enviados para o *upstream***.
 
 ### Colete informações úteis
 

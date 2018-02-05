@@ -22,6 +22,9 @@ The `mount` command will use fstab, if just one of either directory or device is
     *   [2.5 GPT UUIDs](#GPT_UUIDs)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Automount with systemd](#Automount_with_systemd)
+        *   [3.1.1 Local partition](#Local_partition)
+        *   [3.1.2 Remote filesystem](#Remote_filesystem)
+        *   [3.1.3 Encrypted filesystem](#Encrypted_filesystem)
     *   [3.2 External devices](#External_devices)
     *   [3.3 Filepath spaces](#Filepath_spaces)
     *   [3.4 atime options](#atime_options)
@@ -141,20 +144,31 @@ PARTUUID=039b6c1c-7553-4455-9537-1befbc9fbc5b none  swap   defaults             
 
 ### Automount with systemd
 
-If you have a large `/home` partition, it might be better to allow services that do not depend on `/home` to start while `/home` is checked by *fsck*. This can be achieved by adding the following options to the `/etc/fstab` entry of your `/home` partition:
+#### Local partition
+
+In case of a large partition, it may be more efficient to allow services that do not depend on it to start while it is checked by *fsck*. This can be achieved by adding the following options to the `/etc/fstab` entry of the partition:
 
 ```
 noauto,x-systemd.automount
 
 ```
 
-This will fsck and mount `/home` when it is first accessed, and the kernel will buffer all file access to `/home` until it is ready.
+This will fsck and mount the partition only when it is first accessed, and the kernel will buffer all file access to it until it is ready. This method can be relevant if one has, for example, a significantly large `/home` partition.
 
-**Note:** This will make your `/home` filesystem type `autofs`, which is ignored by [mlocate](/index.php/Mlocate "Mlocate") by default. The speedup of automounting `/home` may not be more than a second or two, depending on your system, so this trick may not be worth it.
+**Note:** This will make the filesystem type `autofs` which is ignored by [mlocate](/index.php/Mlocate "Mlocate") by default.
 
-The same applies to remote filesystem mounts. If you want them to be mounted only upon access, you will need to use the `noauto,x-systemd.automount` parameters. In addition, you can use the `x-systemd.device-timeout=#` option to specify a timeout in case the network resource is not available.
+#### Remote filesystem
+
+The same applies to remote filesystem mounts. If you want them to be mounted only upon access, you will need to use the `noauto,x-systemd.automount` parameters. In addition, you can use the `x-systemd.device-timeout=` option to specify how long systemd should wait for the filesystem to show up. Also, the `_netdev` option ensures systemd understands that the mount is network dependent and order it after the network is online.
+
+```
+noauto,x-systemd.automount,x-systemd.device-timeout=30,_netdev
+
+```
 
 **Note:** If you intend to use the `exec` flag with automount, you should remove the `user` flag for it to work properly as found in the course of a [Fedora Bug Report](https://bugzilla.redhat.com/show_bug.cgi?id=769636)
+
+#### Encrypted filesystem
 
 If you have encrypted filesystems with keyfiles, you can also add the `noauto` parameter to the corresponding entries in `/etc/crypttab`. *systemd* will then not open the encrypted device on boot, but instead wait until it is actually accessed and then automatically open it with the specified keyfile before mounting it. This might save a few seconds on boot if you are using an encrypted RAID device for example, because systemd does not have to wait for the device to become available. For example:
 
