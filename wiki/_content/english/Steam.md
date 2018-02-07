@@ -93,6 +93,7 @@ By default Steam simply appends your option string to the launch command. To set
 
 *   only arguments: `-foo`
 *   environment variables: `FOO=bar BAZ=bar %command% -baz`
+*   completely different command: `othercommand # %command%`
 
 ## Tips and tricks
 

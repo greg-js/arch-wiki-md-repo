@@ -1,58 +1,68 @@
 ## Contents
 
 *   [1 Introduction](#Introduction)
+    *   [1.1 Relevant online resources](#Relevant_online_resources)
 *   [2 Steam runtime](#Steam_runtime)
     *   [2.1 Steam native runtime](#Steam_native_runtime)
-*   [3 Shared libraries](#Shared_libraries)
+*   [3 Debugging shared libraries](#Debugging_shared_libraries)
+    *   [3.1 Finding missing game libraries](#Finding_missing_game_libraries)
+    *   [3.2 Finding missing runtime libraries](#Finding_missing_runtime_libraries)
 *   [4 Debugging Steam](#Debugging_Steam)
-*   [5 Steam runtime issues](#Steam_runtime_issues)
-    *   [5.1 Finding missing runtime libraries](#Finding_missing_runtime_libraries)
-*   [6 Other runtime issues](#Other_runtime_issues)
-    *   [6.1 Native runtime: steam.sh line 756 Segmentation fault](#Native_runtime:_steam.sh_line_756_Segmentation_fault)
-    *   [6.2 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
-    *   [6.3 Games crash immediately](#Games_crash_immediately)
-    *   [6.4 Version `CURL_OPENSSL_3` not found](#Version_.60CURL_OPENSSL_3.60_not_found)
-*   [7 Audio issues](#Audio_issues)
-    *   [7.1 Configure PulseAudio](#Configure_PulseAudio)
-    *   [7.2 No audio or 756 Segmentation fault](#No_audio_or_756_Segmentation_fault)
-    *   [7.3 FMOD sound engine](#FMOD_sound_engine)
-    *   [7.4 PulseAudio & OpenAL: Audio streams can't be moved between devices](#PulseAudio_.26_OpenAL:_Audio_streams_can.27t_be_moved_between_devices)
-*   [8 Steam client issues](#Steam_client_issues)
-    *   [8.1 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
-    *   [8.2 Unusually slow download speed](#Unusually_slow_download_speed)
-    *   [8.3 "Needs to be online" error](#.22Needs_to_be_online.22_error)
-    *   [8.4 Steam forgets password](#Steam_forgets_password)
-    *   [8.5 Preventing crash memory dumps](#Preventing_crash_memory_dumps)
-*   [9 In-home streaming issues](#In-home_streaming_issues)
-    *   [9.1 In-home streaming does not work from archlinux host to archlinux guest](#In-home_streaming_does_not_work_from_archlinux_host_to_archlinux_guest)
-    *   [9.2 Hardware decoding not available](#Hardware_decoding_not_available)
-    *   [9.3 BPM minimizes itself after losing focus](#BPM_minimizes_itself_after_losing_focus)
-*   [10 Wrong ELF class](#Wrong_ELF_class)
-*   [11 Multiple monitors setup](#Multiple_monitors_setup)
-*   [12 Text is corrupt or missing](#Text_is_corrupt_or_missing)
-*   [13 SetLocale('en_US.UTF-8') fails at game startup](#SetLocale.28.27en_US.UTF-8.27.29_fails_at_game_startup)
-*   [14 Missing libc](#Missing_libc)
-*   [15 Games do not launch on older Intel hardware](#Games_do_not_launch_on_older_Intel_hardware)
-*   [16 Mesa: Game does not launch, complaining about OpenGL version supported by the card](#Mesa:_Game_does_not_launch.2C_complaining_about_OpenGL_version_supported_by_the_card)
-*   [17 2K games do not run on XFS partitions](#2K_games_do_not_run_on_XFS_partitions)
-*   [18 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
-*   [19 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
-*   [20 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
-*   [21 Symbol lookup error using DRI3](#Symbol_lookup_error_using_DRI3)
-*   [22 Launching games on Nvidia optimus laptops](#Launching_games_on_Nvidia_optimus_laptops)
-*   [23 Steam Link cannot find host computer](#Steam_Link_cannot_find_host_computer)
-*   [24 Steam license problem with playing videos](#Steam_license_problem_with_playing_videos)
+*   [5 Runtime issues](#Runtime_issues)
+    *   [5.1 Segmentation fault when disabling runtime](#Segmentation_fault_when_disabling_runtime)
+    *   [5.2 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
+    *   [5.3 Game crashes immediately](#Game_crashes_immediately)
+    *   [5.4 Version `CURL_OPENSSL_3` not found](#Version_.60CURL_OPENSSL_3.60_not_found)
+*   [6 Audio issues](#Audio_issues)
+    *   [6.1 Configure PulseAudio](#Configure_PulseAudio)
+    *   [6.2 No audio or 756 Segmentation fault](#No_audio_or_756_Segmentation_fault)
+    *   [6.3 FMOD sound engine](#FMOD_sound_engine)
+    *   [6.4 PulseAudio & OpenAL: Audio streams can't be moved between devices](#PulseAudio_.26_OpenAL:_Audio_streams_can.27t_be_moved_between_devices)
+*   [7 Steam client issues](#Steam_client_issues)
+    *   [7.1 Cannot add library folder because of missing execute permissions](#Cannot_add_library_folder_because_of_missing_execute_permissions)
+    *   [7.2 Unusually slow download speed](#Unusually_slow_download_speed)
+    *   [7.3 "Needs to be online" error](#.22Needs_to_be_online.22_error)
+    *   [7.4 Steam forgets password](#Steam_forgets_password)
+    *   [7.5 Preventing crash memory dumps](#Preventing_crash_memory_dumps)
+    *   [7.6 Steam license problem with playing videos](#Steam_license_problem_with_playing_videos)
+*   [8 In-home streaming issues](#In-home_streaming_issues)
+    *   [8.1 In-home streaming does not work from archlinux host to archlinux guest](#In-home_streaming_does_not_work_from_archlinux_host_to_archlinux_guest)
+    *   [8.2 Hardware decoding not available](#Hardware_decoding_not_available)
+    *   [8.3 Big Picture Mode minimizes itself after losing focus](#Big_Picture_Mode_minimizes_itself_after_losing_focus)
+*   [9 Other issues](#Other_issues)
+    *   [9.1 Wrong ELF class](#Wrong_ELF_class)
+    *   [9.2 Multiple monitors setup](#Multiple_monitors_setup)
+    *   [9.3 Text is corrupt or missing](#Text_is_corrupt_or_missing)
+    *   [9.4 SetLocale('en_US.UTF-8') fails at game startup](#SetLocale.28.27en_US.UTF-8.27.29_fails_at_game_startup)
+    *   [9.5 Missing libc](#Missing_libc)
+    *   [9.6 Games do not launch on older Intel hardware](#Games_do_not_launch_on_older_Intel_hardware)
+    *   [9.7 Mesa: Game does not launch, complaining about OpenGL version supported by the card](#Mesa:_Game_does_not_launch.2C_complaining_about_OpenGL_version_supported_by_the_card)
+    *   [9.8 2K games do not run on XFS partitions](#2K_games_do_not_run_on_XFS_partitions)
+    *   [9.9 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
+    *   [9.10 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
+    *   [9.11 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
+    *   [9.12 Symbol lookup error using DRI3](#Symbol_lookup_error_using_DRI3)
+    *   [9.13 Launching games on Nvidia optimus laptops](#Launching_games_on_Nvidia_optimus_laptops)
 
 ## Introduction
 
 1.  Make sure that you have followed [Steam#Installation](/index.php/Steam#Installation "Steam").
-2.  If the issue is about a game, consult [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting").
+2.  If the Steam client / a game is not starting and/or you have error message about a library, read [#Steam runtime](#Steam_runtime) and see [#Debugging shared libraries](#Debugging_shared_libraries).
+3.  If the issue is related to networking, make sure that you have forwarded the [required ports for Steam](https://support.steampowered.com/kb_article.php?ref=8571-GLVN-8711).
+4.  If the issue is about a game, consult [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting").
+
+### Relevant online resources
+
+*   [Multimedia and Games / Arch Linux Forums](https://bbs.archlinux.org/viewforum.php?id=32)
+*   [ValveSoftware/steam-for-linux](https://github.com/ValveSoftware/steam-for-linux) – Issue tracking for the Steam for Linux client
+*   [Steam Community discussions of the game](https://steamcommunity.com/)
+*   [Steam Support FAQ](https://help.steampowered.com/en/)
 
 ## Steam runtime
 
 Steam for Linux ships with its own set of libraries called the [Steam runtime](https://github.com/ValveSoftware/steam-runtime). By default Steam launches all Steam Applications within the runtime environment. The Steam runtime is located at `~/.steam/root/ubuntu12_32/steam-runtime/`.
 
-If you mix the Steam runtime libraries with system libraries you will run into binary incompatibility issues. [[1]](https://github.com/ValveSoftware/steam-for-linux/issues/4768)
+If you mix the Steam runtime libraries with system libraries you will run into binary incompatibility issues, see [steam-for-linux issue #4768](https://github.com/ValveSoftware/steam-for-linux/issues/4768). Binary incompatibility can lead to the Steam client and games not starting (manifesting as a crash, as hanging or silently returning), audio issues and various other problems.
 
 The [steam](https://www.archlinux.org/packages/?name=steam) package offers three ways to launch Steam:
 
@@ -70,36 +80,15 @@ The `steam-native` script launches Steam with the `STEAM_RUNTIME=0` environment 
 
 The [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime) meta package depends on over 120 packages to pose a native replacement of the Steam runtime, some games may however still require additional packages. You can also use the Steam native runtime without [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime) by manually installing just the packages you need. See [#Finding missing runtime libraries](#Finding_missing_runtime_libraries).
 
-## Shared libraries
+## Debugging shared libraries
 
 To see the shared libraries required by a program or a shared library run the `ldd` command on it, see [ldd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ldd.1). The `LD_LIBRARY_PATH` and `LD_PRELOAD` [environment variables](/index.php/Environment_variables "Environment variables") can alter which shared libraries are loaded, see [ld.so(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ld.so.8). To correctly debug a program or shared library it is therefore important that these environment variables in your debug environment match the environment you wish to debug.
 
 If you figure out a missing library you can use [pacman](/index.php/Pacman "Pacman") or [pkgfile](/index.php/Pkgfile "Pkgfile") to search for packages that contain the missing library.
 
-## Debugging Steam
+### Finding missing game libraries
 
-The Steam launcher redirects its stdout and stderr to `/tmp/dumps/*USER*_stdout.txt`. This means you do not have to run Steam from the command-line to see that output.
-
-It is possible to debug Steam to gain more information which could be useful to find out why something does not work.
-
-You can set `DEBUGGER` environment variable with one of `gdb`, `cgdb`, `valgrind`, `callgrind`, `strace` and then start `steam`.
-
-For example with [gdb](https://www.archlinux.org/packages/?name=gdb)
-
- `$ DEBUGGER=gdb steam` 
-
-`gdb` will open, then type `run` which will start `steam` and once crash happens you can type `backtrace` to see call stack.
-
-## Steam runtime issues
-
-Binary incompatibility can lead to the Steam client itself crashing or hanging, and/or various errors.
-
-**Note:** A misconfigured [firewall](/index.php/Firewall "Firewall") may cause Steam to fail as it can not connect to its servers. [[2]](https://support.steampowered.com/kb_article.php?ref=2198-AGHC-7226) Most games will crash if the Steam API fails to load.
-
-Also see these forum threads:
-
-*   [https://bbs.archlinux.org/viewtopic.php?id=181171](https://bbs.archlinux.org/viewtopic.php?id=181171)
-*   [https://bbs.archlinux.org/viewtopic.php?id=183141](https://bbs.archlinux.org/viewtopic.php?id=183141)
+If a game fails to start, a possible reason is that it is missing required libraries. You can find out what libraries it requests by running `ldd *game_executable*`. `*game_executable*` is likely located somewhere in `~/.steam/root/steamapps/common/`. Please note that most of these "missing" libraries are actually already included with Steam, and do not need to be installed globally.
 
 ### Finding missing runtime libraries
 
@@ -118,17 +107,36 @@ $ for i in $(pgrep steam); do sed '/\.local/!d;s/.*  //g' /proc/$i/maps; done | 
 
 ```
 
-## Other runtime issues
+## Debugging Steam
 
-### Native runtime: steam.sh line 756 Segmentation fault
+The Steam launcher redirects its stdout and stderr to `/tmp/dumps/*USER*_stdout.txt`. This means you do not have to run Steam from the command-line to see that output.
 
-	[steam-for-linux issue 3863](https://github.com/ValveSoftware/steam-for-linux/issues/3863)
+It is possible to debug Steam to gain more information which could be useful to find out why something does not work.
 
-As per the bug report above, Steam crashes with `/home/<username>/.local/share/Steam/steam.sh: line 756: <variable numeric code> Segmentation fault (core dumped)` when running with `STEAM_RUNTIME=0`.
+You can set `DEBUGGER` environment variable with one of `gdb`, `cgdb`, `valgrind`, `callgrind`, `strace` and then start `steam`.
 
-This happens because `steamclient.so` is linked to `libudev.so.0` ([lib32-libudev0](https://aur.archlinux.org/packages/lib32-libudev0/)) which conflicts with libudev.so.1 ([lib32-systemd](https://www.archlinux.org/packages/?name=lib32-systemd))
+For example with [gdb](https://www.archlinux.org/packages/?name=gdb)
 
-The only proposed workaround is copying Steam's packaged 32-bit versions of libusb and libgudev to `/usr/lib32`:
+ `$ DEBUGGER=gdb steam` 
+
+`gdb` will open, then type `run` which will start `steam` and once crash happens you can type `backtrace` to see call stack.
+
+## Runtime issues
+
+### Segmentation fault when disabling runtime
+
+	[steam-for-linux issue #3863](https://github.com/ValveSoftware/steam-for-linux/issues/3863)
+
+As per the bug report above, Steam crashes with the following error message when run with `STEAM_RUNTIME=0`:
+
+```
+/home/*USER*/.local/share/Steam/steam.sh: line 756: <variable numeric code> Segmentation fault (core dumped)
+
+```
+
+This happens because `steamclient.so` is linked to `libudev.so.0` ([lib32-libudev0](https://aur.archlinux.org/packages/lib32-libudev0/)) which conflicts with `libudev.so.1` ([lib32-systemd](https://www.archlinux.org/packages/?name=lib32-systemd)).
+
+A proposed workaround is to copy Steam's packaged 32-bit versions of libusb and libgudev to `/usr/lib32`:
 
 ```
 # cp ~/.steam/root/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libgudev* /usr/lib32
@@ -146,13 +154,11 @@ Alternatively it has been successful to prioritize the loading of the libudev.so
 
 This error is likely caused because Steam packages its own out of date `libstdc++.so.6`. See [#Steam runtime issues](#Steam_runtime_issues) about working around the bad library. See also [steam-for-linux issue 3773](https://github.com/ValveSoftware/steam-for-linux/issues/3773).
 
-### Games crash immediately
+### Game crashes immediately
 
-This is likely due to [#Steam runtime issues](#Steam_runtime_issues). If those solutions do not work, try setting the following [launch options](/index.php/Steam#Launch_options "Steam"):
+This is likely due to [#Steam runtime](#Steam_runtime) issues, see [#Debugging shared libraries](#Debugging_shared_libraries).
 
- `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%` 
-
-If it does not help try disabling the in-game Steam Overlay in the game properties.
+Disabling the in-game Steam Overlay in the game properties might help.
 
 And finally, if those don't work, you should check Steam's output for any error from the game. You may encounter the following:
 
@@ -189,7 +195,7 @@ $ ln -s /usr/lib/libcurl-compat.so.4.4.0 *LIBRARY*/steamapps/common/devildaggers
 
 ## Audio issues
 
-Check [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") for issues with specific games. If the sections below do not address the issue, using the [#Steam native runtime](#Steam_native_runtime) might help.
+If the sections below do not address the issue, using the [#Steam native runtime](#Steam_native_runtime) might help.
 
 ### Configure PulseAudio
 
@@ -213,14 +219,14 @@ A workaround is to rename or delete the `alsa-lib` folder and the `libasound.so.
 
 ```
 
-An alternative workaround is to add the `libasound.so.*` library to the **LD_PRELOAD** environment variable:
+An alternative workaround is to add the `libasound.so.*` library to the `LD_PRELOAD` environment variable:
 
 ```
 LD_PRELOAD='/usr/$LIB/libasound.so.2 '${LD_PRELOAD} steam
 
 ```
 
-If audio still won't work, adding the Pulseaudio-libs to the **LD_PRELOAD** variable may help:
+If audio still won't work, adding the Pulseaudio-libs to the `LD_PRELOAD` variable may help:
 
 ```
 LD_PRELOAD='/usr/$LIB/libpulse.so.0 /usr/$LIB/libpulse-simple.so.0 '${LD_PRELOAD}
@@ -258,9 +264,14 @@ allow-moves=true
 
 ## Steam client issues
 
-### Unable to add library folder because of missing execute permissions
+### Cannot add library folder because of missing execute permissions
 
-If you add another Steam library folder on another drive, you might receive the error message *"New Steam library folder must be on a filesystem mounted with execute permissions"*.
+If you add another Steam library folder on another drive, you might get the error message:
+
+```
+New Steam library folder must be on a filesystem mounted with execute permissions
+
+```
 
 Make sure you are mounting the filesystem with the correct flags in your `/etc/fstab`, usually by adding `exec` to the list of mount parameter. The parameter must occur after any `user` or `users` parameter since these can imply `noexec`.
 
@@ -270,7 +281,7 @@ This error can also occur because of Steam runtime issues and may be fixed follo
 
 ### Unusually slow download speed
 
-If your Steam apps (games, software…) download speed through the client is unusually slow, but browsing the Steam store and streaming videos is unaffected, installing a DNS cache program, such as [dnsmasq](/index.php/Dnsmasq "Dnsmasq") can help [[3]](https://steamcommunity.com/app/221410/discussions/2/616189106498372437/).
+If your Steam apps (games, software…) download speed through the client is unusually slow, but browsing the Steam store and streaming videos is unaffected, installing a DNS cache program, such as [dnsmasq](/index.php/Dnsmasq "Dnsmasq") can help [[1]](https://steamcommunity.com/app/221410/discussions/2/616189106498372437/).
 
 ### "Needs to be online" error
 
@@ -314,6 +325,17 @@ Or alternatively, create and modify permissions on `/tmp/dumps`. Then Steam will
 
 This also has the added benefit of Steam not uploading these dumps to Valve's servers.
 
+### Steam license problem with playing videos
+
+Steam uses [Google's Widevine DRM](https://en.wikipedia.org/wiki/Widevine "w:Widevine") for some videos. If it is not installed you will get the following error:
+
+```
+This video requires a license to play which cannot be retrieved. This may be a temporary network condition. Please restart the video to try again.
+
+```
+
+To solve this issue follow the [*Streaming Videos on Steam* support page](https://support.steampowered.com/kb_article.php?ref=8699-OASD-1871#15).
+
 ## In-home streaming issues
 
 See [Steam#In-home streaming](/index.php/Steam#In-home_streaming "Steam").
@@ -328,7 +350,7 @@ With that, Steam should no longer crash when trying to launch a game through in-
 
 In-home streaming hardware decoding uses `vaapi`, so it needs to be installed (or wrapped around `vdpau`). See [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"). Remember to install the `lib32` versions as well.
 
-### BPM minimizes itself after losing focus
+### Big Picture Mode minimizes itself after losing focus
 
 This can occur when you play a game via in-home streaming or if you have a multi-monitor setup and move the mouse outside of BPM's window. To prevent this, set the following environment variable and restart Steam
 
@@ -339,7 +361,9 @@ export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0
 
 See also the [steam-for-linux issue 4769](https://github.com/ValveSoftware/steam-for-linux/issues/4769).
 
-## Wrong ELF class
+## Other issues
+
+### Wrong ELF class
 
 If you see this message in Steam's console output
 
@@ -350,7 +374,7 @@ ERROR: ld.so: object '~/.local/share/Steam/ubuntu12_32/gameoverlayrenderer.so' f
 
 you can safely ignore it. It is not really any error: Steam includes both 64- and 32-bit versions of some libraries and only one version will load successfully. This "error" is displayed even when Steam (and the in-game overlay) is working perfectly.
 
-## Multiple monitors setup
+### Multiple monitors setup
 
 A setup with multiple monitors may prevent games from starting. Try to disable all additional displays, and then run a game. You can enable them after the game successfully started.
 
@@ -361,7 +385,7 @@ export LD_LIBRARY_PATH=/usr/lib32/nvidia:/usr/lib/nvidia:$LD_LIBRARY_PATH
 
 ```
 
-## Text is corrupt or missing
+### Text is corrupt or missing
 
 The Steam Support [instructions](https://support.steampowered.com/kb_article.php?ref=1974-YFKL-4947) for Windows seem to work on Linux also.
 
@@ -369,13 +393,11 @@ You can install them via the [steam-fonts](https://aur.archlinux.org/packages/st
 
 **Note:** When steam cannot find the Arial fonts, font-config likes to fall back onto the Helveticia bitmap font. Steam does not render this and possibly other bitmap fonts correctly, so either removing problem fonts or [disabling bitmap fonts](/index.php/Font_configuration#Disable_bitmap_fonts "Font configuration") will most likely fix the issue without installing the Arial or ArialBold fonts. The font being used in place of Arial can be found with the command `$ fc-match -v Arial` 
 
-Specific games may have other font requirement. See [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting").
-
-## SetLocale('en_US.UTF-8') fails at game startup
+### SetLocale('en_US.UTF-8') fails at game startup
 
 You need to generate the `en_US.UTF-8 UTF-8` locale. See [Locale#Generating locales](/index.php/Locale#Generating_locales "Locale").
 
-## Missing libc
+### Missing libc
 
 This could be due to a corrupt Steam executable. Check the output of:
 
@@ -396,7 +418,7 @@ If it doesn't, try to delete the `~/.local/share/Steam/` directory and launch St
 
 This error message can also occur due to a bug in Steam which occurs when your `$HOME` directory ends in a slash (Valve GitHub [issue 3730](https://github.com/ValveSoftware/steam-for-linux/issues/3730)). This can be fixed by editing `/etc/passwd` and changing `/home/<username>/` to `home/<username>`, then logging out and in again. Afterwards, Steam should repair itself automatically.
 
-## Games do not launch on older Intel hardware
+### Games do not launch on older Intel hardware
 
 	[source](https://steamcommunity.com/app/8930/discussions/1/540744299927655197/)
 
@@ -404,21 +426,21 @@ On older Intel hardware which doesn't support OpenGL 3, such as Intel GMA chips 
 
 This can be fixed, by forcing the game to use a later version of OpenGL than it wants. Add `MESA_GL_VERSION_OVERRIDE=3.1 MESA_GLSL_VERSION_OVERRIDE=140` to your [launch options](/index.php/Launch_option "Launch option").
 
-## Mesa: Game does not launch, complaining about OpenGL version supported by the card
+### Mesa: Game does not launch, complaining about OpenGL version supported by the card
 
 Some games are badly programmed, to use any OpenGL version above 3.0. With Mesa, an application has to request a specific core profile. If it doesn't make such a request, only OpenGL 3.0 and lower are available.
 
 This can be fixed, by forcing the game to use a version of OpenGL it actually needs. Add `MESA_GL_VERSION_OVERRIDE=4.1 MESA_GLSL_VERSION_OVERRIDE=410` to your [launch options](/index.php/Launch_option "Launch option").
 
-## 2K games do not run on XFS partitions
+### 2K games do not run on XFS partitions
 
-If you are running 2K games such as Civilization 5 on [XFS](/index.php/XFS "XFS") partitions, then the game may not start or run properly due to how the game loads files as it starts. [[5]](https://bbs.archlinux.org/viewtopic.php?id=185222)
+If you are running 2K games such as Civilization 5 on [XFS](/index.php/XFS "XFS") partitions, then the game may not start or run properly due to how the game loads files as it starts. [[3]](https://bbs.archlinux.org/viewtopic.php?id=185222)
 
-## Steam controller not being detected correctly
+### Steam controller not being detected correctly
 
 See [Gamepad#Steam Controller](/index.php/Gamepad#Steam_Controller "Gamepad").
 
-## Steam hangs on "Installing breakpad exception handler..."
+### Steam hangs on "Installing breakpad exception handler..."
 
 [BBS#177245](https://bbs.archlinux.org/viewtopic.php?id=177245)
 
@@ -433,7 +455,7 @@ Installing breakpad exception handler for appid(steam)/version(0_client)
 
 Then nothing else happens. Ensure you have the correct drivers installed as well as their 32-bit versions: see [NVIDIA#Installation](/index.php/NVIDIA#Installation "NVIDIA").
 
-## Killing standalone compositors when launching games
+### Killing standalone compositors when launching games
 
 Further to this, utilising the `%command%` switch, you can kill standalone compositors (such as Xcompmgr or [Compton](/index.php/Compton "Compton")) - which can cause lag and tearing in some games on some systems - and relaunch them after the game ends by adding the following to your game's launch options.
 
@@ -446,7 +468,7 @@ Replace `compton` in the above command with whatever your compositor is. You can
 
 Steam will latch on to any processes launched after `%command%` and your Steam status will show as in game. So in this example, we run the compositor through `nohup` so it is not attached to Steam (it will keep running if you close Steam) and follow it with an ampersand so that the line of commands ends, clearing your Steam status.
 
-## Symbol lookup error using DRI3
+### Symbol lookup error using DRI3
 
 Steam outputs this error and exits.
 
@@ -455,31 +477,8 @@ Steam outputs this error and exits.
 
 ```
 
-For Steam to work, disable DRI3 in Xorg config file or as a workaround run Steam with `LIBGL_DRI3_DISABLE=1`
+To work around this, run Steam with `LIBGL_DRI3_DISABLE=1`, disabling DRI3 for Steam.
 
-```
- LIBGL_DRI3_DISABLE=1 steam
-
-```
-
-## Launching games on Nvidia optimus laptops
+### Launching games on Nvidia optimus laptops
 
 To be able to play games which require using Nvidia GPU (for example, Hitman 2016) on optimus enabled laptop, you should start Steam with *primusrun* prefix. Otherwise, game will not work. Keep in mind, that issuing some command such as `primusrun steam` while Steam is already running will not restart it. You should explicitly exit and then start Steam via `primusrun steam` command or start game immediately after start, for example with `primusrun steam steam://rungameid/236870`. After Steam was launched with primusrun prefix, you do not need to prefix your game with primusrun or optirun, because it does not matter.
-
-## Steam Link cannot find host computer
-
-Steam connects through UDP 27036, 27031 and TCP 27036, 27037\. You need to add the rules in your iptables(or similar firewall frontend's). Like so:
-
-```
- iptables -A -d UDP -p udp --dport 27036 --src Your-subnet-here -j ACCEPT -m comment --comment "SteamLink"
- iptables -A -d UDP -p udp --dport 27031 --src Your-subnet-here -j ACCEPT -m comment --comment "SteamLink"
- iptables -A -d TCP -p tcp --dport 27036 --src Your-subnet-here -j ACCEPT -m comment --comment "SteamLink"
- iptables -A -d TCP -p tcp --dport 27037 --src Your-subnet-here -j ACCEPT -m comment --comment "SteamLink"
-
-```
-
-## Steam license problem with playing videos
-
-Steam uses [Google's Widevine DRM](https://en.wikipedia.org/wiki/Widevine "w:Widevine") for some videos. When it is not installed an error message saying "*This video requires a license to play which cannot be retrieved. This may be a temporary network condition. Please restart the video to try again.*" will appear.
-
-To solve this issue follow [this Steam Support section](https://support.steampowered.com/kb_article.php?ref=8699-OASD-1871#15).

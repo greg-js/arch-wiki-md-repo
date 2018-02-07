@@ -7,11 +7,15 @@
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
-*   [4 Online updater](#Online_updater)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Enabling the *Online Updater*](#Enabling_the_Online_Updater)
+    *   [4.2 Enabling *SaveRAM Autosave Interval*](#Enabling_SaveRAM_Autosave_Interval)
+    *   [4.3 Reset settings to their default value](#Reset_settings_to_their_default_value)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 No cores found](#No_cores_found)
     *   [5.2 Input devices do not operate](#Input_devices_do_not_operate)
     *   [5.3 Poor video performance](#Poor_video_performance)
+    *   [5.4 Save data is lost whenever RetroArch crashes](#Save_data_is_lost_whenever_RetroArch_crashes)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -55,7 +59,9 @@ It supports split configuration files using the `#include "foo.cfg"` directive w
 *   [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) requires [nvidia-cg-toolkit](https://www.archlinux.org/packages/?name=nvidia-cg-toolkit) in order to use the *cg shaders*.
 *   When using [ALSA](/index.php/ALSA "ALSA") it is necessary for the `audio_out_rate` to be equal to the system's default output rate, usually `48000`.
 
-## Online updater
+## Tips and tricks
+
+### Enabling the *Online Updater*
 
 Recent versions of RetroArch have introduced a built-in menu for updating and downloading core files and various assets from the [libretro Buildbot](https://buildbot.libretro.com/). To enable it, open `~/.config/retroarch/retroarch.cfg` and set `menu_show_core_updater` to `"true"`.
 
@@ -74,13 +80,27 @@ Update GLSL Shaders
 Update Slang Shaders
 ```
 
-These cores and assets are kept up to date and can be pulled from the updater any time there's an upstream change.
+These cores and assets are kept up to date and can be pulled from the updater any time there's an update.
+
+### Enabling *SaveRAM Autosave Interval*
+
+By default, RetroArch only writes SRAM onto disk when it exits without error, which means that there's a risk of losing save data when using crash-prone cores. To change this behavior, open `~/.config/retroarch/retroarch.cfg` and set `autosave_interval` to *n*.
+
+ `~/.config/retroarch/retroarch.cfg`  `autosave_interval = "600"` 
+
+With the example above, RetroArch will write SRAM changes onto disk every 600 seconds.
+
+**Warning:** Setting this value too low will cause all sorts of issue, most notably hardware degradation. See [[1]](https://github.com/libretro/RetroArch/issues/4901#issuecomment-300888019)
+
+### Reset settings to their default value
+
+To reset a setting or keybind to its default value through the GUI, highlight it and press `Start`. To remove a button from a keybind, highlight the keybind and press `Y`.
 
 ## Troubleshooting
 
 ### No cores found
 
-By default RetroArch will attempt to find cores in `/usr/lib/libretro/`. Cores downloaded using the built-in *Online Updater* will fail to save unless RetroArch is run as root (not recommended, as it may overwrite cores installed by [pacman](/index.php/Pacman "Pacman") and also because it poses a security risk.[[1]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5)) because users do not normally have permission to modify this directory. To use a user-owned directory instead, edit these lines:
+By default RetroArch will attempt to find cores in `/usr/lib/libretro/`. Cores downloaded using the built-in *Online Updater* will fail to save unless RetroArch is run as root (not recommended, as it may overwrite cores installed by [pacman](/index.php/Pacman "Pacman") and also because it poses a security risk.[[2]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5)) because users do not normally have permission to modify this directory. To use a user-owned directory instead, edit these lines:
 
  `~/.config/retroarch/retroarch.cfg` 
 ```
@@ -113,6 +133,10 @@ If rebooting the system or replugging the devices are not options, permissions m
 If poor video performance is met, RetroArch may be run on a separate thread by setting `video_threaded = true` in `~/.config/retroarch/retroarch.cfg`.
 
 This is, however, a solution that should be not be used if tweaking RetroArch's video resolution/refresh rate fixes the problem, as it makes perfect V-Sync impossible, and slightly increases latency.
+
+### Save data is lost whenever RetroArch crashes
+
+See [#Enabling SaveRAM Autosave Interval](#Enabling_SaveRAM_Autosave_Interval).
 
 ## See also
 

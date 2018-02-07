@@ -4,18 +4,20 @@
     *   [1.1 Components](#Components)
     *   [1.2 Support](#Support)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Intel ucode](#Intel_ucode)
-    *   [2.2 Display](#Display)
-    *   [2.3 Wireless](#Wireless)
-        *   [2.3.1 rtl8192ee](#rtl8192ee)
-    *   [2.4 Touchpad](#Touchpad)
-    *   [2.5 Sound](#Sound)
-    *   [2.6 Fingerprint Reader](#Fingerprint_Reader)
-    *   [2.7 Function Keys](#Function_Keys)
-    *   [2.8 Power Management](#Power_Management)
-    *   [2.9 SSD](#SSD)
-    *   [2.10 LEDs](#LEDs)
-    *   [2.11 Intel Rapid Start Technology (IRST)](#Intel_Rapid_Start_Technology_.28IRST.29)
+    *   [2.1 Kernel version](#Kernel_version)
+    *   [2.2 Intel ucode](#Intel_ucode)
+    *   [2.3 Display](#Display)
+        *   [2.3.1 Tearing](#Tearing)
+    *   [2.4 Wireless](#Wireless)
+        *   [2.4.1 rtl8192ee](#rtl8192ee)
+    *   [2.5 Touchpad](#Touchpad)
+    *   [2.6 Sound](#Sound)
+    *   [2.7 Fingerprint Reader](#Fingerprint_Reader)
+    *   [2.8 Function Keys](#Function_Keys)
+    *   [2.9 Power Management](#Power_Management)
+    *   [2.10 SSD](#SSD)
+    *   [2.11 LEDs](#LEDs)
+    *   [2.12 Intel Rapid Start Technology (IRST)](#Intel_Rapid_Start_Technology_.28IRST.29)
 *   [3 See also](#See_also)
 
 ## Model description
@@ -59,6 +61,16 @@ Lenovo ThinkPad T450s
 
 ## Configuration
 
+### Kernel version
+
+The followin errors are encountred on boot since the version 4.10 of the kernel
+
+<tt>Error parsing PCC subspaces from PCCT</tt> ([bug report](https://bugzilla.redhat.com/show_bug.cgi?id=1435837))
+
+<tt>ACPI Error: Needed type [Reference], found [Integer]</tt>
+
+Using <tt>linux-lts</tt> get you rid of these errors.
+
 ### Intel ucode
 
 Be sure to install intel ucode for ucode update on intel CPUs and regenerate your boot loader. See [Microcode](/index.php/Microcode "Microcode") for details.
@@ -67,11 +79,37 @@ pacman -S intel-ucode
 
 ### Display
 
+(Is this still applicable ? No flicker problem (tearing only) with recent <tt>linux-lts</tt> Feb 2018)
+
 The Intel display is run with the <tt>i915</tt> driver, which has become unstable in the 4.2+ series of kernels. Regrettably, this instability has found its way into the current <tt>linux-lts</tt> kernel (see [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=203088)). A working fix is to downgrade your kernel to version 4.1.21-1, and wait for the problem to be fixed.
 
 This was easy for me to do, because I had previously downloaded the package in <tt>/var/cache/pacman/pkg</tt>. All I needed to do was navigate to that directory as root and run <tt>pacman -U linux-lts-4.1.21-1-x86_64.pkg.tar.xz</tt> and it Just Worked. If you do not have the package already downloaded, you can find it in the [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive").
 
 I also edited <tt>/etc/pacman.conf</tt> and added <tt>linux-lts</tt> and <tt>linux-lts-headers</tt> to my <tt>IgnorePkg</tt> line, so they would not be inadvertently upgraded when I do system updates.
+
+#### Tearing
+
+You can get rid of video tearing by creating <tt>/etc/X11/xorg.conf.d/20-intel.conf</tt> and adding this:
+
+```
+Section "Device"
+   Identifier  "Intel Graphics"
+   Driver      "intel"
+   Option      "AccelMethod"  "uxa"
+EndSection
+
+```
+
+If symptoms persist try this also
+
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+   Identifier  "Intel Graphics"
+   Driver      "intel"
+   Option      "TearFree"    "true"
+EndSection
+```
 
 ### Wireless
 
@@ -131,7 +169,39 @@ Note that there is a BIOS option to change the function keys so that F1 - F12 ar
 
 Be sure to install tlp or powertop.
 
-sudo pacman -S tlp; sudo systemctl enable tlp.service; sudo systemctl start tlp.service
+```
+sudo pacman -S tlp
+sudo systemctl enable tlp.service
+sudo systemctl start tlp.service
+
+```
+
+You can use tlp and powertop together (launch powertop as a service), but delete all the options on tlp and leave only the battery parameters
+
+ `/etc/default/tlp` 
+```
+# Set to 0 to disable, 1 to enable TLP.
+TLP_ENABLE=1
+
+# Dirty page values (timeouts in secs).
+MAX_LOST_WORK_SECS_ON_BAT=15
+
+# Battery charge thresholds (ThinkPad only, tp-smapi or acpi-call kernel module
+# required). Charging starts when the remaining capacity falls below the
+# START_CHARGE_TRESH value and stops when exceeding the STOP_CHARGE_TRESH value.
+# Main / Internal battery (values in %)
+START_CHARGE_THRESH_BAT0=50
+STOP_CHARGE_THRESH_BAT0=60
+# Ultrabay / Slice / Replaceable battery (values in %)
+START_CHARGE_THRESH_BAT1=60
+STOP_CHARGE_THRESH_BAT1=70
+```
+
+To enable power save mode on the audio:
+
+ `/etc/modprobe.d/audio_powersave.conf`  `options snd_hda_intel power_save=1` 
+
+To enable decrease the consumption of the intel chipset add **i915.enable_psr=1** to your kernel parameters ([details here](https://hansdegoede.livejournal.com/18653.html)).
 
 ### SSD
 

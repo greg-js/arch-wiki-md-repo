@@ -60,15 +60,13 @@ The main configuration is done in `/etc/dhcpcd.conf`. See [dhcpcd.conf(5)](https
 
 ### DHCP static route(s)
 
-If you need to add a static route client-side, create a new dhcpcd hook-script in `/usr/lib/dhcpcd/dhcpcd-hooks`. The example shows a new hook-script which adds a static route to a VPN subnet on `10.11.12.0/24` via a gateway machine at `192.168.192.5`:
+If you need to add a static route client-side, add it to `/etc/dhcpcd.exit-hook`. The example shows a new hook-script which adds a static route to a VPN subnet on `10.11.12.0/24` via a gateway machine at `192.168.192.5`:
 
- `/usr/lib/dhcpcd/dhcpcd-hooks/40-vpnroute` 
+ `/etc/dhcpcd.exit-hook` 
 ```
 ip route add 10.11.12.0/24 via 192.168.192.5
 
 ```
-
-The `40` prefix means that it is the final hook-script to run when dhcpcd starts.
 
 ### DHCP Client Identifier
 

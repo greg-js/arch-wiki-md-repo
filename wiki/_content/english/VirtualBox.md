@@ -104,7 +104,7 @@ Navigate to your kernel tree folder and execute the following command:
 
 Since version 5.0.16, [virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch) and [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) use `systemd-modules-load.service` to load all four VirtualBox modules automatically at boot time. For the modules to be loaded after installation, either reboot or load the modules once manually.
 
-**Note:** If you do not want the VirtualBox modules to be automatically loaded at boot time, you have to mask the default `/usr/lib/modules-load.d/virtualbox-host-modules-arch.conf` (or `-dkms.conf`) by creating an empty file (or symlink to `/dev/null`) with the same name in `/etc/modules-load.d`.
+**Note:** If you do not want the VirtualBox modules to be automatically loaded at boot time, you have to mask the default `/usr/lib/modules-load.d/virtualbox-host-modules-arch.conf` (or `-dkms.conf`) by creating an empty file (or symlink to `/dev/null`) with the same name in `/etc/modules-load.d/`.
 
 Among the [kernel modules](/index.php/Kernel_modules "Kernel modules") VirtualBox uses, there is a mandatory module named `vboxdrv`, which must be loaded before any virtual machines can run.
 
@@ -209,7 +209,7 @@ hwinfo --framebuffer
 If the optimal resolution does not show up, then you will need to run the `VBoxManage` tool on the host machine and add "extra resolutions" to your virtual machine (on a Windows host, go to the VirtualBox installation directory to find `VBoxManage.exe`). For example:
 
 ```
-VBoxManage setextradata "Arch Linux" "CustomVideoMode1" "1360x768x24"
+$ VBoxManage setextradata "Arch Linux" "CustomVideoMode1" "1360x768x24"
 
 ```
 
@@ -252,7 +252,7 @@ To load the modules manually, type:
 
 Since version 5.0.16, [virtualbox-guest-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-guest-modules-arch) and [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) use **systemd-modules-load** service to load their modules at boot time.
 
-**Note:** If you do not want the VirtualBox modules to be loaded at boot time, you have to mask the default `/usr/lib/modules-load.d/virtualbox-guest-modules-arch.conf` (or `-dkms.conf`) by creating an empty file (or symlink to `/dev/null`) with the same name in `/etc/modules-load.d`.
+**Note:** If you do not want the VirtualBox modules to be loaded at boot time, you have to mask the default `/usr/lib/modules-load.d/virtualbox-guest-modules-arch.conf` (or `-dkms.conf`) by creating an empty file (or symlink to `/dev/null`) with the same name in `/etc/modules-load.d/`.
 
 ### Launch the VirtualBox guest services
 
@@ -582,6 +582,7 @@ Storage Controller Bootable (1):        on
 IDE (1, 0): Empty
 *SATA* (*0*, 0): /home/wget/IT/Virtual_machines/GNU_Linux_distributions/ArchLinux_x64_EFI/Snapshots/{6bb17af7-e8a2-4bbf-baac-fbba05ebd704}.vdi (UUID: 6bb17af7-e8a2-4bbf-baac-fbba05ebd704)
 [...]
+
 ```
 
 Download [GParted live image](http://gparted.org/download.php) and mount it as a virtual CD/DVD disk file, boot your virtual machine, increase/move your partitions, umount GParted live and reboot.
@@ -697,7 +698,7 @@ Your guest operating system is a GNU/Linux distribution and you want to open a n
 
 Your user must be in the `vboxusers` group and you need to install the [extension pack](#Extension_pack) if you want USB 2 support. Then you will be able to enable USB 2 in the VM settings and add one or several filters for the devices you want to access from the guest OS.
 
-If `VBoxManage list usbhost` does not show any USB devices even if run as root, make sure that there is no old udev rules (from VirtualBox 4.x) in */etc/udev/rules.d/*. VirtualBox 5.0 installs udev rules to */usr/lib/udev/rules.d/*. You can use command like `pacman -Qo /usr/lib/udev/rules.d/60-vboxdrv.rules` to determine if the udev rule file is outdated.
+If `VBoxManage list usbhost` does not show any USB devices even if run as root, make sure that there is no old udev rules (from VirtualBox 4.x) in `/etc/udev/rules.d/`. VirtualBox 5.0 installs udev rules to `/usr/lib/udev/rules.d/`. You can use command like `pacman -Qo /usr/lib/udev/rules.d/60-vboxdrv.rules` to determine if the udev rule file is outdated.
 
 Sometimes, on old Linux hosts, the USB subsystem is not auto-detected resulting in an error `Could not load the Host USB Proxy service: VERR_NOT_FOUND` or in a not visible USB drive on the host, [even when the user is in the **vboxusers** group](https://bbs.archlinux.org/viewtopic.php?id=121377). This problem is due to the fact that VirtualBox switched from *usbfs* to *sysfs* in version 3.0.8\. If the host does not understand this change, you can revert to the old behaviour by defining the following environment variable in any file that is sourced by your shell (e.g. your `~/.bashrc` if you are using *bash*):
 
@@ -715,8 +716,8 @@ If you have a USB modem which is being used by the guest OS, killing the guest O
 
 Check you permission for the serial port:
 
+ `$ ls -l /dev/ttyS*` 
 ```
-$ /bin/ls -l /dev/ttyS*
 crw-rw---- 1 root uucp 4, 64 Feb  3 09:12 /dev/ttyS0
 crw-rw---- 1 root uucp 4, 65 Feb  3 09:12 /dev/ttyS1
 crw-rw---- 1 root uucp 4, 66 Feb  3 09:12 /dev/ttyS2
@@ -753,7 +754,7 @@ Generally, such issues are observed after upgrading VirtualBox or linux kernel. 
 
 ### Linux guests have slow/distorted audio
 
-The AC97 audio driver within the Linux kernel occasionally guesses the wrong clock settings when running inside Virtual Box, leading to audio that is either too slow or too fast. To fix this, create a file in `/etc/modprobe.d` with the following line:
+The AC97 audio driver within the Linux kernel occasionally guesses the wrong clock settings when running inside Virtual Box, leading to audio that is either too slow or too fast. To fix this, create a file in `/etc/modprobe.d/` with the following line:
 
 ```
 options snd-intel8x0 ac97_clock=48000

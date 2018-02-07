@@ -183,6 +183,7 @@ Actually, for this to work, we will need to add the primary and secondary groups
  mpd | 45 |
  mopidy | 46 |
 | [filesystem](https://www.archlinux.org/packages/?name=filesystem) | games | 50 |
+| [uwsgi](https://www.archlinux.org/packages/?name=uwsgi) | uwsgi | 53 |
 | [filesystem](https://www.archlinux.org/packages/?name=filesystem) | lock | 54 |
  nut | 55 |
  bumblebee | 56 |

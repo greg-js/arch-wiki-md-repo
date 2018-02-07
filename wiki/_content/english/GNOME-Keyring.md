@@ -187,7 +187,7 @@ Alternatively, to permanently save the a passphrase in the keyring, use seahorse
 
 ```
 
-**Note:** You have to have a have the corresponding `.pub` file in the same directory as the private key (`~/.ssh/id_rsa.pub` in the example). Also, make sure that the public key is the file name of the private key plus `.pub` (for example, `my_key.pub`).
+**Note:** You have to have the corresponding `.pub` file in the same directory as the private key (`~/.ssh/id_rsa.pub` in the example). Also, make sure that the public key is the file name of the private key plus `.pub` (for example, `my_key.pub`).
 
 ### Start SSH and Secrets components of keyring daemon
 

@@ -226,6 +226,7 @@ To lockout a user for ten minutes after three failed login attempts you have to 
 #%PAM-1.0
 
 auth required pam_tally2.so deny=3 unlock_time=600 onerr=succeed
+account required pam_tally2.so
 ```
 
 pam_tally is deprecated and superseded by pam_tally2, so you will want to comment out the pam_tally line:

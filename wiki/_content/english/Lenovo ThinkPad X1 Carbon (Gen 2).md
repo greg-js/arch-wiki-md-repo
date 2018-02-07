@@ -5,7 +5,7 @@ Related articles
 *   [Lenovo ThinkPad X1 Carbon (Gen 4)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_4) "Lenovo ThinkPad X1 Carbon (Gen 4)")
 *   [Lenovo ThinkPad X1 Carbon (Gen 5)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5) "Lenovo ThinkPad X1 Carbon (Gen 5)")
 
-**Tip:** A great resource for thinkpads is [http://www.thinkwiki.org/wiki/ThinkWiki](http://www.thinkwiki.org/wiki/ThinkWiki)
+**Tip:** A great resource for thinkpads is [https://www.thinkwiki.org/wiki/ThinkWiki](https://www.thinkwiki.org/wiki/ThinkWiki)
 
 ## Contents
 
@@ -63,7 +63,7 @@ Version: ThinkPad X1 Carbon 2nd
 
 ```
 
-**Tip:** A great resource for thinkpads is [http://www.thinkwiki.org/wiki/ThinkWiki](http://www.thinkwiki.org/wiki/ThinkWiki)
+**Tip:** A great resource for thinkpads is [https://www.thinkwiki.org/wiki/ThinkWiki](https://www.thinkwiki.org/wiki/ThinkWiki)
 
 ### Legacy-BIOS
 
@@ -111,7 +111,7 @@ This can be solved by flashing the bios to a version >=1.13\. Look here for Leno
 
 A guide how to make a bootable BIOS key drive can be found here: [[3]](http://positon.org/lenovo-thinkpad-bios-update-with-linux-and-usb)
 
-And some fairly old help from lenovo here: [[4]](http://www.thinkwiki.org/wiki/BIOS_Upgrade#Using_grub4dos_.28also_for_Linux.29)
+And some fairly old help from lenovo here: [[4]](https://www.thinkwiki.org/wiki/BIOS_Upgrade#Using_grub4dos_.28also_for_Linux.29)
 
 If the function keys fail to wake after suspend, ensure you have a kernel version >=3.15.
 

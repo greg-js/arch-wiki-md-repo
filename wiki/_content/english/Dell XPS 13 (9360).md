@@ -100,7 +100,7 @@ If the power states are enabled there should be values for ITPT and ITPS in the 
 
 ## Video
 
-The video should work with the `i915` driver of the current [linux](https://www.archlinux.org/packages/?name=linux) kernel. Consult [Intel graphics](/index.php/Intel_graphics "Intel graphics") for a detailed installation and configuration guide as well as for [Troubleshooting](/index.php/Intel_graphics#Troubleshooting "Intel graphics").
+The video should work with the `i915` driver of the current [linux](https://www.archlinux.org/packages/?name=linux) kernel. Consult [Intel graphics](/index.php/Intel_graphics "Intel graphics") for a detailed installation and configuration guide as well as for [Intel graphics#Troubleshooting](/index.php/Intel_graphics#Troubleshooting "Intel graphics").
 
 If you have the QHD+ (3200x1800) model, also check out [HiDPI](/index.php/HiDPI "HiDPI") for UI scaling configurations.
 
@@ -201,6 +201,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [Dell TB16](https://www.amazon.com/Dell-3GMVT-Thunderbolt-Dock-black/dp/B06XN6XWD7/) | USB-C Power, VGA, mDP, HDMI, DP, Thunderbolt, Ethernet (only 100Mbit Mode), 2x USB 2.0, 3x USB 3.0 (Disable Thunderbolt Security in BIOS) | Working |
 | [Dell WD15 130W](https://www.amazon.com/dp/B01FN1YK92) | 3xUSB-A 3.0, 2xUSB-A 2.0, Ethernet, HDMI, Mini DisplayPort, VGA, Line Out, Line In | Working |
 | [i-Tec USB-C Dual Display MST Dock](https://www.i-tec-europe.eu/?lng=en&t=3&v=443) | HDMI, DP (4K@30Hz Single Monitor, 1920x1200@60Hz Dual Monitor), Gbit Ethernet, 3xUSB-A, USB-C, Sound, Charging @ 60W | Working |
+| [i-Tec USB-C Low Profile Docking Station](https://www.i-tec-europe.eu/?lng=en&t=3&v=437) | HDMI 4K@30Hz, SD Card Reader, Gigabit Ethernet, 3x USB-A, USB-C, USB-PD@60W | Working |
 | [i-tec USB-C 4K Travel Docking Station Multi Adapter](https://www.amazon.de/gp/product/B074Z1YWHR/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1) | 4K HDMI, Gigabit Ethernet (RTL8153), 2x USB 3.0, 1x USB-C Power, 1x USB-C | Working |
 | [Juiced Systems BizHUB USB-C Multiport Gigabit HDMI Hub](https://www.amazon.com/Juiced-BizHUB-Multiport-Ethernet-Delivery/dp/B01J391C3W) | 4K@30Hz HDMI, 3x USB 3.0, Gigabit Ethernet, USB-C Power, SD, Micro-SD | Working |
 | [Kanex USB-C to HDMI 4K Adapter](https://www.amazon.com/Kanex-USB-C-Adapter-Inches-White/dp/B00VBNSY0S) | HDMI | Working |

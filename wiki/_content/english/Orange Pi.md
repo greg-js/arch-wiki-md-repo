@@ -2,8 +2,6 @@ Orange Pi (One) is a minimalist computer built for the [ARMv7-A architecture](ht
 
 **Note:** The device is not officially supported by the ALARM project, i.e. please refrain from submitting patches, feature requests or bug reports for it.
 
-**Warning:** Do not upgrade to linux-armv7-4.12.0-1, Ethernet will no longer work
-
 This article is strongly based on [Banana Pi](/index.php/Banana_Pi "Banana Pi"). Moreover this article is not meant to be an exhaustive setup guide and assumes that the reader has setup an Arch system before.
 
 ## Contents

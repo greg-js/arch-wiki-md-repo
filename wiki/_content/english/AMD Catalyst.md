@@ -98,6 +98,8 @@ Before choosing the method you prefer, you will have to see which driver you nee
 
 **Note:** After the instructions for every method of installing, you will find general instructions **everyone** has to perform, regardless of the method you used.
 
+**Tip:** It is helpful to follow the instructions at [#Loading_the_module_at_boot](/index.php/AMD_Catalyst#Loading_the_module_at_boot "AMD Catalyst") and [#Disable_kernel_mode_setting](/index.php/AMD_Catalyst#Disable_kernel_mode_setting "AMD Catalyst") before installing *catalyst-hook*, that way when *catalyst-hook* builds the *fglrx* module and regenerates the [Initramfs](/index.php/Initramfs "Initramfs"), your changes will be included instead of having to regenerate the [Initramfs](/index.php/Initramfs "Initramfs") twice.
+
 ### Installing the driver
 
 #### Installing from the unofficial repository
@@ -110,11 +112,11 @@ Vi0L0 has three different Catalyst repositories, each having different drivers:
 *   *catalyst-stable* for the regular Catalyst driver needed by Radeon HD 5xxx to Rx 300, with the latest stable release (Catalyst 15.9).
 *   [catalyst-hd234k](/index.php/Unofficial_user_repositories#catalyst-hd234k "Unofficial user repositories") for the legacy Catalyst driver needed by Radeon HD 2xxx, 3xxx and 4xxx cards (Catalyst 12.4).
 
-To enable one of these, follow the instructions in [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"). Remember to add the chosen repository **above all other repositories** in `pacman.conf`.
+Before adding any repositories, [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) should be installed first. Follow the instructions in [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") to add the *catalyst* repository and a repository from [#Xorg_repositories](/index.php/AMD_Catalyst#Xorg_repositories "AMD Catalyst") then perform a downgrade with `pacman -Syuu`. [Vi0L0 commented on 2017-03-14 19:32](https://aur.archlinux.org/packages/catalyst-utils/). Remember to add the chosen repository **above all other repositories** in `/etc/pacman.conf`.
 
-**Note:** The *catalyst* and *catalyst-stable* repositories share the same URL. To enable *catalyst-stable*, follow the instructions for enabling *catalyst* and replace `[catalyst]` with `[catalyst-stable]` in `pacman.conf`. If you need to stick with an old version, there are also some versioned repositories using the same URL (for example *catalyst-stable-13.4*).
+**Note:** The *catalyst* and *catalyst-stable* repositories share the same URL. To enable *catalyst-stable*, follow the instructions for enabling *catalyst* and replace `[catalyst]` with `[catalyst-stable]` in `/etc/pacman.conf`. If you need to stick with an old version, there are also some versioned repositories using the same URL (for example *catalyst-stable-13.4*).
 
-Once you have added some Catalyst repository, update pacman's database and [install](/index.php/Install "Install") these packages (see [#Tools](#Tools) for more information):
+Once [Xorg](/index.php/Xorg "Xorg") is downgraded, [install](/index.php/Install "Install") these packages (see [#Tools](#Tools) for more information):
 
 *   *catalyst-hook*
 *   *catalyst-utils*
@@ -124,7 +126,11 @@ Once you have added some Catalyst repository, update pacman's database and [inst
 *   *lib32-catalyst-libgl* - optional, needed for 32-bit OpenGL support on 64-bit systems
 *   *lib32-opencl-catalyst* - optional, needed for 32-bit OpenCL support on 64-bit systems
 
+*catalyst-hook* requires *libxfont* which can be downloaded from the [Arch_Linux_Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") and installed by [Arch_Linux_Archive#How_to_downgrade_one_package](/index.php/Arch_Linux_Archive#How_to_downgrade_one_package "Arch Linux Archive").
+
 **Note:** If pacman asks you about removing **libgl** you can safely do so.
+
+**Tip:** If using another kernel besides the regular [linux](https://www.archlinux.org/packages/?name=linux) kernel, you must have the headers package for that kernel installed to build the *fglrx* module. Also, the `/boot` partition must be mounted before you install *cataylst-hook* to regenerate the [Initramfs](/index.php/Initramfs "Initramfs").
 
 **Warning:** catalyst package was removed from Vi0L0's repository, its place was taken by catalyst-hook.
 
@@ -240,6 +246,8 @@ Then we will have to make sure that the `fglrx` module gets auto-loaded. Either 
 #### Disable kernel mode setting
 
 **Note:** Do not do this if you are using powerXpress technology (or hybrid AMD-Intel graphics) because Intel driver needs it.
+
+**Note:** [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") is a requirement in order to run [Xorg#Rootless_Xorg](/index.php/Xorg#Rootless_Xorg "Xorg").
 
 Disabling kernel mode setting is important, as the Catalyst driver does not take advantage of [KMS](/index.php/KMS "KMS"). If you do not deactivate KMS, your system might freeze when trying to switch to a TTY or even when shutting down via your DE.
 
@@ -370,7 +378,7 @@ The artifacting disappears when you transform one of the monitors by either rota
 
 Catalyst is notorious for its slow update process. As such, it is common that a new Xorg version is pushed down from upstream that will break compatibility for Catalyst. This means that Catalyst users either have to build Xorg packages on their own, or use a backported repository that only contains the Xorg packages that should be held back. Vi0L0 has stepped in to fulfil this task and provides several backported repositories.
 
-To enable one of these, follow the instructions in [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") (use the same PGP key as for the [catalyst](/index.php/Unofficial_user_repositories#catalyst "Unofficial user repositories") repository). Remember to add the chosen repository **above all other repositories** in `pacman.conf`, even above your *catalyst* repository, should you use one.
+To enable one of these, follow the instructions in [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") (use the same PGP key as for the [catalyst](/index.php/Unofficial_user_repositories#catalyst "Unofficial user repositories") repository). Remember to add the chosen repository **above all other repositories** in `/etc/pacman.conf`, even above your *catalyst* repository, should you use one.
 
 ### xorg117
 

@@ -5,7 +5,7 @@ Related articles
 *   [Lenovo ThinkPad X1 Carbon (Gen 4)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_4) "Lenovo ThinkPad X1 Carbon (Gen 4)")
 *   [Lenovo ThinkPad X1 Carbon (Gen 5)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5) "Lenovo ThinkPad X1 Carbon (Gen 5)")
 
-**Tip:** A great resource for thinkpads is [http://www.thinkwiki.org/wiki/ThinkWiki](http://www.thinkwiki.org/wiki/ThinkWiki)
+**Tip:** A great resource for thinkpads is [https://www.thinkwiki.org/wiki/ThinkWiki](https://www.thinkwiki.org/wiki/ThinkWiki)
 
 ## Contents
 
@@ -177,4 +177,4 @@ N5321 is unknown EM7345 can output GPS using AT-Commands. You can use [[1]](http
 
 *   [Dual-Booting Arch Linux on Lenovo X1 Carbon 3rd gen](https://push.cx/2015/dual-booting-arch-linux-on-lenovo-x1-carbon-3rd-gen)
 *   [X1C3 on Archlinux](http://natalian.org/archives/2015/02/18/Archlinux_on_a_Lenovo_X1C3/)
-*   [ThinkWiki](http://www.thinkwiki.org/wiki/Category:X1_Carbon_(3rd_Gen))
+*   [ThinkWiki](https://www.thinkwiki.org/wiki/Category:X1_Carbon_(3rd_Gen))

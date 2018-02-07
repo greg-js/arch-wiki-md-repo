@@ -166,7 +166,7 @@ The columns have the following meaning:
 *   *Secure*: does not [source](/index.php/Source "Source") the PKGBUILD at all by default; or, alerts the user and offers the opportunity to inspect the PKGBUILD manually before it is sourced. Some helpers are known to source PKGBUILDs before the user can inspect them, **allowing malicious code to be executed**. *Optional* means that there is a command line flag or configuration option to prevent the automatic sourcing before viewing.
 *   *Clean build*: does not export new variables that can prevent a successful build process.
 *   *Reliable parser*: ability to handle complex packages by using the provided metadata (RPC/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/).
-*   *Reliable solver*: ability to correctly solve and build complex dependency chains, such as [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/).
+*   *Reliable solver*: ability to correctly solve and build complex dependency chains, such as [ros-lunar-desktop](https://aur.archlinux.org/packages/ros-lunar-desktop/).
 *   *Split packages*: ability to correctly build and install split packages independently, such as [python-virtualfish](https://aur.archlinux.org/packages/python-virtualfish/) and [python2-virtualfish](https://aur.archlinux.org/packages/python2-virtualfish/).
 *   *Git clone*: uses git clones instead of downloading tarballs (deprecated since AUR 4).
 *   *Syntax*: P stands for [Pacman](/index.php/Pacman "Pacman")-like, S for specific.
@@ -182,7 +182,7 @@ The columns have the following meaning:
 | pacaur [*Maintainer needed!*](https://bbs.archlinux.org/viewtopic.php?pid=1755144#p1755144) | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Minimizes user interaction, multilingual, sort by votes/popularity |
 | packer | Bash | No | Yes | No | No | No | No | None | P | - |
 | pbget | Python | Yes | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds |
-| pikaur | Python | Yes | Yes | Yes | No | Yes | Yes | None | P | First review all PKGBUILDs, next build/install them all without user interaction. |
+| pikaur | Python | Yes | Yes | Yes | Yes | Yes | Yes | None | P | First review all PKGBUILDs, next build/install them all without user interaction. |
 | PKGBUILDer | Python | Optional | Yes | Yes | Yes | Partial [[3]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | None | P | Automatic builds by default, use `-F` to disable; multilingual |
 | prm | Bash | Yes [[4]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds, ABS support |
 | repoctl | Go | Yes | N/A | Yes [[5]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/A | N/A | No | zsh | S | No automatic builds, local repository support |

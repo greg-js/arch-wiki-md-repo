@@ -129,23 +129,27 @@ xscreensaver.Dialog.headingFont: -*-fixed-bold-r-*-*-*-100-*-*-*-*-iso8859-1
 
 	A dot (`**.**`) is used to signify each step down into the hierarchy — in the above example we start at name, then descend into Class, and finally into the resource itself. A colon (`**:**`) is used to separate the resource declaration from the actual value.
 
+**Note:** For more information about Xresources file syntax see [XrmGetDatabase(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/XrmGetDatabase.3#FILE_SYNTAX).
+
 #### Wildcard matching
 
-The asterisk can be used as a wildcard, making it easy to write a single rule that can be applied to many different applications or elements.
+Question mark (`?`) and asterisk (`*`) can be used as wildcards, making it easy to write a single rule that can be applied to many different applications or elements. `?` is used to match any single component name, while `*` is used to represent any number of intervening components including none.
 
-Using the previous example, if you want to apply the same font to all programs (not just XScreenSaver) that contain the class name `Dialog` which contains the resource name `headingFont`, you would write:
-
-```
-*****Dialog.headingFont:     -*-fixed-bold-r-*-*-*-100-*-*-*-*-iso8859-1
+Using the previous example, if you want to apply the same font to all programs (not just XScreenSaver) that contain the class name `Dialog` which contains the resource name `headingFont`, you could write:
 
 ```
+**?**.Dialog.headingFont:     -*-fixed-bold-r-*-*-*-100-*-*-*-*-iso8859-1
 
-If you want to apply this same rule to all programs that contain the resource `headingFont`, regardless of its class, you would write:
+```
+
+If you want to apply this same rule to all programs that contain the resource `headingFont`, regardless of its class, you could write:
 
 ```
 *****headingFont:    -*-fixed-bold-r-*-*-*-100-*-*-*-*-iso8859-1
 
 ```
+
+For more information about wildcard matching rules see [XrmGetResource(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/XrmGetResource.3#MATCHING_RULES).
 
 #### Commenting
 

@@ -59,6 +59,11 @@ freshclamd.service | Anti-virus toolkit for Unix. |
 | [lighttpd](/index.php/Lighttpd "Lighttpd") | lighttpd | lighttpd.service | Lighttpd HTTP Server (Web Server). |
 | [libvirt](/index.php/Libvirt "Libvirt") | libvirt | libvirtd.service | libvirt is a virtualization API and a daemon for managing virtual machines (VMs). |
 | [lxdm](/index.php/LXDE "LXDE") | lxdm | lxdm.service | LXDE Display Manager. |
+| [mandb](https://www.archlinux.org/packages/?name=mandb) |  ? | man-db.timer
+
+man-db.service
+
+ | Daily man-db cache update. |
  mdadm | mdadm.service | MD Administration (Linux software RAID). |
 | [miniDLNA](/index.php/MiniDLNA "MiniDLNA") | minidlna | minidlna.service | simple DLNA/UPnP media server. |
   ? | ModemManager.service | Makes mobile broadband (3G) modem available to [NetworkManager](/index.php/NetworkManager "NetworkManager"). |
@@ -105,6 +110,11 @@ lvm2-pvscan.service | LVM is a logical volume manager for the Linux kernel; it m
  saslauthd | saslauthd.service | SASL authentication daemon. |
 | [lm_sensors](/index.php/Lm_sensors "Lm sensors") | sensord | sensord.service | Sensor information logging daemon. |
 | sensors | lm_sensors.service | Initialize hardware monitoring sensors (load necessary kernel modules). |
+| [shadow](https://www.archlinux.org/packages/?name=shadow) |  ? | shadow.timer
+
+shadow.service
+
+ | Daily verification of password and group files. |
 | [SLiM](/index.php/SLiM "SLiM") | slim | slim.service | Simple Login Manager. |
 | [SMART](/index.php/SMART "SMART") | smartd | smartd.service | Self-Monitoring, Analysis, and Reporting Technology (S.M.A.R.T.) Hard Disk Monitoring. |
 | [smbnetfs](/index.php/Samba#smbnetfs "Samba") | smbnetfs | smbnetfs.service | Automatically mount Samba/Microsoft network shares. |

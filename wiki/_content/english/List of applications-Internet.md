@@ -301,7 +301,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 ###### Browsers based on electron/muon
 
-*   **Beaker** — Peer-to-peer web browser with tools to create and host websites. Based on the [Electron](http://electron.atom.io/) platform.
+*   **Beaker** — Peer-to-peer web browser with tools to create and host websites. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://github.com/beakerbrowser/beaker](https://github.com/beakerbrowser/beaker) || [beaker-browser](https://aur.archlinux.org/packages/beaker-browser/)
 
@@ -309,7 +309,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/) or [brave-bin](https://aur.archlinux.org/packages/brave-bin/)
 
-*   **Min** — A smarter, faster web browser based on the [Electron](http://electron.atom.io/) platform.
+*   **Min** — A smarter, faster web browser based on the [Electron](https://electronjs.org/) platform.
 
 	[https://minbrowser.github.io/min/](https://minbrowser.github.io/min/) || [min](https://www.archlinux.org/packages/?name=min)
 
@@ -879,35 +879,51 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[https://wiki.gnome.org/Apps/Geary](https://wiki.gnome.org/Apps/Geary) || [geary](https://www.archlinux.org/packages/?name=geary)
 
+*   **Gnubiff** — Mail notification program that checks for mail and displays headers when new mail has arrived.
+
+	[http://gnubiff.sourceforge.net/](http://gnubiff.sourceforge.net/) || [gnubiff](https://www.archlinux.org/packages/?name=gnubiff)
+
+*   **Inboxer** — Unofficial, free and open-source Google Inbox desktop app. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://denysdovhan.com/inboxer/](https://denysdovhan.com/inboxer/) || [inboxer](https://aur.archlinux.org/packages/inboxer/)
+
 *   **[Kmail](https://en.wikipedia.org/wiki/Kmail "wikipedia:Kmail")** — Mature and feature-rich email client. Part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
 	[https://www.kde.org/applications/internet/kmail/](https://www.kde.org/applications/internet/kmail/) || [kmail](https://www.archlinux.org/packages/?name=kmail)
+
+*   **Mailnag** — Extensible mail notification daemon.
+
+	[https://github.com/pulb/mailnag](https://github.com/pulb/mailnag) || [mailnag](https://www.archlinux.org/packages/?name=mailnag)
 
 *   **[Mailpile](https://en.wikipedia.org/wiki/Mailpile "wikipedia:Mailpile")** — A modern, fast web-mail client with user-friendly encryption and privacy features.
 
 	[https://www.mailpile.is/](https://www.mailpile.is/) || [mailpile](https://aur.archlinux.org/packages/mailpile/)
 
-*   **Mailspring** — Fork of Nylas Mail
+*   **Mailspring** — [Proprietary](https://github.com/Foundry376/Mailspring/blob/master/ROADMAP.md#why-is-mailsync-closed-source) mail client, fork of Nylas Mail. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://getmailspring.com/](https://getmailspring.com/) || [mailspring](https://aur.archlinux.org/packages/mailspring/)
 
-*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Mail** — An email app for NextCloud
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Mail** — An email webapp for NextCloud.
 
 	[https://github.com/nextcloud/mail](https://github.com/nextcloud/mail) || [nextcloud-app-mail](https://www.archlinux.org/packages/?name=nextcloud-app-mail)
 
-*   **Nylas Mail** — A new mail client, built on the modern web and designed to be extended.
+*   **Nylas Mail** — Extensible desktop mail app. Based on the [Electron](https://electronjs.org/) platform.
 
-	[https://www.nylas.com/nylas-mail/](https://www.nylas.com/nylas-mail/) || [nylas-mail-bin](https://aur.archlinux.org/packages/nylas-mail-bin/), [nylas-mail-git](https://aur.archlinux.org/packages/nylas-mail-git/)
+	[https://www.nylas.com/nylas-mail/](https://www.nylas.com/nylas-mail/) || [nylas-mail-lives-bin](https://aur.archlinux.org/packages/nylas-mail-lives-bin/)
 
-*   **openWMail** — The missing desktop client for Gmail & Google Inbox.
+*   **openWMail** — The missing desktop client for Gmail & Google Inbox. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://openwmail.github.io/](https://openwmail.github.io/) || [openwmail](https://aur.archlinux.org/packages/openwmail/)
 
-*   **Protonmail-desktop** — Unofficial app that emulates a native client for the ProtonMail e-mail service.
+*   **QGmailNotifier** — Portable Qt5 based GMail notifier.
 
-	[https://github.com/protonmail-desktop/application/](https://github.com/protonmail-desktop/application/) || [protonmail-desktop](https://aur.archlinux.org/packages/protonmail-desktop/)
+	[https://github.com/eteran/qgmailnotifier](https://github.com/eteran/qgmailnotifier) || [qgmailnotifier](https://aur.archlinux.org/packages/qgmailnotifier/)
 
-*   **Roundcubemail** — Browser-based multilingual IMAP client with a native application-like user interface.
+*   **Protonmail Desktop** — Unofficial app that emulates a native client for the ProtonMail e-mail service. Based on the [Electron](https://electronjs.org/) platform.
+
+	[http://protondesktop.com/](http://protondesktop.com/) || [protonmail-desktop](https://aur.archlinux.org/packages/protonmail-desktop/)
+
+*   **Roundcubemail** — Browser-based multilingual IMAP client webapp with a native application-like user interface.
 
 	[http://roundcube.net/](http://roundcube.net/) || [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail)
 
@@ -927,7 +943,7 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[http://www.mozilla.org/thunderbird/](http://www.mozilla.org/thunderbird/) || [thunderbird](https://www.archlinux.org/packages/?name=thunderbird)
 
-*   **Trojitá** — Qt IMAP email client. Only supports one IMAP account.
+*   **Trojitá** — Qt IMAP email client. Only supports [one IMAP account](https://bugs.kde.org/show_bug.cgi?id=321374).
 
 	[http://trojita.flaska.net/](http://trojita.flaska.net/) || [trojita](https://www.archlinux.org/packages/?name=trojita)
 

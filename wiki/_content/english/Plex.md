@@ -73,7 +73,7 @@ ReadWriteDirectories=/var/lib/plex /tmp
 Originally, PMS used ulimit to limit its allocated resources, however this is not compatible with running as a regular user. Instead, you can now set a maximum amount of memory via, again, systemd. For example, you can add:
 
 ```
-MemoryLimit=4G
+MemoryMax=4G
 
 ```
 

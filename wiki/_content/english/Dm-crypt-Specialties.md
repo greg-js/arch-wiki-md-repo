@@ -363,7 +363,22 @@ rd.luks.options=discard
 
 Besides the kernel option, it is also required to periodically run `fstrim` or mount the filesystem (e.g. `/dev/mapper/root` in this example) with the `discard` option in `/etc/fstab`. For details, please refer to the [TRIM](/index.php/TRIM "TRIM") page.
 
-For LUKS devices unlocked manually on the console or via `/etc/crypttab` either `discard` or `allow-discards` may be used.
+For LUKS devices unlocked via `/etc/crypttab` use option `discard`. When manually unlocking devices on the console use `--allow-discards`.
+
+With LUKS2 you can set `allow-discards` as a default flag for a device by opening it once with the option `--persistent`:
+
+```
+# cryptsetup --allow-discards --persistent open --type luks2 /dev/sdaX root
+
+```
+
+You can confirm the flag is set by looking at the `cryptsetup luksDump` output:
+
+ `# cryptsetup luksDump /dev/sdaX | grep Flags` 
+```
+Flags:          allow-discards
+
+```
 
 ## The encrypt hook and multiple disks
 

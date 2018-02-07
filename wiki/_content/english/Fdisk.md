@@ -123,7 +123,7 @@ For both GPT and MBR you can use *sfdisk* to save the partition layout of your d
 
 ```
 
-The file should look something like this for a single ext4 partition that is 1GB in size:
+The file should look something like this for a single ext4 partition that is 1 GiB in size:
 
  `sda.dump` 
 ```
@@ -191,7 +191,7 @@ Start either *fdisk* or *gdisk* as instructed in the following sections. Then co
 
 #### fdisk
 
-Using [MBR](/index.php/MBR "MBR"), the utility for editing the partition table is called *fdisk*. Recent versions of *fdisk* have abandoned the deprecated system of using cylinders as the default display unit, as well as MS-DOS compatibility by default. *fdisk* automatically aligns all partitions to 2048 sectors, or 1024 KiB, which should work for all EBS sizes that are known to be used by SSD manufacturers. This means that the default settings will give you proper alignment.
+Using [MBR](/index.php/MBR "MBR"), the utility for editing the partition table is called *fdisk*. Recent versions of *fdisk* have abandoned the deprecated system of using cylinders as the default display unit, as well as MS-DOS compatibility by default. *fdisk* automatically aligns all partitions to 2048 sectors, or 1 MiB, which should work for all EBS sizes that are known to be used by SSD manufacturers. This means that the default settings will give you proper alignment.
 
 Start *fdisk* against your drive as root. In this example we are using `/dev/sda`:
 
@@ -206,7 +206,7 @@ This opens the *fdisk* dialogue where you can type in commands.
 
 Using [GPT](/index.php/GPT "GPT"), the utility for editing the partition table is called *gdisk*. Alternatively, you may use the curses-based version called *cgdisk*; however, the following instructions do not apply to it. See [cgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) for its usage.
 
-*gdisk* performs partition alignment automatically on a 2048 sector (or 1024KiB) block size base which should be compatible with the vast majority of SSDs if not all. [GNU Parted](/index.php/GNU_Parted "GNU Parted") also supports GPT, but is [less user-friendly](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) for aligning partitions.
+*gdisk* performs partition alignment automatically on a 2048 sector (1 MiB) block size base which should be compatible with the vast majority of SSDs if not all. [GNU Parted](/index.php/GNU_Parted "GNU Parted") also supports GPT, but is [less user-friendly](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) for aligning partitions.
 
 To use *gdisk*, run the program with the name of the device you want to change/edit. This example uses `/dev/sda`:
 

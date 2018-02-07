@@ -20,6 +20,7 @@ The display server is accompanied by a *cursor theme* that helps various aspects
     *   [3.2 Supplying missing cursors](#Supplying_missing_cursors)
         *   [3.2.1 rdesktop](#rdesktop)
     *   [3.3 Change X shaped default cursor](#Change_X_shaped_default_cursor)
+    *   [3.4 .Xdefaults](#.Xdefaults)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -277,6 +278,10 @@ $ xsetroot -cursor_name left_ptr
 ```
 
 For more information see [Awesome wiki](http://awesome.naquadah.org/wiki/FAQ#How_to_change_the_cursor_theme.3F).
+
+### .Xdefaults
+
+If you have conflicting cursors then it might be because a different cursor has been set in the `~/.Xdefaults` file.
 
 ## See also
 

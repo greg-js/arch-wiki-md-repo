@@ -513,7 +513,7 @@ By using `print -P` you can take advantage of prompt escapes.
 
 **Tip:** Title printing can be split up in multiple commands as long as they are sequential.
 
-**Warning:**
+**Note:**
 
 *   Do not use `-P` option of `print` when printing variables to prevent them from being parsed as prompt escapes.
 *   Use `q` [parameter expansion flag](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Parameter-Expansion-Flags) when printing variables to prevent them from being parsed as escape sequences.

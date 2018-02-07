@@ -52,18 +52,19 @@
     *   [4.6 madwifi](#madwifi)
     *   [4.7 ath5k](#ath5k)
     *   [4.8 ath9k](#ath9k)
-    *   [4.9 ipw2100 and ipw2200](#ipw2100_and_ipw2200)
-    *   [4.10 ipw3945 and ipw4965](#ipw3945_and_ipw4965)
-    *   [4.11 ipw3945 (Альтернативный метод)](#ipw3945_.28.D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D1.8B.D0.B9_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.29)
-    *   [4.12 orinoco](#orinoco)
-    *   [4.13 ndiswrapper](#ndiswrapper)
-    *   [4.14 prism54](#prism54)
-    *   [4.15 ACX100/111](#ACX100.2F111)
-    *   [4.16 BCM43XX](#BCM43XX)
-    *   [4.17 b43](#b43)
-    *   [4.18 rtl8187](#rtl8187)
-    *   [4.19 zd1211rw](#zd1211rw)
-    *   [4.20 Тестирование установки](#.D0.A2.D0.B5.D1.81.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
+    *   [4.9 rtl8723bu](#rtl8723bu)
+    *   [4.10 ipw2100 and ipw2200](#ipw2100_and_ipw2200)
+    *   [4.11 ipw3945 and ipw4965](#ipw3945_and_ipw4965)
+    *   [4.12 ipw3945 (Альтернативный метод)](#ipw3945_.28.D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D1.8B.D0.B9_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.29)
+    *   [4.13 orinoco](#orinoco)
+    *   [4.14 ndiswrapper](#ndiswrapper)
+    *   [4.15 prism54](#prism54)
+    *   [4.16 ACX100/111](#ACX100.2F111)
+    *   [4.17 BCM43XX](#BCM43XX)
+    *   [4.18 b43](#b43)
+    *   [4.19 rtl8187](#rtl8187)
+    *   [4.20 zd1211rw](#zd1211rw)
+    *   [4.21 Тестирование установки](#.D0.A2.D0.B5.D1.81.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
 *   [5 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Драйвер устройства
@@ -835,6 +836,10 @@ ath9k - это официальный драйвер компании Atheros д
 Доступные режимы: Station, AP и Adhoc.
 
 ath9k включен в состав ядра, начиная с версии 2.6.27\. Для дискуссий по поддержке и разработке создан [mailing list](https://lists.ath9k.org/mailman/listinfo/ath9k-devel).
+
+#### rtl8723bu
+
+В текущем ядре драйвер для `rtl8723bu` не рабочий. Для решения проблемы требуется самостоятельная сборка модуля из исходников, либо установка из AUR. Исходники можете найти в [GitHub репозитории](https://github.com/lwfinger/rtl8723bu). Пакеты из AUR [rtl8723bu-git](https://aur.archlinux.org/packages/rtl8723bu-git/), либо [rtl8723bu-git-dkms](https://aur.archlinux.org/packages/rtl8723bu-git-dkms/)
 
 #### ipw2100 and ipw2200
 

@@ -1,4 +1,11 @@
-**Tip:** A great resource for thinkpads is [http://www.thinkwiki.org/wiki/ThinkWiki](http://www.thinkwiki.org/wiki/ThinkWiki)
+Related articles
+
+*   [Lenovo ThinkPad X1 Carbon](/index.php/Lenovo_ThinkPad_X1_Carbon "Lenovo ThinkPad X1 Carbon")
+*   [Lenovo ThinkPad X1 Carbon (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_2) "Lenovo ThinkPad X1 Carbon (Gen 2)")
+*   [Lenovo ThinkPad X1 Carbon (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_3) "Lenovo ThinkPad X1 Carbon (Gen 3)")
+*   [Lenovo ThinkPad X1 Carbon (Gen 5)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5) "Lenovo ThinkPad X1 Carbon (Gen 5)")
+
+**Tip:** A great resource for thinkpads is [https://www.thinkwiki.org/wiki/ThinkWiki](https://www.thinkwiki.org/wiki/ThinkWiki)
 
 ## Contents
 
@@ -30,7 +37,7 @@ Version: ThinkPad X1 Carbon 4th
 
 ### UEFI
 
-Updating the UEFI works like described here: [link ThinkWiki BIOS Upgrade/Using UEFI](http://www.thinkwiki.org/wiki/BIOS_Upgrade#Using_UEFI).
+Updating the UEFI works like described here: [link ThinkWiki BIOS Upgrade/Using UEFI](https://www.thinkwiki.org/wiki/BIOS_Upgrade#Using_UEFI).
 
 ### Support
 

@@ -1,6 +1,13 @@
+Related articles
+
+*   [Lenovo ThinkPad X1 Carbon (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_2) "Lenovo ThinkPad X1 Carbon (Gen 2)")
+*   [Lenovo ThinkPad X1 Carbon (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_3) "Lenovo ThinkPad X1 Carbon (Gen 3)")
+*   [Lenovo ThinkPad X1 Carbon (Gen 4)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_4) "Lenovo ThinkPad X1 Carbon (Gen 4)")
+*   [Lenovo ThinkPad X1 Carbon (Gen 5)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5) "Lenovo ThinkPad X1 Carbon (Gen 5)")
+
 Lenovo ThinkPad X1 Carbon (X1C). There is also a touch version. Comes without optical drive. Has UEFI BIOS with BIOS-legacy fallback mode.
 
-**Tip:** A great resource for thinkpads is [http://www.thinkwiki.org/wiki/ThinkWiki](http://www.thinkwiki.org/wiki/ThinkWiki)
+**Tip:** A great resource for thinkpads is [https://www.thinkwiki.org/wiki/ThinkWiki](https://www.thinkwiki.org/wiki/ThinkWiki)
 
 ## Contents
 
@@ -205,7 +212,7 @@ See [fingerprint-gui](/index.php/Fingerprint-gui "Fingerprint-gui") for more inf
 
 ### WWAN (Mobile broadband)
 
-This model includes a [Ericsson H5321gw](http://www.thinkwiki.org/wiki/Ericsson_H5321_gw_Mobile_Broadband_Module) adapter that can be used as a mobile broadband adapter and GPS.
+This model includes a [Ericsson H5321gw](https://www.thinkwiki.org/wiki/Ericsson_H5321_gw_Mobile_Broadband_Module) adapter that can be used as a mobile broadband adapter and GPS.
 
 The SIM-card must be inserted in the back of the laptop.
 
@@ -242,7 +249,7 @@ To test it `xgps`
 
 Or use e.g. [foxtrotgps](https://www.archlinux.org/packages/?name=foxtrotgps) in [AUR](/index.php/AUR "AUR").
 
-See [this link](http://www.thinkwiki.org/wiki/Ericsson_H5321_gw_Mobile_Broadband_Module) for more info.
+See [this link](https://www.thinkwiki.org/wiki/Ericsson_H5321_gw_Mobile_Broadband_Module) for more info.
 
 * * *
 
@@ -272,7 +279,7 @@ Works out of the box. See [TrackPoint](/index.php/TrackPoint "TrackPoint") for a
 
 This model has no docking port.
 
-Video for USB 3 Docking Stations currently is [not supported](http://www.displaylink.org/forum/showthread.php?t=1748), so you must use a [USB Port Replicator with Digital Video (USB 2.0)](http://www.thinkwiki.org/wiki/USB_Port_Replicator_with_Digital_Video)
+Video for USB 3 Docking Stations currently is [not supported](http://www.displaylink.org/forum/showthread.php?t=1748), so you must use a [USB Port Replicator with Digital Video (USB 2.0)](https://www.thinkwiki.org/wiki/USB_Port_Replicator_with_Digital_Video)
 
 This supports:
 

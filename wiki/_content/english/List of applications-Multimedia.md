@@ -1042,6 +1042,10 @@ see [Podcast clients](/index.php/List_of_applications/Internet#Podcast_clients "
 
 ### Collection managers
 
+*   **Basenji** — Volume indexing tool designed for easy and fast indexing of CD/DVD and other type of volume collections.
+
+	[https://github.com/pulb/basenji](https://github.com/pulb/basenji) || [basenji](https://aur.archlinux.org/packages/basenji/)
+
 *   **[Beets](/index.php/Beets "Beets")** — Music library organizer, tagger and more.
 
 	[http://beets.radbox.org/](http://beets.radbox.org/) || [beets](https://www.archlinux.org/packages/?name=beets)

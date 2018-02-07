@@ -113,7 +113,7 @@ To revert to the hardware clock being in UTC, type:
 
 These generates `/etc/adjtime` automatically and updates the RTC accordingly; no further configuration is required.
 
-During kernel startup, at the point when the RTC driver is loaded, the system clock may be set from the hardware clock. Whether this occurs depends on the hardware platform, the version of the kernel and kernel build options. If this does occur, at this point in the boot sequence, the hardware clock time is assumed to be UTC and the value of `/sys/class/rtc/rtcN/hctosys` (N=0,1,2,..) will be set to 1\.
+During kernel startup, at the point when the RTC driver is loaded, the system clock may be set from the hardware clock. Whether this occurs depends on the hardware platform, the version of the kernel and kernel build options. If this does occur, at this point in the boot sequence, the hardware clock time is assumed to be UTC and the value of `/sys/class/rtc/rtc*N*/hctosys` (N=0,1,2,..) will be set to 1\.
 
 Later, the system clock is set again from the hardware clock by systemd, dependent on values in `/etc/adjtime`. Hence, having the hardware clock using localtime may cause some unexpected behavior during the boot sequence; e.g system time going backwards, which is always a bad idea ([there is a lot more to it](http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html)). To avoid it systemd [will only synchronize back](https://mailman.archlinux.org/pipermail/arch-dev-public/2014-August/026577.html), if the hardware clock is set to UTC and keep the kernel uninformed about the local timezone. As a consequence timestamps on a FAT filesystem touched by the Linux system will be in UTC.
 
@@ -225,7 +225,7 @@ When the hardware clock is set with `hwclock`, a new drift value is calculated i
 
 If the hardware clock keeps losing or gaining time in large increments, it is possible that an invalid drift has been recorded (but only applicable, if the hwclock daemon is running). This can happen if you have set the hardware clock time incorrectly or your [time standard](#Time_standard) is not synchronized with a Windows or macOS install. The drift value can be removed by removing the file `/etc/adjtime`, then set the correct hardware clock and system clock time, and check if your time standard is correct.
 
-**Note:** If wish to make use of the drift value stored in `/etc/adjtime` even when using systemd, (i.e. perhaps you cannot or do not want to use NTP), you need to call `hwclock --adjust` on a regular basis, perhaps by creating a cron job.
+**Note:** If wish to make use of the drift value stored in `/etc/adjtime` even when using systemd, (i.e. perhaps you cannot or do not want to use NTP), you need to call `hwclock --adjust` on a regular basis, perhaps by creating a [cron](/index.php/Cron "Cron") job.
 
 The software clock is very accurate but like most clocks is not perfectly accurate and will drift as well. Though rarely, the system clock can lose accuracy if the kernel skips interrupts. There are some tools to improve software clock accuracy:
 

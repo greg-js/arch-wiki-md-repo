@@ -251,7 +251,7 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
 
 ```
 
-or via *gnome-tweak-tool*.
+or via [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
 
 **Note:** The [synaptics](/index.php/Synaptics "Synaptics") driver is not supported by GNOME. Instead, you should use [libinput](/index.php/Libinput "Libinput"). See [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12).
 

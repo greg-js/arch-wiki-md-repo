@@ -30,14 +30,12 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
         *   [2.1.3 Making a USB-ZIP drive](#Making_a_USB-ZIP_drive)
         *   [2.1.4 Using UNetbootin](#Using_UNetbootin)
     *   [2.2 In Windows](#In_Windows_3)
-        *   [2.2.1 Win32 Disk Imager](#Win32_Disk_Imager)
-        *   [2.2.2 USBWriter for Windows](#USBWriter_for_Windows)
-        *   [2.2.3 The Flashnul way](#The_Flashnul_way)
-        *   [2.2.4 Loading the installation media from RAM](#Loading_the_installation_media_from_RAM)
-            *   [2.2.4.1 Preparing the USB flash drive](#Preparing_the_USB_flash_drive)
-            *   [2.2.4.2 Copy the needed files to the USB flash drive](#Copy_the_needed_files_to_the_USB_flash_drive)
-            *   [2.2.4.3 Create the configuration file](#Create_the_configuration_file)
-            *   [2.2.4.4 Final steps](#Final_steps)
+        *   [2.2.1 The Flashnul way](#The_Flashnul_way)
+        *   [2.2.2 Loading the installation media from RAM](#Loading_the_installation_media_from_RAM)
+            *   [2.2.2.1 Preparing the USB flash drive](#Preparing_the_USB_flash_drive)
+            *   [2.2.2.2 Copy the needed files to the USB flash drive](#Copy_the_needed_files_to_the_USB_flash_drive)
+            *   [2.2.2.3 Create the configuration file](#Create_the_configuration_file)
+            *   [2.2.2.4 Final steps](#Final_steps)
 *   [3 Troubleshooting](#Troubleshooting)
 *   [4 See also](#See_also)
 
@@ -70,7 +68,7 @@ See [Core utilities#dd](/index.php/Core_utilities#dd "Core utilities") for more 
 
 Since Rufus does not care if the drive is properly formatted or not and provides a GUI it may be the easiest and most robust tool to use.
 
-**Note:** Be sure to select **DD** mode or the image will be transferred incorrectly.
+**Note:** Be sure to select **DD image** mode from the dropdown menu or the image will be transferred incorrectly.
 
 ##### Using USBwriter
 
@@ -296,7 +294,7 @@ For some old BIOS systems, only booting from USB-ZIP drives is supported. This m
 *   Find your usb drive with `lsblk`.
 *   Type `mkdiskimage -4 /dev/sd**x** 0 64 32` (replace x with the letter of your drive). This will take a while.
 
-From here continue with the manual formatting method. The partition will be /dev/sd**x**4 due to the way ZIP drives work.
+From here continue with the manual formatting method. The partition will be `/dev/sd**x**4` due to the way ZIP drives work.
 
 **Note:** Do not format the drive as FAT32; keep it as FAT16.
 
@@ -324,18 +322,6 @@ append initrd=/arch/boot/x86_64/archiso.img archisodevice=/dev/sd**x1** ../../
 In `/dev/sd**x1**` you must replace **x** with the first free letter after the last letter in use on the system where you are installing Arch Linux (e.g. if you have two hard drives, use `c`.). You can make this change during the first phase of boot by pressing `Tab` when the menu is shown.
 
 ### In Windows
-
-#### Win32 Disk Imager
-
-**Warning:** This will destroy all information on your USB flash drive!
-
-First, download the program from [here](http://sourceforge.net/projects/win32diskimager/). Next, extract the archive and run the executable. Now, select the Arch Linux ISO under the `Image File` section and the USB flash device letter (for example, [D:\]) under the `Device` section. Finally, click `Write` when ready.
-
-**Note:** After installation, you may need to restore the USB flash drive following a process as outlined in [#Using dd](#Using_dd).
-
-#### USBWriter for Windows
-
-Download the program from [http://sourceforge.net/projects/usbwriter/](http://sourceforge.net/projects/usbwriter/) and run it. Select the arch image file, the target USB stick, and click on the `write` button. Now you should be able to boot from the usb stick and install Arch Linux from it.
 
 #### The Flashnul way
 

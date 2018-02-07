@@ -713,6 +713,8 @@ This requires [DKMS](/index.php/DKMS "DKMS"), so make sure you have your proper 
 
 Issues with the `rtl8xxxu` mainline kernel module may be solved by compiling a third-party module for the specific chipset. The source code can be found in [GitHub repositories](https://github.com/lwfinger?tab=repositories).
 
+Some drivers may be already prepared in the AUR, e.g. [rtl8723bu-git](https://aur.archlinux.org/packages/rtl8723bu-git/) and [rtl8723bu-git-dkms](https://aur.archlinux.org/packages/rtl8723bu-git-dkms/).
+
 ### Atheros
 
 The [MadWifi team](http://madwifi-project.org/) currently maintains three different drivers for devices with Atheros chipset:

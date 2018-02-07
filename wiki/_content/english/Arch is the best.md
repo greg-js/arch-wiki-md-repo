@@ -677,6 +677,17 @@ println("Arch is the best!")
 
 ```
 
+	Kotlin
+
+	JetBrains' attempt to get world domination.
+
+```
+fun main(args: Array<String>) {
+   println("Arch is the best!")
+}
+
+```
+
 	LilyPond
 
 	A powerful music engraving program with an intuitive LaTeX-like input language.

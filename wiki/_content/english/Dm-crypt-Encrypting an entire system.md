@@ -560,7 +560,7 @@ If you want to expand the logical volume for `/home` (or any other volume) at a 
 
 ## LUKS on software RAID
 
-This example is based on a real-world setup for a workstation class laptop equipped with two SSDs of equal size, and an additional HDD for bulk storage. The end result is LUKS based full disk encryption (including `/boot`) for all drives, with the SSDs in a [RAID0](/index.php/RAID "RAID") array, and keyfiles used to unlock all encryption after [GRUB](/index.php/GRUB "GRUB") is given a correct passphrase at boot. [TRIM](/index.php/TRIM "TRIM") support is enabled on the SSDs, but you may wish to review the security implications detailed at [Dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") before considering using this.
+This example is based on a real-world setup for a workstation class laptop equipped with two SSDs of equal size, and an additional HDD for bulk storage. The end result is LUKS based full disk encryption (including `/boot`) for all drives, with the SSDs in a [RAID0](/index.php/RAID "RAID") array, and keyfiles used to unlock all encryption after [GRUB](/index.php/GRUB "GRUB") is given a correct passphrase at boot.
 
 This setup utilizes a very simplistic partitioning scheme, with all the available RAID storage being mounted at `/` (no separate `/boot` partition), and the decrypted HDD being mounted at `/mnt/data`. It is also worth mentioning that the system in this example boots in BIOS mode and the drives are partitioned with [GPT](/index.php/Partitioning "Partitioning") partitions.
 
@@ -640,10 +640,10 @@ And repeat for the HDD:
 
 ### Configuring the boot loader
 
-Configure [GRUB](/index.php/GRUB "GRUB") for the encrypted system by editing `/etc/default/grub` with the following. Note that the `:allow-discards` option enables TRIM support on the SSDs, if you do not wish to use it you should omit this.
+Configure [GRUB](/index.php/GRUB "GRUB") for the encrypted system by editing `/etc/default/grub` with the following:
 
 ```
-GRUB_CMDLINE_LINUX="cryptdevice=/dev/md0:cryptroot:allow-discards root=/dev/mapper/cryptroot"
+GRUB_CMDLINE_LINUX="cryptdevice=/dev/md0:cryptroot root=/dev/mapper/cryptroot"
 GRUB_ENABLE_CRYPTODISK=y
 
 ```
@@ -668,10 +668,10 @@ The next steps save you from entering your passphrase twice when you boot the sy
 
 ### Configuring the system
 
-Edit [/etc/fstab](/index.php/Fstab "Fstab") to mount the cryptroot and cryptdata block devices; if you are not enabling TRIM support, delete the `discard` mount option:
+Edit [/etc/fstab](/index.php/Fstab "Fstab") to mount the cryptroot and cryptdata block devices:
 
 ```
-/dev/mapper/cryptroot  /           ext4    rw,noatime,discard  0   1 
+/dev/mapper/cryptroot  /           ext4    rw,noatime  0   1 
 /dev/mapper/cryptdata  /mnt/data   ext4    defaults            0   2  
 
 ```
@@ -808,8 +808,6 @@ cryptdevice=/dev/sd*X*:enc cryptkey=/dev/sd*Z*:0:512 crypto=sha512:twofish-xts-p
 
 ```
 
-**Note:** If using sd-encrypt instead of encrypt, respectively use the options specified in *systemd-cryptsetup-generator(8)*.
-
 See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details and other parameters that you may need.
 
 **Tip:** If using GRUB, you can install it on the same USB as the `/boot` partition with:
@@ -858,9 +856,10 @@ The disk layout in this example is:
 
 ```
 
-**Tip:** All scenarios are intended as examples. It is, of course, possible to apply both of the two above distinct installation steps with the other scenarios as well. See also the variants linked in [#LVM on LUKS](#LVM_on_LUKS).
+**Tip:**
 
-**Note:** You can use `cryptboot` script from [cryptboot](https://aur.archlinux.org/packages/cryptboot/) package for simplified encrypted boot management (mounting, unmounting, upgrading packages) and as a defense against [Evil Maid](https://www.schneier.com/blog/archives/2009/10/evil_maid_attac.html) attacks with [UEFI Secure Boot](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot"). For more informations and limitations see [cryptboot project](https://github.com/xmikos/cryptboot) page.
+*   All scenarios are intended as examples. It is, of course, possible to apply both of the two above distinct installation steps with the other scenarios as well. See also the variants linked in [#LVM on LUKS](#LVM_on_LUKS).
+*   You can use `cryptboot` script from [cryptboot](https://aur.archlinux.org/packages/cryptboot/) package for simplified encrypted boot management (mounting, unmounting, upgrading packages) and as a defense against [Evil Maid](https://www.schneier.com/blog/archives/2009/10/evil_maid_attac.html) attacks with [UEFI Secure Boot](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot"). For more informations and limitations see [cryptboot project](https://github.com/xmikos/cryptboot) page.
 
 ### Preparing the disk
 
@@ -963,10 +962,11 @@ At this point, you should have the following partitions and logical volumes insi
 ```
 NAME              	  MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
 sda                       8:0      0   200G  0 disk
-├─sda1                    8:1      0   512M  0 part  /boot/efi
-├─sda2                    8:2      0   200M  0 part
+├─sda1                    8:1      0     1M  0 part
+├─sda2                    8:2      0   550M  0 part  /boot/efi
+├─sda3                    8:3      0   200M  0 part
 │ └─boot		  254:0    0   198M  0 crypt /boot
-└─sda3                    8:3      0   100G  0 part
+└─sda4                    8:4      0   100G  0 part
   └─lvm                   254:1    0   100G  0 crypt
     ├─MyStorage-swapvol   254:2    0     8G  0 lvm   [SWAP]
     ├─MyStorage-rootvol   254:3    0    15G  0 lvm   /

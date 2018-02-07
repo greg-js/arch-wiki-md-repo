@@ -142,7 +142,7 @@ Ansible can manage user accounts and in particular it is able to create new ones
 
 ```
 - user:
-  name: *madhead*
+  name: *user_name*
   password: "{{ '*user_password*' | password_hash('sha512', '*mypermsalt*') }}"
   shell: /usr/bin/nologin
 
@@ -166,11 +166,11 @@ $ python -c 'import crypt; print(crypt.crypt("*user_password*", crypt.mksalt(cry
 
 ### Python binary location
 
-Ansible requires [Python](/index.php/Python "Python") on the target machine. By default Ansible assumes it can find a `/usr/bin/python` on your remote system that is a 2.X or 3.X version of Python, specifically 2.6 or higher.
+Ansible requires [Python](/index.php/Python "Python") on the target machine. By default Ansible assumes it can find a `/usr/bin/python` on the remote system that is a 2.X or 3.X version, specifically 2.6 or higher.
 
-If some of your modules specifically require Python2 you need to inform Ansible about its location by setting the `ansible_python_interpreter` variable in your inventory file. This can be done by using host groups in the inventory:
+If some of your modules specifically require Python2, you need to inform Ansible about its location by setting the `ansible_python_interpreter` variable in the inventory file. This can be done by using host groups in the inventory:
 
- `Inventory file` 
+ `/etc/ansible/hosts` 
 ```
 [archlinux]
 server1
