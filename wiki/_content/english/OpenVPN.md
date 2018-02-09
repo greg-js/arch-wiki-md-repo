@@ -489,7 +489,7 @@ See [NetworkManager#Network services with NetworkManager dispatcher](/index.php/
 
 ### Gnome configuration
 
-If you would like to connect a client to an OpenVPN server through Gnome's built-in network configuration do the following. First, install [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn). Then go to the Settings menu and choose Network. Click the plus sign to add a new connection and choose VPN. From there you can choose OpenVPN and manually enter the settings. You can also choose to import [#The_client_config_profile](#The_client_config_profile), if you have already created one. Yet, be aware NetworkManager does not show error messages for options it does not import. To connect to the VPN simply turn the connection on and check the options are applied as you configured (e.g. via `journalctl -b -u NetworkManager`).
+If you would like to connect a client to an OpenVPN server through Gnome's built-in network configuration do the following. First, install [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn). Then go to the Settings menu and choose Network. Click the plus sign to add a new connection and choose VPN. From there you can choose OpenVPN and manually enter the settings. You can also choose to import [#The client config profile](#The_client_config_profile), if you have already created one. Yet, be aware NetworkManager does not show error messages for options it does not import. To connect to the VPN simply turn the connection on and check the options are applied as you configured (e.g. via `journalctl -b -u NetworkManager`).
 
 ## Routing all client traffic through the server
 

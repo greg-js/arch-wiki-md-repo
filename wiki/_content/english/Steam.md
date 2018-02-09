@@ -49,9 +49,16 @@ For the [SteamCMD](https://developer.valvesoftware.com/wiki/SteamCMD), a command
 
 ### Alternative Flatpak installation
 
-Steam can also be installed with [Flatpak](/index.php/Flatpak "Flatpak") as `com.valvesoftware.Steam` from [Flathub](https://flathub.org/).
+Steam can also be installed with [Flatpak](/index.php/Flatpak "Flatpak") as `com.valvesoftware.Steam` from [Flathub](https://flathub.org/). The easiest way to install it for the current user is by using the flatpakref file:
+
+```
+ flatpak install --user --from [https://flathub.org/repo/appstream/com.valvesoftware.Steam.flatpakref](https://flathub.org/repo/appstream/com.valvesoftware.Steam.flatpakref)
+
+```
 
 The Flatpak application currently does not support themes. Also you currently can't run games via `optirun`/`primusrun`, see [Issue#869](https://github.com/flatpak/flatpak/issues/869) for more details.
+
+The Flatpak application has some [known issues with Steam Auto-Cloud](https://www.ctrl.blog/entry/flatpak-steamcloud-xdg) so game progress may not be synced unless you create some symlinks by hand for affected games.
 
 By default Steam won't be able to access your home directory, you can run the following command to allow it, so that it behaves like on Ubuntu or SteamOS:
 

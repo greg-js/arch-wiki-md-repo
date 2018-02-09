@@ -51,8 +51,8 @@ apt download (bypass the package cache) | zypper --download-only | emerge --fetc
 | Display local package information: Name, version, description, etc. | pacman -Qi | rpm -qi | dpkg -s / aptitude show | zypper info; rpm -qi | emerge -pv and emerge -S |
 | Display remote package information: Name, version, description, etc. | pacman -Si | dnf info | apt-cache show / aptitude show | zypper info | emerge -pv and emerge -S |
 | Display files provided by local package | pacman -Ql | rpm -ql | dpkg -L | rpm -Ql | equery files |
-| Display files provided by a remote package | pacman -Fl | dnf repoquery -l | apt-file list $pattern | pfl |
-| Query the package which provides FILE | pacman -Qo | rpm -qf (installed only) or dnf provides (everything) | dpkg -S / dlocate | zypper search -f | equery belongs |
+| Display files provided by a remote package | pacman -Fl | dnf repoquery -l or repoquery -l (from package yum-utils) | apt-file list $pattern | pfl |
+| Query the package which provides FILE | pacman -Qo | rpm -qf (installed only) or dnf provides (everything) or repoquery -f (from package yum-utils) | dpkg -S / dlocate | zypper search -f | equery belongs |
 | List the files that the package holds. Again, this functionality can be mimicked by other more complex commands. | pacman -Ql
 pacman -Fl | dnf repoquery -l | dpkg-query -L | rpm -ql | equery files |
 | Displays packages which provide the given exp. aka reverse provides. Mainly a shortcut to search a specific field. Other tools might offer this functionality through the search command. | pacman -Fo | dnf provides | apt-file search | zypper what-provides zypper wp | equery belongs (only installed packages); pfl |
@@ -79,9 +79,9 @@ pacman -Fl | dnf repoquery -l | dpkg-query -L | rpm -ql | equery files |
 ## Querying package dependencies
 
 | **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SLES/openSUSE** | **Gentoo** |
-| Display packages which require X to be installed, aka show reverse dependencies. | pacman -Sii | dnf repoquery --alldeps --whatrequires | apt-cache rdepends / aptitude search ~D$pattern | zypper search --requires | equery depends |
+| Display packages which require X to be installed, aka show reverse dependencies. | pacman -Sii | dnf repoquery --alldeps --whatrequires or repoquery --whatr[equires] | apt-cache rdepends / aptitude search ~D$pattern | zypper search --requires | equery depends |
 | Display packages which conflict with given expression (often package). Search can be used as well to mimic this function. | dnf repoquery --conflicts | aptitude search '~C$pattern' |
-| List all packages which are required for the given package, aka show dependencies. | pacman -[S|Q]i | dnf repoquery --requires | apt-cache depends / apt-cache show | zypper info --requires | emerge -ep |
+| List all packages which are required for the given package, aka show dependencies. | pacman -[S|Q]i | dnf repoquery --requires or repoquery -R | apt-cache depends / apt-cache show | zypper info --requires | emerge -ep |
 | List what the current package provides | dnf provides | dpkg -s / aptitude show | zypper info --provides | equery files |
 | List all packages that require a particular package | dnf repoquery --alldeps --whatrequires | aptitude search ~D{depends,recommends,suggests}:$pattern / aptitude why | zypper search --requires | equery depends -a |
 | Display all packages that the specified packages obsoletes. | dnf list obsoletes | apt-cache show |

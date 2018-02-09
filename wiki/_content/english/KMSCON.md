@@ -94,6 +94,6 @@ As version 7, if you cannot control the audio, add your user to **audio** [group
 
 ### Vim doesn't clear terminal output
 
-Vim might open without clearing the terminal output, it's still possible to edit the file but the text won't be visible until it's changed. As a workaround, try setting the [environment variable](/index.php/Environment_variables "Environment variables") `TERM=vt220`. Alternatively, another vim-like editor like [vi](https://www.archlinux.org/packages/?name=vi) or [Neovim](/index.php/Neovim "Neovim") might work.
+Vim might open without clearing the terminal output, it's still possible to edit the file but the text won't be visible until it's changed. As a workaround, try setting the [environment variable](/index.php/Environment_variable "Environment variable") `TERM=vt220`. Alternatively, another vim-like editor like [vi](https://www.archlinux.org/packages/?name=vi) or [Neovim](/index.php/Neovim "Neovim") might work.
 
 **Note:** Color support is not available if `TERM` is set to `vt220`.

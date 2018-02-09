@@ -33,8 +33,8 @@
         *   [1.5.2 Physics simulation](#Physics_simulation)
         *   [1.5.3 Unit conversion](#Unit_conversion)
     *   [1.6 Geography](#Geography)
-    *   [1.7 Communication Systems](#Communication_Systems)
-    *   [1.8 Simulation Modeling](#Simulation_Modeling)
+    *   [1.7 Communication systems](#Communication_systems)
+    *   [1.8 Simulation modeling](#Simulation_modeling)
 
 ## Science
 
@@ -149,10 +149,6 @@ See also [Wikipedia:Comparison of numerical analysis software](https://en.wikipe
 *   **GeoGebra** — Dynamic mathematics software with interactive graphics, algebra and spreadsheet
 
 	[https://www.geogebra.org/](https://www.geogebra.org/) || [geogebra](https://www.archlinux.org/packages/?name=geogebra)
-
-*   **[GNU Radio](/index.php/GNU_Radio "GNU Radio")** — Software development toolkit that provides signal processing blocks to implement software radios.
-
-	[https://www.gnuradio.org/](https://www.gnuradio.org/) || [gnuradio](https://www.archlinux.org/packages/?name=gnuradio)
 
 *   **[matplotlib (PyLab)](https://en.wikipedia.org/wiki/matplotlib "wikipedia:matplotlib")** — Collection of Python modules (pyplot, numpy, etc.) used for scientific calculations.
 
@@ -562,23 +558,23 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 	[https://sourceforge.net/projects/viking/](https://sourceforge.net/projects/viking/) || [viking](https://www.archlinux.org/packages/?name=viking)
 
-### Communication Systems
+### Communication systems
 
-*   **CupCarbon** — A Smart City & IoT Wireless Sensor Network Simulator
+*   **CupCarbon** — A Smart City & IoT Wireless Sensor Network Simulator.
 
 	[http://cupcarbon.com/](http://cupcarbon.com/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
-*   **[GNURadio](https://en.wikipedia.org/wiki/GNURadio "wikipedia:GNURadio")** — GNU Radio is a free & open-source software development toolkit that provides signal processing blocks to implement software radios.
+*   **[GNU Radio](/index.php/GNU_Radio "GNU Radio")** — Software development toolkit that provides signal processing blocks to implement software radios.
 
-	[https://www.gnuradio.org/](https://www.gnuradio.org/) || [gnuradio-git](https://aur.archlinux.org/packages/gnuradio-git/),[gnuradio-gsm-git](https://aur.archlinux.org/packages/gnuradio-gsm-git/),[gnuradio-iio-git](https://aur.archlinux.org/packages/gnuradio-iio-git/),[gnuradio-multi-rtl-git](https://aur.archlinux.org/packages/gnuradio-multi-rtl-git/),[gnuradio-osmodr-gqrx-git](https://aur.archlinux.org/packages/gnuradio-osmodr-gqrx-git/),[gnuradio-ra-blocks-git](https://aur.archlinux.org/packages/gnuradio-ra-blocks-git/),[gnuradio-simple-ra-git](https://aur.archlinux.org/packages/gnuradio-simple-ra-git/),
+	[https://www.gnuradio.org/](https://www.gnuradio.org/) || [gnuradio](https://www.archlinux.org/packages/?name=gnuradio)
 
 *   **Pothos** — The Pothos project is a complete data-flow framework for creating topologies of interconnected processing blocks.
 
-	[https://github.com/pothosware/PothosCore/wiki](https://github.com/pothosware/PothosCore/wiki) || [pothos](https://aur.archlinux.org/packages/pothos/),[pothos-git](https://aur.archlinux.org/packages/pothos-git/)
+	[https://github.com/pothosware/PothosCore/wiki](https://github.com/pothosware/PothosCore/wiki) || [pothos](https://aur.archlinux.org/packages/pothos/), [pothos-git](https://aur.archlinux.org/packages/pothos-git/)
 
-### Simulation Modeling
+### Simulation modeling
 
-*   **[gephi](https://en.wikipedia.org/wiki/Gephi "wikipedia:Gephi")** — Gephi is an open-source network analysis and visualization software package written in Java
+*   **[gephi](https://en.wikipedia.org/wiki/Gephi "wikipedia:Gephi")** — Gephi is an open-source network analysis and visualization software package written in Java.
 
 	[http://gephi.org/](http://gephi.org/) || [gephi](https://www.archlinux.org/packages/?name=gephi)
 

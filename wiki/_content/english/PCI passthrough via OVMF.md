@@ -44,8 +44,9 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
 *   [8 Passing though other devices](#Passing_though_other_devices)
     *   [8.1 USB controller](#USB_controller)
     *   [8.2 Passing VM audio to host via PulseAudio](#Passing_VM_audio_to_host_via_PulseAudio)
-    *   [8.3 Gotchas](#Gotchas_3)
-        *   [8.3.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
+    *   [8.3 Physical Disk/Partition](#Physical_Disk.2FPartition)
+    *   [8.4 Gotchas](#Gotchas_3)
+        *   [8.4.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
 *   [9 Complete setups and examples](#Complete_setups_and_examples)
 *   [10 Troubleshooting](#Troubleshooting)
     *   [10.1 "Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
@@ -806,6 +807,28 @@ Change 1000 under the user directory to your user uid (which can be found by run
 [Restart](/index.php/Restart "Restart") `libvirtd.service` and [user service](/index.php/Systemd/User "Systemd/User") `pulseaudio.service`.
 
 Virtual Machine audio will now be routed through the host as an application. The application [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) can be used to control the output device. Be aware that on Windows guests, this can cause audio crackling without [using Message-Signaled Interrupts.](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
+
+### Physical Disk/Partition
+
+A whole disk or a partition may be used as a whole for improved I/O performance by adding an entry to XML
+
+ `$ virsh edit [vmname]` 
+```
+
+<devices>
+...
+  <disk type='block' device='disk'>
+    <driver name='qemu' type='raw' cache='none' io='native'/>
+    <source dev='/dev/sdXX'/>
+    <target dev='vda' bus='virtio'/>
+    <address type='pci' domain='0x0000' bus='0x02' slot='0x0a' function='0x0'/>
+  </disk>
+...
+</devices>
+
+```
+
+This would require a driver on Windows guests, refer to [#Setting up the guest OS](#Setting_up_the_guest_OS).
 
 ### Gotchas
 

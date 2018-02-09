@@ -21,6 +21,7 @@ Related articles
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Qt applications do not use QGtkStyle](#Qt_applications_do_not_use_QGtkStyle)
     *   [5.2 Themes not working in GTK+ apps](#Themes_not_working_in_GTK.2B_apps)
+    *   [5.3 GTK+ apps don't use svg (breeze) icons after system upgrade](#GTK.2B_apps_don.27t_use_svg_.28breeze.29_icons_after_system_upgrade)
 
 ## Overview
 
@@ -248,3 +249,12 @@ $ export | grep gtk
 ```
 
 Usually the expected files should be `~/.gtkrc` for GTK1 and `~/.gtkrc2.0` or `~/.gtkrc2.0-kde` for GTK+ 2.x.
+
+### GTK+ apps don't use svg (breeze) icons after system upgrade
+
+Try to run this to fix this issue:
+
+```
+# gdk-pixbuf-query-loaders --update-cache
+
+```

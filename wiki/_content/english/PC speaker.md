@@ -14,6 +14,7 @@ Sounds from the computer can be heard from the built-in case speaker, the speake
 *   [1 Disable PC Speaker](#Disable_PC_Speaker)
     *   [1.1 Globally](#Globally)
     *   [1.2 Console](#Console)
+        *   [1.2.1 Less pager](#Less_pager)
     *   [1.3 Xorg](#Xorg)
     *   [1.4 ALSA](#ALSA)
     *   [1.5 GNOME](#GNOME)
@@ -63,7 +64,17 @@ set bell-style none
 
 ```
 
-To disable PC speaker in `less` pager, it can be launched with `less -q` to mute PC speaker for end of line events or `less -Q` to mute it altogether.
+#### Less pager
+
+To disable PC speaker in [less](https://www.archlinux.org/packages/?name=less) pager, you can launch it with `less -q` to mute PC speaker for end of line events or `less -Q` to mute it altogether. For [man pages](/index.php/Man_page "Man page"), launch `man -P "less -Q"` or set the `$MANPAGER` or `$PAGER` [environment variables](/index.php/Environment_variable "Environment variable").
+
+Alternatively, you can add these lines to your `~/[.bashrc](/index.php/.bashrc ".bashrc")`:
+
+```
+alias less='less -Q'
+alias man 'man -P "less -Q"'
+
+```
 
 ### Xorg
 

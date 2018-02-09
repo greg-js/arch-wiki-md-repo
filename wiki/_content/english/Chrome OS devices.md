@@ -140,7 +140,7 @@ After you have enabled the Developer Mode you will need to access the superuser 
 If you have not configured Chrome OS, just press `Ctrl + Alt + F2` (F2 is the "forward" arrow on the top row, →), you will see a login prompt.
 
 *   Use `chronos` as the username, it should not prompt you for a password.
-*   Become superuser with [sudo](/index.php/Sudo "Sudo").
+*   Become superuser with [sudo](/index.php/Sudo "Sudo"), use the command `sudo su -`.
 
 #### Accessing the superuser shell with Chrome OS configuration
 
@@ -148,7 +148,7 @@ If you have configured Chrome OS already:
 
 *   Open a crosh window with `Ctrl + Alt + T`.
 *   Open a bash shell with the `shell` command.
-*   Become superuser with [sudo](/index.php/Sudo "Sudo").
+*   Become superuser with [sudo](/index.php/Sudo "Sudo"), use the command `sudo su -` to accomplish that.
 
 ### Enabling SeaBIOS
 

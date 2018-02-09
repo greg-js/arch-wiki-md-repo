@@ -17,9 +17,10 @@ Related articles
             *   [1.1.1.1 Using PreLoader](#Using_PreLoader)
             *   [1.1.1.2 Using shim](#Using_shim)
             *   [1.1.1.3 Using your own keys](#Using_your_own_keys)
-    *   [1.2 Manual installation](#Manual_installation)
-    *   [1.3 Upgrading](#Upgrading)
-        *   [1.3.1 Pacman hook](#Pacman_hook)
+    *   [1.2 Manual installation to default location](#Manual_installation_to_default_location)
+    *   [1.3 Manual installation](#Manual_installation)
+    *   [1.4 Upgrading](#Upgrading)
+        *   [1.4.1 Pacman hook](#Pacman_hook)
 *   [2 Configuration](#Configuration)
     *   [2.1 Passing kernel parameters](#Passing_kernel_parameters)
         *   [2.1.1 For kernels automatically detected by rEFInd](#For_kernels_automatically_detected_by_rEFInd)
@@ -56,7 +57,7 @@ To find additional drivers see [The rEFInd Boot Manager: Using EFI Drivers: Find
 
 ### Scripted installation
 
-The rEFInd package includes the *refind-install* script to simplify the process of setting rEFInd as your default EFI boot entry. The script has several options for handling differing setups and UEFI implementations, see [refind-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/refind-install.8). For many systems it should be sufficient to simply run:
+The rEFInd package includes the *refind-install* script to simplify the process of setting rEFInd as your default EFI boot entry. The script has several options for handling differing setups and UEFI implementations. See [refind-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/refind-install.8). For many systems it should be sufficient to simply run:
 
 ```
 # refind-install
@@ -160,6 +161,18 @@ When running install script add option `--localkeys`, e.g.:
 ```
 
 rEFInd EFI binary will be signed with supplied key and certificate.
+
+### Manual installation to default location
+
+A simple way to use rEFInd is to install it manually into the default EFI location. Copy the available drivers so rEFInd finds the kernel on its original location. The kernel then gets updated there without further intervention by pacman. rEFInd has logic to auto-detect bootable kernels and its iniramfs images by name and create menu entries for them. For Arch rEFInd needs a little help for the special naming of its kernels.
+
+```
+# mkdir -p *esp*/EFI/refind/drivers_x64
+# cp /usr/share/refind/refind_x64.efi *esp*/EFI/BOOT/bootx64.efi
+# cp /usr/share/refind/drivers_x64/* *esp*/EFI/BOOT/drivers_x64/
+# echo "extra_kernel_version_strings linux-git,linux-lts,linux;" > *esp*/EFI/BOOT/refind.conf
+
+```
 
 ### Manual installation
 

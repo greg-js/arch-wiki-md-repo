@@ -97,16 +97,14 @@ Install the [arch-firefox-search](https://www.archlinux.org/packages/?name=arch-
 
 ## Configuration
 
-Firefox exposes a number of configuration options. To examine them, enter:
+Firefox exposes a number of configuration options. To examine them, enter in the Firefox address bar:
 
 ```
 about:config
 
 ```
 
-in the Firefox address bar.
-
-Once set, these affect the user's current profile, and may be synchronized across all devices via [Firefox Sync](https://www.mozilla.org/firefox/sync/). Please note that only a subset of the `about:config` entries are synchronized by this method, and the exact subset may be found by searching for `services.sync.prefs` in `about:config`. Additional preferences and 3rd party preferences may be synchronized by creating new boolean entries prepending the config value with `services.sync.prefs.sync` ([documentation](https://developer.mozilla.org/en-US/docs/Archive/Mozilla/Firefox_Sync/Syncing_custom_preferences) is still applicable.) To synchronize the whitelist for the extension [NoScript](https://addons.mozilla.org/firefox/addon/noscript/):
+Once set, these affect the user's current profile, and may be synchronized across all devices via [Firefox Sync](https://www.mozilla.org/firefox/sync/). Please note that only a subset of the `about:config` entries are synchronized by this method, and the exact subset may be found by searching for `services.sync.prefs` in `about:config`. Additional preferences and third party preferences may be synchronized by creating new boolean entries prepending the config value with `services.sync.prefs.sync` ([documentation](https://developer.mozilla.org/en-US/docs/Archive/Mozilla/Firefox_Sync/Syncing_custom_preferences) is still applicable.) To synchronize the whitelist for the extension [NoScript](https://addons.mozilla.org/firefox/addon/noscript/):
 
 ```
 services.sync.prefs.sync.capability.policy.maonoscript.sites
@@ -299,9 +297,9 @@ Alternatively, having the traditional scroll cursor on middle-click (default beh
 
 According to [mozillaZine](http://kb.mozillazine.org/Browser.backspace_action), the `Backspace` key was mapped based on which platform the browser was running on. As a compromise, this preference was created to allow the `Backspace` key to either go back/forward, scroll up/down a page, or do nothing.
 
-To make `Backspace` behave like the back button type `about:config` in the address bar and search for the property `browser.backspace_action`, then set it to `0`.
+To make `Backspace` behave like the back button and go back one page in the session history, set `browser.backspace_action` to `0` in `about:config`.
 
-You can also set the property `browser.backspace_action` to `1` so the `Backspace` key will scroll up the page, whereas `Shift+Backspace` scrolls down. Setting this property to any other value will leave the key unmapped (Arch Linux defaults to `2`, in other words, it is unmapped by default).
+To have the `Backspace` key scroll up one page and `Shift+Backspace` scroll down one page, set `browser.backspace_action` to `1`. Setting this property to any other value will leave the key unmapped (Arch Linux defaults to `2`, in other words, it is unmapped by default).
 
 ### Firefox does not remember login information
 

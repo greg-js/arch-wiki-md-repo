@@ -49,7 +49,7 @@ $ git commit -a
 
 *   **dotdrop** — A tool to manage different versions of your dotfiles on different hosts.
 
-	[https://github.com/deadc0de6/dotdrop](https://github.com/deadc0de6/dotdrop) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+	[https://github.com/deadc0de6/dotdrop](https://github.com/deadc0de6/dotdrop) || [dotdrop](https://aur.archlinux.org/packages/dotdrop/)
 
 *   **dotfiles** — A tool to make managing your dotfile symlinks in $HOME easy, allowing you to keep all of them in a single directory.
 

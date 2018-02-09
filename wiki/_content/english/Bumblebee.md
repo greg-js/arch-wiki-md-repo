@@ -729,7 +729,7 @@ Add `acpi_osi=Linux` to your [Kernel parameters](/index.php/Kernel_parameters "K
 
 ### Erratic, unpredictable behaviour
 
-If Bumblebee starts/works in a random manner, check that you have set your [Network_configuration#Local_network_hostname_resolution](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration") (details [here](https://github.com/Bumblebee-Project/Bumblebee/pull/939)).
+If Bumblebee starts/works in a random manner, check that you have set your [Network configuration#Local network hostname resolution](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration") (details [here](https://github.com/Bumblebee-Project/Bumblebee/pull/939)).
 
 ## See also
 

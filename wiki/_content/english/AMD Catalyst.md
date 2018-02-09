@@ -98,7 +98,7 @@ Before choosing the method you prefer, you will have to see which driver you nee
 
 **Note:** After the instructions for every method of installing, you will find general instructions **everyone** has to perform, regardless of the method you used.
 
-**Tip:** It is helpful to follow the instructions at [#Loading_the_module_at_boot](/index.php/AMD_Catalyst#Loading_the_module_at_boot "AMD Catalyst") and [#Disable_kernel_mode_setting](/index.php/AMD_Catalyst#Disable_kernel_mode_setting "AMD Catalyst") before installing *catalyst-hook*, that way when *catalyst-hook* builds the *fglrx* module and regenerates the [Initramfs](/index.php/Initramfs "Initramfs"), your changes will be included instead of having to regenerate the [Initramfs](/index.php/Initramfs "Initramfs") twice.
+**Tip:** It is helpful to follow the instructions at [#Loading_the_module_at_boot](#Loading_the_module_at_boot) and [#Disable_kernel_mode_setting](#Disable_kernel_mode_setting) before installing *catalyst-hook*, that way when *catalyst-hook* builds the *fglrx* module and regenerates the [Initramfs](/index.php/Initramfs "Initramfs"), your changes will be included instead of having to regenerate the [Initramfs](/index.php/Initramfs "Initramfs") twice.
 
 ### Installing the driver
 
@@ -112,7 +112,7 @@ Vi0L0 has three different Catalyst repositories, each having different drivers:
 *   *catalyst-stable* for the regular Catalyst driver needed by Radeon HD 5xxx to Rx 300, with the latest stable release (Catalyst 15.9).
 *   [catalyst-hd234k](/index.php/Unofficial_user_repositories#catalyst-hd234k "Unofficial user repositories") for the legacy Catalyst driver needed by Radeon HD 2xxx, 3xxx and 4xxx cards (Catalyst 12.4).
 
-Before adding any repositories, [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) should be installed first. Follow the instructions in [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") to add the *catalyst* repository and a repository from [#Xorg_repositories](/index.php/AMD_Catalyst#Xorg_repositories "AMD Catalyst") then perform a downgrade with `pacman -Syuu`. [Vi0L0 commented on 2017-03-14 19:32](https://aur.archlinux.org/packages/catalyst-utils/). Remember to add the chosen repository **above all other repositories** in `/etc/pacman.conf`.
+Before adding any repositories, [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) should be installed first. Follow the instructions in [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") to add the *catalyst* repository and a repository from [#Xorg_repositories](#Xorg_repositories) then perform a downgrade with `pacman -Syuu`. [Vi0L0 commented on 2017-03-14 19:32](https://aur.archlinux.org/packages/catalyst-utils/). Remember to add the chosen repository **above all other repositories** in `/etc/pacman.conf`.
 
 **Note:** The *catalyst* and *catalyst-stable* repositories share the same URL. To enable *catalyst-stable*, follow the instructions for enabling *catalyst* and replace `[catalyst]` with `[catalyst-stable]` in `/etc/pacman.conf`. If you need to stick with an old version, there are also some versioned repositories using the same URL (for example *catalyst-stable-13.4*).
 
@@ -126,7 +126,7 @@ Once [Xorg](/index.php/Xorg "Xorg") is downgraded, [install](/index.php/Install 
 *   *lib32-catalyst-libgl* - optional, needed for 32-bit OpenGL support on 64-bit systems
 *   *lib32-opencl-catalyst* - optional, needed for 32-bit OpenCL support on 64-bit systems
 
-*catalyst-hook* requires *libxfont* which can be downloaded from the [Arch_Linux_Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") and installed by [Arch_Linux_Archive#How_to_downgrade_one_package](/index.php/Arch_Linux_Archive#How_to_downgrade_one_package "Arch Linux Archive").
+*catalyst-hook* requires *libxfont* which can be downloaded from the [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") and installed by [Arch Linux Archive#How to downgrade one package](/index.php/Arch_Linux_Archive#How_to_downgrade_one_package "Arch Linux Archive").
 
 **Note:** If pacman asks you about removing **libgl** you can safely do so.
 
@@ -247,7 +247,7 @@ Then we will have to make sure that the `fglrx` module gets auto-loaded. Either 
 
 **Note:** Do not do this if you are using powerXpress technology (or hybrid AMD-Intel graphics) because Intel driver needs it.
 
-**Note:** [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") is a requirement in order to run [Xorg#Rootless_Xorg](/index.php/Xorg#Rootless_Xorg "Xorg").
+**Note:** [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") is a requirement in order to run [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg").
 
 Disabling kernel mode setting is important, as the Catalyst driver does not take advantage of [KMS](/index.php/KMS "KMS"). If you do not deactivate KMS, your system might freeze when trying to switch to a TTY or even when shutting down via your DE.
 

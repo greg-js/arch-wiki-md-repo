@@ -182,7 +182,7 @@ The columns have the following meaning:
 | pacaur [*Maintainer needed!*](https://bbs.archlinux.org/viewtopic.php?pid=1755144#p1755144) | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Minimizes user interaction, multilingual, sort by votes/popularity |
 | packer | Bash | No | Yes | No | No | No | No | None | P | - |
 | pbget | Python | Yes | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds |
-| pikaur | Python | Yes | Yes | Yes | Yes | Yes | Yes | None | P | First review all PKGBUILDs, next build/install them all without user interaction. |
+| pikaur | Python | Yes | Yes | Yes | Yes | Yes | Yes | fish | P | First review all PKGBUILDs, next build/install them all without user interaction. |
 | PKGBUILDer | Python | Optional | Yes | Yes | Yes | Partial [[3]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | None | P | Automatic builds by default, use `-F` to disable; multilingual |
 | prm | Bash | Yes [[4]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds, ABS support |
 | repoctl | Go | Yes | N/A | Yes [[5]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/A | N/A | No | zsh | S | No automatic builds, local repository support |

@@ -41,7 +41,8 @@ This article is about installing VMware in Arch Linux; you may also be intereste
         *   [5.6.3 Kernel modules fail to build after Linux 4.9](#Kernel_modules_fail_to_build_after_Linux_4.9)
         *   [5.6.4 vmware modules fail to build on kernel 4.11+ and GCC 7](#vmware_modules_fail_to_build_on_kernel_4.11.2B_and_GCC_7)
         *   [5.6.5 Kernel modules fail to build on Linux 4.13](#Kernel_modules_fail_to_build_on_Linux_4.13)
-        *   [5.6.6 Failed to lock page for guest RAM on Linux 4.13](#Failed_to_lock_page_for_guest_RAM_on_Linux_4.13)
+        *   [5.6.6 Kernel modules fail to build on Linux 4.14](#Kernel_modules_fail_to_build_on_Linux_4.14)
+        *   [5.6.7 Failed to lock page for guest RAM on Linux 4.13](#Failed_to_lock_page_for_guest_RAM_on_Linux_4.13)
     *   [5.7 Installer Fails to Start](#Installer_Fails_to_Start)
         *   [5.7.1 User interface initialization failed](#User_interface_initialization_failed)
     *   [5.8 VMware Fails to Start](#VMware_Fails_to_Start)
@@ -121,6 +122,15 @@ Lastly, load the VMware modules:
 ### Kernel modules
 
 VMware Workstation 12.5 supports kernels up to 4.8 out of the box.
+
+For VMware bundle versions, a collection of patches needed for the VMware host modules to build against recent kernels can be found from the following GitHub repository, [vmware-host-modules](https://github.com/mkubecek/vmware-host-modules/). See the INSTALL document found on the repository for the most up-to-date module installation instructions for VMware versions from 12.5.5 and up.
+
+Alternatively, the modules can be patched installing the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package and executing:
+
+```
+# vmware-patch -f
+
+```
 
 ### systemd services
 
@@ -449,6 +459,21 @@ On VMware Workstation Pro 12.5.7, the module source needs to be modified to be s
 
 ```
 
+#### Kernel modules fail to build on Linux 4.14
+
+In kernel 4.14 the name of a function was changed for no reason [[3]](https://patchwork.kernel.org/patch/9874655/)[[4]](https://github.com/mkubecek/vmware-host-modules/commit/770c7ffe611520ac96490d235399554c64e87d9f?diff=unified).
+
+```
+# cd /usr/lib/vmware/modules/source
+# tar xf vmmon.tar
+# mv vmmon.tar vmmon.old.tar
+# wget [https://github.com/mkubecek/vmware-host-modules/commit/770c7ffe611520ac96490d235399554c64e87d9f.diff](https://github.com/mkubecek/vmware-host-modules/commit/770c7ffe611520ac96490d235399554c64e87d9f.diff)
+# patch vmmon-only/linux/hostif.c 770c7ffe611520ac96490d235399554c64e87d9f.diff
+# tar cf vmmon.tar vmmon-only
+# rm -r vmmon-only 770c7ffe611520ac96490d235399554c64e87d9f.diff
+
+```
+
 #### Failed to lock page for guest RAM on Linux 4.13
 
 VMware Workstation Pro versions from 12.5 up to 14.0 can lock up both guest and host systems while running a virtual machine under kernel 4.13 without a patch to the `vmmon` module due to the virtual machine being unable to reserve memory on the host machine. The VM-specific log files show the following errors:
@@ -460,14 +485,7 @@ E105: PANIC: Failed to lock page for guest RAM!
 
 ```
 
-A collection of patches needed for the VMware host modules to build against recent kernels can be found from the following GitHub repository, [vmware-host-modules](https://github.com/mkubecek/vmware-host-modules/tree/b50848c985f1a6c0a341187346d77f0119d0a835).
-
-The modules can be patched installing the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package and executing:
-
-```
-# vmware-patch -f
-
-```
+A readily patched `vmmon` source code can be found from the following GitHub repository, [vmware-host-modules](https://github.com/mkubecek/vmware-host-modules/tree/b50848c985f1a6c0a341187346d77f0119d0a835). The host module can also be patched using [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package.
 
 ### Installer Fails to Start
 
@@ -514,7 +532,7 @@ See [Microcode](/index.php/Microcode "Microcode") for how to update the microcod
 
 #### vmplayer/vmware fails to start from version 12.5.4
 
-As per [[3]](https://bbs.archlinux.org/viewtopic.php?id=224667) the temporary workaround is to downgrade the package `libpng` to version 1.6.28-1 and keep it in the `IgnorePkg` parameter in [/etc/pacman.conf](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman").
+As per [[5]](https://bbs.archlinux.org/viewtopic.php?id=224667) the temporary workaround is to downgrade the package `libpng` to version 1.6.28-1 and keep it in the `IgnorePkg` parameter in [/etc/pacman.conf](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman").
 
 An easier workaround is to make VMWare use the system's version of zlib instead of its own one:
 
@@ -623,7 +641,7 @@ ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 
 #### Networking on Guests not available after system restart
 
-This is likely due to the `vmnet` module not being loaded [[4]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/). See also the [#systemd services](#systemd_services) section for automatic loading.
+This is likely due to the `vmnet` module not being loaded [[6]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/). See also the [#systemd services](#systemd_services) section for automatic loading.
 
 ## Uninstallation
 

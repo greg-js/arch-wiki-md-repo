@@ -71,14 +71,14 @@ Make sure that you change `/path/to/urxvtc` to the actual path to the `urxvtc` s
 If you want to have tabs in your kuake-like `urxvtc` (here called `urxvtq`) just replace the third line in your `urxvtq`:
 
 ```
-wid=$(xdotool search --name urxvtq)
+wid=$(xdotool search --classname urxvtq)
 
 ```
 
 with:
 
 ```
-wid=$(xdotool search --name urxvtq | grep -m 1 "" )
+wid=$(xdotool search --classname urxvtq | grep -m 1 "" )
 
 ```
 
@@ -179,11 +179,11 @@ The [Openbox per-app settings](http://openbox.org/wiki/Help:Applications) can be
 
 ### Daemon-client
 
-**Warning:** If the server crashes, all processes in the clients are terminated. For example, *xkill* and server resets/restarts will kill the urxvtd instance including all windows it has opened. See [urxvtd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/urxvtd.1) for details.
+**Warning:** If the server crashes, all processes in the clients are terminated. For example, *xkill* and server resets/restarts will kill the urxvtd instance including all windows it has opened. See [urxvtd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/urxvtd.1) for details.
 
 #### Xinitrc
 
-See the *Examples* section in [urxvtd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/urxvtd.1). This is the preferred option.
+See the *Examples* section in [urxvtd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/urxvtd.1). This is the preferred option.
 
 #### systemd
 

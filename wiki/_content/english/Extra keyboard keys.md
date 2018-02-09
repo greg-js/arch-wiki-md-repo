@@ -185,7 +185,7 @@ If most of your special keys do not work, try loading the asus-nb-wmi kernel mod
 
 ```
 
-then check xev again. If you combine this with the acpi_osi="!Windows 2012" boot option, you may get weird results in xev, so try not using it. If this did fix things, make sure to make the module load at boot with methods described in [Kernel_modules#Automatic_module_handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
+then check xev again. If you combine this with the acpi_osi="!Windows 2012" boot option, you may get weird results in xev, so try not using it. If this did fix things, make sure to make the module load at boot with methods described in [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
 
 ### Lenovo T460p (or possibly others)
 

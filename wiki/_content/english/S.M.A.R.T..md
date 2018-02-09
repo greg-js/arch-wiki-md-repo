@@ -1,4 +1,4 @@
-S.M.A.R.T. (Self-Monitoring, Analysis, and Reporting Technology) is a supplementary component built into many modern storage devices through which devices monitor, store, and analyze the health of their operation. Statistics are collected (temperature, number of reallocated sectors, seek errors...) which software can use to measure the health of a device, predict possible device failure, and provide notifications on unsafe values.
+[S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T. "wikipedia:S.M.A.R.T.") (Self-Monitoring, Analysis, and Reporting Technology) is a supplementary component built into many modern storage devices through which devices monitor, store, and analyze the health of their operation. Statistics are collected (temperature, number of reallocated sectors, seek errors...) which software can use to measure the health of a device, predict possible device failure, and provide notifications on unsafe values.
 
 ## Contents
 
@@ -9,7 +9,7 @@ S.M.A.R.T. (Self-Monitoring, Analysis, and Reporting Technology) is a supplement
     *   [1.2 smartd](#smartd)
         *   [1.2.1 daemon management](#daemon_management)
         *   [1.2.2 Define the devices to monitor](#Define_the_devices_to_monitor)
-        *   [1.2.3 Email potential problems](#Email_potential_problems)
+        *   [1.2.3 Notifying potential problems](#Notifying_potential_problems)
         *   [1.2.4 Power management](#Power_management)
         *   [1.2.5 Schedule self-tests](#Schedule_self-tests)
         *   [1.2.6 Alert on temperature changes](#Alert_on_temperature_changes)
@@ -49,9 +49,9 @@ You may need to specify a device type. For example, specifying `--device=ata` te
 
 There are three types of self-tests that a device can execute (all are safe to user data):
 
-*   Short (runs tests that have a high probability of detecting device problems)
-*   Extended (or Long; a short check with complete disk surface examination)
-*   Conveyance (identifies if damage incurred during transportation of the device)
+*   Short: runs tests that have a high probability of detecting device problems,
+*   Extended or Long: the test is the same as the short check but with no time limit and with complete disk surface examination,
+*   Conveyance: identifies if damage incurred during transportation of the device.
 
 The `-c`/`--capabilities` flag prints which tests a device supports and the approximate execution time of each test. For example:
 
@@ -106,9 +106,11 @@ smartd respects all the usual systemctl and journalctl commands. For more inform
 
 #### Define the devices to monitor
 
-To monitor for all possible SMART errors on all disks:
+To monitor for all possible SMART errors on all disks, the following setting must be added in the configuration file.
 
  `/etc/smartd.conf`  `DEVICESCAN -a` 
+
+Note this is the default *smartd* configuration and the `-a` parameter, which is the default parameter, may be omitted.
 
 To monitor for all possible SMART errors on `/dev/sda` and `/dev/sdb`, and ignore all other devices:
 
@@ -116,10 +118,9 @@ To monitor for all possible SMART errors on `/dev/sda` and `/dev/sdb`, and ignor
 ```
 /dev/sda -a
 /dev/sdb -a
-
 ```
 
-To monitor for all possible SMART errors on externally connected disks (USB-backup disks spring to mind) it is prudent to tell SMARTd the UUID of the device since the /dev/sdX of the drive might change during a reboot.
+To monitor for all possible SMART errors on externally connected disks (USB-backup disks spring to mind) it is prudent to tell *smartd* the UUID of the device since the /dev/sdX of the drive might change during a reboot.
 
 First, you will have to get the UUID of the disk to monitor: `ls -lah /dev/disk/by-uuid/` now look for the disk you want to Monitor
 
@@ -132,7 +133,7 @@ lrwxrwxrwx 1 root root  10 Nov  5 22:41 fe9e886a-8031-439f-a909-ad06c494fadb -> 
 
 ```
 
-I know that my USB disk attached to /dev/sde during boot. Now to tell SMARTd to monitor that disk simply use the `/dev/disk/by-uuid/` path.
+I know that my USB disk attached to /dev/sde during boot. Now to tell *smartd* to monitor that disk simply use the `/dev/disk/by-uuid/` path.
 
  `/etc/smartd.conf` 
 ```
@@ -142,7 +143,7 @@ I know that my USB disk attached to /dev/sde during boot. Now to tell SMARTd to 
 
 Now your USB disk will be monitored even if the /dev/sdX path changes during reboot.
 
-#### Email potential problems
+#### Notifying potential problems
 
 To have an email sent when a failure or new error occurs, use the `-m` option:
 
@@ -154,18 +155,16 @@ The `-M test` option causes a test email to be sent each time the smartd daemon 
 
  `/etc/smartd.conf`  `DEVICESCAN -m address@domain.com -M test` 
 
-E-Mail can take quite a long time to be delivered, but when your hard drive fails you want to be informed immediately to take the appropriate actions. Hence you should rather define a script to be executed instead of only emailing the problem:
+Emails can take quite a while to be delivered. To make sure you are warned immediately if your hard drive fails, you may also define a script to be executed in addition to the email sending:
 
  `/etc/smartd.conf`  `DEVICESCAN -m address@domain.com -M exec /usr/local/bin/smartdnotify` 
 
-To send an e-mail and a system notification, put something like this into `/usr/local/bin/smartdnotify`:
+To send an email and a system notification, put something like this into `/usr/local/bin/smartdnotify`:
 
 ```
-#! /bin/sh
-
-# Send mail
+#!/bin/sh
+# Send email
 echo "$SMARTD_MESSAGE" | mail -s "$SMARTD_FAILTYPE" "$SMARTD_ADDRESS"
-
 # Notify user
 wall "$SMARTD_MESSAGE"
 
@@ -224,14 +223,14 @@ smartd can track disk temperatures and alert if they rise too quickly or hit a h
 
 Putting together all of the above gives the following example configuration:
 
-*   `DEVICESCAN` (smartd scans for disks and monitors all it finds)
-*   `-a` (monitor all attributes)
-*   `-o on` (enable automatic offline data collection)
-*   `-S on` (enable automatic attribute autosave)
-*   `-n standby,q` (do not check if disk is in standby, and suppress log message to that effect so as not to cause a write to disk)
-*   `-s ...` (schedule short and long self-tests)
-*   `-W ...` (monitor temperature)
-*   `-m ...` (mail alerts)
+*   `DEVICESCAN` smartd scans for disks and monitors all it finds
+*   `-a` monitor all attributes
+*   `-o on` enable automatic offline data collection
+*   `-S on` enable automatic attribute autosave
+*   `-n standby,q` do not check if disk is in standby, and suppress log message to that effect so as not to cause a write to disk
+*   `-s ...` schedule short and long self-tests
+*   `-W ...` monitor temperature
+*   `-m ...` mail alerts
 
  `/etc/smartd.conf`  `DEVICESCAN -a -o on -S on -n standby,q -s (S/../.././02|L/../../6/03) -W 4,35,40 -m <username or email>` 
 

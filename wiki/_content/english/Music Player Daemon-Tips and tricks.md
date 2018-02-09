@@ -379,7 +379,7 @@ mpc add [http://192.168.1.2:8000](http://192.168.1.2:8000)
 
 ### mpDris2
 
-**Note:** As of 2017-07-25, there are reports that mpDris2 would break [gdm](/index.php/Gdm "Gdm") if started as a service.
+**Note:** As of 2017-07-25, there are reports that mpDris2 would break [GDM](/index.php/GDM "GDM") if started as a service.
 
 Install the [mpDris2](https://aur.archlinux.org/packages/mpDris2/) package. It runs in the user session and monitors the mpd server.
 

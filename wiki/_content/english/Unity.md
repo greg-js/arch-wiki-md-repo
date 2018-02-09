@@ -6,7 +6,7 @@ Related articles
 
 [Unity](http://unity.ubuntu.com/) is a desktop shell for the [GNOME](/index.php/GNOME "GNOME") desktop environment developed by [Canonical Ltd](http://www.canonical.com/about) for [Ubuntu](http://www.ubuntu.com). Unity is implemented as a plugin of the [Compiz](/index.php/Compiz "Compiz") [window manager](/index.php/Window_manager "Window manager").
 
-**Note:** Unity was discontinued by Canonical on April 6,2017 and is no longer being developed.[[1]](https://insights.ubuntu.com/2017/04/05/growing-ubuntu-for-cloud-and-iot-rather-than-phone-and-convergence/) If you are already using it, a follow-on project to follow may be [UBports' Unity8](https://unity.ubports.com/).
+**Note:** Unity was discontinued by Canonical on April 6,2017 and is no longer being developed.[[1]](https://insights.ubuntu.com/2017/04/05/growing-ubuntu-for-cloud-and-iot-rather-than-phone-and-convergence/) If you are already using it, a follow-on project to follow may be [UBports' Unity8](https://unity8.io/).
 
 Not to be confused with [Unity3D](/index.php/Unity3D "Unity3D").
 

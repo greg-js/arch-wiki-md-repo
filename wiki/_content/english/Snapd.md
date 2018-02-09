@@ -47,6 +47,8 @@ Uninstalling the [snapd](https://aur.archlinux.org/packages/snapd/) package will
 
 ```
 
+**Warning:** Your may want to review the output of `mount | grep snap` to avoid accidental unmounts.
+
 2\. We remove the state directory and mount hook.
 
 ```

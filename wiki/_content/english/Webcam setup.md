@@ -256,7 +256,7 @@ For 32-bit [multilib](/index.php/Multilib "Multilib") applications, install the 
 
 ### QtCAM
 
-QtCAM is an Open Source Linux Webcam Software that enables users to capture/view videos/images from any USB camera or any V4L2 compatible device with attractive features such as Color space switching, Displaying Frame rates, over 10 image control settings and extension settings for select cameras.
+QtCAM is an Open Source Linux Webcam Software that enables users to capture/view videos/images from any USB camera or any V4L2 compatible device with attractive features such as Color space switching, Displaying Frame rates, over 10 image control settings and extension settings for select cameras. [Install](/index.php/Install "Install") the package [qtcam-git](https://aur.archlinux.org/packages/qtcam-git/).
 
 ### fswebcam
 

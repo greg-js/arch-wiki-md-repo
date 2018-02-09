@@ -223,7 +223,7 @@ After this launch the UEFI Shell from the UEFI setup/menu (in ASROCK UEFI BIOS, 
 
 ### PowerEdge T30
 
-The Dell UEFI implementation needs the [UEFI firmware workaround](https://wiki.archlinux.org/index.php/GRUB/Tips_and_tricks#UEFI_firmware_workaround) to load grub. Otherwise it will drop into a "no OS found" screen.
+The Dell UEFI implementation needs the [UEFI firmware workaround](/index.php/GRUB/Tips_and_tricks#UEFI_firmware_workaround "GRUB/Tips and tricks") to load grub. Otherwise it will drop into a "no OS found" screen.
 
 ## MSI
 

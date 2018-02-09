@@ -748,7 +748,7 @@ Run the configuration:
 
 ```
 
-[Edit](/index.php/Systemd#Editing_provided_units "Systemd") the PID values based on the original `nginx.service`:
+[Edit](/index.php/Edit "Edit") the PID values based on the original `nginx.service`:
 
  `/etc/systemd/system/nginx.service.d/user.conf` 
 ```

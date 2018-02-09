@@ -606,11 +606,19 @@ This command will **rename all Plasma related configs** to *.bak (e.g. `plasmarc
 
 The [problem](https://bbs.archlinux.org/viewtopic.php?id=135301) may be caused by old cache. Sometimes after an upgrade, the old cache might introduce strange, hard to debug behaviour such as unkillable shells, hangs when changing various settings and several other problems such as ark being unable to unrar or unzip or amarok not recognizing any of your music. This solution can also resolve problems with KDE and Qt programmes looking bad following upgrade.
 
-Rebuild your cache with the following commands:
+Rebuild the cache use the following commands:
 
 ```
 $ rm ~/.config/Trolltech.conf
 $ kbuildsycoca5 --noincremental
+$ kbuildsycoca4 --noincremental
+
+```
+
+Optional empty the `~/.cache` folder contents, **note** this also clears cache of other applications:
+
+```
+$ rm -rf ~/.cache/*
 
 ```
 

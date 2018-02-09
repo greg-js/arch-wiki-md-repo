@@ -94,7 +94,7 @@ You should be asked for your password for your user at the server now and after 
 
 ### Exchange data between client and server (desktop)
 
-On the X2Go client (e.g. laptop) local directories could be shared. The server will use [fuse](/index.php/Fuse "Fuse") and [sshfs](/index.php/Sshfs "Sshfs") to access this directory and mount it to a subdirectory media of your home directory on the server. This enables you to have access to laptop data on your server or to exchange files. It is also possible to mount these shares automatically at each session start.
+On the X2Go client (e.g. laptop) local directories could be shared. The server will use [fuse](/index.php/Fuse "Fuse") and [SSHFS](/index.php/SSHFS "SSHFS") to access this directory and mount it to a subdirectory media of your home directory on the server. This enables you to have access to laptop data on your server or to exchange files. It is also possible to mount these shares automatically at each session start.
 
 ### To leave a session temporarily
 

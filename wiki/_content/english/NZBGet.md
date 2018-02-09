@@ -15,7 +15,7 @@
 
 ## Installation
 
-Install the [nzbget](https://www.archlinux.org/packages/?name=nzbget) package and the optional [nzbget-systemd](https://aur.archlinux.org/packages/nzbget-systemd/) that provides a `nzbget` [systemd](/index.php/Systemd "Systemd") service.
+Install the [nzbget](https://www.archlinux.org/packages/?name=nzbget) package and the optional [nzbget-systemd](https://aur.archlinux.org/packages/nzbget-systemd/) that provides a `nzbget` [systemd](/index.php/Systemd "Systemd") service. Alternatively, install the development version from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") ([nzbget-git](https://aur.archlinux.org/packages/nzbget-git/)), which also includes the [systemd](/index.php/Systemd "Systemd") service.
 
 ## Configuring NZBGet
 
@@ -59,7 +59,7 @@ NZBGet should now be accessible on [http://localhost:6789](http://localhost:6789
 
 ## Running NZBGet under a different user
 
-**Note:** [nzbget-systemd](https://aur.archlinux.org/packages/nzbget-systemd/) already provides the `nzbget` [user](/index.php/User "User") and [group](/index.php/Group "Group").
+**Note:** [nzbget-systemd](https://aur.archlinux.org/packages/nzbget-systemd/) and [nzbget-git](https://aur.archlinux.org/packages/nzbget-git/) already provide the `nzbget` [user](/index.php/User "User") and [group](/index.php/Group "Group").
 
 See [system user](/index.php/Users_and_groups#Example_adding_a_system_user "Users and groups") for an example and reasons why it may be useful.
 

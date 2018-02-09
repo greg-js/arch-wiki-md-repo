@@ -60,11 +60,11 @@ LVDS connected 1400x1050+0+0 (normal left inverted right x axis y axis) 286mm x 
 
 ```
 
-**注意:** 您通过`xrandr`所作出的更改只能在当前会话暂时生效。详情请参考 [xrandr(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xrandr.1)。
+**注意:** 您通过`xrandr`所作出的更改只能在当前会话暂时生效。详情请参考 [xrandr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xrandr.1)。
 
 ## 添加未被检测到的有效分辨率
 
-由于出错的硬件或驱动，xrandr可能并不能检测出您的显示器所有的有效分辨率。不过，我们可以在xrandr里添加所需要的分辨率。
+由于出错的硬件或驱动，xrandr 可能并不能检测出您的显示器所有的有效分辨率。不过，我们可以在xrandr里添加所需要的分辨率。 Also, this same procedure can be used to add refresh rates you know are supported, but not enabled by your driver。
 
 首先，运行`gtf`或者`cvt`，查询某分辨率的有效扫描频率。对于个别LCD显示器（例如samsung 2343NW），可能需要用到"cvt -r"（具有减少空白显示的效果）命令。
 
@@ -149,7 +149,7 @@ EndSection
 
 ```
 
-关于更多的配置细节，请阅读[Xorg (简体中文)](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")或[xorg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5)。
+关于更多的配置细节，请阅读[Xorg (简体中文)](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")或[xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5)。
 
 ### 在xprofile设定xrandr命令
 
@@ -343,7 +343,7 @@ xrandr --addmode default "1024x600"r
 
 由于硬件以及驱动程序可能的缺陷，例如，请求的EDID数据块不正确，导致 xrandr 可能不能准确侦测到显示器的分辨率。不过我们可以手工添加期望的分辨率。
 
-首先，运行 `gtf` 或 `cvt` 以获取所需分辨率的 **模式行（Modeline）** ： 某些 LCD 屏幕（samsung 2343NW）需使用 "cvt -r" 命令（-r = reduced blanking）。
+首先，运行 `gtf` 或 `cvt` 以获取所需分辨率的 **模式行（Modeline）** ：
 
  `$ cvt 1280 1024` 
 ```
@@ -351,6 +351,8 @@ xrandr --addmode default "1024x600"r
 Modeline "1280x1024_60.00"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hsync +vsync
 
 ```
+
+**Tip:** For some LCD screens (e.g. Samsung 2343NW, Acer XB280HK), the command `cvt -r` (= with reduced blanking) is to be used.
 
 **注意:** 如果使用了 Intel 的显示驱动程序 [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel)，期望的分辨率会在 `/var/log/Xorg.0.log` 中与其他特征值一并报告——如果该值不同于 `gtf` or `cvt` 的输出应首选该值。这里给出一个log文件的报告值与 xrandr 使用值的实例：
 ```
@@ -434,6 +436,7 @@ It is better explained in [this](http://unix.stackexchange.com/questions/184941/
 
 *   [DualScreen](/index.php/DualScreen "DualScreen") Arch wiki page. How to get dual screens with Xrandr
 *   [https://wiki.ubuntu.com/X/Config/Resolution](https://wiki.ubuntu.com/X/Config/Resolution)
+*   [Debian Wiki - RandR 1.2 tutorial](https://wiki.debian.org/XStrikeForce/HowToRandR12 "debian:XStrikeForce/HowToRandR12")
 *   [https://bbs.archlinux.org/viewtopic.php?pid=652861](https://bbs.archlinux.org/viewtopic.php?pid=652861)
 *   [http://nouveau.freedesktop.org/wiki/Randr12Howto](http://nouveau.freedesktop.org/wiki/Randr12Howto)
 *   [http://wiki.debian.org/XStrikeForce/HowToRandR12](http://wiki.debian.org/XStrikeForce/HowToRandR12)

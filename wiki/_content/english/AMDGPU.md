@@ -63,7 +63,7 @@ Also, since kernel 4.13, adding the `amdgpu.si_support=1 radeon.si_support=0` or
 
 AMD DC (display code), introduced in [linux](https://www.archlinux.org/packages/?name=linux) 4.15, is a new display stack that brings support for atomic mode-setting and HDMI/DP audio. It is enabled by default for GCN5/Vega cards and later.
 
-To enable it for older cards (GCN2/CIK, GCN3/VI, GCN4/Polaris; GCN1/SI is not supported), add the `amdgpu.dc=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). For more info, see [this article](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-DC-Accepted).
+Support for older cards (GCN2/CIK, GCN3/VI, GCN4/Polaris; GCN1/SI is not supported) is now enabled in the [Arch Kernel by default](https://git.archlinux.org/svntogit/packages.git/tree/trunk/config?h=packages/linux#n5752). For more info about AMDGPU-DC, see [this article](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-DC-Accepted).
 
 ### AMDGPU PRO
 

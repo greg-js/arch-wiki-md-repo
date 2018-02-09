@@ -74,7 +74,7 @@ This package provides all playable maps from the [ddnet-maps repository](https:/
 Having these maps offline is beneficial for both client and server:
 
 *   Clients will not need to download maps that are already installed by this package. Only new versions of installed maps (rarely happens) or new maps will be downloaded to the user directory (See [#User settings](#User_settings)).
-*   Servers can use the provided maps and configuration files to run without the server-administrator having to expend time creating configurations for them; see [#Servers](#Servers) for more info.
+*   Servers can use the provided maps and configuration files to run without the server-administrator having to expend time creating configurations for them; see [#Server](#Server) for more info.
 
 ## Play
 

@@ -398,7 +398,9 @@ See also [System maintenance#Use proven software packages](/index.php/System_mai
 
 ### Why has foo disappeared from the AUR?
 
-Packages may be deleted, if they did not fulfill the [#Rules of submission](#Rules_of_submission). See the [aur-requests archives](https://lists.archlinux.org/pipermail/aur-requests/) for the reason for deletion.
+It is possible the package has been adopted by a TU and is now in the [community](/index.php/Community "Community") repository.
+
+Packages may be deleted if they did not fulfill the [#Rules of submission](#Rules_of_submission). See the [aur-requests archives](https://lists.archlinux.org/pipermail/aur-requests/) for the reason for deletion.
 
 If the package used to exist in AUR3, it might not have been [migrated to AUR4](https://lists.archlinux.org/pipermail/aur-general/2015-August/031322.html). See the [#Git repositories for AUR3 packages](#Git_repositories_for_AUR3_packages) where these are preserved.
 

@@ -440,7 +440,7 @@ layout.word_select.stop_at_punctuation; true (default)
 
 ### Set backspace's behavior
 
-The backspace key performs differently in Firefox in Linux, Windows or Mac. To associate it with "back one page", set `browser.backspace_action` to `0` in `about:config`.
+See [Firefox#Backspace does not work as the 'Back' button](/index.php/Firefox#Backspace_does_not_work_as_the_.27Back.27_button "Firefox").
 
 ### Disable middle mouse button clipboard paste
 

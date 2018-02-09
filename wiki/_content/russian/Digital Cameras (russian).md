@@ -12,7 +12,7 @@
 
 ## Libgphoto2
 
-[Libgphoto2](http://www.gphoto.org/proj/libgphoto2/) это библиотека, созданная для позволения доступа к цифровым камерам с помощью внешних программ (фронт-эндов), например, Digikam и gphoto2\. На сегодняшний день список 'оффициально' поддерживаемых цифровых камер находиться [здесь](http://www.gphoto.org/proj/libgphoto2/support.php).
+[Libgphoto2](http://www.gphoto.org/proj/libgphoto2/) это библиотека, созданная для предоставления доступа к цифровым камерам с помощью внешних программ (фронт-эндов), например, Digikam и gphoto2\. На сегодняшний день список 'оффициально' поддерживаемых цифровых камер находится [здесь](http://www.gphoto.org/proj/libgphoto2/support.php).
 
 **Установка и настройка**
 
@@ -32,7 +32,7 @@
 
  `# /usr/lib/libgphoto2/print-camera-list udev-rules mode 0660 version 0.98 group camera > /etc/udev/rules.d/90-libgphoto2.rules` 
 
-Если после выполнения всех предыдущих шагов Вы имеете проблемы с доступом, попробуйте изменить /etc/udev/rules.d/90-libgphoto2.rules и изменить строку PROGRAM= следующим:
+Если после выполнения всех предыдущих шагов Вы имеете проблемы с доступом, попробуйте изменить /etc/udev/rules.d/90-libgphoto2.rules и изменить строку PROGRAM= следующим образом:
 
  `PROGRAM="/lib/udev/check-ptp-camera", MODE="0660", GROUP="camera"` 
 
@@ -46,7 +46,7 @@ Bus 001 Device 005: ID 04a9:318e Canon, Inc.
 
 ```
 
-Я предпочитаю добавлять любые udev правила в /etc/udev/rules.d/90-local.rules , чтобы быть уверенным, что они не стеруться новыми пакетами. Мой 90-local.rules выглядит так:
+Я предпочитаю добавлять любые udev правила в /etc/udev/rules.d/90-local.rules , чтобы быть уверенным, что они не сотрутся новыми пакетами. Мой 90-local.rules выглядит так:
 
 ```
 PROGRAM="/lib/udev/check-ptp-camera", MODE="0660", GROUP="camera"
@@ -61,7 +61,7 @@ ATTRS{idVendor}=="04a9", ATTRS{idProduct}=="318e", MODE="0660",  GROUP="camera"
 
 ```
 
-Теперь после подключения Вашей камеры, проверьте, выглядят Ваши привилегия выглядят нормально введя:
+Теперь после подключения Вашей камеры проверьте, что Ваши привилегии выглядят нормально введя:
 
 ```
 # ls -lR /dev/bus/usb

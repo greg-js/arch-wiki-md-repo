@@ -397,7 +397,7 @@ Alternatively you can install [python-steamcontroller-git](https://aur.archlinux
 
 On some desktop environments the on-screen keyboard might freeze when trying to input text after one or two characters. This is a problem with window focus. Check the settings for your [window manager](/index.php/Window_manager "Window manager") to see if it is possible to have focus follow the mouse or automatically focus new windows. Preventing the keyboard from receiving focus will fix the issue in [Awesome](/index.php/Awesome "Awesome"), see [Awesome#Steam Keyboard](/index.php/Awesome#Steam_Keyboard "Awesome").
 
-**Note:** If you use Steam without its [runtime](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting"), you might actually need to disable the overlay for the controller to work in certain games (Rocket Wars, Rocket League, Binding of Isaac, etc.). Right click on a game in your library, select "Properties", and uncheck "Enable Steam Overlay".
+**Note:** If you do not use the [Steam runtime](/index.php/Steam/Troubleshooting#Steam_runtime "Steam/Troubleshooting"), you might actually need to disable the overlay for the controller to work in certain games (Rocket Wars, Rocket League, Binding of Isaac, etc.). Right click on a game in your library, select "Properties", and uncheck "Enable Steam Overlay".
 
 #### Wine
 

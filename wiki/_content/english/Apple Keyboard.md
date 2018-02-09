@@ -16,7 +16,8 @@ Some Apple keyboard models may have swapped keys or missing functionality. This 
     *   [7.1 Use a patch to hid-apple](#Use_a_patch_to_hid-apple)
     *   [7.2 Use un-apple-keyboard](#Use_un-apple-keyboard)
     *   [7.3 Change the Behavior Without Reboot](#Change_the_Behavior_Without_Reboot)
-*   [8 See also](#See_also)
+*   [8 Magic Keyboard does not connect](#Magic_Keyboard_does_not_connect)
+*   [9 See also](#See_also)
 
 ## Numlock is on
 
@@ -124,6 +125,10 @@ The last one is provided by providing a mapping to [keyfuzz](https://aur.archlin
 **Warning:** If the builtin keyboard and touch pad are the only input device, beware that doing so might leave your computer in an inoperable state unless hard reboot when the second command failes.
 
 To reload the kernel module without reboot, run `sudo rmmod hid_apple && sudo modprobe hid_apple`.
+
+## Magic Keyboard does not connect
+
+If you have a magic keyboard that will not connect to the system through the built in tools, such as the Gnome 3 bluetooth menu in settings, install [blueman](https://aur.archlinux.org/packages/blueman/) and its dependincies and attempt to connect with it. If it still fails to connect, make sure you have bluetoothctl and hcitool installed.
 
 ## See also
 

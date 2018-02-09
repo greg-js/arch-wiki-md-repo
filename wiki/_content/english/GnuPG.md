@@ -187,6 +187,8 @@ $ gpg --send-keys *user-id*
 
 ```
 
+**Warning:** Once a key has been submitted to a keyserver, it cannot be deleted from the server.[[2]](https://pgp.mit.edu/faq.html)
+
 To find out details of a key on the keyserver, without importing it, do:
 
 ```
@@ -204,7 +206,7 @@ $ gpg --recv-keys *key-id*
 **Warning:**
 
 *   You should verify the authenticity of the retrieved public key by comparing its fingerprint with one that the owner published on an independent source(s) (e.g., contacting the person directly). See [Wikipedia:Public key fingerprint](https://en.wikipedia.org/wiki/Public_key_fingerprint "wikipedia:Public key fingerprint") for more information.
-*   Using a short ID may encounter collisions. All keys will be imported that have the short ID. To avoid this, use the full fingerprint or long key ID when receiving a key.[[2]](https://lkml.org/lkml/2016/8/15/445)
+*   Using a short ID may encounter collisions. All keys will be imported that have the short ID. To avoid this, use the full fingerprint or long key ID when receiving a key.[[3]](https://lkml.org/lkml/2016/8/15/445)
 
 **Tip:**
 
@@ -534,7 +536,7 @@ $ gpg --pinentry-mode loopback ...
 ...or if this is not possible, add the option to the configuration:
 
  `~/.gnupg/gpg.conf`  `pinentry-mode loopback` 
-**Note:** The upstream author indicates setting `pinentry-mode loopback` in `gpg.conf` may break other usage, using the commandline option should be preferred if at all possible. [[3]](https://bugs.g10code.com/gnupg/issue1772)
+**Note:** The upstream author indicates setting `pinentry-mode loopback` in `gpg.conf` may break other usage, using the commandline option should be preferred if at all possible. [[4]](https://bugs.g10code.com/gnupg/issue1772)
 
 ### SSH agent
 
@@ -573,7 +575,7 @@ fi
 **Note:**
 
 *   If you use non-default GnuPG [#Directory location](#Directory_location), run `gpgconf --create-socketdir` to create a socket directory under `/run/user/$UID/gnupg/`. Otherwise the socket will be placed in the GnuPG home directory.
-*   The test involving the `gnupg_SSH_AUTH_SOCK_by` variable is for the case where the agent is started as `gpg-agent --daemon /bin/sh`, in which case the shell inherits the `SSH_AUTH_SOCK` variable from the parent, *gpg-agent* [[4]](http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=agent/gpg-agent.c;hb=7bca3be65e510eda40572327b87922834ebe07eb#l1307).
+*   The test involving the `gnupg_SSH_AUTH_SOCK_by` variable is for the case where the agent is started as `gpg-agent --daemon /bin/sh`, in which case the shell inherits the `SSH_AUTH_SOCK` variable from the parent, *gpg-agent* [[5]](http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=agent/gpg-agent.c;hb=7bca3be65e510eda40572327b87922834ebe07eb#l1307).
 
 #### Configure pinentry to use the correct TTY
 
