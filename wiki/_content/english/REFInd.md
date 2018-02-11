@@ -17,10 +17,9 @@ Related articles
             *   [1.1.1.1 Using PreLoader](#Using_PreLoader)
             *   [1.1.1.2 Using shim](#Using_shim)
             *   [1.1.1.3 Using your own keys](#Using_your_own_keys)
-    *   [1.2 Manual installation to default location](#Manual_installation_to_default_location)
-    *   [1.3 Manual installation](#Manual_installation)
-    *   [1.4 Upgrading](#Upgrading)
-        *   [1.4.1 Pacman hook](#Pacman_hook)
+    *   [1.2 Manual installation](#Manual_installation)
+    *   [1.3 Upgrading](#Upgrading)
+        *   [1.3.1 Pacman hook](#Pacman_hook)
 *   [2 Configuration](#Configuration)
     *   [2.1 Passing kernel parameters](#Passing_kernel_parameters)
         *   [2.1.1 For kernels automatically detected by rEFInd](#For_kernels_automatically_detected_by_rEFInd)
@@ -162,18 +161,6 @@ When running install script add option `--localkeys`, e.g.:
 
 rEFInd EFI binary will be signed with supplied key and certificate.
 
-### Manual installation to default location
-
-A simple way to use rEFInd is to install it manually into the default EFI location. Copy the available drivers so rEFInd finds the kernel on its original location. The kernel then gets updated there without further intervention by pacman. rEFInd has logic to auto-detect bootable kernels and its iniramfs images by name and create menu entries for them. For Arch rEFInd needs a little help for the special naming of its kernels.
-
-```
-# mkdir -p *esp*/EFI/refind/drivers_x64
-# cp /usr/share/refind/refind_x64.efi *esp*/EFI/BOOT/bootx64.efi
-# cp /usr/share/refind/drivers_x64/* *esp*/EFI/BOOT/drivers_x64/
-# echo "extra_kernel_version_strings linux-git,linux-lts,linux;" > *esp*/EFI/BOOT/refind.conf
-
-```
-
 ### Manual installation
 
 **Tip:** rEFInd can boot Linux in many ways. See [The rEFInd Boot Manager: Methods of Booting Linux](http://www.rodsbooks.com/refind/linux.html) for coverage of the various approaches.
@@ -188,7 +175,16 @@ First, copy the executable to the ESP:
 
 ```
 
-Then use [efibootmgr](/index.php/UEFI#efibootmgr "UEFI") to create a boot entry in the UEFI NVRAM, where `*/dev/sdX*` and `*Y*` are the device and partition number of your ESP. If you are installing rEFInd to the default UEFI path `*esp*/EFI/BOOT/bootx64.efi`, you can probably skip this step.
+**Tip:** If you want to install rEFInd to the default/fallback boot path, copy rEFInd executable to `*esp*/EFI/BOOT/bootx64.efi`:
+```
+# mkdir -p *esp*/EFI/BOOT
+# cp /usr/share/refind/refind_x64.efi *esp*/EFI/BOOT/bootx64.efi
+
+```
+
+Replace `*esp*/EFI/refind/` with `*esp*/EFI/BOOT/` in the following instructions.
+
+Then use [efibootmgr](/index.php/UEFI#efibootmgr "UEFI") to create a boot entry in the UEFI NVRAM, where `*/dev/sdX*` and `*Y*` are the device and partition number of your ESP. If you are installing rEFInd to the default UEFI path `*esp*/EFI/BOOT/bootx64.efi`, you can skip this step.
 
 ```
 # efibootmgr --create --disk */dev/sdX* --part *Y* --loader /EFI/refind/refind_x64.efi --label "rEFInd Boot Manager"
@@ -236,7 +232,7 @@ Pacman updates the rEFInd files in `/usr/share/refind/` and will not copy new fi
 
 #### Pacman hook
 
-You can automate the update process using a hook:
+You can automate the update process using a [pacman hook](/index.php/Pacman#Hooks "Pacman"):
 
  `/etc/pacman.d/hooks/refind.hook` 
 ```
@@ -270,7 +266,6 @@ If rEFInd automatically detects your kernel, you can place a `refind_linux.conf`
 "Boot using default options"     "root=PARTUUID=XXXXXXXX rw add_efi_memmap"
 "Boot using fallback initramfs"  "root=PARTUUID=XXXXXXXX rw add_efi_memmap initrd=/boot/initramfs-linux-fallback.img"
 "Boot to terminal"               "root=PARTUUID=XXXXXXXX rw add_efi_memmap systemd.unit=multi-user.target"
-
 ```
 
 Alternatively, try running:
@@ -285,6 +280,16 @@ Which will attempt to find your kernel in `/boot` and automatically generate `re
 If you do not specify an `initrd=` parameter, rEFInd will automatically add it by searching for common RAM disk filenames in the same directory as the kernel. If you need multiple `initrd=` parameters, you must specify them manually in `refind_linux.conf`. For example, a [Microcode](/index.php/Microcode "Microcode") passed before the initramfs: `... initrd=/boot/intel-ucode.img initrd=/boot/initramfs-linux.img`.
 
 **Warning:** `initrd` path is relative to the root of the file system on which the kernel resides. This could be `initrd=/boot/initramfs-linux.img` or, if ESP is mounted to `/boot`, `initrd=/initramfs-linux.img`.
+
+For rEFInd to properly match multiple kernels with their respective initramfs you must uncomment and edit `extra_kernel_version_strings` option in `refind.conf`. E.g.:
+
+ `*esp*/EFI/refind/refind.conf` 
+```
+...
+extra_kernel_version_strings linux-hardened,linux-zen,linux-lts,linux
+...
+
+```
 
 #### Manual boot stanzas
 
@@ -301,7 +306,7 @@ menuentry "Arch Linux" {
 	volume   "Arch Linux"
 	loader   /boot/vmlinuz-linux
 	initrd   /boot/initramfs-linux.img
-	options  "root=PARTUUID=XXXXXXXX rw add_efi_memmap"
+	options  "root=PARTUUID=*XXXXXXXX* rw add_efi_memmap"
 	submenuentry "Boot using fallback initramfs" {
 		initrd /boot/initramfs-linux-fallback.img
 	}
@@ -309,10 +314,9 @@ menuentry "Arch Linux" {
 		add_options "systemd.unit=multi-user.target"
 	}
 }
-
 ```
 
-It is likely that you will need to change `volume` to match either a filesystem's LABEL, a PARTLABEL, or a PARTUUID of the partition where the kernel image resides. See [Persistent block device naming#by-label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming") for examples of assigning a volume label.
+It is likely that you will need to change `volume` to match either a filesystem's LABEL, a PARTLABEL, or a PARTUUID of the partition where the kernel image resides. See [Persistent block device naming#by-label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming") for examples of assigning a volume label. If `volume` is not specified it defaults to volume from which rEFInd was launched (typically EFI System Partition).
 
 **Warning:** `loader` and `initrd` paths are relative to the root of `volume`.
 
@@ -411,7 +415,9 @@ To allow kernel auto detection on a Btrfs subvolume uncomment and edit `also_sca
 
  `*esp*/EFI/refind/refind.conf` 
 ```
+...
 also_scan_dirs *subvolume*/boot
+...
 
 ```
 
@@ -426,17 +432,14 @@ If booting a [btrfs](/index.php/Btrfs "Btrfs") subvolume as root, amend the `opt
  `*esp*/EFI/refind/refind.conf` 
 ```
 ...
-
 menuentry "Arch Linux" {
         icon     /EFI/refind/icons/os_arch.png
-        volume   Boot
+        volume   "Arch Linux"
         loader   /boot/vmlinuz-linux
         initrd   /boot/initramfs-linux.img
-        options  "root=PARTUUID=XXXXXXXX rw rootflags=subvol=ROOT"
-
+        options  "root=PARTUUID=*XXXXXXXX* rw **rootflags=subvol=ROOT**"
 ...
-        }
-
+}
 ```
 
 A failure to do so will otherwise result in the following error message: `ERROR: Root device mounted successfully, but /sbin/init does not exist.`

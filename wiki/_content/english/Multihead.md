@@ -20,15 +20,15 @@ Related articles
 
 *   [1 Historical background](#Historical_background)
 *   [2 Separate screens](#Separate_screens)
-*   [3 TwinView](#TwinView)
-*   [4 RandR](#RandR)
-    *   [4.1 Configuration using xrandr](#Configuration_using_xrandr)
-        *   [4.1.1 VGA1 left of HDMI1 at their preferred resolutions](#VGA1_left_of_HDMI1_at_their_preferred_resolutions)
-        *   [4.1.2 VGA1 right of HDMI1 at fixed resolutions](#VGA1_right_of_HDMI1_at_fixed_resolutions)
-    *   [4.2 Configuration using xorg.conf](#Configuration_using_xorg.conf)
-        *   [4.2.1 Example: dualhead configuration using relative coordinates](#Example:_dualhead_configuration_using_relative_coordinates)
-        *   [4.2.2 Example: dualhead configuration using relative coordinates with custom resolutions](#Example:_dualhead_configuration_using_relative_coordinates_with_custom_resolutions)
-        *   [4.2.3 Example: dualhead configuration using absolute coordinates](#Example:_dualhead_configuration_using_absolute_coordinates)
+*   [3 RandR](#RandR)
+    *   [3.1 Configuration using xrandr](#Configuration_using_xrandr)
+        *   [3.1.1 VGA1 left of HDMI1 at their preferred resolutions](#VGA1_left_of_HDMI1_at_their_preferred_resolutions)
+        *   [3.1.2 VGA1 right of HDMI1 at fixed resolutions](#VGA1_right_of_HDMI1_at_fixed_resolutions)
+    *   [3.2 Configuration using xorg.conf](#Configuration_using_xorg.conf)
+        *   [3.2.1 Example: dualhead configuration using relative coordinates](#Example:_dualhead_configuration_using_relative_coordinates)
+        *   [3.2.2 Example: dualhead configuration using relative coordinates with custom resolutions](#Example:_dualhead_configuration_using_relative_coordinates_with_custom_resolutions)
+        *   [3.2.3 Example: dualhead configuration using absolute coordinates](#Example:_dualhead_configuration_using_absolute_coordinates)
+*   [4 TwinView](#TwinView)
 *   [5 Xinerama](#Xinerama)
 *   [6 Application support](#Application_support)
     *   [6.1 Window managers](#Window_managers)
@@ -38,7 +38,7 @@ Related articles
 
 ## Historical background
 
-X Window System is the underlying graphical interface of most if not all Unix/Linux computers providing a GUI. It was developed in 1984 at MIT. After about 35 years of development, tweaking and adding of new features and ideas, it is generally acknowledged to be a bit of a beast. It should be remembered that the common configuration at time of development was a single running X providing individual views to Xterminals in a [time-sharing](https://en.wikipedia.org/wiki/Time-sharing "wikipedia:Time-sharing") system. Nowadays the standard is X providing a single screen on a desktop or laptop.
+X Window System is the underlying graphical interface of most Unix/Linux computers providing a GUI. It was developed in 1984 at MIT. After about 35 years of development, tweaking and adding of new features and ideas, it is generally acknowledged to be a bit of a beast. It should be remembered that the common configuration at time of development was a single running X providing individual views to Xterminals in a [time-sharing](https://en.wikipedia.org/wiki/Time-sharing "wikipedia:Time-sharing") system. Nowadays the standard is X providing a single screen on a desktop or laptop.
 
 **Note:** There is still a rare configuration often called [Zaphod display](/index.php/Xorg_multiseat "Xorg multiseat"), which allows multiple users of a single computer to each have an independent set of display, mouse, and keyboard, as though they were using separate computers, but at a lower per-seat cost.
 
@@ -62,16 +62,6 @@ Alternatively if you have a terminal on each screen launching programs will inhe
 
 Working this way does have certain advantages, such as windows popping up on one screen won't steal the focus away from you if you are working on another screen - each screen is quite independent.
 
-## TwinView
-
-TwinView is nVidia's extension which makes two monitors attached to a video card appear as a single screen. TwinView provides Xinerama extensions so that applications are aware there are two monitors connected, and thus it is incompatible with Xinerama. However if you only have two monitors and they are both connected to the same nVidia card, there is little difference between TwinView and Xinerama (although in this situation TwinView may offer slightly better performance.)
-
-If you wish to attach more than two monitors or monitors attached to other video cards, you will need to use Xinerama instead of TwinView. Likewise as of April 2012, both monitors must be in the same orientation - you cannot have one in landscape and the other in portrait mode.
-
-In the past, TwinView was the only way to get OpenGL acceleration with nVidia cards while being able to drag windows between screens. However modern versions of the nVidia closed-source driver are able to provide OpenGL acceleration even when using Xinerama.
-
-See [NVIDIA#TwinView](/index.php/NVIDIA#TwinView "NVIDIA") for an example configuration.
-
 ## RandR
 
 [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") (**R**otate **and** **R**esize) is an [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") extension, which allows clients to dynamically change (e.g. resize, rotate, reflect) screens. In most cases, it can fully replace the old Xinerama setup. See [an explanation](http://i3wm.org/docs/multi-monitor.html#_the_explanation) why RandR is better than Xinerama.
@@ -84,7 +74,7 @@ RandR can be configured for the current session via the [xrandr](/index.php/Xran
 
 **Note:** This section assumes that you have read the [xrandr](/index.php/Xrandr "Xrandr") page for basic info about *xrandr*.
 
-You may arrange your screens either relatively to each other (using the `--right-of`, `--left-of`, `--above`, `--below` options), or by absolute coordinates (using the `--pos` option; note that in this case you usually need to know resolutions of your monitors). See [xrandr(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xrandr.1) for details. Some frequently used settings are described below.
+You may arrange your screens either relatively to each other (using the `--right-of`, `--left-of`, `--above`, `--below` options), or by absolute coordinates (using the `--pos` option; note that in this case you usually need to know resolutions of your monitors). See [xrandr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xrandr.1) for details. Some frequently used settings are described below.
 
 #### VGA1 left of HDMI1 at their preferred resolutions
 
@@ -207,6 +197,16 @@ There are no negative coordinates, the setup's leftmost and highest possibly tar
 +---------------------++------------+
 
 ```
+
+## TwinView
+
+TwinView is [NVIDIA](/index.php/NVIDIA "NVIDIA")'s extension which makes two monitors attached to a video card appear as a single screen. TwinView provides Xinerama extensions so that applications are aware there are two monitors connected, and thus it is incompatible with Xinerama. However if you only have two monitors and they are both connected to the same NVIDIA card, there is little difference between TwinView and Xinerama (although in this situation TwinView may offer slightly better performance.)
+
+If you wish to attach more than two monitors or monitors attached to other video cards, you will need to use Xinerama instead of TwinView. Likewise as of April 2012, both monitors must be in the same orientation - you cannot have one in landscape and the other in portrait mode.
+
+In the past, TwinView was the only way to get OpenGL acceleration with NVIDIA cards while being able to drag windows between screens. However modern versions of the NVIDIA closed-source driver are able to provide OpenGL acceleration even when using Xinerama.
+
+See [NVIDIA#TwinView](/index.php/NVIDIA#TwinView "NVIDIA") for an example configuration.
 
 ## Xinerama
 

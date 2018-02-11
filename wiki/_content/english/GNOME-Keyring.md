@@ -142,7 +142,7 @@ When using a display manager, the keyring works out of the box for most cases. T
 *   [LXDM](/index.php/LXDM "LXDM")
 *   [SDDM](/index.php/SDDM "SDDM")
 
-For GDM, note the keyring [must be](https://wiki.gnome.org/Projects/GnomeKeyring/Pam) named *login* to be automatically unlocked.
+For GDM and LightDM, note the keyring [must be](https://wiki.gnome.org/Projects/GnomeKeyring/Pam) named *login* to be automatically unlocked.
 
 To enable the keyring for applications run through the terminal, such as SSH, add the following to your `~/.bash_profile`, `~/.zshenv`, or similar:
 

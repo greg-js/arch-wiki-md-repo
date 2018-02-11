@@ -91,6 +91,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [6.10 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
     *   [6.11 Problems with saving credentials and persistently occurring KWallet dialogs](#Problems_with_saving_credentials_and_persistently_occurring_KWallet_dialogs)
     *   [6.12 Weird "q" symbol in konsole](#Weird_.22q.22_symbol_in_konsole)
+    *   [6.13 Backlight control hotkeys stopped working](#Backlight_control_hotkeys_stopped_working)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -763,6 +764,10 @@ It is not recommended to turn off the KWallet password saving system in the user
 If you get a weird "q" symbols in programs such as vim[[7]](https://github.com/vim/vim/issues/2008) or neovim[[8]](https://github.com/neovim/neovim/issues/7002), it is because they use cursor shape changing escape sequences (DECSCUSR) which konsole does not support. See [KDE Bug 347323](https://bugs.kde.org/show_bug.cgi?id=347323).
 
 You will need to disable these escape sequences in the programs that use them. See [neovim FAQ](https://github.com/neovim/neovim/wiki/FAQ#nvim-shows-weird-symbols-2-q-when-changing-modes) for a workaround for neovim.
+
+### Backlight control hotkeys stopped working
+
+It may happen that backlight control hotkeys suddenly stop working (possibly after an update). This may be due to a shortcuts conflict between KDE Daemon and Power Management. If this is the case, go to *Settings > Shortcuts > Global shortcuts* and set the hotkeys shortcuts in the Power management section, overriding KDE Daemon's. If this does not help, please see [Backlight](/index.php/Backlight "Backlight")
 
 ## See also
 

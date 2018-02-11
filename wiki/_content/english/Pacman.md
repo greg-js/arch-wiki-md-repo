@@ -75,6 +75,8 @@ What follows is just a small sample of the operations that *pacman* can perform.
 
 **Note:** Packages often have a series of [optional dependencies](/index.php/PKGBUILD#optdepends "PKGBUILD") which are packages that provide additional functionality to the application, albeit not strictly required for running it. When installing a package, *pacman* will list its optional dependencies among the output messages, but they will not be found in `pacman.log`: use the [pacman -Si](#Querying_package_databases) command to view the optional dependencies of a package, together with short descriptions of their functionality.
 
+**Note:** When installing a package which you require only as (optional) dependency of some other package (i.e. not required by you explicitly otherwise), it is recommended to use `--asdeps` option. For details see [Installation reason](#Installation_reason).
+
 **Warning:** When installing packages in Arch, avoid refreshing the package list without [upgrading the system](#Upgrading_packages) (for example, when a [package is no longer found](#Packages_cannot_be_retrieved_on_installation) in the official repositories). In practice, do **not** run `pacman -Sy *package_name*` instead of `pacman -Sy**u** *package_name*`, as this could lead to dependency issues. See [System maintenance#Partial upgrades are unsupported](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance") and [BBS#89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
 
 #### Installing specific packages
@@ -441,6 +443,8 @@ When installing a package, it is possible to force its installation reason to *d
 
 ```
 
+**Tip:** Installing optional dependencies with `--asdeps` will cause it such that if you [remove orphans](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_.28orphans.29 "Pacman/Tips and tricks"), *pacman* will also remove leftover optional dependencies.
+
 When **re**installing a package, though, the current installation reason is preserved by default.
 
 The list of explicitly-installed packages can be shown with `pacman -Qe`, while the complementary list of dependencies can be shown with `pacman -Qd`.
@@ -453,8 +457,6 @@ To change the installation reason of an already installed package, execute:
 ```
 
 Use `--asexplicit` to do the opposite operation.
-
-**Tip:** Installing optional dependencies with `--asdeps` will cause it such that if you [remove orphans](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_.28orphans.29 "Pacman/Tips and tricks"), *pacman* will also remove leftover optional dependencies.
 
 ### Search for a package that contains a specific file
 

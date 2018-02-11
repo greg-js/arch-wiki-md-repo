@@ -44,12 +44,12 @@ Then follow [Display manager#Loading the display manager](/index.php/Display_man
 
 ## Configuration
 
-The configuration file for SDDM can be found at `/etc/sddm.conf`. See [sddm.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sddm.conf.5) for all options.
+The default configuration file for SDDM can be found at `/usr/lib/sddm/sddm.conf.d/sddm.conf`. For any changes, create configuration file(s) in `/etc/sddm.conf.d/`. See [sddm.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sddm.conf.5) for all options.
 
 On systems controlled by [systemd](/index.php/Systemd "Systemd"), everything should work out of the box, since SDDM defaults to using `systemd-logind` for session management. The configuration file will therefore not be created at package installation time. SDDM offers a command for generating a sample configuration file with the default settings if you really want one:
 
 ```
-# sddm --example-config > /etc/sddm.conf
+# sddm --example-config > /etc/sddm.conf.d/sddm.conf
 
 ```
 
@@ -57,7 +57,7 @@ On systems controlled by [systemd](/index.php/Systemd "Systemd"), everything sho
 
 SDDM supports automatic login through its configuration file, for example:
 
- `/etc/sddm.conf` 
+ `/etc/sddm.conf.d/autologin.conf` 
 ```
 [Autologin]
 User=john
@@ -120,7 +120,7 @@ Valid [Plasma](/index.php/Plasma "Plasma") mouse cursor theme names are `breeze_
 
 You can simply put a png image named `username.face.icon` into the default directory `/usr/share/sddm/faces/`. Alternatively you can change the default directory to match your desires:
 
- `/etc/sddm.conf` 
+ `/etc/sddm.conf.d/avatar.conf` 
 ```
 [Theme]
 FacesDir=/var/lib/AccountsService/icons/
@@ -149,7 +149,7 @@ Sometimes it is useful to set up correct monitor's PPI settings on a "Display Ma
 
 For example:
 
- `/etc/sddm.conf` 
+ `/etc/sddm.conf.d/dpi.conf` 
 ```
 [X11]
 ServerArguments=-nolisten tcp -dpi 94
@@ -163,23 +163,21 @@ Try removing `~/.Xauthority`.
 
 ### SDDM starts on tty1 instead of tty7
 
-SDDM follows the [systemd convention](http://0pointer.de/blog/projects/serial-console.html) of starting the first graphical session on tty1\. If you prefer the old convention where tty1 through tty6 are reserved for text consoles, uncomment and edit the `MinimumVT` variable, under the `[X11]` section in `sddm.conf`:
+SDDM follows the [systemd convention](http://0pointer.de/blog/projects/serial-console.html) of starting the first graphical session on tty1\. If you prefer the old convention where tty1 through tty6 are reserved for text consoles, change the default value of `MinimumVT` variable, which comes under the `[X11]` section:
 
- `/etc/sddm.conf` 
+ `/etc/sddm.conf.d/tty.conf` 
 ```
 [X11]
-...
 MinimumVT=7
-...
 ```
 
 ### One or more users do not show up on the greeter
 
 **Warning:** Users set with a lower or higher `UID` range should generally not be exposed to a [Display manager](/index.php/Display_manager "Display manager").
 
-SDDM only displays users with a UID in the range of 1000 to 65000 by default, if the UIDs of the desired users are below this value then you will have to modify this range. Modify your `sddm.conf` to (for a UID of 501, say):
+SDDM only displays users with a UID in the range of 1000 to 65000 by default, if the UIDs of the desired users are below this value then you will have to modify this range. For example, for a UID of 501, say:
 
- `/etc/sddm.conf` 
+ `/etc/sddm.conf.d/uid.conf` 
 ```
 [Users]
 HideShells=/sbin/nologin,/bin/false
@@ -215,9 +213,9 @@ See [SDDM README: No User Icon](https://github.com/sgerbino/sddm#no-user-icon).
 
 Issue may be caused by HiDPI usage for monitors with corrupted EDID: [[3]](https://github.com/sddm/sddm/issues/692)
 
-Try disabling HiDPI in `sddm.conf`:
+Try disabling HiDPI:
 
- `/etc/sddm.conf` 
+ `/etc/sddm.conf.d/hidpi.conf` 
 ```
 [General]
 # Enable Qt's automatic high-DPI scaling

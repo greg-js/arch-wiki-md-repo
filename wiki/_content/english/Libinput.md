@@ -147,8 +147,8 @@ There are different GUI tools:
 *   [Cinnamon](/index.php/Cinnamon "Cinnamon"):
     *   Similar to the GNOME UI, with more options.
 *   [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") 5:
-    *   Basic options within Touchpad section (kcm_touchpad) in System Settings.
-    *   [pointing-devices-kcm](https://github.com/amezin/pointing-devices-kcm) ([kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/)) is a new and rewritten KCM for all input devices supported by libinput.
+    *   Large set of keyboard, mouse, controller, and touchpad options. Some features are still placeholders until they are implemented in Libinput (e.g. mouse scrolling).
+    *   [pointing-devices-kcm](https://github.com/amezin/pointing-devices-kcm) ([kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/)) is a rewritten KCM for all input devices supported by libinput.
 
 ## Tips and tricks
 

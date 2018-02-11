@@ -59,12 +59,12 @@ The following packages are a good start to build a full-featured pro audio syste
 
 Other packages you may need that are available from the [AUR](/index.php/AUR "AUR"):
 
-*   [qsampler](https://aur.archlinux.org/packages/qsampler/) (also see [LinuxSampler](/index.php/LinuxSampler "LinuxSampler"))
+*   [qsampler](https://www.archlinux.org/packages/?name=qsampler) (also see [LinuxSampler](/index.php/LinuxSampler "LinuxSampler"))
 *   [mhwaveedit](https://aur.archlinux.org/packages/mhwaveedit/)
-*   [carla](https://aur.archlinux.org/packages/carla/)
+*   [carla](https://www.archlinux.org/packages/?name=carla)
 *   [rakarrack-git](https://aur.archlinux.org/packages/rakarrack-git/)
 *   [XCFA](https://aur.archlinux.org/packages/XCFA/)
-*   [yoshimi](https://aur.archlinux.org/packages/yoshimi/)
+*   [yoshimi](https://www.archlinux.org/packages/?name=yoshimi)
 *   [wineasio](https://aur.archlinux.org/packages/wineasio/)
 *   [vst-bridge](https://github.com/abique/vst-bridge)
 
@@ -172,7 +172,7 @@ $ /usr/bin/jackd -R -P89 -dalsa -dhw:0 -r48000 -p256 -n3
 
 ```
 
-[qjackctl](https://www.archlinux.org/packages/?name=qjackctl), [cadence](https://aur.archlinux.org/packages/cadence/) and [patchage](https://www.archlinux.org/packages/?name=patchage) can all be used to as GUIs to monitor JACK's status and simplify its configuration .
+[qjackctl](https://www.archlinux.org/packages/?name=qjackctl), [cadence](https://www.archlinux.org/packages/?name=cadence) and [patchage](https://www.archlinux.org/packages/?name=patchage) can all be used to as GUIs to monitor JACK's status and simplify its configuration .
 
 **Note:** Once you set up JACK, try different audio applications to test your configuration results. I spent days trying to troubleshoot JACK xrun issues with LMMS which in the end turned out to be the problem with the latter.
 
@@ -335,7 +335,7 @@ export DSSI_PATH=/usr/lib/dssi:/usr/local/lib/dssi:~/.dssi:/someother/custom/dir
 
 *   Some USB audio hardware is known not to work properly when plugged into USB 3 ports so try USB 2/1 ports instead.
 
-*   IRQ issues can occur and cause problems. An example is video hardware reserving the bus, causing needless interrupts in the system I/O path. See discussion at [FFADO IRQ Priorities How-To](http://subversion.ffado.org/wiki/IrqPriorities). If you have a realtime or a recent kernel, you can use [rtirq](https://aur.archlinux.org/packages/rtirq/) to adjust priorities of IRQ handling threads.
+*   IRQ issues can occur and cause problems. An example is video hardware reserving the bus, causing needless interrupts in the system I/O path. See discussion at [FFADO IRQ Priorities How-To](http://subversion.ffado.org/wiki/IrqPriorities). If you have a realtime or a recent kernel, you can use [rtirq](https://www.archlinux.org/packages/?name=rtirq) to adjust priorities of IRQ handling threads.
 
 *   Do not use the **irqbalance** daemon, or do so carefully [[1]](http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_MRG/1.3/html/Realtime_Tuning_Guide/sect-Realtime_Tuning_Guide-General_System_Tuning-Interrupt_and_Process_Binding.html).
 

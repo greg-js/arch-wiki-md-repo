@@ -148,7 +148,7 @@ The subdirectory `downloadedmaps/` will store maps downloaded in runtime by DDNe
 
 ## Server
 
-**Note:** These instructions are **not** required for playing DDNet; see [#Usage](#Usage).
+**Note:** These instructions are **not** required for playing DDNet; see [#Play](#Play).
 
 Use these instructions if you want a local server in a [LAN](https://en.wikipedia.org/wiki/Local_area_network "w:Local area network") to play with friends, or due to high latency of Internet servers, or for testing.
 

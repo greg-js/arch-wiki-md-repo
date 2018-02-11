@@ -24,7 +24,7 @@ LinuxSampler is a software [audio sampler](https://en.wikipedia.org/wiki/Sampler
 
 There are several graphical frontends available for LinuxSampler:
 
-*   [qsampler](https://aur.archlinux.org/packages/qsampler/), a Qt interface
+*   [qsampler](https://www.archlinux.org/packages/?name=qsampler), a Qt interface
 *   [jsampler](https://www.archlinux.org/packages/?name=jsampler), a Java interface
 *   [gigedit](https://www.archlinux.org/packages/?name=gigedit), a gig file editor
 
@@ -113,7 +113,7 @@ Sometimes sample libraries do not agree with how a composer/arranger expects the
 
 *   Transpose the MIDI part one octave lower. In an orchestral score, this is very wrong to see notes on staff sounding one octave lower, especially when you already deal with transposing instruments...Also you would have to transpose back before printing.
 *   Redo the mapping inside the gig file. That would be the best solution as it definitely cures the problem. However this can be a lot of hassle if there is multiple instruments inside the file. Also some non-sounding notes are often reserved before the sounding ones to trigger some cc (keyswitches), making the remapping one octave lower more complex or even impossible.
-*   The quick and non-destructive way here is to put a MIDI filter between the score editor and LS, that lowers the notes by one octave for the piano channel only. [Qmidiroute](https://aur.archlinux.org/packages/Qmidiroute/) can do that and it also monitors all midi messages along the way. You could for example check that the cc sent by the score are really what they should be (right midi ch, pan, velocity curves etc...)
+*   The quick and non-destructive way here is to put a MIDI filter between the score editor and LS, that lowers the notes by one octave for the piano channel only. [qmidiroute](https://www.archlinux.org/packages/?name=qmidiroute) can do that and it also monitors all midi messages along the way. You could for example check that the cc sent by the score are really what they should be (right midi ch, pan, velocity curves etc...)
 
 If you use this setup, you will have to change the piano part MIDI output in your score editor to go to qmidiroute instead of LS, and the piano "channel" in LS to use the qmidiroute output instead of your score editor. This also could be done at the orchestra level if you want to monitor every instrument in your score or if using multiple midi outputs in your score editor is not possible.
 

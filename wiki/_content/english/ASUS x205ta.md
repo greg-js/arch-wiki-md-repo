@@ -24,6 +24,8 @@
     *   [4.2 Power level information (ACPI)](#Power_level_information_.28ACPI.29)
     *   [4.3 Touchpad](#Touchpad)
     *   [4.4 SD card reader](#SD_card_reader)
+        *   [4.4.1 Device support](#Device_support)
+        *   [4.4.2 RPMB Partition](#RPMB_Partition)
     *   [4.5 Special keys](#Special_keys)
 *   [5 See also](#See_also)
 
@@ -207,8 +209,6 @@ With some kernel patches on newer kernels the x205ta works. The built-in microph
 
 Three very elaborate threads contain the history of patches for the kernel for the x205ta: [kernel bug for baytrail power states](https://bugzilla.kernel.org/show_bug.cgi?id=109051), [kernel bug for chtrt5645](https://bugzilla.kernel.org/show_bug.cgi?id=95681) and most important [a Ubuntu forum thread](https://ubuntuforums.org/showthread.php?t=2254322) with [a patched kernel provided by harryharryharry](https://ubuntuforums.org/showthread.php?t=2254322&page=158&p=13625163#post13625163).
 
-As of kernel version v4.4-rc1 the micro SD card reader should work out of the box. See [commit info in kernel source.](https://github.com/torvalds/linux/commit/0cd2f04453fcb7bf3f38a4a72d1619636b4afa57) There can however be timeouts when probing the Replay Protected Memory Block partition. Refer to [this page](https://dev-nell.com/rpmb-emmc-errors-under-linux.html) for more info and a kernel patch disabling the RPMB partition should you never need the RPMB partition.
-
 #### AUR package with patched kernel
 
 AUR package [linux-x205ta](https://aur.archlinux.org/packages/linux-x205ta/) applies the patches proposed in the threads above to the standard arch kernel. Sources and references for each patch are in the PKGBUILD file.
@@ -328,6 +328,8 @@ EndSection
 
 ### SD card reader
 
+#### Device support
+
 For older kernel versions < v4.4-rc1 the micro SD card reader will probably not work out of the box. [This page](https://wiki.debian.org/InstallingDebianOn/Asus/X205TA) contains a simple fix. First, create the file as follows:
 
  `/etc/modprobe.d/sdhci.conf ` 
@@ -347,6 +349,10 @@ $ mkinitcpio -v -g /boot/initramfs-linux.img
 This will update your initramfs file and load the new configuration you made in "sdhci.conf". You should be able to view your Micro SD card after a reboot.
 
 With [this patch](https://lkml.org/lkml/2015/9/15/394) the card reader should work out of the box.
+
+#### RPMB Partition
+
+For kernel versions < v4.15-rc1 there can be timeouts when probing the Replay Protected Memory Block partition. Refer to this page for more info and a kernel patch disabling the RPMB partition should you never need the RPMB partition. This is [fixed in a patch](https://github.com/torvalds/linux/commit/97548575bef38abd06690a5a6f6816200c7e77f7) as of v4.15-rc1.
 
 ### Special keys
 

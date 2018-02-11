@@ -6,7 +6,8 @@ This article is meant to guide (Arch)linux users to use PDF forms. Some of the i
     *   [1.1 flpsed](#flpsed)
     *   [1.2 Inkscape](#Inkscape)
     *   [1.3 Master PDF Editor](#Master_PDF_Editor)
-    *   [1.4 Adobe Reader is unstable](#Adobe_Reader_is_unstable)
+    *   [1.4 LibreOffice Draw](#LibreOffice_Draw)
+    *   [1.5 Adobe Reader is unstable](#Adobe_Reader_is_unstable)
 
 ## Usage
 
@@ -37,6 +38,10 @@ Version 4.x can open, fill, save and submit PDF forms. In effect it provides the
 Changes are preserved on saved files and can be modified again in Master PDF Editor. However, when opening the saved file with Evince 3.2x, due to bugs in Evince one would get blank parts instead of form elements created or edited with Master PDF. Okular 1.1 shows the form elements correctly but has other general bugs in filling/using form elements.
 
 The package can be [installed](/index.php/Install "Install") with [masterpdfeditor](https://aur.archlinux.org/packages/masterpdfeditor/) and gives the executable pdfeditor.
+
+### LibreOffice Draw
+
+LibreOffice Draw can open and edit PDF files in much the same manner that Inkscape can. One can then re-export the edited PDF to a new file.
 
 ### Adobe Reader is unstable
 

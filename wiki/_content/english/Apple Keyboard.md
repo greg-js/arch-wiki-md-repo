@@ -128,7 +128,7 @@ To reload the kernel module without reboot, run `sudo rmmod hid_apple && sudo mo
 
 ## Magic Keyboard does not connect
 
-If you have a magic keyboard that will not connect to the system through the built in tools, such as the Gnome 3 bluetooth menu in settings, install [blueman](https://aur.archlinux.org/packages/blueman/) and its dependincies and attempt to connect with it. If it still fails to connect, make sure you have bluetoothctl and hcitool installed.
+If you have a magic keyboard that will not connect to the system through the built in tools, such as the Gnome 3 bluetooth menu in settings, install [blueman](https://www.archlinux.org/packages/?name=blueman) and its dependencies and attempt to connect with it. If it still fails to connect, make sure you have bluetoothctl and hcitool installed.
 
 ## See also
 

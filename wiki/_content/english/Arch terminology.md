@@ -104,7 +104,7 @@ Acronym of Keep It Simple, Stupid. [Simplicity](/index.php/Arch_Linux#Simplicity
 
 ## makepkg
 
-[makepkg](/index.php/Makepkg "Makepkg") will build packages for you. makepkg will read the metadata required from a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file. All it needs is a build-capable Linux platform, [wget](https://www.archlinux.org/packages/?name=wget), and some build scripts. The advantage to a script-based build is that you only really do the work once. Once you have the build script for a package, you just need to run makepkg and it will do the rest: download and validate source files, check dependencies, configure the build time settings, build the package, install the package into a temporary root, make customizations, generate meta-info, and package the whole thing up for [pacman](/index.php/Pacman "Pacman") to use.
+[makepkg](/index.php/Makepkg "Makepkg") will build packages for you. makepkg will read the metadata required from a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file. All it needs is a build-capable Linux platform, [curl](https://www.archlinux.org/packages/?name=curl), and some build scripts. The advantage to a script-based build is that you only really do the work once. Once you have the build script for a package, you just need to run makepkg and it will do the rest: download and validate source files, check dependencies, configure the build time settings, build the package, install the package into a temporary root, make customizations, generate meta-info, and package the whole thing up for [pacman](/index.php/Pacman "Pacman") to use.
 
 ## namcap
 

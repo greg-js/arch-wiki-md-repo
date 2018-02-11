@@ -1,5 +1,12 @@
 The Dell Latitude e7470 is a 14" business notebook.
 
+## Contents
+
+*   [1 Hardware Overview](#Hardware_Overview)
+*   [2 Touchpad](#Touchpad)
+*   [3 Installation](#Installation)
+*   [4 What does not work](#What_does_not_work)
+
 ## Hardware Overview
 
 Output of `lspci -nn`:
@@ -35,6 +42,10 @@ Bus 001 Device 002: ID 1bcf:28b8 Sunplus Innovation Technology Inc.
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
+
+## Touchpad
+
+Support for the ALPS touchpad included in Dell E7270 & E7470 was only added in Linux kernel 4.9, with some issues accidentally introduced in 4.13 and then refixed in 4.15\. The fixes were backported to Linux LTS kernels 4.9 & 4.14\. Earlier kernels didn't recognize the touchpad and used it in its emulated PS/2 mode, so changing options (like scroll direction, multi-touch gestures, etc.) was not possible.
 
 ## Installation
 

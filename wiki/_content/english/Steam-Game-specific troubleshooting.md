@@ -264,7 +264,7 @@
 
 See [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshooting") first.
 
-This page assumes familiarity with the [Steam#Directory structure](/index.php/Steam#Directory_structure "Steam"), [Steam#Launch options](/index.php/Steam#Launch_options "Steam"), [environment variables](/index.php/Environment_variables "Environment variables"), the [Steam runtime](/index.php/Steam/Troubleshooting#Steam_runtime "Steam/Troubleshooting") and [shared libraries](/index.php/Steam/Troubleshooting#Debugging_shared_libraries "Steam/Troubleshooting"). The `*GAME*` pseudo-variable is used to refer to a game's directory. When the text reads "*run the game with `FOO=bar`*" it is implied that you either update your launch options or run the game from the command-line with the environment variable.
+This page assumes familiarity with the [Steam#Directory structure](/index.php/Steam#Directory_structure "Steam"), [Steam#Launch options](/index.php/Steam#Launch_options "Steam"), [environment variables](/index.php/Environment_variables "Environment variables"), the [Steam runtime](/index.php/Steam_runtime "Steam runtime") and [shared libraries](/index.php/Steam/Troubleshooting#Debugging_shared_libraries "Steam/Troubleshooting"). The `*GAME*` pseudo-variable is used to refer to a game's directory. When the text reads "*run the game with `FOO=bar`*" it is implied that you either update your launch options or run the game from the command-line with the environment variable.
 
 ## Contributing
 

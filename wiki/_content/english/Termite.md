@@ -26,7 +26,7 @@ Termite starts in insert mode by default. Text may be selected using the mouse, 
 
 ## Configuration
 
-Termite looks for configuration files in `$XDG_CONFIG_HOME/termite/config`, `~/.config/termite/config`, `$XDG_CONFIG_DIRS/termite/config` and `/etc/xdg/termite.cfg`. The configuration file is used to change options such as font, colors, window hints, etc. The configuration file is in *ini* format, with three sections: *options*, *colors*, and *hints*.
+Termite looks for configuration files in `$XDG_CONFIG_HOME/termite/config`, `~/.config/termite/config`, `$XDG_CONFIG_DIRS/termite/config` and `/etc/xdg/termite.cfg`. The configuration file is used to change options such as font, colors, window hints, etc. The configuration file syntax is inspired by [XDG Desktop Entry Specification](https://standards.freedesktop.org/desktop-entry-spec/latest/) [.desktop](/index.php/.desktop ".desktop") files (inspired by Microsoft Windows *.ini* files), with three sections: *options*, *colors*, and *hints*.
 
 To start customizing termite copy the base example file to your home dir first:
 
@@ -83,7 +83,7 @@ opacity-rule = [
 
 If opening a new tab through `Ctrl+Shift+t` fails with `no directory uri set`, [source](/index.php/Source "Source") `/etc/profile.d/vte.sh`. See [GNOME/Tips and tricks#New terminals adopt current directory](/index.php/GNOME/Tips_and_tricks#New_terminals_adopt_current_directory "GNOME/Tips and tricks").
 
-If it continues to fail, ensure your [hostname](/index.php/Hostname "Hostname") is valid. See [hostname(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.7).
+If it continues to fail, ensure your [hostname](/index.php/Hostname "Hostname") is valid. See [hostname(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.7).
 
 ## See also
 

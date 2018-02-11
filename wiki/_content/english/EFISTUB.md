@@ -101,7 +101,10 @@ More info about efibootmgr at [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI
 
 If using [cryptboot](https://aur.archlinux.org/packages/cryptboot/) and [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) to generate your own keys for [Secure Boot](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot") and sign the initramfs and kernel then create a bootable .efi image, [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) can be used directly to boot the .efi file:
 
- `efibootmgr -c -d /dev/sdX -p *partition_number* -L "*label*" -l "EFI\*folder*\*file*.efi"` 
+```
+# efibootmgr --create --disk /dev/sdX --part *partition_number* --label "*label*" --loader "EFI\*folder*\*file*.efi"
+
+```
 
 See [efibootmgr(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/efibootmgr.8) for an explanation of the options.
 

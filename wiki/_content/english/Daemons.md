@@ -59,7 +59,7 @@ freshclamd.service | Anti-virus toolkit for Unix. |
 | [lighttpd](/index.php/Lighttpd "Lighttpd") | lighttpd | lighttpd.service | Lighttpd HTTP Server (Web Server). |
 | [libvirt](/index.php/Libvirt "Libvirt") | libvirt | libvirtd.service | libvirt is a virtualization API and a daemon for managing virtual machines (VMs). |
 | [lxdm](/index.php/LXDE "LXDE") | lxdm | lxdm.service | LXDE Display Manager. |
-| [mandb](https://www.archlinux.org/packages/?name=mandb) |  ? | man-db.timer
+| [man-db](https://www.archlinux.org/packages/?name=man-db) |  ? | man-db.timer
 
 man-db.service
 

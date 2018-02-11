@@ -40,13 +40,12 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [6.7 Adding undetected resolutions](#Adding_undetected_resolutions)
     *   [6.8 Weathered colors (color range problem)](#Weathered_colors_.28color_range_problem.29)
     *   [6.9 Backlight is not adjustable](#Backlight_is_not_adjustable)
-    *   [6.10 Disabling frame buffer compression](#Disabling_frame_buffer_compression)
-    *   [6.11 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption.2FUnresponsiveness_in_Chromium_and_Firefox)
-    *   [6.12 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
-    *   [6.13 Skylake support](#Skylake_support)
-    *   [6.14 Lag in Windows guests](#Lag_in_Windows_guests)
-    *   [6.15 Screen flickering](#Screen_flickering)
-    *   [6.16 OpenGL 2.1 with i915 driver](#OpenGL_2.1_with_i915_driver)
+    *   [6.10 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption.2FUnresponsiveness_in_Chromium_and_Firefox)
+    *   [6.11 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
+    *   [6.12 Skylake support](#Skylake_support)
+    *   [6.13 Lag in Windows guests](#Lag_in_Windows_guests)
+    *   [6.14 Screen flickering](#Screen_flickering)
+    *   [6.15 OpenGL 2.1 with i915 driver](#OpenGL_2.1_with_i915_driver)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -180,6 +179,17 @@ Framebuffer compression may be unreliable or unavailable on Intel GPU generation
 kernel: drm: not enough stolen space for compressed buffer, disabling.
 
 ```
+
+Enabling frame buffer compression on pre-Sandy Bridge CPUs results in endless error messages:
+
+```
+$ dmesg |tail 
+[ 2360.475430] [drm] not enough stolen space for compressed buffer (need 4325376 bytes), disabling
+[ 2360.475437] [drm] hint: you may be able to increase stolen memory size in the BIOS to avoid this
+
+```
+
+The solution is to disable frame buffer compression which will imperceptibly increase power consumption (around 0.06 W). In order to disable it add `i915.enable_fbc=0` to the kernel line parameters. More information on the results of disabled compression can be found [here](http://kernel.ubuntu.com/~cking/power-benchmarking/background-colour-and-framebuffer-compression/).
 
 ## Tips and tricks
 
@@ -385,19 +395,6 @@ acpi_osi="!Windows 2012"
 acpi_osi=
 
 ```
-
-### Disabling frame buffer compression
-
-Enabling frame buffer compression on pre-Sandy Bridge CPUs results in endless error messages:
-
-```
-$ dmesg |tail 
-[ 2360.475430] [drm] not enough stolen space for compressed buffer (need 4325376 bytes), disabling
-[ 2360.475437] [drm] hint: you may be able to increase stolen memory size in the BIOS to avoid this
-
-```
-
-The solution is to disable frame buffer compression which will imperceptibly increase power consumption (around 0.06 W). In order to disable it add `i915.enable_fbc=0` to the kernel line parameters. More information on the results of disabled compression can be found [here](http://kernel.ubuntu.com/~cking/power-benchmarking/background-colour-and-framebuffer-compression/).
 
 ### Corruption/Unresponsiveness in Chromium and Firefox
 

@@ -251,7 +251,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **hashdeep** — A cross-platform tools to computer hashes, or message digests, for any number of files
 
-	[http://md5deep.sourceforge.net/](http://md5deep.sourceforge.net/) || [hashdeep](https://aur.archlinux.org/packages/hashdeep/)
+	[http://md5deep.sourceforge.net/](http://md5deep.sourceforge.net/) || [hashdeep](https://www.archlinux.org/packages/?name=hashdeep)
 
 *   **Parano** — A GNOME frontend for creating/editing/checking MD5 and SFV files
 

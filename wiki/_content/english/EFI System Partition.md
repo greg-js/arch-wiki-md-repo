@@ -90,10 +90,10 @@ Instead of mounting the ESP itself to `/boot`, you can mount a directory of the 
 *   This requires a kernel and bootloader compatible with FAT32\. This is not an issue for a regular Arch install, but could be problematic for other distributions (namely those that require symlinks in `/boot/`). See the forum post [here](https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867).
 *   You *must* use the `root=` [kernel parameter](/index.php/Kernel_parameters#Parameter_list "Kernel parameters") in order to boot using this method.
 
-Just like in [#Alternative mount points](#Alternative_mount_points), copy all boot files to a directory on your ESP, but mount the ESP **outside** `/boot` (e.g. `/esp`). Then bind mount the directory:
+Just like in [#Alternative mount points](#Alternative_mount_points), copy all boot files to a directory on your ESP, but mount the ESP **outside** `/boot`. Then bind mount the directory:
 
 ```
-# mount --bind /esp/EFI/arch/ /boot
+# mount --bind *esp*/EFI/arch /boot
 
 ```
 
@@ -101,7 +101,7 @@ After verifying success, edit your [Fstab](/index.php/Fstab "Fstab") to make the
 
  `/etc/fstab` 
 ```
-/esp/EFI/arch /boot none defaults,bind 0 0
+*esp*/EFI/arch /boot none defaults,bind 0 0
 
 ```
 
@@ -135,7 +135,7 @@ ExecStart=/usr/bin/cp -af /boot/initramfs-linux-fallback.img *esp*/EFI/arch/
 
 Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `efistub-update.path`.
 
-**Tip:** For [Secure Boot](/index.php/Secure_Boot "Secure Boot") with your own keys, you can set up the service to also sign the image using [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools): `ExecStart=/usr/bin/sbsign --key */path/to/db.key* --cert */path/to/db.crt* --output *esp*/EFI/arch/vmlinuz-linux *esp*/EFI/arch/vmlinuz_linux` 
+**Tip:** For [Secure Boot](/index.php/Secure_Boot "Secure Boot") with your own keys, you can set up the service to also sign the image using [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools): `ExecStart=/usr/bin/sbsign --key */path/to/db.key* --cert */path/to/db.crt* --output *esp*/EFI/arch/vmlinuz-linux /boot/vmlinuz-linux` 
 
 #### Using incron
 
@@ -183,9 +183,7 @@ HELPEOF
 ```
 #!/usr/bin/env bash
 
-while [[ -d "/proc/$PPID" ]]; do
-	sleep 1
-done
+wait $PPID
 
 cp -af /boot/vmlinuz-linux *esp*/EFI/arch/
 cp -af /boot/initramfs-linux.img *esp*/EFI/arch/

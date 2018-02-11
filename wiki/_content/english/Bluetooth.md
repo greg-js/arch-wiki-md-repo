@@ -133,7 +133,7 @@ The following packages allow for a graphical interface to customize Bluetooth.
 
 [GNOME Bluetooth](https://wiki.gnome.org/Projects/GnomeBluetooth) is [GNOME](/index.php/GNOME "GNOME")'s Bluetooth tool. The [gnome-bluetooth](https://www.archlinux.org/packages/?name=gnome-bluetooth) package provides the back-end, [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) provides the status monitor applet, and [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) provides the configuration front-end GUI that can be accessed by typing Bluetooth on the Activities overview, or with the `gnome-control-center bluetooth` command. You can also launch the `bluetooth-sendto` command directly to send files to a remote device.
 
-To receive files, you must install the [gnome-user-share](https://www.archlinux.org/packages/?name=gnome-user-share) package. You can then go to *Settings -> Sharing* to authorize receiving files from paired devices over Bluetooth.
+To receive files, open the Bluetooth settings panel; you can only receive whilst the Bluetooth panel is open.
 
 **Tip:** To add a Bluetooth entry to the *Send To* menu in Thunar's file properties menu, see instructions [here](http://docs.xfce.org/xfce/thunar/send-to). (The command that needs to be configured is `bluetooth-sendto %F`).
 

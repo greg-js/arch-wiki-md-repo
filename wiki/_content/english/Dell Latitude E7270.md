@@ -4,7 +4,8 @@
 *   [2 Sound](#Sound)
 *   [3 Display](#Display)
 *   [4 Frozen CPU Frequency Scaling](#Frozen_CPU_Frequency_Scaling)
-*   [5 What does not work](#What_does_not_work)
+*   [5 Touchpad](#Touchpad)
+*   [6 What does not work](#What_does_not_work)
 
 ## Hardware Overview
 
@@ -79,6 +80,10 @@ If you experience frequency scaling freezing, i.e. your cpu stays at the lowest 
 7.  start laptop and retest
 
 See also [FS#56866](https://bugs.archlinux.org/task/56866).
+
+## Touchpad
+
+Support for the ALPS touchpad included in Dell E7270 & E7470 was only added in Linux kernel 4.9, with some issues accidentally introduced in 4.13 and then refixed in 4.15\. The fixes were backported to Linux LTS kernels 4.9 & 4.14\. Earlier kernels didn't recognize the touchpad and used it in its emulated PS/2 mode, so changing options (like scroll direction, multi-touch gestures, etc.) was not possible.
 
 ## What does not work
 

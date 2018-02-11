@@ -9,13 +9,12 @@ From the project [home page](https://www.videolan.org/vlc/):
 *   [3 Skins](#Skins)
 *   [4 Web interface](#Web_interface)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 File associations in GNOME](#File_associations_in_GNOME)
-    *   [5.2 Twitch.tv streaming over VLC](#Twitch.tv_streaming_over_VLC)
-    *   [5.3 Playing streamed content from a local DLNA server](#Playing_streamed_content_from_a_local_DLNA_server)
-    *   [5.4 Control using hotkeys or cli](#Control_using_hotkeys_or_cli)
-    *   [5.5 Preventing multiple instances](#Preventing_multiple_instances)
-    *   [5.6 Hardware acceleration support](#Hardware_acceleration_support)
-    *   [5.7 systemd service](#systemd_service)
+    *   [5.1 Twitch.tv streaming over VLC](#Twitch.tv_streaming_over_VLC)
+    *   [5.2 Playing streamed content from a local DLNA server](#Playing_streamed_content_from_a_local_DLNA_server)
+    *   [5.3 Control using hotkeys or cli](#Control_using_hotkeys_or_cli)
+    *   [5.4 Preventing multiple instances](#Preventing_multiple_instances)
+    *   [5.5 Hardware acceleration support](#Hardware_acceleration_support)
+    *   [5.6 systemd service](#systemd_service)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Video broken or other issue after upgrade](#Video_broken_or_other_issue_after_upgrade)
     *   [6.2 Segmentation fault](#Segmentation_fault)
@@ -92,24 +91,6 @@ VLC defaults to port 8080: [http://127.0.0.1:8080](http://127.0.0.1:8080)
 Edit `/usr/share/vlc/lua/http/.hosts` to allow remote connections. You will need to restart VLC in order for changes to take effect.
 
 ## Tips and tricks
-
-### File associations in GNOME
-
-Copy the system desktop file to the local one (local `.desktop` files supersede the global ones):
-
-```
-$ cp /usr/share/applications/vlc.desktop ~/.local/share/applications/
-
-```
-
-Define its mime types (known playback file type abilities) by doing:
-
-```
-sed -i 's|^Mimetype.*$|MimeType=video/dv;video/mpeg;video/x-mpeg;video/msvideo;video/quicktime;video/x-anim;video/x-avi;video/x-ms-asf;video/x-ms-wmv;video/x-msvideo;video/x-nsv;video/x-flc;video/x-fli;application/ogg;application/x-ogg;application/x-matroska;audio/x-mp3;audio/x-mpeg;audio/mpeg;audio/x-wav;audio/x-mpegurl;audio/x-scpls;audio/x-m4a;audio/x-ms-asf;audio/x-ms-asx;audio/x-ms-wax;application/vnd.rn-realmedia;audio/x-real-audio;audio/x-pn-realaudio;application/x-flac;audio/x-flac;application/x-shockwave-flash;misc/ultravox;audio/vnd.rn-realaudio;audio/x-pn-aiff;audio/x-pn-au;audio/x-pn-wav;audio/x-pn-windows-acm;image/vnd.rn-realpix;video/vnd.rn-realvideo;audio/x-pn-realaudio-plugin;application/x-extension-mp4;audio/mp4;video/mp4;video/mp4v-es;x-content/video-vcd;x-content/video-svcd;x-content/video-dvd;x-content/audio-cdda;x-content/audio-player;|' ~/.local/share/applications/vlc.desktop
-
-```
-
-Then in *System Settings > Details > Default Applications* and on the *Video* drop-down menu, select *Open VLC media player*.
 
 ### Twitch.tv streaming over VLC
 

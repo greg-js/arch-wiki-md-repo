@@ -27,21 +27,21 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr). A graphical front end such as [arandr](https://www.archlinux.org/packages/?name=arandr) or [lxrandr](https://www.archlinux.org/packages/?name=lxrandr) is also available.
+[Install](/index.php/Install "Install") [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr). Graphical front ends such as [arandr](https://www.archlinux.org/packages/?name=arandr), [lxrandr](https://www.archlinux.org/packages/?name=lxrandr) or [lxrandr-gtk3](https://www.archlinux.org/packages/?name=lxrandr-gtk3) are also available.
 
 ## Testing configuration
 
-When run without any option, *xrandr* shows the names of different outputs available on the system (`LVDS`, `VGA-0`, etc.) and resolutions available on each, with a ***** after the current one and a **+** after the preferred one :
+When run without any option, *xrandr* shows the names of different outputs available on the system (`VGA-1`, `HDMI-1`, etc.) and resolutions available on each, with a ***** after the current one and a **+** after the preferred one :
 
  `xrandr` 
 ```
-Screen 0: minimum 320 x 200, current 1440 x 900, maximum 8192 x 8192
-VGA disconnected (normal left inverted right x axis y axis)
-LVDS connected (normal left inverted right x axis y axis)
-   1440x900       59.9*+
-   1280x854       59.9  
-   1280x800       59.8  
-...
+Screen 0: minimum 320 x 200, current 3200 x 1080, maximum 8192 x 8192
+VGA-1 disconnected (normal left inverted right x axis y axis)
+HDMI-1 connected primary 1920x1080+0+0 (normal left inverted right x axis y axis) 531mm x 299mm
+   1920x1080     59.93 +  60.00*   50.00    59.94  
+   1920x1080i    60.00    50.00    59.94  
+   1680x1050     59.88  
+…
 
 ```
 
@@ -50,28 +50,28 @@ LVDS connected (normal left inverted right x axis y axis)
 You can use *xrandr* to set different resolution (must be present in the above list) on some output:
 
 ```
-$ xrandr --output LVDS --mode 1280x800
+$ xrandr --output HDMI-1 --mode 1920x1080
 
 ```
 
-When multiple refresh rates are present in the list (**not** in the example above), it may be changed by the `--rate` option, either at the same time or independently. For example:
+When multiple refresh rates are present in the list, it may be changed by the `--rate` option, either at the same time or independently. For example:
 
 ```
-$ xrandr --output LVDS --mode 1280x800 --rate 75
+$ xrandr --output HDMI-1 --mode 1920x1080 --rate 60
 
 ```
 
 The `--auto` option will turn the specified output on if it is off and set the preferred (maximum) resolution:
 
 ```
-$ xrandr --output LVDS --auto
+$ xrandr --output HDMI-1 --auto
 
 ```
 
-It is possible to specify multiple outputs in one command, e.g. to turn off `LVDS` and turn on `HDMI-0` with preferred resolution:
+It is possible to specify multiple outputs in one command, e.g. to turn off `HDMI-1` and turn on `HDMI-2` with preferred resolution:
 
 ```
-$ xrandr --output LVDS --off --output HDMI-0 --auto
+$ xrandr --output HDMI-1 --off --output HDMI-2 --auto
 
 ```
 
@@ -353,12 +353,7 @@ Check your TV if there is a parameter to change. If not, apply an `underscan` an
 
 It may occur that the [Intel](/index.php/Intel "Intel") driver will not configure correctly the output of the HDMI monitor. It will set a limited color range (16-235) using the [Broadcast RGB property](https://patchwork.kernel.org/patch/1972181/), and the black will not look black, it will be grey.
 
-To see if it is your case:
-
-```
-$ xrandr --output HDMI1 --set "Broadcast RGB" "Full"
-
-```
+See [Intel graphics#Weathered colors (color range problem)](/index.php/Intel_graphics#Weathered_colors_.28color_range_problem.29 "Intel graphics").
 
 ## See also
 

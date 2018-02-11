@@ -190,7 +190,7 @@ If that does not work, consult the [#Configuration](#Configuration) section or t
 
 *   Some machines, (like the Dell E6400) may also require the `Front` and `Headphone` channels to be unmuted and adjusted.
 
-*   If your volume adjustments seem to be lost after you reboot, try running alsamixer as root.
+*   If your volume adjustments seem to be lost after you reboot, try running *alsamixer* as root.
 
 ## Configuration
 

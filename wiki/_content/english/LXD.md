@@ -1,20 +1,26 @@
 **[LXD](https://linuxcontainers.org/lxd/)** is a container "hypervisor" and a new user experience for [Linux Containers](/index.php/Linux_Containers "Linux Containers").
 
+Related articles
+
+*   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
+
 ## Contents
 
 *   [1 Setup](#Setup)
     *   [1.1 Required software](#Required_software)
     *   [1.2 Alternative installation method](#Alternative_installation_method)
-    *   [1.3 Accessing LXD as a unprivileged user](#Accessing_LXD_as_a_unprivileged_user)
-    *   [1.4 LXD Networking](#LXD_Networking)
-        *   [1.4.1 Example network configuration](#Example_network_configuration)
+    *   [1.3 Configure LXD](#Configure_LXD)
+    *   [1.4 Accessing LXD as a unprivileged user](#Accessing_LXD_as_a_unprivileged_user)
 *   [2 Basic usage](#Basic_usage)
-    *   [2.1 First steps](#First_steps)
+    *   [2.1 Create container](#Create_container)
 *   [3 Advance usage](#Advance_usage)
-    *   [3.1 Modify processes and files limit](#Modify_processes_and_files_limit)
+    *   [3.1 LXD Networking](#LXD_Networking)
+        *   [3.1.1 Example network configuration](#Example_network_configuration)
+    *   [3.2 Modify processes and files limit](#Modify_processes_and_files_limit)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS)
-    *   [4.2 No ipv4 on unprivileged Arch container](#No_ipv4_on_unprivileged_Arch_container)
+    *   [4.1 Check kernel config](#Check_kernel_config)
+    *   [4.2 Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS)
+    *   [4.3 No ipv4 on unprivileged Arch container](#No_ipv4_on_unprivileged_Arch_container)
 *   [5 See also](#See_also)
 
 ## Setup
@@ -23,13 +29,6 @@
 
 Install [LXC](/index.php/LXC "LXC") and the [lxd](https://aur.archlinux.org/packages/lxd/) package, then [start](/index.php/Start "Start") `lxd.service`.
 
-Verify that the running kernel is properly configured to run a container:
-
-```
-$ lxc-checkconfig
-
-```
-
 See [Linux Containers#Enable support to run unprivileged containers (optional)](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_containers_.28optional.29 "Linux Containers") if you want to run *unprivileged* containers. Otherwise see [#Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS).
 
 ### Alternative installation method
@@ -37,17 +36,16 @@ See [Linux Containers#Enable support to run unprivileged containers (optional)](
 An alternative method of installation is via [snapd](/index.php/Snapd "Snapd"), by installing the [snapd](https://aur.archlinux.org/packages/snapd/) package and running:
 
 ```
-$ sudo snap install lxd
-$ sudo lxd init
-$ sudo usermod -a -G lxd $USER
+# snap install lxd
 
 ```
 
-To test the installation, run:
+### Configure LXD
+
+LXD needs to configure a storage pool, and (if you want internet access) network configuration. To do so, run the following as root:
 
 ```
-$ lxc launch ubuntu:16.04
-$ lxc list
+# lxd init
 
 ```
 
@@ -59,6 +57,26 @@ By default the LXD daemon allows users in the `lxd` group access, so add your us
 # usermod -a -G lxd <user>
 
 ```
+
+## Basic usage
+
+### Create container
+
+LXD has two parts, the daemon (the lxd binary), and the client (the lxc binary). Now that the daemon is all configured and running, you can create a container:
+
+```
+$ lxc launch ubuntu:16.04
+
+```
+
+Alternatively, you can also use a remote LXD host as a source of images. One comes pre-configured in LXD, called "images" (images.linuxcontainers.org)
+
+```
+$ lxc launch images:centos/7/amd64 centos
+
+```
+
+## Advance usage
 
 ### LXD Networking
 
@@ -117,26 +135,6 @@ Finally, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Star
 
 If you encounter issue with the provided example configuration, or have suggestions to improve it, please leave a comment on the [lxd](https://aur.archlinux.org/packages/lxd/) page.
 
-## Basic usage
-
-### First steps
-
-LXD has two parts, the daemon (the lxd binary), and the client (the lxc binary). Now that the daemon is all configured and running, you can create a container:
-
-```
-$ lxc launch ubuntu:14.04
-
-```
-
-Alternatively, you can also use a remote LXD host as a source of images. One comes pre-configured in LXD, called "images" (images.linuxcontainers.org)
-
-```
-$ lxc launch images:centos/7/amd64 centos
-
-```
-
-## Advance usage
-
 ### Modify processes and files limit
 
 You may want to increase file descriptor limit or max user processes limit, since default file descriptor limit is 1024 on Arch Linux.
@@ -152,6 +150,15 @@ TasksMax=infinity
 ```
 
 ## Troubleshooting
+
+### Check kernel config
+
+By default Arch Linux kernel is compiled correctly for Linux Containers and its frontend LXD. However, if you're using a custom kernel, or changed kernel options the kernel might be configured incorrectly. Verify that the running kernel is properly configured to run a container:
+
+```
+$ lxc-checkconfig
+
+```
 
 ### Launching container without CONFIG_USER_NS
 

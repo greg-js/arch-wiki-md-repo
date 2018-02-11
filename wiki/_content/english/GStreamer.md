@@ -43,7 +43,7 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 GStreamer will automatically detect and use the correct API [[1]](https://gstreamer.freedesktop.org/documentation/tutorials/playback/hardware-accelerated-video-decoding.html). Depending on your system you can [install](/index.php/Install "Install"):
 
 *   [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi) for VA-API support.
-*   [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) for VDPAU and NVDEC support. (NVDEC will be available from [version 1.13.1 onwards](https://bugzilla.gnome.org/show_bug.cgi?id=781537))
+*   [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) for VDPAU and NVDEC support. (NVDEC is [currently broken](https://bugzilla.gnome.org/show_bug.cgi?id=791724))
 
 **Note:** Enabling VA-API support on computers with Intel GPUs may cause issues with thumbnailing of video files. See [GNOME Files#Thumbnailing not working for video files](/index.php/GNOME_Files#Thumbnailing_not_working_for_video_files "GNOME Files") for details.
 

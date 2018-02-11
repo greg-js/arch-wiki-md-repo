@@ -562,7 +562,7 @@ The following mtrack options work well on a MacBook7,1:
 
 ```
 
-Probably you need also to add:
+Probably, you also need to add:
 
 ```
  MatchDevicePath "/dev/input/event10"

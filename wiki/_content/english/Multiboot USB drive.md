@@ -81,7 +81,7 @@ For UEFI, the partition has to be the first one in an MBR partition table and fo
 
 #### Hybrid UEFI GPT + BIOS GPT/MBR boot
 
-This configuration is useful for creating an universal USB key, bootable everywhere. First of all you must create a [GPT](/index.php/GPT "GPT") partition table on your device. You need at least 3 partitions:
+This configuration is useful for creating a universal USB key, bootable everywhere. First of all you must create a [GPT](/index.php/GPT "GPT") partition table on your device. You need at least 3 partitions:
 
 1.  A BIOS boot partition (type EF02)
 2.  An EFI System partition (type EF00 with a [FAT32 filesystem](/index.php/EFI_System_Partition#Format_the_partition "EFI System Partition"))
@@ -240,7 +240,7 @@ Using the [memdisk](http://www.syslinux.org/wiki/index.php/MEMDISK) module, the 
 
 ### Preparation
 
-Make sure that the USB drive is properly [partitioned](/index.php/Partitioning "Partitioning") and that there is a partition with [file system](/index.php/File_system "File system") supported by Syslinux, for example fat32 or ext4\. Then install Syslinux to this partition, see [Syslinux#Installation](/index.php/Syslinux#Installation "Syslinux").
+Make sure that the USB drive is properly [partitioned](/index.php/Partitioning "Partitioning") and that there is a partition with [file system](/index.php/File_system "File system") supported by Syslinux, for example fat32 or ext4\. Then install Syslinux to this partition, see [Syslinux#Installation on BIOS](/index.php/Syslinux#Installation_on_BIOS "Syslinux").
 
 ### Install the memdisk module
 

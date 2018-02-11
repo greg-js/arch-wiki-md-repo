@@ -165,7 +165,7 @@
 
 *   **hashdeep** — Кроссплатформенная утилита для вычисления хэшей и контрольных сумм любого количества файлов
 
-	[http://md5deep.sourceforge.net/](http://md5deep.sourceforge.net/) || [hashdeep](https://aur.archlinux.org/packages/hashdeep/)
+	[http://md5deep.sourceforge.net/](http://md5deep.sourceforge.net/) || [hashdeep](https://www.archlinux.org/packages/?name=hashdeep)
 
 *   **MassHash** — Набор инструментов для работы с хэшами файлов (с интерфейсами CLI и GTK+ GUI), написанный на [python](/index.php/Python_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Python (Русский)"). Поддерживает алгоритмы MD5, SHA-1, SHA-224, SHA-256, SHA-384 и SHA-512
 

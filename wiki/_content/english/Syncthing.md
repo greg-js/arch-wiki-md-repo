@@ -91,7 +91,7 @@ In the typical case several machines, like laptops and androids, share a local a
 
 [inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") *(inode notify)* is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications. The inotify functionality is integrated in Syncthing and can be enabled in the advanced configuration menu for individual folders. The setting is located at: *Actions* > *Advanced* > (click on the folder button you want) > *FS Watcher Enabled*. It is expected to be exposed in the folder configuration UI in the near future.
 
-Alternatively, inotify support is provided by [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) (which does not depend on the now unmaintained [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify)) but in this case inotify will only work while the GUI is running.
+Alternatively, inotify support is provided by [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) but in this case inotify will only work while the GUI is running.
 
 **Tip:** To prevent errors like *Too many open files*, increase the default `fs.inotify.max_user_watches` value, by [appending](/index.php/Append "Append") the following line: `/etc/sysctl.d/40-max-user-watches.conf`  `fs.inotify.max_user_watches=524288` 
 
@@ -135,7 +135,7 @@ After=network.target
 [Service]
 User=syncthing
 Group=syncthing
-ExecStart=/usr/bin/syncthing-discosrv -db-dsn /var/discosrv/discosrv.db -cert /var/discosrv/cert.pem -key /var/discosrv/key.pem -listen :8443"
+ExecStart=/usr/bin/syncthing-discosrv -db-dsn /var/discosrv/discosrv.db -cert /var/discosrv/cert.pem -key /var/discosrv/key.pem
 Restart=on-failure
 SuccessExitStatus=2
 
@@ -171,7 +171,7 @@ It is possible to have Syncthing connect both locally and globally within a [Vir
 
 To enable this mode, Syncthing should listen to a port in the VM different from the listening port already used by the host. For example, if the default 22000 port is used by the host, one could use 22001 in the VM. The listening port in the VM can be changed through Syncthing's [Sync Protocol Listen Addresses](https://docs.syncthing.net/users/config.html#listen-addresses) to `tcp://:22001` in the GUI *Settings*.
 
-The 22001/TCP port of the host will need to be forwarded to the guest in this configuration. This can be done with the following command:
+The 22001/TCP port of the host must be forwarded to the guest in this configuration. This can be done with the following command:
 
 ```
 $ VBoxManage modifyvm *myvmname* --natpf1 "syncthing,tcp,,22001,,22001"

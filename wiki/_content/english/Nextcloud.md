@@ -57,6 +57,7 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
     *   [7.11 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
     *   [7.12 "Reading from keychain failed with error: 'No keychain service available'"](#.22Reading_from_keychain_failed_with_error:_.27No_keychain_service_available.27.22)
     *   [7.13 FolderSync: "Method Not Allowed"](#FolderSync:_.22Method_Not_Allowed.22)
+    *   [7.14 Nextcloud 13 : "Unable to load dynamic library 'mcrypt.so"](#Nextcloud_13_:_.22Unable_to_load_dynamic_library_.27mcrypt.so.22)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
     *   [8.2 Docker](#Docker)
@@ -112,9 +113,7 @@ See also [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman")
 
 ### PHP setup
 
-**Note:** Nextcloud does not support PHP 7.2+ as of version 12.0.5\. [[1]](https://github.com/nextcloud/server/issues/6786) Until version 13 is released, [install](/index.php/Install "Install") the [php71](https://www.archlinux.org/packages/?name=php71) package or update to [nextcloud-testing](https://aur.archlinux.org/packages/nextcloud-testing/).
-
-**Tip:** For all prerequisite PHP modules, see upstream documentation: [Nextcloud 12.0](https://docs.nextcloud.com/server/12/admin_manual/installation/source_installation.html#prerequisites-label).
+**Tip:** For all prerequisite PHP modules, see upstream documentation: [Nextcloud 13.0](https://docs.nextcloud.com/server/13/admin_manual/installation/source_installation.html#prerequisites-label).
 
 Install [PHP#gd](/index.php/PHP#gd "PHP") and [php-intl](https://www.archlinux.org/packages/?name=php-intl) as additional modules.
 
@@ -126,7 +125,7 @@ Depending on which database backend will be used:
 *   For [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), see [PHP#PostgreSQL](/index.php/PHP#PostgreSQL "PHP").
 *   For [SQLite](/index.php/SQLite "SQLite"), see [PHP#Sqlite](/index.php/PHP#Sqlite "PHP").
 
-Performance may be improved through the implementation of [caching](/index.php/PHP#Caching "PHP"), see [Configuring Memory Caching](https://docs.nextcloud.com/server/12/admin_manual/configuration_server/caching_configuration.html) on the official documentation for details.
+Performance may be improved through the implementation of [caching](/index.php/PHP#Caching "PHP"), see [Configuring Memory Caching](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/caching_configuration.html) on the official documentation for details.
 
 ### Database setup
 
@@ -134,7 +133,7 @@ An SQL database must be setup and used for your Nextcloud installation. After se
 
 #### MariaDB
 
-**Note:** It's is highly recommended to set `binlog_format` to *mixed* [[2]](https://docs.nextcloud.com/server/12/admin_manual/configuration_database/linux_database_configuration.html#db-binlog-label) in `/etc/mysql/my.cnf`.
+**Note:** It's is highly recommended to set `binlog_format` to *mixed* [[1]](https://docs.nextcloud.com/server/12/admin_manual/configuration_database/linux_database_configuration.html#db-binlog-label) in `/etc/mysql/my.cnf`.
 
 The following is an example of setting up a [MariaDB](/index.php/MariaDB "MariaDB") database and user:
 
@@ -195,7 +194,7 @@ Now restart Apache (`httpd.service`).
 
 ##### WebDAV
 
-Nextcloud comes with its own [WebDAV](/index.php/WebDAV "WebDAV") implementation enabled, which may conflict with the one shipped with Apache. If you have enabled WebDAV in Apache (not enabled by default), disable the modules `mod_dav` and `mod_dav_fs` in `/etc/httpd/conf/httpd.conf`. See [[3]](https://forum.owncloud.org/viewtopic.php?f=17&t=7240) for details.
+Nextcloud comes with its own [WebDAV](/index.php/WebDAV "WebDAV") implementation enabled, which may conflict with the one shipped with Apache. If you have enabled WebDAV in Apache (not enabled by default), disable the modules `mod_dav` and `mod_dav_fs` in `/etc/httpd/conf/httpd.conf`. See [[2]](https://forum.owncloud.org/viewtopic.php?f=17&t=7240) for details.
 
 #### Nginx
 
@@ -632,7 +631,7 @@ Then import `CA.der.crt` to your Android device:
 
 Put the `CA.der.crt` file onto the sdcard of your Android device (usually to the internal one, e.g. save from a mail attachment). It should be in the root directory. Go to *Settings > Security > Credential storage* and select *Install from device storage*. The `.crt` file will be detected and you will be prompted to enter a certificate name. After importing the certificate, you will find it in *Settings > Security > Credential storage > Trusted credentials > User*.
 
-Thanks to: [[4]](http://www.leftbrainthings.com/2013/10/13/creating-and-importing-self-signed-certificate-to-android-device/)
+Thanks to: [[3]](http://www.leftbrainthings.com/2013/10/13/creating-and-importing-self-signed-certificate-to-android-device/)
 
 Another way is to import the certificate directly from your server via [CAdroid](https://play.google.com/store/apps/details?id=at.bitfire.cadroid) and follow the instructions there.
 
@@ -688,7 +687,7 @@ This should delete the relevant configuration from the table and add it again.
 
 ### GUI sync client fails to connect
 
-If using HTTP basic authentication, make sure to exclude "status.php", which must be publicly accessible. [[5]](https://github.com/owncloud/mirall/issues/734)
+If using HTTP basic authentication, make sure to exclude "status.php", which must be publicly accessible. [[4]](https://github.com/owncloud/mirall/issues/734)
 
 ### Some files upload, but give an error 'Integrity constraint violation...'
 
@@ -791,6 +790,35 @@ FolderSync needs access to `/owncloud/remote.php/webdav`, so you could create an
     Alias /nextcloud /usr/share/webapps/nextcloud/
     Alias /owncloud /usr/share/webapps/nextcloud/
   </IfModule>
+
+```
+
+### Nextcloud 13 : "Unable to load dynamic library 'mcrypt.so"
+
+Starting with php 7.2 the extension mcrypt was removed.[[5]](https://wiki.php.net/rfc/mcrypt-viking-funeral)
+
+To fix the error about mcrypt in Nextcloud logs, a version of this extension compatible with php 7.2 can be installed via PECL.
+
+1\. Install [php-pear](https://wiki.php.net/rfc/mcrypt-viking-funeral/) if you don't have it already
+
+2\. Update PECL channels
+
+```
+# pecl channel-update pecl.php.net
+
+```
+
+3\. Install mcrypt 1.0.1
+
+```
+# pecl install mcrypt-1.0.1
+
+```
+
+4\. Uncomment this line in /etc/php/php.conf
+
+```
+;extension=mcrypt.so
 
 ```
 

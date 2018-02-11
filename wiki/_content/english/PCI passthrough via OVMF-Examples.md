@@ -12,6 +12,7 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
     *   [1.5 Skeen's Virtual Gaming Rack Machine](#Skeen.27s_Virtual_Gaming_Rack_Machine)
     *   [1.6 droserasprout poor man's setup](#droserasprout_poor_man.27s_setup)
     *   [1.7 prauat: 2xIntel(R) Xeon(R) CPU E5-2609 v4, 2xGigabyte GeForce GTX 1060 6GB G1 Gaming, Intel S2600CWTR](#prauat:_2xIntel.28R.29_Xeon.28R.29_CPU_E5-2609_v4.2C_2xGigabyte_GeForce_GTX_1060_6GB_G1_Gaming.2C_Intel_S2600CWTR)
+    *   [1.8 Dinkonin's virtual gaming/work setup](#Dinkonin.27s_virtual_gaming.2Fwork_setup)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
@@ -215,7 +216,30 @@ Configuration:
 *   Using **libvirt/QEMU**: [https://github.com/prauat/passvm/blob/master/generic.xml](https://github.com/prauat/passvm/blob/master/generic.xml)
 *   Most important:
 *   When using nvidia driver hide virtualization to guest <kvm><hidden state='on'/></kvm>
-*   Configuration works with Arch Linux guest os, still work in progress
+*   Configuration works with Arch Linux guest os, still work in progress.
+
+### Dinkonin's virtual gaming/work setup
+
+Hardware:
+
+*   **CPU**: Intel(R) Core(TM) i7-7700K CPU @ 4.60GHz
+*   **Motherboard**: MSI Z270 GAMING PRO CARBON (MS-7A63) BIOS Version: 1.80
+*   **GPU**: 1x Gigabyte GeForce GTX 1050 2GB (host), 1x MSI GeForce 1080 AERO 8GB(guest)
+*   **RAM**: 32GB DDR4
+
+Configuration:
+
+*   **Kernel**: Kernel version linux 4.15.2-2-ARCH.
+*   Using **libvirt/QEMU (patched from AUR) with OVMF**
+*   Installed qemu-patched from AUR because of crackling/delayed sound with pulseaduio (still hear ocasional pops/clicks while gaming.
+*   Patched video bios with [https://github.com/Matoking/NVIDIA-vBIOS-VFIO-Patcher](https://github.com/Matoking/NVIDIA-vBIOS-VFIO-Patcher), because of error:
+
+```
+vfio-pci 0000:01:00.0: Invalid PCI ROM header signature: expecting 0xaa55, got 0xffff
+
+```
+
+*   Single monitor setup, implemented full software KVM(for host and guest) described here: [https://rokups.github.io/#!pages/full-software-kvm-switch.md](https://rokups.github.io/#!pages/full-software-kvm-switch.md)
 
 ## Adding your own setup
 

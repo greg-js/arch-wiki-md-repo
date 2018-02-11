@@ -59,7 +59,10 @@
             *   [1.5.3.5 XMPP servers](#XMPP_servers)
             *   [1.5.3.6 SIP clients](#SIP_clients)
             *   [1.5.3.7 SIP servers](#SIP_servers)
-            *   [1.5.3.8 Other](#Other_3)
+            *   [1.5.3.8 Matrix clients and servers](#Matrix_clients_and_servers)
+            *   [1.5.3.9 Tox clients](#Tox_clients)
+            *   [1.5.3.10 Mumble clients and servers](#Mumble_clients_and_servers)
+            *   [1.5.3.11 Other](#Other_3)
     *   [1.6 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
         *   [1.6.1 News aggregators](#News_aggregators)
             *   [1.6.1.1 Console](#Console_8)
@@ -993,6 +996,10 @@ The number of networks supported by these clients is very large but they (like a
 
 	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
 
+*   **EKG2** — Ncurses based XMPP, Gadu-Gadu, ICQ and IRC client.
+
+	[http://en.ekg2.org/](http://en.ekg2.org/) || [ekg2](https://aur.archlinux.org/packages/ekg2/)
+
 *   **[Finch](/index.php/Pidgin "Pidgin")** — Ncurses-based chat client that uses libpurple and supports all its protocols (Bonjour, Gadu-Gadu, Groupwise, ICQ, IRC, SIMPLE, XMPP, Zephyr).
 
 	[http://developer.pidgin.im/wiki/Using%20Finch](http://developer.pidgin.im/wiki/Using%20Finch) || [finch](https://www.archlinux.org/packages/?name=finch)
@@ -1019,9 +1026,13 @@ The number of networks supported by these clients is very large but they (like a
 
 	[http://pidgin.im/](http://pidgin.im/) || [pidgin](https://www.archlinux.org/packages/?name=pidgin)
 
-*   **qutIM** — Simple and user-friendly IM supporting ICQ, Jabber, Mail.Ru, IRC and VKontakte messaging.
+*   **qutIM** — Simple and user-friendly IM supporting ICQ, XMPP, Mail.Ru, IRC and VKontakte messaging.
 
 	[http://qutim.org/](http://qutim.org/) || [qutim](https://aur.archlinux.org/packages/qutim/)
+
+*   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Cross-platform IRC client that also supports Twitter and XMPP.
+
+	[https://smuxi.im/](https://smuxi.im/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
 
 *   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — Feature-rich email client supports instant messaging and chat using IRC, XMPP and Twitter.
 
@@ -1099,10 +1110,6 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[http://quassel-irc.org/](http://quassel-irc.org/) || [quassel-monolithic](https://www.archlinux.org/packages/?name=quassel-monolithic)
 
-*   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Cross-platform IRC client that also supports Twitter and XMPP.
-
-	[https://smuxi.im/](https://smuxi.im/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
-
 ##### IRC servers
 
 See also [Wikipedia:Comparison of Internet Relay Chat daemons](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_daemons "wikipedia:Comparison of Internet Relay Chat daemons").
@@ -1129,15 +1136,15 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 ###### Console
 
-*   **Freetalk** — Console-based Jabber client.
+*   **Freetalk** — Console-based XMPP client.
 
 	[https://www.gnu.org/software/freetalk/](https://www.gnu.org/software/freetalk/) || [freetalk](https://aur.archlinux.org/packages/freetalk/)
 
-*   **jabber.el** — Minimal Jabber client for [Emacs](/index.php/Emacs "Emacs").
+*   **jabber.el** — Minimal XMPP client for [Emacs](/index.php/Emacs "Emacs").
 
 	[http://emacs-jabber.sourceforge.net/](http://emacs-jabber.sourceforge.net/) || [emacs-jabber](https://aur.archlinux.org/packages/emacs-jabber/)
 
-*   **[MCabber](https://en.wikipedia.org/wiki/MCabber "wikipedia:MCabber")** — Small Jabber console client, includes features: SSL, PGP, MUC, OTR and UTF8.
+*   **[MCabber](https://en.wikipedia.org/wiki/MCabber "wikipedia:MCabber")** — Small XMPP console client, includes features: SSL, PGP, MUC, OTR and UTF8.
 
 	[https://mcabber.com/](https://mcabber.com/) || [mcabber](https://www.archlinux.org/packages/?name=mcabber)
 
@@ -1145,7 +1152,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 	[https://poez.io/](https://poez.io/) || [poezio](https://aur.archlinux.org/packages/poezio/)
 
-*   **Profanity** — A console based Jabber client inspired by Irssi.
+*   **Profanity** — A console based XMPP client inspired by Irssi.
 
 	[http://profanity.im/](http://profanity.im/) || [profanity](https://www.archlinux.org/packages/?name=profanity)
 
@@ -1171,9 +1178,17 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 	[https://gajim.org/](https://gajim.org/) || [gajim](https://www.archlinux.org/packages/?name=gajim)
 
+*   **[Kadu](https://en.wikipedia.org/wiki/Kadu_(software) "wikipedia:Kadu (software)")** — Qt-based XMPP and Gadu-Gadu client.
+
+	[http://www.kadu.im/](http://www.kadu.im/) || [kadu](https://aur.archlinux.org/packages/kadu/)
+
 *   **Licq** — Instant messaging client for UNIX supporting ICQ and XMPP.
 
 	[http://licq.org/](http://licq.org/) || [licq](https://www.archlinux.org/packages/?name=licq)
+
+*   **Nextcloud JavaScript XMPP Client** — Chat app for Nextcloud with XMPP, end-to-end encryption, video calls, file transfer & group chat.
+
+	[https://github.com/nextcloud/jsxc.nextcloud](https://github.com/nextcloud/jsxc.nextcloud) || [nextcloud-app-jsxc](https://aur.archlinux.org/packages/nextcloud-app-jsxc/)
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt-based XMPP client with audio/video support.
 
@@ -1215,9 +1230,17 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 
 	[http://www.ekiga.org/](http://www.ekiga.org/) || [ekiga](https://www.archlinux.org/packages/?name=ekiga)
 
-*   **[Linphone](https://en.wikipedia.org/wiki/Linphone "wikipedia:Linphone")** — VoIP phone application for communicating freely with people over the internet, with voice, video, and text instant messaging.
+*   **[Linphone](https://en.wikipedia.org/wiki/Linphone "wikipedia:Linphone")** — VoIP phone application (SIP client) for communicating freely with people over the internet, with voice, video, and text instant messaging.
 
 	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://aur.archlinux.org/packages/linphone/)
+
+*   **[Ring](/index.php/Ring "Ring")** — SIP-compatible softphone and instant messenger (formerly known as SFLphone).
+
+	[https://ring.cx/](https://ring.cx/) || [ring-gnome](https://www.archlinux.org/packages/?name=ring-gnome)
+
+*   **[Ring](/index.php/Ring "Ring") KDE** — SIP-compatible softphone and instant messenger (KDE client).
+
+	[https://cgit.kde.org/ring-kde.git/](https://cgit.kde.org/ring-kde.git/) || [ring-kde](https://aur.archlinux.org/packages/ring-kde/)
 
 *   **[Twinkle](https://en.wikipedia.org/wiki/Twinkle_(software) "wikipedia:Twinkle (software)")** — Qt softphone for VoIP and IM communication using SIP.
 
@@ -1241,27 +1264,61 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 
 	[https://www.resiprocate.org/About_Repro](https://www.resiprocate.org/About_Repro) || [repro](https://aur.archlinux.org/packages/repro/)
 
-##### Other
+##### Matrix clients and servers
 
-*   **BeeBEEP** — Secure LAN Messenger.
+See also [Matrix](/index.php/Matrix "Matrix").
 
-	[http://beebeep.sourceforge.net/](http://beebeep.sourceforge.net/) || [beebeep](https://aur.archlinux.org/packages/beebeep/)
+*   **Fractal** — Matrix client for GNOME written in Rust.
 
-*   **[Discord](https://en.wikipedia.org/wiki/Discord_(software) "wikipedia:Discord (software)")** — All-in-one voice and text chat for gamers that’s free, secure, and works on both your desktop and phone.
+	[https://wiki.gnome.org/Fractal](https://wiki.gnome.org/Fractal) || [fractal](https://www.archlinux.org/packages/?name=fractal)
 
-	[https://discordapp.com/](https://discordapp.com/) || [discord](https://aur.archlinux.org/packages/discord/)
+*   **nheko** — Desktop client for the Matrix protocol.
 
-*   **GameVox** — Voice communication for your gaming community, partly based on Mumble source code.
+	[https://github.com/mujx/nheko](https://github.com/mujx/nheko) || [nheko-git](https://aur.archlinux.org/packages/nheko-git/)
 
-	[https://www.gamevox.com/](https://www.gamevox.com/) || [gamevox](https://aur.archlinux.org/packages/gamevox/)
+*   **Quaternion** — Qt5-based IM client for the Matrix protocol.
 
-*   **Hangups** — A third-party instant messaging client for Google Hangouts
+	[https://github.com/QMatrixClient/Quaternion](https://github.com/QMatrixClient/Quaternion) || [quaternion](https://aur.archlinux.org/packages/quaternion/)
 
-	[https://github.com/tdryer/hangups](https://github.com/tdryer/hangups) || [hangups-git](https://aur.archlinux.org/packages/hangups-git/)
+*   **Riot** — Glossy Matrix client with an emphasis on performance and usability.
 
-*   **iptux** — LAN communication software, compatible with IP Messenger.
+	[https://about.riot.im/](https://about.riot.im/) || desktop app: [riot-desktop](https://www.archlinux.org/packages/?name=riot-desktop), webapp: [riot-web](https://www.archlinux.org/packages/?name=riot-web)
 
-	[https://github.com/iptux-src/iptux](https://github.com/iptux-src/iptux) || [iptux](https://aur.archlinux.org/packages/iptux/)
+*   **[Synapse](/index.php/Matrix "Matrix")** — Reference homeserver for the Matrix protocol.
+
+	[https://github.com/matrix-org/synapse](https://github.com/matrix-org/synapse) || [matrix-synapse](https://www.archlinux.org/packages/?name=matrix-synapse)
+
+*   **Tensor** — Qt5/QML-based Matrix client.
+
+	[https://github.com/davidar/tensor](https://github.com/davidar/tensor) || [tensor-git](https://aur.archlinux.org/packages/tensor-git/)
+
+##### Tox clients
+
+See also [Tox](/index.php/Tox "Tox").
+
+*   **qTox** — Powerful Tox client written in C++/Qt that follows the Tox design guidelines.
+
+	[https://qtox.github.io/](https://qtox.github.io/) || [qtox](https://www.archlinux.org/packages/?name=qtox)
+
+*   **Ricin** — Dead-simple but powerful Tox client.
+
+	[https://github.com/RicinApp/Ricin](https://github.com/RicinApp/Ricin) || [ricin](https://aur.archlinux.org/packages/ricin/)
+
+*   **Toxic** — ncurses-based Tox client
+
+	[https://github.com/Jfreegman/toxic](https://github.com/Jfreegman/toxic) || [toxic](https://www.archlinux.org/packages/?name=toxic)
+
+*   **Toxygen** — Tox client written in pure Python3.
+
+	[https://github.com/toxygen-project/toxygen](https://github.com/toxygen-project/toxygen) || [toxygen-git](https://aur.archlinux.org/packages/toxygen-git/)
+
+*   **µTox** — Lightweight Tox client
+
+	[https://utox.io/](https://utox.io/) || [utox](https://www.archlinux.org/packages/?name=utox)
+
+##### Mumble clients and servers
+
+See also [Mumble](/index.php/Mumble "Mumble").
 
 *   **[Mumble](/index.php/Mumble "Mumble")** — Voice chat application similar to TeamSpeak.
 
@@ -1271,33 +1328,79 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 
 	[http://mumble.sourceforge.net/](http://mumble.sourceforge.net/) || [murmur](https://www.archlinux.org/packages/?name=murmur)
 
+*   **uMurmur** — Minimalistic Mumble server.
+
+	[http://umurmur.net/](http://umurmur.net/) || [umurmur](https://www.archlinux.org/packages/?name=umurmur)
+
+##### Other
+
+*   **BeeBEEP** — Secure LAN Messenger.
+
+	[http://beebeep.sourceforge.net/](http://beebeep.sourceforge.net/) || [beebeep](https://aur.archlinux.org/packages/beebeep/)
+
+*   **[Bitmessage](/index.php/Bitmessage "Bitmessage")** — Decentralized and trustless P2P communications protocol for sending encrypted messages to another person or to many subscribers.
+
+	[https://bitmessage.org/](https://bitmessage.org/) || [pybitmessage](https://aur.archlinux.org/packages/pybitmessage/)
+
+*   **Caprine** — Unofficial Facebook Messenger app.
+
+	[https://github.com/sindresorhus/caprine](https://github.com/sindresorhus/caprine) || [caprine](https://www.archlinux.org/packages/?name=caprine)
+
+*   **[Discord](https://en.wikipedia.org/wiki/Discord_(software) "wikipedia:Discord (software)")** — Proprietary all-in-one voice and text chat application for gamers that’s free, secure, and works on both your desktop and phone.
+
+	[https://discordapp.com/](https://discordapp.com/) || [discord](https://aur.archlinux.org/packages/discord/)
+
+*   **Hangups** — A third-party instant messaging client for Google Hangouts
+
+	[https://github.com/tdryer/hangups](https://github.com/tdryer/hangups) || [hangups-git](https://aur.archlinux.org/packages/hangups-git/)
+
+*   **[ICQ](https://en.wikipedia.org/wiki/ICQ "wikipedia:ICQ")** — Official ICQ client for Linux.
+
+	[https://icq.com/linux/](https://icq.com/linux/) || [icqdesktop-bin](https://aur.archlinux.org/packages/icqdesktop-bin/)
+
+*   **iptux** — LAN communication software, compatible with IP Messenger.
+
+	[https://github.com/iptux-src/iptux](https://github.com/iptux-src/iptux) || [iptux](https://aur.archlinux.org/packages/iptux/)
+
+*   **Messenger for Desktop** — Simple and beautiful app for Facebook Messenger.
+
+	[https://messengerfordesktop.com/](https://messengerfordesktop.com/) || [messengerfordesktop](https://www.archlinux.org/packages/?name=messengerfordesktop)
+
+*   **Nextcloud Talk** — Video- and audio-conferencing app for Nextcloud.
+
+	[https://github.com/nextcloud/spreed](https://github.com/nextcloud/spreed) || [nextcloud-app-spreed](https://aur.archlinux.org/packages/nextcloud-app-spreed/)
+
 *   **Qualia LAN Messenger** — P2P chat application for intranet communication and does not require a server. A variety of handy features are supported including notifications, personal and group messaging with encryption, file transfer and message logging.
 
 	[http://lanmsngr.sourceforge.net/](http://lanmsngr.sourceforge.net/) || [lmc](https://aur.archlinux.org/packages/lmc/)
+
+*   **[RetroShare](/index.php/RetroShare "RetroShare")** — Serverless encrypted instant messenger with filesharing, chatgroups, mail.
+
+	[http://retroshare.net/](http://retroshare.net/) || [retroshare](https://aur.archlinux.org/packages/retroshare/)
 
 *   **Ricochet** — Anonymous peer-to-peer instant messaging system built on [Tor](/index.php/Tor "Tor") hidden services.
 
 	[https://ricochet.im/](https://ricochet.im/) || [ricochet](https://aur.archlinux.org/packages/ricochet/)
 
-*   **[Ring](https://en.wikipedia.org/wiki/Ring_(software) "wikipedia:Ring (software)")** — Open-source SIP/IAX2 compatible softphone with PulseAudio support (formerly known as SFLphone).
+*   **Signal** — Signal Private Messenger for the Desktop.
 
-	[https://ring.cx/](https://ring.cx/) || [ring-daemon](https://www.archlinux.org/packages/?name=ring-daemon)
+	[https://github.com/signalapp/Signal-Desktop](https://github.com/signalapp/Signal-Desktop) || [signal](https://aur.archlinux.org/packages/signal/)
 
-*   **[Skype](/index.php/Skype "Skype")** — Popular but proprietary application for voice and video communication.
+*   **Skype** — Popular but proprietary application for voice and video communication.
 
-	[https://www.skype.com/](https://www.skype.com/) || [skypeforlinux-stable-bin](https://aur.archlinux.org/packages/skypeforlinux-stable-bin/) or [skypeforlinux-preview-bin](https://aur.archlinux.org/packages/skypeforlinux-preview-bin/)
+	[https://www.skype.com/](https://www.skype.com/) || [skypeforlinux-stable-bin](https://aur.archlinux.org/packages/skypeforlinux-stable-bin/)
 
-*   **Synapse** — Reference homeserver for the matrix protocol.
+*   **Spreed WebRTC** — WebRTC audio/video call and conferencing server.
 
-	[https://github.com/matrix-org/synapse](https://github.com/matrix-org/synapse) || [matrix-synapse](https://www.archlinux.org/packages/?name=matrix-synapse)
+	[https://github.com/strukturag/spreed-webrtc](https://github.com/strukturag/spreed-webrtc) || [spreed-webrtc-server](https://aur.archlinux.org/packages/spreed-webrtc-server/)
 
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Proprietary VoIP application with gamers as its target audience.
 
 	[http://www.teamspeak.com/](http://www.teamspeak.com/) || [teamspeak3](https://www.archlinux.org/packages/?name=teamspeak3)
 
-*   **[Tox](/index.php/Tox "Tox")** — Tox is a distributed, secure messenger with audio and video chat capabilities.
+*   **[Telegram Desktop](/index.php/Telegram "Telegram")** — Official Telegram desktop client.
 
-	[https://tox.chat/](https://tox.chat/) || see [Tox](/index.php/Tox "Tox")
+	[https://desktop.telegram.org/](https://desktop.telegram.org/) || [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop)
 
 ### News, RSS, and blogs
 

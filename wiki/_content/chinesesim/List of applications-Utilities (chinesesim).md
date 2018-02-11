@@ -341,7 +341,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[https://wiki.github.com/nonstop/termit/](https://wiki.github.com/nonstop/termit/) || [termit](https://aur.archlinux.org/packages/termit/)
 
-*   **[Termite](/index.php/Termite "Termite")** — 适合命令行控，转为平铺式窗口管理器打造，还有 Tab 机制。
+*   **[Termite](/index.php/Termite "Termite")** — 适合命令行控，专为平铺式窗口管理器打造，还有 Tab 机制。
 
 	[https://github.com/thestinger/termite](https://github.com/thestinger/termite) || [termite](https://www.archlinux.org/packages/?name=termite)
 

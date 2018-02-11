@@ -250,7 +250,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **hashdeep** — 可对多文件计算 Hash, 生成摘记，跨平台的工具。
 
-	[http://md5deep.sourceforge.net/](http://md5deep.sourceforge.net/) || [hashdeep](https://aur.archlinux.org/packages/hashdeep/)
+	[http://md5deep.sourceforge.net/](http://md5deep.sourceforge.net/) || [hashdeep](https://www.archlinux.org/packages/?name=hashdeep)
 
 *   **Parano** — 用于生成、编辑和校验 MD5 和 SFV 文件的 GNOME 前端
 

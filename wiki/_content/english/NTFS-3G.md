@@ -29,7 +29,7 @@ The Linux kernel only supports reading Microsoft's NTFS file system. [NTFS-3G](h
 
 ## Manual mounting
 
-Two options exist for manually mounting NTFS partitions. The traditional:
+Two options exist when manually mounting NTFS partitions. The traditional:
 
 ```
 # mount /dev/*your_NTFS_partition* */mount/point*
@@ -64,7 +64,7 @@ Your NTFS partition(s) can be setup to mount automatically, or pre-configured to
 
 ### Default settings
 
-Using the default settings will mount the NTFS partition(s) at boot. With this method, **if** the parent folder that it is mounted upon has the proper user or group [permissions](/index.php/Users_and_groups "Users and groups"), then that user or group will be able to read and write on that partition(s).
+Using the default settings will mount the NTFS partition(s) at boot. With this method, **if** the parent folder that it is mounted upon has the proper user or group [permissions](/index.php/Users_and_groups "Users and groups") (e.g. /run/media/<username>/), then that user or group will be able to read and write on that partition(s).
 
 Put this in `/etc/fstab`:
 
@@ -203,7 +203,7 @@ read-only with the 'ro' mount option.
 
 The problem is due to a feature introduced in Windows 8 called "fast startup". When fast startup is enabled, part of the metadata of all mounted partitions are restored to the state they were at the previous closing down. As a consequence, changes made on Linux may be lost. This can happen to any NTFS partition when selecting "Shut down" or "Hibernate" under Windows 8 or 10\. Leaving Windows by selecting "Restart", however, is apparently safe.
 
-To enable writing to the partitions on other operating systems, be sure fast restart is disabled. This can be achieved by issuing as an administrator the command:
+To enable writing to the partitions on other operating systems, be sure fast startup is disabled. This can be achieved by issuing as an administrator the command:
 
 ```
 powercfg /h off

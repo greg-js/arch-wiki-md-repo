@@ -17,7 +17,7 @@
 
 ### Lunar
 
-ROS Lunar is available in AUR packages and seems to be working quite nicely. The [ros-lunar-desktop-full](https://aur.archlinux.org/packages/ros-lunar-desktop-full/) is complete and seems to have everything functional. The [ros-lunar-ros-core](https://aur.archlinux.org/packages/ros-lunar-ros-core/) is smaller and already provides rospy, roscpp, publisher, subscriber, services, launch files, and other core ROS functionality.
+ROS Lunar is available in AUR packages and seems to be working quite nicely. The [ros-lunar-desktop-full](https://aur.archlinux.org/packages/ros-lunar-desktop-full/) is complete and seems to have everything functional. The [ros-lunar-ros-core](https://aur.archlinux.org/packages/ros-lunar-ros-core/) is smaller but it includes rospy, roscpp, publisher, subscriber, services, launch files, and other core ROS functionality.
 
 ### Kinetic
 
@@ -29,7 +29,7 @@ Packages are being added on an as-needed basis. Please send package requests to 
 
 ## catkin_make
 
-Note that catkin uses python2, and therefore catkin_make may fail unless it is explicitly pointed to the python2 install. To do so, add the following alias to your .bashrc (or equivalent):
+Note that catkin uses python2, and therefore catkin_make may fail unless it explicitly uses python2\. To do so, add the following alias to ~/.bashrc:
 
 ```
 alias catkin_make="catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so"

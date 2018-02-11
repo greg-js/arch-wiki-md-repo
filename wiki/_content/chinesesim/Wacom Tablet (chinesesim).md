@@ -301,7 +301,7 @@ EndSection
 
 ```
 
-The identifiers can be set arbitrarily. The option names are (except for the buttons) identical to the ones listed by `xsetwacom --list parameters` and especially also in [wacom(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wacom.4). As noted in [#Remapping Buttons](#Remapping_Buttons) the button ids seem to be different than the ones for `xsetwacom`.
+The identifiers can be set arbitrarily. The option names are (except for the buttons) identical to the ones listed by `xsetwacom --list parameters` and especially also in [wacom(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wacom.4). As noted in [#Remapping Buttons](#Remapping_Buttons) the button ids seem to be different than the ones for `xsetwacom`.
 
 #### 更改方向
 

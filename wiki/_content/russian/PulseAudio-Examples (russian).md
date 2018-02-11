@@ -531,7 +531,7 @@ pactl load-module module-null-sink sink_name=<имя>
 
 Перед началом последующих действий рекомендуется удалить пакет [qjackctl](https://www.archlinux.org/packages/?name=qjackctl), если вы его используете.
 
-Начните с установки [cadence](https://aur.archlinux.org/packages/cadence/) из AUR или [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack). Как только вы установите и запустите его, в нижнем правом углу экрана должен появиться JACK bridge configuration. ALSA audio bridge следует настроить как ALSA -> PulseAudio -> JACK и включить PulseAudio bridge. Убедитесь с помощью `pavucontrol`, что все устройства ввода и вывода, не относящиеся к JACK, выключены (muted). Воспользуйтесь кнопкой Force Restart для запуска JACK, и, если все запустилось успешно, вывод программ PulseAudio будет перенаправлен через JACK.
+Начните с установки [cadence](https://www.archlinux.org/packages/?name=cadence) из AUR или [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack). Как только вы установите и запустите его, в нижнем правом углу экрана должен появиться JACK bridge configuration. ALSA audio bridge следует настроить как ALSA -> PulseAudio -> JACK и включить PulseAudio bridge. Убедитесь с помощью `pavucontrol`, что все устройства ввода и вывода, не относящиеся к JACK, выключены (muted). Воспользуйтесь кнопкой Force Restart для запуска JACK, и, если все запустилось успешно, вывод программ PulseAudio будет перенаправлен через JACK.
 
 ### Ручная настройка устройств вывода
 

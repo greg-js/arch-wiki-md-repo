@@ -54,12 +54,12 @@
 Остальные пакеты, которые вам могут понадобиться доступны в [AUR](/index.php/AUR "AUR"):
 
 *   [traverso](https://aur.archlinux.org/packages/traverso/)
-*   [qsampler](https://aur.archlinux.org/packages/qsampler/) (смотрите также [LinuxSampler](/index.php/LinuxSampler "LinuxSampler"))
+*   [qsampler](https://www.archlinux.org/packages/?name=qsampler) (смотрите также [LinuxSampler](/index.php/LinuxSampler "LinuxSampler"))
 *   [mhwaveedit](https://aur.archlinux.org/packages/mhwaveedit/)
-*   [carla](https://aur.archlinux.org/packages/carla/)
+*   [carla](https://www.archlinux.org/packages/?name=carla)
 *   [rakarrack-git](https://aur.archlinux.org/packages/rakarrack-git/)
 *   [XCFA](https://aur.archlinux.org/packages/XCFA/)
-*   [yoshimi](https://aur.archlinux.org/packages/yoshimi/)
+*   [yoshimi](https://www.archlinux.org/packages/?name=yoshimi)
 *   [fsthost](https://aur.archlinux.org/packages/fsthost/)
 *   [wineasio](https://aur.archlinux.org/packages/wineasio/)
 *   [vst-bridge](https://github.com/abique/vst-bridge)
@@ -317,7 +317,7 @@ export DSSI_PATH=/usr/lib/dssi:/usr/local/lib/dssi:~/.dssi:/некоторая/�
 
 ## Советы и рекомендации
 
-*   Возможен конфликт IRQ, вследствие чего могут возникать проблемы. Например, графическое оборудование резервирует системную шину, в результате чего появляются излишние ненужные прерывания в системных путях ввода-вывода. См. обсуждение: [FFADO IRQ Priorities How-To](http://subversion.ffado.org/wiki/IrqPriorities). Если у вас имеется режим реального времени либо установлено ядро последней версии, вы можете использовать пакет [rtirq](https://aur.archlinux.org/packages/rtirq/) для регулировки приоритетов IRQ обработки потоков.
+*   Возможен конфликт IRQ, вследствие чего могут возникать проблемы. Например, графическое оборудование резервирует системную шину, в результате чего появляются излишние ненужные прерывания в системных путях ввода-вывода. См. обсуждение: [FFADO IRQ Priorities How-To](http://subversion.ffado.org/wiki/IrqPriorities). Если у вас имеется режим реального времени либо установлено ядро последней версии, вы можете использовать пакет [rtirq](https://www.archlinux.org/packages/?name=rtirq) для регулировки приоритетов IRQ обработки потоков.
 
 *   Не используйте службу **irqbalance**, либо делайте это с осторожностью; подробнее:[[4]](http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_MRG/1.3/html/Realtime_Tuning_Guide/sect-Realtime_Tuning_Guide-General_System_Tuning-Interrupt_and_Process_Binding.html).
 

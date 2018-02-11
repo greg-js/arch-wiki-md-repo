@@ -31,7 +31,6 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 *   [5 NVM Express SSD](#NVM_Express_SSD)
     *   [5.1 Cannot find root device](#Cannot_find_root_device)
     *   [5.2 Note on Mount Options](#Note_on_Mount_Options)
-    *   [5.3 NVME Power Saving Patch](#NVME_Power_Saving_Patch)
 *   [6 Wireless](#Wireless)
 *   [7 Bluetooth](#Bluetooth)
     *   [7.1 Intel WiFi](#Intel_WiFi)
@@ -145,14 +144,6 @@ where `linux` is the name of the image loaded on boot. If you installed [linux-m
 ### Note on Mount Options
 
 Using the `discard` mount option for your filesystem is not recommended, as mentioned in [this warning](/index.php/Solid_State_Drives#Continuous_TRIM "Solid State Drives") and [the forum](https://bbs.archlinux.org/viewtopic.php?pid=1593544#p1593544). See also [Solid State Drives/NVMe#Discards](/index.php/Solid_State_Drives/NVMe#Discards "Solid State Drives/NVMe") for further information.
-
-### NVME Power Saving Patch
-
-**Note:** As of kernel version 4.11, this patch is no longer needed.
-
-Andy Lutomirski has created a patchset which fixes powersaving for NVME devices in linux. You may use the AUR package or the repository linked below. **Linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME powersaving APST.
-
-	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/)
 
 ## Wireless
 

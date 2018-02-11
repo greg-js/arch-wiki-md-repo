@@ -423,22 +423,20 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 ### Persistent rehash
 
-Typically, compinit will not automatically find new executables in the `$PATH`. For example, after you install a new package, the files in /usr/bin would not be immediately or automatically included in the completion. Thus, to have these new exectuables included, one would run:
+Typically, compinit will not automatically find new executables in the `$PATH`. For example, after you install a new package, the files in `/usr/bin/` would not be immediately or automatically included in the completion. Thus, to have these new executables included, one would run:
 
 ```
 $ rehash
 
 ```
 
-This 'rehash' can be set to happen automatically. Simply include the following in your `zshrc`:
+This 'rehash' can be set to happen automatically.[[2]](https://github.com/robbyrussell/oh-my-zsh/issues/3440) Simply include the following in your `zshrc`:
 
  `~/.zshrc` 
 ```
 zstyle ':completion:*' rehash true
 
 ```
-
-**Note:** This hack has been found in a [PR for Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh/issues/3440).
 
 ### Bind key to ncurses application
 

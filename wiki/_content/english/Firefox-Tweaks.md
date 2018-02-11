@@ -61,6 +61,7 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [4.10 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
     *   [4.11 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
     *   [4.12 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
+    *   [4.13 Fido U2F authentication](#Fido_U2F_authentication)
 *   [5 See also](#See_also)
 
 ## Performance
@@ -586,6 +587,17 @@ To disable audio post processing, change the value of the following preferences 
 *   `media.getusermedia.aec_enabled` (Acoustic Echo Cancellation)
 *   `media.getusermedia.agc_enabled` (Automatic Gain Control)
 *   `media.getusermedia.noise_enabled` (Noise suppression)
+
+### Fido U2F authentication
+
+Since version 57, Firefox supports Fido U2F authentication protocol. However, it's disabled by default. To enable it set the following settings to `true` in `about:config`.
+
+*   `security.webauth.u2f`
+*   `security.webauth.webauthn_enable_usbtoken`
+
+**Note:** Firefox does not inplement the entire U2F protocol [[4]](https://www.yubico.com/2017/11/how-to-navigate-fido-u2f-in-firefox-quantum/). Some site might not work correctly
+
+If you're using a Firefox version lower than 57 (e.g. Firefox 52 ESR), U2F isn't supported natively, but there is an [extension](https://addons.mozilla.org/en-US/firefox/addon/u2f-support-add-on/) to add this functionality.
 
 ## See also
 

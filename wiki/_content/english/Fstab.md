@@ -144,6 +144,8 @@ PARTUUID=039b6c1c-7553-4455-9537-1befbc9fbc5b none  swap   defaults             
 
 ### Automount with systemd
 
+See [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5) for all systemd mount options.
+
 #### Local partition
 
 In case of a large partition, it may be more efficient to allow services that do not depend on it to start while it is checked by *fsck*. This can be achieved by adding the following options to the `/etc/fstab` entry of the partition:

@@ -1,4 +1,4 @@
-Multiseat is a certain setup where multiple users work simultaneously on one computer. This is achieved by having two monitors, two keyboards and two mice. The advantages are quite obvious:
+Multiseat is a certain setup where N users work simultaneously on one computer. This is achieved by having N monitors, N keyboards and N mice. The advantages are quite obvious:
 
 *   Less power consumption (only one computer)
 *   Less hardware to purchase

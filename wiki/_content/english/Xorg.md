@@ -14,7 +14,7 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 	The X.Org project provides an open source implementation of the [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System"). The development work is being done in conjunction with the freedesktop.org community. The X.Org Foundation is the educational non-profit corporation whose Board serves this effort, and whose Members lead this work.
 
-**Xorg** is the most popular display server among Linux users. Its ubiquity has led to making it an ever-present requisite for GUI applications, resulting in massive adoption from most distributions. See the [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") Wikipedia article or visit the [Xorg website](http://www.x.org/wiki/) for more details.
+**Xorg** (commonly referred as simply **X**) is the most popular display server among Linux users. Its ubiquity has led to making it an ever-present requisite for GUI applications, resulting in massive adoption from most distributions. See the [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") Wikipedia article or visit the [Xorg website](http://www.x.org/wiki/) for more details.
 
 ## Contents
 
@@ -64,7 +64,7 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [8.10 X failed to start: Keyboard initialization failed](#X_failed_to_start:_Keyboard_initialization_failed)
     *   [8.11 Rootless Xorg](#Rootless_Xorg)
         *   [8.11.1 Broken redirection](#Broken_redirection)
-    *   [8.12 Why do I get a green screen whenever I try to watch a video?](#Why_do_I_get_a_green_screen_whenever_I_try_to_watch_a_video.3F)
+    *   [8.12 A green screen whenever trying to watch a video](#A_green_screen_whenever_trying_to_watch_a_video)
     *   [8.13 SocketCreateListener error](#SocketCreateListener_error)
 *   [9 See also](#See_also)
 
@@ -149,7 +149,7 @@ To start the X server without a display manager, see [xinit](/index.php/Xinit "X
 
 **Note:** Arch supplies default configuration files in `/usr/share/X11/xorg.conf.d`, and no extra configuration is necessary for most setups.
 
-Xorg uses a configuration file called `xorg.conf` and files ending in the suffix `.conf` for its initial setup: the complete list of the folders where these files are searched can be found at [[1]](http://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml) or by running [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5), together with a detailed explanation of all the available options.
+Xorg uses a configuration file called `xorg.conf` and files ending in the suffix `.conf` for its initial setup: the complete list of the folders where these files are searched can be found in [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5), together with a detailed explanation of all the available options.
 
 ### Using .conf files
 
@@ -176,9 +176,9 @@ Alternatively, your proprietary video card drivers may come with a tool to autom
 
 ## Input devices
 
-For input devices the X server defaults to the libinput driver ([xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput)), but [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) and related drivers are available as alternative.[[2]](https://www.archlinux.org/news/xorg-server-1191-is-now-in-extra/)
+For input devices the X server defaults to the libinput driver ([xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput)), but [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) and related drivers are available as alternative.[[1]](https://www.archlinux.org/news/xorg-server-1191-is-now-in-extra/)
 
-[Udev](/index.php/Udev "Udev"), which is provided as a systemd dependency, will detect hardware and both drivers will act as hotplugging input driver for almost all devices, as defined in the default configuration files `10-evdev.conf` and `40-libinput.conf` in the `/usr/share/X11/xorg.conf.d/` directory.
+[Udev](/index.php/Udev "Udev"), which is provided as a systemd dependency, will detect hardware and both drivers will act as hotplugging input driver for almost all devices, as defined in the default configuration files `10-quirks.conf` and `40-libinput.conf` in the `/usr/share/X11/xorg.conf.d/` directory.
 
 After starting X server, the log file will show which driver hotplugged for the individual devices (note the most recent log file name may vary):
 
@@ -199,7 +199,7 @@ See [Mouse acceleration](/index.php/Mouse_acceleration "Mouse acceleration").
 
 ### Extra mouse buttons
 
-See [All Mouse Buttons Working](/index.php/All_Mouse_Buttons_Working "All Mouse Buttons Working").
+See [Mouse buttons](/index.php/Mouse_buttons "Mouse buttons").
 
 ### Touchpad
 
@@ -532,7 +532,7 @@ EndSection
 
 ### General
 
-If a problem occurs, view the log stored in either `/var/log/` or, for the rootless X default since v1.16, in `~/.local/share/xorg/`. [GDM](/index.php/GDM "GDM") users should check the [systemd](/index.php/Systemd "Systemd") journal. [[3]](https://bbs.archlinux.org/viewtopic.php?id=184639)
+If a problem occurs, view the log stored in either `/var/log/` or, for the rootless X default since v1.16, in `~/.local/share/xorg/`. [GDM](/index.php/GDM "GDM") users should check the [systemd](/index.php/Systemd "Systemd") journal. [[2]](https://bbs.archlinux.org/viewtopic.php?id=184639)
 
 The logfiles are of the form `Xorg.n.log` with `n` being the display number. For a single user machine with default configuration the applicable log is frequently `Xorg.0.log`, but otherwise it may vary. To make sure to pick the right file it may help to look at the timestamp of the X server session start and from which console it was started. For example:
 
@@ -637,7 +637,7 @@ EndSection
 
 *   Error message: "*unable to load font `(null)'.*"
 
-Some programs only work with bitmap fonts. Two major packages with bitmap fonts are available, [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) and [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi). You do not need both; one should be enough. To find out which one would be better in your case, try this:
+Some programs only work with bitmap fonts. Two major packages with bitmap fonts are available, [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) and [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi). You do not need both; one should be enough. To find out which one would be better in your case, try `xdpyinfo` from [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo), like this:
 
 ```
 $ xdpyinfo | grep resolution
@@ -717,9 +717,9 @@ exec startx -- -keeptty > ~/.xorg.log 2>&1
 
 ```
 
-Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
+Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
 
-### Why do I get a green screen whenever I try to watch a video?
+### A green screen whenever trying to watch a video
 
 Your color depth is set wrong. It may need to be 24 instead of 16, for example.
 

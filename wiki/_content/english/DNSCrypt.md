@@ -1,3 +1,5 @@
+**Warning:** This project has been abandoned and is no longer maintained. See [FS#57027](https://bugs.archlinux.org/task/57027). An alternative is [dnscrypt-proxy-go](https://aur.archlinux.org/packages/dnscrypt-proxy-go/) which is a new protocol.
+
 [DNSCrypt](http://dnscrypt.info/) encrypts and authenticates DNS traffic between user and DNS resolver. While IP traffic itself is unchanged, it prevents local spoofing of DNS queries, ensuring DNS responses are sent by the server of choice. [[1]](https://www.reddit.com/r/sysadmin/comments/2hn435/dnssec_vs_dnscrypt/ckuhcbu)
 
 ## Contents
@@ -76,7 +78,7 @@ It is recommended to run DNSCrypt as a forwarder for a local DNS cache if not us
 
 #### Change port
 
-**Note:** Changing the IP address or port in `/etc/dnscrypt-proxy.conf` [does not work](https://github.com/jedisct1/dnscrypt-proxy/issues/528) when using the provided systemd unit and must be changed in the provided systemd socket as follows.
+**Note:** Changing the IP address or port in `/etc/dnscrypt-proxy.conf` [does not work](https://web.archive.org/web/20171215112100/https://github.com/jedisct1/dnscrypt-proxy/issues/528) when using the provided systemd unit and must be changed in the provided systemd socket as follows.
 
 In order to forward to a local DNS cache, *dnscrypt-proxy* should listen on a port different from the default `53`, since the DNS cache itself needs to listen on `53` and query *dnscrypt-proxy* on a different port. Port number `5353` is used as an example in this section. In this example, the port number is larger than 1024 so *dnscrypt-proxy* is not required to be run by root. [Edit](/index.php/Edit "Edit") `dnscrypt-proxy.socket` with the following contents:
 

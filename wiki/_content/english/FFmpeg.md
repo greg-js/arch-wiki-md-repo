@@ -28,8 +28,9 @@ From the project [home page](http://www.ffmpeg.org/):
     *   [2.14 Stripping audio](#Stripping_audio)
     *   [2.15 Splitting files](#Splitting_files)
     *   [2.16 Hardware acceleration](#Hardware_acceleration)
-        *   [2.16.1 Intel GPU (VA-API)](#Intel_GPU_.28VA-API.29)
-        *   [2.16.2 Nvidia GPU (NVENC)](#Nvidia_GPU_.28NVENC.29)
+        *   [2.16.1 VA-API](#VA-API)
+        *   [2.16.2 Nvidia NVENC](#Nvidia_NVENC)
+        *   [2.16.3 Nvidia NVDEC](#Nvidia_NVDEC)
 *   [3 Preset files](#Preset_files)
     *   [3.1 Using preset files](#Using_preset_files)
         *   [3.1.1 libavcodec-vhq.ffpreset](#libavcodec-vhq.ffpreset)
@@ -439,9 +440,9 @@ $ ffmpeg -i file.ext -t 00:05:30 -c copy part1.ext -ss 00:05:30 -c copy part2.ex
 
 Encoding performance may be improved by using [hardware acceleration API's](https://trac.ffmpeg.org/wiki/HWAccelIntro), however only a specific kind of codec(s) are allowed and/or may not always produce the same result when using software encoding.
 
-#### Intel GPU (VA-API)
+#### VA-API
 
-See the following [GitHub gist](https://gist.github.com/Brainiarc7/95c9338a737aa36d9bb2931bed379219) and [Libav documentation](https://wiki.libav.org/Hardware/vaapi) for information about available parameters and supported [Intel](/index.php/Intel "Intel") platforms when using [VA-API](/index.php/VA-API "VA-API").
+[VA-API](/index.php/VA-API "VA-API") can be used for encoding and decoding on Intel CPUs (requires [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver)) and on certain AMD GPUs when using the open-source [AMDGPU](/index.php/AMDGPU "AMDGPU") driver (requires [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver)). See the following [GitHub gist](https://gist.github.com/Brainiarc7/95c9338a737aa36d9bb2931bed379219) and [Libav documentation](https://wiki.libav.org/Hardware/vaapi) for information about available parameters and supported platforms.
 
 An example of encoding using the supported H.264 codec:
 
@@ -450,9 +451,11 @@ $ ffmpeg -threads 1 -i file.ext -vaapi_device /dev/dri/renderD128 -vcodec h264_v
 
 ```
 
-#### Nvidia GPU (NVENC)
+#### Nvidia NVENC
 
-Since at least 3.4.1 the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package can use NVENC if [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) and proprietary kernel module (e.g. [nvidia](https://www.archlinux.org/packages/?name=nvidia)) are installed. See [this gist](https://gist.github.com/Brainiarc7/8b471ff91319483cdb725f615908286e) for some techniques. Minimum supported GPUs are from 600 series (see [w:Nvidia NVENC](https://en.wikipedia.org/wiki/Nvidia_NVENC "w:Nvidia NVENC")). NVENC is somewhat similar to [CUDA](/index.php/CUDA "CUDA"), thus it works even from terminal session. Depending on hardware NVENC is several times faster than Intel's VA-API encoders.
+NVENC can be used for encoding when using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver with the [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) package installed. Minimum supported GPUs are from 600 series (see [w:Nvidia NVENC](https://en.wikipedia.org/wiki/Nvidia_NVENC "w:Nvidia NVENC") and [Hardware video acceleration#Formats](/index.php/Hardware_video_acceleration#Formats "Hardware video acceleration")).
+
+See [this gist](https://gist.github.com/Brainiarc7/8b471ff91319483cdb725f615908286e) for some techniques. NVENC is somewhat similar to [CUDA](/index.php/CUDA "CUDA"), thus it works even from terminal session. Depending on hardware NVENC is several times faster than Intel's VA-API encoders.
 
 To print available options execute (`hevc_nvenc` may also be available):
 
@@ -467,6 +470,12 @@ Example usage:
 $ ffmpeg -i source.ext -c:v h264_nvenc -rc constqp -qp 28 output.mkv
 
 ```
+
+#### Nvidia NVDEC
+
+NVDEC can be used for decoding when using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver with the [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) package installed. Minimum supported GPUs are from 600 series (see [w:Nvidia NVDEC](https://en.wikipedia.org/wiki/Nvidia_NVDEC "w:Nvidia NVDEC") and [Hardware video acceleration#Formats](/index.php/Hardware_video_acceleration#Formats "Hardware video acceleration")).
+
+It will be available in [FFMPEG 3.5](https://www.phoronix.com/scan.php?page=news_item&px=FFmpeg-NVDEC-H264-Acceleration).
 
 ## Preset files
 

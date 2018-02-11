@@ -185,7 +185,7 @@ The tools include another script that can be very handy to access an encrypted `
 
 ##### Auto-mounting
 
-The default way to auto-mount an encrypted directory is via [PAM](/index.php/Pam_mount "Pam mount"). See [pam_ecryptfs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pam_ecryptfs.8) and - for more details - 'PAM MODULE' in:
+The default way to auto-mount an encrypted directory is via [PAM](/index.php/Pam_mount "Pam mount"). See [pam_ecryptfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_ecryptfs.8) and - for more details - 'PAM MODULE' in:
 
 ```
 /usr/share/doc/ecryptfs-utils/README
@@ -231,6 +231,8 @@ session    optional    pam_ecryptfs.so unwrap
 for the user's encrypted directory. It should be perfectly readable at `~$HOME/Private/`.
 
 The latter should be automatically unmounted and made unavailable when the user logs off.
+
+**Note:** The above changes to `system-auth` enable auto-mounting for normal login. If you switch users instead, using `su -` or `su -l`, you need to apply similar changes also to `/etc/pam.d/su-l`.
 
 **Warning:** Unfortunately the automatic unmounting is susceptible to [break](https://bbs.archlinux.org/viewtopic.php?id=194509) with systemd and bugs are filed against it.[[2]](https://bugs.freedesktop.org/show_bug.cgi?id=72759) [[3]](https://nwrickert2.wordpress.com/2013/12/16/systemd-user-manager-ecryptfs-and-opensuse-13-1/) [[4]](https://bugs.launchpad.net/ubuntu/+source/ecryptfs-utils/+bug/313812/comments/43) [[5]](http://lists.alioth.debian.org/pipermail/pkg-systemd-maintainers/2014-October/004088.html) If you experience this problem, you can test it by commenting out `-session optional pam_systemd.so` in `/etc/pam.d/system-login`. However, this is no solution because commenting out will break other systemd functionalities.
 

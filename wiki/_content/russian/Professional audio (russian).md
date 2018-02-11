@@ -58,12 +58,12 @@ Related articles
 
 Другие пакеты, которые могут вам понадобиться, доступны через [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"):
 
-*   [qsampler](https://aur.archlinux.org/packages/qsampler/) (also see [LinuxSampler](/index.php/LinuxSampler "LinuxSampler"))
+*   [qsampler](https://www.archlinux.org/packages/?name=qsampler) (also see [LinuxSampler](/index.php/LinuxSampler "LinuxSampler"))
 *   [mhwaveedit](https://aur.archlinux.org/packages/mhwaveedit/)
-*   [carla](https://aur.archlinux.org/packages/carla/)
+*   [carla](https://www.archlinux.org/packages/?name=carla)
 *   [rakarrack-git](https://aur.archlinux.org/packages/rakarrack-git/)
 *   [XCFA](https://aur.archlinux.org/packages/XCFA/)
-*   [yoshimi](https://aur.archlinux.org/packages/yoshimi/)
+*   [yoshimi](https://www.archlinux.org/packages/?name=yoshimi)
 *   [wineasio](https://aur.archlinux.org/packages/wineasio/)
 *   [vst-bridge](https://github.com/abique/vst-bridge)
 
@@ -171,7 +171,7 @@ $ /usr/bin/jackd -R -P89 -dalsa -dhw:0 -r48000 -p256 -n3
 
 ```
 
-[qjackctl](https://www.archlinux.org/packages/?name=qjackctl), [cadence](https://aur.archlinux.org/packages/cadence/) и [patchage](https://www.archlinux.org/packages/?name=patchage) могут быть использованы как графическая оболочка для контроля за статусом JACK и упрощением его настройки.
+[qjackctl](https://www.archlinux.org/packages/?name=qjackctl), [cadence](https://www.archlinux.org/packages/?name=cadence) и [patchage](https://www.archlinux.org/packages/?name=patchage) могут быть использованы как графическая оболочка для контроля за статусом JACK и упрощением его настройки.
 
 **Примечание:** Как только вы закончите конфигурацию JACK, проверьте ваши настройки, запустив различные аудио приложения. Я потратил целый день, разбираясь с проблемой работы JACK xrun с LMMS, что в конце концов оказалось проблемой с последним.
 
@@ -334,7 +334,7 @@ export DSSI_PATH=/usr/lib/dssi:/usr/local/lib/dssi:~/.dssi:/someother/custom/dir
 
 *   Известно, что некоторое USB аудио аппаратное обеспечение не работает с портами USB 3, попробуйте вместо этого использовать порты USB 2/1\.
 
-*   Могут случаться ошибки IRQ, что создаёт проблемы. Пример, видео аппаратное обеспечение, резервирующее шину, приводящее к ненужным прерываниям в системном пути ввода-вывода. Смотрите обсуждение в [FFADO IRQ Priorities How-To](http://subversion.ffado.org/wiki/IrqPriorities). Если вы используете ядро реального времени или свежее ядро, вы можете использовать [rtirq](https://aur.archlinux.org/packages/rtirq/) для настройки приоритетов обработки потоков IRQ.
+*   Могут случаться ошибки IRQ, что создаёт проблемы. Пример, видео аппаратное обеспечение, резервирующее шину, приводящее к ненужным прерываниям в системном пути ввода-вывода. Смотрите обсуждение в [FFADO IRQ Priorities How-To](http://subversion.ffado.org/wiki/IrqPriorities). Если вы используете ядро реального времени или свежее ядро, вы можете использовать [rtirq](https://www.archlinux.org/packages/?name=rtirq) для настройки приоритетов обработки потоков IRQ.
 
 *   Не используйте службу **irqbalance**, или будьте с ней очень осторожны [[1]](http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_MRG/1.3/html/Realtime_Tuning_Guide/sect-Realtime_Tuning_Guide-General_System_Tuning-Interrupt_and_Process_Binding.html).
 

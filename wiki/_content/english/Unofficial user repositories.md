@@ -79,7 +79,7 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [3.2.10 home_fusion809_Arch_Extra](#home_fusion809_Arch_Extra)
         *   [3.2.11 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
         *   [3.2.12 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
-        *   [3.2.13 home_post-factum_Arch_Extra](#home_post-factum_Arch_Extra)
+        *   [3.2.13 home_post-factum_kernels_Arch](#home_post-factum_kernels_Arch)
         *   [3.2.14 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
         *   [3.2.15 home-thaodan](#home-thaodan)
         *   [3.2.16 jkanetwork](#jkanetwork)
@@ -881,15 +881,15 @@ Server = https://download.opensuse.org/repositories/home:/Pival81:/arch:/xapps/A
 
 ```
 
-#### home_post-factum_Arch_Extra
+#### home_post-factum_kernels_Arch
 
 *   **Maintainer**: [Oleksandr Natalenko aka post-factum](https://aur.archlinux.org/account/post-factum)
 *   **Upstream page**: [https://pfactum.github.io/pf-kernel/](https://pfactum.github.io/pf-kernel/)
 *   **Description**: [pf-kernel](/index.php/Kernels#Major_patchsets "Kernels") and other packages by its developer, post-factum
 
 ```
-[home_post-factum_Arch_Extra]
-Server = https://download.opensuse.org/repositories/home:/post-factum/Arch_Extra/$arch
+[home_post-factum_kernels_Arch]
+Server = https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/$arch
 
 ```
 

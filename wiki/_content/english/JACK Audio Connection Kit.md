@@ -1,3 +1,7 @@
+Related articles
+
+*   [Professional audio](/index.php/Professional_audio "Professional audio")
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -58,7 +62,7 @@ jack_control dps period 256  -  set the driver parameter period to 256
 
 ### GUI
 
-[cadence](http://kxstudio.linuxaudio.org/Applications:Cadence) is the modern GUI control application. It can be installed with the [cadence](https://aur.archlinux.org/packages/cadence/) package.
+[cadence](http://kxstudio.linuxaudio.org/Applications:Cadence) is the modern GUI control application. It can be installed with the [cadence](https://www.archlinux.org/packages/?name=cadence) package.
 
 [qjackctl](https://www.archlinux.org/packages/?name=qjackctl) is more widely used, and still functions, but is now outdated and is not recommended.
 

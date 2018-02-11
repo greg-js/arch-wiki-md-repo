@@ -72,7 +72,7 @@ Some PulseAudio modules have been [split](https://www.archlinux.org/news/pulseau
 
 There are a number of front-ends available for controlling the PulseAudio daemon:
 
-*   Configuration/volume control (graphical): [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)
+*   Configuration/volume control (graphical): [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) and [pavucontrol-qt](https://www.archlinux.org/packages/?name=pavucontrol-qt)
 *   General daemon configuration (graphical): [paprefs](https://www.archlinux.org/packages/?name=paprefs)
 *   Volume control via mapped keyboard keys: [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/), [pavolume-git](https://aur.archlinux.org/packages/pavolume-git/)
 *   Console (CLI) mixers: [ponymix](https://www.archlinux.org/packages/?name=ponymix) and [pamixer](https://www.archlinux.org/packages/?name=pamixer)

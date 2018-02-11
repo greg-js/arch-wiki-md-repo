@@ -222,3 +222,5 @@ Now you can use the standard Git commands, prefixed by `pass`. For example: `pas
 ## See also
 
 *   [A more comprehensive pass tutorial](http://blog.sanctum.geek.nz/linux-crypto-passwords/)
+*   [Pass home page](https://www.passwordstore.org/)
+*   [List of Compatible clients and possibilities for migration to Pass](https://www.passwordstore.org/#other)

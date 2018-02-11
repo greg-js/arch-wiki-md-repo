@@ -14,6 +14,7 @@ Related articles
 *   [2 Configuration](#Configuration)
     *   [2.1 Minimal](#Minimal)
     *   [2.2 Selective folder synchronization](#Selective_folder_synchronization)
+    *   [2.3 Custom port](#Custom_port)
 *   [3 Usage](#Usage)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Running offlineimap in the background](#Running_offlineimap_in_the_background)
@@ -94,6 +95,16 @@ folderfilter = lambda foldername: foldername in ["Inbox", "Sent"]
 ```
 
 For more options, see the [official documentation](http://offlineimap.org/doc/nametrans.html#folderfilter).
+
+### Custom port
+
+Some IMAP servers might require you to connect on a custom port, instead of the default 993 port. To do so, add a *remoteport* option to the **remote** section in `~/.offlineimaprc`:
+
+ `~/.offlineimaprc` 
+```
+[Repository main-remote]
+remoteport=*1234*
+```
 
 ## Usage
 

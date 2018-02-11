@@ -153,10 +153,17 @@ Everything (scripts, files, programs etc) in Metasploit is a module. There are 6
 
 To discover what operating system and software version a target runs, perform a [port scan](/index.php/Nmap "Nmap"). With this information, use the `search` command to search for available exploits.
 
-For example, to search for all exploits on Linux platform of Novell:
+To search for all exploits targeting Novell on the Linux platform:
 
 ```
 msf > search platform:linux type:exploit name:Novell
+
+```
+
+To search for all exploits on the Linux platform containing the keyword Apache and filter the results with *grep*:
+
+```
+msf > grep RCE search platform:linux type:exploit Apache
 
 ```
 

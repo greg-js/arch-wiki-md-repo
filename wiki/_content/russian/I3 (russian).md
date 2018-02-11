@@ -245,6 +245,10 @@ $ cp /etc/i3status.conf ~/.config/i3status/config
 
 	[https://github.com/ultrabug/py3status](https://github.com/ultrabug/py3status) || [py3status](https://aur.archlinux.org/packages/py3status/)
 
+*   **YaGoStatus** — Еще одна оболочка для i3status (и не только) написанная на Go.
+
+	[https://github.com/burik666/yagostatus](https://github.com/burik666/yagostatus) || [yagostatus-git](https://aur.archlinux.org/packages/yagostatus-git/)
+
 #### Шрифты-иконки в строке состояния
 
 *i3bar* может быть [пропатчен](#.D0.9F.D0.B0.D1.82.D1.87.D0.B8) для поддержки XBM icon, но вместо этого, вы можете использовать шрифты-иконки.
