@@ -216,7 +216,9 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 
 ### Thunderbolt Firmware updates
 
-The thunderbolt controller in the laptop has an embedded firmware. The laptop ships with firmware version NVM 18, and the most recent available version from Dell's website is NVM 21\. If encountering compatibility problems with Thunderbolt accessories (such as the DA-200), the firmware may need to be updated. Dell maintains a [Github repository](https://github.com/dell/thunderbolt-nvm-linux) explaining the process to update the firmware which also provides the updated payload files. If the provided payload does not work, try `0x075B_secure.bin` inside the [Windows package](http://www.dell.com/support/home/us/en/19/drivers/driversdetails?driverId=MHTHF). This can be extracted with [p7zip](https://www.archlinux.org/packages/?name=p7zip).
+The thunderbolt controller in the laptop has an embedded firmware. The laptop ships with firmware version NVM 18, and the most recent available version from Dell's website is NVM 21\. If encountering compatibility problems with Thunderbolt accessories (such as the DA-200), the firmware may need to be updated. If you have fwupd (see: [#Firmware Updates](#Firmware_Updates)) set up then you should receive this update automatically. Otherwise, you can install it manually as follows.
+
+Dell maintains a [Github repository](https://github.com/dell/thunderbolt-nvm-linux) explaining the process to update the firmware which also provides the updated payload files. If the provided payload does not work, try `0x075B_secure.bin` inside the [Windows package](http://www.dell.com/support/home/us/en/19/drivers/driversdetails?driverId=MHTHF). This can be extracted with [p7zip](https://www.archlinux.org/packages/?name=p7zip).
 
 Here is a short list of steps to update the Thunderbolt-Firmware on linux 4.13+ (use at your own risk):
 

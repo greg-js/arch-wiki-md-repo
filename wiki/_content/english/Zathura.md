@@ -5,6 +5,9 @@
 *   [1 Installation](#Installation)
 *   [2 Features](#Features)
 *   [3 Useful tips](#Useful_tips)
+    *   [3.1 Enable copy to clipboard](#Enable_copy_to_clipboard)
+    *   [3.2 Side-by-side mode](#Side-by-side_mode)
+    *   [3.3 Titlebar and statusbar tweaks](#Titlebar_and_statusbar_tweaks)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -25,11 +28,24 @@ The behavior and appearance of Zathura can be customised using a configuration f
 
 Commands may be entered directly into Zathura by pushing `:`, just like vi.
 
-Enable copy to clipboard
+### Enable copy to clipboard
 
  ` ~/.config/zathura/zathurarc `  `set selection-clipboard clipboard` 
 
+### Side-by-side mode
+
+Press `d` to toggle side-by-side mode.
+
 In side-by-side mode, to view the first page on the left side, enter the command `set first-page-column 1:1` into Zathura. This is particularly useful for reading music scans where typesetting optimizes page-turning on certain pages. Like other Zathura commands, this can go in `zathurarc` as well.
+
+### Titlebar and statusbar tweaks
+
+By default, the title and status bars will show the full path of the file opened.
+
+*   If `window-title-basename` is set to true, only the file name will be shown in the window title.
+*   If `window-title-home-tilde` is set to true, the path to `$HOME` will be contracted to `~` in the window title.
+*   If `statusbar-basename` is set to true, only the file name will be shown in the status bar.
+*   If `statusbar-home-tilde` is set to true, the path to `$HOME` will be contracted to `~` in the status bar.
 
 ## See also
 

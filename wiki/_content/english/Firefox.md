@@ -347,6 +347,13 @@ Alternatively, force Firefox to use a light theme (e.g. "Adwaita:light"):
 1.  Copy `/usr/share/applications/firefox.desktop` to `~/.local/share/applications/firefox.desktop` and replace all occurrences of `Exec=firefox` with `Exec=env GTK_THEME=Adwaita:light firefox`.
 2.  Close all running instances of Firefox and restart your window manager/desktop environment.
 
+Another way to change gtk theme for content process only, which keeps dark UI theming, but enforces light theme for rendering webpage itself:
+
+1.  Open `about:config` in the address bar
+2.  Press right mouse button -> New -> String
+3.  Type `widget.content.gtk-theme-override` as config name
+4.  Type light theme tag to use for rendering purposes (`Adwaita:light` for example)
+
 ### "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear
 
 From the [Mozilla support](https://support.mozilla.com/en-US/questions/767751) site:

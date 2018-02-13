@@ -474,10 +474,11 @@ $hello->run;
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
-Gtk.init(None)
-Hello=Gtk.MessageDialog(None, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, "Hello world!")
-Hello.format_secondary_text("This is an example dialog.")
-Hello.run()
+win = Gtk.Window()
+win.connect("delete-event", Gtk.main_quit)
+win.set_title("Hello, World!!!")
+win.show_all()
+Gtk.main(
 ```
 
 ### Ruby

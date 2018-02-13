@@ -48,13 +48,13 @@ Then, the working webservers are defined with `VirtualHost` sections. Hiawatha c
 
 Next, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `hiawatha.service` and point your browser to `http://*my-domain*`. At that stage you should be able to load the website start page.
 
-For further details see the official [HowTo](https://www.hiawatha-webserver.org/howto).
+For further details see the official [HowTo](https://www.hiawatha-webserver.org/howto) and the [hiawatha(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hiawatha.1) manual page.
 
 **Note:** Hiawatha supports on-the-fly [gzip content encoding](https://en.wikipedia.org/wiki/HTTP_compression "wikipedia:HTTP compression"). It will gzip the requested file and cache it on disk in `/var/lib/hiawatha/gzipped`. Every time the file is requested again, the already gzipped version from disk will be used. It will notice (timestamp and size) file changes and the cache is cleared upon restart.
 
 ### CGI
 
-[Common Gateway Interface](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface") (CGI) scripts work with Hiawatha out of the box, the CGI module in the `VirtualHost` section just needs to be enabled as follows:
+[Common Gateway Interface](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface") (*CGI*) scripts work with Hiawatha out of the box, the CGI module in the `VirtualHost` section just needs to be enabled as follows:
 
  `/etc/hiawatha/hiawatha.conf` 
 ```

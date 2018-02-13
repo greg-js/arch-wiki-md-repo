@@ -16,7 +16,7 @@ Uplink Labs creates new images approximately twice a month. Images are being bui
 *   ebs hvm x86_64 stable
 *   s3 hvm x86_64 stable
 
-AMI links and more information are available on [http://www.uplinklabs.net/projects/arch-linux-on-ec2/](http://www.uplinklabs.net/projects/arch-linux-on-ec2/) .
+AMI links and more information are available on [https://www.uplinklabs.net/projects/arch-linux-on-ec2/](https://www.uplinklabs.net/projects/arch-linux-on-ec2/) .
 
 ### Other AMIs
 

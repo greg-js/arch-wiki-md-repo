@@ -771,7 +771,7 @@ text/html; elinks -dump ; copiousoutput;
 
 ```
 
-Edit muttrc and add the following,
+Edit `~/.muttrc` and add the following,
 
 ```
 set mailcap_path 	= ~/.mutt/mailcap

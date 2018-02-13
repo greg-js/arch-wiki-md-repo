@@ -252,6 +252,15 @@ Arch Linux ARM](http://archlinuxarm.org/platforms/armv7/rockchip/hisense-chromeb
 on ARM | [Supported by
 Arch Linux ARM](https://archlinuxarm.org/platforms/armv7/rockchip/asus-chromebook-flip-c100p)<small>
 [notes](/index.php/User_talk:Pierro78/Asus_chromebook_flip "User talk:Pierro78/Asus chromebook flip")</small> |
+| Oct 2017 | Google | [Pixelbook](/index.php?title=Pixelbook&action=edit&redlink=1 "Pixelbook (page does not exist)") | Intel Core i5-7Y57
+Intel Core i5-7Y57
+Intel Core i7-7Y75 | 8GB DDR3
+8GB DDR3
+16GB DDR3 | 128GB
+256GB
+512GB | No | 12.3 in
+(31.2 cm) | 2400x1600
+(3:2) | Yes |
 
 </center>
 

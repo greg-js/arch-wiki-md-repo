@@ -19,7 +19,7 @@ Related articles
         *   [3.1.2 Edit entries](#Edit_entries)
     *   [3.2 Desktop](#Desktop)
         *   [3.2.1 Transparent background for icon titles](#Transparent_background_for_icon_titles)
-        *   [3.2.2 Remove Thunar options from right-click menu](#Remove_Thunar_options_from_right-click_menu)
+        *   [3.2.2 Remove desktop icons](#Remove_desktop_icons)
         *   [3.2.3 One wallpaper across multihead](#One_wallpaper_across_multihead)
         *   [3.2.4 Kill window shortcut](#Kill_window_shortcut)
     *   [3.3 Session](#Session)
@@ -171,7 +171,7 @@ widget_class "*XfdesktopIconView*" style "xfdesktop-icon-view"
 
 ```
 
-#### Remove Thunar options from right-click menu
+#### Remove desktop icons
 
 Issue the following command:
 
@@ -179,6 +179,8 @@ Issue the following command:
 $ xfconf-query -c xfce4-desktop -v --create -p /desktop-icons/style -t int -s 0
 
 ```
+
+To reinstate icons on the desktop, issue the same command with a value of 2.
 
 #### One wallpaper across multihead
 

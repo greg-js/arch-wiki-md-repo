@@ -20,9 +20,9 @@
 
 ## Installation
 
-Install the [retroarch](https://www.archlinux.org/packages/?name=retroarch) package or alternatively [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) for the development version.
+[Install](/index.php/Install "Install") the [retroarch](https://www.archlinux.org/packages/?name=retroarch) package or alternatively [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) for the development version.
 
-**Tip:** Install [retroarch-assets-xmb](https://www.archlinux.org/packages/?name=retroarch-assets-xmb) to allow the default menu driver (XMB) to work properly. Additionally, install [retroarch-autoconfig-udev](https://www.archlinux.org/packages/?name=retroarch-autoconfig-udev) to enable RetroArch to automatically map buttons to joypads when they are plugged.
+**Tip:** Install the [retroarch-assets-xmb](https://www.archlinux.org/packages/?name=retroarch-assets-xmb) package to allow the default menu driver (XMB) to work properly. Additionally, install the [retroarch-autoconfig-udev](https://www.archlinux.org/packages/?name=retroarch-autoconfig-udev) package to enable RetroArch to automatically map buttons to joypads when they are plugged.
 
 ## Usage
 

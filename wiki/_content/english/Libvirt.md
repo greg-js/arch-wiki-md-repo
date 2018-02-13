@@ -46,8 +46,7 @@ Some of the major libvirt features are:
 *   [5 Python connectivity code](#Python_connectivity_code)
 *   [6 UEFI Support](#UEFI_Support)
 *   [7 PulseAudio](#PulseAudio)
-*   [8 KVM Group Fix](#KVM_Group_Fix)
-*   [9 See also](#See_also)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -650,17 +649,6 @@ Then add the following section to your domain configuration using `virsh edit`.
 ```
 
 `1000` is your user id. Change it if necessary.
-
-## KVM Group Fix
-
-If you are getting the error
-
-```
- Unable to complete install: 'unsupported configuration: CPU mode 'custom' for x86_64 kvm domain on x86_64 host is not supported by hypervisor'
-
-```
-
-Then simply edit `/etc/libvirt/qemu.conf` and change `group="78"` to `group="kvm"`. Then restart `libvirtd.service`. See [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1728381#p1728381) for more information.
 
 ## See also
 

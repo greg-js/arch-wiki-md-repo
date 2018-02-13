@@ -27,6 +27,12 @@ $ run_keybase
 
 ## Signup / Login
 
+**Note:** The signup and login commands will fail with keybase-1.0.41 because the `keybase.service` does not ship with the package (see [#56831](https://bugs.archlinux.org/task/56831)). Run the following command in another terminal:
+```
+$ keybase service
+
+```
+
 To signup for a Keybase account use, and follow the on-screen prompts:
 
 ```

@@ -221,8 +221,8 @@ $ setxkbmap -layout "us,de" -option "grp:alt_shift_toggle"
 Or you can use Awesome itself to switch(from v.4). Add the following line in the keybindings section of rc.lua:
 
 ```
-aweful.key({ "Shift" }, "Alt_L", function ) mykeyboardlayout.next_layout(); end) 
-aweful.key({ "Mod1" }, "Shift_L", function ) mykeyboardlayout.next_layout(); end)
+awful.key({ "Shift" }, "Alt_L", function ) mykeyboardlayout.next_layout(); end) 
+awful.key({ "Mod1" }, "Shift_L", function ) mykeyboardlayout.next_layout(); end)
 
 ```
 

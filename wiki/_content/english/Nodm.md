@@ -1,4 +1,10 @@
+Related articles
+
+*   [Display manager](/index.php/Display_manager "Display manager")
+
 [nodm](https://github.com/spanezz/nodm) is an automatic display manager which automatically starts an X session at system boot. It is meant for devices like smartphones, but can be used on a regular computer as well, if the security implications are acceptable.
+
+The author is no longer continuing to develop, and has expressed a plan to replace it with a lightdm autologin wrapper [[2]](https://github.com/spanezz/nodm/issues/8).
 
 ## Installation
 

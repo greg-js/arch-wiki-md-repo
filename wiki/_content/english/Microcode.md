@@ -73,7 +73,7 @@ options ...
 
 ```
 
-If you do not mount the ESP to `/boot`, copy `/boot/intel-ucode.img` to your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+If your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") is not mounted at `/boot`, you need to copy `/boot/intel-ucode.img` to your ESP every time [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) is updated.
 
 ### EFI boot stub / EFI handover
 

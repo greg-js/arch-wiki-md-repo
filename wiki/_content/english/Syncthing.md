@@ -37,7 +37,7 @@ Syncthing provides a [#Web-GUI](#Web-GUI) for control and monitoring. A GUI wrap
 
 ### Starting Syncthing
 
-Run the `syncthing` binary manually from a terminal. The multiple optional parameters are described in the [command line operation documentation](https://docs.syncthing.net/users/syncthing.html).
+Run the `syncthing` binary manually from a terminal. The multiple optional parameters are described in [syncthing(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/syncthing.1).
 
 **Note:** You can run multiple copies of syncthing, but only one instance per user as syncthing locks the database to it. Check logs for errors related to locked database.
 
@@ -47,7 +47,7 @@ Syncthing can be installed as a [systemd](/index.php/Systemd "Systemd") system-w
 
 #### System service
 
-Running Syncthing as a system service ensures that it is running at startup even if the user has no active session, it is intended to be used on a server. [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `syncthing@*myuser*.service` where *myuser* is the actual name of your user.
+Running Syncthing as a system service ensures that it is running at startup even if the user has no active session, it is intended to be used on a server. [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `syncthing@*myusername*.service` where *myusername* is the actual name of the Syncthing user.
 
 #### User service
 
@@ -196,7 +196,7 @@ export no_proxy="127.0.0.1"
 
 *   If it is run as a service, you must define the variables in the service configuration file as follows:
 
- `/etc/systemd/system/multi-user.target.wants/syncthing@*myuser*.service` 
+ `/etc/systemd/system/multi-user.target.wants/syncthing@*myusername*.service` 
 ```
 [Service]
 Environment="all_proxy=socks5://*proxy_address*:*proxy_port*"
@@ -210,7 +210,7 @@ You must then reload systemd daemons configurations:
 
 ```
 
-and [restart](/index.php/Restart "Restart") the `syncthing@*myuser*.service`.
+and [restart](/index.php/Restart "Restart") the `syncthing@*myusername*.service`.
 
 ## Troubleshooting
 

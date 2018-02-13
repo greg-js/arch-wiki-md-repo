@@ -16,9 +16,7 @@
     *   [4.2 Using ntpd with GPS](#Using_ntpd_with_GPS)
     *   [4.3 Running in a chroot](#Running_in_a_chroot)
     *   [4.4 Restrict listening sockets](#Restrict_listening_sockets)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Cannot assign requested address](#Cannot_assign_requested_address)
-*   [6 See also](#See_also)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -331,28 +329,6 @@ like
 interface listen lo
 interface listen enp3s0
 interface ignore enp5s0
-```
-
-## Troubleshooting
-
-### Cannot assign requested address
-
-If you get the message *Cannot assign requested address* as shown below:
-
- `$ journalctl -u ntpd` 
-```
-ntpd[2130]: bind(21) AF_INET6 fe80::6ef0:49ff:fe51:4946%2#123 flags 0x11 failed: Cannot assign requested address
-ntpd[2130]: unable to create socket on eth0 (5) for fe80::6ef0:49ff:fe51:4946%2#123
-ntpd[2130]: failed to init interface for address fe80::6ef0:49ff:fe51:4946%2
-```
-
-you can get rid of it by disabling IP6\. To do so, [edit](/index.php/Edit "Edit") `ntpd.service` and add `-4`:
-
-```
-[Service]
-ExecStart=
-ExecStart=/usr/bin/ntpd -g -u ntp:ntp **-4**
-
 ```
 
 ## See also

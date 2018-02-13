@@ -14,7 +14,7 @@ Vivaldi can be [installed](/index.php/Installed "Installed") with [vivaldi](http
 
 ## Extensions
 
-Vivaldi is compatible with most of Chrome's extensions. These can be installed direct on [Chrome Web Store](https://https://chrome.google.com/webstore/category/extensions). To see which extensions are installed/enabled search for `vivaldi://extensions` or just `extensions`.
+Vivaldi is compatible with most of Chrome's extensions. These can be installed direct on [Chrome Web Store](https://chrome.google.com/webstore/category/extensions). To see which extensions are installed/enabled search for `vivaldi://extensions` or just `extensions`.
 
 See also [Wikipedia:Google Chrome Extension](https://en.wikipedia.org/wiki/Google_Chrome_Extension "wikipedia:Google Chrome Extension").
 

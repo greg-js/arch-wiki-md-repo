@@ -45,7 +45,6 @@ This article covers all non-specific (ie, not related to any one printer) troubl
 *   [6 Other](#Other)
     *   [6.1 Printer "Paused" or "Stopped" with Status "Rendering completed"](#Printer_.22Paused.22_or_.22Stopped.22_with_Status_.22Rendering_completed.22)
         *   [6.1.1 Low ink](#Low_ink)
-        *   [6.1.2 Permission issue](#Permission_issue)
     *   [6.2 Printing fails with unauthorised error](#Printing_fails_with_unauthorised_error)
     *   [6.3 Unknown supported format: application/postscript](#Unknown_supported_format:_application.2Fpostscript)
     *   [6.4 Print-Job client-error-document-format-not-supported](#Print-Job_client-error-document-format-not-supported)
@@ -393,17 +392,9 @@ When low on ink, some printers will get stuck in "Rendering completed" status an
 
 **Note:** If you use third-party ink cartridges, the ink levels reported by the printer may be inaccurate. If you use third-party ink and your printer used to work fine but is now getting stuck on "Rendering completed" status, replace the ink cartridges regardless of the reported ink levels before trying other fixes.
 
-#### Permission issue
-
-Prior to [cups](https://www.archlinux.org/packages/?name=cups) 2.0.0-2, if the group set in the `Group` directive is also listed in the `SystemGroup` directive in `/etc/cups/cups-files.conf`, `cupsd` will instead run any helper programs with a group of `nobody`. However, the helpers may need to write to printer devices, which are created with user `root` and group `lp`, and will be unable to if they are run with a group of `nobody`, causing the print queue to become "Paused" or "Stopped".
-
-To fix this, ensure that the the `Group` directive is set to `lp`, and the `SystemGroup` directive does not include `lp`.
-
-Fixed in Arch with [[2]](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/cups&id=c20b22f4f996cb08b1aa856d4c8991e869459eb2).
-
 ### Printing fails with unauthorised error
 
-If a remote printer requests authentication CUPS will automatically add an `AuthInfoRequired` directive to the printer in `/etc/cups/printers.conf`. However, some graphical applications (for instance, some versions of [LibreOffice](/index.php/LibreOffice "LibreOffice") [[3]](https://bugs.documentfoundation.org/show_bug.cgi?id=53029)) have no way to prompt for credentials, so printing fails. To fix this include the required username and password in the URI. See [[4]](https://bugs.launchpad.net/ubuntu/+source/cups/+bug/283811), [[5]](https://bbs.archlinux.org/viewtopic.php?id=61826).
+If a remote printer requests authentication CUPS will automatically add an `AuthInfoRequired` directive to the printer in `/etc/cups/printers.conf`. However, some graphical applications (for instance, some versions of [LibreOffice](/index.php/LibreOffice "LibreOffice") [[2]](https://bugs.documentfoundation.org/show_bug.cgi?id=53029)) have no way to prompt for credentials, so printing fails. To fix this include the required username and password in the URI. See [[3]](https://bugs.launchpad.net/ubuntu/+source/cups/+bug/283811), [[4]](https://bbs.archlinux.org/viewtopic.php?id=61826).
 
 ### Unknown supported format: application/postscript
 

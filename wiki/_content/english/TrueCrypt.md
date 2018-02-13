@@ -24,7 +24,7 @@ For more details on how TrueCrypt compares to other disk encryption solution, se
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Accessing a TrueCrypt container using cryptsetup](#Accessing_a_TrueCrypt_container_using_cryptsetup)
+*   [2 Accessing a TrueCrypt or VeraCrypt container using cryptsetup](#Accessing_a_TrueCrypt_or_VeraCrypt_container_using_cryptsetup)
     *   [2.1 Automounting using /etc/crypttab](#Automounting_using_.2Fetc.2Fcrypttab)
 *   [3 Encrypting a file as a virtual volume](#Encrypting_a_file_as_a_virtual_volume)
 *   [4 Encrypting a physical volume](#Encrypting_a_physical_volume)
@@ -80,14 +80,16 @@ Add the module to `/etc/modules-load.d/`:
 
 If you only want to open and access an existing truecrypt container, this can also be done with `cryptsetup` i.e. without installing Truecrypt.
 
-## Accessing a TrueCrypt container using cryptsetup
+## Accessing a TrueCrypt or VeraCrypt container using cryptsetup
 
-Since version 1.6, [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) supports opening TrueCrypt containers natively, without the need of the [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) package. To do so, execute the following command:
+Since version 1.6.7, [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) supports opening TrueCrypt and VeraCrypt containers natively, without the need of the [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) or [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) package. Use the following command as a guideline.
 
 ```
 $ cryptsetup --type tcrypt open container-to-mount container-name
 
 ```
+
+To mount a VeraCrypt cointainer, you must use the `--veracrypt` option alongside `--type tcrypt`. If using a custom Personal Iteration Multiplier (PIM), use the `--veracrypt-query-pim` option to be promoted for the PIM.
 
 Replace `container-to-mount` with the device file under `/dev` or the path to the file you wish to open. Upon successful opening, the plaintext device will appear as `/dev/mapper/container-name`, which you can `mount` like any normal device.
 

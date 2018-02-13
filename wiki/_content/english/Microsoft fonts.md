@@ -57,7 +57,7 @@ Then regenerate the fontconfig cache:
 
 ### Extracting fonts from a Windows ISO
 
-The fonts can also be found in a Windows ISO file. The format of the image file containing the fonts in the ISO is either WIM *(Windows Imaging Format)* if the ISO is downloaded online or ESD *(Windows Electronic Software Download)* if it is built with Windows' *Media Creation Tool*. Extract the `sources/install.esd` or the `sources/install.wim` file from the *.iso* and look for a `Windows/Fonts` directory within this file. It can be extracted with [p7zip](/index.php/P7zip "P7zip"):
+The fonts can also be found in a Windows ISO file. The format of the image file containing the fonts in the ISO is either WIM (*Windows Imaging Format*) if the ISO is downloaded online or ESD (*Windows Electronic Software Download*) if it is built with Windows' *Media Creation Tool*. Extract the `sources/install.esd` or the `sources/install.wim` file from the *.iso* and look for a `Windows/Fonts` directory within this file. It can be extracted with [p7zip](/index.php/P7zip "P7zip"):
 
 ```
 $ 7z e *Win10_1709_English_x64.iso* sources/install.wim

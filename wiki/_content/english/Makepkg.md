@@ -73,7 +73,7 @@ Configure the following `makepkg.conf` variables if needed:
 
 **Note:** The signature checking implemented in *makepkg* does not use pacman's keyring, instead relying on the user's keyring.[[1]](http://allanmcrae.com/2015/01/two-pgp-keyrings-for-package-management-in-arch-linux/)
 
-If a signature file in the form of `.sig` or `.asc` is part of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") source array, *makepkg* automatically attempts to [verify](/index.php/GnuPG#Verify_a_signature "GnuPG") it. In case the user's keyring does not contain the needed public key for signature verification, *makepkg* will abort the installation with a message that the PGP key could not be verified.
+If a signature file in the form of *.sig* or *.asc* is part of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") source array, *makepkg* automatically attempts to [verify](/index.php/GnuPG#Verify_a_signature "GnuPG") it. In case the user's keyring does not contain the needed public key for signature verification, *makepkg* will abort the installation with a message that the PGP key could not be verified.
 
 If a needed public key for a package is missing, the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") will most likely contain a [validpgpkeys](/index.php/PKGBUILD#validpgpkeys "PKGBUILD") entry with the required key IDs. You can [import](/index.php/GnuPG#Import_a_public_key "GnuPG") it manually, or you can find it [on a keyserver](/index.php/GnuPG#Use_a_keyserver "GnuPG") and import it from there.
 
@@ -176,14 +176,13 @@ $ BUILDDIR=/tmp/makepkg makepkg
 
 ```
 
-**Warning:** Avoid compiling larger packages in tmpfs to prevent running out of memory.
-
 Persistent configuration can be done in `makepkg.conf` by uncommenting the `BUILDDIR` option, which is found at the end of the `BUILD ENVIRONMENT` section in the default `/etc/makepkg.conf` file. Setting its value to e.g. `BUILDDIR=/tmp/makepkg` will make use of the Arch's default `/tmp` temporary file system.
 
 **Note:**
 
-*   The [tmpfs](/index.php/Tmpfs "Tmpfs") folder must be mounted without the `noexec` option, otherwise it will prevent built binaries from being executed.
-*   Keep in mind that packages compiled in [tmpfs](/index.php/Tmpfs "Tmpfs") will not persist across reboot. Consider setting the [PKGDEST](#Package_output) option appropriately to move the built package automatically to a persistent directory.
+*   Avoid compiling larger packages in tmpfs to prevent running out of memory.
+*   The tmpfs folder must be mounted without the `noexec` option, otherwise it will prevent built binaries from being executed.
+*   Keep in mind that packages compiled in tmpfs will not persist across reboot. Consider setting the [PKGDEST](#Package_output) option appropriately to move the built package automatically to a persistent directory.
 
 #### Using a compilation cache
 

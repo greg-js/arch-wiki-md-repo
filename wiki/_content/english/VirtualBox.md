@@ -123,8 +123,6 @@ The following modules are optional but are recommended if you do not want to be 
 
 **Note:** If the VirtualBox kernel modules were loaded in the kernel while you updated the modules, you need to reload them manually to use the new updated version. To do it, run `vboxreload` as root.
 
-Finally, if you use the aforementioned "Host-only" or "bridge networking" feature, make sure [net-tools](https://www.archlinux.org/packages/?name=net-tools) is installed. VirtualBox actually uses `ifconfig` and `route` to assign the IP and route to the host interface configured with `VBoxManage hostonlyif` or via the GUI in *Preferences > Network > Host-only Networks > Edit host-only network (space) > Adapter*.
-
 ### Accessing host USB devices in guest
 
 To use the USB ports of your host machine in your virtual machines, add users that will be authorized to use this feature to the `vboxusers` [group](/index.php/Group "Group").

@@ -40,6 +40,7 @@ Related articles
     *   [3.13 PXELINUX](#PXELINUX)
     *   [3.14 Booting ISO9660 image files with memdisk](#Booting_ISO9660_image_files_with_memdisk)
     *   [3.15 Serial console](#Serial_console)
+    *   [3.16 Boot another OS once](#Boot_another_OS_once)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Failed to load ldlinux](#Failed_to_load_ldlinux)
     *   [4.2 Using the Syslinux prompt](#Using_the_Syslinux_prompt)
@@ -791,6 +792,17 @@ Enable Serial Console in the kernel at boot by adding `console=tty0 console=ttyS
  `syslinux.cfg`  `APPEND root=UUID=126ca36d-c853-4f3a-9f46-cdd49d034ce4 rw console=tty0 console=ttyS0,115200n8` 
 
 How to do this with GRUB: [Working with the serial console#GRUB2 and systemd](/index.php/Working_with_the_serial_console#GRUB2_and_systemd "Working with the serial console")
+
+### Boot another OS once
+
+It is possible to temporarily change the default Syslinux action and boot another label only during the next boot. The following command shows how to boot the `archfallback` label once:
+
+```
+# extlinux -o archfallback /boot/syslinux
+
+```
+
+During the next boot, the specified label will be booted without any Syslinux prompt showing up. The default Syslinux boot behaviour will be restored on the next reboot.
 
 ## Troubleshooting
 

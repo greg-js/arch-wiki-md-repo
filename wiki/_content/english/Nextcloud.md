@@ -133,7 +133,7 @@ An SQL database must be setup and used for your Nextcloud installation. After se
 
 #### MariaDB
 
-**Note:** It's is highly recommended to set `binlog_format` to *mixed* [[1]](https://docs.nextcloud.com/server/12/admin_manual/configuration_database/linux_database_configuration.html#db-binlog-label) in `/etc/mysql/my.cnf`.
+**Note:** It's is highly recommended to set `binlog_format` to *mixed* [[1]](https://docs.nextcloud.com/server/11/admin_manual/configuration_database/linux_database_configuration.html#db-binlog-label) in `/etc/mysql/my.cnf`.
 
 The following is an example of setting up a [MariaDB](/index.php/MariaDB "MariaDB") database and user:
 
@@ -217,7 +217,7 @@ include conf.d/*.conf;
 
 ```
 
-Create a config file `/etc/nginx/conf.d/nextcloud.conf` according to the [documentation](https://docs.nextcloud.com/server/12/admin_manual/installation/nginx.html). You will have to change the `root` location, as the Arch package installs to `/usr/share/webapps/nextcloud` instead of `/var/www/nextcloud`.
+Create a config file `/etc/nginx/conf.d/nextcloud.conf` according to the [documentation](https://docs.nextcloud.com/server/13/admin_manual/installation/nginx.html). You will have to change the `root` location, as the Arch package installs to `/usr/share/webapps/nextcloud` instead of `/var/www/nextcloud`.
 
 Addtitionally, you change the php-handler block so it looks like this one
 
@@ -286,7 +286,7 @@ From there follow the instructions in adding an administrator account as well as
 
 ## Security Hardening
 
-The [Nextcloud Hardening and Security](https://docs.nextcloud.com/server/12/admin_manual/configuration_server/harden_server.html) article guides along generic topics. See also the project's [Security scanner](https://scan.nextcloud.com/).
+The [Nextcloud Hardening and Security](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/harden_server.html) article guides along generic topics. See also the project's [Security scanner](https://scan.nextcloud.com/).
 
 ### Let's Encrypt
 
@@ -417,7 +417,7 @@ cron2 = minute=-15,unique=1 /usr/bin/php -f /usr/share/webapps/nextcloud/cron.ph
 *   The [open_basedir](/index.php/PHP#Configuration "PHP") directive is optional and commented out. You can uncomment to harden security. Be aware that it may [occasionally break things](https://github.com/owncloud/core/search?q=open_basedir&type=Issues).
 *   Use `php-docroot = /usr/share/webapps` if placing nextcloud in /nextcloud subdirectory.
 
-**Warning:** The way the [Nextcloud background job](https://docs.nextcloud.com/server/12/admin_manual/configuration_server/background_jobs_configuration.html) is currently set up with [uWSGI cron](https://uwsgi-docs.readthedocs.org/en/latest/Cron.html) will make use of the default global configuration from `/etc/php/php.ini`. This means that none of the specific parameters defined (e.g. required modules) will be enabled, [leading to various issues](https://github.com/owncloud/core/issues/12678#issuecomment-66114448). One solution is to copy `/etc/php/php.ini` to e.g. `/etc/uwsgi/cron-php.ini`, make the required modifications there (mirroring `/etc/uwsgi/nextcloud.ini` parameters) and referencing it in the cron directive by adding the `-c /etc/uwsgi/cron-php.ini` option to *php* invocation.
+**Warning:** The way the [Nextcloud background job](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/background_jobs_configuration.html) is currently set up with [uWSGI cron](https://uwsgi-docs.readthedocs.org/en/latest/Cron.html) will make use of the default global configuration from `/etc/php/php.ini`. This means that none of the specific parameters defined (e.g. required modules) will be enabled, [leading to various issues](https://github.com/owncloud/core/issues/12678#issuecomment-66114448). One solution is to copy `/etc/php/php.ini` to e.g. `/etc/uwsgi/cron-php.ini`, make the required modifications there (mirroring `/etc/uwsgi/nextcloud.ini` parameters) and referencing it in the cron directive by adding the `-c /etc/uwsgi/cron-php.ini` option to *php* invocation.
 
 #### Activation
 
@@ -514,11 +514,11 @@ https://ADDRESS/remote.php/caldav
 
 ```
 
-For details see the [official documentation](https://docs.nextcloud.com/server/12/user_manual/pim/index.html).
+For details see the [official documentation](https://docs.nextcloud.com/server/13/user_manual/pim/index.html).
 
 #### Contacts
 
-To sync contacts with [Thunderbird](/index.php/Thunderbird "Thunderbird"), see [these instructions](https://docs.nextcloud.com/server/12/user_manual/pim/sync_thunderbird.html) from the official doc.
+To sync contacts with [Thunderbird](/index.php/Thunderbird "Thunderbird"), see [these instructions](https://docs.nextcloud.com/server/13/user_manual/pim/sync_thunderbird.html) from the official doc.
 
 #### Mounting files with davfs2
 
@@ -658,7 +658,7 @@ This is most likely a certificate issue. Recreate it, and do not leave the commo
 
 ### Seeing white page after login
 
-The cause is probably a new app that you installed. To fix that, you can use the occ command as described [here](https://docs.nextcloud.com/server/12/admin_manual/configuration_server/occ_command.html). So with
+The cause is probably a new app that you installed. To fix that, you can use the occ command as described [here](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/occ_command.html). So with
 
 ```
 sudo -u http php /usr/share/webapps/nextcloud/occ app:list
@@ -698,7 +698,7 @@ You may see the following error in the ownCloud sync client:
 
 ```
 
-This is caused by an issue with the File Locking app, which is often not sufficient to keep conflicts from occurring on some webserver configurations. A more complete [Transactional File Locking](https://docs.nextcloud.com/server/12/admin_manual/configuration_files/files_locking_transactional.html) is available that rids these errors, but you must be using the Redis php-caching method. Install [redis](https://www.archlinux.org/packages/?name=redis) and [php-redis](https://aur.archlinux.org/packages/php-redis/), comment out your current php-cache mechanism, and then in `/etc/php/conf.d/redis.ini` uncomment `extension=redis`. Then in `config.php` make the following changes:
+This is caused by an issue with the File Locking app, which is often not sufficient to keep conflicts from occurring on some webserver configurations. A more complete [Transactional File Locking](https://docs.nextcloud.com/server/13/admin_manual/configuration_files/files_locking_transactional.html) is available that rids these errors, but you must be using the Redis php-caching method. Install [redis](https://www.archlinux.org/packages/?name=redis) and [php-redis](https://aur.archlinux.org/packages/php-redis/), comment out your current php-cache mechanism, and then in `/etc/php/conf.d/redis.ini` uncomment `extension=redis`. Then in `config.php` make the following changes:
 
 ```
    'memcache.local' => '\OC\Memcache\Redis',
@@ -720,7 +720,7 @@ If everything is working, you should see 'Transactional File Locking Enabled' un
 
 ### "Cannot write into apps directory"
 
-As mentioned in the [official admin manual](https://docs.nextcloud.com/server/12/admin_manual/installation/apps_management_installation.html), either you need an apps directory that is writable by the http user, or you need to set `appstoreenabled` to `false`.
+As mentioned in the [official admin manual](https://docs.nextcloud.com/server/13/admin_manual/installation/apps_management_installation.html), either you need an apps directory that is writable by the http user, or you need to set `appstoreenabled` to `false`.
 
 ### Installed apps get blocked because of MIME type error
 
@@ -737,7 +737,7 @@ location ~ /apps2/(.*)$ {
 
 ### Security warnings even though the recommended settings have been included in nginx.conf
 
-At the top of the admin page there might be a warning to set the `Strict-Transport-Security`, `X-Content-Type-Options`, `X-Frame-Options`, `X-XSS-Protection` and `X-Robots-Tag` according to [https://docs.nextcloud.com/server/12/admin_manual/configuration_server/harden_server.html](https://docs.nextcloud.com/server/12/admin_manual/configuration_server/harden_server.html) even though they are already set like that.
+At the top of the admin page there might be a warning to set the `Strict-Transport-Security`, `X-Content-Type-Options`, `X-Frame-Options`, `X-XSS-Protection` and `X-Robots-Tag` according to [https://docs.nextcloud.com/server/13/admin_manual/configuration_server/harden_server.html](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/harden_server.html) even though they are already set like that.
 
 A possible cause could be that because owncloud sets those settings, uwsgi passed them along and nginx added them again:
 
@@ -1174,4 +1174,4 @@ Then:
 ## See also
 
 *   [nextcloud official website](https://docs.nextcloud.com/)
-*   [nextcloud 12.0 Admin Documentation](https://docs.nextcloud.com/server/12/admin_manual/)
+*   [nextcloud 13.0 Admin Documentation](https://docs.nextcloud.com/server/13/admin_manual/)

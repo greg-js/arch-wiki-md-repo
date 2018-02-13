@@ -60,7 +60,7 @@ blacklist nvidia
 
 *   Install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) to [turn off the card](/index.php/Bumblebee#Power_management "Bumblebee")
 
- `/etc/modprobe.d/bbswitch`  `options bbswitch load_state=0 unload_state=0` 
+ `/etc/modprobe.d/bbswitch.conf`  `options bbswitch load_state=0 unload_state=0` 
 
 ### Intel/Nvidia Hybrid Configuration
 

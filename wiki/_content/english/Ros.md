@@ -41,7 +41,7 @@ alias catkin_make="catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INC
 For configuring the systems using the `catkin build` environment, one have to configure the catkin workspace as usual and issue a
 
 ```
-catkin config -DPYTHON_EXECUTABLE\=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so"
+catkin config -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so
 
 ```
 

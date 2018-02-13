@@ -4,7 +4,7 @@ Related articles
 
 hdparm is a command line utility to set and view hardware parameters of [hard disk drives](https://en.wikipedia.org/wiki/Hard_disk_drive "wikipedia:Hard disk drive"). It can also be used as a simple [benchmarking](/index.php/Benchmarking "Benchmarking") tool.
 
-**Warning:** Be careful, changing default parameters can damage the drive or freeze the system.
+**Warning:** Changing drive's default parameters can freeze the system or even irreversibly damage the drive.
 
 ## Contents
 
@@ -128,6 +128,8 @@ HDIO_DRIVE_CMD(setidle) failed: Invalid argument
 
 ```
 
+For some other drives, the hdparm command is acknowledged but the drive do not respect the parameters (either APM or spin down timer). This was observed with a Toshiba P300 (model HDWD120) HDD.
+
 Such drives can be spun down using [hd-idle](https://www.archlinux.org/packages/?name=hd-idle) which ships with a [systemd](/index.php/Systemd "Systemd") service. One need to edit `/etc/conf.d/hd-idle` and the `HD_IDLE_OPTS` value, then [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `hd-idle.service`.
 
 Example using a 10 min idle time for `/dev/sda` and a 1 min idle time for `/dev/disk/by-uuid/01CF0AC9AA5EAF70`:
@@ -143,21 +145,9 @@ the leading `-i 0` parameter indicates that hd-idle is disabled on other drives.
 
 *Western Digital Green* hard drives have a special *idle3* timer which controls how long the drive waits before positioning its heads in their park position and entering a low power consumption state. The factory default is aggressively set to 8 seconds, which can result in thousands of head load/unload cycles in a short period of time and eventually premature failure, not to mention the performance impact of the drive often having to wake-up before doing routine I/O. Western Digital issued a [statement](http://wdc.custhelp.com/app/answers/detail/a_id/5357), claiming that Linux is not optimized for low power storage devices and advising to reduce logging frequency. There are different ways to amend the *idle3* state:
 
-*   Western Digital supplies a DOS utility `wdidle3.exe` for [download](https://support.wdc.com/downloads.aspx?p=113) for tweaking this setting. This utility is designed to upgrade only the firmware of the following hard drives: WD1000FYPS, WD7500AYPS, WD7501AYPS but is known to be able to change the *idle3* timer of other Green models as well.
+*   Western Digital supplies a DOS utility *wdidle3.exe* for [download](https://support.wdc.com/downloads.aspx?p=113) for tweaking this setting. This utility is designed to upgrade only the firmware of the following hard drives: WD1000FYPS, WD7500AYPS, WD7501AYPS but is known to be able to change the *idle3* timer of other Green models as well.
 *   hdparm features a reverse-engineered implementation behind the `-J` flag, which is not as complete as the original official program, even though it seems to work on at least a few drives.
-*   Another unofficial utility is provided by the [idle3-tools](https://www.archlinux.org/packages/?name=idle3-tools) package. A raw *idle3* value is passed as a command parameter and the correspondence between this value and the timeout in seconds is provided in the bottom table of the [idle3-tool documentation page](http://idle3-tools.sourceforge.net/). The following command sets the timer to 5 min:
-
-```
-# idle3ctl -s 138 /dev/sdc
-
-```
-
-	this one completely disables the timer:
-
-```
-# idle3ctl -d /dev/sdc
-
-```
+*   Another unofficial utility is provided by the [idle3-tools](https://www.archlinux.org/packages/?name=idle3-tools) package. A raw `*idle3*` value is passed as a parameter of the *idle3ctl* command. The correspondence between this value and the timeout in seconds is provided in the bottom table within [idle3ctl(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/idle3ctl.8). The following command sets the timer to 5 min: `# idle3ctl -s 138 /dev/sdc` this one completely disables the timer: `# idle3ctl -d /dev/sdc` 
 
 **Note:**
 

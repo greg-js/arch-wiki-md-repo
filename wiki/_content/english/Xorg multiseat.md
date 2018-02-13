@@ -736,9 +736,9 @@ The **ServerVT=7**, **ServerVT=8** would be pass to as **vt7**, **vt8**
 
 ## See also
 
-*   [The original Arch Forums thread](https://bbs.archlinux.org/viewtopic.php?id=105450).
+*   [Multi-pointer X](/index.php/Multi-pointer_X "Multi-pointer X") explains how to setup two separate pair of devices on the same session.
 
-*   The arckwiki page [Multi-pointer X](/index.php/Multi-pointer_X "Multi-pointer X") explains how to setup two separate pair of devices on the same session.
+*   [The original Arch Forums thread](https://bbs.archlinux.org/viewtopic.php?id=105450).
 
 *   [Multiseat using loginctl](http://code.lexarcana.com/posts/simple-multiseat-setup-on-fedora-17.html).
 

@@ -9,8 +9,9 @@ Synchronization is based on unique message identifiers (UIDs), so no identificat
 *   [1 Installing](#Installing)
 *   [2 Configuring](#Configuring)
 *   [3 Usage](#Usage)
-*   [4 Automatic synchronization](#Automatic_synchronization)
-    *   [4.1 Integration with notmuch](#Integration_with_notmuch)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Automatic synchronization](#Automatic_synchronization)
+        *   [4.1.1 Integration with notmuch](#Integration_with_notmuch)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 SSL error](#SSL_error)
         *   [5.1.1 Step #1: Get the certificates](#Step_.231:_Get_the_certificates)
@@ -120,29 +121,27 @@ $ mbsync -a
 
 ```
 
-## Automatic synchronization
+## Tips and tricks
 
-If you want to automatically synchronize your mailboxes, isync can be started automatically with a [systemd](/index.php/Systemd "Systemd") unit. The following service file can start the **mbsync** command :
+### Automatic synchronization
 
- `/etc/systemd/system/mbsync@.service` 
+If you want to automatically synchronize your mailboxes, isync can be started automatically with a [systemd/User](/index.php/Systemd/User "Systemd/User") unit. The following service file can start the `mbsync` command:
+
+ `~/.config/systemd/user/mbsync.service` 
 ```
 [Unit]
-Description=Mailbox synchronization service for user %I
+Description=Mailbox synchronization service
 
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/mbsync -Va
-User=%i
-StandardOutput=syslog
-StandardError=syslog
-
 ```
 
 **Note:** It's possible this service could trigger without an internet connection. A solution is to add the following into the Unit section: `After=network.target network-online.target dbus.socket`
 
-The following timer configures **mbsync** to be started every 2 hours :
+The following timer configures `mbsync` to be started every 2 hours:
 
- `/etc/systemd/system/mbsync@.timer` 
+ `~/.config/systemd/user/mbsync.timer` 
 ```
 [Unit]
 Description=Mailbox synchronization timer
@@ -150,32 +149,29 @@ Description=Mailbox synchronization timer
 [Timer]
 OnCalendar=*-*-* 00/2:00:00
 Persistent=true
-Unit=mbsync@%i.service
+Unit=mbsync.service
 
 [Install]
 WantedBy=timers.target
-
 ```
 
-Once those two files are created, [reload](/index.php/Reload "Reload") systemd, then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `mbsync@*user*.timer`, replacing `*user*` with your username..
+Once those two files are created, [reload](/index.php/Reload "Reload") systemd, then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `mbsync.timer`, adding the `--user` flag to `systemctl`.
 
-### Integration with notmuch
+**Tip:** The mbsync service now only runs after login. It's also possible to launch the systemd-user instances after boot if you configure [Systemd/User#Automatic_start-up_of_systemd_user_instances](/index.php/Systemd/User#Automatic_start-up_of_systemd_user_instances "Systemd/User").
 
-If you want to run [notmuch](/index.php/Notmuch "Notmuch") after automatically synchronizing your mails, it is preferable to modify the above `mbsync@.service` by adding a post-start hook, like below:
+#### Integration with notmuch
 
- `/etc/systemd/system/mbsync@.service` 
+If you want to run [notmuch](/index.php/Notmuch "Notmuch") after automatically synchronizing your mails, it is preferable to modify the above `mbsync.service` by adding a post-start hook, like below:
+
+ `~/.config/systemd/user/mbsycn.service` 
 ```
 [Unit]
-Description=Mailbox synchronization service for user %I
+Description=Mailbox synchronization service
 
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/mbsync -Va
 ExecStartPost=/usr/bin/notmuch new
-User=%i
-StandardOutput=syslog
-StandardError=syslog
-
 ```
 
 This modification assumes that you have already setup notmuch for your user. If the ExecStart command does not execute successfully, the ExecStartPost command will not execute, so be aware of this!

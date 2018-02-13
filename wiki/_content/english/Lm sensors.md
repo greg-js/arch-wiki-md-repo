@@ -431,19 +431,10 @@ Core7:        +60.0°C  (high = +85.0°C, crit = +95.0°C)
 
 ### Automatic lm_sensors deployment
 
-Users wishing to deploy lm_sensors on multiple machines can use either of the following:
-
-1\. Accept defaults to questions:
+Users wishing to deploy lm_sensors on multiple machines can use the following to accept the defaults to all questions:
 
 ```
 # sensors-detect --auto
-
-```
-
-2\. Override defaults and answer YES to all questions:
-
-```
- # yes | sensors-detect
 
 ```
 

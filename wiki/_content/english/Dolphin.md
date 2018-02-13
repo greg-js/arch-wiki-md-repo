@@ -72,7 +72,7 @@ See [Samba#Unable to overwrite files](/index.php/Samba#Unable_to_overwrite_files
 
 ### Cannot write to NTFS: Operation not permitted
 
-If you are not able to do any write operations (create/delete/rename file/folder) as normal user to your NTFS partition, then you probably missing to install the [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) package. See [NTFS-3G](/index.php/NTFS-3G "NTFS-3G") for details.
+If you are not able to do any write operations (create/delete/rename file/folder) as a normal user to your NTFS partition, then you are probably missing and need to to install the [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) package. See [NTFS-3G](/index.php/NTFS-3G "NTFS-3G") for details.
 
 ### Icons not showing
 

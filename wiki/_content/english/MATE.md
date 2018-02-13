@@ -380,7 +380,9 @@ and then create a custom keyboard shortcut that executes the file, e.g. `Ctrl+Al
 
 ### Vertical sync for compositing
 
-*marco* does not support vertical synchronization via *OpenGL*, which may cause video tearing with enabled compositing. [[1]](https://github.com/mate-desktop/marco/issues/91) Consider a different [composite manager](/index.php/Composite_manager "Composite manager") with OpenGL support such as [Compton](/index.php/Compton "Compton").
+Mate's window manager, *marco*, supports tear-free software compositing via DRI3/Xpresent. [[1]](https://github.com/mate-desktop/marco/issues/326)
+
+If your graphics driver does not support DRI3 (e.g. the Nvidia Proprietary driver), *marco* does not support vertical synchronization via *OpenGL*, which may cause video tearing with enabled compositing. [[2]](https://github.com/mate-desktop/marco/issues/91) In this case, consider a different [composite manager](/index.php/Composite_manager "Composite manager") with OpenGL support such as [Compton](/index.php/Compton "Compton").
 
 ### Consistent cursor theme
 
@@ -406,7 +408,7 @@ to have your desktop icons reappear, if desired.
 
 ### Enabling panel shadow
 
-Due to a race condition, the panel shadow does not appear after logging in to the MATE desktop, even with compositing enabled. [[2]](https://github.com/mate-desktop/mate-panel/issues/193)
+Due to a race condition, the panel shadow does not appear after logging in to the MATE desktop, even with compositing enabled. [[3]](https://github.com/mate-desktop/mate-panel/issues/193)
 
 Copy `/usr/share/applications/marco.desktop` and add a delay:
 

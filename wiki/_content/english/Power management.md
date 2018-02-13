@@ -596,9 +596,26 @@ See the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/us
 
 #### SATA Active Link Power Management
 
+**Warning:** SATA Active Link Power Management can lead to data loss on some devices. Do not enable this setting unless you have frequent backups.
+
+Since Linux 4.15 there is a [new setting](https://hansdegoede.livejournal.com/18412.html%7C) called `med_power_with_dipm` that matches the behaviour of Windows IRST driver settings and should not cause data loss with recent SSD/HDD drives. The power saving can be significant, ranging [from 1.0 to 1.5 Watts (when idle)](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ebb82e3c79d2a956366d0848304a53648bd6350b%7C). It will become [a default setting for Intel based laptops in Linux 4.16](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ebb82e3c79d2a956366d0848304a53648bd6350b%7C).
+
+The current setting can be read from `/sys/class/scsi_host/host*/link_power_management_policy` as follows:
+
+```
+# cat /sys/class/scsi_host/host*/link_power_management_policy
+
+```
+
+<caption>Available ALPM settings</caption>
+| Setting | Description | Power saving |
+| max_performance | current default | None |
+| medium_power | - | ~1.0 Watts |
+| med_power_with_dipm | recommended setting | ~1.5 Watts |
+| min_power | **WARNING: possible data loss** | ~1.5 Watts |
+
+ `/etc/udev/rules.d/hd_power_save.rules`  `ACTION=="add", SUBSYSTEM=="scsi_host", KERNEL=="host*", ATTR{link_power_management_policy}="med_power_with_dipm"` 
 **Note:** This adds latency when accessing a drive that has been idle, so it is one of the few settings that may be worth toggling based on whether you are on AC power.
- `/etc/udev/rules.d/hd_power_save.rules`  `ACTION=="add", SUBSYSTEM=="scsi_host", KERNEL=="host*", ATTR{link_power_management_policy}="min_power"` 
-**Warning:** SATA Active Link Power Management can lead to data loss on some devices. For example, the Lenovo T440s [is known to suffer](http://lkml.indiana.edu/hypermail/linux/kernel/1401.2/02171.html) from this problem. Do not enable this setting unless you have frequent backups.
 
 ### Hard disk drive
 

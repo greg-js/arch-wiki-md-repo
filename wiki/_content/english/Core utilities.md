@@ -122,7 +122,7 @@ For color support, see [Color output in console#grep](/index.php/Color_output_in
 
 *find* is part of the [findutils](https://www.archlinux.org/packages/?name=findutils) package, which belongs to the [base](https://www.archlinux.org/groups/x86_64/base/) package group.
 
-Tip: [fd](https://github.com/sharkdp/fd) is a modern and user friendly alternative to `find`, that tries to improve performance, and offer more friendly defaults. For example `fd PATTERN` instead of `find -iname '*PATTERN*'`. It features colorized output (similar to `ls`), smart-case search by default, hidden files ignoring, and more. [fd-rs](https://www.archlinux.org/packages/?name=fd-rs)
+Tip: [fd](https://github.com/sharkdp/fd) is a modern and user friendly alternative to `find`, that tries to improve performance, and offer more friendly defaults. For example `fd PATTERN` instead of `find -iname '*PATTERN*'`. It features colorized output (similar to `ls`), smart-case search by default, hidden files ignoring, and more. [fd](https://www.archlinux.org/packages/?name=fd)
 
 One would probably expect a *find* command to take as argument a file name and search the filesystem for files matching that name. For a program that does exactly that see [#locate](#locate) below.
 
